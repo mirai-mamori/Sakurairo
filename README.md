@@ -23,6 +23,10 @@
 
 -开启PJAX
 
+已知Feature（Bug）：
+
+移动端社交网络项目数量超过5会导致排版不美观
+
 主题使用说明见：<https://2heng.xin/theme-sakura/>
 
 主题交流群：860262481
