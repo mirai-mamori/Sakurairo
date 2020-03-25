@@ -1,0 +1,46 @@
+.theme-about {
+    background: #fff;
+	max-width:860px;
+	margin: 0 auto;
+	box-shadow: 0 2px 6px rgba(0,0,0,.04);
+	border: 1px solid #ddd;
+	margin-top:50px
+}
+.fu-info {
+	padding:20px 40px
+}
+.fu-info p {
+    line-height: 30px;
+    font-size: 15px;
+    color: #797979;
+    letter-spacing: 2px;
+}
+
+.fu-she {
+    text-align: center;
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 100%;
+	padding:20px 0
+}
+.fu-she span {
+    margin-right:15px
+}
+.akina img {
+	width: 50px;
+}
+.fufooter-info {
+    height: 70px;
+    background: #384152;
+	margin-top:20px
+}
+span.copyright-fu {
+    width: 100%;
+    display: inline-block;
+    padding: 25px 0;
+    text-align: center;
+    color: white;
+}
+.fufooter-info a{
+    color:#fff
+}

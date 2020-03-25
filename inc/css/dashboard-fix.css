@@ -1,0 +1,79 @@
+/* emotion不和具修正*/
+/*bilibili表情*/
+.emotion-box {
+    padding-left: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    display: none;
+}
+.emotion-inline {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.emotion-item {
+    margin: 6px;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: -8px;
+}
+.emotion-secter {
+    margin: 12px 12px 0 0;
+}
+@media (max-width: 860px) {
+    .emotion-box {
+        padding-left: 0;
+    }
+   .emotion-item {
+        transform: scale(0.6);
+        margin-bottom: -10px;
+    } 
+    .emotion-secter {
+        margin: 0;
+    }
+}
+
+.emotion-item .img {
+    -webkit-animation: im-emotion-step 1.08s steps(27) infinite;
+    animation: im-emotion-step 1.08s steps(27) infinite;
+        animation-duration: 1.08s;
+        animation-timing-function: steps(27);
+}
+
+.emotion-item .img {
+    width: 32px;
+    height: 864px;
+    max-width: 32px;
+    background: top/32px no-repeat;
+    background-image: none;
+}
+
+@-webkit-keyframes im-emotion-step {
+ 0% {
+  -webkit-transform:translateY(0);
+  transform:translateY(0)
+ }
+ to {
+  -webkit-transform:translateY(-100%);
+  transform:translateY(-100%)
+ }
+}
+@keyframes im-emotion-step {
+ 0% {
+  -webkit-transform:translateY(0);
+  transform:translateY(0)
+ }
+ to {
+  -webkit-transform:translateY(-100%);
+  transform:translateY(-100%)
+ }
+}
