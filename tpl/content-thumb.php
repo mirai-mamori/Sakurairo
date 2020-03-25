@@ -40,12 +40,12 @@ $the_cat = get_the_category();
 ?>
 	<article class="post post-list-thumb <?php echo $class; ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
 		<div class="post-thumb">
-			<a href="<?php the_permalink(); ?>"><img class="lazyload" src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@1.0/loadimg/outload.svg" data-src="<?php echo $post_img; ?>"></a>
+			<a href="<?php the_permalink(); ?>"><img class="lazyload" src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/outload.svg" data-src="<?php echo $post_img; ?>"></a>
 		</div><!-- thumbnail-->
 		<div class="post-content-wrap">
 			<div class="post-content">
 				<div class="post-date">
-					<i class="iconfont icon-time"></i><?php echo poi_time_since(strtotime($post->post_date_gmt)); ?>
+					<i class="iconfont icon-time"style="color:#EE9CA7;"></i><?php echo poi_time_since(strtotime($post->post_date_gmt)); ?>
 					<?php if(is_sticky()) : ?>
 					&nbsp;<i class="iconfont hotpost icon-hot"></i>
 			 		<?php endif ?>
