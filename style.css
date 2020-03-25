@@ -1502,6 +1502,7 @@ i.iconfont.hotpost {
 
 .post-date {
     background-color: #FFEEEB;
+	font-size: 1px;
     width: max-content;
     padding: 2px 7px 2px 7px;
     border-radius: 10px;
