@@ -1,0 +1,75 @@
+body {
+    background-image: url(https://view.moezx.cc/images/2018/01/29/FLOWER.jpg) !important;
+}
+
+#adminmenu, #adminmenuback, #adminmenuwrap {
+    background: #e5e5e590 !important;
+}
+
+#wpadminbar {
+    background: #e5e5e5 !important;
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu .wp-has-current-submenu.opensub .wp-submenu, #adminmenu .wp-submenu, #adminmenu a.wp-has-current-submenu:focus + .wp-submenu, .folded #adminmenu .wp-has-current-submenu .wp-submenu {
+    background: #ffffff90 !important;
+}
+
+.wp-submenu-wrap {
+	background: #ffffff99 !important;
+}
+
+.postbox {
+    min-width: 255px;
+    border: 1px solid #e5e5e5;
+    background: #ffffff90 !important;
+}
+
+#contextual-help-link-wrap, #screen-options-link-wrap {
+    background: #e5e5e5 !important;
+}
+
+table {
+	background: #ffffff90 !important;
+}
+
+tr {
+	background-color: #ffffff00 !important;
+}
+
+#screen-meta {
+	background-color: #ffffff90 !important;
+}
+
+.notice, div.error, div.updated {
+    background: #ffffff90;
+}
+
+#dolly {
+	background: rgba(255,255,255,.7);
+	border-left: 4px solid #fff;
+    border-left-color: rgb(255, 255, 255);
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+	border-left-color: #888;
+	font-size: 13px;
+	padding: 6px;
+	padding-right: 15px;
+	padding-top: 5px;
+	float: none !important;
+	width: calc(100% - 46px);
+}
+
+#adminmenu a, #adminmenu .wp-submenu .wp-submenu-head, #adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, .folded #adminmenu li.wp-has-current-submenu {
+    color: #333;
+}
+
+.gadwp-pline a {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	position: absolute;
+	width: 80%;
+}
+
+.wp-submenu .wp-submenu-wrap {
+	background: #ffffff !important;
+}
