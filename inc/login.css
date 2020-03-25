@@ -28,11 +28,12 @@ body { background:none !important; overflow:hidden;}
 #login { 
 	font:14px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
 	position:absolute;
-	background: rgba(255, 255, 255, 0.45);
-	border-radius: 6px;
+	background: rgba(255, 238, 235, 0.30);
+	border-radius: 20px;
 	top:50%;
 	left:50%;
 	width:350px;
+	height: 500px;
 	padding:0px !important;
 	margin:-235px 0px 0px -175px !important; 
     background-position: center 48%;
@@ -43,7 +44,7 @@ body { background:none !important; overflow:hidden;}
 	font-weight:bold;
 	text-indent:0px;
 	font-size:0px; 
-	height:32px;
+	height:38px;
 	width: 100%;
 	line-height:88px;
 	line-height:180%; 
@@ -148,11 +149,11 @@ color: #676767 !important}
 	border:none;
 	float:none;
 	border-radius:30px;
-	height:50px;
-	font-size:14px;
+	height:45px;
+	font-size:16px;
 	text-align:center;
 	color:#FFF;
-	background:#FF5656;
+	background:#EE9CA7;
 	font-weight:normal;
 	cursor:pointer;
 	box-shadow: none;
@@ -286,7 +287,7 @@ input[type=checkbox]:checked:before {
 	background: #fff;
 	z-index: 3;
 	cursor: move;
-	color: #E67474;
+	color: #EE9CA7;
 	font-size: 38px;
 	font-weight: 900;
 	border-radius: 3px;
@@ -299,7 +300,8 @@ input[type=checkbox]:checked:before {
 	height: 100%;
 	font-size: 13px;
 	font-family: 'Microsoft Yahei', serif;
-	color: #888;
+	color: #FFF;
+	background-color: #EE9CA7;
 	line-height: 46px;
 	text-align: center;
 	z-index: 2;
@@ -358,7 +360,7 @@ input[type=checkbox]:checked:before {
 }
 
 .forgetmenot input:checked + label {
-  background: #bada55;
+  background: #EE9CA7;
 }
 
 .forgetmenot input:checked + label:after {
