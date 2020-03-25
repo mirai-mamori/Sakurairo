@@ -313,7 +313,7 @@ function optionsframework_options()
         'name' => __('Blogger description', 'sakura'), /*博主描述*/
         'desc' => __('A self-described statement', 'sakura'), /*一段自我描述的话*/
         'id' => 'admin_des',
-        'std' => '一沙一世界，一花一天堂。君掌盛无边，刹那成永恒。',
+        'std' => '粉色的花瓣，美丽地缠绕在身上。依在风里。',
         'type' => 'textarea');
 
     $options[] = array(
@@ -1091,7 +1091,7 @@ function optionsframework_options()
         'name' => __('lazyload spinner', 'sakura'),
         'desc' => __('The placeholder to display when the image loads, fill in the image url', 'sakura'), /*图片加载时要显示的占位图，填写图片 url*/
         'id' => 'lazyload_spinner',
-        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@1.0/loadimg/inload.svg',
+        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/inload.svg',
         'type' => 'text');
 
     $options[] = array(

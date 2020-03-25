@@ -1500,7 +1500,14 @@ i.iconfont.hotpost {
     word-wrap: break-word
 }
 
-.post-date,
+.post-date {
+    background-color: #FFEEEB;
+    width: max-content;
+    padding: 2px 7px 2px 7px;
+    border-radius: 10px;
+    color: #EE9CA7;
+}
+
 .post-meta,
 .post-meta a {
     color: #888;
@@ -3877,8 +3884,8 @@ li.feature-2 {
         background-attachment: scroll
     }
     #video-container,
-    .focusinfo {
-
+	.loadvideo{
+    display: none
     }
 }
 
@@ -5171,10 +5178,10 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
         display: none
     }
     .site-branding {
-        float: right;
-        height: 50px;
-        line-height: 43px;
-        margin-right: -6px
+          float: right;
+          height: 50px;
+          line-height: 43px;
+          margin: 10px
     }
     .site-title img {
         height: 40px;

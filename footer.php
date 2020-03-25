@@ -23,7 +23,7 @@
 		<div class="site-info" theme-info="Sakura v<?php echo SAKURA_VERSION; ?>">
 			<div class="footertext">
 				<div class="img-preload">
-					<img src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@1.0/loadimg/ball.svg">
+					<img src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/ball.svg">
 					<img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/disqus-preloader.svg">
 				</div>
 				<p style="color: #666666;"><?php echo akina_option('footer_info', ''); ?></p>
