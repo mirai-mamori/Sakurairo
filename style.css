@@ -3487,7 +3487,7 @@ a.page-numbers {
 }
 
 .comment-respond textarea {
-    background-image: url(https://asuhe.jp/wp-content/uploads/2020/03/Comment.png);
+    background-image: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Comment.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right;
@@ -5038,7 +5038,7 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
 }
 
 #pagination .loading {
-    background: url(https://asuhe.jp/wp-content/uploads/2020/03/ball.svg);
+    background: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/ball.svg);
     background-position: center;
     background-repeat: no-repeat;
     color: #555;
