@@ -3,7 +3,7 @@
 
 基于主题 [Sakura](https://github.com/mashirozx/Sakura) 的基础上修改的Sakurairo主题
 
-![Sakurairo](https://asuhe.jp/wp-content/uploads/2020/03/screenshot.jpg)
+![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/screenshot.jpg)
 
 相比原主题，它有这些变化：
 
