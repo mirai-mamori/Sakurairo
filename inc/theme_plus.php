@@ -485,7 +485,7 @@ function header_user_menu(){
     </div>
   <?php
   }else{ 
-    $ava = 'https://asuhe.jp/wp-content/uploads/2020/02/none.png';
+    $ava = 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/none.png';
     $login_url = akina_option('exlogin_url') ? akina_option('exlogin_url') : get_bloginfo('url').'/wp-login.php';
   ?>
   <div class="header-user-avatar">
