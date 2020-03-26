@@ -11,7 +11,7 @@
    		<?php elseif (akina_option('focus_logo')):?>
 	     <div class="header-tou"><a href="<?php bloginfo('url');?>" ><img src="<?php echo akina_option('focus_logo', ''); ?>"></a></div>
 	  	<?php else :?>
-         <div class="header-tou" ><a href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_url'); ?>/images/avatar.jpg"></a></div>	
+         <div class="header-tou" ><a href="<?php bloginfo('url');?>"><img src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/avatar.jpg"></a></div>	
       	<?php endif; ?>
 		<div class="header-info">
             <p><?php echo akina_option('admin_des', 'Hi, Mashiro?'); ?></p>
