@@ -125,6 +125,31 @@ mashiro_global.font_control = new function () {
 }
 mashiro_global.font_control.ini();
 
+function social_share_limit(){
+    var num = 1;
+    
+    while($(".top-social li").length>13){
+        $(".top-social li")[num].remove();
+        num++;
+    }
+    if(document.body.clientWidth<860){
+        num = 1;
+        while($(".top-social li").length>10){
+            $(".top-social li")[num].remove();
+            num++;
+        }
+    }
+    if(document.body.clientWidth<425){
+        num = 1;
+        while($(".top-social li").length>6){
+            $(".top-social li")[num].remove();
+            num++;
+        }
+    }
+}
+social_share_limit();
+
+
 function code_highlight_style() {
     function gen_top_bar(i) {
         var attributes = {
