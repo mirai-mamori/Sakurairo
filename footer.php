@@ -54,7 +54,7 @@
 	<!-- m-nav-center -->
 	<div id="mo-nav">
 		<div class="m-avatar">
-			<?php $ava = akina_option('focus_logo') ? akina_option('focus_logo') : get_template_directory_uri().'/images/avatar.jpg'; ?>
+			<?php $ava = akina_option('focus_logo') ? akina_option('focus_logo') :'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/avatar.jpg'; ?>
 			<img src="<?php echo $ava ?>">
 		</div>
 		<div class="m-search">

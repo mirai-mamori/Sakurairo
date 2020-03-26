@@ -182,7 +182,7 @@ function optionsframework_options()
         'name' => __('Favicon', 'sakura'),
         'desc' => __('It is the small logo on the browser tab, fill in the url', 'sakura'), /*就是浏览器标签栏上那个小 logo，填写url*/
         'id' => 'favicon_link',
-        'std' => '/wp-content/themes/Sakura/images/favicon.ico',
+        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/favicon.ico',
         'type' => 'text');
 
     $options[] = array(
@@ -927,6 +927,20 @@ function optionsframework_options()
         'id' => 'playlist_id',
         'std' => '2288037900',
         'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Bilibili UID', 'sakura'), /*bilibiliUID*/
+        'desc' => __('填写你的UID,例：https://space.bilibili.com/10850340/；只需要填写后面数字', 'sakura'),
+        'id' => 'bilibili_id',
+        'std' => '10850340',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Bilibili Cookie', 'sakura'), /*Bilibili Cookie*/
+        'desc' => __('填写你的Cookie，你需要在一个重来没有登录过的浏览器在个人主页用F12 NetWork获取你的Cookie。如果你对安全性有疑问可以不用填写，但是这样你将无法使用跟踪记录', 'sakura'),
+        'id' => 'bilibili_cookie',
+        'std' => '_uuid=',
+        'type' => 'textarea');
 
     $options[] = array(
         'name' => __('Version Control', 'sakura'), /*版本控制*/
