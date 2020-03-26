@@ -1,6 +1,6 @@
 <?php 
 /**
- Template Name: Login
+ Template Name: 登录页面模版
  */
 
 get_header();

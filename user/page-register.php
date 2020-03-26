@@ -1,6 +1,6 @@
 <?php 
 /**
- Template Name: Register
+ Template Name: 注册页面模版
  */
 
 get_header();

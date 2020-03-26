@@ -1,6 +1,6 @@
 <?php
 /**
-template name: B站追番
+template name: B站追番模版
 */
 get_header(); ?>
 <style type="text/css">

@@ -1,7 +1,7 @@
 <?php 
 
 /**
- Template Name: 时光轴
+ Template Name: 时光轴模版
  */
 
 get_header();

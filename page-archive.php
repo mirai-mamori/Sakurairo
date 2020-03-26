@@ -1,7 +1,7 @@
 <?php 
 
 /**
- Template Name: archive
+ Template Name: 文章模版
  */
 
 get_header(); 
