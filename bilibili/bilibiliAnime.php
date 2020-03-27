@@ -73,7 +73,7 @@ class bilibiliAnime
             curl_close($ch);//关闭连接
             foreach ($info['data']['list'] as $data) {
                 array_push($this->title, $data['title']);
-                array_push($this->image_url, $data['cover']);
+                array_push($this->image_url, str_replace('http', 'https', $data['cover']));
                 array_push($this->total, $data['new_ep']['title']);
                 array_push($this->progress,$this->process($data['progress']));
                 array_push($this->evaluate, $data['evaluate']);
