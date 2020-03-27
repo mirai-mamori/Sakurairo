@@ -3,6 +3,7 @@
 template name: B站追番模版
 */
 get_header(); ?>
+<meta name="referrer" content="never">
 <style type="text/css">
 .theme-dark .yue a:not([data-fancybox=gallery]):not(.post-like):not(.edit-button){border-color:#aaa}
 .yue a:not([data-fancybox=gallery]):not(.post-like):not(.edit-button){border-bottom:1px solid rgba(0,0,0,.2)}
@@ -27,6 +28,7 @@ get_header(); ?>
 .page-header{border-bottom: 0px solid #EE9CA7;}
 .page-header h1 small {font-size: 18px;color: #EEAD9E;}
 .page-header h1 {color: #ee9ca7;font-weight: 800;}
+.site-content {max-width: 2000px;}
 </style>
 
 <div id="container" class="container" >

@@ -904,20 +904,19 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('About', 'sakura'), /*关于*/
-        'desc' => sprintf(__('Theme Sakura v %s  |  <a href="https://2heng.xin/theme-sakura/">Theme document</a>  |  <a href="https://github.com/mashirozx/Sakura/">Source code</a><a href="https://github.com/mashirozx/Sakura/releases/latest"><img src="https://img.shields.io/github/release/mashirozx/Sakura.svg?style=flat-square" alt="GitHub release"></a>', 'sakura'), SAKURA_VERSION), /*Theme Sakura v'.SAKURA_VERSION.'  |  <a href="https://2heng.xin/theme-sakura/">主题说明</a>  |  <a href="https://github.com/mashirozx/Sakura/">源码</a><a href="https://github.com/mashirozx/Sakura/releases/latest"><img src="https://img.shields.io/github/release/mashirozx/Sakura.svg?style=flat-square" alt="GitHub release"></a>*/
+        'desc' => sprintf(__('Sakurairo v %s  |  <a href="https://2heng.xin/theme-sakura/">Theme document</a>  |  <a href="https://github.com/mirai-mamori/Sakurairo">Source code</a><a href="https://github.com/mirai-mamori/Sakurairo/releases/latest"><img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square" alt="GitHub release"></a>', 'sakura'), SAKURA_VERSION), /*Theme Sakura v'.SAKURA_VERSION.'  |  <a href="https://2heng.xin/theme-sakura/">主题说明</a>  |  <a href="https://github.com/mashirozx/Sakura/">源码</a><a href="https://github.com/mashirozx/Sakura/releases/latest"><img src="https://img.shields.io/github/release/mashirozx/Sakura.svg?style=flat-square" alt="GitHub release"></a>*/
         'id' => 'theme_intro',
         'std' => '',
         'type' => 'typography ');
 
     $options[] = array(
         'name' => __('Check for Updates', 'sakura'), /*检查更新*/
-        'desc' => '<a href="https://github.com/mashirozx/Sakura/releases/latest">Download the latest version</a>',
+        'desc' => '<a href="https://github.com/mirai-mamori/Sakurairo/releases/latest">Download the latest version</a>',
         'id' => "release_info",
         'std' => "tag",
         'type' => "images",
         'options' => array(
-            'tag' => 'https://img.shields.io/github/release/mashirozx/Sakura.svg?style=flat-square',
-            'tag2' => 'https://img.shields.io/github/commits-since/mashirozx/Sakura/v' . SAKURA_VERSION . '/dev.svg?style=flat-square',
+            'tag' => 'https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square',
         ),
     );
 
@@ -927,20 +926,6 @@ function optionsframework_options()
         'id' => 'playlist_id',
         'std' => '2288037900',
         'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Bilibili UID', 'sakura'), /*bilibiliUID*/
-        'desc' => __('填写你的UID,例：https://space.bilibili.com/10850340/；只需要填写后面数字', 'sakura'),
-        'id' => 'bilibili_id',
-        'std' => '10850340',
-        'type' => 'text');
-    
-    $options[] = array(
-        'name' => __('Bilibili Cookie', 'sakura'), /*Bilibili Cookie*/
-        'desc' => __('填写你的Cookie，你需要在一个重来没有登录过的浏览器在个人主页用F12 NetWork获取你的Cookie。如果你对安全性有疑问可以不用填写，但是这样你将无法使用跟踪记录', 'sakura'),
-        'id' => 'bilibili_cookie',
-        'std' => '_uuid=',
-        'type' => 'textarea');
 
     $options[] = array(
         'name' => __('Version Control', 'sakura'), /*版本控制*/
@@ -1183,6 +1168,25 @@ function optionsframework_options()
         'id' => 'time_zone_fix',
         'std' => '0',
         'type' => 'text');
+
+    //特色
+    $options[] = array(
+        'name' => __('特色', 'sakura'),
+        'type' => 'heading');
+
+    $options[] = array(
+        'name' => __('Bilibili UID', 'sakura'), /*bilibiliUID*/
+        'desc' => __('填写你的UID,例：https://space.bilibili.com/10850340/；只需要填写后面数字', 'sakura'),
+        'id' => 'bilibili_id',
+        'std' => '10850340',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Bilibili Cookie', 'sakura'), /*Bilibili Cookie*/
+        'desc' => __('填写你的Cookie，你需要在一个重来没有登录过的浏览器在个人主页用F12 NetWork获取你的Cookie。如果你对安全性有疑问可以不用填写，但是这样你将无法使用跟踪记录', 'sakura'),
+        'id' => 'bilibili_cookie',
+        'std' => '_uuid=',
+        'type' => 'textarea');
 
     return $options;
 }
