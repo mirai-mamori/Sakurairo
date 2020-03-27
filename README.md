@@ -37,6 +37,8 @@
 
 暂无
 
+仓库国内镜像https://gitee.com/yan_sichuans_pupils/Sakurairo
+
 主题使用说明见：<https://2heng.xin/theme-sakura/>
 
 主题交流群：860262481
