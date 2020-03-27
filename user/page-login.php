@@ -10,7 +10,7 @@ get_header();
 		<?php if(!is_user_logged_in()){ ?>
 			<div class="ex-login">
 				<div class="ex-login-title">
-					<p><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.2.9/img/Sakura/images/none.png"></p>
+					<p><img src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/none.png"></p>
 				</div>
 				<form action="<?php echo home_url(); ?>/wp-login.php" method="post">  
 					<p><input type="text" name="log" id="log" value="<?php echo $_POST['log']; ?>" size="25" placeholder="Name" required /></p>
