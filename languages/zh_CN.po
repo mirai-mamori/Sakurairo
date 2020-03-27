@@ -255,7 +255,7 @@ msgstr "暂无"
 #: inc/options-framework.php:182 inc/options-framework.php:183
 #: inc/options-framework.php:412
 msgid "Sakura Options"
-msgstr "Sakura主题设置"
+msgstr "桜いろ主题设置"
 
 #: inc/options-framework.php:228
 msgid "Clear"
