@@ -649,7 +649,7 @@ function get_link_items()
 function gravatar_cn($url)
 {
     $gravatar_url = array('0.gravatar.com', '1.gravatar.com', '2.gravatar.com', 'secure.gravatar.com');
-    return str_replace( $gravatar_url, 'gravatar.2heng.xin', $url );
+    return str_replace( $gravatar_url, 'cn.gravatar.com', $url );
 }
 add_filter('get_avatar_url', 'gravatar_cn', 4);
 
@@ -1042,6 +1042,16 @@ function comment_mail_notify($comment_id)
     }
 }
 add_action('comment_post', 'comment_mail_notify');
+
+//字数统计
+function count_words ($text) {
+global $post;
+if ( '' == $text ) {
+$text = $post->post_content;
+if (mb_strlen($output, 'UTF-8') < mb_strlen($text, 'UTF-8')) $output .= '本文共' . mb_strlen(preg_replace('/\s/','',html_entity_decode(strip_tags($post->post_content))),'UTF-8') . '个字';
+return $output;
+}
+}
 
 /*
  * 链接新窗口打开
