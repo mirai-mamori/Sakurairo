@@ -462,7 +462,7 @@ function optionsframework_options()
         'name' => __('Top-feature title', 'sakura'), /*聚焦标题*/
         'desc' => __('Default is Discovery, you can also change it to other, of course you can\'t use it as an advertisement!Not allowed!!', 'sakura'), /*默认为聚焦，你也可以修改为其他，当然不能当广告用！不允许！！*/
         'id' => 'feature_title',
-        'std' => 'Discovery',
+        'std' => '聚焦',
         'class' => 'mini',
         'type' => 'text');
 
@@ -1187,6 +1187,13 @@ function optionsframework_options()
         'id' => 'bilibili_cookie',
         'std' => '_uuid=',
         'type' => 'textarea');
+
+    $options[] = array(
+        'name' => __('樱花飘落特效', 'sakura'), /*樱花飘落特效*/
+        'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
+        'id' => 'sakurajs',
+        'std' => '1',
+        'type' => 'checkbox');
 
     return $options;
 }

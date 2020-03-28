@@ -98,7 +98,7 @@
 <div class="changeSkin-gear no-select" style="bottom: -999px;">
     <div class="keys">
         <span id="open-skinMenu">
-		<i class="iconfont icon-gear inline-block rotating"></i>&nbsp; 切换主题 | テーマを切り替え
+		<i class="iconfont icon-gear inline-block rotating"></i>&nbsp; 切换主题 | しゅだいを切り替え
         </span>
     </div>
 </div>
@@ -157,9 +157,11 @@
         data-fixed="true"
         data-theme="orange">
     </div>
-
-<script type="text/javascript" src="<?php bloginfo('template_url');?>/flower/web.js"></script>
-
 <?php endif; ?>
+
+<?php if (akina_option('sakurajs', '1')): ?>
+<script type="text/javascript" src="<?php bloginfo('template_url');?>/flower/web.js"></script>
+<?php endif; ?>
+
 </body>
 </html>
