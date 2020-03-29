@@ -1811,9 +1811,11 @@ function DEFAULT_FEATURE_IMAGE()
 }
 
 //防止设置置顶文章造成的图片同侧bug
-add_action('pre_get_posts', function ($q) {
-    if ($q->is_home() && $q->is_main_query() && $q->get('paged') > 1) {
-        $q->set('post__not_in', get_option('sticky_posts'));
+add_action( 'pre_get_posts', function( $q ){
+    if ( $q->is_home() && $q->is_main_query() ){
+        $q->set( 'posts_per_page', 10 - sizeof(get_option( 'sticky_posts' )) );
+        if ( $q->get( 'paged' ) > 1 )
+            $q->set( 'post__not_in', get_option( 'sticky_posts' ) );
     }
 
 });

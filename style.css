@@ -5,7 +5,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Hitomi，Mashiro, Spirit, Louie, Fuzzz
 Author URI: https://asuhe.jp/
 Description: 一个基于Sakura主题的增强主题
-Version: 1.7.0
+Version: 1.7.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -1326,7 +1326,7 @@ a:hover {
     padding: 2px;
     border: 1px solid #DADADA;
     position: relative;
-	object-fit: cover;
+    object-fit: cover;
 }
 
 .feature :hover .overlay i {
@@ -5175,14 +5175,21 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
     .m-nav {
         display: block
     }
-    .site-header {
-        display: none
+    .header-user-avatar img {
+    display: none;/*移动端搜索关闭*/
+    }
+    i.iconfont.js-toggle-search.iconsearch {
+    display: none;/*移动端登录关闭*/
+    }
+    .site-header {/*移动端logo后背板高度*/
+    height: 65px;
     }
     .site-branding {
-          float: right;
-          height: 50px;
-          line-height: 43px;
-          margin: 10px
+        float: right;
+        height: 50px;
+        line-height: 43px;
+        margin-right: -30px;/*移动端logo位置*/
+        margin-top: -10px;
     }
     .site-title img {
         height: 40px;
@@ -6351,9 +6358,9 @@ button.botui-actions-buttons-button {
 }
 
 .logolink a {
-    color: #464646;
+    color: #EE9CA7;
     float: left;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 800;
     height: 56px;
     line-height: 56px;
@@ -8412,6 +8419,7 @@ td.hljs-ln-numbers {
     border-radius: 5px;
     padding: 5px 5px;
     height: 40px;
+	color: #EE9CA7;
     width: calc(50% - 10px);
     font-size: 15px;
     font-weight: 400;

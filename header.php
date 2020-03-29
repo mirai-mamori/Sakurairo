@@ -98,11 +98,16 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 						</div>
 						<?php }else{ ?>
 						<span class="site-title">
-							<span class="logolink serif">
-								<a href="<?php bloginfo('url');?>">
-									<span class="site-name"><?php echo akina_option('site_name', ''); ?></span>
-								</a>
-							</span>
+							<span class="logolink moe-mashiro">
+                                <a href="<?php bloginfo('url');?>">
+                                    <ruby>
+                                    <!-- <span class="site-name"><?php echo akina_option('site_name', ''); ?></span> -->
+                                    <span class="sakuraso" style="font-family: '<?php echo akina_option('logo_ztmc', ''); ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;;"><?php echo akina_option('logo_a', ''); ?></span>
+                                    <span class="no" style="font-family: '<?php echo akina_option('logo_ztmc', ''); ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;"><?php echo akina_option('logo_b', ''); ?></span>
+                                    <span class="shironeko" style="font-family: '<?php echo akina_option('logo_ztmc', ''); ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;"><?php echo akina_option('logo_c', ''); ?></span>
+                                    <rp></rp><rt class="chinese-font"><?php echo akina_option('logo_two', ''); ?></rt><rp></rp></ruby>
+                                </a>
+                            </span>
 						</span>	
 						<?php } ?><!-- logo end -->
 					</div><!-- .site-branding -->

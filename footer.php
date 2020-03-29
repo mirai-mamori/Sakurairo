@@ -32,7 +32,7 @@
 			<p style="font-family: 'Ubuntu', sans-serif;">
 					<span style="color: #b9b9b9;">
 						<?php /* 能保留下面两个链接吗？算是我一个小小的心愿吧~ */ ?>
-						Theme <a href="https://2heng.xin/theme-sakura/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a> Modified<a href="https://github.com/mashirozx/Sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);"> by</a><a href="https://asuhe.jp/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);"> Hitomi</a>
+						Theme <a href="https://2heng.xin/theme-sakura/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakurairo</a> <i class="iconfont icon-sakura rotating" style="color: #EE9CA7;display:inline-block"></i> by <a href="https://asuhe.jp/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hitomi</a> 
 					</span>
 				</p>
 			</div>
@@ -46,7 +46,7 @@
 			<?php if (akina_option('akina_logo')){ ?>
 			<div class="site-title"><a href="<?php bloginfo('url');?>" ><img src="<?php echo akina_option('akina_logo'); ?>"></a></div>
 			<?php }else{ ?>
-			<h1 class="site-title"><a href="<?php bloginfo('url');?>" ><?php bloginfo('name');?></a></h1>
+			<h1 class="site-title"></h1>
 			<?php } ?>
 		</div>
 	</div><!-- m-nav-bar -->
@@ -163,12 +163,17 @@
 <script type="text/javascript" src="<?php bloginfo('template_url');?>/flower/web.js"></script>
 <?php endif; ?>
 <?php if (akina_option('bolangcss', '1')): ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url');?>/bolang.css">
+<link rel="stylesheet" href="<?php bloginfo('template_url');?>/addcss/bolang.css">
 <?php endif; ?>
 <?php if (akina_option('live2djs', '1')): ?>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 <?php endif; ?>
-
+<?php if (akina_option('logocss', '1')): ?>
+<link rel="stylesheet" href="<?php bloginfo('template_url');?>/addcss/logo.css">
+<?php endif; ?>
+<!-- logo字体部分 -->
+<link rel="stylesheet" href="<?php echo akina_option('logo_zt', ''); ?>" media="all">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
 
 
 </body>

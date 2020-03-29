@@ -1208,6 +1208,55 @@ function optionsframework_options()
         'id' => 'live2djs',
         'std' => '1',
         'type' => 'checkbox');
-		
+
+    $options[] = array(
+        'name' => __('Logo特效', 'sakura'), /*Logo特效*/
+        'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
+        'id' => 'logocss',
+        'std' => '0',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('Logo文字A', 'sakura'), /*Logo文字*/
+        'desc' => __('填写你的logo文字前部分', 'sakura'),
+        'id' => 'logo_a',
+        'std' => ' ',
+        'type' => 'text');
+        
+    $options[] = array(
+        'name' => __('Logo文字B', 'sakura'), /*Logo文字*/
+        'desc' => __('填写你的logo文字中部分', 'sakura'),
+        'id' => 'logo_b',
+        'std' => ' ',
+        'type' => 'text');
+        
+    $options[] = array(
+        'name' => __('Logo文字C', 'sakura'), /*Logo文字*/
+        'desc' => __('填写你的logo文字后部分', 'sakura'),
+        'id' => 'logo_c',
+        'std' => ' ',
+        'type' => 'text');
+        
+     $options[] = array(
+        'name' => __('Logo二级文字', 'sakura'), /*Logo文字*/
+        'desc' => __('填写你的logo二级文字，不需要可以不填', 'sakura'),
+        'id' => 'logo_two',
+        'std' => '',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Logo字体链接', 'sakura'), /*Logo文字*/
+        'desc' => __('准备好字体后在再这个<a href = "https://www.fontke.com/tool/fontface/">@font-face生成器</a>里来转换为方便网页使用的格式，在这个能生成一堆文件，文件都有用，放在一个可以访问的服务器、oos、cdn等上，这里只需要填写那个css格式的样式表文件链接<a href = "https://blog.ukenn.top/sakura6/#toc-head-4">详细教程</a>', 'sakura'),
+        'id' => 'logo_zt',
+        'std' => 'https://cdn.jsdelivr.net/gh/acai66/mydl/fonts/wenyihei/wenyihei-subfont.css',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Logo字体名称', 'sakura'), /*Logo文字*/
+        'desc' => __('填写你的logo字体名称，直接写名字不用加格式后缀', 'sakura'),
+        'id' => 'logo_ztmc',
+        'std' => 'wenyihei-subfont',
+        'type' => 'text');
+        
     return $options;
 }
