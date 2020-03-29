@@ -3,6 +3,8 @@
 //https://api.mashiro.top/cover
 
 ?>
+<style>.header-info::before{display: none !important;opacity: 0 !important;}</style>
+<div id="banner_wave_1"></div><div id="banner_wave_2"></div>
 <figure id="centerbg" class="centerbg">
 <?php if ( !akina_option('focus_infos') ){ ?>
 	<div class="focusinfo">
