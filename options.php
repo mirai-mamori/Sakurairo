@@ -1194,6 +1194,20 @@ function optionsframework_options()
         'id' => 'sakurajs',
         'std' => '1',
         'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('首页波浪特效', 'sakura'), /*首页波浪特效*/
+        'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
+        'id' => 'bolangcss',
+        'std' => '1',
+        'type' => 'checkbox');
 
+    $options[] = array(
+        'name' => __('看板娘', 'sakura'), /*看板娘*/
+        'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
+        'id' => 'live2djs',
+        'std' => '1',
+        'type' => 'checkbox');
+		
     return $options;
 }

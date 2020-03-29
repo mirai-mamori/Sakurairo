@@ -155,13 +155,21 @@
         data-server="netease"
         data-type="playlist"
         data-fixed="true"
-        data-theme="orange">
+        data-theme="#EE9CA7">
     </div>
 <?php endif; ?>
 
 <?php if (akina_option('sakurajs', '1')): ?>
 <script type="text/javascript" src="<?php bloginfo('template_url');?>/flower/web.js"></script>
 <?php endif; ?>
+<?php if (akina_option('bolangcss', '1')): ?>
+<link rel="stylesheet" href="<?php bloginfo('template_url');?>/bolang.css">
+<?php endif; ?>
+<?php if (akina_option('live2djs', '1')): ?>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<?php endif; ?>
+
+
 
 </body>
 </html>
