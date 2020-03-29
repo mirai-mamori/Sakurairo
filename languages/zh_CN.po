@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakura\n"
-"POT-Creation-Date: 2020-02-13 23:59+0800\n"
-"PO-Revision-Date: 2020-02-13 23:59+0800\n"
+"POT-Creation-Date: 2020-03-29 00:38+0800\n"
+"PO-Revision-Date: 2020-03-29 00:38+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -142,36 +142,36 @@ msgstr "小工具"
 msgid "Nav Menus"
 msgstr "导航菜单"
 
-#: functions.php:420 inc/theme_plus.php:186 layouts/authorprofile.php:11
+#: functions.php:421 inc/theme_plus.php:186 layouts/authorprofile.php:11
 #: options.php:121
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:420
+#: functions.php:421
 msgid "Blogger"
 msgstr "博主"
 
-#: functions.php:424
+#: functions.php:425
 msgid "Location"
 msgstr "来自"
 
-#: functions.php:428
+#: functions.php:429
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:430
+#: functions.php:431
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:432
+#: functions.php:433
 msgid "No"
 msgstr "否"
 
-#: functions.php:435
+#: functions.php:436
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:524
+#: functions.php:525
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
@@ -179,39 +179,39 @@ msgstr ""
 "请安装插件 <a href=\"https://wordpress.org/plugins/wp-statistics/\" target="
 "\"_blank\">WP-Statistics</a>"
 
-#: functions.php:574
+#: functions.php:575
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:1329
+#: functions.php:1330
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1350 options.php:834
+#: functions.php:1351 options.php:834
 msgid " "
 msgstr ""
 
-#: functions.php:1354
+#: functions.php:1355
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1377 functions.php:1380 inc/theme_plus.php:478
+#: functions.php:1378 functions.php:1381 inc/theme_plus.php:478
 msgid "Dashboard"
 msgstr "管理中心"
 
-#: functions.php:1606
+#: functions.php:1607
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1711
+#: functions.php:1712
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1781
+#: functions.php:1784
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1893
+#: functions.php:1896
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -227,7 +227,7 @@ msgstr ""
 msgid "page %s "
 msgstr "第 %s 页 "
 
-#: inc/api.php:301 inc/theme_plus.php:727
+#: inc/api.php:304 inc/theme_plus.php:727
 msgid "The comment is private"
 msgstr "该评论为私密评论"
 
@@ -255,7 +255,7 @@ msgstr "暂无"
 #: inc/options-framework.php:182 inc/options-framework.php:183
 #: inc/options-framework.php:412
 msgid "Sakura Options"
-msgstr "桜いろ主题设置"
+msgstr "Sakura主题设置"
 
 #: inc/options-framework.php:228
 msgid "Clear"

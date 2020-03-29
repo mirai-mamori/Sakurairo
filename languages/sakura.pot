@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakura\n"
-"POT-Creation-Date: 2020-02-13 23:59+0800\n"
+"POT-Creation-Date: 2020-03-29 00:38+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -142,73 +142,73 @@ msgstr ""
 msgid "Nav Menus"
 msgstr ""
 
-#: functions.php:420 inc/theme_plus.php:186 layouts/authorprofile.php:11 options.php:121
+#: functions.php:421 inc/theme_plus.php:186 layouts/authorprofile.php:11 options.php:121
 msgid "Author"
 msgstr ""
 
-#: functions.php:420
+#: functions.php:421
 msgid "Blogger"
 msgstr ""
 
-#: functions.php:424
+#: functions.php:425
 msgid "Location"
 msgstr ""
 
-#: functions.php:428
+#: functions.php:429
 msgid "Private"
 msgstr ""
 
-#: functions.php:430
+#: functions.php:431
 msgid "Yes"
 msgstr ""
 
-#: functions.php:432
+#: functions.php:433
 msgid "No"
 msgstr ""
 
-#: functions.php:435
+#: functions.php:436
 msgid "Edit"
 msgstr ""
 
-#: functions.php:524
+#: functions.php:525
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/\" target=\"_blank"
 "\">WP-Statistics</a>"
 msgstr ""
 
-#: functions.php:574
+#: functions.php:575
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:1329
+#: functions.php:1330
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1350 options.php:834
+#: functions.php:1351 options.php:834
 msgid " "
 msgstr ""
 
-#: functions.php:1354
+#: functions.php:1355
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1377 functions.php:1380 inc/theme_plus.php:478
+#: functions.php:1378 functions.php:1381 inc/theme_plus.php:478
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1606
+#: functions.php:1607
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1711
+#: functions.php:1712
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1781
+#: functions.php:1784
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:1893
+#: functions.php:1896
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-permalink.php\"> "
 "permalink </a> as plain. To do this, you may need to configure <a href=\"https://www.wpdaxue."
@@ -220,7 +220,7 @@ msgstr ""
 msgid "page %s "
 msgstr ""
 
-#: inc/api.php:301 inc/theme_plus.php:727
+#: inc/api.php:304 inc/theme_plus.php:727
 msgid "The comment is private"
 msgstr ""
 
