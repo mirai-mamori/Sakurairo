@@ -5,7 +5,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Hitomi，Mashiro, Spirit, Louie, Fuzzz
 Author URI: https://asuhe.jp/
 Description: 一个基于Sakura主题的增强主题
-Version: 1.7.1
+Version: 1.7.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -5195,7 +5195,9 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
         height: 40px;
         line-height: 40px;
         margin: 0;
-        vertical-align: middle
+        vertical-align: middle;
+		margin-right: 15px;
+        margin-top: 20px;
     }
     .site-title {
         font-size: 20px;

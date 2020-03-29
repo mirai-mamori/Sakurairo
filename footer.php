@@ -44,7 +44,7 @@
 		</div>
 		<div class="site-branding">
 			<?php if (akina_option('akina_logo')){ ?>
-			<div class="site-title"><a href="<?php bloginfo('url');?>" ><img src="<?php echo akina_option('akina_logo'); ?>"></a></div>
+			<div class="site-title">
 			<?php }else{ ?>
 			<h1 class="site-title"></h1>
 			<?php } ?>
