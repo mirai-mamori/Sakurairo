@@ -1175,20 +1175,6 @@ function optionsframework_options()
         'type' => 'heading');
 
     $options[] = array(
-        'name' => __('Bilibili UID', 'sakura'), /*bilibiliUID*/
-        'desc' => __('填写你的UID,例：https://space.bilibili.com/10850340/；只需要填写后面数字', 'sakura'),
-        'id' => 'bilibili_id',
-        'std' => '10850340',
-        'type' => 'text');
-    
-    $options[] = array(
-        'name' => __('Bilibili Cookie', 'sakura'), /*Bilibili Cookie*/
-        'desc' => __('填写你的Cookie，你需要在一个重来没有登录过的浏览器在个人主页用F12 NetWork获取你的Cookie。如果你对安全性有疑问可以不用填写，但是这样你将无法使用跟踪记录', 'sakura'),
-        'id' => 'bilibili_cookie',
-        'std' => '_uuid=',
-        'type' => 'textarea');
-
-    $options[] = array(
         'name' => __('樱花飘落特效', 'sakura'), /*樱花飘落特效*/
         'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
         'id' => 'sakurajs',
