@@ -31,7 +31,7 @@ LOGO特效样式参考原主题作者白猫，由https://hyacm.com/acai/ui/143/s
 
 其他：
 
-仓库国内镜像https://gitee.com/yan_sichuans_pupils/Sakurairo
+仓库国内镜像：https://gitee.com/yan_sichuans_pupils/Sakurairo
 
 主题使用说明见：<https://2heng.xin/theme-sakura/>
 
