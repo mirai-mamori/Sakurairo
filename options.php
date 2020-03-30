@@ -470,7 +470,7 @@ function optionsframework_options()
         'name' => __('Top-feature 1 image', 'sakura'), /*聚焦图一*/
         'desc' => __('size 257px*160px', 'sakura'), /*尺寸257px*160px*/
         'id' => 'feature1_img',
-        'std' => $imagepath . '/temp.png',
+        'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/temp.png",
         'type' => 'upload');
 
     $options[] = array(
@@ -498,7 +498,7 @@ function optionsframework_options()
         'name' => __('Top-feature 2 image', 'sakura'), /*聚焦图二*/
         'desc' => __('size 257px*160px', 'sakura'), /*尺寸257px*160px*/
         'id' => 'feature2_img',
-        'std' => $imagepath . '/temp.png',
+        'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/temp.png",
         'type' => 'upload');
 
     $options[] = array(
@@ -526,7 +526,7 @@ function optionsframework_options()
         'name' => __('Top-feature 3 image', 'sakura'), /*聚焦图三*/
         'desc' => __('size 257px*160px', 'sakura'), /*尺寸257px*160px*/
         'id' => 'feature3_img',
-        'std' => $imagepath . '/temp.png',
+        'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/temp.png",
         'type' => 'upload');
 
     $options[] = array(
@@ -826,7 +826,7 @@ function optionsframework_options()
         'name' => __('Login interface logo', 'sakura'), /*后台登陆界面logo*/
         'desc' => __('Used for login interface display', 'sakura'), /*用于登录界面显示*/
         'id' => 'logo_img',
-        'std' => $imagepath . 'mashiro-logo-s.png',
+        'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/mashiro-logo-s.png",
         'type' => 'upload');
 
     $options[] = array(

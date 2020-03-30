@@ -160,16 +160,16 @@
 <?php endif; ?>
 
 <?php if (akina_option('sakurajs', '1')): ?>
-<script type="text/javascript" src="<?php bloginfo('template_url');?>/flower/web.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/js/hana.js"></script>
 <?php endif; ?>
 <?php if (akina_option('bolangcss', '1')): ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url');?>/addcss/bolang.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/css/bolang.css">
 <?php endif; ?>
 <?php if (akina_option('live2djs', '1')): ?>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 <?php endif; ?>
 <?php if (akina_option('logocss', '1')): ?>
-<link rel="stylesheet" href="<?php bloginfo('template_url');?>/addcss/logo.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/css/logo.css">
 <?php endif; ?>
 <!-- logo字体部分 -->
 <link rel="stylesheet" href="<?php echo akina_option('logo_zt', ''); ?>" media="all">
