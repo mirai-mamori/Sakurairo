@@ -7,23 +7,7 @@
 
 ![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/screenshot.jpg)
 
-相比原主题，它有这些变化：
-
--全局主题色改成粉色（#EE9CA7）。
-
--移动端优化并全屏，且显示合理数量社交卡片。（感谢原主题作者Spirit的修改）
-
--添加花瓣飘落JS
-
--友链页界面优化
-
--邮件模版修改
-
--图标全部定制
-
--自带BiliBili追番页面（感谢梨花镇的阿肾提供的页面及维安雨轩的帮助）
-
--最新IP库
+![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/star.png)
 
 相比原主题，它默认开启：
 
@@ -36,6 +20,16 @@
 已知Feature（Bug）：
 
 暂无
+
+版权说明：
+
+樱花飘落特效、波浪特效、说说模版等均来自互联网，如有版权问题，烦请发邮件给我，我会及时下线功能。
+
+看板娘项目地址：https://github.com/stevenjoezhang/live2d-widget
+
+LOGO特效样式参考原主题作者白猫，由https://hyacm.com/acai/ui/143/sakura-logo/ 提供方案
+
+其他：
 
 仓库国内镜像https://gitee.com/yan_sichuans_pupils/Sakurairo
 
