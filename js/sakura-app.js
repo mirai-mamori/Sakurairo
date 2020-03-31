@@ -417,9 +417,9 @@ $(document).ready(function () {
             $(".changeSkin-gear").css("visibility", "visible");
         }, 300);
     }
-    $(".changeSkin-gear").click(function () {
+    $("#changskin").click(function () {
         $(".skin-menu").toggleClass('show');
-    })
+    }) 
     $(".skin-menu #close-skinMenu").click(function () {
         closeSkinMenu();
     });
@@ -1785,42 +1785,23 @@ var home = location.href,
         },
         GT: function () {
             var cwidth = document.body.clientWidth,
-                cheight = window.innerHeight,
-                pc_to_top = document.querySelector(".cd-top"),
                 mb_to_top = document.querySelector("#moblieGoTop"),
-                changeskin = document.querySelector(".changeSkin-gear");
+                changeskin = document.querySelector("#changskin");
 
             $(window).scroll(function() {
-                if (cwidth <= 860) {
                     if ($(this).scrollTop() > 20) {
                         mb_to_top.style.transform = "scale(1)";
                     } else {
                         mb_to_top.style.transform = "scale(0)";
                     }
-                } else {
+                if (cwidth > 860) {
                     if ($(this).scrollTop() > 100) {
-                        pc_to_top.classList.add("cd-is-visible");
-                        changeskin.style.bottom = "0";
-                        if (cheight > 950) {
-                            pc_to_top.style.top = "0";
-                        } else {
-                            pc_to_top.style.top = cheight - 950 + "px";
-                        }
+                        changeskin.style.transform = "scale(1)";
                     } else {
-                        changeskin.style.bottom = "-999px";
-                        pc_to_top.style.top = "-999px";
-                        pc_to_top.classList.remove("cd-fade-out", "cd-is-visible");
-                    }
-                    if ($(this).scrollTop() > 1200) {
-                        pc_to_top.classList.add("cd-fade-out");
+                        changeskin.style.transform = "scale(0)";
                     }
                 }
             });
-
-            //smooth scroll to top
-            pc_to_top.onclick = function() {
-                topFunction();
-            }
         }
     }
 $(function () {
