@@ -2,10 +2,10 @@
 /*
 Theme Name: Sakurairo
 Theme URI: https://github.com/mirai-mamori/Sakurairo
-Author: Hitomi,Mashiro,Spirit,Louie,Fuzzz
+Author: Hitomi , Ukenn , Spirit , Mashiro , Louie , Fuzzz
 Author URI: https://asuhe.jp/
-Description: 一个基于Sakura主题的增强主题
-Version: 1.7.4
+Description: 一个基于Sakura主题的增强主题（メロディー　Update）
+Version: 1.8.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -833,6 +833,49 @@ a:hover {
     color: #fff
 }
 
+#moblieGoTop{
+    position: fixed;
+    bottom: 70px;
+    right: 10px;
+    z-index: 99;
+    border: 0;
+	font-size:16px;
+    outline: 0;
+    background-color: #fff;
+    color: #EE9CA7;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
+    transform: scale(0);
+    transition:transform .3s
+}
+
+#changskin{
+    position: fixed;
+    bottom: 70px;
+    right: 10px;
+    z-index: 99;
+    border: 0;
+	font-size:16px;
+    outline: 0;
+    background-color: #fff;
+    color: #EE9CA7;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
+    transform: scale(0);
+    transition:transform .8s
+}
+
+#moblieGoTop:hover,#changskin:hover{
+    background-color: #fff;
+    opacity: .8
+}
+
 @media (max-width:860px) {
     .pattern-center header.single-header {
         padding: 0 4%
@@ -844,6 +887,9 @@ a:hover {
     .pattern-center h1.entry-title,
     .single-center .single-header h1.entry-title {
         font-size: 26px
+    }
+    #changskin {
+        display: none;
     }
 }
 
@@ -1845,79 +1891,6 @@ h1.page-title {
 
 h1.page-title.mb- {
     margin-top: 100px
-}
-
-.cd-top {
-    position: fixed;
-    right: 25px;
-    top: -900px;
-    z-index: 99;
-    width: 70px;
-    height: 900px;
-    background: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/scroll.png) no-repeat center;
-    background-size: contain;
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-    cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/No_Disponible.cur), auto;
-    opacity: 1
-}
-
-.cd-top.cd-is-visible {
-    opacity: 1;
-    top: -326px
-}
-
-.cd-top.cd-fade-out {
-    opacity: 1
-}
-
-.cd-top:hover {
-    opacity: 1
-}
-
-.cd-top span {
-    display: none;
-    color: #000;
-    position: absolute;
-    bottom: 0;
-    height: 20px;
-    width: 50px;
-    text-align: center
-}
-
-@media screen and (max-width:860px) {
-    .cd-top {
-        display: none;
-        height: 60px;
-        width: 50px
-    }
-    .cd-top span {
-        height: 10px;
-        width: 50px
-    }
-}
-
-#moblieGoTop {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    z-index: 99;
-    border: 0;
-    outline: 0;
-    background-color: #fff;
-    color: #EE9CA7;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 10px;
-    border-radius: 12px;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
-    transform: scale(0);
-    transition:transform .3s
-}
-
-#moblieGoTop:hover {
-    background-color: #fff;
-    opacity: .8
 }
 
 .post-footer {
@@ -3834,7 +3807,8 @@ li.feature-2 {
 }
 
 .headertop.filter-undertint::before {
-    background-color: rgba(255, 255, 255, .3)
+    background-color: rgba(255, 255, 255, .3);
+    z-index:1;
 }
 
 .headertop.filter-dim::before {
@@ -3874,9 +3848,13 @@ li.feature-2 {
     padding: 0;
     background-position: top center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-size: cover;
     z-index: -1
+}
+
+@supports (-webkit-touch-callout: none) {
+    #centerbg: { background-attachment: scroll !important; }
 }
 
 @media (max-width:860px) {
@@ -3884,6 +3862,7 @@ li.feature-2 {
         height: 300px;
         background-attachment: scroll
     }
+
     #video-container,
 	.loadvideo{
     display: none
@@ -6859,16 +6838,20 @@ input[type=radio]:checked:before {
 
 .changeSkin-gear {
     position: fixed;
-    bottom: 0;
-    left: auto;
-    right: 5px;
-    width: auto;
-    height: auto;
+    bottom: 50px;
+    right: 10px;
     z-index: 99;
-    white-space: nowrap;
-    padding: 10px 10px;
+    border: 0;
+    outline: 0;
+    background-color: #fff;
+    color: #EE9CA7;
     cursor: pointer;
-    border-radius: 10px 10px 0 0
+    padding: 15px;
+    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
+    transform: scale(0);
+    transition:transform .3s
 }
 
 .changeSkin .keys {
@@ -8352,34 +8335,36 @@ td.hljs-ln-numbers {
 
 .skin-menu {
     position: fixed;
-    bottom: 50px;
     left: auto;
-    right: 10px;
+    bottom: 10px;
+    right: -50px;
     height: auto;
     width: 220px;
     border-radius: 5px;
     background-color: #fff;
-    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
+    box-shadow: none;
     z-index: 99;
     font-family: Ubuntu, sans-serif;
     transform: scaleX(0);
-    transiton-property: transform, background;
-    transition-duration: .3s, .3s
+    transition: .5s;
 }
 
+
 .skin-menu.show {
-    transform: scaleX(1)
+    transform: scaleX(1);
+    right: 70px;
+    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .1);
 }
 
 .skin-menu::after {
     content: "";
     position: absolute;
-    bottom: -20px;
-    left: 50%;
+    bottom: 15px;
+    left: 103%;
     margin-left: -10px;
     border-width: 10px;
     border-style: solid;
-    border-color: #fff transparent transparent transparent
+    border-color: transparent transparent transparent #fff;
 }
 
 .skin-menu .row-container {
@@ -8401,7 +8386,7 @@ td.hljs-ln-numbers {
     margin: 6px;
     line-height: 36px;
     width: 36px;
-    background-color: #f5f5f5;
+    background-color: #FFEEEB;
     border-radius: 50%;
     cursor: pointer
 }
@@ -8430,7 +8415,7 @@ td.hljs-ln-numbers {
     vertical-align: middle;
     margin: 0 4px;
     box-shadow: none;
-    background-color: #f5f5f5;
+    background-color: #FFEEEB;
     cursor: pointer
 }
 
