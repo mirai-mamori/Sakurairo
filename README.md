@@ -9,6 +9,8 @@
 
 ![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/star.png)
 
+![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/about.png)
+
 相比原主题，它默认开启：
 
 -调用本地CSS
