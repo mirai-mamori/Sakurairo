@@ -7,10 +7,11 @@
  * @package Sakura
  */
 
-require_once(TEMPLATEPATH . '/theme-updates/theme-update-checker.php'); 
-$wpdaxue_update_checker = new ThemeUpdateChecker(
-	'Sakurairo', //主题名字
-	'https://mamori.cn/theme/info.json'  //info.json 的访问地址
+require 'update-checker/update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/mirai-mamori/Sakurairo',
+	__FILE__,
+	'unique-plugin-or-theme-slug'
 );
 
 define('SAKURA_VERSION', wp_get_theme()->get('Version'));

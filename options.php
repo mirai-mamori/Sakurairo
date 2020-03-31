@@ -1194,6 +1194,21 @@ function optionsframework_options()
         'id' => 'live2djs',
         'std' => '1',
         'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('下拉箭头', 'sakura'), /*下拉箭头*/
+        'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
+        'id' => 'godown',
+        'std' => '1',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('下拉箭头颜色', 'sakura'), /*下拉箭头颜色*/
+        'id' => 'godown_skin',
+        'std' => "#FFEEEB",
+        'desc' => __('自定义下拉箭头颜色', 'sakura'), /*自定义下拉箭头颜色*/
+        'type' => "color",
+    );  
 
     $options[] = array(
         'name' => __('Logo特效', 'sakura'), /*Logo特效*/
@@ -1243,6 +1258,6 @@ function optionsframework_options()
         'id' => 'logo_ztmc',
         'std' => 'wenyihei-subfont',
         'type' => 'text');
-        
+    
     return $options;
 }
