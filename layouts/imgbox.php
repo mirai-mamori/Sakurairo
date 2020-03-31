@@ -139,3 +139,8 @@
 </figure>
 <?php
 echo bgvideo(); //BGVideo 
+?>
+<!-- 首页下拉箭头 -->
+<?php if (akina_option('godown', '1')): ?>
+<div class="headertop-down faa-float animated" onclick="headertop_down()"><span><i class="fa fa-chevron-down" aria-hidden="true" style="color:<?php echo akina_option('godown_skin'); ?>"></i></span></div>
+<?php endif; ?>
