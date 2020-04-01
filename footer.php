@@ -18,7 +18,7 @@
 			comments_template('', true); 
 		}
 	?>
-	</div><!-- #page Pjax container-->
+</div><!-- #page Pjax container-->
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info" theme-info="Sakura v<?php echo SAKURA_VERSION; ?>">
 			<div class="footertext">
@@ -26,13 +26,16 @@
 					<img src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/ball.svg">
 					<img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/disqus-preloader.svg">
 				</div>
+				<i class="iconfont icon-sakura rotating" style="color: #EE9CA7;display:inline-block;font-size:26px"></i></p>
 				<p style="color: #666666;"><?php echo akina_option('footer_info', ''); ?></p>
 			</div>
 			<div class="footer-device">
 			<p style="font-family: 'Ubuntu', sans-serif;">
 					<span style="color: #b9b9b9;">
 						<?php /* 能保留下面两个链接吗？算是我一个小小的心愿吧~ */ ?>
-						Theme <a href="https://2heng.xin/theme-sakura/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakurairo</a> <i class="iconfont icon-sakura rotating" style="color: #EE9CA7;display:inline-block"></i> by <a href="https://asuhe.jp/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hitomi</a> 
+						<script type="text/javascript" src="https://api.nmomi.com/api/yiyan/index.php/?format=js&charset=utf-8"></script>
+                        <div><script>dutang()</script></div></p>
+						Theme <a href="https://2heng.xin/theme-sakura/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakurairo</a>  by <a href="https://asuhe.jp/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hitomi</a> 
 					</span>
 				</p>
 			</div>
