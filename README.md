@@ -29,6 +29,8 @@
 
 看板娘项目地址：https://github.com/stevenjoezhang/live2d-widget
 
+检测并更新功能：https://github.com/YahnisElsts/plugin-update-checker
+
 LOGO特效样式参考原主题作者白猫，由https://hyacm.com/acai/ui/143/sakura-logo/ 提供方案
 
 其他：
