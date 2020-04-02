@@ -33,7 +33,9 @@
 			<p style="font-family: 'Ubuntu', sans-serif;">
 					<span style="color: #b9b9b9;">
 						<?php /* 能保留下面两个链接吗？算是我一个小小的心愿吧~ */ ?>
+						<?php if (akina_option('oneword', '1')): ?>
 						<script type="text/javascript" src="https://api.nmomi.com/api/yiyan/index.php/?format=js&charset=utf-8"></script>
+                        <?php endif; ?>
                         <div><script>dutang()</script></div></p>
 						Theme <a href="https://2heng.xin/theme-sakura/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakurairo</a>  by <a href="https://asuhe.jp/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hitomi</a> 
 					</span>
@@ -68,7 +70,7 @@
 		<?php wp_nav_menu( array( 'depth' => 2, 'theme_location' => 'primary', 'container' => false ) ); ?>
 	</div><!-- m-nav-center end -->
 	<a class="cd-top faa-float animated "></a>
-	<button onclick="topFunction()" id="moblieGoTop" title="Go to top"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+	<button id="moblieGoTop" title="Go to top"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
     <button id="changskin" style="bottom: 15px;"><i class="iconfont icon-gear inline-block rotating"></i></button>
 	<!-- search start -->
 	<form class="js-search search-form search-form--modal" method="get" action="<?php echo home_url(); ?>" role="search">

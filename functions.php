@@ -250,6 +250,7 @@ function sakura_scripts()
     // }
     //拦截移动端
     version_compare($GLOBALS['wp_version'], '5.1', '>=') ? $reply_link_version = 'new' : $reply_link_version = 'old';
+    $gravatar_url = akina_option('gravatar_proxy') ?: 'secure.gravatar.com/avatar';
     wp_localize_script('app', 'Poi', array(
         'pjax' => akina_option('poi_pjax'),
         'movies' => $movies,
@@ -261,7 +262,8 @@ function sakura_scripts()
         'reply_link_version' => $reply_link_version,
         'api' => esc_url_raw(rest_url()),
         'nonce' => wp_create_nonce('wp_rest'),
-		'google_analytics_id' => akina_option('google_analytics_id', '')
+        'google_analytics_id' => akina_option('google_analytics_id', ''),
+        'gravatar_url' => $gravatar_url
     ));
 }
 add_action('wp_enqueue_scripts', 'sakura_scripts');
@@ -656,9 +658,11 @@ function get_link_items()
 function gravatar_cn($url)
 {
     $gravatar_url = array('0.gravatar.com', '1.gravatar.com', '2.gravatar.com', 'secure.gravatar.com');
-    return str_replace( $gravatar_url, 'cn.gravatar.com', $url );
+    return str_replace( $gravatar_url, akina_option('gravatar_proxy'), $url );
 }
-add_filter('get_avatar_url', 'gravatar_cn', 4);
+if(akina_option('gravatar_proxy')){
+    add_filter('get_avatar_url', 'gravatar_cn', 4);
+}
 
 /*
  * 自定义默认头像

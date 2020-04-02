@@ -8657,7 +8657,7 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
 .headertop-down {
     position: absolute;
     bottom: 50px;
-    left: 49.2%;
+    left: calc(50% - 14px);
     cursor: pointer;
     z-index: 5;
 }

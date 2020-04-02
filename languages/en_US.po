@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakura\n"
-"POT-Creation-Date: 2020-03-29 00:39+0800\n"
-"PO-Revision-Date: 2020-03-29 00:39+0800\n"
+"POT-Creation-Date: 2020-04-01 22:52+0800\n"
+"PO-Revision-Date: 2020-04-01 22:52+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -142,74 +142,74 @@ msgstr ""
 msgid "Nav Menus"
 msgstr ""
 
-#: functions.php:421 inc/theme_plus.php:186 layouts/authorprofile.php:11
+#: functions.php:423 inc/theme_plus.php:186 layouts/authorprofile.php:11
 #: options.php:121
 msgid "Author"
 msgstr ""
 
-#: functions.php:421
+#: functions.php:423
 msgid "Blogger"
 msgstr ""
 
-#: functions.php:425
+#: functions.php:427
 msgid "Location"
 msgstr ""
 
-#: functions.php:429
+#: functions.php:431
 msgid "Private"
 msgstr ""
 
-#: functions.php:431
+#: functions.php:433
 msgid "Yes"
 msgstr ""
 
-#: functions.php:433
+#: functions.php:435
 msgid "No"
 msgstr ""
 
-#: functions.php:436
+#: functions.php:438
 msgid "Edit"
 msgstr ""
 
-#: functions.php:525
+#: functions.php:527
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
 msgstr ""
 
-#: functions.php:575
+#: functions.php:577
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:1330
+#: functions.php:1334
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1351 options.php:834
+#: functions.php:1355 options.php:834
 msgid " "
 msgstr ""
 
-#: functions.php:1355
+#: functions.php:1359
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1378 functions.php:1381 inc/theme_plus.php:478
+#: functions.php:1382 functions.php:1385 inc/theme_plus.php:478
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1607
+#: functions.php:1611
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1712
+#: functions.php:1716
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1784
+#: functions.php:1788
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:1896
+#: functions.php:1900
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -923,7 +923,7 @@ msgstr ""
 msgid "Whether to turn on the top-feature"
 msgstr ""
 
-#: options.php:446 options.php:1085
+#: options.php:446 options.php:1092
 msgid "Default on"
 msgstr ""
 
@@ -1475,72 +1475,82 @@ msgid "23k Views (chinese)"
 msgstr ""
 
 #: options.php:1010
-msgid "Comment image upload API"
+msgid "Gravatar avatar proxy"
 msgstr ""
 
-#: options.php:1015
-msgid "Imgur (https://imgur.com)"
-msgstr ""
-
-#: options.php:1016
-msgid "SM.MS (https://sm.ms)"
+#: options.php:1011
+msgid ""
+"A front-ed proxy for Gravatar, eg. gravatar.2heng.xin/avatar . Leave it "
+"blank if you do not need."
 msgstr ""
 
 #: options.php:1017
-msgid "Chevereto (https://chevereto.com)"
-msgstr ""
-
-#: options.php:1021
-msgid "Imgur Client ID"
+msgid "Comment image upload API"
 msgstr ""
 
 #: options.php:1022
+msgid "Imgur (https://imgur.com)"
+msgstr ""
+
+#: options.php:1023
+msgid "SM.MS (https://sm.ms)"
+msgstr ""
+
+#: options.php:1024
+msgid "Chevereto (https://chevereto.com)"
+msgstr ""
+
+#: options.php:1028
+msgid "Imgur Client ID"
+msgstr ""
+
+#: options.php:1029
 msgid ""
 "Register your application <a href=\"https://api.imgur.com/oauth2/addclient"
 "\">here</a>, note we only need the Client ID here."
 msgstr ""
 
-#: options.php:1028
+#: options.php:1035
 msgid "SM.MS Secret Token"
 msgstr ""
 
-#: options.php:1029
+#: options.php:1036
 msgid ""
 "Register your application <a href=\"https://sm.ms/home/apitoken\">here</a>."
 msgstr ""
 
-#: options.php:1035
+#: options.php:1042
 msgid "Chevereto API v1 key"
 msgstr ""
 
-#: options.php:1036
+#: options.php:1043
 msgid "Get your API key here: "
 msgstr ""
 
-#: options.php:1042
+#: options.php:1049
 msgid "Chevereto URL"
 msgstr ""
 
-#: options.php:1043
+#: options.php:1050
 msgid ""
 "Your Chevereto homepage url, no slash in the end, eg. https://your.cherverto."
 "com"
 msgstr ""
 
-#: options.php:1049
+#: options.php:1056
 msgid "Comment images proxy"
 msgstr ""
 
-#: options.php:1050
+#: options.php:1057
 msgid ""
 "A front-ed proxy for the uploaded images. Leave it blank if you do not need."
 msgstr ""
 
-#: options.php:1056
+#: options.php:1063
 msgid "Imgur upload proxy"
 msgstr ""
 
-#: options.php:1057
+#: options.php:1064
 msgid ""
 "A back-ed proxy to upload images. You may set a self hosted proxy with "
 "Nginx, following my <a href=\"https://2heng.xin/2018/06/06/javascript-upload-"
@@ -1550,151 +1560,151 @@ msgid ""
 "a>】"
 msgstr ""
 
-#: options.php:1063
+#: options.php:1070
 msgid "Enable live search"
 msgstr ""
 
-#: options.php:1064
+#: options.php:1071
 msgid ""
 "Real-time search in the foreground, call the Rest API to update the cache "
-"every hour, you can manually set the cache time in functions.php"
+"every hour, you can manually set the cache time in api.php"
 msgstr ""
 
-#: options.php:1070
+#: options.php:1077
 msgid "Include comments in live search"
 msgstr ""
 
-#: options.php:1071
+#: options.php:1078
 msgid ""
 "Search for comments in real-time search (not recommended if there are too "
 "many comments on the site)"
 msgstr ""
 
-#: options.php:1077
+#: options.php:1084
 msgid "Enable baguetteBox"
 msgstr ""
 
-#: options.php:1078
+#: options.php:1085
 msgid ""
 "Default off，<a href=\"https://github.com/mashirozx/Sakura/wiki/Fancybox"
 "\">please read wiki</a>"
 msgstr ""
 
-#: options.php:1084
+#: options.php:1091
 msgid "Enable lazyload in posts"
 msgstr ""
 
-#: options.php:1091
+#: options.php:1098
 msgid "lazyload spinner"
 msgstr ""
 
-#: options.php:1092
+#: options.php:1099
 msgid "The placeholder to display when the image loads, fill in the image url"
 msgstr ""
 
-#: options.php:1098
+#: options.php:1105
 msgid "Whether to enable the clipboard copyright"
 msgstr ""
 
-#: options.php:1099
+#: options.php:1106
 msgid ""
 "Automatically add a copyright to the clipboard when copying more than 30 "
 "bytes, which is enabled by default."
 msgstr ""
 
-#: options.php:1105
+#: options.php:1112
 msgid "Email address prefix"
 msgstr ""
 
-#: options.php:1106
+#: options.php:1113
 msgid ""
 "For sending system mail, the sender address displayed in the user's mailbox, "
 "do not use Chinese, the default system email address is bibi@your_domain_name"
 msgstr ""
 
-#: options.php:1112
+#: options.php:1119
 msgid "Comments reply notification"
 msgstr ""
 
-#: options.php:1113
+#: options.php:1120
 msgid ""
 "WordPress will use email to notify users when their comments receive a reply "
 "by default. Tick this item allows users to set their own comments reply "
 "notification"
 msgstr ""
 
-#: options.php:1119
+#: options.php:1126
 msgid "Administrator comment notification"
 msgstr ""
 
-#: options.php:1120
+#: options.php:1127
 msgid ""
 "Whether to use email notification when the administrator's comments receive "
 "a reply"
 msgstr ""
 
-#: options.php:1126
+#: options.php:1133
 msgid "Enable private comment"
 msgstr ""
 
-#: options.php:1127
+#: options.php:1134
 msgid "Allow users to set their own comments to be invisible to others"
 msgstr ""
 
-#: options.php:1133
+#: options.php:1140
 msgid "Human verification"
 msgstr ""
 
-#: options.php:1134
+#: options.php:1141
 msgid "Enable human verification"
 msgstr ""
 
-#: options.php:1140
+#: options.php:1147
 msgid "QQ avatar link encryption"
 msgstr ""
 
-#: options.php:1141
+#: options.php:1148
 msgid "Do not display the user's qq avatar links directly."
 msgstr ""
 
-#: options.php:1146
+#: options.php:1153
 msgid "Off (default)"
 msgstr ""
 
-#: options.php:1147
+#: options.php:1154
 msgid "use redirect (general security)"
 msgstr ""
 
-#: options.php:1148
+#: options.php:1155
 msgid "fetch data at backend (high security)"
 msgstr ""
 
-#: options.php:1149
+#: options.php:1156
 msgid "fetch data at backend (high security，slow)"
 msgstr ""
 
-#: options.php:1153
+#: options.php:1160
 msgid "Comment UA infomation"
 msgstr ""
 
-#: options.php:1154
+#: options.php:1161
 msgid ""
 "Check to enable, display the user's browser, operating system information"
 msgstr ""
 
-#: options.php:1160
+#: options.php:1167
 msgid "Enable disqus"
 msgstr ""
 
-#: options.php:1161
+#: options.php:1168
 msgid "Enable disqus for comment"
 msgstr ""
 
-#: options.php:1167
+#: options.php:1174
 msgid "Time Zone adjustment"
 msgstr ""
 
-#: options.php:1168
+#: options.php:1175
 msgid ""
 "If the comment has a time difference problem adjust here, fill in an "
 "integer, the calculation method: actual_time = display_error_time - "

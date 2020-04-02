@@ -86,7 +86,10 @@ if( !empty($_POST['register_reg']) ) {
 		<?php }else{ 
 		$loadurl = akina_option('exlogin_url') ? akina_option('exlogin_url') : get_bloginfo('url');
 		?>
-		<script>//window.location.href='<?php echo $loadurl; ?>';</script>
+			<div class="ex-register-title">
+				<h3><?php _e("Success! Redirecting......","sakura")/*注册成功！正在跳转...*/?></h3>
+			</div>
+			<script>window.location.href='<?php echo $loadurl; ?>';</script>
 		<?php } ?>
 		<?php else : ?>
 			<div class="register-close"><p><?php _e("Registration is not open yet.","sakura")/*暂未开放注册。*/?></p></div>
