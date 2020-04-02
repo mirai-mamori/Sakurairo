@@ -954,27 +954,6 @@ function getqqinfo() {
                 }
             });
         }
-        // $.ajax({
-        //     type: 'get',
-        //     url: mashiro_option.qq_avatar_api_url + '?type=getqqavatar&qq=' + qq,
-        //     dataType: 'jsonp',
-        //     jsonp: 'callback',
-        //     jsonpCallback: 'qqavatarCallBack',
-        //     success: function (data) {
-        //         $('div.comment-user-avatar img').attr('src', data[qq]);
-        //         setCookie('user_avatar', data[qq], 30);
-        //     },
-        //     error: function () {
-        //         cached.filter('#qq,#email,#url').val('');
-        //         if (!cached.filter('#qq').val()) {
-        //             $('.qq-check').css('display', 'none');
-        //             $('.gravatar-check').css('display', 'block');
-        //             setCookie('user_qq', '', 30);
-        //             $('div.comment-user-avatar img').attr('src', get_gravatar(cached.filter('#email').val(), 80));
-        //             setCookie('user_avatar', get_gravatar(cached.filter('#email').val(), 80), 30);
-        //         }
-        //     }
-        // });
     });
     if (getCookie('user_avatar') && getCookie('user_email') && getCookie('is_user_qq') == 'no' && !getCookie('user_qq_email')) {
         $('div.comment-user-avatar img').attr('src', getCookie('user_avatar'));
@@ -1802,6 +1781,9 @@ var home = location.href,
                     }
                 }
             });
+            mb_to_top.onclick = function() {
+                topFunction();
+            }
         }
     }
 $(function () {
