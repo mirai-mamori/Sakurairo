@@ -78,6 +78,11 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 <?php endif; ?>
 </head>
 <body <?php body_class(); ?>>
+<div id="preload">
+<li data-id="3" class="active">
+		<div id="preloader_3"></div>
+	</li>
+</div>
 	<div class="scrollbar" id="bar"></div>
 	<section id="main-container">
 		<?php 

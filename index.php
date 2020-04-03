@@ -1,4 +1,6 @@
 <?php
+
+
 /**
  * The main template file.
  *
@@ -13,6 +15,8 @@
  */
 get_header();
 ?>
+
+
    
    <?php if ( akina_option('head_notice') != '0'){ 
    		$text = akina_option('notice_title');
