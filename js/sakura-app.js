@@ -1908,3 +1908,9 @@ function headertop_down() {
     },
     600);
 }
+
+window.onload = function() {
+    $("html").css('overflow-y', 'unset');
+    $("#preload").fadeOut();
+    setTimeout('$("#preload").remove()', 666);
+}
