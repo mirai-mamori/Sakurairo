@@ -17,10 +17,6 @@ if ( akina_option('theme_skin') ) { ?>
 
 .linkdes { border-top: 1px dotted <?php echo akina_option('theme_skin'); ?> !important}
 
-.logolink .sakuraso {
-    color: <?php echo akina_option('theme_skin'); ?>;
-}
-
 .is-active-link::before, .commentbody:not(:placeholder-shown)~.input-label, .commentbody:focus~.input-label {
     background-color: <?php echo akina_option('theme_skin'); ?> !important
 }
@@ -249,18 +245,85 @@ h1.main-title {
 .no-logged a {
     color: <?php echo akina_option('theme_skin'); ?>;
 }
+/*logocss*/
+<?php if (akina_option('logocss', '1')): ?>
+.logolink .sakuraso {
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 5px;
+    color: <?php echo akina_option('theme_skin'); ?>;
+    height: auto;
+    line-height: 25px;
+    margin-right: 0;
+    padding-bottom: 0px;
+    padding-top: 1px;
+    text-size-adjust: 100%;
+    width: auto
+}
+ 
+.logolink a:hover .sakuraso {
+    background-color: <?php echo akina_option('theme_skin'); ?>;
+    color: #fff;
+}
+ 
+.logolink a:hover .shironeko,
+.logolink a:hover .no,
+.logolink a:hover rt {
+    color: <?php echo akina_option('theme_skin'); ?>;
+}
+ 
+.logolink.moe-mashiro a {
+    color: <?php echo akina_option('theme_skin'); ?>;
+    float: left;
+    font-size: 25px;
+    font-weight: 800;
+    height: 56px;
+    line-height: 56px;
+    padding-left: 6px;
+    padding-right: 15px;
+    padding-top: 11px;
+    text-decoration-line: none;
+}
+.logolink.moe-mashiro .sakuraso,.logolink.moe-mashiro .no {
+    font-size: 25px;
+    border-radius: 9px;
+    padding-bottom: 2px;
+    padding-top: 5px;
+}
+ 
+.logolink.moe-mashiro .no {
+    font-size: 20px;
+    display: inline-block;
+    margin-left: 5px;
+}
+ 
+.logolink a:hover .no {
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+ 
+.logolink ruby {
+    ruby-position: under;
+    -webkit-ruby-position: after;
+}
+ 
+.logolink ruby rt {
+    font-size: 10px;
+    letter-spacing:2px;
+    transform: translateY(-15px);
+    opacity: 0;
+    transiton-property: opacity;
+    transition-duration: 0.5s, 0.5s;
+}
+ 
+.logolink a:hover ruby rt {
+    opacity: 1
+}
+<?php endif; ?>
+
 .logolink a {
     color: <?php echo akina_option('theme_skin'); ?>;
 }
-.logolink.moe-mashiro a {
-    color: <?php echo akina_option('theme_skin'); ?>;
-}
-.logolink a:hover .sakuraso {
-    color: <?php echo akina_option('theme_skin'); ?>;
-}
-.logolink a:hover .shironeko, .logolink a:hover .no, .logolink a:hover rt {
-    color: <?php echo akina_option('theme_skin'); ?>;
-}
+
 .art .art-content .al_mon_list .al_post_list>li:after {
     background: <?php echo akina_option('theme_skin'); ?>;
 }
