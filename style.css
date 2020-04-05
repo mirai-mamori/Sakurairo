@@ -4,8 +4,8 @@ Theme Name: Sakurairo
 Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Hitomi , Ukenn , Spirit , Mashiro , Louie , Fuzzz
 Author URI: https://asuhe.jp/
-Description: 一个基于Sakura主题的增强主题（メロディー　Update）
-Version: 1.8.4
+Description: 一个基于Sakura主题的增强主题（しきさい　Update）
+Version: 1.9.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -5006,7 +5006,7 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
     color: #ADADAD
 }
 
-#pagination span {
+#pagination span,#bangumi-pagination span {
     color: #989898;
     font-size: 15px
 }
@@ -5016,7 +5016,7 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
     color: #EE9CA7
 }
 
-#pagination .loading {
+#pagination .loading,#bangumi-pagination .loading {
     background: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/ball.svg);
     background-position: center;
     background-repeat: no-repeat;
@@ -8716,3 +8716,175 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
       -webkit-transform: scale(1.0);
     }
   }
+
+  .bangumi {
+    margin-top: 40px;
+}
+.bangumi .row {
+    display: flex;
+    margin: 0 -10px -20px;
+    flex-wrap: wrap;
+}
+.bangumi .column {
+    max-width: 50%;
+    flex: 0 0 50%;
+    margin-bottom: 30px;
+    padding: 0 15px;
+    max-width: 100%;
+    flex: 0 0 100%;
+    transition: .5s;
+}
+
+.bangumi-item {
+    height: 0;
+    color: #fff;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    padding-bottom: 130%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1), 0 5px 20px rgba(0, 0, 0, .2);
+}
+.bangumi-item:hover {
+    color: #fff;
+}
+.bangumi-item img {
+    width: 100%;
+    user-select: none;
+    object-fit: cover;
+    transition: filter 2s;
+}
+.bangumi-item .bangumi-info {
+    height: 30%;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    position: absolute;
+    background: rgba(0, 0, 0, .5);
+    transition: transform 1s;
+    transform: translateY(250%);
+}
+.bangumi-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 0;
+}
+.bangumi-summary {
+    height: 65%;
+    white-space: normal;
+    display: none;
+    font-weight: bold;
+}
+.bangumi-status-bar {
+    top: 0;
+    bottom: 0;
+    max-width: 100%;
+    position: absolute;
+    background: #dc143c;
+}
+.bangumi-status, .bangumi-status p {
+    position: relative;
+}
+.bangumi-status {
+    background: rgba(0, 0, 0, .6);
+}
+
+@media screen and (min-width: 400px) {
+    .bangumi .column {
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+    .bangumi-item .bangumi-info{
+        height: 50%;
+        transform: translateY(140%);
+    }
+    .bangumi-title {
+        height: 20%;
+    }
+}
+@media screen and (min-width: 600px) {
+    .bangumi .column {
+        max-width: 33.3333%;
+        flex: 0 0 33.3333%;
+    }
+    .bangumi-item .bangumi-info{
+        height: 50%;
+        transform: translateY(140%);
+    }
+}
+@media screen and (min-width: 900px) {
+    .bangumi .column {
+        max-width: 25%;
+        flex: 0 0 25%;
+    }
+    .bangumi-item .bangumi-info{
+        height: 100%;
+        transform: translateY(85%);
+    }
+    .bangumi-item:hover .bangumi-info {
+        transform: translateY(0);
+    }
+    .bangumi-item:hover img{
+        filter: blur(3px);
+    }
+    .bangumi-title {
+        height: 15%;
+    }
+    .bangumi-summary{
+        display: block;
+    }
+    .bangumi-status {
+        height: 10%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .bangumi-item .bangumi-info{
+        height: 75%;
+        transform: translateY(115%);
+    }
+    .bangumi-item:hover .bangumi-info {
+        transform: translateY(35%);
+    }
+    .bangumi-title {
+        height: 10%;
+    }
+}
+
+#bangumi-pagination {
+    width: 100%;
+    margin-top: 80px;
+    padding: 20px 0;
+    font-size: 36px;
+    text-align: center;
+}
+
+.bangumi-next{
+    font-family: sans-serif;
+    color: #e67474;
+    position: relative;
+    padding: 13px 35px;
+    overflow: hidden;
+}
+
+.bangumi-next:before {
+    content: ' ';
+    background-color: pink;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    position: absolute;
+    transition: all 5s;
+    z-index: -1;
+}
+.bangumi-next.loading:before{
+    display: none !important;
+}
+.bangumi-next:hover:before {
+    height: 100%;
+}
+.bangumi-next i {
+    color: orange;
+} 

@@ -461,7 +461,7 @@ if (!function_exists('akina_comment_format')) {
 				<div class="comment-arrow">
 					<div class="main shadow">
 						<div class="profile">
-							<a href="<?php comment_author_url();?>" target="_blank" rel="nofollow"><?php echo str_replace('src=', 'src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/inload.svg " onerror="imgError(this,1)" data-src=', get_avatar($comment->comment_author_email, '80', '', get_comment_author(), array('class' => array('lazyload')))); ?></a>
+							<a href="<?php comment_author_url();?>" target="_blank" rel="nofollow"><?php echo str_replace('src=', 'src="'.akina_option('webweb_img').'/load/inload.svg" onerror="imgError(this,1)" data-src=', get_avatar($comment->comment_author_email, '80', '', get_comment_author(), array('class' => array('lazyload')))); ?></a>
 						</div>
 						<div class="commentinfo">
 							<section class="commeta">
@@ -627,7 +627,7 @@ function get_the_link_items($id = null)
                 $bookmark->link_image = 'https://view.moezx.cc/images/2017/12/30/Transparent_Akkarin.th.jpg';
             }
 
-            $output .= '<li class="link-item"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" rel="friend"><img class="lazyload" onerror="imgError(this,1)" data-src="' . $bookmark->link_image . '" src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/inload.svg"><span class="sitename">' . $bookmark->link_name . '</span><div class="linkdes">' . $bookmark->link_description . '</div></a></li>';
+            $output .= '<li class="link-item"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" rel="friend"><img class="lazyload" onerror="imgError(this,1)" data-src="' . $bookmark->link_image . '" src="'.akina_option('webweb_img').'/load/inload.svg"><span class="sitename">' . $bookmark->link_name . '</span><div class="linkdes">' . $bookmark->link_description . '</div></a></li>';
         }
         $output .= '</ul>';
     }
@@ -992,24 +992,24 @@ function comment_mail_notify($comment_id)
       max-width: 800px;
       margin: auto auto;
       border-radius: 5px;
-      border:#EE9CA7 1px solid;
+      border: '.akina_option('theme_skin').' 1px solid;
       overflow: hidden;
       -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.12);
       box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.18);">
         <header style="overflow: hidden;">
-            <img style="width:100%;z-index: 666;" src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/head.jpg">
+            <img style="width:100%;z-index: 666;" src="'.akina_option('mail_img').'">
         </header>
         <div style="padding: 5px 20px;">
         <p style="position: relative;
         color: white;
         float: left;
         z-index: 999;
-        background: #EE9CA7;
+        background: '.akina_option('theme_skin').';
         padding: 5px 30px;
         margin: -25px auto 0 ;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.30)">Dear&nbsp;' . trim(get_comment($parent_id)->comment_author) . '</p>
         <br>
-        <h3>您有一条来自<a style="text-decoration: none;color: #EE9CA7 " target="_blank" href="' . home_url() . '/">' . get_option("blogname") . '</a>的回复</h3>
+        <h3>您有一条来自<a style="text-decoration: none;color: '.akina_option('theme_skin').' " target="_blank" href="' . home_url() . '/">' . get_option("blogname") . '</a>的回复</h3>
         <br>
         <p style="font-size: 14px;">您在文章《' . get_the_title($comment->comment_post_ID) . '》上发表的评论：</p>
         <p style="border-bottom:#ddd 1px solid;border-left:#ddd 1px solid;padding-bottom:20px;background-color:#eee;margin:15px 0px;padding-left:20px;padding-right:20px;border-top:#ddd 1px solid;border-right:#ddd 1px solid;padding-top:20px">'
@@ -1110,9 +1110,9 @@ function comment_picture_support($content)
     $content = str_replace('http://', 'https://', $content); // 干掉任何可能的 http
     $content = str_replace('{UPLOAD}', 'https://i.loli.net/', $content);
     $content = str_replace('[/img][img]', '[/img^img]', $content);
-    $content = str_replace('[img]', '<br><img src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/inload.svg" data-src="', $content);
+    $content = str_replace('[img]', '<br><img src="'.akina_option('webweb_img').'/load/inload.svg" data-src="', $content);
     $content = str_replace('[/img]', '" class="lazyload comment_inline_img" onerror="imgError(this)"><br>', $content);
-    $content = str_replace('[/img^img]', '" class="lazyload comment_inline_img" onerror="imgError(this)"><img src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/inload.svg" data-src="', $content);
+    $content = str_replace('[/img^img]', '" class="lazyload comment_inline_img" onerror="imgError(this)"><img src="'.akina_option('webweb_img').'/load/inload.svg" data-src="', $content);
     return $content;
 }
 add_filter('comment_text', 'comment_picture_support');
@@ -1410,9 +1410,9 @@ function memory_archives_list()
             }
             if ($mon != $mon_tmp) {
                 $mon = $mon_tmp;
-                $output .= '<li class="al_li"><span class="al_mon"><span style="color:#EE9CA7;">' . get_the_time('M') . '</span> (<span id="post-num"></span>' . __(" post(s)", "sakura") /*篇文章*/ . ')</span><ul class="al_post_list">'; //输出月份
+                $output .= '<li class="al_li"><span class="al_mon"><span style="color:'.akina_option('theme_skin').';">' . get_the_time('M') . '</span> (<span id="post-num"></span>' . __(" post(s)", "sakura") /*篇文章*/ . ')</span><ul class="al_post_list">'; //输出月份
             }
-            $output .= '<li>' . '<a href="' . get_permalink() . '"><span style="color:#EE9CA7;">' /*get_the_time('d'.__(" ","sakura")) 日*/ . '</span>' . get_the_title() . ' <span>(' . get_post_views(get_the_ID()) . ' <span class="fa fa-fire" aria-hidden="true"></span> / ' . get_comments_number('0', '1', '%') . ' <span class="fa fa-commenting" aria-hidden="true"></span>)</span></a></li>'; //输出文章日期和标题
+            $output .= '<li>' . '<a href="' . get_permalink() . '"><span style="color:'.akina_option('theme_skin').';">' /*get_the_time('d'.__(" ","sakura")) 日*/ . '</span>' . get_the_title() . ' <span>(' . get_post_views(get_the_ID()) . ' <span class="fa fa-fire" aria-hidden="true"></span> / ' . get_comments_number('0', '1', '%') . ' <span class="fa fa-commenting" aria-hidden="true"></span>)</span></a></li>'; //输出文章日期和标题
         endwhile;
         wp_reset_postdata();
         $output .= '</ul></li></ul> <!--<ul class="al_mon_list"><li><ul class="al_post_list" style="display: block;"><li>博客已经萌萌哒运行了<span id="monitorday"></span>天</li></ul></li></ul>--></div>';

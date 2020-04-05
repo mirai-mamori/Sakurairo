@@ -23,10 +23,10 @@
 		<div class="site-info" theme-info="Sakura v<?php echo SAKURA_VERSION; ?>">
 			<div class="footertext">
 				<div class="img-preload">
-					<img src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/ball.svg">
+					<img src="<?php echo akina_option('webweb_img'); ?>/load/ball.svg">
 					<img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/disqus-preloader.svg">
 				</div>
-				<i class="iconfont icon-sakura rotating" style="color: #EE9CA7;display:inline-block;font-size:26px"></i></p>
+				<i class="iconfont icon-sakura rotating" style="color: <?php echo akina_option('theme_skin'); ?>;display:inline-block;font-size:26px"></i></p>
 				<p style="color: #666666;"><?php echo akina_option('footer_info', ''); ?></p>
 			</div>
 			<div class="footer-device">
@@ -154,7 +154,7 @@
         data-server="netease"
         data-type="playlist"
         data-fixed="true"
-        data-theme="#EE9CA7">
+        data-theme="<?php echo akina_option('theme_skin'); ?>">
     </div>
 <?php endif; ?>
 
@@ -167,9 +167,7 @@
 <?php if (akina_option('live2djs', '1')): ?>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 <?php endif; ?>
-<?php if (akina_option('logocss', '1')): ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/css/logo.css">
-<?php endif; ?>
+
 <!-- logo字体部分 -->
 <link rel="stylesheet" href="<?php echo akina_option('logo_zt', ''); ?>" media="all">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">

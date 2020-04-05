@@ -124,13 +124,13 @@ function optionsframework_options()
         'std' => '',
         'type' => 'text');
 
-    $options[] = array(
-        'name' => __('Theme style', 'sakura'), /*主题风格*/
-        'id' => 'theme_skin',
-        'std' => "#EE9CA7",
-        'desc' => __('Custom theme color', 'sakura'), /*自定义主题颜色*/
-        'type' => "color",
-    );
+    //$options[] = array(
+    //    'name' => __('Theme style', 'sakura'), /*主题风格*/
+    //    'id' => 'theme_skin',
+    //    'std' => "#EE9CA7",
+    //    'desc' => __('Custom theme color', 'sakura'), /*自定义主题颜色*/
+    //    'type' => "color",
+    //);
 
     $options[] = array(
         'name' => __('Theme scheme tool transparency', 'sakura'), /*切换主题菜单透明度*/
@@ -309,12 +309,12 @@ function optionsframework_options()
             '233' => __('Do not load automatically', 'sakura'), /*不自动加载*/
         ));
 
-    $options[] = array(
-        'name' => __('Blogger description', 'sakura'), /*博主描述*/
-        'desc' => __('A self-described statement', 'sakura'), /*一段自我描述的话*/
-        'id' => 'admin_des',
-        'std' => '粉色的花瓣，美丽地缠绕在身上。依在风里。',
-        'type' => 'textarea');
+    //$options[] = array(
+    //    'name' => __('Blogger description', 'sakura'), /*博主描述*/
+    //    'desc' => __('A self-described statement', 'sakura'), /*一段自我描述的话*/
+    //    'id' => 'admin_des',
+    //    'std' => '粉色的花瓣，美丽地缠绕在身上。依在风里。',
+    //    'type' => 'textarea');
 
     $options[] = array(
         'name' => __('Footer info', 'sakura'), /*页脚信息*/
@@ -377,7 +377,7 @@ function optionsframework_options()
         'name' => __('Cover manifest', 'sakura'), /*封面图片库选项*/
         'desc' => __('Select how to call the cover random image', 'sakura'), /*选择封面随机图的调用方式*/
         'id' => 'cover_cdn_options',
-        'std' => "type_2",
+        'std' => "type_3",
         'type' => "select",
         'options' => array(
             'type_1' => __('webp images (optimization)', 'sakura'), /*webp优化随机图*/
@@ -390,7 +390,7 @@ function optionsframework_options()
         'name' => __('Cover images url', 'sakura'), /*图片库url*/
         'desc' => sprintf(__('Fill in the manifest path for random picture display, please refer to <a href = "https: //github.com/mashirozx/Sakura/wiki/options">Wiki </a>. If you select webp images above, click <a href = "%s">here</a> to update manifest', 'sakura'), rest_url('sakura/v1/database/update')), /*填写 manifest 路径，更多信息请参考<a href="https://github.com/mashirozx/Sakura/wiki/options">Wiki</a>,，如果你在上面选择了webp优化，点击<a href = "%s">这里</a>更新 manifest*/
         'id' => 'cover_cdn',
-        'std' => 'https://cdn.jsdelivr.net/gh/mashirozx/sakura@3.3.3',
+        'std' => 'https://api.btstu.cn/sjbz/api.php?lx=dongman&format=images',
         'type' => 'text');
 
     $options[] = array(
@@ -970,6 +970,20 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
+        'name' => __('Bilibili UID', 'sakura'), /*bilibiliUID*/
+        'desc' => __('Fill in your UID, eg.https://space.bilibili.com/13972644/, only fill in with the number part.', 'sakura'),
+        'id' => 'bilibili_id',
+        'std' => '13972644',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Bilibili Cookie', 'sakura'), /*Bilibili Cookie*/
+        'desc' => __('Fill in your Cookies, go to your bilibili homepage, you can get cookies in brownser network pannel with pressing F12. If left this blank, you\'ll not get the progress.', 'sakura'),
+        'id' => 'bilibili_cookie',
+        'std' => 'LIVE_BUVID=',
+        'type' => 'textarea');
+
+    $options[] = array(
         'name' => __('The categories of articles that don\'t not show on homepage', 'sakura'), /*首页不显示的分类文章*/
         'desc' => __('Fill in category ID, multiple IDs are divided by a comma ","', 'sakura'), /*填写分类ID，多个用英文“ , ”分开*/
         'id' => 'classify_display',
@@ -1176,10 +1190,17 @@ function optionsframework_options()
         'std' => '0',
         'type' => 'text');
 
-    //特色
+        //特色
     $options[] = array(
         'name' => __('特色', 'sakura'),
         'type' => 'heading');
+    
+    $options[] = array(
+        'name' => __('预加载动画', 'sakura'), /*预加载动画*/
+        'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
+        'id' => 'yjzdh',
+        'std' => '1',
+        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('樱花飘落特效', 'sakura'), /*樱花飘落特效*/
@@ -1210,25 +1231,52 @@ function optionsframework_options()
         'type' => 'checkbox');
     
     $options[] = array(
-        'name' => __('下拉箭头颜色', 'sakura'), /*下拉箭头颜色*/
-        'id' => 'godown_skin',
-        'std' => "#FFEEEB",
-        'desc' => __('自定义下拉箭头颜色', 'sakura'), /*自定义下拉箭头颜色*/
-        'type' => "color",
-    );  
-
+        'name' => __('页脚一言', 'sakura'), /*页脚一言*/
+        'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
+        'id' => 'oneword',
+        'std' => '1',
+        'type' => 'checkbox');
+        
+    $options[] = array(
+        'name' => __('首页一言打字效果', 'sakura'), /*首页一言打字效果*/
+        'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
+        'id' => 'dazi',
+        'std' => '0',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('打字效果双引号', 'sakura'), /*首页一言打字效果*/
+        'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
+        'id' => 'dazi_yh',
+        'std' => '0',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('打字效果文字', 'sakura'), /*打字效果文字*/
+        'desc' => __('填写打字效果文字部分(文字外必须使用英文双引号，二句话之间使用英文逗号隔开。支持html标签)', 'sakura'),
+        'id' => 'dazi_a',
+        'std' => '"寒蝉黎明之时,便是重生之日。"',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('主页一言博主描述', 'sakura'), /*主页一言博主描述*/
+        'desc' => __('一段自我描述的话', 'sakura'), /*一段自我描述的话*/
+        'id' => 'admin_des',
+        'std' => '粉色的花瓣，美丽地缠绕在身上。依在风里。',
+        'type' => 'textarea');
+    
+    $options[] = array(
+        'name' => __('文章末尾博主描述', 'sakura'), /*文章末尾博主描述*/
+        'desc' => __('一段自我描述的话', 'sakura'), /*一段自我描述的话*/
+        'id' => 'admin_destwo',
+        'std' => '粉色的花瓣，美丽地缠绕在身上。依在风里。',
+        'type' => 'textarea');
+    
     $options[] = array(
         'name' => __('Logo特效', 'sakura'), /*Logo特效*/
         'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
         'id' => 'logocss',
         'std' => '0',
-        'type' => 'checkbox');
-    
-    $options[] = array(
-        'name' => __('页脚一言', 'sakura'), /*页脚一言*/
-        'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
-        'id' => 'oneword',
-        'std' => '1',
         'type' => 'checkbox');
 
     $options[] = array(
@@ -1272,6 +1320,112 @@ function optionsframework_options()
         'id' => 'logo_ztmc',
         'std' => 'wenyihei-subfont',
         'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('邮件模板头部图', 'sakura'), 
+        'desc' => __('设置你的邮件上方背景图片', 'sakura'), 
+        'id' => 'mail_img',
+        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/head.jpg',
+        'type' => 'text');
+        
+    //色彩
+    $options[] = array(
+        'name' => __('色彩', 'sakura'),
+        'type' => 'heading');
+
+    $options[] = array(
+        'name' => __('显示图标选择', 'sakura'), /*社交图标选择*/
+        'desc' => __('选择图标颜色', 'sakura'), /*社交图标选择*/
+        'id' => 'webweb_img',
+        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/pink',
+        'type' => 'select',
+        'options' => array(
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/pink' => __('「日系」粉色（EE9CA7）', 'sakura'), /*粉色*/
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/blue' => __('「日系」蓝色（1E88A8）', 'sakura'), /*蓝色*/
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/yellow' => __('「日系」黄色（E98B2A）', 'sakura'), /*黄色*/
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/orange' => __('「日系」橙色（FF8000）', 'sakura'), /*橙色*/
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/macaronblue' => __('「马卡龙色系」蓝色（B8F1ED）', 'sakura'), 
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/macarongreen' => __('「马卡龙色系」绿色（B8F1CC）', 'sakura'), 
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/macaronpurple' => __('「马卡龙色系」紫色（D9B8F1）', 'sakura'), 
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/colorful' => __('「其他」彩色', 'sakura'), 
+    ));
+    $options[] = array(
+            'name' => __('Theme style', 'sakura'), /*主题风格*/
+            'id' => 'theme_skin',
+            'std' => "#EE9CA7",
+            'desc' => __('Custom theme color', 'sakura'), /*自定义主题颜色*/
+            'type' => "color",
+    );
+    
+    $options[] = array(
+        'name' => __('首页一言社交背景', 'sakura'), /*首页一言文字背景*/
+        'id' => 'theme_skin_yybj',
+        'std' => "#FFF",
+        'desc' => __('自定义颜色', 'sakura'), /*自定义背景颜色*/
+        'type' => "color",
+    );
+
+    $options[] = array(
+            'name' => __('主题选择菜单背景颜色', 'sakura'), /*主题选择菜单背景颜色*/
+            'id' => 'theme_skin_cdbj',
+            'std' => "#FFF",
+            'desc' => __('自定义颜色', 'sakura'), /*自定义背景颜色*/
+            'type' => "color",
+    );
+    
+    $options[] = array(
+        'name' => __('下拉箭头颜色', 'sakura'), /*下拉箭头颜色*/
+        'id' => 'godown_skin',
+        'std' => "#FFF",
+        'desc' => __('自定义下拉箭头颜色', 'sakura'), /*自定义下拉箭头颜色*/
+        'type' => "color",
+    );  
+    
+    $options[] = array(
+        'name' => __('首页文章分割符', 'sakura'), /*首页文章分割符*/
+        'id' => 'theme_skin_fgf',
+        'std' => "#FFEEEB",
+        'desc' => __('自定义颜色', 'sakura'), /*自定义背景颜色*/
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('首页文章时间提示强调文字', 'sakura'), /*首页文章时间提示强调文字*/
+        'id' => 'theme_skin_sjwz',
+        'std' => "#EE9CA7",
+        'desc' => __('自定义颜色', 'sakura'), /*自定义背景颜色*/
+        'type' => "color",
+    );
+    
+    $options[] = array(
+        'name' => __('首页文章时间提示强调背景', 'sakura'), /*首页文章时间提示强调背景*/
+        'id' => 'theme_skin_sjbj',
+        'std' => "#FFEEEB",
+        'desc' => __('自定义颜色', 'sakura'), /*自定义背景颜色*/
+        'type' => "color",
+    );
+    
+    $options[] = array(
+        'name' => __('首页文章边框阴影', 'sakura'), /*首页文章边框阴影*/
+        'id' => 'theme_skin_bkyy',
+        'std' => "#FFEEEB",
+        'desc' => __('自定义颜色', 'sakura'), /*自定义背景颜色*/
+        'type' => "color",
+    );
+    $options[] = array(
+        'name' => __('预加载动画颜色A', 'sakura'), /*预加载动画颜色A*/
+        'id' => 'theme_skin_yjjone',
+        'std' => "#FFEEEB",
+        'desc' => __('自定义颜色', 'sakura'), /*自定义背景颜色*/
+        'type' => "color",
+    );
+    $options[] = array(
+        'name' => __('预加载动画颜色B', 'sakura'), /*预加载动画颜色B*/
+        'id' => 'theme_skin_yjjtwo',
+        'std' => "#EE9CA7",
+        'desc' => __('自定义颜色', 'sakura'), /*自定义背景颜色*/
+        'type' => "color",
+    );
     
     return $options;
 }

@@ -76,6 +76,9 @@ if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','<?php echo akina_option('google_analytics_id', ''); ?>');
 </script>
 <?php endif; ?>
+<?php if (akina_option('logocss', '1')): ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@2.9/css/logo.css">
+<?php endif; ?>
 </head>
 <body <?php body_class(); ?>>
 <div id="preload">
