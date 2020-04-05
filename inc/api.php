@@ -32,6 +32,10 @@ add_action('rest_api_init', function () {
         'methods' => 'GET',
         'callback' => 'get_qq_avatar',
     ));
+    register_rest_route('sakura/v1', '/bangumi/bilibili', array(
+        'methods' => 'POST',
+        'callback' => 'bgm_bilibili',
+    ));
 });
 
 /**
@@ -274,45 +278,68 @@ function cache_search_json()
 /<\/?[a-zA-Z]+("[^"]*"|'[^']*'|[^'">])*>|begin[\S\s]*\/begin|hermit[\S\s]*\/hermit|img[\S\s]*\/img|{{.*?}}|:.*?:/m
 EOS;
     $more = 1;
+    $output = array();
 
     $posts = new WP_Query('posts_per_page=-1&post_status=publish&post_type=post');
     while ($posts->have_posts()): $posts->the_post();
-        $output .= '{"type":"post","link":"' . get_permalink() . '","title":' . json_encode(get_the_title()) . ',"comments":"' . get_comments_number('0', '1', '%') . '","text":' . json_encode(str_replace($vowels, " ", preg_replace($regex, ' ', apply_filters( 'the_content', get_the_content())))) . '},';
+    $output[] = array(
+        "type" => "post",
+        "link" => get_permalink(),
+        "title" => get_the_title(),
+        "comments" => get_comments_number('0', '1', '%'),
+        "text" => str_replace($vowels, " ", preg_replace($regex, ' ', apply_filters( 'the_content', get_the_content())))
+    );
     endwhile;
     wp_reset_postdata();
 
     $pages = new WP_Query('posts_per_page=-1&post_status=publish&post_type=page');
     while ($pages->have_posts()): $pages->the_post();
-        $output .= '{"type":"page","link":"' . get_permalink() . '","title":' . json_encode(get_the_title()) . ',"comments":"' . get_comments_number('0', '1', '%') . '","text":' . json_encode(str_replace($vowels, " ", preg_replace($regex, ' ', apply_filters( 'the_content', get_the_content())))) . '},';
+    $output[] = array(
+        "type" => "page",
+        "link" => get_permalink(),
+        "title" => get_the_title(),
+        "comments" => get_comments_number('0', '1', '%'),
+        "text" => str_replace($vowels, " ", preg_replace($regex, ' ', apply_filters( 'the_content', get_the_content())))
+    );
     endwhile;
     wp_reset_postdata();
 
     $tags = get_tags();
     foreach ($tags as $tag) {
-        $output .= '{"type":"tag","link":"' . get_term_link($tag) . '","title":' . json_encode($tag->name) . ',"comments":"","text":""},';
+        $output[] = array(
+            "type" => "tag",
+            "link" => get_term_link($tag),
+            "title" => $tag->name,
+            "comments" => "",
+            "text" => ""
+        );
     }
 
     $categories = get_categories();
     foreach ($categories as $category) {
-        $output .= '{"type":"category","link":"' . get_term_link($category) . '","title":' . json_encode($category->name) . ',"comments":"","text":""},';
+        $output[] = array(
+            "type" => "category",
+            "link" => get_term_link($category),
+            "title" => $category->name,
+            "comments" => "",
+            "text" => ""
+        );
     }
     if (akina_option('live_search_comment')) {
         $comments = get_comments();
         foreach ($comments as $comment) {
             $is_private = get_comment_meta($comment->comment_ID, '_private', true);
-            if ($is_private) {
-                $output .= '{"type":"comment","link":"' . get_comment_link($comment) . '","title":' . json_encode(get_the_title($comment->comment_post_ID)) . ',"comments":"","text":' . json_encode($comment->comment_author . "：" . __("The comment is private", "sakura") /*该评论为私密评论*/) . '},';
-                continue;
-            } else {
-                $output .= '{"type":"comment","link":"' . get_comment_link($comment) . '","title":' . json_encode(get_the_title($comment->comment_post_ID)) . ',"comments":"","text":' . json_encode(str_replace($vowels, " ", preg_replace($regex, " ", $comment->comment_author . "：" . $comment->comment_content))) . '},';
-            }
+            $output[] = array(
+                "type" => "comment",
+                "link" => get_comment_link($comment),
+                "title" => get_the_title($comment->comment_post_ID),
+                "comments" => "",
+                "text" => $is_private ? ($comment->comment_author . ": " .  __('The comment is private', 'sakura')) : str_replace($vowels, ' ', preg_replace($regex, ' ', $comment->comment_author . "：" . $comment->comment_content))
+            );
         }
     }
 
-    $output = substr($output, 0, strlen($output) - 1);
-
-    $data = '[' . $output . ']';
-    $result = new WP_REST_Response(json_decode($data), 200);
+    $result = new WP_REST_Response($output, 200);
     $result->set_headers(
         array(
             'Content-Type' => 'application/json',
@@ -411,9 +438,13 @@ function get_qq_avatar(){
         $imgurl='https://q2.qlogo.cn/headimg_dl?dst_uin='.$matches[0].'&spec=100';
         if(akina_option('qq_avatar_link')=='type_2'){
             $imgdata = file_get_contents($imgurl);
-            header("Content-type: image/jpeg");
-            header("Cache-Control: max-age=86400");
+            $response = new WP_REST_Response();
+            $response->set_headers(array(
+                'Content-Type' => 'image/jpeg',
+                'Cache-Control' => 'max-age=86400'
+                ));
             echo $imgdata;
+            return $response;
         }else{
             $response = new WP_REST_Response();
             $response->set_status(301);
@@ -422,3 +453,60 @@ function get_qq_avatar(){
         }
     } 
 }
+
+
+function get_the_bgm_items($page = 1){
+    $cookies = akina_option('bilibili_cookie');
+    $url = 'https://api.bilibili.com/x/space/bangumi/follow/list?type=1&pn=' . $page . '&ps=15&follow_status=0&vmid=' . akina_option('bilibili_id');
+    $args = array(
+        'headers' => array(
+            'Cookie' => $cookies,
+            'Host' => 'api.bilibili.com',
+            'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97'
+        )
+    );
+    $response = wp_remote_get($url, $args);
+    $bgmdata = json_decode($response["body"])->data;
+    return json_encode($bgmdata);
+}
+function get_bgm_items($page = 1){
+    $bgm = json_decode(get_the_bgm_items($page),true);
+    $totalpage = $bgm["total"] / 15;
+    if($totalpage - $page < 0){
+        $next = '<span>共追番' . $bgm["total"] .'部，继续加油吧！٩(ˊᗜˋ*)و</span>';
+    }else{
+        $next = '<a class="bangumi-next" href="' . rest_url('sakura/v1/bangumi/bilibili') . '?page=' . ++$page . '"><i class="fa fa-bolt" aria-hidden="true"></i> NEXT </a>';
+    }
+    $lists = $bgm["list"];
+    foreach ((array)$lists as $list) {
+        if(preg_match('/看完/m',$list["progress"], $matches_finish)){
+            $percent = 100;
+        }else{
+            preg_match('/第(\d+)./m',$list['progress'], $matches_progress);
+            preg_match('/第(\d+)./m',$list["new_ep"]['index_show'], $matches_new);
+            $progress = is_numeric($matches_progress[1]) ? $matches_progress[1] : 0;
+            $total = is_numeric($matches_new[1]) ? $matches_new[1] : $list['total_count'];
+            $percent = $progress / $total * 100;
+        }
+        $html .=  '<div class="column">
+            <a class="bangumi-item" href="https://bangumi.bilibili.com/anime/' . $list['season_id'] . '/" target="_blank" rel="nofollow">
+                <img class="bangumi-image" src="' . str_replace('http://', 'https://', $list['cover']) . '"/>
+                <div class="bangumi-info">
+                    <h3 class="bangumi-title" title="' . $list['title']  . '">' . $list['title']  . '</h2>
+                    <div class="bangumi-summary"> '. $list['evaluate'] .' </div>
+                    <div class="bangumi-status">
+                        <div class="bangumi-status-bar" style="width: '. $percent .'%"></div>
+                        <p>' . $list['new_ep']['index_show'] . '</p>         
+                    </div>
+                </div>
+            </a>
+        </div>';
+    }
+    $html .= '</div><br><div id="bangumi-pagination">' . $next .'</div>';
+    return $html;
+}
+function bgm_bilibili(){
+    $page = $_GET["page"] ?: 2;
+    $html = preg_replace("/\s+|\n+|\r/", ' ', get_bgm_items($page));
+    return $response = new WP_REST_Response($html,200);
+} 
