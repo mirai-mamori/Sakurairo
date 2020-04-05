@@ -1,11 +1,11 @@
 ﻿Sakurairo🌸: 基于Sakura的分支主题
 ===
 
+![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/detail.png)
+
 基于主题 [Sakura](https://github.com/mashirozx/Sakura) 的基础上修改的Sakurairo主题
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square&logo=github)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
-
-![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/detail.png)
 
 相比原主题，它默认开启：
 
