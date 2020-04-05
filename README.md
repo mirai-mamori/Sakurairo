@@ -5,11 +5,7 @@
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square&logo=github)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
 
-![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/screenshot.jpg)
-
-![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/star.png)
-
-![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/about.png)
+![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/detail.png)
 
 相比原主题，它默认开启：
 
