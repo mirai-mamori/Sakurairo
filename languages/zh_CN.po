@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakura\n"
-"POT-Creation-Date: 2020-04-01 22:51+0800\n"
-"PO-Revision-Date: 2020-04-01 22:52+0800\n"
+"POT-Creation-Date: 2020-04-05 11:52+0800\n"
+"PO-Revision-Date: 2020-04-05 11:52+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -227,7 +227,7 @@ msgstr ""
 msgid "page %s "
 msgstr "第 %s 页 "
 
-#: inc/api.php:304 inc/theme_plus.php:727
+#: inc/api.php:337 inc/theme_plus.php:727
 msgid "The comment is private"
 msgstr "该评论为私密评论"
 
@@ -938,7 +938,7 @@ msgstr "点点"
 msgid "Whether to turn on the top-feature"
 msgstr "是否开启聚焦"
 
-#: options.php:446 options.php:1092
+#: options.php:446 options.php:1104
 msgid "Default on"
 msgstr "默认开启"
 
@@ -1465,56 +1465,80 @@ msgstr ""
 "公告内容，文字超出142个字节将会被滚动显示（移动端无效），一个汉字 = 3字节，一"
 "个字母 = 1字节，自己计算吧"
 
+#: options.php:973
+msgid "Bilibili UID"
+msgstr ""
+
 #: options.php:974
+msgid ""
+"Fill in your UID, eg.https://space.bilibili.com/13972644/, only fill in with "
+"the number part."
+msgstr ""
+"填写你的UID,，例如：https://space.bilibili.com/13972644/，只需填写数字部分。"
+
+#: options.php:980
+msgid "Bilibili Cookie"
+msgstr ""
+
+#: options.php:981
+msgid ""
+"Fill in your Cookies, go to your bilibili homepage, you can get cookies in "
+"brownser network pannel with pressing F12. If left this blank, you'll not "
+"get the progress."
+msgstr ""
+"填写你的帐号Cookies。F12打开浏览器网络面板，前往你的B站主页获取Cookies。如果"
+"留空，将不会显示追番进度。"
+
+#: options.php:986
 msgid "The categories of articles that don't not show on homepage"
 msgstr "首页不显示的分类文章"
 
-#: options.php:975 options.php:982
+#: options.php:987 options.php:994
 msgid "Fill in category ID, multiple IDs are divided by a comma \",\""
 msgstr "填写分类ID，多个用英文“ , ”分开"
 
-#: options.php:981
+#: options.php:993
 msgid "Images category"
 msgstr "图片展示分类"
 
-#: options.php:988
+#: options.php:1000
 msgid "Statistics Interface"
 msgstr "统计接口"
 
-#: options.php:993
+#: options.php:1005
 msgid ""
 "WP-Statistics plugin (Professional statistics, can exclude invalid access)"
 msgstr "WP-Statistics 插件（专业性统计，可排除无效访问）"
 
-#: options.php:994
+#: options.php:1006
 msgid "Theme built-in (simple statistics, calculate each page access request)"
 msgstr "主题内建（简单的统计，计算每一次页面访问请求）"
 
-#: options.php:998
+#: options.php:1010
 msgid "Statistical data display format"
 msgstr "统计数据显示格式"
 
-#: options.php:1003
+#: options.php:1015
 msgid "23333 Views (default)"
 msgstr "23333 次访问（默认）"
 
-#: options.php:1004
+#: options.php:1016
 msgid "23,333 Views (britain)"
 msgstr "23,333 次访问（英式）"
 
-#: options.php:1005
+#: options.php:1017
 msgid "23 333 Views (french)"
 msgstr "23 333 次访问（法式）"
 
-#: options.php:1006
+#: options.php:1018
 msgid "23k Views (chinese)"
 msgstr "23k 次访问（中式）"
 
-#: options.php:1010
+#: options.php:1022
 msgid "Gravatar avatar proxy"
 msgstr "Gravatar头像代理"
 
-#: options.php:1011
+#: options.php:1023
 msgid ""
 "A front-ed proxy for Gravatar, eg. gravatar.2heng.xin/avatar . Leave it "
 "blank if you do not need."
@@ -1522,27 +1546,27 @@ msgstr ""
 "填写Gravatar头像的代理地址，例如：gravatar.2heng.xin/avatar。留空则不使用代"
 "理。"
 
-#: options.php:1017
+#: options.php:1029
 msgid "Comment image upload API"
 msgstr "评论上传图片接口"
 
-#: options.php:1022
+#: options.php:1034
 msgid "Imgur (https://imgur.com)"
 msgstr ""
 
-#: options.php:1023
+#: options.php:1035
 msgid "SM.MS (https://sm.ms)"
 msgstr ""
 
-#: options.php:1024
+#: options.php:1036
 msgid "Chevereto (https://chevereto.com)"
 msgstr ""
 
-#: options.php:1028
+#: options.php:1040
 msgid "Imgur Client ID"
 msgstr ""
 
-#: options.php:1029
+#: options.php:1041
 msgid ""
 "Register your application <a href=\"https://api.imgur.com/oauth2/addclient"
 "\">here</a>, note we only need the Client ID here."
@@ -1550,48 +1574,48 @@ msgstr ""
 "在<a href=\"https://api.imgur.com/oauth2/addclient\">这里</a>注册你的 "
 "application , 注意此处只需要填写 Client ID."
 
-#: options.php:1035
+#: options.php:1047
 msgid "SM.MS Secret Token"
 msgstr ""
 
-#: options.php:1036
+#: options.php:1048
 msgid ""
 "Register your application <a href=\"https://sm.ms/home/apitoken\">here</a>."
 msgstr "在<a href=\"https://sm.ms/home/apitoken\">这里</a>获取 key."
 
-#: options.php:1042
+#: options.php:1054
 msgid "Chevereto API v1 key"
 msgstr ""
 
-#: options.php:1043
+#: options.php:1055
 msgid "Get your API key here: "
 msgstr "在这里获取你的 API key： "
 
-#: options.php:1049
+#: options.php:1061
 msgid "Chevereto URL"
 msgstr ""
 
-#: options.php:1050
+#: options.php:1062
 msgid ""
 "Your Chevereto homepage url, no slash in the end, eg. https://your.cherverto."
 "com"
 msgstr ""
 "你的 Chevereto 首页 url, 注意结尾没有 /, 例如：https://your.cherverto.com"
 
-#: options.php:1056
+#: options.php:1068
 msgid "Comment images proxy"
 msgstr "评论图片代理"
 
-#: options.php:1057
+#: options.php:1069
 msgid ""
 "A front-ed proxy for the uploaded images. Leave it blank if you do not need."
 msgstr "前端显示的图片的代理。"
 
-#: options.php:1063
+#: options.php:1075
 msgid "Imgur upload proxy"
 msgstr "Imgur 上传代理"
 
-#: options.php:1064
+#: options.php:1076
 msgid ""
 "A back-ed proxy to upload images. You may set a self hosted proxy with "
 "Nginx, following my <a href=\"https://2heng.xin/2018/06/06/javascript-upload-"
@@ -1606,11 +1630,11 @@ msgstr ""
 "端显示都需要代理！如果服务器在国外不需要上传代理，此处填写默认值即可：【<a "
 "href=\"https://api.imgur.com/3/image/\">https://api.imgur.com/3/image/</a>】"
 
-#: options.php:1070
+#: options.php:1082
 msgid "Enable live search"
 msgstr "启用实时搜索"
 
-#: options.php:1071
+#: options.php:1083
 msgid ""
 "Real-time search in the foreground, call the Rest API to update the cache "
 "every hour, you can manually set the cache time in api.php"
@@ -1618,21 +1642,21 @@ msgstr ""
 "前台实现实时搜索，调用 Rest API 每小时更新一次缓存，可在 api.php 里手动设置缓"
 "存时间"
 
-#: options.php:1077
+#: options.php:1089
 msgid "Include comments in live search"
 msgstr "实时搜索包含评论"
 
-#: options.php:1078
+#: options.php:1090
 msgid ""
 "Search for comments in real-time search (not recommended if there are too "
 "many comments on the site)"
 msgstr "在实时搜索中搜索评论（如果网站评论数量太多不建议开启）"
 
-#: options.php:1084
+#: options.php:1096
 msgid "Enable baguetteBox"
 msgstr "启用 baguetteBox"
 
-#: options.php:1085
+#: options.php:1097
 msgid ""
 "Default off，<a href=\"https://github.com/mashirozx/Sakura/wiki/Fancybox"
 "\">please read wiki</a>"
@@ -1640,33 +1664,33 @@ msgstr ""
 "默认禁用，<a href=\"https://github.com/mashirozx/Sakura/wiki/Fancybox\">请阅"
 "读说明</a>"
 
-#: options.php:1091
+#: options.php:1103
 msgid "Enable lazyload in posts"
 msgstr "文章内图片启用 lazyload"
 
-#: options.php:1098
+#: options.php:1110
 msgid "lazyload spinner"
 msgstr "lazyload 占位图"
 
-#: options.php:1099
+#: options.php:1111
 msgid "The placeholder to display when the image loads, fill in the image url"
 msgstr "图片加载时要显示的占位图，填写图片 url"
 
-#: options.php:1105
+#: options.php:1117
 msgid "Whether to enable the clipboard copyright"
 msgstr "是否开启剪贴板版权标识"
 
-#: options.php:1106
+#: options.php:1118
 msgid ""
 "Automatically add a copyright to the clipboard when copying more than 30 "
 "bytes, which is enabled by default."
 msgstr "复制超过30个字节时自动向剪贴板添加版权标识，默认开启。"
 
-#: options.php:1112
+#: options.php:1124
 msgid "Email address prefix"
 msgstr "发件地址前缀"
 
-#: options.php:1113
+#: options.php:1125
 msgid ""
 "For sending system mail, the sender address displayed in the user's mailbox, "
 "do not use Chinese, the default system email address is bibi@your_domain_name"
@@ -1674,11 +1698,11 @@ msgstr ""
 "用于发送系统邮件，在用户的邮箱中显示的发件人地址，不要使用中文，默认系统邮件"
 "地址为 bibi@你的域名"
 
-#: options.php:1119
+#: options.php:1131
 msgid "Comments reply notification"
 msgstr "邮件回复通知"
 
-#: options.php:1120
+#: options.php:1132
 msgid ""
 "WordPress will use email to notify users when their comments receive a reply "
 "by default. Tick this item allows users to set their own comments reply "
@@ -1687,78 +1711,78 @@ msgstr ""
 "WordPress默认会使用邮件通知用户评论收到回复，开启此项允许用户设置自己的评论收"
 "到回复时是否使用邮件通知"
 
-#: options.php:1126
+#: options.php:1138
 msgid "Administrator comment notification"
 msgstr "邮件回复通知管理员"
 
-#: options.php:1127
+#: options.php:1139
 msgid ""
 "Whether to use email notification when the administrator's comments receive "
 "a reply"
 msgstr "当管理员评论收到回复时是否使用邮件通知"
 
-#: options.php:1133
+#: options.php:1145
 msgid "Enable private comment"
 msgstr "允许私密评论"
 
-#: options.php:1134
+#: options.php:1146
 msgid "Allow users to set their own comments to be invisible to others"
 msgstr "允许用户设置自己的评论对其他人不可见"
 
-#: options.php:1140
+#: options.php:1152
 msgid "Human verification"
 msgstr "机器人验证"
 
-#: options.php:1141
+#: options.php:1153
 msgid "Enable human verification"
 msgstr "开启机器人验证"
 
-#: options.php:1147
+#: options.php:1159
 msgid "QQ avatar link encryption"
 msgstr "QQ头像链接加密"
 
-#: options.php:1148
+#: options.php:1160
 msgid "Do not display the user's qq avatar links directly."
 msgstr "不直接暴露用户QQ头像链接"
 
-#: options.php:1153
+#: options.php:1165
 msgid "Off (default)"
 msgstr "关闭（默认）"
 
-#: options.php:1154
+#: options.php:1166
 msgid "use redirect (general security)"
 msgstr "使用重定向（安全性低）"
 
-#: options.php:1155
+#: options.php:1167
 msgid "fetch data at backend (high security)"
 msgstr "后端获取头像数据（安全性高）"
 
-#: options.php:1156
+#: options.php:1168
 msgid "fetch data at backend (high security，slow)"
 msgstr "后端解析QQ头像接口（安全性高，慢）"
 
-#: options.php:1160
+#: options.php:1172
 msgid "Comment UA infomation"
 msgstr "评论UA信息"
 
-#: options.php:1161
+#: options.php:1173
 msgid ""
 "Check to enable, display the user's browser, operating system information"
 msgstr "勾选开启，显示用户的浏览器，操作系统信息"
 
-#: options.php:1167
+#: options.php:1179
 msgid "Enable disqus"
 msgstr "开启多说插件支持"
 
-#: options.php:1168
+#: options.php:1180
 msgid "Enable disqus for comment"
 msgstr "多说已经凉了～～"
 
-#: options.php:1174
+#: options.php:1186
 msgid "Time Zone adjustment"
 msgstr "时区调整"
 
-#: options.php:1175
+#: options.php:1187
 msgid ""
 "If the comment has a time difference problem adjust here, fill in an "
 "integer, the calculation method: actual_time = display_error_time - "
@@ -1817,6 +1841,10 @@ msgstr ""
 #: tpl/content-single.php:34
 msgid "Attribution-NonCommercial-ShareAlike 4.0 International"
 msgstr "知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议"
+
+#: user/page-bangumi.php:27
+msgid "Please fill in the Bilibili UID in Sakura Options."
+msgstr "请在后台设置填写 Bilibili UID 后继续。"
 
 #: user/page-login.php:18
 msgid "Remember Me"
@@ -1882,7 +1910,11 @@ msgstr "拖动滑块验证"
 msgid "Sign up"
 msgstr "注 册"
 
-#: user/page-register.php:92
+#: user/page-register.php:90
+msgid "Success! Redirecting......"
+msgstr "注册成功！正在跳转......"
+
+#: user/page-register.php:95
 msgid "Registration is not open yet."
 msgstr "暂未开放注册。"
 
