@@ -133,16 +133,16 @@ function social_share_limit(){
     
     if ($(".top-social").length > 0 || $(".top-social_v2").length > 0){
         $(".top-social").length > 0 ? a = $(".top-social li") : a = $(".top-social_v2 li");
-        for (var i=a.length-1;i>=11;i--){
+        for (var i=a.length-2;i>=11;i--){
             a[i].remove();
         }
         if(document.body.clientWidth<860){
-            for (var i=a.length-1;i>=10;i--){
+            for (var i=a.length-2;i>=10;i--){
                 a[i].remove();
             }
         }
         if(document.body.clientWidth<425){
-            for (var i=a.length-1;i>=5;i--){
+            for (var i=a.length-2;i>=5;i--){
                 a[i].remove();
             }
             num = 1;
