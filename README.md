@@ -4,7 +4,9 @@ Sakurairo🌸: 基于Sakura的分支主题
 
 基于主题 [Sakura](https://github.com/mashirozx/Sakura) 的基础上修改的Sakurairo主题
 
-[![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square&logo=github)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
+[![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
+
+[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square)](https://github.com/mirai-mamori/Sakurairo/releases) 
 
 相比原主题，它默认开启：
 
