@@ -31,7 +31,7 @@ Sakurairo🌸: 基于Sakura的分支主题
 
 ## 其他：
 
-- 仓库国内镜像：https://gitee.com/yan_sichuans_pupils/Sakurairo
+- 仓库国内镜像：https://gitee.com/mirai-mamori/Sakurairo
 
 - 主题使用说明见：<https://2heng.xin/theme-sakura/>
 
