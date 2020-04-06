@@ -1,4 +1,5 @@
 ![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/detail.png)
+
 Sakurairo🌸: 基于Sakura的分支主题
 ===
 
