@@ -8,35 +8,37 @@ Sakurairo🌸: 基于Sakura的分支主题
 
 [![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases) 
 
-相比原主题，它默认开启：
+# 默认开启：
 
--调用本地CSS
+- 调用本地CSS
 
--社交栏样式为独立成行
+- 社交栏样式为独立成行
 
--开启PJAX及NProcess进度条
+- 开启PJAX及NProcess进度条
 
-已知Feature（Bug）：
+# 已知Bug：
 
 暂无
 
-版权说明：
+# 版权说明：
 
-樱花飘落特效、波浪特效、说说模版等均来自互联网，如有版权问题，烦请发邮件（me#okaeri.org）给我，我会及时下线功能。
+- 樱花飘落特效、波浪特效、说说模版等均来自互联网，如有版权问题，烦请发邮件（me#okaeri.org）给我，我会及时下线功能。
 
-看板娘项目地址：https://github.com/stevenjoezhang/live2d-widget
+- 看板娘项目地址：https://github.com/stevenjoezhang/live2d-widget
 
-检测并更新功能：https://github.com/YahnisElsts/plugin-update-checker
+- 检测并更新功能插件项目地址：https://github.com/YahnisElsts/plugin-update-checker
 
-LOGO特效样式参考原主题作者白猫，由https://hyacm.com/acai/ui/143/sakura-logo/ 提供方案
+- LOGO特效样式参考原主题作者白猫，由https://hyacm.com/acai/ui/143/sakura-logo/ 提供方案
 
-其他：
+# 其他：
 
-仓库国内镜像：https://gitee.com/yan_sichuans_pupils/Sakurairo
+- 仓库国内镜像：https://gitee.com/yan_sichuans_pupils/Sakurairo
 
-主题使用说明见：<https://2heng.xin/theme-sakura/>
+- 主题使用说明见：<https://2heng.xin/theme-sakura/>
 
-主题交流群：860262481
+- 主题交流群：860262481
 
-希望你喜欢！
+- 主题交流论坛：https://sakurasaku.cn
+
+# 希望你喜欢！
 
