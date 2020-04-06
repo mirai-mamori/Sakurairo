@@ -27,6 +27,7 @@ Theme by Mashiro
 -->
 <html <?php language_attributes(); ?>>
 <head>
+<meta name="theme-color" content="<?php echo akina_option('theme_skin'); ?>">
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
@@ -78,11 +79,13 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 <?php endif; ?>
 </head>
 <body <?php body_class(); ?>>
+<?php if (akina_option('yjzdh', '1')): ?>
 <div id="preload">
 <li data-id="3" class="active">
 		<div id="preloader_3"></div>
 	</li>
 </div>
+<?php endif; ?>
 	<div class="scrollbar" id="bar"></div>
 	<section id="main-container">
 		<?php 

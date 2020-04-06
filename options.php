@@ -920,12 +920,12 @@ function optionsframework_options()
         ),
     );
 
-    $options[] = array(
-        'name' => __('Footer float music player', 'sakura'), /*页脚悬浮播放器*/
-        'desc' => __('If you don\'t need the player just leave it blank.Fill in the "song list" ID of Netease Cloud Music, eg: https://music.163.com/#/playlist?id=2288037900 The ID is 2288037900', 'sakura'), /*如果不需要播放器留空即可。填写网易云音乐的「歌单」ID，eg：https://music.163.com/#/playlist?id=2288037900的ID是2288037900*/
-        'id' => 'playlist_id',
-        'std' => '2288037900',
-        'type' => 'text');
+    //$options[] = array(
+    //    'name' => __('Footer float music player', 'sakura'), /*页脚悬浮播放器*/
+    //    'desc' => __('If you don\'t need the player just leave it blank.Fill in the "song list" ID of Netease Cloud Music, eg: https://music.163.com/#/playlist?id=2288037900 The ID is 2288037900', 'sakura'), /*如果不需要播放器留空即可。填写网易云音乐的「歌单」ID，eg：https://music.163.com/#/playlist?id=2288037900的ID是2288037900*/
+    //    'id' => 'playlist_id',
+    //    'std' => '2288037900',
+    //    'type' => 'text');
 
     $options[] = array(
         'name' => __('Version Control', 'sakura'), /*版本控制*/
@@ -1199,7 +1199,7 @@ function optionsframework_options()
         'name' => __('预加载动画', 'sakura'), /*预加载动画*/
         'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
         'id' => 'yjzdh',
-        'std' => '1',
+        'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
@@ -1214,6 +1214,34 @@ function optionsframework_options()
         'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
         'id' => 'bolangcss',
         'std' => '1',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('页脚悬浮播放器', 'sakura'), /*页脚悬浮播放器*/
+        'desc' => __('如果不需要播放器留空即可。填写网易云音乐的「歌单」ID，eg：https://music.163.com/#/playlist?id=2288037900的ID是2288037900', 'sakura'), /*如果不需要播放器留空即可。填写网易云音乐的「歌单」ID，eg：https://music.163.com/#/playlist?id=2288037900的ID是2288037900*/
+        'id' => 'playlist_id',
+        'std' => '2288037900',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('页脚悬浮播放器默认音量', 'sakura'), /*页脚悬浮播放器*/
+        'desc' => __('最大值为1最小值0', 'sakura'),
+        'id' => 'playlist_mryl',
+        'std' => '0.5',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('页脚悬浮播放器自动播放', 'sakura'), 
+        'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
+        'id' => 'playlist_zdbf',
+        'std' => '0',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('页脚悬浮播放器随机播放', 'sakura'), /*首页波浪特效*/
+        'desc' => __('勾选关闭，默认开启', 'sakura'), /*勾选关闭*/
+        'id' => 'playlist_sjbf',
+        'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
@@ -1272,6 +1300,13 @@ function optionsframework_options()
         'std' => '粉色的花瓣，美丽地缠绕在身上。依在风里。',
         'type' => 'textarea');
     
+    $options[] = array(
+        'name' => __('音符特效', 'sakura'), /*音符特效*/
+        'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
+        'id' => 'audio',
+        'std' => '0',
+        'type' => 'checkbox');
+
     $options[] = array(
         'name' => __('Logo特效', 'sakura'), /*Logo特效*/
         'desc' => __('勾选开启', 'sakura'), /*勾选开启*/

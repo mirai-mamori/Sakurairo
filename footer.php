@@ -23,7 +23,7 @@
 		<div class="site-info" theme-info="Sakura v<?php echo SAKURA_VERSION; ?>">
 			<div class="footertext">
 				<div class="img-preload">
-					<img src="<?php echo akina_option('webweb_img'); ?>/load/ball.svg">
+					<img src="<?php echo akina_option('webweb_img'); ?>/load/ball.svg"><!-- 加载下一部分圈圈 -->
 					<img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/disqus-preloader.svg">
 				</div>
 				<i class="iconfont icon-sakura rotating" style="color: <?php echo akina_option('theme_skin'); ?>;display:inline-block;font-size:26px"></i></p>
@@ -154,6 +154,9 @@
         data-server="netease"
         data-type="playlist"
         data-fixed="true"
+        data-autoplay="<?php echo akina_option('playlist_zdbf', 'true'); ?>"
+        data-volume="<?php echo akina_option('playlist_mryl', ''); ?>"
+        data-order="<?php echo akina_option('playlist_sjbf', ''); ?>random"
         data-theme="<?php echo akina_option('theme_skin'); ?>">
     </div>
 <?php endif; ?>
