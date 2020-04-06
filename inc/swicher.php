@@ -5,6 +5,7 @@ function font_end_js_control() { ?>
 var mashiro_option = new Object();
 var mashiro_global = new Object();
 mashiro_option.NProgressON = <?php if ( akina_option('nprogress_on') ){ echo 'true'; } else { echo 'false'; } ?>;
+mashiro_option.audio = <?php if ( akina_option('audio') ){ echo 'true'; } else { echo 'false'; } ?>;
 mashiro_option.email_domain = "<?php echo akina_option('email_domain', ''); ?>";
 mashiro_option.email_name = "<?php echo akina_option('email_name', ''); ?>";
 mashiro_option.cookie_version_control = "<?php echo akina_option('cookie_version', ''); ?>";

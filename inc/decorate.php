@@ -167,6 +167,19 @@ h1.main-title {
   
 #pagination .loading {
     background: url(<?php echo akina_option('webweb_img'); ?>/load/ball.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #555;
+    border: none;
+    background-size: auto 100%
+}
+#pagination .loading,#bangumi-pagination .loading {
+    background: url(<?php echo akina_option('webweb_img'); ?>/load/ball.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #555;
+    border: none;
+    background-size: auto 100%
 }
 #nprogress .spinner-icon {
     border-top-color: <?php echo akina_option('theme_skin'); ?>;
