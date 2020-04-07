@@ -844,7 +844,7 @@ if (mashiro_option.float_player_on) {
                         }
                     });
                 }
-                var b = 'https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r';
+                var b = mashiro_option.meting_api_url + '?server=:server&type=:type&id=:id&_wpnonce=' + Poi.nonce;
                 'undefined' != typeof meting_api && (b = meting_api);
                 for (var f = 0; f < aplayers.length; f++) try {
                     aplayers[f].destroy()
@@ -857,7 +857,7 @@ if (mashiro_option.float_player_on) {
                             f = d.dataset.id;
                         if (f) {
                             var g = d.dataset.api || b;
-                            g = g.replace(':server', d.dataset.server), g = g.replace(':type', d.dataset.type), g = g.replace(':id', d.dataset.id), g = g.replace(':auth', d.dataset.auth), g = g.replace(':r', Math.random());
+                            g = g.replace(':server', d.dataset.server), g = g.replace(':type', d.dataset.type), g = g.replace(':id', d.dataset.id);
                             var h = new XMLHttpRequest;
                             h.onreadystatechange = function () {
                                 if (4 === h.readyState && (200 <= h.status && 300 > h.status || 304 === h.status)) {
@@ -1422,7 +1422,7 @@ var home = location.href,
                 $('html').css('overflow-y', 'hidden');
                 if (mashiro_option.live_search) {
                     var QueryStorage = [];
-                    search_a(Poi.api + "sakura/v1/cache_search/json");
+                    search_a(Poi.api + "sakura/v1/cache_search/json?_wpnonce=" + Poi.nonce);
 
                     var otxt = addComment.I("search-input"),
                         list = addComment.I("PostlistBox"),

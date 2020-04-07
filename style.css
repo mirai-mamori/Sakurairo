@@ -4092,7 +4092,8 @@ background: rgba(255,250,250,0.92)
     left: -40px;
     -webkit-transform: translate3d(0, 50px, 0);
     transform: translate3d(0, 50px, 0);
-    opacity: 0
+    opacity: 0;
+    visibility: hidden;
 }
 
 .wechatInner:before {
