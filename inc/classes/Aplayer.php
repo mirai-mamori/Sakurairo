@@ -27,6 +27,7 @@ class Aplayer
             case 'song':
                 $data = $api->format(true)->song($id);
                 $data = json_decode($data, true)["url"];
+                $data = $this->song_url($data);
                 break;
             // case 'album':
             //     $data = $api->format(true)->album($id);
@@ -46,11 +47,12 @@ class Aplayer
                 break;
             // case 'search':
             //     $data = $api->format(true)->search($id);
-            //     $data=json_decode($data, true)["url"];
+            //     $data=json_decode($data, true);
             //     break;
             default:
                 $data = $api->format(true)->url($id);
                 $data = json_decode($data, true)["url"];
+                $data = $this->song_url($data);
                 break;
         }
         return $data;
@@ -76,6 +78,24 @@ class Aplayer
             );
         }
         return $playlist;
+    }
+
+    private function song_url($url){
+        $server = $this->server;
+        if ($server == 'netease') {
+            $url = str_replace('://m7c.', '://m7.', $url);
+            $url = str_replace('://m8c.', '://m8.', $url);
+            $url = str_replace('http://m8.', 'https://m9.', $url);
+            $url = str_replace('http://m7.', 'https://m9.', $url);
+            $url = str_replace('http://m10.', 'https://m10.', $url);
+        }elseif ($server == 'xiami') {
+            $url = str_replace('http://', 'https://', $url);
+        }elseif ($server == 'baidu') {
+            $url = str_replace('http://zhangmenshiting.qianqian.com', 'https://gss3.baidu.com/y0s1hSulBw92lNKgpU_Z2jR7b2w6buu', $url);
+        }else{
+            $url = $url;
+        }
+        return $url;
     }
 
     private function format_lyric($data) {

@@ -214,7 +214,7 @@ function get_qq_avatar() {
 }
 
 function bgm_bilibili() {
-    if (!check_ajax_referer('wp_rest', 'r', false)) {
+    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
         $output = array(
             'status' => 403,
             'success' => false,
@@ -233,7 +233,16 @@ function bgm_bilibili() {
 function meting_aplayer() {
     $type = $_GET['type'];
     $id = $_GET['id'];
-    if (check_ajax_referer('wp_rest', '_wpnonce', false) || !wp_verify_nonce($_GET['meting_pnonce'], $type . '#:' . $id)) {
+    $wpnonce = $_GET['_wpnonce'];
+    $meting_pnonce = $_GET['meting_pnonce'];
+    if ((isset($wpnonce) && !check_ajax_referer('wp_rest', $wpnonce, false)) || (isset($nonce) && !wp_verify_nonce($nonce, $type . '#:' . $id))) {
+        $output = array(
+            'status' => 403,
+            'success' => false,
+            'message' => 'Unauthorized client.'
+        );
+        $response = new WP_REST_Response($output, 403);
+    } else {
         $Meting_API = new \Sakura\API\Aplayer();
         $data = $Meting_API->get_data($type, $id);
         if ($type === 'playlist') {
@@ -244,18 +253,10 @@ function meting_aplayer() {
             $response->set_headers(array('cache-control' => 'max-age=3600'));
             echo $data;
         } else {
-            $data = str_replace('http://', 'https://', $data);
             $response = new WP_REST_Response();
             $response->set_status(301);
             $response->header('Location', $data);
         }
-    } else {
-        $output = array(
-            'status' => 403,
-            'success' => false,
-            'message' => 'Unauthorized client.'
-        );
-        $response = new WP_REST_Response($output, 403);
     }
     return $response;
 }
