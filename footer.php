@@ -154,7 +154,6 @@
         data-server="<?php echo akina_option('aplayer_server'); ?>"
         data-type="playlist"
         data-fixed="true"
-        data-autoplay="<?php echo akina_option('playlist_zdbf', 'true'); ?>"
         data-volume="<?php echo akina_option('playlist_mryl', ''); ?>"
         data-order="<?php echo akina_option('playlist_sjbf', ''); ?>random"
         data-theme="<?php echo akina_option('theme_skin'); ?>">
