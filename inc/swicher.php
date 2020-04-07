@@ -68,8 +68,9 @@ mashiro_option.jsdelivr_css_src = "<?php echo get_template_directory_uri() ?>/cd
 <?php } else { ?>
 mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@<?php echo SAKURA_VERSION; ?>/cdn/css/lib.min.css";
 <?php } ?>
-<?php if (akina_option('playlist_id', '')): ?>
+<?php if (akina_option('aplayer_server') != 'off'): ?>
 mashiro_option.float_player_on = true;
+mashiro_option.meting_api_url = "<?php echo rest_url('sakura/v1/meting/aplayer'); ?>";
 <?php endif; ?>
 
 mashiro_option.cover_api = "<?php echo rest_url('sakura/v1/image/cover'); ?>";
