@@ -929,17 +929,17 @@ function optionsframework_options()
         'options' => array(
             'netease' => __('Netease Cloud Music (default)', 'sakura'),
             'xiami' => __('Xiami Music', 'sakura'),
-            'kugou' => __('KuGou Music', 'sakura'),
-            'baidu' => __('Baidu Music', 'sakura'),
-            'tencent' => __('QQ Music (may fail) ', 'sakura'),
+ //           'kugou' => __('KuGou Music', 'sakura'),
+ //           'baidu' => __('Baidu Music', 'sakura'),
+ //           'tencent' => __('QQ Music (may fail) ', 'sakura'),
             'off' => __('Off', 'sakura'),
         ));
 
     $options[] = array(
         'name' => __('Song list ID', 'sakura'),
-        'desc' => __('Fill in the "song list" ID, eg: https://music.163.com/#/playlist?id=2288037900 The ID is 2288037900', 'sakura'),
+        'desc' => __('Fill in the "song list" ID, eg: https://music.163.com/#/playlist?id=3124382377 The ID is 3124382377', 'sakura'),
         'id' => 'aplayer_playlistid',
-        'std' => '2288037900',
+        'std' => '3124382377',
         'type' => 'text');
 
     $options[] = array(
@@ -1245,12 +1245,12 @@ function optionsframework_options()
         'std' => '0.5',
         'type' => 'text');
     
-    $options[] = array(
-        'name' => __('页脚悬浮播放器自动播放', 'sakura'), 
-        'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
-        'id' => 'playlist_zdbf',
-        'std' => '0',
-        'type' => 'checkbox');
+//    $options[] = array(
+//        'name' => __('页脚悬浮播放器自动播放', 'sakura'), 
+//        'desc' => __('勾选开启', 'sakura'), /*勾选开启*/
+//        'id' => 'playlist_zdbf',
+//        'std' => '0',
+//        'type' => 'checkbox');
     
     $options[] = array(
         'name' => __('页脚悬浮播放器随机播放', 'sakura'), /*首页波浪特效*/
