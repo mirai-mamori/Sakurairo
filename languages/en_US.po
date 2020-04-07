@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakura\n"
-"POT-Creation-Date: 2020-04-05 11:52+0800\n"
-"PO-Revision-Date: 2020-04-05 11:52+0800\n"
+"POT-Creation-Date: 2020-04-06 17:56+0800\n"
+"PO-Revision-Date: 2020-04-06 17:56+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -222,10 +222,6 @@ msgstr ""
 msgid "page %s "
 msgstr ""
 
-#: inc/api.php:337 inc/theme_plus.php:727
-msgid "The comment is private"
-msgstr ""
-
 #: inc/categories-images.php:45 inc/categories-images.php:66
 msgid "category/tag image"
 msgstr ""
@@ -245,6 +241,10 @@ msgstr ""
 
 #: inc/categories-images.php:223
 msgid "no image"
+msgstr ""
+
+#: inc/classes/Cache.php:70 inc/theme_plus.php:727
+msgid "The comment is private"
 msgstr ""
 
 #: inc/options-framework.php:182 inc/options-framework.php:183
@@ -923,7 +923,7 @@ msgstr ""
 msgid "Whether to turn on the top-feature"
 msgstr ""
 
-#: options.php:446 options.php:1104
+#: options.php:446 options.php:1126
 msgid "Default on"
 msgstr ""
 
@@ -1380,198 +1380,239 @@ msgid "Footer float music player"
 msgstr ""
 
 #: options.php:926
-msgid ""
-"If you don't need the player just leave it blank.Fill in the \"song list\" "
-"ID of Netease Cloud Music, eg: https://music.163.com/#/playlist?"
-"id=2288037900 The ID is 2288037900"
+msgid "Choose which platform you'll use."
+msgstr ""
+
+#: options.php:931
+msgid "Netease Cloud Music (default)"
 msgstr ""
 
 #: options.php:932
-msgid "Version Control"
+msgid "Xiami Music"
 msgstr ""
 
 #: options.php:933
+msgid "KuGou Music"
+msgstr ""
+
+#: options.php:934
+msgid "Baidu Music"
+msgstr ""
+
+#: options.php:935
+msgid "QQ Music (may fail) "
+msgstr ""
+
+#: options.php:936
+msgid "Off"
+msgstr ""
+
+#: options.php:940
+msgid "Song list ID"
+msgstr ""
+
+#: options.php:941
+msgid ""
+"Fill in the \"song list\" ID, eg: https://music.163.com/#/playlist?"
+"id=2288037900 The ID is 2288037900"
+msgstr ""
+
+#: options.php:947
+msgid "Netease Cloud Music cookie"
+msgstr ""
+
+#: options.php:948
+msgid ""
+"For Netease Cloud Music, fill in your vip account's cookies if you want to "
+"play special tracks.<b>If you don't know what does mean, left it blank.</b>"
+msgstr ""
+
+#: options.php:954
+msgid "Version Control"
+msgstr ""
+
+#: options.php:955
 msgid ""
 "Used to update frontend cookies and browser caches, any string can be used"
 msgstr ""
 
-#: options.php:939
+#: options.php:961
 msgid "Enable PJAX (recommand on)"
 msgstr ""
 
-#: options.php:940
+#: options.php:962
 msgid "The principle is the same as Ajax"
 msgstr ""
 
-#: options.php:946
+#: options.php:968
 msgid "Enable NProgress progress bar"
 msgstr ""
 
-#: options.php:947 options.php:954 options.php:961
+#: options.php:969 options.php:976 options.php:983
 msgid "Default off, check on"
 msgstr ""
 
-#: options.php:953
+#: options.php:975
 msgid "Enable sidebar widget"
 msgstr ""
 
-#: options.php:960
+#: options.php:982
 msgid "Enable Announcement"
 msgstr ""
 
-#: options.php:967
+#: options.php:989
 msgid "Announcement content"
 msgstr ""
 
-#: options.php:968
+#: options.php:990
 msgid ""
 "Announcement content, the text exceeds 142 bytes will be scrolled display "
 "(mobile device is invalid)"
 msgstr ""
 
-#: options.php:973
+#: options.php:995
 msgid "Bilibili UID"
 msgstr ""
 
-#: options.php:974
+#: options.php:996
 msgid ""
 "Fill in your UID, eg.https://space.bilibili.com/13972644/, only fill in with "
 "the number part."
 msgstr ""
 
-#: options.php:980
+#: options.php:1002
 msgid "Bilibili Cookie"
 msgstr ""
 
-#: options.php:981
+#: options.php:1003
 msgid ""
 "Fill in your Cookies, go to your bilibili homepage, you can get cookies in "
 "brownser network pannel with pressing F12. If left this blank, you'll not "
 "get the progress."
 msgstr ""
 
-#: options.php:986
+#: options.php:1008
 msgid "The categories of articles that don't not show on homepage"
 msgstr ""
 
-#: options.php:987 options.php:994
+#: options.php:1009 options.php:1016
 msgid "Fill in category ID, multiple IDs are divided by a comma \",\""
 msgstr ""
 
-#: options.php:993
+#: options.php:1015
 msgid "Images category"
 msgstr ""
 
-#: options.php:1000
+#: options.php:1022
 msgid "Statistics Interface"
 msgstr ""
 
-#: options.php:1005
+#: options.php:1027
 msgid ""
 "WP-Statistics plugin (Professional statistics, can exclude invalid access)"
 msgstr ""
 
-#: options.php:1006
+#: options.php:1028
 msgid "Theme built-in (simple statistics, calculate each page access request)"
 msgstr ""
 
-#: options.php:1010
+#: options.php:1032
 msgid "Statistical data display format"
 msgstr ""
 
-#: options.php:1015
+#: options.php:1037
 msgid "23333 Views (default)"
 msgstr ""
 
-#: options.php:1016
+#: options.php:1038
 msgid "23,333 Views (britain)"
 msgstr ""
 
-#: options.php:1017
+#: options.php:1039
 msgid "23 333 Views (french)"
 msgstr ""
 
-#: options.php:1018
+#: options.php:1040
 msgid "23k Views (chinese)"
 msgstr ""
 
-#: options.php:1022
+#: options.php:1044
 msgid "Gravatar avatar proxy"
 msgstr ""
 
-#: options.php:1023
+#: options.php:1045
 msgid ""
 "A front-ed proxy for Gravatar, eg. gravatar.2heng.xin/avatar . Leave it "
 "blank if you do not need."
 msgstr ""
 
-#: options.php:1029
+#: options.php:1051
 msgid "Comment image upload API"
 msgstr ""
 
-#: options.php:1034
+#: options.php:1056
 msgid "Imgur (https://imgur.com)"
 msgstr ""
 
-#: options.php:1035
+#: options.php:1057
 msgid "SM.MS (https://sm.ms)"
 msgstr ""
 
-#: options.php:1036
+#: options.php:1058
 msgid "Chevereto (https://chevereto.com)"
 msgstr ""
 
-#: options.php:1040
+#: options.php:1062
 msgid "Imgur Client ID"
 msgstr ""
 
-#: options.php:1041
+#: options.php:1063
 msgid ""
 "Register your application <a href=\"https://api.imgur.com/oauth2/addclient"
 "\">here</a>, note we only need the Client ID here."
 msgstr ""
 
-#: options.php:1047
+#: options.php:1069
 msgid "SM.MS Secret Token"
 msgstr ""
 
-#: options.php:1048
+#: options.php:1070
 msgid ""
 "Register your application <a href=\"https://sm.ms/home/apitoken\">here</a>."
 msgstr ""
 
-#: options.php:1054
+#: options.php:1076
 msgid "Chevereto API v1 key"
 msgstr ""
 
-#: options.php:1055
+#: options.php:1077
 msgid "Get your API key here: "
 msgstr ""
 
-#: options.php:1061
+#: options.php:1083
 msgid "Chevereto URL"
 msgstr ""
 
-#: options.php:1062
+#: options.php:1084
 msgid ""
 "Your Chevereto homepage url, no slash in the end, eg. https://your.cherverto."
 "com"
 msgstr ""
 
-#: options.php:1068
+#: options.php:1090
 msgid "Comment images proxy"
 msgstr ""
 
-#: options.php:1069
+#: options.php:1091
 msgid ""
 "A front-ed proxy for the uploaded images. Leave it blank if you do not need."
 msgstr ""
 
-#: options.php:1075
+#: options.php:1097
 msgid "Imgur upload proxy"
 msgstr ""
 
-#: options.php:1076
+#: options.php:1098
 msgid ""
 "A back-ed proxy to upload images. You may set a self hosted proxy with "
 "Nginx, following my <a href=\"https://2heng.xin/2018/06/06/javascript-upload-"
@@ -1581,151 +1622,151 @@ msgid ""
 "a>】"
 msgstr ""
 
-#: options.php:1082
+#: options.php:1104
 msgid "Enable live search"
 msgstr ""
 
-#: options.php:1083
+#: options.php:1105
 msgid ""
 "Real-time search in the foreground, call the Rest API to update the cache "
 "every hour, you can manually set the cache time in api.php"
 msgstr ""
 
-#: options.php:1089
+#: options.php:1111
 msgid "Include comments in live search"
 msgstr ""
 
-#: options.php:1090
+#: options.php:1112
 msgid ""
 "Search for comments in real-time search (not recommended if there are too "
 "many comments on the site)"
 msgstr ""
 
-#: options.php:1096
+#: options.php:1118
 msgid "Enable baguetteBox"
 msgstr ""
 
-#: options.php:1097
+#: options.php:1119
 msgid ""
 "Default off，<a href=\"https://github.com/mashirozx/Sakura/wiki/Fancybox"
 "\">please read wiki</a>"
 msgstr ""
 
-#: options.php:1103
+#: options.php:1125
 msgid "Enable lazyload in posts"
 msgstr ""
 
-#: options.php:1110
+#: options.php:1132
 msgid "lazyload spinner"
 msgstr ""
 
-#: options.php:1111
+#: options.php:1133
 msgid "The placeholder to display when the image loads, fill in the image url"
 msgstr ""
 
-#: options.php:1117
+#: options.php:1139
 msgid "Whether to enable the clipboard copyright"
 msgstr ""
 
-#: options.php:1118
+#: options.php:1140
 msgid ""
 "Automatically add a copyright to the clipboard when copying more than 30 "
 "bytes, which is enabled by default."
 msgstr ""
 
-#: options.php:1124
+#: options.php:1146
 msgid "Email address prefix"
 msgstr ""
 
-#: options.php:1125
+#: options.php:1147
 msgid ""
 "For sending system mail, the sender address displayed in the user's mailbox, "
 "do not use Chinese, the default system email address is bibi@your_domain_name"
 msgstr ""
 
-#: options.php:1131
+#: options.php:1153
 msgid "Comments reply notification"
 msgstr ""
 
-#: options.php:1132
+#: options.php:1154
 msgid ""
 "WordPress will use email to notify users when their comments receive a reply "
 "by default. Tick this item allows users to set their own comments reply "
 "notification"
 msgstr ""
 
-#: options.php:1138
+#: options.php:1160
 msgid "Administrator comment notification"
 msgstr ""
 
-#: options.php:1139
+#: options.php:1161
 msgid ""
 "Whether to use email notification when the administrator's comments receive "
 "a reply"
 msgstr ""
 
-#: options.php:1145
+#: options.php:1167
 msgid "Enable private comment"
 msgstr ""
 
-#: options.php:1146
+#: options.php:1168
 msgid "Allow users to set their own comments to be invisible to others"
 msgstr ""
 
-#: options.php:1152
+#: options.php:1174
 msgid "Human verification"
 msgstr ""
 
-#: options.php:1153
+#: options.php:1175
 msgid "Enable human verification"
 msgstr ""
 
-#: options.php:1159
+#: options.php:1181
 msgid "QQ avatar link encryption"
 msgstr ""
 
-#: options.php:1160
+#: options.php:1182
 msgid "Do not display the user's qq avatar links directly."
 msgstr ""
 
-#: options.php:1165
+#: options.php:1187
 msgid "Off (default)"
 msgstr ""
 
-#: options.php:1166
+#: options.php:1188
 msgid "use redirect (general security)"
 msgstr ""
 
-#: options.php:1167
+#: options.php:1189
 msgid "fetch data at backend (high security)"
 msgstr ""
 
-#: options.php:1168
+#: options.php:1190
 msgid "fetch data at backend (high security，slow)"
 msgstr ""
 
-#: options.php:1172
+#: options.php:1194
 msgid "Comment UA infomation"
 msgstr ""
 
-#: options.php:1173
+#: options.php:1195
 msgid ""
 "Check to enable, display the user's browser, operating system information"
 msgstr ""
 
-#: options.php:1179
+#: options.php:1201
 msgid "Enable disqus"
 msgstr ""
 
-#: options.php:1180
+#: options.php:1202
 msgid "Enable disqus for comment"
 msgstr ""
 
-#: options.php:1186
+#: options.php:1208
 msgid "Time Zone adjustment"
 msgstr ""
 
-#: options.php:1187
+#: options.php:1209
 msgid ""
 "If the comment has a time difference problem adjust here, fill in an "
 "integer, the calculation method: actual_time = display_error_time - "
@@ -1784,7 +1825,7 @@ msgstr ""
 msgid "Attribution-NonCommercial-ShareAlike 4.0 International"
 msgstr ""
 
-#: user/page-bangumi.php:27
+#: user/page-bangumi.php:30
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr ""
 

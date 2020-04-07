@@ -5,7 +5,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Hitomi , Ukenn , Spirit , Mashiro , Louie , Fuzzz
 Author URI: https://asuhe.jp/
 Description: 一个基于Sakura主题的增强主题（しきさい　Update）
-Version: 1.9.2
+Version: 1.9.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -4092,7 +4092,8 @@ background: rgba(255,250,250,0.92)
     left: -40px;
     -webkit-transform: translate3d(0, 50px, 0);
     transform: translate3d(0, 50px, 0);
-    opacity: 0
+    opacity: 0;
+    visibility: hidden;
 }
 
 .wechatInner:before {

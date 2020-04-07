@@ -20,7 +20,7 @@
 	?>
 </div><!-- #page Pjax container-->
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info" theme-info="Sakura v<?php echo SAKURA_VERSION; ?>">
+		<div class="site-info" theme-info="Sakurairo v<?php echo SAKURA_VERSION; ?>">
 			<div class="footertext">
 				<div class="img-preload">
 					<img src="<?php echo akina_option('webweb_img'); ?>/load/ball.svg"><!-- 加载下一部分圈圈 -->
@@ -34,9 +34,9 @@
 					<span style="color: #b9b9b9;">
 						<?php /* 能保留下面两个链接吗？算是我一个小小的心愿吧~ */ ?>
 						<?php if (akina_option('oneword', '1')): ?>
-						<script type="text/javascript" src="https://api.nmomi.com/api/yiyan/index.php/?format=js&charset=utf-8"></script>
-                        <?php endif; ?>
-                        <div><script>dutang()</script></div></p>
+                        <script type="text/javascript" src="https://api.btstu.cn/yan/api.php?charset=utf-8&encode=js" ></script>
+						<div id="yan"><script>text()</script></div>
+                        <?php endif; ?></p>
 						Theme <a href="https://2heng.xin/theme-sakura/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakurairo</a>  by <a href="https://asuhe.jp/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hitomi</a> 
 					</span>
 				</p>
@@ -147,14 +147,13 @@
 	<div class="show-hide-wrap"><button class="show-hide"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32"><path d="M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z"></path></svg></button></div>
     </aside>
 <?php endif; ?>
-<?php if (akina_option('playlist_id', '')): ?>
+<?php if (akina_option('aplayer_server') != 'off'): ?>
     <div id="aplayer-float" style="z-index: 100;"
 	    class="aplayer"
-        data-id="<?php echo akina_option('playlist_id', ''); ?>"
-        data-server="netease"
+        data-id="<?php echo akina_option('aplayer_playlistid', ''); ?>"
+        data-server="<?php echo akina_option('aplayer_server'); ?>"
         data-type="playlist"
         data-fixed="true"
-        data-autoplay="<?php echo akina_option('playlist_zdbf', 'true'); ?>"
         data-volume="<?php echo akina_option('playlist_mryl', ''); ?>"
         data-order="<?php echo akina_option('playlist_sjbf', ''); ?>random"
         data-theme="<?php echo akina_option('theme_skin'); ?>">
