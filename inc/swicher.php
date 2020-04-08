@@ -56,7 +56,7 @@ mashiro_option.clipboardCopyright = false;
 mashiro_option.clipboardCopyright = true;
 <?php } ?>
 
-<?php if(akina_option('entry_content_theme') == "sakura"){ ?>
+<?php if(akina_option('entry_content_theme') == "sakurairo"){ ?>
 mashiro_option.entry_content_theme_src = "<?php echo get_template_directory_uri() ?>/cdn/theme/sakura.css?<?php echo SAKURA_VERSION.akina_option('cookie_version', ''); ?>";
 <?php }elseif(akina_option('entry_content_theme') == "github") {?>
 mashiro_option.entry_content_theme_src = "<?php echo get_template_directory_uri() ?>/cdn/theme/github.css?<?php echo SAKURA_VERSION.akina_option('cookie_version', ''); ?>";

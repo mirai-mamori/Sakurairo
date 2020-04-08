@@ -179,8 +179,8 @@ function optionsframework_setdefaults() {
 function optionsframework_menu_settings() {
 
 	$menu = array(
-		'page_title' => __('Sakura Options', 'sakura'),
-		'menu_title' => __('Sakura Options', 'sakura'),
+		'page_title' => __('Sakurairo Options', 'sakurairo'),
+		'menu_title' => __('Sakurairo Options', 'sakurairo'),
 		'capability' => 'edit_theme_options',
 		'menu_slug' => 'options-framework',
 		'callback' => 'optionsframework_page'
@@ -272,8 +272,8 @@ function optionsframework_page() { ?>
 			<?php settings_fields( 'optionsframework' ); ?>
 			<?php optionsframework_fields(); /* Settings */ ?>
 			<div id="optionsframework-submit">
-				<input type="submit" class="button-primary" name="update" value="<?php _e( 'Save', 'sakura' ); ?>" />
-				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore default', 'sakura' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'All setting will be lost, sure?', 'sakura' ) ); ?>' );" />
+				<input type="submit" class="button-primary" name="update" value="<?php _e( 'Save', 'sakurairo' ); ?>" />
+				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore default', 'sakurairo' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'All setting will be lost, sure?', 'sakurairo' ) ); ?>' );" />
 				<div class="clear"></div>
 			</div>
 			</form>
@@ -409,7 +409,7 @@ function optionsframework_adminbar() {
 	$wp_admin_bar->add_menu( array(
 			'parent' => 'appearance',
 			'id' => 'of_theme_options',
-			'title' => __('Sakura Options', 'sakura'),
+			'title' => __('Sakurairo Options', 'sakurairo'),
 			'href' => admin_url( 'themes.php?page=options-framework' )
 		));
 }

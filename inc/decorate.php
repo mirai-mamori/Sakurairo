@@ -417,7 +417,7 @@ h1.main-title {
 .art-content #archives .al_mon_list span {
     color: <?php echo akina_option('theme_skin'); ?>;
 }
-<?php if(akina_option('entry_content_theme') == "sakura"){ ?>
+<?php if(akina_option('entry_content_theme') == "sakurairo"){ ?>
 .entry-content th {
     background-color: <?php echo akina_option('theme_skin'); ?>
 }
