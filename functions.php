@@ -1957,3 +1957,26 @@ function permalink_tip()
 }
 add_action('admin_notices', 'permalink_tip');
 //code end
+
+//解析短代码  
+add_shortcode('task', 'task_shortcode');  
+function task_shortcode( $attr , $content = '') {             
+    $out ='<div class="task shortcodestyle"><i class="fa fa-tasks"></i>'.$content.'</div>';  
+    return $out;  
+}  
+add_shortcode('warning', 'warning_shortcode');  
+function warning_shortcode( $attr , $content = '') {              
+    $out ='<div class="warning shortcodestyle"><i class="fa fa fa-exclamation-triangle"></i>'.$content.'</div>';  
+    return $out;  
+}  
+add_shortcode('noway', 'noway_shortcode');  
+function noway_shortcode( $attr , $content = '') {            
+    $out ='<div class="noway shortcodestyle"><i class="fa fa-times-rectangle"></i>'.$content.'</div>';  
+    return $out;  
+}  
+add_shortcode('buy', 'buy_shortcode');  
+function buy_shortcode( $attr , $content = '') {              
+    $out ='<div class="buy shortcodestyle"><i class="fa fa-check-square"></i>'.$content.'</div>';  
+    return $out;  
+}  
+//code end

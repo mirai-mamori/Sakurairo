@@ -956,9 +956,9 @@ function optionsframework_options()
         'options' => array(
             'netease' => __('Netease Cloud Music (default)', 'sakurairo'),
             'xiami' => __('Xiami Music', 'sakurairo'),
- //           'kugou' => __('KuGou Music', 'sakurairo'),
- //           'baidu' => __('Baidu Music', 'sakurairo'),
- //           'tencent' => __('QQ Music (may fail) ', 'sakurairo'),
+//            'kugou' => __('KuGou Music', 'sakurairo'),
+//            'baidu' => __('Baidu Music（Overseas server does not support）', 'sakurairo'),
+//            'tencent' => __('QQ Music (may fail) ', 'sakurairo'),
             'off' => __('Off', 'sakurairo'),
         ));
 
@@ -1361,13 +1361,16 @@ function optionsframework_options()
         'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/pink',
         'type' => 'select',
         'options' => array(
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/pink' => __('「Japan Color」Pink（EE9CA7）', 'sakurairo'), /*粉色*/
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/blue' => __('「Japan Color」Blue（1E88A8）', 'sakurairo'), /*蓝色*/
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/yellow' => __('「Japan Color」Yellow（E98B2A）', 'sakurairo'), /*黄色*/
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/orange' => __('「Japan Color」Orange（FF8000）', 'sakurairo'), /*橙色*/
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/macaronblue' => __('「Macaron Color」Blue（B8F1ED）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/macarongreen' => __('「Macaron Color」Green（B8F1CC）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/macaronpurple' => __('「Macaron Color」Purple（D9B8F1）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/pink' => __('「Common Colors」Pink（EE9CA7）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/orange' => __('「Common Colors」Orange（FF8000）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/blue' => __('「Nippon Colors」Hanaasagi（1E88A8）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/yellow' => __('「Nippon Colors」Beniukon（E98B2A）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/sangosyu' => __('「Nippon Colors」Sangosyu（F17C67）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/sora' => __('「Nippon Colors」Sora（58B2DC）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/nae' => __('「Nippon Colors」Nae（86C166）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/macaronblue' => __('「Macaron Colors」Blue（B8F1ED）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/macarongreen' => __('「Macaron Colors」Green（B8F1CC）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/macaronpurple' => __('「Macaron Colors」Purple（D9B8F1）', 'sakurairo'), 
             'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/colorful' => __('「Others」ColorFul', 'sakurairo'), 
     ));
     $options[] = array(

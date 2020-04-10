@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-04-08 20:32+0800\n"
+"POT-Creation-Date: 2020-04-10 17:41+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1861,83 +1861,95 @@ msgid "Choose icon color"
 msgstr ""
 
 #: options.php:1364
-msgid "「Japan Color」Pink（EE9CA7）"
+msgid "「Common Colors」Pink（EE9CA7）"
 msgstr ""
 
 #: options.php:1365
-msgid "「Japan Color」Blue（1E88A8）"
+msgid "「Common Colors」Orange（FF8000）"
 msgstr ""
 
 #: options.php:1366
-msgid "「Japan Color」Yellow（E98B2A）"
+msgid "「Nippon Colors」Hanaasagi（1E88A8）"
 msgstr ""
 
 #: options.php:1367
-msgid "「Japan Color」Orange（FF8000）"
+msgid "「Nippon Colors」Beniukon（E98B2A）"
 msgstr ""
 
 #: options.php:1368
-msgid "「Macaron Color」Blue（B8F1ED）"
+msgid "「Nippon Colors」Sangosyu（F17C67）"
 msgstr ""
 
 #: options.php:1369
-msgid "「Macaron Color」Green（B8F1CC）"
+msgid "「Nippon Colors」Sora（58B2DC）"
 msgstr ""
 
 #: options.php:1370
-msgid "「Macaron Color」Purple（D9B8F1）"
+msgid "「Nippon Colors」Nae（86C166）"
 msgstr ""
 
 #: options.php:1371
-msgid "「Others」ColorFul"
+msgid "「Macaron Colors」Blue（B8F1ED）"
+msgstr ""
+
+#: options.php:1372
+msgid "「Macaron Colors」Green（B8F1CC）"
+msgstr ""
+
+#: options.php:1373
+msgid "「Macaron Colors」Purple（D9B8F1）"
 msgstr ""
 
 #: options.php:1374
-msgid "Theme style"
+msgid "「Others」ColorFul"
 msgstr ""
 
 #: options.php:1377
+msgid "Theme style"
+msgstr ""
+
+#: options.php:1380
 msgid "Custom theme color"
 msgstr ""
 
-#: options.php:1382
+#: options.php:1385
 msgid "Social background"
 msgstr ""
 
-#: options.php:1385 options.php:1393 options.php:1401 options.php:1409 options.php:1417
-#: options.php:1425 options.php:1433 options.php:1440 options.php:1447
+#: options.php:1388 options.php:1396 options.php:1404 options.php:1412 options.php:1420
+#: options.php:1428 options.php:1436 options.php:1443 options.php:1450
 msgid "Custom colors"
 msgstr ""
 
-#: options.php:1390
+#: options.php:1393
 msgid "Theme selection menu background color"
 msgstr ""
 
-#: options.php:1398
+#: options.php:1401
 msgid "Drop down arrow color"
 msgstr ""
 
-#: options.php:1406
+#: options.php:1409
 msgid "Home page article separator"
 msgstr ""
 
-#: options.php:1414
+#: options.php:1417
 msgid "Home page article time prompt accent"
 msgstr ""
 
-#: options.php:1422
+#: options.php:1425
 msgid "Home page article time prompt emphasize background"
 msgstr ""
 
-#: options.php:1430
+#: options.php:1433
 msgid "First page article border shadow"
 msgstr ""
 
-#: options.php:1437
+#: options.php:1440
 msgid "Preload animation color A"
 msgstr ""
 
-#: options.php:1444
+#: options.php:1447
 msgid "Preload animation color B"
 msgstr ""
 
@@ -2113,7 +2125,7 @@ msgid "https://github.com/mirai-mamori/Sakurairo"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "一个基于Sakura主题的增强主题（しきさい　Update）"
+msgid "一个基于Sakura主题的增强主题（まつよい　Update）"
 msgstr ""
 
 #. Author of the plugin/theme

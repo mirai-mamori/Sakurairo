@@ -888,9 +888,6 @@ a:hover {
     .single-center .single-header h1.entry-title {
         font-size: 26px
     }
-    #changskin {
-        display: none;
-    }
 }
 
 .pattern-center-sakura {
@@ -8889,3 +8886,14 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
 .bangumi-next i {
     color: orange;
 } 
+
+.shortcodestyle
+{margin:20px 0px !important;padding: 15px 15px 15px 40px !important;position: relative !important;-moz-box-shadow:0px 1px 2px rgba(0, 0, 0, 0.2) !important; -webkit-box-shadow:0px 1px 2px rgba(0, 0, 0, 0.2) !important; box-shadow:0px 1px 2px rgba(0, 0, 0, 0.2) !important;border-radius:5px !important;-webkit-border-radius:5px !important;-moz-border-radius:5px  !important;-khtml-border-radius:5px  !important;} 
+.shortcodestyle i{padding-right: 20px !important;}  
+.shortcodestyle a{padding:5px !important;}  
+.shortcodestyle a:hover{background:none !important;border-radius:0px !important;-webkit-border-radius:0px !important;-moz-border-radius:0px !important;-khtml-border-radius:0px !important;}  
+.warning{background:#FFEA97 !important;color: #9F6F26 !important;}  
+.noway{background:#EFCEC9 !important;color: #820B0B !important;}  
+.task{background: #E7E7E7 !important; color:  #333 !important;}  
+.buy{background: #9dd7e8 !important; color:#03536b !important;} 
+.shortcodestyle,.warning,.buy,.noway,.task p{text-indent: 0 !important;}  
