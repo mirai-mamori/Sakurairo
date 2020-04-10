@@ -6,6 +6,7 @@ var mashiro_option = new Object();
 var mashiro_global = new Object();
 mashiro_option.NProgressON = <?php if ( akina_option('nprogress_on') ){ echo 'true'; } else { echo 'false'; } ?>;
 mashiro_option.audio = <?php if ( akina_option('audio') ){ echo 'true'; } else { echo 'false'; } ?>;
+mashiro_option.darkmode = <?php if ( akina_option('darkmode') ){ echo 'true'; } else { echo 'false'; } ?>;
 mashiro_option.email_domain = "<?php echo akina_option('email_domain', ''); ?>";
 mashiro_option.email_name = "<?php echo akina_option('email_name', ''); ?>";
 mashiro_option.cookie_version_control = "<?php echo akina_option('cookie_version', ''); ?>";
@@ -56,7 +57,7 @@ mashiro_option.clipboardCopyright = false;
 mashiro_option.clipboardCopyright = true;
 <?php } ?>
 
-<?php if(akina_option('entry_content_theme') == "sakura"){ ?>
+<?php if(akina_option('entry_content_theme') == "sakurairo"){ ?>
 mashiro_option.entry_content_theme_src = "<?php echo get_template_directory_uri() ?>/cdn/theme/sakura.css?<?php echo SAKURA_VERSION.akina_option('cookie_version', ''); ?>";
 <?php }elseif(akina_option('entry_content_theme') == "github") {?>
 mashiro_option.entry_content_theme_src = "<?php echo get_template_directory_uri() ?>/cdn/theme/github.css?<?php echo SAKURA_VERSION.akina_option('cookie_version', ''); ?>";

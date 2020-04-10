@@ -16,7 +16,7 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 			<?php if(akina_option('patternimg') || !get_random_bg_url()){ ?>
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'search result: %s', 'sakura' )/*搜索结果*/, '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( __( 'search result: %s', 'sakurairo' )/*搜索结果*/, '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 			<?php } ?>
 			<?php
@@ -39,7 +39,7 @@ get_header(); ?>
 		<!-- search start -->
 		<form class="s-search">
 			<i class="iconfont icon-search"></i>
-			<input class="text-input" type="search" name="s" placeholder="<?php _e('Search...', 'sakura') ?>" required>	
+			<input class="text-input" type="search" name="s" placeholder="<?php _e('Search...', 'sakurairo') ?>" required>	
 		</form>
 		<!-- search end -->
 			</div>	

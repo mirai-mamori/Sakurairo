@@ -150,6 +150,7 @@ h1.entry-title {
 }
 
 .entry-content tr:nth-child(even){background-color: #f2f2f2}
+body.dark .entry-content tr:nth-child(even){background-color: unset}
 
 .entry-content th {
   color: white;

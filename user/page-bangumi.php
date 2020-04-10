@@ -21,7 +21,10 @@ get_header();
 			<section class="bangumi">
             <?php if (akina_option('bilibili_id') ):?>
                 <div class="row">
-            <?php echo get_bgm_items(); ?>
+            <?php
+                $bgm = new \Sakura\API\Bilibili();
+                echo $bgm->get_bgm_items(); 
+            ?>
             <?php else: ?>
                 <div class="row">
                     <p> <?php _e("Please fill in the Bilibili UID in Sakura Options.","sakura"); ?></p>

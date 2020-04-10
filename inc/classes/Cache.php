@@ -67,7 +67,7 @@ EOS;
                     "link" => get_comment_link($comment),
                     "title" => get_the_title($comment->comment_post_ID),
                     "comments" => "",
-                    "text" => $is_private ? ($comment->comment_author . ": " . __('The comment is private', 'sakura')) : str_replace($vowels, ' ', preg_replace($regex, ' ', $comment->comment_author . "：" . $comment->comment_content))
+                    "text" => $is_private ? ($comment->comment_author . ": " . __('The comment is private', 'sakurairo')) : str_replace($vowels, ' ', preg_replace($regex, ' ', $comment->comment_author . "：" . $comment->comment_content))
                 );
             }
         }
@@ -77,7 +77,7 @@ EOS;
 
     public static function update_database() {
         global $wpdb;
-        $sakura_table_name = $wpdb->base_prefix . 'sakura';
+        $sakura_table_name = $wpdb->base_prefix . 'sakurairo';
         $img_domain = akina_option('cover_cdn') ? akina_option('cover_cdn') : get_template_directory();
         $manifest = file_get_contents($img_domain . "/manifest/manifest.json");
         if ($manifest) {

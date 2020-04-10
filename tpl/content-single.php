@@ -13,7 +13,7 @@
 	<?php if(akina_option('patternimg') || !get_post_thumbnail_id(get_the_ID())) { ?>
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-		<p class="entry-census"><?php echo poi_time_since(strtotime($post->post_date_gmt)); ?>&nbsp;&nbsp;<?php echo get_post_views(get_the_ID()).' '. _n('View','Views',get_post_views(get_the_ID()),'sakura')/*次阅读*/?> <?php echo count_words ($text); ?> </p>
+		<p class="entry-census"><?php echo poi_time_since(strtotime($post->post_date_gmt)); ?>&nbsp;&nbsp;<?php echo get_post_views(get_the_ID()).' '. _n('View','Views',get_post_views(get_the_ID()),'sakurairo')/*次阅读*/?> <?php echo count_words ($text); ?> </p>
 		<hr>
 	</header><!-- .entry-header -->
 	<?php } ?>
@@ -31,7 +31,7 @@
 	</div><!-- .entry-content -->
 	<?php the_reward(); ?>
 	<footer class="post-footer">
-	<div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"  target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> <?php _e('Attribution-NonCommercial-ShareAlike 4.0 International','sakura'); /*知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议*/?></a></div>
+	<div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"  target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> <?php _e('Attribution-NonCommercial-ShareAlike 4.0 International','sakurairo'); /*知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议*/?></a></div>
 	<div class="post-tags">
 		<?php if ( has_tag() ) { echo '<i class="iconfont icon-tags"></i> '; the_tags('', ' ', ' ');}?>
 	</div>

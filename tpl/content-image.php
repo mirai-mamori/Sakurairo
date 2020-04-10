@@ -32,10 +32,10 @@
 		</div>
 	<div class="info-meta">
        <div class="comnum">  
-        <span><i class="iconfont icon-mark"></i><?php comments_popup_link('NOTHING', '1 '.__("Comment","sakura")/*条评论*/, '% '.__("Comments","sakura")/*条评论*/); ?></span>
+        <span><i class="iconfont icon-mark"></i><?php comments_popup_link('NOTHING', '1 '.__("Comment","sakurairo")/*条评论*/, '% '.__("Comments","sakurairo")/*条评论*/); ?></span>
 		</div>
 		<div class="views"> 
-		<span><i class="iconfont icon-attention"></i><?php echo get_post_views(get_the_ID()).' '._n('Hit','Hits',get_post_views(get_the_ID()),'sakura')/*热度*/?></span>
+		<span><i class="iconfont icon-attention"></i><?php echo get_post_views(get_the_ID()).' '._n('Hit','Hits',get_post_views(get_the_ID()),'sakurairo')/*热度*/?></span>
 		 </div>   
         </div>		
 	</footer><!-- .entry-footer -->

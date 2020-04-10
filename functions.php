@@ -43,7 +43,7 @@ if (!function_exists('akina_setup')):
          * If you're building a theme based on Akina, use a find and replace
          * to change 'akina' to the name of your theme in all the template files.
          */
-        load_theme_textdomain('sakura', get_template_directory() . '/languages');
+        load_theme_textdomain('sakurairo', get_template_directory() . '/languages');
 
         /*
          * Enable support for Post Thumbnails on posts and pages.
@@ -55,7 +55,7 @@ if (!function_exists('akina_setup')):
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
-            'primary' => __('Nav Menus', 'sakura'), //导航菜单
+            'primary' => __('Nav Menus', 'sakurairo'), //导航菜单
         ));
 
         /*
@@ -466,19 +466,19 @@ if (!function_exists('akina_comment_format')) {
 						<div class="commentinfo">
 							<section class="commeta">
 								<div class="left">
-									<h4 class="author"><a href="<?php comment_author_url();?>" target="_blank" rel="nofollow"><?php echo get_avatar($comment->comment_author_email, '24', '', get_comment_author()); ?><span class="bb-comment isauthor" title="<?php _e('Author', 'sakura');?>"><?php _e('Blogger', 'sakura'); /*博主*/?></span> <?php comment_author();?> <?php echo get_author_class($comment->comment_author_email, $comment->user_id); ?></a></h4>
+									<h4 class="author"><a href="<?php comment_author_url();?>" target="_blank" rel="nofollow"><?php echo get_avatar($comment->comment_author_email, '24', '', get_comment_author()); ?><span class="bb-comment isauthor" title="<?php _e('Author', 'sakurairo');?>"><?php _e('Blogger', 'sakurairo'); /*博主*/?></span> <?php comment_author();?> <?php echo get_author_class($comment->comment_author_email, $comment->user_id); ?></a></h4>
 								</div>
 								<?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'])));?>
 								<div class="right">
-									<div class="info"><time datetime="<?php comment_date('Y-m-d');?>"><?php echo poi_time_since(strtotime($comment->comment_date_gmt), true); //comment_date(get_option('date_format'));  ?></time><?php echo siren_get_useragent($comment->comment_agent); ?><?php echo mobile_get_useragent_icon($comment->comment_agent); ?>&nbsp;<?php _e('Location', 'sakura'); /*来自*/?>: <?php echo convertip(get_comment_author_ip()); ?>
+									<div class="info"><time datetime="<?php comment_date('Y-m-d');?>"><?php echo poi_time_since(strtotime($comment->comment_date_gmt), true); //comment_date(get_option('date_format'));  ?></time><?php echo siren_get_useragent($comment->comment_agent); ?><?php echo mobile_get_useragent_icon($comment->comment_agent); ?>&nbsp;<?php _e('Location', 'sakurairo'); /*来自*/?>: <?php echo convertip(get_comment_author_ip()); ?>
     									<?php if (current_user_can('manage_options') and (wp_is_mobile() == false)) {
             $comment_ID = $comment->comment_ID;
             $i_private = get_comment_meta($comment_ID, '_private', true);
-            $flag .= ' <i class="fa fa-snowflake-o" aria-hidden="true"></i> <a href="javascript:;" data-actionp="set_private" data-idp="' . get_comment_id() . '" id="sp" class="sm" style="color:rgba(0,0,0,.35)">' . __("Private", "sakura") . ': <span class="has_set_private">';
+            $flag .= ' <i class="fa fa-snowflake-o" aria-hidden="true"></i> <a href="javascript:;" data-actionp="set_private" data-idp="' . get_comment_id() . '" id="sp" class="sm" style="color:rgba(0,0,0,.35)">' . __("Private", "sakurairo") . ': <span class="has_set_private">';
             if (!empty($i_private)) {
-                $flag .= __("Yes", "sakura") . ' <i class="fa fa-lock" aria-hidden="true"></i>';
+                $flag .= __("Yes", "sakurairo") . ' <i class="fa fa-lock" aria-hidden="true"></i>';
             } else {
-                $flag .= __("No", "sakura") . ' <i class="fa fa-unlock" aria-hidden="true"></i>';
+                $flag .= __("No", "sakurairo") . ' <i class="fa fa-unlock" aria-hidden="true"></i>';
             }
             $flag .= '</span></a>';
             $flag .= edit_comment_link('<i class="fa fa-pencil-square-o" aria-hidden="true"></i> ' . __("Edit", "mashiro"), ' <span style="color:rgba(0,0,0,.35)">', '</span>');
@@ -570,7 +570,7 @@ function get_post_views($post_id)
 {
     if (akina_option('statistics_api') == 'wp_statistics') {
         if (!function_exists('wp_statistics_pages')) {
-            return __('Please install pulgin <a href="https://wordpress.org/plugins/wp-statistics/" target="_blank">WP-Statistics</a>', 'sakura');
+            return __('Please install pulgin <a href="https://wordpress.org/plugins/wp-statistics/" target="_blank">WP-Statistics</a>', 'sakurairo');
         } else {
             return restyle_text(wp_statistics_pages('total', 'uri', $post_id));
         }
@@ -620,7 +620,7 @@ function get_the_link_items($id = null)
         $output .= '<ul class="link-items fontSmooth">';
         foreach ($bookmarks as $bookmark) {
             if (empty($bookmark->link_description)) {
-                $bookmark->link_description = __('This guy is so lazy ╮(╯▽╰)╭', 'sakura');
+                $bookmark->link_description = __('This guy is so lazy ╮(╯▽╰)╭', 'sakurairo');
             }
 
             if (empty($bookmark->link_image)) {
@@ -710,6 +710,7 @@ function akina_body_classes($classes)
     /*if(!wp_is_mobile()) {
     $classes[] = 'serif';
     }*/
+    $classes[] = $_COOKIE['dark'.akina_option('cookie_version', '')] == '1' ? 'dark' : ' ';
     return $classes;
 }
 add_filter('body_class', 'akina_body_classes');
@@ -1385,7 +1386,7 @@ function siren_private()
 function memory_archives_list()
 {
     if (true) {
-        $output = '<div id="archives"><p style="text-align:right;">[<span id="al_expand_collapse">' . __("All expand/collapse", "sakura") /*全部展开/收缩*/ . '</span>]<!-- (注: 点击月份可以展开)--></p>';
+        $output = '<div id="archives"><p style="text-align:right;">[<span id="al_expand_collapse">' . __("All expand/collapse", "sakurairo") /*全部展开/收缩*/ . '</span>]<!-- (注: 点击月份可以展开)--></p>';
         $the_query = new WP_Query('posts_per_page=-1&ignore_sticky_posts=1&post_type=post'); //update: 加上忽略置顶文章
         $year = 0;
         $mon = 0;
@@ -1406,13 +1407,13 @@ function memory_archives_list()
 
             if ($year != $year_tmp) {
                 $year = $year_tmp;
-                $output .= '<h3 class="al_year">' . $year . __(" ", "year", "sakura") . /*年*/' </h3><ul class="al_mon_list">'; //输出年份
+                $output .= '<h3 class="al_year">' . $year . __(" ", "year", "sakurairo") . /*年*/' </h3><ul class="al_mon_list">'; //输出年份
             }
             if ($mon != $mon_tmp) {
                 $mon = $mon_tmp;
-                $output .= '<li class="al_li"><span class="al_mon"><span style="color:'.akina_option('theme_skin').';">' . get_the_time('M') . '</span> (<span id="post-num"></span>' . __(" post(s)", "sakura") /*篇文章*/ . ')</span><ul class="al_post_list">'; //输出月份
+                $output .= '<li class="al_li"><span class="al_mon"><span style="color:'.akina_option('theme_skin').';">' . get_the_time('M') . '</span> (<span id="post-num"></span>' . __(" post(s)", "sakurairo") /*篇文章*/ . ')</span><ul class="al_post_list">'; //输出月份
             }
-            $output .= '<li>' . '<a href="' . get_permalink() . '"><span style="color:'.akina_option('theme_skin').';">' /*get_the_time('d'.__(" ","sakura")) 日*/ . '</span>' . get_the_title() . ' <span>(' . get_post_views(get_the_ID()) . ' <span class="fa fa-fire" aria-hidden="true"></span> / ' . get_comments_number('0', '1', '%') . ' <span class="fa fa-commenting" aria-hidden="true"></span>)</span></a></li>'; //输出文章日期和标题
+            $output .= '<li>' . '<a href="' . get_permalink() . '"><span style="color:'.akina_option('theme_skin').';">' /*get_the_time('d'.__(" ","sakurairo")) 日*/ . '</span>' . get_the_title() . ' <span>(' . get_post_views(get_the_ID()) . ' <span class="fa fa-fire" aria-hidden="true"></span> / ' . get_comments_number('0', '1', '%') . ' <span class="fa fa-commenting" aria-hidden="true"></span>)</span></a></li>'; //输出文章日期和标题
         endwhile;
         wp_reset_postdata();
         $output .= '</ul></li></ul> <!--<ul class="al_mon_list"><li><ul class="al_post_list" style="display: block;"><li>博客已经萌萌哒运行了<span id="monitorday"></span>天</li></ul></li></ul>--></div>';
@@ -1591,7 +1592,7 @@ function dash_scheme($key, $name, $col1, $col2, $col3, $col4, $base, $focus, $cu
 }
 
 //Sakura
-dash_scheme($key = "sakura", $name = "Sakura🌸",
+dash_scheme($key = "sakurairo", $name = "Sakura🌸",
     $col1 = '#E87A90', $col2 = '#EE9CA7', $col3 = '#F4A7B9', $col4 = '#DB4D6D',
     $base = "#FEDFE1", $focus = "#fff", $current = "#fff",
     $rules = "#adminmenu .wp-has-current-submenu .wp-submenu a,#adminmenu .wp-has-current-submenu.opensub .wp-submenu a,#adminmenu .wp-submenu a,#adminmenu a.wp-has-current-submenu:focus+.wp-submenu a,#wpadminbar .ab-submenu .ab-item,#wpadminbar .quicklinks .menupop ul li a,#wpadminbar .quicklinks .menupop.hover ul li a,#wpadminbar.nojs .quicklinks .menupop:hover ul li a,.folded #adminmenu .wp-has-current-submenu .wp-submenu a{color:#f3f2f1}body{background-image:url(https://view.moezx.cc/images/2018/01/03/sakura.png);background-attachment:fixed;}#wpcontent{background:rgba(255,255,255,.0)}.wp-core-ui .button-primary{background:#bfd8d2!important;border-color:#8fbbb1 #8fbbb1 #8fbbb1!important;color:#fff!important;box-shadow:0 1px 0 #8fbbb1!important;text-shadow:0 -1px 1px #8fbbb1,1px 0 1px #8fbbb1,0 1px 1px #8fbbb1,-1px 0 1px #8fbbb1!important}");
@@ -1912,7 +1913,7 @@ add_action('pre_comment_on_post', 'allow_more_tag_in_comment');
 function create_sakura_table()
 {
     global $wpdb, $sakura_image_array, $sakura_privkey;
-    $sakura_table_name = $wpdb->base_prefix . 'sakura';
+    $sakura_table_name = $wpdb->base_prefix . 'sakurairo';
     require_once ABSPATH . "wp-admin/includes/upgrade.php";
     dbDelta("CREATE TABLE IF NOT EXISTS `" . $sakura_table_name . "` (
         `mate_key` varchar(50) COLLATE utf8_bin NOT NULL,
@@ -1951,9 +1952,32 @@ add_action('after_setup_theme', 'create_sakura_table');
 function permalink_tip()
 {
     if ( !get_option('permalink_structure') ){
-        $msg = __('<b> For a better experience, please do not set <a href="/wp-admin/options-permalink.php"> permalink </a> as plain. To do this, you may need to configure <a href="https://www.wpdaxue.com/wordpress-rewriterule.html" target="_blank"> pseudo-static </a>. </ b>','sakura'); /*<b>为了更好的使用体验，请不要将<a href="/wp-admin/options-permalink.php">固定链接</a>设置为朴素。为此，您可能需要配置<a href="https://www.wpdaxue.com/wordpress-rewriterule.html" target="_blank">伪静态</a>。</b>*/
+        $msg = __('<b> For a better experience, please do not set <a href="/wp-admin/options-permalink.php"> permalink </a> as plain. To do this, you may need to configure <a href="https://www.wpdaxue.com/wordpress-rewriterule.html" target="_blank"> pseudo-static </a>. </ b>','sakurairo'); /*<b>为了更好的使用体验，请不要将<a href="/wp-admin/options-permalink.php">固定链接</a>设置为朴素。为此，您可能需要配置<a href="https://www.wpdaxue.com/wordpress-rewriterule.html" target="_blank">伪静态</a>。</b>*/
         echo '<div class="notice notice-success is-dismissible" id="scheme-tip"><p><b>' . $msg . '</b></p></div>';
     }
 }
 add_action('admin_notices', 'permalink_tip');
+//code end
+
+//解析短代码  
+add_shortcode('task', 'task_shortcode');  
+function task_shortcode( $attr , $content = '') {             
+    $out ='<div class="task shortcodestyle"><i class="fa fa-tasks"></i>'.$content.'</div>';  
+    return $out;  
+}  
+add_shortcode('warning', 'warning_shortcode');  
+function warning_shortcode( $attr , $content = '') {              
+    $out ='<div class="warning shortcodestyle"><i class="fa fa fa-exclamation-triangle"></i>'.$content.'</div>';  
+    return $out;  
+}  
+add_shortcode('noway', 'noway_shortcode');  
+function noway_shortcode( $attr , $content = '') {            
+    $out ='<div class="noway shortcodestyle"><i class="fa fa-times-rectangle"></i>'.$content.'</div>';  
+    return $out;  
+}  
+add_shortcode('buy', 'buy_shortcode');  
+function buy_shortcode( $attr , $content = '') {              
+    $out ='<div class="buy shortcodestyle"><i class="fa fa-check-square"></i>'.$content.'</div>';  
+    return $out;  
+}  
 //code end

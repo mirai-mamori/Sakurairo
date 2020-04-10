@@ -42,10 +42,10 @@ function z_add_texonomy_field() {
 	}
 	
 	echo '<div class="form-field">
-		<label for="taxonomy_image">' . __('category/tag image', 'sakura') /*分类/标签图像*/. '</label>
+		<label for="taxonomy_image">' . __('category/tag image', 'sakurairo') /*分类/标签图像*/. '</label>
 		<input type="text" name="taxonomy_image" id="taxonomy_image" value="" />
 		<br/>
-		<button class="z_upload_image_button button">' . __('add image', 'sakura') /*添加图像*/. '</button>
+		<button class="z_upload_image_button button">' . __('add image', 'sakurairo') /*添加图像*/. '</button>
 	</div>'.z_script();
 }
 
@@ -63,10 +63,10 @@ function z_edit_texonomy_field($taxonomy) {
 	else
 		$image_url = z_taxonomy_image_url( $taxonomy->term_id, NULL, TRUE );
 	echo '<tr class="form-field">
-		<th scope="row" valign="top"><label for="taxonomy_image">' .__('category/tag image', 'sakura') /*分类/标签图像*/. '</label></th>
+		<th scope="row" valign="top"><label for="taxonomy_image">' .__('category/tag image', 'sakurairo') /*分类/标签图像*/. '</label></th>
 		<td><img class="taxonomy-image" src="' . z_taxonomy_image_url( $taxonomy->term_id, 'medium', TRUE ) . '"/><br/><input type="text" name="taxonomy_image" id="taxonomy_image" value="'.$image_url.'" /><br />
-		<button class="z_upload_image_button button">' . __('add image', 'sakura') /*添加图像*/. '</button>
-		<button class="z_remove_image_button button">' . __('remove image', 'sakura') /*删除图像*/. '</button>
+		<button class="z_upload_image_button button">' . __('add image', 'sakurairo') /*添加图像*/. '</button>
+		<button class="z_remove_image_button button">' . __('remove image', 'sakurairo') /*删除图像*/. '</button>
 		</td>
 	</tr>'.z_script();
 }
@@ -194,8 +194,8 @@ function z_quick_edit_custom_box($column_name, $screen, $name) {
 				<span class="title"><img src="" alt="暂无"/></span>
 				<span class="input-text-wrap"><input type="text" name="taxonomy_image" value="" class="tax_list" /></span>
 				<span class="input-text-wrap">
-					<button class="z_upload_image_button button">' . __('add image', 'sakura') /*添加图像*/. '</button>
-					<button class="z_remove_image_button button">' . __('remove image', 'sakura') /*删除图像*/. '</button>
+					<button class="z_upload_image_button button">' . __('add image', 'sakurairo') /*添加图像*/. '</button>
+					<button class="z_remove_image_button button">' . __('remove image', 'sakurairo') /*删除图像*/. '</button>
 				</span>
 			</label>
 		</div>
@@ -208,7 +208,7 @@ function z_quick_edit_custom_box($column_name, $screen, $name) {
 function z_taxonomy_columns( $columns ) {
 	$new_columns = array();
 	$new_columns['cb'] = $columns['cb'];
-	$new_columns['thumb'] = __('image', 'sakura')/*图像*/;
+	$new_columns['thumb'] = __('image', 'sakurairo')/*图像*/;
 
 	unset( $columns['cb'] );
 
@@ -220,7 +220,7 @@ function z_taxonomy_columns( $columns ) {
  */
 function z_taxonomy_column( $columns, $column, $id ) {
 	if ( $column == 'thumb' )
-		$columns = '<span><img src="' . z_taxonomy_image_url($id, 'thumbnail', TRUE) . '" alt="' . __('no image', 'sakura') /*暂无*/. '" class="wp-post-image" /></span>';
+		$columns = '<span><img src="' . z_taxonomy_image_url($id, 'thumbnail', TRUE) . '" alt="' . __('no image', 'sakurairo') /*暂无*/. '" class="wp-post-image" /></span>';
 	
 	return $columns;
 }

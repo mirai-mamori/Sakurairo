@@ -21,7 +21,7 @@
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'sakura' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'sakurairo' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -32,7 +32,7 @@
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					__( 'Edit %s', 'sakura' ),
+					__( 'Edit %s', 'sakurairo' ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				),
 				'<span class="edit-link">',

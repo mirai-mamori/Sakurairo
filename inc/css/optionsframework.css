@@ -8,7 +8,7 @@ body {
 
 .nav-tab-wrapper {
 	position: relative;
-    max-width: 960px;
+    max-width: 900px;
     margin: auto !important;
 }
 
@@ -37,10 +37,10 @@ body {
 .nav-tab {
 	background: none;
 	border:none;
-	padding: 10px 20px;
-	font-weight: 300;
-    font-size: 15px;
-    color: darkgoldenrod;
+	padding: 8px 15px;
+	font-weight: 400;
+    font-size: 14.5px;
+    color: #cc7878;
     border-radius: 3px 3px 0 0;
 }
 
@@ -68,7 +68,7 @@ a#options-group-3-tab:before {
 
 a#options-group-4-tab:before {
     font-family: "dashicons";
-    content: "\f487";
+    content: "\f237";
     float: left;
 }
 
@@ -80,13 +80,25 @@ a#options-group-5-tab:before {
 
 a#options-group-6-tab:before {
     font-family: "dashicons";
-    content: "\f325";
+    content: "\f331";
     float: left;
 }
 
 a#options-group-7-tab:before { 
     font-family: "dashicons";
-    content: "\f487";
+    content: "\f155";
+    float: left;
+}
+
+a#options-group-8-tab:before { 
+    font-family: "dashicons";
+    content: "\f180";
+    float: left;
+}
+
+a#options-group-9-tab:before { 
+    font-family: "dashicons";
+    content: "\f309";
     float: left;
 }
 
@@ -170,7 +182,7 @@ input[type="submit" i], input[type="reset" i]{
 }
 #optionsframework .section {
 	padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 	padding-bottom: 30px;
     border-bottom: 1px solid #E8E8E8;
 }
@@ -181,7 +193,7 @@ input[type="submit" i], input[type="reset" i]{
 	padding:10px 0px;
 	margin:0 0 15px;
 	font-weight: 600;
-    color: #455E8C;
+    color: #cc7878;
 }
 #optionsframework .section .controls {
 	float: left;
@@ -375,7 +387,7 @@ input[type="submit" i], input[type="reset" i]{
 	float: left;
     box-shadow: none;
     border: none;
-    background: #374D6F;
+    background: #ae7d55;
     text-shadow: none;
     color:#fff;
     height: 40px;

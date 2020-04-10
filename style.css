@@ -4,8 +4,8 @@ Theme Name: Sakurairo
 Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Hitomi , Ukenn , Spirit , Mashiro , Louie , Fuzzz
 Author URI: https://asuhe.jp/
-Description: 一个基于Sakura主题的增强主题（しきさい　Update）
-Version: 1.9.3
+Description: 一个基于Sakura主题的增强主题（まつよい　Update）
+Version: 1.10.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -888,9 +888,6 @@ a:hover {
     .single-center .single-header h1.entry-title {
         font-size: 26px
     }
-    #changskin {
-        display: none;
-    }
 }
 
 .pattern-center-sakura {
@@ -1329,7 +1326,7 @@ a:hover {
     padding: 0 10px;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgba(255, 255, 255, .8)
+    background-color: #fff
 }
 
 .post-list {
@@ -4362,6 +4359,10 @@ i.iconfont.js-toggle-search.iconsearch {
 	line-height: unset;
 }
 
+body.dark .ins-section .fa{
+    color: #ccc;
+}
+
 .ins-section .ins-section-header,.ins-section .ins-search-item {
 	padding: 8px 15px;
 	cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur),auto;
@@ -5224,7 +5225,7 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
 
 @media (max-width:860px) {
     #main-container {
-        transition-duration: .5s;
+        transition: background,transform .5s !important;
         position: relative;
         overflow: hidden;
         z-index: 2
@@ -5311,7 +5312,7 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
         top: 8px
     }
     .openNav.open .icon {
-        background-color: transparent
+        background-color: transparent !important
     }
     .openNav.open .icon:after,
     .openNav.open .icon:before {
@@ -5817,7 +5818,8 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
 }
 
 .header-user-avatar:hover .header-user-menu {
-    display: block
+    display: block;
+    background: #fff;
 }
 
 .header-user-menu {
@@ -5848,7 +5850,6 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
 
 .herder-user-name {
     font-size: 12px;
-    background: #fff;
     padding: 10px 10px;
 	color:#EE9CA7;
     border-radius: 4px 4px 0 0
@@ -5865,7 +5866,6 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
 
 .header-user-menu .user-menu-option {
     padding: 5px 0;
-    background: #fff;
     border-radius: 0 0 4px 4px;
     width: 130px
 }
@@ -8291,6 +8291,8 @@ td.hljs-ln-numbers {
     --widthB: calc(var(--widthA) - 30px);
     height: var(--widthB);
     min-height: 99%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
     overflow-y: hidden;
     overflow-x: auto;
     height: auto
@@ -8889,3 +8891,14 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
 .bangumi-next i {
     color: orange;
 } 
+
+.shortcodestyle
+{margin:20px 0px !important;padding: 15px 15px 15px 40px !important;position: relative !important;-moz-box-shadow:0px 1px 2px rgba(0, 0, 0, 0.2) !important; -webkit-box-shadow:0px 1px 2px rgba(0, 0, 0, 0.2) !important; box-shadow:0px 1px 2px rgba(0, 0, 0, 0.2) !important;border-radius:5px !important;-webkit-border-radius:5px !important;-moz-border-radius:5px  !important;-khtml-border-radius:5px  !important;} 
+.shortcodestyle i{padding-right: 20px !important;}  
+.shortcodestyle a{padding:5px !important;}  
+.shortcodestyle a:hover{background:none !important;border-radius:0px !important;-webkit-border-radius:0px !important;-moz-border-radius:0px !important;-khtml-border-radius:0px !important;}  
+.warning{background:#FFEA97 !important;color: #9F6F26 !important;}  
+.noway{background:#EFCEC9 !important;color: #820B0B !important;}  
+.task{background: #E7E7E7 !important; color:  #333 !important;}  
+.buy{background: #9dd7e8 !important; color:#03536b !important;} 
+.shortcodestyle,.warning,.buy,.noway,.task p{text-indent: 0 !important;}  
