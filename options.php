@@ -948,6 +948,13 @@ function optionsframework_options()
         'type' => 'heading');
 
     $options[] = array(
+        'name' => __('Darkmode', 'sakurairo'), /*夜间模式*/
+        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
+        'id' => 'darkmode',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
         'name' => __('Footer float music player', 'sakurairo'), /*页脚悬浮播放器*/
         'desc' => __('Choose which platform you\'ll use.', 'sakurairo'),
         'id' => 'aplayer_server',

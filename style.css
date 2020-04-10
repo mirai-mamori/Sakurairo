@@ -1326,7 +1326,7 @@ a:hover {
     padding: 0 10px;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgba(255, 255, 255, .8)
+    background-color: #fff
 }
 
 .post-list {
@@ -4359,6 +4359,10 @@ i.iconfont.js-toggle-search.iconsearch {
 	line-height: unset;
 }
 
+body.dark .ins-section .fa{
+    color: #ccc;
+}
+
 .ins-section .ins-section-header,.ins-section .ins-search-item {
 	padding: 8px 15px;
 	cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur),auto;
@@ -5221,7 +5225,7 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
 
 @media (max-width:860px) {
     #main-container {
-        transition-duration: .5s;
+        transition: background,transform .5s !important;
         position: relative;
         overflow: hidden;
         z-index: 2
@@ -5308,7 +5312,7 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
         top: 8px
     }
     .openNav.open .icon {
-        background-color: transparent
+        background-color: transparent !important
     }
     .openNav.open .icon:after,
     .openNav.open .icon:before {
@@ -5814,7 +5818,8 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
 }
 
 .header-user-avatar:hover .header-user-menu {
-    display: block
+    display: block;
+    background: #fff;
 }
 
 .header-user-menu {
@@ -5845,7 +5850,6 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
 
 .herder-user-name {
     font-size: 12px;
-    background: #fff;
     padding: 10px 10px;
 	color:#EE9CA7;
     border-radius: 4px 4px 0 0
@@ -5862,7 +5866,6 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
 
 .header-user-menu .user-menu-option {
     padding: 5px 0;
-    background: #fff;
     border-radius: 0 0 4px 4px;
     width: 130px
 }
@@ -8288,6 +8291,8 @@ td.hljs-ln-numbers {
     --widthB: calc(var(--widthA) - 30px);
     height: var(--widthB);
     min-height: 99%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
     overflow-y: hidden;
     overflow-x: auto;
     height: auto

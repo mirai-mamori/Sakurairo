@@ -710,6 +710,7 @@ function akina_body_classes($classes)
     /*if(!wp_is_mobile()) {
     $classes[] = 'serif';
     }*/
+    $classes[] = $_COOKIE['dark'.akina_option('cookie_version', '')] == '1' ? 'dark' : ' ';
     return $classes;
 }
 add_filter('body_class', 'akina_body_classes');
