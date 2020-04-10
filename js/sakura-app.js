@@ -348,12 +348,11 @@ function checkBgImgCookie() {
     }
 }
 function checkDarkModeCookie() {
-    if (mashiro_option.darkmode) {
     var dark = getCookie("dark"),
         today = new Date()
         cWidth = document.body.clientWidth;
     if (!dark) {
-        if ((today.getHours() > 21 || today.getHours() < 7)) {
+        if ((today.getHours() > 21 || today.getHours() < 7) && mashiro_option.darkmode) {
             setTimeout(function () {
                 $("#dark-bg").click();
             }, 100);
@@ -372,7 +371,7 @@ function checkDarkModeCookie() {
             }
         }
     } else {
-        if (dark == '1' && (today.getHours() >= 22 || today.getHours() <= 6)) {
+        if (dark == '1' && (today.getHours() >= 22 || today.getHours() <= 6) && mashiro_option.darkmode) {
             setTimeout(function () {
                 $("#dark-bg").click();
             }, 100);
@@ -391,7 +390,6 @@ function checkDarkModeCookie() {
             }
         }
     }
-}
 }
 if (!getCookie("darkcache") && (new Date().getHours() > 21 || new Date().getHours() < 7)) {
     removeCookie("dark");
