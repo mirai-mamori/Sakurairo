@@ -82,7 +82,7 @@
                             <div class="menhera-container motion-container" style="display:none;">
                                 '.push_emoji_panel().'
                             </div>
-                            <div class="tieba-container motion-container" style="display:none;">' . push_smilies() . '</div>
+                            <div class="tieba-container motion-container" style="display:none;">' . push_tieba_smilies() . '</div>
                         </div>
                         <!--表情面版完-->',
 						'comment_notes_after' => '',

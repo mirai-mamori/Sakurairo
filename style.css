@@ -8902,3 +8902,13 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
 .task{background: #E7E7E7 !important; color:  #333 !important;}  
 .buy{background: #9dd7e8 !important; color:#03536b !important;} 
 .shortcodestyle,.warning,.buy,.noway,.task p{text-indent: 0 !important;}  
+
+.bili-container img,.tieba-container img {
+    width: 32px;
+    height: 32px;
+    margin: 7px;
+}
+
+.contents span img {
+    height: 30px;
+}

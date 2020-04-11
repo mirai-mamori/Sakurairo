@@ -136,12 +136,12 @@ function social_share_limit(){
         for (var i=a.length-2;i>=11;i--){
             a[i].remove();
         }
-        if(document.body.clientWidth<860){
+        if(document.body.clientWidth<=860){
             for (var i=a.length-2;i>=10;i--){
                 a[i].remove();
             }
         }
-        if(document.body.clientWidth<425){
+        if(document.body.clientWidth<=425){
             for (var i=a.length-2;i>=5;i--){
                 a[i].remove();
             }
@@ -348,12 +348,11 @@ function checkBgImgCookie() {
     }
 }
 function checkDarkModeCookie() {
-    if (mashiro_option.darkmode) {
     var dark = getCookie("dark"),
         today = new Date()
         cWidth = document.body.clientWidth;
     if (!dark) {
-        if ((today.getHours() > 21 || today.getHours() < 7)) {
+        if ((today.getHours() > 21 || today.getHours() < 7) && mashiro_option.darkmode) {
             setTimeout(function () {
                 $("#dark-bg").click();
             }, 100);
@@ -372,7 +371,7 @@ function checkDarkModeCookie() {
             }
         }
     } else {
-        if (dark == '1' && (today.getHours() >= 22 || today.getHours() <= 6)) {
+        if (dark == '1' && (today.getHours() >= 22 || today.getHours() <= 6) && mashiro_option.darkmode) {
             setTimeout(function () {
                 $("#dark-bg").click();
             }, 100);
@@ -391,7 +390,6 @@ function checkDarkModeCookie() {
             }
         }
     }
-}
 }
 if (!getCookie("darkcache") && (new Date().getHours() > 21 || new Date().getHours() < 7)) {
     removeCookie("dark");
@@ -802,6 +800,8 @@ function grin(tag, type, before, after) {
         tag = '[img]' + tag + '[/img]';
     } else if (type == "Math") {
         tag = ' {{' + tag + '}} ';
+    } else if (type == "tieba") {
+        tag = ' ::' + tag + ':: ';
     } else {
         tag = ' :' + tag + ': ';
     }

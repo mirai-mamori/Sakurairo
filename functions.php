@@ -609,6 +609,12 @@ function specs_zan()
     die;
 }
 
+function is_webp(){
+    $webp = strpos($_SERVER['HTTP_ACCEPT'], 'image/webp');
+    $webp === false ? $webp=0 : $webp=1;
+    return $webp;
+}
+
 /*
  * 友情链接
  */
@@ -1121,72 +1127,47 @@ add_filter('comment_text', 'comment_picture_support');
 /*
  * 修改评论表情调用路径
  */
-add_filter('smilies_src', 'custom_smilies_src', 1, 10);
-function custom_smilies_src($img_src, $img, $siteurl)
-{
-    return 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/' . $img;
-}
+
 // 简单遍历系统表情库，今后应考虑标识表情包名——使用增加的扩展名，同时保留原有拓展名
 // 还有一个思路是根据表情调用路径来判定<-- 此法最好！
 // 贴吧
-function push_smilies()
-{
-    global $wpsmiliestrans;
-    foreach ($wpsmiliestrans as $k => $v) {
-        $Sname = str_replace(":", "", $k);
-        $Svalue = $v;
-        $return_smiles = $return_smiles . '<span title="' . $Sname . '" onclick="grin(' . "'" . $Sname . "'" . ')"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/' . $Svalue . '" /></span>';
-    }
-    return $return_smiles;
-}
 
-function smilies_reset()
-{
-    global $wpsmiliestrans;
+
+$wpsmiliestrans = array();
+function push_tieba_smilies() {
+global $wpsmiliestrans;
 // don't bother setting up smilies if they are disabled
-    if (!get_option('use_smilies')) {
-        return;
-    }
+if ( !get_option('use_smilies'))
+    return;
+    $tiebaname = array('good','han','spray','Grievance','shui','reluctantly','anger','tongue','se','haha','rmb','doubt','tear','surprised2','Happy','ku','surprised','theblackline','smilingeyes','spit','huaji','bbd','hu','shame','naive','rbq','britan','aa','niconiconi','niconiconi_t','niconiconit','awesome');
+    $return_smiles = '';
+    for($i=0;$i<count($tiebaname);$i++){
+      $tieba_Name=$tiebaname[$i];
+      if (is_webp() == 1){
+          $tiebaimgdir="tiebawebp/";
+          $smiliesgs=".webp";
+      }else{
+          $tiebaimgdir="tiebapng/";
+          $smiliesgs=".png";
+      }
+      // 选择面版
+      $return_smiles = $return_smiles . '<span title="'.$tieba_Name.'" onclick="grin('."'".$tieba_Name."'".',type = \'tieba\')"><img src="https://cdn.jsdelivr.net/gh/bymoye/cdn@1.2/sakura/images/smilies/'. $tiebaimgdir .'icon_'. $tieba_Name . $smiliesgs.'" /></span>';
+      // 正文转换
+      $wpsmiliestrans['::' . $tieba_Name . '::'] = '<span title="'. $tieba_Name .'" onclick="grin('."'". $tieba_Name ."'".',type = \'tieba\')"><img src="https://cdn.jsdelivr.net/gh/bymoye/cdn@1.2/sakura/images/smilies/'.$tiebaimgdir.'icon_'. $tieba_Name .$smiliesgs.'" /></span>';
+      }
+      return $return_smiles;
+  }
+  push_tieba_smilies();
 
-    $wpsmiliestrans = array(
-        ':good:' => 'icon_good.gif',
-        ':han:' => 'icon_han.gif',
-        ':spray:' => 'icon_spray.gif',
-        ':Grievance:' => 'icon_Grievance.gif',
-        ':shui:' => 'icon_shui.gif',
-        ':reluctantly:' => 'icon_reluctantly.gif',
-        ':anger:' => 'icon_anger.gif',
-        ':tongue:' => 'icon_tongue.gif',
-        ':se:' => 'icon_se.gif',
-        ':haha:' => 'icon_haha.gif',
-        ':rmb:' => 'icon_rmb.gif',
-        ':doubt:' => 'icon_doubt.gif',
-        ':tear:' => 'icon_tear.gif',
-        ':surprised2:' => 'icon_surprised2.gif',
-        ':Happy:' => 'icon_Happy.gif',
-        ':ku:' => 'icon_ku.gif',
-        ':surprised:' => 'icon_surprised.gif',
-        ':theblackline:' => 'icon_theblackline.gif',
-        ':smilingeyes:' => 'icon_smilingeyes.gif',
-        ':spit:' => 'icon_spit.gif',
-        ':huaji:' => 'icon_huaji.gif',
-        ':bbd:' => 'icon_bbd.gif',
-        ':hu:' => 'icon_hu.gif',
-        ':shame:' => 'icon_shame.gif',
-        ':naive:' => 'icon_naive.gif',
-        ':rbq:' => 'icon_rbq.gif',
-        ':britan:' => 'icon_britan.gif',
-        ':aa:' => 'icon_aa.gif',
-        ':niconiconi:' => 'icon_niconiconi.gif',
-        ':niconiconi-t:' => 'icon_niconiconi_t.gif',
-        ':niconiconit:' => 'icon_niconiconit.gif',
-        ':awesome:' => 'icon_awesome.gif',
-    );
+function tieba_smile_filter($content) {
+    global $wpsmiliestrans;
+    $content =  str_replace(array_keys($wpsmiliestrans), $wpsmiliestrans, $content); 
+    return $content;
 }
-smilies_reset();
+add_filter('the_content', 'tieba_smile_filter'); //替换文章关键词
+add_filter('comment_text', 'tieba_smile_filter');//替换评论关键词
 
-function push_emoji_panel()
-{
+function push_emoji_panel() {
     return '
         <a class="emoji-item">(⌒▽⌒)</a>
         <a class="emoji-item">（￣▽￣）</a>
@@ -1234,70 +1215,42 @@ function push_emoji_panel()
     ';
 }
 
-function get_wp_root_path()
-{
-    $base = dirname(__FILE__);
-    $path = false;
-
-    if (@file_exists(dirname(dirname($base)))) {
-        $path = dirname(dirname($base));
-    } else
-    if (@file_exists(dirname(dirname(dirname($base))))) {
-        $path = dirname(dirname(dirname($base)));
-    } else {
-        $path = false;
-    }
-
-    if ($path != false) {
-        $path = str_replace("\\", "/", $path);
-    }
-    return $path;
-}
-
 // bilibili smiles
 $bilismiliestrans = array();
-function push_bili_smilies()
-{
-    global $bilismiliestrans;
-    $smiles_path = __DIR__ . "/images/smilies/bili/";
-    $name = array('baiyan', 'fadai', 'koubi', 'qinqin', 'weiqu', 'bishi', 'fanu', 'kun', 'se', 'weixiao', 'bizui', 'ganga', 'lengmo', 'shengbing', 'wunai', 'chan', 'guilian', 'liubixue', 'shengqi', 'xiaoku', 'daku', 'guzhang', 'liuhan', 'shuizhao', 'xieyanxiao', 'dalao', 'haixiu', 'liulei', 'sikao', 'yiwen', 'dalian', 'heirenwenhao', 'miantian', 'tiaokan', 'yun', 'dianzan', 'huaixiao', 'mudengkoudai', 'tiaopi', 'zaijian', 'doge', 'jingxia', 'nanguo', 'touxiao', 'zhoumei', 'facai', 'keai', 'outu', 'tuxue', 'zhuakuang');
-    $return_smiles = '';
-    for ($i = 0; $i < count($name); $i++) {
-        $img_size = getimagesize($smiles_path . $name[$i] . ".png");
-        $img_height = $img_size["1"];
-        // 选择面版
-        $return_smiles = $return_smiles . '<span class="emotion-secter emotion-item emotion-select-parent" onclick="grin(' . "'" . $name[$i] . "'" . ',type = \'Math\')" style="background-image: url(https://cdn.jsdelivr.net/gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_' . $name[$i] . '.png);"><div class="img emotion-select-child" style="background-image: url(https://cdn.jsdelivr.net/gh/moezx/cdn@2.9.4/img/bili/' . $name[$i] . '.png);
-        animation-duration: ' . ($img_height / 32 * 40) . 'ms;
-        animation-timing-function: steps(' . ($img_height / 32) . ');
-        transform: translateY(-' . ($img_height - 32) . 'px);
-        height: ' . $img_height . 'px;
-        "></div></span>';
-        // 正文转换
-        $bilismiliestrans['{{' . $name[$i] . '}}'] = '<span class="emotion-inline emotion-item"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@2.9.4/img/bili/' . $name[$i] . '.png" class="img" style="/*background-image: url();*/
-        animation-duration: ' . ($img_height / 32 * 40) . 'ms;
-        animation-timing-function: steps(' . ($img_height / 32) . ');
-        transform: translateY(-' . ($img_height - 32) . 'px);
-        height: ' . $img_height . 'px;
-        "></span>';
+function push_bili_smilies(){
+  global $bilismiliestrans;
+  $name = array('baiyan','bishi','bizui','chan','dai','daku','dalao','dalian','dianzan','doge','facai','fanu','ganga','guilian','guzhang','haixiu','heirenwenhao','huaixiao','jingxia','keai','koubizi','kun','lengmo','liubixue','liuhan','liulei','miantian','mudengkoudai','nanguo','outu','qinqin','se','shengbing','shengqi','shuizhao','sikao','tiaokan','tiaopi','touxiao','tuxue','weiqu','weixiao','wunai','xiaoku','xieyanxiao','yiwen','yun','zaijian','zhoumei','zhuakuang');
+  $return_smiles = '';
+  for($i=0;$i<count($name);$i++){
+    $smilies_Name=$name[$i];
+    if (is_webp() == 1){
+        $biliimgdir="biliwebp/";
+        $smiliesgs=".webp";
+    }else{
+        $biliimgdir="bilipng/";
+        $smiliesgs=".png";
+    }
+    // 选择面版
+    $return_smiles = $return_smiles . '<span title="'.$smilies_Name.'" onclick="grin('."'".$smilies_Name."'".',type = \'Math\')"><img src="https://cdn.jsdelivr.net/gh/bymoye/cdn@1.2/sakura/images/smilies/'. $biliimgdir .'emoji_'. $smilies_Name . $smiliesgs.'" /></span>';
+    // 正文转换
+    $bilismiliestrans['{{' . $smilies_Name . '}}'] = '<span title="'. $smilies_Name .'" onclick="grin('."'". $smilies_Name ."'".',type = \'Math\')"><img src="https://cdn.jsdelivr.net/gh/bymoye/cdn@1.2/sakura/images/smilies/'.$biliimgdir.'emoji_'. $smilies_Name .$smiliesgs.'" /></span>';
     }
     return $return_smiles;
 }
 push_bili_smilies();
 
-function bili_smile_filter($content)
-{
+function bili_smile_filter($content) {
     global $bilismiliestrans;
-    $content = str_replace(array_keys($bilismiliestrans), $bilismiliestrans, $content);
+    $content =  str_replace(array_keys($bilismiliestrans), $bilismiliestrans, $content); 
     return $content;
 }
 add_filter('the_content', 'bili_smile_filter'); //替换文章关键词
-add_filter('comment_text', 'bili_smile_filter'); //替换评论关键词
+add_filter('comment_text', 'bili_smile_filter');//替换评论关键词
 
-function featuredtoRSS($content)
-{
+function featuredtoRSS($content) {
     global $post;
-    if (has_post_thumbnail($post->ID)) {
-        $content = '<div>' . get_the_post_thumbnail($post->ID, 'medium', array('style' => 'margin-bottom: 15px;')) . '</div>' . $content;
+    if ( has_post_thumbnail( $post->ID ) ){
+        $content = '<div>' . get_the_post_thumbnail( $post->ID, 'medium', array( 'style' => 'margin-bottom: 15px;' ) ) . '</div>' . $content;
     }
     return $content;
 }
@@ -1305,15 +1258,21 @@ add_filter('the_excerpt_rss', 'featuredtoRSS');
 add_filter('the_content_feed', 'featuredtoRSS');
 
 //
-function bili_smile_filter_rss($content)
-{
-    $content = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_', $content);
-    $content = str_replace("}}", '.png" alt="emoji" style="height: 2em; max-height: 2em;">', $content);
-    $content = str_replace('[img]', '<img src="', $content);
-    $content = str_replace('[/img]', '" style="display: block;margin-left: auto;margin-right: auto;">', $content);
+function bili_smile_filter_rss($content) {
+    if (is_webp() == 1){
+        $biliimgdir="biliwebp/";
+        $smiliesgs=".webp";
+    }else{
+        $biliimgdir="bilipng/";
+        $smiliesgs=".png";
+    }
+    $content = str_replace("{{",'<img src="https://cdn.jsdelivr.net/gh/bymoye/cdn@1.2/sakura/images/smilies/'.$biliimgdir,$content);
+    $content = str_replace("}}",$smilesgs.'" alt="emoji" style="height: 2em; max-height: 2em;">',$content);
+    $content =  str_replace('[img]', '<img src="', $content); 
+    $content =  str_replace('[/img]', '" style="display: block;margin-left: auto;margin-right: auto;">', $content); 
     return $content;
 }
-add_filter('comment_text_rss', 'bili_smile_filter_rss'); //替换评论rss关键词
+add_filter( 'comment_text_rss', 'bili_smile_filter_rss' );//替换评论rss关键词
 
 function toc_support($content)
 {
