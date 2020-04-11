@@ -33,9 +33,9 @@ Sakurairo🌸: 基于Sakura的分支主题
 
 - 仓库国内镜像：https://gitee.com/mirai-mamori/Sakurairo
 
-- 主题使用说明见：<https://2heng.xin/theme-sakura/>
+- 主题使用说明见：<https://asuhe.jp/daily/sakurairo-user-manual/>
 
-- 主题交流群：860262481
+- 主题交流群：195147626
 
 - 主题交流论坛：https://sakurasaku.cn
 
