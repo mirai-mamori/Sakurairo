@@ -1868,21 +1868,17 @@ var home = location.href,
         GT: function () {
             var cwidth = document.body.clientWidth,
                 mb_to_top = document.querySelector("#moblieGoTop"),
-                changeskin = document.querySelector("#changskin");
+                changskin = document.querySelector("#changskin");
 
             $(window).scroll(function() {
                     if ($(this).scrollTop() > 20) {
                         mb_to_top.style.transform = "scale(1)";
+                        changskin.style.transform = "scale(1)";
                     } else {
                         mb_to_top.style.transform = "scale(0)";
+                        changskin.style.transform = "scale(0)";
                     }
-                if (cwidth > 860) {
-                    if ($(this).scrollTop() > 100) {
-                        changeskin.style.transform = "scale(1)";
-                    } else {
-                        changeskin.style.transform = "scale(0)";
-                    }
-                }
+            
             });
             mb_to_top.onclick = function() {
                 topFunction();
