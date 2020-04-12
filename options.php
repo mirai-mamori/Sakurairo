@@ -310,7 +310,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('About', 'sakurairo'), /*关于*/
-        'desc' => sprintf(__('Sakurairo v %s  |  <a href="https://2heng.xin/theme-sakura/">Theme document</a>  |  <a href="https://github.com/mirai-mamori/Sakurairo">Source code</a><a href="https://github.com/mirai-mamori/Sakurairo/releases/latest"><img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square" alt="GitHub release"></a>', 'sakurairo'), SAKURA_VERSION), /*Theme Sakura v'.SAKURA_VERSION.'  |  <a href="https://2heng.xin/theme-sakura/">主题说明</a>  |  <a href="https://github.com/mashirozx/Sakura/">源码</a><a href="https://github.com/mashirozx/Sakura/releases/latest"><img src="https://img.shields.io/github/release/mashirozx/Sakura.svg?style=flat-square" alt="GitHub release"></a>*/
+        'desc' => sprintf(__('Sakurairo v %s  |  <a href="https://asuhe.jp/daily/sakurairo-user-manual/">Theme document</a>  |  <a href="https://github.com/mirai-mamori/Sakurairo">Source code</a><a href="https://github.com/mirai-mamori/Sakurairo/releases/latest"><img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square" alt="GitHub release"></a>', 'sakurairo'), SAKURA_VERSION), 
         'id' => 'theme_intro',
         'std' => '',
         'type' => 'typography ');
@@ -1202,6 +1202,13 @@ function optionsframework_options()
         'name' => __('Enhanced', 'sakurairo'),
         'type' => 'heading');
     
+    $options[] = array(
+        'name' => __('fontweight', 'sakurairo'),//全局字重
+        'desc' => __('Fill in a number, maximum 900, minimum 100. Between 300 and 500 is recommended.', 'sakurairo'),
+        'id' => 'fontweight',
+        'std' => '',
+        'type' => 'text');
+
     $options[] = array(
         'name' => __('Preload animation', 'sakurairo'), /*预加载动画*/
         'desc' => __('Check open', 'sakurairo'), /*勾选开启*/

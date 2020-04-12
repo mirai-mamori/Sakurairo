@@ -8823,8 +8823,11 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
         max-width: 33.3333%;
         flex: 0 0 33.3333%;
     }
+    .bangumi-title {
+        height: 30%;
+    }
     .bangumi-item .bangumi-info{
-        height: 50%;
+        height: 45%;
         transform: translateY(140%);
     }
 }
@@ -8842,6 +8845,9 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
     }
     .bangumi-item:hover img{
         filter: blur(3px);
+    }
+    body.dark .bangumi-item:hover img{
+        filter: brightness(0.8) blur(3px);
     }
     .bangumi-title {
         height: 15%;
@@ -8900,7 +8906,7 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
     height: 100%;
 }
 .bangumi-next i {
-    color: orange;
+    color: #EE9CA7;
 } 
 
 .shortcodestyle

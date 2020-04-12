@@ -172,7 +172,7 @@
 
 <!-- logo字体部分 -->
 <link rel="stylesheet" href="<?php echo akina_option('logo_zt', ''); ?>" media="all">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
 
 
 </body>
