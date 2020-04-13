@@ -1210,6 +1210,41 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
+        'name' => __('Add Fonts', 'sakurairo'), 
+        'desc' => __('Please make sure that the fonts you add can be referenced in Google font library. Fill in the font name. If multiple fonts are referenced, please use "|" as the separator.', 'sakurairo'),
+        'id' => 'addfonts',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Global Default Font', 'sakurairo'), 
+        'desc' => __('Fill in font name', 'sakurairo'),
+        'id' => 'global-default-font',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Global Font 2', 'sakurairo'), 
+        'desc' => __('Fill in font name', 'sakurairo'),
+        'id' => 'global-font2',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Front Page Title Font', 'sakurairo'), 
+        'desc' => __('Fill in font name', 'sakurairo'),
+        'id' => 'font-title',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Front Page One Word Font', 'sakurairo'), 
+        'desc' => __('Fill in font name', 'sakurairo'),
+        'id' => 'font-oneword',
+        'std' => '',
+        'type' => 'text');        
+
+    $options[] = array(
         'name' => __('Preload animation', 'sakurairo'), /*预加载动画*/
         'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
         'id' => 'yjzdh',
