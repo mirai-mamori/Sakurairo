@@ -4,8 +4,8 @@ Theme Name: Sakurairo
 Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Hitomi , Ukenn , Spirit , Mashiro , Louie , Fuzzz
 Author URI: https://asuhe.jp/
-Description: 一个基于Sakura主题的增强主题（まつよい　Update）
-Version: 1.10.0
+Description: 一个基于Sakura主题的增强主题（とおはなび　Update）
+Version: 1.11.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -1555,7 +1555,10 @@ i.iconfont.hotpost {
 .post-meta,
 .post-meta a {
     color: #888;
-    font-size: 12px
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .comments-number {
@@ -8668,6 +8671,14 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
     .headertop-down {
         display: none
     }
+    .center-text {/*主页一言文字logo调整*/
+        font-size: 50px;
+    }
+    .header-info{/*打字效果防溢出*/
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 }
  
 .headertop-down i {
@@ -8812,8 +8823,11 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
         max-width: 33.3333%;
         flex: 0 0 33.3333%;
     }
+    .bangumi-title {
+        height: 30%;
+    }
     .bangumi-item .bangumi-info{
-        height: 50%;
+        height: 45%;
         transform: translateY(140%);
     }
 }
@@ -8831,6 +8845,9 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
     }
     .bangumi-item:hover img{
         filter: blur(3px);
+    }
+    body.dark .bangumi-item:hover img{
+        filter: brightness(0.8) blur(3px);
     }
     .bangumi-title {
         height: 15%;
@@ -8889,7 +8906,7 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
     height: 100%;
 }
 .bangumi-next i {
-    color: orange;
+    color: #EE9CA7;
 } 
 
 .shortcodestyle
@@ -8901,4 +8918,14 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
 .noway{background:#EFCEC9 !important;color: #820B0B !important;}  
 .task{background: #E7E7E7 !important; color:  #333 !important;}  
 .buy{background: #9dd7e8 !important; color:#03536b !important;} 
-.shortcodestyle,.warning,.buy,.noway,.task p{text-indent: 0 !important;}  
+.shortcodestyle,.warning,.buy,.noway,.task p{text-indent: 0 !important;}
+
+.bili-container img,.tieba-container img {
+    width: 32px;
+    height: 32px;
+    margin: 7px;
+}
+
+.contents span img {
+    height: 30px;
+} 

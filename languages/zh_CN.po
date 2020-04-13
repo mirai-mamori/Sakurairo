@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-04-10 19:52+0800\n"
-"PO-Revision-Date: 2020-04-10 19:58+0800\n"
+"POT-Creation-Date: 2020-04-13 17:05+0800\n"
+"PO-Revision-Date: 2020-04-13 17:19+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -179,39 +179,39 @@ msgstr ""
 "请安装插件 <a href=\"https://wordpress.org/plugins/wp-statistics/\" target="
 "\"_blank\">WP-Statistics</a>"
 
-#: functions.php:623
+#: functions.php:629
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:1389
+#: functions.php:1348
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1410 options.php:816
+#: functions.php:1369 options.php:816
 msgid " "
 msgstr ""
 
-#: functions.php:1414
+#: functions.php:1373
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1437 functions.php:1440 inc/theme_plus.php:478
+#: functions.php:1396 functions.php:1399 inc/theme_plus.php:478
 msgid "Dashboard"
 msgstr "仪表盘"
 
-#: functions.php:1666
+#: functions.php:1625
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1771
+#: functions.php:1730
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1843
+#: functions.php:1802
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1955
+#: functions.php:1914
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -222,7 +222,7 @@ msgstr ""
 "固定链接</a>设置为朴素。为此，您可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">伪静态</a>。</b>"
 
-#: header.php:36
+#: header.php:37
 #, php-format
 msgid "page %s "
 msgstr "第 %s 页 "
@@ -762,17 +762,17 @@ msgstr "关于"
 #: options.php:313
 #, php-format
 msgid ""
-"Sakurairo v %s  |  <a href=\"https://2heng.xin/theme-sakura/\">Theme "
-"document</a>  |  <a href=\"https://github.com/mirai-mamori/Sakurairo"
+"Sakurairo v %s  |  <a href=\"https://asuhe.jp/daily/sakurairo-user-manual/"
+"\">Theme document</a>  |  <a href=\"https://github.com/mirai-mamori/Sakurairo"
 "\">Source code</a><a href=\"https://github.com/mirai-mamori/Sakurairo/"
 "releases/latest\"><img src=\"https://img.shields.io/github/v/release/mirai-"
 "mamori/Sakurairo.svg?style=flat-square\" alt=\"GitHub release\"></a>"
 msgstr ""
-"Sakurairo v %s  |  <a href=\"https://2heng.xin/theme-sakura/\">主题说明</a>  "
-"|  <a href=\"https://github.com/mashirozx/Sakura/\">源码</a><a href="
-"\"https://github.com/mashirozx/Sakura/releases/latest\"><img src=\"https://"
-"img.shields.io/github/release/mashirozx/Sakura.svg?style=flat-square\" alt="
-"\"GitHub release\"></a>"
+"桜いろ v %s  |  <a href=\"https://asuhe.jp/daily/sakurairo-user-manual/\">主"
+"题说明</a>  |  <a href=\"https://github.com/mashirozx/Sakura/\">源码</a><a "
+"href=\"https://github.com/mashirozx/Sakura/releases/latest\"><img src="
+"\"https://img.shields.io/github/release/mashirozx/Sakura.svg?style=flat-"
+"square\" alt=\"GitHub release\"></a>"
 
 #: options.php:319
 msgid "Check for Updates"
@@ -1449,9 +1449,9 @@ msgstr "｜功能"
 msgid "Darkmode"
 msgstr "夜间模式（自动切换）"
 
-#: options.php:952 options.php:1207 options.php:1214 options.php:1221
-#: options.php:1242 options.php:1249 options.php:1256 options.php:1263
-#: options.php:1270 options.php:1298 options.php:1305
+#: options.php:952 options.php:1249 options.php:1256 options.php:1263
+#: options.php:1284 options.php:1291 options.php:1298 options.php:1305
+#: options.php:1312 options.php:1340 options.php:1347
 msgid "Check open"
 msgstr "勾选启用"
 
@@ -1807,58 +1807,102 @@ msgid "Enhanced"
 msgstr "｜增强"
 
 #: options.php:1206
+msgid "fontweight"
+msgstr "全局字重（除强调部分）"
+
+#: options.php:1207
+msgid ""
+"Fill in a number, maximum 900, minimum 100. Between 300 and 500 is "
+"recommended."
+msgstr "填写数字，最大值900，最小值100，300到500之间是推荐值。"
+
+#: options.php:1213
+msgid "Add Fonts"
+msgstr "添加字体"
+
+#: options.php:1214
+msgid ""
+"Please make sure that the fonts you add can be referenced in Google font "
+"library. Fill in the font name. If multiple fonts are referenced, please use "
+"\"|\" as the separator."
+msgstr ""
+"请确保添加的字体在谷歌字体库内可被引用，填写字体名称。添加的字体前面必须"
+"有”|“。如果引用多个字体，请使用“|”作为分割符。如果字体名称有空格，请用加号替"
+"代。例：|ZCOOL+XiaoWei|Ma+Shan+Zheng"
+
+#: options.php:1220
+msgid "Global Default Font"
+msgstr "全局默认字体（字体A）"
+
+#: options.php:1221 options.php:1228 options.php:1235 options.php:1242
+msgid "Fill in font name"
+msgstr "填写字体名称。例：Ma Shan Zheng"
+
+#: options.php:1227
+msgid "Global Font 2"
+msgstr "全局字体B"
+
+#: options.php:1234
+msgid "Front Page Title Font"
+msgstr "首页区块标题字体"
+
+#: options.php:1241
+msgid "Front Page One Word Font"
+msgstr "首页一言字体"
+
+#: options.php:1248
 msgid "Preload animation"
 msgstr "预加载动画"
 
-#: options.php:1213
+#: options.php:1255
 msgid "Cherry Blossom falling effect"
 msgstr "樱花飘落特效"
 
-#: options.php:1220
+#: options.php:1262
 msgid "Wave effects"
 msgstr "波浪特效"
 
-#: options.php:1227
+#: options.php:1269
 msgid "Footer suspension player default volume"
 msgstr "页脚音乐播放器默认音量"
 
-#: options.php:1228
+#: options.php:1270
 msgid "Maximum 1 minimum 0"
 msgstr "最大值1，最小值0.1"
 
-#: options.php:1234
+#: options.php:1276
 msgid "Footer suspension player random play"
 msgstr "页脚音乐播放器随机播放"
 
-#: options.php:1235
+#: options.php:1277
 msgid "Check off, default on"
 msgstr "勾选关闭，默认开启"
 
-#: options.php:1241
+#: options.php:1283
 msgid "live2d"
 msgstr "Live2D看板娘"
 
-#: options.php:1248
+#: options.php:1290
 msgid "Drop-down arrow"
 msgstr "首页下拉箭头"
 
-#: options.php:1255
+#: options.php:1297
 msgid "a brief remark"
 msgstr "页脚一言（随机话语API）"
 
-#: options.php:1262
+#: options.php:1304
 msgid "One word typing effect of home page"
 msgstr "首页一言打字效果"
 
-#: options.php:1269
+#: options.php:1311
 msgid "Double quotation marks for typing effect"
 msgstr "一言打字效果双引号"
 
-#: options.php:1276
+#: options.php:1318
 msgid "Typewriting effect text"
 msgstr "打字效果文字"
 
-#: options.php:1277
+#: options.php:1319
 msgid ""
 "Fill in the text part of the typing effect (double quotation marks must be "
 "used outside the text, and English commas shall be used to separate the two "
@@ -1867,63 +1911,63 @@ msgstr ""
 "填写打字效果文字部分(文字外必须使用英文双引号，二句话之间使用英文逗号隔开，支"
 "持HTML标签）"
 
-#: options.php:1283
+#: options.php:1325
 msgid "Homepage one word blogger description"
 msgstr "主页一言博主描述"
 
-#: options.php:1284 options.php:1291
+#: options.php:1326 options.php:1333
 msgid "A self description"
 msgstr "一段自我描述的话"
 
-#: options.php:1290
+#: options.php:1332
 msgid "Blog description at the end of the article"
 msgstr "文章末尾博主描述"
 
-#: options.php:1297
+#: options.php:1339
 msgid "Note effects"
 msgstr "音符触动效果"
 
-#: options.php:1304
+#: options.php:1346
 msgid "Logo special effects"
 msgstr "Logo特效"
 
-#: options.php:1311
+#: options.php:1353
 msgid "Logo text A"
 msgstr "Logo文字A"
 
-#: options.php:1312
+#: options.php:1354
 msgid "Fill in the front part of your logo text"
 msgstr "填写你的Logo文字前部分"
 
-#: options.php:1318
+#: options.php:1360
 msgid "Logo text B"
 msgstr "Logo文字B"
 
-#: options.php:1319
+#: options.php:1361
 msgid "Fill in the middle part of your logo text"
 msgstr "填写你的Logo文字中部部分"
 
-#: options.php:1325
+#: options.php:1367
 msgid "Logo text C"
 msgstr "Logo文字C"
 
-#: options.php:1326
+#: options.php:1368
 msgid "Fill in the back of your logo"
 msgstr "填写你的Logo文字后部分"
 
-#: options.php:1332
+#: options.php:1374
 msgid "Logo secondary text"
 msgstr "Logo二级文字"
 
-#: options.php:1333
+#: options.php:1375
 msgid "Fill in the secondary text of your logo."
 msgstr "填写你的Logo二级文字，不需要可以不填。"
 
-#: options.php:1339
+#: options.php:1381
 msgid "Logo font link"
 msgstr "Logo字体链接"
 
-#: options.php:1340
+#: options.php:1382
 msgid ""
 "When the font is ready, do this again <a href = \"https://www.fontke.com/"
 "tool/fontface/\">@font-face生成器</a>It can generate a bunch of files, which "
@@ -1937,127 +1981,127 @@ msgstr ""
 "的样式表文件链接 <a href = \"https://blog.ukenn.top/sakura6/#toc-head-4\">详"
 "细教程</a>"
 
-#: options.php:1346
+#: options.php:1388
 msgid "Logo font name"
 msgstr "Logo字体名称"
 
-#: options.php:1347
+#: options.php:1389
 msgid ""
 "Fill in the font name of your logo, write the name directly without the "
 "format suffix"
 msgstr "填写你的Logo字体名称，直接写名字不用加格式后缀"
 
-#: options.php:1353
+#: options.php:1395
 msgid "Mail template header"
 msgstr "邮件模板头部图"
 
-#: options.php:1354
+#: options.php:1396
 msgid "Set the background picture above your message"
 msgstr "设置你的邮件上方背景图片"
 
-#: options.php:1361
+#: options.php:1403
 msgid "Color"
 msgstr "｜色彩"
 
-#: options.php:1365
+#: options.php:1407
 msgid "Display icon selection"
 msgstr "显示图标选择"
 
-#: options.php:1366
+#: options.php:1408
 msgid "Choose icon color"
 msgstr "选择图标颜色"
 
-#: options.php:1371
+#: options.php:1413
 msgid "「Common Colors」Pink（EE9CA7）"
 msgstr "「普通」粉色（EE9CA7）"
 
-#: options.php:1372
+#: options.php:1414
 msgid "「Common Colors」Orange（FF8000）"
 msgstr "「普通」橙色（FF8000）"
 
-#: options.php:1373
+#: options.php:1415
 msgid "「Nippon Colors」Hanaasagi（1E88A8）"
 msgstr "「日系」花浅葱色（1E88A8）"
 
-#: options.php:1374
+#: options.php:1416
 msgid "「Nippon Colors」Beniukon（E98B2A）"
 msgstr "「日系」紅鬱金色（E98B2A）"
 
-#: options.php:1375
+#: options.php:1417
 msgid "「Nippon Colors」Sangosyu（F17C67）"
 msgstr "「日系」珊瑚朱色（F17C67）"
 
-#: options.php:1376
+#: options.php:1418
 msgid "「Nippon Colors」Sora（58B2DC）"
 msgstr "「日系」空色（58B2DC）"
 
-#: options.php:1377
+#: options.php:1419
 msgid "「Nippon Colors」Nae（86C166）"
 msgstr "「日系」苗色（86C166）"
 
-#: options.php:1378
+#: options.php:1420
 msgid "「Macaron Colors」Blue（B8F1ED）"
 msgstr "「马卡龙色系」蓝色（B8F1ED）"
 
-#: options.php:1379
+#: options.php:1421
 msgid "「Macaron Colors」Green（B8F1CC）"
 msgstr "「马卡龙色系」绿色（B8F1CC）"
 
-#: options.php:1380
+#: options.php:1422
 msgid "「Macaron Colors」Purple（D9B8F1）"
 msgstr "「马卡龙色系」紫色（D9B8F1）"
 
-#: options.php:1381
+#: options.php:1423
 msgid "「Others」ColorFul"
 msgstr "「其他」多彩"
 
-#: options.php:1384
+#: options.php:1426
 msgid "Theme style"
 msgstr "主题风格"
 
-#: options.php:1387
+#: options.php:1429
 msgid "Custom theme color"
 msgstr "自定义主题颜色"
 
-#: options.php:1392
+#: options.php:1434
 msgid "Social background"
 msgstr "首页社交卡片背景颜色"
 
-#: options.php:1395 options.php:1403 options.php:1411 options.php:1419
-#: options.php:1427 options.php:1435 options.php:1443 options.php:1450
-#: options.php:1457
+#: options.php:1437 options.php:1445 options.php:1453 options.php:1461
+#: options.php:1469 options.php:1477 options.php:1485 options.php:1492
+#: options.php:1499
 msgid "Custom colors"
 msgstr "自定义颜色"
 
-#: options.php:1400
+#: options.php:1442
 msgid "Theme selection menu background color"
 msgstr "主题选择菜单背景颜色"
 
-#: options.php:1408
+#: options.php:1450
 msgid "Drop down arrow color"
 msgstr "首页下拉箭头颜色"
 
-#: options.php:1416
+#: options.php:1458
 msgid "Home page article separator"
 msgstr "首页文章分割符颜色"
 
-#: options.php:1424
+#: options.php:1466
 msgid "Home page article time prompt accent"
 msgstr "首页文章时间提示强调文字颜色"
 
-#: options.php:1432
+#: options.php:1474
 msgid "Home page article time prompt emphasize background"
 msgstr "首页文章时间提示强调背景颜色"
 
-#: options.php:1440
+#: options.php:1482
 msgid "First page article border shadow"
 msgstr "首页文章边框阴影颜色"
 
-#: options.php:1447
+#: options.php:1489
 msgid "Preload animation color A"
 msgstr "预加载动画颜色A"
 
-#: options.php:1454
+#: options.php:1496
 msgid "Preload animation color B"
 msgstr "预加载动画颜色B"
 

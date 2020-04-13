@@ -132,9 +132,9 @@
     </div>
     <div class="font-family-controls row-container">
         <button type="button" class="control-btn-serif selected" data-mode="serif" 
-                onclick="mashiro_global.font_control.change_font()">Serif</button>
+                onclick="mashiro_global.font_control.change_font()">Font A</button>
         <button type="button" class="control-btn-sans-serif" data-mode="sans-serif" 
-                onclick="mashiro_global.font_control.change_font()">Sans Serif</button>
+                onclick="mashiro_global.font_control.change_font()">Font B</button>
     </div>
 </div>
 <canvas id="night-mode-cover"></canvas>
@@ -172,7 +172,7 @@
 
 <!-- logo字体部分 -->
 <link rel="stylesheet" href="<?php echo akina_option('logo_zt', ''); ?>" media="all">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
 
 
 </body>

@@ -81,14 +81,21 @@ function post_list_show_animation() {
 
         function callback(entries) {
             entries.forEach((article) => {
-                if (article.target.classList.contains("post-list-show")) {
+                if (!window.IntersectionObserver) {
                     article.target.style.willChange = 'auto';
-                    io.unobserve(article.target)
-                } else {
-                    if (article.isIntersecting) {
+                    if( article.target.classList.contains("post-list-show") === false){
                         article.target.classList.add("post-list-show");
+                    }
+                } else {
+                    if (article.target.classList.contains("post-list-show")) {
                         article.target.style.willChange = 'auto';
                         io.unobserve(article.target)
+                    } else {
+                        if (article.isIntersecting) {
+                            article.target.classList.add("post-list-show");
+                            article.target.style.willChange = 'auto';
+                            io.unobserve(article.target)
+                        }
                     }
                 }
             })
@@ -136,12 +143,12 @@ function social_share_limit(){
         for (var i=a.length-2;i>=11;i--){
             a[i].remove();
         }
-        if(document.body.clientWidth<860){
+        if(document.body.clientWidth<=860){
             for (var i=a.length-2;i>=10;i--){
                 a[i].remove();
             }
         }
-        if(document.body.clientWidth<425){
+        if(document.body.clientWidth<=425){
             for (var i=a.length-2;i>=5;i--){
                 a[i].remove();
             }
@@ -522,12 +529,9 @@ $(document).ready(function () {
 });
 
 function topFunction() {
-    window.scrollBy(0, -100)
-    scrolldelay = setTimeout('topFunction()', 10)
-    var sTop = document.documentElement.scrollTop + document.body.scrollTop
-    if (sTop === 0) {
-        clearTimeout(scrolldelay)
-    }
+    $('body,html').animate({
+        scrollTop: 0
+    })
 }
 
 function timeSeriesReload(flag) {
@@ -800,6 +804,8 @@ function grin(tag, type, before, after) {
         tag = '[img]' + tag + '[/img]';
     } else if (type == "Math") {
         tag = ' {{' + tag + '}} ';
+    } else if (type == "tieba") {
+        tag = ' ::' + tag + ':: ';
     } else {
         tag = ' :' + tag + ': ';
     }
@@ -1094,7 +1100,7 @@ function load_bangumi() {
         $('body').on('click', '#bangumi-pagination a', function () {
             $("#bangumi-pagination a").addClass("loading").text("");
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', this.href, true);
+            xhr.open('POST', this.href + "&_wpnonce=" + Poi.nonce, true);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     var html = JSON.parse(xhr.responseText);
@@ -1116,7 +1122,7 @@ loadCSS(mashiro_option.jsdelivr_css_src);
 loadCSS(mashiro_option.entry_content_theme_src);
 loadCSS("https://at.alicdn.com/t/font_679578_qyt5qzzavdo39pb9.css");
 loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css");
-loadCSS("https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC");
+loadCSS("https://fonts.loli.net/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC");
 (function webpackUniversalModuleDefinition(b, a) {
     if (typeof exports === "object" && typeof module === "object") {
         module.exports = a()
@@ -1862,21 +1868,17 @@ var home = location.href,
         GT: function () {
             var cwidth = document.body.clientWidth,
                 mb_to_top = document.querySelector("#moblieGoTop"),
-                changeskin = document.querySelector("#changskin");
+                changskin = document.querySelector("#changskin");
 
             $(window).scroll(function() {
                     if ($(this).scrollTop() > 20) {
                         mb_to_top.style.transform = "scale(1)";
+                        changskin.style.transform = "scale(1)";
                     } else {
                         mb_to_top.style.transform = "scale(0)";
+                        changskin.style.transform = "scale(0)";
                     }
-                if (cwidth > 860) {
-                    if ($(this).scrollTop() > 100) {
-                        changeskin.style.transform = "scale(1)";
-                    } else {
-                        changeskin.style.transform = "scale(0)";
-                    }
-                }
+            
             });
             mb_to_top.onclick = function() {
                 topFunction();

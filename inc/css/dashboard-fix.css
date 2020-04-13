@@ -1,5 +1,8 @@
-/* emotion²»ºÍ¾ßÐÞÕý*/
-/*bilibili±íÇé*/
+/* emotionï¿½ï¿½ï¿½Í¾ï¿½ï¿½ï¿½ï¿½ï¿½*/
+/*bilibiliï¿½ï¿½ï¿½ï¿½*/
+.body{
+    font-family: sans-serif;
+}
 .emotion-box {
     padding-left: 16px;
     display: -webkit-box;
@@ -76,4 +79,8 @@
   -webkit-transform:translateY(-100%);
   transform:translateY(-100%)
  }
+}
+
+#the-comment-list td.comment img {
+    height:30px;
 }
