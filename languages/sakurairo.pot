@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-04-12 19:59+0800\n"
+"POT-Creation-Date: 2020-04-13 17:05+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -215,7 +215,7 @@ msgid ""
 "com/wordpress-rewriterule.html\" target=\"_blank\"> pseudo-static </a>. </ b>"
 msgstr ""
 
-#: header.php:36
+#: header.php:37
 #, php-format
 msgid "page %s "
 msgstr ""
@@ -1391,9 +1391,9 @@ msgstr ""
 msgid "Darkmode"
 msgstr ""
 
-#: options.php:952 options.php:1214 options.php:1221 options.php:1228 options.php:1249
-#: options.php:1256 options.php:1263 options.php:1270 options.php:1277 options.php:1305
-#: options.php:1312
+#: options.php:952 options.php:1249 options.php:1256 options.php:1263 options.php:1284
+#: options.php:1291 options.php:1298 options.php:1305 options.php:1312 options.php:1340
+#: options.php:1347
 msgid "Check open"
 msgstr ""
 
@@ -1724,120 +1724,150 @@ msgid "Fill in a number, maximum 900, minimum 100. Between 300 and 500 is recomm
 msgstr ""
 
 #: options.php:1213
-msgid "Preload animation"
+msgid "Add Fonts"
+msgstr ""
+
+#: options.php:1214
+msgid ""
+"Please make sure that the fonts you add can be referenced in Google font library. Fill in the "
+"font name. If multiple fonts are referenced, please use \"|\" as the separator."
 msgstr ""
 
 #: options.php:1220
-msgid "Cherry Blossom falling effect"
+msgid "Global Default Font"
+msgstr ""
+
+#: options.php:1221 options.php:1228 options.php:1235 options.php:1242
+msgid "Fill in font name"
 msgstr ""
 
 #: options.php:1227
-msgid "Wave effects"
+msgid "Global Font 2"
 msgstr ""
 
 #: options.php:1234
-msgid "Footer suspension player default volume"
-msgstr ""
-
-#: options.php:1235
-msgid "Maximum 1 minimum 0"
+msgid "Front Page Title Font"
 msgstr ""
 
 #: options.php:1241
-msgid "Footer suspension player random play"
-msgstr ""
-
-#: options.php:1242
-msgid "Check off, default on"
+msgid "Front Page One Word Font"
 msgstr ""
 
 #: options.php:1248
-msgid "live2d"
+msgid "Preload animation"
 msgstr ""
 
 #: options.php:1255
-msgid "Drop-down arrow"
+msgid "Cherry Blossom falling effect"
 msgstr ""
 
 #: options.php:1262
-msgid "a brief remark"
+msgid "Wave effects"
 msgstr ""
 
 #: options.php:1269
-msgid "One word typing effect of home page"
+msgid "Footer suspension player default volume"
+msgstr ""
+
+#: options.php:1270
+msgid "Maximum 1 minimum 0"
 msgstr ""
 
 #: options.php:1276
-msgid "Double quotation marks for typing effect"
+msgid "Footer suspension player random play"
+msgstr ""
+
+#: options.php:1277
+msgid "Check off, default on"
 msgstr ""
 
 #: options.php:1283
+msgid "live2d"
+msgstr ""
+
+#: options.php:1290
+msgid "Drop-down arrow"
+msgstr ""
+
+#: options.php:1297
+msgid "a brief remark"
+msgstr ""
+
+#: options.php:1304
+msgid "One word typing effect of home page"
+msgstr ""
+
+#: options.php:1311
+msgid "Double quotation marks for typing effect"
+msgstr ""
+
+#: options.php:1318
 msgid "Typewriting effect text"
 msgstr ""
 
-#: options.php:1284
+#: options.php:1319
 msgid ""
 "Fill in the text part of the typing effect (double quotation marks must be used outside the "
 "text, and English commas shall be used to separate the two sentences. Support for HTML tags)"
 msgstr ""
 
-#: options.php:1290
+#: options.php:1325
 msgid "Homepage one word blogger description"
 msgstr ""
 
-#: options.php:1291 options.php:1298
+#: options.php:1326 options.php:1333
 msgid "A self description"
 msgstr ""
 
-#: options.php:1297
+#: options.php:1332
 msgid "Blog description at the end of the article"
 msgstr ""
 
-#: options.php:1304
+#: options.php:1339
 msgid "Note effects"
 msgstr ""
 
-#: options.php:1311
+#: options.php:1346
 msgid "Logo special effects"
 msgstr ""
 
-#: options.php:1318
+#: options.php:1353
 msgid "Logo text A"
 msgstr ""
 
-#: options.php:1319
+#: options.php:1354
 msgid "Fill in the front part of your logo text"
 msgstr ""
 
-#: options.php:1325
+#: options.php:1360
 msgid "Logo text B"
 msgstr ""
 
-#: options.php:1326
+#: options.php:1361
 msgid "Fill in the middle part of your logo text"
 msgstr ""
 
-#: options.php:1332
+#: options.php:1367
 msgid "Logo text C"
 msgstr ""
 
-#: options.php:1333
+#: options.php:1368
 msgid "Fill in the back of your logo"
 msgstr ""
 
-#: options.php:1339
+#: options.php:1374
 msgid "Logo secondary text"
 msgstr ""
 
-#: options.php:1340
+#: options.php:1375
 msgid "Fill in the secondary text of your logo."
 msgstr ""
 
-#: options.php:1346
+#: options.php:1381
 msgid "Logo font link"
 msgstr ""
 
-#: options.php:1347
+#: options.php:1382
 msgid ""
 "When the font is ready, do this again <a href = \"https://www.fontke.com/tool/fontface/"
 "\">@font-face生成器</a>It can generate a bunch of files, which are all useful. It can be "
@@ -1845,124 +1875,124 @@ msgid ""
 "sheet file link <a href = \"https://blog.ukenn.top/sakura6/#toc-head-4\">Detailed tutorial</a>"
 msgstr ""
 
-#: options.php:1353
+#: options.php:1388
 msgid "Logo font name"
 msgstr ""
 
-#: options.php:1354
+#: options.php:1389
 msgid "Fill in the font name of your logo, write the name directly without the format suffix"
 msgstr ""
 
-#: options.php:1360
+#: options.php:1395
 msgid "Mail template header"
 msgstr ""
 
-#: options.php:1361
+#: options.php:1396
 msgid "Set the background picture above your message"
 msgstr ""
 
-#: options.php:1368
+#: options.php:1403
 msgid "Color"
 msgstr ""
 
-#: options.php:1372
+#: options.php:1407
 msgid "Display icon selection"
 msgstr ""
 
-#: options.php:1373
+#: options.php:1408
 msgid "Choose icon color"
 msgstr ""
 
-#: options.php:1378
+#: options.php:1413
 msgid "「Common Colors」Pink（EE9CA7）"
 msgstr ""
 
-#: options.php:1379
+#: options.php:1414
 msgid "「Common Colors」Orange（FF8000）"
 msgstr ""
 
-#: options.php:1380
+#: options.php:1415
 msgid "「Nippon Colors」Hanaasagi（1E88A8）"
 msgstr ""
 
-#: options.php:1381
+#: options.php:1416
 msgid "「Nippon Colors」Beniukon（E98B2A）"
 msgstr ""
 
-#: options.php:1382
+#: options.php:1417
 msgid "「Nippon Colors」Sangosyu（F17C67）"
 msgstr ""
 
-#: options.php:1383
+#: options.php:1418
 msgid "「Nippon Colors」Sora（58B2DC）"
 msgstr ""
 
-#: options.php:1384
+#: options.php:1419
 msgid "「Nippon Colors」Nae（86C166）"
 msgstr ""
 
-#: options.php:1385
+#: options.php:1420
 msgid "「Macaron Colors」Blue（B8F1ED）"
 msgstr ""
 
-#: options.php:1386
+#: options.php:1421
 msgid "「Macaron Colors」Green（B8F1CC）"
 msgstr ""
 
-#: options.php:1387
+#: options.php:1422
 msgid "「Macaron Colors」Purple（D9B8F1）"
 msgstr ""
 
-#: options.php:1388
+#: options.php:1423
 msgid "「Others」ColorFul"
 msgstr ""
 
-#: options.php:1391
+#: options.php:1426
 msgid "Theme style"
 msgstr ""
 
-#: options.php:1394
+#: options.php:1429
 msgid "Custom theme color"
 msgstr ""
 
-#: options.php:1399
+#: options.php:1434
 msgid "Social background"
 msgstr ""
 
-#: options.php:1402 options.php:1410 options.php:1418 options.php:1426 options.php:1434
-#: options.php:1442 options.php:1450 options.php:1457 options.php:1464
+#: options.php:1437 options.php:1445 options.php:1453 options.php:1461 options.php:1469
+#: options.php:1477 options.php:1485 options.php:1492 options.php:1499
 msgid "Custom colors"
 msgstr ""
 
-#: options.php:1407
+#: options.php:1442
 msgid "Theme selection menu background color"
 msgstr ""
 
-#: options.php:1415
+#: options.php:1450
 msgid "Drop down arrow color"
 msgstr ""
 
-#: options.php:1423
+#: options.php:1458
 msgid "Home page article separator"
 msgstr ""
 
-#: options.php:1431
+#: options.php:1466
 msgid "Home page article time prompt accent"
 msgstr ""
 
-#: options.php:1439
+#: options.php:1474
 msgid "Home page article time prompt emphasize background"
 msgstr ""
 
-#: options.php:1447
+#: options.php:1482
 msgid "First page article border shadow"
 msgstr ""
 
-#: options.php:1454
+#: options.php:1489
 msgid "Preload animation color A"
 msgstr ""
 
-#: options.php:1461
+#: options.php:1496
 msgid "Preload animation color B"
 msgstr ""
 
