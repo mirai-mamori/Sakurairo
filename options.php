@@ -323,6 +323,8 @@ function optionsframework_options()
         'type' => "images",
         'options' => array(
         'tag' => 'https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square',
+        'tag2' => 'https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square',
+        'tag3' => 'https://data.jsdelivr.com/v1/package/gh/mirai-mamori/sakurairo/badge',
             ),
         );
 
@@ -1245,6 +1247,48 @@ function optionsframework_options()
         'type' => 'text');        
 
     $options[] = array(
+        'name' => __('Front Page One Word FontSize', 'sakurairo'), 
+        'desc' => __('Fill in Number. Between 10 and 20 is recommended', 'sakurairo'),
+        'id' => 'fontsize-oneword',
+        'std' => '',
+        'type' => 'text');  
+
+    $options[] = array(
+        'name' => __('Custom mouse style - Standard', 'sakurairo'), 
+        'desc' => __('Apply to global, fill in link.', 'sakurairo'),
+        'id' => 'cursor-nor',
+        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur',
+        'type' => 'text'); 
+        
+    $options[] = array(
+        'name' => __('Custom mouse style - Selected', 'sakurairo'), 
+        'desc' => __('Return to the above for PC', 'sakurairo'),
+        'id' => 'cursor-no',
+        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/No_Disponible.cur',
+        'type' => 'text');   
+        
+    $options[] = array(
+        'name' => __('Custom mouse style - Selected elements', 'sakurairo'), 
+        'desc' => __('Used to select a place', 'sakurairo'),
+        'id' => 'cursor-ayu',
+        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur',
+        'type' => 'text');  
+
+    $options[] = array(
+        'name' => __('Custom mouse style - Selected text', 'sakurairo'), 
+        'desc' => __('Used to select a Text', 'sakurairo'),
+        'id' => 'cursor-text',
+        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/texto.cur',
+        'type' => 'text'); 
+        
+    $options[] = array(
+        'name' => __('Custom mouse style - Working state', 'sakurairo'), 
+        'desc' => __('Used to working condition', 'sakurairo'),
+        'id' => 'cursor-work',
+        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/work.cur',
+        'type' => 'text');   
+    
+    $options[] = array(
         'name' => __('Preload animation', 'sakurairo'), /*预加载动画*/
         'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
         'id' => 'yjzdh',
@@ -1271,13 +1315,6 @@ function optionsframework_options()
         'id' => 'playlist_mryl',
         'std' => '0.5',
         'type' => 'text');
-    
-    $options[] = array(
-        'name' => __('Footer suspension player random play', 'sakurairo'), /*首页波浪特效*/
-        'desc' => __('Check off, default on', 'sakurairo'), /*勾选关闭*/
-        'id' => 'playlist_sjbf',
-        'std' => '0',
-        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('live2d', 'sakurairo'), /*看板娘*/

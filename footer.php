@@ -37,7 +37,7 @@
                         <script type="text/javascript" src="https://api.btstu.cn/yan/api.php?charset=utf-8&encode=js" ></script>
 						<div id="yan"><script>text()</script></div>
                         <?php endif; ?></p>
-						Theme <a href="https://2heng.xin/theme-sakura/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakurairo</a>  by <a href="https://asuhe.jp/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hitomi</a> 
+						Theme <a href="https://asuhe.jp/daily/sakurairo-user-manual/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakurairo</a>  by <a href="https://asuhe.jp/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hitomi</a> 
 					</span>
 				</p>
 			</div>
@@ -155,7 +155,6 @@
         data-type="playlist"
         data-fixed="true"
         data-volume="<?php echo akina_option('playlist_mryl', ''); ?>"
-        data-order="<?php echo akina_option('playlist_sjbf', ''); ?>random"
         data-theme="<?php echo akina_option('theme_skin'); ?>">
     </div>
 <?php endif; ?>

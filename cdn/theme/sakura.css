@@ -235,7 +235,6 @@ body.dark .entry-content tr:nth-child(even){background-color: unset}
     padding: 2px;
     text-shadow: none;
     border-radius: 0 0 5px 5px;
-    cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/texto.cur), auto
 }
 
 .highlight-wrap code[data-rel]:before {
