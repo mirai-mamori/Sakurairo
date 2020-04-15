@@ -688,6 +688,18 @@ h1.main-title,h1.fes-title{font-family:<?php echo akina_option('font-title'); ?>
 
 .header-info p{font-family:<?php echo akina_option('font-oneword'); ?> !important;}
 
+.header-info p {font-size: <?php echo akina_option('fontsize-oneword'); ?>px !important;}
+
+/*鼠标*/
+body {cursor: url(<?php echo akina_option('cursor-nor'); ?>), auto}
+
+.botui-actions-buttons-button,button.botui-actions-buttons-button,#emotion-toggle,.emoji-item, .emotion-box,.emotion-item,.on-hover,.tieba-container span,#moblieGoTop,#changskin{cursor: url(<?php echo akina_option('cursor-no'); ?>), auto;}
+
+a,.ins-section .ins-section-header,.ins-section .ins-search-item,.ins-section .ins-search-item .ins-search-preview{cursor: url(<?php echo akina_option('cursor-ayu'); ?>), auto}
+
+p ,.highlight-wrap code,.highlight-wrap,.hljs-ln-code .hljs-ln-line,.hljs-ln-code .hljs-ln-line{cursor: url(<?php echo akina_option('cursor-text'); ?>), auto}
+
+a:active {cursor: url(<?php echo akina_option('cursor-work'); ?>), alias}
 
 </style>
 <?php }
