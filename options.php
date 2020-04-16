@@ -111,6 +111,17 @@ function optionsframework_options()
         'type' => 'heading');
 
     $options[] = array(
+        'name' => __('Support', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'theme_support',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/supportqq.png',
+                ),
+            );
+    
+    $options[] = array(
         'name' => __('Site title', 'sakurairo'), /*站点名称*/
         'desc' => __('Mashiro\'s Blog', 'sakurairo'),
         'id' => 'site_name',
@@ -314,7 +325,7 @@ function optionsframework_options()
         'id' => 'theme_intro',
         'std' => '',
         'type' => 'typography ');
-    
+
     $options[] = array(
         'name' => __('Check for Updates', 'sakurairo'), /*检查更新*/
         'desc' => '<a href="https://github.com/mirai-mamori/Sakurairo/releases/latest">Download the latest version</a>',
@@ -426,6 +437,14 @@ function optionsframework_options()
         ));
 
     $options[] = array(
+        'name' => __('Main page article title', 'sakurairo'), 
+        'desc' => __('Default is 記事, you can also change it to other, of course you can\'t use it as an advertisement!Not allowed!!', 'sakurairo'), 
+        'id' => 'homepage_title',
+        'std' => '記事',
+        'class' => 'mini',
+        'type' => 'text');
+
+    $options[] = array(
         'name' => __('Whether to turn on the top-feature', 'sakurairo'), /*是否开启聚焦*/
         'desc' => __('Default on', 'sakurairo'),
         'id' => 'top_feature',
@@ -444,7 +463,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Top-feature title', 'sakurairo'), /*聚焦标题*/
-        'desc' => __('Default is Discovery, you can also change it to other, of course you can\'t use it as an advertisement!Not allowed!!', 'sakurairo'), /*默认为聚焦，你也可以修改为其他，当然不能当广告用！不允许！！*/
+        'desc' => __('Default is 聚焦, you can also change it to other, of course you can\'t use it as an advertisement!Not allowed!!', 'sakurairo'), /*默认为聚焦，你也可以修改为其他，当然不能当广告用！不允许！！*/
         'id' => 'feature_title',
         'std' => '聚焦',
         'class' => 'mini',
@@ -861,6 +880,17 @@ function optionsframework_options()
         'type' => 'heading');
 
     $options[] = array(
+        'name' => __('Warning', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'theme_warning',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/warning.png',
+                ),
+            );
+        
+    $options[] = array(
         'name' => __('Images CDN', 'sakurairo'), /*图片库*/
         'desc' => __('Note: Fill in the format http(s)://your CDN domain name/. <br>In other words, the original path is http://your.domain/wp-content/uploads/2018/05/xx.png and the picture will load from http://your CDN domain/2018/05/xx.png', 'sakurairo'), /*注意：填写格式为 http(s)://你的CDN域名/。<br>也就是说，原路径为 http://your.domain/wp-content/uploads/2018/05/xx.png 的图片将从 http://你的CDN域名/2018/05/xx.png 加载*/
         'id' => 'qiniu_cdn',
@@ -1203,6 +1233,17 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Enhanced', 'sakurairo'),
         'type' => 'heading');
+    
+    $options[] = array(
+        'name' => __('You Should Know', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'theme_knowledge',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/supportknow.png',
+                ),
+            );
     
     $options[] = array(
         'name' => __('fontweight', 'sakurairo'),//全局字重
