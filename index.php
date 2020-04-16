@@ -45,7 +45,7 @@ get_header();
 	
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">	
-		<h1 class="main-title" style="font-family: 'Ubuntu', sans-serif;"><i class="fa fa-bookmark-o" aria-hidden="true"></i> 記事</h1>
+		<h1 class="main-title" style="font-family: 'Ubuntu', sans-serif;"><i class="fa fa-bookmark-o" aria-hidden="true"></i> <?php echo akina_option('homepage_title', '記事'); ?></h1>
 		<?php
 		if ( have_posts() ) :
 

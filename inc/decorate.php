@@ -693,9 +693,9 @@ h1.main-title,h1.fes-title{font-family:<?php echo akina_option('font-title'); ?>
 /*鼠标*/
 body {cursor: url(<?php echo akina_option('cursor-nor'); ?>), auto}
 
-.botui-actions-buttons-button,button.botui-actions-buttons-button,#emotion-toggle,.emoji-item, .emotion-box,.emotion-item,.on-hover,.tieba-container span,#moblieGoTop,#changskin{cursor: url(<?php echo akina_option('cursor-no'); ?>), auto;}
+.botui-actions-buttons-button,.headertop-down i,.faa-parent.animated-hover:hover>.faa-spin, .faa-spin.animated, .faa-spin.animated-hover:hover,i.iconfont.js-toggle-search.iconsearch,#waifu #live2d,.aplayer svg,.aplayer.aplayer-narrow .aplayer-body, .aplayer.aplayer-narrow .aplayer-pic,button.botui-actions-buttons-button,#emotion-toggle,.emoji-item, .emotion-box,.emotion-item,.on-hover,.tieba-container span,#moblieGoTop,#changskin{cursor: url(<?php echo akina_option('cursor-no'); ?>), auto;}
 
-a,.ins-section .ins-section-header,.ins-section .ins-search-item,.ins-section .ins-search-item .ins-search-preview{cursor: url(<?php echo akina_option('cursor-ayu'); ?>), auto}
+a,.ins-section .ins-section-header,.font-family-controls button,.menu-list li,.ins-section .ins-search-item,.ins-section .ins-search-item .ins-search-preview{cursor: url(<?php echo akina_option('cursor-ayu'); ?>), auto}
 
 p ,.highlight-wrap code,.highlight-wrap,.hljs-ln-code .hljs-ln-line,.hljs-ln-code .hljs-ln-line{cursor: url(<?php echo akina_option('cursor-text'); ?>), auto}
 
