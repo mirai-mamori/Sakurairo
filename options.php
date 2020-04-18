@@ -1377,7 +1377,13 @@ function optionsframework_options()
         'id' => 'oneword',
         'std' => '1',
         'type' => 'checkbox');
-        
+
+    $options[] = array(
+        'name' => __('Comment Textarea image', 'sakurairo'), /*后台登陆界面背景图*/
+        'desc' => __('Use the default image if left this blank', 'sakurairo'), /*该地址为空则使用默认图片*/
+        'id' => 'comment-image',
+        'type' => 'upload');
+
     $options[] = array(
         'name' => __('One word typing effect of home page', 'sakurairo'), /*首页一言打字效果*/
         'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
