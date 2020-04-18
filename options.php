@@ -1380,7 +1380,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Comment Textarea image', 'sakurairo'), /*后台登陆界面背景图*/
-        'desc' => __('Use the default image if left this blank', 'sakurairo'), /*该地址为空则使用默认图片*/
+        'desc' => __('NO image if left this blank', 'sakurairo'), /*该地址为空则使用默认图片*/
         'id' => 'comment-image',
         'type' => 'upload');
 
