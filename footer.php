@@ -173,6 +173,14 @@
 <link rel="stylesheet" href="<?php echo akina_option('logo_zt', ''); ?>" media="all">
 <link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
 
+<!-- 收缩、展开 -->
+<script>jQuery(document).ready(
+function(jQuery){
+jQuery('.collapseButton').click(function(){
+jQuery(this).parent().parent().find('.xContent').slideToggle('slow');
+});
+});</script>
+
 
 </body>
 </html>
