@@ -1958,3 +1958,19 @@ function mimvp_file_is_displayable_image($result, $path) {
 add_filter( 'file_is_displayable_image', 'mimvp_file_is_displayable_image', 10, 2 );
 
 //code end
+
+//展开收缩功能
+function xcollapse($atts, $content = null){
+    extract(shortcode_atts(array("title"=>""),$atts));
+    return '<div style="margin: 0.5em 0;">
+    <div class="xControl">
+    <i class="fa fa-arrow-down" style="color: #9F6F26;"></i> &nbsp;&nbsp;
+    <span class="xTitle">'.$title.'</span>&nbsp;&nbsp;==>&nbsp;&nbsp;<a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02">展开 / 收缩</span></a>
+    <div style="clear: both;"></div>
+    </div>
+    <div class="xContent" style="display: none;">'.$content.'</div>
+    </div>';
+   }
+   add_shortcode('collapse', 'xcollapse');
+
+//code end

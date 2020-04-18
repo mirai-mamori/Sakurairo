@@ -701,6 +701,11 @@ p ,.highlight-wrap code,.highlight-wrap,.hljs-ln-code .hljs-ln-line,.hljs-ln-cod
 
 a:active {cursor: url(<?php echo akina_option('cursor-work'); ?>), alias}
 
+/*其他*/
+.comment-respond textarea {
+background-image: url(<?php echo akina_option('comment-image'); ?>); 
+}
+
 </style>
 <?php }
 add_action('wp_head', 'customizer_css');
