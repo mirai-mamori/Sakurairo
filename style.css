@@ -8976,6 +8976,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     -moz-border-radius:5px  !important;
     -khtml-border-radius:5px  !important;
     background: #FFF4C5 !important;
+    color: #9F6F26 !important;
     }
     .xTitle {
      color: #9F6F26 !important;
