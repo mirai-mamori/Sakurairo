@@ -189,9 +189,7 @@ color: #676767 !important}
 }
 
 input[type=checkbox]:checked:before {
-    content: "\f147";
     margin: -2px 0 0 -2px;
-    color: #FF5656;
 }
 
 /* loading */

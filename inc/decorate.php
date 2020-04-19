@@ -17,6 +17,8 @@ if ( akina_option('theme_skin') ) { ?>
 
 .linkdes { border-top: 1px dotted <?php echo akina_option('theme_skin'); ?> !important}
 
+.the-feature.from_left_and_right .info{background: <?php echo akina_option('theme_skin_jjbj'); ?> }
+
 .is-active-link::before, .commentbody:not(:placeholder-shown)~.input-label, .commentbody:focus~.input-label {
     background-color: <?php echo akina_option('theme_skin'); ?> !important
 }
@@ -410,9 +412,6 @@ h1.main-title {
 .font-family-controls button.selected {
     background-color: <?php echo akina_option('theme_skin'); ?>;
 }
-.changeSkin-gear,.toc{
-    background:rgba(255,255,255,<?php echo akina_option('sakura_skin_alpha','') ?>);
-}
 .art-content #archives .al_mon_list .al_mon,
 .art-content #archives .al_mon_list span {
     color: <?php echo akina_option('theme_skin'); ?>;
@@ -704,6 +703,9 @@ a:active {cursor: url(<?php echo akina_option('cursor-work'); ?>), alias}
 /*其他*/
 .comment-respond textarea {
 background-image: url(<?php echo akina_option('comment-image'); ?>); 
+}
+.search-form.is-visible{
+background-image: url(<?php echo akina_option('search-image'); ?>);
 }
 
 </style>
