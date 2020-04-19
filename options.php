@@ -136,26 +136,6 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Theme scheme tool transparency', 'sakurairo'), /*切换主题菜单透明度*/
-        'desc' => __('Adjust the theme scheme menu transparency, the smaller the value, the more transparent. The default value is 0.8', 'sakurairo'), /*调整切换主题菜单透明度，值越小越透明。默认透明度0.8*/
-        'id' => 'sakura_skin_alpha',
-        'std' => '0.8',
-        'type' => 'select',
-        'options' => array(
-            '0' => __('Transparent', 'sakurairo'), /*全透明*/
-            '0.1' => __('Transparency 0.1', 'sakurairo'), /*透明度0.1*/
-            '0.2' => __('Transparency 0.2', 'sakurairo'), /*透明度0.2*/
-            '0.3' => __('Transparency 0.3', 'sakurairo'), /*透明度0.3*/
-            '0.4' => __('Transparency 0.4', 'sakurairo'), /*透明度0.4*/
-            '0.5' => __('Transparency 0.5', 'sakurairo'), /*透明度0.5*/
-            '0.6' => __('Transparency 0.6', 'sakurairo'), /*透明度0.6*/
-            '0.7' => __('Transparency 0.7', 'sakurairo'), /*透明度0.7*/
-            '0.8' => __('Transparency 0.8', 'sakurairo'), /*透明度0.8*/
-            '0.9' => __('Transparency 0.9', 'sakurairo'), /*透明度0.9*/
-            '1' => __('Opaque', 'sakurairo'), /*不透明*/
-        ));
-
-    $options[] = array(
         'name' => __('Change web background', 'sakurairo'), /*切换网页背景*/
         'desc' => __('The foreground switches the background of the webpage. There are 8 urls separated by commas. The order corresponds to the foreground scheme tool button position (the order of the buttons is from left to right, top to bottom). If no background is needed, fill in the corresponding position as none.<strong>Note: If the theme is updated from v3.2.3 and below, be sure to change the [Version Control] parameter under the [Other] tab of this configuration page to any new value!</strong>', 'sakurairo'), /*前台切换网页背景，共8个url，使用英文逗号分隔，顺序对应前台切换主题按钮位置（按钮顺序从左至右，从上至下）,如不需要背景则填写对应位置为none。<strong>注意：如果主题是从v3.2.3及以下更新过来的，请务必将本配置页的【其他】标签下的【版本控制】参数修改为任意新值！</strong>*/
         'id' => 'sakura_skin_bg',
@@ -1140,6 +1120,13 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
+        'name' => __('Search background customization', 'sakurairo'), 
+        'desc' => __('It is the cute one that opens the search interface', 'sakurairo'), 
+        'id' => 'search-image',
+        'std' => "https://cdn.jsdelivr.net/gh/moezx/cdn@3.2.1/img/other/iloli.gif",
+        'type' => 'upload');
+
+    $options[] = array(
         'name' => __('Enable live search', 'sakurairo'), /*启用实时搜索*/
         'desc' => __('Real-time search in the foreground, call the Rest API to update the cache every hour, you can manually set the cache time in api.php', 'sakurairo'), /*前台实现实时搜索，调用 Rest API 每小时更新一次缓存，可在 functions.php 里手动设置缓存时间*/
         'id' => 'live_search',
@@ -1569,6 +1556,15 @@ function optionsframework_options()
         'desc' => __('Custom colors', 'sakurairo'), /*自定义背景颜色*/
         'type' => "color",
     );
+
+    $options[] = array(
+        'name' => __('First page Focus background color', 'sakurairo'), 
+        'id' => 'theme_skin_jjbj',
+        'std' => "#FFEEEB",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+
     $options[] = array(
         'name' => __('Preload animation color A', 'sakurairo'), /*预加载动画颜色A*/
         'id' => 'theme_skin_yjjone',
@@ -1576,6 +1572,7 @@ function optionsframework_options()
         'desc' => __('Custom colors', 'sakurairo'), /*自定义背景颜色*/
         'type' => "color",
     );
+
     $options[] = array(
         'name' => __('Preload animation color B', 'sakurairo'), /*预加载动画颜色B*/
         'id' => 'theme_skin_yjjtwo',
