@@ -662,8 +662,8 @@ function get_link_items()
  * Gravatar头像使用中国服务器
  */
 function gravatar_cn($url)
-{
-    $gravatar_url = array('0.gravatar.com', '1.gravatar.com', '2.gravatar.com', 'secure.gravatar.com');
+{    
+    $gravatar_url = array('0.gravatar.com/avatar','1.gravatar.com/avatar','2.gravatar.com/avatar','secure.gravatar.com/avatar');
     return str_replace( $gravatar_url, akina_option('gravatar_proxy'), $url );
 }
 if(akina_option('gravatar_proxy')){

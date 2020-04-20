@@ -895,7 +895,7 @@ function optionsframework_options()
         'name' => __('Gravatar avatar proxy', 'sakurairo'),
         'desc' => __('A front-ed proxy for Gravatar, eg. gravatar.2heng.xin/avatar . Leave it blank if you do not need.', 'sakurairo'),
         'id' => 'gravatar_proxy',
-        'std' => "cn.gravatar.com",
+        'std' => "sdn.geekzu.org/avatar",
         'type' => "text");    
     
     $options[] = array(

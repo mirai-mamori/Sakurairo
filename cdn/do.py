@@ -17,10 +17,11 @@ import codecs
 localtime = time.asctime( time.localtime(time.time()) )
 print (localtime)
 
-pathJS = 'js/src/'
-pathJSroot = 'js/'
-pathCSS = 'css/src/'
-pathCSSroot = 'css/'
+patchall = './'
+pathJS = patchall + 'js/src/'
+pathJSroot = patchall + 'js/'
+pathCSS = patchall + 'css/src/'
+pathCSSroot = patchall + 'css/'
 
 jsfiles = [f for f in listdir(pathJS) if isfile(join(pathJS, f))]
 cssfiles = [f for f in listdir(pathCSS) if isfile(join(pathCSS, f))]
