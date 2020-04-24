@@ -260,7 +260,8 @@ h1.main-title {
 .no-logged a {
     color: <?php echo akina_option('theme_skin'); ?>;
 }
-/*logocss*/
+
+/*Logo 特效*/
 <?php if (akina_option('logocss', '1')): ?>
 .logolink .sakuraso {
     background-color: rgba(255, 255, 255, .5);
@@ -459,7 +460,9 @@ $bg_style = akina_option('focus_height') ? 'background-position: center center;b
     -o-animation: rotating 6s linear infinite;
     animation: rotating 6s linear infinite;
 }
+
 /*预加载部分*/
+
 <?php if (akina_option('yjzdh', '1')): ?>
 #preload {
     position: absolute;
@@ -618,14 +621,7 @@ html {
 }
 <?php endif; ?>
 
-<?php if(akina_option('comment_info_box_width', '')): ?>
-.cmt-popup {
-    --widthA: <?php echo akina_option('comment_info_box_width', ''); ?>%;
-    --widthB: calc(var(--widthA) - 71px);
-    --widthC: calc(var(--widthB) / 3);
-    width: var(--widthC);
-}
-<?php endif;?>
+/*暗黑模式*/
 
 body.dark #main-container,body.dark .pattern-center:after,body.dark #mo-nav,body.dark .headertop-bar::after,body.dark .site-content,body.dark .comments,body.dark .site-footer{background:#31363b !important;}
 body.dark .pattern-center-blank,body.dark .yya,body.dark .blank,body.dark .toc,body.dark .search-form input{background:rgba(49,54,59,0.85);}
@@ -707,6 +703,14 @@ background-image: url(<?php echo akina_option('comment-image'); ?>);
 .search-form.is-visible{
 background-image: url(<?php echo akina_option('search-image'); ?>);
 }
+.Ubuntu-font,.center-text{
+font-family: <?php echo akina_option('keytitlefont'); ?>;
+}
+.center-text{
+font-size: <?php echo akina_option('keytitle_size'); ?>px;
+color: <?php echo akina_option('theme_skin_keytitle'); ?>;
+}
+
 
 </style>
 <?php }
