@@ -35,7 +35,7 @@ Sakurairo🌸: 基于Sakura的分支主题
 
 - 主题使用说明见：<https://asuhe.jp/daily/sakurairo-user-manual/>
 
-- 主题交流群：195147626
+- 主题交流群：784229925
 
 - 主题交流论坛：https://sakurasaku.cn
 
