@@ -589,6 +589,13 @@ function optionsframework_options()
         ));
 
     $options[] = array(
+        'name' => __('Post lincenses', 'sakurairo'), 
+        'desc' => __('Check close', 'sakurairo'), 
+        'id' => 'post-lincenses',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
         'name' => __('Alipay reward', 'sakurairo'), /*支付宝打赏*/
         'desc' => __('Alipay qrcode', 'sakurairo'), /*支付宝二维码*/
         'id' => 'alipay_code',
@@ -1231,105 +1238,7 @@ function optionsframework_options()
             'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/supportknow.png',
                 ),
             );
-    
-    $options[] = array(
-        'name' => __('fontweight', 'sakurairo'),//全局字重
-        'desc' => __('Fill in a number, maximum 900, minimum 100. Between 300 and 500 is recommended.', 'sakurairo'),
-        'id' => 'fontweight',
-        'std' => '',
-        'type' => 'text');
 
-    $options[] = array(
-        'name' => __('Add Fonts', 'sakurairo'), 
-        'desc' => __('Please make sure that the fonts you add can be referenced in Google font library. Fill in the font name. If multiple fonts are referenced, please use "|" as the separator.', 'sakurairo'),
-        'id' => 'addfonts',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Global Default Font', 'sakurairo'), 
-        'desc' => __('Fill in font name', 'sakurairo'),
-        'id' => 'global-default-font',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Global Font 2', 'sakurairo'), 
-        'desc' => __('Fill in font name', 'sakurairo'),
-        'id' => 'global-font2',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Front Page Title Font', 'sakurairo'), 
-        'desc' => __('Fill in font name', 'sakurairo'),
-        'id' => 'font-title',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Front Page One Word Font', 'sakurairo'), 
-        'desc' => __('Fill in font name', 'sakurairo'),
-        'id' => 'font-oneword',
-        'std' => '',
-        'type' => 'text');        
-
-    $options[] = array(
-        'name' => __('Front page key title font', 'sakurairo'), 
-        'desc' => __('Fill in font name', 'sakurairo'),
-        'id' => 'keytitlefont',
-        'std' => '',
-        'type' => 'text');  
-
-    $options[] = array(
-        'name' => __('Front Page One Word FontSize', 'sakurairo'), 
-        'desc' => __('Fill in Number. Between 10 and 20 is recommended', 'sakurairo'),
-        'id' => 'fontsize-oneword',
-        'std' => '',
-        'type' => 'text');  
-
-    $options[] = array(
-        'name' => __('Font size of the first key title', 'sakurairo'), 
-        'desc' => __('Fill in Number. Between 70 and 90 is recommended', 'sakurairo'),
-        'id' => 'keytitle_size',
-        'std' => '80',
-        'type' => 'text');  
-
-    $options[] = array(
-        'name' => __('Custom mouse style - Standard', 'sakurairo'), 
-        'desc' => __('Apply to global, fill in link.', 'sakurairo'),
-        'id' => 'cursor-nor',
-        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur',
-        'type' => 'text'); 
-        
-    $options[] = array(
-        'name' => __('Custom mouse style - Selected', 'sakurairo'), 
-        'desc' => __('Return to the above for PC', 'sakurairo'),
-        'id' => 'cursor-no',
-        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/No_Disponible.cur',
-        'type' => 'text');   
-        
-    $options[] = array(
-        'name' => __('Custom mouse style - Selected elements', 'sakurairo'), 
-        'desc' => __('Used to select a place', 'sakurairo'),
-        'id' => 'cursor-ayu',
-        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur',
-        'type' => 'text');  
-
-    $options[] = array(
-        'name' => __('Custom mouse style - Selected text', 'sakurairo'), 
-        'desc' => __('Used to select a Text', 'sakurairo'),
-        'id' => 'cursor-text',
-        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/texto.cur',
-        'type' => 'text'); 
-        
-    $options[] = array(
-        'name' => __('Custom mouse style - Working state', 'sakurairo'), 
-        'desc' => __('Used to working condition', 'sakurairo'),
-        'id' => 'cursor-work',
-        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/work.cur',
-        'type' => 'text');   
-    
     $options[] = array(
         'name' => __('Preload animation', 'sakurairo'), /*预加载动画*/
         'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
@@ -1393,8 +1302,8 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Comment Textarea image', 'sakurairo'), /*后台登陆界面背景图*/
-        'desc' => __('NO image if left this blank', 'sakurairo'), /*该地址为空则使用默认图片*/
+        'name' => __('Comment Textarea image', 'sakurairo'),
+        'desc' => __('NO image if left this blank', 'sakurairo'), 
         'id' => 'comment-image',
         'type' => 'upload');
 
@@ -1476,26 +1385,151 @@ function optionsframework_options()
         'type' => 'text');
     
     $options[] = array(
+        'name' => __('Mail template header', 'sakurairo'), 
+        'desc' => __('Set the background picture above your message', 'sakurairo'), 
+        'id' => 'mail_img',
+        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/head.jpg',
+        'type' => 'upload');
+
+
+    $options[] = array(
+        'name' => __('Custom mouse style - Standard', 'sakurairo'), 
+        'desc' => __('Apply to global, fill in link.', 'sakurairo'),
+        'id' => 'cursor-nor',
+        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur',
+        'type' => 'text'); 
+            
+    $options[] = array(
+        'name' => __('Custom mouse style - Selected', 'sakurairo'), 
+        'desc' => __('Return to the above for PC', 'sakurairo'),
+        'id' => 'cursor-no',
+        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/No_Disponible.cur',
+        'type' => 'text');   
+            
+    $options[] = array(
+        'name' => __('Custom mouse style - Selected elements', 'sakurairo'), 
+        'desc' => __('Used to select a place', 'sakurairo'),
+        'id' => 'cursor-ayu',
+        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur',
+        'type' => 'text');  
+    
+    $options[] = array(
+        'name' => __('Custom mouse style - Selected text', 'sakurairo'), 
+        'desc' => __('Used to select a Text', 'sakurairo'),
+        'id' => 'cursor-text',
+        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/texto.cur',
+        'type' => 'text'); 
+            
+    $options[] = array(
+        'name' => __('Custom mouse style - Working state', 'sakurairo'), 
+        'desc' => __('Used to working condition', 'sakurairo'),
+        'id' => 'cursor-work',
+        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/work.cur',
+        'type' => 'text');   
+
+    //字体
+    $options[] = array(
+        'name' => __('Fonts', 'sakurairo'),
+        'type' => 'heading');
+
+    $options[] = array(
+        'name' => __('fontweight', 'sakurairo'),//全局字重
+        'desc' => __('Fill in a number, maximum 900, minimum 100. Between 300 and 500 is recommended.', 'sakurairo'),
+        'id' => 'fontweight',
+        'std' => '',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Add Fonts', 'sakurairo'), 
+        'desc' => __('Please make sure that the fonts you add can be referenced in Google font library. Fill in the font name. If multiple fonts are referenced, please use "|" as the separator.', 'sakurairo'),
+        'id' => 'addfonts',
+        'std' => '',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Global Default Font', 'sakurairo'), 
+        'desc' => __('Fill in font name', 'sakurairo'),
+        'id' => 'global-default-font',
+        'std' => '',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Global Font 2', 'sakurairo'), 
+        'desc' => __('Fill in font name', 'sakurairo'),
+        'id' => 'global-font2',
+        'std' => '',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Front Page Title Font', 'sakurairo'), 
+        'desc' => __('Fill in font name', 'sakurairo'),
+        'id' => 'font-title',
+        'std' => '',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Front Page One Word Font', 'sakurairo'), 
+        'desc' => __('Fill in font name', 'sakurairo'),
+        'id' => 'font-oneword',
+        'std' => '',
+        'type' => 'text');        
+    
+    $options[] = array(
+        'name' => __('Front page key title font', 'sakurairo'), 
+        'desc' => __('Fill in font name', 'sakurairo'),
+        'id' => 'keytitlefont',
+        'std' => '',
+        'type' => 'text');  
+    
+    $options[] = array(
+        'name' => __('Global fontsize', 'sakurairo'), 
+        'desc' => __('Fill in Number. Between 10 and 20 is recommended', 'sakurairo'),
+        'id' => 'global-fontsize',
+        'std' => '',
+        'type' => 'text'); 
+    
+    $options[] = array(
+        'name' => __('Article Title Size', 'sakurairo'), 
+        'desc' => __('Fill in Number. Between 15 and 20 is recommended', 'sakurairo'),
+        'id' => 'article-title-size',
+        'std' => '',
+        'type' => 'text'); 
+    
+    $options[] = array(
+        'name' => __('Article Tips Size', 'sakurairo'), 
+        'desc' => __('Fill in Number. Between 10 and 15 is recommended', 'sakurairo'),
+        'id' => 'article-tips-size',
+        'std' => '',
+        'type' => 'text'); 
+    
+    $options[] = array(
+        'name' => __('Front Page One Word FontSize', 'sakurairo'), 
+        'desc' => __('Fill in Number. Between 10 and 20 is recommended', 'sakurairo'),
+        'id' => 'fontsize-oneword',
+        'std' => '',
+        'type' => 'text');  
+
+    $options[] = array(
+        'name' => __('Font size of the first key title', 'sakurairo'), 
+        'desc' => __('Fill in Number. Between 70 and 90 is recommended', 'sakurairo'),
+        'id' => 'keytitle_size',
+        'std' => '80',
+        'type' => 'text');  
+
+    $options[] = array(
         'name' => __('Logo font link', 'sakurairo'), /*Logo文字*/
         'desc' => __('When the font is ready, do this again <a href = "https://www.fontke.com/tool/fontface/">@font-face生成器</a>It can generate a bunch of files, which are all useful. It can be placed on a accessible server, OOS, CDN, etc. here, you only need to fill in the CSS style sheet file link <a href = "https://blog.ukenn.top/sakura6/#toc-head-4">Detailed tutorial</a>', 'sakurairo'),
         'id' => 'logo_zt',
         'std' => 'https://cdn.jsdelivr.net/gh/acai66/mydl/fonts/wenyihei/wenyihei-subfont.css',
         'type' => 'text');
-    
+        
     $options[] = array(
         'name' => __('Logo font name', 'sakurairo'), /*Logo文字*/
         'desc' => __('Fill in the font name of your logo, write the name directly without the format suffix', 'sakurairo'),
         'id' => 'logo_ztmc',
         'std' => 'wenyihei-subfont',
         'type' => 'text');
-    
-    $options[] = array(
-        'name' => __('Mail template header', 'sakurairo'), 
-        'desc' => __('Set the background picture above your message', 'sakurairo'), 
-        'id' => 'mail_img',
-        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/head.jpg',
-        'type' => 'text');
-        
+
     //色彩
     $options[] = array(
         'name' => __('Color', 'sakurairo'),
@@ -1594,10 +1628,10 @@ function optionsframework_options()
     );
 
     $options[] = array(
-        'name' => __('Front page key title font color', 'sakurairo'), /*主题风格*/
+        'name' => __('Front page key title font color', 'sakurairo'), 
         'id' => 'theme_skin_keytitle',
         'std' => "#FFF",
-        'desc' => __('Custom theme color', 'sakurairo'), /*自定义主题颜色*/
+        'desc' => __('Custom theme color', 'sakurairo'), 
         'type' => "color",
     );
 
