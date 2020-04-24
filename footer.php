@@ -160,7 +160,7 @@
 <?php endif; ?>
 
 <?php if (akina_option('sakurajs', '1')): ?>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/js/hana.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/js/sakura-<?php echo akina_option('sakura-falling-quantity'); ?>.js"></script>
 <?php endif; ?>
 <?php if (akina_option('bolangcss', '1')): ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/css/bolang.css">

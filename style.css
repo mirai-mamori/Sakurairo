@@ -6974,6 +6974,12 @@ input[type=radio]:checked:before {
     text-transform: uppercase
 }
 
+@media (max-width:860px) {
+    .center-text {
+    display:none;
+    }
+}
+
 .glitch {
     position: relative;
     color: #fff;

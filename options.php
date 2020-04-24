@@ -1275,10 +1275,24 @@ function optionsframework_options()
         'type' => 'text');        
 
     $options[] = array(
+        'name' => __('Front page key title font', 'sakurairo'), 
+        'desc' => __('Fill in font name', 'sakurairo'),
+        'id' => 'keytitlefont',
+        'std' => '',
+        'type' => 'text');  
+
+    $options[] = array(
         'name' => __('Front Page One Word FontSize', 'sakurairo'), 
         'desc' => __('Fill in Number. Between 10 and 20 is recommended', 'sakurairo'),
         'id' => 'fontsize-oneword',
         'std' => '',
+        'type' => 'text');  
+
+    $options[] = array(
+        'name' => __('Font size of the first key title', 'sakurairo'), 
+        'desc' => __('Fill in Number. Between 70 and 90 is recommended', 'sakurairo'),
+        'id' => 'keytitle_size',
+        'std' => '80',
         'type' => 'text');  
 
     $options[] = array(
@@ -1330,6 +1344,19 @@ function optionsframework_options()
         'std' => '1',
         'type' => 'checkbox');
     
+    $options[] = array(
+        'name' => __('Cherry Blossom falling quantity', 'sakurairo'), 
+        'desc' => __('Four kinds of quantity, default native quantity', 'sakurairo'), 
+        'id' => 'sakura-falling-quantity',
+        'std' => 'native',
+        'type' => 'select',
+        'options' => array(
+            'native' => __('native', 'sakurairo'),
+            'quarter' => __('quarter', 'sakurairo'),
+            'half' => __('half', 'sakurairo'),
+            'less' => __('less', 'sakurairo'),
+            ));
+
     $options[] = array(
         'name' => __('Wave effects', 'sakurairo'), /*首页波浪特效*/
         'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
@@ -1493,6 +1520,7 @@ function optionsframework_options()
             'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/macaronpurple' => __('「Macaron Colors」Purple（D9B8F1）', 'sakurairo'), 
             'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/colorful' => __('「Others」ColorFul', 'sakurairo'), 
     ));
+    
     $options[] = array(
             'name' => __('Theme style', 'sakurairo'), /*主题风格*/
             'id' => 'theme_skin',
@@ -1562,6 +1590,14 @@ function optionsframework_options()
         'id' => 'theme_skin_jjbj',
         'std' => "#FFEEEB",
         'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Front page key title font color', 'sakurairo'), /*主题风格*/
+        'id' => 'theme_skin_keytitle',
+        'std' => "#FFF",
+        'desc' => __('Custom theme color', 'sakurairo'), /*自定义主题颜色*/
         'type' => "color",
     );
 
