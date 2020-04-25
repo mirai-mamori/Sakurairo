@@ -685,41 +685,89 @@ font-family:<?php echo akina_option('global-font2'); ?> !important;
 font-size: <?php echo akina_option('global-fontsize'); ?>px !important;
 }
 
-h1.main-title,h1.fes-title{font-family:<?php echo akina_option('font-title'); ?> !important;}
-
-.header-info p{font-family:<?php echo akina_option('font-oneword'); ?> !important;}
-
-.header-info p {font-size: <?php echo akina_option('fontsize-oneword'); ?>px !important;}
-
-.post-list-thumb .post-title h3{font-size: <?php echo akina_option('article-title-size'); ?>px !important;}
-
-.post-meta, .post-meta a{font-size: <?php echo akina_option('article-tips-size'); ?>px !important;}
-
-/*鼠标*/
-body {cursor: url(<?php echo akina_option('cursor-nor'); ?>), auto}
-
-.botui-actions-buttons-button,.headertop-down i,.faa-parent.animated-hover:hover>.faa-spin, .faa-spin.animated, .faa-spin.animated-hover:hover,i.iconfont.js-toggle-search.iconsearch,#waifu #live2d,.aplayer svg,.aplayer.aplayer-narrow .aplayer-body, .aplayer.aplayer-narrow .aplayer-pic,button.botui-actions-buttons-button,#emotion-toggle,.emoji-item, .emotion-box,.emotion-item,.on-hover,.tieba-container span,#moblieGoTop,#changskin{cursor: url(<?php echo akina_option('cursor-no'); ?>), auto;}
-
-a,.ins-section .ins-section-header,.font-family-controls button,.menu-list li,.ins-section .ins-search-item,.ins-section .ins-search-item .ins-search-preview{cursor: url(<?php echo akina_option('cursor-ayu'); ?>), auto}
-
-p ,.highlight-wrap code,.highlight-wrap,.hljs-ln-code .hljs-ln-line,.hljs-ln-code .hljs-ln-line{cursor: url(<?php echo akina_option('cursor-text'); ?>), auto}
-
-a:active {cursor: url(<?php echo akina_option('cursor-work'); ?>), alias}
-
-/*其他*/
-.comment-respond textarea {
-background-image: url(<?php echo akina_option('comment-image'); ?>); 
+h1.main-title,h1.fes-title{
+font-family:<?php echo akina_option('font-title'); ?> !important;
 }
-.search-form.is-visible{
-background-image: url(<?php echo akina_option('search-image'); ?>);
+
+.header-info p{
+font-family:<?php echo akina_option('font-oneword'); ?> !important;
+font-size: <?php echo akina_option('fontsize-oneword'); ?>px !important;
 }
+
+.post-list-thumb .post-title h3{
+font-size: <?php echo akina_option('article-title-size'); ?>px !important;
+}
+
+.post-meta, .post-meta a{
+font-size: <?php echo akina_option('article-tips-size'); ?>px !important;
+}
+
 .Ubuntu-font,.center-text{
 font-family: <?php echo akina_option('keytitlefont'); ?>;
 }
+
 .center-text{
 font-size: <?php echo akina_option('keytitle_size'); ?>px;
 color: <?php echo akina_option('theme_skin_keytitle'); ?>;
 }
+
+/*鼠标*/
+body{
+cursor: url(<?php echo akina_option('cursor-nor'); ?>), auto;
+}
+
+.botui-actions-buttons-button,
+.headertop-down i,
+.faa-parent.animated-hover:hover>.faa-spin,
+.faa-spin.animated,
+.faa-spin.animated-hover:hover,
+i.iconfont.js-toggle-search.iconsearch,
+#waifu #live2d,
+.aplayer svg,
+.aplayer.aplayer-narrow .aplayer-body,
+.aplayer.aplayer-narrow .aplayer-pic,
+button.botui-actions-buttons-button,
+#emotion-toggle,
+.emoji-item,
+.emotion-box,
+.emotion-item,
+.on-hover,
+.tieba-container span,
+#moblieGoTop,
+#changskin{
+cursor: url(<?php echo akina_option('cursor-no'); ?>), auto;
+}
+
+a,
+.ins-section .ins-section-header,
+.font-family-controls button,
+.menu-list li,.ins-section .ins-search-item,
+.ins-section .ins-search-item .ins-search-preview{
+cursor: url(<?php echo akina_option('cursor-ayu'); ?>), auto;
+}
+
+p,
+.highlight-wrap code,
+.highlight-wrap,
+.hljs-ln-code .hljs-ln-line,
+.hljs-ln-code .hljs-ln-line{
+cursor: url(<?php echo akina_option('cursor-text'); ?>), auto;
+}
+
+a:active{
+cursor: url(<?php echo akina_option('cursor-work'); ?>), alias;
+}
+
+/*图片类*/
+.comment-respond textarea {
+background-image: url(<?php echo akina_option('comment-image'); ?>); 
+}
+
+.search-form.is-visible{
+background-image: url(<?php echo akina_option('search-image'); ?>);
+}
+
+/*其他*/
 <?php if (akina_option('post-lincenses', '1')): ?>
 .post-lincenses a{
 display:none;
