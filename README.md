@@ -39,5 +39,9 @@ Sakurairo🌸: 基于Sakura的分支主题
 
 - 主题交流论坛：https://sakurasaku.cn
 
+![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/gethelp.png)
+
+![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/giveme.png)
+
 ## 希望你喜欢！
 
