@@ -245,23 +245,6 @@ function optionsframework_options()
         ));
 
     $options[] = array(
-        'name' => __('Comment shrink', 'sakurairo'), /*评论收缩*/
-        'id' => 'toggle-menu',
-        'std' => "yes",
-        'type' => "radio",
-        'options' => array(
-            'yes' => __('Open', 'sakurairo'), /*开启*/
-            'no' => __('Close', 'sakurairo'), /*关闭*/
-        ));
-
-    $options[] = array(
-        'name' => __('Display author information at the end of the article?', 'sakurairo'), /*文章末尾显示作者信息？*/
-        'desc' => __('Check to enable', 'sakurairo'), /*勾选启用*/
-        'id' => 'show_authorprofile',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
         'name' => __('Paging mode', 'sakurairo'), /*分页模式*/
         'id' => 'pagenav_style',
         'std' => "ajax",
@@ -587,6 +570,23 @@ function optionsframework_options()
             'yes' => __('Open', 'sakurairo'), /*开启*/
             'no' => __('Close', 'sakurairo'), /*关闭*/
         ));
+
+    $options[] = array(
+        'name' => __('Comment shrink', 'sakurairo'), /*评论收缩*/
+        'id' => 'toggle-menu',
+        'std' => "yes",
+        'type' => "radio",
+        'options' => array(
+            'yes' => __('Open', 'sakurairo'), /*开启*/
+            'no' => __('Close', 'sakurairo'), /*关闭*/
+        ));
+    
+    $options[] = array(
+        'name' => __('Display author information at the end of the article?', 'sakurairo'), /*文章末尾显示作者信息？*/
+        'desc' => __('Check to enable', 'sakurairo'), /*勾选启用*/
+        'id' => 'show_authorprofile',
+        'std' => '1',
+        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Post lincenses', 'sakurairo'), 

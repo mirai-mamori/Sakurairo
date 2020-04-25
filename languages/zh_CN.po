@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-04-24 23:48+0800\n"
-"PO-Revision-Date: 2020-04-24 23:50+0800\n"
+"POT-Creation-Date: 2020-04-25 17:35+0800\n"
+"PO-Revision-Date: 2020-04-25 17:35+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -38,7 +38,7 @@ msgstr "返回首页"
 msgid "Don't worry, search in site?"
 msgstr "别着急，试试站内检索？"
 
-#: 404.php:53 footer.php:67 search.php:42
+#: 404.php:53 footer.php:62 search.php:42
 msgid "Search..."
 msgstr "搜索..."
 
@@ -60,7 +60,7 @@ msgstr "暂无评论"
 
 #: comments.php:53
 msgid "I'm not a robot"
-msgstr "我不是机器人对吧？"
+msgstr "我可不是机器人呢"
 
 #: comments.php:54
 msgid "Comment in private"
@@ -126,15 +126,15 @@ msgstr "禁止小广告😀"
 msgid "Site"
 msgstr "网站"
 
-#: footer.php:81 footer.php:89
+#: footer.php:76 footer.php:84
 msgid "Want to find something?"
 msgstr "想要找点什么呢？"
 
-#: footer.php:91
+#: footer.php:86
 msgid "Search"
 msgstr "搜索"
 
-#: footer.php:143
+#: footer.php:138
 msgid "Widgets"
 msgstr "小工具"
 
@@ -223,7 +223,7 @@ msgstr ""
 "固定链接</a>设置为朴素。为此，您可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">伪静态</a>。</b>"
 
-#: header.php:37
+#: header.php:33
 #, php-format
 msgid "page %s "
 msgstr "第 %s 页 "
@@ -395,7 +395,7 @@ msgstr "更换头像"
 
 #: inc/theme_plus.php:265
 msgid "Hello, "
-msgstr "欢迎"
+msgstr "欢迎 "
 
 #: inc/theme_plus.php:269
 msgid "Home"
@@ -411,7 +411,7 @@ msgstr "退出登录"
 
 #: inc/theme_plus.php:273
 msgid "Sign out? "
-msgstr "退出登录？"
+msgstr "退出登录？ "
 
 #: inc/theme_plus.php:298 inc/theme_plus.php:353 inc/theme_plus.php:421
 #: tpl/content-single.php:16 tpl/single-image.php:18
@@ -440,35 +440,31 @@ msgstr "个人资料"
 msgid "Sign out"
 msgstr "退出登录"
 
-#: layouts/duoshuo.php:12
-msgid "View comments"
-msgstr "查看评论"
-
-#: options.php:34 options.php:45 options.php:282
+#: options.php:34 options.php:45 options.php:265
 msgid "1"
 msgstr ""
 
-#: options.php:35 options.php:46 options.php:283
+#: options.php:35 options.php:46 options.php:266
 msgid "2"
 msgstr ""
 
-#: options.php:36 options.php:47 options.php:284
+#: options.php:36 options.php:47 options.php:267
 msgid "3"
 msgstr ""
 
-#: options.php:37 options.php:48 options.php:285
+#: options.php:37 options.php:48 options.php:268
 msgid "4"
 msgstr ""
 
-#: options.php:38 options.php:49 options.php:286
+#: options.php:38 options.php:49 options.php:269
 msgid "5"
 msgstr ""
 
-#: options.php:39 options.php:287
+#: options.php:39 options.php:270
 msgid "6"
 msgstr ""
 
-#: options.php:40 options.php:288
+#: options.php:40 options.php:271
 msgid "7"
 msgstr ""
 
@@ -507,7 +503,7 @@ msgid ""
 "configuration page to any new value!</strong>"
 msgstr ""
 "前台切换网页背景，共8个url，使用英文逗号分隔，顺序对应前台切换主题按钮位置"
-"（按钮顺序从左至右，从上至下）,如不需要背景则填写对应位置为none。"
+"（按钮顺序从左至右，从上至下）,如不需要背景则填写对应位置为none"
 
 #: options.php:146
 msgid "Personal avatar"
@@ -544,7 +540,7 @@ msgstr ""
 
 #: options.php:166
 msgid "It is the small logo on the browser tab, fill in the url"
-msgstr "站点Logo，即浏览器上方标题左边的图标，填写文件地址。"
+msgstr "站点Logo，即浏览器上方标题左边的图标，填写文件地址"
 
 #: options.php:172
 msgid "Custom keywords and descriptions "
@@ -592,13 +588,13 @@ msgstr "默认开启，勾选关闭，显示在文章页面，独立页面以及
 msgid "Search button"
 msgstr "搜索按钮"
 
-#: options.php:212 options.php:253 options.php:557 options.php:567
-#: options.php:577 options.php:587
+#: options.php:212 options.php:540 options.php:550 options.php:560
+#: options.php:570 options.php:580
 msgid "Open"
 msgstr "启用"
 
-#: options.php:213 options.php:254 options.php:558 options.php:568
-#: options.php:578 options.php:588
+#: options.php:213 options.php:541 options.php:551 options.php:561
+#: options.php:571 options.php:581
 msgid "Close"
 msgstr "关闭"
 
@@ -645,72 +641,60 @@ msgid "Alternate"
 msgstr "左右交替"
 
 #: options.php:248
-msgid "Comment shrink"
-msgstr "评论收缩"
-
-#: options.php:258
-msgid "Display author information at the end of the article?"
-msgstr "文章末尾显示作者信息？"
-
-#: options.php:259
-msgid "Check to enable"
-msgstr "勾选启用"
-
-#: options.php:265
 msgid "Paging mode"
 msgstr "分页模式"
 
-#: options.php:270
+#: options.php:253
 msgid "Ajax load"
 msgstr "Ajax 加载"
 
-#: options.php:271
+#: options.php:254
 msgid "Previous and next page"
 msgstr "上一页和下一页"
 
-#: options.php:275
+#: options.php:258
 msgid "Automatically load the next page"
 msgstr "自动加载下一页"
 
-#: options.php:276
+#: options.php:259
 msgid ""
 "(seconds) Set to automatically load the next page time, the default is not "
 "automatically loaded"
 msgstr "（秒）设置自动加载下一页时间，默认不自动加载"
 
-#: options.php:281
+#: options.php:264
 msgid "0"
 msgstr ""
 
-#: options.php:289
+#: options.php:272
 msgid "8"
 msgstr ""
 
-#: options.php:290
+#: options.php:273
 msgid "9"
 msgstr ""
 
-#: options.php:291
+#: options.php:274
 msgid "10"
 msgstr ""
 
-#: options.php:292
+#: options.php:275
 msgid "Do not load automatically"
 msgstr "不自动加载"
 
-#: options.php:296
+#: options.php:279
 msgid "Footer info"
 msgstr "页脚信息"
 
-#: options.php:297
+#: options.php:280
 msgid "Footer description, support for HTML code"
 msgstr "页脚说明文字，支持HTML代码"
 
-#: options.php:303
+#: options.php:286
 msgid "About"
 msgstr "关于"
 
-#: options.php:304
+#: options.php:287
 #, php-format
 msgid ""
 "Sakurairo v %s  |  <a href=\"https://asuhe.jp/daily/sakurairo-user-manual/"
@@ -725,67 +709,67 @@ msgstr ""
 "src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?"
 "style=flat-square\" alt=\"GitHub release\"></a>"
 
-#: options.php:310
+#: options.php:293
 msgid "Check for Updates"
 msgstr "检查更新"
 
-#: options.php:324
+#: options.php:307
 msgid "HomePage"
 msgstr "｜首页"
 
-#: options.php:328
+#: options.php:311
 msgid "Main switch"
 msgstr "总开关（对下文所有选项生效）"
 
-#: options.php:329 options.php:373
+#: options.php:312 options.php:356
 msgid "Default on, check off"
 msgstr "默认开启，勾选关闭"
 
-#: options.php:335
+#: options.php:318
 msgid "Social information"
 msgstr "社交信息"
 
-#: options.php:336
+#: options.php:319
 msgid "Enable by default, check off, display avatar, signature, SNS"
 msgstr "默认开启，勾选关闭，显示头像、签名、SNS"
 
-#: options.php:342
+#: options.php:325
 msgid "Social information style"
 msgstr "社交信息样式"
 
-#: options.php:347
+#: options.php:330
 msgid "Merge with signature"
 msgstr "与签名合并"
 
-#: options.php:348
+#: options.php:331
 msgid "Independent line"
 msgstr "独立成行，与签名分开"
 
-#: options.php:352
+#: options.php:335
 msgid "Cover manifest"
 msgstr "封面图片库选项"
 
-#: options.php:353
+#: options.php:336
 msgid "Select how to call the cover random image"
 msgstr "选择封面随机图的调用方式"
 
-#: options.php:358
+#: options.php:341
 msgid "webp images (optimization)"
 msgstr "webp优化随机图"
 
-#: options.php:359
+#: options.php:342
 msgid "built-in api (default)"
 msgstr "内置原图随机图"
 
-#: options.php:360
+#: options.php:343
 msgid "custom api (advanced)"
 msgstr "外部随机图API"
 
-#: options.php:365
+#: options.php:348
 msgid "Cover images url"
 msgstr "封面图片库url"
 
-#: options.php:366
+#: options.php:349
 #, php-format
 msgid ""
 "Fill in the manifest path for random picture display, please refer to <a "
@@ -797,43 +781,43 @@ msgstr ""
 "Sakura/wiki/options\">Wiki</a>,，如果你在上面选择了webp优化，点击<a href = "
 "\"%s\">这里</a>更新 manifest"
 
-#: options.php:372
+#: options.php:355
 msgid "full-screen display"
 msgstr "全屏显示"
 
-#: options.php:379
+#: options.php:362
 msgid "Enable video"
 msgstr "开启视频"
 
-#: options.php:380
+#: options.php:363
 msgid "Check on"
 msgstr "勾选启用"
 
-#: options.php:386
+#: options.php:369
 msgid "Live"
 msgstr "视频循环播放"
 
-#: options.php:387
+#: options.php:370
 msgid ""
 "Check to enable, the video will continue to play automatically, you need to "
 "enable Pjax"
 msgstr "选开启，视频自动续播，需要开启Pjax功能"
 
-#: options.php:393
+#: options.php:376
 msgid "Video address"
 msgstr "视频地址"
 
-#: options.php:394
+#: options.php:377
 msgid ""
 "The source address of the video, the address is spliced below the video "
 "name, the slash is not required at the end of the address"
 msgstr "视频的来源地址，该地址拼接下面的视频名，地址尾部不需要加斜杠"
 
-#: options.php:400
+#: options.php:383
 msgid "Video name"
 msgstr "视频名称"
 
-#: options.php:401
+#: options.php:384
 msgid ""
 "abc.mp4, just fill in the video file name abc, multiple videos separated by "
 "commas such as abc, efg, do not care about the order, because the loading is "
@@ -842,153 +826,165 @@ msgstr ""
 "例：abc.mp4 ，只需要填写视频文件名 abc 即可，多个用英文逗号隔开如 abc,efg ，"
 "无需在意顺序，因为加载是随机的抽取的"
 
-#: options.php:407
+#: options.php:390
 msgid "Background image filter"
 msgstr "背景图滤镜"
 
-#: options.php:412
+#: options.php:395
 msgid "Nothing"
 msgstr "无"
 
-#: options.php:413
+#: options.php:396
 msgid "Undertint"
 msgstr "浅色"
 
-#: options.php:414
+#: options.php:397
 msgid "Dim"
 msgstr "暗淡"
 
-#: options.php:415
+#: options.php:398
 msgid "Grid"
 msgstr "网格"
 
-#: options.php:416
+#: options.php:399
 msgid "Dot"
 msgstr "点点"
 
-#: options.php:420
+#: options.php:403
 msgid "Main page article title"
 msgstr "首页文章总标题"
 
-#: options.php:421
+#: options.php:404
 msgid ""
 "Default is 記事, you can also change it to other, of course you can't use it "
 "as an advertisement!Not allowed!!"
 msgstr "默认为記事，你也可以修改为其他，当然不能当广告用！不允许！！"
 
-#: options.php:428
+#: options.php:411
 msgid "Whether to turn on the top-feature"
 msgstr "是否开启聚焦"
 
-#: options.php:429 options.php:1152
+#: options.php:412 options.php:1152
 msgid "Default on"
 msgstr "默认开启"
 
-#: options.php:435
+#: options.php:418
 msgid "Top-feature style"
 msgstr "聚焦样式"
 
-#: options.php:440
+#: options.php:423
 msgid "Alternate left and right"
 msgstr "左右交替"
 
-#: options.php:441
+#: options.php:424
 msgid "From bottom to top"
 msgstr "从下往上"
 
-#: options.php:445
+#: options.php:428
 msgid "Top-feature title"
 msgstr "聚焦标题"
 
-#: options.php:446
+#: options.php:429
 msgid ""
 "Default is 聚焦, you can also change it to other, of course you can't use it "
 "as an advertisement!Not allowed!!"
 msgstr "默认为聚焦，你也可以修改为其他，当然不能当广告用！不允许！！"
 
-#: options.php:453
+#: options.php:436
 msgid "Top-feature 1 image"
 msgstr "聚焦图一"
 
-#: options.php:454 options.php:482 options.php:510
+#: options.php:437 options.php:465 options.php:493
 msgid "size 257px*160px"
 msgstr "尺寸257px*160px"
 
-#: options.php:460 options.php:461
+#: options.php:443 options.php:444
 msgid "Top-feature 1 title"
 msgstr "聚焦图一标题"
 
-#: options.php:467 options.php:468
+#: options.php:450 options.php:451
 msgid "Top-feature 1 description"
 msgstr "聚焦图一描述"
 
-#: options.php:474 options.php:475
+#: options.php:457 options.php:458
 msgid "Top-feature 1 link"
 msgstr "聚焦图一链接"
 
-#: options.php:481
+#: options.php:464
 msgid "Top-feature 2 image"
 msgstr "聚焦图二"
 
-#: options.php:488 options.php:489
+#: options.php:471 options.php:472
 msgid "Top-feature 2 title"
 msgstr "聚焦图二标题"
 
-#: options.php:495 options.php:496
+#: options.php:478 options.php:479
 msgid "Top-feature 2 description"
 msgstr "聚焦图二描述"
 
-#: options.php:502 options.php:503
+#: options.php:485 options.php:486
 msgid "Top-feature 2 link"
 msgstr "聚焦图二链接"
 
-#: options.php:509
+#: options.php:492
 msgid "Top-feature 3 image"
 msgstr "聚焦图三"
 
-#: options.php:516 options.php:517
+#: options.php:499 options.php:500
 msgid "Top-feature 3 title"
 msgstr "聚焦图三标题"
 
-#: options.php:523 options.php:524
+#: options.php:506 options.php:507
 msgid "Top-feature 3 description"
 msgstr "聚焦图三描述"
 
-#: options.php:530 options.php:531
+#: options.php:513 options.php:514
 msgid "Top-feature 3 link"
 msgstr "聚焦图三链接"
 
-#: options.php:538
+#: options.php:521
 msgid "Post page"
 msgstr "｜文章页"
 
-#: options.php:542
+#: options.php:525
 msgid "Post style"
 msgstr "文章样式"
 
-#: options.php:547
+#: options.php:530
 msgid "sakurairo"
 msgstr "桜いろ"
 
-#: options.php:548 options.php:650
+#: options.php:531 options.php:650
 msgid "GitHub"
 msgstr ""
 
-#: options.php:552
+#: options.php:535
 msgid "Post like"
 msgstr "文章点赞"
 
-#: options.php:562
+#: options.php:545
 msgid "Post share"
 msgstr "文章分享"
 
-#: options.php:572
+#: options.php:555
 msgid "Previous and Next"
 msgstr "上一篇下一篇"
 
-#: options.php:582
+#: options.php:565
 msgid "Author profile"
 msgstr "博主信息"
+
+#: options.php:575
+msgid "Comment shrink"
+msgstr "评论收缩"
+
+#: options.php:585
+msgid "Display author information at the end of the article?"
+msgstr "文章末尾显示作者信息"
+
+#: options.php:586
+msgid "Check to enable"
+msgstr "勾选启用"
 
 #: options.php:592
 msgid "Post lincenses"
@@ -996,7 +992,7 @@ msgstr "文章页尾版权提示"
 
 #: options.php:593
 msgid "Check close"
-msgstr "勾选关闭，默认不勾选。"
+msgstr "勾选关闭，默认不勾选"
 
 #: options.php:599
 msgid "Alipay reward"
@@ -1145,8 +1141,8 @@ msgid ""
 "The name part of name@domain.com, only the frontend has js runtime "
 "environment can get the full address, you can rest assured to fill in"
 msgstr ""
-"name@domain.com 的 name 部分，前端仅具有 js 运行环境时才能获取完整地址，可放"
-"心填写"
+"name@domain.com的name 部分，前端仅具有 js 运行环境时才能获取完整地址，可放心"
+"填写"
 
 #: options.php:727
 msgid "Email-domain"
@@ -1154,7 +1150,7 @@ msgstr "邮箱-域名"
 
 #: options.php:728
 msgid "The domain.com part of name@domain.com"
-msgstr "name@domain.com 的 domain.com部分"
+msgstr "name@domain.com的domain.com部分"
 
 #: options.php:735
 msgid "Dashboard configuration"
@@ -1300,7 +1296,7 @@ msgstr "｜进阶"
 
 #: options.php:870
 msgid "Warning"
-msgstr "注意！"
+msgstr "注意"
 
 #: options.php:881
 msgid "Images CDN"
@@ -2001,8 +1997,8 @@ msgid ""
 "\"|\" as the separator."
 msgstr ""
 "请确保添加的字体在谷歌字体库内可被引用，填写字体名称。添加的字体前面必须"
-"有”|“。如果引用多个字体，请使用“|”作为分割符。如果字体名称有空格，请用加号替"
-"代。例：|ZCOOL+XiaoWei|Ma+Shan+Zheng"
+"有”|“。如果引用多个字体，请使用“|”作为分割符。例：|ZCOOL+XiaoWei|Ma+Shan"
+"+Zheng （如果）字体名称有空格，请用加号替代。"
 
 #: options.php:1450
 msgid "Global Default Font"
@@ -2035,7 +2031,7 @@ msgstr "全局字体大小"
 
 #: options.php:1486 options.php:1507
 msgid "Fill in Number. Between 10 and 20 is recommended"
-msgstr "填写数字，10到20之间是推荐值。"
+msgstr "填写数字，10到20之间是推荐值"
 
 #: options.php:1492
 msgid "Article Title Size"
@@ -2043,7 +2039,7 @@ msgstr "首页文章标题字体大小"
 
 #: options.php:1493
 msgid "Fill in Number. Between 15 and 20 is recommended"
-msgstr "填写数字，15到20之间是推荐值。"
+msgstr "填写数字，15到20之间是推荐值"
 
 #: options.php:1499
 msgid "Article Tips Size"
@@ -2051,7 +2047,7 @@ msgstr "首页文章提示字体大小"
 
 #: options.php:1500
 msgid "Fill in Number. Between 10 and 15 is recommended"
-msgstr "填写数字，10到15之间是推荐值。"
+msgstr "填写数字，10到15之间是推荐值"
 
 #: options.php:1506
 msgid "Front Page One Word FontSize"
@@ -2063,7 +2059,7 @@ msgstr "首页关键标题字体大小"
 
 #: options.php:1514
 msgid "Fill in Number. Between 70 and 90 is recommended"
-msgstr "填写数字，70到90之间是推荐值。"
+msgstr "填写数字，70到90之间是推荐值"
 
 #: options.php:1520
 msgid "Logo font link"
@@ -2210,7 +2206,7 @@ msgstr "预加载动画颜色B"
 #: search.php:19
 #, php-format
 msgid "search result: %s"
-msgstr "关于 %s 的搜索结果："
+msgstr "搜索结果：%s"
 
 #: tpl/content-category.php:30
 msgid "NOTHING"
@@ -2275,13 +2271,13 @@ msgstr "检测更新"
 #, php-format
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
-msgstr " %s 现在是最新的。"
+msgstr "%s现在是最新的。"
 
 #: update-checker/Puc/v4p9/Plugin/Ui.php:215
 #, php-format
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
-msgstr " %s 的最新更新已就位。"
+msgstr "%s的最新更新已就位。"
 
 #: update-checker/Puc/v4p9/Plugin/Ui.php:217
 #, php-format
@@ -2405,6 +2401,9 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr ""
+
+#~ msgid "View comments"
+#~ msgstr "查看评论"
 
 #~ msgid "Theme scheme tool transparency"
 #~ msgstr "切换主题菜单透明度"

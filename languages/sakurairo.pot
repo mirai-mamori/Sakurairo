@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-04-24 23:48+0800\n"
+"POT-Creation-Date: 2020-04-25 17:35+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Don't worry, search in site?"
 msgstr ""
 
-#: 404.php:53 footer.php:67 search.php:42
+#: 404.php:53 footer.php:62 search.php:42
 msgid "Search..."
 msgstr ""
 
@@ -126,15 +126,15 @@ msgstr ""
 msgid "Site"
 msgstr ""
 
-#: footer.php:81 footer.php:89
+#: footer.php:76 footer.php:84
 msgid "Want to find something?"
 msgstr ""
 
-#: footer.php:91
+#: footer.php:86
 msgid "Search"
 msgstr ""
 
-#: footer.php:143
+#: footer.php:138
 msgid "Widgets"
 msgstr ""
 
@@ -215,7 +215,7 @@ msgid ""
 "com/wordpress-rewriterule.html\" target=\"_blank\"> pseudo-static </a>. </ b>"
 msgstr ""
 
-#: header.php:37
+#: header.php:33
 #, php-format
 msgid "page %s "
 msgstr ""
@@ -431,35 +431,31 @@ msgstr ""
 msgid "Sign out"
 msgstr ""
 
-#: layouts/duoshuo.php:12
-msgid "View comments"
-msgstr ""
-
-#: options.php:34 options.php:45 options.php:282
+#: options.php:34 options.php:45 options.php:265
 msgid "1"
 msgstr ""
 
-#: options.php:35 options.php:46 options.php:283
+#: options.php:35 options.php:46 options.php:266
 msgid "2"
 msgstr ""
 
-#: options.php:36 options.php:47 options.php:284
+#: options.php:36 options.php:47 options.php:267
 msgid "3"
 msgstr ""
 
-#: options.php:37 options.php:48 options.php:285
+#: options.php:37 options.php:48 options.php:268
 msgid "4"
 msgstr ""
 
-#: options.php:38 options.php:49 options.php:286
+#: options.php:38 options.php:49 options.php:269
 msgid "5"
 msgstr ""
 
-#: options.php:39 options.php:287
+#: options.php:39 options.php:270
 msgid "6"
 msgstr ""
 
-#: options.php:40 options.php:288
+#: options.php:40 options.php:271
 msgid "7"
 msgstr ""
 
@@ -577,13 +573,13 @@ msgstr ""
 msgid "Search button"
 msgstr ""
 
-#: options.php:212 options.php:253 options.php:557 options.php:567 options.php:577
-#: options.php:587
+#: options.php:212 options.php:540 options.php:550 options.php:560 options.php:570
+#: options.php:580
 msgid "Open"
 msgstr ""
 
-#: options.php:213 options.php:254 options.php:558 options.php:568 options.php:578
-#: options.php:588
+#: options.php:213 options.php:541 options.php:551 options.php:561 options.php:571
+#: options.php:581
 msgid "Close"
 msgstr ""
 
@@ -629,71 +625,59 @@ msgid "Alternate"
 msgstr ""
 
 #: options.php:248
-msgid "Comment shrink"
-msgstr ""
-
-#: options.php:258
-msgid "Display author information at the end of the article?"
-msgstr ""
-
-#: options.php:259
-msgid "Check to enable"
-msgstr ""
-
-#: options.php:265
 msgid "Paging mode"
 msgstr ""
 
-#: options.php:270
+#: options.php:253
 msgid "Ajax load"
 msgstr ""
 
-#: options.php:271
+#: options.php:254
 msgid "Previous and next page"
 msgstr ""
 
-#: options.php:275
+#: options.php:258
 msgid "Automatically load the next page"
 msgstr ""
 
-#: options.php:276
+#: options.php:259
 msgid ""
 "(seconds) Set to automatically load the next page time, the default is not automatically loaded"
 msgstr ""
 
-#: options.php:281
+#: options.php:264
 msgid "0"
 msgstr ""
 
-#: options.php:289
+#: options.php:272
 msgid "8"
 msgstr ""
 
-#: options.php:290
+#: options.php:273
 msgid "9"
 msgstr ""
 
-#: options.php:291
+#: options.php:274
 msgid "10"
 msgstr ""
 
-#: options.php:292
+#: options.php:275
 msgid "Do not load automatically"
 msgstr ""
 
-#: options.php:296
+#: options.php:279
 msgid "Footer info"
 msgstr ""
 
-#: options.php:297
+#: options.php:280
 msgid "Footer description, support for HTML code"
 msgstr ""
 
-#: options.php:303
+#: options.php:286
 msgid "About"
 msgstr ""
 
-#: options.php:304
+#: options.php:287
 #, php-format
 msgid ""
 "Sakurairo v %s  |  <a href=\"https://asuhe.jp/daily/sakurairo-user-manual/\">Theme document</"
@@ -702,67 +686,67 @@ msgid ""
 "release/mirai-mamori/Sakurairo.svg?style=flat-square\" alt=\"GitHub release\"></a>"
 msgstr ""
 
-#: options.php:310
+#: options.php:293
 msgid "Check for Updates"
 msgstr ""
 
-#: options.php:324
+#: options.php:307
 msgid "HomePage"
 msgstr ""
 
-#: options.php:328
+#: options.php:311
 msgid "Main switch"
 msgstr ""
 
-#: options.php:329 options.php:373
+#: options.php:312 options.php:356
 msgid "Default on, check off"
 msgstr ""
 
-#: options.php:335
+#: options.php:318
 msgid "Social information"
 msgstr ""
 
-#: options.php:336
+#: options.php:319
 msgid "Enable by default, check off, display avatar, signature, SNS"
 msgstr ""
 
-#: options.php:342
+#: options.php:325
 msgid "Social information style"
 msgstr ""
 
-#: options.php:347
+#: options.php:330
 msgid "Merge with signature"
 msgstr ""
 
-#: options.php:348
+#: options.php:331
 msgid "Independent line"
 msgstr ""
 
-#: options.php:352
+#: options.php:335
 msgid "Cover manifest"
 msgstr ""
 
-#: options.php:353
+#: options.php:336
 msgid "Select how to call the cover random image"
 msgstr ""
 
-#: options.php:358
+#: options.php:341
 msgid "webp images (optimization)"
 msgstr ""
 
-#: options.php:359
+#: options.php:342
 msgid "built-in api (default)"
 msgstr ""
 
-#: options.php:360
+#: options.php:343
 msgid "custom api (advanced)"
 msgstr ""
 
-#: options.php:365
+#: options.php:348
 msgid "Cover images url"
 msgstr ""
 
-#: options.php:366
+#: options.php:349
 #, php-format
 msgid ""
 "Fill in the manifest path for random picture display, please refer to <a href = \"https: //"
@@ -770,192 +754,204 @@ msgid ""
 "<a href = \"%s\">here</a> to update manifest"
 msgstr ""
 
-#: options.php:372
+#: options.php:355
 msgid "full-screen display"
 msgstr ""
 
-#: options.php:379
+#: options.php:362
 msgid "Enable video"
 msgstr ""
 
-#: options.php:380
+#: options.php:363
 msgid "Check on"
 msgstr ""
 
-#: options.php:386
+#: options.php:369
 msgid "Live"
 msgstr ""
 
-#: options.php:387
+#: options.php:370
 msgid "Check to enable, the video will continue to play automatically, you need to enable Pjax"
 msgstr ""
 
-#: options.php:393
+#: options.php:376
 msgid "Video address"
 msgstr ""
 
-#: options.php:394
+#: options.php:377
 msgid ""
 "The source address of the video, the address is spliced below the video name, the slash is not "
 "required at the end of the address"
 msgstr ""
 
-#: options.php:400
+#: options.php:383
 msgid "Video name"
 msgstr ""
 
-#: options.php:401
+#: options.php:384
 msgid ""
 "abc.mp4, just fill in the video file name abc, multiple videos separated by commas such as "
 "abc, efg, do not care about the order, because the loading is random extraction"
 msgstr ""
 
-#: options.php:407
+#: options.php:390
 msgid "Background image filter"
 msgstr ""
 
-#: options.php:412
+#: options.php:395
 msgid "Nothing"
 msgstr ""
 
-#: options.php:413
+#: options.php:396
 msgid "Undertint"
 msgstr ""
 
-#: options.php:414
+#: options.php:397
 msgid "Dim"
 msgstr ""
 
-#: options.php:415
+#: options.php:398
 msgid "Grid"
 msgstr ""
 
-#: options.php:416
+#: options.php:399
 msgid "Dot"
 msgstr ""
 
-#: options.php:420
+#: options.php:403
 msgid "Main page article title"
 msgstr ""
 
-#: options.php:421
+#: options.php:404
 msgid ""
 "Default is 記事, you can also change it to other, of course you can't use it as an "
 "advertisement!Not allowed!!"
 msgstr ""
 
-#: options.php:428
+#: options.php:411
 msgid "Whether to turn on the top-feature"
 msgstr ""
 
-#: options.php:429 options.php:1152
+#: options.php:412 options.php:1152
 msgid "Default on"
 msgstr ""
 
-#: options.php:435
+#: options.php:418
 msgid "Top-feature style"
 msgstr ""
 
-#: options.php:440
+#: options.php:423
 msgid "Alternate left and right"
 msgstr ""
 
-#: options.php:441
+#: options.php:424
 msgid "From bottom to top"
 msgstr ""
 
-#: options.php:445
+#: options.php:428
 msgid "Top-feature title"
 msgstr ""
 
-#: options.php:446
+#: options.php:429
 msgid ""
 "Default is 聚焦, you can also change it to other, of course you can't use it as an "
 "advertisement!Not allowed!!"
 msgstr ""
 
-#: options.php:453
+#: options.php:436
 msgid "Top-feature 1 image"
 msgstr ""
 
-#: options.php:454 options.php:482 options.php:510
+#: options.php:437 options.php:465 options.php:493
 msgid "size 257px*160px"
 msgstr ""
 
-#: options.php:460 options.php:461
+#: options.php:443 options.php:444
 msgid "Top-feature 1 title"
 msgstr ""
 
-#: options.php:467 options.php:468
+#: options.php:450 options.php:451
 msgid "Top-feature 1 description"
 msgstr ""
 
-#: options.php:474 options.php:475
+#: options.php:457 options.php:458
 msgid "Top-feature 1 link"
 msgstr ""
 
-#: options.php:481
+#: options.php:464
 msgid "Top-feature 2 image"
 msgstr ""
 
-#: options.php:488 options.php:489
+#: options.php:471 options.php:472
 msgid "Top-feature 2 title"
 msgstr ""
 
-#: options.php:495 options.php:496
+#: options.php:478 options.php:479
 msgid "Top-feature 2 description"
 msgstr ""
 
-#: options.php:502 options.php:503
+#: options.php:485 options.php:486
 msgid "Top-feature 2 link"
 msgstr ""
 
-#: options.php:509
+#: options.php:492
 msgid "Top-feature 3 image"
 msgstr ""
 
-#: options.php:516 options.php:517
+#: options.php:499 options.php:500
 msgid "Top-feature 3 title"
 msgstr ""
 
-#: options.php:523 options.php:524
+#: options.php:506 options.php:507
 msgid "Top-feature 3 description"
 msgstr ""
 
-#: options.php:530 options.php:531
+#: options.php:513 options.php:514
 msgid "Top-feature 3 link"
 msgstr ""
 
-#: options.php:538
+#: options.php:521
 msgid "Post page"
 msgstr ""
 
-#: options.php:542
+#: options.php:525
 msgid "Post style"
 msgstr ""
 
-#: options.php:547
+#: options.php:530
 msgid "sakurairo"
 msgstr ""
 
-#: options.php:548 options.php:650
+#: options.php:531 options.php:650
 msgid "GitHub"
 msgstr ""
 
-#: options.php:552
+#: options.php:535
 msgid "Post like"
 msgstr ""
 
-#: options.php:562
+#: options.php:545
 msgid "Post share"
 msgstr ""
 
-#: options.php:572
+#: options.php:555
 msgid "Previous and Next"
 msgstr ""
 
-#: options.php:582
+#: options.php:565
 msgid "Author profile"
+msgstr ""
+
+#: options.php:575
+msgid "Comment shrink"
+msgstr ""
+
+#: options.php:585
+msgid "Display author information at the end of the article?"
+msgstr ""
+
+#: options.php:586
+msgid "Check to enable"
 msgstr ""
 
 #: options.php:592
