@@ -9,6 +9,8 @@ Sakurairo🌸: 基于Sakura的分支主题
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor) 
 
+## 宣传视频（帮助你更好了解本主题特性）：https://www.bilibili.com/video/BV1KK41157Gg
+
 ## 已知Bug：
 
 **暂无**
