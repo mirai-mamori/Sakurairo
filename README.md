@@ -1,19 +1,11 @@
 ![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/ADTheme.jpg)
-
+![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/helpgive.jpg)
 Sakurairo🌸: 基于Sakura的分支主题
 ===
 
 基于主题 [Sakura](https://github.com/mashirozx/Sakura) 的基础上修改的Sakurairo主题
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor) 
-
-## 默认开启：
-
-- 调用本地CSS
-
-- 社交栏样式为独立成行
-
-- 开启PJAX及NProcess进度条
 
 ## 已知Bug：
 
@@ -38,10 +30,6 @@ Sakurairo🌸: 基于Sakura的分支主题
 - 主题交流群：784229925
 
 - 主题交流论坛：https://sakurasaku.cn
-
-![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/gethelp.png)
-
-![Sakurairo](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/giveme.png)
 
 ## 希望你喜欢！
 
