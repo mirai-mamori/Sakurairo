@@ -260,7 +260,8 @@ h1.main-title {
 .no-logged a {
     color: <?php echo akina_option('theme_skin'); ?>;
 }
-/*logocss*/
+
+/*Logo 特效*/
 <?php if (akina_option('logocss', '1')): ?>
 .logolink .sakuraso {
     background-color: rgba(255, 255, 255, .5);
@@ -459,7 +460,9 @@ $bg_style = akina_option('focus_height') ? 'background-position: center center;b
     -o-animation: rotating 6s linear infinite;
     animation: rotating 6s linear infinite;
 }
+
 /*预加载部分*/
+
 <?php if (akina_option('yjzdh', '1')): ?>
 #preload {
     position: absolute;
@@ -618,14 +621,7 @@ html {
 }
 <?php endif; ?>
 
-<?php if(akina_option('comment_info_box_width', '')): ?>
-.cmt-popup {
-    --widthA: <?php echo akina_option('comment_info_box_width', ''); ?>%;
-    --widthB: calc(var(--widthA) - 71px);
-    --widthC: calc(var(--widthB) / 3);
-    width: var(--widthC);
-}
-<?php endif;?>
+/*暗黑模式*/
 
 body.dark #main-container,body.dark .pattern-center:after,body.dark #mo-nav,body.dark .headertop-bar::after,body.dark .site-content,body.dark .comments,body.dark .site-footer{background:#31363b !important;}
 body.dark .pattern-center-blank,body.dark .yya,body.dark .blank,body.dark .toc,body.dark .search-form input{background:rgba(49,54,59,0.85);}
@@ -679,34 +675,105 @@ html,#main-container,.pattern-center:after,#mo-nav,.headertop-bar::after,.site-c
 h1,small,sub,sup,code,kbd,pre,samp,body,button,input,select,textarea,blockquote:before,blockquote:after,code,kbd,tt,var,big,button,input[type=button],input[type=reset],input[type=submit],.video-stu,.pattern-center h1.cat-title,.pattern-center h1.entry-title,.pattern-center .cat-des,.single-center .single-header h1.entry-title,.single-center .entry-census,.pattern-center-sakura h1.cat-title,.pattern-center-sakura h1.entry-title,.pattern-center-sakura .cat-des,.single-center .single-header h1.entry-title,.single-center .entry-census,.site-top .lower,.site-top .menu-item-has-children li a,.feature i,.p-time,.p-time i,i.iconfont.hotpost,.post-list p,.post-more i,.info-meta span,.post-list-thumb i,.post-date,.post-meta,.post-meta a,.float-content .post-text,.float-content i,.s-time,.s-time i,.navigator i,.site-info,.entry-census,h1.page-title,.post-lincenses,.post-tags,.post-like a,.post-like i,.post-share ul li i ,.post-squares .category,.post-squares h3,.post-squares .label,.author-profile .meta h3 a,.author-profile p,.author-profile i,.mashiro-profile .box a,#comments-list-title span,.butterBar-message ,h1.works-title,.works-p-time,.works-p-time i,.works-meta i,.works-meta span,#archives-temp h3,h1.cat-title,span.sitename,span.linkss-title,.comment .commeta,.comment .comment-reply-link,.comment .info,.comment .info .useragent-info-m,.comment h4,.comment h4 a,.comment-respond #cancel-comment-reply-link,.comment-respond input,.comment-respond textarea,.comment-respond .logged-in-as i,.notification i,.notification span,.siren-checkbox-label,h1.fes-title,h1.main-title,.foverlay-bg,.feature-title .foverlay,.notice i,.bio-text,.header-info,.site-header.iconsearch,i.iconfont.js-toggle-search.iconsearch,.search-form i ,.search-form input,.s-search input,.s-search i,.ins-section,.ins-section .iconfont.icon-mark,.ins-section .fa ,.ins-section.ins-search-item .search-keyword,.ins-section .ins-search-item .ins-search-preview,i.iconfont.down,#pagination span,#bangumi-pagination span,.ex-login-title ,.ex-register-title h3,.ex-login input,.ex-register input,.admin-login-check,.user-login-check,.ex-login-username,.ex-new-account a,.ex-register .user-error,.register-close,.herder-user-name,.header-user-menu a,.no-logged,.no-logged a,.single-reward .reward-open,.reward-row li::after ,.botui-container,button.botui-actions-buttons-button,input.botui-actions-text-input,.load-button span,.prpr,.mashiro-tips,.live2d-tool,.center-text,.bb-comment,.finish-icon-container,.skill div,#footer-sponsor,.comment-user-avatar .socila-check ,.insert-image-tips ,.the-feature.from_left_and_right .info h3,.the-feature.from_left_and_right .info p,.highlight-wrap .copy-code ,#bangumi-pagination {font-weight: <?php echo akina_option('fontweight'); ?> !important}
 
 /*字体*/
-.serif{font-family:<?php echo akina_option('global-default-font'); ?> !important ;}
+.serif{
+font-family:<?php echo akina_option('global-default-font'); ?> !important ;
+font-size: <?php echo akina_option('global-fontsize'); ?>px !important;
+}
 
-body{font-family:<?php echo akina_option('global-font2'); ?> !important;}
+body{
+font-family:<?php echo akina_option('global-font2'); ?> !important;
+font-size: <?php echo akina_option('global-fontsize'); ?>px !important;
+}
 
-h1.main-title,h1.fes-title{font-family:<?php echo akina_option('font-title'); ?> !important;}
+h1.main-title,h1.fes-title{
+font-family:<?php echo akina_option('font-title'); ?> !important;
+}
 
-.header-info p{font-family:<?php echo akina_option('font-oneword'); ?> !important;}
+.header-info p{
+font-family:<?php echo akina_option('font-oneword'); ?> !important;
+font-size: <?php echo akina_option('fontsize-oneword'); ?>px !important;
+}
 
-.header-info p {font-size: <?php echo akina_option('fontsize-oneword'); ?>px !important;}
+.post-list-thumb .post-title h3{
+font-size: <?php echo akina_option('article-title-size'); ?>px !important;
+}
+
+.post-meta, .post-meta a{
+font-size: <?php echo akina_option('article-tips-size'); ?>px !important;
+}
+
+.Ubuntu-font,.center-text{
+font-family: <?php echo akina_option('keytitlefont'); ?>;
+}
+
+.center-text{
+font-size: <?php echo akina_option('keytitle_size'); ?>px;
+color: <?php echo akina_option('theme_skin_keytitle'); ?>;
+}
 
 /*鼠标*/
-body {cursor: url(<?php echo akina_option('cursor-nor'); ?>), auto}
+body{
+cursor: url(<?php echo akina_option('cursor-nor'); ?>), auto;
+}
 
-.botui-actions-buttons-button,.headertop-down i,.faa-parent.animated-hover:hover>.faa-spin, .faa-spin.animated, .faa-spin.animated-hover:hover,i.iconfont.js-toggle-search.iconsearch,#waifu #live2d,.aplayer svg,.aplayer.aplayer-narrow .aplayer-body, .aplayer.aplayer-narrow .aplayer-pic,button.botui-actions-buttons-button,#emotion-toggle,.emoji-item, .emotion-box,.emotion-item,.on-hover,.tieba-container span,#moblieGoTop,#changskin{cursor: url(<?php echo akina_option('cursor-no'); ?>), auto;}
+.botui-actions-buttons-button,
+.headertop-down i,
+.faa-parent.animated-hover:hover>.faa-spin,
+.faa-spin.animated,
+.faa-spin.animated-hover:hover,
+i.iconfont.js-toggle-search.iconsearch,
+#waifu #live2d,
+.aplayer svg,
+.aplayer.aplayer-narrow .aplayer-body,
+.aplayer.aplayer-narrow .aplayer-pic,
+button.botui-actions-buttons-button,
+#emotion-toggle,
+.emoji-item,
+.emotion-box,
+.emotion-item,
+.on-hover,
+.tieba-container span,
+#moblieGoTop,
+#changskin{
+cursor: url(<?php echo akina_option('cursor-no'); ?>), auto;
+}
 
-a,.ins-section .ins-section-header,.font-family-controls button,.menu-list li,.ins-section .ins-search-item,.ins-section .ins-search-item .ins-search-preview{cursor: url(<?php echo akina_option('cursor-ayu'); ?>), auto}
+a,
+.ins-section .ins-section-header,
+.font-family-controls button,
+.menu-list li,.ins-section .ins-search-item,
+.ins-section .ins-search-item .ins-search-preview{
+cursor: url(<?php echo akina_option('cursor-ayu'); ?>), auto;
+}
 
-p ,.highlight-wrap code,.highlight-wrap,.hljs-ln-code .hljs-ln-line,.hljs-ln-code .hljs-ln-line{cursor: url(<?php echo akina_option('cursor-text'); ?>), auto}
+p,
+.highlight-wrap code,
+.highlight-wrap,
+.hljs-ln-code .hljs-ln-line,
+.hljs-ln-code .hljs-ln-line{
+cursor: url(<?php echo akina_option('cursor-text'); ?>), auto;
+}
 
-a:active {cursor: url(<?php echo akina_option('cursor-work'); ?>), alias}
+a:active{
+cursor: url(<?php echo akina_option('cursor-work'); ?>), alias;
+}
 
-/*其他*/
+/*图片类*/
 .comment-respond textarea {
 background-image: url(<?php echo akina_option('comment-image'); ?>); 
 }
+
 .search-form.is-visible{
 background-image: url(<?php echo akina_option('search-image'); ?>);
 }
+
+/*其他*/
+<?php if (akina_option('post-lincenses', '1')): ?>
+.post-lincenses a{
+display:none;
+}
+<?php endif; ?>
+
 
 </style>
 <?php }

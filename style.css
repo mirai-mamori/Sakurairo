@@ -4,8 +4,8 @@ Theme Name: Sakurairo
 Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Hitomi , Ukenn , Spirit , Mashiro , Louie , Fuzzz
 Author URI: https://asuhe.jp/
-Description: 一个基于Sakura主题制作的增强主题（とおはなび　Update）
-Version: 1.11.4
+Description: 一个基于Sakura主题制作的增强主题（はなふぶき　Update）
+Version: 1.12.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -6972,6 +6972,12 @@ input[type=radio]:checked:before {
     font-family: Ubuntu, sans-serif;
     font-size: 80px;
     text-transform: uppercase
+}
+
+@media (max-width:860px) {
+    .center-text {
+    display:none;
+    }
 }
 
 .glitch {

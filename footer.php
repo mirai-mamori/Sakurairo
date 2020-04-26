@@ -12,11 +12,7 @@
 ?>
 	</div><!-- #content -->
 	<?php 
-		if(akina_option('general_disqus_plugin_support')){
-			get_template_part('layouts/duoshuo');
-		}else{
 			comments_template('', true); 
-		}
 	?>
 </div><!-- #page Pjax container-->
 	<footer id="colophon" class="site-footer" role="contentinfo">
@@ -24,7 +20,6 @@
 			<div class="footertext">
 				<div class="img-preload">
 					<img src="<?php echo akina_option('webweb_img'); ?>/load/ball.svg"><!-- 加载下一部分圈圈 -->
-					<img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/disqus-preloader.svg">
 				</div>
 				<i class="iconfont icon-sakura rotating" style="color: <?php echo akina_option('theme_skin'); ?>;display:inline-block;font-size:26px"></i></p>
 				<p style="color: #666666;"><?php echo akina_option('footer_info', ''); ?></p>
@@ -159,12 +154,17 @@
     </div>
 <?php endif; ?>
 
+<!-- 樱花飘落动效 -->
 <?php if (akina_option('sakurajs', '1')): ?>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/js/hana.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/js/sakura-<?php echo akina_option('sakura-falling-quantity'); ?>.js"></script>
 <?php endif; ?>
+
+<!-- 首页波浪特效 -->
 <?php if (akina_option('bolangcss', '1')): ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/css/bolang.css">
 <?php endif; ?>
+
+<!-- Live2D看板娘 -->
 <?php if (akina_option('live2djs', '1')): ?>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 <?php endif; ?>

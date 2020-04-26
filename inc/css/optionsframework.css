@@ -37,9 +37,9 @@ body {
 .nav-tab {
 	background: none;
 	border:none;
-	padding: 8px 15px;
+	padding: 6px 10px;
 	font-weight: 400;
-    font-size: 14.5px;
+    font-size: 13.5px;
     color: #cc7878;
     border-radius: 3px 3px 0 0;
 }
@@ -97,6 +97,12 @@ a#options-group-8-tab:before {
 }
 
 a#options-group-9-tab:before { 
+    font-family: "dashicons";
+    content: "\f214";
+    float: left;
+}
+
+a#options-group-10-tab:before { 
     font-family: "dashicons";
     content: "\f309";
     float: left;

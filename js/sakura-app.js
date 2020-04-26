@@ -1921,13 +1921,6 @@ $(function () {
             if (Poi.codelamp == 'open') {
                 self.Prism.highlightAll(event)
             };
-            if ($('.ds-thread').length > 0) {
-                if (typeof DUOSHUO !== 'undefined') {
-                    DUOSHUO.EmbedThread('.ds-thread');
-                } else {
-                    $.getScript("//static.duoshuo.com/embed.js");
-                }
-            }
         }).on('pjax:end', function() {
             if (window.gtag){
                 gtag('config', Poi.google_analytics_id, {
