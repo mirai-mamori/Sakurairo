@@ -36,6 +36,8 @@ Sakurairo🌸: 基于Sakura的分支主题
 
 ## 其他：
 
+- 测试站点：https://okaeri.org
+
 - 仓库国内镜像：https://gitee.com/mirai-mamori/Sakurairo
 
 - 主题交流群：784229925
