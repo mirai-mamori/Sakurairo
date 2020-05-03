@@ -359,6 +359,13 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
+        'name' => __('Home background transparency', 'sakurairo'),
+        'desc' => __('Fill in numbers between 0.1 and 1', 'sakurairo'), /*Telegram链接*/
+        'id' => 'homepagebgtmd',
+        'std' => '0.8',
+        'type' => 'text');
+
+    $options[] = array(
         'name' => __('Enable video', 'sakurairo'), /*开启视频*/
         'desc' => __('Check on', 'sakurairo'), /*勾选开启*/
         'id' => 'focus_amv',
@@ -1433,12 +1440,33 @@ function optionsframework_options()
         'type' => 'heading');
 
     $options[] = array(
-        'name' => __('fontweight', 'sakurairo'),//全局字重
+        'name' => __('fontweight', 'sakurairo'),
         'desc' => __('Fill in a number, maximum 900, minimum 100. Between 300 and 500 is recommended.', 'sakurairo'),
         'id' => 'fontweight',
         'std' => '',
         'type' => 'text');
-    
+
+    $options[] = array(
+        'name' => __('Reference external font', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'refer-ext-font',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('External font name', 'sakurairo'), 
+        'desc' => __('Fill in the font name.', 'sakurairo'),
+        'id' => 'ext-font-name',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('External font address', 'sakurairo'), 
+        'desc' => __('Fill in font address.', 'sakurairo'),
+        'id' => 'ext-font-address',
+        'std' => '',
+        'type' => 'text');    
+
     $options[] = array(
         'name' => __('Add Fonts', 'sakurairo'), 
         'desc' => __('Please make sure that the fonts you add can be referenced in Google font library. Fill in the font name. If multiple fonts are referenced, please use "|" as the separator.', 'sakurairo'),

@@ -655,7 +655,8 @@ a:hover {
 .wrapper {
     animation: fade-in;
     animation-duration: .5s;
-    -webkit-animation: fade-in .5s
+    -webkit-animation: fade-in .5s;
+    background-color: rgba(255, 255, 255, .8);
 }
 
 #bgvideo {
@@ -1330,11 +1331,11 @@ a:hover {
 }
 
 .site-content {
-    max-width: 800px;
-    padding: 0 10px;
+    max-width: 860px;
+    padding: 0 20px;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: transparent !important;
 }
 
 .post-list {
@@ -1720,7 +1721,8 @@ i.iconfont.hotpost {
 .post-list-show {
     animation: post-list-show .5s;
     -webkit-animation: post-list-show .5s;
-    opacity: 1
+    opacity: 1;
+    background-color:rgba(255, 255, 255, .90)
 }
 
 @keyframes post-list-show {
@@ -1815,9 +1817,6 @@ i.iconfont.hotpost {
 .site-footer {
     padding: 2%;
     background: rgba(255, 255, 255, .8);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto
 }
 
 .site-info {
@@ -3070,9 +3069,8 @@ a.page-numbers {
     width: 100%;
     padding: 60px 0 80px;
     list-style: none;
-    background: rgba(255, 255, 255, .8);
     padding: 0 10px;
-    max-width: 800px;
+    max-width: 860px;
     margin-left: auto;
     margin-right: auto
 }
@@ -5157,7 +5155,7 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
         display: none
     }
     .site-footer {
-        padding: 30px
+        padding: 30px;
     }
     .lower {
         display: none !important
@@ -5219,7 +5217,7 @@ box-shadow: 0 0 4px rgba(238, 156, 166, .85);
         display: none
     }
     .site-footer {
-        padding: 30px
+        padding: 30px;
     }
     .we-title:before {
         display: none
@@ -7946,6 +7944,7 @@ a.toc-link {
 
 .the-feature {
     position: relative;
+    left:22px;
     -webkit-transition: all .35s ease-in-out;
     -moz-transition: all .35s ease-in-out;
     transition: all .35s ease-in-out
