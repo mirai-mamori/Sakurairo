@@ -60,6 +60,7 @@ if (akina_option('akina_meta') == true) {
 <meta name="keywords" content="<?php echo $keywords; ?>" />
 <?php } ?>
 <link rel="shortcut icon" href="<?php echo akina_option('favicon_link', ''); ?>"/> 
+<link rel="dns-prefetch" href="//i0.wp.com">
 <meta http-equiv="x-dns-prefetch-control" content="on">
 <?php wp_head(); ?>
 <script type="text/javascript">
