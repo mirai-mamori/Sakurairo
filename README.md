@@ -15,7 +15,8 @@ Sakurairo🌸: 基于Sakura的分支主题
 
 - YouTube：  https://youtu.be/7hskBPe4Yzc
 
-## 主题使用说明见：https://asuhe.jp/daily/sakurairo-user-manual
+## 主题使用说明：
+- 请阅读 [【 WordPress 主题 】Sakurairo 「桜いろ」🌸使用手册](https://asuhe.jp/daily/sakurairo-user-manual)
 
 ## 已知Bug：
 
