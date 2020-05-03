@@ -623,7 +623,7 @@ html {
 
 /*暗黑模式*/
 
-body.dark #main-container,body.dark .pattern-center:after,body.dark #mo-nav,body.dark .headertop-bar::after,body.dark .site-content,body.dark .comments,body.dark .site-footer,body.dark .wrapper,body.dark .post-list-show{background:#31363b !important;}
+body.dark #main-container,body.dark .pattern-center:after,body.dark #mo-nav,body.dark .headertop-bar::after,body.dark .site-content,body.dark .comments,body.dark .site-footer,body.dark .wrapper,body.dark .post-list-show,body.dark .post-list hr{background:#31363b !important;}
 body.dark .pattern-center-blank,body.dark .yya,body.dark .blank,body.dark .toc,body.dark .search-form input{background:rgba(49,54,59,0.85);}
 body.dark .single-reward .reward-row{background:#bebebe;}
 body.dark .ins-section .ins-search-item:hover,body.dark .ins-section .ins-search-item.active,body.dark .ins-section .ins-search-item:hover .ins-slug,body.dark .ins-section .ins-search-item.active .ins-slug,body.dark .ins-section .ins-search-item:hover .ins-search-preview,body.dark .ins-section .ins-search-item.active .ins-search-preview,body.dark .ins-section .ins-search-item:hover header,body.dark .herder-user-name-u,body.dark .herder-user-name,body.dark .ins-section .ins-search-item:hover .iconfont,body.dark .header-user-menu .user-menu-option{color:#fff;background:#31363b;}
@@ -666,6 +666,7 @@ body.dark .ex-login-username,body.dark .admin-login-check p,body.dark .user-logi
 body.dark .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path,body.dark .widget-area .show-hide svg path{fill:#fafafa;}
 body.dark,body.dark button,body.dark input,body.dark select,body.dark textarea{color:#eee;}
 body.dark button,body.dark input[type=button],body.dark input[type=reset],body.dark input[type=submit]{box-shadow:none;}
+body.dark input[type=submit]{background-color:rgba(35,38,41,0.8);}
 body.dark .comment .info,body.dark .comment-respond .logged-in-as,body.dark .notification,body.dark .comment-respond .logged-in-as a,body.dark .comment-respond .logged-in-as a:hover{color:#9499a8;}
 html,#main-container,.pattern-center:after,#mo-nav,.headertop-bar::after,.site-content,.comments,.site-footer,.pattern-center-blank,.yya,.blank,.toc,.search-form input{transition:background 1s;}
 .entry-content p,.entry-content ul,.entry-content ol,.comments .body p,.float-content,.post-list p,.link-title{transition:color 1s;}
