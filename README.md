@@ -9,7 +9,13 @@ Sakurairo🌸: 基于Sakura的分支主题
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor) 
 
-## 宣传视频（帮助你更好了解本主题特性）：https://www.bilibili.com/video/BV1KK41157Gg
+## 宣传视频（帮助你更好了解本主题特性）：
+
+- Bilibili： https://www.bilibili.com/video/BV1KK41157Gg
+
+- YouTube：  https://youtu.be/7hskBPe4Yzc
+
+## 主题使用说明见：https://asuhe.jp/daily/sakurairo-user-manual
 
 ## 已知Bug：
 
@@ -28,8 +34,6 @@ Sakurairo🌸: 基于Sakura的分支主题
 ## 其他：
 
 - 仓库国内镜像：https://gitee.com/mirai-mamori/Sakurairo
-
-- 主题使用说明见：<https://asuhe.jp/daily/sakurairo-user-manual/>
 
 - 主题交流群：784229925
 
