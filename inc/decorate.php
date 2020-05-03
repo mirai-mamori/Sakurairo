@@ -623,7 +623,7 @@ html {
 
 /*暗黑模式*/
 
-body.dark #main-container,body.dark .pattern-center:after,body.dark #mo-nav,body.dark .headertop-bar::after,body.dark .site-content,body.dark .comments,body.dark .site-footer{background:#31363b !important;}
+body.dark #main-container,body.dark .pattern-center:after,body.dark #mo-nav,body.dark .headertop-bar::after,body.dark .site-content,body.dark .comments,body.dark .site-footer,body.dark .wrapper,body.dark .post-list-show{background:#31363b !important;}
 body.dark .pattern-center-blank,body.dark .yya,body.dark .blank,body.dark .toc,body.dark .search-form input{background:rgba(49,54,59,0.85);}
 body.dark .single-reward .reward-row{background:#bebebe;}
 body.dark .ins-section .ins-search-item:hover,body.dark .ins-section .ins-search-item.active,body.dark .ins-section .ins-search-item:hover .ins-slug,body.dark .ins-section .ins-search-item.active .ins-slug,body.dark .ins-section .ins-search-item:hover .ins-search-preview,body.dark .ins-section .ins-search-item.active .ins-search-preview,body.dark .ins-section .ins-search-item:hover header,body.dark .herder-user-name-u,body.dark .herder-user-name,body.dark .ins-section .ins-search-item:hover .iconfont,body.dark .header-user-menu .user-menu-option{color:#fff;background:#31363b;}
@@ -639,7 +639,7 @@ body.dark .lower li ul,body.dark .header-user-avatar:hover,.header-user-menu{bac
 body.dark .header-user-menu::before,body.dark .lower li ul::before{border-color:transparent transparent #31363b transparent;}
 body.dark .post-date,body.dark .header-user-menu .user-menu-option,body.dark .post-list-thumb a,body.dark .menhera-container .emoji-item:hover{color:#424952;}
 body.dark .entry-content p,body.dark .entry-content ul,body.dark .entry-content ol,body.dark .comments .body p,body.dark .float-content,body.dark .post-list p,body.dark .link-title{color:#bebebe !important;}
-body.dark .entry-title a,body.dark .post-list-thumb .post-title,body.dark .post-list-thumb,body.dark .art-content #archives .al_mon_list .al_mon,body.dark .art-content #archives .al_mon_list span,body.dark .art .art-content #archives a,body.dark .menhera-container .emoji-item{color:#bebebe;}
+body.dark .entry-title a,body.dark .post-list-thumb .post-title,body.dark .art-content #archives .al_mon_list .al_mon,body.dark .art-content #archives .al_mon_list span,body.dark .art .art-content #archives a,body.dark .menhera-container .emoji-item{color:#bebebe;}
 body.dark .site-top ul li a,body.dark .header-user-menu a,body.dark #mo-nav ul li a,body.dark .site-title a,body.dark header.page-header,body.dark h1.cat-title{color:#eee;}
 body.dark .art .art-content #archives .al_year,body.dark .comment-respond input,body.dark .comment-respond textarea,body.dark .siren-checkbox-label{color:#eee;}
 body.dark .post-date,body.dark .post-list-thumb a,body.dark .post-meta,body.dark .info-meta a,body.dark .info-meta span{color:#888;}
@@ -675,6 +675,14 @@ html,#main-container,.pattern-center:after,#mo-nav,.headertop-bar::after,.site-c
 h1,small,sub,sup,code,kbd,pre,samp,body,button,input,select,textarea,blockquote:before,blockquote:after,code,kbd,tt,var,big,button,input[type=button],input[type=reset],input[type=submit],.video-stu,.pattern-center h1.cat-title,.pattern-center h1.entry-title,.pattern-center .cat-des,.single-center .single-header h1.entry-title,.single-center .entry-census,.pattern-center-sakura h1.cat-title,.pattern-center-sakura h1.entry-title,.pattern-center-sakura .cat-des,.single-center .single-header h1.entry-title,.single-center .entry-census,.site-top .lower,.site-top .menu-item-has-children li a,.feature i,.p-time,.p-time i,i.iconfont.hotpost,.post-list p,.post-more i,.info-meta span,.post-list-thumb i,.post-date,.post-meta,.post-meta a,.float-content .post-text,.float-content i,.s-time,.s-time i,.navigator i,.site-info,.entry-census,h1.page-title,.post-lincenses,.post-tags,.post-like a,.post-like i,.post-share ul li i ,.post-squares .category,.post-squares h3,.post-squares .label,.author-profile .meta h3 a,.author-profile p,.author-profile i,.mashiro-profile .box a,#comments-list-title span,.butterBar-message ,h1.works-title,.works-p-time,.works-p-time i,.works-meta i,.works-meta span,#archives-temp h3,h1.cat-title,span.sitename,span.linkss-title,.comment .commeta,.comment .comment-reply-link,.comment .info,.comment .info .useragent-info-m,.comment h4,.comment h4 a,.comment-respond #cancel-comment-reply-link,.comment-respond input,.comment-respond textarea,.comment-respond .logged-in-as i,.notification i,.notification span,.siren-checkbox-label,h1.fes-title,h1.main-title,.foverlay-bg,.feature-title .foverlay,.notice i,.bio-text,.header-info,.site-header.iconsearch,i.iconfont.js-toggle-search.iconsearch,.search-form i ,.search-form input,.s-search input,.s-search i,.ins-section,.ins-section .iconfont.icon-mark,.ins-section .fa ,.ins-section.ins-search-item .search-keyword,.ins-section .ins-search-item .ins-search-preview,i.iconfont.down,#pagination span,#bangumi-pagination span,.ex-login-title ,.ex-register-title h3,.ex-login input,.ex-register input,.admin-login-check,.user-login-check,.ex-login-username,.ex-new-account a,.ex-register .user-error,.register-close,.herder-user-name,.header-user-menu a,.no-logged,.no-logged a,.single-reward .reward-open,.reward-row li::after ,.botui-container,button.botui-actions-buttons-button,input.botui-actions-text-input,.load-button span,.prpr,.mashiro-tips,.live2d-tool,.center-text,.bb-comment,.finish-icon-container,.skill div,#footer-sponsor,.comment-user-avatar .socila-check ,.insert-image-tips ,.the-feature.from_left_and_right .info h3,.the-feature.from_left_and_right .info p,.highlight-wrap .copy-code ,#bangumi-pagination {font-weight: <?php echo akina_option('fontweight'); ?> !important}
 
 /*字体*/
+
+<?php if (akina_option('refer-ext-font', '1')): ?>
+@font-face {
+font-family: '<?php echo akina_option('ext-font-name'); ?>';
+src : url('<?php echo akina_option('ext-font-address'); ?>');
+}
+<?php endif; ?>
+
 .serif{
 font-family:<?php echo akina_option('global-default-font'); ?> !important ;
 font-size: <?php echo akina_option('global-fontsize'); ?>px !important;
@@ -758,13 +766,18 @@ a:active{
 cursor: url(<?php echo akina_option('cursor-work'); ?>), alias;
 }
 
-/*图片类*/
+/*背景类*/
 .comment-respond textarea {
 background-image: url(<?php echo akina_option('comment-image'); ?>); 
 }
 
 .search-form.is-visible{
 background-image: url(<?php echo akina_option('search-image'); ?>);
+}
+
+.wrapper,
+.site-footer {
+background-color: rgba(255, 255, 255,<?php echo akina_option('homepagebgtmd'); ?>);
 }
 
 /*其他*/
