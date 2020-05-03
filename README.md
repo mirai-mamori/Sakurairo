@@ -24,6 +24,8 @@ Sakurairo🌸: 基于Sakura的分支主题
 
 ## 版权说明：
 
+- Sakurairo 使用 [GPL V2.0](https://github.com/mirai-mamori/Sakurairo/blob/master/LICENSE) 协议开源。
+
 - 樱花飘落特效、波浪特效、说说模版等均来自互联网，如有版权问题，烦请发邮件（me#okaeri.org）给我，我会及时下线功能。
 
 - 看板娘项目地址：https://github.com/stevenjoezhang/live2d-widget
