@@ -36,4 +36,6 @@ Sakurairo🌸: 基于Sakura的分支主题
 - 主题交流论坛：https://sakurasaku.cn
 
 ## 希望你喜欢！
+- Star 趋势
 
+[![Stargazers over time](https://starchart.cc/mirai-mamori/Sakurairo.svg)](https://starchart.cc/mirai-mamori/Sakurairo)
