@@ -24,7 +24,7 @@ Sakurairo🌸: 基于Sakura的分支主题
 
 ## 版权说明：
 
-- Sakurairo 使用 [GPL V2.0](https://github.com/mirai-mamori/Sakurairo/blob/master/LICENSE) 协议开源。
+- Sakurairo 主题 使用 [GPL V2.0](https://github.com/mirai-mamori/Sakurairo/blob/master/LICENSE) 协议开源。
 
 - 樱花飘落特效、波浪特效、说说模版等均来自互联网，如有版权问题，烦请发邮件（me#okaeri.org）给我，我会及时下线功能。
 
@@ -35,6 +35,8 @@ Sakurairo🌸: 基于Sakura的分支主题
 - LOGO特效样式参考原主题作者白猫，由https://hyacm.com/acai/ui/143/sakura-logo/ 提供方案
 
 ## 其他：
+
+- 演示站点：https://hitomi.uk
 
 - 仓库国内镜像：https://gitee.com/mirai-mamori/Sakurairo
 

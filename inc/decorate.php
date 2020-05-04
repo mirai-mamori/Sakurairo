@@ -658,7 +658,7 @@ body.dark .aplayer.aplayer-fixed .aplayer-list{border:none !important;}
 body.dark .aplayer.aplayer-fixed .aplayer-info,body.dark .aplayer .aplayer-list ol li{border-top:none !important;}
 body.dark .yya{box-shadow: 0 1px 40px -8px #21252b;}
 body.dark .font-family-controls button.selected{background-color:#31363b;}
-body.dark .user-menu-option a:hover{background-color:#535a63;}
+body.dark .user-menu-option a:hover,body.dark .s-content{background-color:#535a63;}
 body.dark .font-family-controls button{background-color:#535a63;}
 body.dark #banner_wave_1,body.dark #banner_wave_2{display:none;}
 body.dark .skin-menu::after{display:none;}
