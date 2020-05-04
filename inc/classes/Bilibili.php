@@ -50,7 +50,7 @@ class Bilibili
             }
             $html .= '<div class="column">
                 <a class="bangumi-item" href="https://bangumi.bilibili.com/anime/' . $list['season_id'] . '/" target="_blank" rel="nofollow">
-                    <img class="bangumi-image" src="https:/i0.wp.com/' . str_replace('http://', '', $list['cover']) . '"/>
+                    <img class="bangumi-image" src="https://i0.wp.com/' . str_replace('http://', '', $list['cover']) . '"/>
                     <div class="bangumi-info">
                         <h3 class="bangumi-title" title="' . $list['title'] . '">' . $list['title'] . '</h2>
                         <div class="bangumi-summary"> ' . $list['evaluate'] . ' </div>
