@@ -781,6 +781,84 @@ background-image: url(<?php echo akina_option('search-image'); ?>);
 background-color: rgba(255, 255, 255,<?php echo akina_option('homepagebgtmd'); ?>);
 }
 
+/*标题横线动画*/
+.single-center header.single-header .toppic-line{position:relative;bottom:0;left:0;display:block;width:100%;height:2px;background-color:#fff;animation:lineWidth 2.5s;animation-fill-mode:forwards;}
+@keyframes lineWidth{0%{width:0;}
+100%{width:100%;}
+}
+
+/*标题动画*/
+.entry-title {
+	-moz-animation: fadeInUp 2s;
+    -webkit-animation:fadeInUp 2s;
+	animation: fadeInUp 2s;
+}
+@-moz-keyframes fadeInUp {
+	0% {
+		-moz-transform: translateY(200%);
+		transform: translateY(200%);
+		opacity: 0
+	}
+ 
+	50% {
+		-moz-transform: translateY(200%);
+		transform: translateY(200%);
+		opacity: 0
+	}
+ 
+	100% {
+		-moz-transform: translateY(0%);
+		transform: translateY(0%);
+		opacity: 1
+	}
+}
+ 
+@-webkit-keyframes fadeInUp {
+	0% {
+		-webkit-transform: translateY(200%);
+		transform: translateY(200%);
+		opacity: 0
+	}
+ 
+	50% {
+		-webkit-transform: translateY(200%);
+		transform: translateY(200%);
+		opacity: 0
+	}
+ 
+	100% {
+		-webkit-transform: translateY(0%);
+		transform: translateY(0%);
+		opacity: 1
+	}
+}
+ 
+@keyframes fadeInUp {
+	0% {
+		-moz-transform: translateY(200%);
+		-ms-transform: translateY(200%);
+		-webkit-transform: translateY(200%);
+		transform: translateY(200%);
+		opacity: 0
+	}
+ 
+	50% {
+		-moz-transform: translateY(200%);
+		-ms-transform: translateY(200%);
+		-webkit-transform: translateY(200%);
+		transform: translateY(200%);
+		opacity: 0
+	}
+ 
+	100% {
+		-moz-transform: translateY(0%);
+		-ms-transform: translateY(0%);
+		-webkit-transform: translateY(0%);
+		transform: translateY(0%);
+		opacity: 1
+	}
+}
+
 /*其他*/
 <?php if (akina_option('post-lincenses', '1')): ?>
 .post-lincenses a{
