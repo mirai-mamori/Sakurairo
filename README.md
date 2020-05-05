@@ -1,9 +1,10 @@
 ![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/ADTheme.jpg)
 ![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/helpgive.jpg)
 
-
-Sakurairo🌸: 基于Sakura的分支主题
-===
+<p align="center">
+<img src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/mashiro-logo-s.png" alt="Sakurairo" width="350">
+</p>
+<h1 align="center">Sakurairo🌸: 基于Sakura的分支主题</h1>
 
 基于主题 [Sakura](https://github.com/mashirozx/Sakura) 的基础上修改的Sakurairo主题
 
