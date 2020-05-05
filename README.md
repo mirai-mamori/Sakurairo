@@ -1,5 +1,4 @@
 ![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/ADTheme.jpg)
-![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/helpgive.jpg)
 
 <p align="center">
 <img src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/mashiro-logo-s.png" alt="Sakurairo" width="350">
@@ -17,7 +16,8 @@
 - YouTube：  https://youtu.be/7hskBPe4Yzc
 
 ## 主题使用说明：
-- 请阅读 [【 WordPress 主题 】Sakurairo 「桜いろ」🌸使用手册](https://asuhe.jp/daily/sakurairo-user-manual)
+![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/helpgive.jpg)
+- 请阅读  [【 WordPress 主题 】Sakurairo 「桜いろ」🌸使用手册](https://asuhe.jp/daily/sakurairo-user-manual)
 
 ## 已知Bug：
 
