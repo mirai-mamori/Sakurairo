@@ -15,9 +15,11 @@
 
 - YouTube：  https://youtu.be/7hskBPe4Yzc
 
-## 主题使用说明：
+## 主题使用帮助：
+
 ![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/helpgive.jpg)
-- 请阅读  [【 WordPress 主题 】Sakurairo 「桜いろ」🌸使用手册](https://asuhe.jp/daily/sakurairo-user-manual)
+
+- 【 WordPress 主题 】Sakurairo 「桜いろ」🌸使用手册：https://asuhe.jp/daily/sakurairo-user-manual
 
 ## 已知Bug：
 
