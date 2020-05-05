@@ -55,4 +55,3 @@
 - Star 趋势  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 
 [![Stargazers over time](https://starchart.cc/mirai-mamori/Sakurairo.svg)](https://starchart.cc/mirai-mamori/Sakurairo)
-
