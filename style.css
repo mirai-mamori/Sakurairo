@@ -8351,12 +8351,14 @@ td.hljs-ln-numbers {
     right: -50px;
     height: auto;
     width: 220px;
-    border-radius: 5px;
+    border-radius: 15px;
+    font-size: larger;
     background-color: #fff;
+    text-align:center;
     box-shadow: none;
     z-index: 99;
     font-family: Ubuntu, sans-serif;
-    transform: scaleX(0)scaleY(0);
+    transform: scaleX(0);
     transition: .5s;
 }
 
@@ -8394,11 +8396,11 @@ td.hljs-ln-numbers {
 
 .menu-list li {
     display: inline-block;
-    margin: 6px;
-    line-height: 36px;
-    width: 36px;
+    margin: 5px;
+    line-height: 50px;
+    width: 50px;
     background-color: #FFEEEB;
-    border-radius: 50%;
+    border-radius: 20%;
     cursor: pointer
 }
 
@@ -8408,7 +8410,7 @@ td.hljs-ln-numbers {
 }
 
 .skin-menu .row-container.font-family-controls {
-    padding: 3px 12px 16px 12px
+    padding: 14px 18px 24px 18px
 }
 
 .font-family-controls button {
@@ -8418,7 +8420,7 @@ td.hljs-ln-numbers {
     padding: 5px 5px;
     height: 40px;
 	color: #EE9CA7;
-    width: calc(50% - 10px);
+    width: calc(50% - 11px);
     font-size: 15px;
     font-weight: 400;
     text-align: center;

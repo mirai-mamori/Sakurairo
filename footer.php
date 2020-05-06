@@ -97,34 +97,30 @@
 </div>
 <?php } ?>
 <div class="skin-menu no-select">
+</p>Style
     <div class="theme-controls row-container">
         <ul class="menu-list">
             <li id="white-bg">
                 <i class="fa fa-television" aria-hidden="true"></i>
             </li><!--Default-->
-            <li id="sakura-bg">
-                <i class="iconfont icon-sakura"></i>
+            <li id="diy1-bg">
+			    <i class="fa fa-heart-o" aria-hidden="true"></i>
             </li><!--Sakura-->
-            <li id="gribs-bg">
-                <i class="fa fa-slack" aria-hidden="true"></i>
+            <li id="diy2-bg">
+                <i class="fa fa-star-o" aria-hidden="true"></i>
             </li><!--Grids-->
-            <li id="KAdots-bg">
-                <i class="iconfont icon-dots"></i>
+            <li id="glass-bg">
+			    <i class="fa fa-delicious" aria-hidden="true"></i>
             </li><!--Dots-->
-            <li id="totem-bg">
-                <i class="fa fa-superpowers" aria-hidden="true"></i>
-            </li><!--Orange-->
-            <li id="pixiv-bg">
-                <i class="iconfont icon-pixiv"></i>
-            </li><!--Start-->
-            <li id="bing-bg">
-                <i class="iconfont icon-bing"></i>
-            </li><!--Bing-->
+            <li id="dynamic-bg">
+			    <i class="fa fa-envira" aria-hidden="true"></i>
+            </li>
             <li id="dark-bg">
                 <i class="fa fa-moon-o" aria-hidden="true"></i>
             </li><!--Night-->
         </ul>
-    </div>
+	</div>
+	</p>Font
     <div class="font-family-controls row-container">
         <button type="button" class="control-btn-serif selected" data-mode="serif" 
                 onclick="mashiro_global.font_control.change_font()">Font A</button>
