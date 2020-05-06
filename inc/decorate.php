@@ -650,16 +650,16 @@ body.dark h1.fes-title,body.dark h1.main-title{border-bottom:6px dotted #ababab;
 body.dark #moblieGoTop,body.dark .notification,body.dark .the-feature.from_left_and_right .info,body.dark #changskin{color:#eee;background-color:#232629;}
 body.dark #moblieGoTop:hover,body.dark #changskin:hover{background-color:#232629;opacity:.8;}
 body.dark .widget-area{background-color:rgba(35,38,41,0.8);}
-body.dark .skin-menu,body.dark .menu-list li,body.dark .widget-area .heading,body.dark .widget-area .show-hide svg,body.dark #aplayer-float,body.dark .aplayer.aplayer-fixed .aplayer-body,body.dark .aplayer .aplayer-miniswitcher,body.dark .aplayer .aplayer-pic{color:#eee;background-color:#232629 !important;}
+body.dark .skin-menu,body.dark .widget-area .heading,body.dark .widget-area .show-hide svg,body.dark #aplayer-float,body.dark .aplayer.aplayer-fixed .aplayer-body,body.dark .aplayer .aplayer-miniswitcher,body.dark .aplayer .aplayer-pic{color:#eee;background-color:#232629 !important;}
 body.dark .aplayer .aplayer-list ol li .aplayer-list-author{color:#eee;}
 body.dark #aplayer-float .aplayer-lrc-current{color:transparent !important;}
 body.dark .aplayer.aplayer-fixed .aplayer-lrc{text-shadow:-1px -1px 0 #989898;}
 body.dark .aplayer.aplayer-fixed .aplayer-list{border:none !important;}
 body.dark .aplayer.aplayer-fixed .aplayer-info,body.dark .aplayer .aplayer-list ol li{border-top:none !important;}
 body.dark .yya{box-shadow: 0 1px 40px -8px #21252b;}
-body.dark .font-family-controls button.selected{background-color:#31363b;}
+body.dark .font-family-controls button,body.dark .menu-list li{background-color:#31363b;}
 body.dark .user-menu-option a:hover,body.dark .s-content{background-color:#535a63;}
-body.dark .font-family-controls button{background-color:#535a63;}
+body.dark .font-family-controls button.selected{background-color:#535a63;}
 body.dark #banner_wave_1,body.dark #banner_wave_2{display:none;}
 body.dark .skin-menu::after{display:none;}
 body.dark .ex-login-username,body.dark .admin-login-check p,body.dark .user-login-check p,body.dark .ex-logout a, .ex-new-account a{color:#bebebe;}
