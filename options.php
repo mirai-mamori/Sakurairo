@@ -587,7 +587,13 @@ function optionsframework_options()
             'yes' => __('Open', 'sakurairo'), /*开启*/
             'no' => __('Close', 'sakurairo'), /*关闭*/
         ));
-    
+
+    $options[] = array(
+        'name' => __('Comment Textarea image', 'sakurairo'),
+        'desc' => __('NO image if left this blank', 'sakurairo'), 
+        'id' => 'comment-image',
+        'type' => 'upload');
+
     $options[] = array(
         'name' => __('Display author information at the end of the article?', 'sakurairo'), /*文章末尾显示作者信息？*/
         'desc' => __('Check to enable', 'sakurairo'), /*勾选启用*/
@@ -1279,7 +1285,28 @@ function optionsframework_options()
         'id' => 'bolangcss',
         'std' => '1',
         'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Homepage animation', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'homepage-ani',
+        'std' => '1',
+        'type' => 'checkbox');
+        
+    $options[] = array(
+        'name' => __('Article title line animation', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'title-line',
+        'std' => '0',
+        'type' => 'checkbox');
     
+    $options[] = array(
+        'name' => __('Article title animation', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'title-ani',
+        'std' => '1',
+        'type' => 'checkbox');
+        
     $options[] = array(
         'name' => __('Footer suspension player default volume', 'sakurairo'), /*页脚悬浮播放器*/
         'desc' => __('Maximum 1 minimum 0', 'sakurairo'),
@@ -1307,12 +1334,6 @@ function optionsframework_options()
         'id' => 'oneword',
         'std' => '1',
         'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Comment Textarea image', 'sakurairo'),
-        'desc' => __('NO image if left this blank', 'sakurairo'), 
-        'id' => 'comment-image',
-        'type' => 'upload');
 
     $options[] = array(
         'name' => __('One word typing effect of home page', 'sakurairo'), /*首页一言打字效果*/
