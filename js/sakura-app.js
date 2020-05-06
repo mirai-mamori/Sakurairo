@@ -460,33 +460,22 @@ $(document).ready(function () {
                         $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg0) + ")");
                         $(".site-content").css("background-color", "#fff");
                         break;
-                    case "sakura-bg":
+                    case "diy1-bg":
                         $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg1) + ")");
                         $(".site-content").css("background-color", "rgba(255, 255, 255, .8)");
                         break;
-                    case "gribs-bg":
+                    case "diy2-bg":
                         $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg2) + ")");
                         $(".site-content").css("background-color", "rgba(255, 255, 255, .8)");
                         break;
-                    case "pixiv-bg":
+                    case "dynamic-bg":
                         $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg3) + ")");
                         $(".site-content").css("background-color", "rgba(255, 255, 255, .8)");
                         break;
-                    case "KAdots-bg":
+                    case "glass-bg":
                         $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg4) + ")");
                         $(".site-content").css("background-color", "rgba(255, 255, 255, .8)");
                         break;
-                    case "totem-bg":
-                        $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg5) + ")");
-                        $(".site-content").css("background-color", "rgba(255, 255, 255, .8)");
-                        break;
-                    case "bing-bg":
-                        $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg6) + ")");
-                        $(".site-content").css("background-color", "rgba(255, 255, 255, .8)");
-                        break;
-                    // case "dark-bg":
-                    //     $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg7) + ")");
-                    //     break;
                 }
                 closeSkinMenu();
             });
