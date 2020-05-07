@@ -468,14 +468,6 @@ $(document).ready(function () {
                         $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg2) + ")");
                         $(".site-content").css("background-color", "rgba(255, 255, 255, .8)");
                         break;
-                    case "dynamic-bg":
-                        $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg3) + ")");
-                        $(".site-content").css("background-color", "rgba(255, 255, 255, .8)");
-                        break;
-                    case "glass-bg":
-                        $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg4) + ")");
-                        $(".site-content").css("background-color", "rgba(255, 255, 255, .8)");
-                        break;
                 }
                 closeSkinMenu();
             });
