@@ -136,11 +136,25 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Change web background', 'sakurairo'), /*切换网页背景*/
-        'desc' => __('The foreground switches the background of the webpage. There are 8 urls separated by commas. The order corresponds to the foreground scheme tool button position (the order of the buttons is from left to right, top to bottom). If no background is needed, fill in the corresponding position as none.<strong>Note: If the theme is updated from v3.2.3 and below, be sure to change the [Version Control] parameter under the [Other] tab of this configuration page to any new value!</strong>', 'sakurairo'), /*前台切换网页背景，共8个url，使用英文逗号分隔，顺序对应前台切换主题按钮位置（按钮顺序从左至右，从上至下）,如不需要背景则填写对应位置为none。<strong>注意：如果主题是从v3.2.3及以下更新过来的，请务必将本配置页的【其他】标签下的【版本控制】参数修改为任意新值！</strong>*/
-        'id' => 'sakura_skin_bg',
-        'std' => 'none,https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/sakura.png,https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/plaid2dbf8.jpg,https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/star02.png,https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/kyotoanimation.png,https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/dot_orange.gif,https://api.mashiro.top/bing/,https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.2/other-sites/api-index/images/me.png',
-        'type' => 'textarea');
+        'name' => __('Default Foreground Background', 'sakurairo'), 
+        'desc' => __('Default foreground background, fill in URL', 'sakurairo'), 
+        'id' => 'sakura_skin_bg1',
+        'std' => 'none',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('DIY(heart-shaped icon) foreground background', 'sakurairo'), 
+        'desc' => __('DIY(heart-shaped icon) foreground background, fill in URL', 'sakurairo'), 
+        'id' => 'sakura_skin_bg2',
+        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg1.png',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('DIY(Star-shaped icon) foreground background', 'sakurairo'), 
+        'desc' => __('DIY(Star-shaped icon) foreground background, fill in URL', 'sakurairo'), 
+        'id' => 'sakura_skin_bg3',
+        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg2.png',
+        'type' => 'text');
 
     $options[] = array(
         'name' => __('Personal avatar', 'sakurairo'), /*个人头像*/
@@ -330,6 +344,27 @@ function optionsframework_options()
             'v2' => __('Merge with signature', 'sakurairo'), /*与签名合并*/
             'v1' => __('Independent line', 'sakurairo'), /*独立成行*/
         ));
+
+    $options[] = array(
+        'name' => __('Round corner of the first page', 'sakurairo'),
+        'desc' => __('Fill in the number, the recommended value is 10 to 20', 'sakurairo'), 
+        'id' => 'info-radius',
+        'std' => '15',
+        'type' => 'text');    
+
+    $options[] = array(
+        'name' => __('Home social card corner', 'sakurairo'), 
+        'desc' => __('Fill in the number, the recommended value is 10 to 20', 'sakurairo'),
+        'id' => 'img-radius',
+        'std' => '15',
+        'type' => 'text');  
+
+    $options[] = array(
+        'name' => __('Home head corner', 'sakurairo'), 
+        'desc' => __('Fill in the number, the recommended value is 90 to 110', 'sakurairo'),
+        'id' => 'head-radius',
+        'std' => '100',
+        'type' => 'text');  
 
     $options[] = array(
         'name' => __('Cover manifest', 'sakurairo'), /*封面图片库选项*/
@@ -1251,6 +1286,13 @@ function optionsframework_options()
             'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/supportknow.png',
                 ),
             );
+
+    $options[] = array(
+        'name' => __('Foreground switch full mode', 'sakurairo'), 
+        'desc' => __('Check on by default, uncheck to switch to simple mode', 'sakurairo'), 
+        'id' => 'full-mode',
+        'std' => '1',
+        'type' => 'checkbox');        
 
     $options[] = array(
         'name' => __('Preload animation', 'sakurairo'), /*预加载动画*/

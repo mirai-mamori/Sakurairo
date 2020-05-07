@@ -4,7 +4,7 @@ Theme Name: Sakurairo
 Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Hitomi , Ukenn , Spirit , Mashiro , Louie , Fuzzz
 Author URI: https://asuhe.jp/
-Description: 一个多彩，实用，易于上手，具有强大自定义功能的 WordPress 主题　｜　「はなふぶき　Update」　（基于 Sakura 主题）
+Description:  「はなあかり　Update」 ｜ 一个多彩，实用，易于上手，具有强大自定义功能的 WordPress 主题（基于 Sakura 主题）
 Version: 1.13.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1556,7 +1556,7 @@ i.iconfont.hotpost {
 	font-size: 12px;
     width: max-content;
     padding: 2px 7px 2px 7px;
-    border-radius: 10px;
+    border-radius: 6px;
     color: #EE9CA7;
 }
 
@@ -1902,11 +1902,11 @@ h1.page-title.mb- {
 }
 
 .post-footer {
-    padding: 20px 0;
+    padding: 30px 0;
     border-bottom: 1px dashed #ddd;
     border-top: 1px dashed #ddd;
     margin-top: 30px;
-    height: 82px
+    height: 100px
 }
 
 .post-lincenses {
@@ -8410,7 +8410,7 @@ td.hljs-ln-numbers {
 }
 
 .skin-menu .row-container.font-family-controls {
-    padding: 14px 18px 24px 18px
+    padding: 14px 17px 24px 17px
 }
 
 .font-family-controls button {
@@ -8418,7 +8418,7 @@ td.hljs-ln-numbers {
     border-style: none;
     border-radius: 5px;
     padding: 5px 5px;
-    height: 40px;
+    height: 43px;
 	color: #EE9CA7;
     width: calc(50% - 11px);
     font-size: 15px;
@@ -8433,6 +8433,11 @@ td.hljs-ln-numbers {
 }
 
 .font-family-controls button.selected {
+    background-color: #EE9CA7;
+    color: #fff
+}
+
+.font-family-controls button:hover {
     background-color: #EE9CA7;
     color: #fff
 }

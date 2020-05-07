@@ -97,7 +97,9 @@
 </div>
 <?php } ?>
 <div class="skin-menu no-select">
+<?php if (akina_option('full-mode', '1')): ?>
 </p>Style
+<?php endif; ?>
     <div class="theme-controls row-container">
         <ul class="menu-list">
             <li id="white-bg">
@@ -105,28 +107,30 @@
             </li><!--Default-->
             <li id="diy1-bg">
 			    <i class="fa fa-heart-o" aria-hidden="true"></i>
-            </li><!--Sakura-->
+            </li><!--Diy1-->
             <li id="diy2-bg">
                 <i class="fa fa-star-o" aria-hidden="true"></i>
-            </li><!--Grids-->
+            </li><!--Diy2-->
             <li id="glass-bg">
 			    <i class="fa fa-delicious" aria-hidden="true"></i>
-            </li><!--Dots-->
+            </li><!--Glass-->
             <li id="dynamic-bg">
-			    <i class="fa fa-envira" aria-hidden="true"></i>
-            </li>
+			    <i class="fa fa-lemon-o" aria-hidden="true"></i>
+            </li><!--Dynamic-->
             <li id="dark-bg">
                 <i class="fa fa-moon-o" aria-hidden="true"></i>
             </li><!--Night-->
         </ul>
 	</div>
-	</p>Font
+	<?php if (akina_option('full-mode', '1')): ?></p>
+		Font
     <div class="font-family-controls row-container">
         <button type="button" class="control-btn-serif selected" data-mode="serif" 
-                onclick="mashiro_global.font_control.change_font()">Font A</button>
+                onclick="mashiro_global.font_control.change_font()"><i class="fa fa-font" aria-hidden="true"></i></button>
         <button type="button" class="control-btn-sans-serif" data-mode="sans-serif" 
-                onclick="mashiro_global.font_control.change_font()">Font B</button>
-    </div>
+                onclick="mashiro_global.font_control.change_font()"><i class="fa fa-bold" aria-hidden="true"></i></button>
+	</div>
+	<?php endif; ?>
 </div>
 <canvas id="night-mode-cover"></canvas>
 <?php if (akina_option('sakura_widget')) : ?>
@@ -162,12 +166,11 @@
 
 <!-- Live2D看板娘 -->
 <?php if (akina_option('live2djs', '1')): ?>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mirai-mamori/live2d-widget@0.7.4/autoload.js"></script>
 <?php endif; ?>
 
 <!-- logo字体部分 -->
 <link rel="stylesheet" href="<?php echo akina_option('logo_zt', ''); ?>" media="all">
-<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
 
 <!-- 收缩、展开 -->
 <script>jQuery(document).ready(
