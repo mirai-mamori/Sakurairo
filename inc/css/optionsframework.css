@@ -74,35 +74,41 @@ a#options-group-4-tab:before {
 
 a#options-group-5-tab:before {
     font-family: "dashicons";
-    content: "\f110";
+    content: "\f547";
     float: left;
 }
 
 a#options-group-6-tab:before {
     font-family: "dashicons";
-    content: "\f331";
+    content: "\f110";
     float: left;
 }
 
 a#options-group-7-tab:before { 
     font-family: "dashicons";
-    content: "\f155";
+    content: "\f331";
     float: left;
 }
 
 a#options-group-8-tab:before { 
     font-family: "dashicons";
-    content: "\f180";
+    content: "\f155";
     float: left;
 }
 
 a#options-group-9-tab:before { 
     font-family: "dashicons";
-    content: "\f214";
+    content: "\f180";
     float: left;
 }
 
 a#options-group-10-tab:before { 
+    font-family: "dashicons";
+    content: "\f214";
+    float: left;
+}
+
+a#options-group-11-tab:before { 
     font-family: "dashicons";
     content: "\f309";
     float: left;
