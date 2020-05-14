@@ -458,15 +458,16 @@ $(document).ready(function () {
                 switch (tagid) {
                     case "white-bg":
                         $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg0) + ")");
-                        $(".site-content").css("background-color", "#fff");
+                        $("body").removeClass("dynamic");
                         break;
                     case "diy1-bg":
                         $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg1) + ")");
-                        $(".site-content").css("background-color", "rgba(255, 255, 255, .8)");
                         break;
                     case "diy2-bg":
                         $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg2) + ")");
-                        $(".site-content").css("background-color", "rgba(255, 255, 255, .8)");
+                        break;
+                    case "dynamic-bg":
+                        $("body").addClass("dynamic");
                         break;
                 }
                 closeSkinMenu();
