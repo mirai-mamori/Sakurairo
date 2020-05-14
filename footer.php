@@ -107,16 +107,20 @@
             </li><!--Default-->
             <li id="diy1-bg">
 			    <i class="fa fa-heart-o" aria-hidden="true"></i>
-            </li><!--Diy1-->
+			</li><!--Diy1-->
+			<?php if (akina_option('extra-bg', '1')): ?>
             <li id="diy2-bg">
-                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-lemon-o" aria-hidden="true"></i>
             </li><!--Diy2-->
             <li id="glass-bg">
 			    <i class="fa fa-delicious" aria-hidden="true"></i>
-            </li><!--Glass-->
+			</li><!--Glass-->
+			<?php endif; ?>
+			<?php if (akina_option('shooting-star', '1')): ?>
             <li id="dynamic-bg">
-			    <i class="fa fa-lemon-o" aria-hidden="true"></i>
-            </li><!--Dynamic-->
+			    <i class="fa fa-star-o" aria-hidden="true"></i>
+			</li><!--Dynamic-->
+			<?php endif; ?>
             <li id="dark-bg">
                 <i class="fa fa-moon-o" aria-hidden="true"></i>
             </li><!--Night-->

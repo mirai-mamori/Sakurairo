@@ -137,3 +137,30 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
                 the_headPattern();
             } ?>
 		    <div id="content" class="site-content">
+
+
+<!--动态星星 -->
+<?php if (akina_option('shooting-star', '1')): ?>
+<div class="night">
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div> 
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+</div>
+<?php endif; ?>
