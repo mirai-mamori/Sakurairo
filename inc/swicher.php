@@ -19,24 +19,22 @@ mashiro_option.qq_api_url = "<?php echo rest_url('sakura/v1/qqinfo/json'); ?>";
 // mashiro_option.qq_avatar_api_url = "https://api.2heng.xin/qqinfo/";
 mashiro_option.live_search = <?php if ( akina_option('live_search') ){ echo 'true'; } else { echo 'false'; } ?>;
 
-<?php if( akina_option('sakura_skin_bg' )){ $bg_arry=explode(",", akina_option('sakura_skin_bg' ));?>
+<?php if( akina_option('sakura_skin_bg1' )){ $bg_arry=explode(",", akina_option('sakura_skin_bg1' ));?>
 mashiro_option.skin_bg0 = "<?php echo $bg_arry[0] ?>";
-mashiro_option.skin_bg1 = "<?php echo $bg_arry[1] ?>";
-mashiro_option.skin_bg2 = "<?php echo $bg_arry[2] ?>";
-mashiro_option.skin_bg3 = "<?php echo $bg_arry[3] ?>";
-mashiro_option.skin_bg4 = "<?php echo $bg_arry[4] ?>";
-mashiro_option.skin_bg5 = "<?php echo $bg_arry[5] ?>";
-mashiro_option.skin_bg6 = "<?php echo $bg_arry[6] ?>";
-mashiro_option.skin_bg7 = "<?php echo $bg_arry[7] ?>";
 <?php }else {?>
 mashiro_option.skin_bg0 = "none";
-mashiro_option.skin_bg1 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/sakura.png";
-mashiro_option.skin_bg2 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/plaid2dbf8.jpg";
-mashiro_option.skin_bg3 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/star02.png";
-mashiro_option.skin_bg4 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/kyotoanimation.png";
-mashiro_option.skin_bg5 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/dot_orange.gif";
-mashiro_option.skin_bg6 = "https://api.mashiro.top/bing/";
-mashiro_option.skin_bg7 = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.2/other-sites/api-index/images/me.png";
+<?php } ?>
+
+<?php if( akina_option('sakura_skin_bg2' )){ $bg_arry=explode(",", akina_option('sakura_skin_bg2' ));?>
+mashiro_option.skin_bg1 = "<?php echo $bg_arry[0] ?>";
+<?php }else {?>
+mashiro_option.skin_bg1 = "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg1.png";
+<?php } ?>
+
+<?php if( akina_option('sakura_skin_bg3' )){ $bg_arry=explode(",", akina_option('sakura_skin_bg3' ));?>
+mashiro_option.skin_bg2 = "<?php echo $bg_arry[0] ?>";
+<?php }else {?>
+mashiro_option.skin_bg2 = "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg2.png";
 <?php } ?>
 
 <?php if( is_home() ){ ?>

@@ -107,7 +107,7 @@ function optionsframework_options()
 
     //基本设置
     $options[] = array(
-        'name' => __('Basic settings', 'sakurairo'), /*基本设置*/
+        'name' => __('Basic', 'sakurairo'), /*基本设置*/
         'type' => 'heading');
 
     $options[] = array(
@@ -117,7 +117,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/supportqq.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/qqgroup.png',
                 ),
             );
     
@@ -136,13 +136,6 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Change web background', 'sakurairo'), /*切换网页背景*/
-        'desc' => __('The foreground switches the background of the webpage. There are 8 urls separated by commas. The order corresponds to the foreground scheme tool button position (the order of the buttons is from left to right, top to bottom). If no background is needed, fill in the corresponding position as none.<strong>Note: If the theme is updated from v3.2.3 and below, be sure to change the [Version Control] parameter under the [Other] tab of this configuration page to any new value!</strong>', 'sakurairo'), /*前台切换网页背景，共8个url，使用英文逗号分隔，顺序对应前台切换主题按钮位置（按钮顺序从左至右，从上至下）,如不需要背景则填写对应位置为none。<strong>注意：如果主题是从v3.2.3及以下更新过来的，请务必将本配置页的【其他】标签下的【版本控制】参数修改为任意新值！</strong>*/
-        'id' => 'sakura_skin_bg',
-        'std' => 'none,https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/sakura.png,https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/plaid2dbf8.jpg,https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/star02.png,https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/kyotoanimation.png,https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/dot_orange.gif,https://api.mashiro.top/bing/,https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.2/other-sites/api-index/images/me.png',
-        'type' => 'textarea');
-
-    $options[] = array(
         'name' => __('Personal avatar', 'sakurairo'), /*个人头像*/
         'desc' => __('The best size is 130px*130px.', 'sakurairo'), /*最佳尺寸130px*130px。*/
         'id' => 'focus_logo',
@@ -156,7 +149,7 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('logo', 'sakurairo'),
+        'name' => __('Logo', 'sakurairo'),
         'desc' => __('The best height size is 40px。', 'sakurairo'), /*最佳高度尺寸40px。*/
         'id' => 'akina_logo',
         'type' => 'upload');
@@ -279,7 +272,7 @@ function optionsframework_options()
         'name' => __('Footer info', 'sakurairo'), /*页脚信息*/
         'desc' => __('Footer description, support for HTML code', 'sakurairo'), /*页脚说明文字，支持HTML代码*/
         'id' => 'footer_info',
-        'std' => 'Copyright &copy; by Mashiro All Rights Reserved.',
+        'std' => 'Copyright &copy; by Hitomi All Rights Reserved.',
         'type' => 'textarea');
 
     $options[] = array(
@@ -332,6 +325,27 @@ function optionsframework_options()
         ));
 
     $options[] = array(
+        'name' => __('Round corner of the first page', 'sakurairo'),
+        'desc' => __('Fill in the number, the recommended value is 10 to 20', 'sakurairo'), 
+        'id' => 'info-radius',
+        'std' => '15',
+        'type' => 'text');    
+
+    $options[] = array(
+        'name' => __('Home social card corner', 'sakurairo'), 
+        'desc' => __('Fill in the number, the recommended value is 10 to 20', 'sakurairo'),
+        'id' => 'img-radius',
+        'std' => '15',
+        'type' => 'text');  
+
+    $options[] = array(
+        'name' => __('Home head corner', 'sakurairo'), 
+        'desc' => __('Fill in the number, the recommended value is 90 to 110', 'sakurairo'),
+        'id' => 'head-radius',
+        'std' => '100',
+        'type' => 'text');  
+
+    $options[] = array(
         'name' => __('Cover manifest', 'sakurairo'), /*封面图片库选项*/
         'desc' => __('Select how to call the cover random image', 'sakurairo'), /*选择封面随机图的调用方式*/
         'id' => 'cover_cdn_options',
@@ -357,13 +371,6 @@ function optionsframework_options()
         'id' => 'focus_height',
         'std' => '0',
         'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Home background transparency', 'sakurairo'),
-        'desc' => __('Fill in numbers between 0.1 and 1', 'sakurairo'), /*Telegram链接*/
-        'id' => 'homepagebgtmd',
-        'std' => '0.8',
-        'type' => 'text');
 
     $options[] = array(
         'name' => __('Enable video', 'sakurairo'), /*开启视频*/
@@ -525,7 +532,7 @@ function optionsframework_options()
 
     //文章页
     $options[] = array(
-        'name' => __('Post page', 'sakurairo'), /*文章页*/
+        'name' => __('Post', 'sakurairo'), /*文章页*/
         'type' => 'heading');
 
     $options[] = array(
@@ -587,7 +594,13 @@ function optionsframework_options()
             'yes' => __('Open', 'sakurairo'), /*开启*/
             'no' => __('Close', 'sakurairo'), /*关闭*/
         ));
-    
+
+    $options[] = array(
+        'name' => __('Comment Textarea image', 'sakurairo'),
+        'desc' => __('NO image if left this blank', 'sakurairo'), 
+        'id' => 'comment-image',
+        'type' => 'upload');
+
     $options[] = array(
         'name' => __('Display author information at the end of the article?', 'sakurairo'), /*文章末尾显示作者信息？*/
         'desc' => __('Check to enable', 'sakurairo'), /*勾选启用*/
@@ -616,7 +629,7 @@ function optionsframework_options()
 
     //社交选项
     $options[] = array(
-        'name' => __('Social network', 'sakurairo'), /*社交网络*/
+        'name' => __('Social', 'sakurairo'), /*社交网络*/
         'type' => 'heading');
 
     $options[] = array(
@@ -737,9 +750,141 @@ function optionsframework_options()
         'std' => '',
         'type' => 'text');
 
-    //后台配置
+    //前台设置
     $options[] = array(
-        'name' => __('Dashboard configuration', 'sakurairo'), /*后台配置*/
+        'name' => __('Foreground', 'sakurairo'),
+        'type' => 'heading');
+
+    $options[] = array(
+        'name' => __('Foreground switch full mode', 'sakurairo'), 
+        'desc' => __('Check on by default, uncheck to switch to simple mode', 'sakurairo'), 
+        'id' => 'full-mode',
+        'std' => '1',
+        'type' => 'checkbox');        
+    
+    $options[] = array(
+        'name' => __('Extra background switching(Heart-shaped icon)', 'sakurairo'), 
+        'desc' => __('Check on by default', 'sakurairo'), 
+        'id' => 'extra-bg',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Extra background switching(Lemon-shaped icon)', 'sakurairo'), 
+        'desc' => __('Check on by default', 'sakurairo'), 
+        'id' => 'extra-bg2',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Extra background switching(Square-shaped icon)', 'sakurairo'), 
+        'desc' => __('Check on by default', 'sakurairo'), 
+        'id' => 'extra-bg3',
+        'std' => '1',
+        'type' => 'checkbox');
+            
+    $options[] = array(
+        'name' => __('Dynamic star background', 'sakurairo'), 
+        'desc' => __('Check on by default', 'sakurairo'), 
+        'id' => 'shooting-star',
+        'std' => '1',
+        'type' => 'checkbox');  
+            
+    $options[] = array(
+        'name' => __('Default Foreground Background', 'sakurairo'), 
+        'desc' => __('Default foreground background, fill in URL', 'sakurairo'), 
+        'id' => 'sakura_skin_bg1',
+        'std' => 'none',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('DIY(heart-shaped icon) foreground background', 'sakurairo'), 
+        'desc' => __('DIY(heart-shaped icon) foreground background, fill in URL', 'sakurairo'), 
+        'id' => 'sakura_skin_bg2',
+        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg1.png',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('DIY(Lemon-shaped icon) foreground background', 'sakurairo'), 
+        'desc' => __('DIY(Lemon-shaped icon) foreground background, fill in URL', 'sakurairo'), 
+        'id' => 'sakura_skin_bg3',
+        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg2.png',
+        'type' => 'text');
+ 
+    $options[] = array(
+        'name' => __('Foreground transparency', 'sakurairo'),
+        'desc' => __('Fill in numbers between 0.1 and 1', 'sakurairo'), 
+        'id' => 'homepagebgtmd',
+        'std' => '0.8',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Close the front desk login entry', 'sakurairo'), 
+        'desc' => __('Check off by default', 'sakurairo'), 
+        'id' => 'user-avatar',
+        'std' => '0',
+        'type' => 'checkbox'); 
+    
+    $options[] = array(
+        'name' => __('Darkmode', 'sakurairo'), /*夜间模式*/
+        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
+        'id' => 'darkmode',
+        'std' => '1',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('Footer float music player', 'sakurairo'), /*页脚悬浮播放器*/
+        'desc' => __('Choose which platform you\'ll use.', 'sakurairo'),
+        'id' => 'aplayer_server',
+        'std' => "netease",
+        'type' => "select",
+        'options' => array(
+            'netease' => __('Netease Cloud Music (default)', 'sakurairo'),
+            'xiami' => __('Xiami Music', 'sakurairo'),
+//            'kugou' => __('KuGou Music', 'sakurairo'),
+//            'baidu' => __('Baidu Music（Overseas server does not support）', 'sakurairo'),
+//            'tencent' => __('QQ Music (may fail) ', 'sakurairo'),
+            'off' => __('Off', 'sakurairo'),
+        ));
+    
+    $options[] = array(
+        'name' => __('Song list ID', 'sakurairo'),
+        'desc' => __('Fill in the "song list" ID, eg: https://music.163.com/#/playlist?id=3124382377 The ID is 3124382377', 'sakurairo'),
+        'id' => 'aplayer_playlistid',
+        'std' => '3124382377',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Netease Cloud Music cookie', 'sakurairo'),
+        'desc' => __('For Netease Cloud Music, fill in your vip account\'s cookies if you want to play special tracks.<b>If you don\'t know what does mean, left it blank.</b>', 'sakurairo'),
+        'id' => 'aplayer_cookie',
+        'std' => '',
+        'type' => 'textarea');
+    
+    $options[] = array(
+        'name' => __('Enable PJAX (recommand on)', 'sakurairo'), /*开启PJAX局部刷新（建议开启）*/
+        'desc' => __('The principle is the same as Ajax', 'sakurairo'), /*原理与Ajax相同*/
+        'id' => 'poi_pjax',
+        'std' => '1',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('Enable NProgress progress bar', 'sakurairo'), /*开启NProgress加载进度条*/
+        'desc' => __('Check on by default', 'sakurairo'), 
+        'id' => 'nprogress_on',
+        'std' => '1',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('Enable sidebar widget', 'sakurairo'), /*支持侧栏小部件*/
+        'desc' => __('Default off, check on', 'sakurairo'), /*默认不开启，勾选开启*/
+        'id' => 'sakura_widget',
+        'std' => '0',
+        'type' => 'checkbox');
+    
+    //后台设置
+    $options[] = array(
+        'name' => __('Backstage', 'sakurairo'), /*后台配置*/
         'type' => 'heading');
 
     //后台面板自定义配色方案
@@ -880,16 +1025,9 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/warning.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/advanced.png',
                 ),
             );
-        
-    $options[] = array(
-        'name' => __('Images CDN', 'sakurairo'), /*图片库*/
-        'desc' => __('Note: Fill in the format http(s)://your CDN domain name/. <br>In other words, the original path is http://your.domain/wp-content/uploads/2018/05/xx.png and the picture will load from http://your CDN domain/2018/05/xx.png', 'sakurairo'), /*注意：填写格式为 http(s)://你的CDN域名/。<br>也就是说，原路径为 http://your.domain/wp-content/uploads/2018/05/xx.png 的图片将从 http://你的CDN域名/2018/05/xx.png 加载*/
-        'id' => 'qiniu_cdn',
-        'std' => '',
-        'type' => 'text');
 
     $options[] = array(
         'name' => __('Use the front-end library locally (lib.js、lib.css)', 'sakurairo'), /*本地调用前端库（lib.js、lib.css）*/
@@ -911,7 +1049,14 @@ function optionsframework_options()
         'id' => 'gravatar_proxy',
         'std' => "sdn.geekzu.org/avatar",
         'type' => "text");    
-    
+
+    $options[] = array(
+        'name' => __('Images CDN', 'sakurairo'), /*图片库*/
+        'desc' => __('Note: Fill in the format http(s)://your CDN domain name/. <br>In other words, the original path is http://your.domain/wp-content/uploads/2018/05/xx.png and the picture will load from http://your CDN domain/2018/05/xx.png', 'sakurairo'), /*注意：填写格式为 http(s)://你的CDN域名/。<br>也就是说，原路径为 http://your.domain/wp-content/uploads/2018/05/xx.png 的图片将从 http://你的CDN域名/2018/05/xx.png 加载*/
+        'id' => 'qiniu_cdn',
+        'std' => '',
+        'type' => 'text');
+
     $options[] = array(
         'name' => __('Google analytics', 'sakurairo'), /*Google 统计代码*/
         'desc' => __('UA-xxxxx-x', 'sakurairo'),
@@ -953,13 +1098,6 @@ function optionsframework_options()
         'id' => 'cookie_version',
         'std' => '',
         'type' => 'text');
-    
-    $options[] = array(
-        'name' => __('Enable baguetteBox', 'sakurairo'), /*启用 baguetteBox*/
-        'desc' => __('Default off，<a href="https://github.com/mashirozx/Sakura/wiki/Fancybox">please read wiki</a>', 'sakurairo'), /*默认禁用，<a href="https://github.com/mashirozx/Sakura/wiki/Fancybox">请阅读说明</a>*/
-        'id' => 'image_viewer',
-        'std' => '0',
-        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Time Zone adjustment', 'sakurairo'), /*时区调整*/
@@ -967,68 +1105,18 @@ function optionsframework_options()
         'id' => 'time_zone_fix',
         'std' => '0',
         'type' => 'text');
-    
+
+    $options[] = array(
+        'name' => __('Enable baguetteBox', 'sakurairo'), /*启用 baguetteBox*/
+        'desc' => __('Default off，<a href="https://github.com/mashirozx/Sakura/wiki/Fancybox">please read wiki</a>', 'sakurairo'), /*默认禁用，<a href="https://github.com/mashirozx/Sakura/wiki/Fancybox">请阅读说明</a>*/
+        'id' => 'image_viewer',
+        'std' => '0',
+        'type' => 'checkbox');
+
     //功能
     $options[] = array(
         'name' => __('Function', 'sakurairo'), /*功能*/
         'type' => 'heading');
-
-    $options[] = array(
-        'name' => __('Darkmode', 'sakurairo'), /*夜间模式*/
-        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
-        'id' => 'darkmode',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Footer float music player', 'sakurairo'), /*页脚悬浮播放器*/
-        'desc' => __('Choose which platform you\'ll use.', 'sakurairo'),
-        'id' => 'aplayer_server',
-        'std' => "netease",
-        'type' => "select",
-        'options' => array(
-            'netease' => __('Netease Cloud Music (default)', 'sakurairo'),
-            'xiami' => __('Xiami Music', 'sakurairo'),
-//            'kugou' => __('KuGou Music', 'sakurairo'),
-//            'baidu' => __('Baidu Music（Overseas server does not support）', 'sakurairo'),
-//            'tencent' => __('QQ Music (may fail) ', 'sakurairo'),
-            'off' => __('Off', 'sakurairo'),
-        ));
-
-    $options[] = array(
-        'name' => __('Song list ID', 'sakurairo'),
-        'desc' => __('Fill in the "song list" ID, eg: https://music.163.com/#/playlist?id=3124382377 The ID is 3124382377', 'sakurairo'),
-        'id' => 'aplayer_playlistid',
-        'std' => '3124382377',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Netease Cloud Music cookie', 'sakurairo'),
-        'desc' => __('For Netease Cloud Music, fill in your vip account\'s cookies if you want to play special tracks.<b>If you don\'t know what does mean, left it blank.</b>', 'sakurairo'),
-        'id' => 'aplayer_cookie',
-        'std' => '',
-        'type' => 'textarea');
-
-    $options[] = array(
-        'name' => __('Enable PJAX (recommand on)', 'sakurairo'), /*开启PJAX局部刷新（建议开启）*/
-        'desc' => __('The principle is the same as Ajax', 'sakurairo'), /*原理与Ajax相同*/
-        'id' => 'poi_pjax',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Enable NProgress progress bar', 'sakurairo'), /*开启NProgress加载进度条*/
-        'desc' => __('Default off, check on', 'sakurairo'), /*默认不开启，勾选开启*/
-        'id' => 'nprogress_on',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Enable sidebar widget', 'sakurairo'), /*支持侧栏小部件*/
-        'desc' => __('Default off, check on', 'sakurairo'), /*默认不开启，勾选开启*/
-        'id' => 'sakura_widget',
-        'std' => '0',
-        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Enable Announcement', 'sakurairo'),
@@ -1242,7 +1330,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/supportknow.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/guide.png',
                 ),
             );
 
@@ -1279,7 +1367,28 @@ function optionsframework_options()
         'id' => 'bolangcss',
         'std' => '1',
         'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Homepage animation', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'homepage-ani',
+        'std' => '1',
+        'type' => 'checkbox');
+        
+    $options[] = array(
+        'name' => __('Article title line animation', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'title-line',
+        'std' => '0',
+        'type' => 'checkbox');
     
+    $options[] = array(
+        'name' => __('Article title animation', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'title-ani',
+        'std' => '1',
+        'type' => 'checkbox');
+        
     $options[] = array(
         'name' => __('Footer suspension player default volume', 'sakurairo'), /*页脚悬浮播放器*/
         'desc' => __('Maximum 1 minimum 0', 'sakurairo'),
@@ -1300,6 +1409,13 @@ function optionsframework_options()
         'id' => 'godown',
         'std' => '1',
         'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Turn off Drop-down arrow mobile display', 'sakurairo'), 
+        'desc' => __('Check by default, cancel opening', 'sakurairo'),
+        'id' => 'godown-mb',
+        'std' => '1',
+        'type' => 'checkbox');
     
     $options[] = array(
         'name' => __('a brief remark', 'sakurairo'), /*页脚一言*/
@@ -1307,12 +1423,6 @@ function optionsframework_options()
         'id' => 'oneword',
         'std' => '1',
         'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Comment Textarea image', 'sakurairo'),
-        'desc' => __('NO image if left this blank', 'sakurairo'), 
-        'id' => 'comment-image',
-        'type' => 'upload');
 
     $options[] = array(
         'name' => __('One word typing effect of home page', 'sakurairo'), /*首页一言打字效果*/

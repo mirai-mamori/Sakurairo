@@ -60,7 +60,6 @@ if (akina_option('akina_meta') == true) {
 <meta name="keywords" content="<?php echo $keywords; ?>" />
 <?php } ?>
 <link rel="shortcut icon" href="<?php echo akina_option('favicon_link', ''); ?>"/> 
-<link rel="dns-prefetch" href="//i0.wp.com">
 <meta http-equiv="x-dns-prefetch-control" content="on">
 <?php wp_head(); ?>
 <script type="text/javascript">
@@ -138,3 +137,30 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
                 the_headPattern();
             } ?>
 		    <div id="content" class="site-content">
+
+
+<!--动态星星 -->
+<?php if (akina_option('shooting-star', '1')): ?>
+<div class="night">
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div> 
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+</div>
+<?php endif; ?>

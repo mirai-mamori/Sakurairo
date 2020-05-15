@@ -80,11 +80,11 @@ src:url("https://cdn.jsdelivr.net/gh/moezx/share.js@1.0.3/src/fonts/iconfont.eot
 .social-share .social-share-icon {
     position: relative;
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    font-size: 10px;
-    border-radius: 50%;
-    line-height: 16px;
+    width: 22px;
+    height: 22px;
+    font-size: 14px;
+    border-radius: 30%;
+    line-height: 22px;
     border: 1px solid #666;
     color: #666;
     text-align: center;
