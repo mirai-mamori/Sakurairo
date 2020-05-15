@@ -1424,6 +1424,14 @@ display:none;
 }
 <?php endif; ?>
 
+<?php if (akina_option('godown-mb', '1')): ?>
+@media (max-width: 860px) {
+.headertop-down {
+        display: none
+    }
+}
+<?php endif; ?>
+
 </style>
 <?php }
 add_action('wp_head', 'customizer_css');
