@@ -763,9 +763,23 @@ function optionsframework_options()
         'type' => 'checkbox');        
     
     $options[] = array(
-        'name' => __('Extra background switching', 'sakurairo'), 
+        'name' => __('Extra background switching(Heart-shaped icon)', 'sakurairo'), 
         'desc' => __('Check on by default', 'sakurairo'), 
         'id' => 'extra-bg',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Extra background switching(Lemon-shaped icon)', 'sakurairo'), 
+        'desc' => __('Check on by default', 'sakurairo'), 
+        'id' => 'extra-bg2',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Extra background switching(Square-shaped icon)', 'sakurairo'), 
+        'desc' => __('Check on by default', 'sakurairo'), 
+        'id' => 'extra-bg3',
         'std' => '1',
         'type' => 'checkbox');
             
@@ -810,7 +824,64 @@ function optionsframework_options()
         'id' => 'user-avatar',
         'std' => '0',
         'type' => 'checkbox'); 
-
+    
+    $options[] = array(
+        'name' => __('Darkmode', 'sakurairo'), /*夜间模式*/
+        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
+        'id' => 'darkmode',
+        'std' => '1',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('Footer float music player', 'sakurairo'), /*页脚悬浮播放器*/
+        'desc' => __('Choose which platform you\'ll use.', 'sakurairo'),
+        'id' => 'aplayer_server',
+        'std' => "netease",
+        'type' => "select",
+        'options' => array(
+            'netease' => __('Netease Cloud Music (default)', 'sakurairo'),
+            'xiami' => __('Xiami Music', 'sakurairo'),
+//            'kugou' => __('KuGou Music', 'sakurairo'),
+//            'baidu' => __('Baidu Music（Overseas server does not support）', 'sakurairo'),
+//            'tencent' => __('QQ Music (may fail) ', 'sakurairo'),
+            'off' => __('Off', 'sakurairo'),
+        ));
+    
+    $options[] = array(
+        'name' => __('Song list ID', 'sakurairo'),
+        'desc' => __('Fill in the "song list" ID, eg: https://music.163.com/#/playlist?id=3124382377 The ID is 3124382377', 'sakurairo'),
+        'id' => 'aplayer_playlistid',
+        'std' => '3124382377',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Netease Cloud Music cookie', 'sakurairo'),
+        'desc' => __('For Netease Cloud Music, fill in your vip account\'s cookies if you want to play special tracks.<b>If you don\'t know what does mean, left it blank.</b>', 'sakurairo'),
+        'id' => 'aplayer_cookie',
+        'std' => '',
+        'type' => 'textarea');
+    
+    $options[] = array(
+        'name' => __('Enable PJAX (recommand on)', 'sakurairo'), /*开启PJAX局部刷新（建议开启）*/
+        'desc' => __('The principle is the same as Ajax', 'sakurairo'), /*原理与Ajax相同*/
+        'id' => 'poi_pjax',
+        'std' => '1',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('Enable NProgress progress bar', 'sakurairo'), /*开启NProgress加载进度条*/
+        'desc' => __('Check on by default', 'sakurairo'), 
+        'id' => 'nprogress_on',
+        'std' => '1',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('Enable sidebar widget', 'sakurairo'), /*支持侧栏小部件*/
+        'desc' => __('Default off, check on', 'sakurairo'), /*默认不开启，勾选开启*/
+        'id' => 'sakura_widget',
+        'std' => '0',
+        'type' => 'checkbox');
+    
     //后台设置
     $options[] = array(
         'name' => __('Backstage', 'sakurairo'), /*后台配置*/
@@ -1046,63 +1117,6 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Function', 'sakurairo'), /*功能*/
         'type' => 'heading');
-
-    $options[] = array(
-        'name' => __('Darkmode', 'sakurairo'), /*夜间模式*/
-        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
-        'id' => 'darkmode',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Footer float music player', 'sakurairo'), /*页脚悬浮播放器*/
-        'desc' => __('Choose which platform you\'ll use.', 'sakurairo'),
-        'id' => 'aplayer_server',
-        'std' => "netease",
-        'type' => "select",
-        'options' => array(
-            'netease' => __('Netease Cloud Music (default)', 'sakurairo'),
-            'xiami' => __('Xiami Music', 'sakurairo'),
-//            'kugou' => __('KuGou Music', 'sakurairo'),
-//            'baidu' => __('Baidu Music（Overseas server does not support）', 'sakurairo'),
-//            'tencent' => __('QQ Music (may fail) ', 'sakurairo'),
-            'off' => __('Off', 'sakurairo'),
-        ));
-
-    $options[] = array(
-        'name' => __('Song list ID', 'sakurairo'),
-        'desc' => __('Fill in the "song list" ID, eg: https://music.163.com/#/playlist?id=3124382377 The ID is 3124382377', 'sakurairo'),
-        'id' => 'aplayer_playlistid',
-        'std' => '3124382377',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Netease Cloud Music cookie', 'sakurairo'),
-        'desc' => __('For Netease Cloud Music, fill in your vip account\'s cookies if you want to play special tracks.<b>If you don\'t know what does mean, left it blank.</b>', 'sakurairo'),
-        'id' => 'aplayer_cookie',
-        'std' => '',
-        'type' => 'textarea');
-
-    $options[] = array(
-        'name' => __('Enable PJAX (recommand on)', 'sakurairo'), /*开启PJAX局部刷新（建议开启）*/
-        'desc' => __('The principle is the same as Ajax', 'sakurairo'), /*原理与Ajax相同*/
-        'id' => 'poi_pjax',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Enable NProgress progress bar', 'sakurairo'), /*开启NProgress加载进度条*/
-        'desc' => __('Default off, check on', 'sakurairo'), /*默认不开启，勾选开启*/
-        'id' => 'nprogress_on',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Enable sidebar widget', 'sakurairo'), /*支持侧栏小部件*/
-        'desc' => __('Default off, check on', 'sakurairo'), /*默认不开启，勾选开启*/
-        'id' => 'sakura_widget',
-        'std' => '0',
-        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Enable Announcement', 'sakurairo'),
@@ -1393,6 +1407,13 @@ function optionsframework_options()
         'name' => __('Drop-down arrow', 'sakurairo'), /*下拉箭头*/
         'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
         'id' => 'godown',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Turn off Drop-down arrow mobile display', 'sakurairo'), 
+        'desc' => __('Check by default, cancel opening', 'sakurairo'),
+        'id' => 'godown-mb',
         'std' => '1',
         'type' => 'checkbox');
     

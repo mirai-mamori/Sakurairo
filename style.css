@@ -8680,9 +8680,6 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
     z-index: 5;
 }
 @media (max-width: 860px) {
-    .headertop-down {
-        display: none
-    }
     .center-text {/*主页一言文字logo调整*/
         font-size: 30px;
     }

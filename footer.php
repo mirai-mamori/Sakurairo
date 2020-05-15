@@ -104,14 +104,18 @@
         <ul class="menu-list">
             <li id="white-bg">
                 <i class="fa fa-television" aria-hidden="true"></i>
-            </li><!--Default-->
+			</li><!--Default-->
+			<?php if (akina_option('extra-bg', '1')): ?>
             <li id="diy1-bg">
 			    <i class="fa fa-heart-o" aria-hidden="true"></i>
 			</li><!--Diy1-->
-			<?php if (akina_option('extra-bg', '1')): ?>
+			<?php endif; ?>
+			<?php if (akina_option('extra-bg2', '1')): ?>
             <li id="diy2-bg">
                 <i class="fa fa-lemon-o" aria-hidden="true"></i>
-            </li><!--Diy2-->
+			</li><!--Diy2-->
+			<?php endif; ?>
+			<?php if (akina_option('extra-bg3', '1')): ?>
             <li id="glass-bg">
 			    <i class="fa fa-delicious" aria-hidden="true"></i>
 			</li><!--Glass-->
@@ -165,7 +169,7 @@
 
 <!-- 首页波浪特效 -->
 <?php if (akina_option('bolangcss', '1')): ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/css/bolang.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@5.1/css/bolang.css">
 <?php endif; ?>
 
 <!-- Live2D看板娘 -->
