@@ -73,7 +73,11 @@ mashiro_option.meting_api_url = "<?php echo rest_url('sakura/v1/meting/aplayer')
 <?php endif; ?>
 
 mashiro_option.cover_api = "<?php echo rest_url('sakura/v1/image/cover'); ?>";
-
+<?php if(akina_option('cover_beta' )){?>
+mashiro_option.cover_beta = true;
+<?php }else {?>
+mashiro_option.cover_beta = false;
+<?php } ?>
 mashiro_option.windowheight ='auto';
 /*End of Initial Variables*/
 </script>

@@ -107,7 +107,12 @@ function upload_image(WP_REST_Request $request) {
  * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/image/cover
  */
 function cover_gallery() {
-    $imgurl = Images::cover_gallery();
+    $type = $_GET['type'];
+    if ($type === 'mobile' && akina_option('cover_beta')){
+        $imgurl = Images::mobile_cover_gallery();
+    }else{
+        $imgurl = Images::cover_gallery();
+    }
     $data = array('cover image');
     $response = new WP_REST_Response($data);
     $response->set_status(302);

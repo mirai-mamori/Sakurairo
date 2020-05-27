@@ -366,6 +366,13 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
+        'name' => __('壁纸分离？（实验性功能）', 'sakurairo'), 
+        'desc' => __('默认关闭,勾选开启', 'sakurairo'), 
+        'id' => 'cover_beta',
+        'std' => '0',
+        'type' => 'checkbox');
+    
+    $options[] = array(
         'name' => __('full-screen display', 'sakurairo'), /*全屏显示*/
         'desc' => __('Default on, check off', 'sakurairo'), /*默认开启，勾选关闭*/
         'id' => 'focus_height',

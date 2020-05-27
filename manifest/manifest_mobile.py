@@ -31,7 +31,7 @@ class Single(object):
     im = Image.open('gallary/' + self.file).convert('RGB')
     width,height = im.size
     self.ua= "pc" if width > height else "mobile"
-    if self.ua=="pc":
+    if self.ua=="mobile":
       im.save(self.jpeg, 'JPEG') # todo: TinyPNG API
       im.save(self.webp, 'WEBP')
       im.thumbnail((450, 300))
@@ -39,7 +39,7 @@ class Single(object):
       im.save(self.webp_th, 'WEBP')
 
   def manifest(self):
-    if self.ua=="pc":
+    if self.ua=="mobile":
       self.mani[self.hash]={
         'source': self.file,
         'jpeg': [self.jpeg, self.jpeg_th],
@@ -65,7 +65,7 @@ def gen_manifest_json():
       id += 1
     except OSError:
       print("Falied to optimize the picture: " + f)
-  with open('manifest.json', 'w+') as json_file:
+  with open('manifest_mobile.json', 'w+') as json_file:
     json.dump(Manifest, json_file)
 
 
@@ -75,5 +75,5 @@ def main():
 
 if __name__ == '__main__':
   main()
-  key = input('`manifest.json` saved. Press any key to quit.')
+  key = input('`manifest_mobile.json` saved. Press any key to quit.')
   quit()

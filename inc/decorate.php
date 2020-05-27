@@ -449,10 +449,10 @@ if ( akina_option('toggle-menu') == 'no') { ?>
 .comments .comments-hidden {display:none !important;}
 <?php } // comments ?>
 <?php 
-$image_api = 'background-image: url("'.rest_url('sakura/v1/image/cover').'");';
+//$image_api = 'background-image: url("'.rest_url('sakura/v1/image/cover').'");';
 $bg_style = akina_option('focus_height') ? 'background-position: center center;background-attachment: inherit;' : '';
 ?>
-.centerbg{<?php echo $image_api.$bg_style ?>background-position: center center;background-attachment: inherit;}
+.centerbg{<?php echo $bg_style ?>background-position: center center;background-attachment: inherit;}
 .rotating {
     -webkit-animation: rotating 6s linear infinite;
     -moz-animation: rotating 6s linear infinite;
