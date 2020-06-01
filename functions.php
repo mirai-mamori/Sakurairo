@@ -1871,7 +1871,11 @@ add_action('pre_comment_on_post', 'allow_more_tag_in_comment');
  */
 function create_sakura_table()
 {
-    global $wpdb, $sakura_image_array, $sakura_privkey;
+    if(akina_option('cover_beta')){
+        global $wpdb, $sakura_image_array, $sakura_mobile_image_array,$sakura_privkey;
+    }else{
+        global $wpdb, $sakura_image_array,$sakura_privkey;
+    }
     $sakura_table_name = $wpdb->base_prefix . 'sakurairo';
     require_once ABSPATH . "wp-admin/includes/upgrade.php";
     dbDelta("CREATE TABLE IF NOT EXISTS `" . $sakura_table_name . "` (
@@ -1886,6 +1890,15 @@ function create_sakura_table()
             "mate_value" => file_get_contents(get_template_directory() . "/manifest/manifest.json"),
         );
         $wpdb->insert($sakura_table_name, $manifest);
+    }
+    if(akina_option('cover_beta')){
+        if (!$wpdb->get_var("SELECT COUNT(*) FROM $sakura_table_name WHERE mate_key = 'mobile_manifest_json'")) {
+            $mobile_manifest = array(
+               "mate_key" => "mobile_manifest_json",
+                "mate_value" => file_get_contents(get_template_directory() . "/manifest/manifest_mobile.json"),
+            );
+        $wpdb->insert($sakura_table_name, $mobile_manifest);
+        }
     }
     if (!$wpdb->get_var("SELECT COUNT(*) FROM $sakura_table_name WHERE mate_key = 'json_time'")) {
         $time = array(
@@ -1903,6 +1916,7 @@ function create_sakura_table()
     }
     //reduce sql query
     $sakura_image_array = $wpdb->get_var("SELECT `mate_value` FROM  $sakura_table_name WHERE `mate_key`='manifest_json'");
+    if(akina_option('cover_beta')){$sakura_mobile_image_array = $wpdb->get_var("SELECT `mate_value` FROM  $sakura_table_name WHERE `mate_key`='mobile_manifest_json'");}
     $sakura_privkey = $wpdb->get_var("SELECT `mate_value` FROM  $sakura_table_name WHERE `mate_key`='privkey'");
 }
 add_action('after_setup_theme', 'create_sakura_table');

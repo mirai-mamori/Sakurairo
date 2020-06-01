@@ -366,6 +366,13 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
+        'name' => __('Wallpaper separation', 'sakurairo'), 
+        'desc' => __('Default on, check off', 'sakurairo'), 
+        'id' => 'cover_beta',
+        'std' => '0',
+        'type' => 'checkbox');
+    
+    $options[] = array(
         'name' => __('full-screen display', 'sakurairo'), /*全屏显示*/
         'desc' => __('Default on, check off', 'sakurairo'), /*默认开启，勾选关闭*/
         'id' => 'focus_height',
@@ -816,6 +823,41 @@ function optionsframework_options()
         'desc' => __('Fill in numbers between 0.1 and 1', 'sakurairo'), 
         'id' => 'homepagebgtmd',
         'std' => '0.8',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Homepage animation', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'homepage-ani',
+        'std' => '1',
+        'type' => 'checkbox');
+            
+    $options[] = array(
+        'name' => __('Article title line animation', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'title-line',
+        'std' => '0',
+        'type' => 'checkbox');
+        
+    $options[] = array(
+        'name' => __('Article title animation', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'title-ani',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Homepage animation Time', 'sakurairo'),
+        'desc' => __('Fill in Number', 'sakurairo'),
+        'id' => 'hp-ani-t',
+        'std' => '2',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Article title animation Time', 'sakurairo'),
+        'desc' => __('Fill in Number', 'sakurairo'),
+        'id' => 'title-ani-t',
+        'std' => '2',
         'type' => 'text');
 
     $options[] = array(
@@ -1365,27 +1407,6 @@ function optionsframework_options()
         'name' => __('Wave effects', 'sakurairo'), /*首页波浪特效*/
         'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
         'id' => 'bolangcss',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Homepage animation', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'homepage-ani',
-        'std' => '1',
-        'type' => 'checkbox');
-        
-    $options[] = array(
-        'name' => __('Article title line animation', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'title-line',
-        'std' => '0',
-        'type' => 'checkbox');
-    
-    $options[] = array(
-        'name' => __('Article title animation', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'title-ani',
         'std' => '1',
         'type' => 'checkbox');
         

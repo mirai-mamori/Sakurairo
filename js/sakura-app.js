@@ -425,8 +425,18 @@ function no_right_click() {
         return false;
     });
 }
+
 no_right_click();
+
 $(document).ready(function () {
+    function cover_bg(){
+        if (document.body.clientWidth < 860 && mashiro_option.cover_beta == true) {
+            $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?type=mobile" + ")");
+        }else{
+            $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + ")");
+        }
+    }
+    cover_bg();
     function checkskin_bg(a) {
         return a == "none" ? "" : a
     }
@@ -493,13 +503,21 @@ $(document).ready(function () {
 var bgn = 1;
 
 function nextBG() {
-    $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?" + bgn + ")");
+    if(document.body.clientWidth < 860 && mashiro_option.cover_beta == true){
+        $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?type=mobile&" + bgn + ")");
+    }else{
+        $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?" + bgn + ")");
+    }
     bgn = bgn + 1;
 }
 
 function preBG() {
     bgn = bgn - 1;
-    $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?" + bgn + ")");
+    if(document.body.clientWidth < 860 && mashiro_option.cover_beta == true){
+        $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?type=mobile&" + bgn + ")");
+    }else{
+        $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?" + bgn + ")");
+    }
 }
 $(document).ready(function () {
     $("#bg-next").click(function () {

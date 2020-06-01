@@ -449,10 +449,10 @@ if ( akina_option('toggle-menu') == 'no') { ?>
 .comments .comments-hidden {display:none !important;}
 <?php } // comments ?>
 <?php 
-$image_api = 'background-image: url("'.rest_url('sakura/v1/image/cover').'");';
+//$image_api = 'background-image: url("'.rest_url('sakura/v1/image/cover').'");';
 $bg_style = akina_option('focus_height') ? 'background-position: center center;background-attachment: inherit;' : '';
 ?>
-.centerbg{<?php echo $image_api.$bg_style ?>background-position: center center;background-attachment: inherit;}
+.centerbg{<?php echo $bg_style ?>background-position: center center;background-attachment: inherit;}
 .rotating {
     -webkit-animation: rotating 6s linear infinite;
     -moz-animation: rotating 6s linear infinite;
@@ -1186,24 +1186,24 @@ position:relative;bottom:0;left:0;display:block;width:100%;height:2px;background
 /*标题动画*/
 <?php if (akina_option('title-ani', '1')): ?>
 .entry-title,.single-center .entry-census a,.entry-census,.post-list p,.post-more i,.p-time,.feature{
-	-moz-animation: fadeInUp 2s;
-    -webkit-animation:fadeInUp 2s;
-	animation: fadeInUp 2s;
+	-moz-animation: fadeInUp <?php echo akina_option('title-ani-t'); ?>s;
+    -webkit-animation:fadeInUp <?php echo akina_option('title-ani-t'); ?>s;
+	animation: fadeInUp <?php echo akina_option('title-ani-t'); ?>s;
 }
 <?php endif; ?>
 
 /*首页动画*/
 <?php if (akina_option('homepage-ani', '1')): ?>
 h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,.header-info p,.header-info,.focusinfo .header-tou img,.top-social img,.center-text{
-	-moz-animation: fadeInDown 2.5s;
-    -webkit-animation:fadeInDown 2.5s;
-	animation: fadeInDown 2.5s;
+	-moz-animation: fadeInDown  <?php echo akina_option('hp-ani-t'); ?>s;
+    -webkit-animation:fadeInDown  <?php echo akina_option('hp-ani-t'); ?>s;
+	animation: fadeInDown  <?php echo akina_option('hp-ani-t'); ?>s;
 }
 
 .site-top ul li a{
-	-moz-animation: fadeInLeft 2s;
-    -webkit-animation:fadeInLeft 2s;
-	animation: fadeInLeft 2s;
+	-moz-animation: fadeInLeft  <?php echo akina_option('hp-ani-t'); ?>s;
+    -webkit-animation:fadeInLeft  <?php echo akina_option('hp-ani-t'); ?>s;
+	animation: fadeInLeft  <?php echo akina_option('hp-ani-t'); ?>s;
 }
 <?php endif; ?>
 

@@ -29,13 +29,17 @@ class Single(object):
 
   def optimize(self):
     im = Image.open('gallary/' + self.file).convert('RGB')
-    im.save(self.jpeg, 'JPEG') # todo: TinyPNG API
-    im.save(self.webp, 'WEBP')
-    im.thumbnail((450, 300))
-    im.save(self.jpeg_th, 'JPEG')  # todo: TinyPNG API
-    im.save(self.webp_th, 'WEBP')
+    width,height = im.size
+    self.ua= "pc" if width > height else "mobile"
+    if self.ua=="mobile":
+      im.save(self.jpeg, 'JPEG') # todo: TinyPNG API
+      im.save(self.webp, 'WEBP')
+      im.thumbnail((450, 300))
+      im.save(self.jpeg_th, 'JPEG')  # todo: TinyPNG API
+      im.save(self.webp_th, 'WEBP')
 
   def manifest(self):
+    if self.ua=="mobile":
       self.mani[self.hash]={
         'source': self.file,
         'jpeg': [self.jpeg, self.jpeg_th],
@@ -53,25 +57,16 @@ def gen_manifest_json():
   onlyfiles = [f for f in os.listdir('gallary') if os.path.isfile(os.path.join('gallary', f))]
   id = 1
   Manifest = {}
-  Manifest_mobile = {}
   for f in onlyfiles:
     try:
-      im = Image.open('gallary/' + f).convert('RGB')
-      width,height = im.size
-      if width > height:
-        worker = Single(f, Manifest)
-        Manifest = worker.main()
-      else:
-        worker = Single(f, Manifest_mobile)
-        Manifest_mobile = worker.main()
+      worker = Single(f, Manifest)
+      Manifest = worker.main()
       print(str(id) + '/' + str(len(onlyfiles)))
       id += 1
     except OSError:
       print("Falied to optimize the picture: " + f)
-  with open('manifest.json', 'w+') as json_file:
-    json.dump(Manifest, json_file)
   with open('manifest_mobile.json', 'w+') as json_file:
-    json.dump(Manifest_mobile, json_file)
+    json.dump(Manifest, json_file)
 
 
 def main():
@@ -80,5 +75,5 @@ def main():
 
 if __name__ == '__main__':
   main()
-  key = input('`manifest.json` saved. Press any key to quit.')
+  key = input('`manifest_mobile.json` saved. Press any key to quit.')
   quit()

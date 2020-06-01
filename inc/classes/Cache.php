@@ -80,7 +80,34 @@ EOS;
         $sakura_table_name = $wpdb->base_prefix . 'sakurairo';
         $img_domain = akina_option('cover_cdn') ? akina_option('cover_cdn') : get_template_directory();
         $manifest = file_get_contents($img_domain . "/manifest/manifest.json");
-        if ($manifest) {
+        if(akina_option('cover_beta')){
+            $manifest_mobile = file_get_contents($img_domain . "/manifest/manifest_mobile.json");
+            if($manifest && $manifest_mobile){
+                $manifest = array(
+                    "mate_key" => "manifest_json",
+                    "mate_value" => $manifest
+                );
+                $manifest_mobile = array(
+                    "mate_key" => "mobile_manifest_json",
+                    "mate_value" => $manifest_mobile
+                );
+                $time = array(
+                    "mate_key" => "json_time",
+                    "mate_value" => date("Y-m-d H:i:s", time())
+                );
+    
+                $wpdb->query("DELETE FROM  $sakura_table_name WHERE `mate_key` ='manifest_json'");
+                $wpdb->query("DELETE FROM  $sakura_table_name WHERE `mate_key` ='mobile_manifest_json'");
+                $wpdb->query("DELETE FROM  $sakura_table_name WHERE `mate_key` ='json_time'");
+                $wpdb->insert($sakura_table_name, $manifest);
+                $wpdb->insert($sakura_table_name, $manifest_mobile);
+                $wpdb->insert($sakura_table_name, $time);
+                $output = "manifest.json&&mainfest_mobile.json has been stored into database.";
+            } else {
+                $output = "manifest.json or mainfest_mobile.json not found, please ensure your url ($img_domain) is corrent.";
+            }
+            }
+        elseif ($manifest) {
             $manifest = array(
                 "mate_key" => "manifest_json",
                 "mate_value" => $manifest
