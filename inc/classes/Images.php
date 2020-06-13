@@ -170,7 +170,8 @@ class Images
             $imgurl = trim($img_array[$img]);
             $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
         } elseif (akina_option('cover_cdn_options') == "type_3") {
-           $imgurl = akina_option('cover_cdn');
+          //$imgurl = akina_option('cover_cdn');
+           $imgurl = akina_option('cover_cdn_mobile');
         } else {
             global $sakura_mobile_image_array;
             $img_array = json_decode($sakura_mobile_image_array, true);

@@ -359,6 +359,13 @@ function optionsframework_options()
     );
 
     $options[] = array(
+        'name' => __('Wallpaper separation', 'sakurairo'), 
+        'desc' => __('Default on, check off', 'sakurairo'), 
+        'id' => 'cover_beta',
+        'std' => '0',
+        'type' => 'checkbox');
+    
+    $options[] = array(
         'name' => __('Cover images url', 'sakurairo'), /*图片库url*/
         'desc' => sprintf(__('Fill in the manifest path for random picture display, please refer to <a href = "https: //github.com/mashirozx/Sakura/wiki/options">Wiki </a>. If you select webp images above, click <a href = "%s">here</a> to update manifest', 'sakurairo'), rest_url('sakura/v1/database/update')), /*填写 manifest 路径，更多信息请参考<a href="https://github.com/mashirozx/Sakura/wiki/options">Wiki</a>,，如果你在上面选择了webp优化，点击<a href = "%s">这里</a>更新 manifest*/
         'id' => 'cover_cdn',
@@ -366,11 +373,11 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Wallpaper separation', 'sakurairo'), 
-        'desc' => __('Default on, check off', 'sakurairo'), 
-        'id' => 'cover_beta',
-        'std' => '0',
-        'type' => 'checkbox');
+        'name' => __('手机端壁纸api', 'sakurairo'), /*图片库url*/
+        'desc' => __('当选择外部随即图API并且勾选分离时,请在此处填写手机端壁纸API,否则手机端将处于空白状态.','sakurairo'),
+        'id' => 'cover_cdn_mobile',
+        'std' => 'https://api.uomg.com/api/rand.img2?sort=二次元&format=images',
+        'type' => 'text');
     
     $options[] = array(
         'name' => __('full-screen display', 'sakurairo'), /*全屏显示*/
