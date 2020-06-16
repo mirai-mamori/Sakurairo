@@ -1432,6 +1432,13 @@ display:none;
 }
 <?php endif; ?>
 
+#bg{
+	-webkit-filter: blur(<?php echo akina_option('login-bg-tmd'); ?>px); 
+	-moz-filter: blur(<?php echo akina_option('login-bg-tmd'); ?>px);
+	-ms-filter: blur(<?php echo akina_option('login-bg-tmd'); ?>px);   
+	filter: blur(<?php echo akina_option('login-bg-tmd'); ?>px);
+}
+
 </style>
 <?php }
 add_action('wp_head', 'customizer_css');
