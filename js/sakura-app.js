@@ -476,8 +476,11 @@ $(document).ready(function () {
                     case "diy2-bg":
                         $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg2) + ")");
                         break;
-                    case "dynamic-bg":
-                        $("body").addClass("dynamic");
+                    case "diy3-bg":
+                        $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg3) + ")");
+                        break;
+                    case "diy4-bg":
+                        $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg4) + ")");
                         break;
                 }
                 closeSkinMenu();
