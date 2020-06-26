@@ -112,18 +112,18 @@
 			<?php endif; ?>
 			<?php if (akina_option('extra-bg2', '1')): ?>
             <li id="diy2-bg">
-                <i class="fa fa-lemon-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
 			</li><!--Diy2-->
 			<?php endif; ?>
 			<?php if (akina_option('extra-bg3', '1')): ?>
-            <li id="glass-bg">
+            <li id="diy3-bg">
 			    <i class="fa fa-delicious" aria-hidden="true"></i>
-			</li><!--Glass-->
+			</li><!--Diy3-->
 			<?php endif; ?>
-			<?php if (akina_option('shooting-star', '1')): ?>
-            <li id="dynamic-bg">
-			    <i class="fa fa-star-o" aria-hidden="true"></i>
-			</li><!--Dynamic-->
+			<?php if (akina_option('extra-bg4', '1')): ?>
+            <li id="diy4-bg">
+			    <i class="fa fa-lemon-o" aria-hidden="true"></i>
+			</li><!--Diy4-->
 			<?php endif; ?>
             <li id="dark-bg">
                 <i class="fa fa-moon-o" aria-hidden="true"></i>

@@ -107,7 +107,7 @@ function optionsframework_options()
 
     //基本设置
     $options[] = array(
-        'name' => __('Basic', 'sakurairo'), /*基本设置*/
+        'name' => __('Basic', 'sakurairo'), 
         'type' => 'heading');
 
     $options[] = array(
@@ -122,82 +122,82 @@ function optionsframework_options()
             );
     
     $options[] = array(
-        'name' => __('Site title', 'sakurairo'), /*站点名称*/
+        'name' => __('Site title', 'sakurairo'), 
         'desc' => __('Mashiro\'s Blog', 'sakurairo'),
         'id' => 'site_name',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Author', 'sakurairo'), /*作者*/
+        'name' => __('Author', 'sakurairo'), 
         'desc' => __('Mashiro', 'sakurairo'),
         'id' => 'author_name',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Personal avatar', 'sakurairo'), /*个人头像*/
-        'desc' => __('The best size is 130px*130px.', 'sakurairo'), /*最佳尺寸130px*130px。*/
+        'name' => __('Personal avatar', 'sakurairo'), 
+        'desc' => __('The best size is 130px*130px.', 'sakurairo'), 
         'id' => 'focus_logo',
         'type' => 'upload');
 
     $options[] = array(
-        'name' => __('Text LOGO', 'sakurairo'), /*文字版LOGO*/
-        'desc' => __('The home page does not display the avatar above, but displays a paragraph of text (use the avatar above if left blank).The text is recommended not to be too long, about 16 bytes is appropriate.', 'sakurairo'), /*首页不显示上方的头像，而是显示一段文字（此处留空则使用上方的头像）。文字建议不要过长，16个字节左右为宜。*/
+        'name' => __('Text LOGO', 'sakurairo'), 
+        'desc' => __('The home page does not display the avatar above, but displays a paragraph of text (use the avatar above if left blank).The text is recommended not to be too long, about 16 bytes is appropriate.', 'sakurairo'), 
         'id' => 'focus_logo_text',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Logo', 'sakurairo'),
-        'desc' => __('The best height size is 40px。', 'sakurairo'), /*最佳高度尺寸40px。*/
+        'desc' => __('The best height size is 40px。', 'sakurairo'), 
         'id' => 'akina_logo',
         'type' => 'upload');
 
     $options[] = array(
         'name' => __('Favicon', 'sakurairo'),
-        'desc' => __('It is the small logo on the browser tab, fill in the url', 'sakurairo'), /*就是浏览器标签栏上那个小 logo，填写url*/
+        'desc' => __('It is the small logo on the browser tab, fill in the url', 'sakurairo'), 
         'id' => 'favicon_link',
         'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/favicon.ico',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Custom keywords and descriptions ', 'sakurairo'), /*自定义关键词和描述*/
-        'desc' => __('Customize keywords and descriptions after opening', 'sakurairo'), /*开启之后可自定义填写关键词和描述*/
+        'name' => __('Custom keywords and descriptions ', 'sakurairo'), 
+        'desc' => __('Customize keywords and descriptions after opening', 'sakurairo'), 
         'id' => 'akina_meta',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Site keywords', 'sakurairo'), /*网站关键词*/
-        'desc' => __('Each keyword is divided by a comma "," and the number is within 5.', 'sakurairo'), /*各关键字间用半角逗号","分割，数量在5个以内最佳。*/
+        'name' => __('Site keywords', 'sakurairo'), 
+        'desc' => __('Each keyword is divided by a comma "," and the number is within 5.', 'sakurairo'), 
         'id' => 'akina_meta_keywords',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Site descriptions', 'sakurairo'), /*网站描述*/
-        'desc' => __('Describe the site in concise text, with a maximum of 120 words.', 'sakurairo'), /*用简洁的文字描述本站点，字数建议在120个字以内。*/
+        'name' => __('Site descriptions', 'sakurairo'), 
+        'desc' => __('Describe the site in concise text, with a maximum of 120 words.', 'sakurairo'), 
         'id' => 'akina_meta_description',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Expand the nav menu', 'sakurairo'), /*展开导航菜单*/
-        'desc' => __('Check to enable, default shrink', 'sakurairo'), /*勾选开启，默认收缩*/
+        'name' => __('Expand the nav menu', 'sakurairo'), 
+        'desc' => __('Check to enable, default shrink', 'sakurairo'), 
         'id' => 'shownav',
         'std' => '1',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Head decoration', 'sakurairo'), /*头部装饰图*/
-        'desc' => __('Enable by default, check off, display on the article page, separate page and category page', 'sakurairo'), /*默认开启，勾选关闭，显示在文章页面，独立页面以及分类页*/
+        'name' => __('Head decoration', 'sakurairo'), 
+        'desc' => __('Enable by default, check off, display on the article page, separate page and category page', 'sakurairo'), 
         'id' => 'patternimg',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Search button', 'sakurairo'), /*搜索按钮*/
+        'name' => __('Search button', 'sakurairo'), 
         'id' => 'top_search',
         'std' => "yes",
         'type' => "radio",
@@ -207,49 +207,49 @@ function optionsframework_options()
         ));
 
     $options[] = array(
-        'name' => __('Home article style', 'sakurairo'), /*首页文章风格*/
+        'name' => __('Home article style', 'sakurairo'), 
         'id' => 'post_list_style',
         'std' => "imageflow",
         'type' => "radio",
         'options' => array(
-            'standard' => __('Standard', 'sakurairo'), /*标准*/
-            'imageflow' => __('Graphic', 'sakurairo'), /*图文*/
+            'standard' => __('Standard', 'sakurairo'), 
+            'imageflow' => __('Graphic', 'sakurairo'), 
         ));
 
     $options[] = array(
-        'name' => __('Home article feature images (only valid for standard mode)', 'sakurairo'), /*首页文章特色图（仅对标准风格生效）*/
+        'name' => __('Home article feature images (only valid for standard mode)', 'sakurairo'), 
         'id' => 'list_type',
         'std' => "round",
         'type' => "radio",
         'options' => array(
-            'round' => __('Round', 'sakurairo'), /*圆形*/
-            'square' => __('Square', 'sakurairo'), /*方形*/
+            'round' => __('Round', 'sakurairo'), 
+            'square' => __('Square', 'sakurairo'), 
         ));
 
     $options[] = array(
-        'name' => __('Home article feature images alignment (only for graphic mode, default left and right alternate)', 'sakurairo'), /*首页文章特色图对齐方式（仅对图文风格生效，默认左右交替）*/
+        'name' => __('Home article feature images alignment (only for graphic mode, default left and right alternate)', 'sakurairo'), 
         'id' => 'feature_align',
         'std' => "alternate",
         'type' => "radio",
         'options' => array(
-            'left' => __('Left', 'sakurairo'), /*向左对齐*/
-            'right' => __('Right', 'sakurairo'), /*向右对齐*/
-            'alternate' => __('Alternate', 'sakurairo'), /*左右交替*/
+            'left' => __('Left', 'sakurairo'), 
+            'right' => __('Right', 'sakurairo'), 
+            'alternate' => __('Alternate', 'sakurairo'), 
         ));
 
     $options[] = array(
-        'name' => __('Paging mode', 'sakurairo'), /*分页模式*/
+        'name' => __('Paging mode', 'sakurairo'), 
         'id' => 'pagenav_style',
         'std' => "ajax",
         'type' => "radio",
         'options' => array(
-            'ajax' => __('Ajax load', 'sakurairo'), /*ajax加载*/
-            'np' => __('Previous and next page', 'sakurairo'), /*上一页和下一页*/
+            'ajax' => __('Ajax load', 'sakurairo'), 
+            'np' => __('Previous and next page', 'sakurairo'), 
         ));
 
     $options[] = array(
-        'name' => __('Automatically load the next page', 'sakurairo'), /*自动加载下一页*/
-        'desc' => __('(seconds) Set to automatically load the next page time, the default is not automatically loaded', 'sakurairo'), /*（秒）设置自动加载下一页时间，默认不自动加载*/
+        'name' => __('Automatically load the next page', 'sakurairo'), 
+        'desc' => __('(seconds) Set to automatically load the next page time, the default is not automatically loaded', 'sakurairo'), 
         'id' => 'auto_load_post',
         'std' => '233',
         'type' => 'select',
@@ -265,25 +265,25 @@ function optionsframework_options()
             '8' => __('8', 'sakurairo'),
             '9' => __('9', 'sakurairo'),
             '10' => __('10', 'sakurairo'),
-            '233' => __('Do not load automatically', 'sakurairo'), /*不自动加载*/
+            '233' => __('Do not load automatically', 'sakurairo'), 
         ));
 
     $options[] = array(
-        'name' => __('Footer info', 'sakurairo'), /*页脚信息*/
-        'desc' => __('Footer description, support for HTML code', 'sakurairo'), /*页脚说明文字，支持HTML代码*/
+        'name' => __('Footer info', 'sakurairo'), 
+        'desc' => __('Footer description, support for HTML code', 'sakurairo'), 
         'id' => 'footer_info',
         'std' => 'Copyright &copy; by Hitomi All Rights Reserved.',
         'type' => 'textarea');
 
     $options[] = array(
-        'name' => __('About', 'sakurairo'), /*关于*/
+        'name' => __('About', 'sakurairo'), 
         'desc' => sprintf(__('Sakurairo v %s  |  <a href="https://asuhe.jp/daily/sakurairo-user-manual/">Theme document</a>  |  <a href="https://github.com/mirai-mamori/Sakurairo">Source code</a><a href="https://github.com/mirai-mamori/Sakurairo/releases/latest"><img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square" alt="GitHub release"></a>', 'sakurairo'), SAKURA_VERSION), 
         'id' => 'theme_intro',
         'std' => '',
         'type' => 'typography ');
 
     $options[] = array(
-        'name' => __('Check for Updates', 'sakurairo'), /*检查更新*/
+        'name' => __('Check for Updates', 'sakurairo'), 
         'desc' => '<a href="https://github.com/mirai-mamori/Sakurairo/releases/latest">Download the latest version</a>',
         'id' => "release_info",
         'std' => "tag",
@@ -560,67 +560,67 @@ function optionsframework_options()
 
     //文章页
     $options[] = array(
-        'name' => __('Post', 'sakurairo'), /*文章页*/
+        'name' => __('Post', 'sakurairo'), 
         'type' => 'heading');
 
     $options[] = array(
-        'name' => __('Post style', 'sakurairo'), /*文章样式*/
+        'name' => __('Post style', 'sakurairo'), 
         'id' => 'entry_content_theme',
         'std' => "sakurairo",
         'type' => "radio",
         'options' => array(
-            'sakurairo' => __('Default Style', 'sakurairo'), /*默认样式*/
+            'sakurairo' => __('Default Style', 'sakurairo'), 
             'github' => __('GitHub Style', 'sakurairo'),
         ));
 
     $options[] = array(
-        'name' => __('Post like', 'sakurairo'), /*文章点赞*/
+        'name' => __('Post like', 'sakurairo'), 
         'id' => 'post_like',
         'std' => "yes",
         'type' => "radio",
         'options' => array(
-            'yes' => __('Open', 'sakurairo'), /*开启*/
-            'no' => __('Close', 'sakurairo'), /*关闭*/
+            'yes' => __('Open', 'sakurairo'), 
+            'no' => __('Close', 'sakurairo'), 
         ));
 
     $options[] = array(
-        'name' => __('Post share', 'sakurairo'), /*文章分享*/
+        'name' => __('Post share', 'sakurairo'), 
         'id' => 'post_share',
         'std' => "yes",
         'type' => "radio",
         'options' => array(
-            'yes' => __('Open', 'sakurairo'), /*开启*/
-            'no' => __('Close', 'sakurairo'), /*关闭*/
+            'yes' => __('Open', 'sakurairo'), 
+            'no' => __('Close', 'sakurairo'), 
         ));
 
     $options[] = array(
-        'name' => __('Previous and Next', 'sakurairo'), /*上一篇下一篇*/
+        'name' => __('Previous and Next', 'sakurairo'), 
         'id' => 'post_nepre',
         'std' => "yes",
         'type' => "radio",
         'options' => array(
-            'yes' => __('Open', 'sakurairo'), /*开启*/
-            'no' => __('Close', 'sakurairo'), /*关闭*/
+            'yes' => __('Open', 'sakurairo'), 
+            'no' => __('Close', 'sakurairo'), 
         ));
 
     $options[] = array(
-        'name' => __('Author profile', 'sakurairo'), /*博主信息*/
+        'name' => __('Author profile', 'sakurairo'), 
         'id' => 'author_profile',
         'std' => "yes",
         'type' => "radio",
         'options' => array(
-            'yes' => __('Open', 'sakurairo'), /*开启*/
-            'no' => __('Close', 'sakurairo'), /*关闭*/
+            'yes' => __('Open', 'sakurairo'), 
+            'no' => __('Close', 'sakurairo'), 
         ));
 
     $options[] = array(
-        'name' => __('Comment shrink', 'sakurairo'), /*评论收缩*/
+        'name' => __('Comment shrink', 'sakurairo'), 
         'id' => 'toggle-menu',
         'std' => "yes",
         'type' => "radio",
         'options' => array(
-            'yes' => __('Open', 'sakurairo'), /*开启*/
-            'no' => __('Close', 'sakurairo'), /*关闭*/
+            'yes' => __('Open', 'sakurairo'), 
+            'no' => __('Close', 'sakurairo'), 
         ));
 
     $options[] = array(
@@ -630,8 +630,8 @@ function optionsframework_options()
         'type' => 'upload');
 
     $options[] = array(
-        'name' => __('Author information at the end of the paper', 'sakurairo'), /*文章末尾显示作者信息？*/
-        'desc' => __('Check to enable', 'sakurairo'), /*勾选启用*/
+        'name' => __('Author information at the end of the paper', 'sakurairo'), 
+        'desc' => __('Check to enable', 'sakurairo'), 
         'id' => 'show_authorprofile',
         'std' => '1',
         'type' => 'checkbox');
@@ -644,136 +644,136 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Alipay reward', 'sakurairo'), /*支付宝打赏*/
-        'desc' => __('Alipay qrcode', 'sakurairo'), /*支付宝二维码*/
+        'name' => __('Alipay reward', 'sakurairo'), 
+        'desc' => __('Alipay qrcode', 'sakurairo'), 
         'id' => 'alipay_code',
         'type' => 'upload');
 
     $options[] = array(
-        'name' => __('Wechat reward', 'sakurairo'), /*微信打赏*/
-        'desc' => __('Wechat qrcode ', 'sakurairo'), /*微信二维码*/
+        'name' => __('Wechat reward', 'sakurairo'), 
+        'desc' => __('Wechat qrcode ', 'sakurairo'),
         'id' => 'wechat_code',
         'type' => 'upload');
 
     //社交选项
     $options[] = array(
-        'name' => __('Social', 'sakurairo'), /*社交网络*/
+        'name' => __('Social', 'sakurairo'), 
         'type' => 'heading');
 
     $options[] = array(
-        'name' => __('Wechat', 'sakurairo'), /*微信*/
-        'desc' => __('Wechat qrcode', 'sakurairo'), /*微信二维码*/
+        'name' => __('Wechat', 'sakurairo'), 
+        'desc' => __('Wechat qrcode', 'sakurairo'), 
         'id' => 'wechat',
         'type' => 'upload');
 
     $options[] = array(
-        'name' => __('Sina Weibo', 'sakurairo'), /*新浪微博*/
-        'desc' => __('Sina Weibo address', 'sakurairo'), /*新浪微博地址*/
+        'name' => __('Sina Weibo', 'sakurairo'), 
+        'desc' => __('Sina Weibo address', 'sakurairo'), 
         'id' => 'sina',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Tencent QQ', 'sakurairo'), /*腾讯QQ*/
-        'desc' => __('tencent://message/?uin={{QQ number}}. for example, tencent://message/?uin=123456', 'sakurairo'), /*tencent://message/?uin={{QQ号码}}，如tencent://message/?uin=123456*/
+        'name' => __('Tencent QQ', 'sakurairo'), 
+        'desc' => __('tencent://message/?uin={{QQ number}}. for example, tencent://message/?uin=123456', 'sakurairo'), 
         'id' => 'qq',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Telegram', 'sakurairo'),
-        'desc' => __('Telegram link', 'sakurairo'), /*Telegram链接*/
+        'desc' => __('Telegram link', 'sakurairo'), 
         'id' => 'telegram',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Qzone', 'sakurairo'), /*QQ空间*/
-        'desc' => __('Qzone address', 'sakurairo'), /*QQ空间地址*/
+        'name' => __('Qzone', 'sakurairo'), 
+        'desc' => __('Qzone address', 'sakurairo'), 
         'id' => 'qzone',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('GitHub', 'sakurairo'),
-        'desc' => __('GitHub address', 'sakurairo'), /*GitHub地址*/
+        'desc' => __('GitHub address', 'sakurairo'), 
         'id' => 'github',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Lofter', 'sakurairo'),
-        'desc' => __('Lofter address', 'sakurairo'), /*lofter地址*/
+        'desc' => __('Lofter address', 'sakurairo'), 
         'id' => 'lofter',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('BiliBili', 'sakurairo'),
-        'desc' => __('BiliBili address', 'sakurairo'), /*B站地址*/
+        'desc' => __('BiliBili address', 'sakurairo'), 
         'id' => 'bili',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Youku video', 'sakurairo'), /*优酷视频*/
-        'desc' => __('Youku video address', 'sakurairo'), /*优酷地址*/
+        'name' => __('Youku video', 'sakurairo'), 
+        'desc' => __('Youku video address', 'sakurairo'), 
         'id' => 'youku',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Netease Cloud Music', 'sakurairo'), /*网易云音乐*/
-        'desc' => __('Netease Cloud Music address', 'sakurairo'), /*网易云音乐地址*/
+        'name' => __('Netease Cloud Music', 'sakurairo'), 
+        'desc' => __('Netease Cloud Music address', 'sakurairo'), 
         'id' => 'wangyiyun',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Twitter', 'sakurairo'),
-        'desc' => __('Twitter address', 'sakurairo'), /*推特地址*/
+        'desc' => __('Twitter address', 'sakurairo'), 
         'id' => 'twitter',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Facebook', 'sakurairo'),
-        'desc' => __('Facebook address', 'sakurairo'), /*脸书地址*/
+        'desc' => __('Facebook address', 'sakurairo'),
         'id' => 'facebook',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Jianshu', 'sakurairo'), /*简书*/
-        'desc' => __('Jianshu address', 'sakurairo'), /*简书地址*/
+        'name' => __('Jianshu', 'sakurairo'), 
+        'desc' => __('Jianshu address', 'sakurairo'), 
         'id' => 'jianshu',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('CSDN', 'sakurairo'),
-        'desc' => __('CSND community address', 'sakurairo'), /*CSND社区地址*/
+        'desc' => __('CSND community address', 'sakurairo'), 
         'id' => 'csdn',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Zhihu', 'sakurairo'), /*知乎*/
-        'desc' => __('Zhihu address', 'sakurairo'), /*知乎地址*/
+        'name' => __('Zhihu', 'sakurairo'), 
+        'desc' => __('Zhihu address', 'sakurairo'), 
         'id' => 'zhihu',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Email-name', 'sakurairo'), /*邮箱-用户名*/
-        'desc' => __('The name part of name@domain.com, only the frontend has js runtime environment can get the full address, you can rest assured to fill in', 'sakurairo'), /*name@domain.com 的 name 部分，前端仅具有js运行环境时才能获取完整地址，可放心填写*/
+        'name' => __('Email-name', 'sakurairo'), 
+        'desc' => __('The name part of name@domain.com, only the frontend has js runtime environment can get the full address, you can rest assured to fill in', 'sakurairo'), 
         'id' => 'email_name',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Email-domain', 'sakurairo'), /*邮箱-域名*/
-        'desc' => __('The domain.com part of name@domain.com', 'sakurairo'), /*ame@domain.com 的 domain.com 部分*/
+        'name' => __('Email-domain', 'sakurairo'), 
+        'desc' => __('The domain.com part of name@domain.com', 'sakurairo'), 
         'id' => 'email_domain',
         'std' => '',
         'type' => 'text');
@@ -798,7 +798,7 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Extra background switching(Lemon-shaped icon)', 'sakurairo'), 
+        'name' => __('Extra background switching(Star-shaped icon)', 'sakurairo'), 
         'desc' => __('Check on by default', 'sakurairo'), 
         'id' => 'extra-bg2',
         'std' => '1',
@@ -810,13 +810,13 @@ function optionsframework_options()
         'id' => 'extra-bg3',
         'std' => '1',
         'type' => 'checkbox');
-            
+
     $options[] = array(
-        'name' => __('Dynamic star background', 'sakurairo'), 
+        'name' => __('Extra background switching(Lemon-shaped icon)', 'sakurairo'), 
         'desc' => __('Check on by default', 'sakurairo'), 
-        'id' => 'shooting-star',
+        'id' => 'extra-bg4',
         'std' => '1',
-        'type' => 'checkbox');  
+        'type' => 'checkbox');
             
     $options[] = array(
         'name' => __('Default Foreground Background', 'sakurairo'), 
@@ -833,12 +833,26 @@ function optionsframework_options()
         'type' => 'text');
     
     $options[] = array(
-        'name' => __('DIY(Lemon-shaped icon) foreground background', 'sakurairo'), 
-        'desc' => __('DIY(Lemon-shaped icon) foreground background, fill in URL', 'sakurairo'), 
+        'name' => __('DIY(Star-shaped icon) foreground background', 'sakurairo'), 
+        'desc' => __('DIY(Star-shaped icon) foreground background, fill in URL', 'sakurairo'), 
         'id' => 'sakura_skin_bg3',
         'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg2.png',
         'type' => 'text');
  
+    $options[] = array(
+        'name' => __('DIY(Square-shaped icon) foreground background', 'sakurairo'), 
+        'desc' => __('DIY(Square-shaped icon) foreground background, fill in URL', 'sakurairo'), 
+        'id' => 'sakura_skin_bg4',
+        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg3.png',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('DIY(Lemon-shaped icon) foreground background', 'sakurairo'), 
+        'desc' => __('DIY(Lemon-shaped icon) foreground background, fill in URL', 'sakurairo'), 
+        'id' => 'sakura_skin_bg5',
+        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg4.png',
+        'type' => 'text');
+
     $options[] = array(
         'name' => __('Foreground transparency', 'sakurairo'),
         'desc' => __('Fill in numbers between 0.1 and 1', 'sakurairo'), 
@@ -889,14 +903,14 @@ function optionsframework_options()
         'type' => 'checkbox'); 
     
     $options[] = array(
-        'name' => __('Darkmode', 'sakurairo'), /*夜间模式*/
-        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
+        'name' => __('Darkmode', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
         'id' => 'darkmode',
         'std' => '1',
         'type' => 'checkbox');
     
     $options[] = array(
-        'name' => __('Footer float music player', 'sakurairo'), /*页脚悬浮播放器*/
+        'name' => __('Footer float music player', 'sakurairo'), 
         'desc' => __('Choose which platform you\'ll use.', 'sakurairo'),
         'id' => 'aplayer_server',
         'std' => "netease",
@@ -904,9 +918,9 @@ function optionsframework_options()
         'options' => array(
             'netease' => __('Netease Cloud Music (default)', 'sakurairo'),
             'xiami' => __('Xiami Music', 'sakurairo'),
-//            'kugou' => __('KuGou Music', 'sakurairo'),
-//            'baidu' => __('Baidu Music（Overseas server does not support）', 'sakurairo'),
-//            'tencent' => __('QQ Music (may fail) ', 'sakurairo'),
+            'kugou' => __('KuGou Music (may fail)', 'sakurairo'),
+            'baidu' => __('Baidu Music（Overseas server does not support）', 'sakurairo'),
+            'tencent' => __('QQ Music (may fail) ', 'sakurairo'),
             'off' => __('Off', 'sakurairo'),
         ));
     
@@ -925,41 +939,41 @@ function optionsframework_options()
         'type' => 'textarea');
     
     $options[] = array(
-        'name' => __('Pjax Refresh', 'sakurairo'), /*开启PJAX局部刷新（建议开启）*/
-        'desc' => __('Check on, and the principle is the same as Ajax.', 'sakurairo'), /*原理与Ajax相同*/
+        'name' => __('Pjax Refresh', 'sakurairo'), 
+        'desc' => __('Check on, and the principle is the same as Ajax.', 'sakurairo'), 
         'id' => 'poi_pjax',
         'std' => '1',
         'type' => 'checkbox');
     
     $options[] = array(
-        'name' => __('NProgress progress bar', 'sakurairo'), /*开启NProgress加载进度条*/
+        'name' => __('NProgress progress bar', 'sakurairo'), 
         'desc' => __('Check on by default', 'sakurairo'), 
         'id' => 'nprogress_on',
         'std' => '1',
         'type' => 'checkbox');
     
     $options[] = array(
-        'name' => __('sidebar widget', 'sakurairo'), /*支持侧栏小部件*/
-        'desc' => __('Default off, check on', 'sakurairo'), /*默认不开启，勾选开启*/
+        'name' => __('sidebar widget', 'sakurairo'), 
+        'desc' => __('Default off, check on', 'sakurairo'), 
         'id' => 'sakura_widget',
         'std' => '0',
         'type' => 'checkbox');
     
     //后台设置
     $options[] = array(
-        'name' => __('Backstage', 'sakurairo'), /*后台配置*/
+        'name' => __('Backstage', 'sakurairo'), 
         'type' => 'heading');
 
     //后台面板自定义配色方案
     $options[] = array(
-        'name' => __('Dashboard panel custom color scheme', 'sakurairo'), /*后台面板自定义配色方案*/
-        'desc' => __('You can design the dashboard panel (/wp-admin/) style yourself below, but before you start, please go to <a href="/wp-admin/profile.php">here</a> to change the color scheme to custom.(Custom).<br><b>Tip: </b>How to match colors? Maybe <a href="https://mashiro.top/color-thief/">this</a> can help you.', 'sakurairo'), /*你可以在下面自行设计后台面板（/wp-admin/）样式，不过在开始之前请到<a href="/wp-admin/profile.php">这里</a>将配色方案改为自定义（Custom）。<br><b>Tip: </b>如何搭配颜色？或许<a href="https://mashiro.top/color-thief/">这个</a>可以帮到你。*/
+        'name' => __('Dashboard panel custom color scheme', 'sakurairo'), 
+        'desc' => __('You can design the dashboard panel (/wp-admin/) style yourself below, but before you start, please go to <a href="/wp-admin/profile.php">here</a> to change the color scheme to custom.(Custom).<br><b>Tip: </b>How to match colors? Maybe <a href="https://mashiro.top/color-thief/">this</a> can help you.', 'sakurairo'), 
         'id' => 'scheme_tip',
         'std' => '',
         'type' => 'typography ');
 
     $options[] = array(
-        'name' => __('Panel main color A', 'sakurairo'), /*面板主色调A*/
+        'name' => __('Panel main color A', 'sakurairo'), 
         'id' => 'dash_scheme_color_a',
         'std' => "#c6742b",
         'desc' => __('<i>(array) (optional)</i> An array of CSS color definitions which are used to give the user a feel for the theme.', 'sakurairo'),
@@ -991,7 +1005,7 @@ function optionsframework_options()
     );
 
     $options[] = array(
-        'name' => __('Panel icon color——base', 'sakurairo'), /*面板图标配色——base*/
+        'name' => __('Panel icon color——base', 'sakurairo'), 
         'id' => 'dash_scheme_color_base',
         'std' => "#e5f8ff",
         'desc' => __('<i>(array) (optional)</i> An array of CSS color definitions used to color any SVG icons.', 'sakurairo'),
@@ -1015,70 +1029,63 @@ function optionsframework_options()
     );
 
     $options[] = array(
-        'name' => __('Other custom panel styles(CSS)', 'sakurairo'), /*其他自定义面板样式(CSS)*/
-        'desc' => __('If you need to adjust other styles of the panel, put the style here.', 'sakurairo'), /*如果还需要对面板其他样式进行调整可以把style放到这里*/
+        'name' => __('Other custom panel styles(CSS)', 'sakurairo'), 
+        'desc' => __('If you need to adjust other styles of the panel, put the style here.', 'sakurairo'), 
         'id' => 'dash_scheme_css_rules',
         'std' => '#adminmenu .wp-has-current-submenu .wp-submenu a,#adminmenu .wp-has-current-submenu.opensub .wp-submenu a,#adminmenu .wp-submenu a,#adminmenu a.wp-has-current-submenu:focus+.wp-submenu a,#wpadminbar .ab-submenu .ab-item,#wpadminbar .quicklinks .menupop ul li a,#wpadminbar .quicklinks .menupop.hover ul li a,#wpadminbar.nojs .quicklinks .menupop:hover ul li a,.folded #adminmenu .wp-has-current-submenu .wp-submenu a{color:#f3f2f1}body{background-image:url(https://view.moezx.cc/images/2019/04/21/windows10-2019-4-21-i3.jpg);background-size:cover;background-repeat:no-repeat;background-attachment:fixed;}#wpcontent{background:rgba(255,255,255,.8)}',
         'type' => 'textarea');
 
     $options[] = array(
-        'name' => __('Login interface background image', 'sakurairo'), /*后台登陆界面背景图*/
-        'desc' => __('Use the default image if left this blank', 'sakurairo'), /*该地址为空则使用默认图片*/
+        'name' => __('Login interface background image', 'sakurairo'), 
+        'desc' => __('Use the default image if left this blank', 'sakurairo'), 
         'id' => 'login_bg',
         'type' => 'upload');
 
     $options[] = array(
-        'name' => __('Login interface background image Transparency', 'sakurairo'), 
-        'desc' => __('Fill in the number, the default is 2', 'sakurairo'), 
-        'id' => 'login-bg-tmd',
-        'std' => '2',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Login interface logo', 'sakurairo'), /*后台登陆界面logo*/
-        'desc' => __('Used for login interface display', 'sakurairo'), /*用于登录界面显示*/
+        'name' => __('Login interface logo', 'sakurairo'), 
+        'desc' => __('Used for login interface display', 'sakurairo'),
         'id' => 'logo_img',
         'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/mashiro-logo-s.png",
         'type' => 'upload');
 
     $options[] = array(
-        'name' => __('Login/registration related settings', 'sakurairo'), /*登陆/注册相关设定*/
+        'name' => __('Login/registration related settings', 'sakurairo'), 
         'desc' => __(' ', 'space', 'sakurairo'),
         'id' => 'login_tip',
         'std' => '',
         'type' => 'typography ');
 
     $options[] = array(
-        'name' => __('Specify login address', 'sakurairo'), /*指定登录地址*/
+        'name' => __('Specify login address', 'sakurairo'), 
         'desc' => __('Forcibly do not use the background address to log in, fill in the new landing page address, such as http://www.xxx.com/login [Note] Before you fill out, test your new page can be opened normally, so as not to enter the background or other problems happening', 'sakurairo'), /*强制不使用后台地址登陆，填写新建的登陆页面地址，比如 http://www.xxx.com/login【注意】填写前先测试下你新建的页面是可以正常打开的，以免造成无法进入后台等情况*/
         'id' => 'exlogin_url',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Specify registered address', 'sakurairo'), /*指定注册地址*/
-        'desc' => __('This link is used on the login page as a registration entry', 'sakurairo'), /*该链接使用在登录页面作为注册入口，建议填写*/
+        'name' => __('Specify registered address', 'sakurairo'), 
+        'desc' => __('This link is used on the login page as a registration entry', 'sakurairo'), 
         'id' => 'exregister_url',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Allow users to register', 'sakurairo'), /*允许用户注册*/
-        'desc' => __('Check to allow users to register at the frontend', 'sakurairo'), /*勾选开启，允许用户在前台注册*/
+        'name' => __('Allow users to register', 'sakurairo'), 
+        'desc' => __('Check to allow users to register at the frontend', 'sakurairo'), 
         'id' => 'ex_register_open',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Automatically redirect after login', 'sakurairo'), /*登录后自动跳转*/
-        'desc' => __('After checken, the administrator redirects to the background and the user redirects to the home page.', 'sakurairo'), /*勾选开启，管理员跳转至后台，用户跳转至主页*/
+        'name' => __('Automatically redirect after login', 'sakurairo'), 
+        'desc' => __('After checken, the administrator redirects to the background and the user redirects to the home page.', 'sakurairo'), 
         'id' => 'login_urlskip',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Registration verification (frontend only, backend forced open)', 'sakurairo'), /*注册验证（仅前端，后端强制开启）*/
-        'desc' => __('Check to enable slide verification', 'sakurairo'), /*勾选开启滑动验证*/
+        'name' => __('Registration verification (frontend only, backend forced open)', 'sakurairo'), 
+        'desc' => __('Check to enable slide verification', 'sakurairo'), 
         'id' => 'login_validate',
         'std' => '0',
         'type' => 'checkbox');
@@ -1100,132 +1107,132 @@ function optionsframework_options()
             );
 
     $options[] = array(
-        'name' => __('Use the front-end library locally (lib.js、lib.css)', 'sakurairo'), /*本地调用前端库（lib.js、lib.css）*/
-        'desc' => __('The front-end library don\'t load from jsDelivr, not recommand', 'sakurairo'), /*前端库不走 jsDelivr，不建议启用*/
+        'name' => __('Use the front-end library locally (lib.js、lib.css)', 'sakurairo'), 
+        'desc' => __('The front-end library don\'t load from jsDelivr, not recommand', 'sakurairo'), 
         'id' => 'jsdelivr_cdn_test',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Use js and css file of the theme (sakura-app.js、style.css) locally', 'sakurairo'), /*本地调用主题 js、css 文件（sakura-app.js、style.css）*/
-        'desc' => __('The js and css files of the theme do not load from jsDelivr, please open when DIY', 'sakurairo'), /*主题的 js、css 文件不走 jsDelivr，DIY 时请开启*/
+        'name' => __('Use js and css file of the theme (sakura-app.js、style.css) locally', 'sakurairo'), 
+        'desc' => __('The js and css files of the theme do not load from jsDelivr, please open when DIY', 'sakurairo'),
         'id' => 'app_no_jsdelivr_cdn',
         'std' => '1',
         'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Gravatar avatar proxy', 'sakurairo'),
-        'desc' => __('A front-ed proxy for Gravatar, eg. gravatar.2heng.xin/avatar . Leave it blank if you do not need.', 'sakurairo'),
+        'desc' => __('A front-ed proxy for Gravatar, eg. sdn.geekzu.org/avatar . Leave it blank if you do not need.', 'sakurairo'),
         'id' => 'gravatar_proxy',
         'std' => "sdn.geekzu.org/avatar",
         'type' => "text");    
 
     $options[] = array(
-        'name' => __('Images CDN', 'sakurairo'), /*图片库*/
-        'desc' => __('Note: Fill in the format http(s)://your CDN domain name/. <br>In other words, the original path is http://your.domain/wp-content/uploads/2018/05/xx.png and the picture will load from http://your CDN domain/2018/05/xx.png', 'sakurairo'), /*注意：填写格式为 http(s)://你的CDN域名/。<br>也就是说，原路径为 http://your.domain/wp-content/uploads/2018/05/xx.png 的图片将从 http://你的CDN域名/2018/05/xx.png 加载*/
+        'name' => __('Images CDN', 'sakurairo'), 
+        'desc' => __('Note: Fill in the format http(s)://your CDN domain name/. <br>In other words, the original path is http://your.domain/wp-content/uploads/2018/05/xx.png and the picture will load from http://your CDN domain/2018/05/xx.png', 'sakurairo'), 
         'id' => 'qiniu_cdn',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Google analytics', 'sakurairo'), /*Google 统计代码*/
+        'name' => __('Google analytics', 'sakurairo'), 
         'desc' => __('UA-xxxxx-x', 'sakurairo'),
         'id' => 'google_analytics_id',
         'std' => '',
         'type' => 'text');
     
     $options[] = array(
-        'name' => __('CNZZ Statistics (not recommand)', 'sakurairo'), /*站长统计（不建议使用）*/
-        'desc' => __('Statistics code, which will be invisible in web page.', 'sakurairo'), /*填写统计代码，将被隐藏*/
+        'name' => __('CNZZ Statistics (not recommand)', 'sakurairo'), 
+        'desc' => __('Statistics code, which will be invisible in web page.', 'sakurairo'), 
         'id' => 'site_statistics',
         'std' => '',
         'type' => 'textarea');
     
     $options[] = array(
-        'name' => __('Customize CSS styles', 'sakurairo'), /*自定义CSS样式*/
-        'desc' => __('Fill in the CSS code directly, no need to write style tags', 'sakurairo'), /*直接填写CSS代码，不需要写style标签*/
+        'name' => __('Customize CSS styles', 'sakurairo'), 
+        'desc' => __('Fill in the CSS code directly, no need to write style tags', 'sakurairo'), 
         'id' => 'site_custom_style',
         'std' => '',
         'type' => 'textarea');
 
     $options[] = array(
-        'name' => __('The categories of articles that don\'t not show on homepage', 'sakurairo'), /*首页不显示的分类文章*/
-        'desc' => __('Fill in category ID, multiple IDs are divided by a comma ","', 'sakurairo'), /*填写分类ID，多个用英文“ , ”分开*/
+        'name' => __('The categories of articles that don\'t not show on homepage', 'sakurairo'), 
+        'desc' => __('Fill in category ID, multiple IDs are divided by a comma ","', 'sakurairo'), 
         'id' => 'classify_display',
         'std' => '',
         'type' => 'text');
     
     $options[] = array(
-        'name' => __('Images category', 'sakurairo'), /*图片展示分类*/
-        'desc' => __('Fill in category ID, multiple IDs are divided by a comma ","', 'sakurairo'), /*填写分类ID，多个用英文“ , ”分开*/
+        'name' => __('Images category', 'sakurairo'), 
+        'desc' => __('Fill in category ID, multiple IDs are divided by a comma ","', 'sakurairo'), 
         'id' => 'image_category',
         'std' => '',
         'type' => 'text');
     
     $options[] = array(
-        'name' => __('Version Control', 'sakurairo'), /*版本控制*/
-        'desc' => __('Used to update frontend cookies and browser caches, any string can be used', 'sakurairo'), /*用于更新前端 cookie 及浏览器缓存，可使用任意字符串*/
+        'name' => __('Version Control', 'sakurairo'), 
+        'desc' => __('Used to update frontend cookies and browser caches, any string can be used', 'sakurairo'), 
         'id' => 'cookie_version',
         'std' => '',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Time Zone adjustment', 'sakurairo'), /*时区调整*/
-        'desc' => __('If the comment has a time difference problem adjust here, fill in an integer, the calculation method: actual_time = display_error_time - the_integer_you_entered (unit: hour)', 'sakurairo'), /*如果评论出现时差问题在这里调整，填入一个整数，计算方法：实际时间=显示错误的时间-你输入的整数（单位：小时）*/
+        'name' => __('Time Zone adjustment', 'sakurairo'), 
+        'desc' => __('If the comment has a time difference problem adjust here, fill in an integer, the calculation method: actual_time = display_error_time - the_integer_you_entered (unit: hour)', 'sakurairo'), 
         'id' => 'time_zone_fix',
         'std' => '0',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('BaguetteBox Funtion', 'sakurairo'), 
-        'desc' => __('Default off，<a href="https://github.com/mashirozx/Sakura/wiki/Fancybox">please read wiki</a>', 'sakurairo'), /*默认禁用，<a href="https://github.com/mashirozx/Sakura/wiki/Fancybox">请阅读说明</a>*/
+        'desc' => __('Default off，<a href="https://github.com/mashirozx/Sakura/wiki/Fancybox">please read wiki</a>', 'sakurairo'), 
         'id' => 'image_viewer',
         'std' => '0',
         'type' => 'checkbox');
 
     //功能
     $options[] = array(
-        'name' => __('Function', 'sakurairo'), /*功能*/
+        'name' => __('Function', 'sakurairo'), 
         'type' => 'heading');
 
     $options[] = array(
-        'name' => __('Bilibili UID', 'sakurairo'), /*bilibiliUID*/
+        'name' => __('Bilibili UID', 'sakurairo'), 
         'desc' => __('Fill in your UID, eg.https://space.bilibili.com/13972644/, only fill in with the number part.', 'sakurairo'),
         'id' => 'bilibili_id',
         'std' => '13972644',
         'type' => 'text');
     
     $options[] = array(
-        'name' => __('Bilibili Cookie', 'sakurairo'), /*Bilibili Cookie*/
+        'name' => __('Bilibili Cookie', 'sakurairo'), 
         'desc' => __('Fill in your Cookies, go to your bilibili homepage, you can get cookies in brownser network pannel with pressing F12. If left this blank, you\'ll not get the progress.', 'sakurairo'),
         'id' => 'bilibili_cookie',
         'std' => 'LIVE_BUVID=',
         'type' => 'textarea');
 
     $options[] = array(
-        'name' => __('Statistics Interface', 'sakurairo'), /*统计接口*/
+        'name' => __('Statistics Interface', 'sakurairo'), 
         'id' => 'statistics_api',
         'std' => "theme_build_in",
         'type' => "radio",
         'options' => array(
-            'wp_statistics' => __('WP-Statistics plugin (Professional statistics, can exclude invalid access)', 'sakurairo'), /*WP-Statistics 插件（专业性统计，可排除无效访问）*/
-            'theme_build_in' => __('Theme built-in (simple statistics, calculate each page access request)', 'sakurairo'), /*主题内建（简单的统计，计算每一次页面访问请求）*/
+            'wp_statistics' => __('WP-Statistics plugin (Professional statistics, can exclude invalid access)', 'sakurairo'), 
+            'theme_build_in' => __('Theme built-in (simple statistics, calculate each page access request)', 'sakurairo'), 
         ));
 
     $options[] = array(
-        'name' => __('Statistical data display format', 'sakurairo'), /*统计数据显示格式*/
+        'name' => __('Statistical data display format', 'sakurairo'), 
         'id' => 'statistics_format',
         'std' => "type_1",
         'type' => "radio",
         'options' => array(
-            'type_1' => __('23333 Views (default)', 'sakurairo'), /*23333 次访问（默认）*/
-            'type_2' => __('23,333 Views (britain)', 'sakurairo'), /*23,333 次访问（英式）'*/
-            'type_3' => __('23 333 Views (french)', 'sakurairo'), /*23 333 次访问（法式）*/
-            'type_4' => __('23k Views (chinese)', 'sakurairo'), /*23k 次访问（中式）*/
+            'type_1' => __('23333 Views (default)', 'sakurairo'), 
+            'type_2' => __('23,333 Views (britain)', 'sakurairo'), 
+            'type_3' => __('23 333 Views (french)', 'sakurairo'), 
+            'type_4' => __('23k Views (chinese)', 'sakurairo'), 
         ));
 
     $options[] = array(
-        'name' => __('Comment image upload API', 'sakurairo'), /*评论图片上传接口*/
+        'name' => __('Comment image upload API', 'sakurairo'), 
         'id' => 'img_upload_api',
         'std' => "imgur",
         'type' => "radio",
@@ -1286,90 +1293,90 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Real Time Search Function', 'sakurairo'), 
-        'desc' => __('Real-time search in the foreground, call the Rest API to update the cache every hour, you can manually set the cache time in api.php', 'sakurairo'), /*前台实现实时搜索，调用 Rest API 每小时更新一次缓存，可在 functions.php 里手动设置缓存时间*/
+        'desc' => __('Real-time search in the foreground, call the Rest API to update the cache every hour, you can manually set the cache time in api.php', 'sakurairo'), 
         'id' => 'live_search',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Include Comments in Real Time Search', 'sakurairo'), 
-        'desc' => __('Search for comments in real-time search (not recommended if there are too many comments on the site)', 'sakurairo'), /*在实时搜索中搜索评论（如果网站评论数量太多不建议开启）*/
+        'desc' => __('Search for comments in real-time search (not recommended if there are too many comments on the site)', 'sakurairo'), 
         'id' => 'live_search_comment',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Article Page Lazyload Function', 'sakurairo'), /*文章内图片启用 lazyload*/
-        'desc' => __('Default on', 'sakurairo'), /*默认启用*/
+        'name' => __('Article Page Lazyload Function', 'sakurairo'), 
+        'desc' => __('Default on', 'sakurairo'), 
         'id' => 'lazyload',
         'std' => '1',
         'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('lazyload spinner', 'sakurairo'),
-        'desc' => __('The placeholder to display when the image loads, fill in the image url', 'sakurairo'), /*图片加载时要显示的占位图，填写图片 url*/
+        'desc' => __('The placeholder to display when the image loads, fill in the image url', 'sakurairo'), 
         'id' => 'lazyload_spinner',
         'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/inload.svg',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Clipboard Copyright ID', 'sakurairo'), 
-        'desc' => __('Check on by default. When copying more than 30 bytes, the copyright mark will be added to the clipboard automatically.', 'sakurairo'), /*复制超过30个字节时自动向剪贴板添加版权标识，默认开启*/
+        'desc' => __('Check on by default. When copying more than 30 bytes, the copyright mark will be added to the clipboard automatically.', 'sakurairo'), 
         'id' => 'clipboard_copyright',
         'std' => '1',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Email address prefix', 'sakurairo'), /*发件地址前缀*/
-        'desc' => __('For sending system mail, the sender address displayed in the user\'s mailbox, do not use Chinese, the default system email address is bibi@your_domain_name', 'sakurairo'), /*用于发送系统邮件，在用户的邮箱中显示的发件人地址，不要使用中文，默认系统邮件地址为 bibi@你的域名*/
+        'name' => __('Email address prefix', 'sakurairo'), 
+        'desc' => __('For sending system mail, the sender address displayed in the user\'s mailbox, do not use Chinese, the default system email address is bibi@your_domain_name', 'sakurairo'),  
         'id' => 'mail_user_name',
         'std' => 'bibi',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Comments reply notification', 'sakurairo'), /*邮件回复通知*/
-        'desc' => __('WordPress will use email to notify users when their comments receive a reply by default. Tick this item allows users to set their own comments reply notification', 'sakurairo'), /*WordPress默认会使用邮件通知用户评论收到回复，开启此项允许用户设置自己的评论收到回复时是否使用邮件通知*/
+        'name' => __('Comments reply notification', 'sakurairo'), 
+        'desc' => __('WordPress will use email to notify users when their comments receive a reply by default. Tick this item allows users to set their own comments reply notification', 'sakurairo'), 
         'id' => 'mail_notify',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Administrator comment notification', 'sakurairo'), /*邮件回复通知管理员*/
-        'desc' => __('Whether to use email notification when the administrator\'s comments receive a reply', 'sakurairo'), /*当管理员评论收到回复时是否使用邮件通知*/
+        'name' => __('Administrator comment notification', 'sakurairo'), 
+        'desc' => __('Whether to use email notification when the administrator\'s comments receive a reply', 'sakurairo'), 
         'id' => 'admin_notify',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Private Comment Function', 'sakurairo'), 
-        'desc' => __('It is not checked by default. It is checked to enable. This feature allows users to set their own comments invisible to others', 'sakurairo'), /*允许用户设置自己的评论对其他人不可见*/
+        'desc' => __('It is not checked by default. It is checked to enable. This feature allows users to set their own comments invisible to others', 'sakurairo'), 
         'id' => 'open_private_message',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Human verification', 'sakurairo'), /*机器人验证*/
-        'desc' => __('Enable human verification', 'sakurairo'), /*开启机器人验证*/
+        'name' => __('Human verification', 'sakurairo'), 
+        'desc' => __('Enable human verification', 'sakurairo'), 
         'id' => 'norobot',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('QQ avatar link encryption', 'sakurairo'), /*QQ头像链接加密*/
-        'desc' => __('Do not display the user\'s qq avatar links directly.', 'sakurairo'), /*不直接暴露用户qq头像链接*/
+        'name' => __('QQ avatar link encryption', 'sakurairo'), 
+        'desc' => __('Do not display the user\'s qq avatar links directly.', 'sakurairo'), 
         'id' => 'qq_avatar_link',
         'std' => "off",
         'type' => "select",
         'options' => array(
-            'off' => __('Off (default)', 'sakurairo'), /*关闭（默认）*/
-            'type_1' => __('use redirect (general security)', 'sakurairo'), /*使用 重定向（安全性一般）'*/
-            'type_2' => __('fetch data at backend (high security)', 'sakurairo'), /*后端获取数据（安全性高）*/
-            'type_3' => __('fetch data at backend (high security，slow)', 'sakurairo'), /*后端获取数据（安全性高, 慢）*/
+            'off' => __('Off (default)', 'sakurairo'), 
+            'type_1' => __('use redirect (general security)', 'sakurairo'), 
+            'type_2' => __('fetch data at backend (high security)', 'sakurairo'), 
+            'type_3' => __('fetch data at backend (high security，slow)', 'sakurairo'), 
         ));
 
     $options[] = array(
-        'name' => __('Comment UA infomation', 'sakurairo'), /*评论UA信息*/
-        'desc' => __('Check to enable, display the user\'s browser, operating system information', 'sakurairo'), /*勾选开启，显示用户的浏览器，操作系统信息*/
+        'name' => __('Comment UA infomation', 'sakurairo'), 
+        'desc' => __('Check to enable, display the user\'s browser, operating system information', 'sakurairo'), 
         'id' => 'open_useragent',
         'std' => '0',
         'type' => 'checkbox');
@@ -1391,15 +1398,15 @@ function optionsframework_options()
             );
 
     $options[] = array(
-        'name' => __('Preload animation', 'sakurairo'), /*预加载动画*/
-        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
+        'name' => __('Preload animation', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
         'id' => 'yjzdh',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Cherry Blossom falling effect', 'sakurairo'), /*樱花飘落特效*/
-        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
+        'name' => __('Cherry Blossom falling effect', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
         'id' => 'sakurajs',
         'std' => '1',
         'type' => 'checkbox');
@@ -1418,29 +1425,29 @@ function optionsframework_options()
             ));
 
     $options[] = array(
-        'name' => __('Wave effects', 'sakurairo'), /*首页波浪特效*/
-        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
+        'name' => __('Wave effects', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
         'id' => 'bolangcss',
         'std' => '1',
         'type' => 'checkbox');
         
     $options[] = array(
-        'name' => __('Footer suspension player default volume', 'sakurairo'), /*页脚悬浮播放器*/
+        'name' => __('Footer suspension player default volume', 'sakurairo'), 
         'desc' => __('Maximum 1 minimum 0', 'sakurairo'),
         'id' => 'playlist_mryl',
         'std' => '0.5',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('live2d', 'sakurairo'), /*看板娘*/
-        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
+        'name' => __('live2d', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
         'id' => 'live2djs',
         'std' => '1',
         'type' => 'checkbox');
     
     $options[] = array(
-        'name' => __('Drop-down arrow', 'sakurairo'), /*下拉箭头*/
-        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
+        'name' => __('Drop-down arrow', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
         'id' => 'godown',
         'std' => '1',
         'type' => 'checkbox');
@@ -1453,84 +1460,84 @@ function optionsframework_options()
         'type' => 'checkbox');
     
     $options[] = array(
-        'name' => __('a brief remark', 'sakurairo'), /*页脚一言*/
-        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
+        'name' => __('a brief remark', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
         'id' => 'oneword',
         'std' => '1',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('One word typing effect of home page', 'sakurairo'), /*首页一言打字效果*/
-        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
+        'name' => __('One word typing effect of home page', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
         'id' => 'dazi',
         'std' => '0',
         'type' => 'checkbox');
     
     $options[] = array(
-        'name' => __('Double quotation marks for typing effect', 'sakurairo'), /*首页一言打字效果*/
-        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
+        'name' => __('Double quotation marks for typing effect', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
         'id' => 'dazi_yh',
         'std' => '0',
         'type' => 'checkbox');
     
     $options[] = array(
-        'name' => __('Typewriting effect text', 'sakurairo'), /*打字效果文字*/
+        'name' => __('Typewriting effect text', 'sakurairo'), 
         'desc' => __('Fill in the text part of the typing effect (double quotation marks must be used outside the text, and English commas shall be used to separate the two sentences. Support for HTML tags)', 'sakurairo'),
         'id' => 'dazi_a',
         'std' => '"寒蝉黎明之时,便是重生之日。"',
         'type' => 'text');
     
     $options[] = array(
-        'name' => __('Homepage one word blogger description', 'sakurairo'), /*主页一言博主描述*/
-        'desc' => __('A self description', 'sakurairo'), /*一段自我描述的话*/
+        'name' => __('Homepage one word blogger description', 'sakurairo'), 
+        'desc' => __('A self description', 'sakurairo'), 
         'id' => 'admin_des',
         'std' => '粉色的花瓣，美丽地缠绕在身上。依在风里。',
         'type' => 'textarea');
     
     $options[] = array(
-        'name' => __('Blog description at the end of the article', 'sakurairo'), /*文章末尾博主描述*/
-        'desc' => __('A self description', 'sakurairo'), /*一段自我描述的话*/
+        'name' => __('Blog description at the end of the article', 'sakurairo'), 
+        'desc' => __('A self description', 'sakurairo'), 
         'id' => 'admin_destwo',
         'std' => '粉色的花瓣，美丽地缠绕在身上。依在风里。',
         'type' => 'textarea');
     
     $options[] = array(
-        'name' => __('Note effects', 'sakurairo'), /*音符特效*/
-        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
+        'name' => __('Note effects', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
         'id' => 'audio',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Logo special effects', 'sakurairo'), /*Logo特效*/
-        'desc' => __('Check open', 'sakurairo'), /*勾选开启*/
+        'name' => __('Logo special effects', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
         'id' => 'logocss',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Logo text A', 'sakurairo'), /*Logo文字*/
+        'name' => __('Logo text A', 'sakurairo'), 
         'desc' => __('Fill in the front part of your logo text', 'sakurairo'),
         'id' => 'logo_a',
         'std' => ' ',
         'type' => 'text');
         
     $options[] = array(
-        'name' => __('Logo text B', 'sakurairo'), /*Logo文字*/
+        'name' => __('Logo text B', 'sakurairo'), 
         'desc' => __('Fill in the middle part of your logo text', 'sakurairo'),
         'id' => 'logo_b',
         'std' => ' ',
         'type' => 'text');
         
     $options[] = array(
-        'name' => __('Logo text C', 'sakurairo'), /*Logo文字*/
+        'name' => __('Logo text C', 'sakurairo'), 
         'desc' => __('Fill in the back of your logo', 'sakurairo'),
         'id' => 'logo_c',
         'std' => ' ',
         'type' => 'text');
         
      $options[] = array(
-        'name' => __('Logo secondary text', 'sakurairo'), /*Logo文字*/
+        'name' => __('Logo secondary text', 'sakurairo'), 
         'desc' => __('Fill in the secondary text of your logo.', 'sakurairo'),
         'id' => 'logo_two',
         'std' => '',
@@ -1690,14 +1697,14 @@ function optionsframework_options()
         'type' => 'text');  
 
     $options[] = array(
-        'name' => __('Logo font link', 'sakurairo'), /*Logo文字*/
+        'name' => __('Logo font link', 'sakurairo'), 
         'desc' => __('When the font is ready, do this again <a href = "https://www.fontke.com/tool/fontface/">@font-face生成器</a>It can generate a bunch of files, which are all useful. It can be placed on a accessible server, OOS, CDN, etc. here, you only need to fill in the CSS style sheet file link <a href = "https://blog.ukenn.top/sakura6/#toc-head-4">Detailed tutorial</a>', 'sakurairo'),
         'id' => 'logo_zt',
         'std' => 'https://cdn.jsdelivr.net/gh/acai66/mydl/fonts/wenyihei/wenyihei-subfont.css',
         'type' => 'text');
         
     $options[] = array(
-        'name' => __('Logo font name', 'sakurairo'), /*Logo文字*/
+        'name' => __('Logo font name', 'sakurairo'), 
         'desc' => __('Fill in the font name of your logo, write the name directly without the format suffix', 'sakurairo'),
         'id' => 'logo_ztmc',
         'std' => 'wenyihei-subfont',
@@ -1709,8 +1716,8 @@ function optionsframework_options()
         'type' => 'heading');
 
     $options[] = array(
-        'name' => __('Display icon selection', 'sakurairo'), /*社交图标选择*/
-        'desc' => __('Choose icon color', 'sakurairo'), /*社交图标选择*/
+        'name' => __('Display icon selection', 'sakurairo'), 
+        'desc' => __('Choose icon color', 'sakurairo'), 
         'id' => 'webweb_img',
         'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/pink',
         'type' => 'select',
@@ -1729,75 +1736,99 @@ function optionsframework_options()
     ));
     
     $options[] = array(
-            'name' => __('Theme style', 'sakurairo'), /*主题风格*/
+            'name' => __('Theme style', 'sakurairo'), 
             'id' => 'theme_skin',
             'std' => "#EE9CA7",
-            'desc' => __('Custom theme color', 'sakurairo'), /*自定义主题颜色*/
+            'desc' => __('Custom theme color', 'sakurairo'), 
             'type' => "color",
     );
     
     $options[] = array(
-        'name' => __('Social background', 'sakurairo'), /*首页一言文字背景*/
+        'name' => __('Social background', 'sakurairo'), 
         'id' => 'theme_skin_yybj',
         'std' => "#FFF",
-        'desc' => __('Custom colors', 'sakurairo'), /*自定义背景颜色*/
+        'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
 
     $options[] = array(
-            'name' => __('Theme selection menu background color', 'sakurairo'), /*主题选择菜单背景颜色*/
+            'name' => __('Theme selection menu background color', 'sakurairo'), 
             'id' => 'theme_skin_cdbj',
             'std' => "#FFF",
-            'desc' => __('Custom colors', 'sakurairo'), /*自定义背景颜色*/
+            'desc' => __('Custom colors', 'sakurairo'), 
             'type' => "color",
     );
     
     $options[] = array(
-        'name' => __('Drop down arrow color', 'sakurairo'), /*下拉箭头颜色*/
+        'name' => __('Drop down arrow color', 'sakurairo'), 
         'id' => 'godown_skin',
         'std' => "#FFF",
-        'desc' => __('Custom colors', 'sakurairo'), /*自定义下拉箭头颜色*/
+        'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );  
     
     $options[] = array(
-        'name' => __('Home page article separator', 'sakurairo'), /*首页文章分割符*/
+        'name' => __('Home page article separator', 'sakurairo'), 
         'id' => 'theme_skin_fgf',
-        'std' => "#FFEEEB",
-        'desc' => __('Custom colors', 'sakurairo'), /*自定义背景颜色*/
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Home page article time prompt accent', 'sakurairo'), /*首页文章时间提示强调文字*/
-        'id' => 'theme_skin_sjwz',
-        'std' => "#EE9CA7",
-        'desc' => __('Custom colors', 'sakurairo'), /*自定义背景颜色*/
-        'type' => "color",
-    );
-    
-    $options[] = array(
-        'name' => __('Home page article time prompt emphasize background', 'sakurairo'), /*首页文章时间提示强调背景*/
-        'id' => 'theme_skin_sjbj',
-        'std' => "#FFEEEB",
-        'desc' => __('Custom colors', 'sakurairo'), /*自定义背景颜色*/
-        'type' => "color",
-    );
-    
-    $options[] = array(
-        'name' => __('First page article border shadow', 'sakurairo'), /*首页文章边框阴影*/
-        'id' => 'theme_skin_bkyy',
-        'std' => "#FFEEEB",
-        'desc' => __('Custom colors', 'sakurairo'), /*自定义背景颜色*/
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('First page Focus background color', 'sakurairo'), 
-        'id' => 'theme_skin_jjbj',
         'std' => "#FFEEEB",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Home page article time prompt accent', 'sakurairo'), 
+        'id' => 'theme_skin_sjwz',
+        'std' => "#EE9CA7",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+    
+    $options[] = array(
+        'name' => __('Home page article time prompt emphasize background', 'sakurairo'), 
+        'id' => 'theme_skin_sjbj',
+        'std' => "#FFEEEB",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+    
+    $options[] = array(
+        'name' => __('First page article border shadow', 'sakurairo'), 
+        'id' => 'theme_skin_bkyy',
+        'std' => "#FFEEEB",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('First page Focus background color (RGBA) Red', 'sakurairo'), 
+        'id' => 'theme_skin_jjbjr',
+        'std' => "255",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "text",
+    );
+
+    $options[] = array(
+        'name' => __('First page Focus background color (RGBA) Green', 'sakurairo'), 
+        'id' => 'theme_skin_jjbjg',
+        'std' => "238",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "text",
+    );
+
+    $options[] = array(
+        'name' => __('First page Focus background color (RGBA) Blue', 'sakurairo'), 
+        'id' => 'theme_skin_jjbjb',
+        'std' => "235",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "text",
+    );
+
+    $options[] = array(
+        'name' => __('First page Focus background color (RGBA) Alpha', 'sakurairo'), 
+        'id' => 'theme_skin_jjbja',
+        'std' => "0.8",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "text",
     );
 
     $options[] = array(
@@ -1809,18 +1840,18 @@ function optionsframework_options()
     );
 
     $options[] = array(
-        'name' => __('Preload animation color A', 'sakurairo'), /*预加载动画颜色A*/
+        'name' => __('Preload animation color A', 'sakurairo'), 
         'id' => 'theme_skin_yjjone',
         'std' => "#FFEEEB",
-        'desc' => __('Custom colors', 'sakurairo'), /*自定义背景颜色*/
+        'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
 
     $options[] = array(
-        'name' => __('Preload animation color B', 'sakurairo'), /*预加载动画颜色B*/
+        'name' => __('Preload animation color B', 'sakurairo'), 
         'id' => 'theme_skin_yjjtwo',
         'std' => "#EE9CA7",
-        'desc' => __('Custom colors', 'sakurairo'), /*自定义背景颜色*/
+        'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
     
