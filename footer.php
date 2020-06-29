@@ -174,7 +174,7 @@
 
 <!-- Live2D看板娘 -->
 <?php if (akina_option('live2djs', '1')): ?>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mirai-mamori/live2d-widget@0.8.2/autoload.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/<?php echo akina_option('live2d-custom'); ?>/live2d-widget@<?php echo akina_option('live2d-custom-ver'); ?>/autoload.js"></script>
 <?php endif; ?>
 
 <!-- logo字体部分 -->

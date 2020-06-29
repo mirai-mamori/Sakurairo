@@ -1439,11 +1439,25 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('live2d', 'sakurairo'), 
+        'name' => __('live2D', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
         'id' => 'live2djs',
         'std' => '1',
         'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Live2D Custom Resource Address', 'sakurairo'), 
+        'desc' => __('Fill in Live2D Custom Resource Address', 'sakurairo'),
+        'id' => 'live2d-custom',
+        'std' => 'mirai-mamori',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Live2D Custom Resource Version', 'sakurairo'), 
+        'desc' => __('Fill in Live2D Custom Resource Version', 'sakurairo'),
+        'id' => 'live2d-custom-ver',
+        'std' => 'latest',
+        'type' => 'text');
     
     $options[] = array(
         'name' => __('Drop-down arrow', 'sakurairo'), 
@@ -1606,21 +1620,28 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('External font name', 'sakurairo'), 
-        'desc' => __('Fill in the font name.', 'sakurairo'),
-        'id' => 'ext-font-name',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
         'name' => __('External font address', 'sakurairo'), 
         'desc' => __('Fill in font address.', 'sakurairo'),
         'id' => 'ext-font-address',
         'std' => '',
-        'type' => 'text');    
+        'type' => 'text');   
 
     $options[] = array(
-        'name' => __('Add Fonts', 'sakurairo'), 
+        'name' => __('External font name', 'sakurairo'), 
+        'desc' => __('Fill in the font name.', 'sakurairo'),
+        'id' => 'ext-font-name',
+        'std' => '',
+        'type' => 'text'); 
+
+    $options[] = array(
+        'name' => __('Google Fonts Api Address', 'sakurairo'), 
+        'desc' => __('Fill in Google Fonts API Address', 'sakurairo'),
+        'id' => 'gfontsapi',
+        'std' => 'fonts.googleapis.com',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Google Fonts Name', 'sakurairo'), 
         'desc' => __('Please make sure that the fonts you add can be referenced in Google font library. Fill in the font name. If multiple fonts are referenced, please use "|" as the separator.', 'sakurairo'),
         'id' => 'addfonts',
         'std' => '',

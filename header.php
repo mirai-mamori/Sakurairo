@@ -23,7 +23,7 @@
 -->
 <html <?php language_attributes(); ?>>
 <head>
-<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC<?php echo akina_option('addfonts'); ?>" media="all">
+<link rel="stylesheet" href="https://<?php echo akina_option('gfontsapi'); ?>/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC<?php echo akina_option('addfonts'); ?>" media="all">
 <meta name="theme-color" content="<?php echo akina_option('theme_skin'); ?>">
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
