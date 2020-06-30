@@ -86,7 +86,7 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 	<div class="scrollbar" id="bar"></div>
 	<section id="main-container">
 		<?php 
-		if(!akina_option('head_focus')){ 
+		if(!akina_option('main-switch')){ 
 		$filter = akina_option('focus_img_filter');
 		?>
 		<div class="headertop <?php echo $filter; ?>">

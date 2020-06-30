@@ -303,20 +303,20 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Main Switch', 'sakurairo'), 
         'desc' => __('Default on, check off', 'sakurairo'), 
-        'id' => 'head_focus',
+        'id' => 'main-switch',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Information Bar', 'sakurairo'), 
         'desc' => __('It is on by default and checked off to display the avatar / text logo, signature bar and social card.', 'sakurairo'), 
-        'id' => 'focus_infos',
+        'id' => 'infor-bar',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Information Bar Style', 'sakurairo'),
-        'id' => 'social_style',
+        'id' => 'infor-bar-style',
         'std' => "v1",
         'type' => "radio",
         'options' => array(
@@ -329,6 +329,7 @@ function optionsframework_options()
         'desc' => __('Fill in the number, the recommended value is 10 to 20', 'sakurairo'), 
         'id' => 'info-radius',
         'std' => '15',
+        'class' => 'mini',
         'type' => 'text');    
 
     $options[] = array(
@@ -336,6 +337,7 @@ function optionsframework_options()
         'desc' => __('Fill in the number, the recommended value is 10 to 20', 'sakurairo'),
         'id' => 'img-radius',
         'std' => '15',
+        'class' => 'mini',
         'type' => 'text');  
 
     $options[] = array(
@@ -343,6 +345,7 @@ function optionsframework_options()
         'desc' => __('Fill in the number, the recommended value is 90 to 110', 'sakurairo'),
         'id' => 'head-radius',
         'std' => '100',
+        'class' => 'mini',
         'type' => 'text');  
 
     $options[] = array(
@@ -417,7 +420,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Cover Random Graphs Filter', 'sakurairo'), 
         'id' => 'focus_img_filter',
-        'std' => "filter-undertint",
+        'std' => "filter-nothing",
         'type' => "radio",
         'options' => array(
             'filter-nothing' => __('Nothing', 'sakurairo'), 
@@ -444,13 +447,13 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Focus Area', 'sakurairo'), 
         'desc' => __('Default on', 'sakurairo'),
-        'id' => 'top_feature',
+        'id' => 'focus-area',
         'std' => '1',
         'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Focus Area Style', 'sakurairo'), 
-        'id' => 'top_feature_style',
+        'id' => 'focus-area-style',
         'std' => "left_and_right",
         'type' => "radio",
         'options' => array(
@@ -461,7 +464,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Focus Area Title', 'sakurairo'), 
         'desc' => __('Default is 聚焦, you can also change it to other, of course you can\'t use it as an advertisement!Not allowed!!', 'sakurairo'), 
-        'id' => 'feature_title',
+        'id' => 'focus-area-title',
         'std' => '聚焦',
         'class' => 'mini',
         'type' => 'text');
@@ -858,6 +861,7 @@ function optionsframework_options()
         'desc' => __('Fill in numbers between 0.1 and 1', 'sakurairo'), 
         'id' => 'homepagebgtmd',
         'std' => '0.8',
+        'class' => 'mini',
         'type' => 'text');
 
     $options[] = array(
@@ -886,6 +890,7 @@ function optionsframework_options()
         'desc' => __('Fill in Number', 'sakurairo'),
         'id' => 'hp-ani-t',
         'std' => '2',
+        'class' => 'mini',
         'type' => 'text');
 
     $options[] = array(
@@ -893,6 +898,7 @@ function optionsframework_options()
         'desc' => __('Fill in Number', 'sakurairo'),
         'id' => 'title-ani-t',
         'std' => '2',
+        'class' => 'mini',
         'type' => 'text');
 
     $options[] = array(
@@ -1188,6 +1194,7 @@ function optionsframework_options()
         'desc' => __('If the comment has a time difference problem adjust here, fill in an integer, the calculation method: actual_time = display_error_time - the_integer_you_entered (unit: hour)', 'sakurairo'), 
         'id' => 'time_zone_fix',
         'std' => '0',
+        'class' => 'mini',
         'type' => 'text');
 
     $options[] = array(
@@ -1443,6 +1450,7 @@ function optionsframework_options()
         'desc' => __('Maximum 1 minimum 0', 'sakurairo'),
         'id' => 'playlist_mryl',
         'std' => '0.5',
+        'class' => 'mini',
         'type' => 'text');
 
     $options[] = array(
@@ -1464,6 +1472,7 @@ function optionsframework_options()
         'desc' => __('Fill in Live2D Custom Resource Version', 'sakurairo'),
         'id' => 'live2d-custom-ver',
         'std' => 'latest',
+        'class' => 'mini',
         'type' => 'text');
     
     $options[] = array(
@@ -1617,6 +1626,7 @@ function optionsframework_options()
         'desc' => __('Fill in a number, maximum 900, minimum 100. Between 300 and 500 is recommended.', 'sakurairo'),
         'id' => 'fontweight',
         'std' => '',
+        'class' => 'mini',
         'type' => 'text');
 
     $options[] = array(
@@ -1694,6 +1704,7 @@ function optionsframework_options()
         'desc' => __('Fill in Number. Between 10 and 20 is recommended', 'sakurairo'),
         'id' => 'global-fontsize',
         'std' => '',
+        'class' => 'mini',
         'type' => 'text'); 
     
     $options[] = array(
@@ -1701,6 +1712,7 @@ function optionsframework_options()
         'desc' => __('Fill in Number. Between 15 and 20 is recommended', 'sakurairo'),
         'id' => 'article-title-size',
         'std' => '',
+        'class' => 'mini',
         'type' => 'text'); 
     
     $options[] = array(
@@ -1708,6 +1720,7 @@ function optionsframework_options()
         'desc' => __('Fill in Number. Between 10 and 15 is recommended', 'sakurairo'),
         'id' => 'article-tips-size',
         'std' => '',
+        'class' => 'mini',
         'type' => 'text'); 
     
     $options[] = array(
@@ -1715,6 +1728,7 @@ function optionsframework_options()
         'desc' => __('Fill in Number. Between 10 and 20 is recommended', 'sakurairo'),
         'id' => 'fontsize-oneword',
         'std' => '',
+        'class' => 'mini',
         'type' => 'text');  
 
     $options[] = array(
@@ -1722,6 +1736,7 @@ function optionsframework_options()
         'desc' => __('Fill in Number. Between 70 and 90 is recommended', 'sakurairo'),
         'id' => 'keytitle_size',
         'std' => '80',
+        'class' => 'mini',
         'type' => 'text');  
 
     $options[] = array(
@@ -1775,69 +1790,77 @@ function optionsframework_options()
         'name' => __('Information Bar Background Color (RGBA) Red', 'sakurairo'), 
         'id' => 'infor-bar-bg-cr',
         'std' => "255",
-        'desc' => __('Custom colors', 'sakurairo'), 
+        'desc' => __('Fill in the red value from 0 to 255 here', 'sakurairo'), 
         'type' => "text",
+        'class' => 'mini',
     );
 
     $options[] = array(
         'name' => __('Information Bar Background Color (RGBA) Green', 'sakurairo'), 
         'id' => 'infor-bar-bg-cg',
         'std' => "255",
-        'desc' => __('Custom colors', 'sakurairo'), 
+        'desc' => __('Fill in the green value from 0 to 255 here', 'sakurairo'), 
         'type' => "text",
+        'class' => 'mini',
     );
 
     $options[] = array(
         'name' => __('Information Bar Background Color (RGBA) Blue', 'sakurairo'), 
         'id' => 'infor-bar-bg-cb',
         'std' => "255",
-        'desc' => __('Custom colors', 'sakurairo'), 
+        'desc' => __('Fill in the blue value from 0 to 255 here', 'sakurairo'), 
         'type' => "text",
+        'class' => 'mini',
     );
 
     $options[] = array(
         'name' => __('Information Bar Background Color (RGBA) Alpha', 'sakurairo'), 
         'id' => 'infor-bar-bg-ca',
         'std' => "0.8",
-        'desc' => __('Custom colors', 'sakurairo'), 
+        'desc' => __('Fill in the alpha value from 0 to 1 here', 'sakurairo'), 
         'type' => "text",
+        'class' => 'mini',
     );
 
     $options[] = array(
         'name' => __('Foreground Menu background Color (RGBA) Red', 'sakurairo'), 
         'id' => 'fore-switch-bcr',
         'std' => "255",
-        'desc' => __('Custom colors', 'sakurairo'), 
+        'desc' => __('Fill in the red value from 0 to 255 here', 'sakurairo'), 
         'type' => "text",
+        'class' => 'mini',
     );
 
     $options[] = array(
         'name' => __('Foreground Menu background Color (RGBA) Green', 'sakurairo'), 
         'id' => 'fore-switch-bcg',
         'std' => "255",
-        'desc' => __('Custom colors', 'sakurairo'), 
+        'desc' => __('Fill in the green value from 0 to 255 here', 'sakurairo'), 
         'type' => "text",
+        'class' => 'mini',
     );
 
     $options[] = array(
         'name' => __('Foreground Menu background Color (RGBA) Blue', 'sakurairo'), 
         'id' => 'fore-switch-bcb',
         'std' => "255",
-        'desc' => __('Custom colors', 'sakurairo'), 
+        'desc' => __('Fill in the blue value from 0 to 255 here', 'sakurairo'), 
         'type' => "text",
+        'class' => 'mini',
     );
 
     $options[] = array(
         'name' => __('Foreground Menu background Color (RGBA) Alpha', 'sakurairo'), 
         'id' => 'fore-switch-bca',
         'std' => "0.9",
-        'desc' => __('Custom colors', 'sakurairo'), 
+        'desc' => __('Fill in the alpha value from 0 to 1 here', 'sakurairo'), 
         'type' => "text",
+        'class' => 'mini',
     );
 
     $options[] = array(
         'name' => __('Foreground selection menu background color', 'sakurairo'), 
-        'id' => 'theme_skin_cdbj',
+        'id' => 'fore-switch-sele-bc',
         'std' => "#FFF",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
@@ -1853,7 +1876,7 @@ function optionsframework_options()
     
     $options[] = array(
         'name' => __('Home page article separator', 'sakurairo'), 
-        'id' => 'theme_skin_fgf',
+        'id' => 'hpage-art-sc',
         'std' => "#FFEEEB",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
@@ -1861,7 +1884,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Home page article time prompt accent', 'sakurairo'), 
-        'id' => 'theme_skin_sjwz',
+        'id' => 'hpage-art-tpac',
         'std' => "#EE9CA7",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
@@ -1869,55 +1892,59 @@ function optionsframework_options()
     
     $options[] = array(
         'name' => __('Home page article time prompt emphasize background', 'sakurairo'), 
-        'id' => 'theme_skin_sjbj',
+        'id' => 'hpage-art-tpebc',
         'std' => "#FFEEEB",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
     
     $options[] = array(
-        'name' => __('First page article border shadow', 'sakurairo'), 
-        'id' => 'theme_skin_bkyy',
+        'name' => __('Home page article border shadow', 'sakurairo'), 
+        'id' => 'hpage-art-bsc',
         'std' => "#FFEEEB",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
 
     $options[] = array(
-        'name' => __('First page Focus background color (RGBA) Red', 'sakurairo'), 
-        'id' => 'theme_skin_jjbjr',
+        'name' => __('Home page Focus background color (RGBA) Red', 'sakurairo'), 
+        'id' => 'hpage-focus-bcr',
         'std' => "255",
-        'desc' => __('Custom colors', 'sakurairo'), 
+        'desc' => __('Fill in the red value from 0 to 255 here', 'sakurairo'), 
         'type' => "text",
+        'class' => 'mini',
     );
 
     $options[] = array(
-        'name' => __('First page Focus background color (RGBA) Green', 'sakurairo'), 
-        'id' => 'theme_skin_jjbjg',
+        'name' => __('Home page Focus background color (RGBA) Green', 'sakurairo'), 
+        'id' => 'hpage-focus-bcg',
         'std' => "238",
-        'desc' => __('Custom colors', 'sakurairo'), 
+        'desc' => __('Fill in the green value from 0 to 255 here', 'sakurairo'), 
         'type' => "text",
+        'class' => 'mini',
     );
 
     $options[] = array(
-        'name' => __('First page Focus background color (RGBA) Blue', 'sakurairo'), 
-        'id' => 'theme_skin_jjbjb',
+        'name' => __('Home page Focus background color (RGBA) Blue', 'sakurairo'), 
+        'id' => 'hpage-focus-bcb',
         'std' => "235",
-        'desc' => __('Custom colors', 'sakurairo'), 
+        'desc' => __('Fill in the blue value from 0 to 255 here', 'sakurairo'), 
         'type' => "text",
+        'class' => 'mini',
     );
 
     $options[] = array(
-        'name' => __('First page Focus background color (RGBA) Alpha', 'sakurairo'), 
-        'id' => 'theme_skin_jjbja',
+        'name' => __('Home page Focus background color (RGBA) Alpha', 'sakurairo'), 
+        'id' => 'hpage-focus-bca',
         'std' => "0.8",
-        'desc' => __('Custom colors', 'sakurairo'), 
+        'desc' => __('Fill in the alpha value from 0 to 1 here', 'sakurairo'), 
         'type' => "text",
+        'class' => 'mini',
     );
 
     $options[] = array(
-        'name' => __('Front page key title font color', 'sakurairo'), 
-        'id' => 'theme_skin_keytitle',
+        'name' => __('Home page key title font color', 'sakurairo'), 
+        'id' => 'hpage-ket-tfc',
         'std' => "#FFF",
         'desc' => __('Custom theme color', 'sakurairo'), 
         'type' => "color",
@@ -1925,7 +1952,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Preload animation color A', 'sakurairo'), 
-        'id' => 'theme_skin_yjjone',
+        'id' => 'preload-ani-c1',
         'std' => "#FFEEEB",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
@@ -1933,7 +1960,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Preload animation color B', 'sakurairo'), 
-        'id' => 'theme_skin_yjjtwo',
+        'id' => 'preload-ani-c2',
         'std' => "#EE9CA7",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
