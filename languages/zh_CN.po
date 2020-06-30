@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-06-30 16:24+0800\n"
-"PO-Revision-Date: 2020-06-30 16:25+0800\n"
+"POT-Creation-Date: 2020-06-30 17:07+0800\n"
+"PO-Revision-Date: 2020-06-30 17:07+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1434,10 +1434,8 @@ msgid "Panel main color A"
 msgstr "面板主色调A"
 
 #: options.php:992 options.php:1000 options.php:1008 options.php:1016
-msgid ""
-"<i>(array) (optional)</i> An array of CSS color definitions which are used "
-"to give the user a feel for the theme."
-msgstr ""
+msgid "Custom color"
+msgstr "自定义颜色"
 
 #: options.php:997
 msgid "Panel main color B"
@@ -1453,21 +1451,19 @@ msgstr "面板主色调D"
 
 #: options.php:1021
 msgid "Panel icon color——base"
-msgstr "面板图标配色——base"
+msgstr "面板图标配色——Base"
 
 #: options.php:1024 options.php:1032 options.php:1040
-msgid ""
-"<i>(array) (optional)</i> An array of CSS color definitions used to color "
-"any SVG icons."
-msgstr ""
+msgid "SVG Icons Custom Color"
+msgstr "自定义SVG图标颜色"
 
 #: options.php:1029
 msgid "Panel icon color——focus"
-msgstr "面板图标配色——focus"
+msgstr "面板图标配色——Focus"
 
 #: options.php:1037
 msgid "Panel icon color——current"
-msgstr "面板图标配色——current"
+msgstr "面板图标配色——Current"
 
 #: options.php:1045
 msgid "Other custom panel styles(CSS)"
