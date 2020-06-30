@@ -969,7 +969,7 @@ function optionsframework_options()
         'name' => __('sidebar widget background image', 'sakurairo'), 
         'desc' => __('Sidebar widget background settings, fill in the URL', 'sakurairo'), 
         'id' => 'sakura_widget_bg',
-        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg2.png',
+        'std' => '',
         'type' => 'text');
     
     //后台设置
