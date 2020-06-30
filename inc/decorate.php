@@ -31,7 +31,9 @@ if ( akina_option('theme_skin') ) { ?>
 .commentbody:focus {
     border-color: <?php echo akina_option('theme_skin'); ?> !important
 }
-
+.post-list-thumb i{ 
+    color: <?php echo akina_option('theme_skin'); ?>;
+}
 .insert-image-tips:hover, .insert-image-tips-hover{ 
     color: <?php echo akina_option('theme_skin'); ?>;
     border: 1px solid <?php echo akina_option('theme_skin'); ?>
