@@ -140,7 +140,6 @@
 	</div>
 	<?php endif; ?>
 </div>
-<canvas id="night-mode-cover"></canvas>
 <?php if (akina_option('sakura_widget')) : ?>
 	<aside id="secondary" class="widget-area" role="complementary" style="left: -400px;">
     <div class="heading"><?php _e('Widgets') /*小工具*/ ?></div>

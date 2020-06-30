@@ -958,6 +958,13 @@ function optionsframework_options()
         'id' => 'sakura_widget',
         'std' => '0',
         'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('sidebar widget background image', 'sakurairo'), 
+        'desc' => __('Sidebar widget background settings, fill in the URL', 'sakurairo'), 
+        'id' => 'sakura_widget_bg',
+        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg2.png',
+        'type' => 'text');
     
     //后台设置
     $options[] = array(
@@ -1757,27 +1764,83 @@ function optionsframework_options()
     ));
     
     $options[] = array(
-            'name' => __('Theme style', 'sakurairo'), 
-            'id' => 'theme_skin',
-            'std' => "#EE9CA7",
-            'desc' => __('Custom theme color', 'sakurairo'), 
-            'type' => "color",
+        'name' => __('Theme style', 'sakurairo'), 
+        'id' => 'theme_skin',
+        'std' => "#EE9CA7",
+        'desc' => __('Custom theme color', 'sakurairo'), 
+        'type' => "color",
     );
     
     $options[] = array(
-        'name' => __('Social background', 'sakurairo'), 
-        'id' => 'theme_skin_yybj',
-        'std' => "#FFF",
+        'name' => __('Information Bar Background Color (RGBA) Red', 'sakurairo'), 
+        'id' => 'infor-bar-bg-cr',
+        'std' => "255",
         'desc' => __('Custom colors', 'sakurairo'), 
-        'type' => "color",
+        'type' => "text",
     );
 
     $options[] = array(
-            'name' => __('Theme selection menu background color', 'sakurairo'), 
-            'id' => 'theme_skin_cdbj',
-            'std' => "#FFF",
-            'desc' => __('Custom colors', 'sakurairo'), 
-            'type' => "color",
+        'name' => __('Information Bar Background Color (RGBA) Green', 'sakurairo'), 
+        'id' => 'infor-bar-bg-cg',
+        'std' => "255",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "text",
+    );
+
+    $options[] = array(
+        'name' => __('Information Bar Background Color (RGBA) Blue', 'sakurairo'), 
+        'id' => 'infor-bar-bg-cb',
+        'std' => "255",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "text",
+    );
+
+    $options[] = array(
+        'name' => __('Information Bar Background Color (RGBA) Alpha', 'sakurairo'), 
+        'id' => 'infor-bar-bg-ca',
+        'std' => "0.8",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "text",
+    );
+
+    $options[] = array(
+        'name' => __('Foreground Menu background Color (RGBA) Red', 'sakurairo'), 
+        'id' => 'fore-switch-bcr',
+        'std' => "255",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "text",
+    );
+
+    $options[] = array(
+        'name' => __('Foreground Menu background Color (RGBA) Green', 'sakurairo'), 
+        'id' => 'fore-switch-bcg',
+        'std' => "255",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "text",
+    );
+
+    $options[] = array(
+        'name' => __('Foreground Menu background Color (RGBA) Blue', 'sakurairo'), 
+        'id' => 'fore-switch-bcb',
+        'std' => "255",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "text",
+    );
+
+    $options[] = array(
+        'name' => __('Foreground Menu background Color (RGBA) Alpha', 'sakurairo'), 
+        'id' => 'fore-switch-bca',
+        'std' => "0.9",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "text",
+    );
+
+    $options[] = array(
+        'name' => __('Foreground selection menu background color', 'sakurairo'), 
+        'id' => 'theme_skin_cdbj',
+        'std' => "#FFF",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
     );
     
     $options[] = array(

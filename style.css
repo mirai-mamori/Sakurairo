@@ -2,7 +2,7 @@
 /*
 Theme Name: Sakurairo
 Theme URI: https://github.com/mirai-mamori/Sakurairo
-Author: Hitomi , Ukenn , Spirit , Mashiro , Louie , Fuzzz
+Author: Hitomi , Ukenn , Spirit , Bymoye , Mashiro 
 Author URI: https://asuhe.jp/
 Description:  「ハルジオン　Update」 ｜ 一个多彩，实用，易于上手，具有强大自定义功能的 WordPress 主题（基于 Sakura 主题）
 Version: 1.14.0
@@ -2947,7 +2947,7 @@ header.page-header {
     -webkit-transition: all ease 1s;
     -moz-transition: all ease 1s;
     -o-transition: all ease 1s;
-    margin-top: 4px;
+    margin-top: 3px;
     width: 70px;
     height: 70px;
     padding: 1px;
@@ -2963,8 +2963,9 @@ header.page-header {
 }
 
 span.sitename {
-	font-size: 20px;
-    margin-left: 80px;
+    font-size: 20px;
+    margin-top: 85px;
+    margin-left: 8px;
     color: #EE9CA7;
     padding-bottom: 10px;
     display: block;
@@ -2979,13 +2980,13 @@ span.sitename {
 .linkdes {
     color: #EE9CB1;
     font-size: 14px;
-    padding: 7px 0;
-	margin-left: 80px;
+    padding: 4px 0;
+	margin-left: 8px;
     border-top: 1px dotted #EE9CA7;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    line-height: 25px;
+    line-height: 20px;
     -webkit-transition: all .5s;
     transition: all .5s
 }
@@ -6811,18 +6812,6 @@ input[type=radio]:checked:before {
     pointer-events: none
 }
 
-#night-mode-cover {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 99999;
-    background: rgba(86, 86, 86, .2);
-    pointer-events: none;
-    visibility: hidden
-}
-
 .changeSkin {
     position: fixed;
     bottom: 0;
@@ -8589,7 +8578,7 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
 }
 
 .widget-area .sakura_widget{
-    padding: 16px;
+    padding: 18px;
     height: calc(100% - 30px);
     overflow-y: auto;
 }
@@ -8606,11 +8595,11 @@ h1[id*=toc-head]::before,h2[id*=toc-head]::before,h3[id*=toc-head]::before,h4[id
 
 .widget-area .heading{
     color: #555;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 900;
     text-align: center;
     height: 30px;
-    background-color: #f5f5f5;
+    background-color: rgba(255, 255, 255, 0.2);
     border-color: #ddd;
 }
 
