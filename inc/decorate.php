@@ -17,7 +17,7 @@ if ( akina_option('theme_skin') ) { ?>
 
 .linkdes { border-top: 1px dotted <?php echo akina_option('theme_skin'); ?> !important}
 
-.the-feature.from_left_and_right .info{background: rgba(<?php echo akina_option('theme_skin_jjbjr'); ?>,<?php echo akina_option('theme_skin_jjbjg'); ?>,<?php echo akina_option('theme_skin_jjbjb'); ?>,<?php echo akina_option('theme_skin_jjbja'); ?>) }
+.the-feature.from_left_and_right .info{background: rgba(<?php echo akina_option('hpage-focus-bcr'); ?>,<?php echo akina_option('hpage-focus-bcg'); ?>,<?php echo akina_option('hpage-focus-bcb'); ?>,<?php echo akina_option('hpage-focus-bca'); ?>) }
 
 .is-active-link::before, .commentbody:not(:placeholder-shown)~.input-label, .commentbody:focus~.input-label {
     background-color: <?php echo akina_option('theme_skin'); ?> !important
@@ -135,8 +135,8 @@ textarea {
     border: 1px solid <?php echo akina_option('theme_skin'); ?>;
 }
 .post-date {
-    background-color: <?php echo akina_option('theme_skin_sjbj'); ?>;
-    color: <?php echo akina_option('theme_skin_sjwz'); ?>
+    background-color: <?php echo akina_option('hpage-art-tpebc'); ?>;
+    color: <?php echo akina_option('hpage-art-tpac'); ?>
 }
 .post-tags a:hover {
     color: <?php echo akina_option('theme_skin'); ?>
@@ -159,7 +159,7 @@ h1.cat-title {
 h1.fes-title,
 h1.main-title {
     color: <?php echo akina_option('theme_skin'); ?>;
-    border-bottom: 6px dotted <?php echo akina_option('theme_skin_fgf'); ?>;
+    border-bottom: 6px dotted <?php echo akina_option('hpage-art-sc'); ?>;
 }
 .comment .body .comment-at {
     color: <?php echo akina_option('theme_skin'); ?>
@@ -398,14 +398,14 @@ h1.main-title {
     background-color: <?php echo akina_option('theme_skin'); ?>;
 }
 .menu-list li {
-    background-color: <?php echo akina_option('theme_skin_cdbj'); ?>;
+    background-color: <?php echo akina_option('fore-switch-sele-bc'); ?>;
 }
 .post-list-thumb {
-    box-shadow: 0 1px 30px -4px <?php echo akina_option('theme_skin_bkyy'); ?>;
+    box-shadow: 0 1px 30px -4px <?php echo akina_option('hpage-art-bsc'); ?>;
 }
 .font-family-controls button {
     color: <?php echo akina_option('theme_skin'); ?>;
-    background-color: <?php echo akina_option('theme_skin_cdbj'); ?>;
+    background-color: <?php echo akina_option('fore-switch-sele-bc'); ?>;
 }
 .art .art-content #archives a:hover {
     color: <?php echo akina_option('theme_skin'); ?>;
@@ -496,10 +496,10 @@ html {
     width:20px;
     height:20px;
     border-radius:20px;
-    background:<?php echo akina_option('theme_skin_yjjone'); ?>;
+    background:<?php echo akina_option('preload-ani-c1'); ?>;
     content:'';
     position:absolute;
-    background:<?php echo akina_option('theme_skin_yjjtwo'); ?>;
+    background:<?php echo akina_option('preload-ani-c2'); ?>;
     -webkit-animation: preloader_3_before 1.5s infinite ease-in-out;
     -moz-animation: preloader_3_before 1.5s infinite ease-in-out;
     -ms-animation: preloader_3_before 1.5s infinite ease-in-out;
@@ -509,10 +509,10 @@ html {
     width:20px;
     height:20px;
     border-radius:20px;
-    background:<?php echo akina_option('theme_skin_yjjone'); ?>;
+    background:<?php echo akina_option('preload-ani-c1'); ?>;
     content:'';
     position:absolute;
-    background:<?php echo akina_option('theme_skin_yjjone'); ?>;
+    background:<?php echo akina_option('preload-ani-c1'); ?>;
     left:22px;
     -webkit-animation: preloader_3_after 1.5s infinite ease-in-out;
     -moz-animation: preloader_3_after 1.5s infinite ease-in-out;
@@ -525,7 +525,7 @@ html {
     }
     50% {
         -webkit-transform: translateX(50px) scale(1.2) rotate(260deg);
-        background:<?php echo akina_option('theme_skin_yjjone'); ?>;
+        background:<?php echo akina_option('preload-ani-c1'); ?>;
         border-radius:0px;
     }
     100% {
@@ -538,7 +538,7 @@ html {
     }
     50% {
         -webkit-transform: translateX(-50px) scale(1.2) rotate(-260deg);
-        background:<?php echo akina_option('theme_skin_yjjtwo'); ?>;
+        background:<?php echo akina_option('preload-ani-c2'); ?>;
         border-radius:0px;
     }
     100% {
@@ -551,7 +551,7 @@ html {
     }
     50% {
         -moz-transform: translateX(50px) scale(1.2) rotate(260deg);
-        background:<?php echo akina_option('theme_skin_yjjone'); ?>;
+        background:<?php echo akina_option('preload-ani-c1'); ?>;
         border-radius:0px;
     }
     100% {
@@ -564,7 +564,7 @@ html {
     }
     50% {
         -moz-transform: translateX(-50px) scale(1.2) rotate(-260deg);
-        background:<?php echo akina_option('theme_skin_yjjtwo'); ?>;
+        background:<?php echo akina_option('preload-ani-c2'); ?>;
         border-radius:0px;
     }
     100% {
@@ -577,7 +577,7 @@ html {
     }
     50% {
         -ms-transform: translateX(50px) scale(1.2) rotate(260deg);
-        background:<?php echo akina_option('theme_skin_yjjone'); ?>;
+        background:<?php echo akina_option('preload-ani-c1'); ?>;
         border-radius:0px;
     }
     100% {
@@ -590,7 +590,7 @@ html {
     }
     50% {
         -ms-transform: translateX(-50px) scale(1.2) rotate(-260deg);
-        background:<?php echo akina_option('theme_skin_yjjtwo'); ?>;
+        background:<?php echo akina_option('preload-ani-c2'); ?>;
         border-radius:0px;
     }
     100% {
@@ -603,7 +603,7 @@ html {
     }
     50% {
         transform: translateX(50px) scale(1.2) rotate(260deg);
-        background:<?php echo akina_option('theme_skin_yjjone'); ?>;
+        background:<?php echo akina_option('preload-ani-c1'); ?>;
         border-radius:0px;
     }
     100% {
@@ -616,7 +616,7 @@ html {
     }
     50% {
         transform: translateX(-50px) scale(1.2) rotate(-260deg);
-        background:<?php echo akina_option('theme_skin_yjjtwo'); ?>;
+        background:<?php echo akina_option('preload-ani-c2'); ?>;
         border-radius:0px;
     }
     100% {
@@ -724,7 +724,7 @@ font-family: <?php echo akina_option('keytitlefont'); ?>;
 
 .center-text{
 font-size: <?php echo akina_option('keytitle_size'); ?>px;
-color: <?php echo akina_option('theme_skin_keytitle'); ?>;
+color: <?php echo akina_option('hpage-ket-tfc'); ?>;
 }
 
 /*鼠标*/
