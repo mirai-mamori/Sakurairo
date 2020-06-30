@@ -6,7 +6,7 @@
 
 ?>
 	<div class="top-feature">
-		<h1 class="fes-title" style="font-family: 'Ubuntu', sans-serif;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> <?php echo akina_option('feature_title', '聚焦'); ?></h1>
+		<h1 class="fes-title" style="font-family: 'Ubuntu', sans-serif;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> <?php echo akina_option('focus-area-title', '聚焦'); ?></h1>
 		<div class="feature-content">
 			<li class="feature-1">
 				<a href="<?php echo akina_option('feature1_link', '#'); ?>" target="_blank"><div class="feature-title"><span class="foverlay-bg"></span><span class="foverlay"><?php echo akina_option('feature1_title', 'feature1'); ?></span></div><img class="lazyload" src="<?php echo akina_option('webweb_img'); ?>/load/outload.svg" data-src="<?php echo akina_option('feature1_img', ''); ?>"></a>
