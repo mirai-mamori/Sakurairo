@@ -989,7 +989,7 @@ function optionsframework_options()
         'name' => __('Panel main color A', 'sakurairo'), 
         'id' => 'dash_scheme_color_a',
         'std' => "#c6742b",
-        'desc' => __('<i>(array) (optional)</i> An array of CSS color definitions which are used to give the user a feel for the theme.', 'sakurairo'),
+        'desc' => __('Custom color', 'sakurairo'),
         'type' => "color",
     );
 
@@ -997,7 +997,7 @@ function optionsframework_options()
         'name' => __('Panel main color B', 'sakurairo'),
         'id' => 'dash_scheme_color_b',
         'std' => "#d88e4c",
-        'desc' => __('<i>(array) (optional)</i> An array of CSS color definitions which are used to give the user a feel for the theme.', 'sakurairo'),
+        'desc' => __('Custom color', 'sakurairo'),
         'type' => "color",
     );
 
@@ -1005,7 +1005,7 @@ function optionsframework_options()
         'name' => __('Panel main color C', 'sakurairo'),
         'id' => 'dash_scheme_color_c',
         'std' => "#695644",
-        'desc' => __('<i>(array) (optional)</i> An array of CSS color definitions which are used to give the user a feel for the theme.', 'sakurairo'),
+        'desc' => __('Custom color', 'sakurairo'),
         'type' => "color",
     );
 
@@ -1013,7 +1013,7 @@ function optionsframework_options()
         'name' => __('Panel main color D', 'sakurairo'),
         'id' => 'dash_scheme_color_d',
         'std' => "#a19780",
-        'desc' => __('<i>(array) (optional)</i> An array of CSS color definitions which are used to give the user a feel for the theme.', 'sakurairo'),
+        'desc' => __('Custom color', 'sakurairo'),
         'type' => "color",
     );
 
@@ -1021,7 +1021,7 @@ function optionsframework_options()
         'name' => __('Panel icon color——base', 'sakurairo'), 
         'id' => 'dash_scheme_color_base',
         'std' => "#e5f8ff",
-        'desc' => __('<i>(array) (optional)</i> An array of CSS color definitions used to color any SVG icons.', 'sakurairo'),
+        'desc' => __('SVG Icons Custom Color', 'sakurairo'),
         'type' => "color",
     );
 
@@ -1029,7 +1029,7 @@ function optionsframework_options()
         'name' => __('Panel icon color——focus', 'sakurairo'),
         'id' => 'dash_scheme_color_focus',
         'std' => "#fff",
-        'desc' => __('<i>(array) (optional)</i> An array of CSS color definitions used to color any SVG icons.', 'sakurairo'),
+        'desc' => __('SVG Icons Custom Color', 'sakurairo'),
         'type' => "color",
     );
 
@@ -1037,7 +1037,7 @@ function optionsframework_options()
         'name' => __('Panel icon color——current', 'sakurairo'),
         'id' => 'dash_scheme_color_current',
         'std' => "#fff",
-        'desc' => __('<i>(array) (optional)</i> An array of CSS color definitions used to color any SVG icons.', 'sakurairo'),
+        'desc' => __('SVG Icons Custom Color', 'sakurairo'),
         'type' => "color",
     );
 
