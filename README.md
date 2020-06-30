@@ -1,11 +1,10 @@
 ![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/ADTheme.jpg)
 
-<p align="center">
-<img src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/mashiro-logo-s.png" alt="Sakurairo" width="350">
-</p>
-<h1 align="center">Sakurairo 🌸「桜いろ」</h1>
+![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/truelogo.png)
 
->基于主题 [Sakura](https://github.com/mashirozx/Sakura) 的基础上修改的Sakurairo主题
+<h1 align="left"> 「桜いろ」✿ Sakurairo </h1>
+
+> 一个多彩，实用，易于上手，具有强大自定义功能的 WordPress 主题（基于 [Sakura](https://github.com/mashirozx/Sakura) 主题）
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)[![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/mirai-mamori/sakurairo?color=red&logo=jsdelivr&logoColor=red&style=for-the-badge)](https://www.jsdelivr.com/package/gh/mirai-mamori/sakurairo)
 
@@ -19,11 +18,7 @@
 
 ![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/helpgive.jpg)
 
-- 【 WordPress 主题 】Sakurairo 「桜いろ」🌸使用手册：https://asuhe.jp/daily/sakurairo-user-manual
-
-## 已知Bug：
-
-**暂无**
+- 【 WordPress 主题 】「桜いろ」✿ Sakurairo  使用手册：https://asuhe.jp/daily/sakurairo-user-manual
 
 ## 贡献者：
 
@@ -31,7 +26,7 @@
 
 ## 版权说明：
 
-- Sakurairo 主题 使用 [GPL V2.0](https://github.com/mirai-mamori/Sakurairo/blob/master/LICENSE) 协议开源。
+- 「桜いろ」✿ Sakurairo  主题 使用 [GPL V2.0](https://github.com/mirai-mamori/Sakurairo/blob/master/LICENSE) 协议开源。
 
 - 樱花飘落特效、波浪特效、说说模版等均来自互联网，如有版权问题，烦请发邮件（me#okaeri.org）给我，我会及时下线功能。
 

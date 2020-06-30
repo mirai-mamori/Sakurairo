@@ -37,6 +37,18 @@ mashiro_option.skin_bg2 = "<?php echo $bg_arry[0] ?>";
 mashiro_option.skin_bg2 = "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg2.png";
 <?php } ?>
 
+<?php if( akina_option('sakura_skin_bg4' )){ $bg_arry=explode(",", akina_option('sakura_skin_bg4' ));?>
+mashiro_option.skin_bg3 = "<?php echo $bg_arry[0] ?>";
+<?php }else {?>
+mashiro_option.skin_bg3 = "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg3.png";
+<?php } ?>
+
+<?php if( akina_option('sakura_skin_bg5' )){ $bg_arry=explode(",", akina_option('sakura_skin_bg5' ));?>
+mashiro_option.skin_bg4 = "<?php echo $bg_arry[0] ?>";
+<?php }else {?>
+mashiro_option.skin_bg4 = "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg4.png";
+<?php } ?>
+
 <?php if( is_home() ){ ?>
 mashiro_option.land_at_home = true;
 <?php }else {?>

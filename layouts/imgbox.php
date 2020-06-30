@@ -6,7 +6,7 @@
 <style>.header-info::before{display: none !important;opacity: 0 !important;}</style>
 <div id="banner_wave_1"></div><div id="banner_wave_2"></div>
 <figure id="centerbg" class="centerbg">
-<?php if ( !akina_option('focus_infos') ){ ?>
+<?php if ( !akina_option('infor-bar') ){ ?>
 	<div class="focusinfo">
         <?php if (akina_option('focus_logo_text')):?>
         <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="<?php echo akina_option('focus_logo_text', ''); ?>"><?php echo akina_option('focus_logo_text', ''); ?></h1>
@@ -35,9 +35,9 @@
             </script>
             <?php endif; ?>
             <p><?php echo akina_option('admin_des', 'Hi, Mashiro?'); ?></p>
-            <?php if (akina_option('social_style')=="v2"): ?>
+            <?php if (akina_option('infor-bar-style')=="v2"): ?>
             <div class="top-social_v2">
-                <li id="bg-pre"><img class="flipx" src="<?php echo akina_option('webweb_img'); ?>/sns/next.png"/></li>
+                <li id="bg-pre"><img src="<?php echo akina_option('webweb_img'); ?>/sns/pre.png"/></li>
                 <?php if (akina_option('github')){ ?>
                 <li><a href="<?php echo akina_option('github', ''); ?>" target="_blank" class="social-github" title="github"><img src="<?php echo akina_option('webweb_img'); ?>/sns/github.png"/></a></li>
                 <?php } ?>	
@@ -94,9 +94,9 @@
             </div>
             <?php endif; ?>
         </div>
-        <?php if (akina_option('social_style')=="v1"): ?>
+        <?php if (akina_option('infor-bar-style')=="v1"): ?>
 		<div class="top-social">
-		<li id="bg-pre"><img class="flipx" src="<?php echo akina_option('webweb_img'); ?>/sns/next.png"/></li>
+		<li id="bg-pre"><img src="<?php echo akina_option('webweb_img'); ?>/sns/pre.png"/></li>
 		<?php if (akina_option('github')){ ?>
 		<li><a href="<?php echo akina_option('github', ''); ?>" target="_blank" class="social-github" title="github"><img src="<?php echo akina_option('webweb_img'); ?>/sns/github.png"/></a></li>
 		<?php } ?>	

@@ -34,8 +34,8 @@ get_header();
 	<?php } ?>
 	
 	<?php 
-		if(akina_option('top_feature')=='1'){
-                if(akina_option('top_feature_style') == 'left_and_right'){
+		if(akina_option('focus-area')=='1'){
+                if(akina_option('focus-area-style') == 'left_and_right'){
                     get_template_part('layouts/feature_v2');
                 }else{
                     get_template_part('layouts/feature');
