@@ -100,11 +100,15 @@ i.iconfont.js-toggle-search.iconsearch {
 }
 .header-info {
     color: <?php echo akina_option('theme_skin'); ?>;
-    background: <?php echo akina_option('theme_skin_yybj'); ?>;
+    background:rgba(<?php echo akina_option('infor-bar-bg-cr'); ?>, <?php echo akina_option('infor-bar-bg-cg'); ?>, <?php echo akina_option('infor-bar-bg-cb'); ?>, <?php echo akina_option('infor-bar-bg-ca'); ?>);
 }
 .top-social img {
-    background: <?php echo akina_option('theme_skin_yybj'); ?>;
+    background:rgba(<?php echo akina_option('infor-bar-bg-cr'); ?>, <?php echo akina_option('infor-bar-bg-cg'); ?>, <?php echo akina_option('infor-bar-bg-cb'); ?>, <?php echo akina_option('infor-bar-bg-ca'); ?>);
 }
+.skin-menu{
+    background-color: rgba(<?php echo akina_option('fore-switch-bcr'); ?>, <?php echo akina_option('fore-switch-bcg'); ?>, <?php echo akina_option('fore-switch-bcb'); ?>, <?php echo akina_option('fore-switch-bca'); ?>);
+}
+
 body,
 button,
 input,
@@ -1053,6 +1057,10 @@ display:none;
     }
 }
 <?php endif; ?>
+
+.widget-area .sakura_widget{
+    background-image: url(<?php echo akina_option('sakura_widget_bg', ''); ?>);
+}
 
 </style>
 <?php }
