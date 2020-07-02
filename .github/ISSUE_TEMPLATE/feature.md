@@ -2,7 +2,7 @@
 name: 想法建议
 about: 如如果你些建议或是对现有功能的新想法，欢迎提交。
 title: ''
-labels: 优化
+labels: enhancement
 assignees: ''
 ---
 
