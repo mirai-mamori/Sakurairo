@@ -20,6 +20,14 @@
 
 - 【 WordPress 主题 】「桜いろ」✿ Sakurairo  使用手册：https://asuhe.jp/daily/sakurairo-user-manual
 
+<details><summary>遇到问题</summary><br>
+
+如果在使用过程中遇到了任何问题，可以先阅读本主题的 [使用手册](https://asuhe.jp/daily/sakurairo-user-manual)，并进行一些简单的确认：清理浏览器缓存，更换网络环境，确保不是主题包上传目录错误等自身原因。如果你无法靠自己解决问题，可以尝试联系作者或者询问QQ群群友，但记住**任何人没有为你解决问题的义务，只是出于好心的帮助。**  
+在确认你遇到的现象确实是一个 Bug 后，请在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues) 提交问题，并为该问题尽可能的描述清楚，
+按照提供的 issue 模板进行填写，谢谢配合。
+
+</details>
+
 ## 贡献者：
 
 <a href="https://github.com/mirai-mamori"><img src="https://avatars3.githubusercontent.com/u/61381142?s=400" alt="mirai-mamori" width="100"></a>  <a href="https://github.com/Ukenn2112"><img src="https://avatars3.githubusercontent.com/u/60847880?s=400" alt="Ukenn" width="100"></a>  <a href="https://github.com/spirit1431007"><img src="https://avatars1.githubusercontent.com/u/29689177?s=400" alt="Spirit" width="100"></a>  <a href="https://github.com/bymoye"><img src="https://avatars2.githubusercontent.com/u/27877470?s=400" alt="bymoye" width="100"></a>  <a href="https://github.com/givenhyh"><img src="https://avatars3.githubusercontent.com/u/37971883?s=400" alt="givenhyh" width="100"></a>  <a href="https://github.com/Sakurakouji-Runa"><img src="https://avatars2.githubusercontent.com/u/46081776?s=400" alt="Sakurakouji-Runa" width="100"></a>  
