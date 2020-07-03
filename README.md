@@ -15,7 +15,7 @@
 - YouTube：  https://youtu.be/7hskBPe4Yzc
 
 ## 特色：
-> 相比 [Sakura](https://github.com/mashirozx/Sakura)「桜いろ」✿ Sakurairo 多了
+> 相比 [Sakura](https://github.com/mashirozx/Sakura) ，「桜いろ」✿ Sakurairo 有
 
 - 功能类：
     - 自动切换夜间模式
