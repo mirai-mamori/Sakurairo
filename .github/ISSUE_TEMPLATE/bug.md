@@ -1,6 +1,6 @@
 ---
 name: Bug报告
-about: 如果程序的某一功能出现问题，请向我们报告
+about: 如果主题的某一功能出现问题，请向我们报告
 title: ''
 labels: bug
 assignees: ''
