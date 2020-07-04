@@ -66,7 +66,7 @@
 
 - 仓库国内镜像：https://gitee.com/mirai-mamori/Sakurairo
 
-- 主题交流群：784229925
+- 主题交流群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
 
 - 主题交流论坛：https://sakurasaku.cn
 
