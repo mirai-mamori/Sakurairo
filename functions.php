@@ -848,6 +848,7 @@ function bolo_QTnextpage_arg1() {
 //Login Page style
 function custom_login()
 {
+    require get_template_directory() . '/inc/login_addcss.php';
     //echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css" />'."\n";
     echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/inc/login.css?' . SAKURA_VERSION . '" />' . "\n";
     //echo '<script type="text/javascript" src="'.get_bloginfo('template_directory').'/js/jquery.min.js"></script>'."\n";
