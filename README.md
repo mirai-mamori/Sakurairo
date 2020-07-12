@@ -15,18 +15,18 @@
 - YouTube：  https://youtu.be/7hskBPe4Yzc
 
 ## 特色：
-> 相比 [Sakura](https://github.com/mashirozx/Sakura) ，「桜いろ」✿ Sakurairo 有
+> 相比 [Sakura](https://github.com/mashirozx/Sakura) ，本主题具有以下特色内容。
 
 - 功能类：
-    - 自动切换夜间模式
-    - 主页随机图两端分离（支持API）
-    - 文章内嵌提示块（短代码）
+    - 主页随机图多端分离（支持API）
+    - 内嵌提示块（短代码）
     - 特效资源云端化
-    - 系统级集成升级功能
+    - 原生集成升级功能
     - 强大的色彩控制功能
     - 多种全局定制色彩图标
-    - 网页预加载动
+    - 网页预加载动画
     - 强大的字体设置功能
+    - 可选择的夜间模式
 - 特效类：
     - 樱花飘落特效
     - 波浪特效
