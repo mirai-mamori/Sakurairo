@@ -315,6 +315,20 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
+        'name' => __('Social Card', 'sakurairo'), 
+        'desc' => __('On by default, check off. When the social card is turned off, the switch button of background random graph and social network icon will not be displayed', 'sakurairo'), 
+        'id' => 'social-card',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Background Random Graphs Switch', 'sakurairo'), 
+        'desc' => __('Default on (check), cancel check to turn off display. If the check is not checked, the switch button of background random graph will be turned off', 'sakurairo'), 
+        'id' => 'background-rgs',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
         'name' => __('Information Bar Style', 'sakurairo'),
         'id' => 'infor-bar-style',
         'std' => "v1",
@@ -560,6 +574,13 @@ function optionsframework_options()
         'std' => '記事',
         'class' => 'mini',
         'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Home page article details Icon Switch', 'sakurairo'), 
+        'desc' => __('Default on, check off', 'sakurairo'),
+        'id' => 'hpage-art-dis',
+        'std' => '0',
+        'type' => 'checkbox');
 
     //文章页
     $options[] = array(
@@ -972,6 +993,20 @@ function optionsframework_options()
         'std' => '',
         'type' => 'text');
     
+    $options[] = array(
+        'name' => __('More JavaScript', 'sakurairo'), 
+        'desc' => __('check on', 'sakurairo'), 
+        'id' => 'addmorejs',
+        'std' => '0',
+        'type' => 'checkbox');
+        
+    $options[] = array(
+        'name' => __('More JavaScript Url', 'sakurairo'), 
+        'desc' => __('Add More JavaScript Url, Fill in the URL', 'sakurairo'), 
+        'id' => 'addmorejsurl',
+        'std' => '',
+        'type' => 'text');
+
     //后台设置
     $options[] = array(
         'name' => __('Backstage', 'sakurairo'), 
@@ -1898,6 +1933,14 @@ function optionsframework_options()
         'type' => "color",
     );
     
+    $options[] = array(
+        'name' => __('Home page article Prompt Icon Color', 'sakurairo'), 
+        'id' => 'hpage-art-pic',
+        'std' => "#EE9CA7",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+
     $options[] = array(
         'name' => __('Home page article border shadow', 'sakurairo'), 
         'id' => 'hpage-art-bsc',

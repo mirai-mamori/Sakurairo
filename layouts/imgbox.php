@@ -37,7 +37,9 @@
             <p><?php echo akina_option('admin_des', 'Hi, Mashiro?'); ?></p>
             <?php if (akina_option('infor-bar-style')=="v2"): ?>
             <div class="top-social_v2">
+                <?php if (akina_option('background-rgs', '1')): ?>
                 <li id="bg-pre"><img src="<?php echo akina_option('webweb_img'); ?>/sns/pre.png"/></li>
+                <?php endif; ?>
                 <?php if (akina_option('github')){ ?>
                 <li><a href="<?php echo akina_option('github', ''); ?>" target="_blank" class="social-github" title="github"><img src="<?php echo akina_option('webweb_img'); ?>/sns/github.png"/></a></li>
                 <?php } ?>	
@@ -90,13 +92,17 @@
                 <?php if (akina_option('email_name') && akina_option('email_domain')){ ?>
                 <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img src="<?php echo akina_option('webweb_img'); ?>/sns/mail.png"/></a></li>
                 <?php } ?>	
-                <li id="bg-next"><img src="<?php echo akina_option('webweb_img'); ?>/sns/next.png"/></li>	
+                <?php if (akina_option('background-rgs', '1')): ?>
+                <li id="bg-next"><img src="<?php echo akina_option('webweb_img'); ?>/sns/next.png"/></li>
+                <?php endif; ?>	
             </div>
             <?php endif; ?>
         </div>
         <?php if (akina_option('infor-bar-style')=="v1"): ?>
 		<div class="top-social">
+        <?php if (akina_option('background-rgs', '1')): ?>
 		<li id="bg-pre"><img src="<?php echo akina_option('webweb_img'); ?>/sns/pre.png"/></li>
+        <?php endif; ?>
 		<?php if (akina_option('github')){ ?>
 		<li><a href="<?php echo akina_option('github', ''); ?>" target="_blank" class="social-github" title="github"><img src="<?php echo akina_option('webweb_img'); ?>/sns/github.png"/></a></li>
 		<?php } ?>	
@@ -149,7 +155,9 @@
 		<?php if (akina_option('email_name') && akina_option('email_domain')){ ?>
 		<li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img src="<?php echo akina_option('webweb_img'); ?>/sns/mail.png"/></a></li>
 		<?php } ?>	
-		<li id="bg-next"><img src="<?php echo akina_option('webweb_img'); ?>/sns/next.png"/></li>	
+        <?php if (akina_option('background-rgs', '1')): ?>
+		<li id="bg-next"><img src="<?php echo akina_option('webweb_img'); ?>/sns/next.png"/></li>
+        <?php endif; ?>	
 	  	</div>
         <?php endif; ?>
 	</div>
