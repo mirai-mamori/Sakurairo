@@ -32,7 +32,7 @@ if ( akina_option('theme_skin') ) { ?>
     border-color: <?php echo akina_option('theme_skin'); ?> !important
 }
 .post-list-thumb i{ 
-    color: <?php echo akina_option('theme_skin'); ?>;
+    color: <?php echo akina_option('hpage-art-pic'); ?>;
 }
 .insert-image-tips:hover, .insert-image-tips-hover{ 
     color: <?php echo akina_option('theme_skin'); ?>;
@@ -646,7 +646,7 @@ body.dark .header-user-menu::before,body.dark .lower li ul::before{border-color:
 body.dark .post-date,body.dark .float-content i:hover,body.dark .header-user-menu .user-menu-option,body.dark .post-list-thumb a,body.dark .menhera-container .emoji-item:hover{color:#424952;}
 body.dark .entry-content p,body.dark .entry-content ul,body.dark .entry-content ol,body.dark .comments .body p,body.dark .float-content,body.dark .post-list p,body.dark .link-title{color:#bebebe !important;}
 body.dark .entry-title a,body.dark .post-list-thumb .post-title,body.dark .art-content #archives .al_mon_list .al_mon,body.dark .art-content #archives .al_mon_list span,body.dark .art .art-content #archives a,body.dark .menhera-container .emoji-item{color:#bebebe;}
-body.dark .site-top ul li a,body.dark .header-user-menu a,body.dark #mo-nav ul li a,body.dark .site-title a,body.dark header.page-header,body.dark h1.cat-title{color:#eee;}
+body.dark .site-top ul li a,body.dark .header-user-menu a,body.dark #mo-nav ul li a,body.dark .site-title a,body.dark header.page-header,body.dark h1.cat-title,body.dark i.iconfont.js-toggle-search.iconsearch:hover{color:#eee;}
 body.dark .art .art-content #archives .al_year,body.dark .comment-respond input,body.dark .comment-respond textarea,body.dark .siren-checkbox-label{color:#eee;}
 body.dark .post-date,body.dark .post-list-thumb a,body.dark .post-list-thumb i,body.dark .post-meta,body.dark .info-meta a,body.dark .info-meta span{color:#888;}
 body.dark img,body.dark .highlight-wrap,body.dark iframe,body.dark .entry-content .aplayer{filter:brightness(0.6);}
@@ -673,6 +673,7 @@ body.dark,body.dark button,body.dark input,body.dark select,body.dark textarea{c
 body.dark button,body.dark input[type=button],body.dark input[type=reset],body.dark input[type=submit]{box-shadow:none;}
 body.dark input[type=submit]{background-color:rgba(35,38,41,0.8);}
 body.dark .comment .info,body.dark .comment-respond .logged-in-as,body.dark .notification,body.dark .comment-respond .logged-in-as a,body.dark .comment-respond .logged-in-as a:hover{color:#9499a8;}
+body.dark i.iconfont.js-toggle-search.iconsearch{color:#888;}
 
 /*切换动画*/
 html,#main-container,.pattern-center:after,#mo-nav,.headertop-bar::after,.comments,.site-footer,.pattern-center-blank,.yya,.blank,.toc,.search-form input,.wrapper,.site-footer,.site-wrapper,#moblieGoTop:hover,#changskin:hover,.post-list-show,.post-list hr,.post-date,.float-content i:hover{transition:background 1s;}
@@ -1063,6 +1064,18 @@ display:none;
 .widget-area .sakura_widget{
     background-image: url(<?php echo akina_option('sakura_widget_bg', ''); ?>);
 }
+
+<?php if (akina_option('hpage-art-dis', '1')): ?>
+.float-content i {
+    display: none;
+}
+<?php endif; ?>
+
+<?php if (akina_option('social-card', '1')): ?>
+.top-social_v2,.top-social{
+    display: none;
+}
+<?php endif; ?>
 
 </style>
 <?php }
