@@ -24,10 +24,6 @@
 
 本主题快速更新版，更新周期不定，提供最新的实用功能。  [Advance Edition 下载地址](https://github.com/mirai-mamori/Sakurairo/tree/advance) 
 
-![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Goldenbar.png)
-
-本主题长更新周期版，更新周期一个季度，提供最佳的使用体验。  [Golden Edition 下载地址](https://github.com/mirai-mamori/Sakurairo/tree/golden) 
-
 ## 特色：
 > 相比 [Sakura](https://github.com/mashirozx/Sakura) ，本主题具有以下特色内容。
 
