@@ -898,12 +898,17 @@ function custom_html()
 		  alert("Please slide the block to verificate!");
 		  return false;
 	  }
-	}
+    }
+    $(document).ready(function(){
+        $(\'h1 a\').attr(\'style\',\'background-image: url(' . akina_option('logo_img') . '); \');
+		$(".forgetmenot").replaceWith(\'<p class="forgetmenot">Remember Me<input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>\');
+	});
+    </script>';
+if (akina_option('logn_pf', '1')) {
+    echo '<script>
 	$(document).ready(function(){
 		$( \'<p><div id="verification-slider"><div id="slider"><div id="slider_bg"></div><span id="label">»</span><span id="labelTip">Slide to Verificate</span></div><input type="hidden" name="verification" value="verification" /></div><p>\' ).insertBefore( $( ".submit" ) );
 		$(\'form\').attr(\'onsubmit\',\'return verificationOK();\');
-        $(\'h1 a\').attr(\'style\',\'background-image: url(' . akina_option('logo_img') . '); \');
-		$(".forgetmenot").replaceWith(\'<p class="forgetmenot">Remember Me<input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>\');
 	});
 	</script>';
     echo '<script type="text/javascript">
@@ -943,6 +948,7 @@ function custom_html()
 		}
 	</script>
 	<script type="text/javascript" src="' . get_template_directory_uri() . '/user/verification.js"></script>';
+}
 }
 add_action('login_footer', 'custom_html');
 
