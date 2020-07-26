@@ -1130,6 +1130,13 @@ function optionsframework_options()
         'id' => 'login_urlskip',
         'std' => '0',
         'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('登录验证', 'sakurairo'), 
+        'desc' => __('Check to enable slide verification', 'sakurairo'), 
+        'id' => 'login_pf',
+        'std' => '1',
+        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Registration verification (frontend only, backend forced open)', 'sakurairo'), 
