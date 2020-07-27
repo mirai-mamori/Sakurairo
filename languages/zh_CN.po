@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-07-13 20:19+0800\n"
-"PO-Revision-Date: 2020-07-13 20:22+0800\n"
+"POT-Creation-Date: 2020-07-27 13:27+0800\n"
+"PO-Revision-Date: 2020-07-27 13:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -142,36 +142,36 @@ msgstr "小工具"
 msgid "Nav Menus"
 msgstr "导航菜单"
 
-#: functions.php:469 inc/theme_plus.php:186 layouts/authorprofile.php:11
+#: functions.php:468 inc/theme_plus.php:186 layouts/authorprofile.php:11
 #: options.php:132
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:469
+#: functions.php:468
 msgid "Blogger"
 msgstr "博客作者"
 
-#: functions.php:473
+#: functions.php:472
 msgid "Location"
 msgstr "来自"
 
-#: functions.php:477
+#: functions.php:476
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:479
+#: functions.php:478
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:481
+#: functions.php:480
 msgid "No"
 msgstr "否"
 
-#: functions.php:484
+#: functions.php:483
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:573
+#: functions.php:572
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
@@ -179,40 +179,40 @@ msgstr ""
 "请安装插件 <a href=\"https://wordpress.org/plugins/wp-statistics/\" target="
 "\"_blank\">WP-Statistics</a>"
 
-#: functions.php:629
+#: functions.php:628
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:1349
+#: functions.php:1354
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1370 options.php:115 options.php:1101 options.php:1148
-#: options.php:1440
+#: functions.php:1375 options.php:115 options.php:1101 options.php:1155
+#: options.php:1447
 msgid " "
 msgstr ""
 
-#: functions.php:1374
+#: functions.php:1379
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1397 functions.php:1400 inc/theme_plus.php:478
+#: functions.php:1402 functions.php:1405 inc/theme_plus.php:478
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1626
+#: functions.php:1631
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1731
+#: functions.php:1717
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1803
+#: functions.php:1789
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1929
+#: functions.php:1915
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -917,7 +917,7 @@ msgstr "公告内容，文字超出142个字节将会被滚动显示（移动端
 msgid "Focus Area"
 msgstr "聚焦区域"
 
-#: options.php:463 options.php:1359
+#: options.php:463 options.php:1366
 msgid "Default on"
 msgstr "默认开启"
 
@@ -1317,9 +1317,9 @@ msgid "Homepage animation"
 msgstr "前台动画"
 
 #: options.php:890 options.php:897 options.php:904 options.php:934
-#: options.php:1451 options.php:1458 options.php:1478 options.php:1493
-#: options.php:1515 options.php:1529 options.php:1536 options.php:1543
-#: options.php:1571 options.php:1578 options.php:1669
+#: options.php:1458 options.php:1465 options.php:1485 options.php:1500
+#: options.php:1522 options.php:1536 options.php:1543 options.php:1550
+#: options.php:1578 options.php:1585 options.php:1676
 msgid "Check open"
 msgstr "勾选启用"
 
@@ -1578,54 +1578,58 @@ msgid ""
 msgstr "勾选开启，管理员跳转至后台，用户跳转至主页。"
 
 #: options.php:1135
-msgid "Registration verification (frontend only, backend forced open)"
-msgstr "注册验证（仅前端，后端强制开启）"
+msgid "Login Validation"
+msgstr "登录验证"
 
-#: options.php:1136
+#: options.php:1136 options.php:1143
 msgid "Check to enable slide verification"
 msgstr "勾选开启滑动验证"
 
-#: options.php:1143
+#: options.php:1142
+msgid "Registration verification (frontend only, backend forced open)"
+msgstr "注册验证（仅前端，后端强制开启）"
+
+#: options.php:1150
 msgid "Advanced"
 msgstr "｜进阶"
 
-#: options.php:1147
+#: options.php:1154
 msgid "Warning"
 msgstr "注意"
 
-#: options.php:1158
+#: options.php:1165
 msgid "Use the front-end library locally (lib.js、lib.css)"
 msgstr "本地调用前端库"
 
-#: options.php:1159
+#: options.php:1166
 msgid "The front-end library don't load from jsDelivr, not recommand"
 msgstr "前端库不走 jsDelivr CDN"
 
-#: options.php:1165
+#: options.php:1172
 msgid "Use js and css file of the theme (sakura-app.js、style.css) locally"
 msgstr "本地调用主题 JS、CSS 文件"
 
-#: options.php:1166
+#: options.php:1173
 msgid ""
 "The js and css files of the theme do not load from jsDelivr, please open "
 "when DIY"
 msgstr "主题的部分JS及CSS文件不走 jsDelivr CDN，默认开启"
 
-#: options.php:1172
+#: options.php:1179
 msgid "Gravatar avatar proxy"
 msgstr "Gravatar头像代理"
 
-#: options.php:1173
+#: options.php:1180
 msgid ""
 "A front-ed proxy for Gravatar, eg. sdn.geekzu.org/avatar . Leave it blank if "
 "you do not need."
 msgstr "填写Gravatar头像的代理地址，留空则不使用代理。"
 
-#: options.php:1179
+#: options.php:1186
 msgid "Images CDN"
 msgstr "图片库"
 
-#: options.php:1180
+#: options.php:1187
 msgid ""
 "Note: Fill in the format http(s)://your CDN domain name/. <br>In other "
 "words, the original path is http://your.domain/wp-content/uploads/2018/05/xx."
@@ -1635,56 +1639,56 @@ msgstr ""
 "domain/wp-content/uploads/2018/05/xx.png 的图片将从 http://你的CDN域"
 "名/2018/05/xx.png 加载"
 
-#: options.php:1186
+#: options.php:1193
 msgid "Google analytics"
 msgstr "Google 统计代码"
 
-#: options.php:1187
+#: options.php:1194
 msgid "UA-xxxxx-x"
 msgstr "评论UA信息"
 
-#: options.php:1193
+#: options.php:1200
 msgid "CNZZ Statistics (not recommand)"
 msgstr "站长统计（不建议使用）"
 
-#: options.php:1194
+#: options.php:1201
 msgid "Statistics code, which will be invisible in web page."
 msgstr "填写统计代码，将被隐藏。"
 
-#: options.php:1200
+#: options.php:1207
 msgid "Customize CSS styles"
 msgstr "自定义CSS样式"
 
-#: options.php:1201
+#: options.php:1208
 msgid "Fill in the CSS code directly, no need to write style tags"
 msgstr "直接填写CSS代码，不需要写style标签"
 
-#: options.php:1207
+#: options.php:1214
 msgid "The categories of articles that don't not show on homepage"
 msgstr "首页不显示的分类文章"
 
-#: options.php:1208 options.php:1215
+#: options.php:1215 options.php:1222
 msgid "Fill in category ID, multiple IDs are divided by a comma \",\""
 msgstr "填写分类ID，多个用英文“ , ”分开"
 
-#: options.php:1214
+#: options.php:1221
 msgid "Images category"
 msgstr "图片展示分类"
 
-#: options.php:1221
+#: options.php:1228
 msgid "Version Control"
 msgstr "版本控制"
 
-#: options.php:1222
+#: options.php:1229
 msgid ""
 "Used to update frontend cookies and browser caches, any string can be used"
 msgstr "用于更新前端 Cookie 及浏览器缓存，可使用任意字符串"
 
-#: options.php:1228
+#: options.php:1235
 msgid "Time Zone adjustment"
 msgstr "时区调整"
 
-#: options.php:1229
+#: options.php:1236
 msgid ""
 "If the comment has a time difference problem adjust here, fill in an "
 "integer, the calculation method: actual_time = display_error_time - "
@@ -1693,11 +1697,11 @@ msgstr ""
 "如果评论出现时差问题在这里调整，填入一个整数，计算方法：实际时间=显示错误的时"
 "间-你输入的整数（单位：小时）"
 
-#: options.php:1236
+#: options.php:1243
 msgid "BaguetteBox Funtion"
 msgstr "BaguetteBox 功能"
 
-#: options.php:1237
+#: options.php:1244
 msgid ""
 "Default off，<a href=\"https://github.com/mashirozx/Sakura/wiki/Fancybox"
 "\">please read wiki</a>"
@@ -1705,26 +1709,26 @@ msgstr ""
 "默认禁用，<a href=\"https://github.com/mashirozx/Sakura/wiki/Fancybox\">请阅"
 "读说明</a>"
 
-#: options.php:1244
+#: options.php:1251
 msgid "Function"
 msgstr "｜功能"
 
-#: options.php:1248
+#: options.php:1255
 msgid "Bilibili UID"
 msgstr "哔哩哔哩UID"
 
-#: options.php:1249
+#: options.php:1256
 msgid ""
 "Fill in your UID, eg.https://space.bilibili.com/13972644/, only fill in with "
 "the number part."
 msgstr ""
 "填写你的UID，例如：https://space.bilibili.com/13972644/，只需填写数字部分。"
 
-#: options.php:1255
+#: options.php:1262
 msgid "Bilibili Cookie"
 msgstr "哔哩哔哩Cookie"
 
-#: options.php:1256
+#: options.php:1263
 msgid ""
 "Fill in your Cookies, go to your bilibili homepage, you can get cookies in "
 "brownser network pannel with pressing F12. If left this blank, you'll not "
@@ -1733,60 +1737,60 @@ msgstr ""
 "填写你的帐号Cookies。F12打开浏览器网络面板，前往你的B站主页获取Cookies。如果"
 "留空，将不会显示追番进度。"
 
-#: options.php:1262
+#: options.php:1269
 msgid "Statistics Interface"
 msgstr "统计接口"
 
-#: options.php:1267
+#: options.php:1274
 msgid ""
 "WP-Statistics plugin (Professional statistics, can exclude invalid access)"
 msgstr "WP-Statistics 插件（专业性统计，可排除无效访问）"
 
-#: options.php:1268
+#: options.php:1275
 msgid "Theme built-in (simple statistics, calculate each page access request)"
 msgstr "主题内建（简单的统计，计算每一次页面访问请求）"
 
-#: options.php:1272
+#: options.php:1279
 msgid "Statistical data display format"
 msgstr "统计数据显示格式"
 
-#: options.php:1277
+#: options.php:1284
 msgid "23333 Views (default)"
 msgstr "23333 次访问（默认）"
 
-#: options.php:1278
+#: options.php:1285
 msgid "23,333 Views (britain)"
 msgstr "23,333 次访问（英式）"
 
-#: options.php:1279
+#: options.php:1286
 msgid "23 333 Views (french)"
 msgstr "23 333 次访问（法式）"
 
-#: options.php:1280
+#: options.php:1287
 msgid "23k Views (chinese)"
 msgstr "23k 次访问（中式）"
 
-#: options.php:1284
+#: options.php:1291
 msgid "Comment image upload API"
 msgstr "评论上传图片接口"
 
-#: options.php:1289
+#: options.php:1296
 msgid "Imgur (https://imgur.com)"
 msgstr ""
 
-#: options.php:1290
+#: options.php:1297
 msgid "SM.MS (https://sm.ms)"
 msgstr ""
 
-#: options.php:1291
+#: options.php:1298
 msgid "Chevereto (https://chevereto.com)"
 msgstr ""
 
-#: options.php:1295
+#: options.php:1302
 msgid "Imgur Client ID"
 msgstr ""
 
-#: options.php:1296
+#: options.php:1303
 msgid ""
 "Register your application <a href=\"https://api.imgur.com/oauth2/addclient"
 "\">here</a>, note we only need the Client ID here."
@@ -1794,48 +1798,48 @@ msgstr ""
 "在<a href=\"https://api.imgur.com/oauth2/addclient\">这里</a>注册你的 "
 "application , 注意此处只需要填写 Client ID."
 
-#: options.php:1302
+#: options.php:1309
 msgid "SM.MS Secret Token"
 msgstr ""
 
-#: options.php:1303
+#: options.php:1310
 msgid ""
 "Register your application <a href=\"https://sm.ms/home/apitoken\">here</a>."
 msgstr "在<a href=\"https://sm.ms/home/apitoken\">这里</a>获取 key."
 
-#: options.php:1309
+#: options.php:1316
 msgid "Chevereto API v1 key"
 msgstr ""
 
-#: options.php:1310
+#: options.php:1317
 msgid "Get your API key here: "
 msgstr "在这里获取你的 API key： "
 
-#: options.php:1316
+#: options.php:1323
 msgid "Chevereto URL"
 msgstr ""
 
-#: options.php:1317
+#: options.php:1324
 msgid ""
 "Your Chevereto homepage url, no slash in the end, eg. https://your.cherverto."
 "com"
 msgstr ""
 "你的 Chevereto 首页 url, 注意结尾没有 /, 例如：https://your.cherverto.com"
 
-#: options.php:1323
+#: options.php:1330
 msgid "Comment images proxy"
 msgstr "评论图片代理"
 
-#: options.php:1324
+#: options.php:1331
 msgid ""
 "A front-ed proxy for the uploaded images. Leave it blank if you do not need."
 msgstr "前端显示的图片的代理。"
 
-#: options.php:1330
+#: options.php:1337
 msgid "Imgur upload proxy"
 msgstr "Imgur 上传代理"
 
-#: options.php:1331
+#: options.php:1338
 msgid ""
 "A back-ed proxy to upload images. You may set a self hosted proxy with "
 "Nginx, following my <a href=\"https://2heng.xin/2018/06/06/javascript-upload-"
@@ -1850,19 +1854,19 @@ msgstr ""
 "端显示都需要代理！如果服务器在国外不需要上传代理，此处填写默认值即可：【<a "
 "href=\"https://api.imgur.com/3/image/\">https://api.imgur.com/3/image/</a>】"
 
-#: options.php:1337
+#: options.php:1344
 msgid "Search background customization"
 msgstr "自定义搜索背景"
 
-#: options.php:1338
+#: options.php:1345
 msgid "It is the cute one that opens the search interface"
 msgstr "就是那个活泼乱跳的孩纸(●'◡'●)"
 
-#: options.php:1344
+#: options.php:1351
 msgid "Real Time Search Function"
 msgstr "实时搜素功能"
 
-#: options.php:1345
+#: options.php:1352
 msgid ""
 "Real-time search in the foreground, call the Rest API to update the cache "
 "every hour, you can manually set the cache time in api.php"
@@ -1870,44 +1874,44 @@ msgstr ""
 "前台实现实时搜索，调用 Rest API 每小时更新一次缓存，可在 api.php 里手动设置缓"
 "存时间"
 
-#: options.php:1351
+#: options.php:1358
 msgid "Include Comments in Real Time Search"
 msgstr "实时搜索支援评论"
 
-#: options.php:1352
+#: options.php:1359
 msgid ""
 "Search for comments in real-time search (not recommended if there are too "
 "many comments on the site)"
 msgstr "在实时搜索中搜索评论（如果网站评论数量太多不建议开启）"
 
-#: options.php:1358
+#: options.php:1365
 msgid "Article Page Lazyload Function"
 msgstr "文章页LazyLoad功能"
 
-#: options.php:1365
+#: options.php:1372
 msgid "lazyload spinner"
 msgstr "LazyLoad 占位图"
 
-#: options.php:1366
+#: options.php:1373
 msgid "The placeholder to display when the image loads, fill in the image url"
 msgstr "图片加载时要显示的占位图，填写图片地址"
 
-#: options.php:1372
+#: options.php:1379
 msgid "Clipboard Copyright ID"
 msgstr "剪切板版权提示"
 
-#: options.php:1373
+#: options.php:1380
 msgid ""
 "Check on by default. When copying more than 30 bytes, the copyright mark "
 "will be added to the clipboard automatically."
 msgstr ""
 "默认开启，此功能将在复制的文字超过30字节时，自动添加版权提示到复制的文字中。"
 
-#: options.php:1379
+#: options.php:1386
 msgid "Email address prefix"
 msgstr "发件地址前缀"
 
-#: options.php:1380
+#: options.php:1387
 msgid ""
 "For sending system mail, the sender address displayed in the user's mailbox, "
 "do not use Chinese, the default system email address is bibi@your_domain_name"
@@ -1915,11 +1919,11 @@ msgstr ""
 "用于发送系统邮件，在用户的邮箱中显示的发件人地址，不要使用中文，默认系统邮件"
 "地址为 bibi@你的域名"
 
-#: options.php:1386
+#: options.php:1393
 msgid "Comments reply notification"
 msgstr "邮件回复通知"
 
-#: options.php:1387
+#: options.php:1394
 msgid ""
 "WordPress will use email to notify users when their comments receive a reply "
 "by default. Tick this item allows users to set their own comments reply "
@@ -1928,168 +1932,168 @@ msgstr ""
 "WordPress默认会使用邮件通知用户评论收到回复，开启此项允许用户设置自己的评论收"
 "到回复时是否使用邮件通知"
 
-#: options.php:1393
+#: options.php:1400
 msgid "Administrator comment notification"
 msgstr "邮件回复通知管理员"
 
-#: options.php:1394
+#: options.php:1401
 msgid ""
 "Whether to use email notification when the administrator's comments receive "
 "a reply"
 msgstr "当管理员评论收到回复时是否使用邮件通知"
 
-#: options.php:1400
+#: options.php:1407
 msgid "Private Comment Function"
 msgstr "私人评论功能"
 
-#: options.php:1401
+#: options.php:1408
 msgid ""
 "It is not checked by default. It is checked to enable. This feature allows "
 "users to set their own comments invisible to others"
 msgstr "默认不勾选，勾选开启。此功能允许用户设置自己的评论对其他人不可见"
 
-#: options.php:1407
+#: options.php:1414
 msgid "Human verification"
 msgstr "机器人验证"
 
-#: options.php:1408
+#: options.php:1415
 msgid "Enable human verification"
 msgstr "开启机器人验证"
 
-#: options.php:1414
+#: options.php:1421
 msgid "QQ avatar link encryption"
 msgstr "QQ头像链接加密"
 
-#: options.php:1415
+#: options.php:1422
 msgid "Do not display the user's qq avatar links directly."
 msgstr "不直接暴露用户QQ头像链接。"
 
-#: options.php:1420
+#: options.php:1427
 msgid "Off (default)"
 msgstr "关闭（默认）"
 
-#: options.php:1421
+#: options.php:1428
 msgid "use redirect (general security)"
 msgstr "使用重定向（安全性低）"
 
-#: options.php:1422
+#: options.php:1429
 msgid "fetch data at backend (high security)"
 msgstr "后端获取头像数据（安全性高）"
 
-#: options.php:1423
+#: options.php:1430
 msgid "fetch data at backend (high security，slow)"
 msgstr "后端解析QQ头像接口（安全性高，慢）"
 
-#: options.php:1427
+#: options.php:1434
 msgid "Comment UA infomation"
 msgstr "评论UA信息"
 
-#: options.php:1428
+#: options.php:1435
 msgid ""
 "Check to enable, display the user's browser, operating system information"
 msgstr "勾选开启，显示用户的浏览器，操作系统信息"
 
-#: options.php:1435
+#: options.php:1442
 msgid "Enhanced"
 msgstr "｜增强"
 
-#: options.php:1439
+#: options.php:1446
 msgid "You Should Know"
 msgstr "你需要知道的"
 
-#: options.php:1450
+#: options.php:1457
 msgid "Preload animation"
 msgstr "预加载动画"
 
-#: options.php:1457
+#: options.php:1464
 msgid "Cherry Blossom falling effect"
 msgstr "樱花飘落特效"
 
-#: options.php:1464
+#: options.php:1471
 msgid "Cherry Blossom falling quantity"
 msgstr "樱花飘落数量"
 
-#: options.php:1465
+#: options.php:1472
 msgid "Four kinds of quantity, default native quantity"
 msgstr "四种数量，默认原生数量"
 
-#: options.php:1470
+#: options.php:1477
 msgid "native"
 msgstr "原生"
 
-#: options.php:1471
+#: options.php:1478
 msgid "quarter"
 msgstr "四分之一"
 
-#: options.php:1472
+#: options.php:1479
 msgid "half"
 msgstr "一半"
 
-#: options.php:1473
+#: options.php:1480
 msgid "less"
 msgstr "少量"
 
-#: options.php:1477
+#: options.php:1484
 msgid "Wave effects"
 msgstr "波浪特效"
 
-#: options.php:1484
+#: options.php:1491
 msgid "Footer suspension player default volume"
 msgstr "页脚音乐播放器默认音量"
 
-#: options.php:1485
+#: options.php:1492
 msgid "Maximum 1 minimum 0"
 msgstr "最大值1，最小值0.1"
 
-#: options.php:1492
+#: options.php:1499
 msgid "live2D"
 msgstr "Live2D 看板娘"
 
-#: options.php:1499
+#: options.php:1506
 msgid "Live2D Custom Resource Address"
 msgstr "Live2D 看板娘 自定义 地址"
 
-#: options.php:1500
+#: options.php:1507
 msgid "Fill in Live2D Custom Resource Address"
 msgstr "填写 Live2D 看板娘 自定义 地址"
 
-#: options.php:1506
+#: options.php:1513
 msgid "Live2D Custom Resource Version"
 msgstr "Live2D 看板娘 自定义 版本"
 
-#: options.php:1507
+#: options.php:1514
 msgid "Fill in Live2D Custom Resource Version"
 msgstr "填写 Live2D 看板娘 自定义 版本"
 
-#: options.php:1514
+#: options.php:1521
 msgid "Drop-down arrow"
 msgstr "首页下拉箭头"
 
-#: options.php:1521
+#: options.php:1528
 msgid "Turn off Drop-down arrow mobile display"
 msgstr "首页下拉箭头 移动端"
 
-#: options.php:1522
+#: options.php:1529
 msgid "Check by default, cancel opening"
 msgstr "默认勾选（关闭），取消勾选以开启。"
 
-#: options.php:1528
+#: options.php:1535
 msgid "a brief remark"
 msgstr "页脚随机话语功能"
 
-#: options.php:1535
+#: options.php:1542
 msgid "One word typing effect of home page"
 msgstr "首页签名栏打字效果"
 
-#: options.php:1542
+#: options.php:1549
 msgid "Double quotation marks for typing effect"
 msgstr "首页签名栏打字效果双引号"
 
-#: options.php:1549
+#: options.php:1556
 msgid "Typewriting effect text"
 msgstr "打字效果文字"
 
-#: options.php:1550
+#: options.php:1557
 msgid ""
 "Fill in the text part of the typing effect (double quotation marks must be "
 "used outside the text, and English commas shall be used to separate the two "
@@ -2098,153 +2102,153 @@ msgstr ""
 "填写打字效果文字部分(文字外必须使用英文双引号，二句话之间使用英文逗号隔开，支"
 "持HTML标签）"
 
-#: options.php:1556
+#: options.php:1563
 msgid "Homepage one word blogger description"
 msgstr "主页签名栏文字"
 
-#: options.php:1557 options.php:1564
+#: options.php:1564 options.php:1571
 msgid "A self description"
 msgstr "一段自我描述的话"
 
-#: options.php:1563
+#: options.php:1570
 msgid "Blog description at the end of the article"
 msgstr "文章末尾作者签名栏"
 
-#: options.php:1570
+#: options.php:1577
 msgid "Note effects"
 msgstr "音符触动效果"
 
-#: options.php:1577
+#: options.php:1584
 msgid "Logo special effects"
 msgstr "Logo特效"
 
-#: options.php:1584
+#: options.php:1591
 msgid "Logo text A"
 msgstr "Logo文字A"
 
-#: options.php:1585
+#: options.php:1592
 msgid "Fill in the front part of your logo text"
 msgstr "填写你的Logo文字前部分"
 
-#: options.php:1591
+#: options.php:1598
 msgid "Logo text B"
 msgstr "Logo文字B"
 
-#: options.php:1592
+#: options.php:1599
 msgid "Fill in the middle part of your logo text"
 msgstr "填写你的Logo文字中部部分"
 
-#: options.php:1598
+#: options.php:1605
 msgid "Logo text C"
 msgstr "Logo文字C"
 
-#: options.php:1599
+#: options.php:1606
 msgid "Fill in the back of your logo"
 msgstr "填写你的Logo文字后部分"
 
-#: options.php:1605
+#: options.php:1612
 msgid "Logo secondary text"
 msgstr "Logo二级文字"
 
-#: options.php:1606
+#: options.php:1613
 msgid "Fill in the secondary text of your logo."
 msgstr "填写你的Logo二级文字，不需要可以不填。"
 
-#: options.php:1612
+#: options.php:1619
 msgid "Mail template header"
 msgstr "邮件模板头部图"
 
-#: options.php:1613
+#: options.php:1620
 msgid "Set the background picture above your message"
 msgstr "设置你的邮件上方背景图片"
 
-#: options.php:1620
+#: options.php:1627
 msgid "Custom mouse style - Standard"
 msgstr "自定义鼠标样式-标准"
 
-#: options.php:1621
+#: options.php:1628
 msgid "Apply to global, fill in link."
 msgstr "应用于全局，填写Cur鼠标文件链接。"
 
-#: options.php:1627
+#: options.php:1634
 msgid "Custom mouse style - Selected"
 msgstr "自定义鼠标样式-选定"
 
-#: options.php:1628
+#: options.php:1635
 msgid "Return to the above for PC"
 msgstr "应用于多种样式"
 
-#: options.php:1634
+#: options.php:1641
 msgid "Custom mouse style - Selected elements"
 msgstr "自定义鼠标样式-选中元素"
 
-#: options.php:1635
+#: options.php:1642
 msgid "Used to select a place"
 msgstr "用作选中某个地方"
 
-#: options.php:1641
+#: options.php:1648
 msgid "Custom mouse style - Selected text"
 msgstr "自定义鼠标样式-选中文本"
 
-#: options.php:1642
+#: options.php:1649
 msgid "Used to select a Text"
 msgstr "用作选中文本"
 
-#: options.php:1648
+#: options.php:1655
 msgid "Custom mouse style - Working state"
 msgstr "自定义鼠标样式-工作状态"
 
-#: options.php:1649
+#: options.php:1656
 msgid "Used to working condition"
 msgstr "用作在加载地方"
 
-#: options.php:1656
+#: options.php:1663
 msgid "Fonts"
 msgstr "｜字体"
 
-#: options.php:1660
+#: options.php:1667
 msgid "fontweight"
 msgstr "全局字重（除强调部分）"
 
-#: options.php:1661
+#: options.php:1668
 msgid ""
 "Fill in a number, maximum 900, minimum 100. Between 300 and 500 is "
 "recommended."
 msgstr "填写数字，最大值900，最小值100，300到500之间是推荐值。"
 
-#: options.php:1668
+#: options.php:1675
 msgid "Reference external font"
 msgstr "引用外部字体（可能影响性能）"
 
-#: options.php:1675
+#: options.php:1682
 msgid "External font address"
 msgstr "外部字体地址"
 
-#: options.php:1676
+#: options.php:1683
 msgid "Fill in font address."
 msgstr "填写外部字体地址"
 
-#: options.php:1682
+#: options.php:1689
 msgid "External font name"
 msgstr "外部字体名称"
 
-#: options.php:1683
+#: options.php:1690
 msgid "Fill in the font name."
 msgstr "填写字体名称。"
 
-#: options.php:1689
+#: options.php:1696
 msgid "Google Fonts Api Address"
 msgstr "Google 字体 API地址"
 
-#: options.php:1690
+#: options.php:1697
 msgid "Fill in Google Fonts API Address"
 msgstr "填写 Google 字体 API地址"
 
-#: options.php:1696
+#: options.php:1703
 msgid "Google Fonts Name"
 msgstr "Google 字体 名称"
 
-#: options.php:1697
+#: options.php:1704
 msgid ""
 "Please make sure that the fonts you add can be referenced in Google font "
 "library. Fill in the font name. If multiple fonts are referenced, please use "
@@ -2254,72 +2258,72 @@ msgstr ""
 "有”|“。如果引用多个字体，请使用“|”作为分割符。例：|ZCOOL+XiaoWei|Ma+Shan"
 "+Zheng （如果）字体名称有空格，请用加号替代。"
 
-#: options.php:1703
+#: options.php:1710
 msgid "Global Default Font"
 msgstr "全局默认字体（字体A）"
 
-#: options.php:1704 options.php:1711 options.php:1718 options.php:1725
-#: options.php:1732
+#: options.php:1711 options.php:1718 options.php:1725 options.php:1732
+#: options.php:1739
 msgid "Fill in font name"
 msgstr "填写字体名称。例：Ma Shan Zheng"
 
-#: options.php:1710
+#: options.php:1717
 msgid "Global Font 2"
 msgstr "全局字体B"
 
-#: options.php:1717
+#: options.php:1724
 msgid "Front Page Title Font"
 msgstr "首页区块标题字体"
 
-#: options.php:1724
+#: options.php:1731
 msgid "Front Page One Word Font"
 msgstr "首页签名栏字体"
 
-#: options.php:1731
+#: options.php:1738
 msgid "Front page key title font"
 msgstr "首页文字Logo字体"
 
-#: options.php:1738
+#: options.php:1745
 msgid "Global fontsize"
 msgstr "全局字体大小"
 
-#: options.php:1739 options.php:1763
+#: options.php:1746 options.php:1770
 msgid "Fill in Number. Between 10 and 20 is recommended"
 msgstr "填写数字，10到20之间是推荐值"
 
-#: options.php:1746
+#: options.php:1753
 msgid "Article Title Size"
 msgstr "首页文章标题字体大小"
 
-#: options.php:1747
+#: options.php:1754
 msgid "Fill in Number. Between 15 and 20 is recommended"
 msgstr "填写数字，15到20之间是推荐值"
 
-#: options.php:1754
+#: options.php:1761
 msgid "Article Tips Size"
 msgstr "首页文章提示字体大小"
 
-#: options.php:1755
+#: options.php:1762
 msgid "Fill in Number. Between 10 and 15 is recommended"
 msgstr "填写数字，10到15之间是推荐值"
 
-#: options.php:1762
+#: options.php:1769
 msgid "Front Page One Word FontSize"
 msgstr "首页一言字体大小"
 
-#: options.php:1770
+#: options.php:1777
 msgid "Font size of the first key title"
 msgstr "首页关键标题字体大小"
 
-#: options.php:1771
+#: options.php:1778
 msgid "Fill in Number. Between 70 and 90 is recommended"
 msgstr "填写数字，70到90之间是推荐值"
 
-#: options.php:1778
+#: options.php:1785
 msgid "Logo font link"
 msgstr "Logo字体链接"
 
-#: options.php:1779
+#: options.php:1786
 msgid ""
 "When the font is ready, do this again <a href = \"https://www.fontke.com/"
 "tool/fontface/\">@font-face生成器</a>It can generate a bunch of files, which "
@@ -2333,187 +2337,187 @@ msgstr ""
 "的样式表文件链接 <a href = \"https://blog.ukenn.top/sakura6/#toc-head-4\">详"
 "细教程</a>"
 
-#: options.php:1785
+#: options.php:1792
 msgid "Logo font name"
 msgstr "Logo字体名称"
 
-#: options.php:1786
+#: options.php:1793
 msgid ""
 "Fill in the font name of your logo, write the name directly without the "
 "format suffix"
 msgstr "填写你的Logo字体名称，直接写名字不用加格式后缀"
 
-#: options.php:1793
+#: options.php:1800
 msgid "Color"
 msgstr "｜色彩"
 
-#: options.php:1797
+#: options.php:1804
 msgid "Display icon selection"
 msgstr "显示图标风格选择"
 
-#: options.php:1798
+#: options.php:1805
 msgid "Choose icon color"
 msgstr "选择图标颜色"
 
-#: options.php:1803
+#: options.php:1810
 msgid "「Common Colors」Pink（EE9CA7）"
 msgstr "「普通」粉色（EE9CA7）"
 
-#: options.php:1804
+#: options.php:1811
 msgid "「Common Colors」Orange（FF8000）"
 msgstr "「普通」橙色（FF8000）"
 
-#: options.php:1805
+#: options.php:1812
 msgid "「Nippon Colors」Hanaasagi（1E88A8）"
 msgstr "「日系」花浅葱色（1E88A8）"
 
-#: options.php:1806
+#: options.php:1813
 msgid "「Nippon Colors」Beniukon（E98B2A）"
 msgstr "「日系」紅鬱金色（E98B2A）"
 
-#: options.php:1807
+#: options.php:1814
 msgid "「Nippon Colors」Sangosyu（F17C67）"
 msgstr "「日系」珊瑚朱色（F17C67）"
 
-#: options.php:1808
+#: options.php:1815
 msgid "「Nippon Colors」Sora（58B2DC）"
 msgstr "「日系」空色（58B2DC）"
 
-#: options.php:1809
+#: options.php:1816
 msgid "「Nippon Colors」Nae（86C166）"
 msgstr "「日系」苗色（86C166）"
 
-#: options.php:1810
+#: options.php:1817
 msgid "「Macaron Colors」Blue（B8F1ED）"
 msgstr "「马卡龙色系」蓝色（B8F1ED）"
 
-#: options.php:1811
+#: options.php:1818
 msgid "「Macaron Colors」Green（B8F1CC）"
 msgstr "「马卡龙色系」绿色（B8F1CC）"
 
-#: options.php:1812
+#: options.php:1819
 msgid "「Macaron Colors」Purple（D9B8F1）"
 msgstr "「马卡龙色系」紫色（D9B8F1）"
 
-#: options.php:1813
+#: options.php:1820
 msgid "「Others」ColorFul"
 msgstr "「其他」多彩"
 
-#: options.php:1817
+#: options.php:1824
 msgid "Theme style"
 msgstr "主题色"
 
-#: options.php:1820 options.php:1992
+#: options.php:1827 options.php:1999
 msgid "Custom theme color"
 msgstr "自定义主题颜色"
 
-#: options.php:1825
+#: options.php:1832
 msgid "Information Bar Background Color (RGBA) Red"
 msgstr "信息栏背景颜色（RGBA 红）"
 
-#: options.php:1828 options.php:1864 options.php:1956
+#: options.php:1835 options.php:1871 options.php:1963
 msgid "Fill in the red value from 0 to 255 here"
 msgstr "填写 0~255 的红色值"
 
-#: options.php:1834
+#: options.php:1841
 msgid "Information Bar Background Color (RGBA) Green"
 msgstr "信息栏背景颜色（RGBA 绿）"
 
-#: options.php:1837 options.php:1873 options.php:1965
+#: options.php:1844 options.php:1880 options.php:1972
 msgid "Fill in the green value from 0 to 255 here"
 msgstr "填写 0~255 的绿色值"
 
-#: options.php:1843
+#: options.php:1850
 msgid "Information Bar Background Color (RGBA) Blue"
 msgstr "信息栏背景颜色（RGBA 蓝）"
 
-#: options.php:1846 options.php:1882 options.php:1974
+#: options.php:1853 options.php:1889 options.php:1981
 msgid "Fill in the blue value from 0 to 255 here"
 msgstr "填写 0~255 的蓝色值"
 
-#: options.php:1852
+#: options.php:1859
 msgid "Information Bar Background Color (RGBA) Alpha"
 msgstr "信息栏背景颜色（RGBA 透明度）"
 
-#: options.php:1855 options.php:1891 options.php:1983
+#: options.php:1862 options.php:1898 options.php:1990
 msgid "Fill in the alpha value from 0 to 1 here"
 msgstr "填写 0~1 的透明度值"
 
-#: options.php:1861
+#: options.php:1868
 msgid "Foreground Menu background Color (RGBA) Red"
 msgstr "前台设置菜单背景颜色（RGBA 红）"
 
-#: options.php:1870
+#: options.php:1877
 msgid "Foreground Menu background Color (RGBA) Green"
 msgstr "前台设置菜单背景颜色（RGBA 绿）"
 
-#: options.php:1879
+#: options.php:1886
 msgid "Foreground Menu background Color (RGBA) Blue"
 msgstr "前台设置菜单背景颜色（RGBA 蓝）"
 
-#: options.php:1888
+#: options.php:1895
 msgid "Foreground Menu background Color (RGBA) Alpha"
 msgstr "前台设置菜单背景颜色（RGBA 透明度）"
 
-#: options.php:1897
+#: options.php:1904
 msgid "Foreground selection menu background color"
 msgstr "前台设置菜单选项背景颜色"
 
-#: options.php:1900 options.php:1908 options.php:1916 options.php:1924
-#: options.php:1932 options.php:1940 options.php:1948 options.php:2000
-#: options.php:2008
+#: options.php:1907 options.php:1915 options.php:1923 options.php:1931
+#: options.php:1939 options.php:1947 options.php:1955 options.php:2007
+#: options.php:2015
 msgid "Custom colors"
 msgstr "自定义颜色"
 
-#: options.php:1905
+#: options.php:1912
 msgid "Drop down arrow color"
 msgstr "首页下拉箭头颜色"
 
-#: options.php:1913
+#: options.php:1920
 msgid "Home page article separator"
 msgstr "首页文章分割符颜色"
 
-#: options.php:1921
+#: options.php:1928
 msgid "Home page article time prompt accent"
 msgstr "首页文章时间提示强调文字颜色"
 
-#: options.php:1929
+#: options.php:1936
 msgid "Home page article time prompt emphasize background"
 msgstr "首页文章时间提示强调背景颜色"
 
-#: options.php:1937
+#: options.php:1944
 msgid "Home page article Prompt Icon Color"
 msgstr "首页文章提示图标颜色"
 
-#: options.php:1945
+#: options.php:1952
 msgid "Home page article border shadow"
 msgstr "首页文章边框阴影颜色"
 
-#: options.php:1953
+#: options.php:1960
 msgid "Home page Focus background color (RGBA) Red"
 msgstr "首页聚焦背景颜色（RGBA 红）"
 
-#: options.php:1962
+#: options.php:1969
 msgid "Home page Focus background color (RGBA) Green"
 msgstr "首页聚焦背景颜色（RGBA 绿）"
 
-#: options.php:1971
+#: options.php:1978
 msgid "Home page Focus background color (RGBA) Blue"
 msgstr "首页聚焦背景颜色（RGBA 蓝）"
 
-#: options.php:1980
+#: options.php:1987
 msgid "Home page Focus background color (RGBA) Alpha"
 msgstr "首页聚焦背景颜色（RGBA 透明度）"
 
-#: options.php:1989
+#: options.php:1996
 msgid "Home page key title font color"
 msgstr "首页文字Logo字体颜色"
 
-#: options.php:1997
+#: options.php:2004
 msgid "Preload animation color A"
 msgstr "预加载动画颜色A"
 
-#: options.php:2005
+#: options.php:2012
 msgid "Preload animation color B"
 msgstr "预加载动画颜色B"
 
@@ -2693,8 +2697,12 @@ msgid "https://github.com/mirai-mamori/Sakurairo"
 msgstr ""
 
 #. Description of the plugin/theme
+#, fuzzy
+#| msgid ""
+#| "「ハルジオン　Update」 ｜ 一个多彩，实用，易于上手，具有强大自定义功能的 "
+#| "WordPress 主题（基于 Sakura 主题）"
 msgid ""
-"「ハルジオン　Update」 ｜ 一个多彩，实用，易于上手，具有强大自定义功能的 "
+"「なつはなび　Update」 ｜ 一个多彩，实用，易于上手，具有强大自定义功能的 "
 "WordPress 主题（基于 Sakura 主题）"
 msgstr ""
 "「春紫苑 更新」 ｜ 一个多彩，实用，易于上手，具有强大自定义功能的 WordPress "

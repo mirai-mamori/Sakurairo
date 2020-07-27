@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-07-13 20:19+0800\n"
+"POT-Creation-Date: 2020-07-27 13:27+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -142,73 +142,73 @@ msgstr ""
 msgid "Nav Menus"
 msgstr ""
 
-#: functions.php:469 inc/theme_plus.php:186 layouts/authorprofile.php:11 options.php:132
+#: functions.php:468 inc/theme_plus.php:186 layouts/authorprofile.php:11 options.php:132
 msgid "Author"
 msgstr ""
 
-#: functions.php:469
+#: functions.php:468
 msgid "Blogger"
 msgstr ""
 
-#: functions.php:473
+#: functions.php:472
 msgid "Location"
 msgstr ""
 
-#: functions.php:477
+#: functions.php:476
 msgid "Private"
 msgstr ""
 
-#: functions.php:479
+#: functions.php:478
 msgid "Yes"
 msgstr ""
 
-#: functions.php:481
+#: functions.php:480
 msgid "No"
 msgstr ""
 
-#: functions.php:484
+#: functions.php:483
 msgid "Edit"
 msgstr ""
 
-#: functions.php:573
+#: functions.php:572
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/\" target=\"_blank"
 "\">WP-Statistics</a>"
 msgstr ""
 
-#: functions.php:629
+#: functions.php:628
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:1349
+#: functions.php:1354
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1370 options.php:115 options.php:1101 options.php:1148 options.php:1440
+#: functions.php:1375 options.php:115 options.php:1101 options.php:1155 options.php:1447
 msgid " "
 msgstr ""
 
-#: functions.php:1374
+#: functions.php:1379
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1397 functions.php:1400 inc/theme_plus.php:478
+#: functions.php:1402 functions.php:1405 inc/theme_plus.php:478
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1626
+#: functions.php:1631
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1731
+#: functions.php:1717
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1803
+#: functions.php:1789
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:1929
+#: functions.php:1915
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-permalink.php\"> "
 "permalink </a> as plain. To do this, you may need to configure <a href=\"https://www.wpdaxue."
@@ -883,7 +883,7 @@ msgstr ""
 msgid "Focus Area"
 msgstr ""
 
-#: options.php:463 options.php:1359
+#: options.php:463 options.php:1366
 msgid "Default on"
 msgstr ""
 
@@ -1277,9 +1277,9 @@ msgstr ""
 msgid "Homepage animation"
 msgstr ""
 
-#: options.php:890 options.php:897 options.php:904 options.php:934 options.php:1451
-#: options.php:1458 options.php:1478 options.php:1493 options.php:1515 options.php:1529
-#: options.php:1536 options.php:1543 options.php:1571 options.php:1578 options.php:1669
+#: options.php:890 options.php:897 options.php:904 options.php:934 options.php:1458
+#: options.php:1465 options.php:1485 options.php:1500 options.php:1522 options.php:1536
+#: options.php:1543 options.php:1550 options.php:1578 options.php:1585 options.php:1676
 msgid "Check open"
 msgstr ""
 
@@ -1525,238 +1525,242 @@ msgid ""
 msgstr ""
 
 #: options.php:1135
-msgid "Registration verification (frontend only, backend forced open)"
+msgid "Login Validation"
 msgstr ""
 
-#: options.php:1136
+#: options.php:1136 options.php:1143
 msgid "Check to enable slide verification"
 msgstr ""
 
-#: options.php:1143
+#: options.php:1142
+msgid "Registration verification (frontend only, backend forced open)"
+msgstr ""
+
+#: options.php:1150
 msgid "Advanced"
 msgstr ""
 
-#: options.php:1147
+#: options.php:1154
 msgid "Warning"
 msgstr ""
 
-#: options.php:1158
+#: options.php:1165
 msgid "Use the front-end library locally (lib.js、lib.css)"
 msgstr ""
 
-#: options.php:1159
+#: options.php:1166
 msgid "The front-end library don't load from jsDelivr, not recommand"
 msgstr ""
 
-#: options.php:1165
+#: options.php:1172
 msgid "Use js and css file of the theme (sakura-app.js、style.css) locally"
 msgstr ""
 
-#: options.php:1166
+#: options.php:1173
 msgid "The js and css files of the theme do not load from jsDelivr, please open when DIY"
 msgstr ""
 
-#: options.php:1172
+#: options.php:1179
 msgid "Gravatar avatar proxy"
 msgstr ""
 
-#: options.php:1173
+#: options.php:1180
 msgid ""
 "A front-ed proxy for Gravatar, eg. sdn.geekzu.org/avatar . Leave it blank if you do not need."
 msgstr ""
 
-#: options.php:1179
+#: options.php:1186
 msgid "Images CDN"
 msgstr ""
 
-#: options.php:1180
+#: options.php:1187
 msgid ""
 "Note: Fill in the format http(s)://your CDN domain name/. <br>In other words, the original "
 "path is http://your.domain/wp-content/uploads/2018/05/xx.png and the picture will load from "
 "http://your CDN domain/2018/05/xx.png"
 msgstr ""
 
-#: options.php:1186
+#: options.php:1193
 msgid "Google analytics"
 msgstr ""
 
-#: options.php:1187
+#: options.php:1194
 msgid "UA-xxxxx-x"
 msgstr ""
 
-#: options.php:1193
+#: options.php:1200
 msgid "CNZZ Statistics (not recommand)"
 msgstr ""
 
-#: options.php:1194
+#: options.php:1201
 msgid "Statistics code, which will be invisible in web page."
 msgstr ""
 
-#: options.php:1200
+#: options.php:1207
 msgid "Customize CSS styles"
 msgstr ""
 
-#: options.php:1201
+#: options.php:1208
 msgid "Fill in the CSS code directly, no need to write style tags"
 msgstr ""
 
-#: options.php:1207
+#: options.php:1214
 msgid "The categories of articles that don't not show on homepage"
 msgstr ""
 
-#: options.php:1208 options.php:1215
+#: options.php:1215 options.php:1222
 msgid "Fill in category ID, multiple IDs are divided by a comma \",\""
 msgstr ""
 
-#: options.php:1214
+#: options.php:1221
 msgid "Images category"
 msgstr ""
 
-#: options.php:1221
+#: options.php:1228
 msgid "Version Control"
 msgstr ""
 
-#: options.php:1222
+#: options.php:1229
 msgid "Used to update frontend cookies and browser caches, any string can be used"
 msgstr ""
 
-#: options.php:1228
+#: options.php:1235
 msgid "Time Zone adjustment"
 msgstr ""
 
-#: options.php:1229
+#: options.php:1236
 msgid ""
 "If the comment has a time difference problem adjust here, fill in an integer, the calculation "
 "method: actual_time = display_error_time - the_integer_you_entered (unit: hour)"
 msgstr ""
 
-#: options.php:1236
+#: options.php:1243
 msgid "BaguetteBox Funtion"
 msgstr ""
 
-#: options.php:1237
+#: options.php:1244
 msgid ""
 "Default off，<a href=\"https://github.com/mashirozx/Sakura/wiki/Fancybox\">please read wiki</a>"
 msgstr ""
 
-#: options.php:1244
+#: options.php:1251
 msgid "Function"
 msgstr ""
 
-#: options.php:1248
+#: options.php:1255
 msgid "Bilibili UID"
 msgstr ""
 
-#: options.php:1249
+#: options.php:1256
 msgid ""
 "Fill in your UID, eg.https://space.bilibili.com/13972644/, only fill in with the number part."
 msgstr ""
 
-#: options.php:1255
+#: options.php:1262
 msgid "Bilibili Cookie"
 msgstr ""
 
-#: options.php:1256
+#: options.php:1263
 msgid ""
 "Fill in your Cookies, go to your bilibili homepage, you can get cookies in brownser network "
 "pannel with pressing F12. If left this blank, you'll not get the progress."
 msgstr ""
 
-#: options.php:1262
+#: options.php:1269
 msgid "Statistics Interface"
 msgstr ""
 
-#: options.php:1267
+#: options.php:1274
 msgid "WP-Statistics plugin (Professional statistics, can exclude invalid access)"
 msgstr ""
 
-#: options.php:1268
+#: options.php:1275
 msgid "Theme built-in (simple statistics, calculate each page access request)"
 msgstr ""
 
-#: options.php:1272
+#: options.php:1279
 msgid "Statistical data display format"
 msgstr ""
 
-#: options.php:1277
+#: options.php:1284
 msgid "23333 Views (default)"
 msgstr ""
 
-#: options.php:1278
+#: options.php:1285
 msgid "23,333 Views (britain)"
 msgstr ""
 
-#: options.php:1279
+#: options.php:1286
 msgid "23 333 Views (french)"
 msgstr ""
 
-#: options.php:1280
+#: options.php:1287
 msgid "23k Views (chinese)"
 msgstr ""
 
-#: options.php:1284
+#: options.php:1291
 msgid "Comment image upload API"
 msgstr ""
 
-#: options.php:1289
+#: options.php:1296
 msgid "Imgur (https://imgur.com)"
 msgstr ""
 
-#: options.php:1290
+#: options.php:1297
 msgid "SM.MS (https://sm.ms)"
 msgstr ""
 
-#: options.php:1291
+#: options.php:1298
 msgid "Chevereto (https://chevereto.com)"
 msgstr ""
 
-#: options.php:1295
+#: options.php:1302
 msgid "Imgur Client ID"
 msgstr ""
 
-#: options.php:1296
+#: options.php:1303
 msgid ""
 "Register your application <a href=\"https://api.imgur.com/oauth2/addclient\">here</a>, note we "
 "only need the Client ID here."
 msgstr ""
 
-#: options.php:1302
+#: options.php:1309
 msgid "SM.MS Secret Token"
 msgstr ""
 
-#: options.php:1303
+#: options.php:1310
 msgid "Register your application <a href=\"https://sm.ms/home/apitoken\">here</a>."
 msgstr ""
 
-#: options.php:1309
+#: options.php:1316
 msgid "Chevereto API v1 key"
 msgstr ""
 
-#: options.php:1310
+#: options.php:1317
 msgid "Get your API key here: "
 msgstr ""
 
-#: options.php:1316
+#: options.php:1323
 msgid "Chevereto URL"
 msgstr ""
 
-#: options.php:1317
+#: options.php:1324
 msgid "Your Chevereto homepage url, no slash in the end, eg. https://your.cherverto.com"
 msgstr ""
 
-#: options.php:1323
+#: options.php:1330
 msgid "Comment images proxy"
 msgstr ""
 
-#: options.php:1324
+#: options.php:1331
 msgid "A front-ed proxy for the uploaded images. Leave it blank if you do not need."
 msgstr ""
 
-#: options.php:1330
+#: options.php:1337
 msgid "Imgur upload proxy"
 msgstr ""
 
-#: options.php:1331
+#: options.php:1338
 msgid ""
 "A back-ed proxy to upload images. You may set a self hosted proxy with Nginx, following my <a "
 "href=\"https://2heng.xin/2018/06/06/javascript-upload-images-with-imgur-api/\">turtal</a>. "
@@ -1765,455 +1769,455 @@ msgid ""
 "</a>】"
 msgstr ""
 
-#: options.php:1337
+#: options.php:1344
 msgid "Search background customization"
 msgstr ""
 
-#: options.php:1338
+#: options.php:1345
 msgid "It is the cute one that opens the search interface"
 msgstr ""
 
-#: options.php:1344
+#: options.php:1351
 msgid "Real Time Search Function"
 msgstr ""
 
-#: options.php:1345
+#: options.php:1352
 msgid ""
 "Real-time search in the foreground, call the Rest API to update the cache every hour, you can "
 "manually set the cache time in api.php"
 msgstr ""
 
-#: options.php:1351
+#: options.php:1358
 msgid "Include Comments in Real Time Search"
 msgstr ""
 
-#: options.php:1352
+#: options.php:1359
 msgid ""
 "Search for comments in real-time search (not recommended if there are too many comments on the "
 "site)"
 msgstr ""
 
-#: options.php:1358
+#: options.php:1365
 msgid "Article Page Lazyload Function"
 msgstr ""
 
-#: options.php:1365
+#: options.php:1372
 msgid "lazyload spinner"
 msgstr ""
 
-#: options.php:1366
+#: options.php:1373
 msgid "The placeholder to display when the image loads, fill in the image url"
 msgstr ""
 
-#: options.php:1372
+#: options.php:1379
 msgid "Clipboard Copyright ID"
 msgstr ""
 
-#: options.php:1373
+#: options.php:1380
 msgid ""
 "Check on by default. When copying more than 30 bytes, the copyright mark will be added to the "
 "clipboard automatically."
 msgstr ""
 
-#: options.php:1379
+#: options.php:1386
 msgid "Email address prefix"
 msgstr ""
 
-#: options.php:1380
+#: options.php:1387
 msgid ""
 "For sending system mail, the sender address displayed in the user's mailbox, do not use "
 "Chinese, the default system email address is bibi@your_domain_name"
 msgstr ""
 
-#: options.php:1386
+#: options.php:1393
 msgid "Comments reply notification"
 msgstr ""
 
-#: options.php:1387
+#: options.php:1394
 msgid ""
 "WordPress will use email to notify users when their comments receive a reply by default. Tick "
 "this item allows users to set their own comments reply notification"
 msgstr ""
 
-#: options.php:1393
+#: options.php:1400
 msgid "Administrator comment notification"
 msgstr ""
 
-#: options.php:1394
+#: options.php:1401
 msgid "Whether to use email notification when the administrator's comments receive a reply"
 msgstr ""
 
-#: options.php:1400
+#: options.php:1407
 msgid "Private Comment Function"
 msgstr ""
 
-#: options.php:1401
+#: options.php:1408
 msgid ""
 "It is not checked by default. It is checked to enable. This feature allows users to set their "
 "own comments invisible to others"
 msgstr ""
 
-#: options.php:1407
+#: options.php:1414
 msgid "Human verification"
 msgstr ""
 
-#: options.php:1408
+#: options.php:1415
 msgid "Enable human verification"
 msgstr ""
 
-#: options.php:1414
+#: options.php:1421
 msgid "QQ avatar link encryption"
 msgstr ""
 
-#: options.php:1415
+#: options.php:1422
 msgid "Do not display the user's qq avatar links directly."
 msgstr ""
 
-#: options.php:1420
+#: options.php:1427
 msgid "Off (default)"
 msgstr ""
 
-#: options.php:1421
+#: options.php:1428
 msgid "use redirect (general security)"
 msgstr ""
 
-#: options.php:1422
+#: options.php:1429
 msgid "fetch data at backend (high security)"
 msgstr ""
 
-#: options.php:1423
+#: options.php:1430
 msgid "fetch data at backend (high security，slow)"
 msgstr ""
 
-#: options.php:1427
+#: options.php:1434
 msgid "Comment UA infomation"
 msgstr ""
 
-#: options.php:1428
+#: options.php:1435
 msgid "Check to enable, display the user's browser, operating system information"
 msgstr ""
 
-#: options.php:1435
+#: options.php:1442
 msgid "Enhanced"
 msgstr ""
 
-#: options.php:1439
+#: options.php:1446
 msgid "You Should Know"
 msgstr ""
 
-#: options.php:1450
+#: options.php:1457
 msgid "Preload animation"
 msgstr ""
 
-#: options.php:1457
+#: options.php:1464
 msgid "Cherry Blossom falling effect"
 msgstr ""
 
-#: options.php:1464
+#: options.php:1471
 msgid "Cherry Blossom falling quantity"
 msgstr ""
 
-#: options.php:1465
+#: options.php:1472
 msgid "Four kinds of quantity, default native quantity"
 msgstr ""
 
-#: options.php:1470
+#: options.php:1477
 msgid "native"
 msgstr ""
 
-#: options.php:1471
+#: options.php:1478
 msgid "quarter"
 msgstr ""
 
-#: options.php:1472
+#: options.php:1479
 msgid "half"
 msgstr ""
 
-#: options.php:1473
+#: options.php:1480
 msgid "less"
 msgstr ""
 
-#: options.php:1477
+#: options.php:1484
 msgid "Wave effects"
 msgstr ""
 
-#: options.php:1484
+#: options.php:1491
 msgid "Footer suspension player default volume"
 msgstr ""
 
-#: options.php:1485
+#: options.php:1492
 msgid "Maximum 1 minimum 0"
 msgstr ""
 
-#: options.php:1492
+#: options.php:1499
 msgid "live2D"
 msgstr ""
 
-#: options.php:1499
+#: options.php:1506
 msgid "Live2D Custom Resource Address"
 msgstr ""
 
-#: options.php:1500
+#: options.php:1507
 msgid "Fill in Live2D Custom Resource Address"
 msgstr ""
 
-#: options.php:1506
+#: options.php:1513
 msgid "Live2D Custom Resource Version"
 msgstr ""
 
-#: options.php:1507
+#: options.php:1514
 msgid "Fill in Live2D Custom Resource Version"
 msgstr ""
 
-#: options.php:1514
+#: options.php:1521
 msgid "Drop-down arrow"
 msgstr ""
 
-#: options.php:1521
+#: options.php:1528
 msgid "Turn off Drop-down arrow mobile display"
 msgstr ""
 
-#: options.php:1522
+#: options.php:1529
 msgid "Check by default, cancel opening"
 msgstr ""
 
-#: options.php:1528
+#: options.php:1535
 msgid "a brief remark"
 msgstr ""
 
-#: options.php:1535
+#: options.php:1542
 msgid "One word typing effect of home page"
 msgstr ""
 
-#: options.php:1542
+#: options.php:1549
 msgid "Double quotation marks for typing effect"
 msgstr ""
 
-#: options.php:1549
+#: options.php:1556
 msgid "Typewriting effect text"
 msgstr ""
 
-#: options.php:1550
+#: options.php:1557
 msgid ""
 "Fill in the text part of the typing effect (double quotation marks must be used outside the "
 "text, and English commas shall be used to separate the two sentences. Support for HTML tags)"
 msgstr ""
 
-#: options.php:1556
+#: options.php:1563
 msgid "Homepage one word blogger description"
 msgstr ""
 
-#: options.php:1557 options.php:1564
+#: options.php:1564 options.php:1571
 msgid "A self description"
 msgstr ""
 
-#: options.php:1563
+#: options.php:1570
 msgid "Blog description at the end of the article"
 msgstr ""
 
-#: options.php:1570
+#: options.php:1577
 msgid "Note effects"
 msgstr ""
 
-#: options.php:1577
+#: options.php:1584
 msgid "Logo special effects"
 msgstr ""
 
-#: options.php:1584
+#: options.php:1591
 msgid "Logo text A"
 msgstr ""
 
-#: options.php:1585
+#: options.php:1592
 msgid "Fill in the front part of your logo text"
 msgstr ""
 
-#: options.php:1591
+#: options.php:1598
 msgid "Logo text B"
 msgstr ""
 
-#: options.php:1592
+#: options.php:1599
 msgid "Fill in the middle part of your logo text"
 msgstr ""
 
-#: options.php:1598
+#: options.php:1605
 msgid "Logo text C"
 msgstr ""
 
-#: options.php:1599
+#: options.php:1606
 msgid "Fill in the back of your logo"
 msgstr ""
 
-#: options.php:1605
+#: options.php:1612
 msgid "Logo secondary text"
 msgstr ""
 
-#: options.php:1606
+#: options.php:1613
 msgid "Fill in the secondary text of your logo."
 msgstr ""
 
-#: options.php:1612
+#: options.php:1619
 msgid "Mail template header"
 msgstr ""
 
-#: options.php:1613
+#: options.php:1620
 msgid "Set the background picture above your message"
 msgstr ""
 
-#: options.php:1620
+#: options.php:1627
 msgid "Custom mouse style - Standard"
 msgstr ""
 
-#: options.php:1621
+#: options.php:1628
 msgid "Apply to global, fill in link."
 msgstr ""
 
-#: options.php:1627
+#: options.php:1634
 msgid "Custom mouse style - Selected"
 msgstr ""
 
-#: options.php:1628
+#: options.php:1635
 msgid "Return to the above for PC"
 msgstr ""
 
-#: options.php:1634
+#: options.php:1641
 msgid "Custom mouse style - Selected elements"
 msgstr ""
 
-#: options.php:1635
+#: options.php:1642
 msgid "Used to select a place"
 msgstr ""
 
-#: options.php:1641
+#: options.php:1648
 msgid "Custom mouse style - Selected text"
 msgstr ""
 
-#: options.php:1642
+#: options.php:1649
 msgid "Used to select a Text"
 msgstr ""
 
-#: options.php:1648
+#: options.php:1655
 msgid "Custom mouse style - Working state"
 msgstr ""
 
-#: options.php:1649
+#: options.php:1656
 msgid "Used to working condition"
 msgstr ""
 
-#: options.php:1656
+#: options.php:1663
 msgid "Fonts"
 msgstr ""
 
-#: options.php:1660
+#: options.php:1667
 msgid "fontweight"
 msgstr ""
 
-#: options.php:1661
+#: options.php:1668
 msgid "Fill in a number, maximum 900, minimum 100. Between 300 and 500 is recommended."
 msgstr ""
 
-#: options.php:1668
+#: options.php:1675
 msgid "Reference external font"
 msgstr ""
 
-#: options.php:1675
+#: options.php:1682
 msgid "External font address"
 msgstr ""
 
-#: options.php:1676
+#: options.php:1683
 msgid "Fill in font address."
 msgstr ""
 
-#: options.php:1682
+#: options.php:1689
 msgid "External font name"
 msgstr ""
 
-#: options.php:1683
+#: options.php:1690
 msgid "Fill in the font name."
 msgstr ""
 
-#: options.php:1689
+#: options.php:1696
 msgid "Google Fonts Api Address"
 msgstr ""
 
-#: options.php:1690
+#: options.php:1697
 msgid "Fill in Google Fonts API Address"
 msgstr ""
 
-#: options.php:1696
+#: options.php:1703
 msgid "Google Fonts Name"
 msgstr ""
 
-#: options.php:1697
+#: options.php:1704
 msgid ""
 "Please make sure that the fonts you add can be referenced in Google font library. Fill in the "
 "font name. If multiple fonts are referenced, please use \"|\" as the separator."
 msgstr ""
 
-#: options.php:1703
+#: options.php:1710
 msgid "Global Default Font"
 msgstr ""
 
-#: options.php:1704 options.php:1711 options.php:1718 options.php:1725 options.php:1732
+#: options.php:1711 options.php:1718 options.php:1725 options.php:1732 options.php:1739
 msgid "Fill in font name"
 msgstr ""
 
-#: options.php:1710
+#: options.php:1717
 msgid "Global Font 2"
 msgstr ""
 
-#: options.php:1717
+#: options.php:1724
 msgid "Front Page Title Font"
 msgstr ""
 
-#: options.php:1724
+#: options.php:1731
 msgid "Front Page One Word Font"
 msgstr ""
 
-#: options.php:1731
+#: options.php:1738
 msgid "Front page key title font"
 msgstr ""
 
-#: options.php:1738
+#: options.php:1745
 msgid "Global fontsize"
 msgstr ""
 
-#: options.php:1739 options.php:1763
+#: options.php:1746 options.php:1770
 msgid "Fill in Number. Between 10 and 20 is recommended"
 msgstr ""
 
-#: options.php:1746
+#: options.php:1753
 msgid "Article Title Size"
 msgstr ""
 
-#: options.php:1747
+#: options.php:1754
 msgid "Fill in Number. Between 15 and 20 is recommended"
 msgstr ""
 
-#: options.php:1754
+#: options.php:1761
 msgid "Article Tips Size"
 msgstr ""
 
-#: options.php:1755
+#: options.php:1762
 msgid "Fill in Number. Between 10 and 15 is recommended"
 msgstr ""
 
-#: options.php:1762
+#: options.php:1769
 msgid "Front Page One Word FontSize"
 msgstr ""
 
-#: options.php:1770
+#: options.php:1777
 msgid "Font size of the first key title"
 msgstr ""
 
-#: options.php:1771
+#: options.php:1778
 msgid "Fill in Number. Between 70 and 90 is recommended"
 msgstr ""
 
-#: options.php:1778
+#: options.php:1785
 msgid "Logo font link"
 msgstr ""
 
-#: options.php:1779
+#: options.php:1786
 msgid ""
 "When the font is ready, do this again <a href = \"https://www.fontke.com/tool/fontface/"
 "\">@font-face生成器</a>It can generate a bunch of files, which are all useful. It can be "
@@ -2221,184 +2225,184 @@ msgid ""
 "sheet file link <a href = \"https://blog.ukenn.top/sakura6/#toc-head-4\">Detailed tutorial</a>"
 msgstr ""
 
-#: options.php:1785
+#: options.php:1792
 msgid "Logo font name"
 msgstr ""
 
-#: options.php:1786
+#: options.php:1793
 msgid "Fill in the font name of your logo, write the name directly without the format suffix"
 msgstr ""
 
-#: options.php:1793
+#: options.php:1800
 msgid "Color"
 msgstr ""
 
-#: options.php:1797
+#: options.php:1804
 msgid "Display icon selection"
 msgstr ""
 
-#: options.php:1798
+#: options.php:1805
 msgid "Choose icon color"
 msgstr ""
 
-#: options.php:1803
+#: options.php:1810
 msgid "「Common Colors」Pink（EE9CA7）"
 msgstr ""
 
-#: options.php:1804
+#: options.php:1811
 msgid "「Common Colors」Orange（FF8000）"
 msgstr ""
 
-#: options.php:1805
+#: options.php:1812
 msgid "「Nippon Colors」Hanaasagi（1E88A8）"
 msgstr ""
 
-#: options.php:1806
+#: options.php:1813
 msgid "「Nippon Colors」Beniukon（E98B2A）"
 msgstr ""
 
-#: options.php:1807
+#: options.php:1814
 msgid "「Nippon Colors」Sangosyu（F17C67）"
 msgstr ""
 
-#: options.php:1808
+#: options.php:1815
 msgid "「Nippon Colors」Sora（58B2DC）"
 msgstr ""
 
-#: options.php:1809
+#: options.php:1816
 msgid "「Nippon Colors」Nae（86C166）"
 msgstr ""
 
-#: options.php:1810
+#: options.php:1817
 msgid "「Macaron Colors」Blue（B8F1ED）"
 msgstr ""
 
-#: options.php:1811
+#: options.php:1818
 msgid "「Macaron Colors」Green（B8F1CC）"
 msgstr ""
 
-#: options.php:1812
+#: options.php:1819
 msgid "「Macaron Colors」Purple（D9B8F1）"
 msgstr ""
 
-#: options.php:1813
+#: options.php:1820
 msgid "「Others」ColorFul"
 msgstr ""
 
-#: options.php:1817
+#: options.php:1824
 msgid "Theme style"
 msgstr ""
 
-#: options.php:1820 options.php:1992
+#: options.php:1827 options.php:1999
 msgid "Custom theme color"
 msgstr ""
 
-#: options.php:1825
+#: options.php:1832
 msgid "Information Bar Background Color (RGBA) Red"
 msgstr ""
 
-#: options.php:1828 options.php:1864 options.php:1956
+#: options.php:1835 options.php:1871 options.php:1963
 msgid "Fill in the red value from 0 to 255 here"
 msgstr ""
 
-#: options.php:1834
+#: options.php:1841
 msgid "Information Bar Background Color (RGBA) Green"
 msgstr ""
 
-#: options.php:1837 options.php:1873 options.php:1965
+#: options.php:1844 options.php:1880 options.php:1972
 msgid "Fill in the green value from 0 to 255 here"
 msgstr ""
 
-#: options.php:1843
+#: options.php:1850
 msgid "Information Bar Background Color (RGBA) Blue"
 msgstr ""
 
-#: options.php:1846 options.php:1882 options.php:1974
+#: options.php:1853 options.php:1889 options.php:1981
 msgid "Fill in the blue value from 0 to 255 here"
 msgstr ""
 
-#: options.php:1852
+#: options.php:1859
 msgid "Information Bar Background Color (RGBA) Alpha"
 msgstr ""
 
-#: options.php:1855 options.php:1891 options.php:1983
+#: options.php:1862 options.php:1898 options.php:1990
 msgid "Fill in the alpha value from 0 to 1 here"
 msgstr ""
 
-#: options.php:1861
+#: options.php:1868
 msgid "Foreground Menu background Color (RGBA) Red"
 msgstr ""
 
-#: options.php:1870
+#: options.php:1877
 msgid "Foreground Menu background Color (RGBA) Green"
 msgstr ""
 
-#: options.php:1879
+#: options.php:1886
 msgid "Foreground Menu background Color (RGBA) Blue"
 msgstr ""
 
-#: options.php:1888
+#: options.php:1895
 msgid "Foreground Menu background Color (RGBA) Alpha"
 msgstr ""
 
-#: options.php:1897
+#: options.php:1904
 msgid "Foreground selection menu background color"
 msgstr ""
 
-#: options.php:1900 options.php:1908 options.php:1916 options.php:1924 options.php:1932
-#: options.php:1940 options.php:1948 options.php:2000 options.php:2008
+#: options.php:1907 options.php:1915 options.php:1923 options.php:1931 options.php:1939
+#: options.php:1947 options.php:1955 options.php:2007 options.php:2015
 msgid "Custom colors"
 msgstr ""
 
-#: options.php:1905
+#: options.php:1912
 msgid "Drop down arrow color"
 msgstr ""
 
-#: options.php:1913
+#: options.php:1920
 msgid "Home page article separator"
 msgstr ""
 
-#: options.php:1921
+#: options.php:1928
 msgid "Home page article time prompt accent"
 msgstr ""
 
-#: options.php:1929
+#: options.php:1936
 msgid "Home page article time prompt emphasize background"
 msgstr ""
 
-#: options.php:1937
+#: options.php:1944
 msgid "Home page article Prompt Icon Color"
 msgstr ""
 
-#: options.php:1945
+#: options.php:1952
 msgid "Home page article border shadow"
 msgstr ""
 
-#: options.php:1953
+#: options.php:1960
 msgid "Home page Focus background color (RGBA) Red"
 msgstr ""
 
-#: options.php:1962
+#: options.php:1969
 msgid "Home page Focus background color (RGBA) Green"
 msgstr ""
 
-#: options.php:1971
+#: options.php:1978
 msgid "Home page Focus background color (RGBA) Blue"
 msgstr ""
 
-#: options.php:1980
+#: options.php:1987
 msgid "Home page Focus background color (RGBA) Alpha"
 msgstr ""
 
-#: options.php:1989
+#: options.php:1996
 msgid "Home page key title font color"
 msgstr ""
 
-#: options.php:1997
+#: options.php:2004
 msgid "Preload animation color A"
 msgstr ""
 
-#: options.php:2005
+#: options.php:2012
 msgid "Preload animation color B"
 msgstr ""
 
@@ -2575,7 +2579,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"「ハルジオン　Update」 ｜ 一个多彩，实用，易于上手，具有强大自定义功能的 WordPress 主题（基于 "
+"「なつはなび　Update」 ｜ 一个多彩，实用，易于上手，具有强大自定义功能的 WordPress 主题（基于 "
 "Sakura 主题）"
 msgstr ""
 

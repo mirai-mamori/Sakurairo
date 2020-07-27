@@ -1548,7 +1548,8 @@ i.iconfont.hotpost {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
-    word-wrap: break-word
+    font-size: 18px;
+    word-wrap: break-word;
 }
 
 .post-date {

@@ -969,7 +969,7 @@ function optionsframework_options()
         'name' => __('Pjax Refresh', 'sakurairo'), 
         'desc' => __('Check on, and the principle is the same as Ajax.', 'sakurairo'), 
         'id' => 'poi_pjax',
-        'std' => '1',
+        'std' => '0',
         'type' => 'checkbox');
     
     $options[] = array(
@@ -1093,7 +1093,7 @@ function optionsframework_options()
         'name' => __('Login interface logo', 'sakurairo'), 
         'desc' => __('Used for login interface display', 'sakurairo'),
         'id' => 'logo_img',
-        'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/mashiro-logo-s.png",
+        'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Login-Logo.png",
         'type' => 'upload');
 
     $options[] = array(
@@ -1132,7 +1132,7 @@ function optionsframework_options()
         'type' => 'checkbox');
     
     $options[] = array(
-        'name' => __('登录验证', 'sakurairo'), 
+        'name' => __('Login Validation', 'sakurairo'), 
         'desc' => __('Check to enable slide verification', 'sakurairo'), 
         'id' => 'login_pf',
         'std' => '1',
