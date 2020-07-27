@@ -40,7 +40,7 @@
 
 ## 主题使用帮助：
 
-![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/helpgive.jpg)
+![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/README-3S.png)
 
 - 【 WordPress 主题 】「桜いろ」✿ Sakurairo  使用手册：https://asuhe.jp/daily/sakurairo-user-manual
 
