@@ -28,8 +28,8 @@ body { background:none !important; overflow:hidden;}
 #login { 
 	font:14px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
 	position:absolute;
-	background: rgba(255, 238, 235, 0.30);
-	border-radius: 20px;
+	background: rgba(255, 255, 255, 0.40);
+	border-radius: 12px;
 	top:50%;
 	left:50%;
 	width:350px;
@@ -95,15 +95,15 @@ color: #676767 !important}
 	border:1px solid #EAEAEA;
 	border-radius:0px;
 	background:none; 
-	padding:5px 10px;
+	padding:5px 15px;
 	color:#444;
 	font-weight:normal;
-	font-size:14px;
+	font-size:16px;
 	background:#FFF;
 	font-family:"Microsoft Yahei";
 	box-shadow: 0 0 0px 1000px white inset;
 	height: 46px;
-    border-radius: 3px;
+    border-radius: 12px;
 	margin-top: 10px;
 }
 
@@ -144,11 +144,14 @@ color: #676767 !important}
 }
 
 #login .submit .button {
-	width:100%;
-	margin: 10px auto;
+	width:50%;
+	margin-top: 10%;
+    margin-bottom: 5%;
+	margin-left: 25%;
+    margin-right: 25%;
 	border:none;
 	float:none;
-	border-radius:30px;
+	border-radius:12px;
 	height:45px;
 	font-size:16px;
 	text-align:center;
@@ -158,7 +161,6 @@ color: #676767 !important}
 	cursor:pointer;
 	box-shadow: none;
 	text-shadow: none;
-	letter-spacing:2px
 }
 
 .login #nav , #backtoblog {
@@ -172,7 +174,7 @@ color: #676767 !important}
 
 .login #nav {
 	margin: 0;
-	margin-bottom: 0;
+	margin-bottom: 15px;
 	text-align: center;
 }
 
@@ -256,6 +258,7 @@ input[type=checkbox]:checked:before {
 	background-color: #eee;
 	overflow: hidden;
 	text-align: center;
+	border-radius: 12px;
 	user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
@@ -275,20 +278,20 @@ input[type=checkbox]:checked:before {
 }
 
 #label {
-	width: 46px;
+	width: 50px;
 	position: absolute;
 	left: 0;
 	top: 0;
-	height: 46px;
-	line-height: 38px;
-	border: 1px solid #ddd;
+	height: 44px;
+	line-height: 35px;
+	border: 1px solid #f1f1f1;
 	background: #fff;
 	z-index: 3;
 	cursor: move;
         /*color: #EE9CA7;*/
 	font-size: 38px;
 	font-weight: 900;
-	border-radius: 3px;
+	border-radius: 12px;
 }
 
 #labelTip {
@@ -298,7 +301,9 @@ input[type=checkbox]:checked:before {
 	height: 100%;
 	font-size: 13px;
 	font-family: 'Microsoft Yahei', serif;
+	font-style: oblique;
 	color: #FFF;
+	border-radius: 12px;
         /*background-color: #EE9CA7;*/
 	line-height: 46px;
 	text-align: center;
@@ -376,4 +381,12 @@ input[type=checkbox]:checked:before {
 
 .login .privacy-policy-page-link {
     margin: 1em 0 1em !important;
+}
+
+.login label {
+	font-size: 14px;
+	font-weight: 600;
+    line-height: 1.5;
+    display: inline-block;
+	margin-bottom: 3px;
 }
