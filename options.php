@@ -377,7 +377,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Multi Terminal Separation of Home Random Graphs', 'sakurairo'), 
-        'desc' => __('Default on, check off', 'sakurairo'), 
+        'desc' => __('It is off by default and enabled by check', 'sakurairo'), 
         'id' => 'cover_beta',
         'std' => '0',
         'type' => 'checkbox');
@@ -1090,8 +1090,8 @@ function optionsframework_options()
         'type' => 'upload');
         
     $options[] = array(
-        'name' => __('登录界面背景虚化', 'sakurairo'), 
-        'desc' => __('默认关闭，勾选开启', 'sakurairo'), 
+        'name' => __('Background Virtualization of Login Interface', 'sakurairo'), 
+        'desc' => __('It is off by default and enabled by check', 'sakurairo'), 
         'id' => 'login_blur',
         'std' => '0',
         'type' => 'checkbox');
