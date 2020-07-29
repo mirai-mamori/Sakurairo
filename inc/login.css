@@ -6,12 +6,7 @@
 html { overflow:hidden; background-color: #000;}
 body { background:none !important; overflow:hidden;}
 
-#bg{
-	-webkit-filter: blur(2px); /* Chrome, Opera */
-	-moz-filter: blur(2px);
-	-ms-filter: blur(2px);   
-	filter: blur(2px);
-}
+
 #bg img { opacity: 1 !important;; }
 
 .login #login_error, .login .message {
@@ -24,7 +19,7 @@ body { background:none !important; overflow:hidden;}
 	background: rgba(255, 255, 255, 0.45);
 }
 
-/* login */
+/* login 
 #login { 
 	font:14px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
 	position:absolute;
@@ -33,11 +28,11 @@ body { background:none !important; overflow:hidden;}
 	top:50%;
 	left:50%;
 	width:350px;
-      /*height: 500px;*/
+    height: 500px;
 	padding:0px !important;
-	margin:-235px 0px 0px -175px !important; 
+	margin:-265px 0px 0px -175px !important; 
     background-position: center 48%;
-}
+}*/
 
 #login h1 a { 
 	font-family:"Microsoft Yahei";
@@ -128,6 +123,7 @@ color: #676767 !important}
 
 .login .button.wp-hide-pw .dashicons{
     right: 1rem;
+    top: 0.2rem;
 }
 
 #login .form-send .bot {
@@ -175,6 +171,7 @@ color: #676767 !important}
 .login #nav {
 	margin: 0;
 	margin-bottom: 15px;
+	margin-left: 2.5%;
 	text-align: center;
 }
 
