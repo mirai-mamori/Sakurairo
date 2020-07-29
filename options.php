@@ -1088,6 +1088,13 @@ function optionsframework_options()
         'desc' => __('Use the default image if left this blank', 'sakurairo'), 
         'id' => 'login_bg',
         'type' => 'upload');
+        
+    $options[] = array(
+        'name' => __('登录界面背景虚化', 'sakurairo'), 
+        'desc' => __('默认关闭，勾选开启', 'sakurairo'), 
+        'id' => 'login_blur',
+        'std' => '0',
+        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Login interface logo', 'sakurairo'), 
@@ -1821,13 +1828,21 @@ function optionsframework_options()
     ));
     
     $options[] = array(
-        'name' => __('Theme style', 'sakurairo'), 
+        'name' => __('Theme Style Main Color', 'sakurairo'), 
         'id' => 'theme_skin',
         'std' => "#EE9CA7",
         'desc' => __('Custom theme color', 'sakurairo'), 
         'type' => "color",
     );
     
+    $options[] = array(
+        'name' => __('Theme Style Second Color', 'sakurairo'), 
+        'id' => 'theme_light',
+        'std' => "#EDAFB5",
+        'desc' => __('Custom theme color', 'sakurairo'), 
+        'type' => "color",
+    );
+
     $options[] = array(
         'name' => __('Information Bar Background Color (RGBA) Red', 'sakurairo'), 
         'id' => 'infor-bar-bg-cr',
@@ -1903,7 +1918,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Foreground selection menu background color', 'sakurairo'), 
         'id' => 'fore-switch-sele-bc',
-        'std' => "#FFF",
+        'std' => "#FFEEEB",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
