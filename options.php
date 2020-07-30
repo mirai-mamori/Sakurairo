@@ -930,12 +930,20 @@ function optionsframework_options()
         'type' => 'checkbox'); 
     
     $options[] = array(
-        'name' => __('Darkmode', 'sakurairo'), 
+        'name' => __('Automatic Switching Dark Mode (22:00-7:00)', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
         'id' => 'darkmode',
         'std' => '1',
         'type' => 'checkbox');
-    
+
+    $options[] = array(
+        'name' => __('Image Brightness in Dark Mode', 'sakurairo'),
+        'desc' => __('Fill in Number', 'sakurairo'),
+        'id' => 'dark_imgbri',
+        'std' => '0.8',
+        'class' => 'mini',
+        'type' => 'text');     
+
     $options[] = array(
         'name' => __('Footer float music player', 'sakurairo'), 
         'desc' => __('Choose which platform you\'ll use.', 'sakurairo'),
@@ -1789,6 +1797,14 @@ function optionsframework_options()
         'type' => 'text');  
 
     $options[] = array(
+        'name' => __('Article Page Title Size', 'sakurairo'), 
+        'desc' => __('Fill in Number. Between 25 and 30 is recommended', 'sakurairo'),
+        'id' => 'article-paget',
+        'std' => '',
+        'class' => 'mini',
+        'type' => 'text'); 
+
+    $options[] = array(
         'name' => __('Logo font link', 'sakurairo'), 
         'desc' => __('When the font is ready, do this again <a href = "https://www.fontke.com/tool/fontface/">@font-face生成器</a>It can generate a bunch of files, which are all useful. It can be placed on a accessible server, OOS, CDN, etc. here, you only need to fill in the CSS style sheet file link <a href = "https://blog.ukenn.top/sakura6/#toc-head-4">Detailed tutorial</a>', 'sakurairo'),
         'id' => 'logo_zt',
@@ -1828,7 +1844,7 @@ function optionsframework_options()
     ));
     
     $options[] = array(
-        'name' => __('Theme Style Main Color', 'sakurairo'), 
+        'name' => __('Theme Color', 'sakurairo'), 
         'id' => 'theme_skin',
         'std' => "#EE9CA7",
         'desc' => __('Custom theme color', 'sakurairo'), 
@@ -1836,8 +1852,16 @@ function optionsframework_options()
     );
     
     $options[] = array(
-        'name' => __('Theme Style Second Color', 'sakurairo'), 
-        'id' => 'theme_light',
+        'name' => __('Theme Color Matching Color', 'sakurairo'), 
+        'id' => 'theme_skinm',
+        'std' => "#EDAFB5",
+        'desc' => __('Custom theme color', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Theme Color (Dark mode)', 'sakurairo'), 
+        'id' => 'theme_dark',
         'std' => "#EDAFB5",
         'desc' => __('Custom theme color', 'sakurairo'), 
         'type' => "color",
