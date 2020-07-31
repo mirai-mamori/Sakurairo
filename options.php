@@ -184,7 +184,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Expand the nav menu', 'sakurairo'), 
-        'desc' => __('Check to enable, default shrink', 'sakurairo'), 
+        'desc' => __('By default, it is enabled (checked), and the check and collapse are cancelled.', 'sakurairo'), 
         'id' => 'shownav',
         'std' => '1',
         'type' => 'checkbox');
@@ -928,21 +928,13 @@ function optionsframework_options()
         'id' => 'user-avatar',
         'std' => '0',
         'type' => 'checkbox'); 
-    
-    $options[] = array(
-        'name' => __('Automatic Switching Dark Mode (22:00-7:00)', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'darkmode',
-        'std' => '1',
-        'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Image Brightness in Dark Mode', 'sakurairo'),
-        'desc' => __('Fill in Number', 'sakurairo'),
-        'id' => 'dark_imgbri',
-        'std' => '0.8',
-        'class' => 'mini',
-        'type' => 'text');     
+        'name' => __('Search Icon Normal Size', 'sakurairo'), 
+        'desc' => __('Check off by default', 'sakurairo'), 
+        'id' => 'search-ico',
+        'std' => '0',
+        'type' => 'checkbox');   
 
     $options[] = array(
         'name' => __('Footer float music player', 'sakurairo'), 
@@ -1254,13 +1246,15 @@ function optionsframework_options()
         'class' => 'mini',
         'type' => 'text');
 
-   /* $options[] = array(
+   /* 
+   $options[] = array(
         'name' => __('BaguetteBox Funtion', 'sakurairo'), 
         'desc' => __('Default off，<a href="https://github.com/mashirozx/Sakura/wiki/Fancybox">please read wiki</a>', 'sakurairo'), 
         'id' => 'image_viewer',
         'std' => '0',
         'type' => 'checkbox');
-*/
+   */
+
     //功能
     $options[] = array(
         'name' => __('Function', 'sakurairo'), 
@@ -1818,9 +1812,9 @@ function optionsframework_options()
         'std' => 'wenyihei-subfont',
         'type' => 'text');
 
-    //色彩
+    //主题
     $options[] = array(
-        'name' => __('Color', 'sakurairo'),
+        'name' => __('Theme', 'sakurairo'),
         'type' => 'heading');
 
     $options[] = array(
@@ -1846,7 +1840,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Theme Color', 'sakurairo'), 
         'id' => 'theme_skin',
-        'std' => "#EE9CA7",
+        'std' => "#FB98C0",
         'desc' => __('Custom theme color', 'sakurairo'), 
         'type' => "color",
     );
@@ -1854,7 +1848,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Theme Color Matching Color', 'sakurairo'), 
         'id' => 'theme_skinm',
-        'std' => "#EDAFB5",
+        'std' => "#87B6FA",
         'desc' => __('Custom theme color', 'sakurairo'), 
         'type' => "color",
     );
@@ -1862,9 +1856,33 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Theme Color (Dark mode)', 'sakurairo'), 
         'id' => 'theme_dark',
-        'std' => "#EDAFB5",
+        'std' => "#BD144A",
         'desc' => __('Custom theme color', 'sakurairo'), 
         'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Automatic Switching Dark Mode (22:00-7:00)', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'darkmode',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Image Brightness in Dark Mode', 'sakurairo'),
+        'desc' => __('Fill in Number', 'sakurairo'),
+        'id' => 'dark_imgbri',
+        'std' => '0.8',
+        'class' => 'mini',
+        'type' => 'text');     
+
+    $options[] = array(
+        'name' => __('Dark Mode Widget Transparency', 'sakurairo'), 
+        'id' => 'dark-widget-tmd',
+        'std' => "0.7",
+        'desc' => __('Fill in the alpha value from 0 to 1 here', 'sakurairo'), 
+        'type' => "text",
+        'class' => 'mini',
     );
 
     $options[] = array(
