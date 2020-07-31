@@ -1254,13 +1254,13 @@ function optionsframework_options()
         'class' => 'mini',
         'type' => 'text');
 
-    $options[] = array(
+   /* $options[] = array(
         'name' => __('BaguetteBox Funtion', 'sakurairo'), 
         'desc' => __('Default off，<a href="https://github.com/mashirozx/Sakura/wiki/Fancybox">please read wiki</a>', 'sakurairo'), 
         'id' => 'image_viewer',
         'std' => '0',
         'type' => 'checkbox');
-
+*/
     //功能
     $options[] = array(
         'name' => __('Function', 'sakurairo'), 
