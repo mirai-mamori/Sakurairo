@@ -1984,7 +1984,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Home page article time prompt accent', 'sakurairo'), 
         'id' => 'hpage-art-tpac',
-        'std' => "#EE9CA7",
+        'std' => "#FB98C0",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
@@ -2000,7 +2000,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Home page article Prompt Icon Color', 'sakurairo'), 
         'id' => 'hpage-art-pic',
-        'std' => "#EE9CA7",
+        'std' => "#FB98C0",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
@@ -2068,7 +2068,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Preload animation color B', 'sakurairo'), 
         'id' => 'preload-ani-c2',
-        'std' => "#EE9CA7",
+        'std' => "#FB98C0",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
