@@ -8993,3 +8993,14 @@ input#wp-comment-cookies-consent {
 .comment-form-cookies-consent label {
     vertical-align: middle;
 }
+
+/*修复友链盒子向右偏移*/
+.links ul li {
+    margin: 0px;
+}
+
+/*修复加载圆圈偏移*/
+#preload li.active {
+    margin-left: -20px;
+    margin-top: -20px;
+}
