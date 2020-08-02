@@ -1854,6 +1854,24 @@ function optionsframework_options()
     );
 
     $options[] = array(
+        'name' => __('Theme Light Color Management', 'sakurairo'),
+        'id' => 'light-cmanage',
+        'std' => "sep",
+        'type' => "radio",
+        'options' => array(
+            'mer' => __('Merge Options', 'sakurairo'), 
+            'sep' => __('Separation Options', 'sakurairo'), 
+        ));
+
+    $options[] = array(
+        'name' => __('Theme Color (Light)', 'sakurairo'), 
+        'id' => 'light-color',
+        'std' => "#FFEEEB",
+        'desc' => __('Custom theme color', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
         'name' => __('Theme Color (Dark mode)', 'sakurairo'), 
         'id' => 'theme_dark',
         'std' => "#BD144A",

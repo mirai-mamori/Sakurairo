@@ -156,7 +156,6 @@ textarea {
     border: 1px solid <?php echo akina_option('theme_skin'); ?>;
 }
 .post-date {
-    background-color: <?php echo akina_option('hpage-art-tpebc'); ?>;
     color: <?php echo akina_option('hpage-art-tpac'); ?>
 }
 .linkdes {
@@ -170,11 +169,6 @@ textarea {
 }
 h1.cat-title {
     color: <?php echo akina_option('theme_skin'); ?>
-}
-h1.fes-title,
-h1.main-title {
-    color: <?php echo akina_option('theme_skin'); ?>;
-    border-bottom: 6px dotted <?php echo akina_option('hpage-art-sc'); ?>;
 }
 .comment .body .comment-at {
     color: <?php echo akina_option('theme_skin'); ?>
@@ -404,16 +398,6 @@ h1.main-title {
 .menu-list li:hover {
     background-color: <?php echo akina_option('theme_skinm'); ?>;
 }
-.menu-list li {
-    background-color: <?php echo akina_option('fore-switch-sele-bc'); ?>;
-}
-.post-list-thumb {
-    box-shadow: 0 1px 30px -4px <?php echo akina_option('hpage-art-bsc'); ?>;
-}
-.font-family-controls button {
-    color: <?php echo akina_option('theme_skin'); ?>;
-    background-color: <?php echo akina_option('fore-switch-sele-bc'); ?>;
-}
 .art .art-content #archives a:hover {
     color: <?php echo akina_option('theme_skinm'); ?>;
 }
@@ -431,6 +415,63 @@ h1.main-title {
 .art-content #archives .al_mon_list span {
     color: <?php echo akina_option('theme_skin'); ?>;
 }
+h1.fes-title,
+h1.main-title {
+    color: <?php echo akina_option('theme_skin'); ?>;
+}
+.font-family-controls button {
+    color: <?php echo akina_option('theme_skin'); ?>;
+}
+
+
+/*淡色彩管理*/
+<?php if (akina_option('light-cmanage')=="sep"): ?>
+.menu-list li {
+    background-color: <?php echo akina_option('fore-switch-sele-bc'); ?>;
+}
+.font-family-controls button {
+    background-color: <?php echo akina_option('fore-switch-sele-bc'); ?>;
+}
+h1.fes-title,
+h1.main-title {
+    border-bottom: 6px dotted <?php echo akina_option('hpage-art-sc'); ?>;
+}
+.post-date {
+    background-color: <?php echo akina_option('hpage-art-tpebc'); ?>;
+}
+.post-list-thumb {
+    box-shadow: 0 1px 30px -4px <?php echo akina_option('hpage-art-bsc'); ?>;
+}
+.center-text{
+color: <?php echo akina_option('hpage-ket-tfc'); ?>;
+}
+<?php endif; ?>
+
+
+<?php if (akina_option('light-cmanage')=="mer"): ?>
+.menu-list li {
+    background-color: <?php echo akina_option('light-color'); ?>;
+}
+.font-family-controls button {
+    background-color: <?php echo akina_option('light-color'); ?>;
+}
+h1.fes-title,
+h1.main-title {
+    border-bottom: 6px dotted <?php echo akina_option('light-color'); ?>;
+}
+.post-date {
+    background-color: <?php echo akina_option('light-color'); ?>;
+}
+.post-list-thumb {
+    box-shadow: 0 1px 30px -4px <?php echo akina_option('light-color'); ?>;
+}
+.center-text{
+color: <?php echo akina_option('light-color'); ?>;
+}
+<?php endif; ?>
+
+
+
 <?php if(akina_option('entry_content_theme') == "sakurairo"){ ?>
 .entry-content th {
     background-color: <?php echo akina_option('theme_skin'); ?>
@@ -969,7 +1010,6 @@ font-family: <?php echo akina_option('keytitlefont'); ?>;
 
 .center-text{
 font-size: <?php echo akina_option('keytitle_size'); ?>px;
-color: <?php echo akina_option('hpage-ket-tfc'); ?>;
 }
 
 /*鼠标*/
