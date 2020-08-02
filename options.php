@@ -1866,7 +1866,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Theme Color (Light)', 'sakurairo'), 
         'id' => 'light-color',
-        'std' => "#FFEEEB",
+        'std' => "#FFE1ED",
         'desc' => __('Custom theme color', 'sakurairo'), 
         'type' => "color",
     );
@@ -1969,7 +1969,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Foreground Menu background Color (RGBA) Alpha', 'sakurairo'), 
         'id' => 'fore-switch-bca',
-        'std' => "0.9",
+        'std' => "0.8",
         'desc' => __('Fill in the alpha value from 0 to 1 here', 'sakurairo'), 
         'type' => "text",
         'class' => 'mini',
@@ -1978,7 +1978,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Foreground selection menu background color', 'sakurairo'), 
         'id' => 'fore-switch-sele-bc',
-        'std' => "#FFEEEB",
+        'std' => "#FFE1ED",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
@@ -1994,7 +1994,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Home page article separator', 'sakurairo'), 
         'id' => 'hpage-art-sc',
-        'std' => "#FFEEEB",
+        'std' => "#FFE1ED",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
@@ -2010,7 +2010,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Home page article time prompt emphasize background', 'sakurairo'), 
         'id' => 'hpage-art-tpebc',
-        'std' => "#FFEEEB",
+        'std' => "#FFE1ED",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
@@ -2026,7 +2026,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Home page article border shadow', 'sakurairo'), 
         'id' => 'hpage-art-bsc',
-        'std' => "#FFEEEB",
+        'std' => "#FFE1ED",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
@@ -2043,7 +2043,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Home page Focus background color (RGBA) Green', 'sakurairo'), 
         'id' => 'hpage-focus-bcg',
-        'std' => "238",
+        'std' => "225",
         'desc' => __('Fill in the green value from 0 to 255 here', 'sakurairo'), 
         'type' => "text",
         'class' => 'mini',
@@ -2052,7 +2052,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Home page Focus background color (RGBA) Blue', 'sakurairo'), 
         'id' => 'hpage-focus-bcb',
-        'std' => "235",
+        'std' => "237",
         'desc' => __('Fill in the blue value from 0 to 255 here', 'sakurairo'), 
         'type' => "text",
         'class' => 'mini',
@@ -2061,7 +2061,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Home page Focus background color (RGBA) Alpha', 'sakurairo'), 
         'id' => 'hpage-focus-bca',
-        'std' => "0.8",
+        'std' => "0.7",
         'desc' => __('Fill in the alpha value from 0 to 1 here', 'sakurairo'), 
         'type' => "text",
         'class' => 'mini',
@@ -2078,7 +2078,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Preload animation color A', 'sakurairo'), 
         'id' => 'preload-ani-c1',
-        'std' => "#FFEEEB",
+        'std' => "#FFE1ED",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
