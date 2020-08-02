@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-07-31 21:48+0800\n"
+"POT-Creation-Date: 2020-08-02 15:32+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1283,7 +1283,7 @@ msgstr ""
 
 #: options.php:890 options.php:897 options.php:904 options.php:1467 options.php:1474
 #: options.php:1494 options.php:1509 options.php:1531 options.php:1545 options.php:1552
-#: options.php:1559 options.php:1587 options.php:1594 options.php:1685 options.php:1866
+#: options.php:1559 options.php:1587 options.php:1594 options.php:1685 options.php:1884
 msgid "Check open"
 msgstr ""
 
@@ -1299,7 +1299,7 @@ msgstr ""
 msgid "Homepage animation Time"
 msgstr ""
 
-#: options.php:911 options.php:919 options.php:1873
+#: options.php:911 options.php:919 options.php:1891
 msgid "Fill in Number"
 msgstr ""
 
@@ -2300,7 +2300,7 @@ msgstr ""
 msgid "Theme Color"
 msgstr ""
 
-#: options.php:1844 options.php:1852 options.php:1860 options.php:2056
+#: options.php:1844 options.php:1852 options.php:1870 options.php:1878 options.php:2074
 msgid "Custom theme color"
 msgstr ""
 
@@ -2309,127 +2309,143 @@ msgid "Theme Color Matching Color"
 msgstr ""
 
 #: options.php:1857
+msgid "Theme Light Color Management"
+msgstr ""
+
+#: options.php:1862
+msgid "Merge Options"
+msgstr ""
+
+#: options.php:1863
+msgid "Separation Options"
+msgstr ""
+
+#: options.php:1867
+msgid "Theme Color (Light)"
+msgstr ""
+
+#: options.php:1875
 msgid "Theme Color (Dark mode)"
 msgstr ""
 
-#: options.php:1865
+#: options.php:1883
 msgid "Automatic Switching Dark Mode (22:00-7:00)"
 msgstr ""
 
-#: options.php:1872
+#: options.php:1890
 msgid "Image Brightness in Dark Mode"
 msgstr ""
 
-#: options.php:1880
+#: options.php:1898
 msgid "Dark Mode Widget Transparency"
 msgstr ""
 
-#: options.php:1883 options.php:1919 options.php:1955 options.php:2047
+#: options.php:1901 options.php:1937 options.php:1973 options.php:2065
 msgid "Fill in the alpha value from 0 to 1 here"
 msgstr ""
 
-#: options.php:1889
+#: options.php:1907
 msgid "Information Bar Background Color (RGBA) Red"
 msgstr ""
 
-#: options.php:1892 options.php:1928 options.php:2020
+#: options.php:1910 options.php:1946 options.php:2038
 msgid "Fill in the red value from 0 to 255 here"
 msgstr ""
 
-#: options.php:1898
+#: options.php:1916
 msgid "Information Bar Background Color (RGBA) Green"
 msgstr ""
 
-#: options.php:1901 options.php:1937 options.php:2029
+#: options.php:1919 options.php:1955 options.php:2047
 msgid "Fill in the green value from 0 to 255 here"
 msgstr ""
 
-#: options.php:1907
+#: options.php:1925
 msgid "Information Bar Background Color (RGBA) Blue"
 msgstr ""
 
-#: options.php:1910 options.php:1946 options.php:2038
+#: options.php:1928 options.php:1964 options.php:2056
 msgid "Fill in the blue value from 0 to 255 here"
 msgstr ""
 
-#: options.php:1916
+#: options.php:1934
 msgid "Information Bar Background Color (RGBA) Alpha"
 msgstr ""
 
-#: options.php:1925
+#: options.php:1943
 msgid "Foreground Menu background Color (RGBA) Red"
 msgstr ""
 
-#: options.php:1934
+#: options.php:1952
 msgid "Foreground Menu background Color (RGBA) Green"
 msgstr ""
 
-#: options.php:1943
+#: options.php:1961
 msgid "Foreground Menu background Color (RGBA) Blue"
 msgstr ""
 
-#: options.php:1952
+#: options.php:1970
 msgid "Foreground Menu background Color (RGBA) Alpha"
 msgstr ""
 
-#: options.php:1961
+#: options.php:1979
 msgid "Foreground selection menu background color"
 msgstr ""
 
-#: options.php:1964 options.php:1972 options.php:1980 options.php:1988 options.php:1996
-#: options.php:2004 options.php:2012 options.php:2064 options.php:2072
+#: options.php:1982 options.php:1990 options.php:1998 options.php:2006 options.php:2014
+#: options.php:2022 options.php:2030 options.php:2082 options.php:2090
 msgid "Custom colors"
 msgstr ""
 
-#: options.php:1969
+#: options.php:1987
 msgid "Drop down arrow color"
 msgstr ""
 
-#: options.php:1977
+#: options.php:1995
 msgid "Home page article separator"
 msgstr ""
 
-#: options.php:1985
+#: options.php:2003
 msgid "Home page article time prompt accent"
 msgstr ""
 
-#: options.php:1993
+#: options.php:2011
 msgid "Home page article time prompt emphasize background"
 msgstr ""
 
-#: options.php:2001
+#: options.php:2019
 msgid "Home page article Prompt Icon Color"
 msgstr ""
 
-#: options.php:2009
+#: options.php:2027
 msgid "Home page article border shadow"
 msgstr ""
 
-#: options.php:2017
+#: options.php:2035
 msgid "Home page Focus background color (RGBA) Red"
 msgstr ""
 
-#: options.php:2026
+#: options.php:2044
 msgid "Home page Focus background color (RGBA) Green"
 msgstr ""
 
-#: options.php:2035
+#: options.php:2053
 msgid "Home page Focus background color (RGBA) Blue"
 msgstr ""
 
-#: options.php:2044
+#: options.php:2062
 msgid "Home page Focus background color (RGBA) Alpha"
 msgstr ""
 
-#: options.php:2053
+#: options.php:2071
 msgid "Home page key title font color"
 msgstr ""
 
-#: options.php:2061
+#: options.php:2079
 msgid "Preload animation color A"
 msgstr ""
 
-#: options.php:2069
+#: options.php:2087
 msgid "Preload animation color B"
 msgstr ""
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-07-31 21:48+0800\n"
-"PO-Revision-Date: 2020-07-31 21:48+0800\n"
+"POT-Creation-Date: 2020-08-02 15:32+0800\n"
+"PO-Revision-Date: 2020-08-02 15:36+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1325,7 +1325,7 @@ msgstr "前台动画"
 #: options.php:890 options.php:897 options.php:904 options.php:1467
 #: options.php:1474 options.php:1494 options.php:1509 options.php:1531
 #: options.php:1545 options.php:1552 options.php:1559 options.php:1587
-#: options.php:1594 options.php:1685 options.php:1866
+#: options.php:1594 options.php:1685 options.php:1884
 msgid "Check open"
 msgstr "勾选启用"
 
@@ -1341,7 +1341,7 @@ msgstr "前台文章信息动画"
 msgid "Homepage animation Time"
 msgstr "前台动画时间"
 
-#: options.php:911 options.php:919 options.php:1873
+#: options.php:911 options.php:919 options.php:1891
 msgid "Fill in Number"
 msgstr "填写数字"
 
@@ -2413,7 +2413,8 @@ msgstr "「其他」多彩"
 msgid "Theme Color"
 msgstr "主题色"
 
-#: options.php:1844 options.php:1852 options.php:1860 options.php:2056
+#: options.php:1844 options.php:1852 options.php:1870 options.php:1878
+#: options.php:2074
 msgid "Custom theme color"
 msgstr "自定义主题颜色"
 
@@ -2422,128 +2423,144 @@ msgid "Theme Color Matching Color"
 msgstr "主题色搭配色"
 
 #: options.php:1857
+msgid "Theme Light Color Management"
+msgstr "主题淡配色管理"
+
+#: options.php:1862
+msgid "Merge Options"
+msgstr "合并选项（下方部分选项将失效）"
+
+#: options.php:1863
+msgid "Separation Options"
+msgstr "分离选项（下方部分选项将生效）"
+
+#: options.php:1867
+msgid "Theme Color (Light)"
+msgstr "主题色（淡配色）"
+
+#: options.php:1875
 msgid "Theme Color (Dark mode)"
 msgstr "主题色（深色模式）"
 
-#: options.php:1865
+#: options.php:1883
 msgid "Automatic Switching Dark Mode (22:00-7:00)"
 msgstr "自动切换深色模式（22:00-7:00）"
 
-#: options.php:1872
+#: options.php:1890
 msgid "Image Brightness in Dark Mode"
 msgstr "深色模式图像亮度"
 
-#: options.php:1880
+#: options.php:1898
 msgid "Dark Mode Widget Transparency"
 msgstr "深色模式部件透明度"
 
-#: options.php:1883 options.php:1919 options.php:1955 options.php:2047
+#: options.php:1901 options.php:1937 options.php:1973 options.php:2065
 msgid "Fill in the alpha value from 0 to 1 here"
 msgstr "填写 0~1 的透明度值"
 
-#: options.php:1889
+#: options.php:1907
 msgid "Information Bar Background Color (RGBA) Red"
 msgstr "信息栏背景颜色（RGBA 红）"
 
-#: options.php:1892 options.php:1928 options.php:2020
+#: options.php:1910 options.php:1946 options.php:2038
 msgid "Fill in the red value from 0 to 255 here"
 msgstr "填写 0~255 的红色值"
 
-#: options.php:1898
+#: options.php:1916
 msgid "Information Bar Background Color (RGBA) Green"
 msgstr "信息栏背景颜色（RGBA 绿）"
 
-#: options.php:1901 options.php:1937 options.php:2029
+#: options.php:1919 options.php:1955 options.php:2047
 msgid "Fill in the green value from 0 to 255 here"
 msgstr "填写 0~255 的绿色值"
 
-#: options.php:1907
+#: options.php:1925
 msgid "Information Bar Background Color (RGBA) Blue"
 msgstr "信息栏背景颜色（RGBA 蓝）"
 
-#: options.php:1910 options.php:1946 options.php:2038
+#: options.php:1928 options.php:1964 options.php:2056
 msgid "Fill in the blue value from 0 to 255 here"
 msgstr "填写 0~255 的蓝色值"
 
-#: options.php:1916
+#: options.php:1934
 msgid "Information Bar Background Color (RGBA) Alpha"
 msgstr "信息栏背景颜色（RGBA 透明度）"
 
-#: options.php:1925
+#: options.php:1943
 msgid "Foreground Menu background Color (RGBA) Red"
 msgstr "前台设置菜单背景颜色（RGBA 红）"
 
-#: options.php:1934
+#: options.php:1952
 msgid "Foreground Menu background Color (RGBA) Green"
 msgstr "前台设置菜单背景颜色（RGBA 绿）"
 
-#: options.php:1943
+#: options.php:1961
 msgid "Foreground Menu background Color (RGBA) Blue"
 msgstr "前台设置菜单背景颜色（RGBA 蓝）"
 
-#: options.php:1952
+#: options.php:1970
 msgid "Foreground Menu background Color (RGBA) Alpha"
 msgstr "前台设置菜单背景颜色（RGBA 透明度）"
 
-#: options.php:1961
+#: options.php:1979
 msgid "Foreground selection menu background color"
 msgstr "前台设置菜单选项背景颜色"
 
-#: options.php:1964 options.php:1972 options.php:1980 options.php:1988
-#: options.php:1996 options.php:2004 options.php:2012 options.php:2064
-#: options.php:2072
+#: options.php:1982 options.php:1990 options.php:1998 options.php:2006
+#: options.php:2014 options.php:2022 options.php:2030 options.php:2082
+#: options.php:2090
 msgid "Custom colors"
 msgstr "自定义颜色"
 
-#: options.php:1969
+#: options.php:1987
 msgid "Drop down arrow color"
 msgstr "首页下拉箭头颜色"
 
-#: options.php:1977
+#: options.php:1995
 msgid "Home page article separator"
 msgstr "首页文章分割符颜色"
 
-#: options.php:1985
+#: options.php:2003
 msgid "Home page article time prompt accent"
 msgstr "首页文章时间提示强调文字颜色"
 
-#: options.php:1993
+#: options.php:2011
 msgid "Home page article time prompt emphasize background"
 msgstr "首页文章时间提示强调背景颜色"
 
-#: options.php:2001
+#: options.php:2019
 msgid "Home page article Prompt Icon Color"
 msgstr "首页文章提示图标颜色"
 
-#: options.php:2009
+#: options.php:2027
 msgid "Home page article border shadow"
 msgstr "首页文章边框阴影颜色"
 
-#: options.php:2017
+#: options.php:2035
 msgid "Home page Focus background color (RGBA) Red"
 msgstr "首页聚焦背景颜色（RGBA 红）"
 
-#: options.php:2026
+#: options.php:2044
 msgid "Home page Focus background color (RGBA) Green"
 msgstr "首页聚焦背景颜色（RGBA 绿）"
 
-#: options.php:2035
+#: options.php:2053
 msgid "Home page Focus background color (RGBA) Blue"
 msgstr "首页聚焦背景颜色（RGBA 蓝）"
 
-#: options.php:2044
+#: options.php:2062
 msgid "Home page Focus background color (RGBA) Alpha"
 msgstr "首页聚焦背景颜色（RGBA 透明度）"
 
-#: options.php:2053
+#: options.php:2071
 msgid "Home page key title font color"
 msgstr "首页文字Logo字体颜色"
 
-#: options.php:2061
+#: options.php:2079
 msgid "Preload animation color A"
 msgstr "预加载动画颜色A"
 
-#: options.php:2069
+#: options.php:2087
 msgid "Preload animation color B"
 msgstr "预加载动画颜色B"
 
