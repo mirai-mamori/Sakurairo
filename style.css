@@ -9001,6 +9001,8 @@ input#wp-comment-cookies-consent {
 
 /*修复加载圆圈偏移*/
 #preload li.active {
+    top: 50%;
+    left: 50%;
     margin-left: -20px;
     margin-top: -20px;
 }
