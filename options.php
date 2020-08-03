@@ -2094,14 +2094,6 @@ function optionsframework_options()
     );
     
     $options[] = array(
-        'name' => __('Drop down arrow color (Light colors are recommended)', 'sakurairo'), 
-        'id' => 'godown_skin',
-        'std' => "#FFF",
-        'desc' => __('Custom colors', 'sakurairo'), 
-        'type' => "color",
-    );  
-    
-    $options[] = array(
         'name' => __('Home page article separator (Light colors are recommended)', 'sakurairo'), 
         'id' => 'hpage-art-sc',
         'std' => "#FFE1ED",
@@ -2124,6 +2116,14 @@ function optionsframework_options()
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
+
+    $options[] = array(
+        'name' => __('Drop down arrow color (Light colors are recommended)', 'sakurairo'), 
+        'id' => 'godown_skin',
+        'std' => "#FFF",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );  
 
     $options[] = array(
         'name' => __('Home page article time prompt accent (Theme colors are recommended)', 'sakurairo'), 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-08-03 15:30+0800\n"
-"PO-Revision-Date: 2020-08-03 15:32+0800\n"
+"POT-Creation-Date: 2020-08-03 15:36+0800\n"
+"PO-Revision-Date: 2020-08-03 15:36+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -2556,22 +2556,22 @@ msgid "Custom colors"
 msgstr "自定义颜色"
 
 #: options.php:2097
-msgid "Drop down arrow color (Light colors are recommended)"
-msgstr "下箭头颜色（建议使用淡配色）"
-
-#: options.php:2105
 msgid "Home page article separator (Light colors are recommended)"
 msgstr "首页文章分割符颜色（建议使用淡配色）"
 
-#: options.php:2113
+#: options.php:2105
 msgid ""
 "Home page article time prompt emphasize background (Light colors are "
 "recommended)"
 msgstr "首页文章时间提示强调背景颜色（建议使用淡配色）"
 
-#: options.php:2121
+#: options.php:2113
 msgid "Home page article border shadow (Light colors are recommended)"
 msgstr "首页文章边框阴影颜色（建议使用淡配色）"
+
+#: options.php:2121
+msgid "Drop down arrow color (Light colors are recommended)"
+msgstr "下箭头颜色（建议使用淡配色）"
 
 #: options.php:2129
 msgid "Home page article time prompt accent (Theme colors are recommended)"
