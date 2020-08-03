@@ -532,6 +532,12 @@ input.of-radio-img-radio {
     float: left
 }
 
+div#section-release_info img {
+    height: 20px;
+    width: auto !important;
+    min-width: 0px !important;
+}
+
 #optionsframework .section-color .controls,
 #optionsframework .section-colorradio .controls,
 #optionsframework .section-radio .controls {
