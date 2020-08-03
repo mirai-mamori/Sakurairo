@@ -1152,6 +1152,29 @@ function optionsframework_options()
         'desc' => __('SVG Icons Custom Color', 'sakurairo'),
         'type' => "color",
     );
+    
+    $options[] = array(
+        'name' => __('后台字体颜色', 'sakurairo'),
+        'id' => 'admin_font_skin',
+        'std' => "#f3f2f1",
+        'desc' => __('字体颜色设置', 'sakurairo'),
+        'type' => "color",
+    );
+    
+    $options[] = array(
+        'name' => __('后台按钮颜色', 'sakurairo'),
+        'id' => 'admin_pb_skin',
+        'std' => "#8fbbb1",
+        'desc' => __('字体颜色设置', 'sakurairo'),
+        'type' => "color",
+    );
+    
+    $options[] = array(
+        'name' => __('后台背景图', 'sakurairo'), 
+        'desc' => __('用于后台背景', 'sakurairo'), 
+        'id' => 'admin_menu_bg',
+        'std' => "https://view.moezx.cc/images/2018/01/03/sakura.png",
+        'type' => 'upload');
 
     $options[] = array(
         'name' => __('Other custom panel styles(CSS)', 'sakurairo'), 

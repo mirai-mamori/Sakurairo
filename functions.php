@@ -1557,10 +1557,10 @@ function dash_scheme($key, $name, $col1, $col2, $col3, $col4, $base, $focus, $cu
 }
 
 //Sakura
-dash_scheme($key = "sakurairo", $name = "Sakura🌸",
+dash_scheme($key = "sakurairo", $name = "Sakurairo🌸",
     $col1 = '#E87A90', $col2 = '#EE9CA7', $col3 = '#F4A7B9', $col4 = '#DB4D6D',
     $base = "#FEDFE1", $focus = "#fff", $current = "#fff",
-    $rules = "#adminmenu .wp-has-current-submenu .wp-submenu a,#adminmenu .wp-has-current-submenu.opensub .wp-submenu a,#adminmenu .wp-submenu a,#adminmenu a.wp-has-current-submenu:focus+.wp-submenu a,#wpadminbar .ab-submenu .ab-item,#wpadminbar .quicklinks .menupop ul li a,#wpadminbar .quicklinks .menupop.hover ul li a,#wpadminbar.nojs .quicklinks .menupop:hover ul li a,.folded #adminmenu .wp-has-current-submenu .wp-submenu a{color:#f3f2f1}body{background-image:url(https://view.moezx.cc/images/2018/01/03/sakura.png);background-attachment:fixed;}#wpcontent{background:rgba(255,255,255,.0)}.wp-core-ui .button-primary{background:#bfd8d2!important;border-color:#8fbbb1 #8fbbb1 #8fbbb1!important;color:#fff!important;box-shadow:0 1px 0 #8fbbb1!important;text-shadow:0 -1px 1px #8fbbb1,1px 0 1px #8fbbb1,0 1px 1px #8fbbb1,-1px 0 1px #8fbbb1!important}");
+    $rules = '#adminmenu .wp-has-current-submenu .wp-submenu a,#adminmenu .wp-has-current-submenu.opensub .wp-submenu a,#adminmenu .wp-submenu a,#adminmenu a.wp-has-current-submenu:focus+.wp-submenu a,#wpadminbar .ab-submenu .ab-item,#wpadminbar .quicklinks .menupop ul li a,#wpadminbar .quicklinks .menupop.hover ul li a,#wpadminbar.nojs .quicklinks .menupop:hover ul li a,.folded #adminmenu .wp-has-current-submenu .wp-submenu a{color:' . akina_option('admin_font_skin') . '}body{background-image:url(' . akina_option('admin_menu_bg') . ');background-attachment:fixed;}#wpcontent{background:rgba(255,255,255,.0)}.wp-core-ui .button-primary{background:' . akina_option('admin_pb_skin') . '!important;border-color:' . akina_option('admin_pb_skin') . '!important;color:' . akina_option('admin_font_skin') . '!important;box-shadow:0 1px 0 ' . akina_option('admin_pb_skin') . '!important;text-shadow:0 -1px 1px ' . akina_option('admin_pb_skin') . ',1px 0 1px ' . akina_option('admin_pb_skin') . ',0 1px 1px ' . akina_option('admin_pb_skin') . ',-1px 0 1px ' . akina_option('admin_pb_skin') . '!important}');
 
 //custom
 dash_scheme($key = "custom", $name = "Custom",
