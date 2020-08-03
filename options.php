@@ -117,7 +117,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Basic.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Stand-Set-Basic.png',
                 ),
             );        
         
@@ -318,7 +318,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-HomePage.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Stand-Set-HomePage.png',
                 ),
             );         
 
@@ -616,7 +616,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Post.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Stand-Set-Post.png',
                 ),
             );         
     
@@ -724,7 +724,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Social.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Stand-Set-Social.png',
                 ),
             );         
 
@@ -858,7 +858,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Foreground.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Stand-Set-Foreground.png',
                 ),
             );         
 
@@ -1074,7 +1074,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Backstage.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Stand-Set-Backstage.png',
                 ),
             );         
 
@@ -1230,7 +1230,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Advanced.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Stand-Set-Advanced.png',
                 ),
             );         
     
@@ -1333,7 +1333,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Function.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Stand-Set-Function.png',
                 ),
             );     
 
@@ -1535,7 +1535,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Enhanced.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Stand-Set-Enhanced.png',
                 ),
             );     
   
@@ -1756,7 +1756,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Fonts.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Stand-Set-Fonts.png',
                 ),
             );     
   
@@ -1912,7 +1912,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Theme.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Stand-Set-Theme.png',
                 ),
             );     
   
