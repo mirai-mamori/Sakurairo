@@ -513,9 +513,8 @@ input.of-radio-img-radio {
 }
 
 #optionsframework .controls .of-radio-img-selected {
-    /* min-width: 280px;*/
-    /* width: 50%;*/
-    height: 20px;
+    min-width: 280px;
+    width: 50%;
     border: 3px solid #ccc;
 }
 
@@ -531,6 +530,12 @@ input.of-radio-img-radio {
 #optionsframework .controls .of-border-style {
     width: 120px;
     float: left
+}
+
+div#section-release_info img {
+    height: 20px;
+    width: auto !important;
+    min-width: 0px !important;
 }
 
 #optionsframework .section-color .controls,
