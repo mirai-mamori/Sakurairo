@@ -122,13 +122,13 @@ function optionsframework_options()
             );        
         
     $options[] = array(
-        'name' => __('Support', 'sakurairo'), 
+        'name' => __('Support For You', 'sakurairo'), 
         'desc' => __(' ', 'sakurairo'), 
-        'id' => 'theme_support',
+        'id' => 'setting_sfu',
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/qqgroup.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Support.png',
                 ),
             );
     
@@ -293,6 +293,17 @@ function optionsframework_options()
         'std' => '',
         'type' => 'typography ');
 
+   $options[] = array(
+        'name' => __('Sponsor US', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_sus',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Sponsor.png',
+                ),
+            );
+    
     $options[] = array(
         'name' => __('Check for Updates', 'sakurairo'), 
         'desc' => '<a href="https://github.com/mirai-mamori/Sakurairo/releases/latest">Download the latest version</a>',
