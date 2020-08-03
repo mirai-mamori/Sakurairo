@@ -224,7 +224,7 @@ input[type="reset" i] {}
 }
 
 #optionsframework .section .explain {
-    /* max-width: 38%;*/
+    /*max-width:38%;*/
     float: left;
     font-size: 12px;
     line-height: 20px;
@@ -406,7 +406,7 @@ input[type="reset" i] {}
 }
 
 #optionsframework .screenshot {
-    float: left;
+    /*float:left;*/
     margin-left: 1px;
     position: relative;
     width: 150px;
@@ -513,8 +513,9 @@ input.of-radio-img-radio {
 }
 
 #optionsframework .controls .of-radio-img-selected {
+    min-width: 280px;
+    width: 50%;
     border: 3px solid #ccc;
-    width: 100%;
 }
 
 #optionsframework .controls .of-radio-img-img:hover {
