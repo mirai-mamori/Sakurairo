@@ -1817,6 +1817,7 @@ function markdown_parser($incoming_comment)
     return $incoming_comment;
 }
 add_filter('preprocess_comment', 'markdown_parser');
+remove_filter( 'comment_text', 'make_clickable', 9 );
 
 //保存Markdown评论
 function save_markdown_comment($comment_ID, $comment_approved)

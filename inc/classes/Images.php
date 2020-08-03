@@ -154,7 +154,7 @@ class Images
             $img_array = json_decode($sakura_image_array, true);
             $img = array_rand($img_array);
             $img_domain = akina_option('cover_cdn') ? akina_option('cover_cdn') : get_template_directory_uri();
-            if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp')) {
+            if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') !== false) {
                 $imgurl = $img_domain . "/manifest/" . $img_array[$img]["webp"][0];
             } else {
                 $imgurl = $img_domain . "/manifest/" . $img_array[$img]["jpeg"][0];

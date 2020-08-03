@@ -171,7 +171,7 @@ function code_highlight_style() {
         }
         var ele_name = $('pre:eq(' + i + ')')[0].children[0].className;
         var lang = ele_name.substr(0, ele_name.indexOf(" ")).replace('language-', '');
-        if (lang.toLowerCase() == "hljs") var lang = "text";
+        if (lang.toLowerCase() == "hljs") var lang = $('pre:eq(' + i + ') code').attr("class").replace('hljs', '')?$('pre:eq(' + i + ') code').attr("class").replace('hljs', ''):"text";
         $('pre:eq(' + i + ')').addClass('highlight-wrap');
         for (var t in attributes) {
             $('pre:eq(' + i + ')').attr(t, attributes[t]);
