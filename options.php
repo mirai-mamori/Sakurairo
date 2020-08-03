@@ -111,6 +111,17 @@ function optionsframework_options()
         'type' => 'heading');
 
     $options[] = array(
+        'name' => __('Basic-Setting', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_basic',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Basic.png',
+                ),
+            );        
+        
+    $options[] = array(
         'name' => __('Support', 'sakurairo'), 
         'desc' => __(' ', 'sakurairo'), 
         'id' => 'theme_support',
@@ -299,6 +310,17 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('HomePage', 'sakurairo'), 
         'type' => 'heading');
+
+    $options[] = array(
+        'name' => __('HomePage-Setting', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_home',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-HomePage.png',
+                ),
+            );         
 
     $options[] = array(
         'name' => __('Main Switch', 'sakurairo'), 
@@ -588,6 +610,17 @@ function optionsframework_options()
         'type' => 'heading');
 
     $options[] = array(
+        'name' => __('Post-Setting', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_post',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Post.png',
+                ),
+            );         
+    
+    $options[] = array(
         'name' => __('Post style', 'sakurairo'), 
         'id' => 'entry_content_theme',
         'std' => "sakurairo",
@@ -683,6 +716,17 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Social', 'sakurairo'), 
         'type' => 'heading');
+
+    $options[] = array(
+        'name' => __('Social-Setting', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_social',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Social.png',
+                ),
+            );         
 
     $options[] = array(
         'name' => __('Wechat', 'sakurairo'), 
@@ -806,6 +850,17 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Foreground', 'sakurairo'),
         'type' => 'heading');
+
+    $options[] = array(
+        'name' => __('Foreground-Setting', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_fore',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Foreground.png',
+                ),
+            );         
 
     $options[] = array(
         'name' => __('Foreground switch full mode', 'sakurairo'), 
@@ -1012,6 +1067,17 @@ function optionsframework_options()
         'name' => __('Backstage', 'sakurairo'), 
         'type' => 'heading');
 
+    $options[] = array(
+        'name' => __('Backstage-Setting', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_back',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Backstage.png',
+                ),
+            );         
+
     //后台面板自定义配色方案
     $options[] = array(
         'name' => __('Dashboard panel custom color scheme', 'sakurairo'), 
@@ -1158,16 +1224,16 @@ function optionsframework_options()
         'type' => 'heading');
 
     $options[] = array(
-        'name' => __('Warning', 'sakurairo'), 
+        'name' => __('Advanced-Setting', 'sakurairo'), 
         'desc' => __(' ', 'sakurairo'), 
-        'id' => 'theme_warning',
+        'id' => 'setting_adv',
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/advanced.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Advanced.png',
                 ),
-            );
-
+            );         
+    
     $options[] = array(
         'name' => __('Use the front-end library locally (lib.js、lib.css)', 'sakurairo'), 
         'desc' => __('The front-end library don\'t load from jsDelivr, not recommand', 'sakurairo'), 
@@ -1259,6 +1325,17 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Function', 'sakurairo'), 
         'type' => 'heading');
+
+    $options[] = array(
+        'name' => __('Function-Setting', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_func',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Function.png',
+                ),
+            );     
 
     $options[] = array(
         'name' => __('Bilibili UID', 'sakurairo'), 
@@ -1450,18 +1527,18 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Enhanced', 'sakurairo'),
         'type' => 'heading');
-    
+ 
     $options[] = array(
-        'name' => __('You Should Know', 'sakurairo'), 
+        'name' => __('Enhanced-Setting', 'sakurairo'), 
         'desc' => __(' ', 'sakurairo'), 
-        'id' => 'theme_knowledge',
+        'id' => 'setting_enhan',
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/guide.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Enhanced.png',
                 ),
-            );
-
+            );     
+  
     $options[] = array(
         'name' => __('Preload animation', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
@@ -1673,6 +1750,17 @@ function optionsframework_options()
         'type' => 'heading');
 
     $options[] = array(
+        'name' => __('Fonts-Setting', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_fonts',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Fonts.png',
+                ),
+            );     
+  
+    $options[] = array(
         'name' => __('fontweight', 'sakurairo'),
         'desc' => __('Fill in a number, maximum 900, minimum 100. Between 300 and 500 is recommended.', 'sakurairo'),
         'id' => 'fontweight',
@@ -1817,6 +1905,17 @@ function optionsframework_options()
         'name' => __('Theme', 'sakurairo'),
         'type' => 'heading');
 
+    $options[] = array(
+        'name' => __('Theme-Setting', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_theme',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/setting-img/Min-Set-Theme.png',
+                ),
+            );     
+  
     $options[] = array(
         'name' => __('Display icon selection', 'sakurairo'), 
         'desc' => __('Choose icon color', 'sakurairo'), 
