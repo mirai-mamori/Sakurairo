@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-08-03 15:16+0800\n"
+"POT-Creation-Date: 2020-08-03 15:30+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -2431,7 +2431,7 @@ msgid "Foreground Menu background Color (RGBA) Alpha"
 msgstr ""
 
 #: options.php:2089
-msgid "Foreground selection menu background color"
+msgid "Foreground selection menu background color (Light colors are recommended)"
 msgstr ""
 
 #: options.php:2092 options.php:2100 options.php:2108 options.php:2116 options.php:2124
@@ -2440,27 +2440,27 @@ msgid "Custom colors"
 msgstr ""
 
 #: options.php:2097
-msgid "Drop down arrow color"
+msgid "Drop down arrow color (Light colors are recommended)"
 msgstr ""
 
 #: options.php:2105
-msgid "Home page article separator"
+msgid "Home page article separator (Light colors are recommended)"
 msgstr ""
 
 #: options.php:2113
-msgid "Home page article time prompt accent"
+msgid "Home page article time prompt emphasize background (Light colors are recommended)"
 msgstr ""
 
 #: options.php:2121
-msgid "Home page article time prompt emphasize background"
+msgid "Home page article border shadow (Light colors are recommended)"
 msgstr ""
 
 #: options.php:2129
-msgid "Home page article Prompt Icon Color"
+msgid "Home page article time prompt accent (Theme colors are recommended)"
 msgstr ""
 
 #: options.php:2137
-msgid "Home page article border shadow"
+msgid "Home page article Prompt Icon Color (Theme colors are recommended)"
 msgstr ""
 
 #: options.php:2145

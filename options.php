@@ -2086,7 +2086,7 @@ function optionsframework_options()
     );
 
     $options[] = array(
-        'name' => __('Foreground selection menu background color', 'sakurairo'), 
+        'name' => __('Foreground selection menu background color (Light colors are recommended)', 'sakurairo'), 
         'id' => 'fore-switch-sele-bc',
         'std' => "#FFE1ED",
         'desc' => __('Custom colors', 'sakurairo'), 
@@ -2094,7 +2094,7 @@ function optionsframework_options()
     );
     
     $options[] = array(
-        'name' => __('Drop down arrow color', 'sakurairo'), 
+        'name' => __('Drop down arrow color (Light colors are recommended)', 'sakurairo'), 
         'id' => 'godown_skin',
         'std' => "#FFF",
         'desc' => __('Custom colors', 'sakurairo'), 
@@ -2102,7 +2102,7 @@ function optionsframework_options()
     );  
     
     $options[] = array(
-        'name' => __('Home page article separator', 'sakurairo'), 
+        'name' => __('Home page article separator (Light colors are recommended)', 'sakurairo'), 
         'id' => 'hpage-art-sc',
         'std' => "#FFE1ED",
         'desc' => __('Custom colors', 'sakurairo'), 
@@ -2110,7 +2110,23 @@ function optionsframework_options()
     );
 
     $options[] = array(
-        'name' => __('Home page article time prompt accent', 'sakurairo'), 
+        'name' => __('Home page article time prompt emphasize background (Light colors are recommended)', 'sakurairo'), 
+        'id' => 'hpage-art-tpebc',
+        'std' => "#FFE1ED",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Home page article border shadow (Light colors are recommended)', 'sakurairo'), 
+        'id' => 'hpage-art-bsc',
+        'std' => "#FFE1ED",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Home page article time prompt accent (Theme colors are recommended)', 'sakurairo'), 
         'id' => 'hpage-art-tpac',
         'std' => "#FB98C0",
         'desc' => __('Custom colors', 'sakurairo'), 
@@ -2118,25 +2134,9 @@ function optionsframework_options()
     );
     
     $options[] = array(
-        'name' => __('Home page article time prompt emphasize background', 'sakurairo'), 
-        'id' => 'hpage-art-tpebc',
-        'std' => "#FFE1ED",
-        'desc' => __('Custom colors', 'sakurairo'), 
-        'type' => "color",
-    );
-    
-    $options[] = array(
-        'name' => __('Home page article Prompt Icon Color', 'sakurairo'), 
+        'name' => __('Home page article Prompt Icon Color (Theme colors are recommended)', 'sakurairo'), 
         'id' => 'hpage-art-pic',
         'std' => "#FB98C0",
-        'desc' => __('Custom colors', 'sakurairo'), 
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Home page article border shadow', 'sakurairo'), 
-        'id' => 'hpage-art-bsc',
-        'std' => "#FFE1ED",
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
