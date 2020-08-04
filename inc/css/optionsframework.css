@@ -40,7 +40,7 @@ body {
     padding: 6px 10px;
     font-weight: 400;
     font-size: 13.5px;
-    color: #cc7878;
+    color: #808080;
     border-radius: 3px 3px 0 0;
 }
 
@@ -213,7 +213,7 @@ input[type="reset" i] {}
     padding: 10px 0px;
     margin: 0 0 15px;
     font-weight: 600;
-    color: #cc7878;
+    color: #808080;
 }
 
 #optionsframework .section .controls {

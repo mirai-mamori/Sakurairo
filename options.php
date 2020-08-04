@@ -2164,7 +2164,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Backstage Button Color', 'sakurairo'),
         'id' => 'admin_pb_skin',
-        'std' => "#8fbbb1",
+        'std' => "#85ABFC",
         'desc' => __('Custom color', 'sakurairo'),
         'type' => "color",
     );
@@ -2172,7 +2172,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Backstage Font Color', 'sakurairo'),
         'id' => 'admin_font_skin',
-        'std' => "#f3f2f1",
+        'std' => "#FFF",
         'desc' => __('Custom color', 'sakurairo'),
         'type' => "color",
     );
