@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-08-04 14:20+0800\n"
+"POT-Creation-Date: 2020-08-04 15:59+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -198,19 +198,19 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1501
+#: functions.php:1495
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1587
+#: functions.php:1581
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1659
+#: functions.php:1653
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:1786
+#: functions.php:1780
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-permalink.php\"> "
 "permalink </a> as plain. To do this, you may need to configure <a href=\"https://www.wpdaxue."
@@ -2439,69 +2439,28 @@ msgstr ""
 msgid "Preload animation color B"
 msgstr ""
 
-#: options.php:2142
-msgid "Dashboard panel custom color scheme"
+#: options.php:2141
+msgid "Backstage Main Color (Primary menu)"
 msgstr ""
 
-#: options.php:2143
-msgid ""
-"You can design the dashboard panel (/wp-admin/) style yourself below, but before you start, "
-"please go to <a href=\"/wp-admin/profile.php\">here</a> to change the color scheme to custom."
-"(Custom).<br><b>Tip: </b>How to match colors? Maybe <a href=\"https://mashiro.top/color-thief/"
-"\">this</a> can help you."
-msgstr ""
-
-#: options.php:2149
-msgid "Panel main color A"
-msgstr ""
-
-#: options.php:2152 options.php:2160 options.php:2168 options.php:2176 options.php:2208
-#: options.php:2216
+#: options.php:2144 options.php:2152 options.php:2160 options.php:2168 options.php:2176
 msgid "Custom color"
 msgstr ""
 
+#: options.php:2149
+msgid "Backstage Main Color (Secondary menu)"
+msgstr ""
+
 #: options.php:2157
-msgid "Panel main color B"
+msgid "Backstage Accent Color (For Example, The Prompt Color is Included in This Option)"
 msgstr ""
 
 #: options.php:2165
-msgid "Panel main color C"
-msgstr ""
-
-#: options.php:2173
-msgid "Panel main color D"
-msgstr ""
-
-#: options.php:2181
-msgid "Panel icon color——base"
-msgstr ""
-
-#: options.php:2184 options.php:2192 options.php:2200
-msgid "SVG Icons Custom Color"
-msgstr ""
-
-#: options.php:2189
-msgid "Panel icon color——focus"
-msgstr ""
-
-#: options.php:2197
-msgid "Panel icon color——current"
-msgstr ""
-
-#: options.php:2205
-msgid "Backstage Font Color"
-msgstr ""
-
-#: options.php:2213
 msgid "Backstage Button Color"
 msgstr ""
 
-#: options.php:2221
-msgid "Other custom panel styles(CSS)"
-msgstr ""
-
-#: options.php:2222
-msgid "If you need to adjust other styles of the panel, put the style here."
+#: options.php:2173
+msgid "Backstage Font Color"
 msgstr ""
 
 #: search.php:19

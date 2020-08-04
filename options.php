@@ -1093,7 +1093,7 @@ function optionsframework_options()
         'name' => __('Backstage Background Image', 'sakurairo'), 
         'desc' => __('Backstage Background Image', 'sakurairo'), 
         'id' => 'admin_menu_bg',
-        'std' => "https://view.moezx.cc/images/2018/01/03/sakura.png",
+        'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@6.9.9.2/img/Backstage-Defbg.jpg",
         'type' => 'upload');
 
     $options[] = array(
@@ -2137,78 +2137,30 @@ function optionsframework_options()
         'type' => "color",
     );
 
-    //后台面板自定义配色方案
     $options[] = array(
-        'name' => __('Dashboard panel custom color scheme', 'sakurairo'), 
-        'desc' => __('You can design the dashboard panel (/wp-admin/) style yourself below, but before you start, please go to <a href="/wp-admin/profile.php">here</a> to change the color scheme to custom.(Custom).<br><b>Tip: </b>How to match colors? Maybe <a href="https://mashiro.top/color-thief/">this</a> can help you.', 'sakurairo'), 
-        'id' => 'scheme_tip',
-        'std' => '',
-        'type' => 'typography ');
-
-    $options[] = array(
-        'name' => __('Panel main color A', 'sakurairo'), 
-        'id' => 'dash_scheme_color_a',
-        'std' => "#c6742b",
+        'name' => __('Backstage Main Color (Primary menu)', 'sakurairo'),
+        'id' => 'admin_mcp',
+        'std' => "#99B8FC",
         'desc' => __('Custom color', 'sakurairo'),
         'type' => "color",
     );
 
     $options[] = array(
-        'name' => __('Panel main color B', 'sakurairo'),
-        'id' => 'dash_scheme_color_b',
-        'std' => "#d88e4c",
+        'name' => __('Backstage Main Color (Secondary menu)', 'sakurairo'), 
+        'id' => 'admin_mcs',
+        'std' => "#85ABFC",
         'desc' => __('Custom color', 'sakurairo'),
         'type' => "color",
     );
 
     $options[] = array(
-        'name' => __('Panel main color C', 'sakurairo'),
-        'id' => 'dash_scheme_color_c',
-        'std' => "#695644",
+        'name' => __('Backstage Accent Color (For Example, The Prompt Color is Included in This Option)', 'sakurairo'),
+        'id' => 'admin_acc',
+        'std' => "#F181A2",
         'desc' => __('Custom color', 'sakurairo'),
         'type' => "color",
     );
 
-    $options[] = array(
-        'name' => __('Panel main color D', 'sakurairo'),
-        'id' => 'dash_scheme_color_d',
-        'std' => "#a19780",
-        'desc' => __('Custom color', 'sakurairo'),
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Panel icon color——base', 'sakurairo'), 
-        'id' => 'dash_scheme_color_base',
-        'std' => "#e5f8ff",
-        'desc' => __('SVG Icons Custom Color', 'sakurairo'),
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Panel icon color——focus', 'sakurairo'),
-        'id' => 'dash_scheme_color_focus',
-        'std' => "#fff",
-        'desc' => __('SVG Icons Custom Color', 'sakurairo'),
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Panel icon color——current', 'sakurairo'),
-        'id' => 'dash_scheme_color_current',
-        'std' => "#fff",
-        'desc' => __('SVG Icons Custom Color', 'sakurairo'),
-        'type' => "color",
-    );
-    
-    $options[] = array(
-        'name' => __('Backstage Font Color', 'sakurairo'),
-        'id' => 'admin_font_skin',
-        'std' => "#f3f2f1",
-        'desc' => __('Custom color', 'sakurairo'),
-        'type' => "color",
-    );
-    
     $options[] = array(
         'name' => __('Backstage Button Color', 'sakurairo'),
         'id' => 'admin_pb_skin',
@@ -2216,13 +2168,14 @@ function optionsframework_options()
         'desc' => __('Custom color', 'sakurairo'),
         'type' => "color",
     );
- 
+
     $options[] = array(
-        'name' => __('Other custom panel styles(CSS)', 'sakurairo'), 
-        'desc' => __('If you need to adjust other styles of the panel, put the style here.', 'sakurairo'), 
-        'id' => 'dash_scheme_css_rules',
-        'std' => '',
-        'type' => 'textarea');
+        'name' => __('Backstage Font Color', 'sakurairo'),
+        'id' => 'admin_font_skin',
+        'std' => "#f3f2f1",
+        'desc' => __('Custom color', 'sakurairo'),
+        'type' => "color",
+    );
     
     return $options;
 }

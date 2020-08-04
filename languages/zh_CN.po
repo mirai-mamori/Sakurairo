@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-08-04 14:20+0800\n"
-"PO-Revision-Date: 2020-08-04 14:23+0800\n"
+"POT-Creation-Date: 2020-08-04 15:59+0800\n"
+"PO-Revision-Date: 2020-08-04 16:00+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -202,19 +202,19 @@ msgstr " 篇文章"
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1501
+#: functions.php:1495
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1587
+#: functions.php:1581
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1659
+#: functions.php:1653
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1786
+#: functions.php:1780
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -2552,74 +2552,32 @@ msgstr "预加载动画颜色A"
 msgid "Preload animation color B"
 msgstr "预加载动画颜色B"
 
-#: options.php:2142
-msgid "Dashboard panel custom color scheme"
-msgstr "后台面板自定义配色方案"
+#: options.php:2141
+msgid "Backstage Main Color (Primary menu)"
+msgstr "后台主题色（一级菜单）"
 
-#: options.php:2143
-msgid ""
-"You can design the dashboard panel (/wp-admin/) style yourself below, but "
-"before you start, please go to <a href=\"/wp-admin/profile.php\">here</a> to "
-"change the color scheme to custom.(Custom).<br><b>Tip: </b>How to match "
-"colors? Maybe <a href=\"https://mashiro.top/color-thief/\">this</a> can help "
-"you."
-msgstr ""
-"你可以在下面自行设计后台面板样式，不过在开始之前请到<a href=\"/wp-admin/"
-"profile.php\">这里</a>将配色方案改为自定义。<br><b>Tip: </b>如何搭配颜色？或"
-"许<a href=\"https://mashiro.top/color-thief/\">这个</a>可以帮到你。"
-
-#: options.php:2149
-msgid "Panel main color A"
-msgstr "后台面板主色调A"
-
-#: options.php:2152 options.php:2160 options.php:2168 options.php:2176
-#: options.php:2208 options.php:2216
+#: options.php:2144 options.php:2152 options.php:2160 options.php:2168
+#: options.php:2176
 msgid "Custom color"
 msgstr "自定义颜色"
 
+#: options.php:2149
+msgid "Backstage Main Color (Secondary menu)"
+msgstr "后台主题色（二级菜单）"
+
 #: options.php:2157
-msgid "Panel main color B"
-msgstr "后台面板主色调B"
+msgid ""
+"Backstage Accent Color (For Example, The Prompt Color is Included in This "
+"Option)"
+msgstr "后台强调色（比如提示色）"
 
 #: options.php:2165
-msgid "Panel main color C"
-msgstr "后台面板主色调C"
-
-#: options.php:2173
-msgid "Panel main color D"
-msgstr "后台面板主色调D"
-
-#: options.php:2181
-msgid "Panel icon color——base"
-msgstr "后台面板图标配色——Base"
-
-#: options.php:2184 options.php:2192 options.php:2200
-msgid "SVG Icons Custom Color"
-msgstr "自定义SVG图标颜色"
-
-#: options.php:2189
-msgid "Panel icon color——focus"
-msgstr "后台面板图标配色——Focus"
-
-#: options.php:2197
-msgid "Panel icon color——current"
-msgstr "后台面板图标配色——Current"
-
-#: options.php:2205
-msgid "Backstage Font Color"
-msgstr "后台默认字体颜色"
-
-#: options.php:2213
 msgid "Backstage Button Color"
 msgstr "后台默认按钮颜色"
 
-#: options.php:2221
-msgid "Other custom panel styles(CSS)"
-msgstr "自定义面板样式(CSS)"
-
-#: options.php:2222
-msgid "If you need to adjust other styles of the panel, put the style here."
-msgstr "如果还需要对面板其他样式进行调整可以把Style放到这里。"
+#: options.php:2173
+msgid "Backstage Font Color"
+msgstr "后台默认字体颜色"
 
 #: search.php:19
 #, php-format
@@ -2823,6 +2781,50 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr ""
+
+#~ msgid "Dashboard panel custom color scheme"
+#~ msgstr "后台面板自定义配色方案"
+
+#~ msgid ""
+#~ "You can design the dashboard panel (/wp-admin/) style yourself below, but "
+#~ "before you start, please go to <a href=\"/wp-admin/profile.php\">here</a> "
+#~ "to change the color scheme to custom.(Custom).<br><b>Tip: </b>How to "
+#~ "match colors? Maybe <a href=\"https://mashiro.top/color-thief/\">this</a> "
+#~ "can help you."
+#~ msgstr ""
+#~ "你可以在下面自行设计后台面板样式，不过在开始之前请到<a href=\"/wp-admin/"
+#~ "profile.php\">这里</a>将配色方案改为自定义。<br><b>Tip: </b>如何搭配颜色？"
+#~ "或许<a href=\"https://mashiro.top/color-thief/\">这个</a>可以帮到你。"
+
+#~ msgid "Panel main color A"
+#~ msgstr "后台面板主色调A"
+
+#~ msgid "Panel main color B"
+#~ msgstr "后台面板主色调B"
+
+#~ msgid "Panel main color C"
+#~ msgstr "后台面板主色调C"
+
+#~ msgid "Panel main color D"
+#~ msgstr "后台面板主色调D"
+
+#~ msgid "Panel icon color——base"
+#~ msgstr "后台面板图标配色——Base"
+
+#~ msgid "SVG Icons Custom Color"
+#~ msgstr "自定义SVG图标颜色"
+
+#~ msgid "Panel icon color——focus"
+#~ msgstr "后台面板图标配色——Focus"
+
+#~ msgid "Panel icon color——current"
+#~ msgstr "后台面板图标配色——Current"
+
+#~ msgid "Other custom panel styles(CSS)"
+#~ msgstr "自定义面板样式(CSS)"
+
+#~ msgid "If you need to adjust other styles of the panel, put the style here."
+#~ msgstr "如果还需要对面板其他样式进行调整可以把Style放到这里。"
 
 #~ msgid "Drop down arrow color"
 #~ msgstr "首页下拉箭头颜色"

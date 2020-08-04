@@ -1426,17 +1426,11 @@ function dash_scheme($key, $name, $col1, $col2, $col3, $col4, $base, $focus, $cu
     );
 }
 
-//Sakura
+//Sakurairo
 dash_scheme($key = "sakurairo", $name = "Sakurairo🌸",
-    $col1 = '#E87A90', $col2 = '#EE9CA7', $col3 = '#F4A7B9', $col4 = '#DB4D6D',
-    $base = "#FEDFE1", $focus = "#fff", $current = "#fff",
+    $col1 = akina_option('admin_mcs'), $col2 = akina_option('admin_mcp'), $col3 = akina_option('admin_acc'), $col4 = akina_option('admin_acc'),
+    $base = "#FFF", $focus = "#FFF", $current = "#FFF",
     $rules = '#adminmenu .wp-has-current-submenu .wp-submenu a,#adminmenu .wp-has-current-submenu.opensub .wp-submenu a,#adminmenu .wp-submenu a,#adminmenu a.wp-has-current-submenu:focus+.wp-submenu a,#wpadminbar .ab-submenu .ab-item,#wpadminbar .quicklinks .menupop ul li a,#wpadminbar .quicklinks .menupop.hover ul li a,#wpadminbar.nojs .quicklinks .menupop:hover ul li a,.folded #adminmenu .wp-has-current-submenu .wp-submenu a{color:' . akina_option('admin_font_skin') . '}body{background-image:url(' . akina_option('admin_menu_bg') . ');background-attachment:fixed;}#wpcontent{background:rgba(255,255,255,.0)}.wp-core-ui .button-primary{background:' . akina_option('admin_pb_skin') . '!important;border-color:' . akina_option('admin_pb_skin') . '!important;color:' . akina_option('admin_font_skin') . '!important;box-shadow:0 1px 0 ' . akina_option('admin_pb_skin') . '!important;text-shadow:0 -1px 1px ' . akina_option('admin_pb_skin') . ',1px 0 1px ' . akina_option('admin_pb_skin') . ',0 1px 1px ' . akina_option('admin_pb_skin') . ',-1px 0 1px ' . akina_option('admin_pb_skin') . '!important}');
-
-//custom
-dash_scheme($key = "custom", $name = "Custom",
-    $col1 = akina_option('dash_scheme_color_a'), $col2 = akina_option('dash_scheme_color_b'), $col3 = akina_option('dash_scheme_color_c'), $col4 = akina_option('dash_scheme_color_d'),
-    $base = akina_option('dash_scheme_color_base'), $focus = akina_option('dash_scheme_color_focus'), $current = akina_option('dash_scheme_color_current'),
-    $rules = akina_option('dash_scheme_css_rules'));
 
 //Set Default Admin Color Scheme for New Users
 function set_default_admin_color($user_id)
