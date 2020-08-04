@@ -1089,99 +1089,12 @@ function optionsframework_options()
                 ),
             );         
 
-    //后台面板自定义配色方案
     $options[] = array(
-        'name' => __('Dashboard panel custom color scheme', 'sakurairo'), 
-        'desc' => __('You can design the dashboard panel (/wp-admin/) style yourself below, but before you start, please go to <a href="/wp-admin/profile.php">here</a> to change the color scheme to custom.(Custom).<br><b>Tip: </b>How to match colors? Maybe <a href="https://mashiro.top/color-thief/">this</a> can help you.', 'sakurairo'), 
-        'id' => 'scheme_tip',
-        'std' => '',
-        'type' => 'typography ');
-
-    $options[] = array(
-        'name' => __('Panel main color A', 'sakurairo'), 
-        'id' => 'dash_scheme_color_a',
-        'std' => "#c6742b",
-        'desc' => __('Custom color', 'sakurairo'),
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Panel main color B', 'sakurairo'),
-        'id' => 'dash_scheme_color_b',
-        'std' => "#d88e4c",
-        'desc' => __('Custom color', 'sakurairo'),
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Panel main color C', 'sakurairo'),
-        'id' => 'dash_scheme_color_c',
-        'std' => "#695644",
-        'desc' => __('Custom color', 'sakurairo'),
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Panel main color D', 'sakurairo'),
-        'id' => 'dash_scheme_color_d',
-        'std' => "#a19780",
-        'desc' => __('Custom color', 'sakurairo'),
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Panel icon color——base', 'sakurairo'), 
-        'id' => 'dash_scheme_color_base',
-        'std' => "#e5f8ff",
-        'desc' => __('SVG Icons Custom Color', 'sakurairo'),
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Panel icon color——focus', 'sakurairo'),
-        'id' => 'dash_scheme_color_focus',
-        'std' => "#fff",
-        'desc' => __('SVG Icons Custom Color', 'sakurairo'),
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Panel icon color——current', 'sakurairo'),
-        'id' => 'dash_scheme_color_current',
-        'std' => "#fff",
-        'desc' => __('SVG Icons Custom Color', 'sakurairo'),
-        'type' => "color",
-    );
-    
-    $options[] = array(
-        'name' => __('后台字体颜色', 'sakurairo'),
-        'id' => 'admin_font_skin',
-        'std' => "#f3f2f1",
-        'desc' => __('字体颜色设置', 'sakurairo'),
-        'type' => "color",
-    );
-    
-    $options[] = array(
-        'name' => __('后台按钮颜色', 'sakurairo'),
-        'id' => 'admin_pb_skin',
-        'std' => "#8fbbb1",
-        'desc' => __('字体颜色设置', 'sakurairo'),
-        'type' => "color",
-    );
-    
-    $options[] = array(
-        'name' => __('后台背景图', 'sakurairo'), 
-        'desc' => __('用于后台背景', 'sakurairo'), 
+        'name' => __('Backstage Background Image', 'sakurairo'), 
+        'desc' => __('Backstage Background Image', 'sakurairo'), 
         'id' => 'admin_menu_bg',
         'std' => "https://view.moezx.cc/images/2018/01/03/sakura.png",
         'type' => 'upload');
-
-    $options[] = array(
-        'name' => __('Other custom panel styles(CSS)', 'sakurairo'), 
-        'desc' => __('If you need to adjust other styles of the panel, put the style here.', 'sakurairo'), 
-        'id' => 'dash_scheme_css_rules',
-        'std' => '#adminmenu .wp-has-current-submenu .wp-submenu a,#adminmenu .wp-has-current-submenu.opensub .wp-submenu a,#adminmenu .wp-submenu a,#adminmenu a.wp-has-current-submenu:focus+.wp-submenu a,#wpadminbar .ab-submenu .ab-item,#wpadminbar .quicklinks .menupop ul li a,#wpadminbar .quicklinks .menupop.hover ul li a,#wpadminbar.nojs .quicklinks .menupop:hover ul li a,.folded #adminmenu .wp-has-current-submenu .wp-submenu a{color:#f3f2f1}body{background-image:url(https://view.moezx.cc/images/2019/04/21/windows10-2019-4-21-i3.jpg);background-size:cover;background-repeat:no-repeat;background-attachment:fixed;}#wpcontent{background:rgba(255,255,255,.8)}',
-        'type' => 'textarea');
 
     $options[] = array(
         'name' => __('Login interface background image', 'sakurairo'), 
@@ -2223,6 +2136,93 @@ function optionsframework_options()
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
+
+    //后台面板自定义配色方案
+    $options[] = array(
+        'name' => __('Dashboard panel custom color scheme', 'sakurairo'), 
+        'desc' => __('You can design the dashboard panel (/wp-admin/) style yourself below, but before you start, please go to <a href="/wp-admin/profile.php">here</a> to change the color scheme to custom.(Custom).<br><b>Tip: </b>How to match colors? Maybe <a href="https://mashiro.top/color-thief/">this</a> can help you.', 'sakurairo'), 
+        'id' => 'scheme_tip',
+        'std' => '',
+        'type' => 'typography ');
+
+    $options[] = array(
+        'name' => __('Panel main color A', 'sakurairo'), 
+        'id' => 'dash_scheme_color_a',
+        'std' => "#c6742b",
+        'desc' => __('Custom color', 'sakurairo'),
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Panel main color B', 'sakurairo'),
+        'id' => 'dash_scheme_color_b',
+        'std' => "#d88e4c",
+        'desc' => __('Custom color', 'sakurairo'),
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Panel main color C', 'sakurairo'),
+        'id' => 'dash_scheme_color_c',
+        'std' => "#695644",
+        'desc' => __('Custom color', 'sakurairo'),
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Panel main color D', 'sakurairo'),
+        'id' => 'dash_scheme_color_d',
+        'std' => "#a19780",
+        'desc' => __('Custom color', 'sakurairo'),
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Panel icon color——base', 'sakurairo'), 
+        'id' => 'dash_scheme_color_base',
+        'std' => "#e5f8ff",
+        'desc' => __('SVG Icons Custom Color', 'sakurairo'),
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Panel icon color——focus', 'sakurairo'),
+        'id' => 'dash_scheme_color_focus',
+        'std' => "#fff",
+        'desc' => __('SVG Icons Custom Color', 'sakurairo'),
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Panel icon color——current', 'sakurairo'),
+        'id' => 'dash_scheme_color_current',
+        'std' => "#fff",
+        'desc' => __('SVG Icons Custom Color', 'sakurairo'),
+        'type' => "color",
+    );
+    
+    $options[] = array(
+        'name' => __('Backstage Font Color', 'sakurairo'),
+        'id' => 'admin_font_skin',
+        'std' => "#f3f2f1",
+        'desc' => __('Custom color', 'sakurairo'),
+        'type' => "color",
+    );
+    
+    $options[] = array(
+        'name' => __('Backstage Button Color', 'sakurairo'),
+        'id' => 'admin_pb_skin',
+        'std' => "#8fbbb1",
+        'desc' => __('Custom color', 'sakurairo'),
+        'type' => "color",
+    );
+ 
+    $options[] = array(
+        'name' => __('Other custom panel styles(CSS)', 'sakurairo'), 
+        'desc' => __('If you need to adjust other styles of the panel, put the style here.', 'sakurairo'), 
+        'id' => 'dash_scheme_css_rules',
+        'std' => '',
+        'type' => 'textarea');
     
     return $options;
 }
