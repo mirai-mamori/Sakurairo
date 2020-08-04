@@ -470,10 +470,6 @@ color: <?php echo akina_option('light-color'); ?>;
 }
 <?php endif; ?>
 
-.theme-browser .theme.active .theme-actions {
-    background: <?php echo akina_option('admin_acc'); ?>;
-}
-
 <?php if(akina_option('entry_content_theme') == "sakurairo"){ ?>
 .entry-content th {
     background-color: <?php echo akina_option('theme_skin'); ?>
