@@ -451,12 +451,12 @@ input[type="reset" i] {}
     float: left;
     box-shadow: none;
     border: none;
-    background: #ae7d55;
+    background: #b7003d;
     text-shadow: none;
     color: #fff;
     height: 40px;
     width: 100px;
-    border-radius: 0px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -472,12 +472,12 @@ input[type="reset" i] {}
     float: right;
     box-shadow: none;
     border: none;
-    background: #FF6464;
+    background: #85ABFC;
     text-shadow: none;
     /* padding: 10px; */
     height: 40px;
     width: 100px;
-    border-radius: 0px;
+    border-radius: 10px;
 }
 
 #optionsframework .section:after {
