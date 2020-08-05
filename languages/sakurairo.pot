@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-08-05 17:22+0800\n"
+"POT-Creation-Date: 2020-08-05 17:42+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,24 +21,24 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:17
+#: 404.php:18
 #, php-format
 msgid "page %s"
 msgstr ""
 
-#: 404.php:46
+#: 404.php:47
 msgid "return to previous page"
 msgstr ""
 
-#: 404.php:47
+#: 404.php:48
 msgid "return to home page"
 msgstr ""
 
-#: 404.php:50
+#: 404.php:51
 msgid "Don't worry, search in site?"
 msgstr ""
 
-#: 404.php:53 footer.php:62 search.php:42
+#: 404.php:54 footer.php:62 search.php:42
 msgid "Search..."
 msgstr ""
 
@@ -1460,7 +1460,7 @@ msgstr ""
 msgid "Add More JavaScript Url, Fill in the URL"
 msgstr ""
 
-#: options.php:1133 options.php:2294
+#: options.php:1133
 msgid "Backstage"
 msgstr ""
 
@@ -2488,6 +2488,10 @@ msgstr ""
 
 #: options.php:2286
 msgid "Preload animation color B"
+msgstr ""
+
+#: options.php:2294
+msgid "Backstage Color"
 msgstr ""
 
 #: options.php:2305

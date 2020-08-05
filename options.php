@@ -2291,7 +2291,7 @@ function optionsframework_options()
     );
 
     $options[] = array(
-        'name' => __('Backstage', 'sakurairo'), 
+        'name' => __('Backstage Color', 'sakurairo'), 
         'desc' => __(' ', 'sakurairo'), 
         'id' => 'setting_themebs',
         'std' => 'tag',
