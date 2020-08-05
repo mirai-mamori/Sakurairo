@@ -41,7 +41,7 @@ body {
     font-weight: 400;
     font-size: 13.5px;
     color: #808080;
-    border-radius: 3px 3px 0 0;
+    border-radius: 6px 6px 0 0;
 }
 
 .nav-tab-active {
@@ -180,7 +180,7 @@ input[type="reset" i] {}
     box-shadow: none;
     border: none;
     border: 1px solid #fff;
-    border-radius: 3px;
+    border-radius: 16px;
 }
 
 #optionsframework h3 {
@@ -241,12 +241,14 @@ input[type="reset" i] {}
 
 #optionsframework .of-input {
     width: 100%;
+    border-radius: 8px;
 }
 
 #optionsframework .controls select,
 #optionsframework .controls textarea {
     margin-bottom: 10px;
     width: 100%;
+    border-radius: 8px;
 }
 
 #optionsframework .section-radio label,
@@ -335,10 +337,6 @@ input[type="reset" i] {}
     float: left;
 }
 
-#optionsframework .controls .of-radio-img-selected {
-    border: 3px solid #ccc
-}
-
 #optionsframework .controls .of-radio-img-img:hover {
     opacity: .8;
 }
@@ -392,6 +390,7 @@ input[type="reset" i] {}
 #optionsframework .controls input.upload {
     width: 68%;
     box-shadow: none;
+    border-radius: 8px;
 }
 
 #optionsframework .controls input.upload_button {
@@ -510,12 +509,13 @@ input.of-radio-img-radio {
     /*display:none;*/
     cursor: pointer;
     float: left;
+    border-radius: 20px;
 }
 
 #optionsframework .controls .of-radio-img-selected {
     min-width: 280px;
     width: 50%;
-    border: 3px solid #ccc;
+    border-radius: 20px;
 }
 
 #optionsframework .controls .of-radio-img-img:hover {

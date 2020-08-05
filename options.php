@@ -334,6 +334,17 @@ function optionsframework_options()
             );         
 
     $options[] = array(
+        'name' => __('First Screen', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_homefs',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/HomePage-FirstScreen.png',
+                ),
+            );  
+
+    $options[] = array(
         'name' => __('Main Switch', 'sakurairo'), 
         'desc' => __('Default on, check off', 'sakurairo'), 
         'id' => 'main-switch',
@@ -476,6 +487,17 @@ function optionsframework_options()
             'filter-grid' => __('Grid', 'sakurairo'), 
             'filter-dot' => __('Dot', 'sakurairo'), 
         ));
+
+    $options[] = array(
+        'name' => __('Second Screen', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_homess',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/HomePage-SecondScreen.png',
+                ),
+            );  
 
     $options[] = array(
         'name' => __('Announcement', 'sakurairo'),
@@ -874,6 +896,17 @@ function optionsframework_options()
             );         
 
     $options[] = array(
+        'name' => __('Settings Menu', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_foresm',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Foreground-Settings.png',
+                ),
+            );  
+
+    $options[] = array(
         'name' => __('Foreground switch full mode', 'sakurairo'), 
         'desc' => __('Check on by default, uncheck to switch to simple mode', 'sakurairo'), 
         'id' => 'full-mode',
@@ -944,12 +977,15 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Foreground transparency', 'sakurairo'),
-        'desc' => __('Fill in numbers between 0.1 and 1', 'sakurairo'), 
-        'id' => 'homepagebgtmd',
-        'std' => '0.8',
-        'class' => 'mini',
-        'type' => 'text');
+        'name' => __('Animation', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_foreani',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Foreground-Animation.png',
+                ),
+            );  
 
     $options[] = array(
         'name' => __('Homepage animation', 'sakurairo'), 
@@ -985,6 +1021,25 @@ function optionsframework_options()
         'desc' => __('Fill in Number', 'sakurairo'),
         'id' => 'title-ani-t',
         'std' => '2',
+        'class' => 'mini',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Others', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_foreot',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Foreground-Others.png',
+                ),
+            );  
+
+    $options[] = array(
+        'name' => __('Foreground transparency', 'sakurairo'),
+        'desc' => __('Fill in numbers between 0.1 and 1', 'sakurairo'), 
+        'id' => 'homepagebgtmd',
+        'std' => '0.8',
         'class' => 'mini',
         'type' => 'text');
 
@@ -1093,7 +1148,7 @@ function optionsframework_options()
         'name' => __('Backstage Background Image', 'sakurairo'), 
         'desc' => __('Backstage Background Image', 'sakurairo'), 
         'id' => 'admin_menu_bg',
-        'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@6.9.9.2/img/Backstage-Defbg.jpg",
+        'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/img/Backstage-Defbg.jpg",
         'type' => 'upload');
 
     $options[] = array(
@@ -1180,7 +1235,18 @@ function optionsframework_options()
             'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Advanced.png',
                 ),
             );         
-    
+
+    $options[] = array(
+        'name' => __('Localize', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_advlo',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Advanced-Local.png',
+                ),
+            );              
+            
     $options[] = array(
         'name' => __('Use the front-end library locally (lib.js、lib.css)', 'sakurairo'), 
         'desc' => __('The front-end library don\'t load from jsDelivr, not recommand', 'sakurairo'), 
@@ -1195,6 +1261,17 @@ function optionsframework_options()
         'std' => '1',
         'type' => 'checkbox');
 
+    $options[] = array(
+        'name' => __('Others', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_advot',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Advanced-Others.png',
+                ),
+            );              
+            
     $options[] = array(
         'name' => __('Gravatar avatar proxy', 'sakurairo'),
         'desc' => __('A front-ed proxy for Gravatar, eg. sdn.geekzu.org/avatar . Leave it blank if you do not need.', 'sakurairo'),
@@ -1416,6 +1493,13 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
+        'name' => __('Mail template header', 'sakurairo'), 
+        'desc' => __('Set the background picture above your message', 'sakurairo'), 
+        'id' => 'mail_img',
+        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/head.jpg',
+        'type' => 'upload');
+
+    $options[] = array(
         'name' => __('Email address prefix', 'sakurairo'), 
         'desc' => __('For sending system mail, the sender address displayed in the user\'s mailbox, do not use Chinese, the default system email address is bibi@your_domain_name', 'sakurairo'),  
         'id' => 'mail_user_name',
@@ -1485,7 +1569,18 @@ function optionsframework_options()
             'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Enhanced.png',
                 ),
             );     
-  
+
+    $options[] = array(
+        'name' => __('Effect', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_enhanef',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Enhanced-Effect.png',
+                ),
+            );                          
+            
     $options[] = array(
         'name' => __('Preload animation', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
@@ -1647,15 +1742,18 @@ function optionsframework_options()
         'id' => 'logo_two',
         'std' => '',
         'type' => 'text');
-    
+
     $options[] = array(
-        'name' => __('Mail template header', 'sakurairo'), 
-        'desc' => __('Set the background picture above your message', 'sakurairo'), 
-        'id' => 'mail_img',
-        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/head.jpg',
-        'type' => 'upload');
-
-
+        'name' => __('Morse', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_enhanmo',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Enhanced-Morse.png',
+                ),
+            );                          
+        
     $options[] = array(
         'name' => __('Custom mouse style - Standard', 'sakurairo'), 
         'desc' => __('Apply to global, fill in link.', 'sakurairo'),
@@ -1706,7 +1804,18 @@ function optionsframework_options()
             'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Fonts.png',
                 ),
             );     
-  
+
+    $options[] = array(
+        'name' => __('Custom', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_fontscu',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Fonts-Custom.png',
+                ),
+            );                          
+                    
     $options[] = array(
         'name' => __('fontweight', 'sakurairo'),
         'desc' => __('Fill in a number, maximum 900, minimum 100. Between 300 and 500 is recommended.', 'sakurairo'),
@@ -1784,7 +1893,18 @@ function optionsframework_options()
         'id' => 'keytitlefont',
         'std' => '',
         'type' => 'text');  
-    
+ 
+    $options[] = array(
+        'name' => __('Size', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_fontssi',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Fonts-Size.png',
+                ),
+            );                                  
+
     $options[] = array(
         'name' => __('Global fontsize', 'sakurairo'), 
         'desc' => __('Fill in Number. Between 10 and 20 is recommended', 'sakurairo'),
@@ -1832,6 +1952,17 @@ function optionsframework_options()
         'std' => '',
         'class' => 'mini',
         'type' => 'text'); 
+
+    $options[] = array(
+        'name' => __('Others', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_fontsot',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Fonts-Others.png',
+                ),
+            );                                  
 
     $options[] = array(
         'name' => __('Logo font link', 'sakurairo'), 
@@ -1918,6 +2049,17 @@ function optionsframework_options()
     );
 
     $options[] = array(
+        'name' => __('Darkmode', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_themedm',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Theme-Darkmode.png',
+                ),
+            );                                  
+
+    $options[] = array(
         'name' => __('Theme Color (Dark mode)', 'sakurairo'), 
         'id' => 'theme_dark',
         'std' => "#BD144A",
@@ -1948,6 +2090,17 @@ function optionsframework_options()
         'type' => "text",
         'class' => 'mini',
     );
+
+    $options[] = array(
+        'name' => __('Homepage', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_themehp',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Theme-Homepage.png',
+                ),
+            );                                  
 
     $options[] = array(
         'name' => __('Information Bar Background Color (RGBA) Red', 'sakurairo'), 
@@ -2136,6 +2289,17 @@ function optionsframework_options()
         'desc' => __('Custom colors', 'sakurairo'), 
         'type' => "color",
     );
+
+    $options[] = array(
+        'name' => __('Backstage', 'sakurairo'), 
+        'desc' => __(' ', 'sakurairo'), 
+        'id' => 'setting_themebs',
+        'std' => 'tag',
+        'type' => "images",
+        'options' => array(
+            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Theme-Backstage.png',
+                ),
+            );                                  
 
     $options[] = array(
         'name' => __('Backstage Main Color (Primary menu)', 'sakurairo'),
