@@ -792,7 +792,7 @@ function siren_get_browsers($ua){
     $title = 'Edge '. $matches[1];
         $icon = 'edge';
   }elseif (preg_match('#Edg/([a-zA-Z0-9.]+)#i', $ua, $matches)){
-    $title = 'Edge Dev (Chromium) '. $matches[1];
+    $title = 'Edge (Chromium) '. $matches[1];
         $icon = 'edge';
   }elseif (preg_match('#360([a-zA-Z0-9.]+)#i', $ua, $matches)) {
     $title = '360 Browser '. $matches[1];

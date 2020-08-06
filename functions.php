@@ -746,7 +746,7 @@ function custom_html()
     if (akina_option('login_bg')) {
         $loginbg = akina_option('login_bg');
     } else {
-        $loginbg = 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Login-Bg.png';
+        $loginbg = 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/backstage/login-bg.png';
     }
     echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/js/login.js"></script>' . "\n";
     echo '<script type="text/javascript">' . "\n";

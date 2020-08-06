@@ -54,7 +54,7 @@
 	<!-- m-nav-center -->
 	<div id="mo-nav">
 		<div class="m-avatar">
-			<?php $ava = akina_option('focus_logo') ? akina_option('focus_logo') :'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/avatar.jpg'; ?>
+			<?php $ava = akina_option('focus_logo') ? akina_option('focus_logo') :'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/avatar.jpg'; ?>
 			<img src="<?php echo $ava ?>">
 		</div>
 		<div class="m-search">
@@ -163,12 +163,12 @@
 
 <!-- 樱花飘落动效 -->
 <?php if (akina_option('sakurajs', '1')): ?>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/js/sakura-<?php echo akina_option('sakura-falling-quantity'); ?>.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/static/js/sakura-<?php echo akina_option('sakura-falling-quantity'); ?>.js"></script>
 <?php endif; ?>
 
 <!-- 首页波浪特效 -->
 <?php if (akina_option('bolangcss', '1')): ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@5.1/css/bolang.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/static/css/bolang.css">
 <?php endif; ?>
 
 <!-- Live2D看板娘 -->

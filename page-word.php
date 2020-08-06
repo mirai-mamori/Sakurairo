@@ -7,7 +7,7 @@
 get_header();
 ?>
  
-    <link href="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@5.1/css/aword.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/static/css/aword.css" rel="stylesheet">
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
             <div class="cbp_shuoshuo">

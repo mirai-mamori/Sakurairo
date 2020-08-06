@@ -117,7 +117,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Basic.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/basic.png',
                 ),
             );        
         
@@ -128,7 +128,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Support.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/support.png',
                 ),
             );
     
@@ -169,7 +169,7 @@ function optionsframework_options()
         'name' => __('Favicon', 'sakurairo'),
         'desc' => __('It is the small logo on the browser tab, fill in the url', 'sakurairo'), 
         'id' => 'favicon_link',
-        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/favicon.ico',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/favicon.ico',
         'type' => 'text');
 
     $options[] = array(
@@ -300,7 +300,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Sponsor.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/sponsor.png',
                 ),
             );
     
@@ -329,7 +329,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-HomePage.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/homepage.png',
                 ),
             );         
 
@@ -340,7 +340,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/HomePage-FirstScreen.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/homepage-firstscreen.png',
                 ),
             );  
 
@@ -495,7 +495,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/HomePage-SecondScreen.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/homepage-secondscreen.png',
                 ),
             );  
 
@@ -542,7 +542,7 @@ function optionsframework_options()
         'name' => __('Focus Area First Image', 'sakurairo'), 
         'desc' => __('size 257px*160px', 'sakurairo'), 
         'id' => 'feature1_img',
-        'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/temp.png",
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/foreground/focus.png",
         'type' => 'upload');
 
     $options[] = array(
@@ -570,7 +570,7 @@ function optionsframework_options()
         'name' => __('Focus Area Second Image', 'sakurairo'), 
         'desc' => __('size 257px*160px', 'sakurairo'), 
         'id' => 'feature2_img',
-        'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/temp.png",
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/foreground/focus.png",
         'type' => 'upload');
 
     $options[] = array(
@@ -598,7 +598,7 @@ function optionsframework_options()
         'name' => __('Focus Area Third Image', 'sakurairo'), 
         'desc' => __('size 257px*160px', 'sakurairo'), 
         'id' => 'feature3_img',
-        'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/temp.png",
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/foreground/focus.png",
         'type' => 'upload');
 
     $options[] = array(
@@ -649,7 +649,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Post.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/post.png',
                 ),
             );         
     
@@ -757,7 +757,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Social.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/social.png',
                 ),
             );         
         
@@ -891,7 +891,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Foreground.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/foreground.png',
                 ),
             );         
 
@@ -902,7 +902,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Foreground-Settings.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/foreground-settings.png',
                 ),
             );  
 
@@ -952,28 +952,28 @@ function optionsframework_options()
         'name' => __('DIY(heart-shaped icon) Foreground Background', 'sakurairo'), 
         'desc' => __('DIY(heart-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
         'id' => 'sakura_skin_bg2',
-        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg1.png',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/foreground/bg1.png',
         'type' => 'text');
     
     $options[] = array(
         'name' => __('DIY(Star-shaped icon) Foreground Background', 'sakurairo'), 
         'desc' => __('DIY(Star-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
         'id' => 'sakura_skin_bg3',
-        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg2.png',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/foreground/bg2.png',
         'type' => 'text');
  
     $options[] = array(
         'name' => __('DIY(Square-shaped icon) Foreground Background', 'sakurairo'), 
         'desc' => __('DIY(Square-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
         'id' => 'sakura_skin_bg4',
-        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg3.png',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/foreground/bg3.png',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('DIY(Lemon-shaped icon) Foreground Background', 'sakurairo'), 
         'desc' => __('DIY(Lemon-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
         'id' => 'sakura_skin_bg5',
-        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/bg4.png',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/foreground/bg4.png',
         'type' => 'text');
 
     $options[] = array(
@@ -983,7 +983,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Foreground-Animation.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/foreground-animation.png',
                 ),
             );  
 
@@ -1031,7 +1031,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Foreground-Others.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/foreground-others.png',
                 ),
             );  
 
@@ -1140,7 +1140,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Backstage.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/backstage.png',
                 ),
             );         
 
@@ -1148,7 +1148,7 @@ function optionsframework_options()
         'name' => __('Backstage Background Image', 'sakurairo'), 
         'desc' => __('Backstage Background Image', 'sakurairo'), 
         'id' => 'admin_menu_bg',
-        'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/img/Backstage-Defbg.jpg",
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/backstage/admin-bg.jpg",
         'type' => 'upload');
 
     $options[] = array(
@@ -1168,7 +1168,7 @@ function optionsframework_options()
         'name' => __('Login Interface Logo', 'sakurairo'), 
         'desc' => __('Used for login interface display', 'sakurairo'),
         'id' => 'logo_img',
-        'std' => "https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Login-Logo.png",
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/logo-login.png",
         'type' => 'upload');
 
     $options[] = array(
@@ -1232,7 +1232,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Advanced.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/advanced.png',
                 ),
             );         
 
@@ -1243,7 +1243,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Advanced-Local.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/advanced-local.png',
                 ),
             );              
             
@@ -1268,7 +1268,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Advanced-Others.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/advanced-others.png',
                 ),
             );              
             
@@ -1357,7 +1357,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Function.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/function.png',
                 ),
             );     
 
@@ -1489,7 +1489,7 @@ function optionsframework_options()
         'name' => __('Lazyload Spinner', 'sakurairo'),
         'desc' => __('The placeholder to display when the image loads, fill in the image url', 'sakurairo'), 
         'id' => 'lazyload_spinner',
-        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/inload.svg',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/sakura/load/inload.svg',
         'type' => 'text');
 
     $options[] = array(
@@ -1503,7 +1503,7 @@ function optionsframework_options()
         'name' => __('Mail Template Header', 'sakurairo'), 
         'desc' => __('Set the background picture above your message', 'sakurairo'), 
         'id' => 'mail_img',
-        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/head.jpg',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/mail-head.jpg',
         'type' => 'upload');
 
     $options[] = array(
@@ -1573,7 +1573,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Enhanced.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/enhanced.png',
                 ),
             );     
 
@@ -1584,7 +1584,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Enhanced-Effect.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/enhanced-effect.png',
                 ),
             );                          
             
@@ -1757,7 +1757,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Enhanced-Morse.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/enhanced-morse.png',
                 ),
             );                          
         
@@ -1808,7 +1808,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Fonts.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/fonts.png',
                 ),
             );     
 
@@ -1819,7 +1819,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Fonts-Custom.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/fonts-custom.png',
                 ),
             );                          
                     
@@ -1908,7 +1908,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Fonts-Size.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/fonts-size.png',
                 ),
             );                                  
 
@@ -1967,7 +1967,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Fonts-Others.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/fonts-others.png',
                 ),
             );                                  
 
@@ -1997,7 +1997,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@latest/setting-img/Set-Theme.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/theme.png',
                 ),
             );     
   
@@ -2005,21 +2005,21 @@ function optionsframework_options()
         'name' => __('Display Icon Selection', 'sakurairo'), 
         'desc' => __('Choose icon color', 'sakurairo'), 
         'id' => 'webweb_img',
-        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/sakura',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/sakura',
         'type' => 'select',
         'options' => array(
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/sakura' => __('「Default Color」Sakura（FB98C0+87B6FA）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/pink' => __('「Common Colors」Pink（EE9CA7）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/orange' => __('「Common Colors」Orange（FF8000）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/blue' => __('「Nippon Colors」Hanaasagi（1E88A8）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/yellow' => __('「Nippon Colors」Beniukon（E98B2A）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/sangosyu' => __('「Nippon Colors」Sangosyu（F17C67）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/sora' => __('「Nippon Colors」Sora（58B2DC）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/nae' => __('「Nippon Colors」Nae（86C166）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/macaronblue' => __('「Macaron Colors」Blue（B8F1ED）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/macarongreen' => __('「Macaron Colors」Green（B8F1CC）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/macaronpurple' => __('「Macaron Colors」Purple（D9B8F1）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/colorful' => __('「Others」ColorFul', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/sakura' => __('「Default Color」Sakura（FB98C0+87B6FA）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/pink' => __('「Common Colors」Pink（EE9CA7）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/orange' => __('「Common Colors」Orange（FF8000）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/blue' => __('「Nippon Colors」Hanaasagi（1E88A8）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/yellow' => __('「Nippon Colors」Beniukon（E98B2A）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/sangosyu' => __('「Nippon Colors」Sangosyu（F17C67）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/sora' => __('「Nippon Colors」Sora（58B2DC）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/nae' => __('「Nippon Colors」Nae（86C166）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/macaronblue' => __('「Macaron Colors」Blue（B8F1ED）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/macarongreen' => __('「Macaron Colors」Green（B8F1CC）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/macaronpurple' => __('「Macaron Colors」Purple（D9B8F1）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/colorful' => __('「Others」ColorFul', 'sakurairo'), 
     ));
     
     $options[] = array(
@@ -2063,7 +2063,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Theme-Darkmode.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/theme-darkmode.png',
                 ),
             );                                  
 
@@ -2106,7 +2106,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Theme-Homepage.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/theme-homepage.png',
                 ),
             );                                  
 
@@ -2305,7 +2305,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img@7.0.0/setting-img/Tips/Theme-Backstage.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/theme-backstage.png',
                 ),
             );                                  
 

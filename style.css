@@ -5043,7 +5043,6 @@ i.iconfont.down {
 
 #pagination .loading,
 #bangumi-pagination .loading {
-    background: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/ball.svg);
     background-position: center;
     background-repeat: no-repeat;
     color: #555;
