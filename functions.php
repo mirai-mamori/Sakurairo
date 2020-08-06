@@ -1017,9 +1017,9 @@ if ( !get_option('use_smilies'))
           $smiliesgs=".png";
       }
       // 选择面版
-      $return_smiles = $return_smiles . '<span title="'.$tieba_Name.'" onclick="grin('."'".$tieba_Name."'".',type = \'tieba\')"><img src="https://cdn.jsdelivr.net/gh/bymoye/cdn@1.2/sakura/images/smilies/'. $tiebaimgdir .'icon_'. $tieba_Name . $smiliesgs.'" /></span>';
+      $return_smiles = $return_smiles . '<span title="'.$tieba_Name.'" onclick="grin('."'".$tieba_Name."'".',type = \'tieba\')"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/'. $tiebaimgdir .'icon_'. $tieba_Name . $smiliesgs.'" /></span>';
       // 正文转换
-      $wpsmiliestrans['::' . $tieba_Name . '::'] = '<span title="'. $tieba_Name .'" onclick="grin('."'". $tieba_Name ."'".',type = \'tieba\')"><img src="https://cdn.jsdelivr.net/gh/bymoye/cdn@1.2/sakura/images/smilies/'.$tiebaimgdir.'icon_'. $tieba_Name .$smiliesgs.'" /></span>';
+      $wpsmiliestrans['::' . $tieba_Name . '::'] = '<span title="'. $tieba_Name .'" onclick="grin('."'". $tieba_Name ."'".',type = \'tieba\')"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/'.$tiebaimgdir.'icon_'. $tieba_Name .$smiliesgs.'" /></span>';
       }
       return $return_smiles;
   }
