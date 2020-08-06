@@ -762,6 +762,13 @@ function optionsframework_options()
             );         
 
     $options[] = array(
+        'name' => __('友链头像文字对齐方式', 'sakurairo'), 
+        'desc' => __('默认友链靠左对齐，勾选则将居中对齐', 'sakurairo'), 
+        'id' => 'friend_center',
+        'std' => '0',
+        'type' => 'checkbox');
+        
+    $options[] = array(
         'name' => __('Wechat', 'sakurairo'), 
         'desc' => __('Wechat qrcode', 'sakurairo'), 
         'id' => 'wechat',

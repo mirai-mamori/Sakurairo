@@ -1363,6 +1363,21 @@ i.iconfont.js-toggle-search.iconsearch {
 }
 <?php endif; ?>
 
+<?php if (akina_option('friend_center', '0')): ?>
+/*友链居中 */
+span.sitename {
+   margin: 0px;
+}
+.linkdes {
+    margin: 0px;
+}
+li.link-item {
+    text-align: center;
+}
+.links ul li img{
+	float:none;
+}
+<?php endif; ?>
 
 </style>
 <?php }
