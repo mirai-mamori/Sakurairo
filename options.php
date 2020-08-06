@@ -2005,9 +2005,10 @@ function optionsframework_options()
         'name' => __('Display Icon Selection', 'sakurairo'), 
         'desc' => __('Choose icon color', 'sakurairo'), 
         'id' => 'webweb_img',
-        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/pink',
+        'std' => 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/sakura',
         'type' => 'select',
         'options' => array(
+            'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/sakura' => __('「Default Color」Sakura（FB98C0+87B6FA）', 'sakurairo'), 
             'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/pink' => __('「Common Colors」Pink（EE9CA7）', 'sakurairo'), 
             'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/orange' => __('「Common Colors」Orange（FF8000）', 'sakurairo'), 
             'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/color-img/blue' => __('「Nippon Colors」Hanaasagi（1E88A8）', 'sakurairo'), 

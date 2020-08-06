@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-08-06 15:33+0800\n"
+"POT-Creation-Date: 2020-08-06 17:46+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -180,40 +180,40 @@ msgstr ""
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:1224
+#: functions.php:1214
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1245 options.php:115 options.php:126 options.php:298 options.php:327
+#: functions.php:1235 options.php:115 options.php:126 options.php:298 options.php:327
 #: options.php:338 options.php:493 options.php:647 options.php:755 options.php:889
 #: options.php:900 options.php:981 options.php:1029 options.php:1138 options.php:1176
 #: options.php:1230 options.php:1241 options.php:1266 options.php:1355 options.php:1571
 #: options.php:1582 options.php:1755 options.php:1806 options.php:1817 options.php:1906
-#: options.php:1965 options.php:1995 options.php:2060 options.php:2103 options.php:2302
+#: options.php:1965 options.php:1995 options.php:2061 options.php:2104 options.php:2303
 msgid " "
 msgstr ""
 
-#: functions.php:1249
+#: functions.php:1239
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1272 functions.php:1275 inc/theme_plus.php:478
+#: functions.php:1262 functions.php:1265 inc/theme_plus.php:478
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1495
+#: functions.php:1485
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1581
+#: functions.php:1571
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1653
+#: functions.php:1643
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:1780
+#: functions.php:1770
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-permalink.php\"> "
 "permalink </a> as plain. To do this, you may need to configure <a href=\"https://www.wpdaxue."
@@ -1320,7 +1320,7 @@ msgstr ""
 
 #: options.php:992 options.php:999 options.php:1006 options.php:1593 options.php:1600
 #: options.php:1620 options.php:1635 options.php:1657 options.php:1671 options.php:1678
-#: options.php:1685 options.php:1713 options.php:1720 options.php:1836 options.php:2079
+#: options.php:1685 options.php:1713 options.php:1720 options.php:1836 options.php:2080
 msgid "Check open"
 msgstr ""
 
@@ -1336,7 +1336,7 @@ msgstr ""
 msgid "Homepage Animation Time"
 msgstr ""
 
-#: options.php:1013 options.php:1021 options.php:2086
+#: options.php:1013 options.php:1021 options.php:2087
 msgid "Fill in Number"
 msgstr ""
 
@@ -2294,235 +2294,239 @@ msgid "Choose icon color"
 msgstr ""
 
 #: options.php:2011
-msgid "「Common Colors」Pink（EE9CA7）"
+msgid "「Default Color」Sakura（FB98C0+87B6FA）"
 msgstr ""
 
 #: options.php:2012
-msgid "「Common Colors」Orange（FF8000）"
+msgid "「Common Colors」Pink（EE9CA7）"
 msgstr ""
 
 #: options.php:2013
-msgid "「Nippon Colors」Hanaasagi（1E88A8）"
+msgid "「Common Colors」Orange（FF8000）"
 msgstr ""
 
 #: options.php:2014
-msgid "「Nippon Colors」Beniukon（E98B2A）"
+msgid "「Nippon Colors」Hanaasagi（1E88A8）"
 msgstr ""
 
 #: options.php:2015
-msgid "「Nippon Colors」Sangosyu（F17C67）"
+msgid "「Nippon Colors」Beniukon（E98B2A）"
 msgstr ""
 
 #: options.php:2016
-msgid "「Nippon Colors」Sora（58B2DC）"
+msgid "「Nippon Colors」Sangosyu（F17C67）"
 msgstr ""
 
 #: options.php:2017
-msgid "「Nippon Colors」Nae（86C166）"
+msgid "「Nippon Colors」Sora（58B2DC）"
 msgstr ""
 
 #: options.php:2018
-msgid "「Macaron Colors」Blue（B8F1ED）"
+msgid "「Nippon Colors」Nae（86C166）"
 msgstr ""
 
 #: options.php:2019
-msgid "「Macaron Colors」Green（B8F1CC）"
+msgid "「Macaron Colors」Blue（B8F1ED）"
 msgstr ""
 
 #: options.php:2020
-msgid "「Macaron Colors」Purple（D9B8F1）"
+msgid "「Macaron Colors」Green（B8F1CC）"
 msgstr ""
 
 #: options.php:2021
+msgid "「Macaron Colors」Purple（D9B8F1）"
+msgstr ""
+
+#: options.php:2022
 msgid "「Others」ColorFul"
 msgstr ""
 
-#: options.php:2025
+#: options.php:2026
 msgid "Theme Color"
 msgstr ""
 
-#: options.php:2028 options.php:2036 options.php:2054 options.php:2073 options.php:2280
+#: options.php:2029 options.php:2037 options.php:2055 options.php:2074 options.php:2281
 msgid "Custom theme color"
 msgstr ""
 
-#: options.php:2033
+#: options.php:2034
 msgid "Theme Color Matching Color"
 msgstr ""
 
-#: options.php:2041
+#: options.php:2042
 msgid "Theme Light Color Management"
 msgstr ""
 
-#: options.php:2046
+#: options.php:2047
 msgid "Merge Options"
 msgstr ""
 
-#: options.php:2047
+#: options.php:2048
 msgid "Separation Options"
 msgstr ""
 
-#: options.php:2051
+#: options.php:2052
 msgid "Theme Color (Light)"
 msgstr ""
 
-#: options.php:2059
+#: options.php:2060
 msgid "Darkmode"
 msgstr ""
 
-#: options.php:2070
+#: options.php:2071
 msgid "Theme Color (Dark mode)"
 msgstr ""
 
-#: options.php:2078
+#: options.php:2079
 msgid "Automatic Switching Dark Mode (22:00-7:00)"
 msgstr ""
 
-#: options.php:2085
+#: options.php:2086
 msgid "Image Brightness in Dark Mode"
 msgstr ""
 
-#: options.php:2093
+#: options.php:2094
 msgid "Dark Mode Widget Transparency"
 msgstr ""
 
-#: options.php:2096 options.php:2143 options.php:2179 options.php:2271
+#: options.php:2097 options.php:2144 options.php:2180 options.php:2272
 msgid "Fill in the alpha value from 0 to 1 here"
 msgstr ""
 
-#: options.php:2102
+#: options.php:2103
 msgid "Homepage"
 msgstr ""
 
-#: options.php:2113
+#: options.php:2114
 msgid "Information Bar Background Color (RGBA) Red"
 msgstr ""
 
-#: options.php:2116 options.php:2152 options.php:2244
+#: options.php:2117 options.php:2153 options.php:2245
 msgid "Fill in the red value from 0 to 255 here"
 msgstr ""
 
-#: options.php:2122
+#: options.php:2123
 msgid "Information Bar Background Color (RGBA) Green"
 msgstr ""
 
-#: options.php:2125 options.php:2161 options.php:2253
+#: options.php:2126 options.php:2162 options.php:2254
 msgid "Fill in the green value from 0 to 255 here"
 msgstr ""
 
-#: options.php:2131
+#: options.php:2132
 msgid "Information Bar Background Color (RGBA) Blue"
 msgstr ""
 
-#: options.php:2134 options.php:2170 options.php:2262
+#: options.php:2135 options.php:2171 options.php:2263
 msgid "Fill in the blue value from 0 to 255 here"
 msgstr ""
 
-#: options.php:2140
+#: options.php:2141
 msgid "Information Bar Background Color (RGBA) Alpha"
 msgstr ""
 
-#: options.php:2149
+#: options.php:2150
 msgid "Foreground Menu background Color (RGBA) Red"
 msgstr ""
 
-#: options.php:2158
+#: options.php:2159
 msgid "Foreground Menu background Color (RGBA) Green"
 msgstr ""
 
-#: options.php:2167
+#: options.php:2168
 msgid "Foreground Menu background Color (RGBA) Blue"
 msgstr ""
 
-#: options.php:2176
+#: options.php:2177
 msgid "Foreground Menu background Color (RGBA) Alpha"
 msgstr ""
 
-#: options.php:2185
+#: options.php:2186
 msgid "Foreground Selection Menu Background Color (Light colors are recommended)"
 msgstr ""
 
-#: options.php:2188 options.php:2196 options.php:2204 options.php:2212 options.php:2220
-#: options.php:2228 options.php:2236 options.php:2288 options.php:2296
+#: options.php:2189 options.php:2197 options.php:2205 options.php:2213 options.php:2221
+#: options.php:2229 options.php:2237 options.php:2289 options.php:2297
 msgid "Custom colors"
 msgstr ""
 
-#: options.php:2193
+#: options.php:2194
 msgid "Home Page Article Separator (Light colors are recommended)"
 msgstr ""
 
-#: options.php:2201
+#: options.php:2202
 msgid "Home Page Article Time Prompt Emphasize Background (Light colors are recommended)"
 msgstr ""
 
-#: options.php:2209
+#: options.php:2210
 msgid "Home Page Article Border Shadow (Light colors are recommended)"
 msgstr ""
 
-#: options.php:2217
+#: options.php:2218
 msgid "Drop Down Arrow Color (Light colors are recommended)"
 msgstr ""
 
-#: options.php:2225
+#: options.php:2226
 msgid "Home Page Article Time Prompt Accent (Theme colors are recommended)"
 msgstr ""
 
-#: options.php:2233
+#: options.php:2234
 msgid "Home Page Article Prompt Icon Color (Theme colors are recommended)"
 msgstr ""
 
-#: options.php:2241
+#: options.php:2242
 msgid "Home Page Focus Background Color (RGBA) Red"
 msgstr ""
 
-#: options.php:2250
+#: options.php:2251
 msgid "Home Page Focus Background Color (RGBA) Green"
 msgstr ""
 
-#: options.php:2259
+#: options.php:2260
 msgid "Home Page Focus Background Color (RGBA) Blue"
 msgstr ""
 
-#: options.php:2268
+#: options.php:2269
 msgid "Home Page Focus Background Color (RGBA) Alpha"
 msgstr ""
 
-#: options.php:2277
+#: options.php:2278
 msgid "Home Page Key Title Font Color"
 msgstr ""
 
-#: options.php:2285
+#: options.php:2286
 msgid "Preload Animation Color A"
 msgstr ""
 
-#: options.php:2293
+#: options.php:2294
 msgid "Preload Animation Color B"
 msgstr ""
 
-#: options.php:2301
+#: options.php:2302
 msgid "Backstage Color"
 msgstr ""
 
-#: options.php:2312
+#: options.php:2313
 msgid "Backstage Main Color (Primary menu)"
 msgstr ""
 
-#: options.php:2315 options.php:2323 options.php:2331 options.php:2339 options.php:2347
+#: options.php:2316 options.php:2324 options.php:2332 options.php:2340 options.php:2348
 msgid "Custom color"
 msgstr ""
 
-#: options.php:2320
+#: options.php:2321
 msgid "Backstage Main Color (Secondary menu)"
 msgstr ""
 
-#: options.php:2328
+#: options.php:2329
 msgid "Backstage Accent Color (For Example, The Prompt Color is Included in This Option)"
 msgstr ""
 
-#: options.php:2336
+#: options.php:2337
 msgid "Backstage Button Color"
 msgstr ""
 
-#: options.php:2344
+#: options.php:2345
 msgid "Backstage Font Color"
 msgstr ""
 
