@@ -1454,7 +1454,7 @@ function optionsframework_options()
         'name' => __('Search Background Customization', 'sakurairo'), 
         'desc' => __('It is the cute one that opens the search interface', 'sakurairo'), 
         'id' => 'search-image',
-        'std' => "https://cdn.jsdelivr.net/gh/moezx/cdn@3.2.1/img/other/iloli.gif",
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/iloli.gif",
         'type' => 'upload');
 
     $options[] = array(
@@ -1765,35 +1765,35 @@ function optionsframework_options()
         'name' => __('Custom Mouse Style - Standard', 'sakurairo'), 
         'desc' => __('Apply to global, fill in link.', 'sakurairo'),
         'id' => 'cursor-nor',
-        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/cursor/normal.cur',
         'type' => 'text'); 
             
     $options[] = array(
         'name' => __('Custom Mouse Style - Selected', 'sakurairo'), 
         'desc' => __('Return to the above for PC', 'sakurairo'),
         'id' => 'cursor-no',
-        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/No_Disponible.cur',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/cursor/No_Disponible.cur',
         'type' => 'text');   
             
     $options[] = array(
         'name' => __('Custom Mouse Style - Selected Elements', 'sakurairo'), 
         'desc' => __('Used to select a place', 'sakurairo'),
         'id' => 'cursor-ayu',
-        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/cursor/ayuda.cur',
         'type' => 'text');  
     
     $options[] = array(
         'name' => __('Custom Mouse Style - Selected Text', 'sakurairo'), 
         'desc' => __('Used to select a Text', 'sakurairo'),
         'id' => 'cursor-text',
-        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/texto.cur',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/cursor/texto.cur',
         'type' => 'text'); 
             
     $options[] = array(
         'name' => __('Custom Mouse Style - Working State', 'sakurairo'), 
         'desc' => __('Used to working condition', 'sakurairo'),
         'id' => 'cursor-work',
-        'std' => 'https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/work.cur',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/cursor/work.cur',
         'type' => 'text');   
 
     //字体
