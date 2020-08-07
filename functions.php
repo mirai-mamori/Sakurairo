@@ -378,19 +378,19 @@ function get_author_class($comment_author_email, $user_id)
         "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email = '$comment_author_email' "));
     if ($author_count >= 1 && $author_count < 5) //数字可自行修改，代表评论次数。
     {
-        echo '<span class="showGrade0" title="Lv0"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/level/level_0.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
+        echo '<span class="showGrade0" title="Lv0"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/level/level_0.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
     } else if ($author_count >= 6 && $author_count < 10) {
-        echo '<span class="showGrade1" title="Lv1"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/level/level_1.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
+        echo '<span class="showGrade1" title="Lv1"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/level/level_1.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
     } else if ($author_count >= 10 && $author_count < 20) {
-        echo '<span class="showGrade2" title="Lv2"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/level/level_2.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
+        echo '<span class="showGrade2" title="Lv2"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/level/level_2.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
     } else if ($author_count >= 20 && $author_count < 40) {
-        echo '<span class="showGrade3" title="Lv3"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/level/level_3.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
+        echo '<span class="showGrade3" title="Lv3"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/level/level_3.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
     } else if ($author_count >= 40 && $author_count < 80) {
-        echo '<span class="showGrade4" title="Lv4"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/level/level_4.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
+        echo '<span class="showGrade4" title="Lv4"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/level/level_4.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
     } else if ($author_count >= 80 && $author_count < 160) {
-        echo '<span class="showGrade5" title="Lv5"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/level/level_5.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
+        echo '<span class="showGrade5" title="Lv5"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/level/level_5.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
     } else if ($author_count >= 160) {
-        echo '<span class="showGrade6" title="Lv6"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/level/level_6.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
+        echo '<span class="showGrade6" title="Lv6"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/level/level_6.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
     }
 
 }
@@ -750,7 +750,7 @@ function custom_html()
     }
     echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/js/login.js"></script>' . "\n";
     echo '<script type="text/javascript">' . "\n";
-    echo 'jQuery("body").prepend("<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");' . "\n";
+    echo 'jQuery("body").prepend("<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/login_loading.gif" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");' . "\n";
     echo 'jQuery(\'#bg\').children(\'img\').attr(\'src\', \'' . $loginbg . '\').load(function(){' . "\n";
     echo '	resizeImage(\'bg\');' . "\n";
     echo '	jQuery(window).bind("resize", function() { resizeImage(\'bg\'); });' . "\n";
@@ -902,7 +902,7 @@ function comment_mail_notify($comment_id)
         . trim($comment->comment_content) . '</p>
 
       <div style="text-align: center;">
-          <img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.4/img/other/hr.png" alt="hr" style="width:100%;
+          <img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/comment-mail.png" alt="hr" style="width:100%;
                                                                                                   margin:5px auto 5px auto;
                                                                                                   display: block;">
           <a style="text-transform: uppercase;

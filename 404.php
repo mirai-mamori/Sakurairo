@@ -17,7 +17,7 @@
 bloginfo( 'name' );$site_description = get_bloginfo( 'description', 'display' );
 if ( $site_description && ( is_home() || is_front_page() ) ) echo " - $site_description";if ( $paged >= 2 || $page >= 2 ) echo ' - ' . sprintf( __( 'page %s'), max( $paged, $page ) );/*第 %s 页*/?>
 </title>
-<link type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/moezx/cdn@3.2.2/css/lib.css" rel="stylesheet" />
+<link type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/static/css/basic/404_lib.css" rel="stylesheet" />
 <?php wp_head(); ?>
 <script>
 var the_url=window.location.href;
@@ -55,5 +55,5 @@ if (!no_report) httpGet(report_url);
 </form>
 </div>
 </section>
-<script src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.5/js/other/404.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/static/js/basic/404.min.js" type="text/javascript"></script>
 </body>

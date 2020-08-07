@@ -696,15 +696,15 @@ a:hover {
 
 .loadvideo,
 .video-play {
-    background-image: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/play@32x32.png)
+    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/play.png)
 }
 
 .video-pause {
-    background-image: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/pause@32x32.png)
+    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/stop.png)
 }
 
 #video-add {
-    background-image: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/add@32x32.png);
+    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/add.png);
     bottom: 45px;
     display: none
 }
@@ -2541,7 +2541,7 @@ h1.page-title.mb- {
     height: 40px;
     text-align: center;
     line-height: 45px;
-    background-image: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/disqus-preloader.svg);
+    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/sakura/load/ball.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: auto 100%
@@ -3824,16 +3824,16 @@ li.feature-2 {
 }
 
 .headertop.filter-grid::before {
-    background-image: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/grid.png)
+    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.1.7/vision/basic/grid.png)
 }
 
 .headertop.filter-dot::before {
-    background-image: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/dot.gif)
+    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/dot.gif)
 }
 
 @media (max-width:860px) {
     .headertop.filter-dot::before {
-        background-image: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/grid.png)
+        background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.1.7/vision/basic/grid.png)
     }
 }
 
