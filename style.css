@@ -147,7 +147,7 @@ template {
 a {
     background-color: transparent;
     text-decoration: none;
-    cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur), auto
+    cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/ayuda.cur), auto
 }
 
 a:active,
@@ -156,7 +156,7 @@ a:hover {
 }
 
 a:active {
-    cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/work.cur), alias
+    cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/work.cur), alias
 }
 
 abbr[title] {
@@ -339,7 +339,7 @@ h6 {
 
 p {
     margin-bottom: 1.5em;
-    cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/texto.cur), auto
+    cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/texto.cur), auto
 }
 
 cite,
@@ -435,7 +435,7 @@ html {
 body {
     background: #fff;
     background-attachment: fixed;
-    cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/normal.cur), auto
+    cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/normal.cur), auto
 }
 
 blockquote:after,
@@ -4379,7 +4379,7 @@ body.dark .ins-section .fa {
 .ins-section .ins-section-header,
 .ins-section .ins-search-item {
     padding: 8px 15px;
-    cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur), auto;
+    cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/ayuda.cur), auto;
 }
 
 .ins-section .ins-search-item .search-keyword {
@@ -4416,7 +4416,7 @@ body.dark .ins-section .fa {
     font-size: 12px;
     color: #9a9a9a;
     margin: 5px 0 0 0px;
-    cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/ayuda.cur), auto;
+    cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/ayuda.cur), auto;
 }
 
 .ins-section .ins-search-item:hover,
@@ -5941,7 +5941,7 @@ i.iconfont.down {
 .oshimai {
     height: 2em;
     width: 6.11em;
-    background: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/oshimai.svg);
+    /*background: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/oshimai.svg);*/
     background-size: cover;
     margin: 0 auto
 }
@@ -6112,7 +6112,7 @@ i.iconfont.down {
     border: 0;
     color: #fff;
     line-height: 1;
-    cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/No_Disponible.cur), auto;
+    cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/No_Disponible.cur), auto;
     font-size: 14px;
     font-weight: 500;
     padding: 7px 15px;
@@ -6254,7 +6254,7 @@ input.botui-actions-text-input::-moz-focus-inner {
 }
 
 button.botui-actions-buttons-button {
-    cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/No_Disponible.cur), auto;
+    cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/No_Disponible.cur), auto;
     -webkit-appearance: button
 }
 
@@ -7666,7 +7666,7 @@ a.toc-link {
 .emotion-item,
 .on-hover,
 .tieba-container span {
-    cursor: url(https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/cursor/No_Disponible.cur), auto
+    cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/No_Disponible.cur), auto
 }
 
 .alignright {
