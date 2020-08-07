@@ -1,6 +1,4 @@
-![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/ADTheme.jpg)
-
-![image](https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/MasterEdition.png)
+![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/readme/readme1.png)
 
 <h1 align="left"> 「桜いろ」✿ Sakurairo </h1>
 
