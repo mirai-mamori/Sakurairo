@@ -1,8 +1,8 @@
 ![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/readme/readme1.png)
 
-<h1 align="left"> 「桜いろ」✿ Sakurairo </h1>
+<h1 align="center"> 「桜いろ」✿ Sakurairo </h1>
 
-> 一个多彩，实用，易于上手，具有强大自定义功能的 WordPress 主题（基于 [Sakura](https://github.com/mashirozx/Sakura) 主题）
+> 一个多彩，轻松上手，体验完善，具有强大自定义功能的WordPress主题（基于 [Sakura](https://github.com/mashirozx/Sakura) 主题）
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)[![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/mirai-mamori/sakurairo?color=red&logo=jsdelivr&logoColor=red&style=for-the-badge)](https://www.jsdelivr.com/package/gh/mirai-mamori/sakurairo)
 
@@ -17,7 +17,7 @@
 <details>
 <summary>文字介绍</summary>
 
-```java
+```
 - 功能类：
     - 主页随机图多端分离（支持API）
     - 内嵌提示块（短代码）
@@ -43,6 +43,8 @@
 </details>
 
 ## 主题使用帮助：
+
+![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/readme/readme2.png)
 
 - 【 WordPress 主题 】「桜いろ」✿ Sakurairo  使用手册：https://asuhe.jp/daily/sakurairo-user-manual
 
@@ -79,7 +81,7 @@
 
 ## 其他：
 
-![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/readme/readme2.png)
+![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/readme/readme3.png)
 
 - 演示站点：https://hitomi.uk
 
