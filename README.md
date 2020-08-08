@@ -15,6 +15,10 @@
 ## 特色：
 > 相比 [Sakura](https://github.com/mashirozx/Sakura) ，本主题具有以下特色内容。
 
+<details>
+<summary>文字介绍</summary>
+
+```java
 - 功能类：
     - 主页随机图多端分离（支持API）
     - 内嵌提示块（短代码）
@@ -36,9 +40,10 @@
     - logo特效
     - 邮件模板自定义
 
-## 主题使用帮助：
+```
+</details>
 
-![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/readme/readme2.png)
+## 主题使用帮助：
 
 - 【 WordPress 主题 】「桜いろ」✿ Sakurairo  使用手册：https://asuhe.jp/daily/sakurairo-user-manual
 
@@ -59,6 +64,8 @@
 - LOGO特效样式参考原主题作者白猫，由https://hyacm.com/acai/ui/143/sakura-logo/ 提供方案
 
 ## 其他：
+
+![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/readme/readme2.png)
 
 - 演示站点：https://hitomi.uk
 
