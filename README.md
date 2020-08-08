@@ -13,7 +13,6 @@
 - YouTube：  https://youtu.be/7hskBPe4Yzc
 
 ## 特色：
-> 相比 [Sakura](https://github.com/mashirozx/Sakura) ，本主题具有以下特色内容。
 
 <details>
 <summary>文字介绍</summary>
@@ -56,13 +55,23 @@
 
 ## 下载：
 
+- [Github 仓库最新版本](https://github.com/mirai-mamori/Sakurairo/releases/latest)
+
 - [Gitee 仓库镜像](https://gitee.com/mirai-mamori/Sakurairo)
-- [IT速极网站建设](https://www.vpsqv.cn/)
-- [空木白博客](https://wuzuhua.cn/)
-- [子涵小窝](https://www.zbk52.com)
-- [晨风资源网](https://chenfengwl.com/)
-- [源码无忧](https://www.ym51.cn/)
-- [98素材网](https://www.98sucai.com/)
+
+### 授权资源下载站（排名不分先后）：
+
+- [IT速极网站建设](https://www.vpsqv.cn/4653.html)
+- [空木白博客](https://wuzuhua.cn/1004.html)
+- [子涵小窝](https://zbk52.com/post-51.html)
+- [晨风资源网](https://chenfengwl.com/4394.html)
+- [源码无忧](https://www.ym51.cn/archives/7500)
+- [98素材网](https://www.98sucai.com/wordpress-3666.html)
+- [JAD资源网](http://www.jiuandun.com/13756/)
+- [58源码下载站](https://www.58dir.cn/3351.html)
+- [11素材网](https://www.11sucai.com/wordpress-299.html)
+- [站长图库](https://www.zztuku.com/wordpress-3084.html)
+- [小浣熊 Blog](https://www.mua222.cn/125.html)
 
 ## 贡献者：
 
