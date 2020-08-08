@@ -47,21 +47,26 @@
 
 - 【 WordPress 主题 】「桜いろ」✿ Sakurairo  使用手册：https://asuhe.jp/daily/sakurairo-user-manual
 
+## 如遇问题
+
+- 如果在使用过程中遇到了任何问题，可以先**仔细**阅读本主题的 [使用手册](https://asuhe.jp/daily/sakurairo-user-manual)，并进行一些简单的确认：清理浏览器缓存，更换网络环境，确保不是主题包上传目录错误等自身原因。如果你无法靠自己解决问题，可以尝试联系作者或者询问QQ群群友，但记住**任何人没有为你解决问题的义务，只是出于好心的帮助。**  
+
+- 在确认你遇到的现象确实是一个 Bug 后，请在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交问题，并为该问题尽可能的描述清楚，
+按照提供的 issue 模板进行填写，谢谢配合。
+
+## 下载：
+
+- [Gitee 仓库镜像](https://gitee.com/mirai-mamori/Sakurairo)
+- [IT速极网站建设](https://www.vpsqv.cn/)
+- [空木白博客](https://wuzuhua.cn/)
+- [子涵小窝](https://www.zbk52.com)
+- [晨风资源网](https://chenfengwl.com/)
+- [源码无忧](https://www.ym51.cn/)
+- [98素材网](https://www.98sucai.com/)
+
 ## 贡献者：
 
 <a href="https://github.com/mirai-mamori"><img src="https://avatars3.githubusercontent.com/u/61381142?s=400" alt="mirai-mamori" width="100"></a>  <a href="https://github.com/Ukenn2112"><img src="https://avatars3.githubusercontent.com/u/60847880?s=400" alt="Ukenn" width="100"></a>  <a href="https://github.com/spirit1431007"><img src="https://avatars1.githubusercontent.com/u/29689177?s=400" alt="Spirit" width="100"></a>  <a href="https://github.com/bymoye"><img src="https://avatars2.githubusercontent.com/u/27877470?s=400" alt="bymoye" width="100"></a>  <a href="https://github.com/givenhyh"><img src="https://avatars3.githubusercontent.com/u/37971883?s=400" alt="givenhyh" width="100"></a>  <a href="https://github.com/Sakurakouji-Runa"><img src="https://avatars2.githubusercontent.com/u/46081776?s=400" alt="Sakurakouji-Runa" width="100"></a>  
-
-## 版权说明：
-
-- 「桜いろ」✿ Sakurairo  主题 使用 [GPL V2.0](https://github.com/mirai-mamori/Sakurairo/blob/master/LICENSE) 协议开源。
-
-- 樱花飘落特效、波浪特效、说说模版等均来自互联网，如有版权问题，烦请发邮件（me#okaeri.org）给我，我会及时下线功能。
-
-- 看板娘项目地址：https://github.com/stevenjoezhang/live2d-widget
-
-- 检测并更新功能插件项目地址：https://github.com/YahnisElsts/plugin-update-checker
-
-- LOGO特效样式参考原主题作者白猫，由https://hyacm.com/acai/ui/143/sakura-logo/ 提供方案
 
 ## 其他：
 
@@ -75,12 +80,18 @@
 
 - 主题交流论坛：https://sakurasaku.cn
 
-## 如遇问题
 
-- 如果在使用过程中遇到了任何问题，可以先**仔细**阅读本主题的 [使用手册](https://asuhe.jp/daily/sakurairo-user-manual)，并进行一些简单的确认：清理浏览器缓存，更换网络环境，确保不是主题包上传目录错误等自身原因。如果你无法靠自己解决问题，可以尝试联系作者或者询问QQ群群友，但记住**任何人没有为你解决问题的义务，只是出于好心的帮助。**  
+## 版权说明：
 
-- 在确认你遇到的现象确实是一个 Bug 后，请在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交问题，并为该问题尽可能的描述清楚，
-按照提供的 issue 模板进行填写，谢谢配合。
+- 「桜いろ」✿ Sakurairo  主题 使用 [GPL V2.0](https://github.com/mirai-mamori/Sakurairo/blob/master/LICENSE) 协议开源。
+
+- 樱花飘落特效、波浪特效、说说模版等均来自互联网，如有版权问题，烦请发邮件（me#okaeri.org）给我，我会及时下线功能。
+
+- 看板娘项目地址：https://github.com/stevenjoezhang/live2d-widget
+
+- 检测并更新功能插件项目地址：https://github.com/YahnisElsts/plugin-update-checker
+
+- LOGO特效样式参考原主题作者白猫，由https://hyacm.com/acai/ui/143/sakura-logo/ 提供方案
 
 ## 希望你喜欢！
 - Star 趋势  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
