@@ -514,6 +514,25 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
+        'name' => __('Home Page Post Feature Image Options', 'sakurairo'), 
+        'desc' => __('Select how to call the post featue image, only for the post without feature image', 'sakurairo'), 
+        'id' => 'post_cover_options',
+        'std' => "type_1",
+        'type' => "select",
+        'options' => array(
+            'type_1' => __('same as the cover of the first screen (default)', 'sakurairo'), 
+            'type_2' => __('custom api (advanced)', 'sakurairo'), 
+        )
+    );
+
+    $options[] = array(
+        'name' => __('Post Feature Images Url', 'sakurairo'), 
+        'desc' => __('Fill in the custom image api url.', 'sakurairo'),
+        'id' => 'post_cover',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
         'name' => __('Focus Area', 'sakurairo'), 
         'desc' => __('Default on', 'sakurairo'),
         'id' => 'focus-area',
