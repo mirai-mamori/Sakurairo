@@ -3630,7 +3630,7 @@ a.page-numbers {
     font-size: 14px
 }
 
-.siren-checkbox-label input {
+.siren-checkbox-label input ,#wp-comment-cookies-consent{
     padding: 0;
     margin: 0;
     float: none;

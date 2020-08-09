@@ -1105,12 +1105,14 @@ function load_bangumi() {
             var xhr = new XMLHttpRequest();
             xhr.open('POST', this.href + "&_wpnonce=" + Poi.nonce, true);
             xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var html = JSON.parse(xhr.responseText);
-                    $("#bangumi-pagination").remove();
-                    $(".row").append(html);
-                }else{
-                    $("#bangumi-pagination a").removeClass("loading").html('<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> ERROR ');
+                if (xhr.readyState == 4 ) {
+                    if(xhr.status == 200){
+                        var html = JSON.parse(xhr.responseText);
+                        $("#bangumi-pagination").remove();
+                        $(".row").append(html);
+                    }else{
+                        $("#bangumi-pagination a").removeClass("loading").html('<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> ERROR ');
+                    }
                 }
             };
             xhr.send();
