@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-08-09 14:33+0800\n"
+"POT-Creation-Date: 2020-08-09 14:41+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1707,7 +1707,7 @@ msgid "Check to enable, display the user's browser, operating system information
 msgstr ""
 
 #: options.php:1405
-msgid "Comment location infomation"
+msgid "Comment Location Infomation"
 msgstr ""
 
 #: options.php:1406

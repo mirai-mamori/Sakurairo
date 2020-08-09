@@ -1402,8 +1402,8 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Comment location infomation', 'sakura'), 
-        'desc' => __('Check to enable, display the user\'s location info', 'sakura'), 
+        'name' => __('Comment Location Infomation', 'sakurairo'), 
+        'desc' => __('Check to enable, display the user\'s location info', 'sakurairo'), 
         'id' => 'open_location',
         'std' => '0',
         'type' => 'checkbox');
