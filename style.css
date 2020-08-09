@@ -5054,7 +5054,9 @@ i.iconfont.down {
 
 @media (max-width:630px) {
     .links ul li {
-        width: 100% !important
+        width: 100% !important;
+        margin: 0px;
+        margin-bottom: 8px;
     }
     .we-content li {
         width: 100%;
@@ -8974,11 +8976,6 @@ input#wp-comment-cookies-consent {
 }
 .comment-form-cookies-consent label {
     vertical-align: middle;
-}
-
-/*修复友链盒子向右偏移*/
-.links ul li {
-    margin: 0px;
 }
 
 /*修复加载圆圈偏移*/
