@@ -685,7 +685,8 @@ body.dark .wrapper,
 body.dark .post-list-show,
 body.dark .post-list hr,
 body.dark .lower li ul,
-body.dark .header-user-menu
+body.dark .header-user-menu,
+body.dark .headertop-bar::after 
 {background:#31363b !important;}
 
 body.dark .pattern-center-blank,
@@ -907,8 +908,7 @@ body.dark .entry-content .aplayer
 body.dark .scrollbar,
 body.dark .butterBar-message,
 body.dark .aplayer .aplayer-list ol li:hover ,
-body.dark .pattern-center:after,
-body.dark .headertop-bar::after 
+body.dark .pattern-center:after 
 {background: <?php echo akina_option('theme_dark'); ?> !important;}
 
 body.dark .aplayer .aplayer-list ol li.aplayer-list-light .aplayer-list-cur,
