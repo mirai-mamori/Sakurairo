@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-08-09 14:41+0800\n"
-"PO-Revision-Date: 2020-08-09 14:41+0800\n"
+"POT-Creation-Date: 2020-08-09 14:54+0800\n"
+"PO-Revision-Date: 2020-08-09 14:57+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -757,7 +757,7 @@ msgstr ""
 
 #: options.php:369
 msgid "Background Random Graphs Switch"
-msgstr "背景随机图切换按钮"
+msgstr "封面随机图切换按钮"
 
 #: options.php:370
 msgid ""
@@ -799,7 +799,7 @@ msgstr "填写数字，推荐值是90到110"
 
 #: options.php:410
 msgid "Cover Random Graphs Option"
-msgstr "背景随机图选项"
+msgstr "封面随机图选项"
 
 #: options.php:411
 msgid "Select how to call the cover random image"
@@ -819,7 +819,7 @@ msgstr "外部API随机图"
 
 #: options.php:423
 msgid "Multi Terminal Separation of Home Random Graphs"
-msgstr "背景随机图多端分离"
+msgstr "封面随机图多端分离"
 
 #: options.php:424 options.php:1181
 msgid "It is off by default and enabled by check"
@@ -947,17 +947,17 @@ msgstr "公告内容，文字超出142个字节将会被滚动显示（移动端
 
 #: options.php:517
 msgid "Home Page Post Feature Image Options"
-msgstr "首页文章特色图片选项"
+msgstr "首页文章区块配图选项"
 
 #: options.php:518
 msgid ""
 "Select how to call the post featue image, only for the post without feature "
 "image"
-msgstr "选择文章特色图的调用方式，只对没有设置特色图像的文章生效"
+msgstr "选择文章区块配图的调用方式，只对没有设置特色图像的文章生效"
 
 #: options.php:523
 msgid "same as the cover of the first screen (default)"
-msgstr "跟随第一屏背景随机图"
+msgstr "跟随第一屏封面随机图"
 
 #: options.php:524
 msgid "custom api (advanced)"
