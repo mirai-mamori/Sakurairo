@@ -11,21 +11,8 @@
 //}
 //add_filter('the_excerpt', 'custom_short_excerpt');
 $i=0; while ( have_posts() ) : the_post(); $i++;
-switch (akina_option('feature_align')) {
-    case "left":
-        $class = 'post-list-thumb-left';
-        break;
-    case "right":
-        $class = '';
-        break;
-    case "alternate":
-        $class = ($i%2 == 0) ? 'post-list-thumb-left' : ''; // 如果为偶数
-        break;
-    default:
-        $class = ($i%2 == 0) ? 'post-list-thumb-left' : '';
-}
 if( $i == 1 ){
-    $class .= ' post-list-show';
+    $class = ' post-list-show';
 }
 if(has_post_thumbnail()){
 	$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');

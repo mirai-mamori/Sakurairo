@@ -1379,6 +1379,40 @@ li.link-item {
 }
 <?php endif; ?>
 
+<?php if(akina_option('feature_align') == 'left'){ ?>
+.post-list-thumb .post-content-wrap {
+    float: left;
+    padding-left: 30px;
+    padding-right: 0;
+    text-align: right;
+    margin: 20px 10px 10px 0
+}
+.post-list-thumb .post-thumb {
+    float: left
+}
+
+.post-list-thumb .post-thumb a {
+    border-radius: 10px 0 0 10px
+}
+<?php }if(akina_option('feature_align') == 'alternate'){ ?>
+.post-list-thumb:nth-child(2n) .post-content-wrap {
+    float: left;
+    padding-left: 30px;
+    padding-right: 0;
+    text-align: right;
+    margin: 20px 10px 10px 0
+}
+.post-list-thumb:nth-child(2n) .post-thumb {
+    float: left
+}
+
+.post-list-thumb:nth-child(2n) .post-thumb a {
+    border-radius: 10px 0 0 10px
+}
+<?php } ?>
+
+
+
 </style>
 <?php }
 add_action('wp_head', 'customizer_css');

@@ -1640,22 +1640,6 @@ i.iconfont.hotpost {
     overflow: hidden
 }
 
-.post-list-thumb-left .post-content-wrap {
-    float: left;
-    padding-left: 30px;
-    padding-right: 0;
-    text-align: right;
-    margin: 20px 10px 10px 0
-}
-
-.post-list-thumb-left .post-thumb {
-    float: left
-}
-
-.post-list-thumb-left .post-thumb a {
-    border-radius: 10px 0 0 10px
-}
-
 @media (max-width:768px) {
     .float-content p {
         height: auto;
@@ -1675,12 +1659,11 @@ i.iconfont.hotpost {
         width: 100%;
         left: 0
     }
-    .post-content-wrap,
-    .post-list-thumb-left .post-content-wrap {
-        text-align: left;
-        margin: 0;
-        padding: 20px;
-        float: none;
+    .post-list-thumb .post-content-wrap {
+        text-align: left !important;
+        margin: 0 !important;
+        padding: 20px !important;
+        float: none !important;
         box-shadow: none;
         border-top: 0
     }

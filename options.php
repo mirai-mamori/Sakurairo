@@ -1395,26 +1395,18 @@ function optionsframework_options()
         'type' => 'textarea');
 
     $options[] = array(
-        'name' => __('Statistics Interface', 'sakurairo'), 
-        'id' => 'statistics_api',
-        'std' => "theme_build_in",
-        'type' => "radio",
-        'options' => array(
-            'wp_statistics' => __('WP-Statistics plugin (Professional statistics, can exclude invalid access)', 'sakurairo'), 
-            'theme_build_in' => __('Theme built-in (simple statistics, calculate each page access request)', 'sakurairo'), 
-        ));
+        'name' => __('Comment UA Infomation', 'sakurairo'), 
+        'desc' => __('Check to enable, display the user\'s browser, operating system information', 'sakurairo'), 
+        'id' => 'open_useragent',
+        'std' => '0',
+        'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Statistical Data Display Format', 'sakurairo'), 
-        'id' => 'statistics_format',
-        'std' => "type_1",
-        'type' => "radio",
-        'options' => array(
-            'type_1' => __('23333 Views (default)', 'sakurairo'), 
-            'type_2' => __('23,333 Views (britain)', 'sakurairo'), 
-            'type_3' => __('23 333 Views (french)', 'sakurairo'), 
-            'type_4' => __('23k Views (chinese)', 'sakurairo'), 
-        ));
+        'name' => __('Comment location infomation', 'sakura'), 
+        'desc' => __('Check to enable, display the user\'s location info', 'sakura'), 
+        'id' => 'open_location',
+        'std' => '0',
+        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Comment Image Upload API', 'sakurairo'), 
@@ -1468,6 +1460,48 @@ function optionsframework_options()
         'id' => 'imgur_upload_image_proxy',
         'std' => 'https://api.imgur.com/3/image/',
         'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Statistics Interface', 'sakurairo'), 
+        'id' => 'statistics_api',
+        'std' => "theme_build_in",
+        'type' => "radio",
+        'options' => array(
+            'wp_statistics' => __('WP-Statistics plugin (Professional statistics, can exclude invalid access)', 'sakurairo'), 
+            'theme_build_in' => __('Theme built-in (simple statistics, calculate each page access request)', 'sakurairo'), 
+        ));
+
+    $options[] = array(
+        'name' => __('Statistical Data Display Format', 'sakurairo'), 
+        'id' => 'statistics_format',
+        'std' => "type_1",
+        'type' => "radio",
+        'options' => array(
+            'type_1' => __('23333 Views (default)', 'sakurairo'), 
+            'type_2' => __('23,333 Views (britain)', 'sakurairo'), 
+            'type_3' => __('23 333 Views (french)', 'sakurairo'), 
+            'type_4' => __('23k Views (chinese)', 'sakurairo'), 
+        ));
+
+    $options[] = array(
+        'name' => __('Private Comment Function', 'sakurairo'), 
+        'desc' => __('It is not checked by default. It is checked to enable. This feature allows users to set their own comments invisible to others', 'sakurairo'), 
+        'id' => 'open_private_message',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('QQ Avatar Link Encryption', 'sakurairo'), 
+        'desc' => __('Do not display the user\'s qq avatar links directly.', 'sakurairo'), 
+        'id' => 'qq_avatar_link',
+        'std' => "off",
+        'type' => "select",
+        'options' => array(
+            'off' => __('Off (default)', 'sakurairo'), 
+            'type_1' => __('use redirect (general security)', 'sakurairo'), 
+            'type_2' => __('fetch data at backend (high security)', 'sakurairo'), 
+            'type_3' => __('fetch data at backend (high security，slow)', 'sakurairo'), 
+        ));
 
     $options[] = array(
         'name' => __('Search Background Customization', 'sakurairo'), 
@@ -1547,36 +1581,9 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Private Comment Function', 'sakurairo'), 
-        'desc' => __('It is not checked by default. It is checked to enable. This feature allows users to set their own comments invisible to others', 'sakurairo'), 
-        'id' => 'open_private_message',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
         'name' => __('Human Verification', 'sakurairo'), 
         'desc' => __('Enable human verification', 'sakurairo'), 
         'id' => 'norobot',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('QQ Avatar Link Encryption', 'sakurairo'), 
-        'desc' => __('Do not display the user\'s qq avatar links directly.', 'sakurairo'), 
-        'id' => 'qq_avatar_link',
-        'std' => "off",
-        'type' => "select",
-        'options' => array(
-            'off' => __('Off (default)', 'sakurairo'), 
-            'type_1' => __('use redirect (general security)', 'sakurairo'), 
-            'type_2' => __('fetch data at backend (high security)', 'sakurairo'), 
-            'type_3' => __('fetch data at backend (high security，slow)', 'sakurairo'), 
-        ));
-
-    $options[] = array(
-        'name' => __('Comment UA Infomation', 'sakurairo'), 
-        'desc' => __('Check to enable, display the user\'s browser, operating system information', 'sakurairo'), 
-        'id' => 'open_useragent',
         'std' => '0',
         'type' => 'checkbox');
 
