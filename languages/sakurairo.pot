@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-08-09 14:54+0800\n"
+"POT-Creation-Date: 2020-08-09 15:05+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -705,7 +705,7 @@ msgstr ""
 msgid "Main Switch"
 msgstr ""
 
-#: options.php:349 options.php:445 options.php:654
+#: options.php:349 options.php:445 options.php:537
 msgid "Default on, check off"
 msgstr ""
 
@@ -933,99 +933,99 @@ msgid "Fill in the custom image api url."
 msgstr ""
 
 #: options.php:536
-msgid "Focus Area"
-msgstr ""
-
-#: options.php:537 options.php:1536
-msgid "Default on"
+msgid "Home Page Article Details Icon Switch"
 msgstr ""
 
 #: options.php:543
+msgid "Focus Area"
+msgstr ""
+
+#: options.php:544 options.php:1536
+msgid "Default on"
+msgstr ""
+
+#: options.php:550
 msgid "Focus Area Style"
 msgstr ""
 
-#: options.php:548
+#: options.php:555
 msgid "Alternate left and right"
 msgstr ""
 
-#: options.php:549
+#: options.php:556
 msgid "From bottom to top"
 msgstr ""
 
-#: options.php:553
+#: options.php:560
 msgid "Focus Area Title"
 msgstr ""
 
-#: options.php:554
+#: options.php:561
 msgid ""
 "Default is 聚焦, you can also change it to other, of course you can't use it as an "
 "advertisement!Not allowed!!"
 msgstr ""
 
-#: options.php:561
+#: options.php:568
 msgid "Focus Area First Image"
 msgstr ""
 
-#: options.php:562 options.php:590 options.php:618
+#: options.php:569 options.php:597 options.php:625
 msgid "size 257px*160px"
 msgstr ""
 
-#: options.php:568 options.php:569
+#: options.php:575 options.php:576
 msgid "Focus Area First Title"
 msgstr ""
 
-#: options.php:575 options.php:576
+#: options.php:582 options.php:583
 msgid "Focus Area First Description"
 msgstr ""
 
-#: options.php:582 options.php:583
+#: options.php:589 options.php:590
 msgid "Focus Area First Link"
 msgstr ""
 
-#: options.php:589
+#: options.php:596
 msgid "Focus Area Second Image"
 msgstr ""
 
-#: options.php:596 options.php:597
+#: options.php:603 options.php:604
 msgid "Focus Area Second Title"
 msgstr ""
 
-#: options.php:603 options.php:604
+#: options.php:610 options.php:611
 msgid "Focus Area Second Description"
 msgstr ""
 
-#: options.php:610 options.php:611
+#: options.php:617 options.php:618
 msgid "Focus Area Second Link"
 msgstr ""
 
-#: options.php:617
+#: options.php:624
 msgid "Focus Area Third Image"
 msgstr ""
 
-#: options.php:624 options.php:625
+#: options.php:631 options.php:632
 msgid "Focus Area Third Title"
 msgstr ""
 
-#: options.php:631 options.php:632
+#: options.php:638 options.php:639
 msgid "Focus Area Third Description"
 msgstr ""
 
-#: options.php:638 options.php:639
+#: options.php:645 options.php:646
 msgid "Focus Area Third Link"
 msgstr ""
 
-#: options.php:645
+#: options.php:652
 msgid "Main Page Article Title"
 msgstr ""
 
-#: options.php:646
+#: options.php:653
 msgid ""
 "Default is 記事, you can also change it to other, of course you can't use it as an "
 "advertisement!Not allowed!!"
-msgstr ""
-
-#: options.php:653
-msgid "Home Page Article Details Icon Switch"
 msgstr ""
 
 #: options.php:661

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-08-09 14:54+0800\n"
-"PO-Revision-Date: 2020-08-09 14:57+0800\n"
+"POT-Creation-Date: 2020-08-09 15:05+0800\n"
+"PO-Revision-Date: 2020-08-09 15:05+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -728,7 +728,7 @@ msgstr "首屏"
 msgid "Main Switch"
 msgstr "总开关（对下文所有选项生效）"
 
-#: options.php:349 options.php:445 options.php:654
+#: options.php:349 options.php:445 options.php:537
 msgid "Default on, check off"
 msgstr "默认开启，勾选关闭"
 
@@ -972,100 +972,100 @@ msgid "Fill in the custom image api url."
 msgstr "填写文章特色图片随机图地址"
 
 #: options.php:536
+msgid "Home Page Article Details Icon Switch"
+msgstr "首页文章“详细”图标"
+
+#: options.php:543
 msgid "Focus Area"
 msgstr "聚焦区域"
 
-#: options.php:537 options.php:1536
+#: options.php:544 options.php:1536
 msgid "Default on"
 msgstr "默认开启"
 
-#: options.php:543
+#: options.php:550
 msgid "Focus Area Style"
 msgstr "聚焦区域风格"
 
-#: options.php:548
+#: options.php:555
 msgid "Alternate left and right"
 msgstr "左右交替"
 
-#: options.php:549
+#: options.php:556
 msgid "From bottom to top"
 msgstr "从下往上"
 
-#: options.php:553
+#: options.php:560
 msgid "Focus Area Title"
 msgstr "聚焦区域标题"
 
-#: options.php:554
+#: options.php:561
 msgid ""
 "Default is 聚焦, you can also change it to other, of course you can't use it "
 "as an advertisement!Not allowed!!"
 msgstr "默认为聚焦，你也可以修改为其他，当然不能当广告用！不允许！！"
 
-#: options.php:561
+#: options.php:568
 msgid "Focus Area First Image"
 msgstr "第一聚焦区图片"
 
-#: options.php:562 options.php:590 options.php:618
+#: options.php:569 options.php:597 options.php:625
 msgid "size 257px*160px"
 msgstr "尺寸257px*160px"
 
-#: options.php:568 options.php:569
+#: options.php:575 options.php:576
 msgid "Focus Area First Title"
 msgstr "第一聚焦区标题"
 
-#: options.php:575 options.php:576
+#: options.php:582 options.php:583
 msgid "Focus Area First Description"
 msgstr "第一聚焦区描述"
 
-#: options.php:582 options.php:583
+#: options.php:589 options.php:590
 msgid "Focus Area First Link"
 msgstr "第一聚焦区链接"
 
-#: options.php:589
+#: options.php:596
 msgid "Focus Area Second Image"
 msgstr "第二聚焦区图片"
 
-#: options.php:596 options.php:597
+#: options.php:603 options.php:604
 msgid "Focus Area Second Title"
 msgstr "第二聚焦区标题"
 
-#: options.php:603 options.php:604
+#: options.php:610 options.php:611
 msgid "Focus Area Second Description"
 msgstr "第二聚焦区描述"
 
-#: options.php:610 options.php:611
+#: options.php:617 options.php:618
 msgid "Focus Area Second Link"
 msgstr "第二聚焦区链接"
 
-#: options.php:617
+#: options.php:624
 msgid "Focus Area Third Image"
 msgstr "第三聚焦区图片"
 
-#: options.php:624 options.php:625
+#: options.php:631 options.php:632
 msgid "Focus Area Third Title"
 msgstr "第三聚焦区标题"
 
-#: options.php:631 options.php:632
+#: options.php:638 options.php:639
 msgid "Focus Area Third Description"
 msgstr "第三聚焦区描述"
 
-#: options.php:638 options.php:639
+#: options.php:645 options.php:646
 msgid "Focus Area Third Link"
 msgstr "第三聚焦区链接"
 
-#: options.php:645
+#: options.php:652
 msgid "Main Page Article Title"
 msgstr "文章区域总标题"
 
-#: options.php:646
+#: options.php:653
 msgid ""
 "Default is 記事, you can also change it to other, of course you can't use it "
 "as an advertisement!Not allowed!!"
 msgstr "默认为記事，你也可以修改为其他，当然不能当广告用！不允许！！"
-
-#: options.php:653
-msgid "Home Page Article Details Icon Switch"
-msgstr "首页文章“详细”图标"
 
 #: options.php:661
 msgid "Post"

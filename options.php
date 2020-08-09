@@ -533,6 +533,13 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
+        'name' => __('Home Page Article Details Icon Switch', 'sakurairo'), 
+        'desc' => __('Default on, check off', 'sakurairo'),
+        'id' => 'hpage-art-dis',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
         'name' => __('Focus Area', 'sakurairo'), 
         'desc' => __('Default on', 'sakurairo'),
         'id' => 'focus-area',
@@ -648,13 +655,6 @@ function optionsframework_options()
         'std' => '記事',
         'class' => 'mini',
         'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Home Page Article Details Icon Switch', 'sakurairo'), 
-        'desc' => __('Default on, check off', 'sakurairo'),
-        'id' => 'hpage-art-dis',
-        'std' => '0',
-        'type' => 'checkbox');
 
     //文章页
     $options[] = array(
