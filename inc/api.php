@@ -125,7 +125,12 @@ function cover_gallery() {
  * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/image/feature
  */
 function feature_gallery() {
-    return cover_gallery();
+    $imgurl = Images::feature_gallery();
+    $data = array('feature image');
+    $response = new WP_REST_Response($data);
+    $response->set_status(302);
+    $response->header('Location', $imgurl);
+    return $response;
 }
 
 /*

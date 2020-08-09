@@ -234,7 +234,6 @@ function sakura_scripts()
         wp_enqueue_style('saukra_css', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/style.min.css', array(), SAKURA_VERSION);
         wp_enqueue_script('app', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/js/sakura-app.min.js', array(), SAKURA_VERSION, true);
     }
-    wp_enqueue_script('github_card', 'https://cdn.jsdelivr.net/github-cards/latest/widget.js', array(), SAKURA_VERSION, true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -294,150 +293,20 @@ require get_template_directory() . '/inc/categories-images.php';
 //Comment Location Start
 function convertip($ip)
 {
-    error_reporting(E_ALL ^ E_NOTICE);
-    $dat_path = dirname(__FILE__) . '/inc/QQWry.Dat';
-    if (!$fd = @fopen($dat_path, 'rb')) {
-        return 'IP date file not exists or access denied';
-    }
-    $ip = explode('.', $ip);
-    $ipNum = intval($ip[0]) * 16777216 + intval($ip[1]) * 65536 + intval($ip[2]) * 256 + intval($ip[3]);
-    $DataBegin = fread($fd, 4);
-    $DataEnd = fread($fd, 4);
-    $ipbegin = implode('', unpack('L', $DataBegin));
-    if ($ipbegin < 0) {
-        $ipbegin += pow(2, 32);
-    }
-
-    $ipend = implode('', unpack('L', $DataEnd));
-    if ($ipend < 0) {
-        $ipend += pow(2, 32);
-    }
-
-    $ipAllNum = ($ipend - $ipbegin) / 7 + 1;
-    $BeginNum = 0;
-    $EndNum = $ipAllNum;
-    while ($ip1num > $ipNum || $ip2num < $ipNum) {
-        $Middle = intval(($EndNum + $BeginNum) / 2);
-        fseek($fd, $ipbegin + 7 * $Middle);
-        $ipData1 = fread($fd, 4);
-        if (strlen($ipData1) < 4) {
-            fclose($fd);
-            return 'System Error';
-        }
-        $ip1num = implode('', unpack('L', $ipData1));
-        if ($ip1num < 0) {
-            $ip1num += pow(2, 32);
-        }
-
-        if ($ip1num > $ipNum) {
-            $EndNum = $Middle;
-            continue;
-        }
-        $DataSeek = fread($fd, 3);
-        if (strlen($DataSeek) < 3) {
-            fclose($fd);
-            return 'System Error';
-        }
-        $DataSeek = implode('', unpack('L', $DataSeek . chr(0)));
-        fseek($fd, $DataSeek);
-        $ipData2 = fread($fd, 4);
-        if (strlen($ipData2) < 4) {
-            fclose($fd);
-            return 'System Error';
-        }
-        $ip2num = implode('', unpack('L', $ipData2));
-        if ($ip2num < 0) {
-            $ip2num += pow(2, 32);
-        }
-
-        if ($ip2num < $ipNum) {
-            if ($Middle == $BeginNum) {
-                fclose($fd);
-                return 'Unknown';
-            }
-            $BeginNum = $Middle;
-        }
-    }
-    $ipFlag = fread($fd, 1);
-    if ($ipFlag == chr(1)) {
-        $ipSeek = fread($fd, 3);
-        if (strlen($ipSeek) < 3) {
-            fclose($fd);
-            return 'System Error';
-        }
-        $ipSeek = implode('', unpack('L', $ipSeek . chr(0)));
-        fseek($fd, $ipSeek);
-        $ipFlag = fread($fd, 1);
-    }
-    if ($ipFlag == chr(2)) {
-        $AddrSeek = fread($fd, 3);
-        if (strlen($AddrSeek) < 3) {
-            fclose($fd);
-            return 'System Error';
-        }
-        $ipFlag = fread($fd, 1);
-        if ($ipFlag == chr(2)) {
-            $AddrSeek2 = fread($fd, 3);
-            if (strlen($AddrSeek2) < 3) {
-                fclose($fd);
-                return 'System Error';
-            }
-            $AddrSeek2 = implode('', unpack('L', $AddrSeek2 . chr(0)));
-            fseek($fd, $AddrSeek2);
-        } else {
-            fseek($fd, -1, SEEK_CUR);
-        }
-        while (($char = fread($fd, 1)) != chr(0)) {
-            $ipAddr2 .= $char;
-        }
-
-        $AddrSeek = implode('', unpack('L', $AddrSeek . chr(0)));
-        fseek($fd, $AddrSeek);
-        while (($char = fread($fd, 1)) != chr(0)) {
-            $ipAddr1 .= $char;
-        }
-
+    if(empty($ip)) $ip = get_comment_author_IP();
+    $ch = curl_init();  
+    $timeout = 5;  
+    curl_setopt ($ch, CURLOPT_URL, 'http://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip='.$ip);  
+    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);  
+    curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);  
+    $file_contents = curl_exec($ch);  
+    curl_close($ch);  
+    $result = json_decode($file_contents,true);
+    if ($result['data']['country'] != '中国') {
+        return $result['data']['country'];
     } else {
-        fseek($fd, -1, SEEK_CUR);
-        while (($char = fread($fd, 1)) != chr(0)) {
-            $ipAddr1 .= $char;
-        }
-
-        $ipFlag = fread($fd, 1);
-        if ($ipFlag == chr(2)) {
-            $AddrSeek2 = fread($fd, 3);
-            if (strlen($AddrSeek2) < 3) {
-                fclose($fd);
-                return 'System Error';
-            }
-            $AddrSeek2 = implode('', unpack('L', $AddrSeek2 . chr(0)));
-            fseek($fd, $AddrSeek2);
-        } else {
-            fseek($fd, -1, SEEK_CUR);
-        }
-        while (($char = fread($fd, 1)) != chr(0)) {
-            $ipAddr2 .= $char;
-        }
+        return $result['data']['country'].'&nbsp;·&nbsp;'.$result['data']['region'].'&nbsp;·&nbsp;'.$result['data']['city'].'&nbsp;·&nbsp;'.$result['data']['isp'];
     }
-    fclose($fd);
-    if (preg_match('/http/i', $ipAddr2)) {
-        $ipAddr2 = '';
-    }
-    $ipaddr = "$ipAddr1 $ipAddr2";
-    $ipaddr = preg_replace('/CZ88.Net/is', '', $ipaddr);
-    $ipaddr = preg_replace('/^s*/is', '', $ipaddr);
-    $ipaddr = preg_replace('/s*$/is', '', $ipaddr);
-    if (preg_match('/http/i', $ipaddr) || $ipaddr == '') {
-        $ipaddr = 'Unknown';
-    }
-    $ipaddr = iconv('gbk', 'utf-8//IGNORE', $ipaddr);
-    if ($ipaddr != '  ') {
-        return $ipaddr;
-    } else {
-        $ipaddr = 'Unknown';
-    }
-
-    return $ipaddr;
 }
 //Comment Location End
 
@@ -470,7 +339,7 @@ if (!function_exists('akina_comment_format')) {
 								</div>
 								<?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth'])));?>
 								<div class="right">
-									<div class="info"><time datetime="<?php comment_date('Y-m-d');?>"><?php echo poi_time_since(strtotime($comment->comment_date_gmt), true); //comment_date(get_option('date_format'));  ?></time><?php echo siren_get_useragent($comment->comment_agent); ?><?php echo mobile_get_useragent_icon($comment->comment_agent); ?>&nbsp;<?php _e('Location', 'sakurairo'); /*来自*/?>: <?php echo convertip(get_comment_author_ip()); ?>
+									<div class="info"><time datetime="<?php comment_date('Y-m-d');?>"><?php echo poi_time_since(strtotime($comment->comment_date_gmt), true); //comment_date(get_option('date_format'));  ?></time><?php echo siren_get_useragent($comment->comment_agent); ?><?php echo mobile_get_useragent_icon($comment->comment_agent); ?>&nbsp;<?php if(akina_option('open_location')){ _e('Location', 'sakurairo'); /*来自*/?>: <?php echo convertip(get_comment_author_ip());} ?>
     									<?php if (current_user_can('manage_options') and (wp_is_mobile() == false)) {
             $comment_ID = $comment->comment_ID;
             $i_private = get_comment_meta($comment_ID, '_private', true);
@@ -509,19 +378,19 @@ function get_author_class($comment_author_email, $user_id)
         "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email = '$comment_author_email' "));
     if ($author_count >= 1 && $author_count < 5) //数字可自行修改，代表评论次数。
     {
-        echo '<span class="showGrade0" title="Lv0"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/level/level_0.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
+        echo '<span class="showGrade0" title="Lv0"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/level/level_0.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
     } else if ($author_count >= 6 && $author_count < 10) {
-        echo '<span class="showGrade1" title="Lv1"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/level/level_1.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
+        echo '<span class="showGrade1" title="Lv1"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/level/level_1.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
     } else if ($author_count >= 10 && $author_count < 20) {
-        echo '<span class="showGrade2" title="Lv2"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/level/level_2.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
+        echo '<span class="showGrade2" title="Lv2"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/level/level_2.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
     } else if ($author_count >= 20 && $author_count < 40) {
-        echo '<span class="showGrade3" title="Lv3"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/level/level_3.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
+        echo '<span class="showGrade3" title="Lv3"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/level/level_3.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
     } else if ($author_count >= 40 && $author_count < 80) {
-        echo '<span class="showGrade4" title="Lv4"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/level/level_4.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
+        echo '<span class="showGrade4" title="Lv4"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/level/level_4.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
     } else if ($author_count >= 80 && $author_count < 160) {
-        echo '<span class="showGrade5" title="Lv5"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/level/level_5.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
+        echo '<span class="showGrade5" title="Lv5"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/level/level_5.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
     } else if ($author_count >= 160) {
-        echo '<span class="showGrade6" title="Lv6"><img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/level/level_6.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
+        echo '<span class="showGrade6" title="Lv6"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/level/level_6.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
     }
 
 }
@@ -877,11 +746,11 @@ function custom_html()
     if (akina_option('login_bg')) {
         $loginbg = akina_option('login_bg');
     } else {
-        $loginbg = 'https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/hd.png';
+        $loginbg = 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/backstage/login-bg.png';
     }
     echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/js/login.js"></script>' . "\n";
     echo '<script type="text/javascript">' . "\n";
-    echo 'jQuery("body").prepend("<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");' . "\n";
+    echo 'jQuery("body").prepend("<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");' . "\n";
     echo 'jQuery(\'#bg\').children(\'img\').attr(\'src\', \'' . $loginbg . '\').load(function(){' . "\n";
     echo '	resizeImage(\'bg\');' . "\n";
     echo '	jQuery(window).bind("resize", function() { resizeImage(\'bg\'); });' . "\n";
@@ -899,12 +768,17 @@ function custom_html()
 		  alert("Please slide the block to verificate!");
 		  return false;
 	  }
-	}
+    }
+    $(document).ready(function(){
+        $(\'h1 a\').attr(\'style\',\'background-image: url(' . akina_option('logo_img') . '); \');
+		$(".forgetmenot").replaceWith(\'<p class="forgetmenot">Remember Me<input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>\');
+	});
+    </script>';
+if (akina_option('login_pf', '1')) {
+    echo '<script>
 	$(document).ready(function(){
 		$( \'<p><div id="verification-slider"><div id="slider"><div id="slider_bg"></div><span id="label">»</span><span id="labelTip">Slide to Verificate</span></div><input type="hidden" name="verification" value="verification" /></div><p>\' ).insertBefore( $( ".submit" ) );
 		$(\'form\').attr(\'onsubmit\',\'return verificationOK();\');
-        $(\'h1 a\').attr(\'style\',\'background-image: url(' . akina_option('logo_img') . '); \');
-		$(".forgetmenot").replaceWith(\'<p class="forgetmenot">Remember Me<input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>\');
 	});
 	</script>';
     echo '<script type="text/javascript">
@@ -944,6 +818,7 @@ function custom_html()
 		}
 	</script>
 	<script type="text/javascript" src="' . get_template_directory_uri() . '/user/verification.js"></script>';
+}
 }
 add_action('login_footer', 'custom_html');
 
@@ -1020,14 +895,14 @@ function comment_mail_notify($comment_id)
         <h3>您有一条来自<a style="text-decoration: none;color: '.akina_option('theme_skin').' " target="_blank" href="' . home_url() . '/">' . get_option("blogname") . '</a>的回复</h3>
         <br>
         <p style="font-size: 14px;">您在文章《' . get_the_title($comment->comment_post_ID) . '》上发表的评论：</p>
-        <p style="border-bottom:#ddd 1px solid;border-left:#ddd 1px solid;padding-bottom:20px;background-color:#eee;margin:15px 0px;padding-left:20px;padding-right:20px;border-top:#ddd 1px solid;border-right:#ddd 1px solid;padding-top:20px">'
-        . trim(get_comment($parent_id)->comment_content) . '</p>
+        <div style="border-bottom:#ddd 1px solid;border-left:#ddd 1px solid;padding-bottom:20px;background-color:#eee;margin:15px 0px;padding-left:20px;padding-right:20px;border-top:#ddd 1px solid;border-right:#ddd 1px solid;padding-top:20px">'
+        . trim(get_comment($parent_id)->comment_content) . '</div>
         <p style="font-size: 14px;">' . trim($comment->comment_author) . ' 给您的回复如下：</p>
-        <p style="border-bottom:#ddd 1px solid;border-left:#ddd 1px solid;padding-bottom:20px;background-color:#eee;margin:15px 0px;padding-left:20px;padding-right:20px;border-top:#ddd 1px solid;border-right:#ddd 1px solid;padding-top:20px">'
-        . trim($comment->comment_content) . '</p>
+        <div style="border-bottom:#ddd 1px solid;border-left:#ddd 1px solid;padding-bottom:20px;background-color:#eee;margin:15px 0px;padding-left:20px;padding-right:20px;border-top:#ddd 1px solid;border-right:#ddd 1px solid;padding-top:20px">'
+        . trim($comment->comment_content) . '</div>
 
       <div style="text-align: center;">
-          <img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.4/img/other/hr.png" alt="hr" style="width:100%;
+          <img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/comment/comment-mail.png" alt="hr" style="width:100%;
                                                                                                   margin:5px auto 5px auto;
                                                                                                   display: block;">
           <a style="text-transform: uppercase;
@@ -1045,7 +920,7 @@ function comment_mail_notify($comment_id)
     </div>
 ';
         $message = convert_smilies($message);
-        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_', $message);
+        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.1.7/vision/smilies/bilipng/emoji_', $message);
         $message = str_replace("}}", '.png" alt="emoji" style="height: 2em; max-height: 2em;">', $message);
 
         $message = str_replace('{UPLOAD}', 'https://i.loli.net/', $message);
@@ -1061,16 +936,6 @@ function comment_mail_notify($comment_id)
     }
 }
 add_action('comment_post', 'comment_mail_notify');
-
-//字数统计
-function count_words ($text) {
-global $post;
-if ( '' == $text ) {
-$text = $post->post_content;
-if (mb_strlen($output, 'UTF-8') < mb_strlen($text, 'UTF-8')) $output .= '本文共' . mb_strlen(preg_replace('/\s/','',html_entity_decode(strip_tags($post->post_content))),'UTF-8') . '个字';
-return $output;
-}
-}
 
 /*
  * 链接新窗口打开
@@ -1152,9 +1017,9 @@ if ( !get_option('use_smilies'))
           $smiliesgs=".png";
       }
       // 选择面版
-      $return_smiles = $return_smiles . '<span title="'.$tieba_Name.'" onclick="grin('."'".$tieba_Name."'".',type = \'tieba\')"><img src="https://cdn.jsdelivr.net/gh/bymoye/cdn@1.2/sakura/images/smilies/'. $tiebaimgdir .'icon_'. $tieba_Name . $smiliesgs.'" /></span>';
+      $return_smiles = $return_smiles . '<span title="'.$tieba_Name.'" onclick="grin('."'".$tieba_Name."'".',type = \'tieba\')"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/'. $tiebaimgdir .'icon_'. $tieba_Name . $smiliesgs.'" /></span>';
       // 正文转换
-      $wpsmiliestrans['::' . $tieba_Name . '::'] = '<span title="'. $tieba_Name .'" onclick="grin('."'". $tieba_Name ."'".',type = \'tieba\')"><img src="https://cdn.jsdelivr.net/gh/bymoye/cdn@1.2/sakura/images/smilies/'.$tiebaimgdir.'icon_'. $tieba_Name .$smiliesgs.'" /></span>';
+      $wpsmiliestrans['::' . $tieba_Name . '::'] = '<span title="'. $tieba_Name .'" onclick="grin('."'". $tieba_Name ."'".',type = \'tieba\')"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/'.$tiebaimgdir.'icon_'. $tieba_Name .$smiliesgs.'" /></span>';
       }
       return $return_smiles;
   }
@@ -1232,9 +1097,9 @@ function push_bili_smilies(){
         $smiliesgs=".png";
     }
     // 选择面版
-    $return_smiles = $return_smiles . '<span title="'.$smilies_Name.'" onclick="grin('."'".$smilies_Name."'".',type = \'Math\')"><img src="https://cdn.jsdelivr.net/gh/bymoye/cdn@1.2/sakura/images/smilies/'. $biliimgdir .'emoji_'. $smilies_Name . $smiliesgs.'" /></span>';
+    $return_smiles = $return_smiles . '<span title="'.$smilies_Name.'" onclick="grin('."'".$smilies_Name."'".',type = \'Math\')"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/'. $biliimgdir .'emoji_'. $smilies_Name . $smiliesgs.'" /></span>';
     // 正文转换
-    $bilismiliestrans['{{' . $smilies_Name . '}}'] = '<span title="'. $smilies_Name .'" onclick="grin('."'". $smilies_Name ."'".',type = \'Math\')"><img src="https://cdn.jsdelivr.net/gh/bymoye/cdn@1.2/sakura/images/smilies/'.$biliimgdir.'emoji_'. $smilies_Name .$smiliesgs.'" /></span>';
+    $bilismiliestrans['{{' . $smilies_Name . '}}'] = '<span title="'. $smilies_Name .'" onclick="grin('."'". $smilies_Name ."'".',type = \'Math\')"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/'.$biliimgdir.'emoji_'. $smilies_Name .$smiliesgs.'" /></span>';
     }
     return $return_smiles;
 }
@@ -1267,7 +1132,7 @@ function bili_smile_filter_rss($content) {
         $biliimgdir="bilipng/";
         $smiliesgs=".png";
     }
-    $content = str_replace("{{",'<img src="https://cdn.jsdelivr.net/gh/bymoye/cdn@1.2/sakura/images/smilies/'.$biliimgdir,$content);
+    $content = str_replace("{{",'<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/'.$biliimgdir,$content);
     $content = str_replace("}}",$smilesgs.'" alt="emoji" style="height: 2em; max-height: 2em;">',$content);
     $content =  str_replace('[img]', '<img src="', $content); 
     $content =  str_replace('[/img]', '" style="display: block;margin-left: auto;margin-right: auto;">', $content); 
@@ -1551,17 +1416,11 @@ function dash_scheme($key, $name, $col1, $col2, $col3, $col4, $base, $focus, $cu
     );
 }
 
-//Sakura
-dash_scheme($key = "sakurairo", $name = "Sakura🌸",
-    $col1 = '#E87A90', $col2 = '#EE9CA7', $col3 = '#F4A7B9', $col4 = '#DB4D6D',
-    $base = "#FEDFE1", $focus = "#fff", $current = "#fff",
-    $rules = "#adminmenu .wp-has-current-submenu .wp-submenu a,#adminmenu .wp-has-current-submenu.opensub .wp-submenu a,#adminmenu .wp-submenu a,#adminmenu a.wp-has-current-submenu:focus+.wp-submenu a,#wpadminbar .ab-submenu .ab-item,#wpadminbar .quicklinks .menupop ul li a,#wpadminbar .quicklinks .menupop.hover ul li a,#wpadminbar.nojs .quicklinks .menupop:hover ul li a,.folded #adminmenu .wp-has-current-submenu .wp-submenu a{color:#f3f2f1}body{background-image:url(https://view.moezx.cc/images/2018/01/03/sakura.png);background-attachment:fixed;}#wpcontent{background:rgba(255,255,255,.0)}.wp-core-ui .button-primary{background:#bfd8d2!important;border-color:#8fbbb1 #8fbbb1 #8fbbb1!important;color:#fff!important;box-shadow:0 1px 0 #8fbbb1!important;text-shadow:0 -1px 1px #8fbbb1,1px 0 1px #8fbbb1,0 1px 1px #8fbbb1,-1px 0 1px #8fbbb1!important}");
-
-//custom
-dash_scheme($key = "custom", $name = "Custom",
-    $col1 = akina_option('dash_scheme_color_a'), $col2 = akina_option('dash_scheme_color_b'), $col3 = akina_option('dash_scheme_color_c'), $col4 = akina_option('dash_scheme_color_d'),
-    $base = akina_option('dash_scheme_color_base'), $focus = akina_option('dash_scheme_color_focus'), $current = akina_option('dash_scheme_color_current'),
-    $rules = akina_option('dash_scheme_css_rules'));
+//Sakurairo
+dash_scheme($key = "sakurairo", $name = "Sakurairo🌸",
+    $col1 = akina_option('admin_mcs'), $col2 = akina_option('admin_mcp'), $col3 = akina_option('admin_acc'), $col4 = akina_option('admin_acc'),
+    $base = "#FFF", $focus = "#FFF", $current = "#FFF",
+    $rules = '#adminmenu .wp-has-current-submenu .wp-submenu a,#adminmenu .wp-has-current-submenu.opensub .wp-submenu a,#adminmenu .wp-submenu a,#adminmenu a.wp-has-current-submenu:focus+.wp-submenu a,#wpadminbar .ab-submenu .ab-item,#wpadminbar .quicklinks .menupop ul li a,#wpadminbar .quicklinks .menupop.hover ul li a,#wpadminbar.nojs .quicklinks .menupop:hover ul li a,.folded #adminmenu .wp-has-current-submenu .wp-submenu a{color:' . akina_option('admin_font_skin') . '}body{background-image:url(' . akina_option('admin_menu_bg') . ');background-attachment:fixed;}#wpcontent{background:rgba(255,255,255,.0)}.wp-core-ui .button-primary{background:' . akina_option('admin_pb_skin') . '!important;border-color:' . akina_option('admin_pb_skin') . '!important;color:' . akina_option('admin_font_skin') . '!important;box-shadow:0 1px 0 ' . akina_option('admin_pb_skin') . '!important;text-shadow:0 -1px 1px ' . akina_option('admin_pb_skin') . ',1px 0 1px ' . akina_option('admin_pb_skin') . ',0 1px 1px ' . akina_option('admin_pb_skin') . ',-1px 0 1px ' . akina_option('admin_pb_skin') . '!important}');
 
 //Set Default Admin Color Scheme for New Users
 function set_default_admin_color($user_id)
@@ -1673,18 +1532,6 @@ function html_tag_parser($content)
                 title="$1"><img src="$2" target="_blank" rel="nofollow" class="fancybox"></a>',
             $content
         );
-
-        //Github cards
-        $content = preg_replace(
-            '/\[github repo=[\'"]([^\'"]+)[\'"]\]/i',
-            '
-            <iframe frameborder="0" scrolling="0" allowtransparency="true"
-                    src="https://api.2heng.xin/github-card/?repo=$1"
-                    width="400" height="153"
-                    style="margin-left: 50%; transform: translateX(-50%);"></iframe>
-            ',
-            $content
-        );
     }
     //html tag parser for rss
     if (is_feed()) {
@@ -1700,13 +1547,6 @@ function html_tag_parser($content)
             }
         }
         $content = preg_replace('/!\{([^\{\}]+)*\}\(' . $url_regex . '\)/i', '<a href="$2"><img src="$2" alt="$1" title="$1"></a>', $content);
-
-        //Github cards
-        $content = preg_replace(
-            '/\[github repo=[\'"]([^\'"]+)[\'"]\]/i',
-            '<a href="https://github.com/$1">',
-            $content
-        );
     }
     return $content;
 }
@@ -1776,16 +1616,6 @@ function DEFAULT_FEATURE_IMAGE()
     return rest_url('sakura/v1/image/feature') . '?' . rand(1, 1000);
 }
 
-//防止设置置顶文章造成的图片同侧bug
-add_action( 'pre_get_posts', function( $q ){
-    if ( $q->is_home() && $q->is_main_query() ){
-        $q->set( 'posts_per_page', 10 - sizeof(get_option( 'sticky_posts' )) );
-        if ( $q->get( 'paged' ) > 1 )
-            $q->set( 'post__not_in', get_option( 'sticky_posts' ) );
-    }
-
-});
-
 //评论回复
 function sakura_comment_notify($comment_id)
 {
@@ -1831,6 +1661,7 @@ function markdown_parser($incoming_comment)
     return $incoming_comment;
 }
 add_filter('preprocess_comment', 'markdown_parser');
+remove_filter( 'comment_text', 'make_clickable', 9 );
 
 //保存Markdown评论
 function save_markdown_comment($comment_ID, $comment_approved)

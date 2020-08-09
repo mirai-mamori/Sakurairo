@@ -26,8 +26,8 @@ pathCSSroot = patchall + 'css/'
 jsfiles = [f for f in listdir(pathJS) if isfile(join(pathJS, f))]
 cssfiles = [f for f in listdir(pathCSS) if isfile(join(pathCSS, f))]
 
-strJS = '/*! Generate by Mashiro. ' + localtime + '*/'
-strCSS = '/*! Generate by Mashiro. ' + localtime + '*/'
+strJS = '/*! Generate by mirai-mamori. ' + localtime + '*/'
+strCSS = '/*! Generate by mirai-mamori. ' + localtime + '*/'
 
 for f in jsfiles:
     with codecs.open(pathJS + f, 'r', encoding='utf-8') as file:

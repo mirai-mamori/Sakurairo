@@ -171,7 +171,7 @@ function code_highlight_style() {
         }
         var ele_name = $('pre:eq(' + i + ')')[0].children[0].className;
         var lang = ele_name.substr(0, ele_name.indexOf(" ")).replace('language-', '');
-        if (lang.toLowerCase() == "hljs") var lang = "text";
+        if (lang.toLowerCase() == "hljs") var lang = $('pre:eq(' + i + ') code').attr("class").replace('hljs', '')?$('pre:eq(' + i + ') code').attr("class").replace('hljs', ''):"text";
         $('pre:eq(' + i + ')').addClass('highlight-wrap');
         for (var t in attributes) {
             $('pre:eq(' + i + ')').attr(t, attributes[t]);
@@ -235,7 +235,7 @@ function attach_image() {
                     }, 1000);
                     if (res.status == 200) {
                         var get_the_url = res.proxy;
-                        $('#upload-img-show').append('<img class="lazyload upload-image-preview" src="https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/loadimg/inload.svg" data-src="' + get_the_url + '" onclick="window.open(\'' + get_the_url + '\')" onerror="imgError(this)" />');
+                        $('#upload-img-show').append('<img class="lazyload upload-image-preview" src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/sakura/load/inload.svg" data-src="' + get_the_url + '" onclick="window.open(\'' + get_the_url + '\')" onerror="imgError(this)" />');
                         lazyload();
                         addComment.createButterbar("图片上传成功~<br>Uploaded successfully~");
                         grin(get_the_url, type = 'Img');
@@ -1105,12 +1105,14 @@ function load_bangumi() {
             var xhr = new XMLHttpRequest();
             xhr.open('POST', this.href + "&_wpnonce=" + Poi.nonce, true);
             xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var html = JSON.parse(xhr.responseText);
-                    $("#bangumi-pagination").remove();
-                    $(".row").append(html);
-                }else{
-                    $("#bangumi-pagination a").removeClass("loading").html('<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> ERROR ');
+                if (xhr.readyState == 4 ) {
+                    if(xhr.status == 200){
+                        var html = JSON.parse(xhr.responseText);
+                        $("#bangumi-pagination").remove();
+                        $(".row").append(html);
+                    }else{
+                        $("#bangumi-pagination a").removeClass("loading").html('<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> ERROR ');
+                    }
                 }
             };
             xhr.send();
@@ -1488,14 +1490,14 @@ var home = location.href,
                 $(this).next().slideToggle('fast');
                 return false;
             });
-            if (mashiro_option.baguetteBoxON) {
+            /*if (mashiro_option.baguetteBoxON) {
                 baguetteBox.run('.entry-content', {
                     captions: function (element) {
                         return element.getElementsByTagName('img')[0].alt;
                     },
                     ignoreClass: 'fancybox',
                 });
-            }
+            }*/
             $('.js-toggle-search').on('click', function () {
                 $('.js-toggle-search').toggleClass('is-active');
                 $('.js-search').toggleClass('is-visible');
