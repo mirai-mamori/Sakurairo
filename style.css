@@ -3,10 +3,10 @@
 /*
 Theme Name: Sakurairo
 Theme URI: https://github.com/mirai-mamori/Sakurairo
-Author: Hitomi , Ukenn , Spirit , Bymoye , Mashiro 
+Author: made by FUUKEI
 Author URI: https://asuhe.jp/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 1.20.1
+Version: 1.20.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -323,7 +323,7 @@ button,
 input,
 select,
 textarea {
-    color: #EE9CA7;
+    color: #FB98C0;
     font-size: 15px;
     line-height: 1.5
 }
@@ -361,7 +361,7 @@ blockquote:before {
     position: absolute;
     top: -25px;
     left: 12px;
-    color: #EE9CA7;
+    color: #FB98C0;
     font-family: FontAwesome
 }
 
@@ -371,7 +371,7 @@ blockquote:after {
     position: absolute;
     bottom: -25px;
     right: -5px;
-    color: #EE9CA7;
+    color: #FB98C0;
     font-family: FontAwesome
 }
 
@@ -547,7 +547,7 @@ input[type=url],
 input[type=week],
 textarea {
     color: #666;
-    border: 1px solid #EE9CA7;
+    border: 1px solid #FB98C0;
     border-radius: 15px
 }
 
@@ -609,7 +609,7 @@ a {
 a:active,
 a:focus,
 a:hover {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 a:focus {
@@ -619,7 +619,7 @@ a:focus {
 a:active,
 a:hover {
     outline: 0;
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .site-top {
@@ -844,7 +844,7 @@ a:hover {
     font-size: 16px;
     outline: 0;
     background-color: #fff;
-    color: #EE9CA7;
+    color: #FB98C0;
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
@@ -863,7 +863,7 @@ a:hover {
     font-size: 16px;
     outline: 0;
     background-color: #fff;
-    color: #EE9CA7;
+    color: #FB98C0;
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
@@ -1035,7 +1035,7 @@ a:hover {
 .yya {
     position: fixed;
     left: 0;
-    background: rgba(255, 250, 250, .92);
+    background: rgba(255, 255, 255, .75);
     box-shadow: 0 1px 40px -8px rgba(255, 221, 225, .4)
 }
 
@@ -1046,7 +1046,7 @@ a:hover {
 }
 
 .site-header:hover {
-    background-color: #fffafa
+    background-color: rgba(255, 255, 255, .9);
 }
 
 .sabit {
@@ -1072,7 +1072,7 @@ a:hover {
 }
 
 .site-title a:hover {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .site-title img {
@@ -1152,11 +1152,11 @@ a:hover {
 .site-top ul li a {
     padding: 10px 0;
     display: inline-block;
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .site-top ul li a:hover {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .site-top ul li a:after {
@@ -1223,7 +1223,7 @@ a:hover {
     width: 28px;
     margin-left: -15px;
     height: 2px;
-    background: #EE9CA7;
+    background: #FB98C0;
     -webkit-transition: all .2s ease
 }
 
@@ -1404,7 +1404,7 @@ a:hover {
 }
 
 .entry-title a:hover {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .p-time {
@@ -1447,7 +1447,7 @@ i.iconfont.hotpost {
 
 .post-more i {
     font-size: 25px;
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .post-more i:hover {
@@ -1559,7 +1559,7 @@ i.iconfont.hotpost {
     width: max-content;
     padding: 2px 7px 2px 7px;
     border-radius: 6px;
-    color: #EE9CA7;
+    color: #FB98C0;
 }
 
 .post-meta,
@@ -1629,7 +1629,7 @@ i.iconfont.hotpost {
 
 .float-content i {
     font-size: 25px;
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .float-content p {
@@ -1790,8 +1790,8 @@ i.iconfont.hotpost {
 
 .navigator i:hover {
     color: #fff;
-    background: #EE9CA7;
-    border: 2px solid #EE9CA7;
+    background: #FB98C0;
+    border: 2px solid #FB98C0;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
@@ -1816,7 +1816,7 @@ i.iconfont.hotpost {
 }
 
 .site-info a:hover {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .footertext p {
@@ -1876,7 +1876,7 @@ h1.page-title {
     font-weight: 400;
     border: 1px dashed #ddd;
     padding: 10px 15px;
-    color: #EE9CA7;
+    color: #FB98C0;
     margin-bottom: 30px
 }
 
@@ -1919,7 +1919,7 @@ h1.page-title.mb- {
 }
 
 .post-tags a:hover {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .post-tags i {
@@ -1993,7 +1993,7 @@ h1.page-title.mb- {
 }
 
 .post-share ul li a:hover {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .post-share .show-share {
@@ -2781,7 +2781,7 @@ h1.works-title {
 
 #archives-temp h2 {
     font-weight: 400;
-    color: #EE9CA7;
+    color: #FB98C0;
     padding-bottom: 15px;
     border-bottom: 1px dashed #F1F1F1;
     text-align: center
@@ -2792,7 +2792,7 @@ h1.works-title {
     font-style: italic;
     font-size: 20px;
     font-weight: 400;
-    color: #EE9CA7;
+    color: #FB98C0;
     margin-left: 30px;
     margin-top: 50px
 }
@@ -2823,7 +2823,7 @@ span.time {
 .ar-time i {
     padding: 10px;
     border-radius: 100px;
-    background: #EE9CA7;
+    background: #FB98C0;
     color: #fff
 }
 
@@ -2853,7 +2853,7 @@ span.time {
 span.ar-circle {
     height: 10px;
     width: 10px;
-    background: #EE9CA7;
+    background: #FB98C0;
     display: inline-block;
     position: absolute;
     left: -5px;
@@ -2876,7 +2876,7 @@ h1.cat-title {
     font-weight: 400;
     padding-right: 15px;
     border-right: 1px dashed #ddd;
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .cat-des p {
@@ -2906,7 +2906,7 @@ header.page-header {
 .links ul li {
     width: 32%;
     float: left;
-    border: 1px solid #EE9CA7;
+    border: 1px solid #FB98C0;
     padding: 10px 15px;
     margin: 4px 4px;
     position: relative;
@@ -2918,7 +2918,7 @@ header.page-header {
 
 .links ul li img {
     float: left;
-    box-shadow: inset 0 0 10px #EE9CA7;
+    box-shadow: inset 0 0 10px #FB98C0;
     padding: 5px;
     opacity: 1;
     transform: rotate(0);
@@ -2949,7 +2949,7 @@ span.sitename {
     font-size: 20px;
     margin-top: 85px;
     margin-left: 8px;
-    color: #EE9CA7;
+    color: #FB98C0;
     padding-bottom: 10px;
     display: block;
     -webkit-transition: all .3s;
@@ -2965,7 +2965,7 @@ span.sitename {
     font-size: 14px;
     padding: 4px 0;
     margin-left: 8px;
-    border-top: 1px dotted #EE9CA7;
+    border-top: 1px dotted #FB98C0;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -2984,12 +2984,12 @@ span.sitename {
 
 .link-title span.link-fix {
     padding-left: 10px;
-    border-left: 3px solid #EE9CA7;
+    border-left: 3px solid #FB98C0;
 }
 
 .links ul li:before {
     content: "";
-    background-color: #EE9CA7;
+    background-color: #FB98C0;
     -webkit-transform: skew(45deg, 0);
     transform: skew(45deg, 0);
     width: 0;
@@ -3004,7 +3004,7 @@ span.sitename {
 
 .links ul li:hover {
     color: #27323A;
-    border: 1px solid #EE9CA7
+    border: 1px solid #FB98C0
 }
 
 .links ul li:hover:before {
@@ -3179,7 +3179,7 @@ a.page-numbers {
 }
 
 .comment .body .comment-at {
-    color: #EE9CA7;
+    color: #FB98C0;
     text-decoration: none
 }
 
@@ -3328,7 +3328,7 @@ a.page-numbers {
 }
 
 .comment h4 a:hover {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .comment hr {
@@ -3466,7 +3466,7 @@ a.page-numbers {
 }
 
 .commentbody:focus {
-    border-color: #EE9CA7;
+    border-color: #FB98C0;
     transition: border-color .25s
 }
 
@@ -3483,7 +3483,7 @@ a.page-numbers {
 .commentbody:not(:placeholder-shown)~.input-label,
 .commentbody:focus~.input-label {
     color: #fff;
-    background-color: #EE9CA7;
+    background-color: #FB98C0;
     transform: scale(.75) translate(-2px, -37px);
     border-radius: 3px
 }
@@ -3661,7 +3661,7 @@ a.page-numbers {
 
 h1.fes-title,
 h1.main-title {
-    color: #EE9CA7;
+    color: #FB98C0;
     font-size: 18px;
     font-weight: 400;
     padding-bottom: 10px;
@@ -3890,7 +3890,7 @@ li.feature-2 {
 }
 
 .focusinfo .header-tou img {
-    box-shadow: inset 0 0 10px #EE9CA7;
+    box-shadow: inset 0 0 10px #FB98C0;
     padding: 5px;
     opacity: 1;
     transform: rotate(0);
@@ -3990,7 +3990,7 @@ li.feature-2 {
     width: 63%;
     margin: auto;
     font-size: 16px;
-    color: #EE9CA7;
+    color: #FB98C0;
     background: rgba(255, 250, 250, 0.92);
     padding: 15px;
     margin-top: 22px;
@@ -4020,7 +4020,8 @@ li.feature-2 {
     font-family: Ubuntu, sans-serif;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap
+    white-space: nowrap;
+    transition:color .4s;
 }
 
 .top-social {
@@ -4138,7 +4139,7 @@ li.feature-2 {
 }
 
 i.iconfont.js-toggle-search.iconsearch {
-    color: #EE9CA7;
+    color: #FB98C0;
     cursor: pointer;
     font-size: 20px;
     -webkit-transition: all .3s ease-in-out;
@@ -4202,7 +4203,7 @@ i.iconfont.js-toggle-search.iconsearch {
 
 .search_close:after,
 .search_close:before {
-    background-color: #EE9CA7;
+    background-color: #FB98C0;
     position: absolute;
     content: "";
     width: 30px;
@@ -4246,19 +4247,19 @@ i.iconfont.js-toggle-search.iconsearch {
 }
 
 .search-form input::-webkit-input-placeholder {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .search-form input:-moz-placeholder {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .search-form input::-moz-placeholder {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .search-form input:-ms-input-placeholder {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .s-search {
@@ -4282,7 +4283,7 @@ i.iconfont.js-toggle-search.iconsearch {
     font-size: 32px;
     font-size: 1.5rem;
     line-height: 1;
-    color: #EE9CA7;
+    color: #FB98C0;
     position: absolute;
     bottom: 12px;
     margin-top: -16px;
@@ -4348,7 +4349,7 @@ i.iconfont.js-toggle-search.iconsearch {
 
 .ins-section .fa {
     font-size: 18px;
-    color: #EE9CA7;
+    color: #FB98C0;
     bottom: unset;
     left: 12px;
     margin-top: -3px;
@@ -4377,9 +4378,9 @@ body.dark .ins-section .fa {
     text-align: center;
     padding: 8px 15px;
     z-index: 1;
-    color: #EE9CA7;
-    border-bottom: 3px solid #EE9CA7;
-    border-color: #EE9CA7;
+    color: #FB98C0;
+    border-bottom: 3px solid #FB98C0;
+    border-color: #FB98C0;
 }
 
 .ins-section .ins-search-item header,
@@ -4414,7 +4415,7 @@ body.dark .ins-section .fa {
 .ins-section .ins-search-item.active .ins-search-preview,
 .ins-section .ins-search-item:hover header,
 .ins-section .ins-search-item:hover .iconfont {
-    color: #EE9CA7;
+    color: #FB98C0;
 }
 
 .sorry ul {
@@ -4423,11 +4424,11 @@ body.dark .ins-section .fa {
 }
 
 .sorry li a {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .sorry {
-    color: #EE9CA7;
+    color: #FB98C0;
     margin-bottom: 80px
 }
 
@@ -4436,12 +4437,12 @@ body.dark .ins-section .fa {
 }
 
 .sorry li a:hover {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .sorry-inner {
     padding: 20px;
-    border: 1px solid #EE9CA7
+    border: 1px solid #FB98C0
 }
 
 .error-img {
@@ -4455,15 +4456,15 @@ body.dark .ins-section .fa {
 .err-button.back a {
     padding: 10px 30px;
     margin: 0 10px;
-    border: 1px solid #EE9CA7;
-    color: #EE9CA7;
+    border: 1px solid #FB98C0;
+    color: #FB98C0;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px
 }
 
 #gohome {
-    background: #EE9CA7;
+    background: #FB98C0;
     color: #fff
 }
 
@@ -4854,7 +4855,7 @@ object {
 }
 
 #nprogress .bar {
-    background: #EE9CA7;
+    background: #FB98C0;
     position: fixed;
     z-index: 1031;
     top: 0;
@@ -4869,7 +4870,7 @@ object {
     right: 0;
     width: 100px;
     height: 100%;
-    box-shadow: 0 0 10px #EE9CA7, 0 0 5px #EE9CA7;
+    box-shadow: 0 0 10px #FB98C0, 0 0 5px #FB98C0;
     opacity: 1;
     -webkit-transform: rotate(3deg) translate(0, -4px);
     -ms-transform: rotate(3deg) translate(0, -4px);
@@ -4893,8 +4894,8 @@ object {
     height: 20px;
     box-sizing: border-box;
     border: solid 3px transparent;
-    border-top-color: #EE9CA7;
-    border-left-color: #EE9CA7;
+    border-top-color: #FB98C0;
+    border-left-color: #FB98C0;
     border-radius: 50%;
     -webkit-animation: nprogress-spinner .4s linear infinite;
     animation: nprogress-spinner .4s linear infinite
@@ -5020,8 +5021,8 @@ i.iconfont.down {
 }
 
 #pagination a:hover {
-    border: 1px solid #EE9CA7;
-    color: #EE9CA7
+    border: 1px solid #FB98C0;
+    color: #FB98C0
 }
 
 #pagination .loading,
@@ -5203,7 +5204,7 @@ i.iconfont.down {
         display: none
     }
     .links ul li:hover .sitename {
-        color: #EE9CA7
+        color: #FB98C0
     }
     .links ul li:hover .linkdes {
         color: #949494;
@@ -5303,14 +5304,14 @@ i.iconfont.down {
         position: absolute;
         width: 30px;
         height: 3px;
-        background-color: #EE9CA7;
+        background-color: #FB98C0;
         top: 30px;
         left: 20px
     }
     .openNav .icon:after,
     .openNav .icon:before {
         transition-duration: .5s;
-        background-color: #EE9CA7;
+        background-color: #FB98C0;
         position: absolute;
         content: "";
         width: 30px;
@@ -5401,7 +5402,7 @@ i.iconfont.down {
         text-align: left
     }
     #mo-nav ul li a {
-        color: #EE9CA7;
+        color: #FB98C0;
         font-size: 15px
     }
     #mo-nav li ul {
@@ -5418,7 +5419,7 @@ i.iconfont.down {
     }
     #mo-nav ul li a:hover {
         cursor: pointer;
-        color: #EE9CA7
+        color: #FB98C0
     }
     .we-content li {
         height: 250px
@@ -5467,7 +5468,7 @@ i.iconfont.down {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #EE9CA7
+    background-color: #FB98C0
 }
 
 @keyframes poi-deg {
@@ -5749,8 +5750,8 @@ i.iconfont.down {
 
 .ex-login input.login-button:hover,
 .ex-register input.register-button:hover {
-    background-color: #EE9CA7;
-    border-color: #EE9CA7;
+    background-color: #FB98C0;
+    border-color: #FB98C0;
     color: #fff
 }
 
@@ -5863,7 +5864,7 @@ i.iconfont.down {
 .herder-user-name {
     font-size: 12px;
     padding: 10px 10px;
-    color: #EE9CA7;
+    color: #FB98C0;
     border-radius: 4px 4px 0 0
 }
 
@@ -5888,7 +5889,7 @@ i.iconfont.down {
     margin: 2px 0;
     width: 110px;
     text-align: left;
-    color: #EE9CA7;
+    color: #FB98C0;
     font-size: 13px;
     text-align: center
 }
@@ -5906,7 +5907,7 @@ i.iconfont.down {
 
 .no-logged a {
     display: initial;
-    color: #EE9CA7;
+    color: #FB98C0;
     font-size: 14px;
     padding: 0 5px;
     text-decoration: underline
@@ -6352,7 +6353,7 @@ button.botui-actions-buttons-button {
 }
 
 .logolink a {
-    color: #EE9CA7;
+    color: #FB98C0;
     float: left;
     font-size: 25px;
     font-weight: 800;
@@ -6756,7 +6757,7 @@ input[type=radio]:checked:before {
 
 @media (min-width:861px) {
     .hide-live2d {
-        background-color: #EE9CA7;
+        background-color: #FB98C0;
         bottom: 156px;
         visibility: visible;
         min-height: 38.75px
@@ -6845,7 +6846,7 @@ input[type=radio]:checked:before {
     border: 0;
     outline: 0;
     background-color: #fff;
-    color: #EE9CA7;
+    color: #FB98C0;
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;
@@ -7237,7 +7238,7 @@ li>ol {
 }
 
 .art .art-content #archives a:hover {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .art .art-content #archives .al_year {
@@ -7247,7 +7248,7 @@ li>ol {
 .art .art-content .al_mon_list .al_post_list>li,
 .art-content #archives .al_mon_list .al_mon {
     position: relative;
-    color: #EE9CA7;
+    color: #FB98C0;
 }
 
 .art-content #archives .al_mon_list .al_mon,
@@ -7255,7 +7256,7 @@ li>ol {
     padding: 0;
     border-radius: 0;
     margin: 0;
-    color: #ee9CA7;
+    color: #FB98C0;
     background: 0 0;
     font-weight: 400
 }
@@ -7282,7 +7283,7 @@ li>ol {
 .art .art-content .al_mon_list .al_post_list>li:after {
     position: absolute;
     left: 118px;
-    background: #EE9CA7;
+    background: #FB98C0;
     height: 8px;
     width: 8px;
     border-radius: 6px;
@@ -7304,7 +7305,7 @@ li>ol {
 .art-content #archives .al_mon_list .al_mon:after {
     position: absolute;
     left: 116px;
-    background: #EE9CA7;
+    background: #FB98C0;
     height: 12px;
     width: 12px;
     border-radius: 6px;
@@ -7325,7 +7326,7 @@ li>ol {
     max-height: 100%;
     height: 100%;
     width: 4px;
-    background: #EE9CA7;
+    background: #FB98C0;
     position: absolute;
     left: 120px;
     content: "";
@@ -7340,7 +7341,7 @@ li>ol {
 
 .art .art-content .al_mon_list .al_post_list>li:after,
 .art-content #archives .al_mon_list .al_mon:after {
-    background: #EE9CA7
+    background: #FB98C0
 }
 
 .toc-container {
@@ -7423,7 +7424,7 @@ a.toc-link {
 }
 
 .is-active-link::before {
-    background-color: #EE9CA7/*!important*/
+    background-color: #FB98C0/*!important*/
     /*mark*/
 }
 
@@ -7589,11 +7590,11 @@ a.toc-link {
 
 .motion-switcher-table th:hover {
     background-color: rgba(245, 245, 245, .5);
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .motion-switcher-table .on-hover {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .motion-container {
@@ -7638,7 +7639,7 @@ a.toc-link {
     margin: 3px 3px;
     display: inline-block;
     border-radius: 4px;
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .menhera-container .emoji-item:hover {
@@ -7671,7 +7672,7 @@ a.toc-link {
     position: fixed;
     top: 0;
     height: 3px;
-    background: #EE9CA7;
+    background: #FB98C0;
     transiton-property: width, background;
     transition-duration: 1s, 1s;
     z-index: 99999
@@ -7882,8 +7883,8 @@ a.toc-link {
 }
 
 .insert-image-tips:hover {
-    color: #EE9CA7;
-    border: 1px solid #EE9CA7
+    color: #FB98C0;
+    border: 1px solid #FB98C0
 }
 
 .insert-image-button {
@@ -7898,8 +7899,8 @@ a.toc-link {
 }
 
 .insert-image-tips-hover {
-    color: #EE9CA7;
-    border: 1px solid #EE9CA7
+    color: #FB98C0;
+    border: 1px solid #FB98C0
 }
 
 .upload-image-preview {
@@ -7948,7 +7949,7 @@ a.toc-link {
 }
 
 .the-feature a {
-    color: #EE9CA7
+    color: #FB98C0
 }
 
 .the-feature a:hover {
@@ -8300,7 +8301,7 @@ td.hljs-ln-numbers {
 .skin-menu {
     position: fixed;
     left: auto;
-    bottom: 10px;
+    bottom: 12px;
     right: -50px;
     height: auto;
     width: 220px;
@@ -8351,7 +8352,7 @@ td.hljs-ln-numbers {
     cursor: pointer
 }
 .menu-list li:hover {
-    background-color: #EE9CA7;
+    background-color: #FB98C0;
     color: #fff
 }
 .skin-menu .row-container.font-family-controls {
@@ -8363,7 +8364,7 @@ td.hljs-ln-numbers {
     border-radius: 5px;
     padding: 5px 5px;
     height: 43px;
-    color: #EE9CA7;
+    color: #FB98C0;
     width: calc(50% - 11px);
     font-size: 15px;
     font-weight: 400;
@@ -8376,11 +8377,11 @@ td.hljs-ln-numbers {
     cursor: pointer
 }
 .font-family-controls button.selected {
-    background-color: #EE9CA7;
+    background-color: #FB98C0;
     color: #fff
 }
 .font-family-controls button:hover {
-    background-color: #EE9CA7;
+    background-color: #FB98C0;
     color: #fff
 }
 .control-btn-serif {
@@ -8451,7 +8452,7 @@ td.hljs-ln-numbers {
     left: 0 !important
 }
 #aplayer-float .aplayer-lrc-current {
-    color: #EE9CA7;
+    color: #FB98C0;
     font-size: 15px;
     font-weight: 700
 }
@@ -8631,7 +8632,7 @@ h6[id*=toc-head]::before {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: #EE9CA7;
+    background-color: #FB98C0;
     opacity: 0.6;
     position: absolute;
     top: 0;
@@ -8849,7 +8850,7 @@ h6[id*=toc-head]::before {
     height: 100%;
 }
 .bangumi-next i {
-    color: #EE9CA7;
+    color: #FB98C0;
 }
 .shortcodestyle {
     margin: 20px 0px !important;

@@ -32,7 +32,7 @@
                         <script type="text/javascript" src="https://api.btstu.cn/yan/api.php?charset=utf-8&encode=js" ></script>
 						<div id="yan"><script>text()</script></div>
                         <?php endif; ?></p>
-						Theme <a href="https://asuhe.jp/daily/sakurairo-user-manual/" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://asuhe.jp/" target="_blank" id="site-info" >Hitomi</a> 
+						Theme <a href="https://asuhe.jp/daily/sakurairo-user-manual/" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://asuhe.jp/" target="_blank" id="site-info" >Fuukei</a> 
 					</span>
 				</p>
 			</div>
