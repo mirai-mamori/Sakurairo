@@ -283,7 +283,7 @@ function optionsframework_options()
         'name' => __('Footer Info', 'sakurairo'), 
         'desc' => __('Footer description, support for HTML code', 'sakurairo'), 
         'id' => 'footer_info',
-        'std' => 'Copyright &copy; by Hitomi All Rights Reserved.',
+        'std' => 'Copyright &copy; by FUUKEI All Rights Reserved.',
         'type' => 'textarea');
 
     $options[] = array(
@@ -313,7 +313,7 @@ function optionsframework_options()
         'options' => array(
         'tag' => 'https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square',
         'tag2' => 'https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square',
-        'tag3' => 'https://data.jsdelivr.com/v1/package/gh/mirai-mamori/sakurairo/badge',
+        'tag3' => 'https://data.jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge',
             ),
         );
 
@@ -1625,7 +1625,7 @@ function optionsframework_options()
         'name' => __('Cherry Blossom Falling Effect', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
         'id' => 'sakurajs',
-        'std' => '1',
+        'std' => '0',
         'type' => 'checkbox');
     
     $options[] = array(
@@ -1645,7 +1645,7 @@ function optionsframework_options()
         'name' => __('Wave Effects', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
         'id' => 'bolangcss',
-        'std' => '1',
+        'std' => '0',
         'type' => 'checkbox');
         
     $options[] = array(
@@ -1660,7 +1660,7 @@ function optionsframework_options()
         'name' => __('live2D', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
         'id' => 'live2djs',
-        'std' => '1',
+        'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
@@ -1696,7 +1696,7 @@ function optionsframework_options()
         'name' => __('A Brief Remark', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
         'id' => 'oneword',
-        'std' => '1',
+        'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(

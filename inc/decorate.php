@@ -111,6 +111,10 @@ i.iconfont.js-toggle-search.iconsearch {
 .sorry li a:hover {
     color: <?php echo akina_option('theme_skinm'); ?>;
 }
+.header-info p:hover {
+    color: <?php echo akina_option('theme_skinm'); ?>;
+	transition: all .4s;
+}
 .post-tags a:hover {
     color: <?php echo akina_option('theme_skinm'); ?>
 }
@@ -394,6 +398,12 @@ h1.cat-title {
 }
 .the-feature a {
     color: <?php echo akina_option('theme_skin'); ?>;
+}
+#moblieGoTop:hover,
+#changskin:hover {
+    color: <?php echo akina_option('theme_skinm'); ?>;
+    background-color: #fff;
+    opacity: .8;
 }
 .menu-list li:hover {
     background-color: <?php echo akina_option('theme_skinm'); ?>;
@@ -956,7 +966,8 @@ body.dark .site-top .lower nav.navbar ul
 html,#main-container,.pattern-center:after,#mo-nav,.headertop-bar::after,.comments,.site-footer,.pattern-center-blank,.yya,.blank,.toc,.search-form input,.wrapper,.site-footer,.site-wrapper,#moblieGoTop:hover,#changskin:hover,.post-list-show,.post-list hr,.post-date,.float-content i:hover{transition:background 1s;}
 .entry-content p,.entry-content ul,.entry-content ol,.comments .body p,.float-content,.post-list p,.link-title{transition:color 1s;}
 h1.fes-title,h1.main-title{transition:color 1s;transition:border 1s;}
-.header-info p, .header-info, .focusinfo .header-tou img, .top-social img, .center-text{transition:color 1s;transition:background 1s;}
+.header-info, .focusinfo .header-tou img, .top-social img, .center-text{transition:color 1s;transition:background 1s;}
+.header-info p {transition:color .4s;}
 
 /*字重*/
 
