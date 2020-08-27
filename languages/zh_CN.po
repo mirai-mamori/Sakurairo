@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-08-09 15:05+0800\n"
-"PO-Revision-Date: 2020-08-09 15:05+0800\n"
+"POT-Creation-Date: 2020-08-27 14:42+0800\n"
+"PO-Revision-Date: 2020-08-27 14:42+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -38,7 +38,7 @@ msgstr "返回首页"
 msgid "Don't worry, search in site?"
 msgstr "别着急，试试站内检索？"
 
-#: 404.php:54 footer.php:62 search.php:42
+#: 404.php:54 footer.php:65 search.php:42
 msgid "Search..."
 msgstr "搜索..."
 
@@ -126,15 +126,15 @@ msgstr "禁止小广告😀"
 msgid "Site"
 msgstr "网站"
 
-#: footer.php:76 footer.php:84
+#: footer.php:79 footer.php:87
 msgid "Want to find something?"
 msgstr "想要找点什么呢？"
 
-#: footer.php:86
+#: footer.php:89
 msgid "Search"
 msgstr "搜索"
 
-#: footer.php:145
+#: footer.php:148
 msgid "Widgets"
 msgstr "小工具"
 
@@ -192,9 +192,9 @@ msgstr "全部展开/收缩"
 #: options.php:774 options.php:908 options.php:919 options.php:1000
 #: options.php:1048 options.php:1157 options.php:1195 options.php:1249
 #: options.php:1260 options.php:1285 options.php:1374 options.php:1597
-#: options.php:1608 options.php:1781 options.php:1832 options.php:1843
-#: options.php:1932 options.php:1991 options.php:2021 options.php:2087
-#: options.php:2130 options.php:2329
+#: options.php:1608 options.php:1788 options.php:1839 options.php:1850
+#: options.php:1939 options.php:1998 options.php:2028 options.php:2094
+#: options.php:2137 options.php:2336
 msgid " "
 msgstr ""
 
@@ -1388,8 +1388,8 @@ msgstr "前台动画"
 
 #: options.php:1011 options.php:1018 options.php:1025 options.php:1619
 #: options.php:1626 options.php:1646 options.php:1661 options.php:1683
-#: options.php:1697 options.php:1704 options.php:1711 options.php:1739
-#: options.php:1746 options.php:1862 options.php:2106
+#: options.php:1697 options.php:1704 options.php:1711 options.php:1718
+#: options.php:1746 options.php:1753 options.php:1869 options.php:2113
 msgid "Check open"
 msgstr "勾选启用"
 
@@ -1405,7 +1405,7 @@ msgstr "前台文章信息动画"
 msgid "Homepage Animation Time"
 msgstr "前台动画时间"
 
-#: options.php:1032 options.php:1040 options.php:2113
+#: options.php:1032 options.php:1040 options.php:2120
 msgid "Fill in Number"
 msgstr "填写数字"
 
@@ -1413,7 +1413,7 @@ msgstr "填写数字"
 msgid "Article Title Animation Time"
 msgstr "前台文章信息动画时间"
 
-#: options.php:1047 options.php:1284 options.php:1990
+#: options.php:1047 options.php:1284 options.php:1997
 msgid "Others"
 msgstr "其他"
 
@@ -2139,18 +2139,22 @@ msgid "A Brief Remark"
 msgstr "页脚随机话语功能"
 
 #: options.php:1703
+msgid "Load Occupancy Query"
+msgstr "页脚负载占用查询"
+
+#: options.php:1710
 msgid "One Word Typing Effect of Home Page"
 msgstr "首页签名栏打字效果"
 
-#: options.php:1710
+#: options.php:1717
 msgid "Double Quotation Marks for Typing Effect"
 msgstr "首页签名栏打字效果双引号"
 
-#: options.php:1717
+#: options.php:1724
 msgid "Typewriting Effect Text"
 msgstr "打字效果文字"
 
-#: options.php:1718
+#: options.php:1725
 msgid ""
 "Fill in the text part of the typing effect (double quotation marks must be "
 "used outside the text, and English commas shall be used to separate the two "
@@ -2159,157 +2163,157 @@ msgstr ""
 "填写打字效果文字部分(文字外必须使用英文双引号，二句话之间使用英文逗号隔开，支"
 "持HTML标签）"
 
-#: options.php:1724
+#: options.php:1731
 msgid "Homepage One Word Blogger Description"
 msgstr "主页签名栏文字"
 
-#: options.php:1725 options.php:1732
+#: options.php:1732 options.php:1739
 msgid "A self description"
 msgstr "一段自我描述的话"
 
-#: options.php:1731
+#: options.php:1738
 msgid "Blog Description at the end of The Article"
 msgstr "文章末尾作者签名栏"
 
-#: options.php:1738
+#: options.php:1745
 msgid "Note Effects"
 msgstr "音符触动效果"
 
-#: options.php:1745
+#: options.php:1752
 msgid "Logo Special Effects"
 msgstr "Logo特效"
 
-#: options.php:1752
+#: options.php:1759
 msgid "Logo Text A"
 msgstr "Logo文字A"
 
-#: options.php:1753
+#: options.php:1760
 msgid "Fill in the front part of your logo text"
 msgstr "填写你的Logo文字前部分"
 
-#: options.php:1759
+#: options.php:1766
 msgid "Logo Text B"
 msgstr "Logo文字B"
 
-#: options.php:1760
+#: options.php:1767
 msgid "Fill in the middle part of your logo text"
 msgstr "填写你的Logo文字中部部分"
 
-#: options.php:1766
+#: options.php:1773
 msgid "Logo Text C"
 msgstr "Logo文字C"
 
-#: options.php:1767
+#: options.php:1774
 msgid "Fill in the back of your logo"
 msgstr "填写你的Logo文字后部分"
 
-#: options.php:1773
+#: options.php:1780
 msgid "Logo Secondary Text"
 msgstr "Logo二级文字"
 
-#: options.php:1774
+#: options.php:1781
 msgid "Fill in the secondary text of your logo."
 msgstr "填写你的Logo二级文字，不需要可以不填。"
 
-#: options.php:1780
+#: options.php:1787
 msgid "Morse"
 msgstr "鼠标"
 
-#: options.php:1791
+#: options.php:1798
 msgid "Custom Mouse Style - Standard"
 msgstr "自定义鼠标样式-标准"
 
-#: options.php:1792
+#: options.php:1799
 msgid "Apply to global, fill in link."
 msgstr "应用于全局，填写Cur鼠标文件链接。"
 
-#: options.php:1798
+#: options.php:1805
 msgid "Custom Mouse Style - Selected"
 msgstr "自定义鼠标样式-选定"
 
-#: options.php:1799
+#: options.php:1806
 msgid "Return to the above for PC"
 msgstr "应用于多种样式"
 
-#: options.php:1805
+#: options.php:1812
 msgid "Custom Mouse Style - Selected Elements"
 msgstr "自定义鼠标样式-选中元素"
 
-#: options.php:1806
+#: options.php:1813
 msgid "Used to select a place"
 msgstr "用作选中某个地方"
 
-#: options.php:1812
+#: options.php:1819
 msgid "Custom Mouse Style - Selected Text"
 msgstr "自定义鼠标样式-选中文本"
 
-#: options.php:1813
+#: options.php:1820
 msgid "Used to select a Text"
 msgstr "用作选中文本"
 
-#: options.php:1819
+#: options.php:1826
 msgid "Custom Mouse Style - Working State"
 msgstr "自定义鼠标样式-工作状态"
 
-#: options.php:1820
+#: options.php:1827
 msgid "Used to working condition"
 msgstr "用作在加载地方"
 
-#: options.php:1827
+#: options.php:1834
 msgid "Fonts"
 msgstr "｜字体"
 
-#: options.php:1831
+#: options.php:1838
 msgid "Fonts-Setting"
 msgstr "字体设置"
 
-#: options.php:1842
+#: options.php:1849
 msgid "Custom"
 msgstr "自定义"
 
-#: options.php:1853
+#: options.php:1860
 msgid "Fontweight"
 msgstr "全局字重（除强调部分）"
 
-#: options.php:1854
+#: options.php:1861
 msgid ""
 "Fill in a number, maximum 900, minimum 100. Between 300 and 500 is "
 "recommended."
 msgstr "填写数字，最大值900，最小值100，300到500之间是推荐值。"
 
-#: options.php:1861
+#: options.php:1868
 msgid "Reference External Font"
 msgstr "引用外部字体（可能影响性能）"
 
-#: options.php:1868
+#: options.php:1875
 msgid "External Font Address"
 msgstr "外部字体地址"
 
-#: options.php:1869
+#: options.php:1876
 msgid "Fill in font address."
 msgstr "填写外部字体地址"
 
-#: options.php:1875
+#: options.php:1882
 msgid "External Font Name"
 msgstr "外部字体名称"
 
-#: options.php:1876
+#: options.php:1883
 msgid "Fill in the font name."
 msgstr "填写字体名称。"
 
-#: options.php:1882
+#: options.php:1889
 msgid "Google Fonts Api Address"
 msgstr "Google 字体 API地址"
 
-#: options.php:1883
+#: options.php:1890
 msgid "Fill in Google Fonts API Address"
 msgstr "填写 Google 字体 API地址"
 
-#: options.php:1889
+#: options.php:1896
 msgid "Google Fonts Name"
 msgstr "Google 字体 名称"
 
-#: options.php:1890
+#: options.php:1897
 msgid ""
 "Please make sure that the fonts you add can be referenced in Google font "
 "library. Fill in the font name. If multiple fonts are referenced, please use "
@@ -2319,84 +2323,84 @@ msgstr ""
 "有”|“。如果引用多个字体，请使用“|”作为分割符。例：|ZCOOL+XiaoWei|Ma+Shan"
 "+Zheng （如果）字体名称有空格，请用加号替代。"
 
-#: options.php:1896
+#: options.php:1903
 msgid "Global Default Font"
 msgstr "全局默认字体（字体A）"
 
-#: options.php:1897 options.php:1904 options.php:1911 options.php:1918
-#: options.php:1925
+#: options.php:1904 options.php:1911 options.php:1918 options.php:1925
+#: options.php:1932
 msgid "Fill in font name"
 msgstr "填写字体名称。例：Ma Shan Zheng"
 
-#: options.php:1903
+#: options.php:1910
 msgid "Global Font 2"
 msgstr "全局字体B"
 
-#: options.php:1910
+#: options.php:1917
 msgid "Front Page Title Font"
 msgstr "首页区块标题字体"
 
-#: options.php:1917
+#: options.php:1924
 msgid "Front Page One Word Font"
 msgstr "首页签名栏字体"
 
-#: options.php:1924
+#: options.php:1931
 msgid "Front Page Key Title Font"
 msgstr "首页区块标题字体"
 
-#: options.php:1931
+#: options.php:1938
 msgid "Size"
 msgstr "大小"
 
-#: options.php:1942
+#: options.php:1949
 msgid "Global Fontsize"
 msgstr "全局字体大小"
 
-#: options.php:1943 options.php:1967
+#: options.php:1950 options.php:1974
 msgid "Fill in Number. Between 10 and 20 is recommended"
 msgstr "填写数字，10到20之间是推荐值"
 
-#: options.php:1950
+#: options.php:1957
 msgid "Article Title Size"
 msgstr "首页文章标题字体大小"
 
-#: options.php:1951
+#: options.php:1958
 msgid "Fill in Number. Between 15 and 20 is recommended"
 msgstr "填写数字，15到20之间是推荐值"
 
-#: options.php:1958
+#: options.php:1965
 msgid "Article Tips Size"
 msgstr "首页文章提示字体大小"
 
-#: options.php:1959
+#: options.php:1966
 msgid "Fill in Number. Between 10 and 15 is recommended"
 msgstr "填写数字，10到15之间是推荐值"
 
-#: options.php:1966
+#: options.php:1973
 msgid "Front Page One Word FontSize"
 msgstr "首页一言字体大小"
 
-#: options.php:1974
+#: options.php:1981
 msgid "Font Size of The First Key Title"
 msgstr "首页关键标题字体大小"
 
-#: options.php:1975
+#: options.php:1982
 msgid "Fill in Number. Between 70 and 90 is recommended"
 msgstr "填写数字，70到90之间是推荐值"
 
-#: options.php:1982
+#: options.php:1989
 msgid "Article Page Title Size"
 msgstr "文章页标题字体大小"
 
-#: options.php:1983
+#: options.php:1990
 msgid "Fill in Number. Between 25 and 30 is recommended"
 msgstr "填写数字，25到30之间是推荐值"
 
-#: options.php:2001
+#: options.php:2008
 msgid "Logo Font Link"
 msgstr "Logo字体链接"
 
-#: options.php:2002
+#: options.php:2009
 msgid ""
 "When the font is ready, do this again <a href = \"https://www.fontke.com/"
 "tool/fontface/\">@font-face生成器</a>It can generate a bunch of files, which "
@@ -2410,274 +2414,274 @@ msgstr ""
 "的样式表文件链接 <a href = \"https://blog.ukenn.top/sakura6/#toc-head-4\">详"
 "细教程</a>"
 
-#: options.php:2008
+#: options.php:2015
 msgid "Logo Font Name"
 msgstr "Logo字体名称"
 
-#: options.php:2009
+#: options.php:2016
 msgid ""
 "Fill in the font name of your logo, write the name directly without the "
 "format suffix"
 msgstr "填写你的Logo字体名称，直接写名字不用加格式后缀"
 
-#: options.php:2016
+#: options.php:2023
 msgid "Theme"
 msgstr "｜主题"
 
-#: options.php:2020
+#: options.php:2027
 msgid "Theme-Setting"
 msgstr "主题设置"
 
-#: options.php:2031
+#: options.php:2038
 msgid "Display Icon Selection"
 msgstr "显示图标风格选择"
 
-#: options.php:2032
+#: options.php:2039
 msgid "Choose icon color"
 msgstr "选择图标颜色"
 
-#: options.php:2037
+#: options.php:2044
 msgid "「Default Color」Sakura（FB98C0+87B6FA）"
 msgstr "「默认」樱花配色（FB98C0+87B6FA）"
 
-#: options.php:2038
+#: options.php:2045
 msgid "「Common Colors」Pink（EE9CA7）"
 msgstr "「普通」粉色（EE9CA7）"
 
-#: options.php:2039
+#: options.php:2046
 msgid "「Common Colors」Orange（FF8000）"
 msgstr "「普通」橙色（FF8000）"
 
-#: options.php:2040
+#: options.php:2047
 msgid "「Nippon Colors」Hanaasagi（1E88A8）"
 msgstr "「日系」花浅葱色（1E88A8）"
 
-#: options.php:2041
+#: options.php:2048
 msgid "「Nippon Colors」Beniukon（E98B2A）"
 msgstr "「日系」紅鬱金色（E98B2A）"
 
-#: options.php:2042
+#: options.php:2049
 msgid "「Nippon Colors」Sangosyu（F17C67）"
 msgstr "「日系」珊瑚朱色（F17C67）"
 
-#: options.php:2043
+#: options.php:2050
 msgid "「Nippon Colors」Sora（58B2DC）"
 msgstr "「日系」空色（58B2DC）"
 
-#: options.php:2044
+#: options.php:2051
 msgid "「Nippon Colors」Nae（86C166）"
 msgstr "「日系」苗色（86C166）"
 
-#: options.php:2045
+#: options.php:2052
 msgid "「Macaron Colors」Blue（B8F1ED）"
 msgstr "「马卡龙色系」蓝色（B8F1ED）"
 
-#: options.php:2046
+#: options.php:2053
 msgid "「Macaron Colors」Green（B8F1CC）"
 msgstr "「马卡龙色系」绿色（B8F1CC）"
 
-#: options.php:2047
+#: options.php:2054
 msgid "「Macaron Colors」Purple（D9B8F1）"
 msgstr "「马卡龙色系」紫色（D9B8F1）"
 
-#: options.php:2048
+#: options.php:2055
 msgid "「Others」ColorFul"
 msgstr "「其他」多彩"
 
-#: options.php:2052
+#: options.php:2059
 msgid "Theme Color"
 msgstr "主题色"
 
-#: options.php:2055 options.php:2063 options.php:2081 options.php:2100
-#: options.php:2307
+#: options.php:2062 options.php:2070 options.php:2088 options.php:2107
+#: options.php:2314
 msgid "Custom theme color"
 msgstr "自定义主题颜色"
 
-#: options.php:2060
+#: options.php:2067
 msgid "Theme Color Matching Color"
 msgstr "主题色搭配色"
 
-#: options.php:2068
+#: options.php:2075
 msgid "Theme Light Color Management"
 msgstr "主题淡配色管理"
 
-#: options.php:2073
+#: options.php:2080
 msgid "Merge Options"
 msgstr "合并选项（下方部分选项将失效）"
 
-#: options.php:2074
+#: options.php:2081
 msgid "Separation Options"
 msgstr "分离选项（下方部分选项将生效）"
 
-#: options.php:2078
+#: options.php:2085
 msgid "Theme Color (Light)"
 msgstr "主题色（淡配色）"
 
-#: options.php:2086
+#: options.php:2093
 msgid "Darkmode"
 msgstr "深色模式"
 
-#: options.php:2097
+#: options.php:2104
 msgid "Theme Color (Dark mode)"
 msgstr "主题色（深色模式）"
 
-#: options.php:2105
+#: options.php:2112
 msgid "Automatic Switching Dark Mode (22:00-7:00)"
 msgstr "自动切换深色模式（22:00-7:00）"
 
-#: options.php:2112
+#: options.php:2119
 msgid "Image Brightness in Dark Mode"
 msgstr "深色模式图像亮度"
 
-#: options.php:2120
+#: options.php:2127
 msgid "Dark Mode Widget Transparency"
 msgstr "深色模式部件透明度"
 
-#: options.php:2123 options.php:2170 options.php:2206 options.php:2298
+#: options.php:2130 options.php:2177 options.php:2213 options.php:2305
 msgid "Fill in the alpha value from 0 to 1 here"
 msgstr "填写 0~1 的透明度值"
 
-#: options.php:2129
+#: options.php:2136
 msgid "Homepage"
 msgstr "首页"
 
-#: options.php:2140
+#: options.php:2147
 msgid "Information Bar Background Color (RGBA) Red"
 msgstr "信息栏背景颜色（RGBA 红）"
 
-#: options.php:2143 options.php:2179 options.php:2271
+#: options.php:2150 options.php:2186 options.php:2278
 msgid "Fill in the red value from 0 to 255 here"
 msgstr "填写 0~255 的红色值"
 
-#: options.php:2149
+#: options.php:2156
 msgid "Information Bar Background Color (RGBA) Green"
 msgstr "信息栏背景颜色（RGBA 绿）"
 
-#: options.php:2152 options.php:2188 options.php:2280
+#: options.php:2159 options.php:2195 options.php:2287
 msgid "Fill in the green value from 0 to 255 here"
 msgstr "填写 0~255 的绿色值"
 
-#: options.php:2158
+#: options.php:2165
 msgid "Information Bar Background Color (RGBA) Blue"
 msgstr "信息栏背景颜色（RGBA 蓝）"
 
-#: options.php:2161 options.php:2197 options.php:2289
+#: options.php:2168 options.php:2204 options.php:2296
 msgid "Fill in the blue value from 0 to 255 here"
 msgstr "填写 0~255 的蓝色值"
 
-#: options.php:2167
+#: options.php:2174
 msgid "Information Bar Background Color (RGBA) Alpha"
 msgstr "信息栏背景颜色（RGBA 透明度）"
 
-#: options.php:2176
+#: options.php:2183
 msgid "Foreground Menu background Color (RGBA) Red"
 msgstr "前台设置菜单背景颜色（RGBA 红）"
 
-#: options.php:2185
+#: options.php:2192
 msgid "Foreground Menu background Color (RGBA) Green"
 msgstr "前台设置菜单背景颜色（RGBA 绿）"
 
-#: options.php:2194
+#: options.php:2201
 msgid "Foreground Menu background Color (RGBA) Blue"
 msgstr "前台设置菜单背景颜色（RGBA 蓝）"
 
-#: options.php:2203
+#: options.php:2210
 msgid "Foreground Menu background Color (RGBA) Alpha"
 msgstr "前台设置菜单背景颜色（RGBA 透明度）"
 
-#: options.php:2212
+#: options.php:2219
 msgid ""
 "Foreground Selection Menu Background Color (Light colors are recommended)"
 msgstr "前台设置菜单选项背景颜色（建议使用淡配色）"
 
-#: options.php:2215 options.php:2223 options.php:2231 options.php:2239
-#: options.php:2247 options.php:2255 options.php:2263 options.php:2315
-#: options.php:2323
+#: options.php:2222 options.php:2230 options.php:2238 options.php:2246
+#: options.php:2254 options.php:2262 options.php:2270 options.php:2322
+#: options.php:2330
 msgid "Custom colors"
 msgstr "自定义颜色"
 
-#: options.php:2220
+#: options.php:2227
 msgid "Home Page Article Separator (Light colors are recommended)"
 msgstr "首页文章分割符颜色（建议使用淡配色）"
 
-#: options.php:2228
+#: options.php:2235
 msgid ""
 "Home Page Article Time Prompt Emphasize Background (Light colors are "
 "recommended)"
 msgstr "首页文章时间提示强调背景颜色（建议使用淡配色）"
 
-#: options.php:2236
+#: options.php:2243
 msgid "Home Page Article Border Shadow (Light colors are recommended)"
 msgstr "首页文章边框阴影颜色（建议使用淡配色）"
 
-#: options.php:2244
+#: options.php:2251
 msgid "Drop Down Arrow Color (Light colors are recommended)"
 msgstr "下箭头颜色（建议使用淡配色）"
 
-#: options.php:2252
+#: options.php:2259
 msgid "Home Page Article Time Prompt Accent (Theme colors are recommended)"
 msgstr "首页文章时间提示强调文字颜色（建议使用主题色）"
 
-#: options.php:2260
+#: options.php:2267
 msgid "Home Page Article Prompt Icon Color (Theme colors are recommended)"
 msgstr "首页文章提示图标颜色（建议使用主题色）"
 
-#: options.php:2268
+#: options.php:2275
 msgid "Home Page Focus Background Color (RGBA) Red"
 msgstr "首页聚焦背景颜色（RGBA 红）"
 
-#: options.php:2277
+#: options.php:2284
 msgid "Home Page Focus Background Color (RGBA) Green"
 msgstr "首页聚焦背景颜色（RGBA 绿）"
 
-#: options.php:2286
+#: options.php:2293
 msgid "Home Page Focus Background Color (RGBA) Blue"
 msgstr "首页聚焦背景颜色（RGBA 蓝）"
 
-#: options.php:2295
+#: options.php:2302
 msgid "Home Page Focus Background Color (RGBA) Alpha"
 msgstr "首页聚焦背景颜色（RGBA 透明度）"
 
-#: options.php:2304
+#: options.php:2311
 msgid "Home Page Key Title Font Color"
 msgstr "首页文字Logo字体颜色"
 
-#: options.php:2312
+#: options.php:2319
 msgid "Preload Animation Color A"
 msgstr "预加载动画颜色A"
 
-#: options.php:2320
+#: options.php:2327
 msgid "Preload Animation Color B"
 msgstr "预加载动画颜色B"
 
-#: options.php:2328
+#: options.php:2335
 msgid "Backstage Color"
 msgstr "后台"
 
-#: options.php:2339
+#: options.php:2346
 msgid "Backstage Main Color (Primary menu)"
 msgstr "后台主题色（一级菜单）"
 
-#: options.php:2342 options.php:2350 options.php:2358 options.php:2366
-#: options.php:2374
+#: options.php:2349 options.php:2357 options.php:2365 options.php:2373
+#: options.php:2381
 msgid "Custom color"
 msgstr "自定义颜色"
 
-#: options.php:2347
+#: options.php:2354
 msgid "Backstage Main Color (Secondary menu)"
 msgstr "后台主题色（二级菜单）"
 
-#: options.php:2355
+#: options.php:2362
 msgid ""
 "Backstage Accent Color (For Example, The Prompt Color is Included in This "
 "Option)"
 msgstr "后台强调色（比如提示色）"
 
-#: options.php:2363
+#: options.php:2370
 msgid "Backstage Button Color"
 msgstr "后台默认按钮颜色"
 
-#: options.php:2371
+#: options.php:2378
 msgid "Backstage Font Color"
 msgstr "后台默认字体颜色"
 
@@ -2732,43 +2736,43 @@ msgstr ""
 msgid "Attribution-NonCommercial-ShareAlike 4.0 International"
 msgstr "知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议"
 
-#: update-checker/Puc/v4p9/Plugin/Ui.php:54
+#: update-checker/Puc/v4p10/Plugin/Ui.php:54
 msgid "View details"
 msgstr "查看更多内容"
 
-#: update-checker/Puc/v4p9/Plugin/Ui.php:77
+#: update-checker/Puc/v4p10/Plugin/Ui.php:77
 #, php-format
 msgid "More information about %s"
 msgstr "关于 %s  的更多信息"
 
-#: update-checker/Puc/v4p9/Plugin/Ui.php:128
+#: update-checker/Puc/v4p10/Plugin/Ui.php:128
 msgid "Check for updates"
 msgstr "检测更新"
 
-#: update-checker/Puc/v4p9/Plugin/Ui.php:213
+#: update-checker/Puc/v4p10/Plugin/Ui.php:213
 #, php-format
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
 msgstr "%s现在是最新的。"
 
-#: update-checker/Puc/v4p9/Plugin/Ui.php:215
+#: update-checker/Puc/v4p10/Plugin/Ui.php:215
 #, php-format
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
 msgstr "%s的最新更新已就位。"
 
-#: update-checker/Puc/v4p9/Plugin/Ui.php:217
+#: update-checker/Puc/v4p10/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
 msgstr "无法确定 %s 是否有可用的更新。"
 
-#: update-checker/Puc/v4p9/Plugin/Ui.php:223
+#: update-checker/Puc/v4p10/Plugin/Ui.php:223
 #, php-format
 msgid "Unknown update checker status \"%s\""
 msgstr "未知的更新检查器状态 \"%s\""
 
-#: update-checker/Puc/v4p9/Vcs/PluginUpdateChecker.php:98
+#: update-checker/Puc/v4p10/Vcs/PluginUpdateChecker.php:98
 msgid "There is no changelog available."
 msgstr "没有可用的更新日志。"
 
@@ -2865,7 +2869,7 @@ msgstr ""
 "题）"
 
 #. Author of the plugin/theme
-msgid "Hitomi , Ukenn , Spirit , Bymoye , Mashiro"
+msgid "made by FUUKEI"
 msgstr ""
 
 #. Author URI of the plugin/theme

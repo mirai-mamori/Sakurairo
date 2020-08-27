@@ -1700,6 +1700,13 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
+        'name' => __('Load Occupancy Query', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'loadoq',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
         'name' => __('One Word Typing Effect of Home Page', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
         'id' => 'dazi',
