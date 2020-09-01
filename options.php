@@ -1615,6 +1615,13 @@ function optionsframework_options()
             );                          
             
     $options[] = array(
+        'name' => __('开启SmoothScroll', 'sakurairo'), 
+        'desc' => __('默认关闭，勾选开启。', 'sakurairo'), 
+        'id' => 'SmoothScroll',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
         'name' => __('Preload Animation', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
         'id' => 'yjzdh',
