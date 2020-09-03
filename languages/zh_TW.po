@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
 "POT-Creation-Date: 2020-08-09 15:05+0800\n"
-"PO-Revision-Date: 2020-09-03 12:27+0800\n"
+"PO-Revision-Date: 2020-09-03 12:45+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -428,7 +428,7 @@ msgstr[0] "次閱讀"
 #: inc/theme_plus.php:310 inc/theme_plus.php:368 inc/theme_plus.php:436
 #, php-format
 msgid "Search results for \" %s \""
-msgstr "關於“ %s ”的搜索結果"
+msgstr "關於“ %s ”的搜尋結果"
 
 #: inc/theme_plus.php:416
 msgid "EDIT"
@@ -1950,7 +1950,7 @@ msgid ""
 "Real-time search in the foreground, call the Rest API to update the cache "
 "every hour, you can manually set the cache time in api.php"
 msgstr ""
-"前台實現實時搜索，調用 Rest API 每小時更新一次快取，可在 api.php 裡手動設置緩"
+"前台實現實時搜尋，調用 Rest API 每小時更新一次快取，可在 api.php 裡手動設置緩"
 "存時間"
 
 #: options.php:1521
