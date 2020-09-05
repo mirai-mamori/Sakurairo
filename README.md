@@ -63,16 +63,19 @@
 
 ### 授权资源下载站（排名不分先后）：
 
-- [IT速极网站建设](https://www.vpsqv.cn/4653.html)
+#### 最新版下载地址：
 - [空木白博客](https://wuzuhua.cn/1004.html)
+- [源码无忧](https://www.ym51.cn/archives/10176)
+- [站长图库](https://www.zztuku.com/wordpress-3260.html)
+
+#### 旧版（不推荐使用 1.20.10 之前的版本）下载地址：
+- [IT速极网站建设](https://www.vpsqv.cn/4653.html)
 - [子涵小窝](https://zbk52.com/post-51.html)
 - [晨风资源网](https://chenfengwl.com/4394.html)
-- [源码无忧](https://www.ym51.cn/archives/7500)
 - [98素材网](https://www.98sucai.com/wordpress-3666.html)
 - [JAD资源网](http://www.jiuandun.com/13756/)
 - [58源码下载站](https://www.58dir.cn/3351.html)
 - [11素材网](https://www.11sucai.com/wordpress-299.html)
-- [站长图库](https://www.zztuku.com/wordpress-3084.html)
 - [小浣熊 Blog](https://www.mua222.cn/125.html)
 
 ## 贡献者：
@@ -83,7 +86,7 @@
 
 ![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/readme/readme3.png)
 
-- 演示站点：https://hitomi.uk
+- 演示站点：https://demo.kyoku.jp/
 
 - 仓库国内镜像：https://gitee.com/mirai-mamori/Sakurairo
 
