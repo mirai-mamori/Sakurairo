@@ -1615,6 +1615,13 @@ function optionsframework_options()
             );                          
             
     $options[] = array(
+        'name' => __('Open SmoothScroll', 'sakurairo'), 
+        'desc' => __('Check open。', 'sakurairo'), 
+        'id' => 'SmoothScroll',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
         'name' => __('Preload Animation', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
         'id' => 'yjzdh',
@@ -1696,6 +1703,13 @@ function optionsframework_options()
         'name' => __('A Brief Remark', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
         'id' => 'oneword',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Load Occupancy Query', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'loadoq',
         'std' => '0',
         'type' => 'checkbox');
 

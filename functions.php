@@ -224,6 +224,11 @@ function sakura_scripts()
 {
     if (akina_option('jsdelivr_cdn_test')) {
         wp_enqueue_script('js_lib', get_template_directory_uri() . '/cdn/js/lib.js', array(), SAKURA_VERSION . akina_option('cookie_version', ''), true);
+        if (akina_option('SmoothScroll')) {
+            wp_enqueue_script('SmoothScroll', get_template_directory_uri() . '/cdn/js/src/20.SmoothScroll.js', array(), SAKURA_VERSION . akina_option('cookie_version', ''), true);
+        }
+    } elseif (akina_option('SmoothScroll')) {
+        wp_enqueue_script('js_lib', 'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/lib.min.js,gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/src/20.SmoothScroll.js', array(), SAKURA_VERSION, true);
     } else {
         wp_enqueue_script('js_lib', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/lib.min.js', array(), SAKURA_VERSION, true);
     }
