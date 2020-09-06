@@ -50,7 +50,7 @@
 
 - 主题交流群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
 
-- 主题[使用手册](https://asuhe.jp/daily/sakurairo-user-manual) [设置目录手册](https://blog.ukenn.top/sakurairo/)
+- 主题[使用手册](https://asuhe.jp/daily/sakurairo-user-manual) 及 [设置目录手册](https://blog.ukenn.top/sakurairo/)
 
 
 ## 如遇问题
