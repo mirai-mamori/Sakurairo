@@ -1,4 +1,4 @@
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/readme/readme1.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/readme1.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="center"> 「桜いろ」✿ Sakurairo </h1>
 
@@ -44,7 +44,7 @@
 
 ## 使用相关：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/readme/readme2.png)](https://asuhe.jp/daily/sakurairo-user-manual)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/readme2.png)](https://asuhe.jp/daily/sakurairo-user-manual)
 
 - 演示站点：https://demo.kyoku.jp/
 
@@ -108,7 +108,7 @@
 
 ## 希望你喜欢！
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/readme/readme3.png)](https://github.com/mirai-mamori/Sakurairo/stargazers)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/readme3.png)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 
 - Star 趋势  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 

@@ -117,7 +117,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/basic.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/basic.png',
                 ),
             );        
         
@@ -128,7 +128,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/support.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/support.png',
                 ),
             );
     
@@ -169,7 +169,7 @@ function optionsframework_options()
         'name' => __('Favicon', 'sakurairo'),
         'desc' => __('It is the small logo on the browser tab, fill in the url', 'sakurairo'), 
         'id' => 'favicon_link',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/favicon.ico',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/favicon.ico',
         'type' => 'text');
 
     $options[] = array(
@@ -300,7 +300,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/sponsor.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/sponsor.png',
                 ),
             );
     
@@ -329,7 +329,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/homepage.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/homepage.png',
                 ),
             );         
 
@@ -340,7 +340,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/homepage-firstscreen.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/homepage-firstscreen.png',
                 ),
             );  
 
@@ -495,7 +495,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/homepage-secondscreen.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/homepage-secondscreen.png',
                 ),
             );  
 
@@ -568,7 +568,7 @@ function optionsframework_options()
         'name' => __('Focus Area First Image', 'sakurairo'), 
         'desc' => __('size 257px*160px', 'sakurairo'), 
         'id' => 'feature1_img',
-        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/foreground/focus.png",
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/focus.png",
         'type' => 'upload');
 
     $options[] = array(
@@ -596,7 +596,7 @@ function optionsframework_options()
         'name' => __('Focus Area Second Image', 'sakurairo'), 
         'desc' => __('size 257px*160px', 'sakurairo'), 
         'id' => 'feature2_img',
-        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/foreground/focus.png",
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/focus.png",
         'type' => 'upload');
 
     $options[] = array(
@@ -624,7 +624,7 @@ function optionsframework_options()
         'name' => __('Focus Area Third Image', 'sakurairo'), 
         'desc' => __('size 257px*160px', 'sakurairo'), 
         'id' => 'feature3_img',
-        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/foreground/focus.png",
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/focus.png",
         'type' => 'upload');
 
     $options[] = array(
@@ -668,7 +668,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/post.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/post.png',
                 ),
             );         
     
@@ -776,7 +776,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/social.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/social.png',
                 ),
             );         
         
@@ -910,7 +910,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/foreground.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/foreground.png',
                 ),
             );         
 
@@ -921,7 +921,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/foreground-settings.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/foreground-settings.png',
                 ),
             );  
 
@@ -971,28 +971,28 @@ function optionsframework_options()
         'name' => __('DIY(heart-shaped icon) Foreground Background', 'sakurairo'), 
         'desc' => __('DIY(heart-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
         'id' => 'sakura_skin_bg2',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/foreground/bg1.png',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg1.png',
         'type' => 'text');
     
     $options[] = array(
         'name' => __('DIY(Star-shaped icon) Foreground Background', 'sakurairo'), 
         'desc' => __('DIY(Star-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
         'id' => 'sakura_skin_bg3',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/foreground/bg2.png',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg2.png',
         'type' => 'text');
  
     $options[] = array(
         'name' => __('DIY(Square-shaped icon) Foreground Background', 'sakurairo'), 
         'desc' => __('DIY(Square-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
         'id' => 'sakura_skin_bg4',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/foreground/bg3.png',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg3.png',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('DIY(Lemon-shaped icon) Foreground Background', 'sakurairo'), 
         'desc' => __('DIY(Lemon-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
         'id' => 'sakura_skin_bg5',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/foreground/bg4.png',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png',
         'type' => 'text');
 
     $options[] = array(
@@ -1002,7 +1002,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/foreground-animation.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/foreground-animation.png',
                 ),
             );  
 
@@ -1050,7 +1050,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/foreground-others.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/foreground-others.png',
                 ),
             );  
 
@@ -1159,7 +1159,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/backstage.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/backstage.png',
                 ),
             );         
 
@@ -1167,7 +1167,7 @@ function optionsframework_options()
         'name' => __('Backstage Background Image', 'sakurairo'), 
         'desc' => __('Backstage Background Image', 'sakurairo'), 
         'id' => 'admin_menu_bg',
-        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/background/backstage/admin-bg.jpg",
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/backstage/admin-bg.jpg",
         'type' => 'upload');
 
     $options[] = array(
@@ -1187,7 +1187,7 @@ function optionsframework_options()
         'name' => __('Login Interface Logo', 'sakurairo'), 
         'desc' => __('Used for login interface display', 'sakurairo'),
         'id' => 'logo_img',
-        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/logo-login.png",
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/logo-login.png",
         'type' => 'upload');
 
     $options[] = array(
@@ -1251,7 +1251,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/advanced.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/advanced.png',
                 ),
             );         
 
@@ -1262,7 +1262,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/advanced-local.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/advanced-local.png',
                 ),
             );              
             
@@ -1287,7 +1287,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/advanced-others.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/advanced-others.png',
                 ),
             );              
             
@@ -1376,7 +1376,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/function.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/function.png',
                 ),
             );     
 
@@ -1507,7 +1507,7 @@ function optionsframework_options()
         'name' => __('Search Background Customization', 'sakurairo'), 
         'desc' => __('It is the cute one that opens the search interface', 'sakurairo'), 
         'id' => 'search-image',
-        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/iloli.gif",
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/iloli.gif",
         'type' => 'upload');
 
     $options[] = array(
@@ -1542,7 +1542,7 @@ function optionsframework_options()
         'name' => __('Lazyload Spinner', 'sakurairo'),
         'desc' => __('The placeholder to display when the image loads, fill in the image url', 'sakurairo'), 
         'id' => 'lazyload_spinner',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/sakura/load/inload.svg',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sakura/load/inload.svg',
         'type' => 'text');
 
     $options[] = array(
@@ -1556,7 +1556,7 @@ function optionsframework_options()
         'name' => __('Mail Template Header', 'sakurairo'), 
         'desc' => __('Set the background picture above your message', 'sakurairo'), 
         'id' => 'mail_img',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/mail-head.jpg',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/mail-head.jpg',
         'type' => 'upload');
 
     $options[] = array(
@@ -1599,7 +1599,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/enhanced.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/enhanced.png',
                 ),
             );     
 
@@ -1610,7 +1610,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/enhanced-effect.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/enhanced-effect.png',
                 ),
             );                          
             
@@ -1797,7 +1797,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/enhanced-morse.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/enhanced-morse.png',
                 ),
             );                          
         
@@ -1805,35 +1805,35 @@ function optionsframework_options()
         'name' => __('Custom Mouse Style - Standard', 'sakurairo'), 
         'desc' => __('Apply to global, fill in link.', 'sakurairo'),
         'id' => 'cursor-nor',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/cursor/normal.cur',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/normal.cur',
         'type' => 'text'); 
             
     $options[] = array(
         'name' => __('Custom Mouse Style - Selected', 'sakurairo'), 
         'desc' => __('Return to the above for PC', 'sakurairo'),
         'id' => 'cursor-no',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/cursor/No_Disponible.cur',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/No_Disponible.cur',
         'type' => 'text');   
             
     $options[] = array(
         'name' => __('Custom Mouse Style - Selected Elements', 'sakurairo'), 
         'desc' => __('Used to select a place', 'sakurairo'),
         'id' => 'cursor-ayu',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/cursor/ayuda.cur',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/ayuda.cur',
         'type' => 'text');  
     
     $options[] = array(
         'name' => __('Custom Mouse Style - Selected Text', 'sakurairo'), 
         'desc' => __('Used to select a Text', 'sakurairo'),
         'id' => 'cursor-text',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/cursor/texto.cur',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/texto.cur',
         'type' => 'text'); 
             
     $options[] = array(
         'name' => __('Custom Mouse Style - Working State', 'sakurairo'), 
         'desc' => __('Used to working condition', 'sakurairo'),
         'id' => 'cursor-work',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/cursor/work.cur',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/work.cur',
         'type' => 'text');   
 
     //字体
@@ -1848,7 +1848,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/fonts.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/fonts.png',
                 ),
             );     
 
@@ -1859,7 +1859,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/fonts-custom.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/fonts-custom.png',
                 ),
             );                          
                     
@@ -1948,7 +1948,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/fonts-size.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/fonts-size.png',
                 ),
             );                                  
 
@@ -2007,7 +2007,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/fonts-others.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/fonts-others.png',
                 ),
             );                                  
 
@@ -2037,7 +2037,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/theme.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/theme.png',
                 ),
             );     
   
@@ -2045,21 +2045,21 @@ function optionsframework_options()
         'name' => __('Display Icon Selection', 'sakurairo'), 
         'desc' => __('Choose icon color', 'sakurairo'), 
         'id' => 'webweb_img',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/sakura',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sakura',
         'type' => 'select',
         'options' => array(
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/sakura' => __('「Default Color」Sakura（FB98C0+87B6FA）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/pink' => __('「Common Colors」Pink（EE9CA7）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/orange' => __('「Common Colors」Orange（FF8000）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/blue' => __('「Nippon Colors」Hanaasagi（1E88A8）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/yellow' => __('「Nippon Colors」Beniukon（E98B2A）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/sangosyu' => __('「Nippon Colors」Sangosyu（F17C67）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/sora' => __('「Nippon Colors」Sora（58B2DC）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/nae' => __('「Nippon Colors」Nae（86C166）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/macaronblue' => __('「Macaron Colors」Blue（B8F1ED）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/macarongreen' => __('「Macaron Colors」Green（B8F1CC）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/macaronpurple' => __('「Macaron Colors」Purple（D9B8F1）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/theme/colorful' => __('「Others」ColorFul', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sakura' => __('「Default Color」Sakura（FB98C0+87B6FA）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/pink' => __('「Common Colors」Pink（EE9CA7）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/orange' => __('「Common Colors」Orange（FF8000）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/blue' => __('「Nippon Colors」Hanaasagi（1E88A8）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/yellow' => __('「Nippon Colors」Beniukon（E98B2A）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sangosyu' => __('「Nippon Colors」Sangosyu（F17C67）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sora' => __('「Nippon Colors」Sora（58B2DC）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/nae' => __('「Nippon Colors」Nae（86C166）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/macaronblue' => __('「Macaron Colors」Blue（B8F1ED）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/macarongreen' => __('「Macaron Colors」Green（B8F1CC）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/macaronpurple' => __('「Macaron Colors」Purple（D9B8F1）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/colorful' => __('「Others」ColorFul', 'sakurairo'), 
     ));
     
     $options[] = array(
@@ -2103,7 +2103,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/theme-darkmode.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/theme-darkmode.png',
                 ),
             );                                  
 
@@ -2146,7 +2146,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/theme-homepage.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/theme-homepage.png',
                 ),
             );                                  
 
@@ -2345,7 +2345,7 @@ function optionsframework_options()
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/setting/tips/theme-backstage.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/theme-backstage.png',
                 ),
             );                                  
 
