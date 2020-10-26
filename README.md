@@ -1,4 +1,4 @@
-![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/readme/readme1.png)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/readme1.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="center"> 「桜いろ」✿ Sakurairo </h1>
 
@@ -44,13 +44,13 @@
 
 ## 使用相关：
 
-![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/readme/readme2.png)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/readme2.png)](https://asuhe.jp/daily/sakurairo-user-manual)
 
 - 演示站点：https://demo.kyoku.jp/
 
 - 主题交流群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
 
-- 主题[使用手册](https://asuhe.jp/daily/sakurairo-user-manual) 及 [设置目录手册](https://blog.ukenn.top/sakurairo/)
+- 主题 [使用手册](https://asuhe.jp/daily/sakurairo-user-manual) 及 [设置目录手册](https://blog.ukenn.top/sakurairo/)
 
 
 ## 如遇问题
@@ -108,8 +108,8 @@
 
 ## 希望你喜欢！
 
-![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/readme/readme3.png)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/readme3.png)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 
 - Star 趋势  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 
-[![Stargazers over time](https://starchart.cc/mirai-mamori/Sakurairo.svg)](https://starchart.cc/mirai-mamori/Sakurairo)
+[![Stargazers over time](https://starchart.cc/mirai-mamori/Sakurairo.svg)](https://github.com/mirai-mamori/Sakurairo/stargazers)

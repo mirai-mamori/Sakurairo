@@ -13,7 +13,7 @@
    		<?php elseif (akina_option('focus_logo')):?>
 	     <div class="header-tou"><a href="<?php bloginfo('url');?>" ><img src="<?php echo akina_option('focus_logo', ''); ?>"></a></div>
 	  	<?php else :?>
-         <div class="header-tou" ><a href="<?php bloginfo('url');?>"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/vision/basic/avatar.jpg"></a></div>	
+         <div class="header-tou" ><a href="<?php bloginfo('url');?>"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/avatar.jpg"></a></div>	
       	<?php endif; ?>
 		<div class="header-info">
 			<!-- 首页一言打字效果 -->

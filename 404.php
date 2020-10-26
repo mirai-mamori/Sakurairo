@@ -17,7 +17,7 @@
 bloginfo( 'name' );$site_description = get_bloginfo( 'description', 'display' );
 if ( $site_description && ( is_home() || is_front_page() ) ) echo " - $site_description";if ( $paged >= 2 || $page >= 2 ) echo ' - ' . sprintf( __( 'page %s'), max( $paged, $page ) );/*第 %s 页*/?>
 </title>
-<link type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/static/css/basic/404_lib.css" rel="stylesheet" />
+<link type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/css/basic/404_lib.css" rel="stylesheet" />
 <?php wp_head(); ?>
 <script>
 var the_url=window.location.href;
@@ -50,10 +50,10 @@ if (!no_report) httpGet(report_url);
 <div style="display:block; width:284px;margin: auto;">
 <p style="margin-bottom: 1em;margin-top: 1.5em;text-align: center;font-size: 15px;"><?php _e('Don\'t worry, search in site?','sakurairo');/*别急，试试站内搜索？*/?></p>
 <form class="s-search" method="get" action="/" role="search">
-    <i class="iconfont icon-search" style="bottom: 8px;left: 12px;"></i>
+    <i class="iconfont icon-search" style="bottom: 9px;left: 15px;"></i>
     <input class="text-input" style="padding: 8px 20px 8px 46px;" type="search" name="s" placeholder="<?php _e('Search...', 'akina') ?>" required>	
 </form>
 </div>
 </section>
-<script src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository/static/js/basic/404.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/js/basic/404.min.js" type="text/javascript"></script>
 </body>
