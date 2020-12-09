@@ -682,6 +682,14 @@ function optionsframework_options()
             'github' => __('GitHub Style', 'sakurairo'),
         ));
 
+        $options[] = array(
+            'name' => __('关闭Bilibili表情包', 'sakurairo'), 
+            'desc' => __('默认开启,勾选关闭', 'sakurairo'),
+            'id' => 'bilibili_onoff',
+            'std' => '0',
+            'type' => 'checkbox');
+    
+
     $options[] = array(
         'name' => __('Post Like', 'sakurairo'), 
         'id' => 'post_like',
