@@ -360,7 +360,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Social Card', 'sakurairo'), 
-        'desc' => __('On by default, check off. When the social card is turned off, the switch button of background random graph and social network icon will not be displayed', 'sakurairo'), 
+        'desc' => __('Default on, check off. When the social card is turned off, the switch button of background random graph and social network icon will not be displayed', 'sakurairo'), 
         'id' => 'social-card',
         'std' => '0',
         'type' => 'checkbox');
@@ -682,14 +682,6 @@ function optionsframework_options()
             'github' => __('GitHub Style', 'sakurairo'),
         ));
 
-        $options[] = array(
-            'name' => __('关闭Bilibili表情包', 'sakurairo'), 
-            'desc' => __('默认开启,勾选关闭', 'sakurairo'),
-            'id' => 'bilibili_onoff',
-            'std' => '0',
-            'type' => 'checkbox');
-    
-
     $options[] = array(
         'name' => __('Post Like', 'sakurairo'), 
         'id' => 'post_like',
@@ -740,6 +732,13 @@ function optionsframework_options()
             'no' => __('Close', 'sakurairo'), 
         ));
 
+    $options[] = array(
+        'name' => __('Comment Area Bilibili Emoticon Pack', 'sakurairo'), 
+        'desc' => __('Default on, check off', 'sakurairo'),
+        'id' => 'bilibili_onoff',
+        'std' => '0',
+        'type' => 'checkbox');
+    
     $options[] = array(
         'name' => __('Comment Textarea Image', 'sakurairo'),
         'desc' => __('NO image if left this blank', 'sakurairo'), 
