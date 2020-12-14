@@ -925,10 +925,8 @@ function comment_mail_notify($comment_id)
     </div>
 ';
         $message = convert_smilies($message);
-        if (akina_option('bilibili_onoff')==1){
-            $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.2.3/vision/smilies/bilipng/emoji_', $message);
-            $message = str_replace("}}", '.png" alt="emoji" style="height: 2em; max-height: 2em;">', $message);
-        }
+        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.2.3/vision/smilies/bilipng/emoji_', $message);
+        $message = str_replace("}}", '.png" alt="emoji" style="height: 2em; max-height: 2em;">', $message);
 
         $message = str_replace('{UPLOAD}', 'https://i.loli.net/', $message);
         $message = str_replace('[/img][img]', '[/img^img]', $message);
@@ -1091,9 +1089,6 @@ function push_emoji_panel() {
 // bilibili smiles
 $bilismiliestrans = array();
 function push_bili_smilies(){
-    if (akina_option('bilibili_onoff')==1){
-        return;
-    }
   global $bilismiliestrans;
   $name = array('baiyan','bishi','bizui','chan','dai','daku','dalao','dalian','dianzan','doge','facai','fanu','ganga','guilian','guzhang','haixiu','heirenwenhao','huaixiao','jingxia','keai','koubizi','kun','lengmo','liubixue','liuhan','liulei','miantian','mudengkoudai','nanguo','outu','qinqin','se','shengbing','shengqi','shuizhao','sikao','tiaokan','tiaopi','touxiao','tuxue','weiqu','weixiao','wunai','xiaoku','xieyanxiao','yiwen','yun','zaijian','zhoumei','zhuakuang');
   $return_smiles = '';
@@ -1116,9 +1111,6 @@ function push_bili_smilies(){
 push_bili_smilies();
 
 function bili_smile_filter($content) {
-    if (akina_option('bilibili_onoff')==1){
-        return;
-    }
     global $bilismiliestrans;
     $content =  str_replace(array_keys($bilismiliestrans), $bilismiliestrans, $content); 
     return $content;
@@ -1138,9 +1130,6 @@ add_filter('the_content_feed', 'featuredtoRSS');
 
 //
 function bili_smile_filter_rss($content) {
-    if (akina_option('bilibili_onoff')==1){
-        return;
-    }
     if (is_webp() == 1){
         $biliimgdir="biliwebp/";
         $smiliesgs=".webp";

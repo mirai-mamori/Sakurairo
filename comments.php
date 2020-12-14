@@ -80,7 +80,6 @@
                                 </tr>
                             </table>
                             '.$bilibili_push_smile.push_emoji_panel().'
-                                '.push_emoji_panel().'
                             </div>
                             <div class="tieba-container motion-container" style="display:none;">' . push_tieba_smilies() . '</div>
                         </div>
