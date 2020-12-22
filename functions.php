@@ -1824,4 +1824,16 @@ function xcollapse($atts, $content = null){
    }
    add_shortcode('collapse', 'xcollapse');
 
+   // 文章增强
+require get_template_directory() . '/inc/theme-shortcode.php';
+
+//头像支持
+
+
+//支持svg
+add_filter( 'upload_mimes', function($mimes){
+	 $mimes['svg'] = 'image/svg-xml';
+        return $mimes;
+} );
+
 //code end
