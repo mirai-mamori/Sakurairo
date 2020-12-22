@@ -1420,6 +1420,13 @@ li.link-item {
 .post-list-thumb:nth-child(2n) .post-thumb a {
     border-radius: 10px 0 0 10px
 }
+.post-list-thumb:nth-child(2n) div.post-date{
+    margin-right:0;
+    margin-left:auto;
+}
+.post:nth-child(2n){
+flex-direction: row-reverse;
+}
 <?php } ?>
 
 

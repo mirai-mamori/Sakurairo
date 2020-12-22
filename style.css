@@ -1490,7 +1490,9 @@ i.iconfont.hotpost {
 .info-meta a {
     color: #000
 }
-
+.post{
+    display:flex;
+}
 .post-list:hover .info-meta {
     -webkit-transform: translate3d(-230px, 0, 0);
     transform: translate3d(-230px, 0, 0);
@@ -1577,7 +1579,8 @@ i.iconfont.hotpost {
 
 .post-thumb {
     float: right;
-    width: 55%
+    width: 55%;
+    flex:1 inherit;
 }
 
 .post-thumb a {
@@ -1602,12 +1605,12 @@ i.iconfont.hotpost {
 }
 
 .post-content-wrap {
+    flex:1;
     position: relative;
-    display: inline-block;
-    float: right;
+/*     display: inline-block;
+ */    float: right;
     padding-right: 30px;
     padding-left: 0;
-    width: 40%;
     margin: 20px 10px 0 10px
 }
 
