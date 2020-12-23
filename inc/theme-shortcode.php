@@ -258,7 +258,7 @@ function card($atts, $content = null, $code = "")
     return '<div class="card"><div class="card-body">' . $content . '</div></div>';
 }
 add_shortcode('card', 'card');
-/* function include_css_extra()
+function include_css_extra()
 {
     include_once 'prism_lang.php';
     wp_enqueue_script(get_script_handle('css'), PRISM_LINK_HEAD . 'components/prism-css.min.js', array('prism-core'), null, true);
@@ -379,7 +379,7 @@ function code($atts, $content = null, $code = "")
     return '<pre' . ((count($pre_class) > 0) ? ' class="' . join(' ', $pre_class) . '"' : '') . ' ' . join(' ', $pre_options) . '><code class="' . join(' ', $code_class) . '">' . $content . '</code></pre>';
 }
 add_shortcode('code', 'code');
- */
+
 add_action('init', 'more_button');
 function more_button()
 {
