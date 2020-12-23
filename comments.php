@@ -71,17 +71,7 @@
                             <span class="emotion-toggle-on">' . __("Woooooow ヾ(≧∇≦*)ゝ", "sakurairo")/*嘿嘿嘿 ヾ(≧∇≦*)ゝ*/ . '</span>
                         </p>
                         <div class="emotion-box no-select">
-                            <table class="motion-switcher-table">
-                                <tr>'.$bilibili_smile.'
-                                    <th onclick="motionSwitch(\'.menhera\')"
-                                        class="menhera-bar">(=・ω・=)</th>
-                                    <th onclick="motionSwitch(\'.tieba\')"
-                                        class="tieba-bar">Tieba</th>
-                                </tr>
-                            </table>
-                            '.$bilibili_push_smile.push_emoji_panel().'
-                            </div>
-                            <div class="tieba-container motion-container" style="display:none;">' . push_tieba_smilies() . '</div>
+                            
                         </div>
                         <!--表情面版完-->',
 						'comment_notes_after' => '',
