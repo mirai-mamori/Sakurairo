@@ -50,9 +50,9 @@ while (have_posts()) : the_post();
 					<?php
 					wp_enqueue_script('r17', "https://cdn.jsdelivr.net/npm/react@17.0.1/umd/react.production.min.js", array(), null, true);
 					wp_enqueue_script('r17-dom', "https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.production.min.js", array(), null, true);
-					wp_enqueue_script('pv',  "https://cdn.jsdelivr.net/gh/kotorik/yukicat-attach@s1/dist/pv.js", array('r17', 'r17-dom'), null, true);
+					wp_enqueue_script('pv',  "https://cdn.jsdelivr.net/gh/kotorik/yukicat-attach@s1.1/dist/pv.js", array('r17', 'r17-dom'), null, true);
 					wp_enqueue_style("pv_style", "https://cdn.jsdelivr.net/gh/kotorik/yukicat-attach@latest/dist/pv.css") ?>
-					<span><i class="iconfont icon-attention"></i><span class="meta-page-view" data-path="<?php echo get_permalink(get_the_ID()) ?>"><?php echo get_post_views(get_the_ID()) . ' ' . _n('Hit', 'Hits', get_post_views(get_the_ID()), 'sakurairo')/*热度*/ ?></span></span>
+					<span><i class="iconfont icon-attention"></i><?php require_once(get_template_directory() .'/hackin.php');echo hack_pv(); ?></span></span>
 					<span class="comments-number"><i class="iconfont icon-mark"></i><?php comments_popup_link('NOTHING', '1 ' . __("Comment", "sakurairo")/*条评论*/, '% ' . __("Comments", "sakurairo")/*条评论*/); ?></span>
 					<span><i class="iconfont icon-file"></i><a href="<?php echo esc_url(get_category_link($the_cat[0]->cat_ID)); ?>"><?php echo $the_cat[0]->cat_name; ?></a>
 					</span>
