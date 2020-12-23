@@ -1577,7 +1577,7 @@ i.iconfont.hotpost {
 .post-thumb {
     float: right;
     width: 55%;
-    flex:1 inherit;
+    flex:2 0 15%;
 }
 
 .post-thumb a {
@@ -1602,13 +1602,14 @@ i.iconfont.hotpost {
 }
 
 .post-content-wrap {
-    flex:1;
+    flex:3;
     position: relative;
 /*     display: inline-block;
  */    float: right;
     padding-right: 30px;
     padding-left: 0;
-    margin: 20px 10px 0 10px
+    margin: 20px 10px 0 10px;
+    height:min-content;
 }
 
 .float-content {
@@ -1691,14 +1692,16 @@ i.iconfont.hotpost {
         border-radius: 10px !important
     }
 }
-
 @media (max-width:600px) {
     .post-thumb a {
-        height: 210px
+        height: 100%
     }
     .float-content .post-text {
         font-size: 13px;
         margin-bottom: 1em
+    }
+    article.post{
+        min-height:210px;
     }
 }
 
