@@ -12,7 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
 Tags: 多彩、轻松上手、体验完善、高自定义度
 */
-
+.entry-content{
+    width: 100%
+}
 #content {
     animation: main 1s
 }
