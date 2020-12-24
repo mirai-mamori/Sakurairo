@@ -1832,7 +1832,7 @@ require get_template_directory() . '/inc/theme-shortcode.php';
 
 //支持svg
 add_filter( 'upload_mimes', function($mimes){
-	 $mimes['svg'] = 'image/svg-xml';
+	 $mimes['svg'] = 'image/svg+xml';
         return $mimes;
 } );
 
