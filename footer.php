@@ -21,7 +21,9 @@
 				<div class="img-preload">
 					<img src="<?php echo akina_option('webweb_img'); ?>/load/ball.svg"><!-- 加载下一部分圈圈 -->
 				</div>
-				<i class="iconfont icon-sakura rotating" style="color: <?php echo akina_option('theme_skin'); ?>;display:inline-block;font-size:26px"></i></p>
+				<?php if (akina_option('sakurabottom', '1')): ?>
+				<i class="iconfont icon-sakura rotating" style="color: <?php echo akina_option('theme_skinm'); ?>;display:inline-block;font-size:26px"></i>
+				<?php endif; ?></p>
 				<p style="color: #666666;"><?php echo akina_option('footer_info', ''); ?></p>
 			</div>
 			<div class="footer-device">

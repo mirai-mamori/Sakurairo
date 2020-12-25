@@ -1154,6 +1154,13 @@ function optionsframework_options()
         'std' => '',
         'type' => 'text');
 
+    $options[] = array(
+        'name' => __('Sakura at the Bottom of Foreground', 'sakurairo'), 
+        'desc' => __('Check on by default', 'sakurairo'), 
+        'id' => 'sakurabottom',
+        'std' => '1',
+        'type' => 'checkbox');
+
     //后台设置
     $options[] = array(
         'name' => __('Backstage', 'sakurairo'), 

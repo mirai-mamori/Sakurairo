@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-12-10 21:47+0800\n"
-"PO-Revision-Date: 2020-12-10 21:47+0800\n"
+"POT-Creation-Date: 2020-12-25 20:40+0800\n"
+"PO-Revision-Date: 2020-12-25 20:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -38,7 +38,7 @@ msgstr "返回首頁"
 msgid "Don't worry, search in site?"
 msgstr "別著急，試試站內檢索？"
 
-#: 404.php:54 footer.php:65 search.php:42
+#: 404.php:54 footer.php:67 search.php:42
 msgid "Search..."
 msgstr "搜尋..."
 
@@ -94,47 +94,47 @@ msgstr "戳我呀 OωO"
 msgid "Woooooow ヾ(≧∇≦*)ゝ"
 msgstr "嘿嘿嘿 ヾ(≧∇≦*)ゝ"
 
-#: comments.php:93
+#: comments.php:92
 msgid "Auto pull nickname and avatar with a QQ num. entered"
 msgstr "輸入QQ號將自動拉取暱稱和頭像"
 
-#: comments.php:93
+#: comments.php:92
 msgid "Nickname or QQ number"
 msgstr "暱稱或QQ號"
 
-#: comments.php:93
+#: comments.php:92
 msgid "Name* "
 msgstr "暱稱 "
 
-#: comments.php:95
+#: comments.php:94
 msgid "You will receive notification by email"
 msgstr "你將收到回復通知"
 
-#: comments.php:95
+#: comments.php:94
 msgid "email"
 msgstr "電子信箱"
 
-#: comments.php:95
+#: comments.php:94
 msgid "Must* "
 msgstr "必須* "
 
-#: comments.php:97
+#: comments.php:96
 msgid "Advertisement is forbidden 😀"
 msgstr "禁止小廣告😀"
 
-#: comments.php:97
+#: comments.php:96
 msgid "Site"
 msgstr "網站"
 
-#: footer.php:79 footer.php:87
+#: footer.php:81 footer.php:89
 msgid "Want to find something?"
 msgstr "想要找點什麼呢？"
 
-#: footer.php:89
+#: footer.php:91
 msgid "Search"
 msgstr "檢索"
 
-#: footer.php:148
+#: footer.php:150
 msgid "Widgets"
 msgstr "小工具"
 
@@ -183,42 +183,42 @@ msgstr ""
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "這傢伙好懶╮(╯▽╰)╭"
 
-#: functions.php:1230
+#: functions.php:1219
 msgid "All expand/collapse"
 msgstr "全部展開/收縮"
 
-#: functions.php:1251 options.php:115 options.php:126 options.php:298
+#: functions.php:1240 options.php:115 options.php:126 options.php:298
 #: options.php:327 options.php:338 options.php:493 options.php:666
 #: options.php:781 options.php:915 options.php:926 options.php:1007
-#: options.php:1055 options.php:1164 options.php:1202 options.php:1256
-#: options.php:1267 options.php:1292 options.php:1381 options.php:1604
-#: options.php:1615 options.php:1802 options.php:1853 options.php:1864
-#: options.php:1953 options.php:2012 options.php:2042 options.php:2108
-#: options.php:2151 options.php:2350
+#: options.php:1055 options.php:1171 options.php:1209 options.php:1263
+#: options.php:1274 options.php:1299 options.php:1388 options.php:1611
+#: options.php:1622 options.php:1809 options.php:1860 options.php:1871
+#: options.php:1960 options.php:2019 options.php:2049 options.php:2115
+#: options.php:2158 options.php:2357
 msgid " "
 msgstr ""
 
-#: functions.php:1255
+#: functions.php:1244
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1278 functions.php:1281 inc/theme_plus.php:478
+#: functions.php:1267 functions.php:1270 inc/theme_plus.php:478
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:1501
+#: functions.php:1490
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>錯誤</b>: 電子信箱格式出錯 (<b>@"
 
-#: functions.php:1587
+#: functions.php:1576
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1649
+#: functions.php:1638
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:1776
+#: functions.php:1765
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -819,7 +819,7 @@ msgstr "外部API隨機圖"
 msgid "Multi Terminal Separation of Home Random Graphs"
 msgstr "封面隨機圖多端分離"
 
-#: options.php:424 options.php:1188
+#: options.php:424 options.php:1195
 msgid "It is off by default and enabled by check"
 msgstr "默認關閉，勾選開啟"
 
@@ -977,7 +977,7 @@ msgstr "首頁文章“詳細”圖示"
 msgid "Focus Area"
 msgstr "聚焦區域"
 
-#: options.php:544 options.php:1543
+#: options.php:544 options.php:1550
 msgid "Default on"
 msgstr "默認開啟"
 
@@ -1324,7 +1324,7 @@ msgid "Extra Background Switching(Heart-shaped icon)"
 msgstr "額外背景切換（心形圖示）"
 
 #: options.php:944 options.php:951 options.php:958 options.php:965
-#: options.php:1124
+#: options.php:1124 options.php:1159
 msgid "Check on by default"
 msgstr "勾選開啟（默認）"
 
@@ -1388,10 +1388,10 @@ msgstr "動畫"
 msgid "Homepage Animation"
 msgstr "前台動畫"
 
-#: options.php:1018 options.php:1025 options.php:1032 options.php:1633
-#: options.php:1640 options.php:1660 options.php:1675 options.php:1697
-#: options.php:1711 options.php:1718 options.php:1725 options.php:1732
-#: options.php:1760 options.php:1767 options.php:1883 options.php:2127
+#: options.php:1018 options.php:1025 options.php:1032 options.php:1640
+#: options.php:1647 options.php:1667 options.php:1682 options.php:1704
+#: options.php:1718 options.php:1725 options.php:1732 options.php:1739
+#: options.php:1767 options.php:1774 options.php:1890 options.php:2134
 msgid "Check open"
 msgstr "勾選啟用"
 
@@ -1407,7 +1407,7 @@ msgstr "前台文章訊息動畫"
 msgid "Homepage Animation Time"
 msgstr "前台動畫時間"
 
-#: options.php:1039 options.php:1047 options.php:2134
+#: options.php:1039 options.php:1047 options.php:2141
 msgid "Fill in Number"
 msgstr "填寫數字"
 
@@ -1415,7 +1415,7 @@ msgstr "填寫數字"
 msgid "Article Title Animation Time"
 msgstr "前台文章訊息動畫時間"
 
-#: options.php:1054 options.php:1291 options.php:2011
+#: options.php:1054 options.php:1298 options.php:2018
 msgid "Others"
 msgstr "其他"
 
@@ -1535,47 +1535,51 @@ msgstr "更多 JavaScript Url"
 msgid "Add More JavaScript Url, Fill in the URL"
 msgstr "添加更多 JavaScript，填寫URL"
 
-#: options.php:1159
+#: options.php:1158
+msgid "Sakura at the Bottom of Foreground"
+msgstr "前台底部櫻花"
+
+#: options.php:1166
 msgid "Backstage"
 msgstr "｜後台"
 
-#: options.php:1163
+#: options.php:1170
 msgid "Backstage-Setting"
 msgstr "後台設置"
 
-#: options.php:1174 options.php:1175
+#: options.php:1181 options.php:1182
 msgid "Backstage Background Image"
 msgstr "後台背景圖"
 
-#: options.php:1181
+#: options.php:1188
 msgid "Login Interface Background Image"
 msgstr "後台登陸界面背景圖"
 
-#: options.php:1182
+#: options.php:1189
 msgid "Use the default image if left this blank"
 msgstr "該地址為空則使用默認圖片"
 
-#: options.php:1187
+#: options.php:1194
 msgid "Background Virtualization of Login Interface"
 msgstr "後台登錄界面背景虛化"
 
-#: options.php:1194
+#: options.php:1201
 msgid "Login Interface Logo"
 msgstr "後台登陸界面Logo"
 
-#: options.php:1195
+#: options.php:1202
 msgid "Used for login interface display"
 msgstr "用於登錄界面顯示"
 
-#: options.php:1201
+#: options.php:1208
 msgid "Login/Registration Related Settings"
 msgstr "登陸/註冊相關設定"
 
-#: options.php:1208
+#: options.php:1215
 msgid "Specify Login Address"
 msgstr "指定登錄地址"
 
-#: options.php:1209
+#: options.php:1216
 msgid ""
 "Forcibly do not use the background address to log in, fill in the new "
 "landing page address, such as http://www.xxx.com/login [Note] Before you "
@@ -1586,89 +1590,89 @@ msgstr ""
 "loginlogin［注意］填寫前先測試一下你新建的頁面是可以正常打開的，以免造成無法"
 "進入後台等情況"
 
-#: options.php:1215
+#: options.php:1222
 msgid "Specify Registered Address"
 msgstr "指定註冊地址"
 
-#: options.php:1216
+#: options.php:1223
 msgid "This link is used on the login page as a registration entry"
 msgstr "該連結使用在登錄頁面作為註冊入口，建議填寫"
 
-#: options.php:1222
+#: options.php:1229
 msgid "Allow Users to Register"
 msgstr "前台用戶註冊"
 
-#: options.php:1223
+#: options.php:1230
 msgid "Check to allow users to register at the frontend"
 msgstr "勾選開啟，允許用戶在前台註冊"
 
-#: options.php:1229
+#: options.php:1236
 msgid "Automatically Redirect After Login"
 msgstr "登錄後自動跳轉"
 
-#: options.php:1230
+#: options.php:1237
 msgid ""
 "After checken, the administrator redirects to the background and the user "
 "redirects to the home page."
 msgstr "勾選開啟，管理員跳轉至後台，用戶跳轉至首頁"
 
-#: options.php:1236
+#: options.php:1243
 msgid "Login Validation"
 msgstr "登錄驗證"
 
-#: options.php:1237 options.php:1244
+#: options.php:1244 options.php:1251
 msgid "Check to enable slide verification"
 msgstr "勾選開啟滑動驗證"
 
-#: options.php:1243
+#: options.php:1250
 msgid "Registration Verification (Frontend Only, Backend Forced Open)"
 msgstr "註冊驗證（僅前端，後端強制開啟）"
 
-#: options.php:1251
+#: options.php:1258
 msgid "Advanced"
 msgstr "｜進階"
 
-#: options.php:1255
+#: options.php:1262
 msgid "Advanced-Setting"
 msgstr "進階設置"
 
-#: options.php:1266
+#: options.php:1273
 msgid "Localize"
 msgstr "本地化"
 
-#: options.php:1277
+#: options.php:1284
 msgid "Use The Front-end Library Locally (lib.js、lib.css)"
 msgstr "本地調用前端庫"
 
-#: options.php:1278
+#: options.php:1285
 msgid "The front-end library don't load from jsDelivr, not recommand"
 msgstr "前端庫不走 jsDelivr CDN"
 
-#: options.php:1284
+#: options.php:1291
 msgid "Use JS and CSS File of The Theme (sakura-app.js、style.css) locally"
 msgstr "本地調用主題 JS、CSS 文件"
 
-#: options.php:1285
+#: options.php:1292
 msgid ""
 "The js and css files of the theme do not load from jsDelivr, please open "
 "when DIY"
 msgstr "主題的部分JS及CSS文件不走 jsDelivr CDN，默認開啟"
 
-#: options.php:1302
+#: options.php:1309
 msgid "Gravatar Avatar Proxy"
 msgstr "Gravatar頭像代理"
 
-#: options.php:1303
+#: options.php:1310
 msgid ""
 "A front-ed proxy for Gravatar, eg. sdn.geekzu.org/avatar . Leave it blank if "
 "you do not need."
 msgstr "填寫Gravatar頭像的代理地址，留空則不使用代理"
 
-#: options.php:1309
+#: options.php:1316
 msgid "Images CDN"
 msgstr "圖片庫"
 
-#: options.php:1310
+#: options.php:1317
 msgid ""
 "Note: Fill in the format http(s)://your CDN domain name/. <br>In other "
 "words, the original path is http://your.domain/wp-content/uploads/2018/05/xx."
@@ -1678,56 +1682,56 @@ msgstr ""
 "domain/wp-content/uploads/2018/05/xx.png 的圖片將從 http://你的CDN域"
 "名/2018/05/xx.png 載入"
 
-#: options.php:1316
+#: options.php:1323
 msgid "Google Analytics"
 msgstr "Google 統計代碼"
 
-#: options.php:1317
+#: options.php:1324
 msgid "UA-xxxxx-x"
 msgstr "評論UA訊息"
 
-#: options.php:1323
+#: options.php:1330
 msgid "CNZZ Statistics (Not Recommand)"
 msgstr "站長統計（不建議使用）"
 
-#: options.php:1324
+#: options.php:1331
 msgid "Statistics code, which will be invisible in web page."
 msgstr "填寫統計代碼，將被隱藏"
 
-#: options.php:1330
+#: options.php:1337
 msgid "Customize CSS Styles"
 msgstr "自訂CSS樣式"
 
-#: options.php:1331
+#: options.php:1338
 msgid "Fill in the CSS code directly, no need to write style tags"
 msgstr "直接填寫CSS代碼，不需要寫style標籤"
 
-#: options.php:1337
+#: options.php:1344
 msgid "The Categories of Articles that don't not show on homepage"
 msgstr "首頁不顯示的分類文章"
 
-#: options.php:1338 options.php:1345
+#: options.php:1345 options.php:1352
 msgid "Fill in category ID, multiple IDs are divided by a comma \",\""
 msgstr "填寫分類ID，多個用英文“ , ”分開"
 
-#: options.php:1344
+#: options.php:1351
 msgid "Images Category"
 msgstr "圖片展示分類"
 
-#: options.php:1351
+#: options.php:1358
 msgid "Version Control"
 msgstr "版本控制"
 
-#: options.php:1352
+#: options.php:1359
 msgid ""
 "Used to update frontend cookies and browser caches, any string can be used"
 msgstr "用於更新前端 Cookie 及瀏覽器快取，可使用任意字串"
 
-#: options.php:1358
+#: options.php:1365
 msgid "Time Zone Adjustment"
 msgstr "時區調整"
 
-#: options.php:1359
+#: options.php:1366
 msgid ""
 "If the comment has a time difference problem adjust here, fill in an "
 "integer, the calculation method: actual_time = display_error_time - "
@@ -1736,30 +1740,30 @@ msgstr ""
 "如果評論出現時差問題在這裡調整，填入一個整數，計算方法：實際時間=顯示錯誤的時"
 "間-你輸入的整數（單位：小時）"
 
-#: options.php:1376
+#: options.php:1383
 msgid "Function"
 msgstr "｜功能"
 
-#: options.php:1380
+#: options.php:1387
 msgid "Function-Setting"
 msgstr "功能設置"
 
-#: options.php:1391
+#: options.php:1398
 msgid "Bilibili UID"
 msgstr "嗶哩嗶哩UID"
 
-#: options.php:1392
+#: options.php:1399
 msgid ""
 "Fill in your UID, eg.https://space.bilibili.com/13972644/, only fill in with "
 "the number part."
 msgstr ""
 "填寫你的UID，例如：https://space.bilibili.com/13972644/，只需填寫數字部分"
 
-#: options.php:1398
+#: options.php:1405
 msgid "Bilibili Cookie"
 msgstr "嗶哩嗶哩Cookie"
 
-#: options.php:1399
+#: options.php:1406
 msgid ""
 "Fill in your Cookies, go to your bilibili homepage, you can get cookies in "
 "brownser network pannel with pressing F12. If left this blank, you'll not "
@@ -1768,44 +1772,44 @@ msgstr ""
 "填寫你的帳號Cookies。F12打開瀏覽器網路面板，前往你的B站首頁獲取Cookies。如果"
 "留空，將不會顯示追番進度"
 
-#: options.php:1405
+#: options.php:1412
 msgid "Comment UA Infomation"
 msgstr "評論UA訊息"
 
-#: options.php:1406
+#: options.php:1413
 msgid ""
 "Check to enable, display the user's browser, operating system information"
 msgstr "勾選開啟，顯示用戶的瀏覽器，操作系統訊息"
 
-#: options.php:1412
+#: options.php:1419
 msgid "Comment Location Infomation"
 msgstr "評論位置訊息"
 
-#: options.php:1413
+#: options.php:1420
 msgid "Check to enable, display the user's location info"
 msgstr "勾選開啟，顯示用戶的位置訊息"
 
-#: options.php:1419
+#: options.php:1426
 msgid "Comment Image Upload API"
 msgstr "評論上傳圖片介面"
 
-#: options.php:1424
+#: options.php:1431
 msgid "Imgur (https://imgur.com)"
 msgstr ""
 
-#: options.php:1425
+#: options.php:1432
 msgid "SM.MS (https://sm.ms)"
 msgstr ""
 
-#: options.php:1426
+#: options.php:1433
 msgid "Chevereto (https://chevereto.com)"
 msgstr ""
 
-#: options.php:1430
+#: options.php:1437
 msgid "Imgur Client ID"
 msgstr ""
 
-#: options.php:1431
+#: options.php:1438
 msgid ""
 "Register your application <a href=\"https://api.imgur.com/oauth2/addclient"
 "\">here</a>, note we only need the Client ID here."
@@ -1813,48 +1817,48 @@ msgstr ""
 "在<a href=\"https://api.imgur.com/oauth2/addclient\">這裡</a>註冊你的 "
 "application , 注意此處只需要填寫 Client ID"
 
-#: options.php:1437
+#: options.php:1444
 msgid "SM.MS Secret Token"
 msgstr ""
 
-#: options.php:1438
+#: options.php:1445
 msgid ""
 "Register your application <a href=\"https://sm.ms/home/apitoken\">here</a>."
 msgstr "在<a href=\"https://sm.ms/home/apitoken\">這裡</a>獲取 key"
 
-#: options.php:1444
+#: options.php:1451
 msgid "Chevereto API v1 key"
 msgstr ""
 
-#: options.php:1445
+#: options.php:1452
 msgid "Get your API key here: "
 msgstr "在這裡獲取你的 API key："
 
-#: options.php:1451
+#: options.php:1458
 msgid "Chevereto URL"
 msgstr ""
 
-#: options.php:1452
+#: options.php:1459
 msgid ""
 "Your Chevereto homepage url, no slash in the end, eg. https://your.cherverto."
 "com"
 msgstr ""
 "你的 Chevereto 首頁 url, 注意結尾沒有 /, 例如：https://your.cherverto.com"
 
-#: options.php:1458
+#: options.php:1465
 msgid "Comment Images Proxy"
 msgstr "評論圖片代理"
 
-#: options.php:1459
+#: options.php:1466
 msgid ""
 "A front-ed proxy for the uploaded images. Leave it blank if you do not need."
 msgstr "前端顯示的圖片的代理"
 
-#: options.php:1465
+#: options.php:1472
 msgid "Imgur Upload Proxy"
 msgstr "Imgur 上傳代理"
 
-#: options.php:1466
+#: options.php:1473
 msgid ""
 "A back-ed proxy to upload images. You may set a self hosted proxy with "
 "Nginx, following my <a href=\"https://2heng.xin/2018/06/06/javascript-upload-"
@@ -1869,86 +1873,86 @@ msgstr ""
 "態，大陸伺服器上傳和瀏覽器前端顯示都需要代理！如果伺服器在大陸外不需要上傳代"
 "理，在<a href=\"https://api.imgur.com/3/image/\">處填</a>此寫預設值即可"
 
-#: options.php:1472
+#: options.php:1479
 msgid "Statistics Interface"
 msgstr "統計接口"
 
-#: options.php:1477
+#: options.php:1484
 msgid ""
 "WP-Statistics plugin (Professional statistics, can exclude invalid access)"
 msgstr "WP-Statistics 插件（專業性統計，可排除無效訪問）"
 
-#: options.php:1478
+#: options.php:1485
 msgid "Theme built-in (simple statistics, calculate each page access request)"
 msgstr "主題內建（簡單的統計，計算每一次頁面訪問請求）"
 
-#: options.php:1482
+#: options.php:1489
 msgid "Statistical Data Display Format"
 msgstr "統計數據顯示格式"
 
-#: options.php:1487
+#: options.php:1494
 msgid "23333 Views (default)"
 msgstr "23333 次訪問（默認）"
 
-#: options.php:1488
+#: options.php:1495
 msgid "23,333 Views (britain)"
 msgstr "23,333 次訪問（英式）"
 
-#: options.php:1489
+#: options.php:1496
 msgid "23 333 Views (french)"
 msgstr "23 333 次訪問（法式）"
 
-#: options.php:1490
+#: options.php:1497
 msgid "23k Views (chinese)"
 msgstr "23k 次訪問（中式）"
 
-#: options.php:1494
+#: options.php:1501
 msgid "Private Comment Function"
 msgstr "私人評論功能"
 
-#: options.php:1495
+#: options.php:1502
 msgid ""
 "It is not checked by default. It is checked to enable. This feature allows "
 "users to set their own comments invisible to others"
 msgstr "默認不勾選，勾選開啟。此功能允許用戶設置自己的評論對其他人不可見"
 
-#: options.php:1501
+#: options.php:1508
 msgid "QQ Avatar Link Encryption"
 msgstr "QQ頭像連結加密"
 
-#: options.php:1502
+#: options.php:1509
 msgid "Do not display the user's qq avatar links directly."
 msgstr "不直接暴露用戶QQ頭像連結"
 
-#: options.php:1507
+#: options.php:1514
 msgid "Off (default)"
 msgstr "關閉（默認）"
 
-#: options.php:1508
+#: options.php:1515
 msgid "use redirect (general security)"
 msgstr "使用重定向（安全性低）"
 
-#: options.php:1509
+#: options.php:1516
 msgid "fetch data at backend (high security)"
 msgstr "後端獲取頭像數據（安全性高）"
 
-#: options.php:1510
+#: options.php:1517
 msgid "fetch data at backend (high security，slow)"
 msgstr "後端解析QQ頭像介面（安全性高，慢）"
 
-#: options.php:1514
+#: options.php:1521
 msgid "Search Background Customization"
 msgstr "自訂搜尋背景"
 
-#: options.php:1515
+#: options.php:1522
 msgid "It is the cute one that opens the search interface"
 msgstr "就是那個活潑亂跳的孩子(●'◡'●)"
 
-#: options.php:1521
+#: options.php:1528
 msgid "Real Time Search Function"
 msgstr "即時搜尋功能"
 
-#: options.php:1522
+#: options.php:1529
 msgid ""
 "Real-time search in the foreground, call the Rest API to update the cache "
 "every hour, you can manually set the cache time in api.php"
@@ -1956,60 +1960,60 @@ msgstr ""
 "前台實現實時搜尋，調用 Rest API 每小時更新一次快取，可在 api.php 裡手動設置緩"
 "存時間"
 
-#: options.php:1528
+#: options.php:1535
 msgid "Include Comments in Real Time Search"
 msgstr "即時搜尋支援評論"
 
-#: options.php:1529
+#: options.php:1536
 msgid ""
 "Search for comments in real-time search (not recommended if there are too "
 "many comments on the site)"
 msgstr "在即時搜尋中搜尋評論（如果網站評論數量太多不建議開啟）"
 
-#: options.php:1535
+#: options.php:1542
 msgid "Friend Link Information Layout"
 msgstr "友情連結訊息排版"
 
-#: options.php:1536
+#: options.php:1543
 msgid "The default alignment is left, check it will center alignment"
 msgstr "默認向左對齊，勾選居中對齊"
 
-#: options.php:1542
+#: options.php:1549
 msgid "Article Page Lazyload Function"
 msgstr "文章頁LazyLoad功能"
 
-#: options.php:1549
+#: options.php:1556
 msgid "Lazyload Spinner"
 msgstr "LazyLoad 佔位圖"
 
-#: options.php:1550
+#: options.php:1557
 msgid "The placeholder to display when the image loads, fill in the image url"
 msgstr "圖片載入時要顯示的佔位圖，填寫圖片地址"
 
-#: options.php:1556
+#: options.php:1563
 msgid "Clipboard Copyright ID"
 msgstr "剪切板版權提示"
 
-#: options.php:1557
+#: options.php:1564
 msgid ""
 "Check on by default. When copying more than 30 bytes, the copyright mark "
 "will be added to the clipboard automatically."
 msgstr ""
 "默認開啟，此功能將在複製的文字超過30位元組時，自動添加版權提示到複製的文字中"
 
-#: options.php:1563
+#: options.php:1570
 msgid "Mail Template Header"
 msgstr "郵件模板頭部圖"
 
-#: options.php:1564
+#: options.php:1571
 msgid "Set the background picture above your message"
 msgstr "設置你的郵件上方背景圖片"
 
-#: options.php:1570
+#: options.php:1577
 msgid "Email Address Prefix"
 msgstr "發件地址前綴"
 
-#: options.php:1571
+#: options.php:1578
 msgid ""
 "For sending system mail, the sender address displayed in the user's mailbox, "
 "do not use Chinese, the default system email address is bibi@your_domain_name"
@@ -2017,11 +2021,11 @@ msgstr ""
 "用於發送系統郵件，在用戶的信箱中顯示的發件人地址，不要使用中文，默認系統郵件"
 "地址為 bibi@你的域名"
 
-#: options.php:1577
+#: options.php:1584
 msgid "Comments Reply Notification"
 msgstr "郵件回復通知"
 
-#: options.php:1578
+#: options.php:1585
 msgid ""
 "WordPress will use email to notify users when their comments receive a reply "
 "by default. Tick this item allows users to set their own comments reply "
@@ -2030,141 +2034,141 @@ msgstr ""
 "WordPress預設會使用郵件通知用戶評論收到回復，開啟此項允許用戶設置自己的評論收"
 "到回復時是否使用郵件通知"
 
-#: options.php:1584
+#: options.php:1591
 msgid "Administrator Comment Notification"
 msgstr "郵件回復通知管理員"
 
-#: options.php:1585
+#: options.php:1592
 msgid ""
 "Whether to use email notification when the administrator's comments receive "
 "a reply"
 msgstr "當管理員評論收到回復時是否使用郵件通知"
 
-#: options.php:1591
+#: options.php:1598
 msgid "Human Verification"
 msgstr "機器人驗證"
 
-#: options.php:1592
+#: options.php:1599
 msgid "Enable human verification"
 msgstr "開啟機器人驗證"
 
-#: options.php:1599
+#: options.php:1606
 msgid "Enhanced"
 msgstr "｜增強"
 
-#: options.php:1603
+#: options.php:1610
 msgid "Enhanced-Setting"
 msgstr "增強設置"
 
-#: options.php:1614
+#: options.php:1621
 msgid "Effect"
 msgstr "特效"
 
-#: options.php:1625
+#: options.php:1632
 msgid "Open SmoothScroll"
 msgstr "啓用平滑捲動"
 
-#: options.php:1626
+#: options.php:1633
 msgid "Check open。"
 msgstr "勾選啟用"
 
-#: options.php:1632
+#: options.php:1639
 msgid "Preload Animation"
 msgstr "預載入動畫"
 
-#: options.php:1639
+#: options.php:1646
 msgid "Cherry Blossom Falling Effect"
 msgstr "櫻花飄落特效"
 
-#: options.php:1646
+#: options.php:1653
 msgid "Cherry Blossom Falling Quantity"
 msgstr "櫻花飄落數量"
 
-#: options.php:1647
+#: options.php:1654
 msgid "Four kinds of quantity, default native quantity"
 msgstr "四種數量，默認原生數量"
 
-#: options.php:1652
+#: options.php:1659
 msgid "native"
 msgstr "原生"
 
-#: options.php:1653
+#: options.php:1660
 msgid "quarter"
 msgstr "四分之一"
 
-#: options.php:1654
+#: options.php:1661
 msgid "half"
 msgstr "一半"
 
-#: options.php:1655
+#: options.php:1662
 msgid "less"
 msgstr "少量"
 
-#: options.php:1659
+#: options.php:1666
 msgid "Wave Effects"
 msgstr "波浪特效"
 
-#: options.php:1666
+#: options.php:1673
 msgid "Footer Suspension Player Default Volume"
 msgstr "頁尾音樂播放器默認音量"
 
-#: options.php:1667
+#: options.php:1674
 msgid "Maximum 1 minimum 0"
 msgstr "最大值1，最小值0.1"
 
-#: options.php:1674
+#: options.php:1681
 msgid "live2D"
 msgstr "Live2D 看板娘"
 
-#: options.php:1681
+#: options.php:1688
 msgid "Live2D Custom Resource Address"
 msgstr "Live2D 看板娘 自訂 地址"
 
-#: options.php:1682
+#: options.php:1689
 msgid "Fill in Live2D Custom Resource Address"
 msgstr "填寫 Live2D 看板娘 自訂 地址"
 
-#: options.php:1688
+#: options.php:1695
 msgid "Live2D Custom Resource Version"
 msgstr "Live2D 看板娘 自訂 版本"
 
-#: options.php:1689
+#: options.php:1696
 msgid "Fill in Live2D Custom Resource Version"
 msgstr "填寫 Live2D 看板娘 自訂 版本"
 
-#: options.php:1696
+#: options.php:1703
 msgid "Drop-down Arrow"
 msgstr "首頁下拉箭頭"
 
-#: options.php:1703
+#: options.php:1710
 msgid "Turn off Drop-down Arrow Mobile Display"
 msgstr "首頁下拉箭頭 移動端"
 
-#: options.php:1704
+#: options.php:1711
 msgid "Check by default, cancel opening"
 msgstr "默認勾選（關閉），取消勾選以開啟"
 
-#: options.php:1710
+#: options.php:1717
 msgid "A Brief Remark"
 msgstr "頁尾隨機話語功能"
 
-#: options.php:1717
+#: options.php:1724
 msgid "Load Occupancy Query"
 msgstr "負載佔用查詢"
 
-#: options.php:1724
+#: options.php:1731
 msgid "One Word Typing Effect of Home Page"
 msgstr "首頁簽名欄打字效果"
 
-#: options.php:1731
+#: options.php:1738
 msgid "Double Quotation Marks for Typing Effect"
 msgstr "首頁簽名欄打字效果雙引號"
 
-#: options.php:1738
+#: options.php:1745
 msgid "Typewriting Effect Text"
 msgstr "打字效果文字"
 
-#: options.php:1739
+#: options.php:1746
 msgid ""
 "Fill in the text part of the typing effect (double quotation marks must be "
 "used outside the text, and English commas shall be used to separate the two "
@@ -2173,157 +2177,157 @@ msgstr ""
 "寫打字效果文字部分(文字外必須使用英文雙引號，二句話之間使用英文逗號隔開，支持"
 "HTML標籤）"
 
-#: options.php:1745
+#: options.php:1752
 msgid "Homepage One Word Blogger Description"
 msgstr "首頁簽名欄文字"
 
-#: options.php:1746 options.php:1753
+#: options.php:1753 options.php:1760
 msgid "A self description"
 msgstr "一段自我描述的話"
 
-#: options.php:1752
+#: options.php:1759
 msgid "Blog Description at the end of The Article"
 msgstr "文章末尾作者簽名欄"
 
-#: options.php:1759
+#: options.php:1766
 msgid "Note Effects"
 msgstr "音符觸動效果"
 
-#: options.php:1766
+#: options.php:1773
 msgid "Logo Special Effects"
 msgstr "Logo特效"
 
-#: options.php:1773
+#: options.php:1780
 msgid "Logo Text A"
 msgstr "Logo文字A"
 
-#: options.php:1774
+#: options.php:1781
 msgid "Fill in the front part of your logo text"
 msgstr "填寫你的Logo文字前部分"
 
-#: options.php:1780
+#: options.php:1787
 msgid "Logo Text B"
 msgstr "Logo文字B"
 
-#: options.php:1781
+#: options.php:1788
 msgid "Fill in the middle part of your logo text"
 msgstr "填寫你的Logo文字中部部分"
 
-#: options.php:1787
+#: options.php:1794
 msgid "Logo Text C"
 msgstr "Logo文字C"
 
-#: options.php:1788
+#: options.php:1795
 msgid "Fill in the back of your logo"
 msgstr "填寫你的Logo文字後部分"
 
-#: options.php:1794
+#: options.php:1801
 msgid "Logo Secondary Text"
 msgstr "Logo二級文字"
 
-#: options.php:1795
+#: options.php:1802
 msgid "Fill in the secondary text of your logo."
 msgstr "填寫你的Logo二級文字，不需要可以不填"
 
-#: options.php:1801
+#: options.php:1808
 msgid "Morse"
 msgstr "滑鼠"
 
-#: options.php:1812
+#: options.php:1819
 msgid "Custom Mouse Style - Standard"
 msgstr "自訂滑鼠樣式-標準"
 
-#: options.php:1813
+#: options.php:1820
 msgid "Apply to global, fill in link."
 msgstr "應用於全局，填寫Cur滑鼠文件連結"
 
-#: options.php:1819
+#: options.php:1826
 msgid "Custom Mouse Style - Selected"
 msgstr "自訂滑鼠樣式-選定"
 
-#: options.php:1820
+#: options.php:1827
 msgid "Return to the above for PC"
 msgstr "應用於多種樣式"
 
-#: options.php:1826
+#: options.php:1833
 msgid "Custom Mouse Style - Selected Elements"
 msgstr "自訂滑鼠樣式-選中元素"
 
-#: options.php:1827
+#: options.php:1834
 msgid "Used to select a place"
 msgstr "用作選中某個地方"
 
-#: options.php:1833
+#: options.php:1840
 msgid "Custom Mouse Style - Selected Text"
 msgstr "自訂滑鼠樣式-選中文本"
 
-#: options.php:1834
+#: options.php:1841
 msgid "Used to select a Text"
 msgstr "用作選中文本"
 
-#: options.php:1840
+#: options.php:1847
 msgid "Custom Mouse Style - Working State"
 msgstr "自訂滑鼠樣式-工作狀態"
 
-#: options.php:1841
+#: options.php:1848
 msgid "Used to working condition"
 msgstr "用作在載入地方"
 
-#: options.php:1848
+#: options.php:1855
 msgid "Fonts"
 msgstr "｜字體"
 
-#: options.php:1852
+#: options.php:1859
 msgid "Fonts-Setting"
 msgstr "字體設置"
 
-#: options.php:1863
+#: options.php:1870
 msgid "Custom"
 msgstr "自訂"
 
-#: options.php:1874
+#: options.php:1881
 msgid "Fontweight"
 msgstr "全局字重（除強調部分）"
 
-#: options.php:1875
+#: options.php:1882
 msgid ""
 "Fill in a number, maximum 900, minimum 100. Between 300 and 500 is "
 "recommended."
 msgstr "填寫數字，最大值900，最小值100，300到500之間是推薦值"
 
-#: options.php:1882
+#: options.php:1889
 msgid "Reference External Font"
 msgstr "引用外部字體（可能影響性能）"
 
-#: options.php:1889
+#: options.php:1896
 msgid "External Font Address"
 msgstr "外部字體地址"
 
-#: options.php:1890
+#: options.php:1897
 msgid "Fill in font address."
 msgstr "填寫外部字體地址"
 
-#: options.php:1896
+#: options.php:1903
 msgid "External Font Name"
 msgstr "外部字體名稱"
 
-#: options.php:1897
+#: options.php:1904
 msgid "Fill in the font name."
 msgstr "填寫字體名稱"
 
-#: options.php:1903
+#: options.php:1910
 msgid "Google Fonts Api Address"
 msgstr "Google 字體 API地址"
 
-#: options.php:1904
+#: options.php:1911
 msgid "Fill in Google Fonts API Address"
 msgstr "填寫 Google 字體 API地址"
 
-#: options.php:1910
+#: options.php:1917
 msgid "Google Fonts Name"
 msgstr "Google 字體 名稱"
 
-#: options.php:1911
+#: options.php:1918
 msgid ""
 "Please make sure that the fonts you add can be referenced in Google font "
 "library. Fill in the font name. If multiple fonts are referenced, please use "
@@ -2333,84 +2337,84 @@ msgstr ""
 "有”|“。如果引用多個字體，請使用“|”作為分割符。例：|ZCOOL+XiaoWei|Ma+Shan"
 "+Zheng （如果）字體名稱有空格，請用加號替代"
 
-#: options.php:1917
+#: options.php:1924
 msgid "Global Default Font"
 msgstr "全局默認字體（字體A）"
 
-#: options.php:1918 options.php:1925 options.php:1932 options.php:1939
-#: options.php:1946
+#: options.php:1925 options.php:1932 options.php:1939 options.php:1946
+#: options.php:1953
 msgid "Fill in font name"
 msgstr "填寫字體名稱。例：Ma Shan Zheng"
 
-#: options.php:1924
+#: options.php:1931
 msgid "Global Font 2"
 msgstr "全局字體B"
 
-#: options.php:1931
+#: options.php:1938
 msgid "Front Page Title Font"
 msgstr "首頁區塊標題字體"
 
-#: options.php:1938
+#: options.php:1945
 msgid "Front Page One Word Font"
 msgstr "首頁簽名欄字體"
 
-#: options.php:1945
+#: options.php:1952
 msgid "Front Page Key Title Font"
 msgstr "首頁區塊標題字體"
 
-#: options.php:1952
+#: options.php:1959
 msgid "Size"
 msgstr "大小"
 
-#: options.php:1963
+#: options.php:1970
 msgid "Global Fontsize"
 msgstr "全局字體大小"
 
-#: options.php:1964 options.php:1988
+#: options.php:1971 options.php:1995
 msgid "Fill in Number. Between 10 and 20 is recommended"
 msgstr "填寫數字，10到20之間是推薦值"
 
-#: options.php:1971
+#: options.php:1978
 msgid "Article Title Size"
 msgstr "首頁文章標題字體大小"
 
-#: options.php:1972
+#: options.php:1979
 msgid "Fill in Number. Between 15 and 20 is recommended"
 msgstr "填寫數字，15到20之間是推薦值"
 
-#: options.php:1979
+#: options.php:1986
 msgid "Article Tips Size"
 msgstr "首頁文章提示字體大小"
 
-#: options.php:1980
+#: options.php:1987
 msgid "Fill in Number. Between 10 and 15 is recommended"
 msgstr "填寫數字，10到15之間是推薦值"
 
-#: options.php:1987
+#: options.php:1994
 msgid "Front Page One Word FontSize"
 msgstr "首頁一言字體大小"
 
-#: options.php:1995
+#: options.php:2002
 msgid "Font Size of The First Key Title"
 msgstr "首頁關鍵標題字體大小"
 
-#: options.php:1996
+#: options.php:2003
 msgid "Fill in Number. Between 70 and 90 is recommended"
 msgstr "填寫數字，70到90之間是推薦值"
 
-#: options.php:2003
+#: options.php:2010
 msgid "Article Page Title Size"
 msgstr "文章頁標題字體大小"
 
-#: options.php:2004
+#: options.php:2011
 msgid "Fill in Number. Between 25 and 30 is recommended"
 msgstr "填寫數字，25到30之間是推薦值"
 
-#: options.php:2022
+#: options.php:2029
 msgid "Logo Font Link"
 msgstr "Logo字體連結"
 
-#: options.php:2023
+#: options.php:2030
 msgid ""
 "When the font is ready, do this again <a href = \"https://www.fontke.com/"
 "tool/fontface/\">@font-face生成器</a>It can generate a bunch of files, which "
@@ -2424,274 +2428,274 @@ msgstr ""
 "的樣式表文件連結 <a href = \"https://blog.ukenn.top/sakura6/#toc-head-4\">詳"
 "細教學</a>"
 
-#: options.php:2029
+#: options.php:2036
 msgid "Logo Font Name"
 msgstr "Logo字體名稱"
 
-#: options.php:2030
+#: options.php:2037
 msgid ""
 "Fill in the font name of your logo, write the name directly without the "
 "format suffix"
 msgstr "填寫你的Logo字體名稱，直接寫名字不用加格式後綴"
 
-#: options.php:2037
+#: options.php:2044
 msgid "Theme"
 msgstr "｜主題"
 
-#: options.php:2041
+#: options.php:2048
 msgid "Theme-Setting"
 msgstr "主題設置"
 
-#: options.php:2052
+#: options.php:2059
 msgid "Display Icon Selection"
 msgstr "顯示圖示風格選擇"
 
-#: options.php:2053
+#: options.php:2060
 msgid "Choose icon color"
 msgstr "選擇圖示顏色"
 
-#: options.php:2058
+#: options.php:2065
 msgid "「Default Color」Sakura（FB98C0+87B6FA）"
 msgstr "「默認」櫻花配色（FB98C0+87B6FA）"
 
-#: options.php:2059
+#: options.php:2066
 msgid "「Common Colors」Pink（EE9CA7）"
 msgstr "「普通」粉色（EE9CA7）"
 
-#: options.php:2060
+#: options.php:2067
 msgid "「Common Colors」Orange（FF8000）"
 msgstr "「普通」橙色（FF8000）"
 
-#: options.php:2061
+#: options.php:2068
 msgid "「Nippon Colors」Hanaasagi（1E88A8）"
 msgstr "「日系」花淺蔥色（1E88A8）"
 
-#: options.php:2062
+#: options.php:2069
 msgid "「Nippon Colors」Beniukon（E98B2A）"
 msgstr "「日系」紅鬱金色（E98B2A）"
 
-#: options.php:2063
+#: options.php:2070
 msgid "「Nippon Colors」Sangosyu（F17C67）"
 msgstr "「日系」珊瑚朱色（F17C67）"
 
-#: options.php:2064
+#: options.php:2071
 msgid "「Nippon Colors」Sora（58B2DC）"
 msgstr "「日系」空色（58B2DC）"
 
-#: options.php:2065
+#: options.php:2072
 msgid "「Nippon Colors」Nae（86C166）"
 msgstr "「日系」苗色（86C166）"
 
-#: options.php:2066
+#: options.php:2073
 msgid "「Macaron Colors」Blue（B8F1ED）"
 msgstr "「馬卡龍色系」藍色（B8F1ED）"
 
-#: options.php:2067
+#: options.php:2074
 msgid "「Macaron Colors」Green（B8F1CC）"
 msgstr "「馬卡龍色系」綠色（B8F1CC）"
 
-#: options.php:2068
+#: options.php:2075
 msgid "「Macaron Colors」Purple（D9B8F1）"
 msgstr "「馬卡龍色系」紫色（D9B8F1）"
 
-#: options.php:2069
+#: options.php:2076
 msgid "「Others」ColorFul"
 msgstr "「其他」多彩"
 
-#: options.php:2073
+#: options.php:2080
 msgid "Theme Color"
 msgstr "主題色"
 
-#: options.php:2076 options.php:2084 options.php:2102 options.php:2121
-#: options.php:2328
+#: options.php:2083 options.php:2091 options.php:2109 options.php:2128
+#: options.php:2335
 msgid "Custom theme color"
 msgstr "自訂主題顏色"
 
-#: options.php:2081
+#: options.php:2088
 msgid "Theme Color Matching Color"
 msgstr "主題色搭配色"
 
-#: options.php:2089
+#: options.php:2096
 msgid "Theme Light Color Management"
 msgstr "主題淡配色管理"
 
-#: options.php:2094
+#: options.php:2101
 msgid "Merge Options"
 msgstr "合併選項（下方部分選項將失效）"
 
-#: options.php:2095
+#: options.php:2102
 msgid "Separation Options"
 msgstr "分離選項（下方部分選項將生效）"
 
-#: options.php:2099
+#: options.php:2106
 msgid "Theme Color (Light)"
 msgstr "主題色（淡配色）"
 
-#: options.php:2107
+#: options.php:2114
 msgid "Darkmode"
 msgstr "深色模式"
 
-#: options.php:2118
+#: options.php:2125
 msgid "Theme Color (Dark mode)"
 msgstr "主題色（深色模式）"
 
-#: options.php:2126
+#: options.php:2133
 msgid "Automatic Switching Dark Mode (22:00-7:00)"
 msgstr "自動切換深色模式（22:00-7:00）"
 
-#: options.php:2133
+#: options.php:2140
 msgid "Image Brightness in Dark Mode"
 msgstr "深色模式圖像亮度"
 
-#: options.php:2141
+#: options.php:2148
 msgid "Dark Mode Widget Transparency"
 msgstr "深色模式部件透明度"
 
-#: options.php:2144 options.php:2191 options.php:2227 options.php:2319
+#: options.php:2151 options.php:2198 options.php:2234 options.php:2326
 msgid "Fill in the alpha value from 0 to 1 here"
 msgstr "填寫 0~1 的透明度值"
 
-#: options.php:2150
+#: options.php:2157
 msgid "Homepage"
 msgstr "首頁"
 
-#: options.php:2161
+#: options.php:2168
 msgid "Information Bar Background Color (RGBA) Red"
 msgstr "訊息欄背景顏色（RGBA 紅）"
 
-#: options.php:2164 options.php:2200 options.php:2292
+#: options.php:2171 options.php:2207 options.php:2299
 msgid "Fill in the red value from 0 to 255 here"
 msgstr "填寫 0~255 的紅色值"
 
-#: options.php:2170
+#: options.php:2177
 msgid "Information Bar Background Color (RGBA) Green"
 msgstr "訊息欄背景顏色（RGBA 綠）"
 
-#: options.php:2173 options.php:2209 options.php:2301
+#: options.php:2180 options.php:2216 options.php:2308
 msgid "Fill in the green value from 0 to 255 here"
 msgstr "填寫 0~255 的綠色值"
 
-#: options.php:2179
+#: options.php:2186
 msgid "Information Bar Background Color (RGBA) Blue"
 msgstr "訊息欄背景顏色（RGBA 藍）"
 
-#: options.php:2182 options.php:2218 options.php:2310
+#: options.php:2189 options.php:2225 options.php:2317
 msgid "Fill in the blue value from 0 to 255 here"
 msgstr "填寫 0~255 的藍色值"
 
-#: options.php:2188
+#: options.php:2195
 msgid "Information Bar Background Color (RGBA) Alpha"
 msgstr "訊息欄背景顏色（RGBA 透明度）"
 
-#: options.php:2197
+#: options.php:2204
 msgid "Foreground Menu background Color (RGBA) Red"
 msgstr "前台設置菜單背景顏色（RGBA 紅）"
 
-#: options.php:2206
+#: options.php:2213
 msgid "Foreground Menu background Color (RGBA) Green"
 msgstr "前台設置菜單背景顏色（RGBA 綠）"
 
-#: options.php:2215
+#: options.php:2222
 msgid "Foreground Menu background Color (RGBA) Blue"
 msgstr "前台設置菜單背景顏色（RGBA 藍）"
 
-#: options.php:2224
+#: options.php:2231
 msgid "Foreground Menu background Color (RGBA) Alpha"
 msgstr "前台設置菜單背景顏色（RGBA 透明度）"
 
-#: options.php:2233
+#: options.php:2240
 msgid ""
 "Foreground Selection Menu Background Color (Light colors are recommended)"
 msgstr "前台設置菜單選項背景顏色（建議使用淡配色）"
 
-#: options.php:2236 options.php:2244 options.php:2252 options.php:2260
-#: options.php:2268 options.php:2276 options.php:2284 options.php:2336
-#: options.php:2344
+#: options.php:2243 options.php:2251 options.php:2259 options.php:2267
+#: options.php:2275 options.php:2283 options.php:2291 options.php:2343
+#: options.php:2351
 msgid "Custom colors"
 msgstr "自訂顏色"
 
-#: options.php:2241
+#: options.php:2248
 msgid "Home Page Article Separator (Light colors are recommended)"
 msgstr "首頁文章分割符顏色（建議使用淡配色）"
 
-#: options.php:2249
+#: options.php:2256
 msgid ""
 "Home Page Article Time Prompt Emphasize Background (Light colors are "
 "recommended)"
 msgstr "首頁文章時間提示強調背景顏色（建議使用淡配色）"
 
-#: options.php:2257
+#: options.php:2264
 msgid "Home Page Article Border Shadow (Light colors are recommended)"
 msgstr "首頁文章邊框陰影顏色（建議使用淡配色）"
 
-#: options.php:2265
+#: options.php:2272
 msgid "Drop Down Arrow Color (Light colors are recommended)"
 msgstr "下箭頭顏色（建議使用淡配色）"
 
-#: options.php:2273
+#: options.php:2280
 msgid "Home Page Article Time Prompt Accent (Theme colors are recommended)"
 msgstr "首頁文章時間提示強調文字顏色（建議使用主題色）"
 
-#: options.php:2281
+#: options.php:2288
 msgid "Home Page Article Prompt Icon Color (Theme colors are recommended)"
 msgstr "首頁文章提示圖示顏色（建議使用主題色）"
 
-#: options.php:2289
+#: options.php:2296
 msgid "Home Page Focus Background Color (RGBA) Red"
 msgstr "首頁聚焦背景顏色（RGBA 紅）"
 
-#: options.php:2298
+#: options.php:2305
 msgid "Home Page Focus Background Color (RGBA) Green"
 msgstr "首頁聚焦背景顏色（RGBA 綠）"
 
-#: options.php:2307
+#: options.php:2314
 msgid "Home Page Focus Background Color (RGBA) Blue"
 msgstr "首頁聚焦背景顏色（RGBA 藍）"
 
-#: options.php:2316
+#: options.php:2323
 msgid "Home Page Focus Background Color (RGBA) Alpha"
 msgstr "首頁聚焦背景顏色（RGBA 透明度）"
 
-#: options.php:2325
+#: options.php:2332
 msgid "Home Page Key Title Font Color"
 msgstr "首頁文字Logo字體顏色"
 
-#: options.php:2333
+#: options.php:2340
 msgid "Preload Animation Color A"
 msgstr "預載入動畫顏色A"
 
-#: options.php:2341
+#: options.php:2348
 msgid "Preload Animation Color B"
 msgstr "預載入動畫顏色B"
 
-#: options.php:2349
+#: options.php:2356
 msgid "Backstage Color"
 msgstr "後台"
 
-#: options.php:2360
+#: options.php:2367
 msgid "Backstage Main Color (Primary menu)"
 msgstr "後台主題色（一級菜單）"
 
-#: options.php:2363 options.php:2371 options.php:2379 options.php:2387
-#: options.php:2395
+#: options.php:2370 options.php:2378 options.php:2386 options.php:2394
+#: options.php:2402
 msgid "Custom color"
 msgstr "自訂顏色"
 
-#: options.php:2368
+#: options.php:2375
 msgid "Backstage Main Color (Secondary menu)"
 msgstr "後台主題色（二級菜單）"
 
-#: options.php:2376
+#: options.php:2383
 msgid ""
 "Backstage Accent Color (For Example, The Prompt Color is Included in This "
 "Option)"
 msgstr "後台強調色（比如提示色）"
 
-#: options.php:2384
+#: options.php:2391
 msgid "Backstage Button Color"
 msgstr "後台默認按鈕顏色"
 
-#: options.php:2392
+#: options.php:2399
 msgid "Backstage Font Color"
 msgstr "後台默認字體顏色"
 
