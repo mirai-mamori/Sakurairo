@@ -857,6 +857,20 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
+        'name' => __('Steam', 'sakurairo'), 
+        'desc' => __('Steam address', 'sakurairo'), 
+        'id' => 'steam',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('LinkedIn', 'sakurairo'), 
+        'desc' => __('LinkedIn address', 'sakurairo'), 
+        'id' => 'linkedin',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
         'name' => __('Twitter', 'sakurairo'),
         'desc' => __('Twitter address', 'sakurairo'), 
         'id' => 'twitter',
@@ -888,6 +902,34 @@ function optionsframework_options()
         'name' => __('Zhihu', 'sakurairo'), 
         'desc' => __('Zhihu address', 'sakurairo'), 
         'id' => 'zhihu',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Social DIY1', 'sakurairo'), 
+        'desc' => __('Social DIY1 address', 'sakurairo'), 
+        'id' => 'socialdiy1',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Social DIY1 Icon', 'sakurairo'), 
+        'desc' => __('Social DIY1 Icon address', 'sakurairo'), 
+        'id' => 'socialdiyp1',
+        'std' => '',
+        'type' => 'text');    
+
+    $options[] = array(
+        'name' => __('Social DIY2', 'sakurairo'), 
+        'desc' => __('Social DIY2 address', 'sakurairo'), 
+        'id' => 'socialdiy2',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Social DIY2 Icon', 'sakurairo'), 
+        'desc' => __('Social DIY2 Icon address', 'sakurairo'), 
+        'id' => 'socialdiyp2',
         'std' => '',
         'type' => 'text');
 

@@ -74,6 +74,12 @@
                 <?php if (akina_option('wangyiyun')){ ?>
                 <li><a href="<?php echo akina_option('wangyiyun', ''); ?>" target="_blank" class="social-wangyiyun" title="CloudMusic"><img src="<?php echo akina_option('webweb_img'); ?>/sns/ncm.png"/></a></li>
                 <?php } ?>
+                <?php if (akina_option('steam')){ ?>
+                <li><a href="<?php echo akina_option('steam', ''); ?>" target="_blank" class="social-wangyiyun" title="Steam"><img src="<?php echo akina_option('webweb_img'); ?>/sns/st.png"/></a></li>
+                <?php } ?>
+                <?php if (akina_option('linkedin')){ ?>
+                <li><a href="<?php echo akina_option('linkedin', ''); ?>" target="_blank" class="social-wangyiyun" title="LinkedIn"><img src="<?php echo akina_option('webweb_img'); ?>/sns/lk.png"/></a></li>
+                <?php } ?>		
                 <?php if (akina_option('twitter')){ ?>
                 <li><a href="<?php echo akina_option('twitter', ''); ?>" target="_blank" class="social-wangyiyun" title="Twitter"><img src="<?php echo akina_option('webweb_img'); ?>/sns/tw.png"/></a></li>
                 <?php } ?>	
@@ -88,7 +94,13 @@
                 <?php } ?>	
                 <?php if (akina_option('csdn')){ ?>
                 <li><a href="<?php echo akina_option('csdn', ''); ?>" target="_blank" class="social-wangyiyun" title="CSDN"><img src="<?php echo akina_option('webweb_img'); ?>/sns/csdn.png"/></a></li>
-                <?php } ?>		
+                <?php } ?>
+                <?php if (akina_option('socialdiy1')){ ?>
+                <li><a href="<?php echo akina_option('socialdiy1', ''); ?>" target="_blank" class="social-wangyiyun" title="DIY1"><img src="<?php echo akina_option('socialdiyp1'); ?>"/></a></li>
+                <?php } ?>
+                <?php if (akina_option('socialdiy2')){ ?>
+                <li><a href="<?php echo akina_option('socialdiy2', ''); ?>" target="_blank" class="social-wangyiyun" title="DIY2"><img src="<?php echo akina_option('socialdiyp2'); ?>"/></a></li>
+                <?php } ?>							
                 <?php if (akina_option('email_name') && akina_option('email_domain')){ ?>
                 <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img src="<?php echo akina_option('webweb_img'); ?>/sns/mail.png"/></a></li>
                 <?php } ?>	
@@ -137,6 +149,12 @@
 		<?php if (akina_option('wangyiyun')){ ?>
 		<li><a href="<?php echo akina_option('wangyiyun', ''); ?>" target="_blank" class="social-wangyiyun" title="CloudMusic"><img src="<?php echo akina_option('webweb_img'); ?>/sns/ncm.png"/></a></li>
 		<?php } ?>
+        <?php if (akina_option('steam')){ ?>
+        <li><a href="<?php echo akina_option('steam', ''); ?>" target="_blank" class="social-wangyiyun" title="Steam"><img src="<?php echo akina_option('webweb_img'); ?>/sns/st.png"/></a></li>
+        <?php } ?>
+        <?php if (akina_option('linkedin')){ ?>
+        <li><a href="<?php echo akina_option('linkedin', ''); ?>" target="_blank" class="social-wangyiyun" title="LinkedIn"><img src="<?php echo akina_option('webweb_img'); ?>/sns/lk.png"/></a></li>
+        <?php } ?>
 		<?php if (akina_option('twitter')){ ?>
 		<li><a href="<?php echo akina_option('twitter', ''); ?>" target="_blank" class="social-wangyiyun" title="Twitter"><img src="<?php echo akina_option('webweb_img'); ?>/sns/tw.png"/></a></li>
 		<?php } ?>	
@@ -151,7 +169,13 @@
 		<?php } ?>	
 		<?php if (akina_option('csdn')){ ?>
 		<li><a href="<?php echo akina_option('csdn', ''); ?>" target="_blank" class="social-wangyiyun" title="CSDN"><img src="<?php echo akina_option('webweb_img'); ?>/sns/csdn.png"/></a></li>
-		<?php } ?>		
+		<?php } ?>
+        <?php if (akina_option('socialdiy1')){ ?>
+        <li><a href="<?php echo akina_option('socialdiy1', ''); ?>" target="_blank" class="social-wangyiyun" title="DIY1"><img src="<?php echo akina_option('socialdiyp1'); ?>"/></a></li>
+        <?php } ?>
+        <?php if (akina_option('socialdiy2')){ ?>
+        <li><a href="<?php echo akina_option('socialdiy2', ''); ?>" target="_blank" class="social-wangyiyun" title="DIY2"><img src="<?php echo akina_option('socialdiyp2'); ?>"/></a></li>
+        <?php } ?>	
 		<?php if (akina_option('email_name') && akina_option('email_domain')){ ?>
 		<li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img src="<?php echo akina_option('webweb_img'); ?>/sns/mail.png"/></a></li>
 		<?php } ?>	
