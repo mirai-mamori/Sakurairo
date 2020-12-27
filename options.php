@@ -1705,6 +1705,13 @@ function optionsframework_options()
             ));
 
     $options[] = array(
+        'name' => __('Yuki Falling Effect', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'yukijs',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
         'name' => __('Wave Effects', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
         'id' => 'bolangcss',
