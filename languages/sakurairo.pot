@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-12-27 21:58+0800\n"
+"POT-Creation-Date: 2020-12-27 22:48+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1446,7 +1446,7 @@ msgstr ""
 msgid "Close Foreground Login Entry"
 msgstr ""
 
-#: options.php:1123 options.php:1130 options.php:1137
+#: options.php:1123 options.php:1130
 msgid "Check off by default"
 msgstr ""
 
@@ -1456,6 +1456,10 @@ msgstr ""
 
 #: options.php:1136
 msgid "Top Menu Arrow"
+msgstr ""
+
+#: options.php:1137
+msgid "Check off. It is checked by default"
 msgstr ""
 
 #: options.php:1143

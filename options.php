@@ -1134,9 +1134,9 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Top Menu Arrow', 'sakurairo'), 
-        'desc' => __('Check off by default', 'sakurairo'), 
+        'desc' => __('Check off. It is checked by default', 'sakurairo'), 
         'id' => 'meun-arrow',
-        'std' => '0',
+        'std' => '1',
         'type' => 'checkbox');   
 
     $options[] = array(

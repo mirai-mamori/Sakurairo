@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-12-27 21:59+0800\n"
-"PO-Revision-Date: 2020-12-27 22:00+0800\n"
+"POT-Creation-Date: 2020-12-27 22:49+0800\n"
+"PO-Revision-Date: 2020-12-27 22:49+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -1488,7 +1488,7 @@ msgstr "填寫0.1到1之間的數字"
 msgid "Close Foreground Login Entry"
 msgstr "前台登錄入口"
 
-#: options.php:1123 options.php:1130 options.php:1137
+#: options.php:1123 options.php:1130
 msgid "Check off by default"
 msgstr "默認不勾選（關閉）"
 
@@ -1499,6 +1499,10 @@ msgstr "搜尋圖示正常大小"
 #: options.php:1136
 msgid "Top Menu Arrow"
 msgstr "頂部菜單箭頭"
+
+#: options.php:1137
+msgid "Check off. It is checked by default"
+msgstr "勾選關閉，默認勾選"
 
 #: options.php:1143
 msgid "Footer Float Music Player"
