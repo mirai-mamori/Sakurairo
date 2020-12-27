@@ -1712,6 +1712,17 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
+        'name' => __('Yuki Falling Quantity', 'sakurairo'), 
+        'desc' => __('Two kinds of quantity, default native quantity', 'sakurairo'), 
+        'id' => 'yuki-falling-quantity',
+        'std' => 'native',
+        'type' => 'select',
+        'options' => array(
+            'native' => __('native', 'sakurairo'),
+            'half' => __('half', 'sakurairo'),
+            ));
+
+    $options[] = array(
         'name' => __('Wave Effects', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
         'id' => 'bolangcss',

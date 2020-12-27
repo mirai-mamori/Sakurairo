@@ -173,7 +173,7 @@
 
 <!-- 雪花飘落动效 -->
 <?php if (akina_option('yukijs', '1')): ?>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.2.7/static/js/yuki.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/js/yuki-<?php echo akina_option('yuki-falling-quantity'); ?>.js"></script>
 <?php endif; ?>
 
 <!-- 首页波浪特效 -->
