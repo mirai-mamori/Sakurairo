@@ -1405,6 +1405,7 @@ li.link-item {
 .post-list-thumb .post-thumb a {
     border-radius: 10px 0 0 10px
 }
+
 <?php }if(akina_option('feature_align') == 'alternate'){ ?>
 .post-list-thumb:nth-child(2n) .post-content-wrap {
     float: left;
@@ -1422,6 +1423,12 @@ li.link-item {
 }
 <?php } ?>
 
+<?php if (akina_option('hpage-tta', '1')): ?>
+h1.fes-title,
+h1.main-title {
+    text-align: center;
+}
+<?php endif; ?>
 
 
 </style>

@@ -514,6 +514,13 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
+        'name' => __('Home Page Title Text Align', 'sakurairo'), 
+        'desc' => __('If checked, it will be in the middle and not checked by default', 'sakurairo'),
+        'id' => 'hpage-tta',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
         'name' => __('Home Page Post Feature Image Options', 'sakurairo'), 
         'desc' => __('Select how to call the post featue image, only for the post without feature image', 'sakurairo'), 
         'id' => 'post_cover_options',
@@ -2009,7 +2016,7 @@ function optionsframework_options()
         'type' => 'text');        
     
     $options[] = array(
-        'name' => __('Front Page Key Title Font', 'sakurairo'), 
+        'name' => __('Front Page Text Logo Font', 'sakurairo'), 
         'desc' => __('Fill in font name', 'sakurairo'),
         'id' => 'keytitlefont',
         'std' => '',

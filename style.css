@@ -3783,7 +3783,8 @@ li.feature-2 {
 .headertop {
     position: relative;
     overflow: hidden;
-    height: 0
+    height: 0;
+    border-radius: 0 0 20px 20px;
 }
 
 .headertop::before {
@@ -3807,7 +3808,7 @@ li.feature-2 {
 }
 
 .headertop.filter-grid::before {
-    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.2.5/vision/basic/grid.png)
+    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.2.8/vision/basic/grid.png)
 }
 
 .headertop.filter-dot::before {
@@ -3816,7 +3817,7 @@ li.feature-2 {
 
 @media (max-width:860px) {
     .headertop.filter-dot::before {
-        background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.2.5/vision/basic/grid.png)
+        background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.2.8/vision/basic/grid.png)
     }
 }
 
@@ -5848,7 +5849,7 @@ i.iconfont.down {
     overflow: hidden;
     animation: header-user-menu .4s;
     box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
-    border-radius: 5px;
+    border-radius: 15px;
     text-align: center
 }
 
