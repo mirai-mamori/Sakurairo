@@ -1133,6 +1133,13 @@ function optionsframework_options()
         'type' => 'checkbox');   
 
     $options[] = array(
+        'name' => __('Top Menu Arrow', 'sakurairo'), 
+        'desc' => __('Check off by default', 'sakurairo'), 
+        'id' => 'meun-arrow',
+        'std' => '0',
+        'type' => 'checkbox');   
+
+    $options[] = array(
         'name' => __('Footer Float Music Player', 'sakurairo'), 
         'desc' => __('Choose which platform you\'ll use.', 'sakurairo'),
         'id' => 'aplayer_server',

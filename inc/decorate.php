@@ -1372,6 +1372,9 @@ display:none;
 i.iconfont.js-toggle-search.iconsearch {
     font-size: 25px;
 }
+.lower li ul {
+    right: -13px;
+}
 <?php endif; ?>
 
 <?php if (akina_option('friend_center', '0')): ?>
@@ -1430,6 +1433,14 @@ h1.main-title {
 }
 <?php endif; ?>
 
+<?php if (akina_option('meun-arrow', '0')): ?>
+.header-user-menu::before {
+    display: none;
+}
+.lower li ul::before {
+    display: none;
+}
+<?php endif; ?>
 
 </style>
 <?php }

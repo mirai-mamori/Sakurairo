@@ -1253,18 +1253,18 @@ a:hover {
     display: none;
     opacity: 1;
     position: absolute;
-    background: #fff;
+    background: rgba(255, 255, 255, .95);
     padding: 10px;
-    top: 46px;
-    right: -13px;
+    top: 50px;
+    right: -24px;
     min-width: 80px;
     text-align: center;
     white-space: nowrap;
     z-index: 9999;
-    border-radius: 5px;
-    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
-    -webkit-animation: fadeInUp .3s .1s ease both;
-    -moz-animation: fadeInUp .3s .1s ease both
+    border-radius: 15px;
+    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .2);
+    -webkit-animation: fadeInUp 1.2s 0.6s ease both;
+    -moz-animation: fadeInUp 1.2s 0.6s ease both
 }
 
 .lower li ul::before {
@@ -5842,15 +5842,14 @@ i.iconfont.down {
     position: absolute;
     width: 110px;
     right: -11px;
-    text-align: left;
     background: 0 0;
     top: 44px;
     display: none;
     overflow: hidden;
-    animation: header-user-menu .4s;
-    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .5);
+    animation: header-user-menu .8s;
+    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .2);
     border-radius: 15px;
-    text-align: center
+    text-align: center;
 }
 
 .header-user-menu::before {
