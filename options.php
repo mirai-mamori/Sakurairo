@@ -680,13 +680,23 @@ function optionsframework_options()
             );         
     
     $options[] = array(
-        'name' => __('Post Style', 'sakurairo'), 
+        'name' => __('Article Typesetting Style', 'sakurairo'), 
         'id' => 'entry_content_theme',
         'std' => "sakurairo",
         'type' => "radio",
         'options' => array(
             'sakurairo' => __('Default Style', 'sakurairo'), 
             'github' => __('GitHub Style', 'sakurairo'),
+        ));
+
+    $options[] = array(
+        'name' => __('Page Style', 'sakurairo'),
+        'id' => 'page-style',
+        'std' => "sakurairo",
+        'type' => "radio",
+        'options' => array(
+            'sakurairo' => __('Default Style', 'sakurairo'), 
+            'sakura' => __('Sakura Style', 'sakurairo'), 
         ));
 
     $options[] = array(

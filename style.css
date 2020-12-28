@@ -733,7 +733,8 @@ a:hover {
     top: 0;
     left: 0;
     width: 100%;
-    overflow: hidden
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
 }
 
 .pattern-center::before {
@@ -1029,7 +1030,8 @@ a:hover {
     transition: all .4s ease;
     position: fixed;
     z-index: 9999;
-    top: 0
+    top: 0;
+    border-radius: 0 0 20px 20px;
 }
 
 .yya {
@@ -1319,7 +1321,7 @@ a:hover {
 }
 
 .site-main {
-    padding: 40px 0 0
+    padding: 60px 0 0
 }
 
 .site-content.notransition {
@@ -1509,7 +1511,7 @@ i.iconfont.hotpost {
 
 @media (max-width:860px) {
     .site-main {
-        padding: 15px 0 0
+        padding: 40px 0 0
     }
 }
 

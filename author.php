@@ -18,7 +18,7 @@ get_header();
 		overflow: hidden;
     	padding: 40px 0;
     	position: relative;
-    	border-bottom: 1px solid #eee;
+    	border-bottom: 6px dotted #eee;
     	font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
 	}
 	.author_info .avatar{
@@ -38,8 +38,8 @@ get_header();
 	}
 	.author_info .author-center h3{
 		font-weight: 700;
-    	font-size: 20px;
-    	line-height: 1.2;
+    	font-size: 30px;
+    	line-height: 1;
     	margin-bottom: 5px;
     	display: inline;
 	}

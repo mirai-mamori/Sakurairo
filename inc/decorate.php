@@ -446,6 +446,9 @@ h1.fes-title,
 h1.main-title {
     border-bottom: 6px dotted <?php echo akina_option('hpage-art-sc'); ?>;
 }
+.author_info {
+    border-bottom: 6px dotted <?php echo akina_option('hpage-art-sc'); ?>;
+}
 .post-date {
     background-color: <?php echo akina_option('hpage-art-tpebc'); ?>;
 }
@@ -466,7 +469,11 @@ color: <?php echo akina_option('hpage-ket-tfc'); ?>;
     background-color: <?php echo akina_option('light-color'); ?>;
 }
 h1.fes-title,
-h1.main-title {
+h1.main-title 
+{
+    border-bottom: 6px dotted <?php echo akina_option('light-color'); ?>;
+}
+.author_info{
     border-bottom: 6px dotted <?php echo akina_option('light-color'); ?>;
 }
 .post-date {
@@ -1423,6 +1430,25 @@ li.link-item {
 
 .post-list-thumb:nth-child(2n) .post-thumb a {
     border-radius: 10px 0 0 10px
+}
+<?php } ?>
+
+<?php if(akina_option('page-style') == 'sakurairo'){ ?>
+.pattern-center::after {
+    display:none;
+}
+.pattern-center-blank {
+    display:none;
+}
+
+<?php }if(akina_option('page-style') == 'sakura'){ ?>
+.pattern-center {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0px;
+    overflow: hidden;
 }
 <?php } ?>
 
