@@ -3685,15 +3685,15 @@ h1.main-title {
 
 .top-feature img {
     height: 160px;
-    width: 258px;
+    width: 260px;
     border-radius: 10px
 }
 
 .top-feature li {
-    width: 258px;
+    width: 260px;
     height: 160px;
     float: left;
-    margin: 6px 9px 0px 9px;
+    margin: 6px 7px 0px 7px;
     position: relative;
     display: block;
     border-radius: 15px;
@@ -3757,20 +3757,19 @@ li.feature-2 {
 
 .notice {
     padding: 20px;
-    border: 1px dashed #E6E6E6;
+    border: 1px solid #E6E6E6;
     color: #969696;
     position: relative;
     display: inline-block;
     width: 100%;
-    background: #fbfbfb50;
-    border-radius: 10px
+    border-radius: 15px;
 }
 
 .notice i {
     float: left;
     color: #999;
     font-size: 18px;
-    padding-right: 10px
+    padding-right: 15px
 }
 
 .notice-content {
@@ -7965,17 +7964,17 @@ a.toc-link {
 
 .the-feature img {
     height: 160px;
-    width: 258px
+    width: 260px
 }
 
 .the-feature.from_left_and_right {
     position: relative;
     height: 160px;
-    width: 258px;
+    width: 260px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
     overflow: hidden;
     border-radius: 15px;
-    margin: 6px 6px 0px 6px;
+    margin: 6px 6.5px 0 6.5px;
 }
 
 .the-feature.from_left_and_right .img {

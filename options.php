@@ -514,6 +514,23 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
+        'name' => __('Announcement Background Style', 'sakurairo'),
+        'id' => 'announcebg-style',
+        'std' => "original",
+        'type' => "radio",
+        'options' => array(
+            'link' => __('External Links', 'sakurairo'), 
+            'original' => __('Original', 'sakurairo'), 
+        ));
+
+    $options[] = array(
+        'name' => __('Announcement Background External Link', 'sakurairo'),
+        'desc' => __('Fill in the URL', 'sakurairo'), 
+        'id' => 'announcement_bg',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
         'name' => __('Home Page Title Text Align', 'sakurairo'), 
         'desc' => __('If checked, it will be in the middle and not checked by default', 'sakurairo'),
         'id' => 'hpage-tta',
@@ -564,6 +581,13 @@ function optionsframework_options()
         ));
 
     $options[] = array(
+        'name' => __('Focus Area Compatibility Mode', 'sakurairo'), 
+        'desc' => __('If you select the left and right alternate focus area style, you can check to turn on this option. This option will solve the problem of focus dislocation', 'sakurairo'),
+        'id' => 'focus-area-cmode',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
         'name' => __('Focus Area Title', 'sakurairo'), 
         'desc' => __('Default is 聚焦, you can also change it to other, of course you can\'t use it as an advertisement!Not allowed!!', 'sakurairo'), 
         'id' => 'focus-area-title',
@@ -573,7 +597,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Focus Area First Image', 'sakurairo'), 
-        'desc' => __('size 258px*160px', 'sakurairo'), 
+        'desc' => __('size 260px*160px', 'sakurairo'), 
         'id' => 'feature1_img',
         'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/focus.png",
         'type' => 'upload');
@@ -601,7 +625,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Focus Area Second Image', 'sakurairo'), 
-        'desc' => __('size 258px*160px', 'sakurairo'), 
+        'desc' => __('size 260px*160px', 'sakurairo'), 
         'id' => 'feature2_img',
         'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/focus.png",
         'type' => 'upload');
@@ -629,7 +653,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Focus Area Third Image', 'sakurairo'), 
-        'desc' => __('size 258px*160px', 'sakurairo'), 
+        'desc' => __('size 260px*160px', 'sakurairo'), 
         'id' => 'feature3_img',
         'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/focus.png",
         'type' => 'upload');
@@ -2416,6 +2440,22 @@ function optionsframework_options()
         'name' => __('Home Page Key Title Font Color', 'sakurairo'), 
         'id' => 'hpage-ket-tfc',
         'std' => "#FFF",
+        'desc' => __('Custom theme color', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Home Page Announcement Font Color', 'sakurairo'), 
+        'id' => 'hpage-afc',
+        'std' => "#999",
+        'desc' => __('Custom theme color', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Home Page Announcement Border Color', 'sakurairo'), 
+        'id' => 'hpage-abc',
+        'std' => "#E6E6E6",
         'desc' => __('Custom theme color', 'sakurairo'), 
         'type' => "color",
     );

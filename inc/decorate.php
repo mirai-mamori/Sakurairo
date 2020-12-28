@@ -487,6 +487,15 @@ color: <?php echo akina_option('light-color'); ?>;
 }
 <?php endif; ?>
 
+.notice i ,
+.notice {
+    color: <?php echo akina_option('hpage-afc'); ?>;
+}
+
+.notice {
+    border: 1px solid <?php echo akina_option('hpage-abc'); ?>;
+}
+
 <?php if(akina_option('entry_content_theme') == "sakurairo"){ ?>
 .entry-content th {
     background-color: <?php echo akina_option('theme_skin'); ?>
@@ -1467,6 +1476,35 @@ h1.main-title {
     display: none;
 }
 <?php endif; ?>
+
+<?php if (akina_option('focus-area-cmode', '1')): ?>
+.the-feature.from_left_and_right {
+    position: relative;
+    height: 160px;
+    width: 258px;
+    margin: 6px 6px 0 6px;
+}
+
+.the-feature img {
+    height: 160px;
+    width: 258px;
+}
+<?php endif; ?>
+
+<?php if(akina_option('announcebg-style') == 'link'){ ?>
+.notice {
+    background-image:url(<?php echo akina_option('announcement_bg', ''); ?>);
+    border: none;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+}
+
+<?php }if(akina_option('announcebg-style') == 'original'){ ?>
+.notice {
+    background: #fbfbfb50;
+}
+
+<?php } ?>
+
 
 </style>
 <?php }
