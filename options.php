@@ -519,8 +519,8 @@ function optionsframework_options()
         'std' => "original",
         'type' => "radio",
         'options' => array(
-            'link' => __('External Links', 'sakurairo'), 
-            'original' => __('Original', 'sakurairo'), 
+            'picture' => __('Picture', 'sakurairo'), 
+            'pure' => __('Pure Colour', 'sakurairo'), 
         ));
 
     $options[] = array(
@@ -2456,7 +2456,7 @@ function optionsframework_options()
         'name' => __('Home Page Announcement Border Color', 'sakurairo'), 
         'id' => 'hpage-abc',
         'std' => "#E6E6E6",
-        'desc' => __('Custom theme color', 'sakurairo'), 
+        'desc' => __('Custom theme color(Only takes effect when the announcement style is set to original)', 'sakurairo'), 
         'type' => "color",
     );
 

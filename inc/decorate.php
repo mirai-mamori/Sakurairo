@@ -1491,14 +1491,14 @@ h1.main-title {
 }
 <?php endif; ?>
 
-<?php if(akina_option('announcebg-style') == 'link'){ ?>
+<?php if(akina_option('announcebg-style') == 'picture'){ ?>
 .notice {
     background-image:url(<?php echo akina_option('announcement_bg', ''); ?>);
     border: none;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
 }
 
-<?php }if(akina_option('announcebg-style') == 'original'){ ?>
+<?php }if(akina_option('announcebg-style') == 'pure'){ ?>
 .notice {
     background: #fbfbfb50;
 }

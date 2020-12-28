@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-12-28 16:04+0800\n"
-"PO-Revision-Date: 2020-12-28 16:04+0800\n"
+"POT-Creation-Date: 2020-12-28 16:24+0800\n"
+"PO-Revision-Date: 2020-12-28 16:24+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -948,20 +948,20 @@ msgid "Announcement Background Style"
 msgstr "公告背景风格"
 
 #: options.php:522
-msgid "External Links"
-msgstr "外部链接"
+msgid "Picture"
+msgstr "图片背景"
 
 #: options.php:523
-msgid "Original"
-msgstr "原生"
+msgid "Pure Colour"
+msgstr "纯色背景"
 
 #: options.php:527
 msgid "Announcement Background External Link"
-msgstr "公告背景图片URL"
+msgstr "公告图片背景地址"
 
 #: options.php:528 options.php:1228
 msgid "Fill in the URL"
-msgstr "填写URL"
+msgstr "填写地址"
 
 #: options.php:534
 msgid "Home Page Title Text Align"
@@ -2621,7 +2621,7 @@ msgid "Theme Color"
 msgstr "主题色"
 
 #: options.php:2191 options.php:2199 options.php:2217 options.php:2236
-#: options.php:2443 options.php:2451 options.php:2459
+#: options.php:2443 options.php:2451
 msgid "Custom theme color"
 msgstr "自定义主题颜色"
 
@@ -2781,6 +2781,12 @@ msgstr "首页公告字体颜色"
 #: options.php:2456
 msgid "Home Page Announcement Border Color"
 msgstr "首页公告边框颜色"
+
+#: options.php:2459
+msgid ""
+"Custom theme color(Only takes effect when the announcement style is set to "
+"original)"
+msgstr "自定义颜色（仅在公告风格设置为纯色背景的时候生效）"
 
 #: options.php:2464
 msgid "Preload Animation Color A"
@@ -3026,6 +3032,12 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr ""
+
+#~ msgid "External Links"
+#~ msgstr "图片背景"
+
+#~ msgid "Original"
+#~ msgstr "纯色背景"
 
 #~ msgid "Page Features Image Style"
 #~ msgstr "页面样式"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-12-28 16:03+0800\n"
+"POT-Creation-Date: 2020-12-28 16:24+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -913,11 +913,11 @@ msgid "Announcement Background Style"
 msgstr ""
 
 #: options.php:522
-msgid "External Links"
+msgid "Picture"
 msgstr ""
 
 #: options.php:523
-msgid "Original"
+msgid "Pure Colour"
 msgstr ""
 
 #: options.php:527
@@ -2510,7 +2510,7 @@ msgid "Theme Color"
 msgstr ""
 
 #: options.php:2191 options.php:2199 options.php:2217 options.php:2236 options.php:2443
-#: options.php:2451 options.php:2459
+#: options.php:2451
 msgid "Custom theme color"
 msgstr ""
 
@@ -2665,6 +2665,10 @@ msgstr ""
 
 #: options.php:2456
 msgid "Home Page Announcement Border Color"
+msgstr ""
+
+#: options.php:2459
+msgid "Custom theme color(Only takes effect when the announcement style is set to original)"
 msgstr ""
 
 #: options.php:2464
