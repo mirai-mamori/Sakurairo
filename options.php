@@ -516,7 +516,7 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Announcement Background Style', 'sakurairo'),
         'id' => 'announcebg-style',
-        'std' => "original",
+        'std' => "pure",
         'type' => "radio",
         'options' => array(
             'picture' => __('Picture', 'sakurairo'), 
