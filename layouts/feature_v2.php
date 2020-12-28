@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="top-feature-v2">
-        <div class="the-feature square from_left_and_right" style="margin: 0 4.5px">
+        <div class="the-feature square from_left_and_right">
             <a href="<?php echo akina_option('feature2_link', '#'); ?>" target="_blank">
                 <div class="img"><img src="<?php echo akina_option('feature2_img', ''); ?>"></div>
                 <div class="info">

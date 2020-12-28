@@ -3685,16 +3685,19 @@ h1.main-title {
 
 .top-feature img {
     height: 160px;
-    width: 257px;
+    width: 258px;
     border-radius: 10px
 }
 
 .top-feature li {
-    width: 32.9%;
+    width: 258px;
+    height: 160px;
     float: left;
-    margin: 0 auto;
+    margin: 6px 9px 0px 9px;
     position: relative;
-    display: block
+    display: block;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
 }
 
 li.feature-2 {
@@ -7939,7 +7942,7 @@ a.toc-link {
 
 .the-feature {
     position: relative;
-    left: 22px;
+    left: 0px;
     -webkit-transition: all .35s ease-in-out;
     -moz-transition: all .35s ease-in-out;
     transition: all .35s ease-in-out
@@ -7962,16 +7965,17 @@ a.toc-link {
 
 .the-feature img {
     height: 160px;
-    width: 257px
+    width: 258px
 }
 
 .the-feature.from_left_and_right {
     position: relative;
     height: 160px;
-    width: 253px;
+    width: 258px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
     overflow: hidden;
-    border-radius: 10px
+    border-radius: 15px;
+    margin: 6px 6px 0px 6px;
 }
 
 .the-feature.from_left_and_right .img {

@@ -573,7 +573,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Focus Area First Image', 'sakurairo'), 
-        'desc' => __('size 257px*160px', 'sakurairo'), 
+        'desc' => __('size 258px*160px', 'sakurairo'), 
         'id' => 'feature1_img',
         'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/focus.png",
         'type' => 'upload');
@@ -601,7 +601,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Focus Area Second Image', 'sakurairo'), 
-        'desc' => __('size 257px*160px', 'sakurairo'), 
+        'desc' => __('size 258px*160px', 'sakurairo'), 
         'id' => 'feature2_img',
         'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/focus.png",
         'type' => 'upload');
@@ -629,7 +629,7 @@ function optionsframework_options()
 
     $options[] = array(
         'name' => __('Focus Area Third Image', 'sakurairo'), 
-        'desc' => __('size 257px*160px', 'sakurairo'), 
+        'desc' => __('size 258px*160px', 'sakurairo'), 
         'id' => 'feature3_img',
         'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/focus.png",
         'type' => 'upload');
