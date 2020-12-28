@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-12-27 22:48+0800\n"
-"PO-Revision-Date: 2020-12-27 22:49+0800\n"
+"POT-Creation-Date: 2020-12-28 10:10+0800\n"
+"PO-Revision-Date: 2020-12-28 10:11+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -255,7 +255,7 @@ msgstr "图像"
 msgid "no image"
 msgstr "暂无"
 
-#: inc/classes/Cache.php:70 inc/theme_plus.php:727
+#: inc/classes/Cache.php:70 inc/theme_plus.php:716
 msgid "The comment is private"
 msgstr "这是一条私密评论"
 
@@ -1618,7 +1618,7 @@ msgstr "后台背景图"
 
 #: options.php:1244
 msgid "Login Interface Background Image"
-msgstr "后台登陆界面背景图"
+msgstr "后台登录界面背景图"
 
 #: options.php:1245
 msgid "Use the default image if left this blank"
@@ -1630,7 +1630,7 @@ msgstr "后台登录界面背景虚化"
 
 #: options.php:1257
 msgid "Login Interface Logo"
-msgstr "后台登陆界面Logo"
+msgstr "后台登录界面Logo"
 
 #: options.php:1258
 msgid "Used for login interface display"
@@ -1638,7 +1638,7 @@ msgstr "用于登录界面显示"
 
 #: options.php:1264
 msgid "Login/Registration Related Settings"
-msgstr "登陆/注册相关设定"
+msgstr "登录/注册相关设定"
 
 #: options.php:1271
 msgid "Specify Login Address"
@@ -1651,7 +1651,7 @@ msgid ""
 "fill out, test your new page can be opened normally, so as not to enter the "
 "background or other problems happening"
 msgstr ""
-"强制不使用后台地址登陆，填写新建的登陆页面地址，比如 http://www.xxx.com/"
+"强制不使用后台地址登录，填写新建的登陆页面地址，比如 http://www.xxx.com/"
 "login【注意】填写前先测试下你新建的页面是可以正常打开的，以免造成无法进入后台"
 "等情况"
 

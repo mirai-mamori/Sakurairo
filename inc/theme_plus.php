@@ -206,7 +206,7 @@ add_action('wp_ajax_ajax_comment', 'siren_ajax_comment_callback');
 
 
 /*
- * 前台登陆
+ * 前台登录
  */
 // 指定登录页面
 if(akina_option('exlogin_url')){
@@ -220,7 +220,7 @@ if(akina_option('exlogin_url')){
   }
 }
 
-// 登陆跳转
+// 登录跳转
 function Exuser_center(){ ?>
   <script language='javascript' type='text/javascript'> 
     var secs = 5; //倒计时的秒数 
@@ -699,17 +699,6 @@ function siren_request( $query_vars ){
     }
     return $query_vars;
 }
- 
-// Replace a user name in a link with a nickname
-add_filter( 'author_link', 'siren_author_link', 10, 3 );
-function siren_author_link( $link, $author_id, $author_nicename ){
-    $author_nickname = get_user_meta( $author_id, 'nickname', true );
-    if ( $author_nickname ) {
-        $link = str_replace( $author_nicename, $author_nickname, $link );
-    }
-    return $link;
-}
-
 
 /*
  * 私密评论
