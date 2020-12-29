@@ -1491,6 +1491,12 @@ h1.main-title {
 }
 <?php endif; ?>
 
+<?php if (akina_option('annou-tta', '1')): ?>
+.notice {
+    text-align: center;
+}
+<?php endif; ?>
+
 <?php if(akina_option('announcebg-style') == 'picture'){ ?>
 .notice {
     background-image:url(<?php echo akina_option('announcement_bg', ''); ?>);

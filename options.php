@@ -531,6 +531,13 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
+        'name' => __('Announcement Text Align', 'sakurairo'), 
+        'desc' => __('If checked, it will be in the middle and not checked by default', 'sakurairo'),
+        'id' => 'annou-tta',
+        'std' => '0',
+        'type' => 'checkbox');
+        
+    $options[] = array(
         'name' => __('Home Page Title Text Align', 'sakurairo'), 
         'desc' => __('If checked, it will be in the middle and not checked by default', 'sakurairo'),
         'id' => 'hpage-tta',
