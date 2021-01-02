@@ -1199,7 +1199,7 @@ function optionsframework_options()
         'name' => __('Song List ID', 'sakurairo'),
         'desc' => __('Fill in the "song list" ID, eg: https://music.163.com/#/playlist?id=3124382377 The ID is 3124382377', 'sakurairo'),
         'id' => 'aplayer_playlistid',
-        'std' => '3124382377',
+        'std' => '5380675133',
         'type' => 'text');
     
     $options[] = array(
