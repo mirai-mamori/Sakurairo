@@ -1424,13 +1424,6 @@ function optionsframework_options()
         'type' => 'text');
     
     $options[] = array(
-        'name' => __('CNZZ Statistics (Not Recommand)', 'sakurairo'), 
-        'desc' => __('Statistics code, which will be invisible in web page.', 'sakurairo'), 
-        'id' => 'site_statistics',
-        'std' => '',
-        'type' => 'textarea');
-    
-    $options[] = array(
         'name' => __('Customize CSS Styles', 'sakurairo'), 
         'desc' => __('Fill in the CSS code directly, no need to write style tags', 'sakurairo'), 
         'id' => 'site_custom_style',
