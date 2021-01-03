@@ -439,13 +439,15 @@ function optionsframework_options()
         'id' => 'cover_cdn_mobile',
         'std' => 'https://api.uomg.com/api/rand.img2?sort=二次元&format=images',
         'type' => 'text');
-    
+
+   /*         
     $options[] = array(
         'name' => __('Full-Screen Display', 'sakurairo'), 
         'desc' => __('Default on, check off', 'sakurairo'), 
         'id' => 'focus_height',
         'std' => '0',
         'type' => 'checkbox');
+   */
 
     $options[] = array(
         'name' => __('Cover Video', 'sakurairo'),
