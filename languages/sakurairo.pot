@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2020-12-29 13:04+0800\n"
+"POT-Creation-Date: 2021-01-03 13:43+0800\n"
 "PO-Revision-Date: 2019-11-01 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -188,8 +188,8 @@ msgstr ""
 #: options.php:338 options.php:493 options.php:704 options.php:829 options.php:1005
 #: options.php:1016 options.php:1097 options.php:1145 options.php:1268 options.php:1306
 #: options.php:1360 options.php:1371 options.php:1396 options.php:1485 options.php:1708
-#: options.php:1719 options.php:1924 options.php:1975 options.php:1986 options.php:2075
-#: options.php:2134 options.php:2164 options.php:2230 options.php:2273 options.php:2488
+#: options.php:1719 options.php:1908 options.php:1959 options.php:1970 options.php:2059
+#: options.php:2118 options.php:2148 options.php:2214 options.php:2257 options.php:2472
 msgid " "
 msgstr ""
 
@@ -1446,9 +1446,9 @@ msgid "Homepage Animation"
 msgstr ""
 
 #: options.php:1108 options.php:1115 options.php:1122 options.php:1737 options.php:1744
-#: options.php:1764 options.php:1782 options.php:1797 options.php:1819 options.php:1833
-#: options.php:1840 options.php:1847 options.php:1854 options.php:1882 options.php:1889
-#: options.php:2005 options.php:2249
+#: options.php:1766 options.php:1781 options.php:1803 options.php:1817 options.php:1824
+#: options.php:1831 options.php:1838 options.php:1866 options.php:1873 options.php:1989
+#: options.php:2233
 msgid "Check open"
 msgstr ""
 
@@ -1464,7 +1464,7 @@ msgstr ""
 msgid "Homepage Animation Time"
 msgstr ""
 
-#: options.php:1129 options.php:1137 options.php:2256
+#: options.php:1129 options.php:1137 options.php:2240
 msgid "Fill in Number"
 msgstr ""
 
@@ -1472,7 +1472,7 @@ msgstr ""
 msgid "Article Title Animation Time"
 msgstr ""
 
-#: options.php:1144 options.php:1395 options.php:2133
+#: options.php:1144 options.php:1395 options.php:2117
 msgid "Others"
 msgstr ""
 
@@ -2090,346 +2090,342 @@ msgid "Preload Animation"
 msgstr ""
 
 #: options.php:1743
-msgid "Cherry Blossom Falling Effect"
+msgid "Falling Effect"
 msgstr ""
 
 #: options.php:1750
-msgid "Cherry Blossom Falling Quantity"
+msgid "Falling Type and Quantity"
 msgstr ""
 
 #: options.php:1751
-msgid "Four kinds of quantity, default native quantity"
+msgid "Two Types are Available"
 msgstr ""
 
-#: options.php:1756 options.php:1776
-msgid "native"
+#: options.php:1756
+msgid "Sakura Native"
 msgstr ""
 
 #: options.php:1757
-msgid "quarter"
+msgid "Sakura Quarter"
 msgstr ""
 
-#: options.php:1758 options.php:1777
-msgid "half"
+#: options.php:1758
+msgid "Sakura Half"
 msgstr ""
 
 #: options.php:1759
-msgid "less"
+msgid "Sakura Less"
 msgstr ""
 
-#: options.php:1763
-msgid "Yuki Falling Effect"
+#: options.php:1760
+msgid "Yuki Native"
 msgstr ""
 
-#: options.php:1770
-msgid "Yuki Falling Quantity"
+#: options.php:1761
+msgid "Yuki Half"
 msgstr ""
 
-#: options.php:1771
-msgid "Two kinds of quantity, default native quantity"
-msgstr ""
-
-#: options.php:1781
+#: options.php:1765
 msgid "Wave Effects"
 msgstr ""
 
-#: options.php:1788
+#: options.php:1772
 msgid "Footer Suspension Player Default Volume"
 msgstr ""
 
-#: options.php:1789
+#: options.php:1773
 msgid "Maximum 1 minimum 0"
 msgstr ""
 
-#: options.php:1796
+#: options.php:1780
 msgid "live2D"
 msgstr ""
 
-#: options.php:1803
+#: options.php:1787
 msgid "Live2D Custom Resource Address"
 msgstr ""
 
-#: options.php:1804
+#: options.php:1788
 msgid "Fill in Live2D Custom Resource Address"
 msgstr ""
 
-#: options.php:1810
+#: options.php:1794
 msgid "Live2D Custom Resource Version"
 msgstr ""
 
-#: options.php:1811
+#: options.php:1795
 msgid "Fill in Live2D Custom Resource Version"
 msgstr ""
 
-#: options.php:1818
+#: options.php:1802
 msgid "Drop-down Arrow"
 msgstr ""
 
-#: options.php:1825
+#: options.php:1809
 msgid "Turn off Drop-down Arrow Mobile Display"
 msgstr ""
 
-#: options.php:1826
+#: options.php:1810
 msgid "Check by default, cancel opening"
 msgstr ""
 
-#: options.php:1832
+#: options.php:1816
 msgid "A Brief Remark"
 msgstr ""
 
-#: options.php:1839
+#: options.php:1823
 msgid "Load Occupancy Query"
 msgstr ""
 
-#: options.php:1846
+#: options.php:1830
 msgid "One Word Typing Effect of Home Page"
 msgstr ""
 
-#: options.php:1853
+#: options.php:1837
 msgid "Double Quotation Marks for Typing Effect"
 msgstr ""
 
-#: options.php:1860
+#: options.php:1844
 msgid "Typewriting Effect Text"
 msgstr ""
 
-#: options.php:1861
+#: options.php:1845
 msgid ""
 "Fill in the text part of the typing effect (double quotation marks must be used outside the "
 "text, and English commas shall be used to separate the two sentences. Support for HTML tags)"
 msgstr ""
 
-#: options.php:1867
+#: options.php:1851
 msgid "Homepage One Word Blogger Description"
 msgstr ""
 
-#: options.php:1868 options.php:1875
+#: options.php:1852 options.php:1859
 msgid "A self description"
 msgstr ""
 
-#: options.php:1874
+#: options.php:1858
 msgid "Blog Description at the end of The Article"
 msgstr ""
 
-#: options.php:1881
+#: options.php:1865
 msgid "Note Effects"
 msgstr ""
 
-#: options.php:1888
+#: options.php:1872
 msgid "Logo Special Effects"
 msgstr ""
 
-#: options.php:1895
+#: options.php:1879
 msgid "Logo Text A"
 msgstr ""
 
-#: options.php:1896
+#: options.php:1880
 msgid "Fill in the front part of your logo text"
 msgstr ""
 
-#: options.php:1902
+#: options.php:1886
 msgid "Logo Text B"
 msgstr ""
 
-#: options.php:1903
+#: options.php:1887
 msgid "Fill in the middle part of your logo text"
 msgstr ""
 
-#: options.php:1909
+#: options.php:1893
 msgid "Logo Text C"
 msgstr ""
 
-#: options.php:1910
+#: options.php:1894
 msgid "Fill in the back of your logo"
 msgstr ""
 
-#: options.php:1916
+#: options.php:1900
 msgid "Logo Secondary Text"
 msgstr ""
 
-#: options.php:1917
+#: options.php:1901
 msgid "Fill in the secondary text of your logo."
 msgstr ""
 
-#: options.php:1923
+#: options.php:1907
 msgid "Morse"
 msgstr ""
 
-#: options.php:1934
+#: options.php:1918
 msgid "Custom Mouse Style - Standard"
 msgstr ""
 
-#: options.php:1935
+#: options.php:1919
 msgid "Apply to global, fill in link."
 msgstr ""
 
-#: options.php:1941
+#: options.php:1925
 msgid "Custom Mouse Style - Selected"
 msgstr ""
 
-#: options.php:1942
+#: options.php:1926
 msgid "Return to the above for PC"
 msgstr ""
 
-#: options.php:1948
+#: options.php:1932
 msgid "Custom Mouse Style - Selected Elements"
 msgstr ""
 
-#: options.php:1949
+#: options.php:1933
 msgid "Used to select a place"
 msgstr ""
 
-#: options.php:1955
+#: options.php:1939
 msgid "Custom Mouse Style - Selected Text"
 msgstr ""
 
-#: options.php:1956
+#: options.php:1940
 msgid "Used to select a Text"
 msgstr ""
 
-#: options.php:1962
+#: options.php:1946
 msgid "Custom Mouse Style - Working State"
 msgstr ""
 
-#: options.php:1963
+#: options.php:1947
 msgid "Used to working condition"
 msgstr ""
 
-#: options.php:1970
+#: options.php:1954
 msgid "Fonts"
 msgstr ""
 
-#: options.php:1974
+#: options.php:1958
 msgid "Fonts-Setting"
 msgstr ""
 
-#: options.php:1985
+#: options.php:1969
 msgid "Custom"
 msgstr ""
 
-#: options.php:1996
+#: options.php:1980
 msgid "Fontweight"
 msgstr ""
 
-#: options.php:1997
+#: options.php:1981
 msgid "Fill in a number, maximum 900, minimum 100. Between 300 and 500 is recommended."
 msgstr ""
 
-#: options.php:2004
+#: options.php:1988
 msgid "Reference External Font"
 msgstr ""
 
-#: options.php:2011
+#: options.php:1995
 msgid "External Font Address"
 msgstr ""
 
-#: options.php:2012
+#: options.php:1996
 msgid "Fill in font address."
 msgstr ""
 
-#: options.php:2018
+#: options.php:2002
 msgid "External Font Name"
 msgstr ""
 
-#: options.php:2019
+#: options.php:2003
 msgid "Fill in the font name."
 msgstr ""
 
-#: options.php:2025
+#: options.php:2009
 msgid "Google Fonts Api Address"
 msgstr ""
 
-#: options.php:2026
+#: options.php:2010
 msgid "Fill in Google Fonts API Address"
 msgstr ""
 
-#: options.php:2032
+#: options.php:2016
 msgid "Google Fonts Name"
 msgstr ""
 
-#: options.php:2033
+#: options.php:2017
 msgid ""
 "Please make sure that the fonts you add can be referenced in Google font library. Fill in the "
 "font name. If multiple fonts are referenced, please use \"|\" as the separator."
 msgstr ""
 
-#: options.php:2039
+#: options.php:2023
 msgid "Global Default Font"
 msgstr ""
 
-#: options.php:2040 options.php:2047 options.php:2054 options.php:2061 options.php:2068
+#: options.php:2024 options.php:2031 options.php:2038 options.php:2045 options.php:2052
 msgid "Fill in font name"
 msgstr ""
 
-#: options.php:2046
+#: options.php:2030
 msgid "Global Font 2"
 msgstr ""
 
-#: options.php:2053
+#: options.php:2037
 msgid "Front Page Title Font"
 msgstr ""
 
-#: options.php:2060
+#: options.php:2044
 msgid "Front Page One Word Font"
 msgstr ""
 
-#: options.php:2067
+#: options.php:2051
 msgid "Front Page Text Logo Font"
 msgstr ""
 
-#: options.php:2074
+#: options.php:2058
 msgid "Size"
 msgstr ""
 
-#: options.php:2085
+#: options.php:2069
 msgid "Global Fontsize"
 msgstr ""
 
-#: options.php:2086 options.php:2110
+#: options.php:2070 options.php:2094
 msgid "Fill in Number. Between 10 and 20 is recommended"
 msgstr ""
 
-#: options.php:2093
+#: options.php:2077
 msgid "Article Title Size"
 msgstr ""
 
-#: options.php:2094
+#: options.php:2078
 msgid "Fill in Number. Between 15 and 20 is recommended"
 msgstr ""
 
-#: options.php:2101
+#: options.php:2085
 msgid "Article Tips Size"
 msgstr ""
 
-#: options.php:2102
+#: options.php:2086
 msgid "Fill in Number. Between 10 and 15 is recommended"
 msgstr ""
 
-#: options.php:2109
+#: options.php:2093
 msgid "Front Page One Word FontSize"
 msgstr ""
 
-#: options.php:2117
+#: options.php:2101
 msgid "Font Size of The First Key Title"
 msgstr ""
 
-#: options.php:2118
+#: options.php:2102
 msgid "Fill in Number. Between 70 and 90 is recommended"
 msgstr ""
 
-#: options.php:2125
+#: options.php:2109
 msgid "Article Page Title Size"
 msgstr ""
 
-#: options.php:2126
+#: options.php:2110
 msgid "Fill in Number. Between 25 and 30 is recommended"
 msgstr ""
 
-#: options.php:2144
+#: options.php:2128
 msgid "Logo Font Link"
 msgstr ""
 
-#: options.php:2145
+#: options.php:2129
 msgid ""
 "When the font is ready, do this again <a href = \"https://www.fontke.com/tool/fontface/"
 "\">@font-face生成器</a>It can generate a bunch of files, which are all useful. It can be "
@@ -2437,277 +2433,277 @@ msgid ""
 "sheet file link <a href = \"https://blog.ukenn.top/sakura6/#toc-head-4\">Detailed tutorial</a>"
 msgstr ""
 
-#: options.php:2151
+#: options.php:2135
 msgid "Logo Font Name"
 msgstr ""
 
-#: options.php:2152
+#: options.php:2136
 msgid "Fill in the font name of your logo, write the name directly without the format suffix"
 msgstr ""
 
-#: options.php:2159
+#: options.php:2143
 msgid "Theme"
 msgstr ""
 
-#: options.php:2163
+#: options.php:2147
 msgid "Theme-Setting"
 msgstr ""
 
-#: options.php:2174
+#: options.php:2158
 msgid "Display Icon Selection"
 msgstr ""
 
-#: options.php:2175
+#: options.php:2159
 msgid "Choose icon color"
 msgstr ""
 
-#: options.php:2180
+#: options.php:2164
 msgid "「Default Color」Sakura（FB98C0+87B6FA）"
 msgstr ""
 
-#: options.php:2181
+#: options.php:2165
 msgid "「Common Colors」Pink（EE9CA7）"
 msgstr ""
 
-#: options.php:2182
+#: options.php:2166
 msgid "「Common Colors」Orange（FF8000）"
 msgstr ""
 
-#: options.php:2183
+#: options.php:2167
 msgid "「Nippon Colors」Hanaasagi（1E88A8）"
 msgstr ""
 
-#: options.php:2184
+#: options.php:2168
 msgid "「Nippon Colors」Beniukon（E98B2A）"
 msgstr ""
 
-#: options.php:2185
+#: options.php:2169
 msgid "「Nippon Colors」Sangosyu（F17C67）"
 msgstr ""
 
-#: options.php:2186
+#: options.php:2170
 msgid "「Nippon Colors」Sora（58B2DC）"
 msgstr ""
 
-#: options.php:2187
+#: options.php:2171
 msgid "「Nippon Colors」Nae（86C166）"
 msgstr ""
 
-#: options.php:2188
+#: options.php:2172
 msgid "「Macaron Colors」Blue（B8F1ED）"
 msgstr ""
 
-#: options.php:2189
+#: options.php:2173
 msgid "「Macaron Colors」Green（B8F1CC）"
 msgstr ""
 
-#: options.php:2190
+#: options.php:2174
 msgid "「Macaron Colors」Purple（D9B8F1）"
 msgstr ""
 
-#: options.php:2191
+#: options.php:2175
 msgid "「Others」ColorFul"
 msgstr ""
 
-#: options.php:2195
+#: options.php:2179
 msgid "Theme Color"
 msgstr ""
 
-#: options.php:2198 options.php:2206 options.php:2224 options.php:2243 options.php:2450
-#: options.php:2458
+#: options.php:2182 options.php:2190 options.php:2208 options.php:2227 options.php:2434
+#: options.php:2442
 msgid "Custom theme color"
 msgstr ""
 
-#: options.php:2203
+#: options.php:2187
 msgid "Theme Color Matching Color"
 msgstr ""
 
-#: options.php:2211
+#: options.php:2195
 msgid "Theme Light Color Management"
 msgstr ""
 
-#: options.php:2216
+#: options.php:2200
 msgid "Merge Options"
 msgstr ""
 
-#: options.php:2217
+#: options.php:2201
 msgid "Separation Options"
 msgstr ""
 
-#: options.php:2221
+#: options.php:2205
 msgid "Theme Color (Light)"
 msgstr ""
 
-#: options.php:2229
+#: options.php:2213
 msgid "Darkmode"
 msgstr ""
 
-#: options.php:2240
+#: options.php:2224
 msgid "Theme Color (Dark mode)"
 msgstr ""
 
-#: options.php:2248
+#: options.php:2232
 msgid "Automatic Switching Dark Mode (22:00-7:00)"
 msgstr ""
 
-#: options.php:2255
+#: options.php:2239
 msgid "Image Brightness in Dark Mode"
 msgstr ""
 
-#: options.php:2263
+#: options.php:2247
 msgid "Dark Mode Widget Transparency"
 msgstr ""
 
-#: options.php:2266 options.php:2313 options.php:2349 options.php:2441
+#: options.php:2250 options.php:2297 options.php:2333 options.php:2425
 msgid "Fill in the alpha value from 0 to 1 here"
 msgstr ""
 
-#: options.php:2272
+#: options.php:2256
 msgid "Homepage"
 msgstr ""
 
-#: options.php:2283
+#: options.php:2267
 msgid "Information Bar Background Color (RGBA) Red"
 msgstr ""
 
-#: options.php:2286 options.php:2322 options.php:2414
+#: options.php:2270 options.php:2306 options.php:2398
 msgid "Fill in the red value from 0 to 255 here"
 msgstr ""
 
-#: options.php:2292
+#: options.php:2276
 msgid "Information Bar Background Color (RGBA) Green"
 msgstr ""
 
-#: options.php:2295 options.php:2331 options.php:2423
+#: options.php:2279 options.php:2315 options.php:2407
 msgid "Fill in the green value from 0 to 255 here"
 msgstr ""
 
-#: options.php:2301
+#: options.php:2285
 msgid "Information Bar Background Color (RGBA) Blue"
 msgstr ""
 
-#: options.php:2304 options.php:2340 options.php:2432
+#: options.php:2288 options.php:2324 options.php:2416
 msgid "Fill in the blue value from 0 to 255 here"
 msgstr ""
 
-#: options.php:2310
+#: options.php:2294
 msgid "Information Bar Background Color (RGBA) Alpha"
 msgstr ""
 
-#: options.php:2319
+#: options.php:2303
 msgid "Foreground Menu background Color (RGBA) Red"
 msgstr ""
 
-#: options.php:2328
+#: options.php:2312
 msgid "Foreground Menu background Color (RGBA) Green"
 msgstr ""
 
-#: options.php:2337
+#: options.php:2321
 msgid "Foreground Menu background Color (RGBA) Blue"
 msgstr ""
 
-#: options.php:2346
+#: options.php:2330
 msgid "Foreground Menu background Color (RGBA) Alpha"
 msgstr ""
 
-#: options.php:2355
+#: options.php:2339
 msgid "Foreground Selection Menu Background Color (Light colors are recommended)"
 msgstr ""
 
-#: options.php:2358 options.php:2366 options.php:2374 options.php:2382 options.php:2390
-#: options.php:2398 options.php:2406 options.php:2474 options.php:2482
+#: options.php:2342 options.php:2350 options.php:2358 options.php:2366 options.php:2374
+#: options.php:2382 options.php:2390 options.php:2458 options.php:2466
 msgid "Custom colors"
 msgstr ""
 
-#: options.php:2363
+#: options.php:2347
 msgid "Home Page Article Separator (Light colors are recommended)"
 msgstr ""
 
-#: options.php:2371
+#: options.php:2355
 msgid "Home Page Article Time Prompt Emphasize Background (Light colors are recommended)"
 msgstr ""
 
-#: options.php:2379
+#: options.php:2363
 msgid "Home Page Article Border Shadow (Light colors are recommended)"
 msgstr ""
 
-#: options.php:2387
+#: options.php:2371
 msgid "Drop Down Arrow Color (Light colors are recommended)"
 msgstr ""
 
-#: options.php:2395
+#: options.php:2379
 msgid "Home Page Article Time Prompt Accent (Theme colors are recommended)"
 msgstr ""
 
-#: options.php:2403
+#: options.php:2387
 msgid "Home Page Article Prompt Icon Color (Theme colors are recommended)"
 msgstr ""
 
-#: options.php:2411
+#: options.php:2395
 msgid "Home Page Focus Background Color (RGBA) Red"
 msgstr ""
 
-#: options.php:2420
+#: options.php:2404
 msgid "Home Page Focus Background Color (RGBA) Green"
 msgstr ""
 
-#: options.php:2429
+#: options.php:2413
 msgid "Home Page Focus Background Color (RGBA) Blue"
 msgstr ""
 
-#: options.php:2438
+#: options.php:2422
 msgid "Home Page Focus Background Color (RGBA) Alpha"
 msgstr ""
 
-#: options.php:2447
+#: options.php:2431
 msgid "Home Page Key Title Font Color"
 msgstr ""
 
-#: options.php:2455
+#: options.php:2439
 msgid "Home Page Announcement Font Color"
 msgstr ""
 
-#: options.php:2463
+#: options.php:2447
 msgid "Home Page Announcement Border Color"
 msgstr ""
 
-#: options.php:2466
+#: options.php:2450
 msgid "Custom theme color(Only takes effect when the announcement style is set to original)"
 msgstr ""
 
-#: options.php:2471
+#: options.php:2455
 msgid "Preload Animation Color A"
 msgstr ""
 
-#: options.php:2479
+#: options.php:2463
 msgid "Preload Animation Color B"
 msgstr ""
 
-#: options.php:2487
+#: options.php:2471
 msgid "Backstage Color"
 msgstr ""
 
-#: options.php:2498
+#: options.php:2482
 msgid "Backstage Main Color (Primary menu)"
 msgstr ""
 
-#: options.php:2501 options.php:2509 options.php:2517 options.php:2525 options.php:2533
+#: options.php:2485 options.php:2493 options.php:2501 options.php:2509 options.php:2517
 msgid "Custom color"
 msgstr ""
 
-#: options.php:2506
+#: options.php:2490
 msgid "Backstage Main Color (Secondary menu)"
 msgstr ""
 
-#: options.php:2514
+#: options.php:2498
 msgid "Backstage Accent Color (For Example, The Prompt Color is Included in This Option)"
 msgstr ""
 
-#: options.php:2522
+#: options.php:2506
 msgid "Backstage Button Color"
 msgstr ""
 
-#: options.php:2530
+#: options.php:2514
 msgid "Backstage Font Color"
 msgstr ""
 

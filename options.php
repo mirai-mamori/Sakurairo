@@ -1740,41 +1740,25 @@ function optionsframework_options()
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Cherry Blossom Falling Effect', 'sakurairo'), 
+        'name' => __('Falling Effect', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'sakurajs',
-        'std' => '0',
-        'type' => 'checkbox');
-    
-    $options[] = array(
-        'name' => __('Cherry Blossom Falling Quantity', 'sakurairo'), 
-        'desc' => __('Four kinds of quantity, default native quantity', 'sakurairo'), 
-        'id' => 'sakura-falling-quantity',
-        'std' => 'native',
-        'type' => 'select',
-        'options' => array(
-            'native' => __('native', 'sakurairo'),
-            'quarter' => __('quarter', 'sakurairo'),
-            'half' => __('half', 'sakurairo'),
-            'less' => __('less', 'sakurairo'),
-            ));
-
-    $options[] = array(
-        'name' => __('Yuki Falling Effect', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'yukijs',
+        'id' => 'fallingjs',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Yuki Falling Quantity', 'sakurairo'), 
-        'desc' => __('Two kinds of quantity, default native quantity', 'sakurairo'), 
-        'id' => 'yuki-falling-quantity',
-        'std' => 'native',
+        'name' => __('Falling Type and Quantity', 'sakurairo'), 
+        'desc' => __('Two Types are Available', 'sakurairo'), 
+        'id' => 'falling-quantity',
+        'std' => 'sakura-native',
         'type' => 'select',
         'options' => array(
-            'native' => __('native', 'sakurairo'),
-            'half' => __('half', 'sakurairo'),
+            'sakura-native' => __('Sakura Native', 'sakurairo'),
+            'sakura-quarter' => __('Sakura Quarter', 'sakurairo'),
+            'sakura-half' => __('Sakura Half', 'sakurairo'),
+            'sakura-less' => __('Sakura Less', 'sakurairo'),
+            'yuki-native' => __('Yuki Native', 'sakurairo'),
+            'yuki-half' => __('Yuki Half', 'sakurairo'),
             ));
 
     $options[] = array(
