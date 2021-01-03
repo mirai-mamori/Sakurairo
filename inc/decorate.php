@@ -1136,7 +1136,7 @@ h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,.header-info 
 	animation: fadeInDown  <?php echo akina_option('hp-ani-t'); ?>s;
 }
 
-.site-top ul li a{
+.site-top ul {
 	-moz-animation: fadeInLeft  <?php echo akina_option('hp-ani-t'); ?>s;
     -webkit-animation:fadeInLeft  <?php echo akina_option('hp-ani-t'); ?>s;
 	animation: fadeInLeft  <?php echo akina_option('hp-ani-t'); ?>s;

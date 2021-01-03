@@ -1265,8 +1265,7 @@ a:hover {
     z-index: 9999;
     border-radius: 15px;
     box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .2);
-    -webkit-animation: fadeInUp 1.2s 0.6s ease both;
-    -moz-animation: fadeInUp 1.2s 0.6s ease both
+    animation: header-menu .8s;
 }
 
 .lower li ul::before {
@@ -1278,28 +1277,6 @@ a:hover {
     border-width: 10px;
     border-style: solid;
     border-color: transparent transparent #fff transparent
-}
-
-@-webkit-keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(10px)
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0)
-    }
-}
-
-@-moz-keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        -moz-transform: translateY(10px)
-    }
-    100% {
-        opacity: 1;
-        -moz-transform: translateY(0)
-    }
 }
 
 .lower li:hover ul {
@@ -5851,7 +5828,7 @@ i.iconfont.down {
     top: 44px;
     display: none;
     overflow: hidden;
-    animation: header-user-menu .8s;
+    animation: header-menu .8s;
     box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .2);
     border-radius: 15px;
     text-align: center;
@@ -5920,7 +5897,7 @@ i.iconfont.down {
     text-decoration: underline
 }
 
-@keyframes header-user-menu {
+@keyframes header-menu {
     0% {
         opacity: 0;
         transform: translateY(-20px)
