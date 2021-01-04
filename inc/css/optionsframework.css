@@ -35,13 +35,14 @@ body {
 }
 
 .nav-tab {
-    background: none;
     border: none;
-    padding: 6px 10px;
+    padding: 10px 10px;
     font-weight: 400;
-    font-size: 13.5px;
+    font-size: 15px;
     color: #808080;
-    border-radius: 6px 6px 0 0;
+    border-radius: 6px;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .nav-tab-active {
@@ -109,6 +110,12 @@ a#options-group-10-tab:before {
 }
 
 a#options-group-11-tab:before {
+    font-family: "dashicons";
+    content: "\f309";
+    float: left;
+}
+
+a#options-group-12-tab:before {
     font-family: "dashicons";
     content: "\f309";
     float: left;

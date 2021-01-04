@@ -107,31 +107,9 @@ function optionsframework_options()
 
     //基本设置
     $options[] = array(
-        'name' => __('Basic', 'sakurairo'), 
+        'name' => __('Preliminary', 'sakurairo'), 
         'type' => 'heading');
 
-    $options[] = array(
-        'name' => __('Basic-Setting', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_basic',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/basic.png',
-                ),
-            );        
-        
-    $options[] = array(
-        'name' => __('Support For You', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_sfu',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/support.png',
-                ),
-            );
-    
     $options[] = array(
         'name' => __('Site Title', 'sakurairo'), 
         'desc' => __('Fuukei\'s Blog', 'sakurairo'),
@@ -158,6 +136,22 @@ function optionsframework_options()
         'id' => 'focus_logo_text',
         'std' => '',
         'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Font Size of The First Key Title', 'sakurairo'), 
+        'desc' => __('Fill in Number. Between 70 and 90 is recommended', 'sakurairo'),
+        'id' => 'keytitle_size',
+        'std' => '80',
+        'class' => 'mini',
+        'type' => 'text');  
+
+    $options[] = array(
+        'name' => __('Home Page Key Title Font Color', 'sakurairo'), 
+        'id' => 'hpage-ket-tfc',
+        'std' => "#FFF",
+        'desc' => __('Custom theme color', 'sakurairo'), 
+        'type' => "color",
+    );
 
     $options[] = array(
         'name' => __('Logo', 'sakurairo'),
@@ -194,97 +188,11 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Expand The Nav Menu', 'sakurairo'), 
-        'desc' => __('By default, it is enabled (checked), and the check and collapse are cancelled.', 'sakurairo'), 
-        'id' => 'shownav',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
         'name' => __('Head Decoration', 'sakurairo'), 
         'desc' => __('Enable by default, check off, display on the article page, separate page and category page', 'sakurairo'), 
         'id' => 'patternimg',
         'std' => '0',
         'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Search Button', 'sakurairo'), 
-        'id' => 'top_search',
-        'std' => "yes",
-        'type' => "radio",
-        'options' => array(
-            'yes' => __('Open', 'sakurairo'),
-            'no' => __('Close', 'sakurairo'),
-        ));
-
-    $options[] = array(
-        'name' => __('Home Article Style', 'sakurairo'), 
-        'id' => 'post_list_style',
-        'std' => "imageflow",
-        'type' => "radio",
-        'options' => array(
-            'standard' => __('Standard', 'sakurairo'), 
-            'imageflow' => __('Graphic', 'sakurairo'), 
-        ));
-
-    $options[] = array(
-        'name' => __('Home Article Feature Images (Only Valid for Standard Mode)', 'sakurairo'), 
-        'id' => 'list_type',
-        'std' => "round",
-        'type' => "radio",
-        'options' => array(
-            'round' => __('Round', 'sakurairo'), 
-            'square' => __('Square', 'sakurairo'), 
-        ));
-
-    $options[] = array(
-        'name' => __('Home Article Feature Images Alignment (Only for Graphic Mode, Default Left and Right Alternate)', 'sakurairo'), 
-        'id' => 'feature_align',
-        'std' => "alternate",
-        'type' => "radio",
-        'options' => array(
-            'left' => __('Left', 'sakurairo'), 
-            'right' => __('Right', 'sakurairo'), 
-            'alternate' => __('Alternate', 'sakurairo'), 
-        ));
-
-    $options[] = array(
-        'name' => __('Paging Mode', 'sakurairo'), 
-        'id' => 'pagenav_style',
-        'std' => "ajax",
-        'type' => "radio",
-        'options' => array(
-            'ajax' => __('Ajax load', 'sakurairo'), 
-            'np' => __('Previous and next page', 'sakurairo'), 
-        ));
-
-    $options[] = array(
-        'name' => __('Automatically Load The Next Page', 'sakurairo'), 
-        'desc' => __('(seconds) Set to automatically load the next page time, the default is not automatically loaded', 'sakurairo'), 
-        'id' => 'auto_load_post',
-        'std' => '233',
-        'type' => 'select',
-        'options' => array(
-            '0' => __('0', 'sakurairo'),
-            '1' => __('1', 'sakurairo'),
-            '2' => __('2', 'sakurairo'),
-            '3' => __('3', 'sakurairo'),
-            '4' => __('4', 'sakurairo'),
-            '5' => __('5', 'sakurairo'),
-            '6' => __('6', 'sakurairo'),
-            '7' => __('7', 'sakurairo'),
-            '8' => __('8', 'sakurairo'),
-            '9' => __('9', 'sakurairo'),
-            '10' => __('10', 'sakurairo'),
-            '233' => __('Do not load automatically', 'sakurairo'), 
-        ));
-
-    $options[] = array(
-        'name' => __('Footer Info', 'sakurairo'), 
-        'desc' => __('Footer description, support for HTML code', 'sakurairo'), 
-        'id' => 'footer_info',
-        'std' => 'Copyright &copy; by FUUKEI All Rights Reserved.',
-        'type' => 'textarea');
 
     $options[] = array(
         'name' => __('About', 'sakurairo'), 
@@ -317,32 +225,10 @@ function optionsframework_options()
             ),
         );
 
-    //首页设置
+    //首页封面设置
     $options[] = array(
-        'name' => __('HomePage', 'sakurairo'), 
+        'name' => __('Cover(Homepage)', 'sakurairo'), 
         'type' => 'heading');
-
-    $options[] = array(
-        'name' => __('HomePage-Setting', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_home',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/homepage.png',
-                ),
-            );         
-
-    $options[] = array(
-        'name' => __('First Screen', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_homefs',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/homepage-firstscreen.png',
-                ),
-            );  
 
     $options[] = array(
         'name' => __('Main Switch', 'sakurairo'), 
@@ -407,6 +293,50 @@ function optionsframework_options()
         'type' => 'text');  
 
     $options[] = array(
+        'name' => __('Information Bar Background Color (RGBA) Red', 'sakurairo'), 
+        'id' => 'infor-bar-bg-cr',
+        'std' => "255",
+        'desc' => __('Fill in the red value from 0 to 255 here', 'sakurairo'), 
+        'type' => "text",
+        'class' => 'mini',
+    );
+
+    $options[] = array(
+        'name' => __('Information Bar Background Color (RGBA) Green', 'sakurairo'), 
+        'id' => 'infor-bar-bg-cg',
+        'std' => "255",
+        'desc' => __('Fill in the green value from 0 to 255 here', 'sakurairo'), 
+        'type' => "text",
+        'class' => 'mini',
+    );
+
+    $options[] = array(
+        'name' => __('Information Bar Background Color (RGBA) Blue', 'sakurairo'), 
+        'id' => 'infor-bar-bg-cb',
+        'std' => "255",
+        'desc' => __('Fill in the blue value from 0 to 255 here', 'sakurairo'), 
+        'type' => "text",
+        'class' => 'mini',
+    );
+
+    $options[] = array(
+        'name' => __('Information Bar Background Color (RGBA) Alpha', 'sakurairo'), 
+        'id' => 'infor-bar-bg-ca',
+        'std' => "0.8",
+        'desc' => __('Fill in the alpha value from 0 to 1 here', 'sakurairo'), 
+        'type' => "text",
+        'class' => 'mini',
+    );
+
+    $options[] = array(
+        'name' => __('Front Page One Word FontSize', 'sakurairo'), 
+        'desc' => __('Fill in Number. Between 10 and 20 is recommended', 'sakurairo'),
+        'id' => 'fontsize-oneword',
+        'std' => '',
+        'class' => 'mini',
+        'type' => 'text');  
+
+    $options[] = array(
         'name' => __('Cover Random Graphs Option', 'sakurairo'), 
         'desc' => __('Select how to call the cover random image', 'sakurairo'), 
         'id' => 'cover_cdn_options',
@@ -450,6 +380,55 @@ function optionsframework_options()
    */
 
     $options[] = array(
+        'name' => __('One Word Typing Effect of Home Page', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'dazi',
+        'std' => '0',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('Double Quotation Marks for Typing Effect', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'dazi_yh',
+        'std' => '0',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('Typewriting Effect Text', 'sakurairo'), 
+        'desc' => __('Fill in the text part of the typing effect (double quotation marks must be used outside the text, and English commas shall be used to separate the two sentences. Support for HTML tags)', 'sakurairo'),
+        'id' => 'dazi_a',
+        'std' => '"寒蝉黎明之时,便是重生之日。"',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Homepage One Word Blogger Description', 'sakurairo'), 
+        'desc' => __('A self description', 'sakurairo'), 
+        'id' => 'admin_des',
+        'std' => '粉色的花瓣，美丽地缠绕在身上。依在风里。',
+        'type' => 'textarea');
+    
+    $options[] = array(
+        'name' => __('Wave Effects', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'bolangcss',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Drop-down Arrow', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'godown',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Turn off Drop-down Arrow Mobile Display', 'sakurairo'), 
+        'desc' => __('Check by default, cancel opening', 'sakurairo'),
+        'id' => 'godown-mb',
+        'std' => '1',
+        'type' => 'checkbox');
+    
+    $options[] = array(
         'name' => __('Cover Video', 'sakurairo'),
         'desc' => __('Check on', 'sakurairo'), 
         'id' => 'focus_amv',
@@ -490,16 +469,10 @@ function optionsframework_options()
             'filter-dot' => __('Dot', 'sakurairo'), 
         ));
 
+    //首页内容设置
     $options[] = array(
-        'name' => __('Second Screen', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_homess',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/homepage-secondscreen.png',
-                ),
-            );  
+        'name' => __('Content(Homepage)', 'sakurairo'), 
+        'type' => 'heading');
 
     $options[] = array(
         'name' => __('Announcement', 'sakurairo'),
@@ -538,7 +511,23 @@ function optionsframework_options()
         'id' => 'annou-tta',
         'std' => '0',
         'type' => 'checkbox');
-        
+
+    $options[] = array(
+        'name' => __('Home Page Announcement Font Color', 'sakurairo'), 
+        'id' => 'hpage-afc',
+        'std' => "#999",
+        'desc' => __('Custom theme color', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Home Page Announcement Border Color', 'sakurairo'), 
+        'id' => 'hpage-abc',
+        'std' => "#E6E6E6",
+        'desc' => __('Custom theme color(Only takes effect when the announcement style is set to original)', 'sakurairo'), 
+        'type' => "color",
+    );        
+
     $options[] = array(
         'name' => __('Home Page Title Text Align', 'sakurairo'), 
         'desc' => __('If checked, it will be in the middle and not checked by default', 'sakurairo'),
@@ -571,6 +560,150 @@ function optionsframework_options()
         'id' => 'hpage-art-dis',
         'std' => '0',
         'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Main Page Article Title', 'sakurairo'), 
+        'desc' => __('Default is 記事, you can also change it to other, of course you can\'t use it as an advertisement!Not allowed!!', 'sakurairo'), 
+        'id' => 'homepage_title',
+        'std' => '記事',
+        'class' => 'mini',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Home Article Style', 'sakurairo'), 
+        'id' => 'post_list_style',
+        'std' => "imageflow",
+        'type' => "radio",
+        'options' => array(
+            'standard' => __('Standard', 'sakurairo'), 
+            'imageflow' => __('Graphic', 'sakurairo'), 
+        ));
+
+    $options[] = array(
+        'name' => __('Home Article Feature Images (Only Valid for Standard Mode)', 'sakurairo'), 
+        'id' => 'list_type',
+        'std' => "round",
+        'type' => "radio",
+        'options' => array(
+            'round' => __('Round', 'sakurairo'), 
+            'square' => __('Square', 'sakurairo'), 
+        ));
+
+    $options[] = array(
+        'name' => __('Home Article Feature Images Alignment (Only for Graphic Mode, Default Left and Right Alternate)', 'sakurairo'), 
+        'id' => 'feature_align',
+        'std' => "alternate",
+        'type' => "radio",
+        'options' => array(
+            'left' => __('Left', 'sakurairo'), 
+            'right' => __('Right', 'sakurairo'), 
+            'alternate' => __('Alternate', 'sakurairo'), 
+        ));
+
+    $options[] = array(
+        'name' => __('Home Page Article Separator (Light colors are recommended)', 'sakurairo'), 
+        'id' => 'hpage-art-sc',
+        'std' => "#FFE1ED",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Home Page Article Time Prompt Emphasize Background (Light colors are recommended)', 'sakurairo'), 
+        'id' => 'hpage-art-tpebc',
+        'std' => "#FFE1ED",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Home Page Article Border Shadow (Light colors are recommended)', 'sakurairo'), 
+        'id' => 'hpage-art-bsc',
+        'std' => "#FFE1ED",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Drop Down Arrow Color (Light colors are recommended)', 'sakurairo'), 
+        'id' => 'godown_skin',
+        'std' => "#FFF",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );  
+
+    $options[] = array(
+        'name' => __('Home Page Article Time Prompt Accent (Theme colors are recommended)', 'sakurairo'), 
+        'id' => 'hpage-art-tpac',
+        'std' => "#FB98C0",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+    
+    $options[] = array(
+        'name' => __('Home Page Article Prompt Icon Color (Theme colors are recommended)', 'sakurairo'), 
+        'id' => 'hpage-art-pic',
+        'std' => "#FB98C0",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Paging Mode', 'sakurairo'), 
+        'id' => 'pagenav_style',
+        'std' => "ajax",
+        'type' => "radio",
+        'options' => array(
+            'ajax' => __('Ajax load', 'sakurairo'), 
+            'np' => __('Previous and next page', 'sakurairo'), 
+        ));
+
+    $options[] = array(
+        'name' => __('Automatically Load The Next Page', 'sakurairo'), 
+        'desc' => __('(seconds) Set to automatically load the next page time, the default is not automatically loaded', 'sakurairo'), 
+        'id' => 'auto_load_post',
+        'std' => '233',
+        'type' => 'select',
+        'options' => array(
+            '0' => __('0', 'sakurairo'),
+            '1' => __('1', 'sakurairo'),
+            '2' => __('2', 'sakurairo'),
+            '3' => __('3', 'sakurairo'),
+            '4' => __('4', 'sakurairo'),
+            '5' => __('5', 'sakurairo'),
+            '6' => __('6', 'sakurairo'),
+            '7' => __('7', 'sakurairo'),
+            '8' => __('8', 'sakurairo'),
+            '9' => __('9', 'sakurairo'),
+            '10' => __('10', 'sakurairo'),
+            '233' => __('Do not load automatically', 'sakurairo'), 
+        ));
+
+    $options[] = array(
+        'name' => __('A Brief Remark', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'oneword',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Load Occupancy Query', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'loadoq',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Footer Info', 'sakurairo'), 
+        'desc' => __('Footer description, support for HTML code', 'sakurairo'), 
+        'id' => 'footer_info',
+        'std' => 'Copyright &copy; by FUUKEI All Rights Reserved.',
+        'type' => 'textarea');
+
+    //首页聚焦设置
+    $options[] = array(
+        'name' => __('Focus(Homepage)', 'sakurairo'), 
+        'type' => 'heading');
 
     $options[] = array(
         'name' => __('Focus Area', 'sakurairo'), 
@@ -689,29 +822,252 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Main Page Article Title', 'sakurairo'), 
-        'desc' => __('Default is 記事, you can also change it to other, of course you can\'t use it as an advertisement!Not allowed!!', 'sakurairo'), 
-        'id' => 'homepage_title',
-        'std' => '記事',
+        'name' => __('Home Page Focus Background Color (RGBA) Red', 'sakurairo'), 
+        'id' => 'hpage-focus-bcr',
+        'std' => "255",
+        'desc' => __('Fill in the red value from 0 to 255 here', 'sakurairo'), 
+        'type' => "text",
         'class' => 'mini',
-        'type' => 'text');
+    );
 
-    //文章页
     $options[] = array(
-        'name' => __('Post', 'sakurairo'), 
+        'name' => __('Home Page Focus Background Color (RGBA) Green', 'sakurairo'), 
+        'id' => 'hpage-focus-bcg',
+        'std' => "225",
+        'desc' => __('Fill in the green value from 0 to 255 here', 'sakurairo'), 
+        'type' => "text",
+        'class' => 'mini',
+    );
+
+    $options[] = array(
+        'name' => __('Home Page Focus Background Color (RGBA) Blue', 'sakurairo'), 
+        'id' => 'hpage-focus-bcb',
+        'std' => "237",
+        'desc' => __('Fill in the blue value from 0 to 255 here', 'sakurairo'), 
+        'type' => "text",
+        'class' => 'mini',
+    );
+
+    $options[] = array(
+        'name' => __('Home Page Focus Background Color (RGBA) Alpha', 'sakurairo'), 
+        'id' => 'hpage-focus-bca',
+        'std' => "0.7",
+        'desc' => __('Fill in the alpha value from 0 to 1 here', 'sakurairo'), 
+        'type' => "text",
+        'class' => 'mini',
+    );
+
+    //菜单设置
+    $options[] = array(
+        'name' => __('Menu', 'sakurairo'), 
         'type' => 'heading');
 
     $options[] = array(
-        'name' => __('Post-Setting', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_post',
-        'std' => 'tag',
-        'type' => "images",
+        'name' => __('Expand The Nav Menu', 'sakurairo'), 
+        'desc' => __('By default, it is enabled (checked), and the check and collapse are cancelled.', 'sakurairo'), 
+        'id' => 'shownav',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Search Button', 'sakurairo'), 
+        'id' => 'top_search',
+        'std' => "yes",
+        'type' => "radio",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/post.png',
-                ),
-            );         
+            'yes' => __('Open', 'sakurairo'),
+            'no' => __('Close', 'sakurairo'),
+        ));
+
+    $options[] = array(
+        'name' => __('Search Icon Normal Size', 'sakurairo'), 
+        'desc' => __('Check off by default', 'sakurairo'), 
+        'id' => 'search-ico',
+        'std' => '0',
+        'type' => 'checkbox');   
+
+    $options[] = array(
+        'name' => __('Close Foreground Login Entry', 'sakurairo'), 
+        'desc' => __('Check off by default', 'sakurairo'), 
+        'id' => 'user-avatar',
+        'std' => '0',
+        'type' => 'checkbox'); 
+
+    $options[] = array(
+        'name' => __('Top Menu Arrow', 'sakurairo'), 
+        'desc' => __('Check off. It is checked by default', 'sakurairo'), 
+        'id' => 'meun-arrow',
+        'std' => '1',
+        'type' => 'checkbox');   
+
+    $options[] = array(
+        'name' => __('Logo Special Effects', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'logocss',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Logo Text A', 'sakurairo'), 
+        'desc' => __('Fill in the front part of your logo text', 'sakurairo'),
+        'id' => 'logo_a',
+        'std' => ' ',
+        'type' => 'text');
+        
+    $options[] = array(
+        'name' => __('Logo Text B', 'sakurairo'), 
+        'desc' => __('Fill in the middle part of your logo text', 'sakurairo'),
+        'id' => 'logo_b',
+        'std' => ' ',
+        'type' => 'text');
+        
+    $options[] = array(
+        'name' => __('Logo Text C', 'sakurairo'), 
+        'desc' => __('Fill in the back of your logo', 'sakurairo'),
+        'id' => 'logo_c',
+        'std' => ' ',
+        'type' => 'text');
+        
+     $options[] = array(
+        'name' => __('Logo Secondary Text', 'sakurairo'), 
+        'desc' => __('Fill in the secondary text of your logo.', 'sakurairo'),
+        'id' => 'logo_two',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Logo Font Link', 'sakurairo'), 
+        'desc' => __('When the font is ready, do this again <a href = "https://www.fontke.com/tool/fontface/">@font-face生成器</a>It can generate a bunch of files, which are all useful. It can be placed on a accessible server, OOS, CDN, etc. here, you only need to fill in the CSS style sheet file link <a href = "https://blog.ukenn.top/sakura6/#toc-head-4">Detailed tutorial</a>', 'sakurairo'),
+        'id' => 'logo_zt',
+        'std' => 'https://cdn.jsdelivr.net/gh/acai66/mydl/fonts/wenyihei/wenyihei-subfont.css',
+        'type' => 'text');
+        
+    $options[] = array(
+        'name' => __('Logo Font Name', 'sakurairo'), 
+        'desc' => __('Fill in the font name of your logo, write the name directly without the format suffix', 'sakurairo'),
+        'id' => 'logo_ztmc',
+        'std' => 'wenyihei-subfont',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Foreground Switch Full Mode', 'sakurairo'), 
+        'desc' => __('Check on by default, uncheck to switch to simple mode', 'sakurairo'), 
+        'id' => 'full-mode',
+        'std' => '1',
+        'type' => 'checkbox');        
     
+    $options[] = array(
+        'name' => __('Extra Background Switching(Heart-shaped icon)', 'sakurairo'), 
+        'desc' => __('Check on by default', 'sakurairo'), 
+        'id' => 'extra-bg',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Extra Background Switching(Star-shaped icon)', 'sakurairo'), 
+        'desc' => __('Check on by default', 'sakurairo'), 
+        'id' => 'extra-bg2',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Extra Background Switching(Square-shaped icon)', 'sakurairo'), 
+        'desc' => __('Check on by default', 'sakurairo'), 
+        'id' => 'extra-bg3',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Extra Background Switching(Lemon-shaped icon)', 'sakurairo'), 
+        'desc' => __('Check on by default', 'sakurairo'), 
+        'id' => 'extra-bg4',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Foreground Menu background Color (RGBA) Red', 'sakurairo'), 
+        'id' => 'fore-switch-bcr',
+        'std' => "255",
+        'desc' => __('Fill in the red value from 0 to 255 here', 'sakurairo'), 
+        'type' => "text",
+        'class' => 'mini',
+    );
+
+    $options[] = array(
+        'name' => __('Foreground Menu background Color (RGBA) Green', 'sakurairo'), 
+        'id' => 'fore-switch-bcg',
+        'std' => "255",
+        'desc' => __('Fill in the green value from 0 to 255 here', 'sakurairo'), 
+        'type' => "text",
+        'class' => 'mini',
+    );
+
+    $options[] = array(
+        'name' => __('Foreground Menu background Color (RGBA) Blue', 'sakurairo'), 
+        'id' => 'fore-switch-bcb',
+        'std' => "255",
+        'desc' => __('Fill in the blue value from 0 to 255 here', 'sakurairo'), 
+        'type' => "text",
+        'class' => 'mini',
+    );
+
+    $options[] = array(
+        'name' => __('Foreground Menu background Color (RGBA) Alpha', 'sakurairo'), 
+        'id' => 'fore-switch-bca',
+        'std' => "0.8",
+        'desc' => __('Fill in the alpha value from 0 to 1 here', 'sakurairo'), 
+        'type' => "text",
+        'class' => 'mini',
+    );
+
+    $options[] = array(
+        'name' => __('Foreground Selection Menu Background Color (Light colors are recommended)', 'sakurairo'), 
+        'id' => 'fore-switch-sele-bc',
+        'std' => "#FFE1ED",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+            
+    $options[] = array(
+        'name' => __('Default Foreground Background', 'sakurairo'), 
+        'desc' => __('Default Foreground Background, Fill in URL', 'sakurairo'), 
+        'id' => 'sakura_skin_bg1',
+        'std' => 'none',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('DIY(heart-shaped icon) Foreground Background', 'sakurairo'), 
+        'desc' => __('DIY(heart-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
+        'id' => 'sakura_skin_bg2',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg1.png',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('DIY(Star-shaped icon) Foreground Background', 'sakurairo'), 
+        'desc' => __('DIY(Star-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
+        'id' => 'sakura_skin_bg3',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg2.png',
+        'type' => 'text');
+ 
+    $options[] = array(
+        'name' => __('DIY(Square-shaped icon) Foreground Background', 'sakurairo'), 
+        'desc' => __('DIY(Square-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
+        'id' => 'sakura_skin_bg4',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg3.png',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('DIY(Lemon-shaped icon) Foreground Background', 'sakurairo'), 
+        'desc' => __('DIY(Lemon-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
+        'id' => 'sakura_skin_bg5',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png',
+        'type' => 'text');
+
+    //页面设置
+    $options[] = array(
+        'name' => __('Page', 'sakurairo'), 
+        'type' => 'heading');
+
     $options[] = array(
         'name' => __('Article Typesetting Style', 'sakurairo'), 
         'id' => 'entry_content_theme',
@@ -731,6 +1087,30 @@ function optionsframework_options()
             'sakurairo' => __('Default Style', 'sakurairo'), 
             'sakura' => __('Sakura Style', 'sakurairo'), 
         ));
+
+    $options[] = array(
+        'name' => __('Article Title Size', 'sakurairo'), 
+        'desc' => __('Fill in Number. Between 15 and 20 is recommended', 'sakurairo'),
+        'id' => 'article-title-size',
+        'std' => '',
+        'class' => 'mini',
+        'type' => 'text'); 
+    
+    $options[] = array(
+        'name' => __('Article Tips Size', 'sakurairo'), 
+        'desc' => __('Fill in Number. Between 10 and 15 is recommended', 'sakurairo'),
+        'id' => 'article-tips-size',
+        'std' => '',
+        'class' => 'mini',
+        'type' => 'text'); 
+
+    $options[] = array(
+        'name' => __('Article Page Title Size', 'sakurairo'), 
+        'desc' => __('Fill in Number. Between 25 and 30 is recommended', 'sakurairo'),
+        'id' => 'article-paget',
+        'std' => '',
+        'class' => 'mini',
+        'type' => 'text');         
 
     $options[] = array(
         'name' => __('Post Like', 'sakurairo'), 
@@ -773,6 +1153,86 @@ function optionsframework_options()
         ));
 
     $options[] = array(
+        'name' => __('Author information at The End of The Paper', 'sakurairo'), 
+        'desc' => __('Check to enable', 'sakurairo'), 
+        'id' => 'show_authorprofile',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Blog Description at the end of The Article', 'sakurairo'), 
+        'desc' => __('A self description', 'sakurairo'), 
+        'id' => 'admin_destwo',
+        'std' => '粉色的花瓣，美丽地缠绕在身上。依在风里。',
+        'type' => 'textarea');
+    
+    $options[] = array(
+        'name' => __('Post Lincenses', 'sakurairo'), 
+        'desc' => __('Check close', 'sakurairo'), 
+        'id' => 'post-lincenses',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Article Page Lazyload Function', 'sakurairo'), 
+        'desc' => __('Default on', 'sakurairo'), 
+        'id' => 'lazyload',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Lazyload Spinner', 'sakurairo'),
+        'desc' => __('The placeholder to display when the image loads, fill in the image url', 'sakurairo'), 
+        'id' => 'lazyload_spinner',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sakura/load/inload.svg',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Clipboard Copyright ID', 'sakurairo'), 
+        'desc' => __('Check on by default. When copying more than 30 bytes, the copyright mark will be added to the clipboard automatically.', 'sakurairo'), 
+        'id' => 'clipboard_copyright',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Alipay Reward', 'sakurairo'), 
+        'desc' => __('Alipay qrcode', 'sakurairo'), 
+        'id' => 'alipay_code',
+        'type' => 'upload');
+
+    $options[] = array(
+        'name' => __('Wechat Reward', 'sakurairo'), 
+        'desc' => __('Wechat qrcode ', 'sakurairo'),
+        'id' => 'wechat_code',
+        'type' => 'upload');
+
+    $options[] = array(
+        'name' => __('Bilibili UID', 'sakurairo'), 
+        'desc' => __('Fill in your UID, eg.https://space.bilibili.com/13972644/, only fill in with the number part.', 'sakurairo'),
+        'id' => 'bilibili_id',
+        'std' => '13972644',
+        'type' => 'text');
+    
+    $options[] = array(
+        'name' => __('Bilibili Cookie', 'sakurairo'), 
+        'desc' => __('Fill in your Cookies, go to your bilibili homepage, you can get cookies in brownser network pannel with pressing F12. If left this blank, you\'ll not get the progress.', 'sakurairo'),
+        'id' => 'bilibili_cookie',
+        'std' => 'LIVE_BUVID=',
+        'type' => 'textarea');
+
+    $options[] = array(
+        'name' => __('Friend Link Information Layout', 'sakurairo'), 
+        'desc' => __('The default alignment is left, check it will center alignment', 'sakurairo'), 
+        'id' => 'friend_center',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    //评论相关设置
+    $options[] = array(
+        'name' => __('Comments Related', 'sakurairo'), 
+        'type' => 'heading');
+
+    $options[] = array(
         'name' => __('Comment Shrink', 'sakurairo'), 
         'id' => 'toggle-menu',
         'std' => "yes",
@@ -796,30 +1256,126 @@ function optionsframework_options()
         'type' => 'upload');
 
     $options[] = array(
-        'name' => __('Author information at The End of The Paper', 'sakurairo'), 
-        'desc' => __('Check to enable', 'sakurairo'), 
-        'id' => 'show_authorprofile',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Post Lincenses', 'sakurairo'), 
-        'desc' => __('Check close', 'sakurairo'), 
-        'id' => 'post-lincenses',
+        'name' => __('Comment UA Infomation', 'sakurairo'), 
+        'desc' => __('Check to enable, display the user\'s browser, operating system information', 'sakurairo'), 
+        'id' => 'open_useragent',
         'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Alipay Reward', 'sakurairo'), 
-        'desc' => __('Alipay qrcode', 'sakurairo'), 
-        'id' => 'alipay_code',
+        'name' => __('Comment Location Infomation', 'sakurairo'), 
+        'desc' => __('Check to enable, display the user\'s location info', 'sakurairo'), 
+        'id' => 'open_location',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Private Comment Function', 'sakurairo'), 
+        'desc' => __('It is not checked by default. It is checked to enable. This feature allows users to set their own comments invisible to others', 'sakurairo'), 
+        'id' => 'open_private_message',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('QQ Avatar Link Encryption', 'sakurairo'), 
+        'desc' => __('Do not display the user\'s qq avatar links directly.', 'sakurairo'), 
+        'id' => 'qq_avatar_link',
+        'std' => "off",
+        'type' => "select",
+        'options' => array(
+            'off' => __('Off (default)', 'sakurairo'), 
+            'type_1' => __('use redirect (general security)', 'sakurairo'), 
+            'type_2' => __('fetch data at backend (high security)', 'sakurairo'), 
+            'type_3' => __('fetch data at backend (high security，slow)', 'sakurairo'), 
+        ));
+
+    $options[] = array(
+        'name' => __('Comment Image Upload API', 'sakurairo'), 
+        'id' => 'img_upload_api',
+        'std' => "imgur",
+        'type' => "radio",
+        'options' => array(
+            'imgur' => __('Imgur (https://imgur.com)', 'sakurairo'),
+            'smms' => __('SM.MS (https://sm.ms)', 'sakurairo'),
+            'chevereto' => __('Chevereto (https://chevereto.com)', 'sakurairo'),
+        ));
+
+    $options[] = array(
+        'name' => __('Imgur Client ID', 'sakurairo'),
+        'desc' => __('Register your application <a href="https://api.imgur.com/oauth2/addclient">here</a>, note we only need the Client ID here.', 'sakurairo'),
+        'id' => 'imgur_client_id',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('SM.MS Secret Token', 'sakurairo'),
+        'desc' => __('Register your application <a href="https://sm.ms/home/apitoken">here</a>.', 'sakurairo'),
+        'id' => 'smms_client_id',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Chevereto API v1 key', 'sakurairo'),
+        'desc' => __('Get your API key here: ' . akina_option('cheverto_url') . '/dashboard/settings/api', 'sakurairo'),
+        'id' => 'chevereto_api_key',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Chevereto URL', 'sakurairo'),
+        'desc' => __('Your Chevereto homepage url, no slash in the end, eg. https://your.cherverto.com', 'sakurairo'),
+        'id' => 'cheverto_url',
+        'std' => 'https://your.cherverto.com',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Comment Images Proxy', 'sakurairo'),
+        'desc' => __('A front-ed proxy for the uploaded images. Leave it blank if you do not need.', 'sakurairo'),
+        'id' => 'cmt_image_proxy',
+        'std' => 'https://images.weserv.nl/?url=',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Imgur Upload Proxy', 'sakurairo'),
+        'desc' => __('A back-ed proxy to upload images. You may set a self hosted proxy with Nginx, following my <a href="https://2heng.xin/2018/06/06/javascript-upload-images-with-imgur-api/">turtal</a>. This feature is mainly for Chinese who cannot access to Imgur due to the GFW. The default and official setting is 【<a href="https://api.imgur.com/3/image/">https://api.imgur.com/3/image/</a>】', 'sakurairo'),
+        'id' => 'imgur_upload_image_proxy',
+        'std' => 'https://api.imgur.com/3/image/',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Mail Template Header', 'sakurairo'), 
+        'desc' => __('Set the background picture above your message', 'sakurairo'), 
+        'id' => 'mail_img',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/mail-head.jpg',
         'type' => 'upload');
 
     $options[] = array(
-        'name' => __('Wechat Reward', 'sakurairo'), 
-        'desc' => __('Wechat qrcode ', 'sakurairo'),
-        'id' => 'wechat_code',
-        'type' => 'upload');
+        'name' => __('Email Address Prefix', 'sakurairo'), 
+        'desc' => __('For sending system mail, the sender address displayed in the user\'s mailbox, do not use Chinese, the default system email address is bibi@your_domain_name', 'sakurairo'),  
+        'id' => 'mail_user_name',
+        'std' => 'bibi',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Comments Reply Notification', 'sakurairo'), 
+        'desc' => __('WordPress will use email to notify users when their comments receive a reply by default. Tick this item allows users to set their own comments reply notification', 'sakurairo'), 
+        'id' => 'mail_notify',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Administrator Comment Notification', 'sakurairo'), 
+        'desc' => __('Whether to use email notification when the administrator\'s comments receive a reply', 'sakurairo'), 
+        'id' => 'admin_notify',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Human Verification', 'sakurairo'), 
+        'desc' => __('Enable human verification', 'sakurairo'), 
+        'id' => 'norobot',
+        'std' => '0',
+        'type' => 'checkbox');
 
     //社交选项
     $options[] = array(
@@ -1001,98 +1557,87 @@ function optionsframework_options()
     $options[] = array(
         'name' => __('Foreground', 'sakurairo'),
         'type' => 'heading');
+       
+    $options[] = array(
+        'name' => __('Open SmoothScroll', 'sakurairo'), 
+        'desc' => __('Check open。', 'sakurairo'), 
+        'id' => 'SmoothScroll',
+        'std' => '1',
+        'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Foreground-Setting', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_fore',
-        'std' => 'tag',
-        'type' => "images",
+        'name' => __('Preload Animation', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'yjzdh',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Preload Animation Color A', 'sakurairo'), 
+        'id' => 'preload-ani-c1',
+        'std' => "#FFE1ED",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Preload Animation Color B', 'sakurairo'), 
+        'id' => 'preload-ani-c2',
+        'std' => "#FB98C0",
+        'desc' => __('Custom colors', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Falling Effect', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'fallingjs',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Falling Type and Quantity', 'sakurairo'), 
+        'desc' => __('Two Types are Available', 'sakurairo'), 
+        'id' => 'falling-quantity',
+        'std' => 'sakura-native',
+        'type' => 'select',
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/foreground.png',
-                ),
-            );         
+            'sakura-native' => __('Sakura Native', 'sakurairo'),
+            'sakura-quarter' => __('Sakura Quarter', 'sakurairo'),
+            'sakura-half' => __('Sakura Half', 'sakurairo'),
+            'sakura-less' => __('Sakura Less', 'sakurairo'),
+            'yuki-native' => __('Yuki Native', 'sakurairo'),
+            'yuki-half' => __('Yuki Half', 'sakurairo'),
+            ));
 
     $options[] = array(
-        'name' => __('Settings Menu', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_foresm',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/foreground-settings.png',
-                ),
-            );  
-
-    $options[] = array(
-        'name' => __('Foreground Switch Full Mode', 'sakurairo'), 
-        'desc' => __('Check on by default, uncheck to switch to simple mode', 'sakurairo'), 
-        'id' => 'full-mode',
-        'std' => '1',
-        'type' => 'checkbox');        
-    
-    $options[] = array(
-        'name' => __('Extra Background Switching(Heart-shaped icon)', 'sakurairo'), 
-        'desc' => __('Check on by default', 'sakurairo'), 
-        'id' => 'extra-bg',
-        'std' => '1',
+        'name' => __('live2D', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'live2djs',
+        'std' => '0',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Extra Background Switching(Star-shaped icon)', 'sakurairo'), 
-        'desc' => __('Check on by default', 'sakurairo'), 
-        'id' => 'extra-bg2',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Extra Background Switching(Square-shaped icon)', 'sakurairo'), 
-        'desc' => __('Check on by default', 'sakurairo'), 
-        'id' => 'extra-bg3',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Extra Background Switching(Lemon-shaped icon)', 'sakurairo'), 
-        'desc' => __('Check on by default', 'sakurairo'), 
-        'id' => 'extra-bg4',
-        'std' => '1',
-        'type' => 'checkbox');
-            
-    $options[] = array(
-        'name' => __('Default Foreground Background', 'sakurairo'), 
-        'desc' => __('Default Foreground Background, Fill in URL', 'sakurairo'), 
-        'id' => 'sakura_skin_bg1',
-        'std' => 'none',
-        'type' => 'text');
-    
-    $options[] = array(
-        'name' => __('DIY(heart-shaped icon) Foreground Background', 'sakurairo'), 
-        'desc' => __('DIY(heart-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
-        'id' => 'sakura_skin_bg2',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg1.png',
-        'type' => 'text');
-    
-    $options[] = array(
-        'name' => __('DIY(Star-shaped icon) Foreground Background', 'sakurairo'), 
-        'desc' => __('DIY(Star-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
-        'id' => 'sakura_skin_bg3',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg2.png',
-        'type' => 'text');
- 
-    $options[] = array(
-        'name' => __('DIY(Square-shaped icon) Foreground Background', 'sakurairo'), 
-        'desc' => __('DIY(Square-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
-        'id' => 'sakura_skin_bg4',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg3.png',
+        'name' => __('Live2D Custom Resource Address', 'sakurairo'), 
+        'desc' => __('Fill in Live2D Custom Resource Address', 'sakurairo'),
+        'id' => 'live2d-custom',
+        'std' => 'mirai-mamori',
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('DIY(Lemon-shaped icon) Foreground Background', 'sakurairo'), 
-        'desc' => __('DIY(Lemon-shaped icon) Foreground Background, Fill in URL', 'sakurairo'), 
-        'id' => 'sakura_skin_bg5',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png',
+        'name' => __('Live2D Custom Resource Version', 'sakurairo'), 
+        'desc' => __('Fill in Live2D Custom Resource Version', 'sakurairo'),
+        'id' => 'live2d-custom-ver',
+        'std' => 'latest',
+        'class' => 'mini',
         'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Note Effects', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'audio',
+        'std' => '0',
+        'type' => 'checkbox');
 
     $options[] = array(
         'name' => __('Animation', 'sakurairo'), 
@@ -1162,27 +1707,6 @@ function optionsframework_options()
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Close Foreground Login Entry', 'sakurairo'), 
-        'desc' => __('Check off by default', 'sakurairo'), 
-        'id' => 'user-avatar',
-        'std' => '0',
-        'type' => 'checkbox'); 
-
-    $options[] = array(
-        'name' => __('Search Icon Normal Size', 'sakurairo'), 
-        'desc' => __('Check off by default', 'sakurairo'), 
-        'id' => 'search-ico',
-        'std' => '0',
-        'type' => 'checkbox');   
-
-    $options[] = array(
-        'name' => __('Top Menu Arrow', 'sakurairo'), 
-        'desc' => __('Check off. It is checked by default', 'sakurairo'), 
-        'id' => 'meun-arrow',
-        'std' => '1',
-        'type' => 'checkbox');   
-
-    $options[] = array(
         'name' => __('Footer Float Music Player', 'sakurairo'), 
         'desc' => __('Choose which platform you\'ll use.', 'sakurairo'),
         'id' => 'aplayer_server',
@@ -1203,7 +1727,15 @@ function optionsframework_options()
         'id' => 'aplayer_playlistid',
         'std' => '5380675133',
         'type' => 'text');
-    
+
+    $options[] = array(
+        'name' => __('Footer Suspension Player Default Volume', 'sakurairo'), 
+        'desc' => __('Maximum 1 minimum 0', 'sakurairo'),
+        'id' => 'playlist_mryl',
+        'std' => '0.5',
+        'class' => 'mini',
+        'type' => 'text');
+
     $options[] = array(
         'name' => __('Netease Cloud Music Cookie', 'sakurairo'),
         'desc' => __('For Netease Cloud Music, fill in your vip account\'s cookies if you want to play special tracks.<b>If you don\'t know what does mean, left it blank.</b>', 'sakurairo'),
@@ -1259,656 +1791,7 @@ function optionsframework_options()
         'id' => 'sakurabottom',
         'std' => '1',
         'type' => 'checkbox');
-
-    //后台设置
-    $options[] = array(
-        'name' => __('Backstage', 'sakurairo'), 
-        'type' => 'heading');
-
-    $options[] = array(
-        'name' => __('Backstage-Setting', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_back',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/backstage.png',
-                ),
-            );         
-
-    $options[] = array(
-        'name' => __('Backstage Background Image', 'sakurairo'), 
-        'desc' => __('Backstage Background Image', 'sakurairo'), 
-        'id' => 'admin_menu_bg',
-        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/backstage/admin-bg.jpg",
-        'type' => 'upload');
-
-    $options[] = array(
-        'name' => __('Login Interface Background Image', 'sakurairo'), 
-        'desc' => __('Use the default image if left this blank', 'sakurairo'), 
-        'id' => 'login_bg',
-        'type' => 'upload');
-        
-    $options[] = array(
-        'name' => __('Background Virtualization of Login Interface', 'sakurairo'), 
-        'desc' => __('It is off by default and enabled by check', 'sakurairo'), 
-        'id' => 'login_blur',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Login Interface Logo', 'sakurairo'), 
-        'desc' => __('Used for login interface display', 'sakurairo'),
-        'id' => 'logo_img',
-        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/logo-login.png",
-        'type' => 'upload');
-
-    $options[] = array(
-        'name' => __('Login/Registration Related Settings', 'sakurairo'), 
-        'desc' => __(' ', 'space', 'sakurairo'),
-        'id' => 'login_tip',
-        'std' => '',
-        'type' => 'typography ');
-
-    $options[] = array(
-        'name' => __('Specify Login Address', 'sakurairo'), 
-        'desc' => __('Forcibly do not use the background address to log in, fill in the new landing page address, such as http://www.xxx.com/login [Note] Before you fill out, test your new page can be opened normally, so as not to enter the background or other problems happening', 'sakurairo'), /*强制不使用后台地址登录，填写新建的登录页面地址，比如 http://www.xxx.com/login【注意】填写前先测试下你新建的页面是可以正常打开的，以免造成无法进入后台等情况*/
-        'id' => 'exlogin_url',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Specify Registered Address', 'sakurairo'), 
-        'desc' => __('This link is used on the login page as a registration entry', 'sakurairo'), 
-        'id' => 'exregister_url',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Allow Users to Register', 'sakurairo'), 
-        'desc' => __('Check to allow users to register at the frontend', 'sakurairo'), 
-        'id' => 'ex_register_open',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Automatically Redirect After Login', 'sakurairo'), 
-        'desc' => __('After checken, the administrator redirects to the background and the user redirects to the home page.', 'sakurairo'), 
-        'id' => 'login_urlskip',
-        'std' => '0',
-        'type' => 'checkbox');
-    
-    $options[] = array(
-        'name' => __('Login Validation', 'sakurairo'), 
-        'desc' => __('Check to enable slide verification', 'sakurairo'), 
-        'id' => 'login_pf',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Registration Verification (Frontend Only, Backend Forced Open)', 'sakurairo'), 
-        'desc' => __('Check to enable slide verification', 'sakurairo'), 
-        'id' => 'login_validate',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    //进阶
-    $options[] = array(
-        'name' => __('Advanced', 'sakurairo'),
-        'type' => 'heading');
-
-    $options[] = array(
-        'name' => __('Advanced-Setting', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_adv',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/advanced.png',
-                ),
-            );         
-
-    $options[] = array(
-        'name' => __('Localize', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_advlo',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/advanced-local.png',
-                ),
-            );              
-            
-    $options[] = array(
-        'name' => __('Use The Front-end Library Locally (lib.js、lib.css)', 'sakurairo'), 
-        'desc' => __('The front-end library don\'t load from jsDelivr, not recommand', 'sakurairo'), 
-        'id' => 'jsdelivr_cdn_test',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Use JS and CSS File of The Theme (sakura-app.js、style.css) locally', 'sakurairo'), 
-        'desc' => __('The js and css files of the theme do not load from jsDelivr, please open when DIY', 'sakurairo'),
-        'id' => 'app_no_jsdelivr_cdn',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Others', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_advot',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/advanced-others.png',
-                ),
-            );              
-            
-    $options[] = array(
-        'name' => __('Gravatar Avatar Proxy', 'sakurairo'),
-        'desc' => __('A front-ed proxy for Gravatar, eg. sdn.geekzu.org/avatar . Leave it blank if you do not need.', 'sakurairo'),
-        'id' => 'gravatar_proxy',
-        'std' => "sdn.geekzu.org/avatar",
-        'type' => "text");    
-
-    $options[] = array(
-        'name' => __('Images CDN', 'sakurairo'), 
-        'desc' => __('Note: Fill in the format http(s)://your CDN domain name/. <br>In other words, the original path is http://your.domain/wp-content/uploads/2018/05/xx.png and the picture will load from http://your CDN domain/2018/05/xx.png', 'sakurairo'), 
-        'id' => 'qiniu_cdn',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Google Analytics', 'sakurairo'), 
-        'desc' => __('UA-xxxxx-x', 'sakurairo'),
-        'id' => 'google_analytics_id',
-        'std' => '',
-        'type' => 'text');
-    
-    $options[] = array(
-        'name' => __('Customize CSS Styles', 'sakurairo'), 
-        'desc' => __('Fill in the CSS code directly, no need to write style tags', 'sakurairo'), 
-        'id' => 'site_custom_style',
-        'std' => '',
-        'type' => 'textarea');
-
-    $options[] = array(
-        'name' => __('The Categories of Articles that don\'t not show on homepage', 'sakurairo'), 
-        'desc' => __('Fill in category ID, multiple IDs are divided by a comma ","', 'sakurairo'), 
-        'id' => 'classify_display',
-        'std' => '',
-        'type' => 'text');
-    
-    $options[] = array(
-        'name' => __('Images Category', 'sakurairo'), 
-        'desc' => __('Fill in category ID, multiple IDs are divided by a comma ","', 'sakurairo'), 
-        'id' => 'image_category',
-        'std' => '',
-        'type' => 'text');
-    
-    $options[] = array(
-        'name' => __('Version Control', 'sakurairo'), 
-        'desc' => __('Used to update frontend cookies and browser caches, any string can be used', 'sakurairo'), 
-        'id' => 'cookie_version',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Time Zone Adjustment', 'sakurairo'), 
-        'desc' => __('If the comment has a time difference problem adjust here, fill in an integer, the calculation method: actual_time = display_error_time - the_integer_you_entered (unit: hour)', 'sakurairo'), 
-        'id' => 'time_zone_fix',
-        'std' => '0',
-        'class' => 'mini',
-        'type' => 'text');
-
-   /* 
-   $options[] = array(
-        'name' => __('BaguetteBox Funtion', 'sakurairo'), 
-        'desc' => __('Default off，<a href="https://github.com/mashirozx/Sakura/wiki/Fancybox">please read wiki</a>', 'sakurairo'), 
-        'id' => 'image_viewer',
-        'std' => '0',
-        'type' => 'checkbox');
-   */
-
-    //功能
-    $options[] = array(
-        'name' => __('Function', 'sakurairo'), 
-        'type' => 'heading');
-
-    $options[] = array(
-        'name' => __('Function-Setting', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_func',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/function.png',
-                ),
-            );     
-
-    $options[] = array(
-        'name' => __('Bilibili UID', 'sakurairo'), 
-        'desc' => __('Fill in your UID, eg.https://space.bilibili.com/13972644/, only fill in with the number part.', 'sakurairo'),
-        'id' => 'bilibili_id',
-        'std' => '13972644',
-        'type' => 'text');
-    
-    $options[] = array(
-        'name' => __('Bilibili Cookie', 'sakurairo'), 
-        'desc' => __('Fill in your Cookies, go to your bilibili homepage, you can get cookies in brownser network pannel with pressing F12. If left this blank, you\'ll not get the progress.', 'sakurairo'),
-        'id' => 'bilibili_cookie',
-        'std' => 'LIVE_BUVID=',
-        'type' => 'textarea');
-
-    $options[] = array(
-        'name' => __('Comment UA Infomation', 'sakurairo'), 
-        'desc' => __('Check to enable, display the user\'s browser, operating system information', 'sakurairo'), 
-        'id' => 'open_useragent',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Comment Location Infomation', 'sakurairo'), 
-        'desc' => __('Check to enable, display the user\'s location info', 'sakurairo'), 
-        'id' => 'open_location',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Comment Image Upload API', 'sakurairo'), 
-        'id' => 'img_upload_api',
-        'std' => "imgur",
-        'type' => "radio",
-        'options' => array(
-            'imgur' => __('Imgur (https://imgur.com)', 'sakurairo'),
-            'smms' => __('SM.MS (https://sm.ms)', 'sakurairo'),
-            'chevereto' => __('Chevereto (https://chevereto.com)', 'sakurairo'),
-        ));
-
-    $options[] = array(
-        'name' => __('Imgur Client ID', 'sakurairo'),
-        'desc' => __('Register your application <a href="https://api.imgur.com/oauth2/addclient">here</a>, note we only need the Client ID here.', 'sakurairo'),
-        'id' => 'imgur_client_id',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('SM.MS Secret Token', 'sakurairo'),
-        'desc' => __('Register your application <a href="https://sm.ms/home/apitoken">here</a>.', 'sakurairo'),
-        'id' => 'smms_client_id',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Chevereto API v1 key', 'sakurairo'),
-        'desc' => __('Get your API key here: ' . akina_option('cheverto_url') . '/dashboard/settings/api', 'sakurairo'),
-        'id' => 'chevereto_api_key',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Chevereto URL', 'sakurairo'),
-        'desc' => __('Your Chevereto homepage url, no slash in the end, eg. https://your.cherverto.com', 'sakurairo'),
-        'id' => 'cheverto_url',
-        'std' => 'https://your.cherverto.com',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Comment Images Proxy', 'sakurairo'),
-        'desc' => __('A front-ed proxy for the uploaded images. Leave it blank if you do not need.', 'sakurairo'),
-        'id' => 'cmt_image_proxy',
-        'std' => 'https://images.weserv.nl/?url=',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Imgur Upload Proxy', 'sakurairo'),
-        'desc' => __('A back-ed proxy to upload images. You may set a self hosted proxy with Nginx, following my <a href="https://2heng.xin/2018/06/06/javascript-upload-images-with-imgur-api/">turtal</a>. This feature is mainly for Chinese who cannot access to Imgur due to the GFW. The default and official setting is 【<a href="https://api.imgur.com/3/image/">https://api.imgur.com/3/image/</a>】', 'sakurairo'),
-        'id' => 'imgur_upload_image_proxy',
-        'std' => 'https://api.imgur.com/3/image/',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Statistics Interface', 'sakurairo'), 
-        'id' => 'statistics_api',
-        'std' => "theme_build_in",
-        'type' => "radio",
-        'options' => array(
-            'wp_statistics' => __('WP-Statistics plugin (Professional statistics, can exclude invalid access)', 'sakurairo'), 
-            'theme_build_in' => __('Theme built-in (simple statistics, calculate each page access request)', 'sakurairo'), 
-        ));
-
-    $options[] = array(
-        'name' => __('Statistical Data Display Format', 'sakurairo'), 
-        'id' => 'statistics_format',
-        'std' => "type_1",
-        'type' => "radio",
-        'options' => array(
-            'type_1' => __('23333 Views (default)', 'sakurairo'), 
-            'type_2' => __('23,333 Views (britain)', 'sakurairo'), 
-            'type_3' => __('23 333 Views (french)', 'sakurairo'), 
-            'type_4' => __('23k Views (chinese)', 'sakurairo'), 
-        ));
-
-    $options[] = array(
-        'name' => __('Private Comment Function', 'sakurairo'), 
-        'desc' => __('It is not checked by default. It is checked to enable. This feature allows users to set their own comments invisible to others', 'sakurairo'), 
-        'id' => 'open_private_message',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('QQ Avatar Link Encryption', 'sakurairo'), 
-        'desc' => __('Do not display the user\'s qq avatar links directly.', 'sakurairo'), 
-        'id' => 'qq_avatar_link',
-        'std' => "off",
-        'type' => "select",
-        'options' => array(
-            'off' => __('Off (default)', 'sakurairo'), 
-            'type_1' => __('use redirect (general security)', 'sakurairo'), 
-            'type_2' => __('fetch data at backend (high security)', 'sakurairo'), 
-            'type_3' => __('fetch data at backend (high security，slow)', 'sakurairo'), 
-        ));
-
-    $options[] = array(
-        'name' => __('Search Background Customization', 'sakurairo'), 
-        'desc' => __('It is the cute one that opens the search interface', 'sakurairo'), 
-        'id' => 'search-image',
-        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/iloli.gif",
-        'type' => 'upload');
-
-    $options[] = array(
-        'name' => __('Real Time Search Function', 'sakurairo'), 
-        'desc' => __('Real-time search in the foreground, call the Rest API to update the cache every hour, you can manually set the cache time in api.php', 'sakurairo'), 
-        'id' => 'live_search',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Include Comments in Real Time Search', 'sakurairo'), 
-        'desc' => __('Search for comments in real-time search (not recommended if there are too many comments on the site)', 'sakurairo'), 
-        'id' => 'live_search_comment',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Friend Link Information Layout', 'sakurairo'), 
-        'desc' => __('The default alignment is left, check it will center alignment', 'sakurairo'), 
-        'id' => 'friend_center',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Article Page Lazyload Function', 'sakurairo'), 
-        'desc' => __('Default on', 'sakurairo'), 
-        'id' => 'lazyload',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Lazyload Spinner', 'sakurairo'),
-        'desc' => __('The placeholder to display when the image loads, fill in the image url', 'sakurairo'), 
-        'id' => 'lazyload_spinner',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sakura/load/inload.svg',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Clipboard Copyright ID', 'sakurairo'), 
-        'desc' => __('Check on by default. When copying more than 30 bytes, the copyright mark will be added to the clipboard automatically.', 'sakurairo'), 
-        'id' => 'clipboard_copyright',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Mail Template Header', 'sakurairo'), 
-        'desc' => __('Set the background picture above your message', 'sakurairo'), 
-        'id' => 'mail_img',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/mail-head.jpg',
-        'type' => 'upload');
-
-    $options[] = array(
-        'name' => __('Email Address Prefix', 'sakurairo'), 
-        'desc' => __('For sending system mail, the sender address displayed in the user\'s mailbox, do not use Chinese, the default system email address is bibi@your_domain_name', 'sakurairo'),  
-        'id' => 'mail_user_name',
-        'std' => 'bibi',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Comments Reply Notification', 'sakurairo'), 
-        'desc' => __('WordPress will use email to notify users when their comments receive a reply by default. Tick this item allows users to set their own comments reply notification', 'sakurairo'), 
-        'id' => 'mail_notify',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Administrator Comment Notification', 'sakurairo'), 
-        'desc' => __('Whether to use email notification when the administrator\'s comments receive a reply', 'sakurairo'), 
-        'id' => 'admin_notify',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Human Verification', 'sakurairo'), 
-        'desc' => __('Enable human verification', 'sakurairo'), 
-        'id' => 'norobot',
-        'std' => '0',
-        'type' => 'checkbox');
-
-  //增强功能
-    $options[] = array(
-        'name' => __('Enhanced', 'sakurairo'),
-        'type' => 'heading');
- 
-    $options[] = array(
-        'name' => __('Enhanced-Setting', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_enhan',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/enhanced.png',
-                ),
-            );     
-
-    $options[] = array(
-        'name' => __('Effect', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_enhanef',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/enhanced-effect.png',
-                ),
-            );                          
-            
-    $options[] = array(
-        'name' => __('Open SmoothScroll', 'sakurairo'), 
-        'desc' => __('Check open。', 'sakurairo'), 
-        'id' => 'SmoothScroll',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Preload Animation', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'yjzdh',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Falling Effect', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'fallingjs',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Falling Type and Quantity', 'sakurairo'), 
-        'desc' => __('Two Types are Available', 'sakurairo'), 
-        'id' => 'falling-quantity',
-        'std' => 'sakura-native',
-        'type' => 'select',
-        'options' => array(
-            'sakura-native' => __('Sakura Native', 'sakurairo'),
-            'sakura-quarter' => __('Sakura Quarter', 'sakurairo'),
-            'sakura-half' => __('Sakura Half', 'sakurairo'),
-            'sakura-less' => __('Sakura Less', 'sakurairo'),
-            'yuki-native' => __('Yuki Native', 'sakurairo'),
-            'yuki-half' => __('Yuki Half', 'sakurairo'),
-            ));
-
-    $options[] = array(
-        'name' => __('Wave Effects', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'bolangcss',
-        'std' => '0',
-        'type' => 'checkbox');
-        
-    $options[] = array(
-        'name' => __('Footer Suspension Player Default Volume', 'sakurairo'), 
-        'desc' => __('Maximum 1 minimum 0', 'sakurairo'),
-        'id' => 'playlist_mryl',
-        'std' => '0.5',
-        'class' => 'mini',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('live2D', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'live2djs',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Live2D Custom Resource Address', 'sakurairo'), 
-        'desc' => __('Fill in Live2D Custom Resource Address', 'sakurairo'),
-        'id' => 'live2d-custom',
-        'std' => 'mirai-mamori',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Live2D Custom Resource Version', 'sakurairo'), 
-        'desc' => __('Fill in Live2D Custom Resource Version', 'sakurairo'),
-        'id' => 'live2d-custom-ver',
-        'std' => 'latest',
-        'class' => 'mini',
-        'type' => 'text');
-    
-    $options[] = array(
-        'name' => __('Drop-down Arrow', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'godown',
-        'std' => '1',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Turn off Drop-down Arrow Mobile Display', 'sakurairo'), 
-        'desc' => __('Check by default, cancel opening', 'sakurairo'),
-        'id' => 'godown-mb',
-        'std' => '1',
-        'type' => 'checkbox');
-    
-    $options[] = array(
-        'name' => __('A Brief Remark', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'oneword',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Load Occupancy Query', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'loadoq',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('One Word Typing Effect of Home Page', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'dazi',
-        'std' => '0',
-        'type' => 'checkbox');
-    
-    $options[] = array(
-        'name' => __('Double Quotation Marks for Typing Effect', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'dazi_yh',
-        'std' => '0',
-        'type' => 'checkbox');
-    
-    $options[] = array(
-        'name' => __('Typewriting Effect Text', 'sakurairo'), 
-        'desc' => __('Fill in the text part of the typing effect (double quotation marks must be used outside the text, and English commas shall be used to separate the two sentences. Support for HTML tags)', 'sakurairo'),
-        'id' => 'dazi_a',
-        'std' => '"寒蝉黎明之时,便是重生之日。"',
-        'type' => 'text');
-    
-    $options[] = array(
-        'name' => __('Homepage One Word Blogger Description', 'sakurairo'), 
-        'desc' => __('A self description', 'sakurairo'), 
-        'id' => 'admin_des',
-        'std' => '粉色的花瓣，美丽地缠绕在身上。依在风里。',
-        'type' => 'textarea');
-    
-    $options[] = array(
-        'name' => __('Blog Description at the end of The Article', 'sakurairo'), 
-        'desc' => __('A self description', 'sakurairo'), 
-        'id' => 'admin_destwo',
-        'std' => '粉色的花瓣，美丽地缠绕在身上。依在风里。',
-        'type' => 'textarea');
-    
-    $options[] = array(
-        'name' => __('Note Effects', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'audio',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Logo Special Effects', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'logocss',
-        'std' => '0',
-        'type' => 'checkbox');
-
-    $options[] = array(
-        'name' => __('Logo Text A', 'sakurairo'), 
-        'desc' => __('Fill in the front part of your logo text', 'sakurairo'),
-        'id' => 'logo_a',
-        'std' => ' ',
-        'type' => 'text');
-        
-    $options[] = array(
-        'name' => __('Logo Text B', 'sakurairo'), 
-        'desc' => __('Fill in the middle part of your logo text', 'sakurairo'),
-        'id' => 'logo_b',
-        'std' => ' ',
-        'type' => 'text');
-        
-    $options[] = array(
-        'name' => __('Logo Text C', 'sakurairo'), 
-        'desc' => __('Fill in the back of your logo', 'sakurairo'),
-        'id' => 'logo_c',
-        'std' => ' ',
-        'type' => 'text');
-        
-     $options[] = array(
-        'name' => __('Logo Secondary Text', 'sakurairo'), 
-        'desc' => __('Fill in the secondary text of your logo.', 'sakurairo'),
-        'id' => 'logo_two',
-        'std' => '',
-        'type' => 'text');
-
-    $options[] = array(
-        'name' => __('Morse', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_enhanmo',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/enhanced-morse.png',
-                ),
-            );                          
-        
+       
     $options[] = array(
         'name' => __('Custom Mouse Style - Standard', 'sakurairo'), 
         'desc' => __('Apply to global, fill in link.', 'sakurairo'),
@@ -1944,33 +1827,198 @@ function optionsframework_options()
         'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/work.cur',
         'type' => 'text');   
 
-    //字体
+    //后台设置
     $options[] = array(
-        'name' => __('Fonts', 'sakurairo'),
+        'name' => __('Backstage', 'sakurairo'), 
         'type' => 'heading');
 
     $options[] = array(
-        'name' => __('Fonts-Setting', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_fonts',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/fonts.png',
-                ),
-            );     
+        'name' => __('Backstage Background Image', 'sakurairo'), 
+        'desc' => __('Backstage Background Image', 'sakurairo'), 
+        'id' => 'admin_menu_bg',
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/backstage/admin-bg.jpg",
+        'type' => 'upload');
 
     $options[] = array(
-        'name' => __('Custom', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_fontscu',
-        'std' => 'tag',
-        'type' => "images",
+        'name' => __('Login Interface Background Image', 'sakurairo'), 
+        'desc' => __('Use the default image if left this blank', 'sakurairo'), 
+        'id' => 'login_bg',
+        'type' => 'upload');
+        
+    $options[] = array(
+        'name' => __('Background Virtualization of Login Interface', 'sakurairo'), 
+        'desc' => __('It is off by default and enabled by check', 'sakurairo'), 
+        'id' => 'login_blur',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Login Interface Logo', 'sakurairo'), 
+        'desc' => __('Used for login interface display', 'sakurairo'),
+        'id' => 'logo_img',
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/logo-login.png",
+        'type' => 'upload');
+
+    $options[] = array(
+        'name' => __('Backstage Main Color (Primary menu)', 'sakurairo'),
+        'id' => 'admin_mcp',
+        'std' => "#99B8FC",
+        'desc' => __('Custom color', 'sakurairo'),
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Backstage Main Color (Secondary menu)', 'sakurairo'), 
+        'id' => 'admin_mcs',
+        'std' => "#85ABFC",
+        'desc' => __('Custom color', 'sakurairo'),
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Backstage Accent Color (For Example, The Prompt Color is Included in This Option)', 'sakurairo'),
+        'id' => 'admin_acc',
+        'std' => "#F181A2",
+        'desc' => __('Custom color', 'sakurairo'),
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Backstage Button Color', 'sakurairo'),
+        'id' => 'admin_pb_skin',
+        'std' => "#85ABFC",
+        'desc' => __('Custom color', 'sakurairo'),
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Backstage Font Color', 'sakurairo'),
+        'id' => 'admin_font_skin',
+        'std' => "#FFF",
+        'desc' => __('Custom color', 'sakurairo'),
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Allow Users to Register', 'sakurairo'), 
+        'desc' => __('Check to allow users to register at the frontend', 'sakurairo'), 
+        'id' => 'ex_register_open',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Automatically Redirect After Login', 'sakurairo'), 
+        'desc' => __('After checken, the administrator redirects to the background and the user redirects to the home page.', 'sakurairo'), 
+        'id' => 'login_urlskip',
+        'std' => '0',
+        'type' => 'checkbox');
+    
+    $options[] = array(
+        'name' => __('Login Validation', 'sakurairo'), 
+        'desc' => __('Check to enable slide verification', 'sakurairo'), 
+        'id' => 'login_pf',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Registration Verification (Frontend Only, Backend Forced Open)', 'sakurairo'), 
+        'desc' => __('Check to enable slide verification', 'sakurairo'), 
+        'id' => 'login_validate',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    //全局设置
+    $options[] = array(
+        'name' => __('Overall', 'sakurairo'),
+        'type' => 'heading');
+
+    $options[] = array(
+        'name' => __('Display Icon Selection', 'sakurairo'), 
+        'desc' => __('Choose icon color', 'sakurairo'), 
+        'id' => 'webweb_img',
+        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sakura',
+        'type' => 'select',
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/fonts-custom.png',
-                ),
-            );                          
-                    
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sakura' => __('「Default Color」Sakura（FB98C0+87B6FA）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/pink' => __('「Common Colors」Pink（EE9CA7）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/orange' => __('「Common Colors」Orange（FF8000）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/blue' => __('「Nippon Colors」Hanaasagi（1E88A8）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/yellow' => __('「Nippon Colors」Beniukon（E98B2A）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sangosyu' => __('「Nippon Colors」Sangosyu（F17C67）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sora' => __('「Nippon Colors」Sora（58B2DC）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/nae' => __('「Nippon Colors」Nae（86C166）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/macaronblue' => __('「Macaron Colors」Blue（B8F1ED）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/macarongreen' => __('「Macaron Colors」Green（B8F1CC）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/macaronpurple' => __('「Macaron Colors」Purple（D9B8F1）', 'sakurairo'), 
+            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/colorful' => __('「Others」ColorFul', 'sakurairo'), 
+    ));
+    
+    $options[] = array(
+        'name' => __('Theme Color', 'sakurairo'), 
+        'id' => 'theme_skin',
+        'std' => "#FB98C0",
+        'desc' => __('Custom theme color', 'sakurairo'), 
+        'type' => "color",
+    );
+    
+    $options[] = array(
+        'name' => __('Theme Color Matching Color', 'sakurairo'), 
+        'id' => 'theme_skinm',
+        'std' => "#87B6FA",
+        'desc' => __('Custom theme color', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Theme Light Color Management', 'sakurairo'),
+        'id' => 'light-cmanage',
+        'std' => "sep",
+        'type' => "radio",
+        'options' => array(
+            'mer' => __('Merge Options', 'sakurairo'), 
+            'sep' => __('Separation Options', 'sakurairo'), 
+        ));
+
+    $options[] = array(
+        'name' => __('Theme Color (Light)', 'sakurairo'), 
+        'id' => 'light-color',
+        'std' => "#FFE1ED",
+        'desc' => __('Custom theme color', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Theme Color (Dark mode)', 'sakurairo'), 
+        'id' => 'theme_dark',
+        'std' => "#BD144A",
+        'desc' => __('Custom theme color', 'sakurairo'), 
+        'type' => "color",
+    );
+
+    $options[] = array(
+        'name' => __('Automatic Switching Dark Mode (22:00-7:00)', 'sakurairo'), 
+        'desc' => __('Check open', 'sakurairo'), 
+        'id' => 'darkmode',
+        'std' => '1',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Image Brightness in Dark Mode', 'sakurairo'),
+        'desc' => __('Fill in Number', 'sakurairo'),
+        'id' => 'dark_imgbri',
+        'std' => '0.8',
+        'class' => 'mini',
+        'type' => 'text');     
+
+    $options[] = array(
+        'name' => __('Dark Mode Widget Transparency', 'sakurairo'), 
+        'id' => 'dark-widget-tmd',
+        'std' => "0.7",
+        'desc' => __('Fill in the alpha value from 0 to 1 here', 'sakurairo'), 
+        'type' => "text",
+        'class' => 'mini',
+    );
+
     $options[] = array(
         'name' => __('Fontweight', 'sakurairo'),
         'desc' => __('Fill in a number, maximum 900, minimum 100. Between 300 and 500 is recommended.', 'sakurairo'),
@@ -1979,6 +2027,14 @@ function optionsframework_options()
         'class' => 'mini',
         'type' => 'text');
 
+    $options[] = array(
+        'name' => __('Global Fontsize', 'sakurairo'), 
+        'desc' => __('Fill in Number. Between 10 and 20 is recommended', 'sakurairo'),
+        'id' => 'global-fontsize',
+        'std' => '',
+        'class' => 'mini',
+        'type' => 'text'); 
+    
     $options[] = array(
         'name' => __('Reference External Font', 'sakurairo'), 
         'desc' => __('Check open', 'sakurairo'), 
@@ -2048,470 +2104,159 @@ function optionsframework_options()
         'id' => 'keytitlefont',
         'std' => '',
         'type' => 'text');  
- 
+                
+    //低使用功能设置
     $options[] = array(
-        'name' => __('Size', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_fontssi',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/fonts-size.png',
-                ),
-            );                                  
-
-    $options[] = array(
-        'name' => __('Global Fontsize', 'sakurairo'), 
-        'desc' => __('Fill in Number. Between 10 and 20 is recommended', 'sakurairo'),
-        'id' => 'global-fontsize',
-        'std' => '',
-        'class' => 'mini',
-        'type' => 'text'); 
-    
-    $options[] = array(
-        'name' => __('Article Title Size', 'sakurairo'), 
-        'desc' => __('Fill in Number. Between 15 and 20 is recommended', 'sakurairo'),
-        'id' => 'article-title-size',
-        'std' => '',
-        'class' => 'mini',
-        'type' => 'text'); 
-    
-    $options[] = array(
-        'name' => __('Article Tips Size', 'sakurairo'), 
-        'desc' => __('Fill in Number. Between 10 and 15 is recommended', 'sakurairo'),
-        'id' => 'article-tips-size',
-        'std' => '',
-        'class' => 'mini',
-        'type' => 'text'); 
-    
-    $options[] = array(
-        'name' => __('Front Page One Word FontSize', 'sakurairo'), 
-        'desc' => __('Fill in Number. Between 10 and 20 is recommended', 'sakurairo'),
-        'id' => 'fontsize-oneword',
-        'std' => '',
-        'class' => 'mini',
-        'type' => 'text');  
-
-    $options[] = array(
-        'name' => __('Font Size of The First Key Title', 'sakurairo'), 
-        'desc' => __('Fill in Number. Between 70 and 90 is recommended', 'sakurairo'),
-        'id' => 'keytitle_size',
-        'std' => '80',
-        'class' => 'mini',
-        'type' => 'text');  
-
-    $options[] = array(
-        'name' => __('Article Page Title Size', 'sakurairo'), 
-        'desc' => __('Fill in Number. Between 25 and 30 is recommended', 'sakurairo'),
-        'id' => 'article-paget',
-        'std' => '',
-        'class' => 'mini',
-        'type' => 'text'); 
-
-    $options[] = array(
-        'name' => __('Others', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_fontsot',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/fonts-others.png',
-                ),
-            );                                  
-
-    $options[] = array(
-        'name' => __('Logo Font Link', 'sakurairo'), 
-        'desc' => __('When the font is ready, do this again <a href = "https://www.fontke.com/tool/fontface/">@font-face生成器</a>It can generate a bunch of files, which are all useful. It can be placed on a accessible server, OOS, CDN, etc. here, you only need to fill in the CSS style sheet file link <a href = "https://blog.ukenn.top/sakura6/#toc-head-4">Detailed tutorial</a>', 'sakurairo'),
-        'id' => 'logo_zt',
-        'std' => 'https://cdn.jsdelivr.net/gh/acai66/mydl/fonts/wenyihei/wenyihei-subfont.css',
-        'type' => 'text');
-        
-    $options[] = array(
-        'name' => __('Logo Font Name', 'sakurairo'), 
-        'desc' => __('Fill in the font name of your logo, write the name directly without the format suffix', 'sakurairo'),
-        'id' => 'logo_ztmc',
-        'std' => 'wenyihei-subfont',
-        'type' => 'text');
-
-    //主题
-    $options[] = array(
-        'name' => __('Theme', 'sakurairo'),
+        'name' => __('Low Usage', 'sakurairo'), 
         'type' => 'heading');
 
     $options[] = array(
-        'name' => __('Theme-Setting', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_theme',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/theme.png',
-                ),
-            );     
-  
-    $options[] = array(
-        'name' => __('Display Icon Selection', 'sakurairo'), 
-        'desc' => __('Choose icon color', 'sakurairo'), 
-        'id' => 'webweb_img',
-        'std' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sakura',
-        'type' => 'select',
-        'options' => array(
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sakura' => __('「Default Color」Sakura（FB98C0+87B6FA）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/pink' => __('「Common Colors」Pink（EE9CA7）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/orange' => __('「Common Colors」Orange（FF8000）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/blue' => __('「Nippon Colors」Hanaasagi（1E88A8）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/yellow' => __('「Nippon Colors」Beniukon（E98B2A）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sangosyu' => __('「Nippon Colors」Sangosyu（F17C67）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sora' => __('「Nippon Colors」Sora（58B2DC）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/nae' => __('「Nippon Colors」Nae（86C166）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/macaronblue' => __('「Macaron Colors」Blue（B8F1ED）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/macarongreen' => __('「Macaron Colors」Green（B8F1CC）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/macaronpurple' => __('「Macaron Colors」Purple（D9B8F1）', 'sakurairo'), 
-            'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/colorful' => __('「Others」ColorFul', 'sakurairo'), 
-    ));
-    
-    $options[] = array(
-        'name' => __('Theme Color', 'sakurairo'), 
-        'id' => 'theme_skin',
-        'std' => "#FB98C0",
-        'desc' => __('Custom theme color', 'sakurairo'), 
-        'type' => "color",
-    );
-    
-    $options[] = array(
-        'name' => __('Theme Color Matching Color', 'sakurairo'), 
-        'id' => 'theme_skinm',
-        'std' => "#87B6FA",
-        'desc' => __('Custom theme color', 'sakurairo'), 
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Theme Light Color Management', 'sakurairo'),
-        'id' => 'light-cmanage',
-        'std' => "sep",
+        'name' => __('Statistics Interface', 'sakurairo'), 
+        'id' => 'statistics_api',
+        'std' => "theme_build_in",
         'type' => "radio",
         'options' => array(
-            'mer' => __('Merge Options', 'sakurairo'), 
-            'sep' => __('Separation Options', 'sakurairo'), 
+            'wp_statistics' => __('WP-Statistics plugin (Professional statistics, can exclude invalid access)', 'sakurairo'), 
+            'theme_build_in' => __('Theme built-in (simple statistics, calculate each page access request)', 'sakurairo'), 
         ));
 
     $options[] = array(
-        'name' => __('Theme Color (Light)', 'sakurairo'), 
-        'id' => 'light-color',
-        'std' => "#FFE1ED",
-        'desc' => __('Custom theme color', 'sakurairo'), 
-        'type' => "color",
-    );
+        'name' => __('Statistical Data Display Format', 'sakurairo'), 
+        'id' => 'statistics_format',
+        'std' => "type_1",
+        'type' => "radio",
+        'options' => array(
+            'type_1' => __('23333 Views (default)', 'sakurairo'), 
+            'type_2' => __('23,333 Views (britain)', 'sakurairo'), 
+            'type_3' => __('23 333 Views (french)', 'sakurairo'), 
+            'type_4' => __('23k Views (chinese)', 'sakurairo'), 
+        ));
 
     $options[] = array(
-        'name' => __('Darkmode', 'sakurairo'), 
+        'name' => __('Search Background Customization', 'sakurairo'), 
+        'desc' => __('It is the cute one that opens the search interface', 'sakurairo'), 
+        'id' => 'search-image',
+        'std' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/iloli.gif",
+        'type' => 'upload');
+
+    $options[] = array(
+        'name' => __('Real Time Search Function', 'sakurairo'), 
+        'desc' => __('Real-time search in the foreground, call the Rest API to update the cache every hour, you can manually set the cache time in api.php', 'sakurairo'), 
+        'id' => 'live_search',
+        'std' => '0',
+        'type' => 'checkbox');
+
+    $options[] = array(
+        'name' => __('Include Comments in Real Time Search', 'sakurairo'), 
+        'desc' => __('Search for comments in real-time search (not recommended if there are too many comments on the site)', 'sakurairo'), 
+        'id' => 'live_search_comment',
+        'std' => '0',
+        'type' => 'checkbox');
+ 
+    $options[] = array(
+        'name' => __('Localize', 'sakurairo'), 
         'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_themedm',
+        'id' => 'setting_advlo',
         'std' => 'tag',
         'type' => "images",
         'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/theme-darkmode.png',
+            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/advanced-local.png',
                 ),
-            );                                  
+            );              
+            
+    $options[] = array(
+        'name' => __('Use The Front-end Library Locally (lib.js、lib.css)', 'sakurairo'), 
+        'desc' => __('The front-end library don\'t load from jsDelivr, not recommand', 'sakurairo'), 
+        'id' => 'jsdelivr_cdn_test',
+        'std' => '0',
+        'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Theme Color (Dark mode)', 'sakurairo'), 
-        'id' => 'theme_dark',
-        'std' => "#BD144A",
-        'desc' => __('Custom theme color', 'sakurairo'), 
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Automatic Switching Dark Mode (22:00-7:00)', 'sakurairo'), 
-        'desc' => __('Check open', 'sakurairo'), 
-        'id' => 'darkmode',
+        'name' => __('Use JS and CSS File of The Theme (sakura-app.js、style.css) locally', 'sakurairo'), 
+        'desc' => __('The js and css files of the theme do not load from jsDelivr, please open when DIY', 'sakurairo'),
+        'id' => 'app_no_jsdelivr_cdn',
         'std' => '1',
         'type' => 'checkbox');
 
     $options[] = array(
-        'name' => __('Image Brightness in Dark Mode', 'sakurairo'),
-        'desc' => __('Fill in Number', 'sakurairo'),
-        'id' => 'dark_imgbri',
-        'std' => '0.8',
-        'class' => 'mini',
-        'type' => 'text');     
+        'name' => __('Gravatar Avatar Proxy', 'sakurairo'),
+        'desc' => __('A front-ed proxy for Gravatar, eg. sdn.geekzu.org/avatar . Leave it blank if you do not need.', 'sakurairo'),
+        'id' => 'gravatar_proxy',
+        'std' => "sdn.geekzu.org/avatar",
+        'type' => "text");    
 
     $options[] = array(
-        'name' => __('Dark Mode Widget Transparency', 'sakurairo'), 
-        'id' => 'dark-widget-tmd',
-        'std' => "0.7",
-        'desc' => __('Fill in the alpha value from 0 to 1 here', 'sakurairo'), 
-        'type' => "text",
-        'class' => 'mini',
-    );
+        'name' => __('Images CDN', 'sakurairo'), 
+        'desc' => __('Note: Fill in the format http(s)://your CDN domain name/. <br>In other words, the original path is http://your.domain/wp-content/uploads/2018/05/xx.png and the picture will load from http://your CDN domain/2018/05/xx.png', 'sakurairo'), 
+        'id' => 'qiniu_cdn',
+        'std' => '',
+        'type' => 'text');
 
     $options[] = array(
-        'name' => __('Homepage', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_themehp',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/theme-homepage.png',
-                ),
-            );                                  
-
-    $options[] = array(
-        'name' => __('Information Bar Background Color (RGBA) Red', 'sakurairo'), 
-        'id' => 'infor-bar-bg-cr',
-        'std' => "255",
-        'desc' => __('Fill in the red value from 0 to 255 here', 'sakurairo'), 
-        'type' => "text",
-        'class' => 'mini',
-    );
-
-    $options[] = array(
-        'name' => __('Information Bar Background Color (RGBA) Green', 'sakurairo'), 
-        'id' => 'infor-bar-bg-cg',
-        'std' => "255",
-        'desc' => __('Fill in the green value from 0 to 255 here', 'sakurairo'), 
-        'type' => "text",
-        'class' => 'mini',
-    );
-
-    $options[] = array(
-        'name' => __('Information Bar Background Color (RGBA) Blue', 'sakurairo'), 
-        'id' => 'infor-bar-bg-cb',
-        'std' => "255",
-        'desc' => __('Fill in the blue value from 0 to 255 here', 'sakurairo'), 
-        'type' => "text",
-        'class' => 'mini',
-    );
-
-    $options[] = array(
-        'name' => __('Information Bar Background Color (RGBA) Alpha', 'sakurairo'), 
-        'id' => 'infor-bar-bg-ca',
-        'std' => "0.8",
-        'desc' => __('Fill in the alpha value from 0 to 1 here', 'sakurairo'), 
-        'type' => "text",
-        'class' => 'mini',
-    );
-
-    $options[] = array(
-        'name' => __('Foreground Menu background Color (RGBA) Red', 'sakurairo'), 
-        'id' => 'fore-switch-bcr',
-        'std' => "255",
-        'desc' => __('Fill in the red value from 0 to 255 here', 'sakurairo'), 
-        'type' => "text",
-        'class' => 'mini',
-    );
-
-    $options[] = array(
-        'name' => __('Foreground Menu background Color (RGBA) Green', 'sakurairo'), 
-        'id' => 'fore-switch-bcg',
-        'std' => "255",
-        'desc' => __('Fill in the green value from 0 to 255 here', 'sakurairo'), 
-        'type' => "text",
-        'class' => 'mini',
-    );
-
-    $options[] = array(
-        'name' => __('Foreground Menu background Color (RGBA) Blue', 'sakurairo'), 
-        'id' => 'fore-switch-bcb',
-        'std' => "255",
-        'desc' => __('Fill in the blue value from 0 to 255 here', 'sakurairo'), 
-        'type' => "text",
-        'class' => 'mini',
-    );
-
-    $options[] = array(
-        'name' => __('Foreground Menu background Color (RGBA) Alpha', 'sakurairo'), 
-        'id' => 'fore-switch-bca',
-        'std' => "0.8",
-        'desc' => __('Fill in the alpha value from 0 to 1 here', 'sakurairo'), 
-        'type' => "text",
-        'class' => 'mini',
-    );
-
-    $options[] = array(
-        'name' => __('Foreground Selection Menu Background Color (Light colors are recommended)', 'sakurairo'), 
-        'id' => 'fore-switch-sele-bc',
-        'std' => "#FFE1ED",
-        'desc' => __('Custom colors', 'sakurairo'), 
-        'type' => "color",
-    );
+        'name' => __('Google Analytics', 'sakurairo'), 
+        'desc' => __('UA-xxxxx-x', 'sakurairo'),
+        'id' => 'google_analytics_id',
+        'std' => '',
+        'type' => 'text');
     
     $options[] = array(
-        'name' => __('Home Page Article Separator (Light colors are recommended)', 'sakurairo'), 
-        'id' => 'hpage-art-sc',
-        'std' => "#FFE1ED",
-        'desc' => __('Custom colors', 'sakurairo'), 
-        'type' => "color",
-    );
+        'name' => __('Customize CSS Styles', 'sakurairo'), 
+        'desc' => __('Fill in the CSS code directly, no need to write style tags', 'sakurairo'), 
+        'id' => 'site_custom_style',
+        'std' => '',
+        'type' => 'textarea');
 
     $options[] = array(
-        'name' => __('Home Page Article Time Prompt Emphasize Background (Light colors are recommended)', 'sakurairo'), 
-        'id' => 'hpage-art-tpebc',
-        'std' => "#FFE1ED",
-        'desc' => __('Custom colors', 'sakurairo'), 
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Home Page Article Border Shadow (Light colors are recommended)', 'sakurairo'), 
-        'id' => 'hpage-art-bsc',
-        'std' => "#FFE1ED",
-        'desc' => __('Custom colors', 'sakurairo'), 
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Drop Down Arrow Color (Light colors are recommended)', 'sakurairo'), 
-        'id' => 'godown_skin',
-        'std' => "#FFF",
-        'desc' => __('Custom colors', 'sakurairo'), 
-        'type' => "color",
-    );  
-
-    $options[] = array(
-        'name' => __('Home Page Article Time Prompt Accent (Theme colors are recommended)', 'sakurairo'), 
-        'id' => 'hpage-art-tpac',
-        'std' => "#FB98C0",
-        'desc' => __('Custom colors', 'sakurairo'), 
-        'type' => "color",
-    );
+        'name' => __('The Categories of Articles that don\'t not show on homepage', 'sakurairo'), 
+        'desc' => __('Fill in category ID, multiple IDs are divided by a comma ","', 'sakurairo'), 
+        'id' => 'classify_display',
+        'std' => '',
+        'type' => 'text');
     
     $options[] = array(
-        'name' => __('Home Page Article Prompt Icon Color (Theme colors are recommended)', 'sakurairo'), 
-        'id' => 'hpage-art-pic',
-        'std' => "#FB98C0",
-        'desc' => __('Custom colors', 'sakurairo'), 
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Home Page Focus Background Color (RGBA) Red', 'sakurairo'), 
-        'id' => 'hpage-focus-bcr',
-        'std' => "255",
-        'desc' => __('Fill in the red value from 0 to 255 here', 'sakurairo'), 
-        'type' => "text",
-        'class' => 'mini',
-    );
-
-    $options[] = array(
-        'name' => __('Home Page Focus Background Color (RGBA) Green', 'sakurairo'), 
-        'id' => 'hpage-focus-bcg',
-        'std' => "225",
-        'desc' => __('Fill in the green value from 0 to 255 here', 'sakurairo'), 
-        'type' => "text",
-        'class' => 'mini',
-    );
-
-    $options[] = array(
-        'name' => __('Home Page Focus Background Color (RGBA) Blue', 'sakurairo'), 
-        'id' => 'hpage-focus-bcb',
-        'std' => "237",
-        'desc' => __('Fill in the blue value from 0 to 255 here', 'sakurairo'), 
-        'type' => "text",
-        'class' => 'mini',
-    );
-
-    $options[] = array(
-        'name' => __('Home Page Focus Background Color (RGBA) Alpha', 'sakurairo'), 
-        'id' => 'hpage-focus-bca',
-        'std' => "0.7",
-        'desc' => __('Fill in the alpha value from 0 to 1 here', 'sakurairo'), 
-        'type' => "text",
-        'class' => 'mini',
-    );
-
-    $options[] = array(
-        'name' => __('Home Page Key Title Font Color', 'sakurairo'), 
-        'id' => 'hpage-ket-tfc',
-        'std' => "#FFF",
-        'desc' => __('Custom theme color', 'sakurairo'), 
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Home Page Announcement Font Color', 'sakurairo'), 
-        'id' => 'hpage-afc',
-        'std' => "#999",
-        'desc' => __('Custom theme color', 'sakurairo'), 
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Home Page Announcement Border Color', 'sakurairo'), 
-        'id' => 'hpage-abc',
-        'std' => "#E6E6E6",
-        'desc' => __('Custom theme color(Only takes effect when the announcement style is set to original)', 'sakurairo'), 
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Preload Animation Color A', 'sakurairo'), 
-        'id' => 'preload-ani-c1',
-        'std' => "#FFE1ED",
-        'desc' => __('Custom colors', 'sakurairo'), 
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Preload Animation Color B', 'sakurairo'), 
-        'id' => 'preload-ani-c2',
-        'std' => "#FB98C0",
-        'desc' => __('Custom colors', 'sakurairo'), 
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Backstage Color', 'sakurairo'), 
-        'desc' => __(' ', 'sakurairo'), 
-        'id' => 'setting_themebs',
-        'std' => 'tag',
-        'type' => "images",
-        'options' => array(
-            'tag' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/setting/tips/theme-backstage.png',
-                ),
-            );                                  
-
-    $options[] = array(
-        'name' => __('Backstage Main Color (Primary menu)', 'sakurairo'),
-        'id' => 'admin_mcp',
-        'std' => "#99B8FC",
-        'desc' => __('Custom color', 'sakurairo'),
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Backstage Main Color (Secondary menu)', 'sakurairo'), 
-        'id' => 'admin_mcs',
-        'std' => "#85ABFC",
-        'desc' => __('Custom color', 'sakurairo'),
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Backstage Accent Color (For Example, The Prompt Color is Included in This Option)', 'sakurairo'),
-        'id' => 'admin_acc',
-        'std' => "#F181A2",
-        'desc' => __('Custom color', 'sakurairo'),
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Backstage Button Color', 'sakurairo'),
-        'id' => 'admin_pb_skin',
-        'std' => "#85ABFC",
-        'desc' => __('Custom color', 'sakurairo'),
-        'type' => "color",
-    );
-
-    $options[] = array(
-        'name' => __('Backstage Font Color', 'sakurairo'),
-        'id' => 'admin_font_skin',
-        'std' => "#FFF",
-        'desc' => __('Custom color', 'sakurairo'),
-        'type' => "color",
-    );
+        'name' => __('Images Category', 'sakurairo'), 
+        'desc' => __('Fill in category ID, multiple IDs are divided by a comma ","', 'sakurairo'), 
+        'id' => 'image_category',
+        'std' => '',
+        'type' => 'text');
     
+    $options[] = array(
+        'name' => __('Specify Login Address', 'sakurairo'), 
+        'desc' => __('Forcibly do not use the background address to log in, fill in the new landing page address, such as http://www.xxx.com/login [Note] Before you fill out, test your new page can be opened normally, so as not to enter the background or other problems happening', 'sakurairo'), /*强制不使用后台地址登录，填写新建的登录页面地址，比如 http://www.xxx.com/login【注意】填写前先测试下你新建的页面是可以正常打开的，以免造成无法进入后台等情况*/
+        'id' => 'exlogin_url',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Specify Registered Address', 'sakurairo'), 
+        'desc' => __('This link is used on the login page as a registration entry', 'sakurairo'), 
+        'id' => 'exregister_url',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Version Control', 'sakurairo'), 
+        'desc' => __('Used to update frontend cookies and browser caches, any string can be used', 'sakurairo'), 
+        'id' => 'cookie_version',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Time Zone Adjustment', 'sakurairo'), 
+        'desc' => __('If the comment has a time difference problem adjust here, fill in an integer, the calculation method: actual_time = display_error_time - the_integer_you_entered (unit: hour)', 'sakurairo'), 
+        'id' => 'time_zone_fix',
+        'std' => '0',
+        'class' => 'mini',
+        'type' => 'text');
+
+   /* 
+   $options[] = array(
+        'name' => __('BaguetteBox Funtion', 'sakurairo'), 
+        'desc' => __('Default off，<a href="https://github.com/mashirozx/Sakura/wiki/Fancybox">please read wiki</a>', 'sakurairo'), 
+        'id' => 'image_viewer',
+        'std' => '0',
+        'type' => 'checkbox');
+   */
+        
     return $options;
 }
