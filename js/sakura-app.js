@@ -235,7 +235,7 @@ function attach_image() {
                     }, 1000);
                     if (res.status == 200) {
                         var get_the_url = res.proxy;
-                        $('#upload-img-show').append('<img class="lazyload upload-image-preview" src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sakura/load/inload.svg" data-src="' + get_the_url + '" onclick="window.open(\'' + get_the_url + '\')" onerror="imgError(this)" />');
+                        $('#upload-img-show').append('<img class="lazyload upload-image-preview" src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/colorful/load/inload.svg" data-src="' + get_the_url + '" onclick="window.open(\'' + get_the_url + '\')" onerror="imgError(this)" />');
                         lazyload();
                         addComment.createButterbar("图片上传成功~<br>Uploaded successfully~");
                         grin(get_the_url, type = 'Img');
@@ -430,7 +430,7 @@ no_right_click();
 
 $(document).ready(function () {
     function cover_bg(){
-        if (document.body.clientWidth < 860 && mashiro_option.cover_beta == true) {
+        if (document.body.clientWidth < 860 && mashiro_option.random_graphs_mts == true) {
             $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?type=mobile" + ")");
         }else{
             $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + ")");
@@ -506,7 +506,7 @@ $(document).ready(function () {
 var bgn = 1;
 
 function nextBG() {
-    if(document.body.clientWidth < 860 && mashiro_option.cover_beta == true){
+    if(document.body.clientWidth < 860 && mashiro_option.random_graphs_mts == true){
         $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?type=mobile&" + bgn + ")");
     }else{
         $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?" + bgn + ")");
@@ -516,7 +516,7 @@ function nextBG() {
 
 function preBG() {
     bgn = bgn - 1;
-    if(document.body.clientWidth < 860 && mashiro_option.cover_beta == true){
+    if(document.body.clientWidth < 860 && mashiro_option.random_graphs_mts == true){
         $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?type=mobile&" + bgn + ")");
     }else{
         $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?" + bgn + ")");
@@ -685,7 +685,7 @@ function tableOfContentScroll(flag) {
     } else {
         if (flag) {
             var id = 1,
-                heading_fix = mashiro_option.entry_content_theme == "sakurairo" ? $("article").hasClass("type-post") ? $("div").hasClass("pattern-attachment-img") ? -75 : 200 : 375 : window.innerHeight / 2;
+                heading_fix = mashiro_option.entry_content_style == "sakurairo" ? $("article").hasClass("type-post") ? $("div").hasClass("pattern-attachment-img") ? -75 : 200 : 375 : window.innerHeight / 2;
             $(".entry-content , .links").children("h1,h2,h3,h4,h5").each(function () {
                 var hyphenated = "toc-head-" + id;
                 this.id = hyphenated;
@@ -1124,7 +1124,7 @@ function load_bangumi() {
 
 mashiro_global.ini.normalize();
 loadCSS(mashiro_option.jsdelivr_css_src);
-loadCSS(mashiro_option.entry_content_theme_src);
+loadCSS(mashiro_option.entry_content_style_src);
 loadCSS("https://at.alicdn.com/t/font_679578_qyt5qzzavdo39pb9.css");
 loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css");
 (function webpackUniversalModuleDefinition(b, a) {

@@ -8,8 +8,8 @@ class Bilibili
     private $cookies;
 
     public function __construct() {
-        $this->uid = akina_option('bilibili_id');
-        $this->cookies = akina_option('bilibili_cookie');
+        $this->uid = iro_opt('bilibili_id');
+        $this->cookies = iro_opt('bilibili_cookie');
     }
 
     public function get_the_bgm_items($page = 1) {

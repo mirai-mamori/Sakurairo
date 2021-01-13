@@ -1,0 +1,664 @@
+# Copyright (C) 2021 Codestar
+# This file is distributed under the same license as the Codestar Framework package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Codestar Framework 2.2.1\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#: classes/admin-options.class.php:224
+msgid "Error while saving the changes."
+msgstr "保存时发生错误。"
+
+#: classes/admin-options.class.php:284
+msgid "Settings successfully imported."
+msgstr "设置导入成功。"
+
+#: classes/admin-options.class.php:296 classes/admin-options.class.php:312
+msgid "Default settings restored."
+msgstr "已恢复默认设置。"
+
+#: classes/admin-options.class.php:383
+msgid "Settings saved."
+msgstr "设置已保存。"
+
+#: classes/admin-options.class.php:561
+msgid "You have unsaved changes, save your changes!"
+msgstr "有设置已修改，请记得保存！"
+
+#: classes/admin-options.class.php:563
+msgid "show all settings"
+msgstr "显示所有选项"
+
+#: classes/admin-options.class.php:565 fields/icon/icon.php:57
+#: fields/map/map.php:23
+msgid "Search..."
+msgstr "搜索..."
+
+#: classes/admin-options.class.php:568 classes/admin-options.class.php:691
+msgid "Save"
+msgstr "保存"
+
+#: classes/admin-options.class.php:568 classes/admin-options.class.php:691
+msgid "Saving..."
+msgstr "正在保存..."
+
+#: classes/admin-options.class.php:569 classes/admin-options.class.php:692
+msgid "Reset Section"
+msgstr "重置选区"
+
+#: classes/admin-options.class.php:569 classes/admin-options.class.php:692
+msgid "Are you sure to reset this section options?"
+msgstr "去定要重置所有选项？"
+
+#: classes/admin-options.class.php:570 classes/admin-options.class.php:693
+msgid "Reset All"
+msgstr "重置全部"
+
+#: classes/admin-options.class.php:570 classes/admin-options.class.php:693
+#: classes/comment-options.class.php:213 classes/metabox-options.class.php:282
+#: fields/backup/backup.php:31
+msgid "Reset"
+msgstr "重置"
+
+#: classes/admin-options.class.php:570 classes/admin-options.class.php:693
+msgid "Are you sure you want to reset all settings to default values?"
+msgstr "是否要将所有设置重置为默认值?"
+
+#: classes/admin-options.class.php:668 classes/comment-options.class.php:196
+#: classes/metabox-options.class.php:265 fields/button_set/button_set.php:56
+#: fields/checkbox/checkbox.php:76 fields/radio/radio.php:75
+#: fields/select/select.php:113 functions/actions.php:41
+msgid "No data available."
+msgstr "没有可用数据。"
+
+#: classes/comment-options.class.php:214 classes/metabox-options.class.php:283
+msgid "update post"
+msgstr "更新文章"
+
+#: classes/comment-options.class.php:214 classes/metabox-options.class.php:283
+msgid "Cancel"
+msgstr "取消"
+
+#: classes/setup.class.php:529
+msgid "Are you sure?"
+msgstr "是否确定?"
+
+#: classes/setup.class.php:530
+msgid "Please enter %s or more characters"
+msgstr "请输入至少 %s 字符"
+
+#: classes/setup.class.php:531
+msgid "Searching..."
+msgstr "搜索中..."
+
+#: classes/setup.class.php:532
+msgid "No results found."
+msgstr "未找到结果。"
+
+#: classes/setup.class.php:615
+msgid "Oops! Not allowed."
+msgstr "哎呀! 不允许。"
+
+#: classes/setup.class.php:689 classes/setup.class.php:693
+msgid "Field not found!"
+msgstr "未找到字段!"
+
+#: classes/shortcode-options.class.php:251 fields/group/group.php:23
+msgid "Add New"
+msgstr "新增"
+
+#: classes/shortcode-options.class.php:288 functions/actions.php:16
+#: functions/actions.php:68 functions/actions.php:106 functions/actions.php:141
+#: functions/actions.php:170
+msgid "Error: Invalid nonce verification."
+msgstr "错误: 无效的nonce验证。"
+
+#: fields/background/background.php:35 fields/media/media.php:57
+msgid "Not selected"
+msgstr "未选中的"
+
+#: fields/background/background.php:66 fields/date/date.php:31
+msgid "From"
+msgstr "从"
+
+#: fields/background/background.php:84 fields/date/date.php:32
+msgid "To"
+msgstr "到"
+
+#: fields/background/background.php:102
+msgid "Direction"
+msgstr "方向"
+
+#: fields/background/background.php:108
+msgid "Gradient Direction"
+msgstr "渐变方向"
+
+#: fields/background/background.php:109
+msgid "&#8659; top to bottom"
+msgstr "&#8659; 从上到下"
+
+#: fields/background/background.php:110
+msgid "&#8658; left to right"
+msgstr "&#8658;从左到右"
+
+#: fields/background/background.php:111
+msgid "&#8664; corner top to right"
+msgstr "&#8664; 右上角"
+
+#: fields/background/background.php:112
+msgid "&#8665; corner top to left"
+msgstr "&#8664; 左上角"
+
+#: fields/background/background.php:155
+msgid "Background Position"
+msgstr "背景位置"
+
+#: fields/background/background.php:156
+msgid "Left Top"
+msgstr "左上"
+
+#: fields/background/background.php:157
+msgid "Left Center"
+msgstr "左中"
+
+#: fields/background/background.php:158
+msgid "Left Bottom"
+msgstr "左下"
+
+#: fields/background/background.php:159
+msgid "Center Top"
+msgstr "中上"
+
+#: fields/background/background.php:160
+msgid "Center Center"
+msgstr "中间"
+
+#: fields/background/background.php:161
+msgid "Center Bottom"
+msgstr "中下"
+
+#: fields/background/background.php:162
+msgid "Right Top"
+msgstr "右上"
+
+#: fields/background/background.php:163
+msgid "Right Center"
+msgstr "右中"
+
+#: fields/background/background.php:164
+msgid "Right Bottom"
+msgstr "右下"
+
+#: fields/background/background.php:178
+msgid "Background Repeat"
+msgstr "重复背景"
+
+#: fields/background/background.php:179
+msgid "Repeat"
+msgstr "重复"
+
+#: fields/background/background.php:180
+msgid "No Repeat"
+msgstr "不重复"
+
+#: fields/background/background.php:181
+msgid "Repeat Horizontally"
+msgstr "水平重复"
+
+#: fields/background/background.php:182
+msgid "Repeat Vertically"
+msgstr "垂直重复"
+
+#: fields/background/background.php:196
+msgid "Background Attachment"
+msgstr "背景附着方式"
+
+#: fields/background/background.php:197
+msgid "Scroll"
+msgstr "滚动"
+
+#: fields/background/background.php:198
+msgid "Fixed"
+msgstr "固定"
+
+#: fields/background/background.php:212
+msgid "Background Size"
+msgstr "背景大小"
+
+#: fields/background/background.php:213
+msgid "Cover"
+msgstr "覆盖"
+
+#: fields/background/background.php:214
+msgid "Contain"
+msgstr "包含"
+
+#: fields/background/background.php:215
+msgid "Auto"
+msgstr "自动"
+
+#: fields/background/background.php:229
+msgid "Background Origin"
+msgstr "背景定位"
+
+#: fields/background/background.php:230 fields/background/background.php:248
+msgid "Padding Box"
+msgstr "内边距"
+
+#: fields/background/background.php:231 fields/background/background.php:247
+msgid "Border Box"
+msgstr "边框"
+
+#: fields/background/background.php:232 fields/background/background.php:249
+msgid "Content Box"
+msgstr "内容框"
+
+#: fields/background/background.php:246
+msgid "Background Clip"
+msgstr "背景片段"
+
+#: fields/background/background.php:263
+msgid "Background Blend Mode"
+msgstr "背景混合模式"
+
+#: fields/background/background.php:264 fields/link_color/link_color.php:36
+#: fields/typography/typography.php:175
+msgid "Normal"
+msgstr "正常"
+
+#: fields/background/background.php:265
+msgid "Multiply"
+msgstr "乘"
+
+#: fields/background/background.php:266
+msgid "Screen"
+msgstr "屏幕"
+
+#: fields/background/background.php:267
+msgid "Overlay"
+msgstr "覆盖"
+
+#: fields/background/background.php:268
+msgid "Darken"
+msgstr "变暗"
+
+#: fields/background/background.php:269
+msgid "Lighten"
+msgstr "减轻"
+
+#: fields/background/background.php:270
+msgid "Color Dodge"
+msgstr "颜色道奇"
+
+#: fields/background/background.php:271
+msgid "Saturation"
+msgstr "饱和度"
+
+#: fields/background/background.php:272
+msgid "Color"
+msgstr "颜色"
+
+#: fields/background/background.php:273
+msgid "Luminosity"
+msgstr "光度"
+
+#: fields/backup/backup.php:26
+msgid "Import"
+msgstr "导入"
+
+#: fields/backup/backup.php:29
+msgid "Export & Download"
+msgstr "导出 & 下载"
+
+#: fields/border/border.php:25 fields/spacing/spacing.php:25
+msgid "top"
+msgstr "顶部"
+
+#: fields/border/border.php:26 fields/spacing/spacing.php:26
+msgid "right"
+msgstr "右侧"
+
+#: fields/border/border.php:27 fields/spacing/spacing.php:27
+msgid "bottom"
+msgstr "底部"
+
+#: fields/border/border.php:28 fields/spacing/spacing.php:28
+msgid "left"
+msgstr "左侧"
+
+#: fields/border/border.php:29 fields/spacing/spacing.php:29
+msgid "all"
+msgstr "所有"
+
+#: fields/border/border.php:51 fields/typography/typography.php:203
+msgid "Solid"
+msgstr "实线"
+
+#: fields/border/border.php:52 fields/typography/typography.php:206
+msgid "Dashed"
+msgstr "虚线"
+
+#: fields/border/border.php:53 fields/typography/typography.php:205
+msgid "Dotted"
+msgstr "点线"
+
+#: fields/border/border.php:54 fields/typography/typography.php:204
+msgid "Double"
+msgstr "双线"
+
+#: fields/border/border.php:55
+msgid "Inset"
+msgstr "插入"
+
+#: fields/border/border.php:56
+msgid "Outset"
+msgstr "开始"
+
+#: fields/border/border.php:57
+msgid "Groove"
+msgstr "槽"
+
+#: fields/border/border.php:58
+msgid "ridge"
+msgstr "凸出"
+
+#: fields/border/border.php:59 fields/typography/typography.php:188
+#: fields/typography/typography.php:202
+msgid "None"
+msgstr "无"
+
+#: fields/dimensions/dimensions.php:22
+msgid "width"
+msgstr "宽度"
+
+#: fields/dimensions/dimensions.php:23
+msgid "height"
+msgstr "高度"
+
+#: fields/gallery/gallery.php:20
+msgid "Add Gallery"
+msgstr "新增相册"
+
+#: fields/gallery/gallery.php:21
+msgid "Edit Gallery"
+msgstr "编辑相册"
+
+#: fields/gallery/gallery.php:22
+msgid "Clear"
+msgstr "清空"
+
+#: fields/group/group.php:35 fields/repeater/repeater.php:27
+msgid "Error: Field ID conflict."
+msgstr "错误: 字段ID冲突。"
+
+#: fields/group/group.php:46 fields/group/group.php:87
+#: fields/repeater/repeater.php:48 fields/repeater/repeater.php:76
+msgid "Are you sure to delete this item?"
+msgstr "您确定想要删除吗?"
+
+#: fields/group/group.php:121 fields/repeater/repeater.php:89
+msgid "You cannot add more."
+msgstr "您不能再添加了。"
+
+#: fields/group/group.php:122 fields/repeater/repeater.php:90
+msgid "You cannot remove more."
+msgstr "您无法删除更多。"
+
+#: fields/icon/icon.php:20 fields/icon/icon.php:53
+msgid "Add Icon"
+msgstr "新增图标"
+
+#: fields/icon/icon.php:21
+msgid "Remove Icon"
+msgstr "移除图标"
+
+#: fields/link/link.php:20
+msgid "Add Link"
+msgstr "移除链接"
+
+#: fields/link/link.php:21
+msgid "Edit Link"
+msgstr "编辑链接"
+
+#: fields/link/link.php:22
+msgid "Remove Link"
+msgstr "移除链接"
+
+#: fields/link_color/link_color.php:37
+msgid "Hover"
+msgstr "悬浮"
+
+#: fields/link_color/link_color.php:38
+msgid "Active"
+msgstr "激活"
+
+#: fields/link_color/link_color.php:39
+msgid "Visited"
+msgstr "访问"
+
+#: fields/link_color/link_color.php:40
+msgid "Focus"
+msgstr "焦点"
+
+#: fields/map/map.php:24
+msgid "Latitude"
+msgstr "纬度"
+
+#: fields/map/map.php:25
+msgid "Longitude"
+msgstr "经度"
+
+#: fields/media/media.php:23 fields/upload/upload.php:21
+msgid "Upload"
+msgstr "上传"
+
+#: fields/media/media.php:24 fields/upload/upload.php:22
+msgid "Remove"
+msgstr "移除"
+
+#: fields/sorter/sorter.php:21
+msgid "Enabled"
+msgstr "启用"
+
+#: fields/sorter/sorter.php:22
+msgid "Disabled"
+msgstr "已停用"
+
+#: fields/switcher/switcher.php:20
+msgid "On"
+msgstr "开"
+
+#: fields/switcher/switcher.php:21
+msgid "Off"
+msgstr "关"
+
+#: fields/typography/typography.php:85
+msgid "Font Family"
+msgstr "字体"
+
+#: fields/typography/typography.php:86
+msgid "Select a font"
+msgstr "样式"
+
+#: fields/typography/typography.php:94
+msgid "Backup Font Family"
+msgstr "导出设置"
+
+#: fields/typography/typography.php:108 fields/typography/typography.php:121
+#: fields/typography/typography.php:134 fields/typography/typography.php:149
+#: fields/typography/typography.php:165 fields/typography/typography.php:178
+#: fields/typography/typography.php:192 fields/typography/typography.php:210
+msgid "Default"
+msgstr "默认"
+
+#: fields/typography/typography.php:119
+msgid "Font Style"
+msgstr "样式"
+
+#: fields/typography/typography.php:133 fields/typography/typography.php:134
+msgid "Load Extra Styles"
+msgstr "加载额外样式"
+
+#: fields/typography/typography.php:147
+msgid "Subset"
+msgstr "子集"
+
+#: fields/typography/typography.php:157
+msgid "Text Align"
+msgstr "文字对齐"
+
+#: fields/typography/typography.php:159
+msgid "Inherit"
+msgstr "继承"
+
+#: fields/typography/typography.php:160
+msgid "Left"
+msgstr "左"
+
+#: fields/typography/typography.php:161
+msgid "Center"
+msgstr "居中"
+
+#: fields/typography/typography.php:162
+msgid "Right"
+msgstr "右"
+
+#: fields/typography/typography.php:163
+msgid "Justify"
+msgstr "两端对齐"
+
+#: fields/typography/typography.php:164
+msgid "Initial"
+msgstr "初始"
+
+#: fields/typography/typography.php:173
+msgid "Font Variant"
+msgstr "样式"
+
+#: fields/typography/typography.php:176
+msgid "Small Caps"
+msgstr "小写"
+
+#: fields/typography/typography.php:177
+msgid "All Small Caps"
+msgstr "全部小写"
+
+#: fields/typography/typography.php:186
+msgid "Text Transform"
+msgstr "文字转换"
+
+#: fields/typography/typography.php:189
+msgid "Capitalize"
+msgstr "大写"
+
+#: fields/typography/typography.php:190
+msgid "Uppercase"
+msgstr "大写"
+
+#: fields/typography/typography.php:191
+msgid "Lowercase"
+msgstr "小写"
+
+#: fields/typography/typography.php:200
+msgid "Text Decoration"
+msgstr "文字装饰"
+
+#: fields/typography/typography.php:207
+msgid "Wavy"
+msgstr "波浪"
+
+#: fields/typography/typography.php:208
+msgid "Overline"
+msgstr "上划线"
+
+#: fields/typography/typography.php:209
+msgid "Line-through"
+msgstr "删除线"
+
+#: fields/typography/typography.php:222
+msgid "Font Size"
+msgstr "字体大小"
+
+#: fields/typography/typography.php:234
+msgid "Line Height"
+msgstr "行高"
+
+#: fields/typography/typography.php:246
+msgid "Letter Spacing"
+msgstr "间距"
+
+#: fields/typography/typography.php:258
+msgid "Word Spacing"
+msgstr "字间距"
+
+#: fields/typography/typography.php:273
+msgid "Font Color"
+msgstr "链接颜色"
+
+#: fields/typography/typography.php:284
+msgid "Custom Style"
+msgstr "自定样式"
+
+#: fields/typography/typography.php:351
+msgid "Custom Web Fonts"
+msgstr "自定义web字体"
+
+#: fields/typography/typography.php:357
+msgid "Safe Web Fonts"
+msgstr "Web 安全字体"
+
+#: fields/typography/typography.php:377
+msgid "Google Web Fonts"
+msgstr "Google网页字体"
+
+#: functions/actions.php:72 functions/actions.php:110
+msgid "Error: Invalid key."
+msgstr "错误: 无效密钥。"
+
+#: functions/actions.php:114
+msgid "Error: The response is not a valid JSON response."
+msgstr "错误: 此响应不是合法的JSON响应。"
+
+#: functions/actions.php:174
+msgid "Error: Invalid term ID."
+msgstr "错误: 无效的项目ID。"
+
+#: functions/actions.php:180
+msgid "Error: You do not have permission to do that."
+msgstr "错误: 您没有权限执行此操作。"
+
+#: functions/validate.php:14 functions/validate.php:86
+msgid "Please enter a valid email address."
+msgstr "请输入正确的邮箱地址。"
+
+#: functions/validate.php:32 functions/validate.php:106
+msgid "Please enter a valid number."
+msgstr "请输入有效的数字。"
+
+#: functions/validate.php:50 functions/validate.php:126
+msgid "This field is required."
+msgstr "此字段为必填字段。"
+
+#: functions/validate.php:68 functions/validate.php:146
+msgid "Please enter a valid URL."
+msgstr "请输入有效网址。"
+
+#~ msgid "Add Shortcode"
+#~ msgstr "添加短代码"
+
+#~ msgid "Select a shortcode"
+#~ msgstr "选择一个短代码"
+
+#~ msgid "Insert Shortcode"
+#~ msgstr "插入快捷码"
+
+#~ msgid "Write shortcode here..."
+#~ msgstr "在此编写短代码..."

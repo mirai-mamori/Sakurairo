@@ -50,12 +50,12 @@
 			<?php
 
 				if(comments_open()){
-					if(akina_option('norobot')) $robot_comments = '<label class="siren-checkbox-label"><input class="siren-checkbox-radio" type="checkbox" name="no-robot"><span class="siren-no-robot-checkbox siren-checkbox-radioInput"></span>'.__('I\'m not a robot', 'sakurairo').'</label>';
-					$private_ms = akina_option('open_private_message') ? '<label class="siren-checkbox-label"><input class="siren-checkbox-radio" type="checkbox" name="is-private"><span class="siren-is-private-checkbox siren-checkbox-radioInput"></span>'.__('Comment in private', 'sakurairo').'</label>' : '';
-					$mail_notify = akina_option('mail_notify') ? '<label class="siren-checkbox-label"><input class="siren-checkbox-radio" type="checkbox" name="mail-notify"><span class="siren-mail-notify-checkbox siren-checkbox-radioInput"></span>'.__('Comment reply notify', 'sakurairo').'</label>' : '';
-					$bilibili_smile = akina_option('bilibili_onoff') ? '' : '<th onclick="motionSwitch(\'.bili\')" 
+					if(iro_opt('not_robot')) $robot_comments = '<label class="siren-checkbox-label"><input class="siren-checkbox-radio" type="checkbox" name="no-robot"><span class="siren-no-robot-checkbox siren-checkbox-radioInput"></span>'.__('I\'m not a robot', 'sakurairo').'</label>';
+					$private_ms = iro_opt('comment_private_message') ? '<label class="siren-checkbox-label"><input class="siren-checkbox-radio" type="checkbox" name="is-private"><span class="siren-is-private-checkbox siren-checkbox-radioInput"></span>'.__('Comment in private', 'sakurairo').'</label>' : '';
+					$mail_notify = iro_opt('mail_notify') ? '<label class="siren-checkbox-label"><input class="siren-checkbox-radio" type="checkbox" name="mail-notify"><span class="siren-mail-notify-checkbox siren-checkbox-radioInput"></span>'.__('Comment reply notify', 'sakurairo').'</label>' : '';
+					$bilibili_smile = !iro_opt('comment_smile_bilibili') ? '' : '<th onclick="motionSwitch(\'.bili\')" 
 					class="bili-bar on-hover">bilibili~</th>';
-					$bilibili_push_smile = akina_option('bilibili_onoff') ? '<div class="menhera-container motion-container">' :'<div class="bili-container motion-container">' . push_bili_smilies() . '</div><div class="menhera-container motion-container" style="display:none;">';
+					$bilibili_push_smile = !iro_opt('comment_smile_bilibili') ? '<div class="menhera-container motion-container">' :'<div class="bili-container motion-container">' . push_bili_smilies() . '</div><div class="menhera-container motion-container" style="display:none;">';
 					$args = array(
 						'id_form' => 'commentform',
 						'id_submit' => 'submit',

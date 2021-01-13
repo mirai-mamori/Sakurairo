@@ -39,7 +39,7 @@ body { background:none !important; overflow:hidden;}
 	font-weight:bold;
 	text-indent:0px;
 	font-size:0px; 
-	height:38px;
+	height:60px;
 	width: 100%;
 	line-height:88px;
 	line-height:180%; 
@@ -47,7 +47,7 @@ body { background:none !important; overflow:hidden;}
 	/*text-shadow:1px 1px 0px #000;*/ 
 	margin-bottom:10px;
 	margin-top: 25px; 
-	background-image:url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/logo-login.png);
+	background-image:url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/login_logo.png);
 	background-position: center bottom !important;
 	background-size: contain;
 	padding-top: 20px;

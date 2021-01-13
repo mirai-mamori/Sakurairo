@@ -15,7 +15,7 @@ get_header(); ?>
 			get_template_part( 'tpl/content', 'single' );
 			get_template_part('layouts/sidebox');
 			get_template_part('layouts/post','nextprev');  
-            if(akina_option('show_authorprofile')){ 
+            if(iro_opt('author_profile')){ 
                 get_template_part('layouts/authorprofile');
             }
 		endwhile; // End of the loop.

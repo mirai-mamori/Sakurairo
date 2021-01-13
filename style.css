@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: made by FUUKEI
 Author URI: https://asuhe.jp/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 1.23.0
+Version: 1.26.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -840,15 +840,13 @@ a:hover {
     position: fixed;
     bottom: 70px;
     right: 10px;
+    font-size: 16px;
     z-index: 99;
     border: 0;
-    font-size: 16px;
     outline: 0;
     background-color: #fff;
-    color: #FB98C0;
-    cursor: pointer;
+    color: #505050;
     padding: 15px;
-    border-radius: 10px;
     border-radius: 12px;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
     transform: scale(0);
@@ -861,13 +859,10 @@ a:hover {
     right: 10px;
     z-index: 99;
     border: 0;
-    font-size: 16px;
     outline: 0;
     background-color: #fff;
-    color: #FB98C0;
-    cursor: pointer;
+    color: #505050;
     padding: 15px;
-    border-radius: 10px;
     border-radius: 12px;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
     transform: scale(0);
@@ -1023,22 +1018,37 @@ a:hover {
 }
 
 .site-header {
-    width: 100%;
+    width: 95%;
     height: 75px;
-    background: 0 0;
-    -webkit-transition: all .4s ease;
-    transition: all .4s ease;
+    -webkit-transition: all 1s ease !important;
+    transition: all 1s ease !important;
     position: fixed;
+    left: 2.5%;
+    top: 2.5%;
     z-index: 9999;
-    top: 0;
-    border-radius: 0 0 20px 20px;
+    border-radius: 20px;
 }
 
 .yya {
     position: fixed;
-    left: 0;
+    -webkit-transition: all 1s ease !important;
+    transition: all 1s ease !important;
+    width:50%;
+	left:47.5%;
     background: rgba(255, 255, 255, .75);
     box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
+}
+
+@media (max-width:1200px) {
+.yya {
+    position: fixed;
+    -webkit-transition: all 1s ease !important;
+    transition: all 1s ease !important;
+    width:95%;
+	left:2.5%;
+    background: rgba(255, 255, 255, .75);
+    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
+}
 }
 
 .gizle {
@@ -1187,23 +1197,6 @@ a:hover {
 
 .site-top ul li a:hover:after {
     max-width: 100%
-}
-
-@media(max-width:1200px) {
-    .site-top .lower nav {
-        right: calc(-150px - 100%);
-        position: absolute;
-        float: right;
-        animation: searchbox .2s;
-        min-width: 860px;
-        z-index: -1
-    }
-    .site-top .lower nav.navbar {
-        right: calc(-50px - 100%);
-    }
-    .site-top .lower nav.navbar ul {
-        background: #fff;
-    }
 }
 
 #show-nav {
@@ -1865,28 +1858,23 @@ h1.page-title.mb- {
 
 .post-footer {
     padding: 30px 0;
-    border-bottom: 1px dashed #ddd;
-    border-top: 1px dashed #ddd;
-    margin-top: 30px;
-    height: 100px
-}
-
-.post-lincenses {
-    text-align: center;
-    padding-bottom: 5px;
-    font-size: 14px
-}
-
-.post-lincenses a:hover {
-    color: #888
-}
-
-.post-lincenses a {
-    color: #B3B3B3
+    width: 740px;
+    height: 80px;
+    left: 50%;
+    margin-left: -370px;
+    position: relative;
+    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/creativecommons-light.png);
+    background-size: 100%100%;
+    border: none;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+    margin-bottom: 50px;
+    margin-top: 50px;
+    border-radius: 15px;
 }
 
 .post-tags {
     float: left;
+    margin-left: 290px;
     font-size: 13px;
     color: #B3B3B3;
     text-transform: uppercase
@@ -1905,98 +1893,15 @@ h1.page-title.mb- {
     margin-right: 5px
 }
 
-.post-like {
-    float: right
-}
-
-.post-like a {
-    color: #9FE0DD;
-    font-size: 13px
-}
-
-.post-like i {
-    font-size: 13px
-}
-
-.post-like a.done {
-    cursor: not-allowed
-}
-
-.post-share {
-    float: right;
-    list-style: none;
-    margin-right: 20px;
-}
-
-.post-share img:hover {
-    opacity: .8
-}
-
-.post-share ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    opacity: 0;
-    display: none;
-    top: -3px;
-    position: relative;
-    -moz-transition: opacity .4s ease-out;
-    -o-transition: opacity .4s ease-out;
-    -webkit-transition: opacity .4s ease-out;
-    transition: opacity .4s ease-out
-}
-
-.post-share .social-share {
-    opacity: 0;
-    display: none;
-}
-
-.post-share li {
-    float: left;
-    margin-right: 20px;
-}
-
-.post-share li img {
-    width: 32px;
-    height: 32px;
-    padding: 7px;
-}
-
-.post-share ul li i {
-    font-size: 20px
-}
-
-.post-share span {
-    float: left;
-    margin-right: 10px;
-}
-
-.post-share ul li a:hover {
-    color: #FB98C0
-}
-
-.post-share .show-share {
-    margin-left: 10px;
-    cursor: pointer;
-    opacity: .6;
-    float: right;
-    -moz-transition: opacity .1s ease-out;
-    -o-transition: opacity .1s ease-out;
-    -webkit-transition: opacity .1s ease-out;
-    transition: opacity .1s ease-out
-}
-
-.post-share:hover .show-share,
-.post-share:hover .sharehidden {
-    opacity: 1;
-    display: inline-block;
-}
-
 .post-squares {
     overflow: hidden;
-    width: 100%;
     margin: 55px 0;
-    background: #000
+    background: #000;
+    width: 740px;
+    left: 50%;
+    margin-left: -370px;
+    position: relative;
+    border-radius: 15px;
 }
 
 .post-squares .background {
@@ -2091,18 +1996,23 @@ h1.page-title.mb- {
     .post-squares .third {
         width: 100%
     }
+    .post-squares.post-squares-featured {
+        display: none
+    }
+    .post-squares {
+        overflow: hidden;
+        width: 100%;
+        margin: 55px 0;
+        background: #000;
+        left: 0;
+        margin-left: 0;
+    }
 }
 
 @media (max-width:760px) {
     .post-squares .half {
-        float: none;
+        float: center;
         width: 100%
-    }
-}
-
-@media (max-width:900px) {
-    .post-squares.post-squares-featured {
-        display: none
     }
 }
 
@@ -2189,7 +2099,8 @@ h1.page-title.mb- {
 
 .author-profile .info {
     overflow: hidden;
-    text-align: center
+    text-align: center;
+    margin-top: 25px;
 }
 
 .author-profile .profile {
@@ -2242,7 +2153,8 @@ h1.page-title.mb- {
     display: inline-block;
     padding: 10px 20px;
     border-top: 1px solid #EFEFEF;
-    border-bottom: 1px solid #EFEFEF
+    border-bottom: 1px solid #EFEFEF;
+    margin-bottom: 50px;
 }
 
 .author-profile i {
@@ -3488,7 +3400,8 @@ a.page-numbers {
     transition: all .1s ease-out;
     box-shadow: none;
     border: 1px solid #ccc;
-    text-shadow: none
+    border-radius: 15px;
+    text-shadow: none;
 }
 
 .comment-respond input[type=submit]:hover {
@@ -3574,7 +3487,10 @@ a.page-numbers {
     max-width: 300px;
     margin: auto;
     text-align: center;
-    border: 1px solid #ddd
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 50px;
+    margin-top: 25px;
 }
 
 .notification span {
@@ -3739,6 +3655,7 @@ li.feature-2 {
     position: relative;
     display: inline-block;
     width: 100%;
+    height: 67px;
     border-radius: 15px;
 }
 
@@ -3758,7 +3675,8 @@ li.feature-2 {
 @media (max-width:860px) {
     .notice {
         margin-top: 40px;
-        margin-bottom: 20px
+        margin-bottom: 20px;
+        width: 100%;
     }
 }
 
@@ -3790,7 +3708,7 @@ li.feature-2 {
 }
 
 .headertop.filter-grid::before {
-    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.2.8/vision/basic/grid.png)
+    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.3.6/vision/basic/grid.png)
 }
 
 .headertop.filter-dot::before {
@@ -3799,7 +3717,7 @@ li.feature-2 {
 
 @media (max-width:860px) {
     .headertop.filter-dot::before {
-        background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.2.8/vision/basic/grid.png)
+        background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.3.6/vision/basic/grid.png)
     }
 }
 
@@ -3974,7 +3892,7 @@ li.feature-2 {
     margin: auto;
     font-size: 16px;
     color: #FB98C0;
-    background: rgba(255, 250, 250, 0.92);
+    background: rgba(255, 255, 255, 0.8);
     padding: 15px;
     margin-top: 22px;
     letter-spacing: 0;
@@ -5126,9 +5044,7 @@ i.iconfont.down {
     .entry-content p {
         font-size: 14px
     }
-    .post-footer,
-    .post-like,
-    .post-share {
+    .post-footer {
         display: none
     }
     .post-tags {
@@ -6947,7 +6863,7 @@ input[type=radio]:checked:before {
     margin: auto;
     font-family: Ubuntu, sans-serif;
     font-size: 80px;
-    text-transform: uppercase
+    text-transform: none
 }
 
 .glitch {
@@ -7879,6 +7795,7 @@ a.toc-link {
     padding: 0 !important;
     float: right;
     transform: translateY(-46px);
+    border-radius: 15px !important;
     cursor: pointer
 }
 

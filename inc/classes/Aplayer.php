@@ -10,9 +10,9 @@ class Aplayer
     public $api_url;
 
     public function __construct() {
-        $this->server = akina_option('aplayer_server');
-        $this->playlist_id = akina_option('aplayer_playlistid');
-        $this->cookies = akina_option('aplayer_cookie');
+        $this->server = iro_opt('aplayer_server');
+        $this->playlist_id = iro_opt('aplayer_playlistid');
+        $this->cookies = iro_opt('aplayer_cookie');
         $this->api_url = rest_url('sakura/v1/meting/aplayer');
         require('Meting.php');
     }

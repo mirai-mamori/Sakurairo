@@ -1,31 +1,31 @@
 <?php
 
-//https://api.mashiro.top/cover
+$text_logo = iro_opt('text_logo');
 
 ?>
 <style>.header-info::before{display: none !important;opacity: 0 !important;}</style>
 <div id="banner_wave_1"></div><div id="banner_wave_2"></div>
 <figure id="centerbg" class="centerbg">
-<?php if ( !akina_option('infor-bar') ){ ?>
+<?php if (iro_opt('infor_bar') ){ ?>
 	<div class="focusinfo">
-        <?php if (akina_option('focus_logo_text')):?>
-        <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="<?php echo akina_option('focus_logo_text', ''); ?>"><?php echo akina_option('focus_logo_text', ''); ?></h1>
-   		<?php elseif (akina_option('focus_logo')):?>
-	     <div class="header-tou"><a href="<?php bloginfo('url');?>" ><img src="<?php echo akina_option('focus_logo', ''); ?>"></a></div>
+        <?php if ($text_logo['text'] && iro_opt('text_logo_options', 'true')):?>
+        <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="<?php echo $text_logo['text']; ?>"><?php echo $text_logo['text']; ?></h1>
+   		<?php elseif (iro_opt('personal_avatar')):?>
+	     <div class="header-tou"><a href="<?php bloginfo('url');?>" ><img src="<?php echo iro_opt('personal_avatar', ''); ?>"></a></div>
 	  	<?php else :?>
-         <div class="header-tou" ><a href="<?php bloginfo('url');?>"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/avatar.jpg"></a></div>	
+         <div class="header-tou" ><a href="<?php bloginfo('url');?>"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/avatar.jpg"></a></div>	
       	<?php endif; ?>
 		<div class="header-info">
 			<!-- 首页一言打字效果 -->
-			<?php if (akina_option('dazi', '1')): ?>
+			<?php if (iro_opt('signature_typing', 'true')): ?>
 			<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
-			<?php if (akina_option('dazi_yh', '1')): ?><i class="fa fa-quote-left"></i><?php endif; ?>
+			<?php if (iro_opt('signature_typing_marks', 'true')): ?><i class="fa fa-quote-left"></i><?php endif; ?>
 			<span class="element">疯狂造句中......</span>
-			<?php if (akina_option('dazi_yh', '1')): ?><i class="fa fa-quote-right"></i><?php endif; ?>
+			<?php if (iro_opt('signature_typing_marks', 'true')): ?><i class="fa fa-quote-right"></i><?php endif; ?>
 			<span class="element"></span>
 			<script>
             var typed = new Typed('.element', {
-              strings: ["给时光以生命，给岁月以文明",<?php echo akina_option('dazi_a', ''); ?>,], //输入内容, 支持html标签
+              strings: ["给时光以生命，给岁月以文明",<?php echo iro_opt('signature_typing_text', ''); ?>,], //输入内容, 支持html标签
               typeSpeed: 140, //打字速度
               backSpeed: 50, //回退速度
               loop: false,//是否循环
@@ -34,153 +34,153 @@
             });
             </script>
             <?php endif; ?>
-            <p><?php echo akina_option('admin_des', 'Hi, Mashiro?'); ?></p>
-            <?php if (akina_option('infor-bar-style')=="v2"): ?>
+            <p><?php echo iro_opt('signature_text', 'Hi, Mashiro?'); ?></p>
+            <?php if (iro_opt('infor_bar_style')=="v2"): ?>
             <div class="top-social_v2">
-                <?php if (akina_option('background-rgs', '1')): ?>
-                <li id="bg-pre"><img src="<?php echo akina_option('webweb_img'); ?>/sns/pre.png"/></li>
+                <?php if (iro_opt('cover_random_graphs_switch', 'true')): ?>
+                <li id="bg-pre"><img src="<?php echo iro_opt('display_icon'); ?>/sns/pre.png"/></li>
                 <?php endif; ?>
-                <?php if (akina_option('github')){ ?>
-                <li><a href="<?php echo akina_option('github', ''); ?>" target="_blank" class="social-github" title="github"><img src="<?php echo akina_option('webweb_img'); ?>/sns/github.png"/></a></li>
-                <?php } ?>	
-                <?php if (akina_option('sina')){ ?>
-                <li><a href="<?php echo akina_option('sina', ''); ?>" target="_blank" class="social-sina" title="sina"><img src="<?php echo akina_option('webweb_img'); ?>/sns/weibo.png"/></a></li>
-                <?php } ?>
-                <?php if (akina_option('telegram')){ ?>
-                <li><a href="<?php echo akina_option('telegram', ''); ?>" target="_blank" class="social-lofter" title="telegram"><img src="<?php echo akina_option('webweb_img'); ?>/sns/tg.png"/></a></li>
-                <?php } ?>	
-                <?php if (akina_option('qq')){ ?>
-                <li class="qq"><a href="<?php echo akina_option('qq', ''); ?>" title="Initiate chat ?"><img src="<?php echo akina_option('webweb_img'); ?>/sns/qq.png"/></a></li>
-                <?php } ?>	
-                <?php if (akina_option('qzone')){ ?>
-                <li><a href="<?php echo akina_option('qzone', ''); ?>" target="_blank" class="social-qzone" title="qzone"><img src="<?php echo akina_option('webweb_img'); ?>/sns/qz.png"/></a></li>
-                <?php } ?>
-                <?php if (akina_option('wechat')){ ?>
-                <li class="wechat"><a href="#"><img src="<?php echo akina_option('webweb_img'); ?>/sns/wechat.png"/></a>
+                <?php if (iro_opt('wechat')){ ?>
+                <li class="wechat"><a href="#"><img src="<?php echo iro_opt('display_icon'); ?>/sns/wechat.png"/></a>
                     <div class="wechatInner">
-                        <img src="<?php echo akina_option('wechat', ''); ?>" alt="WeChat">
+                        <img src="<?php echo iro_opt('wechat', ''); ?>" alt="WeChat">
                     </div>
                 </li>
                 <?php } ?> 
-                <?php if (akina_option('lofter')){ ?>
-                <li><a href="<?php echo akina_option('lofter', ''); ?>" target="_blank" class="social-lofter" title="lofter"><img src="<?php echo akina_option('webweb_img'); ?>/sns/lofter.png"/></a></li>
+                <?php if (iro_opt('qq')){ ?>
+                <li class="qq"><a href="<?php echo iro_opt('qq', ''); ?>" title="Initiate chat ?"><img src="<?php echo iro_opt('display_icon'); ?>/sns/qq.png"/></a></li>
                 <?php } ?>	
-                <?php if (akina_option('bili')){ ?>
-                <li><a href="<?php echo akina_option('bili', ''); ?>" target="_blank" class="social-bili" title="bilibili"><img src="<?php echo akina_option('webweb_img'); ?>/sns/bilibili.png"/></a></li>
+                <?php if (iro_opt('bili')){ ?>
+                <li><a href="<?php echo iro_opt('bili', ''); ?>" target="_blank" class="social-bili" title="bilibili"><img src="<?php echo iro_opt('display_icon'); ?>/sns/bilibili.png"/></a></li>
                 <?php } ?>
-                <?php if (akina_option('youku')){ ?>
-                <li><a href="<?php echo akina_option('youku', ''); ?>" target="_blank" class="social-youku" title="youku"><img src="<?php echo akina_option('webweb_img'); ?>/sns/youku.png"/></a></li>
+                <?php if (iro_opt('wangyiyun')){ ?>
+                <li><a href="<?php echo iro_opt('wangyiyun', ''); ?>" target="_blank" class="social-wangyiyun" title="CloudMusic"><img src="<?php echo iro_opt('display_icon'); ?>/sns/ncm.png"/></a></li>
                 <?php } ?>
-                <?php if (akina_option('wangyiyun')){ ?>
-                <li><a href="<?php echo akina_option('wangyiyun', ''); ?>" target="_blank" class="social-wangyiyun" title="CloudMusic"><img src="<?php echo akina_option('webweb_img'); ?>/sns/ncm.png"/></a></li>
+                <?php if (iro_opt('sina')){ ?>
+                <li><a href="<?php echo iro_opt('sina', ''); ?>" target="_blank" class="social-sina" title="sina"><img src="<?php echo iro_opt('display_icon'); ?>/sns/weibo.png"/></a></li>
                 <?php } ?>
-                <?php if (akina_option('steam')){ ?>
-                <li><a href="<?php echo akina_option('steam', ''); ?>" target="_blank" class="social-wangyiyun" title="Steam"><img src="<?php echo akina_option('webweb_img'); ?>/sns/st.png"/></a></li>
+                <?php if (iro_opt('github')){ ?>
+                <li><a href="<?php echo iro_opt('github', ''); ?>" target="_blank" class="social-github" title="github"><img src="<?php echo iro_opt('display_icon'); ?>/sns/github.png"/></a></li>
+                <?php } ?>	
+                <?php if (iro_opt('telegram')){ ?>
+                <li><a href="<?php echo iro_opt('telegram', ''); ?>" target="_blank" class="social-lofter" title="telegram"><img src="<?php echo iro_opt('display_icon'); ?>/sns/tg.png"/></a></li>
+                <?php } ?>	
+                <?php if (iro_opt('steam')){ ?>
+                <li><a href="<?php echo iro_opt('steam', ''); ?>" target="_blank" class="social-wangyiyun" title="Steam"><img src="<?php echo iro_opt('display_icon'); ?>/sns/st.png"/></a></li>
                 <?php } ?>
-                <?php if (akina_option('linkedin')){ ?>
-                <li><a href="<?php echo akina_option('linkedin', ''); ?>" target="_blank" class="social-wangyiyun" title="LinkedIn"><img src="<?php echo akina_option('webweb_img'); ?>/sns/lk.png"/></a></li>
+                <?php if (iro_opt('zhihu')){ ?>
+                <li><a href="<?php echo iro_opt('zhihu', ''); ?>" target="_blank" class="social-wangyiyun" title="Zhihu"><img src="<?php echo iro_opt('display_icon'); ?>/sns/zhihu.png"/></a></li>
+                <?php } ?>	
+                <?php if (iro_opt('qzone')){ ?>
+                <li><a href="<?php echo iro_opt('qzone', ''); ?>" target="_blank" class="social-qzone" title="qzone"><img src="<?php echo iro_opt('display_icon'); ?>/sns/qz.png"/></a></li>
+                <?php } ?>
+                <?php if (iro_opt('lofter')){ ?>
+                <li><a href="<?php echo iro_opt('lofter', ''); ?>" target="_blank" class="social-lofter" title="lofter"><img src="<?php echo iro_opt('display_icon'); ?>/sns/lofter.png"/></a></li>
+                <?php } ?>	
+                <?php if (iro_opt('youku')){ ?>
+                <li><a href="<?php echo iro_opt('youku', ''); ?>" target="_blank" class="social-youku" title="youku"><img src="<?php echo iro_opt('display_icon'); ?>/sns/youku.png"/></a></li>
+                <?php } ?>
+                <?php if (iro_opt('linkedin')){ ?>
+                <li><a href="<?php echo iro_opt('linkedin', ''); ?>" target="_blank" class="social-wangyiyun" title="LinkedIn"><img src="<?php echo iro_opt('display_icon'); ?>/sns/lk.png"/></a></li>
                 <?php } ?>		
-                <?php if (akina_option('twitter')){ ?>
-                <li><a href="<?php echo akina_option('twitter', ''); ?>" target="_blank" class="social-wangyiyun" title="Twitter"><img src="<?php echo akina_option('webweb_img'); ?>/sns/tw.png"/></a></li>
+                <?php if (iro_opt('twitter')){ ?>
+                <li><a href="<?php echo iro_opt('twitter', ''); ?>" target="_blank" class="social-wangyiyun" title="Twitter"><img src="<?php echo iro_opt('display_icon'); ?>/sns/tw.png"/></a></li>
                 <?php } ?>	
-                <?php if (akina_option('facebook')){ ?>
-                <li><a href="<?php echo akina_option('facebook', ''); ?>" target="_blank" class="social-wangyiyun" title="Facebook"><img src="<?php echo akina_option('webweb_img'); ?>/sns/fb.png"/></a></li>
+                <?php if (iro_opt('facebook')){ ?>
+                <li><a href="<?php echo iro_opt('facebook', ''); ?>" target="_blank" class="social-wangyiyun" title="Facebook"><img src="<?php echo iro_opt('display_icon'); ?>/sns/fb.png"/></a></li>
                 <?php } ?>	
-                <?php if (akina_option('jianshu')){ ?>
-                <li><a href="<?php echo akina_option('jianshu', ''); ?>" target="_blank" class="social-wangyiyun" title="Jianshu"><img src="<?php echo akina_option('webweb_img'); ?>/sns/book.png"/></a></li>
+                <?php if (iro_opt('csdn')){ ?>
+                <li><a href="<?php echo iro_opt('csdn', ''); ?>" target="_blank" class="social-wangyiyun" title="CSDN"><img src="<?php echo iro_opt('display_icon'); ?>/sns/csdn.png"/></a></li>
                 <?php } ?>
-                <?php if (akina_option('zhihu')){ ?>
-                <li><a href="<?php echo akina_option('zhihu', ''); ?>" target="_blank" class="social-wangyiyun" title="Zhihu"><img src="<?php echo akina_option('webweb_img'); ?>/sns/zhihu.png"/></a></li>
-                <?php } ?>	
-                <?php if (akina_option('csdn')){ ?>
-                <li><a href="<?php echo akina_option('csdn', ''); ?>" target="_blank" class="social-wangyiyun" title="CSDN"><img src="<?php echo akina_option('webweb_img'); ?>/sns/csdn.png"/></a></li>
+                <?php if (iro_opt('jianshu')){ ?>
+                <li><a href="<?php echo iro_opt('jianshu', ''); ?>" target="_blank" class="social-wangyiyun" title="Jianshu"><img src="<?php echo iro_opt('display_icon'); ?>/sns/book.png"/></a></li>
                 <?php } ?>
-                <?php if (akina_option('socialdiy1')){ ?>
-                <li><a href="<?php echo akina_option('socialdiy1', ''); ?>" target="_blank" class="social-wangyiyun" title="DIY1"><img src="<?php echo akina_option('socialdiyp1'); ?>"/></a></li>
+                <?php if (iro_opt('socialdiy1')){ ?>
+                <li><a href="<?php echo iro_opt('socialdiy1', ''); ?>" target="_blank" class="social-wangyiyun" title="DIY1"><img src="<?php echo iro_opt('socialdiyp1'); ?>"/></a></li>
                 <?php } ?>
-                <?php if (akina_option('socialdiy2')){ ?>
-                <li><a href="<?php echo akina_option('socialdiy2', ''); ?>" target="_blank" class="social-wangyiyun" title="DIY2"><img src="<?php echo akina_option('socialdiyp2'); ?>"/></a></li>
+                <?php if (iro_opt('socialdiy2')){ ?>
+                <li><a href="<?php echo iro_opt('socialdiy2', ''); ?>" target="_blank" class="social-wangyiyun" title="DIY2"><img src="<?php echo iro_opt('socialdiyp2'); ?>"/></a></li>
                 <?php } ?>							
-                <?php if (akina_option('email_name') && akina_option('email_domain')){ ?>
-                <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img src="<?php echo akina_option('webweb_img'); ?>/sns/mail.png"/></a></li>
+                <?php if (iro_opt('email_name') && iro_opt('email_domain')){ ?>
+                <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img src="<?php echo iro_opt('display_icon'); ?>/sns/mail.png"/></a></li>
                 <?php } ?>	
-                <?php if (akina_option('background-rgs', '1')): ?>
-                <li id="bg-next"><img src="<?php echo akina_option('webweb_img'); ?>/sns/next.png"/></li>
+                <?php if (iro_opt('cover_random_graphs_switch', 'true')): ?>
+                <li id="bg-next"><img src="<?php echo iro_opt('display_icon'); ?>/sns/next.png"/></li>
                 <?php endif; ?>	
             </div>
             <?php endif; ?>
         </div>
-        <?php if (akina_option('infor-bar-style')=="v1"): ?>
+        <?php if (iro_opt('infor_bar_style')=="v1"): ?>
 		<div class="top-social">
-        <?php if (akina_option('background-rgs', '1')): ?>
-		<li id="bg-pre"><img src="<?php echo akina_option('webweb_img'); ?>/sns/pre.png"/></li>
+        <?php if (iro_opt('cover_random_graphs_switch', 'true')): ?>
+		<li id="bg-pre"><img src="<?php echo iro_opt('display_icon'); ?>/sns/pre.png"/></li>
         <?php endif; ?>
-		<?php if (akina_option('github')){ ?>
-		<li><a href="<?php echo akina_option('github', ''); ?>" target="_blank" class="social-github" title="github"><img src="<?php echo akina_option('webweb_img'); ?>/sns/github.png"/></a></li>
-		<?php } ?>	
-		<?php if (akina_option('sina')){ ?>
-		<li><a href="<?php echo akina_option('sina', ''); ?>" target="_blank" class="social-sina" title="sina"><img src="<?php echo akina_option('webweb_img'); ?>/sns/weibo.png"/></a></li>
-		<?php } ?>
-		<?php if (akina_option('telegram')){ ?>
-		<li><a href="<?php echo akina_option('telegram', ''); ?>" target="_blank" class="social-lofter" title="telegram"><img src="<?php echo akina_option('webweb_img'); ?>/sns/tg.png"/></a></li>
-		<?php } ?>	
-		<?php if (akina_option('qq')){ ?>
-		<li class="qq"><a href="<?php echo akina_option('qq', ''); ?>" title="Initiate chat ?"><img src="<?php echo akina_option('webweb_img'); ?>/sns/qq.png"/></a></li>
-		<?php } ?>	
-		<?php if (akina_option('qzone')){ ?>
-		<li><a href="<?php echo akina_option('qzone', ''); ?>" target="_blank" class="social-qzone" title="qzone"><img src="<?php echo akina_option('webweb_img'); ?>/sns/qz.png"/></a></li>
-		<?php } ?>
-		<?php if (akina_option('wechat')){ ?>
-		<li class="wechat"><a href="#"><img src="<?php echo akina_option('webweb_img'); ?>/sns/wechat.png"/></a>
+        <?php if (iro_opt('wechat')){ ?>
+		<li class="wechat"><a href="#"><img src="<?php echo iro_opt('display_icon'); ?>/sns/wechat.png"/></a>
 			<div class="wechatInner">
-				<img src="<?php echo akina_option('wechat', ''); ?>" alt="WeChat">
+				<img src="<?php echo iro_opt('wechat', ''); ?>" alt="WeChat">
 			</div>
 		</li>
 		<?php } ?> 
-		<?php if (akina_option('lofter')){ ?>
-		<li><a href="<?php echo akina_option('lofter', ''); ?>" target="_blank" class="social-lofter" title="lofter"><img src="<?php echo akina_option('webweb_img'); ?>/sns/lofter.png"/></a></li>
+        <?php if (iro_opt('qq')){ ?>
+		<li class="qq"><a href="<?php echo iro_opt('qq', ''); ?>" title="Initiate chat ?"><img src="<?php echo iro_opt('display_icon'); ?>/sns/qq.png"/></a></li>
 		<?php } ?>	
-		<?php if (akina_option('bili')){ ?>
-		<li><a href="<?php echo akina_option('bili', ''); ?>" target="_blank" class="social-bili" title="bilibili"><img src="<?php echo akina_option('webweb_img'); ?>/sns/bilibili.png"/></a></li>
+        <?php if (iro_opt('bili')){ ?>
+		<li><a href="<?php echo iro_opt('bili', ''); ?>" target="_blank" class="social-bili" title="bilibili"><img src="<?php echo iro_opt('display_icon'); ?>/sns/bilibili.png"/></a></li>
 		<?php } ?>
-		<?php if (akina_option('youku')){ ?>
-		<li><a href="<?php echo akina_option('youku', ''); ?>" target="_blank" class="social-youku" title="youku"><img src="<?php echo akina_option('webweb_img'); ?>/sns/youku.png"/></a></li>
+        <?php if (iro_opt('wangyiyun')){ ?>
+		<li><a href="<?php echo iro_opt('wangyiyun', ''); ?>" target="_blank" class="social-wangyiyun" title="CloudMusic"><img src="<?php echo iro_opt('display_icon'); ?>/sns/ncm.png"/></a></li>
 		<?php } ?>
-		<?php if (akina_option('wangyiyun')){ ?>
-		<li><a href="<?php echo akina_option('wangyiyun', ''); ?>" target="_blank" class="social-wangyiyun" title="CloudMusic"><img src="<?php echo akina_option('webweb_img'); ?>/sns/ncm.png"/></a></li>
+        <?php if (iro_opt('sina')){ ?>
+		<li><a href="<?php echo iro_opt('sina', ''); ?>" target="_blank" class="social-sina" title="sina"><img src="<?php echo iro_opt('display_icon'); ?>/sns/weibo.png"/></a></li>
 		<?php } ?>
-        <?php if (akina_option('steam')){ ?>
-        <li><a href="<?php echo akina_option('steam', ''); ?>" target="_blank" class="social-wangyiyun" title="Steam"><img src="<?php echo akina_option('webweb_img'); ?>/sns/st.png"/></a></li>
+		<?php if (iro_opt('github')){ ?>
+		<li><a href="<?php echo iro_opt('github', ''); ?>" target="_blank" class="social-github" title="github"><img src="<?php echo iro_opt('display_icon'); ?>/sns/github.png"/></a></li>
+		<?php } ?>	
+		<?php if (iro_opt('telegram')){ ?>
+		<li><a href="<?php echo iro_opt('telegram', ''); ?>" target="_blank" class="social-lofter" title="telegram"><img src="<?php echo iro_opt('display_icon'); ?>/sns/tg.png"/></a></li>
+		<?php } ?>	
+        <?php if (iro_opt('steam')){ ?>
+        <li><a href="<?php echo iro_opt('steam', ''); ?>" target="_blank" class="social-wangyiyun" title="Steam"><img src="<?php echo iro_opt('display_icon'); ?>/sns/st.png"/></a></li>
         <?php } ?>
-        <?php if (akina_option('linkedin')){ ?>
-        <li><a href="<?php echo akina_option('linkedin', ''); ?>" target="_blank" class="social-wangyiyun" title="LinkedIn"><img src="<?php echo akina_option('webweb_img'); ?>/sns/lk.png"/></a></li>
-        <?php } ?>
-		<?php if (akina_option('twitter')){ ?>
-		<li><a href="<?php echo akina_option('twitter', ''); ?>" target="_blank" class="social-wangyiyun" title="Twitter"><img src="<?php echo akina_option('webweb_img'); ?>/sns/tw.png"/></a></li>
+        <?php if (iro_opt('zhihu')){ ?>
+		<li><a href="<?php echo iro_opt('zhihu', ''); ?>" target="_blank" class="social-wangyiyun" title="Zhihu"><img src="<?php echo iro_opt('display_icon'); ?>/sns/zhihu.png"/></a></li>
 		<?php } ?>	
-		<?php if (akina_option('facebook')){ ?>
-		<li><a href="<?php echo akina_option('facebook', ''); ?>" target="_blank" class="social-wangyiyun" title="Facebook"><img src="<?php echo akina_option('webweb_img'); ?>/sns/fb.png"/></a></li>
-		<?php } ?>	
-		<?php if (akina_option('jianshu')){ ?>
-		<li><a href="<?php echo akina_option('jianshu', ''); ?>" target="_blank" class="social-wangyiyun" title="Jianshu"><img src="<?php echo akina_option('webweb_img'); ?>/sns/book.png"/></a></li>
+		<?php if (iro_opt('qzone')){ ?>
+		<li><a href="<?php echo iro_opt('qzone', ''); ?>" target="_blank" class="social-qzone" title="qzone"><img src="<?php echo iro_opt('display_icon'); ?>/sns/qz.png"/></a></li>
 		<?php } ?>
-		<?php if (akina_option('zhihu')){ ?>
-		<li><a href="<?php echo akina_option('zhihu', ''); ?>" target="_blank" class="social-wangyiyun" title="Zhihu"><img src="<?php echo akina_option('webweb_img'); ?>/sns/zhihu.png"/></a></li>
+		<?php if (iro_opt('lofter')){ ?>
+		<li><a href="<?php echo iro_opt('lofter', ''); ?>" target="_blank" class="social-lofter" title="lofter"><img src="<?php echo iro_opt('display_icon'); ?>/sns/lofter.png"/></a></li>
 		<?php } ?>	
-		<?php if (akina_option('csdn')){ ?>
-		<li><a href="<?php echo akina_option('csdn', ''); ?>" target="_blank" class="social-wangyiyun" title="CSDN"><img src="<?php echo akina_option('webweb_img'); ?>/sns/csdn.png"/></a></li>
+		<?php if (iro_opt('youku')){ ?>
+		<li><a href="<?php echo iro_opt('youku', ''); ?>" target="_blank" class="social-youku" title="youku"><img src="<?php echo iro_opt('display_icon'); ?>/sns/youku.png"/></a></li>
 		<?php } ?>
-        <?php if (akina_option('socialdiy1')){ ?>
-        <li><a href="<?php echo akina_option('socialdiy1', ''); ?>" target="_blank" class="social-wangyiyun" title="DIY1"><img src="<?php echo akina_option('socialdiyp1'); ?>"/></a></li>
+        <?php if (iro_opt('linkedin')){ ?>
+        <li><a href="<?php echo iro_opt('linkedin', ''); ?>" target="_blank" class="social-wangyiyun" title="LinkedIn"><img src="<?php echo iro_opt('display_icon'); ?>/sns/lk.png"/></a></li>
         <?php } ?>
-        <?php if (akina_option('socialdiy2')){ ?>
-        <li><a href="<?php echo akina_option('socialdiy2', ''); ?>" target="_blank" class="social-wangyiyun" title="DIY2"><img src="<?php echo akina_option('socialdiyp2'); ?>"/></a></li>
+		<?php if (iro_opt('twitter')){ ?>
+		<li><a href="<?php echo iro_opt('twitter', ''); ?>" target="_blank" class="social-wangyiyun" title="Twitter"><img src="<?php echo iro_opt('display_icon'); ?>/sns/tw.png"/></a></li>
+		<?php } ?>	
+		<?php if (iro_opt('facebook')){ ?>
+		<li><a href="<?php echo iro_opt('facebook', ''); ?>" target="_blank" class="social-wangyiyun" title="Facebook"><img src="<?php echo iro_opt('display_icon'); ?>/sns/fb.png"/></a></li>
+		<?php } ?>	
+        <?php if (iro_opt('csdn')){ ?>
+		<li><a href="<?php echo iro_opt('csdn', ''); ?>" target="_blank" class="social-wangyiyun" title="CSDN"><img src="<?php echo iro_opt('display_icon'); ?>/sns/csdn.png"/></a></li>
+		<?php } ?>
+		<?php if (iro_opt('jianshu')){ ?>
+		<li><a href="<?php echo iro_opt('jianshu', ''); ?>" target="_blank" class="social-wangyiyun" title="Jianshu"><img src="<?php echo iro_opt('display_icon'); ?>/sns/book.png"/></a></li>
+		<?php } ?>
+        <?php if (iro_opt('socialdiy1')){ ?>
+        <li><a href="<?php echo iro_opt('socialdiy1', ''); ?>" target="_blank" class="social-wangyiyun" title="DIY1"><img src="<?php echo iro_opt('socialdiyp1'); ?>"/></a></li>
+        <?php } ?>
+        <?php if (iro_opt('socialdiy2')){ ?>
+        <li><a href="<?php echo iro_opt('socialdiy2', ''); ?>" target="_blank" class="social-wangyiyun" title="DIY2"><img src="<?php echo iro_opt('socialdiyp2'); ?>"/></a></li>
         <?php } ?>	
-		<?php if (akina_option('email_name') && akina_option('email_domain')){ ?>
-		<li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img src="<?php echo akina_option('webweb_img'); ?>/sns/mail.png"/></a></li>
+		<?php if (iro_opt('email_name') && iro_opt('email_domain')){ ?>
+		<li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img src="<?php echo iro_opt('display_icon'); ?>/sns/mail.png"/></a></li>
 		<?php } ?>	
-        <?php if (akina_option('background-rgs', '1')): ?>
-		<li id="bg-next"><img src="<?php echo akina_option('webweb_img'); ?>/sns/next.png"/></li>
+        <?php if (iro_opt('cover_random_graphs_switch', 'true')): ?>
+		<li id="bg-next"><img src="<?php echo iro_opt('display_icon'); ?>/sns/next.png"/></li>
         <?php endif; ?>	
 	  	</div>
         <?php endif; ?>
@@ -191,6 +191,6 @@
 echo bgvideo(); //BGVideo 
 ?>
 <!-- 首页下拉箭头 -->
-<?php if (akina_option('godown', '1')): ?>
-<div class="headertop-down faa-float animated" onclick="headertop_down()"><span><i class="fa fa-chevron-down" aria-hidden="true" style="color:<?php echo akina_option('godown_skin'); ?>"></i></span></div>
+<?php if (iro_opt('drop_down_arrow', 'true')): ?>
+<div class="headertop-down faa-float animated" onclick="headertop_down()"><span><i class="fa fa-chevron-down" aria-hidden="true" style="color:<?php echo iro_opt('drop_down_arrow_color'); ?>"></i></span></div>
 <?php endif; ?>

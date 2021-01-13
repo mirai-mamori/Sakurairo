@@ -15,7 +15,7 @@ show_admin_bar(false);
  * 视频
  */
 function bgvideo(){
-  if(!akina_option('focus_amv') || akina_option('focus_height')) $dis = 'display:none;';
+  if(!iro_opt('cover_video') || !iro_opt('cover_full_screen')) $dis = 'display:none;';
   $html = '<div id="video-container" style="'.$dis.'">'; 
   $html .= '<video id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto"></video>';
   $html .= '<div id="video-btn" class="loadvideo videolive"></div>';
@@ -30,8 +30,8 @@ function bgvideo(){
  * 使用本地图片作为头像，防止外源抽风问题
  */
 function get_avatar_profile_url(){ 
-  if(akina_option('focus_logo')){
-    $avatar = akina_option('focus_logo');
+  if(iro_opt('personal_avatar')){
+    $avatar = iro_opt('personal_avatar');
   }else{
     $avatar = get_avatar_url(get_the_author_meta( 'ID' ));
   }
@@ -63,7 +63,7 @@ function poi_time_since( $older_date, $comment_date = false, $text = false ) {
     array( 1, __( ' seconds ago', 'sakurairo' ) )/*秒前*/
   );
 
-  $newer_date = time() - (akina_option('time_zone_fix')*60*60);
+  $newer_date = time() - (iro_opt('time_zone_fix')*60*60);
   $since = abs( $newer_date - $older_date );
   if($text){
     $output = '';
@@ -91,9 +91,9 @@ function poi_time_since( $older_date, $comment_date = false, $text = false ) {
 /*
  * 首页不显示指定的分类文章
  */
-if(akina_option('classify_display')){
+if(iro_opt('classify_display')){
   function classify_display($query){
-    $source = akina_option('classify_display');
+    $source = iro_opt('classify_display');
     $cats = explode(',', $source);
     $cat = '';
     if ( $query->is_home ) {
@@ -143,7 +143,7 @@ function siren_robot_comment(){
      siren_ajax_comment_err('上车请刷卡。<br>Please comfirm you are not a robot.');
   }
 }
-if(akina_option('norobot')) add_action('pre_comment_on_post', 'siren_robot_comment');
+if(iro_opt('not_robot')) add_action('pre_comment_on_post', 'siren_robot_comment');
 // 纯英文评论拦截
 function scp_comment_post( $incoming_comment ) {
   // 为什么要拦自己呢？
@@ -209,11 +209,11 @@ add_action('wp_ajax_ajax_comment', 'siren_ajax_comment_callback');
  * 前台登录
  */
 // 指定登录页面
-if(akina_option('exlogin_url')){
+if(iro_opt('exlogin_url')){
   add_action('login_enqueue_scripts','login_protection');
   function login_protection(){
     if($_GET['word'] != 'press'){
-      $admin_url = akina_option('exlogin_url');
+      $admin_url = iro_opt('exlogin_url');
       wp_redirect( $admin_url );
       exit;
     }
@@ -245,12 +245,12 @@ function Exuser_center(){ ?>
   <?php if(current_user_can('level_10')){ ?>
   <div class="admin-login-check">
     <?php echo login_ok(); ?>
-    <?php if(akina_option('login_urlskip')){ ?><script>window.open("<?php bloginfo('url'); ?>/wp-admin/",1);gopage("<?php bloginfo('url'); ?>",0);</script><?php } ?>
+    <?php if(iro_opt('login_urlskip')){ ?><script>window.open("<?php bloginfo('url'); ?>/wp-admin/",1);gopage("<?php bloginfo('url'); ?>",0);</script><?php } ?>
   </div>
   <?php }else{ ?>
   <div class="user-login-check">
     <?php echo login_ok(); ?>
-    <?php if(akina_option('login_urlskip')){ ?><script>gopage("<?php bloginfo('url'); ?>",0);</script><?php } ?>
+    <?php if(iro_opt('login_urlskip')){ ?><script>gopage("<?php bloginfo('url'); ?>",0);</script><?php } ?>
   </div>
 <?php 
   }
@@ -287,7 +287,7 @@ function the_headPattern(){
     if (have_posts()) : while (have_posts()) : the_post();
     $center = 'single-center';
     $header = 'single-header';
-    $ava = akina_option('focus_logo', '') ? akina_option('focus_logo', '') : get_avatar_url(get_the_author_meta('user_email'));
+    $ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
     global $user_ID; 
     if($user_ID && current_user_can('level_10')) {
         $edit_this_post_link = '<span class="bull">·</span><a href="'.get_edit_post_link().'">EDIT</a>';
@@ -309,11 +309,11 @@ function the_headPattern(){
     $full_image_url = get_random_bg_url();
     $t .= '<h1 class="entry-title search-title"> '.sprintf( __( "Search results for \" %s \"","sakurairo" ), get_search_query()) ./*关于“ '.get_search_query().' ”的搜索结果*/'</h1>';
   }
-  if(akina_option('patternimg')) $full_image_url = false;
+  if(!iro_opt('patternimg')) $full_image_url = false;
   if(!is_home() && $full_image_url) : ?>
   <div class="pattern-center-blank"></div>
   <div class="pattern-center <?php if(is_single()){echo $center;} ?>">
-    <div class="pattern-attachment-img lazyload" style="background-image: url(<?php echo akina_option('webweb_img'); ?>/load/outload.svg)" data-src="<?php echo $full_image_url; ?>"> </div>
+    <div class="pattern-attachment-img lazyload" style="background-image: url(<?php echo iro_opt('display_icon'); ?>/load/outload.svg)" data-src="<?php echo $full_image_url; ?>"> </div>
     <header class="pattern-header <?php if(is_single()){echo $header;} ?>"><?php echo $t; ?></header>
   </div>
   <?php else :
@@ -342,7 +342,7 @@ function the_video_headPattern_hls(){
     if (have_posts()) : while (have_posts()) : the_post();
     $center = 'single-center';
     $header = 'single-header';
-    $ava = akina_option('focus_logo', '') ? akina_option('focus_logo', '') : get_avatar_url(get_the_author_meta('user_email'));
+    $ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
     global $user_ID; 
     if($user_ID && current_user_can('level_10')) {
         $edit_this_post_link = '<span class="bull">·</span><a href="'.get_edit_post_link().'">EDIT</a>';
@@ -358,18 +358,18 @@ function the_video_headPattern_hls(){
     $t .= the_title( '<h1 class="entry-title">', '</h1>', false);
   }elseif(is_archive()){
     $full_image_url = z_taxonomy_image_url();
-    $thubm_image_url = akina_option('webweb_img').'/load/outload.svg';
+    $thubm_image_url = iro_opt('display_icon').'/load/outload.svg';
     $des = category_description() ? category_description() : ''; // 描述
     $t .= '<h1 class="cat-title">'.single_cat_title('', false).'</h1>';
     $t .= ' <span class="cat-des">'.$des.'</span>';
   }elseif(is_search()){
     $full_image_url = get_random_bg_url();
-    $thubm_image_url = akina_option('webweb_img').'/load/outload.svg';
+    $thubm_image_url = iro_opt('display_icon').'/load/outload.svg';
     $t .= '<h1 class="entry-title search-title"> '.sprintf( __( "Search results for \" %s \"","sakurairo" ), get_search_query()) ./*关于“ '.get_search_query().' ”的搜索结果*/'</h1>';
   }
   $thubm_image_url = $thubm_image_url . "#lazyload-blur";
-	$thubm_image_url = str_replace(akina_option('qiniu_cdn'),'https://cdn.2heng.xin/',$thubm_image_url);
-  if(akina_option('patternimg')) $full_image_url = false;
+	$thubm_image_url = str_replace(iro_opt('image_cdn'),'https://cdn.2heng.xin/',$thubm_image_url);
+  if(!iro_opt('patternimg')) $full_image_url = false;
   if(!is_home() && $full_image_url) : ?>
   <div class="pattern-center-blank"></div>
   <div class="pattern-center <?php if(is_single()){echo $center;} ?>">
@@ -410,7 +410,7 @@ function the_video_headPattern_normal(){
     if (have_posts()) : while (have_posts()) : the_post();
     $center = 'single-center';
     $header = 'single-header';
-    $ava = akina_option('focus_logo', '') ? akina_option('focus_logo', '') : get_avatar_url(get_the_author_meta('user_email'));
+    $ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
     global $user_ID; 
     if($user_ID && current_user_can('level_10')) {
         $edit_this_post_link = '<span class="bull">·</span><a href="'.get_edit_post_link().'">'._e("EDIT","sakurairo").'</a>';
@@ -426,18 +426,18 @@ function the_video_headPattern_normal(){
     $t .= the_title( '<h1 class="entry-title">', '</h1>', false);
   }elseif(is_archive()){
     $full_image_url = z_taxonomy_image_url();
-    $thubm_image_url = akina_option('webweb_img').'/load/outload.svg';
+    $thubm_image_url = iro_opt('display_icon').'/load/outload.svg';
     $des = category_description() ? category_description() : ''; // 描述
     $t .= '<h1 class="cat-title">'.single_cat_title('', false).'</h1>';
     $t .= ' <span class="cat-des">'.$des.'</span>';
   }elseif(is_search()){
     $full_image_url = get_random_bg_url();
-    $thubm_image_url = akina_option('webweb_img').'/load/outload.svg';
+    $thubm_image_url = iro_opt('display_icon').'/load/outload.svg';
     $t .= '<h1 class="entry-title search-title"> '.sprintf( __( "Search results for \" %s \"","sakurairo" ), get_search_query()) ./*关于“ '.get_search_query().' ”的搜索结果*/'</h1>';
   }
   $thubm_image_url = $thubm_image_url . "#lazyload-blur";
-	$thubm_image_url = str_replace(akina_option('qiniu_cdn'),'https://cdn.2heng.xin/',$thubm_image_url);
-  if(akina_option('patternimg')) $full_image_url = false;
+	$thubm_image_url = str_replace(iro_opt('image_cdn'),'https://cdn.2heng.xin/',$thubm_image_url);
+  if(!iro_opt('patternimg')) $full_image_url = false;
   if(!is_home() && $full_image_url) : ?>
   <div class="pattern-center-blank"></div>
   <div class="pattern-center <?php if(is_single()){echo $center;} ?>">
@@ -465,7 +465,7 @@ function the_video_headPattern_normal(){
 function header_user_menu(){
   global $current_user;wp_get_current_user(); 
   if(is_user_logged_in()){
-    $ava = akina_option('focus_logo') ? akina_option('focus_logo') : get_avatar_url( $current_user->user_email );
+    $ava = iro_opt('personal_avatar') ? iro_opt('personal_avatar') : get_avatar_url( $current_user->user_email );
     ?>
     <div class="header-user-avatar">
       <img class="faa-spin animated-hover" src="<?php echo get_avatar_url( $current_user->ID, 64 );/*$ava;*/ ?>" width="30" height="30">
@@ -485,15 +485,15 @@ function header_user_menu(){
     </div>
   <?php
   }else{ 
-    $ava = akina_option('webweb_img').'/ui/none.png';
-    $login_url = akina_option('exlogin_url') ? akina_option('exlogin_url') : get_bloginfo('url').'/wp-login.php';
+    $ava = iro_opt('display_icon').'/ui/none.png';
+    $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : get_bloginfo('url').'/wp-login.php';
   ?>
   <div class="header-user-avatar">
     <a href="<?php echo $login_url; ?>">
       <img class="faa-shake animated-hover" src="<?php echo $ava; ?>" width="30" height="30">
     </a>
     <div class="header-user-menu">
- <div class="herder-user-name no-logged">  <a href="<?php echo $login_url; ?>" target="_blank" style="color:<?php echo akina_option('theme_skin'); ?>;font-weight:bold;text-decoration:none">登录</a>  
+ <div class="herder-user-name no-logged">  <a href="<?php echo $login_url; ?>" target="_blank" style="color:<?php echo iro_opt('theme_skin'); ?>;font-weight:bold;text-decoration:none">登录</a>  
       </div>
     </div>
   </div>
@@ -923,7 +923,7 @@ function siren_get_os($ua){
 }
 
 function siren_get_useragent($ua){
-  if(akina_option('open_useragent')){
+  if(iro_opt('comment_useragent')){
     // $imgurl = get_bloginfo('template_directory') . '/images/ua/';
     $imgurl = 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ua/svg/';
     $browser = siren_get_browsers($ua);
@@ -935,7 +935,7 @@ function siren_get_useragent($ua){
 
 // UA 显示移动定制
 function mobile_get_useragent_icon($ua){
-  if(akina_option('open_useragent')){
+  if(iro_opt('comment_useragent')){
     $imgurl = 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ua/svg/';
     $browser = siren_get_browsers($ua);
     $os = siren_get_os($ua);
@@ -948,8 +948,8 @@ function mobile_get_useragent_icon($ua){
  * 打赏
  */
  function the_reward(){
-  $alipay = akina_option('alipay_code');
-  $wechat = akina_option('wechat_code');
+  $alipay = iro_opt('alipay_code');
+  $wechat = iro_opt('wechat_code');
   if($alipay || $wechat){
   $alipay =  $alipay ? '<li class="alipay-code"><img src="'.$alipay.'"></li>' : '';
   $wechat = $wechat ? '<li class="wechat-code"><img src="'.$wechat.'"></li>' : '';

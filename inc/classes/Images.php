@@ -9,9 +9,9 @@ class Images
     private $smms_client_id;
 
     public function __construct() {
-        $this->chevereto_api_key = akina_option('chevereto_api_key');
-        $this->imgur_client_id = akina_option('imgur_client_id');
-        $this->smms_client_id = akina_option('smms_client_id');
+        $this->chevereto_api_key = iro_opt('chevereto_api_key');
+        $this->imgur_client_id = iro_opt('imgur_client_id');
+        $this->smms_client_id = iro_opt('smms_client_id');
     }
 
 
@@ -19,7 +19,7 @@ class Images
      * Chevereto upload interface
      */
     public function Chevereto_API($image) {
-        $upload_url = akina_option('cheverto_url') . '/api/1/upload';
+        $upload_url = iro_opt('cheverto_url') . '/api/1/upload';
         $args = array(
             'body' => array(
                 'source' => base64_encode($image),
@@ -35,13 +35,13 @@ class Images
             $success = true;
             $message = "success";
             $link = $reply->image->image->url;
-            $proxy = akina_option('cmt_image_proxy') . $link;
+            $proxy = iro_opt('comment_image_proxy') . $link;
         } else {
             $status = $reply->status_code;
             $success = false;
             $message = $reply->error->message;
             $link = 'https://view.moezx.cc/images/2019/10/28/default_d_h_large.gif';
-            $proxy = akina_option('cmt_image_proxy') . $link;
+            $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(
             'status' => $status,
@@ -57,7 +57,7 @@ class Images
      * Imgur upload interface
      */
     public function Imgur_API($image) {
-        $upload_url = akina_option('imgur_upload_image_proxy');
+        $upload_url = iro_opt('imgur_upload_image_proxy');
         $args = array(
             'headers' => array(
                 'Authorization' => 'Client-ID ' . $this->imgur_client_id,
@@ -75,13 +75,13 @@ class Images
             $success = true;
             $message = "success";
             $link = $reply->data->link;
-            $proxy = akina_option('cmt_image_proxy') . $link;
+            $proxy = iro_opt('comment_image_proxy') . $link;
         } else {
             $status = $reply->status;
             $success = false;
             $message = $reply->data->error;
             $link = 'https://view.moezx.cc/images/2019/10/28/default_d_h_large.gif';
-            $proxy = akina_option('cmt_image_proxy') . $link;
+            $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(
             'status' => $status,
@@ -117,19 +117,19 @@ class Images
             $success = true;
             $message = $reply->message;
             $link = $reply->data->url;
-            $proxy = akina_option('cmt_image_proxy') . $link;
+            $proxy = iro_opt('comment_image_proxy') . $link;
         } else if (preg_match("/Image upload repeated limit/i", $reply->message, $matches)) {
             $status = 200; // sm.ms 接口不规范，建议检测到重复的情况下返回标准化的 code，并单独把 url 放进一个字段
             $success = true;
             $message = $reply->message;
             $link = str_replace('Image upload repeated limit, this image exists at: ', '', $reply->message);
-            $proxy = akina_option('cmt_image_proxy') . $link;
+            $proxy = iro_opt('comment_image_proxy') . $link;
         } else {
             $status = 400;
             $success = false;
             $message = $reply->message;
             $link = 'https://view.moezx.cc/images/2019/10/28/default_d_h_large.gif';
-            $proxy = akina_option('cmt_image_proxy') . $link;
+            $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(
             'status' => $status,
@@ -142,18 +142,18 @@ class Images
     }
 
     public static function cover_gallery() {
-        if (akina_option('cover_cdn_options') == "type_2") {
+        if (iro_opt('random_graphs_options') == "type_2") {
             $img_array = glob(get_template_directory() . "/manifest/gallary/*.{gif,jpg,png}", GLOB_BRACE);
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
             $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
-        } elseif (akina_option('cover_cdn_options') == "type_3") {
-            $imgurl = akina_option('cover_cdn');
+        } elseif (iro_opt('random_graphs_options') == "type_3") {
+            $imgurl = iro_opt('random_graphs_link');
         } else {
             global $sakura_image_array;
             $img_array = json_decode($sakura_image_array, true);
             $img = array_rand($img_array);
-            $img_domain = akina_option('cover_cdn') ? akina_option('cover_cdn') : get_template_directory_uri();
+            $img_domain = iro_opt('random_graphs_link') ? iro_opt('random_graphs_link') : get_template_directory_uri();
             if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') !== false) {
                 $imgurl = $img_domain . "/manifest/" . $img_array[$img]["webp"][0];
             } else {
@@ -164,19 +164,19 @@ class Images
     }
 
     public static function mobile_cover_gallery() {
-        if (akina_option('cover_cdn_options') == "type_2") {
+        if (iro_opt('random_graphs_options') == "type_2") {
             $img_array = glob(get_template_directory() . "/manifest/gallary/*.{gif,jpg,png}", GLOB_BRACE);
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
             $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
-        } elseif (akina_option('cover_cdn_options') == "type_3") {
-          //$imgurl = akina_option('cover_cdn');
-           $imgurl = akina_option('cover_cdn_mobile');
+        } elseif (iro_opt('random_graphs_options') == "type_3") {
+          //$imgurl = iro_opt('random_graphs_link');
+           $imgurl = iro_opt('random_graphs_link_mobile');
         } else {
             global $sakura_mobile_image_array;
             $img_array = json_decode($sakura_mobile_image_array, true);
             $img = array_rand($img_array);
-            $img_domain = akina_option('cover_cdn') ? akina_option('cover_cdn') : get_template_directory_uri();
+            $img_domain = iro_opt('random_graphs_link') ? iro_opt('random_graphs_link') : get_template_directory_uri();
             if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp')) {
               $imgurl = $img_domain . "/manifest/" . $img_array[$img]["webp"][0];
             } else {
@@ -187,8 +187,8 @@ class Images
     }
 
     public static function feature_gallery() {
-        if (akina_option('post_cover_options') == "type_2") {
-            $imgurl = akina_option('post_cover');
+        if (iro_opt('post_cover_options') == "type_2") {
+            $imgurl = iro_opt('post_cover');
         } else {
             $imgurl = self::cover_gallery();
         }
