@@ -1204,8 +1204,8 @@ a:hover {
     float: right;
     margin-left: 20px;
     display: block;
-    width: 30px;
-    height: 33px;
+    width: 20px;
+    height: 20px;
     margin-top: 4.5px;
     cursor: pointer;
     z-index: 999
@@ -1215,8 +1215,8 @@ a:hover {
     position: absolute;
     top: 7px;
     left: 50%;
-    width: 28px;
-    margin-left: -15px;
+    width: 20px;
+    margin-left: -13px;
     height: 2px;
     background: #FB98C0;
     -webkit-transition: all .2s ease

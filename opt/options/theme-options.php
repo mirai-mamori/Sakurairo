@@ -342,23 +342,22 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'    => 'nav_menu_search',
-        'type'  => 'switcher',
-        'title' => '导航菜单搜索',
-        'label'   => '默认开启，点击将进入搜索区域',
-        'default' => true
-      ),
-
-      array(
-        'id'         => 'nav_menu_search_size',
+        'id'         => 'nav_menu_icon_size',
         'type'       => 'radio',
-        'title'      => '导航菜单搜索图标大小',
-        'dependency' => array( 'nav_menu_search', '==', 'true' ),
+        'title'      => '导航菜单图标大小',
         'options'    => array(
           'standard' => '标准图标',
           'large' => '大图标',
         ),
         'default'    => 'standard'
+      ),
+
+      array(
+        'id'    => 'nav_menu_search',
+        'type'  => 'switcher',
+        'title' => '导航菜单搜索',
+        'label'   => '默认开启，点击将进入搜索区域',
+        'default' => true
       ),
 
       array(
@@ -481,6 +480,7 @@ if( class_exists( 'CSF' ) ) {
         'tabs'          => array(
           array(
             'title'     => '默认',
+            'icon'      => 'fa fa-television',
             'fields'    => array(
               array(
                 'id'    => 'img1',
@@ -491,6 +491,7 @@ if( class_exists( 'CSF' ) ) {
           ),
           array(
             'title'     => '心形图标',
+            'icon'      => 'fa fa-heart-o',
             'fields'    => array(
               array(
                 'id'    => 'heart_shaped',
@@ -506,6 +507,7 @@ if( class_exists( 'CSF' ) ) {
           ),
           array(
             'title'     => '星形图标',
+            'icon'      => 'fa fa-star-o',
             'fields'    => array(
               array(
                 'id'    => 'star_shaped',
@@ -521,6 +523,7 @@ if( class_exists( 'CSF' ) ) {
           ),
           array(
             'title'     => '方形图标',
+            'icon'      => 'fa fa-delicious',
             'fields'    => array(
               array(
                 'id'    => 'square_shaped',
@@ -536,6 +539,7 @@ if( class_exists( 'CSF' ) ) {
           ),
           array(
             'title'     => '柠檬形图标',
+            'icon'      => 'fa fa-lemon-o',
             'fields'    => array(
               array(
                 'id'    => 'lemon_shaped',
