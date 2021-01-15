@@ -315,7 +315,7 @@ function the_headPattern(){
   if(!is_home() && $full_image_url) : ?>
   <div class="pattern-center-blank"></div>
   <div class="pattern-center <?php if(is_single()){echo $center;} ?>">
-    <div class="pattern-attachment-img lazyload" style="background-image: url(<?php echo iro_opt('display_icon'); ?>/load/outload.svg)" data-src="<?php echo $full_image_url; ?>"> </div>
+    <div class="pattern-attachment-img lazyload" style="background-image: url(<?php echo iro_opt('load_out_svg'); ?>)" data-src="<?php echo $full_image_url; ?>"> </div>
     <header class="pattern-header <?php if(is_single()){echo $header;} ?>"><?php echo $t; ?></header>
   </div>
   <?php else :
@@ -360,13 +360,13 @@ function the_video_headPattern_hls(){
     $t .= the_title( '<h1 class="entry-title">', '</h1>', false);
   }elseif(is_archive()){
     $full_image_url = z_taxonomy_image_url();
-    $thubm_image_url = iro_opt('display_icon').'/load/outload.svg';
+    $thubm_image_url = iro_opt('load_out_svg');
     $des = category_description() ? category_description() : ''; // 描述
     $t .= '<h1 class="cat-title">'.single_cat_title('', false).'</h1>';
     $t .= ' <span class="cat-des">'.$des.'</span>';
   }elseif(is_search()){
     $full_image_url = get_random_bg_url();
-    $thubm_image_url = iro_opt('display_icon').'/load/outload.svg';
+    $thubm_image_url = iro_opt('load_out_svg');
     $t .= '<h1 class="entry-title search-title"> '.sprintf( __( "Search results for \" %s \"","sakurairo" ), get_search_query()) ./*关于“ '.get_search_query().' ”的搜索结果*/'</h1>';
   }
   $thubm_image_url = $thubm_image_url . "#lazyload-blur";
@@ -428,13 +428,13 @@ function the_video_headPattern_normal(){
     $t .= the_title( '<h1 class="entry-title">', '</h1>', false);
   }elseif(is_archive()){
     $full_image_url = z_taxonomy_image_url();
-    $thubm_image_url = iro_opt('display_icon').'/load/outload.svg';
+    $thubm_image_url = iro_opt('load_out_svg');
     $des = category_description() ? category_description() : ''; // 描述
     $t .= '<h1 class="cat-title">'.single_cat_title('', false).'</h1>';
     $t .= ' <span class="cat-des">'.$des.'</span>';
   }elseif(is_search()){
     $full_image_url = get_random_bg_url();
-    $thubm_image_url = iro_opt('display_icon').'/load/outload.svg';
+    $thubm_image_url = iro_opt('load_out_svg');
     $t .= '<h1 class="entry-title search-title"> '.sprintf( __( "Search results for \" %s \"","sakurairo" ), get_search_query()) ./*关于“ '.get_search_query().' ”的搜索结果*/'</h1>';
   }
   $thubm_image_url = $thubm_image_url . "#lazyload-blur";
@@ -487,7 +487,7 @@ function header_user_menu(){
     </div>
   <?php
   }else{ 
-    $ava = iro_opt('display_icon').'/ui/none.png';
+    $ava = iro_opt('unlisted_avatar');
     $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : get_bloginfo('url').'/wp-login.php';
   ?>
   <div class="header-user-avatar">

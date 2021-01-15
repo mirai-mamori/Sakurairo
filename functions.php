@@ -336,7 +336,7 @@ if (!function_exists('akina_comment_format')) {
 				<div class="comment-arrow">
 					<div class="main shadow">
 						<div class="profile">
-							<a href="<?php comment_author_url();?>" target="_blank" rel="nofollow"><?php echo str_replace('src=', 'src="'.iro_opt('display_icon').'/load/inload.svg" onerror="imgError(this,1)" data-src=', get_avatar($comment->comment_author_email, '80', '', get_comment_author(), array('class' => array('lazyload')))); ?></a>
+							<a href="<?php comment_author_url();?>" target="_blank" rel="nofollow"><?php echo str_replace('src=', 'src="'.iro_opt('load_in_svg').'" onerror="imgError(this,1)" data-src=', get_avatar($comment->comment_author_email, '80', '', get_comment_author(), array('class' => array('lazyload')))); ?></a>
 						</div>
 						<div class="commentinfo">
 							<section class="commeta">
@@ -509,7 +509,7 @@ function get_the_link_items($id = null)
                 $bookmark->link_image = 'https://view.moezx.cc/images/2017/12/30/Transparent_Akkarin.th.jpg';
             }
 
-            $output .= '<li class="link-item"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" rel="friend"><img class="lazyload" onerror="imgError(this,1)" data-src="' . $bookmark->link_image . '" src="'.iro_opt('display_icon').'/load/inload.svg"><span class="sitename">' . $bookmark->link_name . '</span><div class="linkdes">' . $bookmark->link_description . '</div></a></li>';
+            $output .= '<li class="link-item"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" rel="friend"><img class="lazyload" onerror="imgError(this,1)" data-src="' . $bookmark->link_image . '" src="'.iro_opt('load_in_svg').'"><span class="sitename">' . $bookmark->link_name . '</span><div class="linkdes">' . $bookmark->link_description . '</div></a></li>';
         }
         $output .= '</ul>';
     }
@@ -927,7 +927,7 @@ function comment_mail_notify($comment_id)
     </div>
 ';
         $message = convert_smilies($message);
-        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.3.6/vision/smilies/bilipng/emoji_', $message);
+        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.3.8/vision/smilies/bilipng/emoji_', $message);
         $message = str_replace("}}", '.png" alt="emoji" style="height: 2em; max-height: 2em;">', $message);
 
         $message = str_replace('{UPLOAD}', 'https://i.loli.net/', $message);
@@ -990,9 +990,9 @@ function comment_picture_support($content)
     $content = str_replace('http://', 'https://', $content); // 干掉任何可能的 http
     $content = str_replace('{UPLOAD}', 'https://i.loli.net/', $content);
     $content = str_replace('[/img][img]', '[/img^img]', $content);
-    $content = str_replace('[img]', '<br><img src="'.iro_opt('display_icon').'/load/inload.svg" data-src="', $content);
+    $content = str_replace('[img]', '<br><img src="'.iro_opt('load_in_svg').'" data-src="', $content);
     $content = str_replace('[/img]', '" class="lazyload comment_inline_img" onerror="imgError(this)"><br>', $content);
-    $content = str_replace('[/img^img]', '" class="lazyload comment_inline_img" onerror="imgError(this)"><img src="'.iro_opt('display_icon').'/load/inload.svg" data-src="', $content);
+    $content = str_replace('[/img^img]', '" class="lazyload comment_inline_img" onerror="imgError(this)"><img src="'.iro_opt('load_in_svg').'" data-src="', $content);
     return $content;
 }
 add_filter('comment_text', 'comment_picture_support');

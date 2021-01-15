@@ -22,7 +22,7 @@ $reception_background = iro_opt('reception_background');
 		<div class="site-info" theme-info="Sakurairo v<?php echo SAKURA_VERSION; ?>">
 			<div class="footertext">
 				<div class="img-preload">
-					<img src="<?php echo iro_opt('display_icon'); ?>/load/ball.svg"><!-- 加载下一部分圈圈 -->
+					<img src="<?php echo iro_opt('load_nextpage_svg'); ?>"><!-- 加载下一部分圈圈 -->
 				</div>
 				<?php if (iro_opt('footer_sakura_icon', 'true')): ?>
 				<i class="iconfont icon-sakura rotating" style="color: <?php echo iro_opt('theme_skin_matching'); ?>;display:inline-block;font-size:26px"></i>
