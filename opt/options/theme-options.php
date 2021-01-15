@@ -889,7 +889,6 @@ if( class_exists( 'CSF' ) ) {
         'desc'   => '填写地址，此为加载下一页时占位显示的SVG',
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/ball.svg'
       ),
-
     )
   ) );
 

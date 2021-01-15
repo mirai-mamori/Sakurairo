@@ -11,7 +11,6 @@ mashiro_global.variables = new function () {
 mashiro_global.ini = new function () {
     this.normalize = function () { // initial functions when page first load (首次加载页面时的初始化函数)
         lazyload();
-        social_share();
         post_list_show_animation();
         copy_code_block();
         web_audio();
@@ -22,7 +21,6 @@ mashiro_global.ini = new function () {
     }
     this.pjax = function () { // pjax reload functions (pjax 重载函数)
         pjaxInit();
-        social_share();
         post_list_show_animation();
         copy_code_block();
         web_audio();
@@ -135,29 +133,6 @@ mashiro_global.font_control = new function () {
     }
 }
 mashiro_global.font_control.ini();
-
-function social_share_limit(){
-    
-    if ($(".top-social").length > 0 || $(".top-social_v2").length > 0){
-        $(".top-social").length > 0 ? a = $(".top-social li") : a = $(".top-social_v2 li");
-        for (var i=a.length-2;i>=11;i--){
-            a[i].remove();
-        }
-        if(document.body.clientWidth<=860){
-            for (var i=a.length-2;i>=10;i--){
-                a[i].remove();
-            }
-        }
-        if(document.body.clientWidth<=425){
-            for (var i=a.length-2;i>=5;i--){
-                a[i].remove();
-            }
-            num = 1;
-        }
-    }
-    }
-    social_share_limit();
-
 
 function code_highlight_style() {
     function gen_top_bar(i) {
