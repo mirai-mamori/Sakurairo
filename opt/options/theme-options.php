@@ -883,7 +883,6 @@ if( class_exists( 'CSF' ) ) {
         'label'   => '默认开启，页面滚动将更加平滑',
         'default' => true
       ),
-
     )
   ) );
 
