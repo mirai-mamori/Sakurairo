@@ -283,7 +283,9 @@ function the_headPattern(){
   $t = ''; // 标题
   $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
   if(is_single()){
-    $full_image_url = $full_image_url[0];
+    if(!empty($full_image_url)){
+      $full_image_url = $full_image_url[0];
+    }
     if (have_posts()) : while (have_posts()) : the_post();
     $center = 'single-center';
     $header = 'single-header';

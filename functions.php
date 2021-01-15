@@ -32,7 +32,7 @@ if (! function_exists('iro_opt')) {
 
 //ini_set('display_errors', true);
 //error_reporting(E_ALL);
-error_reporting(E_ALL ^ E_NOTICE);
+//error_reporting(E_ALL ^ E_NOTICE);
 
 if (!function_exists('akina_setup')):
     function akina_setup()
@@ -1092,7 +1092,7 @@ $bilismiliestrans = array();
 function push_bili_smilies(){
   global $bilismiliestrans;
   $name = array('baiyan','bishi','bizui','chan','dai','daku','dalao','dalian','dianzan','doge','facai','fanu','ganga','guilian','guzhang','haixiu','heirenwenhao','huaixiao','jingxia','keai','koubizi','kun','lengmo','liubixue','liuhan','liulei','miantian','mudengkoudai','nanguo','outu','qinqin','se','shengbing','shengqi','shuizhao','sikao','tiaokan','tiaopi','touxiao','tuxue','weiqu','weixiao','wunai','xiaoku','xieyanxiao','yiwen','yun','zaijian','zhoumei','zhuakuang');
-  $return_smiles = '';
+  $return_smiles = null;
   for($i=0;$i<count($name);$i++){
     $smilies_Name=$name[$i];
     if (is_webp() == 1){
