@@ -927,7 +927,7 @@ function comment_mail_notify($comment_id)
     </div>
 ';
         $message = convert_smilies($message);
-        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.3.8/vision/smilies/bilipng/emoji_', $message);
+        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.4.1/vision/smilies/bilipng/emoji_', $message);
         $message = str_replace("}}", '.png" alt="emoji" style="height: 2em; max-height: 2em;">', $message);
 
         $message = str_replace('{UPLOAD}', 'https://i.loli.net/', $message);
