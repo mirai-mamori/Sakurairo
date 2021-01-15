@@ -349,6 +349,7 @@ if (!function_exists('akina_comment_format')) {
     									<?php if (current_user_can('manage_options') and (wp_is_mobile() == false)) {
             $comment_ID = $comment->comment_ID;
             $i_private = get_comment_meta($comment_ID, '_private', true);
+            $flag=null;
             $flag .= ' <i class="fa fa-snowflake-o" aria-hidden="true"></i> <a href="javascript:;" data-actionp="set_private" data-idp="' . get_comment_id() . '" id="sp" class="sm" style="color:rgba(0,0,0,.35)">' . __("Private", "sakurairo") . ': <span class="has_set_private">';
             if (!empty($i_private)) {
                 $flag .= __("Yes", "sakurairo") . ' <i class="fa fa-lock" aria-hidden="true"></i>';
