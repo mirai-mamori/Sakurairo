@@ -15,6 +15,7 @@ show_admin_bar(false);
  * 视频
  */
 function bgvideo(){
+  $dis=null;
   if(!iro_opt('cover_video') || !iro_opt('cover_full_screen')) $dis = 'display:none;';
   $html = '<div id="video-container" style="'.$dis.'">'; 
   $html .= '<video id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto"></video>';
