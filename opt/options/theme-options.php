@@ -140,26 +140,6 @@ if( class_exists( 'CSF' ) ) {
     'fields' => array(
 
       array(
-        'id'          => 'display_icon',
-        'type'        => 'select',
-        'title'       => '显示图标',
-        'desc'   => '选择你喜欢的显示图标包',
-        'options'     => array(
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/colorful'  => '【默认】多彩扁平图标',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/macaronblue'  => '【马卡龙色系】蓝色图标（B8F1ED）',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/macarongreen'  => '【马卡龙色系】绿色图标（B8F1CC）',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/macaronpurple'  => '【马卡龙色系】紫色图标（D9B8F1）',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sakura'  => '【标准】樱花配色图标（FB98C0+87B6FA）',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/pink'  => '【标准】粉色图标（EE9CA7）',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/orange'  => '【标准】橙色图标（FF8000）',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sangosyu'  => '【日系】珊瑚朱色图标（F17C67）',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sora'  => '【日系】空色图标（58B2DC）',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/nae'  => '【日系】苗色图标（86C166）',
-        ),
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/colorful'
-      ),
-
-      array(
         'id'      => 'theme_skin',
         'type'    => 'color',
         'title'   => '主题色',
@@ -211,6 +191,14 @@ if( class_exists( 'CSF' ) ) {
         'min'   => '0.2',
         'max'   => '1',
         'default' => '0.8'
+      ),
+
+      array(
+        'id'     => 'load_out_svg',
+        'type'   => 'text',
+        'title'  => '加载控件单元占位SVG',
+        'desc'   => '填写地址，此为加载控件单元时占位显示的SVG',
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/outload.svg'
       ),
 
     )
@@ -375,6 +363,16 @@ if( class_exists( 'CSF' ) ) {
         'title' => '导航菜单用户头像',
         'label'   => '默认开启，点击将进入登录界面',
         'default' => true
+      ),
+
+      array(
+        'id'     => 'unlisted_avatar',
+        'type'  => 'upload',
+        'title' => '导航菜单用户未登录头像',
+        'dependency' => array( 'nav_menu_user_avatar', '==', 'true' ),
+        'desc'   => '最佳比例1比1',
+        'library'      => 'image',
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/colorful/ui/none.png'
       ),
 
       array(
@@ -721,8 +719,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'cursor_ayu',
         'type'   => 'text',
-        'title'  => '选中元素鼠标样式',
-        'desc'   => '应用于选中某个元素，填写Cur鼠标文件链接',
+        'title'  => '选中控件单元鼠标样式',
+        'desc'   => '应用于选中某个控件单元，填写Cur鼠标文件链接',
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/ayuda.cur'
       ),
 
@@ -738,7 +736,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'cursor_work',
         'type'   => 'text',
         'title'  => '工作状态鼠标样式',
-        'desc'   => '应用于加载元素，填写Cur鼠标文件链接',
+        'desc'   => '应用于加载控件单元，填写Cur鼠标文件链接',
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/work.cur'
       ),
 
@@ -828,6 +826,30 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'     => 'poi_pjax',
+        'type'   => 'switcher',
+        'title'  => 'PJAX局部刷新',
+        'label'   => '开启之后点击新内容将不需要重新加载',
+        'default' => false
+      ),
+
+      array(
+        'id'     => 'nprogress_on',
+        'type'   => 'switcher',
+        'title'  => 'NProgress加载进度条',
+        'label'   => '默认开启，加载页面将有进度条提示',
+        'default' => true
+      ),
+
+      array(
+        'id'     => 'smoothscroll_option',
+        'type'   => 'switcher',
+        'title'  => '全局平滑滚动',
+        'label'   => '默认开启，页面滚动将更加平滑',
+        'default' => true
+      ),
+
+      array(
         'id'         => 'pagenav_style',
         'type'       => 'radio',
         'title'      => '分页模式',
@@ -861,27 +883,11 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'     => 'poi_pjax',
-        'type'   => 'switcher',
-        'title'  => 'PJAX局部刷新',
-        'label'   => '开启之后点击新内容将不需要重新加载',
-        'default' => false
-      ),
-
-      array(
-        'id'     => 'nprogress_on',
-        'type'   => 'switcher',
-        'title'  => 'NProgress加载进度条',
-        'label'   => '默认开启，加载页面将有进度条提示',
-        'default' => true
-      ),
-
-      array(
-        'id'     => 'smoothscroll_option',
-        'type'   => 'switcher',
-        'title'  => '全局平滑滚动',
-        'label'   => '默认开启，页面滚动将更加平滑',
-        'default' => true
+        'id'     => 'load_nextpage_svg',
+        'type'   => 'text',
+        'title'  => '下一页加载占位SVG',
+        'desc'   => '填写地址，此为加载下一页时占位显示的SVG',
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/ball.svg'
       ),
 
     )
@@ -1113,7 +1119,16 @@ if( class_exists( 'CSF' ) ) {
         'desc'    => '自定义颜色，建议使用浅色系颜色',
         'default' => 'rgba(255,255,255,0.8)'
       ),  
-      
+
+      array(
+        'id'      => 'drop_down_arrow_dark_color',
+        'type'    => 'color',
+        'title'   => '封面下拉箭头深色模式颜色',
+        'dependency' => array( 'drop_down_arrow', '==', 'true' ),
+        'desc'    => '自定义颜色，建议使用深色系颜色',
+        'default' => 'rgba(51,51,51,0.8)'
+      ),  
+
       array(
         'id'    => 'cover_video',
         'type'  => 'switcher',
@@ -1162,6 +1177,27 @@ if( class_exists( 'CSF' ) ) {
         'title' => '封面社交区域',
         'label'   => '默认开启，显示封面随机图片切换按钮和社交网络图标',
         'default' => true
+      ),
+
+      array(
+        'id'          => 'social_display_icon',
+        'type'        => 'image_select',
+        'title'       => '社交网络图标',
+        'desc'   => '选择你喜欢的图标包',
+        'options'     => array(
+          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/fluent_design'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/social_display_icon1.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/flat_colorful'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/social_display_icon2.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/sakura'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/social_display_icon3.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/macaronblue'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/social_display_icon4.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/macarongreen'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/social_display_icon5.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/macaronpurple'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/social_display_icon6.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/pink'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/social_display_icon7.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/orange'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/social_display_icon8.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/sangosyu'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/social_display_icon9.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/sora'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/social_display_icon10.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/nae'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/social_display_icon11.png',
+        ),
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/fluent_design'
       ),
 
       array(
@@ -1849,6 +1885,14 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'    => 'clipboard_copyright',
+        'type'  => 'switcher',
+        'title' => '页面剪切板版权提示',
+        'label'   => '默认开启，用户在复制文字内容超过30字节时，会有版权提示文本',
+        'default' => true
+      ),
+
+      array(
         'id'    => 'page_lazyload',
         'type'  => 'switcher',
         'title' => '页面LazyLoad加载',
@@ -1859,18 +1903,18 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'page_lazyload_spinner',
         'type'   => 'text',
-        'title'  => '页面LazyLoad加载占位图片',
+        'title'  => '页面LazyLoad加载占位SVG',
         'dependency' => array( 'page_lazyload', '==', 'true' ),
         'desc'   => '填写地址，此为页面LazyLoad加载时会显示的占位图',
-        'default'    => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/colorful/load/inload.svg'
+        'default'    => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/inload.svg'
       ),
 
       array(
-        'id'    => 'clipboard_copyright',
-        'type'  => 'switcher',
-        'title' => '页面剪切板版权提示',
-        'label'   => '默认开启，用户在复制文字内容超过30字节时，会有版权提示文本',
-        'default' => true
+        'id'     => 'load_in_svg',
+        'type'   => 'text',
+        'title'  => '页面图像加载占位SVG',
+        'desc'   => '填写地址，此为加载页面图像时占位显示的SVG',
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/inload.svg'
       ),
 
     )

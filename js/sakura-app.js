@@ -413,7 +413,7 @@ function mobile_dark_light() {
         $("#moblieDarkLight").html('<i class="fa fa-moon-o" aria-hidden="true"></i>');
         setCookie("dark", "0", 0.33);
     } else {
-        $("html").css("background", "#31363b");
+        $("html").css("background", "#333333");
         $("#moblieDarkLight").html('<i class="fa fa-sun-o" aria-hidden="true"></i>');
         $("body").addClass("dark");
         setCookie("dark", "1", 0.33);
@@ -454,7 +454,7 @@ $(document).ready(function () {
                     checkskinSecter();
                 }
                 if (tagid == "dark-bg") {
-                    $("html").css("background", "#31363b");
+                    $("html").css("background", "#333333");
                     $(".site-content").css("background-color", "#fff");
                     $("body").addClass("dark");
                     setCookie("dark", "1", 0.33);
