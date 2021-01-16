@@ -44,8 +44,16 @@ class Bilibili
             } else {
                 preg_match('/第(\d+)./m', $list['progress'], $matches_progress);
                 preg_match('/第(\d+)./m', $list["new_ep"]['index_show'], $matches_new);
-                $progress = is_numeric($matches_progress[1]) ? $matches_progress[1] : 0;
-                $total = is_numeric($matches_new[1]) ? $matches_new[1] : $list['total_count'];
+                if(isset($matches_progress[1])){
+                    $progress = is_numeric($matches_progress[1]) ? $matches_progress[1] : 0;
+                }else{
+                    $progress = 0;
+                }
+                if(isset($matches_new[1])){
+                    $total = is_numeric($matches_new[1]) ? $matches_new[1] : $list['total_count'];
+                }else {
+                    $total = $list['total_count'];
+                }
                 $percent = $progress / $total * 100;
             }
             $html .= '<div class="column">
