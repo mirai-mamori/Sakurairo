@@ -5188,7 +5188,7 @@ i.iconfont.down {
         transition-duration: .5s;
         width: 100%;
         height: 50px;
-        position: absolute;
+        position: fixed;
         top: 0;
         z-index: 99999;
         display: block;
