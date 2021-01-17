@@ -2483,5 +2483,23 @@ if( class_exists( 'CSF' ) ) {
     )
   ) );
 
+  CSF::createSection($prefix, array(
+    'title'       => '关于主题',
+    'icon'        => 'fa fa-paperclip',
+    'fields'      => array(
+
+      array(
+        'type'    => 'heading',
+        'content' => '关于主题',
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => '<img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square"  alt="主题最新版本" /><img src="https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square"  alt="主题最新版本发布时间" /><img src="https://data.jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge"  alt="主题CDN资源访问量" />',
+      ),
+
+    )
+  ) );
+
 }
 
