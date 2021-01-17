@@ -1475,7 +1475,7 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'text',
         'title'  => '公告文本',
         'dependency' => array( 'announce_bar', '==', 'true' ),
-        'desc'   => '填写公告文本，在桌面端文本超出142个字节将会被滚动显示，在移动端不会被滚动显示',
+        'desc'   => '填写公告文本，在桌面端文本超出142个字节将会被滚动显示',
       ),
 
       array(

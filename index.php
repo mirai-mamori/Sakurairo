@@ -25,7 +25,7 @@ get_header();
 	<?php if (iro_opt('announce_bar_icon', 'true')): ?>
 		<i class="iconfont icon-notification"></i>
             <?php endif; ?>
-	  <?php if(strlen($text) > 142 && !wp_is_mobile()){ ?> 
+	  <?php if(strlen($text) > 142){ ?> 
 	  	<marquee align="middle" behavior="scroll" loop="-1" scrollamount="6" style="margin: 0 8px 0 20px; display: block;" onMouseOut="this.start()" onMouseOver="this.stop()">
 			<div class="notice-content"><?php echo $text; ?></div>
 		</marquee>
