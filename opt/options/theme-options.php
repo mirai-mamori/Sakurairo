@@ -39,7 +39,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'text_logo_options',
         'type'  => 'switcher',
-        'title' => '文字Logo',
+        'title' => '白猫特效文字',
         'label'   => '开启之后将替换个人头像作为首页显示内容',
         'default' => false
       ),
@@ -47,7 +47,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'        => 'text_logo',
         'type'      => 'fieldset',
-        'title'     => '文字Logo选项',
+        'title'     => '白猫特效文字',
         'dependency' => array( 'text_logo_options', '==', 'true' ),
         'fields'    => array(
           array(
@@ -88,7 +88,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'iro_logo',
         'type'  => 'upload',
         'title' => '导航菜单Logo',
-        'desc'   => '最佳尺寸40px',
+        'desc'   => '最佳尺寸40px，填写后导航菜单文字Logo不显示',
         'library'      => 'image',
       ),
 
@@ -389,6 +389,14 @@ if( class_exists( 'CSF' ) ) {
         'title' => '导航菜单白猫样式Logo',
         'label'   => '开启之后白猫样式Logo将出现并替换导航菜单Logo位置',
         'default' => false
+      ),
+
+      array(
+        'id'     => 'logo_text',
+        'type'   => 'text',
+        'title'  => '导航菜单文字Logo',
+        'desc'   => '导航菜单文字Logo，如开启白猫样式Logo则无需填写',
+        'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
       ),
 
       array(
