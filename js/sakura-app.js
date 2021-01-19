@@ -1926,28 +1926,6 @@ $(function () {
             post_list_show_animation();
         }, false);
     }
-    $.fn.postLike = function () {
-        if ($(this).hasClass('done')) {
-            return false;
-        } else {
-            $(this).addClass('done');
-            var id = $(this).data("id"),
-                action = $(this).data('action'),
-                rateHolder = $(this).children('.count');
-            var ajax_data = {
-                action: "specs_zan",
-                um_id: id,
-                um_action: action
-            };
-            $.post(Poi.ajaxurl, ajax_data, function (data) {
-                $(rateHolder).html(data);
-            });
-            return false;
-        }
-    };
-    $(document).on("click", ".specsZan", function () {
-        $(this).postLike();
-    });
     console.log("%c Mashiro %c", "background:#24272A; color:#ffffff", "", "https://2heng.xin/");
     console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "https://github.com/mashirozx");
 });

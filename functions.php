@@ -460,30 +460,7 @@ function get_post_views($post_id)
     }
 }
 
-/*
- * Ajax点赞
- */
-add_action('wp_ajax_nopriv_specs_zan', 'specs_zan');
-add_action('wp_ajax_specs_zan', 'specs_zan');
-function specs_zan()
-{
-    global $wpdb, $post;
-    $id = $_POST["um_id"];
-    $action = $_POST["um_action"];
-    if ($action == 'ding') {
-        $specs_raters = get_post_meta($id, 'specs_zan', true);
-        $expire = time() + 99999999;
-        $domain = ($_SERVER['HTTP_HOST'] != 'localhost') ? $_SERVER['HTTP_HOST'] : false; // make cookies work with localhost
-        setcookie('specs_zan_' . $id, $id, $expire, '/', $domain, false);
-        if (!$specs_raters || !is_numeric($specs_raters)) {
-            update_post_meta($id, 'specs_zan', 1);
-        } else {
-            update_post_meta($id, 'specs_zan', ($specs_raters + 1));
-        }
-        echo get_post_meta($id, 'specs_zan', true);
-    }
-    die;
-}
+
 
 function is_webp(){
     $webp = strpos($_SERVER['HTTP_ACCEPT'], 'image/webp');
@@ -738,7 +715,7 @@ function custom_login()
     //echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css" />'."\n";
     echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/inc/login.css?' . SAKURA_VERSION . '" />' . "\n";
     //echo '<script type="text/javascript" src="'.get_bloginfo('template_directory').'/js/jquery.min.js"></script>'."\n";
-    echo '<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jquery/jquery@1.9.0/jquery.min.js"></script>' . "\n";
+    echo '<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.5.0/dist/jquery.min.js"></script>' . "\n";
 }
 
 add_action('login_head', 'custom_login');
@@ -768,7 +745,7 @@ function custom_html()
     echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/js/login.js"></script>' . "\n";
     echo '<script type="text/javascript">' . "\n";
     echo 'jQuery("body").prepend("<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");' . "\n";
-    echo 'jQuery(\'#bg\').children(\'img\').attr(\'src\', \'' . $loginbg . '\').load(function(){' . "\n";
+    echo 'jQuery(\'#bg\').children(\'img\').attr(\'src\', \'' . $loginbg . '\').on(\'load\',function(){' . "\n";
     echo '	resizeImage(\'bg\');' . "\n";
     echo '	jQuery(window).bind("resize", function() { resizeImage(\'bg\'); });' . "\n";
     echo '	jQuery(\'.loading\').fadeOut();' . "\n";
