@@ -271,6 +271,10 @@ h1.cat-title {
 .no-logged a {
     color: <?php echo iro_opt('theme_skin'); ?>;
 }
+.single-reward .reward-open {
+    background: <?php echo iro_opt('theme_skin_matching'); ?>;
+    color: <?php echo iro_opt('theme_skin'); ?>;
+}
 
 /*白猫样式Logo*/
 <?php if (iro_opt('mashiro_logo_option', 'true')): ?>
@@ -1538,9 +1542,25 @@ li.link-item {
 }
 @media (max-width:860px) {
 .openNav .icon {
-        top: 93%;
-        left: 10%;
+        left: 5%;
     }
+}
+
+@media (max-width:860px) {
+.site-header {
+    width: 100%;
+    height: 60px;
+    top: 0;
+    left: 0;
+    background: 0 0;
+    position: fixed;
+    border-radius: 0px;
+}
+.yya {
+    position: fixed;
+    background: rgba(255, 255, 255, .75);
+    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
+}
 }
 
 <?php }if(iro_opt('nav_menu_style') == 'sakura'){ ?>
@@ -1570,6 +1590,12 @@ li.link-item {
     left: 0;
     background: rgba(255, 255, 255, .75);
     box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
+}
+}
+
+@media (max-width:860px) {
+.site-header {
+    height: 60px;
 }
 }
 <?php } ?>

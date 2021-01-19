@@ -1,7 +1,7 @@
 <?php
 
 /**
- Template Name: B站追番模板
+ Template Name: 哔哩哔哩追番模板
  */
 get_header(); 
 ?>

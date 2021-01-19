@@ -152,7 +152,7 @@ color: #676767 !important}
 	font-size:16px;
 	text-align:center;
 	color:#FFF;
-        /*background:#FB98C0;*/
+        /*background:#505050;*/
 	font-weight:normal;
 	cursor:pointer;
 	box-shadow: none;
@@ -285,7 +285,7 @@ input[type=checkbox]:checked:before {
 	background: #fff;
 	z-index: 3;
 	cursor: move;
-        /*color: #FB98C0;*/
+        /*color: #505050;*/
 	font-size: 38px;
 	font-weight: 900;
 	border-radius: 12px;
@@ -301,7 +301,7 @@ input[type=checkbox]:checked:before {
 	font-style: oblique;
 	color: #FFF;
 	border-radius: 12px;
-        /*background-color: #FB98C0;*/
+        /*background-color: #505050;*/
 	line-height: 46px;
 	text-align: center;
 	z-index: 2;
@@ -360,7 +360,7 @@ input[type=checkbox]:checked:before {
 }
 
 /*.forgetmenot input:checked + label {
-  background: #FB98C0;
+  background: #505050;
 }*/
 
 .forgetmenot input:checked + label:after {
