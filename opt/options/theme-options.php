@@ -421,6 +421,7 @@ if( class_exists( 'CSF' ) ) {
         'type'  => 'switcher',
         'title' => '导航菜单二级菜单提示箭头',
         'label'   => '开启之后菜单提示箭头将出现在导航菜单二级菜单',
+        'dependency' => array( 'nav_menu_style', '==', 'sakura' ),
         'default' => false
       ),
 
