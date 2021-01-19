@@ -2498,7 +2498,7 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'heading',
-        'content' => '关于主题',
+        'content' => '主题信息',
       ),
 
       array(

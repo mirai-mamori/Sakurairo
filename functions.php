@@ -491,6 +491,12 @@ function is_webp(){
     return $webp;
 }
 
+//WordPress 5.0+移除 block-library CSS
+add_action( 'wp_enqueue_scripts', 'fanly_remove_block_library_css', 100 );
+function fanly_remove_block_library_css() {
+	wp_dequeue_style( 'wp-block-library' );
+}
+
 /*
  * 友情链接
  */
