@@ -1027,6 +1027,7 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'cover_animation', '==', 'true' ),
         'desc'   => '滑动滑块，推荐数值范围为1-2',
         'step'   => '0.01',
+        'unit'    => 's',
         'max'   => '5',
         'default' => '2'
       ),
@@ -2004,6 +2005,7 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'page_title_animation', '==', 'true' ),
         'desc'   => '滑动滑块，推荐数值范围为1-2',
         'step'   => '0.01',
+        'unit'    => 's',
         'max'   => '5',
         'default' => '2'
       ),
