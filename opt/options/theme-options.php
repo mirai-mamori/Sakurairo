@@ -140,6 +140,11 @@ if( class_exists( 'CSF' ) ) {
     'fields' => array(
 
       array(
+        'type'    => 'subheading',
+        'content' => '主题配色',
+      ),
+
+      array(
         'id'      => 'theme_skin',
         'type'    => 'color',
         'title'   => '主题色',
@@ -154,6 +159,11 @@ if( class_exists( 'CSF' ) ) {
         'desc'    => '自定义颜色',
         'default' => '#ffcc00'
       ),  
+
+      array(
+        'type'    => 'subheading',
+        'content' => '深色模式',
+      ),
 
       array(
         'id'      => 'theme_skin_dark',
@@ -194,6 +204,11 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'type'    => 'subheading',
+        'content' => '其他',
+      ),
+
+      array(
         'id'     => 'load_out_svg',
         'type'   => 'text',
         'title'  => '加载控件单元占位SVG',
@@ -209,6 +224,11 @@ if( class_exists( 'CSF' ) ) {
     'title'  => '字体设置',
     'icon'      => 'fa fa-font',
     'fields' => array(
+
+      array(
+        'type'    => 'subheading',
+        'content' => '全局',
+      ),
 
       array(
         'id'     => 'global_font_weight',
@@ -228,6 +248,11 @@ if( class_exists( 'CSF' ) ) {
         'step'   => '1',
         'min'   => '10',
         'max'   => '20',
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '外部字体',
       ),
 
       array(
@@ -452,6 +477,11 @@ if( class_exists( 'CSF' ) ) {
     'fields' => array(
 
       array(
+        'type'    => 'subheading',
+        'content' => '样式菜单',
+      ),
+
+      array(
         'id'         => 'style_menu_display',
         'type'       => 'radio',
         'title'      => '样式菜单显示',
@@ -477,6 +507,11 @@ if( class_exists( 'CSF' ) ) {
         'title'   => '样式菜单选项背景颜色',
         'desc'    => '自定义颜色，建议使用与主题色相同色系且属于浅色系的颜色',
         'default' => '#e8e8e8'
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '前台背景',
       ),
 
       array(
@@ -581,6 +616,11 @@ if( class_exists( 'CSF' ) ) {
         'min'   => '0.2',
         'max'   => '1',
         'default' => '0.8'
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '字体区域',
       ),
 
       array(
@@ -758,6 +798,11 @@ if( class_exists( 'CSF' ) ) {
     'fields' => array(
 
       array(
+        'type'    => 'subheading',
+        'content' => '特效及动画',
+      ),
+
+      array(
         'id'    => 'preload_animation',
         'type'  => 'switcher',
         'title' => '预加载动画',
@@ -831,6 +876,11 @@ if( class_exists( 'CSF' ) ) {
         'title' => '音符触动特效',
         'label'   => '开启之后返回顶部按钮和白猫样式Logo触碰时将有音符声音提示',
         'default' => false
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '功能',
       ),
 
       array(
@@ -1185,6 +1235,11 @@ if( class_exists( 'CSF' ) ) {
     'fields' => array(
 
       array(
+        'type'    => 'subheading',
+        'content' => '选项',
+      ),
+
+      array(
         'id'    => 'social_area',
         'type'  => 'switcher',
         'title' => '封面社交区域',
@@ -1231,6 +1286,11 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'social_area', '==', 'true' ),
         'label'   => '默认开启，显示封面随机图切换按钮',
         'default' => true
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '社交网络',
       ),
 
       array(
@@ -1430,6 +1490,11 @@ if( class_exists( 'CSF' ) ) {
     'fields' => array(
 
       array(
+        'type'    => 'subheading',
+        'content' => '公告栏',
+      ),
+
+      array(
         'id'    => 'announce_bar',
         'type'  => 'switcher',
         'title' => '公告栏',
@@ -1505,6 +1570,11 @@ if( class_exists( 'CSF' ) ) {
         'desc'    => '自定义颜色，建议根据背景颜色搭配合适的颜色',
         'default' => '#999'
       ),    
+
+      array(
+        'type'    => 'subheading',
+        'content' => '区域标题',
+      ),
 
       array(
         'id'     => 'exhibition_area_title',
@@ -2243,6 +2313,11 @@ if( class_exists( 'CSF' ) ) {
     'fields' => array(
 
       array(
+        'type'    => 'subheading',
+        'content' => '登录界面',
+      ),
+
+      array(
         'id'    => 'login_background',
         'type'  => 'upload',
         'title' => '登录界面背景图片',
@@ -2282,6 +2357,11 @@ if( class_exists( 'CSF' ) ) {
         'title'  => '登录后跳转',
         'label'   => '开启之后管理员跳转至后台，用户跳转至主页',
         'default' => false
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '仪表盘',
       ),
 
       array(
@@ -2384,6 +2464,43 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'     => 'gravatar_proxy',
+        'type'   => 'text',
+        'title'  => 'Gravatar头像代理',
+        'desc'   => '填写Gravatar头像的代理地址，默认使用极客族代理，留空则不使用代理',
+        'default'     => 'sdn.geekzu.org/avatar'
+      ),
+
+      array(
+        'id'     => 'google_analytics_id',
+        'type'   => 'text',
+        'title'  => '谷歌统计代码',
+      ),
+
+      array(
+        'id'     => 'site_custom_style',
+        'type'   => 'textarea',
+        'title'  => '自定义CSS样式',
+        'desc'   => '填写CSS代码，不需要写style标签',
+      ),
+
+      array(
+        'id'     => 'time_zone_fix',
+        'type'   => 'slider',
+        'title'  => '时区修正',
+        'desc'   => '滑动滑块，如果评论出现时差问题在这里调整，填入一个整数，计算方法：实际时间=显示错误的时间-你输入的整数（单位：小时）',
+        'step'   => '1',
+        'max'   => '24',
+        'default'    => '0'
+      ),
+
+      array(
+        'type'    => 'submessage',
+        'style'   => 'danger',
+        'content' => '以下设置不推荐盲目进行修改，请在他人的指导下使用',
+      ),
+
+      array(
         'id'     => 'local_global_library',
         'type'   => 'switcher',
         'title'  => '本地化前端库',
@@ -2400,32 +2517,11 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'     => 'gravatar_proxy',
-        'type'   => 'text',
-        'title'  => 'Gravatar头像代理',
-        'desc'   => '填写Gravatar头像的代理地址，默认使用极客族代理，留空则不使用代理',
-        'default'     => 'sdn.geekzu.org/avatar'
-      ),
-
-      array(
         'id'     => 'image_cdn',
         'type'   => 'text',
         'title'  => '图片CDN',
         'desc'   => '注意：填写格式为 http(s)://你的CDN域名/。也就是说，原路径为 http://your.domain/wp-content/uploads/2018/05/xx.png 的图片将从 http://你的CDN域名/2018/05/xx.png 加载',
         'default'     => ''
-      ),
-
-      array(
-        'id'     => 'google_analytics_id',
-        'type'   => 'text',
-        'title'  => '谷歌统计代码',
-      ),
-
-      array(
-        'id'     => 'site_custom_style',
-        'type'   => 'textarea',
-        'title'  => '自定义CSS样式',
-        'desc'   => '填写CSS代码，不需要写style标签',
       ),
 
       array(
@@ -2461,16 +2557,6 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'text',
         'title'  => '版本控制',
         'desc'   => '用于更新前端Cookie和浏览器缓存，可使用任意字符串',
-      ),
-
-      array(
-        'id'     => 'time_zone_fix',
-        'type'   => 'slider',
-        'title'  => '时区修正',
-        'desc'   => '滑动滑块，如果评论出现时差问题在这里调整，填入一个整数，计算方法：实际时间=显示错误的时间-你输入的整数（单位：小时）',
-        'step'   => '1',
-        'max'   => '24',
-        'default'    => '0'
       ),
 
       array(
@@ -2516,7 +2602,12 @@ if( class_exists( 'CSF' ) ) {
       array(
         'type'    => 'submessage',
         'style'   => 'normal',
-        'content' => '<img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square"  alt="主题最新版本" /><img src="https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square"  alt="主题最新版本发布时间" /><img src="https://data.jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge"  alt="主题CDN资源访问量" />',
+        'content' => '<img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square"  alt="主题最新版本" />  <img src="https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square"  alt="主题最新版本发布时间" />  <img src="https://data.jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge"  alt="主题CDN资源访问量" />',
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '引用相关',
       ),
 
     )
