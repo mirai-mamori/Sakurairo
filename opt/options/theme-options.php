@@ -312,6 +312,16 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'    => 'nav_menu_radius',
+        'type'  => 'slider',
+        'title' => '导航菜单圆角',
+        'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
+        'desc'   => '滑动滑块，推荐数值为15',
+        'unit'    => 'px',
+        'default' => '15'
+      ),
+
+      array(
         'id'     => 'nav_menu_shrink_animation',
         'type'   => 'slider',
         'title'  => '导航菜单收缩比率',

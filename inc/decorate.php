@@ -28,6 +28,9 @@ if (iro_opt('theme_skin')) { ?>
 .links ul li img {
     box-shadow: inset 0 0 10px <?php echo iro_opt('theme_skin'); ?>;
 }
+.lower li ul {
+    border-radius: <?php echo iro_opt('nav_menu_radius', ''); ?>px;
+}
 .commentbody:focus {
     border-color: <?php echo iro_opt('theme_skin'); ?> !important
 }
@@ -92,6 +95,9 @@ i.iconfont.js-toggle-search.iconsearch {
 .header-info {
     color: <?php echo iro_opt('theme_skin'); ?>;
     background: <?php echo iro_opt('infor_bar_bgcolor'); ?>;
+}
+.header-user-menu {
+    border-radius: <?php echo iro_opt('nav_menu_radius', ''); ?>px;
 }
 .top-social img {
     background: <?php echo iro_opt('infor_bar_bgcolor'); ?>;
@@ -1540,7 +1546,8 @@ li.link-item {
     width:<?php echo iro_opt('nav_menu_shrink_animation', ''); ?>% ;
 	left:calc(97.5% - <?php echo iro_opt('nav_menu_shrink_animation', ''); ?>%);
     background: rgba(255, 255, 255, .75);
-    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
+    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4);
+    border-radius: <?php echo iro_opt('nav_menu_radius', ''); ?>px;
 }
 .site-title img {
     margin-left: 10px;
