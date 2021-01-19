@@ -1664,7 +1664,16 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'exhibition_area_style', '==', 'left_and_right' ),
         'desc'    => '自定义颜色，仅对左右交替样式生效，建议使用浅色系颜色',
         'default' => 'rgba(255,255,255,0.4)'
-      ),  
+      ),
+      
+      array(
+        'id'    => 'exhibition_radius',
+        'type'  => 'slider',
+        'title' => '展示区域圆角',
+        'desc'   => '滑动滑块，推荐数值为15',
+        'unit'    => 'px',
+        'default' => '15'
+      ),
 
       array(
         'id'            => 'exhibition',
