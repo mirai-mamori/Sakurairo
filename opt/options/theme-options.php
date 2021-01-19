@@ -67,6 +67,7 @@ if( class_exists( 'CSF' ) ) {
             'type'   => 'slider',
             'title'  => '字体大小',
             'desc'   => '滑动滑块，推荐数值范围为70-90',
+            'unit'    => 'px',
             'min'   => '40',
             'max'   => '140',
           ),
@@ -238,6 +239,7 @@ if( class_exists( 'CSF' ) ) {
         'step'   => '10',
         'min'   => '100',
         'max'   => '700',
+        'default' => '300'
       ),
 
       array(
@@ -246,8 +248,10 @@ if( class_exists( 'CSF' ) ) {
         'title'  => '文本字体大小',
         'desc'   => '滑动滑块，推荐数值范围为15-18',
         'step'   => '1',
+        'unit'    => 'px',
         'min'   => '10',
         'max'   => '20',
+        'default' => '15'
       ),
 
       array(
@@ -328,6 +332,7 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
         'desc'   => '滑动滑块，根据导航菜单的内容长度自行设置合适的比率，当比率设置为95时则关闭收缩，默认关闭收缩',
         'step'   => '0.5',
+        'unit'    => '%',
         'max'   => '95',
         'min'   => '30',
         'default' => '95'
@@ -360,6 +365,7 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'nav_menu_animation', '==', 'true' ),
         'desc'   => '滑动滑块，推荐数值范围为1-2',
         'step'   => '0.01',
+        'unit'    => 's',
         'max'   => '5',
         'default' => '2'
       ),
@@ -1057,6 +1063,7 @@ if( class_exists( 'CSF' ) ) {
         'type'  => 'slider',
         'title' => '封面信息栏头像圆角',
         'desc'   => '滑动滑块，推荐数值为100',
+        'unit'    => 'px',
         'default' => '100'
       ),
 
@@ -1065,6 +1072,7 @@ if( class_exists( 'CSF' ) ) {
         'type'  => 'slider',
         'title' => '封面签名栏圆角',
         'desc'   => '滑动滑块，推荐数值范围为10-20',
+        'unit'    => 'px',
         'default' => '15'
       ),
 
@@ -1089,6 +1097,7 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'slider',
         'title'  => '封面签名栏文本字体大小',
         'desc'   => '滑动滑块，推荐数值范围为15-18',
+        'unit'    => 'px',
         'min'   => '5',
         'max'   => '20',
         'default' => '16'
@@ -1303,6 +1312,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '封面社交区域圆角',
         'dependency' => array( 'social_area', '==', 'true' ),
         'desc'   => '滑动滑块，推荐数值范围为10-20',
+        'unit'    => 'px',
         'max'   => '30',
         'default' => '15'
       ),
@@ -1872,6 +1882,7 @@ if( class_exists( 'CSF' ) ) {
         'title'  => '文章区域标题字体大小',
         'desc'   => '滑动滑块，推荐数值范围为16-20，此选项只适用于文章区域展示样式选择了默认样式的用户',
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
+        'unit'    => 'px',
         'step'   => '1',
         'min'   => '10',
         'max'   => '30',
@@ -1901,6 +1912,7 @@ if( class_exists( 'CSF' ) ) {
         'title'  => '文章区域时间提示区域字体大小',
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
         'desc'   => '滑动滑块，推荐数值范围为14-18，此选项只适用于文章区域展示样式选择了默认样式的用户',
+        'unit'    => 'px',
         'step'   => '1',
         'min'   => '10',
         'max'   => '25',
@@ -2001,6 +2013,7 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'slider',
         'title'  => '页面标题字体大小',
         'desc'   => '滑动滑块，推荐数值范围为20-30',
+        'unit'    => 'px',
         'min'   => '5',
         'max'   => '50',
       ),
