@@ -1071,6 +1071,12 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'type'    => 'submessage',
+        'style'   => 'info',
+        'content' => sprintf(__('如果你选择使用Webp优化随机图片，请点击 <a href = "%s">这里</a> 来更新 Manifest 路径', 'sakurairo'), rest_url('sakura/v1/database/update')), 
+      ),
+
+      array(
         'id'     => 'random_graphs_link_mobile',
         'type'   => 'text',
         'title'  => '外部API手机端随机图片地址',
@@ -2497,12 +2503,19 @@ if( class_exists( 'CSF' ) ) {
     'fields'      => array(
 
       array(
-        'type'    => 'heading',
+        'type'    => 'subheading',
         'content' => '主题信息',
       ),
 
       array(
-        'type'    => 'content',
+        'type'    => 'submessage',
+        'style'   => 'success',
+        'content' => sprintf(__('正在使用 iro 主题 版本 %s  |  <a href="https://iro.tw">主题文档</a>  |  <a href="https://github.com/mirai-mamori/Sakurairo">源码地址</a>', 'sakurairo'), SAKURA_VERSION), 
+      ),
+
+      array(
+        'type'    => 'submessage',
+        'style'   => 'normal',
         'content' => '<img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square"  alt="主题最新版本" /><img src="https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square"  alt="主题最新版本发布时间" /><img src="https://data.jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge"  alt="主题CDN资源访问量" />',
       ),
 
