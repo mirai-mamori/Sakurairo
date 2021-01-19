@@ -98,6 +98,7 @@ i.iconfont.js-toggle-search.iconsearch {
 }
 .skin-menu{
     background-color: <?php echo iro_opt('style_menu_background_color'); ?>;
+    border-radius: <?php echo iro_opt('style_menu_selection_radius', ''); ?>px;
 }
 
 .post-more i:hover , #pagination a:hover , .post-content a:hover , .float-content i:hover , .entry-content a:hover , .site-info a:hover , .comment h4 a:hover , .site-top ul li a:hover , .entry-title a:hover , .sorry li a:hover , .site-title a:hover , i.iconfont.js-toggle-search.iconsearch:hover , .comment-respond input[type='submit']:hover { color: <?php echo iro_opt('theme_skin_matching'); ?> }
@@ -222,10 +223,12 @@ h1.cat-title {
     color: <?php echo iro_opt('theme_skin'); ?>
 }
 #moblieGoTop {
-    color: <?php echo iro_opt('theme_skin'); ?>
+    color: <?php echo iro_opt('theme_skin'); ?>;
+    border-radius: <?php echo iro_opt('style_menu_radius', ''); ?>px;
 }
 #changskin {
-    color: <?php echo iro_opt('theme_skin'); ?>
+    color: <?php echo iro_opt('theme_skin'); ?>;
+    border-radius: <?php echo iro_opt('style_menu_radius', ''); ?>px;
 }
 #show-nav .line {
     background: <?php echo iro_opt('theme_skin'); ?>
@@ -447,12 +450,14 @@ h1.main-title {
 }
 .font-family-controls button {
     color: <?php echo iro_opt('theme_skin'); ?>;
+    border-radius: <?php echo iro_opt('style_menu_radius', ''); ?>px;
 }
 
 
 /*非全局色彩管理*/
 .menu-list li {
     background-color: <?php echo iro_opt('style_menu_selection_color'); ?>;
+    border-radius: <?php echo iro_opt('style_menu_radius', ''); ?>px;
 }
 .font-family-controls button {
     background-color: <?php echo iro_opt('style_menu_selection_color'); ?>;

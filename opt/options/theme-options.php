@@ -494,6 +494,15 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'    => 'style_menu_radius',
+        'type'  => 'slider',
+        'title' => '样式菜单按钮圆角',
+        'desc'   => '滑动滑块，推荐数值为12',
+        'unit'    => 'px',
+        'default' => '12'
+      ),
+
+      array(
         'id'      => 'style_menu_background_color',
         'type'    => 'color',
         'title'   => '样式菜单背景颜色',
@@ -507,6 +516,15 @@ if( class_exists( 'CSF' ) ) {
         'title'   => '样式菜单选项背景颜色',
         'desc'    => '自定义颜色，建议使用与主题色相同色系且属于浅色系的颜色',
         'default' => '#e8e8e8'
+      ),
+
+      array(
+        'id'    => 'style_menu_selection_radius',
+        'type'  => 'slider',
+        'title' => '样式菜单选项界面圆角',
+        'desc'   => '滑动滑块，推荐数值为15',
+        'unit'    => 'px',
+        'default' => '15'
       ),
 
       array(
