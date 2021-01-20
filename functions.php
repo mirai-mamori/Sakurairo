@@ -49,7 +49,7 @@ if ($iro_update_source == 'github'){
 
 //ini_set('display_errors', true);
 //error_reporting(E_ALL);
-error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ALL & ~E_NOTICE);
 
 if (!function_exists('akina_setup')):
     function akina_setup()
@@ -324,6 +324,7 @@ function convertip($ip)
     curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);  
     $file_contents = curl_exec($ch);  
     curl_close($ch);  
+    $result = null;
     $result = json_decode($file_contents,true);
     if ($result['data']['country'] != '中国') {
         return $result['data']['country'];
@@ -521,6 +522,7 @@ function get_link_items()
     $linkcats = get_terms('link_category');
     if (!empty($linkcats)) {
         foreach ($linkcats as $linkcat) {
+            $result = null;
             $result .= '<h3 class="link-title"><span class="link-fix">' . $linkcat->name . '</span></h3>';
             if ($linkcat->description) {
                 $result .= '<div class="link-description">' . $linkcat->description . '</div>';
