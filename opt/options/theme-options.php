@@ -722,7 +722,7 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'textarea',
         'title'  => '页尾在线播放器网易云音乐Cookies',
         'dependency' => array( 'aplayer_server', '==', 'netease' ),
-        'desc'   => '此选项只对选择了网易云音乐的用户生效，如果你想播放会员专享音乐，填入你的帐号Cookies。',
+        'desc'   => '如果你想播放网易云音乐会员专享音乐，请在此选项填入你的帐号Cookies。',
       ),
 
       array(
@@ -1591,13 +1591,13 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'id'          => 'announce_text_align',
-        'type'        => 'select',
+        'type'        => 'image_select',
         'title'       => '公告文本对齐方向',
         'dependency' => array( 'announce_bar', '==', 'true' ),
         'options'     => array(
-          'left'  => '向左对齐',
-          'right'  => '向右对齐',
-          'center'  => '居中对齐',
+          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_left.png',
+          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_right.png',
+          'center'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_center.png',
         ),
         'default'     => 'left'
       ),
@@ -1642,12 +1642,12 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'id'          => 'area_title_text_align',
-        'type'        => 'select',
+        'type'        => 'image_select',
         'title'       => '区域标题对齐方向',
         'options'     => array(
-          'left'  => '向左对齐',
-          'right'  => '向右对齐',
-          'center'  => '居中对齐',
+          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_left.png',
+          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_center.png',
+          'center'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_right.png',
         ),
         'default'     => 'left'
       ),
@@ -1693,7 +1693,7 @@ if( class_exists( 'CSF' ) ) {
         'type'  => 'switcher',
         'title' => '展示区域兼容模式',
         'dependency' => array( 'exhibition_area_style', '==', 'left_and_right' ),
-        'label'   => '默认开启，此选项避免了使用左右交替样式时，展示区域错位的问题',
+        'label'   => '默认开启，此选项避免了展示区域错位的问题',
         'default' => true
       ),
 
@@ -1702,7 +1702,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '展示区域背景颜色',
         'dependency' => array( 'exhibition_area_style', '==', 'left_and_right' ),
-        'desc'    => '自定义颜色，仅对左右交替样式生效，建议使用浅色系颜色',
+        'desc'    => '自定义颜色，建议使用浅色系颜色',
         'default' => 'rgba(255,255,255,0.4)'
       ),
       
@@ -1826,7 +1826,7 @@ if( class_exists( 'CSF' ) ) {
         'type'       => 'image_select',
         'title'      => '文章区域展示样式',
         'options'    => array(
-          'imageflow' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura.png',
+          'imageflow' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura_left.png',
           'akinastyle' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina.png',
         ),
         'default'    => 'imageflow'
@@ -1837,7 +1837,7 @@ if( class_exists( 'CSF' ) ) {
         'type'       => 'image_select',
         'title'      => '文章区域装饰特色图片展示形状',
         'dependency' => array( 'post_list_style', '==', 'akinastyle' ),
-        'desc'   => '你可以选择圆形展示或者矩形展示文章区域装饰特色图片，此选项只适用于文章区域展示样式选择了Akina样式的用户',
+        'desc'   => '你可以选择圆形展示或者矩形展示文章区域装饰特色图片',
         'options'    => array(
           'round' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina.png',
           'square' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina2.png',
@@ -1850,11 +1850,11 @@ if( class_exists( 'CSF' ) ) {
         'type'        => 'image_select',
         'title'       => '文章区域装饰特色图片对齐方向',
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc'   => '你可以选择不同方向展示文章区域装饰特色图片，此选项只适用于文章区域展示样式选择了默认样式的用户',
+        'desc'   => '你可以选择不同方向展示文章区域装饰特色图片',
         'options'     => array(
-          'alternate'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura.png',
-          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura_left.png',
-          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura_right.png',
+          'alternate'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura1.png',
+          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura2.png',
+          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura3.png',
         ),
         'default'     => 'alternate'
       ),
@@ -1882,7 +1882,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'post_title_font_size',
         'type'   => 'slider',
         'title'  => '文章区域标题字体大小',
-        'desc'   => '滑动滑块，推荐数值范围为16-20，此选项只适用于文章区域展示样式选择了默认样式的用户',
+        'desc'   => '滑动滑块，推荐数值范围为16-20',
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
         'unit'    => 'px',
         'step'   => '1',
@@ -1895,7 +1895,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '文章区域时间提示区域背景颜色',
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc'    => '自定义颜色，建议使用与主题色搭配色相同色系且属于浅色系的颜色，此选项只适用于文章区域展示样式选择了默认样式的用户',
+        'desc'    => '自定义颜色，建议使用与主题色搭配色相同色系且属于浅色系的颜色',
         'default' => '#fff5e0'
       ),    
 
@@ -1904,7 +1904,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '文章区域时间提示区域文本颜色',
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc'    => '自定义颜色，建议使用与主题色搭配色相同色系的颜色，此选项只适用于文章区域展示样式选择了默认样式的用户',
+        'desc'    => '自定义颜色，建议使用与主题色搭配色相同色系的颜色',
         'default' => '#ffcc00'
       ),    
 
@@ -1913,7 +1913,7 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'slider',
         'title'  => '文章区域时间提示区域字体大小',
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc'   => '滑动滑块，推荐数值范围为14-18，此选项只适用于文章区域展示样式选择了默认样式的用户',
+        'desc'   => '滑动滑块，推荐数值范围为14-18',
         'unit'    => 'px',
         'step'   => '1',
         'min'   => '10',
@@ -1933,7 +1933,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '文章区域图标颜色',
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc'    => '自定义颜色，建议使用与主题色搭配色相同色系的颜色，此选项只适用于文章区域展示样式选择了默认样式的用户',
+        'desc'    => '自定义颜色，建议使用与主题色搭配色相同色系的颜色',
         'default' => '#ffcc00'
       ),    
 
@@ -1942,7 +1942,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '文章区域边框阴影颜色',
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc'    => '自定义颜色，建议使用与主题色相同色系且属于浅色系的颜色，此选项只适用于文章区域展示样式选择了默认样式的用户',
+        'desc'    => '自定义颜色，建议使用与主题色相同色系且属于浅色系的颜色',
         'default' => '#e8e8e8'
       ),    
 
