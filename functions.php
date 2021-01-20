@@ -7,14 +7,6 @@
  * @package iro
  */
 
-//Update-Checker
-
-require 'update-checker/update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/mirai-mamori/Sakurairo',
-	__FILE__,
-	'unique-plugin-or-theme-slug'
-);
 
 define('SAKURA_VERSION', wp_get_theme()->get('Version'));
 define('BUILD_VERSION', '3');
@@ -28,6 +20,31 @@ if (! function_exists('iro_opt')) {
         $options = get_option('iro_options');
         return (isset($options[$option])) ? $options[$option] : $default;
     }
+}
+
+//Update-Checker
+
+require 'update-checker/update-checker.php';
+$iro_update_source = iro_opt('iro_update_source');
+
+if ($iro_update_source == 'github'){
+    $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+        'https://github.com/mirai-mamori/Sakurairo',
+        __FILE__,
+        'unique-plugin-or-theme-slug'
+    );
+}else if ($iro_update_source == 'jsdelivr'){
+	$iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+		'https://update.iro.tw/jsdelivr.json',
+        __FILE__,
+		'Sakurairo'
+	);
+}else if ($iro_update_source == 'official_building'){
+	$iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+		'https://update.iro.tw/local/check.json',
+        __FILE__,
+		'Sakurairo'
+	);
 }
 
 //ini_set('display_errors', true);

@@ -40,7 +40,7 @@ $reception_background = iro_opt('reception_background');
 						<?php if (iro_opt('footer_load_occupancy', 'true')): ?>
                         <?php printf(' 耗时 %.3f 秒 | 查询 %d 次 | 内存 %.2f MB',timer_stop( 0, 3 ),get_num_queries(),memory_get_peak_usage() / 1024 / 1024);?>
                         <?php endif; ?></p>
-						Theme <a href="https://asuhe.jp/daily/sakurairo-user-manual/" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://asuhe.jp/" target="_blank" id="site-info" >Fuukei</a> 
+						Theme <a href="https://github.com/mirai-mamori/Sakurairo" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://iro.tw" target="_blank" id="site-info" >Fuukei</a> 
 					</span>
 				</p>
 			</div>

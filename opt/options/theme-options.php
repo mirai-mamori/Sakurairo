@@ -2653,6 +2653,18 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'          => 'iro_update_source',
+        'type'        => 'select',
+        'title'       => '主题更新源',
+        'options'     => array(
+          'github'  => 'Github更新源',
+          'jsdelivr'  => 'JsDelivr更新源',
+          'official_building'  => '官方自建更新源',
+        ),
+        'default'     => 'github'
+      ),
+
+      array(
         'type'    => 'content',
         'content' => '<img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square"  alt="主题最新版本" />  <img src="https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square"  alt="主题最新版本发布时间" />  <img src="https://data.jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge"  alt="主题CDN资源访问量" />',
       ),
