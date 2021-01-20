@@ -1156,7 +1156,7 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'text',
         'title'  => 'Webp优化/外部API桌面端随机图片地址',
         'desc'   => '填写地址',
-        'default' => 'https://api.btstu.cn/sjbz/api.php?lx=dongman&format=images'
+        'default' => 'https://api.iro.tw/webp_pc.php'
       ),
 
       array(
@@ -1171,7 +1171,7 @@ if( class_exists( 'CSF' ) ) {
         'title'  => '外部API手机端随机图片地址',
         'dependency' => array( 'random_graphs_mts', '==', 'true' ),
         'desc'   => '填写地址',
-        'default' => 'https://api.uomg.com/api/rand.img2?sort=二次元&format=images'
+        'default' => 'https://api.iro.tw/webp_mb.php'
       ),
 
       array(

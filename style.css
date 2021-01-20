@@ -8722,6 +8722,8 @@ h6[id*=toc-head]::before {
 .bangumi-next i {
     color: #505050;
 }
+
+/* 短代码 */
 .shortcodestyle {
     margin: 20px 0px !important;
     padding: 15px 15px 15px 40px !important;
