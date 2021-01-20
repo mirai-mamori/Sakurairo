@@ -306,11 +306,11 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'id'         => 'nav_menu_style',
-        'type'       => 'radio',
+        'type'       => 'image_select',
         'title'      => '导航菜单样式',
         'options'    => array(
-          'sakurairo' => '默认样式',
-          'sakura' => 'Sakura样式',
+          'sakurairo' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/nav_menu_style_iro.png',
+          'sakura' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/nav_menu_style_sakura.png',
         ),
         'default'    => 'sakurairo'
       ),
@@ -500,12 +500,12 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'id'         => 'style_menu_display',
-        'type'       => 'radio',
+        'type'       => 'image_select',
         'title'      => '样式菜单显示',
         'desc'    => '你可以选择完整显示或者简单显示样式菜单，完整显示将显示字体切换功能和文本提示',
         'options'    => array(
-          'full' => '完整显示',
-          'mini' => '简单显示',
+          'full' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/style_menu_full.png',
+          'mini' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/style_menu_mini.png',
         ),
         'default'    => 'full'
       ),
@@ -1043,11 +1043,11 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'id'         => 'infor_bar_style',
-        'type'       => 'radio',
+        'type'       => 'image_select',
         'title'      => '封面信息栏样式',
         'options'    => array(
-          'v1' => '社交区域与签名栏分离',
-          'v2' => '社交区域与签名栏合并',
+          'v1' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/infor_bar_style_v1.png',
+          'v2' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/infor_bar_style_v2.png',
         ),
         'default'    => 'v1'
       ),
@@ -1679,11 +1679,11 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'id'         => 'exhibition_area_style',
-        'type'       => 'radio',
+        'type'       => 'image_select',
         'title'      => '展示区域样式',
         'options'    => array(
-          'left_and_right' => '左右交替',
-          'bottom_to_top' => '从下往上',
+          'left_and_right' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/exhibition_area_style_lr.png',
+          'bottom_to_top' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/exhibition_area_style_ud.png',
         ),
         'default'    => 'left_and_right'
       ),
@@ -1823,38 +1823,38 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'id'         => 'post_list_style',
-        'type'       => 'radio',
+        'type'       => 'image_select',
         'title'      => '文章区域展示样式',
         'options'    => array(
-          'imageflow' => '默认样式',
-          'akinastyle' => 'Akina样式',
+          'imageflow' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura.png',
+          'akinastyle' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina.png',
         ),
         'default'    => 'imageflow'
       ),
 
       array(
         'id'         => 'post_list_akina_type',
-        'type'       => 'radio',
+        'type'       => 'image_select',
         'title'      => '文章区域装饰特色图片展示形状',
         'dependency' => array( 'post_list_style', '==', 'akinastyle' ),
         'desc'   => '你可以选择圆形展示或者矩形展示文章区域装饰特色图片，此选项只适用于文章区域展示样式选择了Akina样式的用户',
         'options'    => array(
-          'round' => '圆形展示',
-          'square' => '矩形展示',
+          'round' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina.png',
+          'square' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina2.png',
         ),
         'default'    => 'round'
       ),
 
       array(
         'id'          => 'post_list_image_align',
-        'type'        => 'select',
+        'type'        => 'image_select',
         'title'       => '文章区域装饰特色图片对齐方向',
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
         'desc'   => '你可以选择不同方向展示文章区域装饰特色图片，此选项只适用于文章区域展示样式选择了默认样式的用户',
         'options'     => array(
-          'alternate'  => '左右交替',
-          'left'  => '向左对齐',
-          'right'  => '向右对齐',
+          'alternate'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura.png',
+          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura_left.png',
+          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura_right.png',
         ),
         'default'     => 'alternate'
       ),
@@ -1963,11 +1963,11 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'id'         => 'page_style',
-        'type'       => 'radio',
+        'type'       => 'image_select',
         'title'      => '页面样式',
         'options'    => array(
-          'sakurairo' => '默认样式',
-          'sakura' => 'Sakura样式',
+          'sakurairo' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/page_style_iro.png',
+          'sakura' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/page_style_sakura.png',
         ),
         'default'    => 'sakurairo'
       ),
@@ -2147,12 +2147,12 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'id'          => 'friend_link_align',
-        'type'        => 'select',
+        'type'        => 'image_select',
         'title'       => '友情链接模板单元对齐方向',
         'options'     => array(
-          'left'  => '向左对齐',
-          'right'  => '向右对齐',
-          'center'  => '居中对齐',
+          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/friend_link_left.png',
+          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/friend_link_right.png',
+          'center'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/friend_link_center.png',
         ),
         'default'     => 'left'
       ),
