@@ -23,10 +23,9 @@
 
 - 主题交流群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
 
-
 ## 如遇问题
 
-- 如果在使用过程中遇到了任何问题，请**访问*阅读本主题的 [官方站点](https://iro.tw/) 
+- 如果在使用过程中遇到了任何问题，请**访问**本主题的 [官方站点](https://iro.tw/) 
 
 - 在确认你遇到的现象确实是一个 Bug 后，请在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交问题，并为该问题尽可能的描述清楚，
 按照提供的 issue 模板进行填写，谢谢配合。
@@ -37,13 +36,6 @@
 
 - [Gitee 仓库镜像](https://gitee.com/mirai-mamori/Sakurairo)
 
-### 授权资源下载站：
-
-#### 高更新同步频率：
-- [空木白博客](https://wuzuhua.cn/1004.html)
-- [源码无忧](https://www.ym51.cn/archives/10176)
-- [站长图库](https://www.zztuku.com/wordpress-3260.html)
-
 ## 贡献者：
 
 <a href="https://github.com/mirai-mamori"><img src="https://avatars3.githubusercontent.com/u/61381142?s=400" alt="mirai-mamori" width="100"></a>  <a href="https://github.com/Ukenn2112"><img src="https://avatars3.githubusercontent.com/u/60847880?s=400" alt="Ukenn" width="100"></a>  <a href="https://github.com/spirit1431007"><img src="https://avatars1.githubusercontent.com/u/29689177?s=400" alt="Spirit" width="100"></a>  <a href="https://github.com/bymoye"><img src="https://avatars2.githubusercontent.com/u/27877470?s=400" alt="bymoye" width="100"></a>  <a href="https://github.com/FeiyuCode"><img src="https://avatars0.githubusercontent.com/u/46924793?s=400" alt="FeiyuCode" width="100"></a>  <a href="https://github.com/tumeneco"><img src="https://avatars0.githubusercontent.com/u/68286041?s=400" alt="Tumeneco" width="100"></a>  <a href="https://github.com/Sakurakouji-Runa"><img src="https://avatars2.githubusercontent.com/u/46081776?s=400" alt="Sakurakouji-Runa" width="100"></a>  <a href="https://github.com/givenhyh"><img src="https://avatars3.githubusercontent.com/u/37971883?s=400" alt="givenhyh" width="100"></a>  
@@ -51,9 +43,9 @@
 
 ## 说明：
 
-### 版权：
+- 本主题**基于 [Sakura](https://github.com/mashirozx/Sakura) 主题进行开发**，使用 [GPL V2.0](https://github.com/mirai-mamori/Sakurairo/blob/master/LICENSE) 协议开源。
 
-- 本主题基于 [Sakura](https://github.com/mashirozx/Sakura) 主题进行开发，使用 [GPL V2.0](https://github.com/mirai-mamori/Sakurairo/blob/master/LICENSE) 协议开源。
+### 引用相关：
 
 - 本主题 LOGO 特效样式参考原主题作者白猫，由 [Hyacm](https://hyacm.com/acai/ui/143/sakura-logo/) 提供方案
 
