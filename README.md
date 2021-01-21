@@ -6,7 +6,7 @@
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)[![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/Fuukei/Public_Repository?color=red&logo=jsdelivr&logoColor=red&style=for-the-badge)](https://www.jsdelivr.com/package/gh/mirai-mamori/sakurairo)
 
-## 宣传视频（帮助你更好了解本主题特性）：
+## 宣传视频：
 
 - Bilibili： https://www.bilibili.com/video/BV1KK41157Gg
 
@@ -22,8 +22,6 @@
 - 演示站点：https://demo.iro.tw/
 
 - 主题交流群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
-
-## 如遇问题
 
 - 如果在使用过程中遇到了任何问题，请**访问**本主题的 [官方站点](https://iro.tw/) 
 
@@ -43,13 +41,15 @@
 
 ## 说明：
 
+### 开源相关：
+
 - 本主题**基于 [Sakura](https://github.com/mashirozx/Sakura) 主题进行开发**，使用 [GPL V2.0](https://github.com/mirai-mamori/Sakurairo/blob/master/LICENSE) 协议开源。
+
+- 本主题使用了部分来自互联网的特效。由于版权及开源协议不明，无法具体说明相关信息。如果本主题使用到您制作的特效，烦请您通过邮件（me#okaeri.org）来取得联系。
 
 ### 引用相关：
 
-- 本主题 LOGO 特效样式参考原主题作者白猫，由 [Hyacm](https://hyacm.com/acai/ui/143/sakura-logo/) 提供方案
-
-- 本主题部分特效来自互联网，如有版权问题，烦请发邮件到（me#okaeri.org）
+- 本主题白猫样式Logo参考原主题作者白猫，由 [Hyacm](https://hyacm.com/acai/ui/143/sakura-logo/) 提供方案
 
 - 本主题使用 Stevenjoezhang [Live2d-Widget](https://github.com/stevenjoezhang/live2d-widget) 作为默认看板娘
 
