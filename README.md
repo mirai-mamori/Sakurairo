@@ -1,4 +1,4 @@
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/ultramarinelogo.gif)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/readme.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">「iro」主题</h1>
 
@@ -6,18 +6,25 @@
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)[![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/Fuukei/Public_Repository?color=red&logo=jsdelivr&logoColor=red&style=for-the-badge)](https://www.jsdelivr.com/package/gh/mirai-mamori/sakurairo)
 
-## 宣传视频：
+## 版本宣传PV：
 
-- Bilibili： https://www.bilibili.com/video/BV1KK41157Gg
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/bilibilipv.png)](https://b23.tv/tTJun3)
 
-- YouTube：  https://youtu.be/7hskBPe4Yzc
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/youtubepv.png)](https://www.youtube.com/watch?v=_rjlUY7MpqM)
 
-## 特色：
+## 版本宣传：
 
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/ultramarine1.png)](https://iro.tw/)
+
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/ultramarine2.png)](https://iro.tw/)
+
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/ultramarine3.png)](https://iro.tw/)
+
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/ultramarine4.png)](https://iro.tw/)
 
 ## 使用相关：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/readme2.png)](https://iro.tw/)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/irotw.png)](https://iro.tw/)
 
 - 演示站点：https://demo.iro.tw/
 
@@ -62,8 +69,6 @@
 - 本主题使用 YahnisElsts [Plugin-Update-Checker](https://github.com/YahnisElsts/plugin-update-checker) 以提供主题更新功能
 
 ## 希望你喜欢！
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/readme3.png)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 
 - Star 趋势  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 
