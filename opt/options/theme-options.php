@@ -2643,7 +2643,7 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'subheading',
-        'content' => '主题信息',
+        'content' => '版本信息',
       ),
 
       array(
@@ -2672,6 +2672,11 @@ if( class_exists( 'CSF' ) ) {
       array(
         'type'    => 'content',
         'content' => '<img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square"  alt="主题最新版本" />  <img src="https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square"  alt="主题最新版本发布时间" />  <img src="https://data.jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge"  alt="主题CDN资源访问量" />',
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '依赖相关',
       ),
 
     )

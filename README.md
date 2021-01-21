@@ -1,6 +1,8 @@
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/readme1.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/ultramarinelogo.gif)](https://github.com/mirai-mamori/Sakurairo)
 
-<h1 align="center"> 「桜いろ」✿ Sakurairo </h1>
+<h1 align="left">「iro」主题</h1>
+
+<h2 align="left"> iro/Sakurairo 均指本主题</h2>
 
 > 一个多彩，轻松上手，体验完善，具有强大自定义功能的WordPress主题（基于 [Sakura](https://github.com/mashirozx/Sakura) 主题）
 
@@ -14,33 +16,6 @@
 
 ## 特色：
 
-<details>
-<summary>文字介绍</summary>
-
-```
-- 功能类：
-    - 主页随机图多端分离（支持API）
-    - 内嵌提示块（短代码）
-    - 特效资源云端化
-    - 原生集成升级功能
-    - 强大的色彩控制功能
-    - 多种全局定制色彩图标
-    - 网页预加载动画
-    - 强大的字体设置功能
-    - 可选择的夜间模式
-- 特效类：
-    - 樱花飘落特效
-    - 波浪特效
-    - 看板娘 Live2D
-    - 首页下拉箭头
-    - 脚页一言（随机话语API）
-    - 首页一言打字效果
-    - logo音符触动效果
-    - logo特效
-    - 邮件模板自定义
-
-```
-</details>
 
 ## 使用相关：
 
