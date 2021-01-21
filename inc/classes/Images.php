@@ -142,12 +142,12 @@ class Images
     }
 
     public static function cover_gallery() {
-        if (iro_opt('random_graphs_options') == "type_2") {
+        if (iro_opt('random_graphs_options') == "local") {
             $img_array = glob(get_template_directory() . "/manifest/gallary/*.{gif,jpg,png}", GLOB_BRACE);
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
             $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
-        } elseif (iro_opt('random_graphs_options') == "type_3") {
+        } elseif (iro_opt('random_graphs_options') == "external_api") {
             $imgurl = iro_opt('random_graphs_link');
         } else {
             global $sakura_image_array;
@@ -164,12 +164,12 @@ class Images
     }
 
     public static function mobile_cover_gallery() {
-        if (iro_opt('random_graphs_options') == "type_2") {
+        if (iro_opt('random_graphs_options') == "local") {
             $img_array = glob(get_template_directory() . "/manifest/gallary/*.{gif,jpg,png}", GLOB_BRACE);
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
             $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
-        } elseif (iro_opt('random_graphs_options') == "type_3") {
+        } elseif (iro_opt('random_graphs_options') == "external_api") {
           //$imgurl = iro_opt('random_graphs_link');
            $imgurl = iro_opt('random_graphs_link_mobile');
         } else {

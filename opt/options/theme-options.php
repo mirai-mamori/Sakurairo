@@ -1136,11 +1136,11 @@ if( class_exists( 'CSF' ) ) {
         'type'        => 'select',
         'title'       => '封面随机图片选项',
         'options'     => array(
-          'type_1'  => 'Webp优化随机图片',
-          'type_2'  => '本地随机图片',
-          'type_3'  => '外部API随机图片',
+          'external_api'  => '外部API随机图片',
+          'webp_optimization'  => 'Webp优化随机图片',
+          'local'  => '本地随机图片',
         ),
-        'default'     => 'type_3'
+        'default'     => 'external_api'
       ),
 
       array(
@@ -2647,6 +2647,11 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'type'    => 'content',
+        'content' => '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/ultramarinelogo.gif"  alt="主题信息" />',
+      ),
+
+      array(
         'type'    => 'submessage',
         'style'   => 'success',
         'content' => sprintf(__('正在使用 iro 主题 版本 %s  |  <a href="https://iro.tw">主题文档</a>  |  <a href="https://github.com/mirai-mamori/Sakurairo">源码地址</a>', 'sakurairo'), SAKURA_VERSION), 
@@ -2654,12 +2659,12 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'id'          => 'iro_update_source',
-        'type'        => 'select',
+        'type'        => 'image_select',
         'title'       => '主题更新源',
         'options'     => array(
-          'github'  => 'Github更新源',
-          'jsdelivr'  => 'JsDelivr更新源',
-          'official_building'  => '官方自建更新源',
+          'github'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_github.png',
+          'jsdelivr'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_jsd.png',
+          'official_building'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_iro.png',
         ),
         'default'     => 'github'
       ),
