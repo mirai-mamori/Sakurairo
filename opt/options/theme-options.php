@@ -413,7 +413,7 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'nav_menu_user_avatar', '==', 'true' ),
         'desc'   => '最佳比例1比1',
         'library'      => 'image',
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/colorful/ui/none.png'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/topavatar.png'
       ),
 
       array(
@@ -426,19 +426,19 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'     => 'logo_text',
+        'type'   => 'text',
+        'title'  => '导航菜单文字Logo文本',
+        'desc'   => '填写文本内容，如开启白猫样式Logo则此选项无效',
+        'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
+      ),
+
+      array(
         'id'    => 'mashiro_logo_option',
         'type'  => 'switcher',
         'title' => '导航菜单白猫样式Logo',
         'label'   => '开启之后白猫样式Logo将出现并替换导航菜单Logo位置',
         'default' => false
-      ),
-
-      array(
-        'id'     => 'logo_text',
-        'type'   => 'text',
-        'title'  => '导航菜单文字Logo',
-        'desc'   => '导航菜单文字Logo，如开启白猫样式Logo则无需填写',
-        'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
       ),
 
       array(
@@ -841,7 +841,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'preload_animation',
         'type'  => 'switcher',
         'title' => '预加载动画',
-        'label'   => '开启之后新页面加载前会有预加载动画',
+        'label'   => '开启之后新页面加载前会有预加载动画，此选项需确保你的页面资源正常加载。',
         'default' => false
       ),
 
@@ -1646,8 +1646,8 @@ if( class_exists( 'CSF' ) ) {
         'title'       => '区域标题对齐方向',
         'options'     => array(
           'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_left.png',
-          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_center.png',
-          'center'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_right.png',
+          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_right.png',
+          'center'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_center.png',
         ),
         'default'     => 'left'
       ),
@@ -1888,6 +1888,7 @@ if( class_exists( 'CSF' ) ) {
         'step'   => '1',
         'min'   => '10',
         'max'   => '30',
+        'default' => '18'
       ),
 
       array(
@@ -1913,11 +1914,12 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'slider',
         'title'  => '文章区域时间提示区域字体大小',
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc'   => '滑动滑块，推荐数值范围为14-18',
+        'desc'   => '滑动滑块，推荐数值范围为10-14',
         'unit'    => 'px',
         'step'   => '1',
-        'min'   => '10',
-        'max'   => '25',
+        'min'   => '6',
+        'max'   => '20',
+        'default' => '12'
       ),
 
       array(
@@ -2019,6 +2021,7 @@ if( class_exists( 'CSF' ) ) {
         'unit'    => 'px',
         'min'   => '5',
         'max'   => '50',
+        'default' => '24'
       ),
 
       array(

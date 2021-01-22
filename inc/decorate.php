@@ -194,7 +194,6 @@ h1.cat-title {
   }
 .herder-user-name no-logged{
     color: <?php echo iro_opt('theme_skin'); ?>;
-    font-size: 14px;
 }
 #pagination .loading {
     background: url(<?php echo iro_opt('load_nextpage_svg'); ?>);
