@@ -1037,7 +1037,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'infor_bar',
         'type'  => 'switcher',
         'title' => '封面信息栏',
-        'label'   => '默认开启，显示头像、文字Logo、签名栏、社交区域',
+        'label'   => '默认开启，显示头像、白猫特效文字、签名栏、社交区域',
         'default' => true
       ),
 
