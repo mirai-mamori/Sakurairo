@@ -496,7 +496,7 @@ function header_user_menu(){
       <img class="faa-shake animated-hover" src="<?php echo $ava; ?>" width="30" height="30">
     </a>
     <div class="header-user-menu">
- <div class="herder-user-name no-logged">  <a href="<?php echo $login_url; ?>" target="_blank" style="color:<?php echo iro_opt('theme_skin'); ?>;font-weight:bold;text-decoration:none">登录</a>  
+ <div class="herder-user-name no-logged">  <a href="<?php echo $login_url; ?>" target="_blank" style="font-weight:bold;text-decoration:none">登录</a>  
       </div>
     </div>
   </div>

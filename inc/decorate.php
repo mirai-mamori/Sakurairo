@@ -192,7 +192,10 @@ h1.cat-title {
 .double-bounce1, .double-bounce2 {
     background-color: <?php echo iro_opt('theme_skin'); ?>;
   }
-  
+.herder-user-name no-logged{
+    color: <?php echo iro_opt('theme_skin'); ?>;
+    font-size: 14px;
+}
 #pagination .loading {
     background: url(<?php echo iro_opt('load_nextpage_svg'); ?>);
     background-position: center;
@@ -732,6 +735,7 @@ body.dark .ins-section .ins-search-item.active .ins-slug,
 body.dark .ins-section .ins-search-item.active .ins-search-preview,
 body.dark .herder-user-name-u,
 body.dark .herder-user-name,
+body.dark .herder-user-name no-logged,
 body.dark .header-user-menu .user-menu-option
 {color:#fff;background:#333333;}
 

@@ -1290,7 +1290,7 @@ if( class_exists( 'CSF' ) ) {
         'id'          => 'social_display_icon',
         'type'        => 'image_select',
         'title'       => '社交网络图标',
-        'desc'   => '选择你喜欢的图标包',
+        'desc'   => '选择你喜欢的图标包。流畅设计图标由设计师Paradox设计，并授权本主题预置。沐氢图标由设计师缄默设计，并授权本主题预置。',
         'options'     => array(
           'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/fluent_design'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_fd.gif',
           'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/muh2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_h2.gif',
@@ -2640,11 +2640,6 @@ if( class_exists( 'CSF' ) ) {
     'title'       => '关于主题',
     'icon'        => 'fa fa-paperclip',
     'fields'      => array(
-
-      array(
-        'type'    => 'subheading',
-        'content' => '版本信息',
-      ),
 
       array(
         'type'    => 'content',
