@@ -158,7 +158,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '主题色搭配色',
         'desc'    => '自定义颜色',
-        'default' => '#ffcc00'
+        'default' => '#ffe066'
       ),  
 
       array(
@@ -1011,6 +1011,16 @@ if( class_exists( 'CSF' ) ) {
         'title' => '封面全屏显示',
         'label'   => '默认开启',
         'default' => true
+      ),
+
+      array(
+        'id'    => 'cover_radius',
+        'type'  => 'slider',
+        'title' => '封面圆角',
+        'desc'   => '滑动滑块，推荐数值范围为15-20',
+        'unit'    => 'px',
+        'max'    => '60',
+        'default' => '15'
       ),
 
       array(

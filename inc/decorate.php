@@ -1424,6 +1424,10 @@ display:none;
     background-image: url(<?php echo iro_opt('sakura_widget_background', ''); ?>);
 }
 
+.headertop{
+    border-radius: 0 0 <?php echo iro_opt('cover_radius', ''); ?>px <?php echo iro_opt('cover_radius', ''); ?>px;
+}
+
 <?php if (!iro_opt('post_icon_more', 'true')): ?>
 .float-content i {
     display: none;
