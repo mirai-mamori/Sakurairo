@@ -284,9 +284,7 @@ function the_headPattern(){
   $t = ''; // 标题
   $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
   if(is_single()){
-    if(!empty($full_image_url)){
-      $full_image_url = $full_image_url[0];
-    }
+    $full_image_url = !empty($full_image_url) ? $full_image_url[0] : null;
     if (have_posts()) : while (have_posts()) : the_post();
     $center = 'single-center';
     $header = 'single-header';
@@ -301,7 +299,7 @@ function the_headPattern(){
     $t .= '<span class="toppic-line"></span><p class="entry-census"><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'"><img src="'. get_avatar_url( get_the_author_meta('ID'), 64 )/*$ava*/ .'"></a></span><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'. get_the_author() .'</a></span><span class="bull">·</span>'. poi_time_since(get_post_time('U', true),false,true) .'<span class="bull">·</span>'. get_post_views(get_the_ID()) .' '._n("View","Views",get_post_views(get_the_ID()),"sakurairo")/*次阅读*/.$edit_this_post_link.'</p>';
     endwhile; endif;
   }elseif(is_page()){
-    $full_image_url = $full_image_url[0];
+    $full_image_url = !empty($full_image_url) ? $full_image_url[0] : null;
     $t .= the_title( '<h1 class="entry-title">', '</h1>', false);
   }elseif(is_archive()){
     $full_image_url = z_taxonomy_image_url();
@@ -340,8 +338,8 @@ function the_video_headPattern_hls(){
     }
 
   if(is_single()){
-    $full_image_url = $full_image_url[0];
-    $thubm_image_url = $thubm_image_url[0];
+    $full_image_url = !empty($full_image_url) ? $full_image_url[0] : null;
+    $thubm_image_url = !empty($thubm_image_url) ? $thubm_image_url[0] : null;
     if (have_posts()) : while (have_posts()) : the_post();
     $center = 'single-center';
     $header = 'single-header';
@@ -496,7 +494,7 @@ function header_user_menu(){
       <img class="faa-shake animated-hover" src="<?php echo $ava; ?>" width="30" height="30">
     </a>
     <div class="header-user-menu">
- <div class="herder-user-name no-logged">  <a href="<?php echo $login_url; ?>" target="_blank" style="font-weight:bold;text-decoration:none">登录</a>  
+ <div class="herder-user-name no-logged">  <a href="<?php echo $login_url; ?>" target="_blank" style="color:<?php echo iro_opt('theme_skin'); ?>;font-weight:bold;text-decoration:none">登录</a>  
       </div>
     </div>
   </div>
