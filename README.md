@@ -78,9 +78,9 @@
 
 ### 引用相关：
 
-- 本主题社交网络图标中，流畅设计图标引用于由Paradox设计的[Fluent图标包](https://wwi.lanzous.com/ikyq5kgx0wb)
+- 本主题社交网络图标中，流畅设计图标引用于由Paradox设计的 [Fluent图标包](https://wwi.lanzous.com/ikyq5kgx0wb)
 
-- 本主题社交网络图标中，沐氢图标引用于由缄默设计的[沐氢图标包](https://www.coolapk.com/apk/com.muh2.icon)
+- 本主题社交网络图标中，沐氢图标引用于由缄默设计的 [沐氢图标包](https://www.coolapk.com/apk/com.muh2.icon)
 
 - 本主题白猫样式Logo参考原主题作者白猫，由 [Hyacm](https://hyacm.com/acai/ui/143/sakura-logo/) 提供方案
 
