@@ -6,13 +6,16 @@
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)[![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/Fuukei/Public_Repository?color=red&logo=jsdelivr&logoColor=red&style=for-the-badge)](https://www.jsdelivr.com/package/gh/mirai-mamori/sakurairo)
 
-## 版本宣传PV：
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/bilibilipv.png)](https://b23.tv/tTJun3)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/youtubepv.png)](https://www.youtube.com/watch?v=_rjlUY7MpqM)
 
 ## 版本宣传：
+
+### PV：
+
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/bilipv.png)](https://b23.tv/tTJun3)
+
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/youtupv.png)](https://www.youtube.com/watch?v=_rjlUY7MpqM)
+
+### 图文：
 
 [![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/ultramarine1.png)](https://iro.tw/)
 
@@ -37,9 +40,9 @@
 
 ## 下载：
 
-- [Github 仓库最新版本](https://github.com/mirai-mamori/Sakurairo/releases/latest)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/github.png)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
 
-- [Gitee 仓库镜像](https://gitee.com/mirai-mamori/Sakurairo)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/gitee.png)](https://gitee.com/mirai-mamori/Sakurairo)
 
 ## 贡献者：
 
