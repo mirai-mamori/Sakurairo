@@ -488,10 +488,13 @@ function is_webp(){
     return $webp;
 }
 
-//WordPress 5.0+移除 block-library CSS
-add_action( 'wp_enqueue_scripts', 'fanly_remove_block_library_css', 100 );
-function fanly_remove_block_library_css() {
-	wp_dequeue_style( 'wp-block-library' );
+$block_library_css = iro_opt('block_library_css');
+
+if ($block_library_css != '1'){
+    add_action( 'wp_enqueue_scripts', 'fanly_remove_block_library_css', 100 );
+    function fanly_remove_block_library_css() {
+        wp_dequeue_style( 'wp-block-library' );
+    }
 }
 
 /*
@@ -522,9 +525,9 @@ function get_the_link_items($id = null)
 function get_link_items()
 {
     $linkcats = get_terms('link_category');
+    $result = null;
     if (!empty($linkcats)) {
         foreach ($linkcats as $linkcat) {
-            $result = null;
             $result .= '<h3 class="link-title"><span class="link-fix">' . $linkcat->name . '</span></h3>';
             if ($linkcat->description) {
                 $result .= '<div class="link-description">' . $linkcat->description . '</div>';
