@@ -2,7 +2,7 @@
 
 <h1 align="left">「iro」主题</h1>
 
-> 一个多彩，轻松上手，体验完善，具有强大自定义功能的WordPress主题
+> 一个多彩，轻松上手，体验完善，具有强大自定义功能的WordPress主题 [简体中文版](https://github.com/mirai-mamori/Sakurairo) [繁體中文版](https://github.com/Fuukei/Sakurairo-zh_tw)
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)[![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/Fuukei/Public_Repository?color=red&logo=jsdelivr&logoColor=red&style=for-the-badge)](https://www.jsdelivr.com/package/gh/mirai-mamori/sakurairo)
 
