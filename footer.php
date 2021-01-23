@@ -9,6 +9,9 @@
  * @package Sakura
  */
 
+$mashiro_logo = iro_opt('mashiro_logo');
+$reception_background = iro_opt('reception_background');
+
 ?>
 	</div><!-- #content -->
 	<?php 
@@ -19,23 +22,25 @@
 		<div class="site-info" theme-info="Sakurairo v<?php echo SAKURA_VERSION; ?>">
 			<div class="footertext">
 				<div class="img-preload">
-					<img src="<?php echo akina_option('webweb_img'); ?>/load/ball.svg"><!-- 加载下一部分圈圈 -->
+					<img src="<?php echo iro_opt('load_nextpage_svg'); ?>"><!-- 加载下一部分圈圈 -->
 				</div>
-				<i class="iconfont icon-sakura rotating" style="color: <?php echo akina_option('theme_skin'); ?>;display:inline-block;font-size:26px"></i></p>
-				<p style="color: #666666;"><?php echo akina_option('footer_info', ''); ?></p>
+				<?php if (iro_opt('footer_sakura_icon', 'true')): ?>
+				<i class="iconfont icon-sakura rotating" style="color: <?php echo iro_opt('theme_skin_matching'); ?>;display:inline-block;font-size:26px"></i>
+				<?php endif; ?></p>
+				<p style="color: #666666;"><?php echo iro_opt('footer_info', ''); ?></p>
 			</div>
 			<div class="footer-device">
 			<p style="font-family: 'Ubuntu', sans-serif;">
 					<span style="color: #b9b9b9;">
 						<?php /* 能保留下面两个链接吗？算是我一个小小的心愿吧~ */ ?>
-						<?php if (akina_option('oneword', '1')): ?>
+						<?php if (iro_opt('footer_random_word', 'true')): ?>
                         <script type="text/javascript" src="https://api.btstu.cn/yan/api.php?charset=utf-8&encode=js" ></script>
 						<div id="yan"><script>text()</script></div>
                         <?php endif; ?></p>
-						<?php if (akina_option('loadoq', '1')): ?>
+						<?php if (iro_opt('footer_load_occupancy', 'true')): ?>
                         <?php printf(' 耗时 %.3f 秒 | 查询 %d 次 | 内存 %.2f MB',timer_stop( 0, 3 ),get_num_queries(),memory_get_peak_usage() / 1024 / 1024);?>
                         <?php endif; ?></p>
-						Theme <a href="https://asuhe.jp/daily/sakurairo-user-manual/" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://asuhe.jp/" target="_blank" id="site-info" >Fuukei</a> 
+						Theme <a href="https://github.com/mirai-mamori/Sakurairo" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://iro.tw" target="_blank" id="site-info" >Fuukei</a> 
 					</span>
 				</p>
 			</div>
@@ -46,7 +51,7 @@
 			<div class="icon"></div>
 		</div>
 		<div class="site-branding">
-			<?php if (akina_option('akina_logo')){ ?>
+			<?php if (iro_opt('iro_logo')){ ?>
 			<div class="site-title">
 			<?php }else{ ?>
 			<h1 class="site-title"></h1>
@@ -57,7 +62,7 @@
 	<!-- m-nav-center -->
 	<div id="mo-nav">
 		<div class="m-avatar">
-			<?php $ava = akina_option('focus_logo') ? akina_option('focus_logo') :'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/avatar.jpg'; ?>
+			<?php $ava = iro_opt('personal_avatar') ? iro_opt('personal_avatar') :'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/avatar.jpg'; ?>
 			<img src="<?php echo $ava ?>">
 		</div>
 		<div class="m-search">
@@ -73,7 +78,7 @@
 	<!-- search start -->
 	<form class="js-search search-form search-form--modal" method="get" action="<?php echo home_url(); ?>" role="search">
 		<div class="search-form__inner">
-		<?php if(akina_option('live_search')){ ?>
+		<?php if(iro_opt('live_search')){ ?>
 			<div class="micro">
 				<i class="iconfont icon-search"></i>
 				<input id="search-input" class="text-input" type="search" name="s" placeholder="<?php _e('Want to find something?', 'sakurairo') /*想要找点什么呢*/?>" required>
@@ -94,13 +99,8 @@
 	</form>
 	<!-- search end -->
 <?php wp_footer(); ?>
-<?php if(akina_option('site_statistics')){ ?>
-<div class="site-statistics">
-<script type="text/javascript"><?php echo akina_option('site_statistics'); ?></script>
-</div>
-<?php } ?>
 <div class="skin-menu no-select">
-<?php if (akina_option('full-mode', '1')): ?>
+<?php if(iro_opt('style_menu_display') == 'full'): ?>
 </p>Style
 <?php endif; ?>
     <div class="theme-controls row-container">
@@ -108,22 +108,22 @@
             <li id="white-bg">
                 <i class="fa fa-television" aria-hidden="true"></i>
 			</li><!--Default-->
-			<?php if (akina_option('extra-bg', '1')): ?>
+			<?php if($reception_background['heart_shaped'] == '1'): ?>
             <li id="diy1-bg">
 			    <i class="fa fa-heart-o" aria-hidden="true"></i>
 			</li><!--Diy1-->
 			<?php endif; ?>
-			<?php if (akina_option('extra-bg2', '1')): ?>
+			<?php if($reception_background['star_shaped'] == '1'): ?>
             <li id="diy2-bg">
                 <i class="fa fa-star-o" aria-hidden="true"></i>
 			</li><!--Diy2-->
 			<?php endif; ?>
-			<?php if (akina_option('extra-bg3', '1')): ?>
+			<?php if($reception_background['square_shaped'] == '1'): ?>
             <li id="diy3-bg">
 			    <i class="fa fa-delicious" aria-hidden="true"></i>
 			</li><!--Diy3-->
 			<?php endif; ?>
-			<?php if (akina_option('extra-bg4', '1')): ?>
+			<?php if($reception_background['lemon_shaped'] == '1'): ?>
             <li id="diy4-bg">
 			    <i class="fa fa-lemon-o" aria-hidden="true"></i>
 			</li><!--Diy4-->
@@ -133,7 +133,7 @@
             </li><!--Night-->
         </ul>
 	</div>
-	<?php if (akina_option('full-mode', '1')): ?></p>
+	<?php if(iro_opt('style_menu_display') == 'full'): ?></p>
 		Font
     <div class="font-family-controls row-container">
         <button type="button" class="control-btn-serif selected" data-mode="serif" 
@@ -143,7 +143,7 @@
 	</div>
 	<?php endif; ?>
 </div>
-<?php if (akina_option('sakura_widget')) : ?>
+<?php if (iro_opt('sakura_widget')) : ?>
 	<aside id="secondary" class="widget-area" role="complementary" style="left: -400px;">
     <div class="heading"><?php _e('Widgets') /*小工具*/ ?></div>
     <div class="sakura_widget">
@@ -152,40 +152,35 @@
 	<div class="show-hide-wrap"><button class="show-hide"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32"><path d="M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z"></path></svg></button></div>
     </aside>
 <?php endif; ?>
-<?php if (akina_option('aplayer_server') != 'off'): ?>
+<?php if (iro_opt('aplayer_server') != 'off'): ?>
     <div id="aplayer-float" style="z-index: 100;"
 	    class="aplayer"
-        data-id="<?php echo akina_option('aplayer_playlistid', ''); ?>"
-        data-server="<?php echo akina_option('aplayer_server'); ?>"
+        data-id="<?php echo iro_opt('aplayer_playlistid', ''); ?>"
+        data-server="<?php echo iro_opt('aplayer_server'); ?>"
         data-type="playlist"
         data-fixed="true"
-        data-volume="<?php echo akina_option('playlist_mryl', ''); ?>"
-        data-theme="<?php echo akina_option('theme_skin'); ?>">
+        data-volume="<?php echo iro_opt('aplayer_volume', ''); ?>"
+        data-theme="<?php echo iro_opt('theme_skin'); ?>">
     </div>
 <?php endif; ?>
 
-<!-- 樱花飘落动效 -->
-<?php if (akina_option('sakurajs', '1')): ?>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/js/sakura-<?php echo akina_option('sakura-falling-quantity'); ?>.js"></script>
+<!-- 飘落动效 -->
+<?php if (iro_opt('falling_effects') != 'off'): ?>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/js/<?php echo iro_opt('falling_effects'); ?>.js"></script>
 <?php endif; ?>
 
 <!-- 首页波浪特效 -->
-<?php if (akina_option('bolangcss', '1')): ?>
+<?php if (iro_opt('wave_effects', 'true')): ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/css/bolang.css">
 <?php endif; ?>
 
 <!-- Live2D看板娘 -->
-<?php if (akina_option('live2djs', '1')): ?>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/<?php echo akina_option('live2d-custom'); ?>/live2d-widget@<?php echo akina_option('live2d-custom-ver'); ?>/autoload.js"></script>
-<?php endif; ?>
-
-<!-- 自由添加JS -->
-<?php if (akina_option('addmorejs', '1')): ?>
-<script type="text/javascript" src="<?php echo akina_option('addmorejsurl'); ?>"></script>
+<?php if (iro_opt('live2d_options', 'true')): ?>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/<?php echo iro_opt('live2d_custom_user'); ?>/live2d-widget@<?php echo iro_opt('live2d_custom_user_ver'); ?>/autoload.js"></script>
 <?php endif; ?>
 
 <!-- logo字体部分 -->
-<link rel="stylesheet" href="<?php echo akina_option('logo_zt', ''); ?>" media="all">
+<link rel="stylesheet" href="<?php echo $mashiro_logo['font_link']; ?>" media="all">
 
 <!-- 收缩、展开 -->
 <script>jQuery(document).ready(

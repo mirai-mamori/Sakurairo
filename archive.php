@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) : ?>
 
-			<?php if(akina_option('patternimg') || !z_taxonomy_image_url()) { ?>
+			<?php if(!iro_opt('patternimg') || !z_taxonomy_image_url()) { ?>
 			<header class="page-header">
 				<h1 class="cat-title"><?php single_cat_title('', true); ?></h1>
 			<span class="cat-des">
@@ -34,7 +34,7 @@ get_header(); ?>
 				/*
 				* 图片展示分类
 				*/				
-				if ( akina_option('image_category') && is_category(explode(',',akina_option('image_category'))) ){
+				if ( iro_opt('image_category') && is_category(explode(',',iro_opt('image_category'))) ){
 					get_template_part( 'tpl/content', 'category' );
 				} else {
 					get_template_part( 'tpl/content', get_post_format() );
@@ -51,9 +51,9 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
-		<?php if ( akina_option('pagenav_style') == 'ajax') { ?>
-		<div id="pagination" <?php if(akina_option('image_category') && is_category(explode(',',akina_option('image_category')))) echo 'class="pagination-archive"'; ?>><?php next_posts_link(' Previous'); ?></div>
-		<div id="add_post"><span id="add_post_time" style="visibility: hidden;" title="<?php echo akina_option('auto_load_post',''); ?>"  ></span></div>
+		<?php if ( iro_opt('pagenav_style') == 'ajax') { ?>
+		<div id="pagination" <?php if(iro_opt('image_category') && is_category(explode(',',iro_opt('image_category')))) echo 'class="pagination-archive"'; ?>><?php next_posts_link(' Previous'); ?></div>
+		<div id="add_post"><span id="add_post_time" style="visibility: hidden;" title="<?php echo iro_opt('page_auto_load',''); ?>"  ></span></div>
 		<?php }else{ ?>
 		<nav class="navigator">
         <?php previous_posts_link('<i class="iconfont icon-back"></i>') ?><?php next_posts_link('<i class="iconfont icon-right"></i>') ?>

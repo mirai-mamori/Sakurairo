@@ -27,7 +27,7 @@ $the_cat = get_the_category();
 ?>
 	<article class="post post-list-thumb <?php echo $class; ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
 		<div class="post-thumb">
-			<a href="<?php the_permalink(); ?>"><img class="lazyload" src="<?php echo akina_option('webweb_img'); ?>/load/outload.svg" data-src="<?php echo $post_img; ?>"></a>
+			<a href="<?php the_permalink(); ?>"><img class="lazyload" src="<?php echo iro_opt('load_out_svg'); ?>" data-src="<?php echo $post_img; ?>"></a>
 		</div><!-- thumbnail-->
 		<div class="post-content-wrap">
 			<div class="post-content">
