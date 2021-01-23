@@ -11,7 +11,6 @@
 
 $mashiro_logo = iro_opt('mashiro_logo');
 $reception_background = iro_opt('reception_background');
-
 ?>
 	</div><!-- #content -->
 	<?php 
