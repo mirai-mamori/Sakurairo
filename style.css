@@ -1489,7 +1489,7 @@ i.iconfont.hotpost {
 .info-meta a {
     color: #000
 }
-.post{
+.post-list-show{
     display:flex;
 }
 .post-list:hover .info-meta {
