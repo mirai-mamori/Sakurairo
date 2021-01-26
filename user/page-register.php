@@ -37,7 +37,7 @@ if( !empty($_POST['register_reg']) ) {
 	}
 
 	// verification
-	if(akina_option('login_validate') && strlen($_POST['verification']) > 0 ){
+	if(iro_opt('registration_validation') && strlen($_POST['verification']) > 0 ){
 		$error .= '<strong>'.__("Error","sakurairo")./*错误*/'</strong>：'.__("Please drag the slider to verify identity","sakurairo")./*请拖动滑块验证身份*/'<br />';
 	}
 
@@ -58,7 +58,7 @@ if( !empty($_POST['register_reg']) ) {
 ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-		<?php if(akina_option('ex_register_open')) : ?>
+		<?php if(iro_opt('ex_register_open')) : ?>
 		<?php if(!is_user_logged_in()){ ?>
 			<div class="ex-register">
 				<div class="ex-register-title">
@@ -69,7 +69,7 @@ if( !empty($_POST['register_reg']) ) {
 					<p><input type="text" name="user_email" tabindex="2" id="user_email" class="input" value="<?php if(!empty($user_email)) echo $user_email; ?>" size="25" placeholder="电子邮箱" required /></p>
 					<p><input id="user_pwd1" class="input" tabindex="3" type="password" tabindex="21" size="25" value="" name="user_pass" placeholder="密码" required /></p>
 					<p><input id="user_pwd2" class="input" tabindex="4" type="password" tabindex="21" size="25" value="" name="user_pass2" placeholder="确认密码" required /></p>
-					<?php if(akina_option('login_validate')) : ?>
+					<?php if(iro_opt('registration_validation')) : ?>
 					<div id="verification-slider">
 						<div id="slider">
 							<div id="slider_bg"></div>
@@ -84,7 +84,7 @@ if( !empty($_POST['register_reg']) ) {
 				</form>
 			</div>
 		<?php }else{ 
-		$loadurl = akina_option('exlogin_url') ? akina_option('exlogin_url') : get_bloginfo('url');
+		$loadurl = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : get_bloginfo('url');
 		?>
 			<div class="ex-register-title">
 				<h3><?php _e("Success! Redirecting......","sakurairo")/*注册成功！正在跳转...*/?></h3>

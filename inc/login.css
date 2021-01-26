@@ -39,7 +39,7 @@ body { background:none !important; overflow:hidden;}
 	font-weight:bold;
 	text-indent:0px;
 	font-size:0px; 
-	height:38px;
+	height:60px;
 	width: 100%;
 	line-height:88px;
 	line-height:180%; 
@@ -47,7 +47,7 @@ body { background:none !important; overflow:hidden;}
 	/*text-shadow:1px 1px 0px #000;*/ 
 	margin-bottom:10px;
 	margin-top: 25px; 
-	background-image:url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/logo-login.png);
+	background-image:url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/login_logo.png);
 	background-position: center bottom !important;
 	background-size: contain;
 	padding-top: 20px;
@@ -152,7 +152,7 @@ color: #676767 !important}
 	font-size:16px;
 	text-align:center;
 	color:#FFF;
-        /*background:#FB98C0;*/
+        /*background:#505050;*/
 	font-weight:normal;
 	cursor:pointer;
 	box-shadow: none;
@@ -285,7 +285,7 @@ input[type=checkbox]:checked:before {
 	background: #fff;
 	z-index: 3;
 	cursor: move;
-        /*color: #FB98C0;*/
+        /*color: #505050;*/
 	font-size: 38px;
 	font-weight: 900;
 	border-radius: 12px;
@@ -301,7 +301,7 @@ input[type=checkbox]:checked:before {
 	font-style: oblique;
 	color: #FFF;
 	border-radius: 12px;
-        /*background-color: #FB98C0;*/
+        /*background-color: #505050;*/
 	line-height: 46px;
 	text-align: center;
 	z-index: 2;
@@ -360,7 +360,7 @@ input[type=checkbox]:checked:before {
 }
 
 /*.forgetmenot input:checked + label {
-  background: #FB98C0;
+  background: #505050;
 }*/
 
 .forgetmenot input:checked + label:after {

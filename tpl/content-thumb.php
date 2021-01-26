@@ -30,12 +30,9 @@ while (have_posts()) : the_post();
 	//add_filter( 'excerpt_length', 'custom_excerpt_length', 120 );
 ?>
 	<article class="post post-list-thumb <?php echo $class; ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
-		<?php if ($post_img) {
-		?>
-			<div class="post-thumb">
-				<a href="<?php the_permalink(); ?>"><img class="lazyload" src="<?php echo akina_option('webweb_img'); ?>/load/outload.svg" data-src="<?php echo $post_img; ?>"></a>
-			</div><!-- thumbnail-->
-		<?php } ?>
+		<div class="post-thumb">
+			<a href="<?php the_permalink(); ?>"><img class="lazyload" src="<?php echo iro_opt('load_out_svg'); ?>" data-src="<?php echo $post_img; ?>"></a>
+		</div><!-- thumbnail-->
 		<div class="post-content-wrap">
 			<div class="post-content">
 				<div class="post-date">

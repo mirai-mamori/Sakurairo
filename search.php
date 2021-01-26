@@ -14,7 +14,7 @@ get_header(); ?>
 
 		<?php
 		if ( have_posts() ) : ?>
-			<?php if(akina_option('patternimg') || !get_random_bg_url()){ ?>
+			<?php if(!iro_opt('patternimg') || !get_random_bg_url()){ ?>
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( __( 'search result: %s', 'sakurairo' )/*搜索结果*/, '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->

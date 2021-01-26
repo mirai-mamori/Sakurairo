@@ -74,14 +74,14 @@ function upload_image(WP_REST_Request $request) {
             'success' => false,
             'message' => 'Unauthorized client.',
             'link' => "https://view.moezx.cc/images/2019/11/14/step04.md.png",
-            'proxy' => akina_option('cmt_image_proxy') . "https://view.moezx.cc/images/2019/11/14/step04.md.png",
+            'proxy' => iro_opt('comment_image_proxy') . "https://view.moezx.cc/images/2019/11/14/step04.md.png",
         );
         $result = new WP_REST_Response($output, 403);
         $result->set_headers(array('Content-Type' => 'application/json'));
         return $result;
     }
     $images = new \Sakura\API\Images();
-    switch (akina_option("img_upload_api")) {
+    switch (iro_opt("img_upload_api")) {
         case 'imgur':
             $image = file_get_contents($_FILES["cmt_img_file"]["tmp_name"]);
             $API_Request = $images->Imgur_API($image);
@@ -108,7 +108,7 @@ function upload_image(WP_REST_Request $request) {
  */
 function cover_gallery() {
     $type = $_GET['type'];
-    if ($type === 'mobile' && akina_option('cover_beta')){
+    if ($type === 'mobile' && iro_opt('random_graphs_mts')){
         $imgurl = Images::mobile_cover_gallery();
     }else{
         $imgurl = Images::cover_gallery();
@@ -138,7 +138,7 @@ function feature_gallery() {
  * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/database/update
  */
 function update_database() {
-    if (akina_option('cover_cdn_options') == "type_1") {
+    if (iro_opt('random_graphs_options') == "webp_optimization") {
         $output = Cache::update_database();
         $result = new WP_REST_Response($output, 200);
         return $result;
@@ -207,7 +207,7 @@ function get_qq_info(WP_REST_Request $request) {
 function get_qq_avatar() {
     $encrypted = $_GET["qq"];
     $imgurl = QQ::get_qq_avatar($encrypted);
-    if (akina_option('qq_avatar_link') == 'type_2') {
+    if (iro_opt('qq_avatar_link') == 'type_2') {
         $imgdata = file_get_contents($imgurl);
         $response = new WP_REST_Response();
         $response->set_headers(array(

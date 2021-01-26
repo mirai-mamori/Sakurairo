@@ -11,12 +11,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if (akina_option('patternimg') || !get_post_thumbnail_id(get_the_ID())) { ?>
-		<header class="entry-header">
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-			<p class="entry-census"><?php echo poi_time_since(strtotime($post->post_date_gmt)); ?>&nbsp;&nbsp;<?php require_once(get_template_directory() .'/hackin.php');echo hack_pv();  ?> </p>
-			<hr>
-		</header><!-- .entry-header -->
+	<?php if(!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID())) { ?>
+	<header class="entry-header">
+		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<p class="entry-census"><?php echo poi_time_since(strtotime($post->post_date_gmt)); ?>&nbsp;&nbsp;<?php echo get_post_views(get_the_ID()).' '. _n('View','Views',get_post_views(get_the_ID()),'sakurairo')/*次阅读*/?> </p>
+		<hr>
+	</header><!-- .entry-header -->
 	<?php } ?>
 	<!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
 	<div class="entry-content">

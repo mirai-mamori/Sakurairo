@@ -58,7 +58,7 @@ EOS;
                 "text" => ""
             );
         }
-        if (akina_option('live_search_comment')) {
+        if (iro_opt('live_search_comment')) {
             $comments = get_comments();
             foreach ($comments as $comment) {
                 $is_private = get_comment_meta($comment->comment_ID, '_private', true);
@@ -78,9 +78,9 @@ EOS;
     public static function update_database() {
         global $wpdb;
         $sakura_table_name = $wpdb->base_prefix . 'sakurairo';
-        $img_domain = akina_option('cover_cdn') ? akina_option('cover_cdn') : get_template_directory();
+        $img_domain = iro_opt('random_graphs_link') ? iro_opt('random_graphs_link') : get_template_directory();
         $manifest = file_get_contents($img_domain . "/manifest/manifest.json");
-        if(akina_option('cover_beta')){
+        if(iro_opt('random_graphs_mts')){
             $manifest_mobile = file_get_contents($img_domain . "/manifest/manifest_mobile.json");
             if($manifest && $manifest_mobile){
                 $manifest = array(
