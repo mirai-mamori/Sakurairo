@@ -8867,3 +8867,12 @@ input#wp-comment-cookies-consent {
     margin-left: -20px;
     margin-top: -20px;
 }
+.has-drop-cap:not(:focus):first-letter {
+    float: left;
+    font-size: 8.4em;
+    line-height: .68;
+    font-weight: 100;
+    margin: .05em .1em 0 0;
+    text-transform: uppercase;
+    font-style: normal;
+}
