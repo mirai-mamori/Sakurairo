@@ -26,8 +26,8 @@
 -->
 <html <?php language_attributes(); ?>>
 <head>
-<link rel="stylesheet" href="https://<?php echo iro_opt('google_fonts_api'); ?>/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC<?php echo iro_opt('google_fonts_add'); ?>" media="all">
-<meta name="theme-color" content="<?php echo iro_opt('theme_skin'); ?>">
+<!-- <link rel="stylesheet" href="https://<?php echo iro_opt('google_fonts_api'); ?>/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC<?php echo iro_opt('google_fonts_add'); ?>" media="all">
+ --><meta name="theme-color" content="<?php echo iro_opt('theme_skin'); ?>">
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">

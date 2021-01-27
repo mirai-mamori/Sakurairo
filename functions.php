@@ -1454,7 +1454,7 @@ function set_default_admin_color($user_id)
 //Stop Users From Switching Admin Color Schemes
 //if ( !current_user_can('manage_options') ) remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
 
-// WordPress Custom Font @ Admin
+/* // WordPress Custom Font @ Admin
 function custom_admin_open_sans_font()
 {
     echo '<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
@@ -1480,7 +1480,7 @@ function custom_admin_open_sans_font_login_page()
         echo '<style>body{font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style>' . PHP_EOL;
     }
 }
-add_action('login_head', 'custom_admin_open_sans_font_login_page');
+add_action('login_head', 'custom_admin_open_sans_font_login_page'); */
 
 // 阻止垃圾注册
 add_action('register_post', 'codecheese_register_post', 10, 3);
