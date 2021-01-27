@@ -1528,7 +1528,7 @@ li.link-item {
     margin-right:0;
     margin-left:auto;
 }
-.post:nth-child(2n){
+.post-list-thumb:nth-child(2n){
 flex-direction: row-reverse;
 }
 <?php } ?>
