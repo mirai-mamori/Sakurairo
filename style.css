@@ -1577,8 +1577,8 @@ i.iconfont.hotpost {
 
 .post-content-wrap {
     flex:3;
-    position: relative;
-/*     display: inline-block;
+  /*   position: relative;
+     display: inline-block;
  */    float: right;
     padding-right: 30px;
     padding-left: 0;
@@ -1664,6 +1664,9 @@ i.iconfont.hotpost {
     }
     .post-thumb a {
         border-radius: 10px !important
+    }
+    .post-list-show{
+        display: block;
     }
 }
 @media (max-width:600px) {
