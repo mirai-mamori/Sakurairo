@@ -2591,6 +2591,19 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'         => 'iro_update_channel',
+        'type'       => 'radio',
+        'title'      => '主题更新频道',
+        'dependency' => array( 'local_global_library', '==', 'true' ),
+        'desc'    => '切换频道前需要先在上一个选项中选中“iro+”更新源',
+        'options'    => array(
+          'stable' => '正式版',
+          'preview' => '预览版',
+        ),
+        'default'    => 'stable'
+      ),
+
+      array(
         'id'     => 'image_cdn',
         'type'   => 'text',
         'title'  => '图片CDN',
