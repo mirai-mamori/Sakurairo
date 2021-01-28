@@ -2595,7 +2595,7 @@ if( class_exists( 'CSF' ) ) {
         'type'       => 'radio',
         'title'      => '主题更新频道',
         'dependency' => array( 'local_global_library', '==', 'true' ),
-        'desc'    => '切换频道前需要先在上一个选项中选中“iro+”更新源',
+        'desc'    => '若切换频道，则需先在关于主题中切换更新源到“iro+”更新源',
         'options'    => array(
           'stable' => '正式版',
           'preview' => '预览版',
