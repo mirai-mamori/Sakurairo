@@ -1561,6 +1561,7 @@ if( class_exists( 'CSF' ) ) {
           'picture' => '图片背景',
           'pure' => '纯色背景',
         ),
+        'default' => 'picture'
       ),
 
       array(
@@ -1576,7 +1577,10 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'announcement_bg',
         'type'  => 'upload',
         'title' => '公告栏背景',
-        'dependency' => array( 'announce_bar_style', '==', 'picture' ),
+        'dependency' => array(
+          array( 'announce_bar', '==', 'true' ),
+          array( 'announce_bar_style',   '==', 'picture' ),
+        ),
         'desc'   => '最佳宽度820px，最佳高度67px',
         'library'      => 'image',
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/announcement_bg.jpg'
@@ -1586,7 +1590,10 @@ if( class_exists( 'CSF' ) ) {
         'id'      => 'announce_bar_border_color',
         'type'    => 'color',
         'title'   => '公告栏边框颜色',
-        'dependency' => array( 'announce_bar_style', '==', 'pure' ),
+        'dependency' => array(
+          array( 'announce_bar', '==', 'true' ),
+          array( 'announce_bar_style',   '==', 'pure' ),
+        ),
         'desc'    => '自定义颜色，建议使用与主题色相同色系且属于浅色系的颜色',
         'default' => '#E6E6E6'
       ),
@@ -2575,35 +2582,6 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'     => 'local_global_library',
-        'type'   => 'switcher',
-        'title'  => '本地化前端库',
-        'label'   => '开启之后前端库将不走jsDelivr CDN',
-        'default' => false
-      ),
-
-      array(
-        'id'     => 'local_application_library',
-        'type'   => 'switcher',
-        'title'  => '本地化JS/CSS文件',
-        'label'   => '默认开启，部分JS文件和CSS文件不走jsDelivr CDN',
-        'default' => true
-      ),
-
-      array(
-        'id'         => 'iro_update_channel',
-        'type'       => 'radio',
-        'title'      => '主题更新频道',
-        'dependency' => array( 'local_global_library', '==', 'true' ),
-        'desc'    => '若切换频道，则需先在关于主题中切换更新源到“iro+”更新源',
-        'options'    => array(
-          'stable' => '正式版',
-          'preview' => '预览版',
-        ),
-        'default'    => 'stable'
-      ),
-
-      array(
         'id'     => 'image_cdn',
         'type'   => 'text',
         'title'  => '图片CDN',
@@ -2696,6 +2674,46 @@ if( class_exists( 'CSF' ) ) {
           'official_building'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_iro.png',
         ),
         'default'     => 'github'
+      ),
+
+      array(
+        'id'       => 'channel_validate_value',
+        'type'     => 'text',
+        'title'    => '主题更新频道验证',
+        'dependency' => array( 'local_global_library', '==', 'true' ),
+      ),
+
+      array(
+        'id'         => 'iro_update_channel',
+        'type'       => 'radio',
+        'title'      => '主题更新频道',
+        'dependency' => array(
+          array( 'channel_validate_value', '==', 'hanabi' ),
+          array( 'local_global_library',   '==', 'true' ),
+          array( 'iro_update_source',   '==', 'official_building' ),
+        ),
+        'desc'    => '你可以在此切换更新频道以参与到预览版的测试中',
+        'options'    => array(
+          'stable' => '正式版',
+          'preview' => '预览版',
+        ),
+        'default'    => 'stable'
+      ),
+
+      array(
+        'id'     => 'local_global_library',
+        'type'   => 'switcher',
+        'title'  => '本地化前端库',
+        'label'   => '开启之后前端库将不走jsDelivr CDN',
+        'default' => false
+      ),
+
+      array(
+        'id'     => 'local_application_library',
+        'type'   => 'switcher',
+        'title'  => '本地化JS/CSS文件',
+        'label'   => '默认开启，部分JS文件和CSS文件不走jsDelivr CDN',
+        'default' => true
       ),
 
       array(
