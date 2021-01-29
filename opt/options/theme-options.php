@@ -2680,7 +2680,10 @@ if( class_exists( 'CSF' ) ) {
         'id'       => 'channel_validate_value',
         'type'     => 'text',
         'title'    => '主题更新频道验证',
-        'dependency' => array( 'local_global_library', '==', 'true' ),
+        'dependency' => array(
+          array( 'local_global_library',   '==', 'true' ),
+          array( 'iro_update_source',   '==', 'official_building' ),
+        ),
       ),
 
       array(
