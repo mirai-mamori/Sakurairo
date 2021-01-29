@@ -2679,11 +2679,12 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'       => 'channel_validate_value',
         'type'     => 'text',
-        'title'    => '主题更新频道验证',
+        'title'    => '预览更新通道解锁',
         'dependency' => array(
           array( 'local_global_library',   '==', 'true' ),
           array( 'iro_update_source',   '==', 'official_building' ),
         ),
+        'desc'   => '如果你想要参与预览更新的测试中来，请确保你已经了解测试带来的风险并愿意自行承担一切责任（包括但不限于可能的数据丢失）后，复制这段（引号内的）文本到文本框内“我已了解测试带来的风险并愿意承担所有后果”',
       ),
 
       array(
@@ -2691,14 +2692,14 @@ if( class_exists( 'CSF' ) ) {
         'type'       => 'radio',
         'title'      => '主题更新频道',
         'dependency' => array(
-          array( 'channel_validate_value', '==', 'hanabi' ),
+          array( 'channel_validate_value', '==', '我已了解测试带来的风险并愿意承担所有后果' ),
           array( 'local_global_library',   '==', 'true' ),
           array( 'iro_update_source',   '==', 'official_building' ),
         ),
         'desc'    => '你可以在此切换更新频道以参与到预览版的测试中',
         'options'    => array(
-          'stable' => '正式版',
-          'preview' => '预览版',
+          'stable' => '正式频道',
+          'preview' => '预览频道',
         ),
         'default'    => 'stable'
       ),
