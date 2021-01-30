@@ -2654,6 +2654,11 @@ if( class_exists( 'CSF' ) ) {
     'fields'      => array(
 
       array(
+        'type'    => 'subheading',
+        'content' => '版本信息',
+      ),
+
+      array(
         'type'    => 'content',
         'content' => '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/ultramarinelogo.gif"  alt="主题信息" />',
       ),
@@ -2662,6 +2667,11 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'submessage',
         'style'   => 'success',
         'content' => sprintf(__('正在使用 iro 主题 版本 %s  |  <a href="https://iro.tw">主题文档</a>  |  <a href="https://github.com/mirai-mamori/Sakurairo">源码地址</a>', 'sakurairo'), SAKURA_VERSION), 
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '更新相关',
       ),
 
       array(
@@ -2679,12 +2689,12 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'       => 'channel_validate_value',
         'type'     => 'text',
-        'title'    => '预览更新通道解锁',
+        'title'    => '主题更新预览通道免责声明',
         'dependency' => array(
           array( 'local_global_library',   '==', 'true' ),
           array( 'iro_update_source',   '==', 'official_building' ),
         ),
-        'desc'   => '如果你想要参与预览更新的测试中来，请确保你已经了解测试带来的风险并愿意自行承担一切责任（包括但不限于可能的数据丢失）后，复制这段（引号内的）文本到文本框内“我已了解测试带来的风险并愿意承担所有后果”',
+        'desc'   => '如果你想要参与预览通道的版本测试中来，请在确保你已经认真了解参与预览通道测试带来的风险并且愿意自行承担一切后果（包括但不限于可能的数据丢失）之后，复制后文引号内的文本到选项文本框内“我已了解测试带来的风险并愿意承担所有后果”',
       ),
 
       array(
@@ -2696,12 +2706,17 @@ if( class_exists( 'CSF' ) ) {
           array( 'local_global_library',   '==', 'true' ),
           array( 'iro_update_source',   '==', 'official_building' ),
         ),
-        'desc'    => '你可以在此切换更新频道以参与到预览版的测试中',
+        'desc'    => '你可以在此切换更新频道以参与到预览版本的测试中',
         'options'    => array(
           'stable' => '正式频道',
           'preview' => '预览频道',
         ),
         'default'    => 'stable'
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '本地化',
       ),
 
       array(
@@ -2718,6 +2733,31 @@ if( class_exists( 'CSF' ) ) {
         'title'  => '本地化JS/CSS文件',
         'label'   => '默认开启，部分JS文件和CSS文件不走jsDelivr CDN',
         'default' => true
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '引用信息',
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => '<p>流畅设计图标引用了由 Paradox 设计的 <a href="https://wwi.lanzous.com/ikyq5kgx0wb">Fluent图标包</a></p>
+        <p>沐氢图标引用了由 缄默 设计的 <a href="https://www.coolapk.com/apk/com.muh2.icon">沐氢图标包</a></p>
+        <p>看板娘引用了由 Stevenjoezhang 开源的 <a href="https://github.com/stevenjoezhang/live2d-widget">Live2d-Widget</a> 项目</p>
+        <p>白猫样式Logo参考原主题作者白猫，由 <a href="https://hyacm.com/acai/ui/143/sakura-logo/">Hyacm</a> 提供方案并引用</p>',
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '依赖信息',
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => '<p>静态资源依赖于主题官方 Fuukei 创建的 <a href="https://github.com/Fuukei/Public_Repository">Public Repository</a> 项目</p>
+        <p>设置框架依赖于 Codestar 开源的 <a href="https://github.com/Codestar/codestar-framework">Codestar-Framework</a> 项目</p>
+        <p>更新功能依赖于 YahnisElsts 开源的 <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin-Update-Checker</a> 项目</p>',
       ),
 
       array(
