@@ -1086,8 +1086,17 @@ font-size: <?php echo iro_opt('post_title_font_size'); ?>px !important;
 font-size: <?php echo iro_opt('post_date_font_size'); ?>px !important;
 }
 
-h1.entry-title{
-font-size: <?php echo iro_opt('page_title_font_size'); ?>px !important;
+.pattern-center h1.cat-title,
+.pattern-center h1.entry-title {
+font-size: <?php echo iro_opt('page_temp_title_font_size'); ?>px !important;
+}
+.pattern-center-sakura h1.cat-title,
+.pattern-center-sakura h1.entry-title {
+font-size: <?php echo iro_opt('page_temp_title_font_size'); ?>px !important;
+}
+
+.single-center .single-header h1.entry-title {
+font-size: <?php echo iro_opt('article_title_font_size'); ?>px !important;
 }
 
 /*鼠标*/

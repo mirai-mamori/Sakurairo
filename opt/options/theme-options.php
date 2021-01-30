@@ -1300,7 +1300,7 @@ if( class_exists( 'CSF' ) ) {
         'id'          => 'social_display_icon',
         'type'        => 'image_select',
         'title'       => '社交网络图标',
-        'desc'   => '选择你喜欢的图标包。流畅设计图标由设计师Paradox设计，并授权本主题预置。沐氢图标由设计师缄默设计，并授权本主题预置。',
+        'desc'   => '选择你喜欢的图标包。图标包引用信息详见关于主题',
         'options'     => array(
           'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/fluent_design'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_fd.gif',
           'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/muh2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_h2.gif',
@@ -2031,17 +2031,6 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'     => 'page_title_font_size',
-        'type'   => 'slider',
-        'title'  => '页面标题字体大小',
-        'desc'   => '滑动滑块，推荐数值范围为20-30',
-        'unit'    => 'px',
-        'min'   => '5',
-        'max'   => '50',
-        'default' => '24'
-      ),
-
-      array(
         'id'    => 'clipboard_copyright',
         'type'  => 'switcher',
         'title' => '页面剪切板版权提示',
@@ -2116,6 +2105,17 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'     => 'article_title_font_size',
+        'type'   => 'slider',
+        'title'  => '文章页面标题字体大小',
+        'desc'   => '滑动滑块，推荐数值范围为28-36。此选项仅对已经设置了特色图片的文章页面生效',
+        'unit'    => 'px',
+        'min'   => '16',
+        'max'   => '48',
+        'default' => '32'
+      ),
+
+      array(
         'id'     => 'author_profile_text',
         'type'   => 'text',
         'title'  => '文章页面作者信息签名栏文本',
@@ -2148,6 +2148,17 @@ if( class_exists( 'CSF' ) ) {
     'title'  => '模板页面设置',
     'icon'      => 'fa fa-window-maximize',
     'fields' => array(
+
+      array(
+        'id'     => 'page_temp_title_font_size',
+        'type'   => 'slider',
+        'title'  => '模板页面标题字体大小',
+        'desc'   => '滑动滑块，推荐数值范围为36-48。此选项仅对已经设置了特色图片的模板页面生效',
+        'unit'    => 'px',
+        'min'   => '20',
+        'max'   => '64',
+        'default' => '40'
+      ),
 
       array(
         'id'     => 'bilibili_id',
