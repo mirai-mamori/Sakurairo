@@ -2073,6 +2073,17 @@ if( class_exists( 'CSF' ) ) {
     'fields' => array(
 
       array(
+        'id'     => 'article_title_font_size',
+        'type'   => 'slider',
+        'title'  => '文章页面标题字体大小',
+        'desc'   => '滑动滑块，推荐数值范围为28-36。此选项仅对已经设置了特色图片的文章页面生效',
+        'unit'    => 'px',
+        'min'   => '16',
+        'max'   => '48',
+        'default' => '32'
+      ),
+
+      array(
         'id'    => 'article_title_line',
         'type'  => 'switcher',
         'title' => '文章页面标题下划线动画',
@@ -2102,17 +2113,6 @@ if( class_exists( 'CSF' ) ) {
         'title' => '文章页面作者信息',
         'label'   => '开启之后文章页面将出现作者信息',
         'default' => false
-      ),
-
-      array(
-        'id'     => 'article_title_font_size',
-        'type'   => 'slider',
-        'title'  => '文章页面标题字体大小',
-        'desc'   => '滑动滑块，推荐数值范围为28-36。此选项仅对已经设置了特色图片的文章页面生效',
-        'unit'    => 'px',
-        'min'   => '16',
-        'max'   => '48',
-        'default' => '32'
       ),
 
       array(
