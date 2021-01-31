@@ -2173,8 +2173,24 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '说说模板说说背景颜色Ⅱ',
         'desc'    => '自定义颜色',
-        'default' => '#ffeb9e'
+        'default' => '#ffcc00'
       ),    
+
+      array(
+        'id'    => 'shuoshuo_arrow',
+        'type'  => 'switcher',
+        'title' => '说说模板说说提示箭头',
+        'label'   => '开启之后提示箭头将出现在说说左侧上方',
+        'default' => false
+      ),
+
+      array(
+        'id'     => 'shuoshuo_font',
+        'type'   => 'text',
+        'title'  => '说说模板说说字体',
+        'desc'   => '填写字体名称。例如：Ma Shan Zheng',
+        'default' => 'Noto Serif SC'
+      ),
 
       array(
         'id'     => 'bilibili_id',

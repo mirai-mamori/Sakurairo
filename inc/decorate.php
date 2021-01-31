@@ -1090,6 +1090,10 @@ font-family:<?php echo iro_opt('signature_font'); ?> !important;
 font-size: <?php echo iro_opt('signature_font_size'); ?>px !important;
 }
 
+.cbp_tmtimeline > li .cbp_tmlabel {
+font-family:<?php echo iro_opt('shuoshuo_font'); ?> !important;
+}
+
 .post-list-thumb .post-title h3{
 font-size: <?php echo iro_opt('post_title_font_size'); ?>px !important;
 }
@@ -1645,6 +1649,15 @@ li.link-item {
     display: none;
 }
 .lower li ul::before {
+    display: none;
+}
+<?php endif; ?>
+
+<?php if (!iro_opt('shuoshuo_arrow', 'true')): ?>
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+    display: none;
+}
+.cbp_tmtimeline > li .cbp_tmlabel:after {
     display: none;
 }
 <?php endif; ?>
