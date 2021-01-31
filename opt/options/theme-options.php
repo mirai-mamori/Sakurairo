@@ -2161,6 +2161,22 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'      => 'shuoshuo_background_color1',
+        'type'    => 'color',
+        'title'   => '说说模板说说背景颜色Ⅰ',
+        'desc'    => '自定义颜色',
+        'default' => '#ffe066'
+      ),    
+
+      array(
+        'id'      => 'shuoshuo_background_color2',
+        'type'    => 'color',
+        'title'   => '说说模板说说背景颜色Ⅱ',
+        'desc'    => '自定义颜色',
+        'default' => '#ffeb9e'
+      ),    
+
+      array(
         'id'     => 'bilibili_id',
         'type'   => 'text',
         'title'  => '哔哩哔哩追番模板帐号ID',

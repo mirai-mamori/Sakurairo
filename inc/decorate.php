@@ -480,6 +480,18 @@ h1.main-title {
 .post-list-thumb {
     box-shadow: 0 1px 30px -4px <?php echo iro_opt('post_border_shadow_color'); ?>;
 }
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
+    background: <?php echo iro_opt('shuoshuo_background_color1'); ?>;
+}
+.cbp_tmtimeline > li .cbp_tmlabel {
+    background: <?php echo iro_opt('shuoshuo_background_color2'); ?>;
+}
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+    border-right-color: <?php echo iro_opt('shuoshuo_background_color1'); ?>;
+}
+.cbp_tmtimeline > li .cbp_tmlabel:after {
+    border-right-color: <?php echo iro_opt('shuoshuo_background_color2'); ?>;
+}
 
 <?php $text_logo = iro_opt('text_logo'); ?>
 .center-text{
