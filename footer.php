@@ -183,7 +183,6 @@ $reception_background = iro_opt('reception_background');
 
 <!-- 春节限定灯笼 -->
 <?php if (iro_opt('spring_festival_limited_deng', 'true')): ?>
-<?php if (is_home()) { ?>
 <!-- 灯笼1 -->
 <div class="deng-box">
 	<div class="deng">
@@ -205,7 +204,6 @@ $reception_background = iro_opt('reception_background');
 		<div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
 	</div>
 </div>
-<?php } ?>
 <?php endif; ?>
 
 <!-- 收缩、展开 -->
