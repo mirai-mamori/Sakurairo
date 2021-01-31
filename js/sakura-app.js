@@ -1620,7 +1620,6 @@ var home = location.href,
             });
         },
         NH: function () {
-            if(document.body.clientWidth > 860){
                 var h1 = 0;
                 $(window).scroll(function () {
                     var s = $(document).scrollTop(),
@@ -1632,7 +1631,6 @@ var home = location.href,
                         cached.addClass('yya');
                     }
             });
-            }
         },
         XLS: function () {
             $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
