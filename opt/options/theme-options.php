@@ -834,6 +834,19 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'subheading',
+        'content' => '春节限定',
+      ),
+
+      array(
+        'id'    => 'spring_festival_limited_deng',
+        'type'  => 'switcher',
+        'title' => '首页灯笼',
+        'label'   => '开启之后首页会加载春节灯笼，此选项为版本限定选项',
+        'default' => false
+      ),
+
+      array(
+        'type'    => 'subheading',
         'content' => '特效及动画',
       ),
 
