@@ -838,6 +838,11 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'type'    => 'content',
+        'content' => '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/newyear.png"  alt="谨贺新年" />',
+      ),
+
+      array(
         'id'    => 'spring_festival_limited_deng',
         'type'  => 'switcher',
         'title' => '灯笼',
