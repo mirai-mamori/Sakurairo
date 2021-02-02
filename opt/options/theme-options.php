@@ -526,10 +526,10 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'style_menu_radius',
         'type'  => 'slider',
         'title' => '样式菜单按钮圆角',
-        'desc'   => '滑动滑块，推荐数值为12',
+        'desc'   => '滑动滑块，推荐数值为10',
         'unit'    => 'px',
         'max'   => '50',
-        'default' => '12'
+        'default' => '10'
       ),
 
       array(
