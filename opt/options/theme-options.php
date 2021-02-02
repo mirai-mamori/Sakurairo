@@ -322,6 +322,7 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
         'desc'   => '滑动滑块，推荐数值为15',
         'unit'    => 'px',
+        'max'   => '50',
         'default' => '15'
       ),
 
@@ -426,6 +427,17 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'    => 'nav_menu_secondary_radius',
+        'type'  => 'slider',
+        'title' => '导航菜单二级菜单圆角',
+        'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
+        'desc'   => '滑动滑块，推荐数值为15',
+        'unit'    => 'px',
+        'max'   => '30',
+        'default' => '15'
+      ),
+
+      array(
         'id'     => 'logo_text',
         'type'   => 'text',
         'title'  => '导航菜单文字Logo文本',
@@ -516,6 +528,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '样式菜单按钮圆角',
         'desc'   => '滑动滑块，推荐数值为12',
         'unit'    => 'px',
+        'max'   => '50',
         'default' => '12'
       ),
 
@@ -541,6 +554,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '样式菜单选项界面圆角',
         'desc'   => '滑动滑块，推荐数值为15',
         'unit'    => 'px',
+        'max'   => '30',
         'default' => '15'
       ),
 
@@ -1103,6 +1117,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '封面签名栏圆角',
         'desc'   => '滑动滑块，推荐数值范围为10-20',
         'unit'    => 'px',
+        'max'    => '50',
         'default' => '15'
       ),
 
