@@ -182,7 +182,7 @@ $reception_background = iro_opt('reception_background');
 <link rel="stylesheet" href="<?php echo $mashiro_logo['font_link']; ?>" media="all">
 
 <!-- 春节限定灯笼 -->
-<?php if (iro_opt('spring_festival_limited_deng', 'true')): ?>
+<?php if (iro_opt('spring_festival_limited_deng', 'true') and (wp_is_mobile() == false)): ?>
 <!-- 灯笼1 -->
 <div class="deng-box">
 	<div class="deng">

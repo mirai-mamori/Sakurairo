@@ -28,9 +28,6 @@ if (iro_opt('theme_skin')) { ?>
 .links ul li img {
     box-shadow: inset 0 0 10px <?php echo iro_opt('theme_skin'); ?>;
 }
-.lower li ul {
-    border-radius: <?php echo iro_opt('nav_menu_radius', ''); ?>px;
-}
 .commentbody:focus {
     border-color: <?php echo iro_opt('theme_skin'); ?> !important
 }
@@ -95,9 +92,6 @@ i.iconfont.js-toggle-search.iconsearch {
 .header-info {
     color: <?php echo iro_opt('theme_skin'); ?>;
     background: <?php echo iro_opt('infor_bar_bgcolor'); ?>;
-}
-.header-user-menu {
-    border-radius: <?php echo iro_opt('nav_menu_radius', ''); ?>px;
 }
 .top-social img {
     background: <?php echo iro_opt('infor_bar_bgcolor'); ?>;
@@ -1579,10 +1573,19 @@ li.link-item {
 	left:calc(97.5% - <?php echo iro_opt('nav_menu_shrink_animation', ''); ?>%);
     background: rgba(255, 255, 255, .75);
     box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4);
-    border-radius: <?php echo iro_opt('nav_menu_radius', ''); ?>px;
+    border-radius: <?php echo iro_opt('nav_menu_radius', ''); ?>px !important;
 }
 .site-title img {
     margin-left: 10px;
+}
+.site-header {
+    border-radius: <?php echo iro_opt('nav_menu_radius', ''); ?>px !important;
+}
+.header-user-menu {
+    border-radius: <?php echo iro_opt('nav_menu_secondary_radius', ''); ?>px !important;
+}
+.lower li ul {
+    border-radius: <?php echo iro_opt('nav_menu_secondary_radius', ''); ?>px !important;
 }
 @media (max-width:860px) {
 .openNav .icon {
@@ -1678,6 +1681,7 @@ li.link-item {
 <?php endif; ?>
 
 <?php if (iro_opt('spring_festival_limited_deng', 'true')): ?>
+@media (min-width:861px) {
 .deng-box {
 	position: fixed;
 	top: -40px;
@@ -1848,6 +1852,7 @@ li.link-item {
 	100% {
 		-webkit-transform: rotate(-10deg)
 	}
+}
 }
 <?php endif; ?>
 
