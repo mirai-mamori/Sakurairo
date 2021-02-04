@@ -850,7 +850,6 @@ a:hover {
     border-radius: 12px;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
     transform: scale(0);
-    transition: transform .3s
 }
 
 #changskin {
@@ -866,7 +865,6 @@ a:hover {
     border-radius: 12px;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
     transform: scale(0);
-    transition: transform .8s
 }
 
 #moblieGoTop:hover,
@@ -8228,10 +8226,12 @@ td.hljs-ln-numbers {
     width: 50px;
     background-color: #FFEEEB;
     border-radius: 20%;
+    transition: .3s;
     cursor: pointer
 }
 .menu-list li:hover {
     background-color: #505050;
+    transition: .3s;
     color: #fff
 }
 .skin-menu .row-container.font-family-controls {
@@ -8253,14 +8253,17 @@ td.hljs-ln-numbers {
     margin: 0 4px;
     box-shadow: none;
     background-color: #FFEEEB;
+    transition: .3s;
     cursor: pointer
 }
 .font-family-controls button.selected {
     background-color: #505050;
+    transition: .3s;
     color: #fff
 }
 .font-family-controls button:hover {
     background-color: #505050;
+    transition: .3s;
     color: #fff
 }
 .control-btn-serif {
