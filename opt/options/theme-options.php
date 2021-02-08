@@ -2106,14 +2106,6 @@ if( class_exists( 'CSF' ) ) {
     'fields' => array(
 
       array(
-        'id'    => 'article_auto_toc',
-        'type'  => 'switcher',
-        'title' => '文章页面自动显示菜单',
-        'label'   => '开启之后文章页面将自动显示菜单',
-        'default' => true
-      ),
-
-      array(
         'id'     => 'article_title_font_size',
         'type'   => 'slider',
         'title'  => '文章页面标题字体大小',
@@ -2130,6 +2122,14 @@ if( class_exists( 'CSF' ) ) {
         'title' => '文章页面标题下划线动画',
         'label'   => '开启且文章设置了特色图片之后，文章标题将有下划线动画',
         'default' => false
+      ),
+
+      array(
+        'id'    => 'article_auto_toc',
+        'type'  => 'switcher',
+        'title' => '文章页面自动显示菜单',
+        'label'   => '默认开启，文章页面会自动显示菜单',
+        'default' => true
       ),
 
       array(
