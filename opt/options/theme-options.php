@@ -2106,6 +2106,14 @@ if( class_exists( 'CSF' ) ) {
     'fields' => array(
 
       array(
+        'id'    => 'article_auto_toc',
+        'type'  => 'switcher',
+        'title' => '文章页面自动显示菜单',
+        'label'   => '开启之后文章页面将自动显示菜单',
+        'default' => true
+      ),
+
+      array(
         'id'     => 'article_title_font_size',
         'type'   => 'slider',
         'title'  => '文章页面标题字体大小',
