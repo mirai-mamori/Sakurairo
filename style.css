@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: made by FUUKEI
 Author URI: https://iro.tw/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.0.0.2
+Version: 2.0.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -3713,7 +3713,7 @@ li.feature-2 {
 }
 
 .headertop.filter-grid::before {
-    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.6.0/vision/basic/grid.png)
+    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.6.1/vision/basic/grid.png)
 }
 
 .headertop.filter-dot::before {
@@ -3722,7 +3722,7 @@ li.feature-2 {
 
 @media (max-width:860px) {
     .headertop.filter-dot::before {
-        background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.6.0/vision/basic/grid.png)
+        background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.6.1/vision/basic/grid.png)
     }
 }
 
@@ -8866,4 +8866,154 @@ input#wp-comment-cookies-consent {
     left: 50%;
     margin-left: -20px;
     margin-top: -20px;
+}
+
+/* 说说 */
+body.theme-dark .cbp_tmtimeline::before {
+	background:RGBA(255,255,255,0.06)
+}
+
+ul.cbp_tmtimeline {
+	padding:0
+}
+
+div class.cdp_tmlabel > li .cbp_tmlabel {
+	margin-bottom:0
+}
+
+.cbp_tmtimeline {
+	margin:30px 0 0 0;
+	padding:0;
+	list-style:none;
+	position:relative
+}
+
+/* The line */
+.cbp_tmtimeline:before {
+	content:'';
+	position:absolute;
+	top:0;
+	bottom:0;
+	width:4px;
+	background:RGBA(0,0,0,0.02);
+	left:80px;
+	margin-left:10px
+}
+
+/* The date/time */
+.cbp_tmtimeline > li .cbp_tmtime {
+	display:block;
+	/* width:29%;*/
+    /* padding-right:110px;*/
+    max-width:70px;
+	position:absolute
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span {
+	display:block;
+	text-align:right
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span:first-child {
+	font-size:0.9em;
+	color:#bdd0db
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span:last-child {
+	font-size:1.2em;
+	color:#9BCD9B
+}
+
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
+	color:RGBA(255,125,73,0.75)
+}
+
+div.cbp_tmlabel > p {
+	margin-bottom:0
+}
+
+/* Right content */
+.cbp_tmtimeline > li .cbp_tmlabel {
+	margin:0 0 45px 65px;
+	background:#EE9CA7;
+	color:#fff;
+	padding:.1em 1.2em .4em 1.2em;
+	font-size:18px;
+    font-weight:300;
+	line-height:1.4;
+	position:relative;
+	border-radius:15px;
+	transition:all 0.3s ease 0s;
+	box-shadow:0 1px 2px rgba(0,0,0,0.15);
+	cursor:pointer;
+	display:block
+}
+
+.cbp_tmlabel:hover {
+	/* transform:scale(1.05);*/
+    transform:translateY(-3px);
+	z-index:1;
+	-webkit-box-shadow:0 15px 32px rgba(0,0,0,0.15) !important
+}
+
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
+	background:#EE9999
+}
+
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+	border-right-color:#EE9999;
+	top: 15px;
+}
+
+/* The triangle */
+.cbp_tmtimeline > li .cbp_tmlabel:after {
+	right:100%;
+	border:solid transparent;
+	content:" ";
+	height:0;
+	width:0;
+	position:absolute;
+	pointer-events:none;
+	border-right-color:#EE9CA7;
+	border-width:10px;
+	top:15px
+}
+
+p.shuoshuo_time {
+    margin: 0 10px 10px 0;
+    font-size:14px;
+}
+
+/* Media */
+@media screen and (max-width:65.375em) {
+	.cbp_tmtimeline > li .cbp_tmtime span:last-child {
+	font-size:1.2em
+	}
+}
+
+.shuoshuo_author_img img {
+	border:1px solid #ddd;
+	padding:2px;
+	float:left;
+	border-radius:64px;
+	transition:all 1.0s;
+	width:50px;
+	height:50px;
+}
+
+.avatar {
+	-webkit-border-radius:100% !important;
+	-moz-border-radius:100% !important;
+	box-shadow:inset 0 -1px 0 #3333sf;
+	-webkit-box-shadow:inset 0 -1px 0 #3333sf;
+	-webkit-transition:0.4s;
+	-webkit-transition:-webkit-transform 0.4s ease-out;
+	transition:transform 0.4s ease-out;
+	-moz-transition:-moz-transform 0.4s ease-out
+}
+
+.zhuan {
+	transform: rotateZ(720deg);
+	-webkit-transform: rotateZ(720deg);
+	-moz-transform: rotateZ(720deg)
 }

@@ -322,6 +322,7 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
         'desc'   => '滑动滑块，推荐数值为15',
         'unit'    => 'px',
+        'max'   => '50',
         'default' => '15'
       ),
 
@@ -426,6 +427,17 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'    => 'nav_menu_secondary_radius',
+        'type'  => 'slider',
+        'title' => '导航菜单二级菜单圆角',
+        'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
+        'desc'   => '滑动滑块，推荐数值为15',
+        'unit'    => 'px',
+        'max'   => '30',
+        'default' => '15'
+      ),
+
+      array(
         'id'     => 'logo_text',
         'type'   => 'text',
         'title'  => '导航菜单文字Logo文本',
@@ -514,9 +526,10 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'style_menu_radius',
         'type'  => 'slider',
         'title' => '样式菜单按钮圆角',
-        'desc'   => '滑动滑块，推荐数值为12',
+        'desc'   => '滑动滑块，推荐数值为10',
         'unit'    => 'px',
-        'default' => '12'
+        'max'   => '50',
+        'default' => '10'
       ),
 
       array(
@@ -541,6 +554,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '样式菜单选项界面圆角',
         'desc'   => '滑动滑块，推荐数值为15',
         'unit'    => 'px',
+        'max'   => '30',
         'default' => '15'
       ),
 
@@ -834,6 +848,24 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'subheading',
+        'content' => '春节限定',
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/newyear.png"  alt="谨贺新年" />',
+      ),
+
+      array(
+        'id'    => 'spring_festival_limited_deng',
+        'type'  => 'switcher',
+        'title' => '灯笼',
+        'label'   => '开启之后会加载春节灯笼，此选项为版本限定选项',
+        'default' => false
+      ),
+
+      array(
+        'type'    => 'subheading',
         'content' => '特效及动画',
       ),
 
@@ -1085,6 +1117,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '封面签名栏圆角',
         'desc'   => '滑动滑块，推荐数值范围为10-20',
         'unit'    => 'px',
+        'max'    => '50',
         'default' => '15'
       ),
 
@@ -1300,7 +1333,7 @@ if( class_exists( 'CSF' ) ) {
         'id'          => 'social_display_icon',
         'type'        => 'image_select',
         'title'       => '社交网络图标',
-        'desc'   => '选择你喜欢的图标包。流畅设计图标由设计师Paradox设计，并授权本主题预置。沐氢图标由设计师缄默设计，并授权本主题预置。',
+        'desc'   => '选择你喜欢的图标包。图标包引用信息详见关于主题',
         'options'     => array(
           'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/fluent_design'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_fd.gif',
           'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/muh2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_h2.gif',
@@ -1561,6 +1594,7 @@ if( class_exists( 'CSF' ) ) {
           'picture' => '图片背景',
           'pure' => '纯色背景',
         ),
+        'default' => 'picture'
       ),
 
       array(
@@ -1576,7 +1610,10 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'announcement_bg',
         'type'  => 'upload',
         'title' => '公告栏背景',
-        'dependency' => array( 'announce_bar_style', '==', 'picture' ),
+        'dependency' => array(
+          array( 'announce_bar', '==', 'true' ),
+          array( 'announce_bar_style',   '==', 'picture' ),
+        ),
         'desc'   => '最佳宽度820px，最佳高度67px',
         'library'      => 'image',
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/announcement_bg.jpg'
@@ -1586,7 +1623,10 @@ if( class_exists( 'CSF' ) ) {
         'id'      => 'announce_bar_border_color',
         'type'    => 'color',
         'title'   => '公告栏边框颜色',
-        'dependency' => array( 'announce_bar_style', '==', 'pure' ),
+        'dependency' => array(
+          array( 'announce_bar', '==', 'true' ),
+          array( 'announce_bar_style',   '==', 'pure' ),
+        ),
         'desc'    => '自定义颜色，建议使用与主题色相同色系且属于浅色系的颜色',
         'default' => '#E6E6E6'
       ),
@@ -2024,17 +2064,6 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'     => 'page_title_font_size',
-        'type'   => 'slider',
-        'title'  => '页面标题字体大小',
-        'desc'   => '滑动滑块，推荐数值范围为20-30',
-        'unit'    => 'px',
-        'min'   => '5',
-        'max'   => '50',
-        'default' => '24'
-      ),
-
-      array(
         'id'    => 'clipboard_copyright',
         'type'  => 'switcher',
         'title' => '页面剪切板版权提示',
@@ -2075,6 +2104,17 @@ if( class_exists( 'CSF' ) ) {
     'title'  => '文章页面设置',
     'icon'      => 'fa fa-archive',
     'fields' => array(
+
+      array(
+        'id'     => 'article_title_font_size',
+        'type'   => 'slider',
+        'title'  => '文章页面标题字体大小',
+        'desc'   => '滑动滑块，推荐数值范围为28-36。此选项仅对已经设置了特色图片的文章页面生效',
+        'unit'    => 'px',
+        'min'   => '16',
+        'max'   => '48',
+        'default' => '32'
+      ),
 
       array(
         'id'    => 'article_title_line',
@@ -2141,6 +2181,49 @@ if( class_exists( 'CSF' ) ) {
     'title'  => '模板页面设置',
     'icon'      => 'fa fa-window-maximize',
     'fields' => array(
+
+      array(
+        'id'     => 'page_temp_title_font_size',
+        'type'   => 'slider',
+        'title'  => '模板页面标题字体大小',
+        'desc'   => '滑动滑块，推荐数值范围为36-48。此选项仅对已经设置了特色图片的模板页面生效',
+        'unit'    => 'px',
+        'min'   => '20',
+        'max'   => '64',
+        'default' => '40'
+      ),
+
+      array(
+        'id'      => 'shuoshuo_background_color1',
+        'type'    => 'color',
+        'title'   => '说说模板说说背景颜色Ⅰ',
+        'desc'    => '自定义颜色',
+        'default' => '#ffe066'
+      ),    
+
+      array(
+        'id'      => 'shuoshuo_background_color2',
+        'type'    => 'color',
+        'title'   => '说说模板说说背景颜色Ⅱ',
+        'desc'    => '自定义颜色',
+        'default' => '#ffcc00'
+      ),    
+
+      array(
+        'id'    => 'shuoshuo_arrow',
+        'type'  => 'switcher',
+        'title' => '说说模板说说提示箭头',
+        'label'   => '开启之后提示箭头将出现在说说左侧上方',
+        'default' => false
+      ),
+
+      array(
+        'id'     => 'shuoshuo_font',
+        'type'   => 'text',
+        'title'  => '说说模板说说字体',
+        'desc'   => '填写字体名称。例如：Ma Shan Zheng',
+        'default' => 'Noto Serif SC'
+      ),
 
       array(
         'id'     => 'bilibili_id',
@@ -2575,22 +2658,6 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'     => 'local_global_library',
-        'type'   => 'switcher',
-        'title'  => '本地化前端库',
-        'label'   => '开启之后前端库将不走jsDelivr CDN',
-        'default' => false
-      ),
-
-      array(
-        'id'     => 'local_application_library',
-        'type'   => 'switcher',
-        'title'  => '本地化JS/CSS文件',
-        'label'   => '默认开启，部分JS文件和CSS文件不走jsDelivr CDN',
-        'default' => true
-      ),
-
-      array(
         'id'     => 'image_cdn',
         'type'   => 'text',
         'title'  => '图片CDN',
@@ -2663,6 +2730,11 @@ if( class_exists( 'CSF' ) ) {
     'fields'      => array(
 
       array(
+        'type'    => 'subheading',
+        'content' => '版本信息',
+      ),
+
+      array(
         'type'    => 'content',
         'content' => '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/ultramarinelogo.gif"  alt="主题信息" />',
       ),
@@ -2671,6 +2743,11 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'submessage',
         'style'   => 'success',
         'content' => sprintf(__('正在使用 iro 主题 版本 %s  |  <a href="https://iro.tw">主题文档</a>  |  <a href="https://github.com/mirai-mamori/Sakurairo">源码地址</a>', 'sakurairo'), SAKURA_VERSION), 
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '更新相关',
       ),
 
       array(
@@ -2683,6 +2760,80 @@ if( class_exists( 'CSF' ) ) {
           'official_building'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_iro.png',
         ),
         'default'     => 'github'
+      ),
+
+      array(
+        'id'       => 'channel_validate_value',
+        'type'     => 'text',
+        'title'    => '主题更新预览通道免责声明',
+        'dependency' => array(
+          array( 'local_global_library',   '==', 'true' ),
+          array( 'iro_update_source',   '==', 'official_building' ),
+        ),
+        'desc'   => '如果你想要参与预览通道的版本测试中来，请在确保你已经认真了解参与预览通道测试带来的风险并且愿意自行承担一切后果（包括但不限于可能的数据丢失）之后，复制后文引号内的文本到选项文本框内“我已了解测试带来的风险并愿意承担所有后果”',
+      ),
+
+      array(
+        'id'         => 'iro_update_channel',
+        'type'       => 'radio',
+        'title'      => '主题更新频道',
+        'dependency' => array(
+          array( 'channel_validate_value', '==', '我已了解测试带来的风险并愿意承担所有后果' ),
+          array( 'local_global_library',   '==', 'true' ),
+          array( 'iro_update_source',   '==', 'official_building' ),
+        ),
+        'desc'    => '你可以在此切换更新频道以参与到预览版本的测试中',
+        'options'    => array(
+          'stable' => '正式频道',
+          'preview' => '预览频道',
+        ),
+        'default'    => 'stable'
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '本地化',
+      ),
+
+      array(
+        'id'     => 'local_global_library',
+        'type'   => 'switcher',
+        'title'  => '本地化前端库',
+        'label'   => '开启之后前端库将不走jsDelivr CDN',
+        'default' => false
+      ),
+
+      array(
+        'id'     => 'local_application_library',
+        'type'   => 'switcher',
+        'title'  => '本地化JS/CSS文件',
+        'label'   => '默认开启，部分JS文件和CSS文件不走jsDelivr CDN',
+        'default' => true
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '引用信息',
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => '<p>流畅设计图标引用了由 Paradox 设计的 <a href="https://wwi.lanzous.com/ikyq5kgx0wb">Fluent图标包</a></p>
+        <p>沐氢图标引用了由 缄默 设计的 <a href="https://www.coolapk.com/apk/com.muh2.icon">沐氢图标包</a></p>
+        <p>看板娘引用了由 Stevenjoezhang 开源的 <a href="https://github.com/stevenjoezhang/live2d-widget">Live2d-Widget</a> 项目</p>
+        <p>白猫样式Logo参考原主题作者白猫，由 <a href="https://hyacm.com/acai/ui/143/sakura-logo/">Hyacm</a> 提供方案并引用</p>',
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '依赖信息',
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => '<p>静态资源依赖于主题官方 Fuukei 创建的 <a href="https://github.com/Fuukei/Public_Repository">Public Repository</a> 项目</p>
+        <p>设置框架依赖于 Codestar 开源的 <a href="https://github.com/Codestar/codestar-framework">Codestar-Framework</a> 项目</p>
+        <p>更新功能依赖于 YahnisElsts 开源的 <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin-Update-Checker</a> 项目</p>',
       ),
 
       array(
