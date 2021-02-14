@@ -26,6 +26,7 @@ if (! function_exists('iro_opt')) {
 
 require 'update-checker/update-checker.php';
 $iro_update_source = iro_opt('iro_update_source');
+$iro_update_channel = iro_opt('iro_update_channel');
 
 if ($iro_update_source == 'github'){
     $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
@@ -40,11 +41,19 @@ if ($iro_update_source == 'github'){
 		'Sakurairo'
 	);
 }else if ($iro_update_source == 'official_building'){
-	$iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-		'https://update.iro.tw/local/check.json',
-        __FILE__,
-		'Sakurairo'
-	);
+    if ($iro_update_channel != 'preview'){
+        $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+            'https://update.iro.tw/local/check.json',
+            __FILE__,
+            'Sakurairo'
+        );
+    }else if ($iro_update_channel == 'preview'){
+        $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+            'https://update.iro.tw/preview/check.json',
+            __FILE__,
+            'Sakurairo'
+        );
+    }
 }
 
 //ini_set('display_errors', true);
@@ -938,7 +947,7 @@ function comment_mail_notify($comment_id)
     </div>
 ';
         $message = convert_smilies($message);
-        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.6.0/vision/smilies/bilipng/emoji_', $message);
+        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.6.1/vision/smilies/bilipng/emoji_', $message);
         $message = str_replace("}}", '.png" alt="emoji" style="height: 2em; max-height: 2em;">', $message);
 
         $message = str_replace('{UPLOAD}', 'https://i.loli.net/', $message);
