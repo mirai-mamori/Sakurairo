@@ -1779,7 +1779,6 @@ i.iconfont.hotpost {
 }
 
 .site-footer {
-    padding: 2%;
     background: rgba(255, 255, 255, .8);
     margin-left: auto;
     margin-right: auto;
@@ -5068,9 +5067,6 @@ i.iconfont.down {
     .author-profile {
         display: none
     }
-    .site-footer {
-        padding: 30px;
-    }
     .lower {
         display: none !important
     }
@@ -5133,9 +5129,6 @@ i.iconfont.down {
 @media (max-width:1080px) {
     .info-meta {
         display: none
-    }
-    .site-footer {
-        padding: 30px;
     }
     .we-title:before {
         display: none
