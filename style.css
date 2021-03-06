@@ -5733,9 +5733,12 @@ i.iconfont.down {
     cursor: pointer
 }
 
-.header-user-avatar:hover .header-user-menu {
-    display: block;
+.header-user-avatar:hover .header-user-menu,
+.header-user-menu:hover {
     background: #fff;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
 }
 
 .header-user-menu {
@@ -5744,12 +5747,14 @@ i.iconfont.down {
     right: -11px;
     background: 0 0;
     top: 44px;
-    display: none;
+    visibility: hidden;
     overflow: hidden;
-    animation: header-menu .8s;
     box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .2);
     border-radius: 15px;
     text-align: center;
+    transition: all .5s 0.1s;
+    opacity: 0;
+    transform: translateY(-20px)
 }
 
 .header-user-menu::before {
