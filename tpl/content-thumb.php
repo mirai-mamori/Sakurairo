@@ -50,7 +50,7 @@ while (have_posts()) : the_post();
 					<?php
 					wp_enqueue_script('r17', "https://cdn.jsdelivr.net/npm/react@17.0.1/umd/react.production.min.js", array(), null, true);
 					wp_enqueue_script('r17-dom', "https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.production.min.js", array(), null, true);
-					wp_enqueue_script('pv',  "https://cdn.jsdelivr.net/gh/kotorik/yukicat-attach@s1.2/dist/pv.js", array('r17', 'r17-dom'), null, true);
+					wp_enqueue_script('pv',  "https://cdn.jsdelivr.net/gh/kotorik/yukicat-attach@s1.3/dist/pv.js", array('r17', 'r17-dom'), null, true);
 					wp_enqueue_style("pv_style", "https://cdn.jsdelivr.net/gh/kotorik/yukicat-attach@latest/dist/pv.css") ?>
 					<span><i class="iconfont icon-attention"></i><?php echo hack_pv('Hit'); ?></span></span>
 					<span class="comments-number"><i class="iconfont icon-mark"></i><?php comments_popup_link('NOTHING', '1 ' . __("Comment", "sakurairo")/*条评论*/, '% ' . __("Comments", "sakurairo")/*条评论*/); ?></span>
