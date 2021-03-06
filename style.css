@@ -9021,3 +9021,6 @@ p.shuoshuo_time {
 	-webkit-transform: rotateZ(720deg);
 	-moz-transform: rotateZ(720deg)
 }
+.wp-block-image .aligncenter figcaption{
+text-align: center;
+}
