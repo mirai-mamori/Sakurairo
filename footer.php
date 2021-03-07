@@ -29,6 +29,7 @@ $reception_background = iro_opt('reception_background');
 				<?php echo iro_opt('footer_info', ''); ?>
 			</div>
 			<div class="footer-device">
+				<?phpif (iro_opt('footer_random_word', 'true')||iro_opt('footer_load_occupancy', 'true')){?>
 			<p style="font-family: 'Ubuntu', sans-serif;">
 					<span style="color: #b9b9b9;">
 						<?php /* 能保留下面两个链接吗？算是我一个小小的心愿吧~ */ ?>
@@ -41,6 +42,7 @@ $reception_background = iro_opt('reception_background');
                         <?php endif; ?></p>
 					</span>
 				</p>
+				<?php}?>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
