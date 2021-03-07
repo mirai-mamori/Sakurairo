@@ -26,7 +26,7 @@ $reception_background = iro_opt('reception_background');
 				<?php if (iro_opt('footer_sakura_icon', 'true')): ?>
 				<i class="iconfont icon-sakura rotating" style="color: <?php echo iro_opt('theme_skin_matching'); ?>;display:inline-block;font-size:26px"></i>
 				<?php endif; ?></p>
-				<p style="color: #666666;"><?php echo iro_opt('footer_info', ''); ?></p>
+				<?php echo iro_opt('footer_info', ''); ?>
 			</div>
 			<div class="footer-device">
 			<p style="font-family: 'Ubuntu', sans-serif;">
