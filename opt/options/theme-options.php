@@ -491,6 +491,10 @@ if( class_exists( 'CSF' ) ) {
           ),
         ),
         'default'        => array(
+          'text_a'     => '',
+          'text_b'     => '',
+          'text_c'     => '',
+          'text_secondary' => '',
           'font_link'     => 'https://cdn.jsdelivr.net/gh/acai66/mydl/fonts/wenyihei/wenyihei-subfont.css',
           'font_name'    => 'wenyihei-subfont',
         ),
@@ -1832,6 +1836,9 @@ if( class_exists( 'CSF' ) ) {
           ),
         ),
         'default'       => array(
+          'link1' => '',
+          'link2' => '',
+          'link3' => '',
           'img1'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/exhibition1.jpg',
           'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/exhibition2.jpg',
           'img3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/exhibition3.jpg',

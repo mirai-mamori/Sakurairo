@@ -1024,7 +1024,7 @@ function getqqinfo() {
     }
     cached.filter('#email').on('blur', function () {
         var emailAddress = cached.filter('#email').val();
-        if (is_get_by_qq == false || emailAddressFlag != emailAddress) {
+        if ((is_get_by_qq == false || emailAddressFlag != emailAddress) && emailAddress != '') {
             $('div.comment-user-avatar img').attr('src', get_gravatar(emailAddress, 80));
             setCookie('user_avatar', get_gravatar(emailAddress, 80), 30);
             setCookie('user_email', emailAddress, 30);
