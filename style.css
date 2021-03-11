@@ -9025,3 +9025,13 @@ p.shuoshuo_time {
 	-webkit-transform: rotateZ(720deg);
 	-moz-transform: rotateZ(720deg)
 }
+
+
+.show {
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+.hide {
+    opacity: 0;
+    transition: opacity 500ms;
+  }
