@@ -1890,7 +1890,7 @@ $(function () {
     Siren.LV();
     if (Poi.pjax) {
         new Pjax({
-            selectors: ["#page"],
+            selectors: ["#page","title",".footer-device"],
             elements: [
               "a:not([target='_top']):not(.comment-reply-link):not(#pagination a):not(#comments-navi a):not(.user-menu-option a):not(.header-user-avatar a):not(.emoji-item)",
               ".search-form",
@@ -1926,10 +1926,10 @@ $(function () {
                 if (Poi.codelamp == 'open') {
                     self.Prism.highlightAll(event)
                 };
-                if (document.querySelector(".js-search.is-visible")?.length > 0) {
+                if (document.querySelector(".js-search.is-visible")) {
                     document.getElementsByClassName("js-toggle-search")[0]?.classList.toggle("is-active");
                     document.getElementsByClassName("js-search")[0]?.classList.toggle("is-visible");
-                    document.getElementsByTagName("html")[0].overflowY = "unset";
+                    document.getElementsByTagName("html")[0].style.overflowY = "unset";
                 }
             });
             document.addEventListener("pjax:success",function(){
