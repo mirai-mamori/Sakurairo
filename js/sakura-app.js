@@ -31,9 +31,9 @@ mashiro_global.ini = new function () {
 }
 
 function setCookie(name, value, days) {
-    var expires = "";
+    let expires = "";
     if (days) {
-        var date = new Date();
+        let date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
         expires = "; expires=" + date.toUTCString();
     }
@@ -41,10 +41,10 @@ function setCookie(name, value, days) {
 }
 
 function getCookie(name) {
-    var nameEQ = name + mashiro_option.cookie_version_control + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
+    let nameEQ = name + mashiro_option.cookie_version_control + "=";
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
         while (c.charAt(0) == ' ') c = c.substring(1, c.length);
         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
@@ -69,13 +69,13 @@ function imgError(ele, type) {
 }
 
 function post_list_show_animation() {
-    if ($("article").hasClass("post-list-thumb")) {
-        var options = {
+    if (document.getElementsByTagName('article')[0]?.classList.contains("post-list-thumb")) {
+        let options = {
             root: null,
             threshold: [0.66]
-        }
-        var io = new IntersectionObserver(callback, options);
-        var articles = document.querySelectorAll('.post-list-thumb');
+        },
+        io = new IntersectionObserver(callback, options),
+        articles = document.getElementsByClassName('post-list-thumb');
 
         function callback(entries) {
             entries.forEach((article) => {
@@ -98,22 +98,29 @@ function post_list_show_animation() {
                 }
             })
         }
-        articles.forEach((article) => {
-            io.observe(article)
-        })
+        for (let a = 0; a < articles.length; a++) {
+            io.observe(articles[a]);
+        }
     }
 }
 mashiro_global.font_control = new function () {
     this.change_font = function () {
-        if ($("body").hasClass("serif")) {
-            $("body").removeClass("serif");
-            $(".control-btn-serif").removeClass("selected");
-            $(".control-btn-sans-serif").addClass("selected");
+        if (document.body.classList.contains("serif")){
+        //if ($("body").hasClass("serif")) {
+            document.body.classList.remove("serif");
+            document.getElementsByClassName("control-btn-serif")[0].classList.remove("selected");
+            document.getElementsByClassName("control-btn-sans-serif")[0].classList.remove("selected");
+            // $("body").removeClass("serif");
+            // $(".control-btn-serif").removeClass("selected");
+            // $(".control-btn-sans-serif").addClass("selected");
             setCookie("font_family", "sans-serif", 30);
         } else {
-            $("body").addClass("serif");
-            $(".control-btn-serif").addClass("selected");
-            $(".control-btn-sans-serif").removeClass("selected");
+            document.body.classList.add("serif");
+            document.getElementsByClassName("control-btn-serif")[0].classList.add("selected");
+            document.getElementsByClassName("control-btn-sans-serif")[0].classList.remove("selected");
+            // $("body").addClass("serif");
+            // $(".control-btn-serif").addClass("selected");
+            // $(".control-btn-sans-serif").removeClass("selected");
             setCookie("font_family", "serif", 30);
             if (document.body.clientWidth <= 860) {
                 addComment.createButterbar("将从网络加载字体，流量请注意");
@@ -123,48 +130,55 @@ mashiro_global.font_control = new function () {
     this.ini = function () {
         if (document.body.clientWidth > 860) {
             if (!getCookie("font_family") || getCookie("font_family") == "serif")
-                $("body").addClass("serif");
+            document.body.classList.add("serif");
+                // $("body").addClass("serif");
         }
         if (getCookie("font_family") == "sans-serif") {
-            $("body").removeClass("sans-serif");
-            $(".control-btn-serif").removeClass("selected");
-            $(".control-btn-sans-serif").addClass("selected");
+            document.body.classList.remove("sans-serif");
+            document.getElementsByClassName("control-btn-serif")[0].classList.remove("selected");
+            document.getElementsByClassName("control-btn-sans-serif")[0].classList.add("selected");
+            // $("body").removeClass("sans-serif");
+            // $(".control-btn-serif").removeClass("selected");
+            // $(".control-btn-sans-serif").addClass("selected");
         }
     }
 }
 mashiro_global.font_control.ini();
 
 function code_highlight_style() {
+    let pre = document.getElementsByTagName("pre");
+    let code = document.querySelectorAll("pre code");
     function gen_top_bar(i) {
-        var attributes = {
+        let attributes = {
             'autocomplete': 'off',
             'autocorrect': 'off',
             'autocapitalize': 'off',
             'spellcheck': 'false',
             'contenteditable': 'false',
             'design': 'by Mashiro'
-        }
-        var ele_name = $('pre:eq(' + i + ')')[0].children[0].className;
-        var lang = ele_name.substr(0, ele_name.indexOf(" ")).replace('language-', '');
-        if (lang.toLowerCase() == "hljs") var lang = $('pre:eq(' + i + ') code').attr("class").replace('hljs', '')?$('pre:eq(' + i + ') code').attr("class").replace('hljs', ''):"text";
+        },
+        ele_name = pre[i].children[0].className,
+             lang = ele_name.substr(0, ele_name.indexOf(" ")).replace('language-', ''),
+             code_a = code[i];
+             if (lang.toLowerCase() == "hljs") lang = code_a.className.replace('hljs', '') ? code_a.className.replace('hljs', '') : "text";
         $('pre:eq(' + i + ')').addClass('highlight-wrap');
-        for (var t in attributes) {
-            $('pre:eq(' + i + ')').attr(t, attributes[t]);
+        for (let t in attributes) {
+            pre[i].setAttribute(t,attributes[t]);
         }
-        $('pre:eq(' + i + ') code').attr('data-rel', lang.toUpperCase());
+        code_a.setAttribute('data-rel', lang.toUpperCase());
     }
-    $('pre code').each(function (i, block) {
+    code.forEach((block) => {
         hljs.highlightBlock(block);
-    });
-    for (var i = 0; i < $('pre').length; i++) {
+    })
+    for (let i = 0; i < pre.length; i++) {
         gen_top_bar(i);
     }
     hljs.initLineNumbersOnLoad();
-    $('pre').on('click', function (e) {
-        if (e.target !== this) return;
-        $(this).toggleClass('code-block-fullscreen');
-        $('html').toggleClass('code-block-fullscreen-html-scroll');
-    });
+    document.body.addEventListener("click",function(e){
+        if (!e.target.classList.contains("highlight-wrap"))return;
+        e.target.classList.toggle("code-block-fullscreen");
+        document.getElementsByTagName("html")[0].classList.toggle('code-block-fullscreen-html-scroll');
+    })
 }
 try {
     code_highlight_style();
@@ -1024,7 +1038,7 @@ function getqqinfo() {
     }
     cached.filter('#email').on('blur', function () {
         var emailAddress = cached.filter('#email').val();
-        if (is_get_by_qq == false || emailAddressFlag != emailAddress) {
+        if ((is_get_by_qq == false || emailAddressFlag != emailAddress) && emailAddress != '') {
             $('div.comment-user-avatar img').attr('src', get_gravatar(emailAddress, 80));
             setCookie('user_avatar', get_gravatar(emailAddress, 80), 30);
             setCookie('user_email', emailAddress, 30);

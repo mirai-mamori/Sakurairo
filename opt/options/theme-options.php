@@ -491,6 +491,10 @@ if( class_exists( 'CSF' ) ) {
           ),
         ),
         'default'        => array(
+          'text_a'     => '',
+          'text_b'     => '',
+          'text_c'     => '',
+          'text_secondary' => '',
           'font_link'     => 'https://cdn.jsdelivr.net/gh/acai66/mydl/fonts/wenyihei/wenyihei-subfont.css',
           'font_name'    => 'wenyihei-subfont',
         ),
@@ -845,24 +849,6 @@ if( class_exists( 'CSF' ) ) {
     'title'  => '额外设置',
     'icon'      => 'fa fa-gift',
     'fields' => array(
-
-      array(
-        'type'    => 'subheading',
-        'content' => '春节限定',
-      ),
-
-      array(
-        'type'    => 'content',
-        'content' => '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/newyear.png"  alt="谨贺新年" />',
-      ),
-
-      array(
-        'id'    => 'spring_festival_limited_deng',
-        'type'  => 'switcher',
-        'title' => '灯笼',
-        'label'   => '开启之后会加载春节灯笼，此选项为版本限定选项',
-        'default' => false
-      ),
 
       array(
         'type'    => 'subheading',
@@ -1850,6 +1836,9 @@ if( class_exists( 'CSF' ) ) {
           ),
         ),
         'default'       => array(
+          'link1' => '',
+          'link2' => '',
+          'link3' => '',
           'img1'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/exhibition1.jpg',
           'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/exhibition2.jpg',
           'img3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/exhibition3.jpg',
@@ -2122,6 +2111,14 @@ if( class_exists( 'CSF' ) ) {
         'title' => '文章页面标题下划线动画',
         'label'   => '开启且文章设置了特色图片之后，文章标题将有下划线动画',
         'default' => false
+      ),
+
+      array(
+        'id'    => 'article_auto_toc',
+        'type'  => 'switcher',
+        'title' => '文章页面自动显示菜单',
+        'label'   => '默认开启，文章页面会自动显示菜单',
+        'default' => true
       ),
 
       array(
