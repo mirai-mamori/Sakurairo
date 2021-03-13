@@ -1371,14 +1371,14 @@ var home = location.href,
             s.pause();
         },
         liveplay: function () {
-            if (s.oncanplay != undefined && $('.haslive').length > 0) {
+            if (s?.oncanplay != undefined && $('.haslive').length > 0) {
                 if ($('.videolive').length > 0) {
                     Siren.splay();
                 }
             }
         },
         livepause: function () {
-            if (s.oncanplay != undefined && $('.haslive').length > 0) {
+            if (s?.oncanplay != undefined && $('.haslive').length > 0) {
                 Siren.spause();
                 $('.video-stu').css({
                     "bottom": "0px"
