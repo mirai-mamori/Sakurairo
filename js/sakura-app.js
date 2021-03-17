@@ -1889,47 +1889,97 @@ $(function () {
     Siren.IA();
     Siren.LV();
     if (Poi.pjax) {
-        $(document).pjax('a[target!=_top]', '#page', {
-            fragment: '#page',
+        new Pjax({
+            selectors: ["#page","title",".footer-device"],
+            elements: [
+              "a:not([target='_top']):not(.comment-reply-link):not(#pagination a):not(#comments-navi a):not(.user-menu-option a):not(.header-user-avatar a):not(.emoji-item)",
+              ".search-form",
+              ".s-search",
+            ],
             timeout: 8000,
-        }).on('pjax:beforeSend', () => { //离开页面停止播放
-            $('.normal-cover-video').each(function () {
-                this.pause();
-                this.src = '';
-                this.load = '';
-            });
-        }).on('pjax:send', function () {
-            $("#bar").css("width", "0%");
+            history: true,
+            cacheBust: false,
+          });
+          document.addEventListener("pjax:send",()=>{
+            let normal = document.getElementsByClassName("normal-cover-video");
+            if(normal.length > 0){
+                for(let a;a<normal.length;a++){
+                    normal[a].pause();
+                    normal[a].src = '';
+                    normal[a].load = '';
+                }
+            }
+            document.getElementById("bar").style.width = "0%";
             if (mashiro_option.NProgressON) NProgress.start();
             Siren.MNH();
-        }).on('pjax:complete', function () {
-            Siren.AH();
-            Siren.PE();
-            Siren.CE();
-            if (mashiro_option.NProgressON) NProgress.done();
-            mashiro_global.ini.pjax();
-            $("#loading").fadeOut(500);
-            if (Poi.codelamp == 'open') {
-                self.Prism.highlightAll(event)
-            };
-        }).on('pjax:end', function() {
-            if (window.gtag){
-                gtag('config', Poi.google_analytics_id, {
-                    'page_path': window.location.pathname
-                });
-            }
-        }).on('submit', '.search-form,.s-search', function (event) {
-            event.preventDefault();
-            $.pjax.submit(event, '#page', {
-                fragment: '#page',
-                timeout: 8000,
-            });
-            if ($('.js-search.is-visible').length > 0) {
-                $('.js-toggle-search').toggleClass('is-active');
-                $('.js-search').toggleClass('is-visible');
-                $('html').css('overflow-y', 'unset');
-            }
         });
+        document.addEventListener("pjax:complete",function(){
+                Siren.AH();
+                Siren.PE();
+                Siren.CE();
+                //Siren.XLS();
+                if (mashiro_option.NProgressON) NProgress.done();
+                mashiro_global.ini.pjax();
+                let loading = document.getElementById("loading");
+                    loading?.classList.add("hide");
+                    loading?.classList.remove("show");
+                if (Poi.codelamp == 'open') {
+                    self.Prism.highlightAll(event)
+                };
+                if (document.querySelector(".js-search.is-visible")) {
+                    document.getElementsByClassName("js-toggle-search")[0]?.classList.toggle("is-active");
+                    document.getElementsByClassName("js-search")[0]?.classList.toggle("is-visible");
+                    document.getElementsByTagName("html")[0].style.overflowY = "unset";
+                }
+            });
+            document.addEventListener("pjax:success",function(){
+                if (window.gtag){
+                    gtag('config', Poi.google_analytics_id, {
+                        'page_path': window.location.pathname
+                    });
+                }
+            });
+        // $(document).pjax('a[target!=_top]', '#page', {
+        //     fragment: '#page',
+        //     timeout: 8000,
+        // }).on('pjax:beforeSend', () => { //离开页面停止播放
+        //     $('.normal-cover-video').each(function () {
+        //         this.pause();
+        //         this.src = '';
+        //         this.load = '';
+        //     });
+        // }).on('pjax:send', function () {
+        //     $("#bar").css("width", "0%");
+        //     if (mashiro_option.NProgressON) NProgress.start();
+        //     Siren.MNH();
+        // }).on('pjax:complete', function () {
+        //     Siren.AH();
+        //     Siren.PE();
+        //     Siren.CE();
+        //     if (mashiro_option.NProgressON) NProgress.done();
+        //     mashiro_global.ini.pjax();
+        //     $("#loading").fadeOut(500);
+        //     if (Poi.codelamp == 'open') {
+        //         self.Prism.highlightAll(event)
+        //     };
+        // }).on('pjax:end', function() {
+        //     if (window.gtag){
+        //         gtag('config', Poi.google_analytics_id, {
+        //             'page_path': window.location.pathname
+        //         });
+        //     }
+        // }).on('submit', '.search-form,.s-search', function (event) {
+        //     event.preventDefault();
+        //     $.pjax.submit(event, '#page', {
+        //         fragment: '#page',
+        //         timeout: 8000,
+        //     });
+        //     if ($('.js-search.is-visible').length > 0) {
+        //         $('.js-toggle-search').toggleClass('is-active');
+        //         $('.js-search').toggleClass('is-visible');
+        //         $('html').css('overflow-y', 'unset');
+        //     }
+        // });
         window.addEventListener('popstate', function (e) {
             Siren.AH();
             Siren.PE();

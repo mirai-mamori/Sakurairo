@@ -52,6 +52,12 @@ while (have_posts()) : the_post();
 					wp_enqueue_script('r17-dom', "https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.production.min.js", array(), null, true);
 					wp_enqueue_script('pv',  "https://cdn.jsdelivr.net/gh/kotorik/yukicat-attach@s1.5/dist/pv.js", array('r17', 'r17-dom'), null, true);
 					wp_enqueue_style("pv_style", "https://cdn.jsdelivr.net/gh/kotorik/yukicat-attach@latest/dist/pv.css") ?>
+					<?php
+					if (iro_opt("is_author_meta_show")) {
+						if(!function_exists('get_author_meta_spans')){require dirname(__FILE__) . './meta-author.php';}
+						get_author_meta_spans();
+					}
+					?>
 					<span><i class="iconfont icon-attention"></i><?php echo hack_pv('Hit'); ?></span></span>
 					<span class="comments-number"><i class="iconfont icon-mark"></i><?php comments_popup_link('NOTHING', '1 ' . __("Comment", "sakurairo")/*条评论*/, '% ' . __("Comments", "sakurairo")/*条评论*/); ?></span>
 					<span><i class="iconfont icon-file"></i><a href="<?php echo esc_url(get_category_link($the_cat[0]->cat_ID)); ?>"><?php echo $the_cat[0]->cat_name; ?></a>

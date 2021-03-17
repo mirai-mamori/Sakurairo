@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: made by FUUKEI
 Author URI: https://iro.tw/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.0.1.4
+Version: 2.0.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -1540,6 +1540,17 @@ i.iconfont.hotpost {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.meta-author{
+    margin: 0 10px 0 0;
+}
+.meta-author img{
+    /**
+    *height值应与body,button,input,select,textarea{}的line-height同步
+    */
+    max-height:18px;
+    margin:0 5px -4px;
 }
 
 .comments-number {
@@ -9020,3 +9031,13 @@ p.shuoshuo_time {
 .wp-block-image .aligncenter figcaption{
 text-align: center;
 }
+
+
+.show {
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+.hide {
+    opacity: 0;
+    transition: opacity 500ms;
+  }

@@ -21,31 +21,31 @@ mashiro_option.live_search = <?php if ( iro_opt('live_search') ){ echo 'true'; }
 
 <?php $reception_background = iro_opt('reception_background'); ?>
 
-<?php if($reception_background['img1']){ $bg_arry=explode(",", $reception_background['img1']);?>
+<?php if(isset($reception_background['img1'])){ $bg_arry=explode(",", $reception_background['img1']);?>
 mashiro_option.skin_bg0 = "<?php echo $bg_arry[0] ?>";
 <?php }else {?>
 mashiro_option.skin_bg0 = "none";
 <?php } ?>
 
-<?php if($reception_background['img2']){ $bg_arry=explode(",", $reception_background['img2']);?>
+<?php if(isset($reception_background['img2'])){ $bg_arry=explode(",", $reception_background['img2']);?>
 mashiro_option.skin_bg1 = "<?php echo $bg_arry[0] ?>";
 <?php }else {?>
 mashiro_option.skin_bg1 = "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg1.png";
 <?php } ?>
 
-<?php if($reception_background['img3']){ $bg_arry=explode(",", $reception_background['img3']);?>
+<?php if(isset($reception_background['img3'])){ $bg_arry=explode(",", $reception_background['img3']);?>
 mashiro_option.skin_bg2 = "<?php echo $bg_arry[0] ?>";
 <?php }else {?>
 mashiro_option.skin_bg2 = "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg2.png";
 <?php } ?>
 
-<?php if($reception_background['img4']){ $bg_arry=explode(",", $reception_background['img4']);?>
+<?php if(isset($reception_background['img4'])){ $bg_arry=explode(",", $reception_background['img4']);?>
 mashiro_option.skin_bg3 = "<?php echo $bg_arry[0] ?>";
 <?php }else {?>
 mashiro_option.skin_bg3 = "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg3.png";
 <?php } ?>
 
-<?php if($reception_background['img5']){ $bg_arry=explode(",", $reception_background['img5']);?>
+<?php if(isset($reception_background['img5'])){ $bg_arry=explode(",", $reception_background['img5']);?>
 mashiro_option.skin_bg4 = "<?php echo $bg_arry[0] ?>";
 <?php }else {?>
 mashiro_option.skin_bg4 = "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png";
