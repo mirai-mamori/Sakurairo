@@ -54,7 +54,7 @@ while (have_posts()) : the_post();
 					wp_enqueue_style("pv_style", "https://cdn.jsdelivr.net/gh/kotorik/yukicat-attach@latest/dist/pv.css") ?>
 					<?php
 					if (iro_opt("is_author_meta_show")) {
-						if(!function_exists('get_author_meta_spans')){require dirname(__FILE__) . './meta-author.php';}
+						if(!function_exists('get_author_meta_spans')){require __DIR__ . '/meta-author.php';}
 						get_author_meta_spans();
 					}
 					?>
