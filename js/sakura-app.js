@@ -1400,7 +1400,7 @@ var home = location.href,
                 if ($(this).hasClass('loadvideo')) {
                     $(this).addClass('video-pause').removeClass('loadvideo').hide();
                     Siren.addsource();
-                    s?.oncanplay = function () {
+                    s.oncanplay = function () {
                         Siren.splay();
                         $('#video-add').show();
                         _btn.addClass('videolive').addClass('haslive');
