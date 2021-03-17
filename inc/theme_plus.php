@@ -33,7 +33,9 @@ function get_avatar_profile_url(){
   if(iro_opt('personal_avatar')){
     $avatar = iro_opt('personal_avatar');
   }else{
-    $avatar = get_avatar_url(get_the_author_meta( 'ID' ));
+    $url = get_user_meta(get_the_author_meta( 'ID' ), 'QQWorld Passport Avatar', true);
+    $avatar = $url?$url: get_avatar_url(get_the_author_meta( 'ID' ));
+
   }
   return $avatar;
 }
