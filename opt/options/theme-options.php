@@ -1967,6 +1967,12 @@ if( class_exists( 'CSF' ) ) {
         'title' => '文章区域“详细”图标',
         'label'   => '开启之后“详细”图标将显示在文章区域内下方',
         'default' => false
+      ),array(
+        'id'    => 'is_author_meta_show',
+        'type'  => 'switcher',
+        'title' => '文章区域“作者信息”',
+        'label'   => '开启之后，文章元数据部分将增加作者信息。',
+        'default' => false
       ),
 
       array(

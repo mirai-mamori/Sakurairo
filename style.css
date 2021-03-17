@@ -1541,6 +1541,17 @@ i.iconfont.hotpost {
     white-space: nowrap;
 }
 
+.meta-author{
+    margin: 0 10px 0 0;
+}
+.meta-author img{
+    /**
+    *height值应与body,button,input,select,textarea{}的line-height同步
+    */
+    max-height:18px;
+    margin:0 5px -4px;
+}
+
 .comments-number {
     margin: 0 10px
 }
