@@ -389,6 +389,15 @@ if( class_exists( 'CSF' ) ) {
         'label'   => '默认开启，点击将进入搜索区域',
         'default' => true
       ),
+      array(
+        'id'    => 'nav_menu_blur',
+        'type'  => 'slider',
+        'title' => '导航菜单背景模糊',
+        'desc'   => '滑动滑块，推荐数值为5px，为0px时关闭',
+        'unit'    => 'px',
+        'max'   => '20',
+        'default' => '0'
+      ),
 
       array(
         'id'    => 'search_area_background',

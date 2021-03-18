@@ -1720,7 +1720,17 @@ h1.main-title {
     background: #fbfbfb50;
 }
 
-<?php } ?>
+<?php } 
+$nav_menu_blur=iro_opt('nav_menu_blur','0');
+if($nav_menu_blur != '0'){
+?>
+.yya{
+    backdrop-filter: blur(<?php echo $nav_menu_blur?>px);
+    -webkit-backdrop-filter: blur(<?php echo $nav_menu_blur?>px);
+}
+<?php
+}
+?>
 
 
 </style>
