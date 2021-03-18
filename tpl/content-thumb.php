@@ -15,7 +15,17 @@ if( $i == 1 ){
     $class = ' post-list-show';
 }
 if(has_post_thumbnail()){
-	$large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
+	$post_thumbnail_id= get_post_thumbnail_id($post->ID);
+	$large_image_url = wp_get_attachment_image_src($post_thumbnail_id, 'large');
+	if($large_image_url==false){
+		$large_image_url = wp_get_attachment_image_src($post_thumbnail_id, 'medium');
+		if($large_image_url==false){
+			$large_image_url = wp_get_attachment_image_src($post_thumbnail_id);
+			if($large_image_url==false){
+				$post_img = DEFAULT_FEATURE_IMAGE();
+			}
+		}
+	}
 	$post_img = $large_image_url[0];
 }else{
 	$post_img = DEFAULT_FEATURE_IMAGE();
