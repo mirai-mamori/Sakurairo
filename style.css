@@ -4051,11 +4051,11 @@ i.iconfont.js-toggle-search.iconsearch {
 }
 
 .search-form--modal {
-    -webkit-transition: visibility .25s ease, opacity .25s ease;
-    -moz-transition: visibility .25s ease, opacity .25s ease;
-    -ms-transition: visibility .25s ease, opacity .25s ease;
-    -o-transition: visibility .25s ease, opacity .25s ease;
-    transition: visibility .25s ease, opacity .25s ease;
+    -webkit-transition: opacity .25s ease;
+    -moz-transition: opacity .25s ease;
+    -ms-transition: opacity .25s ease;
+    -o-transition: opacity .25s ease;
+    transition: opacity .25s ease;
     overflow: hidden;
     z-index: 9999;
     position: fixed;
@@ -4065,7 +4065,9 @@ i.iconfont.js-toggle-search.iconsearch {
     bottom: 0;
     background: #fff;
     visibility: hidden;
-    opacity: 0
+    opacity: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .search-form--modal .search-form__inner {
@@ -4088,7 +4090,7 @@ i.iconfont.js-toggle-search.iconsearch {
 
 .search-form.is-visible {
     visibility: visible;
-    opacity: .99;
+    opacity: 1;
     animation: elastic .5s;
     background-color: rgba(255, 250, 255, 0.7);
     background-repeat: no-repeat;
