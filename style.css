@@ -1036,7 +1036,7 @@ a:hover {
     width:50%;
 	left:47.5%;
     background: rgba(255, 255, 255, .75);
-    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
+    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4);
 }
 
 @media (max-width:1200px) {
