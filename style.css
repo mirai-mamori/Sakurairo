@@ -323,7 +323,7 @@ button,
 input,
 select,
 textarea {
-    color: #505050;
+    color: var(--theme-skin);
     font-size: 15px;
     line-height: 1.5
 }
@@ -4107,7 +4107,7 @@ i.iconfont.js-toggle-search.iconsearch {
 
 .search_close:after,
 .search_close:before {
-    background-color: #505050;
+    background-color: var(--theme-skin);
     position: absolute;
     content: "";
     width: 30px;
@@ -4151,19 +4151,19 @@ i.iconfont.js-toggle-search.iconsearch {
 }
 
 .search-form input::-webkit-input-placeholder {
-    color: #505050
+    color: var(--theme-skin)
 }
 
 .search-form input:-moz-placeholder {
-    color: #505050
+    color: var(--theme-skin)
 }
 
 .search-form input::-moz-placeholder {
-    color: #505050
+    color: var(--theme-skin)
 }
 
 .search-form input:-ms-input-placeholder {
-    color: #505050
+    color: var(--theme-skin)
 }
 
 .s-search {
@@ -4187,7 +4187,7 @@ i.iconfont.js-toggle-search.iconsearch {
     font-size: 32px;
     font-size: 1.5rem;
     line-height: 1;
-    color: #505050;
+    color: var(--theme-skin);
     position: absolute;
     bottom: 12px;
     margin-top: -16px;
