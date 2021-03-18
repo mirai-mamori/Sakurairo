@@ -372,53 +372,86 @@ click_to_view_image();
 // click_to_view_image();
 
 function original_emoji_click() {
-    $(".emoji-item").click(function () {
-        grin($(this).text(), type = "custom", before = "`", after = "` ");
-    });
+    document.getElementsByClassName("menhera-container")[0]?.addEventListener("click", function (e) {
+        if (e.target.classList.contains("emoji-item")) {
+            grin(e.target.innerText, "custom", "`", "` ");
+        }
+    })
+    // $(".emoji-item").click(function () {
+    //     grin($(this).text(), type = "custom", before = "`", after = "` ");
+    // });
 }
 original_emoji_click();
 
-function showPopup(ele) {
-    var popup = ele.querySelector("#thePopup");
-    popup.classList.toggle("show");
-}
+// function showPopup(ele) {
+//     var popup = ele.querySelector("#thePopup");
+//     popup.classList.toggle("show");
+// }
 
 function cmt_showPopup(ele) {
-    var popup = $(ele).find("#thePopup");
-    popup.addClass("show");
-    $(ele).find("input").blur(function () {
-        popup.removeClass("show");
-    });
+    let popup = ele.querySelector("#thePopup");
+    popup.classList.add("show");
+    ele.querySelector("input").onblur = ()=>{
+        popup.classList.remove("show");
+    }
+    // var popup = $(ele).find("#thePopup");
+    // popup.addClass("show");
+    // $(ele).find("input").blur(function () {
+    //     popup.removeClass("show");
+    // });
 }
 
 function scrollBar() {
     if (document.body.clientWidth > 860) {
-        $(window).scroll(function () {
-            var s = $(window).scrollTop(),
-                a = $(document).height(),
-                b = $(window).height(),
-                result = parseInt(s / (a - b) * 100),
-                cached = $("#bar");
-            cached.css("width", result + "%");
-            if (false) {
-                if (result >= 0 && result <= 19)
-                    cached.css("background", "#cccccc");
-                if (result >= 20 && result <= 39)
-                    cached.css("background", "#50bcb6");
-                if (result >= 40 && result <= 59)
-                    cached.css("background", "#85c440");
-                if (result >= 60 && result <= 79)
-                    cached.css("background", "#f2b63c");
-                if (result >= 80 && result <= 99)
-                    cached.css("background", "#FF0000");
-                if (result == 100)
-                    cached.css("background", "#5aaadb");
-            } else {
-                cached.css("background", "orange");
-            }
-            $(".toc-container").css("height", $(".site-content").outerHeight());
-            $(".skin-menu").removeClass('show');
-        });
+        window.addEventListener("scroll",()=>{
+            let s = document.documentElement.scrollTop || document.body.scrollTop,
+            a = document.documentElement.scrollHeight || document.body.scrollHeight,
+            b = window.innerHeight, c,
+            result = parseInt(s / (a - b) * 100),
+            cached = document.getElementById('bar');
+        cached.style.width = result + "%";
+        switch (true) {
+            case (result <= 19): c = '#cccccc'; break;
+            case (result <= 39): c = '#50bcb6'; break;
+            case (result <= 59): c = '#85c440'; break;
+            case (result <= 79): c = '#f2b63c'; break;
+            case (result <= 99): c = '#FF0000'; break;
+            case (result == 100): c = '#5aaadb'; break;
+            default:c = "orange";
+        }
+        cached.style.background = c;
+        let m = document.querySelector(".site-content");
+        if(m!=null){
+            m.style.height = m?.getBoundingClientRect(outerHeight)["height"] + "px";
+        }
+        document.querySelector(".skin-menu").classList.remove("show");
+        })
+        // $(window).scroll(function () {
+        //     var s = $(window).scrollTop(),
+        //         a = $(document).height(),
+        //         b = $(window).height(),
+        //         result = parseInt(s / (a - b) * 100),
+        //         cached = $("#bar");
+        //     cached.css("width", result + "%");
+        //     if (false) {
+        //         if (result >= 0 && result <= 19)
+        //             cached.css("background", "#cccccc");
+        //         if (result >= 20 && result <= 39)
+        //             cached.css("background", "#50bcb6");
+        //         if (result >= 40 && result <= 59)
+        //             cached.css("background", "#85c440");
+        //         if (result >= 60 && result <= 79)
+        //             cached.css("background", "#f2b63c");
+        //         if (result >= 80 && result <= 99)
+        //             cached.css("background", "#FF0000");
+        //         if (result == 100)
+        //             cached.css("background", "#5aaadb");
+        //     } else {
+        //         cached.css("background", "orange");
+        //     }
+        //     $(".toc-container").css("height", $(".site-content").outerHeight());
+        //     $(".skin-menu").removeClass('show');
+        // });
     }
 }
 
