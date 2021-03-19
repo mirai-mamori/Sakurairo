@@ -5179,7 +5179,8 @@ i.iconfont.down {
     }
     #mo-nav.open {
         transform: translateX(250px) translateY(0);
-        -webkit-transform: translateX(250px);
+        -webkit-transform: translateX(250px);
+         position: fixed;
     }
     .wrapper section {
         max-width: 600px
