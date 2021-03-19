@@ -5,8 +5,15 @@ function customizer_css() { ?>
 if(iro_opt('nav_menu_display') == 'unfold'){ ?>
 .site-top .lower nav {display: block !important;}
 <?php } // Style Settings ?>
-<?php // theme-skin
+<?php 
+/**
+ * theme-skin
+ *  */ 
+
 if (iro_opt('theme_skin')) { ?>
+:root{
+    --theme-skin: <?php echo iro_opt('theme_skin'); ?>;
+}
 .author-profile i , .post-like a , .post-share .show-share , .sub-text , .we-info a , span.sitename { color: <?php echo iro_opt('theme_skin'); ?> }
 .feature i , /*.feature-title span ,*/ .download , .links ul li:before , .ar-time i , span.ar-circle , .object , .comment .comment-reply-link , .siren-checkbox-radio:checked + .siren-checkbox-radioInput:after { background: <?php echo iro_opt('theme_skin'); ?> }
 ::-webkit-scrollbar-thumb { background: <?php echo iro_opt('theme_skin'); ?>; border-radius: 25px; }
@@ -35,25 +42,6 @@ if (iro_opt('theme_skin')) { ?>
 .float-content i ,
 .post-more i { 
     color: <?php echo iro_opt('post_icon_color'); ?>;
-}
-.search_close:after,
-.search_close:before {
-    background-color: <?php echo iro_opt('theme_skin'); ?>
-}
-.search-form input::-webkit-input-placeholder {
-    color: <?php echo iro_opt('theme_skin'); ?>
-}
-.search-form input::-moz-placeholder {
-    color: <?php echo iro_opt('theme_skin'); ?>
-}
-.search-form input::-webkit-input-placeholder {
-    color: <?php echo iro_opt('theme_skin'); ?>
-}
-.search-form input:-ms-input-placeholder {
-    color: <?php echo iro_opt('theme_skin'); ?>
-}
-.s-search i {
-    color: <?php echo iro_opt('theme_skin'); ?>
 }
 i.iconfont.js-toggle-search.iconsearch {
     color: <?php echo iro_opt('theme_skin'); ?>;
@@ -135,14 +123,6 @@ i.iconfont.js-toggle-search.iconsearch {
 }
 .site-top ul li a:after {
     background-color: <?php echo iro_opt('theme_skin_matching'); ?>
-}
-
-body,
-button,
-input,
-select,
-textarea {
-    color: <?php echo iro_opt('theme_skin'); ?>
 }
 input[type=color],
 input[type=date],
