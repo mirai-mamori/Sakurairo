@@ -5311,7 +5311,7 @@ i.iconfont.down {
     #mo-nav ul li {
         transition-duration: .25s;
         display: block;
-        padding: 6px 40px;
+        padding: 6px 0px;
         color: #fff;
         letter-spacing: .02em;
         text-align: left
