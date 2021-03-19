@@ -201,6 +201,13 @@ if (Poi.reply_link_version == 'new') {
     //     return false;
     // });
 }
+let ready = function(fn){
+    if (typeof fn !== 'function') return;
+    if (document.readyState==='complete') {
+        return fn();
+    }
+    document.addEventListener('DOMContentLoaded', fn, false);
+};
 
 function attach_image() {
     let cached = document.getElementsByClassName("insert-image-tips")[0],
@@ -372,7 +379,7 @@ click_to_view_image();
 // click_to_view_image();
 
 function original_emoji_click() {
-    document.getElementsByClassName("menhera-container")[0]?.addEventListener("click", function (e) {
+    document.querySelector(".menhera-container")?.addEventListener("click", function (e) {
         if (e.target.classList.contains("emoji-item")) {
             grin(e.target.innerText, "custom", "`", "` ");
         }
@@ -420,9 +427,9 @@ function scrollBar() {
             default:c = "orange";
         }
         cached.style.background = c;
-        let m = document.querySelector(".site-content");
-        if(m!=null){
-            m.style.height = m?.getBoundingClientRect(outerHeight)["height"] + "px";
+        let f = document.querySelector(".toc-container");
+        if (f != null) {
+            f.style.height = document.querySelector(".site-content")?.getBoundingClientRect(outerHeight)["height"] + "px";
         }
         document.querySelector(".skin-menu").classList.remove("show");
         })
@@ -457,30 +464,45 @@ function scrollBar() {
 
 function checkskinSecter() {
     if (mashiro_global.variables.skinSecter === false) {
-        $(".pattern-center").removeClass('pattern-center').addClass('pattern-center-sakura');
-        $(".headertop-bar").removeClass('headertop-bar').addClass('headertop-bar-sakura');
+        let pattern = document.querySelector(".pattern-center"),
+            headertop = document.querySelector(".headertop-bar");
+        pattern?.classList.remove("pattern-center");
+        pattern?.classList.add("headertop-bar-sakura");
+        headertop?.classList.remove("headertop-bar");
+        headertop?.classList.add("headertop-bar-sakura");
+        //$(".pattern-center").removeClass('pattern-center').addClass('pattern-center-sakura');
+        //$(".headertop-bar").removeClass('headertop-bar').addClass('headertop-bar-sakura');
     } else {
-        $(".pattern-center-sakura").removeClass('pattern-center-sakura').addClass('pattern-center');
-        $(".headertop-bar-sakura").removeClass('headertop-bar-sakura').addClass('headertop-bar');
+        let pattern = document.querySelector(".pattern-center-sakura"),
+            headertop = document.querySelector(".headertop-bar-sakura");
+        pattern?.classList.remove("pattern-center-sakura");
+        pattern?.classList.add("'pattern-center");
+        headertop?.classList.remove("headertop-bar-sakura");
+        headertop?.classList.add("headertop-bar");
+        // $(".pattern-center-sakura").removeClass('pattern-center-sakura').addClass('pattern-center');
+        // $(".headertop-bar-sakura").removeClass('headertop-bar-sakura').addClass('headertop-bar');
     }
 }
 
 function checkBgImgCookie() {
-    var bgurl = getCookie("bgImgSetting");
+    let bgurl = getCookie("bgImgSetting");
     if (!bgurl) {
-        $("#white-bg").click();
+        document.getElementById("white-bg").click();
+        //$("#white-bg").click();
     } else {
-        $("#" + bgurl).click();
+        document.getElementById(bgurl).click();
+        //$("#" + bgurl).click();
     }
 }
 function checkDarkModeCookie() {
-    var dark = getCookie("dark"),
+    let dark = getCookie("dark"),
         today = new Date()
         cWidth = document.body.clientWidth;
     if (!dark) {
         if ((today.getHours() > 21 || today.getHours() < 7) && mashiro_option.darkmode) {
             setTimeout(function () {
-                $("#dark-bg").click();
+                document.getElementById("dark-bg").click();
+                //$("#dark-bg").click();
             }, 100);
             console.log('夜间模式开启');
         } else {
@@ -490,16 +512,20 @@ function checkDarkModeCookie() {
                 }, 100);
                 console.log('夜间模式关闭');
             } else {
-                $("html").css("background", "unset");
-                $("body").removeClass("dark");
-                $("#moblieDarkLight").html('<i class="fa fa-moon-o" aria-hidden="true"></i>');
+                document.getElementsByTagName("html")[0].style.background = "unset";
+                document.body.classList.remove("dark");
+                document.getElementById("moblieDarkLight").innerHTML='<i class="fa fa-moon-o" aria-hidden="true"></i>';
+                //$("html").css("background", "unset");
+                //$("body").removeClass("dark");
+                //$("#moblieDarkLight").html('<i class="fa fa-moon-o" aria-hidden="true"></i>');
                 setCookie("dark", "0", 0.33);
             }
         }
     } else {
         if (dark == '1' && (today.getHours() >= 22 || today.getHours() <= 6) && mashiro_option.darkmode) {
             setTimeout(function () {
-                $("#dark-bg").click();
+                document.getElementById("dark-bg").click();
+                // $("#dark-bg").click();
             }, 100);
             console.log('夜间模式开启');
         } else if (dark == '0' || today.getHours() < 22 || today.getHours() > 6) {
@@ -509,9 +535,12 @@ function checkDarkModeCookie() {
                 }, 100);
                 console.log('夜间模式关闭');
             } else {
-                $("html").css("background", "unset");
-                $("body").removeClass("dark");
-                $("#moblieDarkLight").html('<i class="fa fa-moon-o" aria-hidden="true"></i>');
+                document.getElementsByTagName("html")[0].style.background = "unset";
+                document.body.classList.remove("dark");
+                document.getElementById("moblieDarkLight").innerHTML='<i class="fa fa-moon-o" aria-hidden="true"></i>';
+                // $("html").css("background", "unset");
+                // $("body").removeClass("dark");
+                //$("#moblieDarkLight").html('<i class="fa fa-moon-o" aria-hidden="true"></i>');
                 setCookie("dark", "0", 0.33);
             }
         }
@@ -526,33 +555,52 @@ setTimeout(function() {
 }, 100);
 
 function mobile_dark_light() {
-    if ($("body").hasClass("dark")) {
-        $("html").css("background", "unset");
-        $("body").removeClass("dark");
-        $("#moblieDarkLight").html('<i class="fa fa-moon-o" aria-hidden="true"></i>');
+    if (document.body.classList.contains("dark")){
+        document.getElementsByTagName("html")[0].style.background = "unset";
+        document.body.classList.remove("dark");
+        document.getElementById("moblieDarkLight").innerHTML='<i class="fa fa-moon-o" aria-hidden="true"></i>';
         setCookie("dark", "0", 0.33);
     } else {
-        $("html").css("background", "#333333");
-        $("#moblieDarkLight").html('<i class="fa fa-sun-o" aria-hidden="true"></i>');
-        $("body").addClass("dark");
+        document.getElementsByTagName("html")[0].style.background = "#333333";
+        document.getElementById("moblieDarkLight").innerHTML='<i class="fa fa-sun-o" aria-hidden="true"></i>';
+        document.body.classList.add("dark");
         setCookie("dark", "1", 0.33);
     }
+    // if ($("body").hasClass("dark")) {
+    //     $("html").css("background", "unset");
+    //     $("body").removeClass("dark");
+    //     $("#moblieDarkLight").html('<i class="fa fa-moon-o" aria-hidden="true"></i>');
+    //     setCookie("dark", "0", 0.33);
+    // } else {
+    //     $("html").css("background", "#333333");
+    //     $("#moblieDarkLight").html('<i class="fa fa-sun-o" aria-hidden="true"></i>');
+    //     $("body").addClass("dark");
+    //     setCookie("dark", "1", 0.33);
+    // }
 }
 
 function no_right_click() {
-    $('.post-thumb img').bind('contextmenu', function (e) {
-        return false;
-    });
+    document.getElementById("primary")?.addEventListener("contextmenu", function (e) {
+        if (e.target.nodeName.toLowerCase() == "img") {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    })
+    // $('.post-thumb img').bind('contextmenu', function (e) {
+    //     return false;
+    // });
 }
 
 no_right_click();
-
-$(document).ready(function () {
+ready(function(){
+//$(document).ready(function () {
     function cover_bg(){
         if (document.body.clientWidth < 860 && mashiro_option.random_graphs_mts == true) {
-            $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?type=mobile" + ")");
+            document.querySelector(".centerbg").style.backgroundImage = "url(" + mashiro_option.cover_api +"?type=mobile" + ")";
+            //$(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?type=mobile" + ")");
         }else{
-            $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + ")");
+            document.querySelector(".centerbg").style.backgroundImage = "url(" + mashiro_option.cover_api + ")";
+            //$(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + ")");
         }
     }
     cover_bg();
@@ -626,9 +674,11 @@ var bgn = 1;
 
 function nextBG() {
     if(document.body.clientWidth < 860 && mashiro_option.random_graphs_mts == true){
-        $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?type=mobile&" + bgn + ")");
+        document.querySelector(".centerbg").style.backgroundImage = "url(" + mashiro_option.cover_api + "?type=mobile&" + bgn + ")";
+        //$(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?type=mobile&" + bgn + ")");
     }else{
-        $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?" + bgn + ")");
+        document.querySelector(".centerbg").style.backgroundImage = "url(" + mashiro_option.cover_api + "?" + bgn + ")";
+        //$(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?" + bgn + ")");
     }
     bgn = bgn + 1;
 }
@@ -636,24 +686,33 @@ function nextBG() {
 function preBG() {
     bgn = bgn - 1;
     if(document.body.clientWidth < 860 && mashiro_option.random_graphs_mts == true){
-        $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?type=mobile&" + bgn + ")");
+        document.querySelector(".centerbg").style.backgroundImage = "url(" + mashiro_option.cover_api + "?type=mobile&" + bgn + ")";
+        //$(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?type=mobile&" + bgn + ")");
     }else{
-        $(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?" + bgn + ")");
+        document.querySelector(".centerbg").style.backgroundImage = "url(" + mashiro_option.cover_api + "?" + bgn + ")";
+        //$(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?" + bgn + ")");
     }
 }
-$(document).ready(function () {
-    $("#bg-next").click(function () {
-        nextBG();
-    });
-    $("#bg-pre").click(function () {
-        preBG();
-    });
+//$(document).ready(function () {
+ready(function(){
+    document.getElementById("bg-next").onclick = () =>{nextBG()};
+    document.getElementById("bg-pre").onclick = () =>{preBG()};
+    // $("#bg-next").click(function () {
+    //     nextBG();
+    // });
+    // $("#bg-pre").click(function () {
+    //     preBG();
+    // });
 });
 
 function topFunction() {
-    $('body,html').animate({
-        scrollTop: 0
-    })
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+    // $('body,html').animate({
+    //     scrollTop: 0
+    // })
 }
 
 function timeSeriesReload(flag) {
@@ -2006,18 +2065,6 @@ var home = location.href,
             }
         }
     }
-$(function () {
-    Siren.AH();
-    Siren.PE();
-    Siren.NH();
-    Siren.GT();
-    Siren.XLS();
-    Siren.XCS();
-    Siren.XCP();
-    Siren.CE();
-    Siren.MN();
-    Siren.IA();
-    Siren.LV();
     if (Poi.pjax) {
         new Pjax({
             selectors: ["#page","title",".footer-device"],
@@ -2118,15 +2165,27 @@ $(function () {
             post_list_show_animation();
         }, false);
     }
+ready(function () {
+    Siren.AH();
+    Siren.PE();
+    Siren.NH();
+    Siren.GT();
+    Siren.XLS();
+    Siren.XCS();
+    Siren.XCP();
+    Siren.CE();
+    Siren.MN();
+    Siren.IA();
+    Siren.LV();
     console.log("%c Mashiro %c", "background:#24272A; color:#ffffff", "", "https://2heng.xin/");
     console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "https://github.com/mashirozx");
 });
-var isWebkit = navigator.userAgent.toLowerCase().indexOf('webkit') > -1,
+let isWebkit = navigator.userAgent.toLowerCase().indexOf('webkit') > -1,
     isOpera = navigator.userAgent.toLowerCase().indexOf('opera') > -1,
     isIe = navigator.userAgent.toLowerCase().indexOf('msie') > -1;
 if ((isWebkit || isOpera || isIe) && document.getElementById && window.addEventListener) {
     window.addEventListener('hashchange', function () {
-        var id = location.hash.substring(1),
+        let id = location.hash.substring(1),
             element;
         if (!(/^[A-z0-9_-]+$/.test(id))) {
             return;
@@ -2143,28 +2202,38 @@ if ((isWebkit || isOpera || isIe) && document.getElementById && window.addEventL
 
 /* 首页下拉箭头 */
 function headertop_down() {
-    var coverOffset = $('#content').offset().top;
-    $('html,body').animate({
-        scrollTop: coverOffset
-    },
-    600);
+    let coverOffset = document.getElementById("content").getBoundingClientRect().top + window.pageYOffset;
+    //var coverOffset = $('#content').offset().top;
+    window.scrollTo({
+        top: coverOffset,
+        behavior: "smooth"
+    });
+    // $('html,body').animate({
+    //     scrollTop: coverOffset
+    // },
+    // 600);
 }
 
 window.onload = function() {
-    $("html").css('overflow-y', 'unset');
-    $("#preload").fadeOut();
-    setTimeout('$("#preload").remove()', 666);
+    document.getElementsByTagName("html")[0].style.overflowY = "unset";
+    let preload = document.getElementById("preload");
+    preload.classList.add('hide');
+    preload.classList.remove('show');
+    setTimeout('preload.parentNode.removeChild(preload)',666);
+    //$("html").css('overflow-y', 'unset');
+    //$("#preload").fadeOut();
+    //setTimeout('$("#preload").remove()', 666);
 }
 
 
 
-var cached_body = $("body");
+let cached_body = $("body");
 function web_audio() {
     if (mashiro_option.audio) {
     window.AudioContext = window.AudioContext || window.webkitAudioContext,
         function () {
             if (window.AudioContext) {
-                var e = new AudioContext,
+                let e = new AudioContext,
                     t = "880 987 1046 987 1046 1318 987 659 659 880 784 880 1046 784 659 659 698 659 698 1046 659 1046 1046 1046 987 698 698 987 987 880 987 1046 987 1046 1318 987 659 659 880 784 880 1046 784 659 698 1046 987 1046 1174 1174 1174 1046 1046 880 987 784 880 1046 1174 1318 1174 1318 1567 1046 987 1046 1318 1318 1174 784 784 880 1046 987 1174 1046 784 784 1396 1318 1174 659 1318 1046 1318 1760 1567 1567 1318 1174 1046 1046 1174 1046 1174 1567 1318 1318 1760 1567 1318 1174 1046 1046 1174 1046 1174 987 880 880 987 880".split(" "),//天空之城
                     /*t = "329.628 329.628 349.228 391.995 391.995 349.228 329.628 293.665 261.626 261.626 293.665 329.628 329.628 293.665 293.665 329.628 329.628 349.228 391.995 391.995 349.228 329.628 293.665 261.626 261.626 293.665 329.628 293.665 261.626 261.626 293.665 293.665 329.628 261.626 293.665 329.628 349.228 329.628 261.626 293.665 329.628 349.228 329.628 293.665 261.626 293.665 195.998 329.628 329.628 349.228 391.995 391.995 349.228 329.628 293.665 261.626 261.626 293.665 329.628 293.665 261.626 261.626".split(" "),欢乐颂*/
                     i = 0,
@@ -2177,7 +2246,7 @@ function web_audio() {
                     var c = e.createOscillator(),
                         l = e.createGain()
                     if (c.connect(l), l.connect(e.destination), c.type = "sine", c.frequency.value = r, l.gain.setValueAtTime(0, e.currentTime), l.gain.linearRampToValueAtTime(1, e.currentTime + .01), c.start(e.currentTime), l.gain.exponentialRampToValueAtTime(.001, e.currentTime + 1), c.stop(e.currentTime + 1), n = !0) {
-                        var d = Math.round(7 * Math.random()),
+                        let d = Math.round(7 * Math.random()),
                             u = $("<b/>").text(a[d]),
                             h = s.pageX,
                             p = s.pageY - 5
