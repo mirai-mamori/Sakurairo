@@ -2046,20 +2046,18 @@ var home = location.href,
             document.body.addEventListener('input', POWERMODE)
         },
         GT: function () {
-            var cwidth = document.body.clientWidth,
-                mb_to_top = document.querySelector("#moblieGoTop"),
+            let mb_to_top = document.querySelector("#moblieGoTop"),
                 changskin = document.querySelector("#changskin");
-
-            $(window).scroll(function() {
-                    if ($(this).scrollTop() > 20) {
-                        mb_to_top.style.transform = "scale(1)";
-                        changskin.style.transform = "scale(1)";
-                    } else {
-                        mb_to_top.style.transform = "scale(0)";
-                        changskin.style.transform = "scale(0)";
-                    }
-            
-            });
+            window.addEventListener("scroll",()=>{
+                let scroll = document.documentElement.scrollTop || document.body.scrollTop;
+                if(scroll > 20){
+                    mb_to_top.style.transform = "scale(1)";
+                    changskin.style.transform = "scale(1)";
+                }else{
+                    mb_to_top.style.transform = "scale(0)";
+                    changskin.style.transform = "scale(0)";
+                }
+            })
             mb_to_top.onclick = function() {
                 topFunction();
             }
@@ -2246,9 +2244,9 @@ function web_audio() {
                     if(_was(s,"site-title") || _was(s,"site-branding") || _was(s,"searchbox") || _was(s,"changeSkin-gear") || _was(s.parentNode,"menu-list") || s.id=="moblieGoTop"){
                    // console.log(s);
                 // $("site-title, #moblieGoTop, .site-branding, .searchbox, .changeSkin-gear, .menu-list>li#star-bg").mouseenter(function (s) {
-                    var r = t[i]
+                    let r = t[i]
                     r || (i = 0, r = t[i]), i += o
-                    var c = e.createOscillator(),
+                    let c = e.createOscillator(),
                         l = e.createGain();
                     if (c.connect(l), l.connect(e.destination), c.type = "sine", c.frequency.value = r, l.gain.setValueAtTime(0, e.currentTime), l.gain.linearRampToValueAtTime(1, e.currentTime + .01), c.start(e.currentTime), l.gain.exponentialRampToValueAtTime(.001, e.currentTime + 1), c.stop(e.currentTime + 1), n = !0) {
                         let d = Math.round(7 * Math.random()),
@@ -2257,7 +2255,6 @@ function web_audio() {
                             //u = $("<b/>").text(a[d]),
                             h = z.pageX,
                             p = z.pageY - 5;
-                            console.log(h);
                            // console.log(u);
                             dom.style.zIndex = "99999";
                             dom.style.top = p - 100 + "px";
