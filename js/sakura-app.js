@@ -609,7 +609,9 @@ ready(function(){
     }
 
     function changeBG() {
-        var cached = $(".menu-list");
+        //var cached = $(".menu-list");
+        let cached = document.getElementsByClassName("menu-list")[0],
+            li = cached.getElementsByTagName("li");
         cached.find("li").each(function () {
             var tagid = this.id;
             cached.on("click", "#" + tagid, function () {
@@ -1025,8 +1027,8 @@ function add_copyright() {
 
     function setClipboardText(event) {
         event.preventDefault();
-        var htmlData = "# 商业转载请联系作者获得授权，非商业转载请注明出处。<br>" + "# For commercial use, please contact the author for authorization. For non-commercial use, please indicate the source.<br>" + "# 协议(License)：署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)<br>" + "# 作者(Author)：" + mashiro_option.author_name + "<br>" + "# 链接(URL)：" + window.location.href + "<br>" + "# 来源(Source)：" + mashiro_option.site_name + "<br><br>" + window.getSelection().toString().replace(/\r\n/g, "<br>");;
-        var textData = "# 商业转载请联系作者获得授权，非商业转载请注明出处。\n" + "# For commercial use, please contact the author for authorization. For non-commercial use, please indicate the source.\n" + "# 协议(License)：署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)\n" + "# 作者(Author)：" + mashiro_option.author_name + "\n" + "# 链接(URL)：" + window.location.href + "\n" + "# 来源(Source)：" + mashiro_option.site_name + "\n\n" + window.getSelection().toString().replace(/\r\n/g, "\n");
+        let htmlData = "# 商业转载请联系作者获得授权，非商业转载请注明出处。<br>" + "# For commercial use, please contact the author for authorization. For non-commercial use, please indicate the source.<br>" + "# 协议(License)：署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)<br>" + "# 作者(Author)：" + mashiro_option.author_name + "<br>" + "# 链接(URL)：" + window.location.href + "<br>" + "# 来源(Source)：" + mashiro_option.site_name + "<br><br>" + window.getSelection().toString().replace(/\r\n/g, "<br>");;
+        let textData = "# 商业转载请联系作者获得授权，非商业转载请注明出处。\n" + "# For commercial use, please contact the author for authorization. For non-commercial use, please indicate the source.\n" + "# 协议(License)：署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)\n" + "# 作者(Author)：" + mashiro_option.author_name + "\n" + "# 链接(URL)：" + window.location.href + "\n" + "# 来源(Source)：" + mashiro_option.site_name + "\n\n" + window.getSelection().toString().replace(/\r\n/g, "\n");
         if (event.clipboardData) {
             event.clipboardData.setData("text/html", htmlData);
             event.clipboardData.setData("text/plain", textData);
@@ -1036,17 +1038,17 @@ function add_copyright() {
     }
 }
 add_copyright();
-$(function () {
+ready(()=>{
     getqqinfo();
 });
 
 if (mashiro_option.float_player_on) {
     function aplayerF() {
         'use strict';
-        var aplayers = [],
+        let aplayers = [],
             loadMeting = function () {
                 function a(a, b) {
-                    var c = {
+                    let c = {
                         container: a,
                         audio: b,
                         mini: null,
@@ -1066,22 +1068,22 @@ if (mashiro_option.float_player_on) {
                     };
                     if (b.length) {
                         b[0].lrc || (c.lrcType = 0);
-                        var d = {};
-                        for (var e in c) {
-                            var f = e.toLowerCase();
+                        let d = {};
+                        for (let e in c) {
+                            let f = e.toLowerCase();
                             (a.dataset.hasOwnProperty(f) || a.dataset.hasOwnProperty(e) || null !== c[e]) && (d[e] = a.dataset[f] || a.dataset[e] || c[e], ('true' === d[e] || 'false' === d[e]) && (d[e] = 'true' == d[e]))
                         }
                         aplayers.push(new APlayer(d))
                     }
-                    for (var f = 0; f < aplayers.length; f++) try {
+                    for (let f = 0; f < aplayers.length; f++) try {
                         aplayers[f].lrc.hide();
                     } catch (a) {
                         console.log(a)
                     }
-                    var lrcTag = 1;
+                    let lrcTag = 1;
                     $(".aplayer.aplayer-fixed").click(function () {
                         if (lrcTag == 1) {
-                            for (var f = 0; f < aplayers.length; f++) try {
+                            for (let f = 0; f < aplayers.length; f++) try {
                                 aplayers[f].lrc.show();
                             } catch (a) {
                                 console.log(a)
@@ -1089,7 +1091,7 @@ if (mashiro_option.float_player_on) {
                         }
                         lrcTag = 2;
                     });
-                    var apSwitchTag = 0;
+                    let apSwitchTag = 0;
                     $(".aplayer.aplayer-fixed .aplayer-body").addClass("ap-hover");
                     $(".aplayer-miniswitcher").click(function () {
                         if (apSwitchTag == 0) {
@@ -1305,217 +1307,6 @@ loadCSS(mashiro_option.jsdelivr_css_src);
 loadCSS(mashiro_option.entry_content_style_src);
 loadCSS("https://at.alicdn.com/t/font_679578_qyt5qzzavdo39pb9.css");
 loadCSS("https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css");
-(function webpackUniversalModuleDefinition(b, a) {
-    if (typeof exports === "object" && typeof module === "object") {
-        module.exports = a()
-    } else {
-        if (typeof define === "function" && define.amd) {
-            define([], a)
-        } else {
-            if (typeof exports === "object") {
-                exports.POWERMODE = a()
-            } else {
-                b.POWERMODE = a()
-            }
-        }
-    }
-})(this, function () {
-    return (function (c) {
-        var b = {};
-
-        function a(e) {
-            if (b[e]) {
-                return b[e].exports
-            }
-            var d = b[e] = {
-                exports: {},
-                id: e,
-                loaded: false
-            };
-            c[e].call(d.exports, d, d.exports, a);
-            d.loaded = true;
-            return d.exports
-        }
-        a.m = c;
-        a.c = b;
-        a.p = "";
-        return a(0)
-    })([function (j, e, a) {
-        var b = document.createElement("canvas");
-        b.width = window.innerWidth;
-        b.height = window.innerHeight;
-        b.style.cssText = "position:fixed;top:0;left:0;pointer-events:none;z-index:999999";
-        window.addEventListener("resize", function () {
-            b.width = window.innerWidth;
-            b.height = window.innerHeight
-        });
-        document.body.appendChild(b);
-        var c = b.getContext("2d");
-        var l = [];
-        var k = 0;
-        m.shake = true;
-
-        function h(o, n) {
-            return Math.random() * (n - o) + o
-        }
-
-        function g(n) {
-            if (m.colorful) {
-                var o = h(0, 360);
-                return "hsla(" + h(o - 10, o + 10) + ", 100%, " + h(50, 80) + "%, " + 1 + ")"
-            } else {
-                return window.getComputedStyle(n).color
-            }
-        }
-
-        function f() {
-            var o = document.activeElement;
-            var n;
-            if (o.tagName === "TEXTAREA" || (o.tagName === "INPUT" && o.getAttribute("type") === "text")) {
-                var p = a(1)(o, o.selectionStart);
-                n = o.getBoundingClientRect();
-                return {
-                    x: p.left + n.left,
-                    y: p.top + n.top,
-                    color: g(o)
-                }
-            }
-            var r = window.getSelection();
-            if (r.rangeCount) {
-                var q = r.getRangeAt(0);
-                var s = q.startContainer;
-                if (s.nodeType === document.TEXT_NODE) {
-                    s = s.parentNode
-                }
-                n = q.getBoundingClientRect();
-                return {
-                    x: n.left,
-                    y: n.top,
-                    color: g(s)
-                }
-            }
-            return {
-                x: 0,
-                y: 0,
-                color: "transparent"
-            }
-        }
-
-        function d(o, p, n) {
-            return {
-                x: o,
-                y: p,
-                alpha: 1,
-                color: n,
-                velocity: {
-                    x: -1 + Math.random() * 2,
-                    y: -3.5 + Math.random() * 2
-                }
-            }
-        }
-
-        function m() {
-            var n = f();
-            var p = 5 + Math.round(Math.random() * 10);
-            while (p--) {
-                l[k] = d(n.x, n.y, n.color);
-                k = (k + 1) % 500
-            }
-            if (m.shake) {
-                var o = 1 + 2 * Math.random();
-                var q = o * (Math.random() > 0.5 ? -1 : 1);
-                var r = o * (Math.random() > 0.5 ? -1 : 1);
-                document.body.style.marginLeft = q + "px";
-                document.body.style.marginTop = r + "px";
-                setTimeout(function () {
-                    document.body.style.marginLeft = "";
-                    document.body.style.marginTop = ""
-                }, 75)
-            }
-        }
-        m.colorful = false;
-
-        function i() {
-            requestAnimationFrame(i);
-            c.clearRect(0, 0, b.width, b.height);
-            for (var n = 0; n < l.length; ++n) {
-                var o = l[n];
-                if (o.alpha <= 0.1) {
-                    continue
-                }
-                o.velocity.y += 0.075;
-                o.x += o.velocity.x;
-                o.y += o.velocity.y;
-                o.alpha *= 0.96;
-                c.globalAlpha = o.alpha;
-                c.fillStyle = o.color;
-                c.fillRect(Math.round(o.x - 1.5), Math.round(o.y - 1.5), 3, 3)
-            }
-        }
-        requestAnimationFrame(i);
-        j.exports = m
-    }, function (b, a) {
-        (function () {
-            var e = ["direction", "boxSizing", "width", "height", "overflowX", "overflowY", "borderTopWidth", "borderRightWidth", "borderBottomWidth", "borderLeftWidth", "borderStyle", "paddingTop", "paddingRight", "paddingBottom", "paddingLeft", "fontStyle", "fontVariant", "fontWeight", "fontStretch", "fontSize", "fontSizeAdjust", "lineHeight", "fontFamily", "textAlign", "textTransform", "textIndent", "textDecoration", "letterSpacing", "wordSpacing", "tabSize", "MozTabSize"];
-            var d = window.mozInnerScreenX != null;
-
-            function c(k, m, l) {
-                var h = l && l.debug || false;
-                if (h) {
-                    var j = document.querySelector("#input-textarea-caret-position-mirror-div");
-                    if (j) {
-                        j.parentNode.removeChild(j)
-                    }
-                }
-                var i = document.createElement("div");
-                i.id = "input-textarea-caret-position-mirror-div";
-                document.body.appendChild(i);
-                var o = i.style;
-                var f = window.getComputedStyle ? getComputedStyle(k) : k.currentStyle;
-                o.whiteSpace = "pre-wrap";
-                if (k.nodeName !== "INPUT") {
-                    o.wordWrap = "break-word"
-                }
-                o.position = "absolute";
-                if (!h) {
-                    o.visibility = "hidden"
-                }
-                e.forEach(function (p) {
-                    o[p] = f[p]
-                });
-                if (d) {
-                    if (k.scrollHeight > parseInt(f.height)) {
-                        o.overflowY = "scroll"
-                    }
-                } else {
-                    o.overflow = "hidden"
-                }
-                i.textContent = k.value.substring(0, m);
-                if (k.nodeName === "INPUT") {
-                    i.textContent = i.textContent.replace(/\s/g, "\u00a0")
-                }
-                var n = document.createElement("span");
-                n.textContent = k.value.substring(m) || ".";
-                i.appendChild(n);
-                var g = {
-                    top: n.offsetTop + parseInt(f.borderTopWidth),
-                    left: n.offsetLeft + parseInt(f.borderLeftWidth)
-                };
-                if (h) {
-                    n.style.backgroundColor = "#aaa"
-                } else {
-                    document.body.removeChild(i)
-                }
-                return g
-            }
-            if (typeof b != "undefined" && typeof b.exports != "undefined") {
-                b.exports = c
-            } else {
-                window.getCaretCoordinates = c
-            }
-        }())
-    }])
-});
 
 var home = location.href,
     s = $('#bgvideo')[0],
