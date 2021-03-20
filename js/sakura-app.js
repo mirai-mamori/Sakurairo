@@ -953,13 +953,20 @@ POWERMODE.shake = false;
 document.body.addEventListener('input', POWERMODE);
 
 function motionSwitch(ele) {
-    var motionEles = [".bili", ".menhera", ".tieba"];
-    for (var i in motionEles) {
-        $(motionEles[i] + '-bar').removeClass("on-hover");
-        $(motionEles[i] + '-container').css("display", "none");
+    let motionEles = [".bili", ".menhera", ".tieba"];
+    for (let i=0;i<montionEles.length;i++) {
+        document.querySelector(motionEles[i] + '-bar').classList.remove('on-hover');
+        document.querySelector(motionEles[i] + '-container').style.display = 'none';
     }
-    $(ele + '-bar').addClass("on-hover");
-    $(ele + '-container').css("display", "block");
+    document.querySelector(ele + '-bar').classList.add("on-hover");
+    document.querySelector(ele + '-container').style.display = 'block';
+    // var motionEles = [".bili", ".menhera", ".tieba"];
+    // for (var i in motionEles) {
+    //     $(motionEles[i] + '-bar').removeClass("on-hover");
+    //     $(motionEles[i] + '-container').css("display", "none");
+    // }
+    // $(ele + '-bar').addClass("on-hover");
+    // $(ele + '-container').css("display", "block");
 }
 $('.comt-addsmilies').click(function () {
     $('.comt-smilies').toggle();
@@ -969,13 +976,21 @@ $('.comt-smilies a').click(function () {
 })
 
 function smileBoxToggle() {
-    $(document).ready(function () {
-        $("#emotion-toggle").click(function () {
-            $(".emotion-toggle-off").toggle(0);
-            $(".emotion-toggle-on").toggle(0);
-            $(".emotion-box").toggle(160);
-        });
-    });
+    document.getElementById("emotion-toggle")?.addEventListener('click', function () {
+        let emotion_toggle_off = document.querySelector('.emotion-toggle-off'),
+            emotion_toggle_on = document.querySelector('.emotion-toggle-on'),
+            emotion_box = document.querySelector('.emotion-box');
+        emotion_toggle_off.classList.toggle("emotion-hide");
+        emotion_toggle_on.classList.toggle("emotion-show");
+        emotion_box.classList.toggle("emotion-box-show");
+    })
+    // $(document).ready(function () {
+    //     $("#emotion-toggle").click(function () {
+    //         $(".emotion-toggle-off").toggle(0);
+    //         $(".emotion-toggle-on").toggle(0);
+    //         $(".emotion-box").toggle(160);
+    //     });
+    // });
 }
 smileBoxToggle();
 
@@ -1266,39 +1281,79 @@ function mail_me() {
 }
 
 function activate_widget(){
+    let secondary = document.getElementById("secondary");
     if (document.body.clientWidth > 860) {
-        $('.show-hide').on('click', function() {
-            $("#secondary").toggleClass("active")
-        });
-    }else{
-        $("#secondary").remove();
+            let show_hide = document.querySelector(".show-hide");
+            show_hide?.addEventListener("click", function () {
+                secondary?.classList.toggle("active");
+            });
+    } else {
+            secondary?.parentNode.removeChild(secondary);
     }
+    // if (document.body.clientWidth > 860) {
+    //     $('.show-hide').on('click', function() {
+    //         $("#secondary").toggleClass("active")
+    //     });
+    // }else{
+    //     $("#secondary").remove();
+    // }
 }
 setTimeout(function () {
     activate_widget();
 }, 100);
 
 function load_bangumi() {
-    if ($("section").hasClass("bangumi")) {
-        $('body').on('click', '#bangumi-pagination a', function () {
-            $("#bangumi-pagination a").addClass("loading").text("");
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', this.href + "&_wpnonce=" + Poi.nonce, true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 ) {
-                    if(xhr.status == 200){
-                        var html = JSON.parse(xhr.responseText);
-                        $("#bangumi-pagination").remove();
-                        $(".row").append(html);
-                    }else{
-                        $("#bangumi-pagination a").removeClass("loading").html('<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> ERROR ');
-                    }
-                }
-            };
-            xhr.send();
-            return false;
-        });
+    let section = document.getElementsByTagName("section"),_flag=false;
+    for (let i=0;i<section.length;i++){
+        if(section[i].classList.contains("bangumi")){
+            _flag = true;
+        }
     }
+    if(_flag){
+            document.addEventListener('click', function (e) {
+                let target = e.target;
+                if (target === document.querySelector("#bangumi-pagination a")) {
+                    let bgpa = document.querySelector("#bangumi-pagination a");
+                    bgpa.classList.add("loading");
+                    bgpa.textContent = "";
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('POST', target.href + "&_wpnonce=" + Poi.nonce, true);
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            let html = JSON.parse(xhr.responseText),
+                                bfan = document.getElementById("bangumi-pagination"),
+                                row = document.getElementsByClassName("row")[0];
+                            bfan.parentNode.removeChild(bfan);
+                            row.insertAdjacentHTML('beforeend', html);
+                        } else {
+                            bgpa.classList.remove("loading");
+                            bgpa.innerHTML = '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> ERROR ';
+                        }
+                    };
+                    xhr.send();
+                }
+            });
+}
+    // if ($("section").hasClass("bangumi")) {
+    //     $('body').on('click', '#bangumi-pagination a', function () {
+    //         $("#bangumi-pagination a").addClass("loading").text("");
+    //         var xhr = new XMLHttpRequest();
+    //         xhr.open('POST', this.href + "&_wpnonce=" + Poi.nonce, true);
+    //         xhr.onreadystatechange = function() {
+    //             if (xhr.readyState == 4 ) {
+    //                 if(xhr.status == 200){
+    //                     var html = JSON.parse(xhr.responseText);
+    //                     $("#bangumi-pagination").remove();
+    //                     $(".row").append(html);
+    //                 }else{
+    //                     $("#bangumi-pagination a").removeClass("loading").html('<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> ERROR ');
+    //                 }
+    //             }
+    //         };
+    //         xhr.send();
+    //         return false;
+    //     });
+    // }
 }
 
 
