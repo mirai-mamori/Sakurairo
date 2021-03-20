@@ -592,6 +592,7 @@ function no_right_click() {
 }
 
 no_right_click();
+
 ready(function(){
 //$(document).ready(function () {
     function cover_bg(){
@@ -604,14 +605,12 @@ ready(function(){
         }
     }
     cover_bg();
-    function checkskin_bg(a) {
-        return a == "none" ? "" : a
-    }
+    let checkskin_bg = (a)=>a=="none" ? "" : a;
 
     function changeBG() {
-        //var cached = $(".menu-list");
-        let cached = document.getElementsByClassName("menu-list")[0],
-            li = cached.getElementsByTagName("li");
+        var cached = $(".menu-list");
+        // let cached = document.getElementsByClassName("menu-list")[0],
+        //     li = cached.getElementsByTagName("li");
         cached.find("li").each(function () {
             var tagid = this.id;
             cached.on("click", "#" + tagid, function () {
@@ -659,13 +658,20 @@ ready(function(){
     changeBG();
 
     function closeSkinMenu() {
-        $(".skin-menu").removeClass('show');
+        console.log("hi");
+        document.querySelector(".skin-menu").classList.remove("show");
+        //$(".skin-menu").removeClass('show');
         setTimeout(function () {
             $(".changeSkin-gear").css("visibility", "visible");
         }, 300);
     }
-    $("#changskin").click(function () {
-        $(".skin-menu").toggleClass('show');
+    document.querySelector("#changskin").addEventListener("click",function(){
+
+    // })
+    // $("#changskin").click(function () {
+        console.log("hi2");
+        document.querySelector(".skin-menu").classList.toggle("show");
+        //$(".skin-menu").toggleClass('show');
     }) 
     $(".skin-menu #close-skinMenu").click(function () {
         closeSkinMenu();
