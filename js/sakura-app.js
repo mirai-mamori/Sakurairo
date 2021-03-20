@@ -2217,6 +2217,7 @@ function headertop_down() {
 window.onload = function() {
     document.getElementsByTagName("html")[0].style.overflowY = "unset";
     let preload = document.getElementById("preload");
+    if(!preload) return;
     preload.classList.add('hide');
     preload.classList.remove('show');
     setTimeout('preload.parentNode.removeChild(preload)',666);
@@ -2227,9 +2228,9 @@ window.onload = function() {
 
 
 
-let cached_body = $("body");
 function web_audio() {
     if (mashiro_option.audio) {
+    let _was = (a,b)=>a.classList.contains(b);
     window.AudioContext = window.AudioContext || window.webkitAudioContext,
         function () {
             if (window.AudioContext) {
@@ -2240,31 +2241,53 @@ function web_audio() {
                     o = 1,
                     a = "♪ ♩ ♫ ♬ ♭ € § ¶ ♯".split(" "),
                     n = !1
-                $("site-title, #moblieGoTop, .site-branding, .searchbox, .changeSkin-gear, .menu-list>li#star-bg").mouseenter(function (s) {
+                document.body.addEventListener("mouseout",function(z){
+                    s = z.target;
+                    if(_was(s,"site-title") || _was(s,"site-branding") || _was(s,"searchbox") || _was(s,"changeSkin-gear") || _was(s.parentNode,"menu-list") || s.id=="moblieGoTop"){
+                   // console.log(s);
+                // $("site-title, #moblieGoTop, .site-branding, .searchbox, .changeSkin-gear, .menu-list>li#star-bg").mouseenter(function (s) {
                     var r = t[i]
                     r || (i = 0, r = t[i]), i += o
                     var c = e.createOscillator(),
-                        l = e.createGain()
+                        l = e.createGain();
                     if (c.connect(l), l.connect(e.destination), c.type = "sine", c.frequency.value = r, l.gain.setValueAtTime(0, e.currentTime), l.gain.linearRampToValueAtTime(1, e.currentTime + .01), c.start(e.currentTime), l.gain.exponentialRampToValueAtTime(.001, e.currentTime + 1), c.stop(e.currentTime + 1), n = !0) {
                         let d = Math.round(7 * Math.random()),
-                            u = $("<b/>").text(a[d]),
-                            h = s.pageX,
-                            p = s.pageY - 5
-                        u.css({
-                            "z-index": 99999,
-                            top: p - 20,
-                            left: h,
-                            position: "absolute",
-                            color: "#FF6EB4"
-                        }), cached_body.append(u), u.animate({
-                            top: p - 180,
-                            opacity: 0
-                        }, 1500, function () {
-                            u.remove()
-                        }), s.stopPropagation()
+                            dom = document.createElement("b");
+                            dom.textContent = a[d],
+                            //u = $("<b/>").text(a[d]),
+                            h = z.pageX,
+                            p = z.pageY - 5;
+                            console.log(h);
+                           // console.log(u);
+                            dom.style.zIndex = "99999";
+                            dom.style.top = p - 100 + "px";
+                            dom.style.left = h + "px";
+                            dom.style.position = "absolute";
+                            dom.style.color = "#FF6EB4";
+                        // u.css({
+                        //     "z-index": 99999,
+                        //     top: p - 20,
+                        //     left: h,
+                        //     position: "absolute",
+                        //     color: "#FF6EB4"
+                        // }), 
+                        document.body.appendChild(dom);
+                        dom.animate([
+                            {top: p +"px"},
+                            {opacity: 0}
+                        ],{
+                            duration:1500
+                        })
+                        setTimeout(()=>{
+                            dom.remove();
+                        },1500)
+                        // function () {
+                        //     u.remove()
+                        // }), 
+                        s.stopPropagation()
                     }
                     n = !1
-                })
+                }})
             }
         }()
 }
