@@ -61,7 +61,7 @@ function imgError(ele, type) {
             ele.src = 'https://view.moezx.cc/images/2017/12/30/Transparent_Akkarin.th.jpg';
             break;
         case 2:
-            ele.src = 'https://gravatar.shino.cc/avatar/?s=80&d=mm&r=g';
+            ele.src = 'https://sdn.geekzu.org/avatar/?s=80&d=mm&r=g';
             break;
         default:
             ele.src = 'https://view.moezx.cc/images/2018/05/13/image-404.png';
@@ -135,16 +135,16 @@ mashiro_global.font_control = new function () {
         if (document.body.classList.contains("serif")){
         //if ($("body").hasClass("serif")) {
             document.body.classList.remove("serif");
-            document.getElementsByClassName("control-btn-serif")[0].classList.remove("selected");
-            document.getElementsByClassName("control-btn-sans-serif")[0].classList.remove("selected");
+            document.getElementsByClassName("control-btn-serif")[0]?.classList.remove("selected");
+            document.getElementsByClassName("control-btn-sans-serif")[0]?.classList.remove("selected");
             // $("body").removeClass("serif");
             // $(".control-btn-serif").removeClass("selected");
             // $(".control-btn-sans-serif").addClass("selected");
             setCookie("font_family", "sans-serif", 30);
         } else {
             document.body.classList.add("serif");
-            document.getElementsByClassName("control-btn-serif")[0].classList.add("selected");
-            document.getElementsByClassName("control-btn-sans-serif")[0].classList.remove("selected");
+            document.getElementsByClassName("control-btn-serif")[0]?.classList.add("selected");
+            document.getElementsByClassName("control-btn-sans-serif")[0]?.classList.remove("selected");
             // $("body").addClass("serif");
             // $(".control-btn-serif").addClass("selected");
             // $(".control-btn-sans-serif").removeClass("selected");
@@ -162,8 +162,8 @@ mashiro_global.font_control = new function () {
         }
         if (getCookie("font_family") == "sans-serif") {
             document.body.classList.remove("sans-serif");
-            document.getElementsByClassName("control-btn-serif")[0].classList.remove("selected");
-            document.getElementsByClassName("control-btn-sans-serif")[0].classList.add("selected");
+            document.getElementsByClassName("control-btn-serif")[0]?.classList.remove("selected");
+            document.getElementsByClassName("control-btn-sans-serif")[0]?.classList.add("selected");
             // $("body").removeClass("sans-serif");
             // $(".control-btn-serif").removeClass("selected");
             // $(".control-btn-sans-serif").addClass("selected");
@@ -458,7 +458,7 @@ function scrollBar() {
         if (f != null) {
             f.style.height = document.querySelector(".site-content")?.getBoundingClientRect(outerHeight)["height"] + "px";
         }
-        document.querySelector(".skin-menu").classList.remove("show");
+        document.querySelector(".skin-menu")?.classList.remove("show");
         })
         // $(window).scroll(function () {
         //     var s = $(window).scrollTop(),
@@ -620,13 +620,13 @@ function no_right_click() {
 
 no_right_click();
 
-ready(function(){
-//$(document).ready(function () {
-    function cover_bg(){
+ready(function () {
+    //$(document).ready(function () {
+    function cover_bg() {
         if (document.body.clientWidth < 860 && mashiro_option.random_graphs_mts == true) {
-            document.querySelector(".centerbg").style.backgroundImage = "url(" + mashiro_option.cover_api +"?type=mobile" + ")";
+            document.querySelector(".centerbg").style.backgroundImage = "url(" + mashiro_option.cover_api + "?type=mobile" + ")";
             //$(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + "?type=mobile" + ")");
-        }else{
+        } else {
             document.querySelector(".centerbg").style.backgroundImage = "url(" + mashiro_option.cover_api + ")";
             //$(".centerbg").css("background-image", "url(" + mashiro_option.cover_api + ")");
         }
@@ -635,12 +635,15 @@ ready(function(){
     let checkskin_bg = (a)=>a=="none" ? "" : a;
 
     function changeBG() {
-        var cached = $(".menu-list");
-        // let cached = document.getElementsByClassName("menu-list")[0],
+        //var cached = $(".menu-list");
+        let cached = document.querySelectorAll(".menu-list li");
         //     li = cached.getElementsByTagName("li");
-        cached.find("li").each(function () {
-            var tagid = this.id;
-            cached.on("click", "#" + tagid, function () {
+        cached.forEach(e => {
+            e.addEventListener("click",function(){
+
+        //cached.find("li").each(function () {
+            let tagid = this.id;
+        //    cached.on("click", "#" + tagid, function () {
                 if (tagid == "white-bg" || tagid == "dark-bg") {
                     mashiro_global.variables.skinSecter = true;
                     checkskinSecter();
@@ -649,63 +652,78 @@ ready(function(){
                     checkskinSecter();
                 }
                 if (tagid == "dark-bg") {
-                    $("html").css("background", "#333333");
-                    $(".site-content").css("background-color", "#fff");
-                    $("body").addClass("dark");
+                    document.getElementsByTagName("html")[0].style.background = "#333333";
+                    document.getElementsByClassName("site-content")[0].style.backgroundColor = "#333333";
+                    document.body.classList.add("dark");
+                    // $("html").css("background", "#333333");
+                    // $(".site-content").css("background-color", "#fff");
+                    // $("body").addClass("dark");
                     setCookie("dark", "1", 0.33);
                 } else{
-                    $("html").css("background", "unset");
-                    $("body").removeClass("dark");
-                    $(".site-content").css("background-color", "rgba(255, 255, 255, .8)");
+                    document.getElementsByTagName("html")[0].style.background = "unset";
+                    document.getElementsByClassName("site-content")[0].style.backgroundColor = "rgba(255, 255, 255, .8)";
+                    document.body.classList.remove("dark");
+                    // $("html").css("background", "unset");
+                    // $("body").removeClass("dark");
+                    // $(".site-content").css("background-color", "rgba(255, 255, 255, .8)");
                     setCookie("dark", "0", 0.33);
                     setCookie("bgImgSetting", tagid, 30);
                 }
+                let temp;
                 switch (tagid) {
                     case "white-bg":
-                        $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg0) + ")");
-                        $("body").removeClass("dynamic");
+                        temp = mashiro_option.skin_bg0;
+                        document.body.classList.remove("dynamic");
+                        //$("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg0) + ")");
+                        //$("body").removeClass("dynamic");
                         break;
                     case "diy1-bg":
-                        $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg1) + ")");
+                        temp = mashiro_option.skin_bg1;
+                        //$("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg1) + ")");
                         break;
                     case "diy2-bg":
-                        $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg2) + ")");
+                        temp = mashiro_option.skin_bg2;
+                        //$("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg2) + ")");
                         break;
                     case "diy3-bg":
-                        $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg3) + ")");
+                        temp = mashiro_option.skin_bg3;
+                        //$("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg3) + ")");
                         break;
                     case "diy4-bg":
-                        $("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg4) + ")");
+                        temp = mashiro_option.skin_bg4;
+                        //$("body").css("background-image", "url(" + checkskin_bg(mashiro_option.skin_bg4) + ")");
                         break;
                 }
+                document.body.style.backgroundImage = `url(${temp})`;
                 closeSkinMenu();
-            });
         });
+    });
     }
     changeBG();
 
     function closeSkinMenu() {
-        console.log("hi");
         document.querySelector(".skin-menu").classList.remove("show");
         //$(".skin-menu").removeClass('show');
         setTimeout(function () {
-            $(".changeSkin-gear").css("visibility", "visible");
+            document.querySelector(".changeSkin-gear").style.visibility = "visible";
+            //$(".changeSkin-gear").css("visibility", "visible");
         }, 300);
     }
     document.querySelector("#changskin").addEventListener("click",function(){
-
     // })
     // $("#changskin").click(function () {
-        console.log("hi2");
         document.querySelector(".skin-menu").classList.toggle("show");
         //$(".skin-menu").toggleClass('show');
     }) 
-    $(".skin-menu #close-skinMenu").click(function () {
+    document.querySelector(".skin-menu #close-skinMenu")?.addEventListener("click",function(){
         closeSkinMenu();
-    });
+        }) 
+    // $(".skin-menu #close-skinMenu").click(function () {
+    //     closeSkinMenu();
+    // });
     add_upload_tips();
 });
-var bgn = 1;
+let bgn = 1;
 
 function nextBG() {
     if(document.body.clientWidth < 860 && mashiro_option.random_graphs_mts == true){
@@ -2327,7 +2345,7 @@ function web_audio() {
                         // function () {
                         //     u.remove()
                         // }), 
-                        s.stopPropagation()
+                        z.stopPropagation()
                     }
                     n = !1
                 }})

@@ -26,7 +26,7 @@ if(has_post_thumbnail()){
 			}
 		}
 	}
-	$post_img = $large_image_url[0];
+	$post_img = $large_image_url[0] ?? DEFAULT_FEATURE_IMAGE();
 }else{
 	$post_img = DEFAULT_FEATURE_IMAGE();
 }
