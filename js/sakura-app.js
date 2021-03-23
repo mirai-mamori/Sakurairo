@@ -18,6 +18,7 @@ mashiro_global.ini = new function () {
         checkskinSecter();
         scrollBar();
         load_bangumi();
+        sm();
     }
     this.pjax = function () { // pjax reload functions (pjax 重载函数)
         pjaxInit();
@@ -27,6 +28,7 @@ mashiro_global.ini = new function () {
         coverVideoIni();
         checkskinSecter();
         load_bangumi();
+        sm();
     }
 }
 
@@ -1061,37 +1063,64 @@ function tableOfContentScroll(flag) {
     }
 }
 tableOfContentScroll(flag = true);
-var pjaxInit = function () {
+const pjaxInit = function () {
     add_upload_tips();
     no_right_click();
     click_to_view_image();
     original_emoji_click();
     mashiro_global.font_control.ini();
-    $("p").remove(".head-copyright");
+    let _p = document.getElementsByTagName("p");
+    for(let i=0;i<_p.length;i++){
+        _p[i].classList.remove("head-copyright");
+    }
+    //$("p").remove(".head-copyright");
     try {
         code_highlight_style();
-    } catch (e) {};
+    } catch {};
     try {
         getqqinfo();
-    } catch (e) {};
+    } catch {};
     lazyload();
-    $("#to-load-aplayer").click(function () {
+    let _div = document.getElementsByTagName("div");
+    document.getElementById("to-load-aplayer").addEventListener("click",()=>{
+    //$("#to-load-aplayer").click(function () {
         try {
             reloadHermit();
         } catch (e) {};
-        $("div").remove(".load-aplayer");
+        for (let i in _div){
+            _div[i].classList.remove("load-aplayer");
+        }
+       // $("div").remove(".load-aplayer");
     });
-    if ($("div").hasClass("aplayer")) {
-        try {
-            reloadHermit();
-        } catch (e) {};
+    for (let i in _div){
+        if(_div.i.classList.contains("aplayer")){
+            try {
+                reloadHermit();
+            } catch {};
+        }
     }
-    $('.iconflat').css('width', '50px').css('height', '50px');
-    $('.openNav').css('height', '50px');
-    $("#bg-next").click(function () {
+    // if ($("div").hasClass("aplayer")) {
+    //     try {
+    //         reloadHermit();
+    //     } catch (e) {};
+    // }
+    let iconflat = document.getElementsByClassName("iconflat");
+    if (iconflat.length != 0) {
+        iconflat[0].style.width = '50px';
+        iconflat[0].style.height = '50px';
+    }
+    let openNav = document.getElementsByClassName("openNav");
+    if (openNav.length != 0) {
+        openNav[0].style.height = '50px';
+    }
+    // $('.iconflat').css('width', '50px').css('height', '50px');
+    // $('.openNav').css('height', '50px');
+    document.getElementById("bg-next").addEventListener("click",()=>{
+    //$("#bg-next").click(function () {
         nextBG();
     });
-    $("#bg-pre").click(function () {
+    document.getElementById("bg-pre").addEventListener("click",()=>{
+    //$("#bg-pre").click(function () {
         preBG();
     });
     smileBoxToggle();
@@ -1099,34 +1128,70 @@ var pjaxInit = function () {
     add_copyright();
     tableOfContentScroll(flag = true);
 }
-$(document).on("click", ".sm", function () {
-    var msg = "您真的要设为私密吗？";
-    if (confirm(msg) == true) {
-        $(this).commentPrivate();
-    } else {
-        alert("已取消");
-    }
-});
-$.fn.commentPrivate = function () {
-    if ($(this).hasClass('private_now')) {
-        alert('您之前已设过私密评论');
-        return false;
-    } else {
-        $(this).addClass('private_now');
-        var idp = $(this).data('idp'),
-            actionp = $(this).data('actionp'),
-            rateHolderp = $(this).children('.has_set_private');
-        var ajax_data = {
-            action: "siren_private",
-            p_id: idp,
-            p_action: actionp
-        };
-        $.post("/wp-admin/admin-ajax.php", ajax_data, function (data) {
-            $(rateHolderp).html(data);
-        });
-        return false;
-    }
-};
+
+function sm() {
+    let sm = document.getElementsByClassName('sm');
+    if (sm.length == 0) return;
+    document.querySelector(".comments-main")?.addEventListener("click",(e)=>{
+        let list = e.target.parentNode;
+        if(list.classList.contains("sm")){
+            let msg = "您真的要设为私密吗？";
+            if (confirm(msg) == true) {
+                if (list.classList.contains('private_now')) {
+                    alert('您之前已设过私密评论');
+                    return false;
+                } else {
+                    list.classList.add('private_now');
+                    let idp = list.getAttribute("data-idp"),
+                        actionp = list.getAttribute("data-actionp"),
+                        rateHolderp = list.getElementsByClassName('has_set_private')[0];
+                    let ajax_data = "action=siren_private&p_id=" + idp + "&p_action=" + actionp;
+                    let request = new XMLHttpRequest();
+                    request.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            rateHolderp.innerHTML = request.responseText;
+                        }
+                    };
+                    request.open('POST', '/wp-admin/admin-ajax.php', true);
+                    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    request.send(ajax_data);
+                    return false;
+                }
+            } else {
+                alert("已取消");
+            }
+        }
+    })
+}
+
+// $(document).on("click", ".sm", function () {
+//     var msg = "您真的要设为私密吗？";
+//     if (confirm(msg) == true) {
+//         $(this).commentPrivate();
+//     } else {
+//         alert("已取消");
+//     }
+// });
+// $.fn.commentPrivate = function () {
+//     if ($(this).hasClass('private_now')) {
+//         alert('您之前已设过私密评论');
+//         return false;
+//     } else {
+//         $(this).addClass('private_now');
+//         var idp = $(this).data('idp'),
+//             actionp = $(this).data('actionp'),
+//             rateHolderp = $(this).children('.has_set_private');
+//         var ajax_data = {
+//             action: "siren_private",
+//             p_id: idp,
+//             p_action: actionp
+//         };
+//         $.post("/wp-admin/admin-ajax.php", ajax_data, function (data) {
+//             $(rateHolderp).html(data);
+//         });
+//         return false;
+//     }
+// };
 
 POWERMODE.colorful = true;
 POWERMODE.shake = false;
@@ -1157,12 +1222,9 @@ $('.comt-smilies a').click(function () {
 
 function smileBoxToggle() {
     document.getElementById("emotion-toggle")?.addEventListener('click', function () {
-        let emotion_toggle_off = document.querySelector('.emotion-toggle-off'),
-            emotion_toggle_on = document.querySelector('.emotion-toggle-on'),
-            emotion_box = document.querySelector('.emotion-box');
-        emotion_toggle_off.classList.toggle("emotion-hide");
-        emotion_toggle_on.classList.toggle("emotion-show");
-        emotion_box.classList.toggle("emotion-box-show");
+            document.querySelector('.emotion-toggle-off')?.classList.toggle("emotion-hide");
+            document.querySelector('.emotion-toggle-on')?.classList.toggle("emotion-show");
+            document.querySelector('.emotion-box')?.classList.toggle("emotion-box-show");
     })
     // $(document).ready(function () {
     //     $("#emotion-toggle").click(function () {
@@ -1175,18 +1237,25 @@ function smileBoxToggle() {
 smileBoxToggle();
 
 function grin(tag, type, before, after) {
-    var myField;
-    if (type == "custom") {
-        tag = before + tag + after;
-    } else if (type == "Img") {
-        tag = '[img]' + tag + '[/img]';
-    } else if (type == "Math") {
-        tag = ' {{' + tag + '}} ';
-    } else if (type == "tieba") {
-        tag = ' ::' + tag + ':: ';
-    } else {
-        tag = ' :' + tag + ': ';
+    let myField;
+    switch(type){
+        case "custom" : tag = before + tag + after;break;
+        case "Img" : tag = '[img]' + tag + '[/img]';break;
+        case "Math" : tag = ' {{' + tag + '}} ';break;
+        case "tieba" : tag = ' ::' + tag + ':: ';break;
+        default : tag = ' :' + tag + ': ';
     }
+    // if (type == "custom") {
+    //     tag = before + tag + after;
+    // } else if (type == "Img") {
+    //     tag = '[img]' + tag + '[/img]';
+    // } else if (type == "Math") {
+    //     tag = ' {{' + tag + '}} ';
+    // } else if (type == "tieba") {
+    //     tag = ' ::' + tag + ':: ';
+    // } else {
+    //     tag = ' :' + tag + ': ';
+    // }
     if (addComment.I('comment') && addComment.I('comment').type == 'textarea') {
         myField = addComment.I('comment');
     } else {
@@ -1198,9 +1267,9 @@ function grin(tag, type, before, after) {
         sel.text = tag;
         myField.focus();
     } else if (myField.selectionStart || myField.selectionStart == '0') {
-        var startPos = myField.selectionStart;
-        var endPos = myField.selectionEnd;
-        var cursorPos = endPos;
+        let startPos = myField.selectionStart,
+            endPos = myField.selectionEnd,
+            cursorPos = endPos;
         myField.value = myField.value.substring(0, startPos) + tag + myField.value.substring(endPos, myField.value.length);
         cursorPos += tag.length;
         myField.focus();
@@ -1211,19 +1280,15 @@ function grin(tag, type, before, after) {
         myField.focus();
     }
 }
-
-function add_copyright() {
-    document.body.addEventListener("copy", function (e) {
-        if (window.getSelection().toString().length > 30 && mashiro_option.clipboardCopyright) {
-            setClipboardText(e);
-        }
-        addComment.createButterbar("复制成功！<br>Copied to clipboard successfully!", 1000);
-    });
-
+let copytext = (e)=>{
+    if (window.getSelection().toString().length > 30 && mashiro_option.clipboardCopyright) {
+        setClipboardText(e);
+    }
+    addComment.createButterbar("复制成功！<br>Copied to clipboard successfully!", 1000);
     function setClipboardText(event) {
         event.preventDefault();
-        let htmlData = "# 商业转载请联系作者获得授权，非商业转载请注明出处。<br>" + "# For commercial use, please contact the author for authorization. For non-commercial use, please indicate the source.<br>" + "# 协议(License)：署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)<br>" + "# 作者(Author)：" + mashiro_option.author_name + "<br>" + "# 链接(URL)：" + window.location.href + "<br>" + "# 来源(Source)：" + mashiro_option.site_name + "<br><br>" + window.getSelection().toString().replace(/\r\n/g, "<br>");;
-        let textData = "# 商业转载请联系作者获得授权，非商业转载请注明出处。\n" + "# For commercial use, please contact the author for authorization. For non-commercial use, please indicate the source.\n" + "# 协议(License)：署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)\n" + "# 作者(Author)：" + mashiro_option.author_name + "\n" + "# 链接(URL)：" + window.location.href + "\n" + "# 来源(Source)：" + mashiro_option.site_name + "\n\n" + window.getSelection().toString().replace(/\r\n/g, "\n");
+        let htmlData = "# 商业转载请联系作者获得授权，非商业转载请注明出处。<br>" + "# For commercial use, please contact the author for authorization. For non-commercial use, please indicate the source.<br>" + "# 协议(License)：署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)<br>" + "# 作者(Author)：" + mashiro_option.author_name + "<br>" + "# 链接(URL)：" + window.location.href + "<br>" + "# 来源(Source)：" + mashiro_option.site_name + "<br><br>" + window.getSelection().toString().replace(/\r\n/g, "<br>"),
+            textData = "# 商业转载请联系作者获得授权，非商业转载请注明出处。\n" + "# For commercial use, please contact the author for authorization. For non-commercial use, please indicate the source.\n" + "# 协议(License)：署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)\n" + "# 作者(Author)：" + mashiro_option.author_name + "\n" + "# 链接(URL)：" + window.location.href + "\n" + "# 来源(Source)：" + mashiro_option.site_name + "\n\n" + window.getSelection().toString().replace(/\r\n/g, "\n");
         if (event.clipboardData) {
             event.clipboardData.setData("text/html", htmlData);
             event.clipboardData.setData("text/plain", textData);
@@ -1232,6 +1297,31 @@ function add_copyright() {
         }
     }
 }
+function add_copyright() {
+    document.body.removeEventListener("copy",copytext);
+    document.body.addEventListener("copy", copytext);
+}
+
+// function add_copyright() {
+//     document.body.addEventListener("copy", function (e) {
+//         if (window.getSelection().toString().length > 30 && mashiro_option.clipboardCopyright) {
+//             setClipboardText(e);
+//         }
+//         addComment.createButterbar("复制成功！<br>Copied to clipboard successfully!", 1000);
+//     });
+
+//     function setClipboardText(event) {
+//         event.preventDefault();
+//         let htmlData = "# 商业转载请联系作者获得授权，非商业转载请注明出处。<br>" + "# For commercial use, please contact the author for authorization. For non-commercial use, please indicate the source.<br>" + "# 协议(License)：署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)<br>" + "# 作者(Author)：" + mashiro_option.author_name + "<br>" + "# 链接(URL)：" + window.location.href + "<br>" + "# 来源(Source)：" + mashiro_option.site_name + "<br><br>" + window.getSelection().toString().replace(/\r\n/g, "<br>");;
+//         let textData = "# 商业转载请联系作者获得授权，非商业转载请注明出处。\n" + "# For commercial use, please contact the author for authorization. For non-commercial use, please indicate the source.\n" + "# 协议(License)：署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)\n" + "# 作者(Author)：" + mashiro_option.author_name + "\n" + "# 链接(URL)：" + window.location.href + "\n" + "# 来源(Source)：" + mashiro_option.site_name + "\n\n" + window.getSelection().toString().replace(/\r\n/g, "\n");
+//         if (event.clipboardData) {
+//             event.clipboardData.setData("text/html", htmlData);
+//             event.clipboardData.setData("text/plain", textData);
+//         } else if (window.clipboardData) {
+//             return window.clipboardData.setData("text", textData);
+//         }
+//     }
+// }
 add_copyright();
 ready(()=>{
     getqqinfo();
@@ -1276,7 +1366,8 @@ if (mashiro_option.float_player_on) {
                         console.log(a)
                     }
                     let lrcTag = 1;
-                    $(".aplayer.aplayer-fixed").click(function () {
+                    document.querySelector(".aplayer.aplayer-fixed").addEventListener("click",()=>{
+                   // $(".aplayer.aplayer-fixed").click(function () {
                         if (lrcTag == 1) {
                             for (let f = 0; f < aplayers.length; f++) try {
                                 aplayers[f].lrc.show();
@@ -1287,42 +1378,48 @@ if (mashiro_option.float_player_on) {
                         lrcTag = 2;
                     });
                     let apSwitchTag = 0;
-                    $(".aplayer.aplayer-fixed .aplayer-body").addClass("ap-hover");
-                    $(".aplayer-miniswitcher").click(function () {
+                    document.querySelector(".aplayer.aplayer-fixed .aplayer-body")?.classList.add("ap-hover");
+                    document.querySelector(".aplayer-miniswitcher")?.addEventListener("click",()=>{
+                    //$(".aplayer.aplayer-fixed .aplayer-body").addClass("ap-hover");
+                    //$(".aplayer-miniswitcher").click(function () {
                         if (apSwitchTag == 0) {
-                            $(".aplayer.aplayer-fixed .aplayer-body").removeClass("ap-hover");
-                            $("#secondary").addClass("active");
+                            document.querySelector(".aplayer.aplayer-fixed .aplayer-body")?.classList.remove("ap-hover");
+                            document.getElementById("secondary").classList.add("active");
+                           // $(".aplayer.aplayer-fixed .aplayer-body").removeClass("ap-hover");
+                            //$("#secondary").addClass("active");
                             apSwitchTag = 1;
                         } else {
-                            $(".aplayer.aplayer-fixed .aplayer-body").addClass("ap-hover");
-                            $("#secondary").removeClass("active");
+                            document.querySelector(".aplayer.aplayer-fixed .aplayer-body")?.classList.add("ap-hover");
+                            document.getElementById("secondary")?.classList.remove("active");
+                            //$(".aplayer.aplayer-fixed .aplayer-body").addClass("ap-hover");
+                            //$("#secondary").removeClass("active");
                             apSwitchTag = 0;
                         }
                     });
                 }
-                var b = mashiro_option.meting_api_url + '?server=:server&type=:type&id=:id&_wpnonce=' + Poi.nonce;
+                let b = mashiro_option.meting_api_url + '?server=:server&type=:type&id=:id&_wpnonce=' + Poi.nonce;
                 'undefined' != typeof meting_api && (b = meting_api);
-                for (var f = 0; f < aplayers.length; f++) try {
+                for (let f = 0; f < aplayers.length; f++) try {
                     aplayers[f].destroy()
                 } catch (a) {
                     console.log(a)
                 }
                 aplayers = [];
-                for (var c = document.querySelectorAll('.aplayer'), d = function () {
-                        var d = c[e],
+                for (let c = document.querySelectorAll('.aplayer'), d = function () {
+                        let d = c[e],
                             f = d.dataset.id;
                         if (f) {
-                            var g = d.dataset.api || b;
+                            let g = d.dataset.api || b;
                             g = g.replace(':server', d.dataset.server), g = g.replace(':type', d.dataset.type), g = g.replace(':id', d.dataset.id);
-                            var h = new XMLHttpRequest;
+                            let h = new XMLHttpRequest;
                             h.onreadystatechange = function () {
                                 if (4 === h.readyState && (200 <= h.status && 300 > h.status || 304 === h.status)) {
-                                    var b = JSON.parse(h.responseText);
+                                    let b = JSON.parse(h.responseText);
                                     a(d, b)
                                 }
                             }, h.open('get', g, !0), h.send(null)
                         } else if (d.dataset.url) {
-                            var i = [{
+                            let i = [{
                                 name: d.dataset.name || d.dataset.title || 'Audio name',
                                 artist: d.dataset.artist || d.dataset.author || 'Audio artist',
                                 url: d.dataset.url,
@@ -2352,6 +2449,7 @@ var home = location.href,
             Siren.AH();
             Siren.PE();
             Siren.CE();
+            sm();
             timeSeriesReload(true);
             post_list_show_animation();
         }, false);
