@@ -543,7 +543,10 @@ function checkDarkModeCookie() {
             } else {
                 document.getElementsByTagName("html")[0].style.background = "unset";
                 document.body.classList.remove("dark");
-                document.getElementById("moblieDarkLight").innerHTML='<i class="fa fa-moon-o" aria-hidden="true"></i>';
+                let mbdl = document.getElementById("moblieDarkLight");
+                if (mbdl){
+                    mbdl.innerHTML='<i class="fa fa-moon-o" aria-hidden="true"></i>';
+                }
                 //$("html").css("background", "unset");
                 //$("body").removeClass("dark");
                 //$("#moblieDarkLight").html('<i class="fa fa-moon-o" aria-hidden="true"></i>');
@@ -713,7 +716,7 @@ ready(function () {
             //$(".changeSkin-gear").css("visibility", "visible");
         }, 300);
     }
-    document.querySelector("#changskin").addEventListener("click",function(){
+    document.querySelector("#changskin")?.addEventListener("click",function(){
     // })
     // $("#changskin").click(function () {
         document.querySelector(".skin-menu").classList.toggle("show");
@@ -752,8 +755,10 @@ function preBG() {
 }
 //$(document).ready(function () {
 ready(function(){
-    document.getElementById("bg-next").onclick = () =>{nextBG()};
-    document.getElementById("bg-pre").onclick = () =>{preBG()};
+    let next = document.getElementById("bg-next"),
+        pre = document.getElementById("bg-pre");
+    if(next){next.onclick = () =>{nextBG()}};
+    if(pre){pre.onclick = () =>{preBG()}};
     // $("#bg-next").click(function () {
     //     nextBG();
     // });
@@ -955,7 +960,7 @@ function loadHls(){
         });
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
         video.src = video_src;
-        video.addEventListener('loadedmetadata', function () {
+        video?.addEventListener('loadedmetadata', function () {
             video.play();
         });
     }
@@ -1082,7 +1087,7 @@ const pjaxInit = function () {
     } catch {};
     lazyload();
     let _div = document.getElementsByTagName("div");
-    document.getElementById("to-load-aplayer").addEventListener("click",()=>{
+    document.getElementById("to-load-aplayer")?.addEventListener("click",()=>{
     //$("#to-load-aplayer").click(function () {
         try {
             reloadHermit();
