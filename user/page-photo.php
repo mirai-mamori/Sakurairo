@@ -17,25 +17,31 @@ get_header();
         transform-style: preserve-3d;
         cursor: pointer;
     }
+
     .siroi-wrap:hover .siroi-info {
         transform: translateY(0);
     }
+
     .siroi-wrap:hover .siroi-info p {
         opacity: 1;
     }
+
     .siroi-wrap:hover .siroi-info,
     .siroi-wrap:hover .siroi-info p {
         transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     }
+
     .siroi-wrap:hover .siroi-info:after {
         transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
         opacity: 1;
         transform: translateY(0);
     }
+
     .siroi-wrap:hover .siroi-bg {
         transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
         opacity: 0.8;
     }
+
     .siroi-wrap:hover .siroi {
         transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
         box-shadow: rgba(255, 255, 255, 0.2) 0 0 40px 5px, white 0 0 0 1px, rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset white 0 0 0 6px;
@@ -76,15 +82,18 @@ get_header();
         transform: translateY(40%);
         transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
+
     .siroi-info p {
         opacity: 0;
         text-shadow: black 0 2px 3px;
         transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
+
     .siroi-info * {
         position: relative;
         z-index: 1;
     }
+
     .siroi-info:after {
         content: "";
         position: absolute;
@@ -107,29 +116,58 @@ get_header();
         text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
     }
 </style>
-<span class="linkss-title"><?php the_title();?></span>
+<span class="linkss-title">
+    <?php the_title();?>
+</span>
 
-    <div id="siroi-photo" class="container-siroi">
-        <siroi
-            v-for="img in imgs"
-            v-bind:data-image="img.img"
-            v-bind:vertical="function (){
+<div id="siroi-photo" class="container-siroi">
+    <template v-if="showError === false">
+        <siroi v-for="img in imgs" v-bind:data-image="img.img" v-bind:vertical="function (){
                 if(img.vertical == null || img.vertical === true){
                     return true;
                 }else {
                     return false;
                 }
-            }()"
-        >
+            }()">
             <h1 slot="header">{{ img.header }}</h1>
             <p slot="content">{{ img.info }}</p>
         </siroi>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
-    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+    </template>
+    <template v-if="showError">
+        <div>
+            <h1>未上传图片或图片设置异常</h1>
+            <p>请在模板页设置如下类似如下格式的 img 标签,支持本地上传和外部引入</p>
+            <p>如下代码会被渲染成 <a href="https://www.siroi.top/photo/" target="_blank">展示页</a></p>
+            <pre>
+
+        &lt; src="https://www.wahaotu.com/uploads/allimg/202010/1602912171649821.jpg" alt="" data-header="标题"
+             data-info="信息" &gt;
+        &lt; img src="https://www.wahaotu.com/uploads/allimg/202010/1602912171649821.jpg" alt="" &gt;
+        &lt; img src="https://www.wahaotu.com/uploads/allimg/202010/1602912171649821.jpg" alt="" data-info="信息" &gt;
+        &lt; img src="https://www.wahaotu.com/uploads/allimg/202010/1602912171649821.jpg" alt="" vertical=false
+             data-info="信息" &gt;
+        &lt; img src="https://www.wahaotu.com/uploads/allimg/202010/1602912171649821.jpg" alt="" vertical=false
+             data-header="标题" data-info="信息" &gt;
+            </pre>
+            <ol> img 参数说明
+                <li>
+                    data-header:标题
+                </li>
+                <li>
+                    data-info:内容
+                </li>
+                <li>
+                    vertical:是否竖向排列(默认竖向即vertical=true)
+                </li>
+            </ol>
+        </div>
+    </template>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
 <script>
 
-    Vue.config.devtools = true;
+    Vue.config.devtools = false;
 
     Vue.component('siroi', {
         template: `
@@ -147,12 +185,12 @@ get_header();
         </div>
       </div>
     </div>`,
-        props: ['dataImage','vertical'],
+        props: ['dataImage', 'vertical'],
         mounted() {
-            if(this.vertical){
+            if (this.vertical) {
                 this.$refs.siroichild.style.width = "240px";
                 this.$refs.siroichild.style.height = "320px";
-            }else {
+            } else {
                 this.$refs.siroichild.style.width = "320px";
                 this.$refs.siroichild.style.height = "240px";
             }
@@ -188,16 +226,16 @@ get_header();
                 }
             },
             siroiBgImage() {
-                if(this.vertical){
+                if (this.vertical) {
                     return {
-                        width:"280px",
-                        height:"360px",
+                        width: "280px",
+                        height: "360px",
                         backgroundImage: `url(${this.dataImage})`
                     }
-                }else{
+                } else {
                     return {
-                        width:"360px",
-                        height:"280px",
+                        width: "360px",
+                        height: "280px",
                         backgroundImage: `url(${this.dataImage})`
                     }
                 }
@@ -206,14 +244,14 @@ get_header();
         },
         methods: {
             handleMouseMove(e) {
-                this.mouseX = e.pageX - this.$refs.siroi.offsetLeft - this.width/2;
-                this.mouseY = e.pageY - this.$refs.siroi.offsetTop - this.height/2;
+                this.mouseX = e.pageX - this.$refs.siroi.offsetLeft - this.width / 2;
+                this.mouseY = e.pageY - this.$refs.siroi.offsetTop - this.height / 2;
             },
             handleMouseEnter() {
                 clearTimeout(this.mouseLeaveDelay);
             },
             handleMouseLeave() {
-                this.mouseLeaveDelay = setTimeout(()=>{
+                this.mouseLeaveDelay = setTimeout(() => {
                     this.mouseX = 0;
                     this.mouseY = 0;
                 }, 1000);
@@ -223,16 +261,18 @@ get_header();
 
     const app = new Vue({
         el: '#siroi-photo',
-        data:{
-            imgs:null
+        data: {
+            imgs: null,
+            showError: false,
         },
-        mounted(){
+        mounted() {
             axios
-                .get('/wp-admin/admin-ajax.php?action=getPhoto&post='+<?php echo get_queried_object()->ID?>)
+                .get('/wp-admin/admin-ajax.php?action=getPhoto&post=' +<?php echo get_queried_object()->ID ?>)
                 .then(obj => {
-                       if(obj.data.code === 200){
-                           this.imgs = obj.data.imgs;
-                       }
+                    if (obj.data.code === 200) {
+                        this.imgs = obj.data.imgs;
+                        this.showError = this.imgs.length > 0 ? false : true;
+                    }
                 })
                 .catch(function (error) { // 请求失败处理
                     console.log(error);
