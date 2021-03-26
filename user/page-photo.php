@@ -267,7 +267,7 @@ get_header();
         },
         mounted() {
             axios
-                .get('/wp-admin/admin-ajax.php?action=getPhoto&post=' +<?php echo get_queried_object() -> ID ?>)
+                .get('/wp-admin/admin-ajax.php?action=getPhoto&post=' +<?php echo get_queried_object()->ID ?>)
                 .then(obj => {
                     if (obj.data.code === 200) {
                         this.imgs = obj.data.imgs;
