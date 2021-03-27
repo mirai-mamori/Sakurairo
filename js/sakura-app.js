@@ -2498,6 +2498,7 @@ window.onload = function() {
 
 function web_audio() {
     if (mashiro_option.audio) {
+        ready(()=>{
     window.AudioContext = window.AudioContext || window.webkitAudioContext,
         function () {
             if (window.AudioContext) {
@@ -2508,9 +2509,8 @@ function web_audio() {
                     o = 1,dom,
                     a = "♪ ♩ ♫ ♬ ♭ € § ¶ ♯".split(" "),
                     n = !1,
-                    select = document.querySelectorAll(".site-title, #moblieGoTop, .site-branding, .searchbox, .changeSkin-gear, .menu-list>li#star-bg");
+                    select = document.querySelectorAll(".site-title, #moblieGoTop, .site-branding, .searchbox, .changeSkin-gear, .menu-list li");
                 select.forEach((s)=>{
-                    console.log(s);
                     s.addEventListener("mouseenter",(y)=>{
                     if (dom) return;
                     let r = t[i]
@@ -2546,5 +2546,6 @@ function web_audio() {
             })
             }
         }()
+    })
 }
 }
