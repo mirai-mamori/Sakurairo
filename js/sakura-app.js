@@ -2230,20 +2230,47 @@ var home = location.href,
                     return document.getElementById(e);
                 },
                 clearButterbar: function (e) {
-                    if (jQuery(".butterBar").length > 0) {
-                        jQuery(".butterBar").remove();
+                    let butterBar = document.getElementsByClassName("butterBar");
+                    if (butterBar.length > 0) {
+                        for(let i=0;i<butterBar.length;i++){
+                            let a = butterBar[i];
+                            a.remove();
+                        }
                     }
                 },
                 createButterbar: function (message, showtime) {
-                    var t = this;
+                    let t = this;
                     t.clearButterbar();
-                    jQuery("body").append('<div class="butterBar butterBar--center"><p class="butterBar-message">' + message + '</p></div>');
+                    document.body.insertAdjacentHTML('beforeend', '<div class="butterBar butterBar--center"><p class="butterBar-message">' + message + '</p></div>');
+                    let butterBar = () => {
+                        let _butterBar = document.getElementsByClassName("butterBar");
+                        if (_butterBar.length == 0) return;
+                        for (let i=0;i<_butterBar.length;i++){
+                            let a = _butterBar[i];
+                            a.remove();
+                        }
+                    }
                     if (showtime > 0) {
-                        setTimeout("jQuery('.butterBar').remove()", showtime);
+                        setTimeout(() => { butterBar() }, showtime);
                     } else {
-                        setTimeout("jQuery('.butterBar').remove()", 6000);
+                        setTimeout(() => { butterBar() }, 6000);
                     }
                 }
+                // clearButterbar: function (e) {
+                //     if (jQuery(".butterBar").length > 0) {
+                //         jQuery(".butterBar").remove();
+                //     }
+                // },
+                // createButterbar: function (message, showtime) {
+                //     var t = this;
+                //     t.clearButterbar();
+                //     jQuery("body").append('<div class="butterBar butterBar--center"><p class="butterBar-message">' + message + '</p></div>');
+                //     if (showtime > 0) {
+                //         setTimeout("jQuery('.butterBar').remove()", showtime);
+                //     } else {
+                //         setTimeout("jQuery('.butterBar').remove()", 6000);
+                //     }
+                // }
             };
         },
         XCP: function () {
