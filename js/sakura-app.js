@@ -135,13 +135,9 @@ function post_list_show_animation() {
 mashiro_global.font_control = new function () {
     this.change_font = function () {
         if (document.body.classList.contains("serif")){
-        //if ($("body").hasClass("serif")) {
             document.body.classList.remove("serif");
             document.getElementsByClassName("control-btn-serif")[0]?.classList.remove("selected");
             document.getElementsByClassName("control-btn-sans-serif")[0]?.classList.remove("selected");
-            // $("body").removeClass("serif");
-            // $(".control-btn-serif").removeClass("selected");
-            // $(".control-btn-sans-serif").addClass("selected");
             setCookie("font_family", "sans-serif", 30);
         } else {
             document.body.classList.add("serif");
@@ -2409,47 +2405,6 @@ var home = location.href,
                     });
                 }
             });
-        // $(document).pjax('a[target!=_top]', '#page', {
-        //     fragment: '#page',
-        //     timeout: 8000,
-        // }).on('pjax:beforeSend', () => { //离开页面停止播放
-        //     $('.normal-cover-video').each(function () {
-        //         this.pause();
-        //         this.src = '';
-        //         this.load = '';
-        //     });
-        // }).on('pjax:send', function () {
-        //     $("#bar").css("width", "0%");
-        //     if (mashiro_option.NProgressON) NProgress.start();
-        //     Siren.MNH();
-        // }).on('pjax:complete', function () {
-        //     Siren.AH();
-        //     Siren.PE();
-        //     Siren.CE();
-        //     if (mashiro_option.NProgressON) NProgress.done();
-        //     mashiro_global.ini.pjax();
-        //     $("#loading").fadeOut(500);
-        //     if (Poi.codelamp == 'open') {
-        //         self.Prism.highlightAll(event)
-        //     };
-        // }).on('pjax:end', function() {
-        //     if (window.gtag){
-        //         gtag('config', Poi.google_analytics_id, {
-        //             'page_path': window.location.pathname
-        //         });
-        //     }
-        // }).on('submit', '.search-form,.s-search', function (event) {
-        //     event.preventDefault();
-        //     $.pjax.submit(event, '#page', {
-        //         fragment: '#page',
-        //         timeout: 8000,
-        //     });
-        //     if ($('.js-search.is-visible').length > 0) {
-        //         $('.js-toggle-search').toggleClass('is-active');
-        //         $('.js-search').toggleClass('is-visible');
-        //         $('html').css('overflow-y', 'unset');
-        //     }
-        // });
         window.addEventListener('popstate', function (e) {
             Siren.AH();
             Siren.PE();
@@ -2497,15 +2452,10 @@ if ((isWebkit || isOpera || isIe) && document.getElementById && window.addEventL
 /* 首页下拉箭头 */
 function headertop_down() {
     let coverOffset = document.getElementById("content").getBoundingClientRect().top + window.pageYOffset;
-    //var coverOffset = $('#content').offset().top;
     window.scrollTo({
         top: coverOffset,
         behavior: "smooth"
     });
-    // $('html,body').animate({
-    //     scrollTop: coverOffset
-    // },
-    // 600);
 }
 
 window.onload = function() {
@@ -2514,17 +2464,13 @@ window.onload = function() {
     if(!preload) return;
     preload.classList.add('hide');
     preload.classList.remove('show');
-    setTimeout('preload.parentNode.removeChild(preload)',666);
-    //$("html").css('overflow-y', 'unset');
-    //$("#preload").fadeOut();
-    //setTimeout('$("#preload").remove()', 666);
+    setTimeout('preload.remove()',666);
 }
 
 
 
 function web_audio() {
     if (mashiro_option.audio) {
-    let _was = (a,b)=>a.classList.contains(b);
     window.AudioContext = window.AudioContext || window.webkitAudioContext,
         function () {
             if (window.AudioContext) {
@@ -2532,55 +2478,45 @@ function web_audio() {
                     t = "880 987 1046 987 1046 1318 987 659 659 880 784 880 1046 784 659 659 698 659 698 1046 659 1046 1046 1046 987 698 698 987 987 880 987 1046 987 1046 1318 987 659 659 880 784 880 1046 784 659 698 1046 987 1046 1174 1174 1174 1046 1046 880 987 784 880 1046 1174 1318 1174 1318 1567 1046 987 1046 1318 1318 1174 784 784 880 1046 987 1174 1046 784 784 1396 1318 1174 659 1318 1046 1318 1760 1567 1567 1318 1174 1046 1046 1174 1046 1174 1567 1318 1318 1760 1567 1318 1174 1046 1046 1174 1046 1174 987 880 880 987 880".split(" "),//天空之城
                     /*t = "329.628 329.628 349.228 391.995 391.995 349.228 329.628 293.665 261.626 261.626 293.665 329.628 329.628 293.665 293.665 329.628 329.628 349.228 391.995 391.995 349.228 329.628 293.665 261.626 261.626 293.665 329.628 293.665 261.626 261.626 293.665 293.665 329.628 261.626 293.665 329.628 349.228 329.628 261.626 293.665 329.628 349.228 329.628 293.665 261.626 293.665 195.998 329.628 329.628 349.228 391.995 391.995 349.228 329.628 293.665 261.626 261.626 293.665 329.628 293.665 261.626 261.626".split(" "),欢乐颂*/
                     i = 0,
-                    o = 1,
+                    o = 1,dom,
                     a = "♪ ♩ ♫ ♬ ♭ € § ¶ ♯".split(" "),
-                    n = !1
-                document.body.addEventListener("mouseout",function(z){
-                    s = z.target;
-                    if(_was(s,"site-title") || _was(s,"site-branding") || _was(s,"searchbox") || _was(s,"changeSkin-gear") || _was(s.parentNode,"menu-list") || s.id=="moblieGoTop"){
-                   // console.log(s);
-                // $("site-title, #moblieGoTop, .site-branding, .searchbox, .changeSkin-gear, .menu-list>li#star-bg").mouseenter(function (s) {
+                    n = !1,
+                    select = document.querySelectorAll(".site-title, #moblieGoTop, .site-branding, .searchbox, .changeSkin-gear, .menu-list>li#star-bg");
+                select.forEach((s)=>{
+                    console.log(s);
+                    s.addEventListener("mouseenter",(y)=>{
+                    if (dom) return;
                     let r = t[i]
                     r || (i = 0, r = t[i]), i += o
                     let c = e.createOscillator(),
                         l = e.createGain();
                     if (c.connect(l), l.connect(e.destination), c.type = "sine", c.frequency.value = r, l.gain.setValueAtTime(0, e.currentTime), l.gain.linearRampToValueAtTime(1, e.currentTime + .01), c.start(e.currentTime), l.gain.exponentialRampToValueAtTime(.001, e.currentTime + 1), c.stop(e.currentTime + 1), n = !0) {
-                        let d = Math.round(7 * Math.random()),
+                        let d = Math.round(7 * Math.random());
                             dom = document.createElement("b");
                             dom.textContent = a[d],
-                            //u = $("<b/>").text(a[d]),
-                            h = z.pageX,
-                            p = z.pageY - 5;
-                           // console.log(u);
+                            h = y.pageX,
+                            p = y.pageY - 5;
                             dom.style.zIndex = "99999";
                             dom.style.top = p - 100 + "px";
                             dom.style.left = h + "px";
                             dom.style.position = "absolute";
                             dom.style.color = "#FF6EB4";
-                        // u.css({
-                        //     "z-index": 99999,
-                        //     top: p - 20,
-                        //     left: h,
-                        //     position: "absolute",
-                        //     color: "#FF6EB4"
-                        // }), 
                         document.body.appendChild(dom);
                         dom.animate([
                             {top: p +"px"},
                             {opacity: 0}
                         ],{
-                            duration:1500
+                            duration:500
                         })
                         setTimeout(()=>{
                             dom.remove();
-                        },1500)
-                        // function () {
-                        //     u.remove()
-                        // }), 
-                        z.stopPropagation()
+                            dom=null;
+                        },500)
+                        y.stopPropagation();
                     }
                     n = !1
-                }})
+                })
+            })
             }
         }()
 }
