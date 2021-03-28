@@ -1564,7 +1564,6 @@ var home = location.href,
             } catch (e) { }
         },
         NH: function () {
-                var h1 = 0;
                 let h1 = 0;
                 window.addEventListener("scroll",()=>{
                     let s = document.documentElement.scrollTop || window.pageYOffset,
