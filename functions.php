@@ -41,9 +41,15 @@ if ($iro_update_source == 'github'){
 		'Sakurairo'
 	);
 }else if ($iro_update_source == 'official_building'){
-    if ($iro_update_channel != 'preview'){
+    if ($iro_update_channel == 'stable'){
         $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-            'https://update.iro.tw/local/check.json',
+            'https://update.iro.tw/stable/check.json',
+            __FILE__,
+            'Sakurairo'
+        );
+    }else if ($iro_update_channel == 'beta'){
+        $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+            'https://update.iro.tw/beta/check.json',
             __FILE__,
             'Sakurairo'
         );
