@@ -98,7 +98,7 @@ function slideToogle(el, duration = 1000, mode = '', callback) {
 }
 
 function post_list_show_animation() {
-    if (document.getElementsByTagName('article')[0]?.classList.contains("post-list-thumb")) {
+    if (document.querySelector('article') && document.querySelector('article').classList.contains("post-list-thumb")) {
         let options = {
             root: null,
             threshold: [0.66]
@@ -133,16 +133,18 @@ function post_list_show_animation() {
     }
 }
 mashiro_global.font_control = new function () {
+    let cbs = document.getElementsByClassName("control-btn-serif")[0];
+    let cbss = document.getElementsByClassName("control-btn-sans-serif")[0];
     this.change_font = function () {
         if (document.body.classList.contains("serif")) {
             document.body.classList.remove("serif");
-            document.getElementsByClassName("control-btn-serif")[0]?.classList.remove("selected");
-            document.getElementsByClassName("control-btn-sans-serif")[0]?.classList.remove("selected");
+            cbs && cbs.classList.remove("selected");
+            cbss && cbss.classList.remove("selected");
             setCookie("font_family", "sans-serif", 30);
         } else {
             document.body.classList.add("serif");
-            document.getElementsByClassName("control-btn-serif")[0]?.classList.add("selected");
-            document.getElementsByClassName("control-btn-sans-serif")[0]?.classList.remove("selected");
+            cbs && cbs.classList.add("selected");
+            cbss && cbss.classList.remove("selected");
             setCookie("font_family", "serif", 30);
             if (document.body.clientWidth <= 860) {
                 addComment.createButterbar("将从网络加载字体，流量请注意");
@@ -157,8 +159,8 @@ mashiro_global.font_control = new function () {
         }
         if (getCookie("font_family") == "sans-serif") {
             document.body.classList.remove("sans-serif");
-            document.getElementsByClassName("control-btn-serif")[0]?.classList.remove("selected");
-            document.getElementsByClassName("control-btn-sans-serif")[0]?.classList.add("selected");
+            cbs && cbs.classList.remove("selected");
+            cbss && cbss.classList.add("selected");
         }
     }
 }
@@ -167,6 +169,7 @@ mashiro_global.font_control.ini();
 function code_highlight_style() {
     let pre = document.getElementsByTagName("pre");
     let code = document.querySelectorAll("pre code");
+    if (!pre.length)return;
     function gen_top_bar(i) {
         let attributes = {
             'autocomplete': 'off',
@@ -176,7 +179,7 @@ function code_highlight_style() {
             'contenteditable': 'false',
             'design': 'by Mashiro'
         },
-            ele_name = pre[i]?.children[0]?.className,
+            ele_name = pre[i].children[0].className,
             lang = ele_name.substr(0, ele_name.indexOf(" ")).replace('language-', ''),
             code_a = code[i];
         if (lang.toLowerCase() == "hljs") lang = code_a.className.replace('hljs', '') ? code_a.className.replace('hljs', '') : "text";
@@ -193,7 +196,8 @@ function code_highlight_style() {
         gen_top_bar(i);
     }
     hljs.initLineNumbersOnLoad();
-    document.getElementsByClassName("entry-content")[0]?.addEventListener("click", function (e) {
+    let ec = document.querySelector(".entry-content");
+    ec && ec.addEventListener("click", function (e) {
         if (!e.target.classList.contains("highlight-wrap")) return;
         e.target.classList.toggle("code-block-fullscreen");
         document.getElementsByTagName("html")[0].classList.toggle('code-block-fullscreen-html-scroll');
@@ -204,7 +208,8 @@ try {
 } catch (e) { }
 
 if (Poi.reply_link_version == 'new') {
-    document.getElementsByClassName("comments-main")[0]?.addEventListener("click", function (e) {
+    let cm = document.querySelector(".comments-main");
+    if (cm)cm.addEventListener("click", function (e) {
         if (e.target.classList.contains("comment-reply-link")) {
             e.preventDefault();
             e.stopPropagation();
@@ -224,7 +229,8 @@ let ready = function (fn) {
 function attach_image() {
     let cached = document.getElementsByClassName("insert-image-tips")[0],
         upload_img = document.getElementById('upload-img-file');
-    upload_img?.addEventListener("change", (function () {
+    if (!upload_img)return;
+    upload_img.addEventListener("change", (function () {
         if (this.files.length > 10) {
             addComment.createButterbar("每次上传上限为10张.<br>10 files max per request.");
             return 0;
@@ -287,11 +293,12 @@ function add_upload_tips() {
     let file_subit = document.getElementById('upload-img-file'),
         hover = document.getElementsByClassName('insert-image-tips')[0],
         Tip = document.getElementById('uploadTipPopup');
-    file_subit?.addEventListener("mouseenter", function () {
+    if (!file_subit)return;
+    file_subit.addEventListener("mouseenter", function () {
         hover.classList.toggle('insert-image-tips-hover');
         Tip.classList.toggle('show');
     });
-    file_subit?.addEventListener("mouseleave", function () {
+    file_subit.addEventListener("mouseleave", function () {
         hover.classList.toggle('insert-image-tips-hover');
         Tip.classList.toggle('show');
     });
@@ -299,8 +306,8 @@ function add_upload_tips() {
 
 function click_to_view_image() {
     let comment_inline = document.getElementsByClassName('comment_inline_img');
-    if (comment_inline.length == 0) return;
-    document.getElementsByClassName("comments-main")[0]?.addEventListener("click", function (e) {
+    if (!comment_inline.length) return;
+    document.getElementsByClassName("comments-main")[0].addEventListener("click", function (e) {
         if (e.target.classList.contains("comment_inline_img")) {
             let temp_url = e.target.src;
             window.open(temp_url);
@@ -311,7 +318,9 @@ click_to_view_image();
 
 
 function original_emoji_click() {
-    document.querySelector(".menhera-container")?.addEventListener("click", function (e) {
+    let emoji = document.getElementsByClassName('emoji-item');
+    if (!emoji.length) return;
+    document.querySelector(".menhera-container").addEventListener("click", function (e) {
         if (e.target.classList.contains("emoji-item")) {
             grin(e.target.innerText, "custom", "`", "` ");
         }
@@ -347,11 +356,13 @@ function scrollBar() {
                 default: c = "orange";
             }
             cached.style.background = c;
-            let f = document.querySelector(".toc-container");
-            if (f) {
-                f.style.height = document.querySelector(".site-content")?.getBoundingClientRect(outerHeight)["height"] + "px";
+            let f = document.querySelector(".toc-container"),
+                sc = document.querySelector(".site-content"),
+                skinMenu = document.querySelector(".skin-menu");
+            if (f && sc) {
+                f.style.height = sc.getBoundingClientRect(outerHeight)["height"] + "px";
             }
-            document.querySelector(".skin-menu")?.classList.remove("show");
+            skinMenu && skinMenu.classList.remove("show");
         })
     }
 }
@@ -360,17 +371,25 @@ function checkskinSecter() {
     if (mashiro_global.variables.skinSecter === false) {
         let pattern = document.querySelector(".pattern-center"),
             headertop = document.querySelector(".headertop-bar");
-        pattern?.classList.remove("pattern-center");
-        pattern?.classList.add("headertop-bar-sakura");
-        headertop?.classList.remove("headertop-bar");
-        headertop?.classList.add("headertop-bar-sakura");
+        if (pattern){
+            pattern.classList.remove("pattern-center");
+            pattern.classList.add("headertop-bar-sakura");
+        }
+        if (headertop){
+            headertop.classList.remove("headertop-bar");
+            headertop.classList.add("headertop-bar-sakura");
+        }
     } else {
         let pattern = document.querySelector(".pattern-center-sakura"),
             headertop = document.querySelector(".headertop-bar-sakura");
-        pattern?.classList.remove("pattern-center-sakura");
-        pattern?.classList.add("'pattern-center");
-        headertop?.classList.remove("headertop-bar-sakura");
-        headertop?.classList.add("headertop-bar");
+        if (pattern){
+            pattern.classList.remove("pattern-center-sakura");
+            pattern.classList.add("'pattern-center");
+        }
+        if (headertop){
+            headertop.classList.remove("headertop-bar-sakura");
+            headertop.classList.add("headertop-bar");
+        }
         // $(".pattern-center-sakura").removeClass('pattern-center-sakura').addClass('pattern-center');
         // $(".headertop-bar-sakura").removeClass('headertop-bar-sakura').addClass('headertop-bar');
     }
@@ -456,7 +475,9 @@ function mobile_dark_light() {
 }
 
 function no_right_click() {
-    document.getElementById("primary")?.addEventListener("contextmenu", function (e) {
+    let pri = document.getElementById("primary");
+    if(!pri)return;
+    pri.addEventListener("contextmenu", function (e) {
         if (e.target.nodeName.toLowerCase() == "img") {
             e.preventDefault();
             e.stopPropagation();
@@ -536,10 +557,12 @@ ready(function () {
             }
         }, 300);
     }
-    document.querySelector("#changskin")?.addEventListener("click", function () {
+    let changskin = document.querySelector("#changskin"),
+        close_SkinMenu = document.querySelector(".skin-menu #close-skinMenu");
+    changskin && changskin.addEventListener("click", function () {
         document.querySelector(".skin-menu").classList.toggle("show");
     })
-    document.querySelector(".skin-menu #close-skinMenu")?.addEventListener("click", function () {
+    close_SkinMenu && close_SkinMenu.addEventListener("click", function () {
         closeSkinMenu();
     })
     add_upload_tips();
@@ -606,7 +629,7 @@ function timeSeriesReload(flag) {
                     slideToogle(al_post_list_f, 500, 'show');
                 })
             }
-            archives?.addEventListener("click", function (e) {
+            archives.addEventListener("click", function (e) {
                 if (e.target.classList.contains("al_mon")) {
                     slideToogle(e.target.nextElementSibling, 500);
                     e.preventDefault();
@@ -699,7 +722,7 @@ function loadHls() {
         });
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
         video.src = video_src;
-        video?.addEventListener('loadedmetadata', function () {
+        video.addEventListener('loadedmetadata', function () {
             video.play();
         });
     }
@@ -716,7 +739,8 @@ function loadJS(url, callback) {
 }
 
 function coverVideoIni() {
-    if (document.getElementsByTagName('video')[0]?.classList.contains('hls')) {
+    let video = document.getElementsByTagName('video')[0];
+    if (video && video.classList.contains('hls')) {
         if (mashiro_global.variables.has_hls) {
             loadHls();
         } else {
@@ -787,8 +811,9 @@ const pjaxInit = function () {
         getqqinfo();
     } catch { };
     lazyload();
-    let _div = document.getElementsByTagName("div");
-    document.getElementById("to-load-aplayer")?.addEventListener("click", () => {
+    let _div = document.getElementsByTagName("div"),
+        tla = document.getElementById("to-load-aplayer");
+    tla && tla.addEventListener("click", () => {
         try {
             reloadHermit();
         } catch (e) { };
@@ -825,9 +850,10 @@ const pjaxInit = function () {
 }
 
 function sm() {
-    let sm = document.getElementsByClassName('sm');
-    if (sm.length == 0) return;
-    document.querySelector(".comments-main")?.addEventListener("click", (e) => {
+    let sm = document.getElementsByClassName('sm'),
+        cm = document.querySelector(".comments-main");
+    if (!sm.length) return;
+    cm && cm.addEventListener("click", (e) => {
         let list = e.target.parentNode;
         if (list.classList.contains("sm")) {
             let msg = "您真的要设为私密吗？";
@@ -1017,16 +1043,18 @@ if (mashiro_option.float_player_on) {
                         }
                         lrcTag = 2;
                     });
-                    let apSwitchTag = 0;
-                    document.querySelector(".aplayer.aplayer-fixed .aplayer-body")?.classList.add("ap-hover");
-                    document.querySelector(".aplayer-miniswitcher")?.addEventListener("click", () => {
+                    let apSwitchTag = 0,
+                        aplayer_body = document.querySelector(".aplayer.aplayer-fixed .aplayer-body"),
+                        aplayer_minisw = document.querySelector(".aplayer-miniswitcher");
+                    aplayer_body && aplayer_body.classList.add("ap-hover");
+                    player_minisw && player_minisw.addEventListener("click", () => {
                         if (apSwitchTag == 0) {
-                            document.querySelector(".aplayer.aplayer-fixed .aplayer-body")?.classList.remove("ap-hover");
-                            document.getElementById("secondary").classList.add("active");
+                            aplayer_body && aplayer_body.classList.remove("ap-hover");
+                            document.getElementById("secondary") && document.getElementById("secondary").classList.add("active");
                             apSwitchTag = 1;
                         } else {
-                            document.querySelector(".aplayer.aplayer-fixed .aplayer-body")?.classList.add("ap-hover");
-                            document.getElementById("secondary")?.classList.remove("active");
+                            aplayer_body && aplayer_body.classList.add("ap-hover");
+                            document.getElementById("secondary") && document.getElementById("secondary").classList.remove("active");
                             apSwitchTag = 0;
                         }
                     });
@@ -1195,11 +1223,11 @@ function activate_widget() {
     let secondary = document.getElementById("secondary");
     if (document.body.clientWidth > 860) {
         let show_hide = document.querySelector(".show-hide");
-        show_hide?.addEventListener("click", function () {
-            secondary?.classList.toggle("active");
+        show_hide && show_hide.addEventListener("click", function () {
+            secondary && secondary.classList.toggle("active");
         });
     } else {
-        secondary?.remove();
+        secondary && secondary.remove();
     }
 }
 setTimeout(function () {
@@ -1252,7 +1280,8 @@ var home = location.href,
     s = document.getElementById("bgvideo"),
     Siren = {
         MN: function () {
-            document.querySelector(".iconflat")?.addEventListener("click", function () {
+            let iconflat = document.querySelector(".iconflat");
+            iconflat && iconflat.addEventListener("click", function () {
                 document.body.classList.toggle("navOpen");
                 document.getElementById("main-container").classList.toggle("open");
                 document.getElementById("mo-nav").classList.toggle("open");
@@ -1269,8 +1298,10 @@ var home = location.href,
         },
         splay: function () {
             let video_btn = document.getElementById("video-btn");
-            video_btn?.classList.add("video-pause");
-            video_btn?.classList.remove("video-play");
+            if (video_btn){
+                video_btn.classList.add("video-pause");
+                video_btn.classList.remove("video-play");
+            }
             try {
                 video_btn.style.display = "";
                 document.querySelector(".video-stu").style.bottom = "-100px";
@@ -1290,8 +1321,10 @@ var home = location.href,
         },
         spause: function () {
             let video_btn = document.getElementById("video-btn");
-            video_btn?.classList.add("video-play");
-            video_btn?.classList.remove("video-pause");
+            if (video_btn){
+                video_btn.classList.add("video-play");
+                video_btn.classList.remove("video-pause");
+            }
             try {
                 document.querySelector(".focusinfo").style.top = "49.3%";
             } catch { }
@@ -1346,10 +1379,10 @@ var home = location.href,
                     }
                 }
                 s.onended = function () {
-                    document.getElementById("bgvideo")?.setAttribute("src", "");
+                    s.setAttribute("src", "");
                     document.getElementById("video-add").style.display = "none";
-                    _btn?.classList.add("loadvideo");
-                    _btn?.classList.remove("video-pause", "videolive", "haslive");
+                    _btn && _btn.classList.add("loadvideo");
+                    _btn && _btn.classList.remove("video-pause", "videolive", "haslive");
                     document.querySelector(".focusinfo").style.top = "49.3%";
                 }
             });
@@ -1365,7 +1398,7 @@ var home = location.href,
                     document.getElementById("bgvideo").style.minHeight = "100vh";
                 }
             } else {
-                document.querySelector(".headertop")?.classList.add("headertop-bar");
+                document.querySelector(".headertop") && document.querySelector(".headertop").classList.add("headertop-bar");
             }
         },
         PE: function () {
@@ -1536,7 +1569,8 @@ var home = location.href,
                     }
                 }
             });
-            document.querySelector(".search_close")?.addEventListener("click", function () {
+            let _sc = document.querySelector(".search_close");
+            sc && sc.addEventListener("click", function () {
                 let js_search = document.getElementsByClassName("js-search")[0];
                 if (js_search.classList.contains("is-visible")) {
                     document.getElementsByClassName("js-toggle-search")[0].classList.toggle("is-active");
@@ -1550,11 +1584,13 @@ var home = location.href,
                     if (show_Nav.classList.contains("showNav")) {
                         show_Nav.classList.remove("showNav");
                         show_Nav.classList.add("hideNav");
-                        document.querySelector(".site-top .lower nav")?.classList.add("navbar");
+                        let sln = document.querySelector(".site-top .lower nav");
+                        sln && sln.classList.add("navbar");
                     } else {
                         show_Nav.classList.remove("hideNav");
                         show_Nav.classList.add("showNav");
-                        document.querySelector(".site-top .lower nav")?.classList.remove("navbar");
+                        let sln = document.querySelector(".site-top .lower nav");
+                        sln && sln.classList.remove("navbar");
                     }
                 });
                 document.getElementById("loading").addEventListener("click", function () {
@@ -1831,7 +1867,7 @@ var home = location.href,
                             click_to_view_image();
                             let commentwrap = document.querySelector("ul.commentwrap");
                             window.scrollTo({
-                                top: commentwrap?.getBoundingClientRect().top + window.pageYOffset - commentwrap?.clientTop - 200,
+                                top: commentwrap && (commentwrap.getBoundingClientRect().top+ window.pageYOffset - commentwrap.clientTop - 200),
                                 behavior: "smooth"
                             });
                         }
@@ -1896,14 +1932,16 @@ if (Poi.pjax) {
         if (mashiro_option.NProgressON) NProgress.done();
         mashiro_global.ini.pjax();
         let loading = document.getElementById("loading");
-        loading?.classList.add("hide");
-        loading?.classList.remove("show");
+        if (loading){
+            loading.classList.add("hide");
+            loading.classList.remove("show");
+        }
         if (Poi.codelamp == 'open') {
             self.Prism.highlightAll(event)
         };
         if (document.querySelector(".js-search.is-visible")) {
-            document.getElementsByClassName("js-toggle-search")[0]?.classList.toggle("is-active");
-            document.getElementsByClassName("js-search")[0]?.classList.toggle("is-visible");
+            document.getElementsByClassName("js-toggle-search")[0].classList.toggle("is-active");
+            document.getElementsByClassName("js-search")[0].classList.toggle("is-visible");
             document.getElementsByTagName("html")[0].style.overflowY = "unset";
         }
     });

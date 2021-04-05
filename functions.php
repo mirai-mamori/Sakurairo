@@ -288,10 +288,14 @@ function sakura_scripts()
     //     $auto_height = 'fixed';
     // }
     //拦截移动端
+    $pjax_a=null;
+    if(preg_match('/Chrome\/([^\s]+)/i', $_SERVER['HTTP_USER_AGENT'] ?? null, $regs)){
+        $pjax_a = ($regs[1]>80 && akina_option('poi_pjax')) && 1;
+    }
     version_compare($GLOBALS['wp_version'], '5.1', '>=') ? $reply_link_version = 'new' : $reply_link_version = 'old';
     $gravatar_url = iro_opt('gravatar_proxy') ?: 'secure.gravatar.com/avatar';
     wp_localize_script('app', 'Poi', array(
-        'pjax' => (bool)iro_opt('poi_pjax'),
+        'pjax' => $pjax_a,
         'movies' => $movies,
         'windowheight' => $auto_height,
         'codelamp' => $code_lamp,
