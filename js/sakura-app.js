@@ -797,7 +797,6 @@ const pjaxInit = function () {
         }
     });
     for (let i=0;i<_div.length;i++) {
-        console.log(_div[i]);
         if (_div[i].classList.contains("aplayer")) {
             try {
                 reloadHermit();
