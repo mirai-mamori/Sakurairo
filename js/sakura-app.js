@@ -866,7 +866,7 @@ document.body.addEventListener('input', POWERMODE);
 
 function motionSwitch(ele) {
     let motionEles = [".bili", ".menhera", ".tieba"];
-    for (let i=0;i<montionEles.length;i++) {
+    for (let i=0;i<motionEles.length;i++) {
         document.querySelector(motionEles[i] + '-bar').classList.remove('on-hover');
         document.querySelector(motionEles[i] + '-container').style.display = 'none';
     }

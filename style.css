@@ -7376,7 +7376,6 @@ a.toc-link {
     flex-direction: row;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    display: none
 }
 
 .emotion-inline {
@@ -9043,3 +9042,19 @@ p.shuoshuo_time {
     opacity: 0;
     transition: opacity 500ms;
   }
+
+.emotion-show{
+    display:inline;
+}
+.emotion-hide{
+    display:none;
+}
+.emotion-box-show {
+    height: 153px !important;
+}
+
+.emotion-box {
+    transition: all .5s;
+    overflow: hidden;
+    height: 0px;
+}
