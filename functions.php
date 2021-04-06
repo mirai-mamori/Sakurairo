@@ -290,7 +290,7 @@ function sakura_scripts()
     //拦截移动端
     $pjax_a=null;
     if(preg_match('/Chrome\/([^\s]+)/i', $_SERVER['HTTP_USER_AGENT'] ?? null, $regs)){
-        $pjax_a = ($regs[1]>80 && iro_option('poi_pjax')) && 1;
+        $pjax_a = ($regs[1]>80 && iro_opt('poi_pjax')) && 1;
     }
     version_compare($GLOBALS['wp_version'], '5.1', '>=') ? $reply_link_version = 'new' : $reply_link_version = 'old';
     $gravatar_url = iro_opt('gravatar_proxy') ?: 'secure.gravatar.com/avatar';
