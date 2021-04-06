@@ -41,9 +41,15 @@ if ($iro_update_source == 'github'){
 		'Sakurairo'
 	);
 }else if ($iro_update_source == 'official_building'){
-    if ($iro_update_channel != 'preview'){
+    if ($iro_update_channel == 'stable'){
         $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-            'https://update.iro.tw/local/check.json',
+            'https://update.iro.tw/stable/check.json',
+            __FILE__,
+            'Sakurairo'
+        );
+    }else if ($iro_update_channel == 'beta'){
+        $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+            'https://update.iro.tw/beta/check.json',
             __FILE__,
             'Sakurairo'
         );
@@ -282,10 +288,14 @@ function sakura_scripts()
     //     $auto_height = 'fixed';
     // }
     //拦截移动端
+    $pjax_a=null;
+    if(preg_match('/Chrome\/([^\s]+)/i', $_SERVER['HTTP_USER_AGENT'] ?? null, $regs)){
+        $pjax_a = ($regs[1]>80 && iro_option('poi_pjax')) && 1;
+    }
     version_compare($GLOBALS['wp_version'], '5.1', '>=') ? $reply_link_version = 'new' : $reply_link_version = 'old';
     $gravatar_url = iro_opt('gravatar_proxy') ?: 'secure.gravatar.com/avatar';
     wp_localize_script('app', 'Poi', array(
-        'pjax' => (bool)iro_opt('poi_pjax'),
+        'pjax' => $pjax_a,
         'movies' => $movies,
         'windowheight' => $auto_height,
         'codelamp' => $code_lamp,
@@ -1618,7 +1628,7 @@ function change_avatar($avatar)
         if (get_comment_meta($comment->comment_ID, 'new_field_qq', true)) {
             $qq_number = get_comment_meta($comment->comment_ID, 'new_field_qq', true);
             if (iro_opt('qq_avatar_link') == 'off') {
-                return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" data-src="' . stripslashes($m[1]) . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+                return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" data-src="' . stripslashes($m[1]?? null) . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
             } elseif (iro_opt('qq_avatar_link') == 'type_3') {
                 $qqavatar = file_get_contents('http://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin=' . $qq_number);
                 preg_match('/:\"([^\"]*)\"/i', $qqavatar, $matches);

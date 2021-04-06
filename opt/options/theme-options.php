@@ -2794,10 +2794,11 @@ if( class_exists( 'CSF' ) ) {
           array( 'local_global_library',   '==', 'true' ),
           array( 'iro_update_source',   '==', 'official_building' ),
         ),
-        'desc'    => '你可以在此切换更新频道以参与到预览版本的测试中',
+        'desc'    => '你可以在此切换更新频道以参与到新版本的测试中',
         'options'    => array(
           'stable' => '正式频道',
-          'preview' => '预览频道',
+          'beta' => '公共测试频道',
+          'preview' => '预览测试频道',
         ),
         'default'    => 'stable'
       ),
