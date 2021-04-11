@@ -1,0 +1,17 @@
+/**
+ * sakura-script.js - Client script bundle for Sakurairo, a WordPress theme.
+ * @author bymoye
+ * @author KotoriK
+ * @license GPL-v2
+ * Github Repository:
+ * https://github.com/Fuukei/Sakurairo_Scripts
+ * https://github.com/mirai-mamori/Sakurairo source from f7db3c5 
+ * 
+ * modified from Mashiro's work.
+ * *** original header ***
+ * Sakura theme application bundle
+ * @author Mashiro
+ * @url https://2heng.xin
+ * @date 2019.8.3
+ * *** ***
+ */
