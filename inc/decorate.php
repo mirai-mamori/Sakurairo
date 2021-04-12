@@ -1525,13 +1525,6 @@ li.link-item {
 .post-list-thumb:nth-child(2n) .post-thumb a {
     border-radius: 10px 0 0 10px
 }
-.post-list-thumb:nth-child(2n) div.post-date{
-    margin-right:0;
-    margin-left:auto;
-}
-.post-list-thumb:nth-child(2n){
-flex-direction: row-reverse;
-}
 <?php } ?>
 
 <?php if(iro_opt('page_style') == 'sakurairo'){ ?>
