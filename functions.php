@@ -1685,7 +1685,7 @@ function markdown_parser($incoming_comment)
     $column_names = $wpdb->get_row("SELECT * FROM information_schema.columns where 
     table_name='wp_comments' and column_name = 'comment_markdown' LIMIT 1");
     //Add column if not present.
-    if (count($column_names)==0) {
+    if (!isset($column_names)) {
         $wpdb->query("ALTER TABLE wp_comments ADD comment_markdown text");
     }
     $comment_markdown_content = $incoming_comment['comment_content'];
