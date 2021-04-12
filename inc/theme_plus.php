@@ -288,7 +288,7 @@ function the_headPattern(){
     if (have_posts()) : while (have_posts()) : the_post();
     $center = 'single-center';
     $header = 'single-header';
-    $ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
+    //$ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
     global $user_ID; 
     if($user_ID && current_user_can('level_10')) {
         $edit_this_post_link = '<span class="bull">·</span><a href="'.get_edit_post_link().'">EDIT</a>';
@@ -343,7 +343,7 @@ function the_video_headPattern_hls(){
     if (have_posts()) : while (have_posts()) : the_post();
     $center = 'single-center';
     $header = 'single-header';
-    $ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
+    //$ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
     global $user_ID; 
     if($user_ID && current_user_can('level_10')) {
         $edit_this_post_link = '<span class="bull">·</span><a href="'.get_edit_post_link().'">EDIT</a>';
@@ -411,7 +411,7 @@ function the_video_headPattern_normal(){
     if (have_posts()) : while (have_posts()) : the_post();
     $center = 'single-center';
     $header = 'single-header';
-    $ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
+    //$ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
     global $user_ID; 
     if($user_ID && current_user_can('level_10')) {
         $edit_this_post_link = '<span class="bull">·</span><a href="'.get_edit_post_link().'">'._e("EDIT","sakurairo").'</a>';
