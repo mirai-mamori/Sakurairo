@@ -37,18 +37,15 @@ get_header();
         </main><!-- #main -->
     </div><!-- #primary -->
     <script type="text/javascript">
-    $(function () {
-        var oldClass = "";
-        var Obj = "";
-        $(".cbp_tmtimeline li").hover(function () {
-            Obj = $(this).children(".shuoshuo_author_img");
-            Obj = Obj.children("img");
-            oldClass = Obj.attr("class");
-            var newClass = oldClass + " zhuan";
-            Obj.attr("class", newClass);
-        }, function () {
-            Obj.attr("class", oldClass);
+    ready(()=>{
+        document.querySelectorAll('.cbp_tmtimeline li').foreach((e)=>{
+        e.addEventListener("mouseenter",(e)=>{
+            e.querySelector('.shuoshuo_author_img img').classList.add("zhuan");
         })
+        e.addEventListener("mouseleave",(e)=>{
+            e.querySelector('.shuoshuo_author_img img').classList.remove("zhuan");
+        })
+    })
     })
     </script>
 <?php

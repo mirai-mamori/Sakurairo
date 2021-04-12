@@ -2,6 +2,8 @@
  * jquery plugin -- jquery.slideunlock.js
  * www.sucaijiayuan.com
  * created: March 27, 2016
+ * 替换或移除滑动验证后 请删除该js
+ * 
  */
 
 ;(function ($,window,document,undefined) {

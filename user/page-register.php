@@ -162,39 +162,43 @@ if( !empty($_POST['register_reg']) ) {
 get_footer();
 ?>
 <script type="text/javascript">
-	var startTime = 0;
-	var endTime = 0;
-	var numTime = 0;
-	$(function () {
-	    var slider = new SliderUnlock("#slider",{
-	    successLabelTip : "OK"
-	},function(){
-		var sli_width = $("#slider_bg").width();
-        $('#verification-slider').html('').append('<input id="verification-ok" class="input" type="text" size="25" value="Pass!" name="verification" disabled="true" />');
-        
-        endTime = nowTime();
-        numTime = endTime-startTime;
-        endTime = 0;
-        startTime = 0;
-        // 获取到滑动使用的时间 滑动的宽度
-        // alert( numTime );
-        // alert( sli_width );
-	});
-		slider.init();
-	})
+/*
+注册页面滑动验证 注释处理 等待替换
+*/
 
-	/**
-	* 获取时间精确到毫秒
-	* @type
-	*/
-	function nowTime(){
-		var myDate = new Date();
-		var H = myDate.getHours();//获取小时
-		var M = myDate.getMinutes(); //获取分钟
-		var S = myDate.getSeconds();//获取秒
-		var MS = myDate.getMilliseconds();//获取毫秒
-		var milliSeconds = H * 3600 * 1000 + M * 60 * 1000 + S * 1000 + MS;
-		return milliSeconds;
-	}
+	// var startTime = 0;
+	// var endTime = 0;
+	// var numTime = 0;
+	// $(function () {
+	//     var slider = new SliderUnlock("#slider",{
+	//     successLabelTip : "OK"
+	// },function(){
+	// 	var sli_width = $("#slider_bg").width();
+    //     $('#verification-slider').html('').append('<input id="verification-ok" class="input" type="text" size="25" value="Pass!" name="verification" disabled="true" />');
+        
+    //     endTime = nowTime();
+    //     numTime = endTime-startTime;
+    //     endTime = 0;
+    //     startTime = 0;
+    //     // 获取到滑动使用的时间 滑动的宽度
+    //     // alert( numTime );
+    //     // alert( sli_width );
+	// });
+	// 	slider.init();
+	// })
+
+	// /**
+	// * 获取时间精确到毫秒
+	// * @type
+	// */
+	// function nowTime(){
+	// 	var myDate = new Date();
+	// 	var H = myDate.getHours();//获取小时
+	// 	var M = myDate.getMinutes(); //获取分钟
+	// 	var S = myDate.getSeconds();//获取秒
+	// 	var MS = myDate.getMilliseconds();//获取毫秒
+	// 	var milliSeconds = H * 3600 * 1000 + M * 60 * 1000 + S * 1000 + MS;
+	// 	return milliSeconds;
+	// }
 </script>
-<script type='text/javascript' src='<?php bloginfo("template_url"); ?>/user/verification.js'></script>
+<!-- <script type='text/javascript' src='<?php //bloginfo("template_url"); ?>/user/verification.js'></script> -->
