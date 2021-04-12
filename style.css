@@ -12,7 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
 Tags: 多彩、轻松上手、体验完善、高自定义度
 */
-
+.entry-content{
+    width: 100%
+}
 #content {
     animation: main 1s
 }
@@ -1039,8 +1041,13 @@ a:hover {
 
 @media (max-width:1200px) {
 .yya {
+    position: fixed;
+    -webkit-transition: all 1s ease !important;
+    transition: all 1s ease !important;
     width:95%;
 	left:2.5%;
+    background: rgba(255, 255, 255, .75);
+    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
 }
 }
 
@@ -1073,25 +1080,22 @@ a:hover {
 
 .site-title a {
     color: #464646;
-    font-weight: 400
+    font-weight: 400;
+    -webkit-transition: filter .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+    -moz-transition: filter .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+    transition: filter .2s ease-out, border .2s ease-out, opacity .2s ease-out
+
 }
 
 .site-title a:hover {
-    color: #505050
+    color: #FB98C0;
+    filter: drop-shadow(0px 0px 15px);
+
 }
 
 .site-title img {
     height: 40px;
-    margin-top: 17px;
-    opacity: .75;
-    -webkit-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
-    -moz-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
-    transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out
-}
-
-.site-title img:hover {
-    opacity: 1
-}
+    margin-top: 17px;}
 
 .site-description {
     float: right
@@ -1455,7 +1459,9 @@ i.iconfont.hotpost {
 .info-meta a {
     color: #000
 }
-
+.post-list-show{
+    display:flex;
+}
 .post-list:hover .info-meta {
     -webkit-transform: translate3d(-230px, 0, 0);
     transform: translate3d(-230px, 0, 0);
@@ -1553,7 +1559,8 @@ i.iconfont.hotpost {
 
 .post-thumb {
     float: right;
-    width: 55%
+    width: 55%;
+    flex:2 0 15%;
 }
 
 .post-thumb a {
@@ -1578,13 +1585,14 @@ i.iconfont.hotpost {
 }
 
 .post-content-wrap {
-    position: relative;
-    display: inline-block;
-    float: right;
+    flex:3;
+  /*   position: relative;
+     display: inline-block;
+ */    float: right;
     padding-right: 30px;
     padding-left: 0;
-    width: 40%;
-    margin: 20px 10px 0 10px
+    margin: 20px 10px 0 10px;
+    height:min-content;
 }
 
 .float-content {
@@ -1666,15 +1674,20 @@ i.iconfont.hotpost {
     .post-thumb a {
         border-radius: 10px !important
     }
+    .post-list-show{
+        display: block;
+    }
 }
-
 @media (max-width:600px) {
     .post-thumb a {
-        height: 210px
+        height: 100%
     }
     .float-content .post-text {
         font-size: 13px;
         margin-bottom: 1em
+    }
+    article.post{
+        min-height:210px;
     }
 }
 
@@ -1775,7 +1788,6 @@ i.iconfont.hotpost {
 }
 
 .site-footer {
-    padding: 2%;
     background: rgba(255, 255, 255, .8);
     margin-left: auto;
     margin-right: auto;
@@ -5065,9 +5077,6 @@ i.iconfont.down {
     .author-profile {
         display: none
     }
-    .site-footer {
-        padding: 30px;
-    }
     .lower {
         display: none !important
     }
@@ -5130,9 +5139,6 @@ i.iconfont.down {
 @media (max-width:1080px) {
     .info-meta {
         display: none
-    }
-    .site-footer {
-        padding: 30px;
     }
     .we-title:before {
         display: none
@@ -6704,24 +6710,6 @@ input[type=radio]:checked:before {
 .aplayer-miniswitcher,
 .live2d-tool {
     border-radius: 0 6px 6px 0 !important
-}
-
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 0;
-    overflow: hidden
-}
-
-.video-container embed,
-.video-container iframe,
-.video-container object {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%
 }
 
 #Snow {
@@ -8882,6 +8870,15 @@ input#wp-comment-cookies-consent {
     margin-left: -20px;
     margin-top: -20px;
 }
+.has-drop-cap:not(:focus):first-letter {
+    float: left;
+    font-size: 8.4em;
+    line-height: .68;
+    font-weight: 100;
+    margin: .05em .1em 0 0;
+    text-transform: uppercase;
+    font-style: normal;
+}
 
 /* 说说 */
 body.theme-dark .cbp_tmtimeline::before {
@@ -9031,6 +9028,9 @@ p.shuoshuo_time {
 	transform: rotateZ(720deg);
 	-webkit-transform: rotateZ(720deg);
 	-moz-transform: rotateZ(720deg)
+}
+.wp-block-image .aligncenter figcaption{
+text-align: center;
 }
 
 
