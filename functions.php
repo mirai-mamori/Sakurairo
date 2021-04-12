@@ -1682,9 +1682,10 @@ function markdown_parser($incoming_comment)
         siren_ajax_comment_err('评论只支持Markdown啦，见谅╮(￣▽￣)╭<br>Markdown Supported while <i class="fa fa-code" aria-hidden="true"></i> Forbidden');
         return ($incoming_comment);
     }
-    $myCustomer = $wpdb->get_row("SELECT * FROM wp_comments");
+    $column_names = $wpdb->get_row("SELECT * FROM information_schema.columns where 
+    table_name='wp_comments' and column_name = 'comment_markdown' LIMIT 1");
     //Add column if not present.
-    if (!isset($myCustomer->comment_markdown)) {
+    if (!isset($column_names)) {
         $wpdb->query("ALTER TABLE wp_comments ADD comment_markdown text");
     }
     $comment_markdown_content = $incoming_comment['comment_content'];
