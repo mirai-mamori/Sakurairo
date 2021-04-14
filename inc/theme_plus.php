@@ -167,7 +167,11 @@ if(!function_exists('siren_ajax_comment_callback')) {
         if ( !empty( $data ) ) {
           siren_ajax_comment_err($comment->get_error_message());
         } else {
-          exit;
+          if(count($_POST)<=1){
+                  siren_ajax_comment_err("你好像提交了一个空表单。");
+          }else{
+            siren_ajax_comment_err(join(',',array_keys($comment->errors)));
+                 }
         }
       }
       $user = wp_get_current_user();
