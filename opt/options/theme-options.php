@@ -178,8 +178,28 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'theme_darkmode_auto',
         'type'  => 'switcher',
         'title' => '深色模式自动切换',
-        'label'   => '默认开启，深色模式会在22:00-7:00自动切换',
+        'label'   => '默认开启',
         'default' => true
+      ),
+      array(
+        'type'    => 'content',
+        'content' => '<p><strong>客户端当地时间:</strong>深色模式会在22:00-7:00自动切换</p>'
+        .'<p><strong>跟随客户端设置:</strong>跟随客户端浏览器的设置</p>'
+        .'<p><strong>永远开启:</strong>永远开启，除非客户端另有配置</p>',
+        'dependency' => array( 'theme_darkmode_auto', '==', 'true' ),
+
+      ),
+      array(
+        'id'    => 'theme_darkmode_strategy',
+        'type'  => 'select',
+        'title' => '深色模式自动切换策略',
+        'dependency' => array( 'theme_darkmode_auto', '==', 'true' ),
+        'options'     => array(
+          'time'  => '客户端当地时间',
+          'client'  => '跟随客户端设置',
+          'eien'  => '永远开启',
+        ),
+        "default"=>"time"
       ),
 
       array(
