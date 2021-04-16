@@ -43,7 +43,7 @@ class Bilibili
                 $percent = 100;
             } else {
                 preg_match('/第(\d+)./m', $list['progress'], $matches_progress);
-                preg_match('/第(\d+)./m', $list["new_ep"]['index_show'], $matches_new);
+                preg_match('/第(\d+)./m', $list["new_ep"]['index_show']??null, $matches_new);
                 if(isset($matches_progress[1])){
                     $progress = is_numeric($matches_progress[1]) ? $matches_progress[1] : 0;
                 }else{
@@ -64,7 +64,7 @@ class Bilibili
                         <div class="bangumi-summary"> ' . $list['evaluate'] . ' </div>
                         <div class="bangumi-status">
                             <div class="bangumi-status-bar" style="width: ' . $percent . '%"></div>
-                            <p>' . $list['new_ep']['index_show'] . '</p>         
+                            <p>' . $list["new_ep"]['index_show']??null . '</p>         
                         </div>
                     </div>
                 </a>

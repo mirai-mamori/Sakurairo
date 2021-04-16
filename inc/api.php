@@ -244,7 +244,7 @@ function meting_aplayer() {
     $type = $_GET['type'];
     $id = $_GET['id'];
     $wpnonce = $_GET['_wpnonce'];
-    $meting_pnonce = $_GET['meting_pnonce'];
+    // $meting_pnonce = $_GET['meting_pnonce'];
     if ((isset($wpnonce) && !check_ajax_referer('wp_rest', $wpnonce, false)) || (isset($nonce) && !wp_verify_nonce($nonce, $type . '#:' . $id))) {
         $output = array(
             'status' => 403,
