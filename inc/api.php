@@ -261,7 +261,7 @@ function meting_aplayer() {
         } elseif ($type === 'lyric') {
             $response = new WP_REST_Response();
             $response->set_headers(array('cache-control' => 'max-age=3600'));
-            echo $data;
+            $response->set_data($data);
         } else {
             $response = new WP_REST_Response();
             $response->set_status(301);
