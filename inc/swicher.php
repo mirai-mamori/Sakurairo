@@ -7,6 +7,7 @@ var mashiro_global = new Object();
 mashiro_option.NProgressON = <?php if ( iro_opt('nprogress_on') ){ echo 'true'; } else { echo 'false'; } ?>;
 mashiro_option.audio = <?php if ( iro_opt('note_effects') ){ echo 'true'; } else { echo 'false'; } ?>;
 mashiro_option.darkmode = <?php if ( iro_opt('theme_darkmode_auto') ){ echo 'true'; } else { echo 'false'; } ?>;
+<?php if ( iro_opt('theme_darkmode_auto') ):echo 'mashiro_option.dm_strategy="'.iro_opt('theme_darkmode_strategy','time').'"'.PHP_EOL;endif; ?>
 mashiro_option.email_domain = "<?php echo iro_opt('email_domain', ''); ?>";
 mashiro_option.email_name = "<?php echo iro_opt('email_name', ''); ?>";
 mashiro_option.cookie_version_control = "<?php echo iro_opt('cookie_version', ''); ?>";
