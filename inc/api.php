@@ -243,9 +243,9 @@ function bgm_bilibili() {
 function meting_aplayer() {
     $type = $_GET['type'];
     $id = $_GET['id'];
-    $wpnonce = $_GET['_wpnonce'];
-    // $meting_pnonce = $_GET['meting_pnonce'];
-    if ((isset($wpnonce) && !check_ajax_referer('wp_rest', $wpnonce, false)) || (isset($nonce) && !wp_verify_nonce($nonce, $type . '#:' . $id))) {
+    if(in_array('_wpnonce',$_GET))    $wpnonce = $_GET['_wpnonce'];
+    if(in_array('meting_nonce',$_GET)) $meting_nonce = $_GET['meting_nonce'];
+    if ((isset($wpnonce) && !check_ajax_referer('wp_rest', $wpnonce, false)) || (isset($meting_nonce) && !wp_verify_nonce($meting_nonce, $type . '#:' . $id))) {
         $output = array(
             'status' => 403,
             'success' => false,
