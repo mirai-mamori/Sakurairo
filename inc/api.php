@@ -107,7 +107,7 @@ function upload_image(WP_REST_Request $request) {
  * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/image/cover
  */
 function cover_gallery() {
-    $type = $_GET['type'];
+    $type = in_array('type',$_GET) ? $_GET['type']:'';
     if ($type === 'mobile' && iro_opt('random_graphs_mts')){
         $imgurl = Images::mobile_cover_gallery();
     }else{
