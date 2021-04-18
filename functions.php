@@ -1895,7 +1895,7 @@ function get_photo(){
 }
 
 function login_CAPTCHA() {
-    include_once("inc/classes/CAPTCHA.php");
+    include_once('inc/classes/CAPTCHA.php');
     $img = new Sakura\API\CAPTCHA;
     $test = $img->create_captcha_img();
     //最终网页中的具体内容
@@ -1909,13 +1909,13 @@ function CAPTCHA_CHECK($user, $username, $password) {
         return new WP_Error();
     }
     if(isset($_POST['yzm']) && !empty(trim($_POST['yzm']))){
-        include_once("inc/classes/CAPTCHA.php");
+        include_once('inc/classes/CAPTCHA.php');
         $img = new Sakura\API\CAPTCHA;
         $check = $img->check_CAPTCHA($_POST['yzm']);
         if($check['code'] == 5){
             return $user;
         }else{
-            return new WP_Error('prooffail', "<strong>错误</strong>：".$check['msg']);
+            return new WP_Error('prooffail', '<strong>错误</strong>：'.$check['msg']);
             //return home_url('/wp-admin/');
         }
     }else{
