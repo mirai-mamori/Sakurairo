@@ -764,7 +764,7 @@ function custom_headertitle($title)
 {
     return get_bloginfo('name');
 }
-add_filter('login_headertitle', 'custom_headertitle');
+add_filter('login_headertext', 'custom_headertitle');
 
 //Login Page Link
 function custom_loginlogo_url($url)
@@ -1893,3 +1893,33 @@ function get_photo(){
     echo json_encode($back);
     exit();
 }
+
+function login_CAPTCHA() {
+    include_once("inc/classes/CAPTCHA.php");
+    $img = new Sakura\API\CAPTCHA;
+    $test = $img->create_captcha_img();
+    //最终网页中的具体内容
+    echo '<p><label for="captcha" class="captcha">验证码<br><img id="captchaimg" width="120" height="40" src="', $test['data'] ,'"><input type="text" name="yzm" id="yzm" class="input" value="" size="20" tabindex="4" placeholder="请输入验证码">'
+    ."</label></p>";
+    }
+    add_action('login_form','login_CAPTCHA');
+
+function CAPTCHA_CHECK($user, $username, $password) {
+    if (empty($_POST)) {
+        return new WP_Error();
+    }
+    if(isset($_POST['yzm']) && !empty(trim($_POST['yzm']))){
+        include_once("inc/classes/CAPTCHA.php");
+        $img = new Sakura\API\CAPTCHA;
+        $check = $img->check_CAPTCHA($_POST['yzm']);
+        if($check['code'] == 5){
+            return $user;
+        }else{
+            return new WP_Error('prooffail', "<strong>错误</strong>：".$check['msg']);
+            //return home_url('/wp-admin/');
+        }
+    }else{
+        return new WP_Error('prooffail', '<strong>错误</strong>：验证码为空！');
+    }
+}
+add_filter( 'authenticate','CAPTCHA_CHECK',20,3);
