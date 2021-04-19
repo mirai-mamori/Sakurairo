@@ -776,82 +776,36 @@ add_filter('login_headerurl', 'custom_loginlogo_url');
 //Login Page Footer
 function custom_html()
 {
-    if (iro_opt('login_background')) {
-        $loginbg = iro_opt('login_background');
-    } else {
-        $loginbg = 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/login_background.jpg';
-    }
+    $loginbg = iro_opt('login_background') ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/login_background.jpg';
     echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/js/login.js"></script>' . "\n";
-    echo '<script type="text/javascript">' . "\n";
-    echo 'jQuery("body").prepend("<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");' . "\n";
-    echo 'jQuery(\'#bg\').children(\'img\').attr(\'src\', \'' . $loginbg . '\').on(\'load\',function(){' . "\n";
-    echo '	resizeImage(\'bg\');' . "\n";
-    echo '	jQuery(window).bind("resize", function() { resizeImage(\'bg\'); });' . "\n";
-    echo '	jQuery(\'.loading\').fadeOut();' . "\n";
-    echo '});';
-    echo '</script>' . "\n";
-    echo '<script>
-	function verificationOK(){
-		var x, y, z = "verification";
-		var x=$(\'#loginform\').find(\'input[name="verification"]\').val();
-		//var x=document.forms["loginform"]["verification"].value; //原生js实现
-		var y=$(\'#registerform\').find(\'input[name="verification"]\').val();
-		var z=$(\'#lostpasswordform\').find(\'input[name="verification"]\').val();
-		if (x=="verification" || y=="verification" || z=="verification"){
-		  alert("Please slide the block to verificate!");
-		  return false;
-	  }
-    }
-    $(document).ready(function(){
-        $(\'h1 a\').attr(\'style\',\'background-image: url(' . iro_opt('login_logo_img') . '); \');
-		$(".forgetmenot").replaceWith(\'<p class="forgetmenot">Remember Me<input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>\');
-	});
-    </script>';
-if (iro_opt('login_validation', 'true')) {
-    echo '<script>
-	$(document).ready(function(){
-		$( \'<p><div id="verification-slider"><div id="slider"><div id="slider_bg"></div><span id="label">»</span><span id="labelTip">Slide to Verificate</span></div><input type="hidden" name="verification" value="verification" /></div><p>\' ).insertBefore( $( ".submit" ) );
-		$(\'form\').attr(\'onsubmit\',\'return verificationOK();\');
-	});
-	</script>';
     echo '<script type="text/javascript">
-		var startTime = 0;
-		var endTime = 0;
-		var numTime = 0;
-		$(function () {
-			var slider = new SliderUnlock("#slider",{
-			successLabelTip : "OK"
-		},function(){
-			var sli_width = $("#slider_bg").width();
-			$(\'#verification-slider\').html(\'\').append(\'<input id="verification-ok" class="input" type="text" size="25" value="OK!" name="verification" disabled="true" />\');
-
-			endTime = nowTime();
-			numTime = endTime-startTime;
-			endTime = 0;
-			startTime = 0;
-			// 获取到滑动使用的时间 滑动的宽度
-			// alert( numTime );
-			// alert( sli_width );
-		});
-			slider.init();
-		})
-
-		/**
-		* 获取时间精确到毫秒
-		* @type
-		*/
-		function nowTime(){
-			var myDate = new Date();
-			var H = myDate.getHours();//获取小时
-			var M = myDate.getMinutes(); //获取分钟
-			var S = myDate.getSeconds();//获取秒
-			var MS = myDate.getMilliseconds();//获取毫秒
-			var milliSeconds = H * 3600 * 1000 + M * 60 * 1000 + S * 1000 + MS;
-			return milliSeconds;
-		}
-	</script>
-	<script type="text/javascript" src="' . get_template_directory_uri() . '/user/verification.js"></script>';
-}
+    document.body.insertAdjacentHTML("afterbegin","<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");
+    document.head.insertAdjacentHTML("afterbegin","<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
+    const bg_img = document.querySelector("#bg img"),loading = document.querySelector(".loading");
+    bg_img.setAttribute("src","',$loginbg, '");
+    bg_img.addEventListener("load",function(){
+        resizeImage(\'bg\');
+        window.onresize = ()=>{resizeImage("bg");}
+        loading.classList.add("hide");
+        loading.classList.remove("show");
+        loading.addEventListener("transitionend",function(){this.style.display="none"});
+	});
+    </script>',"\n";
+    echo '<script>
+    document.addEventListener("DOMContentLoaded", ()=>{
+        document.querySelector("h1 a").style.backgroundImage = "url(\'' ,iro_opt('login_logo_img') , '\') ";
+        document.querySelector(".forgetmenot").outerHTML = \'<p class="forgetmenot">Remember Me<input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p> \';
+        document.getElementById("captchaimg").addEventListener("click",(e)=>{
+            fetch("',rest_url('sakura/v1/captcha/create'),'")
+            .then((response)=>{
+                return response.json();
+            })
+            .then((json)=>{
+                e.target.src = json["data"];
+            });
+        })
+    }, false);
+    </script>';
 }
 add_action('login_footer', 'custom_html');
 
