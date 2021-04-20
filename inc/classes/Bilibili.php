@@ -56,19 +56,21 @@ class Bilibili
                 }
                 $percent = $progress / $total * 100;
             }
-            $html .= '<div class="column">
-                <a class="bangumi-item" href="https://bangumi.bilibili.com/anime/' . $list['season_id'] . '/" target="_blank" rel="nofollow">
-                <img class="bangumi-image" src="' . str_replace('http://', 'https://', $list['cover']) . '"/>
-                    <div class="bangumi-info">
-                        <h3 class="bangumi-title" title="' . $list['title'] . '">' . $list['title'] . '</h2>
-                        <div class="bangumi-summary"> ' . $list['evaluate'] . ' </div>
-                        <div class="bangumi-status">
-                            <div class="bangumi-status-bar" style="width: ' . $percent . '%"></div>
-                            <p>' . $list["new_ep"]['index_show']??null . '</p>         
+            if(isset($list["new_ep"]['index_show'])){
+                $html .= '<div class="column">
+                    <a class="bangumi-item" href="https://bangumi.bilibili.com/anime/' . $list['season_id'] . '/" target="_blank" rel="nofollow">
+                    <img class="bangumi-image" src="' . str_replace('http://', 'https://', $list['cover']) . '"/>
+                        <div class="bangumi-info">
+                            <h3 class="bangumi-title" title="' . $list['title'] . '">' . $list['title'] . '</h2>
+                            <div class="bangumi-summary"> ' . $list['evaluate'] . ' </div>
+                            <div class="bangumi-status">
+                                <div class="bangumi-status-bar" style="width: ' . $percent . '%"></div>
+                                <p>' . $list["new_ep"]['index_show'] . '</p>         
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>';
+                    </a>
+                </div>';
+            }
         }
         $html .= '</div><br><div id="bangumi-pagination">' . $next . '</div>';
         return $html;
