@@ -11,7 +11,7 @@ class CAPTCHA
      * CAPTCHA constructor.
      */
     public function __construct() {
-        $this->font = dirname(dirname(__FILE__)) . '\\KumoFont.ttf';
+        $this->font = dirname(dirname(__FILE__)) . '/KumoFont.ttf';
         $this->timestamp = time();
         $this->uniqid = uniqid();
     }
