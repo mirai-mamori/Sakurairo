@@ -66,7 +66,7 @@ const mashiro_option = {
     jsdelivr_css_src : "https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@<?php echo SAKURA_VERSION; ?>/cdn/css/lib.min.css",
     <?php } ?>
     <?php if (iro_opt('aplayer_server') != 'off'): ?>
-    float_player_on : true;
+    float_player_on : true,
     meting_api_url : "<?php echo rest_url('sakura/v1/meting/aplayer'); ?>",
     <?php endif; ?>
 
