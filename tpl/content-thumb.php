@@ -51,7 +51,7 @@ $the_cat = get_the_category();
 				<div class="post-meta">
 				<?php
 					if (iro_opt("is_author_meta_show")) {
-						if(!function_exists('get_author_meta_spans')){require __DIR__ . '/meta-author.php';}
+						if(!function_exists('get_author_meta_spans')){require get_stylesheet_directory(). '/tpl/meta-author.php';}
 						get_author_meta_spans();
 					}
 					?>

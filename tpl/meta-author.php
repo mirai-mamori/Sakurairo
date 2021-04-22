@@ -20,11 +20,12 @@
             $authors = array($authordata);
         }
         $returns = array_map(function ($author) {
+            $author_post_url=get_author_posts_url($author->ID);
             return '<span class="meta-author">' .
-                '<a href="' . get_author_posts_url($author->ID) . '">' .
-                '<img class="avatar" src="' . get_avatar_url($author->ID) . '"/>' .
+                '<a href="' . $author_post_url . '">' .
+                get_avatar($author,16,'',$author->display_name,array("class"=>"avatar")).
                 '</a>' .
-                '<a rel="author" title="' . $author->display_name . '" href="' . get_author_posts_url($author->ID, $author->user_nicename) . '">'
+                '<a rel="author" title="' . $author->display_name . '" href="' . $author_post_url . '">'
                 . $author->display_name .
                 '</a>' .
                 '</span>';
