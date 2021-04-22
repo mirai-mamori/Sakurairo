@@ -38,7 +38,7 @@ if ( ! class_exists( 'CSF_Field_group' ) ) {
 
         echo $this->field_before();
 
-        echo '<div class="csf-cloneable-item csf-cloneable-hidden">';
+        echo '<div class="csf-cloneable-item csf-cloneable-hidden" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
 
           echo '<div class="csf-cloneable-helper">';
           echo '<i class="csf-cloneable-sort fas fa-arrows-alt"></i>';

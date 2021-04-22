@@ -1631,7 +1631,7 @@ if( class_exists( 'CSF' ) ) {
         ),
         'desc'   => '最佳宽度820px，最佳高度67px',
         'library'      => 'image',
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/announcement_bg.jpg'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/announcement_bg.jpg'
       ),
 
       array(
@@ -1868,9 +1868,9 @@ if( class_exists( 'CSF' ) ) {
           'link1' => '',
           'link2' => '',
           'link3' => '',
-          'img1'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/exhibition1.jpg',
-          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/exhibition2.jpg',
-          'img3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/exhibition3.jpg',
+          'img1'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/exhibition1.jpg',
+          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/exhibition2.jpg',
+          'img3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/exhibition3.jpg',
           'title1' => 'アンコール',
           'title2' => 'ハルジオン',
           'title3' => 'かいぶつ',
@@ -2451,7 +2451,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '邮件模板特色图片',
         'desc'   => '设置你的回复邮件上方背景图片',
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/mail_head.jpg'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/mail_head.jpg'
       ),
 
       array(
@@ -2504,7 +2504,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '登录界面背景图片',
         'desc'   => '设置你的登录界面背景图片，此选项留空则显示默认背景',
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/login_background.jpg'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/login_background.jpg'
       ),
 
       array(
@@ -2521,15 +2521,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '登录界面Logo',
         'desc'   => '设置你的登录界面Logo',
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/login_logo.png'
-      ),
-
-      array(
-        'id'     => 'login_validation',
-        'type'   => 'switcher',
-        'title'  => '登录界面滑动验证',
-        'label'   => '开启之后登录需要经过滑动验证',
-        'default' => false
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/login_logo.png'
       ),
 
       array(
@@ -2551,7 +2543,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '仪表盘背景图片',
         'desc'   => '设置你的仪表盘背景图片，此选项留空则显示白色背景',
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/admin_background.jpg'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/admin_background.jpg'
       ),
 
       array(
@@ -2559,7 +2551,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '仪表盘一级菜单颜色',
         'desc'    => '自定义颜色',
-        'default' => '#a9c7d4'
+        'default' => '#ffa670'
       ),  
 
       array(
@@ -2567,7 +2559,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '仪表盘二级菜单颜色',
         'desc'    => '自定义颜色',
-        'default' => '#98b3bf'
+        'default' => '#ffb281'
       ),  
 
       array(
@@ -2575,7 +2567,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '仪表盘强调颜色',
         'desc'    => '自定义颜色',
-        'default' => '#8a8276'
+        'default' => '#634a4c'
       ),  
 
       array(
@@ -2583,7 +2575,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '仪表盘按钮颜色',
         'desc'    => '自定义颜色',
-        'default' => '#8995ad'
+        'default' => '#ab705f'
       ),  
 
       array(
@@ -2768,7 +2760,7 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/ultramarinelogo.gif"  alt="主题信息" />',
+        'content' => '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/encorelogo.gif"  alt="主题信息" />',
       ),
 
       array(

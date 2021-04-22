@@ -16,7 +16,7 @@ if ( ! class_exists( 'CSF_Field_callback' ) ) {
 
     public function render() {
 
-      if ( isset( $this->field['function'] ) && function_exists( $this->field['function'] ) ) {
+      if ( isset( $this->field['function'] ) && is_callable( $this->field['function'] ) ) {
 
         $args = ( isset( $this->field['args'] ) ) ? $this->field['args'] : null;
 
@@ -28,3 +28,4 @@ if ( ! class_exists( 'CSF_Field_callback' ) ) {
 
   }
 }
+

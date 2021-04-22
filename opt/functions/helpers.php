@@ -36,7 +36,7 @@ if ( ! function_exists( 'csf_array_search' ) ) {
  * @version 1.0.0
  *
  */
-if ( ! function_exists( 'csf_microtime' ) ) {
+if ( ! function_exists( 'csf_timeout' ) ) {
   function csf_timeout( $timenow, $starttime, $timeout = 30 ) {
     return ( ( $timenow - $starttime ) < $timeout ) ? true : false;
   }

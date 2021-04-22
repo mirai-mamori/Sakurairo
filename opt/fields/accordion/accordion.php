@@ -20,7 +20,7 @@ if ( ! class_exists( 'CSF_Field_accordion' ) ) {
 
       echo $this->field_before();
 
-      echo '<div class="csf-accordion-items">';
+      echo '<div class="csf-accordion-items" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
 
       foreach ( $this->field['accordions'] as $key => $accordion ) {
 

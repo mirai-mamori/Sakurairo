@@ -30,7 +30,7 @@ if ( ! class_exists( 'CSF_Field_repeater' ) ) {
 
         echo $this->field_before();
 
-        echo '<div class="csf-repeater-item csf-repeater-hidden">';
+        echo '<div class="csf-repeater-item csf-repeater-hidden" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
         echo '<div class="csf-repeater-content">';
         foreach ( $this->field['fields'] as $field ) {
 

@@ -18,7 +18,7 @@ if ( ! class_exists( 'CSF_Field_sortable' ) ) {
 
       echo $this->field_before();
 
-      echo '<div class="csf-sortable">';
+      echo '<div class="csf-sortable" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
 
       $pre_sortby = array();
       $pre_fields = array();

@@ -42,13 +42,6 @@ if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize
     public $field  = '';
     public $unique = '';
 
-    public function enqueue() {
-
-      // parent::enqueue();
-      // echo 'xxx';
-
-    }
-
     public function render() {
 
       $depend  = '';
@@ -110,6 +103,7 @@ if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize
         'fieldset',
         'group',
         'image_select',
+        'link',
         'link_color',
         'media',
         'palette',

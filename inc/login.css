@@ -19,21 +19,6 @@ body { background:none !important; overflow:hidden;}
 	background: rgba(255, 255, 255, 0.45);
 }
 
-/* login 
-#login { 
-	font:14px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
-	position:absolute;
-	background: rgba(255, 255, 255, 0.40);
-	border-radius: 12px;
-	top:50%;
-	left:50%;
-	width:350px;
-    height: 500px;
-	padding:0px !important;
-	margin:-265px 0px 0px -175px !important; 
-    background-position: center 48%;
-}*/
-
 #login h1 a { 
 	font-family:"Microsoft Yahei";
 	font-weight:bold;
@@ -47,7 +32,7 @@ body { background:none !important; overflow:hidden;}
 	/*text-shadow:1px 1px 0px #000;*/ 
 	margin-bottom:10px;
 	margin-top: 25px; 
-	background-image:url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/login_logo.png);
+	background-image:url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/login_logo.png);
 	background-position: center bottom !important;
 	background-size: contain;
 	padding-top: 20px;
