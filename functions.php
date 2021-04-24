@@ -291,7 +291,7 @@ function sakura_scripts()
     version_compare($GLOBALS['wp_version'], '5.1', '>=') ? $reply_link_version = 'new' : $reply_link_version = 'old';
     $gravatar_url = iro_opt('gravatar_proxy') ?: 'secure.gravatar.com/avatar';
     wp_localize_script('app', 'Poi', array(
-        'pjax' => iro_opt('poi_pjax'),
+        'pjax' => iro_opt('poi_pjax')?'1':'',
         'movies' => $movies,
         'windowheight' => $auto_height,
         'codelamp' => $code_lamp,
