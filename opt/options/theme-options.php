@@ -911,6 +911,17 @@ if( class_exists( 'CSF' ) ) {
       ),   
 
       array(
+        'id'      => 'preload_blur',
+        'title'   => '预加载模糊过渡效果',
+        'dependency' => array( 'preload_animation', '==', 'true' ),
+        'desc'    => '模糊过渡持续时间，单位毫秒ms，为0时关闭。',
+        'default' => '0',
+        'type'   => 'slider',
+        'step'   => '10',
+        'max'   => '10000',
+      ), 
+
+      array(
         'id'          => 'falling_effects',
         'type'        => 'select',
         'title'       => '飘落特效',
