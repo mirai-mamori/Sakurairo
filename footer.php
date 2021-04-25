@@ -185,12 +185,13 @@ $reception_background = iro_opt('reception_background');
 <link rel="stylesheet" href="<?php echo $mashiro_logo['font_link']; ?>" media="all">
 
 <!-- 收缩、展开 -->
-<script>jQuery(document).ready(
+<!-- moved to app.js -->
+<!-- <script>jQuery(document).ready(
 function(jQuery){
 jQuery('.collapseButton').click(function(){
 jQuery(this).parent().parent().find('.xContent').slideToggle('slow');
 });
-});</script>
+});</script> -->
 
 
 </body>
