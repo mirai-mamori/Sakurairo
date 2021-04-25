@@ -2742,6 +2742,13 @@ if( class_exists( 'CSF' ) ) {
         'label'   => '开启之后将替换Fancybox作为图片灯箱效果，不建议使用',
         'default' => false
       ),
+      array(
+        'id'     => 'fancybox',
+        'type'   => 'switcher',
+        'title'  => 'FancyBox灯箱效果',
+        'dependency' => array( 'image_viewer', '==', 'false' ),
+        'default' => false
+      ),
 
     )
   ) );

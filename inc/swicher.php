@@ -51,6 +51,7 @@ const mashiro_option = {
     <?php } ?>
     land_at_home:<?php echo is_home() ? 'true':'false'; ?>,
     baguetteBoxON:<?php echo iro_opt('image_viewer') == "0" ? 'false':'true' ?>,
+    fancybox:<?php echo iro_opt('fancybox') == "0" ? 'false':'true' ?>,
     clipboardCopyright:<?php echo iro_opt('clipboard_copyright') == "0" ? 'false':'true' ?>,
 
     <?php if(iro_opt('entry_content_style') == "sakurairo"){ ?>
