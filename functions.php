@@ -232,7 +232,7 @@ add_action('init', 'shuoshuo_custom_init');
 
 function admin_lettering()
 {
-    echo '<style type="text/css">body{font-family: Microsoft YaHei;}</style>';
+    echo '<style>body{font-family: Microsoft YaHei;}</style>';
 }
 add_action('admin_head', 'admin_lettering');
 
@@ -845,7 +845,7 @@ function comment_mail_notify($comment_id)
 {
     $mail_user_name = iro_opt('mail_user_name') ? iro_opt('mail_user_name') : 'poi';
     $comment = get_comment($comment_id);
-    $parent_id = $comment->comment_parent ? $comment->comment_parent : '';
+    $parent_id = $comment->comment_parent ?: '';
     $spam_confirmed = $comment->comment_approved;
     $mail_notify = iro_opt('mail_notify') ? get_comment_meta($parent_id, 'mail_notify', false) : false;
     $admin_notify = iro_opt('admin_notify') ? '1' : (get_comment($parent_id)->comment_author_email != get_bloginfo('admin_email') ? '1' : '0');

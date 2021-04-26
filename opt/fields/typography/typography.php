@@ -429,7 +429,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
       $is_google = false;
 
       if ( ! empty( $this->value['type'] ) ) {
-        $is_google = ( $this->value['type'] === 'google' ) ? true : false;
+        $is_google = $this->value['type'] === 'google';
       } else {
         CSF::include_plugin_file( 'fields/typography/google-fonts.php' );
         $is_google = ( array_key_exists( $this->value['font-family'], csf_get_google_fonts() ) ) ? true : false;

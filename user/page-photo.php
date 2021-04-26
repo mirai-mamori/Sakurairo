@@ -271,7 +271,7 @@ get_header();
                 .then(obj => {
                     if (obj.data.code === 200) {
                         this.imgs = obj.data.imgs;
-                        this.showError = this.imgs.length > 0 ? false : true;
+                        this.showError = this.imgs.length <= 0;
                     }
                 })
                 .catch(function (error) { // 请求失败处理

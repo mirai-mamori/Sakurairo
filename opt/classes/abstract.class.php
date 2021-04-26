@@ -35,7 +35,7 @@ if ( ! class_exists( 'CSF_Abstract' ) ) {
           $field_id     = ( ! empty( $field['id'] ) ) ? $field['id'] : '';
           $field_type   = ( ! empty( $field['type'] ) ) ? $field['type'] : '';
           $field_output = ( ! empty( $field['output'] ) ) ? $field['output'] : '';
-          $field_check  = ( $field_type === 'typography' || $field_output ) ? true : false;
+          $field_check  = $field_type === 'typography' || $field_output;
           $field_class  = 'CSF_Field_' . $field_type;
 
           if ( $field_type && $field_id ) {

@@ -1,6 +1,6 @@
 <?php
 function customizer_css() { ?>
-<style type="text/css">
+<style>
 <?php // Style Settings
 if(iro_opt('nav_menu_display') == 'unfold'){ ?>
 .site-top .lower nav {display: block !important;}
