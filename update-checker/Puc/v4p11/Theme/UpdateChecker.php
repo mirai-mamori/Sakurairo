@@ -21,7 +21,7 @@ if ( !class_exists('Puc_v4p11_Theme_UpdateChecker', false) ):
 			parent::__construct(
 				$metadataUrl,
 				$stylesheet,
-				$customSlug ? $customSlug : $stylesheet,
+				$customSlug ?: $stylesheet,
 				$checkPeriod,
 				$optionName
 			);

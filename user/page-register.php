@@ -96,7 +96,7 @@ if( !empty($_POST['register_reg']) ) {
 		<?php endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-<style type="text/css">
+<style>
 #slider {
 	margin: 0 auto 20px auto;
 	width: 300px;

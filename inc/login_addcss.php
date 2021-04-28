@@ -1,4 +1,4 @@
-<style type="text/css">
+<style>
 .forgetmenot input:checked + label {
     background: <?php echo iro_opt('theme_skin'); ?>;
 }

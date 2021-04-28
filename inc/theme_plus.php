@@ -227,7 +227,7 @@ if(iro_opt('exlogin_url')){
 
 // 登录跳转
 function Exuser_center(){ ?>
-  <script language='javascript' type='text/javascript'> 
+  <script type='text/javascript'>
     var secs = 5; //倒计时的秒数 
     var URL;
     var TYPE; 

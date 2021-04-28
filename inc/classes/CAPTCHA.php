@@ -95,7 +95,7 @@ class CAPTCHA
      * check_CAPTCHA
      *
      * @param  string $captcha
-     * @return json
+     * @return array
      */
     public function check_CAPTCHA(string $captcha){
         $temp = time();
@@ -104,7 +104,7 @@ class CAPTCHA
             $code = 3;
             $msg = '非法请求';
         }
-        elseif (!$captcha || isset($captcha{5}) || !isset($captcha{4})){
+        elseif (!$captcha || isset($captcha[5]) || !isset($captcha[4])){
             $code = 3;
             $msg = '请输入正确的验证码!';
         }

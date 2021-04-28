@@ -12,7 +12,7 @@ get_header();
 		<div class="description"><?php echo get_the_author_meta( 'description' ) ? get_the_author_meta( 'description' ) : iro_opt('signature_text', 'Carpe Diem and Do what I like'); ?></div>
 	</div>
 </div>
-<style type="text/css">
+<style>
 	.author_info{
 		margin-top: 50px;
 		overflow: hidden;
