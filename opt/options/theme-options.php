@@ -2685,56 +2685,6 @@ if( class_exists( 'CSF' ) ) {
         'max'   => '24',
         'default'    => '0'
       ),
-
-      array(
-        'type'    => 'submessage',
-        'style'   => 'danger',
-        'content' => '以下设置不推荐盲目进行修改，请在他人的指导下使用',
-      ),
-
-      array(
-        'id'     => 'image_cdn',
-        'type'   => 'text',
-        'title'  => '图片CDN',
-        'desc'   => '注意：填写格式为 http(s)://你的CDN域名/。也就是说，原路径为 http://your.domain/wp-content/uploads/2018/05/xx.png 的图片将从 http://你的CDN域名/2018/05/xx.png 加载',
-        'default'     => ''
-      ),
-
-      array(
-        'id'     => 'classify_display',
-        'type'   => 'text',
-        'title'  => '不显示的文章分类',
-        'desc'   => '填写分类ID，多个用英文“ , ”分开',
-      ),
-
-      array(
-        'id'     => 'image_category',
-        'type'   => 'text',
-        'title'  => '图片展示分类',
-        'desc'   => '填写分类ID，多个用英文“ , ”分开',
-      ),
-
-      array(
-        'id'     => 'exlogin_url',
-        'type'   => 'text',
-        'title'  => '指定登录地址',
-        'desc'   => '强制不使用WordPress登录页面地址登录，填写新建的登陆页面地址，比如：http://www.xxx.com/login。注意填写前先测试下你新建的页面是可以正常打开的，以免造成无法进入后台等情况',
-      ),
-
-      array(
-        'id'     => 'exregister_url',
-        'type'   => 'text',
-        'title'  => '指定注册地址',
-        'desc'   => '该地址在登录页面作为注册入口，如果你指定了登录地址，则建议填写',
-      ),
-
-      array(
-        'id'     => 'cookie_version',
-        'type'   => 'text',
-        'title'  => '版本控制',
-        'desc'   => '用于更新前端Cookie和浏览器缓存，可使用任意字符串',
-      ),
-
       array(
         'type'    => 'subheading',
         'content' => '灯箱',
@@ -2811,7 +2761,54 @@ if( class_exists( 'CSF' ) ) {
         ),
         'default'=>'themes/prism-tomorrow.min.css'
       ),
+      array(
+        'type'    => 'submessage',
+        'style'   => 'danger',
+        'content' => '以下设置不推荐盲目进行修改，请在他人的指导下使用',
+      ),
 
+      array(
+        'id'     => 'image_cdn',
+        'type'   => 'text',
+        'title'  => '图片CDN',
+        'desc'   => '注意：填写格式为 http(s)://你的CDN域名/。也就是说，原路径为 http://your.domain/wp-content/uploads/2018/05/xx.png 的图片将从 http://你的CDN域名/2018/05/xx.png 加载',
+        'default'     => ''
+      ),
+
+      array(
+        'id'     => 'classify_display',
+        'type'   => 'text',
+        'title'  => '不显示的文章分类',
+        'desc'   => '填写分类ID，多个用英文“ , ”分开',
+      ),
+
+      array(
+        'id'     => 'image_category',
+        'type'   => 'text',
+        'title'  => '图片展示分类',
+        'desc'   => '填写分类ID，多个用英文“ , ”分开',
+      ),
+
+      array(
+        'id'     => 'exlogin_url',
+        'type'   => 'text',
+        'title'  => '指定登录地址',
+        'desc'   => '强制不使用WordPress登录页面地址登录，填写新建的登陆页面地址，比如：http://www.xxx.com/login。注意填写前先测试下你新建的页面是可以正常打开的，以免造成无法进入后台等情况',
+      ),
+
+      array(
+        'id'     => 'exregister_url',
+        'type'   => 'text',
+        'title'  => '指定注册地址',
+        'desc'   => '该地址在登录页面作为注册入口，如果你指定了登录地址，则建议填写',
+      ),
+
+      array(
+        'id'     => 'cookie_version',
+        'type'   => 'text',
+        'title'  => '版本控制',
+        'desc'   => '用于更新前端Cookie和浏览器缓存，可使用任意字符串',
+      ),
     )
   ) );
 
