@@ -2754,7 +2754,7 @@ if( class_exists( 'CSF' ) ) {
       ),array(
         'id'       => 'code_highlight_prism_theme_dark',
         'type'     => 'text',
-        'title'    => 'Prism.js：暗色模式下的代码高亮主题',
+        'title'    => 'Prism.js：深色模式下的代码高亮主题',
         'desc'=>'相对于自动加载地址。留空以使用默认值',
         'dependency' => array(
           array( 'code_highlight_method',   '==', 'prism' ),
