@@ -2736,6 +2736,10 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'type'    => 'subheading',
+        'content' => '灯箱',
+      ),
+      array(
         'id'     => 'image_viewer',
         'type'   => 'switcher',
         'title'  => 'BaguetteBox灯箱效果',
