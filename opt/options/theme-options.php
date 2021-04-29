@@ -2752,6 +2752,64 @@ if( class_exists( 'CSF' ) ) {
         'title'  => 'FancyBox灯箱效果',
         'dependency' => array( 'image_viewer', '==', 'false' ),
         'default' => false
+      ), 
+      array(
+        'type'    => 'subheading',
+        'content' => '代码高亮',
+      ),array(
+        'type'    => 'content',
+        'content' => '<p><strong>Highlight.js:</strong>默认值，自动识别语言。</p>'
+        .'<p><strong>Prism.js:</strong>需要指定语言，使用方法请参阅<a href="https://prismjs.com/#basic-usage">基本用法</a>与<a href="https://prismjs.com/plugins/file-highlight/">如何代码高亮动态载入的文件</a>。</p>'
+        .'<p><strong>自定义:</strong>适用于另有配置的情况。</p>',
+      ),
+      array(
+        'id'     => 'code_highlight_method',
+        'type'  => 'select',
+        'title' => '代码高亮程序',
+        'options'     => array(
+          'hljs'  => 'Highlight.js',
+          'prism'  => 'Prism.js',
+          'custom'  => '自定义',
+        ),
+        "default"=>"hljs"
+      ),
+      array(
+        'id'       => 'code_highlight_prism_line_number_all',
+        'type'     => 'switcher',
+        'title'    => 'Prism.js：为所有代码块增加行数显示',
+        'dependency' => array(
+          array( 'code_highlight_method',   '==', 'prism' ),
+        ),
+        'desc'   => '参见<a href="https://prismjs.com/plugins/line-numbers/">插件说明文档</a>',
+      ),
+      array(
+        'id'       => 'code_highlight_prism_autoload_path',
+        'type'     => 'text',
+        'title'    => 'Prism.js：自动加载地址',
+        'dependency' => array(
+          array( 'code_highlight_method',   '==', 'prism' ),
+        ),
+        'desc'=>"留空以使用默认值",
+        'default'=>'https://cdn.jsdelivr.net/npm/prismjs@1.23.0/'
+      ),
+      array(
+        'id'       => 'code_highlight_prism_theme_light',
+        'type'     => 'text',
+        'title'    => 'Prism.js：代码高亮主题',
+        'desc'=>'相对于自动加载地址。留空以使用默认值',
+        'dependency' => array(
+          array( 'code_highlight_method',   '==', 'prism' ),
+        ),
+        'default'=>'themes/prism.min.css'
+      ),array(
+        'id'       => 'code_highlight_prism_theme_dark',
+        'type'     => 'text',
+        'title'    => 'Prism.js：暗色模式下的代码高亮主题',
+        'desc'=>'相对于自动加载地址。留空以使用默认值',
+        'dependency' => array(
+          array( 'code_highlight_method',   '==', 'prism' ),
+        ),
+        'default'=>'themes/prism-tomorrow.min.css'
       ),
 
     )
