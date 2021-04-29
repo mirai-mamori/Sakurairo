@@ -17,31 +17,13 @@ import codecs
 localtime = time.asctime( time.localtime(time.time()) )
 print (localtime)
 
-patchall = './'
-pathJS = patchall + 'js/src/'
-pathJSroot = patchall + 'js/'
+patchall = '../'
 pathCSS = patchall + 'css/src/'
 pathCSSroot = patchall + 'css/'
 
-jsfiles = [f for f in listdir(pathJS) if isfile(join(pathJS, f))]
 cssfiles = [f for f in listdir(pathCSS) if isfile(join(pathCSS, f))]
 
-strJS = '/*! Generate by mirai-mamori. ' + localtime + '*/'
 strCSS = '/*! Generate by mirai-mamori. ' + localtime + '*/'
-
-for f in jsfiles:
-    with codecs.open(pathJS + f, 'r', encoding='utf-8') as file:
-        data = file.read()
-    strJS = strJS + data
-    print(f)
-        
-JSminified = jsmin(strJS)
-        
-with codecs.open(pathJSroot + "lib.js", "w", encoding='utf-8') as text_file:
-    print(JSminified, file=text_file)
-    
-    
-print('------------------JS Done------------------')
     
 for f in cssfiles:
     with codecs.open(pathCSS + f, 'r', encoding='utf-8') as file:

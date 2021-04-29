@@ -55,16 +55,16 @@ const mashiro_option = {
     clipboardCopyright:<?php echo iro_opt('clipboard_copyright') == "0" ? 'false':'true' ?>,
 
     <?php if(iro_opt('entry_content_style') == "sakurairo"){ ?>
-    entry_content_style_src:"<?php echo get_template_directory_uri() ?>/cdn/theme/sakura.css?<?php echo SAKURA_VERSION.iro_opt('cookie_version', ''); ?>",
+    entry_content_style_src:"<?php echo get_template_directory_uri() ?>/css/theme/sakura.css?<?php echo SAKURA_VERSION.iro_opt('cookie_version', ''); ?>",
     <?php }elseif(iro_opt('entry_content_style') == "github") {?>
-    entry_content_style_src:"<?php echo get_template_directory_uri() ?>/cdn/theme/github.css?<?php echo SAKURA_VERSION.iro_opt('cookie_version', ''); ?>",
+    entry_content_style_src:"<?php echo get_template_directory_uri() ?>/css/theme/github.css?<?php echo SAKURA_VERSION.iro_opt('cookie_version', ''); ?>",
     <?php } ?>
     entry_content_style:"<?php echo iro_opt('entry_content_style'); ?>",
 
     <?php if(iro_opt('local_global_library')){ ?>
-    jsdelivr_css_src:"<?php echo get_template_directory_uri() ?>/cdn/css/lib.css?<?php echo SAKURA_VERSION.iro_opt('cookie_version', ''); ?>",
+    jsdelivr_css_src:"<?php echo get_template_directory_uri() ?>/css/lib.css?<?php echo SAKURA_VERSION.iro_opt('cookie_version', ''); ?>",
     <?php } else { ?>
-    jsdelivr_css_src:"https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@<?php echo SAKURA_VERSION; ?>/cdn/css/lib.min.css",
+    jsdelivr_css_src:"https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@<?php echo SAKURA_VERSION; ?>/css/lib.min.css",
     <?php } ?>
     <?php if (iro_opt('aplayer_server') != 'off'): ?>
     float_player_on:true,
