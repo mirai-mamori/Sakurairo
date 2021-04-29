@@ -255,15 +255,16 @@ add_action('after_setup_theme', 'akina_content_width', 0);
 function sakura_scripts()
 {
     if (iro_opt('local_global_library')) {
-        wp_enqueue_script('js_lib', get_template_directory_uri() . '/cdn/js/lib.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
+        //wp_enqueue_script('js_lib', get_template_directory_uri() . '/cdn/js/lib.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
         if (iro_opt('smoothscroll_option')) {
             wp_enqueue_script('SmoothScroll', get_template_directory_uri() . '/cdn/js/smoothscroll.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
         }
     } elseif (iro_opt('smoothscroll_option')) {
-        wp_enqueue_script('js_lib', 'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/lib.min.js,gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/smoothscroll.js', array(), SAKURA_VERSION, true);
-    } else {
+        wp_enqueue_script('SmoothScroll',  'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/smoothscroll.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
+        //wp_enqueue_script('js_lib', 'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/lib.min.js,gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/smoothscroll.js', array(), SAKURA_VERSION, true);
+    }/*  else {
         wp_enqueue_script('js_lib', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/lib.min.js', array(), SAKURA_VERSION, true);
-    }
+    } */
     if (iro_opt('local_application_library')) {
         wp_enqueue_style('saukra_css', get_stylesheet_uri(), array(), SAKURA_VERSION);
         wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), SAKURA_VERSION, true);
