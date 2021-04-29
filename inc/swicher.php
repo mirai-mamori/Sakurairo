@@ -73,7 +73,28 @@ const mashiro_option = {
 
     cover_api:"<?php echo rest_url('sakura/v1/image/cover'); ?>",
     random_graphs_mts:<?php echo iro_opt('random_graphs_mts' ) ? 'true':'false'?>,
-    windowheight:'auto'
+    windowheight:'auto',
+    <?php
+    $highlight_method = iro_opt('code_highlight_method','hljs');
+    echo 'code_highlight:"'.$highlight_method.'",';
+
+    if($highlight_method=='prism'){
+        $autoload_path=iro_opt('code_highlight_prism_autoload_path');
+        $theme_light=iro_opt('code_highlight_prism_theme_light');
+        $theme_dark=iro_opt('code_highlight_prism_theme_dark');
+        ?>
+
+    code_highlight_prism: {
+        line_number_all:<?php echo iro_opt('code_highlight_prism_line_number_all')?'true':'false' ?>,
+        autoload_path:<?php  echo ($autoload_path=='' ? 'undefined' : '"'.$autoload_path.'"')  ?>,
+theme:{
+    <?php  echo ($theme_light=='' ? 'undefined' : 'light:"'.$theme_light.'",');
+     echo ($theme_dark=='' ? '' : 'dark:"'.$theme_dark.'",') ; ?>
+},
+    },
+        <?php 
+    }
+    ?>
 };
 const mashiro_global = {};
 
