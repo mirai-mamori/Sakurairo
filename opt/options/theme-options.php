@@ -2690,17 +2690,18 @@ if( class_exists( 'CSF' ) ) {
         'content' => '灯箱',
       ),
       array(
-        'id'     => 'image_viewer',
+        'id'     => 'baguetteBox',
         'type'   => 'switcher',
         'title'  => 'BaguetteBox灯箱效果',
-        'label'   => '开启之后将替换Fancybox作为图片灯箱效果，不建议使用',
+        'label'   => '开启之后将使用BaguetteBox作为图片灯箱效果',
         'default' => false
       ),
       array(
         'id'     => 'fancybox',
         'type'   => 'switcher',
         'title'  => 'FancyBox灯箱效果',
-        'dependency' => array( 'image_viewer', '==', 'false' ),
+        'label'   => '开启之后将使用FancyBox作为图片灯箱效果，将会额外加载JQ库',
+        'dependency' => array( 'baguetteBox', '==', 'false' ),
         'default' => false
       ), 
       array(

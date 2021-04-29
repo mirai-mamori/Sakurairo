@@ -50,7 +50,7 @@ const mashiro_option = {
     skin_bg4:"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png",
     <?php } ?>
     land_at_home:<?php echo is_home() ? 'true':'false'; ?>,
-    baguetteBoxON:<?php echo iro_opt('image_viewer')  ? 'true':'false' ?>,
+    baguetteBoxON:<?php echo iro_opt('baguetteBox')  ? 'true':'false' ?>,
     fancybox:<?php echo iro_opt('fancybox')? 'true':'false' ?>,
     clipboardCopyright:<?php echo iro_opt('clipboard_copyright') == "0" ? 'false':'true' ?>,
 
