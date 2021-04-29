@@ -8,13 +8,6 @@
  * @license  MIT
  */
 
-/*!
- * clipboard.js v2.0.8
- * https://clipboardjs.com/
- *
- * Licensed MIT © Zeno Rocha
- */
-
 /*! loadCSS. [c]2020 Filament Group, Inc. MIT License */
 
 /**
