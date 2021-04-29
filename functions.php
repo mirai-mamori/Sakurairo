@@ -280,8 +280,8 @@ function sakura_scripts()
     $mv_live = iro_opt('cover_video_loop') ? 'open' : 'close';
     $movies = iro_opt('cover_video') ? array('url' => iro_opt('cover_video_link'), 'name' => iro_opt('cover_video_title'), 'live' => $mv_live) : 'close';
     $auto_height = !iro_opt('cover_full_screen') ? 'fixed' : 'auto';
-    $code_lamp = 'close';
-    // if (wp_is_mobile()) {
+/*     $code_lamp = 'close';
+ */    // if (wp_is_mobile()) {
     //     $auto_height = 'fixed';
     // }
     //拦截移动端
@@ -291,8 +291,8 @@ function sakura_scripts()
         'pjax' => iro_opt('poi_pjax')?'1':'',
         'movies' => $movies,
         'windowheight' => $auto_height,
-        'codelamp' => $code_lamp,
-        'ajaxurl' => admin_url('admin-ajax.php'),
+/*         'codelamp' => $code_lamp,
+ */        'ajaxurl' => admin_url('admin-ajax.php'),
         'order' => get_option('comment_order'), // ajax comments
         'formpostion' => 'bottom', // ajax comments 默认为bottom，如果你的表单在顶部则设置为top。
         'reply_link_version' => $reply_link_version,
