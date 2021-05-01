@@ -753,7 +753,7 @@ if( class_exists( 'CSF' ) ) {
           'metadata'  => '预加载元数据',
           'auto'  => '自动',
         ),
-        'default'     => 'list'
+        'default'     => 'auto'
       ),
 
       array(
