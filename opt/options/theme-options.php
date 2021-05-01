@@ -708,7 +708,7 @@ if( class_exists( 'CSF' ) ) {
           'baidu'  => '千千音乐（海外服务器无法使用）',
           'tencent'  => 'QQ音乐（可能无法使用）',
         ),
-        'default'     => 'off'
+        'default' => 'off'
       ),
 
       array(
@@ -727,8 +727,31 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'aplayer_server', '!=', 'off' ),
         'desc'   => '选择播放模式',
         'options'     => array(
-          'playlist'  => '列表',
+          'list'  => '列表',
           'random'  => '随机',
+        ),
+        'default'     => 'list'
+      ),
+
+      array(
+        'id'          => 'aplayer_auto',
+        'type'        => 'switcher',
+        'title'       => '自动播放',
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
+        'desc'   => '不建议启用自动播放',
+        'default'     => false
+      ),
+
+      array(
+        'id'          => 'aplayer_preload',
+        'type'        => 'select',
+        'title'       => '预加载',
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
+        'desc'   => '是否预加载歌曲',
+        'options'     => array(
+          'none'  => '关闭预加载',
+          'metadata'  => '预加载元数据',
+          'auto'  => '自动',
         ),
         'default'     => 'list'
       ),
