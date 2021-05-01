@@ -734,15 +734,6 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'          => 'aplayer_auto',
-        'type'        => 'switcher',
-        'title'       => '自动播放',
-        'dependency' => array( 'aplayer_server', '!=', 'off' ),
-        'desc'   => '不建议启用自动播放',
-        'default'     => false
-      ),
-
-      array(
         'id'          => 'aplayer_preload',
         'type'        => 'select',
         'title'       => '预加载',
