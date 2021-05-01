@@ -741,7 +741,7 @@ if( class_exists( 'CSF' ) ) {
           'baidu'  => '千千音乐（海外服务器无法使用）',
           'tencent'  => 'QQ音乐（可能无法使用）',
         ),
-        'default'     => 'off'
+        'default' => 'off'
       ),
 
       array(
@@ -751,6 +751,33 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'aplayer_server', '!=', 'off' ),
         'desc'   => '填写歌单ID，例如：https://music.163.com/#/playlist?id=5380675133的歌单ID是5380675133',
         'default' => '5380675133'
+      ),
+
+      array(
+        'id'          => 'aplayer_order',
+        'type'        => 'select',
+        'title'       => '播放模式',
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
+        'desc'   => '选择播放模式',
+        'options'     => array(
+          'list'  => '列表',
+          'random'  => '随机',
+        ),
+        'default'     => 'list'
+      ),
+
+      array(
+        'id'          => 'aplayer_preload',
+        'type'        => 'select',
+        'title'       => '预加载',
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
+        'desc'   => '是否预加载歌曲',
+        'options'     => array(
+          'none'  => '关闭预加载',
+          'metadata'  => '预加载元数据',
+          'auto'  => '自动',
+        ),
+        'default'     => 'auto'
       ),
 
       array(

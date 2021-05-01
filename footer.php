@@ -159,8 +159,10 @@ $reception_background = iro_opt('reception_background');
 	    class="aplayer"
         data-id="<?php echo iro_opt('aplayer_playlistid', ''); ?>"
         data-server="<?php echo iro_opt('aplayer_server'); ?>"
+		data-preload="<?php echo iro_opt('aplayer_preload'); ?>"
         data-type="playlist"
         data-fixed="true"
+		data-order="<?php echo iro_opt('aplayer_order'); ?>"
         data-volume="<?php echo iro_opt('aplayer_volume', ''); ?>"
         data-theme="<?php echo iro_opt('theme_skin'); ?>">
     </div>
