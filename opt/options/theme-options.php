@@ -721,6 +721,19 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'          => 'aplayer_order',
+        'type'        => 'select',
+        'title'       => '播放模式',
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
+        'desc'   => '选择播放模式',
+        'options'     => array(
+          'playlist'  => '列表',
+          'random'  => '随机',
+        ),
+        'default'     => 'list'
+      ),
+
+      array(
         'id'     => 'aplayer_volume',
         'type'   => 'slider',
         'title'  => '页尾在线播放器默认音量',
