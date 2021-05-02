@@ -907,10 +907,18 @@ if( class_exists( 'CSF' ) ) {
     'fields' => array(
 
       array(
+        'id'    => 'captcha_switch',
+        'type'  => 'switcher',
+        'title' => '验证码开关',
+        'label'   => '后台登录/注册页,开关.',
+        'default' => true
+      ),
+
+      array(
         'type'    => 'subheading',
         'content' => '特效及动画',
       ),
-
+      
       array(
         'id'    => 'preload_animation',
         'type'  => 'switcher',
