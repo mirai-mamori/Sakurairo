@@ -43,8 +43,8 @@ class CAPTCHA
     public function create_captcha_img() {
         //创建画布
         $img = imagecreatetruecolor(120, 40);
-        setcookie('timestamp',$this->timestamp,$this->timestamp+60,'/');
-        setcookie('id',$this->uniqid,$this->timestamp+60,'/');
+        //setcookie('timestamp',$this->timestamp,$this->timestamp+60,'/');
+        //setcookie('id',$this->uniqid,$this->timestamp+60,'/');
         //填充背景色
         $backcolor = imagecolorallocate($img, mt_rand(200, 255), mt_rand(200, 255), mt_rand(0, 255));
         imagefill($img, 0, 0, $backcolor);
@@ -85,7 +85,9 @@ class CAPTCHA
         $json = array(
             'code' => 0,
             'data' => $captchaimg,
-            'msg' => ''
+            'msg' => '',
+            'time' => $this->timestamp,
+            'id' => $this->uniqid
         ); 
         return $json;
     }
@@ -97,10 +99,10 @@ class CAPTCHA
      * @param  string $captcha
      * @return array
      */
-    public function check_CAPTCHA(string $captcha){
+    public function check_CAPTCHA(string $captcha,int $timestamp,string $id){
         $temp = time();
         $temp1 = $temp-60;
-        if (!isset($_COOKIE["timestamp"]) || !isset($_COOKIE['id']) || !ctype_xdigit($_COOKIE['id']) || !ctype_digit($_COOKIE["timestamp"])){
+        if (!isset($timestamp) || !isset($id) || !ctype_xdigit($id) || !ctype_digit($timestamp)){
             $code = 3;
             $msg = '非法请求';
         }
@@ -108,12 +110,12 @@ class CAPTCHA
             $code = 3;
             $msg = '请输入正确的验证码!';
         }
-        elseif($_COOKIE["timestamp"] < $temp1){
+        elseif($timestamp < $temp1){
             $code = 2;
             $msg = '超时!';
         }
-        elseif($_COOKIE["timestamp"] >= $temp1 && $_COOKIE["timestamp"] <= $temp){
-            $comparison = $this->create_CAPTCHA($_COOKIE['timestamp'],$_COOKIE['id']);
+        elseif($timestamp >= $temp1 && $timestamp <= $temp){
+            $comparison = $this->create_CAPTCHA($timestamp,$id);
             if (strtolower($captcha) === strtolower($comparison)){
                 $code = 5;
                 $msg = '验证码正确!';
