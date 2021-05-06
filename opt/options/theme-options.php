@@ -907,14 +907,6 @@ if( class_exists( 'CSF' ) ) {
     'fields' => array(
 
       array(
-        'id'    => 'captcha_switch',
-        'type'  => 'switcher',
-        'title' => '验证码开关',
-        'label'   => '后台登录/注册页,开关.',
-        'default' => true
-      ),
-
-      array(
         'type'    => 'subheading',
         'content' => '特效及动画',
       ),
@@ -1032,6 +1024,14 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'switcher',
         'title'  => '全局平滑滚动',
         'label'   => '默认开启，页面滚动将更加平滑',
+        'default' => true
+      ),
+
+      array(
+        'id'    => 'captcha_switch',
+        'type'  => 'switcher',
+        'title' => '登录验证码',
+        'label'   => '默认开启，验证码将出现在后台登录页及登录模板',
         'default' => true
       ),
 
