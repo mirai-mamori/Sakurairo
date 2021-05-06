@@ -2339,14 +2339,6 @@ if( class_exists( 'CSF' ) ) {
         'default' => false
       ),
 
-      array(
-        'id'     => 'registration_validation',
-        'type'   => 'switcher',
-        'title'  => '登录模板注册滑动验证',
-        'label'   => '开启之后登录模板注册需要经过滑动验证',
-        'default' => false
-      ),
-
     )
   ) );
 
