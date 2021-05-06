@@ -796,11 +796,11 @@ function custom_html()
         const captchaimg = document.getElementById("captchaimg");
         captchaimg && captchaimg.addEventListener("click",(e)=>{
             fetch("',rest_url('sakura/v1/captcha/create'),'")
-            .then((response)=>{
-                return response.json();
-            })
-            .then((json)=>{
+            .then(response=>response.json())
+            .then(json=>{
                 e.target.src = json["data"];
+                document.querySelector("input[name=\'timestamp\']").value = json["time"];
+                document.querySelector("input[name=\'id\']").value = json["id"];
             });
         })
     }, false);

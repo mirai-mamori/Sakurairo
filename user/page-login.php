@@ -27,7 +27,11 @@ get_header();
 			<script>
 				const get_captcha = ele=>fetch("<?php echo rest_url('sakura/v1/captcha/create')?>")
 				.then(response=>response.json())
-				.then(json=>ele.src = json['data']),
+				.then(json=>{
+					ele.src = json['data'];
+					document.querySelector("input[name='timestamp']").value = json["time"];
+                	document.querySelector("input[name='id']").value = json["id"];
+				}),
 					captcha = document.getElementById("captchaimg");
 				captcha && captcha.addEventListener("click",e=>get_captcha(e.target));
 				captcha && get_captcha(captcha);
