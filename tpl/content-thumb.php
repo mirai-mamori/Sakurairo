@@ -56,7 +56,7 @@ $the_cat = get_the_category();
 					}
 					?>
 					<span><i class="iconfont icon-attention"></i><?php echo get_post_views(get_the_ID()).' '._n('Hit','Hits',get_post_views(get_the_ID()),'sakurairo')/*热度*/?></span>
-					<span class="comments-number"><i class="iconfont icon-mark"></i><?php comments_popup_link('NOTHING', '1 '.__("Comment","sakurairo")/*条评论*/, '% '.__("Comments","sakurairo")/*条评论*/); ?></span>
+					<span class="comments-number"><i class="iconfont icon-mark"></i><?php comments_popup_link(__("NOTHING","sakurairo"), '1 '.__("Comment","sakurairo")/*条评论*/, '% '.__("Comments","sakurairo")/*条评论*/,'',__("Comment Closed","sakurairo")); ?></span>
 					<span><i class="iconfont icon-file"></i><a href="<?php echo esc_url(get_category_link($the_cat[0]->cat_ID)); ?>"><?php echo $the_cat[0]->cat_name; ?></a>
 					</span>
 				</div>
