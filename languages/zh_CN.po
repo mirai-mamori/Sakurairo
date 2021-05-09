@@ -1,23 +1,23 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2021-01-13 13:17+0800\n"
-"PO-Revision-Date: 2021-01-13 21:21+0800\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2021-05-09 20:13+0800\n"
+"PO-Revision-Date: 2021-05-09 20:13+0800\n"
+"Last-Translator: KotoriK\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4\n"
+"X-Generator: Poedit 2.4.3\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -38,7 +38,7 @@ msgstr "返回首页"
 msgid "Don't worry, search in site?"
 msgstr "别着急，试试站内检索？"
 
-#: 404.php:54 footer.php:70 opt/classes/admin-options.class.php:567
+#: 404.php:54 footer.php:72 opt/classes/admin-options.class.php:569
 #: opt/fields/icon/icon.php:57 opt/fields/map/map.php:23 search.php:42
 msgid "Search..."
 msgstr "搜索..."
@@ -59,119 +59,119 @@ msgstr " 条评论"
 msgid "no comment"
 msgstr "暂无评论"
 
-#: comments.php:53
+#: comments.php:54
 msgid "I'm not a robot"
 msgstr "我可不是机器人呢"
 
-#: comments.php:54
+#: comments.php:55
 msgid "Comment in private"
 msgstr "私密评论"
 
-#: comments.php:55
+#: comments.php:56
 msgid "Comment reply notify"
 msgstr "邮件通知"
 
-#: comments.php:63
+#: comments.php:64
 msgid "Leave a Reply to"
 msgstr "回复给"
 
-#: comments.php:64
+#: comments.php:65
 msgid "Cancel Reply"
 msgstr "取消回复"
 
-#: comments.php:65
+#: comments.php:66
 msgid "BiuBiuBiu~"
 msgstr "BiuBiuBiu~"
 
-#: comments.php:66
+#: comments.php:67
 msgid "You are a surprise that I will only meet once in my life"
 msgstr "你是我一生只会遇见一次的惊喜"
 
-#: comments.php:70
+#: comments.php:71
 msgid "Click me OωO"
 msgstr "戳我呀 OωO"
 
-#: comments.php:71
+#: comments.php:72
 msgid "Woooooow ヾ(≧∇≦*)ゝ"
 msgstr "嘿嘿嘿 ヾ(≧∇≦*)ゝ"
 
-#: comments.php:92
+#: comments.php:93
 msgid "Auto pull nickname and avatar with a QQ num. entered"
 msgstr "输入QQ号将自动拉取昵称和头像"
 
-#: comments.php:92
+#: comments.php:93
 msgid "Nickname or QQ number"
 msgstr "昵称或QQ号"
 
-#: comments.php:92
+#: comments.php:93
 msgid "Name* "
 msgstr "昵称 "
 
-#: comments.php:94
+#: comments.php:95
 msgid "You will receive notification by email"
 msgstr "你将收到回复通知"
 
-#: comments.php:94
+#: comments.php:95
 msgid "email"
 msgstr "邮箱"
 
-#: comments.php:94
+#: comments.php:95
 msgid "Must* "
 msgstr "必须* "
 
-#: comments.php:96
+#: comments.php:97
 msgid "Advertisement is forbidden 😀"
 msgstr "禁止小广告😀"
 
-#: comments.php:96
+#: comments.php:97
 msgid "Site"
 msgstr "网站"
 
-#: footer.php:84 footer.php:92
+#: footer.php:86 footer.php:94
 msgid "Want to find something?"
 msgstr "想要找点什么呢？"
 
-#: footer.php:94
+#: footer.php:96
 msgid "Search"
 msgstr "搜索"
 
-#: footer.php:148
+#: footer.php:150
 msgid "Widgets"
 msgstr "小工具"
 
-#: functions.php:58
+#: functions.php:90
 msgid "Nav Menus"
 msgstr "导航菜单"
 
-#: functions.php:343 inc/theme_plus.php:186 layouts/authorprofile.php:11
+#: functions.php:377 inc/theme_plus.php:191 layouts/authorprofile.php:11
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:343
+#: functions.php:377
 msgid "Blogger"
 msgstr "博客作者"
 
-#: functions.php:347
+#: functions.php:381
 msgid "Location"
 msgstr "来自"
 
-#: functions.php:351
+#: functions.php:386
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:353
+#: functions.php:388
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:355
+#: functions.php:390
 msgid "No"
 msgstr "否"
 
-#: functions.php:358
+#: functions.php:393
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:447
+#: functions.php:482
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
@@ -179,39 +179,39 @@ msgstr ""
 "请安装插件 <a href=\"https://wordpress.org/plugins/wp-statistics/\" target="
 "\"_blank\">WP-Statistics</a>"
 
-#: functions.php:503
+#: functions.php:524
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:1219
+#: functions.php:1200
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1240
+#: functions.php:1221
 msgid " "
 msgstr ""
 
-#: functions.php:1244
+#: functions.php:1225
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1267 functions.php:1270 inc/theme_plus.php:478
+#: functions.php:1248 functions.php:1251 inc/theme_plus.php:483
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1490
+#: functions.php:1471
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:1576
+#: functions.php:1557
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1638
+#: functions.php:1620
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1765
+#: functions.php:1748
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -248,7 +248,7 @@ msgstr "图像"
 msgid "no image"
 msgstr "暂无"
 
-#: inc/classes/Cache.php:70 inc/theme_plus.php:716
+#: inc/classes/Cache.php:70 inc/theme_plus.php:721
 msgid "The comment is private"
 msgstr "这是一条私密评论"
 
@@ -291,186 +291,186 @@ msgstr "<span class=\"screen-reader-text\"> 在 %s</span>中留言"
 msgid "Edit %s"
 msgstr "编辑 %s"
 
-#: inc/theme_plus.php:60
+#: inc/theme_plus.php:61
 msgid " days ago"
 msgstr " 天前"
 
-#: inc/theme_plus.php:61
+#: inc/theme_plus.php:62
 msgid " hours ago"
 msgstr " 小时前"
 
-#: inc/theme_plus.php:62
+#: inc/theme_plus.php:63
 msgid " minutes ago"
 msgstr " 分钟前"
 
-#: inc/theme_plus.php:63
+#: inc/theme_plus.php:64
 msgid " seconds ago"
 msgstr " 秒前"
 
-#: inc/theme_plus.php:71
+#: inc/theme_plus.php:72
 msgid "Posted on "
 msgstr "发布于 "
 
-#: inc/theme_plus.php:130
+#: inc/theme_plus.php:131
 msgid "Please upgrade wordpress to version 4.4+"
 msgstr "请升级到4.4以上版本"
 
-#: inc/theme_plus.php:232
+#: inc/theme_plus.php:237
 msgid "dashboard"
 msgstr "管理后台"
 
-#: inc/theme_plus.php:234
+#: inc/theme_plus.php:239
 msgid "home"
 msgstr "主页"
 
-#: inc/theme_plus.php:241
+#: inc/theme_plus.php:246
 msgid "Login successful, "
 msgstr "登录成功， "
 
-#: inc/theme_plus.php:241
+#: inc/theme_plus.php:246
 msgid "seconds later automatically transfer to"
 msgstr "秒后自动转到"
 
-#: inc/theme_plus.php:264
+#: inc/theme_plus.php:269
 msgid "Change avatar"
 msgstr "更换头像"
 
-#: inc/theme_plus.php:265
+#: inc/theme_plus.php:270
 msgid "Hello, "
 msgstr "欢迎 "
 
-#: inc/theme_plus.php:269
+#: inc/theme_plus.php:274
 msgid "Home"
 msgstr "首页"
 
-#: inc/theme_plus.php:271
+#: inc/theme_plus.php:276
 msgid "Manage"
 msgstr "管理"
 
-#: inc/theme_plus.php:273
+#: inc/theme_plus.php:278
 msgid "Logout"
 msgstr "退出登录"
 
-#: inc/theme_plus.php:273
+#: inc/theme_plus.php:278
 msgid "Sign out? "
 msgstr "退出登录？ "
 
-#: inc/theme_plus.php:298 inc/theme_plus.php:353 inc/theme_plus.php:421
-#: tpl/content-single.php:16 tpl/single-image.php:18
+#: inc/theme_plus.php:303 inc/theme_plus.php:358 inc/theme_plus.php:426
+#: tpl/content-single.php:20 tpl/single-image.php:18
 msgid "View"
 msgid_plural "Views"
 msgstr[0] "次阅读"
 
-#: inc/theme_plus.php:310 inc/theme_plus.php:368 inc/theme_plus.php:436
+#: inc/theme_plus.php:315 inc/theme_plus.php:373 inc/theme_plus.php:441
 #, php-format
 msgid "Search results for \" %s \""
 msgstr "关于“ %s ”的搜索结果"
 
-#: inc/theme_plus.php:416
+#: inc/theme_plus.php:421
 msgid "EDIT"
 msgstr "编辑"
 
-#: inc/theme_plus.php:479
+#: inc/theme_plus.php:484
 msgid "New post"
 msgstr "撰写文章"
 
-#: inc/theme_plus.php:481
+#: inc/theme_plus.php:486
 msgid "Profile"
 msgstr "个人资料"
 
-#: inc/theme_plus.php:482
+#: inc/theme_plus.php:487
 msgid "Sign out"
 msgstr "退出登录"
 
-#: opt/classes/admin-options.class.php:225
+#: opt/classes/admin-options.class.php:226
 msgid "Error while saving the changes."
 msgstr ""
 
-#: opt/classes/admin-options.class.php:285
+#: opt/classes/admin-options.class.php:286
 msgid "Settings successfully imported."
 msgstr ""
 
-#: opt/classes/admin-options.class.php:297
-#: opt/classes/admin-options.class.php:313
+#: opt/classes/admin-options.class.php:298
+#: opt/classes/admin-options.class.php:314
 msgid "Default settings restored."
 msgstr ""
 
-#: opt/classes/admin-options.class.php:384
+#: opt/classes/admin-options.class.php:385
 msgid "Settings saved."
 msgstr ""
 
-#: opt/classes/admin-options.class.php:563
+#: opt/classes/admin-options.class.php:565
 msgid "You have unsaved changes, save your changes!"
 msgstr ""
 
-#: opt/classes/admin-options.class.php:565
+#: opt/classes/admin-options.class.php:567
 msgid "show all settings"
 msgstr ""
 
-#: opt/classes/admin-options.class.php:570
-#: opt/classes/admin-options.class.php:693
+#: opt/classes/admin-options.class.php:572
+#: opt/classes/admin-options.class.php:695
 msgid "Save"
 msgstr ""
 
-#: opt/classes/admin-options.class.php:570
-#: opt/classes/admin-options.class.php:693
+#: opt/classes/admin-options.class.php:572
+#: opt/classes/admin-options.class.php:695
 msgid "Saving..."
 msgstr ""
 
-#: opt/classes/admin-options.class.php:571
-#: opt/classes/admin-options.class.php:694
+#: opt/classes/admin-options.class.php:573
+#: opt/classes/admin-options.class.php:696
 msgid "Reset Section"
 msgstr ""
 
-#: opt/classes/admin-options.class.php:571
-#: opt/classes/admin-options.class.php:694
+#: opt/classes/admin-options.class.php:573
+#: opt/classes/admin-options.class.php:696
 msgid "Are you sure to reset this section options?"
 msgstr ""
 
-#: opt/classes/admin-options.class.php:572
-#: opt/classes/admin-options.class.php:695
+#: opt/classes/admin-options.class.php:574
+#: opt/classes/admin-options.class.php:697
 msgid "Reset All"
 msgstr ""
 
-#: opt/classes/admin-options.class.php:572
-#: opt/classes/admin-options.class.php:695 opt/fields/backup/backup.php:31
+#: opt/classes/admin-options.class.php:574
+#: opt/classes/admin-options.class.php:697 opt/fields/backup/backup.php:31
 msgid "Reset"
 msgstr ""
 
-#: opt/classes/admin-options.class.php:572
-#: opt/classes/admin-options.class.php:695
+#: opt/classes/admin-options.class.php:574
+#: opt/classes/admin-options.class.php:697
 msgid "Are you sure you want to reset all settings to default values?"
 msgstr ""
 
-#: opt/classes/admin-options.class.php:670
+#: opt/classes/admin-options.class.php:672
 #: opt/fields/button_set/button_set.php:56 opt/fields/checkbox/checkbox.php:76
 #: opt/fields/radio/radio.php:75 opt/fields/select/select.php:113
 #: opt/functions/actions.php:41
 msgid "No data available."
 msgstr ""
 
-#: opt/classes/setup.class.php:529
+#: opt/classes/setup.class.php:592
 msgid "Are you sure?"
 msgstr ""
 
-#: opt/classes/setup.class.php:530
+#: opt/classes/setup.class.php:593
 #, php-format
 msgid "Please enter %s or more characters"
 msgstr ""
 
-#: opt/classes/setup.class.php:531
+#: opt/classes/setup.class.php:594
 msgid "Searching..."
 msgstr ""
 
-#: opt/classes/setup.class.php:532
+#: opt/classes/setup.class.php:595
 msgid "No results found."
 msgstr ""
 
-#: opt/classes/setup.class.php:634
+#: opt/classes/setup.class.php:696
 msgid "Oops! Not allowed."
 msgstr ""
 
-#: opt/classes/setup.class.php:708 opt/classes/setup.class.php:712
+#: opt/classes/setup.class.php:768 opt/classes/setup.class.php:772
 msgid "Field not found!"
 msgstr ""
 
@@ -1023,27 +1023,47 @@ msgstr ""
 msgid "Please enter a valid URL."
 msgstr ""
 
+#: opt/options/theme-options.php:1269
+#, php-format
+msgid ""
+"如果你选择使用Webp优化随机图片，请点击 <a href = \"%s\">这里</a> 来更新 "
+"Manifest 路径"
+msgstr ""
+
+#: opt/options/theme-options.php:2874
+#, php-format
+msgid ""
+"正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  "
+"<a href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
+msgstr ""
+
 #: search.php:19
 #, php-format
 msgid "search result: %s"
 msgstr "搜索结果：%s"
 
-#: tpl/content-category.php:30
+#: tpl/content-category.php:31 tpl/content-image.php:36
+#: tpl/content-status.php:32 tpl/content-thumb.php:61 tpl/content.php:36
 msgid "NOTHING"
 msgstr "啥也没有呀"
 
-#: tpl/content-image.php:35 tpl/content-status.php:31 tpl/content-thumb.php:43
-#: tpl/content.php:34
-msgid "Comment"
-msgstr "评论"
+#: tpl/content-category.php:31 tpl/content-image.php:36
+#: tpl/content-status.php:32 tpl/content-thumb.php:61 tpl/content.php:36
+msgid "1 Comment"
+msgstr "1 条评论"
 
-#: tpl/content-image.php:35 tpl/content-status.php:31 tpl/content-thumb.php:43
-#: tpl/content.php:34
+#: tpl/content-category.php:31 tpl/content-image.php:36
+#: tpl/content-status.php:32 tpl/content-thumb.php:61 tpl/content.php:36
 msgid "Comments"
 msgstr "条评论"
 
-#: tpl/content-image.php:38 tpl/content-status.php:34 tpl/content-thumb.php:42
-#: tpl/content.php:37
+#: tpl/content-category.php:31 tpl/content-image.php:36
+#: tpl/content-status.php:32 tpl/content-thumb.php:61 tpl/content.php:36
+msgid "Comment Closed"
+msgstr "评论关闭"
+
+#: tpl/content-image.php:40 tpl/content-status.php:36 tpl/content-thumb.php:58
+#: tpl/content.php:40
 msgid "Hit"
 msgid_plural "Hits"
 msgstr[0] "热度"
@@ -1066,47 +1086,47 @@ msgstr "没有找到你想要的，看看其他的吧"
 msgid "We didn't seem to find what you want. Maybe you can search for it."
 msgstr "我们似乎没有找到你想要的东西. 或许你可以搜索一下试试."
 
-#: tpl/content-page.php:24 tpl/content-single.php:25 tpl/single-image.php:28
+#: tpl/content-page.php:24 tpl/content-single.php:29 tpl/single-image.php:28
 msgid "Pages:"
 msgstr ""
 
-#: update-checker/Puc/v4p10/Plugin/Ui.php:54
+#: update-checker/Puc/v4p11/Plugin/Ui.php:54
 msgid "View details"
 msgstr "查看更多内容"
 
-#: update-checker/Puc/v4p10/Plugin/Ui.php:77
+#: update-checker/Puc/v4p11/Plugin/Ui.php:77
 #, php-format
 msgid "More information about %s"
 msgstr "关于 %s  的更多信息"
 
-#: update-checker/Puc/v4p10/Plugin/Ui.php:128
+#: update-checker/Puc/v4p11/Plugin/Ui.php:128
 msgid "Check for updates"
 msgstr "检测更新"
 
-#: update-checker/Puc/v4p10/Plugin/Ui.php:213
+#: update-checker/Puc/v4p11/Plugin/Ui.php:214
 #, php-format
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
 msgstr "%s现在是最新的"
 
-#: update-checker/Puc/v4p10/Plugin/Ui.php:215
+#: update-checker/Puc/v4p11/Plugin/Ui.php:216
 #, php-format
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
 msgstr "%s的最新更新已就位"
 
-#: update-checker/Puc/v4p10/Plugin/Ui.php:217
+#: update-checker/Puc/v4p11/Plugin/Ui.php:218
 #, php-format
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
 msgstr "无法确定 %s 是否有可用的更新"
 
-#: update-checker/Puc/v4p10/Plugin/Ui.php:223
+#: update-checker/Puc/v4p11/Plugin/Ui.php:224
 #, php-format
 msgid "Unknown update checker status \"%s\""
 msgstr "未知的更新检查器状态 \"%s\""
 
-#: update-checker/Puc/v4p10/Vcs/PluginUpdateChecker.php:98
+#: update-checker/Puc/v4p11/Vcs/PluginUpdateChecker.php:98
 msgid "There is no changelog available."
 msgstr "没有可用的更新日志"
 
@@ -1114,7 +1134,7 @@ msgstr "没有可用的更新日志"
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr "请在后台设置填写 Bilibili UID 后继续"
 
-#: user/page-login.php:18
+#: user/page-login.php:21
 msgid "Remember_Me"
 msgstr "记住我"
 
@@ -1122,7 +1142,7 @@ msgstr "记住我"
 #: user/page-register.php:19 user/page-register.php:24
 #: user/page-register.php:26 user/page-register.php:29
 #: user/page-register.php:34 user/page-register.php:36
-#: user/page-register.php:41 user/page-register.php:47
+#: user/page-register.php:43
 msgid "Error"
 msgstr "错误"
 
@@ -1158,31 +1178,23 @@ msgstr "密码长度至少6位"
 msgid "Inconsistent password entered twice."
 msgstr "两次输入的密码不一致"
 
-#: user/page-register.php:41
-msgid "Please drag the slider to verify identity"
-msgstr "请拖动滑块验证身份"
-
-#: user/page-register.php:47
+#: user/page-register.php:43
 msgid "Unable to complete registration request...Please contact"
 msgstr "无法完成注册请求... 请联系"
 
-#: user/page-register.php:47
+#: user/page-register.php:43
 msgid "administrator"
 msgstr "管理员"
 
-#: user/page-register.php:76
-msgid "Drag the slider to verify"
-msgstr "拖动滑块验证"
-
-#: user/page-register.php:83
+#: user/page-register.php:70
 msgid "Sign up"
 msgstr "注册"
 
-#: user/page-register.php:90
+#: user/page-register.php:77
 msgid "Success! Redirecting......"
 msgstr "注册成功！正在跳转......"
 
-#: user/page-register.php:95
+#: user/page-register.php:82
 msgid "Registration is not open yet."
 msgstr "暂未开放注册"
 
@@ -1199,15 +1211,15 @@ msgid ""
 "A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable "
 "WordPress Theme (Based on Theme Sakura)"
 msgstr ""
-"一个多彩，轻松上手，体验完善，具有强大自定义功能的WordPress主题（基于Sakura主"
-"题）"
+"一个多彩，轻松上手，体验完善，具有强大自定义功能的WordPress主题（基于Sakura"
+"主题）"
 
 #. Author of the plugin/theme
-msgid "made by FUUKEI"
+msgid "Created by Fuukei"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://asuhe.jp/"
+msgid "https://iro.tw/"
 msgstr ""
 
 #. Template Name of the plugin/theme
@@ -1221,3 +1233,12 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr ""
+
+#~ msgid "Comment"
+#~ msgstr "评论"
+
+#~ msgid "Please drag the slider to verify identity"
+#~ msgstr "请拖动滑块验证身份"
+
+#~ msgid "Drag the slider to verify"
+#~ msgstr "拖动滑块验证"
