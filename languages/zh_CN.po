@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2021-05-09 20:01+0800\n"
-"PO-Revision-Date: 2021-05-09 20:03+0800\n"
+"POT-Creation-Date: 2021-05-09 20:13+0800\n"
+"PO-Revision-Date: 2021-05-09 20:13+0800\n"
 "Last-Translator: KotoriK\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1042,22 +1042,28 @@ msgstr ""
 msgid "search result: %s"
 msgstr "搜索结果：%s"
 
-#: tpl/content-category.php:30 tpl/content-thumb.php:59
+#: tpl/content-category.php:31 tpl/content-image.php:36
+#: tpl/content-status.php:32 tpl/content-thumb.php:61 tpl/content.php:36
 msgid "NOTHING"
 msgstr "啥也没有呀"
 
-#: tpl/content-image.php:35 tpl/content-status.php:31 tpl/content-thumb.php:59
-#: tpl/content.php:34
-msgid "Comment"
-msgstr "评论"
+#: tpl/content-category.php:31 tpl/content-image.php:36
+#: tpl/content-status.php:32 tpl/content-thumb.php:61 tpl/content.php:36
+msgid "1 Comment"
+msgstr "1 条评论"
 
-#: tpl/content-image.php:35 tpl/content-status.php:31 tpl/content-thumb.php:59
-#: tpl/content.php:34
+#: tpl/content-category.php:31 tpl/content-image.php:36
+#: tpl/content-status.php:32 tpl/content-thumb.php:61 tpl/content.php:36
 msgid "Comments"
 msgstr "条评论"
 
-#: tpl/content-image.php:38 tpl/content-status.php:34 tpl/content-thumb.php:58
-#: tpl/content.php:37
+#: tpl/content-category.php:31 tpl/content-image.php:36
+#: tpl/content-status.php:32 tpl/content-thumb.php:61 tpl/content.php:36
+msgid "Comment Closed"
+msgstr "评论关闭"
+
+#: tpl/content-image.php:40 tpl/content-status.php:36 tpl/content-thumb.php:58
+#: tpl/content.php:40
 msgid "Hit"
 msgid_plural "Hits"
 msgstr[0] "热度"
@@ -1083,10 +1089,6 @@ msgstr "我们似乎没有找到你想要的东西. 或许你可以搜索一下�
 #: tpl/content-page.php:24 tpl/content-single.php:29 tpl/single-image.php:28
 msgid "Pages:"
 msgstr ""
-
-#: tpl/content-thumb.php:59
-msgid "Comment Closed"
-msgstr "评论关闭"
 
 #: update-checker/Puc/v4p11/Plugin/Ui.php:54
 msgid "View details"
@@ -1231,6 +1233,9 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr ""
+
+#~ msgid "Comment"
+#~ msgstr "评论"
 
 #~ msgid "Please drag the slider to verify identity"
 #~ msgstr "请拖动滑块验证身份"
