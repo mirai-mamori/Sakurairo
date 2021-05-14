@@ -1896,7 +1896,7 @@ if (iro_opt('captcha_switch', 'true')){
             }
             include_once('inc/classes/CAPTCHA.php');
             $img = new Sakura\API\CAPTCHA;
-            $check = $img->check_CAPTCHA($_POST['yzm']);
+            $check = $img->check_CAPTCHA($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
             if($check['code'] != 5){
                 return $errors->add( 'invalid_department ', '<strong>错误</strong>：'.$check['msg']);
             }
@@ -1919,7 +1919,7 @@ if (iro_opt('captcha_switch', 'true')){
             }
             include_once('inc/classes/CAPTCHA.php');
             $img = new Sakura\API\CAPTCHA;
-            $check = $img->check_CAPTCHA($_POST['yzm']);
+            $check = $img->check_CAPTCHA($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
             if($check['code'] == 5){
                 return $errors;
             }else{
