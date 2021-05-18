@@ -36,26 +36,26 @@ if ($iro_update_source == 'github'){
     );
 }else if ($iro_update_source == 'jsdelivr'){
 	$iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-		'https://update.iro.tw/jsdelivr.json',
+		'https://update.maho.cc/jsdelivr.json',
         __FILE__,
 		'Sakurairo'
 	);
 }else if ($iro_update_source == 'official_building'){
     if ($iro_update_channel == 'stable'){
         $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-            'https://update.iro.tw/stable/check.json',
+            'https://update.maho.cc/stable/check.json',
             __FILE__,
             'Sakurairo'
         );
     }else if ($iro_update_channel == 'beta'){
         $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-            'https://update.iro.tw/beta/check.json',
+            'https://update.maho.cc/beta/check.json',
             __FILE__,
             'Sakurairo'
         );
     }else if ($iro_update_channel == 'preview'){
         $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-            'https://update.iro.tw/preview/check.json',
+            'https://update.maho.cc/preview/check.json',
             __FILE__,
             'Sakurairo'
         );
