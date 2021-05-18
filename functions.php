@@ -495,10 +495,8 @@ function get_post_views($post_id)
 
 
 
-function is_webp(){
-    $webp = strpos($_SERVER['HTTP_ACCEPT'], 'image/webp');
-    $webp === false ? $webp=0 : $webp=1;
-    return $webp;
+function is_webp():bool{
+    return (isset($_COOKIE["su_webp"]) || strpos($_SERVER['HTTP_ACCEPT'], 'image/webp'));
 }
 
 $block_library_css = iro_opt('block_library_css');
@@ -993,15 +991,10 @@ if ( !get_option('use_smilies'))
     return;
     $tiebaname = array('good','han','spray','Grievance','shui','reluctantly','anger','tongue','se','haha','rmb','doubt','tear','surprised2','Happy','ku','surprised','theblackline','smilingeyes','spit','huaji','bbd','hu','shame','naive','rbq','britan','aa','niconiconi','niconiconi_t','niconiconit','awesome');
     $return_smiles = '';
-    for($i=0;$i<count($tiebaname);$i++){
-      $tieba_Name=$tiebaname[$i];
-      if (is_webp() == 1){
-          $tiebaimgdir="tiebawebp/";
-          $smiliesgs=".webp";
-      }else{
-          $tiebaimgdir="tiebapng/";
-          $smiliesgs=".png";
-      }
+    $type = is_webp() ? 'webp' : 'png';
+    $tiebaimgdir = 'tieba' . $type . '/';
+    $smiliesgs='.' . $type;
+    foreach ($tiebaname as $tieba_Name){
       // 选择面版
       $return_smiles = $return_smiles . '<span title="'.$tieba_Name.'" onclick="grin('."'".$tieba_Name."'".',type = \'tieba\')"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/'. $tiebaimgdir .'icon_'. $tieba_Name . $smiliesgs.'" /></span>';
       // 正文转换
@@ -1072,16 +1065,11 @@ $bilismiliestrans = array();
 function push_bili_smilies(){
   global $bilismiliestrans;
   $name = array('baiyan','bishi','bizui','chan','dai','daku','dalao','dalian','dianzan','doge','facai','fanu','ganga','guilian','guzhang','haixiu','heirenwenhao','huaixiao','jingxia','keai','koubizi','kun','lengmo','liubixue','liuhan','liulei','miantian','mudengkoudai','nanguo','outu','qinqin','se','shengbing','shengqi','shuizhao','sikao','tiaokan','tiaopi','touxiao','tuxue','weiqu','weixiao','wunai','xiaoku','xieyanxiao','yiwen','yun','zaijian','zhoumei','zhuakuang');
-  $return_smiles = null;
-  for($i=0;$i<count($name);$i++){
-    $smilies_Name=$name[$i];
-    if (is_webp() == 1){
-        $biliimgdir="biliwebp/";
-        $smiliesgs=".webp";
-    }else{
-        $biliimgdir="bilipng/";
-        $smiliesgs=".png";
-    }
+  $return_smiles = '';
+  $type = is_webp() ? 'webp' : 'png';
+  $biliimgdir = 'bili' . $type . '/';
+  $smiliesgs='.' . $type;
+  foreach($name as $smilies_Name){
     // 选择面版
     $return_smiles = $return_smiles . '<span title="'.$smilies_Name.'" onclick="grin('."'".$smilies_Name."'".',type = \'Math\')"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/'. $biliimgdir .'emoji_'. $smilies_Name . $smiliesgs.'" /></span>';
     // 正文转换
@@ -1111,13 +1099,9 @@ add_filter('the_content_feed', 'featuredtoRSS');
 
 //
 function bili_smile_filter_rss($content) {
-    if (is_webp() == 1){
-        $biliimgdir="biliwebp/";
-        $smiliesgs=".webp";
-    }else{
-        $biliimgdir="bilipng/";
-        $smiliesgs=".png";
-    }
+    $type = is_webp() ? 'webp' : 'png';
+    $biliimgdir = 'bili' . $type . '/';
+    $smiliesgs = '.' . $type;
     $content = str_replace("{{",'<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/'.$biliimgdir,$content);
     $content = str_replace("}}",$smilesgs.'" alt="emoji" style="height: 2em; max-height: 2em;">',$content);
     $content =  str_replace('[img]', '<img src="', $content); 
