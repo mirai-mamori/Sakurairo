@@ -2691,7 +2691,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'block_library_css',
         'type'   => 'switcher',
         'title'  => 'WordPress区块编辑器CSS',
-        'label'   => '开启之后将加载WordPress区块编辑器CSS',
+        'label'   => '默认开启，会加载WordPress区块编辑器所需的CSS',
         'default' => true
       ),
 
