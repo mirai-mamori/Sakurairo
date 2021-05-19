@@ -825,14 +825,6 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'    => 'footer_random_word',
-        'type'  => 'switcher',
-        'title' => '页尾随机话语',
-        'label'   => '开启之后页尾将出现随机话语',
-        'default' => false
-      ),
-
-      array(
         'id'    => 'footer_load_occupancy',
         'type'  => 'switcher',
         'title' => '页尾负载占用查询',
@@ -1031,8 +1023,8 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'captcha_switch',
         'type'  => 'switcher',
         'title' => '登录验证码',
-        'label'   => '默认开启，验证码将出现在后台登录页及登录模板',
-        'default' => true
+        'label'   => '开启之后验证码将出现在后台登录页及登录模板',
+        'default' => false
       ),
 
       array(
@@ -1260,7 +1252,7 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'text',
         'title'  => 'Webp优化/外部API桌面端随机图片地址',
         'desc'   => '填写地址',
-        'default' => 'https://api.iro.tw/webp_pc.php'
+        'default' => 'https://api.maho.cc/random-img/pc.php'
       ),
 
       array(
@@ -1275,7 +1267,7 @@ if( class_exists( 'CSF' ) ) {
         'title'  => '外部API手机端随机图片地址',
         'dependency' => array( 'random_graphs_mts', '==', 'true' ),
         'desc'   => '填写地址',
-        'default' => 'https://api.iro.tw/webp_mb.php'
+        'default' => 'https://api.maho.cc/random-img/mobile.php'
       ),
 
       array(
@@ -2700,7 +2692,7 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'switcher',
         'title'  => 'WordPress区块编辑器CSS',
         'label'   => '开启之后将加载WordPress区块编辑器CSS',
-        'default' => false
+        'default' => true
       ),
 
       array(
