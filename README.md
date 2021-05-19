@@ -29,7 +29,7 @@
 
 ## 使用相关：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/irotw.png)](https://iro.tw/)
+[![image](https://cdn.maho.cc/vision/readme/irotw.png)](https://iro.tw/)
 
 - 演示站点：https://demo.iro.tw/
 
