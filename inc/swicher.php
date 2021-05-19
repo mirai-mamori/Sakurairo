@@ -91,6 +91,7 @@ theme:{
     <?php  echo ($theme_light=='' ? 'undefined' : 'light:"'.$theme_light.'",');
      echo ($theme_dark=='' ? '' : 'dark:"'.$theme_dark.'",') ; ?>
 },
+comment_upload_img:<?php echo iro_opt('img_upload_api')=='off'?'false':'true' ?>
     },
         <?php 
     }
