@@ -87,14 +87,13 @@ const mashiro_option = {
     code_highlight_prism: {
         line_number_all:<?php echo iro_opt('code_highlight_prism_line_number_all')?'true':'false' ?>,
         autoload_path:<?php  echo ($autoload_path=='' ? 'undefined' : '"'.$autoload_path.'"')  ?>,
-theme:{
-    <?php  echo ($theme_light=='' ? 'undefined' : 'light:"'.$theme_light.'",');
-     echo ($theme_dark=='' ? '' : 'dark:"'.$theme_dark.'",') ; ?>
-},
-    },
-        <?php 
-    }
-    ?>
+        theme:{
+                <?php  echo ($theme_light=='' ? 'undefined' : 'light:"'.$theme_light.'",');
+                echo ($theme_dark=='' ? '' : 'dark:"'.$theme_dark.'",') ; ?>
+              },
+    },   
+        <?php }?>    
+    comment_upload_img:<?php echo iro_opt('img_upload_api')=='off'?'false':'true' ?>
 };
 const mashiro_global = {};
 
