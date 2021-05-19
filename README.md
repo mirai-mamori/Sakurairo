@@ -1,4 +1,4 @@
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/readme/readme.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://cdn.maho.cc/vision/readme/encore.gif)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">「iro」主题</h1>
 
