@@ -37,19 +37,16 @@ get_header();
         </main><!-- #main -->
     </div><!-- #primary -->
     <script type="text/javascript">
-    $(function () {
-        var oldClass = "";
-        var Obj = "";
-        $(".cbp_tmtimeline li").hover(function () {
-            Obj = $(this).children(".shuoshuo_author_img");
-            Obj = Obj.children("img");
-            oldClass = Obj.attr("class");
-            var newClass = oldClass + " zhuan";
-            Obj.attr("class", newClass);
-        }, function () {
-            Obj.attr("class", oldClass);
+    document.addEventListener('DOMContentLoaded', ()=>{
+        document.querySelectorAll('.cbp_tmtimeline li').forEach((e)=>{
+        e.addEventListener("mouseenter",()=>{
+            e.querySelector('.shuoshuo_author_img img').classList.add("zhuan");
+        })
+        e.addEventListener("mouseleave",()=>{
+            e.querySelector('.shuoshuo_author_img img').classList.remove("zhuan");
         })
     })
+    }, false);
     </script>
 <?php
 get_footer();

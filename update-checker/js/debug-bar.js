@@ -20,12 +20,12 @@ jQuery(function($) {
 		);
 	}
 
-	$('.puc-debug-bar-panel-v4 input[name="puc-check-now-button"]').click(function() {
+	$('.puc-debug-bar-panel-v4 input[name="puc-check-now-button"]').on('click', function() {
 		runAjaxAction(this, 'puc_v4_debug_check_now');
 		return false;
 	});
 
-	$('.puc-debug-bar-panel-v4 input[name="puc-request-info-button"]').click(function() {
+	$('.puc-debug-bar-panel-v4 input[name="puc-request-info-button"]').on('click', function() {
 		runAjaxAction(this, 'puc_v4_debug_request_info');
 		return false;
 	});

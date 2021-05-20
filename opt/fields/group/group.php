@@ -25,10 +25,10 @@ if ( ! class_exists( 'CSF_Field_group' ) ) {
         'accordion_title_number' => false,
         'accordion_title_auto'   => true,
       ) );
-
-      $title_prefix = ( ! empty( $args['accordion_title_prefix'] ) ) ? $args['accordion_title_prefix'] : '';
-      $title_number = ( ! empty( $args['accordion_title_number'] ) ) ? true : false;
-      $title_auto   = ( ! empty( $args['accordion_title_auto'] ) ) ? true : false;
+      $title_prefix = $args['accordion_title_prefix'] ?: '';
+      //$title_prefix = ( ! empty( $args['accordion_title_prefix'] ) ) ? $args['accordion_title_prefix'] : '';
+      $title_number = ! empty( $args['accordion_title_number'] );
+      $title_auto   = ! empty( $args['accordion_title_auto'] );
 
       if ( preg_match( '/'. preg_quote( '['. $this->field['id'] .']' ) .'/', $this->unique ) ) {
 
@@ -38,7 +38,7 @@ if ( ! class_exists( 'CSF_Field_group' ) ) {
 
         echo $this->field_before();
 
-        echo '<div class="csf-cloneable-item csf-cloneable-hidden">';
+        echo '<div class="csf-cloneable-item csf-cloneable-hidden" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
 
           echo '<div class="csf-cloneable-helper">';
           echo '<i class="csf-cloneable-sort fas fa-arrows-alt"></i>';

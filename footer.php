@@ -32,10 +32,6 @@ $reception_background = iro_opt('reception_background');
 			<p style="font-family: 'Ubuntu', sans-serif;">
 					<span style="color: #b9b9b9;">
 						<?php /* 能保留下面两个链接吗？算是我一个小小的心愿吧~ */ ?>
-						<?php if (iro_opt('footer_random_word', 'true')): ?>
-                        <script type="text/javascript" src="https://api.btstu.cn/yan/api.php?charset=utf-8&encode=js" ></script>
-						<div id="yan"><script>text()</script></div>
-                        <?php endif; ?></p>
 						<?php if (iro_opt('footer_load_occupancy', 'true')): ?>
                         <?php printf(' 耗时 %.3f 秒 | 查询 %d 次 | 内存 %.2f MB',timer_stop( 0, 3 ),get_num_queries(),memory_get_peak_usage() / 1024 / 1024);?>
                         <?php endif; ?></p>
@@ -61,7 +57,10 @@ $reception_background = iro_opt('reception_background');
 	<!-- m-nav-center -->
 	<div id="mo-nav">
 		<div class="m-avatar">
-			<?php $ava = iro_opt('personal_avatar') ? iro_opt('personal_avatar') :'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/avatar.jpg'; ?>
+			<?php 
+			$personal_avatar = iro_opt('personal_avatar');
+			$iro_logo = iro_opt('iro_logo');
+			$ava = iro_opt('personal_avatar') ? $personal_avatar: ($iro_logo ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/avatar.jpg'); ?>
 			<img src="<?php echo $ava ?>">
 		</div>
 		<div class="m-search">
@@ -148,7 +147,7 @@ $reception_background = iro_opt('reception_background');
     <div class="sakura_widget">
 	<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('sakura_widget')) : endif; ?>
 	</div>
-	<div class="show-hide-wrap"><button class="show-hide"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32"><path d="M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z"></path></svg></button></div>
+	<div class="show-hide-wrap"><button class="show-hide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z"></path></svg></button></div>
     </aside>
 <?php endif; ?>
 <?php if (iro_opt('aplayer_server') != 'off'): ?>
@@ -156,8 +155,10 @@ $reception_background = iro_opt('reception_background');
 	    class="aplayer"
         data-id="<?php echo iro_opt('aplayer_playlistid', ''); ?>"
         data-server="<?php echo iro_opt('aplayer_server'); ?>"
+		data-preload="<?php echo iro_opt('aplayer_preload'); ?>"
         data-type="playlist"
         data-fixed="true"
+		data-order="<?php echo iro_opt('aplayer_order'); ?>"
         data-volume="<?php echo iro_opt('aplayer_volume', ''); ?>"
         data-theme="<?php echo iro_opt('theme_skin'); ?>">
     </div>
@@ -180,40 +181,6 @@ $reception_background = iro_opt('reception_background');
 
 <!-- logo字体部分 -->
 <link rel="stylesheet" href="<?php echo $mashiro_logo['font_link']; ?>" media="all">
-
-<!-- 春节限定灯笼 -->
-<?php if (iro_opt('spring_festival_limited_deng', 'true') and (wp_is_mobile() == false)): ?>
-<!-- 灯笼1 -->
-<div class="deng-box">
-	<div class="deng">
-		<div class="xian"></div>
-		<div class="deng-a">
-			<div class="deng-b"><div class="deng-t"></div></div>
-		</div>
-		<div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
-	</div>
-</div>
- 
-<!-- 灯笼2 -->
-<div class="deng-box1">
-	<div class="deng">
-		<div class="xian"></div>
-		<div class="deng-a">
-			<div class="deng-b"><div class="deng-t"></div></div>
-		</div>
-		<div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
-	</div>
-</div>
-<?php endif; ?>
-
-<!-- 收缩、展开 -->
-<script>jQuery(document).ready(
-function(jQuery){
-jQuery('.collapseButton').click(function(){
-jQuery(this).parent().parent().find('.xContent').slideToggle('slow');
-});
-});</script>
-
 
 </body>
 </html>

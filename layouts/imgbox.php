@@ -13,7 +13,7 @@ $text_logo = iro_opt('text_logo');
    		<?php elseif (iro_opt('personal_avatar')):?>
 	     <div class="header-tou"><a href="<?php bloginfo('url');?>" ><img src="<?php echo iro_opt('personal_avatar', ''); ?>"></a></div>
 	  	<?php else :?>
-         <div class="header-tou" ><a href="<?php bloginfo('url');?>"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/avatar.jpg"></a></div>	
+         <div class="header-tou" ><a href="<?php bloginfo('url');?>"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/avatar.jpg"></a></div>	
       	<?php endif; ?>
 		<div class="header-info">
 			<!-- 首页一言打字效果 -->
@@ -41,7 +41,7 @@ $text_logo = iro_opt('text_logo');
                 <li id="bg-pre"><img src="<?php echo iro_opt('social_display_icon'); ?>/pre.png"/></li>
                 <?php endif; ?>
                 <?php if (iro_opt('wechat')){ ?>
-                <li class="wechat"><a href="#"><img src="<?php echo iro_opt('social_display_icon'); ?>/wechat.png"/></a>
+                <li class="wechat"><a href="#" title="wechat"><img src="<?php echo iro_opt('social_display_icon'); ?>/wechat.png"/></a>
                     <div class="wechatInner">
                         <img src="<?php echo iro_opt('wechat', ''); ?>" alt="WeChat">
                     </div>
@@ -116,7 +116,7 @@ $text_logo = iro_opt('text_logo');
 		<li id="bg-pre"><img src="<?php echo iro_opt('social_display_icon'); ?>/pre.png"/></li>
         <?php endif; ?>
         <?php if (iro_opt('wechat')){ ?>
-		<li class="wechat"><a href="#"><img src="<?php echo iro_opt('social_display_icon'); ?>/wechat.png"/></a>
+		<li class="wechat"><a href="#" title="wechat"><img src="<?php echo iro_opt('social_display_icon'); ?>/wechat.png"/></a>
 			<div class="wechatInner">
 				<img src="<?php echo iro_opt('wechat', ''); ?>" alt="WeChat">
 			</div>

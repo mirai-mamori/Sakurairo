@@ -28,6 +28,8 @@ if ( ! class_exists( 'CSF_Field_sorter' ) ) {
       $enabled_options  = ( ! empty( $this->value['enabled'] ) ) ? $this->value['enabled'] : array();
       $disabled_options = ( ! empty( $this->value['disabled'] ) ) ? $this->value['disabled'] : array();
 
+      echo '<div class="csf-sorter" data-depend-id="'. esc_attr( $this->field['id'] ) .'"></div>';
+
       echo ( $args['disabled'] ) ? '<div class="csf-modules">' : '';
 
       echo ( ! empty( $args['enabled_title'] ) ) ? '<div class="csf-sorter-title">'. esc_attr( $args['enabled_title'] ) .'</div>' : '';
@@ -56,6 +58,7 @@ if ( ! class_exists( 'CSF_Field_sorter' ) ) {
         echo '</div>';
 
       }
+
 
       echo $this->field_after();
 

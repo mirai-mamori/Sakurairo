@@ -178,8 +178,28 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'theme_darkmode_auto',
         'type'  => 'switcher',
         'title' => '深色模式自动切换',
-        'label'   => '默认开启，深色模式会在22:00-7:00自动切换',
+        'label'   => '默认开启',
         'default' => true
+      ),
+      array(
+        'type'    => 'content',
+        'content' => '<p><strong>客户端当地时间:</strong>深色模式会在22:00-7:00自动切换</p>'
+        .'<p><strong>跟随客户端设置:</strong>跟随客户端浏览器的设置</p>'
+        .'<p><strong>永远开启:</strong>永远开启，除非客户端另有配置</p>',
+        'dependency' => array( 'theme_darkmode_auto', '==', 'true' ),
+
+      ),
+      array(
+        'id'    => 'theme_darkmode_strategy',
+        'type'  => 'select',
+        'title' => '深色模式自动切换策略',
+        'dependency' => array( 'theme_darkmode_auto', '==', 'true' ),
+        'options'     => array(
+          'time'  => '客户端当地时间',
+          'client'  => '跟随客户端设置',
+          'eien'  => '永远开启',
+        ),
+        "default"=>"time"
       ),
 
       array(
@@ -389,6 +409,15 @@ if( class_exists( 'CSF' ) ) {
         'label'   => '默认开启，点击将进入搜索区域',
         'default' => true
       ),
+      array(
+        'id'    => 'nav_menu_blur',
+        'type'  => 'slider',
+        'title' => '导航菜单背景模糊',
+        'desc'   => '滑动滑块，推荐数值为5px，为0px时关闭',
+        'unit'    => 'px',
+        'max'   => '20',
+        'default' => '0'
+      ),
 
       array(
         'id'    => 'search_area_background',
@@ -491,6 +520,10 @@ if( class_exists( 'CSF' ) ) {
           ),
         ),
         'default'        => array(
+          'text_a'     => '',
+          'text_b'     => '',
+          'text_c'     => '',
+          'text_secondary' => '',
           'font_link'     => 'https://cdn.jsdelivr.net/gh/acai66/mydl/fonts/wenyihei/wenyihei-subfont.css',
           'font_name'    => 'wenyihei-subfont',
         ),
@@ -708,7 +741,7 @@ if( class_exists( 'CSF' ) ) {
           'baidu'  => '千千音乐（海外服务器无法使用）',
           'tencent'  => 'QQ音乐（可能无法使用）',
         ),
-        'default'     => 'off'
+        'default' => 'off'
       ),
 
       array(
@@ -718,6 +751,33 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'aplayer_server', '!=', 'off' ),
         'desc'   => '填写歌单ID，例如：https://music.163.com/#/playlist?id=5380675133的歌单ID是5380675133',
         'default' => '5380675133'
+      ),
+
+      array(
+        'id'          => 'aplayer_order',
+        'type'        => 'select',
+        'title'       => '播放模式',
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
+        'desc'   => '选择播放模式',
+        'options'     => array(
+          'list'  => '列表',
+          'random'  => '随机',
+        ),
+        'default'     => 'list'
+      ),
+
+      array(
+        'id'          => 'aplayer_preload',
+        'type'        => 'select',
+        'title'       => '预加载',
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
+        'desc'   => '是否预加载歌曲',
+        'options'     => array(
+          'none'  => '关闭预加载',
+          'metadata'  => '预加载元数据',
+          'auto'  => '自动',
+        ),
+        'default'     => 'auto'
       ),
 
       array(
@@ -761,14 +821,6 @@ if( class_exists( 'CSF' ) ) {
         'type'  => 'switcher',
         'title' => '页尾动态樱花图标',
         'label'   => '开启之后页尾将出现动态樱花图标',
-        'default' => false
-      ),
-
-      array(
-        'id'    => 'footer_random_word',
-        'type'  => 'switcher',
-        'title' => '页尾随机话语',
-        'label'   => '开启之后页尾将出现随机话语',
         'default' => false
       ),
 
@@ -848,27 +900,9 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'subheading',
-        'content' => '春节限定',
-      ),
-
-      array(
-        'type'    => 'content',
-        'content' => '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/newyear.png"  alt="谨贺新年" />',
-      ),
-
-      array(
-        'id'    => 'spring_festival_limited_deng',
-        'type'  => 'switcher',
-        'title' => '灯笼',
-        'label'   => '开启之后会加载春节灯笼，此选项为版本限定选项',
-        'default' => false
-      ),
-
-      array(
-        'type'    => 'subheading',
         'content' => '特效及动画',
       ),
-
+      
       array(
         'id'    => 'preload_animation',
         'type'  => 'switcher',
@@ -894,6 +928,17 @@ if( class_exists( 'CSF' ) ) {
         'desc'    => '自定义颜色',
         'default' => '#ffcc00'
       ),   
+
+      array(
+        'id'      => 'preload_blur',
+        'title'   => '预加载模糊过渡效果',
+        'dependency' => array( 'preload_animation', '==', 'true' ),
+        'desc'    => '模糊过渡持续时间，单位毫秒ms，为0时关闭。',
+        'default' => '0',
+        'type'   => 'slider',
+        'step'   => '10',
+        'max'   => '10000',
+      ), 
 
       array(
         'id'          => 'falling_effects',
@@ -972,6 +1017,14 @@ if( class_exists( 'CSF' ) ) {
         'title'  => '全局平滑滚动',
         'label'   => '默认开启，页面滚动将更加平滑',
         'default' => true
+      ),
+
+      array(
+        'id'    => 'captcha_switch',
+        'type'  => 'switcher',
+        'title' => '登录验证码',
+        'label'   => '开启之后验证码将出现在后台登录页及登录模板',
+        'default' => false
       ),
 
       array(
@@ -1199,7 +1252,7 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'text',
         'title'  => 'Webp优化/外部API桌面端随机图片地址',
         'desc'   => '填写地址',
-        'default' => 'https://api.iro.tw/webp_pc.php'
+        'default' => 'https://api.maho.cc/random-img/pc.php'
       ),
 
       array(
@@ -1214,7 +1267,7 @@ if( class_exists( 'CSF' ) ) {
         'title'  => '外部API手机端随机图片地址',
         'dependency' => array( 'random_graphs_mts', '==', 'true' ),
         'desc'   => '填写地址',
-        'default' => 'https://api.iro.tw/webp_mb.php'
+        'default' => 'https://api.maho.cc/random-img/mobile.php'
       ),
 
       array(
@@ -1616,7 +1669,7 @@ if( class_exists( 'CSF' ) ) {
         ),
         'desc'   => '最佳宽度820px，最佳高度67px',
         'library'      => 'image',
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/announcement_bg.jpg'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/announcement_bg.jpg'
       ),
 
       array(
@@ -1850,9 +1903,12 @@ if( class_exists( 'CSF' ) ) {
           ),
         ),
         'default'       => array(
-          'img1'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/exhibition1.jpg',
-          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/exhibition2.jpg',
-          'img3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/exhibition3.jpg',
+          'link1' => '',
+          'link2' => '',
+          'link3' => '',
+          'img1'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/exhibition1.jpg',
+          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/exhibition2.jpg',
+          'img3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/exhibition3.jpg',
           'title1' => 'アンコール',
           'title2' => 'ハルジオン',
           'title3' => 'かいぶつ',
@@ -1977,6 +2033,12 @@ if( class_exists( 'CSF' ) ) {
         'type'  => 'switcher',
         'title' => '文章区域“详细”图标',
         'label'   => '开启之后“详细”图标将显示在文章区域内下方',
+        'default' => false
+      ),array(
+        'id'    => 'is_author_meta_show',
+        'type'  => 'switcher',
+        'title' => '文章区域“作者信息”',
+        'label'   => '开启之后，文章元数据部分将增加作者信息。',
         'default' => false
       ),
 
@@ -2125,6 +2187,14 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'    => 'article_auto_toc',
+        'type'  => 'switcher',
+        'title' => '文章页面自动显示菜单',
+        'label'   => '默认开启，文章页面会自动显示菜单',
+        'default' => true
+      ),
+
+      array(
         'id'    => 'article_nextpre',
         'type'  => 'switcher',
         'title' => '文章页面上下文章切换',
@@ -2258,14 +2328,6 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'switcher',
         'title'  => '登录模板注册功能',
         'label'   => '开启之后登录模板将允许注册',
-        'default' => false
-      ),
-
-      array(
-        'id'     => 'registration_validation',
-        'type'   => 'switcher',
-        'title'  => '登录模板注册滑动验证',
-        'label'   => '开启之后登录模板注册需要经过滑动验证',
         'default' => false
       ),
 
@@ -2419,7 +2481,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '邮件模板特色图片',
         'desc'   => '设置你的回复邮件上方背景图片',
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/mail_head.jpg'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/mail_head.jpg'
       ),
 
       array(
@@ -2472,7 +2534,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '登录界面背景图片',
         'desc'   => '设置你的登录界面背景图片，此选项留空则显示默认背景',
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/login_background.jpg'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/login_background.jpg'
       ),
 
       array(
@@ -2489,15 +2551,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '登录界面Logo',
         'desc'   => '设置你的登录界面Logo',
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/login_logo.png'
-      ),
-
-      array(
-        'id'     => 'login_validation',
-        'type'   => 'switcher',
-        'title'  => '登录界面滑动验证',
-        'label'   => '开启之后登录需要经过滑动验证',
-        'default' => false
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/login_logo.png'
       ),
 
       array(
@@ -2519,7 +2573,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '仪表盘背景图片',
         'desc'   => '设置你的仪表盘背景图片，此选项留空则显示白色背景',
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/admin_background.jpg'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/admin_background.jpg'
       ),
 
       array(
@@ -2527,7 +2581,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '仪表盘一级菜单颜色',
         'desc'    => '自定义颜色',
-        'default' => '#a9c7d4'
+        'default' => '#ffa670'
       ),  
 
       array(
@@ -2535,7 +2589,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '仪表盘二级菜单颜色',
         'desc'    => '自定义颜色',
-        'default' => '#98b3bf'
+        'default' => '#ffb281'
       ),  
 
       array(
@@ -2543,7 +2597,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '仪表盘强调颜色',
         'desc'    => '自定义颜色',
-        'default' => '#8a8276'
+        'default' => '#634a4c'
       ),  
 
       array(
@@ -2551,7 +2605,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '仪表盘按钮颜色',
         'desc'    => '自定义颜色',
-        'default' => '#8995ad'
+        'default' => '#ab705f'
       ),  
 
       array(
@@ -2637,8 +2691,8 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'block_library_css',
         'type'   => 'switcher',
         'title'  => 'WordPress区块编辑器CSS',
-        'label'   => '开启之后将加载WordPress区块编辑器CSS',
-        'default' => false
+        'label'   => '默认开启，会加载WordPress区块编辑器所需的CSS',
+        'default' => true
       ),
 
       array(
@@ -2650,7 +2704,83 @@ if( class_exists( 'CSF' ) ) {
         'max'   => '24',
         'default'    => '0'
       ),
-
+      array(
+        'type'    => 'subheading',
+        'content' => '灯箱',
+      ),
+      array(
+        'id'     => 'baguetteBox',
+        'type'   => 'switcher',
+        'title'  => 'BaguetteBox灯箱效果',
+        'label'   => '开启之后将使用BaguetteBox作为图片灯箱效果',
+        'default' => false
+      ),
+      array(
+        'id'     => 'fancybox',
+        'type'   => 'switcher',
+        'title'  => 'FancyBox灯箱效果',
+        'label'   => '开启之后将使用FancyBox作为图片灯箱效果，将会额外加载JQ库',
+        'dependency' => array( 'baguetteBox', '==', 'false' ),
+        'default' => false
+      ), 
+      array(
+        'type'    => 'subheading',
+        'content' => '代码高亮',
+      ),array(
+        'type'    => 'content',
+        'content' => '<p><strong>Highlight.js:</strong>默认值，自动识别语言。</p>'
+        .'<p><strong>Prism.js:</strong>需要指定语言，使用方法请参阅<a href="https://prismjs.com/#basic-usage">基本用法</a>与<a href="https://prismjs.com/plugins/file-highlight/">如何代码高亮动态载入的文件</a>。</p>'
+        .'<p><strong>自定义:</strong>适用于另有配置的情况。</p>',
+      ),
+      array(
+        'id'     => 'code_highlight_method',
+        'type'  => 'select',
+        'title' => '代码高亮程序',
+        'options'     => array(
+          'hljs'  => 'Highlight.js',
+          'prism'  => 'Prism.js',
+          'custom'  => '自定义',
+        ),
+        "default"=>"hljs"
+      ),
+      array(
+        'id'       => 'code_highlight_prism_line_number_all',
+        'type'     => 'switcher',
+        'title'    => 'Prism.js：为所有代码块增加行数显示',
+        'dependency' => array(
+          array( 'code_highlight_method',   '==', 'prism' ),
+        ),
+        'desc'   => '参见<a href="https://prismjs.com/plugins/line-numbers/">插件说明文档</a>',
+      ),
+      array(
+        'id'       => 'code_highlight_prism_autoload_path',
+        'type'     => 'text',
+        'title'    => 'Prism.js：自动加载地址',
+        'dependency' => array(
+          array( 'code_highlight_method',   '==', 'prism' ),
+        ),
+        'desc'=>"留空以使用默认值",
+        'default'=>'https://cdn.jsdelivr.net/npm/prismjs@1.23.0/'
+      ),
+      array(
+        'id'       => 'code_highlight_prism_theme_light',
+        'type'     => 'text',
+        'title'    => 'Prism.js：代码高亮主题',
+        'desc'=>'相对于自动加载地址。留空以使用默认值',
+        'dependency' => array(
+          array( 'code_highlight_method',   '==', 'prism' ),
+        ),
+        'default'=>'themes/prism.min.css'
+      ),array(
+        'id'       => 'code_highlight_prism_theme_dark',
+        'type'     => 'text',
+        'title'    => 'Prism.js：深色模式下的代码高亮主题',
+        'desc'=>'相对于自动加载地址。留空以使用默认值',
+        'dependency' => array(
+          array( 'code_highlight_method',   '==', 'prism' ),
+        ),
+        'default'=>'themes/prism-tomorrow.min.css'
+      ),
       array(
         'type'    => 'submessage',
         'style'   => 'danger',
@@ -2699,15 +2829,6 @@ if( class_exists( 'CSF' ) ) {
         'title'  => '版本控制',
         'desc'   => '用于更新前端Cookie和浏览器缓存，可使用任意字符串',
       ),
-
-      array(
-        'id'     => 'image_viewer',
-        'type'   => 'switcher',
-        'title'  => 'BaguetteBox灯箱效果',
-        'label'   => '开启之后将替换Fancybox作为图片灯箱效果，不建议使用',
-        'default' => false
-      ),
-
     )
   ) );
 
@@ -2736,7 +2857,7 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/ultramarinelogo.gif"  alt="主题信息" />',
+        'content' => '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/encorelogo.gif"  alt="主题信息" />',
       ),
 
       array(
@@ -2765,12 +2886,12 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'       => 'channel_validate_value',
         'type'     => 'text',
-        'title'    => '主题更新预览通道免责声明',
+        'title'    => '主题更新测试通道免责声明',
         'dependency' => array(
           array( 'local_global_library',   '==', 'true' ),
           array( 'iro_update_source',   '==', 'official_building' ),
         ),
-        'desc'   => '如果你想要参与预览通道的版本测试中来，请在确保你已经认真了解参与预览通道测试带来的风险并且愿意自行承担一切后果（包括但不限于可能的数据丢失）之后，复制后文引号内的文本到选项文本框内“我已了解测试带来的风险并愿意承担所有后果”',
+        'desc'   => '如果你想要使用测试通道版本的主题，请在确保你已经认真了解参与测试带来的风险并且愿意自行承担一切后果（包括但不限于可能的数据丢失）之后，复制后文引号内的文本到选项文本框内“我已了解测试带来的风险并愿意承担所有后果”',
       ),
 
       array(
@@ -2782,10 +2903,11 @@ if( class_exists( 'CSF' ) ) {
           array( 'local_global_library',   '==', 'true' ),
           array( 'iro_update_source',   '==', 'official_building' ),
         ),
-        'desc'    => '你可以在此切换更新频道以参与到预览版本的测试中',
+        'desc'    => '你可以在此切换更新频道以参与到新版本的测试中',
         'options'    => array(
           'stable' => '正式频道',
-          'preview' => '预览频道',
+          'beta' => '公共测试频道',
+          'preview' => '预览测试频道',
         ),
         'default'    => 'stable'
       ),

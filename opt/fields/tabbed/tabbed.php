@@ -20,7 +20,7 @@ if ( ! class_exists( 'CSF_Field_tabbed' ) ) {
 
       echo $this->field_before();
 
-      echo '<div class="csf-tabbed-nav">';
+      echo '<div class="csf-tabbed-nav" data-depend-id="'. esc_attr( $this->field['id'] ) .'">';
       foreach ( $this->field['tabs'] as $key => $tab ) {
 
         $tabbed_icon   = ( ! empty( $tab['icon'] ) ) ? '<i class="csf--icon '. esc_attr( $tab['icon'] ) .'"></i>' : '';

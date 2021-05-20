@@ -23,7 +23,7 @@ function z_init() {
 
 add_action( 'admin_head', 'z_add_style' );
 function z_add_style() {
-	echo '<style type="text/css" media="screen">
+	echo '<style media="screen">
 		th.column-thumb {width:60px;}
 		.form-field img.taxonomy-image {border:1px solid #eee;max-width:300px;max-height:300px;}
 		.inline-edit-row fieldset .thumb label span.title {width:48px;height:48px;border:1px solid #eee;display:inline-block;}

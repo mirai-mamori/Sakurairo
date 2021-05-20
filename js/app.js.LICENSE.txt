@@ -1,0 +1,36 @@
+/* NProgress, (c) 2013, 2014 Rico Sta. Cruz - http://ricostacruz.com/nprogress
+ * @license MIT */
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+/*! loadCSS. [c]2020 Filament Group, Inc. MIT License */
+
+/**
+ * Cookie
+ * from github.com/mirai-mamori/Sakurairo ./js/sakura-app.js ,commit 71f5a0c
+ * @license GPL-v2
+ * @date 2021.03
+ */
+
+/**
+ * app.js - Client script bundle for Sakurairo, a WordPress theme.
+ * @author bymoye
+ * @author KotoriK
+ * @license GPL-v2
+ * Github Repository:
+ * https://github.com/Fuukei/Sakurairo_Scripts
+ * https://github.com/mirai-mamori/Sakurairo source from f7db3c5 
+ * 
+ * modified from Mashiro's work.
+ * *** original header ***
+ * Sakura theme application bundle
+ * @author Mashiro
+ * @url https://2heng.xin
+ * @date 2019.8.3
+ * *** ***
+ */

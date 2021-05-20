@@ -36,20 +36,26 @@ if ($iro_update_source == 'github'){
     );
 }else if ($iro_update_source == 'jsdelivr'){
 	$iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-		'https://update.iro.tw/jsdelivr.json',
+		'https://update.maho.cc/jsdelivr.json',
         __FILE__,
 		'Sakurairo'
 	);
 }else if ($iro_update_source == 'official_building'){
-    if ($iro_update_channel != 'preview'){
+    if ($iro_update_channel == 'stable'){
         $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-            'https://update.iro.tw/local/check.json',
+            'https://update.maho.cc/stable/check.json',
+            __FILE__,
+            'Sakurairo'
+        );
+    }else if ($iro_update_channel == 'beta'){
+        $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+            'https://update.maho.cc/beta/check.json',
             __FILE__,
             'Sakurairo'
         );
     }else if ($iro_update_channel == 'preview'){
         $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-            'https://update.iro.tw/preview/check.json',
+            'https://update.maho.cc/preview/check.json',
             __FILE__,
             'Sakurairo'
         );
@@ -226,7 +232,7 @@ add_action('init', 'shuoshuo_custom_init');
 
 function admin_lettering()
 {
-    echo '<style type="text/css">body{font-family: Microsoft YaHei;}</style>';
+    echo '<style>body{font-family: Microsoft YaHei;}</style>';
 }
 add_action('admin_head', 'admin_lettering');
 
@@ -249,24 +255,22 @@ add_action('after_setup_theme', 'akina_content_width', 0);
 function sakura_scripts()
 {
     if (iro_opt('local_global_library')) {
-        wp_enqueue_script('js_lib', get_template_directory_uri() . '/cdn/js/lib.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
-        if (iro_opt('aplayer_server') != 'off')wp_enqueue_script('Aplayer', get_template_directory_uri() . '/cdn/js/src/07.APlayer.min.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
+        //wp_enqueue_script('js_lib', get_template_directory_uri() . '/cdn/js/lib.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
         if (iro_opt('smoothscroll_option')) {
-            wp_enqueue_script('SmoothScroll', get_template_directory_uri() . '/cdn/js/src/20.SmoothScroll.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
+            wp_enqueue_script('SmoothScroll', get_template_directory_uri() . '/js/smoothscroll.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
         }
     } elseif (iro_opt('smoothscroll_option')) {
-        wp_enqueue_script('js_lib', 'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/lib.min.js,gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/src/20.SmoothScroll.js', array(), SAKURA_VERSION, true);
-        if (iro_opt('aplayer_server') != 'off')wp_enqueue_script('Aplayer', 'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION .  '/cdn/js/src/07.APlayer.min.js', array(), SAKURA_VERSION, true);
-    } else {
+        wp_enqueue_script('SmoothScroll',  'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/js/smoothscroll.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
+        //wp_enqueue_script('js_lib', 'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/lib.min.js,gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/smoothscroll.js', array(), SAKURA_VERSION, true);
+    }/*  else {
         wp_enqueue_script('js_lib', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/lib.min.js', array(), SAKURA_VERSION, true);
-        if (iro_opt('aplayer_server') != 'off')wp_enqueue_script('Aplayer', 'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION .  '/cdn/js/src/07.APlayer.min.js', array(), SAKURA_VERSION, true);
-    }
+    } */
     if (iro_opt('local_application_library')) {
         wp_enqueue_style('saukra_css', get_stylesheet_uri(), array(), SAKURA_VERSION);
-        wp_enqueue_script('app', get_template_directory_uri() . '/js/sakura-app.js', array(), SAKURA_VERSION, true);
+        wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), SAKURA_VERSION, true);
     } else {
         wp_enqueue_style('saukra_css', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/style.min.css', array(), SAKURA_VERSION);
-        wp_enqueue_script('app', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/js/sakura-app.min.js', array(), SAKURA_VERSION, true);
+        wp_enqueue_script('app', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/js/app.js', array(), SAKURA_VERSION, true);
     }
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -277,19 +281,19 @@ function sakura_scripts()
     $mv_live = iro_opt('cover_video_loop') ? 'open' : 'close';
     $movies = iro_opt('cover_video') ? array('url' => iro_opt('cover_video_link'), 'name' => iro_opt('cover_video_title'), 'live' => $mv_live) : 'close';
     $auto_height = !iro_opt('cover_full_screen') ? 'fixed' : 'auto';
-    $code_lamp = 'close';
-    // if (wp_is_mobile()) {
+/*     $code_lamp = 'close';
+ */    // if (wp_is_mobile()) {
     //     $auto_height = 'fixed';
     // }
     //拦截移动端
     version_compare($GLOBALS['wp_version'], '5.1', '>=') ? $reply_link_version = 'new' : $reply_link_version = 'old';
     $gravatar_url = iro_opt('gravatar_proxy') ?: 'secure.gravatar.com/avatar';
     wp_localize_script('app', 'Poi', array(
-        'pjax' => (bool)iro_opt('poi_pjax'),
+        'pjax' => iro_opt('poi_pjax')?'1':'',
         'movies' => $movies,
         'windowheight' => $auto_height,
-        'codelamp' => $code_lamp,
-        'ajaxurl' => admin_url('admin-ajax.php'),
+/*         'codelamp' => $code_lamp,
+ */        'ajaxurl' => admin_url('admin-ajax.php'),
         'order' => get_option('comment_order'), // ajax comments
         'formpostion' => 'bottom', // ajax comments 默认为bottom，如果你的表单在顶部则设置为top。
         'reply_link_version' => $reply_link_version,
@@ -491,10 +495,8 @@ function get_post_views($post_id)
 
 
 
-function is_webp(){
-    $webp = strpos($_SERVER['HTTP_ACCEPT'], 'image/webp');
-    $webp === false ? $webp=0 : $webp=1;
-    return $webp;
+function is_webp():bool{
+    return (isset($_COOKIE["su_webp"]) || strpos($_SERVER['HTTP_ACCEPT'], 'image/webp'));
 }
 
 $block_library_css = iro_opt('block_library_css');
@@ -758,7 +760,7 @@ function custom_headertitle($title)
 {
     return get_bloginfo('name');
 }
-add_filter('login_headertitle', 'custom_headertitle');
+add_filter('login_headertext', 'custom_headertitle');
 
 //Login Page Link
 function custom_loginlogo_url($url)
@@ -770,82 +772,37 @@ add_filter('login_headerurl', 'custom_loginlogo_url');
 //Login Page Footer
 function custom_html()
 {
-    if (iro_opt('login_background')) {
-        $loginbg = iro_opt('login_background');
-    } else {
-        $loginbg = 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ultramarine/login_background.jpg';
-    }
+    $loginbg = iro_opt('login_background') ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/login_background.jpg';
     echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/js/login.js"></script>' . "\n";
-    echo '<script type="text/javascript">' . "\n";
-    echo 'jQuery("body").prepend("<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");' . "\n";
-    echo 'jQuery(\'#bg\').children(\'img\').attr(\'src\', \'' . $loginbg . '\').on(\'load\',function(){' . "\n";
-    echo '	resizeImage(\'bg\');' . "\n";
-    echo '	jQuery(window).bind("resize", function() { resizeImage(\'bg\'); });' . "\n";
-    echo '	jQuery(\'.loading\').fadeOut();' . "\n";
-    echo '});';
-    echo '</script>' . "\n";
-    echo '<script>
-	function verificationOK(){
-		var x, y, z = "verification";
-		var x=$(\'#loginform\').find(\'input[name="verification"]\').val();
-		//var x=document.forms["loginform"]["verification"].value; //原生js实现
-		var y=$(\'#registerform\').find(\'input[name="verification"]\').val();
-		var z=$(\'#lostpasswordform\').find(\'input[name="verification"]\').val();
-		if (x=="verification" || y=="verification" || z=="verification"){
-		  alert("Please slide the block to verificate!");
-		  return false;
-	  }
-    }
-    $(document).ready(function(){
-        $(\'h1 a\').attr(\'style\',\'background-image: url(' . iro_opt('login_logo_img') . '); \');
-		$(".forgetmenot").replaceWith(\'<p class="forgetmenot">Remember Me<input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>\');
-	});
-    </script>';
-if (iro_opt('login_validation', 'true')) {
-    echo '<script>
-	$(document).ready(function(){
-		$( \'<p><div id="verification-slider"><div id="slider"><div id="slider_bg"></div><span id="label">»</span><span id="labelTip">Slide to Verificate</span></div><input type="hidden" name="verification" value="verification" /></div><p>\' ).insertBefore( $( ".submit" ) );
-		$(\'form\').attr(\'onsubmit\',\'return verificationOK();\');
-	});
-	</script>';
     echo '<script type="text/javascript">
-		var startTime = 0;
-		var endTime = 0;
-		var numTime = 0;
-		$(function () {
-			var slider = new SliderUnlock("#slider",{
-			successLabelTip : "OK"
-		},function(){
-			var sli_width = $("#slider_bg").width();
-			$(\'#verification-slider\').html(\'\').append(\'<input id="verification-ok" class="input" type="text" size="25" value="OK!" name="verification" disabled="true" />\');
-
-			endTime = nowTime();
-			numTime = endTime-startTime;
-			endTime = 0;
-			startTime = 0;
-			// 获取到滑动使用的时间 滑动的宽度
-			// alert( numTime );
-			// alert( sli_width );
-		});
-			slider.init();
-		})
-
-		/**
-		* 获取时间精确到毫秒
-		* @type
-		*/
-		function nowTime(){
-			var myDate = new Date();
-			var H = myDate.getHours();//获取小时
-			var M = myDate.getMinutes(); //获取分钟
-			var S = myDate.getSeconds();//获取秒
-			var MS = myDate.getMilliseconds();//获取毫秒
-			var milliSeconds = H * 3600 * 1000 + M * 60 * 1000 + S * 1000 + MS;
-			return milliSeconds;
-		}
-	</script>
-	<script type="text/javascript" src="' . get_template_directory_uri() . '/user/verification.js"></script>';
-}
+    document.body.insertAdjacentHTML("afterbegin","<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");
+    document.head.insertAdjacentHTML("afterbegin","<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
+    const bg_img = document.querySelector("#bg img"),loading = document.querySelector(".loading");
+    bg_img.setAttribute("src","',$loginbg, '");
+    bg_img.addEventListener("load",function(){
+        resizeImage(\'bg\');
+        window.onresize = ()=>{resizeImage("bg");}
+        loading.classList.add("hide");
+        loading.classList.remove("show");
+        loading.addEventListener("transitionend",function(){this.style.display="none"});
+	});
+    </script>',"\n";
+    echo '<script>
+    document.addEventListener("DOMContentLoaded", ()=>{
+        document.querySelector("h1 a").style.backgroundImage = "url(\'' ,iro_opt('login_logo_img') , '\') ";
+        document.querySelector(".forgetmenot").outerHTML = \'<p class="forgetmenot">Remember Me<input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p> \';
+        const captchaimg = document.getElementById("captchaimg");
+        captchaimg && captchaimg.addEventListener("click",(e)=>{
+            fetch("',rest_url('sakura/v1/captcha/create'),'")
+            .then(response=>response.json())
+            .then(json=>{
+                e.target.src = json["data"];
+                document.querySelector("input[name=\'timestamp\']").value = json["time"];
+                document.querySelector("input[name=\'id\']").value = json["id"];
+            });
+        })
+    }, false);
+    </script>';
 }
 add_action('login_footer', 'custom_html');
 
@@ -888,7 +845,7 @@ function comment_mail_notify($comment_id)
 {
     $mail_user_name = iro_opt('mail_user_name') ? iro_opt('mail_user_name') : 'poi';
     $comment = get_comment($comment_id);
-    $parent_id = $comment->comment_parent ? $comment->comment_parent : '';
+    $parent_id = $comment->comment_parent ?: '';
     $spam_confirmed = $comment->comment_approved;
     $mail_notify = iro_opt('mail_notify') ? get_comment_meta($parent_id, 'mail_notify', false) : false;
     $admin_notify = iro_opt('admin_notify') ? '1' : (get_comment($parent_id)->comment_author_email != get_bloginfo('admin_email') ? '1' : '0');
@@ -1034,15 +991,10 @@ if ( !get_option('use_smilies'))
     return;
     $tiebaname = array('good','han','spray','Grievance','shui','reluctantly','anger','tongue','se','haha','rmb','doubt','tear','surprised2','Happy','ku','surprised','theblackline','smilingeyes','spit','huaji','bbd','hu','shame','naive','rbq','britan','aa','niconiconi','niconiconi_t','niconiconit','awesome');
     $return_smiles = '';
-    for($i=0;$i<count($tiebaname);$i++){
-      $tieba_Name=$tiebaname[$i];
-      if (is_webp() == 1){
-          $tiebaimgdir="tiebawebp/";
-          $smiliesgs=".webp";
-      }else{
-          $tiebaimgdir="tiebapng/";
-          $smiliesgs=".png";
-      }
+    $type = is_webp() ? 'webp' : 'png';
+    $tiebaimgdir = 'tieba' . $type . '/';
+    $smiliesgs='.' . $type;
+    foreach ($tiebaname as $tieba_Name){
       // 选择面版
       $return_smiles = $return_smiles . '<span title="'.$tieba_Name.'" onclick="grin('."'".$tieba_Name."'".',type = \'tieba\')"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/'. $tiebaimgdir .'icon_'. $tieba_Name . $smiliesgs.'" /></span>';
       // 正文转换
@@ -1113,16 +1065,11 @@ $bilismiliestrans = array();
 function push_bili_smilies(){
   global $bilismiliestrans;
   $name = array('baiyan','bishi','bizui','chan','dai','daku','dalao','dalian','dianzan','doge','facai','fanu','ganga','guilian','guzhang','haixiu','heirenwenhao','huaixiao','jingxia','keai','koubizi','kun','lengmo','liubixue','liuhan','liulei','miantian','mudengkoudai','nanguo','outu','qinqin','se','shengbing','shengqi','shuizhao','sikao','tiaokan','tiaopi','touxiao','tuxue','weiqu','weixiao','wunai','xiaoku','xieyanxiao','yiwen','yun','zaijian','zhoumei','zhuakuang');
-  $return_smiles = null;
-  for($i=0;$i<count($name);$i++){
-    $smilies_Name=$name[$i];
-    if (is_webp() == 1){
-        $biliimgdir="biliwebp/";
-        $smiliesgs=".webp";
-    }else{
-        $biliimgdir="bilipng/";
-        $smiliesgs=".png";
-    }
+  $return_smiles = '';
+  $type = is_webp() ? 'webp' : 'png';
+  $biliimgdir = 'bili' . $type . '/';
+  $smiliesgs='.' . $type;
+  foreach($name as $smilies_Name){
     // 选择面版
     $return_smiles = $return_smiles . '<span title="'.$smilies_Name.'" onclick="grin('."'".$smilies_Name."'".',type = \'Math\')"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/'. $biliimgdir .'emoji_'. $smilies_Name . $smiliesgs.'" /></span>';
     // 正文转换
@@ -1152,13 +1099,9 @@ add_filter('the_content_feed', 'featuredtoRSS');
 
 //
 function bili_smile_filter_rss($content) {
-    if (is_webp() == 1){
-        $biliimgdir="biliwebp/";
-        $smiliesgs=".webp";
-    }else{
-        $biliimgdir="bilipng/";
-        $smiliesgs=".png";
-    }
+    $type = is_webp() ? 'webp' : 'png';
+    $biliimgdir = 'bili' . $type . '/';
+    $smiliesgs = '.' . $type;
     $content = str_replace("{{",'<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/'.$biliimgdir,$content);
     $content = str_replace("}}",$smilesgs.'" alt="emoji" style="height: 2em; max-height: 2em;">',$content);
     $content =  str_replace('[img]', '<img src="', $content); 
@@ -1618,7 +1561,7 @@ function change_avatar($avatar)
         if (get_comment_meta($comment->comment_ID, 'new_field_qq', true)) {
             $qq_number = get_comment_meta($comment->comment_ID, 'new_field_qq', true);
             if (iro_opt('qq_avatar_link') == 'off') {
-                return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" data-src="' . stripslashes($m[1]) . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+                return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" data-src="' . stripslashes($m[1]?? null) . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
             } elseif (iro_opt('qq_avatar_link') == 'type_3') {
                 $qqavatar = file_get_contents('http://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin=' . $qq_number);
                 preg_match('/:\"([^\"]*)\"/i', $qqavatar, $matches);
@@ -1640,7 +1583,8 @@ function change_avatar($avatar)
 // default feature image
 function DEFAULT_FEATURE_IMAGE()
 {
-    return rest_url('sakura/v1/image/feature') . '?' . rand(1, 1000);
+    $_api_url=rest_url('sakura/v1/image/feature');
+    return $_api_url . (preg_match('/index.php?/i',$_api_url)?'&':'?') . rand(1, 1000);
 }
 
 //评论回复
@@ -1676,9 +1620,10 @@ function markdown_parser($incoming_comment)
         siren_ajax_comment_err('评论只支持Markdown啦，见谅╮(￣▽￣)╭<br>Markdown Supported while <i class="fa fa-code" aria-hidden="true"></i> Forbidden');
         return ($incoming_comment);
     }
-    $myCustomer = $wpdb->get_row("SELECT * FROM wp_comments");
+    $column_names = $wpdb->get_row("SELECT * FROM information_schema.columns where 
+    table_name='wp_comments' and column_name = 'comment_markdown' LIMIT 1");
     //Add column if not present.
-    if (!isset($myCustomer->comment_markdown)) {
+    if (!isset($column_names)) {
         $wpdb->query("ALTER TABLE wp_comments ADD comment_markdown text");
     }
     $comment_markdown_content = $incoming_comment['comment_content'];
@@ -1847,3 +1792,126 @@ function xcollapse($atts, $content = null){
    add_shortcode('collapse', 'xcollapse');
 
 //code end
+
+
+add_action("wp_ajax_nopriv_getPhoto","get_photo");
+add_action("wp_ajax_getPhoto","get_photo");
+/**
+ * 相册模板
+ * @author siroi <mrgaopw@hotmail.com>
+ * @return Json
+ */
+function get_photo(){
+    $postId = $_GET['post'];
+    $page = get_post($postId);
+    if($page->post_type != "page"){
+        $back['code'] = 201;
+    }else{
+        $back['code'] = 200;
+        $back['imgs'] = array();
+        $dom = new DOMDocument('1.0', 'utf-8');
+        $meta = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
+        $dom->loadHTML($meta.$page->post_content);
+        $imgS = $dom->getElementsByTagName('img');
+        //<img src="..." data-header="标题" data-info="信息" vertical=false>
+        foreach ($imgS as $key=>$value){
+            //图片资源地址
+            $temp['img'] = $value->attributes->getNamedItem('src')->nodeValue;
+            //图片上的标题
+            $temp['header'] = $value->attributes->getNamedItem('data-header')->nodeValue;
+            //图片上的信息
+            $temp['info'] = $value->attributes->getNamedItem('data-info')->nodeValue;
+            //是否竖向展示 默认false
+            $temp['vertical'] = $value->attributes->getNamedItem('vertical')->nodeValue;
+            array_push($back['imgs'],$temp);
+        }
+    }
+    header('Content-Type:application/json;charset=utf-8');
+    echo json_encode($back);
+    exit();
+}
+if (iro_opt('captcha_switch', 'true')){
+    function login_CAPTCHA() {
+        include_once('inc/classes/CAPTCHA.php');
+        $img = new Sakura\API\CAPTCHA;
+        $test = $img->create_captcha_img();
+        echo '<p><label for="captcha" class="captcha">验证码<br><img id="captchaimg" width="120" height="40" src="', $test['data'] ,'"><input type="text" name="yzm" id="yzm" class="input" value="" size="20" tabindex="4" placeholder="请输入验证码"><input type="hidden" name="timestamp" value="',$test['time'],'"><input type="hidden" name="id" value="',$test['id'],'">'
+        ."</label></p>";
+        }
+    add_action('login_form','login_CAPTCHA');
+    add_action('register_form','login_CAPTCHA' );
+    add_action('lostpassword_form','login_CAPTCHA');
+
+    /**
+     * 登录界面验证码验证
+     */
+    function CAPTCHA_CHECK($user, $username, $password) {
+        if (empty($_POST)) {
+            return new WP_Error();
+        }
+        if(isset($_POST['yzm']) && !empty(trim($_POST['yzm']))){
+            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !ctype_xdigit($_POST['id']) || !ctype_digit($_POST['timestamp'])){
+                return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
+            }
+            include_once('inc/classes/CAPTCHA.php');
+            $img = new Sakura\API\CAPTCHA;
+            $check = $img->check_CAPTCHA($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
+            if($check['code'] == 5){
+                return $user;
+            }else{
+                return new WP_Error('prooffail', '<strong>错误</strong>：'.$check['msg']);
+                //return home_url('/wp-admin/');
+            }
+        }else{
+            return new WP_Error('prooffail', '<strong>错误</strong>：验证码为空！');
+        }
+    }
+    add_filter( 'authenticate','CAPTCHA_CHECK',20,3);
+    /**
+     * 忘记密码界面验证码验证
+     */
+    function lostpassword_CHECK( $errors ) {
+        if (empty($_POST)) {
+            return false;
+        }
+        if(isset($_POST['yzm']) && !empty(trim($_POST['yzm']))){
+            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !ctype_xdigit($_POST['id']) || !ctype_digit($_POST['timestamp'])){
+                return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
+            }
+            include_once('inc/classes/CAPTCHA.php');
+            $img = new Sakura\API\CAPTCHA;
+            $check = $img->check_CAPTCHA($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
+            if($check['code'] != 5){
+                return $errors->add( 'invalid_department ', '<strong>错误</strong>：'.$check['msg']);
+            }
+        }else{
+            return $errors->add('invalid_department', '<strong>错误</strong>：验证码为空！');
+        }
+    }
+    
+    add_action( 'lostpassword_post', 'lostpassword_CHECK' );
+    /** 
+    *   注册界面验证码验证
+    */
+    function registration_CAPTCHA_CHECK($errors, $sanitized_user_login, $user_email) {
+        if (empty($_POST)) {
+            return new WP_Error();
+        }
+        if(isset($_POST['yzm']) && !empty(trim($_POST['yzm']))){
+            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !ctype_xdigit($_POST['id']) || !ctype_digit($_POST['timestamp'])){
+                return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
+            }
+            include_once('inc/classes/CAPTCHA.php');
+            $img = new Sakura\API\CAPTCHA;
+            $check = $img->check_CAPTCHA($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
+            if($check['code'] == 5){
+                return $errors;
+            }else{
+                return new WP_Error('prooffail', '<strong>错误</strong>：'.$check['msg']);
+            }
+        }else{
+            return new WP_Error('prooffail', '<strong>错误</strong>：验证码为空！');
+        }
+    }
+    add_filter( 'registration_errors', 'registration_CAPTCHA_CHECK', 2, 3 );
+}

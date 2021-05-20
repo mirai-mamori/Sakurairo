@@ -1,4 +1,4 @@
-<style type="text/css">
+<style>
 .forgetmenot input:checked + label {
     background: <?php echo iro_opt('theme_skin'); ?>;
 }
@@ -17,30 +17,13 @@
 	position:absolute;
 	background: rgba(255, 255, 255, 0.40);
 	border-radius: 12px;
-	top:50%;
+	top:40%;
 	left:50%;
 	width:350px;
-    /*height: 500px;*/
 	padding:0px !important;
 	margin:-235px 0px 0px -175px !important; 
     background-position: center 48%;
 }
-
-<?php if (iro_opt('login_validation', 'true')): ?>
-#login {
-    font: 14px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
-    position: absolute;
-    background: rgba(255, 255, 255, 0.40);
-    border-radius: 12px;
-    top: 50%;
-    left: 50%;
-    width: 350px;
-    /* height: 500px; */
-    padding: 0px !important;
-    margin: -265px 0px 0px -175px !important;
-    background-position: center 48%;
-}
-<?php endif; ?>
 
 <?php if (iro_opt('login_blur', 'true')): ?>
 #bg{

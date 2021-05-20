@@ -60,15 +60,16 @@ class Aplayer
 
     private function format_playlist($data) {
         $server = $this->server;
-        $api_url = $this->api_url;
+        $_api_url = $this->api_url;
+        $api_url = $_api_url.(preg_match('/index.php?/i',$_api_url)?'&':'?');
         $data = json_decode($data);
         $playlist = array();
         foreach ((array)$data as $value) {
             $name = $value->name;
             $artists = implode(" / ", (array)$value->artist);
-            $mp3_url = "$api_url?server=$server&type=url&id=" . $value->url_id . '&meting_nonce=' . wp_create_nonce('url#:' . $value->url_id);
-            $cover = "$api_url?server=$server&type=pic&id=" . $value->pic_id . '&meting_nonce=' . wp_create_nonce('pic#:' . $value->url_id);
-            $lyric = "$api_url?server=$server&type=lyric&id=" . $value->lyric_id . '&meting_nonce=' . wp_create_nonce('lyric#:' . $value->url_id);
+            $mp3_url = $api_url."server=$server&type=url&id=" . $value->url_id . '&meting_nonce=' . wp_create_nonce('url#:' . $value->url_id);
+            $cover = $api_url."server=$server&type=pic&id=" . $value->pic_id . '&meting_nonce=' . wp_create_nonce('pic#:' . $value->url_id);
+            $lyric = $api_url."server=$server&type=lyric&id=" . $value->lyric_id . '&meting_nonce=' . wp_create_nonce('lyric#:' . $value->url_id);
             $playlist[] = array(
                 "name" => $name,
                 "artist" => $artists,

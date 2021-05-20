@@ -8,11 +8,11 @@ include_once('classes/Bilibili.php');
 include_once('classes/Cache.php');
 include_once('classes/Images.php');
 include_once('classes/QQ.php');
-
+include_once('classes/CAPTCHA.php');
 use Sakura\API\Images;
 use Sakura\API\QQ;
 use Sakura\API\Cache;
-
+use Sakura\API\CAPTCHA;
 /**
  * Router
  */
@@ -52,6 +52,10 @@ add_action('rest_api_init', function () {
     register_rest_route('sakura/v1', '/meting/aplayer', array(
         'methods' => 'GET',
         'callback' => 'meting_aplayer',
+    ));
+    register_rest_route('sakura/v1', '/captcha/create', array(
+        'methods' => 'GET',
+        'callback' => 'create_CAPTCHA',
     ));
 });
 
@@ -107,7 +111,8 @@ function upload_image(WP_REST_Request $request) {
  * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/image/cover
  */
 function cover_gallery() {
-    $type = $_GET['type'];
+    $type = $_GET['type'] ?? '';
+    // $type = in_array('type',$_GET) ? $_GET['type']:'';
     if ($type === 'mobile' && iro_opt('random_graphs_mts')){
         $imgurl = Images::mobile_cover_gallery();
     }else{
@@ -243,9 +248,9 @@ function bgm_bilibili() {
 function meting_aplayer() {
     $type = $_GET['type'];
     $id = $_GET['id'];
-    $wpnonce = $_GET['_wpnonce'];
-    $meting_pnonce = $_GET['meting_pnonce'];
-    if ((isset($wpnonce) && !check_ajax_referer('wp_rest', $wpnonce, false)) || (isset($nonce) && !wp_verify_nonce($nonce, $type . '#:' . $id))) {
+    if(in_array('_wpnonce',$_GET))    $wpnonce = $_GET['_wpnonce'];
+    if(in_array('meting_nonce',$_GET)) $meting_nonce = $_GET['meting_nonce'];
+    if ((isset($wpnonce) && !check_ajax_referer('wp_rest', $wpnonce, false)) || (isset($meting_nonce) && !wp_verify_nonce($meting_nonce, $type . '#:' . $id))) {
         $output = array(
             'status' => 403,
             'success' => false,
@@ -268,5 +273,13 @@ function meting_aplayer() {
             $response->header('Location', $data);
         }
     }
+    return $response;
+}
+
+function create_CAPTCHA(){
+    $CAPTCHA = new CAPTCHA();
+    $response = new WP_REST_Response($CAPTCHA->create_captcha_img());
+    $response->set_status(200);
+    $response->set_headers(array('Content-Type' => 'application/json'));
     return $response;
 }

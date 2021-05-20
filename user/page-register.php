@@ -36,10 +36,6 @@ if( !empty($_POST['register_reg']) ) {
 		$error .= '<strong>'.__("Error","sakurairo")./*错误*/'</strong>：'.__("Inconsistent password entered twice.","sakurairo")./*两次输入的密码不一致。*/'<br />';
 	}
 
-	// verification
-	if(iro_opt('registration_validation') && strlen($_POST['verification']) > 0 ){
-		$error .= '<strong>'.__("Error","sakurairo")./*错误*/'</strong>：'.__("Please drag the slider to verify identity","sakurairo")./*请拖动滑块验证身份*/'<br />';
-	}
 
 	if($error == '') {
 		$user_id = wp_create_user( $sanitized_user_login, $_POST['user_pass'], $user_email );
@@ -69,15 +65,6 @@ if( !empty($_POST['register_reg']) ) {
 					<p><input type="text" name="user_email" tabindex="2" id="user_email" class="input" value="<?php if(!empty($user_email)) echo $user_email; ?>" size="25" placeholder="电子邮箱" required /></p>
 					<p><input id="user_pwd1" class="input" tabindex="3" type="password" tabindex="21" size="25" value="" name="user_pass" placeholder="密码" required /></p>
 					<p><input id="user_pwd2" class="input" tabindex="4" type="password" tabindex="21" size="25" value="" name="user_pass2" placeholder="确认密码" required /></p>
-					<?php if(iro_opt('registration_validation')) : ?>
-					<div id="verification-slider">
-						<div id="slider">
-							<div id="slider_bg"></div>
-							<span id="label">»</span><span id="labelTip"><?php _e("Drag the slider to verify","sakurairo")/*拖动滑块验证*/?></span>
-						</div>
-						<input type="hidden" name="verification" value="verification" />
-					</div>
-					<?php endif; ?>
 					<input type="hidden" name="register_reg" value="ok" />
 					<?php if(!empty($error)) { echo '<p class="user-error">'.$error.'</p>'; } ?>
 					<input class="button register-button" name="submit" type="submit" value="<?php _e("Sign up","sakurairo")/*注 册*/?>">
@@ -96,7 +83,7 @@ if( !empty($_POST['register_reg']) ) {
 		<?php endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-<style type="text/css">
+<style>
 #slider {
 	margin: 0 auto 20px auto;
 	width: 300px;
@@ -161,40 +148,3 @@ if( !empty($_POST['register_reg']) ) {
 <?php
 get_footer();
 ?>
-<script type="text/javascript">
-	var startTime = 0;
-	var endTime = 0;
-	var numTime = 0;
-	$(function () {
-	    var slider = new SliderUnlock("#slider",{
-	    successLabelTip : "OK"
-	},function(){
-		var sli_width = $("#slider_bg").width();
-        $('#verification-slider').html('').append('<input id="verification-ok" class="input" type="text" size="25" value="Pass!" name="verification" disabled="true" />');
-        
-        endTime = nowTime();
-        numTime = endTime-startTime;
-        endTime = 0;
-        startTime = 0;
-        // 获取到滑动使用的时间 滑动的宽度
-        // alert( numTime );
-        // alert( sli_width );
-	});
-		slider.init();
-	})
-
-	/**
-	* 获取时间精确到毫秒
-	* @type
-	*/
-	function nowTime(){
-		var myDate = new Date();
-		var H = myDate.getHours();//获取小时
-		var M = myDate.getMinutes(); //获取分钟
-		var S = myDate.getSeconds();//获取秒
-		var MS = myDate.getMilliseconds();//获取毫秒
-		var milliSeconds = H * 3600 * 1000 + M * 60 * 1000 + S * 1000 + MS;
-		return milliSeconds;
-	}
-</script>
-<script type='text/javascript' src='<?php bloginfo("template_url"); ?>/user/verification.js'></script>

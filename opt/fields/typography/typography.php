@@ -85,7 +85,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
       $chosen_class     = ( $this->chosen ) ? ' csf--chosen' : '';
       $line_height_unit = ( ! empty( $args['line_height_unit'] ) ) ? $args['line_height_unit'] : $args['unit'];
 
-      echo '<div class="csf--typography'. esc_attr( $chosen_class ) .'" data-unit="'. esc_attr( $args['unit'] ) .'" data-line-height-unit="'. esc_attr( $line_height_unit ) .'" data-exclude="'. esc_attr( $args['exclude'] ) .'">';
+      echo '<div class="csf--typography'. esc_attr( $chosen_class ) .'" data-depend-id="'. esc_attr( $this->field['id'] ) .'" data-unit="'. esc_attr( $args['unit'] ) .'" data-line-height-unit="'. esc_attr( $line_height_unit ) .'" data-exclude="'. esc_attr( $args['exclude'] ) .'">';
 
         echo '<div class="csf--blocks csf--blocks-selects">';
 
@@ -429,7 +429,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
       $is_google = false;
 
       if ( ! empty( $this->value['type'] ) ) {
-        $is_google = ( $this->value['type'] === 'google' ) ? true : false;
+        $is_google = $this->value['type'] === 'google';
       } else {
         CSF::include_plugin_file( 'fields/typography/google-fonts.php' );
         $is_google = ( array_key_exists( $this->value['font-family'], csf_get_google_fonts() ) ) ? true : false;

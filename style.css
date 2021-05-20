@@ -3,10 +3,10 @@
 /*
 Theme Name: Sakurairo
 Theme URI: https://github.com/mirai-mamori/Sakurairo
-Author: made by FUUKEI
+Author: Created by Fuukei
 Author URI: https://iro.tw/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.0.1.1
+Version: 2.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -323,7 +323,7 @@ button,
 input,
 select,
 textarea {
-    color: #505050;
+    color: var(--theme-skin);
     font-size: 15px;
     line-height: 1.5
 }
@@ -433,7 +433,7 @@ html {
 }
 
 body {
-    background: #fff;
+    background: #0000;
     background-attachment: fixed;
     cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/normal.cur), auto
 }
@@ -850,7 +850,6 @@ a:hover {
     border-radius: 12px;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
     transform: scale(0);
-    transition: transform .3s
 }
 
 #changskin {
@@ -866,7 +865,6 @@ a:hover {
     border-radius: 12px;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
     transform: scale(0);
-    transition: transform .8s
 }
 
 #moblieGoTop:hover,
@@ -1036,18 +1034,13 @@ a:hover {
     width:50%;
 	left:47.5%;
     background: rgba(255, 255, 255, .75);
-    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
+    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4);
 }
 
 @media (max-width:1200px) {
 .yya {
-    position: fixed;
-    -webkit-transition: all 1s ease !important;
-    transition: all 1s ease !important;
     width:95%;
 	left:2.5%;
-    background: rgba(255, 255, 255, .75);
-    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
 }
 }
 
@@ -1541,6 +1534,17 @@ i.iconfont.hotpost {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.meta-author{
+    margin: 0 10px 0 0;
+}
+.meta-author img{
+    /**
+    *height值应与body,button,input,select,textarea{}的line-height同步
+    */
+    max-height:18px;
+    margin:0 5px -4px;
 }
 
 .comments-number {
@@ -4053,11 +4057,11 @@ i.iconfont.js-toggle-search.iconsearch {
 }
 
 .search-form--modal {
-    -webkit-transition: visibility .25s ease, opacity .25s ease;
-    -moz-transition: visibility .25s ease, opacity .25s ease;
-    -ms-transition: visibility .25s ease, opacity .25s ease;
-    -o-transition: visibility .25s ease, opacity .25s ease;
-    transition: visibility .25s ease, opacity .25s ease;
+    -webkit-transition: opacity .25s ease;
+    -moz-transition: opacity .25s ease;
+    -ms-transition: opacity .25s ease;
+    -o-transition: opacity .25s ease;
+    transition: opacity .25s ease;
     overflow: hidden;
     z-index: 9999;
     position: fixed;
@@ -4065,9 +4069,10 @@ i.iconfont.js-toggle-search.iconsearch {
     right: 0;
     left: 0;
     bottom: 0;
-    background: #fff;
     visibility: hidden;
-    opacity: 0
+    opacity: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .search-form--modal .search-form__inner {
@@ -4090,7 +4095,7 @@ i.iconfont.js-toggle-search.iconsearch {
 
 .search-form.is-visible {
     visibility: visible;
-    opacity: .99;
+    opacity: 1;
     animation: elastic .5s;
     background-color: rgba(255, 250, 255, 0.7);
     background-repeat: no-repeat;
@@ -4109,7 +4114,7 @@ i.iconfont.js-toggle-search.iconsearch {
 
 .search_close:after,
 .search_close:before {
-    background-color: #505050;
+    background-color: var(--theme-skin);
     position: absolute;
     content: "";
     width: 30px;
@@ -4153,19 +4158,19 @@ i.iconfont.js-toggle-search.iconsearch {
 }
 
 .search-form input::-webkit-input-placeholder {
-    color: #505050
+    color: var(--theme-skin)
 }
 
 .search-form input:-moz-placeholder {
-    color: #505050
+    color: var(--theme-skin)
 }
 
 .search-form input::-moz-placeholder {
-    color: #505050
+    color: var(--theme-skin)
 }
 
 .search-form input:-ms-input-placeholder {
-    color: #505050
+    color: var(--theme-skin)
 }
 
 .s-search {
@@ -4189,7 +4194,7 @@ i.iconfont.js-toggle-search.iconsearch {
     font-size: 32px;
     font-size: 1.5rem;
     line-height: 1;
-    color: #505050;
+    color: var(--theme-skin);
     position: absolute;
     bottom: 12px;
     margin-top: -16px;
@@ -5170,7 +5175,8 @@ i.iconfont.down {
     }
     #mo-nav.open {
         transform: translateX(250px) translateY(0);
-        -webkit-transform: translateX(250px);
+        -webkit-transform: translateX(250px);
+         position: fixed;
     }
     .wrapper section {
         max-width: 600px
@@ -5302,7 +5308,7 @@ i.iconfont.down {
     #mo-nav ul li {
         transition-duration: .25s;
         display: block;
-        padding: 6px 40px;
+        padding: 6px 0px;
         color: #fff;
         letter-spacing: .02em;
         text-align: left
@@ -5735,9 +5741,12 @@ i.iconfont.down {
     cursor: pointer
 }
 
-.header-user-avatar:hover .header-user-menu {
-    display: block;
+.header-user-avatar:hover .header-user-menu,
+.header-user-menu:hover {
     background: #fff;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
 }
 
 .header-user-menu {
@@ -5746,12 +5755,14 @@ i.iconfont.down {
     right: -11px;
     background: 0 0;
     top: 44px;
-    display: none;
+    visibility: hidden;
     overflow: hidden;
-    animation: header-menu .8s;
     box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .2);
     border-radius: 15px;
     text-align: center;
+    transition: all .5s 0.1s;
+    opacity: 0;
+    transform: translateY(-20px)
 }
 
 .header-user-menu::before {
@@ -7365,7 +7376,6 @@ a.toc-link {
     flex-direction: row;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    display: none
 }
 
 .emotion-inline {
@@ -8228,10 +8238,12 @@ td.hljs-ln-numbers {
     width: 50px;
     background-color: #FFEEEB;
     border-radius: 20%;
+    transition: .3s;
     cursor: pointer
 }
 .menu-list li:hover {
     background-color: #505050;
+    transition: .3s;
     color: #fff
 }
 .skin-menu .row-container.font-family-controls {
@@ -8253,14 +8265,17 @@ td.hljs-ln-numbers {
     margin: 0 4px;
     box-shadow: none;
     background-color: #FFEEEB;
+    transition: .3s;
     cursor: pointer
 }
 .font-family-controls button.selected {
     background-color: #505050;
+    transition: .3s;
     color: #fff
 }
 .font-family-controls button:hover {
     background-color: #505050;
+    transition: .3s;
     color: #fff
 }
 .control-btn-serif {
@@ -9016,4 +9031,68 @@ p.shuoshuo_time {
 	transform: rotateZ(720deg);
 	-webkit-transform: rotateZ(720deg);
 	-moz-transform: rotateZ(720deg)
+}
+
+
+.show {
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+.hide {
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+
+.emotion-show{
+    display:inline;
+}
+.emotion-hide{
+    display:none;
+}
+.emotion-box-show {
+    height: 153px !important;
+}
+
+.emotion-box {
+    transition: all .5s;
+    overflow: hidden;
+    height: 0px;
+}
+/**
+WordPress Generated Classes
+@seealso https://codex.wordpress.org/CSS#WordPress_Generated_Classes
+*/
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #eee;
+	clip: auto !important;
+	clip-path: none;
+	color: #444;
+	display: block;
+	font-size: 1em;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
 }

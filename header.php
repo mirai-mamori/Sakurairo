@@ -89,7 +89,7 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 	<div class="scrollbar" id="bar"></div>
 	<section id="main-container">
 		<?php 
-		if(iro_opt('cover_switch')){ 
+		if(iro_opt('cover_switch') && is_home()){ 
 		$filter = iro_opt('random_graphs_filter');
 		?>
 		<div class="headertop <?php echo $filter; ?>">

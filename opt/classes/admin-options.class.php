@@ -52,6 +52,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
       'sticky_header'           => true,
       'save_defaults'           => true,
       'ajax_save'               => true,
+      'form_action'             => '',
 
       // admin bar menu settings
       'admin_bar_menu_icon'     => '',
@@ -525,7 +526,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
     // option page html output
     public function add_options_html() {
 
-      $has_nav       = ( count( $this->pre_tabs ) > 1 ) ? true : false;
+      $has_nav       = count( $this->pre_tabs ) > 1;
       $show_all      = ( ! $has_nav ) ? ' csf-show-all' : '';
       $ajax_class    = ( $this->args['ajax_save'] ) ? ' csf-save-ajax' : '';
       $sticky_class  = ( $this->args['sticky_header'] ) ? ' csf-sticky-header' : '';
@@ -533,6 +534,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
       $theme         = ( $this->args['theme'] ) ? ' csf-theme-'. $this->args['theme'] : '';
       $class         = ( $this->args['class'] ) ? ' '. $this->args['class'] : '';
       $nav_type      = ( $this->args['nav'] === 'inline' ) ? 'inline' : 'normal';
+      $form_action   = ( $this->args['form_action'] ) ?: '';
 
       do_action( 'csf_options_before' );
 
@@ -540,7 +542,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
 
         echo '<div class="csf-container">';
 
-        echo '<form method="post" action="" enctype="multipart/form-data" id="csf-form" autocomplete="off" novalidate="novalidate">';
+        echo '<form method="post" action="'. esc_attr( $form_action ) .'" enctype="multipart/form-data" id="csf-form" autocomplete="off" novalidate="novalidate">';
 
         echo '<input type="hidden" class="csf-section-id" name="csf_transient[section]" value="1">';
 

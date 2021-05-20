@@ -18,6 +18,6 @@
 		"ext-json": "*"
 	},
 	"autoload": {
-		"files": ["load-v4p10.php"]
+		"files": ["load-v4p11.php"]
 	}
 }
