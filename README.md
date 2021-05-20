@@ -21,7 +21,7 @@
 
 [![image](https://cdn.maho.cc/vision/readme/encore1.png)](https://iro.tw/)
 
-[![image]https://cdn.maho.cc/vision/readme/encore2.png)](https://iro.tw/)
+[![image](https://cdn.maho.cc/vision/readme/encore2.png)](https://iro.tw/)
 
 [![image](https://cdn.maho.cc/vision/readme/encore3.png)](https://iro.tw/)
 
