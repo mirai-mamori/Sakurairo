@@ -19,13 +19,13 @@
 
 ### 图文：
 
-[![image](https://cdn.maho.cc/vision/readme/encore1.png)](https://iro.tw/)
+[![image](https://cdn.maho.cc/vision/readme/min_encore1.png)](https://iro.tw/)
 
-[![image](https://cdn.maho.cc/vision/readme/encore2.png)](https://iro.tw/)
+[![image](https://cdn.maho.cc/vision/readme/min_encore2.png)](https://iro.tw/)
 
-[![image](https://cdn.maho.cc/vision/readme/encore3.png)](https://iro.tw/)
+[![image](https://cdn.maho.cc/vision/readme/min_encore3.png)](https://iro.tw/)
 
-[![image](https://cdn.maho.cc/vision/readme/encore4.png)](https://iro.tw/)
+[![image](https://cdn.maho.cc/vision/readme/min_encore4.png)](https://iro.tw/)
 
 ## 使用相关：
 
