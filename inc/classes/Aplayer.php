@@ -61,7 +61,7 @@ class Aplayer
     private function format_playlist($data) {
         $server = $this->server;
         $_api_url = $this->api_url;
-        $api_url = $_api_url.(preg_match('/index.php?/i',$_api_url)?'&':'?');
+        $api_url = $_api_url.(preg_match('/index.php\?/i',$_api_url)?'&':'?');
         $data = json_decode($data);
         $playlist = array();
         foreach ((array)$data as $value) {
