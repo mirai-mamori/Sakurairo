@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2021-05-09 20:13+0800\n"
-"PO-Revision-Date: 2021-05-09 20:13+0800\n"
+"POT-Creation-Date: 2021-05-21 14:16+0800\n"
+"PO-Revision-Date: 2021-05-21 14:16+0800\n"
 "Last-Translator: KotoriK\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -38,10 +38,14 @@ msgstr "返回首页"
 msgid "Don't worry, search in site?"
 msgstr "别着急，试试站内检索？"
 
-#: 404.php:54 footer.php:72 opt/classes/admin-options.class.php:569
+#: 404.php:54 footer.php:68 opt/classes/admin-options.class.php:569
 #: opt/fields/icon/icon.php:57 opt/fields/map/map.php:23 search.php:42
 msgid "Search..."
 msgstr "搜索..."
+
+#: archive.php:55 author.php:76 index.php:73
+msgid " Previous"
+msgstr "更早的文章"
 
 #: comments.php:21
 msgid "view comments"
@@ -127,15 +131,15 @@ msgstr "禁止小广告😀"
 msgid "Site"
 msgstr "网站"
 
-#: footer.php:86 footer.php:94
+#: footer.php:82 footer.php:90
 msgid "Want to find something?"
 msgstr "想要找点什么呢？"
 
-#: footer.php:96
+#: footer.php:92
 msgid "Search"
 msgstr "搜索"
 
-#: footer.php:150
+#: footer.php:146
 msgid "Widgets"
 msgstr "小工具"
 
@@ -179,39 +183,39 @@ msgstr ""
 "请安装插件 <a href=\"https://wordpress.org/plugins/wp-statistics/\" target="
 "\"_blank\">WP-Statistics</a>"
 
-#: functions.php:524
+#: functions.php:522
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:1200
+#: functions.php:1184
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1221
+#: functions.php:1205
 msgid " "
 msgstr ""
 
-#: functions.php:1225
+#: functions.php:1209
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1248 functions.php:1251 inc/theme_plus.php:483
+#: functions.php:1232 functions.php:1235 inc/theme_plus.php:483
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1471
+#: functions.php:1455
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:1557
+#: functions.php:1541
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1620
+#: functions.php:1604
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1748
+#: functions.php:1732
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -1023,14 +1027,14 @@ msgstr ""
 msgid "Please enter a valid URL."
 msgstr ""
 
-#: opt/options/theme-options.php:1269
+#: opt/options/theme-options.php:1261
 #, php-format
 msgid ""
 "如果你选择使用Webp优化随机图片，请点击 <a href = \"%s\">这里</a> 来更新 "
 "Manifest 路径"
 msgstr ""
 
-#: opt/options/theme-options.php:2874
+#: opt/options/theme-options.php:2866
 #, php-format
 msgid ""
 "正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  "

@@ -73,7 +73,7 @@ get_header();
 
 		</main><!-- #main -->
 		<?php if ( iro_opt('pagenav_style') == 'ajax') { ?>
-		<div id="pagination"><?php next_posts_link(' Previous'); ?></div>
+		<div id="pagination"><?php next_posts_link(__(' Previous','sakurairo')); ?></div>
 		<div id="add_post"><span id="add_post_time" style="visibility: hidden;" title="<?php echo iro_opt('page_auto_load',''); ?>"  ></span></div>
 		<?php }else{ ?>
 		<nav class="navigator">
