@@ -4335,12 +4335,17 @@ body.dark .ins-section .fa {
 }
 
 .sorry li a {
-    color: #505050
+    color: var(--theme-skin)
 }
-
+body.dark .sorry li a{
+    color:#CCC;
+}
 .sorry {
-    color: #505050;
+    color: var(--theme-skin);
     margin-bottom: 80px
+}
+body.dark .sorry{
+    color:#CCC;
 }
 
 .sorry li {
@@ -4353,7 +4358,7 @@ body.dark .ins-section .fa {
 
 .sorry-inner {
     padding: 20px;
-    border: 1px solid #505050
+    border: 1px solid var(--theme-skin)
 }
 
 .error-img {

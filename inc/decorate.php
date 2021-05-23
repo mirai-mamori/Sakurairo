@@ -65,20 +65,11 @@ i.iconfont.js-toggle-search.iconsearch {
 .the-feature.from_left_and_right .info p {
     color: <?php echo iro_opt('theme_skin'); ?>;
 }
-.sorry li a {
-    color: <?php echo iro_opt('theme_skin'); ?>;
-}
-.sorry-inner {
-    border: 1px solid <?php echo iro_opt('theme_skin'); ?>;
-}
 .err-button.back a {
     border: 1px solid <?php echo iro_opt('theme_skin'); ?>;
     color: <?php echo iro_opt('theme_skin'); ?>;
 }
 
-.sorry {
-    color: <?php echo iro_opt('theme_skin'); ?>;
-}
 .site-top ul li a {
     color: <?php echo iro_opt('theme_skin'); ?>
 }
