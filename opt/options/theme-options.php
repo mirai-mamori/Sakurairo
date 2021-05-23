@@ -173,7 +173,6 @@ if( class_exists( 'CSF' ) ) {
         'desc'    => '自定义颜色',
         'default' => '#ffcc00'
       ),  
-
       array(
         'id'    => 'theme_darkmode_auto',
         'type'  => 'switcher',
@@ -227,6 +226,14 @@ if( class_exists( 'CSF' ) ) {
       array(
         'type'    => 'subheading',
         'content' => '其他',
+      ),
+
+      array(
+        'id'    => 'theme_commemorate_mode',
+        'type'  => 'switcher',
+        'title' => '纪念模式',
+        'label'   => '开启之后主题全局将添加黑白滤镜',
+        'default' => false
       ),
 
       array(
@@ -305,7 +312,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'google_fonts_api',
         'type'   => 'text',
         'title'  => '谷歌字体API地址',
-        'default' => 'fonts.googleapis.com'
+        'default' => 'fonts.loli.net'
       ),
 
       array(
@@ -682,10 +689,10 @@ if( class_exists( 'CSF' ) ) {
           'star_shaped'  => true,
           'square_shaped'  => true,
           'lemon_shaped'  => true,
-          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg1.png',
-          'img3'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg2.png',
-          'img4' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg3.png',
-          'img5' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png',
+          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/bg1.png',
+          'img3'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/bg2.png',
+          'img4' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/bg3.png',
+          'img5' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/bg4.png',
         )
       ),
 
@@ -1023,7 +1030,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'captcha_switch',
         'type'  => 'switcher',
         'title' => '登录验证码',
-        'label'   => '开启之后验证码将出现在后台登录页及登录模板',
+        'label'   => '开启之后验证码将出现在后台登录页及登录模板，此功能与其他验证码相关插件冲突，请勿同时开启',
         'default' => false
       ),
 

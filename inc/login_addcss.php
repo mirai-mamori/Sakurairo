@@ -25,6 +25,21 @@
     background-position: center 48%;
 }
 
+<?php if (!iro_opt('captcha_switch', 'true')): ?>
+	#login { 
+	font:14px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+	position:absolute;
+	background: rgba(255, 255, 255, 0.40);
+	border-radius: 12px;
+	top:50%;
+	left:50%;
+	width:350px;
+	padding:0px !important;
+	margin:-235px 0px 0px -175px !important; 
+    background-position: center 48%;
+}
+<?php endif; ?>
+
 <?php if (iro_opt('login_blur', 'true')): ?>
 #bg{
 	-webkit-filter: blur(2px); /* Chrome, Opera */

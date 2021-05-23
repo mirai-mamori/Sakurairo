@@ -904,7 +904,7 @@ function comment_mail_notify($comment_id)
     </div>
 ';
         $message = convert_smilies($message);
-        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.6.1/vision/smilies/bilipng/emoji_', $message);
+        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.7.0/vision/smilies/bilipng/emoji_', $message);
         $message = str_replace("}}", '.png" alt="emoji" style="height: 2em; max-height: 2em;">', $message);
 
         $message = str_replace('{UPLOAD}', 'https://i.loli.net/', $message);
@@ -1584,7 +1584,7 @@ function change_avatar($avatar)
 function DEFAULT_FEATURE_IMAGE()
 {
     $_api_url=rest_url('sakura/v1/image/feature');
-    return $_api_url . (preg_match('/index.php?/i',$_api_url)?'&':'?') . rand(1, 1000);
+    return $_api_url . (preg_match('/index.php\?/i',$_api_url)?'&':'?') . rand(1, 1000);
 }
 
 //评论回复

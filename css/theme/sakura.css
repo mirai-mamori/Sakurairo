@@ -362,12 +362,12 @@ td.hljs-ln-numbers {
     width: 30px
 }
 
-.hljs-ln-code .hljs-ln-line {
+.hljs-ln-code.hljs-ln-line {
     margin-left: 25px;
-    padding-left: 5px
+    padding-left: 30px
 }
 
-.hljs-ln-code .hljs-ln-line:hover {
+.hljs-ln-code.hljs-ln-line:hover {
     background-color: rgba(255, 255, 255, .1)
 }
 

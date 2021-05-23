@@ -926,3 +926,11 @@
 .entry-content ol,.entry-content ul {
     margin: auto !important;
 }
+.hljs-ln-code.hljs-ln-line {
+  margin-left: 25px;
+  padding-left: 30px !important
+}
+
+.hljs-ln-code.hljs-ln-line:hover {
+  background-color: rgba(255, 255, 255, .1)
+}
