@@ -4,7 +4,7 @@ function print_site_branding(){
 
 ?>
 <div class="site-branding">
-    <?php if (iro_opt('iro_logo')) { ?>
+    <?php if (iro_opt('iro_logo') && !iro_opt('mashiro_logo_option',false)) { ?>
         <div class="site-title">
             <a href="<?php bloginfo('url'); ?>"><img src="<?php echo iro_opt('iro_logo'); ?>"></a>
         </div>
