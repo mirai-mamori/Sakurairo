@@ -3773,7 +3773,7 @@ li.feature-2 {
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 99;
+    z-index: 5;
     -webkit-transition: .4s ease all;
     -moz-transition: .4s ease all;
     -o-transition: .4s ease all;
