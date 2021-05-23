@@ -45,13 +45,7 @@ $reception_background = iro_opt('reception_background');
 		<div class="iconflat no-select">	 
 			<div class="icon"></div>
 		</div>
-		<div class="site-branding">
-			<?php if (iro_opt('iro_logo')){ ?>
-			<div class="site-title">
-			<?php }else{ ?>
-			<h1 class="site-title"></h1>
-			<?php } ?>
-		</div>
+		<?php require_once get_stylesheet_directory().'/inc/site-branding.php'; print_site_branding();?>
 	</div><!-- m-nav-bar -->
 	</section><!-- #section -->
 	<!-- m-nav-center -->
