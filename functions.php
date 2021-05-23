@@ -848,7 +848,7 @@ function comment_mail_notify($comment_id)
     $parent_id = $comment->comment_parent ?: '';
     $spam_confirmed = $comment->comment_approved;
     $mail_notify = iro_opt('mail_notify') ? get_comment_meta($parent_id, 'mail_notify', false) : false;
-    $admin_notify = iro_opt('admin_notify') ? '1' : (get_comment($parent_id)->comment_author_email != get_bloginfo('admin_email') ? '1' : '0');
+    $admin_notify = iro_opt('admin_notify') ? '1' : ((isset(get_comment($parent_id)->comment_author_email) && get_comment($parent_id)->comment_author_email) != get_bloginfo('admin_email') ? '1' : '0');
     if (($parent_id != '') && ($spam_confirmed != 'spam') && ($admin_notify != '0') && (!$mail_notify)) {
         $wp_email = $mail_user_name . '@' . preg_replace('#^www\.#', '', strtolower($_SERVER['SERVER_NAME']));
         $to = trim(get_comment($parent_id)->comment_author_email);
@@ -1590,7 +1590,7 @@ function DEFAULT_FEATURE_IMAGE()
 //评论回复
 function sakura_comment_notify($comment_id)
 {
-    if (!$_POST['mail-notify']) {
+    if (!isset($_POST['mail-notify'])) {
         update_comment_meta($comment_id, 'mail_notify', 'false');
     }
 
