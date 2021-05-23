@@ -8,7 +8,7 @@ const mashiro_option = {
     darkmode :<?php echo iro_opt('theme_darkmode_auto') ? 'true':'false';?>,
     <?php if ( iro_opt('theme_darkmode_auto') ):echo 'dm_strategy:"'.iro_opt('theme_darkmode_strategy','time').'",'.PHP_EOL;endif; ?>
     <?php 
-    $preload_blur = ('preload_blur',0);
+    $preload_blur = iro_opt('preload_blur',0);
     if($preload_blur){
         echo "preload_blur:$preload_blur,";
     }
