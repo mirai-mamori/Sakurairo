@@ -70,9 +70,6 @@ i.iconfont.js-toggle-search.iconsearch {
     color: <?php echo iro_opt('theme_skin'); ?>;
 }
 
-.site-top ul li a {
-    color: <?php echo iro_opt('theme_skin'); ?>
-}
 .header-info {
     color: <?php echo iro_opt('theme_skin'); ?>;
     background: <?php echo iro_opt('infor_bar_bgcolor'); ?>;

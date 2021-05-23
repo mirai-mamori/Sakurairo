@@ -1157,7 +1157,7 @@ a:hover {
 .site-top ul li a {
     padding: 10px 0;
     display: inline-block;
-    color: #505050
+    color: var(--theme-skin)
 }
 
 .site-top ul li a:hover {
