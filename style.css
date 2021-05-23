@@ -3730,18 +3730,6 @@ li.feature-2 {
     }
 }
 
-.headertop-bar::after {
-    content: '';
-    width: 150%;
-    height: 4.375rem;
-    background: #fff;
-    left: -25%;
-    bottom: -2.875rem;
-    border-radius: 100%;
-    position: absolute;
-    z-index: 4
-}
-
 #centerbg {
     width: 100%;
     height: 550px;
