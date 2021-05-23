@@ -1,5 +1,7 @@
 <?php 
 function print_site_branding(){
+    $mashiro_logo = iro_opt('mashiro_logo');
+
 ?>
 <div class="site-branding">
     <?php if (iro_opt('iro_logo')) { ?>
