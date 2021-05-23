@@ -1593,6 +1593,7 @@ li.link-item {
 .yya {
     position: fixed;
     background: rgba(255, 255, 255, .75);
+    border-radius: 0 !important;
     box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
 }
 }

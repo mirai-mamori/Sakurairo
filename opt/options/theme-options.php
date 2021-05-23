@@ -222,16 +222,18 @@ if( class_exists( 'CSF' ) ) {
         'max'   => '1',
         'default' => '0.8'
       ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '其他',
+      ),
+
       array(
         'id'    => 'theme_commemorate_mode',
         'type'  => 'switcher',
         'title' => '纪念模式',
-        'label'   => '勾选开启',
+        'label'   => '开启之后主题全局将添加黑白滤镜',
         'default' => false
-      ),
-      array(
-        'type'    => 'subheading',
-        'content' => '其他',
       ),
 
       array(
@@ -310,7 +312,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'google_fonts_api',
         'type'   => 'text',
         'title'  => '谷歌字体API地址',
-        'default' => 'fonts.googleapis.com'
+        'default' => 'fonts.loli.net'
       ),
 
       array(
@@ -1028,7 +1030,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'captcha_switch',
         'type'  => 'switcher',
         'title' => '登录验证码',
-        'label'   => '开启之后验证码将出现在后台登录页及登录模板,与其他验证码插件冲突.二选一',
+        'label'   => '开启之后验证码将出现在后台登录页及登录模板，此功能与其他验证码相关插件冲突，请勿同时开启',
         'default' => false
       ),
 
