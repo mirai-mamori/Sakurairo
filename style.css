@@ -7609,11 +7609,14 @@ a.toc-link {
 }
 
 @media (max-width:625px) {
+    .cmt-info-container {
+        position: relative;
+    }
     .comment-user-avatar {
         padding-top: 10px;
         width: 45px;
         height: 55px;
-        right: 11%
+        right: 2%;
     }
     .comment-user-avatar .socila-check {
         width: 1.5em;
