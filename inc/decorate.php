@@ -1696,7 +1696,23 @@ if($nav_menu_blur != '0'){
 <?php
 }
 ?>
-
+<?php 
+if(iro_opt('cover_half_screen_curve',true)){
+   ?> 
+   .headertop-bar::after {
+    content: '';
+    width: 150%;
+    height: 4.375rem;
+    background: #fff;
+    left: -25%;
+    bottom: -2.875rem;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 4;
+}
+   <?php
+}
+?>
 
 </style>
 <?php }

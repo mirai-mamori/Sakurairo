@@ -8466,17 +8466,6 @@ h6[id*=toc-head]::before {
 }
 
 /* 首页下拉箭头 */
-.headertop-bar::after {
-    content: '';
-    width: 150%;
-    height: 4.375rem;
-    background: #fff;
-    left: -25%;
-    bottom: -2.875rem;
-    border-radius: 100%;
-    position: absolute;
-    z-index: 4;
-}
 .headertop-down {
     position: absolute;
     bottom: 50px;

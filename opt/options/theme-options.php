@@ -1104,6 +1104,14 @@ if( class_exists( 'CSF' ) ) {
         'label'   => '默认开启',
         'default' => true
       ),
+      array(
+        'id'    => 'cover_half_screen_curve',
+        'type'  => 'switcher',
+        'dependency'=>array( 'cover_full_screen', '==', 'false' ),
+        'title' => '封面下方弧形遮挡',
+        'label'   => '默认开启',
+        'default' => true
+      ),
 
       array(
         'id'    => 'cover_radius',
