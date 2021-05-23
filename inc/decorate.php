@@ -16,7 +16,7 @@ if (iro_opt('theme_skin')) { ?>
 }
 .author-profile i , .post-like a , .post-share .show-share , .sub-text , .we-info a , span.sitename { color: <?php echo iro_opt('theme_skin'); ?> }
 <?php if (iro_opt('theme_commemorate_mode')) {?>
-    body{
+    html{
         filter: grayscale(100%) !important;
     }
 <?php } ?>
