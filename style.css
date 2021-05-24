@@ -5307,7 +5307,7 @@ i.iconfont.down {
         padding: 6px 0px;
         color: #fff;
         letter-spacing: .02em;
-        text-align: left
+        text-align: center;
     }
     #mo-nav ul li a {
         color: #505050;
@@ -5316,9 +5316,10 @@ i.iconfont.down {
     #mo-nav li ul {
         width: 250px;
         margin: 10px 0;
+        padding: 0;
     }
     #mo-nav li ul li {
-        padding: 5px 0px
+        padding: 0;
     }
     #mo-nav li ul li a {
         font-size: 14px;
