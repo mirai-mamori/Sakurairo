@@ -2896,6 +2896,7 @@ if( class_exists( 'CSF' ) ) {
           'jsdelivr'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_jsd.png',
           'official_building'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_iro.png',
         ),
+        'desc'    => '如果你使用的是架设在国内的服务器，请使用jsDelivr源或主题官方源作为你的主题更新源',
         'default'     => 'github'
       ),
 
