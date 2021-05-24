@@ -114,7 +114,7 @@ if(iro_opt('classify_display')){
  * 评论添加@
  */
 function comment_add_at( $comment_text, $comment = '') {
-  if( $comment->comment_parent > 0) {
+  if( isset($comment->comment_parent) && $comment->comment_parent > 0) {
       if(substr($comment_text, 0, 3) === "<p>") 
         $comment_text = str_replace(substr($comment_text, 0, 3), '<p><a href="#comment-' . $comment->comment_parent . '" class="comment-at">@'.get_comment_author( $comment->comment_parent ) . '</a>&nbsp;', $comment_text);
       else
@@ -724,7 +724,7 @@ function siren_private_message_hook($comment_content , $comment){
 add_filter('get_comment_text','siren_private_message_hook',10,2);
 
 function siren_mark_private_message($comment_id){
-    if ( $_POST['is-private'] ) {
+    if ( isset($_POST['is-private']) ) {
         update_comment_meta($comment_id,'_private','true');
     }
 }

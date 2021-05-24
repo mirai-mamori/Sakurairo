@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://iro.tw/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.1.0.1
+Version: 2.1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -1157,7 +1157,7 @@ a:hover {
 .site-top ul li a {
     padding: 10px 0;
     display: inline-block;
-    color: #505050
+    color: var(--theme-skin)
 }
 
 .site-top ul li a:hover {
@@ -3730,18 +3730,6 @@ li.feature-2 {
     }
 }
 
-.headertop-bar::after {
-    content: '';
-    width: 150%;
-    height: 4.375rem;
-    background: #fff;
-    left: -25%;
-    bottom: -2.875rem;
-    border-radius: 100%;
-    position: absolute;
-    z-index: 4
-}
-
 #centerbg {
     width: 100%;
     height: 550px;
@@ -3785,7 +3773,7 @@ li.feature-2 {
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 99;
+    z-index: 5;
     -webkit-transition: .4s ease all;
     -moz-transition: .4s ease all;
     -o-transition: .4s ease all;
@@ -4335,12 +4323,17 @@ body.dark .ins-section .fa {
 }
 
 .sorry li a {
-    color: #505050
+    color: var(--theme-skin)
 }
-
+body.dark .sorry li a{
+    color:#CCC;
+}
 .sorry {
-    color: #505050;
+    color: var(--theme-skin);
     margin-bottom: 80px
+}
+body.dark .sorry{
+    color:#CCC;
 }
 
 .sorry li {
@@ -4353,7 +4346,7 @@ body.dark .ins-section .fa {
 
 .sorry-inner {
     padding: 20px;
-    border: 1px solid #505050
+    border: 1px solid var(--theme-skin)
 }
 
 .error-img {
@@ -5200,9 +5193,10 @@ i.iconfont.down {
         height: 50px;
         position: fixed;
         top: 0;
-        z-index: 99999;
+        z-index: 9999;
         display: block;
-        background: 0 0
+        background: 0 0;
+        padding-right:20px;
     }
     .iconflat {
         background: 0 0;
@@ -5297,10 +5291,12 @@ i.iconfont.down {
         border-radius: 3px;
         outline: 0
     }
-    #mo-nav ul {
-        width: 200px;
-        height: auto;
-        margin: 10px 9px
+    #mo-nav .menu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
     }
     #mo-nav ul:hover li {
         color: rgba(255, 255, 255, .5)
@@ -5311,7 +5307,7 @@ i.iconfont.down {
         padding: 6px 0px;
         color: #fff;
         letter-spacing: .02em;
-        text-align: left
+        text-align: center;
     }
     #mo-nav ul li a {
         color: #505050;
@@ -5320,9 +5316,10 @@ i.iconfont.down {
     #mo-nav li ul {
         width: 250px;
         margin: 10px 0;
+        padding: 0;
     }
     #mo-nav li ul li {
-        padding: 5px 0px
+        padding: 0;
     }
     #mo-nav li ul li a {
         font-size: 14px;
@@ -7615,11 +7612,14 @@ a.toc-link {
 }
 
 @media (max-width:625px) {
+    .cmt-info-container {
+        position: relative;
+    }
     .comment-user-avatar {
         padding-top: 10px;
         width: 45px;
         height: 55px;
-        right: 11%
+        right: 2%;
     }
     .comment-user-avatar .socila-check {
         width: 1.5em;
@@ -8472,17 +8472,6 @@ h6[id*=toc-head]::before {
 }
 
 /* 首页下拉箭头 */
-.headertop-bar::after {
-    content: '';
-    width: 150%;
-    height: 4.375rem;
-    background: #fff;
-    left: -25%;
-    bottom: -2.875rem;
-    border-radius: 100%;
-    position: absolute;
-    z-index: 4;
-}
 .headertop-down {
     position: absolute;
     bottom: 50px;

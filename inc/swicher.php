@@ -7,7 +7,12 @@ const mashiro_option = {
     audio:<?php echo iro_opt('note_effects') ? 'true':'false';?>,
     darkmode :<?php echo iro_opt('theme_darkmode_auto') ? 'true':'false';?>,
     <?php if ( iro_opt('theme_darkmode_auto') ):echo 'dm_strategy:"'.iro_opt('theme_darkmode_strategy','time').'",'.PHP_EOL;endif; ?>
-    preload_blur:<?php echo iro_opt('preload_blur',0)?>,
+    <?php 
+    $preload_blur = iro_opt('preload_blur',0);
+    if($preload_blur){
+        echo "preload_blur:$preload_blur,";
+    }
+    ?>
     email_domain:"<?php echo iro_opt('email_domain', ''); ?>",
     email_name:"<?php echo iro_opt('email_name', ''); ?>",
     cookie_version_control:"<?php echo iro_opt('cookie_version', ''); ?>",

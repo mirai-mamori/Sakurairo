@@ -1106,6 +1106,15 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'    => 'cover_half_screen_curve',
+        'type'  => 'switcher',
+        'dependency'=>array( 'cover_full_screen', '==', 'false' ),
+        'title' => '封面下方弧形遮挡',
+        'label'   => '开启之后封面下方将出现弧形遮挡',
+        'default' => false
+      ),
+
+      array(
         'id'    => 'cover_radius',
         'type'  => 'slider',
         'title' => '封面圆角',
