@@ -1562,7 +1562,13 @@ li.link-item {
         left: 5%;
     }
 .site-header {
-    display:none;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    left: 0;
+    background: 0 0;
+    position: fixed;
+    border-radius: 0px;
 }
 .yya {
     position: fixed;
@@ -1604,7 +1610,7 @@ li.link-item {
 
 @media (max-width:860px) {
 .site-header {
-    display:none;
+    height: 60px;
 }
 }
 <?php } ?>

@@ -5195,8 +5195,7 @@ i.iconfont.down {
         top: 0;
         z-index: 9999;
         display: block;
-        background: 0 0;
-        padding-right:20px;
+        background: 0 0
     }
     .iconflat {
         background: 0 0;
