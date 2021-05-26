@@ -5357,7 +5357,12 @@ i.iconfont.down {
         margin-bottom: 20px
     }
 }
-
+/* Scrollbar FireFox Support
+@TODO not completed
+*/
+body{
+    scrollbar-width:6px;
+}
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
