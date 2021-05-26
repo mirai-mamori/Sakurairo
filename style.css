@@ -5366,7 +5366,6 @@ body{
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
-    background-color: #eee
 }
 
 #mo-nav::-webkit-scrollbar {
