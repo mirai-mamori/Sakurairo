@@ -1559,7 +1559,7 @@ li.link-item {
 }
 @media (max-width:860px) {
 .openNav .icon {
-        left: 5%;
+        left: 5vw;
     }
 .site-header {
     width: 100%;

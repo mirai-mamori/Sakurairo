@@ -5189,7 +5189,6 @@ i.iconfont.down {
     }
     .openNav {
         transition-duration: .5s;
-        width: 100%;
         height: 50px;
         position: fixed;
         top: 0;
