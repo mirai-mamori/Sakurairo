@@ -5381,7 +5381,12 @@ body{
     background-color: var(--theme-skin);
     border-radius: 25px;
 }
-
+body.dark::-webkit-scrollbar-thumb{
+    background-color: #eee;
+}
+body.dark::-webkit-scrollbar-track {
+    background-color: var(--theme-skin)
+}
 @keyframes poi-deg {
     0% {
         transform: rotate(0)
