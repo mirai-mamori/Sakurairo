@@ -21,7 +21,6 @@ if (iro_opt('theme_skin')) { ?>
     }
 <?php } ?>
 .feature i , /*.feature-title span ,*/ .download , .links ul li:before , .ar-time i , span.ar-circle , .object , .comment .comment-reply-link , .siren-checkbox-radio:checked + .siren-checkbox-radioInput:after { background: <?php echo iro_opt('theme_skin'); ?> }
-::-webkit-scrollbar-thumb { background: <?php echo iro_opt('theme_skin'); ?>; border-radius: 25px; }
 .download ,  .link-title  { border-color: <?php echo iro_opt('theme_skin'); ?> }
  .comment h4 a , #comments-navi a.prev , #comments-navi a.next , #archives-temp h3 , span.page-numbers.current , blockquote:before, blockquote:after { color: <?php echo iro_opt('theme_skin'); ?> }
 
@@ -234,10 +233,6 @@ h1.cat-title {
     }
     #mo-nav ul li a:hover {
         color: <?php echo iro_opt('theme_skin_matching'); ?>;
-    }
-    ::-webkit-scrollbar-thumb {
-    background-color: <?php echo iro_opt('theme_skin'); ?>;
-    border-radius: 25px;
     }
 }
 .herder-user-name {

@@ -5376,7 +5376,8 @@ i.iconfont.down {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #505050
+    background-color: var(--theme-skin);
+    border-radius: 25px;
 }
 
 @keyframes poi-deg {
