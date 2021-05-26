@@ -9,6 +9,8 @@
  * @package Akina
  */
 
+    $mashiro_logo = iro_opt('mashiro_logo');
+
 ?>
 <?php header('X-Frame-Options: SAMEORIGIN'); ?>
 <!DOCTYPE html>
