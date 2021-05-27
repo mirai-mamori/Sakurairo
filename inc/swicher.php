@@ -98,7 +98,13 @@ var mashiro_option = {
               },
     },   
         <?php }?>    
-    comment_upload_img:<?php echo iro_opt('img_upload_api')=='off'?'false':'true' ?>
+    comment_upload_img:<?php echo iro_opt('img_upload_api')=='off'?'false':'true' ?>,
+    cache_cover:true,
+    <?php $site_bg_as_cover=iro_opt('site_bg_as_cover');
+    if($site_bg_as_cover)echo 'site_bg_as_cover:true,'
+    ?>
+    <?php $rnd_site_bg = iro_opt('rnd_site_bg');if($rnd_site_bg)echo 'rnd_site_bg:true,'
+    ?>
 };
 /*End of Initial Variables*/
 </script>

@@ -614,6 +614,13 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'    => 'rnd_site_bg',
+        'type'  => 'switcher',
+        'title' => '随机前台背景',
+        'default' => false
+      ),
+
+      array(
         'id'            => 'reception_background',
         'type'          => 'tabbed',
         'title'         => '前台背景设置',
@@ -1113,6 +1120,13 @@ if( class_exists( 'CSF' ) ) {
         'title' => '封面全屏显示',
         'label'   => '默认开启',
         'default' => true
+      ),
+
+      array(
+        'id'    => 'site_bg_as_cover',
+        'type'  => 'switcher',
+        'title' => '使用前台背景作为封面',
+        'default' => false
       ),
 
       array(
