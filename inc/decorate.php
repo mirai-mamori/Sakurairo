@@ -691,7 +691,7 @@ body.dark .post-list hr,
 body.dark .lower li ul,
 body.dark .header-user-menu,
 body.dark .headertop-bar::after 
-{background:#333333 !important;}
+{background:rgba(51,51,51,<?php echo iro_opt('theme_darkmode_background_transparency',1)?>) !important;}
 
 body.dark .pattern-center-blank,
 body.dark .blank,

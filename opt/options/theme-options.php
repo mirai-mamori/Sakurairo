@@ -222,6 +222,16 @@ if( class_exists( 'CSF' ) ) {
         'max'   => '1',
         'default' => '0.8'
       ),
+      array(
+        'id'     => 'theme_darkmode_background_transparency',
+        'type'   => 'slider',
+        'title'  => '深色模式页面背景透明度，使用此项保留前台背景图像的显示',
+        'desc'   => '滑动滑块，推荐数值范围为0.6-0.8',
+        'step'   => '0.01',
+        'min'   => '0.2',
+        'max'   => '1',
+        'default' => '1'
+      ),
 
       array(
         'type'    => 'subheading',
