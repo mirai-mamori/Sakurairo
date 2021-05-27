@@ -1,6 +1,6 @@
 <?php
 function font_end_js_control() { ?>
-<script>
+<script id="_mashiro_">
 /*Initial Variables*/
 const mashiro_option = {
     NProgressON:<?php echo iro_opt('nprogress_on') ? 'true':'false';?>,
