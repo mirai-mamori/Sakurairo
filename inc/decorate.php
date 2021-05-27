@@ -1714,7 +1714,11 @@ if(iro_opt('cover_half_screen_curve',true)){
    <?php
 }
 ?>
-
+body{
+    background-size:<?php
+echo iro_opt(('reception_background_size'),'auto')
+?>;
+}
 </style>
 <?php }
 add_action('wp_head', 'customizer_css');

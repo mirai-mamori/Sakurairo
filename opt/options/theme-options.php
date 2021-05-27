@@ -619,6 +619,17 @@ if( class_exists( 'CSF' ) ) {
         'title' => '随机前台背景',
         'default' => false
       ),
+      array(
+        'id'    => 'reception_background_size',
+        'type'  => 'select',
+        'options'     => array(
+          'cover'  => 'cover',
+          'contain'  => 'contain',
+          'auto'  => 'auto',
+        ),
+        'title' => '前台背景缩放方法',
+        'default' => 'auto'
+      ),
 
       array(
         'id'            => 'reception_background',
