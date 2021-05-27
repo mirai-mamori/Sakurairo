@@ -2,7 +2,7 @@
 function font_end_js_control() { ?>
 <script id="_mashiro_">
 /*Initial Variables*/
-const mashiro_option = {
+var mashiro_option = {
     NProgressON:<?php echo iro_opt('nprogress_on') ? 'true':'false';?>,
     audio:<?php echo iro_opt('note_effects') ? 'true':'false';?>,
     darkmode :<?php echo iro_opt('theme_darkmode_auto') ? 'true':'false';?>,
@@ -100,9 +100,8 @@ const mashiro_option = {
         <?php }?>    
     comment_upload_img:<?php echo iro_opt('img_upload_api')=='off'?'false':'true' ?>
 };
-const mashiro_global = {};
-
 /*End of Initial Variables*/
 </script>
+<script>const mashiro_global = {};</script>
 <?php }
 add_action('wp_head', 'font_end_js_control');
