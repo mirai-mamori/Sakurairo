@@ -435,6 +435,8 @@ html {
 body {
     background: #0000;
     background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
     cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/normal.cur), auto
 }
 
