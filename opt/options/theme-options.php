@@ -1123,6 +1123,14 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id' => 'cache_cover',
+        'type'  => 'switcher',
+        'title' => '封面缓存',
+        'label'   => '在本地缓存一份封面图，开启后能提升进入主页后第一张封面的加载速度。注意：开启此功能需要封面API能接受跨域请求。',
+        'default' => true
+      ),
+
+      array(
         'id'    => 'site_bg_as_cover',
         'type'  => 'switcher',
         'title' => '使用前台背景作为封面',
