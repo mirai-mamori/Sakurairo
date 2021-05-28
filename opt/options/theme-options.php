@@ -225,8 +225,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'theme_darkmode_background_transparency',
         'type'   => 'slider',
-        'title'  => '深色模式页面背景透明度，使用此项保留前台背景图像的显示',
-        'desc'   => '滑动滑块，推荐数值范围为0.6-0.8',
+        'title'  => '深色模式背景透明度',
+        'desc'   => '滑动滑块，推荐数值范围为0.6-0.8。为保证最佳观感，使用此项最好保留前台背景图像的显示',
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -614,21 +614,24 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'    => 'rnd_site_bg',
-        'type'  => 'switcher',
-        'title' => '随机前台背景',
-        'default' => false
-      ),
-      array(
         'id'    => 'reception_background_size',
         'type'  => 'select',
         'options'     => array(
-          'cover'  => 'cover',
-          'contain'  => 'contain',
-          'auto'  => 'auto',
+          'cover'  => '平铺',
+          'contain'  => '覆盖',
+          'auto'  => '自动',
         ),
-        'title' => '前台背景缩放方法',
+        'title' => '前台背景缩放方式',
+        'desc'   => '你可以选择两种方式缩放前台背景，默认自动缩放',
         'default' => 'auto'
+      ),
+
+      array(
+        'id'    => 'rnd_site_bg',
+        'type'  => 'switcher',
+        'title' => '默认前台背景使用封面随机图片',
+        'desc'   => '开启之后默认前台背景将使用主页封面随机图片',
+        'default' => false
       ),
 
       array(
@@ -1134,21 +1137,6 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id' => 'cache_cover',
-        'type'  => 'switcher',
-        'title' => '封面缓存',
-        'label'   => '在本地缓存一份封面图，开启后能提升进入主页后第一张封面的加载速度。注意：开启此功能需要封面API能接受跨域请求。',
-        'default' => true
-      ),
-
-      array(
-        'id'    => 'site_bg_as_cover',
-        'type'  => 'switcher',
-        'title' => '使用前台背景作为封面',
-        'default' => false
-      ),
-
-      array(
         'id'    => 'cover_half_screen_curve',
         'type'  => 'switcher',
         'dependency'=>array( 'cover_full_screen', '==', 'false' ),
@@ -1327,6 +1315,22 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'random_graphs_mts', '==', 'true' ),
         'desc'   => '填写地址',
         'default' => 'https://api.maho.cc/random-img/mobile.php'
+      ),
+
+      array(
+        'id' => 'cache_cover',
+        'type'  => 'switcher',
+        'title' => '封面随机背景图片缓存',
+        'label'   => '默认开启，此功能会在本地缓存一份封面图片，可提升进入主页后第一张封面的加载速度。注意：此功能需要封面API能接受跨域请求。',
+        'default' => true
+      ),
+
+      array(
+        'id'    => 'site_bg_as_cover',
+        'type'  => 'switcher',
+        'title' => '使用前台背景作为封面背景图片',
+        'label'   => '开启之后封面随机图片将使用用户设置的前台背景',
+        'default' => false
       ),
 
       array(
