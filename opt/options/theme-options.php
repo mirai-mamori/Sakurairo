@@ -871,6 +871,14 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'    => 'footer_yiyan',
+        'type'  => 'switcher',
+        'title' => '页尾一言',
+        'label'   => '开启之后页尾将出现一言',
+        'default' => false
+      ),
+
+      array(
         'id'     => 'footer_info',
         'type'   => 'textarea',
         'title'  => '页尾信息',
