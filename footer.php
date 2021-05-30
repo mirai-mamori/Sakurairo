@@ -30,7 +30,7 @@ $reception_background = iro_opt('reception_background');
 			</div>
 			<div class="footer-device">
 			<p style="font-family: 'Ubuntu', sans-serif;">
-					<p id="footer_yiyan"><script>fetch("https://api.maho.cc/yiyan/").then(res=>res.json()).then(data=>document.getElementById("footer_yiyan").innerText=data['hitokoto']+"——"+data['from'])</script></p>
+					<p id="footer_yiyan"></p>
 					<span style="color: #b9b9b9;">
 						<?php /* 能保留下面两个链接吗？算是我一个小小的心愿吧~ */ ?>
 						<?php if (iro_opt('footer_load_occupancy', 'true')): ?>
