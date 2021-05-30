@@ -522,7 +522,7 @@ $bg_style = !iro_opt('cover_full_screen') ? 'background-position: center center;
 
 <?php if (iro_opt('preload_animation', 'true')): ?>
 #preload {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
