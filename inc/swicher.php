@@ -12,6 +12,7 @@ function font_end_js_control() { ?>
 var mashiro_option = {
     NProgressON:<?php echo iro_opt('nprogress_on') ? 'true':'false';?>,
     audio:<?php echo iro_opt('note_effects') ? 'true':'false';?>,
+    yiyan:<?php echo iro_opt('footer_yiyan') ? 'true':'false';?>,
     darkmode :<?php echo iro_opt('theme_darkmode_auto') ? 'true':'false';?>,
     <?php if ( iro_opt('theme_darkmode_auto') ):echo 'dm_strategy:"'.iro_opt('theme_darkmode_strategy','time').'",'.PHP_EOL;endif; ?>
     <?php 
