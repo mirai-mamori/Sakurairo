@@ -627,14 +627,6 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'    => 'rnd_site_bg',
-        'type'  => 'switcher',
-        'title' => '默认前台背景使用封面随机图片',
-        'desc'   => '开启之后默认前台背景将使用主页封面随机图片',
-        'default' => false
-      ),
-
-      array(
         'id'            => 'reception_background',
         'type'          => 'tabbed',
         'title'         => '前台背景设置',

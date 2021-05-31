@@ -110,7 +110,6 @@ var mashiro_option = {
     <?php
     echo_if_true('cache_cover');
     echo_if_true('site_bg_as_cover');
-    echo_if_true('rnd_site_bg');
     ?>
 };
 /*End of Initial Variables*/
