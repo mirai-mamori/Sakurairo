@@ -8191,11 +8191,11 @@ td.hljs-ln-numbers {
 .serif {
     font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Source Han Serif', source-han-serif-sc, 'PT Serif', 'SongTi SC', 'MicroSoft Yahei', Georgia, serif
 }
-@media (max-width:860px) {
+/* @media (max-width:860px) {
     .serif {
         font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif
     }
-}
+} */
 .skin-menu {
     position: fixed;
     left: auto;
