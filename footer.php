@@ -128,10 +128,8 @@ $reception_background = iro_opt('reception_background');
 	<?php if(iro_opt('style_menu_display') == 'full'): ?></p>
 		Font
     <div class="font-family-controls row-container">
-        <button type="button" class="control-btn-serif selected" data-mode="serif" 
-                onclick="mashiro_global.font_control.change_font()"><i class="fa fa-font" aria-hidden="true"></i></button>
-        <button type="button" class="control-btn-sans-serif" data-mode="sans-serif" 
-                onclick="mashiro_global.font_control.change_font()"><i class="fa fa-bold" aria-hidden="true"></i></button>
+        <button type="button" class="control-btn-serif selected" data-name="serif" ><i class="fa fa-font" aria-hidden="true"></i></button>
+        <button type="button" class="control-btn-sans-serif" data-name="sans-serif"><i class="fa fa-bold" aria-hidden="true"></i></button>
 	</div>
 	<?php endif; ?>
 </div>
