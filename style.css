@@ -8212,6 +8212,8 @@ td.hljs-ln-numbers {
     font-family: Ubuntu, sans-serif;
     transform: scaleX(0);
     transition: .5s;
+    -webkit-backdrop-filter: blur(9px);
+    backdrop-filter:blur(9px) ;
 }
 .skin-menu.show {
     transform: scaleX(1);
