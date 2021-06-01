@@ -1328,8 +1328,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'site_bg_as_cover',
         'type'  => 'switcher',
-        'title' => '使用前台背景作为封面背景图片',
-        'label'   => '开启之后封面随机图片将使用用户设置的前台背景',
+        'title' => '封面与前台背景一体化',
+        'label'   => '开启之后，封面的背景将设置为透明，同时前台背景将使用封面的随机图API',
         'default' => false
       ),
 
