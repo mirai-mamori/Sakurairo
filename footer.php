@@ -25,7 +25,7 @@ $reception_background = iro_opt('reception_background');
 				</div>
 				<?php if (iro_opt('footer_sakura_icon', 'true')): ?>
 				<i class="iconfont icon-sakura rotating" style="color: <?php echo iro_opt('theme_skin_matching'); ?>;display:inline-block;font-size:26px"></i>
-				<?php endif; ?></p>
+				<?php endif; ?>
 				<p style="color: #666666;"><?php echo iro_opt('footer_info', ''); ?></p>
 			</div>
 			<div class="footer-device">
@@ -35,10 +35,9 @@ $reception_background = iro_opt('reception_background');
 						<?php /* 能保留下面两个链接吗？算是我一个小小的心愿吧~ */ ?>
 						<?php if (iro_opt('footer_load_occupancy', 'true')): ?>
                         <?php printf(' 耗时 %.3f 秒 | 查询 %d 次 | 内存 %.2f MB',timer_stop( 0, 3 ),get_num_queries(),memory_get_peak_usage() / 1024 / 1024);?>
-                        <?php endif; ?></p>
+                        <?php endif; ?>
 						Theme <a href="https://github.com/mirai-mamori/Sakurairo" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://iro.tw" target="_blank" id="site-info" >Fuukei</a> 
 					</span>
-				</p>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
@@ -92,8 +91,7 @@ $reception_background = iro_opt('reception_background');
 	<!-- search end -->
 <?php wp_footer(); ?>
 <div class="skin-menu no-select">
-<?php if(iro_opt('style_menu_display') == 'full'): ?>
-</p>Style
+<?php if(iro_opt('style_menu_display') == 'full'): ?>Style
 <?php endif; ?>
     <div class="theme-controls row-container">
         <ul class="menu-list">
@@ -125,7 +123,7 @@ $reception_background = iro_opt('reception_background');
             </li><!--Night-->
         </ul>
 	</div>
-	<?php if(iro_opt('style_menu_display') == 'full'): ?></p>
+	<?php if(iro_opt('style_menu_display') == 'full'): ?>
 		Font
     <div class="font-family-controls row-container">
         <button type="button" class="control-btn-serif selected" data-name="serif" ><i class="fa fa-font" aria-hidden="true"></i></button>
