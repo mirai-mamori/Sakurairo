@@ -222,6 +222,16 @@ if( class_exists( 'CSF' ) ) {
         'max'   => '1',
         'default' => '0.8'
       ),
+      array(
+        'id'     => 'theme_darkmode_background_transparency',
+        'type'   => 'slider',
+        'title'  => '深色模式背景透明度',
+        'desc'   => '滑动滑块，推荐数值范围为0.6-0.8。为保证最佳观感，使用此项最好保留前台背景图像的显示',
+        'step'   => '0.01',
+        'min'   => '0.2',
+        'max'   => '1',
+        'default' => '1'
+      ),
 
       array(
         'type'    => 'subheading',
@@ -604,6 +614,19 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'    => 'reception_background_size',
+        'type'  => 'select',
+        'options'     => array(
+          'cover'  => '覆盖',
+          'contain'  => '平铺',
+          'auto'  => '自动',
+        ),
+        'title' => '前台背景缩放方式',
+        'desc'   => '你可以选择两种方式缩放前台背景，默认自动缩放',
+        'default' => 'auto'
+      ),
+
+      array(
         'id'            => 'reception_background',
         'type'          => 'tabbed',
         'title'         => '前台背景设置',
@@ -836,6 +859,14 @@ if( class_exists( 'CSF' ) ) {
         'type'  => 'switcher',
         'title' => '页尾负载占用查询',
         'label'   => '开启之后页尾将出现负载占用信息',
+        'default' => false
+      ),
+
+      array(
+        'id'    => 'footer_yiyan',
+        'type'  => 'switcher',
+        'title' => '页尾一言',
+        'label'   => '开启之后页尾将出现一言',
         'default' => false
       ),
 
@@ -1284,6 +1315,22 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'random_graphs_mts', '==', 'true' ),
         'desc'   => '填写地址',
         'default' => 'https://api.maho.cc/random-img/mobile.php'
+      ),
+
+      array(
+        'id' => 'cache_cover',
+        'type'  => 'switcher',
+        'title' => '封面随机背景图片缓存',
+        'label'   => '默认开启，此功能会在本地缓存一份封面图片，可提升进入主页后第一张封面的加载速度。注意：此功能需要封面API能接受跨域请求。',
+        'default' => true
+      ),
+
+      array(
+        'id'    => 'site_bg_as_cover',
+        'type'  => 'switcher',
+        'title' => '封面与前台背景一体化',
+        'label'   => '开启之后，封面的背景将设置为透明，同时前台背景将使用封面的随机图API',
+        'default' => false
       ),
 
       array(
@@ -2896,6 +2943,7 @@ if( class_exists( 'CSF' ) ) {
           'jsdelivr'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_jsd.png',
           'official_building'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_iro.png',
         ),
+        'desc'    => '如果你使用的是架设在国内的服务器，请使用jsDelivr源或主题官方源作为你的主题更新源',
         'default'     => 'github'
       ),
 

@@ -535,7 +535,8 @@ function get_prev_thumbnail_url() {
 // 下一篇
 function get_next_thumbnail_url() { 
   $next_post = get_next_post(); 
-  if ( has_post_thumbnail($next_post->ID) ) { 
+  if( $next_post instanceof WP_Post){
+     if ( has_post_thumbnail($next_post->ID) ) { 
     $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $next_post->ID ), 'large'); 
     return $img_src[0]; 
   } 
@@ -549,6 +550,7 @@ function get_next_thumbnail_url() {
       return get_random_bg_url();
     } 
   } 
+  }
 }
 
 /**

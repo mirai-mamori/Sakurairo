@@ -31,7 +31,7 @@
 
 [![image](https://cdn.maho.cc/vision/readme/website.png)](https://iro.tw/)
 
-- 演示站点：https://demo.iro.tw/
+- 使用本主题的博客：https://iro.tw/demo.html
 
 - 主题交流群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
 

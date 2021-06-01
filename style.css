@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://iro.tw/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.1.0.2
+Version: 2.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -435,6 +435,7 @@ html {
 body {
     background: #0000;
     background-attachment: fixed;
+    background-position: center;
     cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/normal.cur), auto
 }
 
@@ -5189,14 +5190,12 @@ i.iconfont.down {
     }
     .openNav {
         transition-duration: .5s;
-        width: 100%;
         height: 50px;
         position: fixed;
         top: 0;
         z-index: 9999;
         display: block;
-        background: 0 0;
-        padding-right:20px;
+        background: 0 0
     }
     .iconflat {
         background: 0 0;
@@ -5359,11 +5358,15 @@ i.iconfont.down {
         margin-bottom: 20px
     }
 }
-
+/* Scrollbar FireFox Support
+@TODO not completed
+*/
+body{
+    scrollbar-width:6px;
+}
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
-    background-color: #eee
 }
 
 #mo-nav::-webkit-scrollbar {
@@ -5376,9 +5379,15 @@ i.iconfont.down {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #505050
+    background-color: var(--theme-skin);
+    border-radius: 25px;
 }
-
+body.dark::-webkit-scrollbar-thumb{
+    background-color: #eee;
+}
+body.dark::-webkit-scrollbar-track {
+    background-color: var(--theme-skin)
+}
 @keyframes poi-deg {
     0% {
         transform: rotate(0)
@@ -8182,11 +8191,11 @@ td.hljs-ln-numbers {
 .serif {
     font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Source Han Serif', source-han-serif-sc, 'PT Serif', 'SongTi SC', 'MicroSoft Yahei', Georgia, serif
 }
-@media (max-width:860px) {
+/* @media (max-width:860px) {
     .serif {
         font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif
     }
-}
+} */
 .skin-menu {
     position: fixed;
     left: auto;
@@ -8203,6 +8212,8 @@ td.hljs-ln-numbers {
     font-family: Ubuntu, sans-serif;
     transform: scaleX(0);
     transition: .5s;
+    -webkit-backdrop-filter: blur(9px);
+    backdrop-filter:blur(9px) ;
 }
 .skin-menu.show {
     transform: scaleX(1);

@@ -1,10 +1,18 @@
 <?php
+/**
+ * 仅对boolean类型的设置项有效
+ */
+function echo_if_true($key){
+$value = iro_opt($key);
+if($value)echo "$key:true,";
+}
 function font_end_js_control() { ?>
-<script>
+<script id="_mashiro_">
 /*Initial Variables*/
-const mashiro_option = {
+var mashiro_option = {
     NProgressON:<?php echo iro_opt('nprogress_on') ? 'true':'false';?>,
     audio:<?php echo iro_opt('note_effects') ? 'true':'false';?>,
+    yiyan:<?php echo iro_opt('footer_yiyan') ? 'true':'false';?>,
     darkmode :<?php echo iro_opt('theme_darkmode_auto') ? 'true':'false';?>,
     <?php if ( iro_opt('theme_darkmode_auto') ):echo 'dm_strategy:"'.iro_opt('theme_darkmode_strategy','time').'",'.PHP_EOL;endif; ?>
     <?php 
@@ -98,11 +106,14 @@ const mashiro_option = {
               },
     },   
         <?php }?>    
-    comment_upload_img:<?php echo iro_opt('img_upload_api')=='off'?'false':'true' ?>
+    comment_upload_img:<?php echo iro_opt('img_upload_api')=='off'?'false':'true' ?>,
+    <?php
+    echo_if_true('cache_cover');
+    echo_if_true('site_bg_as_cover');
+    ?>
 };
-const mashiro_global = {};
-
 /*End of Initial Variables*/
 </script>
+<script>const mashiro_global = {};</script>
 <?php }
 add_action('wp_head', 'font_end_js_control');

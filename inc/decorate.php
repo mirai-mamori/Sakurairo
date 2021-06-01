@@ -21,7 +21,6 @@ if (iro_opt('theme_skin')) { ?>
     }
 <?php } ?>
 .feature i , /*.feature-title span ,*/ .download , .links ul li:before , .ar-time i , span.ar-circle , .object , .comment .comment-reply-link , .siren-checkbox-radio:checked + .siren-checkbox-radioInput:after { background: <?php echo iro_opt('theme_skin'); ?> }
-::-webkit-scrollbar-thumb { background: <?php echo iro_opt('theme_skin'); ?>; border-radius: 25px; }
 .download ,  .link-title  { border-color: <?php echo iro_opt('theme_skin'); ?> }
  .comment h4 a , #comments-navi a.prev , #comments-navi a.next , #archives-temp h3 , span.page-numbers.current , blockquote:before, blockquote:after { color: <?php echo iro_opt('theme_skin'); ?> }
 
@@ -234,10 +233,6 @@ h1.cat-title {
     }
     #mo-nav ul li a:hover {
         color: <?php echo iro_opt('theme_skin_matching'); ?>;
-    }
-    ::-webkit-scrollbar-thumb {
-    background-color: <?php echo iro_opt('theme_skin'); ?>;
-    border-radius: 25px;
     }
 }
 .herder-user-name {
@@ -527,7 +522,7 @@ $bg_style = !iro_opt('cover_full_screen') ? 'background-position: center center;
 
 <?php if (iro_opt('preload_animation', 'true')): ?>
 #preload {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
@@ -696,7 +691,7 @@ body.dark .post-list hr,
 body.dark .lower li ul,
 body.dark .header-user-menu,
 body.dark .headertop-bar::after 
-{background:#333333 !important;}
+{background:rgba(51,51,51,<?php echo iro_opt('theme_darkmode_background_transparency',1)?>) !important;}
 
 body.dark .pattern-center-blank,
 body.dark .blank,
@@ -1564,10 +1559,16 @@ li.link-item {
 }
 @media (max-width:860px) {
 .openNav .icon {
-        left: 5%;
+        left: 5vw;
     }
 .site-header {
-    display:none;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    left: 0;
+    background: 0 0;
+    position: fixed;
+    border-radius: 0px;
 }
 .yya {
     position: fixed;
@@ -1609,7 +1610,7 @@ li.link-item {
 
 @media (max-width:860px) {
 .site-header {
-    display:none;
+    height: 60px;
 }
 }
 <?php } ?>
@@ -1713,7 +1714,11 @@ if(iro_opt('cover_half_screen_curve',true)){
    <?php
 }
 ?>
-
+body{
+    background-size:<?php
+echo iro_opt(('reception_background_size'),'auto')
+?>;
+}
 </style>
 <?php }
 add_action('wp_head', 'customizer_css');

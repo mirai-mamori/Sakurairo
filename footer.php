@@ -30,6 +30,7 @@ $reception_background = iro_opt('reception_background');
 			</div>
 			<div class="footer-device">
 			<p style="font-family: 'Ubuntu', sans-serif;">
+					<p id="footer_yiyan"></p>
 					<span style="color: #b9b9b9;">
 						<?php /* 能保留下面两个链接吗？算是我一个小小的心愿吧~ */ ?>
 						<?php if (iro_opt('footer_load_occupancy', 'true')): ?>
@@ -45,7 +46,6 @@ $reception_background = iro_opt('reception_background');
 		<div class="iconflat no-select">	 
 			<div class="icon"></div>
 		</div>
-		<?php require_once get_stylesheet_directory().'/inc/site-branding.php'; print_site_branding();?>
 	</div><!-- m-nav-bar -->
 	</section><!-- #section -->
 	<!-- m-nav-center -->
@@ -128,10 +128,8 @@ $reception_background = iro_opt('reception_background');
 	<?php if(iro_opt('style_menu_display') == 'full'): ?></p>
 		Font
     <div class="font-family-controls row-container">
-        <button type="button" class="control-btn-serif selected" data-mode="serif" 
-                onclick="mashiro_global.font_control.change_font()"><i class="fa fa-font" aria-hidden="true"></i></button>
-        <button type="button" class="control-btn-sans-serif" data-mode="sans-serif" 
-                onclick="mashiro_global.font_control.change_font()"><i class="fa fa-bold" aria-hidden="true"></i></button>
+        <button type="button" class="control-btn-serif selected" data-name="serif" ><i class="fa fa-font" aria-hidden="true"></i></button>
+        <button type="button" class="control-btn-sans-serif" data-name="sans-serif"><i class="fa fa-bold" aria-hidden="true"></i></button>
 	</div>
 	<?php endif; ?>
 </div>
