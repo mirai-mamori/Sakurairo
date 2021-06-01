@@ -617,8 +617,8 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'reception_background_size',
         'type'  => 'select',
         'options'     => array(
-          'cover'  => '平铺',
-          'contain'  => '覆盖',
+          'cover'  => '覆盖',
+          'contain'  => '平铺',
           'auto'  => '自动',
         ),
         'title' => '前台背景缩放方式',
