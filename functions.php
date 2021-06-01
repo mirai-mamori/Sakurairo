@@ -1830,7 +1830,7 @@ function get_photo(){
     echo json_encode($back);
     exit();
 }
-if (iro_opt('captcha_switch', 'true')){
+if (iro_opt('captcha_switch')){
     function login_CAPTCHA() {
         include_once('inc/classes/CAPTCHA.php');
         $img = new Sakura\API\CAPTCHA;
