@@ -1,10 +1,3 @@
-/*!
- * Determine if an object is a Buffer
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
- */
-
 /*! loadCSS. [c]2020 Filament Group, Inc. MIT License */
 
 /**
@@ -16,18 +9,33 @@
 
 /**
  * app.js - Client script bundle for Sakurairo, a WordPress theme.
- * @author bymoye
+ * @author bymoye 
  * @author KotoriK
  * @license GPL-v2
+ * @date 2021.3.21
  * Github Repository:
- * https://github.com/Fuukei/Sakurairo_Scripts
- * https://github.com/mirai-mamori/Sakurairo source from f7db3c5 
+ * @url https://github.com/Fuukei/Sakurairo_Scripts
+ * @url https://github.com/mirai-mamori/Sakurairo commit f7db3c5 
  * 
- * modified from Mashiro's work.
- * *** original header ***
+ * *** ACKNOWLEDGEMENT *** 
+ * 
+ * *** modified on mashirozx/Sakura/js/sakura-app.js ***
  * Sakura theme application bundle
  * @author Mashiro
  * @url https://2heng.xin
  * @date 2019.8.3
  * *** ***
+ * 
+ * *** inherited from louie-senpai/Siren/js/app.js ***
+ * Siren application js
+ * @author Louie
+ * @url http://i94.me
+ * @date 2016.11.19
+ * *** ***
+ * 
+ * inherited from Xoin-Yang/Akina/js/global.js
+ * *** ACKNOWLEDGEMENT *** 
+ * 
+ * Press 'F' to pay respects.
+ * 
  */
