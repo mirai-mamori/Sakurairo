@@ -9096,3 +9096,7 @@ WordPress Generated Classes
 	z-index: 100000;
 	/* Above WP toolbar. */
 }
+
+.post-list-thumb:hover {
+    box-shadow: 0 1px 20px -8px #000;
+}
