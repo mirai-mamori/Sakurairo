@@ -926,6 +926,9 @@ body.dark .entry-content .aplayer
 {filter:brightness(<?php echo iro_opt('theme_darkmode_img_bright'); ?>);}
 
 /*深色模式主题色*/
+:root{
+    --theme-skin-dark: <?php echo iro_opt('theme_skin_dark'); ?>;
+}
 body.dark .scrollbar,
 body.dark .butterBar-message,
 body.dark .aplayer .aplayer-list ol li:hover ,
