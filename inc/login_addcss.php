@@ -25,7 +25,7 @@
     background-position: center 48%;
 }
 
-<?php if (!iro_opt('captcha_switch', 'true')): ?>
+<?php if (!iro_opt('captcha_switch','false')): ?>
 	#login { 
 	font:14px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
 	position:absolute;
