@@ -9096,7 +9096,12 @@ WordPress Generated Classes
 	z-index: 100000;
 	/* Above WP toolbar. */
 }
-
+/**
+* 文章卡片hover效果
+*/
 .post-list-thumb:hover {
     box-shadow: 0 1px 20px -8px #000;
+}
+body.dark .post-list-thumb:hover {
+    box-shadow: 0 1px 20px -8px var(--theme-skin-dark);
 }
