@@ -9105,3 +9105,8 @@ WordPress Generated Classes
 body.dark .post-list-thumb:hover {
     box-shadow: 0 1px 20px -8px var(--theme-skin-dark);
 }
+
+.lazyload[src*="#lazyload-blur"], .lazyload[style*="#lazyload-blur"] {
+    -webkit-filter: saturate(.5) blur(10px);
+    filter: saturate(.5) blur(10px);
+}
