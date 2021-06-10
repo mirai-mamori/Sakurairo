@@ -1832,8 +1832,8 @@ function get_photo(){
 }
 if (iro_opt('captcha_switch','false')){
     function login_CAPTCHA() {
-        include_once('inc/classes/CAPTCHA.php');
-        $img = new Sakura\API\CAPTCHA;
+        include_once('inc/classes/Captcha.php');
+        $img = new Sakura\API\Captcha;
         $test = $img->create_captcha_img();
         echo '<p><label for="captcha" class="captcha">验证码<br><img id="captchaimg" width="120" height="40" src="', $test['data'] ,'"><input type="text" name="yzm" id="yzm" class="input" value="" size="20" tabindex="4" placeholder="请输入验证码"><input type="hidden" name="timestamp" value="',$test['time'],'"><input type="hidden" name="id" value="',$test['id'],'">'
         ."</label></p>";
@@ -1853,9 +1853,9 @@ if (iro_opt('captcha_switch','false')){
             if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !ctype_xdigit($_POST['id']) || !ctype_digit($_POST['timestamp'])){
                 return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
             }
-            include_once('inc/classes/CAPTCHA.php');
-            $img = new Sakura\API\CAPTCHA;
-            $check = $img->check_CAPTCHA($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
+            include_once('inc/classes/Captcha.php');
+            $img = new Sakura\API\Captcha;
+            $check = $img->check_captcha($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
             if($check['code'] == 5){
                 return $user;
             }else{
@@ -1878,9 +1878,9 @@ if (iro_opt('captcha_switch','false')){
             if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !ctype_xdigit($_POST['id']) || !ctype_digit($_POST['timestamp'])){
                 return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
             }
-            include_once('inc/classes/CAPTCHA.php');
-            $img = new Sakura\API\CAPTCHA;
-            $check = $img->check_CAPTCHA($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
+            include_once('inc/classes/Captcha.php');
+            $img = new Sakura\API\Captcha;
+            $check = $img->check_captcha($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
             if($check['code'] != 5){
                 return $errors->add( 'invalid_department ', '<strong>错误</strong>：'.$check['msg']);
             }
@@ -1901,9 +1901,9 @@ if (iro_opt('captcha_switch','false')){
             if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !ctype_xdigit($_POST['id']) || !ctype_digit($_POST['timestamp'])){
                 return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
             }
-            include_once('inc/classes/CAPTCHA.php');
-            $img = new Sakura\API\CAPTCHA;
-            $check = $img->check_CAPTCHA($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
+            include_once('inc/classes/Captcha.php');
+            $img = new Sakura\API\Captcha;
+            $check = $img->check_captcha($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
             if($check['code'] == 5){
                 return $errors;
             }else{

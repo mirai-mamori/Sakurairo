@@ -8,11 +8,11 @@ include_once('classes/Bilibili.php');
 include_once('classes/Cache.php');
 include_once('classes/Images.php');
 include_once('classes/QQ.php');
-include_once('classes/CAPTCHA.php');
+include_once('classes/Captcha.php');
 use Sakura\API\Images;
 use Sakura\API\QQ;
 use Sakura\API\Cache;
-use Sakura\API\CAPTCHA;
+use Sakura\API\Captcha;
 /**
  * Router
  */
@@ -277,7 +277,7 @@ function meting_aplayer() {
 }
 
 function create_CAPTCHA(){
-    $CAPTCHA = new CAPTCHA();
+    $CAPTCHA = new Captcha();
     $response = new WP_REST_Response($CAPTCHA->create_captcha_img());
     $response->set_status(200);
     $response->set_headers(array('Content-Type' => 'application/json'));
