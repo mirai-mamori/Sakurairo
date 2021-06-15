@@ -163,10 +163,8 @@ get_header();
         </div>
     </template>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
-<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
 <script>
-
+{
     Vue.config.devtools = false;
 
     Vue.component('siroi', {
@@ -279,7 +277,7 @@ get_header();
                 });
         }
     });
-
+}
 </script>
 
 <?php
