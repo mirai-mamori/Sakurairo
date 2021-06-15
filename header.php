@@ -77,6 +77,8 @@ if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','<?php echo iro_opt('google_analytics_id', ''); ?>');
 </script>
 <?php endif; ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
 </head>
 <body <?php body_class(); ?>>
 <?php if (iro_opt('preload_animation', 'true')): ?>
