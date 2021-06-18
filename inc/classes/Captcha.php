@@ -46,11 +46,11 @@ class Captcha
     }
 
     /**
-     * crypt_captcha
+     * verify_captcha
      *
      * @param  string $captcha
      * @param  string $hash
-     * @return string
+     * @return bool
      */
     public function verify_captcha(string $captcha, string $hash): bool
     {
