@@ -1830,7 +1830,9 @@ function get_photo(){
     echo json_encode($back);
     exit();
 }
-if (iro_opt('captcha_switch','false')){
+
+
+if (iro_opt('captcha_switch', 'true')){
     function login_CAPTCHA() {
         include_once('inc/classes/Captcha.php');
         $img = new Sakura\API\Captcha;
@@ -1850,7 +1852,7 @@ if (iro_opt('captcha_switch','false')){
             return new WP_Error();
         }
         if(isset($_POST['yzm']) && !empty(trim($_POST['yzm']))){
-            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !ctype_xdigit($_POST['id']) || !ctype_digit($_POST['timestamp'])){
+            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])){
                 return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
             }
             include_once('inc/classes/Captcha.php');
@@ -1875,7 +1877,7 @@ if (iro_opt('captcha_switch','false')){
             return false;
         }
         if(isset($_POST['yzm']) && !empty(trim($_POST['yzm']))){
-            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !ctype_xdigit($_POST['id']) || !ctype_digit($_POST['timestamp'])){
+            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])){
                 return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
             }
             include_once('inc/classes/Captcha.php');
@@ -1898,7 +1900,7 @@ if (iro_opt('captcha_switch','false')){
             return new WP_Error();
         }
         if(isset($_POST['yzm']) && !empty(trim($_POST['yzm']))){
-            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !ctype_xdigit($_POST['id']) || !ctype_digit($_POST['timestamp'])){
+            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])){
                 return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
             }
             include_once('inc/classes/Captcha.php');
