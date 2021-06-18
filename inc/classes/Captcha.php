@@ -27,7 +27,7 @@ class Captcha
      */
     private function create_captcha(): void
     {
-        $dict = 'abcdefghjkmnpqrstuvwxy123456789';
+        $dict = 'abcdefhjkmnpqrstuvwxy12345678';
         for ($i = 0; $i < 5; $i++) {
             $fontcontent = substr($dict, mt_rand(0, strlen($dict)), 1);
             $this->captchCode .= $fontcontent;
@@ -50,7 +50,7 @@ class Captcha
      *
      * @param  string $captcha
      * @param  string $hash
-     * @return string
+     * @return bool
      */
     public function verify_captcha(string $captcha, string $hash): bool
     {
