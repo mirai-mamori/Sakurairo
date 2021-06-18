@@ -27,8 +27,8 @@ class Captcha
      */
     private function create_captcha(): void
     {
+        $dict = 'abcdefhjkmnpqrstuvwxy12345678';
         for ($i = 0; $i < 5; $i++) {
-            $dict = 'abcdefghjkmnpqrstuvwxy123456789';
             $fontcontent = substr($dict, mt_rand(0, strlen($dict)), 1);
             $this->captchCode .= $fontcontent;
         }
