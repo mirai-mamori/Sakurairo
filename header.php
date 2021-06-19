@@ -109,7 +109,6 @@ window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
 							<span class="logolink moe-mashiro">
                                 <a href="<?php bloginfo('url');?>">
                                     <ruby>
-                                    <!-- <span class="site-name"><?php echo iro_opt('site_name', ''); ?></span> -->
                                     <span class="sakuraso" style="font-family: '<?php echo $mashiro_logo['font_name']; ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;;"><?php echo $mashiro_logo['text_a']; ?></span>
                                     <span class="no" style="font-family: '<?php echo $mashiro_logo['font_name']; ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;"><?php echo $mashiro_logo['text_b']; ?></span>
                                     <span class="shironeko" style="font-family: '<?php echo $mashiro_logo['font_name']; ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;"><?php echo iro_opt('logo_text'); ?><?php echo $mashiro_logo['text_c']; ?></span>
