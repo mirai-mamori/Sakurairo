@@ -322,7 +322,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'google_fonts_api',
         'type'   => 'text',
         'title'  => '谷歌字体API地址',
-        'default' => 'fonts.loli.net'
+        'default' => 'fonts.maho.cc'
       ),
 
       array(

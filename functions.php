@@ -1409,7 +1409,7 @@ function set_default_admin_color($user_id)
 // WordPress Custom Font @ Admin
 function custom_admin_open_sans_font()
 {
-    echo '<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
+    echo '<link href="https://fonts.maho.cc/css?family=Merriweather+Sans|Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
     echo '<style>body, #wpadminbar *:not([class="ab-icon"]), .wp-core-ui, .media-menu, .media-frame *, .media-modal *{font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style>' . PHP_EOL;
 }
 add_action('admin_head', 'custom_admin_open_sans_font');
@@ -1418,7 +1418,7 @@ add_action('admin_head', 'custom_admin_open_sans_font');
 function custom_admin_open_sans_font_frontend_toolbar()
 {
     if (current_user_can('administrator')) {
-        echo '<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap" rel="stylesheet">' . PHP_EOL;
+        echo '<link href="https://fonts.maho.cc/css?family=Merriweather+Sans&display=swap" rel="stylesheet">' . PHP_EOL;
         echo '<style>#wpadminbar *:not([class="ab-icon"]){font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style>' . PHP_EOL;
     }
 }
@@ -1428,7 +1428,7 @@ add_action('wp_head', 'custom_admin_open_sans_font_frontend_toolbar');
 function custom_admin_open_sans_font_login_page()
 {
     if (stripos($_SERVER["SCRIPT_NAME"], strrchr(wp_login_url(), '/')) !== false) {
-        echo '<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
+        echo '<link href="https://fonts.maho.cc/css?family=Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
         echo '<style>body{font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style>' . PHP_EOL;
     }
 }
