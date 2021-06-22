@@ -1037,8 +1037,8 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'poi_pjax',
         'type'   => 'switcher',
         'title'  => 'PJAX局部刷新',
-        'label'   => '开启之后点击新内容将不需要重新加载',
-        'default' => false
+        'label'   => '默认开启，点击新页面将不需要重新加载',
+        'default' => true
       ),
 
       array(
@@ -2200,8 +2200,8 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'page_lazyload',
         'type'  => 'switcher',
         'title' => '页面LazyLoad加载',
-        'label'   => '默认开启，页面图片会有LazyLoad加载效果',
-        'default' => true
+        'label'   => '开启之后页面图片会有LazyLoad加载效果，WordPress区块编辑器已经自带相似效果，不建议开启',
+        'default' => false
       ),
 
       array(
