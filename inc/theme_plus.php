@@ -518,7 +518,7 @@ function get_prev_thumbnail_url() {
     return get_random_bg_url(); // 首页图
   } else if ( has_post_thumbnail($prev_post->ID) ) { 
     $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $prev_post->ID ), 'large'); 
-    return $img_src[0]; // 特色图
+    return $img_src[0] ?? null; // 特色图
   } 
   else { 
     $content = $prev_post->post_content; 
@@ -538,7 +538,7 @@ function get_next_thumbnail_url() {
   if( $next_post instanceof WP_Post){
      if ( has_post_thumbnail($next_post->ID) ) { 
     $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $next_post->ID ), 'large'); 
-    return $img_src[0]; 
+    return $img_src[0] ?? null; 
   } 
   else { 
     $content = $next_post->post_content; 
