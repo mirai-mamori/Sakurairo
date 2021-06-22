@@ -1488,7 +1488,7 @@ i.iconfont.hotpost {
     margin: 20px 0 20px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0);
-    box-shadow: 0 1px 30px -4px rgba(255, 255, 255, .6);
+    box-shadow: 0 1px 30px -4px var(--post-list-thumb);
     opacity: 0
 }
 
@@ -9090,10 +9090,10 @@ WordPress Generated Classes
 * 文章卡片hover效果
 */
 .post-list-thumb:hover {
-    box-shadow: 0 1px 20px -8px #000;
+    box-shadow: 0 1px 20px 10px var(--post-list-thumb);
 }
 body.dark .post-list-thumb:hover {
-    box-shadow: 0 1px 20px -8px var(--theme-skin-dark);
+    box-shadow: 0 1px 20px 0px var(--theme-skin-dark);
 }
 
 .lazyload[src*="#lazyload-blur"], .lazyload[style*="#lazyload-blur"] {

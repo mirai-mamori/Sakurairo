@@ -425,6 +425,11 @@ h1.main-title {
 
 
 /*非全局色彩管理*/
+
+:root{
+    --post-list-thumb: <?php echo iro_opt('post_border_shadow_color'); ?>;
+}
+
 .menu-list li {
     background-color: <?php echo iro_opt('style_menu_selection_color'); ?>;
     border-radius: <?php echo iro_opt('style_menu_radius', ''); ?>px;
@@ -438,9 +443,6 @@ h1.main-title {
 }
 .post-date {
     background-color: <?php echo iro_opt('post_date_background_color'); ?>;
-}
-.post-list-thumb {
-    box-shadow: 0 1px 30px -4px <?php echo iro_opt('post_border_shadow_color'); ?>;
 }
 .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
     background: <?php echo iro_opt('shuoshuo_background_color1'); ?>;
