@@ -1351,7 +1351,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'wave_effects',
         'type'  => 'switcher',
         'title' => '封面波浪特效',
-        'label'   => '开启之后首页封面底部将出现波浪特效',
+        'label'   => '开启之后首页封面底部将出现波浪特效，深色模式下将强制关闭',
         'default' => false
       ),
 

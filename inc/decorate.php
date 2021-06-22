@@ -862,8 +862,7 @@ body.dark .s-content,body.dark .font-family-controls button.selected
 {background-color:#808080;}
 
 body.dark #banner_wave_1,
-body.dark #banner_wave_2,
-body.dark .skin-menu::after
+body.dark #banner_wave_2
 {display:none;}
 
 body.dark .widget-area .show-hide svg path
