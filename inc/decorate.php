@@ -693,8 +693,6 @@ body.dark .header-user-menu,
 body.dark .headertop-bar::after 
 {background:rgba(51,51,51,<?php echo iro_opt('theme_darkmode_background_transparency',1)?>) !important;}
 
-body.dark .pattern-center-blank,
-body.dark .blank,
 body.dark .toc,
 body.dark .search-form input
 {background:rgba(51,51,51,0.8);}

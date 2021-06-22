@@ -493,19 +493,8 @@ function get_post_views($post_id)
     }
 }
 
-
-
 function is_webp():bool{
     return (isset($_COOKIE["su_webp"]) || strpos($_SERVER['HTTP_ACCEPT'], 'image/webp'));
-}
-
-$block_library_css = iro_opt('block_library_css');
-
-if ($block_library_css != '1'){
-    add_action( 'wp_enqueue_scripts', 'fanly_remove_block_library_css', 100 );
-    function fanly_remove_block_library_css() {
-        wp_dequeue_style( 'wp-block-library' );
-    }
 }
 
 /*

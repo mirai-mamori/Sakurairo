@@ -2751,14 +2751,6 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'     => 'block_library_css',
-        'type'   => 'switcher',
-        'title'  => 'WordPress区块编辑器CSS',
-        'label'   => '默认开启，会加载WordPress区块编辑器所需的CSS',
-        'default' => true
-      ),
-
-      array(
         'id'     => 'time_zone_fix',
         'type'   => 'slider',
         'title'  => '时区修正',

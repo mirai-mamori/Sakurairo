@@ -898,7 +898,7 @@ a:hover {
 
 .pattern-center-blank {
     padding-top: 75px;
-    background-color: #fff
+    background-color: rgba(0, 0, 0, 0);
 }
 
 @media (max-width:860px) {
@@ -3762,7 +3762,7 @@ li.feature-2 {
 
 .blank {
     padding-top: 80px;
-    background-color: rgba(255, 255, 255, 1)
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .focusinfo {
