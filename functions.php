@@ -1452,12 +1452,22 @@ function codecheese_register_post($sanitized_user_login, $user_email, $errors)
 function html_tag_parser($content)
 {
     if (!is_feed()) {
+        //图片懒加载标签替换
         if (iro_opt('page_lazyload') && iro_opt('page_lazyload_spinner')) {
-            $content = preg_replace(
-                '/<img(.+)src=[\'"]([^\'"]+)[\'"](.*)>/i',
-                "<img $1 class=\"lazyload\" data-src=\"$2\" src=\"" . iro_opt('page_lazyload_spinner') . "\" onerror=\"imgError(this)\" $3 >\n<noscript>$0</noscript>",
-                $content
-            );
+            $img_elements = array();
+            $is_matched = preg_match_all('/<img[^<]*>/i', $content, $img_elements);
+            if ($is_matched) {
+                array_walk($img_elements[0],function ($img) use(&$content) {
+                    $class_found = 0;
+                    $new_img = preg_replace('/class=[\'"]([^\'"]+)[\'"]/i', 'class="$1 lazyload"', $img, -1, $class_found);
+                    if ($class_found == 0) {
+                        $new_img = str_replace('<img ', '<img class="lazyload"', $new_img);
+                    }
+                    $new_img =  preg_replace('/srcset=[\'"]([^\'"]+)[\'"]/i', 'data-srcset="$1"', $new_img);
+                    $new_img =  preg_replace('/src=[\'"]([^\'"]+)[\'"]/i', 'data-src="$1" src="' . iro_opt('page_lazyload_spinner') . '" onerror="imgError(this)"', $new_img);
+                    $content = str_replace($img, $new_img . '<noscript>' . $img . '</noscript>', $content);
+                });
+            }
         }
 
         //Fancybox
