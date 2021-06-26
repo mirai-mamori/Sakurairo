@@ -38,7 +38,7 @@ if ( ! function_exists( 'csf_array_search' ) ) {
  */
 if ( ! function_exists( 'csf_timeout' ) ) {
   function csf_timeout( $timenow, $starttime, $timeout = 30 ) {
-    return ( $timenow - $starttime ) < $timeout;
+    return ( ( $timenow - $starttime ) < $timeout ) ? true : false;
   }
 }
 

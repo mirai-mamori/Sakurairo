@@ -115,24 +115,45 @@ if ( ! class_exists( 'CSF_Field_spacing' ) ) {
       $unit      = ( ! empty( $this->value['unit'] ) ) ? $this->value['unit'] : 'px';
 
       $mode = ( ! empty( $this->field['output_mode'] ) ) ? $this->field['output_mode'] : 'padding';
-      $mode = ( $mode === 'relative' || $mode === 'absolute' || $mode === 'none' ) ? '' : $mode;
-      $mode = ( ! empty( $mode ) ) ? $mode .'-' : '';
+
+      if ( $mode === 'border-radius' || $mode === 'radius' ) {
+
+        $top    = 'border-top-left-radius';
+        $right  = 'border-top-right-radius';
+        $bottom = 'border-bottom-right-radius';
+        $left   = 'border-bottom-left-radius';
+
+      } else if ( $mode === 'relative' || $mode === 'absolute' || $mode === 'none' ) {
+
+        $top    = 'top';
+        $right  = 'right';
+        $bottom = 'bottom';
+        $left   = 'left';
+
+      } else {
+
+        $top    = $mode .'-top';
+        $right  = $mode .'-right';
+        $bottom = $mode .'-bottom';
+        $left   = $mode .'-left';
+
+      }
 
       if ( ! empty( $this->field['all'] ) && isset( $this->value['all'] ) && $this->value['all'] !== '' ) {
 
         $output  = $element .'{';
-        $output .= $mode .'top:'.    $this->value['all'] . $unit . $important .';';
-        $output .= $mode .'right:'.  $this->value['all'] . $unit . $important .';';
-        $output .= $mode .'bottom:'. $this->value['all'] . $unit . $important .';';
-        $output .= $mode .'left:'.   $this->value['all'] . $unit . $important .';';
+        $output .= $top    .':'. $this->value['all'] . $unit . $important .';';
+        $output .= $right  .':'. $this->value['all'] . $unit . $important .';';
+        $output .= $bottom .':'. $this->value['all'] . $unit . $important .';';
+        $output .= $left   .':'. $this->value['all'] . $unit . $important .';';
         $output .= '}';
 
       } else {
 
-        $top     = ( isset( $this->value['top']    ) && $this->value['top']    !== '' ) ?  $mode .'top:'.    $this->value['top']    . $unit . $important .';' : '';
-        $right   = ( isset( $this->value['right']  ) && $this->value['right']  !== '' ) ?  $mode .'right:'.  $this->value['right']  . $unit . $important .';' : '';
-        $bottom  = ( isset( $this->value['bottom'] ) && $this->value['bottom'] !== '' ) ?  $mode .'bottom:'. $this->value['bottom'] . $unit . $important .';' : '';
-        $left    = ( isset( $this->value['left']   ) && $this->value['left']   !== '' ) ?  $mode .'left:'.   $this->value['left']   . $unit . $important .';' : '';
+        $top    = ( isset( $this->value['top']    ) && $this->value['top']    !== '' ) ? $top    .':'. $this->value['top']    . $unit . $important .';' : '';
+        $right  = ( isset( $this->value['right']  ) && $this->value['right']  !== '' ) ? $right  .':'. $this->value['right']  . $unit . $important .';' : '';
+        $bottom = ( isset( $this->value['bottom'] ) && $this->value['bottom'] !== '' ) ? $bottom .':'. $this->value['bottom'] . $unit . $important .';' : '';
+        $left   = ( isset( $this->value['left']   ) && $this->value['left']   !== '' ) ? $left   .':'. $this->value['left']   . $unit . $important .';' : '';
 
         if ( $top !== '' || $right !== '' || $bottom !== '' || $left !== '' ) {
           $output = $element .'{'. $top . $right . $bottom . $left .'}';

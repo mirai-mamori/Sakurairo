@@ -117,8 +117,8 @@ if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize
       ) );
 
       $field_id   = ( ! empty( $this->field['id'] ) ) ? $this->field['id'] : '';
-      $custom     = ! empty( $this->field['customizer'] );
-      $is_complex = in_array( $this->field['type'], $complex );
+      $custom     = ( ! empty( $this->field['customizer'] ) ) ? true : false;
+      $is_complex = ( in_array( $this->field['type'], $complex ) ) ? true : false;
       $class      = ( $is_complex || $custom ) ? ' csf-customize-complex' : '';
       $atts       = ( $is_complex || $custom ) ? ' data-unique-id="'. esc_attr( $this->unique ) .'" data-option-id="'. esc_attr( $field_id ) .'"' : '';
 

@@ -1,123 +1,116 @@
-# Copyright (C) 2021 Codestar
-# This file is distributed under the same license as the Codestar Framework package.
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Codestar Framework 2.2.1\n"
-"Report-Msgid-Bugs-To: "
-"https://wordpress.org/support/plugin/codestar-framework\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Codestar Framework Modified by Fuukei\n"
+"POT-Creation-Date: 2021-06-26 16:16+0800\n"
+"PO-Revision-Date: 2021-06-26 16:15+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: option-framework.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: classes/admin-options.class.php:225
+#: classes/admin-options.class.php:226
 msgid "Error while saving the changes."
 msgstr ""
 
-#: classes/admin-options.class.php:285
+#: classes/admin-options.class.php:286
 msgid "Settings successfully imported."
 msgstr ""
 
-#: classes/admin-options.class.php:297 classes/admin-options.class.php:313
+#: classes/admin-options.class.php:298 classes/admin-options.class.php:314
 msgid "Default settings restored."
 msgstr ""
 
-#: classes/admin-options.class.php:384
+#: classes/admin-options.class.php:385
 msgid "Settings saved."
 msgstr ""
 
-#: classes/admin-options.class.php:563
+#: classes/admin-options.class.php:565
 msgid "You have unsaved changes, save your changes!"
 msgstr ""
 
-#: classes/admin-options.class.php:565
+#: classes/admin-options.class.php:567
 msgid "show all settings"
 msgstr ""
 
-#: classes/admin-options.class.php:567 fields/icon/icon.php:57
+#: classes/admin-options.class.php:569 fields/icon/icon.php:57
 #: fields/map/map.php:23
 msgid "Search..."
 msgstr ""
 
-#: classes/admin-options.class.php:570 classes/admin-options.class.php:693
+#: classes/admin-options.class.php:572 classes/admin-options.class.php:695
 msgid "Save"
 msgstr ""
 
-#: classes/admin-options.class.php:570 classes/admin-options.class.php:693
+#: classes/admin-options.class.php:572 classes/admin-options.class.php:695
 msgid "Saving..."
 msgstr ""
 
-#: classes/admin-options.class.php:571 classes/admin-options.class.php:694
+#: classes/admin-options.class.php:573 classes/admin-options.class.php:696
 msgid "Reset Section"
 msgstr ""
 
-#: classes/admin-options.class.php:571 classes/admin-options.class.php:694
+#: classes/admin-options.class.php:573 classes/admin-options.class.php:696
 msgid "Are you sure to reset this section options?"
 msgstr ""
 
-#: classes/admin-options.class.php:572 classes/admin-options.class.php:695
+#: classes/admin-options.class.php:574 classes/admin-options.class.php:697
 msgid "Reset All"
 msgstr ""
 
-#: classes/admin-options.class.php:572 classes/admin-options.class.php:695
-#: classes/comment-options.class.php:215 classes/metabox-options.class.php:293
+#: classes/admin-options.class.php:574 classes/admin-options.class.php:697
 #: fields/backup/backup.php:31
 msgid "Reset"
 msgstr ""
 
-#: classes/admin-options.class.php:572 classes/admin-options.class.php:695
+#: classes/admin-options.class.php:574 classes/admin-options.class.php:697
 msgid "Are you sure you want to reset all settings to default values?"
 msgstr ""
 
-#: classes/admin-options.class.php:670 classes/comment-options.class.php:198
-#: classes/metabox-options.class.php:276 fields/button_set/button_set.php:56
+#: classes/admin-options.class.php:672 fields/button_set/button_set.php:56
 #: fields/checkbox/checkbox.php:76 fields/radio/radio.php:75
 #: fields/select/select.php:113 functions/actions.php:41
 msgid "No data available."
 msgstr ""
 
-#: classes/comment-options.class.php:216 classes/metabox-options.class.php:294
-msgid "update post"
-msgstr ""
-
-#: classes/comment-options.class.php:216 classes/metabox-options.class.php:294
-msgid "Cancel"
-msgstr ""
-
-#: classes/setup.class.php:529
+#: classes/setup.class.php:592
 msgid "Are you sure?"
 msgstr ""
 
-#: classes/setup.class.php:530
+#: classes/setup.class.php:593
+#, php-format
 msgid "Please enter %s or more characters"
 msgstr ""
 
-#: classes/setup.class.php:531
+#: classes/setup.class.php:594
 msgid "Searching..."
 msgstr ""
 
-#: classes/setup.class.php:532
+#: classes/setup.class.php:595
 msgid "No results found."
 msgstr ""
 
-#: classes/setup.class.php:634
+#: classes/setup.class.php:696
 msgid "Oops! Not allowed."
 msgstr ""
 
-#: classes/setup.class.php:708 classes/setup.class.php:712
+#: classes/setup.class.php:768 classes/setup.class.php:772
 msgid "Field not found!"
 msgstr ""
 
-#: classes/shortcode-options.class.php:251 fields/group/group.php:23
-msgid "Add New"
-msgstr ""
-
-#: classes/shortcode-options.class.php:288 functions/actions.php:16
-#: functions/actions.php:68 functions/actions.php:106 functions/actions.php:141
-#: functions/actions.php:170
-msgid "Error: Invalid nonce verification."
-msgstr ""
-
-#: fields/background/background.php:36 fields/media/media.php:57
+#: fields/background/background.php:36 fields/media/media.php:59
 msgid "Not selected"
 msgstr ""
 
@@ -391,6 +384,10 @@ msgstr ""
 msgid "Clear"
 msgstr ""
 
+#: fields/group/group.php:23
+msgid "Add New"
+msgstr ""
+
 #: fields/group/group.php:35 fields/repeater/repeater.php:27
 msgid "Error: Field ID conflict."
 msgstr ""
@@ -452,11 +449,11 @@ msgstr ""
 msgid "Longitude"
 msgstr ""
 
-#: fields/media/media.php:23 fields/upload/upload.php:21
+#: fields/media/media.php:25 fields/upload/upload.php:25
 msgid "Upload"
 msgstr ""
 
-#: fields/media/media.php:24 fields/upload/upload.php:22
+#: fields/media/media.php:26 fields/upload/upload.php:26
 msgid "Remove"
 msgstr ""
 
@@ -615,6 +612,11 @@ msgstr ""
 msgid "Google Web Fonts"
 msgstr ""
 
+#: functions/actions.php:16 functions/actions.php:68 functions/actions.php:106
+#: functions/actions.php:141 functions/actions.php:170
+msgid "Error: Invalid nonce verification."
+msgstr ""
+
 #: functions/actions.php:72 functions/actions.php:110
 msgid "Error: Invalid key."
 msgstr ""
@@ -645,4 +647,39 @@ msgstr ""
 
 #: functions/validate.php:68 functions/validate.php:146
 msgid "Please enter a valid URL."
+msgstr ""
+
+#: options/theme-options.php:1331
+#, php-format
+msgid ""
+"如果你选择使用Webp优化随机图片，请点击 <a href = \"%s\">这里</a> 来更新 "
+"Manifest 路径"
+msgstr ""
+
+#: options/theme-options.php:2944
+#, php-format
+msgid ""
+"正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  <a "
+"href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Codestar Framework Modified by Fuukei"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://codestarframework.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A Simple and Lightweight WordPress Option Framework for Themes and Plugins"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Codestar"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://codestarthemes.com/"
 msgstr ""
