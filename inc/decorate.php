@@ -795,15 +795,15 @@ body.dark input,
 body.dark select,
 body.dark textarea,
 body.dark i.iconfont.js-toggle-search.iconsearch,
+body.dark .info-meta a,
+body.dark .info-meta span,
 body.dark .skin-menu
 {color:#CCCCCC;}
 
 body.dark .post-date,
 body.dark .post-list-thumb a,
 body.dark .post-list-thumb i,
-body.dark .post-meta,
-body.dark .info-meta a,
-body.dark .info-meta span
+body.dark .post-meta
 {color:#666666;}
 
 body.dark .post-list-thumb
@@ -947,6 +947,9 @@ body.dark .site-top ul li a:after
 
 body.dark #moblieGoTop,
 body.dark #changskin,
+body.dark .post-content a:hover ,
+body.dark .entry-title a:hover ,
+body.dark .art .art-content #archives a:hover ,
 body.dark .the-feature.from_left_and_right a:hover .info p,
 body.dark .the-feature.from_left_and_right .info,
 body.dark .ins-section .ins-search-item:hover,
