@@ -13,7 +13,7 @@ define('BUILD_VERSION', '3');
 
 //Option-Framework
 
-require get_template_directory() . '/opt/option-framework.php';
+require get_template_directory() . '/option-framework.php';
 
 if (! function_exists('iro_opt')) {
     function iro_opt($option = '', $default = null) {

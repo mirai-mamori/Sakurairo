@@ -17,5 +17,5 @@
  * Domain Path: /languages
  *
  */
-require_once plugin_dir_path( __FILE__ ) .'classes/setup.class.php';
-require_once plugin_dir_path(__FILE__) .'options/theme-options.php';
+require_once plugin_dir_path( __FILE__ ) .'opt/classes/setup.class.php';
+require_once plugin_dir_path(__FILE__) .'theme-options.php';
