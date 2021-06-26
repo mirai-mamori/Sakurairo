@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
 "POT-Creation-Date: 2021-06-26 20:32+0800\n"
-"PO-Revision-Date: 2021-06-26 20:37+0800\n"
+"PO-Revision-Date: 2021-06-26 20:56+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -679,9 +679,7 @@ msgstr "个人头像"
 
 #: options/theme-options.php:35
 msgid "The best ratio is 1:1"
-msgstr ""
-"移除\n"
-"最佳比例1比1"
+msgstr "最佳比例1比1"
 
 #: options/theme-options.php:42
 msgid "Mashiro Special Effects Text"

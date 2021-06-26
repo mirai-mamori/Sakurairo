@@ -2935,7 +2935,7 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/encorelogo.gif"  alt="主题信息" />',
+        'content' => '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/hyouryulogo.gif"  alt="主题信息" />',
       ),
 
       array(
