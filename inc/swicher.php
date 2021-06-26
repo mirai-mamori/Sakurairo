@@ -4,17 +4,19 @@
  */
 function echo_if_true($key,$overwrite_key = null){
 $value = iro_opt($key);
-if($value)echo $overwrite_key ?? $key.":true,";
+if($value)echo ($overwrite_key ?? $key).":true,";
 }
 function font_end_js_control() { ?>
 <script id="_mashiro_">
 /*Initial Variables*/
 var mashiro_option = {
-    NProgressON:<?php echo iro_opt('nprogress_on') ? 'true':'false';?>,
     <?php 
+    echo_if_true('nprogress_on','NProgressON');
     echo_if_true('note_effects','audio');
+    echo_if_true('footer_yiyan','yiyan');
+    echo_if_true('baguetteBox','baguetteBoxON');
+    echo_if_true('fancybox','baguetteBoxON');
     ?>
-    yiyan:<?php echo iro_opt('footer_yiyan') ? 'true':'false';?>,
     darkmode :<?php echo iro_opt('theme_darkmode_auto') ? 'true':'false';?>,
     <?php if ( iro_opt('theme_darkmode_auto') ):echo 'dm_strategy:"'.iro_opt('theme_darkmode_strategy','time').'",'.PHP_EOL;endif; ?>
     <?php 
@@ -65,8 +67,6 @@ var mashiro_option = {
     skin_bg4:"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png",
     <?php } ?>
     land_at_home:<?php echo is_home() ? 'true':'false'; ?>,
-    baguetteBoxON:<?php echo iro_opt('baguetteBox')  ? 'true':'false' ?>,
-    fancybox:<?php echo iro_opt('fancybox')? 'true':'false' ?>,
     clipboardCopyright:<?php echo iro_opt('clipboard_copyright') == "0" ? 'false':'true' ?>,
 
     <?php if(iro_opt('entry_content_style') == "sakurairo"){ ?>
