@@ -88,7 +88,6 @@ var mashiro_option = {
 
     cover_api:"<?php echo rest_url('sakura/v1/image/cover'); ?>",
     random_graphs_mts:<?php echo iro_opt('random_graphs_mts' ) ? 'true':'false'?>,
-    windowheight:'auto',
     <?php
     $highlight_method = iro_opt('code_highlight_method','hljs');
     echo 'code_highlight:"'.$highlight_method.'",';
