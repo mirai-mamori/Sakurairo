@@ -2,9 +2,9 @@
 /**
  * 仅对boolean类型的设置项有效
  */
-function echo_if_true($key){
+function echo_if_true($key,$overwrite_key = null){
 $value = iro_opt($key);
-if($value)echo "$key:true,";
+if($value)echo $overwrite_key ?? $key.":true,";
 }
 function font_end_js_control() { ?>
 <script id="_mashiro_">
