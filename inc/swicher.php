@@ -103,7 +103,7 @@ var mashiro_option = {
         line_number_all:<?php echo iro_opt('code_highlight_prism_line_number_all')?'true':'false' ?>,
         autoload_path:<?php  echo ($autoload_path=='' ? 'undefined' : '"'.$autoload_path.'"')  ?>,
         theme:{
-                <?php  echo ($theme_light=='' ? 'undefined' : 'light:"'.$theme_light.'",');
+                <?php  echo ($theme_light=='' ? '' : 'light:"'.$theme_light.'",');
                 echo ($theme_dark=='' ? '' : 'dark:"'.$theme_dark.'",') ; ?>
               },
     },   
