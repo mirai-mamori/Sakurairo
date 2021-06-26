@@ -863,6 +863,19 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id'     => 'footer_info',
+        'type'   => 'textarea',
+        'title'  => '页尾信息',
+        'desc'   => '页尾说明文字，支持HTML代码',
+        'default' => 'Copyright &copy; by FUUKEI All Rights Reserved.'
+      ),
+
+      array(
+        'type'    => 'subheading',
+        'content' => '一言',
+      ),
+
+      array(
         'id'    => 'footer_yiyan',
         'type'  => 'switcher',
         'title' => '页尾一言',
@@ -872,7 +885,8 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => '<h5>一言API设置</h5>'
+        'dependency' => array( 'footer_yiyan', '==', 'true' ),
+        'content' => '<h4>一言API设置说明</h4>'
         .'<p>填写示例:<code> ["https://api.maho.cc/yiyan/","https://v1.hitokoto.cn/"]</code>，此时会优先使用第一项API，以后一项为后备。</p>'
         .'<p><strong>官方API:</strong>使用方法请参阅<a href="https://developer.hitokoto.cn/sentence/">文档</a>，参数"返回编码"不应设置为JSON以外的其他值。<a href="https://v1.hitokoto.cn/">https://v1.hitokoto.cn/</a></p>'
         .'<p><strong>Maho API:</strong>官方API的反代镜像。<a href="https://api.maho.cc/yiyan/">https://api.maho.cc/yiyan/</a></p>',
@@ -882,16 +896,9 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'yiyan_api',
         'type'  => 'textarea',
         'title' => '一言API地址',
-        'desc'  => '格式为JavaScript数组。',
+        'dependency' => array( 'footer_yiyan', '==', 'true' ),
+        'desc'  => '填写地址，格式为JavaScript数组',
         'default' => '["https://api.maho.cc/yiyan/","https://v1.hitokoto.cn/"]'
-      ),
-
-      array(
-        'id'     => 'footer_info',
-        'type'   => 'textarea',
-        'title'  => '页尾信息',
-        'desc'   => '页尾说明文字，支持HTML代码',
-        'default' => 'Copyright &copy; by FUUKEI All Rights Reserved.'
       ),
 
     )
