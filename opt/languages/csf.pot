@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-06-26 16:16+0800\n"
+"POT-Creation-Date: 2021-06-26 20:32+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -16,8 +16,8 @@ msgstr ""
 "X-Poedit-WPHeader: option-framework.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
@@ -291,7 +291,7 @@ msgstr ""
 msgid "Saturation"
 msgstr ""
 
-#: fields/background/background.php:278
+#: fields/background/background.php:278 options/theme-options.php:77
 msgid "Color"
 msgstr ""
 
@@ -649,6 +649,129 @@ msgstr ""
 msgid "Please enter a valid URL."
 msgstr ""
 
+#: options/theme-options.php:7
+msgid "iro-Options"
+msgstr ""
+
+#: options/theme-options.php:13
+msgid "Preliminary"
+msgstr ""
+
+#: options/theme-options.php:20
+msgid "Site Name"
+msgstr ""
+
+#: options/theme-options.php:21
+msgid "For example:Sakurairo Blog"
+msgstr ""
+
+#: options/theme-options.php:27
+msgid "Author Name"
+msgstr ""
+
+#: options/theme-options.php:28
+msgid "For example:Fuukei"
+msgstr ""
+
+#: options/theme-options.php:34
+msgid "Personal Avatar"
+msgstr ""
+
+#: options/theme-options.php:35
+msgid "The best ratio is 1:1"
+msgstr ""
+
+#: options/theme-options.php:42
+msgid "Mashiro Special Effects Text"
+msgstr ""
+
+#: options/theme-options.php:43
+msgid ""
+"After opening, the personal avatar will be replaced as the home page "
+"display content"
+msgstr ""
+
+#: options/theme-options.php:50
+msgid "Mashiro Special Effects Text Options"
+msgstr ""
+
+#: options/theme-options.php:56
+msgid "Text"
+msgstr ""
+
+#: options/theme-options.php:57
+msgid ""
+"It is recommended that the text content should not be too long, and the "
+"recommended length is 16 bytes."
+msgstr ""
+
+#: options/theme-options.php:62
+msgid "Font"
+msgstr ""
+
+#: options/theme-options.php:63
+msgid "Fill in the font name. For example: Ma Shan Zheng"
+msgstr ""
+
+#: options/theme-options.php:68
+msgid "Size"
+msgstr ""
+
+#: options/theme-options.php:69
+msgid "Sliding slider, the recommended value range is 70-90"
+msgstr ""
+
+#: options/theme-options.php:78
+msgid "Custom colors, light colors are recommended"
+msgstr ""
+
+#: options/theme-options.php:91
+msgid "Navigation Menu Logo"
+msgstr ""
+
+#: options/theme-options.php:92
+msgid ""
+"The best size is 40px, and the navigation menu text logo will not be "
+"displayed after filling in"
+msgstr ""
+
+#: options/theme-options.php:99
+msgid "Site Icon"
+msgstr ""
+
+#: options/theme-options.php:100
+msgid ""
+"Fill in the address, which is the icon next to the title above the browser"
+msgstr ""
+
+#: options/theme-options.php:107
+msgid "Custom Site Keywords and Descriptions"
+msgstr ""
+
+#: options/theme-options.php:108
+msgid "After opening, you can customize the site keywords and descriptions"
+msgstr ""
+
+#: options/theme-options.php:115
+msgid "Site Keywords"
+msgstr ""
+
+#: options/theme-options.php:117
+msgid ""
+"The keywords are separated with half width comma \",\" and the number is "
+"best within 5"
+msgstr ""
+
+#: options/theme-options.php:123
+msgid "Site Descriptions"
+msgstr ""
+
+#: options/theme-options.php:125
+msgid ""
+"Use concise words to describe the site, the number of words is recommended "
+"within 120 words"
+msgstr ""
+
 #: options/theme-options.php:1331
 #, php-format
 msgid ""
@@ -659,8 +782,8 @@ msgstr ""
 #: options/theme-options.php:2944
 #, php-format
 msgid ""
-"正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  <a "
-"href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
+"正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  "
+"<a href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
 msgstr ""
 
 #. Plugin Name of the plugin/theme

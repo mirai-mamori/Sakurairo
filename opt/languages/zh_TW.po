@@ -1,23 +1,23 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-06-26 16:16+0800\n"
-"PO-Revision-Date: 2021-06-26 16:41+0800\n"
+"POT-Creation-Date: 2021-06-26 20:43+0800\n"
+"PO-Revision-Date: 2021-06-26 20:49+0800\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: option-framework.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
-"Language: zh_TW\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
@@ -291,7 +291,7 @@ msgstr "顏色減淡"
 msgid "Saturation"
 msgstr "飽和度"
 
-#: fields/background/background.php:278
+#: fields/background/background.php:278 options/theme-options.php:77
 msgid "Color"
 msgstr "顏色"
 
@@ -649,6 +649,129 @@ msgstr "欄位是必須的。"
 msgid "Please enter a valid URL."
 msgstr "請輸入有效網址 URL。"
 
+#: options/theme-options.php:7
+msgid "iro-Options"
+msgstr "iro 主題設置"
+
+#: options/theme-options.php:13
+msgid "Preliminary"
+msgstr "初步設置"
+
+#: options/theme-options.php:20
+msgid "Site Name"
+msgstr "站點名稱"
+
+#: options/theme-options.php:21
+msgid "For example:Sakurairo Blog"
+msgstr "例如：Sakurairo Blog"
+
+#: options/theme-options.php:27
+msgid "Author Name"
+msgstr "作者名稱"
+
+#: options/theme-options.php:28
+msgid "For example:Fuukei"
+msgstr "例如：Fuukei"
+
+#: options/theme-options.php:34
+msgid "Personal Avatar"
+msgstr "個人頭像"
+
+#: options/theme-options.php:35
+msgid "The best ratio is 1:1"
+msgstr "最佳比例1比1"
+
+#: options/theme-options.php:42
+msgid "Mashiro Special Effects Text"
+msgstr "白貓特效文字"
+
+#: options/theme-options.php:43
+msgid ""
+"After opening, the personal avatar will be replaced as the home page display "
+"content"
+msgstr "開啟之後將替換個人頭像作為首頁顯示內容"
+
+#: options/theme-options.php:50
+msgid "Mashiro Special Effects Text Options"
+msgstr "白貓特效文字設置"
+
+#: options/theme-options.php:56
+msgid "Text"
+msgstr "文本"
+
+#: options/theme-options.php:57
+msgid ""
+"It is recommended that the text content should not be too long, and the "
+"recommended length is 16 bytes."
+msgstr "文本內容建議不要過長，推薦長度為16個字節。"
+
+#: options/theme-options.php:62
+msgid "Font"
+msgstr "字體"
+
+#: options/theme-options.php:63
+msgid "Fill in the font name. For example: Ma Shan Zheng"
+msgstr "填寫字體名稱。例如：Ma Shan Zheng"
+
+#: options/theme-options.php:68
+msgid "Size"
+msgstr "大小"
+
+#: options/theme-options.php:69
+msgid "Sliding slider, the recommended value range is 70-90"
+msgstr "滑動滑塊，推薦數值範圍為70-90"
+
+#: options/theme-options.php:78
+msgid "Custom colors, light colors are recommended"
+msgstr "自定義顏色，建議使用淺色系顏色"
+
+#: options/theme-options.php:91
+msgid "Navigation Menu Logo"
+msgstr "導航菜單Logo"
+
+#: options/theme-options.php:92
+msgid ""
+"The best size is 40px, and the navigation menu text logo will not be "
+"displayed after filling in"
+msgstr "最佳尺寸40px，填寫後導航菜單文字Logo不顯示"
+
+#: options/theme-options.php:99
+msgid "Site Icon"
+msgstr "站點Icon"
+
+#: options/theme-options.php:100
+msgid ""
+"Fill in the address, which is the icon next to the title above the browser"
+msgstr "填寫地址，站點Logo即瀏覽器上方標題旁的圖標"
+
+#: options/theme-options.php:107
+msgid "Custom Site Keywords and Descriptions"
+msgstr "自定義站點關鍵字和描述"
+
+#: options/theme-options.php:108
+msgid "After opening, you can customize the site keywords and descriptions"
+msgstr "開啟之後可自定義填充站點關鍵字和描述"
+
+#: options/theme-options.php:115
+msgid "Site Keywords"
+msgstr "站點關鍵詞"
+
+#: options/theme-options.php:117
+msgid ""
+"The keywords are separated with half width comma \",\" and the number is "
+"best within 5"
+msgstr "各關鍵字間用半角逗號“，”分割，數量在5個以內最佳"
+
+#: options/theme-options.php:123
+msgid "Site Descriptions"
+msgstr "站點描述"
+
+#: options/theme-options.php:125
+msgid ""
+"Use concise words to describe the site, the number of words is recommended "
+"within 120 words"
+msgstr "用簡潔的文字描述本站點，字數建議在120個字以內"
+
 #: options/theme-options.php:1331
 #, php-format
 msgid ""
@@ -659,8 +782,8 @@ msgstr ""
 #: options/theme-options.php:2944
 #, php-format
 msgid ""
-"正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  "
-"<a href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
+"正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  <a "
+"href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
 msgstr ""
 
 #. Plugin Name of the plugin/theme

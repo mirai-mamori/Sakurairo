@@ -4,69 +4,69 @@ if( class_exists( 'CSF' ) ) {
   $prefix = 'iro_options';
 
   CSF::createOptions( $prefix, array(
-    'menu_title' => 'iro 主题设置',
+    'menu_title' => __('iro-Options','csf'),
     'menu_slug'  => 'iro_options',
   ) );
 
   CSF::createSection( $prefix, array(
     'id'    => 'preliminary',
-    'title' => '初步设置',
+    'title' => __('Preliminary','csf'),
     'icon'      => 'fa fa-sliders',
     'fields' => array(
 
       array(
         'id'    => 'site_name',
         'type'  => 'text',
-        'title' => '站点名称',
-        'desc'   => '例如：Fuukei Blog',
+        'title' => __('Site Name','csf'),
+        'desc'   => __('For example:Sakurairo Blog','csf'),
       ),
 
       array(
         'id'    => 'author_name',
         'type'  => 'text',
-        'title' => '作者名称',
-        'desc'   => '例如：Fuukei',
+        'title' => __('Author Name','csf'),
+        'desc'   => __('For example:Fuukei','csf'),
       ),
 
       array(
         'id'    => 'personal_avatar',
         'type'  => 'upload',
-        'title' => '个人头像',
-        'desc'   => '最佳比例1比1',
+        'title' => __('Personal Avatar','csf'),
+        'desc'   => __('The best ratio is 1:1','csf'),
         'library'      => 'image',
       ),
 
       array(
         'id'    => 'text_logo_options',
         'type'  => 'switcher',
-        'title' => '白猫特效文字',
-        'label'   => '开启之后将替换个人头像作为首页显示内容',
+        'title' => __('Mashiro Special Effects Text','csf'),
+        'label'   => __('After opening, the personal avatar will be replaced as the home page display content','csf'),
         'default' => false
       ),
 
       array(
         'id'        => 'text_logo',
         'type'      => 'fieldset',
-        'title'     => '白猫特效文字',
+        'title'     => __('Mashiro Special Effects Text Options','csf'),
         'dependency' => array( 'text_logo_options', '==', 'true' ),
         'fields'    => array(
           array(
             'id'     => 'text',
             'type'   => 'text',
-            'title'  => '文本',
-            'desc'   => '文本内容建议不要过长，推荐长度为16个字节。',
+            'title'  => __('Text','csf'),
+            'desc'   => __('It is recommended that the text content should not be too long, and the recommended length is 16 bytes.','csf'),
           ),
           array(
             'id'     => 'font',
             'type'   => 'text',
-            'title'  => '字体',
-            'desc'   => '填写字体名称。例如：Ma Shan Zheng',
+            'title'  => __('Font','csf'),
+            'desc'   => __('Fill in the font name. For example: Ma Shan Zheng','csf'),
           ),
           array(
             'id'     => 'size',
             'type'   => 'slider',
-            'title'  => '字体大小',
-            'desc'   => '滑动滑块，推荐数值范围为70-90',
+            'title'  => __('Size','csf'),
+            'desc'   => __('Sliding slider, the recommended value range is 70-90','csf'),
             'unit'    => 'px',
             'min'   => '40',
             'max'   => '140',
@@ -74,12 +74,12 @@ if( class_exists( 'CSF' ) ) {
           array(
             'id'      => 'color',
             'type'    => 'color',
-            'title'   => '字体颜色',
-            'desc'    => '自定义颜色，建议使用浅色系颜色',
+            'title'   => __('Color','csf'),
+            'desc'    => __('Custom colors, light colors are recommended','csf'),
           ),      
         ),
         'default'        => array(
-          'text'    => 'ぐんじょう',
+          'text'    => 'ひょうりゅ',
           'size'    => '80',
           'color'    => '#FFF',
         ),
@@ -88,41 +88,41 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'iro_logo',
         'type'  => 'upload',
-        'title' => '导航菜单Logo',
-        'desc'   => '最佳尺寸40px，填写后导航菜单文字Logo不显示',
+        'title' => __('Navigation Menu Logo','csf'),
+        'desc'   => __('The best size is 40px, and the navigation menu text logo will not be displayed after filling in','csf'),
         'library'      => 'image',
       ),
 
       array(
         'id'    => 'favicon_link',
         'type'  => 'text',
-        'title' => '站点Logo',
-        'desc'   => '填写地址，站点Logo即浏览器上方标题旁的图标',
+        'title' => __('Site Icon','csf'),
+        'desc'   => __('Fill in the address, which is the icon next to the title above the browser','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/favicon.ico'
       ),
 
       array(
         'id'    => 'iro_meta',
         'type'  => 'switcher',
-        'title' => '自定义站点关键词和描述',
-        'label'   => '开启之后可自定义填写站点关键词和描述',
+        'title' => __('Custom Site Keywords and Descriptions','csf'),
+        'label'   => __('After opening, you can customize the site keywords and descriptions','csf'),
         'default' => false
       ),
 
       array(
         'id'     => 'iro_meta_keywords',
         'type'   => 'text',
-        'title'  => '站点关键词',
+        'title'  => __('Site Keywords','csf'),
         'dependency' => array( 'iro_meta', '==', 'true' ),
-        'desc'   => '各关键字间用半角逗号","分割，数量在5个以内最佳',
+        'desc'   => __('The keywords are separated with half width comma "," and the number is best within 5','csf'),
       ),
 
       array(
         'id'     => 'iro_meta_description',
         'type'   => 'text',
-        'title'  => '站点描述',
+        'title'  => __('Site Descriptions','csf'),
         'dependency' => array( 'iro_meta', '==', 'true' ),
-        'desc'   => '用简洁的文字描述本站点，字数建议在120个字以内',
+        'desc'   => __('Use concise words to describe the site, the number of words is recommended within 120 words','csf'),
       ),
 
     )
