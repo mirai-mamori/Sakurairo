@@ -112,6 +112,8 @@ var mashiro_option = {
     <?php
     echo_if_true('cache_cover');
     echo_if_true('site_bg_as_cover');
+    $yiyan_api = iro_opt('yiyan_api');
+    if($yiyan_api) echo "yiyan_api:$yiyan_api,";
     ?>
 };
 /*End of Initial Variables*/
