@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-06-26 20:43+0800\n"
-"PO-Revision-Date: 2021-06-26 20:49+0800\n"
+"POT-Creation-Date: 2021-06-27 13:10+0800\n"
+"PO-Revision-Date: 2021-06-27 13:12+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -772,14 +772,134 @@ msgid ""
 "within 120 words"
 msgstr "用簡潔的文字描述本站點，字數建議在120個字以內"
 
-#: options/theme-options.php:1331
+#: options/theme-options.php:133
+msgid "Global"
+msgstr "全域"
+
+#: options/theme-options.php:139
+msgid "Appearance"
+msgstr "外觀"
+
+#: options/theme-options.php:145
+msgid "Color Schemes"
+msgstr "色彩配置"
+
+#: options/theme-options.php:151
+msgid "Theme Color"
+msgstr "主題色"
+
+#: options/theme-options.php:152 options/theme-options.php:160
+#: options/theme-options.php:173 options/theme-options.php:981
+#: options/theme-options.php:990 options/theme-options.php:2357
+#: options/theme-options.php:2365 options/theme-options.php:2670
+#: options/theme-options.php:2678 options/theme-options.php:2686
+#: options/theme-options.php:2694 options/theme-options.php:2702
+msgid "Custom colors"
+msgstr "自訂顏色"
+
+#: options/theme-options.php:159
+msgid "Theme Matching Color"
+msgstr "主題搭配顏色"
+
+#: options/theme-options.php:166
+msgid "Dark Mode"
+msgstr "深色模式"
+
+#: options/theme-options.php:172
+msgid "Dark Mode Theme Color"
+msgstr "深色模式主題顏色"
+
+#: options/theme-options.php:179
+msgid "Automatic Switch of Dark Mode"
+msgstr "深色模式自動切換"
+
+#: options/theme-options.php:180 options/theme-options.php:1159
+msgid "Default on"
+msgstr "默認開啟"
+
+#: options/theme-options.php:186
+msgid ""
+"<p><strong>Client local time:</strong>Dark mode will switch automatically "
+"from 22:00 to 7:00</p><p><strong>Follow client settings:</strong>Follow "
+"client browser settings</p><p><strong>Always on:</strong>Always on, unless "
+"otherwise configured by the client</p>"
+msgstr ""
+"<p><strong>客戶當地時間：</strong>深色模式將從 22：00 自動切換到 7：00</"
+"p><p><strong>關注客戶端設定：</strong>關注用戶端瀏覽器設置</p><p><strong>始終"
+"開啟：</strong>始終打開，除非用戶端另有配置</p>"
+
+#: options/theme-options.php:195
+msgid "Automatic Switch Strategy of Dark Mode"
+msgstr "深色模式自動切換策略"
+
+#: options/theme-options.php:198
+msgid "Client local time"
+msgstr "客戶當地時間"
+
+#: options/theme-options.php:199
+msgid "Follow client settings"
+msgstr "關注客戶端設定"
+
+#: options/theme-options.php:200
+msgid "Always on"
+msgstr "始終打開"
+
+#: options/theme-options.php:208
+msgid "Dark Mode Image Brightness"
+msgstr "深色模式圖像亮度"
+
+#: options/theme-options.php:209 options/theme-options.php:220
+#: options/theme-options.php:727
+msgid "Sliding slider, the recommended sliding value range is 0.6-0.8"
+msgstr "滑動滑塊，推薦數值範圍為0.6-0.8"
+
+#: options/theme-options.php:219
+msgid "Dark mode Component Transparency"
+msgstr "深色模式元件透明度"
+
+#: options/theme-options.php:229
+msgid "Dark mode Background Transparency"
+msgstr "深色模式背景透明度"
+
+#: options/theme-options.php:230
+msgid ""
+"Sliding slider, the recommended sliding value range is 0.6-0.8.In order to "
+"ensure the best appearance, it is better to keep the display of foreground "
+"background image"
+msgstr ""
+"滑動滑塊，建議的滑動值範圍是 0.6-0.8。以確保最佳外觀，最好保持前景背景圖像的"
+"顯示"
+
+#: options/theme-options.php:239
+msgid "Other"
+msgstr "其他"
+
+#: options/theme-options.php:245
+msgid "Commemorate Mode"
+msgstr "紀念模式"
+
+#: options/theme-options.php:246
+msgid ""
+"After opening, black and white filters will be added to the global theme"
+msgstr "打開後，將添加黑白濾鏡到全主題中"
+
+#: options/theme-options.php:253
+msgid "Load Control Unit Space Occupying SVG"
+msgstr "負載控制單元空間佔用 SVG"
+
+#: options/theme-options.php:254
+msgid ""
+"Fill in the address, which is the SVG displayed when loading the control unit"
+msgstr "填寫地址，此為加載控制項單元時占位顯示的SVG"
+
+#: options/theme-options.php:1332
 #, php-format
 msgid ""
 "如果你选择使用Webp优化随机图片，请点击 <a href = \"%s\">这里</a> 来更新 "
 "Manifest 路径"
 msgstr ""
 
-#: options/theme-options.php:2944
+#: options/theme-options.php:2945
 #, php-format
 msgid ""
 "正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  <a "
@@ -792,7 +912,7 @@ msgstr ""
 
 #. Plugin URI of the plugin/theme
 msgid "http://codestarframework.com/"
-msgstr "http://codestarframework.com/"
+msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
@@ -805,4 +925,4 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "http://codestarthemes.com/"
-msgstr "http://codestarthemes.com/"
+msgstr ""

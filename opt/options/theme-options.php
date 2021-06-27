@@ -130,73 +130,74 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'id'    => 'global', 
-    'title' => '全局设置',
+    'title' => __('Global','csf'),
     'icon'      => 'fa fa-globe',
   ) );
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => '外观设置',
+    'title'  => __('Appearance','csf'),
     'icon'      => 'fa fa-tree',
     'fields' => array(
 
       array(
         'type'    => 'subheading',
-        'content' => '主题配色',
+        'content' => __('Color Schemes','csf'),
       ),
 
       array(
         'id'      => 'theme_skin',
         'type'    => 'color',
-        'title'   => '主题色',
-        'desc'    => '自定义颜色',
+        'title'   => __('Theme Color','csf'),
+        'desc'    => __('Custom colors','csf'),
         'default' => '#505050'
       ),  
 
       array(
         'id'      => 'theme_skin_matching',
         'type'    => 'color',
-        'title'   => '主题色搭配色',
-        'desc'    => '自定义颜色',
+        'title'   => __('Theme Matching Color','csf'),
+        'desc'    => __('Custom colors','csf'),
         'default' => '#ffe066'
       ),  
 
       array(
         'type'    => 'subheading',
-        'content' => '深色模式',
+        'content' => __('Dark Mode','csf'),
       ),
 
       array(
         'id'      => 'theme_skin_dark',
         'type'    => 'color',
-        'title'   => '深色模式主题色',
-        'desc'    => '自定义颜色',
+        'title'   => __('Dark Mode Theme Color','csf'),
+        'desc'    => __('Custom colors','csf'),
         'default' => '#ffcc00'
       ),  
       array(
         'id'    => 'theme_darkmode_auto',
         'type'  => 'switcher',
-        'title' => '深色模式自动切换',
-        'label'   => '默认开启',
+        'title' => __('Automatic Switch of Dark Mode','csf'),
+        'label'   => __('Default on','csf'),
         'default' => true
       ),
       array(
         'type'    => 'content',
-        'content' => '<p><strong>客户端当地时间:</strong>深色模式会在22:00-7:00自动切换</p>'
-        .'<p><strong>跟随客户端设置:</strong>跟随客户端浏览器的设置</p>'
-        .'<p><strong>永远开启:</strong>永远开启，除非客户端另有配置</p>',
+        'content' => __(
+         '<p><strong>Client local time:</strong>Dark mode will switch automatically from 22:00 to 7:00</p>'
+        .'<p><strong>Follow client settings:</strong>Follow client browser settings</p>'
+        .'<p><strong>Always on:</strong>Always on, unless otherwise configured by the client</p>','csf'),
         'dependency' => array( 'theme_darkmode_auto', '==', 'true' ),
 
       ),
       array(
         'id'    => 'theme_darkmode_strategy',
         'type'  => 'select',
-        'title' => '深色模式自动切换策略',
+        'title' => __('Automatic Switch Strategy of Dark Mode','csf'),
         'dependency' => array( 'theme_darkmode_auto', '==', 'true' ),
         'options'     => array(
-          'time'  => '客户端当地时间',
-          'client'  => '跟随客户端设置',
-          'eien'  => '永远开启',
+          'time'  => __('Client local time','csf'),
+          'client'  => __('Follow client settings','csf'),
+          'eien'  => __('Always on','csf'),
         ),
         "default"=>"time"
       ),
@@ -204,8 +205,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'theme_darkmode_img_bright',
         'type'   => 'slider',
-        'title'  => '深色模式图像亮度',
-        'desc'   => '滑动滑块，推荐数值范围为0.6-0.8',
+        'title'  => __('Dark Mode Image Brightness','csf'),
+        'desc'   => __('Sliding slider, the recommended sliding value range is 0.6-0.8','csf'),
         'step'   => '0.01',
         'min'   => '0.4',
         'max'   => '1',
@@ -215,8 +216,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'theme_darkmode_widget_transparency',
         'type'   => 'slider',
-        'title'  => '深色模式部件透明度',
-        'desc'   => '滑动滑块，推荐数值范围为0.6-0.8',
+        'title'  => __('Dark mode Component Transparency','csf'),
+        'desc'   => __('Sliding slider, the recommended sliding value range is 0.6-0.8','csf'),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -225,8 +226,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'theme_darkmode_background_transparency',
         'type'   => 'slider',
-        'title'  => '深色模式背景透明度',
-        'desc'   => '滑动滑块，推荐数值范围为0.6-0.8。为保证最佳观感，使用此项最好保留前台背景图像的显示',
+        'title'  => __('Dark mode Background Transparency','csf'),
+        'desc'   => __('Sliding slider, the recommended sliding value range is 0.6-0.8.In order to ensure the best appearance, it is better to keep the display of foreground background image','csf'),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -235,22 +236,22 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'subheading',
-        'content' => '其他',
+        'content' => __('Other','csf'),
       ),
 
       array(
         'id'    => 'theme_commemorate_mode',
         'type'  => 'switcher',
-        'title' => '纪念模式',
-        'label'   => '开启之后主题全局将添加黑白滤镜',
+        'title' => __('Commemorate Mode','csf'),
+        'label'   => __('After opening, black and white filters will be added to the global theme','csf'),
         'default' => false
       ),
 
       array(
         'id'     => 'load_out_svg',
         'type'   => 'text',
-        'title'  => '加载控件单元占位SVG',
-        'desc'   => '填写地址，此为加载控件单元时占位显示的SVG',
+        'title'  => __('Load Control Unit Space Occupying SVG','csf'),
+        'desc'   => __('Fill in the address, which is the SVG displayed when loading the control unit','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/outload.svg'
       ),
 
@@ -723,7 +724,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'reception_background_transparency',
         'type'   => 'slider',
         'title'  => '前台背景透明度',
-        'desc'   => '滑动滑块，推荐数值范围为0.6-0.8',
+        'desc'   => __('Sliding slider, the recommended sliding value range is 0.6-0.8','csf'),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -977,7 +978,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '预加载动画颜色A',
         'dependency' => array( 'preload_animation', '==', 'true' ),
-        'desc'    => '自定义颜色',
+        'desc'    => __('Custom colors','csf'),
         'default' => '#ffea99'
       ),   
 
@@ -986,7 +987,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '预加载动画颜色B',
         'dependency' => array( 'preload_animation', '==', 'true' ),
-        'desc'    => '自定义颜色',
+        'desc'    => __('Custom colors','csf'),
         'default' => '#ffcc00'
       ),   
 
@@ -1155,7 +1156,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'cover_full_screen',
         'type'  => 'switcher',
         'title' => '封面全屏显示',
-        'label'   => '默认开启',
+        'label'   => __('Default on','csf'),
         'default' => true
       ),
 
@@ -2353,7 +2354,7 @@ if( class_exists( 'CSF' ) ) {
         'id'      => 'shuoshuo_background_color1',
         'type'    => 'color',
         'title'   => '说说模板说说背景颜色Ⅰ',
-        'desc'    => '自定义颜色',
+        'desc'    => __('Custom colors','csf'),
         'default' => '#ffe066'
       ),    
 
@@ -2361,7 +2362,7 @@ if( class_exists( 'CSF' ) ) {
         'id'      => 'shuoshuo_background_color2',
         'type'    => 'color',
         'title'   => '说说模板说说背景颜色Ⅱ',
-        'desc'    => '自定义颜色',
+        'desc'    => __('Custom colors','csf'),
         'default' => '#ffcc00'
       ),    
 
@@ -2666,7 +2667,7 @@ if( class_exists( 'CSF' ) ) {
         'id'      => 'admin_first_class_color',
         'type'    => 'color',
         'title'   => '仪表盘一级菜单颜色',
-        'desc'    => '自定义颜色',
+        'desc'    => __('Custom colors','csf'),
         'default' => '#88cfef'
       ),  
 
@@ -2674,7 +2675,7 @@ if( class_exists( 'CSF' ) ) {
         'id'      => 'admin_second_class_color',
         'type'    => 'color',
         'title'   => '仪表盘二级菜单颜色',
-        'desc'    => '自定义颜色',
+        'desc'    => __('Custom colors','csf'),
         'default' => '#67c4ef'
       ),  
 
@@ -2682,7 +2683,7 @@ if( class_exists( 'CSF' ) ) {
         'id'      => 'admin_emphasize_color',
         'type'    => 'color',
         'title'   => '仪表盘强调颜色',
-        'desc'    => '自定义颜色',
+        'desc'    => __('Custom colors','csf'),
         'default' => '#342a29'
       ),  
 
@@ -2690,7 +2691,7 @@ if( class_exists( 'CSF' ) ) {
         'id'      => 'admin_button_color',
         'type'    => 'color',
         'title'   => '仪表盘按钮颜色',
-        'desc'    => '自定义颜色',
+        'desc'    => __('Custom colors','csf'),
         'default' => '#d1976d'
       ),  
 
@@ -2698,7 +2699,7 @@ if( class_exists( 'CSF' ) ) {
         'id'      => 'admin_text_color',
         'type'    => 'color',
         'title'   => '仪表盘文本颜色',
-        'desc'    => '自定义颜色',
+        'desc'    => __('Custom colors','csf'),
       ),  
 
     )

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-06-26 20:32+0800\n"
+"POT-Creation-Date: 2021-06-27 12:39+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -772,14 +772,130 @@ msgid ""
 "within 120 words"
 msgstr ""
 
-#: options/theme-options.php:1331
+#: options/theme-options.php:133
+msgid "Global"
+msgstr ""
+
+#: options/theme-options.php:139
+msgid "Appearance"
+msgstr ""
+
+#: options/theme-options.php:145
+msgid "Color Schemes"
+msgstr ""
+
+#: options/theme-options.php:151
+msgid "Theme Color"
+msgstr ""
+
+#: options/theme-options.php:152 options/theme-options.php:160
+#: options/theme-options.php:173 options/theme-options.php:981
+#: options/theme-options.php:990 options/theme-options.php:2357
+#: options/theme-options.php:2365 options/theme-options.php:2670
+#: options/theme-options.php:2678 options/theme-options.php:2686
+#: options/theme-options.php:2694 options/theme-options.php:2702
+msgid "Custom colors"
+msgstr ""
+
+#: options/theme-options.php:159
+msgid "Theme Matching Color"
+msgstr ""
+
+#: options/theme-options.php:166
+msgid "Dark Mode"
+msgstr ""
+
+#: options/theme-options.php:172
+msgid "Dark Mode Theme Color"
+msgstr ""
+
+#: options/theme-options.php:179
+msgid "Automatic Switch of Dark Mode"
+msgstr ""
+
+#: options/theme-options.php:180 options/theme-options.php:1159
+msgid "Default on"
+msgstr ""
+
+#: options/theme-options.php:186
+msgid ""
+"<p><strong>Client local time:</strong>Dark mode will switch automatically "
+"from 22:00 to 7:00</p><p><strong>Follow client settings:</strong>Follow "
+"client browser settings</p><p><strong>Always on:</strong>Always on, unless "
+"otherwise configured by the client</p>"
+msgstr ""
+
+#: options/theme-options.php:195
+msgid "Automatic Switch Strategy of Dark Mode"
+msgstr ""
+
+#: options/theme-options.php:198
+msgid "Client local time"
+msgstr ""
+
+#: options/theme-options.php:199
+msgid "Follow client settings"
+msgstr ""
+
+#: options/theme-options.php:200
+msgid "Always on"
+msgstr ""
+
+#: options/theme-options.php:208
+msgid "Dark Mode Image Brightness"
+msgstr ""
+
+#: options/theme-options.php:209 options/theme-options.php:220
+#: options/theme-options.php:727
+msgid "Sliding slider, the recommended sliding value range is 0.6-0.8"
+msgstr ""
+
+#: options/theme-options.php:219
+msgid "Dark mode Component Transparency"
+msgstr ""
+
+#: options/theme-options.php:229
+msgid "Dark mode Background Transparency"
+msgstr ""
+
+#: options/theme-options.php:230
+msgid ""
+"Sliding slider, the recommended sliding value range is 0.6-0.8.In order to "
+"ensure the best appearance, it is better to keep the display of foreground "
+"background image"
+msgstr ""
+
+#: options/theme-options.php:239
+msgid "Other"
+msgstr ""
+
+#: options/theme-options.php:245
+msgid "Commemorate Mode"
+msgstr ""
+
+#: options/theme-options.php:246
+msgid ""
+"After opening, black and white filters will be added to the global theme"
+msgstr ""
+
+#: options/theme-options.php:253
+msgid "Load Control Unit Space Occupying SVG"
+msgstr ""
+
+#: options/theme-options.php:254
+msgid ""
+"Fill in the address, which is the SVG displayed when loading the control "
+"unit"
+msgstr ""
+
+#: options/theme-options.php:1332
 #, php-format
 msgid ""
 "如果你选择使用Webp优化随机图片，请点击 <a href = \"%s\">这里</a> 来更新 "
 "Manifest 路径"
 msgstr ""
 
-#: options/theme-options.php:2944
+#: options/theme-options.php:2945
 #, php-format
 msgid ""
 "正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  "
