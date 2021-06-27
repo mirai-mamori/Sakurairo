@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-06-27 13:04+0800\n"
-"PO-Revision-Date: 2021-06-27 13:12+0800\n"
+"POT-Creation-Date: 2021-06-27 15:43+0800\n"
+"PO-Revision-Date: 2021-06-27 15:55+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_HK\n"
@@ -677,7 +677,7 @@ msgstr "例如：Fuukei"
 msgid "Personal Avatar"
 msgstr "個人頭像"
 
-#: options/theme-options.php:35
+#: options/theme-options.php:35 options/theme-options.php:462
 msgid "The best ratio is 1:1"
 msgstr "最佳比例1比1"
 
@@ -777,7 +777,7 @@ msgid "Global"
 msgstr "全域設置"
 
 #: options/theme-options.php:139
-msgid "Appearance"
+msgid "Appearance Options"
 msgstr "外觀設置"
 
 #: options/theme-options.php:145
@@ -891,6 +891,247 @@ msgstr "負載控制單元空間佔用 SVG"
 msgid ""
 "Fill in the address, which is the SVG displayed when loading the control unit"
 msgstr "填寫地址，此為加載控制項單元時占位顯示的SVG"
+
+#: options/theme-options.php:263
+msgid "Fonts Options"
+msgstr "字體設置"
+
+#: options/theme-options.php:269
+msgid "Globally"
+msgstr "全域"
+
+#: options/theme-options.php:275
+msgid "Non Emphasis Text Word Weight"
+msgstr "非強調文本字重"
+
+#: options/theme-options.php:276
+msgid "Sliding slider, recommended value range is 300-500"
+msgstr "滑動滑塊，推薦數值範圍為300-500"
+
+#: options/theme-options.php:286
+msgid "Text Font Size"
+msgstr "文字字體大小"
+
+#: options/theme-options.php:287
+msgid "Sliding slider, recommended value range is 15-18"
+msgstr "滑動滑塊，推薦數值範圍為15-18"
+
+#: options/theme-options.php:297
+msgid "External Font"
+msgstr "外部字體"
+
+#: options/theme-options.php:303
+msgid "Reference External Font"
+msgstr "參考外部字體功能"
+
+#: options/theme-options.php:304
+msgid ""
+"After Opening, you can use external fonts as the default font or other "
+"component fonts, but it may affect performance"
+msgstr ""
+"打開後，您可以使用外部字體作為預設字體或其他元件字體，但它可能會影響性能"
+
+#: options/theme-options.php:311
+msgid "External Font Link"
+msgstr "外部字體連結"
+
+#: options/theme-options.php:318
+msgid "External Font Name"
+msgstr "外部字體名稱"
+
+#: options/theme-options.php:325
+msgid "Google Fonts Api Link"
+msgstr "Google 字型庫 API 連結"
+
+#: options/theme-options.php:332
+msgid "Google Fonts Name"
+msgstr "Google 字型字體名稱"
+
+#: options/theme-options.php:333
+msgid ""
+"Please make sure that the added font can be referenced in Google font "
+"library and fill in the font name. The added font must be preceded by \"|\". "
+"If multiple fonts are referenced, use \"|\" as the separator. If the font "
+"name has spaces, use a plus sign instead. For example: | zcool + xiaowei| Ma "
+"+ Shan + Zheng"
+msgstr ""
+"請確保添加的字體可以在 Google 字型庫中引用並填寫字體名稱。添加的字體必須先於"
+"\"|\"。如果引用多個字體，請使用\"|\"作為分離器。如果字體名稱有空格，請改為使"
+"用加號。例如：|茲庫爾+小威|馬 + 山 + 鄭"
+
+#: options/theme-options.php:341
+msgid "Navigation Menu Options"
+msgstr "導航菜單設置"
+
+#: options/theme-options.php:348
+msgid "Navigation Menu Style"
+msgstr "導航菜單樣式"
+
+#: options/theme-options.php:359
+msgid "Navigation Menu Radius"
+msgstr "導航菜單圆角"
+
+#: options/theme-options.php:361 options/theme-options.php:481
+msgid "Sliding slider, the recommended value is 15"
+msgstr "滑動滑塊，推薦數值範圍為15"
+
+#: options/theme-options.php:370
+msgid "Navigation Menu Shrinkage Ratio"
+msgstr "導航菜單收縮比"
+
+#: options/theme-options.php:372
+msgid ""
+"Sliding slider to set the appropriate ratio according to the content length "
+"of the navigation menu. When the ratio is set to 95, shrinkage will be "
+"turned off. Shrinkage is turned off by default"
+msgstr ""
+"滑動滑塊根據導航功能表的內容長度設置適當的比率。當比率設置為 95 時，收縮將關"
+"閉。默認情況下，收縮被關閉"
+
+#: options/theme-options.php:383
+msgid "Navigation Menu Content Display"
+msgstr "導航菜單內容顯示"
+
+#: options/theme-options.php:384
+msgid "You can choose to expand or shrink the navigation menu"
+msgstr "您可以選擇延伸或縮小導航功能表"
+
+#: options/theme-options.php:386
+msgid "Unfold"
+msgstr "展開"
+
+#: options/theme-options.php:387
+msgid "Fold"
+msgstr "折疊"
+
+#: options/theme-options.php:395
+msgid "Navigation Menu Animation"
+msgstr "導航菜單動畫"
+
+#: options/theme-options.php:396
+msgid ""
+"It is on by default. If it is off, the navigation content will be displayed "
+"directly"
+msgstr "默認打開。如果關閉，導航內容將直接顯示"
+
+#: options/theme-options.php:403
+msgid "Navigation Menu Animation Time"
+msgstr "導航菜單動畫時間"
+
+#: options/theme-options.php:405
+msgid "Sliding slider,the recommended value range is 1-2"
+msgstr "滑動滑塊，推薦數值範圍為1-2"
+
+#: options/theme-options.php:415
+msgid "Navigation Menu Icon Size"
+msgstr "導航菜單Icon大小"
+
+#: options/theme-options.php:417
+msgid "Standard"
+msgstr "標準"
+
+#: options/theme-options.php:418
+msgid "Large"
+msgstr "大"
+
+#: options/theme-options.php:426
+msgid "Navigation Menu Search"
+msgstr "導航菜單搜索"
+
+#: options/theme-options.php:427
+msgid "It is on by default. Click to enter the search area"
+msgstr "默認打開。按一下以輸入搜尋區域"
+
+#: options/theme-options.php:433
+msgid "Navigation Menu Blur"
+msgstr "導航菜單模糊"
+
+#: options/theme-options.php:434
+msgid "Sliding slider, the recommended value is 5px, and close when it is 0px"
+msgstr "滑動滑塊，建議值為5px，並在0px時關閉"
+
+#: options/theme-options.php:443
+msgid "Navigation Menu Search Area Background Image"
+msgstr "導航菜單搜尋區域背景圖像"
+
+#: options/theme-options.php:444
+msgid ""
+"Set the background image of your search area. Leave this option blank to "
+"display a white background"
+msgstr "搜索區域的背景圖像。將此選項留空以顯示白色背景"
+
+#: options/theme-options.php:452
+msgid "Navigation Menu User Avatar"
+msgstr "導航菜單用戶頭像"
+
+#: options/theme-options.php:453
+msgid "Open by default, click to enter the login interface"
+msgstr "默認打開，按一下以輸入登錄介面"
+
+#: options/theme-options.php:460
+msgid "Navigation Menu Unlisted User Avatar"
+msgstr "導航菜單未Login In用戶頭像"
+
+#: options/theme-options.php:470
+msgid "Navigation Menu Secondary Menu Prompt Arrow"
+msgstr "導航菜單二级菜單提示箭頭"
+
+#: options/theme-options.php:471
+msgid ""
+"After opening, the menu prompt arrow will appear in the secondary menu of "
+"the navigation menu"
+msgstr "打開後，二级菜單提示箭頭將顯示在導航菜單"
+
+#: options/theme-options.php:479
+msgid "Navigation Menu Secondary Menu Radius"
+msgstr "導航菜單二级菜單圆角"
+
+#: options/theme-options.php:490
+msgid "Navigation Menu Logo Text"
+msgstr "導航菜單二级菜單標誌文本"
+
+#: options/theme-options.php:491
+msgid ""
+"Fill in the text. If the Mashiro logo is turned on, this option is invalid"
+msgstr "填寫文字。如果打開 Mashiro Logo，此選項無效"
+
+#: options/theme-options.php:498
+msgid "Navigation Menu Mashiro Logo"
+msgstr "導航菜單Mashiro Logo"
+
+#: options/theme-options.php:499
+msgid ""
+"After opening, the Mashiro Logo will appear and replace the navigation menu "
+"logo position"
+msgstr "打開後，將出現並替換導航菜單標誌位置的 Mashiro Logo"
+
+#: options/theme-options.php:506
+msgid "Navigation Menu Mashiro Logo Option"
+msgstr "導航菜單Mashiro Logo選項"
+
+#: options/theme-options.php:512
+msgid "Text A"
+msgstr "文本A"
+
+#: options/theme-options.php:517
+msgid "Text B"
+msgstr "文本B"
+
+#: options/theme-options.php:522
+msgid "Text C"
+msgstr "文本C"
+
+#: options/theme-options.php:527
+msgid "Secondary Text"
+msgstr "次要文字"
+
+#: options/theme-options.php:532
+msgid "Font Link"
+msgstr "字體連結"
+
+#: options/theme-options.php:537
+msgid "Font Name"
+msgstr "字型名稱"
 
 #: options/theme-options.php:1332
 #, php-format

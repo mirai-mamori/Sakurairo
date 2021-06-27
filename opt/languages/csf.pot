@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-06-27 12:39+0800\n"
+"POT-Creation-Date: 2021-06-27 15:27+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -677,7 +677,7 @@ msgstr ""
 msgid "Personal Avatar"
 msgstr ""
 
-#: options/theme-options.php:35
+#: options/theme-options.php:35 options/theme-options.php:462
 msgid "The best ratio is 1:1"
 msgstr ""
 
@@ -777,7 +777,7 @@ msgid "Global"
 msgstr ""
 
 #: options/theme-options.php:139
-msgid "Appearance"
+msgid "Appearance Options"
 msgstr ""
 
 #: options/theme-options.php:145
@@ -886,6 +886,241 @@ msgstr ""
 msgid ""
 "Fill in the address, which is the SVG displayed when loading the control "
 "unit"
+msgstr ""
+
+#: options/theme-options.php:263
+msgid "Fonts Options"
+msgstr ""
+
+#: options/theme-options.php:269
+msgid "Globally"
+msgstr ""
+
+#: options/theme-options.php:275
+msgid "Non Emphasis Text Word Weight"
+msgstr ""
+
+#: options/theme-options.php:276
+msgid "Sliding slider, recommended value range is 300-500"
+msgstr ""
+
+#: options/theme-options.php:286
+msgid "Text Font Size"
+msgstr ""
+
+#: options/theme-options.php:287
+msgid "Sliding slider, recommended value range is 15-18"
+msgstr ""
+
+#: options/theme-options.php:297
+msgid "External Font"
+msgstr ""
+
+#: options/theme-options.php:303
+msgid "Reference External Font"
+msgstr ""
+
+#: options/theme-options.php:304
+msgid ""
+"After Opening, you can use external fonts as the default font or other "
+"component fonts, but it may affect performance"
+msgstr ""
+
+#: options/theme-options.php:311
+msgid "External Font Link"
+msgstr ""
+
+#: options/theme-options.php:318
+msgid "External Font Name"
+msgstr ""
+
+#: options/theme-options.php:325
+msgid "Google Fonts Api Link"
+msgstr ""
+
+#: options/theme-options.php:332
+msgid "Google Fonts Name"
+msgstr ""
+
+#: options/theme-options.php:333
+msgid ""
+"Please make sure that the added font can be referenced in Google font "
+"library and fill in the font name. The added font must be preceded by \"|"
+"\". If multiple fonts are referenced, use \"|\" as the separator. If the "
+"font name has spaces, use a plus sign instead. For example: | zcool + "
+"xiaowei| Ma + Shan + Zheng"
+msgstr ""
+
+#: options/theme-options.php:341
+msgid "Navigation Menu Options"
+msgstr ""
+
+#: options/theme-options.php:348
+msgid "Navigation Menu Style"
+msgstr ""
+
+#: options/theme-options.php:359
+msgid "Navigation Menu Radius"
+msgstr ""
+
+#: options/theme-options.php:361 options/theme-options.php:481
+msgid "Sliding slider, the recommended value is 15"
+msgstr ""
+
+#: options/theme-options.php:370
+msgid "Navigation Menu Shrinkage Ratio"
+msgstr ""
+
+#: options/theme-options.php:372
+msgid ""
+"Sliding slider to set the appropriate ratio according to the content length "
+"of the navigation menu. When the ratio is set to 95, shrinkage will be "
+"turned off. Shrinkage is turned off by default"
+msgstr ""
+
+#: options/theme-options.php:383
+msgid "Navigation Menu Content Display"
+msgstr ""
+
+#: options/theme-options.php:384
+msgid "You can choose to expand or shrink the navigation menu"
+msgstr ""
+
+#: options/theme-options.php:386
+msgid "Unfold"
+msgstr ""
+
+#: options/theme-options.php:387
+msgid "Fold"
+msgstr ""
+
+#: options/theme-options.php:395
+msgid "Navigation Menu Animation"
+msgstr ""
+
+#: options/theme-options.php:396
+msgid ""
+"It is on by default. If it is off, the navigation content will be displayed "
+"directly"
+msgstr ""
+
+#: options/theme-options.php:403
+msgid "Navigation Menu Animation Time"
+msgstr ""
+
+#: options/theme-options.php:405
+msgid "Sliding slider,the recommended value range is 1-2"
+msgstr ""
+
+#: options/theme-options.php:415
+msgid "Navigation Menu Icon Size"
+msgstr ""
+
+#: options/theme-options.php:417
+msgid "Standard"
+msgstr ""
+
+#: options/theme-options.php:418
+msgid "Large"
+msgstr ""
+
+#: options/theme-options.php:426
+msgid "Navigation Menu Search"
+msgstr ""
+
+#: options/theme-options.php:427
+msgid "It is on by default. Click to enter the search area"
+msgstr ""
+
+#: options/theme-options.php:433
+msgid "Navigation Menu Blur"
+msgstr ""
+
+#: options/theme-options.php:434
+msgid "Sliding slider, the recommended value is 5px, and close when it is 0px"
+msgstr ""
+
+#: options/theme-options.php:443
+msgid "Navigation Menu Search Area Background Image"
+msgstr ""
+
+#: options/theme-options.php:444
+msgid ""
+"Set the background image of your search area. Leave this option blank to "
+"display a white background"
+msgstr ""
+
+#: options/theme-options.php:452
+msgid "Navigation Menu User Avatar"
+msgstr ""
+
+#: options/theme-options.php:453
+msgid "Open by default, click to enter the login interface"
+msgstr ""
+
+#: options/theme-options.php:460
+msgid "Navigation Menu Unlisted User Avatar"
+msgstr ""
+
+#: options/theme-options.php:470
+msgid "Navigation Menu Secondary Menu Prompt Arrow"
+msgstr ""
+
+#: options/theme-options.php:471
+msgid ""
+"After opening, the menu prompt arrow will appear in the secondary menu of "
+"the navigation menu"
+msgstr ""
+
+#: options/theme-options.php:479
+msgid "Navigation Menu Secondary Menu Radius"
+msgstr ""
+
+#: options/theme-options.php:490
+msgid "Navigation Menu Logo Text"
+msgstr ""
+
+#: options/theme-options.php:491
+msgid ""
+"Fill in the text. If the Mashiro logo is turned on, this option is invalid"
+msgstr ""
+
+#: options/theme-options.php:498
+msgid "Navigation Menu Mashiro Logo"
+msgstr ""
+
+#: options/theme-options.php:499
+msgid ""
+"After opening, the Mashiro Logo will appear and replace the navigation menu "
+"logo position"
+msgstr ""
+
+#: options/theme-options.php:506
+msgid "Navigation Menu Mashiro Logo Option"
+msgstr ""
+
+#: options/theme-options.php:512
+msgid "Text A"
+msgstr ""
+
+#: options/theme-options.php:517
+msgid "Text B"
+msgstr ""
+
+#: options/theme-options.php:522
+msgid "Text C"
+msgstr ""
+
+#: options/theme-options.php:527
+msgid "Secondary Text"
+msgstr ""
+
+#: options/theme-options.php:532
+msgid "Font Link"
+msgstr ""
+
+#: options/theme-options.php:537
+msgid "Font Name"
 msgstr ""
 
 #: options/theme-options.php:1332

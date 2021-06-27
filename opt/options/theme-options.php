@@ -136,7 +136,7 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => __('Appearance','csf'),
+    'title'  => __('Appearance Options','csf'),
     'icon'      => 'fa fa-tree',
     'fields' => array(
 
@@ -260,20 +260,20 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => '字体设置',
+    'title'  => __('Fonts Options','csf'),
     'icon'      => 'fa fa-font',
     'fields' => array(
 
       array(
         'type'    => 'subheading',
-        'content' => '全局',
+        'content' => __('Globally','csf'),
       ),
 
       array(
         'id'     => 'global_font_weight',
         'type'   => 'slider',
-        'title'  => '非强调文本字重',
-        'desc'   => '滑动滑块，推荐数值范围为300-500',
+        'title'  => __('Non Emphasis Text Word Weight','csf'),
+        'desc'   => __('Sliding slider, recommended value range is 300-500','csf'),
         'step'   => '10',
         'min'   => '100',
         'max'   => '700',
@@ -283,8 +283,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'global_font_size',
         'type'   => 'slider',
-        'title'  => '文本字体大小',
-        'desc'   => '滑动滑块，推荐数值范围为15-18',
+        'title'  => __('Text Font Size','csf'),
+        'desc'   => __('Sliding slider, recommended value range is 15-18','csf'),
         'step'   => '1',
         'unit'    => 'px',
         'min'   => '10',
@@ -294,43 +294,43 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'subheading',
-        'content' => '外部字体',
+        'content' => __('External Font','csf'),
       ),
 
       array(
         'id'    => 'reference_exter_font',
         'type'  => 'switcher',
-        'title' => '引用外部字体',
-        'label'   => '开启之后可以使用外部字体作为默认字体或其他部件字体，但可能影响性能',
+        'title' => __('Reference External Font','csf'),
+        'label'   => __('After Opening, you can use external fonts as the default font or other component fonts, but it may affect performance','csf'),
         'default' => false
       ),
 
       array(
         'id'     => 'exter_font_link',
         'type'   => 'text',
-        'title'  => '外部字体地址',
+        'title'  => __('External Font Link','csf'),
         'dependency' => array( 'reference_exter_font', '==', 'true' ),
       ),
 
       array(
         'id'     => 'exter_font_name',
         'type'   => 'text',
-        'title'  => '外部字体名称',
+        'title'  => __('External Font Name','csf'),
         'dependency' => array( 'reference_exter_font', '==', 'true' ),
       ),
 
       array(
         'id'     => 'google_fonts_api',
         'type'   => 'text',
-        'title'  => '谷歌字体API地址',
+        'title'  => __('Google Fonts Api Link','csf'),
         'default' => 'fonts.maho.cc'
       ),
 
       array(
         'id'     => 'google_fonts_add',
         'type'   => 'text',
-        'title'  => '谷歌字体名称',
-        'desc'   => '请确保添加的字体在谷歌字体库内可被引用，填写字体名称。添加的字体前面必须有”|“。如果引用多个字体，请使用“|”作为分割符，如果字体名称有空格，请用加号替代。例如：|ZCOOL+XiaoWei|Ma+Shan+Zheng ',
+        'title'  => __('Google Fonts Name','csf'),
+        'desc'   => __('Please make sure that the added font can be referenced in Google font library and fill in the font name. The added font must be preceded by "|". If multiple fonts are referenced, use "|" as the separator. If the font name has spaces, use a plus sign instead. For example: | zcool + xiaowei| Ma + Shan + Zheng','csf'),
       ),
 
     )
@@ -338,14 +338,14 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => '导航菜单设置',
+    'title'  => __('Navigation Menu Options','csf'),
     'icon'      => 'fa fa-map-signs',
     'fields' => array(
 
       array(
         'id'         => 'nav_menu_style',
         'type'       => 'image_select',
-        'title'      => '导航菜单样式',
+        'title'      => __('Navigation Menu Style','csf'),
         'options'    => array(
           'sakurairo' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/nav_menu_style_iro.png',
           'sakura' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/nav_menu_style_sakura.png',
@@ -356,9 +356,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_radius',
         'type'  => 'slider',
-        'title' => '导航菜单圆角',
+        'title' => __('Navigation Menu Radius','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
-        'desc'   => '滑动滑块，推荐数值为15',
+        'desc'   => __('Sliding slider, the recommended value is 15','csf'),
         'unit'    => 'px',
         'max'   => '50',
         'default' => '15'
@@ -367,9 +367,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'nav_menu_shrink_animation',
         'type'   => 'slider',
-        'title'  => '导航菜单收缩比率',
+        'title'  => __('Navigation Menu Shrinkage Ratio','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
-        'desc'   => '滑动滑块，根据导航菜单的内容长度自行设置合适的比率，当比率设置为95时则关闭收缩，默认关闭收缩',
+        'desc'   => __('Sliding slider to set the appropriate ratio according to the content length of the navigation menu. When the ratio is set to 95, shrinkage will be turned off. Shrinkage is turned off by default','csf'),
         'step'   => '0.5',
         'unit'    => '%',
         'max'   => '95',
@@ -380,11 +380,11 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'nav_menu_display',
         'type'       => 'radio',
-        'title'      => '导航菜单内容显示',
-        'desc'    => '你可以选择展开显示或者收缩显示导航菜单内容',
+        'title'      => __('Navigation Menu Content Display','csf'),
+        'desc'    => __('You can choose to expand or shrink the navigation menu','csf'),
         'options'    => array(
-          'unfold' => '展开显示',
-          'fold' => '收缩显示',
+          'unfold' => __('Unfold','csf'),
+          'fold' => __('Fold','csf'),
         ),
         'default'    => 'unfold'
       ),
@@ -392,17 +392,17 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_animation',
         'type'  => 'switcher',
-        'title' => '导航菜单动画',
-        'label'   => '默认开启，如果关闭，则导航内容将直接显示',
+        'title' => __('Navigation Menu Animation','csf'),
+        'label'   => __('It is on by default. If it is off, the navigation content will be displayed directly','csf'),
         'default' => true
       ),
 
       array(
         'id'     => 'nav_menu_animation_time',
         'type'   => 'slider',
-        'title'  => '导航菜单动画时间',
+        'title'  => __('Navigation Menu Animation Time','csf'),
         'dependency' => array( 'nav_menu_animation', '==', 'true' ),
-        'desc'   => '滑动滑块，推荐数值范围为1-2',
+        'desc'   => __('Sliding slider,the recommended value range is 1-2','csf'),
         'step'   => '0.01',
         'unit'    => 's',
         'max'   => '5',
@@ -412,10 +412,10 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'nav_menu_icon_size',
         'type'       => 'radio',
-        'title'      => '导航菜单图标大小',
+        'title'      => __('Navigation Menu Icon Size','csf'),
         'options'    => array(
-          'standard' => '标准图标',
-          'large' => '大图标',
+          'standard' => __('Standard','csf'),
+          'large' => __('Large','csf'),
         ),
         'default'    => 'standard'
       ),
@@ -423,15 +423,15 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_search',
         'type'  => 'switcher',
-        'title' => '导航菜单搜索',
-        'label'   => '默认开启，点击将进入搜索区域',
+        'title' => __('Navigation Menu Search','csf'),
+        'label'   => __('It is on by default. Click to enter the search area','csf'),
         'default' => true
       ),
       array(
         'id'    => 'nav_menu_blur',
         'type'  => 'slider',
-        'title' => '导航菜单背景模糊',
-        'desc'   => '滑动滑块，推荐数值为5px，为0px时关闭',
+        'title' => __('Navigation Menu Blur','csf'),
+        'desc'   => __('Sliding slider, the recommended value is 5px, and close when it is 0px','csf'),
         'unit'    => 'px',
         'max'   => '20',
         'default' => '0'
@@ -440,8 +440,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'search_area_background',
         'type'  => 'upload',
-        'title' => '导航菜单搜索区域背景图片',
-        'desc'   => '设置你的搜索区域背景图片，此选项留空则显示白色背景',
+        'title' => __('Navigation Menu Search Area Background Image','csf'),
+        'desc'   => __('Set the background image of your search area. Leave this option blank to display a white background','csf'),
         'library'      => 'image',
         'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/iloli.gif'
       ),
@@ -449,17 +449,17 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_user_avatar',
         'type'  => 'switcher',
-        'title' => '导航菜单用户头像',
-        'label'   => '默认开启，点击将进入登录界面',
+        'title' => __('Navigation Menu User Avatar','csf'),
+        'label'   => __('Open by default, click to enter the login interface','csf'),
         'default' => true
       ),
 
       array(
         'id'     => 'unlisted_avatar',
         'type'  => 'upload',
-        'title' => '导航菜单用户未登录头像',
+        'title' => __('Navigation Menu Unlisted User Avatar','csf'),
         'dependency' => array( 'nav_menu_user_avatar', '==', 'true' ),
-        'desc'   => '最佳比例1比1',
+        'desc'   => __('The best ratio is 1:1','csf'),
         'library'      => 'image',
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/topavatar.png'
       ),
@@ -467,8 +467,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_secondary_arrow',
         'type'  => 'switcher',
-        'title' => '导航菜单二级菜单提示箭头',
-        'label'   => '开启之后菜单提示箭头将出现在导航菜单二级菜单',
+        'title' => __('Navigation Menu Secondary Menu Prompt Arrow','csf'),
+        'label'   => __('After opening, the menu prompt arrow will appear in the secondary menu of the navigation menu','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakura' ),
         'default' => false
       ),
@@ -476,9 +476,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_secondary_radius',
         'type'  => 'slider',
-        'title' => '导航菜单二级菜单圆角',
+        'title' => __('Navigation Menu Secondary Menu Radius','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
-        'desc'   => '滑动滑块，推荐数值为15',
+        'desc'   => __('Sliding slider, the recommended value is 15','csf'),
         'unit'    => 'px',
         'max'   => '30',
         'default' => '15'
@@ -487,54 +487,54 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'logo_text',
         'type'   => 'text',
-        'title'  => '导航菜单文字Logo文本',
-        'desc'   => '填写文本内容，如开启白猫样式Logo则此选项无效',
+        'title'  => __('Navigation Menu Logo Text','csf'),
+        'desc'   => __('Fill in the text. If the Mashiro logo is turned on, this option is invalid','csf'),
         'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
       ),
 
       array(
         'id'    => 'mashiro_logo_option',
         'type'  => 'switcher',
-        'title' => '导航菜单白猫样式Logo',
-        'label'   => '开启之后白猫样式Logo将出现并替换导航菜单Logo位置',
+        'title' => __('Navigation Menu Mashiro Logo','csf'),
+        'label'   => __('After opening, the Mashiro Logo will appear and replace the navigation menu logo position','csf'),
         'default' => false
       ),
 
       array(
         'id'     => 'mashiro_logo',
         'type'   => 'fieldset',
-        'title'  => '白猫样式Logo选项',
+        'title'  => __('Navigation Menu Mashiro Logo Option','csf'),
         'dependency' => array( 'mashiro_logo_option', '==', 'true' ),
         'fields' => array(
           array(
             'id'    => 'text_a',
             'type'  => 'text',
-            'title' => '文字A',
+            'title' => __('Text A','csf'),
           ),
           array(
             'id'    => 'text_b',
             'type'  => 'text',
-            'title' => '文字B',
+            'title' => __('Text B','csf'),
           ),
           array(
             'id'    => 'text_c',
             'type'  => 'text',
-            'title' => '文字C',
+            'title' => __('Text C','csf'),
           ),
           array(
             'id'    => 'text_secondary',
             'type'  => 'text',
-            'title' => '二级文字',
+            'title' => __('Secondary Text','csf'),
           ),
           array(
             'id'    => 'font_link',
             'type'  => 'text',
-            'title' => '字体链接',
+            'title' => __('Font Link','csf'),
           ),
           array(
             'id'    => 'font_name',
             'type'  => 'text',
-            'title' => '字体名称',
+            'title' => __('Font Name','csf'),
           ),
         ),
         'default'        => array(
