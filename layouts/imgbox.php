@@ -13,7 +13,7 @@ $text_logo = iro_opt('text_logo');
    		<?php elseif (iro_opt('personal_avatar')):?>
 	     <div class="header-tou"><a href="<?php bloginfo('url');?>" ><img src="<?php echo iro_opt('personal_avatar', ''); ?>"></a></div>
 	  	<?php else :?>
-         <div class="header-tou" ><a href="<?php bloginfo('url');?>"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/avatar.jpg"></a></div>	
+         <div class="header-tou" ><a href="<?php bloginfo('url');?>"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/avatar.jpg"></a></div>	
       	<?php endif; ?>
 		<div class="header-info">
 			<!-- 首页一言打字效果 -->

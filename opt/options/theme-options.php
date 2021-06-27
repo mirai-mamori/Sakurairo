@@ -1755,7 +1755,7 @@ if( class_exists( 'CSF' ) ) {
         ),
         'desc'   => '最佳宽度820px，最佳高度67px',
         'library'      => 'image',
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/announcement_bg.jpg'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/announcement_bg.jpg'
       ),
 
       array(
@@ -1992,9 +1992,9 @@ if( class_exists( 'CSF' ) ) {
           'link1' => '',
           'link2' => '',
           'link3' => '',
-          'img1'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/exhibition1.jpg',
-          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/exhibition2.jpg',
-          'img3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/exhibition3.jpg',
+          'img1'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/exhibition1.jpg',
+          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/exhibition2.jpg',
+          'img3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/exhibition3.jpg',
           'title1' => 'アンコール',
           'title2' => 'ハルジオン',
           'title3' => 'かいぶつ',
@@ -2567,7 +2567,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '邮件模板特色图片',
         'desc'   => '设置你的回复邮件上方背景图片',
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/mail_head.jpg'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/mail_head.jpg'
       ),
 
       array(
@@ -2620,7 +2620,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '登录界面背景图片',
         'desc'   => '设置你的登录界面背景图片，此选项留空则显示默认背景',
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/login_background.jpg'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/login_background.jpg'
       ),
 
       array(
@@ -2637,7 +2637,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '登录界面Logo',
         'desc'   => '设置你的登录界面Logo',
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/login_logo.png'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/login_logo.png'
       ),
 
       array(
@@ -2659,7 +2659,7 @@ if( class_exists( 'CSF' ) ) {
         'title' => '仪表盘背景图片',
         'desc'   => '设置你的仪表盘背景图片，此选项留空则显示白色背景',
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/admin_background.jpg'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/admin_background.jpg'
       ),
 
       array(
@@ -2667,7 +2667,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '仪表盘一级菜单颜色',
         'desc'    => '自定义颜色',
-        'default' => '#ffa670'
+        'default' => '#88cfef'
       ),  
 
       array(
@@ -2675,7 +2675,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '仪表盘二级菜单颜色',
         'desc'    => '自定义颜色',
-        'default' => '#ffb281'
+        'default' => '#67c4ef'
       ),  
 
       array(
@@ -2683,7 +2683,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '仪表盘强调颜色',
         'desc'    => '自定义颜色',
-        'default' => '#634a4c'
+        'default' => '#342a29'
       ),  
 
       array(
@@ -2691,7 +2691,7 @@ if( class_exists( 'CSF' ) ) {
         'type'    => 'color',
         'title'   => '仪表盘按钮颜色',
         'desc'    => '自定义颜色',
-        'default' => '#ab705f'
+        'default' => '#d1976d'
       ),  
 
       array(
