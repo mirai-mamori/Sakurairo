@@ -542,8 +542,8 @@ if( class_exists( 'CSF' ) ) {
           'text_b'     => '',
           'text_c'     => '',
           'text_secondary' => '',
-          'font_link'     => 'https://cdn.jsdelivr.net/gh/acai66/mydl/fonts/wenyihei/wenyihei-subfont.css',
-          'font_name'    => 'wenyihei-subfont',
+          'font_link'     => 'https://fonts.maho.cc/css?family=ZCOOL+QingKe+HuangYou&display=swap',
+          'font_name'    => 'ZCOOL QingKe HuangYou',
         ),
       ),
 
