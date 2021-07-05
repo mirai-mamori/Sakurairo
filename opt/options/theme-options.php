@@ -791,8 +791,8 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'aplayer_server', '! =', 'off' ),
         'desc' => __('select play mode','csf'),
         'options' => array(
-          'list' => 'list',
-          'random' => 'random',
+          'list' => __('list','csf'),
+          'random' => __('random','csf'),
         ),
         'default' => 'list'
       ),
@@ -804,8 +804,8 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'aplayer_server', '! =', 'off' ),
         'desc' => __('whether to preload songs','csf'),
         'options' => array(
-          'none' => 'turn off preloading',
-          'metadata' => 'Preload metadata',
+          'none' => __('turn off preloading','csf'),
+          'metadata' => __('Preload metadata','csf'),
           'auto' => __('auto','csf'),
         ),
         'default' => 'auto'
@@ -1521,7 +1521,7 @@ if( class_exists( 'CSF' ) ) {
         'type'  => 'upload',
         'title' => __(' Wechat ','csf'),
         'dependency' => array( 'social_ area', '==', 'true' ),
-        'desc' => __(' The best ratio is 1:1 ','csf'),
+        'desc' => __('The best ratio is 1:1','csf'),
         'library'      => 'image',
       ),
 
@@ -1683,7 +1683,7 @@ if( class_exists( 'CSF' ) ) {
         'type'  => 'upload',
         'title' => __('Customized social networking Ⅱ icon','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc' => __(' The best ratio is 1:1 ','csf'),
+        'desc' => __('The best ratio is 1:1','csf'),
         'library'      => 'image',
       ),
 
