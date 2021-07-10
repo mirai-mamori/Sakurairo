@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-05 18:03+0800\n"
-"PO-Revision-Date: 2021-07-05 18:14+0800\n"
+"POT-Creation-Date: 2021-07-10 15:07+0800\n"
+"PO-Revision-Date: 2021-07-10 15:23+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -222,15 +222,16 @@ msgstr "固定"
 msgid "Background Size"
 msgstr "背景大小"
 
-#: fields/background/background.php:219
+#: fields/background/background.php:219 options/theme-options.php:621
 msgid "Cover"
 msgstr "覆盖"
 
-#: fields/background/background.php:220
+#: fields/background/background.php:220 options/theme-options.php:622
 msgid "Contain"
 msgstr "包含"
 
-#: fields/background/background.php:221
+#: fields/background/background.php:221 options/theme-options.php:623
+#: options/theme-options.php:809
 msgid "Auto"
 msgstr "自动"
 
@@ -469,7 +470,8 @@ msgstr "已停用"
 msgid "On"
 msgstr "开"
 
-#: fields/switcher/switcher.php:21
+#: fields/switcher/switcher.php:21 options/theme-options.php:769
+#: options/theme-options.php:1010
 msgid "Off"
 msgstr "关"
 
@@ -489,6 +491,7 @@ msgstr "导出设置"
 #: fields/typography/typography.php:145 fields/typography/typography.php:160
 #: fields/typography/typography.php:176 fields/typography/typography.php:189
 #: fields/typography/typography.php:203 fields/typography/typography.php:221
+#: options/theme-options.php:636
 msgid "Default"
 msgstr "默认"
 
@@ -975,6 +978,7 @@ msgid "Navigation Menu Radius"
 msgstr "导航菜单圆角"
 
 #: options/theme-options.php:361 options/theme-options.php:481
+#: options/theme-options.php:606
 msgid "Sliding slider, the recommended value is 15"
 msgstr "滑动滑块，推荐数值为15"
 
@@ -1137,15 +1141,15 @@ msgid "Font Name"
 msgstr "字体名称"
 
 #: options/theme-options.php:555
-msgid "Style menu and foreground background related settings"
+msgid "Style Menu and Foreground Background Related Options"
 msgstr "样式菜单和前台背景相关设置"
 
 #: options/theme-options.php:561
-msgid "style menu"
+msgid "Style Menu"
 msgstr "样式菜单"
 
 #: options/theme-options.php:567
-msgid "style_menu_display"
+msgid "Style Menu Display"
 msgstr "样式菜单显示"
 
 #: options/theme-options.php:568
@@ -1156,15 +1160,15 @@ msgstr ""
 "你可以选择完整显示或者简单显示样式菜单，完整显示将显示字体切换功能和文本提示"
 
 #: options/theme-options.php:579
-msgid "style menu button rounded corners"
+msgid "Style Menu Button Rounded Corners"
 msgstr "样式菜单按钮圆角"
 
 #: options/theme-options.php:580
-msgid "Slider with recommended value of 10"
+msgid "Sliding slider, the recommended value is 10"
 msgstr "滑动滑块，推荐数值为10"
 
 #: options/theme-options.php:589
-msgid "Style menu background color"
+msgid "Style Menu Background Color"
 msgstr "样式菜单背景颜色"
 
 #: options/theme-options.php:590 options/theme-options.php:1225
@@ -1173,7 +1177,7 @@ msgid "Custom color, lighter colors are recommended"
 msgstr "自定义颜色，建议使用浅色系颜色\v"
 
 #: options/theme-options.php:597
-msgid "style menu option background color"
+msgid "Style Menu Options Background Color"
 msgstr "样式菜单选项背景颜色"
 
 #: options/theme-options.php:598 options/theme-options.php:1770
@@ -1184,31 +1188,15 @@ msgid ""
 msgstr "自定义颜色，建议使用与主题色相同色系且属于浅色系的颜色"
 
 #: options/theme-options.php:605
-msgid "style menu options interface rounded corners"
+msgid "Style Menu Options Interface Rounded Corners"
 msgstr "样式菜单选项界面圆角"
 
-#: options/theme-options.php:606 options/theme-options.php:1903
-msgid "Slider with recommended value of 15"
-msgstr "滑动滑块，推荐数值为15"
-
 #: options/theme-options.php:614
-msgid "foreground background"
+msgid "Foreground Background"
 msgstr "前台背景"
 
-#: options/theme-options.php:621 options/theme-options.php:1150
-msgid "cover"
-msgstr "覆盖"
-
-#: options/theme-options.php:622
-msgid "tiling"
-msgstr "平铺"
-
-#: options/theme-options.php:623 options/theme-options.php:809
-msgid "auto"
-msgstr "自动"
-
 #: options/theme-options.php:625
-msgid "Foreground background scaling method"
+msgid "Foreground Background Scaling Method"
 msgstr "前台背景缩放方式"
 
 #: options/theme-options.php:626
@@ -1218,51 +1206,46 @@ msgid ""
 msgstr "你可以选择两种方式缩放前台背景，默认自动缩放"
 
 #: options/theme-options.php:633
-msgid "foreground_background_setting"
-msgstr "前台背景设置"
-
-#: options/theme-options.php:636
-msgid "default"
-msgstr "默认"
+msgid "Foreground Background Options"
+msgstr "前台背景"
 
 #: options/theme-options.php:642 options/theme-options.php:658
 #: options/theme-options.php:674 options/theme-options.php:690
-#: options/theme-options.php:706 options/theme-options.php:1919
-#: options/theme-options.php:1945 options/theme-options.php:1971
-msgid "image"
+#: options/theme-options.php:706
+msgid "Image"
 msgstr "图片"
 
 #: options/theme-options.php:647
-msgid "heart icon"
-msgstr "心形图标"
+msgid "Heart Shaped"
+msgstr "心形形状"
 
 #: options/theme-options.php:653 options/theme-options.php:669
 #: options/theme-options.php:685 options/theme-options.php:701
-msgid "switch"
+msgid "Switch"
 msgstr "开关"
 
 #: options/theme-options.php:663
-msgid "star icon"
-msgstr "星形图标"
+msgid "Star Shaped"
+msgstr "星形形状"
 
 #: options/theme-options.php:679
-msgid "square icon"
-msgstr "方形图标"
+msgid "Square Shaped"
+msgstr "方形形状"
 
 #: options/theme-options.php:695
-msgid "lemon-shaped icon"
-msgstr "柠檬形图标"
+msgid "Lemon Shaped"
+msgstr "柠檬形状"
 
 #: options/theme-options.php:726
-msgid "Background transparency in foreground"
+msgid "Background Transparency in Foreground"
 msgstr "前台背景透明度"
 
 #: options/theme-options.php:736
-msgid "font-area"
+msgid "Fonts Area"
 msgstr "字体区域"
 
 #: options/theme-options.php:742
-msgid "default_font/style_menu_font_A"
+msgid "Global Default Font/Style Menu Font A"
 msgstr "默认字体/样式菜单字体A"
 
 #: options/theme-options.php:749
@@ -1270,12 +1253,12 @@ msgid "Style Menu Font B"
 msgstr "样式菜单字体B"
 
 #: options/theme-options.php:759
-msgid "end-of-page settings"
-msgstr "页尾设置"
+msgid "Footer Options"
+msgstr "页尾选项"
 
 #: options/theme-options.php:766
-msgid "end-of-page online player"
-msgstr "页尾在线播放器"
+msgid "Footer Online Music Player"
+msgstr "页尾在线音乐播放器"
 
 #: options/theme-options.php:767
 msgid ""
@@ -1283,92 +1266,87 @@ msgid ""
 "click it and the footer online player will be displayed"
 msgstr "开启之后页尾左下角将出现按钮，点击按钮后页尾在线播放器将显示"
 
-#: options/theme-options.php:769 options/theme-options.php:1010
-#: options/theme-options.php:2495 options/theme-options.php:2508
-msgid "off"
-msgstr "关闭"
-
 #: options/theme-options.php:770
-msgid "netease"
+msgid "Netease Cloud Music"
 msgstr "网易云音乐"
 
 #: options/theme-options.php:771
-msgid "Kugou Music (may not work)"
+msgid "Kugou Music(may not be available)"
 msgstr "酷狗音乐（可能无法使用）"
 
 #: options/theme-options.php:772
-msgid "千千音乐(overseas servers are not available)"
+msgid "Baidu Music(overseas servers are not available)"
 msgstr "千千音乐（海外服务器无法使用）"
 
 #: options/theme-options.php:773
-msgid "QQ Music (may not be available)"
+msgid "QQ Music(may not be available)"
 msgstr "QQ音乐（可能无法使用）"
 
 #: options/theme-options.php:781
-msgid "end-of-page online player songlist id"
-msgstr "'页尾在线播放器歌单ID"
+msgid "Footer Online Music Player Songlist ID"
+msgstr "页尾在线播放器歌单ID"
 
 #: options/theme-options.php:783
 msgid ""
 "Fill in the song ID, e.g. https://music.163.com/#/playlist?id=5380675133 "
-"songID 5380675133"
+"SongID:5380675133"
 msgstr ""
 "填写歌单ID，例如：https://music.163.com/#/playlist?id=5380675133的歌单ID是"
 "5380675133"
 
 #: options/theme-options.php:790
-msgid "play mode"
-msgstr "播放模式"
+msgid "Footer Online Music Player Mode"
+msgstr "页尾在线音乐播放器模式"
 
 #: options/theme-options.php:792
-msgid "select play mode"
-msgstr "选择播放模式"
+msgid "Select music player mode"
+msgstr "选择音乐播放器模式"
 
 #: options/theme-options.php:794
-msgid "list"
-msgstr "列表"
+msgid "List"
+msgstr "列表播放"
 
 #: options/theme-options.php:795
-msgid "random"
-msgstr "随机"
+msgid "Random"
+msgstr "随机播放"
 
 #: options/theme-options.php:803
-msgid "preload"
-msgstr "预加载"
+msgid "Footer Online Music Player Preload"
+msgstr "页尾在线音乐播放器预加载"
 
 #: options/theme-options.php:805
-msgid "whether to preload songs"
-msgstr "是否预加载歌曲"
+msgid "Whether to preload songs"
+msgstr "选择是否预加载歌曲"
 
 #: options/theme-options.php:807
-msgid "turn off preloading"
-msgstr "关闭预加载"
+msgid "Turn Off"
+msgstr "关闭"
 
 #: options/theme-options.php:808
-msgid "Preload metadata"
+msgid "Preload Metadata"
 msgstr "预加载元数据"
 
 #: options/theme-options.php:817
-msgid "Default volume for end-of-page online player"
-msgstr "页尾在线播放器默认音量"
+msgid "Default Volume for Footer Online Music Player"
+msgstr "页尾在线音乐播放器默认音量"
 
 #: options/theme-options.php:819
-msgid "slider, recommended values range 0.4-0.6"
+msgid "Sliding slider, the recommended sliding value range is 0.4-0.6"
 msgstr "滑动滑块，推荐数值范围为0.4-0.6"
 
 #: options/theme-options.php:828
-msgid "end-of-page online player Netflix Cookies"
-msgstr "页尾在线播放器网易云音乐Cookies"
+msgid "Footer Online Music Player Netease Cloud Music Cookies"
+msgstr "页尾在线音乐播放器网易云音乐Cookies"
 
 #: options/theme-options.php:830
 msgid ""
-"If you want to play exclusive music for Netease members, please fill in your "
-"account cookies in this option."
+"If you want to play VIP musics on Netease Cloud Music Platform,please fill "
+"in your account cookies in this option."
 msgstr "如果你想播放网易云音乐会员专享音乐，请在此选项填入你的帐号Cookies。"
 
 #: options/theme-options.php:836
-msgid "end-of-page widget area"
-msgstr "页尾小部件区"
+msgid "Footer Widget Area"
+msgstr "页尾小工具区域"
 
 #: options/theme-options.php:837
 msgid ""
@@ -1380,25 +1358,23 @@ msgstr ""
 "在线播放器，则会一起显示"
 
 #: options/theme-options.php:844
-msgid "end-of-page widget area background"
+msgid "Footer Widget Area Background"
 msgstr "页尾小部件区背景"
 
 #: options/theme-options.php:846
-msgid "best width 400px, best height 460px"
-msgstr "最佳宽度400px，最佳高度460px"
+msgid "The best picture size is 400px × 460px"
+msgstr "最佳图片尺寸为 400px × 460px"
 
 #: options/theme-options.php:853
-msgid "dynamic sakura icon at the end of the page"
+msgid "Footer Dynamic Sakura Icon"
 msgstr "页尾动态樱花图标"
 
 #: options/theme-options.php:854
-msgid ""
-"Dynamic cherry blossom icon will appear at the end of the page after turning "
-"on"
+msgid "Dynamic Sakura icon will appear at the end of the page after turning on"
 msgstr "开启之后页尾将出现动态樱花图标"
 
 #: options/theme-options.php:861
-msgid "footer load occupancy query"
+msgid "Footer Load Occupancy Query"
 msgstr "页尾负载占用查询"
 
 #: options/theme-options.php:862
@@ -1408,28 +1384,28 @@ msgid ""
 msgstr "开启之后页尾将出现动态樱花图标"
 
 #: options/theme-options.php:869
-msgid "footer info"
+msgid "Footer Info"
 msgstr "页尾信息"
 
 #: options/theme-options.php:870
-msgid "footer description text, support HTML code"
+msgid "Footer description text, support HTML code"
 msgstr "页尾说明文字，支持HTML代码"
 
 #: options/theme-options.php:876
-msgid "Ichiyo"
+msgid "Brief Remark"
 msgstr "一言"
 
 #: options/theme-options.php:882
-msgid "end-of-page yiyan"
+msgid "Footer Brief Remark"
 msgstr "页尾一言"
 
 #: options/theme-options.php:883
-msgid "A word will appear at the end of the page after turning it on"
+msgid "A Brief Remark will appear at the end of the page after turning it on"
 msgstr "开启之后页尾将出现一言"
 
 #: options/theme-options.php:890
 msgid ""
-"<h4>Yiyan API setup instructions</h4> <p>Fill in the example:<code> "
+"<h4>Brief Remark API Setup Instructions</h4> <p>Fill in the example:<code> "
 "[\"https://api.maho.cc/yiyan/\", \"https://v1.hitokoto.cn/\"]</code>, where "
 "the first API will be used first and the next one will be the backup. </p> "
 "<p><strong>Official API:</strong> See the <a href=\"https://developer."
@@ -1450,7 +1426,7 @@ msgstr ""
 "api.maho.cc/yiyan/\">https://api.maho.cc/yiyan/</a></p>"
 
 #: options/theme-options.php:899
-msgid "yiyan API address"
+msgid "Brief Remark API address"
 msgstr "一言API地址"
 
 #: options/theme-options.php:901
@@ -1458,59 +1434,59 @@ msgid "fill address in JavaScript array format"
 msgstr "填写地址，格式为JavaScript数组"
 
 #: options/theme-options.php:910
-msgid "mouse-settings"
-msgstr "鼠标设置"
+msgid "Cursor Options"
+msgstr "光标选项"
 
 #: options/theme-options.php:917
-msgid "standard mouse style"
-msgstr "标准鼠标样式"
+msgid "Standard Cursor Style"
+msgstr "标准光标样式"
 
 #: options/theme-options.php:918
 msgid "Apply to global, fill in Cur mouse file link"
 msgstr "应用于全局，填写Cur鼠标文件链接"
 
 #: options/theme-options.php:925
-msgid "selected mouse style"
-msgstr "选定鼠标样式"
+msgid "Selected Cursor Style"
+msgstr "选定光标样式"
 
 #: options/theme-options.php:926
-msgid "Apply to multiple styles, fill in Cur mouse file link"
+msgid "Apply to multiple styles, fill in Cur file link"
 msgstr "应用于多种样式，填写Cur鼠标文件链接"
 
 #: options/theme-options.php:933
-msgid "selected control unit mouse style"
-msgstr "选中控件单元鼠标样式"
+msgid "Selected Control Unit Cursor Style"
+msgstr "选中控件单元光标样式"
 
 #: options/theme-options.php:934
-msgid "Apply to selected control unit, fill in Cur mouse file link"
+msgid "Apply to selected control unit, fill in Cur file link"
 msgstr "应用于选中某个控件单元，填写Cur鼠标文件链接"
 
 #: options/theme-options.php:941
-msgid "selected text mouse style"
-msgstr "选中文本鼠标样式"
+msgid "Selected Text Cursor Style"
+msgstr "选中文本光标样式"
 
 #: options/theme-options.php:942
-msgid "Apply to selected text, fill in Cur mouse file link"
+msgid "Apply to selected text, fill in Cur file link"
 msgstr "应用于选中文本，填写Cur鼠标文件链接"
 
 #: options/theme-options.php:949
-msgid "work_status_mouse_style"
-msgstr "工作状态鼠标样式"
+msgid "Work Status Cursor Style"
+msgstr "工作状态光标样式"
 
 #: options/theme-options.php:950
-msgid "Apply to load control unit, fill in Cur mouse file link"
+msgid "Apply to load control unit, fill in Cur file link"
 msgstr "应用于加载控件单元，填写Cur鼠标文件链接"
 
 #: options/theme-options.php:959
-msgid "additional settings"
+msgid "Additional Options"
 msgstr "额外设置"
 
 #: options/theme-options.php:965
-msgid "effects & animations"
+msgid "Effects&Animations"
 msgstr "特效及动画"
 
 #: options/theme-options.php:971
-msgid "preload animation"
+msgid "Preload Animation"
 msgstr "预加载动画"
 
 #: options/theme-options.php:972
@@ -1520,15 +1496,15 @@ msgid ""
 msgstr "开启之后新页面加载前会有预加载动画，此选项需确保你的页面资源正常加载。"
 
 #: options/theme-options.php:979
-msgid "preload animation color A"
+msgid "Preload Animation Color A"
 msgstr "预加载动画颜色A"
 
 #: options/theme-options.php:988
-msgid "preload animation color B"
+msgid "Preload Animation Color B"
 msgstr "预加载动画颜色B"
 
 #: options/theme-options.php:996
-msgid "Preload blur transition effect"
+msgid "Preload Animation Blur Transition Effect"
 msgstr "预加载模糊过渡效果"
 
 #: options/theme-options.php:998
@@ -1536,46 +1512,46 @@ msgid "Blur transition duration in milliseconds ms, off when 0."
 msgstr "模糊过渡持续时间，单位毫秒ms，为0时关闭。"
 
 #: options/theme-options.php:1008
-msgid "falling effects"
+msgid "Falling Effects"
 msgstr "飘落特效"
 
 #: options/theme-options.php:1011
-msgid "sakura-native-number"
-msgstr "樱花 原生数量"
+msgid "Sakura Native Quantity"
+msgstr "原生数量樱花"
 
 #: options/theme-options.php:1012
-msgid "sakura-quarter number"
-msgstr "樱花 四分之一数量"
+msgid "Sakura Quarter Quantity"
+msgstr "四分之一数量樱花"
 
 #: options/theme-options.php:1013
-msgid "sakura-quarter"
-msgstr "樱花 二分之一数量"
+msgid "Sakura Half Quantity"
+msgstr "二分之一数量樱花"
 
 #: options/theme-options.php:1014
-msgid "cherry blossom lesser number"
-msgstr "樱花 较少数量"
+msgid "Sakura Less Quantity"
+msgstr "少量数量樱花"
 
 #: options/theme-options.php:1015
-msgid "snowflake native number"
-msgstr "雪花 原生数量"
+msgid "Yuki Native Quantity"
+msgstr "原生数量雪花"
 
 #: options/theme-options.php:1016
-msgid "yuki-half quantity"
-msgstr "雪花 二分之一数量"
+msgid "Yuki Half Quantity"
+msgstr "二分之一数量雪花"
 
 #: options/theme-options.php:1024
-msgid "Live2D Watcher"
-msgstr "Live2D看板娘"
+msgid "Live2D Model"
+msgstr "Live2D模型"
 
 #: options/theme-options.php:1025
 msgid ""
-"Live2D kanban girl will be loaded in the bottom left corner of the page "
-"after opening"
-msgstr "开启之后页面左下角将加载Live2D看板娘"
+"Live2D Model will be loaded in the bottom left corner of the page after "
+"opening"
+msgstr "开启之后页面左下角将加载Live2D模型"
 
 #: options/theme-options.php:1032
-msgid "Live2D Watcher custom Github project username"
-msgstr "Live2D看板娘自定义Github项目用户名"
+msgid "Live2D Model Custom Github Project Username"
+msgstr "Live2D模型自定义Github项目用户名"
 
 #: options/theme-options.php:1034
 msgid ""
@@ -1587,8 +1563,8 @@ msgstr ""
 "Github项目的用户名"
 
 #: options/theme-options.php:1041
-msgid "Live2D Kanban Lady Custom Github Project Version"
-msgstr "Live2D看板娘自定义Github项目版本"
+msgid "Live2D Model Custom Github Project Version"
+msgstr "Live2D模型自定义Github项目版本"
 
 #: options/theme-options.php:1043
 msgid ""
@@ -1600,7 +1576,7 @@ msgstr ""
 "Github项目的版本"
 
 #: options/theme-options.php:1050
-msgid "note_touch_effects"
+msgid "Note Touch Effects"
 msgstr "音符触动特效"
 
 #: options/theme-options.php:1051
@@ -1610,19 +1586,19 @@ msgid ""
 msgstr "开启之后返回顶部按钮和白猫样式Logo触碰时将有音符声音提示"
 
 #: options/theme-options.php:1057
-msgid "feature"
+msgid "Feature"
 msgstr "功能"
 
 #: options/theme-options.php:1063
-msgid "PJAX partial refresh"
+msgid "PJAX Partial Refresh"
 msgstr "PJAX局部刷新"
 
 #: options/theme-options.php:1064
-msgid "enabled by default, clicking on a new page will not require reloading"
+msgid "Enabled by default, clicking on a new page will not require reloading"
 msgstr "默认开启，点击新页面将不需要重新加载"
 
 #: options/theme-options.php:1071
-msgid "NProgress loading progress bar"
+msgid "NProgress Loading Progress Bar"
 msgstr "NProgress加载进度条"
 
 #: options/theme-options.php:1072
@@ -1630,11 +1606,11 @@ msgid "Enabled by default, loading page will have progress bar alert"
 msgstr "默认开启，加载页面将有进度条提示"
 
 #: options/theme-options.php:1079
-msgid "global_smooth_scroll"
+msgid "Global SmoothScroll"
 msgstr "全局平滑滚动"
 
 #: options/theme-options.php:1080
-msgid "Enable by default, page scrolling will be smoother"
+msgid "Enabled by default, page scrolling will be smoother"
 msgstr "默认开启，页面滚动将更加平滑"
 
 #: options/theme-options.php:1087
@@ -1651,19 +1627,19 @@ msgstr ""
 "请勿同时开启"
 
 #: options/theme-options.php:1095
-msgid "pagination mode"
+msgid "Pagination Mode"
 msgstr "分页模式"
 
 #: options/theme-options.php:1097
-msgid "Ajax load"
+msgid "Ajax Load"
 msgstr "Ajax加载"
 
 #: options/theme-options.php:1098
-msgid "Page up/down"
+msgid "Page Up/Down"
 msgstr "上下页"
 
 #: options/theme-options.php:1106
-msgid "Next page auto load"
+msgid "Next Page Auto Load"
 msgstr "下一页自动加载"
 
 #: options/theme-options.php:1109
@@ -1671,51 +1647,51 @@ msgid "do not autoload"
 msgstr "不自动加载"
 
 #: options/theme-options.php:1110
-msgid "0 seconds"
-msgstr "0秒"
+msgid "0 Sec"
+msgstr "0 秒"
 
 #: options/theme-options.php:1111
-msgid "1 sec"
-msgstr "1秒"
+msgid "1 Sec"
+msgstr "1 秒"
 
 #: options/theme-options.php:1112
-msgid "2 sec"
-msgstr "2秒"
+msgid "2 Sec"
+msgstr "2 秒"
 
 #: options/theme-options.php:1113
-msgid "3 sec"
-msgstr "3秒"
+msgid "3 Sec"
+msgstr "3 秒"
 
 #: options/theme-options.php:1114
-msgid "4 sec"
-msgstr "4秒"
+msgid "4 Sec"
+msgstr "4 秒"
 
 #: options/theme-options.php:1115
-msgid "5 sec"
-msgstr "5秒"
+msgid "5 Sec"
+msgstr "5 秒"
 
 #: options/theme-options.php:1116
-msgid "6 sec"
-msgstr "6秒"
+msgid "6 Sec"
+msgstr "6 秒"
 
 #: options/theme-options.php:1117
-msgid "7 seconds"
-msgstr "7秒"
+msgid "7 Sec"
+msgstr "7 秒"
 
 #: options/theme-options.php:1118
-msgid "8 sec"
-msgstr "8秒"
+msgid "8 Sec"
+msgstr "8 秒"
 
 #: options/theme-options.php:1119
-msgid "9 seconds"
-msgstr "9秒"
+msgid "9 Sec"
+msgstr "9 秒"
 
 #: options/theme-options.php:1120
-msgid "10 seconds"
-msgstr "10秒"
+msgid "10 Sec"
+msgstr "10 秒"
 
 #: options/theme-options.php:1128
-msgid "load next page placeholder SVG"
+msgid "Load Next Page Placeholder SVG"
 msgstr "下一页加载占位SVG"
 
 #: options/theme-options.php:1129
@@ -1731,6 +1707,10 @@ msgstr "主页设置"
 #: options/theme-options.php:1143
 msgid "cover-set"
 msgstr "封面设置"
+
+#: options/theme-options.php:1150
+msgid "cover"
+msgstr "覆盖"
 
 #: options/theme-options.php:1151
 msgid "On by default, if off, all options below will be disabled"
@@ -1777,8 +1757,12 @@ msgid "Cover info bar"
 msgstr "封面信息栏"
 
 #: options/theme-options.php:1206
+#, fuzzy
+#| msgid ""
+#| "Enable by default, show avatar, white cat effects text, signature bar, "
+#| "social area"
 msgid ""
-"Enable by default, show avatar, white cat effects text, signature bar, "
+"Enabled by default, show avatar, white cat effects text, signature bar, "
 "social area"
 msgstr "默认开启，显示头像、白猫特效文字、签名栏、社交区域"
 
@@ -1878,8 +1862,12 @@ msgid "Cover random image multi-terminal separation"
 msgstr "封面随机图片多终端分离"
 
 #: options/theme-options.php:1317
+#, fuzzy
+#| msgid ""
+#| "Enable by default, desktop and mobile will use separate random image "
+#| "addresses"
 msgid ""
-"Enable by default, desktop and mobile will use separate random image "
+"Enabled by default, desktop and mobile will use separate random image "
 "addresses"
 msgstr "默认开启，桌面端和移动端会分别使用不同的随机图片地址"
 
@@ -1967,7 +1955,9 @@ msgid "cover_down_arrow"
 msgstr "封面下拉箭头"
 
 #: options/theme-options.php:1386
-msgid "Enable by default, show dropdown arrow at bottom of home cover"
+#, fuzzy
+#| msgid "Enable by default, show dropdown arrow at bottom of home cover"
+msgid "Enabled by default, show dropdown arrow at bottom of home cover"
 msgstr "默认开启，首页封面底部显示下拉箭头"
 
 #: options/theme-options.php:1393
@@ -2043,8 +2033,12 @@ msgid "cover social area"
 msgstr "封面社交区域"
 
 #: options/theme-options.php:1468
+#, fuzzy
+#| msgid ""
+#| "Enable by default, show cover random image toggle button and social "
+#| "network icons"
 msgid ""
-"Enable by default, show cover random image toggle button and social network "
+"Enabled by default, show cover random image toggle button and social network "
 "icons"
 msgstr "默认开启，显示封面随机图片切换按钮和社交网络图标"
 
@@ -2071,7 +2065,9 @@ msgid "cover_random_graphs_switch_button"
 msgstr "封面随机图片切换按钮"
 
 #: options/theme-options.php:1510
-msgid "Enable by default, show cover random image toggle button"
+#, fuzzy
+#| msgid "Enable by default, show cover random image toggle button"
+msgid "Enabled by default, show cover random image toggle button"
 msgstr "默认开启，显示封面随机图切换按钮"
 
 #: options/theme-options.php:1516
@@ -2307,8 +2303,10 @@ msgid "display_area"
 msgstr ""
 
 #: options/theme-options.php:1866
-msgid "Enable by default, display area above article area"
-msgstr ""
+#, fuzzy
+#| msgid "Enabled by default, loading page will have progress bar alert"
+msgid "Enabled by default, display area above article area"
+msgstr "默认开启，加载页面将有进度条提示"
 
 #: options/theme-options.php:1873
 msgid "display_area_style"
@@ -2320,7 +2318,8 @@ msgstr ""
 
 #: options/theme-options.php:1886
 msgid ""
-"Enable by default, this option avoids the problem of misaligned display areas"
+"Enabled by default, this option avoids the problem of misaligned display "
+"areas"
 msgstr ""
 
 #: options/theme-options.php:1893
@@ -2337,9 +2336,18 @@ msgstr "自定义颜色，建议使用浅色系颜色"
 msgid "display area rounded corners"
 msgstr ""
 
+#: options/theme-options.php:1903
+msgid "Slider with recommended value of 15"
+msgstr "滑动滑块，推荐数值为15"
+
 #: options/theme-options.php:1914
 msgid "First display area"
 msgstr ""
+
+#: options/theme-options.php:1919 options/theme-options.php:1945
+#: options/theme-options.php:1971
+msgid "image"
+msgstr "图片"
 
 #: options/theme-options.php:1920 options/theme-options.php:1946
 #: options/theme-options.php:1972
@@ -2532,7 +2540,7 @@ msgstr ""
 
 #: options/theme-options.php:2219
 msgid ""
-"Enable by default, users will have copyright notice text when copying text "
+"Enabled by default, users will have copyright notice text when copying text "
 "content over 30 bytes"
 msgstr ""
 
@@ -2595,8 +2603,10 @@ msgid "Article page auto show menu"
 msgstr ""
 
 #: options/theme-options.php:2280
-msgid "Enable by default, the article page will automatically show the menu"
-msgstr ""
+#, fuzzy
+#| msgid "Enable by default, page scrolling will be smoother"
+msgid "Enabled by default, the article page will automatically show the menu"
+msgstr "默认开启，页面滚动将更加平滑"
 
 #: options/theme-options.php:2287
 msgid "Article page up/down article switcher"
@@ -2786,6 +2796,10 @@ msgstr ""
 #: options/theme-options.php:2493
 msgid "QQ avatar link encryption"
 msgstr ""
+
+#: options/theme-options.php:2495 options/theme-options.php:2508
+msgid "off"
+msgstr "关闭"
 
 #: options/theme-options.php:2506
 msgid "Page comment area upload image interface"
@@ -3350,6 +3364,132 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://codestarthemes.com/"
 msgstr ""
+
+#~ msgid "Slider with recommended value of 10"
+#~ msgstr "滑动滑块，推荐数值为10"
+
+#~ msgid "tiling"
+#~ msgstr "平铺"
+
+#~ msgid "auto"
+#~ msgstr "自动"
+
+#~ msgid "foreground_background_setting"
+#~ msgstr "前台背景设置"
+
+#~ msgid "default"
+#~ msgstr "默认"
+
+#~ msgid "heart icon"
+#~ msgstr "心形图标"
+
+#~ msgid "star icon"
+#~ msgstr "星形图标"
+
+#~ msgid "square icon"
+#~ msgstr "方形图标"
+
+#~ msgid "font-area"
+#~ msgstr "字体区域"
+
+#~ msgid "end-of-page settings"
+#~ msgstr "页尾设置"
+
+#~ msgid "end-of-page online player"
+#~ msgstr "页尾在线播放器"
+
+#~ msgid "netease"
+#~ msgstr "网易云音乐"
+
+#~ msgid "Kugou Music (may not work)"
+#~ msgstr "酷狗音乐（可能无法使用）"
+
+#~ msgid "play mode"
+#~ msgstr "播放模式"
+
+#~ msgid "list"
+#~ msgstr "列表"
+
+#~ msgid "preload"
+#~ msgstr "预加载"
+
+#~ msgid "turn off preloading"
+#~ msgstr "关闭预加载"
+
+#~ msgid "slider, recommended values range 0.4-0.6"
+#~ msgstr "滑动滑块，推荐数值范围为0.4-0.6"
+
+#~ msgid "end-of-page online player Netflix Cookies"
+#~ msgstr "页尾在线播放器网易云音乐Cookies"
+
+#~ msgid "end-of-page widget area"
+#~ msgstr "页尾小部件区"
+
+#~ msgid "best width 400px, best height 460px"
+#~ msgstr "最佳宽度400px，最佳高度460px"
+
+#~ msgid "dynamic sakura icon at the end of the page"
+#~ msgstr "页尾动态樱花图标"
+
+#~ msgid "Ichiyo"
+#~ msgstr "一言"
+
+#~ msgid "end-of-page yiyan"
+#~ msgstr "页尾一言"
+
+#~ msgid "mouse-settings"
+#~ msgstr "鼠标设置"
+
+#~ msgid "work_status_mouse_style"
+#~ msgstr "工作状态鼠标样式"
+
+#~ msgid "sakura-native-number"
+#~ msgstr "樱花 原生数量"
+
+#~ msgid "sakura-quarter number"
+#~ msgstr "樱花 四分之一数量"
+
+#~ msgid "sakura-quarter"
+#~ msgstr "樱花 二分之一数量"
+
+#~ msgid "cherry blossom lesser number"
+#~ msgstr "樱花 较少数量"
+
+#~ msgid "snowflake native number"
+#~ msgstr "雪花 原生数量"
+
+#~ msgid "0 seconds"
+#~ msgstr "0秒"
+
+#~ msgid "1 sec"
+#~ msgstr "1秒"
+
+#~ msgid "2 sec"
+#~ msgstr "2秒"
+
+#~ msgid "3 sec"
+#~ msgstr "3秒"
+
+#~ msgid "4 sec"
+#~ msgstr "4秒"
+
+#~ msgid "5 sec"
+#~ msgstr "5秒"
+
+#~ msgid "6 sec"
+#~ msgstr "6秒"
+
+#~ msgid "7 seconds"
+#~ msgstr "7秒"
+
+#~ msgid "8 sec"
+#~ msgstr "8秒"
+
+#~ msgid "9 seconds"
+#~ msgstr "9秒"
+
+#~ msgid "10 seconds"
+#~ msgstr "10秒"
 
 #, fuzzy
 #~| msgid "The best ratio is 1:1"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-05 18:03+0800\n"
+"POT-Creation-Date: 2021-07-10 15:06+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -222,15 +222,16 @@ msgstr ""
 msgid "Background Size"
 msgstr ""
 
-#: fields/background/background.php:219
+#: fields/background/background.php:219 options/theme-options.php:621
 msgid "Cover"
 msgstr ""
 
-#: fields/background/background.php:220
+#: fields/background/background.php:220 options/theme-options.php:622
 msgid "Contain"
 msgstr ""
 
-#: fields/background/background.php:221
+#: fields/background/background.php:221 options/theme-options.php:623
+#: options/theme-options.php:809
 msgid "Auto"
 msgstr ""
 
@@ -469,7 +470,8 @@ msgstr ""
 msgid "On"
 msgstr ""
 
-#: fields/switcher/switcher.php:21
+#: fields/switcher/switcher.php:21 options/theme-options.php:769
+#: options/theme-options.php:1010
 msgid "Off"
 msgstr ""
 
@@ -489,6 +491,7 @@ msgstr ""
 #: fields/typography/typography.php:145 fields/typography/typography.php:160
 #: fields/typography/typography.php:176 fields/typography/typography.php:189
 #: fields/typography/typography.php:203 fields/typography/typography.php:221
+#: options/theme-options.php:636
 msgid "Default"
 msgstr ""
 
@@ -968,6 +971,7 @@ msgid "Navigation Menu Radius"
 msgstr ""
 
 #: options/theme-options.php:361 options/theme-options.php:481
+#: options/theme-options.php:606
 msgid "Sliding slider, the recommended value is 15"
 msgstr ""
 
@@ -1128,15 +1132,15 @@ msgid "Font Name"
 msgstr ""
 
 #: options/theme-options.php:555
-msgid "Style menu and foreground background related settings"
+msgid "Style Menu and Foreground Background Related Options"
 msgstr ""
 
 #: options/theme-options.php:561
-msgid "style menu"
+msgid "Style Menu"
 msgstr ""
 
 #: options/theme-options.php:567
-msgid "style_menu_display"
+msgid "Style Menu Display"
 msgstr ""
 
 #: options/theme-options.php:568
@@ -1146,15 +1150,15 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:579
-msgid "style menu button rounded corners"
+msgid "Style Menu Button Rounded Corners"
 msgstr ""
 
 #: options/theme-options.php:580
-msgid "Slider with recommended value of 10"
+msgid "Sliding slider, the recommended value is 10"
 msgstr ""
 
 #: options/theme-options.php:589
-msgid "Style menu background color"
+msgid "Style Menu Background Color"
 msgstr ""
 
 #: options/theme-options.php:590 options/theme-options.php:1225
@@ -1163,7 +1167,7 @@ msgid "Custom color, lighter colors are recommended"
 msgstr ""
 
 #: options/theme-options.php:597
-msgid "style menu option background color"
+msgid "Style Menu Options Background Color"
 msgstr ""
 
 #: options/theme-options.php:598 options/theme-options.php:1770
@@ -1174,31 +1178,15 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:605
-msgid "style menu options interface rounded corners"
-msgstr ""
-
-#: options/theme-options.php:606 options/theme-options.php:1903
-msgid "Slider with recommended value of 15"
+msgid "Style Menu Options Interface Rounded Corners"
 msgstr ""
 
 #: options/theme-options.php:614
-msgid "foreground background"
-msgstr ""
-
-#: options/theme-options.php:621 options/theme-options.php:1150
-msgid "cover"
-msgstr ""
-
-#: options/theme-options.php:622
-msgid "tiling"
-msgstr ""
-
-#: options/theme-options.php:623 options/theme-options.php:809
-msgid "auto"
+msgid "Foreground Background"
 msgstr ""
 
 #: options/theme-options.php:625
-msgid "Foreground background scaling method"
+msgid "Foreground Background Scaling Method"
 msgstr ""
 
 #: options/theme-options.php:626
@@ -1208,51 +1196,46 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:633
-msgid "foreground_background_setting"
-msgstr ""
-
-#: options/theme-options.php:636
-msgid "default"
+msgid "Foreground Background Options"
 msgstr ""
 
 #: options/theme-options.php:642 options/theme-options.php:658
 #: options/theme-options.php:674 options/theme-options.php:690
-#: options/theme-options.php:706 options/theme-options.php:1919
-#: options/theme-options.php:1945 options/theme-options.php:1971
-msgid "image"
+#: options/theme-options.php:706
+msgid "Image"
 msgstr ""
 
 #: options/theme-options.php:647
-msgid "heart icon"
+msgid "Heart Shaped"
 msgstr ""
 
 #: options/theme-options.php:653 options/theme-options.php:669
 #: options/theme-options.php:685 options/theme-options.php:701
-msgid "switch"
+msgid "Switch"
 msgstr ""
 
 #: options/theme-options.php:663
-msgid "star icon"
+msgid "Star Shaped"
 msgstr ""
 
 #: options/theme-options.php:679
-msgid "square icon"
+msgid "Square Shaped"
 msgstr ""
 
 #: options/theme-options.php:695
-msgid "lemon-shaped icon"
+msgid "Lemon Shaped"
 msgstr ""
 
 #: options/theme-options.php:726
-msgid "Background transparency in foreground"
+msgid "Background Transparency in Foreground"
 msgstr ""
 
 #: options/theme-options.php:736
-msgid "font-area"
+msgid "Fonts Area"
 msgstr ""
 
 #: options/theme-options.php:742
-msgid "default_font/style_menu_font_A"
+msgid "Global Default Font/Style Menu Font A"
 msgstr ""
 
 #: options/theme-options.php:749
@@ -1260,11 +1243,11 @@ msgid "Style Menu Font B"
 msgstr ""
 
 #: options/theme-options.php:759
-msgid "end-of-page settings"
+msgid "Footer Options"
 msgstr ""
 
 #: options/theme-options.php:766
-msgid "end-of-page online player"
+msgid "Footer Online Music Player"
 msgstr ""
 
 #: options/theme-options.php:767
@@ -1273,89 +1256,84 @@ msgid ""
 "click it and the footer online player will be displayed"
 msgstr ""
 
-#: options/theme-options.php:769 options/theme-options.php:1010
-#: options/theme-options.php:2495 options/theme-options.php:2508
-msgid "off"
-msgstr ""
-
 #: options/theme-options.php:770
-msgid "netease"
+msgid "Netease Cloud Music"
 msgstr ""
 
 #: options/theme-options.php:771
-msgid "Kugou Music (may not work)"
+msgid "Kugou Music(may not be available)"
 msgstr ""
 
 #: options/theme-options.php:772
-msgid "千千音乐(overseas servers are not available)"
+msgid "Baidu Music(overseas servers are not available)"
 msgstr ""
 
 #: options/theme-options.php:773
-msgid "QQ Music (may not be available)"
+msgid "QQ Music(may not be available)"
 msgstr ""
 
 #: options/theme-options.php:781
-msgid "end-of-page online player songlist id"
+msgid "Footer Online Music Player Songlist ID"
 msgstr ""
 
 #: options/theme-options.php:783
 msgid ""
 "Fill in the song ID, e.g. https://music.163.com/#/playlist?id=5380675133 "
-"songID 5380675133"
+"SongID:5380675133"
 msgstr ""
 
 #: options/theme-options.php:790
-msgid "play mode"
+msgid "Footer Online Music Player Mode"
 msgstr ""
 
 #: options/theme-options.php:792
-msgid "select play mode"
+msgid "Select music player mode"
 msgstr ""
 
 #: options/theme-options.php:794
-msgid "list"
+msgid "List"
 msgstr ""
 
 #: options/theme-options.php:795
-msgid "random"
+msgid "Random"
 msgstr ""
 
 #: options/theme-options.php:803
-msgid "preload"
+msgid "Footer Online Music Player Preload"
 msgstr ""
 
 #: options/theme-options.php:805
-msgid "whether to preload songs"
+msgid "Whether to preload songs"
 msgstr ""
 
 #: options/theme-options.php:807
-msgid "turn off preloading"
+msgid "Turn Off"
 msgstr ""
 
 #: options/theme-options.php:808
-msgid "Preload metadata"
+msgid "Preload Metadata"
 msgstr ""
 
 #: options/theme-options.php:817
-msgid "Default volume for end-of-page online player"
+msgid "Default Volume for Footer Online Music Player"
 msgstr ""
 
 #: options/theme-options.php:819
-msgid "slider, recommended values range 0.4-0.6"
+msgid "Sliding slider, the recommended sliding value range is 0.4-0.6"
 msgstr ""
 
 #: options/theme-options.php:828
-msgid "end-of-page online player Netflix Cookies"
+msgid "Footer Online Music Player Netease Cloud Music Cookies"
 msgstr ""
 
 #: options/theme-options.php:830
 msgid ""
-"If you want to play exclusive music for Netease members, please fill in "
-"your account cookies in this option."
+"If you want to play VIP musics on Netease Cloud Music Platform,please fill "
+"in your account cookies in this option."
 msgstr ""
 
 #: options/theme-options.php:836
-msgid "end-of-page widget area"
+msgid "Footer Widget Area"
 msgstr ""
 
 #: options/theme-options.php:837
@@ -1366,25 +1344,24 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:844
-msgid "end-of-page widget area background"
+msgid "Footer Widget Area Background"
 msgstr ""
 
 #: options/theme-options.php:846
-msgid "best width 400px, best height 460px"
+msgid "The best picture size is 400px × 460px"
 msgstr ""
 
 #: options/theme-options.php:853
-msgid "dynamic sakura icon at the end of the page"
+msgid "Footer Dynamic Sakura Icon"
 msgstr ""
 
 #: options/theme-options.php:854
 msgid ""
-"Dynamic cherry blossom icon will appear at the end of the page after "
-"turning on"
+"Dynamic Sakura icon will appear at the end of the page after turning on"
 msgstr ""
 
 #: options/theme-options.php:861
-msgid "footer load occupancy query"
+msgid "Footer Load Occupancy Query"
 msgstr ""
 
 #: options/theme-options.php:862
@@ -1394,28 +1371,28 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:869
-msgid "footer info"
+msgid "Footer Info"
 msgstr ""
 
 #: options/theme-options.php:870
-msgid "footer description text, support HTML code"
+msgid "Footer description text, support HTML code"
 msgstr ""
 
 #: options/theme-options.php:876
-msgid "Ichiyo"
+msgid "Brief Remark"
 msgstr ""
 
 #: options/theme-options.php:882
-msgid "end-of-page yiyan"
+msgid "Footer Brief Remark"
 msgstr ""
 
 #: options/theme-options.php:883
-msgid "A word will appear at the end of the page after turning it on"
+msgid "A Brief Remark will appear at the end of the page after turning it on"
 msgstr ""
 
 #: options/theme-options.php:890
 msgid ""
-"<h4>Yiyan API setup instructions</h4> <p>Fill in the example:<code> "
+"<h4>Brief Remark API Setup Instructions</h4> <p>Fill in the example:<code> "
 "[\"https://api.maho.cc/yiyan/\", \"https://v1.hitokoto.cn/\"]</code>, where "
 "the first API will be used first and the next one will be the backup. </p> "
 "<p><strong>Official API:</strong> See the <a href=\"https://developer."
@@ -1428,7 +1405,7 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:899
-msgid "yiyan API address"
+msgid "Brief Remark API address"
 msgstr ""
 
 #: options/theme-options.php:901
@@ -1436,11 +1413,11 @@ msgid "fill address in JavaScript array format"
 msgstr ""
 
 #: options/theme-options.php:910
-msgid "mouse-settings"
+msgid "Cursor Options"
 msgstr ""
 
 #: options/theme-options.php:917
-msgid "standard mouse style"
+msgid "Standard Cursor Style"
 msgstr ""
 
 #: options/theme-options.php:918
@@ -1448,47 +1425,47 @@ msgid "Apply to global, fill in Cur mouse file link"
 msgstr ""
 
 #: options/theme-options.php:925
-msgid "selected mouse style"
+msgid "Selected Cursor Style"
 msgstr ""
 
 #: options/theme-options.php:926
-msgid "Apply to multiple styles, fill in Cur mouse file link"
+msgid "Apply to multiple styles, fill in Cur file link"
 msgstr ""
 
 #: options/theme-options.php:933
-msgid "selected control unit mouse style"
+msgid "Selected Control Unit Cursor Style"
 msgstr ""
 
 #: options/theme-options.php:934
-msgid "Apply to selected control unit, fill in Cur mouse file link"
+msgid "Apply to selected control unit, fill in Cur file link"
 msgstr ""
 
 #: options/theme-options.php:941
-msgid "selected text mouse style"
+msgid "Selected Text Cursor Style"
 msgstr ""
 
 #: options/theme-options.php:942
-msgid "Apply to selected text, fill in Cur mouse file link"
+msgid "Apply to selected text, fill in Cur file link"
 msgstr ""
 
 #: options/theme-options.php:949
-msgid "work_status_mouse_style"
+msgid "Work Status Cursor Style"
 msgstr ""
 
 #: options/theme-options.php:950
-msgid "Apply to load control unit, fill in Cur mouse file link"
+msgid "Apply to load control unit, fill in Cur file link"
 msgstr ""
 
 #: options/theme-options.php:959
-msgid "additional settings"
+msgid "Additional Options"
 msgstr ""
 
 #: options/theme-options.php:965
-msgid "effects & animations"
+msgid "Effects&Animations"
 msgstr ""
 
 #: options/theme-options.php:971
-msgid "preload animation"
+msgid "Preload Animation"
 msgstr ""
 
 #: options/theme-options.php:972
@@ -1498,15 +1475,15 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:979
-msgid "preload animation color A"
+msgid "Preload Animation Color A"
 msgstr ""
 
 #: options/theme-options.php:988
-msgid "preload animation color B"
+msgid "Preload Animation Color B"
 msgstr ""
 
 #: options/theme-options.php:996
-msgid "Preload blur transition effect"
+msgid "Preload Animation Blur Transition Effect"
 msgstr ""
 
 #: options/theme-options.php:998
@@ -1514,45 +1491,45 @@ msgid "Blur transition duration in milliseconds ms, off when 0."
 msgstr ""
 
 #: options/theme-options.php:1008
-msgid "falling effects"
+msgid "Falling Effects"
 msgstr ""
 
 #: options/theme-options.php:1011
-msgid "sakura-native-number"
+msgid "Sakura Native Quantity"
 msgstr ""
 
 #: options/theme-options.php:1012
-msgid "sakura-quarter number"
+msgid "Sakura Quarter Quantity"
 msgstr ""
 
 #: options/theme-options.php:1013
-msgid "sakura-quarter"
+msgid "Sakura Half Quantity"
 msgstr ""
 
 #: options/theme-options.php:1014
-msgid "cherry blossom lesser number"
+msgid "Sakura Less Quantity"
 msgstr ""
 
 #: options/theme-options.php:1015
-msgid "snowflake native number"
+msgid "Yuki Native Quantity"
 msgstr ""
 
 #: options/theme-options.php:1016
-msgid "yuki-half quantity"
+msgid "Yuki Half Quantity"
 msgstr ""
 
 #: options/theme-options.php:1024
-msgid "Live2D Watcher"
+msgid "Live2D Model"
 msgstr ""
 
 #: options/theme-options.php:1025
 msgid ""
-"Live2D kanban girl will be loaded in the bottom left corner of the page "
-"after opening"
+"Live2D Model will be loaded in the bottom left corner of the page after "
+"opening"
 msgstr ""
 
 #: options/theme-options.php:1032
-msgid "Live2D Watcher custom Github project username"
+msgid "Live2D Model Custom Github Project Username"
 msgstr ""
 
 #: options/theme-options.php:1034
@@ -1563,7 +1540,7 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:1041
-msgid "Live2D Kanban Lady Custom Github Project Version"
+msgid "Live2D Model Custom Github Project Version"
 msgstr ""
 
 #: options/theme-options.php:1043
@@ -1574,7 +1551,7 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:1050
-msgid "note_touch_effects"
+msgid "Note Touch Effects"
 msgstr ""
 
 #: options/theme-options.php:1051
@@ -1584,19 +1561,19 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:1057
-msgid "feature"
+msgid "Feature"
 msgstr ""
 
 #: options/theme-options.php:1063
-msgid "PJAX partial refresh"
+msgid "PJAX Partial Refresh"
 msgstr ""
 
 #: options/theme-options.php:1064
-msgid "enabled by default, clicking on a new page will not require reloading"
+msgid "Enabled by default, clicking on a new page will not require reloading"
 msgstr ""
 
 #: options/theme-options.php:1071
-msgid "NProgress loading progress bar"
+msgid "NProgress Loading Progress Bar"
 msgstr ""
 
 #: options/theme-options.php:1072
@@ -1604,11 +1581,11 @@ msgid "Enabled by default, loading page will have progress bar alert"
 msgstr ""
 
 #: options/theme-options.php:1079
-msgid "global_smooth_scroll"
+msgid "Global SmoothScroll"
 msgstr ""
 
 #: options/theme-options.php:1080
-msgid "Enable by default, page scrolling will be smoother"
+msgid "Enabled by default, page scrolling will be smoother"
 msgstr ""
 
 #: options/theme-options.php:1087
@@ -1623,19 +1600,19 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:1095
-msgid "pagination mode"
+msgid "Pagination Mode"
 msgstr ""
 
 #: options/theme-options.php:1097
-msgid "Ajax load"
+msgid "Ajax Load"
 msgstr ""
 
 #: options/theme-options.php:1098
-msgid "Page up/down"
+msgid "Page Up/Down"
 msgstr ""
 
 #: options/theme-options.php:1106
-msgid "Next page auto load"
+msgid "Next Page Auto Load"
 msgstr ""
 
 #: options/theme-options.php:1109
@@ -1643,51 +1620,51 @@ msgid "do not autoload"
 msgstr ""
 
 #: options/theme-options.php:1110
-msgid "0 seconds"
+msgid "0 Sec"
 msgstr ""
 
 #: options/theme-options.php:1111
-msgid "1 sec"
+msgid "1 Sec"
 msgstr ""
 
 #: options/theme-options.php:1112
-msgid "2 sec"
+msgid "2 Sec"
 msgstr ""
 
 #: options/theme-options.php:1113
-msgid "3 sec"
+msgid "3 Sec"
 msgstr ""
 
 #: options/theme-options.php:1114
-msgid "4 sec"
+msgid "4 Sec"
 msgstr ""
 
 #: options/theme-options.php:1115
-msgid "5 sec"
+msgid "5 Sec"
 msgstr ""
 
 #: options/theme-options.php:1116
-msgid "6 sec"
+msgid "6 Sec"
 msgstr ""
 
 #: options/theme-options.php:1117
-msgid "7 seconds"
+msgid "7 Sec"
 msgstr ""
 
 #: options/theme-options.php:1118
-msgid "8 sec"
+msgid "8 Sec"
 msgstr ""
 
 #: options/theme-options.php:1119
-msgid "9 seconds"
+msgid "9 Sec"
 msgstr ""
 
 #: options/theme-options.php:1120
-msgid "10 seconds"
+msgid "10 Sec"
 msgstr ""
 
 #: options/theme-options.php:1128
-msgid "load next page placeholder SVG"
+msgid "Load Next Page Placeholder SVG"
 msgstr ""
 
 #: options/theme-options.php:1129
@@ -1702,6 +1679,10 @@ msgstr ""
 
 #: options/theme-options.php:1143
 msgid "cover-set"
+msgstr ""
+
+#: options/theme-options.php:1150
+msgid "cover"
 msgstr ""
 
 #: options/theme-options.php:1151
@@ -1750,7 +1731,7 @@ msgstr ""
 
 #: options/theme-options.php:1206
 msgid ""
-"Enable by default, show avatar, white cat effects text, signature bar, "
+"Enabled by default, show avatar, white cat effects text, signature bar, "
 "social area"
 msgstr ""
 
@@ -1849,7 +1830,7 @@ msgstr ""
 
 #: options/theme-options.php:1317
 msgid ""
-"Enable by default, desktop and mobile will use separate random image "
+"Enabled by default, desktop and mobile will use separate random image "
 "addresses"
 msgstr ""
 
@@ -1933,7 +1914,7 @@ msgid "cover_down_arrow"
 msgstr ""
 
 #: options/theme-options.php:1386
-msgid "Enable by default, show dropdown arrow at bottom of home cover"
+msgid "Enabled by default, show dropdown arrow at bottom of home cover"
 msgstr ""
 
 #: options/theme-options.php:1393
@@ -2008,8 +1989,8 @@ msgstr ""
 
 #: options/theme-options.php:1468
 msgid ""
-"Enable by default, show cover random image toggle button and social network "
-"icons"
+"Enabled by default, show cover random image toggle button and social "
+"network icons"
 msgstr ""
 
 #: options/theme-options.php:1475
@@ -2035,7 +2016,7 @@ msgid "cover_random_graphs_switch_button"
 msgstr ""
 
 #: options/theme-options.php:1510
-msgid "Enable by default, show cover random image toggle button"
+msgid "Enabled by default, show cover random image toggle button"
 msgstr ""
 
 #: options/theme-options.php:1516
@@ -2268,7 +2249,7 @@ msgid "display_area"
 msgstr ""
 
 #: options/theme-options.php:1866
-msgid "Enable by default, display area above article area"
+msgid "Enabled by default, display area above article area"
 msgstr ""
 
 #: options/theme-options.php:1873
@@ -2281,7 +2262,7 @@ msgstr ""
 
 #: options/theme-options.php:1886
 msgid ""
-"Enable by default, this option avoids the problem of misaligned display "
+"Enabled by default, this option avoids the problem of misaligned display "
 "areas"
 msgstr ""
 
@@ -2297,8 +2278,17 @@ msgstr ""
 msgid "display area rounded corners"
 msgstr ""
 
+#: options/theme-options.php:1903
+msgid "Slider with recommended value of 15"
+msgstr ""
+
 #: options/theme-options.php:1914
 msgid "First display area"
+msgstr ""
+
+#: options/theme-options.php:1919 options/theme-options.php:1945
+#: options/theme-options.php:1971
+msgid "image"
 msgstr ""
 
 #: options/theme-options.php:1920 options/theme-options.php:1946
@@ -2474,7 +2464,7 @@ msgstr ""
 
 #: options/theme-options.php:2219
 msgid ""
-"Enable by default, users will have copyright notice text when copying text "
+"Enabled by default, users will have copyright notice text when copying text "
 "content over 30 bytes"
 msgstr ""
 
@@ -2537,7 +2527,7 @@ msgid "Article page auto show menu"
 msgstr ""
 
 #: options/theme-options.php:2280
-msgid "Enable by default, the article page will automatically show the menu"
+msgid "Enabled by default, the article page will automatically show the menu"
 msgstr ""
 
 #: options/theme-options.php:2287
@@ -2721,6 +2711,10 @@ msgstr ""
 
 #: options/theme-options.php:2493
 msgid "QQ avatar link encryption"
+msgstr ""
+
+#: options/theme-options.php:2495 options/theme-options.php:2508
+msgid "off"
 msgstr ""
 
 #: options/theme-options.php:2506

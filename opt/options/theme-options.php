@@ -552,19 +552,19 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title' => __('Style menu and foreground background related settings','csf'),
+    'title' => __('Style Menu and Foreground Background Related Options','csf'),
     'icon' => 'fa fa-th-large',
     'fields' => array(
 
       array(
         'type' => 'subheading',
-        'content' => __('style menu','csf'),
+        'content' => __('Style Menu','csf'),
       ),
 
       array(
         'id' => 'style_menu_display',
         'type' => 'image_select',
-        'title' => __('style_menu_display','csf'),
+        'title' => __('Style Menu Display','csf'),
         'desc' => __('You can choose to display the style menu in full or simply, the full display will show the font toggle function and text hints','csf'),
         'options' => array(
           'full' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/style_menu_full.png',
@@ -576,8 +576,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'style_menu_radius',
         'type' => 'slider',
-        'title' => __('style menu button rounded corners','csf'),
-        'desc' => __('Slider with recommended value of 10','csf'),
+        'title' => __('Style Menu Button Rounded Corners','csf'),
+        'desc' => __('Sliding slider, the recommended value is 10','csf'),
         'unit' => 'px',
         'max' => '50',
         'default' => '10'
@@ -586,7 +586,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'style_menu_background_color',
         'type' => 'color',
-        'title' => __('Style menu background color','csf'),
+        'title' => __('Style Menu Background Color','csf'),
         'desc' => __('Custom color, lighter colors are recommended','csf'),
         'default' => 'rgba(255,255,255,0.8)'
       ),   
@@ -594,7 +594,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'style_menu_selection_color',
         'type' => 'color',
-        'title' => __('style menu option background color','csf'),
+        'title' => __('Style Menu Options Background Color','csf'),
         'desc' => __('Custom color, it is recommended to use a color that is the same color as the theme color and is a lighter color','csf'),
         'default' => '#e8e8e8'
       ),
@@ -602,8 +602,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'style_menu_selection_radius',
         'type' => 'slider',
-        'title' => __('style menu options interface rounded corners','csf'),
-        'desc' => __('Slider with recommended value of 15','csf'),
+        'title' => __('Style Menu Options Interface Rounded Corners','csf'),
+        'desc' => __('Sliding slider, the recommended value is 15','csf'),
         'unit' => 'px',
         'max' => '30',
         'default' => '15'
@@ -611,18 +611,18 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type' => 'subheading',
-        'content' => __('foreground background','csf'),
+        'content' => __('Foreground Background','csf'),
       ),
 
       array(
         'id' => 'reception_background_size',
         'type' => 'select',
         'options' => array(
-          'cover' => __('cover','csf'),
-          'contain' => __('tiling','csf'),
-          'auto' => __('auto','csf'),
+          'cover' => __('Cover','csf'),
+          'contain' => __('Contain','csf'),
+          'auto' => __('Auto','csf'),
         ),
-        'title' => __('Foreground background scaling method','csf'), 
+        'title' => __('Foreground Background Scaling Method','csf'), 
         'desc' => __('You can choose two ways to scale the foreground background, the default is auto-scaling','csf'),
         'default' => 'auto'
       ),
@@ -630,80 +630,80 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'reception_background',
         'type' => 'tabbed',
-        'title' => __('foreground_background_setting','csf'),
+        'title' => __('Foreground Background Options','csf'),
         'tabs' => array(
           array(
-            'title' => __('default','csf'),
+            'title' => __('Default','csf'),
             'icon' => 'fa fa-television',
             'fields' => array(
               array(
                 'id' => 'img1',
                 'type' => 'upload',
-                'title' => __('image','csf'),
+                'title' => __('Image','csf'),
               ),
             )
           ),
           array(
-            'title' => __('heart icon','csf'),
+            'title' => __('Heart Shaped','csf'),
             'icon' => 'fa fa-heart-o',
             'fields' => array(
               array(
                 'id' => 'heart_shaped',
                 'type' => 'switcher',
-                'title' => __('switch','csf'),
+                'title' => __('Switch','csf'),
               ),
               array(
                 'id' => 'img2',
                 'type' => 'upload',
-                'title' => __('image','csf'),
+                'title' => __('Image','csf'),
               ),
             )
           ),
           array(
-            'title' => __('star icon','csf'),
+            'title' => __('Star Shaped','csf'),
             'icon' => 'fa fa-star-o',
             'fields' => array(
               array(
                 'id' => 'star_shaped',
                 'type' => 'switcher',
-                'title' => __('switch','csf'),
+                'title' => __('Switch','csf'),
               ),
               array(
                 'id' => 'img3',
                 'type' => 'upload',
-                'title' => __('image','csf'),
+                'title' => __('Image','csf'),
               ),
             )
           ),
           array(
-            'title' => __('square icon','csf'),
+            'title' => __('Square Shaped','csf'),
             'icon' => 'fa fa-delicious',
             'fields' => array(
               array(
                 'id' => 'square_shaped',
                 'type' => 'switcher',
-                'title' => __('switch','csf'),
+                'title' => __('Switch','csf'),
               ),
               array(
                 'id' => 'img4',
                 'type' => 'upload',
-                'title' => __('image','csf'),
+                'title' => __('Image','csf'),
               ),
             )
           ),
           array(
-            'title' => __('lemon-shaped icon','csf'),
+            'title' => __('Lemon Shaped','csf'),
             'icon' => 'fa fa-lemon-o',
             'fields' => array(
               array(
                 'id' => 'lemon_shaped',
                 'type' => 'switcher',
-                'title' => __('switch','csf'),
+                'title' => __('Switch','csf'),
               ),
               array(
                 'id' => 'img5',
                 'type' => 'upload',
-                'title' => __('image','csf'),
+                'title' => __('Image','csf'),
               ),
             )
           ),
@@ -723,7 +723,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'reception_background_transparency',
         'type' => 'slider',
-        'title' => __('Background transparency in foreground','csf'),
+        'title' => __('Background Transparency in Foreground','csf'),
         'desc' => __('Sliding slider, the recommended sliding value range is 0.6-0.8','csf'),
         'step' => '0.01',
         'min' => '0.2',
@@ -733,13 +733,13 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type' => 'subheading',
-        'content' => __('font-area','csf'),
+        'content' => __('Fonts Area','csf'),
       ),
 
       array(
         'id' => 'global_default_font',
         'type' => 'text',
-        'title' => __('default_font/style_menu_font_A','csf'),
+        'title' => __('Global Default Font/Style Menu Font A','csf'),
         'desc' => __('Fill in the font name. For example: Ma Shan Zheng','csf'),
       ),
 
@@ -756,21 +756,21 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title' => __('end-of-page settings','csf'),
+    'title' => __('Footer Options','csf'),
     'icon' => 'fa fa-caret-square-o-down',
     'fields' => array(
 
       array(
-        'id' => 'aflayer_server',
+        'id' => 'aplayer_server',
         'type' => 'select',
-        'title' => __('end-of-page online player','csf'),
+        'title' => __('Footer Online Music Player','csf'),
         'desc' => __('A button will appear at the bottom left corner of the footer after opening, click it and the footer online player will be displayed','csf'),
         'options' => array(
-          'off' => __('off','csf'),
-          'netease' => __('netease','csf'),
-          'kugou' => __('Kugou Music (may not work)','csf'),
-          'baidu' => __('千千音乐(overseas servers are not available)','csf'),
-          'tencent' => __('QQ Music (may not be available)','csf'),
+          'off' => __('Off','csf'),
+          'netease' => __('Netease Cloud Music','csf'),
+          'kugou' => __('Kugou Music(may not be available)','csf'),
+          'baidu' => __('Baidu Music(overseas servers are not available)','csf'),
+          'tencent' => __('QQ Music(may not be available)','csf'),
         ),
         'default' => 'off'
       ),
@@ -778,21 +778,21 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'aplayer_playlistid',
         'type' => 'text',
-        'title' => __('end-of-page online player songlist id','csf'),
+        'title' => __('Footer Online Music Player Songlist ID','csf'),
         'dependency' => array( 'aplayer_server', '! =', 'off' ),
-        'desc' => __('Fill in the song ID, e.g. https://music.163.com/#/playlist?id=5380675133 songID 5380675133','csf'),
+        'desc' => __('Fill in the song ID, e.g. https://music.163.com/#/playlist?id=5380675133 SongID:5380675133','csf'),
         'default' => '5380675133'
       ),
 
       array(
         'id' => 'aplayer_order',
         'type' => 'select',
-        'title' => __('play mode','csf'),
+        'title' => __('Footer Online Music Player Mode','csf'),
         'dependency' => array( 'aplayer_server', '! =', 'off' ),
-        'desc' => __('select play mode','csf'),
+        'desc' => __('Select music player mode','csf'),
         'options' => array(
-          'list' => __('list','csf'),
-          'random' => __('random','csf'),
+          'list' => __('List','csf'),
+          'random' => __('Random','csf'),
         ),
         'default' => 'list'
       ),
@@ -800,13 +800,13 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'aplayer_preload',
         'type' => 'select',
-        'title' => __('preload','csf'),
+        'title' => __('Footer Online Music Player Preload','csf'),
         'dependency' => array( 'aplayer_server', '! =', 'off' ),
-        'desc' => __('whether to preload songs','csf'),
+        'desc' => __('Whether to preload songs','csf'),
         'options' => array(
-          'none' => __('turn off preloading','csf'),
-          'metadata' => __('Preload metadata','csf'),
-          'auto' => __('auto','csf'),
+          'none' => __('Turn Off','csf'),
+          'metadata' => __('Preload Metadata','csf'),
+          'auto' => __('Auto','csf'),
         ),
         'default' => 'auto'
       ),
@@ -814,9 +814,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'aplayer_volume',
         'type' => 'slider',
-        'title' => __('Default volume for end-of-page online player','csf'),
+        'title' => __('Default Volume for Footer Online Music Player','csf'),
         'dependency' => array( 'aplayer_server', '! =', 'off' ),
-        'desc' => __('slider, recommended values range 0.4-0.6','csf'),
+        'desc' => __('Sliding slider, the recommended sliding value range is 0.4-0.6','csf'),
         'step' => '0.01',
         'max' => '1',
         'default' => '0.5'
@@ -825,15 +825,15 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'aplayer_cookie',
         'type' => 'textarea',
-        'title' => __('end-of-page online player Netflix Cookies','csf'),
+        'title' => __('Footer Online Music Player Netease Cloud Music Cookies','csf'),
         'dependency' => array( 'aplayer_server', '==', 'netease' ),
-        'desc' => __('If you want to play exclusive music for Netease members, please fill in your account cookies in this option.','csf'),
+        'desc' => __('If you want to play VIP musics on Netease Cloud Music Platform,please fill in your account cookies in this option.','csf'),
       ),
 
       array(
         'id' => 'sakura_widget',
         'type' => 'switcher',
-        'title' => __('end-of-page widget area','csf'),
+        'title' => __('Footer Widget Area','csf'),
         'label' => __('After turning it on a button will appear in the bottom left corner of the footer, when you click the button the footer widget area will be displayed, if you have the footer online player turned on it will be displayed together','csf'),
         'default' => false
       ),
@@ -841,24 +841,24 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'sakura_widget_background',
         'type' => 'upload',
-        'title' => __('end-of-page widget area background','csf'),
+        'title' => __('Footer Widget Area Background','csf'),
         'dependency' => array( 'sakura_widget', '==', 'true' ),
-        'desc' => __('best width 400px, best height 460px','csf'),
+        'desc' => __('The best picture size is 400px × 460px','csf'),
         'library' => 'image',
       ),
 
       array(
         'id' => 'footer_sakura_icon',
         'type' => 'switcher',
-        'title' => __('dynamic sakura icon at the end of the page','csf'),
-        'label' => __('Dynamic cherry blossom icon will appear at the end of the page after turning on','csf'),
+        'title' => __('Footer Dynamic Sakura Icon','csf'),
+        'label' => __('Dynamic Sakura icon will appear at the end of the page after turning on','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'footer_load_occupancy',
         'type' => 'switcher',
-        'title' => __('footer load occupancy query','csf'),
+        'title' => __('Footer Load Occupancy Query','csf'),
         'label' => __('Load occupancy information will appear at the end of the page after turning it on','csf'),
         'default' => false
       ),
@@ -866,28 +866,28 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'footer_info',
         'type' => 'textarea',
-        'title' => __('footer info','csf'),
-        'desc' => __('footer description text, support HTML code','csf'),
+        'title' => __('Footer Info','csf'),
+        'desc' => __('Footer description text, support HTML code','csf'),
         'default' => 'Copyright &copy; by FUUKEI All Rights Reserved.'
       ),
 
       array(
         'type' => 'subheading',
-        'content' => __('Ichiyo','csf'),
+        'content' => __('Brief Remark','csf'),
       ),
 
       array(
         'id' => 'footer_yiyan',
         'type' => 'switcher',
-        'title' => __('end-of-page yiyan','csf'),
-        'label' => __('A word will appear at the end of the page after turning it on','csf'),
+        'title' => __('Footer Brief Remark','csf'),
+        'label' => __('A Brief Remark will appear at the end of the page after turning it on','csf'),
         'default' => false
       ),
 
       array(
         'type' => 'content',
         'dependency' => array( 'footer_yiyan', '==', 'true' ),
-        'content' => __('<h4>Yiyan API setup instructions</h4>'
+        'content' => __('<h4>Brief Remark API Setup Instructions</h4>'
         .' <p>Fill in the example:<code> ["https://api.maho.cc/yiyan/", "https://v1.hitokoto.cn/"]</code>, where the first API will be used first and the next one will be the backup. </p>'
         .' <p><strong>Official API:</strong> See the <a href="https://developer.hitokoto.cn/sentence/"> documentation</a> for how to use it, and the parameter "return code" should not be set to anything other than JSON. <a href="https://v1.hitokoto.cn/">https://v1.hitokoto.cn/</a></p>'
         .' <p><strong>Maho API:</strong> An anti-generation mirror of the official API. <a href="https://api.maho.cc/yiyan/">https://api.maho.cc/yiyan/</a></p>','csf'),
@@ -896,7 +896,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'yiyan_api',
         'type' => 'textarea',
-        'title' => __('yiyan API address','csf'),
+        'title' => __('Brief Remark API address','csf'),
         'dependency' => array( 'footer_yiyan', '==', 'true' ),
         'desc' => __('fill address in JavaScript array format','csf'),
         'default' => '["https://api.maho.cc/yiyan/", "https://v1.hitokoto.cn/"]'
@@ -907,14 +907,14 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title' => __('mouse-settings','csf'),
+    'title' => __('Cursor Options','csf'),
     'icon' => 'fa fa-i-cursor',
     'fields' => array(
 
       array(
         'id' => 'cursor_nor',
         'type' => 'text',
-        'title' => __('standard mouse style','csf'),
+        'title' => __('Standard Cursor Style','csf'),
         'desc' => __('Apply to global, fill in Cur mouse file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/normal.cur'
       ),
@@ -922,32 +922,32 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'cursor_no',
         'type' => 'text',
-        'title' => __('selected mouse style','csf'),
-        'desc' => __('Apply to multiple styles, fill in Cur mouse file link','csf'),
+        'title' => __('Selected Cursor Style','csf'),
+        'desc' => __('Apply to multiple styles, fill in Cur file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/No_Disponible.cur'
       ),
 
       array(
         'id' => 'cursor_ayu',
         'type' => 'text',
-        'title' => __('selected control unit mouse style','csf'),
-        'desc' => __('Apply to selected control unit, fill in Cur mouse file link','csf'),
+        'title' => __('Selected Control Unit Cursor Style','csf'),
+        'desc' => __('Apply to selected control unit, fill in Cur file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/ayuda.cur'
       ),
 
       array(
         'id' => 'cursor_text',
         'type' => 'text',
-        'title' => __('selected text mouse style','csf'),
-        'desc' => __('Apply to selected text, fill in Cur mouse file link','csf'),
+        'title' => __('Selected Text Cursor Style','csf'),
+        'desc' => __('Apply to selected text, fill in Cur file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/texto.cur'
       ),
 
       array(
         'id' => 'cursor_work',
         'type' => 'text',
-        'title' => __('work_status_mouse_style','csf'),
-        'desc' => __('Apply to load control unit, fill in Cur mouse file link','csf'),
+        'title' => __('Work Status Cursor Style','csf'),
+        'desc' => __('Apply to load control unit, fill in Cur file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/work.cur'
       ),
 
@@ -956,19 +956,19 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title' => __('additional settings','csf'),
+    'title' => __('Additional Options','csf'),
     'icon' => 'fa fa-gift',
     'fields' => array(
 
       array(
         'type' => 'subheading',
-        'content' => __('effects & animations','csf'),
+        'content' => __('Effects&Animations','csf'),
       ),
       
       array(
         'id' => 'preload_animation',
         'type' => 'switcher',
-        'title' => __('preload animation','csf'),
+        'title' => __('Preload Animation','csf'),
         'label' => __('Preload animation before new pages load after turning on, this option is needed to ensure your page resources load properly.' ,'csf'),
         'default' => false
       ),
@@ -976,7 +976,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'preload_animation_color1',
         'type' => 'color',
-        'title' => __('preload animation color A','csf'),
+        'title' => __('Preload Animation Color A','csf'),
         'dependency' => array( 'preload_animation', '==', 'true' ),
         'desc' => __('Custom colors','csf'),
         'default' => '#ffea99'
@@ -985,7 +985,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'preload_animation_color2',
         'type' => 'color',
-        'title' => __('preload animation color B','csf'),
+        'title' => __('Preload Animation Color B','csf'),
         'dependency' => array( 'preload_animation', '==', 'true' ),
         'desc' => __('Custom colors','csf'),
         'default' => '#ffcc00'
@@ -993,7 +993,7 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'id' => 'preload_blur',
-        'title' => __('Preload blur transition effect','csf'),
+        'title' => __('Preload Animation Blur Transition Effect','csf'),
         'dependency' => array( 'preload_animation', '==', 'true' ),
         'desc' => __('Blur transition duration in milliseconds ms, off when 0.' ,'csf'),
         'default' => '0',
@@ -1005,15 +1005,15 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'falling_effects',
         'type' => 'select',
-        'title' => __('falling effects','csf'),
+        'title' => __('Falling Effects','csf'),
         'options' => array(
-          'off' => __('off','csf'),
-          'sakura-native' => __('sakura-native-number','csf'),
-          'sakura-quarter' => __('sakura-quarter number','csf'),
-          'sakura-half' => __('sakura-quarter','csf'),
-          'sakura-less' => __('cherry blossom lesser number','csf'),
-          'yuki-native' => __('snowflake native number','csf'),
-          'yuki-half' => __('yuki-half quantity','csf'),
+          'off' => __('Off','csf'),
+          'sakura-native' => __('Sakura Native Quantity','csf'),
+          'sakura-quarter' => __('Sakura Quarter Quantity','csf'),
+          'sakura-half' => __('Sakura Half Quantity','csf'),
+          'sakura-less' => __('Sakura Less Quantity','csf'),
+          'yuki-native' => __('Yuki Native Quantity','csf'),
+          'yuki-half' => __('Yuki Half Quantity','csf'),
         ),
         'default' => 'off'
       ),
@@ -1021,15 +1021,15 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'live2d_options',
         'type' => 'switcher',
-        'title' => __('Live2D Watcher','csf'),
-        'label' => __('Live2D kanban girl will be loaded in the bottom left corner of the page after opening','csf'),
+        'title' => __('Live2D Model','csf'),
+        'label' => __('Live2D Model will be loaded in the bottom left corner of the page after opening','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'live2d_custom_user',
         'type' => 'text',
-        'title' => __('Live2D Watcher custom Github project username','csf'),
+        'title' => __('Live2D Model Custom Github Project Username','csf'),
         'dependency' => array( 'live2d_options', '==', 'true' ),
         'desc' => __('If you want to customize this option, you need to go to Github Fork this project and make changes to this project first, fill in the Github project username here','csf'),
         'default' => 'mirai-mamori'
@@ -1038,7 +1038,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'live2d_custom_user_ver',
         'type' => 'text',
-        'title' => __('Live2D Kanban Lady Custom Github Project Version','csf'),
+        'title' => __('Live2D Model Custom Github Project Version','csf'),
         'dependency' => array( 'live2d_options', '==', 'true' ),
         'desc' => __('If you want to customize this option, you need to first go to Github Fork this project and make changes to this project, fill in the version of the Github project here','csf'),
         'default' => 'latest'
@@ -1047,28 +1047,28 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'note_effects',
         'type' => 'switcher',
-        'title' => __('note_touch_effects','csf'),
+        'title' => __('Note Touch Effects','csf'),
         'label' => __('After turn on, there will be a note sound alert when the back to top button and white cat style logo touch','csf'),
         'default' => false
       ),
 
       array(
         'type' => 'subheading',
-        'content' => __('feature','csf'),
+        'content' => __('Feature','csf'),
       ),
 
       array(
         'id' => 'poi_pjax',
         'type' => 'switcher',
-        'title' => __('PJAX partial refresh','csf'),
-        'label' => __('enabled by default, clicking on a new page will not require reloading','csf'),
+        'title' => __('PJAX Partial Refresh','csf'),
+        'label' => __('Enabled by default, clicking on a new page will not require reloading','csf'),
         'default' => true
       ),
 
       array(
         'id' => 'nprogress_on',
         'type' => 'switcher',
-        'title' => __('NProgress loading progress bar','csf'),
+        'title' => __('NProgress Loading Progress Bar','csf'),
         'label' => __('Enabled by default, loading page will have progress bar alert','csf'),
         'default' => true
       ),
@@ -1076,8 +1076,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'smoothscroll_option',
         'type' => 'switcher',
-        'title' => __('global_smooth_scroll','csf'),
-        'label' => __('Enable by default, page scrolling will be smoother','csf'),
+        'title' => __('Global SmoothScroll','csf'),
+        'label' => __('Enabled by default, page scrolling will be smoother','csf'),
         'default' => true
       ),
 
@@ -1092,10 +1092,10 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'pagenav_style',
         'type' => 'radio',
-        'title' => __('pagination mode','csf'),
+        'title' => __('Pagination Mode','csf'),
         'options' => array(
-          'ajax' => __('Ajax load','csf'),
-          'np' => __('Page up/down','csf'),
+          'ajax' => __('Ajax Load','csf'),
+          'np' => __('Page Up/Down','csf'),
         ),
         'default' => 'ajax'
       ),
@@ -1103,21 +1103,21 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'page_auto_load',
         'type' => 'select',
-        'title' => __('Next page auto load','csf'),
+        'title' => __('Next Page Auto Load','csf'),
         'dependency' => array( 'pagenav_style', '==', 'ajax' ),
         'options' => array(
           '233' => __('do not autoload','csf'),
-          '0' => __('0 seconds','csf'),
-          '1' => __('1 sec','csf'),
-          '2' => __('2 sec','csf'),
-          '3' => __('3 sec','csf'),
-          '4' => __('4 sec','csf'),
-          '5' => __('5 sec','csf'),
-          '6' => __('6 sec','csf'),
-          '7' => __('7 seconds','csf'),
-          '8' => __('8 sec','csf'),
-          '9' => __('9 seconds','csf'),
-          '10' => __('10 seconds','csf'),
+          '0' => __('0 Sec','csf'),
+          '1' => __('1 Sec','csf'),
+          '2' => __('2 Sec','csf'),
+          '3' => __('3 Sec','csf'),
+          '4' => __('4 Sec','csf'),
+          '5' => __('5 Sec','csf'),
+          '6' => __('6 Sec','csf'),
+          '7' => __('7 Sec','csf'),
+          '8' => __('8 Sec','csf'),
+          '9' => __('9 Sec','csf'),
+          '10' => __('10 Sec','csf'),
         ),
         'default' => '233'
       ),
@@ -1125,7 +1125,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'load_nextpage_svg',
         'type' => 'text',
-        'title' => __('load next page placeholder SVG','csf'),
+        'title' => __('Load Next Page Placeholder SVG','csf'),
         'desc' => __('Fill address, this is the SVG that will be displayed as a placeholder when the next page is loaded','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/ball.svg'
       ),
@@ -1203,7 +1203,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'infor_bar',
         'type' => 'switcher',
         'title' => __('Cover info bar','csf'),
-        'label' => __('Enable by default, show avatar, white cat effects text, signature bar, social area','csf'),
+        'label' => __('Enabled by default, show avatar, white cat effects text, signature bar, social area','csf'),
         'default' => true
       ),
 
@@ -1314,7 +1314,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'random_graphs_mts',
         'type' => 'switcher',
         'title' => __('Cover random image multi-terminal separation','csf'),
-        'label' => __('Enable by default, desktop and mobile will use separate random image addresses','csf'),
+        'label' => __('Enabled by default, desktop and mobile will use separate random image addresses','csf'),
         'default' => true
       ),
 
@@ -1383,7 +1383,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'drop_down_arrow',
         'type' => 'switcher',
         'title' => __('cover_down_arrow','csf'),
-        'label' => __('Enable by default, show dropdown arrow at bottom of home cover','csf'),
+        'label' => __('Enabled by default, show dropdown arrow at bottom of home cover','csf'),
         'default' => true
       ),
 
@@ -1465,7 +1465,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'social_area',
         'type' => 'switcher',
         'title' => __('cover social area','csf'),
-        'label' => __('Enable by default, show cover random image toggle button and social network icons','csf'),
+        'label' => __('Enabled by default, show cover random image toggle button and social network icons','csf'),
         'default' => true
       ),
 
@@ -1507,7 +1507,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'switcher',
         'title' => __('cover_random_graphs_switch_button','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'label' => __('Enable by default, show cover random image toggle button','csf'),
+        'label' => __('Enabled by default, show cover random image toggle button','csf'),
         'default' => true
       ),
 
@@ -1863,7 +1863,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'exhibition_area',
         'type' => 'switcher',
         'title' => __('display_area','csf'),
-        'label' => __('Enable by default, display area above article area','csf'),
+        'label' => __('Enabled by default, display area above article area','csf'),
         'default' => true
       ),
 
@@ -1883,7 +1883,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'switcher',
         'title' => __('display area compatibility mode','csf'),
         'dependency' => array( 'exhibition_area_style', '==', 'left_and_right' ),
-        'label' => __('Enable by default, this option avoids the problem of misaligned display areas','csf'),
+        'label' => __('Enabled by default, this option avoids the problem of misaligned display areas','csf'),
         'default' => true
       ),
 
@@ -2216,7 +2216,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'clipboard_copyright',
         'type' => 'switcher',
         'title' => __('Page Clipboard Copyright Notice','csf'),
-        'label' => __('Enable by default, users will have copyright notice text when copying text content over 30 bytes','csf'),
+        'label' => __('Enabled by default, users will have copyright notice text when copying text content over 30 bytes','csf'),
         'default' => true
       ),
 
@@ -2277,7 +2277,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'article_auto_toc',
         'type' => 'switcher',
         'title' => __('Article page auto show menu','csf'),
-        'label' => __('Enable by default, the article page will automatically show the menu','csf'),
+        'label' => __('Enabled by default, the article page will automatically show the menu','csf'),
         'default' => true
       ),
 
