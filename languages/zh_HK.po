@@ -44,7 +44,7 @@ msgstr "搜尋..."
 
 #: archive.php:55 author.php:76 index.php:73
 msgid " Previous"
-msgstr " 上一頁"
+msgstr " 更早的文章"
 
 #: comments.php:21
 msgid "view comments"
