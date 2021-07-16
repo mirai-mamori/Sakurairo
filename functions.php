@@ -300,6 +300,24 @@ function sakura_scripts()
         'google_analytics_id' => iro_opt('google_analytics_id', ''),
         'gravatar_url' => $gravatar_url
     ));
+    //前端脚本本地化
+    //TODO：如果当前语言是中文，则不用传递
+    wp_localize_script('app', '_sakurairoi18n', array(
+        "复制成功！"=> "Copied!",
+        "拷贝代码"=> "Copy Code",
+        "你的封面API好像不支持跨域调用,这种情况下缓存是不会生效的哦"=> "",
+        "提交中...."=> "Commiting....",
+        "提交成功"=> "Succeed",
+        "每次上传上限为10张"=> "10 files max per request",
+        "图片上传大小限制为5 MB\n\n「{0}」\n\n这张图太大啦~请重新上传噢！"=> "5 MB max per file.\n\n「{0}」\n\nThis image is too large~Please reupload!",
+        "上传中..."=> "Uploading...",
+        "图片上传成功~"=> "Uploaded successfully~",
+        "上传失败！\n文件名=> {0}\ncode=> {1}\n{2}"=> "",
+        "上传失败，请重试."=> "Upload failed, please retry.",
+        "页面加载出错了 HTTP {0}"=> "Page Load failed. HTTP {0}",
+        "很高兴你翻到这里，但是真的没有了..."=> "Glad you come, but we've got nothing left."
+    ));
+
 }
 add_action('wp_enqueue_scripts', 'sakura_scripts');
 
