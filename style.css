@@ -5157,7 +5157,6 @@ i.iconfont.down {
     #main-container.open {
         transform: translateX(250px) translateY(0);
         -webkit-transform: translateX(250px) translateY(0);
-        position: fixed;
         right: 0;
         left: 0
     }
