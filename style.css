@@ -5166,12 +5166,15 @@ i.iconfont.down {
         height: auto;
         position: relative
     }
-    #mo-nav.open,.openNav.open,.site-header.open {
+    #mo-nav.open,.openNav.open {
         transform: translateX(250px) translateY(0);
         -webkit-transform: translateX(250px);
          position: fixed;
     }
 
+ .site-header.open{
+     opacity: 0
+ }
     .wrapper section {
         max-width: 600px
     }
@@ -5250,7 +5253,7 @@ i.iconfont.down {
         width: 250px;
         max-width: 250px !important;
         height: 100%;
-        z-index: 999;
+        z-index: 9999;
         position: fixed;
         top: 0;
         left: -250px;
