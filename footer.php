@@ -166,6 +166,8 @@ $reception_background = iro_opt('reception_background');
 
 <!-- logo字体部分 -->
 <link rel="stylesheet" href="<?php echo $mashiro_logo['font_link']; ?>" media="all">
-
+<?php 
+echo iro_opt('footer_addition','');
+?>
 </body>
 </html>
