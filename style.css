@@ -1029,9 +1029,8 @@ a:hover {
 }
 
 .yya {
-    position: fixed;
-    -webkit-transition: all 1s ease !important;
-    transition: all 1s ease !important;
+/*     -webkit-transition: all 1s ease !important;
+    transition: all 1s ease !important; */
     width:50%;
 	left:47.5%;
     background: rgba(255, 255, 255, .75);
@@ -5157,7 +5156,6 @@ i.iconfont.down {
     #main-container.open {
         transform: translateX(250px) translateY(0);
         -webkit-transform: translateX(250px) translateY(0);
-        position: fixed;
         right: 0;
         left: 0
     }
@@ -5167,11 +5165,15 @@ i.iconfont.down {
         height: auto;
         position: relative
     }
-    #mo-nav.open {
+    #mo-nav.open,.openNav.open {
         transform: translateX(250px) translateY(0);
         -webkit-transform: translateX(250px);
          position: fixed;
     }
+
+ .site-header.open{
+     opacity: 0
+ }
     .wrapper section {
         max-width: 600px
     }
@@ -5250,8 +5252,8 @@ i.iconfont.down {
         width: 250px;
         max-width: 250px !important;
         height: 100%;
-        z-index: 999;
-        position: absolute;
+        z-index: 9999;
+        position: fixed;
         top: 0;
         left: -250px;
         display: block;

@@ -41,11 +41,6 @@ $reception_background = iro_opt('reception_background');
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-	<div class="openNav no-select">
-		<div class="iconflat no-select">	 
-			<div class="icon"></div>
-		</div>
-	</div><!-- m-nav-bar -->
 	</section><!-- #section -->
 	<!-- m-nav-center -->
 	<div id="mo-nav">
