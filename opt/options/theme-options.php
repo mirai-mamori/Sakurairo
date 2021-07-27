@@ -1738,8 +1738,8 @@ if( class_exists( 'CSF' ) ) {
         'title' => __('Bulletin Board Style','csf'),
         'dependency' => array( 'announce_bar', '==', 'true' ),
         'options' => array(
-          'picture' => 'picture background',//这两个选项要翻译嘛QAQ
-          'pure' => 'solid background',
+          'picture' => 'Picture Background',
+          'pure' => 'Color Background',
         ),
         'default' => 'picture'
       ),
@@ -2048,9 +2048,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_list_image_align',
         'type' => 'image_select',
-        'title' => __('Post Area Featured Image Alignment','csf'),
+        'title' => __('Article Area Featured Image Alignment','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('You can choose different directions to display the post area decorated with featured images','csf'),
+        'desc' => __('You can choose different directions to display the Article area decorated with featured images','csf'),
         'options' => array(
           'alternate' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura1.png',
           'left' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura2.png',
@@ -2062,7 +2062,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_cover_options',
         'type' => 'radio',
-        'title' => __('Post Area Featured Image Options','csf'),
+        'title' => __('Article Area Featured Image Options','csf'),
         'options' => array(
           'type_1' => 'Cover Random Image',
           'type_2' => 'External API Random Image',
@@ -2073,7 +2073,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_cover',
         'type' => 'text',
-        'title' => __('Featured Image External API Random Image Address','csf'),
+        'title' => __('Article Featured Image External API Random Image Address','csf'),
         'dependency' => array( 'post_cover_options', '==', 'type_2' ),
         'desc' => __('add URL','csf'),
       ),
@@ -2081,7 +2081,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_title_font_size',
         'type' => 'slider',
-        'title' => __('Post Area Title Font Size','csf'),
+        'title' => __('Article Area Title Font Size','csf'),
         'desc' => __('Slide to adjust, the recommended value range is 16-20','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
         'unit' => 'px',
@@ -2094,7 +2094,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_date_background_color',
         'type' => 'color',
-        'title' => __('Post Area Time Display Area Background Color','csf'),
+        'title' => __('Article Area Time Display Area Background Color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
         'desc' => __('Customize the colors, it is recommended to use a color that is the same color as the theme color and belongs to a lighter color','csf'),
         'default' => '#fff5e0'
@@ -2103,7 +2103,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_date_text_color',
         'type' => 'color',
-        'title' => __('Post Area Time Display Area Text Color','csf'),
+        'title' => __('Article Area Time Display Area Text Color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
         'desc' => __('Customize the colors, suggest the same as the matching color','csf'),
         'default' => '#ffcc00'
@@ -2112,9 +2112,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_date_font_size',
         'type' => 'slider',
-        'title' => __('Post Area Time Display Area Font Size','csf'),
+        'title' => __('Article Area Time Display Area Font Size','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('slider, recommended values range 10-14','csf'),
+        'desc' => __('Slide to adjust, the recommended values range 10-14','csf'),
         'unit' => 'px',
         'step' => '1',
         'min' => '6',
@@ -2125,7 +2125,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_icon_more',
         'type' => 'switcher',
-        'title' => __('Post Area "Detail" Icon','csf'),
+        'title' => __('Article Area "Detail" Icon','csf'),
         'label' => __('When enabled the "Detail" icon will be displayed below the article area','csf'),
         'default' => false
       ),array(
@@ -2139,7 +2139,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_icon_color',
         'type' => 'color',
-        'title' => __('Post Area Icon Color','csf'),
+        'title' => __('Article Area Icon Color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
         'desc' => __('Customize the colors, suggest the same as the matching color','csf'),
         'default' => '#ffcc00'
@@ -2148,7 +2148,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_border_shadow_color',
         'type' => 'color',
-        'title' => __('Post Area Border Shadow Color','csf'),
+        'title' => __('Article Area Border Shadow Color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
         'desc' => __('Customize the colors, suggest using a corresponding color with the background color','csf'),
         'default' => '#e8e8e8'
@@ -3027,10 +3027,10 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<p>Fluent Design icon references the <a href="https://wwi.lanzous.com/ikyq5kgx0wb">Fluent icon pack designed by Paradox</a></p
-        <p>MUH2 Icons references the <a href="https://www.coolapk.com/apk/com.muh2.icon">MUH2 Icon Pack designed by Silence</a></p
-        <p>Live2D Model references the <a href="https://github.com/stevenjoezhang/live2d-widget">Live2d-Widget</a> project opened by Stevenjoezhang</p>
-        <p>Mashiro Style Logo references the original theme author Mashiro, as provided and referenced by <a href="https://hyacm.com/acai/ui/143/sakura-logo/">Hyacm</a></p>','csf'),
+        'content' => __('<p>Fluent Design Icon Referenced by Paradox<a href="https://wwi.lanzous.com/ikyq5kgx0wb">Fluent Icon Pack</a></p>
+        <p>MUH2 Design Icon Referenced by 缄默<a href="https://www.coolapk.com/apk/com.muh2.icon">MUH2 Icon Pack</a></p>
+        <p>Live2D Model Referenced by Stevenjoezhang<a href="https://github.com/stevenjoezhang/live2d-widget">Live2d-Widget</a>Open Source Project</p>
+        <p>Mashiro Style Logo References the Original Theme Author Mashiro, As Provided and Referenced by <a href="https://hyacm.com/acai/ui/143/sakura-logo/">Hyacm</a></p>','csf'),
       ),
 
       array(
@@ -3040,9 +3040,9 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<p>Static resources relies on the <a href="https://github.com/Fuukei/Public_Repository">Public Repository</a> project created by the theme’s official Team Fuukei</p>
-        <p>The setup framework relies on the Codestar open source <a href="https://github.com/Codestar/codestar-framework">Codestar-Framework</a> project</p>
-        <p>Update function relies on YahnisElsts open source <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin-Update-Checker</a> project</p>','csf'),
+        'content' => __('<p>Static Resources Relies on the <a href="https://github.com/Fuukei/Public_Repository">Public Repository</a> Project Created by Fuukei</p>
+        <p>Options Framework Relies on the Codestar Open Source <a href="https://github.com/Codestar/codestar-framework">Codestar Framework</a> Project</p>
+        <p>Update Function Relies on YahnisElsts Open Source <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin Update Checker</a> Project</p>','csf'),
       ),
 
       array(
