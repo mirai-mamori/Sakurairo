@@ -10,7 +10,7 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'id'    => 'preliminary',
-    'title' => __('Preliminary','csf'),
+    'title' => __('Preliminary Options','csf'),
     'icon'      => 'fa fa-sliders',
     'fields' => array(
 
@@ -130,13 +130,13 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'id'    => 'global', 
-    'title' => __('Global','csf'),
+    'title' => __('Global Options','csf'),
     'icon'      => 'fa fa-globe',
   ) );
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => __('Appearance','csf'),
+    'title'  => __('Appearance Options','csf'),
     'icon'      => 'fa fa-tree',
     'fields' => array(
 
@@ -236,7 +236,7 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'subheading',
-        'content' => __('Other','csf'),
+        'content' => __('Other Appearance Related','csf'),
       ),
 
       array(
@@ -345,7 +345,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'nav_menu_style',
         'type'       => 'image_select',
-        'title'      => __('Style','csf'),
+        'title'      => __('Nav Menu Style','csf'),
         'options'    => array(
           'sakurairo' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/nav_menu_style_iro.png',
           'sakura' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/nav_menu_style_sakura.png',
@@ -356,7 +356,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_radius',
         'type'  => 'slider',
-        'title' => __('Radius','csf'),
+        'title' => __('Nav Menu Radius','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
         'desc'   => __('Slide to adjust, the recommended value is 15','csf'),
         'unit'    => 'px',
@@ -367,7 +367,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'nav_menu_shrink_animation',
         'type'   => 'slider',
-        'title'  => __('Shrinkage Ratio','csf'),
+        'title'  => __('Nav Menu Shrinkage Ratio','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
         'desc'   => __('Slide to set the appropriate ratio according to the content length of the nav menu. When the ratio is set to 95,there will be no shrinkage. This function is off by default','csf'),
         'step'   => '0.5',
@@ -380,7 +380,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'nav_menu_display',
         'type'       => 'radio',
-        'title'      => __('Content Display Method','csf'),
+        'title'      => __('Nav Menu Content Display Method','csf'),
         'desc'    => __('You can choose to unfold or fold the nav menu contents','csf'),
         'options'    => array(
           'unfold' => __('Unfold','csf'),
@@ -392,7 +392,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_animation',
         'type'  => 'switcher',
-        'title' => __('Animation Effects','csf'),
+        'title' => __('Nav Menu Animation Effects','csf'),
         'label'   => __('It is on by default. If it is off, the nav menu content will be displayed directly without effects','csf'),
         'default' => true
       ),
@@ -400,7 +400,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'nav_menu_animation_time',
         'type'   => 'slider',
-        'title'  => __('Animation Time','csf'),
+        'title'  => __('Nav Menu Animation Time','csf'),
         'dependency' => array( 'nav_menu_animation', '==', 'true' ),
         'desc'   => __('Slide to adjust, the recommended value range is 1-2','csf'),
         'step'   => '0.01',
@@ -412,7 +412,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'nav_menu_icon_size',
         'type'       => 'radio',
-        'title'      => __('Icon Size','csf'),
+        'title'      => __('Nav Menu Icon Size','csf'),
         'options'    => array(
           'standard' => __('Standard','csf'),
           'large' => __('Large','csf'),
@@ -423,14 +423,14 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_search',
         'type'  => 'switcher',
-        'title' => __('Search','csf'),
+        'title' => __('Nav Menu Search','csf'),
         'label'   => __('It is on by default. Click to enter the search area','csf'),
         'default' => true
       ),
       array(
         'id'    => 'nav_menu_blur',
         'type'  => 'slider',
-        'title' => __('Blur','csf'),
+        'title' => __('Nav Menu Blur','csf'),
         'desc'   => __('Slide to adjust, the recommended value is 5px, and close when it is 0px','csf'),
         'unit'    => 'px',
         'max'   => '20',
@@ -449,7 +449,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_user_avatar',
         'type'  => 'switcher',
-        'title' => __('User Avatar','csf'),
+        'title' => __('Nav Menu User Avatar','csf'),
         'label'   => __('It is on by default. Click to enter the login interface','csf'),
         'default' => true
       ),
@@ -457,7 +457,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'unlisted_avatar',
         'type'  => 'upload',
-        'title' => __('Unlisted User Avatar','csf'),
+        'title' => __('Nav Menu Unlisted User Avatar','csf'),
         'dependency' => array( 'nav_menu_user_avatar', '==', 'true' ),
         'desc'   => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
@@ -487,7 +487,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'logo_text',
         'type'   => 'text',
-        'title'  => __('Logo Text','csf'),
+        'title'  => __('Nav Menu Logo Text','csf'),
         'desc'   => __('Fill in the text. If the Mashiro logo is turned on, this option will be invalid','csf'),
         'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
       ),
@@ -503,7 +503,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'mashiro_logo',
         'type'   => 'fieldset',
-        'title'  => __('Mashiro Logo Option','csf'),
+        'title'  => __('Mashiro Logo Options','csf'),
         'dependency' => array( 'mashiro_logo_option', '==', 'true' ),
         'fields' => array(
           array(
@@ -887,7 +887,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'footer_yiyan',
         'type' => 'switcher',
         'title' => __('Footer Hitokoto','csf'),
-        'label' => __('A Brief Remark will appear at the end of the page after turning it on','csf'),
+        'label' => __('Hitokoto will appear at the end of the page after turning it on','csf'),
         'default' => false
       ),
 
@@ -1245,7 +1245,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'signature_radius',
         'type' => 'slider',
-        'title' => __('Cover signature bar rounded','csf'),
+        'title' => __('Cover Signature Bar Rounded','csf'),
         'desc' => __('Slide to adjust, the recommended value range 10-20','csf'),
         'unit' => 'px',
         'max' => '50',
@@ -1424,7 +1424,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'cover_video',
         'type' => 'switcher',
-        'title' => __('cover_video','csf'),
+        'title' => __('Cover Video','csf'),
         'label' => __('Use a video instead of the images as the cover','csf'),
         'default' => false
       ),
@@ -1432,7 +1432,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'cover_video_loop',
         'type' => 'switcher',
-        'title' => __('cover_video_loop','csf'),
+        'title' => __('Cover Video Loop','csf'),
         'dependency' => array( 'cover_video', '==', 'true' ),
         'label' => __('Video will loop automatically when enabled, Pjax needed','csf'),
         'default' => false
@@ -2064,8 +2064,8 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'radio',
         'title' => __('Post Area Featured Image Options','csf'),
         'options' => array(
-          'type_1' => 'cover random image',//这两个选项好像也没翻
-          'type_2' => 'External API random image',
+          'type_1' => 'Cover Random Image',
+          'type_2' => 'External API Random Image',
         ),
         'default' => 'type_1'
       ),
@@ -2978,7 +2978,7 @@ if( class_exists( 'CSF' ) ) {
           array( 'local_global_library', '==', 'true' ),
           array( 'iro_update_source', '==', 'official_building' ),
         ),
-        'desc' => __('If you want to use the test channel version of the theme, please copy the text in quotes after <strong>ensure that you have carefully understood the risks associated with participating in the test and are willing to assume all consequences at your own risk</strong> (including but not limited to possible data loss) into the options text box <strong "I understand the risks associated with testing and accept all consequences"</strong>','csf'),
+        'desc' => __('Please copy the text in quotes after <strong>ensure that you have carefully understood the risks associated with participating in the test and are willing to assume all consequences at your own risk</strong> (including but not limited to possible data loss) into the options text box <strong> "I agree and am willing to bear all unexpected consequences"</strong>','csf'),
       ),
 
       array(
@@ -2986,7 +2986,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'radio',
         'title' => __('Theme Update Channel','csf'),
         'dependency' => array(
-          array( 'channel_validate_value', '==', 'I understand the risks associated with testing and accept all consequences' ),
+          array( 'channel_validate_value', '==', 'I agree and am willing to bear all unexpected consequences' ),
           array( 'local_global_library', '==', 'true' ),
           array( 'iro_update_source', '==', 'official_building' ), array( 'iro_update_source', '==', 'official_building' ),
         ),
