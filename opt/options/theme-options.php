@@ -1526,7 +1526,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'wechat',
         'type'  => 'upload',
-        'title' => __(' Wechat ','csf'),
+        'title' => __('Wechat','csf'),
         'dependency' => array( 'social_ area', '==', 'true' ),
         'desc' => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
@@ -2525,7 +2525,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'text',
         'title' => __('Imgur Client ID','csf'),
         'dependency' => array( 'img_upload_api', '==', 'imgur' ),
-        'desc' => __('Fill in Client ID here, to register please visit https://api.imgur.com/oauth2/addclient ','csf'),
+        'desc' => __('Fill in Client ID here, to register please visit https://api.imgur.com/oauth2/addclient','csf'),
       ),
 
       array(
@@ -2542,7 +2542,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'text',
         'title' => __('SM.MS Secret Token','csf'),
         'dependency' => array( 'img_upload_api', '==', 'smms' ),
-        'desc' => __('Fill in your Key here, to get it please visit https://sm.ms/home/apitoken ','csf'),
+        'desc' => __('Fill in your Key here, to get it please visit https://sm.ms/home/apitoken','csf'),
       ),
 
       array(
@@ -2550,7 +2550,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'text',
         'title' => __('Chevereto API v1 Key','csf'),
         'dependency' => array( 'img_upload_api', '==', 'chevereto' ),
-        'desc' => __('Fill in the Key here, to get please visit your Chevereto home page address/dashboard/settings/api ','csf'),
+        'desc' => __('Fill in the Key here, to get please visit your Chevereto home page address/dashboard/settings/api','csf'),
       ),
 
       array(
@@ -2906,7 +2906,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'exregister_url',
         'type' => 'text',
         'title' => __('Specify Registration Address','csf'),
-        'desc' => __('This address is used as the registration entry on the login page, if you specify a login address, it is recommended to fill in ','csf'),
+        'desc' => __('This address is used as the registration entry on the login page, if you specify a login address, it is recommended to fill in','csf'),
       ),
 
       array(

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-27 16:39+0800\n"
-"PO-Revision-Date: 2021-07-27 16:40+0800\n"
+"POT-Creation-Date: 2021-07-27 16:56+0800\n"
+"PO-Revision-Date: 2021-07-27 16:56+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -2012,7 +2012,7 @@ msgid ""
 "default."
 msgstr ""
 "例如：abc.mp4，只需要填写视频文件名abc即可，多个用英文逗号隔开如abc,efg，默认"
-"随机播放"
+"随机播放。"
 
 #: options/theme-options.php:1462
 msgid "Cover Social Area Options"
@@ -2063,7 +2063,9 @@ msgid "Social Network"
 msgstr "社交网络"
 
 #: options/theme-options.php:1529
-msgid " Wechat "
+#, fuzzy
+#| msgid " Wechat "
+msgid "Wechat"
 msgstr "微信"
 
 #: options/theme-options.php:1538
@@ -2590,9 +2592,7 @@ msgstr "文章页面上下文章切换"
 msgid ""
 "After turning on the article page will appear the previous and next article "
 "switch"
-msgstr ""
-"\n"
-"开启之后文章页面将出现上下文章切换"
+msgstr "开启之后文章页面将出现上下文章切换"
 
 #: options/theme-options.php:2302
 msgid "Article Page Copyright Tips and Labels"
@@ -2600,9 +2600,7 @@ msgstr "文章页面版权提示和标签"
 
 #: options/theme-options.php:2303
 msgid "Copyright hint and label will appear on article pages when turned on"
-msgstr ""
-"\n"
-"开启之后文章页面将出现版权提示和标签"
+msgstr "开启之后文章页面将出现版权提示和标签"
 
 #: options/theme-options.php:2310
 msgid "Article Page Author Info"
@@ -2788,7 +2786,7 @@ msgstr "Imgur Client ID"
 #: options/theme-options.php:2528
 msgid ""
 "Fill in Client ID here, to register please visit https://api.imgur.com/"
-"oauth2/addclient "
+"oauth2/addclient"
 msgstr "此处填写Client ID，注册请访问 https://api.imgur.com/oauth2/addclient"
 
 #: options/theme-options.php:2534
@@ -2809,8 +2807,11 @@ msgid "SM.MS Secret Token"
 msgstr "SM.MS Secret Token"
 
 #: options/theme-options.php:2545
+#, fuzzy
+#| msgid ""
+#| "Fill in your Key here, to get it please visit https://sm.ms/home/apitoken "
 msgid ""
-"Fill in your Key here, to get it please visit https://sm.ms/home/apitoken "
+"Fill in your Key here, to get it please visit https://sm.ms/home/apitoken"
 msgstr "此处填写Key，获取请访问 https://sm.ms/home/apitoken"
 
 #: options/theme-options.php:2551
@@ -2818,9 +2819,13 @@ msgid "Chevereto API v1 Key"
 msgstr "Chevereto API v1 Key"
 
 #: options/theme-options.php:2553
+#, fuzzy
+#| msgid ""
+#| "Fill in the Key here, to get please visit your Chevereto home page "
+#| "address/dashboard/settings/api "
 msgid ""
 "Fill in the Key here, to get please visit your Chevereto home page address/"
-"dashboard/settings/api "
+"dashboard/settings/api"
 msgstr "此处填写Key，获取请访问你的Chevereto首页地址/dashboard/settings/api"
 
 #: options/theme-options.php:2559
@@ -2884,9 +2889,7 @@ msgstr "管理员邮件回复通知"
 msgid ""
 "Use email notifications when admin comments receive a reply after turning it "
 "on"
-msgstr ""
-"\n"
-"开启之后当管理员评论收到回复时使用邮件通知"
+msgstr "开启之后当管理员评论收到回复时使用邮件通知"
 
 #: options/theme-options.php:2610
 msgid "Other Options"
@@ -2916,13 +2919,11 @@ msgstr "登录界面背景虚化"
 
 #: options/theme-options.php:2638
 msgid "Login screen background image will be blurred when enabled"
-msgstr ""
-"\n"
-"开启之后登录界面背景图片将被虚化"
+msgstr "开启之后登录界面背景图片将被虚化"
 
 #: options/theme-options.php:2645
 msgid "Login Screen Logo"
-msgstr "为您的网站上传自定义徽标。"
+msgstr "登录界面Logo"
 
 #: options/theme-options.php:2646
 msgid "Set your login screen Logo"
@@ -3162,16 +3163,20 @@ msgid ""
 msgstr ""
 "强制不使用WordPress登录页面地址登录，填写新建的登陆页面地址，比如：http://"
 "www.xxx.com/login。注意填写前先测试下你新建的页面是可以正常打开的，以免造成无"
-"法进入后台等情况"
+"法进入后台等情况。"
 
 #: options/theme-options.php:2908
 msgid "Specify Registration Address"
 msgstr "指定注册地址"
 
 #: options/theme-options.php:2909
+#, fuzzy
+#| msgid ""
+#| "This address is used as the registration entry on the login page, if you "
+#| "specify a login address, it is recommended to fill in "
 msgid ""
 "This address is used as the registration entry on the login page, if you "
-"specify a login address, it is recommended to fill in "
+"specify a login address, it is recommended to fill in"
 msgstr "该地址在登录页面作为注册入口，如果你指定了登录地址，则建议填写"
 
 #: options/theme-options.php:2915
@@ -3283,9 +3288,7 @@ msgstr "本地化 JS/CSS 文件"
 
 #: options/theme-options.php:3019
 msgid "Enabled by default, some JS files and CSS files do not use jsDelivr CDN"
-msgstr ""
-"\n"
-"默认开启，部分JS文件和CSS文件不走jsDelivr CDN"
+msgstr "默认开启，部分JS文件和CSS文件不走jsDelivr CDN"
 
 #: options/theme-options.php:3025
 msgid "Reference Information"

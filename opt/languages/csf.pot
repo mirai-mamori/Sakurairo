@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-27 11:34+0800\n"
+"POT-Creation-Date: 2021-07-27 16:56+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1702,11 +1702,11 @@ msgid "Cover Full Screen"
 msgstr ""
 
 #: options/theme-options.php:1174
-msgid "Curved Mask below Cover"
+msgid "Cover Arc Occlusion (Below)"
 msgstr ""
 
 #: options/theme-options.php:1175
-msgid "An arc masking will appear below the cover when turned on"
+msgid "An arc occlusion will appear below the cover when turned on"
 msgstr ""
 
 #: options/theme-options.php:1182
@@ -2029,7 +2029,7 @@ msgid "Social Network"
 msgstr ""
 
 #: options/theme-options.php:1529
-msgid " Wechat "
+msgid "Wechat"
 msgstr ""
 
 #: options/theme-options.php:1538
@@ -2229,8 +2229,8 @@ msgstr ""
 
 #: options/theme-options.php:1820
 msgid ""
-"Default is \"Show\", you can change it to anything else, but of course it "
-"CANNOT be used as an ad! Not allowed!!!"
+"Default is \"Display\", you can change it to anything else, but of course "
+"it CANNOT be used as an ad! Not allowed!!!"
 msgstr ""
 
 #: options/theme-options.php:1827
@@ -2344,25 +2344,25 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:2051
-msgid "Post Area Featured Image Alignment"
+msgid "Article Area Featured Image Alignment"
 msgstr ""
 
 #: options/theme-options.php:2053
 msgid ""
-"You can choose different directions to display the post area decorated with "
-"featured images"
+"You can choose different directions to display the Article area decorated "
+"with featured images"
 msgstr ""
 
 #: options/theme-options.php:2065
-msgid "Post Area Featured Image Options"
+msgid "Article Area Featured Image Options"
 msgstr ""
 
 #: options/theme-options.php:2076
-msgid "Featured Image External API Random Image Address"
+msgid "Article Featured Image External API Random Image Address"
 msgstr ""
 
 #: options/theme-options.php:2084
-msgid "Post Area Title Font Size"
+msgid "Article Area Title Font Size"
 msgstr ""
 
 #: options/theme-options.php:2085
@@ -2370,7 +2370,7 @@ msgid "Slide to adjust, the recommended value range is 16-20"
 msgstr ""
 
 #: options/theme-options.php:2097
-msgid "Post Area Time Display Area Background Color"
+msgid "Article Area Time Display Area Background Color"
 msgstr ""
 
 #: options/theme-options.php:2099
@@ -2380,7 +2380,7 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:2106
-msgid "Post Area Time Display Area Text Color"
+msgid "Article Area Time Display Area Text Color"
 msgstr ""
 
 #: options/theme-options.php:2108 options/theme-options.php:2144
@@ -2388,15 +2388,15 @@ msgid "Customize the colors, suggest the same as the matching color"
 msgstr ""
 
 #: options/theme-options.php:2115
-msgid "Post Area Time Display Area Font Size"
+msgid "Article Area Time Display Area Font Size"
 msgstr ""
 
 #: options/theme-options.php:2117
-msgid "slider, recommended values range 10-14"
+msgid "Slide to adjust, the recommended values range 10-14"
 msgstr ""
 
 #: options/theme-options.php:2128
-msgid "Post Area \"Detail\" Icon"
+msgid "Article Area \"Detail\" Icon"
 msgstr ""
 
 #: options/theme-options.php:2129
@@ -2415,11 +2415,11 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:2142
-msgid "Post Area Icon Color"
+msgid "Article Area Icon Color"
 msgstr ""
 
 #: options/theme-options.php:2151
-msgid "Post Area Border Shadow Color"
+msgid "Article Area Border Shadow Color"
 msgstr ""
 
 #: options/theme-options.php:2162
@@ -2740,7 +2740,7 @@ msgstr ""
 #: options/theme-options.php:2528
 msgid ""
 "Fill in Client ID here, to register please visit https://api.imgur.com/"
-"oauth2/addclient "
+"oauth2/addclient"
 msgstr ""
 
 #: options/theme-options.php:2534
@@ -2760,7 +2760,7 @@ msgstr ""
 
 #: options/theme-options.php:2545
 msgid ""
-"Fill in your Key here, to get it please visit https://sm.ms/home/apitoken "
+"Fill in your Key here, to get it please visit https://sm.ms/home/apitoken"
 msgstr ""
 
 #: options/theme-options.php:2551
@@ -2770,7 +2770,7 @@ msgstr ""
 #: options/theme-options.php:2553
 msgid ""
 "Fill in the Key here, to get please visit your Chevereto home page address/"
-"dashboard/settings/api "
+"dashboard/settings/api"
 msgstr ""
 
 #: options/theme-options.php:2559
@@ -3096,7 +3096,7 @@ msgstr ""
 #: options/theme-options.php:2909
 msgid ""
 "This address is used as the registration entry on the login page, if you "
-"specify a login address, it is recommended to fill in "
+"specify a login address, it is recommended to fill in"
 msgstr ""
 
 #: options/theme-options.php:2915
@@ -3209,15 +3209,15 @@ msgstr ""
 
 #: options/theme-options.php:3030
 msgid ""
-"<p>Fluent Design icon references the <a href=\"https://wwi.lanzous.com/"
-"ikyq5kgx0wb\">Fluent icon pack designed by Paradox</a></p\n"
-"        <p>MUH2 Icons references the <a href=\"https://www.coolapk.com/apk/"
-"com.muh2.icon\">MUH2 Icon Pack designed by Silence</a></p\n"
-"        <p>Live2D Model references the <a href=\"https://github.com/"
-"stevenjoezhang/live2d-widget\">Live2d-Widget</a> project opened by "
-"Stevenjoezhang</p>\n"
-"        <p>Mashiro Style Logo references the original theme author Mashiro, "
-"as provided and referenced by <a href=\"https://hyacm.com/acai/ui/143/"
+"<p>Fluent Design Icon Referenced by Paradox<a href=\"https://wwi.lanzous."
+"com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
+"        <p>MUH2 Design Icon Referenced by 缄默<a href=\"https://www.coolapk."
+"com/apk/com.muh2.icon\">MUH2 Icon Pack</a></p>\n"
+"        <p>Live2D Model Referenced by Stevenjoezhang<a href=\"https://"
+"github.com/stevenjoezhang/live2d-widget\">Live2d-Widget</a>Open Source "
+"Project</p>\n"
+"        <p>Mashiro Style Logo References the Original Theme Author Mashiro, "
+"As Provided and Referenced by <a href=\"https://hyacm.com/acai/ui/143/"
 "sakura-logo/\">Hyacm</a></p>"
 msgstr ""
 
@@ -3227,15 +3227,14 @@ msgstr ""
 
 #: options/theme-options.php:3043
 msgid ""
-"<p>Static resources relies on the <a href=\"https://github.com/Fuukei/"
-"Public_Repository\">Public Repository</a> project created by the theme’s "
-"official Team Fuukei</p>\n"
-"        <p>The setup framework relies on the Codestar open source <a href="
-"\"https://github.com/Codestar/codestar-framework\">Codestar-Framework</a> "
-"project</p>\n"
-"        <p>Update function relies on YahnisElsts open source <a href="
-"\"https://github.com/YahnisElsts/plugin-update-checker\">Plugin-Update-"
-"Checker</a> project</p>"
+"<p>Static Resources Relies on the <a href=\"https://github.com/Fuukei/"
+"Public_Repository\">Public Repository</a> Project Created by Fuukei</p>\n"
+"        <p>Options Framework Relies on the Codestar Open Source <a href="
+"\"https://github.com/Codestar/codestar-framework\">Codestar Framework</a> "
+"Project</p>\n"
+"        <p>Update Function Relies on YahnisElsts Open Source <a href="
+"\"https://github.com/YahnisElsts/plugin-update-checker\">Plugin Update "
+"Checker</a> Project</p>"
 msgstr ""
 
 #: options/theme-options.php:3050
