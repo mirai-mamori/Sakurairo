@@ -1171,8 +1171,8 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'cover_half_screen_curve',
         'type' => 'switcher',
         'dependency' => array( 'cover_full_screen', '==', 'false' ),
-        'title' => __('Curved Mask below Cover','csf'),
-        'label' => __('An arc masking will appear below the cover when turned on','csf'),
+        'title' => __('Cover Arc Occlusion (Below)','csf'),
+        'label' => __('An arc occlusion will appear below the cover when turned on','csf'),
         'default' => false
       ),
 
@@ -1817,8 +1817,8 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'exhibition_area_title',
         'type' => 'text',
         'title' => __('Display Area Title','csf'),
-        'desc' => __('Default is "Show", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'csf'),
-        'default' => 'Show'
+        'desc' => __('Default is "Display", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'csf'),
+        'default' => 'Display'
       ),
 
       array(
