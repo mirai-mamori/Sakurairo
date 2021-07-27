@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-27 18:05+0800\n"
+"POT-Creation-Date: 2021-07-27 18:57+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1845,8 +1845,9 @@ msgstr ""
 #: options/theme-options.php:1339
 #, php-format
 msgid ""
-"If you choose to use Webp to optimize random images, click <a href=\"%s"
-"\">here</a> to update the Manifest path"
+"如果你选择使用Webp优化随机图片 / If you choose to use Webp to optimize "
+"random images, 点击 / Click <a href=\"%s\">这里 / here </a>来更新 Manifest "
+"路径 / to update the Manifest path"
 msgstr ""
 
 #: options/theme-options.php:1345
@@ -1914,7 +1915,7 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:1392
-msgid "Dropdown Arrow"
+msgid "Cover Dropdown Arrow"
 msgstr ""
 
 #: options/theme-options.php:1393
@@ -1922,7 +1923,7 @@ msgid "Enabled by default, show a dropdown arrow at bottom of home cover"
 msgstr ""
 
 #: options/theme-options.php:1400
-msgid "Dropdown Arrow Display on Mobile Devices"
+msgid "Cover Dropdown Arrow Display on Mobile Devices"
 msgstr ""
 
 #: options/theme-options.php:1402
@@ -3192,9 +3193,9 @@ msgstr ""
 #: options/theme-options.php:2953
 #, php-format
 msgid ""
-"Working with iro theme version %s | <a href=\"https://iro.tw\">theme "
-"documentation</a> | <a href=\"https://github.com/mirai-mamori/Sakurairo"
-"\">source address</a>"
+"iro 主题版本 / Theme Version %s | <a href=\"https://iro.tw\">主题文档 / "
+"Theme Documentation</a> | <a href=\"https://github.com/mirai-mamori/"
+"Sakurairo\">项目地址 / Project Address</a>"
 msgstr ""
 
 #: options/theme-options.php:2958

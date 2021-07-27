@@ -1336,7 +1336,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => sprintf(__('If you choose to use Webp to optimize random images, click <a href="%s">here</a> to update the Manifest path', 'sakurairo', 'csf'), rest_url('sakura/v1/ database/update')), 
+        'content' => sprintf(__('如果你选择使用Webp优化随机图片 / If you choose to use Webp to optimize random images, 点击 / Click <a href="%s">这里 / here </a>来更新 Manifest 路径 / to update the Manifest path', 'sakurairo', 'csf'), rest_url('sakura/v1/ database/update')), 
       ),
 
       array(
@@ -1389,7 +1389,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'drop_down_arrow',
         'type' => 'switcher',
-        'title' => __('Dropdown Arrow','csf'),
+        'title' => __('Cover Dropdown Arrow','csf'),
         'label' => __('Enabled by default, show a dropdown arrow at bottom of home cover','csf'),
         'default' => true
       ),
@@ -1397,7 +1397,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'drop_down_arrow_mobile',
         'type' => 'switcher',
-        'title' => __('Dropdown Arrow Display on Mobile Devices','csf'),
+        'title' => __('Cover Dropdown Arrow Display on Mobile Devices','csf'),
         'dependency' => array( 'drop_down_arrow', '==', 'true' ),
         'label' => __('Drop down arrow will appear at the bottom of the mobile devices\' home cover after turning it on','csf'),
         'default' => false
@@ -2950,7 +2950,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'type'    => 'submessage',
         'style'   => 'success',
-        'content' => sprintf(__('Working with iro theme version %s | <a href="https://iro.tw">theme documentation</a> | <a href="https://github.com/mirai-mamori/Sakurairo">source address</a>', 'sakurairo', 'csf'), SAKURA_VERSION), 
+        'content' => sprintf(__('iro 主题版本 / Theme Version %s | <a href="https://iro.tw">主题文档 / Theme Documentation</a> | <a href="https://github.com/mirai-mamori/Sakurairo">项目地址 / Project Address</a>', 'sakurairo', 'csf'), SAKURA_VERSION), 
       ),
 
       array(

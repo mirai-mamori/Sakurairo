@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-27 18:06+0800\n"
-"PO-Revision-Date: 2021-07-27 18:06+0800\n"
+"POT-Creation-Date: 2021-07-27 18:58+0800\n"
+"PO-Revision-Date: 2021-07-27 18:58+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1873,11 +1873,10 @@ msgstr "填写地址"
 #: options/theme-options.php:1339
 #, php-format
 msgid ""
-"If you choose to use Webp to optimize random images, click <a href=\"%s"
-"\">here</a> to update the Manifest path"
+"如果你选择使用Webp优化随机图片 / If you choose to use Webp to optimize "
+"random images, 点击 / Click <a href=\"%s\">这里 / here </a>来更新 Manifest 路"
+"径 / to update the Manifest path"
 msgstr ""
-"如果你选择使用Webp优化随机图片，请点击 <a href = \"%s\">这里</a> 来更新 "
-"Manifest 路径"
 
 #: options/theme-options.php:1345
 msgid "External API Mobile Devices Random Image Address"
@@ -1945,16 +1944,16 @@ msgid ""
 msgstr "开启之后首页封面底部将出现波浪特效，深色模式下将强制关闭"
 
 #: options/theme-options.php:1392
-msgid "Dropdown Arrow"
-msgstr "下拉箭头"
+msgid "Cover Dropdown Arrow"
+msgstr "封面下拉箭头"
 
 #: options/theme-options.php:1393
 msgid "Enabled by default, show a dropdown arrow at bottom of home cover"
 msgstr "默认开启，首页封面底部显示下拉箭头"
 
 #: options/theme-options.php:1400
-msgid "Dropdown Arrow Display on Mobile Devices"
-msgstr "下拉箭头移动端显示"
+msgid "Cover Dropdown Arrow Display on Mobile Devices"
+msgstr "封面下拉箭头移动端显示"
 
 #: options/theme-options.php:1402
 msgid ""
@@ -3257,12 +3256,10 @@ msgstr ""
 #: options/theme-options.php:2953
 #, php-format
 msgid ""
-"Working with iro theme version %s | <a href=\"https://iro.tw\">theme "
-"documentation</a> | <a href=\"https://github.com/mirai-mamori/Sakurairo"
-"\">source address</a>"
+"iro 主题版本 / Theme Version %s | <a href=\"https://iro.tw\">主题文档 / "
+"Theme Documentation</a> | <a href=\"https://github.com/mirai-mamori/Sakurairo"
+"\">项目地址 / Project Address</a>"
 msgstr ""
-"正在使用 iro 主题 版本 %s | <a href=\"https://iro.tw\">主题文档</a> | <a "
-"href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
 
 #: options/theme-options.php:2958
 msgid "Update Related"
@@ -3416,6 +3413,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://codestarthemes.com/"
 msgstr ""
+
+#~ msgid "Dropdown Arrow"
+#~ msgstr "下拉箭头"
 
 #~ msgid "slider, recommended values range 10-14"
 #~ msgstr "滑动滑块，推荐数值范围为10-14"
