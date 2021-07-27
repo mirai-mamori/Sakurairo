@@ -2922,7 +2922,7 @@ if( class_exists( 'CSF' ) ) {
   CSF::createSection($prefix, array(
     'title' => __('Backup&Recovery','csf'),
     'icon'        => 'fa fa-shield',
-    'description' => 'Backup or Recovery your theme options',
+    'description' => __('Backup or Recovery your theme options','csf'),
     'fields'      => array(
 
         array(
