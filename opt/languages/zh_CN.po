@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-27 16:56+0800\n"
-"PO-Revision-Date: 2021-07-27 16:56+0800\n"
+"POT-Creation-Date: 2021-07-27 17:21+0800\n"
+"PO-Revision-Date: 2021-07-27 17:26+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1423,15 +1423,14 @@ msgid ""
 "API:</strong> An reverse proxy mirror of the official API. <a href=\"https://"
 "api.maho.cc/yiyan/\">https://api.maho.cc/yiyan/</a></p>"
 msgstr ""
-"<h4>一言API设置说明</h4>'\n"
-"        .'<p>填写示例:<code> [\"https://api.maho.cc/yiyan/\",\"https://v1."
-"hitokoto.cn/\"]</code>，此时会优先使用第一项API，以后一项为后备。</p>'\n"
-"        .'<p><strong>官方API:</strong>使用方法请参阅<a href=\"https://"
-"developer.hitokoto.cn/sentence/\">文档</a>，参数\"返回编码\"不应设置为JSON以"
-"外的其他值。<a href=\"https://v1.hitokoto.cn/\">https://v1.hitokoto.cn/</a></"
-"p>'\n"
-"        .'<p><strong>Maho API:</strong>官方API的反代镜像。<a href=\"https://"
-"api.maho.cc/yiyan/\">https://api.maho.cc/yiyan/</a></p>"
+"<h4>一言API设置说明</h4>\n"
+"<p>填写示例:<code> [\"https://api.maho.cc/yiyan/\",\"https://v1.hitokoto.cn/"
+"\"]</code>，此时会优先使用第一项API，以后一项为后备。</p>\n"
+"<p><strong>官方API:</strong>使用方法请参阅<a href=\"https://developer."
+"hitokoto.cn/sentence/\">文档</a>，参数\"返回编码\"不应设置为JSON以外的其他"
+"值。<a href=\"https://v1.hitokoto.cn/\">https://v1.hitokoto.cn/</a></p>\n"
+"<p><strong>Maho API:</strong>官方API的反代镜像。<a href=\"https://api.maho."
+"cc/yiyan/\">https://api.maho.cc/yiyan/</a></p>"
 
 #: options/theme-options.php:906
 msgid "Hitokoto API address"
@@ -2063,8 +2062,6 @@ msgid "Social Network"
 msgstr "社交网络"
 
 #: options/theme-options.php:1529
-#, fuzzy
-#| msgid " Wechat "
 msgid "Wechat"
 msgstr "微信"
 
@@ -2125,9 +2122,8 @@ msgid "QZone"
 msgstr "QQ空间"
 
 #: options/theme-options.php:1610
-#, fuzzy
 msgid "Lofter"
-msgstr "洛夫特"
+msgstr ""
 
 #: options/theme-options.php:1618
 msgid "Youku"
@@ -2204,6 +2200,14 @@ msgstr "开启之后公告板将在首页封面下方显示"
 #: options/theme-options.php:1738
 msgid "Bulletin Board Style"
 msgstr "公告板样式"
+
+#: options/theme-options.php:1741
+msgid "Picture Background"
+msgstr "图片背景"
+
+#: options/theme-options.php:1742
+msgid "Color Background"
+msgstr "颜色背景"
 
 #: options/theme-options.php:1750
 msgid "Bulletin Board \"broadcast\" Icon"
@@ -2393,6 +2397,14 @@ msgstr "你可以选择不同方向展示文章区域装饰特色图片"
 #: options/theme-options.php:2065
 msgid "Article Area Featured Image Options"
 msgstr "文章区域装饰特色图片选项"
+
+#: options/theme-options.php:2067
+msgid "Cover Random Image"
+msgstr "封面随机图片"
+
+#: options/theme-options.php:2068
+msgid "External API Random Image"
+msgstr "外部API随机图片"
 
 #: options/theme-options.php:2076
 msgid "Article Featured Image External API Random Image Address"
@@ -2717,6 +2729,14 @@ msgstr "页面评论区域显示"
 msgid "You can choose to expand or shirink the content of the comment area"
 msgstr "你可以选择展开显示或者收缩显示导航菜单内容"
 
+#: options/theme-options.php:2443
+msgid "Expand"
+msgstr "展开"
+
+#: options/theme-options.php:2444
+msgid "Shrink"
+msgstr "收缩"
+
 #: options/theme-options.php:2452
 msgid "Page Comment Area Bilibili Emoji Pack"
 msgstr "页面评论区域哔哩哔哩表情包"
@@ -2775,6 +2795,18 @@ msgstr "开启之后用户评论前需要经过验证后才可发布"
 msgid "QQ Avatar Link Encryption"
 msgstr "QQ头像链接加密"
 
+#: options/theme-options.php:2503
+msgid "Redirect (low security)"
+msgstr "重定向（低安全性）"
+
+#: options/theme-options.php:2504
+msgid "Get avatar data in the backend (medium security)"
+msgstr "后端获取头像数据（中安全性）"
+
+#: options/theme-options.php:2505
+msgid "Parse avatar interface in the backend (high security, slow)"
+msgstr "后端解析头像接口（高安全性，慢速）"
+
 #: options/theme-options.php:2513
 msgid "Page Comment Area Upload Image Interface"
 msgstr "页面评论区域上传图片接口"
@@ -2807,9 +2839,6 @@ msgid "SM.MS Secret Token"
 msgstr "SM.MS Secret Token"
 
 #: options/theme-options.php:2545
-#, fuzzy
-#| msgid ""
-#| "Fill in your Key here, to get it please visit https://sm.ms/home/apitoken "
 msgid ""
 "Fill in your Key here, to get it please visit https://sm.ms/home/apitoken"
 msgstr "此处填写Key，获取请访问 https://sm.ms/home/apitoken"
@@ -2819,10 +2848,6 @@ msgid "Chevereto API v1 Key"
 msgstr "Chevereto API v1 Key"
 
 #: options/theme-options.php:2553
-#, fuzzy
-#| msgid ""
-#| "Fill in the Key here, to get please visit your Chevereto home page "
-#| "address/dashboard/settings/api "
 msgid ""
 "Fill in the Key here, to get please visit your Chevereto home page address/"
 "dashboard/settings/api"
@@ -2985,6 +3010,14 @@ msgid ""
 "to display"
 msgstr "你可以选择WP-Statistics插件统计或者主题内建统计作为统计结果"
 
+#: options/theme-options.php:2727
+msgid "Theme Built in Statistics"
+msgstr "主题内建统计"
+
+#: options/theme-options.php:2728
+msgid "WP-Statistics Plugin Statistics"
+msgstr "WP-Statistics插件统计"
+
 #: options/theme-options.php:2736
 msgid "Statistics display format"
 msgstr "统计数据显示格式"
@@ -2992,6 +3025,22 @@ msgstr "统计数据显示格式"
 #: options/theme-options.php:2737
 msgid "You can choose from four different data display formats"
 msgstr "你可以选择四种不同的数据显示格式"
+
+#: options/theme-options.php:2739
+msgid "23333 Visits"
+msgstr "23333次访问"
+
+#: options/theme-options.php:2740
+msgid "23,333 Visits"
+msgstr "23,333次访问"
+
+#: options/theme-options.php:2741
+msgid "23 333 Visits"
+msgstr "23 333次访问"
+
+#: options/theme-options.php:2742
+msgid "23K Visits"
+msgstr "23K次访问"
 
 #: options/theme-options.php:2750
 msgid "Live Search"
@@ -3009,39 +3058,39 @@ msgstr ""
 msgid "Live Search Comment Support"
 msgstr "实时搜索评论支援"
 
-#: options/theme-options.php:2759
+#: options/theme-options.php:2760
 msgid ""
 "Enable to search for comments in live search (not recommended if site has "
 "too many comments)"
 msgstr "启开启之后将在可在实时搜索中搜索评论（如果网站评论数量太多不建议开启）"
 
-#: options/theme-options.php:2766
+#: options/theme-options.php:2767
 msgid "Gravatar Proxy"
 msgstr "Gravatar代理"
 
-#: options/theme-options.php:2767
+#: options/theme-options.php:2768
 msgid ""
 "Fill in the proxy address of Gravatar, use the Geekzu proxy by default, "
 "leave it blank to not use the proxy"
 msgstr "填写Gravatar头像的代理地址，默认使用极客族代理，留空则不使用代理"
 
-#: options/theme-options.php:2774
+#: options/theme-options.php:2775
 msgid "Google Stats Code"
 msgstr "谷歌统计代码"
 
-#: options/theme-options.php:2780
+#: options/theme-options.php:2781
 msgid "Custom CSS Styles"
 msgstr "自定义CSS样式"
 
-#: options/theme-options.php:2781
+#: options/theme-options.php:2782
 msgid "Fill in the CSS code without writing style tag"
 msgstr "填写CSS代码，不需要写style标签"
 
-#: options/theme-options.php:2787
+#: options/theme-options.php:2788
 msgid "Timezone Fix"
 msgstr "时区修正"
 
-#: options/theme-options.php:2788
+#: options/theme-options.php:2789
 msgid ""
 "Slide to adjust. If the comment has a time difference problem, adjust it "
 "here, fill in an integer. Calculation method: actual time = time of display "
@@ -3050,33 +3099,33 @@ msgstr ""
 "滑动滑块，如果评论出现时差问题在这里调整，填入一个整数，计算方法：实际时间=显"
 "示错误的时间-你输入的整数（单位：小时）"
 
-#: options/theme-options.php:2795
+#: options/theme-options.php:2796
 msgid "Lightbox"
 msgstr "灯箱"
 
-#: options/theme-options.php:2800
+#: options/theme-options.php:2801
 msgid "BaguetteBox Lightbox Effect"
 msgstr "BaguetteBox灯箱效果"
 
-#: options/theme-options.php:2801
+#: options/theme-options.php:2802
 msgid "BaguetteBox will be used as the image lightbox effect when turned on"
 msgstr "开启之后将使用BaguetteBox作为图片灯箱效果"
 
-#: options/theme-options.php:2807
+#: options/theme-options.php:2808
 msgid "FancyBox Lightbox Effect"
 msgstr "FancyBox灯箱效果"
 
-#: options/theme-options.php:2808
+#: options/theme-options.php:2809
 msgid ""
 "FancyBox will be used as an image lightbox effect after turning on, "
 "additional JQ libraries will be loaded"
 msgstr "开启之后将使用FancyBox作为图片灯箱效果，将会额外加载JQ库"
 
-#: options/theme-options.php:2814
+#: options/theme-options.php:2815
 msgid "Code Highlighting"
 msgstr "代码高亮"
 
-#: options/theme-options.php:2817
+#: options/theme-options.php:2818
 msgid ""
 "<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </"
 "p> <p><strong>Prism.js:</strong> Requires a language to be specified, see <a "
@@ -3091,44 +3140,44 @@ msgstr ""
 "prismjs.com/ plugins/file-highlight/\">如何代码高亮动态载入的文件</a>。 </"
 "p><p><strong>自定义：</strong> 适用于另有配置的情况。</p>"
 
-#: options/theme-options.php:2824
+#: options/theme-options.php:2825
 msgid "Code Highlight Method"
 msgstr "代码高亮程序"
 
-#: options/theme-options.php:2835
+#: options/theme-options.php:2836
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
 msgstr "Prism.js：为所有代码块增加行数显示"
 
-#: options/theme-options.php:2839
+#: options/theme-options.php:2840
 msgid ""
 "See the <a href=\"https://prismjs.com/plugins/line-numbers/\">plugin "
 "description documentation</a>"
 msgstr ""
 "请参阅 <a href=\"https://prismjs.com/plugins/line-numbers/\">插件描述文档</a>"
 
-#: options/theme-options.php:2844
+#: options/theme-options.php:2845
 msgid "Prism.js: Autoload Address"
 msgstr "Prism.js：自动加载地址"
 
-#: options/theme-options.php:2854
+#: options/theme-options.php:2855
 msgid "Prism.js: Code Highlight Theme"
 msgstr "Prism.js：代码高亮主题"
 
-#: options/theme-options.php:2863
+#: options/theme-options.php:2864
 msgid "Prism.js: Code Highlight Theme (Dark Mode)"
 msgstr "Prism.js：代码高亮主题（深色模式）"
 
-#: options/theme-options.php:2873
+#: options/theme-options.php:2874
 msgid ""
 "The following Options are not recommended to be modified blindly, please use "
 "them under the guidance of others"
 msgstr "以下设置不推荐盲目进行修改，请在他人的指导下使用"
 
-#: options/theme-options.php:2879
+#: options/theme-options.php:2880
 msgid "Image CDN"
 msgstr "图片 CDN"
 
-#: options/theme-options.php:2880
+#: options/theme-options.php:2881
 msgid ""
 "Note: fill in the format https://your CDN domain/. This means that images "
 "with original path http://your.domain/wp-content/uploads/2018/05/xx.png will "
@@ -3138,23 +3187,23 @@ msgstr ""
 "domain/wp-content/uploads/2018/05/xx.png 的图片将从 http://你的CDN域"
 "名/2018/05/xx.png 加载"
 
-#: options/theme-options.php:2887
+#: options/theme-options.php:2888
 msgid "Articles Categories (Do not display)"
 msgstr "文章分类（不显示）"
 
-#: options/theme-options.php:2888 options/theme-options.php:2895
+#: options/theme-options.php:2889 options/theme-options.php:2896
 msgid "Fill in category ID, seperate in English\" , \" when more than one"
 msgstr "填写分类ID，多个用英文“ , ”分开"
 
-#: options/theme-options.php:2894
+#: options/theme-options.php:2895
 msgid "Image Display Category"
 msgstr "图片展示分类"
 
-#: options/theme-options.php:2901
+#: options/theme-options.php:2902
 msgid "Specify Login Address"
 msgstr "指定登录地址"
 
-#: options/theme-options.php:2902
+#: options/theme-options.php:2903
 msgid ""
 "Force not to use the WordPress login page address to login, fill in the new "
 "login page address, such as: http://www.xxx.com/login. Note that before "
@@ -3165,47 +3214,43 @@ msgstr ""
 "www.xxx.com/login。注意填写前先测试下你新建的页面是可以正常打开的，以免造成无"
 "法进入后台等情况。"
 
-#: options/theme-options.php:2908
+#: options/theme-options.php:2909
 msgid "Specify Registration Address"
 msgstr "指定注册地址"
 
-#: options/theme-options.php:2909
-#, fuzzy
-#| msgid ""
-#| "This address is used as the registration entry on the login page, if you "
-#| "specify a login address, it is recommended to fill in "
+#: options/theme-options.php:2910
 msgid ""
 "This address is used as the registration entry on the login page, if you "
 "specify a login address, it is recommended to fill in"
 msgstr "该地址在登录页面作为注册入口，如果你指定了登录地址，则建议填写"
 
-#: options/theme-options.php:2915
+#: options/theme-options.php:2916
 msgid "Version Control"
 msgstr "版本控制"
 
-#: options/theme-options.php:2916
+#: options/theme-options.php:2917
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr "用于更新前端Cookie和浏览器缓存，可使用任意字符串"
 
-#: options/theme-options.php:2922
+#: options/theme-options.php:2923
 msgid "Backup&Recovery"
 msgstr "备份恢复"
 
-#: options/theme-options.php:2935
+#: options/theme-options.php:2936
 msgid "About Theme"
 msgstr "关于主题"
 
-#: options/theme-options.php:2941
+#: options/theme-options.php:2942
 msgid "Version Info"
 msgstr "版本信息"
 
-#: options/theme-options.php:2946
+#: options/theme-options.php:2947
 msgid ""
 "<img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/"
 "vision/options/hyouryulogo.gif\"  alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:2952
+#: options/theme-options.php:2953
 #, php-format
 msgid ""
 "Working with iro theme version %s | <a href=\"https://iro.tw\">theme "
@@ -3215,15 +3260,15 @@ msgstr ""
 "正在使用 iro 主题 版本 %s | <a href=\"https://iro.tw\">主题文档</a> | <a "
 "href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
 
-#: options/theme-options.php:2957
+#: options/theme-options.php:2958
 msgid "Update Related"
 msgstr "更新相关"
 
-#: options/theme-options.php:2963
+#: options/theme-options.php:2964
 msgid "Theme Update Source"
 msgstr "主题更新源"
 
-#: options/theme-options.php:2969
+#: options/theme-options.php:2970
 msgid ""
 "If you are using a server set up in mainland China, please use the jsDelivr "
 "source or the official theme source as your theme update source"
@@ -3231,11 +3276,11 @@ msgstr ""
 "如果你使用的是架设在国内的服务器，请使用jsDelivr源或主题官方源作为你的主题更"
 "新源"
 
-#: options/theme-options.php:2976
+#: options/theme-options.php:2977
 msgid "Theme Update Test Channel Disclaimer"
 msgstr "主题更新测试通道免责声明"
 
-#: options/theme-options.php:2981
+#: options/theme-options.php:2982
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -3248,53 +3293,53 @@ msgstr ""
 "内 <strong> \"I agree and am willing to bear all unexpected consequences\" </"
 "strong>"
 
-#: options/theme-options.php:2987
+#: options/theme-options.php:2988
 msgid "Theme Update Channel"
 msgstr "主题更新频道"
 
-#: options/theme-options.php:2993
+#: options/theme-options.php:2994
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr "你可以在此切换更新频道以参与到新版本的测试中"
 
-#: options/theme-options.php:2995
+#: options/theme-options.php:2996
 msgid "Stable Channel"
 msgstr "正式通道"
 
-#: options/theme-options.php:2996
+#: options/theme-options.php:2997
 msgid "Beta Channel"
 msgstr "公共测试频道"
 
-#: options/theme-options.php:2997
+#: options/theme-options.php:2998
 msgid "Preview Channel"
 msgstr "预览测试频道"
 
-#: options/theme-options.php:3004
+#: options/theme-options.php:3005
 msgid "Localization"
 msgstr "本地化"
 
-#: options/theme-options.php:3010
+#: options/theme-options.php:3011
 msgid "Localize the Frontend Library"
 msgstr "本地化前端库"
 
-#: options/theme-options.php:3011
+#: options/theme-options.php:3012
 msgid "The frontend library will not use jsDelivr CDN after turning it on"
 msgstr "开启之后前端库将不走jsDelivr CDN"
 
-#: options/theme-options.php:3018
+#: options/theme-options.php:3019
 msgid "Localize JS/CSS Files"
 msgstr "本地化 JS/CSS 文件"
 
-#: options/theme-options.php:3019
+#: options/theme-options.php:3020
 msgid "Enabled by default, some JS files and CSS files do not use jsDelivr CDN"
 msgstr "默认开启，部分JS文件和CSS文件不走jsDelivr CDN"
 
-#: options/theme-options.php:3025
+#: options/theme-options.php:3026
 msgid "Reference Information"
 msgstr "引用信息"
 
-#: options/theme-options.php:3030
+#: options/theme-options.php:3031
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox<a href=\"https://wwi.lanzous.com/"
 "ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -3315,11 +3360,11 @@ msgstr ""
 "        <p>白猫样式Logo参考原主题作者白猫，由 <a href=\"https://hyacm.com/"
 "acai/ui/143/sakura-logo/\">Hyacm</a> 提供方案并引用</p>"
 
-#: options/theme-options.php:3038
+#: options/theme-options.php:3039
 msgid "Dependency Information"
 msgstr "依赖信息"
 
-#: options/theme-options.php:3043
+#: options/theme-options.php:3044
 msgid ""
 "<p>Static Resources Relies on the <a href=\"https://github.com/Fuukei/"
 "Public_Repository\">Public Repository</a> Project Created by Fuukei</p>\n"
@@ -3337,7 +3382,7 @@ msgstr ""
 "        <p>更新功能依赖于 YahnisElsts 开源的 <a href=\"https://github.com/"
 "YahnisElsts/plugin-update-checker\">Plugin-Update-Checker</a> 项目</p>"
 
-#: options/theme-options.php:3050
+#: options/theme-options.php:3051
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" />  <img src=\"https://"
@@ -3441,9 +3486,6 @@ msgstr ""
 
 #~ msgid "cover_signature_typing_text"
 #~ msgstr "封面签名栏打字特效文本"
-
-#~ msgid "External API random image"
-#~ msgstr "外部API随机图片"
 
 #~ msgid "local_random_image"
 #~ msgstr "本地随机图片"

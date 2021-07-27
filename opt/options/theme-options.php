@@ -1738,8 +1738,8 @@ if( class_exists( 'CSF' ) ) {
         'title' => __('Bulletin Board Style','csf'),
         'dependency' => array( 'announce_bar', '==', 'true' ),
         'options' => array(
-          'picture' => 'Picture Background',
-          'pure' => 'Color Background',
+          'picture' => __('Picture Background','csf'),
+          'pure' => __('Color Background','csf'),
         ),
         'default' => 'picture'
       ),
@@ -2064,8 +2064,8 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'radio',
         'title' => __('Article Area Featured Image Options','csf'),
         'options' => array(
-          'type_1' => 'Cover Random Image',
-          'type_2' => 'External API Random Image',
+          'type_1' => __('Cover Random Image','csf'),
+          'type_2' => __('External API Random Image','csf'),
         ),
         'default' => 'type_1'
       ),
@@ -2440,8 +2440,8 @@ if( class_exists( 'CSF' ) ) {
         'title' => __('Page Comment Area Display','csf'),
         'desc' => __('You can choose to expand or shirink the content of the comment area','csf'),
         'options' => array(
-          'unfold' => 'Expand',
-          'fold' => 'Shrink',
+          'unfold' => __('Expand','csf'),
+          'fold' => __('Shrink','csf'),
         ),
         'default' => 'unfold'
       ),
@@ -2500,9 +2500,9 @@ if( class_exists( 'CSF' ) ) {
         'title' => __('QQ Avatar Link Encryption','csf'),
         'options' => array(
           'off' => __('Off','csf'),
-          'type_1' => 'Redirect (low security)',
-          'type_2' => 'Get avatar data in the backend (medium security)',
-          'type_3' => 'Parse avatar interface in the backend (high security, slow)',
+          'type_1' => __('Redirect (low security)','csf'),
+          'type_2' => __('Get avatar data in the backend (medium security)','csf'),
+          'type_3' => __('Parse avatar interface in the backend (high security, slow)','csf'),
         ),
         'default' => 'off'
       ),
@@ -2724,8 +2724,8 @@ if( class_exists( 'CSF' ) ) {
         'title' => __('Statistics API','csf'),
         'desc' => __('You can choose WP-Statistics plugin statistics or theme built-in statistics to display','csf'),
         'options' => array(
-          'theme_build_in' => 'Theme Built in Statistics',
-          'wp_statistics' => 'WP-Statistics Plugin Statistics',
+          'theme_build_in' => __('Theme Built in Statistics','csf'),
+          'wp_statistics' => __('WP-Statistics Plugin Statistics','csf'),
         ),
         'default' => 'theme_build_in'
       ),
@@ -2736,10 +2736,10 @@ if( class_exists( 'CSF' ) ) {
         'title' => __('Statistics display format','csf'),
         'desc' => __('You can choose from four different data display formats','csf'),
         'options' => array(
-          'type_1' => '23333 visits',
-          'type_2' => '23,333 visits',
-          'type_3' => '23,333 visits',
-          'type_4' => '23K visits',
+          'type_1' => __('23333 Visits','csf'),
+          'type_2' => __('23,333 Visits','csf'),
+          'type_3' => __('23 333 Visits','csf'),
+          'type_4' => __('23K Visits','csf'),
         ),
         'default' => 'type_1'
       ),
@@ -2756,6 +2756,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'live_search_comment',
         'type' => 'switcher',
         'title' => __('Live Search Comment Support','csf'),
+        'dependency' => array( 'live_search', '==', 'true' ),
         'label' => __('Enable to search for comments in live search (not recommended if site has too many comments)','csf'),
         'default' => false
       ),
