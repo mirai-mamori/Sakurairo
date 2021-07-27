@@ -300,6 +300,25 @@ function sakura_scripts()
         'google_analytics_id' => iro_opt('google_analytics_id', ''),
         'gravatar_url' => $gravatar_url
     ));
+    //前端脚本本地化
+    if(!get_locale("zh-CN")){
+         wp_localize_script('app', '_sakurairoi18n', array(
+        "复制成功！"=> __("Copied!","sakurairo"),
+        "拷贝代码"=> __("Copy Code","sakurairo"),
+        "你的封面API好像不支持跨域调用,这种情况下缓存是不会生效的哦"=> __("Your cover API seems to not support Cross Origin Access. In this case, Cover Cache won't take effect.","sakurairo"),
+        "提交中...."=> __("Commiting....","sakurairo"),
+        "提交成功"=> __("Succeed","sakurairo"),
+        "每次上传上限为10张"=> __("10 files max per request","sakurairo"),
+        "图片上传大小限制为5 MB\n\n「{0}」\n\n这张图太大啦~请重新上传噢！"=> __("5 MB max per file.\n\n「{0}」\n\nThis image is too large~Please reupload!","sakurairo"),
+        "上传中..."=> __("Uploading...","sakurairo"),
+        "图片上传成功~"=> __("Uploaded successfully~","sakurairo"),
+        "上传失败！\n文件名=> {0}\ncode=> {1}\n{2}"=> __("Upload failed!\nFile Name=> {0}\ncode=> {1}\n{2}","sakurairo"),
+        "上传失败，请重试."=> __("Upload failed, please retry.","sakurairo"),
+        "页面加载出错了 HTTP {0}"=> __("Page Load failed. HTTP {0}","sakurairo"),
+        "很高兴你翻到这里，但是真的没有了..."=> __("Glad you come, but we've got nothing left.","sakurairo")
+    ));
+
+    }
 }
 add_action('wp_enqueue_scripts', 'sakura_scripts');
 
