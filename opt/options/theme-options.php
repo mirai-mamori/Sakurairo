@@ -10,7 +10,7 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'id'    => 'preliminary',
-    'title' => __('Preliminary','csf'),
+    'title' => __('Preliminary Options','csf'),
     'icon'      => 'fa fa-sliders',
     'fields' => array(
 
@@ -18,21 +18,21 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'site_name',
         'type'  => 'text',
         'title' => __('Site Name','csf'),
-        'desc'   => __('For example:Sakurairo Blog','csf'),
+        'desc'   => __('For example: Sakurairo Blog','csf'),
       ),
 
       array(
         'id'    => 'author_name',
         'type'  => 'text',
         'title' => __('Author Name','csf'),
-        'desc'   => __('For example:Fuukei','csf'),
+        'desc'   => __('For example: Fuukei','csf'),
       ),
 
       array(
         'id'    => 'personal_avatar',
         'type'  => 'upload',
         'title' => __('Personal Avatar','csf'),
-        'desc'   => __('The best ratio is 1:1','csf'),
+        'desc'   => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
       ),
 
@@ -40,7 +40,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'text_logo_options',
         'type'  => 'switcher',
         'title' => __('Mashiro Special Effects Text','csf'),
-        'label'   => __('After opening, the personal avatar will be replaced as the home page display content','csf'),
+        'label'   => __('After turned on, the personal avatar will be replaced by the text as the home page display content','csf'),
         'default' => false
       ),
 
@@ -54,7 +54,7 @@ if( class_exists( 'CSF' ) ) {
             'id'     => 'text',
             'type'   => 'text',
             'title'  => __('Text','csf'),
-            'desc'   => __('It is recommended that the text content should not be too long, and the recommended length is 16 bytes.','csf'),
+            'desc'   => __('The text content should not be too long, and the recommended length is 16 bytes.','csf'),
           ),
           array(
             'id'     => 'font',
@@ -66,7 +66,7 @@ if( class_exists( 'CSF' ) ) {
             'id'     => 'size',
             'type'   => 'slider',
             'title'  => __('Size','csf'),
-            'desc'   => __('Sliding slider, the recommended value range is 70-90','csf'),
+            'desc'   => __('Slide to adjust, the recommended value range is 70-90','csf'),
             'unit'    => 'px',
             'min'   => '40',
             'max'   => '140',
@@ -75,7 +75,7 @@ if( class_exists( 'CSF' ) ) {
             'id'      => 'color',
             'type'    => 'color',
             'title'   => __('Color','csf'),
-            'desc'    => __('Custom colors, light colors are recommended','csf'),
+            'desc'    => __('Customize the colors, light colors are recommended','csf'),
           ),      
         ),
         'default'        => array(
@@ -89,7 +89,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'iro_logo',
         'type'  => 'upload',
         'title' => __('Navigation Menu Logo','csf'),
-        'desc'   => __('The best size is 40px, and the navigation menu text logo will not be displayed after filling in','csf'),
+        'desc'   => __('The best size is 40px, and the nav menu text logo will not be displayed after filling in','csf'),
         'library'      => 'image',
       ),
 
@@ -105,7 +105,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'iro_meta',
         'type'  => 'switcher',
         'title' => __('Custom Site Keywords and Descriptions','csf'),
-        'label'   => __('After opening, you can customize the site keywords and descriptions','csf'),
+        'label'   => __('After turning on, you can customize the site keywords and descriptions','csf'),
         'default' => false
       ),
 
@@ -114,7 +114,7 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'text',
         'title'  => __('Site Keywords','csf'),
         'dependency' => array( 'iro_meta', '==', 'true' ),
-        'desc'   => __('The keywords are separated with half width comma "," and the number is best within 5','csf'),
+        'desc'   => __('The keywords should be separated with half width comma "," and it\'s better to set within 5 keywords','csf'),
       ),
 
       array(
@@ -130,7 +130,7 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'id'    => 'global', 
-    'title' => __('Global','csf'),
+    'title' => __('Global Options','csf'),
     'icon'      => 'fa fa-globe',
   ) );
 
@@ -149,15 +149,15 @@ if( class_exists( 'CSF' ) ) {
         'id'      => 'theme_skin',
         'type'    => 'color',
         'title'   => __('Theme Color','csf'),
-        'desc'    => __('Custom colors','csf'),
+        'desc'    => __('Customize the colors','csf'),
         'default' => '#505050'
       ),  
 
       array(
         'id'      => 'theme_skin_matching',
         'type'    => 'color',
-        'title'   => __('Theme Matching Color','csf'),
-        'desc'    => __('Custom colors','csf'),
+        'title'   => __('Matching Color','csf'),
+        'desc'    => __('Customize the colors','csf'),
         'default' => '#ffe066'
       ),  
 
@@ -170,22 +170,22 @@ if( class_exists( 'CSF' ) ) {
         'id'      => 'theme_skin_dark',
         'type'    => 'color',
         'title'   => __('Dark Mode Theme Color','csf'),
-        'desc'    => __('Custom colors','csf'),
+        'desc'    => __('Customize the colors','csf'),
         'default' => '#ffcc00'
       ),  
       array(
         'id'    => 'theme_darkmode_auto',
         'type'  => 'switcher',
-        'title' => __('Automatic Switch of Dark Mode','csf'),
+        'title' => __('Automatically Switch to Dark Mode','csf'),
         'label'   => __('Default on','csf'),
         'default' => true
       ),
       array(
         'type'    => 'content',
         'content' => __(
-         '<p><strong>Client local time:</strong>Dark mode will switch automatically from 22:00 to 7:00</p>'
+         '<p><strong>Client local time:</strong>Dark mode will switch on automatically from 22:00 to 7:00</p>'
         .'<p><strong>Follow client settings:</strong>Follow client browser settings</p>'
-        .'<p><strong>Always on:</strong>Always on, unless otherwise configured by the client</p>','csf'),
+        .'<p><strong>Always on:</strong>Always on, except being configured by the client</p>','csf'),
         'dependency' => array( 'theme_darkmode_auto', '==', 'true' ),
 
       ),
@@ -206,7 +206,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'theme_darkmode_img_bright',
         'type'   => 'slider',
         'title'  => __('Dark Mode Image Brightness','csf'),
-        'desc'   => __('Sliding slider, the recommended sliding value range is 0.6-0.8','csf'),
+        'desc'   => __('Slide to adjust, the recommended value range is 0.6-0.8','csf'),
         'step'   => '0.01',
         'min'   => '0.4',
         'max'   => '1',
@@ -216,8 +216,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'theme_darkmode_widget_transparency',
         'type'   => 'slider',
-        'title'  => __('Dark mode Component Transparency','csf'),
-        'desc'   => __('Sliding slider, the recommended sliding value range is 0.6-0.8','csf'),
+        'title'  => __('Dark Mode Component Transparency','csf'),
+        'desc'   => __('Slide to adjust, the recommended sliding value range is 0.6-0.8','csf'),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -227,7 +227,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'theme_darkmode_background_transparency',
         'type'   => 'slider',
         'title'  => __('Dark mode Background Transparency','csf'),
-        'desc'   => __('Sliding slider, the recommended sliding value range is 0.6-0.8.In order to ensure the best appearance, it is better to keep the display of foreground background image','csf'),
+        'desc'   => __('Slide to adjust, the recommended sliding value range is 0.6-0.8. In order to ensure the best appearance, it is better to keep the display of the frontend background image','csf'),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -236,22 +236,22 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'subheading',
-        'content' => __('Other','csf'),
+        'content' => __('Other Appearance Related','csf'),
       ),
 
       array(
         'id'    => 'theme_commemorate_mode',
         'type'  => 'switcher',
         'title' => __('Commemorate Mode','csf'),
-        'label'   => __('After opening, black and white filters will be added to the global theme','csf'),
+        'label'   => __('After turning on, a black and white filter will be added to the global theme','csf'),
         'default' => false
       ),
 
       array(
         'id'     => 'load_out_svg',
         'type'   => 'text',
-        'title'  => __('Load Control Unit Space Occupying SVG','csf'),
-        'desc'   => __('Fill in the address, which is the SVG displayed when loading the control unit','csf'),
+        'title'  => __('Occupying SVG while Loading Control Units','csf'),
+        'desc'   => __('Fill in the address, which is the SVG displayed when loading control units','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/outload.svg'
       ),
 
@@ -260,20 +260,20 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => __('Fonts Options','csf'),
+    'title'  => __('Font Options','csf'),
     'icon'      => 'fa fa-font',
     'fields' => array(
 
       array(
         'type'    => 'subheading',
-        'content' => __('Globally','csf'),
+        'content' => __('Global','csf'),
       ),
 
       array(
         'id'     => 'global_font_weight',
         'type'   => 'slider',
-        'title'  => __('Non Emphasis Text Word Weight','csf'),
-        'desc'   => __('Sliding slider, recommended value range is 300-500','csf'),
+        'title'  => __('Non-Emphasis Text Weight','csf'),
+        'desc'   => __('Slide to adjust, the recommended value range is 300-500','csf'),
         'step'   => '10',
         'min'   => '100',
         'max'   => '700',
@@ -284,7 +284,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'global_font_size',
         'type'   => 'slider',
         'title'  => __('Text Font Size','csf'),
-        'desc'   => __('Sliding slider, recommended value range is 15-18','csf'),
+        'desc'   => __('Slide to adjust, the recommended value range is 15-18','csf'),
         'step'   => '1',
         'unit'    => 'px',
         'min'   => '10',
@@ -294,14 +294,14 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'subheading',
-        'content' => __('External Font','csf'),
+        'content' => __('External Fonts','csf'),
       ),
 
       array(
         'id'    => 'reference_exter_font',
         'type'  => 'switcher',
-        'title' => __('Reference External Font','csf'),
-        'label'   => __('After Opening, you can use external fonts as the default font or other component fonts, but it may affect performance','csf'),
+        'title' => __('Reference External Fonts','csf'),
+        'label'   => __('After turning on, you can use external fonts as the default font or other component fonts, but it may affect performance','csf'),
         'default' => false
       ),
 
@@ -330,7 +330,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'google_fonts_add',
         'type'   => 'text',
         'title'  => __('Google Fonts Name','csf'),
-        'desc'   => __('Please make sure that the added font can be referenced in Google font library and fill in the font name. The added font must be preceded by "|". If multiple fonts are referenced, use "|" as the separator. If the font name has spaces, use a plus sign instead. For example: | zcool + xiaowei| Ma + Shan + Zheng','csf'),
+        'desc'   => __('Please make sure that the added fonts can be referenced in Google Fonts library. Fill in the font names. The added fonts must be preceded by "|". If multiple fonts are referenced, use "|" as the separator. If the font name has spaces, use a plus sign instead. For example: | zcool + xiaowei| Ma + Shan + Zheng','csf'),
       ),
 
     )
@@ -345,7 +345,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'nav_menu_style',
         'type'       => 'image_select',
-        'title'      => __('Navigation Menu Style','csf'),
+        'title'      => __('Nav Menu Style','csf'),
         'options'    => array(
           'sakurairo' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/nav_menu_style_iro.png',
           'sakura' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/nav_menu_style_sakura.png',
@@ -356,9 +356,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_radius',
         'type'  => 'slider',
-        'title' => __('Navigation Menu Radius','csf'),
+        'title' => __('Nav Menu Radius','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
-        'desc'   => __('Sliding slider, the recommended value is 15','csf'),
+        'desc'   => __('Slide to adjust, the recommended value is 15','csf'),
         'unit'    => 'px',
         'max'   => '50',
         'default' => '15'
@@ -367,9 +367,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'nav_menu_shrink_animation',
         'type'   => 'slider',
-        'title'  => __('Navigation Menu Shrinkage Ratio','csf'),
+        'title'  => __('Nav Menu Shrinkage Ratio','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
-        'desc'   => __('Sliding slider to set the appropriate ratio according to the content length of the navigation menu. When the ratio is set to 95, shrinkage will be turned off. Shrinkage is turned off by default','csf'),
+        'desc'   => __('Slide to set the appropriate ratio according to the content length of the nav menu. When the ratio is set to 95,there will be no shrinkage. This function is off by default','csf'),
         'step'   => '0.5',
         'unit'    => '%',
         'max'   => '95',
@@ -380,8 +380,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'nav_menu_display',
         'type'       => 'radio',
-        'title'      => __('Navigation Menu Content Display','csf'),
-        'desc'    => __('You can choose to expand or shrink the navigation menu','csf'),
+        'title'      => __('Nav Menu Content Display Method','csf'),
+        'desc'    => __('You can choose to unfold or fold the nav menu contents','csf'),
         'options'    => array(
           'unfold' => __('Unfold','csf'),
           'fold' => __('Fold','csf'),
@@ -392,17 +392,17 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_animation',
         'type'  => 'switcher',
-        'title' => __('Navigation Menu Animation','csf'),
-        'label'   => __('It is on by default. If it is off, the navigation content will be displayed directly','csf'),
+        'title' => __('Nav Menu Animation Effects','csf'),
+        'label'   => __('It is on by default. If it is off, the nav menu content will be displayed directly without effects','csf'),
         'default' => true
       ),
 
       array(
         'id'     => 'nav_menu_animation_time',
         'type'   => 'slider',
-        'title'  => __('Navigation Menu Animation Time','csf'),
+        'title'  => __('Nav Menu Animation Time','csf'),
         'dependency' => array( 'nav_menu_animation', '==', 'true' ),
-        'desc'   => __('Sliding slider,the recommended value range is 1-2','csf'),
+        'desc'   => __('Slide to adjust, the recommended value range is 1-2','csf'),
         'step'   => '0.01',
         'unit'    => 's',
         'max'   => '5',
@@ -412,7 +412,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'nav_menu_icon_size',
         'type'       => 'radio',
-        'title'      => __('Navigation Menu Icon Size','csf'),
+        'title'      => __('Nav Menu Icon Size','csf'),
         'options'    => array(
           'standard' => __('Standard','csf'),
           'large' => __('Large','csf'),
@@ -423,15 +423,15 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_search',
         'type'  => 'switcher',
-        'title' => __('Navigation Menu Search','csf'),
+        'title' => __('Nav Menu Search','csf'),
         'label'   => __('It is on by default. Click to enter the search area','csf'),
         'default' => true
       ),
       array(
         'id'    => 'nav_menu_blur',
         'type'  => 'slider',
-        'title' => __('Navigation Menu Blur','csf'),
-        'desc'   => __('Sliding slider, the recommended value is 5px, and close when it is 0px','csf'),
+        'title' => __('Nav Menu Blur','csf'),
+        'desc'   => __('Slide to adjust, the recommended value is 5px, and close when it is 0px','csf'),
         'unit'    => 'px',
         'max'   => '20',
         'default' => '0'
@@ -440,7 +440,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'search_area_background',
         'type'  => 'upload',
-        'title' => __('Navigation Menu Search Area Background Image','csf'),
+        'title' => __('Search Area Background Image','csf'),
         'desc'   => __('Set the background image of your search area. Leave this option blank to display a white background','csf'),
         'library'      => 'image',
         'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/iloli.gif'
@@ -449,17 +449,17 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_user_avatar',
         'type'  => 'switcher',
-        'title' => __('Navigation Menu User Avatar','csf'),
-        'label'   => __('Open by default, click to enter the login interface','csf'),
+        'title' => __('Nav Menu User Avatar','csf'),
+        'label'   => __('It is on by default. Click to enter the login interface','csf'),
         'default' => true
       ),
 
       array(
         'id'     => 'unlisted_avatar',
         'type'  => 'upload',
-        'title' => __('Navigation Menu Unlisted User Avatar','csf'),
+        'title' => __('Nav Menu Unlisted User Avatar','csf'),
         'dependency' => array( 'nav_menu_user_avatar', '==', 'true' ),
-        'desc'   => __('The best ratio is 1:1','csf'),
+        'desc'   => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/topavatar.png'
       ),
@@ -467,8 +467,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_secondary_arrow',
         'type'  => 'switcher',
-        'title' => __('Navigation Menu Secondary Menu Prompt Arrow','csf'),
-        'label'   => __('After opening, the menu prompt arrow will appear in the secondary menu of the navigation menu','csf'),
+        'title' => __('Secondary Menu Prompt Arrow','csf'),
+        'label'   => __('After turning on, the menu prompt arrow will appear in the secondary menu of the navigation menu','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakura' ),
         'default' => false
       ),
@@ -476,9 +476,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_secondary_radius',
         'type'  => 'slider',
-        'title' => __('Navigation Menu Secondary Menu Radius','csf'),
+        'title' => __('Secondary Menu Radius','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
-        'desc'   => __('Sliding slider, the recommended value is 15','csf'),
+        'desc'   => __('Slide to adjust, the recommended value is 15','csf'),
         'unit'    => 'px',
         'max'   => '30',
         'default' => '15'
@@ -487,23 +487,23 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'logo_text',
         'type'   => 'text',
-        'title'  => __('Navigation Menu Logo Text','csf'),
-        'desc'   => __('Fill in the text. If the Mashiro logo is turned on, this option is invalid','csf'),
+        'title'  => __('Nav Menu Logo Text','csf'),
+        'desc'   => __('Fill in the text. If the Mashiro logo is turned on, this option will be invalid','csf'),
         'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
       ),
 
       array(
         'id'    => 'mashiro_logo_option',
         'type'  => 'switcher',
-        'title' => __('Navigation Menu Mashiro Logo','csf'),
-        'label'   => __('After opening, the Mashiro Logo will appear and replace the navigation menu logo position','csf'),
+        'title' => __('Mashiro Logo','csf'),
+        'label'   => __('After turning on, the Mashiro Logo will appear and replace the navigation menu logo position','csf'),
         'default' => false
       ),
 
       array(
         'id'     => 'mashiro_logo',
         'type'   => 'fieldset',
-        'title'  => __('Navigation Menu Mashiro Logo Option','csf'),
+        'title'  => __('Mashiro Logo Options','csf'),
         'dependency' => array( 'mashiro_logo_option', '==', 'true' ),
         'fields' => array(
           array(
@@ -552,7 +552,7 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title' => __('Style Menu and Foreground Background Related Options','csf'),
+    'title' => __('Style Menu and Frontend Background Related Options','csf'),
     'icon' => 'fa fa-th-large',
     'fields' => array(
 
@@ -565,7 +565,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'style_menu_display',
         'type' => 'image_select',
         'title' => __('Style Menu Display','csf'),
-        'desc' => __('You can choose to display the style menu in full or simply, the full display will show the font toggle function and text hints','csf'),
+        'desc' => __('You can choose to display the style menu simply or in full. The full display will show the font toggle function and text hints','csf'),
         'options' => array(
           'full' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/style_menu_full.png',
           'mini' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/style_menu_mini.png',
@@ -576,8 +576,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'style_menu_radius',
         'type' => 'slider',
-        'title' => __('Style Menu Button Rounded Corners','csf'),
-        'desc' => __('Sliding slider, the recommended value is 10','csf'),
+        'title' => __('Style Menu Button Radius','csf'),
+        'desc' => __('Slide to adjust, the recommended value is 10','csf'),
         'unit' => 'px',
         'max' => '50',
         'default' => '10'
@@ -587,23 +587,23 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'style_menu_background_color',
         'type' => 'color',
         'title' => __('Style Menu Background Color','csf'),
-        'desc' => __('Custom color, lighter colors are recommended','csf'),
+        'desc' => __('Customize the colors, light colors are recommended','csf'),
         'default' => 'rgba(255,255,255,0.8)'
       ),   
 
       array(
         'id' => 'style_menu_selection_color',
         'type' => 'color',
-        'title' => __('Style Menu Options Background Color','csf'),
-        'desc' => __('Custom color, it is recommended to use a color that is the same color as the theme color and is a lighter color','csf'),
+        'title' => __('Style Menu Option Background Color','csf'),
+        'desc' => __('Customize the colors, it is recommended to use a light color that corresponds with the theme color','csf'),
         'default' => '#e8e8e8'
       ),
 
       array(
         'id' => 'style_menu_selection_radius',
         'type' => 'slider',
-        'title' => __('Style Menu Options Interface Rounded Corners','csf'),
-        'desc' => __('Sliding slider, the recommended value is 15','csf'),
+        'title' => __('Style Menu Options Interface Radius','csf'),
+        'desc' => __('Slide to adjust, the recommended value is 15','csf'),
         'unit' => 'px',
         'max' => '30',
         'default' => '15'
@@ -611,7 +611,7 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type' => 'subheading',
-        'content' => __('Foreground Background','csf'),
+        'content' => __('Frontend Background','csf'),
       ),
 
       array(
@@ -622,15 +622,15 @@ if( class_exists( 'CSF' ) ) {
           'contain' => __('Contain','csf'),
           'auto' => __('Auto','csf'),
         ),
-        'title' => __('Foreground Background Scaling Method','csf'), 
-        'desc' => __('You can choose two ways to scale the foreground background, the default is auto-scaling','csf'),
+        'title' => __('Frontend Background Scaling Method','csf'), 
+        'desc' => __('You can choose two ways to scale the frontend background, the default is auto-scaling','csf'),
         'default' => 'auto'
       ),
 
       array(
         'id' => 'reception_background',
         'type' => 'tabbed',
-        'title' => __('Foreground Background Options','csf'),
+        'title' => __('Frontend Background Options','csf'),
         'tabs' => array(
           array(
             'title' => __('Default','csf'),
@@ -723,8 +723,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'reception_background_transparency',
         'type' => 'slider',
-        'title' => __('Background Transparency in Foreground','csf'),
-        'desc' => __('Sliding slider, the recommended sliding value range is 0.6-0.8','csf'),
+        'title' => __('Background Transparency in the Frontend','csf'),
+        'desc' => __('Slide to adjust, the recommended sliding value range is 0.6-0.8','csf'),
         'step' => '0.01',
         'min' => '0.2',
         'max' => '1',
@@ -733,7 +733,7 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type' => 'subheading',
-        'content' => __('Fonts Area','csf'),
+        'content' => __('Font Area','csf'),
       ),
 
       array(
@@ -764,12 +764,12 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'aplayer_server',
         'type' => 'select',
         'title' => __('Footer Online Music Player','csf'),
-        'desc' => __('A button will appear at the bottom left corner of the footer after opening, click it and the footer online player will be displayed','csf'),
+        'desc' => __('A button will appear at the bottom left corner of the footer after turning on, click it and the footer online player will be displayed','csf'),
         'options' => array(
           'off' => __('Off','csf'),
           'netease' => __('Netease Cloud Music','csf'),
           'kugou' => __('Kugou Music(may not be available)','csf'),
-          'baidu' => __('Baidu Music(overseas servers are not available)','csf'),
+          'baidu' => __('Baidu Music(not available on servers overseas)','csf'),
           'tencent' => __('QQ Music(may not be available)','csf'),
         ),
         'default' => 'off'
@@ -804,7 +804,7 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'aplayer_server', '! =', 'off' ),
         'desc' => __('Whether to preload songs','csf'),
         'options' => array(
-          'none' => __('Turn Off','csf'),
+          'none' => __('Off','csf'),
           'metadata' => __('Preload Metadata','csf'),
           'auto' => __('Auto','csf'),
         ),
@@ -814,9 +814,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'aplayer_volume',
         'type' => 'slider',
-        'title' => __('Default Volume for Footer Online Music Player','csf'),
+        'title' => __('Default Volume of Footer Online Music Player','csf'),
         'dependency' => array( 'aplayer_server', '! =', 'off' ),
-        'desc' => __('Sliding slider, the recommended sliding value range is 0.4-0.6','csf'),
+        'desc' => __('Slide to adjust, the recommended sliding value range is 0.4-0.6','csf'),
         'step' => '0.01',
         'max' => '1',
         'default' => '0.5'
@@ -825,16 +825,16 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'aplayer_cookie',
         'type' => 'textarea',
-        'title' => __('Footer Online Music Player Netease Cloud Music Cookies','csf'),
+        'title' => __('Netease Cloud Music Cookies','csf'),
         'dependency' => array( 'aplayer_server', '==', 'netease' ),
-        'desc' => __('If you want to play VIP musics on Netease Cloud Music Platform,please fill in your account cookies in this option.','csf'),
+        'desc' => __('If you want to play VIP music on Netease Cloud Music Platform, please fill in your account cookies in this option.','csf'),
       ),
 
       array(
         'id' => 'sakura_widget',
         'type' => 'switcher',
         'title' => __('Footer Widget Area','csf'),
-        'label' => __('After turning it on a button will appear in the bottom left corner of the footer, when you click the button the footer widget area will be displayed, if you have the footer online player turned on it will be displayed together','csf'),
+        'label' => __('After turning it on, a button will appear in the bottom of the left corner of the footer, when you click the button the footer widget area will be displayed, if you have the footer online player turned on it will be displayed together','csf'),
         'default' => false
       ),
 
@@ -867,38 +867,45 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'footer_info',
         'type' => 'textarea',
         'title' => __('Footer Info','csf'),
-        'desc' => __('Footer description text, support HTML code','csf'),
+        'desc' => __('Footer description text, supports HTML code','csf'),
         'default' => 'Copyright &copy; by FUUKEI All Rights Reserved.'
       ),
 
       array(
+        'id'=>'footer_addition',
+        'type' => 'textarea',
+        'title' => __('Footer Addition','csf'),
+        'desc' => __('Add HTML code at the end of the page. Useful for adding customize JavaScript, or adding external CSS stylesheets.','csf'),
+      ),
+
+      array(
         'type' => 'subheading',
-        'content' => __('Brief Remark','csf'),
+        'content' => __('Hitokoto','csf'),
       ),
 
       array(
         'id' => 'footer_yiyan',
         'type' => 'switcher',
-        'title' => __('Footer Brief Remark','csf'),
-        'label' => __('A Brief Remark will appear at the end of the page after turning it on','csf'),
+        'title' => __('Footer Hitokoto','csf'),
+        'label' => __('Hitokoto will appear at the end of the page after turning it on','csf'),
         'default' => false
       ),
 
       array(
         'type' => 'content',
         'dependency' => array( 'footer_yiyan', '==', 'true' ),
-        'content' => __('<h4>Brief Remark API Setup Instructions</h4>'
-        .' <p>Fill in the example:<code> ["https://api.maho.cc/yiyan/", "https://v1.hitokoto.cn/"]</code>, where the first API will be used first and the next one will be the backup. </p>'
-        .' <p><strong>Official API:</strong> See the <a href="https://developer.hitokoto.cn/sentence/"> documentation</a> for how to use it, and the parameter "return code" should not be set to anything other than JSON. <a href="https://v1.hitokoto.cn/">https://v1.hitokoto.cn/</a></p>'
-        .' <p><strong>Maho API:</strong> An anti-generation mirror of the official API. <a href="https://api.maho.cc/yiyan/">https://api.maho.cc/yiyan/</a></p>','csf'),
+        'content' => __('<h4>Hitokoto API Setup Instructions</h4>'
+        .' <p>Fill in as the example:<code> ["https://api.maho.cc/yiyan/", "https://v1.hitokoto.cn/"]</code>, where the first API will be used first and the next ones will be the backup. </p>'
+        .' <p><strong>Official API:</strong> See the <a href="https://developer.hitokoto.cn/sentence/"> documentation</a> for how to use it, and the parameter "return code" should not be anything except JSON. <a href="https://v1.hitokoto.cn/">https://v1.hitokoto.cn/</a></p>'
+        .' <p><strong>Maho API:</strong> An reverse proxy mirror of the official API. <a href="https://api.maho.cc/yiyan/">https://api.maho.cc/yiyan/</a></p>','csf'),
       ),
 
       array(
         'id' => 'yiyan_api',
         'type' => 'textarea',
-        'title' => __('Brief Remark API address','csf'),
+        'title' => __('Hitokoto API address','csf'),
         'dependency' => array( 'footer_yiyan', '==', 'true' ),
-        'desc' => __('fill address in JavaScript array format','csf'),
+        'desc' => __('fill the address in JavaScript array format','csf'),
         'default' => '["https://api.maho.cc/yiyan/", "https://v1.hitokoto.cn/"]'
       ),
 
@@ -915,7 +922,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'cursor_nor',
         'type' => 'text',
         'title' => __('Standard Cursor Style','csf'),
-        'desc' => __('Apply to global, fill in Cur mouse file link','csf'),
+        'desc' => __('Apply to global, fill in ".cur" mouse file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/normal.cur'
       ),
 
@@ -923,7 +930,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'cursor_no',
         'type' => 'text',
         'title' => __('Selected Cursor Style','csf'),
-        'desc' => __('Apply to multiple styles, fill in Cur file link','csf'),
+        'desc' => __('Apply to multiple styles, fill in ".cur" file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/No_Disponible.cur'
       ),
 
@@ -931,7 +938,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'cursor_ayu',
         'type' => 'text',
         'title' => __('Selected Control Unit Cursor Style','csf'),
-        'desc' => __('Apply to selected control unit, fill in Cur file link','csf'),
+        'desc' => __('Apply to selected control unit, fill in ".cur" file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/ayuda.cur'
       ),
 
@@ -939,7 +946,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'cursor_text',
         'type' => 'text',
         'title' => __('Selected Text Cursor Style','csf'),
-        'desc' => __('Apply to selected text, fill in Cur file link','csf'),
+        'desc' => __('Apply to selected text, fill in ".cur" file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/texto.cur'
       ),
 
@@ -947,7 +954,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'cursor_work',
         'type' => 'text',
         'title' => __('Work Status Cursor Style','csf'),
-        'desc' => __('Apply to load control unit, fill in Cur file link','csf'),
+        'desc' => __('Apply to load control unit, fill in ".cur" file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/work.cur'
       ),
 
@@ -969,7 +976,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'preload_animation',
         'type' => 'switcher',
         'title' => __('Preload Animation','csf'),
-        'label' => __('Preload animation before new pages load after turning on, this option is needed to ensure your page resources load properly.' ,'csf'),
+        'label' => __('Preload animation before new pages load; To enable this option, ensure your page resources can load properly.' ,'csf'),
         'default' => false
       ),
 
@@ -978,7 +985,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'color',
         'title' => __('Preload Animation Color A','csf'),
         'dependency' => array( 'preload_animation', '==', 'true' ),
-        'desc' => __('Custom colors','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#ffea99'
       ),   
 
@@ -987,7 +994,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'color',
         'title' => __('Preload Animation Color B','csf'),
         'dependency' => array( 'preload_animation', '==', 'true' ),
-        'desc' => __('Custom colors','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#ffcc00'
       ),   
 
@@ -995,7 +1002,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'preload_blur',
         'title' => __('Preload Animation Blur Transition Effect','csf'),
         'dependency' => array( 'preload_animation', '==', 'true' ),
-        'desc' => __('Blur transition duration in milliseconds ms, off when 0.' ,'csf'),
+        'desc' => __('Blur transition duration in milliseconds ms, off when set to 0.' ,'csf'),
         'default' => '0',
         'type' => 'slider',
         'step' => '10',
@@ -1012,8 +1019,8 @@ if( class_exists( 'CSF' ) ) {
           'sakura-quarter' => __('Sakura Quarter Quantity','csf'),
           'sakura-half' => __('Sakura Half Quantity','csf'),
           'sakura-less' => __('Sakura Less Quantity','csf'),
-          'yuki-native' => __('Yuki Native Quantity','csf'),
-          'yuki-half' => __('Yuki Half Quantity','csf'),
+          'yuki-native' => __('Snow Native Quantity','csf'),
+          'yuki-half' => __('Snow Half Quantity','csf'),
         ),
         'default' => 'off'
       ),
@@ -1022,7 +1029,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'live2d_options',
         'type' => 'switcher',
         'title' => __('Live2D Model','csf'),
-        'label' => __('Live2D Model will be loaded in the bottom left corner of the page after opening','csf'),
+        'label' => __('Live2D Model will be loaded in the bottom left corner of the page after turning on','csf'),
         'default' => false
       ),
 
@@ -1031,7 +1038,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'text',
         'title' => __('Live2D Model Custom Github Project Username','csf'),
         'dependency' => array( 'live2d_options', '==', 'true' ),
-        'desc' => __('If you want to customize this option, you need to go to Github Fork this project and make changes to this project first, fill in the Github project username here','csf'),
+        'desc' => __('If you want to customize this option, you need to go to Github to fork this project and make changes to this project first, fill in the Github project username here','csf'),
         'default' => 'mirai-mamori'
       ),
 
@@ -1040,7 +1047,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'text',
         'title' => __('Live2D Model Custom Github Project Version','csf'),
         'dependency' => array( 'live2d_options', '==', 'true' ),
-        'desc' => __('If you want to customize this option, you need to first go to Github Fork this project and make changes to this project, fill in the version of the Github project here','csf'),
+        'desc' => __('If you want to customize this option, you need to first go to Github to fork this project and make changes to this project, fill in the version of the Github project here','csf'),
         'default' => 'latest'
       ),
 
@@ -1048,7 +1055,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'note_effects',
         'type' => 'switcher',
         'title' => __('Note Touch Effects','csf'),
-        'label' => __('After turn on, there will be a note sound alert when the back to top button and white cat style logo touch','csf'),
+        'label' => __('After turning on, there will be a note sound alert when the back to top button and Mashiro style logo touch','csf'),
         'default' => false
       ),
 
@@ -1061,7 +1068,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'poi_pjax',
         'type' => 'switcher',
         'title' => __('PJAX Partial Refresh','csf'),
-        'label' => __('Enabled by default, clicking on a new page will not require reloading','csf'),
+        'label' => __('Enabled by default, clicking to a new page will not require reloading','csf'),
         'default' => true
       ),
 
@@ -1069,14 +1076,14 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'nprogress_on',
         'type' => 'switcher',
         'title' => __('NProgress Loading Progress Bar','csf'),
-        'label' => __('Enabled by default, loading page will have progress bar alert','csf'),
+        'label' => __('Enabled by default, when loading page there will be a progress bar alert','csf'),
         'default' => true
       ),
 
       array(
         'id' => 'smoothscroll_option',
         'type' => 'switcher',
-        'title' => __('Global SmoothScroll','csf'),
+        'title' => __('Global Smooth Scroll','csf'),
         'label' => __('Enabled by default, page scrolling will be smoother','csf'),
         'default' => true
       ),
@@ -1085,7 +1092,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'captcha_switch',
         'type' => 'switcher',
         'title' => __('Login Captcha','csf'),
-        'label' => __('After turning on the captcha will appear in the backend login page and login template, this feature conflicts with other captcha related plugins, please do not turn on both','csf'),
+        'label' => __('After turning on, the captcha will appear in the backend login page and login template, this feature conflicts with other captcha related plugins, please do not turn on together','csf'),
         'default' => false
       ),
 
@@ -1125,8 +1132,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'load_nextpage_svg',
         'type' => 'text',
-        'title' => __('Load Next Page Placeholder SVG','csf'),
-        'desc' => __('Fill address, this is the SVG that will be displayed as a placeholder when the next page is loaded','csf'),
+        'title' => __('Placeholder SVG when loading the next page','csf'),
+        'desc' => __('Fill in the address, this is the SVG that will be displayed as a placeholder when the next page is loading','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/ball.svg'
       ),
     )
@@ -1134,20 +1141,20 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'id' => 'homepage', 
-    'title' => __('homepage settings','csf'),
+    'title' => __('HomePage Options','csf'),
     'icon' => 'fa fa-home',
   ) );
 
   CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title' => __('cover-set','csf'),
+    'title' => __('Cover Options','csf'),
     'icon' => 'fa fa-laptop',
     'fields' => array(
 
       array(
         'id' => 'cover_switch',
         'type' => 'switcher',
-        'title' => __('cover','csf'),
+        'title' => __('Cover Switch','csf'),
         'label' => __('On by default, if off, all options below will be disabled','csf'),
         'default' => true
       ),
@@ -1155,7 +1162,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'cover_full_screen',
         'type' => 'switcher',
-        'title' => __('cover_full_screen','csf'),
+        'title' => __('Cover Full Screen','csf'),
         'label' => __('Default on','csf'),
         'default' => true
       ),
@@ -1164,16 +1171,16 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'cover_half_screen_curve',
         'type' => 'switcher',
         'dependency' => array( 'cover_full_screen', '==', 'false' ),
-        'title' => __('curved mask below cover','csf'),
-        'label' => __('Arc masking will appear below the cover when turned on','csf'),
+        'title' => __('Cover Arc Occlusion (Below)','csf'),
+        'label' => __('An arc occlusion will appear below the cover when turned on','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'cover_radius',
         'type' => 'slider',
-        'title' => __('cover_rounded','csf'),
-        'desc' => __('slider, recommended value range 15-20','csf'),
+        'title' => __('Cover Radius','csf'),
+        'desc' => __('Slide to adjust, the recommended value range is 15-20','csf'),
         'unit' => 'px',
         'max' => '60',
         'default' => '15'
@@ -1182,7 +1189,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'cover_animation',
         'type' => 'switcher',
-        'title' => __('cover_animation','csf'),
+        'title' => __('Cover Animation','csf'),
         'label' => __('On by default, if off, the cover will be displayed directly','csf'),
         'default' => true
       ),
@@ -1190,9 +1197,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'cover_animation_time',
         'type' => 'slider',
-        'title' => __('cover_animation_time','csf'),
+        'title' => __('Cover Animation Time','csf'),
         'dependency' => array( 'cover_animation', '==', 'true' ),
-        'desc' => __('slider, recommended values range 1-2','csf'),
+        'desc' => __('Slide to adjust, the recommended value range is 1-2','csf'),
         'step' => '0.01',
         'unit' => 's',
         'max' => '5',
@@ -1202,15 +1209,15 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'infor_bar',
         'type' => 'switcher',
-        'title' => __('Cover info bar','csf'),
-        'label' => __('Enabled by default, show avatar, white cat effects text, signature bar, social area','csf'),
+        'title' => __('Cover Info Bar','csf'),
+        'label' => __('Enabled by default, show avatar, Mashiro effects text, signature bar, social area','csf'),
         'default' => true
       ),
 
       array(
         'id' => 'infor_bar_style',
         'type' => 'image_select',
-        'title' => __('cover_info_bar_style','csf'),
+        'title' => __('Cover Info Bar Style','csf'),
         'options' => array(
           'v1' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/infor_bar_style_v1.png',
           'v2' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/infor_bar_style_v2.png',
@@ -1221,16 +1228,16 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'infor_bar_bgcolor',
         'type' => 'color',
-        'title' => __('cover_info_bar_background_color','csf'),
-        'desc' => __('Custom color, lighter colors are recommended','csf'),
+        'title' => __('Cover Info Bar Background Color','csf'),
+        'desc' => __('Customize the colors, light colors are recommended','csf'),
         'default' => 'rgba(255,255,255,0.8)'
       ),     
 
       array(
         'id' => 'avatar_radius',
         'type' => 'slider',
-        'title' => __('Cover info bar avatar rounded corners','csf'),
-        'desc' => __('slider with recommended value of 100','csf'),
+        'title' => __('Cover Info Bar Avatar Radius','csf'),
+        'desc' => __('Slide to adjust, the recommended value is 100','csf'),
         'unit' => 'px',
         'default' => '100'
       ),
@@ -1238,8 +1245,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'signature_radius',
         'type' => 'slider',
-        'title' => __('Cover signature bar rounded','csf'),
-        'desc' => __('slider, recommended value range 10-20','csf'),
+        'title' => __('Cover Signature Bar Rounded','csf'),
+        'desc' => __('Slide to adjust, the recommended value range 10-20','csf'),
         'unit' => 'px',
         'max' => '50',
         'default' => '15'
@@ -1248,15 +1255,15 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'signature_text',
         'type' => 'text',
-        'title' => __('cover signature field text','csf'),
+        'title' => __('Cover Signature Field Text','csf'),
         'desc' => __('A self-descriptive quote','csf'),
-        'default' => '本当の声音を響かせてよ'
+        'default' => '本当の声を響かせてよ'
       ),
 
       array(
         'id' => 'signature_font',
         'type' => 'text',
-        'title' => __('cover signature field text font','csf'),
+        'title' => __('Cover Signature Field Text Font','csf'),
         'desc' => __('Fill in the font name. For example: Ma Shan Zheng','csf'),
         'default' => 'Noto Serif SC'
       ),
@@ -1264,8 +1271,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'signature_font_size',
         'type' => 'slider',
-        'title' => __('Cover signature field text font size','csf'),
-        'desc' => __('slider, recommended value range is 15-18','csf'),
+        'title' => __('Cover Signature Field Text Font Size','csf'),
+        'desc' => __('Slide to adjust, the recommended value range is 15-18','csf'),
         'unit' => 'px',
         'min' => '5',
         'max' => '20',
@@ -1275,7 +1282,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'signature_typing',
         'type' => 'switcher',
-        'title' => __('Cover signature bar typing effects','csf'),
+        'title' => __('Cover Signature Bar Typing Effects','csf'),
         'label' => __('When turned on, the signature bar text will have an additional paragraph of text and will be rendered with typing effects','csf'),
         'default' => false
       ),
@@ -1283,7 +1290,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'signature_typing_marks',
         'type' => 'switcher',
-        'title' => __('Cover signature field typing effects double quotes','csf'),
+        'title' => __('Cover Signature Field Typing Effects Double Quotes','csf'),
         'dependency' => array( 'signature_typing', '==', 'true' ),
         'label' => __('Typing effects will be appended with double quotes when turned on','csf'),
         'default' => false
@@ -1292,20 +1299,20 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'signature_typing_text',
         'type' => 'text',
-        'title' => __('cover_signature_typing_text','csf'),
+        'title' => __('Cover Signature Text','csf'),
         'dependency' => array( 'signature_typing', '==', 'true' ),
-        'desc' => __('Fill in the text part of the typing effect, must use English double quotes outside the text, use English commas to separate the two sentences, support HTML tags','csf'),
+        'desc' => __('Fill in the text of the typing effect. Use English double quotes outside the text, and English commas to separate the two sentences. Support HTML tags','csf'),
         'default' => '"寒蝉黎明之时,便是重生之日"'
       ),
 
       array(
         'id' => 'random_graphs_options',
         'type' => 'select',
-        'title' => __('Cover random graphs options','csf'),
+        'title' => __('Cover Random Image Options','csf'),
         'options' => array(
-          'external_api' => __('External API random image','csf'),
-          'webp_optimization' => __('Webp optimized random images','csf'),
-          'local' => __('local_random_image','csf'),
+          'external_api' => __('External API','csf'),
+          'webp_optimization' => __('Webp optimized','csf'),
+          'local' => __('Local','csf'),
         ),
         'default' => 'external_api'
       ),
@@ -1313,8 +1320,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'random_graphs_mts',
         'type' => 'switcher',
-        'title' => __('Cover random image multi-terminal separation','csf'),
-        'label' => __('Enabled by default, desktop and mobile will use separate random image addresses','csf'),
+        'title' => __('Cover Random Image Multi-terminal Separation','csf'),
+        'label' => __('Enabled by default, desktop and mobile devices will use separate random image addresses','csf'),
         'default' => true
       ),
 
@@ -1322,20 +1329,20 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'random_graphs_link',
         'type' => 'text',
         'title' => __('Webp Optimization/External API Desktop Side Random Graphics Address','csf'),
-        'desc' => __('fill address','csf'),
+        'desc' => __('Fill in the address','csf'),
         'default' => 'https://api.maho.cc/random-img/pc.php'
       ),
 
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => sprintf(__('If you choose to use Webp to optimize random images, click <a href="%s">here</a> to update the Manifest path', 'sakurairo', 'csf'), rest_url('sakura/v1/ database/update')), 
+        'content' => sprintf(__('如果你选择使用Webp优化随机图片 / If you choose to use Webp to optimize random images, 点击 / Click <a href="%s">这里 / here </a>来更新 Manifest 路径 / to update the Manifest path', 'sakurairo', 'csf'), rest_url('sakura/v1/ database/update')), 
       ),
 
       array(
         'id' => 'random_graphs_link_mobile',
         'type' => 'text',
-        'title' => __('External API mobile random image address','csf'),
+        'title' => __('External API Mobile Devices Random Image Address','csf'),
         'dependency' => array( 'random_graphs_mts', '==', 'true' ),
         'desc' => __('fill address','csf'),
         'default' => 'https://api.maho.cc/random-img/mobile.php'
@@ -1344,29 +1351,29 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'cache_cover',
         'type' => 'switcher',
-        'title' => __('Cover random background image cache','csf'),
-        'label' => __('Enabled by default, this feature will cache a cover image locally, which can improve the loading speed of the first cover after entering the homepage. Note: This feature requires the cover API to be able to accept cross-domain requests.' ,'csf'),
+        'title' => __('Cover Random Background Image Cache','csf'),
+        'label' => __('Enabled by default, this feature will cache a cover image locally, which can improve the loading speed of the first cover after entering the homepage. Note: This feature needs the cover APIs that accept cross-domain requests.' ,'csf'),
         'default' => true
       ),
 
       array(
         'id' => 'site_bg_as_cover',
         'type' => 'switcher',
-        'title' => __('Cover and foreground background integration','csf'),
-        'label' => __('When enabled, the background of the cover will be set to transparent, while the foreground background will use the cover‘s random image API','csf'),
+        'title' => __('Cover and Frontend Background Integration','csf'),
+        'label' => __('When enabled, the background of the cover will be set to transparent, while the frontend background will use the cover\'s random image API','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'random_graphs_filter',
         'type' => 'select',
-        'title' => __('cover_random_graphs_filter','csf'),
+        'title' => __('Cover Random Images Filter','csf'),
         'options' => array(
-          'filter-nothing' => __('no-filter','csf'),
-          'filter-undertint' => __('light-filter','csf'),
-          'filter-dim' => __('dull filter','csf'),
-          'filter-grid' => __('grid-filter','csf'),
-          'filter-dot' => __('dot-filter','csf'),
+          'filter-nothing' => __('No filter','csf'),
+          'filter-undertint' => __('Light filter','csf'),
+          'filter-dim' => __('Dimmed filter','csf'),
+          'filter-grid' => __('Grid filter','csf'),
+          'filter-dot' => __('Dot filter','csf'),
         ),
         'default' => 'filter-nothing'
       ),
@@ -1374,67 +1381,67 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'wave_effects',
         'type' => 'switcher',
-        'title' => __('cover wave effects','csf'),
-        'label' => __('Wave effect will appear at the bottom of the cover of the home page after opening, will be forced off in dark mode','csf'),
+        'title' => __('Cover Wave Effects','csf'),
+        'label' => __('Wave effect will appear at the bottom of the cover of the home page after turning on, and it will be forced off in the dark mode','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'drop_down_arrow',
         'type' => 'switcher',
-        'title' => __('cover_down_arrow','csf'),
-        'label' => __('Enabled by default, show dropdown arrow at bottom of home cover','csf'),
+        'title' => __('Cover Dropdown Arrow','csf'),
+        'label' => __('Enabled by default, show a dropdown arrow at bottom of home cover','csf'),
         'default' => true
       ),
 
       array(
         'id' => 'drop_down_arrow_mobile',
         'type' => 'switcher',
-        'title' => __('Cover dropdown arrow mobile display','csf'),
+        'title' => __('Cover Dropdown Arrow Display on Mobile Devices','csf'),
         'dependency' => array( 'drop_down_arrow', '==', 'true' ),
-        'label' => __('Drop down arrow will appear at the bottom of the mobile home cover after turning it on','csf'),
+        'label' => __('Drop down arrow will appear at the bottom of the mobile devices\' home cover after turning it on','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'drop_down_arrow_color',
         'type' => 'color',
-        'title' => __('Cover dropdown arrow color','csf'),
+        'title' => __('Cover Dropdown Arrow Color','csf'),
         'dependency' => array( 'drop_down_arrow', '==', 'true' ),
-        'desc' => __('Custom color, lighter colors are recommended','csf'),
+        'desc' => __('Customize the colors, light colors are recommended','csf'),
         'default' => 'rgba(255,255,255,0.8)'
       ),  
 
       array(
         'id' => 'drop_down_arrow_dark_color',
         'type' => 'color',
-        'title' => __('Cover dropdown arrow dark mode color','csf'),
+        'title' => __('Cover Dropdown Arrow Color (Dark Mode)','csf'),
         'dependency' => array( 'drop_down_arrow', '==', 'true' ),
-        'desc' => __('Custom colors, dark colors are recommended','csf'),
+        'desc' => __('Customize the colors, dark colors are recommended','csf'),
         'default' => 'rgba(51,51,51,0.8)'
       ),  
 
       array(
         'id' => 'cover_video',
         'type' => 'switcher',
-        'title' => __('cover_video','csf'),
-        'label' => __('Replace cover random image as the main display content when turned on','csf'),
+        'title' => __('Cover Video','csf'),
+        'label' => __('Use a video instead of the images as the cover','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'cover_video_loop',
         'type' => 'switcher',
-        'title' => __('cover_video_loop','csf'),
+        'title' => __('Cover Video Loop','csf'),
         'dependency' => array( 'cover_video', '==', 'true' ),
-        'label' => __('Video will loop automatically when enabled, need to enable Pjax','csf'),
+        'label' => __('Video will loop automatically when enabled, Pjax needed','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'cover_video_link',
         'type' => 'text',
-        'title' => __('cover video address','csf'),
+        'title' => __('Cover Video Address','csf'),
         'dependency' => array( 'cover_video', '==', 'true' ),
         'desc' => __('Fill in the address which splices the video name below, no slash at the end of the address','csf'),
       ),
@@ -1442,9 +1449,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'cover_video_title',
         'type' => 'text',
-        'title' => __('cover video name','csf'),
+        'title' => __('Cover Video Name','csf'),
         'dependency' => array( 'cover_video', '==', 'true' ),
-        'desc' => __('For example: abc.mp4, just fill in the video file name abc, multiple separated by English commas like abc,efg, default random play','csf'),
+        'desc' => __('For example: abc.mp4, just fill in the video file name abc. Multiple videos should be separated by English commas like "abc,efg," Random play is on by default.','csf'),
       ),
 
     )
@@ -1452,19 +1459,19 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title' => __('cover social area settings','csf'),
+    'title' => __('Cover Social Area Options','csf'),
     'icon' => 'fa fa-share-square-o',
     'fields' => array(
 
       array(
         'type' => 'subheading',
-        'content' => __('options','csf'),
+        'content' => __('Related Options','csf'),
       ),
 
       array(
         'id' => 'social_area',
         'type' => 'switcher',
-        'title' => __('cover social area','csf'),
+        'title' => __('Cover Social Area','csf'),
         'label' => __('Enabled by default, show cover random image toggle button and social network icons','csf'),
         'default' => true
       ),
@@ -1473,7 +1480,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'social_display_icon',
         'type' => 'image_select',
         'title' => __('social_icon','csf'),
-        'desc' => __('Select your favorite icon pack. Icon pack references are detailed in About theme','csf'),
+        'desc' => __('Select your favorite icon pack. Icon pack references are detailed in the "About Theme" section','csf'),
         'options'     => array(
           'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/fluent_design'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_fd.gif',
           'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/muh2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_h2.gif',
@@ -1494,9 +1501,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'social_area_radius',
         'type' => 'slider',
-        'title' => __('Cover social area rounded corners','csf'),
+        'title' => __('Cover Social Area Rounded Corners','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc' => __('slider, recommended values range 10-20','csf'),
+        'desc' => __('Slide to adjust, the recommended value range is 10-20','csf'),
         'unit' => 'px',
         'max' => '30',
         'default' => '15'
@@ -1505,7 +1512,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'cover_random_graphs_switch',
         'type' => 'switcher',
-        'title' => __('cover_random_graphs_switch_button','csf'),
+        'title' => __('Switch Button of Random Images','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
         'label' => __('Enabled by default, show cover random image toggle button','csf'),
         'default' => true
@@ -1513,15 +1520,15 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type' => 'subheading',
-        'content' => __('social network','csf'),
+        'content' => __('Social Network','csf'),
       ),
 
       array(
         'id'     => 'wechat',
         'type'  => 'upload',
-        'title' => __(' Wechat ','csf'),
+        'title' => __('Wechat','csf'),
         'dependency' => array( 'social_ area', '==', 'true' ),
-        'desc' => __('The best ratio is 1:1','csf'),
+        'desc' => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
       ),
 
@@ -1592,7 +1599,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'qzone',
         'type'   => 'text',
-        'title' => __('QQ space','csf'),
+        'title' => __('QZone','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
         'desc' => __('add URL','csf'),
       ),
@@ -1656,7 +1663,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'socialdiy1',
         'type'   => 'text',
-        'title' => __('Customized social networkingⅠ','csf'),
+        'title' => __('Customized social network Ⅰ','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
         'desc' => __('add URL','csf'),
       ),
@@ -1664,16 +1671,16 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'socialdiyp1',
         'type'  => 'upload',
-        'title' => __('Customized social networking Ⅰ icon','csf'),
+        'title' => __('Customized Social Network Ⅰ icon','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc' => __('The best ratio is 1:1','csf'),
+        'desc' => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
       ),
 
       array(
         'id'     => 'socialdiy2',
         'type'   => 'text',
-        'title' => __('Customized social networking Ⅱ','csf'),
+        'title' => __('Customized Social Network Ⅱ','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
         'desc' => __('add URL','csf'),
       ),
@@ -1681,24 +1688,24 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'socialdiyp2',
         'type'  => 'upload',
-        'title' => __('Customized social networking Ⅱ icon','csf'),
+        'title' => __('Customized Social Network Ⅱ icon','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc' => __('The best ratio is 1:1','csf'),
+        'desc' => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
       ),
 
       array(
         'id' => 'email_name',
         'type' => 'text',
-        'title' => __('email_username','csf'),
+        'title' => __('Email Username','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc' => __('name@domain.com fo name, front-end only has js runtime environment to get the full address, you can fill in with confidence','csf'),
+        'desc' => __('name@domain.com fo name, the full address can be known only when there is a js runtime in the frontend, you can fill in with confidence','csf'),
       ),
 
       array(
         'id' => 'email_domain',
         'type' => 'text',
-        'title' => __('email_username','csf'),
+        'title' => __('Email Domain','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
         'desc' => __('name@domain.com fo domain.com','csf'),
       ),
@@ -1708,19 +1715,19 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title' => __('Bulletin Board and Area Title Settings','csf'),
+    'title' => __('Bulletin Board and Area Title Options','csf'),
     'icon' => 'fa fa-bullhorn',
     'fields' => array(
 
       array(
         'type' => 'subheading',
-        'content' => __('bulletin-board','csf'),
+        'content' => __('Bulletin Board','csf'),
       ),
 
       array(
         'id' => 'announce_bar',
         'type' => 'switcher',
-        'title' => __('announce_bar','csf'),
+        'title' => __('Bulletin Board','csf'),
         'label' => __('When enabled the bulletin board will be displayed below the front cover','csf'),
         'default' => false
       ),
@@ -1728,11 +1735,11 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'announce_bar_style',
         'type' => 'radio',
-        'title' => __('announce_bar_style','csf'),
+        'title' => __('Bulletin Board Style','csf'),
         'dependency' => array( 'announce_bar', '==', 'true' ),
         'options' => array(
-          'picture' => 'picture background',
-          'pure' => 'solid background',
+          'picture' => __('Picture Background','csf'),
+          'pure' => __('Color Background','csf'),
         ),
         'default' => 'picture'
       ),
@@ -1740,7 +1747,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'announce_bar_icon',
         'type' => 'switcher',
-        'title' => __('Announcement bar "broadcast" icon','csf'),
+        'title' => __('Bulletin Board "broadcast" Icon','csf'),
         'dependency' => array( 'announce_bar', '==', 'true' ),
         'label' => __('The "broadcast" icon will be displayed on the left side of the announcement bar','csf'),
         'default' => true
@@ -1749,12 +1756,12 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'announcement_bg',
         'type' => 'upload',
-        'title' => __('announcement_bg_background','csf'),
+        'title' => __('Bulletin Board Background','csf'),
         'dependency' => array(
           array( 'announce_bar', '==', 'true' ),
           array( 'announce_bar_style', '==', 'picture' ),
         ),
-        'desc' => __('best width 820px, best height 67px','csf'),
+        'desc' => __('Best width 820px, best height 67px','csf'),
         'library' => 'image',
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/announcement_bg.jpg'
       ),
@@ -1762,27 +1769,27 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'announce_bar_border_color',
         'type' => 'color',
-        'title' => __('announce_bar_border_color','csf'),
+        'title' => __('Bulletin Board Border Color','csf'),
         'dependency' => array(
           array( 'announce_bar', '==', 'true' ),
           array( 'announce_bar_style', '==', 'pure' ),
         ),
-        'desc' => __('Custom color, it is recommended to use a color that is the same color as the theme color and is a lighter color','csf'),
+        'desc' => __('Customize the colors, it is recommended to use a lighter color that corresponds with the theme color','csf'),
         'default' => '#E6E6E6'
       ),
 
       array(
         'id' => 'announce_text',
         'type' => 'text',
-        'title' => __('announcement text','csf'),
+        'title' => __('Bulletin Board Text','csf'),
         'dependency' => array( 'announce_bar', '==', 'true' ),
-        'desc' => __('Fill in the announcement text, text beyond 142 bytes will be hidden','csf'),
+        'desc' => __('Fill in the announcement text, the text beyond 142 bytes will be hidden','csf'),
       ),
 
       array(
         'id' => 'announce_text_align',
         'type' => 'image_select',
-        'title' => __('Announcement text alignment direction','csf'),
+        'title' => __('Bulletin Board Alignment','csf'),
         'dependency' => array( 'announce_bar', '==', 'true' ),
         'options'     => array(
           'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_left.png',
@@ -1795,45 +1802,45 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'announce_text_color',
         'type' => 'color',
-        'title' => __('announcement text color','csf'),
+        'title' => __('Bulletin Board Text Color','csf'),
         'dependency' => array( 'announce_bar', '==', 'true' ),
-        'desc' => __('Custom color, suggest matching appropriate color to background color','csf'),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','csf'),
         'default' => '#999'
       ),    
 
       array(
         'type' => 'subheading',
-        'content' => __('area title','csf'),
+        'content' => __('Area Title','csf'),
       ),
 
       array(
         'id' => 'exhibition_area_title',
         'type' => 'text',
-        'title' => __('display area title','csf'),
-        'desc' => __('Default is "display", you can change it to something else, but of course it can-t be used as an ad! Not allowed!!!' ,'csf'),
-        'default' => 'show'
+        'title' => __('Display Area Title','csf'),
+        'desc' => __('Default is "Display", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'csf'),
+        'default' => 'Display'
       ),
 
       array(
         'id' => 'post_area_title',
         'type' => 'text',
-        'title' => __('post area title','csf'),
-        'desc' => __('Default is "article", you can change it to something else, but of course it can-t be used as an advertisement! Not allowed!!!' ,'csf'),
-        'default' => 'article'
+        'title' => __('Post Area Title','csf'),
+        'desc' => __('Default is "Article", you can change it to anything else, but of course it CANNOT be used as an advertisement! Not allowed!!!' ,'csf'),
+        'default' => 'Article'
       ),
 
       array(
         'id' => 'area_title_font',
         'type' => 'text',
-        'title' => __('area title font','csf'),
-        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','csf'),
+        'title' => __('Area Title Font','csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','csf'),
         'default' => 'Noto Serif SC'
       ),
 
       array(
         'id' => 'area_title_text_align',
         'type' => 'image_select',
-        'title' => __('area title alignment direction','csf'),
+        'title' => __('Area Title Alignment','csf'),
         'options' => array(
           'left' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_left.png',
           'right' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_right.png',
@@ -1845,8 +1852,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'area_title_bottom_color',
         'type' => 'color',
-        'title' => __('area_title_bottom_color','csf'),
-        'desc' => __('Custom color, it is recommended to use a color that is the same color as the theme color and is a lighter color','csf'),
+        'title' => __('Area Title Bottom Color','csf'),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','csf'),
         'default' => '#e8e8e8'
       ),  
 
@@ -1855,22 +1862,22 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title' => __('display area settings','csf'),
+    'title' => __('Display Area Options','csf'),
     'icon' => 'fa fa-bookmark',
     'fields' => array(
 
       array(
         'id' => 'exhibition_area',
         'type' => 'switcher',
-        'title' => __('display_area','csf'),
-        'label' => __('Enabled by default, display area above article area','csf'),
+        'title' => __('Display Area','csf'),
+        'label' => __('Enabled by default, display area is above article area','csf'),
         'default' => true
       ),
 
       array(
         'id' => 'exhibition_area_style',
         'type' => 'image_select',
-        'title' => __('display_area_style','csf'),
+        'title' => __('Display Area Style','csf'),
         'options' => array(
           'left_and_right' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/exhibition_area_style_lr.png',
           'bottom_to_top' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/exhibition_area_style_ud.png',
@@ -1881,7 +1888,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'exhibition_area_compat',
         'type' => 'switcher',
-        'title' => __('display area compatibility mode','csf'),
+        'title' => __('Display Area Compatibility Mode','csf'),
         'dependency' => array( 'exhibition_area_style', '==', 'left_and_right' ),
         'label' => __('Enabled by default, this option avoids the problem of misaligned display areas','csf'),
         'default' => true
@@ -1890,17 +1897,17 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'exhibition_background_color',
         'type' => 'color',
-        'title' => __('display area background color','csf'),
+        'title' => __('Display Area Background Color','csf'),
         'dependency' => array( 'exhibition_area_style', '==', 'left_and_right' ),
-        'desc' => __('Custom colors, lighter colors are recommended','csf'),
+        'desc' => __('Customize the colors, light colors are recommended','csf'),
         'default' => 'rgba(255,255,255,0.4)'
       ),
       
       array(
         'id' => 'exhibition_radius',
         'type' => 'slider',
-        'title' => __('display area rounded corners','csf'),
-        'desc' => __('Slider with recommended value of 15','csf'),
+        'title' => __('Display Area Rounded Corners','csf'),
+        'desc' => __('Slide to adjust, the recommended value is 15','csf'),
         'unit' => 'px',
         'default' => '15'
       ),
@@ -1908,10 +1915,10 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'exhibition',
         'type' => 'tabbed',
-        'title' => __('display area settings','csf'),
+        'title' => __('Display Area Options','csf'),
         'tabs' => array(
           array(
-            'title' => __('First display area','csf'),
+            'title' => __('First Display Area','csf'),
             'fields' => array(
               array(
                 'id' => 'img1',
@@ -1937,7 +1944,7 @@ if( class_exists( 'CSF' ) ) {
             )
           ),
           array(
-            'title' => __('Second display area','csf'),
+            'title' => __('Second Display Area','csf'),
             'fields' => array(
               array(
                 'id' => 'img2',
@@ -1963,7 +1970,7 @@ if( class_exists( 'CSF' ) ) {
             )
           ),
           array(
-            'title' => __('Third display area','csf'),
+            'title' => __('Third Display Area','csf'),
             'fields' => array(
               array(
                 'id' => 'img3',
@@ -2010,14 +2017,14 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title' => __('article area settings','csf'),
+    'title' => __('Article Area Options','csf'),
     'icon'      => 'fa fa-book',
     'fields' => array(
 
       array(
         'id'         => 'post_list_style',
         'type'       => 'image_select',
-        'title' => __('article area display style','csf'),
+        'title' => __('Article Area Display Style','csf'),
         'options'    => array(
           'imageflow' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura_left.png',
           'akinastyle' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina.png',
@@ -2028,7 +2035,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'post_list_akina_type',
         'type'       => 'image_select',
-        'title' => __('Article area decorated with featured image display shapes','csf'),
+        'title' => __('Article Area Featured Image Display Shapes','csf'),
         'dependency' => array( 'post_list_style', '==', 'akinastyle' ),
         'desc' => __('You can choose between a circular display or a rectangular display of the article area decorated with featured images','csf'),
         'options'    => array(
@@ -2041,9 +2048,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_list_image_align',
         'type' => 'image_select',
-        'title' => __('post_area_decoration_featured_image_align_direction','csf'),
+        'title' => __('Article Area Featured Image Alignment','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('You can choose different directions to display the post area decorated with featured images','csf'),
+        'desc' => __('You can choose different directions to display the Article area decorated with featured images','csf'),
         'options' => array(
           'alternate' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura1.png',
           'left' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura2.png',
@@ -2055,10 +2062,10 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_cover_options',
         'type' => 'radio',
-        'title' => __('Post area decorated with featured image options','csf'),
+        'title' => __('Article Area Featured Image Options','csf'),
         'options' => array(
-          'type_1' => 'cover random image',
-          'type_2' => 'External API random image',
+          'type_1' => __('Cover Random Image','csf'),
+          'type_2' => __('External API Random Image','csf'),
         ),
         'default' => 'type_1'
       ),
@@ -2066,7 +2073,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_cover',
         'type' => 'text',
-        'title' => __('post_area_decoration_featured_image_external_API_random_image_address','csf'),
+        'title' => __('Article Featured Image External API Random Image Address','csf'),
         'dependency' => array( 'post_cover_options', '==', 'type_2' ),
         'desc' => __('add URL','csf'),
       ),
@@ -2074,8 +2081,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_title_font_size',
         'type' => 'slider',
-        'title' => __('post area title font size','csf'),
-        'desc' => __('Slider, recommended value range 16-20','csf'),
+        'title' => __('Article Area Title Font Size','csf'),
+        'desc' => __('Slide to adjust, the recommended value range is 16-20','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
         'unit' => 'px',
         'step' => '1',
@@ -2087,27 +2094,27 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_date_background_color',
         'type' => 'color',
-        'title' => __('Post area time alert area background color','csf'),
+        'title' => __('Article Area Time Display Area Background Color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('Custom color, it is recommended to use a color that is the same color as the theme color and belongs to a lighter color','csf'),
+        'desc' => __('Customize the colors, it is recommended to use a color that is the same color as the theme color and belongs to a lighter color','csf'),
         'default' => '#fff5e0'
       ),    
 
       array(
         'id' => 'post_date_text_color',
         'type' => 'color',
-        'title' => __('Post area time alert area text color','csf'),
+        'title' => __('Article Area Time Display Area Text Color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('Custom color, suggest using the same color as the theme color matching color','csf'),
+        'desc' => __('Customize the colors, suggest the same as the matching color','csf'),
         'default' => '#ffcc00'
       ),    
 
       array(
         'id' => 'post_date_font_size',
         'type' => 'slider',
-        'title' => __('Post Area Time Alert Area Font Size','csf'),
+        'title' => __('Article Area Time Display Area Font Size','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('slider, recommended values range 10-14','csf'),
+        'desc' => __('Slide to adjust, the recommended values range 10-14','csf'),
         'unit' => 'px',
         'step' => '1',
         'min' => '6',
@@ -2118,13 +2125,13 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_icon_more',
         'type' => 'switcher',
-        'title' => __('Post area "detail" icon','csf'),
-        'label' => __('When enabled the "detail" icon will be displayed below the article area','csf'),
+        'title' => __('Article Area "Detail" Icon','csf'),
+        'label' => __('When enabled the "Detail" icon will be displayed below the article area','csf'),
         'default' => false
       ),array(
         'id' => 'is_author_meta_show',
         'type' => 'switcher',
-        'title' => __('Article Area "Author Info"','csf'),
+        'title' => __('Article Area Author Info','csf'),
         'label' => __('When turned on, author information will be added to the article metadata section.' ,'csf'),
         'default' => false
       ),
@@ -2132,18 +2139,18 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_icon_color',
         'type' => 'color',
-        'title' => __('Post area icon color','csf'),
+        'title' => __('Article Area Icon Color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('Custom color, suggest using the same color as the theme color matching color','csf'),
+        'desc' => __('Customize the colors, suggest the same as the matching color','csf'),
         'default' => '#ffcc00'
       ),    
 
       array(
         'id' => 'post_border_shadow_color',
         'type' => 'color',
-        'title' => __('Post area border shadow color','csf'),
+        'title' => __('Article Area Border Shadow Color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('Custom color, it is recommended to use a color that is the same color as the theme color and is a lighter color','csf'),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','csf'),
         'default' => '#e8e8e8'
       ),    
 
@@ -2152,20 +2159,20 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'id' => 'page', 
-    'title' => __('page settings','csf'),
+    'title' => __('Page Options','csf'),
     'icon' => 'fa fa-file-text',
   ) );
 
   CSF::createSection( $prefix, array(
     'parent' => 'page', 
-    'title' => __('integrated-setting','csf'),
+    'title' => __('Integrated Options','csf'),
     'icon' => 'fa fa-compass',
     'fields' => array(
 
       array(
         'id' => 'page_style',
         'type' => 'image_select',
-        'title' => __('page_style','csf'),
+        'title' => __('Page Style','csf'),
         'options' => array(
           'sakurairo' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/page_style_iro.png',
           'sakura' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/page_style_sakura.png',
@@ -2178,8 +2185,8 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'radio',
         'title' => __('Page Layout Style','csf'),
         'options' => array(
-          'sakurairo' => __('default style','csf'),
-          'github' => __('Github style','csf'),
+          'sakurairo' => __('Default Style','csf'),
+          'github' => __('Github Style','csf'),
         ),
         'default' => 'sakurairo'
       ),
@@ -2187,15 +2194,15 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'patternimg',
         'type' => 'switcher',
-        'title' => __('page decoration image','csf'),
-        'label' => __('enabled by default, show on article pages, standalone pages and category pages','csf'),
+        'title' => __('Page Decoration Image','csf'),
+        'label' => __('Enabled by default, show on article pages, standalone pages and category pages','csf'),
         'default' => true
       ),
 
       array(
         'id' => 'page_title_animation',
         'type' => 'switcher',
-        'title' => __('page title animation','csf'),
+        'title' => __('Page Title Animation','csf'),
         'label' => __('Page title will have float-in animation when turned on','csf'),
         'default' => true
       ),
@@ -2203,9 +2210,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'page_title_animation_time',
         'type' => 'slider',
-        'title' => __('page title animation time','csf'),
+        'title' => __('Page Title Animation Time','csf'),
         'dependency' => array( 'page_title_animation', '==', 'true' ),
-        'desc' => __('slider, recommended values range 1-2','csf'),
+        'desc' => __('Slide to adjust, recommended value range is 1-2','csf'),
         'step' => '0.01',
         'unit' => 's',
         'max' => '5',
@@ -2223,15 +2230,15 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'page_lazyload',
         'type' => 'switcher',
-        'title' => __('Page LazyLoad loading','csf'),
-        'label' => __('LazyLoad effect for page images after turning on, WordPress block editor already comes with similar effect, not recommended to turn on','csf'),
+        'title' => __('Page LazyLoad','csf'),
+        'label' => __('LazyLoad effect for page images, WordPress block editor already comes with similar effect, not recommended to turn on','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'page_lazyload_spinner',
         'type' => 'text',
-        'title' => __('Page LazyLoad loading placeholder SVG','csf'),
+        'title' => __('Page LazyLoad placeholder SVG','csf'),
         'dependency' => array( 'page_lazyload', '==', 'true' ),
         'desc' => __('Fill in the address, this is the placeholder image that will be displayed when the page LazyLoad is loaded','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/inload.svg'
@@ -2240,7 +2247,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'load_in_svg',
         'type' => 'text',
-        'title' => __('Page image loading placeholder SVG','csf'),
+        'title' => __('Page Image Loading Placeholder SVG','csf'),
         'desc' => __('Fill address, this is the SVG that will be displayed as a placeholder when the page image is loaded','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/inload.svg'
       ),
@@ -2250,15 +2257,15 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'page', 
-    'title' => __('article page settings','csf'),
+    'title' => __('Article Page Options','csf'),
     'icon' => 'fa fa-archive',
     'fields' => array(
 
       array(
         'id' => 'article_title_font_size',
         'type' => 'slider',
-        'title' => __('article page title font size','csf'),
-        'desc' => __('Slider, recommended value range is 28-36. This option is only available for article pages that have a featured image set','csf'),
+        'title' => __('Article Page Title Font Size','csf'),
+        'desc' => __('Slide to adjust, recommended value range is 28-36. This option is only available for article pages that have a featured image set','csf'),
         'unit' => 'px',
         'min' => '16',
         'max' => '48',
@@ -2268,15 +2275,15 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'article_title_line',
         'type' => 'switcher',
-        'title' => __('Article page title underline animation','csf'),
-        'label' => __('Article title will have underline animation when enabled and article has featured image set','csf'),
+        'title' => __('Article Page Title Underline Animation','csf'),
+        'label' => __('Article title will have underline animation when this is enabled and article has a featured image set','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'article_auto_toc',
         'type' => 'switcher',
-        'title' => __('Article page auto show menu','csf'),
+        'title' => __('Article Page Auto Show Menu','csf'),
         'label' => __('Enabled by default, the article page will automatically show the menu','csf'),
         'default' => true
       ),
@@ -2284,15 +2291,15 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'article_nextpre',
         'type' => 'switcher',
-        'title' => __('Article page up/down article switcher','csf'),
-        'label' => __('After turning on the article page will appear the upper and lower article switch','csf'),
+        'title' => __('Article Page Prev/Next Article Switcher','csf'),
+        'label' => __('After turning on the article page will appear the previous and next article switch','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'article_lincenses',
         'type' => 'switcher',
-        'title' => __('Article page copyright tips and labels','csf'),
+        'title' => __('Article Page Copyright Tips and Labels','csf'),
         'label' => __('Copyright hint and label will appear on article pages when turned on','csf'),
         'default' => false
       ),
@@ -2300,7 +2307,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'author_profile',
         'type' => 'switcher',
-        'title' => __('Article page author info','csf'),
+        'title' => __('Article Page Author Info','csf'),
         'label' => __('Author information will appear on the article page after turning it on','csf'),
         'default' => false
       ),
@@ -2308,25 +2315,25 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'author_profile_text',
         'type' => 'text',
-        'title' => __('Article page author info signature field text','csf'),
+        'title' => __('Article Page Author Info Signature Field Text','csf'),
         'dependency' => array( 'author_profile', '==', 'true' ),
         'desc' => __('A self-descriptive quote','csf'),
-        'default' => '本当の声音を響かせてよ'
+        'default' => '本当の声を響かせてよ'
       ),
 
       array(
         'id' => 'alipay_code',
         'type' => 'upload',
-        'title' => __('article page appreciation button paypal QR code','csf'),
-        'desc' => __('Upload Alipay Receipt Code Image','csf'),
+        'title' => __('Article Page Appreciation Button (Alipay QR Code)','csf'),
+        'desc' => __('Upload Alipay Receipt QR Code Image','csf'),
         'library' => 'image',
       ),
 
       array(
         'id' => 'wechat_code',
         'type' => 'upload',
-        'title' => __('article page appreciation button wechat code','csf'),
-        'desc' => __('Upload WeChat Receipt Code Image','csf'),
+        'title' => __('Article Page Appreciation Button (Wechat QR Code)','csf'),
+        'desc' => __('Upload WeChat Receipt QR Code Image','csf'),
         'library' => 'image',
       ),
 
@@ -2335,15 +2342,15 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'page', 
-    'title' => __('template page settings','csf'),
+    'title' => __('Template Page Options','csf'),
     'icon' => 'fa fa-window-maximize',
     'fields' => array(
 
       array(
         'id' => 'page_temp_title_font_size',
         'type' => 'slider',
-        'title' => __('template page title font size','csf'),
-        'desc' => __('Slider, recommended value range is 36-48. This option is only available for template pages with featured images already set','csf'),
+        'title' => __('Template Page Title Font Size','csf'),
+        'desc' => __('Slide to adjust, recommended value range is 36-48. This option is only available for template pages with featured images already set','csf'),
         'unit' => 'px',
         'min' => '20',
         'max' => '64',
@@ -2353,23 +2360,23 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'shuoshuo_background_color1',
         'type' => 'color',
-        'title' => __('say template say background colorⅠ','csf'),
-        'desc' => __('Custom colors','csf'),
+        'title' => __('Ideas Template Background ColorⅠ','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#ffe066'
       ),    
 
       array(
         'id' => 'shuoshuo_background_color2',
         'type' => 'color',
-        'title' => __('talk about template talk about background color II','csf'),
-        'desc' => __('Custom colors','csf'),
+        'title' => __('Ideas Template Background Color II','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#ffcc00'
       ),    
 
       array(
         'id' => 'shuoshuo_arrow',
         'type' => 'switcher',
-        'title' => __('say template say tip arrow','csf'),
+        'title' => __('Ideas Template Tip Arrow','csf'),
         'label' => __('After turning on the alert arrow will appear on the left side of the comment','csf'),
         'default' => false
       ),
@@ -2377,7 +2384,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'shuoshuo_font',
         'type' => 'text',
-        'title' => __('talk about template talk about font','csf'),
+        'title' => __('Ideas Template Font','csf'),
         'desc' => __('Fill in the font name. For example: Ma Shan Zheng','csf'),
         'default' => 'Noto Serif SC'
       ),
@@ -2385,23 +2392,23 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'bilibili_id',
         'type' => 'text',
-        'title' => __('bilibili catch-up template account ID','csf'),
-        'desc' => __('Fill in your account ID, e.g. https://space.bilibili.com/13972644/, just the number "13972644" part','csf'),
+        'title' => __('Bilibili Bangumi Catch-up Template Account ID','csf'),
+        'desc' => __('Fill in your account ID, e.g. https://space.bilibili.com/13972644/, just the number part "13972644"','csf'),
         'default' => '13972644'
       ),
 
       array(
         'id' => 'bilibili_cookie',
         'type' => 'text',
-        'title' => __('bilibili catch-up template account cookies','csf'),
-        'desc' => __('Fill in your account cookies, F12 to open your browser web panel, go to your B site homepage to get cookies. if left empty, it will not show the progress of catching up','csf'),
+        'title' => __('Bilibili Bangumi Catch-up Template Account Cookies','csf'),
+        'desc' => __('Fill in your account cookies, F12 to open your browser web panel, go to your bilibili homepage to get cookies. If left empty, it will not show the progress of catching up bangumis','csf'),
         'default' => 'LIVE_BUVID='
       ),
 
       array(
         'id' => 'friend_link_align',
         'type' => 'image_select',
-        'title' => __('friend_link_template_unit_alignment_direction','csf'),
+        'title' => __('Friend Link Template Unit Alignment','csf'),
         'options'     => array(
           'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/friend_link_left.png',
           'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/friend_link_right.png',
@@ -2413,7 +2420,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'ex_register_open',
         'type' => 'switcher',
-        'title' => __('Login template registration function','csf'),
+        'title' => __('Login Template Registration Function','csf'),
         'label' => __('Login template will allow registration when enabled','csf'),
         'default' => false
       ),
@@ -2423,18 +2430,18 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'page', 
-    'title' => __('comment-related settings','csf'),
+    'title' => __('Comment-related Options','csf'),
     'icon' => 'fa fa-comments-o',
     'fields' => array(
 
       array(
         'id' => 'comment_area',
         'type' => 'radio',
-        'title' => __('page comment area display','csf'),
-        'desc' => __('You can choose to expand or contract the content of the comments area','csf'),
+        'title' => __('Page Comment Area Display','csf'),
+        'desc' => __('You can choose to expand or shirink the content of the comment area','csf'),
         'options' => array(
-          'unfold' => 'expand',
-          'fold' => 'shrink',
+          'unfold' => __('Expand','csf'),
+          'fold' => __('Shrink','csf'),
         ),
         'default' => 'unfold'
       ),
@@ -2442,23 +2449,23 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'comment_smile_bilibili',
         'type' => 'switcher',
-        'title' => __('Page comment area bilibili emoji pack','csf'),
-        'label' => __('Default on, beeping emoticons are displayed below the comment box','csf'),
+        'title' => __('Page Comment Area Bilibili Emoji Pack','csf'),
+        'label' => __('Default on, bilibili emotions are displayed below the comment box','csf'),
         'default' => true
       ),
 
       array(
         'id' => 'comment_area_image',
         'type' => 'upload',
-        'title' => __('Page comment area bottom right background image','csf'),
-        'desc' => __('If this option is blank, no image, no best recommendation','csf'),
+        'title' => __('Page Comment Area Bottom Right Background Image','csf'),
+        'desc' => __('If this option is blank, there will be no image, no best recommendation here','csf'),
         'library' => 'image',
       ),
 
       array(
         'id' => 'comment_useragent',
         'type' => 'switcher',
-        'title' => __('Page comment area UA info','csf'),
+        'title' => __('Page Comment Area UA Info','csf'),
         'label' => __('When enabled, the page comment area will display the user’s browser, operating system information','csf'),
         'default' => false
       ),
@@ -2466,36 +2473,36 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'comment_location',
         'type' => 'switcher',
-        'title' => __('Page comment area location information','csf'),
-        'label' => __('When turned on the page comment area will show the user’s location information','csf'),
+        'title' => __('Page Comment Area Location Information','csf'),
+        'label' => __('When enabled, the page comment area will show the user’s location information','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'comment_private_message',
         'type' => 'switcher',
-        'title' => __('private comment function','csf'),
-        'label' => __('Enabled will allow users to set their comments to be invisible to others','csf'),
+        'title' => __('Private Comment Function','csf'),
+        'label' => __('When enabled, users are allowed to set their comments to be invisible to others','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'not_robot',
         'type' => 'switcher',
-        'title' => __('Page comment area bot verification','csf'),
-        'label' => __('After opening user comments need to be verified before posting','csf'),
+        'title' => __('Page Comment Area Bot Verification','csf'),
+        'label' => __('After turning on user comments need to be verified before posting','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'qq_avatar_link',
         'type' => 'select',
-        'title' => __('QQ avatar link encryption','csf'),
+        'title' => __('QQ Avatar Link Encryption','csf'),
         'options' => array(
-          'off' => __('off','csf'),
-          'type_1' => 'redirect (low security)',
-          'type_2' => 'Backend get avatar data (medium security)',
-          'type_3' => 'Backend parse avatar interface (high security, slow)',
+          'off' => __('Off','csf'),
+          'type_1' => __('Redirect (low security)','csf'),
+          'type_2' => __('Get avatar data in the backend (medium security)','csf'),
+          'type_3' => __('Parse avatar interface in the backend (high security, slow)','csf'),
         ),
         'default' => 'off'
       ),
@@ -2503,9 +2510,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'img_upload_api',
         'type' => 'select',
-        'title' => __('Page comment area upload image interface','csf'),
+        'title' => __('Page Comment Area Upload Image Interface','csf'),
         'options' => array(
-          'off' => __('off','csf'),
+          'off' => __('Off','csf'),
           'imgur'  => 'Imgur (https://imgur.com)',
           'smms'  => 'SM.MS (https://sm.ms)',
           'chevereto'  => 'Chevereto (https://chevereto.com)',
@@ -2518,13 +2525,13 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'text',
         'title' => __('Imgur Client ID','csf'),
         'dependency' => array( 'img_upload_api', '==', 'imgur' ),
-        'desc' => __('Fill in Client ID here, to register please visit https://api.imgur.com/oauth2/addclient ','csf'),
+        'desc' => __('Fill in Client ID here, to register please visit https://api.imgur.com/oauth2/addclient','csf'),
       ),
 
       array(
         'id' => 'imgur_upload_image_proxy',
         'type' => 'text',
-        'title' => __('Imgur upload proxy','csf'),
+        'title' => __('Imgur Upload Proxy','csf'),
         'dependency' => array( 'img_upload_api', '==', 'imgur' ),
         'desc' => __('The proxy used by the backend when uploading images to Imgur. You can refer to the tutorial: https://2heng.xin/2018/06/06/javascript-upload-images-with-imgur-api/','csf'),
         'default' => 'https://api.imgur.com/3/image/'
@@ -2535,7 +2542,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'text',
         'title' => __('SM.MS Secret Token','csf'),
         'dependency' => array( 'img_upload_api', '==', 'smms' ),
-        'desc' => __('Fill in Key here, to get it please visit https://sm.ms/home/apitoken ','csf'),
+        'desc' => __('Fill in your Key here, to get it please visit https://sm.ms/home/apitoken','csf'),
       ),
 
       array(
@@ -2543,21 +2550,21 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'text',
         'title' => __('Chevereto API v1 Key','csf'),
         'dependency' => array( 'img_upload_api', '==', 'chevereto' ),
-        'desc' => __('Fill in Key here, to get please visit your Chevereto home page address/dashboard/settings/api ','csf'),
+        'desc' => __('Fill in the Key here, to get please visit your Chevereto home page address/dashboard/settings/api','csf'),
       ),
 
       array(
         'id' => 'cheverto_url',
         'type' => 'text',
-        'title' => __('Chevereto address','csf'),
+        'title' => __('Chevereto Address','csf'),
         'dependency' => array( 'img_upload_api', '==', 'chevereto' ),
-        'desc' => __('Your Chevereto home page address, note the lack of / at the end, e.g. https://your.cherverto.com','csf'),
+        'desc' => __('Your Chevereto home page address. Please note that there is no "/" at the end, e.g. https://your.cherverto.com','csf'),
       ),
 
       array(
         'id' => 'comment_image_proxy',
         'type' => 'text',
-        'title' => __('comment_image_proxy','csf'),
+        'title' => __('Comment Image Proxy','csf'),
         'desc' => __('Proxy for the image displayed on the frontend','csf'),
         'default' => 'https://images.weserv.nl/?url='
       ),
@@ -2565,8 +2572,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'mail_img',
         'type' => 'upload',
-        'title' => __('mail template featured image','csf'),
-        'desc' => __('Set the background image above your reply email','csf'),
+        'title' => __('Mail Template Featured Image','csf'),
+        'desc' => __('Set the background image of your reply email','csf'),
         'library' => 'image',
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/mail_head.jpg'
       ),
@@ -2574,23 +2581,23 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'mail_user_name',
         'type' => 'text',
-        'title' => __('mail template outgoing address prefix','csf'),
-        'desc' => __('Used to send system mailthe sender address displayed in the use’s mailbox, don’t use Chinese, the default system mail address is bibi@your domain','csf'),
+        'title' => __('Mail Template Sending Address Prefix','csf'),
+        'desc' => __('Used to send system mail. The sender address will be displayed in the use’s mailbox, don’t use Non-English Characters. The default system mail address is bibi@your domain','csf'),
         'default' => 'bibi'
       ),
 
       array(
         'id' => 'mail_notify',
         'type' => 'switcher',
-        'title' => __('User mail reply notification','csf'),
-        'label' => __('By default WordPress will use email notifications to notify users when their comments receive a reply, after turning it on allow users to set whether to use email notifications when their comments receive a reply','csf'),
+        'title' => __('User Mail Reply Notification','csf'),
+        'label' => __('By default WordPress will use email notifications to notify users when their comments receive a reply. After turning it on users are allowed to set whether to use email notifications when their comments receive a reply','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'admin_notify',
         'type' => 'switcher',
-        'title' => __('admin email reply notification','csf'),
+        'title' => __('Admin Email Reply Notification','csf'),
         'label' => __('Use email notifications when admin comments receive a reply after turning it on','csf'),
         'default' => false
       ),
@@ -2600,26 +2607,26 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'id' => 'others', 
-    'title' => __('other settings','csf'),
+    'title' => __('Other Options','csf'),
     'icon' => 'fa fa-coffee',
   ) );
 
   CSF::createSection( $prefix, array(
     'parent' => 'others', 
-    'title' => __('Login screen and dashboard related settings','csf'),
+    'title' => __('Login Screen and Dashboard Related Options','csf'),
     'icon' => 'fa fa-sign-in',
     'fields' => array(
 
       array(
         'type' => 'subheading',
-        'content' => __('login screen','csf'),
+        'content' => __('Login Screen','csf'),
       ),
 
       array(
         'id' => 'login_background',
         'type' => 'upload',
-        'title' => __('Login screen background image','csf'),
-        'desc' => __('Set your login screen background image, leave this option blank to show default background','csf'),
+        'title' => __('Login Screen Background Image','csf'),
+        'desc' => __('Set your login screen background image, leave this option blank to show the default','csf'),
         'library'      => 'image',
         'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/login_background.jpg'
       ),
@@ -2627,8 +2634,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'login_blur',
         'type' => 'switcher',
-        'title' => __('Login screen background defocus','csf'),
-        'label' => __('Login screen background image will be defocused when enabled','csf'),
+        'title' => __('Login Screen Background Blur','csf'),
+        'label' => __('Login screen background image will be blurred when enabled','csf'),
         'default' => false
       ),
 
@@ -2645,19 +2652,19 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'login_urlskip',
         'type' => 'switcher',
         'title' => __('Jump after login','csf'),
-        'label' => __('Jump to backend for admins and home for users after opening','csf'),
+        'label' => __('Jump to backend for admins and home for users after turning on','csf'),
         'default' => false
       ),
 
       array(
         'type' => 'subheading',
-        'content' => __('dashboard','csf'),
+        'content' => __('Dashboard','csf'),
       ),
 
       array(
         'id' => 'admin_background',
         'type' => 'upload',
-        'title' => __('dashboard background image','csf'),
+        'title' => __('Dashboard Background Image','csf'),
         'desc' => __('Set your dashboard background image, leave this option blank to show white background','csf'),
         'library' => 'image',
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/admin_background.jpg'
@@ -2666,40 +2673,40 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'admin_first_class_color',
         'type' => 'color',
-        'title' => __('Dashboard first class menu color','csf'),
-        'desc' => __('Custom colors','csf'),
+        'title' => __('Dashboard Primary Menu Color','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#88cfef'
       ),  
 
       array(
         'id' => 'admin_second_class_color',
         'type' => 'color',
-        'title' => __('Dashboard secondary menu color','csf'),
-        'desc' => __('Custom colors','csf'),
+        'title' => __('Dashboard Secondary Menu Color','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#67c4ef'
       ),  
 
       array(
         'id' => 'admin_emphasize_color',
         'type' => 'color',
-        'title' => __('dashboard emphasis color','csf'),
-        'desc' => __('Custom colors','csf'),
+        'title' => __('Dashboard Emphasis Color','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#342a29'
       ),  
 
       array(
         'id' => 'admin_button_color',
         'type' => 'color',
-        'title' => __('Dashboard button color','csf'),
-        'desc' => __('Custom colors','csf'),
+        'title' => __('Dashboard Button Color','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#d1976d'
       ),  
 
       array(
         'id' => 'admin_text_color',
         'type' => 'color',
-        'title' => __('dashboard text color','csf'),
-        'desc' => __('Custom colors','csf'),
+        'title' => __('Dashboard Text Color','csf'),
+        'desc' => __('Customize the colors','csf'),
       ),  
 
     )
@@ -2707,18 +2714,18 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'others', 
-    'title' => __('low use settings','csf'),
+    'title' => __('Low Use Options','csf'),
     'icon' => 'fa fa-low-vision',
     'fields' => array(
 
       array(
         'id' => 'statistics_api',
         'type' => 'radio',
-        'title' => __('statistics_api','csf'),
-        'desc' => __('You can choose WP-Statistics plugin statistics or theme built-in statistics as statistics','csf'),
+        'title' => __('Statistics API','csf'),
+        'desc' => __('You can choose WP-Statistics plugin statistics or theme built-in statistics to display','csf'),
         'options' => array(
-          'theme_build_in' => 'theme_built_in_statistics',
-          'wp_statistics' => 'WP-Statistics plugin statistics',
+          'theme_build_in' => __('Theme Built in Statistics','csf'),
+          'wp_statistics' => __('WP-Statistics Plugin Statistics','csf'),
         ),
         'default' => 'theme_build_in'
       ),
@@ -2729,10 +2736,10 @@ if( class_exists( 'CSF' ) ) {
         'title' => __('Statistics display format','csf'),
         'desc' => __('You can choose from four different data display formats','csf'),
         'options' => array(
-          'type_1' => '23333 visits',
-          'type_2' => '23,333 visits',
-          'type_3' => '23,333 visits',
-          'type_4' => '23K visits',
+          'type_1' => __('23333 Visits','csf'),
+          'type_2' => __('23,333 Visits','csf'),
+          'type_3' => __('23 333 Visits','csf'),
+          'type_4' => __('23K Visits','csf'),
         ),
         'default' => 'type_1'
       ),
@@ -2740,8 +2747,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'live_search',
         'type' => 'switcher',
-        'title' => __('live search','csf'),
-        'label' => __('After turning on the live search in the foreground, call Rest API to update the cache once an hour, you can set the cache time manually in api.php','csf'),
+        'title' => __('Live Search','csf'),
+        'label' => __('After turning on the live search in the frontend, call Rest API to update the cache once an hour. You can set the cache time manually in api.php','csf'),
         'default' => false
       ),
 
@@ -2749,83 +2756,84 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'live_search_comment',
         'type' => 'switcher',
         'title' => __('Live Search Comment Support','csf'),
-        'label' => __('Enabled to search for comments in live search (not recommended if site has too many comments)','csf'),
+        'dependency' => array( 'live_search', '==', 'true' ),
+        'label' => __('Enable to search for comments in live search (not recommended if site has too many comments)','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'gravatar_proxy',
         'type' => 'text',
-        'title' => __('Gravatar avatar proxy','csf'),
-        'desc' => __('Fill in the proxy address of the Gravatar avatar, use the Geek Nation proxy by default, leave it blank to not use the proxy','csf'),
+        'title' => __('Gravatar Proxy','csf'),
+        'desc' => __('Fill in the proxy address of Gravatar, use the Geekzu proxy by default, leave it blank to not use the proxy','csf'),
         'default' => 'sdn.geekzu.org/avatar'
       ),
 
       array(
         'id' => 'google_analytics_id',
         'type' => 'text',
-        'title' => __('Google stats code','csf'),
+        'title' => __('Google Stats Code','csf'),
       ),
 
       array(
         'id' => 'site_custom_style',
         'type' => 'textarea',
-        'title' => __('Custom CSS styles','csf'),
-        'desc' => __('Fill CSS code without writing style tag','csf'),
+        'title' => __('Custom CSS Styles','csf'),
+        'desc' => __('Fill in the CSS code without writing style tag','csf'),
       ),
 
       array(
         'id' => 'time_zone_fix',
         'type' => 'slider',
-        'title' => __('timezonefix','csf'),
-        'desc' => __('slider, if the comment has a time difference problem adjust it here, fill in an integer, calculation: actual time = time of display error - the integer you entered (in hours)','csf'),
+        'title' => __('Timezone Fix','csf'),
+        'desc' => __('Slide to adjust. If the comment has a time difference problem, adjust it here, fill in an integer. Calculation method: actual time = time of display error - the integer you entered (in hours)','csf'),
         'step' => '1',
         'max' => '24',
         'default' => '0'
       ),
       array(
         'type' => 'subheading',
-        'content' => __('lightbox','csf'),
+        'content' => __('Lightbox','csf'),
       ),
       array(
         'id' => 'baguetteBox',
         'type' => 'switcher',
-        'title' => __('BaguetteBox lightbox effect','csf'),
+        'title' => __('BaguetteBox Lightbox Effect','csf'),
         'label' => __('BaguetteBox will be used as the image lightbox effect when turned on','csf'),
         'default' => false
       ),
       array(
         'id' => 'fancybox',
         'type' => 'switcher',
-        'title' => __('FancyBox lightbox effect','csf'),
-        'label' => __('FancyBox will be used as an image lightbox effect after opening, additional JQ libraries will be loaded','csf'),
+        'title' => __('FancyBox Lightbox Effect','csf'),
+        'label' => __('FancyBox will be used as an image lightbox effect after turning on, additional JQ libraries will be loaded','csf'),
         'dependency' => array( 'baguetteBox', '==', 'false' ),
         'default' => false
       ), 
       array(
         'type' => 'subheading',
-        'content' => __('code highlighting','csf'),
+        'content' => __('Code Highlighting','csf'),
       ),array(
         'type'    => 'content',
-        'content' => __('<p><strong>Highlight.js:</strong> Default, automatic language recognition. </p>'
-        .' <p><strong>Prism.js:</strong> requires a language to be specified, see <a href="https://prismjs.com/#basic-usage">basic usage</a> and <a href="https://prismjs.com/ plugins/file-highlight/">How to code highlight dynamically loaded files</a>. </p>'
-        .' <p><strong>Custom:</strong> for cases where another configuration is available. </p>','csf'),
+        'content' => __('<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </p>'
+        .' <p><strong>Prism.js:</strong> Requires a language to be specified, see <a href="https://prismjs.com/#basic-usage">basic usage</a> and <a href="https://prismjs.com/ plugins/file-highlight/">How to code highlight dynamically loaded files</a>. </p>'
+        .' <p><strong>Custom:</strong> For cases where another configuration is available. </p>','csf'),
       ),
       array(
         'id' => 'code_highlight_method',
         'type' => 'select',
-        'title' => __('code highlighter','csf'),
+        'title' => __('Code Highlight Method','csf'),
         'options' => array(
           'hljs' => 'highlight.js',
           'prism' => 'Prism.js',
-          'custom' => 'custom',
+          'custom' => 'Custom Program',
         ),
         "default" => "hljs"
       ),
       array(
         'id' => 'code_highlight_prism_line_number_all',
         'type' => 'switcher',
-        'title' => __('Prism.js: add line number display for all code blocks','csf'),
+        'title' => __('Prism.js: Add Line Number Display for All Code Blocks','csf'),
         'dependency' => array(
           array( 'code_highlight_method', '==', 'prism' ),
         ),
@@ -2834,7 +2842,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'code_highlight_prism_autoload_path',
         'type' => 'text',
-        'title' => __('Prism.js: autoload address','csf'),
+        'title' => __('Prism.js: Autoload Address','csf'),
         'dependency' => array(
           array( 'code_highlight_method', '==', 'prism' ),
         ),
@@ -2844,7 +2852,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'code_highlight_prism_theme_light',
         'type' => 'text',
-        'title' => __('Prism.js: code highlight theme','csf'),
+        'title' => __('Prism.js: Code Highlight Theme','csf'),
         'desc' => 'Relative to autoload address. Leave blank to use default values',
         'dependency' => array(
           array( 'code_highlight_method', '==', 'prism' ),
@@ -2853,7 +2861,7 @@ if( class_exists( 'CSF' ) ) {
       ), array(
         'id' => 'code_highlight_prism_theme_dark',
         'type' => 'text',
-        'title' => __('Prism.js: code highlight theme in dark mode','csf'),
+        'title' => __('Prism.js: Code Highlight Theme (Dark Mode)','csf'),
         'desc' => 'Relative to autoload address. Leave blank to use default values',
         'dependency' => array(
           array( 'code_highlight_method', '==', 'prism' ),
@@ -2863,58 +2871,58 @@ if( class_exists( 'CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'danger',
-        'content' => __('The following settings are not recommended to be modified blindly, please use them under the guidance of others','csf'),
+        'content' => __('The following Options are not recommended to be modified blindly, please use them under the guidance of others','csf'),
       ),
 
       array(
         'id' => 'image_cdn',
         'type' => 'text',
-        'title' => __('image CDN','csf'),
-        'desc' => __('Note: fill in the format http(s)://your CDN domain/. This means that images with original path http://your.domain/wp-content/uploads/2018/05/xx.png will be loaded from http://你的CDN域名/2018/05/xx.png','csf'),
+        'title' => __('Image CDN','csf'),
+        'desc' => __('Note: fill in the format https://your CDN domain/. This means that images with original path http://your.domain/wp-content/uploads/2018/05/xx.png will be loaded from http://your CDN domain/2018/05/xx.png','csf'),
         'default' => ''
       ),
 
       array(
         'id' => 'classify_display',
         'type' => 'text',
-        'title' => __('Articles not displayed by category','csf'),
-        'desc' => __('Fill in category ID, multiple in English' , 'separate','csf'),
+        'title' => __('Articles Categories (Do not display)','csf'),
+        'desc' => __('Fill in category ID, seperate in English" , " when more than one','csf'),
       ),
 
       array(
         'id' => 'image_category',
         'type' => 'text',
-        'title' => __('Image display category','csf'),
-        'desc' => __('Fill in category ID, multiple in English" , "separate','csf'),
+        'title' => __('Image Display Category','csf'),
+        'desc' => __('Fill in category ID, seperate in English" , " when more than one','csf'),
       ),
 
       array(
         'id' => 'exlogin_url',
         'type' => 'text',
-        'title' => __('Specify login address','csf'),
+        'title' => __('Specify Login Address','csf'),
         'desc' => __('Force not to use the WordPress login page address to login, fill in the new login page address, such as: http://www.xxx.com/login. Note that before filling in the new page you can test the normal opening, so as not to cause the inability to enter the background, etc.','csf'),
       ),
 
       array(
         'id' => 'exregister_url',
         'type' => 'text',
-        'title' => __('Specify registered address','csf'),
-        'desc' => __('This address is used as the registration entry on the login page, if you specify a login address, it is recommended to fill in ','csf'),
+        'title' => __('Specify Registration Address','csf'),
+        'desc' => __('This address is used as the registration entry on the login page, if you specify a login address, it is recommended to fill in','csf'),
       ),
 
       array(
         'id' => 'cookie_version',
         'type' => 'text',
-        'title' => __('version control','csf'),
+        'title' => __('Version Control','csf'),
         'desc' => __('Used to update front-end cookies and browser cache, can use any string','csf'),
       ),
     )
   ) );
 
   CSF::createSection($prefix, array(
-    'title' => __('Backup Recovery','csf'),
+    'title' => __('Backup&Recovery','csf'),
     'icon'        => 'fa fa-shield',
-    'description' => 'Back up or restore your theme settings',
+    'description' => __('Backup or Recovery your theme options','csf'),
     'fields'      => array(
 
         array(
@@ -2925,7 +2933,7 @@ if( class_exists( 'CSF' ) ) {
   ) );
 
   CSF::createSection($prefix, array(
-    'title' => __('About theme','csf'),
+    'title' => __('About Theme','csf'),
     'icon'        => 'fa fa-paperclip',
     'fields'      => array(
 
@@ -2942,7 +2950,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'type'    => 'submessage',
         'style'   => 'success',
-        'content' => sprintf(__('Working with iro theme version %s | <a href="https://iro.tw">theme documentation</a> | <a href="https://github.com/mirai-mamori/Sakurairo">source address</a>', 'sakurairo', 'csf'), SAKURA_VERSION), 
+        'content' => sprintf(__('iro 主题版本 / Theme Version %s | <a href="https://iro.tw">主题文档 / Theme Documentation</a> | <a href="https://github.com/mirai-mamori/Sakurairo">项目地址 / Project Address</a>', 'sakurairo', 'csf'), SAKURA_VERSION), 
       ),
 
       array(
@@ -2953,77 +2961,77 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'          => 'iro_update_source',
         'type'        => 'image_select',
-        'title' => __('Theme update source','csf'),
+        'title' => __('Theme Update Source','csf'),
         'options'     => array(
           'github'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_github.png',
           'jsdelivr'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_jsd.png',
           'official_building'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_iro.png',
         ),
-        'desc' => __('If you are using a server set up in China, please use the jsDelivr source or the official theme source as your theme update source','csf'),
+        'desc' => __('If you are using a server set up in mainland China, please use the jsDelivr source or the official theme source as your theme update source','csf'),
         'default'     => 'github'
       ),
 
       array(
         'id' => 'channel_validate_value',
         'type' => 'text',
-        'title' => __('Theme update test channel disclaimer','csf'),
+        'title' => __('Theme Update Test Channel Disclaimer','csf'),
         'dependency' => array(
           array( 'local_global_library', '==', 'true' ),
           array( 'iro_update_source', '==', 'official_building' ),
         ),
-        'desc' => __('If you want to use the test channel version of the theme, please copy the text in quotes after <strong>ensure that you have carefully understood the risks associated with participating in the test and are willing to assume all consequences at your own risk</strong> (including but not limited to possible data loss) into the options text box <strong "I understand the risks associated with testing and accept all consequences"</strong>','csf'),
+        'desc' => __('Please copy the text in quotes after <strong>ensure that you have carefully understood the risks associated with participating in the test and are willing to assume all consequences at your own risk</strong> (including but not limited to possible data loss) into the options text box <strong> "I agree and am willing to bear all unexpected consequences"</strong>','csf'),
       ),
 
       array(
         'id' => 'iro_update_channel',
         'type' => 'radio',
-        'title' => __('theme update channel','csf'),
+        'title' => __('Theme Update Channel','csf'),
         'dependency' => array(
-          array( 'channel_validate_value', '==', 'I understand the risks associated with testing and am willing to accept all consequences' ),
+          array( 'channel_validate_value', '==', 'I agree and am willing to bear all unexpected consequences' ),
           array( 'local_global_library', '==', 'true' ),
           array( 'iro_update_source', '==', 'official_building' ), array( 'iro_update_source', '==', 'official_building' ),
         ),
         'desc' => __('You can toggle the update channel here to participate in the testing of the new version','csf'),
         'options' => array(
-          'stable' => __('official channel','csf'),
-          'beta' => __('public test channel','csf'),
-          'preview' => __('preview test channel','csf'),
+          'stable' => __('Stable Channel','csf'),
+          'beta' => __('Beta Channel','csf'),
+          'preview' => __('Preview Channel','csf'),
         ),
         'default' => 'stable'
       ),
 
       array(
         'type' => 'subheading',
-        'content' => __('localization','csf'),
+        'content' => __('Localization','csf'),
       ),
 
       array(
         'id' => 'local_global_library',
         'type' => 'switcher',
-        'title' => __('localized frontend library','csf'),
-        'label' => __('The frontend library will not go jsDelivr CDN after turning it on','csf'),
+        'title' => __('Localize the Frontend Library','csf'),
+        'label' => __('The frontend library will not use jsDelivr CDN after turning it on','csf'),
         'default' => false
       ),
 
       array(
         'id' => 'local_application_library',
         'type' => 'switcher',
-        'title' => __('Localized JS/CSS files','csf'),
-        'label' => __('Enabled by default, some JS files and CSS files do not go jsDelivr CDN','csf'),
+        'title' => __('Localize JS/CSS Files','csf'),
+        'label' => __('Enabled by default, some JS files and CSS files do not use jsDelivr CDN','csf'),
         'default' => true
       ),
 
       array(
         'type' => 'subheading',
-        'content' => __('citation information','csf'),
+        'content' => __('Reference Information','csf'),
       ),
 
       array(
         'type'    => 'content',
-        'content' => __('<p>The Fluent Design icon references the <a href="https://wwi.lanzous.com/ikyq5kgx0wb">Fluent icon pack designed by Paradox</a></p
-        <p>MuHydro Icons cites the <a href="https://www.coolapk.com/apk/com.muh2.icon">MuHydro Icon Pack designed by Silence</a></p
-        <p>Kanbanma references the <a href="https://github.com/stevenjoezhang/live2d-widget">Live2d-Widget</a> project opened by Stevenjoezhang</p>
-        <p>White Cat Style Logo references the original theme author White Cat, as provided and referenced by <a href="https://hyacm.com/acai/ui/143/sakura-logo/">Hyacm</a></p>','csf'),
+        'content' => __('<p>Fluent Design Icon Referenced by Paradox<a href="https://wwi.lanzous.com/ikyq5kgx0wb">Fluent Icon Pack</a></p>
+        <p>MUH2 Design Icon Referenced by 缄默<a href="https://www.coolapk.com/apk/com.muh2.icon">MUH2 Icon Pack</a></p>
+        <p>Live2D Model Referenced by Stevenjoezhang<a href="https://github.com/stevenjoezhang/live2d-widget">Live2d-Widget</a>Open Source Project</p>
+        <p>Mashiro Style Logo References the Original Theme Author Mashiro, As Provided and Referenced by <a href="https://hyacm.com/acai/ui/143/sakura-logo/">Hyacm</a></p>','csf'),
       ),
 
       array(
@@ -3033,9 +3041,9 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<p>Static resources rely on the <a href="https://github.com/Fuukei/Public_Repository">Public Repository</a> project created by the theme’s official Fuukei</p>
-        <p>The setup framework relies on the Codestar open source <a href="https://github.com/Codestar/codestar-framework">Codestar-Framework</a> project</p>
-        <p>Update functionality relies on YahnisElsts open source <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin-Update-Checker</a> project</p>','csf'),
+        'content' => __('<p>Static Resources Relies on the <a href="https://github.com/Fuukei/Public_Repository">Public Repository</a> Project Created by Fuukei</p>
+        <p>Options Framework Relies on the Codestar Open Source <a href="https://github.com/Codestar/codestar-framework">Codestar Framework</a> Project</p>
+        <p>Update Function Relies on YahnisElsts Open Source <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin Update Checker</a> Project</p>','csf'),
       ),
 
       array(

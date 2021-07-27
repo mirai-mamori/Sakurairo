@@ -357,11 +357,15 @@ function convertip($ip)
     $file_contents = curl_exec($ch);  
     curl_close($ch);  
     $result = null;
-    $result = json_decode($file_contents,true);
-    if ($result['data']['country'] != '中国') {
-        return $result['data']['country'];
-    } else {
-        return $result['data']['country'].'&nbsp;·&nbsp;'.$result['data']['region'].'&nbsp;·&nbsp;'.$result['data']['city'].'&nbsp;·&nbsp;'.$result['data']['isp'];
+    $result = json_decode($file_contents, true);
+    if ($result && $result['code'] == 0) {
+        if ($result['data']['country'] != '中国') {
+            return $result['data']['country'];
+        } else {
+            return $result['data']['country'] . '&nbsp;·&nbsp;' . $result['data']['region'] . '&nbsp;·&nbsp;' . $result['data']['city'] . '&nbsp;·&nbsp;' . $result['data']['isp'];
+        }
+    }else{
+        return "未知";
     }
 }
 //Comment Location End

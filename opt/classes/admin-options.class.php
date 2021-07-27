@@ -23,7 +23,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
     public $args         = array(
 
       // framework title
-      'framework_title'         => 'iro 主题设置 <small>by Fuukei</small>',
+      'framework_title'         => 'iro 主题设置 <small> / Theme Options / テーマの設定</small>',
       'framework_class'         => '',
 
       // menu settings

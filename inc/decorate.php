@@ -684,7 +684,6 @@ html {
 
 /*固定项目*/
 body.dark #main-container,
-body.dark #mo-nav,
 body.dark .comments,
 body.dark .site-footer,
 body.dark .wrapper,
@@ -698,6 +697,10 @@ body.dark .headertop-bar::after
 body.dark .toc,
 body.dark .search-form input
 {background:rgba(51,51,51,0.8);}
+
+body.dark #mo-nav{
+    background:#333333;
+}
 
 body.dark .single-reward .reward-row,
 body.dark input.m-search-input
