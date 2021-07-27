@@ -1851,7 +1851,7 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'id' => 'area_title_bottom_color',
-        'type' => 'color',-+
+        'type' => 'color',
         'title' => __('Area Title Bottom Color','csf'),
         'desc' => __('Customize the colors, suggest using a corresponding color with the background color','csf'),
         'default' => '#e8e8e8'
