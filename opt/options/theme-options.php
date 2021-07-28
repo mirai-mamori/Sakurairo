@@ -2944,7 +2944,7 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/hyouryulogo.gif"  alt="Theme Information" />','csf'),
+        'content' => __('<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/hyouryulogo.gif"  alt="Theme Information" />','csf'),
       ),
 
       array(
