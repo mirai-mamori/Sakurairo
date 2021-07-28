@@ -8,8 +8,8 @@
  */
 
 
-define('SAKURA_VERSION', wp_get_theme()->get('Version'));
-define('BUILD_VERSION', '3');
+define('IRO_VERSION', wp_get_theme()->get('Version'));
+define('BUILD_VERSION', '2');
 
 //Option-Framework
 
@@ -256,19 +256,19 @@ function sakura_scripts()
 {
     if (iro_opt('local_global_library')) {
         if (iro_opt('smoothscroll_option')) {
-            wp_enqueue_script('SmoothScroll', get_template_directory_uri() . '/js/smoothscroll.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
+            wp_enqueue_script('SmoothScroll', get_template_directory_uri() . '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
         }
     } elseif (iro_opt('smoothscroll_option')) {
-        wp_enqueue_script('SmoothScroll',  'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/js/smoothscroll.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
+        wp_enqueue_script('SmoothScroll',  'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . IRO_VERSION . '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
     }
     if (iro_opt('local_application_library')) {
-        wp_enqueue_style('saukra_css', get_stylesheet_uri(), array(), SAKURA_VERSION);
-        wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), SAKURA_VERSION, true);
-        if(!is_home())wp_enqueue_script('app-page', get_template_directory_uri() . '/js/page.js', array('app'), SAKURA_VERSION, true);
+        wp_enqueue_style('saukra_css', get_stylesheet_uri(), array(), IRO_VERSION);
+        wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), IRO_VERSION, true);
+        if(!is_home())wp_enqueue_script('app-page', get_template_directory_uri() . '/js/page.js', array('app'), IRO_VERSION, true);
     } else {
-        wp_enqueue_style('saukra_css', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/style.min.css', array(), SAKURA_VERSION);
-        wp_enqueue_script('app', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/js/app.js', array(), SAKURA_VERSION, true);
-        if(!is_home())wp_enqueue_script('app-page', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION .  '/js/page.js', array('app'), SAKURA_VERSION, true);
+        wp_enqueue_style('saukra_css', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION . '/style.min.css', array(), IRO_VERSION);
+        wp_enqueue_script('app', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION . '/js/app.js', array(), IRO_VERSION, true);
+        if(!is_home())wp_enqueue_script('app-page', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION .  '/js/page.js', array('app'), IRO_VERSION, true);
     }
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -758,7 +758,7 @@ function custom_login()
 {
     require get_template_directory() . '/inc/login_addcss.php';
     //echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css" />'."\n";
-    echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/inc/login.css?' . SAKURA_VERSION . '" />' . "\n";
+    echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/inc/login.css?' . IRO_VERSION . '" />' . "\n";
     //echo '<script type="text/javascript" src="'.get_bloginfo('template_directory').'/js/jquery.min.js"></script>'."\n";
     echo '<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.5.0/dist/jquery.min.js"></script>' . "\n";
 }
@@ -1351,6 +1351,9 @@ function scheme_tip()
         $msg = '<b>试一试新后台界面<a href="/wp-admin/profile.php">配色方案</a>吧？</b>';
     }
     if (get_user_locale(get_current_user_id()) == "zh_TW") {
+        $msg = '<b>試一試新後台界面<a href="/wp-admin/profile.php">色彩配置</a>吧？</b>';
+    }
+    if (get_user_locale(get_current_user_id()) == "zh_HK") {
         $msg = '<b>試一試新後台界面<a href="/wp-admin/profile.php">色彩配置</a>吧？</b>';
     }
     if (get_user_locale(get_current_user_id()) == "ja") {

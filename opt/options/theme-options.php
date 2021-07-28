@@ -2950,7 +2950,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'type'    => 'submessage',
         'style'   => 'success',
-        'content' => sprintf(__('iro 主题版本 / Theme Version %s | <a href="https://iro.tw">主题文档 / Theme Documentation</a> | <a href="https://github.com/mirai-mamori/Sakurairo">项目地址 / Project Address</a>', 'sakurairo', 'csf'), SAKURA_VERSION), 
+        'content' => sprintf(__('iro 主题版本 / Theme Version %s | <a href="https://iro.tw">主题文档 / Theme Documentation</a> | <a href="https://github.com/mirai-mamori/Sakurairo">项目地址 / Project Address</a>', 'sakurairo', 'csf'), IRO_VERSION), 
       ),
 
       array(
@@ -3028,9 +3028,9 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<p>Fluent Design Icon Referenced by Paradox<a href="https://wwi.lanzous.com/ikyq5kgx0wb">Fluent Icon Pack</a></p>
-        <p>MUH2 Design Icon Referenced by 缄默<a href="https://www.coolapk.com/apk/com.muh2.icon">MUH2 Icon Pack</a></p>
-        <p>Live2D Model Referenced by Stevenjoezhang<a href="https://github.com/stevenjoezhang/live2d-widget">Live2d-Widget</a>Open Source Project</p>
+        'content' => __('<p>Fluent Design Icon Referenced by Paradox <a href="https://wwi.lanzous.com/ikyq5kgx0wb">Fluent Icon Pack</a></p>
+        <p>MUH2 Design Icon Referenced by 缄默 <a href="https://www.coolapk.com/apk/com.muh2.icon">MUH2 Icon Pack</a></p>
+        <p>Live2D Model Referenced by Stevenjoezhang <a href="https://github.com/stevenjoezhang/live2d-widget">Live2d-Widget</a> Open Source Project</p>
         <p>Mashiro Style Logo References the Original Theme Author Mashiro, As Provided and Referenced by <a href="https://hyacm.com/acai/ui/143/sakura-logo/">Hyacm</a></p>','csf'),
       ),
 

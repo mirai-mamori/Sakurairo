@@ -18,7 +18,7 @@ $reception_background = iro_opt('reception_background');
 	?>
 </div><!-- #page Pjax container-->
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info" theme-info="Sakurairo v<?php echo SAKURA_VERSION; ?>">
+		<div class="site-info" theme-info="Sakurairo v<?php echo IRO_VERSION; ?>">
 			<div class="footertext">
 				<div class="img-preload">
 					<img src="<?php echo iro_opt('load_nextpage_svg'); ?>"><!-- 加载下一部分圈圈 -->
