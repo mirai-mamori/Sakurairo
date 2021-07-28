@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2021-06-26 15:15+0800\n"
+"POT-Creation-Date: 2021-07-28 16:39+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -16,8 +16,8 @@ msgstr ""
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Don't worry, search in site?"
 msgstr ""
 
-#: 404.php:54 footer.php:61 search.php:42
+#: 404.php:54 footer.php:56 search.php:42
 msgid "Search..."
 msgstr ""
 
@@ -130,15 +130,15 @@ msgstr ""
 msgid "Site"
 msgstr ""
 
-#: footer.php:75 footer.php:83
+#: footer.php:70 footer.php:78
 msgid "Want to find something?"
 msgstr ""
 
-#: footer.php:85
+#: footer.php:80
 msgid "Search"
 msgstr ""
 
-#: footer.php:136
+#: footer.php:131
 msgid "Widgets"
 msgstr ""
 
@@ -146,73 +146,172 @@ msgstr ""
 msgid "Nav Menus"
 msgstr ""
 
-#: functions.php:375 inc/theme_plus.php:191 layouts/authorprofile.php:11
+#: functions.php:198 functions.php:209
+msgid "Ideas"
+msgstr ""
+
+#: functions.php:199
+msgid "Idea"
+msgstr ""
+
+#: functions.php:200 functions.php:201
+msgid "Publish New Idea"
+msgstr ""
+
+#: functions.php:202
+msgid "Edit Idea"
+msgstr ""
+
+#: functions.php:203
+msgid "New Idea"
+msgstr ""
+
+#: functions.php:204
+msgid "View Idea"
+msgstr ""
+
+#: functions.php:205
+msgid "Search Idea"
+msgstr ""
+
+#: functions.php:206
+msgid "Not Found Idea"
+msgstr ""
+
+#: functions.php:207
+msgid "No Idea in the Trash"
+msgstr ""
+
+#: functions.php:306
+msgid "Copied!"
+msgstr ""
+
+#: functions.php:307
+msgid "Copy Code"
+msgstr ""
+
+#: functions.php:308
+msgid ""
+"Your cover API seems to not support Cross Origin Access. In this case, "
+"Cover Cache won't take effect."
+msgstr ""
+
+#: functions.php:309
+msgid "Commiting...."
+msgstr ""
+
+#: functions.php:310
+msgid "Succeed"
+msgstr ""
+
+#: functions.php:311
+msgid "10 files max per request"
+msgstr ""
+
+#: functions.php:312
+msgid ""
+"5 MB max per file.\n"
+"\n"
+"「{0}」\n"
+"\n"
+"This image is too large~Please reupload!"
+msgstr ""
+
+#: functions.php:313
+msgid "Uploading..."
+msgstr ""
+
+#: functions.php:314
+msgid "Uploaded successfully~"
+msgstr ""
+
+#: functions.php:315
+msgid ""
+"Upload failed!\n"
+"File Name=> {0}\n"
+"code=> {1}\n"
+"{2}"
+msgstr ""
+
+#: functions.php:316
+msgid "Upload failed, please retry."
+msgstr ""
+
+#: functions.php:317
+msgid "Page Load failed. HTTP {0}"
+msgstr ""
+
+#: functions.php:318
+msgid "Glad you come, but we've got nothing left."
+msgstr ""
+
+#: functions.php:398 inc/theme_plus.php:191 layouts/authorprofile.php:11
 msgid "Author"
 msgstr ""
 
-#: functions.php:375
+#: functions.php:398
 msgid "Blogger"
 msgstr ""
 
-#: functions.php:379
+#: functions.php:402
 msgid "Location"
 msgstr ""
 
-#: functions.php:384
+#: functions.php:407
 msgid "Private"
 msgstr ""
 
-#: functions.php:386
+#: functions.php:409
 msgid "Yes"
 msgstr ""
 
-#: functions.php:388
+#: functions.php:411
 msgid "No"
 msgstr ""
 
-#: functions.php:391
+#: functions.php:414
 msgid "Edit"
 msgstr ""
 
-#: functions.php:480
+#: functions.php:503
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
 msgstr ""
 
-#: functions.php:509
+#: functions.php:532
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:1171
+#: functions.php:1194
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1192
+#: functions.php:1215
 msgid " "
 msgstr ""
 
-#: functions.php:1196
+#: functions.php:1219
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1219 functions.php:1222 inc/theme_plus.php:483
+#: functions.php:1242 functions.php:1245 inc/theme_plus.php:483
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1442
+#: functions.php:1465
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1538
+#: functions.php:1561
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1601
+#: functions.php:1624
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:1729
+#: functions.php:1752
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -220,7 +319,7 @@ msgid ""
 "target=\"_blank\"> pseudo-static </a>. </ b>"
 msgstr ""
 
-#: header.php:36
+#: header.php:41
 #, php-format
 msgid "page %s "
 msgstr ""
@@ -384,20 +483,6 @@ msgstr ""
 #: search.php:19
 #, php-format
 msgid "search result: %s"
-msgstr ""
-
-#: theme-options.php:1324
-#, php-format
-msgid ""
-"如果你选择使用Webp优化随机图片，请点击 <a href = \"%s\">这里</a> 来更新 "
-"Manifest 路径"
-msgstr ""
-
-#: theme-options.php:2937
-#, php-format
-msgid ""
-"正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  <a "
-"href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
 msgstr ""
 
 #: tpl/content-category.php:31 tpl/content-image.php:36

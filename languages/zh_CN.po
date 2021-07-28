@@ -1,23 +1,23 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2021-06-26 15:15+0800\n"
-"PO-Revision-Date: 2021-06-26 15:48+0800\n"
+"POT-Creation-Date: 2021-07-28 16:40+0800\n"
+"PO-Revision-Date: 2021-07-28 16:40+0800\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
-"Language: zh_CN\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
@@ -38,7 +38,7 @@ msgstr "返回首页"
 msgid "Don't worry, search in site?"
 msgstr "别着急，试试站内检索？"
 
-#: 404.php:54 footer.php:61 search.php:42
+#: 404.php:54 footer.php:56 search.php:42
 msgid "Search..."
 msgstr "搜索..."
 
@@ -130,15 +130,15 @@ msgstr "禁止小广告😀"
 msgid "Site"
 msgstr "网站"
 
-#: footer.php:75 footer.php:83
+#: footer.php:70 footer.php:78
 msgid "Want to find something?"
 msgstr "想要找点什么呢？"
 
-#: footer.php:85
+#: footer.php:80
 msgid "Search"
 msgstr "搜索"
 
-#: footer.php:136
+#: footer.php:131
 msgid "Widgets"
 msgstr "小工具"
 
@@ -146,35 +146,134 @@ msgstr "小工具"
 msgid "Nav Menus"
 msgstr "导航菜单"
 
-#: functions.php:375 inc/theme_plus.php:191 layouts/authorprofile.php:11
+#: functions.php:198 functions.php:209
+msgid "Ideas"
+msgstr "说说"
+
+#: functions.php:199
+msgid "Idea"
+msgstr "说说"
+
+#: functions.php:200 functions.php:201
+msgid "Publish New Idea"
+msgstr "发布新说说"
+
+#: functions.php:202
+msgid "Edit Idea"
+msgstr "编辑说说"
+
+#: functions.php:203
+msgid "New Idea"
+msgstr "新说说"
+
+#: functions.php:204
+msgid "View Idea"
+msgstr "查看说说"
+
+#: functions.php:205
+msgid "Search Idea"
+msgstr "搜索说说"
+
+#: functions.php:206
+msgid "Not Found Idea"
+msgstr "没有找到说说"
+
+#: functions.php:207
+msgid "No Idea in the Trash"
+msgstr "没有在垃圾桶的说说"
+
+#: functions.php:306
+msgid "Copied!"
+msgstr "复制成功！"
+
+#: functions.php:307
+msgid "Copy Code"
+msgstr "拷贝代码"
+
+#: functions.php:308
+msgid ""
+"Your cover API seems to not support Cross Origin Access. In this case, Cover "
+"Cache won't take effect."
+msgstr "你的封面API好像不支持跨域调用,这种情况下缓存是不会生效的哦。"
+
+#: functions.php:309
+msgid "Commiting...."
+msgstr "提交中...."
+
+#: functions.php:310
+msgid "Succeed"
+msgstr "成功"
+
+#: functions.php:311
+msgid "10 files max per request"
+msgstr "每次上传上限为10张"
+
+#: functions.php:312
+msgid ""
+"5 MB max per file.\n"
+"\n"
+"「{0}」\n"
+"\n"
+"This image is too large~Please reupload!"
+msgstr "图片上传大小限制为5 MB\\n\\n「{0}」\\n\\n这张图太大啦~请重新上传噢！"
+
+#: functions.php:313
+msgid "Uploading..."
+msgstr "上传中..."
+
+#: functions.php:314
+msgid "Uploaded successfully~"
+msgstr "上传成功~"
+
+#: functions.php:315
+msgid ""
+"Upload failed!\n"
+"File Name=> {0}\n"
+"code=> {1}\n"
+"{2}"
+msgstr "上传失败！\\n文件名=> {0}\\ncode=> {1}\\n{2}"
+
+#: functions.php:316
+msgid "Upload failed, please retry."
+msgstr "上传失败，请重试."
+
+#: functions.php:317
+msgid "Page Load failed. HTTP {0}"
+msgstr "页面加载出错了 HTTP {0}"
+
+#: functions.php:318
+msgid "Glad you come, but we've got nothing left."
+msgstr "很高兴你翻到这里，但是真的没有了..."
+
+#: functions.php:398 inc/theme_plus.php:191 layouts/authorprofile.php:11
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:375
+#: functions.php:398
 msgid "Blogger"
 msgstr "博客作者"
 
-#: functions.php:379
+#: functions.php:402
 msgid "Location"
 msgstr "来自"
 
-#: functions.php:384
+#: functions.php:407
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:386
+#: functions.php:409
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:388
+#: functions.php:411
 msgid "No"
 msgstr "否"
 
-#: functions.php:391
+#: functions.php:414
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:480
+#: functions.php:503
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
@@ -182,39 +281,39 @@ msgstr ""
 "请安装插件 <a href=\"https://wordpress.org/plugins/wp-statistics/\" target="
 "\"_blank\">WP-Statistics</a>"
 
-#: functions.php:509
+#: functions.php:532
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:1171
+#: functions.php:1194
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1192
+#: functions.php:1215
 msgid " "
 msgstr " "
 
-#: functions.php:1196
+#: functions.php:1219
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1219 functions.php:1222 inc/theme_plus.php:483
+#: functions.php:1242 functions.php:1245 inc/theme_plus.php:483
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1442
+#: functions.php:1465
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:1538
+#: functions.php:1561
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1601
+#: functions.php:1624
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1729
+#: functions.php:1752
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -225,7 +324,7 @@ msgstr ""
 "固定链接</a>设置为朴素。为此，您可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">伪静态</a></b>"
 
-#: header.php:36
+#: header.php:41
 #, php-format
 msgid "page %s "
 msgstr "第 %s 页 "
@@ -390,20 +489,6 @@ msgstr "退出登录"
 msgid "search result: %s"
 msgstr "搜索结果：%s"
 
-#: theme-options.php:1324
-#, php-format
-msgid ""
-"如果你选择使用Webp优化随机图片，请点击 <a href = \"%s\">这里</a> 来更新 "
-"Manifest 路径"
-msgstr ""
-
-#: theme-options.php:2937
-#, php-format
-msgid ""
-"正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  "
-"<a href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
-msgstr ""
-
 #: tpl/content-category.php:31 tpl/content-image.php:36
 #: tpl/content-status.php:32 tpl/content-thumb.php:61 tpl/content.php:36
 msgid "NOTHING"
@@ -438,11 +523,11 @@ msgstr "没有找到任何东西！"
 #, php-format
 msgid ""
 "Ready to post your first article? <a href=\"%1$s\">Click here to start</a>."
-msgstr "准备好发布你的第一篇文章了么？ <a href=\"%1$s\">点击这里开始</a>"
+msgstr "准备好发布你的第一篇文章了么？ <a href=\"%1$s\">点击这里开始</a>。"
 
 #: tpl/content-none.php:25
 msgid "Didn't find what you want, look at the other ones."
-msgstr "没有找到你想要的，看看其他的吧"
+msgstr "没有找到你想要的，看看其他的吧。"
 
 #: tpl/content-none.php:43
 msgid "We didn't seem to find what you want. Maybe you can search for it."
@@ -454,7 +539,7 @@ msgstr "页面："
 
 #: user/page-bangumi.php:30 user/page-followVideos.php:29
 msgid "Please fill in the Bilibili UID in Sakura Options."
-msgstr "请在后台设置填写 Bilibili UID 后继续"
+msgstr "请在后台设置填写 Bilibili UID 后继续。"
 
 #: user/page-login.php:21
 msgid "Remember_Me"
@@ -470,35 +555,35 @@ msgstr "错误"
 
 #: user/page-register.php:14
 msgid "Please enter username."
-msgstr "请输入用户名"
+msgstr "请输入用户名。"
 
 #: user/page-register.php:16
 msgid "Invalid characters, please enter a valid username."
-msgstr "此用户名包含无效字符，请输入有效的用户名"
+msgstr "此用户名包含无效字符，请输入有效的用户名。"
 
 #: user/page-register.php:19
 msgid "This username has been registered."
-msgstr "该用户名已被注册"
+msgstr "该用户名已被注册。"
 
 #: user/page-register.php:24
 msgid "Please enter email address."
-msgstr "请填写电子邮件地址"
+msgstr "请填写电子邮件地址。"
 
 #: user/page-register.php:26
 msgid "Invalid email address."
-msgstr "电子邮件地址不正确"
+msgstr "电子邮件地址不正确。"
 
 #: user/page-register.php:29
 msgid "This email address has been registered."
-msgstr "该电子邮件地址已经被注册"
+msgstr "该电子邮件地址已经被注册。"
 
 #: user/page-register.php:34
 msgid "Password length is at least 6 digits."
-msgstr "密码长度至少6位"
+msgstr "密码长度至少6位。"
 
 #: user/page-register.php:36
 msgid "Inconsistent password entered twice."
-msgstr "两次输入的密码不一致"
+msgstr "两次输入的密码不一致。"
 
 #: user/page-register.php:43
 msgid "Unable to complete registration request...Please contact"
@@ -518,7 +603,7 @@ msgstr "注册成功！正在跳转......"
 
 #: user/page-register.php:82
 msgid "Registration is not open yet."
-msgstr "暂未开放注册"
+msgstr "暂未开放注册。"
 
 #. Theme Name of the plugin/theme
 msgid "Sakurairo"
@@ -533,8 +618,8 @@ msgid ""
 "A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable "
 "WordPress Theme (Based on Theme Sakura)"
 msgstr ""
-"一个多彩，轻松上手，体验完善，具有强大自定义功能的WordPress主题（基于Sakura"
-"主题）"
+"一个多彩，轻松上手，体验完善，具有强大自定义功能的WordPress主题（基于Sakura主"
+"题）"
 
 #. Author of the plugin/theme
 msgid "Created by Fuukei"

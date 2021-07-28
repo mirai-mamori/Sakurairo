@@ -195,18 +195,18 @@ add_action('after_setup_theme', 'akina_setup');
 function shuoshuo_custom_init()
 {
     $labels = array(
-        'name' => '说说',
-        'singular_name' => '说说',
-        'add_new' => '发表说说',
-        'add_new_item' => '发表说说',
-        'edit_item' => '编辑说说',
-        'new_item' => '新说说',
-        'view_item' => '查看说说',
-        'search_items' => '搜索说说',
-        'not_found' => '暂无说说',
-        'not_found_in_trash' => '没有已遗弃的说说',
+        'name' => __("Ideas","sakurairo"),
+        'singular_name' => __("Idea","sakurairo"),
+        'add_new' => __("Publish New Idea","sakurairo"),
+        'add_new_item' => __("Publish New Idea","sakurairo"),
+        'edit_item' => __("Edit Idea","sakurairo"),
+        'new_item' => __("New Idea","sakurairo"),
+        'view_item' => __("View Idea","sakurairo"),
+        'search_items' => __("Search Idea","sakurairo"),
+        'not_found' => __("Not Found Idea","sakurairo"),
+        'not_found_in_trash' => __("No Idea in the Trash","sakurairo"),
         'parent_item_colon' => '',
-        'menu_name' => '说说'
+        'menu_name' => __("Ideas","sakurairo")
     );
     $args = array(
         'labels' => $labels,
