@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-27 18:57+0800\n"
+"POT-Creation-Date: 2021-07-28 12:23+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -751,7 +751,8 @@ msgstr ""
 
 #: options/theme-options.php:100
 msgid ""
-"Fill in the address, which is the icon next to the title above the browser"
+"Fill in the address, which decides the icon next to the title above the "
+"browser"
 msgstr ""
 
 #: options/theme-options.php:107
@@ -778,8 +779,8 @@ msgstr ""
 
 #: options/theme-options.php:125
 msgid ""
-"Use concise words to describe the site, the number of words is recommended "
-"within 120 words"
+"Use concise words to describe the site, it is recommended to write within "
+"120 words"
 msgstr ""
 
 #: options/theme-options.php:133
@@ -855,16 +856,12 @@ msgstr ""
 msgid "Dark Mode Image Brightness"
 msgstr ""
 
-#: options/theme-options.php:209
+#: options/theme-options.php:209 options/theme-options.php:220
 msgid "Slide to adjust, the recommended value range is 0.6-0.8"
 msgstr ""
 
 #: options/theme-options.php:219
 msgid "Dark Mode Component Transparency"
-msgstr ""
-
-#: options/theme-options.php:220 options/theme-options.php:727
-msgid "Slide to adjust, the recommended sliding value range is 0.6-0.8"
 msgstr ""
 
 #: options/theme-options.php:229
@@ -873,9 +870,9 @@ msgstr ""
 
 #: options/theme-options.php:230
 msgid ""
-"Slide to adjust, the recommended sliding value range is 0.6-0.8. In order "
-"to ensure the best appearance, it is better to keep the display of the "
-"frontend background image"
+"Slide to adjust, the recommended value range is 0.6-0.8. In order to ensure "
+"the best appearance, please keep the display of the frontend background "
+"image"
 msgstr ""
 
 #: options/theme-options.php:239
@@ -1051,7 +1048,8 @@ msgstr ""
 
 #: options/theme-options.php:434
 msgid ""
-"Slide to adjust, the recommended value is 5px, and close when it is 0px"
+"Slide to adjust, the recommended value is 5px, and this function will be "
+"off when set to 0px"
 msgstr ""
 
 #: options/theme-options.php:443
@@ -1172,7 +1170,7 @@ msgstr ""
 msgid "Style Menu Option Background Color"
 msgstr ""
 
-#: options/theme-options.php:598
+#: options/theme-options.php:598 options/theme-options.php:1777
 msgid ""
 "Customize the colors, it is recommended to use a light color that "
 "corresponds with the theme color"
@@ -1229,6 +1227,10 @@ msgstr ""
 
 #: options/theme-options.php:726
 msgid "Background Transparency in the Frontend"
+msgstr ""
+
+#: options/theme-options.php:727
+msgid "Slide to adjust, the recommended sliding value range is 0.6-0.8"
 msgstr ""
 
 #: options/theme-options.php:736
@@ -1416,7 +1418,7 @@ msgid "Hitokoto API address"
 msgstr ""
 
 #: options/theme-options.php:908
-msgid "fill the address in JavaScript array format"
+msgid "Fill in the address in JavaScript array format"
 msgstr ""
 
 #: options/theme-options.php:917
@@ -2118,7 +2120,7 @@ msgid "JianShu"
 msgstr ""
 
 #: options/theme-options.php:1666
-msgid "Customized social network Ⅰ"
+msgid "Customized Social Network Ⅰ"
 msgstr ""
 
 #: options/theme-options.php:1674
@@ -2177,12 +2179,12 @@ msgid "Color Background"
 msgstr ""
 
 #: options/theme-options.php:1750
-msgid "Bulletin Board \"broadcast\" Icon"
+msgid "Bulletin Board \"Broadcast\" Icon"
 msgstr ""
 
 #: options/theme-options.php:1752
 msgid ""
-"The \"broadcast\" icon will be displayed on the left side of the "
+"The \"Broadcast\" icon will be displayed on the left side of the "
 "announcement bar"
 msgstr ""
 
@@ -2196,12 +2198,6 @@ msgstr ""
 
 #: options/theme-options.php:1772
 msgid "Bulletin Board Border Color"
-msgstr ""
-
-#: options/theme-options.php:1777
-msgid ""
-"Customize the colors, it is recommended to use a lighter color that "
-"corresponds with the theme color"
 msgstr ""
 
 #: options/theme-options.php:1784
@@ -2249,7 +2245,7 @@ msgstr ""
 #: options/theme-options.php:1828
 msgid ""
 "Default is \"Article\", you can change it to anything else, but of course "
-"it CANNOT be used as an advertisement! Not allowed!!!"
+"it CANNOT be used as an ad! Not allowed!!!"
 msgstr ""
 
 #: options/theme-options.php:1835
@@ -2348,8 +2344,7 @@ msgstr ""
 
 #: options/theme-options.php:2040
 msgid ""
-"You can choose between a circular display or a rectangular display of the "
-"article area decorated with featured images"
+"You can choose a circular or a rectangular display of the featured image"
 msgstr ""
 
 #: options/theme-options.php:2051
@@ -2357,9 +2352,7 @@ msgid "Article Area Featured Image Alignment"
 msgstr ""
 
 #: options/theme-options.php:2053
-msgid ""
-"You can choose different directions to display the Article area decorated "
-"with featured images"
+msgid "You can choose different directions to display the featured images"
 msgstr ""
 
 #: options/theme-options.php:2065
@@ -2375,7 +2368,7 @@ msgid "External API Random Image"
 msgstr ""
 
 #: options/theme-options.php:2076
-msgid "Article Featured Image External API Random Image Address"
+msgid "Article Area Featured Image External API Random Image Address"
 msgstr ""
 
 #: options/theme-options.php:2084
@@ -2392,8 +2385,8 @@ msgstr ""
 
 #: options/theme-options.php:2099
 msgid ""
-"Customize the colors, it is recommended to use a color that is the same "
-"color as the theme color and belongs to a lighter color"
+"Customize the colors, it is recommended to use a light color corresponding "
+"with the main color"
 msgstr ""
 
 #: options/theme-options.php:2106
@@ -2409,7 +2402,7 @@ msgid "Article Area Time Display Area Font Size"
 msgstr ""
 
 #: options/theme-options.php:2117
-msgid "Slide to adjust, the recommended values range 10-14"
+msgid "Slide to adjust, the recommended values range is 10-14"
 msgstr ""
 
 #: options/theme-options.php:2128
@@ -2510,23 +2503,23 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:2241
-msgid "Page LazyLoad placeholder SVG"
+msgid "Page LazyLoad Placeholder SVG"
 msgstr ""
 
 #: options/theme-options.php:2243
 msgid ""
 "Fill in the address, this is the placeholder image that will be displayed "
-"when the page LazyLoad is loaded"
+"when the page LazyLoad is being loaded"
 msgstr ""
 
 #: options/theme-options.php:2250
-msgid "Page Image Loading Placeholder SVG"
+msgid "Page Image Placeholder SVG"
 msgstr ""
 
 #: options/theme-options.php:2251
 msgid ""
 "Fill address, this is the SVG that will be displayed as a placeholder when "
-"the page image is loaded"
+"the page image is being loaded"
 msgstr ""
 
 #: options/theme-options.php:2260
@@ -2567,8 +2560,8 @@ msgstr ""
 
 #: options/theme-options.php:2295
 msgid ""
-"After turning on the article page will appear the previous and next article "
-"switch"
+"After turning on, the previous and next article switch will appear on the "
+"article pages"
 msgstr ""
 
 #: options/theme-options.php:2302
@@ -2576,7 +2569,7 @@ msgid "Article Page Copyright Tips and Labels"
 msgstr ""
 
 #: options/theme-options.php:2303
-msgid "Copyright hint and label will appear on article pages when turned on"
+msgid "Copyright hint and label will appear on article pages when enabled"
 msgstr ""
 
 #: options/theme-options.php:2310
@@ -2584,7 +2577,7 @@ msgid "Article Page Author Info"
 msgstr ""
 
 #: options/theme-options.php:2311
-msgid "Author information will appear on the article page after turning it on"
+msgid "Author information will appear on the article page when enabled"
 msgstr ""
 
 #: options/theme-options.php:2318

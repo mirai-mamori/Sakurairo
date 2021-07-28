@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-27 18:58+0800\n"
-"PO-Revision-Date: 2021-07-27 19:34+0800\n"
+"POT-Creation-Date: 2021-07-28 12:23+0800\n"
+"PO-Revision-Date: 2021-07-28 12:26+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -751,7 +751,8 @@ msgstr "站点Icon"
 
 #: options/theme-options.php:100
 msgid ""
-"Fill in the address, which is the icon next to the title above the browser"
+"Fill in the address, which decides the icon next to the title above the "
+"browser"
 msgstr "填写地址，站点Logo即浏览器上方标题旁的图标"
 
 #: options/theme-options.php:107
@@ -778,8 +779,8 @@ msgstr "站点描述"
 
 #: options/theme-options.php:125
 msgid ""
-"Use concise words to describe the site, the number of words is recommended "
-"within 120 words"
+"Use concise words to describe the site, it is recommended to write within "
+"120 words"
 msgstr "用简洁的文字描述本站点，字数建议在120个字以内"
 
 #: options/theme-options.php:133
@@ -858,7 +859,7 @@ msgstr "永远开启"
 msgid "Dark Mode Image Brightness"
 msgstr "深色模式图像亮度"
 
-#: options/theme-options.php:209
+#: options/theme-options.php:209 options/theme-options.php:220
 msgid "Slide to adjust, the recommended value range is 0.6-0.8"
 msgstr "滑动滑块，推荐数值范围为0.6-0.8"
 
@@ -866,19 +867,14 @@ msgstr "滑动滑块，推荐数值范围为0.6-0.8"
 msgid "Dark Mode Component Transparency"
 msgstr "深色模式部件透明度"
 
-#: options/theme-options.php:220 options/theme-options.php:727
-msgid "Slide to adjust, the recommended sliding value range is 0.6-0.8"
-msgstr "滑动滑块，推荐数值范围为0.6-0.8"
-
 #: options/theme-options.php:229
 msgid "Dark mode Background Transparency"
 msgstr "深色模式背景透明度"
 
 #: options/theme-options.php:230
 msgid ""
-"Slide to adjust, the recommended sliding value range is 0.6-0.8. In order to "
-"ensure the best appearance, it is better to keep the display of the frontend "
-"background image"
+"Slide to adjust, the recommended value range is 0.6-0.8. In order to ensure "
+"the best appearance, please keep the display of the frontend background image"
 msgstr ""
 "滑动滑块，推荐数值范围为0.6-0.8。为保证最佳观感，使用此项最好保留前台背景图像"
 "的显示"
@@ -1060,7 +1056,9 @@ msgid "Nav Menu Blur"
 msgstr "导航菜单模糊"
 
 #: options/theme-options.php:434
-msgid "Slide to adjust, the recommended value is 5px, and close when it is 0px"
+msgid ""
+"Slide to adjust, the recommended value is 5px, and this function will be off "
+"when set to 0px"
 msgstr "滑动滑块，推荐数值为5px，为0px时关闭"
 
 #: options/theme-options.php:443
@@ -1182,7 +1180,7 @@ msgstr "样式菜单背景颜色"
 msgid "Style Menu Option Background Color"
 msgstr "样式菜单选项背景颜色"
 
-#: options/theme-options.php:598
+#: options/theme-options.php:598 options/theme-options.php:1777
 msgid ""
 "Customize the colors, it is recommended to use a light color that "
 "corresponds with the theme color"
@@ -1240,6 +1238,10 @@ msgstr "柠檬形状"
 #: options/theme-options.php:726
 msgid "Background Transparency in the Frontend"
 msgstr "前台背景透明度"
+
+#: options/theme-options.php:727
+msgid "Slide to adjust, the recommended sliding value range is 0.6-0.8"
+msgstr "滑动滑块，推荐数值范围为0.6-0.8"
 
 #: options/theme-options.php:736
 msgid "Font Area"
@@ -1437,7 +1439,7 @@ msgid "Hitokoto API address"
 msgstr "一言API地址"
 
 #: options/theme-options.php:908
-msgid "fill the address in JavaScript array format"
+msgid "Fill in the address in JavaScript array format"
 msgstr "填写地址，格式为JavaScript数组"
 
 #: options/theme-options.php:917
@@ -2149,7 +2151,7 @@ msgid "JianShu"
 msgstr "简书"
 
 #: options/theme-options.php:1666
-msgid "Customized social network Ⅰ"
+msgid "Customized Social Network Ⅰ"
 msgstr "自定义社交网络 Ⅰ"
 
 #: options/theme-options.php:1674
@@ -2209,14 +2211,14 @@ msgid "Color Background"
 msgstr "颜色背景"
 
 #: options/theme-options.php:1750
-msgid "Bulletin Board \"broadcast\" Icon"
+msgid "Bulletin Board \"Broadcast\" Icon"
 msgstr "公告板\"广播\"图标"
 
 #: options/theme-options.php:1752
 msgid ""
-"The \"broadcast\" icon will be displayed on the left side of the "
+"The \"Broadcast\" icon will be displayed on the left side of the "
 "announcement bar"
-msgstr "\"广播\"图标将显示在公告栏的左侧"
+msgstr "\"广播\"图标将显示在公告版的左侧"
 
 #: options/theme-options.php:1759
 msgid "Bulletin Board Background"
@@ -2229,12 +2231,6 @@ msgstr "最佳宽度820px，最佳高度67px"
 #: options/theme-options.php:1772
 msgid "Bulletin Board Border Color"
 msgstr "公告板边框颜色"
-
-#: options/theme-options.php:1777
-msgid ""
-"Customize the colors, it is recommended to use a lighter color that "
-"corresponds with the theme color"
-msgstr "自定义颜色，建议使用与主题色相同色系且属于浅色系的颜色"
 
 #: options/theme-options.php:1784
 msgid "Bulletin Board Text"
@@ -2280,7 +2276,7 @@ msgstr "文章区域标题"
 #: options/theme-options.php:1828
 msgid ""
 "Default is \"Article\", you can change it to anything else, but of course it "
-"CANNOT be used as an advertisement! Not allowed!!!"
+"CANNOT be used as an ad! Not allowed!!!"
 msgstr "默认为“Article”，你可以修改为其他，当然不能当广告用！不允许！！"
 
 #: options/theme-options.php:1835
@@ -2379,8 +2375,7 @@ msgstr "文章区域装饰特色图片展示形状"
 
 #: options/theme-options.php:2040
 msgid ""
-"You can choose between a circular display or a rectangular display of the "
-"article area decorated with featured images"
+"You can choose a circular or a rectangular display of the featured image"
 msgstr "你可以选择圆形展示或者矩形展示文章区域装饰特色图片"
 
 #: options/theme-options.php:2051
@@ -2388,9 +2383,7 @@ msgid "Article Area Featured Image Alignment"
 msgstr "文章区域装饰特色图片对齐方向"
 
 #: options/theme-options.php:2053
-msgid ""
-"You can choose different directions to display the Article area decorated "
-"with featured images"
+msgid "You can choose different directions to display the featured images"
 msgstr "你可以选择不同方向展示文章区域装饰特色图片"
 
 #: options/theme-options.php:2065
@@ -2406,7 +2399,7 @@ msgid "External API Random Image"
 msgstr "外部API随机图片"
 
 #: options/theme-options.php:2076
-msgid "Article Featured Image External API Random Image Address"
+msgid "Article Area Featured Image External API Random Image Address"
 msgstr "文章区域装饰特色图片外部API随机图片地址"
 
 #: options/theme-options.php:2084
@@ -2423,9 +2416,9 @@ msgstr "文章区域时间提示区域背景颜色"
 
 #: options/theme-options.php:2099
 msgid ""
-"Customize the colors, it is recommended to use a color that is the same "
-"color as the theme color and belongs to a lighter color"
-msgstr "自定义颜色，建议使用与主题色搭配色相同色系且属于浅色系的颜色"
+"Customize the colors, it is recommended to use a light color corresponding "
+"with the main color"
+msgstr "自定义颜色，建议使用与主题色相同色系且属于浅色系的颜色"
 
 #: options/theme-options.php:2106
 msgid "Article Area Time Display Area Text Color"
@@ -2440,7 +2433,7 @@ msgid "Article Area Time Display Area Font Size"
 msgstr "文章区域时间提示区域字体大小"
 
 #: options/theme-options.php:2117
-msgid "Slide to adjust, the recommended values range 10-14"
+msgid "Slide to adjust, the recommended values range is 10-14"
 msgstr "滑动滑块，推荐数值范围为10-14"
 
 #: options/theme-options.php:2128
@@ -2543,23 +2536,23 @@ msgstr ""
 "建议开启"
 
 #: options/theme-options.php:2241
-msgid "Page LazyLoad placeholder SVG"
+msgid "Page LazyLoad Placeholder SVG"
 msgstr "页面LazyLoad加载占位SVG"
 
 #: options/theme-options.php:2243
 msgid ""
 "Fill in the address, this is the placeholder image that will be displayed "
-"when the page LazyLoad is loaded"
+"when the page LazyLoad is being loaded"
 msgstr "填写地址，此为页面LazyLoad加载时会显示的占位图"
 
 #: options/theme-options.php:2250
-msgid "Page Image Loading Placeholder SVG"
+msgid "Page Image Placeholder SVG"
 msgstr "页面图像加载占位SVG"
 
 #: options/theme-options.php:2251
 msgid ""
 "Fill address, this is the SVG that will be displayed as a placeholder when "
-"the page image is loaded"
+"the page image is being loaded"
 msgstr "填写地址，此为加载页面图像时占位显示的SVG"
 
 #: options/theme-options.php:2260
@@ -2601,8 +2594,8 @@ msgstr "文章页面上下文章切换"
 
 #: options/theme-options.php:2295
 msgid ""
-"After turning on the article page will appear the previous and next article "
-"switch"
+"After turning on, the previous and next article switch will appear on the "
+"article pages"
 msgstr "开启之后文章页面将出现上下文章切换"
 
 #: options/theme-options.php:2302
@@ -2610,7 +2603,7 @@ msgid "Article Page Copyright Tips and Labels"
 msgstr "文章页面版权提示和标签"
 
 #: options/theme-options.php:2303
-msgid "Copyright hint and label will appear on article pages when turned on"
+msgid "Copyright hint and label will appear on article pages when enabled"
 msgstr "开启之后文章页面将出现版权提示和标签"
 
 #: options/theme-options.php:2310
@@ -2618,7 +2611,7 @@ msgid "Article Page Author Info"
 msgstr "文章页面作者信息"
 
 #: options/theme-options.php:2311
-msgid "Author information will appear on the article page after turning it on"
+msgid "Author information will appear on the article page when enabled"
 msgstr "开启之后文章页面将出现作者信息"
 
 #: options/theme-options.php:2318
@@ -3413,6 +3406,24 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://codestarthemes.com/"
 msgstr ""
+
+#~ msgid "Customized social network Ⅰ"
+#~ msgstr "自定义社交网络 Ⅰ"
+
+#~ msgid ""
+#~ "Customize the colors, it is recommended to use a lighter color that "
+#~ "corresponds with the theme color"
+#~ msgstr "自定义颜色，建议使用与主题色相同色系且属于浅色系的颜色"
+
+#~ msgid ""
+#~ "Default is \"Article\", you can change it to anything else, but of course "
+#~ "it CANNOT be used as an advertisement! Not allowed!!!"
+#~ msgstr "默认为“Article”，你可以修改为其他，当然不能当广告用！不允许！！"
+
+#~ msgid ""
+#~ "Customize the colors, it is recommended to use a color that is the same "
+#~ "color as the theme color and belongs to a lighter color"
+#~ msgstr "自定义颜色，建议使用与主题色搭配色相同色系且属于浅色系的颜色"
 
 #~ msgid "Dropdown Arrow"
 #~ msgstr "下拉箭头"
