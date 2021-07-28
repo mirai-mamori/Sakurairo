@@ -97,7 +97,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'favicon_link',
         'type'  => 'text',
         'title' => __('Site Icon','csf'),
-        'desc'   => __('Fill in the address, which is the icon next to the title above the browser','csf'),
+        'desc'   => __('Fill in the address, which decides the icon next to the title above the browser','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/favicon.ico'
       ),
 
@@ -122,7 +122,7 @@ if( class_exists( 'CSF' ) ) {
         'type'   => 'text',
         'title'  => __('Site Descriptions','csf'),
         'dependency' => array( 'iro_meta', '==', 'true' ),
-        'desc'   => __('Use concise words to describe the site, the number of words is recommended within 120 words','csf'),
+        'desc'   => __('Use concise words to describe the site, it is recommended to write within 120 words','csf'),
       ),
 
     )
@@ -217,7 +217,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'theme_darkmode_widget_transparency',
         'type'   => 'slider',
         'title'  => __('Dark Mode Component Transparency','csf'),
-        'desc'   => __('Slide to adjust, the recommended sliding value range is 0.6-0.8','csf'),
+        'desc'   => __('Slide to adjust, the recommended value range is 0.6-0.8','csf'),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -227,7 +227,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'theme_darkmode_background_transparency',
         'type'   => 'slider',
         'title'  => __('Dark mode Background Transparency','csf'),
-        'desc'   => __('Slide to adjust, the recommended sliding value range is 0.6-0.8. In order to ensure the best appearance, it is better to keep the display of the frontend background image','csf'),
+        'desc'   => __('Slide to adjust, the recommended value range is 0.6-0.8. In order to ensure the best appearance, please keep the display of the frontend background image','csf'),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -431,7 +431,7 @@ if( class_exists( 'CSF' ) ) {
         'id'    => 'nav_menu_blur',
         'type'  => 'slider',
         'title' => __('Nav Menu Blur','csf'),
-        'desc'   => __('Slide to adjust, the recommended value is 5px, and close when it is 0px','csf'),
+        'desc'   => __('Slide to adjust, the recommended value is 5px, and this function will be off when set to 0px','csf'),
         'unit'    => 'px',
         'max'   => '20',
         'default' => '0'
@@ -905,7 +905,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'textarea',
         'title' => __('Hitokoto API address','csf'),
         'dependency' => array( 'footer_yiyan', '==', 'true' ),
-        'desc' => __('fill the address in JavaScript array format','csf'),
+        'desc' => __('Fill in the address in JavaScript array format','csf'),
         'default' => '["https://api.maho.cc/yiyan/", "https://v1.hitokoto.cn/"]'
       ),
 
@@ -1663,7 +1663,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'socialdiy1',
         'type'   => 'text',
-        'title' => __('Customized social network Ⅰ','csf'),
+        'title' => __('Customized Social Network Ⅰ','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
         'desc' => __('add URL','csf'),
       ),
@@ -1747,9 +1747,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'announce_bar_icon',
         'type' => 'switcher',
-        'title' => __('Bulletin Board "broadcast" Icon','csf'),
+        'title' => __('Bulletin Board "Broadcast" Icon','csf'),
         'dependency' => array( 'announce_bar', '==', 'true' ),
-        'label' => __('The "broadcast" icon will be displayed on the left side of the announcement bar','csf'),
+        'label' => __('The "Broadcast" icon will be displayed on the left side of the announcement bar','csf'),
         'default' => true
       ),
 
@@ -1774,7 +1774,7 @@ if( class_exists( 'CSF' ) ) {
           array( 'announce_bar', '==', 'true' ),
           array( 'announce_bar_style', '==', 'pure' ),
         ),
-        'desc' => __('Customize the colors, it is recommended to use a lighter color that corresponds with the theme color','csf'),
+        'desc' => __('Customize the colors, it is recommended to use a light color that corresponds with the theme color','csf'),
         'default' => '#E6E6E6'
       ),
 
@@ -1825,7 +1825,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'post_area_title',
         'type' => 'text',
         'title' => __('Post Area Title','csf'),
-        'desc' => __('Default is "Article", you can change it to anything else, but of course it CANNOT be used as an advertisement! Not allowed!!!' ,'csf'),
+        'desc' => __('Default is "Article", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'csf'),
         'default' => 'Article'
       ),
 
@@ -2037,7 +2037,7 @@ if( class_exists( 'CSF' ) ) {
         'type'       => 'image_select',
         'title' => __('Article Area Featured Image Display Shapes','csf'),
         'dependency' => array( 'post_list_style', '==', 'akinastyle' ),
-        'desc' => __('You can choose between a circular display or a rectangular display of the article area decorated with featured images','csf'),
+        'desc' => __('You can choose a circular or a rectangular display of the featured image','csf'),
         'options'    => array(
           'round' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina.png',
           'square' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina2.png',
@@ -2050,7 +2050,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'image_select',
         'title' => __('Article Area Featured Image Alignment','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('You can choose different directions to display the Article area decorated with featured images','csf'),
+        'desc' => __('You can choose different directions to display the featured images','csf'),
         'options' => array(
           'alternate' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura1.png',
           'left' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura2.png',
@@ -2073,7 +2073,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'post_cover',
         'type' => 'text',
-        'title' => __('Article Featured Image External API Random Image Address','csf'),
+        'title' => __('Article Area Featured Image External API Random Image Address','csf'),
         'dependency' => array( 'post_cover_options', '==', 'type_2' ),
         'desc' => __('add URL','csf'),
       ),
@@ -2096,7 +2096,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'color',
         'title' => __('Article Area Time Display Area Background Color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('Customize the colors, it is recommended to use a color that is the same color as the theme color and belongs to a lighter color','csf'),
+        'desc' => __('Customize the colors, it is recommended to use a light color corresponding with the main color','csf'),
         'default' => '#fff5e0'
       ),    
 
@@ -2114,7 +2114,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'slider',
         'title' => __('Article Area Time Display Area Font Size','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('Slide to adjust, the recommended values range 10-14','csf'),
+        'desc' => __('Slide to adjust, the recommended values range is 10-14','csf'),
         'unit' => 'px',
         'step' => '1',
         'min' => '6',
@@ -2238,17 +2238,17 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'page_lazyload_spinner',
         'type' => 'text',
-        'title' => __('Page LazyLoad placeholder SVG','csf'),
+        'title' => __('Page LazyLoad Placeholder SVG','csf'),
         'dependency' => array( 'page_lazyload', '==', 'true' ),
-        'desc' => __('Fill in the address, this is the placeholder image that will be displayed when the page LazyLoad is loaded','csf'),
+        'desc' => __('Fill in the address, this is the placeholder image that will be displayed when the page LazyLoad is being loaded','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/inload.svg'
       ),
 
       array(
         'id' => 'load_in_svg',
         'type' => 'text',
-        'title' => __('Page Image Loading Placeholder SVG','csf'),
-        'desc' => __('Fill address, this is the SVG that will be displayed as a placeholder when the page image is loaded','csf'),
+        'title' => __('Page Image Placeholder SVG','csf'),
+        'desc' => __('Fill address, this is the SVG that will be displayed as a placeholder when the page image is being loaded','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/inload.svg'
       ),
 
@@ -2292,7 +2292,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'article_nextpre',
         'type' => 'switcher',
         'title' => __('Article Page Prev/Next Article Switcher','csf'),
-        'label' => __('After turning on the article page will appear the previous and next article switch','csf'),
+        'label' => __('After turning on, the previous and next article switch will appear on the article pages','csf'),
         'default' => false
       ),
 
@@ -2300,7 +2300,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'article_lincenses',
         'type' => 'switcher',
         'title' => __('Article Page Copyright Tips and Labels','csf'),
-        'label' => __('Copyright hint and label will appear on article pages when turned on','csf'),
+        'label' => __('Copyright hint and label will appear on article pages when enabled','csf'),
         'default' => false
       ),
 
@@ -2308,7 +2308,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'author_profile',
         'type' => 'switcher',
         'title' => __('Article Page Author Info','csf'),
-        'label' => __('Author information will appear on the article page after turning it on','csf'),
+        'label' => __('Author information will appear on the article page when enabled','csf'),
         'default' => false
       ),
 
