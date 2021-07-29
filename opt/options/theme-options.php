@@ -1793,9 +1793,9 @@ if( class_exists( 'CSF' ) ) {
         'title' => __('Bulletin Board Alignment','csf'),
         'dependency' => array( 'bulletin_board', '==', 'true' ),
         'options'     => array(
-          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/bulletin_text_left.png',
-          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/bulletin_text_right.png',
-          'center'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/bulletin_text_center.png',
+          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_left.png',
+          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_right.png',
+          'center'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_center.png',
         ),
         'default'     => 'left'
       ),
