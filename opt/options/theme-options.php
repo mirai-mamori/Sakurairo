@@ -779,7 +779,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'aplayer_playlistid',
         'type' => 'text',
         'title' => __('Footer Online Music Player Songlist ID','csf'),
-        'dependency' => array( 'aplayer_server', '! =', 'off' ),
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
         'desc' => __('Fill in the song ID, e.g. https://music.163.com/#/playlist?id=5380675133 SongID:5380675133','csf'),
         'default' => '5380675133'
       ),
@@ -788,7 +788,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'aplayer_order',
         'type' => 'select',
         'title' => __('Footer Online Music Player Mode','csf'),
-        'dependency' => array( 'aplayer_server', '! =', 'off' ),
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
         'desc' => __('Select music player mode','csf'),
         'options' => array(
           'list' => __('List','csf'),
@@ -801,7 +801,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'aplayer_preload',
         'type' => 'select',
         'title' => __('Footer Online Music Player Preload','csf'),
-        'dependency' => array( 'aplayer_server', '! =', 'off' ),
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
         'desc' => __('Whether to preload songs','csf'),
         'options' => array(
           'none' => __('Off','csf'),
@@ -815,7 +815,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'aplayer_volume',
         'type' => 'slider',
         'title' => __('Default Volume of Footer Online Music Player','csf'),
-        'dependency' => array( 'aplayer_server', '! =', 'off' ),
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
         'desc' => __('Slide to adjust, the recommended sliding value range is 0.4-0.6','csf'),
         'step' => '0.01',
         'max' => '1',
