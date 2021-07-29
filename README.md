@@ -1,6 +1,6 @@
 [![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.7.5/vision/readme/hyouryu/banner.png)](https://github.com/mirai-mamori/Sakurairo)
 
-<h1 align="left">iro 主题</h1>
+<h1 align="left">WordPress Theme Sakurairo </h1>
 
 > 一个多彩，轻松上手，体验完善，提供多语言支持，具有强大自定义功能的WordPress主题
 
