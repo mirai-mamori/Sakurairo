@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-29 17:31+0800\n"
-"PO-Revision-Date: 2021-07-29 17:31+0800\n"
+"POT-Creation-Date: 2021-07-29 19:12+0800\n"
+"PO-Revision-Date: 2021-07-29 19:12+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -472,7 +472,7 @@ msgstr "開"
 
 #: fields/switcher/switcher.php:21 options/theme-options.php:769
 #: options/theme-options.php:807 options/theme-options.php:1018
-#: options/theme-options.php:2503 options/theme-options.php:2516
+#: options/theme-options.php:2515 options/theme-options.php:2528
 msgid "Off"
 msgstr "關"
 
@@ -841,9 +841,9 @@ msgstr "主題色"
 #: options/theme-options.php:152 options/theme-options.php:160
 #: options/theme-options.php:173 options/theme-options.php:989
 #: options/theme-options.php:998 options/theme-options.php:2365
-#: options/theme-options.php:2373 options/theme-options.php:2678
-#: options/theme-options.php:2686 options/theme-options.php:2694
-#: options/theme-options.php:2702 options/theme-options.php:2710
+#: options/theme-options.php:2373 options/theme-options.php:2690
+#: options/theme-options.php:2698 options/theme-options.php:2706
+#: options/theme-options.php:2714 options/theme-options.php:2722
 #, fuzzy
 #| msgid "Custom colors"
 msgid "Customize the colors"
@@ -3002,164 +3002,184 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:2485
+#, fuzzy
+#| msgid "Navigation Menu Content Display"
+msgid "Page Comment Area IP Source"
+msgstr "導航菜單內容顯示"
+
+#: options/theme-options.php:2486
+msgid ""
+"You can choose the theme self built IP library or Taobao IP library as the "
+"comment location information source"
+msgstr ""
+
+#: options/theme-options.php:2488
+msgid "Theme Self Built IP Lib"
+msgstr ""
+
+#: options/theme-options.php:2489
+msgid "Taobao IP Lib"
+msgstr ""
+
+#: options/theme-options.php:2497
 msgid "Private Comment Function"
 msgstr ""
 
-#: options/theme-options.php:2486
+#: options/theme-options.php:2498
 msgid ""
 "When enabled, users are allowed to set their comments to be invisible to "
 "others"
 msgstr ""
 
-#: options/theme-options.php:2493
+#: options/theme-options.php:2505
 msgid "Page Comment Area Bot Verification"
 msgstr ""
 
-#: options/theme-options.php:2494
+#: options/theme-options.php:2506
 msgid "After turning on user comments need to be verified before posting"
 msgstr ""
 
-#: options/theme-options.php:2501
+#: options/theme-options.php:2513
 msgid "QQ Avatar Link Encryption"
 msgstr ""
 
-#: options/theme-options.php:2504
+#: options/theme-options.php:2516
 msgid "Redirect (low security)"
 msgstr ""
 
-#: options/theme-options.php:2505
+#: options/theme-options.php:2517
 msgid "Get avatar data in the backend (medium security)"
 msgstr ""
 
-#: options/theme-options.php:2506
+#: options/theme-options.php:2518
 msgid "Parse avatar interface in the backend (high security, slow)"
 msgstr ""
 
-#: options/theme-options.php:2514
+#: options/theme-options.php:2526
 msgid "Page Comment Area Upload Image Interface"
 msgstr ""
 
-#: options/theme-options.php:2527
+#: options/theme-options.php:2539
 msgid "Imgur Client ID"
 msgstr ""
 
-#: options/theme-options.php:2529
+#: options/theme-options.php:2541
 msgid ""
 "Fill in Client ID here, to register please visit https://api.imgur.com/"
 "oauth2/addclient"
 msgstr ""
 
-#: options/theme-options.php:2535
+#: options/theme-options.php:2547
 msgid "Imgur Upload Proxy"
 msgstr ""
 
-#: options/theme-options.php:2537
+#: options/theme-options.php:2549
 msgid ""
 "The proxy used by the backend when uploading images to Imgur. You can refer "
 "to the tutorial: https://2heng.xin/2018/06/06/javascript-upload-images-with-"
 "imgur-api/"
 msgstr ""
 
-#: options/theme-options.php:2544
+#: options/theme-options.php:2556
 msgid "SM.MS Secret Token"
 msgstr ""
 
-#: options/theme-options.php:2546
+#: options/theme-options.php:2558
 msgid ""
 "Fill in your Key here, to get it please visit https://sm.ms/home/apitoken"
 msgstr ""
 
-#: options/theme-options.php:2552
+#: options/theme-options.php:2564
 msgid "Chevereto API v1 Key"
 msgstr ""
 
-#: options/theme-options.php:2554
+#: options/theme-options.php:2566
 msgid ""
 "Fill in the Key here, to get please visit your Chevereto home page address/"
 "dashboard/settings/api"
 msgstr ""
 
-#: options/theme-options.php:2560
+#: options/theme-options.php:2572
 msgid "Chevereto Address"
 msgstr ""
 
-#: options/theme-options.php:2562
+#: options/theme-options.php:2574
 msgid ""
 "Your Chevereto home page address. Please note that there is no \"/\" at the "
 "end, e.g. https://your.cherverto.com"
 msgstr ""
 
-#: options/theme-options.php:2568
+#: options/theme-options.php:2580
 msgid "Comment Image Proxy"
 msgstr ""
 
-#: options/theme-options.php:2569
+#: options/theme-options.php:2581
 msgid "Proxy for the image displayed on the frontend"
 msgstr ""
 
-#: options/theme-options.php:2576
+#: options/theme-options.php:2588
 msgid "Mail Template Featured Image"
 msgstr ""
 
-#: options/theme-options.php:2577
+#: options/theme-options.php:2589
 msgid "Set the background image of your reply email"
 msgstr ""
 
-#: options/theme-options.php:2585
+#: options/theme-options.php:2597
 msgid "Mail Template Sending Address Prefix"
 msgstr ""
 
-#: options/theme-options.php:2586
+#: options/theme-options.php:2598
 msgid ""
 "Used to send system mail. The sender address will be displayed in the use’s "
 "mailbox, don’t use Non-English Characters. The default system mail address "
 "is bibi@your domain"
 msgstr ""
 
-#: options/theme-options.php:2593
+#: options/theme-options.php:2605
 msgid "User Mail Reply Notification"
 msgstr ""
 
-#: options/theme-options.php:2594
+#: options/theme-options.php:2606
 msgid ""
 "By default WordPress will use email notifications to notify users when their "
 "comments receive a reply. After turning it on users are allowed to set "
 "whether to use email notifications when their comments receive a reply"
 msgstr ""
 
-#: options/theme-options.php:2601
+#: options/theme-options.php:2613
 msgid "Admin Email Reply Notification"
 msgstr ""
 
-#: options/theme-options.php:2602
+#: options/theme-options.php:2614
 msgid ""
 "Use email notifications when admin comments receive a reply after turning it "
 "on"
 msgstr ""
 
-#: options/theme-options.php:2611
+#: options/theme-options.php:2623
 #, fuzzy
 #| msgid "Fonts Options"
 msgid "Other Options"
 msgstr "字體設置"
 
-#: options/theme-options.php:2617
+#: options/theme-options.php:2629
 msgid "Login Screen and Dashboard Related Options"
 msgstr ""
 
-#: options/theme-options.php:2623
+#: options/theme-options.php:2635
 #, fuzzy
 #| msgid "Screen"
 msgid "Login Screen"
 msgstr "螢幕"
 
-#: options/theme-options.php:2629
+#: options/theme-options.php:2641
 #, fuzzy
 #| msgid "Navigation Menu Search Area Background Image"
 msgid "Login Screen Background Image"
 msgstr "導航菜單搜尋區域背景圖像"
 
-#: options/theme-options.php:2630
+#: options/theme-options.php:2642
 #, fuzzy
 #| msgid ""
 #| "Set the background image of your search area. Leave this option blank to "
@@ -3169,43 +3189,43 @@ msgid ""
 "default"
 msgstr "搜索區域的背景圖像。將此選項留空以顯示白色背景"
 
-#: options/theme-options.php:2638
+#: options/theme-options.php:2650
 msgid "Login Screen Background Blur"
 msgstr ""
 
-#: options/theme-options.php:2639
+#: options/theme-options.php:2651
 msgid "Login screen background image will be blurred when enabled"
 msgstr ""
 
-#: options/theme-options.php:2646
+#: options/theme-options.php:2658
 msgid "Login Screen Logo"
 msgstr ""
 
-#: options/theme-options.php:2647
+#: options/theme-options.php:2659
 msgid "Set your login screen Logo"
 msgstr ""
 
-#: options/theme-options.php:2655
+#: options/theme-options.php:2667
 msgid "Jump after login"
 msgstr ""
 
-#: options/theme-options.php:2656
+#: options/theme-options.php:2668
 msgid "Jump to backend for admins and home for users after turning on"
 msgstr ""
 
-#: options/theme-options.php:2662
+#: options/theme-options.php:2674
 #, fuzzy
 #| msgid "Dashed"
 msgid "Dashboard"
 msgstr "虛線"
 
-#: options/theme-options.php:2668
+#: options/theme-options.php:2680
 #, fuzzy
 #| msgid "Dark mode Background Transparency"
 msgid "Dashboard Background Image"
 msgstr "深色模式背景透明度"
 
-#: options/theme-options.php:2669
+#: options/theme-options.php:2681
 #, fuzzy
 #| msgid ""
 #| "Set the background image of your search area. Leave this option blank to "
@@ -3215,164 +3235,164 @@ msgid ""
 "background"
 msgstr "搜索區域的背景圖像。將此選項留空以顯示白色背景"
 
-#: options/theme-options.php:2677
+#: options/theme-options.php:2689
 msgid "Dashboard Primary Menu Color"
 msgstr ""
 
-#: options/theme-options.php:2685
+#: options/theme-options.php:2697
 msgid "Dashboard Secondary Menu Color"
 msgstr ""
 
-#: options/theme-options.php:2693
+#: options/theme-options.php:2705
 msgid "Dashboard Emphasis Color"
 msgstr ""
 
-#: options/theme-options.php:2701
+#: options/theme-options.php:2713
 msgid "Dashboard Button Color"
 msgstr ""
 
-#: options/theme-options.php:2709
+#: options/theme-options.php:2721
 #, fuzzy
 #| msgid "Dark Mode Theme Color"
 msgid "Dashboard Text Color"
 msgstr "深色模式主題顏色"
 
-#: options/theme-options.php:2718
+#: options/theme-options.php:2730
 #, fuzzy
 #| msgid "Fonts Options"
 msgid "Low Use Options"
 msgstr "字體設置"
 
-#: options/theme-options.php:2725
+#: options/theme-options.php:2737
 msgid "Statistics API"
 msgstr ""
 
-#: options/theme-options.php:2726
+#: options/theme-options.php:2738
 msgid ""
 "You can choose WP-Statistics plugin statistics or theme built-in statistics "
 "to display"
 msgstr ""
 
-#: options/theme-options.php:2728
+#: options/theme-options.php:2740
 msgid "Theme Built in Statistics"
 msgstr ""
 
-#: options/theme-options.php:2729
+#: options/theme-options.php:2741
 msgid "WP-Statistics Plugin Statistics"
 msgstr ""
 
-#: options/theme-options.php:2737
+#: options/theme-options.php:2749
 msgid "Statistics display format"
 msgstr ""
 
-#: options/theme-options.php:2738
+#: options/theme-options.php:2750
 msgid "You can choose from four different data display formats"
 msgstr ""
 
-#: options/theme-options.php:2740
+#: options/theme-options.php:2752
 msgid "23333 Visits"
 msgstr ""
 
-#: options/theme-options.php:2741
+#: options/theme-options.php:2753
 msgid "23,333 Visits"
 msgstr ""
 
-#: options/theme-options.php:2742
+#: options/theme-options.php:2754
 msgid "23 333 Visits"
 msgstr ""
 
-#: options/theme-options.php:2743
+#: options/theme-options.php:2755
 msgid "23K Visits"
 msgstr ""
 
-#: options/theme-options.php:2751
+#: options/theme-options.php:2763
 #, fuzzy
 #| msgid "Search..."
 msgid "Live Search"
 msgstr "搜尋..."
 
-#: options/theme-options.php:2752
+#: options/theme-options.php:2764
 msgid ""
 "After turning on the live search in the frontend, call Rest API to update "
 "the cache once an hour. You can set the cache time manually in api.php"
 msgstr ""
 
-#: options/theme-options.php:2759
+#: options/theme-options.php:2771
 msgid "Live Search Comment Support"
 msgstr ""
 
-#: options/theme-options.php:2761
+#: options/theme-options.php:2773
 msgid ""
 "Enable to search for comments in live search (not recommended if site has "
 "too many comments)"
 msgstr ""
 
-#: options/theme-options.php:2768
+#: options/theme-options.php:2780
 msgid "Gravatar Proxy"
 msgstr ""
 
-#: options/theme-options.php:2769
+#: options/theme-options.php:2781
 msgid ""
 "Fill in the proxy address of Gravatar, use the Geekzu proxy by default, "
 "leave it blank to not use the proxy"
 msgstr ""
 
-#: options/theme-options.php:2776
+#: options/theme-options.php:2788
 #, fuzzy
 #| msgid "Google Fonts Name"
 msgid "Google Stats Code"
 msgstr "Google 字體 名稱"
 
-#: options/theme-options.php:2782
+#: options/theme-options.php:2794
 #, fuzzy
 #| msgid "Custom Style"
 msgid "Custom CSS Styles"
 msgstr "自訂樣式"
 
-#: options/theme-options.php:2783
+#: options/theme-options.php:2795
 msgid "Fill in the CSS code without writing style tag"
 msgstr ""
 
-#: options/theme-options.php:2789
+#: options/theme-options.php:2801
 msgid "Timezone Fix"
 msgstr ""
 
-#: options/theme-options.php:2790
+#: options/theme-options.php:2802
 msgid ""
 "Slide to adjust. If the comment has a time difference problem, adjust it "
 "here, fill in an integer. Calculation method: actual time = time of display "
 "error - the integer you entered (in hours)"
 msgstr ""
 
-#: options/theme-options.php:2797
+#: options/theme-options.php:2809
 #, fuzzy
 #| msgid "Lighten"
 msgid "Lightbox"
 msgstr "變亮"
 
-#: options/theme-options.php:2802
+#: options/theme-options.php:2814
 msgid "BaguetteBox Lightbox Effect"
 msgstr ""
 
-#: options/theme-options.php:2803
+#: options/theme-options.php:2815
 msgid "BaguetteBox will be used as the image lightbox effect when turned on"
 msgstr ""
 
-#: options/theme-options.php:2809
+#: options/theme-options.php:2821
 msgid "FancyBox Lightbox Effect"
 msgstr ""
 
-#: options/theme-options.php:2810
+#: options/theme-options.php:2822
 msgid ""
 "FancyBox will be used as an image lightbox effect after turning on, "
 "additional JQ libraries will be loaded"
 msgstr ""
 
-#: options/theme-options.php:2816
+#: options/theme-options.php:2828
 msgid "Code Highlighting"
 msgstr ""
 
-#: options/theme-options.php:2819
+#: options/theme-options.php:2831
 msgid ""
 "<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </"
 "p> <p><strong>Prism.js:</strong> Requires a language to be specified, see <a "
@@ -3382,66 +3402,66 @@ msgid ""
 "where another configuration is available. </p>"
 msgstr ""
 
-#: options/theme-options.php:2826
+#: options/theme-options.php:2838
 msgid "Code Highlight Method"
 msgstr ""
 
-#: options/theme-options.php:2837
+#: options/theme-options.php:2849
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
 msgstr ""
 
-#: options/theme-options.php:2841
+#: options/theme-options.php:2853
 msgid ""
 "See the <a href=\"https://prismjs.com/plugins/line-numbers/\">plugin "
 "description documentation</a>"
 msgstr ""
 
-#: options/theme-options.php:2846
+#: options/theme-options.php:2858
 msgid "Prism.js: Autoload Address"
 msgstr ""
 
-#: options/theme-options.php:2856
+#: options/theme-options.php:2868
 msgid "Prism.js: Code Highlight Theme"
 msgstr ""
 
-#: options/theme-options.php:2865
+#: options/theme-options.php:2877
 msgid "Prism.js: Code Highlight Theme (Dark Mode)"
 msgstr ""
 
-#: options/theme-options.php:2875
+#: options/theme-options.php:2887
 msgid ""
 "The following Options are not recommended to be modified blindly, please use "
 "them under the guidance of others"
 msgstr ""
 
-#: options/theme-options.php:2881
+#: options/theme-options.php:2893
 msgid "Image CDN"
 msgstr ""
 
-#: options/theme-options.php:2882
+#: options/theme-options.php:2894
 msgid ""
 "Note: fill in the format https://your CDN domain/. This means that images "
 "with original path http://your.domain/wp-content/uploads/2018/05/xx.png will "
 "be loaded from http://your CDN domain/2018/05/xx.png"
 msgstr ""
 
-#: options/theme-options.php:2889
+#: options/theme-options.php:2901
 msgid "Articles Categories (Do not display)"
 msgstr ""
 
-#: options/theme-options.php:2890 options/theme-options.php:2897
+#: options/theme-options.php:2902 options/theme-options.php:2909
 msgid "Fill in category ID, seperate in English\" , \" when more than one"
 msgstr ""
 
-#: options/theme-options.php:2896
+#: options/theme-options.php:2908
 msgid "Image Display Category"
 msgstr ""
 
-#: options/theme-options.php:2903
+#: options/theme-options.php:2915
 msgid "Specify Login Address"
 msgstr ""
 
-#: options/theme-options.php:2904
+#: options/theme-options.php:2916
 msgid ""
 "Force not to use the WordPress login page address to login, fill in the new "
 "login page address, such as: http://www.xxx.com/login. Note that before "
@@ -3449,47 +3469,47 @@ msgid ""
 "the inability to enter the background, etc."
 msgstr ""
 
-#: options/theme-options.php:2910
+#: options/theme-options.php:2922
 msgid "Specify Registration Address"
 msgstr ""
 
-#: options/theme-options.php:2911
+#: options/theme-options.php:2923
 msgid ""
 "This address is used as the registration entry on the login page, if you "
 "specify a login address, it is recommended to fill in"
 msgstr ""
 
-#: options/theme-options.php:2917
+#: options/theme-options.php:2929
 msgid "Version Control"
 msgstr ""
 
-#: options/theme-options.php:2918
+#: options/theme-options.php:2930
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr ""
 
-#: options/theme-options.php:2924
+#: options/theme-options.php:2936
 msgid "Backup&Recovery"
 msgstr ""
 
-#: options/theme-options.php:2926
+#: options/theme-options.php:2938
 msgid "Backup or Recovery your theme options"
 msgstr ""
 
-#: options/theme-options.php:2937
+#: options/theme-options.php:2949
 msgid "About Theme"
 msgstr ""
 
-#: options/theme-options.php:2943
+#: options/theme-options.php:2955
 msgid "Version Info"
 msgstr ""
 
-#: options/theme-options.php:2948
+#: options/theme-options.php:2960
 msgid ""
 "<img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/"
 "vision/hyouryu/hyouryulogo.gif\"  alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:2954
+#: options/theme-options.php:2966
 #, php-format
 msgid ""
 "iro 主题版本 / Theme Version %s | <a href=\"https://iro.tw\">主题文档 / "
@@ -3497,25 +3517,25 @@ msgid ""
 "\">项目地址 / Project Address</a>"
 msgstr ""
 
-#: options/theme-options.php:2959
+#: options/theme-options.php:2971
 msgid "Update Related"
 msgstr ""
 
-#: options/theme-options.php:2965
+#: options/theme-options.php:2977
 msgid "Theme Update Source"
 msgstr ""
 
-#: options/theme-options.php:2971
+#: options/theme-options.php:2983
 msgid ""
 "If you are using a server set up in mainland China, please use the jsDelivr "
 "source or the official theme source as your theme update source"
 msgstr ""
 
-#: options/theme-options.php:2978
+#: options/theme-options.php:2990
 msgid "Theme Update Test Channel Disclaimer"
 msgstr ""
 
-#: options/theme-options.php:2983
+#: options/theme-options.php:2995
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -3524,55 +3544,55 @@ msgid ""
 "agree and am willing to bear all unexpected consequences\"</strong>"
 msgstr ""
 
-#: options/theme-options.php:2989
+#: options/theme-options.php:3001
 msgid "Theme Update Channel"
 msgstr ""
 
-#: options/theme-options.php:2995
+#: options/theme-options.php:3007
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr ""
 
-#: options/theme-options.php:2997
+#: options/theme-options.php:3009
 msgid "Stable Channel"
 msgstr ""
 
-#: options/theme-options.php:2998
+#: options/theme-options.php:3010
 msgid "Beta Channel"
 msgstr ""
 
-#: options/theme-options.php:2999
+#: options/theme-options.php:3011
 msgid "Preview Channel"
 msgstr ""
 
-#: options/theme-options.php:3006
+#: options/theme-options.php:3018
 msgid "Localization"
 msgstr ""
 
-#: options/theme-options.php:3012
+#: options/theme-options.php:3024
 msgid "Localize the Frontend Library"
 msgstr ""
 
-#: options/theme-options.php:3013
+#: options/theme-options.php:3025
 msgid "The frontend library will not use jsDelivr CDN after turning it on"
 msgstr ""
 
-#: options/theme-options.php:3020
+#: options/theme-options.php:3032
 msgid "Localize JS/CSS Files"
 msgstr ""
 
-#: options/theme-options.php:3021
+#: options/theme-options.php:3033
 msgid "Enabled by default, some JS files and CSS files do not use jsDelivr CDN"
 msgstr ""
 
-#: options/theme-options.php:3027
+#: options/theme-options.php:3039
 #, fuzzy
 #| msgid "Reference External Font"
 msgid "Reference Information"
 msgstr "引用外部字體（可能影響性能）"
 
-#: options/theme-options.php:3032
+#: options/theme-options.php:3044
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
 "com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -3586,11 +3606,11 @@ msgid ""
 "logo/\">Hyacm</a></p>"
 msgstr ""
 
-#: options/theme-options.php:3040
+#: options/theme-options.php:3052
 msgid "Dependency Information"
 msgstr ""
 
-#: options/theme-options.php:3045
+#: options/theme-options.php:3057
 msgid ""
 "<p>Static Resources Relies on the <a href=\"https://github.com/Fuukei/"
 "Public_Repository\">Public Repository</a> Project Created by Fuukei</p>\n"
@@ -3602,7 +3622,7 @@ msgid ""
 "Checker</a> Project</p>"
 msgstr ""
 
-#: options/theme-options.php:3052
+#: options/theme-options.php:3064
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" />  <img src=\"https://"

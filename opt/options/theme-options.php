@@ -2480,6 +2480,18 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
+        'id' => 'ipsource',
+        'type' => 'select',
+        'title' => __('Page Comment Area IP Source','csf'),
+        'desc' => __('You can choose the theme self built IP library or Taobao IP library as the comment location information source','csf'),
+        'options' => array(
+          'type_1' => __('Theme Self Built IP Lib','csf'),
+          'type_2' => __('Taobao IP Lib','csf'),
+        ),
+        'default' => 'type_1'
+      ),
+
+      array(
         'id' => 'comment_private_message',
         'type' => 'switcher',
         'title' => __('Private Comment Function','csf'),
@@ -3050,17 +3062,6 @@ if( class_exists( 'CSF' ) ) {
       array(
         'type'    => 'content',
         'content' => __('<img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square"  alt="Theme latest version" />  <img src="https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square"  alt="Theme latest version release date" />  <img src="https://data.jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge"  alt="Theme CDN resource access" />','csf'),
-      ),
-      array(
-        'id' => 'ipsource',
-        'type' => 'select',
-        'title' => __('源切换','csf'),
-        'desc' => __('略','csf'),
-        'options' => array(
-          'type_1' => __('自有','csf'),
-          'type_2' => __('淘宝','csf'),
-        ),
-        'default' => 'type_1'
       ),
 
     )
