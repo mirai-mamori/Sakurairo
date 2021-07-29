@@ -1788,7 +1788,7 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id' => 'bulletin_text_align',
+        'id' => 'bulletin_board_text_align',
         'type' => 'image_select',
         'title' => __('Bulletin Board Alignment','csf'),
         'dependency' => array( 'bulletin_board', '==', 'true' ),

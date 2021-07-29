@@ -1656,12 +1656,12 @@ li.link-item {
 }
 <?php endif; ?>
 
-<?php if(iro_opt('bulletin_text_align') == 'center'){ ?>
+<?php if(iro_opt('bulletin_board_text_align') == 'center'){ ?>
 .notice {
     text-align: center;
 }
 
-<?php }if(iro_opt('bulletin_text_align') == 'right'){ ?>
+<?php }if(iro_opt('bulletin_board_text_align') == 'right'){ ?>
 .notice {
     text-align: right;
 }
