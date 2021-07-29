@@ -351,9 +351,17 @@ function convertip($ip)
     if(empty($ip)) $ip = get_comment_author_IP();
     $ch = curl_init();  
     $timeout = 5;  
-    curl_setopt ($ch, CURLOPT_URL, 'http://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip='.$ip);  
+    if (iro_opt('statistics_format') === 'type_1'){
+        $url = "https://api.maho.cc/ip?ip=".$ip;
+    }else{
+        $url = "https://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip=".$ip;
+    }
+    $timeout = 5;
+    curl_setopt ($ch, CURLOPT_URL, $url);
+    // curl_setopt ($ch, CURLOPT_URL, 'http://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip='.$ip);  
     curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);  
     curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);  
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     $file_contents = curl_exec($ch);  
     curl_close($ch);  
     $result = null;
