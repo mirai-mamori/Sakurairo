@@ -2859,14 +2859,14 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array(
           array( 'code_highlight_method', '==', 'prism' ),
         ),
-        'desc' => "Leave blank to use default values",
+        'desc' => __('Leave blank to use default values','csf'),
         'default'=>'https://cdn.jsdelivr.net/npm/prismjs@1.23.0/'
       ),
       array(
         'id' => 'code_highlight_prism_theme_light',
         'type' => 'text',
         'title' => __('Prism.js: Code Highlight Theme','csf'),
-        'desc' => 'Relative to autoload address. Leave blank to use default values',
+        'desc' => __('Relative to autoload address. Leave blank to use default values','csf'),
         'dependency' => array(
           array( 'code_highlight_method', '==', 'prism' ),
         ),
@@ -2875,7 +2875,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'code_highlight_prism_theme_dark',
         'type' => 'text',
         'title' => __('Prism.js: Code Highlight Theme (Dark Mode)','csf'),
-        'desc' => 'Relative to autoload address. Leave blank to use default values',
+        'desc' => __('Relative to autoload address. Leave blank to use default values','csf'),
         'dependency' => array(
           array( 'code_highlight_method', '==', 'prism' ),
         ),
