@@ -779,7 +779,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'aplayer_playlistid',
         'type' => 'text',
         'title' => __('Footer Online Music Player Songlist ID','csf'),
-        'dependency' => array( 'aplayer_server', '! =', 'off' ),
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
         'desc' => __('Fill in the song ID, e.g. https://music.163.com/#/playlist?id=5380675133 SongID:5380675133','csf'),
         'default' => '5380675133'
       ),
@@ -788,7 +788,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'aplayer_order',
         'type' => 'select',
         'title' => __('Footer Online Music Player Mode','csf'),
-        'dependency' => array( 'aplayer_server', '! =', 'off' ),
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
         'desc' => __('Select music player mode','csf'),
         'options' => array(
           'list' => __('List','csf'),
@@ -801,7 +801,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'aplayer_preload',
         'type' => 'select',
         'title' => __('Footer Online Music Player Preload','csf'),
-        'dependency' => array( 'aplayer_server', '! =', 'off' ),
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
         'desc' => __('Whether to preload songs','csf'),
         'options' => array(
           'none' => __('Off','csf'),
@@ -815,7 +815,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'aplayer_volume',
         'type' => 'slider',
         'title' => __('Default Volume of Footer Online Music Player','csf'),
-        'dependency' => array( 'aplayer_server', '! =', 'off' ),
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
         'desc' => __('Slide to adjust, the recommended sliding value range is 0.4-0.6','csf'),
         'step' => '0.01',
         'max' => '1',
@@ -1726,7 +1726,7 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id' => 'announce_bar',
+        'id' => 'bulletin_board',
         'type' => 'switcher',
         'title' => __('Bulletin Board','csf'),
         'label' => __('When enabled the bulletin board will be displayed below the front cover','csf'),
@@ -1734,10 +1734,10 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id' => 'announce_bar_style',
+        'id' => 'bulletin_board_style',
         'type' => 'radio',
         'title' => __('Bulletin Board Style','csf'),
-        'dependency' => array( 'announce_bar', '==', 'true' ),
+        'dependency' => array( 'bulletin_board', '==', 'true' ),
         'options' => array(
           'picture' => __('Picture Background','csf'),
           'pure' => __('Color Background','csf'),
@@ -1746,21 +1746,21 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id' => 'announce_bar_icon',
+        'id' => 'bulletin_board_icon',
         'type' => 'switcher',
         'title' => __('Bulletin Board "Broadcast" Icon','csf'),
-        'dependency' => array( 'announce_bar', '==', 'true' ),
+        'dependency' => array( 'bulletin_board', '==', 'true' ),
         'label' => __('The "Broadcast" icon will be displayed on the left side of the announcement bar','csf'),
         'default' => true
       ),
 
       array(
-        'id' => 'announcement_bg',
+        'id' => 'bulletin_board_bg',
         'type' => 'upload',
         'title' => __('Bulletin Board Background','csf'),
         'dependency' => array(
-          array( 'announce_bar', '==', 'true' ),
-          array( 'announce_bar_style', '==', 'picture' ),
+          array( 'bulletin_board', '==', 'true' ),
+          array( 'bulletin_board_style', '==', 'picture' ),
         ),
         'desc' => __('Best width 820px, best height 67px','csf'),
         'library' => 'image',
@@ -1768,43 +1768,43 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id' => 'announce_bar_border_color',
+        'id' => 'bulletin_board_border_color',
         'type' => 'color',
         'title' => __('Bulletin Board Border Color','csf'),
         'dependency' => array(
-          array( 'announce_bar', '==', 'true' ),
-          array( 'announce_bar_style', '==', 'pure' ),
+          array( 'bulletin_board', '==', 'true' ),
+          array( 'bulletin_board_style', '==', 'pure' ),
         ),
         'desc' => __('Customize the colors, it is recommended to use a light color that corresponds with the theme color','csf'),
         'default' => '#E6E6E6'
       ),
 
       array(
-        'id' => 'announce_text',
+        'id' => 'bulletin_text',
         'type' => 'text',
         'title' => __('Bulletin Board Text','csf'),
-        'dependency' => array( 'announce_bar', '==', 'true' ),
+        'dependency' => array( 'bulletin_board', '==', 'true' ),
         'desc' => __('Fill in the announcement text, the text beyond 142 bytes will be hidden','csf'),
       ),
 
       array(
-        'id' => 'announce_text_align',
+        'id' => 'bulletin_text_align',
         'type' => 'image_select',
         'title' => __('Bulletin Board Alignment','csf'),
-        'dependency' => array( 'announce_bar', '==', 'true' ),
+        'dependency' => array( 'bulletin_board', '==', 'true' ),
         'options'     => array(
-          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_left.png',
-          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_right.png',
-          'center'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_center.png',
+          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/bulletin_text_left.png',
+          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/bulletin_text_right.png',
+          'center'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/bulletin_text_center.png',
         ),
         'default'     => 'left'
       ),
 
       array(
-        'id' => 'announce_text_color',
+        'id' => 'bulletin_text_color',
         'type' => 'color',
         'title' => __('Bulletin Board Text Color','csf'),
-        'dependency' => array( 'announce_bar', '==', 'true' ),
+        'dependency' => array( 'bulletin_board', '==', 'true' ),
         'desc' => __('Customize the colors, suggest using a corresponding color with the background color','csf'),
         'default' => '#999'
       ),    
