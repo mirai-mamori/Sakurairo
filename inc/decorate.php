@@ -468,11 +468,11 @@ font-family: <?php echo $text_logo['font']; ?> ;
 
 .notice i ,
 .notice {
-    color: <?php echo iro_opt('announce_text_color'); ?>;
+    color: <?php echo iro_opt('bulletin_text_color'); ?>;
 }
 
 .notice {
-    border: 1px solid <?php echo iro_opt('announce_bar_border_color'); ?>;
+    border: 1px solid <?php echo iro_opt('bulletin_board_border_color'); ?>;
 }
 
 <?php if(iro_opt('entry_content_style') == "sakurairo"){ ?>
@@ -1656,12 +1656,12 @@ li.link-item {
 }
 <?php endif; ?>
 
-<?php if(iro_opt('announce_text_align') == 'center'){ ?>
+<?php if(iro_opt('bulletin_text_align') == 'center'){ ?>
 .notice {
     text-align: center;
 }
 
-<?php }if(iro_opt('announce_text_align') == 'right'){ ?>
+<?php }if(iro_opt('bulletin_text_align') == 'right'){ ?>
 .notice {
     text-align: right;
 }
@@ -1682,14 +1682,14 @@ h1.main-title {
 
 <?php } ?>
 
-<?php if(iro_opt('announce_bar_style') == 'picture'){ ?>
+<?php if(iro_opt('bulletin_board_style') == 'picture'){ ?>
 .notice {
     background-image:url(<?php echo iro_opt('announcement_bg', ''); ?>);
     border: none;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
 }
 
-<?php }if(iro_opt('announce_bar_style') == 'pure'){ ?>
+<?php }if(iro_opt('bulletin_board_style') == 'pure'){ ?>
 .notice {
     background: #fbfbfb50;
 }
