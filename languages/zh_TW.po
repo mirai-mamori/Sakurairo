@@ -1,23 +1,23 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2021-06-26 15:15+0800\n"
-"PO-Revision-Date: 2021-06-26 15:57+0800\n"
+"POT-Creation-Date: 2021-07-29 17:23+0800\n"
+"PO-Revision-Date: 2021-07-29 17:24+0800\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
-"Language: zh_TW\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
@@ -38,7 +38,7 @@ msgstr "返回首頁"
 msgid "Don't worry, search in site?"
 msgstr "別著急，試試站內檢索？"
 
-#: 404.php:54 footer.php:61 search.php:42
+#: 404.php:54 footer.php:56 search.php:42
 msgid "Search..."
 msgstr "搜尋..."
 
@@ -130,15 +130,15 @@ msgstr "禁止小廣告😀"
 msgid "Site"
 msgstr "網站"
 
-#: footer.php:75 footer.php:83
+#: footer.php:70 footer.php:78
 msgid "Want to find something?"
 msgstr "想要找點什麼呢？"
 
-#: footer.php:85
+#: footer.php:80
 msgid "Search"
 msgstr "檢索"
 
-#: footer.php:136
+#: footer.php:131
 msgid "Widgets"
 msgstr "小工具"
 
@@ -146,35 +146,143 @@ msgstr "小工具"
 msgid "Nav Menus"
 msgstr "導航菜單"
 
-#: functions.php:375 inc/theme_plus.php:191 layouts/authorprofile.php:11
+#: functions.php:198 functions.php:209
+msgid "Ideas"
+msgstr "想法"
+
+#: functions.php:199
+msgid "Idea"
+msgstr "想法"
+
+#: functions.php:200 functions.php:201
+msgid "Publish New Idea"
+msgstr "發佈新想法"
+
+#: functions.php:202
+msgid "Edit Idea"
+msgstr "編輯想法"
+
+#: functions.php:203
+msgid "New Idea"
+msgstr "新想法"
+
+#: functions.php:204
+msgid "View Idea"
+msgstr "查看想法"
+
+#: functions.php:205
+msgid "Search Idea"
+msgstr "搜尋想法"
+
+#: functions.php:206
+msgid "Not Found Idea"
+msgstr "未找到想法"
+
+#: functions.php:207
+msgid "No Idea in the Trash"
+msgstr "垃圾桶里沒有想法"
+
+#: functions.php:306
+msgid "Copied!"
+msgstr "已複製!"
+
+#: functions.php:307
+msgid "Copy Code"
+msgstr "複製代碼"
+
+#: functions.php:308
+msgid ""
+"Your cover API seems to not support Cross Origin Access. In this case, Cover "
+"Cache won't take effect."
+msgstr "您的封面API似乎不支援交叉源訪問。在這種情況下，封面緩存不會生效。"
+
+#: functions.php:309
+msgid "Commiting...."
+msgstr "提交。。。"
+
+#: functions.php:310
+msgid "Succeed"
+msgstr "成功"
+
+#: functions.php:311
+msgid "10 files max per request"
+msgstr "每個請求最多10個檔"
+
+#: functions.php:312
+msgid ""
+"5 MB max per file.\n"
+"\n"
+"「{0}」\n"
+"\n"
+"This image is too large~Please reupload!"
+msgstr ""
+"每個檔最多5MB。\n"
+"\n"
+"「{0}」\n"
+"\n"
+"此圖像太大~請重新上傳！"
+
+#: functions.php:313
+msgid "Uploading..."
+msgstr "上傳中..."
+
+#: functions.php:314
+msgid "Uploaded successfully~"
+msgstr "登錄成功，"
+
+#: functions.php:315
+msgid ""
+"Upload failed!\n"
+"File Name=> {0}\n"
+"code=> {1}\n"
+"{2}"
+msgstr ""
+"上傳失敗！\n"
+"檔案名稱=> {0}\n"
+"代碼=> {1}\n"
+"{2}"
+
+#: functions.php:316
+msgid "Upload failed, please retry."
+msgstr "上傳失敗，請重試。"
+
+#: functions.php:317
+msgid "Page Load failed. HTTP {0}"
+msgstr "頁面載入失敗。HTTP{0}"
+
+#: functions.php:318
+msgid "Glad you come, but we've got nothing left."
+msgstr "很高興你來，但我們一無所有。"
+
+#: functions.php:398 inc/theme_plus.php:191 layouts/authorprofile.php:11
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:375
+#: functions.php:398
 msgid "Blogger"
 msgstr "部落格作者"
 
-#: functions.php:379
+#: functions.php:402
 msgid "Location"
 msgstr "來自"
 
-#: functions.php:384
+#: functions.php:407
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:386
+#: functions.php:409
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:388
+#: functions.php:411
 msgid "No"
 msgstr "否"
 
-#: functions.php:391
+#: functions.php:414
 msgid "Edit"
 msgstr "編輯"
 
-#: functions.php:480
+#: functions.php:503
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
@@ -182,39 +290,39 @@ msgstr ""
 "請安裝插件 <a href=\"https://wordpress.org/plugins/wp-statistics/\" target="
 "\"_blank\">WP-Statistics</a>"
 
-#: functions.php:509
+#: functions.php:532
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "這傢伙好懶╮(╯▽╰)╭"
 
-#: functions.php:1171
+#: functions.php:1194
 msgid "All expand/collapse"
 msgstr "全部展開/收縮"
 
-#: functions.php:1192
+#: functions.php:1215
 msgid " "
 msgstr " "
 
-#: functions.php:1196
+#: functions.php:1219
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1219 functions.php:1222 inc/theme_plus.php:483
+#: functions.php:1242 functions.php:1245 inc/theme_plus.php:483
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:1442
+#: functions.php:1468
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>錯誤</b>: 電子信箱格式出錯 (<b>@"
 
-#: functions.php:1538
+#: functions.php:1564
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1601
+#: functions.php:1627
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:1729
+#: functions.php:1755
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -225,7 +333,7 @@ msgstr ""
 "固定連結</a>設置為樸素。為此，您可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">偽靜態</a></b>"
 
-#: header.php:36
+#: header.php:41
 #, php-format
 msgid "page %s "
 msgstr "第 %s 頁 "
@@ -389,20 +497,6 @@ msgstr "退出登錄"
 #, php-format
 msgid "search result: %s"
 msgstr "搜尋結果：%s"
-
-#: theme-options.php:1324
-#, php-format
-msgid ""
-"如果你选择使用Webp优化随机图片，请点击 <a href = \"%s\">这里</a> 来更新 "
-"Manifest 路径"
-msgstr ""
-
-#: theme-options.php:2937
-#, php-format
-msgid ""
-"正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  "
-"<a href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
-msgstr ""
 
 #: tpl/content-category.php:31 tpl/content-image.php:36
 #: tpl/content-status.php:32 tpl/content-thumb.php:61 tpl/content.php:36
