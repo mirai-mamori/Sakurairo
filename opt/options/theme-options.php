@@ -873,7 +873,8 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'id'=>'footer_addition',
-        'type' => 'textarea',
+        'type'     => 'code_editor',
+        'sanitize' => false,
         'title' => __('Footer Addition','csf'),
         'desc' => __('Add HTML code at the end of the page. Useful for adding customize JavaScript, or adding external CSS stylesheets.','csf'),
       ),
