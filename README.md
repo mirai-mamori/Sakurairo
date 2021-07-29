@@ -1,4 +1,4 @@
-[![image](https://cdn.maho.cc/vision/readme/hyouryu/head.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://cdn.maho.cc/vision/readme/hyouryu/banner.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">iro 主题</h1>
 
@@ -8,16 +8,6 @@
 
 
 ## 版本宣传：
-
-### PV：
-
-[![image](https://cdn.maho.cc/vision/readme/pv.png)](https://iro.tw/)
-
-[![image](https://cdn.maho.cc/vision/readme/bilibili.png)](https://www.bilibili.com/video/BV1YK4y1972H/)
-
-[![image](https://cdn.maho.cc/vision/readme/youtube.png)](https://youtu.be/wDjJDHq7K8E)
-
-### 图文：
 
 [![image](https://cdn.maho.cc/vision/readme/m_encore1.png)](https://iro.tw/)
 
