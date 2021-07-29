@@ -52,7 +52,7 @@
 
 ### 参与贡献：
 
-<a href="https://github.com/QL-A103"><img src="https://avatars.githubusercontent.com/u/57120572?v=4" alt="QL-A103" width="100"></a>  <a href="https://github.com/laoxong"><img src="https://avatars.githubusercontent.com/u/31268830?v=4" alt="laoxong" width="100"></a>  <a href="https://github.com/Gao-pw"><img src="https://avatars.githubusercontent.com/u/48815350?v=4" alt="Gao-pw" width="100"></a>  <a href="https://github.com/Sakurakouji-Runa"><img src="https://avatars2.githubusercontent.com/u/46081776?s=400" alt="Sakurakouji-Runa" width="100"></a>  <a href="https://github.com/givenhyh"><img src="https://avatars3.githubusercontent.com/u/37971883?s=400" alt="givenhyh" width="100"></a>
+<a href="https://github.com/QL-A103"><img src="https://avatars.githubusercontent.com/u/57120572?v=4" alt="QL-A103" width="100"></a>  <a href="https://github.com/laoxong"><img src="https://avatars.githubusercontent.com/u/31268830?v=4" alt="laoxong" width="100"></a>  <a href="https://github.com/Gao-pw"><img src="https://avatars.githubusercontent.com/u/48815350?v=4" alt="Gao-pw" width="100"></a>  <a href="https://github.com/AriharaShirone"><img src="https://avatars.githubusercontent.com/u/30365341?v=4" alt="AriharaShirone" width="100"></a>  <a href="https://github.com/Sakurakouji-Runa"><img src="https://avatars2.githubusercontent.com/u/46081776?s=400" alt="Sakurakouji-Runa" width="100"></a>  <a href="https://github.com/givenhyh"><img src="https://avatars3.githubusercontent.com/u/37971883?s=400" alt="givenhyh" width="100"></a>
 
 ## 主题说明：
 
