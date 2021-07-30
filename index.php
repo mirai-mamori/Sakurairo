@@ -18,11 +18,11 @@ get_header();
 
 
    
-   <?php if (iro_opt('announce_bar') == '1'){ 
-   		$text = iro_opt('announce_text');
+   <?php if (iro_opt('bulletin_board') == '1'){ 
+   		$text = iro_opt('bulletin_text');
    	?>
 	<div class="notice" style="margin-top:60px">
-	<?php if (iro_opt('announce_bar_icon', 'true')): ?>
+	<?php if (iro_opt('bulletin_board_icon', 'true')): ?>
 		<i class="iconfont icon-notification"></i>
             <?php endif; ?>
 	  <?php if(strlen($text) > 142){ ?> 

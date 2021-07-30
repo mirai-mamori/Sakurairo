@@ -8,8 +8,8 @@
  */
 
 
-define('SAKURA_VERSION', wp_get_theme()->get('Version'));
-define('BUILD_VERSION', '3');
+define('IRO_VERSION', wp_get_theme()->get('Version'));
+define('BUILD_VERSION', '2');
 
 //Option-Framework
 
@@ -195,18 +195,18 @@ add_action('after_setup_theme', 'akina_setup');
 function shuoshuo_custom_init()
 {
     $labels = array(
-        'name' => '说说',
-        'singular_name' => '说说',
-        'add_new' => '发表说说',
-        'add_new_item' => '发表说说',
-        'edit_item' => '编辑说说',
-        'new_item' => '新说说',
-        'view_item' => '查看说说',
-        'search_items' => '搜索说说',
-        'not_found' => '暂无说说',
-        'not_found_in_trash' => '没有已遗弃的说说',
+        'name' => __("Ideas","sakurairo"),
+        'singular_name' => __("Idea","sakurairo"),
+        'add_new' => __("Publish New Idea","sakurairo"),
+        'add_new_item' => __("Publish New Idea","sakurairo"),
+        'edit_item' => __("Edit Idea","sakurairo"),
+        'new_item' => __("New Idea","sakurairo"),
+        'view_item' => __("View Idea","sakurairo"),
+        'search_items' => __("Search Idea","sakurairo"),
+        'not_found' => __("Not Found Idea","sakurairo"),
+        'not_found_in_trash' => __("No Idea in the Trash","sakurairo"),
         'parent_item_colon' => '',
-        'menu_name' => '说说'
+        'menu_name' => __("Ideas","sakurairo")
     );
     $args = array(
         'labels' => $labels,
@@ -255,22 +255,20 @@ add_action('after_setup_theme', 'akina_content_width', 0);
 function sakura_scripts()
 {
     if (iro_opt('local_global_library')) {
-        //wp_enqueue_script('js_lib', get_template_directory_uri() . '/cdn/js/lib.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
         if (iro_opt('smoothscroll_option')) {
-            wp_enqueue_script('SmoothScroll', get_template_directory_uri() . '/js/smoothscroll.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
+            wp_enqueue_script('SmoothScroll', get_template_directory_uri() . '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
         }
     } elseif (iro_opt('smoothscroll_option')) {
-        wp_enqueue_script('SmoothScroll',  'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/js/smoothscroll.js', array(), SAKURA_VERSION . iro_opt('cookie_version', ''), true);
-        //wp_enqueue_script('js_lib', 'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/lib.min.js,gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/smoothscroll.js', array(), SAKURA_VERSION, true);
-    }/*  else {
-        wp_enqueue_script('js_lib', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/cdn/js/lib.min.js', array(), SAKURA_VERSION, true);
-    } */
+        wp_enqueue_script('SmoothScroll',  'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . IRO_VERSION . '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
+    }
     if (iro_opt('local_application_library')) {
-        wp_enqueue_style('saukra_css', get_stylesheet_uri(), array(), SAKURA_VERSION);
-        wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), SAKURA_VERSION, true);
+        wp_enqueue_style('saukra_css', get_stylesheet_uri(), array(), IRO_VERSION);
+        wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), IRO_VERSION, true);
+        if(!is_home())wp_enqueue_script('app-page', get_template_directory_uri() . '/js/page.js', array('app'), IRO_VERSION, true);
     } else {
-        wp_enqueue_style('saukra_css', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/style.min.css', array(), SAKURA_VERSION);
-        wp_enqueue_script('app', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . SAKURA_VERSION . '/js/app.js', array(), SAKURA_VERSION, true);
+        wp_enqueue_style('saukra_css', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION . '/style.min.css', array(), IRO_VERSION);
+        wp_enqueue_script('app', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION . '/js/app.js', array(), IRO_VERSION, true);
+        if(!is_home())wp_enqueue_script('app-page', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION .  '/js/page.js', array('app'), IRO_VERSION, true);
     }
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -302,6 +300,25 @@ function sakura_scripts()
         'google_analytics_id' => iro_opt('google_analytics_id', ''),
         'gravatar_url' => $gravatar_url
     ));
+    //前端脚本本地化
+    if(!get_locale("zh-CN")){
+         wp_localize_script('app', '_sakurairoi18n', array(
+        "复制成功！"=> __("Copied!","sakurairo"),
+        "拷贝代码"=> __("Copy Code","sakurairo"),
+        "你的封面API好像不支持跨域调用,这种情况下缓存是不会生效的哦"=> __("Your cover API seems to not support Cross Origin Access. In this case, Cover Cache won't take effect.","sakurairo"),
+        "提交中...."=> __("Commiting....","sakurairo"),
+        "提交成功"=> __("Succeed","sakurairo"),
+        "每次上传上限为10张"=> __("10 files max per request","sakurairo"),
+        "图片上传大小限制为5 MB\n\n「{0}」\n\n这张图太大啦~请重新上传噢！"=> __("5 MB max per file.\n\n「{0}」\n\nThis image is too large~Please reupload!","sakurairo"),
+        "上传中..."=> __("Uploading...","sakurairo"),
+        "图片上传成功~"=> __("Uploaded successfully~","sakurairo"),
+        "上传失败！\n文件名=> {0}\ncode=> {1}\n{2}"=> __("Upload failed!\nFile Name=> {0}\ncode=> {1}\n{2}","sakurairo"),
+        "上传失败，请重试."=> __("Upload failed, please retry.","sakurairo"),
+        "页面加载出错了 HTTP {0}"=> __("Page Load failed. HTTP {0}","sakurairo"),
+        "很高兴你翻到这里，但是真的没有了..."=> __("Glad you come, but we've got nothing left.","sakurairo")
+    ));
+
+    }
 }
 add_action('wp_enqueue_scripts', 'sakura_scripts');
 
@@ -334,17 +351,29 @@ function convertip($ip)
     if(empty($ip)) $ip = get_comment_author_IP();
     $ch = curl_init();  
     $timeout = 5;  
-    curl_setopt ($ch, CURLOPT_URL, 'http://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip='.$ip);  
+    if (iro_opt('statistics_format') === 'type_1'){
+        $url = "https://api.maho.cc/ip?ip=".$ip;
+    }else{
+        $url = "https://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip=".$ip;
+    }
+    $timeout = 5;
+    curl_setopt ($ch, CURLOPT_URL, $url);
+    // curl_setopt ($ch, CURLOPT_URL, 'http://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip='.$ip);  
     curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);  
     curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);  
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     $file_contents = curl_exec($ch);  
     curl_close($ch);  
     $result = null;
-    $result = json_decode($file_contents,true);
-    if ($result['data']['country'] != '中国') {
-        return $result['data']['country'];
-    } else {
-        return $result['data']['country'].'&nbsp;·&nbsp;'.$result['data']['region'].'&nbsp;·&nbsp;'.$result['data']['city'].'&nbsp;·&nbsp;'.$result['data']['isp'];
+    $result = json_decode($file_contents, true);
+    if ($result && $result['code'] == 0) {
+        if ($result['data']['country'] != '中国') {
+            return $result['data']['country'];
+        } else {
+            return $result['data']['country'] . '&nbsp;·&nbsp;' . $result['data']['region'] . '&nbsp;·&nbsp;' . $result['data']['city'] . '&nbsp;·&nbsp;' . $result['data']['isp'];
+        }
+    }else{
+        return "未知";
     }
 }
 //Comment Location End
@@ -493,19 +522,8 @@ function get_post_views($post_id)
     }
 }
 
-
-
 function is_webp():bool{
     return (isset($_COOKIE["su_webp"]) || strpos($_SERVER['HTTP_ACCEPT'], 'image/webp'));
-}
-
-$block_library_css = iro_opt('block_library_css');
-
-if ($block_library_css != '1'){
-    add_action( 'wp_enqueue_scripts', 'fanly_remove_block_library_css', 100 );
-    function fanly_remove_block_library_css() {
-        wp_dequeue_style( 'wp-block-library' );
-    }
 }
 
 /*
@@ -748,7 +766,7 @@ function custom_login()
 {
     require get_template_directory() . '/inc/login_addcss.php';
     //echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css" />'."\n";
-    echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/inc/login.css?' . SAKURA_VERSION . '" />' . "\n";
+    echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/inc/login.css?' . IRO_VERSION . '" />' . "\n";
     //echo '<script type="text/javascript" src="'.get_bloginfo('template_directory').'/js/jquery.min.js"></script>'."\n";
     echo '<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.5.0/dist/jquery.min.js"></script>' . "\n";
 }
@@ -772,7 +790,7 @@ add_filter('login_headerurl', 'custom_loginlogo_url');
 //Login Page Footer
 function custom_html()
 {
-    $loginbg = iro_opt('login_background') ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/login_background.jpg';
+    $loginbg = iro_opt('login_background') ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/login_background.jpg';
     echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/js/login.js"></script>' . "\n";
     echo '<script type="text/javascript">
     document.body.insertAdjacentHTML("afterbegin","<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");
@@ -904,7 +922,7 @@ function comment_mail_notify($comment_id)
     </div>
 ';
         $message = convert_smilies($message);
-        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.7.0/vision/smilies/bilipng/emoji_', $message);
+        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.0/vision/smilies/bilipng/emoji_', $message);
         $message = str_replace("}}", '.png" alt="emoji" style="height: 2em; max-height: 2em;">', $message);
 
         $message = str_replace('{UPLOAD}', 'https://i.loli.net/', $message);
@@ -1343,6 +1361,9 @@ function scheme_tip()
     if (get_user_locale(get_current_user_id()) == "zh_TW") {
         $msg = '<b>試一試新後台界面<a href="/wp-admin/profile.php">色彩配置</a>吧？</b>';
     }
+    if (get_user_locale(get_current_user_id()) == "zh_HK") {
+        $msg = '<b>試一試新後台界面<a href="/wp-admin/profile.php">色彩配置</a>吧？</b>';
+    }
     if (get_user_locale(get_current_user_id()) == "ja") {
         $msg = '<b>新しい<a href="/wp-admin/profile.php">管理画面の配色</a>を試しますか？</b>';
     }
@@ -1409,7 +1430,7 @@ function set_default_admin_color($user_id)
 // WordPress Custom Font @ Admin
 function custom_admin_open_sans_font()
 {
-    echo '<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
+    echo '<link href="https://fonts.maho.cc/css?family=Merriweather+Sans|Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
     echo '<style>body, #wpadminbar *:not([class="ab-icon"]), .wp-core-ui, .media-menu, .media-frame *, .media-modal *{font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style>' . PHP_EOL;
 }
 add_action('admin_head', 'custom_admin_open_sans_font');
@@ -1418,7 +1439,7 @@ add_action('admin_head', 'custom_admin_open_sans_font');
 function custom_admin_open_sans_font_frontend_toolbar()
 {
     if (current_user_can('administrator')) {
-        echo '<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap" rel="stylesheet">' . PHP_EOL;
+        echo '<link href="https://fonts.maho.cc/css?family=Merriweather+Sans&display=swap" rel="stylesheet">' . PHP_EOL;
         echo '<style>#wpadminbar *:not([class="ab-icon"]){font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style>' . PHP_EOL;
     }
 }
@@ -1428,7 +1449,7 @@ add_action('wp_head', 'custom_admin_open_sans_font_frontend_toolbar');
 function custom_admin_open_sans_font_login_page()
 {
     if (stripos($_SERVER["SCRIPT_NAME"], strrchr(wp_login_url(), '/')) !== false) {
-        echo '<link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
+        echo '<link href="https://fonts.maho.cc/css?family=Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
         echo '<style>body{font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style>' . PHP_EOL;
     }
 }
@@ -1461,12 +1482,22 @@ function codecheese_register_post($sanitized_user_login, $user_email, $errors)
 function html_tag_parser($content)
 {
     if (!is_feed()) {
+        //图片懒加载标签替换
         if (iro_opt('page_lazyload') && iro_opt('page_lazyload_spinner')) {
-            $content = preg_replace(
-                '/<img(.+)src=[\'"]([^\'"]+)[\'"](.*)>/i',
-                "<img $1 class=\"lazyload\" data-src=\"$2\" src=\"" . iro_opt('page_lazyload_spinner') . "\" onerror=\"imgError(this)\" $3 >\n<noscript>$0</noscript>",
-                $content
-            );
+            $img_elements = array();
+            $is_matched = preg_match_all('/<img[^<]*>/i', $content, $img_elements);
+            if ($is_matched) {
+                array_walk($img_elements[0],function ($img) use(&$content) {
+                    $class_found = 0;
+                    $new_img = preg_replace('/class=[\'"]([^\'"]+)[\'"]/i', 'class="$1 lazyload"', $img, -1, $class_found);
+                    if ($class_found == 0) {
+                        $new_img = str_replace('<img ', '<img class="lazyload"', $new_img);
+                    }
+                    $new_img =  preg_replace('/srcset=[\'"]([^\'"]+)[\'"]/i', 'data-srcset="$1"', $new_img);
+                    $new_img =  preg_replace('/src=[\'"]([^\'"]+)[\'"]/i', 'data-src="$1" src="' . iro_opt('page_lazyload_spinner') . '" onerror="imgError(this)"', $new_img);
+                    $content = str_replace($img, $new_img . '<noscript>' . $img . '</noscript>', $content);
+                });
+            }
         }
 
         //Fancybox
@@ -1830,10 +1861,12 @@ function get_photo(){
     echo json_encode($back);
     exit();
 }
+
+
 if (iro_opt('captcha_switch', 'true')){
     function login_CAPTCHA() {
-        include_once('inc/classes/CAPTCHA.php');
-        $img = new Sakura\API\CAPTCHA;
+        include_once('inc/classes/Captcha.php');
+        $img = new Sakura\API\Captcha;
         $test = $img->create_captcha_img();
         echo '<p><label for="captcha" class="captcha">验证码<br><img id="captchaimg" width="120" height="40" src="', $test['data'] ,'"><input type="text" name="yzm" id="yzm" class="input" value="" size="20" tabindex="4" placeholder="请输入验证码"><input type="hidden" name="timestamp" value="',$test['time'],'"><input type="hidden" name="id" value="',$test['id'],'">'
         ."</label></p>";
@@ -1850,12 +1883,12 @@ if (iro_opt('captcha_switch', 'true')){
             return new WP_Error();
         }
         if(isset($_POST['yzm']) && !empty(trim($_POST['yzm']))){
-            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !ctype_xdigit($_POST['id']) || !ctype_digit($_POST['timestamp'])){
+            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])){
                 return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
             }
-            include_once('inc/classes/CAPTCHA.php');
-            $img = new Sakura\API\CAPTCHA;
-            $check = $img->check_CAPTCHA($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
+            include_once('inc/classes/Captcha.php');
+            $img = new Sakura\API\Captcha;
+            $check = $img->check_captcha($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
             if($check['code'] == 5){
                 return $user;
             }else{
@@ -1875,12 +1908,12 @@ if (iro_opt('captcha_switch', 'true')){
             return false;
         }
         if(isset($_POST['yzm']) && !empty(trim($_POST['yzm']))){
-            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !ctype_xdigit($_POST['id']) || !ctype_digit($_POST['timestamp'])){
+            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])){
                 return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
             }
-            include_once('inc/classes/CAPTCHA.php');
-            $img = new Sakura\API\CAPTCHA;
-            $check = $img->check_CAPTCHA($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
+            include_once('inc/classes/Captcha.php');
+            $img = new Sakura\API\Captcha;
+            $check = $img->check_captcha($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
             if($check['code'] != 5){
                 return $errors->add( 'invalid_department ', '<strong>错误</strong>：'.$check['msg']);
             }
@@ -1898,12 +1931,12 @@ if (iro_opt('captcha_switch', 'true')){
             return new WP_Error();
         }
         if(isset($_POST['yzm']) && !empty(trim($_POST['yzm']))){
-            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !ctype_xdigit($_POST['id']) || !ctype_digit($_POST['timestamp'])){
+            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])){
                 return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
             }
-            include_once('inc/classes/CAPTCHA.php');
-            $img = new Sakura\API\CAPTCHA;
-            $check = $img->check_CAPTCHA($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
+            include_once('inc/classes/Captcha.php');
+            $img = new Sakura\API\Captcha;
+            $check = $img->check_captcha($_POST['yzm'],$_POST['timestamp'],$_POST['id']);
             if($check['code'] == 5){
                 return $errors;
             }else{

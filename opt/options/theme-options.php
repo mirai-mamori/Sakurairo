@@ -4,69 +4,69 @@ if( class_exists( 'CSF' ) ) {
   $prefix = 'iro_options';
 
   CSF::createOptions( $prefix, array(
-    'menu_title' => 'iro 主题设置',
+    'menu_title' => __('iro-Options','csf'),
     'menu_slug'  => 'iro_options',
   ) );
 
   CSF::createSection( $prefix, array(
     'id'    => 'preliminary',
-    'title' => '初步设置',
+    'title' => __('Preliminary Options','csf'),
     'icon'      => 'fa fa-sliders',
     'fields' => array(
 
       array(
         'id'    => 'site_name',
         'type'  => 'text',
-        'title' => '站点名称',
-        'desc'   => '例如：Fuukei Blog',
+        'title' => __('Site Name','csf'),
+        'desc'   => __('For example: Sakurairo Blog','csf'),
       ),
 
       array(
         'id'    => 'author_name',
         'type'  => 'text',
-        'title' => '作者名称',
-        'desc'   => '例如：Fuukei',
+        'title' => __('Author Name','csf'),
+        'desc'   => __('For example: Fuukei','csf'),
       ),
 
       array(
         'id'    => 'personal_avatar',
         'type'  => 'upload',
-        'title' => '个人头像',
-        'desc'   => '最佳比例1比1',
+        'title' => __('Personal Avatar','csf'),
+        'desc'   => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
       ),
 
       array(
         'id'    => 'text_logo_options',
         'type'  => 'switcher',
-        'title' => '白猫特效文字',
-        'label'   => '开启之后将替换个人头像作为首页显示内容',
+        'title' => __('Mashiro Special Effects Text','csf'),
+        'label'   => __('After turned on, the personal avatar will be replaced by the text as the home page display content','csf'),
         'default' => false
       ),
 
       array(
         'id'        => 'text_logo',
         'type'      => 'fieldset',
-        'title'     => '白猫特效文字',
+        'title'     => __('Mashiro Special Effects Text Options','csf'),
         'dependency' => array( 'text_logo_options', '==', 'true' ),
         'fields'    => array(
           array(
             'id'     => 'text',
             'type'   => 'text',
-            'title'  => '文本',
-            'desc'   => '文本内容建议不要过长，推荐长度为16个字节。',
+            'title'  => __('Text','csf'),
+            'desc'   => __('The text content should not be too long, and the recommended length is 16 bytes.','csf'),
           ),
           array(
             'id'     => 'font',
             'type'   => 'text',
-            'title'  => '字体',
-            'desc'   => '填写字体名称。例如：Ma Shan Zheng',
+            'title'  => __('Font','csf'),
+            'desc'   => __('Fill in the font name. For example: Ma Shan Zheng','csf'),
           ),
           array(
             'id'     => 'size',
             'type'   => 'slider',
-            'title'  => '字体大小',
-            'desc'   => '滑动滑块，推荐数值范围为70-90',
+            'title'  => __('Size','csf'),
+            'desc'   => __('Slide to adjust, the recommended value range is 70-90','csf'),
             'unit'    => 'px',
             'min'   => '40',
             'max'   => '140',
@@ -74,12 +74,12 @@ if( class_exists( 'CSF' ) ) {
           array(
             'id'      => 'color',
             'type'    => 'color',
-            'title'   => '字体颜色',
-            'desc'    => '自定义颜色，建议使用浅色系颜色',
+            'title'   => __('Color','csf'),
+            'desc'    => __('Customize the colors, light colors are recommended','csf'),
           ),      
         ),
         'default'        => array(
-          'text'    => 'ぐんじょう',
+          'text'    => 'ひょうりゅ',
           'size'    => '80',
           'color'    => '#FFF',
         ),
@@ -88,41 +88,41 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'iro_logo',
         'type'  => 'upload',
-        'title' => '导航菜单Logo',
-        'desc'   => '最佳尺寸40px，填写后导航菜单文字Logo不显示',
+        'title' => __('Navigation Menu Logo','csf'),
+        'desc'   => __('The best size is 40px, and the nav menu text logo will not be displayed after filling in','csf'),
         'library'      => 'image',
       ),
 
       array(
         'id'    => 'favicon_link',
         'type'  => 'text',
-        'title' => '站点Logo',
-        'desc'   => '填写地址，站点Logo即浏览器上方标题旁的图标',
+        'title' => __('Site Icon','csf'),
+        'desc'   => __('Fill in the address, which decides the icon next to the title above the browser','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/favicon.ico'
       ),
 
       array(
         'id'    => 'iro_meta',
         'type'  => 'switcher',
-        'title' => '自定义站点关键词和描述',
-        'label'   => '开启之后可自定义填写站点关键词和描述',
+        'title' => __('Custom Site Keywords and Descriptions','csf'),
+        'label'   => __('After turning on, you can customize the site keywords and descriptions','csf'),
         'default' => false
       ),
 
       array(
         'id'     => 'iro_meta_keywords',
         'type'   => 'text',
-        'title'  => '站点关键词',
+        'title'  => __('Site Keywords','csf'),
         'dependency' => array( 'iro_meta', '==', 'true' ),
-        'desc'   => '各关键字间用半角逗号","分割，数量在5个以内最佳',
+        'desc'   => __('The keywords should be separated with half width comma "," and it\'s better to set within 5 keywords','csf'),
       ),
 
       array(
         'id'     => 'iro_meta_description',
         'type'   => 'text',
-        'title'  => '站点描述',
+        'title'  => __('Site Descriptions','csf'),
         'dependency' => array( 'iro_meta', '==', 'true' ),
-        'desc'   => '用简洁的文字描述本站点，字数建议在120个字以内',
+        'desc'   => __('Use concise words to describe the site, it is recommended to write within 120 words','csf'),
       ),
 
     )
@@ -130,73 +130,74 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'id'    => 'global', 
-    'title' => '全局设置',
+    'title' => __('Global Options','csf'),
     'icon'      => 'fa fa-globe',
   ) );
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => '外观设置',
+    'title'  => __('Appearance Options','csf'),
     'icon'      => 'fa fa-tree',
     'fields' => array(
 
       array(
         'type'    => 'subheading',
-        'content' => '主题配色',
+        'content' => __('Color Schemes','csf'),
       ),
 
       array(
         'id'      => 'theme_skin',
         'type'    => 'color',
-        'title'   => '主题色',
-        'desc'    => '自定义颜色',
+        'title'   => __('Theme Color','csf'),
+        'desc'    => __('Customize the colors','csf'),
         'default' => '#505050'
       ),  
 
       array(
         'id'      => 'theme_skin_matching',
         'type'    => 'color',
-        'title'   => '主题色搭配色',
-        'desc'    => '自定义颜色',
+        'title'   => __('Matching Color','csf'),
+        'desc'    => __('Customize the colors','csf'),
         'default' => '#ffe066'
       ),  
 
       array(
         'type'    => 'subheading',
-        'content' => '深色模式',
+        'content' => __('Dark Mode','csf'),
       ),
 
       array(
         'id'      => 'theme_skin_dark',
         'type'    => 'color',
-        'title'   => '深色模式主题色',
-        'desc'    => '自定义颜色',
+        'title'   => __('Dark Mode Theme Color','csf'),
+        'desc'    => __('Customize the colors','csf'),
         'default' => '#ffcc00'
       ),  
       array(
         'id'    => 'theme_darkmode_auto',
         'type'  => 'switcher',
-        'title' => '深色模式自动切换',
-        'label'   => '默认开启',
+        'title' => __('Automatically Switch to Dark Mode','csf'),
+        'label'   => __('Default on','csf'),
         'default' => true
       ),
       array(
         'type'    => 'content',
-        'content' => '<p><strong>客户端当地时间:</strong>深色模式会在22:00-7:00自动切换</p>'
-        .'<p><strong>跟随客户端设置:</strong>跟随客户端浏览器的设置</p>'
-        .'<p><strong>永远开启:</strong>永远开启，除非客户端另有配置</p>',
+        'content' => __(
+         '<p><strong>Client local time:</strong>Dark mode will switch on automatically from 22:00 to 7:00</p>'
+        .'<p><strong>Follow client settings:</strong>Follow client browser settings</p>'
+        .'<p><strong>Always on:</strong>Always on, except being configured by the client</p>','csf'),
         'dependency' => array( 'theme_darkmode_auto', '==', 'true' ),
 
       ),
       array(
         'id'    => 'theme_darkmode_strategy',
         'type'  => 'select',
-        'title' => '深色模式自动切换策略',
+        'title' => __('Automatic Switch Strategy of Dark Mode','csf'),
         'dependency' => array( 'theme_darkmode_auto', '==', 'true' ),
         'options'     => array(
-          'time'  => '客户端当地时间',
-          'client'  => '跟随客户端设置',
-          'eien'  => '永远开启',
+          'time'  => __('Client local time','csf'),
+          'client'  => __('Follow client settings','csf'),
+          'eien'  => __('Always on','csf'),
         ),
         "default"=>"time"
       ),
@@ -204,8 +205,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'theme_darkmode_img_bright',
         'type'   => 'slider',
-        'title'  => '深色模式图像亮度',
-        'desc'   => '滑动滑块，推荐数值范围为0.6-0.8',
+        'title'  => __('Dark Mode Image Brightness','csf'),
+        'desc'   => __('Slide to adjust, the recommended value range is 0.6-0.8','csf'),
         'step'   => '0.01',
         'min'   => '0.4',
         'max'   => '1',
@@ -215,8 +216,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'theme_darkmode_widget_transparency',
         'type'   => 'slider',
-        'title'  => '深色模式部件透明度',
-        'desc'   => '滑动滑块，推荐数值范围为0.6-0.8',
+        'title'  => __('Dark Mode Component Transparency','csf'),
+        'desc'   => __('Slide to adjust, the recommended value range is 0.6-0.8','csf'),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -225,8 +226,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'theme_darkmode_background_transparency',
         'type'   => 'slider',
-        'title'  => '深色模式背景透明度',
-        'desc'   => '滑动滑块，推荐数值范围为0.6-0.8。为保证最佳观感，使用此项最好保留前台背景图像的显示',
+        'title'  => __('Dark mode Background Transparency','csf'),
+        'desc'   => __('Slide to adjust, the recommended value range is 0.6-0.8. In order to ensure the best appearance, please keep the display of the frontend background image','csf'),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -235,22 +236,22 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'subheading',
-        'content' => '其他',
+        'content' => __('Other Appearance Related','csf'),
       ),
 
       array(
         'id'    => 'theme_commemorate_mode',
         'type'  => 'switcher',
-        'title' => '纪念模式',
-        'label'   => '开启之后主题全局将添加黑白滤镜',
+        'title' => __('Commemorate Mode','csf'),
+        'label'   => __('After turning on, a black and white filter will be added to the global theme','csf'),
         'default' => false
       ),
 
       array(
         'id'     => 'load_out_svg',
         'type'   => 'text',
-        'title'  => '加载控件单元占位SVG',
-        'desc'   => '填写地址，此为加载控件单元时占位显示的SVG',
+        'title'  => __('Occupying SVG while Loading Control Units','csf'),
+        'desc'   => __('Fill in the address, which is the SVG displayed when loading control units','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/outload.svg'
       ),
 
@@ -259,20 +260,20 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => '字体设置',
+    'title'  => __('Font Options','csf'),
     'icon'      => 'fa fa-font',
     'fields' => array(
 
       array(
         'type'    => 'subheading',
-        'content' => '全局',
+        'content' => __('Global','csf'),
       ),
 
       array(
         'id'     => 'global_font_weight',
         'type'   => 'slider',
-        'title'  => '非强调文本字重',
-        'desc'   => '滑动滑块，推荐数值范围为300-500',
+        'title'  => __('Non-Emphasis Text Weight','csf'),
+        'desc'   => __('Slide to adjust, the recommended value range is 300-500','csf'),
         'step'   => '10',
         'min'   => '100',
         'max'   => '700',
@@ -282,8 +283,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'global_font_size',
         'type'   => 'slider',
-        'title'  => '文本字体大小',
-        'desc'   => '滑动滑块，推荐数值范围为15-18',
+        'title'  => __('Text Font Size','csf'),
+        'desc'   => __('Slide to adjust, the recommended value range is 15-18','csf'),
         'step'   => '1',
         'unit'    => 'px',
         'min'   => '10',
@@ -293,43 +294,43 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'subheading',
-        'content' => '外部字体',
+        'content' => __('External Fonts','csf'),
       ),
 
       array(
         'id'    => 'reference_exter_font',
         'type'  => 'switcher',
-        'title' => '引用外部字体',
-        'label'   => '开启之后可以使用外部字体作为默认字体或其他部件字体，但可能影响性能',
+        'title' => __('Reference External Fonts','csf'),
+        'label'   => __('After turning on, you can use external fonts as the default font or other component fonts, but it may affect performance','csf'),
         'default' => false
       ),
 
       array(
         'id'     => 'exter_font_link',
         'type'   => 'text',
-        'title'  => '外部字体地址',
+        'title'  => __('External Font Link','csf'),
         'dependency' => array( 'reference_exter_font', '==', 'true' ),
       ),
 
       array(
         'id'     => 'exter_font_name',
         'type'   => 'text',
-        'title'  => '外部字体名称',
+        'title'  => __('External Font Name','csf'),
         'dependency' => array( 'reference_exter_font', '==', 'true' ),
       ),
 
       array(
         'id'     => 'google_fonts_api',
         'type'   => 'text',
-        'title'  => '谷歌字体API地址',
-        'default' => 'fonts.loli.net'
+        'title'  => __('Google Fonts Api Link','csf'),
+        'default' => 'fonts.maho.cc'
       ),
 
       array(
         'id'     => 'google_fonts_add',
         'type'   => 'text',
-        'title'  => '谷歌字体名称',
-        'desc'   => '请确保添加的字体在谷歌字体库内可被引用，填写字体名称。添加的字体前面必须有”|“。如果引用多个字体，请使用“|”作为分割符，如果字体名称有空格，请用加号替代。例如：|ZCOOL+XiaoWei|Ma+Shan+Zheng ',
+        'title'  => __('Google Fonts Name','csf'),
+        'desc'   => __('Please make sure that the added fonts can be referenced in Google Fonts library. Fill in the font names. The added fonts must be preceded by "|". If multiple fonts are referenced, use "|" as the separator. If the font name has spaces, use a plus sign instead. For example: | zcool + xiaowei| Ma + Shan + Zheng','csf'),
       ),
 
     )
@@ -337,14 +338,14 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => '导航菜单设置',
+    'title'  => __('Navigation Menu Options','csf'),
     'icon'      => 'fa fa-map-signs',
     'fields' => array(
 
       array(
         'id'         => 'nav_menu_style',
         'type'       => 'image_select',
-        'title'      => '导航菜单样式',
+        'title'      => __('Nav Menu Style','csf'),
         'options'    => array(
           'sakurairo' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/nav_menu_style_iro.png',
           'sakura' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/nav_menu_style_sakura.png',
@@ -355,9 +356,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_radius',
         'type'  => 'slider',
-        'title' => '导航菜单圆角',
+        'title' => __('Nav Menu Radius','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
-        'desc'   => '滑动滑块，推荐数值为15',
+        'desc'   => __('Slide to adjust, the recommended value is 15','csf'),
         'unit'    => 'px',
         'max'   => '50',
         'default' => '15'
@@ -366,9 +367,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'nav_menu_shrink_animation',
         'type'   => 'slider',
-        'title'  => '导航菜单收缩比率',
+        'title'  => __('Nav Menu Shrinkage Ratio','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
-        'desc'   => '滑动滑块，根据导航菜单的内容长度自行设置合适的比率，当比率设置为95时则关闭收缩，默认关闭收缩',
+        'desc'   => __('Slide to set the appropriate ratio according to the content length of the nav menu. When the ratio is set to 95,there will be no shrinkage. This function is off by default','csf'),
         'step'   => '0.5',
         'unit'    => '%',
         'max'   => '95',
@@ -379,11 +380,11 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'nav_menu_display',
         'type'       => 'radio',
-        'title'      => '导航菜单内容显示',
-        'desc'    => '你可以选择展开显示或者收缩显示导航菜单内容',
+        'title'      => __('Nav Menu Content Display Method','csf'),
+        'desc'    => __('You can choose to unfold or fold the nav menu contents','csf'),
         'options'    => array(
-          'unfold' => '展开显示',
-          'fold' => '收缩显示',
+          'unfold' => __('Unfold','csf'),
+          'fold' => __('Fold','csf'),
         ),
         'default'    => 'unfold'
       ),
@@ -391,17 +392,17 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_animation',
         'type'  => 'switcher',
-        'title' => '导航菜单动画',
-        'label'   => '默认开启，如果关闭，则导航内容将直接显示',
+        'title' => __('Nav Menu Animation Effects','csf'),
+        'label'   => __('It is on by default. If it is off, the nav menu content will be displayed directly without effects','csf'),
         'default' => true
       ),
 
       array(
         'id'     => 'nav_menu_animation_time',
         'type'   => 'slider',
-        'title'  => '导航菜单动画时间',
+        'title'  => __('Nav Menu Animation Time','csf'),
         'dependency' => array( 'nav_menu_animation', '==', 'true' ),
-        'desc'   => '滑动滑块，推荐数值范围为1-2',
+        'desc'   => __('Slide to adjust, the recommended value range is 1-2','csf'),
         'step'   => '0.01',
         'unit'    => 's',
         'max'   => '5',
@@ -411,10 +412,10 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'nav_menu_icon_size',
         'type'       => 'radio',
-        'title'      => '导航菜单图标大小',
+        'title'      => __('Nav Menu Icon Size','csf'),
         'options'    => array(
-          'standard' => '标准图标',
-          'large' => '大图标',
+          'standard' => __('Standard','csf'),
+          'large' => __('Large','csf'),
         ),
         'default'    => 'standard'
       ),
@@ -422,15 +423,15 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_search',
         'type'  => 'switcher',
-        'title' => '导航菜单搜索',
-        'label'   => '默认开启，点击将进入搜索区域',
+        'title' => __('Nav Menu Search','csf'),
+        'label'   => __('It is on by default. Click to enter the search area','csf'),
         'default' => true
       ),
       array(
         'id'    => 'nav_menu_blur',
         'type'  => 'slider',
-        'title' => '导航菜单背景模糊',
-        'desc'   => '滑动滑块，推荐数值为5px，为0px时关闭',
+        'title' => __('Nav Menu Blur','csf'),
+        'desc'   => __('Slide to adjust, the recommended value is 5px, and this function will be off when set to 0px','csf'),
         'unit'    => 'px',
         'max'   => '20',
         'default' => '0'
@@ -439,8 +440,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'search_area_background',
         'type'  => 'upload',
-        'title' => '导航菜单搜索区域背景图片',
-        'desc'   => '设置你的搜索区域背景图片，此选项留空则显示白色背景',
+        'title' => __('Search Area Background Image','csf'),
+        'desc'   => __('Set the background image of your search area. Leave this option blank to display a white background','csf'),
         'library'      => 'image',
         'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/iloli.gif'
       ),
@@ -448,17 +449,17 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_user_avatar',
         'type'  => 'switcher',
-        'title' => '导航菜单用户头像',
-        'label'   => '默认开启，点击将进入登录界面',
+        'title' => __('Nav Menu User Avatar','csf'),
+        'label'   => __('It is on by default. Click to enter the login interface','csf'),
         'default' => true
       ),
 
       array(
         'id'     => 'unlisted_avatar',
         'type'  => 'upload',
-        'title' => '导航菜单用户未登录头像',
+        'title' => __('Nav Menu Unlisted User Avatar','csf'),
         'dependency' => array( 'nav_menu_user_avatar', '==', 'true' ),
-        'desc'   => '最佳比例1比1',
+        'desc'   => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/topavatar.png'
       ),
@@ -466,8 +467,8 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_secondary_arrow',
         'type'  => 'switcher',
-        'title' => '导航菜单二级菜单提示箭头',
-        'label'   => '开启之后菜单提示箭头将出现在导航菜单二级菜单',
+        'title' => __('Secondary Menu Prompt Arrow','csf'),
+        'label'   => __('After turning on, the menu prompt arrow will appear in the secondary menu of the navigation menu','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakura' ),
         'default' => false
       ),
@@ -475,9 +476,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'    => 'nav_menu_secondary_radius',
         'type'  => 'slider',
-        'title' => '导航菜单二级菜单圆角',
+        'title' => __('Secondary Menu Radius','csf'),
         'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
-        'desc'   => '滑动滑块，推荐数值为15',
+        'desc'   => __('Slide to adjust, the recommended value is 15','csf'),
         'unit'    => 'px',
         'max'   => '30',
         'default' => '15'
@@ -486,54 +487,54 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'     => 'logo_text',
         'type'   => 'text',
-        'title'  => '导航菜单文字Logo文本',
-        'desc'   => '填写文本内容，如开启白猫样式Logo则此选项无效',
+        'title'  => __('Nav Menu Logo Text','csf'),
+        'desc'   => __('Fill in the text. If the Mashiro logo is turned on, this option will be invalid','csf'),
         'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
       ),
 
       array(
         'id'    => 'mashiro_logo_option',
         'type'  => 'switcher',
-        'title' => '导航菜单白猫样式Logo',
-        'label'   => '开启之后白猫样式Logo将出现并替换导航菜单Logo位置',
+        'title' => __('Mashiro Logo','csf'),
+        'label'   => __('After turning on, the Mashiro Logo will appear and replace the navigation menu logo position','csf'),
         'default' => false
       ),
 
       array(
         'id'     => 'mashiro_logo',
         'type'   => 'fieldset',
-        'title'  => '白猫样式Logo选项',
+        'title'  => __('Mashiro Logo Options','csf'),
         'dependency' => array( 'mashiro_logo_option', '==', 'true' ),
         'fields' => array(
           array(
             'id'    => 'text_a',
             'type'  => 'text',
-            'title' => '文字A',
+            'title' => __('Text A','csf'),
           ),
           array(
             'id'    => 'text_b',
             'type'  => 'text',
-            'title' => '文字B',
+            'title' => __('Text B','csf'),
           ),
           array(
             'id'    => 'text_c',
             'type'  => 'text',
-            'title' => '文字C',
+            'title' => __('Text C','csf'),
           ),
           array(
             'id'    => 'text_secondary',
             'type'  => 'text',
-            'title' => '二级文字',
+            'title' => __('Secondary Text','csf'),
           ),
           array(
             'id'    => 'font_link',
             'type'  => 'text',
-            'title' => '字体链接',
+            'title' => __('Font Link','csf'),
           ),
           array(
             'id'    => 'font_name',
             'type'  => 'text',
-            'title' => '字体名称',
+            'title' => __('Font Name','csf'),
           ),
         ),
         'default'        => array(
@@ -541,8 +542,8 @@ if( class_exists( 'CSF' ) ) {
           'text_b'     => '',
           'text_c'     => '',
           'text_secondary' => '',
-          'font_link'     => 'https://cdn.jsdelivr.net/gh/acai66/mydl/fonts/wenyihei/wenyihei-subfont.css',
-          'font_name'    => 'wenyihei-subfont',
+          'font_link'     => 'https://fonts.maho.cc/css?family=ZCOOL+QingKe+HuangYou&display=swap',
+          'font_name'    => 'ZCOOL QingKe HuangYou',
         ),
       ),
 
@@ -551,158 +552,158 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => '样式菜单和前台背景相关设置',
-    'icon'      => 'fa fa-th-large',
+    'title' => __('Style Menu and Frontend Background Related Options','csf'),
+    'icon' => 'fa fa-th-large',
     'fields' => array(
 
       array(
-        'type'    => 'subheading',
-        'content' => '样式菜单',
+        'type' => 'subheading',
+        'content' => __('Style Menu','csf'),
       ),
 
       array(
-        'id'         => 'style_menu_display',
-        'type'       => 'image_select',
-        'title'      => '样式菜单显示',
-        'desc'    => '你可以选择完整显示或者简单显示样式菜单，完整显示将显示字体切换功能和文本提示',
-        'options'    => array(
+        'id' => 'style_menu_display',
+        'type' => 'image_select',
+        'title' => __('Style Menu Display','csf'),
+        'desc' => __('You can choose to display the style menu simply or in full. The full display will show the font toggle function and text hints','csf'),
+        'options' => array(
           'full' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/style_menu_full.png',
           'mini' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/style_menu_mini.png',
         ),
-        'default'    => 'full'
+        'default' => 'full'
       ),
 
       array(
-        'id'    => 'style_menu_radius',
-        'type'  => 'slider',
-        'title' => '样式菜单按钮圆角',
-        'desc'   => '滑动滑块，推荐数值为10',
-        'unit'    => 'px',
-        'max'   => '50',
+        'id' => 'style_menu_radius',
+        'type' => 'slider',
+        'title' => __('Style Menu Button Radius','csf'),
+        'desc' => __('Slide to adjust, the recommended value is 10','csf'),
+        'unit' => 'px',
+        'max' => '50',
         'default' => '10'
       ),
 
       array(
-        'id'      => 'style_menu_background_color',
-        'type'    => 'color',
-        'title'   => '样式菜单背景颜色',
-        'desc'    => '自定义颜色，建议使用浅色系颜色',
+        'id' => 'style_menu_background_color',
+        'type' => 'color',
+        'title' => __('Style Menu Background Color','csf'),
+        'desc' => __('Customize the colors, light colors are recommended','csf'),
         'default' => 'rgba(255,255,255,0.8)'
       ),   
 
       array(
-        'id'      => 'style_menu_selection_color',
-        'type'    => 'color',
-        'title'   => '样式菜单选项背景颜色',
-        'desc'    => '自定义颜色，建议使用与主题色相同色系且属于浅色系的颜色',
+        'id' => 'style_menu_selection_color',
+        'type' => 'color',
+        'title' => __('Style Menu Option Background Color','csf'),
+        'desc' => __('Customize the colors, it is recommended to use a light color that corresponds with the theme color','csf'),
         'default' => '#e8e8e8'
       ),
 
       array(
-        'id'    => 'style_menu_selection_radius',
-        'type'  => 'slider',
-        'title' => '样式菜单选项界面圆角',
-        'desc'   => '滑动滑块，推荐数值为15',
-        'unit'    => 'px',
-        'max'   => '30',
+        'id' => 'style_menu_selection_radius',
+        'type' => 'slider',
+        'title' => __('Style Menu Options Interface Radius','csf'),
+        'desc' => __('Slide to adjust, the recommended value is 15','csf'),
+        'unit' => 'px',
+        'max' => '30',
         'default' => '15'
       ),
 
       array(
-        'type'    => 'subheading',
-        'content' => '前台背景',
+        'type' => 'subheading',
+        'content' => __('Frontend Background','csf'),
       ),
 
       array(
-        'id'    => 'reception_background_size',
-        'type'  => 'select',
-        'options'     => array(
-          'cover'  => '覆盖',
-          'contain'  => '平铺',
-          'auto'  => '自动',
+        'id' => 'reception_background_size',
+        'type' => 'select',
+        'options' => array(
+          'cover' => __('Cover','csf'),
+          'contain' => __('Contain','csf'),
+          'auto' => __('Auto','csf'),
         ),
-        'title' => '前台背景缩放方式',
-        'desc'   => '你可以选择两种方式缩放前台背景，默认自动缩放',
+        'title' => __('Frontend Background Scaling Method','csf'), 
+        'desc' => __('You can choose two ways to scale the frontend background, the default is auto-scaling','csf'),
         'default' => 'auto'
       ),
 
       array(
-        'id'            => 'reception_background',
-        'type'          => 'tabbed',
-        'title'         => '前台背景设置',
-        'tabs'          => array(
+        'id' => 'reception_background',
+        'type' => 'tabbed',
+        'title' => __('Frontend Background Options','csf'),
+        'tabs' => array(
           array(
-            'title'     => '默认',
-            'icon'      => 'fa fa-television',
-            'fields'    => array(
+            'title' => __('Default','csf'),
+            'icon' => 'fa fa-television',
+            'fields' => array(
               array(
-                'id'    => 'img1',
-                'type'  => 'upload',
-                'title' => '图片',
+                'id' => 'img1',
+                'type' => 'upload',
+                'title' => __('Image','csf'),
               ),
             )
           ),
           array(
-            'title'     => '心形图标',
-            'icon'      => 'fa fa-heart-o',
-            'fields'    => array(
+            'title' => __('Heart Shaped','csf'),
+            'icon' => 'fa fa-heart-o',
+            'fields' => array(
               array(
-                'id'    => 'heart_shaped',
-                'type'  => 'switcher',
-                'title' => '开关',
+                'id' => 'heart_shaped',
+                'type' => 'switcher',
+                'title' => __('Switch','csf'),
               ),
               array(
-                'id'    => 'img2',
-                'type'  => 'upload',
-                'title' => '图片',
-              ),
-            )
-          ),
-          array(
-            'title'     => '星形图标',
-            'icon'      => 'fa fa-star-o',
-            'fields'    => array(
-              array(
-                'id'    => 'star_shaped',
-                'type'  => 'switcher',
-                'title' => '开关',
-              ),
-              array(
-                'id'    => 'img3',
-                'type'  => 'upload',
-                'title' => '图片',
+                'id' => 'img2',
+                'type' => 'upload',
+                'title' => __('Image','csf'),
               ),
             )
           ),
           array(
-            'title'     => '方形图标',
-            'icon'      => 'fa fa-delicious',
-            'fields'    => array(
+            'title' => __('Star Shaped','csf'),
+            'icon' => 'fa fa-star-o',
+            'fields' => array(
               array(
-                'id'    => 'square_shaped',
-                'type'  => 'switcher',
-                'title' => '开关',
+                'id' => 'star_shaped',
+                'type' => 'switcher',
+                'title' => __('Switch','csf'),
               ),
               array(
-                'id'    => 'img4',
-                'type'  => 'upload',
-                'title' => '图片',
+                'id' => 'img3',
+                'type' => 'upload',
+                'title' => __('Image','csf'),
               ),
             )
           ),
           array(
-            'title'     => '柠檬形图标',
-            'icon'      => 'fa fa-lemon-o',
-            'fields'    => array(
+            'title' => __('Square Shaped','csf'),
+            'icon' => 'fa fa-delicious',
+            'fields' => array(
               array(
-                'id'    => 'lemon_shaped',
-                'type'  => 'switcher',
-                'title' => '开关',
+                'id' => 'square_shaped',
+                'type' => 'switcher',
+                'title' => __('Switch','csf'),
               ),
               array(
-                'id'    => 'img5',
-                'type'  => 'upload',
-                'title' => '图片',
+                'id' => 'img4',
+                'type' => 'upload',
+                'title' => __('Image','csf'),
+              ),
+            )
+          ),
+          array(
+            'title' => __('Lemon Shaped','csf'),
+            'icon' => 'fa fa-lemon-o',
+            'fields' => array(
+              array(
+                'id' => 'lemon_shaped',
+                'type' => 'switcher',
+                'title' => __('Switch','csf'),
+              ),
+              array(
+                'id' => 'img5',
+                'type' => 'upload',
+                'title' => __('Image','csf'),
               ),
             )
           ),
@@ -720,34 +721,34 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'     => 'reception_background_transparency',
-        'type'   => 'slider',
-        'title'  => '前台背景透明度',
-        'desc'   => '滑动滑块，推荐数值范围为0.6-0.8',
-        'step'   => '0.01',
-        'min'   => '0.2',
-        'max'   => '1',
+        'id' => 'reception_background_transparency',
+        'type' => 'slider',
+        'title' => __('Background Transparency in the Frontend','csf'),
+        'desc' => __('Slide to adjust, the recommended sliding value range is 0.6-0.8','csf'),
+        'step' => '0.01',
+        'min' => '0.2',
+        'max' => '1',
         'default' => '0.8'
       ),
 
       array(
-        'type'    => 'subheading',
-        'content' => '字体区域',
+        'type' => 'subheading',
+        'content' => __('Font Area','csf'),
       ),
 
       array(
-        'id'     => 'global_default_font',
-        'type'   => 'text',
-        'title'  => '默认字体/样式菜单字体A',
-        'desc'   => '填写字体名称。例如：Ma Shan Zheng',
+        'id' => 'global_default_font',
+        'type' => 'text',
+        'title' => __('Global Default Font/Style Menu Font A','csf'),
+        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','csf'),
       ),
 
       array(
-        'id'     => 'global_font_2',
-        'type'   => 'text',
-        'title'  => '样式菜单字体B',
+        'id' => 'global_font_2',
+        'type' => 'text',
+        'title' => __('Style Menu Font B','csf'),
         'dependency' => array( 'style_menu_display', '==', 'full' ),
-        'desc'   => '填写字体名称。例如：Ma Shan Zheng',
+        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','csf'),
       ),
 
     )
@@ -755,127 +756,158 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => '页尾设置',
-    'icon'      => 'fa fa-caret-square-o-down',
+    'title' => __('Footer Options','csf'),
+    'icon' => 'fa fa-caret-square-o-down',
     'fields' => array(
 
       array(
-        'id'          => 'aplayer_server',
-        'type'        => 'select',
-        'title'       => '页尾在线播放器',
-        'desc'   => '开启之后页尾左下角将出现按钮，点击按钮后页尾在线播放器将显示',
-        'options'     => array(
-          'off'  => '关闭',
-          'netease'  => '网易云音乐',
-          'kugou'  => '酷狗音乐（可能无法使用）',
-          'baidu'  => '千千音乐（海外服务器无法使用）',
-          'tencent'  => 'QQ音乐（可能无法使用）',
+        'id' => 'aplayer_server',
+        'type' => 'select',
+        'title' => __('Footer Online Music Player','csf'),
+        'desc' => __('A button will appear at the bottom left corner of the footer after turning on, click it and the footer online player will be displayed','csf'),
+        'options' => array(
+          'off' => __('Off','csf'),
+          'netease' => __('Netease Cloud Music','csf'),
+          'kugou' => __('Kugou Music(may not be available)','csf'),
+          'baidu' => __('Baidu Music(not available on servers overseas)','csf'),
+          'tencent' => __('QQ Music(may not be available)','csf'),
         ),
         'default' => 'off'
       ),
 
       array(
-        'id'     => 'aplayer_playlistid',
-        'type'   => 'text',
-        'title'  => '页尾在线播放器歌单ID',
+        'id' => 'aplayer_playlistid',
+        'type' => 'text',
+        'title' => __('Footer Online Music Player Songlist ID','csf'),
         'dependency' => array( 'aplayer_server', '!=', 'off' ),
-        'desc'   => '填写歌单ID，例如：https://music.163.com/#/playlist?id=5380675133的歌单ID是5380675133',
+        'desc' => __('Fill in the song ID, e.g. https://music.163.com/#/playlist?id=5380675133 SongID:5380675133','csf'),
         'default' => '5380675133'
       ),
 
       array(
-        'id'          => 'aplayer_order',
-        'type'        => 'select',
-        'title'       => '播放模式',
+        'id' => 'aplayer_order',
+        'type' => 'select',
+        'title' => __('Footer Online Music Player Mode','csf'),
         'dependency' => array( 'aplayer_server', '!=', 'off' ),
-        'desc'   => '选择播放模式',
-        'options'     => array(
-          'list'  => '列表',
-          'random'  => '随机',
+        'desc' => __('Select music player mode','csf'),
+        'options' => array(
+          'list' => __('List','csf'),
+          'random' => __('Random','csf'),
         ),
-        'default'     => 'list'
+        'default' => 'list'
       ),
 
       array(
-        'id'          => 'aplayer_preload',
-        'type'        => 'select',
-        'title'       => '预加载',
+        'id' => 'aplayer_preload',
+        'type' => 'select',
+        'title' => __('Footer Online Music Player Preload','csf'),
         'dependency' => array( 'aplayer_server', '!=', 'off' ),
-        'desc'   => '是否预加载歌曲',
-        'options'     => array(
-          'none'  => '关闭预加载',
-          'metadata'  => '预加载元数据',
-          'auto'  => '自动',
+        'desc' => __('Whether to preload songs','csf'),
+        'options' => array(
+          'none' => __('Off','csf'),
+          'metadata' => __('Preload Metadata','csf'),
+          'auto' => __('Auto','csf'),
         ),
-        'default'     => 'auto'
+        'default' => 'auto'
       ),
 
       array(
-        'id'     => 'aplayer_volume',
-        'type'   => 'slider',
-        'title'  => '页尾在线播放器默认音量',
+        'id' => 'aplayer_volume',
+        'type' => 'slider',
+        'title' => __('Default Volume of Footer Online Music Player','csf'),
         'dependency' => array( 'aplayer_server', '!=', 'off' ),
-        'desc'   => '滑动滑块，推荐数值范围为0.4-0.6',
-        'step'   => '0.01',
-        'max'   => '1',
+        'desc' => __('Slide to adjust, the recommended sliding value range is 0.4-0.6','csf'),
+        'step' => '0.01',
+        'max' => '1',
         'default' => '0.5'
       ),
 
       array(
-        'id'     => 'aplayer_cookie',
-        'type'   => 'textarea',
-        'title'  => '页尾在线播放器网易云音乐Cookies',
+        'id' => 'aplayer_cookie',
+        'type' => 'textarea',
+        'title' => __('Netease Cloud Music Cookies','csf'),
         'dependency' => array( 'aplayer_server', '==', 'netease' ),
-        'desc'   => '如果你想播放网易云音乐会员专享音乐，请在此选项填入你的帐号Cookies。',
+        'desc' => __('If you want to play VIP music on Netease Cloud Music Platform, please fill in your account cookies in this option.','csf'),
       ),
 
       array(
-        'id'    => 'sakura_widget',
-        'type'  => 'switcher',
-        'title' => '页尾小部件区',
-        'label'   => '开启之后页尾左下角将出现按钮，点击按钮后页尾小部件区将显示，如果你开启了页尾在线播放器，则会一起显示',
+        'id' => 'sakura_widget',
+        'type' => 'switcher',
+        'title' => __('Footer Widget Area','csf'),
+        'label' => __('After turning it on, a button will appear in the bottom of the left corner of the footer, when you click the button the footer widget area will be displayed, if you have the footer online player turned on it will be displayed together','csf'),
         'default' => false
       ),
 
       array(
-        'id'     => 'sakura_widget_background',
-        'type'  => 'upload',
-        'title' => '页尾小部件区背景',
+        'id' => 'sakura_widget_background',
+        'type' => 'upload',
+        'title' => __('Footer Widget Area Background','csf'),
         'dependency' => array( 'sakura_widget', '==', 'true' ),
-        'desc'   => '最佳宽度400px，最佳高度460px',
-        'library'      => 'image',
+        'desc' => __('The best picture size is 400px × 460px','csf'),
+        'library' => 'image',
       ),
 
       array(
-        'id'    => 'footer_sakura_icon',
-        'type'  => 'switcher',
-        'title' => '页尾动态樱花图标',
-        'label'   => '开启之后页尾将出现动态樱花图标',
+        'id' => 'footer_sakura_icon',
+        'type' => 'switcher',
+        'title' => __('Footer Dynamic Sakura Icon','csf'),
+        'label' => __('Dynamic Sakura icon will appear at the end of the page after turning on','csf'),
         'default' => false
       ),
 
       array(
-        'id'    => 'footer_load_occupancy',
-        'type'  => 'switcher',
-        'title' => '页尾负载占用查询',
-        'label'   => '开启之后页尾将出现负载占用信息',
+        'id' => 'footer_load_occupancy',
+        'type' => 'switcher',
+        'title' => __('Footer Load Occupancy Query','csf'),
+        'label' => __('Load occupancy information will appear at the end of the page after turning it on','csf'),
         'default' => false
       ),
 
       array(
-        'id'    => 'footer_yiyan',
-        'type'  => 'switcher',
-        'title' => '页尾一言',
-        'label'   => '开启之后页尾将出现一言',
-        'default' => false
-      ),
-
-      array(
-        'id'     => 'footer_info',
-        'type'   => 'textarea',
-        'title'  => '页尾信息',
-        'desc'   => '页尾说明文字，支持HTML代码',
+        'id' => 'footer_info',
+        'type' => 'textarea',
+        'title' => __('Footer Info','csf'),
+        'desc' => __('Footer description text, supports HTML code','csf'),
         'default' => 'Copyright &copy; by FUUKEI All Rights Reserved.'
+      ),
+
+      array(
+        'id'=>'footer_addition',
+        'type'     => 'code_editor',
+        'sanitize' => false,
+        'title' => __('Footer Addition','csf'),
+        'desc' => __('Add HTML code at the end of the page. Useful for adding customize JavaScript, or adding external CSS stylesheets.','csf'),
+      ),
+
+      array(
+        'type' => 'subheading',
+        'content' => __('Hitokoto','csf'),
+      ),
+
+      array(
+        'id' => 'footer_yiyan',
+        'type' => 'switcher',
+        'title' => __('Footer Hitokoto','csf'),
+        'label' => __('Hitokoto will appear at the end of the page after turning it on','csf'),
+        'default' => false
+      ),
+
+      array(
+        'type' => 'content',
+        'dependency' => array( 'footer_yiyan', '==', 'true' ),
+        'content' => __('<h4>Hitokoto API Setup Instructions</h4>'
+        .' <p>Fill in as the example:<code> ["https://api.maho.cc/yiyan/", "https://v1.hitokoto.cn/"]</code>, where the first API will be used first and the next ones will be the backup. </p>'
+        .' <p><strong>Official API:</strong> See the <a href="https://developer.hitokoto.cn/sentence/"> documentation</a> for how to use it, and the parameter "return code" should not be anything except JSON. <a href="https://v1.hitokoto.cn/">https://v1.hitokoto.cn/</a></p>'
+        .' <p><strong>Maho API:</strong> An reverse proxy mirror of the official API. <a href="https://api.maho.cc/yiyan/">https://api.maho.cc/yiyan/</a></p>','csf'),
+      ),
+
+      array(
+        'id' => 'yiyan_api',
+        'type' => 'textarea',
+        'title' => __('Hitokoto API address','csf'),
+        'dependency' => array( 'footer_yiyan', '==', 'true' ),
+        'desc' => __('Fill in the address in JavaScript array format','csf'),
+        'default' => '["https://api.maho.cc/yiyan/", "https://v1.hitokoto.cn/"]'
       ),
 
     )
@@ -883,47 +915,47 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => '鼠标设置',
-    'icon'      => 'fa fa-i-cursor',
+    'title' => __('Cursor Options','csf'),
+    'icon' => 'fa fa-i-cursor',
     'fields' => array(
 
       array(
-        'id'     => 'cursor_nor',
-        'type'   => 'text',
-        'title'  => '标准鼠标样式',
-        'desc'   => '应用于全局，填写Cur鼠标文件链接',
+        'id' => 'cursor_nor',
+        'type' => 'text',
+        'title' => __('Standard Cursor Style','csf'),
+        'desc' => __('Apply to global, fill in ".cur" mouse file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/normal.cur'
       ),
 
       array(
-        'id'     => 'cursor_no',
-        'type'   => 'text',
-        'title'  => '选定鼠标样式',
-        'desc'   => '应用于多种样式，填写Cur鼠标文件链接',
+        'id' => 'cursor_no',
+        'type' => 'text',
+        'title' => __('Selected Cursor Style','csf'),
+        'desc' => __('Apply to multiple styles, fill in ".cur" file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/No_Disponible.cur'
       ),
 
       array(
-        'id'     => 'cursor_ayu',
-        'type'   => 'text',
-        'title'  => '选中控件单元鼠标样式',
-        'desc'   => '应用于选中某个控件单元，填写Cur鼠标文件链接',
+        'id' => 'cursor_ayu',
+        'type' => 'text',
+        'title' => __('Selected Control Unit Cursor Style','csf'),
+        'desc' => __('Apply to selected control unit, fill in ".cur" file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/ayuda.cur'
       ),
 
       array(
-        'id'     => 'cursor_text',
-        'type'   => 'text',
-        'title'  => '选中文本鼠标样式',
-        'desc'   => '应用于选中文本，填写Cur鼠标文件链接',
+        'id' => 'cursor_text',
+        'type' => 'text',
+        'title' => __('Selected Text Cursor Style','csf'),
+        'desc' => __('Apply to selected text, fill in ".cur" file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/texto.cur'
       ),
 
       array(
-        'id'     => 'cursor_work',
-        'type'   => 'text',
-        'title'  => '工作状态鼠标样式',
-        'desc'   => '应用于加载控件单元，填写Cur鼠标文件链接',
+        'id' => 'cursor_work',
+        'type' => 'text',
+        'title' => __('Work Status Cursor Style','csf'),
+        'desc' => __('Apply to load control unit, fill in ".cur" file link','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/work.cur'
       ),
 
@@ -932,495 +964,495 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title'  => '额外设置',
-    'icon'      => 'fa fa-gift',
+    'title' => __('Additional Options','csf'),
+    'icon' => 'fa fa-gift',
     'fields' => array(
 
       array(
-        'type'    => 'subheading',
-        'content' => '特效及动画',
+        'type' => 'subheading',
+        'content' => __('Effects&Animations','csf'),
       ),
       
       array(
-        'id'    => 'preload_animation',
-        'type'  => 'switcher',
-        'title' => '预加载动画',
-        'label'   => '开启之后新页面加载前会有预加载动画，此选项需确保你的页面资源正常加载。',
+        'id' => 'preload_animation',
+        'type' => 'switcher',
+        'title' => __('Preload Animation','csf'),
+        'label' => __('Preload animation before new pages load; To enable this option, ensure your page resources can load properly.' ,'csf'),
         'default' => false
       ),
 
       array(
-        'id'      => 'preload_animation_color1',
-        'type'    => 'color',
-        'title'   => '预加载动画颜色A',
+        'id' => 'preload_animation_color1',
+        'type' => 'color',
+        'title' => __('Preload Animation Color A','csf'),
         'dependency' => array( 'preload_animation', '==', 'true' ),
-        'desc'    => '自定义颜色',
+        'desc' => __('Customize the colors','csf'),
         'default' => '#ffea99'
       ),   
 
       array(
-        'id'      => 'preload_animation_color2',
-        'type'    => 'color',
-        'title'   => '预加载动画颜色B',
+        'id' => 'preload_animation_color2',
+        'type' => 'color',
+        'title' => __('Preload Animation Color B','csf'),
         'dependency' => array( 'preload_animation', '==', 'true' ),
-        'desc'    => '自定义颜色',
+        'desc' => __('Customize the colors','csf'),
         'default' => '#ffcc00'
       ),   
 
       array(
-        'id'      => 'preload_blur',
-        'title'   => '预加载模糊过渡效果',
+        'id' => 'preload_blur',
+        'title' => __('Preload Animation Blur Transition Effect','csf'),
         'dependency' => array( 'preload_animation', '==', 'true' ),
-        'desc'    => '模糊过渡持续时间，单位毫秒ms，为0时关闭。',
+        'desc' => __('Blur transition duration in milliseconds ms, off when set to 0.' ,'csf'),
         'default' => '0',
-        'type'   => 'slider',
-        'step'   => '10',
-        'max'   => '10000',
+        'type' => 'slider',
+        'step' => '10',
+        'max' => '10000',
       ), 
 
       array(
-        'id'          => 'falling_effects',
-        'type'        => 'select',
-        'title'       => '飘落特效',
-        'options'     => array(
-          'off'  => '关闭',
-          'sakura-native'  => '樱花 原生数量',
-          'sakura-quarter'  => '樱花 四分之一数量',
-          'sakura-half'  => '樱花 二分之一数量',
-          'sakura-less'  => '樱花 较少数量',
-          'yuki-native'  => '雪花 原生数量',
-          'yuki-half'  => '雪花 二分之一数量',
+        'id' => 'falling_effects',
+        'type' => 'select',
+        'title' => __('Falling Effects','csf'),
+        'options' => array(
+          'off' => __('Off','csf'),
+          'sakura-native' => __('Sakura Native Quantity','csf'),
+          'sakura-quarter' => __('Sakura Quarter Quantity','csf'),
+          'sakura-half' => __('Sakura Half Quantity','csf'),
+          'sakura-less' => __('Sakura Less Quantity','csf'),
+          'yuki-native' => __('Snow Native Quantity','csf'),
+          'yuki-half' => __('Snow Half Quantity','csf'),
         ),
-        'default'     => 'off'
+        'default' => 'off'
       ),
 
       array(
-        'id'    => 'live2d_options',
-        'type'  => 'switcher',
-        'title' => 'Live2D看板娘',
-        'label'   => '开启之后页面左下角将加载Live2D看板娘',
+        'id' => 'live2d_options',
+        'type' => 'switcher',
+        'title' => __('Live2D Model','csf'),
+        'label' => __('Live2D Model will be loaded in the bottom left corner of the page after turning on','csf'),
         'default' => false
       ),
 
       array(
-        'id'     => 'live2d_custom_user',
-        'type'   => 'text',
-        'title'  => 'Live2D看板娘自定义Github项目用户名',
+        'id' => 'live2d_custom_user',
+        'type' => 'text',
+        'title' => __('Live2D Model Custom Github Project Username','csf'),
         'dependency' => array( 'live2d_options', '==', 'true' ),
-        'desc'   => '如果想自定义本选项，你需要先去Github Fork本项目并对本项目进行修改，此处填写Github项目的用户名',
+        'desc' => __('If you want to customize this option, you need to go to Github to fork this project and make changes to this project first, fill in the Github project username here','csf'),
         'default' => 'mirai-mamori'
       ),
 
       array(
-        'id'     => 'live2d_custom_user_ver',
-        'type'   => 'text',
-        'title'  => 'Live2D看板娘自定义Github项目版本',
+        'id' => 'live2d_custom_user_ver',
+        'type' => 'text',
+        'title' => __('Live2D Model Custom Github Project Version','csf'),
         'dependency' => array( 'live2d_options', '==', 'true' ),
-        'desc'   => '如果想自定义本选项，你需要先去Github Fork本项目并对本项目进行修改，此处填写Github项目的版本',
+        'desc' => __('If you want to customize this option, you need to first go to Github to fork this project and make changes to this project, fill in the version of the Github project here','csf'),
         'default' => 'latest'
       ),
 
       array(
-        'id'    => 'note_effects',
-        'type'  => 'switcher',
-        'title' => '音符触动特效',
-        'label'   => '开启之后返回顶部按钮和白猫样式Logo触碰时将有音符声音提示',
+        'id' => 'note_effects',
+        'type' => 'switcher',
+        'title' => __('Note Touch Effects','csf'),
+        'label' => __('After turning on, there will be a note sound alert when the back to top button and Mashiro style logo touch','csf'),
         'default' => false
       ),
 
       array(
-        'type'    => 'subheading',
-        'content' => '功能',
+        'type' => 'subheading',
+        'content' => __('Feature','csf'),
       ),
 
       array(
-        'id'     => 'poi_pjax',
-        'type'   => 'switcher',
-        'title'  => 'PJAX局部刷新',
-        'label'   => '开启之后点击新内容将不需要重新加载',
-        'default' => false
-      ),
-
-      array(
-        'id'     => 'nprogress_on',
-        'type'   => 'switcher',
-        'title'  => 'NProgress加载进度条',
-        'label'   => '默认开启，加载页面将有进度条提示',
+        'id' => 'poi_pjax',
+        'type' => 'switcher',
+        'title' => __('PJAX Partial Refresh','csf'),
+        'label' => __('Enabled by default, clicking to a new page will not require reloading','csf'),
         'default' => true
       ),
 
       array(
-        'id'     => 'smoothscroll_option',
-        'type'   => 'switcher',
-        'title'  => '全局平滑滚动',
-        'label'   => '默认开启，页面滚动将更加平滑',
+        'id' => 'nprogress_on',
+        'type' => 'switcher',
+        'title' => __('NProgress Loading Progress Bar','csf'),
+        'label' => __('Enabled by default, when loading page there will be a progress bar alert','csf'),
         'default' => true
       ),
 
       array(
-        'id'    => 'captcha_switch',
-        'type'  => 'switcher',
-        'title' => '登录验证码',
-        'label'   => '开启之后验证码将出现在后台登录页及登录模板，此功能与其他验证码相关插件冲突，请勿同时开启',
+        'id' => 'smoothscroll_option',
+        'type' => 'switcher',
+        'title' => __('Global Smooth Scroll','csf'),
+        'label' => __('Enabled by default, page scrolling will be smoother','csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'captcha_switch',
+        'type' => 'switcher',
+        'title' => __('Login Captcha','csf'),
+        'label' => __('After turning on, the captcha will appear in the backend login page and login template, this feature conflicts with other captcha related plugins, please do not turn on together','csf'),
         'default' => false
       ),
 
       array(
-        'id'         => 'pagenav_style',
-        'type'       => 'radio',
-        'title'      => '分页模式',
-        'options'    => array(
-          'ajax' => 'Ajax加载',
-          'np' => '上下页',
+        'id' => 'pagenav_style',
+        'type' => 'radio',
+        'title' => __('Pagination Mode','csf'),
+        'options' => array(
+          'ajax' => __('Ajax Load','csf'),
+          'np' => __('Page Up/Down','csf'),
         ),
-        'default'    => 'ajax'
+        'default' => 'ajax'
       ),
 
       array(
-        'id'          => 'page_auto_load',
-        'type'        => 'select',
-        'title'       => '下一页自动加载',
+        'id' => 'page_auto_load',
+        'type' => 'select',
+        'title' => __('Next Page Auto Load','csf'),
         'dependency' => array( 'pagenav_style', '==', 'ajax' ),
-        'options'     => array(
-          '233'  => '不自动加载',
-          '0'  => '0秒',
-          '1'  => '1秒',
-          '2'  => '2秒',
-          '3'  => '3秒',
-          '4'  => '4秒',
-          '5'  => '5秒',
-          '6'  => '6秒',
-          '7'  => '7秒',
-          '8'  => '8秒',
-          '9'  => '9秒',
-          '10'  => '10秒',
+        'options' => array(
+          '233' => __('do not autoload','csf'),
+          '0' => __('0 Sec','csf'),
+          '1' => __('1 Sec','csf'),
+          '2' => __('2 Sec','csf'),
+          '3' => __('3 Sec','csf'),
+          '4' => __('4 Sec','csf'),
+          '5' => __('5 Sec','csf'),
+          '6' => __('6 Sec','csf'),
+          '7' => __('7 Sec','csf'),
+          '8' => __('8 Sec','csf'),
+          '9' => __('9 Sec','csf'),
+          '10' => __('10 Sec','csf'),
         ),
-        'default'     => '233'
+        'default' => '233'
       ),
 
       array(
-        'id'     => 'load_nextpage_svg',
-        'type'   => 'text',
-        'title'  => '下一页加载占位SVG',
-        'desc'   => '填写地址，此为加载下一页时占位显示的SVG',
+        'id' => 'load_nextpage_svg',
+        'type' => 'text',
+        'title' => __('Placeholder SVG when loading the next page','csf'),
+        'desc' => __('Fill in the address, this is the SVG that will be displayed as a placeholder when the next page is loading','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/ball.svg'
       ),
     )
   ) );
 
   CSF::createSection( $prefix, array(
-    'id'    => 'homepage', 
-    'title' => '主页设置',
-    'icon'      => 'fa fa-home',
+    'id' => 'homepage', 
+    'title' => __('HomePage Options','csf'),
+    'icon' => 'fa fa-home',
   ) );
 
   CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title'  => '封面设置',
-    'icon'      => 'fa fa-laptop',
+    'title' => __('Cover Options','csf'),
+    'icon' => 'fa fa-laptop',
     'fields' => array(
 
       array(
-        'id'    => 'cover_switch',
-        'type'  => 'switcher',
-        'title' => '封面',
-        'label'   => '默认开启，如果关闭，则下文所有选项均将失效',
+        'id' => 'cover_switch',
+        'type' => 'switcher',
+        'title' => __('Cover Switch','csf'),
+        'label' => __('On by default, if off, all options below will be disabled','csf'),
         'default' => true
       ),
 
       array(
-        'id'    => 'cover_full_screen',
-        'type'  => 'switcher',
-        'title' => '封面全屏显示',
-        'label'   => '默认开启',
+        'id' => 'cover_full_screen',
+        'type' => 'switcher',
+        'title' => __('Cover Full Screen','csf'),
+        'label' => __('Default on','csf'),
         'default' => true
       ),
 
       array(
-        'id'    => 'cover_half_screen_curve',
-        'type'  => 'switcher',
-        'dependency'=>array( 'cover_full_screen', '==', 'false' ),
-        'title' => '封面下方弧形遮挡',
-        'label'   => '开启之后封面下方将出现弧形遮挡',
+        'id' => 'cover_half_screen_curve',
+        'type' => 'switcher',
+        'dependency' => array( 'cover_full_screen', '==', 'false' ),
+        'title' => __('Cover Arc Occlusion (Below)','csf'),
+        'label' => __('An arc occlusion will appear below the cover when turned on','csf'),
         'default' => false
       ),
 
       array(
-        'id'    => 'cover_radius',
-        'type'  => 'slider',
-        'title' => '封面圆角',
-        'desc'   => '滑动滑块，推荐数值范围为15-20',
-        'unit'    => 'px',
-        'max'    => '60',
+        'id' => 'cover_radius',
+        'type' => 'slider',
+        'title' => __('Cover Radius','csf'),
+        'desc' => __('Slide to adjust, the recommended value range is 15-20','csf'),
+        'unit' => 'px',
+        'max' => '60',
         'default' => '15'
       ),
 
       array(
-        'id'    => 'cover_animation',
-        'type'  => 'switcher',
-        'title' => '封面动画',
-        'label'   => '默认开启，如果关闭，则封面将直接显示',
+        'id' => 'cover_animation',
+        'type' => 'switcher',
+        'title' => __('Cover Animation','csf'),
+        'label' => __('On by default, if off, the cover will be displayed directly','csf'),
         'default' => true
       ),
 
       array(
-        'id'     => 'cover_animation_time',
-        'type'   => 'slider',
-        'title'  => '封面动画时间',
+        'id' => 'cover_animation_time',
+        'type' => 'slider',
+        'title' => __('Cover Animation Time','csf'),
         'dependency' => array( 'cover_animation', '==', 'true' ),
-        'desc'   => '滑动滑块，推荐数值范围为1-2',
-        'step'   => '0.01',
-        'unit'    => 's',
-        'max'   => '5',
+        'desc' => __('Slide to adjust, the recommended value range is 1-2','csf'),
+        'step' => '0.01',
+        'unit' => 's',
+        'max' => '5',
         'default' => '2'
       ),
 
       array(
-        'id'    => 'infor_bar',
-        'type'  => 'switcher',
-        'title' => '封面信息栏',
-        'label'   => '默认开启，显示头像、白猫特效文字、签名栏、社交区域',
+        'id' => 'infor_bar',
+        'type' => 'switcher',
+        'title' => __('Cover Info Bar','csf'),
+        'label' => __('Enabled by default, show avatar, Mashiro effects text, signature bar, social area','csf'),
         'default' => true
       ),
 
       array(
-        'id'         => 'infor_bar_style',
-        'type'       => 'image_select',
-        'title'      => '封面信息栏样式',
-        'options'    => array(
+        'id' => 'infor_bar_style',
+        'type' => 'image_select',
+        'title' => __('Cover Info Bar Style','csf'),
+        'options' => array(
           'v1' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/infor_bar_style_v1.png',
           'v2' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/infor_bar_style_v2.png',
         ),
-        'default'    => 'v1'
+        'default' => 'v1'
       ),
 
       array(
-        'id'      => 'infor_bar_bgcolor',
-        'type'    => 'color',
-        'title'   => '封面信息栏背景颜色',
-        'desc'    => '自定义颜色，建议使用浅色系颜色',
+        'id' => 'infor_bar_bgcolor',
+        'type' => 'color',
+        'title' => __('Cover Info Bar Background Color','csf'),
+        'desc' => __('Customize the colors, light colors are recommended','csf'),
         'default' => 'rgba(255,255,255,0.8)'
       ),     
 
       array(
-        'id'    => 'avatar_radius',
-        'type'  => 'slider',
-        'title' => '封面信息栏头像圆角',
-        'desc'   => '滑动滑块，推荐数值为100',
-        'unit'    => 'px',
+        'id' => 'avatar_radius',
+        'type' => 'slider',
+        'title' => __('Cover Info Bar Avatar Radius','csf'),
+        'desc' => __('Slide to adjust, the recommended value is 100','csf'),
+        'unit' => 'px',
         'default' => '100'
       ),
 
       array(
-        'id'    => 'signature_radius',
-        'type'  => 'slider',
-        'title' => '封面签名栏圆角',
-        'desc'   => '滑动滑块，推荐数值范围为10-20',
-        'unit'    => 'px',
-        'max'    => '50',
+        'id' => 'signature_radius',
+        'type' => 'slider',
+        'title' => __('Cover Signature Bar Rounded','csf'),
+        'desc' => __('Slide to adjust, the recommended value range 10-20','csf'),
+        'unit' => 'px',
+        'max' => '50',
         'default' => '15'
       ),
 
       array(
-        'id'     => 'signature_text',
-        'type'   => 'text',
-        'title'  => '封面签名栏文本',
-        'desc'   => '一段自我描述的话',
+        'id' => 'signature_text',
+        'type' => 'text',
+        'title' => __('Cover Signature Field Text','csf'),
+        'desc' => __('A self-descriptive quote','csf'),
         'default' => '本当の声を響かせてよ'
       ),
 
       array(
-        'id'     => 'signature_font',
-        'type'   => 'text',
-        'title'  => '封面签名栏文本字体',
-        'desc'   => '填写字体名称。例如：Ma Shan Zheng',
+        'id' => 'signature_font',
+        'type' => 'text',
+        'title' => __('Cover Signature Field Text Font','csf'),
+        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','csf'),
         'default' => 'Noto Serif SC'
       ),
 
       array(
-        'id'     => 'signature_font_size',
-        'type'   => 'slider',
-        'title'  => '封面签名栏文本字体大小',
-        'desc'   => '滑动滑块，推荐数值范围为15-18',
-        'unit'    => 'px',
-        'min'   => '5',
-        'max'   => '20',
+        'id' => 'signature_font_size',
+        'type' => 'slider',
+        'title' => __('Cover Signature Field Text Font Size','csf'),
+        'desc' => __('Slide to adjust, the recommended value range is 15-18','csf'),
+        'unit' => 'px',
+        'min' => '5',
+        'max' => '20',
         'default' => '16'
       ),
 
       array(
-        'id'     => 'signature_typing',
-        'type'   => 'switcher',
-        'title'  => '封面签名栏打字特效',
-        'label'   => '开启之后签名栏文本将增加一段文本并呈现打字特效',
+        'id' => 'signature_typing',
+        'type' => 'switcher',
+        'title' => __('Cover Signature Bar Typing Effects','csf'),
+        'label' => __('When turned on, the signature bar text will have an additional paragraph of text and will be rendered with typing effects','csf'),
         'default' => false
       ),
 
       array(
-        'id'     => 'signature_typing_marks',
-        'type'   => 'switcher',
-        'title'  => '封面签名栏打字特效双引号',
+        'id' => 'signature_typing_marks',
+        'type' => 'switcher',
+        'title' => __('Cover Signature Field Typing Effects Double Quotes','csf'),
         'dependency' => array( 'signature_typing', '==', 'true' ),
-        'label'   => '开启之后打字特效将追加双引号',
+        'label' => __('Typing effects will be appended with double quotes when turned on','csf'),
         'default' => false
       ),
 
       array(
-        'id'     => 'signature_typing_text',
-        'type'   => 'text',
-        'title'  => '封面签名栏打字特效文本',
+        'id' => 'signature_typing_text',
+        'type' => 'text',
+        'title' => __('Cover Signature Text','csf'),
         'dependency' => array( 'signature_typing', '==', 'true' ),
-        'desc'   => '填写打字特效文本部分，文本外必须使用英文双引号，二句话之间使用英文逗号隔开，支持HTML标签',
-        'default' => '"寒蝉黎明之时,便是重生之日。"'
+        'desc' => __('Fill in the text of the typing effect. Use English double quotes outside the text, and English commas to separate the two sentences. Support HTML tags','csf'),
+        'default' => '"寒蝉黎明之时,便是重生之日"'
       ),
 
       array(
-        'id'          => 'random_graphs_options',
-        'type'        => 'select',
-        'title'       => '封面随机图片选项',
-        'options'     => array(
-          'external_api'  => '外部API随机图片',
-          'webp_optimization'  => 'Webp优化随机图片',
-          'local'  => '本地随机图片',
+        'id' => 'random_graphs_options',
+        'type' => 'select',
+        'title' => __('Cover Random Image Options','csf'),
+        'options' => array(
+          'external_api' => __('External API','csf'),
+          'webp_optimization' => __('Webp optimized','csf'),
+          'local' => __('Local','csf'),
         ),
-        'default'     => 'external_api'
+        'default' => 'external_api'
       ),
 
       array(
-        'id'    => 'random_graphs_mts',
-        'type'  => 'switcher',
-        'title' => '封面随机图片多终端分离',
-        'label'   => '默认开启，桌面端和移动端会分别使用不同的随机图片地址',
+        'id' => 'random_graphs_mts',
+        'type' => 'switcher',
+        'title' => __('Cover Random Image Multi-terminal Separation','csf'),
+        'label' => __('Enabled by default, desktop and mobile devices will use separate random image addresses','csf'),
         'default' => true
       ),
 
       array(
-        'id'     => 'random_graphs_link',
-        'type'   => 'text',
-        'title'  => 'Webp优化/外部API桌面端随机图片地址',
-        'desc'   => '填写地址',
+        'id' => 'random_graphs_link',
+        'type' => 'text',
+        'title' => __('Webp Optimization/External API Desktop Side Random Graphics Address','csf'),
+        'desc' => __('Fill in the address','csf'),
         'default' => 'https://api.maho.cc/random-img/pc.php'
       ),
 
       array(
-        'type'    => 'submessage',
-        'style'   => 'info',
-        'content' => sprintf(__('如果你选择使用Webp优化随机图片，请点击 <a href = "%s">这里</a> 来更新 Manifest 路径', 'sakurairo'), rest_url('sakura/v1/database/update')), 
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => sprintf(__('如果你选择使用Webp优化随机图片 / If you choose to use Webp to optimize random images, 点击 / Click <a href="%s">这里 / here </a>来更新 Manifest 路径 / to update the Manifest path', 'sakurairo', 'csf'), rest_url('sakura/v1/ database/update')), 
       ),
 
       array(
-        'id'     => 'random_graphs_link_mobile',
-        'type'   => 'text',
-        'title'  => '外部API手机端随机图片地址',
+        'id' => 'random_graphs_link_mobile',
+        'type' => 'text',
+        'title' => __('External API Mobile Devices Random Image Address','csf'),
         'dependency' => array( 'random_graphs_mts', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('fill address','csf'),
         'default' => 'https://api.maho.cc/random-img/mobile.php'
       ),
 
       array(
         'id' => 'cache_cover',
-        'type'  => 'switcher',
-        'title' => '封面随机背景图片缓存',
-        'label'   => '默认开启，此功能会在本地缓存一份封面图片，可提升进入主页后第一张封面的加载速度。注意：此功能需要封面API能接受跨域请求。',
+        'type' => 'switcher',
+        'title' => __('Cover Random Background Image Cache','csf'),
+        'label' => __('Enabled by default, this feature will cache a cover image locally, which can improve the loading speed of the first cover after entering the homepage. Note: This feature needs the cover APIs that accept cross-domain requests.' ,'csf'),
         'default' => true
       ),
 
       array(
-        'id'    => 'site_bg_as_cover',
-        'type'  => 'switcher',
-        'title' => '封面与前台背景一体化',
-        'label'   => '开启之后，封面的背景将设置为透明，同时前台背景将使用封面的随机图API',
+        'id' => 'site_bg_as_cover',
+        'type' => 'switcher',
+        'title' => __('Cover and Frontend Background Integration','csf'),
+        'label' => __('When enabled, the background of the cover will be set to transparent, while the frontend background will use the cover\'s random image API','csf'),
         'default' => false
       ),
 
       array(
-        'id'          => 'random_graphs_filter',
-        'type'        => 'select',
-        'title'       => '封面随机图片滤镜',
-        'options'     => array(
-          'filter-nothing'  => '无滤镜',
-          'filter-undertint'  => '浅色滤镜',
-          'filter-dim'  => '暗淡滤镜',
-          'filter-grid'  => '网格滤镜',
-          'filter-dot'  => '点状滤镜',
+        'id' => 'random_graphs_filter',
+        'type' => 'select',
+        'title' => __('Cover Random Images Filter','csf'),
+        'options' => array(
+          'filter-nothing' => __('No filter','csf'),
+          'filter-undertint' => __('Light filter','csf'),
+          'filter-dim' => __('Dimmed filter','csf'),
+          'filter-grid' => __('Grid filter','csf'),
+          'filter-dot' => __('Dot filter','csf'),
         ),
-        'default'     => 'filter-nothing'
+        'default' => 'filter-nothing'
       ),
 
       array(
-        'id'    => 'wave_effects',
-        'type'  => 'switcher',
-        'title' => '封面波浪特效',
-        'label'   => '开启之后首页封面底部将出现波浪特效',
+        'id' => 'wave_effects',
+        'type' => 'switcher',
+        'title' => __('Cover Wave Effects','csf'),
+        'label' => __('Wave effect will appear at the bottom of the cover of the home page after turning on, and it will be forced off in the dark mode','csf'),
         'default' => false
       ),
 
       array(
-        'id'    => 'drop_down_arrow',
-        'type'  => 'switcher',
-        'title' => '封面下拉箭头',
-        'label'   => '默认开启，首页封面底部显示下拉箭头',
+        'id' => 'drop_down_arrow',
+        'type' => 'switcher',
+        'title' => __('Cover Dropdown Arrow','csf'),
+        'label' => __('Enabled by default, show a dropdown arrow at bottom of home cover','csf'),
         'default' => true
       ),
 
       array(
-        'id'    => 'drop_down_arrow_mobile',
-        'type'  => 'switcher',
-        'title' => '封面下拉箭头移动端显示',
+        'id' => 'drop_down_arrow_mobile',
+        'type' => 'switcher',
+        'title' => __('Cover Dropdown Arrow Display on Mobile Devices','csf'),
         'dependency' => array( 'drop_down_arrow', '==', 'true' ),
-        'label'   => '开启之后移动端首页封面底部将出现下拉箭头',
+        'label' => __('Drop down arrow will appear at the bottom of the mobile devices\' home cover after turning it on','csf'),
         'default' => false
       ),
 
       array(
-        'id'      => 'drop_down_arrow_color',
-        'type'    => 'color',
-        'title'   => '封面下拉箭头颜色',
+        'id' => 'drop_down_arrow_color',
+        'type' => 'color',
+        'title' => __('Cover Dropdown Arrow Color','csf'),
         'dependency' => array( 'drop_down_arrow', '==', 'true' ),
-        'desc'    => '自定义颜色，建议使用浅色系颜色',
+        'desc' => __('Customize the colors, light colors are recommended','csf'),
         'default' => 'rgba(255,255,255,0.8)'
       ),  
 
       array(
-        'id'      => 'drop_down_arrow_dark_color',
-        'type'    => 'color',
-        'title'   => '封面下拉箭头深色模式颜色',
+        'id' => 'drop_down_arrow_dark_color',
+        'type' => 'color',
+        'title' => __('Cover Dropdown Arrow Color (Dark Mode)','csf'),
         'dependency' => array( 'drop_down_arrow', '==', 'true' ),
-        'desc'    => '自定义颜色，建议使用深色系颜色',
+        'desc' => __('Customize the colors, dark colors are recommended','csf'),
         'default' => 'rgba(51,51,51,0.8)'
       ),  
 
       array(
-        'id'    => 'cover_video',
-        'type'  => 'switcher',
-        'title' => '封面视频',
-        'label'   => '开启之后将替代封面随机图片作为主要显示内容',
+        'id' => 'cover_video',
+        'type' => 'switcher',
+        'title' => __('Cover Video','csf'),
+        'label' => __('Use a video instead of the images as the cover','csf'),
         'default' => false
       ),
 
       array(
-        'id'    => 'cover_video_loop',
-        'type'  => 'switcher',
-        'title' => '封面视频循环',
+        'id' => 'cover_video_loop',
+        'type' => 'switcher',
+        'title' => __('Cover Video Loop','csf'),
         'dependency' => array( 'cover_video', '==', 'true' ),
-        'label'   => '开启之后视频将自动循环，需要开启Pjax功能',
+        'label' => __('Video will loop automatically when enabled, Pjax needed','csf'),
         'default' => false
       ),
 
       array(
-        'id'     => 'cover_video_link',
-        'type'   => 'text',
-        'title'  => '封面视频地址',
+        'id' => 'cover_video_link',
+        'type' => 'text',
+        'title' => __('Cover Video Address','csf'),
         'dependency' => array( 'cover_video', '==', 'true' ),
-        'desc'   => '填写地址，该地址拼接下面的视频名，地址尾部不需要加斜杠',
+        'desc' => __('Fill in the address which splices the video name below, no slash at the end of the address','csf'),
       ),
 
       array(
-        'id'     => 'cover_video_title',
-        'type'   => 'text',
-        'title'  => '封面视频名称',
+        'id' => 'cover_video_title',
+        'type' => 'text',
+        'title' => __('Cover Video Name','csf'),
         'dependency' => array( 'cover_video', '==', 'true' ),
-        'desc'   => '例如：abc.mp4，只需要填写视频文件名abc即可，多个用英文逗号隔开如abc,efg，默认随机播放',
+        'desc' => __('For example: abc.mp4, just fill in the video file name abc. Multiple videos should be separated by English commas like "abc,efg," Random play is on by default.','csf'),
       ),
 
     )
@@ -1428,28 +1460,28 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title'  => '封面社交区域设置',
-    'icon'      => 'fa fa-share-square-o',
+    'title' => __('Cover Social Area Options','csf'),
+    'icon' => 'fa fa-share-square-o',
     'fields' => array(
 
       array(
-        'type'    => 'subheading',
-        'content' => '选项',
+        'type' => 'subheading',
+        'content' => __('Related Options','csf'),
       ),
 
       array(
-        'id'    => 'social_area',
-        'type'  => 'switcher',
-        'title' => '封面社交区域',
-        'label'   => '默认开启，显示封面随机图片切换按钮和社交网络图标',
+        'id' => 'social_area',
+        'type' => 'switcher',
+        'title' => __('Cover Social Area','csf'),
+        'label' => __('Enabled by default, show cover random image toggle button and social network icons','csf'),
         'default' => true
       ),
 
       array(
-        'id'          => 'social_display_icon',
-        'type'        => 'image_select',
-        'title'       => '社交网络图标',
-        'desc'   => '选择你喜欢的图标包。图标包引用信息详见关于主题',
+        'id' => 'social_display_icon',
+        'type' => 'image_select',
+        'title' => __('social_icon','csf'),
+        'desc' => __('Select your favorite icon pack. Icon pack references are detailed in the "About Theme" section','csf'),
         'options'     => array(
           'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/fluent_design'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_fd.gif',
           'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/muh2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_h2.gif',
@@ -1468,215 +1500,215 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'    => 'social_area_radius',
-        'type'  => 'slider',
-        'title' => '封面社交区域圆角',
+        'id' => 'social_area_radius',
+        'type' => 'slider',
+        'title' => __('Cover Social Area Rounded Corners','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '滑动滑块，推荐数值范围为10-20',
-        'unit'    => 'px',
-        'max'   => '30',
+        'desc' => __('Slide to adjust, the recommended value range is 10-20','csf'),
+        'unit' => 'px',
+        'max' => '30',
         'default' => '15'
       ),
 
       array(
-        'id'    => 'cover_random_graphs_switch',
-        'type'  => 'switcher',
-        'title' => '封面随机图片切换按钮',
+        'id' => 'cover_random_graphs_switch',
+        'type' => 'switcher',
+        'title' => __('Switch Button of Random Images','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'label'   => '默认开启，显示封面随机图切换按钮',
+        'label' => __('Enabled by default, show cover random image toggle button','csf'),
         'default' => true
       ),
 
       array(
-        'type'    => 'subheading',
-        'content' => '社交网络',
+        'type' => 'subheading',
+        'content' => __('Social Network','csf'),
       ),
 
       array(
         'id'     => 'wechat',
         'type'  => 'upload',
-        'title' => '微信',
-        'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '最佳比例1比1',
+        'title' => __('Wechat','csf'),
+        'dependency' => array( 'social_ area', '==', 'true' ),
+        'desc' => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
       ),
 
       array(
         'id'     => 'qq',
         'type'   => 'text',
-        'title'  => 'QQ',
+        'title' => __('QQ','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '请注意填写格式，例如：tencent://message/?uin=123456',
+        'desc' => __('Please note the format of filling out the form, e.g. tencent://message/?uin=123456','csf'),
       ),
 
       array(
         'id'     => 'bili',
         'type'   => 'text',
-        'title'  => '哔哩哔哩',
+        'title' => __('Bilibili','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'wangyiyun',
         'type'   => 'text',
-        'title'  => '网易云音乐',
+        'title' => __('NetEase Music','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'sina',
         'type'   => 'text',
-        'title'  => '新浪微博',
+        'title' => __('Weibo','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'github',
         'type'   => 'text',
-        'title'  => 'Github',
+        'title' => __('Github','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'telegram',
         'type'   => 'text',
-        'title'  => 'Telegram',
+        'title' => __('Telegram','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'steam',
         'type'   => 'text',
-        'title'  => 'Steam',
+        'title' => __('Steam','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'zhihu',
         'type'   => 'text',
-        'title'  => '知乎',
+        'title' => __('ZhiHu','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'qzone',
         'type'   => 'text',
-        'title'  => 'QQ空间',
+        'title' => __('QZone','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'lofter',
         'type'   => 'text',
-        'title'  => 'Lofter',
+        'title' => __('Lofter','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'youku',
         'type'   => 'text',
-        'title'  => '优酷视频',
+        'title' => __('Youku','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'linkedin',
         'type'   => 'text',
-        'title'  => 'Linkedin',
+        'title' => __('Linkedin','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'twitter',
         'type'   => 'text',
-        'title'  => '推特',
+        'title' => __('Twitter','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'facebook',
         'type'   => 'text',
-        'title'  => '脸书',
+        'title' => __('Facebook','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'csdn',
         'type'   => 'text',
-        'title'  => 'CSDN',
+        'title' => __('CSDN','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'jianshu',
         'type'   => 'text',
-        'title'  => '简书',
+        'title' => __('JianShu','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'socialdiy1',
         'type'   => 'text',
-        'title'  => '自定义社交网络Ⅰ',
+        'title' => __('Customized Social Network Ⅰ','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'socialdiyp1',
         'type'  => 'upload',
-        'title' => '自定义社交网络Ⅰ图标',
+        'title' => __('Customized Social Network Ⅰ icon','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '最佳比例1比1',
+        'desc' => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
       ),
 
       array(
         'id'     => 'socialdiy2',
         'type'   => 'text',
-        'title'  => '自定义社交网络Ⅱ',
+        'title' => __('Customized Social Network Ⅱ','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
         'id'     => 'socialdiyp2',
         'type'  => 'upload',
-        'title' => '自定义社交网络Ⅱ图标',
+        'title' => __('Customized Social Network Ⅱ icon','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => '最佳比例1比1',
+        'desc' => __('The best length-width ratio of is 1:1','csf'),
         'library'      => 'image',
       ),
 
       array(
-        'id'     => 'email_name',
-        'type'   => 'text',
-        'title'  => '邮箱用户名',
+        'id' => 'email_name',
+        'type' => 'text',
+        'title' => __('Email Username','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => 'name@domain.com的name部分，前端仅具有 js 运行环境时才能获取完整地址，可放心填写',
+        'desc' => __('name@domain.com fo name, the full address can be known only when there is a js runtime in the frontend, you can fill in with confidence','csf'),
       ),
 
       array(
-        'id'     => 'email_domain',
-        'type'   => 'text',
-        'title'  => '邮箱用户名',
+        'id' => 'email_domain',
+        'type' => 'text',
+        'title' => __('Email Domain','csf'),
         'dependency' => array( 'social_area', '==', 'true' ),
-        'desc'   => 'name@domain.com的domain.com部分',
+        'desc' => __('name@domain.com fo domain.com','csf'),
       ),
 
     )
@@ -1684,82 +1716,82 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title'  => '公告栏和区域标题设置',
-    'icon'      => 'fa fa-bullhorn',
+    'title' => __('Bulletin Board and Area Title Options','csf'),
+    'icon' => 'fa fa-bullhorn',
     'fields' => array(
 
       array(
-        'type'    => 'subheading',
-        'content' => '公告栏',
+        'type' => 'subheading',
+        'content' => __('Bulletin Board','csf'),
       ),
 
       array(
-        'id'    => 'announce_bar',
-        'type'  => 'switcher',
-        'title' => '公告栏',
-        'label'   => '开启之后公告栏将在首页封面下方显示',
+        'id' => 'bulletin_board',
+        'type' => 'switcher',
+        'title' => __('Bulletin Board','csf'),
+        'label' => __('When enabled the bulletin board will be displayed below the front cover','csf'),
         'default' => false
       ),
 
       array(
-        'id'         => 'announce_bar_style',
-        'type'       => 'radio',
-        'title'      => '公告栏样式',
-        'dependency' => array( 'announce_bar', '==', 'true' ),
-        'options'    => array(
-          'picture' => '图片背景',
-          'pure' => '纯色背景',
+        'id' => 'bulletin_board_style',
+        'type' => 'radio',
+        'title' => __('Bulletin Board Style','csf'),
+        'dependency' => array( 'bulletin_board', '==', 'true' ),
+        'options' => array(
+          'picture' => __('Picture Background','csf'),
+          'pure' => __('Color Background','csf'),
         ),
         'default' => 'picture'
       ),
 
       array(
-        'id'    => 'announce_bar_icon',
-        'type'  => 'switcher',
-        'title' => '公告栏“广播”图标',
-        'dependency' => array( 'announce_bar', '==', 'true' ),
-        'label'   => '“广播”图标将显示在公告栏的左侧',
+        'id' => 'bulletin_board_icon',
+        'type' => 'switcher',
+        'title' => __('Bulletin Board "Broadcast" Icon','csf'),
+        'dependency' => array( 'bulletin_board', '==', 'true' ),
+        'label' => __('The "Broadcast" icon will be displayed on the left side of the announcement bar','csf'),
         'default' => true
       ),
 
       array(
-        'id'     => 'announcement_bg',
-        'type'  => 'upload',
-        'title' => '公告栏背景',
+        'id' => 'bulletin_board_bg',
+        'type' => 'upload',
+        'title' => __('Bulletin Board Background','csf'),
         'dependency' => array(
-          array( 'announce_bar', '==', 'true' ),
-          array( 'announce_bar_style',   '==', 'picture' ),
+          array( 'bulletin_board', '==', 'true' ),
+          array( 'bulletin_board_style', '==', 'picture' ),
         ),
-        'desc'   => '最佳宽度820px，最佳高度67px',
-        'library'      => 'image',
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/announcement_bg.jpg'
+        'desc' => __('Best width 820px, best height 67px','csf'),
+        'library' => 'image',
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/announcement_bg.jpg'
       ),
 
       array(
-        'id'      => 'announce_bar_border_color',
-        'type'    => 'color',
-        'title'   => '公告栏边框颜色',
+        'id' => 'bulletin_board_border_color',
+        'type' => 'color',
+        'title' => __('Bulletin Board Border Color','csf'),
         'dependency' => array(
-          array( 'announce_bar', '==', 'true' ),
-          array( 'announce_bar_style',   '==', 'pure' ),
+          array( 'bulletin_board', '==', 'true' ),
+          array( 'bulletin_board_style', '==', 'pure' ),
         ),
-        'desc'    => '自定义颜色，建议使用与主题色相同色系且属于浅色系的颜色',
+        'desc' => __('Customize the colors, it is recommended to use a light color that corresponds with the theme color','csf'),
         'default' => '#E6E6E6'
       ),
 
       array(
-        'id'     => 'announce_text',
-        'type'   => 'text',
-        'title'  => '公告文本',
-        'dependency' => array( 'announce_bar', '==', 'true' ),
-        'desc'   => '填写公告文本，文本超出142个字节将会被隐藏',
+        'id' => 'bulletin_text',
+        'type' => 'text',
+        'title' => __('Bulletin Board Text','csf'),
+        'dependency' => array( 'bulletin_board', '==', 'true' ),
+        'desc' => __('Fill in the announcement text, the text beyond 142 bytes will be hidden','csf'),
       ),
 
       array(
-        'id'          => 'announce_text_align',
-        'type'        => 'image_select',
-        'title'       => '公告文本对齐方向',
-        'dependency' => array( 'announce_bar', '==', 'true' ),
+        'id' => 'bulletin_board_text_align',
+        'type' => 'image_select',
+        'title' => __('Bulletin Board Alignment','csf'),
+        'dependency' => array( 'bulletin_board', '==', 'true' ),
         'options'     => array(
           'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_left.png',
           'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_right.png',
@@ -1769,60 +1801,60 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'      => 'announce_text_color',
-        'type'    => 'color',
-        'title'   => '公告文本颜色',
-        'dependency' => array( 'announce_bar', '==', 'true' ),
-        'desc'    => '自定义颜色，建议根据背景颜色搭配合适的颜色',
+        'id' => 'bulletin_text_color',
+        'type' => 'color',
+        'title' => __('Bulletin Board Text Color','csf'),
+        'dependency' => array( 'bulletin_board', '==', 'true' ),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','csf'),
         'default' => '#999'
       ),    
 
       array(
-        'type'    => 'subheading',
-        'content' => '区域标题',
+        'type' => 'subheading',
+        'content' => __('Area Title','csf'),
       ),
 
       array(
-        'id'     => 'exhibition_area_title',
-        'type'   => 'text',
-        'title'  => '展示区域标题',
-        'desc'   => '默认为“展示”，你可以修改为其他，当然不能当广告用！不允许！！',
-        'default' => '展示'
+        'id' => 'exhibition_area_title',
+        'type' => 'text',
+        'title' => __('Display Area Title','csf'),
+        'desc' => __('Default is "Display", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'csf'),
+        'default' => 'Display'
       ),
 
       array(
-        'id'     => 'post_area_title',
-        'type'   => 'text',
-        'title'  => '文章区域标题',
-        'desc'   => '默认为“文章”，你可以修改为其他，当然不能当广告用！不允许！！',
-        'default' => '文章'
+        'id' => 'post_area_title',
+        'type' => 'text',
+        'title' => __('Post Area Title','csf'),
+        'desc' => __('Default is "Article", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'csf'),
+        'default' => 'Article'
       ),
 
       array(
-        'id'     => 'area_title_font',
-        'type'   => 'text',
-        'title'  => '区域标题字体',
-        'desc'   => '填写字体名称。例如：Ma Shan Zheng',
+        'id' => 'area_title_font',
+        'type' => 'text',
+        'title' => __('Area Title Font','csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','csf'),
         'default' => 'Noto Serif SC'
       ),
 
       array(
-        'id'          => 'area_title_text_align',
-        'type'        => 'image_select',
-        'title'       => '区域标题对齐方向',
-        'options'     => array(
-          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_left.png',
-          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_right.png',
-          'center'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_center.png',
+        'id' => 'area_title_text_align',
+        'type' => 'image_select',
+        'title' => __('Area Title Alignment','csf'),
+        'options' => array(
+          'left' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_left.png',
+          'right' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_right.png',
+          'center' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_center.png',
         ),
-        'default'     => 'left'
+        'default' => 'left'
       ),
 
       array(
-        'id'      => 'area_title_bottom_color',
-        'type'    => 'color',
-        'title'   => '区域标题下分隔线颜色',
-        'desc'    => '自定义颜色，建议使用与主题色相同色系且属于浅色系的颜色',
+        'id' => 'area_title_bottom_color',
+        'type' => 'color',
+        'title' => __('Area Title Bottom Color','csf'),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','csf'),
         'default' => '#e8e8e8'
       ),  
 
@@ -1831,136 +1863,136 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title'  => '展示区域设置',
-    'icon'      => 'fa fa-bookmark',
+    'title' => __('Display Area Options','csf'),
+    'icon' => 'fa fa-bookmark',
     'fields' => array(
 
       array(
-        'id'    => 'exhibition_area',
-        'type'  => 'switcher',
-        'title' => '展示区域',
-        'label'   => '默认开启，展示区域显示在文章区域上方',
+        'id' => 'exhibition_area',
+        'type' => 'switcher',
+        'title' => __('Display Area','csf'),
+        'label' => __('Enabled by default, display area is above article area','csf'),
         'default' => true
       ),
 
       array(
-        'id'         => 'exhibition_area_style',
-        'type'       => 'image_select',
-        'title'      => '展示区域样式',
-        'options'    => array(
+        'id' => 'exhibition_area_style',
+        'type' => 'image_select',
+        'title' => __('Display Area Style','csf'),
+        'options' => array(
           'left_and_right' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/exhibition_area_style_lr.png',
           'bottom_to_top' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/exhibition_area_style_ud.png',
         ),
-        'default'    => 'left_and_right'
+        'default' => 'left_and_right'
       ),
 
       array(
-        'id'    => 'exhibition_area_compat',
-        'type'  => 'switcher',
-        'title' => '展示区域兼容模式',
+        'id' => 'exhibition_area_compat',
+        'type' => 'switcher',
+        'title' => __('Display Area Compatibility Mode','csf'),
         'dependency' => array( 'exhibition_area_style', '==', 'left_and_right' ),
-        'label'   => '默认开启，此选项避免了展示区域错位的问题',
+        'label' => __('Enabled by default, this option avoids the problem of misaligned display areas','csf'),
         'default' => true
       ),
 
       array(
-        'id'      => 'exhibition_background_color',
-        'type'    => 'color',
-        'title'   => '展示区域背景颜色',
+        'id' => 'exhibition_background_color',
+        'type' => 'color',
+        'title' => __('Display Area Background Color','csf'),
         'dependency' => array( 'exhibition_area_style', '==', 'left_and_right' ),
-        'desc'    => '自定义颜色，建议使用浅色系颜色',
+        'desc' => __('Customize the colors, light colors are recommended','csf'),
         'default' => 'rgba(255,255,255,0.4)'
       ),
       
       array(
-        'id'    => 'exhibition_radius',
-        'type'  => 'slider',
-        'title' => '展示区域圆角',
-        'desc'   => '滑动滑块，推荐数值为15',
-        'unit'    => 'px',
+        'id' => 'exhibition_radius',
+        'type' => 'slider',
+        'title' => __('Display Area Rounded Corners','csf'),
+        'desc' => __('Slide to adjust, the recommended value is 15','csf'),
+        'unit' => 'px',
         'default' => '15'
       ),
 
       array(
-        'id'            => 'exhibition',
-        'type'          => 'tabbed',
-        'title'         => '展示区域设置',
-        'tabs'          => array(
+        'id' => 'exhibition',
+        'type' => 'tabbed',
+        'title' => __('Display Area Options','csf'),
+        'tabs' => array(
           array(
-            'title'     => '第一展示区域',
-            'fields'    => array(
+            'title' => __('First Display Area','csf'),
+            'fields' => array(
               array(
-                'id'    => 'img1',
-                'type'  => 'upload',
-                'title' => '图片',
-                'desc'  => '最佳宽度260px，最佳高度160px',
+                'id' => 'img1',
+                'type' => 'upload',
+                'title' => __('image','csf'),
+                'desc' => __('best width 260px, best height 160px','csf'),
               ),
               array(
-                'id'    => 'title1',
-                'type'  => 'text',
-                'title' => '标题',
+                'id' => 'title1',
+                'type' => 'text',
+                'title' => __('title','csf'),
               ),
               array(
-                'id'    => 'description1',
-                'type'  => 'text',
-                'title' => '描述',
+                'id' => 'description1',
+                'type' => 'text',
+                'title' => __('description','csf'),
               ),
               array(
-                'id'    => 'link1',
-                'type'  => 'text',
-                'title' => '地址',
+                'id' => 'link1',
+                'type' => 'text',
+                'title' => __('add URL','csf'),
               ),
             )
           ),
           array(
-            'title'     => '第二展示区域',
-            'fields'    => array(
+            'title' => __('Second Display Area','csf'),
+            'fields' => array(
               array(
-                'id'    => 'img2',
-                'type'  => 'upload',
-                'title' => '图片',
-                'desc'  => '最佳宽度260px，最佳高度160px',
+                'id' => 'img2',
+                'type' => 'upload',
+                'title' => __('image','csf'),
+                'desc' => __('best width 260px, best height 160px','csf'),
               ),
               array(
-                'id'    => 'title2',
-                'type'  => 'text',
-                'title' => '标题',
+                'id' => 'title2',
+                'type' => 'text',
+                'title' => __('title','csf'),
               ),
               array(
-                'id'    => 'description2',
-                'type'  => 'text',
-                'title' => '描述',
+                'id' => 'description2',
+                'type' => 'text',
+                'title' => __('description','csf'),
               ),
               array(
-                'id'    => 'link2',
-                'type'  => 'text',
-                'title' => '地址',
+                'id' => 'link2',
+                'type' => 'text',
+                'title' => __('add URL','csf'),
               ),
             )
           ),
           array(
-            'title'     => '第三展示区域',
-            'fields'    => array(
+            'title' => __('Third Display Area','csf'),
+            'fields' => array(
               array(
-                'id'    => 'img3',
-                'type'  => 'upload',
-                'title' => '图片',
-                'desc'    => '最佳宽度260px，最佳高度160px',
+                'id' => 'img3',
+                'type' => 'upload',
+                'title' => __('image','csf'),
+                'desc' => __('best width 260px, best height 160px','csf'),
               ),
               array(
                 'id'    => 'title3',
                 'type'  => 'text',
-                'title' => '标题',
+                'title' => __('title','csf'),
               ),
               array(
                 'id'    => 'description3',
                 'type'  => 'text',
-                'title' => '描述',
+                'title' => __('description','csf'),
               ),
               array(
                 'id'    => 'link3',
                 'type'  => 'text',
-                'title' => '地址',
+                'title' => __('add URL','csf'),
               ),
             )
           ),
@@ -1969,9 +2001,9 @@ if( class_exists( 'CSF' ) ) {
           'link1' => '',
           'link2' => '',
           'link3' => '',
-          'img1'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/exhibition1.jpg',
-          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/exhibition2.jpg',
-          'img3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/exhibition3.jpg',
+          'img1'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/exhibition1.jpg',
+          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/exhibition2.jpg',
+          'img3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/exhibition3.jpg',
           'title1' => 'アンコール',
           'title2' => 'ハルジオン',
           'title3' => 'かいぶつ',
@@ -1986,14 +2018,14 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title'  => '文章区域设置',
+    'title' => __('Article Area Options','csf'),
     'icon'      => 'fa fa-book',
     'fields' => array(
 
       array(
         'id'         => 'post_list_style',
         'type'       => 'image_select',
-        'title'      => '文章区域展示样式',
+        'title' => __('Article Area Display Style','csf'),
         'options'    => array(
           'imageflow' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura_left.png',
           'akinastyle' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina.png',
@@ -2004,9 +2036,9 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id'         => 'post_list_akina_type',
         'type'       => 'image_select',
-        'title'      => '文章区域装饰特色图片展示形状',
+        'title' => __('Article Area Featured Image Display Shapes','csf'),
         'dependency' => array( 'post_list_style', '==', 'akinastyle' ),
-        'desc'   => '你可以选择圆形展示或者矩形展示文章区域装饰特色图片',
+        'desc' => __('You can choose a circular or a rectangular display of the featured image','csf'),
         'options'    => array(
           'round' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina.png',
           'square' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina2.png',
@@ -2015,111 +2047,111 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'          => 'post_list_image_align',
-        'type'        => 'image_select',
-        'title'       => '文章区域装饰特色图片对齐方向',
+        'id' => 'post_list_image_align',
+        'type' => 'image_select',
+        'title' => __('Article Area Featured Image Alignment','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc'   => '你可以选择不同方向展示文章区域装饰特色图片',
-        'options'     => array(
-          'alternate'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura1.png',
-          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura2.png',
-          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura3.png',
+        'desc' => __('You can choose different directions to display the featured images','csf'),
+        'options' => array(
+          'alternate' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura1.png',
+          'left' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura2.png',
+          'right' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura3.png',
         ),
-        'default'     => 'alternate'
+        'default' => 'alternate'
       ),
 
       array(
-        'id'         => 'post_cover_options',
-        'type'       => 'radio',
-        'title'      => '文章区域装饰特色图片选项',
-        'options'    => array(
-          'type_1' => '封面随机图片',
-          'type_2' => '外部API随机图片',
+        'id' => 'post_cover_options',
+        'type' => 'radio',
+        'title' => __('Article Area Featured Image Options','csf'),
+        'options' => array(
+          'type_1' => __('Cover Random Image','csf'),
+          'type_2' => __('External API Random Image','csf'),
         ),
-        'default'    => 'type_1'
+        'default' => 'type_1'
       ),
 
       array(
-        'id'     => 'post_cover',
-        'type'   => 'text',
-        'title'  => '文章区域装饰特色图片外部API随机图片地址',
+        'id' => 'post_cover',
+        'type' => 'text',
+        'title' => __('Article Area Featured Image External API Random Image Address','csf'),
         'dependency' => array( 'post_cover_options', '==', 'type_2' ),
-        'desc'   => '填写地址',
+        'desc' => __('add URL','csf'),
       ),
 
       array(
-        'id'     => 'post_title_font_size',
-        'type'   => 'slider',
-        'title'  => '文章区域标题字体大小',
-        'desc'   => '滑动滑块，推荐数值范围为16-20',
+        'id' => 'post_title_font_size',
+        'type' => 'slider',
+        'title' => __('Article Area Title Font Size','csf'),
+        'desc' => __('Slide to adjust, the recommended value range is 16-20','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'unit'    => 'px',
-        'step'   => '1',
-        'min'   => '10',
-        'max'   => '30',
+        'unit' => 'px',
+        'step' => '1',
+        'min' => '10',
+        'max' => '30',
         'default' => '18'
       ),
 
       array(
-        'id'      => 'post_date_background_color',
-        'type'    => 'color',
-        'title'   => '文章区域时间提示区域背景颜色',
+        'id' => 'post_date_background_color',
+        'type' => 'color',
+        'title' => __('Article Area Time Display Area Background Color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc'    => '自定义颜色，建议使用与主题色搭配色相同色系且属于浅色系的颜色',
+        'desc' => __('Customize the colors, it is recommended to use a light color corresponding with the main color','csf'),
         'default' => '#fff5e0'
       ),    
 
       array(
-        'id'      => 'post_date_text_color',
-        'type'    => 'color',
-        'title'   => '文章区域时间提示区域文本颜色',
+        'id' => 'post_date_text_color',
+        'type' => 'color',
+        'title' => __('Article Area Time Display Area Text Color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc'    => '自定义颜色，建议使用与主题色搭配色相同色系的颜色',
+        'desc' => __('Customize the colors, suggest the same as the matching color','csf'),
         'default' => '#ffcc00'
       ),    
 
       array(
-        'id'     => 'post_date_font_size',
-        'type'   => 'slider',
-        'title'  => '文章区域时间提示区域字体大小',
+        'id' => 'post_date_font_size',
+        'type' => 'slider',
+        'title' => __('Article Area Time Display Area Font Size','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc'   => '滑动滑块，推荐数值范围为10-14',
-        'unit'    => 'px',
-        'step'   => '1',
-        'min'   => '6',
-        'max'   => '20',
+        'desc' => __('Slide to adjust, the recommended values range is 10-14','csf'),
+        'unit' => 'px',
+        'step' => '1',
+        'min' => '6',
+        'max' => '20',
         'default' => '12'
       ),
 
       array(
-        'id'    => 'post_icon_more',
-        'type'  => 'switcher',
-        'title' => '文章区域“详细”图标',
-        'label'   => '开启之后“详细”图标将显示在文章区域内下方',
+        'id' => 'post_icon_more',
+        'type' => 'switcher',
+        'title' => __('Article Area "Detail" Icon','csf'),
+        'label' => __('When enabled the "Detail" icon will be displayed below the article area','csf'),
         'default' => false
       ),array(
-        'id'    => 'is_author_meta_show',
-        'type'  => 'switcher',
-        'title' => '文章区域“作者信息”',
-        'label'   => '开启之后，文章元数据部分将增加作者信息。',
+        'id' => 'is_author_meta_show',
+        'type' => 'switcher',
+        'title' => __('Article Area Author Info','csf'),
+        'label' => __('When turned on, author information will be added to the article metadata section.' ,'csf'),
         'default' => false
       ),
 
       array(
-        'id'      => 'post_icon_color',
-        'type'    => 'color',
-        'title'   => '文章区域图标颜色',
+        'id' => 'post_icon_color',
+        'type' => 'color',
+        'title' => __('Article Area Icon Color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc'    => '自定义颜色，建议使用与主题色搭配色相同色系的颜色',
+        'desc' => __('Customize the colors, suggest the same as the matching color','csf'),
         'default' => '#ffcc00'
       ),    
 
       array(
-        'id'      => 'post_border_shadow_color',
-        'type'    => 'color',
-        'title'   => '文章区域边框阴影颜色',
+        'id' => 'post_border_shadow_color',
+        'type' => 'color',
+        'title' => __('Article Area Border Shadow Color','csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc'    => '自定义颜色，建议使用与主题色相同色系且属于浅色系的颜色',
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','csf'),
         'default' => '#e8e8e8'
       ),    
 
@@ -2127,97 +2159,97 @@ if( class_exists( 'CSF' ) ) {
   ) );
 
   CSF::createSection( $prefix, array(
-    'id'    => 'page', 
-    'title' => '页面设置',
-    'icon'      => 'fa fa-file-text',
+    'id' => 'page', 
+    'title' => __('Page Options','csf'),
+    'icon' => 'fa fa-file-text',
   ) );
 
   CSF::createSection( $prefix, array(
     'parent' => 'page', 
-    'title'  => '综合设置',
-    'icon'      => 'fa fa-compass',
+    'title' => __('Integrated Options','csf'),
+    'icon' => 'fa fa-compass',
     'fields' => array(
 
       array(
-        'id'         => 'page_style',
-        'type'       => 'image_select',
-        'title'      => '页面样式',
-        'options'    => array(
+        'id' => 'page_style',
+        'type' => 'image_select',
+        'title' => __('Page Style','csf'),
+        'options' => array(
           'sakurairo' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/page_style_iro.png',
           'sakura' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/page_style_sakura.png',
         ),
-        'default'    => 'sakurairo'
+        'default' => 'sakurairo'
       ),
 
       array(
-        'id'         => 'entry_content_style',
-        'type'       => 'radio',
-        'title'      => '页面排版样式',
-        'options'    => array(
-          'sakurairo' => '默认样式',
-          'github' => 'Github样式',
+        'id' => 'entry_content_style',
+        'type' => 'radio',
+        'title' => __('Page Layout Style','csf'),
+        'options' => array(
+          'sakurairo' => __('Default Style','csf'),
+          'github' => __('Github Style','csf'),
         ),
-        'default'    => 'sakurairo'
+        'default' => 'sakurairo'
       ),
 
       array(
-        'id'    => 'patternimg',
-        'type'  => 'switcher',
-        'title' => '页面装饰图片',
-        'label'   => '默认开启，显示在文章页面，独立页面和分类页',
+        'id' => 'patternimg',
+        'type' => 'switcher',
+        'title' => __('Page Decoration Image','csf'),
+        'label' => __('Enabled by default, show on article pages, standalone pages and category pages','csf'),
         'default' => true
       ),
 
       array(
-        'id'    => 'page_title_animation',
-        'type'  => 'switcher',
-        'title' => '页面标题动画',
-        'label'   => '开启之后页面标题将有浮入动画',
+        'id' => 'page_title_animation',
+        'type' => 'switcher',
+        'title' => __('Page Title Animation','csf'),
+        'label' => __('Page title will have float-in animation when turned on','csf'),
         'default' => true
       ),
 
       array(
-        'id'     => 'page_title_animation_time',
-        'type'   => 'slider',
-        'title'  => '页面标题动画时间',
+        'id' => 'page_title_animation_time',
+        'type' => 'slider',
+        'title' => __('Page Title Animation Time','csf'),
         'dependency' => array( 'page_title_animation', '==', 'true' ),
-        'desc'   => '滑动滑块，推荐数值范围为1-2',
-        'step'   => '0.01',
-        'unit'    => 's',
-        'max'   => '5',
+        'desc' => __('Slide to adjust, recommended value range is 1-2','csf'),
+        'step' => '0.01',
+        'unit' => 's',
+        'max' => '5',
         'default' => '2'
       ),
 
       array(
-        'id'    => 'clipboard_copyright',
-        'type'  => 'switcher',
-        'title' => '页面剪切板版权提示',
-        'label'   => '默认开启，用户在复制文字内容超过30字节时，会有版权提示文本',
+        'id' => 'clipboard_copyright',
+        'type' => 'switcher',
+        'title' => __('Page Clipboard Copyright Notice','csf'),
+        'label' => __('Enabled by default, users will have copyright notice text when copying text content over 30 bytes','csf'),
         'default' => true
       ),
 
       array(
-        'id'    => 'page_lazyload',
-        'type'  => 'switcher',
-        'title' => '页面LazyLoad加载',
-        'label'   => '默认开启，页面图片会有LazyLoad加载效果',
-        'default' => true
+        'id' => 'page_lazyload',
+        'type' => 'switcher',
+        'title' => __('Page LazyLoad','csf'),
+        'label' => __('LazyLoad effect for page images, WordPress block editor already comes with similar effect, not recommended to turn on','csf'),
+        'default' => false
       ),
 
       array(
-        'id'     => 'page_lazyload_spinner',
-        'type'   => 'text',
-        'title'  => '页面LazyLoad加载占位SVG',
+        'id' => 'page_lazyload_spinner',
+        'type' => 'text',
+        'title' => __('Page LazyLoad Placeholder SVG','csf'),
         'dependency' => array( 'page_lazyload', '==', 'true' ),
-        'desc'   => '填写地址，此为页面LazyLoad加载时会显示的占位图',
-        'default'    => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/inload.svg'
+        'desc' => __('Fill in the address, this is the placeholder image that will be displayed when the page LazyLoad is being loaded','csf'),
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/inload.svg'
       ),
 
       array(
-        'id'     => 'load_in_svg',
-        'type'   => 'text',
-        'title'  => '页面图像加载占位SVG',
-        'desc'   => '填写地址，此为加载页面图像时占位显示的SVG',
+        'id' => 'load_in_svg',
+        'type' => 'text',
+        'title' => __('Page Image Placeholder SVG','csf'),
+        'desc' => __('Fill address, this is the SVG that will be displayed as a placeholder when the page image is being loaded','csf'),
         'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/inload.svg'
       ),
 
@@ -2226,84 +2258,84 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'page', 
-    'title'  => '文章页面设置',
-    'icon'      => 'fa fa-archive',
+    'title' => __('Article Page Options','csf'),
+    'icon' => 'fa fa-archive',
     'fields' => array(
 
       array(
-        'id'     => 'article_title_font_size',
-        'type'   => 'slider',
-        'title'  => '文章页面标题字体大小',
-        'desc'   => '滑动滑块，推荐数值范围为28-36。此选项仅对已经设置了特色图片的文章页面生效',
-        'unit'    => 'px',
-        'min'   => '16',
-        'max'   => '48',
+        'id' => 'article_title_font_size',
+        'type' => 'slider',
+        'title' => __('Article Page Title Font Size','csf'),
+        'desc' => __('Slide to adjust, recommended value range is 28-36. This option is only available for article pages that have a featured image set','csf'),
+        'unit' => 'px',
+        'min' => '16',
+        'max' => '48',
         'default' => '32'
       ),
 
       array(
-        'id'    => 'article_title_line',
-        'type'  => 'switcher',
-        'title' => '文章页面标题下划线动画',
-        'label'   => '开启且文章设置了特色图片之后，文章标题将有下划线动画',
+        'id' => 'article_title_line',
+        'type' => 'switcher',
+        'title' => __('Article Page Title Underline Animation','csf'),
+        'label' => __('Article title will have underline animation when this is enabled and article has a featured image set','csf'),
         'default' => false
       ),
 
       array(
-        'id'    => 'article_auto_toc',
-        'type'  => 'switcher',
-        'title' => '文章页面自动显示菜单',
-        'label'   => '默认开启，文章页面会自动显示菜单',
+        'id' => 'article_auto_toc',
+        'type' => 'switcher',
+        'title' => __('Article Page Auto Show Menu','csf'),
+        'label' => __('Enabled by default, the article page will automatically show the menu','csf'),
         'default' => true
       ),
 
       array(
-        'id'    => 'article_nextpre',
-        'type'  => 'switcher',
-        'title' => '文章页面上下文章切换',
-        'label'   => '开启之后文章页面将出现上下文章切换',
+        'id' => 'article_nextpre',
+        'type' => 'switcher',
+        'title' => __('Article Page Prev/Next Article Switcher','csf'),
+        'label' => __('After turning on, the previous and next article switch will appear on the article pages','csf'),
         'default' => false
       ),
 
       array(
-        'id'    => 'article_lincenses',
-        'type'  => 'switcher',
-        'title' => '文章页面版权提示和标签',
-        'label'   => '开启之后文章页面将出现版权提示和标签',
+        'id' => 'article_lincenses',
+        'type' => 'switcher',
+        'title' => __('Article Page Copyright Tips and Labels','csf'),
+        'label' => __('Copyright hint and label will appear on article pages when enabled','csf'),
         'default' => false
       ),
 
       array(
-        'id'    => 'author_profile',
-        'type'  => 'switcher',
-        'title' => '文章页面作者信息',
-        'label'   => '开启之后文章页面将出现作者信息',
+        'id' => 'author_profile',
+        'type' => 'switcher',
+        'title' => __('Article Page Author Info','csf'),
+        'label' => __('Author information will appear on the article page when enabled','csf'),
         'default' => false
       ),
 
       array(
-        'id'     => 'author_profile_text',
-        'type'   => 'text',
-        'title'  => '文章页面作者信息签名栏文本',
+        'id' => 'author_profile_text',
+        'type' => 'text',
+        'title' => __('Article Page Author Info Signature Field Text','csf'),
         'dependency' => array( 'author_profile', '==', 'true' ),
-        'desc'   => '一段自我描述的话',
-        'default'    => '本当の声を響かせてよ'
+        'desc' => __('A self-descriptive quote','csf'),
+        'default' => '本当の声を響かせてよ'
       ),
 
       array(
-        'id'    => 'alipay_code',
-        'type'  => 'upload',
-        'title' => '文章页面赞赏按钮支付宝二维码',
-        'desc'   => '上传支付宝收款码图片',
-        'library'      => 'image',
+        'id' => 'alipay_code',
+        'type' => 'upload',
+        'title' => __('Article Page Appreciation Button (Alipay QR Code)','csf'),
+        'desc' => __('Upload Alipay Receipt QR Code Image','csf'),
+        'library' => 'image',
       ),
 
       array(
-        'id'    => 'wechat_code',
-        'type'  => 'upload',
-        'title' => '文章页面赞赏按钮微信二维码',
-        'desc'   => '上传微信收款码图片',
-        'library'      => 'image',
+        'id' => 'wechat_code',
+        'type' => 'upload',
+        'title' => __('Article Page Appreciation Button (Wechat QR Code)','csf'),
+        'desc' => __('Upload WeChat Receipt QR Code Image','csf'),
+        'library' => 'image',
       ),
 
     )
@@ -2311,73 +2343,73 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'page', 
-    'title'  => '模板页面设置',
-    'icon'      => 'fa fa-window-maximize',
+    'title' => __('Template Page Options','csf'),
+    'icon' => 'fa fa-window-maximize',
     'fields' => array(
 
       array(
-        'id'     => 'page_temp_title_font_size',
-        'type'   => 'slider',
-        'title'  => '模板页面标题字体大小',
-        'desc'   => '滑动滑块，推荐数值范围为36-48。此选项仅对已经设置了特色图片的模板页面生效',
-        'unit'    => 'px',
-        'min'   => '20',
-        'max'   => '64',
+        'id' => 'page_temp_title_font_size',
+        'type' => 'slider',
+        'title' => __('Template Page Title Font Size','csf'),
+        'desc' => __('Slide to adjust, recommended value range is 36-48. This option is only available for template pages with featured images already set','csf'),
+        'unit' => 'px',
+        'min' => '20',
+        'max' => '64',
         'default' => '40'
       ),
 
       array(
-        'id'      => 'shuoshuo_background_color1',
-        'type'    => 'color',
-        'title'   => '说说模板说说背景颜色Ⅰ',
-        'desc'    => '自定义颜色',
+        'id' => 'shuoshuo_background_color1',
+        'type' => 'color',
+        'title' => __('Ideas Template Background ColorⅠ','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#ffe066'
       ),    
 
       array(
-        'id'      => 'shuoshuo_background_color2',
-        'type'    => 'color',
-        'title'   => '说说模板说说背景颜色Ⅱ',
-        'desc'    => '自定义颜色',
+        'id' => 'shuoshuo_background_color2',
+        'type' => 'color',
+        'title' => __('Ideas Template Background Color II','csf'),
+        'desc' => __('Customize the colors','csf'),
         'default' => '#ffcc00'
       ),    
 
       array(
-        'id'    => 'shuoshuo_arrow',
-        'type'  => 'switcher',
-        'title' => '说说模板说说提示箭头',
-        'label'   => '开启之后提示箭头将出现在说说左侧上方',
+        'id' => 'shuoshuo_arrow',
+        'type' => 'switcher',
+        'title' => __('Ideas Template Tip Arrow','csf'),
+        'label' => __('After turning on the alert arrow will appear on the left side of the comment','csf'),
         'default' => false
       ),
 
       array(
-        'id'     => 'shuoshuo_font',
-        'type'   => 'text',
-        'title'  => '说说模板说说字体',
-        'desc'   => '填写字体名称。例如：Ma Shan Zheng',
+        'id' => 'shuoshuo_font',
+        'type' => 'text',
+        'title' => __('Ideas Template Font','csf'),
+        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','csf'),
         'default' => 'Noto Serif SC'
       ),
 
       array(
-        'id'     => 'bilibili_id',
-        'type'   => 'text',
-        'title'  => '哔哩哔哩追番模板帐号ID',
-        'desc'   => '填写你的帐号ID，例如：https://space.bilibili.com/13972644/，只需填写数字“13972644”部分',
-        'default'    => '13972644'
+        'id' => 'bilibili_id',
+        'type' => 'text',
+        'title' => __('Bilibili Bangumi Catch-up Template Account ID','csf'),
+        'desc' => __('Fill in your account ID, e.g. https://space.bilibili.com/13972644/, just the number part "13972644"','csf'),
+        'default' => '13972644'
       ),
 
       array(
-        'id'     => 'bilibili_cookie',
-        'type'   => 'text',
-        'title'  => '哔哩哔哩追番模板帐号Cookies',
-        'desc'   => '填写你的帐号Cookies，F12打开浏览器网络面板，前往你的B站主页获取Cookies。如果留空，将不会显示追番进度',
-        'default'    => 'LIVE_BUVID='
+        'id' => 'bilibili_cookie',
+        'type' => 'text',
+        'title' => __('Bilibili Bangumi Catch-up Template Account Cookies','csf'),
+        'desc' => __('Fill in your account cookies, F12 to open your browser web panel, go to your bilibili homepage to get cookies. If left empty, it will not show the progress of catching up bangumis','csf'),
+        'default' => 'LIVE_BUVID='
       ),
 
       array(
-        'id'          => 'friend_link_align',
-        'type'        => 'image_select',
-        'title'       => '友情链接模板单元对齐方向',
+        'id' => 'friend_link_align',
+        'type' => 'image_select',
+        'title' => __('Friend Link Template Unit Alignment','csf'),
         'options'     => array(
           'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/friend_link_left.png',
           'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/friend_link_right.png',
@@ -2387,10 +2419,10 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'     => 'ex_register_open',
-        'type'   => 'switcher',
-        'title'  => '登录模板注册功能',
-        'label'   => '开启之后登录模板将允许注册',
+        'id' => 'ex_register_open',
+        'type' => 'switcher',
+        'title' => __('Login Template Registration Function','csf'),
+        'label' => __('Login template will allow registration when enabled','csf'),
         'default' => false
       ),
 
@@ -2399,89 +2431,101 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'page', 
-    'title'  => '评论相关设置',
-    'icon'      => 'fa fa-comments-o',
+    'title' => __('Comment-related Options','csf'),
+    'icon' => 'fa fa-comments-o',
     'fields' => array(
 
       array(
-        'id'         => 'comment_area',
-        'type'       => 'radio',
-        'title'      => '页面评论区域显示',
-        'desc'    => '你可以选择展开显示或者收缩显示评论区域内容',
-        'options'    => array(
-          'unfold' => '展开显示',
-          'fold' => '收缩显示',
+        'id' => 'comment_area',
+        'type' => 'radio',
+        'title' => __('Page Comment Area Display','csf'),
+        'desc' => __('You can choose to expand or shirink the content of the comment area','csf'),
+        'options' => array(
+          'unfold' => __('Expand','csf'),
+          'fold' => __('Shrink','csf'),
         ),
-        'default'    => 'unfold'
+        'default' => 'unfold'
       ),
 
       array(
-        'id'     => 'comment_smile_bilibili',
-        'type'   => 'switcher',
-        'title'  => '页面评论区域哔哩哔哩表情包',
-        'label'   => '默认开启，哔哩哔哩表情包显示在评论框的下方',
+        'id' => 'comment_smile_bilibili',
+        'type' => 'switcher',
+        'title' => __('Page Comment Area Bilibili Emoji Pack','csf'),
+        'label' => __('Default on, bilibili emotions are displayed below the comment box','csf'),
         'default' => true
       ),
 
       array(
-        'id'    => 'comment_area_image',
-        'type'  => 'upload',
-        'title' => '页面评论区域右下背景图片',
-        'desc'   => '如果此选项为空白，则没有图像，无最佳推荐',
-        'library'      => 'image',
+        'id' => 'comment_area_image',
+        'type' => 'upload',
+        'title' => __('Page Comment Area Bottom Right Background Image','csf'),
+        'desc' => __('If this option is blank, there will be no image, no best recommendation here','csf'),
+        'library' => 'image',
       ),
 
       array(
-        'id'     => 'comment_useragent',
-        'type'   => 'switcher',
-        'title'  => '页面评论区域UA信息',
-        'label'   => '开启之后页面评论区域将显示用户的浏览器，操作系统信息',
+        'id' => 'comment_useragent',
+        'type' => 'switcher',
+        'title' => __('Page Comment Area UA Info','csf'),
+        'label' => __('When enabled, the page comment area will display the user’s browser, operating system information','csf'),
         'default' => false
       ),
 
       array(
-        'id'     => 'comment_location',
-        'type'   => 'switcher',
-        'title'  => '页面评论区域位置信息',
-        'label'   => '开启之后页面评论区域将显示用户的位置信息',
+        'id' => 'comment_location',
+        'type' => 'switcher',
+        'title' => __('Page Comment Area Location Information','csf'),
+        'label' => __('When enabled, the page comment area will show the user’s location information','csf'),
         'default' => false
       ),
 
       array(
-        'id'     => 'comment_private_message',
-        'type'   => 'switcher',
-        'title'  => '私人评论功能',
-        'label'   => '开启之后将允许用户设置自己的评论对其他人不可见',
-        'default' => false
-      ),
-
-      array(
-        'id'     => 'not_robot',
-        'type'   => 'switcher',
-        'title'  => '页面评论区域机器人验证',
-        'label'   => '开启之后用户评论前需要经过验证后才可发布',
-        'default' => false
-      ),
-
-      array(
-        'id'          => 'qq_avatar_link',
-        'type'        => 'select',
-        'title'       => 'QQ头像链接加密',
-        'options'     => array(
-          'off'  => '关闭',
-          'type_1'  => '重定向（低安全性）',
-          'type_2'  => '后端获取头像数据（中安全性）',
-          'type_3'  => '后端解析头像接口（高安全性，慢速）',
+        'id' => 'ipsource',
+        'type' => 'select',
+        'title' => __('Page Comment Area IP Source','csf'),
+        'desc' => __('You can choose the theme self built IP library or Taobao IP library as the comment location information source','csf'),
+        'options' => array(
+          'type_1' => __('Theme Self Built IP Lib','csf'),
+          'type_2' => __('Taobao IP Lib','csf'),
         ),
-        'default'     => 'off'
+        'default' => 'type_1'
       ),
 
       array(
-        'id'          => 'img_upload_api',
-        'type'        => 'select',
-        'title'       => '页面评论区域上传图片接口',
-        'options'     => array(
-          'off'  => '关闭',
+        'id' => 'comment_private_message',
+        'type' => 'switcher',
+        'title' => __('Private Comment Function','csf'),
+        'label' => __('When enabled, users are allowed to set their comments to be invisible to others','csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'not_robot',
+        'type' => 'switcher',
+        'title' => __('Page Comment Area Bot Verification','csf'),
+        'label' => __('After turning on user comments need to be verified before posting','csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'qq_avatar_link',
+        'type' => 'select',
+        'title' => __('QQ Avatar Link Encryption','csf'),
+        'options' => array(
+          'off' => __('Off','csf'),
+          'type_1' => __('Redirect (low security)','csf'),
+          'type_2' => __('Get avatar data in the backend (medium security)','csf'),
+          'type_3' => __('Parse avatar interface in the backend (high security, slow)','csf'),
+        ),
+        'default' => 'off'
+      ),
+
+      array(
+        'id' => 'img_upload_api',
+        'type' => 'select',
+        'title' => __('Page Comment Area Upload Image Interface','csf'),
+        'options' => array(
+          'off' => __('Off','csf'),
           'imgur'  => 'Imgur (https://imgur.com)',
           'smms'  => 'SM.MS (https://sm.ms)',
           'chevereto'  => 'Chevereto (https://chevereto.com)',
@@ -2490,84 +2534,84 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id'     => 'imgur_client_id',
-        'type'   => 'text',
-        'title'  => 'Imgur Client ID',
+        'id' => 'imgur_client_id',
+        'type' => 'text',
+        'title' => __('Imgur Client ID','csf'),
         'dependency' => array( 'img_upload_api', '==', 'imgur' ),
-        'desc'   => '此处填写Client ID，注册请访问 https://api.imgur.com/oauth2/addclient ',
+        'desc' => __('Fill in Client ID here, to register please visit https://api.imgur.com/oauth2/addclient','csf'),
       ),
 
       array(
-        'id'     => 'imgur_upload_image_proxy',
-        'type'   => 'text',
-        'title'  => 'Imgur上传代理',
+        'id' => 'imgur_upload_image_proxy',
+        'type' => 'text',
+        'title' => __('Imgur Upload Proxy','csf'),
         'dependency' => array( 'img_upload_api', '==', 'imgur' ),
-        'desc'   => '后端上传图片到 Imgur 的时候使用的代理。你可以参考教程：https://2heng.xin/2018/06/06/javascript-upload-images-with-imgur-api/',
-        'default'     => 'https://api.imgur.com/3/image/'
+        'desc' => __('The proxy used by the backend when uploading images to Imgur. You can refer to the tutorial: https://2heng.xin/2018/06/06/javascript-upload-images-with-imgur-api/','csf'),
+        'default' => 'https://api.imgur.com/3/image/'
       ),
 
       array(
-        'id'     => 'smms_client_id',
-        'type'   => 'text',
-        'title'  => 'SM.MS Secret Token',
+        'id' => 'smms_client_id',
+        'type' => 'text',
+        'title' => __('SM.MS Secret Token','csf'),
         'dependency' => array( 'img_upload_api', '==', 'smms' ),
-        'desc'   => '此处填写Key，获取请访问 https://sm.ms/home/apitoken ',
+        'desc' => __('Fill in your Key here, to get it please visit https://sm.ms/home/apitoken','csf'),
       ),
 
       array(
-        'id'     => 'chevereto_api_key',
-        'type'   => 'text',
-        'title'  => 'Chevereto API v1 Key',
+        'id' => 'chevereto_api_key',
+        'type' => 'text',
+        'title' => __('Chevereto API v1 Key','csf'),
         'dependency' => array( 'img_upload_api', '==', 'chevereto' ),
-        'desc'   => '此处填写Key，获取请访问你的Chevereto首页地址/dashboard/settings/api ',
+        'desc' => __('Fill in the Key here, to get please visit your Chevereto home page address/dashboard/settings/api','csf'),
       ),
 
       array(
-        'id'     => 'cheverto_url',
-        'type'   => 'text',
-        'title'  => 'Chevereto地址',
+        'id' => 'cheverto_url',
+        'type' => 'text',
+        'title' => __('Chevereto Address','csf'),
         'dependency' => array( 'img_upload_api', '==', 'chevereto' ),
-        'desc'   => '你的Chevereto首页地址, 注意结尾没有 /, 例如：https://your.cherverto.com',
+        'desc' => __('Your Chevereto home page address. Please note that there is no "/" at the end, e.g. https://your.cherverto.com','csf'),
       ),
 
       array(
-        'id'     => 'comment_image_proxy',
-        'type'   => 'text',
-        'title'  => '评论图片代理',
-        'desc'   => '前端显示的图片的代理',
-        'default'     => 'https://images.weserv.nl/?url='
+        'id' => 'comment_image_proxy',
+        'type' => 'text',
+        'title' => __('Comment Image Proxy','csf'),
+        'desc' => __('Proxy for the image displayed on the frontend','csf'),
+        'default' => 'https://images.weserv.nl/?url='
       ),
 
       array(
-        'id'    => 'mail_img',
-        'type'  => 'upload',
-        'title' => '邮件模板特色图片',
-        'desc'   => '设置你的回复邮件上方背景图片',
-        'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/mail_head.jpg'
+        'id' => 'mail_img',
+        'type' => 'upload',
+        'title' => __('Mail Template Featured Image','csf'),
+        'desc' => __('Set the background image of your reply email','csf'),
+        'library' => 'image',
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/mail_head.jpg'
       ),
 
       array(
-        'id'     => 'mail_user_name',
-        'type'   => 'text',
-        'title'  => '邮件模板发件地址前缀',
-        'desc'   => '用于发送系统邮件，在用户的邮箱中显示的发件人地址，不要使用中文，默认系统邮件地址为 bibi@你的域名',
-        'default'     => 'bibi'
+        'id' => 'mail_user_name',
+        'type' => 'text',
+        'title' => __('Mail Template Sending Address Prefix','csf'),
+        'desc' => __('Used to send system mail. The sender address will be displayed in the use’s mailbox, don’t use Non-English Characters. The default system mail address is bibi@your domain','csf'),
+        'default' => 'bibi'
       ),
 
       array(
-        'id'     => 'mail_notify',
-        'type'   => 'switcher',
-        'title'  => '用户邮件回复通知',
-        'label'   => 'WordPress默认会使用邮件通知用户评论收到回复，开启之后允许用户设置自己的评论收到回复时是否使用邮件通知',
+        'id' => 'mail_notify',
+        'type' => 'switcher',
+        'title' => __('User Mail Reply Notification','csf'),
+        'label' => __('By default WordPress will use email notifications to notify users when their comments receive a reply. After turning it on users are allowed to set whether to use email notifications when their comments receive a reply','csf'),
         'default' => false
       ),
 
       array(
-        'id'     => 'admin_notify',
-        'type'   => 'switcher',
-        'title'  => '管理员邮件回复通知',
-        'label'   => '开启之后当管理员评论收到回复时使用邮件通知',
+        'id' => 'admin_notify',
+        'type' => 'switcher',
+        'title' => __('Admin Email Reply Notification','csf'),
+        'label' => __('Use email notifications when admin comments receive a reply after turning it on','csf'),
         'default' => false
       ),
 
@@ -2575,107 +2619,107 @@ if( class_exists( 'CSF' ) ) {
   ) );
 
   CSF::createSection( $prefix, array(
-    'id'    => 'others', 
-    'title' => '其他设置',
-    'icon'      => 'fa fa-coffee',
+    'id' => 'others', 
+    'title' => __('Other Options','csf'),
+    'icon' => 'fa fa-coffee',
   ) );
 
   CSF::createSection( $prefix, array(
     'parent' => 'others', 
-    'title'  => '登录界面和仪表盘相关设置',
-    'icon'      => 'fa fa-sign-in',
+    'title' => __('Login Screen and Dashboard Related Options','csf'),
+    'icon' => 'fa fa-sign-in',
     'fields' => array(
 
       array(
-        'type'    => 'subheading',
-        'content' => '登录界面',
+        'type' => 'subheading',
+        'content' => __('Login Screen','csf'),
       ),
 
       array(
-        'id'    => 'login_background',
-        'type'  => 'upload',
-        'title' => '登录界面背景图片',
-        'desc'   => '设置你的登录界面背景图片，此选项留空则显示默认背景',
+        'id' => 'login_background',
+        'type' => 'upload',
+        'title' => __('Login Screen Background Image','csf'),
+        'desc' => __('Set your login screen background image, leave this option blank to show the default','csf'),
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/login_background.jpg'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/login_background.jpg'
       ),
 
       array(
-        'id'     => 'login_blur',
-        'type'   => 'switcher',
-        'title'  => '登录界面背景虚化',
-        'label'   => '开启之后登录界面背景图片将被虚化',
+        'id' => 'login_blur',
+        'type' => 'switcher',
+        'title' => __('Login Screen Background Blur','csf'),
+        'label' => __('Login screen background image will be blurred when enabled','csf'),
         'default' => false
       ),
 
       array(
-        'id'    => 'login_logo_img',
-        'type'  => 'upload',
-        'title' => '登录界面Logo',
-        'desc'   => '设置你的登录界面Logo',
-        'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/login_logo.png'
+        'id' => 'login_logo_img',
+        'type' => 'upload',
+        'title' => __('Login Screen Logo','csf'),
+        'desc' => __('Set your login screen Logo','csf'),
+        'library' => 'image',
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/login_logo.png'
       ),
 
       array(
-        'id'     => 'login_urlskip',
-        'type'   => 'switcher',
-        'title'  => '登录后跳转',
-        'label'   => '开启之后管理员跳转至后台，用户跳转至主页',
+        'id' => 'login_urlskip',
+        'type' => 'switcher',
+        'title' => __('Jump after login','csf'),
+        'label' => __('Jump to backend for admins and home for users after turning on','csf'),
         'default' => false
       ),
 
       array(
-        'type'    => 'subheading',
-        'content' => '仪表盘',
+        'type' => 'subheading',
+        'content' => __('Dashboard','csf'),
       ),
 
       array(
-        'id'    => 'admin_background',
-        'type'  => 'upload',
-        'title' => '仪表盘背景图片',
-        'desc'   => '设置你的仪表盘背景图片，此选项留空则显示白色背景',
-        'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/admin_background.jpg'
+        'id' => 'admin_background',
+        'type' => 'upload',
+        'title' => __('Dashboard Background Image','csf'),
+        'desc' => __('Set your dashboard background image, leave this option blank to show white background','csf'),
+        'library' => 'image',
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/admin_background.jpg'
       ),
 
       array(
-        'id'      => 'admin_first_class_color',
-        'type'    => 'color',
-        'title'   => '仪表盘一级菜单颜色',
-        'desc'    => '自定义颜色',
-        'default' => '#ffa670'
+        'id' => 'admin_first_class_color',
+        'type' => 'color',
+        'title' => __('Dashboard Primary Menu Color','csf'),
+        'desc' => __('Customize the colors','csf'),
+        'default' => '#88cfef'
       ),  
 
       array(
-        'id'      => 'admin_second_class_color',
-        'type'    => 'color',
-        'title'   => '仪表盘二级菜单颜色',
-        'desc'    => '自定义颜色',
-        'default' => '#ffb281'
+        'id' => 'admin_second_class_color',
+        'type' => 'color',
+        'title' => __('Dashboard Secondary Menu Color','csf'),
+        'desc' => __('Customize the colors','csf'),
+        'default' => '#67c4ef'
       ),  
 
       array(
-        'id'      => 'admin_emphasize_color',
-        'type'    => 'color',
-        'title'   => '仪表盘强调颜色',
-        'desc'    => '自定义颜色',
-        'default' => '#634a4c'
+        'id' => 'admin_emphasize_color',
+        'type' => 'color',
+        'title' => __('Dashboard Emphasis Color','csf'),
+        'desc' => __('Customize the colors','csf'),
+        'default' => '#342a29'
       ),  
 
       array(
-        'id'      => 'admin_button_color',
-        'type'    => 'color',
-        'title'   => '仪表盘按钮颜色',
-        'desc'    => '自定义颜色',
-        'default' => '#ab705f'
+        'id' => 'admin_button_color',
+        'type' => 'color',
+        'title' => __('Dashboard Button Color','csf'),
+        'desc' => __('Customize the colors','csf'),
+        'default' => '#d1976d'
       ),  
 
       array(
-        'id'      => 'admin_text_color',
-        'type'    => 'color',
-        'title'   => '仪表盘文本颜色',
-        'desc'    => '自定义颜色',
+        'id' => 'admin_text_color',
+        'type' => 'color',
+        'title' => __('Dashboard Text Color','csf'),
+        'desc' => __('Customize the colors','csf'),
       ),  
 
     )
@@ -2683,222 +2727,215 @@ if( class_exists( 'CSF' ) ) {
 
   CSF::createSection( $prefix, array(
     'parent' => 'others', 
-    'title'  => '低使用设置',
-    'icon'      => 'fa fa-low-vision',
+    'title' => __('Low Use Options','csf'),
+    'icon' => 'fa fa-low-vision',
     'fields' => array(
 
       array(
-        'id'         => 'statistics_api',
-        'type'       => 'radio',
-        'title'      => '统计接口',
-        'desc'    => '你可以选择WP-Statistics插件统计或者主题内建统计作为统计结果',
-        'options'    => array(
-          'theme_build_in' => '主题内建统计',
-          'wp_statistics' => 'WP-Statistics插件统计',
+        'id' => 'statistics_api',
+        'type' => 'radio',
+        'title' => __('Statistics API','csf'),
+        'desc' => __('You can choose WP-Statistics plugin statistics or theme built-in statistics to display','csf'),
+        'options' => array(
+          'theme_build_in' => __('Theme Built in Statistics','csf'),
+          'wp_statistics' => __('WP-Statistics Plugin Statistics','csf'),
         ),
-        'default'    => 'theme_build_in'
+        'default' => 'theme_build_in'
       ),
 
       array(
-        'id'          => 'statistics_format',
-        'type'        => 'select',
-        'title'       => '统计数据显示格式',
-        'desc'   => '你可以选择四种不同的数据显示格式',
-        'options'     => array(
-          'type_1'  => '23333次访问',
-          'type_2'  => '23,333次访问',
-          'type_3'  => '23 333次访问',
-          'type_4'  => '23K次访问',
+        'id' => 'statistics_format',
+        'type' => 'select',
+        'title' => __('Statistics display format','csf'),
+        'desc' => __('You can choose from four different data display formats','csf'),
+        'options' => array(
+          'type_1' => __('23333 Visits','csf'),
+          'type_2' => __('23,333 Visits','csf'),
+          'type_3' => __('23 333 Visits','csf'),
+          'type_4' => __('23K Visits','csf'),
         ),
-        'default'     => 'type_1'
+        'default' => 'type_1'
       ),
 
       array(
-        'id'     => 'live_search',
-        'type'   => 'switcher',
-        'title'  => '实时搜索',
-        'label'   => '开启之后将在前台实现实时搜索，调用 Rest API 每小时更新一次缓存，可在 api.php 里手动设置缓存时间',
+        'id' => 'live_search',
+        'type' => 'switcher',
+        'title' => __('Live Search','csf'),
+        'label' => __('After turning on the live search in the frontend, call Rest API to update the cache once an hour. You can set the cache time manually in api.php','csf'),
         'default' => false
       ),
 
       array(
-        'id'     => 'live_search_comment',
-        'type'   => 'switcher',
-        'title'  => '实时搜索评论支援',
-        'label'   => '开启之后将在可在实时搜索中搜索评论（如果网站评论数量太多不建议开启）',
+        'id' => 'live_search_comment',
+        'type' => 'switcher',
+        'title' => __('Live Search Comment Support','csf'),
+        'dependency' => array( 'live_search', '==', 'true' ),
+        'label' => __('Enable to search for comments in live search (not recommended if site has too many comments)','csf'),
         'default' => false
       ),
 
       array(
-        'id'     => 'gravatar_proxy',
-        'type'   => 'text',
-        'title'  => 'Gravatar头像代理',
-        'desc'   => '填写Gravatar头像的代理地址，默认使用极客族代理，留空则不使用代理',
-        'default'     => 'sdn.geekzu.org/avatar'
+        'id' => 'gravatar_proxy',
+        'type' => 'text',
+        'title' => __('Gravatar Proxy','csf'),
+        'desc' => __('Fill in the proxy address of Gravatar, use the Geekzu proxy by default, leave it blank to not use the proxy','csf'),
+        'default' => 'sdn.geekzu.org/avatar'
       ),
 
       array(
-        'id'     => 'google_analytics_id',
-        'type'   => 'text',
-        'title'  => '谷歌统计代码',
+        'id' => 'google_analytics_id',
+        'type' => 'text',
+        'title' => __('Google Stats Code','csf'),
       ),
 
       array(
-        'id'     => 'site_custom_style',
-        'type'   => 'textarea',
-        'title'  => '自定义CSS样式',
-        'desc'   => '填写CSS代码，不需要写style标签',
+        'id' => 'site_custom_style',
+        'type' => 'textarea',
+        'title' => __('Custom CSS Styles','csf'),
+        'desc' => __('Fill in the CSS code without writing style tag','csf'),
       ),
 
       array(
-        'id'     => 'block_library_css',
-        'type'   => 'switcher',
-        'title'  => 'WordPress区块编辑器CSS',
-        'label'   => '默认开启，会加载WordPress区块编辑器所需的CSS',
-        'default' => true
-      ),
-
-      array(
-        'id'     => 'time_zone_fix',
-        'type'   => 'slider',
-        'title'  => '时区修正',
-        'desc'   => '滑动滑块，如果评论出现时差问题在这里调整，填入一个整数，计算方法：实际时间=显示错误的时间-你输入的整数（单位：小时）',
-        'step'   => '1',
-        'max'   => '24',
-        'default'    => '0'
+        'id' => 'time_zone_fix',
+        'type' => 'slider',
+        'title' => __('Timezone Fix','csf'),
+        'desc' => __('Slide to adjust. If the comment has a time difference problem, adjust it here, fill in an integer. Calculation method: actual time = time of display error - the integer you entered (in hours)','csf'),
+        'step' => '1',
+        'max' => '24',
+        'default' => '0'
       ),
       array(
-        'type'    => 'subheading',
-        'content' => '灯箱',
+        'type' => 'subheading',
+        'content' => __('Lightbox','csf'),
       ),
       array(
-        'id'     => 'baguetteBox',
-        'type'   => 'switcher',
-        'title'  => 'BaguetteBox灯箱效果',
-        'label'   => '开启之后将使用BaguetteBox作为图片灯箱效果',
+        'id' => 'baguetteBox',
+        'type' => 'switcher',
+        'title' => __('BaguetteBox Lightbox Effect','csf'),
+        'label' => __('BaguetteBox will be used as the image lightbox effect when turned on','csf'),
         'default' => false
       ),
       array(
-        'id'     => 'fancybox',
-        'type'   => 'switcher',
-        'title'  => 'FancyBox灯箱效果',
-        'label'   => '开启之后将使用FancyBox作为图片灯箱效果，将会额外加载JQ库',
+        'id' => 'fancybox',
+        'type' => 'switcher',
+        'title' => __('FancyBox Lightbox Effect','csf'),
+        'label' => __('FancyBox will be used as an image lightbox effect after turning on, additional JQ libraries will be loaded','csf'),
         'dependency' => array( 'baguetteBox', '==', 'false' ),
         'default' => false
       ), 
       array(
-        'type'    => 'subheading',
-        'content' => '代码高亮',
+        'type' => 'subheading',
+        'content' => __('Code Highlighting','csf'),
       ),array(
         'type'    => 'content',
-        'content' => '<p><strong>Highlight.js:</strong>默认值，自动识别语言。</p>'
-        .'<p><strong>Prism.js:</strong>需要指定语言，使用方法请参阅<a href="https://prismjs.com/#basic-usage">基本用法</a>与<a href="https://prismjs.com/plugins/file-highlight/">如何代码高亮动态载入的文件</a>。</p>'
-        .'<p><strong>自定义:</strong>适用于另有配置的情况。</p>',
+        'content' => __('<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </p>'
+        .' <p><strong>Prism.js:</strong> Requires a language to be specified, see <a href="https://prismjs.com/#basic-usage">basic usage</a> and <a href="https://prismjs.com/ plugins/file-highlight/">How to code highlight dynamically loaded files</a>. </p>'
+        .' <p><strong>Custom:</strong> For cases where another configuration is available. </p>','csf'),
       ),
       array(
-        'id'     => 'code_highlight_method',
-        'type'  => 'select',
-        'title' => '代码高亮程序',
-        'options'     => array(
-          'hljs'  => 'Highlight.js',
-          'prism'  => 'Prism.js',
-          'custom'  => '自定义',
+        'id' => 'code_highlight_method',
+        'type' => 'select',
+        'title' => __('Code Highlight Method','csf'),
+        'options' => array(
+          'hljs' => 'highlight.js',
+          'prism' => 'Prism.js',
+          'custom' => 'Custom Program',
         ),
-        "default"=>"hljs"
+        "default" => "hljs"
       ),
       array(
-        'id'       => 'code_highlight_prism_line_number_all',
-        'type'     => 'switcher',
-        'title'    => 'Prism.js：为所有代码块增加行数显示',
+        'id' => 'code_highlight_prism_line_number_all',
+        'type' => 'switcher',
+        'title' => __('Prism.js: Add Line Number Display for All Code Blocks','csf'),
         'dependency' => array(
-          array( 'code_highlight_method',   '==', 'prism' ),
+          array( 'code_highlight_method', '==', 'prism' ),
         ),
-        'desc'   => '参见<a href="https://prismjs.com/plugins/line-numbers/">插件说明文档</a>',
+        'desc' => __('See the <a href="https://prismjs.com/plugins/line-numbers/">plugin description documentation</a>','csf'),
       ),
       array(
-        'id'       => 'code_highlight_prism_autoload_path',
-        'type'     => 'text',
-        'title'    => 'Prism.js：自动加载地址',
+        'id' => 'code_highlight_prism_autoload_path',
+        'type' => 'text',
+        'title' => __('Prism.js: Autoload Address','csf'),
         'dependency' => array(
-          array( 'code_highlight_method',   '==', 'prism' ),
+          array( 'code_highlight_method', '==', 'prism' ),
         ),
-        'desc'=>"留空以使用默认值",
+        'desc' => __('Leave blank to use default values','csf'),
         'default'=>'https://cdn.jsdelivr.net/npm/prismjs@1.23.0/'
       ),
       array(
-        'id'       => 'code_highlight_prism_theme_light',
-        'type'     => 'text',
-        'title'    => 'Prism.js：代码高亮主题',
-        'desc'=>'相对于自动加载地址。留空以使用默认值',
+        'id' => 'code_highlight_prism_theme_light',
+        'type' => 'text',
+        'title' => __('Prism.js: Code Highlight Theme','csf'),
+        'desc' => __('Relative to autoload address. Leave blank to use default values','csf'),
         'dependency' => array(
-          array( 'code_highlight_method',   '==', 'prism' ),
+          array( 'code_highlight_method', '==', 'prism' ),
         ),
-        'default'=>'themes/prism.min.css'
-      ),array(
-        'id'       => 'code_highlight_prism_theme_dark',
-        'type'     => 'text',
-        'title'    => 'Prism.js：深色模式下的代码高亮主题',
-        'desc'=>'相对于自动加载地址。留空以使用默认值',
+        'default' => 'themes/prism.min.css'
+      ), array(
+        'id' => 'code_highlight_prism_theme_dark',
+        'type' => 'text',
+        'title' => __('Prism.js: Code Highlight Theme (Dark Mode)','csf'),
+        'desc' => __('Relative to autoload address. Leave blank to use default values','csf'),
         'dependency' => array(
-          array( 'code_highlight_method',   '==', 'prism' ),
+          array( 'code_highlight_method', '==', 'prism' ),
         ),
-        'default'=>'themes/prism-tomorrow.min.css'
+        'default' => 'themes/prism-tomorrow.min.css'
       ),
       array(
-        'type'    => 'submessage',
-        'style'   => 'danger',
-        'content' => '以下设置不推荐盲目进行修改，请在他人的指导下使用',
-      ),
-
-      array(
-        'id'     => 'image_cdn',
-        'type'   => 'text',
-        'title'  => '图片CDN',
-        'desc'   => '注意：填写格式为 http(s)://你的CDN域名/。也就是说，原路径为 http://your.domain/wp-content/uploads/2018/05/xx.png 的图片将从 http://你的CDN域名/2018/05/xx.png 加载',
-        'default'     => ''
+        'type' => 'submessage',
+        'style' => 'danger',
+        'content' => __('The following Options are not recommended to be modified blindly, please use them under the guidance of others','csf'),
       ),
 
       array(
-        'id'     => 'classify_display',
-        'type'   => 'text',
-        'title'  => '不显示的文章分类',
-        'desc'   => '填写分类ID，多个用英文“ , ”分开',
+        'id' => 'image_cdn',
+        'type' => 'text',
+        'title' => __('Image CDN','csf'),
+        'desc' => __('Note: fill in the format https://your CDN domain/. This means that images with original path http://your.domain/wp-content/uploads/2018/05/xx.png will be loaded from http://your CDN domain/2018/05/xx.png','csf'),
+        'default' => ''
       ),
 
       array(
-        'id'     => 'image_category',
-        'type'   => 'text',
-        'title'  => '图片展示分类',
-        'desc'   => '填写分类ID，多个用英文“ , ”分开',
+        'id' => 'classify_display',
+        'type' => 'text',
+        'title' => __('Articles Categories (Do not display)','csf'),
+        'desc' => __('Fill in category ID, seperate in English" , " when more than one','csf'),
       ),
 
       array(
-        'id'     => 'exlogin_url',
-        'type'   => 'text',
-        'title'  => '指定登录地址',
-        'desc'   => '强制不使用WordPress登录页面地址登录，填写新建的登陆页面地址，比如：http://www.xxx.com/login。注意填写前先测试下你新建的页面是可以正常打开的，以免造成无法进入后台等情况',
+        'id' => 'image_category',
+        'type' => 'text',
+        'title' => __('Image Display Category','csf'),
+        'desc' => __('Fill in category ID, seperate in English" , " when more than one','csf'),
       ),
 
       array(
-        'id'     => 'exregister_url',
-        'type'   => 'text',
-        'title'  => '指定注册地址',
-        'desc'   => '该地址在登录页面作为注册入口，如果你指定了登录地址，则建议填写',
+        'id' => 'exlogin_url',
+        'type' => 'text',
+        'title' => __('Specify Login Address','csf'),
+        'desc' => __('Force not to use the WordPress login page address to login, fill in the new login page address, such as: http://www.xxx.com/login. Note that before filling in the new page you can test the normal opening, so as not to cause the inability to enter the background, etc.','csf'),
       ),
 
       array(
-        'id'     => 'cookie_version',
-        'type'   => 'text',
-        'title'  => '版本控制',
-        'desc'   => '用于更新前端Cookie和浏览器缓存，可使用任意字符串',
+        'id' => 'exregister_url',
+        'type' => 'text',
+        'title' => __('Specify Registration Address','csf'),
+        'desc' => __('This address is used as the registration entry on the login page, if you specify a login address, it is recommended to fill in','csf'),
+      ),
+
+      array(
+        'id' => 'cookie_version',
+        'type' => 'text',
+        'title' => __('Version Control','csf'),
+        'desc' => __('Used to update front-end cookies and browser cache, can use any string','csf'),
       ),
     )
   ) );
 
   CSF::createSection($prefix, array(
-    'title'       => '备份恢复',
+    'title' => __('Backup&Recovery','csf'),
     'icon'        => 'fa fa-shield',
-    'description' => '备份或恢复你的主题设置',
+    'description' => __('Backup or Recovery your theme options','csf'),
     'fields'      => array(
 
         array(
@@ -2909,122 +2946,122 @@ if( class_exists( 'CSF' ) ) {
   ) );
 
   CSF::createSection($prefix, array(
-    'title'       => '关于主题',
+    'title' => __('About Theme','csf'),
     'icon'        => 'fa fa-paperclip',
     'fields'      => array(
 
       array(
         'type'    => 'subheading',
-        'content' => '版本信息',
+        'content' => __('Version Info','csf'),
       ),
 
       array(
         'type'    => 'content',
-        'content' => '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/encorelogo.gif"  alt="主题信息" />',
+        'content' => __('<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/hyouryulogo.gif"  alt="Theme Information" />','csf'),
       ),
 
       array(
         'type'    => 'submessage',
         'style'   => 'success',
-        'content' => sprintf(__('正在使用 iro 主题 版本 %s  |  <a href="https://iro.tw">主题文档</a>  |  <a href="https://github.com/mirai-mamori/Sakurairo">源码地址</a>', 'sakurairo'), SAKURA_VERSION), 
+        'content' => sprintf(__('iro 主题版本 / Theme Version %s | <a href="https://iro.tw">主题文档 / Theme Documentation</a> | <a href="https://github.com/mirai-mamori/Sakurairo">项目地址 / Project Address</a>', 'sakurairo', 'csf'), IRO_VERSION), 
       ),
 
       array(
         'type'    => 'subheading',
-        'content' => '更新相关',
+        'content' => __('Update Related','csf'),
       ),
 
       array(
         'id'          => 'iro_update_source',
         'type'        => 'image_select',
-        'title'       => '主题更新源',
+        'title' => __('Theme Update Source','csf'),
         'options'     => array(
           'github'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_github.png',
           'jsdelivr'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_jsd.png',
           'official_building'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_iro.png',
         ),
-        'desc'    => '如果你使用的是架设在国内的服务器，请使用jsDelivr源或主题官方源作为你的主题更新源',
+        'desc' => __('If you are using a server set up in mainland China, please use the jsDelivr source or the official theme source as your theme update source','csf'),
         'default'     => 'github'
       ),
 
       array(
-        'id'       => 'channel_validate_value',
-        'type'     => 'text',
-        'title'    => '主题更新测试通道免责声明',
+        'id' => 'channel_validate_value',
+        'type' => 'text',
+        'title' => __('Theme Update Test Channel Disclaimer','csf'),
         'dependency' => array(
-          array( 'local_global_library',   '==', 'true' ),
-          array( 'iro_update_source',   '==', 'official_building' ),
+          array( 'local_global_library', '==', 'true' ),
+          array( 'iro_update_source', '==', 'official_building' ),
         ),
-        'desc'   => '如果你想要使用测试通道版本的主题，请在确保你已经认真了解参与测试带来的风险并且愿意自行承担一切后果（包括但不限于可能的数据丢失）之后，复制后文引号内的文本到选项文本框内“我已了解测试带来的风险并愿意承担所有后果”',
+        'desc' => __('Please copy the text in quotes after <strong>ensure that you have carefully understood the risks associated with participating in the test and are willing to assume all consequences at your own risk</strong> (including but not limited to possible data loss) into the options text box <strong> "I agree and am willing to bear all unexpected consequences"</strong>','csf'),
       ),
 
       array(
-        'id'         => 'iro_update_channel',
-        'type'       => 'radio',
-        'title'      => '主题更新频道',
+        'id' => 'iro_update_channel',
+        'type' => 'radio',
+        'title' => __('Theme Update Channel','csf'),
         'dependency' => array(
-          array( 'channel_validate_value', '==', '我已了解测试带来的风险并愿意承担所有后果' ),
-          array( 'local_global_library',   '==', 'true' ),
-          array( 'iro_update_source',   '==', 'official_building' ),
+          array( 'channel_validate_value', '==', 'I agree and am willing to bear all unexpected consequences' ),
+          array( 'local_global_library', '==', 'true' ),
+          array( 'iro_update_source', '==', 'official_building' ), array( 'iro_update_source', '==', 'official_building' ),
         ),
-        'desc'    => '你可以在此切换更新频道以参与到新版本的测试中',
-        'options'    => array(
-          'stable' => '正式频道',
-          'beta' => '公共测试频道',
-          'preview' => '预览测试频道',
+        'desc' => __('You can toggle the update channel here to participate in the testing of the new version','csf'),
+        'options' => array(
+          'stable' => __('Stable Channel','csf'),
+          'beta' => __('Beta Channel','csf'),
+          'preview' => __('Preview Channel','csf'),
         ),
-        'default'    => 'stable'
+        'default' => 'stable'
       ),
 
       array(
-        'type'    => 'subheading',
-        'content' => '本地化',
+        'type' => 'subheading',
+        'content' => __('Localization','csf'),
       ),
 
       array(
-        'id'     => 'local_global_library',
-        'type'   => 'switcher',
-        'title'  => '本地化前端库',
-        'label'   => '开启之后前端库将不走jsDelivr CDN',
+        'id' => 'local_global_library',
+        'type' => 'switcher',
+        'title' => __('Localize the Frontend Library','csf'),
+        'label' => __('The frontend library will not use jsDelivr CDN after turning it on','csf'),
         'default' => false
       ),
 
       array(
-        'id'     => 'local_application_library',
-        'type'   => 'switcher',
-        'title'  => '本地化JS/CSS文件',
-        'label'   => '默认开启，部分JS文件和CSS文件不走jsDelivr CDN',
+        'id' => 'local_application_library',
+        'type' => 'switcher',
+        'title' => __('Localize JS/CSS Files','csf'),
+        'label' => __('Enabled by default, some JS files and CSS files do not use jsDelivr CDN','csf'),
         'default' => true
       ),
 
       array(
+        'type' => 'subheading',
+        'content' => __('Reference Information','csf'),
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => __('<p>Fluent Design Icon Referenced by Paradox <a href="https://wwi.lanzous.com/ikyq5kgx0wb">Fluent Icon Pack</a></p>
+        <p>MUH2 Design Icon Referenced by 缄默 <a href="https://www.coolapk.com/apk/com.muh2.icon">MUH2 Icon Pack</a></p>
+        <p>Live2D Model Referenced by Stevenjoezhang <a href="https://github.com/stevenjoezhang/live2d-widget">Live2d-Widget</a> Open Source Project</p>
+        <p>Mashiro Style Logo References the Original Theme Author Mashiro, As Provided and Referenced by <a href="https://hyacm.com/acai/ui/143/sakura-logo/">Hyacm</a></p>','csf'),
+      ),
+
+      array(
         'type'    => 'subheading',
-        'content' => '引用信息',
+        'content' => __('Dependency Information','csf'),
       ),
 
       array(
         'type'    => 'content',
-        'content' => '<p>流畅设计图标引用了由 Paradox 设计的 <a href="https://wwi.lanzous.com/ikyq5kgx0wb">Fluent图标包</a></p>
-        <p>沐氢图标引用了由 缄默 设计的 <a href="https://www.coolapk.com/apk/com.muh2.icon">沐氢图标包</a></p>
-        <p>看板娘引用了由 Stevenjoezhang 开源的 <a href="https://github.com/stevenjoezhang/live2d-widget">Live2d-Widget</a> 项目</p>
-        <p>白猫样式Logo参考原主题作者白猫，由 <a href="https://hyacm.com/acai/ui/143/sakura-logo/">Hyacm</a> 提供方案并引用</p>',
-      ),
-
-      array(
-        'type'    => 'subheading',
-        'content' => '依赖信息',
+        'content' => __('<p>Static Resources Relies on the <a href="https://github.com/Fuukei/Public_Repository">Public Repository</a> Project Created by Fuukei</p>
+        <p>Options Framework Relies on the Codestar Open Source <a href="https://github.com/Codestar/codestar-framework">Codestar Framework</a> Project</p>
+        <p>Update Function Relies on YahnisElsts Open Source <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin Update Checker</a> Project</p>','csf'),
       ),
 
       array(
         'type'    => 'content',
-        'content' => '<p>静态资源依赖于主题官方 Fuukei 创建的 <a href="https://github.com/Fuukei/Public_Repository">Public Repository</a> 项目</p>
-        <p>设置框架依赖于 Codestar 开源的 <a href="https://github.com/Codestar/codestar-framework">Codestar-Framework</a> 项目</p>
-        <p>更新功能依赖于 YahnisElsts 开源的 <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin-Update-Checker</a> 项目</p>',
-      ),
-
-      array(
-        'type'    => 'content',
-        'content' => '<img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square"  alt="主题最新版本" />  <img src="https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square"  alt="主题最新版本发布时间" />  <img src="https://data.jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge"  alt="主题CDN资源访问量" />',
+        'content' => __('<img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square"  alt="Theme latest version" />  <img src="https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square"  alt="Theme latest version release date" />  <img src="https://data.jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge"  alt="Theme CDN resource access" />','csf'),
       ),
 
     )

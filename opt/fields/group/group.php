@@ -25,10 +25,10 @@ if ( ! class_exists( 'CSF_Field_group' ) ) {
         'accordion_title_number' => false,
         'accordion_title_auto'   => true,
       ) );
-      $title_prefix = $args['accordion_title_prefix'] ?: '';
-      //$title_prefix = ( ! empty( $args['accordion_title_prefix'] ) ) ? $args['accordion_title_prefix'] : '';
-      $title_number = ! empty( $args['accordion_title_number'] );
-      $title_auto   = ! empty( $args['accordion_title_auto'] );
+
+      $title_prefix = ( ! empty( $args['accordion_title_prefix'] ) ) ? $args['accordion_title_prefix'] : '';
+      $title_number = ( ! empty( $args['accordion_title_number'] ) ) ? true : false;
+      $title_auto   = ( ! empty( $args['accordion_title_auto'] ) ) ? true : false;
 
       if ( preg_match( '/'. preg_quote( '['. $this->field['id'] .']' ) .'/', $this->unique ) ) {
 

@@ -6,7 +6,7 @@ Python3
 PIL (Pillow)
 
 ### 安装依赖
-安装 Python： <https://docs.python.org/zh-cn/3.7/using/index.html>
+安装 Python： <https://docs.python.org/zh-cn/3.9/using/index.html>
 
 安装 PIL：
 
@@ -35,11 +35,3 @@ python manifest.py
 python3 manifest.py
 ```
 
-GUI 程序开发中，除了以上运行 manifest.py 的方法以外，也可直接运行 qt.py 启动可视化窗口，需要安装 PyQT5：
-```bash
-pip3 install PyQt5
-python3 qt.py
-```
-
-### TODO
-shell/batch 自动安装依赖、自动删除过期文件、压缩图片、GitHub API push、release

@@ -18,14 +18,14 @@ $reception_background = iro_opt('reception_background');
 	?>
 </div><!-- #page Pjax container-->
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info" theme-info="Sakurairo v<?php echo SAKURA_VERSION; ?>">
+		<div class="site-info" theme-info="Sakurairo v<?php echo IRO_VERSION; ?>">
 			<div class="footertext">
 				<div class="img-preload">
 					<img src="<?php echo iro_opt('load_nextpage_svg'); ?>"><!-- 加载下一部分圈圈 -->
 				</div>
 				<?php if (iro_opt('footer_sakura_icon', 'true')): ?>
 				<i class="iconfont icon-sakura rotating" style="color: <?php echo iro_opt('theme_skin_matching'); ?>;display:inline-block;font-size:26px"></i>
-				<?php endif; ?></p>
+				<?php endif; ?>
 				<p style="color: #666666;"><?php echo iro_opt('footer_info', ''); ?></p>
 			</div>
 			<div class="footer-device">
@@ -35,18 +35,12 @@ $reception_background = iro_opt('reception_background');
 						<?php /* 能保留下面两个链接吗？算是我一个小小的心愿吧~ */ ?>
 						<?php if (iro_opt('footer_load_occupancy', 'true')): ?>
                         <?php printf(' 耗时 %.3f 秒 | 查询 %d 次 | 内存 %.2f MB',timer_stop( 0, 3 ),get_num_queries(),memory_get_peak_usage() / 1024 / 1024);?>
-                        <?php endif; ?></p>
+                        <?php endif; ?>
 						Theme <a href="https://github.com/mirai-mamori/Sakurairo" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://iro.tw" target="_blank" id="site-info" >Fuukei</a> 
 					</span>
-				</p>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-	<div class="openNav no-select">
-		<div class="iconflat no-select">	 
-			<div class="icon"></div>
-		</div>
-	</div><!-- m-nav-bar -->
 	</section><!-- #section -->
 	<!-- m-nav-center -->
 	<div id="mo-nav">
@@ -54,7 +48,7 @@ $reception_background = iro_opt('reception_background');
 			<?php 
 			$personal_avatar = iro_opt('personal_avatar');
 			$iro_logo = iro_opt('iro_logo');
-			$ava = iro_opt('personal_avatar') ? $personal_avatar: ($iro_logo ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/encore/avatar.jpg'); ?>
+			$ava = iro_opt('personal_avatar') ? $personal_avatar: ($iro_logo ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/avatar.jpg'); ?>
 			<img src="<?php echo $ava ?>">
 		</div>
 		<div class="m-search">
@@ -92,8 +86,7 @@ $reception_background = iro_opt('reception_background');
 	<!-- search end -->
 <?php wp_footer(); ?>
 <div class="skin-menu no-select">
-<?php if(iro_opt('style_menu_display') == 'full'): ?>
-</p>Style
+<?php if(iro_opt('style_menu_display') == 'full'): ?>Style
 <?php endif; ?>
     <div class="theme-controls row-container">
         <ul class="menu-list">
@@ -125,7 +118,7 @@ $reception_background = iro_opt('reception_background');
             </li><!--Night-->
         </ul>
 	</div>
-	<?php if(iro_opt('style_menu_display') == 'full'): ?></p>
+	<?php if(iro_opt('style_menu_display') == 'full'): ?>
 		Font
     <div class="font-family-controls row-container">
         <button type="button" class="control-btn-serif selected" data-name="serif" ><i class="fa fa-font" aria-hidden="true"></i></button>
@@ -173,6 +166,8 @@ $reception_background = iro_opt('reception_background');
 
 <!-- logo字体部分 -->
 <link rel="stylesheet" href="<?php echo $mashiro_logo['font_link']; ?>" media="all">
-
+<?php 
+echo iro_opt('footer_addition','');
+?>
 </body>
 </html>

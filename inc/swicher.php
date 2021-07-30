@@ -2,17 +2,21 @@
 /**
  * 仅对boolean类型的设置项有效
  */
-function echo_if_true($key){
+function echo_if_true($key,$overwrite_key = null){
 $value = iro_opt($key);
-if($value)echo "$key:true,";
+if($value)echo ($overwrite_key ?? $key).":true,";
 }
 function font_end_js_control() { ?>
 <script id="_mashiro_">
 /*Initial Variables*/
 var mashiro_option = {
-    NProgressON:<?php echo iro_opt('nprogress_on') ? 'true':'false';?>,
-    audio:<?php echo iro_opt('note_effects') ? 'true':'false';?>,
-    yiyan:<?php echo iro_opt('footer_yiyan') ? 'true':'false';?>,
+    <?php 
+    echo_if_true('nprogress_on','NProgressON');
+    echo_if_true('note_effects','audio');
+    echo_if_true('footer_yiyan','yiyan');
+    echo_if_true('baguetteBox','baguetteBoxON');
+    echo_if_true('fancybox','baguetteBoxON');
+    ?>
     darkmode :<?php echo iro_opt('theme_darkmode_auto') ? 'true':'false';?>,
     <?php if ( iro_opt('theme_darkmode_auto') ):echo 'dm_strategy:"'.iro_opt('theme_darkmode_strategy','time').'",'.PHP_EOL;endif; ?>
     <?php 
@@ -63,21 +67,19 @@ var mashiro_option = {
     skin_bg4:"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png",
     <?php } ?>
     land_at_home:<?php echo is_home() ? 'true':'false'; ?>,
-    baguetteBoxON:<?php echo iro_opt('baguetteBox')  ? 'true':'false' ?>,
-    fancybox:<?php echo iro_opt('fancybox')? 'true':'false' ?>,
     clipboardCopyright:<?php echo iro_opt('clipboard_copyright') == "0" ? 'false':'true' ?>,
 
     <?php if(iro_opt('entry_content_style') == "sakurairo"){ ?>
-    entry_content_style_src:"<?php echo get_template_directory_uri() ?>/css/theme/sakura.css?<?php echo SAKURA_VERSION.iro_opt('cookie_version', ''); ?>",
+    entry_content_style_src:"<?php echo get_template_directory_uri() ?>/css/theme/sakura.css?<?php echo IRO_VERSION.iro_opt('cookie_version', ''); ?>",
     <?php }elseif(iro_opt('entry_content_style') == "github") {?>
-    entry_content_style_src:"<?php echo get_template_directory_uri() ?>/css/theme/github.css?<?php echo SAKURA_VERSION.iro_opt('cookie_version', ''); ?>",
+    entry_content_style_src:"<?php echo get_template_directory_uri() ?>/css/theme/github.css?<?php echo IRO_VERSION.iro_opt('cookie_version', ''); ?>",
     <?php } ?>
     entry_content_style:"<?php echo iro_opt('entry_content_style'); ?>",
 
     <?php if(iro_opt('local_global_library')){ ?>
-    jsdelivr_css_src:"<?php echo get_template_directory_uri() ?>/css/lib.css?<?php echo SAKURA_VERSION.iro_opt('cookie_version', ''); ?>",
+    jsdelivr_css_src:"<?php echo get_template_directory_uri() ?>/css/lib.css?<?php echo IRO_VERSION.iro_opt('cookie_version', ''); ?>",
     <?php } else { ?>
-    jsdelivr_css_src:"https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@<?php echo SAKURA_VERSION; ?>/css/lib.min.css",
+    jsdelivr_css_src:"https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@<?php echo IRO_VERSION; ?>/css/lib.min.css",
     <?php } ?>
     <?php if (iro_opt('aplayer_server') != 'off'): ?>
     float_player_on:true,
@@ -86,7 +88,6 @@ var mashiro_option = {
 
     cover_api:"<?php echo rest_url('sakura/v1/image/cover'); ?>",
     random_graphs_mts:<?php echo iro_opt('random_graphs_mts' ) ? 'true':'false'?>,
-    windowheight:'auto',
     <?php
     $highlight_method = iro_opt('code_highlight_method','hljs');
     echo 'code_highlight:"'.$highlight_method.'",';
@@ -101,7 +102,7 @@ var mashiro_option = {
         line_number_all:<?php echo iro_opt('code_highlight_prism_line_number_all')?'true':'false' ?>,
         autoload_path:<?php  echo ($autoload_path=='' ? 'undefined' : '"'.$autoload_path.'"')  ?>,
         theme:{
-                <?php  echo ($theme_light=='' ? 'undefined' : 'light:"'.$theme_light.'",');
+                <?php  echo ($theme_light=='' ? '' : 'light:"'.$theme_light.'",');
                 echo ($theme_dark=='' ? '' : 'dark:"'.$theme_dark.'",') ; ?>
               },
     },   
@@ -110,6 +111,8 @@ var mashiro_option = {
     <?php
     echo_if_true('cache_cover');
     echo_if_true('site_bg_as_cover');
+    $yiyan_api = iro_opt('yiyan_api');
+    if($yiyan_api) echo "yiyan_api:$yiyan_api,";
     ?>
 };
 /*End of Initial Variables*/

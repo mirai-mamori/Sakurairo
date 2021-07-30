@@ -6,7 +6,10 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://iro.tw/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.1.1.1
+Version: 2.2.0
+Tested up to: 5.8
+Requires at least: 5.5
+Requires PHP: 7.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sakurairo
@@ -898,7 +901,7 @@ a:hover {
 
 .pattern-center-blank {
     padding-top: 75px;
-    background-color: #fff
+    background-color: rgba(0, 0, 0, 0);
 }
 
 @media (max-width:860px) {
@@ -1029,9 +1032,8 @@ a:hover {
 }
 
 .yya {
-    position: fixed;
-    -webkit-transition: all 1s ease !important;
-    transition: all 1s ease !important;
+/*     -webkit-transition: all 1s ease !important;
+    transition: all 1s ease !important; */
     width:50%;
 	left:47.5%;
     background: rgba(255, 255, 255, .75);
@@ -1488,7 +1490,7 @@ i.iconfont.hotpost {
     margin: 20px 0 20px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0);
-    box-shadow: 0 1px 30px -4px rgba(255, 255, 255, .6);
+    box-shadow: 0 1px 30px -4px var(--post-list-thumb);
     opacity: 0
 }
 
@@ -3718,7 +3720,7 @@ li.feature-2 {
 }
 
 .headertop.filter-grid::before {
-    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.7.0/vision/basic/grid.png)
+    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.0/vision/basic/grid.png)
 }
 
 .headertop.filter-dot::before {
@@ -3727,7 +3729,7 @@ li.feature-2 {
 
 @media (max-width:860px) {
     .headertop.filter-dot::before {
-        background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.7.0/vision/basic/grid.png)
+        background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.0/vision/basic/grid.png)
     }
 }
 
@@ -3762,7 +3764,7 @@ li.feature-2 {
 
 .blank {
     padding-top: 80px;
-    background-color: rgba(255, 255, 255, 1)
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .focusinfo {
@@ -5157,7 +5159,6 @@ i.iconfont.down {
     #main-container.open {
         transform: translateX(250px) translateY(0);
         -webkit-transform: translateX(250px) translateY(0);
-        position: fixed;
         right: 0;
         left: 0
     }
@@ -5167,11 +5168,15 @@ i.iconfont.down {
         height: auto;
         position: relative
     }
-    #mo-nav.open {
+    #mo-nav.open,.openNav.open {
         transform: translateX(250px) translateY(0);
         -webkit-transform: translateX(250px);
          position: fixed;
     }
+
+ .site-header.open{
+     opacity: 0
+ }
     .wrapper section {
         max-width: 600px
     }
@@ -5250,8 +5255,8 @@ i.iconfont.down {
         width: 250px;
         max-width: 250px !important;
         height: 100%;
-        z-index: 999;
-        position: absolute;
+        z-index: 9999;
+        position: fixed;
         top: 0;
         left: -250px;
         display: block;
@@ -8217,18 +8222,9 @@ td.hljs-ln-numbers {
 }
 .skin-menu.show {
     transform: scaleX(1);
+    transition: .5s;
     right: 70px;
     box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .1);
-}
-.skin-menu::after {
-    content: "";
-    position: absolute;
-    bottom: 15px;
-    left: 103%;
-    margin-left: -10px;
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent transparent transparent #fff;
 }
 .skin-menu .row-container {
     height: auto;
@@ -9095,4 +9091,18 @@ WordPress Generated Classes
 	width: auto;
 	z-index: 100000;
 	/* Above WP toolbar. */
+}
+/**
+* 文章卡片hover效果
+*/
+.post-list-thumb:hover {
+    box-shadow: 0 1px 20px 10px var(--post-list-thumb);
+}
+body.dark .post-list-thumb:hover {
+    box-shadow: 0 1px 20px 0px var(--theme-skin-dark);
+}
+
+.lazyload[src*="#lazyload-blur"], .lazyload[style*="#lazyload-blur"] {
+    -webkit-filter: saturate(.5) blur(10px);
+    filter: saturate(.5) blur(10px);
 }

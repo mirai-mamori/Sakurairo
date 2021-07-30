@@ -425,6 +425,11 @@ h1.main-title {
 
 
 /*非全局色彩管理*/
+
+:root{
+    --post-list-thumb: <?php echo iro_opt('post_border_shadow_color'); ?>;
+}
+
 .menu-list li {
     background-color: <?php echo iro_opt('style_menu_selection_color'); ?>;
     border-radius: <?php echo iro_opt('style_menu_radius', ''); ?>px;
@@ -438,9 +443,6 @@ h1.main-title {
 }
 .post-date {
     background-color: <?php echo iro_opt('post_date_background_color'); ?>;
-}
-.post-list-thumb {
-    box-shadow: 0 1px 30px -4px <?php echo iro_opt('post_border_shadow_color'); ?>;
 }
 .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
     background: <?php echo iro_opt('shuoshuo_background_color1'); ?>;
@@ -466,11 +468,11 @@ font-family: <?php echo $text_logo['font']; ?> ;
 
 .notice i ,
 .notice {
-    color: <?php echo iro_opt('announce_text_color'); ?>;
+    color: <?php echo iro_opt('bulletin_text_color'); ?>;
 }
 
 .notice {
-    border: 1px solid <?php echo iro_opt('announce_bar_border_color'); ?>;
+    border: 1px solid <?php echo iro_opt('bulletin_board_border_color'); ?>;
 }
 
 <?php if(iro_opt('entry_content_style') == "sakurairo"){ ?>
@@ -682,7 +684,6 @@ html {
 
 /*固定项目*/
 body.dark #main-container,
-body.dark #mo-nav,
 body.dark .comments,
 body.dark .site-footer,
 body.dark .wrapper,
@@ -693,11 +694,13 @@ body.dark .header-user-menu,
 body.dark .headertop-bar::after 
 {background:rgba(51,51,51,<?php echo iro_opt('theme_darkmode_background_transparency',1)?>) !important;}
 
-body.dark .pattern-center-blank,
-body.dark .blank,
 body.dark .toc,
 body.dark .search-form input
 {background:rgba(51,51,51,0.8);}
+
+body.dark #mo-nav{
+    background:#333333;
+}
 
 body.dark .single-reward .reward-row,
 body.dark input.m-search-input
@@ -795,15 +798,15 @@ body.dark input,
 body.dark select,
 body.dark textarea,
 body.dark i.iconfont.js-toggle-search.iconsearch,
+body.dark .info-meta a,
+body.dark .info-meta span,
 body.dark .skin-menu
 {color:#CCCCCC;}
 
 body.dark .post-date,
 body.dark .post-list-thumb a,
 body.dark .post-list-thumb i,
-body.dark .post-meta,
-body.dark .info-meta a,
-body.dark .info-meta span
+body.dark .post-meta
 {color:#666666;}
 
 body.dark .post-list-thumb
@@ -862,8 +865,7 @@ body.dark .s-content,body.dark .font-family-controls button.selected
 {background-color:#808080;}
 
 body.dark #banner_wave_1,
-body.dark #banner_wave_2,
-body.dark .skin-menu::after
+body.dark #banner_wave_2
 {display:none;}
 
 body.dark .widget-area .show-hide svg path
@@ -926,6 +928,9 @@ body.dark .entry-content .aplayer
 {filter:brightness(<?php echo iro_opt('theme_darkmode_img_bright'); ?>);}
 
 /*深色模式主题色*/
+:root{
+    --theme-skin-dark: <?php echo iro_opt('theme_skin_dark'); ?>;
+}
 body.dark .scrollbar,
 body.dark .butterBar-message,
 body.dark .aplayer .aplayer-list ol li:hover ,
@@ -945,6 +950,9 @@ body.dark .site-top ul li a:after
 
 body.dark #moblieGoTop,
 body.dark #changskin,
+body.dark .post-content a:hover ,
+body.dark .entry-title a:hover ,
+body.dark .art .art-content #archives a:hover ,
 body.dark .the-feature.from_left_and_right a:hover .info p,
 body.dark .the-feature.from_left_and_right .info,
 body.dark .ins-section .ins-search-item:hover,
@@ -1648,12 +1656,12 @@ li.link-item {
 }
 <?php endif; ?>
 
-<?php if(iro_opt('announce_text_align') == 'center'){ ?>
+<?php if(iro_opt('bulletin_board_text_align') == 'center'){ ?>
 .notice {
     text-align: center;
 }
 
-<?php }if(iro_opt('announce_text_align') == 'right'){ ?>
+<?php }if(iro_opt('bulletin_board_text_align') == 'right'){ ?>
 .notice {
     text-align: right;
 }
@@ -1674,14 +1682,14 @@ h1.main-title {
 
 <?php } ?>
 
-<?php if(iro_opt('announce_bar_style') == 'picture'){ ?>
+<?php if(iro_opt('bulletin_board_style') == 'picture'){ ?>
 .notice {
     background-image:url(<?php echo iro_opt('announcement_bg', ''); ?>);
     border: none;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
 }
 
-<?php }if(iro_opt('announce_bar_style') == 'pure'){ ?>
+<?php }if(iro_opt('bulletin_board_style') == 'pure'){ ?>
 .notice {
     background: #fbfbfb50;
 }

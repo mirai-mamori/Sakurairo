@@ -429,7 +429,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
       $is_google = false;
 
       if ( ! empty( $this->value['type'] ) ) {
-        $is_google = $this->value['type'] === 'google';
+        $is_google = ( $this->value['type'] === 'google' ) ? true : false;
       } else {
         CSF::include_plugin_file( 'fields/typography/google-fonts.php' );
         $is_google = ( array_key_exists( $this->value['font-family'], csf_get_google_fonts() ) ) ? true : false;
@@ -518,7 +518,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
         'word-spacing',
       );
 
-      $unit = ( ! empty( $this->value['unit'] ) ) ? $this->value['unit'] : '';
+      $unit = ( ! empty( $this->value['unit'] ) ) ? $this->value['unit'] : 'px';
       $line_height_unit = ( ! empty( $this->value['line_height_unit'] ) ) ? $this->value['line_height_unit'] : $unit;
 
       foreach ( $properties as $property ) {
