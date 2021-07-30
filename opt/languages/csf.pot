@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-29 21:10+0800\n"
+"POT-Creation-Date: 2021-07-30 15:59+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -2002,7 +2002,7 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:1483
-msgid "social_icon"
+msgid "Social Icon"
 msgstr ""
 
 #: options/theme-options.php:1484
@@ -2853,9 +2853,9 @@ msgstr ""
 
 #: options/theme-options.php:2598
 msgid ""
-"Used to send system mail. The sender address will be displayed in the use’s "
-"mailbox, don’t use Non-English Characters. The default system mail address "
-"is bibi@your domain"
+"Used to send system mail. The sender address will be displayed in the "
+"user's mailbox, don't use Non-English Characters. The default system mail "
+"address is bibi@your domain"
 msgstr ""
 
 #: options/theme-options.php:2605
@@ -3026,65 +3026,96 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:2780
-msgid "Gravatar Proxy"
-msgstr ""
-
-#: options/theme-options.php:2781
-msgid ""
-"Fill in the proxy address of Gravatar, use the Geekzu proxy by default, "
-"leave it blank to not use the proxy"
-msgstr ""
-
-#: options/theme-options.php:2788
 msgid "Google Stats Code"
 msgstr ""
 
-#: options/theme-options.php:2794
+#: options/theme-options.php:2786
 msgid "Custom CSS Styles"
 msgstr ""
 
-#: options/theme-options.php:2795
+#: options/theme-options.php:2787
 msgid "Fill in the CSS code without writing style tag"
 msgstr ""
 
-#: options/theme-options.php:2801
+#: options/theme-options.php:2793
 msgid "Timezone Fix"
 msgstr ""
 
-#: options/theme-options.php:2802
+#: options/theme-options.php:2794
 msgid ""
 "Slide to adjust. If the comment has a time difference problem, adjust it "
 "here, fill in an integer. Calculation method: actual time = time of display "
 "error - the integer you entered (in hours)"
 msgstr ""
 
-#: options/theme-options.php:2809
-msgid "Lightbox"
+#: options/theme-options.php:2802
+msgid "Gravatar Service"
+msgstr ""
+
+#: options/theme-options.php:2807
+msgid ""
+"<p><strong>Cravatar Service:</strong> Cravatar Service is an alternative to "
+"Gravatar Service in China. You can upload and share avatars freely. Go to "
+"<a href=\"https://cravatar.cn/\">official website</a> for details </p>"
+msgstr ""
+
+#: options/theme-options.php:2813
+msgid "Gravatar Service Proxy"
 msgstr ""
 
 #: options/theme-options.php:2814
+msgid ""
+"You can select multiple proxy as the Gravatar Service Proxy. By default, "
+"Cravatar Service is used as the Gravatar Service Proxy."
+msgstr ""
+
+#: options/theme-options.php:2816
+msgid "Cravatar Service"
+msgstr ""
+
+#: options/theme-options.php:2817
+msgid "Geekzu"
+msgstr ""
+
+#: options/theme-options.php:2818
+msgid "Loli Net"
+msgstr ""
+
+#: options/theme-options.php:2819
+msgid "Official"
+msgstr ""
+
+#: options/theme-options.php:2820
+msgid "Official CN"
+msgstr ""
+
+#: options/theme-options.php:2827
+msgid "Lightbox"
+msgstr ""
+
+#: options/theme-options.php:2833
 msgid "BaguetteBox Lightbox Effect"
 msgstr ""
 
-#: options/theme-options.php:2815
+#: options/theme-options.php:2834
 msgid "BaguetteBox will be used as the image lightbox effect when turned on"
 msgstr ""
 
-#: options/theme-options.php:2821
+#: options/theme-options.php:2841
 msgid "FancyBox Lightbox Effect"
 msgstr ""
 
-#: options/theme-options.php:2822
+#: options/theme-options.php:2842
 msgid ""
 "FancyBox will be used as an image lightbox effect after turning on, "
 "additional JQ libraries will be loaded"
 msgstr ""
 
-#: options/theme-options.php:2828
+#: options/theme-options.php:2849
 msgid "Code Highlighting"
 msgstr ""
 
-#: options/theme-options.php:2831
+#: options/theme-options.php:2854
 msgid ""
 "<p><strong>Highlight.js:</strong> Default. Automatic language recognition. "
 "</p> <p><strong>Prism.js:</strong> Requires a language to be specified, see "
@@ -3094,74 +3125,74 @@ msgid ""
 "where another configuration is available. </p>"
 msgstr ""
 
-#: options/theme-options.php:2838
+#: options/theme-options.php:2862
 msgid "Code Highlight Method"
 msgstr ""
 
-#: options/theme-options.php:2849
+#: options/theme-options.php:2874
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
 msgstr ""
 
-#: options/theme-options.php:2853
+#: options/theme-options.php:2878
 msgid ""
 "See the <a href=\"https://prismjs.com/plugins/line-numbers/\">plugin "
 "description documentation</a>"
 msgstr ""
 
-#: options/theme-options.php:2858
+#: options/theme-options.php:2884
 msgid "Prism.js: Autoload Address"
 msgstr ""
 
-#: options/theme-options.php:2862
+#: options/theme-options.php:2888
 msgid "Leave blank to use default values"
 msgstr ""
 
-#: options/theme-options.php:2868
+#: options/theme-options.php:2895
 msgid "Prism.js: Code Highlight Theme"
 msgstr ""
 
-#: options/theme-options.php:2869 options/theme-options.php:2878
+#: options/theme-options.php:2896 options/theme-options.php:2907
 msgid "Relative to autoload address. Leave blank to use default values"
 msgstr ""
 
-#: options/theme-options.php:2877
+#: options/theme-options.php:2906
 msgid "Prism.js: Code Highlight Theme (Dark Mode)"
 msgstr ""
 
-#: options/theme-options.php:2887
+#: options/theme-options.php:2917
 msgid ""
 "The following Options are not recommended to be modified blindly, please "
 "use them under the guidance of others"
 msgstr ""
 
-#: options/theme-options.php:2893
+#: options/theme-options.php:2923
 msgid "Image CDN"
 msgstr ""
 
-#: options/theme-options.php:2894
+#: options/theme-options.php:2924
 msgid ""
 "Note: fill in the format https://your CDN domain/. This means that images "
 "with original path http://your.domain/wp-content/uploads/2018/05/xx.png "
 "will be loaded from http://your CDN domain/2018/05/xx.png"
 msgstr ""
 
-#: options/theme-options.php:2901
+#: options/theme-options.php:2931
 msgid "Articles Categories (Do not display)"
 msgstr ""
 
-#: options/theme-options.php:2902 options/theme-options.php:2909
+#: options/theme-options.php:2932 options/theme-options.php:2939
 msgid "Fill in category ID, seperate in English\" , \" when more than one"
 msgstr ""
 
-#: options/theme-options.php:2908
+#: options/theme-options.php:2938
 msgid "Image Display Category"
 msgstr ""
 
-#: options/theme-options.php:2915
+#: options/theme-options.php:2945
 msgid "Specify Login Address"
 msgstr ""
 
-#: options/theme-options.php:2916
+#: options/theme-options.php:2946
 msgid ""
 "Force not to use the WordPress login page address to login, fill in the new "
 "login page address, such as: http://www.xxx.com/login. Note that before "
@@ -3169,47 +3200,47 @@ msgid ""
 "the inability to enter the background, etc."
 msgstr ""
 
-#: options/theme-options.php:2922
+#: options/theme-options.php:2952
 msgid "Specify Registration Address"
 msgstr ""
 
-#: options/theme-options.php:2923
+#: options/theme-options.php:2953
 msgid ""
 "This address is used as the registration entry on the login page, if you "
 "specify a login address, it is recommended to fill in"
 msgstr ""
 
-#: options/theme-options.php:2929
+#: options/theme-options.php:2959
 msgid "Version Control"
 msgstr ""
 
-#: options/theme-options.php:2930
+#: options/theme-options.php:2960
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr ""
 
-#: options/theme-options.php:2936
+#: options/theme-options.php:2966
 msgid "Backup&Recovery"
 msgstr ""
 
-#: options/theme-options.php:2938
+#: options/theme-options.php:2968
 msgid "Backup or Recovery your theme options"
 msgstr ""
 
-#: options/theme-options.php:2949
+#: options/theme-options.php:2979
 msgid "About Theme"
 msgstr ""
 
-#: options/theme-options.php:2955
+#: options/theme-options.php:2985
 msgid "Version Info"
 msgstr ""
 
-#: options/theme-options.php:2960
+#: options/theme-options.php:2990
 msgid ""
 "<img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/"
 "vision/hyouryu/hyouryulogo.gif\"  alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:2966
+#: options/theme-options.php:2996
 #, php-format
 msgid ""
 "iro 主题版本 / Theme Version %s | <a href=\"https://iro.tw\">主题文档 / "
@@ -3217,25 +3248,25 @@ msgid ""
 "Sakurairo\">项目地址 / Project Address</a>"
 msgstr ""
 
-#: options/theme-options.php:2971
+#: options/theme-options.php:3001
 msgid "Update Related"
 msgstr ""
 
-#: options/theme-options.php:2977
+#: options/theme-options.php:3007
 msgid "Theme Update Source"
 msgstr ""
 
-#: options/theme-options.php:2983
+#: options/theme-options.php:3013
 msgid ""
 "If you are using a server set up in mainland China, please use the jsDelivr "
 "source or the official theme source as your theme update source"
 msgstr ""
 
-#: options/theme-options.php:2990
+#: options/theme-options.php:3020
 msgid "Theme Update Test Channel Disclaimer"
 msgstr ""
 
-#: options/theme-options.php:2995
+#: options/theme-options.php:3025
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -3244,54 +3275,54 @@ msgid ""
 "agree and am willing to bear all unexpected consequences\"</strong>"
 msgstr ""
 
-#: options/theme-options.php:3001
+#: options/theme-options.php:3031
 msgid "Theme Update Channel"
 msgstr ""
 
-#: options/theme-options.php:3007
+#: options/theme-options.php:3037
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr ""
 
-#: options/theme-options.php:3009
+#: options/theme-options.php:3039
 msgid "Stable Channel"
 msgstr ""
 
-#: options/theme-options.php:3010
+#: options/theme-options.php:3040
 msgid "Beta Channel"
 msgstr ""
 
-#: options/theme-options.php:3011
+#: options/theme-options.php:3041
 msgid "Preview Channel"
 msgstr ""
 
-#: options/theme-options.php:3018
+#: options/theme-options.php:3048
 msgid "Localization"
 msgstr ""
 
-#: options/theme-options.php:3024
+#: options/theme-options.php:3054
 msgid "Localize the Frontend Library"
 msgstr ""
 
-#: options/theme-options.php:3025
+#: options/theme-options.php:3055
 msgid "The frontend library will not use jsDelivr CDN after turning it on"
 msgstr ""
 
-#: options/theme-options.php:3032
+#: options/theme-options.php:3062
 msgid "Localize JS/CSS Files"
 msgstr ""
 
-#: options/theme-options.php:3033
+#: options/theme-options.php:3063
 msgid ""
 "Enabled by default, some JS files and CSS files do not use jsDelivr CDN"
 msgstr ""
 
-#: options/theme-options.php:3039
+#: options/theme-options.php:3069
 msgid "Reference Information"
 msgstr ""
 
-#: options/theme-options.php:3044
+#: options/theme-options.php:3074
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
 "com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -3305,11 +3336,11 @@ msgid ""
 "sakura-logo/\">Hyacm</a></p>"
 msgstr ""
 
-#: options/theme-options.php:3052
+#: options/theme-options.php:3082
 msgid "Dependency Information"
 msgstr ""
 
-#: options/theme-options.php:3057
+#: options/theme-options.php:3087
 msgid ""
 "<p>Static Resources Relies on the <a href=\"https://github.com/Fuukei/"
 "Public_Repository\">Public Repository</a> Project Created by Fuukei</p>\n"
@@ -3321,7 +3352,7 @@ msgid ""
 "Checker</a> Project</p>"
 msgstr ""
 
-#: options/theme-options.php:3064
+#: options/theme-options.php:3094
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" />  <img src="

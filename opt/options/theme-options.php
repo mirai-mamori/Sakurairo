@@ -1480,7 +1480,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'social_display_icon',
         'type' => 'image_select',
-        'title' => __('social_icon','csf'),
+        'title' => __('Social Icon','csf'),
         'desc' => __('Select your favorite icon pack. Icon pack references are detailed in the "About Theme" section','csf'),
         'options'     => array(
           'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/fluent_design'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_fd.gif',
@@ -2595,7 +2595,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'mail_user_name',
         'type' => 'text',
         'title' => __('Mail Template Sending Address Prefix','csf'),
-        'desc' => __('Used to send system mail. The sender address will be displayed in the use’s mailbox, don’t use Non-English Characters. The default system mail address is bibi@your domain','csf'),
+        'desc' => __('Used to send system mail. The sender address will be displayed in the user\'s mailbox, don\'t use Non-English Characters. The default system mail address is bibi@your domain','csf'),
         'default' => 'bibi'
       ),
 
@@ -2775,14 +2775,6 @@ if( class_exists( 'CSF' ) ) {
       ),
 
       array(
-        'id' => 'gravatar_proxy',
-        'type' => 'text',
-        'title' => __('Gravatar Proxy','csf'),
-        'desc' => __('Fill in the proxy address of Gravatar, use the Geekzu proxy by default, leave it blank to not use the proxy','csf'),
-        'default' => 'sdn.geekzu.org/avatar'
-      ),
-
-      array(
         'id' => 'google_analytics_id',
         'type' => 'text',
         'title' => __('Google Stats Code','csf'),
@@ -2804,10 +2796,37 @@ if( class_exists( 'CSF' ) ) {
         'max' => '24',
         'default' => '0'
       ),
+
+      array(
+        'type' => 'subheading',
+        'content' => __('Gravatar Service','csf'),
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => __('<p><strong>Cravatar Service:</strong> Cravatar Service is an alternative to Gravatar Service in China. You can upload and share avatars freely. Go to <a href="https://cravatar.cn/">official website</a> for details </p>','csf'),
+      ),
+
+      array(
+        'id' => 'gravatar_proxy',
+        'type' => 'select',
+        'title' => __('Gravatar Service Proxy','csf'),
+        'desc' => __('You can select multiple proxy as the Gravatar Service Proxy. By default, Cravatar Service is used as the Gravatar Service Proxy.','csf'),
+        'options'     => array(
+          'cravatar.cn/avatar'  => __('Cravatar Service','csf'),
+          'sdn.geekzu.org/avatar'  => __('Geekzu','csf'),
+          'gravatar.loli.net/avatar'  => __('Loli Net','csf'),
+          'gravatar.com/avatar'  => __('Official','csf'),
+          'cn.gravatar.com/avatar'  => __('Official CN','csf'),
+        ),
+        'default'     => 'cravatar.cn/avatar'
+      ),
+
       array(
         'type' => 'subheading',
         'content' => __('Lightbox','csf'),
       ),
+
       array(
         'id' => 'baguetteBox',
         'type' => 'switcher',
@@ -2815,6 +2834,7 @@ if( class_exists( 'CSF' ) ) {
         'label' => __('BaguetteBox will be used as the image lightbox effect when turned on','csf'),
         'default' => false
       ),
+
       array(
         'id' => 'fancybox',
         'type' => 'switcher',
@@ -2823,15 +2843,19 @@ if( class_exists( 'CSF' ) ) {
         'dependency' => array( 'baguetteBox', '==', 'false' ),
         'default' => false
       ), 
+
       array(
         'type' => 'subheading',
         'content' => __('Code Highlighting','csf'),
-      ),array(
+      ),
+      
+      array(
         'type'    => 'content',
         'content' => __('<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </p>'
         .' <p><strong>Prism.js:</strong> Requires a language to be specified, see <a href="https://prismjs.com/#basic-usage">basic usage</a> and <a href="https://prismjs.com/ plugins/file-highlight/">How to code highlight dynamically loaded files</a>. </p>'
         .' <p><strong>Custom:</strong> For cases where another configuration is available. </p>','csf'),
       ),
+
       array(
         'id' => 'code_highlight_method',
         'type' => 'select',
@@ -2843,6 +2867,7 @@ if( class_exists( 'CSF' ) ) {
         ),
         "default" => "hljs"
       ),
+
       array(
         'id' => 'code_highlight_prism_line_number_all',
         'type' => 'switcher',
@@ -2852,6 +2877,7 @@ if( class_exists( 'CSF' ) ) {
         ),
         'desc' => __('See the <a href="https://prismjs.com/plugins/line-numbers/">plugin description documentation</a>','csf'),
       ),
+
       array(
         'id' => 'code_highlight_prism_autoload_path',
         'type' => 'text',
@@ -2862,6 +2888,7 @@ if( class_exists( 'CSF' ) ) {
         'desc' => __('Leave blank to use default values','csf'),
         'default'=>'https://cdn.jsdelivr.net/npm/prismjs@1.23.0/'
       ),
+
       array(
         'id' => 'code_highlight_prism_theme_light',
         'type' => 'text',
@@ -2871,7 +2898,9 @@ if( class_exists( 'CSF' ) ) {
           array( 'code_highlight_method', '==', 'prism' ),
         ),
         'default' => 'themes/prism.min.css'
-      ), array(
+      ), 
+      
+      array(
         'id' => 'code_highlight_prism_theme_dark',
         'type' => 'text',
         'title' => __('Prism.js: Code Highlight Theme (Dark Mode)','csf'),
@@ -2881,6 +2910,7 @@ if( class_exists( 'CSF' ) ) {
         ),
         'default' => 'themes/prism-tomorrow.min.css'
       ),
+
       array(
         'type' => 'submessage',
         'style' => 'danger',

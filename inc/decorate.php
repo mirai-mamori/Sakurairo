@@ -1684,7 +1684,7 @@ h1.main-title {
 
 <?php if(iro_opt('bulletin_board_style') == 'picture'){ ?>
 .notice {
-    background-image:url(<?php echo iro_opt('announcement_bg', ''); ?>);
+    background-image:url(<?php echo iro_opt('bulletin_board_bg', ''); ?>);
     border: none;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
 }

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-29 19:38+0800\n"
-"PO-Revision-Date: 2021-07-29 19:38+0800\n"
+"POT-Creation-Date: 2021-07-30 15:59+0800\n"
+"PO-Revision-Date: 2021-07-30 15:59+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -2383,9 +2383,8 @@ msgstr ""
 "ワークアイコンを表示"
 
 #: options/theme-options.php:1483
-#, fuzzy
-msgid "social_icon"
-msgstr "social_icon"
+msgid "Social Icon"
+msgstr "ソーシャルアイコン"
 
 #: options/theme-options.php:1484
 #, fuzzy
@@ -3465,8 +3464,8 @@ msgstr "メール テンプレート送信アドレス プレフィックス"
 #: options/theme-options.php:2598
 #, fuzzy
 msgid ""
-"Used to send system mail. The sender address will be displayed in the use’s "
-"mailbox, don’t use Non-English Characters. The default system mail address "
+"Used to send system mail. The sender address will be displayed in the user's "
+"mailbox, don't use Non-English Characters. The default system mail address "
 "is bibi@your domain"
 msgstr ""
 "システム メールの送信に使用します。送信者のアドレスは、使用しているメールボッ"
@@ -3690,38 +3689,24 @@ msgstr ""
 
 #: options/theme-options.php:2780
 #, fuzzy
-msgid "Gravatar Proxy"
-msgstr "グラバタープロキシ"
-
-#: options/theme-options.php:2781
-#, fuzzy
-msgid ""
-"Fill in the proxy address of Gravatar, use the Geekzu proxy by default, "
-"leave it blank to not use the proxy"
-msgstr ""
-"Gravatarのプロキシアドレスを記入し、デフォルトでGeekzuプロキシを使用し、プロ"
-"キシを使用しないように空白のままにします"
-
-#: options/theme-options.php:2788
-#, fuzzy
 msgid "Google Stats Code"
 msgstr "グーグル統計コード"
 
-#: options/theme-options.php:2794
+#: options/theme-options.php:2786
 msgid "Custom CSS Styles"
 msgstr "カスタム CSS スタイル"
 
-#: options/theme-options.php:2795
+#: options/theme-options.php:2787
 #, fuzzy
 msgid "Fill in the CSS code without writing style tag"
 msgstr "スタイルタグを書かずにCSSコードを入力する"
 
-#: options/theme-options.php:2801
+#: options/theme-options.php:2793
 #, fuzzy
 msgid "Timezone Fix"
 msgstr "タイムゾーン修正"
 
-#: options/theme-options.php:2802
+#: options/theme-options.php:2794
 #, fuzzy
 msgid ""
 "Slide to adjust. If the comment has a time difference problem, adjust it "
@@ -3731,28 +3716,82 @@ msgstr ""
 "スライドして調整します。コメントに時間差の問題がある場合は、ここで調整し、整"
 "数を入力します。計算方法: 実際の時間 = 表示エラーの時間 - 入力した整数 (時間)"
 
-#: options/theme-options.php:2809
+#: options/theme-options.php:2802
+#, fuzzy
+msgid "Gravatar Service"
+msgstr "グラバタープロキシ"
+
+#: options/theme-options.php:2807
+#, fuzzy
+msgid ""
+"<p><strong>Cravatar Service:</strong> Cravatar Service is an alternative to "
+"Gravatar Service in China. You can upload and share avatars freely. Go to <a "
+"href=\"https://cravatar.cn/\">official website</a> for details </p>"
+msgstr ""
+"<p><strong>クラバターサービス:</strong> クラバターは中国のグラバターに代わる"
+"もの。アバターを自由にアップロードして共有できます。詳細は <a href=\"https://"
+"cravatar.cn/\">公式サイト</a> をご覧ください </p>"
+
+#: options/theme-options.php:2813
+#, fuzzy
+msgid "Gravatar Service Proxy"
+msgstr "グラバタープロキシ"
+
+#: options/theme-options.php:2814
+#, fuzzy
+msgid ""
+"You can select multiple proxy as the Gravatar Service Proxy. By default, "
+"Cravatar Service is used as the Gravatar Service Proxy."
+msgstr ""
+"gravatar プロキシとして複数のプロキシを選択できます。デフォルトでは、Geekzu "
+"はグラバター プロキシとして使用されます。"
+
+#: options/theme-options.php:2816
+#, fuzzy
+msgid "Cravatar Service"
+msgstr "グラバタープロキシ"
+
+#: options/theme-options.php:2817
+#, fuzzy
+msgid "Geekzu"
+msgstr "ゲクズ"
+
+#: options/theme-options.php:2818
+#, fuzzy
+msgid "Loli Net"
+msgstr "ロリネット"
+
+#: options/theme-options.php:2819
+msgid "Official"
+msgstr "公式"
+
+#: options/theme-options.php:2820
+#, fuzzy
+msgid "Official CN"
+msgstr "公式CN"
+
+#: options/theme-options.php:2827
 msgid "Lightbox"
 msgstr "Lightbox"
 
-#: options/theme-options.php:2814
+#: options/theme-options.php:2833
 #, fuzzy
 msgid "BaguetteBox Lightbox Effect"
 msgstr "バゲットボックスライトボックス効果"
 
-#: options/theme-options.php:2815
+#: options/theme-options.php:2834
 #, fuzzy
 msgid "BaguetteBox will be used as the image lightbox effect when turned on"
 msgstr ""
 "バゲットボックスは、オンにすると、イメージライトボックス効果として使用されま"
 "す"
 
-#: options/theme-options.php:2821
+#: options/theme-options.php:2841
 #, fuzzy
 msgid "FancyBox Lightbox Effect"
 msgstr "ファンシーボックスライトボックス効果"
 
-#: options/theme-options.php:2822
+#: options/theme-options.php:2842
 #, fuzzy
 msgid ""
 "FancyBox will be used as an image lightbox effect after turning on, "
@@ -3761,12 +3800,12 @@ msgstr ""
 "ファンシーボックスは、オンにすると、追加のJQライブラリがロードされた後、イ"
 "メージライトボックス効果として使用されます"
 
-#: options/theme-options.php:2828
+#: options/theme-options.php:2849
 #, fuzzy
 msgid "Code Highlighting"
 msgstr "コードの強調表示"
 
-#: options/theme-options.php:2831
+#: options/theme-options.php:2854
 #, fuzzy
 msgid ""
 "<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </"
@@ -3783,17 +3822,17 @@ msgstr ""
 "るコードの方法</a>を参照してください。 </p><p><strong>カスタム:</strong> 別の"
 "構成が使用可能な場合。 </p>"
 
-#: options/theme-options.php:2838
+#: options/theme-options.php:2862
 #, fuzzy
 msgid "Code Highlight Method"
 msgstr "コードの強調表示方法"
 
-#: options/theme-options.php:2849
+#: options/theme-options.php:2874
 #, fuzzy
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
 msgstr "プリズム.js: すべてのコードブロックに行番号表示を追加"
 
-#: options/theme-options.php:2853
+#: options/theme-options.php:2878
 #, fuzzy
 msgid ""
 "See the <a href=\"https://prismjs.com/plugins/line-numbers/\">plugin "
@@ -3802,22 +3841,33 @@ msgstr ""
 "<a href=\"https://prismjs.com/plugins/line-numbers/\">プラグインの説明のド"
 "キュメント</a>を参照してください。"
 
-#: options/theme-options.php:2858
+#: options/theme-options.php:2884
 #, fuzzy
 msgid "Prism.js: Autoload Address"
 msgstr "プリズム.js: 自動ロードアドレス"
 
-#: options/theme-options.php:2868
+#: options/theme-options.php:2888
+#, fuzzy
+msgid "Leave blank to use default values"
+msgstr "既定値を使用するには空白のままにします。"
+
+#: options/theme-options.php:2895
 #, fuzzy
 msgid "Prism.js: Code Highlight Theme"
 msgstr "プリズム.js: コードハイライトテーマ"
 
-#: options/theme-options.php:2877
+#: options/theme-options.php:2896 options/theme-options.php:2907
+#, fuzzy
+msgid "Relative to autoload address. Leave blank to use default values"
+msgstr ""
+"自動ロード アドレスに対する相対値。既定値を使用するには空白のままにします。"
+
+#: options/theme-options.php:2906
 #, fuzzy
 msgid "Prism.js: Code Highlight Theme (Dark Mode)"
 msgstr "プリズム.js: コードハイライトテーマ(ダークモード)"
 
-#: options/theme-options.php:2887
+#: options/theme-options.php:2917
 #, fuzzy
 msgid ""
 "The following Options are not recommended to be modified blindly, please use "
@@ -3826,12 +3876,12 @@ msgstr ""
 "以下のオプションは、盲目的に変更することは推奨されません、他の人の指導の下で"
 "それらを使用してください"
 
-#: options/theme-options.php:2893
+#: options/theme-options.php:2923
 #, fuzzy
 msgid "Image CDN"
 msgstr "イメージ CDN"
 
-#: options/theme-options.php:2894
+#: options/theme-options.php:2924
 #, fuzzy
 msgid ""
 "Note: fill in the format https://your CDN domain/. This means that images "
@@ -3842,27 +3892,27 @@ msgstr ""
 "http://your.domain/wp-content/uploads/2018/05/xx.png を持つイメージは CDN ド"
 "メイン/2018/05/xx http://your ロードされます.png"
 
-#: options/theme-options.php:2901
+#: options/theme-options.php:2931
 #, fuzzy
 msgid "Articles Categories (Do not display)"
 msgstr "記事のカテゴリ (表示しない)"
 
-#: options/theme-options.php:2902 options/theme-options.php:2909
+#: options/theme-options.php:2932 options/theme-options.php:2939
 #, fuzzy
 msgid "Fill in category ID, seperate in English\" , \" when more than one"
 msgstr "カテゴリ ID を英語で区切って入力する\" と、複数の場合"
 
-#: options/theme-options.php:2908
+#: options/theme-options.php:2938
 #, fuzzy
 msgid "Image Display Category"
 msgstr "画像表示カテゴリ"
 
-#: options/theme-options.php:2915
+#: options/theme-options.php:2945
 #, fuzzy
 msgid "Specify Login Address"
 msgstr "ログイン アドレスの指定"
 
-#: options/theme-options.php:2916
+#: options/theme-options.php:2946
 #, fuzzy
 msgid ""
 "Force not to use the WordPress login page address to login, fill in the new "
@@ -3875,12 +3925,12 @@ msgstr ""
 "いページに記入する前に、通常の開口部をテストして、背景などを入力できなくなる"
 "ように注意してください。"
 
-#: options/theme-options.php:2922
+#: options/theme-options.php:2952
 #, fuzzy
 msgid "Specify Registration Address"
 msgstr "登録アドレスの指定"
 
-#: options/theme-options.php:2923
+#: options/theme-options.php:2953
 #, fuzzy
 msgid ""
 "This address is used as the registration entry on the login page, if you "
@@ -3889,36 +3939,36 @@ msgstr ""
 "このアドレスはログインページの登録エントリとして使用され、ログインアドレスを"
 "指定した場合は、入力することをお勧めします。"
 
-#: options/theme-options.php:2929
+#: options/theme-options.php:2959
 msgid "Version Control"
 msgstr "バージョン管理システム"
 
-#: options/theme-options.php:2930
+#: options/theme-options.php:2960
 #, fuzzy
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr ""
 "フロントエンドクッキーとブラウザキャッシュを更新するために使用され、任意の文"
 "字列を使用できます"
 
-#: options/theme-options.php:2936
+#: options/theme-options.php:2966
 #, fuzzy
 msgid "Backup&Recovery"
 msgstr "バックアップとリカバリ"
 
-#: options/theme-options.php:2938
+#: options/theme-options.php:2968
 #, fuzzy
 msgid "Backup or Recovery your theme options"
 msgstr "テーマオプションのバックアップまたはリカバリ"
 
-#: options/theme-options.php:2949
+#: options/theme-options.php:2979
 msgid "About Theme"
 msgstr "テーマについて"
 
-#: options/theme-options.php:2955
+#: options/theme-options.php:2985
 msgid "Version Info"
 msgstr "バージョン情報"
 
-#: options/theme-options.php:2960
+#: options/theme-options.php:2990
 #, fuzzy
 msgid ""
 "<img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/"
@@ -3927,7 +3977,7 @@ msgstr ""
 "<img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/"
 "vision/options/hyouryulogo.gif\"  alt=\"Theme Information\" />"
 
-#: options/theme-options.php:2966
+#: options/theme-options.php:2996
 #, fuzzy, php-format
 msgid ""
 "iro 主题版本 / Theme Version %s | <a href=\"https://iro.tw\">主题文档 / "
@@ -3938,17 +3988,17 @@ msgstr ""
 "ント</a>|<a href=\"https://github.com/mirai-mamori/Sakurairo\">ソース アドレ"
 "ス</a>"
 
-#: options/theme-options.php:2971
+#: options/theme-options.php:3001
 #, fuzzy
 msgid "Update Related"
 msgstr "関連する更新プログラム"
 
-#: options/theme-options.php:2977
+#: options/theme-options.php:3007
 #, fuzzy
 msgid "Theme Update Source"
 msgstr "テーマの更新元"
 
-#: options/theme-options.php:2983
+#: options/theme-options.php:3013
 #, fuzzy
 msgid ""
 "If you are using a server set up in mainland China, please use the jsDelivr "
@@ -3957,12 +4007,12 @@ msgstr ""
 "中国本土で設定されたサーバーを使用している場合は、jsDelivrソースまたは公式"
 "テーマソースをテーマアップデートソースとして使用してください。"
 
-#: options/theme-options.php:2990
+#: options/theme-options.php:3020
 #, fuzzy
 msgid "Theme Update Test Channel Disclaimer"
 msgstr "テーマ更新テスト チャネルの免責事項"
 
-#: options/theme-options.php:2995
+#: options/theme-options.php:3025
 #, fuzzy
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
@@ -3975,66 +4025,66 @@ msgstr ""
 "の可能性を含むがこれらに限定されない)すべての結果を自己責任で引き受ける意思が"
 "あることを確認した後、引用符でテキストをコピーしてください<strong>。</strong>"
 
-#: options/theme-options.php:3001
+#: options/theme-options.php:3031
 #, fuzzy
 msgid "Theme Update Channel"
 msgstr "テーマ更新チャネル"
 
-#: options/theme-options.php:3007
+#: options/theme-options.php:3037
 #, fuzzy
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr "更新チャネルを切り替えて、新しいバージョンのテストに参加できます。"
 
-#: options/theme-options.php:3009
+#: options/theme-options.php:3039
 #, fuzzy
 msgid "Stable Channel"
 msgstr "安定したチャネル"
 
-#: options/theme-options.php:3010
+#: options/theme-options.php:3040
 #, fuzzy
 msgid "Beta Channel"
 msgstr "ベータチャンネル"
 
-#: options/theme-options.php:3011
+#: options/theme-options.php:3041
 #, fuzzy
 msgid "Preview Channel"
 msgstr "チャンネルのプレビュー"
 
-#: options/theme-options.php:3018
+#: options/theme-options.php:3048
 msgid "Localization"
 msgstr "ローカリゼーション"
 
-#: options/theme-options.php:3024
+#: options/theme-options.php:3054
 #, fuzzy
 msgid "Localize the Frontend Library"
 msgstr "フロントエンド ライブラリのローカライズ"
 
-#: options/theme-options.php:3025
+#: options/theme-options.php:3055
 #, fuzzy
 msgid "The frontend library will not use jsDelivr CDN after turning it on"
 msgstr ""
 "フロントエンド ライブラリは、オンにした後、jsDelivr CDN を使用しません。"
 
-#: options/theme-options.php:3032
+#: options/theme-options.php:3062
 #, fuzzy
 msgid "Localize JS/CSS Files"
 msgstr "JS/CSS ファイルのローカライズ"
 
-#: options/theme-options.php:3033
+#: options/theme-options.php:3063
 #, fuzzy
 msgid "Enabled by default, some JS files and CSS files do not use jsDelivr CDN"
 msgstr ""
 "デフォルトで有効になっている場合、JS ファイルと CSS ファイルの中には "
 "jsDelivr CDN を使用しないものもあります。"
 
-#: options/theme-options.php:3039
+#: options/theme-options.php:3069
 #, fuzzy
 msgid "Reference Information"
 msgstr "参照情報"
 
-#: options/theme-options.php:3044
+#: options/theme-options.php:3074
 #, fuzzy
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
@@ -4059,12 +4109,12 @@ msgstr ""
 "\"https://hyacm.com/acai/ui/143/sakura-logo/\">提供され、Hyacm</a>によって参"
 "照されるように</p>"
 
-#: options/theme-options.php:3052
+#: options/theme-options.php:3082
 #, fuzzy
 msgid "Dependency Information"
 msgstr "依存情報"
 
-#: options/theme-options.php:3057
+#: options/theme-options.php:3087
 #, fuzzy
 msgid ""
 "<p>Static Resources Relies on the <a href=\"https://github.com/Fuukei/"
@@ -4086,8 +4136,7 @@ msgstr ""
 "YahnisElsts/plugin-update-checker\">プラグイン更新チェッカー</a> プロジェクト"
 "に依存しています</p>"
 
-#: options/theme-options.php:3064
-#, fuzzy
+#: options/theme-options.php:3094
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" />  <img src=\"https://"
@@ -4096,40 +4145,43 @@ msgid ""
 "jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge\"  alt=\"Theme CDN "
 "resource access\" />"
 msgstr ""
-"<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
-"svg?style=flat-square\"  alt=\"Theme latest version\" />  <img src=\"https://"
-"img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square"
-"\"  alt=\"Theme latest version release date\" />  <img src=\"https://data."
-"jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge\"  alt=\"Theme CDN "
-"resource access\" />"
 
 #. Plugin Name of the plugin/theme
-#, fuzzy
 msgid "Codestar Framework Modified by Fuukei"
-msgstr "風英によって修正されたコードスターフレームワーク"
+msgstr ""
 
 #. Plugin URI of the plugin/theme
-#, fuzzy
 msgid "http://codestarframework.com/"
-msgstr "http://codestarframework.com/"
+msgstr ""
 
 #. Description of the plugin/theme
-#, fuzzy
 msgid ""
 "A Simple and Lightweight WordPress Option Framework for Themes and Plugins"
 msgstr ""
-"テーマとプラグインのためのシンプルで軽量なワードプレスオプションフレームワー"
-"ク"
 
 #. Author of the plugin/theme
-#, fuzzy
 msgid "Codestar"
-msgstr "コードスター"
+msgstr ""
 
 #. Author URI of the plugin/theme
-#, fuzzy
 msgid "http://codestarthemes.com/"
-msgstr "http://codestarthemes.com/"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Gravatar Proxy"
+#~ msgstr "グラバタープロキシ"
+
+#, fuzzy
+#~ msgid "Cravatar"
+#~ msgstr "グラバタープロキシ"
+
+#, fuzzy
+#~ msgid ""
+#~ "Fill in the proxy address of Gravatar, use the Geekzu proxy by default, "
+#~ "leave it blank to not use the proxy"
+#~ msgstr ""
+#~ "Gravatarのプロキシアドレスを記入し、デフォルトでGeekzuプロキシを使用し、プ"
+#~ "ロキシを使用しないように空白のままにします"
 
 #, fuzzy
 #~ msgid "Dropdown Arrow"
