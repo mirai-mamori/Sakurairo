@@ -1480,7 +1480,7 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'social_display_icon',
         'type' => 'image_select',
-        'title' => __('social_icon','csf'),
+        'title' => __('Social Icon','csf'),
         'desc' => __('Select your favorite icon pack. Icon pack references are detailed in the "About Theme" section','csf'),
         'options'     => array(
           'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/fluent_design'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_fd.gif',
@@ -2595,7 +2595,7 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'mail_user_name',
         'type' => 'text',
         'title' => __('Mail Template Sending Address Prefix','csf'),
-        'desc' => __('Used to send system mail. The sender address will be displayed in the use’s mailbox, don’t use Non-English Characters. The default system mail address is bibi@your domain','csf'),
+        'desc' => __('Used to send system mail. The sender address will be displayed in the user\'s mailbox, don\'t use Non-English Characters. The default system mail address is bibi@your domain','csf'),
         'default' => 'bibi'
       ),
 
