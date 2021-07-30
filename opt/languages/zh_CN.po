@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-29 21:15+0800\n"
-"PO-Revision-Date: 2021-07-29 21:18+0800\n"
+"POT-Creation-Date: 2021-07-30 12:53+0800\n"
+"PO-Revision-Date: 2021-07-30 12:59+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1381,7 +1381,7 @@ msgstr "页尾负载占用查询"
 msgid ""
 "Load occupancy information will appear at the end of the page after turning "
 "it on"
-msgstr "开启之后页尾将出现动态樱花图标"
+msgstr "开启之后页尾将出现负载占用信息"
 
 #: options/theme-options.php:869
 msgid "Footer Info"
@@ -2033,7 +2033,7 @@ msgid ""
 msgstr "默认开启，显示封面随机图片切换按钮和社交网络图标"
 
 #: options/theme-options.php:1483
-msgid "social_icon"
+msgid "Social Icon"
 msgstr "社交网络图标"
 
 #: options/theme-options.php:1484
@@ -2895,9 +2895,14 @@ msgid "Mail Template Sending Address Prefix"
 msgstr "邮件模板发件地址前缀"
 
 #: options/theme-options.php:2598
+#, fuzzy
+#| msgid ""
+#| "Used to send system mail. The sender address will be displayed in the "
+#| "use’s mailbox, don’t use Non-English Characters. The default system mail "
+#| "address is bibi@your domain"
 msgid ""
-"Used to send system mail. The sender address will be displayed in the use’s "
-"mailbox, don’t use Non-English Characters. The default system mail address "
+"Used to send system mail. The sender address will be displayed in the user's "
+"mailbox, don't use Non-English Characters. The default system mail address "
 "is bibi@your domain"
 msgstr ""
 "用于发送系统邮件，在用户的邮箱中显示的发件人地址，不要使用中文，默认系统邮件"

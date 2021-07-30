@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-29 21:10+0800\n"
+"POT-Creation-Date: 2021-07-30 12:52+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -2002,7 +2002,7 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:1483
-msgid "social_icon"
+msgid "Social Icon"
 msgstr ""
 
 #: options/theme-options.php:1484
@@ -2853,9 +2853,9 @@ msgstr ""
 
 #: options/theme-options.php:2598
 msgid ""
-"Used to send system mail. The sender address will be displayed in the use’s "
-"mailbox, don’t use Non-English Characters. The default system mail address "
-"is bibi@your domain"
+"Used to send system mail. The sender address will be displayed in the "
+"user's mailbox, don't use Non-English Characters. The default system mail "
+"address is bibi@your domain"
 msgstr ""
 
 #: options/theme-options.php:2605
