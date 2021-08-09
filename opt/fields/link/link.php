@@ -40,9 +40,9 @@ if ( ! class_exists( 'CSF_Field_link' ) ) {
 
       echo '<div class="'. esc_attr( $maybe_hidden ) .'"><div class="csf--result">'. sprintf( '{url:"%s", text:"%s", target:"%s"}', $value['url'], $value['text'], $value['target'] ) .'</div></div>';
 
-      echo '<input type="text" name="'. esc_attr( $this->field_name( '[url]' ) ) .'" value="'. esc_attr( $value['url'] ) .'"'. $this->field_attributes( array( 'class' => 'csf--url hidden' ) ) .' />';
-      echo '<input type="text" name="'. esc_attr( $this->field_name( '[text]' ) ) .'" value="'. esc_attr( $value['text'] ) .'" class="csf--text hidden" />';
-      echo '<input type="text" name="'. esc_attr( $this->field_name( '[target]' ) ) .'" value="'. esc_attr( $value['target'] ) .'" class="csf--target hidden" />';
+      echo '<input type="hidden" name="'. esc_attr( $this->field_name( '[url]' ) ) .'" value="'. esc_attr( $value['url'] ) .'"'. $this->field_attributes( array( 'class' => 'csf--url' ) ) .' />';
+      echo '<input type="hidden" name="'. esc_attr( $this->field_name( '[text]' ) ) .'" value="'. esc_attr( $value['text'] ) .'" class="csf--text" />';
+      echo '<input type="hidden" name="'. esc_attr( $this->field_name( '[target]' ) ) .'" value="'. esc_attr( $value['target'] ) .'" class="csf--target" />';
 
       echo '<a href="#" class="button button-primary csf--add'. esc_attr( $hidden ) .'">'. $args['add_title'] .'</a> ';
       echo '<a href="#" class="button csf--edit'. esc_attr( $maybe_hidden ) .'">'. $args['edit_title'] .'</a> ';
@@ -62,7 +62,7 @@ if ( ! class_exists( 'CSF_Field_link' ) ) {
         wp_enqueue_script( 'jquery-ui-autocomplete' );
       }
 
-      add_action( 'admin_print_footer_scripts', array( &$this, 'add_wp_link_dialog' ) );
+      add_action( 'admin_print_footer_scripts', array( $this, 'add_wp_link_dialog' ) );
 
     }
 

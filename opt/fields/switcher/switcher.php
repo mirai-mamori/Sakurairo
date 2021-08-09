@@ -27,7 +27,7 @@ if ( ! class_exists( 'CSF_Field_switcher' ) ) {
       echo '<span class="csf--on">'. esc_attr( $text_on ) .'</span>';
       echo '<span class="csf--off">'. esc_attr( $text_off ) .'</span>';
       echo '<span class="csf--ball"></span>';
-      echo '<input type="text" name="'. esc_attr( $this->field_name() ) .'" value="'. esc_attr( $this->value ) .'"'. $this->field_attributes() .' />';
+      echo '<input type="hidden" name="'. esc_attr( $this->field_name() ) .'" value="'. esc_attr( $this->value ) .'"'. $this->field_attributes() .' />';
       echo '</div>';
 
       echo ( ! empty( $this->field['label'] ) ) ? '<span class="csf--label">'. esc_attr( $this->field['label'] ) . '</span>' : '';

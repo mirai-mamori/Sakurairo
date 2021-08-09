@@ -42,7 +42,7 @@ if ( ! class_exists( 'CSF_Field_gallery' ) ) {
       echo '<a href="#" class="button button-primary csf-button">'. $args['add_title'] .'</a>';
       echo '<a href="#" class="button csf-edit-gallery'. esc_attr( $hidden ) .'">'. $args['edit_title'] .'</a>';
       echo '<a href="#" class="button csf-warning-primary csf-clear-gallery'. esc_attr( $hidden ) .'">'. $args['clear_title'] .'</a>';
-      echo '<input type="text" name="'. esc_attr( $this->field_name() ) .'" value="'. esc_attr( $this->value ) .'"'. $this->field_attributes() .'/>';
+      echo '<input type="hidden" name="'. esc_attr( $this->field_name() ) .'" value="'. esc_attr( $this->value ) .'"'. $this->field_attributes() .'/>';
 
       echo $this->field_after();
 
