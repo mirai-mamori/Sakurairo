@@ -101,7 +101,8 @@ body {
 }
 
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px #fff inset
+    -webkit-box-shadow: 0 0 0 1000px #fff inset;
+    box-shadow: 0 0 0 1000px #fff inset;
 }
 
 ::selection {
@@ -1154,7 +1155,8 @@ a:hover {
     float: left;
     margin-left: 28px;
     position: relative;
-    -webkit-transition: all 1s ease
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
 }
 
 .site-top ul li a {
@@ -1215,7 +1217,8 @@ a:hover {
     margin-left: -13px;
     height: 2px;
     background: #505050;
-    -webkit-transition: all .2s ease
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
 }
 
 #show-nav.showNav .line1 {
@@ -1228,7 +1231,8 @@ a:hover {
 
 #show-nav.hideNav .line1 {
     top: 16px;
-    -webkit-transform: rotateZ(45deg)
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg)
 }
 
 #show-nav.hideNav .line2 {
@@ -1237,7 +1241,8 @@ a:hover {
 
 #show-nav.hideNav .line3 {
     top: 16px;
-    -webkit-transform: rotateZ(-45deg)
+    -webkit-transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg)
 }
 
 .lower li ul {
@@ -2806,7 +2811,7 @@ header.page-header {
     width: 32%;
     float: left;
     border: 1px solid #505050;
-    padding: 10px 15px;
+    padding: 15px 15px;
     margin: 4px 4px;
     position: relative;
     overflow: hidden;
@@ -2830,6 +2835,7 @@ header.page-header {
     -moz-transition: all ease 1s;
     -o-transition: all ease 1s;
     margin-top: 3px;
+    margin-left: 3px;
     width: 70px;
     height: 70px;
     padding: 1px;
@@ -2860,7 +2866,6 @@ span.sitename {
 }
 
 .linkdes {
-    color: #EE9CB1;
     font-size: 14px;
     padding: 4px 0;
     margin-left: 8px;
@@ -2868,7 +2873,7 @@ span.sitename {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    line-height: 20px;
+    line-height: 30px;
     -webkit-transition: all .5s;
     transition: all .5s
 }
@@ -3746,7 +3751,7 @@ li.feature-2 {
 }
 
 @supports (-webkit-touch-callout: none) {
-    #centerbg: {
+    #centerbg {
         background-attachment: scroll !important;
     }
 }
@@ -5171,12 +5176,11 @@ i.iconfont.down {
     #mo-nav.open,.openNav.open {
         transform: translateX(250px) translateY(0);
         -webkit-transform: translateX(250px);
-         position: fixed;
-    }
-
- .site-header.open{
-     opacity: 0
- }
+        position: fixed;
+    }
+    .site-header.open{
+        opacity: 0
+    }
     .wrapper section {
         max-width: 600px
     }
@@ -6123,7 +6127,7 @@ body.dark::-webkit-scrollbar-track {
 }
 
 @keyframes loading {
-    0 {
+    0% {
         transform: translate(0, 0);
         background-color: #ababab
     }
@@ -6331,7 +6335,7 @@ input[type=radio]:checked:before {
     vertical-align: middle;
     width: 16px;
     font: 400 21px/1 dashicons;
-    speak: none;
+    speak-as: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
@@ -6349,7 +6353,7 @@ input[type=radio]:checked:before {
     vertical-align: middle;
     width: 16px;
     font: 400 21px/1 dashicons;
-    speak: none;
+    speak-as: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
@@ -6608,7 +6612,7 @@ input[type=radio]:checked:before {
         z-index: 99;
         visibility: visible;
         writing-mode: vertical-rl;
-        transiton-property: left, bottom;
+        transition-property: left, bottom;
         transition-duration: .5s, .5s
     }
     .live2d-tool:hover {
@@ -6649,7 +6653,7 @@ input[type=radio]:checked:before {
             font-weight: 700;
             z-index: 99;
             writing-mode: vertical-rl;
-            transiton-property: margin-left, bottom;
+            transition-property: margin-left, bottom;
             transition-duration: .5s, .5s
         }
         .live2d-tool:hover {
@@ -6662,7 +6666,7 @@ input[type=radio]:checked:before {
     .live2d-tool {
         margin-left: 0;
         left: -17px;
-        transiton-property: left, bottom
+        transition-property: left, bottom
     }
     .live2d-tool:hover {
         margin-left: 0
@@ -6755,7 +6759,7 @@ input[type=radio]:checked:before {
     z-index: 99;
     font-family: Ubuntu;
     padding: 10px 20px;
-    transiton-property: right;
+    transition-property: right;
     transition-duration: .3s, .3s
 }
 
@@ -7077,6 +7081,7 @@ progress {
 
 .skill ::-webkit-progress-value {
     -webkit-animation: bar-fill 2s;
+    animation: bar-fill 2s;
     width: 0
 }
 
@@ -7571,7 +7576,7 @@ a.toc-link {
     top: 0;
     height: 3px;
     background: #505050;
-    transiton-property: width, background;
+    transition-property: width, background;
     transition-duration: 1s, 1s;
     z-index: 99999
 }
@@ -7901,8 +7906,6 @@ a.toc-link {
     transition: all .35s ease-in-out
 }
 
-
-}
 .the-feature.from_left_and_right .info h3 {
     text-transform: uppercase;
     color: #fff;
@@ -8016,12 +8019,14 @@ a.toc-link {
 }
 .highlight-wrap code::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3) !important;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3) !important;
     border-radius: 10px !important;
     background-color: #21252b !important
 }
 .highlight-wrap code::-webkit-scrollbar-thumb {
     border-radius: 10px !important;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .5) !important;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .5) !important;
     background-color: #21252b !important
 }
 .highlight-wrap code {
@@ -8963,7 +8968,8 @@ div.cbp_tmlabel > p {
 	/* transform:scale(1.05);*/
     transform:translateY(-3px);
 	z-index:1;
-	-webkit-box-shadow:0 15px 32px rgba(0,0,0,0.15) !important
+	-webkit-box-shadow:0 15px 32px rgba(0,0,0,0.15) !important;
+    box-shadow:0 15px 32px rgba(0,0,0,0.15) !important;
 }
 
 .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
@@ -9012,14 +9018,14 @@ p.shuoshuo_time {
 }
 
 .avatar {
-	-webkit-border-radius:100% !important;
+    border-radius:100% !important;
+    -webkit-border-radius:100% !important;
 	-moz-border-radius:100% !important;
-	box-shadow:inset 0 -1px 0 #3333sf;
-	-webkit-box-shadow:inset 0 -1px 0 #3333sf;
-	-webkit-transition:0.4s;
-	-webkit-transition:-webkit-transform 0.4s ease-out;
-	transition:transform 0.4s ease-out;
-	-moz-transition:-moz-transform 0.4s ease-out
+	box-shadow:inset 0 -1px 0 #333333;
+    -webkit-box-shadow:inset 0 -1px 0 #333333;
+    transition:transform 0.4s ease-out;
+    -webkit-transition:-webkit-transform 0.4s ease-out;
+    -moz-transition:-moz-transform 0.4s ease-out
 }
 
 .zhuan {
