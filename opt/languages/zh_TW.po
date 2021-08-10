@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
 "POT-Creation-Date: 2021-07-30 16:02+0800\n"
-"PO-Revision-Date: 2021-08-02 16:27+0800\n"
+"PO-Revision-Date: 2021-08-10 18:56+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: option-framework.php\n"
@@ -23,27 +23,27 @@ msgstr ""
 
 #: classes/admin-options.class.php:226
 msgid "Error while saving the changes."
-msgstr "在儲存更改時發生錯誤。"
+msgstr "儲存變更時出錯了"
 
 #: classes/admin-options.class.php:286
 msgid "Settings successfully imported."
-msgstr "已成功地汇入设定。"
+msgstr "設定已成功匯入"
 
 #: classes/admin-options.class.php:298 classes/admin-options.class.php:314
 msgid "Default settings restored."
-msgstr "還原預設。"
+msgstr "已還原成默認的設定"
 
 #: classes/admin-options.class.php:385
 msgid "Settings saved."
-msgstr "設定已儲存。"
+msgstr "設定已儲存"
 
 #: classes/admin-options.class.php:565
 msgid "You have unsaved changes, save your changes!"
-msgstr "你有未儲存的更改，儲存您的更改！"
+msgstr "有更改尚未儲存，請記得儲存！"
 
 #: classes/admin-options.class.php:567
 msgid "show all settings"
-msgstr "顯示所有設置"
+msgstr "顯示所有選項"
 
 #: classes/admin-options.class.php:569 fields/icon/icon.php:57
 #: fields/map/map.php:23
@@ -52,7 +52,7 @@ msgstr "搜尋..."
 
 #: classes/admin-options.class.php:572 classes/admin-options.class.php:695
 msgid "Save"
-msgstr "保存"
+msgstr "儲存"
 
 #: classes/admin-options.class.php:572 classes/admin-options.class.php:695
 msgid "Saving..."
@@ -60,47 +60,47 @@ msgstr "儲存中..."
 
 #: classes/admin-options.class.php:573 classes/admin-options.class.php:696
 msgid "Reset Section"
-msgstr "重置部分"
+msgstr "重設此部分"
 
 #: classes/admin-options.class.php:573 classes/admin-options.class.php:696
 msgid "Are you sure to reset this section options?"
-msgstr "您是否確定要重置此部分選項？"
+msgstr "是否要重設此部分選項為默認值？"
 
 #: classes/admin-options.class.php:574 classes/admin-options.class.php:697
 msgid "Reset All"
-msgstr "全部重置"
+msgstr "全部重設"
 
 #: classes/admin-options.class.php:574 classes/admin-options.class.php:697
 #: fields/backup/backup.php:31
 msgid "Reset"
-msgstr "重置"
+msgstr "重設"
 
 #: classes/admin-options.class.php:574 classes/admin-options.class.php:697
 msgid "Are you sure you want to reset all settings to default values?"
-msgstr "是否確實要將所有設置重置為預設值？"
+msgstr "是否將所有設定恢復為默認值？"
 
 #: classes/admin-options.class.php:672 fields/button_set/button_set.php:56
 #: fields/checkbox/checkbox.php:76 fields/radio/radio.php:75
 #: fields/select/select.php:113 functions/actions.php:41
 msgid "No data available."
-msgstr "沒有可用的資料."
+msgstr "沒有可用的資料"
 
 #: classes/setup.class.php:592
 msgid "Are you sure?"
-msgstr "你確定？"
+msgstr "是否確定？"
 
 #: classes/setup.class.php:593
 #, php-format
 msgid "Please enter %s or more characters"
-msgstr "請輸入%s或多個字元"
+msgstr "請輸入至少 %s 個字元"
 
 #: classes/setup.class.php:594
 msgid "Searching..."
-msgstr "在搜索..."
+msgstr "搜尋中..."
 
 #: classes/setup.class.php:595
 msgid "No results found."
-msgstr "沒有符合條件的結果。"
+msgstr "未搜尋到結果"
 
 #: classes/setup.class.php:696
 msgid "Oops! Not allowed."
@@ -112,7 +112,7 @@ msgstr "找不到欄位！"
 
 #: fields/background/background.php:36 fields/media/media.php:59
 msgid "Not selected"
-msgstr "自訂滑鼠樣式-選中元素"
+msgstr "未選中的"
 
 #: fields/background/background.php:72 fields/date/date.php:31
 msgid "From"
@@ -132,19 +132,19 @@ msgstr "漸層方向"
 
 #: fields/background/background.php:115
 msgid "&#8659; top to bottom"
-msgstr "自上而下⇓"
+msgstr "&#8659; 從上到下"
 
 #: fields/background/background.php:116
 msgid "&#8658; left to right"
-msgstr "⇒從左到右"
+msgstr "&#8658;從左到右"
 
 #: fields/background/background.php:117
 msgid "&#8664; corner top to right"
-msgstr "⇘角從上到右"
+msgstr "&#8664; 右上角"
 
 #: fields/background/background.php:118
 msgid "&#8665; corner top to left"
-msgstr "⇙角從上到左"
+msgstr "&#8665; 左下角"
 
 #: fields/background/background.php:161
 msgid "Background Position"
@@ -164,11 +164,11 @@ msgstr "左下"
 
 #: fields/background/background.php:165
 msgid "Center Top"
-msgstr "中央上方"
+msgstr "中上"
 
 #: fields/background/background.php:166
 msgid "Center Center"
-msgstr "正中央"
+msgstr "中间"
 
 #: fields/background/background.php:167
 msgid "Center Bottom"
@@ -188,7 +188,7 @@ msgstr "右下"
 
 #: fields/background/background.php:184
 msgid "Background Repeat"
-msgstr "背景重複"
+msgstr "重複背景"
 
 #: fields/background/background.php:185
 msgid "Repeat"
@@ -208,7 +208,7 @@ msgstr "垂直重複"
 
 #: fields/background/background.php:202
 msgid "Background Attachment"
-msgstr "背景附件"
+msgstr "背景樣式"
 
 #: fields/background/background.php:203
 msgid "Scroll"
@@ -216,7 +216,7 @@ msgstr "滾動"
 
 #: fields/background/background.php:204
 msgid "Fixed"
-msgstr "固定位置 (元素不會因網頁捲動而變更位置)"
+msgstr "固定"
 
 #: fields/background/background.php:218
 msgid "Background Size"
@@ -237,11 +237,11 @@ msgstr "自動"
 
 #: fields/background/background.php:235
 msgid "Background Origin"
-msgstr "背景來源"
+msgstr "背景定位"
 
 #: fields/background/background.php:236 fields/background/background.php:254
 msgid "Padding Box"
-msgstr "填充盒"
+msgstr "內邊距"
 
 #: fields/background/background.php:237 fields/background/background.php:253
 msgid "Border Box"
@@ -249,11 +249,11 @@ msgstr "邊框"
 
 #: fields/background/background.php:238 fields/background/background.php:255
 msgid "Content Box"
-msgstr "內容框塊"
+msgstr "內容框"
 
 #: fields/background/background.php:252
 msgid "Background Clip"
-msgstr "背景剪輯"
+msgstr "背景裁剪"
 
 #: fields/background/background.php:269
 msgid "Background Blend Mode"
@@ -262,7 +262,7 @@ msgstr "背景混合模式"
 #: fields/background/background.php:270 fields/link_color/link_color.php:36
 #: fields/typography/typography.php:186
 msgid "Normal"
-msgstr "一般"
+msgstr "正常"
 
 #: fields/background/background.php:271
 msgid "Multiply"
@@ -286,7 +286,7 @@ msgstr "變亮"
 
 #: fields/background/background.php:276
 msgid "Color Dodge"
-msgstr "顏色減淡"
+msgstr "變淡"
 
 #: fields/background/background.php:277
 msgid "Saturation"
@@ -298,7 +298,7 @@ msgstr "顏色"
 
 #: fields/background/background.php:279
 msgid "Luminosity"
-msgstr "光度"
+msgstr "亮度"
 
 #: fields/backup/backup.php:26
 msgid "Import"
@@ -306,7 +306,7 @@ msgstr "匯入"
 
 #: fields/backup/backup.php:29
 msgid "Export & Download"
-msgstr "匯出和下載"
+msgstr "匯出&下載"
 
 #: fields/border/border.php:25 fields/spacing/spacing.php:25
 msgid "top"
@@ -314,19 +314,19 @@ msgstr "頂部"
 
 #: fields/border/border.php:26 fields/spacing/spacing.php:26
 msgid "right"
-msgstr "右"
+msgstr "右邊"
 
 #: fields/border/border.php:27 fields/spacing/spacing.php:27
 msgid "bottom"
-msgstr "下"
+msgstr "底部"
 
 #: fields/border/border.php:28 fields/spacing/spacing.php:28
 msgid "left"
-msgstr "左"
+msgstr "左邊"
 
 #: fields/border/border.php:29 fields/spacing/spacing.php:29
 msgid "all"
-msgstr "全部"
+msgstr "所有"
 
 #: fields/border/border.php:51 fields/typography/typography.php:214
 msgid "Solid"
@@ -350,15 +350,15 @@ msgstr "插入"
 
 #: fields/border/border.php:56
 msgid "Outset"
-msgstr "浮出線"
+msgstr "起點"
 
 #: fields/border/border.php:57
 msgid "Groove"
-msgstr "凹線"
+msgstr "凹陷"
 
 #: fields/border/border.php:58
 msgid "ridge"
-msgstr "ridge"
+msgstr "凸出"
 
 #: fields/border/border.php:59 fields/typography/typography.php:199
 #: fields/typography/typography.php:213
@@ -371,7 +371,7 @@ msgstr "寬度"
 
 #: fields/dimensions/dimensions.php:23
 msgid "height"
-msgstr "圖像最大高度(裁剪)"
+msgstr "高度"
 
 #: fields/gallery/gallery.php:20
 msgid "Add Gallery"
@@ -396,23 +396,23 @@ msgstr "錯誤：欄位 ID 衝突。"
 #: fields/group/group.php:46 fields/group/group.php:87
 #: fields/repeater/repeater.php:48 fields/repeater/repeater.php:76
 msgid "Are you sure to delete this item?"
-msgstr "你一定要刪除這個專案嗎？"
+msgstr "您確定要刪除嗎？"
 
 #: fields/group/group.php:121 fields/repeater/repeater.php:89
 msgid "You cannot add more."
-msgstr "您不能添加更多。"
+msgstr "不能再加更多惹"
 
 #: fields/group/group.php:122 fields/repeater/repeater.php:90
 msgid "You cannot remove more."
-msgstr "您無法刪除更多。"
+msgstr "不能刪除更多惹"
 
 #: fields/icon/icon.php:20 fields/icon/icon.php:53
 msgid "Add Icon"
-msgstr "添加圖示"
+msgstr "添加圖標"
 
 #: fields/icon/icon.php:21
 msgid "Remove Icon"
-msgstr "移除圖示"
+msgstr "移除圖標"
 
 #: fields/link/link.php:20
 msgid "Add Link"
@@ -436,7 +436,7 @@ msgstr "啟用"
 
 #: fields/link_color/link_color.php:39
 msgid "Visited"
-msgstr "已訪問"
+msgstr "訪問"
 
 #: fields/link_color/link_color.php:40
 msgid "Focus"
@@ -478,15 +478,15 @@ msgstr "關"
 
 #: fields/typography/typography.php:96
 msgid "Font Family"
-msgstr "字體系列"
+msgstr "字體"
 
 #: fields/typography/typography.php:97
 msgid "Select a font"
-msgstr "選擇字體"
+msgstr "選擇樣式"
 
 #: fields/typography/typography.php:105
 msgid "Backup Font Family"
-msgstr "備份字體系列"
+msgstr "匯出設定"
 
 #: fields/typography/typography.php:119 fields/typography/typography.php:132
 #: fields/typography/typography.php:145 fields/typography/typography.php:160
@@ -498,7 +498,7 @@ msgstr "默認"
 
 #: fields/typography/typography.php:130
 msgid "Font Style"
-msgstr "字體樣式"
+msgstr "樣式"
 
 #: fields/typography/typography.php:144 fields/typography/typography.php:145
 msgid "Load Extra Styles"
@@ -518,7 +518,7 @@ msgstr "繼承"
 
 #: fields/typography/typography.php:171
 msgid "Left"
-msgstr "向左對齊"
+msgstr "左"
 
 #: fields/typography/typography.php:172
 msgid "Center"
@@ -526,7 +526,7 @@ msgstr "置中"
 
 #: fields/typography/typography.php:173
 msgid "Right"
-msgstr "向右對齊"
+msgstr "右"
 
 #: fields/typography/typography.php:174
 msgid "Justify"
@@ -538,15 +538,15 @@ msgstr "初始"
 
 #: fields/typography/typography.php:184
 msgid "Font Variant"
-msgstr "字體變體"
+msgstr "樣式"
 
 #: fields/typography/typography.php:187
 msgid "Small Caps"
-msgstr "小型大寫字"
+msgstr "小寫"
 
 #: fields/typography/typography.php:188
 msgid "All Small Caps"
-msgstr "所有小型大寫字"
+msgstr "全部小寫"
 
 #: fields/typography/typography.php:197
 msgid "Text Transform"
@@ -574,7 +574,7 @@ msgstr "波浪"
 
 #: fields/typography/typography.php:219
 msgid "Overline"
-msgstr "頂線"
+msgstr "上橫線"
 
 #: fields/typography/typography.php:220
 msgid "Line-through"
@@ -586,11 +586,11 @@ msgstr "字體大小"
 
 #: fields/typography/typography.php:245
 msgid "Line Height"
-msgstr "線高度"
+msgstr "縱向行距"
 
 #: fields/typography/typography.php:257
 msgid "Letter Spacing"
-msgstr "字母間距"
+msgstr "橫向字距"
 
 #: fields/typography/typography.php:269
 msgid "Word Spacing"
@@ -598,7 +598,7 @@ msgstr "文字間距"
 
 #: fields/typography/typography.php:284
 msgid "Font Color"
-msgstr "字體顏色"
+msgstr "連結顏色"
 
 #: fields/typography/typography.php:295
 msgid "Custom Style"
@@ -610,56 +610,56 @@ msgstr "自定義 Web 字體"
 
 #: fields/typography/typography.php:368
 msgid "Safe Web Fonts"
-msgstr "安全網路字體"
+msgstr "Web 安全字體"
 
 #: fields/typography/typography.php:388
 msgid "Google Web Fonts"
-msgstr "Google Web Fonts"
+msgstr "Google網頁字體"
 
 #: functions/actions.php:16 functions/actions.php:68 functions/actions.php:106
 #: functions/actions.php:141 functions/actions.php:170
 msgid "Error: Invalid nonce verification."
-msgstr "錯誤：無效的無名驗證。"
+msgstr "錯誤：無效nonce驗證。"
 
 #: functions/actions.php:72 functions/actions.php:110
 msgid "Error: Invalid key."
-msgstr "錯誤：KEY無效。"
+msgstr "錯誤：無效密鑰。"
 
 #: functions/actions.php:114
 msgid "Error: The response is not a valid JSON response."
-msgstr "錯誤：回應不是有效的JSON回應。"
+msgstr "錯誤：無效的JSON迴應。"
 
 #: functions/actions.php:174
 msgid "Error: Invalid term ID."
-msgstr "錯誤：無效術語 ID。"
+msgstr "錯誤：無效的專案ID。"
 
 #: functions/actions.php:180
 msgid "Error: You do not have permission to do that."
-msgstr "錯誤：您無權這樣做。"
+msgstr "錯誤：您的權限不足。"
 
 #: functions/validate.php:14 functions/validate.php:86
 msgid "Please enter a valid email address."
-msgstr "請輸入有效的電子郵件位址."
+msgstr "請輸入正確的電子郵箱位址"
 
 #: functions/validate.php:32 functions/validate.php:106
 msgid "Please enter a valid number."
-msgstr "請輸入一個有效的號碼."
+msgstr "請輸入有效的數字"
 
 #: functions/validate.php:50 functions/validate.php:126
 msgid "This field is required."
-msgstr "欄位是必須的。"
+msgstr "此欄位一定要填哦"
 
 #: functions/validate.php:68 functions/validate.php:146
 msgid "Please enter a valid URL."
-msgstr "請輸入有效網址 URL。"
+msgstr "請輸入有效的URL"
 
 #: options/theme-options.php:7
 msgid "iro-Options"
-msgstr "iro 主題設置"
+msgstr "iro 主題設定"
 
 #: options/theme-options.php:13
 msgid "Preliminary Options"
-msgstr "初步設置"
+msgstr "初步設定"
 
 #: options/theme-options.php:20
 msgid "Site Name"
@@ -679,7 +679,7 @@ msgstr "例如：Fuukei"
 
 #: options/theme-options.php:34
 msgid "Personal Avatar"
-msgstr "個人頭像"
+msgstr "個人頭貼"
 
 #: options/theme-options.php:35 options/theme-options.php:462
 #: options/theme-options.php:1532 options/theme-options.php:1677
@@ -695,11 +695,11 @@ msgstr "白貓特效文字"
 msgid ""
 "After turned on, the personal avatar will be replaced by the text as the "
 "home page display content"
-msgstr "開啟之後將替換個人頭像作為首頁顯示內容"
+msgstr "開啟之後將替換個人頭貼作為首頁顯示內容"
 
 #: options/theme-options.php:50
 msgid "Mashiro Special Effects Text Options"
-msgstr "白貓特效文字設置"
+msgstr "白貓特效文字設定"
 
 #: options/theme-options.php:56
 msgid "Text"
@@ -785,15 +785,15 @@ msgstr "用簡潔的文字描述本站點，字數建議在120個字以內"
 
 #: options/theme-options.php:133
 msgid "Global Options"
-msgstr "全局設置"
+msgstr "全局設定"
 
 #: options/theme-options.php:139
 msgid "Appearance Options"
-msgstr "外觀設置"
+msgstr "外觀設定"
 
 #: options/theme-options.php:145
 msgid "Color Schemes"
-msgstr "色彩配置"
+msgstr "色彩設定"
 
 #: options/theme-options.php:151
 msgid "Theme Color"
@@ -836,7 +836,7 @@ msgid ""
 "being configured by the client</p>"
 msgstr ""
 "<p><strong>客戶當地時間：</strong>深色模式將從 22：00 自動切換到 7：00</"
-"p><p><strong>關注客戶端設定：</strong>關注用戶端瀏覽器設置</p><p><strong>始終"
+"p><p><strong>關注客戶端設定：</strong>關注用戶端瀏覽器設定</p><p><strong>始終"
 "開啟：</strong>始終打開，除非用戶端另有配置</p>"
 
 #: options/theme-options.php:195
@@ -845,7 +845,7 @@ msgstr "深色模式自動切換策略"
 
 #: options/theme-options.php:198
 msgid "Client local time"
-msgstr "客戶當地時間"
+msgstr "客戶端當地時間"
 
 #: options/theme-options.php:199
 msgid "Follow client settings"
@@ -853,7 +853,7 @@ msgstr "關注客戶端設定"
 
 #: options/theme-options.php:200
 msgid "Always on"
-msgstr "始終打開"
+msgstr "始終開啟"
 
 #: options/theme-options.php:208
 msgid "Dark Mode Image Brightness"
@@ -890,24 +890,24 @@ msgstr "紀念模式"
 #: options/theme-options.php:246
 msgid ""
 "After turning on, a black and white filter will be added to the global theme"
-msgstr "打開後，將添加黑白濾鏡到全主題中"
+msgstr "開啟後主題全局將添加黑白濾鏡"
 
 #: options/theme-options.php:253
 msgid "Occupying SVG while Loading Control Units"
-msgstr "加載控件單元佔位SVG"
+msgstr "載入控件單元佔位SVG"
 
 #: options/theme-options.php:254
 msgid ""
 "Fill in the address, which is the SVG displayed when loading control units"
-msgstr "填寫地址，此為加載控制項單元時占位顯示的SVG"
+msgstr "填寫地址，此為載入控制項單元時占位顯示的SVG"
 
 #: options/theme-options.php:263
 msgid "Font Options"
-msgstr "字體設置"
+msgstr "字體設定"
 
 #: options/theme-options.php:269
 msgid "Global"
-msgstr "全局"
+msgstr "全局設定"
 
 #: options/theme-options.php:275
 msgid "Non-Emphasis Text Weight"
@@ -919,7 +919,7 @@ msgstr "滑動滑塊，推薦數值範圍為300-500"
 
 #: options/theme-options.php:286
 msgid "Text Font Size"
-msgstr "文字字型大小"
+msgstr "文本字體大小"
 
 #: options/theme-options.php:287 options/theme-options.php:1276
 msgid "Slide to adjust, the recommended value range is 15-18"
@@ -931,14 +931,13 @@ msgstr "外部字體"
 
 #: options/theme-options.php:303
 msgid "Reference External Fonts"
-msgstr "引用外部字體（可能影響性能）"
+msgstr "引用外部字體"
 
 #: options/theme-options.php:304
 msgid ""
 "After turning on, you can use external fonts as the default font or other "
 "component fonts, but it may affect performance"
-msgstr ""
-"打開後，您可以使用外部字體作為預設字體或其他元件字體，但它可能會影響性能"
+msgstr "開啟之後可以使用外部字體作為預設字體或其他元件字體，但它可能會影響性能"
 
 #: options/theme-options.php:311
 msgid "External Font Link"
@@ -966,11 +965,11 @@ msgid ""
 msgstr ""
 "請確保添加的字體可以在 Google 字型庫中引用並填寫字體名稱。添加的字體必須先於"
 "\"|\"。如果引用多個字體，請使用\"|\"作為分離器。如果字體名稱有空格，請改為使"
-"用加號。例如：|茲庫爾+小威|馬 + 山 + 鄭"
+"用加號。例如： | zcool + xiaowei| Ma + Shan + Zheng"
 
 #: options/theme-options.php:341
 msgid "Navigation Menu Options"
-msgstr "導航菜單設置"
+msgstr "導航菜單設定"
 
 #: options/theme-options.php:348
 msgid "Nav Menu Style"
@@ -995,8 +994,8 @@ msgid ""
 "nav menu. When the ratio is set to 95,there will be no shrinkage. This "
 "function is off by default"
 msgstr ""
-"滑動滑塊根據導航功能表的內容長度設置適當的比率。當比率設置為 95 時，收縮將關"
-"閉。默認情況下，收縮被關閉"
+"滑動滑塊，根據導航功能表的內容長度設定適當的比率。當比率設定為95時則收縮將關"
+"閉。默認關閉收縮"
 
 #: options/theme-options.php:383
 msgid "Nav Menu Content Display Method"
@@ -1004,7 +1003,7 @@ msgstr "導航菜單內容顯示"
 
 #: options/theme-options.php:384
 msgid "You can choose to unfold or fold the nav menu contents"
-msgstr "您可以選擇延伸或縮小導航功能表"
+msgstr "您可以選擇展開或折疊導航功能表"
 
 #: options/theme-options.php:386
 msgid "Unfold"
@@ -1034,7 +1033,7 @@ msgstr "滑動滑塊，推薦數值範圍為1-2"
 
 #: options/theme-options.php:415
 msgid "Nav Menu Icon Size"
-msgstr "導航菜單Icon大小"
+msgstr "導航菜單圖標大小"
 
 #: options/theme-options.php:417
 msgid "Standard"
@@ -1046,11 +1045,11 @@ msgstr "大"
 
 #: options/theme-options.php:426
 msgid "Nav Menu Search"
-msgstr "導航菜單搜索"
+msgstr "導航菜單搜尋"
 
 #: options/theme-options.php:427
 msgid "It is on by default. Click to enter the search area"
-msgstr "默認打開，按一下以輸入登錄介面"
+msgstr "默認開啟，點擊進入搜尋區域"
 
 #: options/theme-options.php:433
 msgid "Nav Menu Blur"
@@ -1064,63 +1063,63 @@ msgstr "滑動滑塊，建議值為5px，並在0px時關閉"
 
 #: options/theme-options.php:443
 msgid "Search Area Background Image"
-msgstr "導航菜單搜尋區域背景圖像"
+msgstr "搜尋區域背景圖像"
 
 #: options/theme-options.php:444
 msgid ""
 "Set the background image of your search area. Leave this option blank to "
 "display a white background"
-msgstr "搜索區域的背景圖像。將此選項留空以顯示白色背景"
+msgstr "設定搜尋區域的背景圖像。將此選項留空則顯示白色背景"
 
 #: options/theme-options.php:452
 msgid "Nav Menu User Avatar"
-msgstr "導航菜單用戶頭像"
+msgstr "導航菜單用戶頭貼"
 
 #: options/theme-options.php:453
 msgid "It is on by default. Click to enter the login interface"
-msgstr "默認打開，按一下以輸入登錄介面"
+msgstr "默認開啟，點擊將進入登入介面"
 
 #: options/theme-options.php:460
 msgid "Nav Menu Unlisted User Avatar"
-msgstr "導航菜單未Login In用戶頭像"
+msgstr "導航菜單未登入用戶頭貼"
 
 #: options/theme-options.php:470
 msgid "Secondary Menu Prompt Arrow"
-msgstr "導航菜單二级菜單提示箭頭"
+msgstr "二级菜單提示箭頭"
 
 #: options/theme-options.php:471
 msgid ""
 "After turning on, the menu prompt arrow will appear in the secondary menu of "
 "the navigation menu"
-msgstr "打開後，二级菜單提示箭頭將顯示在導航菜單"
+msgstr "開啟後菜單提示箭頭將顯示在二级菜單"
 
 #: options/theme-options.php:479
 msgid "Secondary Menu Radius"
-msgstr "導航菜單二级菜單圆角"
+msgstr "二级菜單圆角"
 
 #: options/theme-options.php:490
 msgid "Nav Menu Logo Text"
-msgstr "導航菜單二级菜單標誌文本"
+msgstr "二级菜單Logo文本"
 
 #: options/theme-options.php:491
 msgid ""
 "Fill in the text. If the Mashiro logo is turned on, this option will be "
 "invalid"
-msgstr "填寫文字。如果打開 Mashiro Logo，此選項無效"
+msgstr "填寫文字內容，如果開啟白貓樣式Logo則此選項無效"
 
 #: options/theme-options.php:498
 msgid "Mashiro Logo"
-msgstr "導航菜單Mashiro Logo"
+msgstr "白貓樣式Logo"
 
 #: options/theme-options.php:499
 msgid ""
 "After turning on, the Mashiro Logo will appear and replace the navigation "
 "menu logo position"
-msgstr "打開後，將出現並替換導航菜單標誌位置的 Mashiro Logo"
+msgstr "開啟後白貓樣式Logo將出現並替換導航菜單Logo位置"
 
 #: options/theme-options.php:506
 msgid "Mashiro Logo Options"
-msgstr "導航菜單Mashiro Logo選項"
+msgstr "白貓樣式Logo選項"
 
 #: options/theme-options.php:512
 msgid "Text A"
@@ -1148,7 +1147,7 @@ msgstr "字體名稱"
 
 #: options/theme-options.php:555
 msgid "Style Menu and Frontend Background Related Options"
-msgstr "樣式菜單和前台背景相關設置"
+msgstr "樣式菜單和前台背景相關設定"
 
 #: options/theme-options.php:561
 msgid "Style Menu"
@@ -1189,7 +1188,7 @@ msgstr "自定義顏色，建議使用與主題色相同色系且屬於淺色系
 
 #: options/theme-options.php:605
 msgid "Style Menu Options Interface Radius"
-msgstr "樣式菜單選項界面圓角"
+msgstr "樣式菜單選項介面圓角"
 
 #: options/theme-options.php:614
 msgid "Frontend Background"
@@ -1197,27 +1196,27 @@ msgstr "前台背景"
 
 #: options/theme-options.php:625
 msgid "Frontend Background Scaling Method"
-msgstr ""
+msgstr "前台背景縮放方式"
 
 #: options/theme-options.php:626
 msgid ""
 "You can choose two ways to scale the frontend background, the default is "
 "auto-scaling"
-msgstr ""
+msgstr "你可以選擇兩種方式縮放前台背景，默認自動縮放"
 
 #: options/theme-options.php:633
 msgid "Frontend Background Options"
-msgstr "前台背景設置"
+msgstr "前台背景設定"
 
 #: options/theme-options.php:642 options/theme-options.php:658
 #: options/theme-options.php:674 options/theme-options.php:690
 #: options/theme-options.php:706
 msgid "Image"
-msgstr "圖片"
+msgstr "圖像"
 
 #: options/theme-options.php:647
 msgid "Heart Shaped"
-msgstr "心形圖標"
+msgstr "心形形狀"
 
 #: options/theme-options.php:653 options/theme-options.php:669
 #: options/theme-options.php:685 options/theme-options.php:701
@@ -1226,15 +1225,15 @@ msgstr "開關"
 
 #: options/theme-options.php:663
 msgid "Star Shaped"
-msgstr "星形圖標"
+msgstr "星形形狀"
 
 #: options/theme-options.php:679
 msgid "Square Shaped"
-msgstr "方形圖標"
+msgstr "方形形狀"
 
 #: options/theme-options.php:695
 msgid "Lemon Shaped"
-msgstr "檸檬形圖標"
+msgstr "檸檬形形狀"
 
 #: options/theme-options.php:726
 msgid "Background Transparency in the Frontend"
@@ -1258,17 +1257,17 @@ msgstr "樣式菜單字體B"
 
 #: options/theme-options.php:759
 msgid "Footer Options"
-msgstr "頁尾設置"
+msgstr "頁尾設定"
 
 #: options/theme-options.php:766
 msgid "Footer Online Music Player"
-msgstr "頁尾在線播放器"
+msgstr "頁尾線上音樂播放器"
 
 #: options/theme-options.php:767
 msgid ""
 "A button will appear at the bottom left corner of the footer after turning "
 "on, click it and the footer online player will be displayed"
-msgstr "開啟之後頁尾左下角將出現按鈕，點擊按鈕後頁尾在線播放器將顯示"
+msgstr "開啟之後頁尾左下角將出現按鈕，點擊按鈕後頁尾線上播放器將顯示"
 
 #: options/theme-options.php:770
 msgid "Netease Cloud Music"
@@ -1280,7 +1279,7 @@ msgstr "酷狗音樂（可能無法使用）"
 
 #: options/theme-options.php:772
 msgid "Baidu Music(not available on servers overseas)"
-msgstr "千千音樂（海外服務器無法使用）"
+msgstr "千千音樂（海外伺服器無法使用）"
 
 #: options/theme-options.php:773
 msgid "QQ Music(may not be available)"
@@ -1288,7 +1287,7 @@ msgstr "QQ音樂（可能無法使用）"
 
 #: options/theme-options.php:781
 msgid "Footer Online Music Player Songlist ID"
-msgstr "頁尾在線播放器歌單ID"
+msgstr "頁尾線上播放器歌單ID"
 
 #: options/theme-options.php:783
 msgid ""
@@ -1300,35 +1299,35 @@ msgstr ""
 
 #: options/theme-options.php:790
 msgid "Footer Online Music Player Mode"
-msgstr ""
+msgstr "尾頁線上音樂播放器模式"
 
 #: options/theme-options.php:792
 msgid "Select music player mode"
-msgstr ""
+msgstr "設定音樂播放器模式"
 
 #: options/theme-options.php:794
 msgid "List"
-msgstr ""
+msgstr "列表播放"
 
 #: options/theme-options.php:795
 msgid "Random"
-msgstr ""
+msgstr "隨機播放"
 
 #: options/theme-options.php:803
 msgid "Footer Online Music Player Preload"
-msgstr ""
+msgstr "尾頁線上音樂播放器預載入"
 
 #: options/theme-options.php:805
 msgid "Whether to preload songs"
-msgstr ""
+msgstr "選擇是否預載入歌曲"
 
 #: options/theme-options.php:808
 msgid "Preload Metadata"
-msgstr ""
+msgstr "預載入元資料"
 
 #: options/theme-options.php:817
 msgid "Default Volume of Footer Online Music Player"
-msgstr "頁尾在線播放器默認音量"
+msgstr "頁尾線上播放器默認音量"
 
 #: options/theme-options.php:819
 msgid "Slide to adjust, the recommended sliding value range is 0.4-0.6"
@@ -1336,7 +1335,7 @@ msgstr "滑動滑塊，推薦數值範圍為0.4-0.6"
 
 #: options/theme-options.php:828
 msgid "Netease Cloud Music Cookies"
-msgstr "頁尾在線播放器網易云音樂Cookies"
+msgstr "網易云音樂Cookies"
 
 #: options/theme-options.php:830
 msgid ""
@@ -1382,11 +1381,11 @@ msgstr "頁尾負載佔用查詢"
 msgid ""
 "Load occupancy information will appear at the end of the page after turning "
 "it on"
-msgstr "開啟之後頁尾將出現負載佔用信息"
+msgstr "開啟之後頁尾將出現負載佔用資訊"
 
 #: options/theme-options.php:869
 msgid "Footer Info"
-msgstr "頁尾信息"
+msgstr "頁尾資訊"
 
 #: options/theme-options.php:870
 msgid "Footer description text, supports HTML code"
@@ -1394,25 +1393,25 @@ msgstr "頁尾說明文字，支持HTML代碼"
 
 #: options/theme-options.php:878
 msgid "Footer Addition"
-msgstr ""
+msgstr "尾頁附加程式碼"
 
 #: options/theme-options.php:879
 msgid ""
 "Add HTML code at the end of the page. Useful for adding customize "
 "JavaScript, or adding external CSS stylesheets."
-msgstr ""
+msgstr "在尾頁添加HTML程式碼。可用於添加 JavaScript 或添加外部 CSS 樣式表"
 
 #: options/theme-options.php:884
 msgid "Hitokoto"
-msgstr ""
+msgstr "一言"
 
 #: options/theme-options.php:890
 msgid "Footer Hitokoto"
-msgstr ""
+msgstr "尾頁一言"
 
 #: options/theme-options.php:891
 msgid "Hitokoto will appear at the end of the page after turning it on"
-msgstr ""
+msgstr "開啟之後頁尾將出現一言"
 
 #: options/theme-options.php:898
 msgid ""
@@ -1426,62 +1425,70 @@ msgid ""
 "API:</strong> An reverse proxy mirror of the official API. <a href=\"https://"
 "api.maho.cc/yiyan/\">https://api.maho.cc/yiyan/</a></p>"
 msgstr ""
+"<h4>一言API設定說明</h4>\n"
+"<p>填寫示例:<code> [\"https://api.maho.cc/yiyan/\",\"https://v1.hitokoto.cn/"
+"\"]</code>，此時會優先使用第一項API，以後一項為後備。</p>\n"
+"<p><strong>官方API:</strong>使用方法請查閱<a href=\"https://developer."
+"hitokoto.cn/sentence/\">文檔</a>，參數\"返回編碼\"不應設定為JSON以外的其他"
+"值。<a href=\"https://v1.hitokoto.cn/\">https://v1.hitokoto.cn/</a></p>\n"
+"<p><strong>Maho API:</strong>官方API的反代鏡像。<a href=\"https://api.maho."
+"cc/yiyan/\">https://api.maho.cc/yiyan/</a></p>"
 
 #: options/theme-options.php:907
 msgid "Hitokoto API address"
-msgstr ""
+msgstr "一言API地址"
 
 #: options/theme-options.php:909
 msgid "Fill in the address in JavaScript array format"
-msgstr ""
+msgstr "填寫地址，格式為JavaScript陣列"
 
 #: options/theme-options.php:918
 msgid "Cursor Options"
-msgstr "鼠標設置"
+msgstr "滑鼠光標設定"
 
 #: options/theme-options.php:925
 msgid "Standard Cursor Style"
-msgstr "標準鼠標樣式"
+msgstr "標準光標樣式"
 
 #: options/theme-options.php:926
 msgid "Apply to global, fill in \".cur\" mouse file link"
-msgstr "應用於全局，填寫Cur鼠標文件鏈接"
+msgstr "應用於全局，填寫Cur滑鼠檔案連結"
 
 #: options/theme-options.php:933
 msgid "Selected Cursor Style"
-msgstr "選定鼠標樣式"
+msgstr "選定光標樣式"
 
 #: options/theme-options.php:934
 msgid "Apply to multiple styles, fill in \".cur\" file link"
-msgstr "應用於多種樣式，填寫Cur鼠標文件鏈接"
+msgstr "應用於多種樣式，填寫Cur滑鼠檔案連結"
 
 #: options/theme-options.php:941
 msgid "Selected Control Unit Cursor Style"
-msgstr "選中控件單元鼠標樣式"
+msgstr "選中控件單元滑鼠樣式"
 
 #: options/theme-options.php:942
 msgid "Apply to selected control unit, fill in \".cur\" file link"
-msgstr "應用於選中某個控件單元，填寫Cur鼠標文件鏈接"
+msgstr "應用於選中某個控件單元，填寫Cur滑鼠檔案連結"
 
 #: options/theme-options.php:949
 msgid "Selected Text Cursor Style"
-msgstr "選中文本鼠標樣式"
+msgstr "選中文本光標樣式"
 
 #: options/theme-options.php:950
 msgid "Apply to selected text, fill in \".cur\" file link"
-msgstr "應用於選中文本，填寫Cur鼠標文件鏈接"
+msgstr "應用於選中文本，填寫Cur滑鼠檔案連結"
 
 #: options/theme-options.php:957
 msgid "Work Status Cursor Style"
-msgstr "工作狀態鼠標樣式"
+msgstr "工作狀態滑鼠樣式"
 
 #: options/theme-options.php:958
 msgid "Apply to load control unit, fill in \".cur\" file link"
-msgstr "應用於加載控件單元，填寫Cur鼠標文件鏈接"
+msgstr "應用於載入控件單元，填寫Cur滑鼠檔案連結"
 
 #: options/theme-options.php:967
 msgid "Additional Options"
-msgstr "額外設置"
+msgstr "額外設定"
 
 #: options/theme-options.php:973
 msgid "Effects&Animations"
@@ -1489,29 +1496,29 @@ msgstr "特效及動畫"
 
 #: options/theme-options.php:979
 msgid "Preload Animation"
-msgstr "預加載動畫"
+msgstr "預載入動畫"
 
 #: options/theme-options.php:980
 msgid ""
 "Preload animation before new pages load; To enable this option, ensure your "
 "page resources can load properly."
-msgstr "開啟之後新頁面加載前會有預加載動畫，此選項需確保你的頁面資源正常加載。"
+msgstr "開啟之後新頁面載入前會有預載入動畫，此選項需確保你的頁面資源正常載入。"
 
 #: options/theme-options.php:987
 msgid "Preload Animation Color A"
-msgstr "預加載動畫顏色A"
+msgstr "預載入動畫顏色A"
 
 #: options/theme-options.php:996
 msgid "Preload Animation Color B"
-msgstr "預加載動畫顏色B"
+msgstr "預載入動畫顏色B"
 
 #: options/theme-options.php:1004
 msgid "Preload Animation Blur Transition Effect"
-msgstr ""
+msgstr "預載入模糊過度效果"
 
 #: options/theme-options.php:1006
 msgid "Blur transition duration in milliseconds ms, off when set to 0."
-msgstr ""
+msgstr "模糊過渡持續時間，單位毫秒ms，為0時關閉"
 
 #: options/theme-options.php:1016
 msgid "Falling Effects"
@@ -1519,27 +1526,27 @@ msgstr "飄落特效"
 
 #: options/theme-options.php:1019
 msgid "Sakura Native Quantity"
-msgstr "櫻花 原生數量"
+msgstr "原生數量櫻花"
 
 #: options/theme-options.php:1020
 msgid "Sakura Quarter Quantity"
-msgstr "櫻花 四分之一數量"
+msgstr "四分之一數量櫻花"
 
 #: options/theme-options.php:1021
 msgid "Sakura Half Quantity"
-msgstr "櫻花 二分之一數量"
+msgstr "二分之一數量櫻花"
 
 #: options/theme-options.php:1022
 msgid "Sakura Less Quantity"
-msgstr "櫻花 較少數量"
+msgstr "較少數量櫻花"
 
 #: options/theme-options.php:1023
 msgid "Snow Native Quantity"
-msgstr "雪花 原生數量"
+msgstr "原生數量雪花"
 
 #: options/theme-options.php:1024
 msgid "Snow Half Quantity"
-msgstr "雪花 二分之一數量"
+msgstr "二分之一數量雪花"
 
 #: options/theme-options.php:1032
 msgid "Live2D Model"
@@ -1549,11 +1556,11 @@ msgstr "Live2D看板娘"
 msgid ""
 "Live2D Model will be loaded in the bottom left corner of the page after "
 "turning on"
-msgstr "開啟之後頁面左下角將加載Live2D看板娘"
+msgstr "開啟之後頁面左下角將載入Live2D看板娘"
 
 #: options/theme-options.php:1040
 msgid "Live2D Model Custom Github Project Username"
-msgstr "Live2D看板娘自定義Github項目用戶名"
+msgstr "Live2D看板娘自定義Github專案用戶名"
 
 #: options/theme-options.php:1042
 msgid ""
@@ -1561,12 +1568,12 @@ msgid ""
 "project and make changes to this project first, fill in the Github project "
 "username here"
 msgstr ""
-"如果想自定義本選項，你需要先去Github Fork本項目並對本項目進行修改，此處填寫"
-"Github項目的用戶名"
+"如果想自定義本選項，你需要先去Github Fork本專案並對本專案進行修改，此處填寫"
+"Github專案的用戶名"
 
 #: options/theme-options.php:1049
 msgid "Live2D Model Custom Github Project Version"
-msgstr "Live2D看板娘自定義Github項目版本"
+msgstr "Live2D看板娘自定義Github專案版本"
 
 #: options/theme-options.php:1051
 msgid ""
@@ -1574,8 +1581,8 @@ msgid ""
 "this project and make changes to this project, fill in the version of the "
 "Github project here"
 msgstr ""
-"如果想自定義本選項，你需要先去Github Fork本項目並對本項目進行修改，此處填寫"
-"Github項目的版本"
+"如果想自定義本選項，你需要先去Github Fork本專案並對本專案進行修改，此處填寫"
+"Github專案的版本"
 
 #: options/theme-options.php:1058
 msgid "Note Touch Effects"
@@ -1593,11 +1600,11 @@ msgstr "功能"
 
 #: options/theme-options.php:1071
 msgid "PJAX Partial Refresh"
-msgstr "PJAX局部刷新"
+msgstr "PJAX局部重新載入"
 
 #: options/theme-options.php:1072
 msgid "Enabled by default, clicking to a new page will not require reloading"
-msgstr "開啟之後點擊新內容將不需要重新加載"
+msgstr "默認開啟，點擊新內容將不需要重新載入"
 
 #: options/theme-options.php:1079
 msgid "NProgress Loading Progress Bar"
@@ -1606,19 +1613,19 @@ msgstr "NProgress加载进度条"
 #: options/theme-options.php:1080
 msgid ""
 "Enabled by default, when loading page there will be a progress bar alert"
-msgstr "默认开启，加载页面将有进度条提示"
+msgstr "默认開啟，加載頁面將有進度條提示"
 
 #: options/theme-options.php:1087
 msgid "Global Smooth Scroll"
-msgstr "全局平滑滚动"
+msgstr "全局平滑滾動"
 
 #: options/theme-options.php:1088
 msgid "Enabled by default, page scrolling will be smoother"
-msgstr "默認開啟，加載頁面將有進度條提示"
+msgstr "默認開啟，頁面滾動將更加平滑"
 
 #: options/theme-options.php:1095
 msgid "Login Captcha"
-msgstr ""
+msgstr "登入驗證"
 
 #: options/theme-options.php:1096
 msgid ""
@@ -1626,6 +1633,8 @@ msgid ""
 "login template, this feature conflicts with other captcha related plugins, "
 "please do not turn on together"
 msgstr ""
+"開啟之後驗證將出現在後台登入頁面及登入模板，此功能與其他驗證碼相關外掛衝突，"
+"請勿同時開啟"
 
 #: options/theme-options.php:1103
 msgid "Pagination Mode"
@@ -1633,7 +1642,7 @@ msgstr "分頁模式"
 
 #: options/theme-options.php:1105
 msgid "Ajax Load"
-msgstr "Ajax加載"
+msgstr "Ajax載入"
 
 #: options/theme-options.php:1106
 msgid "Page Up/Down"
@@ -1641,11 +1650,11 @@ msgstr "上下頁"
 
 #: options/theme-options.php:1114
 msgid "Next Page Auto Load"
-msgstr "下一頁自動加載"
+msgstr "下一頁自動載入"
 
 #: options/theme-options.php:1117
 msgid "do not autoload"
-msgstr "不自動加載"
+msgstr "不自動載入"
 
 #: options/theme-options.php:1118
 msgid "0 Sec"
@@ -1693,25 +1702,25 @@ msgstr "10秒"
 
 #: options/theme-options.php:1136
 msgid "Placeholder SVG when loading the next page"
-msgstr "下一頁加載佔位SVG"
+msgstr "載入下一頁佔位SVG"
 
 #: options/theme-options.php:1137
 msgid ""
 "Fill in the address, this is the SVG that will be displayed as a placeholder "
 "when the next page is loading"
-msgstr "填寫地址，此為加載下一頁時佔位顯示的SVG"
+msgstr "填寫地址，此為載入下一頁時佔位顯示的SVG"
 
 #: options/theme-options.php:1145
 msgid "HomePage Options"
-msgstr "主頁設置"
+msgstr "主頁設定"
 
 #: options/theme-options.php:1151
 msgid "Cover Options"
-msgstr "封面設置"
+msgstr "封面設定"
 
 #: options/theme-options.php:1158
 msgid "Cover Switch"
-msgstr "封面"
+msgstr "封面開關"
 
 #: options/theme-options.php:1159
 msgid "On by default, if off, all options below will be disabled"
@@ -1723,11 +1732,11 @@ msgstr "封面全屏顯示"
 
 #: options/theme-options.php:1175
 msgid "Cover Arc Occlusion (Below)"
-msgstr ""
+msgstr "封面弧形遮擋（下方）"
 
 #: options/theme-options.php:1176
 msgid "An arc occlusion will appear below the cover when turned on"
-msgstr ""
+msgstr "開啟之後封面下方將出現弧形遮擋"
 
 #: options/theme-options.php:1183
 msgid "Cover Radius"
@@ -1747,29 +1756,29 @@ msgstr "默認開啟，如果關閉，則封面將直接顯示"
 
 #: options/theme-options.php:1201
 msgid "Cover Animation Time"
-msgstr "封面動畫時間導航菜單動畫時間"
+msgstr "封面動畫時間"
 
 #: options/theme-options.php:1213
 msgid "Cover Info Bar"
-msgstr "封面信息欄"
+msgstr "封面資訊欄"
 
 #: options/theme-options.php:1214
 msgid ""
 "Enabled by default, show avatar, Mashiro effects text, signature bar, social "
 "area"
-msgstr "默認開啟，顯示頭像、白貓特效文字、簽名欄、社交區域"
+msgstr "默認開啟，顯示頭貼、白貓特效文字、簽名欄、社交區域"
 
 #: options/theme-options.php:1221
 msgid "Cover Info Bar Style"
-msgstr "封面信息欄樣式"
+msgstr "封面資訊欄樣式"
 
 #: options/theme-options.php:1232
 msgid "Cover Info Bar Background Color"
-msgstr "封面信息欄背景顏色"
+msgstr "封面資訊欄背景顏色"
 
 #: options/theme-options.php:1240
 msgid "Cover Info Bar Avatar Radius"
-msgstr "封面信息欄頭像圓角"
+msgstr "封面資訊欄頭貼圓角"
 
 #: options/theme-options.php:1241
 msgid "Slide to adjust, the recommended value is 100"
@@ -1831,33 +1840,33 @@ msgstr ""
 
 #: options/theme-options.php:1312
 msgid "Cover Random Image Options"
-msgstr "封面隨機圖片選項"
+msgstr "封面隨機圖像設定"
 
 #: options/theme-options.php:1314
 msgid "External API"
-msgstr "外部API隨機圖片"
+msgstr "外部API"
 
 #: options/theme-options.php:1315
 msgid "Webp optimized"
-msgstr "Webp優化隨機圖片"
+msgstr "Webp優化"
 
 #: options/theme-options.php:1316
 msgid "Local"
-msgstr "本地隨機圖片"
+msgstr "本地隨機圖像"
 
 #: options/theme-options.php:1324
 msgid "Cover Random Image Multi-terminal Separation"
-msgstr "封面隨機圖片多終端分離"
+msgstr "封面隨機圖像多終端分離"
 
 #: options/theme-options.php:1325
 msgid ""
 "Enabled by default, desktop and mobile devices will use separate random "
 "image addresses"
-msgstr "默認開啟，桌面端和移動端會分別使用不同的隨機圖片地址"
+msgstr "默認開啟，桌面端和行動端會分別使用不同的隨機圖像地址"
 
 #: options/theme-options.php:1332
 msgid "Webp Optimization/External API Desktop Side Random Graphics Address"
-msgstr "Webp優化/外部API桌面端隨機圖片地址"
+msgstr "Webp優化/外部API桌面端隨機圖像地址"
 
 #: options/theme-options.php:1333
 msgid "Fill in the address"
@@ -1870,10 +1879,13 @@ msgid ""
 "random images, 点击 / Click <a href=\"%s\">这里 / here </a>来更新 Manifest 路"
 "径 / to update the Manifest path"
 msgstr ""
+"如果你選擇使用Webp優化隨機圖像 / If you choose to use Webp to optimize "
+"random images, 點擊 / Click <a href=\"%s\">這裡 / here </a>來更新 Manifest 路"
+"徑 / to update the Manifest path"
 
 #: options/theme-options.php:1346
 msgid "External API Mobile Devices Random Image Address"
-msgstr "外部API手機端隨機圖片地址"
+msgstr "外部API行動端隨機圖像地址"
 
 #: options/theme-options.php:1348
 msgid "fill address"
@@ -1881,7 +1893,7 @@ msgstr "填寫地址"
 
 #: options/theme-options.php:1355
 msgid "Cover Random Background Image Cache"
-msgstr ""
+msgstr "封面隨機背景圖像快取"
 
 #: options/theme-options.php:1356
 msgid ""
@@ -1889,20 +1901,22 @@ msgid ""
 "improve the loading speed of the first cover after entering the homepage. "
 "Note: This feature needs the cover APIs that accept cross-domain requests."
 msgstr ""
+"默認開啟，此功能會在本地快取一份封面圖像，可提升進入主頁後第一張封面的載入速"
+"度。注意：此功能需要封面API能接受跨來源資源共享。"
 
 #: options/theme-options.php:1363
 msgid "Cover and Frontend Background Integration"
-msgstr ""
+msgstr "封面與前台背景一體化"
 
 #: options/theme-options.php:1364
 msgid ""
 "When enabled, the background of the cover will be set to transparent, while "
 "the frontend background will use the cover's random image API"
-msgstr ""
+msgstr "開啟之後，封面的背景將設定為透明，同時前台背景將使用封面的隨機圖像API"
 
 #: options/theme-options.php:1371
 msgid "Cover Random Images Filter"
-msgstr "封面隨機圖片濾鏡"
+msgstr "封面隨機圖像濾鏡"
 
 #: options/theme-options.php:1373
 msgid "No filter"
@@ -1932,7 +1946,7 @@ msgstr "封面波浪特效"
 msgid ""
 "Wave effect will appear at the bottom of the cover of the home page after "
 "turning on, and it will be forced off in the dark mode"
-msgstr "開啟之後首頁封面底部將出現波浪特效"
+msgstr "開啟之後首頁封面底部將出現波浪特效，深色模式下將強制關閉"
 
 #: options/theme-options.php:1393
 msgid "Cover Dropdown Arrow"
@@ -1944,13 +1958,13 @@ msgstr "默認開啟，首頁封面底部顯示下拉箭頭"
 
 #: options/theme-options.php:1401
 msgid "Cover Dropdown Arrow Display on Mobile Devices"
-msgstr "封面下拉箭頭移動端顯示"
+msgstr "封面下拉箭頭行動端顯示"
 
 #: options/theme-options.php:1403
 msgid ""
 "Drop down arrow will appear at the bottom of the mobile devices' home cover "
 "after turning it on"
-msgstr "開啟之後移動端首頁封面底部將出現下拉箭頭"
+msgstr "開啟之後行動端首頁封面底部將出現下拉箭頭"
 
 #: options/theme-options.php:1410
 msgid "Cover Dropdown Arrow Color"
@@ -1958,7 +1972,7 @@ msgstr "封面下拉箭頭顏色"
 
 #: options/theme-options.php:1419
 msgid "Cover Dropdown Arrow Color (Dark Mode)"
-msgstr "封面下拉箭頭深色模式顏色"
+msgstr "封面下拉箭頭顏色（深色模式）"
 
 #: options/theme-options.php:1421
 msgid "Customize the colors, dark colors are recommended"
@@ -1966,33 +1980,33 @@ msgstr "自定義顏色，建議使用深色系顏色"
 
 #: options/theme-options.php:1428
 msgid "Cover Video"
-msgstr "封面視頻"
+msgstr "封面影片"
 
 #: options/theme-options.php:1429
 msgid "Use a video instead of the images as the cover"
-msgstr "開啟之後將替代封面隨機圖片作為主要顯示內容"
+msgstr "開啟之後將替代隨機圖像作為封面顯示"
 
 #: options/theme-options.php:1436
 msgid "Cover Video Loop"
-msgstr "封面視頻循環"
+msgstr "封面影片循環"
 
 #: options/theme-options.php:1438
 msgid "Video will loop automatically when enabled, Pjax needed"
-msgstr "開啟之後視頻將自動循環，需要開啟Pjax功能"
+msgstr "開啟之後影片將自動循環，需要開啟Pjax功能"
 
 #: options/theme-options.php:1445
 msgid "Cover Video Address"
-msgstr "封面視頻地址"
+msgstr "封面影片地址"
 
 #: options/theme-options.php:1447
 msgid ""
 "Fill in the address which splices the video name below, no slash at the end "
 "of the address"
-msgstr "填寫地址，該地址拼接下面的視頻名，地址尾部不需要加斜杠"
+msgstr "填寫地址，該地址拼接下面的影片名稱，地址尾部不需要加斜杠"
 
 #: options/theme-options.php:1453
 msgid "Cover Video Name"
-msgstr "封面視頻名稱"
+msgstr "封面影片名稱"
 
 #: options/theme-options.php:1455
 msgid ""
@@ -2000,16 +2014,16 @@ msgid ""
 "should be separated by English commas like \"abc,efg,\" Random play is on by "
 "default."
 msgstr ""
-"例如：abc.mp4，只需要填寫視頻文件名abc即可，多個用英文逗號隔開如abc,efg，默認"
+"例如：abc.mp4，只需要填寫影片檔案名abc即可，多個用英文逗號隔開如abc,efg，默認"
 "隨機播放。"
 
 #: options/theme-options.php:1463
 msgid "Cover Social Area Options"
-msgstr "封面社交區域設置"
+msgstr "封面社交區域設定"
 
 #: options/theme-options.php:1469
 msgid "Related Options"
-msgstr "相关設置"
+msgstr "相关設定"
 
 #: options/theme-options.php:1475
 msgid "Cover Social Area"
@@ -2019,7 +2033,7 @@ msgstr "封面社交區域"
 msgid ""
 "Enabled by default, show cover random image toggle button and social network "
 "icons"
-msgstr "默認開啟，顯示封面隨機圖片切換按鈕和社交網絡圖標"
+msgstr "默認開啟，顯示封面隨機圖像切換按鈕和社交網絡圖標"
 
 #: options/theme-options.php:1483
 msgid "Social Icon"
@@ -2029,7 +2043,7 @@ msgstr "社交網絡圖標"
 msgid ""
 "Select your favorite icon pack. Icon pack references are detailed in the "
 "\"About Theme\" section"
-msgstr "選擇你喜歡的圖標包。圖標包引用信息詳見關於主題"
+msgstr "選擇你喜歡的圖標包。圖標包引用資訊詳見關於主題"
 
 #: options/theme-options.php:1505
 msgid "Cover Social Area Rounded Corners"
@@ -2041,7 +2055,7 @@ msgstr "滑動滑塊，推薦數值範圍為10-20"
 
 #: options/theme-options.php:1516
 msgid "Switch Button of Random Images"
-msgstr "封面隨機圖片切換按鈕"
+msgstr "封面隨機圖像切換按鈕"
 
 #: options/theme-options.php:1518
 msgid "Enabled by default, show cover random image toggle button"
@@ -2057,7 +2071,7 @@ msgstr "微信"
 
 #: options/theme-options.php:1539
 msgid "QQ"
-msgstr ""
+msgstr "QQ"
 
 #: options/theme-options.php:1541
 msgid ""
@@ -2093,15 +2107,15 @@ msgstr "新浪微博"
 
 #: options/theme-options.php:1571
 msgid "Github"
-msgstr ""
+msgstr "Github"
 
 #: options/theme-options.php:1579
 msgid "Telegram"
-msgstr ""
+msgstr "Telegram"
 
 #: options/theme-options.php:1587
 msgid "Steam"
-msgstr ""
+msgstr "Steam"
 
 #: options/theme-options.php:1595
 msgid "ZhiHu"
@@ -2113,27 +2127,27 @@ msgstr "QQ空間"
 
 #: options/theme-options.php:1611
 msgid "Lofter"
-msgstr ""
+msgstr "乐乎"
 
 #: options/theme-options.php:1619
 msgid "Youku"
-msgstr "優酷視頻"
+msgstr "優酷"
 
 #: options/theme-options.php:1627
 msgid "Linkedin"
-msgstr ""
+msgstr "領英"
 
 #: options/theme-options.php:1635
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: options/theme-options.php:1643
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: options/theme-options.php:1651
 msgid "CSDN"
-msgstr ""
+msgstr "CSDN"
 
 #: options/theme-options.php:1659
 msgid "JianShu"
@@ -2157,7 +2171,7 @@ msgstr "自定義社交網絡Ⅱ圖標"
 
 #: options/theme-options.php:1701
 msgid "Email Username"
-msgstr "郵箱用戶名"
+msgstr "電子郵箱用戶名"
 
 #: options/theme-options.php:1703
 msgid ""
@@ -2169,7 +2183,7 @@ msgstr ""
 
 #: options/theme-options.php:1709
 msgid "Email Domain"
-msgstr ""
+msgstr "電子郵箱域"
 
 #: options/theme-options.php:1711
 msgid "name@domain.com fo domain.com"
@@ -2177,7 +2191,7 @@ msgstr "name@domain.com的domain.com部分"
 
 #: options/theme-options.php:1719
 msgid "Bulletin Board and Area Title Options"
-msgstr "公告欄和區域標題設置"
+msgstr "公告欄和區域標題設定"
 
 #: options/theme-options.php:1725 options/theme-options.php:1731
 msgid "Bulletin Board"
@@ -2193,7 +2207,7 @@ msgstr "公告欄樣式"
 
 #: options/theme-options.php:1742
 msgid "Picture Background"
-msgstr "圖片背景"
+msgstr "圖像背景"
 
 #: options/theme-options.php:1743
 msgid "Color Background"
@@ -2227,15 +2241,15 @@ msgstr "公告文本"
 
 #: options/theme-options.php:1787
 msgid "Fill in the announcement text, the text beyond 142 bytes will be hidden"
-msgstr "填寫公告文本，文本超出142個字節將會被滾動顯示"
+msgstr "填寫公告文本，文本超出142個字節將會被隱藏"
 
 #: options/theme-options.php:1793
 msgid "Bulletin Board Alignment"
-msgstr "公告文本對齊方向"
+msgstr "公告板對齊方向"
 
 #: options/theme-options.php:1806
 msgid "Bulletin Board Text Color"
-msgstr "公告文本顏色"
+msgstr "公告板文本顏色"
 
 #: options/theme-options.php:1808 options/theme-options.php:1857
 #: options/theme-options.php:2154
@@ -2286,7 +2300,7 @@ msgstr "區域標題下分隔線顏色"
 
 #: options/theme-options.php:1866 options/theme-options.php:1919
 msgid "Display Area Options"
-msgstr "展示區域設置"
+msgstr "展示區域設定"
 
 #: options/theme-options.php:1873
 msgid "Display Area"
@@ -2316,7 +2330,7 @@ msgstr "展示區域背景顏色"
 
 #: options/theme-options.php:1910
 msgid "Display Area Rounded Corners"
-msgstr "展示區域圓"
+msgstr "展示區域圓角"
 
 #: options/theme-options.php:1922
 msgid "First Display Area"
@@ -2325,7 +2339,7 @@ msgstr "第一展示區域"
 #: options/theme-options.php:1927 options/theme-options.php:1953
 #: options/theme-options.php:1979
 msgid "image"
-msgstr "圖片"
+msgstr "圖像"
 
 #: options/theme-options.php:1928 options/theme-options.php:1954
 #: options/theme-options.php:1980
@@ -2352,7 +2366,7 @@ msgstr "第三展示區域"
 
 #: options/theme-options.php:2021
 msgid "Article Area Options"
-msgstr "文章區域設置"
+msgstr "文章區域設定"
 
 #: options/theme-options.php:2028
 msgid "Article Area Display Style"
@@ -2360,36 +2374,36 @@ msgstr "文章區域展示樣式"
 
 #: options/theme-options.php:2039
 msgid "Article Area Featured Image Display Shapes"
-msgstr "文章區域裝飾特色圖片展示形狀"
+msgstr "文章區域裝飾特色圖像展示形狀"
 
 #: options/theme-options.php:2041
 msgid ""
 "You can choose a circular or a rectangular display of the featured image"
-msgstr "你可以選擇圓形展示或者矩形展示文章區域裝飾特色圖片"
+msgstr "你可以選擇圓形展示或者矩形展示文章區域裝飾特色圖像"
 
 #: options/theme-options.php:2052
 msgid "Article Area Featured Image Alignment"
-msgstr "文章區域裝飾特色圖片對齊方向"
+msgstr "文章區域裝飾特色圖像對齊方向"
 
 #: options/theme-options.php:2054
 msgid "You can choose different directions to display the featured images"
-msgstr "你可以選擇不同方向展示文章區域裝飾特色圖片"
+msgstr "你可以選擇不同方向展示文章區域裝飾特色圖像"
 
 #: options/theme-options.php:2066
 msgid "Article Area Featured Image Options"
-msgstr "文章區域裝飾特色圖片選項"
+msgstr "文章區域裝飾特色圖像選項"
 
 #: options/theme-options.php:2068
 msgid "Cover Random Image"
-msgstr "封面隨機圖片"
+msgstr "封面隨機圖像"
 
 #: options/theme-options.php:2069
 msgid "External API Random Image"
-msgstr "外部API隨機圖片"
+msgstr "外部API隨機圖像"
 
 #: options/theme-options.php:2077
 msgid "Article Area Featured Image External API Random Image Address"
-msgstr "文章區域裝飾特色圖片外部API隨機圖片地址"
+msgstr "文章區域裝飾特色圖像外部API隨機圖像地址"
 
 #: options/theme-options.php:2085
 msgid "Article Area Title Font Size"
@@ -2436,13 +2450,13 @@ msgstr "開啟之後“詳細”圖標將顯示在文章區域內下方"
 
 #: options/theme-options.php:2135
 msgid "Article Area Author Info"
-msgstr ""
+msgstr "文章區域“作者資訊”"
 
 #: options/theme-options.php:2136
 msgid ""
 "When turned on, author information will be added to the article metadata "
 "section."
-msgstr ""
+msgstr "開啟之後，文章元資料部分將增加作者資訊。"
 
 #: options/theme-options.php:2143
 msgid "Article Area Icon Color"
@@ -2454,11 +2468,11 @@ msgstr "文章區域邊框陰影顏色"
 
 #: options/theme-options.php:2163
 msgid "Page Options"
-msgstr "頁面設置"
+msgstr "頁面設定"
 
 #: options/theme-options.php:2169
 msgid "Integrated Options"
-msgstr "綜合設置"
+msgstr "綜合設定"
 
 #: options/theme-options.php:2176
 msgid "Page Style"
@@ -2478,7 +2492,7 @@ msgstr "Github樣式"
 
 #: options/theme-options.php:2198
 msgid "Page Decoration Image"
-msgstr "頁面裝飾圖片"
+msgstr "頁面裝飾圖像"
 
 #: options/theme-options.php:2199
 msgid ""
@@ -2514,37 +2528,39 @@ msgstr "默認開啟，用戶在復製文字內容超過30字節時，會有版�
 
 #: options/theme-options.php:2234
 msgid "Page LazyLoad"
-msgstr "頁面LazyLoad加載"
+msgstr "頁面LazyLoad"
 
 #: options/theme-options.php:2235
 msgid ""
 "LazyLoad effect for page images, WordPress block editor already comes with "
 "similar effect, not recommended to turn on"
 msgstr ""
+"開啟之後頁面圖像會有LazyLoad載入效果，WordPress區塊編輯器已經自帶相似效果，不"
+"建議開啟"
 
 #: options/theme-options.php:2242
 msgid "Page LazyLoad Placeholder SVG"
-msgstr "頁面LazyLoad加載佔位SVG"
+msgstr "頁面LazyLoad載入佔位SVG"
 
 #: options/theme-options.php:2244
 msgid ""
 "Fill in the address, this is the placeholder image that will be displayed "
 "when the page LazyLoad is being loaded"
-msgstr "填寫地址，此為頁面LazyLoad加載時會顯示的佔位圖"
+msgstr "填寫地址，此為頁面LazyLoad載入時會顯示的佔位圖"
 
 #: options/theme-options.php:2251
 msgid "Page Image Placeholder SVG"
-msgstr "頁面圖像加載佔位SVG"
+msgstr "頁面圖像載入佔位SVG"
 
 #: options/theme-options.php:2252
 msgid ""
 "Fill address, this is the SVG that will be displayed as a placeholder when "
 "the page image is being loaded"
-msgstr "填寫地址，此為加載頁面圖像時佔位顯示的SVG"
+msgstr "填寫地址，此為載入頁面圖像時佔位顯示的SVG"
 
 #: options/theme-options.php:2261
 msgid "Article Page Options"
-msgstr "文章頁面設置"
+msgstr "文章頁面設定"
 
 #: options/theme-options.php:2268
 msgid "Article Page Title Font Size"
@@ -2555,7 +2571,7 @@ msgid ""
 "Slide to adjust, recommended value range is 28-36. This option is only "
 "available for article pages that have a featured image set"
 msgstr ""
-"滑動滑塊，推薦數值範圍為28-36。此選項僅對已經設置了特色圖片的文章頁面生效"
+"滑動滑塊，推薦數值範圍為28-36。此選項僅對已經設定了特色圖像的文章頁面生效"
 
 #: options/theme-options.php:2279
 msgid "Article Page Title Underline Animation"
@@ -2565,15 +2581,15 @@ msgstr "文章頁面標題下劃線動畫"
 msgid ""
 "Article title will have underline animation when this is enabled and article "
 "has a featured image set"
-msgstr "開啟且文章設置了特色圖片之後，文章標題將有下劃線動"
+msgstr "開啟且文章設定了特色圖像之後，文章標題將有下劃線動"
 
 #: options/theme-options.php:2287
 msgid "Article Page Auto Show Menu"
-msgstr ""
+msgstr "文章頁面自動顯示菜單"
 
 #: options/theme-options.php:2288
 msgid "Enabled by default, the article page will automatically show the menu"
-msgstr ""
+msgstr "默認開啟，文章頁面會自動顯示菜單"
 
 #: options/theme-options.php:2295
 msgid "Article Page Prev/Next Article Switcher"
@@ -2595,35 +2611,35 @@ msgstr "開啟之後文章頁面將出現版權提示和標籤"
 
 #: options/theme-options.php:2311
 msgid "Article Page Author Info"
-msgstr "文章頁面作者信息"
+msgstr "文章頁面作者資訊"
 
 #: options/theme-options.php:2312
 msgid "Author information will appear on the article page when enabled"
-msgstr "開啟之後文章頁面將出現作者信息"
+msgstr "開啟之後文章頁面將出現作者資訊"
 
 #: options/theme-options.php:2319
 msgid "Article Page Author Info Signature Field Text"
-msgstr "文章頁面作者信息簽名欄文本"
+msgstr "文章頁面作者資訊簽名欄文本"
 
 #: options/theme-options.php:2328
 msgid "Article Page Appreciation Button (Alipay QR Code)"
-msgstr "文章頁面讚賞按鈕支付寶二維碼"
+msgstr "文章頁面讚賞按鈕（支付寶QR碼）"
 
 #: options/theme-options.php:2329
 msgid "Upload Alipay Receipt QR Code Image"
-msgstr "上傳支付寶收款碼圖片"
+msgstr "上傳支付寶收款碼圖像"
 
 #: options/theme-options.php:2336
 msgid "Article Page Appreciation Button (Wechat QR Code)"
-msgstr "文章頁面讚賞按鈕微信二維碼"
+msgstr "文章頁面讚賞按鈕（微信QR碼）"
 
 #: options/theme-options.php:2337
 msgid "Upload WeChat Receipt QR Code Image"
-msgstr "上傳微信收款碼圖片"
+msgstr "上傳微信收款碼圖像"
 
 #: options/theme-options.php:2346
 msgid "Template Page Options"
-msgstr "模板頁面設置"
+msgstr "模板頁面設定"
 
 #: options/theme-options.php:2353
 msgid "Template Page Title Font Size"
@@ -2634,28 +2650,28 @@ msgid ""
 "Slide to adjust, recommended value range is 36-48. This option is only "
 "available for template pages with featured images already set"
 msgstr ""
-"滑動滑塊，推薦數值範圍為36-48。此選項僅對已經設置了特色圖片的模板頁面生效"
+"滑動滑塊，推薦數值範圍為36-48。此選項僅對已經設定了特色圖像的模板頁面生效"
 
 #: options/theme-options.php:2364
 msgid "Ideas Template Background ColorⅠ"
-msgstr "說說模板說說背景顏色Ⅰ"
+msgstr "推文模板推文背景顏色Ⅰ"
 
 #: options/theme-options.php:2372
 msgid "Ideas Template Background Color II"
-msgstr "說說模板說說背景顏色Ⅱ"
+msgstr "推文模板推文背景顏色Ⅱ"
 
 #: options/theme-options.php:2380
 msgid "Ideas Template Tip Arrow"
-msgstr "說說模板說說提示箭頭"
+msgstr "推文模板推文提示箭頭"
 
 #: options/theme-options.php:2381
 msgid ""
 "After turning on the alert arrow will appear on the left side of the comment"
-msgstr "開啟之後提示箭頭將出現在說說左側上方"
+msgstr "開啟之後提示箭頭將出現在推文左側上方"
 
 #: options/theme-options.php:2388
 msgid "Ideas Template Font"
-msgstr "說說模板說說字體"
+msgstr "推文模板推文字體"
 
 #: options/theme-options.php:2396
 msgid "Bilibili Bangumi Catch-up Template Account ID"
@@ -2679,52 +2695,52 @@ msgid ""
 "bilibili homepage to get cookies. If left empty, it will not show the "
 "progress of catching up bangumis"
 msgstr ""
-"填寫你的帳號Cookies，F12打開瀏覽器網絡面板，前往你的B站主頁獲取Cookies。如果"
+"填寫你的帳號Cookies，F12打開瀏覽器網路面板，前往你的B站主頁獲取Cookies。如果"
 "留空，將不會顯示追番進度"
 
 #: options/theme-options.php:2412
 msgid "Friend Link Template Unit Alignment"
-msgstr "友情鏈接模板單元對齊方向"
+msgstr "友情連結模板單元對齊方向"
 
 #: options/theme-options.php:2424
 msgid "Login Template Registration Function"
-msgstr "登錄模板註冊功能"
+msgstr "登入模板註冊功能"
 
 #: options/theme-options.php:2425
 msgid "Login template will allow registration when enabled"
-msgstr "開啟之後登錄模板將允許註冊"
+msgstr "開啟之後登入模板將允許註冊"
 
 #: options/theme-options.php:2434
 msgid "Comment-related Options"
-msgstr "評論相關設置"
+msgstr "留言相關設定"
 
 #: options/theme-options.php:2441
 msgid "Page Comment Area Display"
-msgstr "頁面評論區域顯示"
+msgstr "頁面留言板顯示"
 
 #: options/theme-options.php:2442
 msgid "You can choose to expand or shirink the content of the comment area"
-msgstr "你可以選擇展開顯示或者收縮顯示評論區域內容"
+msgstr "你可以選擇展開或者摺疊留言板內容"
 
 #: options/theme-options.php:2444
 msgid "Expand"
-msgstr "展開顯示"
+msgstr "展開"
 
 #: options/theme-options.php:2445
 msgid "Shrink"
-msgstr "收縮顯示"
+msgstr "摺疊"
 
 #: options/theme-options.php:2453
 msgid "Page Comment Area Bilibili Emoji Pack"
-msgstr "頁面評論區域嗶哩嗶哩表情包"
+msgstr "頁面留言板域嗶哩嗶哩表情包"
 
 #: options/theme-options.php:2454
 msgid "Default on, bilibili emotions are displayed below the comment box"
-msgstr "默認開啟，嗶哩嗶哩表情包顯示在評論框的下方"
+msgstr "默認開啟，嗶哩嗶哩表情包顯示在留言框的下方"
 
 #: options/theme-options.php:2461
 msgid "Page Comment Area Bottom Right Background Image"
-msgstr "頁面評論區域右下背景圖片"
+msgstr "頁面留言板右下背景圖像"
 
 #: options/theme-options.php:2462
 msgid ""
@@ -2733,62 +2749,62 @@ msgstr "如果此選項為空白，則沒有圖像，無最佳推薦"
 
 #: options/theme-options.php:2469
 msgid "Page Comment Area UA Info"
-msgstr "頁面評論區域UA信息"
+msgstr "頁面留言板UA資訊"
 
 #: options/theme-options.php:2470
 msgid ""
 "When enabled, the page comment area will display the user’s browser, "
 "operating system information"
-msgstr "開啟之後頁面評論區域將顯示用戶的瀏覽器，操作系統信息"
+msgstr "開啟之後頁面留言板將顯示用戶的瀏覽器，作業系統資訊"
 
 #: options/theme-options.php:2477
 msgid "Page Comment Area Location Information"
-msgstr "頁面評論區域位置信息"
+msgstr "頁面留言板位置資訊"
 
 #: options/theme-options.php:2478
 msgid ""
 "When enabled, the page comment area will show the user’s location information"
-msgstr "開啟之後頁面評論區域將顯示用戶的位置信息"
+msgstr "開啟之後頁面留言板將顯示用戶的位置資訊"
 
 #: options/theme-options.php:2485
 msgid "Page Comment Area IP Source"
-msgstr ""
+msgstr "頁面留言IP源"
 
 #: options/theme-options.php:2486
 msgid ""
 "You can choose the theme self built IP library or Taobao IP library as the "
 "comment location information source"
-msgstr ""
+msgstr "你可以選擇主題自建IP庫或者淘寶IP庫作為留言位置資訊源"
 
 #: options/theme-options.php:2488
 msgid "Theme Self Built IP Lib"
-msgstr ""
+msgstr "題自建IP庫"
 
 #: options/theme-options.php:2489
 msgid "Taobao IP Lib"
-msgstr ""
+msgstr "淘寶IP庫"
 
 #: options/theme-options.php:2497
 msgid "Private Comment Function"
-msgstr "私人評論功能"
+msgstr "私人留言功能"
 
 #: options/theme-options.php:2498
 msgid ""
 "When enabled, users are allowed to set their comments to be invisible to "
 "others"
-msgstr "開啟之後將允許用戶設置自己的評論對其他人不可見"
+msgstr "開啟之後將允許用戶設定自己的留言對其他人不可見"
 
 #: options/theme-options.php:2505
 msgid "Page Comment Area Bot Verification"
-msgstr "頁面評論區域機器人驗證"
+msgstr "頁面留言板機器人驗證"
 
 #: options/theme-options.php:2506
 msgid "After turning on user comments need to be verified before posting"
-msgstr "開啟之後用戶評論前需要經過驗證後才可發布"
+msgstr "開啟之後用戶留言前需要經過驗證後才可發布"
 
 #: options/theme-options.php:2513
 msgid "QQ Avatar Link Encryption"
-msgstr "QQ頭像鏈接加密"
+msgstr "QQ頭貼連結加密"
 
 #: options/theme-options.php:2516
 msgid "Redirect (low security)"
@@ -2796,19 +2812,19 @@ msgstr "重定向（低安全性）"
 
 #: options/theme-options.php:2517
 msgid "Get avatar data in the backend (medium security)"
-msgstr "後端獲取頭像數據（中安全性）"
+msgstr "後端獲取頭貼數據（中安全性）"
 
 #: options/theme-options.php:2518
 msgid "Parse avatar interface in the backend (high security, slow)"
-msgstr "後端解析頭像接口（高安全性，慢速）"
+msgstr "後端解析頭貼接口（高安全性，慢速）"
 
 #: options/theme-options.php:2526
 msgid "Page Comment Area Upload Image Interface"
-msgstr "頁面評論區域上傳圖片接口"
+msgstr "頁面留言板上傳圖像接口"
 
 #: options/theme-options.php:2539
 msgid "Imgur Client ID"
-msgstr ""
+msgstr "Imgur Client ID"
 
 #: options/theme-options.php:2541
 msgid ""
@@ -2826,12 +2842,12 @@ msgid ""
 "to the tutorial: https://2heng.xin/2018/06/06/javascript-upload-images-with-"
 "imgur-api/"
 msgstr ""
-"後端上傳圖片到 Imgur 的時候使用的代理。你可以參考教程：https://2heng."
+"後端上傳圖像到 Imgur 的時候使用的代理。你可以參考教程：https://2heng."
 "xin/2018/06/06/javascript-upload-images-with-imgur-api/"
 
 #: options/theme-options.php:2556
 msgid "SM.MS Secret Token"
-msgstr ""
+msgstr "SM.MS Secret Token"
 
 #: options/theme-options.php:2558
 msgid ""
@@ -2840,7 +2856,7 @@ msgstr "此處填寫Key，獲取請訪問 https://sm.ms/home/apitoken"
 
 #: options/theme-options.php:2564
 msgid "Chevereto API v1 Key"
-msgstr ""
+msgstr "Chevereto API v1 Key"
 
 #: options/theme-options.php:2566
 msgid ""
@@ -2861,19 +2877,19 @@ msgstr ""
 
 #: options/theme-options.php:2580
 msgid "Comment Image Proxy"
-msgstr "評論圖片代理"
+msgstr "留言圖像代理"
 
 #: options/theme-options.php:2581
 msgid "Proxy for the image displayed on the frontend"
-msgstr "前端顯示的圖片的代理"
+msgstr "前端顯示的圖像的代理"
 
 #: options/theme-options.php:2588
 msgid "Mail Template Featured Image"
-msgstr "郵件模板特色圖片"
+msgstr "郵件模板特色圖像"
 
 #: options/theme-options.php:2589
 msgid "Set the background image of your reply email"
-msgstr "設置你的回复郵件上方背景圖片"
+msgstr "設定你的回復郵件上方背景圖像"
 
 #: options/theme-options.php:2597
 msgid "Mail Template Sending Address Prefix"
@@ -2890,7 +2906,7 @@ msgstr ""
 
 #: options/theme-options.php:2605
 msgid "User Mail Reply Notification"
-msgstr "用戶郵件回复通知'"
+msgstr "用戶郵件回復通知"
 
 #: options/theme-options.php:2606
 msgid ""
@@ -2898,60 +2914,60 @@ msgid ""
 "comments receive a reply. After turning it on users are allowed to set "
 "whether to use email notifications when their comments receive a reply"
 msgstr ""
-"WordPress默認會使用郵件通知用戶評論收到回复，開啟之後允許用戶設置自己的評論收"
-"到回复時是否使用郵件通知"
+"WordPress默認會使用郵件通知用戶留言收到回復，開啟之後允許用戶設定自己的留言收"
+"到回復時是否使用郵件通知"
 
 #: options/theme-options.php:2613
 msgid "Admin Email Reply Notification"
-msgstr "管理員郵件回复通知"
+msgstr "管理員郵件回復通知"
 
 #: options/theme-options.php:2614
 msgid ""
 "Use email notifications when admin comments receive a reply after turning it "
 "on"
-msgstr "開啟之後當管理員評論收到回复時使用郵件通知"
+msgstr "開啟之後當管理員留言收到回復時使用郵件通知"
 
 #: options/theme-options.php:2623
 msgid "Other Options"
-msgstr "其他設置"
+msgstr "其他設定"
 
 #: options/theme-options.php:2629
 msgid "Login Screen and Dashboard Related Options"
-msgstr "登錄界面和儀錶盤相關設置"
+msgstr "登入介面和儀錶盤相關設定"
 
 #: options/theme-options.php:2635
 msgid "Login Screen"
-msgstr "登錄界面"
+msgstr "登入介面"
 
 #: options/theme-options.php:2641
 msgid "Login Screen Background Image"
-msgstr "登錄界面背景圖片"
+msgstr "登入介面背景圖像"
 
 #: options/theme-options.php:2642
 msgid ""
 "Set your login screen background image, leave this option blank to show the "
 "default"
-msgstr "設置你的登錄界面背景圖片，此選項留空則顯示默認背景"
+msgstr "設定你的登入介面背景圖像，此選項留空則顯示默認背景"
 
 #: options/theme-options.php:2650
 msgid "Login Screen Background Blur"
-msgstr "登錄界面背景虛化"
+msgstr "登入介面背景虛化"
 
 #: options/theme-options.php:2651
 msgid "Login screen background image will be blurred when enabled"
-msgstr "開啟之後登錄界面背景圖片將被虛化"
+msgstr "開啟之後登入介面背景圖像將被虛化"
 
 #: options/theme-options.php:2658
 msgid "Login Screen Logo"
-msgstr "登錄界面Logo"
+msgstr "登入介面Logo"
 
 #: options/theme-options.php:2659
 msgid "Set your login screen Logo"
-msgstr "設置你的登錄界面Logo"
+msgstr "設定你的登入介面Logo"
 
 #: options/theme-options.php:2667
 msgid "Jump after login"
-msgstr "登錄後跳轉"
+msgstr "登入後跳轉"
 
 #: options/theme-options.php:2668
 msgid "Jump to backend for admins and home for users after turning on"
@@ -2963,13 +2979,13 @@ msgstr "儀錶盤"
 
 #: options/theme-options.php:2680
 msgid "Dashboard Background Image"
-msgstr "儀錶盤背景圖片"
+msgstr "儀錶盤背景圖像"
 
 #: options/theme-options.php:2681
 msgid ""
 "Set your dashboard background image, leave this option blank to show white "
 "background"
-msgstr "設置你的儀錶盤背景圖片，此選項留空則顯示白色背景"
+msgstr "設定你的儀錶盤背景圖像，此選項留空則顯示白色背景"
 
 #: options/theme-options.php:2689
 msgid "Dashboard Primary Menu Color"
@@ -2993,7 +3009,7 @@ msgstr "儀錶盤文本顏色"
 
 #: options/theme-options.php:2730
 msgid "Low Use Options"
-msgstr "低使用設置"
+msgstr "低使用設定"
 
 #: options/theme-options.php:2737
 msgid "Statistics API"
@@ -3039,25 +3055,25 @@ msgstr "23K次訪問"
 
 #: options/theme-options.php:2763
 msgid "Live Search"
-msgstr "實時搜索"
+msgstr "實時搜尋"
 
 #: options/theme-options.php:2764
 msgid ""
 "After turning on the live search in the frontend, call Rest API to update "
 "the cache once an hour. You can set the cache time manually in api.php"
 msgstr ""
-"開啟之後將在前台實現實時搜索，調用 Rest API 每小時更新一次緩存，可在 api.php "
-"里手動設置緩存時間"
+"開啟之後將在前台實現實時搜尋，調用 Rest API 每小時更新一次快取，可在 api.php "
+"里手動設定快取時間"
 
 #: options/theme-options.php:2771
 msgid "Live Search Comment Support"
-msgstr "實時搜索評論支援"
+msgstr "實時搜尋留言支援"
 
 #: options/theme-options.php:2773
 msgid ""
 "Enable to search for comments in live search (not recommended if site has "
 "too many comments)"
-msgstr "開啟之後將在可在實時搜索中搜索評論（如果網站評論數量太多不建議開啟）"
+msgstr "開啟之後將在可在實時搜尋中搜尋留言（如果網站留言數量太多不建議開啟）"
 
 #: options/theme-options.php:2780
 msgid "Google Stats Code"
@@ -3081,12 +3097,12 @@ msgid ""
 "here, fill in an integer. Calculation method: actual time = time of display "
 "error - the integer you entered (in hours)"
 msgstr ""
-"滑動滑塊，如果評論出現時差問題在這裡調整，填入一個整數，計算方法：實際時間=顯"
+"滑動滑塊，如果留言出現時差問題在這裡調整，填入一個整數，計算方法：實際時間=顯"
 "示錯誤的時間-你輸入的整數（單位：小時）"
 
 #: options/theme-options.php:2802
 msgid "Gravatar Service"
-msgstr ""
+msgstr "Gravatar服務"
 
 #: options/theme-options.php:2807
 msgid ""
@@ -3094,62 +3110,67 @@ msgid ""
 "Gravatar Service in China. You can upload and share avatars freely. Go to <a "
 "href=\"https://cravatar.cn/\">official website</a> for details </p>"
 msgstr ""
+"<p><strong>Cravatar服務：</strong> Cravatar服務 是 Gravatar服務 在中國的替代"
+"方案，你可以自由的上傳和分享頭貼。前往 <a href=\"https://cravatar.cn/\">官方"
+"站點</a> 獲取更多資訊</p>"
 
 #: options/theme-options.php:2813
 msgid "Gravatar Service Proxy"
-msgstr ""
+msgstr "Gravatar服務代理"
 
 #: options/theme-options.php:2814
 msgid ""
 "You can select multiple proxy as the Gravatar Service Proxy. By default, "
 "Cravatar Service is used as the Gravatar Service Proxy."
 msgstr ""
+"你可以選擇多種代理作為Gravatar服務代理。默認使用Cravatar服務作為Gravatar服務"
+"代理。"
 
 #: options/theme-options.php:2816
 msgid "Cravatar Service"
-msgstr ""
+msgstr "Cravatar服務"
 
 #: options/theme-options.php:2817
 msgid "Geekzu"
-msgstr ""
+msgstr "極客族"
 
 #: options/theme-options.php:2818
 msgid "Loli Net"
-msgstr ""
+msgstr "Loli Net"
 
 #: options/theme-options.php:2819
 msgid "Official"
-msgstr ""
+msgstr "官方"
 
 #: options/theme-options.php:2820
 msgid "Official CN"
-msgstr ""
+msgstr "官方中國鏡像"
 
 #: options/theme-options.php:2827
 msgid "Lightbox"
-msgstr ""
+msgstr "燈箱"
 
 #: options/theme-options.php:2833
 msgid "BaguetteBox Lightbox Effect"
-msgstr ""
+msgstr "BaguetteBox燈箱效果"
 
 #: options/theme-options.php:2834
 msgid "BaguetteBox will be used as the image lightbox effect when turned on"
-msgstr ""
+msgstr "開啟之後將使用BaguetteBox作為圖像燈箱效果"
 
 #: options/theme-options.php:2841
 msgid "FancyBox Lightbox Effect"
-msgstr ""
+msgstr "FancyBox燈箱效果"
 
 #: options/theme-options.php:2842
 msgid ""
 "FancyBox will be used as an image lightbox effect after turning on, "
 "additional JQ libraries will be loaded"
-msgstr ""
+msgstr "開啟之後將使用FancyBox作為圖像燈箱效果，將會額外載入JQ庫"
 
 #: options/theme-options.php:2849
 msgid "Code Highlighting"
-msgstr ""
+msgstr "程式碼高亮"
 
 #: options/theme-options.php:2854
 msgid ""
@@ -3160,50 +3181,56 @@ msgid ""
 "dynamically loaded files</a>. </p> <p><strong>Custom:</strong> For cases "
 "where another configuration is available. </p>"
 msgstr ""
+"<p><strong>Highlight.js：</strong> 默認值，自動識別語言。</"
+"p><p><strong>Prism.js：</strong> 需要指定語言，使用方法請查閱 <a href="
+"\"https://prismjs.com/#basic-usage\">基本用法</a> 和 <a href=\"https://"
+"prismjs.com/ plugins/file-highlight/\">如何程式碼高亮顯示動態載入的檔案</"
+"a>。 </p><p><strong>自定義：</strong> 適用於另有配置的情況。</p>"
 
 #: options/theme-options.php:2862
 msgid "Code Highlight Method"
-msgstr ""
+msgstr "程式碼高亮程式"
 
 #: options/theme-options.php:2874
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
-msgstr ""
+msgstr "Prism.js：為所有程式碼塊增加行數顯示"
 
 #: options/theme-options.php:2878
 msgid ""
 "See the <a href=\"https://prismjs.com/plugins/line-numbers/\">plugin "
 "description documentation</a>"
 msgstr ""
+"請查閱 <a href=\"https://prismjs.com/plugins/line-numbers/\">外掛描述文件</a>"
 
 #: options/theme-options.php:2884
 msgid "Prism.js: Autoload Address"
-msgstr ""
+msgstr "Prism.js：自動載入地址"
 
 #: options/theme-options.php:2888
 msgid "Leave blank to use default values"
-msgstr ""
+msgstr "留空以使用默認值"
 
 #: options/theme-options.php:2895
 msgid "Prism.js: Code Highlight Theme"
-msgstr ""
+msgstr "Prism.js：程式碼高亮主題"
 
 #: options/theme-options.php:2896 options/theme-options.php:2907
 msgid "Relative to autoload address. Leave blank to use default values"
-msgstr ""
+msgstr "相對於自動載入地址。留空以使用默認值"
 
 #: options/theme-options.php:2906
 msgid "Prism.js: Code Highlight Theme (Dark Mode)"
-msgstr ""
+msgstr "Prism.js：程式碼高亮主題（深色模式）"
 
 #: options/theme-options.php:2917
 msgid ""
 "The following Options are not recommended to be modified blindly, please use "
 "them under the guidance of others"
-msgstr ""
+msgstr "以下設定不推薦盲目進行修改，請在他人的指導下使用"
 
 #: options/theme-options.php:2923
 msgid "Image CDN"
-msgstr "圖片CDN"
+msgstr "圖像CDN"
 
 #: options/theme-options.php:2924
 msgid ""
@@ -3212,12 +3239,12 @@ msgid ""
 "be loaded from http://your CDN domain/2018/05/xx.png"
 msgstr ""
 "注意：填寫格式為 http(s)://你的CDN域名/。也就是說，原路徑為 http://your."
-"domain/wp-content/uploads/2018/05/xx.png 的圖片將從 http://你的CDN域"
-"名/2018/05/xx.png 加載"
+"domain/wp-content/uploads/2018/05/xx.png 的圖像將從 http://你的CDN域"
+"名/2018/05/xx.png 載入"
 
 #: options/theme-options.php:2931
 msgid "Articles Categories (Do not display)"
-msgstr ""
+msgstr "文章分類（不顯示）"
 
 #: options/theme-options.php:2932 options/theme-options.php:2939
 msgid "Fill in category ID, seperate in English\" , \" when more than one"
@@ -3225,11 +3252,11 @@ msgstr "'填寫分類ID，多個用英文“ , ”分開"
 
 #: options/theme-options.php:2938
 msgid "Image Display Category"
-msgstr "圖片展示分類"
+msgstr "圖像展示分類"
 
 #: options/theme-options.php:2945
 msgid "Specify Login Address"
-msgstr "指定登錄地址"
+msgstr "指定登入地址"
 
 #: options/theme-options.php:2946
 msgid ""
@@ -3238,7 +3265,7 @@ msgid ""
 "filling in the new page you can test the normal opening, so as not to cause "
 "the inability to enter the background, etc."
 msgstr ""
-"強制不使用WordPress登錄頁面地址登錄，填寫新建的登陸頁面地址，比如：http://"
+"強制不使用WordPress登入頁面地址登入，填寫新建的登入頁面地址，比如：http://"
 "www.xxx.com/login。注意填寫前先測試下你新建的頁面是可以正常打開的，以免造成無"
 "法進入後台等情況。"
 
@@ -3250,7 +3277,7 @@ msgstr "指定註冊地址"
 msgid ""
 "This address is used as the registration entry on the login page, if you "
 "specify a login address, it is recommended to fill in"
-msgstr "該地址在登錄頁面作為註冊入口，如果你指定了登錄地址，則建議填寫"
+msgstr "該地址在登入頁面作為註冊入口，如果你指定了登入地址，則建議填寫"
 
 #: options/theme-options.php:2959
 msgid "Version Control"
@@ -3258,7 +3285,7 @@ msgstr "版本控制"
 
 #: options/theme-options.php:2960
 msgid "Used to update front-end cookies and browser cache, can use any string"
-msgstr "用於更新前端Cookie和瀏覽器緩存，可使用任意字符串"
+msgstr "用於更新前端Cookie和瀏覽器快取，可使用任意字符串"
 
 #: options/theme-options.php:2966
 msgid "Backup&Recovery"
@@ -3266,7 +3293,7 @@ msgstr "備份恢復"
 
 #: options/theme-options.php:2968
 msgid "Backup or Recovery your theme options"
-msgstr "'備份或恢復你的主題設置"
+msgstr "備份或恢復你的主題設定"
 
 #: options/theme-options.php:2979
 msgid "About Theme"
@@ -3274,7 +3301,7 @@ msgstr "關於主題"
 
 #: options/theme-options.php:2985
 msgid "Version Info"
-msgstr "版本信息"
+msgstr "版本資訊"
 
 #: options/theme-options.php:2990
 msgid ""
@@ -3289,6 +3316,9 @@ msgid ""
 "Theme Documentation</a> | <a href=\"https://github.com/mirai-mamori/Sakurairo"
 "\">项目地址 / Project Address</a>"
 msgstr ""
+"iro 主題版本 / Theme Version %s | <a href=\"https://iro.tw\">主題文件 / "
+"Theme Documentation</a> | <a href=\"https://github.com/mirai-mamori/Sakurairo"
+"\">專案地址 / Project Address</a>"
 
 #: options/theme-options.php:3001
 msgid "Update Related"
@@ -3303,10 +3333,12 @@ msgid ""
 "If you are using a server set up in mainland China, please use the jsDelivr "
 "source or the official theme source as your theme update source"
 msgstr ""
+"如果你使用的是架設在中國的伺服器，請使用jsDelivr源或主題官方源作為你的主題更"
+"新源"
 
 #: options/theme-options.php:3020
 msgid "Theme Update Test Channel Disclaimer"
-msgstr ""
+msgstr "主題更新測試通道免責聲明"
 
 #: options/theme-options.php:3025
 msgid ""
@@ -3316,28 +3348,32 @@ msgid ""
 "not limited to possible data loss) into the options text box <strong> \"I "
 "agree and am willing to bear all unexpected consequences\"</strong>"
 msgstr ""
+"請在 <strong> 確保你已經認真了解參與測試帶來的風險並且願意自行承擔一切後果 </"
+"strong>（包括但不限於可能的資料丟失）之後，複製後文引號內的文本到選項文本框"
+"內 <strong> \"I agree and am willing to bear all unexpected consequences\" </"
+"strong>"
 
 #: options/theme-options.php:3031
 msgid "Theme Update Channel"
-msgstr ""
+msgstr "主題更新頻道"
 
 #: options/theme-options.php:3037
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
-msgstr ""
+msgstr "你可以在此切換更新頻道以參與到新版本的測試中"
 
 #: options/theme-options.php:3039
 msgid "Stable Channel"
-msgstr ""
+msgstr "正式通道"
 
 #: options/theme-options.php:3040
 msgid "Beta Channel"
-msgstr ""
+msgstr "公共測試頻道"
 
 #: options/theme-options.php:3041
 msgid "Preview Channel"
-msgstr ""
+msgstr "預覽測試頻道"
 
 #: options/theme-options.php:3048
 msgid "Localization"
@@ -3353,15 +3389,15 @@ msgstr "開啟之後前端庫將不走jsDelivr CDN"
 
 #: options/theme-options.php:3062
 msgid "Localize JS/CSS Files"
-msgstr "本地化JS/CSS文件"
+msgstr "本地化JS/CSS檔案"
 
 #: options/theme-options.php:3063
 msgid "Enabled by default, some JS files and CSS files do not use jsDelivr CDN"
-msgstr "默認開啟，部分JS文件和CSS文件不走jsDelivr CDN"
+msgstr "默認開啟，部分JS檔案和CSS檔案不走jsDelivr CDN"
 
 #: options/theme-options.php:3069
 msgid "Reference Information"
-msgstr "引用信息"
+msgstr "引用資訊"
 
 #: options/theme-options.php:3074
 msgid ""
@@ -3376,10 +3412,18 @@ msgid ""
 "As Provided and Referenced by <a href=\"https://hyacm.com/acai/ui/143/sakura-"
 "logo/\">Hyacm</a></p>"
 msgstr ""
+"<p>流暢設計圖標引用了由 Paradox 設計的 <a href=\"https://wwi.lanzous.com/"
+"ikyq5kgx0wb\">Fluent圖標包</a></p>\n"
+"        <p>沐氫圖標引用了由 缄默 設計的 <a href=\"https://www.coolapk.com/"
+"apk/com.muh2.icon\">沐氫圖標包</a></p>\n"
+"        <p>看板娘引用了由 Stevenjoezhang 開源的 <a href=\"https://github.com/"
+"stevenjoezhang/live2d-widget\">Live2d-Widget</a> 專案</p>\n"
+"        <p>白貓樣式Logo參考原主題作者白貓，由 <a href=\"https://hyacm.com/"
+"acai/ui/143/sakura-logo/\">Hyacm</a> 提供方案並引用</p>"
 
 #: options/theme-options.php:3082
 msgid "Dependency Information"
-msgstr "依賴信息"
+msgstr "依賴資訊"
 
 #: options/theme-options.php:3087
 msgid ""
@@ -3392,6 +3436,12 @@ msgid ""
 "\"https://github.com/YahnisElsts/plugin-update-checker\">Plugin Update "
 "Checker</a> Project</p>"
 msgstr ""
+"<p>靜態資源依賴於主題官方 Fuukei 雙刃劍的 <a href=\"https://github.com/"
+"Fuukei/Public_Repository\">Public Repository</a> 專案</p>\n"
+"        <p>設定框架依賴於 Codestar 開源的 <a href=\"https://github.com/"
+"Codestar/codestar-framework\">Codestar Framework</a> 專案</p>\n"
+"        <p>更新功能依賴於 YahnisElsts 開源的 <a href=\"https://github.com/"
+"YahnisElsts/plugin-update-checker\">Plugin Update Checker</a> 專案</p>"
 
 #: options/theme-options.php:3094
 msgid ""
