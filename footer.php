@@ -86,7 +86,8 @@ $reception_background = iro_opt('reception_background');
 	<!-- search end -->
 <?php wp_footer(); ?>
 <div class="skin-menu no-select">
-<?php if(iro_opt('style_menu_display') == 'full'): ?>Style
+<?php if(iro_opt('style_menu_display') == 'full'): ?>
+	<p style="margin-bottom: 0.5em;">Style</p>
 <?php endif; ?>
     <div class="theme-controls row-container">
         <ul class="menu-list">
@@ -119,7 +120,7 @@ $reception_background = iro_opt('reception_background');
         </ul>
 	</div>
 	<?php if(iro_opt('style_menu_display') == 'full'): ?>
-		Font
+	<p style="margin-bottom: 0.1em;">Fonts</p>
     <div class="font-family-controls row-container">
         <button type="button" class="control-btn-serif selected" data-name="serif" ><i class="fa fa-font" aria-hidden="true"></i></button>
         <button type="button" class="control-btn-sans-serif" data-name="sans-serif"><i class="fa fa-bold" aria-hidden="true"></i></button>

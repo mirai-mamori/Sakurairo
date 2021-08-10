@@ -68,7 +68,7 @@ if ( ! class_exists( 'CSF_Field_media' ) ) {
 
         echo '<div class="csf--preview'. esc_attr( $hidden_auto ) .'">';
         echo '<div class="csf-image-preview"'. $preview_style .'>';
-        echo '<a href="#" class="csf--remove fas fa-times"></a><span><img src="'. esc_url( $preview_src ) .'" class="csf--src" /></span>';
+        echo '<i class="csf--remove fas fa-times"></i><span><img src="'. esc_url( $preview_src ) .'" class="csf--src" /></span>';
         echo '</div>';
         echo '</div>';
 

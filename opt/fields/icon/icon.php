@@ -30,7 +30,7 @@ if ( ! class_exists( 'CSF_Field_icon' ) ) {
       echo '<span class="csf-icon-preview'. esc_attr( $hidden ) .'"><i class="'. esc_attr( $this->value ) .'"></i></span>';
       echo '<a href="#" class="button button-primary csf-icon-add" data-nonce="'. esc_attr( $nonce ) .'">'. $args['button_title'] .'</a>';
       echo '<a href="#" class="button csf-warning-primary csf-icon-remove'. esc_attr( $hidden ) .'">'. $args['remove_title'] .'</a>';
-      echo '<input type="text" name="'. esc_attr( $this->field_name() ) .'" value="'. esc_attr( $this->value ) .'" class="csf-icon-value"'. $this->field_attributes() .' />';
+      echo '<input type="hidden" name="'. esc_attr( $this->field_name() ) .'" value="'. esc_attr( $this->value ) .'" class="csf-icon-value"'. $this->field_attributes() .' />';
       echo '</div>';
 
       echo $this->field_after();
@@ -38,11 +38,11 @@ if ( ! class_exists( 'CSF_Field_icon' ) ) {
     }
 
     public function enqueue() {
-      add_action( 'admin_footer', array( &$this, 'add_footer_modal_icon' ) );
-      add_action( 'customize_controls_print_footer_scripts', array( &$this, 'add_footer_modal_icon' ) );
+      add_action( 'admin_footer', array( 'CSF_Field_icon', 'add_footer_modal_icon' ) );
+      add_action( 'customize_controls_print_footer_scripts', array( 'CSF_Field_icon', 'add_footer_modal_icon' ) );
     }
 
-    public function add_footer_modal_icon() {
+    public static function add_footer_modal_icon() {
     ?>
       <div id="csf-modal-icon" class="csf-modal csf-modal-icon hidden">
         <div class="csf-modal-table">
