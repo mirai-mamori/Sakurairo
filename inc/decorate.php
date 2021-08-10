@@ -28,7 +28,7 @@ if (iro_opt('theme_skin')) { ?>
 
 .linkdes { border-top: 1px dotted <?php echo iro_opt('theme_skin'); ?> !important}
 
-.the-feature.from_left_and_right .info{background: <?php echo iro_opt('exhibition_background_color'); ?> ;}
+.the-feature.from_left_and_right .info,.the-feature.from_left_and_right .info h3{background: <?php echo iro_opt('exhibition_background_color'); ?> ;}
 
 .is-active-link::before, .commentbody:not(:placeholder-shown)~.input-label, .commentbody:focus~.input-label {
     background-color: <?php echo iro_opt('theme_skin'); ?> !important
@@ -60,6 +60,9 @@ i.iconfont.js-toggle-search.iconsearch {
     color: <?php echo iro_opt('theme_skin'); ?>;
     border-bottom: 3px solid <?php echo iro_opt('theme_skin'); ?>;
     border-color: <?php echo iro_opt('theme_skin'); ?>;
+}
+.the-feature.from_left_and_right .info h3{
+    color: <?php echo iro_opt('theme_skin'); ?>;
 }
 .the-feature.from_left_and_right .info p {
     color: <?php echo iro_opt('theme_skin'); ?>;
@@ -422,7 +425,6 @@ h1.main-title {
     color: <?php echo iro_opt('theme_skin'); ?>;
     border-radius: <?php echo iro_opt('style_menu_radius', ''); ?>px;
 }
-
 
 /*非全局色彩管理*/
 
