@@ -898,13 +898,17 @@ body.dark #changskin
 body.dark #show-nav .line 
 {background: #CCCCCC;}
 
-body.dark .links ul li
-{border: 1px solid #CCCCCC;}
-
 body.dark .linkdes
 {
     border-top: 1px dotted #CCCCCC !important;
     color:#CCCCCC;
+}
+
+body.dark .links ul li
+{
+    background-color: #666666;
+    border: none;
+    opacity:.8;
 }
 
 body.dark .post-footer 
@@ -981,13 +985,11 @@ body.dark .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon
 
 body.dark #moblieGoTop:hover , 
 body.dark #changskin:hover 
-{color:#<?php echo iro_opt('theme_skin_dark'); ?>;opacity:.8;}
+{color:<?php echo iro_opt('theme_skin_dark'); ?>;opacity:.8;}
 
 body.dark .focusinfo .header-tou img 
 {box-shadow: inset 0 0 10px <?php echo iro_opt('theme_skin_dark'); ?>;}
 
-body.dark .links ul li
-{color:#<?php echo iro_opt('theme_skin_dark'); ?>;opacity:.8;}
 
 @media (max-width: 1200px){
 body.dark .site-top .lower nav.navbar ul 
