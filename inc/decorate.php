@@ -879,7 +879,8 @@ body.dark input[type=submit]
 
 body.dark .comment .info,
 body.dark .comment-respond .logged-in-as,
-body.dark .comment-respond .logged-in-as a 
+body.dark .comment-respond .logged-in-as a,
+body.dark span.sitename 
 {color:#CCCCCC;}
 
 body.dark .header-user-avatar:hover ,
@@ -896,6 +897,15 @@ body.dark #changskin
 
 body.dark #show-nav .line 
 {background: #CCCCCC;}
+
+body.dark .links ul li
+{border: 1px solid #CCCCCC;}
+
+body.dark .linkdes
+{
+    border-top: 1px dotted #CCCCCC !important;
+    color:#CCCCCC;
+}
 
 body.dark .post-footer 
 {background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/creativecommons-dark.png);}
@@ -975,6 +985,9 @@ body.dark #changskin:hover
 
 body.dark .focusinfo .header-tou img 
 {box-shadow: inset 0 0 10px <?php echo iro_opt('theme_skin_dark'); ?>;}
+
+body.dark .links ul li
+{color:#<?php echo iro_opt('theme_skin_dark'); ?>;opacity:.8;}
 
 @media (max-width: 1200px){
 body.dark .site-top .lower nav.navbar ul 
