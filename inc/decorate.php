@@ -1593,7 +1593,7 @@ li.link-item {
     left: 0;
     background: 0 0;
     position: fixed;
-    border-radius: 0px;
+    border-radius: 0 !important;
 }
 .yya {
     position: fixed;
