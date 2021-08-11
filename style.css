@@ -464,7 +464,8 @@ hr {
 
 ol,
 ul {
-    margin: 0 0 1.5em 3em
+    margin: 5px;
+    padding-left: 0px;
 }
 
 ul {
@@ -7113,7 +7114,7 @@ progress {
 #archives ul {
     list-style: none;
     margin-bottom: 0;
-    left: -45px
+    left: -10px
 }
 
 #archives li {
@@ -7122,7 +7123,7 @@ progress {
 
 #archives li>ul,
 li>ol {
-    margin-left: -2.7em
+    margin-left: 0
 }
 
 #archives h3 {
