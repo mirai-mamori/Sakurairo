@@ -1328,7 +1328,7 @@ return preg_replace( $old, $new, $url, 1);
 function admin_ini()
 {
     wp_enqueue_style('admin-styles-fix-icon', get_site_url() . '/wp-includes/css/dashicons.css');
-    wp_enqueue_style('cus-styles-fit', get_template_directory_uri() . '/inc/css/dashboard-fix.css');
+    wp_enqueue_style('cus-styles-fit', get_template_directory_uri() . '/css/dashboard/dashboard-fix.css');
     wp_enqueue_script('lazyload', 'https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.min.js');
 }
 add_action('admin_enqueue_scripts', 'admin_ini');
@@ -1360,12 +1360,6 @@ function scheme_tip()
     }
     if (get_user_locale(get_current_user_id()) == "zh_TW") {
         $msg = '<b>試一試新後台界面<a href="/wp-admin/profile.php">色彩配置</a>吧？</b>';
-    }
-    if (get_user_locale(get_current_user_id()) == "zh_HK") {
-        $msg = '<b>試一試新後台界面<a href="/wp-admin/profile.php">色彩配置</a>吧？</b>';
-    }
-    if (get_user_locale(get_current_user_id()) == "ja") {
-        $msg = '<b>新しい<a href="/wp-admin/profile.php">管理画面の配色</a>を試しますか？</b>';
     }
     if (get_user_locale(get_current_user_id()) == "ja-JP") {
         $msg = '<b>新しい<a href="/wp-admin/profile.php">管理画面の配色</a>を試しますか？</b>';

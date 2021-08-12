@@ -1908,6 +1908,10 @@ if( class_exists( 'CSF' ) ) {
         'id' => 'exhibition_radius',
         'type' => 'slider',
         'title' => __('Display Area Rounded Corners','csf'),
+        'dependency' => array(
+          array( 'exhibition_area_style', '==', 'left_and_right' ),
+          array( 'exhibition_area_compat', '==', 'true' ),
+        ),
         'desc' => __('Slide to adjust, the recommended value is 15','csf'),
         'unit' => 'px',
         'default' => '15'

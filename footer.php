@@ -92,38 +92,38 @@ $reception_background = iro_opt('reception_background');
     <div class="theme-controls row-container">
         <ul class="menu-list">
             <li id="white-bg">
-                <i class="fa fa-television" aria-hidden="true"></i>
+                <i class="fa fa-television faa-tada animated-hover faa-fast" aria-hidden="true"></i>
 			</li><!--Default-->
 			<?php if($reception_background['heart_shaped'] == '1'): ?>
             <li id="diy1-bg">
-			    <i class="fa fa-heart-o" aria-hidden="true"></i>
+			    <i class="fa fa-heart-o faa-pulse animated-hover faa-fast" aria-hidden="true"></i>
 			</li><!--Diy1-->
 			<?php endif; ?>
 			<?php if($reception_background['star_shaped'] == '1'): ?>
             <li id="diy2-bg">
-                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o faa-float animated-hover faa-fast" aria-hidden="true"></i>
 			</li><!--Diy2-->
 			<?php endif; ?>
 			<?php if($reception_background['square_shaped'] == '1'): ?>
             <li id="diy3-bg">
-			    <i class="fa fa-delicious" aria-hidden="true"></i>
+			    <i class="fa fa-delicious faa-horizontal animated-hover faa-fast" aria-hidden="true"></i>
 			</li><!--Diy3-->
 			<?php endif; ?>
 			<?php if($reception_background['lemon_shaped'] == '1'): ?>
             <li id="diy4-bg">
-			    <i class="fa fa-lemon-o" aria-hidden="true"></i>
+			    <i class="fa fa-lemon-o faa-wrench animated-hover faa-fast" aria-hidden="true"></i>
 			</li><!--Diy4-->
 			<?php endif; ?>
             <li id="dark-bg">
-                <i class="fa fa-moon-o" aria-hidden="true"></i>
+                <i class="fa fa-moon-o faa-passing animated-hover faa-fast" aria-hidden="true"></i>
             </li><!--Night-->
         </ul>
 	</div>
 	<?php if(iro_opt('style_menu_display') == 'full'): ?>
 	<p style="margin-bottom: 0.1em;">Fonts</p>
     <div class="font-family-controls row-container">
-        <button type="button" class="control-btn-serif selected" data-name="serif" ><i class="fa fa-font" aria-hidden="true"></i></button>
-        <button type="button" class="control-btn-sans-serif" data-name="sans-serif"><i class="fa fa-bold" aria-hidden="true"></i></button>
+        <button type="button" class="control-btn-serif selected" data-name="serif" ><i class="fa fa-font faa-vertical animated-hover" aria-hidden="true"></i></button>
+        <button type="button" class="control-btn-sans-serif" data-name="sans-serif"><i class="fa fa-bold faa-vertical animated-hover" aria-hidden="true"></i></button>
 	</div>
 	<?php endif; ?>
 </div>
