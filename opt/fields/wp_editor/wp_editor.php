@@ -59,7 +59,7 @@ if ( ! class_exists( 'CSF_Field_wp_editor' ) ) {
 
         $this->setup_wp_editor_settings();
 
-        add_action( 'print_default_editor_scripts', array( &$this, 'setup_wp_editor_media_buttons' ) );
+        add_action( 'print_default_editor_scripts', array( $this, 'setup_wp_editor_media_buttons' ) );
 
       }
 

@@ -10,7 +10,7 @@
 if ( ! class_exists( 'CSF_Field_code_editor' ) ) {
   class CSF_Field_code_editor extends CSF_Fields {
 
-    public $version = '5.60.0';
+    public $version = '5.62.2';
     public $cdn_url = 'https://cdn.jsdelivr.net/npm/codemirror@';
 
     public function __construct( $field, $value = '', $unique = '', $where = '', $parent = '' ) {

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-07-30 15:59+0800\n"
+"POT-Creation-Date: 2021-08-13 14:50+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -85,28 +85,28 @@ msgstr ""
 msgid "No data available."
 msgstr ""
 
-#: classes/setup.class.php:592
+#: classes/setup.class.php:594
 msgid "Are you sure?"
 msgstr ""
 
-#: classes/setup.class.php:593
+#: classes/setup.class.php:595
 #, php-format
 msgid "Please enter %s or more characters"
 msgstr ""
 
-#: classes/setup.class.php:594
+#: classes/setup.class.php:596
 msgid "Searching..."
 msgstr ""
 
-#: classes/setup.class.php:595
+#: classes/setup.class.php:597
 msgid "No results found."
 msgstr ""
 
-#: classes/setup.class.php:696
+#: classes/setup.class.php:698
 msgid "Oops! Not allowed."
 msgstr ""
 
-#: classes/setup.class.php:768 classes/setup.class.php:772
+#: classes/setup.class.php:770 classes/setup.class.php:774
 msgid "Field not found!"
 msgstr ""
 
@@ -222,16 +222,16 @@ msgstr ""
 msgid "Background Size"
 msgstr ""
 
-#: fields/background/background.php:219 options/theme-options.php:621
+#: fields/background/background.php:219 options/theme-options.php:649
 msgid "Cover"
 msgstr ""
 
-#: fields/background/background.php:220 options/theme-options.php:622
+#: fields/background/background.php:220 options/theme-options.php:650
 msgid "Contain"
 msgstr ""
 
-#: fields/background/background.php:221 options/theme-options.php:623
-#: options/theme-options.php:809
+#: fields/background/background.php:221 options/theme-options.php:651
+#: options/theme-options.php:837
 msgid "Auto"
 msgstr ""
 
@@ -292,7 +292,7 @@ msgstr ""
 msgid "Saturation"
 msgstr ""
 
-#: fields/background/background.php:278 options/theme-options.php:77
+#: fields/background/background.php:278 options/theme-options.php:105
 msgid "Color"
 msgstr ""
 
@@ -450,11 +450,11 @@ msgstr ""
 msgid "Longitude"
 msgstr ""
 
-#: fields/media/media.php:25 fields/upload/upload.php:25
+#: fields/media/media.php:25 fields/upload/upload.php:24
 msgid "Upload"
 msgstr ""
 
-#: fields/media/media.php:26 fields/upload/upload.php:26
+#: fields/media/media.php:26 fields/upload/upload.php:25
 msgid "Remove"
 msgstr ""
 
@@ -470,9 +470,9 @@ msgstr ""
 msgid "On"
 msgstr ""
 
-#: fields/switcher/switcher.php:21 options/theme-options.php:769
-#: options/theme-options.php:807 options/theme-options.php:1018
-#: options/theme-options.php:2515 options/theme-options.php:2528
+#: fields/switcher/switcher.php:21 options/theme-options.php:797
+#: options/theme-options.php:835 options/theme-options.php:1046
+#: options/theme-options.php:2547 options/theme-options.php:2560
 msgid "Off"
 msgstr ""
 
@@ -492,7 +492,7 @@ msgstr ""
 #: fields/typography/typography.php:145 fields/typography/typography.php:160
 #: fields/typography/typography.php:176 fields/typography/typography.php:189
 #: fields/typography/typography.php:203 fields/typography/typography.php:221
-#: options/theme-options.php:636
+#: options/theme-options.php:664
 msgid "Default"
 msgstr ""
 
@@ -657,178 +657,203 @@ msgstr ""
 msgid "iro-Options"
 msgstr ""
 
-#: options/theme-options.php:13
-msgid "Preliminary Options"
+#: options/theme-options.php:12
+msgid "Hello!"
 msgstr ""
 
-#: options/theme-options.php:20
-msgid "Site Name"
+#: options/theme-options.php:18
+msgid "News+"
 msgstr ""
 
-#: options/theme-options.php:21
-msgid "For example: Sakurairo Blog"
-msgstr ""
-
-#: options/theme-options.php:27
-msgid "Author Name"
+#: options/theme-options.php:23
+msgid ""
+"<img src=\"http://news.maho.cc/sakurairo.php\"  alt=\"News_Plus\" width="
+"\"100%\" height=\"100%\" />"
 msgstr ""
 
 #: options/theme-options.php:28
+msgid "Theme Documentation"
+msgstr ""
+
+#: options/theme-options.php:33
+msgid ""
+"<iframe src=\"https://iro.tw/guide/about.html\" width=\"100%\" height= "
+"\"800px\" name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" "
+"frameborder=\"0\" id=\"guide\"></iframe>"
+msgstr ""
+
+#: options/theme-options.php:41
+msgid "Preliminary Options"
+msgstr ""
+
+#: options/theme-options.php:48
+msgid "Site Name"
+msgstr ""
+
+#: options/theme-options.php:49
+msgid "For example: Sakurairo Blog"
+msgstr ""
+
+#: options/theme-options.php:55
+msgid "Author Name"
+msgstr ""
+
+#: options/theme-options.php:56
 msgid "For example: Fuukei"
 msgstr ""
 
-#: options/theme-options.php:34
+#: options/theme-options.php:62
 msgid "Personal Avatar"
 msgstr ""
 
-#: options/theme-options.php:35 options/theme-options.php:462
-#: options/theme-options.php:1532 options/theme-options.php:1677
-#: options/theme-options.php:1694
+#: options/theme-options.php:63 options/theme-options.php:490
+#: options/theme-options.php:1560 options/theme-options.php:1705
+#: options/theme-options.php:1722
 msgid "The best length-width ratio of is 1:1"
 msgstr ""
 
-#: options/theme-options.php:42
+#: options/theme-options.php:70
 msgid "Mashiro Special Effects Text"
 msgstr ""
 
-#: options/theme-options.php:43
+#: options/theme-options.php:71
 msgid ""
 "After turned on, the personal avatar will be replaced by the text as the "
 "home page display content"
 msgstr ""
 
-#: options/theme-options.php:50
+#: options/theme-options.php:78
 msgid "Mashiro Special Effects Text Options"
 msgstr ""
 
-#: options/theme-options.php:56
+#: options/theme-options.php:84
 msgid "Text"
 msgstr ""
 
-#: options/theme-options.php:57
+#: options/theme-options.php:85
 msgid ""
 "The text content should not be too long, and the recommended length is 16 "
 "bytes."
 msgstr ""
 
-#: options/theme-options.php:62
+#: options/theme-options.php:90
 msgid "Font"
 msgstr ""
 
-#: options/theme-options.php:63 options/theme-options.php:743
-#: options/theme-options.php:751 options/theme-options.php:1268
-#: options/theme-options.php:2389
+#: options/theme-options.php:91 options/theme-options.php:771
+#: options/theme-options.php:779 options/theme-options.php:1296
+#: options/theme-options.php:2421
 msgid "Fill in the font name. For example: Ma Shan Zheng"
 msgstr ""
 
-#: options/theme-options.php:68
+#: options/theme-options.php:96
 msgid "Size"
 msgstr ""
 
-#: options/theme-options.php:69
+#: options/theme-options.php:97
 msgid "Slide to adjust, the recommended value range is 70-90"
 msgstr ""
 
-#: options/theme-options.php:78 options/theme-options.php:590
-#: options/theme-options.php:1233 options/theme-options.php:1412
-#: options/theme-options.php:1903
+#: options/theme-options.php:106 options/theme-options.php:618
+#: options/theme-options.php:1261 options/theme-options.php:1440
+#: options/theme-options.php:1931
 msgid "Customize the colors, light colors are recommended"
 msgstr ""
 
-#: options/theme-options.php:91
+#: options/theme-options.php:119
 msgid "Navigation Menu Logo"
 msgstr ""
 
-#: options/theme-options.php:92
+#: options/theme-options.php:120
 msgid ""
 "The best size is 40px, and the nav menu text logo will not be displayed "
 "after filling in"
 msgstr ""
 
-#: options/theme-options.php:99
+#: options/theme-options.php:127
 msgid "Site Icon"
 msgstr ""
 
-#: options/theme-options.php:100
+#: options/theme-options.php:128
 msgid ""
 "Fill in the address, which decides the icon next to the title above the "
 "browser"
 msgstr ""
 
-#: options/theme-options.php:107
+#: options/theme-options.php:135
 msgid "Custom Site Keywords and Descriptions"
 msgstr ""
 
-#: options/theme-options.php:108
+#: options/theme-options.php:136
 msgid "After turning on, you can customize the site keywords and descriptions"
 msgstr ""
 
-#: options/theme-options.php:115
+#: options/theme-options.php:143
 msgid "Site Keywords"
 msgstr ""
 
-#: options/theme-options.php:117
+#: options/theme-options.php:145
 msgid ""
 "The keywords should be separated with half width comma \",\" and it's "
 "better to set within 5 keywords"
 msgstr ""
 
-#: options/theme-options.php:123
+#: options/theme-options.php:151
 msgid "Site Descriptions"
 msgstr ""
 
-#: options/theme-options.php:125
+#: options/theme-options.php:153
 msgid ""
 "Use concise words to describe the site, it is recommended to write within "
 "120 words"
 msgstr ""
 
-#: options/theme-options.php:133
+#: options/theme-options.php:161
 msgid "Global Options"
 msgstr ""
 
-#: options/theme-options.php:139
+#: options/theme-options.php:167
 msgid "Appearance Options"
 msgstr ""
 
-#: options/theme-options.php:145
+#: options/theme-options.php:173
 msgid "Color Schemes"
 msgstr ""
 
-#: options/theme-options.php:151
+#: options/theme-options.php:179
 msgid "Theme Color"
 msgstr ""
 
-#: options/theme-options.php:152 options/theme-options.php:160
-#: options/theme-options.php:173 options/theme-options.php:989
-#: options/theme-options.php:998 options/theme-options.php:2365
-#: options/theme-options.php:2373 options/theme-options.php:2690
-#: options/theme-options.php:2698 options/theme-options.php:2706
-#: options/theme-options.php:2714 options/theme-options.php:2722
+#: options/theme-options.php:180 options/theme-options.php:188
+#: options/theme-options.php:201 options/theme-options.php:1017
+#: options/theme-options.php:1026 options/theme-options.php:2397
+#: options/theme-options.php:2405 options/theme-options.php:2722
+#: options/theme-options.php:2730 options/theme-options.php:2738
+#: options/theme-options.php:2746 options/theme-options.php:2754
 msgid "Customize the colors"
 msgstr ""
 
-#: options/theme-options.php:159
+#: options/theme-options.php:187
 msgid "Matching Color"
 msgstr ""
 
-#: options/theme-options.php:166
+#: options/theme-options.php:194
 msgid "Dark Mode"
 msgstr ""
 
-#: options/theme-options.php:172
+#: options/theme-options.php:200
 msgid "Dark Mode Theme Color"
 msgstr ""
 
-#: options/theme-options.php:179
+#: options/theme-options.php:207
 msgid "Automatically Switch to Dark Mode"
 msgstr ""
 
-#: options/theme-options.php:180 options/theme-options.php:1167
+#: options/theme-options.php:208 options/theme-options.php:1195
 msgid "Default on"
 msgstr ""
 
-#: options/theme-options.php:186
+#: options/theme-options.php:214
 msgid ""
 "<p><strong>Client local time:</strong>Dark mode will switch on "
 "automatically from 22:00 to 7:00</p><p><strong>Follow client settings:</"
@@ -836,122 +861,122 @@ msgid ""
 "strong>Always on, except being configured by the client</p>"
 msgstr ""
 
-#: options/theme-options.php:195
+#: options/theme-options.php:223
 msgid "Automatic Switch Strategy of Dark Mode"
 msgstr ""
 
-#: options/theme-options.php:198
+#: options/theme-options.php:226
 msgid "Client local time"
 msgstr ""
 
-#: options/theme-options.php:199
+#: options/theme-options.php:227
 msgid "Follow client settings"
 msgstr ""
 
-#: options/theme-options.php:200
+#: options/theme-options.php:228
 msgid "Always on"
 msgstr ""
 
-#: options/theme-options.php:208
+#: options/theme-options.php:236
 msgid "Dark Mode Image Brightness"
 msgstr ""
 
-#: options/theme-options.php:209 options/theme-options.php:220
+#: options/theme-options.php:237 options/theme-options.php:248
 msgid "Slide to adjust, the recommended value range is 0.6-0.8"
 msgstr ""
 
-#: options/theme-options.php:219
+#: options/theme-options.php:247
 msgid "Dark Mode Component Transparency"
 msgstr ""
 
-#: options/theme-options.php:229
+#: options/theme-options.php:257
 msgid "Dark mode Background Transparency"
 msgstr ""
 
-#: options/theme-options.php:230
+#: options/theme-options.php:258
 msgid ""
 "Slide to adjust, the recommended value range is 0.6-0.8. In order to ensure "
 "the best appearance, please keep the display of the frontend background "
 "image"
 msgstr ""
 
-#: options/theme-options.php:239
+#: options/theme-options.php:267
 msgid "Other Appearance Related"
 msgstr ""
 
-#: options/theme-options.php:245
+#: options/theme-options.php:273
 msgid "Commemorate Mode"
 msgstr ""
 
-#: options/theme-options.php:246
+#: options/theme-options.php:274
 msgid ""
 "After turning on, a black and white filter will be added to the global theme"
 msgstr ""
 
-#: options/theme-options.php:253
+#: options/theme-options.php:281
 msgid "Occupying SVG while Loading Control Units"
 msgstr ""
 
-#: options/theme-options.php:254
+#: options/theme-options.php:282
 msgid ""
 "Fill in the address, which is the SVG displayed when loading control units"
 msgstr ""
 
-#: options/theme-options.php:263
+#: options/theme-options.php:291
 msgid "Font Options"
 msgstr ""
 
-#: options/theme-options.php:269
+#: options/theme-options.php:297
 msgid "Global"
 msgstr ""
 
-#: options/theme-options.php:275
+#: options/theme-options.php:303
 msgid "Non-Emphasis Text Weight"
 msgstr ""
 
-#: options/theme-options.php:276
+#: options/theme-options.php:304
 msgid "Slide to adjust, the recommended value range is 300-500"
 msgstr ""
 
-#: options/theme-options.php:286
+#: options/theme-options.php:314
 msgid "Text Font Size"
 msgstr ""
 
-#: options/theme-options.php:287 options/theme-options.php:1276
+#: options/theme-options.php:315 options/theme-options.php:1304
 msgid "Slide to adjust, the recommended value range is 15-18"
 msgstr ""
 
-#: options/theme-options.php:297
+#: options/theme-options.php:325
 msgid "External Fonts"
 msgstr ""
 
-#: options/theme-options.php:303
+#: options/theme-options.php:331
 msgid "Reference External Fonts"
 msgstr ""
 
-#: options/theme-options.php:304
+#: options/theme-options.php:332
 msgid ""
 "After turning on, you can use external fonts as the default font or other "
 "component fonts, but it may affect performance"
 msgstr ""
 
-#: options/theme-options.php:311
+#: options/theme-options.php:339
 msgid "External Font Link"
 msgstr ""
 
-#: options/theme-options.php:318
+#: options/theme-options.php:346
 msgid "External Font Name"
 msgstr ""
 
-#: options/theme-options.php:325
+#: options/theme-options.php:353
 msgid "Google Fonts Api Link"
 msgstr ""
 
-#: options/theme-options.php:332
+#: options/theme-options.php:360
 msgid "Google Fonts Name"
 msgstr ""
 
-#: options/theme-options.php:333
+#: options/theme-options.php:361
 msgid ""
 "Please make sure that the added fonts can be referenced in Google Fonts "
 "library. Fill in the font names. The added fonts must be preceded by \"|\". "
@@ -960,382 +985,382 @@ msgid ""
 "Ma + Shan + Zheng"
 msgstr ""
 
-#: options/theme-options.php:341
+#: options/theme-options.php:369
 msgid "Navigation Menu Options"
 msgstr ""
 
-#: options/theme-options.php:348
+#: options/theme-options.php:376
 msgid "Nav Menu Style"
 msgstr ""
 
-#: options/theme-options.php:359
+#: options/theme-options.php:387
 msgid "Nav Menu Radius"
 msgstr ""
 
-#: options/theme-options.php:361 options/theme-options.php:481
-#: options/theme-options.php:606 options/theme-options.php:1911
+#: options/theme-options.php:389 options/theme-options.php:509
+#: options/theme-options.php:634 options/theme-options.php:1943
 msgid "Slide to adjust, the recommended value is 15"
 msgstr ""
 
-#: options/theme-options.php:370
+#: options/theme-options.php:398
 msgid "Nav Menu Shrinkage Ratio"
 msgstr ""
 
-#: options/theme-options.php:372
+#: options/theme-options.php:400
 msgid ""
 "Slide to set the appropriate ratio according to the content length of the "
 "nav menu. When the ratio is set to 95,there will be no shrinkage. This "
 "function is off by default"
 msgstr ""
 
-#: options/theme-options.php:383
+#: options/theme-options.php:411
 msgid "Nav Menu Content Display Method"
 msgstr ""
 
-#: options/theme-options.php:384
+#: options/theme-options.php:412
 msgid "You can choose to unfold or fold the nav menu contents"
 msgstr ""
 
-#: options/theme-options.php:386
+#: options/theme-options.php:414
 msgid "Unfold"
 msgstr ""
 
-#: options/theme-options.php:387
+#: options/theme-options.php:415
 msgid "Fold"
 msgstr ""
 
-#: options/theme-options.php:395
+#: options/theme-options.php:423
 msgid "Nav Menu Animation Effects"
 msgstr ""
 
-#: options/theme-options.php:396
+#: options/theme-options.php:424
 msgid ""
 "It is on by default. If it is off, the nav menu content will be displayed "
 "directly without effects"
 msgstr ""
 
-#: options/theme-options.php:403
+#: options/theme-options.php:431
 msgid "Nav Menu Animation Time"
 msgstr ""
 
-#: options/theme-options.php:405 options/theme-options.php:1203
+#: options/theme-options.php:433 options/theme-options.php:1231
 msgid "Slide to adjust, the recommended value range is 1-2"
 msgstr ""
 
-#: options/theme-options.php:415
+#: options/theme-options.php:443
 msgid "Nav Menu Icon Size"
 msgstr ""
 
-#: options/theme-options.php:417
+#: options/theme-options.php:445
 msgid "Standard"
 msgstr ""
 
-#: options/theme-options.php:418
+#: options/theme-options.php:446
 msgid "Large"
 msgstr ""
 
-#: options/theme-options.php:426
+#: options/theme-options.php:454
 msgid "Nav Menu Search"
 msgstr ""
 
-#: options/theme-options.php:427
+#: options/theme-options.php:455
 msgid "It is on by default. Click to enter the search area"
 msgstr ""
 
-#: options/theme-options.php:433
+#: options/theme-options.php:461
 msgid "Nav Menu Blur"
 msgstr ""
 
-#: options/theme-options.php:434
+#: options/theme-options.php:462
 msgid ""
 "Slide to adjust, the recommended value is 5px, and this function will be "
 "off when set to 0px"
 msgstr ""
 
-#: options/theme-options.php:443
+#: options/theme-options.php:471
 msgid "Search Area Background Image"
 msgstr ""
 
-#: options/theme-options.php:444
+#: options/theme-options.php:472
 msgid ""
 "Set the background image of your search area. Leave this option blank to "
 "display a white background"
 msgstr ""
 
-#: options/theme-options.php:452
+#: options/theme-options.php:480
 msgid "Nav Menu User Avatar"
 msgstr ""
 
-#: options/theme-options.php:453
+#: options/theme-options.php:481
 msgid "It is on by default. Click to enter the login interface"
 msgstr ""
 
-#: options/theme-options.php:460
+#: options/theme-options.php:488
 msgid "Nav Menu Unlisted User Avatar"
 msgstr ""
 
-#: options/theme-options.php:470
+#: options/theme-options.php:498
 msgid "Secondary Menu Prompt Arrow"
 msgstr ""
 
-#: options/theme-options.php:471
+#: options/theme-options.php:499
 msgid ""
 "After turning on, the menu prompt arrow will appear in the secondary menu "
 "of the navigation menu"
 msgstr ""
 
-#: options/theme-options.php:479
+#: options/theme-options.php:507
 msgid "Secondary Menu Radius"
 msgstr ""
 
-#: options/theme-options.php:490
+#: options/theme-options.php:518
 msgid "Nav Menu Logo Text"
 msgstr ""
 
-#: options/theme-options.php:491
+#: options/theme-options.php:519
 msgid ""
 "Fill in the text. If the Mashiro logo is turned on, this option will be "
 "invalid"
 msgstr ""
 
-#: options/theme-options.php:498
+#: options/theme-options.php:526
 msgid "Mashiro Logo"
 msgstr ""
 
-#: options/theme-options.php:499
+#: options/theme-options.php:527
 msgid ""
 "After turning on, the Mashiro Logo will appear and replace the navigation "
 "menu logo position"
 msgstr ""
 
-#: options/theme-options.php:506
+#: options/theme-options.php:534
 msgid "Mashiro Logo Options"
 msgstr ""
 
-#: options/theme-options.php:512
+#: options/theme-options.php:540
 msgid "Text A"
 msgstr ""
 
-#: options/theme-options.php:517
+#: options/theme-options.php:545
 msgid "Text B"
 msgstr ""
 
-#: options/theme-options.php:522
+#: options/theme-options.php:550
 msgid "Text C"
 msgstr ""
 
-#: options/theme-options.php:527
+#: options/theme-options.php:555
 msgid "Secondary Text"
 msgstr ""
 
-#: options/theme-options.php:532
+#: options/theme-options.php:560
 msgid "Font Link"
 msgstr ""
 
-#: options/theme-options.php:537
+#: options/theme-options.php:565
 msgid "Font Name"
 msgstr ""
 
-#: options/theme-options.php:555
+#: options/theme-options.php:583
 msgid "Style Menu and Frontend Background Related Options"
 msgstr ""
 
-#: options/theme-options.php:561
+#: options/theme-options.php:589
 msgid "Style Menu"
 msgstr ""
 
-#: options/theme-options.php:567
+#: options/theme-options.php:595
 msgid "Style Menu Display"
 msgstr ""
 
-#: options/theme-options.php:568
+#: options/theme-options.php:596
 msgid ""
 "You can choose to display the style menu simply or in full. The full "
 "display will show the font toggle function and text hints"
 msgstr ""
 
-#: options/theme-options.php:579
+#: options/theme-options.php:607
 msgid "Style Menu Button Radius"
 msgstr ""
 
-#: options/theme-options.php:580
+#: options/theme-options.php:608
 msgid "Slide to adjust, the recommended value is 10"
 msgstr ""
 
-#: options/theme-options.php:589
+#: options/theme-options.php:617
 msgid "Style Menu Background Color"
 msgstr ""
 
-#: options/theme-options.php:597
+#: options/theme-options.php:625
 msgid "Style Menu Option Background Color"
 msgstr ""
 
-#: options/theme-options.php:598 options/theme-options.php:1778
+#: options/theme-options.php:626 options/theme-options.php:1806
 msgid ""
 "Customize the colors, it is recommended to use a light color that "
 "corresponds with the theme color"
 msgstr ""
 
-#: options/theme-options.php:605
+#: options/theme-options.php:633
 msgid "Style Menu Options Interface Radius"
 msgstr ""
 
-#: options/theme-options.php:614
+#: options/theme-options.php:642
 msgid "Frontend Background"
 msgstr ""
 
-#: options/theme-options.php:625
+#: options/theme-options.php:653
 msgid "Frontend Background Scaling Method"
 msgstr ""
 
-#: options/theme-options.php:626
+#: options/theme-options.php:654
 msgid ""
 "You can choose two ways to scale the frontend background, the default is "
 "auto-scaling"
 msgstr ""
 
-#: options/theme-options.php:633
+#: options/theme-options.php:661
 msgid "Frontend Background Options"
 msgstr ""
 
-#: options/theme-options.php:642 options/theme-options.php:658
-#: options/theme-options.php:674 options/theme-options.php:690
-#: options/theme-options.php:706
+#: options/theme-options.php:670 options/theme-options.php:686
+#: options/theme-options.php:702 options/theme-options.php:718
+#: options/theme-options.php:734
 msgid "Image"
 msgstr ""
 
-#: options/theme-options.php:647
+#: options/theme-options.php:675
 msgid "Heart Shaped"
 msgstr ""
 
-#: options/theme-options.php:653 options/theme-options.php:669
-#: options/theme-options.php:685 options/theme-options.php:701
+#: options/theme-options.php:681 options/theme-options.php:697
+#: options/theme-options.php:713 options/theme-options.php:729
 msgid "Switch"
 msgstr ""
 
-#: options/theme-options.php:663
+#: options/theme-options.php:691
 msgid "Star Shaped"
 msgstr ""
 
-#: options/theme-options.php:679
+#: options/theme-options.php:707
 msgid "Square Shaped"
 msgstr ""
 
-#: options/theme-options.php:695
+#: options/theme-options.php:723
 msgid "Lemon Shaped"
 msgstr ""
 
-#: options/theme-options.php:726
+#: options/theme-options.php:754
 msgid "Background Transparency in the Frontend"
 msgstr ""
 
-#: options/theme-options.php:727
+#: options/theme-options.php:755
 msgid "Slide to adjust, the recommended sliding value range is 0.6-0.8"
 msgstr ""
 
-#: options/theme-options.php:736
+#: options/theme-options.php:764
 msgid "Font Area"
 msgstr ""
 
-#: options/theme-options.php:742
+#: options/theme-options.php:770
 msgid "Global Default Font/Style Menu Font A"
 msgstr ""
 
-#: options/theme-options.php:749
+#: options/theme-options.php:777
 msgid "Style Menu Font B"
 msgstr ""
 
-#: options/theme-options.php:759
+#: options/theme-options.php:787
 msgid "Footer Options"
 msgstr ""
 
-#: options/theme-options.php:766
+#: options/theme-options.php:794
 msgid "Footer Online Music Player"
 msgstr ""
 
-#: options/theme-options.php:767
+#: options/theme-options.php:795
 msgid ""
 "A button will appear at the bottom left corner of the footer after turning "
 "on, click it and the footer online player will be displayed"
 msgstr ""
 
-#: options/theme-options.php:770
+#: options/theme-options.php:798
 msgid "Netease Cloud Music"
 msgstr ""
 
-#: options/theme-options.php:771
+#: options/theme-options.php:799
 msgid "Kugou Music(may not be available)"
 msgstr ""
 
-#: options/theme-options.php:772
+#: options/theme-options.php:800
 msgid "Baidu Music(not available on servers overseas)"
 msgstr ""
 
-#: options/theme-options.php:773
+#: options/theme-options.php:801
 msgid "QQ Music(may not be available)"
 msgstr ""
 
-#: options/theme-options.php:781
+#: options/theme-options.php:809
 msgid "Footer Online Music Player Songlist ID"
 msgstr ""
 
-#: options/theme-options.php:783
+#: options/theme-options.php:811
 msgid ""
 "Fill in the song ID, e.g. https://music.163.com/#/playlist?id=5380675133 "
 "SongID:5380675133"
 msgstr ""
 
-#: options/theme-options.php:790
+#: options/theme-options.php:818
 msgid "Footer Online Music Player Mode"
 msgstr ""
 
-#: options/theme-options.php:792
+#: options/theme-options.php:820
 msgid "Select music player mode"
 msgstr ""
 
-#: options/theme-options.php:794
+#: options/theme-options.php:822
 msgid "List"
 msgstr ""
 
-#: options/theme-options.php:795
+#: options/theme-options.php:823
 msgid "Random"
 msgstr ""
 
-#: options/theme-options.php:803
+#: options/theme-options.php:831
 msgid "Footer Online Music Player Preload"
 msgstr ""
 
-#: options/theme-options.php:805
+#: options/theme-options.php:833
 msgid "Whether to preload songs"
 msgstr ""
 
-#: options/theme-options.php:808
+#: options/theme-options.php:836
 msgid "Preload Metadata"
 msgstr ""
 
-#: options/theme-options.php:817
+#: options/theme-options.php:845
 msgid "Default Volume of Footer Online Music Player"
 msgstr ""
 
-#: options/theme-options.php:819
+#: options/theme-options.php:847
 msgid "Slide to adjust, the recommended sliding value range is 0.4-0.6"
 msgstr ""
 
-#: options/theme-options.php:828
+#: options/theme-options.php:856
 msgid "Netease Cloud Music Cookies"
 msgstr ""
 
-#: options/theme-options.php:830
+#: options/theme-options.php:858
 msgid ""
 "If you want to play VIP music on Netease Cloud Music Platform, please fill "
 "in your account cookies in this option."
 msgstr ""
 
-#: options/theme-options.php:836
+#: options/theme-options.php:864
 msgid "Footer Widget Area"
 msgstr ""
 
-#: options/theme-options.php:837
+#: options/theme-options.php:865
 msgid ""
 "After turning it on, a button will appear in the bottom of the left corner "
 "of the footer, when you click the button the footer widget area will be "
@@ -1343,64 +1368,64 @@ msgid ""
 "displayed together"
 msgstr ""
 
-#: options/theme-options.php:844
+#: options/theme-options.php:872
 msgid "Footer Widget Area Background"
 msgstr ""
 
-#: options/theme-options.php:846
+#: options/theme-options.php:874
 msgid "The best picture size is 400px × 460px"
 msgstr ""
 
-#: options/theme-options.php:853
+#: options/theme-options.php:881
 msgid "Footer Dynamic Sakura Icon"
 msgstr ""
 
-#: options/theme-options.php:854
+#: options/theme-options.php:882
 msgid ""
 "Dynamic Sakura icon will appear at the end of the page after turning on"
 msgstr ""
 
-#: options/theme-options.php:861
+#: options/theme-options.php:889
 msgid "Footer Load Occupancy Query"
 msgstr ""
 
-#: options/theme-options.php:862
+#: options/theme-options.php:890
 msgid ""
 "Load occupancy information will appear at the end of the page after turning "
 "it on"
 msgstr ""
 
-#: options/theme-options.php:869
+#: options/theme-options.php:897
 msgid "Footer Info"
 msgstr ""
 
-#: options/theme-options.php:870
+#: options/theme-options.php:898
 msgid "Footer description text, supports HTML code"
 msgstr ""
 
-#: options/theme-options.php:878
+#: options/theme-options.php:906
 msgid "Footer Addition"
 msgstr ""
 
-#: options/theme-options.php:879
+#: options/theme-options.php:907
 msgid ""
 "Add HTML code at the end of the page. Useful for adding customize "
 "JavaScript, or adding external CSS stylesheets."
 msgstr ""
 
-#: options/theme-options.php:884
+#: options/theme-options.php:912
 msgid "Hitokoto"
 msgstr ""
 
-#: options/theme-options.php:890
+#: options/theme-options.php:918
 msgid "Footer Hitokoto"
 msgstr ""
 
-#: options/theme-options.php:891
+#: options/theme-options.php:919
 msgid "Hitokoto will appear at the end of the page after turning it on"
 msgstr ""
 
-#: options/theme-options.php:898
+#: options/theme-options.php:926
 msgid ""
 "<h4>Hitokoto API Setup Instructions</h4> <p>Fill in as the example:<code> "
 "[\"https://api.maho.cc/yiyan/\", \"https://v1.hitokoto.cn/\"]</code>, where "
@@ -1413,438 +1438,438 @@ msgid ""
 "\"https://api.maho.cc/yiyan/\">https://api.maho.cc/yiyan/</a></p>"
 msgstr ""
 
-#: options/theme-options.php:907
+#: options/theme-options.php:935
 msgid "Hitokoto API address"
 msgstr ""
 
-#: options/theme-options.php:909
+#: options/theme-options.php:937
 msgid "Fill in the address in JavaScript array format"
 msgstr ""
 
-#: options/theme-options.php:918
+#: options/theme-options.php:946
 msgid "Cursor Options"
 msgstr ""
 
-#: options/theme-options.php:925
+#: options/theme-options.php:953
 msgid "Standard Cursor Style"
 msgstr ""
 
-#: options/theme-options.php:926
+#: options/theme-options.php:954
 msgid "Apply to global, fill in \".cur\" mouse file link"
 msgstr ""
 
-#: options/theme-options.php:933
+#: options/theme-options.php:961
 msgid "Selected Cursor Style"
 msgstr ""
 
-#: options/theme-options.php:934
+#: options/theme-options.php:962
 msgid "Apply to multiple styles, fill in \".cur\" file link"
 msgstr ""
 
-#: options/theme-options.php:941
+#: options/theme-options.php:969
 msgid "Selected Control Unit Cursor Style"
 msgstr ""
 
-#: options/theme-options.php:942
+#: options/theme-options.php:970
 msgid "Apply to selected control unit, fill in \".cur\" file link"
 msgstr ""
 
-#: options/theme-options.php:949
+#: options/theme-options.php:977
 msgid "Selected Text Cursor Style"
 msgstr ""
 
-#: options/theme-options.php:950
+#: options/theme-options.php:978
 msgid "Apply to selected text, fill in \".cur\" file link"
 msgstr ""
 
-#: options/theme-options.php:957
+#: options/theme-options.php:985
 msgid "Work Status Cursor Style"
 msgstr ""
 
-#: options/theme-options.php:958
+#: options/theme-options.php:986
 msgid "Apply to load control unit, fill in \".cur\" file link"
 msgstr ""
 
-#: options/theme-options.php:967
+#: options/theme-options.php:995
 msgid "Additional Options"
 msgstr ""
 
-#: options/theme-options.php:973
+#: options/theme-options.php:1001
 msgid "Effects&Animations"
 msgstr ""
 
-#: options/theme-options.php:979
+#: options/theme-options.php:1007
 msgid "Preload Animation"
 msgstr ""
 
-#: options/theme-options.php:980
+#: options/theme-options.php:1008
 msgid ""
 "Preload animation before new pages load; To enable this option, ensure your "
 "page resources can load properly."
 msgstr ""
 
-#: options/theme-options.php:987
+#: options/theme-options.php:1015
 msgid "Preload Animation Color A"
 msgstr ""
 
-#: options/theme-options.php:996
+#: options/theme-options.php:1024
 msgid "Preload Animation Color B"
 msgstr ""
 
-#: options/theme-options.php:1004
+#: options/theme-options.php:1032
 msgid "Preload Animation Blur Transition Effect"
 msgstr ""
 
-#: options/theme-options.php:1006
+#: options/theme-options.php:1034
 msgid "Blur transition duration in milliseconds ms, off when set to 0."
 msgstr ""
 
-#: options/theme-options.php:1016
+#: options/theme-options.php:1044
 msgid "Falling Effects"
 msgstr ""
 
-#: options/theme-options.php:1019
+#: options/theme-options.php:1047
 msgid "Sakura Native Quantity"
 msgstr ""
 
-#: options/theme-options.php:1020
+#: options/theme-options.php:1048
 msgid "Sakura Quarter Quantity"
 msgstr ""
 
-#: options/theme-options.php:1021
+#: options/theme-options.php:1049
 msgid "Sakura Half Quantity"
 msgstr ""
 
-#: options/theme-options.php:1022
+#: options/theme-options.php:1050
 msgid "Sakura Less Quantity"
 msgstr ""
 
-#: options/theme-options.php:1023
+#: options/theme-options.php:1051
 msgid "Snow Native Quantity"
 msgstr ""
 
-#: options/theme-options.php:1024
+#: options/theme-options.php:1052
 msgid "Snow Half Quantity"
 msgstr ""
 
-#: options/theme-options.php:1032
+#: options/theme-options.php:1060
 msgid "Live2D Model"
 msgstr ""
 
-#: options/theme-options.php:1033
+#: options/theme-options.php:1061
 msgid ""
 "Live2D Model will be loaded in the bottom left corner of the page after "
 "turning on"
 msgstr ""
 
-#: options/theme-options.php:1040
+#: options/theme-options.php:1068
 msgid "Live2D Model Custom Github Project Username"
 msgstr ""
 
-#: options/theme-options.php:1042
+#: options/theme-options.php:1070
 msgid ""
 "If you want to customize this option, you need to go to Github to fork this "
 "project and make changes to this project first, fill in the Github project "
 "username here"
 msgstr ""
 
-#: options/theme-options.php:1049
+#: options/theme-options.php:1077
 msgid "Live2D Model Custom Github Project Version"
 msgstr ""
 
-#: options/theme-options.php:1051
+#: options/theme-options.php:1079
 msgid ""
 "If you want to customize this option, you need to first go to Github to "
 "fork this project and make changes to this project, fill in the version of "
 "the Github project here"
 msgstr ""
 
-#: options/theme-options.php:1058
+#: options/theme-options.php:1086
 msgid "Note Touch Effects"
 msgstr ""
 
-#: options/theme-options.php:1059
+#: options/theme-options.php:1087
 msgid ""
 "After turning on, there will be a note sound alert when the back to top "
 "button and Mashiro style logo touch"
 msgstr ""
 
-#: options/theme-options.php:1065
+#: options/theme-options.php:1093
 msgid "Feature"
 msgstr ""
 
-#: options/theme-options.php:1071
+#: options/theme-options.php:1099
 msgid "PJAX Partial Refresh"
 msgstr ""
 
-#: options/theme-options.php:1072
+#: options/theme-options.php:1100
 msgid "Enabled by default, clicking to a new page will not require reloading"
 msgstr ""
 
-#: options/theme-options.php:1079
+#: options/theme-options.php:1107
 msgid "NProgress Loading Progress Bar"
 msgstr ""
 
-#: options/theme-options.php:1080
+#: options/theme-options.php:1108
 msgid ""
 "Enabled by default, when loading page there will be a progress bar alert"
 msgstr ""
 
-#: options/theme-options.php:1087
+#: options/theme-options.php:1115
 msgid "Global Smooth Scroll"
 msgstr ""
 
-#: options/theme-options.php:1088
+#: options/theme-options.php:1116
 msgid "Enabled by default, page scrolling will be smoother"
 msgstr ""
 
-#: options/theme-options.php:1095
+#: options/theme-options.php:1123
 msgid "Login Captcha"
 msgstr ""
 
-#: options/theme-options.php:1096
+#: options/theme-options.php:1124
 msgid ""
 "After turning on, the captcha will appear in the backend login page and "
 "login template, this feature conflicts with other captcha related plugins, "
 "please do not turn on together"
 msgstr ""
 
-#: options/theme-options.php:1103
+#: options/theme-options.php:1131
 msgid "Pagination Mode"
 msgstr ""
 
-#: options/theme-options.php:1105
+#: options/theme-options.php:1133
 msgid "Ajax Load"
 msgstr ""
 
-#: options/theme-options.php:1106
+#: options/theme-options.php:1134
 msgid "Page Up/Down"
 msgstr ""
 
-#: options/theme-options.php:1114
+#: options/theme-options.php:1142
 msgid "Next Page Auto Load"
 msgstr ""
 
-#: options/theme-options.php:1117
+#: options/theme-options.php:1145
 msgid "do not autoload"
 msgstr ""
 
-#: options/theme-options.php:1118
+#: options/theme-options.php:1146
 msgid "0 Sec"
 msgstr ""
 
-#: options/theme-options.php:1119
+#: options/theme-options.php:1147
 msgid "1 Sec"
 msgstr ""
 
-#: options/theme-options.php:1120
+#: options/theme-options.php:1148
 msgid "2 Sec"
 msgstr ""
 
-#: options/theme-options.php:1121
+#: options/theme-options.php:1149
 msgid "3 Sec"
 msgstr ""
 
-#: options/theme-options.php:1122
+#: options/theme-options.php:1150
 msgid "4 Sec"
 msgstr ""
 
-#: options/theme-options.php:1123
+#: options/theme-options.php:1151
 msgid "5 Sec"
 msgstr ""
 
-#: options/theme-options.php:1124
+#: options/theme-options.php:1152
 msgid "6 Sec"
 msgstr ""
 
-#: options/theme-options.php:1125
+#: options/theme-options.php:1153
 msgid "7 Sec"
 msgstr ""
 
-#: options/theme-options.php:1126
+#: options/theme-options.php:1154
 msgid "8 Sec"
 msgstr ""
 
-#: options/theme-options.php:1127
+#: options/theme-options.php:1155
 msgid "9 Sec"
 msgstr ""
 
-#: options/theme-options.php:1128
+#: options/theme-options.php:1156
 msgid "10 Sec"
 msgstr ""
 
-#: options/theme-options.php:1136
+#: options/theme-options.php:1164
 msgid "Placeholder SVG when loading the next page"
 msgstr ""
 
-#: options/theme-options.php:1137
+#: options/theme-options.php:1165
 msgid ""
 "Fill in the address, this is the SVG that will be displayed as a "
 "placeholder when the next page is loading"
 msgstr ""
 
-#: options/theme-options.php:1145
+#: options/theme-options.php:1173
 msgid "HomePage Options"
 msgstr ""
 
-#: options/theme-options.php:1151
+#: options/theme-options.php:1179
 msgid "Cover Options"
 msgstr ""
 
-#: options/theme-options.php:1158
+#: options/theme-options.php:1186
 msgid "Cover Switch"
 msgstr ""
 
-#: options/theme-options.php:1159
+#: options/theme-options.php:1187
 msgid "On by default, if off, all options below will be disabled"
 msgstr ""
 
-#: options/theme-options.php:1166
+#: options/theme-options.php:1194
 msgid "Cover Full Screen"
 msgstr ""
 
-#: options/theme-options.php:1175
+#: options/theme-options.php:1203
 msgid "Cover Arc Occlusion (Below)"
 msgstr ""
 
-#: options/theme-options.php:1176
+#: options/theme-options.php:1204
 msgid "An arc occlusion will appear below the cover when turned on"
 msgstr ""
 
-#: options/theme-options.php:1183
+#: options/theme-options.php:1211
 msgid "Cover Radius"
 msgstr ""
 
-#: options/theme-options.php:1184
+#: options/theme-options.php:1212
 msgid "Slide to adjust, the recommended value range is 15-20"
 msgstr ""
 
-#: options/theme-options.php:1193
+#: options/theme-options.php:1221
 msgid "Cover Animation"
 msgstr ""
 
-#: options/theme-options.php:1194
+#: options/theme-options.php:1222
 msgid "On by default, if off, the cover will be displayed directly"
 msgstr ""
 
-#: options/theme-options.php:1201
+#: options/theme-options.php:1229
 msgid "Cover Animation Time"
 msgstr ""
 
-#: options/theme-options.php:1213
+#: options/theme-options.php:1241
 msgid "Cover Info Bar"
 msgstr ""
 
-#: options/theme-options.php:1214
+#: options/theme-options.php:1242
 msgid ""
 "Enabled by default, show avatar, Mashiro effects text, signature bar, "
 "social area"
 msgstr ""
 
-#: options/theme-options.php:1221
+#: options/theme-options.php:1249
 msgid "Cover Info Bar Style"
 msgstr ""
 
-#: options/theme-options.php:1232
+#: options/theme-options.php:1260
 msgid "Cover Info Bar Background Color"
 msgstr ""
 
-#: options/theme-options.php:1240
+#: options/theme-options.php:1268
 msgid "Cover Info Bar Avatar Radius"
 msgstr ""
 
-#: options/theme-options.php:1241
+#: options/theme-options.php:1269
 msgid "Slide to adjust, the recommended value is 100"
 msgstr ""
 
-#: options/theme-options.php:1249
+#: options/theme-options.php:1277
 msgid "Cover Signature Bar Rounded"
 msgstr ""
 
-#: options/theme-options.php:1250
+#: options/theme-options.php:1278
 msgid "Slide to adjust, the recommended value range 10-20"
 msgstr ""
 
-#: options/theme-options.php:1259
+#: options/theme-options.php:1287
 msgid "Cover Signature Field Text"
 msgstr ""
 
-#: options/theme-options.php:1260 options/theme-options.php:2321
+#: options/theme-options.php:1288 options/theme-options.php:2353
 msgid "A self-descriptive quote"
 msgstr ""
 
-#: options/theme-options.php:1267
+#: options/theme-options.php:1295
 msgid "Cover Signature Field Text Font"
 msgstr ""
 
-#: options/theme-options.php:1275
+#: options/theme-options.php:1303
 msgid "Cover Signature Field Text Font Size"
 msgstr ""
 
-#: options/theme-options.php:1286
+#: options/theme-options.php:1314
 msgid "Cover Signature Bar Typing Effects"
 msgstr ""
 
-#: options/theme-options.php:1287
+#: options/theme-options.php:1315
 msgid ""
 "When turned on, the signature bar text will have an additional paragraph of "
 "text and will be rendered with typing effects"
 msgstr ""
 
-#: options/theme-options.php:1294
+#: options/theme-options.php:1322
 msgid "Cover Signature Field Typing Effects Double Quotes"
 msgstr ""
 
-#: options/theme-options.php:1296
+#: options/theme-options.php:1324
 msgid "Typing effects will be appended with double quotes when turned on"
 msgstr ""
 
-#: options/theme-options.php:1303
+#: options/theme-options.php:1331
 msgid "Cover Signature Text"
 msgstr ""
 
-#: options/theme-options.php:1305
+#: options/theme-options.php:1333
 msgid ""
 "Fill in the text of the typing effect. Use English double quotes outside "
 "the text, and English commas to separate the two sentences. Support HTML "
 "tags"
 msgstr ""
 
-#: options/theme-options.php:1312
+#: options/theme-options.php:1340
 msgid "Cover Random Image Options"
 msgstr ""
 
-#: options/theme-options.php:1314
+#: options/theme-options.php:1342
 msgid "External API"
 msgstr ""
 
-#: options/theme-options.php:1315
+#: options/theme-options.php:1343
 msgid "Webp optimized"
 msgstr ""
 
-#: options/theme-options.php:1316
+#: options/theme-options.php:1344
 msgid "Local"
 msgstr ""
 
-#: options/theme-options.php:1324
+#: options/theme-options.php:1352
 msgid "Cover Random Image Multi-terminal Separation"
 msgstr ""
 
-#: options/theme-options.php:1325
+#: options/theme-options.php:1353
 msgid ""
 "Enabled by default, desktop and mobile devices will use separate random "
 "image addresses"
 msgstr ""
 
-#: options/theme-options.php:1332
+#: options/theme-options.php:1360
 msgid "Webp Optimization/External API Desktop Side Random Graphics Address"
 msgstr ""
 
-#: options/theme-options.php:1333
+#: options/theme-options.php:1361
 msgid "Fill in the address"
 msgstr ""
 
-#: options/theme-options.php:1340
+#: options/theme-options.php:1368
 #, php-format
 msgid ""
 "如果你选择使用Webp优化随机图片 / If you choose to use Webp to optimize "
@@ -1852,19 +1877,19 @@ msgid ""
 "路径 / to update the Manifest path"
 msgstr ""
 
-#: options/theme-options.php:1346
+#: options/theme-options.php:1374
 msgid "External API Mobile Devices Random Image Address"
 msgstr ""
 
-#: options/theme-options.php:1348
+#: options/theme-options.php:1376
 msgid "fill address"
 msgstr ""
 
-#: options/theme-options.php:1355
+#: options/theme-options.php:1383
 msgid "Cover Random Background Image Cache"
 msgstr ""
 
-#: options/theme-options.php:1356
+#: options/theme-options.php:1384
 msgid ""
 "Enabled by default, this feature will cache a cover image locally, which "
 "can improve the loading speed of the first cover after entering the "
@@ -1872,1250 +1897,1250 @@ msgid ""
 "requests."
 msgstr ""
 
-#: options/theme-options.php:1363
+#: options/theme-options.php:1391
 msgid "Cover and Frontend Background Integration"
 msgstr ""
 
-#: options/theme-options.php:1364
+#: options/theme-options.php:1392
 msgid ""
 "When enabled, the background of the cover will be set to transparent, while "
 "the frontend background will use the cover's random image API"
 msgstr ""
 
-#: options/theme-options.php:1371
+#: options/theme-options.php:1399
 msgid "Cover Random Images Filter"
 msgstr ""
 
-#: options/theme-options.php:1373
+#: options/theme-options.php:1401
 msgid "No filter"
 msgstr ""
 
-#: options/theme-options.php:1374
+#: options/theme-options.php:1402
 msgid "Light filter"
 msgstr ""
 
-#: options/theme-options.php:1375
+#: options/theme-options.php:1403
 msgid "Dimmed filter"
 msgstr ""
 
-#: options/theme-options.php:1376
+#: options/theme-options.php:1404
 msgid "Grid filter"
 msgstr ""
 
-#: options/theme-options.php:1377
+#: options/theme-options.php:1405
 msgid "Dot filter"
 msgstr ""
 
-#: options/theme-options.php:1385
+#: options/theme-options.php:1413
 msgid "Cover Wave Effects"
 msgstr ""
 
-#: options/theme-options.php:1386
+#: options/theme-options.php:1414
 msgid ""
 "Wave effect will appear at the bottom of the cover of the home page after "
 "turning on, and it will be forced off in the dark mode"
 msgstr ""
 
-#: options/theme-options.php:1393
+#: options/theme-options.php:1421
 msgid "Cover Dropdown Arrow"
 msgstr ""
 
-#: options/theme-options.php:1394
+#: options/theme-options.php:1422
 msgid "Enabled by default, show a dropdown arrow at bottom of home cover"
 msgstr ""
 
-#: options/theme-options.php:1401
+#: options/theme-options.php:1429
 msgid "Cover Dropdown Arrow Display on Mobile Devices"
 msgstr ""
 
-#: options/theme-options.php:1403
+#: options/theme-options.php:1431
 msgid ""
 "Drop down arrow will appear at the bottom of the mobile devices' home cover "
 "after turning it on"
 msgstr ""
 
-#: options/theme-options.php:1410
+#: options/theme-options.php:1438
 msgid "Cover Dropdown Arrow Color"
 msgstr ""
 
-#: options/theme-options.php:1419
+#: options/theme-options.php:1447
 msgid "Cover Dropdown Arrow Color (Dark Mode)"
 msgstr ""
 
-#: options/theme-options.php:1421
+#: options/theme-options.php:1449
 msgid "Customize the colors, dark colors are recommended"
 msgstr ""
 
-#: options/theme-options.php:1428
+#: options/theme-options.php:1456
 msgid "Cover Video"
 msgstr ""
 
-#: options/theme-options.php:1429
+#: options/theme-options.php:1457
 msgid "Use a video instead of the images as the cover"
 msgstr ""
 
-#: options/theme-options.php:1436
+#: options/theme-options.php:1464
 msgid "Cover Video Loop"
 msgstr ""
 
-#: options/theme-options.php:1438
+#: options/theme-options.php:1466
 msgid "Video will loop automatically when enabled, Pjax needed"
 msgstr ""
 
-#: options/theme-options.php:1445
+#: options/theme-options.php:1473
 msgid "Cover Video Address"
 msgstr ""
 
-#: options/theme-options.php:1447
+#: options/theme-options.php:1475
 msgid ""
 "Fill in the address which splices the video name below, no slash at the end "
 "of the address"
 msgstr ""
 
-#: options/theme-options.php:1453
+#: options/theme-options.php:1481
 msgid "Cover Video Name"
 msgstr ""
 
-#: options/theme-options.php:1455
+#: options/theme-options.php:1483
 msgid ""
 "For example: abc.mp4, just fill in the video file name abc. Multiple videos "
 "should be separated by English commas like \"abc,efg,\" Random play is on "
 "by default."
 msgstr ""
 
-#: options/theme-options.php:1463
+#: options/theme-options.php:1491
 msgid "Cover Social Area Options"
 msgstr ""
 
-#: options/theme-options.php:1469
+#: options/theme-options.php:1497
 msgid "Related Options"
 msgstr ""
 
-#: options/theme-options.php:1475
+#: options/theme-options.php:1503
 msgid "Cover Social Area"
 msgstr ""
 
-#: options/theme-options.php:1476
+#: options/theme-options.php:1504
 msgid ""
 "Enabled by default, show cover random image toggle button and social "
 "network icons"
 msgstr ""
 
-#: options/theme-options.php:1483
+#: options/theme-options.php:1511
 msgid "Social Icon"
 msgstr ""
 
-#: options/theme-options.php:1484
+#: options/theme-options.php:1512
 msgid ""
 "Select your favorite icon pack. Icon pack references are detailed in the "
 "\"About Theme\" section"
 msgstr ""
 
-#: options/theme-options.php:1505
+#: options/theme-options.php:1533
 msgid "Cover Social Area Rounded Corners"
 msgstr ""
 
-#: options/theme-options.php:1507
+#: options/theme-options.php:1535
 msgid "Slide to adjust, the recommended value range is 10-20"
 msgstr ""
 
-#: options/theme-options.php:1516
+#: options/theme-options.php:1544
 msgid "Switch Button of Random Images"
 msgstr ""
 
-#: options/theme-options.php:1518
+#: options/theme-options.php:1546
 msgid "Enabled by default, show cover random image toggle button"
 msgstr ""
 
-#: options/theme-options.php:1524
+#: options/theme-options.php:1552
 msgid "Social Network"
 msgstr ""
 
-#: options/theme-options.php:1530
+#: options/theme-options.php:1558
 msgid "Wechat"
 msgstr ""
 
-#: options/theme-options.php:1539
+#: options/theme-options.php:1567
 msgid "QQ"
 msgstr ""
 
-#: options/theme-options.php:1541
+#: options/theme-options.php:1569
 msgid ""
 "Please note the format of filling out the form, e.g. tencent://message/?"
 "uin=123456"
 msgstr ""
 
-#: options/theme-options.php:1547
+#: options/theme-options.php:1575
 msgid "Bilibili"
 msgstr ""
 
-#: options/theme-options.php:1549 options/theme-options.php:1557
-#: options/theme-options.php:1565 options/theme-options.php:1573
-#: options/theme-options.php:1581 options/theme-options.php:1589
-#: options/theme-options.php:1597 options/theme-options.php:1605
-#: options/theme-options.php:1613 options/theme-options.php:1621
-#: options/theme-options.php:1629 options/theme-options.php:1637
-#: options/theme-options.php:1645 options/theme-options.php:1653
-#: options/theme-options.php:1661 options/theme-options.php:1669
-#: options/theme-options.php:1686 options/theme-options.php:1943
-#: options/theme-options.php:1969 options/theme-options.php:1995
-#: options/theme-options.php:2079
+#: options/theme-options.php:1577 options/theme-options.php:1585
+#: options/theme-options.php:1593 options/theme-options.php:1601
+#: options/theme-options.php:1609 options/theme-options.php:1617
+#: options/theme-options.php:1625 options/theme-options.php:1633
+#: options/theme-options.php:1641 options/theme-options.php:1649
+#: options/theme-options.php:1657 options/theme-options.php:1665
+#: options/theme-options.php:1673 options/theme-options.php:1681
+#: options/theme-options.php:1689 options/theme-options.php:1697
+#: options/theme-options.php:1714 options/theme-options.php:1975
+#: options/theme-options.php:2001 options/theme-options.php:2027
+#: options/theme-options.php:2111
 msgid "add URL"
 msgstr ""
 
-#: options/theme-options.php:1555
+#: options/theme-options.php:1583
 msgid "NetEase Music"
 msgstr ""
 
-#: options/theme-options.php:1563
+#: options/theme-options.php:1591
 msgid "Weibo"
 msgstr ""
 
-#: options/theme-options.php:1571
+#: options/theme-options.php:1599
 msgid "Github"
 msgstr ""
 
-#: options/theme-options.php:1579
+#: options/theme-options.php:1607
 msgid "Telegram"
 msgstr ""
 
-#: options/theme-options.php:1587
+#: options/theme-options.php:1615
 msgid "Steam"
 msgstr ""
 
-#: options/theme-options.php:1595
+#: options/theme-options.php:1623
 msgid "ZhiHu"
 msgstr ""
 
-#: options/theme-options.php:1603
+#: options/theme-options.php:1631
 msgid "QZone"
 msgstr ""
 
-#: options/theme-options.php:1611
+#: options/theme-options.php:1639
 msgid "Lofter"
 msgstr ""
 
-#: options/theme-options.php:1619
+#: options/theme-options.php:1647
 msgid "Youku"
 msgstr ""
 
-#: options/theme-options.php:1627
+#: options/theme-options.php:1655
 msgid "Linkedin"
 msgstr ""
 
-#: options/theme-options.php:1635
+#: options/theme-options.php:1663
 msgid "Twitter"
 msgstr ""
 
-#: options/theme-options.php:1643
+#: options/theme-options.php:1671
 msgid "Facebook"
 msgstr ""
 
-#: options/theme-options.php:1651
+#: options/theme-options.php:1679
 msgid "CSDN"
 msgstr ""
 
-#: options/theme-options.php:1659
+#: options/theme-options.php:1687
 msgid "JianShu"
 msgstr ""
 
-#: options/theme-options.php:1667
+#: options/theme-options.php:1695
 msgid "Customized Social Network Ⅰ"
 msgstr ""
 
-#: options/theme-options.php:1675
+#: options/theme-options.php:1703
 msgid "Customized Social Network Ⅰ icon"
 msgstr ""
 
-#: options/theme-options.php:1684
+#: options/theme-options.php:1712
 msgid "Customized Social Network Ⅱ"
 msgstr ""
 
-#: options/theme-options.php:1692
+#: options/theme-options.php:1720
 msgid "Customized Social Network Ⅱ icon"
 msgstr ""
 
-#: options/theme-options.php:1701
+#: options/theme-options.php:1729
 msgid "Email Username"
 msgstr ""
 
-#: options/theme-options.php:1703
+#: options/theme-options.php:1731
 msgid ""
 "name@domain.com fo name, the full address can be known only when there is a "
 "js runtime in the frontend, you can fill in with confidence"
 msgstr ""
 
-#: options/theme-options.php:1709
+#: options/theme-options.php:1737
 msgid "Email Domain"
 msgstr ""
 
-#: options/theme-options.php:1711
+#: options/theme-options.php:1739
 msgid "name@domain.com fo domain.com"
 msgstr ""
 
-#: options/theme-options.php:1719
+#: options/theme-options.php:1747
 msgid "Bulletin Board and Area Title Options"
 msgstr ""
 
-#: options/theme-options.php:1725 options/theme-options.php:1731
+#: options/theme-options.php:1753 options/theme-options.php:1759
 msgid "Bulletin Board"
 msgstr ""
 
-#: options/theme-options.php:1732
+#: options/theme-options.php:1760
 msgid ""
 "When enabled the bulletin board will be displayed below the front cover"
 msgstr ""
 
-#: options/theme-options.php:1739
+#: options/theme-options.php:1767
 msgid "Bulletin Board Style"
 msgstr ""
 
-#: options/theme-options.php:1742
+#: options/theme-options.php:1770
 msgid "Picture Background"
 msgstr ""
 
-#: options/theme-options.php:1743
+#: options/theme-options.php:1771
 msgid "Color Background"
 msgstr ""
 
-#: options/theme-options.php:1751
+#: options/theme-options.php:1779
 msgid "Bulletin Board \"Broadcast\" Icon"
 msgstr ""
 
-#: options/theme-options.php:1753
+#: options/theme-options.php:1781
 msgid ""
 "The \"Broadcast\" icon will be displayed on the left side of the "
 "announcement bar"
 msgstr ""
 
-#: options/theme-options.php:1760
+#: options/theme-options.php:1788
 msgid "Bulletin Board Background"
 msgstr ""
 
-#: options/theme-options.php:1765
+#: options/theme-options.php:1793
 msgid "Best width 820px, best height 67px"
 msgstr ""
 
-#: options/theme-options.php:1773
+#: options/theme-options.php:1801
 msgid "Bulletin Board Border Color"
 msgstr ""
 
-#: options/theme-options.php:1785
+#: options/theme-options.php:1813
 msgid "Bulletin Board Text"
 msgstr ""
 
-#: options/theme-options.php:1787
+#: options/theme-options.php:1815
 msgid ""
 "Fill in the announcement text, the text beyond 142 bytes will be hidden"
 msgstr ""
 
-#: options/theme-options.php:1793
+#: options/theme-options.php:1821
 msgid "Bulletin Board Alignment"
 msgstr ""
 
-#: options/theme-options.php:1806
+#: options/theme-options.php:1834
 msgid "Bulletin Board Text Color"
 msgstr ""
 
-#: options/theme-options.php:1808 options/theme-options.php:1857
-#: options/theme-options.php:2154
+#: options/theme-options.php:1836 options/theme-options.php:1885
+#: options/theme-options.php:2186
 msgid ""
 "Customize the colors, suggest using a corresponding color with the "
 "background color"
 msgstr ""
 
-#: options/theme-options.php:1814
+#: options/theme-options.php:1842
 msgid "Area Title"
 msgstr ""
 
-#: options/theme-options.php:1820
+#: options/theme-options.php:1848
 msgid "Display Area Title"
 msgstr ""
 
-#: options/theme-options.php:1821
+#: options/theme-options.php:1849
 msgid ""
 "Default is \"Display\", you can change it to anything else, but of course "
 "it CANNOT be used as an ad! Not allowed!!!"
 msgstr ""
 
-#: options/theme-options.php:1828
+#: options/theme-options.php:1856
 msgid "Post Area Title"
 msgstr ""
 
-#: options/theme-options.php:1829
+#: options/theme-options.php:1857
 msgid ""
 "Default is \"Article\", you can change it to anything else, but of course "
 "it CANNOT be used as an ad! Not allowed!!!"
 msgstr ""
 
-#: options/theme-options.php:1836
+#: options/theme-options.php:1864
 msgid "Area Title Font"
 msgstr ""
 
-#: options/theme-options.php:1837
+#: options/theme-options.php:1865
 msgid "Fill in the font name. For example: Noto Serif SC"
 msgstr ""
 
-#: options/theme-options.php:1844
+#: options/theme-options.php:1872
 msgid "Area Title Alignment"
 msgstr ""
 
-#: options/theme-options.php:1856
+#: options/theme-options.php:1884
 msgid "Area Title Bottom Color"
 msgstr ""
 
-#: options/theme-options.php:1866 options/theme-options.php:1919
+#: options/theme-options.php:1894 options/theme-options.php:1951
 msgid "Display Area Options"
 msgstr ""
 
-#: options/theme-options.php:1873
+#: options/theme-options.php:1901
 msgid "Display Area"
 msgstr ""
 
-#: options/theme-options.php:1874
+#: options/theme-options.php:1902
 msgid "Enabled by default, display area is above article area"
 msgstr ""
 
-#: options/theme-options.php:1881
+#: options/theme-options.php:1909
 msgid "Display Area Style"
 msgstr ""
 
-#: options/theme-options.php:1892
+#: options/theme-options.php:1920
 msgid "Display Area Compatibility Mode"
 msgstr ""
 
-#: options/theme-options.php:1894
+#: options/theme-options.php:1922
 msgid ""
 "Enabled by default, this option avoids the problem of misaligned display "
 "areas"
 msgstr ""
 
-#: options/theme-options.php:1901
+#: options/theme-options.php:1929
 msgid "Display Area Background Color"
 msgstr ""
 
-#: options/theme-options.php:1910
+#: options/theme-options.php:1938
 msgid "Display Area Rounded Corners"
 msgstr ""
 
-#: options/theme-options.php:1922
+#: options/theme-options.php:1954
 msgid "First Display Area"
 msgstr ""
 
-#: options/theme-options.php:1927 options/theme-options.php:1953
-#: options/theme-options.php:1979
+#: options/theme-options.php:1959 options/theme-options.php:1985
+#: options/theme-options.php:2011
 msgid "image"
 msgstr ""
 
-#: options/theme-options.php:1928 options/theme-options.php:1954
-#: options/theme-options.php:1980
+#: options/theme-options.php:1960 options/theme-options.php:1986
+#: options/theme-options.php:2012
 msgid "best width 260px, best height 160px"
 msgstr ""
 
-#: options/theme-options.php:1933 options/theme-options.php:1959
-#: options/theme-options.php:1985
+#: options/theme-options.php:1965 options/theme-options.php:1991
+#: options/theme-options.php:2017
 msgid "title"
 msgstr ""
 
-#: options/theme-options.php:1938 options/theme-options.php:1964
-#: options/theme-options.php:1990
+#: options/theme-options.php:1970 options/theme-options.php:1996
+#: options/theme-options.php:2022
 msgid "description"
 msgstr ""
 
-#: options/theme-options.php:1948
+#: options/theme-options.php:1980
 msgid "Second Display Area"
 msgstr ""
 
-#: options/theme-options.php:1974
+#: options/theme-options.php:2006
 msgid "Third Display Area"
 msgstr ""
 
-#: options/theme-options.php:2021
+#: options/theme-options.php:2053
 msgid "Article Area Options"
 msgstr ""
 
-#: options/theme-options.php:2028
+#: options/theme-options.php:2060
 msgid "Article Area Display Style"
 msgstr ""
 
-#: options/theme-options.php:2039
+#: options/theme-options.php:2071
 msgid "Article Area Featured Image Display Shapes"
 msgstr ""
 
-#: options/theme-options.php:2041
+#: options/theme-options.php:2073
 msgid ""
 "You can choose a circular or a rectangular display of the featured image"
 msgstr ""
 
-#: options/theme-options.php:2052
+#: options/theme-options.php:2084
 msgid "Article Area Featured Image Alignment"
 msgstr ""
 
-#: options/theme-options.php:2054
+#: options/theme-options.php:2086
 msgid "You can choose different directions to display the featured images"
 msgstr ""
 
-#: options/theme-options.php:2066
+#: options/theme-options.php:2098
 msgid "Article Area Featured Image Options"
 msgstr ""
 
-#: options/theme-options.php:2068
+#: options/theme-options.php:2100
 msgid "Cover Random Image"
 msgstr ""
 
-#: options/theme-options.php:2069
+#: options/theme-options.php:2101
 msgid "External API Random Image"
 msgstr ""
 
-#: options/theme-options.php:2077
+#: options/theme-options.php:2109
 msgid "Article Area Featured Image External API Random Image Address"
 msgstr ""
 
-#: options/theme-options.php:2085
+#: options/theme-options.php:2117
 msgid "Article Area Title Font Size"
 msgstr ""
 
-#: options/theme-options.php:2086
+#: options/theme-options.php:2118
 msgid "Slide to adjust, the recommended value range is 16-20"
 msgstr ""
 
-#: options/theme-options.php:2098
+#: options/theme-options.php:2130
 msgid "Article Area Time Display Area Background Color"
 msgstr ""
 
-#: options/theme-options.php:2100
+#: options/theme-options.php:2132
 msgid ""
 "Customize the colors, it is recommended to use a light color corresponding "
 "with the main color"
 msgstr ""
 
-#: options/theme-options.php:2107
+#: options/theme-options.php:2139
 msgid "Article Area Time Display Area Text Color"
 msgstr ""
 
-#: options/theme-options.php:2109 options/theme-options.php:2145
+#: options/theme-options.php:2141 options/theme-options.php:2177
 msgid "Customize the colors, suggest the same as the matching color"
 msgstr ""
 
-#: options/theme-options.php:2116
+#: options/theme-options.php:2148
 msgid "Article Area Time Display Area Font Size"
 msgstr ""
 
-#: options/theme-options.php:2118
+#: options/theme-options.php:2150
 msgid "Slide to adjust, the recommended values range is 10-14"
 msgstr ""
 
-#: options/theme-options.php:2129
+#: options/theme-options.php:2161
 msgid "Article Area \"Detail\" Icon"
 msgstr ""
 
-#: options/theme-options.php:2130
+#: options/theme-options.php:2162
 msgid ""
 "When enabled the \"Detail\" icon will be displayed below the article area"
 msgstr ""
 
-#: options/theme-options.php:2135
+#: options/theme-options.php:2167
 msgid "Article Area Author Info"
 msgstr ""
 
-#: options/theme-options.php:2136
+#: options/theme-options.php:2168
 msgid ""
 "When turned on, author information will be added to the article metadata "
 "section."
 msgstr ""
 
-#: options/theme-options.php:2143
+#: options/theme-options.php:2175
 msgid "Article Area Icon Color"
 msgstr ""
 
-#: options/theme-options.php:2152
+#: options/theme-options.php:2184
 msgid "Article Area Border Shadow Color"
 msgstr ""
 
-#: options/theme-options.php:2163
+#: options/theme-options.php:2195
 msgid "Page Options"
 msgstr ""
 
-#: options/theme-options.php:2169
+#: options/theme-options.php:2201
 msgid "Integrated Options"
 msgstr ""
 
-#: options/theme-options.php:2176
+#: options/theme-options.php:2208
 msgid "Page Style"
 msgstr ""
 
-#: options/theme-options.php:2187
+#: options/theme-options.php:2219
 msgid "Page Layout Style"
 msgstr ""
 
-#: options/theme-options.php:2189
+#: options/theme-options.php:2221
 msgid "Default Style"
 msgstr ""
 
-#: options/theme-options.php:2190
+#: options/theme-options.php:2222
 msgid "Github Style"
 msgstr ""
 
-#: options/theme-options.php:2198
+#: options/theme-options.php:2230
 msgid "Page Decoration Image"
 msgstr ""
 
-#: options/theme-options.php:2199
+#: options/theme-options.php:2231
 msgid ""
 "Enabled by default, show on article pages, standalone pages and category "
 "pages"
 msgstr ""
 
-#: options/theme-options.php:2206
+#: options/theme-options.php:2238
 msgid "Page Title Animation"
 msgstr ""
 
-#: options/theme-options.php:2207
+#: options/theme-options.php:2239
 msgid "Page title will have float-in animation when turned on"
 msgstr ""
 
-#: options/theme-options.php:2214
+#: options/theme-options.php:2246
 msgid "Page Title Animation Time"
 msgstr ""
 
-#: options/theme-options.php:2216
+#: options/theme-options.php:2248
 msgid "Slide to adjust, recommended value range is 1-2"
 msgstr ""
 
-#: options/theme-options.php:2226
+#: options/theme-options.php:2258
 msgid "Page Clipboard Copyright Notice"
 msgstr ""
 
-#: options/theme-options.php:2227
+#: options/theme-options.php:2259
 msgid ""
 "Enabled by default, users will have copyright notice text when copying text "
 "content over 30 bytes"
 msgstr ""
 
-#: options/theme-options.php:2234
+#: options/theme-options.php:2266
 msgid "Page LazyLoad"
 msgstr ""
 
-#: options/theme-options.php:2235
+#: options/theme-options.php:2267
 msgid ""
 "LazyLoad effect for page images, WordPress block editor already comes with "
 "similar effect, not recommended to turn on"
 msgstr ""
 
-#: options/theme-options.php:2242
+#: options/theme-options.php:2274
 msgid "Page LazyLoad Placeholder SVG"
 msgstr ""
 
-#: options/theme-options.php:2244
+#: options/theme-options.php:2276
 msgid ""
 "Fill in the address, this is the placeholder image that will be displayed "
 "when the page LazyLoad is being loaded"
 msgstr ""
 
-#: options/theme-options.php:2251
+#: options/theme-options.php:2283
 msgid "Page Image Placeholder SVG"
 msgstr ""
 
-#: options/theme-options.php:2252
+#: options/theme-options.php:2284
 msgid ""
 "Fill address, this is the SVG that will be displayed as a placeholder when "
 "the page image is being loaded"
 msgstr ""
 
-#: options/theme-options.php:2261
+#: options/theme-options.php:2293
 msgid "Article Page Options"
 msgstr ""
 
-#: options/theme-options.php:2268
+#: options/theme-options.php:2300
 msgid "Article Page Title Font Size"
 msgstr ""
 
-#: options/theme-options.php:2269
+#: options/theme-options.php:2301
 msgid ""
 "Slide to adjust, recommended value range is 28-36. This option is only "
 "available for article pages that have a featured image set"
 msgstr ""
 
-#: options/theme-options.php:2279
+#: options/theme-options.php:2311
 msgid "Article Page Title Underline Animation"
 msgstr ""
 
-#: options/theme-options.php:2280
+#: options/theme-options.php:2312
 msgid ""
 "Article title will have underline animation when this is enabled and "
 "article has a featured image set"
 msgstr ""
 
-#: options/theme-options.php:2287
+#: options/theme-options.php:2319
 msgid "Article Page Auto Show Menu"
 msgstr ""
 
-#: options/theme-options.php:2288
+#: options/theme-options.php:2320
 msgid "Enabled by default, the article page will automatically show the menu"
 msgstr ""
 
-#: options/theme-options.php:2295
+#: options/theme-options.php:2327
 msgid "Article Page Prev/Next Article Switcher"
 msgstr ""
 
-#: options/theme-options.php:2296
+#: options/theme-options.php:2328
 msgid ""
 "After turning on, the previous and next article switch will appear on the "
 "article pages"
 msgstr ""
 
-#: options/theme-options.php:2303
+#: options/theme-options.php:2335
 msgid "Article Page Copyright Tips and Labels"
 msgstr ""
 
-#: options/theme-options.php:2304
+#: options/theme-options.php:2336
 msgid "Copyright hint and label will appear on article pages when enabled"
 msgstr ""
 
-#: options/theme-options.php:2311
+#: options/theme-options.php:2343
 msgid "Article Page Author Info"
 msgstr ""
 
-#: options/theme-options.php:2312
+#: options/theme-options.php:2344
 msgid "Author information will appear on the article page when enabled"
 msgstr ""
 
-#: options/theme-options.php:2319
+#: options/theme-options.php:2351
 msgid "Article Page Author Info Signature Field Text"
 msgstr ""
 
-#: options/theme-options.php:2328
+#: options/theme-options.php:2360
 msgid "Article Page Appreciation Button (Alipay QR Code)"
 msgstr ""
 
-#: options/theme-options.php:2329
+#: options/theme-options.php:2361
 msgid "Upload Alipay Receipt QR Code Image"
 msgstr ""
 
-#: options/theme-options.php:2336
+#: options/theme-options.php:2368
 msgid "Article Page Appreciation Button (Wechat QR Code)"
 msgstr ""
 
-#: options/theme-options.php:2337
+#: options/theme-options.php:2369
 msgid "Upload WeChat Receipt QR Code Image"
 msgstr ""
 
-#: options/theme-options.php:2346
+#: options/theme-options.php:2378
 msgid "Template Page Options"
 msgstr ""
 
-#: options/theme-options.php:2353
+#: options/theme-options.php:2385
 msgid "Template Page Title Font Size"
 msgstr ""
 
-#: options/theme-options.php:2354
+#: options/theme-options.php:2386
 msgid ""
 "Slide to adjust, recommended value range is 36-48. This option is only "
 "available for template pages with featured images already set"
 msgstr ""
 
-#: options/theme-options.php:2364
+#: options/theme-options.php:2396
 msgid "Ideas Template Background ColorⅠ"
 msgstr ""
 
-#: options/theme-options.php:2372
+#: options/theme-options.php:2404
 msgid "Ideas Template Background Color II"
 msgstr ""
 
-#: options/theme-options.php:2380
+#: options/theme-options.php:2412
 msgid "Ideas Template Tip Arrow"
 msgstr ""
 
-#: options/theme-options.php:2381
+#: options/theme-options.php:2413
 msgid ""
 "After turning on the alert arrow will appear on the left side of the comment"
 msgstr ""
 
-#: options/theme-options.php:2388
+#: options/theme-options.php:2420
 msgid "Ideas Template Font"
 msgstr ""
 
-#: options/theme-options.php:2396
+#: options/theme-options.php:2428
 msgid "Bilibili Bangumi Catch-up Template Account ID"
 msgstr ""
 
-#: options/theme-options.php:2397
+#: options/theme-options.php:2429
 msgid ""
 "Fill in your account ID, e.g. https://space.bilibili.com/13972644/, just "
 "the number part \"13972644\""
 msgstr ""
 
-#: options/theme-options.php:2404
+#: options/theme-options.php:2436
 msgid "Bilibili Bangumi Catch-up Template Account Cookies"
 msgstr ""
 
-#: options/theme-options.php:2405
+#: options/theme-options.php:2437
 msgid ""
 "Fill in your account cookies, F12 to open your browser web panel, go to "
 "your bilibili homepage to get cookies. If left empty, it will not show the "
 "progress of catching up bangumis"
 msgstr ""
 
-#: options/theme-options.php:2412
+#: options/theme-options.php:2444
 msgid "Friend Link Template Unit Alignment"
 msgstr ""
 
-#: options/theme-options.php:2424
+#: options/theme-options.php:2456
 msgid "Login Template Registration Function"
 msgstr ""
 
-#: options/theme-options.php:2425
+#: options/theme-options.php:2457
 msgid "Login template will allow registration when enabled"
 msgstr ""
 
-#: options/theme-options.php:2434
+#: options/theme-options.php:2466
 msgid "Comment-related Options"
 msgstr ""
 
-#: options/theme-options.php:2441
+#: options/theme-options.php:2473
 msgid "Page Comment Area Display"
 msgstr ""
 
-#: options/theme-options.php:2442
+#: options/theme-options.php:2474
 msgid "You can choose to expand or shirink the content of the comment area"
 msgstr ""
 
-#: options/theme-options.php:2444
+#: options/theme-options.php:2476
 msgid "Expand"
 msgstr ""
 
-#: options/theme-options.php:2445
+#: options/theme-options.php:2477
 msgid "Shrink"
 msgstr ""
 
-#: options/theme-options.php:2453
+#: options/theme-options.php:2485
 msgid "Page Comment Area Bilibili Emoji Pack"
 msgstr ""
 
-#: options/theme-options.php:2454
+#: options/theme-options.php:2486
 msgid "Default on, bilibili emotions are displayed below the comment box"
 msgstr ""
 
-#: options/theme-options.php:2461
+#: options/theme-options.php:2493
 msgid "Page Comment Area Bottom Right Background Image"
 msgstr ""
 
-#: options/theme-options.php:2462
+#: options/theme-options.php:2494
 msgid ""
 "If this option is blank, there will be no image, no best recommendation here"
 msgstr ""
 
-#: options/theme-options.php:2469
+#: options/theme-options.php:2501
 msgid "Page Comment Area UA Info"
 msgstr ""
 
-#: options/theme-options.php:2470
+#: options/theme-options.php:2502
 msgid ""
 "When enabled, the page comment area will display the user’s browser, "
 "operating system information"
 msgstr ""
 
-#: options/theme-options.php:2477
+#: options/theme-options.php:2509
 msgid "Page Comment Area Location Information"
 msgstr ""
 
-#: options/theme-options.php:2478
+#: options/theme-options.php:2510
 msgid ""
 "When enabled, the page comment area will show the user’s location "
 "information"
 msgstr ""
 
-#: options/theme-options.php:2485
+#: options/theme-options.php:2517
 msgid "Page Comment Area IP Source"
 msgstr ""
 
-#: options/theme-options.php:2486
+#: options/theme-options.php:2518
 msgid ""
 "You can choose the theme self built IP library or Taobao IP library as the "
 "comment location information source"
 msgstr ""
 
-#: options/theme-options.php:2488
+#: options/theme-options.php:2520
 msgid "Theme Self Built IP Lib"
 msgstr ""
 
-#: options/theme-options.php:2489
+#: options/theme-options.php:2521
 msgid "Taobao IP Lib"
 msgstr ""
 
-#: options/theme-options.php:2497
+#: options/theme-options.php:2529
 msgid "Private Comment Function"
 msgstr ""
 
-#: options/theme-options.php:2498
+#: options/theme-options.php:2530
 msgid ""
 "When enabled, users are allowed to set their comments to be invisible to "
 "others"
 msgstr ""
 
-#: options/theme-options.php:2505
+#: options/theme-options.php:2537
 msgid "Page Comment Area Bot Verification"
 msgstr ""
 
-#: options/theme-options.php:2506
+#: options/theme-options.php:2538
 msgid "After turning on user comments need to be verified before posting"
 msgstr ""
 
-#: options/theme-options.php:2513
+#: options/theme-options.php:2545
 msgid "QQ Avatar Link Encryption"
 msgstr ""
 
-#: options/theme-options.php:2516
+#: options/theme-options.php:2548
 msgid "Redirect (low security)"
 msgstr ""
 
-#: options/theme-options.php:2517
+#: options/theme-options.php:2549
 msgid "Get avatar data in the backend (medium security)"
 msgstr ""
 
-#: options/theme-options.php:2518
+#: options/theme-options.php:2550
 msgid "Parse avatar interface in the backend (high security, slow)"
 msgstr ""
 
-#: options/theme-options.php:2526
+#: options/theme-options.php:2558
 msgid "Page Comment Area Upload Image Interface"
 msgstr ""
 
-#: options/theme-options.php:2539
+#: options/theme-options.php:2571
 msgid "Imgur Client ID"
 msgstr ""
 
-#: options/theme-options.php:2541
+#: options/theme-options.php:2573
 msgid ""
 "Fill in Client ID here, to register please visit https://api.imgur.com/"
 "oauth2/addclient"
 msgstr ""
 
-#: options/theme-options.php:2547
+#: options/theme-options.php:2579
 msgid "Imgur Upload Proxy"
 msgstr ""
 
-#: options/theme-options.php:2549
+#: options/theme-options.php:2581
 msgid ""
 "The proxy used by the backend when uploading images to Imgur. You can refer "
 "to the tutorial: https://2heng.xin/2018/06/06/javascript-upload-images-with-"
 "imgur-api/"
 msgstr ""
 
-#: options/theme-options.php:2556
+#: options/theme-options.php:2588
 msgid "SM.MS Secret Token"
 msgstr ""
 
-#: options/theme-options.php:2558
+#: options/theme-options.php:2590
 msgid ""
 "Fill in your Key here, to get it please visit https://sm.ms/home/apitoken"
 msgstr ""
 
-#: options/theme-options.php:2564
+#: options/theme-options.php:2596
 msgid "Chevereto API v1 Key"
 msgstr ""
 
-#: options/theme-options.php:2566
+#: options/theme-options.php:2598
 msgid ""
 "Fill in the Key here, to get please visit your Chevereto home page address/"
 "dashboard/settings/api"
 msgstr ""
 
-#: options/theme-options.php:2572
+#: options/theme-options.php:2604
 msgid "Chevereto Address"
 msgstr ""
 
-#: options/theme-options.php:2574
+#: options/theme-options.php:2606
 msgid ""
 "Your Chevereto home page address. Please note that there is no \"/\" at the "
 "end, e.g. https://your.cherverto.com"
 msgstr ""
 
-#: options/theme-options.php:2580
+#: options/theme-options.php:2612
 msgid "Comment Image Proxy"
 msgstr ""
 
-#: options/theme-options.php:2581
+#: options/theme-options.php:2613
 msgid "Proxy for the image displayed on the frontend"
 msgstr ""
 
-#: options/theme-options.php:2588
+#: options/theme-options.php:2620
 msgid "Mail Template Featured Image"
 msgstr ""
 
-#: options/theme-options.php:2589
+#: options/theme-options.php:2621
 msgid "Set the background image of your reply email"
 msgstr ""
 
-#: options/theme-options.php:2597
+#: options/theme-options.php:2629
 msgid "Mail Template Sending Address Prefix"
 msgstr ""
 
-#: options/theme-options.php:2598
+#: options/theme-options.php:2630
 msgid ""
 "Used to send system mail. The sender address will be displayed in the "
 "user's mailbox, don't use Non-English Characters. The default system mail "
 "address is bibi@your domain"
 msgstr ""
 
-#: options/theme-options.php:2605
+#: options/theme-options.php:2637
 msgid "User Mail Reply Notification"
 msgstr ""
 
-#: options/theme-options.php:2606
+#: options/theme-options.php:2638
 msgid ""
 "By default WordPress will use email notifications to notify users when "
 "their comments receive a reply. After turning it on users are allowed to "
 "set whether to use email notifications when their comments receive a reply"
 msgstr ""
 
-#: options/theme-options.php:2613
+#: options/theme-options.php:2645
 msgid "Admin Email Reply Notification"
 msgstr ""
 
-#: options/theme-options.php:2614
+#: options/theme-options.php:2646
 msgid ""
 "Use email notifications when admin comments receive a reply after turning "
 "it on"
 msgstr ""
 
-#: options/theme-options.php:2623
+#: options/theme-options.php:2655
 msgid "Other Options"
 msgstr ""
 
-#: options/theme-options.php:2629
+#: options/theme-options.php:2661
 msgid "Login Screen and Dashboard Related Options"
 msgstr ""
 
-#: options/theme-options.php:2635
+#: options/theme-options.php:2667
 msgid "Login Screen"
 msgstr ""
 
-#: options/theme-options.php:2641
+#: options/theme-options.php:2673
 msgid "Login Screen Background Image"
 msgstr ""
 
-#: options/theme-options.php:2642
+#: options/theme-options.php:2674
 msgid ""
 "Set your login screen background image, leave this option blank to show the "
 "default"
 msgstr ""
 
-#: options/theme-options.php:2650
+#: options/theme-options.php:2682
 msgid "Login Screen Background Blur"
 msgstr ""
 
-#: options/theme-options.php:2651
+#: options/theme-options.php:2683
 msgid "Login screen background image will be blurred when enabled"
 msgstr ""
 
-#: options/theme-options.php:2658
+#: options/theme-options.php:2690
 msgid "Login Screen Logo"
 msgstr ""
 
-#: options/theme-options.php:2659
+#: options/theme-options.php:2691
 msgid "Set your login screen Logo"
 msgstr ""
 
-#: options/theme-options.php:2667
+#: options/theme-options.php:2699
 msgid "Jump after login"
 msgstr ""
 
-#: options/theme-options.php:2668
+#: options/theme-options.php:2700
 msgid "Jump to backend for admins and home for users after turning on"
 msgstr ""
 
-#: options/theme-options.php:2674
+#: options/theme-options.php:2706
 msgid "Dashboard"
 msgstr ""
 
-#: options/theme-options.php:2680
+#: options/theme-options.php:2712
 msgid "Dashboard Background Image"
 msgstr ""
 
-#: options/theme-options.php:2681
+#: options/theme-options.php:2713
 msgid ""
 "Set your dashboard background image, leave this option blank to show white "
 "background"
 msgstr ""
 
-#: options/theme-options.php:2689
+#: options/theme-options.php:2721
 msgid "Dashboard Primary Menu Color"
 msgstr ""
 
-#: options/theme-options.php:2697
+#: options/theme-options.php:2729
 msgid "Dashboard Secondary Menu Color"
 msgstr ""
 
-#: options/theme-options.php:2705
+#: options/theme-options.php:2737
 msgid "Dashboard Emphasis Color"
 msgstr ""
 
-#: options/theme-options.php:2713
+#: options/theme-options.php:2745
 msgid "Dashboard Button Color"
 msgstr ""
 
-#: options/theme-options.php:2721
+#: options/theme-options.php:2753
 msgid "Dashboard Text Color"
 msgstr ""
 
-#: options/theme-options.php:2730
+#: options/theme-options.php:2762
 msgid "Low Use Options"
 msgstr ""
 
-#: options/theme-options.php:2737
+#: options/theme-options.php:2769
 msgid "Statistics API"
 msgstr ""
 
-#: options/theme-options.php:2738
+#: options/theme-options.php:2770
 msgid ""
 "You can choose WP-Statistics plugin statistics or theme built-in statistics "
 "to display"
 msgstr ""
 
-#: options/theme-options.php:2740
+#: options/theme-options.php:2772
 msgid "Theme Built in Statistics"
 msgstr ""
 
-#: options/theme-options.php:2741
+#: options/theme-options.php:2773
 msgid "WP-Statistics Plugin Statistics"
 msgstr ""
 
-#: options/theme-options.php:2749
+#: options/theme-options.php:2781
 msgid "Statistics display format"
 msgstr ""
 
-#: options/theme-options.php:2750
+#: options/theme-options.php:2782
 msgid "You can choose from four different data display formats"
 msgstr ""
 
-#: options/theme-options.php:2752
+#: options/theme-options.php:2784
 msgid "23333 Visits"
 msgstr ""
 
-#: options/theme-options.php:2753
+#: options/theme-options.php:2785
 msgid "23,333 Visits"
 msgstr ""
 
-#: options/theme-options.php:2754
+#: options/theme-options.php:2786
 msgid "23 333 Visits"
 msgstr ""
 
-#: options/theme-options.php:2755
+#: options/theme-options.php:2787
 msgid "23K Visits"
 msgstr ""
 
-#: options/theme-options.php:2763
+#: options/theme-options.php:2795
 msgid "Live Search"
 msgstr ""
 
-#: options/theme-options.php:2764
+#: options/theme-options.php:2796
 msgid ""
 "After turning on the live search in the frontend, call Rest API to update "
 "the cache once an hour. You can set the cache time manually in api.php"
 msgstr ""
 
-#: options/theme-options.php:2771
+#: options/theme-options.php:2803
 msgid "Live Search Comment Support"
 msgstr ""
 
-#: options/theme-options.php:2773
+#: options/theme-options.php:2805
 msgid ""
 "Enable to search for comments in live search (not recommended if site has "
 "too many comments)"
 msgstr ""
 
-#: options/theme-options.php:2780
+#: options/theme-options.php:2812
 msgid "Google Stats Code"
 msgstr ""
 
-#: options/theme-options.php:2786
+#: options/theme-options.php:2818
 msgid "Custom CSS Styles"
 msgstr ""
 
-#: options/theme-options.php:2787
+#: options/theme-options.php:2819
 msgid "Fill in the CSS code without writing style tag"
 msgstr ""
 
-#: options/theme-options.php:2793
+#: options/theme-options.php:2825
 msgid "Timezone Fix"
 msgstr ""
 
-#: options/theme-options.php:2794
+#: options/theme-options.php:2826
 msgid ""
 "Slide to adjust. If the comment has a time difference problem, adjust it "
 "here, fill in an integer. Calculation method: actual time = time of display "
 "error - the integer you entered (in hours)"
 msgstr ""
 
-#: options/theme-options.php:2802
+#: options/theme-options.php:2834
 msgid "Gravatar Service"
 msgstr ""
 
-#: options/theme-options.php:2807
+#: options/theme-options.php:2839
 msgid ""
 "<p><strong>Cravatar Service:</strong> Cravatar Service is an alternative to "
 "Gravatar Service in China. You can upload and share avatars freely. Go to "
 "<a href=\"https://cravatar.cn/\">official website</a> for details </p>"
 msgstr ""
 
-#: options/theme-options.php:2813
+#: options/theme-options.php:2845
 msgid "Gravatar Service Proxy"
 msgstr ""
 
-#: options/theme-options.php:2814
+#: options/theme-options.php:2846
 msgid ""
 "You can select multiple proxy as the Gravatar Service Proxy. By default, "
 "Cravatar Service is used as the Gravatar Service Proxy."
 msgstr ""
 
-#: options/theme-options.php:2816
+#: options/theme-options.php:2848
 msgid "Cravatar Service"
 msgstr ""
 
-#: options/theme-options.php:2817
+#: options/theme-options.php:2849
 msgid "Geekzu"
 msgstr ""
 
-#: options/theme-options.php:2818
+#: options/theme-options.php:2850
 msgid "Loli Net"
 msgstr ""
 
-#: options/theme-options.php:2819
+#: options/theme-options.php:2851
 msgid "Official"
 msgstr ""
 
-#: options/theme-options.php:2820
+#: options/theme-options.php:2852
 msgid "Official CN"
 msgstr ""
 
-#: options/theme-options.php:2827
+#: options/theme-options.php:2859
 msgid "Lightbox"
 msgstr ""
 
-#: options/theme-options.php:2833
+#: options/theme-options.php:2865
 msgid "BaguetteBox Lightbox Effect"
 msgstr ""
 
-#: options/theme-options.php:2834
+#: options/theme-options.php:2866
 msgid "BaguetteBox will be used as the image lightbox effect when turned on"
 msgstr ""
 
-#: options/theme-options.php:2841
+#: options/theme-options.php:2873
 msgid "FancyBox Lightbox Effect"
 msgstr ""
 
-#: options/theme-options.php:2842
+#: options/theme-options.php:2874
 msgid ""
 "FancyBox will be used as an image lightbox effect after turning on, "
 "additional JQ libraries will be loaded"
 msgstr ""
 
-#: options/theme-options.php:2849
+#: options/theme-options.php:2881
 msgid "Code Highlighting"
 msgstr ""
 
-#: options/theme-options.php:2854
+#: options/theme-options.php:2886
 msgid ""
 "<p><strong>Highlight.js:</strong> Default. Automatic language recognition. "
 "</p> <p><strong>Prism.js:</strong> Requires a language to be specified, see "
@@ -3125,74 +3150,74 @@ msgid ""
 "where another configuration is available. </p>"
 msgstr ""
 
-#: options/theme-options.php:2862
+#: options/theme-options.php:2894
 msgid "Code Highlight Method"
 msgstr ""
 
-#: options/theme-options.php:2874
+#: options/theme-options.php:2906
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
 msgstr ""
 
-#: options/theme-options.php:2878
+#: options/theme-options.php:2910
 msgid ""
 "See the <a href=\"https://prismjs.com/plugins/line-numbers/\">plugin "
 "description documentation</a>"
 msgstr ""
 
-#: options/theme-options.php:2884
+#: options/theme-options.php:2916
 msgid "Prism.js: Autoload Address"
 msgstr ""
 
-#: options/theme-options.php:2888
+#: options/theme-options.php:2920
 msgid "Leave blank to use default values"
 msgstr ""
 
-#: options/theme-options.php:2895
+#: options/theme-options.php:2927
 msgid "Prism.js: Code Highlight Theme"
 msgstr ""
 
-#: options/theme-options.php:2896 options/theme-options.php:2907
+#: options/theme-options.php:2928 options/theme-options.php:2939
 msgid "Relative to autoload address. Leave blank to use default values"
 msgstr ""
 
-#: options/theme-options.php:2906
+#: options/theme-options.php:2938
 msgid "Prism.js: Code Highlight Theme (Dark Mode)"
 msgstr ""
 
-#: options/theme-options.php:2917
+#: options/theme-options.php:2949
 msgid ""
 "The following Options are not recommended to be modified blindly, please "
 "use them under the guidance of others"
 msgstr ""
 
-#: options/theme-options.php:2923
+#: options/theme-options.php:2955
 msgid "Image CDN"
 msgstr ""
 
-#: options/theme-options.php:2924
+#: options/theme-options.php:2956
 msgid ""
 "Note: fill in the format https://your CDN domain/. This means that images "
 "with original path http://your.domain/wp-content/uploads/2018/05/xx.png "
 "will be loaded from http://your CDN domain/2018/05/xx.png"
 msgstr ""
 
-#: options/theme-options.php:2931
+#: options/theme-options.php:2963
 msgid "Articles Categories (Do not display)"
 msgstr ""
 
-#: options/theme-options.php:2932 options/theme-options.php:2939
+#: options/theme-options.php:2964 options/theme-options.php:2971
 msgid "Fill in category ID, seperate in English\" , \" when more than one"
 msgstr ""
 
-#: options/theme-options.php:2938
+#: options/theme-options.php:2970
 msgid "Image Display Category"
 msgstr ""
 
-#: options/theme-options.php:2945
+#: options/theme-options.php:2977
 msgid "Specify Login Address"
 msgstr ""
 
-#: options/theme-options.php:2946
+#: options/theme-options.php:2978
 msgid ""
 "Force not to use the WordPress login page address to login, fill in the new "
 "login page address, such as: http://www.xxx.com/login. Note that before "
@@ -3200,47 +3225,47 @@ msgid ""
 "the inability to enter the background, etc."
 msgstr ""
 
-#: options/theme-options.php:2952
+#: options/theme-options.php:2984
 msgid "Specify Registration Address"
 msgstr ""
 
-#: options/theme-options.php:2953
+#: options/theme-options.php:2985
 msgid ""
 "This address is used as the registration entry on the login page, if you "
 "specify a login address, it is recommended to fill in"
 msgstr ""
 
-#: options/theme-options.php:2959
+#: options/theme-options.php:2991
 msgid "Version Control"
 msgstr ""
 
-#: options/theme-options.php:2960
+#: options/theme-options.php:2992
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr ""
 
-#: options/theme-options.php:2966
+#: options/theme-options.php:2998
 msgid "Backup&Recovery"
 msgstr ""
 
-#: options/theme-options.php:2968
+#: options/theme-options.php:3000
 msgid "Backup or Recovery your theme options"
 msgstr ""
 
-#: options/theme-options.php:2979
+#: options/theme-options.php:3011
 msgid "About Theme"
 msgstr ""
 
-#: options/theme-options.php:2985
+#: options/theme-options.php:3017
 msgid "Version Info"
 msgstr ""
 
-#: options/theme-options.php:2990
+#: options/theme-options.php:3022
 msgid ""
 "<img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/"
 "vision/hyouryu/hyouryulogo.gif\"  alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:2996
+#: options/theme-options.php:3028
 #, php-format
 msgid ""
 "iro 主题版本 / Theme Version %s | <a href=\"https://iro.tw\">主题文档 / "
@@ -3248,25 +3273,25 @@ msgid ""
 "Sakurairo\">项目地址 / Project Address</a>"
 msgstr ""
 
-#: options/theme-options.php:3001
+#: options/theme-options.php:3033
 msgid "Update Related"
 msgstr ""
 
-#: options/theme-options.php:3007
+#: options/theme-options.php:3039
 msgid "Theme Update Source"
 msgstr ""
 
-#: options/theme-options.php:3013
+#: options/theme-options.php:3045
 msgid ""
 "If you are using a server set up in mainland China, please use the jsDelivr "
 "source or the official theme source as your theme update source"
 msgstr ""
 
-#: options/theme-options.php:3020
+#: options/theme-options.php:3052
 msgid "Theme Update Test Channel Disclaimer"
 msgstr ""
 
-#: options/theme-options.php:3025
+#: options/theme-options.php:3057
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -3275,54 +3300,54 @@ msgid ""
 "agree and am willing to bear all unexpected consequences\"</strong>"
 msgstr ""
 
-#: options/theme-options.php:3031
+#: options/theme-options.php:3063
 msgid "Theme Update Channel"
 msgstr ""
 
-#: options/theme-options.php:3037
+#: options/theme-options.php:3069
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr ""
 
-#: options/theme-options.php:3039
+#: options/theme-options.php:3071
 msgid "Stable Channel"
 msgstr ""
 
-#: options/theme-options.php:3040
+#: options/theme-options.php:3072
 msgid "Beta Channel"
 msgstr ""
 
-#: options/theme-options.php:3041
+#: options/theme-options.php:3073
 msgid "Preview Channel"
 msgstr ""
 
-#: options/theme-options.php:3048
+#: options/theme-options.php:3080
 msgid "Localization"
 msgstr ""
 
-#: options/theme-options.php:3054
+#: options/theme-options.php:3086
 msgid "Localize the Frontend Library"
 msgstr ""
 
-#: options/theme-options.php:3055
+#: options/theme-options.php:3087
 msgid "The frontend library will not use jsDelivr CDN after turning it on"
 msgstr ""
 
-#: options/theme-options.php:3062
+#: options/theme-options.php:3094
 msgid "Localize JS/CSS Files"
 msgstr ""
 
-#: options/theme-options.php:3063
+#: options/theme-options.php:3095
 msgid ""
 "Enabled by default, some JS files and CSS files do not use jsDelivr CDN"
 msgstr ""
 
-#: options/theme-options.php:3069
+#: options/theme-options.php:3101
 msgid "Reference Information"
 msgstr ""
 
-#: options/theme-options.php:3074
+#: options/theme-options.php:3106
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
 "com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -3336,11 +3361,11 @@ msgid ""
 "sakura-logo/\">Hyacm</a></p>"
 msgstr ""
 
-#: options/theme-options.php:3082
+#: options/theme-options.php:3114
 msgid "Dependency Information"
 msgstr ""
 
-#: options/theme-options.php:3087
+#: options/theme-options.php:3119
 msgid ""
 "<p>Static Resources Relies on the <a href=\"https://github.com/Fuukei/"
 "Public_Repository\">Public Repository</a> Project Created by Fuukei</p>\n"
@@ -3352,7 +3377,7 @@ msgid ""
 "Checker</a> Project</p>"
 msgstr ""
 
-#: options/theme-options.php:3094
+#: options/theme-options.php:3126
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" />  <img src="
