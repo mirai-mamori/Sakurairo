@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-08-11 10:55+0800\n"
-"PO-Revision-Date: 2021-08-11 11:00+0800\n"
+"POT-Creation-Date: 2021-08-13 11:11+0800\n"
+"PO-Revision-Date: 2021-08-13 11:14+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -3288,28 +3288,39 @@ msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr "用於更新前端Cookie和瀏覽器快取，可使用任意字符串"
 
 #: options/theme-options.php:2970
+msgid "Theme Documentation"
+msgstr "主題檔案"
+
+#: options/theme-options.php:2976
+msgid ""
+"<iframe src=\"https://iro.tw/guide/about.html\" width=\"100%\" height= "
+"\"1200px\" name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" "
+"frameborder=\"0\" id=\"guide\"></iframe>"
+msgstr ""
+
+#: options/theme-options.php:2983
 msgid "Backup&Recovery"
 msgstr "備份恢復"
 
-#: options/theme-options.php:2972
+#: options/theme-options.php:2985
 msgid "Backup or Recovery your theme options"
 msgstr "備份或恢復你的主題設定"
 
-#: options/theme-options.php:2983
+#: options/theme-options.php:2996
 msgid "About Theme"
 msgstr "關於主題"
 
-#: options/theme-options.php:2989
+#: options/theme-options.php:3002
 msgid "Version Info"
 msgstr "版本資訊"
 
-#: options/theme-options.php:2994
+#: options/theme-options.php:3007
 msgid ""
 "<img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/"
 "vision/hyouryu/hyouryulogo.gif\"  alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:3000
+#: options/theme-options.php:3013
 #, php-format
 msgid ""
 "iro 主题版本 / Theme Version %s | <a href=\"https://iro.tw\">主题文档 / "
@@ -3317,15 +3328,15 @@ msgid ""
 "\">项目地址 / Project Address</a>"
 msgstr ""
 
-#: options/theme-options.php:3005
+#: options/theme-options.php:3018
 msgid "Update Related"
 msgstr "更新相關"
 
-#: options/theme-options.php:3011
+#: options/theme-options.php:3024
 msgid "Theme Update Source"
 msgstr "主題更新源"
 
-#: options/theme-options.php:3017
+#: options/theme-options.php:3030
 msgid ""
 "If you are using a server set up in mainland China, please use the jsDelivr "
 "source or the official theme source as your theme update source"
@@ -3333,11 +3344,11 @@ msgstr ""
 "如果你使用的是架設在中國的伺服器，請使用jsDelivr源或主題官方源作為你的主題更"
 "新源"
 
-#: options/theme-options.php:3024
+#: options/theme-options.php:3037
 msgid "Theme Update Test Channel Disclaimer"
 msgstr "主題更新測試通道免責聲明"
 
-#: options/theme-options.php:3029
+#: options/theme-options.php:3042
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -3350,53 +3361,53 @@ msgstr ""
 "內 <strong> \"I agree and am willing to bear all unexpected consequences\" </"
 "strong>"
 
-#: options/theme-options.php:3035
+#: options/theme-options.php:3048
 msgid "Theme Update Channel"
 msgstr "主題更新頻道"
 
-#: options/theme-options.php:3041
+#: options/theme-options.php:3054
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr "你可以在此切換更新頻道以參與到新版本的測試中"
 
-#: options/theme-options.php:3043
+#: options/theme-options.php:3056
 msgid "Stable Channel"
 msgstr "正式通道"
 
-#: options/theme-options.php:3044
+#: options/theme-options.php:3057
 msgid "Beta Channel"
 msgstr "公共測試頻道"
 
-#: options/theme-options.php:3045
+#: options/theme-options.php:3058
 msgid "Preview Channel"
 msgstr "預覽測試頻道"
 
-#: options/theme-options.php:3052
+#: options/theme-options.php:3065
 msgid "Localization"
 msgstr "本地化"
 
-#: options/theme-options.php:3058
+#: options/theme-options.php:3071
 msgid "Localize the Frontend Library"
 msgstr "本地化前端庫"
 
-#: options/theme-options.php:3059
+#: options/theme-options.php:3072
 msgid "The frontend library will not use jsDelivr CDN after turning it on"
 msgstr "開啟之後前端庫將不走jsDelivr CDN"
 
-#: options/theme-options.php:3066
+#: options/theme-options.php:3079
 msgid "Localize JS/CSS Files"
 msgstr "本地化JS/CSS檔案"
 
-#: options/theme-options.php:3067
+#: options/theme-options.php:3080
 msgid "Enabled by default, some JS files and CSS files do not use jsDelivr CDN"
 msgstr "默認開啟，部分JS檔案和CSS檔案不走jsDelivr CDN"
 
-#: options/theme-options.php:3073
+#: options/theme-options.php:3086
 msgid "Reference Information"
 msgstr "引用資訊"
 
-#: options/theme-options.php:3078
+#: options/theme-options.php:3091
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
 "com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -3418,11 +3429,11 @@ msgstr ""
 "        <p>白貓樣式Logo參考原主題作者白貓，由 <a href=\"https://hyacm.com/"
 "acai/ui/143/sakura-logo/\">Hyacm</a> 提供方案並引用</p>"
 
-#: options/theme-options.php:3086
+#: options/theme-options.php:3099
 msgid "Dependency Information"
 msgstr "依賴資訊"
 
-#: options/theme-options.php:3091
+#: options/theme-options.php:3104
 msgid ""
 "<p>Static Resources Relies on the <a href=\"https://github.com/Fuukei/"
 "Public_Repository\">Public Repository</a> Project Created by Fuukei</p>\n"
@@ -3440,7 +3451,7 @@ msgstr ""
 "        <p>更新功能依賴於 YahnisElsts 開源的 <a href=\"https://github.com/"
 "YahnisElsts/plugin-update-checker\">Plugin Update Checker</a> 專案</p>"
 
-#: options/theme-options.php:3098
+#: options/theme-options.php:3111
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" />  <img src=\"https://"

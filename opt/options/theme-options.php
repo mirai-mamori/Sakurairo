@@ -2967,6 +2967,19 @@ if( class_exists( 'CSF' ) ) {
   ) );
 
   CSF::createSection($prefix, array(
+    'title' => __('Theme Documentation','csf'),
+    'icon'        => 'fa fa-wikipedia-w',
+    'fields'      => array(
+
+      array(
+        'type'    => 'content',
+        'content' => __('<iframe src="https://iro.tw/guide/about.html" width="100%" height= "1000px" name="guide" scrolling="auto" noresize="noresize" frameborder="0" id="guide"></iframe>','csf'),
+      ),
+
+    )
+  ) );
+
+  CSF::createSection($prefix, array(
     'title' => __('Backup&Recovery','csf'),
     'icon'        => 'fa fa-shield',
     'description' => __('Backup or Recovery your theme options','csf'),
