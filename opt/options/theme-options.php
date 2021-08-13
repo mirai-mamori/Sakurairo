@@ -8,6 +8,34 @@ if( class_exists( 'CSF' ) ) {
     'menu_slug'  => 'iro_options',
   ) );
 
+  CSF::createSection($prefix, array(
+    'title' => __('Hello!','csf'),
+    'icon'        => 'fa fa-podcast',
+    'fields'      => array(
+
+      array(
+        'type'    => 'heading',
+        'content' => __('News+','csf'),
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => __('<img src="http://news.maho.cc/sakurairo.php"  alt="News_Plus" width="100%" height="100%" />','csf'),
+      ),
+
+      array(
+        'type'    => 'heading',
+        'content' => __('Theme Documentation','csf'),
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => __('<iframe src="https://iro.tw/guide/about.html" width="100%" height= "800px" name="guide" scrolling="auto" noresize="noresize" frameborder="0" id="guide"></iframe>','csf'),
+      ),
+
+    )
+  ) );
+
   CSF::createSection( $prefix, array(
     'id'    => 'preliminary',
     'title' => __('Preliminary Options','csf'),

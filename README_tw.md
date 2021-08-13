@@ -21,7 +21,7 @@
 
 - 使用本主題的站點：https://iro.tw/demo.html
 
-- 主題交流群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
+- 主題交流QQ群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
 
 - 如果在使用過程中遇到了任何問題，請**訪問**本主題的 [官方站點](https://iro.tw/) 
 
@@ -62,7 +62,7 @@
 
 - 本主題**基於 [Sakura V3 Series](https://github.com/mashirozx/sakura/tree/3.x) 主題進行重構開發**，使用 [GPL V2.0](https://github.com/mirai-mamori/Sakurairo/blob/master/LICENSE) 協議開源。
 
-- 本主題使用了部分來自互聯網的特效。由於版權及開源協議不明，無法具體說明相關信息。如果本主題使用到您製作的特效，煩請您通過郵件（me＃okaeri.org）來取得聯繫。
+- 本主題使用了部分來自網路的特效。由於版權及開源協議不明，無法具體說明相關資訊。如果本主題使用到您製作的特效，煩請您通過郵件（me＃okaeri.org）來取得聯絡。
 
 ### 引用相關：
 
