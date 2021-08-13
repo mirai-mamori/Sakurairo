@@ -1472,7 +1472,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'text',
         'title' => __('Cover Video Address','csf'),
         'dependency' => array( 'cover_video', '==', 'true' ),
-        'desc' => __('Fill in the address which splices the video name below, no slash at the end of the address','csf'),
+        'desc' => __('Fill in the address which splices the video name below.','csf'),
       ),
 
       array(
@@ -1480,7 +1480,7 @@ if( class_exists( 'CSF' ) ) {
         'type' => 'text',
         'title' => __('Cover Video Name','csf'),
         'dependency' => array( 'cover_video', '==', 'true' ),
-        'desc' => __('For example: abc.mp4, just fill in the video file name abc. Multiple videos should be separated by English commas like "abc,efg," Random play is on by default.','csf'),
+        'desc' => __('For example: abc.mp4. Multiple videos should be separated by English commas like "abc.mp4,efg.mp4," Random play is on by default.','csf'),
       ),
 
     )
