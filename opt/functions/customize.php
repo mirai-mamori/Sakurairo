@@ -9,7 +9,7 @@
  */
 if ( ! class_exists( 'WP_Customize_Panel_CSF' ) && class_exists( 'WP_Customize_Panel' ) ) {
   class WP_Customize_Panel_CSF extends WP_Customize_Panel {
-    public $type = 'csf';
+    public $type = 'sakurairo_csf';
   }
 }
 
@@ -23,7 +23,7 @@ if ( ! class_exists( 'WP_Customize_Panel_CSF' ) && class_exists( 'WP_Customize_P
  */
 if ( ! class_exists( 'WP_Customize_Section_CSF' ) && class_exists( 'WP_Customize_Section' ) ) {
   class WP_Customize_Section_CSF extends WP_Customize_Section {
-    public $type = 'csf';
+    public $type = 'sakurairo_csf';
   }
 }
 
@@ -38,7 +38,7 @@ if ( ! class_exists( 'WP_Customize_Section_CSF' ) && class_exists( 'WP_Customize
 if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize_Control' ) ) {
   class WP_Customize_Control_CSF extends WP_Customize_Control {
 
-    public $type   = 'csf';
+    public $type   = 'sakurairo_csf';
     public $field  = '';
     public $unique = '';
 
@@ -132,7 +132,7 @@ if ( ! class_exists( 'WP_Customize_Control_CSF' ) && class_exists( 'WP_Customize
 
       echo '<div class="csf-customize-field'. esc_attr( $class ) .'"'. $atts .'>';
 
-      CSF::field( $this->field, $this->value(), $this->unique, 'customize' );
+      Sakurairo_CSF::field( $this->field, $this->value(), $this->unique, 'customize' );
 
       echo '</div>';
 

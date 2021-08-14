@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-08-14 20:20+0800\n"
-"PO-Revision-Date: 2021-08-14 20:23+0800\n"
+"POT-Creation-Date: 2021-08-14 21:18+0800\n"
+"PO-Revision-Date: 2021-08-14 21:18+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -667,7 +667,7 @@ msgstr "資訊+"
 
 #: options/theme-options.php:23
 msgid ""
-"<img src=\"http://news.maho.cc/sakurairo.php\"  alt=\"News_Plus\" width="
+"<img src=\"https://news.maho.cc/sakurairo.php\"  alt=\"News_Plus\" width="
 "\"100%\" height=\"100%\" />"
 msgstr ""
 
@@ -2020,9 +2020,8 @@ msgid "Video will loop automatically when enabled, Pjax needed"
 msgstr "開啟之後影片將自動循環，需要開啟Pjax功能"
 
 #: options/theme-options.php:1473
-#| msgid "Cover Video Name"
 msgid "Cover Video URL Base Path"
-msgstr ""
+msgstr "封面影片URL連結路徑"
 
 #: options/theme-options.php:1475
 msgid ""
@@ -2030,21 +2029,19 @@ msgid ""
 "Your site's URL is used as default. Please pay attention to the protocol "
 "name of the URL."
 msgstr ""
+"填寫影片所在的根路徑。例如：https://localhost. 你站點的URL將作為默認URL。請注"
+"意URL的協議名稱。"
 
 #: options/theme-options.php:1481
-#| msgid "Cover Video Name"
 msgid "Cover Video File Name"
-msgstr ""
+msgstr "封面影片檔案名稱"
 
 #: options/theme-options.php:1483
-#| msgid ""
-#| "For example: abc.mp4, just fill in the video file name abc. Multiple "
-#| "videos should be separated by English commas like \"abc,efg,\" Random "
-#| "play is on by default."
 msgid ""
 "For example: abc.mp4. Multiple videos should be separated by English commas "
 "like \"abc.mp4,efg.mp4,\" Random play is on by default."
 msgstr ""
+"例如：abc.mp4，多個影片請用英文逗號隔開，如：abc.mp4,efg.mp4。默認隨機播放。"
 
 #: options/theme-options.php:1491
 msgid "Cover Social Area Options"

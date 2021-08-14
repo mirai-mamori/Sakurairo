@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-08-14 20:14+0800\n"
+"POT-Creation-Date: 2021-08-14 21:18+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -667,7 +667,7 @@ msgstr ""
 
 #: options/theme-options.php:23
 msgid ""
-"<img src=\"http://news.maho.cc/sakurairo.php\"  alt=\"News_Plus\" width="
+"<img src=\"https://news.maho.cc/sakurairo.php\"  alt=\"News_Plus\" width="
 "\"100%\" height=\"100%\" />"
 msgstr ""
 

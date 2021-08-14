@@ -59,7 +59,7 @@ if ( ! class_exists( 'CSF_Field_sortable' ) ) {
           $field_value   = ( isset( $this->value[$key] ) ) ? $this->value[$key] : $field_default;
           $unique_id     = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']' : $this->field['id'];
 
-          CSF::field( $field, $field_value, $unique_id, 'field/sortable' );
+          Sakurairo_CSF::field( $field, $field_value, $unique_id, 'field/sortable' );
 
           echo '</div>';
 
