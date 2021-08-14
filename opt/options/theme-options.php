@@ -1470,17 +1470,17 @@ if( class_exists( 'CSF' ) ) {
       array(
         'id' => 'cover_video_link',
         'type' => 'text',
-        'title' => __('Cover Video Address','csf'),
+        'title' => __('Cover Video URL Base Path','csf'),
         'dependency' => array( 'cover_video', '==', 'true' ),
-        'desc' => __('Fill in the address which splices the video name below, no slash at the end of the address','csf'),
+        'desc' => __("Fill in the base path your video located at. For example: https://localhost. Your site's URL is used as default. Please pay attention to the protocol name of the URL.",'csf'),
       ),
 
       array(
         'id' => 'cover_video_title',
         'type' => 'text',
-        'title' => __('Cover Video Name','csf'),
+        'title' => __('Cover Video File Name','csf'),
         'dependency' => array( 'cover_video', '==', 'true' ),
-        'desc' => __('For example: abc.mp4, just fill in the video file name abc. Multiple videos should be separated by English commas like "abc,efg," Random play is on by default.','csf'),
+        'desc' => __('For example: abc.mp4. Multiple videos should be separated by English commas like "abc.mp4,efg.mp4," Random play is on by default.','csf'),
       ),
 
     )
