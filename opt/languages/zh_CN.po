@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-08-13 14:52+0800\n"
-"PO-Revision-Date: 2021-08-13 14:52+0800\n"
+"POT-Creation-Date: 2021-08-14 20:11+0800\n"
+"PO-Revision-Date: 2021-08-14 20:12+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -3475,24 +3475,23 @@ msgid ""
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "Codestar Framework Modified by Fuukei"
+msgid "Sakurairo_CSF"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://codestarframework.com/"
+msgid "https://github.com/Fuukei/Sakurairo_CSF"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid ""
-"A Simple and Lightweight WordPress Option Framework for Themes and Plugins"
+msgid "A Simple and Lightweight WordPress Option Framework for Sakurairo"
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Codestar"
+msgid "Codestar with Fuukei"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://codestarthemes.com/"
+msgid "https://github.com/Fuukei"
 msgstr ""
 
 #~ msgid "Gravatar Proxy"

@@ -7,13 +7,13 @@
  * @copyright 2015-2021 Codestar
  *
  *
- * Plugin Name: Codestar Framework Modified by Fuukei
- * Plugin URI: http://codestarframework.com/
- * Author: Codestar
- * Author URI: http://codestarthemes.com/
+ * Plugin Name: Sakurairo_CSF
+ * Plugin URI: https://github.com/Fuukei/Sakurairo_CSF
+ * Author: Codestar with Fuukei
+ * Author URI: https://github.com/Fuukei
  * Version: 2.2.4
- * Description: A Simple and Lightweight WordPress Option Framework for Themes and Plugins
- * Text Domain: csf
+ * Description: A Simple and Lightweight WordPress Option Framework for Sakurairo
+ * Text Domain: sakurairo_csf
  * Domain Path: /languages
  *
  */
