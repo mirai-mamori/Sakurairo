@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-08-14 20:11+0800\n"
+"POT-Creation-Date: 2021-08-14 20:14+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1988,24 +1988,24 @@ msgid "Video will loop automatically when enabled, Pjax needed"
 msgstr ""
 
 #: options/theme-options.php:1473
-msgid "Cover Video Address"
+msgid "Cover Video URL Base Path"
 msgstr ""
 
 #: options/theme-options.php:1475
 msgid ""
-"Fill in the address which splices the video name below, no slash at the end "
-"of the address"
+"Fill in the base path your video located at. For example: https://"
+"localhost. Your site's URL is used as default. Please pay attention to the "
+"protocol name of the URL."
 msgstr ""
 
 #: options/theme-options.php:1481
-msgid "Cover Video Name"
+msgid "Cover Video File Name"
 msgstr ""
 
 #: options/theme-options.php:1483
 msgid ""
-"For example: abc.mp4, just fill in the video file name abc. Multiple videos "
-"should be separated by English commas like \"abc,efg,\" Random play is on "
-"by default."
+"For example: abc.mp4. Multiple videos should be separated by English commas "
+"like \"abc.mp4,efg.mp4,\" Random play is on by default."
 msgstr ""
 
 #: options/theme-options.php:1491

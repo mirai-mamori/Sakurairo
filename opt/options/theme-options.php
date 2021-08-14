@@ -20,7 +20,7 @@ if( class_exists( 'CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="http://news.maho.cc/sakurairo.php"  alt="News_Plus" width="100%" height="100%" />','csf'),
+        'content' => __('<img src="https://news.maho.cc/sakurairo.php"  alt="News_Plus" width="100%" height="100%" />','csf'),
       ),
 
       array(

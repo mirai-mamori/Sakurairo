@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-08-14 20:12+0800\n"
-"PO-Revision-Date: 2021-08-14 20:12+0800\n"
+"POT-Creation-Date: 2021-08-14 20:20+0800\n"
+"PO-Revision-Date: 2021-08-14 20:23+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -2020,27 +2020,31 @@ msgid "Video will loop automatically when enabled, Pjax needed"
 msgstr "開啟之後影片將自動循環，需要開啟Pjax功能"
 
 #: options/theme-options.php:1473
-msgid "Cover Video Address"
-msgstr "封面影片地址"
+#| msgid "Cover Video Name"
+msgid "Cover Video URL Base Path"
+msgstr ""
 
 #: options/theme-options.php:1475
 msgid ""
-"Fill in the address which splices the video name below, no slash at the end "
-"of the address"
-msgstr "填寫地址，該地址拼接下面的影片名稱，地址尾部不需要加斜杠"
+"Fill in the base path your video located at. For example: https://localhost. "
+"Your site's URL is used as default. Please pay attention to the protocol "
+"name of the URL."
+msgstr ""
 
 #: options/theme-options.php:1481
-msgid "Cover Video Name"
-msgstr "封面影片名稱"
+#| msgid "Cover Video Name"
+msgid "Cover Video File Name"
+msgstr ""
 
 #: options/theme-options.php:1483
+#| msgid ""
+#| "For example: abc.mp4, just fill in the video file name abc. Multiple "
+#| "videos should be separated by English commas like \"abc,efg,\" Random "
+#| "play is on by default."
 msgid ""
-"For example: abc.mp4, just fill in the video file name abc. Multiple videos "
-"should be separated by English commas like \"abc,efg,\" Random play is on by "
-"default."
+"For example: abc.mp4. Multiple videos should be separated by English commas "
+"like \"abc.mp4,efg.mp4,\" Random play is on by default."
 msgstr ""
-"例如：abc.mp4，只需要填寫影片檔案名abc即可，多個用英文逗號隔開如abc,efg，默認"
-"隨機播放。"
 
 #: options/theme-options.php:1491
 msgid "Cover Social Area Options"
@@ -3494,3 +3498,11 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
+
+#~ msgid "Cover Video Address"
+#~ msgstr "封面影片地址"
+
+#~ msgid ""
+#~ "Fill in the address which splices the video name below, no slash at the "
+#~ "end of the address"
+#~ msgstr "填寫地址，該地址拼接下面的影片名稱，地址尾部不需要加斜杠"
