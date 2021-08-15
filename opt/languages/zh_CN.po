@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
 "POT-Creation-Date: 2021-08-15 17:51+0800\n"
-"PO-Revision-Date: 2021-08-15 18:04+0800\n"
+"PO-Revision-Date: 2021-08-15 20:13+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -673,19 +673,19 @@ msgstr ""
 
 #: options/theme-options.php:28
 msgid "Theme Official Website"
-msgstr "主题官方站点"
+msgstr "主题周边网站"
 
 #: options/theme-options.php:34
 msgid ""
 "The Theme <a href=\"https://iro.tw\">Official Website</a> is the best place "
 "to help novices quickly build and get started"
 msgstr ""
-"主题 <a href=\"https://iro.tw\">官方站点</a> 是帮助新手快速搭建和上手的最佳选"
+"主题 <a href=\"https://iro.tw\">周边网站</a> 是帮助新手快速搭建和上手的最佳选"
 "择"
 
 #: options/theme-options.php:40
 msgid "Theme Official Website in Option"
-msgstr "设置内嵌主题官方站点"
+msgstr "设置内嵌主题周边网站"
 
 #: options/theme-options.php:41
 msgid ""
@@ -695,7 +695,7 @@ msgstr "默认开启，主题官方站点会内嵌在主题设置中"
 
 #: options/theme-options.php:49
 msgid "Theme Official Website Menu"
-msgstr "主题官方站点菜单"
+msgstr "主题周边网站菜单"
 
 #: options/theme-options.php:52
 msgid "Guide"
