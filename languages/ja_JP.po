@@ -1,23 +1,23 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2021-06-26 15:15+0800\n"
-"PO-Revision-Date: 2021-07-27 17:33+0800\n"
+"POT-Creation-Date: 2021-07-29 17:25+0800\n"
+"PO-Revision-Date: 2021-07-29 17:26+0800\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
-"Language: ja_JP\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
@@ -41,7 +41,7 @@ msgstr "ホーム ページに戻る"
 msgid "Don't worry, search in site?"
 msgstr "心配しないで、サイト内を検索しますか?"
 
-#: 404.php:54 footer.php:61 search.php:42
+#: 404.php:54 footer.php:56 search.php:42
 msgid "Search..."
 msgstr "検索…"
 
@@ -148,16 +148,16 @@ msgstr "広告は😀禁止されています"
 msgid "Site"
 msgstr "サイト"
 
-#: footer.php:75 footer.php:83
+#: footer.php:70 footer.php:78
 #, fuzzy
 msgid "Want to find something?"
 msgstr "何かを見つけたいですか?"
 
-#: footer.php:85
+#: footer.php:80
 msgid "Search"
 msgstr "検索"
 
-#: footer.php:136
+#: footer.php:131
 msgid "Widgets"
 msgstr "ウィジェット"
 
@@ -165,35 +165,167 @@ msgstr "ウィジェット"
 msgid "Nav Menus"
 msgstr "メニュー"
 
-#: functions.php:375 inc/theme_plus.php:191 layouts/authorprofile.php:11
+#: functions.php:198 functions.php:209
+#, fuzzy
+msgid "Ideas"
+msgstr "アイデア"
+
+#: functions.php:199
+msgid "Idea"
+msgstr "アイデア"
+
+#: functions.php:200 functions.php:201
+#, fuzzy
+msgid "Publish New Idea"
+msgstr "新しいアイデアを公開"
+
+#: functions.php:202
+#, fuzzy
+#| msgid "Edit %s"
+msgid "Edit Idea"
+msgstr "%sを編集"
+
+#: functions.php:203
+#, fuzzy
+msgid "New Idea"
+msgstr "新しいアイデア"
+
+#: functions.php:204
+#, fuzzy
+#| msgid "View"
+#| msgid_plural "Views"
+msgid "View Idea"
+msgstr "表示"
+
+#: functions.php:205
+#, fuzzy
+#| msgid "Search"
+msgid "Search Idea"
+msgstr "検索"
+
+#: functions.php:206
+#, fuzzy
+msgid "Not Found Idea"
+msgstr "アイデアが見つかりません"
+
+#: functions.php:207
+#, fuzzy
+msgid "No Idea in the Trash"
+msgstr "ゴミ箱にアイデアがない"
+
+#: functions.php:306
+msgid "Copied!"
+msgstr "コピーしました!"
+
+#: functions.php:307
+msgid "Copy Code"
+msgstr "コードをコピー"
+
+#: functions.php:308
+#, fuzzy
+msgid ""
+"Your cover API seems to not support Cross Origin Access. In this case, Cover "
+"Cache won't take effect."
+msgstr ""
+"カバー API はクロス オリジン アクセスをサポートしていないようです。この場合、"
+"カバーキャッシュは有効になりません。"
+
+#: functions.php:309
+#, fuzzy
+msgid "Commiting...."
+msgstr "コミットしています。"
+
+#: functions.php:310
+#, fuzzy
+msgid "Succeed"
+msgstr "継ぐ"
+
+#: functions.php:311
+#, fuzzy
+msgid "10 files max per request"
+msgstr "要求ごとに最大 10 ファイル"
+
+#: functions.php:312
+#, fuzzy
+msgid ""
+"5 MB max per file.\n"
+"\n"
+"「{0}」\n"
+"\n"
+"This image is too large~Please reupload!"
+msgstr ""
+"ファイルあたり最大 5 MB。\n"
+"\n"
+"「{0}」\n"
+"\n"
+"この画像が大きすぎる~再アップロードしてください!"
+
+#: functions.php:313
+msgid "Uploading..."
+msgstr "アップロード中..."
+
+#: functions.php:314
+#, fuzzy
+msgid "Uploaded successfully~"
+msgstr "ログインに成功しました。"
+
+#: functions.php:315
+#, fuzzy
+msgid ""
+"Upload failed!\n"
+"File Name=> {0}\n"
+"code=> {1}\n"
+"{2}"
+msgstr ""
+"アップロードに失敗しました!\n"
+"ファイル名=> {0}\n"
+"コード=> {1}\n"
+"{2}"
+
+#: functions.php:316
+#, fuzzy
+msgid "Upload failed, please retry."
+msgstr "アップロードに失敗しました。"
+
+#: functions.php:317
+#, fuzzy
+msgid "Page Load failed. HTTP {0}"
+msgstr "ページの読み込みに失敗しました。HTTP {0}"
+
+#: functions.php:318
+#, fuzzy
+msgid "Glad you come, but we've got nothing left."
+msgstr "あなたが来てうれしいですが、私たちは何も残っていません。"
+
+#: functions.php:398 inc/theme_plus.php:191 layouts/authorprofile.php:11
 msgid "Author"
 msgstr "投稿者"
 
-#: functions.php:375
+#: functions.php:398
 msgid "Blogger"
 msgstr "Blogger"
 
-#: functions.php:379
+#: functions.php:402
 msgid "Location"
 msgstr "場所"
 
-#: functions.php:384
+#: functions.php:407
 msgid "Private"
 msgstr "プライベート"
 
-#: functions.php:386
+#: functions.php:409
 msgid "Yes"
 msgstr "はい"
 
-#: functions.php:388
+#: functions.php:411
 msgid "No"
 msgstr "いいえ"
 
-#: functions.php:391
+#: functions.php:414
 msgid "Edit"
 msgstr "編集"
 
-#: functions.php:480
+#: functions.php:503
 #, fuzzy
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
@@ -202,43 +334,43 @@ msgstr ""
 "パルギン<a href=\"https://wordpress.org/plugins/wp-statistics/\" target="
 "\"_blank\">WP-統計を</a>インストールしてください"
 
-#: functions.php:509
+#: functions.php:532
 #, fuzzy
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "この男はとても怠惰な╮(╯▽╰)╭"
 
-#: functions.php:1171
+#: functions.php:1194
 #, fuzzy
 msgid "All expand/collapse"
 msgstr "すべての展開/折りたたみ"
 
-#: functions.php:1192
+#: functions.php:1215
 msgid " "
 msgstr " "
 
-#: functions.php:1196
+#: functions.php:1219
 #, fuzzy
 msgid " post(s)"
 msgstr "投稿(複数可)"
 
-#: functions.php:1219 functions.php:1222 inc/theme_plus.php:483
+#: functions.php:1242 functions.php:1245 inc/theme_plus.php:483
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: functions.php:1442
+#: functions.php:1468
 #, fuzzy
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>エラー</b>: この電子メール ドメイン (<b>@</b>"
 
-#: functions.php:1538
+#: functions.php:1564
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1601
+#: functions.php:1627
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:1729
+#: functions.php:1755
 #, fuzzy
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
@@ -247,11 +379,11 @@ msgid ""
 "target=\"_blank\"> pseudo-static </a>. </ b>"
 msgstr ""
 "<b> より良い経験のために、 <a href=\"/wp-admin/options-permalink.php\"> パー"
-"マリンク </a> をプレーンとして設定しないでください。これを行うには、 <a "
-"href=\"https://www.wpdaxue.com/wordpress-rewriterule.html\" target=\"_blank"
-"\"> 疑似静的 </a>を構成する必要があります。 </b>"
+"マリンク </a> をプレーンとして設定しないでください。これを行うには、 <a href="
+"\"https://www.wpdaxue.com/wordpress-rewriterule.html\" target=\"_blank\"> 疑"
+"似静的 </a>を構成する必要があります。 </b>"
 
-#: header.php:36
+#: header.php:41
 #, fuzzy, php-format
 msgid "page %s "
 msgstr "ページ %s"
@@ -389,7 +521,7 @@ msgstr "ログアウト"
 #: inc/theme_plus.php:278
 #, fuzzy
 msgid "Sign out? "
-msgstr "サインアウト。"
+msgstr "ログアウト"
 
 #: inc/theme_plus.php:303 inc/theme_plus.php:358 inc/theme_plus.php:426
 #: tpl/content-single.php:20 tpl/single-image.php:18
@@ -422,24 +554,6 @@ msgstr "ログアウト"
 #, fuzzy, php-format
 msgid "search result: %s"
 msgstr "検索結果: %s"
-
-#: theme-options.php:1324
-#, fuzzy, php-format
-msgid ""
-"如果你选择使用Webp优化随机图片，请点击 <a href = \"%s\">这里</a> 来更新 "
-"Manifest 路径"
-msgstr ""
-"「选择 ウェブ优图请优请击这・这・ス・パー<a href=\"%s\"></a>ズ・マニフェス"
-"ト・这"
-
-#: theme-options.php:2937
-#, fuzzy, php-format
-msgid ""
-"正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  "
-"<a href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
-msgstr ""
-"|のイロ・イロ题| %s  <a href=\"https://iro.tw\">题|档</a>  <a href="
-"\"https://github.com/mirai-mamori/Sakurairo\">码地の源</a>"
 
 #: tpl/content-category.php:31 tpl/content-image.php:36
 #: tpl/content-status.php:32 tpl/content-thumb.php:61 tpl/content.php:36
@@ -478,8 +592,8 @@ msgstr "ここには何もありません!"
 msgid ""
 "Ready to post your first article? <a href=\"%1$s\">Click here to start</a>."
 msgstr ""
-"あなたの最初の記事を投稿する準備はできましたか? <a href=\"%1$s\">を開始する"
-"には、ここをクリック</a>してください。"
+"あなたの最初の記事を投稿する準備はできましたか? <a href=\"%1$s\">を開始するに"
+"は、ここをクリック</a>してください。"
 
 #: tpl/content-none.php:25
 #, fuzzy
@@ -581,8 +695,9 @@ msgid "Sakurairo"
 msgstr ""
 
 #. Theme URI of the plugin/theme
+#, fuzzy
 msgid "https://github.com/mirai-mamori/Sakurairo"
-msgstr ""
+msgstr "https://github.com/mirai-mamori/Sakurairo"
 
 #. Description of the plugin/theme
 #, fuzzy
@@ -598,9 +713,8 @@ msgid "Created by Fuukei"
 msgstr ""
 
 #. Author URI of the plugin/theme
-#, fuzzy
 msgid "https://iro.tw/"
-msgstr "https://iro.tw/"
+msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "文章模版"
@@ -613,3 +727,19 @@ msgstr "友情链接模版"
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr "说说模版"
+
+#, fuzzy, php-format
+#~ msgid ""
+#~ "如果你选择使用Webp优化随机图片，请点击 <a href = \"%s\">这里</a> 来更新 "
+#~ "Manifest 路径"
+#~ msgstr ""
+#~ "「选择 ウェブ优图请优请击这・这・ス・パー<a href=\"%s\"></a>ズ・マニフェス"
+#~ "ト・这"
+
+#, fuzzy, php-format
+#~ msgid ""
+#~ "正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  "
+#~ "<a href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
+#~ msgstr ""
+#~ "|のイロ・イロ题| %s  <a href=\"https://iro.tw\">题|档</a>  <a href="
+#~ "\"https://github.com/mirai-mamori/Sakurairo\">码地の源</a>"

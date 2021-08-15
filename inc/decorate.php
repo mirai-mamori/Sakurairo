@@ -28,7 +28,7 @@ if (iro_opt('theme_skin')) { ?>
 
 .linkdes { border-top: 1px dotted <?php echo iro_opt('theme_skin'); ?> !important}
 
-.the-feature.from_left_and_right .info{background: <?php echo iro_opt('exhibition_background_color'); ?> ;}
+.the-feature.from_left_and_right .info,.the-feature.from_left_and_right .info h3{background: <?php echo iro_opt('exhibition_background_color'); ?> ;}
 
 .is-active-link::before, .commentbody:not(:placeholder-shown)~.input-label, .commentbody:focus~.input-label {
     background-color: <?php echo iro_opt('theme_skin'); ?> !important
@@ -60,6 +60,9 @@ i.iconfont.js-toggle-search.iconsearch {
     color: <?php echo iro_opt('theme_skin'); ?>;
     border-bottom: 3px solid <?php echo iro_opt('theme_skin'); ?>;
     border-color: <?php echo iro_opt('theme_skin'); ?>;
+}
+.the-feature.from_left_and_right .info h3{
+    color: <?php echo iro_opt('theme_skin'); ?>;
 }
 .the-feature.from_left_and_right .info p {
     color: <?php echo iro_opt('theme_skin'); ?>;
@@ -423,7 +426,6 @@ h1.main-title {
     border-radius: <?php echo iro_opt('style_menu_radius', ''); ?>px;
 }
 
-
 /*非全局色彩管理*/
 
 :root{
@@ -468,11 +470,11 @@ font-family: <?php echo $text_logo['font']; ?> ;
 
 .notice i ,
 .notice {
-    color: <?php echo iro_opt('announce_text_color'); ?>;
+    color: <?php echo iro_opt('bulletin_text_color'); ?>;
 }
 
 .notice {
-    border: 1px solid <?php echo iro_opt('announce_bar_border_color'); ?>;
+    border: 1px solid <?php echo iro_opt('bulletin_board_border_color'); ?>;
 }
 
 <?php if(iro_opt('entry_content_style') == "sakurairo"){ ?>
@@ -879,7 +881,8 @@ body.dark input[type=submit]
 
 body.dark .comment .info,
 body.dark .comment-respond .logged-in-as,
-body.dark .comment-respond .logged-in-as a 
+body.dark .comment-respond .logged-in-as a,
+body.dark span.sitename 
 {color:#CCCCCC;}
 
 body.dark .header-user-avatar:hover ,
@@ -896,6 +899,19 @@ body.dark #changskin
 
 body.dark #show-nav .line 
 {background: #CCCCCC;}
+
+body.dark .linkdes
+{
+    border-top: 1px dotted #CCCCCC !important;
+    color:#CCCCCC;
+}
+
+body.dark .links ul li
+{
+    background-color: #666666;
+    border: none;
+    opacity:.8;
+}
 
 body.dark .post-footer 
 {background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/creativecommons-dark.png);}
@@ -971,10 +987,11 @@ body.dark .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon
 
 body.dark #moblieGoTop:hover , 
 body.dark #changskin:hover 
-{color:#<?php echo iro_opt('theme_skin_dark'); ?>;opacity:.8;}
+{color:<?php echo iro_opt('theme_skin_dark'); ?>;opacity:.8;}
 
 body.dark .focusinfo .header-tou img 
 {box-shadow: inset 0 0 10px <?php echo iro_opt('theme_skin_dark'); ?>;}
+
 
 @media (max-width: 1200px){
 body.dark .site-top .lower nav.navbar ul 
@@ -1576,7 +1593,7 @@ li.link-item {
     left: 0;
     background: 0 0;
     position: fixed;
-    border-radius: 0px;
+    border-radius: 0 !important;
 }
 .yya {
     position: fixed;
@@ -1656,12 +1673,12 @@ li.link-item {
 }
 <?php endif; ?>
 
-<?php if(iro_opt('announce_text_align') == 'center'){ ?>
+<?php if(iro_opt('bulletin_board_text_align') == 'center'){ ?>
 .notice {
     text-align: center;
 }
 
-<?php }if(iro_opt('announce_text_align') == 'right'){ ?>
+<?php }if(iro_opt('bulletin_board_text_align') == 'right'){ ?>
 .notice {
     text-align: right;
 }
@@ -1682,14 +1699,14 @@ h1.main-title {
 
 <?php } ?>
 
-<?php if(iro_opt('announce_bar_style') == 'picture'){ ?>
+<?php if(iro_opt('bulletin_board_style') == 'picture'){ ?>
 .notice {
-    background-image:url(<?php echo iro_opt('announcement_bg', ''); ?>);
+    background-image:url(<?php echo iro_opt('bulletin_board_bg', ''); ?>);
     border: none;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
 }
 
-<?php }if(iro_opt('announce_bar_style') == 'pure'){ ?>
+<?php }if(iro_opt('bulletin_board_style') == 'pure'){ ?>
 .notice {
     background: #fbfbfb50;
 }

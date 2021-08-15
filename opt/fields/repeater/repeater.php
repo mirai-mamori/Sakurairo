@@ -24,7 +24,7 @@ if ( ! class_exists( 'CSF_Field_repeater' ) ) {
 
       if ( preg_match( '/'. preg_quote( '['. $this->field['id'] .']' ) .'/', $this->unique ) ) {
 
-        echo '<div class="csf-notice csf-notice-danger">'. esc_html__( 'Error: Field ID conflict.', 'csf' ) .'</div>';
+        echo '<div class="csf-notice csf-notice-danger">'. esc_html__( 'Error: Field ID conflict.', 'sakurairo_csf' ) .'</div>';
 
       } else {
 
@@ -37,7 +37,7 @@ if ( ! class_exists( 'CSF_Field_repeater' ) ) {
           $field_default = ( isset( $field['default'] ) ) ? $field['default'] : '';
           $field_unique  = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .'][0]' : $this->field['id'] .'[0]';
 
-          CSF::field( $field, $field_default, '___'. $field_unique, 'field/repeater' );
+          Sakurairo_CSF::field( $field, $field_default, '___'. $field_unique, 'field/repeater' );
 
         }
         echo '</div>';
@@ -45,7 +45,7 @@ if ( ! class_exists( 'CSF_Field_repeater' ) ) {
         echo '<div class="csf-repeater-helper-inner">';
         echo '<i class="csf-repeater-sort fas fa-arrows-alt"></i>';
         echo '<i class="csf-repeater-clone far fa-clone"></i>';
-        echo '<i class="csf-repeater-remove csf-confirm fas fa-times" data-confirm="'. esc_html__( 'Are you sure to delete this item?', 'csf' ) .'"></i>';
+        echo '<i class="csf-repeater-remove csf-confirm fas fa-times" data-confirm="'. esc_html__( 'Are you sure to delete this item?', 'sakurairo_csf' ) .'"></i>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
@@ -65,7 +65,7 @@ if ( ! class_exists( 'CSF_Field_repeater' ) ) {
               $field_unique = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']['. $num .']' : $this->field['id'] .'['. $num .']';
               $field_value  = ( isset( $field['id'] ) && isset( $this->value[$key][$field['id']] ) ) ? $this->value[$key][$field['id']] : '';
 
-              CSF::field( $field, $field_value, $field_unique, 'field/repeater' );
+              Sakurairo_CSF::field( $field, $field_value, $field_unique, 'field/repeater' );
 
             }
             echo '</div>';
@@ -73,7 +73,7 @@ if ( ! class_exists( 'CSF_Field_repeater' ) ) {
             echo '<div class="csf-repeater-helper-inner">';
             echo '<i class="csf-repeater-sort fas fa-arrows-alt"></i>';
             echo '<i class="csf-repeater-clone far fa-clone"></i>';
-            echo '<i class="csf-repeater-remove csf-confirm fas fa-times" data-confirm="'. esc_html__( 'Are you sure to delete this item?', 'csf' ) .'"></i>';
+            echo '<i class="csf-repeater-remove csf-confirm fas fa-times" data-confirm="'. esc_html__( 'Are you sure to delete this item?', 'sakurairo_csf' ) .'"></i>';
             echo '</div>';
             echo '</div>';
             echo '</div>';
@@ -86,8 +86,8 @@ if ( ! class_exists( 'CSF_Field_repeater' ) ) {
 
         echo '</div>';
 
-        echo '<div class="csf-repeater-alert csf-repeater-max">'. esc_html__( 'You cannot add more.', 'csf' ) .'</div>';
-        echo '<div class="csf-repeater-alert csf-repeater-min">'. esc_html__( 'You cannot remove more.', 'csf' ) .'</div>';
+        echo '<div class="csf-repeater-alert csf-repeater-max">'. esc_html__( 'You cannot add more.', 'sakurairo_csf' ) .'</div>';
+        echo '<div class="csf-repeater-alert csf-repeater-min">'. esc_html__( 'You cannot remove more.', 'sakurairo_csf' ) .'</div>';
         echo '<a href="#" class="button button-primary csf-repeater-add">'. $args['button_title'] .'</a>';
 
         echo $this->field_after();

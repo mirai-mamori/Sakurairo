@@ -7,12 +7,12 @@
  * @version 1.0.0
  *
  */
-if ( ! class_exists( 'CSF' ) ) {
-  class CSF {
+if ( ! class_exists( 'Sakurairo_CSF' ) ) {
+  class Sakurairo_CSF {
 
     // Default constants
     public static $premium  = false;
-    public static $version  = '2.2.3';
+    public static $version  = '2.2.4';
     public static $dir      = '';
     public static $url      = '';
     public static $css      = '';
@@ -67,13 +67,13 @@ if ( ! class_exists( 'CSF' ) ) {
       // Setup textdomain
       self::textdomain();
 
-      add_action( 'after_setup_theme', array( 'CSF', 'setup' ) );
-      add_action( 'init', array( 'CSF', 'setup' ) );
-      add_action( 'switch_theme', array( 'CSF', 'setup' ) );
-      add_action( 'admin_enqueue_scripts', array( 'CSF', 'add_admin_enqueue_scripts' ) );
-      add_action( 'wp_enqueue_scripts', array( 'CSF', 'add_typography_enqueue_styles' ), 80 );
-      add_action( 'wp_head', array( 'CSF', 'add_custom_css' ), 80 );
-      add_filter( 'admin_body_class', array( 'CSF', 'add_admin_body_class' ) );
+      add_action( 'after_setup_theme', array( 'Sakurairo_CSF', 'setup' ) );
+      add_action( 'init', array( 'Sakurairo_CSF', 'setup' ) );
+      add_action( 'switch_theme', array( 'Sakurairo_CSF', 'setup' ) );
+      add_action( 'admin_enqueue_scripts', array( 'Sakurairo_CSF', 'add_admin_enqueue_scripts' ) );
+      add_action( 'wp_enqueue_scripts', array( 'Sakurairo_CSF', 'add_typography_enqueue_styles' ), 80 );
+      add_action( 'wp_head', array( 'Sakurairo_CSF', 'add_custom_css' ), 80 );
+      add_filter( 'admin_body_class', array( 'Sakurairo_CSF', 'add_admin_body_class' ) );
 
     }
 
@@ -190,6 +190,7 @@ if ( ! class_exists( 'CSF' ) ) {
       // Setup widget option framework
       if ( class_exists( 'CSF_Widget' ) && class_exists( 'WP_Widget_Factory' ) && ! empty( self::$args['widget_options'] ) ) {
         $wp_widget_factory = new WP_Widget_Factory();
+        global $wp_widget_factory;
         foreach ( self::$args['widget_options'] as $key => $value ) {
           if ( ! isset( self::$inited[$key] ) ) {
 
@@ -306,6 +307,7 @@ if ( ! class_exists( 'CSF' ) ) {
       $dirname        = str_replace( '//', '/', wp_normalize_path( dirname( dirname( self::$file ) ) ) );
       $theme_dir      = str_replace( '//', '/', wp_normalize_path( get_parent_theme_file_path() ) );
       $plugin_dir     = str_replace( '//', '/', wp_normalize_path( WP_PLUGIN_DIR ) );
+      $plugin_dir     = str_replace( '/opt/bitnami', '/bitnami', $plugin_dir );
       $located_plugin = ( preg_match( '#'. self::sanitize_dirname( $plugin_dir ) .'#', self::sanitize_dirname( $dirname ) ) ) ? true : false;
       $directory      = ( $located_plugin ) ? $plugin_dir : $theme_dir;
       $directory_uri  = ( $located_plugin ) ? WP_PLUGIN_URL : get_parent_theme_file_uri();
@@ -457,7 +459,7 @@ if ( ! class_exists( 'CSF' ) ) {
 
     // Setup textdomain
     public static function textdomain() {
-      load_textdomain( 'csf', self::$dir .'/languages/'. get_locale() .'.mo' );
+      load_textdomain( 'sakurairo_csf', self::$dir .'/languages/'. get_locale() .'.mo' );
     }
 
     // Set all of used fields
@@ -569,12 +571,12 @@ if ( ! class_exists( 'CSF' ) ) {
       if ( apply_filters( 'csf_fa4', false ) ) {
         wp_enqueue_style( 'csf-fa', 'https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome'. $min .'.css', array(), '4.7.0', 'all' );
       } else {
-        wp_enqueue_style( 'csf-fa5', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all'. $min .'.css', array(), '5.15.3', 'all' );
-        wp_enqueue_style( 'csf-fa5-v4-shims', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/v4-shims'. $min .'.css', array(), '5.15.3', 'all' );
+        wp_enqueue_style( 'csf-fa5', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all'. $min .'.css', array(), '5.15.5', 'all' );
+        wp_enqueue_style( 'csf-fa5-v4-shims', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/v4-shims'. $min .'.css', array(), '5.15.5', 'all' );
       }
 
       // Main style
-      wp_enqueue_style( 'csf', self::include_plugin_url( 'assets/css/style'. $min .'.css' ), array(), self::$version, 'all' );
+      wp_enqueue_style( 'sakurairo_csf', self::include_plugin_url( 'assets/css/style'. $min .'.css' ), array(), self::$version, 'all' );
 
       // Main RTL styles
       if ( is_rtl() ) {
@@ -583,16 +585,16 @@ if ( ! class_exists( 'CSF' ) ) {
 
       // Main scripts
       wp_enqueue_script( 'csf-plugins', self::include_plugin_url( 'assets/js/plugins'. $min .'.js' ), array(), self::$version, true );
-      wp_enqueue_script( 'csf', self::include_plugin_url( 'assets/js/main'. $min .'.js' ), array( 'csf-plugins' ), self::$version, true );
+      wp_enqueue_script( 'sakurairo_csf', self::include_plugin_url( 'assets/js/main'. $min .'.js' ), array( 'csf-plugins' ), self::$version, true );
 
       // Main variables
-      wp_localize_script( 'csf', 'csf_vars', array(
+      wp_localize_script( 'sakurairo_csf', 'csf_vars', array(
         'color_palette'     => apply_filters( 'csf_color_palette', array() ),
         'i18n'              => array(
-          'confirm'         => esc_html__( 'Are you sure?', 'csf' ),
-          'typing_text'     => esc_html__( 'Please enter %s or more characters', 'csf' ),
-          'searching_text'  => esc_html__( 'Searching...', 'csf' ),
-          'no_results_text' => esc_html__( 'No results found.', 'csf' ),
+          'confirm'         => esc_html__( 'Are you sure?', 'sakurairo_csf' ),
+          'typing_text'     => esc_html__( 'Please enter %s or more characters', 'sakurairo_csf' ),
+          'searching_text'  => esc_html__( 'Searching...', 'sakurairo_csf' ),
+          'no_results_text' => esc_html__( 'No results found.', 'sakurairo_csf' ),
         ),
       ) );
 
@@ -693,7 +695,7 @@ if ( ! class_exists( 'CSF' ) ) {
         $field_type = $field['type'];
 
         $field            = array();
-        $field['content'] = esc_html__( 'Oops! Not allowed.', 'csf' ) .' <strong>('. $field_type .')</strong>';
+        $field['content'] = esc_html__( 'Oops! Not allowed.', 'sakurairo_csf' ) .' <strong>('. $field_type .')</strong>';
         $field['type']    = 'notice';
         $field['style']   = 'danger';
 
@@ -738,10 +740,10 @@ if ( ! class_exists( 'CSF' ) ) {
 
       }
 
-      if ( ! empty( $field_type ) ) {
+      // These attributes has been sanitized above.
+      echo '<div class="csf-field csf-field-'. $field_type . $is_pseudo . $class . $visible .'"'. $depend .'>';
 
-        // These attributes has been sanitized above.
-        echo '<div class="csf-field csf-field-'. $field_type . $is_pseudo . $class . $visible .'"'. $depend .'>';
+      if ( ! empty( $field_type ) ) {
 
         if ( ! empty( $field['fancy_title'] ) ) {
           echo '<div class="csf-fancy-title">' . $field['fancy_title'] .'</div>';
@@ -765,11 +767,11 @@ if ( ! class_exists( 'CSF' ) ) {
           $instance = new $classname( $field, $value, $unique, $where, $parent );
           $instance->render();
         } else {
-          echo '<p>'. esc_html__( 'Field not found!', 'csf' ) .'</p>';
+          echo '<p>'. esc_html__( 'Field not found!', 'sakurairo_csf' ) .'</p>';
         }
 
       } else {
-        echo '<p>'. esc_html__( 'Field not found!', 'csf' ) .'</p>';
+        echo '<p>'. esc_html__( 'Field not found!', 'sakurairo_csf' ) .'</p>';
       }
 
       echo ( ! empty( $field['title'] ) || ! empty( $field['fancy_title'] ) ) ? '</div>' : '';
@@ -782,4 +784,4 @@ if ( ! class_exists( 'CSF' ) ) {
 
 }
 
-CSF::init( __FILE__ );
+Sakurairo_CSF::init( __FILE__ );

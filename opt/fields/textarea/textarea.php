@@ -31,9 +31,9 @@ if ( ! class_exists( 'CSF_Field_textarea' ) ) {
 
         foreach ( $instances as $instance_key ) {
 
-          if ( isset( CSF::$shortcode_instances[$instance_key] ) ) {
+          if ( isset( Sakurairo_CSF::$shortcode_instances[$instance_key] ) ) {
 
-            $button_title = CSF::$shortcode_instances[$instance_key]['button_title'];
+            $button_title = Sakurairo_CSF::$shortcode_instances[$instance_key]['button_title'];
 
             echo '<a href="#" class="button button-primary csf-shortcode-button" data-modal-id="'. esc_attr( $instance_key ) .'">'. $button_title .'</a>';
 

@@ -93,8 +93,8 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
           // Font Family
           if ( ! empty( $args['font_family'] ) ) {
             echo '<div class="csf--block">';
-            echo '<div class="csf--title">'. esc_html__( 'Font Family', 'csf' ) .'</div>';
-            echo $this->create_select( array( $this->value['font-family'] => $this->value['font-family'] ), 'font-family', esc_html__( 'Select a font', 'csf' ) );
+            echo '<div class="csf--title">'. esc_html__( 'Font Family', 'sakurairo_csf' ) .'</div>';
+            echo $this->create_select( array( $this->value['font-family'] => $this->value['font-family'] ), 'font-family', esc_html__( 'Select a font', 'sakurairo_csf' ) );
             echo '</div>';
           }
 
@@ -102,7 +102,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
           // Backup Font Family
           if ( ! empty( $args['backup_font_family'] ) ) {
             echo '<div class="csf--block csf--block-backup-font-family hidden">';
-            echo '<div class="csf--title">'. esc_html__( 'Backup Font Family', 'csf' ) .'</div>';
+            echo '<div class="csf--title">'. esc_html__( 'Backup Font Family', 'sakurairo_csf' ) .'</div>';
             echo $this->create_select( apply_filters( 'csf_field_typography_backup_font_family', array(
               'Arial, Helvetica, sans-serif',
               "'Arial Black', Gadget, sans-serif",
@@ -116,7 +116,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
               "'Lucida Console', Monaco, monospace",
               'Georgia, serif',
               'Palatino Linotype'
-            ) ), 'backup-font-family', esc_html__( 'Default', 'csf' ) );
+            ) ), 'backup-font-family', esc_html__( 'Default', 'sakurairo_csf' ) );
             echo '</div>';
           }
 
@@ -127,9 +127,9 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
             //
             // Font Style Select
             echo '<div class="csf--block csf--block-font-style hidden">';
-            echo '<div class="csf--title">'. esc_html__( 'Font Style', 'csf') .'</div>';
+            echo '<div class="csf--title">'. esc_html__( 'Font Style', 'sakurairo_csf') .'</div>';
             echo '<select class="csf--font-style-select" data-placeholder="Default">';
-            echo '<option value="">'. ( ! $this->chosen ? esc_html__( 'Default', 'csf' ) : '' ) .'</option>';
+            echo '<option value="">'. ( ! $this->chosen ? esc_html__( 'Default', 'sakurairo_csf' ) : '' ) .'</option>';
             if ( ! empty( $this->value['font-weight'] ) || ! empty( $this->value['font-style'] ) ) {
               echo '<option value="'. esc_attr( strtolower( $this->value['font-weight'] . $this->value['font-style'] ) ) .'" selected></option>';
             }
@@ -141,8 +141,8 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
             // Extra Font Style Select
             if ( ! empty( $args['extra_styles'] ) ) {
               echo '<div class="csf--block-extra-styles hidden">';
-              echo ( ! $this->chosen ) ? '<div class="csf--title">'. esc_html__( 'Load Extra Styles', 'csf' ) .'</div>' : '';
-              $placeholder = ( $this->chosen ) ? esc_html__( 'Load Extra Styles', 'csf' ) : esc_html__( 'Default', 'csf' );
+              echo ( ! $this->chosen ) ? '<div class="csf--title">'. esc_html__( 'Load Extra Styles', 'sakurairo_csf' ) .'</div>' : '';
+              $placeholder = ( $this->chosen ) ? esc_html__( 'Load Extra Styles', 'sakurairo_csf' ) : esc_html__( 'Default', 'sakurairo_csf' );
               echo $this->create_select( $this->value['extra-styles'], 'extra-styles', $placeholder, true );
               echo '</div>';
             }
@@ -155,9 +155,9 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
           // Subset
           if ( ! empty( $args['subset'] ) ) {
             echo '<div class="csf--block csf--block-subset hidden">';
-            echo '<div class="csf--title">'. esc_html__( 'Subset', 'csf' ) .'</div>';
+            echo '<div class="csf--title">'. esc_html__( 'Subset', 'sakurairo_csf' ) .'</div>';
             $subset = ( is_array( $this->value['subset'] ) ) ? $this->value['subset'] : array_filter( (array) $this->value['subset'] );
-            echo $this->create_select( $subset, 'subset', esc_html__( 'Default', 'csf' ), $args['multi_subset'] );
+            echo $this->create_select( $subset, 'subset', esc_html__( 'Default', 'sakurairo_csf' ), $args['multi_subset'] );
             echo '</div>';
           }
 
@@ -165,15 +165,15 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
           // Text Align
           if ( ! empty( $args['text_align'] ) ) {
             echo '<div class="csf--block">';
-            echo '<div class="csf--title">'. esc_html__( 'Text Align', 'csf' ) .'</div>';
+            echo '<div class="csf--title">'. esc_html__( 'Text Align', 'sakurairo_csf' ) .'</div>';
             echo $this->create_select( array(
-              'inherit' => esc_html__( 'Inherit', 'csf' ),
-              'left'    => esc_html__( 'Left', 'csf' ),
-              'center'  => esc_html__( 'Center', 'csf' ),
-              'right'   => esc_html__( 'Right', 'csf' ),
-              'justify' => esc_html__( 'Justify', 'csf' ),
-              'initial' => esc_html__( 'Initial', 'csf' )
-            ), 'text-align', esc_html__( 'Default', 'csf' ) );
+              'inherit' => esc_html__( 'Inherit', 'sakurairo_csf' ),
+              'left'    => esc_html__( 'Left', 'sakurairo_csf' ),
+              'center'  => esc_html__( 'Center', 'sakurairo_csf' ),
+              'right'   => esc_html__( 'Right', 'sakurairo_csf' ),
+              'justify' => esc_html__( 'Justify', 'sakurairo_csf' ),
+              'initial' => esc_html__( 'Initial', 'sakurairo_csf' )
+            ), 'text-align', esc_html__( 'Default', 'sakurairo_csf' ) );
             echo '</div>';
           }
 
@@ -181,12 +181,12 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
           // Font Variant
           if ( ! empty( $args['font_variant'] ) ) {
             echo '<div class="csf--block">';
-            echo '<div class="csf--title">'. esc_html__( 'Font Variant', 'csf' ) .'</div>';
+            echo '<div class="csf--title">'. esc_html__( 'Font Variant', 'sakurairo_csf' ) .'</div>';
             echo $this->create_select( array(
-              'normal'         => esc_html__( 'Normal', 'csf' ),
-              'small-caps'     => esc_html__( 'Small Caps', 'csf' ),
-              'all-small-caps' => esc_html__( 'All Small Caps', 'csf' )
-            ), 'font-variant', esc_html__( 'Default', 'csf' ) );
+              'normal'         => esc_html__( 'Normal', 'sakurairo_csf' ),
+              'small-caps'     => esc_html__( 'Small Caps', 'sakurairo_csf' ),
+              'all-small-caps' => esc_html__( 'All Small Caps', 'sakurairo_csf' )
+            ), 'font-variant', esc_html__( 'Default', 'sakurairo_csf' ) );
             echo '</div>';
           }
 
@@ -194,13 +194,13 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
           // Text Transform
           if ( ! empty( $args['text_transform'] ) ) {
             echo '<div class="csf--block">';
-            echo '<div class="csf--title">'. esc_html__( 'Text Transform', 'csf' ) .'</div>';
+            echo '<div class="csf--title">'. esc_html__( 'Text Transform', 'sakurairo_csf' ) .'</div>';
             echo $this->create_select( array(
-              'none'       => esc_html__( 'None', 'csf' ),
-              'capitalize' => esc_html__( 'Capitalize', 'csf' ),
-              'uppercase'  => esc_html__( 'Uppercase', 'csf' ),
-              'lowercase'  => esc_html__( 'Lowercase', 'csf' )
-            ), 'text-transform', esc_html__( 'Default', 'csf' ) );
+              'none'       => esc_html__( 'None', 'sakurairo_csf' ),
+              'capitalize' => esc_html__( 'Capitalize', 'sakurairo_csf' ),
+              'uppercase'  => esc_html__( 'Uppercase', 'sakurairo_csf' ),
+              'lowercase'  => esc_html__( 'Lowercase', 'sakurairo_csf' )
+            ), 'text-transform', esc_html__( 'Default', 'sakurairo_csf' ) );
             echo '</div>';
           }
 
@@ -208,17 +208,17 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
           // Text Decoration
           if ( ! empty( $args['text_decoration'] ) ) {
             echo '<div class="csf--block">';
-            echo '<div class="csf--title">'. esc_html__( 'Text Decoration', 'csf' ) .'</div>';
+            echo '<div class="csf--title">'. esc_html__( 'Text Decoration', 'sakurairo_csf' ) .'</div>';
             echo $this->create_select( array(
-              'none'               => esc_html__( 'None', 'csf' ),
-              'underline'          => esc_html__( 'Solid', 'csf' ),
-              'underline double'   => esc_html__( 'Double', 'csf' ),
-              'underline dotted'   => esc_html__( 'Dotted', 'csf' ),
-              'underline dashed'   => esc_html__( 'Dashed', 'csf' ),
-              'underline wavy'     => esc_html__( 'Wavy', 'csf' ),
-              'underline overline' => esc_html__( 'Overline', 'csf' ),
-              'line-through'       => esc_html__( 'Line-through', 'csf' )
-            ), 'text-decoration', esc_html__( 'Default', 'csf' ) );
+              'none'               => esc_html__( 'None', 'sakurairo_csf' ),
+              'underline'          => esc_html__( 'Solid', 'sakurairo_csf' ),
+              'underline double'   => esc_html__( 'Double', 'sakurairo_csf' ),
+              'underline dotted'   => esc_html__( 'Dotted', 'sakurairo_csf' ),
+              'underline dashed'   => esc_html__( 'Dashed', 'sakurairo_csf' ),
+              'underline wavy'     => esc_html__( 'Wavy', 'sakurairo_csf' ),
+              'underline overline' => esc_html__( 'Overline', 'sakurairo_csf' ),
+              'line-through'       => esc_html__( 'Line-through', 'sakurairo_csf' )
+            ), 'text-decoration', esc_html__( 'Default', 'sakurairo_csf' ) );
             echo '</div>';
           }
 
@@ -230,7 +230,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
           // Font Size
           if ( ! empty( $args['font_size'] ) ) {
             echo '<div class="csf--block">';
-            echo '<div class="csf--title">'. esc_html__( 'Font Size', 'csf' ) .'</div>';
+            echo '<div class="csf--title">'. esc_html__( 'Font Size', 'sakurairo_csf' ) .'</div>';
             echo '<div class="csf--input-wrap">';
             echo '<input type="number" name="'. esc_attr( $this->field_name( '[font-size]' ) ) .'" class="csf--font-size csf--input csf-input-number" value="'. esc_attr( $this->value['font-size'] ) .'" step="any" />';
             echo '<span class="csf--unit">'. esc_attr( $args['unit'] ) .'</span>';
@@ -242,7 +242,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
           // Line Height
           if ( ! empty( $args['line_height'] ) ) {
             echo '<div class="csf--block">';
-            echo '<div class="csf--title">'. esc_html__( 'Line Height', 'csf' ) .'</div>';
+            echo '<div class="csf--title">'. esc_html__( 'Line Height', 'sakurairo_csf' ) .'</div>';
             echo '<div class="csf--input-wrap">';
             echo '<input type="number" name="'. esc_attr( $this->field_name( '[line-height]' ) ) .'" class="csf--line-height csf--input csf-input-number" value="'. esc_attr( $this->value['line-height'] ) .'" step="any" />';
             echo '<span class="csf--unit">'. esc_attr( $line_height_unit ) .'</span>';
@@ -254,7 +254,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
           // Letter Spacing
           if ( ! empty( $args['letter_spacing'] ) ) {
             echo '<div class="csf--block">';
-            echo '<div class="csf--title">'. esc_html__( 'Letter Spacing', 'csf' ) .'</div>';
+            echo '<div class="csf--title">'. esc_html__( 'Letter Spacing', 'sakurairo_csf' ) .'</div>';
             echo '<div class="csf--input-wrap">';
             echo '<input type="number" name="'. esc_attr( $this->field_name( '[letter-spacing]' ) ) .'" class="csf--letter-spacing csf--input csf-input-number" value="'. esc_attr( $this->value['letter-spacing'] ) .'" step="any" />';
             echo '<span class="csf--unit">'. esc_attr( $args['unit'] ) .'</span>';
@@ -266,7 +266,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
           // Word Spacing
           if ( ! empty( $args['word_spacing'] ) ) {
             echo '<div class="csf--block">';
-            echo '<div class="csf--title">'. esc_html__( 'Word Spacing', 'csf' ) .'</div>';
+            echo '<div class="csf--title">'. esc_html__( 'Word Spacing', 'sakurairo_csf' ) .'</div>';
             echo '<div class="csf--input-wrap">';
             echo '<input type="number" name="'. esc_attr( $this->field_name( '[word-spacing]' ) ) .'" class="csf--word-spacing csf--input csf-input-number" value="'. esc_attr( $this->value['word-spacing'] ) .'" step="any" />';
             echo '<span class="csf--unit">'. esc_attr( $args['unit'] ) .'</span>';
@@ -281,7 +281,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
         if ( ! empty( $args['color'] ) ) {
           $default_color_attr = ( ! empty( $default_value['color'] ) ) ? ' data-default-color="'. esc_attr( $default_value['color'] ) .'"' : '';
           echo '<div class="csf--block csf--block-font-color">';
-          echo '<div class="csf--title">'. esc_html__( 'Font Color', 'csf' ) .'</div>';
+          echo '<div class="csf--title">'. esc_html__( 'Font Color', 'sakurairo_csf' ) .'</div>';
           echo '<div class="csf-field-color">';
           echo '<input type="text" name="'. esc_attr( $this->field_name( '[color]' ) ) .'" class="csf-color csf--color" value="'. esc_attr( $this->value['color'] ) .'"'. $default_color_attr .' />';
           echo '</div>';
@@ -292,7 +292,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
         // Custom style
         if ( ! empty( $args['custom_style'] ) ) {
           echo '<div class="csf--block csf--block-custom-style">';
-          echo '<div class="csf--title">'. esc_html__( 'Custom Style', 'csf' ) .'</div>';
+          echo '<div class="csf--title">'. esc_html__( 'Custom Style', 'sakurairo_csf' ) .'</div>';
           echo '<textarea name="'. esc_attr( $this->field_name( '[custom-style]' ) ) .'" class="csf--custom-style">'. esc_attr( $this->value['custom-style'] ) .'</textarea>';
           echo '</div>';
         }
@@ -349,9 +349,9 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
 
       if ( ! wp_script_is( 'csf-webfontloader' ) ) {
 
-        CSF::include_plugin_file( 'fields/typography/google-fonts.php' );
+        Sakurairo_CSF::include_plugin_file( 'fields/typography/google-fonts.php' );
 
-        wp_enqueue_script( 'csf-webfontloader', 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js', array( 'csf' ), '1.6.28', true );
+        wp_enqueue_script( 'csf-webfontloader', 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js', array( 'sakurairo_csf' ), '1.6.28', true );
 
         $webfonts = array();
 
@@ -359,13 +359,13 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
 
         if ( ! empty( $customwebfonts ) ) {
           $webfonts['custom'] = array(
-            'label' => esc_html__( 'Custom Web Fonts', 'csf' ),
+            'label' => esc_html__( 'Custom Web Fonts', 'sakurairo_csf' ),
             'fonts' => $customwebfonts
           );
         }
 
         $webfonts['safe'] = array(
-          'label' => esc_html__( 'Safe Web Fonts', 'csf' ),
+          'label' => esc_html__( 'Safe Web Fonts', 'sakurairo_csf' ),
           'fonts' => apply_filters( 'csf_field_typography_safewebfonts', array(
             'Arial',
             'Arial Black',
@@ -385,7 +385,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
         ) );
 
         $webfonts['google'] = array(
-          'label' => esc_html__( 'Google Web Fonts', 'csf' ),
+          'label' => esc_html__( 'Google Web Fonts', 'sakurairo_csf' ),
           'fonts' => apply_filters( 'csf_field_typography_googlewebfonts', csf_get_google_fonts()
         ) );
 
@@ -414,7 +414,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
 
         $webfonts = apply_filters( 'csf_field_typography_webfonts', $webfonts );
 
-        wp_localize_script( 'csf', 'csf_typography_json', array(
+        wp_localize_script( 'sakurairo_csf', 'csf_typography_json', array(
           'webfonts'      => $webfonts,
           'defaultstyles' => $defaultstyles,
           'googlestyles'  => $googlestyles
@@ -431,7 +431,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
       if ( ! empty( $this->value['type'] ) ) {
         $is_google = ( $this->value['type'] === 'google' ) ? true : false;
       } else {
-        CSF::include_plugin_file( 'fields/typography/google-fonts.php' );
+        Sakurairo_CSF::include_plugin_file( 'fields/typography/google-fonts.php' );
         $is_google = ( array_key_exists( $this->value['font-family'], csf_get_google_fonts() ) ) ? true : false;
       }
 
@@ -446,10 +446,10 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
           $style = $font_weight . $font_style;
           if ( ! empty( $style ) ) {
             $style = ( $style === 'normal' ) ? '400' : $style;
-            CSF::$webfonts[$method][$font_family][$style] = $style;
+            Sakurairo_CSF::$webfonts[$method][$font_family][$style] = $style;
           }
         } else {
-          CSF::$webfonts[$method][$font_family] = array();
+          Sakurairo_CSF::$webfonts[$method][$font_family] = array();
         }
 
         // set extra styles
@@ -457,7 +457,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
           foreach ( $this->value['extra-styles'] as $extra_style ) {
             if ( ! empty( $extra_style ) ) {
               $extra_style = ( $extra_style === 'normal' ) ? '400' : $extra_style;
-              CSF::$webfonts[$method][$font_family][$extra_style] = $extra_style;
+              Sakurairo_CSF::$webfonts[$method][$font_family][$extra_style] = $extra_style;
             }
           }
         }
@@ -467,7 +467,7 @@ if ( ! class_exists( 'CSF_Field_typography' ) ) {
           $this->value['subset'] = ( is_array( $this->value['subset'] ) ) ? $this->value['subset'] : array_filter( (array) $this->value['subset'] );
           foreach ( $this->value['subset'] as $subset ) {
             if( ! empty( $subset ) ) {
-              CSF::$subsets[$subset] = $subset;
+              Sakurairo_CSF::$subsets[$subset] = $subset;
             }
           }
         }

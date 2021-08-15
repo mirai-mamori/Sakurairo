@@ -73,7 +73,7 @@ if ( ! class_exists( 'CSF_Field_checkbox' ) ) {
 
         } else {
 
-          echo ( ! empty( $this->field['empty_message'] ) ) ? esc_attr( $this->field['empty_message'] ) : esc_html__( 'No data available.', 'csf' );
+          echo ( ! empty( $this->field['empty_message'] ) ) ? esc_attr( $this->field['empty_message'] ) : esc_html__( 'No data available.', 'sakurairo_csf' );
 
         }
 

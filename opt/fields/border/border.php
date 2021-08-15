@@ -22,11 +22,11 @@ if ( ! class_exists( 'CSF_Field_border' ) ) {
         'bottom_icon'        => '<i class="fas fa-long-arrow-alt-down"></i>',
         'right_icon'         => '<i class="fas fa-long-arrow-alt-right"></i>',
         'all_icon'           => '<i class="fas fa-arrows-alt"></i>',
-        'top_placeholder'    => esc_html__( 'top', 'csf' ),
-        'right_placeholder'  => esc_html__( 'right', 'csf' ),
-        'bottom_placeholder' => esc_html__( 'bottom', 'csf' ),
-        'left_placeholder'   => esc_html__( 'left', 'csf' ),
-        'all_placeholder'    => esc_html__( 'all', 'csf' ),
+        'top_placeholder'    => esc_html__( 'top', 'sakurairo_csf' ),
+        'right_placeholder'  => esc_html__( 'right', 'sakurairo_csf' ),
+        'bottom_placeholder' => esc_html__( 'bottom', 'sakurairo_csf' ),
+        'left_placeholder'   => esc_html__( 'left', 'sakurairo_csf' ),
+        'all_placeholder'    => esc_html__( 'all', 'sakurairo_csf' ),
         'top'                => true,
         'left'               => true,
         'bottom'             => true,
@@ -48,15 +48,15 @@ if ( ! class_exists( 'CSF_Field_border' ) ) {
       );
 
       $border_props = array(
-        'solid'     => esc_html__( 'Solid', 'csf' ),
-        'dashed'    => esc_html__( 'Dashed', 'csf' ),
-        'dotted'    => esc_html__( 'Dotted', 'csf' ),
-        'double'    => esc_html__( 'Double', 'csf' ),
-        'inset'     => esc_html__( 'Inset', 'csf' ),
-        'outset'    => esc_html__( 'Outset', 'csf' ),
-        'groove'    => esc_html__( 'Groove', 'csf' ),
-        'ridge'     => esc_html__( 'ridge', 'csf' ),
-        'none'      => esc_html__( 'None', 'csf' )
+        'solid'     => esc_html__( 'Solid', 'sakurairo_csf' ),
+        'dashed'    => esc_html__( 'Dashed', 'sakurairo_csf' ),
+        'dotted'    => esc_html__( 'Dotted', 'sakurairo_csf' ),
+        'double'    => esc_html__( 'Double', 'sakurairo_csf' ),
+        'inset'     => esc_html__( 'Inset', 'sakurairo_csf' ),
+        'outset'    => esc_html__( 'Outset', 'sakurairo_csf' ),
+        'groove'    => esc_html__( 'Groove', 'sakurairo_csf' ),
+        'ridge'     => esc_html__( 'ridge', 'sakurairo_csf' ),
+        'none'      => esc_html__( 'None', 'sakurairo_csf' )
       );
 
       $default_value = ( ! empty( $this->field['default'] ) ) ? wp_parse_args( $this->field['default'], $default_value ) : $default_value;

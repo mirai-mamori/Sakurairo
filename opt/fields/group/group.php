@@ -20,7 +20,7 @@ if ( ! class_exists( 'CSF_Field_group' ) ) {
         'max'                    => 0,
         'min'                    => 0,
         'fields'                 => array(),
-        'button_title'           => esc_html__( 'Add New', 'csf' ),
+        'button_title'           => esc_html__( 'Add New', 'sakurairo_csf' ),
         'accordion_title_prefix' => '',
         'accordion_title_number' => false,
         'accordion_title_auto'   => true,
@@ -32,7 +32,7 @@ if ( ! class_exists( 'CSF_Field_group' ) ) {
 
       if ( preg_match( '/'. preg_quote( '['. $this->field['id'] .']' ) .'/', $this->unique ) ) {
 
-        echo '<div class="csf-notice csf-notice-danger">'. esc_html__( 'Error: Field ID conflict.', 'csf' ) .'</div>';
+        echo '<div class="csf-notice csf-notice-danger">'. esc_html__( 'Error: Field ID conflict.', 'sakurairo_csf' ) .'</div>';
 
       } else {
 
@@ -43,7 +43,7 @@ if ( ! class_exists( 'CSF_Field_group' ) ) {
           echo '<div class="csf-cloneable-helper">';
           echo '<i class="csf-cloneable-sort fas fa-arrows-alt"></i>';
           echo '<i class="csf-cloneable-clone far fa-clone"></i>';
-          echo '<i class="csf-cloneable-remove csf-confirm fas fa-times" data-confirm="'. esc_html__( 'Are you sure to delete this item?', 'csf' ) .'"></i>';
+          echo '<i class="csf-cloneable-remove csf-confirm fas fa-times" data-confirm="'. esc_html__( 'Are you sure to delete this item?', 'sakurairo_csf' ) .'"></i>';
           echo '</div>';
 
           echo '<h4 class="csf-cloneable-title">';
@@ -60,7 +60,7 @@ if ( ! class_exists( 'CSF_Field_group' ) ) {
             $field_default = ( isset( $field['default'] ) ) ? $field['default'] : '';
             $field_unique  = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .'][0]' : $this->field['id'] .'[0]';
 
-            CSF::field( $field, $field_default, '___'. $field_unique, 'field/group' );
+            Sakurairo_CSF::field( $field, $field_default, '___'. $field_unique, 'field/group' );
 
           }
           echo '</div>';
@@ -84,7 +84,7 @@ if ( ! class_exists( 'CSF_Field_group' ) ) {
               echo '<div class="csf-cloneable-helper">';
               echo '<i class="csf-cloneable-sort fas fa-arrows-alt"></i>';
               echo '<i class="csf-cloneable-clone far fa-clone"></i>';
-              echo '<i class="csf-cloneable-remove csf-confirm fas fa-times" data-confirm="'. esc_html__( 'Are you sure to delete this item?', 'csf' ) .'"></i>';
+              echo '<i class="csf-cloneable-remove csf-confirm fas fa-times" data-confirm="'. esc_html__( 'Are you sure to delete this item?', 'sakurairo_csf' ) .'"></i>';
               echo '</div>';
 
               echo '<h4 class="csf-cloneable-title">';
@@ -102,7 +102,7 @@ if ( ! class_exists( 'CSF_Field_group' ) ) {
                 $field_unique = ( ! empty( $this->unique ) ) ? $this->unique .'['. $this->field['id'] .']['. $num .']' : $this->field['id'] .'['. $num .']';
                 $field_value  = ( isset( $field['id'] ) && isset( $value[$field['id']] ) ) ? $value[$field['id']] : '';
 
-                CSF::field( $field, $field_value, $field_unique, 'field/group' );
+                Sakurairo_CSF::field( $field, $field_value, $field_unique, 'field/group' );
 
               }
 
@@ -118,8 +118,8 @@ if ( ! class_exists( 'CSF_Field_group' ) ) {
 
         echo '</div>';
 
-        echo '<div class="csf-cloneable-alert csf-cloneable-max">'. esc_html__( 'You cannot add more.', 'csf' ) .'</div>';
-        echo '<div class="csf-cloneable-alert csf-cloneable-min">'. esc_html__( 'You cannot remove more.', 'csf' ) .'</div>';
+        echo '<div class="csf-cloneable-alert csf-cloneable-max">'. esc_html__( 'You cannot add more.', 'sakurairo_csf' ) .'</div>';
+        echo '<div class="csf-cloneable-alert csf-cloneable-min">'. esc_html__( 'You cannot remove more.', 'sakurairo_csf' ) .'</div>';
         echo '<a href="#" class="button button-primary csf-cloneable-add">'. $args['button_title'] .'</a>';
 
         echo $this->field_after();

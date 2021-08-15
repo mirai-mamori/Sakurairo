@@ -351,9 +351,17 @@ function convertip($ip)
     if(empty($ip)) $ip = get_comment_author_IP();
     $ch = curl_init();  
     $timeout = 5;  
-    curl_setopt ($ch, CURLOPT_URL, 'http://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip='.$ip);  
+    if (iro_opt('statistics_format') === 'type_1'){
+        $url = "https://api.maho.cc/ip?ip=".$ip;
+    }else{
+        $url = "https://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip=".$ip;
+    }
+    $timeout = 5;
+    curl_setopt ($ch, CURLOPT_URL, $url);
+    // curl_setopt ($ch, CURLOPT_URL, 'http://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip='.$ip);  
     curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);  
     curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);  
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     $file_contents = curl_exec($ch);  
     curl_close($ch);  
     $result = null;
@@ -914,7 +922,7 @@ function comment_mail_notify($comment_id)
     </div>
 ';
         $message = convert_smilies($message);
-        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.7.3/vision/smilies/bilipng/emoji_', $message);
+        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.0/vision/smilies/bilipng/emoji_', $message);
         $message = str_replace("}}", '.png" alt="emoji" style="height: 2em; max-height: 2em;">', $message);
 
         $message = str_replace('{UPLOAD}', 'https://i.loli.net/', $message);
@@ -1320,7 +1328,7 @@ return preg_replace( $old, $new, $url, 1);
 function admin_ini()
 {
     wp_enqueue_style('admin-styles-fix-icon', get_site_url() . '/wp-includes/css/dashicons.css');
-    wp_enqueue_style('cus-styles-fit', get_template_directory_uri() . '/inc/css/dashboard-fix.css');
+    wp_enqueue_style('cus-styles-fit', get_template_directory_uri() . '/css/dashboard/dashboard-fix.css');
     wp_enqueue_script('lazyload', 'https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.min.js');
 }
 add_action('admin_enqueue_scripts', 'admin_ini');
@@ -1352,12 +1360,6 @@ function scheme_tip()
     }
     if (get_user_locale(get_current_user_id()) == "zh_TW") {
         $msg = '<b>試一試新後台界面<a href="/wp-admin/profile.php">色彩配置</a>吧？</b>';
-    }
-    if (get_user_locale(get_current_user_id()) == "zh_HK") {
-        $msg = '<b>試一試新後台界面<a href="/wp-admin/profile.php">色彩配置</a>吧？</b>';
-    }
-    if (get_user_locale(get_current_user_id()) == "ja") {
-        $msg = '<b>新しい<a href="/wp-admin/profile.php">管理画面の配色</a>を試しますか？</b>';
     }
     if (get_user_locale(get_current_user_id()) == "ja-JP") {
         $msg = '<b>新しい<a href="/wp-admin/profile.php">管理画面の配色</a>を試しますか？</b>';
