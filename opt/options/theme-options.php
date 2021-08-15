@@ -25,12 +25,70 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'type'    => 'heading',
-        'content' => __('Theme Documentation','sakurairo_csf'),
+        'content' => __('Theme Official Website','sakurairo_csf'),
       ),
 
       array(
-        'type'    => 'content',
-        'content' => __('<iframe src="https://iro.tw/guide/about.html" width="100%" height= "800px" name="guide" scrolling="auto" noresize="noresize" frameborder="0" id="guide"></iframe>','sakurairo_csf'),
+        'type'    => 'submessage',
+        'style'   => 'info',
+        'content' => __('The Theme <a href="https://iro.tw">Official Website</a> is the best place to help novices quickly build and get started','sakurairo_csf'),
+      ),
+
+      array(
+        'id'    => 'theme_docs_web',
+        'type'  => 'switcher',
+        'title' => __('Theme Official Website in Option','sakurairo_csf'),
+        'label'   => __('It is enabled by default, and the theme official website will be embedded in the theme option.','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'theme_docs_web_sort',
+        'type' => 'tabbed',
+        'dependency' => array( 'theme_docs_web', '==', 'true' ),
+        'title' => __('Theme Official Website Menu','sakurairo_csf'),
+        'tabs' => array(
+          array(
+            'title' => __('Guide','sakurairo_csf'),
+            'icon' => 'fa fa-wikipedia-w',
+            'fields' => array(
+              array(
+                'type'    => 'content',
+                'content' => __('<iframe src="https://iro.tw/guide/about.html" width="100%" height= "800px" name="guide" scrolling="auto" noresize="noresize" frameborder="0" id="guide"></iframe>','sakurairo_csf'),
+              ),
+            )
+          ),
+          array(
+            'title' => __('Demo','sakurairo_csf'),
+            'icon' => 'fa fa-quote-left',
+            'fields' => array(
+              array(
+                'type'    => 'content',
+                'content' => __('<iframe src="https://iro.tw/demo.html" width="100%" height= "800px" name="guide" scrolling="auto" noresize="noresize" frameborder="0" id="guide"></iframe>','sakurairo_csf'),
+              ),
+            )
+          ),
+          array(
+            'title' => __('ChangeLog','sakurairo_csf'),
+            'icon' => 'fa fa-truck',
+            'fields' => array(
+              array(
+                'type'    => 'content',
+                'content' => __('<iframe src="https://iro.tw/releases.html" width="100%" height= "800px" name="guide" scrolling="auto" noresize="noresize" frameborder="0" id="guide"></iframe>','sakurairo_csf'),
+              ),
+            )
+          ),
+          array(
+            'title' => __('Sponsors','sakurairo_csf'),
+            'icon' => 'fa fa-credit-card',
+            'fields' => array(
+              array(
+                'type'    => 'content',
+                'content' => __('<iframe src="https://iro.tw/sponsors.html" width="100%" height= "800px" name="guide" scrolling="auto" noresize="noresize" frameborder="0" id="guide"></iframe>','sakurairo_csf'),
+              ),
+            )
+          ),
+        ),
       ),
 
     )
@@ -3025,7 +3083,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type'    => 'submessage',
         'style'   => 'success',
-        'content' => sprintf(__('iro 主题版本 / Theme Version %s | <a href="https://iro.tw">主题文档 / Theme Documentation</a> | <a href="https://github.com/mirai-mamori/Sakurairo">项目地址 / Project Address</a>', 'sakurairo', 'sakurairo_csf'), IRO_VERSION), 
+        'content' => sprintf(__('iro 主题版本 / Theme Version %s | <a href="https://github.com/mirai-mamori/Sakurairo">项目地址 / Project Address</a>', 'sakurairo', 'sakurairo_csf'), IRO_VERSION), 
       ),
 
       array(
