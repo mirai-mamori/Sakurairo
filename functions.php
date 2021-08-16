@@ -1857,7 +1857,7 @@ function get_photo(){
 }
 
 
-if (iro_opt('captcha_switch', 'true')){
+if (iro_opt('captcha_select') === 'iro_captcha'){
     function login_CAPTCHA() {
         include_once('inc/classes/Captcha.php');
         $img = new Sakura\API\Captcha;
@@ -1941,4 +1941,36 @@ if (iro_opt('captcha_switch', 'true')){
         }
     }
     add_filter( 'registration_errors', 'registration_CAPTCHA_CHECK', 2, 3 );
+
+}elseif (iro_opt('captcha_select') === 'vaptcha') {
+    function vaptchaInit()
+    {
+        include_once('inc/classes/Vaptcha.php');
+        $vaptcha = new Sakura\API\Vaptcha;
+        echo $vaptcha->html();
+        echo $vaptcha->script();
+    }
+    add_action('login_form', 'vaptchaInit');
+
+    function checkVaptchaAction($user)
+    {
+        if (empty($_POST)) {
+            return new WP_Error();
+        }
+        if (isset($_POST['vaptcha_server']) && isset($_POST['vaptcha_token'])) {
+            include_once('inc/classes/Vaptcha.php');
+            $url = $_POST['vaptcha_server'];
+            $token = $_POST['vaptcha_token'];
+            $vaptcha = new Sakura\API\Vaptcha;
+            $response = $vaptcha->checkVaptcha($url, $token);
+            echo $response->msg;
+            if ($response->success != 1 || $response->score <= 80) {
+                return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
+            }
+            //return $user;
+        }else {
+            return new WP_Error('prooffail', '<strong>错误</strong>：请先进行人机验证');
+        }
+    }
+    add_filter('authenticate', 'checkVaptchaAction', 20, 3);
 }
