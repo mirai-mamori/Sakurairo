@@ -67,14 +67,14 @@ class Vaptcha
     HTML;
   }
 
-  public function checkVaptcha($url, $token)
+  public function checkVaptcha($url, $token, $ip)
   {
     $param = [
       'id' => iro_opt('vaptcha_vid'),
       'secretkey' => iro_opt('vaptcha_key'),
       'scene' => iro_opt('vaptcha_scene'),
       'token' => $token,
-      'ip' => '127.0.0.1',
+      'ip' => $ip,
     ];
     return $this->post($url, $param);
   }

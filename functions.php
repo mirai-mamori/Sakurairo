@@ -1964,8 +1964,9 @@ if (iro_opt('captcha_select') === 'iro_captcha'){
             include_once('inc/classes/Vaptcha.php');
             $url = $_POST['vaptcha_server'];
             $token = $_POST['vaptcha_token'];
+            $ip = get_the_user_ip();
             $vaptcha = new Sakura\API\Vaptcha;
-            $response = $vaptcha->checkVaptcha($url, $token);
+            $response = $vaptcha->checkVaptcha($url, $token, $ip);
             if ($response->success === 1 && $response->score >= 80) {
                 return $user;
             }else {
