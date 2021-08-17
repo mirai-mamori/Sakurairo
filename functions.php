@@ -1967,7 +1967,10 @@ if (iro_opt('captcha_select') === 'iro_captcha'){
             $ip = get_the_user_ip();
             $vaptcha = new Sakura\API\Vaptcha;
             $response = $vaptcha->checkVaptcha($url, $token, $ip);
-            if ($response->success === 1 && $response->score >= 80) {
+            if ($response === false){
+                return new WP_Error('prooffail', '<strong>错误</strong>：vaptcha配置错误');
+            }
+            if ($response->success === 1 && $response->score >= 70) {
                 return $user;
             }else {
                 return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');

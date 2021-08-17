@@ -88,9 +88,14 @@ class Vaptcha
     curl_setopt($curl, CURLOPT_POST, true);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $param);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    $output = curl_exec($curl);
-    curl_close($curl);
-    return json_decode($output);
+    if(curl_exec($curl) === false){
+      curl_close($curl);
+      return false;
+    }else {
+      $output = curl_exec($curl);
+      curl_close($curl);
+      return json_decode($output);
+    }
   }
 
 }
