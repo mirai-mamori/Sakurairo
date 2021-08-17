@@ -1967,10 +1967,14 @@ if (iro_opt('captcha_select') === 'iro_captcha'){
             $ip = get_the_user_ip();
             $vaptcha = new Sakura\API\Vaptcha;
             $response = $vaptcha->checkVaptcha($url, $token, $ip);
-            if ($response->success === 1 && $response->score >= 80) {
-                return $user;
+            if ($response->msg === 'success') {
+                if ($response->success === 1 && $response->score >= 70) {
+                    return $user;
+                }else {
+                    return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
+                }
             }else {
-                return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
+                return new WP_Error('prooffail', '<strong>错误</strong>：'.$response->msg);
             }
         }else {
             return new WP_Error('prooffail', '<strong>错误</strong>：请先进行人机验证');
