@@ -80,22 +80,15 @@ class Vaptcha
 
   public function post($url, $param = [])
   {
-    $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);
-    curl_setopt($curl, CURLOPT_CAPATH, '../cacert/cacert.pem');
-    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);
-    curl_setopt($curl, CURLOPT_POST, true);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $param);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    if(curl_exec($curl) === false){
-      curl_close($curl);
-      return new WP_Error('prooffail', '<strong>错误</strong>：'.curl_error($curl));
-    }else {
-      $output = curl_exec($curl);
-      curl_close($curl);
-      return json_decode($output);
+    $response = wp_safe_remote_post($url, [
+      'timeout' => 15,
+      'body' => $param,
+    ]);
+    if (is_wp_error($response)) {
+      $errorMessage = $response->get_error_message();
+      return $errorMessage;
+    } else {
+      return json_decode($response['body']);
     }
   }
-
 }
