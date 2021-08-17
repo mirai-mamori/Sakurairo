@@ -1196,7 +1196,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'vaptcha key',
+        'id' => 'vaptcha_key',
         'type' => 'text',
         'title' => __('Vaptcha KEY','sakurairo_csf'),
         'dependency' => array( 'captcha_select', '==', 'vaptcha' ),
