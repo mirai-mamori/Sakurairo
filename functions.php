@@ -1958,6 +1958,9 @@ if (iro_opt('captcha_select') === 'iro_captcha'){
             return new WP_Error();
         }
         if (isset($_POST['vaptcha_server']) && isset($_POST['vaptcha_token'])) {
+            if (!preg_match('/^https:\/\/([\w-]+\.)+[\w-]*([^<>=?\"\'])*$/', $_POST['vaptcha_server']) || !preg_match('/^[\w\-\$]+$/', $_POST['vaptcha_token'])) {
+                return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
+            }
             include_once('inc/classes/Vaptcha.php');
             $url = $_POST['vaptcha_server'];
             $token = $_POST['vaptcha_token'];
