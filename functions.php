@@ -1967,7 +1967,7 @@ if (iro_opt('captcha_select') === 'iro_captcha'){
             $ip = get_the_user_ip();
             $vaptcha = new Sakura\API\Vaptcha;
             $response = $vaptcha->checkVaptcha($url, $token, $ip);
-            if ($response->msg == 'success') {
+            if ($response->msg === 'success') {
                 if ($response->success === 1 && $response->score >= 70) {
                     return $user;
                 }else {
