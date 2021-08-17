@@ -29,7 +29,7 @@ class Captcha
     {
         $dict = 'abcdefhjkmnpqrstuvwxy12345678';
         for ($i = 0; $i < 5; $i++) {
-            $fontcontent = substr($dict, mt_rand(0, strlen($dict)-1), 1);
+            $fontcontent = substr($dict, mt_rand(0, strlen($dict) - 1), 1);
             $this->captchCode .= $fontcontent;
         }
     }
