@@ -1175,18 +1175,10 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'default' => true
       ),
 
-      // array(
-      //   'id' => 'captcha_switch',
-      //   'type' => 'switcher',
-      //   'title' => __('Login Captcha','sakurairo_csf'),
-      //   'label' => __('After turning on, the captcha will appear in the backend login page and login template, this feature conflicts with other captcha related plugins, please do not turn on together','sakurairo_csf'),
-      //   'default' => false
-      // ),
-
       array(
         'id' => 'captcha_select',
         'type' => 'select',
-        'title' => __('Vaptcha settings','sakurairo_csf'),
+        'title' => __('Captcha selection','sakurairo_csf'),
         'options' => array(
           'close' => __('close','sakurairo_csf'),
           'iro_captcha' => __('iro_captcha','sakurairo_csf'),
@@ -1198,23 +1190,22 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'id' => 'vaptcha_vid',
         'type' => 'text',
-        'title' => __('Vaptcha_vid','sakurairo_csf'),
-        'desc' => __('Fill in vid','sakurairo_csf'),
+        'title' => __('Vaptcha vid','sakurairo_csf'),
+        'desc' => __('Fill in your Vaptcha vid','sakurairo_csf'),
       ),
 
       array(
-        'id' => 'vaptcha_key',
+        'id' => 'vaptcha key',
         'type' => 'text',
         'title' => __('Vaptcha_key','sakurairo_csf'),
-        'desc' => __('Fill in key','sakurairo_csf'),
+        'desc' => __('Fill in your Vaptcha skey','sakurairo_csf'),
       ),
 
       array(
         'id' => 'vaptcha_scene',
         'type' => 'select',
-        'title' => __('Vaptcha_scene','sakurairo_csf'),
+        'title' => __('Vaptcha scene','sakurairo_csf'),
         'options' => array(
-          '0' => __(0,'sakurairo_csf'),
           '1' => __(1,'sakurairo_csf'),
           '2' => __(2,'sakurairo_csf'),
           '3' => __(3,'sakurairo_csf'),
@@ -1222,7 +1213,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           '5' => __(5,'sakurairo_csf'),
           '6' => __(6,'sakurairo_csf'),
         ),
-        'default' => 0,
+        'default' => 1,
       ),
 
       array(

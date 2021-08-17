@@ -1708,8 +1708,15 @@ msgid "Enabled by default, page scrolling will be smoother"
 msgstr "默认开启，页面滚动将更加平滑"
 
 #: options/theme-options.php:1181
-msgid "Login Captcha"
-msgstr "登录验证码"
+msgid "Captcha selection"
+msgstr "验证码选择"
+msgid "close"
+msgstr "关"
+msgid "iro_captcha"
+msgstr "iro_验证码"
+msgid "vaptcha"
+msgstr "vaptcha验证码"
+
 
 #: options/theme-options.php:1182
 msgid ""

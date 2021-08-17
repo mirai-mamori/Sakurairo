@@ -1963,11 +1963,11 @@ if (iro_opt('captcha_select') === 'iro_captcha'){
             $token = $_POST['vaptcha_token'];
             $vaptcha = new Sakura\API\Vaptcha;
             $response = $vaptcha->checkVaptcha($url, $token);
-            echo $response->msg;
-            if ($response->success != 1 || $response->score <= 80) {
+            if ($response->success === 1 && $response->score >= 80) {
+                return $user;
+            }else {
                 return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
             }
-            //return $user;
         }else {
             return new WP_Error('prooffail', '<strong>错误</strong>：请先进行人机验证');
         }
