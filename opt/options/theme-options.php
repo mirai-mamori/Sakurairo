@@ -1180,11 +1180,11 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'select',
         'title' => __('Captcha Selection','sakurairo_csf'),
         'options' => array(
-          'close' => __('Off','sakurairo_csf'),
+          'off' => __('Off','sakurairo_csf'),
           'iro_captcha' => __('Theme Built in Captcha','sakurairo_csf'),
           'vaptcha' => __('Vaptcha','sakurairo_csf')
         ),
-        'default' => 'close',
+        'default' => 'off',
       ),
 
       array(

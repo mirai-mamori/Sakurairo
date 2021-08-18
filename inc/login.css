@@ -39,8 +39,11 @@ body { background:none !important; overflow:hidden;}
 	box-shadow: none;
 }
 
-input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;;
-color: #676767 !important}
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
+	box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
+	color: #676767 !important
+}
 
 #login form { 
 	padding:10px 0px;
