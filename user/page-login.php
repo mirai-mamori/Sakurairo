@@ -15,9 +15,6 @@ get_header();
 				<form action="<?php echo home_url(); ?>/wp-login.php" method="post">  
 					<p><input type="text" name="log" id="log" value="<?php echo $_POST['log'] ?: null; ?>" size="25" placeholder="Name" required /></p>
 					<p><input type="password" name="pwd" id="pwd" value="<?php echo $_POST['pwd'] ?: null; ?>" size="25" placeholder="Password" required /></p>
-					<?php if (iro_opt('captcha_select') != 'iro_captcha'){
-						echo '<p><img id="captchaimg" width="120" height="40" src=""><input type="text" name="yzm" id="yzm" class="input" value="" size="20" tabindex="4" placeholder="请输入验证码" required></p>';
-					}?>
 					<p class="forgetmenot"><label for="rememberme"><input name="rememberme" type="checkbox" id="rememberme" value="forever" <?php checked( $rememberme ); ?> /> <?php esc_html_e( 'Remember_Me' ); ?></label></p>
 					<input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
 					<input class="button login-button" name="submit" type="submit" value="登 入">
