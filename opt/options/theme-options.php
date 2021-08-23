@@ -1650,7 +1650,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id'     => 'wechat',
         'type'  => 'upload',
         'title' => __('Wechat','sakurairo_csf'),
-        'dependency' => array( 'social_ area', '==', 'true' ),
+        'dependency' => array( 'social_area', '==', 'true' ),
         'desc' => __('The best length-width ratio of is 1:1','sakurairo_csf'),
         'library'      => 'image',
       ),
