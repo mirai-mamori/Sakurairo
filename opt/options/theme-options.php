@@ -1790,6 +1790,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'dependency' => array( 'social_area', '==', 'true' ),
         'desc' => __('add URL','sakurairo_csf'),
       ),
+      
+      array(
+        'id'     => 'socialdiy1_title',
+        'type'   => 'text',
+        'title' => __('Customized Social Network Ⅰ Title','sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true' ),
+        "default" => "DIY1"
+      ),
 
       array(
         'id'     => 'socialdiyp1',
@@ -1808,6 +1816,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'desc' => __('add URL','sakurairo_csf'),
       ),
 
+      array(
+        'id'     => 'socialdiy2_title',
+        'type'   => 'text',
+        'title' => __('Customized Social Network Ⅱ Title','sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true' ),
+        "default" => "DIY2"
+      ),
+      
       array(
         'id'     => 'socialdiyp2',
         'type'  => 'upload',
