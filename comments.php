@@ -29,7 +29,14 @@
 			<?php if(have_comments()): ?>
 
 				<ul class="commentwrap">
-					<?php wp_list_comments('type=comment&callback=akina_comment_format'); ?>	
+					<?php wp_list_comments(
+						array(
+							"type" => "comment",
+							"callback" => "akina_comment_format",
+							"reverse_top_level" => iro_opt('comment_order') == 'n2o' ? true : null
+						)
+					);
+					?>
 				</ul>
 
           <nav id="comments-navi">
