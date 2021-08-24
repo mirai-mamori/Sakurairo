@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
 "POT-Creation-Date: 2021-08-24 18:09+0800\n"
-"PO-Revision-Date: 2021-08-24 18:12+0800\n"
+"PO-Revision-Date: 2021-08-24 20:59+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -2745,9 +2745,7 @@ msgstr "文章页面赞赏按钮（微信二维码）"
 
 #: options/theme-options.php:2479
 msgid "Upload WeChat Receipt QR Code Image"
-msgstr ""
-"上传\n"
-"上传微信收款码图片"
+msgstr "上传微信收款码图片"
 
 #: options/theme-options.php:2488
 msgid "Template Page Options"
