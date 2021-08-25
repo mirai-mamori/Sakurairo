@@ -525,9 +525,8 @@ function get_post_views($post_id)
     }
 }
 
-function is_webp(): bool
-{
-    return (isset($_COOKIE["su_webp"]) || strpos($_SERVER['HTTP_ACCEPT'], 'image/webp'));
+function is_webp(): bool {
+    return (isset($_COOKIE['su_webp']) || (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'image/webp')));
 }
 
 /*
