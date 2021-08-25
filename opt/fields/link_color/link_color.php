@@ -33,11 +33,11 @@ if ( ! class_exists( 'CSF_Field_link_color' ) ) {
       );
 
       $color_props = array(
-        'color'    => esc_html__( 'Normal', 'csf' ),
-        'hover'    => esc_html__( 'Hover', 'csf' ),
-        'active'   => esc_html__( 'Active', 'csf' ),
-        'visited'  => esc_html__( 'Visited', 'csf' ),
-        'focus'    => esc_html__( 'Focus', 'csf' )
+        'color'    => esc_html__( 'Normal', 'sakurairo_csf' ),
+        'hover'    => esc_html__( 'Hover', 'sakurairo_csf' ),
+        'active'   => esc_html__( 'Active', 'sakurairo_csf' ),
+        'visited'  => esc_html__( 'Visited', 'sakurairo_csf' ),
+        'focus'    => esc_html__( 'Focus', 'sakurairo_csf' )
       );
 
       $value = wp_parse_args( $this->value, $default_values );

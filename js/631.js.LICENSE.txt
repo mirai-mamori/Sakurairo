@@ -246,7 +246,7 @@
 
 /*! exports provided: TimelineController */
 
-/*! exports provided: addGroupId, assignTrackIdsByGroup, updatePTS, updateFragPTSDTS, mergeDetails, mapPartIntersection, mapFragmentIntersection, adjustSliding, computeReloadInterval, getFragmentWithSN, getPartWith */
+/*! exports provided: addGroupId, assignTrackIdsByGroup, updatePTS, updateFragPTSDTS, mergeDetails, mapPartIntersection, mapFragmentIntersection, adjustSliding, addSliding, computeReloadInterval, getFragmentWithSN, getPartWith */
 
 /*! exports provided: appendFrame, parseHeader, isHeaderPattern, isHeader, canParse, probe */
 

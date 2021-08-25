@@ -33,7 +33,7 @@ if ( ! class_exists( 'CSF_Field_background' ) ) {
         'background_auto_attributes'    => false,
         'compact'                       => false,
         'background_image_library'      => 'image',
-        'background_image_placeholder'  => esc_html__( 'Not selected', 'csf' ),
+        'background_image_placeholder'  => esc_html__( 'Not selected', 'sakurairo_csf' ),
       ) );
 
       if ( $args['compact'] ) {
@@ -69,9 +69,9 @@ if ( ! class_exists( 'CSF_Field_background' ) ) {
 
         echo '<div class="csf--color">';
 
-        echo ( ! empty( $args['background_gradient'] ) ) ? '<div class="csf--title">'. esc_html__( 'From', 'csf' ) .'</div>' : '';
+        echo ( ! empty( $args['background_gradient'] ) ) ? '<div class="csf--title">'. esc_html__( 'From', 'sakurairo_csf' ) .'</div>' : '';
 
-        CSF::field( array(
+        Sakurairo_CSF::field( array(
           'id'      => 'background-color',
           'type'    => 'color',
           'default' => $default_value['background-color'],
@@ -87,9 +87,9 @@ if ( ! class_exists( 'CSF_Field_background' ) ) {
 
         echo '<div class="csf--color">';
 
-        echo ( ! empty( $args['background_gradient'] ) ) ? '<div class="csf--title">'. esc_html__( 'To', 'csf' ) .'</div>' : '';
+        echo ( ! empty( $args['background_gradient'] ) ) ? '<div class="csf--title">'. esc_html__( 'To', 'sakurairo_csf' ) .'</div>' : '';
 
-        CSF::field( array(
+        Sakurairo_CSF::field( array(
           'id'      => 'background-gradient-color',
           'type'    => 'color',
           'default' => $default_value['background-gradient-color'],
@@ -105,17 +105,17 @@ if ( ! class_exists( 'CSF_Field_background' ) ) {
 
         echo '<div class="csf--color">';
 
-        echo ( ! empty( $args['background_gradient'] ) ) ? '<div class="csf---title">'. esc_html__( 'Direction', 'csf' ) .'</div>' : '';
+        echo ( ! empty( $args['background_gradient'] ) ) ? '<div class="csf---title">'. esc_html__( 'Direction', 'sakurairo_csf' ) .'</div>' : '';
 
-        CSF::field( array(
+        Sakurairo_CSF::field( array(
           'id'          => 'background-gradient-direction',
           'type'        => 'select',
           'options'     => array(
-            ''          => esc_html__( 'Gradient Direction', 'csf' ),
-            'to bottom' => esc_html__( '&#8659; top to bottom', 'csf' ),
-            'to right'  => esc_html__( '&#8658; left to right', 'csf' ),
-            '135deg'    => esc_html__( '&#8664; corner top to right', 'csf' ),
-            '-135deg'   => esc_html__( '&#8665; corner top to left', 'csf' ),
+            ''          => esc_html__( 'Gradient Direction', 'sakurairo_csf' ),
+            'to bottom' => esc_html__( '&#8659; top to bottom', 'sakurairo_csf' ),
+            'to right'  => esc_html__( '&#8658; left to right', 'sakurairo_csf' ),
+            '135deg'    => esc_html__( '&#8664; corner top to right', 'sakurairo_csf' ),
+            '-135deg'   => esc_html__( '&#8665; corner top to left', 'sakurairo_csf' ),
           ),
         ), $this->value['background-gradient-direction'], $this->field_name(), 'field/background' );
 
@@ -131,7 +131,7 @@ if ( ! class_exists( 'CSF_Field_background' ) ) {
 
         echo '<div class="csf--background-image">';
 
-        CSF::field( array(
+        Sakurairo_CSF::field( array(
           'id'          => 'background-image',
           'type'        => 'media',
           'class'       => 'csf-assign-field-background',
@@ -154,20 +154,20 @@ if ( ! class_exists( 'CSF_Field_background' ) ) {
       // Background Position
       if ( ! empty( $args['background_position'] ) ) {
 
-        CSF::field( array(
+        Sakurairo_CSF::field( array(
           'id'              => 'background-position',
           'type'            => 'select',
           'options'         => array(
-            ''              => esc_html__( 'Background Position', 'csf' ),
-            'left top'      => esc_html__( 'Left Top', 'csf' ),
-            'left center'   => esc_html__( 'Left Center', 'csf' ),
-            'left bottom'   => esc_html__( 'Left Bottom', 'csf' ),
-            'center top'    => esc_html__( 'Center Top', 'csf' ),
-            'center center' => esc_html__( 'Center Center', 'csf' ),
-            'center bottom' => esc_html__( 'Center Bottom', 'csf' ),
-            'right top'     => esc_html__( 'Right Top', 'csf' ),
-            'right center'  => esc_html__( 'Right Center', 'csf' ),
-            'right bottom'  => esc_html__( 'Right Bottom', 'csf' ),
+            ''              => esc_html__( 'Background Position', 'sakurairo_csf' ),
+            'left top'      => esc_html__( 'Left Top', 'sakurairo_csf' ),
+            'left center'   => esc_html__( 'Left Center', 'sakurairo_csf' ),
+            'left bottom'   => esc_html__( 'Left Bottom', 'sakurairo_csf' ),
+            'center top'    => esc_html__( 'Center Top', 'sakurairo_csf' ),
+            'center center' => esc_html__( 'Center Center', 'sakurairo_csf' ),
+            'center bottom' => esc_html__( 'Center Bottom', 'sakurairo_csf' ),
+            'right top'     => esc_html__( 'Right Top', 'sakurairo_csf' ),
+            'right center'  => esc_html__( 'Right Center', 'sakurairo_csf' ),
+            'right bottom'  => esc_html__( 'Right Bottom', 'sakurairo_csf' ),
           ),
         ), $this->value['background-position'], $this->field_name(), 'field/background' );
 
@@ -177,15 +177,15 @@ if ( ! class_exists( 'CSF_Field_background' ) ) {
       // Background Repeat
       if ( ! empty( $args['background_repeat'] ) ) {
 
-        CSF::field( array(
+        Sakurairo_CSF::field( array(
           'id'          => 'background-repeat',
           'type'        => 'select',
           'options'     => array(
-            ''          => esc_html__( 'Background Repeat', 'csf' ),
-            'repeat'    => esc_html__( 'Repeat', 'csf' ),
-            'no-repeat' => esc_html__( 'No Repeat', 'csf' ),
-            'repeat-x'  => esc_html__( 'Repeat Horizontally', 'csf' ),
-            'repeat-y'  => esc_html__( 'Repeat Vertically', 'csf' ),
+            ''          => esc_html__( 'Background Repeat', 'sakurairo_csf' ),
+            'repeat'    => esc_html__( 'Repeat', 'sakurairo_csf' ),
+            'no-repeat' => esc_html__( 'No Repeat', 'sakurairo_csf' ),
+            'repeat-x'  => esc_html__( 'Repeat Horizontally', 'sakurairo_csf' ),
+            'repeat-y'  => esc_html__( 'Repeat Vertically', 'sakurairo_csf' ),
           ),
         ), $this->value['background-repeat'], $this->field_name(), 'field/background' );
 
@@ -195,13 +195,13 @@ if ( ! class_exists( 'CSF_Field_background' ) ) {
       // Background Attachment
       if ( ! empty( $args['background_attachment'] ) ) {
 
-        CSF::field( array(
+        Sakurairo_CSF::field( array(
           'id'       => 'background-attachment',
           'type'     => 'select',
           'options'  => array(
-            ''       => esc_html__( 'Background Attachment', 'csf' ),
-            'scroll' => esc_html__( 'Scroll', 'csf' ),
-            'fixed'  => esc_html__( 'Fixed', 'csf' ),
+            ''       => esc_html__( 'Background Attachment', 'sakurairo_csf' ),
+            'scroll' => esc_html__( 'Scroll', 'sakurairo_csf' ),
+            'fixed'  => esc_html__( 'Fixed', 'sakurairo_csf' ),
           ),
         ), $this->value['background-attachment'], $this->field_name(), 'field/background' );
 
@@ -211,14 +211,14 @@ if ( ! class_exists( 'CSF_Field_background' ) ) {
       // Background Size
       if ( ! empty( $args['background_size'] ) ) {
 
-        CSF::field( array(
+        Sakurairo_CSF::field( array(
           'id'        => 'background-size',
           'type'      => 'select',
           'options'   => array(
-            ''        => esc_html__( 'Background Size', 'csf' ),
-            'cover'   => esc_html__( 'Cover', 'csf' ),
-            'contain' => esc_html__( 'Contain', 'csf' ),
-            'auto'    => esc_html__( 'Auto', 'csf' ),
+            ''        => esc_html__( 'Background Size', 'sakurairo_csf' ),
+            'cover'   => esc_html__( 'Cover', 'sakurairo_csf' ),
+            'contain' => esc_html__( 'Contain', 'sakurairo_csf' ),
+            'auto'    => esc_html__( 'Auto', 'sakurairo_csf' ),
           ),
         ), $this->value['background-size'], $this->field_name(), 'field/background' );
 
@@ -228,14 +228,14 @@ if ( ! class_exists( 'CSF_Field_background' ) ) {
       // Background Origin
       if ( ! empty( $args['background_origin'] ) ) {
 
-        CSF::field( array(
+        Sakurairo_CSF::field( array(
           'id'            => 'background-origin',
           'type'          => 'select',
           'options'       => array(
-            ''            => esc_html__( 'Background Origin', 'csf' ),
-            'padding-box' => esc_html__( 'Padding Box', 'csf' ),
-            'border-box'  => esc_html__( 'Border Box', 'csf' ),
-            'content-box' => esc_html__( 'Content Box', 'csf' ),
+            ''            => esc_html__( 'Background Origin', 'sakurairo_csf' ),
+            'padding-box' => esc_html__( 'Padding Box', 'sakurairo_csf' ),
+            'border-box'  => esc_html__( 'Border Box', 'sakurairo_csf' ),
+            'content-box' => esc_html__( 'Content Box', 'sakurairo_csf' ),
           ),
         ), $this->value['background-origin'], $this->field_name(), 'field/background' );
 
@@ -245,14 +245,14 @@ if ( ! class_exists( 'CSF_Field_background' ) ) {
       // Background Clip
       if ( ! empty( $args['background_clip'] ) ) {
 
-        CSF::field( array(
+        Sakurairo_CSF::field( array(
           'id'            => 'background-clip',
           'type'          => 'select',
           'options'       => array(
-            ''            => esc_html__( 'Background Clip', 'csf' ),
-            'border-box'  => esc_html__( 'Border Box', 'csf' ),
-            'padding-box' => esc_html__( 'Padding Box', 'csf' ),
-            'content-box' => esc_html__( 'Content Box', 'csf' ),
+            ''            => esc_html__( 'Background Clip', 'sakurairo_csf' ),
+            'border-box'  => esc_html__( 'Border Box', 'sakurairo_csf' ),
+            'padding-box' => esc_html__( 'Padding Box', 'sakurairo_csf' ),
+            'content-box' => esc_html__( 'Content Box', 'sakurairo_csf' ),
           ),
         ), $this->value['background-clip'], $this->field_name(), 'field/background' );
 
@@ -262,21 +262,21 @@ if ( ! class_exists( 'CSF_Field_background' ) ) {
       // Background Blend Mode
       if ( ! empty( $args['background_blend_mode'] ) ) {
 
-        CSF::field( array(
+        Sakurairo_CSF::field( array(
           'id'            => 'background-blend-mode',
           'type'          => 'select',
           'options'       => array(
-            ''            => esc_html__( 'Background Blend Mode', 'csf' ),
-            'normal'      => esc_html__( 'Normal', 'csf' ),
-            'multiply'    => esc_html__( 'Multiply', 'csf' ),
-            'screen'      => esc_html__( 'Screen', 'csf' ),
-            'overlay'     => esc_html__( 'Overlay', 'csf' ),
-            'darken'      => esc_html__( 'Darken', 'csf' ),
-            'lighten'     => esc_html__( 'Lighten', 'csf' ),
-            'color-dodge' => esc_html__( 'Color Dodge', 'csf' ),
-            'saturation'  => esc_html__( 'Saturation', 'csf' ),
-            'color'       => esc_html__( 'Color', 'csf' ),
-            'luminosity'  => esc_html__( 'Luminosity', 'csf' ),
+            ''            => esc_html__( 'Background Blend Mode', 'sakurairo_csf' ),
+            'normal'      => esc_html__( 'Normal', 'sakurairo_csf' ),
+            'multiply'    => esc_html__( 'Multiply', 'sakurairo_csf' ),
+            'screen'      => esc_html__( 'Screen', 'sakurairo_csf' ),
+            'overlay'     => esc_html__( 'Overlay', 'sakurairo_csf' ),
+            'darken'      => esc_html__( 'Darken', 'sakurairo_csf' ),
+            'lighten'     => esc_html__( 'Lighten', 'sakurairo_csf' ),
+            'color-dodge' => esc_html__( 'Color Dodge', 'sakurairo_csf' ),
+            'saturation'  => esc_html__( 'Saturation', 'sakurairo_csf' ),
+            'color'       => esc_html__( 'Color', 'sakurairo_csf' ),
+            'luminosity'  => esc_html__( 'Luminosity', 'sakurairo_csf' ),
           ),
         ), $this->value['background-blend-mode'], $this->field_name(), 'field/background' );
 

@@ -39,8 +39,11 @@ body { background:none !important; overflow:hidden;}
 	box-shadow: none;
 }
 
-input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;;
-color: #676767 !important}
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
+	box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
+	color: #676767 !important
+}
 
 #login form { 
 	padding:10px 0px;
@@ -371,4 +374,42 @@ input[type=checkbox]:checked:before {
     line-height: 1.5;
     display: inline-block;
 	margin-bottom: 3px;
+}
+
+.vaptchaContainer{
+	width: 280px;
+	height: 46px;
+	margin: auto;
+	margin-bottom: 16px;
+}
+.vaptcha-init-main {
+	display: table;
+	width: 100%;
+	height: 100%;
+	background-color: #eeeeee;
+	border-radius: 20px; 
+}
+.vaptcha-init-loading {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+​
+.vaptcha-init-loading > a {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	border: none;
+}
+​
+.vaptcha-init-loading .vaptcha-text {
+	font-family: sans-serif;
+	font-size: 12px;
+	color: #cccccc;
+	vertical-align: middle;
+}
+
+.vp-basic-btn
+{
+	border-radius: 12px !important;
 }

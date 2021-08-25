@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2021-07-28 16:40+0800\n"
-"PO-Revision-Date: 2021-07-28 16:40+0800\n"
+"POT-Creation-Date: 2021-08-24 18:20+0800\n"
+"PO-Revision-Date: 2021-08-24 18:20+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -58,75 +58,75 @@ msgstr " 条评论"
 msgid " comments"
 msgstr " 条评论"
 
-#: comments.php:43
+#: comments.php:50
 msgid "no comment"
 msgstr "暂无评论"
 
-#: comments.php:54
+#: comments.php:61
 msgid "I'm not a robot"
 msgstr "我可不是机器人呢"
 
-#: comments.php:55
+#: comments.php:62
 msgid "Comment in private"
 msgstr "私密评论"
 
-#: comments.php:56
+#: comments.php:63
 msgid "Comment reply notify"
 msgstr "邮件通知"
 
-#: comments.php:64
+#: comments.php:71
 msgid "Leave a Reply to"
 msgstr "回复给"
 
-#: comments.php:65
+#: comments.php:72
 msgid "Cancel Reply"
 msgstr "取消回复"
 
-#: comments.php:66
+#: comments.php:73
 msgid "BiuBiuBiu~"
 msgstr "BiuBiuBiu~"
 
-#: comments.php:67
+#: comments.php:74
 msgid "You are a surprise that I will only meet once in my life"
 msgstr "你是我一生只会遇见一次的惊喜"
 
-#: comments.php:71
+#: comments.php:78
 msgid "Click me OωO"
 msgstr "戳我呀 OωO"
 
-#: comments.php:72
+#: comments.php:79
 msgid "Woooooow ヾ(≧∇≦*)ゝ"
 msgstr "嘿嘿嘿 ヾ(≧∇≦*)ゝ"
 
-#: comments.php:93
+#: comments.php:100
 msgid "Auto pull nickname and avatar with a QQ num. entered"
 msgstr "输入QQ号将自动拉取昵称和头像"
 
-#: comments.php:93
+#: comments.php:100
 msgid "Nickname or QQ number"
 msgstr "昵称或QQ号"
 
-#: comments.php:93
+#: comments.php:100
 msgid "Name* "
 msgstr "昵称 "
 
-#: comments.php:95
+#: comments.php:102
 msgid "You will receive notification by email"
 msgstr "你将收到回复通知"
 
-#: comments.php:95
+#: comments.php:102
 msgid "email"
 msgstr "邮箱"
 
-#: comments.php:95
+#: comments.php:102
 msgid "Must* "
 msgstr "必须* "
 
-#: comments.php:97
+#: comments.php:104
 msgid "Advertisement is forbidden 😀"
 msgstr "禁止小广告😀"
 
-#: comments.php:97
+#: comments.php:104
 msgid "Site"
 msgstr "网站"
 
@@ -138,77 +138,77 @@ msgstr "想要找点什么呢？"
 msgid "Search"
 msgstr "搜索"
 
-#: footer.php:131
+#: footer.php:132
 msgid "Widgets"
 msgstr "小工具"
 
-#: functions.php:90
+#: functions.php:92
 msgid "Nav Menus"
 msgstr "导航菜单"
 
-#: functions.php:198 functions.php:209
+#: functions.php:199 functions.php:210
 msgid "Ideas"
 msgstr "说说"
 
-#: functions.php:199
+#: functions.php:200
 msgid "Idea"
 msgstr "说说"
 
-#: functions.php:200 functions.php:201
+#: functions.php:201 functions.php:202
 msgid "Publish New Idea"
 msgstr "发布新说说"
 
-#: functions.php:202
+#: functions.php:203
 msgid "Edit Idea"
 msgstr "编辑说说"
 
-#: functions.php:203
+#: functions.php:204
 msgid "New Idea"
 msgstr "新说说"
 
-#: functions.php:204
+#: functions.php:205
 msgid "View Idea"
 msgstr "查看说说"
 
-#: functions.php:205
+#: functions.php:206
 msgid "Search Idea"
 msgstr "搜索说说"
 
-#: functions.php:206
+#: functions.php:207
 msgid "Not Found Idea"
 msgstr "没有找到说说"
 
-#: functions.php:207
+#: functions.php:208
 msgid "No Idea in the Trash"
 msgstr "没有在垃圾桶的说说"
 
-#: functions.php:306
+#: functions.php:307
 msgid "Copied!"
 msgstr "复制成功！"
 
-#: functions.php:307
+#: functions.php:308
 msgid "Copy Code"
 msgstr "拷贝代码"
 
-#: functions.php:308
+#: functions.php:309
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
 msgstr "你的封面API好像不支持跨域调用,这种情况下缓存是不会生效的哦。"
 
-#: functions.php:309
+#: functions.php:310
 msgid "Commiting...."
 msgstr "提交中...."
 
-#: functions.php:310
+#: functions.php:311
 msgid "Succeed"
 msgstr "成功"
 
-#: functions.php:311
+#: functions.php:312
 msgid "10 files max per request"
 msgstr "每次上传上限为10张"
 
-#: functions.php:312
+#: functions.php:313
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -217,15 +217,15 @@ msgid ""
 "This image is too large~Please reupload!"
 msgstr "图片上传大小限制为5 MB\\n\\n「{0}」\\n\\n这张图太大啦~请重新上传噢！"
 
-#: functions.php:313
+#: functions.php:314
 msgid "Uploading..."
 msgstr "上传中..."
 
-#: functions.php:314
+#: functions.php:315
 msgid "Uploaded successfully~"
 msgstr "上传成功~"
 
-#: functions.php:315
+#: functions.php:316
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -233,47 +233,47 @@ msgid ""
 "{2}"
 msgstr "上传失败！\\n文件名=> {0}\\ncode=> {1}\\n{2}"
 
-#: functions.php:316
+#: functions.php:317
 msgid "Upload failed, please retry."
 msgstr "上传失败，请重试."
 
-#: functions.php:317
+#: functions.php:318
 msgid "Page Load failed. HTTP {0}"
 msgstr "页面加载出错了 HTTP {0}"
 
-#: functions.php:318
+#: functions.php:319
 msgid "Glad you come, but we've got nothing left."
 msgstr "很高兴你翻到这里，但是真的没有了..."
 
-#: functions.php:398 inc/theme_plus.php:191 layouts/authorprofile.php:11
+#: functions.php:406 inc/theme_plus.php:191 layouts/authorprofile.php:11
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:398
+#: functions.php:406
 msgid "Blogger"
 msgstr "博客作者"
 
-#: functions.php:402
+#: functions.php:412
 msgid "Location"
 msgstr "来自"
 
-#: functions.php:407
+#: functions.php:418
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:409
+#: functions.php:420
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:411
+#: functions.php:422
 msgid "No"
 msgstr "否"
 
-#: functions.php:414
+#: functions.php:425
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:503
+#: functions.php:514
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
@@ -281,39 +281,39 @@ msgstr ""
 "请安装插件 <a href=\"https://wordpress.org/plugins/wp-statistics/\" target="
 "\"_blank\">WP-Statistics</a>"
 
-#: functions.php:532
+#: functions.php:544
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:1194
+#: functions.php:1213
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1215
+#: functions.php:1234
 msgid " "
 msgstr " "
 
-#: functions.php:1219
+#: functions.php:1238
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1242 functions.php:1245 inc/theme_plus.php:483
+#: functions.php:1261 functions.php:1264 inc/theme_plus.php:483
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1465
+#: functions.php:1492
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:1561
+#: functions.php:1591
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1624
+#: functions.php:1653
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1752
+#: functions.php:1783
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -484,6 +484,14 @@ msgstr "个人资料"
 msgid "Sign out"
 msgstr "退出登录"
 
+#: layouts/post-nextprev.php:11
+msgid "Previous Post"
+msgstr "上一篇文章"
+
+#: layouts/post-nextprev.php:14
+msgid "Next Post"
+msgstr "下一篇文章"
+
 #: search.php:19
 #, php-format
 msgid "search result: %s"
@@ -541,7 +549,7 @@ msgstr "页面："
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr "请在后台设置填写 Bilibili UID 后继续。"
 
-#: user/page-login.php:21
+#: user/page-login.php:18
 msgid "Remember_Me"
 msgstr "记住我"
 

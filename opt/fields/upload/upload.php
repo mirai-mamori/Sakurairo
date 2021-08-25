@@ -21,8 +21,8 @@ if ( ! class_exists( 'CSF_Field_upload' ) ) {
         'preview'        => true,
         'preview_width'  => '',
         'preview_height' => '',
-        'button_title'   => esc_html__( 'Upload', 'csf' ),
-        'remove_title'   => esc_html__( 'Remove', 'csf' ),
+        'button_title'   => esc_html__( 'Upload', 'sakurairo_csf' ),
+        'remove_title'   => esc_html__( 'Remove', 'sakurairo_csf' ),
       ) );
 
       echo $this->field_before();

@@ -17,7 +17,7 @@
 
 ## How to use:
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.0/vision/readme/hyouryu/irotw.png)](https://iro.tw/)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.2/vision/readme/hyouryu/irotw.png)](https://iro.tw/)
 
 - Blogs based on iro：https://iro.tw/demo.html
 

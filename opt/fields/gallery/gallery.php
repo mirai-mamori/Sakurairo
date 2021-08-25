@@ -17,9 +17,9 @@ if ( ! class_exists( 'CSF_Field_gallery' ) ) {
     public function render() {
 
       $args = wp_parse_args( $this->field, array(
-        'add_title'   => esc_html__( 'Add Gallery', 'csf' ),
-        'edit_title'  => esc_html__( 'Edit Gallery', 'csf' ),
-        'clear_title' => esc_html__( 'Clear', 'csf' ),
+        'add_title'   => esc_html__( 'Add Gallery', 'sakurairo_csf' ),
+        'edit_title'  => esc_html__( 'Edit Gallery', 'sakurairo_csf' ),
+        'clear_title' => esc_html__( 'Clear', 'sakurairo_csf' ),
       ) );
 
       $hidden = ( empty( $this->value ) ) ? ' hidden' : '';

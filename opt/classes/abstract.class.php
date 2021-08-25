@@ -18,7 +18,7 @@ if ( ! class_exists( 'CSF_Abstract' ) ) {
       // Collect output css and typography
       if ( ! empty( $this->args['output_css'] ) || ! empty( $this->args['enqueue_webfont'] ) ) {
         add_action( 'wp_enqueue_scripts', array( $this, 'collect_output_css_and_typography' ), 10 );
-        CSF::$css = apply_filters( "csf_{$this->unique}_output_css", CSF::$css, $this );
+        Sakurairo_CSF::$css = apply_filters( "csf_{$this->unique}_output_css", Sakurairo_CSF::$css, $this );
       }
 
     }
@@ -111,7 +111,7 @@ if ( ! class_exists( 'CSF_Abstract' ) ) {
 
                 // output css
                 if ( $field_output && $this->args['output_css'] ) {
-                  CSF::$css .= $instance->output();
+                  Sakurairo_CSF::$css .= $instance->output();
                 }
 
                 unset( $instance );

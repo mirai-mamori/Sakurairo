@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2021-07-29 17:25+0800\n"
-"PO-Revision-Date: 2021-07-29 17:26+0800\n"
+"POT-Creation-Date: 2021-08-24 18:19+0800\n"
+"PO-Revision-Date: 2021-08-24 18:19+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -62,89 +62,89 @@ msgstr "コメント"
 msgid " comments"
 msgstr " コメント"
 
-#: comments.php:43
+#: comments.php:50
 msgid "no comment"
 msgstr "コメントはありません。"
 
-#: comments.php:54
+#: comments.php:61
 #, fuzzy
 msgid "I'm not a robot"
 msgstr "私はロボットではない"
 
-#: comments.php:55
+#: comments.php:62
 #, fuzzy
 msgid "Comment in private"
 msgstr "プライベートでコメント"
 
-#: comments.php:56
+#: comments.php:63
 #, fuzzy
 msgid "Comment reply notify"
 msgstr "コメント返信通知"
 
-#: comments.php:64
+#: comments.php:71
 #, fuzzy
 msgid "Leave a Reply to"
 msgstr "返信を残す"
 
-#: comments.php:65
+#: comments.php:72
 msgid "Cancel Reply"
 msgstr "返信をキャンセル"
 
-#: comments.php:66
+#: comments.php:73
 #, fuzzy
 msgid "BiuBiuBiu~"
 msgstr "ビウビウビウ~"
 
-#: comments.php:67
+#: comments.php:74
 #, fuzzy
 msgid "You are a surprise that I will only meet once in my life"
 msgstr "あなたは私が私の人生で一度だけ会う驚きです"
 
-#: comments.php:71
+#: comments.php:78
 #, fuzzy
 msgid "Click me OωO"
 msgstr "私をクリックOωO"
 
-#: comments.php:72
+#: comments.php:79
 #, fuzzy
 msgid "Woooooow ヾ(≧∇≦*)ゝ"
 msgstr "うわーうわー(≧∇≦*)うわー"
 
-#: comments.php:93
+#: comments.php:100
 #, fuzzy
 msgid "Auto pull nickname and avatar with a QQ num. entered"
 msgstr "QQ 番号が入力された自動プルニックネームとアバター"
 
-#: comments.php:93
+#: comments.php:100
 #, fuzzy
 msgid "Nickname or QQ number"
 msgstr "ニックネームまたは QQ 番号"
 
-#: comments.php:93
+#: comments.php:100
 #, fuzzy
 msgid "Name* "
-msgstr "名前*"
+msgstr "サイト名"
 
-#: comments.php:95
+#: comments.php:102
 #, fuzzy
 msgid "You will receive notification by email"
 msgstr "メールで通知を受け取ります"
 
-#: comments.php:95
+#: comments.php:102
 msgid "email"
 msgstr "メールアドレス"
 
-#: comments.php:95
+#: comments.php:102
 #, fuzzy
 msgid "Must* "
 msgstr "必須*"
 
-#: comments.php:97
+#: comments.php:104
 #, fuzzy
 msgid "Advertisement is forbidden 😀"
 msgstr "広告は😀禁止されています"
 
-#: comments.php:97
+#: comments.php:104
 msgid "Site"
 msgstr "サイト"
 
@@ -157,71 +157,71 @@ msgstr "何かを見つけたいですか?"
 msgid "Search"
 msgstr "検索"
 
-#: footer.php:131
+#: footer.php:132
 msgid "Widgets"
 msgstr "ウィジェット"
 
-#: functions.php:90
+#: functions.php:92
 msgid "Nav Menus"
 msgstr "メニュー"
 
-#: functions.php:198 functions.php:209
+#: functions.php:199 functions.php:210
 #, fuzzy
 msgid "Ideas"
 msgstr "アイデア"
 
-#: functions.php:199
+#: functions.php:200
 msgid "Idea"
 msgstr "アイデア"
 
-#: functions.php:200 functions.php:201
+#: functions.php:201 functions.php:202
 #, fuzzy
 msgid "Publish New Idea"
 msgstr "新しいアイデアを公開"
 
-#: functions.php:202
+#: functions.php:203
 #, fuzzy
 #| msgid "Edit %s"
 msgid "Edit Idea"
 msgstr "%sを編集"
 
-#: functions.php:203
+#: functions.php:204
 #, fuzzy
 msgid "New Idea"
 msgstr "新しいアイデア"
 
-#: functions.php:204
+#: functions.php:205
 #, fuzzy
 #| msgid "View"
 #| msgid_plural "Views"
 msgid "View Idea"
 msgstr "表示"
 
-#: functions.php:205
+#: functions.php:206
 #, fuzzy
 #| msgid "Search"
 msgid "Search Idea"
 msgstr "検索"
 
-#: functions.php:206
+#: functions.php:207
 #, fuzzy
 msgid "Not Found Idea"
 msgstr "アイデアが見つかりません"
 
-#: functions.php:207
+#: functions.php:208
 #, fuzzy
 msgid "No Idea in the Trash"
 msgstr "ゴミ箱にアイデアがない"
 
-#: functions.php:306
+#: functions.php:307
 msgid "Copied!"
 msgstr "コピーしました!"
 
-#: functions.php:307
+#: functions.php:308
 msgid "Copy Code"
 msgstr "コードをコピー"
 
-#: functions.php:308
+#: functions.php:309
 #, fuzzy
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
@@ -230,22 +230,22 @@ msgstr ""
 "カバー API はクロス オリジン アクセスをサポートしていないようです。この場合、"
 "カバーキャッシュは有効になりません。"
 
-#: functions.php:309
+#: functions.php:310
 #, fuzzy
 msgid "Commiting...."
 msgstr "コミットしています。"
 
-#: functions.php:310
+#: functions.php:311
 #, fuzzy
 msgid "Succeed"
 msgstr "継ぐ"
 
-#: functions.php:311
+#: functions.php:312
 #, fuzzy
 msgid "10 files max per request"
 msgstr "要求ごとに最大 10 ファイル"
 
-#: functions.php:312
+#: functions.php:313
 #, fuzzy
 msgid ""
 "5 MB max per file.\n"
@@ -260,16 +260,16 @@ msgstr ""
 "\n"
 "この画像が大きすぎる~再アップロードしてください!"
 
-#: functions.php:313
+#: functions.php:314
 msgid "Uploading..."
 msgstr "アップロード中..."
 
-#: functions.php:314
+#: functions.php:315
 #, fuzzy
 msgid "Uploaded successfully~"
 msgstr "ログインに成功しました。"
 
-#: functions.php:315
+#: functions.php:316
 #, fuzzy
 msgid ""
 "Upload failed!\n"
@@ -282,50 +282,50 @@ msgstr ""
 "コード=> {1}\n"
 "{2}"
 
-#: functions.php:316
+#: functions.php:317
 #, fuzzy
 msgid "Upload failed, please retry."
 msgstr "アップロードに失敗しました。"
 
-#: functions.php:317
+#: functions.php:318
 #, fuzzy
 msgid "Page Load failed. HTTP {0}"
 msgstr "ページの読み込みに失敗しました。HTTP {0}"
 
-#: functions.php:318
+#: functions.php:319
 #, fuzzy
 msgid "Glad you come, but we've got nothing left."
 msgstr "あなたが来てうれしいですが、私たちは何も残っていません。"
 
-#: functions.php:398 inc/theme_plus.php:191 layouts/authorprofile.php:11
+#: functions.php:406 inc/theme_plus.php:191 layouts/authorprofile.php:11
 msgid "Author"
 msgstr "投稿者"
 
-#: functions.php:398
+#: functions.php:406
 msgid "Blogger"
 msgstr "Blogger"
 
-#: functions.php:402
+#: functions.php:412
 msgid "Location"
 msgstr "場所"
 
-#: functions.php:407
+#: functions.php:418
 msgid "Private"
 msgstr "プライベート"
 
-#: functions.php:409
+#: functions.php:420
 msgid "Yes"
 msgstr "はい"
 
-#: functions.php:411
+#: functions.php:422
 msgid "No"
 msgstr "いいえ"
 
-#: functions.php:414
+#: functions.php:425
 msgid "Edit"
 msgstr "編集"
 
-#: functions.php:503
+#: functions.php:514
 #, fuzzy
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
@@ -334,43 +334,43 @@ msgstr ""
 "パルギン<a href=\"https://wordpress.org/plugins/wp-statistics/\" target="
 "\"_blank\">WP-統計を</a>インストールしてください"
 
-#: functions.php:532
+#: functions.php:544
 #, fuzzy
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "この男はとても怠惰な╮(╯▽╰)╭"
 
-#: functions.php:1194
+#: functions.php:1213
 #, fuzzy
 msgid "All expand/collapse"
 msgstr "すべての展開/折りたたみ"
 
-#: functions.php:1215
+#: functions.php:1234
 msgid " "
 msgstr " "
 
-#: functions.php:1219
+#: functions.php:1238
 #, fuzzy
 msgid " post(s)"
 msgstr "投稿(複数可)"
 
-#: functions.php:1242 functions.php:1245 inc/theme_plus.php:483
+#: functions.php:1261 functions.php:1264 inc/theme_plus.php:483
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: functions.php:1468
+#: functions.php:1492
 #, fuzzy
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>エラー</b>: この電子メール ドメイン (<b>@</b>"
 
-#: functions.php:1564
+#: functions.php:1591
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1627
+#: functions.php:1653
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:1755
+#: functions.php:1783
 #, fuzzy
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
@@ -550,6 +550,14 @@ msgstr "プロフィール"
 msgid "Sign out"
 msgstr "ログアウト"
 
+#: layouts/post-nextprev.php:11
+msgid "Previous Post"
+msgstr "前の投稿"
+
+#: layouts/post-nextprev.php:14
+msgid "Next Post"
+msgstr "次の投稿"
+
 #: search.php:19
 #, fuzzy, php-format
 msgid "search result: %s"
@@ -616,7 +624,7 @@ msgstr "ページ:"
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr "さくらオプションでビリビリのUIDを記入してください。"
 
-#: user/page-login.php:21
+#: user/page-login.php:18
 #, fuzzy
 msgid "Remember_Me"
 msgstr "Remember_Me"
@@ -695,9 +703,8 @@ msgid "Sakurairo"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-#, fuzzy
 msgid "https://github.com/mirai-mamori/Sakurairo"
-msgstr "https://github.com/mirai-mamori/Sakurairo"
+msgstr ""
 
 #. Description of the plugin/theme
 #, fuzzy

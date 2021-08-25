@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2021-07-29 17:23+0800\n"
-"PO-Revision-Date: 2021-08-10 18:56+0800\n"
+"POT-Creation-Date: 2021-08-24 18:20+0800\n"
+"PO-Revision-Date: 2021-08-24 18:20+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -58,75 +58,75 @@ msgstr " 條留言"
 msgid " comments"
 msgstr " 條留言"
 
-#: comments.php:43
+#: comments.php:50
 msgid "no comment"
 msgstr "暫無留言"
 
-#: comments.php:54
+#: comments.php:61
 msgid "I'm not a robot"
 msgstr "我可不是機器人呢"
 
-#: comments.php:55
+#: comments.php:62
 msgid "Comment in private"
 msgstr "私密留言"
 
-#: comments.php:56
+#: comments.php:63
 msgid "Comment reply notify"
 msgstr "郵件通知"
 
-#: comments.php:64
+#: comments.php:71
 msgid "Leave a Reply to"
 msgstr "回復給"
 
-#: comments.php:65
+#: comments.php:72
 msgid "Cancel Reply"
 msgstr "取消回復"
 
-#: comments.php:66
+#: comments.php:73
 msgid "BiuBiuBiu~"
 msgstr "BiuBiuBiu"
 
-#: comments.php:67
+#: comments.php:74
 msgid "You are a surprise that I will only meet once in my life"
 msgstr "你是我一生只會遇見一次的驚喜"
 
-#: comments.php:71
+#: comments.php:78
 msgid "Click me OωO"
 msgstr "戳我呀 OωO"
 
-#: comments.php:72
+#: comments.php:79
 msgid "Woooooow ヾ(≧∇≦*)ゝ"
 msgstr "嘿嘿嘿 ヾ(≧∇≦*)ゝ"
 
-#: comments.php:93
+#: comments.php:100
 msgid "Auto pull nickname and avatar with a QQ num. entered"
 msgstr "輸入QQ號碼將自動拉取暱稱和頭像"
 
-#: comments.php:93
+#: comments.php:100
 msgid "Nickname or QQ number"
 msgstr "暱稱或QQ號"
 
-#: comments.php:93
+#: comments.php:100
 msgid "Name* "
 msgstr "暱稱 "
 
-#: comments.php:95
+#: comments.php:102
 msgid "You will receive notification by email"
 msgstr "你將收到回復通知"
 
-#: comments.php:95
+#: comments.php:102
 msgid "email"
 msgstr "電子郵箱"
 
-#: comments.php:95
+#: comments.php:102
 msgid "Must* "
 msgstr "必須* "
 
-#: comments.php:97
+#: comments.php:104
 msgid "Advertisement is forbidden 😀"
 msgstr "禁止小廣告😀"
 
-#: comments.php:97
+#: comments.php:104
 msgid "Site"
 msgstr "網站"
 
@@ -138,77 +138,77 @@ msgstr "想要找點什麼呢？"
 msgid "Search"
 msgstr "搜尋"
 
-#: footer.php:131
+#: footer.php:132
 msgid "Widgets"
 msgstr "小工具"
 
-#: functions.php:90
+#: functions.php:92
 msgid "Nav Menus"
 msgstr "導航菜單"
 
-#: functions.php:198 functions.php:209
+#: functions.php:199 functions.php:210
 msgid "Ideas"
 msgstr "推文"
 
-#: functions.php:199
+#: functions.php:200
 msgid "Idea"
 msgstr "推文"
 
-#: functions.php:200 functions.php:201
+#: functions.php:201 functions.php:202
 msgid "Publish New Idea"
 msgstr "發佈新推文"
 
-#: functions.php:202
+#: functions.php:203
 msgid "Edit Idea"
 msgstr "編輯推文"
 
-#: functions.php:203
+#: functions.php:204
 msgid "New Idea"
 msgstr "新推文"
 
-#: functions.php:204
+#: functions.php:205
 msgid "View Idea"
 msgstr "查看推文"
 
-#: functions.php:205
+#: functions.php:206
 msgid "Search Idea"
 msgstr "搜尋推文"
 
-#: functions.php:206
+#: functions.php:207
 msgid "Not Found Idea"
 msgstr "未找到推文"
 
-#: functions.php:207
+#: functions.php:208
 msgid "No Idea in the Trash"
 msgstr "垃圾桶里沒有推文"
 
-#: functions.php:306
+#: functions.php:307
 msgid "Copied!"
 msgstr "已複製!"
 
-#: functions.php:307
+#: functions.php:308
 msgid "Copy Code"
 msgstr "複製程式碼"
 
-#: functions.php:308
+#: functions.php:309
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
 msgstr "您的封面API似乎不支援跨來源資源共享。在這種情況下，封面快取不會生效。"
 
-#: functions.php:309
+#: functions.php:310
 msgid "Commiting...."
 msgstr "提交中。。。"
 
-#: functions.php:310
+#: functions.php:311
 msgid "Succeed"
 msgstr "成功"
 
-#: functions.php:311
+#: functions.php:312
 msgid "10 files max per request"
 msgstr "每次上傳上限為10個檔"
 
-#: functions.php:312
+#: functions.php:313
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -222,15 +222,15 @@ msgstr ""
 "\n"
 "此圖像太大~請重新上傳！"
 
-#: functions.php:313
+#: functions.php:314
 msgid "Uploading..."
 msgstr "上傳中..."
 
-#: functions.php:314
+#: functions.php:315
 msgid "Uploaded successfully~"
 msgstr "上傳成功～"
 
-#: functions.php:315
+#: functions.php:316
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -242,47 +242,47 @@ msgstr ""
 "錯誤碼=> {1}\n"
 "{2}"
 
-#: functions.php:316
+#: functions.php:317
 msgid "Upload failed, please retry."
 msgstr "上傳失敗，請重試。"
 
-#: functions.php:317
+#: functions.php:318
 msgid "Page Load failed. HTTP {0}"
 msgstr "頁面載入失敗。HTTP{0}"
 
-#: functions.php:318
+#: functions.php:319
 msgid "Glad you come, but we've got nothing left."
 msgstr "很高興你翻到這裡，但是真的沒有了..."
 
-#: functions.php:398 inc/theme_plus.php:191 layouts/authorprofile.php:11
+#: functions.php:406 inc/theme_plus.php:191 layouts/authorprofile.php:11
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:398
+#: functions.php:406
 msgid "Blogger"
 msgstr "部落格作者"
 
-#: functions.php:402
+#: functions.php:412
 msgid "Location"
 msgstr "來自"
 
-#: functions.php:407
+#: functions.php:418
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:409
+#: functions.php:420
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:411
+#: functions.php:422
 msgid "No"
 msgstr "否"
 
-#: functions.php:414
+#: functions.php:425
 msgid "Edit"
 msgstr "編輯"
 
-#: functions.php:503
+#: functions.php:514
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
@@ -290,39 +290,39 @@ msgstr ""
 "請安裝外掛程式 <a href=\"https://wordpress.org/plugins/wp-statistics/\" "
 "target=\"_blank\">WP-Statistics</a>"
 
-#: functions.php:532
+#: functions.php:544
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "這傢伙好懶╮(╯▽╰)╭"
 
-#: functions.php:1194
+#: functions.php:1213
 msgid "All expand/collapse"
 msgstr "全部展開/收縮"
 
-#: functions.php:1215
+#: functions.php:1234
 msgid " "
 msgstr " "
 
-#: functions.php:1219
+#: functions.php:1238
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1242 functions.php:1245 inc/theme_plus.php:483
+#: functions.php:1261 functions.php:1264 inc/theme_plus.php:483
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:1468
+#: functions.php:1492
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>錯誤</b>: 電子郵箱格式出錯 (<b>@"
 
-#: functions.php:1564
+#: functions.php:1591
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1627
+#: functions.php:1653
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:1755
+#: functions.php:1783
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -493,6 +493,14 @@ msgstr "個人資料"
 msgid "Sign out"
 msgstr "登出"
 
+#: layouts/post-nextprev.php:11
+msgid "Previous Post"
+msgstr "上一篇文章"
+
+#: layouts/post-nextprev.php:14
+msgid "Next Post"
+msgstr "下一篇文章"
+
 #: search.php:19
 #, php-format
 msgid "search result: %s"
@@ -550,7 +558,7 @@ msgstr "頁面:"
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr "請在後台設置填寫 Bilibili UID 後繼續"
 
-#: user/page-login.php:21
+#: user/page-login.php:18
 msgid "Remember_Me"
 msgstr "記住我"
 

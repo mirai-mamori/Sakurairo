@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2021-07-28 16:39+0800\n"
+"POT-Creation-Date: 2021-08-24 18:18+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -58,75 +58,75 @@ msgstr ""
 msgid " comments"
 msgstr ""
 
-#: comments.php:43
+#: comments.php:50
 msgid "no comment"
 msgstr ""
 
-#: comments.php:54
+#: comments.php:61
 msgid "I'm not a robot"
 msgstr ""
 
-#: comments.php:55
+#: comments.php:62
 msgid "Comment in private"
 msgstr ""
 
-#: comments.php:56
+#: comments.php:63
 msgid "Comment reply notify"
 msgstr ""
 
-#: comments.php:64
+#: comments.php:71
 msgid "Leave a Reply to"
 msgstr ""
 
-#: comments.php:65
+#: comments.php:72
 msgid "Cancel Reply"
 msgstr ""
 
-#: comments.php:66
+#: comments.php:73
 msgid "BiuBiuBiu~"
 msgstr ""
 
-#: comments.php:67
+#: comments.php:74
 msgid "You are a surprise that I will only meet once in my life"
 msgstr ""
 
-#: comments.php:71
+#: comments.php:78
 msgid "Click me OωO"
 msgstr ""
 
-#: comments.php:72
+#: comments.php:79
 msgid "Woooooow ヾ(≧∇≦*)ゝ"
 msgstr ""
 
-#: comments.php:93
+#: comments.php:100
 msgid "Auto pull nickname and avatar with a QQ num. entered"
 msgstr ""
 
-#: comments.php:93
+#: comments.php:100
 msgid "Nickname or QQ number"
 msgstr ""
 
-#: comments.php:93
+#: comments.php:100
 msgid "Name* "
 msgstr ""
 
-#: comments.php:95
+#: comments.php:102
 msgid "You will receive notification by email"
 msgstr ""
 
-#: comments.php:95
+#: comments.php:102
 msgid "email"
 msgstr ""
 
-#: comments.php:95
+#: comments.php:102
 msgid "Must* "
 msgstr ""
 
-#: comments.php:97
+#: comments.php:104
 msgid "Advertisement is forbidden 😀"
 msgstr ""
 
-#: comments.php:97
+#: comments.php:104
 msgid "Site"
 msgstr ""
 
@@ -138,77 +138,77 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: footer.php:131
+#: footer.php:132
 msgid "Widgets"
 msgstr ""
 
-#: functions.php:90
+#: functions.php:92
 msgid "Nav Menus"
 msgstr ""
 
-#: functions.php:198 functions.php:209
+#: functions.php:199 functions.php:210
 msgid "Ideas"
 msgstr ""
 
-#: functions.php:199
+#: functions.php:200
 msgid "Idea"
 msgstr ""
 
-#: functions.php:200 functions.php:201
+#: functions.php:201 functions.php:202
 msgid "Publish New Idea"
 msgstr ""
 
-#: functions.php:202
+#: functions.php:203
 msgid "Edit Idea"
 msgstr ""
 
-#: functions.php:203
+#: functions.php:204
 msgid "New Idea"
 msgstr ""
 
-#: functions.php:204
+#: functions.php:205
 msgid "View Idea"
 msgstr ""
 
-#: functions.php:205
+#: functions.php:206
 msgid "Search Idea"
 msgstr ""
 
-#: functions.php:206
+#: functions.php:207
 msgid "Not Found Idea"
 msgstr ""
 
-#: functions.php:207
+#: functions.php:208
 msgid "No Idea in the Trash"
 msgstr ""
 
-#: functions.php:306
+#: functions.php:307
 msgid "Copied!"
 msgstr ""
 
-#: functions.php:307
+#: functions.php:308
 msgid "Copy Code"
 msgstr ""
 
-#: functions.php:308
+#: functions.php:309
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, "
 "Cover Cache won't take effect."
 msgstr ""
 
-#: functions.php:309
+#: functions.php:310
 msgid "Commiting...."
 msgstr ""
 
-#: functions.php:310
+#: functions.php:311
 msgid "Succeed"
 msgstr ""
 
-#: functions.php:311
+#: functions.php:312
 msgid "10 files max per request"
 msgstr ""
 
-#: functions.php:312
+#: functions.php:313
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -217,15 +217,15 @@ msgid ""
 "This image is too large~Please reupload!"
 msgstr ""
 
-#: functions.php:313
+#: functions.php:314
 msgid "Uploading..."
 msgstr ""
 
-#: functions.php:314
+#: functions.php:315
 msgid "Uploaded successfully~"
 msgstr ""
 
-#: functions.php:315
+#: functions.php:316
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -233,85 +233,85 @@ msgid ""
 "{2}"
 msgstr ""
 
-#: functions.php:316
+#: functions.php:317
 msgid "Upload failed, please retry."
 msgstr ""
 
-#: functions.php:317
+#: functions.php:318
 msgid "Page Load failed. HTTP {0}"
 msgstr ""
 
-#: functions.php:318
+#: functions.php:319
 msgid "Glad you come, but we've got nothing left."
 msgstr ""
 
-#: functions.php:398 inc/theme_plus.php:191 layouts/authorprofile.php:11
+#: functions.php:406 inc/theme_plus.php:191 layouts/authorprofile.php:11
 msgid "Author"
 msgstr ""
 
-#: functions.php:398
+#: functions.php:406
 msgid "Blogger"
 msgstr ""
 
-#: functions.php:402
+#: functions.php:412
 msgid "Location"
 msgstr ""
 
-#: functions.php:407
+#: functions.php:418
 msgid "Private"
 msgstr ""
 
-#: functions.php:409
+#: functions.php:420
 msgid "Yes"
 msgstr ""
 
-#: functions.php:411
+#: functions.php:422
 msgid "No"
 msgstr ""
 
-#: functions.php:414
+#: functions.php:425
 msgid "Edit"
 msgstr ""
 
-#: functions.php:503
+#: functions.php:514
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
 msgstr ""
 
-#: functions.php:532
+#: functions.php:544
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:1194
+#: functions.php:1213
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1215
+#: functions.php:1234
 msgid " "
 msgstr ""
 
-#: functions.php:1219
+#: functions.php:1238
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1242 functions.php:1245 inc/theme_plus.php:483
+#: functions.php:1261 functions.php:1264 inc/theme_plus.php:483
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1465
+#: functions.php:1492
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1561
+#: functions.php:1591
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1624
+#: functions.php:1653
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:1752
+#: functions.php:1783
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -480,6 +480,14 @@ msgstr ""
 msgid "Sign out"
 msgstr ""
 
+#: layouts/post-nextprev.php:11
+msgid "Previous Post"
+msgstr ""
+
+#: layouts/post-nextprev.php:14
+msgid "Next Post"
+msgstr ""
+
 #: search.php:19
 #, php-format
 msgid "search result: %s"
@@ -538,7 +546,7 @@ msgstr ""
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr ""
 
-#: user/page-login.php:21
+#: user/page-login.php:18
 msgid "Remember_Me"
 msgstr ""
 

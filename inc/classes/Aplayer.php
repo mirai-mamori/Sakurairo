@@ -8,12 +8,14 @@ class Aplayer
     public $playlist_id;
     private $cookies;
     public $api_url;
+    public $proxy;
 
     public function __construct() {
         $this->server = iro_opt('aplayer_server');
         $this->playlist_id = iro_opt('aplayer_playlistid');
         $this->cookies = iro_opt('aplayer_cookie');
         $this->api_url = rest_url('sakura/v1/meting/aplayer');
+        $this->proxy = iro_opt('aplayer_server_proxy','');
         require('Meting.php');
     }
 
@@ -21,8 +23,10 @@ class Aplayer
         $server = $this->server;
         $cookies = $this->cookies;
         $playlist_id = $this->playlist_id;
+        $proxy = $this->proxy;
         $api = new \Sakura\API\Meting($server);
         if (!empty($cookies) && $server === "netease") $api->cookie($cookies);
+        if ($proxy != '') $api->proxy($proxy);
         switch ($type) {
             case 'song':
                 $data = $api->format(true)->song($id);
