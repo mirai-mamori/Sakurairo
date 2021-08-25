@@ -32,8 +32,7 @@ class Bilibili
             )
         );
         $response = wp_remote_get($url, $args);
-        $body = json_decode($response["body"], true);
-        return $body;
+        return json_decode($response["body"], true);
     }
 
     public function get_bgm_items($page = 1)
@@ -51,27 +50,9 @@ class Bilibili
                     }
                     $lists = $bgm["list"];
                     $html = "";
-                    foreach ((array)$lists as $list) {
-                        if (preg_match('/看完/m', $list["progress"], $matches_finish)) {
-                            $percent = 100;
-                        } else {
-                            preg_match('/第(\d+)./m', $list['progress'], $matches_progress);
-                            preg_match('/第(\d+)./m', $list["new_ep"]['index_show'] ?? null, $matches_new);
-                            if (isset($matches_progress[1])) {
-                                $progress = is_numeric($matches_progress[1]) ? $matches_progress[1] : 0;
-                            } else {
-                                $progress = 0;
-                            }
-                            if (isset($matches_new[1])) {
-                                $total = is_numeric($matches_new[1]) ? $matches_new[1] : $list['total_count'];
-                            } else {
-                                $total = $list['total_count'];
-                            }
-                            $percent = $progress / $total * 100;
-                        }
-                        if (isset($list["new_ep"]['index_show'])) {
-                            $html .= Bilibili::bangumi_item($list, $percent);
-                        }
+                    foreach ((array)$lists as $item) {
+                        $percent = Bilibili::get_percent($item);
+                            $html .= Bilibili::bangumi_item($item, $percent);
                     }
                     $html .= '</div><br><div id="bangumi-pagination">' . $next . '</div>';
                     return $html;
@@ -97,25 +78,9 @@ class Bilibili
                     }
                     $lists = $bgm["list"];
                     $html = "";
-                    foreach ((array)$lists as $list) {
-                        if (preg_match('/看完/m', $list["progress"], $matches_finish)) {
-                            $percent = 100;
-                        } else {
-                            preg_match('/第(\d+)./m', $list['progress'], $matches_progress);
-                            preg_match('/第(\d+)./m', $list["new_ep"]['index_show'], $matches_new);
-                            if (isset($matches_progress[1])) {
-                                $progress = is_numeric($matches_progress[1]) ? $matches_progress[1] : 0;
-                            } else {
-                                $progress = 0;
-                            }
-                            if (isset($matches_new[1])) {
-                                $total = is_numeric($matches_new[1]) ? $matches_new[1] : $list['total_count'];
-                            } else {
-                                $total = $list['total_count'];
-                            }
-                            $percent = $progress / $total * 100;
-                        }
-                        $html .= Bilibili::bangumi_item($list, $percent);
+                    foreach ((array)$lists as $item) {
+                        $percent = Bilibili::get_percent($item);
+                        $html .= Bilibili::bangumi_item($item, $percent);
                     }
                     $html .= '</div><br><div id="bangumi-pagination">' . $next . '</div>';
                     return $html;
@@ -126,20 +91,44 @@ class Bilibili
     {
         return '<a class="bangumi-next no-pjax" href="' . $href . '"><i class="fa fa-bolt" aria-hidden="true"></i> NEXT </a>';
     }
-    private static function bangumi_item(array $list, $percent)
+    private static function bangumi_item(array $item, $percent)
     {
+        //in_array('index_show','new_ep')
         return '<div class="column">' .
-            '<a class="bangumi-item" href="https://bangumi.bilibili.com/anime/' . $list['season_id'] . '/" target="_blank" rel="nofollow">'
-            . '<img class="bangumi-image" src="' . str_replace('http://', 'https://', $list['cover']) . '"/>' .
+            '<a class="bangumi-item" href="https://bangumi.bilibili.com/anime/' . $item['season_id'] . '/" target="_blank" rel="nofollow">'
+            . '<img class="bangumi-image" src="' . str_replace('http://', 'https://', $item['cover']) . '"/>' .
             '<div class="bangumi-info">' .
-            '<h3 class="bangumi-title" title="' . $list['title'] . '">' . $list['title'] . '</h2>'
-            . '<div class="bangumi-summary"> ' . $list['evaluate'] . ' </div>' .
+            '<h3 class="bangumi-title" title="' . $item['title'] . '">' . $item['title'] . '</h2>'
+            . '<div class="bangumi-summary"> ' . $item['evaluate'] . ' </div>' .
             '<div class="bangumi-status">'
             . '<div class="bangumi-status-bar" style="width: ' . $percent . '%"></div>'
-            . '<p>' . $list['new_ep']['index_show'] . '</p>'
+            . '<p>' . $item['new_ep']['index_show'] . '</p>'
             . '</div>'
             . '</div>'
             . '</a>'
             . '</div>';
+    }
+    private static function get_percent(array $item)
+    {
+        $percent = 0;
+        if (preg_match('/看完/m', $item["progress"], $matches_finish)) {
+            $percent = 100;
+        } else {
+            preg_match('/第(\d+)./m', $item['progress'], $matches_progress);
+            preg_match('/第(\d+)./m', $item["new_ep"]['index_show'], $matches_new);
+            if (isset($matches_progress[1])) {
+                $progress = is_numeric($matches_progress[1]) ? $matches_progress[1] : 0;
+            } else {
+                $progress = 0;
+            }
+            $total = (isset($matches_new[1]) && is_numeric($matches_new[1])) ? $matches_new[1] : $item['total_count'];
+            if ($total < 0) {
+                //电影类剧集$total可能得到0
+                $percent = 0;
+            } else {
+                $percent = $progress / $total * 100;
+            }
+        }
+        return $percent;
     }
 }
