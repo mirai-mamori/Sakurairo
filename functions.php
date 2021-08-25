@@ -1440,6 +1440,13 @@ function set_default_admin_color($user_id)
 //Stop Users From Switching Admin Color Schemes
 //if ( !current_user_can('manage_options') ) remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
 
+// WordPress Custom style @ Admin
+function custom_admin_open_sans_style()
+{
+    require get_template_directory() . '/inc/admin_addcss.php';
+}
+add_action('admin_head', 'custom_admin_open_sans_style');
+
 // WordPress Custom Font @ Admin
 function custom_admin_open_sans_font()
 {

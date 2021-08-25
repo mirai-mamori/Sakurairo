@@ -2846,6 +2846,17 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'admin_left_style',
+        'type' => 'image_select',
+        'title' => __('主题设置侧边栏样式','sakurairo_csf'),
+        'options' => array(
+          'v1' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/infor_bar_style_v1.png',
+          'v2' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/infor_bar_style_v2.png',
+        ),
+        'default' => 'v1'
+      ),  
+
+      array(
         'id' => 'admin_first_class_color',
         'type' => 'color',
         'title' => __('Dashboard Primary Menu Color','sakurairo_csf'),
