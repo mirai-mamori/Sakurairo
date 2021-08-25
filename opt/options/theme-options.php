@@ -862,6 +862,15 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'aplayer_server_proxy',
+        'type' => 'text',
+        'title' => __('Footer Online Music Player Proxy','sakurairo_csf'),
+        'dependency' => array( 'aplayer_server', '!=', 'off' ),
+        'desc' => __('Ex. http://127.0.0.1:8080. Reference: https://curl.se/libcurl/c/CURLOPT_PROXY.html','sakurairo_csf'),
+        'default' => ''
+      ),
+
+      array(
         'id' => 'aplayer_playlistid',
         'type' => 'text',
         'title' => __('Footer Online Music Player Songlist ID','sakurairo_csf'),
