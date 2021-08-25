@@ -504,11 +504,6 @@ if ( iro_opt('post_list_akina_type') == 'square') { ?>
 .feature img{ border-radius: 0px; !important; }
 .feature i { border-radius: 0px; !important; }
 <?php } // liststyle ?>
-<?php // comments
-if ( iro_opt('comment_area') == 'unfold') { ?>
-.comments .comments-main {display:block !important;}
-.comments .comments-hidden {display:none !important;}
-<?php } // comments ?>
 <?php 
 //$image_api = 'background-image: url("'.rest_url('sakura/v1/image/cover').'");';
 $bg_style = !iro_opt('cover_full_screen') ? 'background-position: center center;background-attachment: inherit;' : '';
