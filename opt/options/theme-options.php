@@ -2758,17 +2758,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'comment_order',
-        'type' => 'select',
-        'title' => __('Page Comments Display Order','sakurairo_csf'),
-        'options' => array(
-          'n2o' => __('Newest First','sakurairo_csf'),
-          'o2n' => __('Oldest First','sakurairo_csf'),
-        ),
-        'default' => 'o2n'
-      ),
-
-      array(
         'id' => 'ipsource',
         'type' => 'select',
         'title' => __('Page Comment Area IP Source','sakurairo_csf'),

@@ -32,7 +32,7 @@
 						array(
 							"type" => "comment",
 							"callback" => "akina_comment_format",
-							"reverse_top_level" => iro_opt('comment_order') == 'n2o' ? true : null
+							"reverse_top_level" => get_option('comment_order') == 'asc' ? null : true
 						)
 					);
 					?>
