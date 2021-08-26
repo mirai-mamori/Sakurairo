@@ -714,6 +714,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id'    => 'reception_background_blur',
+        'type'  => 'switcher',
+        'title' => __('Background Transparency Blur','sakurairo_csf'),
+        'label'   => __('After opening Background Transparency Blur','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
         'id' => 'reception_background',
         'type' => 'tabbed',
         'title' => __('Frontend Background Options','sakurairo_csf'),
@@ -3360,7 +3368,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://opencollective.com/fuukei/contributors.svg" alt="Theme Contributors" />','sakurairo_csf'),
+        'content' => __('<img src="https://opencollective.com/fuukei/contributors.svg" alt="Theme Contributors" width="100%" height="100%" />','sakurairo_csf'),
       ),
 
       array(

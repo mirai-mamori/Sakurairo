@@ -1156,14 +1156,14 @@ background-image: url(<?php echo iro_opt('search_area_background'); ?>);
 
 .site-footer {
 background-color: rgba(255, 255, 255,<?php echo iro_opt('reception_background_transparency'); ?>);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
+<?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: blur(10px); <?php endif; ?>
+<?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: blur(10px); <?php endif; ?>
 }
 
 .wrapper {
 background-color: rgba(255, 255, 255,<?php echo iro_opt('reception_background_transparency'); ?>);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
+<?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: blur(10px); <?php endif; ?>
+<?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: blur(10px); <?php endif; ?>
 }
 
 /*首页圆角设置*/
