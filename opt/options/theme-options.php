@@ -3352,6 +3352,16 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'label' => __('Enabled by default, some JS files and CSS files do not use jsDelivr CDN','sakurairo_csf'),
         'default' => true
       ),
+      
+      array(
+        'type' => 'subheading',
+        'content' => __('Theme Contributors','sakurairo_csf'),
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => __('<img src="https://opencollective.com/fuukei/contributors.svg" alt="Theme Contributors" />','sakurairo_csf'),
+      ),
 
       array(
         'type' => 'subheading',
@@ -3380,7 +3390,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square"  alt="Theme latest version" />  <img src="https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square"  alt="Theme latest version release date" />  <img src="https://data.jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge"  alt="Theme CDN resource access" />','sakurairo_csf'),
+        'content' => __('<img src="https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square"  alt="Theme latest version" style="border-radius: 3px;" />  <img src="https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square"  alt="Theme latest version release date" style="border-radius: 3px;" />  <img src="https://data.jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge"  alt="Theme CDN resource access" style="border-radius: 3px;" />','sakurairo_csf'),
       ),
 
     )

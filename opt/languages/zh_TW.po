@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-08-26 15:37+0800\n"
-"PO-Revision-Date: 2021-08-26 15:37+0800\n"
+"POT-Creation-Date: 2021-08-26 21:52+0800\n"
+"PO-Revision-Date: 2021-08-26 21:52+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -3535,10 +3535,20 @@ msgid "Enabled by default, some JS files and CSS files do not use jsDelivr CDN"
 msgstr "默認開啟，部分JS檔案和CSS檔案不走jsDelivr CDN"
 
 #: options/theme-options.php:3358
+msgid "Theme Contributors"
+msgstr "貢獻者"
+
+#: options/theme-options.php:3363
+msgid ""
+"<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
+"Contributors\" />"
+msgstr ""
+
+#: options/theme-options.php:3368
 msgid "Reference Information"
 msgstr "引用資訊"
 
-#: options/theme-options.php:3363
+#: options/theme-options.php:3373
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
 "com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -3560,11 +3570,11 @@ msgstr ""
 "        <p>白貓樣式Logo參考原主題作者白貓，由 <a href=\"https://hyacm.com/"
 "acai/ui/143/sakura-logo/\">Hyacm</a> 提供方案並引用</p>"
 
-#: options/theme-options.php:3371
+#: options/theme-options.php:3381
 msgid "Dependency Information"
 msgstr "依賴資訊"
 
-#: options/theme-options.php:3376
+#: options/theme-options.php:3386
 msgid ""
 "<p>Static Resources Relies on the <a href=\"https://github.com/Fuukei/"
 "Public_Repository\">Public Repository</a> Project Created by Fuukei</p>\n"
@@ -3582,14 +3592,15 @@ msgstr ""
 "        <p>更新功能依賴於 YahnisElsts 開源的 <a href=\"https://github.com/"
 "YahnisElsts/plugin-update-checker\">Plugin Update Checker</a> 專案</p>"
 
-#: options/theme-options.php:3383
+#: options/theme-options.php:3393
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
-"svg?style=flat-square\"  alt=\"Theme latest version\" />  <img src=\"https://"
-"img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square"
-"\"  alt=\"Theme latest version release date\" />  <img src=\"https://data."
-"jsdelivr.com/v1/package/gh/Fuukei/Public_Repository/badge\"  alt=\"Theme CDN "
-"resource access\" />"
+"svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "
+"3px;\" />  <img src=\"https://img.shields.io/github/release-date/mirai-"
+"mamori/Sakurairo?style=flat-square\"  alt=\"Theme latest version release date"
+"\" style=\"border-radius: 3px;\" />  <img src=\"https://data.jsdelivr.com/v1/"
+"package/gh/Fuukei/Public_Repository/badge\"  alt=\"Theme CDN resource access"
+"\" style=\"border-radius: 3px;\" />"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
