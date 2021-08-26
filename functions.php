@@ -1498,6 +1498,31 @@ function codecheese_register_post($sanitized_user_login, $user_email, $errors)
         $errors->add('invalid_email', __('<b>ERROR</b>: This email domain (<b>@' . $email[1] . '</b>) has been blocked. Please use another email.'));
     }
 }
+function array_html_props(array $props){
+    $props_string = '';
+    foreach ($props as $key => $value) {
+        $props_string .= ' '.$key . '="' . $value . '"';
+    }
+    return $props_string;
+}
+/**
+ * 渲染一个懒加载的<img>
+ * @author KotoriK
+ */
+function lazyload_img(string $src, string $class = '', array $otherParam = array())
+{
+    $noscriptParam = $otherParam;
+    if($class) $noscriptParam['class'] = $class;
+    $noscriptParam['src'] = $src;
+    $otherParam['class'] = 'lazyload' . ($class ? ' ' . $class : '');
+    $otherParam['data-src'] = $src;
+    $otherParam['onerror'] = 'imgError(this)';
+    $otherParam['src'] =  iro_opt('page_lazyload_spinner');
+    $noscriptProps = '';
+    $props = array_html_props($otherParam);
+    $noscriptProps = array_html_props($noscriptParam);
+    return "<img$props/><noscript><img$noscriptProps/></noscript>";
+}
 
 // html 标签处理器
 function html_tag_parser($content)
