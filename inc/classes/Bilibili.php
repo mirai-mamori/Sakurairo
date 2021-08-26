@@ -65,7 +65,7 @@ class Bilibili
 
     public function get_bfv_items($page = 1)
     {
-        $resp = $this->fetch_api(1, $page);
+        $resp = $this->fetch_api(2, $page);
         $code = $resp["code"];
         switch ($code) {
             case 0: {
