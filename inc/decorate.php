@@ -689,7 +689,7 @@ body.dark .post-list hr,
 body.dark .lower li ul,
 body.dark .header-user-menu,
 body.dark .headertop-bar::after 
-{background:rgba(51,51,51,<?php echo iro_opt('theme_darkmode_background_transparency',1)?>) !important;}
+{background:rgba(51,51,51,<?php echo iro_opt('theme_darkmode_background_transparency')?>) !important;}
 
 body.dark .toc,
 body.dark .search-form input
@@ -1154,9 +1154,16 @@ background-image: url(<?php echo iro_opt('comment_area_image'); ?>);
 background-image: url(<?php echo iro_opt('search_area_background'); ?>);
 }
 
-.wrapper,
 .site-footer {
 background-color: rgba(255, 255, 255,<?php echo iro_opt('reception_background_transparency'); ?>);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+}
+
+.wrapper {
+background-color: rgba(255, 255, 255,<?php echo iro_opt('reception_background_transparency'); ?>);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
 }
 
 /*首页圆角设置*/

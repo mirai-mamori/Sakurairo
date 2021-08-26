@@ -150,9 +150,9 @@ $reception_background = iro_opt('reception_background');
     </div>
 <?php endif; ?>
 
-<!-- 飘落动效 -->
-<?php if (iro_opt('falling_effects') != 'off'): ?>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/js/<?php echo iro_opt('falling_effects'); ?>.js"></script>
+<!-- 樱花飘落动效 -->
+<?php if (iro_opt('sakura_falling_effects') != 'off'): ?>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/js/<?php echo iro_opt('sakura_falling_effects'); ?>.js"></script>
 <?php endif; ?>
 
 <!-- 首页波浪特效 -->
@@ -171,4 +171,35 @@ $reception_background = iro_opt('reception_background');
 echo iro_opt('footer_addition','');
 ?>
 </body>
+<!-- Particles动效 -->
+<?php if (iro_opt('particles_effects', 'true')): ?>
+
+<style type="text/css">
+  #particles-js {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+</style>
+
+<div id="particles-js"></div>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script type="text/javascript">
+particlesJS('particles-js',
+
+<?php 
+echo iro_opt('particles_json','');
+?>
+
+);
+</script>
+
+<?php endif; ?>
 </html>

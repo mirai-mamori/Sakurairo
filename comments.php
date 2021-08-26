@@ -16,13 +16,11 @@
 	<?php if(comments_open()): ?>
 
 	<section id="comments" class="comments">
-<?php if (iro_opt('comment_area') == 'fold'):?>
-		<div class="commentwrap comments-hidden">
+		<div class="commentwrap comments-hidden<?php echo iro_opt('comment_area')=='fold'?' comments-fold':'' ?>">
 			<div class="notification"><i class="iconfont icon-mark"></i><?php _e('view comments', 'sakurairo'); /*查看评论*/?> -
 			<span class="noticom"><?php comments_number('NOTHING', '1'.__(" comment","sakurairo"), '%'.__(" comments","sakurairo")); ?> </span>
 			</div>
 		</div>
-<?php endif;?>
 		<div class="comments-main">
 		 <h3 id="comments-list-title">Comments | <span class="noticom"><?php comments_number('NOTHING', '1'.__(" comment","sakurairo"), '%'.__(" comments","sakurairo")); ?> </span></h3> 
 		<div id="loading-comments"><span></span></div>
@@ -32,7 +30,7 @@
 						array(
 							"type" => "comment",
 							"callback" => "akina_comment_format",
-							"reverse_top_level" => iro_opt('comment_order') == 'n2o' ? true : null
+							"reverse_top_level" => get_option('comment_order') == 'asc' ? null : true
 						)
 					);
 					?>

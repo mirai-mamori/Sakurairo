@@ -65,7 +65,7 @@ class Bilibili
 
     public function get_bfv_items($page = 1)
     {
-        $resp = $this->fetch_api(1, $page);
+        $resp = $this->fetch_api(2, $page);
         $code = $resp["code"];
         switch ($code) {
             case 0: {
@@ -89,7 +89,7 @@ class Bilibili
     }
     private static function anchor_pagination_next(string $href)
     {
-        return '<a class="bangumi-next no-pjax" href="' . $href . '"><i class="fa fa-bolt" aria-hidden="true"></i> NEXT </a>';
+        return '<a class="bangumi-next" data-href="' . $href . '"><i class="fa fa-bolt" aria-hidden="true"></i> NEXT </a>';
     }
     private static function bangumi_item(array $item, $percent)
     {

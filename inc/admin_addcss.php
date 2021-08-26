@@ -27,7 +27,7 @@
 .csf-submessage-info {
     border-radius: 10px;
 }
-.csf-form-warning,
+.csf-form-warning,.csf-form-success,
 .csf-field-code_editor .cm-s-default,
 .csf-image-preview img{
     border-radius: 5px;
@@ -131,4 +131,5 @@
     transition: max-height .6s;
 	display: block !important;
 }
+
 </style>
