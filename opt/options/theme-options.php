@@ -2129,7 +2129,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Area Title Bottom Color','sakurairo_csf'),
         'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#e8e8e8'
+        'default' => 'rgba(99,99,99,0.2)'
       ),  
 
     )
