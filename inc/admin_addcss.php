@@ -27,7 +27,7 @@
 .csf-submessage-info {
     border-radius: 10px;
 }
-.csf-form-warning,
+.csf-form-warning,.csf-form-success,
 .csf-field-code_editor .cm-s-default,
 .csf-image-preview img{
     border-radius: 5px;
@@ -131,4 +131,50 @@
     transition: max-height .6s;
 	display: block !important;
 }
+.wp-core-ui .attachment-preview,.media-frame.mode-grid .media-toolbar,
+.comment-ays, .feature-filter, .imgedit-group, .popular-tags, .stuffbox, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat,
+.drag-drop #drag-drop-area,
+.welcome-panel,
+.plugin-card:nth-child(3n+1),.plugin-card:nth-child(odd),.plugin-card:nth-child(even),
+.plugin-install-php .wp-filter,
+.card,
+.postbox{
+    border-radius: 10px;
+}
+.plugins .inactive th.check-column, .plugins tfoot td.check-column, .plugins thead td.check-column {
+    padding-left: 1px;
+    border-radius: 10px;
+}
+.plugins .column-auto-updates {
+    border-radius: 0 10px 10px 0;
+}
+.wrap .wp-heading-inline+.page-title-action{
+    border-radius: 4px;
+}
+
+.plugin-card-bottom,
+#major-publishing-actions,
+#screen-meta {
+    border-radius: 0 0 10px 10px;
+}
+#adminmenu .wp-submenu{
+    border-radius: 0 10px 10px 10px;
+}
+
+::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width : 6px;  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background   : #ededed;
+}
+
 </style>
