@@ -317,7 +317,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
-        'default' => '1'
+        'default' => '0.8'
       ),
 
       array(
@@ -1106,19 +1106,146 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ), 
 
       array(
-        'id' => 'falling_effects',
+        'id' => 'sakura_falling_effects',
         'type' => 'select',
-        'title' => __('Falling Effects','sakurairo_csf'),
+        'title' => __('Sakura Falling Effects','sakurairo_csf'),
         'options' => array(
           'off' => __('Off','sakurairo_csf'),
-          'sakura-native' => __('Sakura Native Quantity','sakurairo_csf'),
-          'sakura-quarter' => __('Sakura Quarter Quantity','sakurairo_csf'),
-          'sakura-half' => __('Sakura Half Quantity','sakurairo_csf'),
-          'sakura-less' => __('Sakura Less Quantity','sakurairo_csf'),
-          'yuki-native' => __('Snow Native Quantity','sakurairo_csf'),
-          'yuki-half' => __('Snow Half Quantity','sakurairo_csf'),
+          'sakura-native' => __('Native Quantity','sakurairo_csf'),
+          'sakura-quarter' => __('Quarter Quantity','sakurairo_csf'),
+          'sakura-half' => __('Half Quantity','sakurairo_csf'),
+          'sakura-less' => __('Less Quantity','sakurairo_csf'),
         ),
         'default' => 'off'
+      ),
+
+      array(
+        'id' => 'particles_effects',
+        'type' => 'switcher',
+        'title' => __('Particles Effects','sakurairo_csf'),
+        'dependency' => array( 'sakura_falling_effects', '==', 'off' ),
+        'label' => __('Particles effects will appear in the global background. Please open the Cover-and-Frontend-Background-Integration Options to get the best experience','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'id'=> 'particles_json',
+        'type'     => 'code_editor',
+        'sanitize' => false,
+        'title' => __('Particles JSON','sakurairo_csf'),
+        'dependency' => array( 'particles_effects', '==', 'true' ),
+        'desc' => __('You can go to the <a href="https://vincentgarreau.com/particles.js/">Project Address</a> to generate your unique Particles Effects','sakurairo_csf'),
+        'default' => '
+        {
+          "particles": {
+            "number": {
+              "value": 200,
+              "density": {
+                "enable": true,
+                "value_area": 800
+              }
+            },
+            "color": {
+              "value": "#fff"
+            },
+            "shape": {
+              "type": "circle",
+              "stroke": {
+                "width": 0,
+                "color": "#000000"
+              },
+              "polygon": {
+                "nb_sides": 5
+              },
+              "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+              }
+            },
+            "opacity": {
+              "value": 0.5,
+              "random": true,
+              "anim": {
+                "enable": false,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+              }
+            },
+            "size": {
+              "value": 10,
+              "random": true,
+              "anim": {
+                "enable": false,
+                "speed": 40,
+                "size_min": 0.1,
+                "sync": false
+              }
+            },
+            "line_linked": {
+              "enable": false,
+              "distance": 500,
+              "color": "#ffffff",
+              "opacity": 0.4,
+              "width": 2
+            },
+            "move": {
+              "enable": true,
+              "speed": 2,
+              "direction": "bottom",
+              "random": false,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false,
+              "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+              }
+            }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": {
+                "enable": true,
+                "mode": "bubble"
+              },
+              "onclick": {
+                "enable": true,
+                "mode": "repulse"
+              },
+              "resize": true
+            },
+            "modes": {
+              "grab": {
+                "distance": 400,
+                "line_linked": {
+                  "opacity": 0.5
+                }
+              },
+              "bubble": {
+                "distance": 400,
+                "size": 4,
+                "duration": 0.3,
+                "opacity": 1,
+                "speed": 3
+              },
+              "repulse": {
+                "distance": 200,
+                "duration": 0.4
+              },
+              "push": {
+                "particles_nb": 4
+              },
+              "remove": {
+                "particles_nb": 2
+              }
+            }
+          },
+          "retina_detect": true
+        }'
       ),
 
       array(
