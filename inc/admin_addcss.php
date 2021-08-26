@@ -160,15 +160,6 @@
 #adminmenu .wp-submenu{
     border-radius: 0 10px 10px 10px;
 }
-#adminmenu a:hover, #adminmenu li.menu-top:hover, #adminmenu li.opensub>a.menu-top, #adminmenu li>a.menu-top:focus {
-    color: #fff;
-    background-color: <?php echo iro_opt('admin_second_class_color'); ?>;
-}
-
-h1, h2, h3, h4, h5, h6, p,
-.form-table th, .form-wrap label {
-    color: <?php echo iro_opt('admin_text_color'); ?>;
-}
 
 ::-webkit-scrollbar {
   /*滚动条整体样式*/
@@ -179,7 +170,6 @@ h1, h2, h3, h4, h5, h6, p,
   /*滚动条里面小方块*/
   border-radius: 10px;
   box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
-  background   : <?php echo iro_opt('admin_first_class_color'); ?>;
 }
 ::-webkit-scrollbar-track {
   /*滚动条里面轨道*/
