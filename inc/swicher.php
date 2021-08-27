@@ -15,7 +15,7 @@ var mashiro_option = {
     echo_if_true('note_effects','audio');
     echo_if_true('footer_yiyan','yiyan');
     echo_if_true('baguetteBox','baguetteBoxON');
-    echo_if_true('fancybox','baguetteBoxON');
+    echo_if_true('fancybox','fancybox');
     ?>
     darkmode :<?php echo iro_opt('theme_darkmode_auto') ? 'true':'false';?>,
     <?php if ( iro_opt('theme_darkmode_auto') ):echo 'dm_strategy:"'.iro_opt('theme_darkmode_strategy','time').'",'.PHP_EOL;endif; ?>
