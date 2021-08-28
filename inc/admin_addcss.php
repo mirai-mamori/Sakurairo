@@ -132,4 +132,9 @@
 	display: block !important;
 }
 
+.csf-nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 125px;
+}
 </style>
