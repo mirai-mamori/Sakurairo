@@ -10,6 +10,13 @@ remove_filter('term_description', 'wp_kses_data');
 // 去除顶部工具栏
 show_admin_bar(false);
 
+function get_edit_html():string{
+  global $user_ID;
+  if ($user_ID && current_user_can('level_10')) {
+    return '<span class="bull">·</span><a href="' . get_edit_post_link() . '">EDIT</a>';
+}
+  return '';
+}
 
 /*
  * 视频
@@ -293,12 +300,7 @@ function the_headPattern(){
     $center = 'single-center';
     $header = 'single-header';
     //$ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
-    global $user_ID; 
-    if($user_ID && current_user_can('level_10')) {
-        $edit_this_post_link = '<span class="bull">·</span><a href="'.get_edit_post_link().'">EDIT</a>';
-    } else {
-        $edit_this_post_link = '';
-    }
+        $edit_this_post_link = get_edit_html();
     $t .= the_title( '<h1 class="entry-title">', '</h1>', false);
     $t .= '<span class="toppic-line"></span><p class="entry-census"><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'.get_avatar(get_the_author_meta('ID'),64) .'</a></span><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'. get_the_author() .'</a></span><span class="bull">·</span>'. poi_time_since(get_post_time('U', true),false,true) .'<span class="bull">·</span>'. get_post_views(get_the_ID()) .' '._n("View","Views",get_post_views(get_the_ID()),"sakurairo")/*次阅读*/.$edit_this_post_link.'</p>';
     endwhile; endif;
@@ -348,12 +350,8 @@ function the_video_headPattern_hls(){
     $center = 'single-center';
     $header = 'single-header';
     //$ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
-    global $user_ID; 
-    if($user_ID && current_user_can('level_10')) {
-        $edit_this_post_link = '<span class="bull">·</span><a href="'.get_edit_post_link().'">EDIT</a>';
-    } else {
-        $edit_this_post_link = '';
-    }
+    $edit_this_post_link = get_edit_html();
+
     $t .= the_title( '<h1 class="entry-title">', '<button id="coverVideo-btn" class=".constant-width-to-height-ratio" onclick="coverVideo()"><i class="fa fa-pause" aria-hidden="true"></i></button></h1>', false);
     $t .= '<p class="entry-census"><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'.get_avatar(get_the_author_meta('ID'),64) .'</a></span><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'. get_the_author() .'</a></span><span class="bull">·</span>'. poi_time_since(get_post_time('U', true),false,true) .'<span class="bull">·</span>'. get_post_views(get_the_ID()) .' '._n("View","Views",get_post_views(get_the_ID()),"sakurairo")/*次阅读*/.$edit_this_post_link.'</p>';
     endwhile; endif;
