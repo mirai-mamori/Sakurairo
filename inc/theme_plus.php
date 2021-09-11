@@ -346,8 +346,8 @@ function the_video_headPattern(bool $isHls = false)
     } else {
         $video_poster_attr = ' poster="' . $video_cover_thumb . '" ';
     }
-    $full_image_url = !empty($full_image_url) ? $full_image_urls[0] : null;
-    $thubm_image_url = !empty($thubm_image_url) ? $thubm_image_urls[0] : null;
+    $full_image_url = !empty($full_image_urls) ? $full_image_urls[0] : null;
+    $thubm_image_url = !empty($thubm_image_urls) ? $thubm_image_urls[0] : null;
     if (is_single()) {
         while (have_posts()) {
             the_post();
@@ -381,7 +381,7 @@ function the_video_headPattern(bool $isHls = false)
     $thubm_image_url = $thubm_image_url . "#lazyload-blur";
     $thubm_image_url = str_replace(iro_opt('image_cdn'), 'https://cdn.2heng.xin/', $thubm_image_url);
     if (!iro_opt('patternimg')) $full_image_url = false;
-    if (!is_home() /* && $full_image_url */) { ?>
+    if (!is_home()  && $full_image_url) { ?>
         <div class="pattern-center-blank"></div>
         <div class="pattern-center <?php if (is_single()) : echo $center;
                                     endif; ?>">
