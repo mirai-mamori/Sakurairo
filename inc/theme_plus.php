@@ -13,7 +13,7 @@ show_admin_bar(false);
 function get_edit_html():string{
   global $user_ID;
   if ($user_ID && current_user_can('level_10')) {
-    return '<span class="bull">·</span><a href="' . get_edit_post_link() . '">EDIT</a>';
+    return '<span class="bull">·</span><a href="' . get_edit_post_link() . '">'.__("EDIT","sakurairo").'</a>';
 }
   return '';
 }
