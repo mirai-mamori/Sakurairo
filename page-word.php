@@ -22,7 +22,7 @@ get_header();
                                         <p></p>
                                         <p><?php the_content(); ?></p>
                                         <p></p>
-                                        <p class="shuoshuo_time"><i class="fa fa-clock-o"></i> <?php the_time('Y年n月j日G:i'); ?></p>
+                                        <p class="shuoshuo_time"><i class="fa fa-clock-o"></i> <?php the_time('Y年n月j日 G:i'); ?></p>
                                         </div>
                                     </li>
                                 <?php endwhile; ?>
