@@ -36,13 +36,14 @@ get_header();
     </div><!-- #primary -->
     <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', ()=>{
-        document.querySelectorAll('.cbp_tmtimeline li').forEach((e)=>{
-        e.addEventListener("mouseenter",()=>{
-            e.querySelector('.shuoshuo_author_img img').classList.add("zhuan");
-        })
-        e.addEventListener("mouseleave",()=>{
-            e.querySelector('.shuoshuo_author_img img').classList.remove("zhuan");
-        })
+        document.querySelectorAll('.cbp_tmtimeline li').forEach((p)=>{
+            var e = p.querySelector('.shuoshuo_author_img img')
+            p.addEventListener("mouseenter",()=>{
+                e.classList.add("zhuan");
+            })
+            p.addEventListener("mouseleave",()=>{
+                e.classList.remove("zhuan");
+            })
     })
     }, false);
     </script>
