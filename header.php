@@ -153,10 +153,12 @@ $mashiro_logo = iro_opt('mashiro_logo');
 			</div>
 		<?php } ?>
 		<div id="page" class="site wrapper">
-			<?php if (get_post_meta(get_the_ID(), 'cover_type', true) == 'hls') {
-				the_video_headPattern_hls();
-			} elseif (get_post_meta(get_the_ID(), 'cover_type', true) == 'normal') {
-				the_video_headPattern_normal();
+			<?php 
+			$cover_type = get_post_meta(get_the_ID(), 'cover_type', true);
+			if ($cover_type == 'hls') {
+				the_video_headPattern(true);
+			} elseif ($cover_type == 'normal') {
+				the_video_headPattern(false);
 			} else {
 				the_headPattern();
 			} ?>
