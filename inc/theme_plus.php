@@ -400,7 +400,7 @@ function the_video_headPattern(bool $isHls = false)
                     display: none
                 }
             </style>
-            <header class="pattern-header <?php if (is_single()) : echo $center;
+            <header class="pattern-header <?php if (is_single()) : echo $header;
                                             endif; ?>">
                 <?php echo $t; ?>
             </header>
