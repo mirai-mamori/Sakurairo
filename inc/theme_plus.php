@@ -389,12 +389,11 @@ function the_video_headPattern(bool $isHls = false)
                 <?php
                 if ($isHls) {
                 ?>
-                    <video loop id="coverVideo" class='hls' style="width: 100%; height: 100%" <?php echo $video_poster_attr; ?> data-src="<?php echo $video_cover; ?>"></video>
-
+                    <video loop id="coverVideo" class='hls' <?php echo $video_poster_attr; ?> data-src="<?php echo $video_cover; ?>"></video>
                 <?php
                 } else {
                 ?>
-                    <video autoplay loop id="coverVideo" class="normal-cover-video" style="width: 100%; height: 100%" <?php echo $video_poster_attr; ?>>
+                    <video autoplay loop id="coverVideo" class="normal-cover-video" <?php echo $video_poster_attr; ?>>
                         <source src="<?php echo $video_cover; ?>" type="video/mp4">
                         <?php _e('Your browser does not support HTML5 video.','sakurairo')?>
                     </video>
