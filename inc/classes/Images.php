@@ -28,12 +28,12 @@ class Images
         );
 
         $response = wp_remote_post($upload_url, $args);
-        $reply = json_decode($response["body"]);
+        $reply = json_decode($response['body']);
 
         if ($reply->status_txt == 'OK' && $reply->status_code == 200) {
             $status = 200;
             $success = true;
-            $message = "success";
+            $message = 'success';
             $link = $reply->image->image->url;
             $proxy = iro_opt('comment_image_proxy') . $link;
         } else {
@@ -68,12 +68,12 @@ class Images
         );
 
         $response = wp_remote_post($upload_url, $args);
-        $reply = json_decode($response["body"]);
+        $reply = json_decode($response['body']);
 
         if ($reply->success && $reply->status == 200) {
             $status = 200;
             $success = true;
-            $message = "success";
+            $message = 'success';
             $link = $reply->data->link;
             $proxy = iro_opt('comment_image_proxy') . $link;
         } else {
@@ -98,19 +98,19 @@ class Images
      */
     public function SMMS_API($image) {
         $client_id = $this->smms_client_id;
-        $upload_url = "https://sm.ms/api/v2/upload";
+        $upload_url = 'https://sm.ms/api/v2/upload';
         $filename = $image['cmt_img_file']['name'];
         $filedata = $image['cmt_img_file']['tmp_name'];
         $Boundary = wp_generate_password();
         $bits = file_get_contents($filedata);
 
         $args = array(
-            "headers" => "Content-Type: multipart/form-data; boundary=$Boundary\r\n\r\nAuthorization: Basic $client_id\r\n\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97",
-            "body" => "--$Boundary\r\nContent-Disposition: form-data; name=\"smfile\"; filename=\"$filename\"\r\n\r\n$bits\r\n\r\n--$Boundary--"
+            'headers' => "Content-Type: multipart/form-data; boundary=$Boundary\r\n\r\nAuthorization: Basic $client_id\r\n\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97",
+            'body' => "--$Boundary\r\nContent-Disposition: form-data; name=\"smfile\"; filename=\"$filename\"\r\n\r\n$bits\r\n\r\n--$Boundary--"
         );
 
         $response = wp_remote_post($upload_url, $args);
-        $reply = json_decode($response["body"]);
+        $reply = json_decode($response['body']);
 
         if ($reply->success && $reply->code == 'success') {
             $status = 200;
@@ -142,12 +142,12 @@ class Images
     }
 
     public static function cover_gallery() {
-        if (iro_opt('random_graphs_options') == "local") {
-            $img_array = glob(get_template_directory() . "/manifest/gallary/*.{gif,jpg,png}", GLOB_BRACE);
+        if (iro_opt('random_graphs_options') == 'local') {
+            $img_array = glob(get_template_directory() . '/manifest/gallary/*.{gif,jpg,png}', GLOB_BRACE);
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
             $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
-        } elseif (iro_opt('random_graphs_options') == "external_api") {
+        } elseif (iro_opt('random_graphs_options') == 'external_api') {
             $imgurl = iro_opt('random_graphs_link');
         } else {
             global $sakura_image_array;
@@ -155,21 +155,21 @@ class Images
             $img = array_rand($img_array);
             $img_domain = iro_opt('random_graphs_link') ? iro_opt('random_graphs_link') : get_template_directory_uri();
             if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') !== false) {
-                $imgurl = $img_domain . "/manifest/" . $img_array[$img]["webp"][0];
+                $imgurl = $img_domain . "/manifest/" . $img_array[$img]['webp'][0];
             } else {
-                $imgurl = $img_domain . "/manifest/" . $img_array[$img]["jpeg"][0];
+                $imgurl = $img_domain . "/manifest/" . $img_array[$img]['jpeg'][0];
             }
         }
         return $imgurl;
     }
 
     public static function mobile_cover_gallery() {
-        if (iro_opt('random_graphs_options') == "local") {
-            $img_array = glob(get_template_directory() . "/manifest/gallary/*.{gif,jpg,png}", GLOB_BRACE);
+        if (iro_opt('random_graphs_options') == 'local') {
+            $img_array = glob(get_template_directory() . '/manifest/gallary/*.{gif,jpg,png}', GLOB_BRACE);
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
             $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
-        } elseif (iro_opt('random_graphs_options') == "external_api") {
+        } elseif (iro_opt('random_graphs_options') == 'external_api') {
           //$imgurl = iro_opt('random_graphs_link');
            $imgurl = iro_opt('random_graphs_link_mobile');
         } else {
@@ -178,16 +178,16 @@ class Images
             $img = array_rand($img_array);
             $img_domain = iro_opt('random_graphs_link') ? iro_opt('random_graphs_link') : get_template_directory_uri();
             if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp')) {
-              $imgurl = $img_domain . "/manifest/" . $img_array[$img]["webp"][0];
+              $imgurl = $img_domain . "/manifest/" . $img_array[$img]['webp'][0];
             } else {
-              $imgurl = $img_domain . "/manifest/" . $img_array[$img]["jpeg"][0];
+              $imgurl = $img_domain . "/manifest/" . $img_array[$img]['jpeg'][0];
             }
         }
         return $imgurl;
     }
 
     public static function feature_gallery() {
-        if (iro_opt('post_cover_options') == "type_2") {
+        if (iro_opt('post_cover_options') == 'type_2') {
             $imgurl = iro_opt('post_cover');
         } else {
             $imgurl = self::cover_gallery();
