@@ -18,12 +18,10 @@ get_header();
                                 while (have_posts()) : the_post(); ?>
                                     <li>
                                         <span class="shuoshuo_author_img"><img src="<?php echo get_avatar_profile_url(get_the_author_meta('ID')); ?>" class="avatar avatar-48" width="48" height="48"></span>
-                                        <a class="cbp_tmlabel" href="javascript:void(0)">
-                                        <p></p>
+                                        <div class="cbp_tmlabel">
                                         <p><?php the_content(); ?></p>
-                                        <p></p>
-                                        <p class="shuoshuo_time"><i class="fa fa-clock-o"></i> <?php the_time('Y年n月j日G:i'); ?></p>
-                                        </a>
+                                        <p class="shuoshuo_time"><i class="fa fa-clock-o"></i> <?php the_time('Y年n月j日 G:i'); ?></p>
+                                        </div>
                                     </li>
                                 <?php endwhile; ?>
                         </ul>
@@ -38,16 +36,17 @@ get_header();
     </div><!-- #primary -->
     <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', ()=>{
-        document.querySelectorAll('.cbp_tmtimeline li').forEach((e)=>{
-        e.addEventListener("mouseenter",()=>{
-            e.querySelector('.shuoshuo_author_img img').classList.add("zhuan");
-        })
-        e.addEventListener("mouseleave",()=>{
-            e.querySelector('.shuoshuo_author_img img').classList.remove("zhuan");
-        })
+        document.querySelectorAll('.cbp_tmtimeline li').forEach((p)=>{
+            var e = p.querySelector('.shuoshuo_author_img img')
+            p.addEventListener("mouseenter",()=>{
+                e.classList.add("zhuan");
+            })
+            p.addEventListener("mouseleave",()=>{
+                e.classList.remove("zhuan");
+            })
     })
     }, false);
     </script>
 <?php
 get_footer();
- 
+?>
