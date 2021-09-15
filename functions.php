@@ -277,8 +277,14 @@ function sakura_scripts()
     }
 
     // 20161116 @Louie
-    $mv_live = iro_opt('cover_video_loop') ? 'open' : 'close';
-    $movies = iro_opt('cover_video') ? array('url' => iro_opt('cover_video_link'), 'name' => iro_opt('cover_video_title'), 'live' => $mv_live) : 'close';
+    $movies = iro_opt('cover_video') ? 
+    array(
+        'url' => iro_opt('cover_video_link'), 
+        'name' => iro_opt('cover_video_title'), 
+        'live' => iro_opt('cover_video_live') ? true : false,
+        'loop'=>iro_opt('cover_video_loop') ? true : false
+        ) 
+        : 'close';
     $auto_height = !iro_opt('cover_full_screen') ? 'fixed' : 'auto';
     /*     $code_lamp = 'close';
  */    // if (wp_is_mobile()) {

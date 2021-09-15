@@ -1701,7 +1701,16 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'switcher',
         'title' => __('Cover Video Loop','sakurairo_csf'),
         'dependency' => array( 'cover_video', '==', 'true' ),
-        'label' => __('Video will loop automatically when enabled, Pjax needed','sakurairo_csf'),
+        'label' => __('Video will loop automatically when enabled.','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'cover_video_live',
+        'type' => 'switcher',
+        'title' => __('Cover Video Auto Resume','sakurairo_csf'),
+        'dependency' => array( 'cover_video', '==', 'true' ),
+        'label' => __('Cover Video will resume automatically when coming back to homepage while Pjax enabled.','sakurairo_csf'),
         'default' => false
       ),
 
