@@ -1649,7 +1649,7 @@ i.iconfont.hotpost {
     .post-list-thumb .post-content-wrap {
         text-align: left !important;
         margin: 0 !important;
-        padding: 20px !important;
+        padding: 6px 15px 0px 15px !important;
         float: none !important;
         box-shadow: none;
         border-top: 0
