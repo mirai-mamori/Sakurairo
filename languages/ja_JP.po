@@ -69,7 +69,7 @@ msgstr "コメントはありません。"
 #: comments.php:61
 #, fuzzy
 msgid "I'm not a robot"
-msgstr "私はロボットではない"
+msgstr "私はロボットではありません"
 
 #: comments.php:62
 #, fuzzy
@@ -142,7 +142,7 @@ msgstr "必須*"
 #: comments.php:104
 #, fuzzy
 msgid "Advertisement is forbidden 😀"
-msgstr "広告は😀禁止されています"
+msgstr "広告は禁止されています😀"
 
 #: comments.php:104
 msgid "Site"
@@ -243,7 +243,7 @@ msgstr "継ぐ"
 #: functions.php:312
 #, fuzzy
 msgid "10 files max per request"
-msgstr "要求ごとに最大 10 ファイル"
+msgstr "1回のリクエストで送信できるファイル数の上限は10個です。"
 
 #: functions.php:313
 #, fuzzy
@@ -254,7 +254,7 @@ msgid ""
 "\n"
 "This image is too large~Please reupload!"
 msgstr ""
-"ファイルあたり最大 5 MB。\n"
+"1ファイルの最大サイズは 5 MB です。\n"
 "\n"
 "「{0}」\n"
 "\n"
@@ -465,7 +465,7 @@ msgstr " 時間前"
 
 #: inc/theme_plus.php:63
 msgid " minutes ago"
-msgstr "数分前"
+msgstr " 分前"
 
 #: inc/theme_plus.php:64
 msgid " seconds ago"
@@ -644,7 +644,7 @@ msgstr "ユーザー名をご入力ください。"
 #: user/page-register.php:16
 #, fuzzy
 msgid "Invalid characters, please enter a valid username."
-msgstr "無効な文字を入力してください。"
+msgstr "使用不可文字が含んでいます、有効なユーザー名を入力してください。"
 
 #: user/page-register.php:19
 #, fuzzy
@@ -700,11 +700,11 @@ msgstr "登録はまだ開かれていない。"
 
 #. Theme Name of the plugin/theme
 msgid "Sakurairo"
-msgstr ""
+msgstr "さくら色"
 
 #. Theme URI of the plugin/theme
 msgid "https://github.com/mirai-mamori/Sakurairo"
-msgstr ""
+msgstr "https://github.com/mirai-mamori/Sakurairo"
 
 #. Description of the plugin/theme
 #, fuzzy
@@ -717,11 +717,11 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Created by Fuukei"
-msgstr ""
+msgstr "Created by Fuukei"
 
 #. Author URI of the plugin/theme
 msgid "https://iro.tw/"
-msgstr ""
+msgstr "https://iro.tw/"
 
 #. Template Name of the plugin/theme
 msgid "文章模版"
@@ -740,13 +740,14 @@ msgstr "说说模版"
 #~ "如果你选择使用Webp优化随机图片，请点击 <a href = \"%s\">这里</a> 来更新 "
 #~ "Manifest 路径"
 #~ msgstr ""
-#~ "「选择 ウェブ优图请优请击这・这・ス・パー<a href=\"%s\"></a>ズ・マニフェス"
-#~ "ト・这"
+#~ "ランダムな画像を最適化するためにWebpを使用する方は、<a href=\"%s\">こち "
+#~ "ら</a>　をクリックするとManifestのリンクが更新されます"
 
 #, fuzzy, php-format
 #~ msgid ""
 #~ "正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  "
 #~ "<a href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
 #~ msgstr ""
-#~ "|のイロ・イロ题| %s  <a href=\"https://iro.tw\">题|档</a>  <a href="
-#~ "\"https://github.com/mirai-mamori/Sakurairo\">码地の源</a>"
+#~ "iroテーマを使用している バージョン %s | <a href=\"https://iro.tw\">テーマド"
+#~ "キュメント</a>  | <a href=\"https://github.com/mirai-mamori/Sakurairo\">ソ "
+#~ "ースコード</a>"
