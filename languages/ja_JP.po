@@ -267,7 +267,7 @@ msgstr "アップロード中..."
 #: functions.php:315
 #, fuzzy
 msgid "Uploaded successfully~"
-msgstr "ログインに成功しました。"
+msgstr "アップロードに成功しました。"
 
 #: functions.php:316
 #, fuzzy
@@ -285,7 +285,7 @@ msgstr ""
 #: functions.php:317
 #, fuzzy
 msgid "Upload failed, please retry."
-msgstr "アップロードに失敗しました。"
+msgstr "アップロードに失敗しました、もう一度やり直してください。"
 
 #: functions.php:318
 #, fuzzy
@@ -337,7 +337,7 @@ msgstr ""
 #: functions.php:544
 #, fuzzy
 msgid "This guy is so lazy ╮(╯▽╰)╭"
-msgstr "この男はとても怠惰な╮(╯▽╰)╭"
+msgstr "この子はとても怠惰な╮(╯▽╰)╭"
 
 #: functions.php:1213
 #, fuzzy
