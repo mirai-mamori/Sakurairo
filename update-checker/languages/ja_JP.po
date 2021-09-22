@@ -24,25 +24,25 @@ msgstr "アップデートを確認する"
 #, php-format
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
-msgstr "%s プラグインは最新です。"
+msgstr "プラグイン %s は最新です。"
 
 #: Puc/v4p11/Plugin/Ui.php:215
 #, php-format
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
-msgstr "%sプラグインの新しいバージョンが利用可能です。"
+msgstr "プラグイン %s の新しいバージョンが利用可能です。"
 
 #: Puc/v4p11/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
-msgstr "%1$s.に対して利用可能なアップデートがあるか確認できませんでした"
+msgstr "%s 用のアップデートが利用可能かどうかを確認できませんでした。"
 
 #: Puc/v4p11/Plugin/Ui.php:223
 #, php-format
 msgid "Unknown update checker status \"%s\""
-msgstr "不明なアップデートチェッカーステータス \"％s\""
+msgstr "不明なアップデートチェッカー状態 \"%s\""
 
 #: Puc/v4p11/Vcs/PluginUpdateChecker.php:98
 msgid "There is no changelog available."
-msgstr "利用可能な変更ログはありません。"
+msgstr "ChangeLogはありません。"
