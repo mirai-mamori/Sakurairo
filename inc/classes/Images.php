@@ -143,7 +143,7 @@ class Images
 
     public static function cover_gallery() {
         if (iro_opt('random_graphs_options') == 'local') {
-            $img_array = glob(get_template_directory() . '/manifest/gallary/*.{gif,jpg,png}', GLOB_BRACE);
+            $img_array = glob(get_template_directory() . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
             $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
@@ -153,7 +153,7 @@ class Images
             global $sakura_image_array;
             $img_array = json_decode($sakura_image_array, true);
             $img = array_rand($img_array);
-            $img_domain = iro_opt('random_graphs_link') ? iro_opt('random_graphs_link') : get_template_directory_uri();
+            $img_domain = iro_opt('random_graphs_link') ?: get_template_directory_uri();
             if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') !== false) {
                 $imgurl = $img_domain . "/manifest/" . $img_array[$img]['webp'][0];
             } else {
@@ -165,7 +165,7 @@ class Images
 
     public static function mobile_cover_gallery() {
         if (iro_opt('random_graphs_options') == 'local') {
-            $img_array = glob(get_template_directory() . '/manifest/gallary/*.{gif,jpg,png}', GLOB_BRACE);
+            $img_array = glob(get_template_directory() . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
             $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
@@ -176,7 +176,7 @@ class Images
             global $sakura_mobile_image_array;
             $img_array = json_decode($sakura_mobile_image_array, true);
             $img = array_rand($img_array);
-            $img_domain = iro_opt('random_graphs_link') ? iro_opt('random_graphs_link') : get_template_directory_uri();
+            $img_domain = iro_opt('random_graphs_link') ?: get_template_directory_uri();
             if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp')) {
               $imgurl = $img_domain . "/manifest/" . $img_array[$img]['webp'][0];
             } else {
