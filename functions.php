@@ -1914,11 +1914,11 @@ function get_photo()
             //图片资源地址
             $temp['img'] = $value->attributes->getNamedItem('src')->nodeValue;
             //图片上的标题
-            $temp['header'] = $value->attributes->getNamedItem('data-header')->nodeValue;
+            $temp['header'] = $value->attributes->getNamedItem('data-header')?->nodeValue;
             //图片上的信息
-            $temp['info'] = $value->attributes->getNamedItem('data-info')->nodeValue;
+            $temp['info'] = $value->attributes->getNamedItem('data-info')?->nodeValue;
             //是否竖向展示 默认false
-            $temp['vertical'] = $value->attributes->getNamedItem('vertical')->nodeValue;
+            $temp['vertical'] = $value->attributes->getNamedItem('vertical')?->nodeValue;
             array_push($back['imgs'], $temp);
         }
     }
