@@ -979,7 +979,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'     => 'code_editor',
         'sanitize' => false,
         'title' => __('Footer Addition','sakurairo_csf'),
-        'desc' => __('Add HTML code at the end of the page. Useful for adding customize JavaScript, or adding external CSS stylesheets.','sakurairo_csf'),
+        'desc' => __('Add HTML code at the end of the page. Useful for adding customize JavaScript.','sakurairo_csf'),
       ),
 
       array(
