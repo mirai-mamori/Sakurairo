@@ -90,6 +90,7 @@ $mashiro_logo = iro_opt('mashiro_logo');
 			gtag('config', '<?php echo iro_opt('google_analytics_id', ''); ?>');
 		</script>
 	<?php endif; ?>
+	<?php echo iro_opt("site_header_insert"); ?>
 </head>
 
 <body <?php body_class(); ?>>

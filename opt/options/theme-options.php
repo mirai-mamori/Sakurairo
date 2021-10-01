@@ -3094,6 +3094,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id'=>'site_header_insert',
+        'type'     => 'code_editor',
+        'sanitize' => false,
+        'title' => __('Code inserted in the header','sakurairo_csf'),
+        'desc' => __('Insert HTML code at the end of <head>.','sakurairo_csf'),
+      ),
+
+      array(
         'id' => 'time_zone_fix',
         'type' => 'slider',
         'title' => __('Timezone Fix','sakurairo_csf'),
