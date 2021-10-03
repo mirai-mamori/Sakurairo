@@ -1536,6 +1536,7 @@ i.iconfont.hotpost {
     padding: 2px 7px 2px 7px;
     border-radius: 6px;
     color: #505050;
+    white-space:nowrap;
 }
 
 .post-meta,
