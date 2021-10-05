@@ -1911,14 +1911,19 @@ function get_photo()
         $imgS = $dom->getElementsByTagName('img');
         //<img src="..." data-header="标题" data-info="信息" vertical=false>
         foreach ($imgS as $key => $value) {
+            $attr = $value->attributes;
+            $header = $attr->getNamedItem('header');
+            $info = $attr->getNamedItem('data-info');
+            $vertical = $attr->getNamedItem('vertical');
+
             //图片资源地址
             $temp['img'] = $value->attributes->getNamedItem('src')->nodeValue;
             //图片上的标题
-            $temp['header'] = $value->attributes->getNamedItem('data-header')?->nodeValue;
+            $temp['header'] = $header ? $header->nodeValue : null;
             //图片上的信息
-            $temp['info'] = $value->attributes->getNamedItem('data-info')?->nodeValue;
+            $temp['info'] = $info ? $info->nodeValue : null;
             //是否竖向展示 默认false
-            $temp['vertical'] = $value->attributes->getNamedItem('vertical')?->nodeValue;
+            $temp['vertical'] = $vertical ? $vertical->nodeValue : null;
             array_push($back['imgs'], $temp);
         }
     }
