@@ -277,8 +277,14 @@ function sakura_scripts()
     }
 
     // 20161116 @Louie
-    $mv_live = iro_opt('cover_video_loop') ? 'open' : 'close';
-    $movies = iro_opt('cover_video') ? array('url' => iro_opt('cover_video_link'), 'name' => iro_opt('cover_video_title'), 'live' => $mv_live) : 'close';
+    $movies = iro_opt('cover_video') ? 
+    array(
+        'url' => iro_opt('cover_video_link'), 
+        'name' => iro_opt('cover_video_title'), 
+        'live' => iro_opt('cover_video_live') ? true : false,
+        'loop'=>iro_opt('cover_video_loop') ? true : false
+        ) 
+        : 'close';
     $auto_height = !iro_opt('cover_full_screen') ? 'fixed' : 'auto';
     /*     $code_lamp = 'close';
  */    // if (wp_is_mobile()) {
@@ -1450,7 +1456,7 @@ add_action('admin_head', 'custom_admin_open_sans_style');
 // WordPress Custom Font @ Admin
 function custom_admin_open_sans_font()
 {
-    echo '<link href="https://fonts.maho.cc/css?family=Merriweather+Sans|Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
+    echo '<link href="https://' . iro_opt('google_fonts_api') .'/css?family=Merriweather+Sans|Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
     echo '<style>body, #wpadminbar *:not([class="ab-icon"]), .wp-core-ui, .media-menu, .media-frame *, .media-modal *{font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style>' . PHP_EOL;
 }
 add_action('admin_head', 'custom_admin_open_sans_font');
@@ -1459,7 +1465,7 @@ add_action('admin_head', 'custom_admin_open_sans_font');
 function custom_admin_open_sans_font_frontend_toolbar()
 {
     if (current_user_can('administrator')) {
-        echo '<link href="https://fonts.maho.cc/css?family=Merriweather+Sans&display=swap" rel="stylesheet">' . PHP_EOL;
+        echo '<link href="https://' . iro_opt('google_fonts_api') .'/css?family=Merriweather+Sans&display=swap" rel="stylesheet">' . PHP_EOL;
         echo '<style>#wpadminbar *:not([class="ab-icon"]){font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style>' . PHP_EOL;
     }
 }
@@ -1469,7 +1475,7 @@ add_action('wp_head', 'custom_admin_open_sans_font_frontend_toolbar');
 function custom_admin_open_sans_font_login_page()
 {
     if (stripos($_SERVER["SCRIPT_NAME"], strrchr(wp_login_url(), '/')) !== false) {
-        echo '<link href="https://fonts.maho.cc/css?family=Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
+        echo '<link href="https://' . iro_opt('google_fonts_api') .'/css?family=Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
         echo '<style>body{font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style>' . PHP_EOL;
     }
 }
@@ -1908,11 +1914,11 @@ function get_photo()
             //图片资源地址
             $temp['img'] = $value->attributes->getNamedItem('src')->nodeValue;
             //图片上的标题
-            $temp['header'] = $value->attributes->getNamedItem('data-header')->nodeValue;
+            $temp['header'] = $value->attributes->getNamedItem('data-header')?->nodeValue;
             //图片上的信息
-            $temp['info'] = $value->attributes->getNamedItem('data-info')->nodeValue;
+            $temp['info'] = $value->attributes->getNamedItem('data-info')?->nodeValue;
             //是否竖向展示 默认false
-            $temp['vertical'] = $value->attributes->getNamedItem('vertical')->nodeValue;
+            $temp['vertical'] = $value->attributes->getNamedItem('vertical')?->nodeValue;
             array_push($back['imgs'], $temp);
         }
     }

@@ -979,7 +979,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'     => 'code_editor',
         'sanitize' => false,
         'title' => __('Footer Addition','sakurairo_csf'),
-        'desc' => __('Add HTML code at the end of the page. Useful for adding customize JavaScript, or adding external CSS stylesheets.','sakurairo_csf'),
+        'desc' => __('Add HTML code at the end of the page. Useful for adding customize JavaScript.','sakurairo_csf'),
       ),
 
       array(
@@ -1701,7 +1701,16 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'switcher',
         'title' => __('Cover Video Loop','sakurairo_csf'),
         'dependency' => array( 'cover_video', '==', 'true' ),
-        'label' => __('Video will loop automatically when enabled, Pjax needed','sakurairo_csf'),
+        'label' => __('Video will loop automatically when enabled.','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'cover_video_live',
+        'type' => 'switcher',
+        'title' => __('Cover Video Auto Resume','sakurairo_csf'),
+        'dependency' => array( 'cover_video', '==', 'true' ),
+        'label' => __('Cover Video will resume automatically when coming back to homepage while Pjax enabled.','sakurairo_csf'),
         'default' => false
       ),
 
@@ -3082,6 +3091,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'textarea',
         'title' => __('Custom CSS Styles','sakurairo_csf'),
         'desc' => __('Fill in the CSS code without writing style tag','sakurairo_csf'),
+      ),
+
+      array(
+        'id'=>'site_header_insert',
+        'type'     => 'code_editor',
+        'sanitize' => false,
+        'title' => __('Code inserted in the header','sakurairo_csf'),
+        'desc' => __('Insert HTML code at the end of <head>.','sakurairo_csf'),
       ),
 
       array(
