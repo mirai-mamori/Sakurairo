@@ -310,19 +310,19 @@ function sakura_scripts()
     //前端脚本本地化
     if (!get_locale("zh-CN")) {
         wp_localize_script('app', '_sakurairoi18n', array(
-            "复制成功！" => __("Copied!", "sakurairo"),
-            "拷贝代码" => __("Copy Code", "sakurairo"),
-            "你的封面API好像不支持跨域调用,这种情况下缓存是不会生效的哦" => __("Your cover API seems to not support Cross Origin Access. In this case, Cover Cache won't take effect.", "sakurairo"),
-            "提交中...." => __("Commiting....", "sakurairo"),
-            "提交成功" => __("Succeed", "sakurairo"),
-            "每次上传上限为10张" => __("10 files max per request", "sakurairo"),
-            "图片上传大小限制为5 MB\n\n「{0}」\n\n这张图太大啦~请重新上传噢！" => __("5 MB max per file.\n\n「{0}」\n\nThis image is too large~Please reupload!", "sakurairo"),
-            "上传中..." => __("Uploading...", "sakurairo"),
-            "图片上传成功~" => __("Uploaded successfully~", "sakurairo"),
-            "上传失败！\n文件名=> {0}\ncode=> {1}\n{2}" => __("Upload failed!\nFile Name=> {0}\ncode=> {1}\n{2}", "sakurairo"),
-            "上传失败，请重试." => __("Upload failed, please retry.", "sakurairo"),
-            "页面加载出错了 HTTP {0}" => __("Page Load failed. HTTP {0}", "sakurairo"),
-            "很高兴你翻到这里，但是真的没有了..." => __("Glad you come, but we've got nothing left.", "sakurairo")
+            '复制成功！' => __("Copied!", 'sakurairo'),
+            '拷贝代码' => __("Copy Code", 'sakurairo'),
+            '你的封面API好像不支持跨域调用,这种情况下缓存是不会生效的哦' => __("Your cover API seems to not support Cross Origin Access. In this case, Cover Cache won't take effect.", 'sakurairo'),
+            '提交中....' => __('Commiting....', 'sakurairo'),
+            '提交成功' => __('Succeed', 'sakurairo'),
+            '每次上传上限为10张' => __('10 files max per request', 'sakurairo'),
+            "图片上传大小限制为5 MB\n\n「{0}」\n\n这张图太大啦~请重新上传噢！" => __("5 MB max per file.\n\n「{0}」\n\nThis image is too large~Please reupload!", 'sakurairo'),
+            '上传中...' => __('Uploading...', 'sakurairo'),
+            '图片上传成功~' => __('Uploaded successfully~', 'sakurairo'),
+            "上传失败！\n文件名=> {0}\ncode=> {1}\n{2}" => __("Upload failed!\nFile Name=> {0}\ncode=> {1}\n{2}", 'sakurairo'),
+            '上传失败，请重试.' => __('Upload failed, please retry.', 'sakurairo'),
+            '页面加载出错了 HTTP {0}' => __("Page Load failed. HTTP {0}", 'sakurairo'),
+            '很高兴你翻到这里，但是真的没有了...' => __("Glad you come, but we've got nothing left.", 'sakurairo')
         ));
     }
 }
@@ -358,9 +358,9 @@ function convertip($ip)
     $ch = curl_init();
     $timeout = 5;
     if (iro_opt('statistics_format') === 'type_1') {
-        $url = "https://api.maho.cc/ip?ip=" . $ip;
+        $url = 'https://api.maho.cc/ip?ip=' . $ip;
     } else {
-        $url = "https://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip=" . $ip;
+        $url = 'https://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip=' . $ip;
     }
     $timeout = 5;
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -676,19 +676,19 @@ function wpjam_custom_upload_dir($uploads)
  */
 function unregister_default_widgets()
 {
-    unregister_widget("WP_Widget_Pages");
-    unregister_widget("WP_Widget_Calendar");
-    unregister_widget("WP_Widget_Archives");
-    unregister_widget("WP_Widget_Links");
-    unregister_widget("WP_Widget_Meta");
-    unregister_widget("WP_Widget_Search");
-    //unregister_widget("WP_Widget_Text");
-    unregister_widget("WP_Widget_Categories");
-    unregister_widget("WP_Widget_Recent_Posts");
-    //unregister_widget("WP_Widget_Recent_Comments");
-    //unregister_widget("WP_Widget_RSS");
-    //unregister_widget("WP_Widget_Tag_Cloud");
-    unregister_widget("WP_Nav_Menu_Widget");
+    unregister_widget('WP_Widget_Pages');
+    unregister_widget('WP_Widget_Calendar');
+    unregister_widget('WP_Widget_Archives');
+    unregister_widget('WP_Widget_Links');
+    unregister_widget('WP_Widget_Meta');
+    unregister_widget('WP_Widget_Search');
+    //unregister_widget('WP_Widget_Text');
+    unregister_widget('WP_Widget_Categories');
+    unregister_widget('WP_Widget_Recent_Posts');
+    //unregister_widget('WP_Widget_Recent_Comments');
+    //unregister_widget('WP_Widget_RSS');
+    //unregister_widget('WP_Widget_Tag_Cloud');
+    unregister_widget('WP_Nav_Menu_Widget');
 }
 add_action("widgets_init", "unregister_default_widgets", 11);
 
@@ -848,8 +848,8 @@ function smallenvelop_login_message($message)
 //Fix password reset bug </>
 function resetpassword_message_fix($message)
 {
-    $message = str_replace("<", "", $message);
-    $message = str_replace(">", "", $message);
+    $message = str_replace('<', '', $message);
+    $message = str_replace('>', '', $message);
     return $message;
 }
 add_filter('retrieve_password_message', 'resetpassword_message_fix');
@@ -857,10 +857,10 @@ add_filter('retrieve_password_message', 'resetpassword_message_fix');
 //Fix register email bug </>
 function new_user_message_fix($message)
 {
-    $show_register_ip = "注册IP | Registration IP: " . get_the_user_ip() . " (" . convertip(get_the_user_ip()) . ")\r\n\r\n如非本人操作请忽略此邮件 | Please ignore this email if this was not your operation.\r\n\r\n";
-    $message = str_replace("To set your password, visit the following address:", $show_register_ip . "在此设置密码 | To set your password, visit the following address:", $message);
-    $message = str_replace("<", "", $message);
-    $message = str_replace(">", "\r\n\r\n设置密码后在此登录 | Login here after setting password: ", $message);
+    $show_register_ip = '注册IP | Registration IP: ' . get_the_user_ip() . ' (' . convertip(get_the_user_ip()) . ")\r\n\r\n如非本人操作请忽略此邮件 | Please ignore this email if this was not your operation.\r\n\r\n";
+    $message = str_replace('To set your password, visit the following address:', $show_register_ip . '在此设置密码 | To set your password, visit the following address:', $message);
+    $message = str_replace('<', '', $message);
+    $message = str_replace('>', "\r\n\r\n设置密码后在此登录 | Login here after setting password: ", $message);
     return $message;
 }
 add_filter('wp_new_user_notification_email', 'new_user_message_fix');
@@ -931,8 +931,8 @@ function comment_mail_notify($comment_id)
     </div>
 ';
         $message = convert_smilies($message);
-        $message = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.2/vision/smilies/bilipng/emoji_', $message);
-        $message = str_replace("}}", '.png" alt="emoji" style="height: 2em; max-height: 2em;">', $message);
+        $message = str_replace('{{', '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.2/vision/smilies/bilipng/emoji_', $message);
+        $message = str_replace('}}', '.png" alt="emoji" style="height: 2em; max-height: 2em;">', $message);
 
         $message = str_replace('{UPLOAD}', 'https://i.loli.net/', $message);
         $message = str_replace('[/img][img]', '[/img^img]', $message);
@@ -941,7 +941,7 @@ function comment_mail_notify($comment_id)
         $message = str_replace('[/img]', '" style="width:80%;display: block;margin-left: auto;margin-right: auto;">', $message);
 
         $message = str_replace('[/img^img]', '" style="width:80%;display: block;margin-left: auto;margin-right: auto;"><img src="', $message);
-        $from = "From: \"" . get_option('blogname') . "\" <$wp_email>";
+        $from = 'From: "' . get_option('blogname') . "\" <$wp_email>";
         $headers = "$from\nContent-Type: text/html; charset=" . get_option('blog_charset') . "\n";
         wp_mail($to, $subject, $message, $headers);
     }
@@ -1136,8 +1136,8 @@ function bili_smile_filter_rss($content)
     $type = is_webp() ? 'webp' : 'png';
     $biliimgdir = 'bili' . $type . '/';
     $smiliesgs = '.' . $type;
-    $content = str_replace("{{", '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/' . $biliimgdir, $content);
-    $content = str_replace("}}", $smilesgs . '" alt="emoji" style="height: 2em; max-height: 2em;">', $content);
+    $content = str_replace('{{', '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/' . $biliimgdir, $content);
+    $content = str_replace('}}', $smilesgs . '" alt="emoji" style="height: 2em; max-height: 2em;">', $content);
     $content =  str_replace('[img]', '<img src="', $content);
     $content =  str_replace('[/img]', '" style="display: block;margin-left: auto;margin-right: auto;">', $content);
     return $content;
@@ -1167,6 +1167,8 @@ function get_the_user_ip()
     } else {
         $ip = $_SERVER['REMOTE_ADDR'];
     }
+    // 简略版
+    // $ip = $_SERVER['HTTP_CLIENT_IP'] ?: ($_SERVER['HTTP_X_FORWARDED_FOR'] ?: $_SERVER['REMOTE_ADDR']);
     return apply_filters('wpb_get_ip', $ip);
 }
 
