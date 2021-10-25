@@ -277,13 +277,13 @@ function sakura_scripts()
     }
 
     // 20161116 @Louie
-    $movies = iro_opt('cover_video') ? 
-    array(
-        'url' => iro_opt('cover_video_link'), 
-        'name' => iro_opt('cover_video_title'), 
-        'live' => iro_opt('cover_video_live') ? true : false,
-        'loop'=>iro_opt('cover_video_loop') ? true : false
-        ) 
+    $movies = iro_opt('cover_video') ?
+        array(
+            'url' => iro_opt('cover_video_link'),
+            'name' => iro_opt('cover_video_title'),
+            'live' => iro_opt('cover_video_live') ? true : false,
+            'loop' => iro_opt('cover_video_loop') ? true : false
+        )
         : 'close';
     $auto_height = !iro_opt('cover_full_screen') ? 'fixed' : 'auto';
     /*     $code_lamp = 'close';
@@ -415,8 +415,8 @@ if (!function_exists('akina_comment_format')) {
                                 <div class="right">
                                     <div class="info"><time datetime="<?php comment_date('Y-m-d'); ?>"><?php echo poi_time_since(strtotime($comment->comment_date_gmt), true); //comment_date(get_option('date_format'));  
                                                                                                         ?></time><?php echo siren_get_useragent($comment->comment_agent); ?><?php echo mobile_get_useragent_icon($comment->comment_agent); ?>&nbsp;<?php if (iro_opt('comment_location')) {
-                                                                                                                                                                                                                                                                                                                                                                            _e('Location', 'sakurairo'); /*来自*/ ?>: <?php echo convertip(get_comment_author_ip());
-                                                                                                                                                                                                                                                                                                                                                                                                                                                } ?>
+                                                                                                                                                                                                                                                        _e('Location', 'sakurairo'); /*来自*/ ?>: <?php echo convertip(get_comment_author_ip());
+                                                                                                                                                                                                                                                                                                                                                                                                                } ?>
                                     <?php if (current_user_can('manage_options') and (wp_is_mobile() == false)) {
                                         $comment_ID = $comment->comment_ID;
                                         $i_private = get_comment_meta($comment_ID, '_private', true);
@@ -531,7 +531,8 @@ function get_post_views($post_id)
     }
 }
 
-function is_webp(): bool {
+function is_webp(): bool
+{
     return (isset($_COOKIE['su_webp']) || (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'image/webp')));
 }
 
@@ -801,7 +802,7 @@ function custom_html()
 {
     $loginbg = iro_opt('login_background') ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/login_background.jpg'; ?>
         <script type="text/javascript">
-            document.body.insertAdjacentHTML("afterbegin", "<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");
+            document.body.insertAdjacentHTML("afterbegin", "<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/login_loading.gif\" width=\"58\" height=\"10\"></div>");
             document.head.insertAdjacentHTML("afterbegin", "<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
             let isLoading = true
             const loading = document.querySelector(".loading")
@@ -1468,7 +1469,7 @@ add_action('admin_head', 'custom_admin_open_sans_style');
 // WordPress Custom Font @ Admin
 function custom_admin_open_sans_font()
 {
-    echo '<link href="https://' . iro_opt('google_fonts_api') .'/css?family=Merriweather+Sans|Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
+    echo '<link href="https://' . iro_opt('google_fonts_api') . '/css?family=Merriweather+Sans|Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
     echo '<style>body, #wpadminbar *:not([class="ab-icon"]), .wp-core-ui, .media-menu, .media-frame *, .media-modal *{font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style>' . PHP_EOL;
 }
 add_action('admin_head', 'custom_admin_open_sans_font');
@@ -1477,7 +1478,7 @@ add_action('admin_head', 'custom_admin_open_sans_font');
 function custom_admin_open_sans_font_frontend_toolbar()
 {
     if (current_user_can('administrator')) {
-        echo '<link href="https://' . iro_opt('google_fonts_api') .'/css?family=Merriweather+Sans&display=swap" rel="stylesheet">' . PHP_EOL;
+        echo '<link href="https://' . iro_opt('google_fonts_api') . '/css?family=Merriweather+Sans&display=swap" rel="stylesheet">' . PHP_EOL;
         echo '<style>#wpadminbar *:not([class="ab-icon"]){font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style>' . PHP_EOL;
     }
 }
@@ -1487,7 +1488,7 @@ add_action('wp_head', 'custom_admin_open_sans_font_frontend_toolbar');
 function custom_admin_open_sans_font_login_page()
 {
     if (stripos($_SERVER["SCRIPT_NAME"], strrchr(wp_login_url(), '/')) !== false) {
-        echo '<link href="https://' . iro_opt('google_fonts_api') .'/css?family=Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
+        echo '<link href="https://' . iro_opt('google_fonts_api') . '/css?family=Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
         echo '<style>body{font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style>' . PHP_EOL;
     }
 }
@@ -1516,10 +1517,11 @@ function codecheese_register_post($sanitized_user_login, $user_email, $errors)
         $errors->add('invalid_email', __('<b>ERROR</b>: This email domain (<b>@' . $email[1] . '</b>) has been blocked. Please use another email.'));
     }
 }
-function array_html_props(array $props){
+function array_html_props(array $props)
+{
     $props_string = '';
     foreach ($props as $key => $value) {
-        $props_string .= ' '.$key . '="' . $value . '"';
+        $props_string .= ' ' . $key . '="' . $value . '"';
     }
     return $props_string;
 }
@@ -1530,7 +1532,7 @@ function array_html_props(array $props){
 function lazyload_img(string $src, string $class = '', array $otherParam = array())
 {
     $noscriptParam = $otherParam;
-    if($class) $noscriptParam['class'] = $class;
+    if ($class) $noscriptParam['class'] = $class;
     $noscriptParam['src'] = $src;
     $otherParam['class'] = 'lazyload' . ($class ? ' ' . $class : '');
     $otherParam['data-src'] = $src;
