@@ -439,7 +439,7 @@ function header_user_menu(){
             <a href="<?php bloginfo('url'); ?>/wp-admin/post-new.php" target="_blank"><?php _e('New post','sakurairo')/*撰写文章*/?></a>
           <?php } ?>
           <a href="<?php bloginfo('url'); ?>/wp-admin/profile.php" target="_blank"><?php _e('Profile','sakurairo')/*个人资料*/?></a>
-          <a href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" target="_top"><?php _e('Sign out','sakurairo')/*退出登录*/?></a>
+          <a href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" target="_top" data-no-pjax><?php _e('Sign out','sakurairo')/*退出登录*/?></a>
         </div>
       </div>
     </div>
@@ -457,7 +457,7 @@ function header_user_menu(){
     </a>
     <div class="header-user-menu">
  <div class="herder-user-name no-logged">  
-   <a href="<?php echo $login_url; ?>" style="font-weight:bold;text-decoration:none">登录</a>  
+   <a id="login-link" href="<?php echo $login_url; ?>" data-no-pjax style="font-weight:bold;text-decoration:none">登录</a>  
       </div>
     </div>
   </div>
