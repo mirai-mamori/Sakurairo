@@ -29,10 +29,12 @@
 
 <?php if (iro_opt('login_blur', 'true')): ?>
 body::before{
-	-webkit-filter: blur(2px); /* Chrome, Opera */
-	-moz-filter: blur(2px);
-	-ms-filter: blur(2px);   
-	filter: blur(2px);
+	-webkit-backdrop-filter: blur(2px);
+	backdrop-filter: blur(2px);
+	content:"";
+	width:100vw;
+	height:100vh;
+	display: block;
 }
 <?php endif; ?>
 
