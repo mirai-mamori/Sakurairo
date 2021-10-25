@@ -799,26 +799,30 @@ add_filter('login_headerurl', 'custom_loginlogo_url');
 //Login Page Footer
 function custom_html()
 {
-    $loginbg = iro_opt('login_background') ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/login_background.jpg';?>
-    <script type="text/javascript" src="<?php echo  get_template_directory_uri();?>/js/login.js"></script>
-    <script type="text/javascript">
-    document.body.insertAdjacentHTML("afterbegin","<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");
-    document.head.insertAdjacentHTML("afterbegin","<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
-    const bg_img = document.querySelector("#bg img"),loading = document.querySelector(".loading");
-    bg_img.setAttribute("src","<?php echo $loginbg;?>");
-    const removeLoading = ()=>{
-        loading.classList.add("hide");
-        loading.classList.remove("show");
-        loading.addEventListener("transitionend",()=>{loading.style.display="none"});
-    }
-    bg_img.addEventListener("load",()=>{
-        resizeImage('bg');
-        window.addEventListener('resize',()=>resizeImage('bg'),{passive:true})
-        removeLoading()
-	});
-    <?php //3秒钟内加载不到图片也移除加载中提示?>
-    setTimeout(removeLoading,3000)
-    </script>
+    $loginbg = iro_opt('login_background') ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/login_background.jpg'; ?>
+        <script type="text/javascript">
+            document.body.insertAdjacentHTML("afterbegin", "<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");
+            document.head.insertAdjacentHTML("afterbegin", "<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
+            let isLoading = true
+            const loading = document.querySelector(".loading")
+            const src = "<?php echo $loginbg; ?>",
+                afterLoaded = () => {
+                    if (!isLoading) return
+                    document.body.style.backgroundImage = `url(${src})`
+                    loading.classList.add("hide");
+                    loading.classList.remove("show");
+                    loading.addEventListener("transitionend", () => {
+                        loading.style.display = "none"
+                    });
+                    isLoading = false
+                },
+                img = document.createElement('img')
+            img.src = src
+            img.onload = afterLoaded
+            <?php //3秒钟内加载不到图片也移除加载中提示
+            ?>
+            setTimeout(afterLoaded, 3000)
+        </script>
     <?php
     echo '<script>
     document.addEventListener("DOMContentLoaded", ()=>{
