@@ -799,21 +799,22 @@ add_filter('login_headerurl', 'custom_loginlogo_url');
 //Login Page Footer
 function custom_html()
 {
-    $loginbg = iro_opt('login_background') ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/login_background.jpg';
-    echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/js/login.js"></script>' . "\n";
-    echo '<script type="text/javascript">
+    $loginbg = iro_opt('login_background') ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/login_background.jpg';?>
+    <script type="text/javascript" src="<?php echo  get_template_directory_uri();?>/js/login.js"></script>
+    <script type="text/javascript">
     document.body.insertAdjacentHTML("afterbegin","<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/login_loading.gif\" width=\"58\" height=\"10\"></div><div id=\"bg\"><img /></div>");
     document.head.insertAdjacentHTML("afterbegin","<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
     const bg_img = document.querySelector("#bg img"),loading = document.querySelector(".loading");
-    bg_img.setAttribute("src","', $loginbg, '");
-    bg_img.addEventListener("load",function(){
-        resizeImage(\'bg\');
-        window.onresize = ()=>{resizeImage("bg");}
+    bg_img.setAttribute("src","<?php echo $loginbg;?>");
+    bg_img.addEventListener("load",()=>{
+        resizeImage('bg');
+        window.addEventListener('resize',()=>resizeImage('bg'),{passive:true})
         loading.classList.add("hide");
         loading.classList.remove("show");
         loading.addEventListener("transitionend",function(){this.style.display="none"});
 	});
-    </script>', "\n";
+    </script>
+    <?php
     echo '<script>
     document.addEventListener("DOMContentLoaded", ()=>{
         document.querySelector("h1 a").style.backgroundImage = "url(\'', iro_opt('login_logo_img'), '\') ";
