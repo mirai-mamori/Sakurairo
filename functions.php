@@ -778,7 +778,6 @@ function custom_login()
     //echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css" />'."\n";
     echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/inc/login.css?' . IRO_VERSION . '" />' . "\n";
     //echo '<script type="text/javascript" src="'.get_bloginfo('template_directory').'/js/jquery.min.js"></script>'."\n";
-    echo '<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jquery/jquery@3.5.0/dist/jquery.min.js"></script>' . "\n";
 }
 
 add_action('login_head', 'custom_login');
