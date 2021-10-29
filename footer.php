@@ -164,11 +164,12 @@ $reception_background = iro_opt('reception_background');
 <?php if (iro_opt('live2d_options', 'true')): ?>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/<?php echo iro_opt('live2d_custom_user'); ?>/live2d-widget@<?php echo iro_opt('live2d_custom_user_ver'); ?>/autoload.js"></script>
 <?php endif; ?>
-
 <!-- logo字体部分 -->
-<link rel="stylesheet" href="<?php echo $mashiro_logo['font_link']; ?>" media="all">
-<?php 
-echo iro_opt('footer_addition','');
+<?php if (iro_opt('mashiro_logo_option') == true) { ?>
+	<link rel="stylesheet" href="<?php echo $mashiro_logo['font_link']; ?>" media="all">
+<?php } ?>
+<?php
+echo iro_opt('footer_addition', '');
 ?>
 </body>
 <!-- Particles动效 -->
