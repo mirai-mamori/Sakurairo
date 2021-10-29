@@ -19,7 +19,8 @@ if ( $site_description && ( is_home() || is_front_page() ) ) echo " - $site_desc
 </title>
 <link type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/css/basic/404_lib.css" rel="stylesheet" />
 <?php wp_head(); ?>
-<script>
+<?php
+/* <script>
 var the_url=window.location.href;
 var the_dom="<?php echo str_replace("http://", "", str_replace("https://", "", get_site_url())); ?>";
 var no_report = false;
@@ -36,7 +37,8 @@ function httpGet(theUrl) {
 }
 var report_url = "https://api.mashiro.top/count/404/?" + "url="+the_url+"&ua="+the_ua+"&ref="+the_ref;
 if (!no_report) httpGet(report_url);
-</script>
+</script> */
+?>
 </head>
 <body <?php body_class(); ?>>
 <section class="error-404 not-found">
