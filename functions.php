@@ -1476,7 +1476,7 @@ add_action('admin_head', 'custom_admin_open_sans_font');
 // WordPress Custom Font @ Admin Frontend Toolbar
 function custom_admin_open_sans_font_frontend_toolbar()
 {
-    if (current_user_can('administrator')) {
+    if (current_user_can('administrator') && is_admin_bar_showing()) {
         echo '<link href="https://' . iro_opt('google_fonts_api') . '/css?family=Merriweather+Sans&display=swap" rel="stylesheet">' . PHP_EOL;
         echo '<style>#wpadminbar *:not([class="ab-icon"]){font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style>' . PHP_EOL;
     }
