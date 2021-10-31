@@ -880,7 +880,6 @@ body.dark .comment-respond .logged-in-as a,
 body.dark span.sitename 
 {color:#CCCCCC;}
 
-body.dark .header-user-avatar:hover ,
 body.dark .aplayer .aplayer-list ol li.aplayer-list-light ,
 body.dark .site-header:hover 
 {background:#333333;}
