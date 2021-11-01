@@ -3159,6 +3159,29 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ), 
 
       array(
+        'id' => 'lightgallery',
+        'type' => 'switcher',
+        'title' => __('LightGallery Lightbox Effect','sakurairo_csf'),
+        'label' => __('License is required for commercial propose. ','sakurairo_csf'),
+        'dependency' => array(array( 'baguetteBox', '==', 'false' ),array('fancybox','==','false')),
+        'default' => false
+      ), 
+
+      array(
+        'id' => 'lightgallery_option',
+        'type' => 'code_editor',
+        'sanitize' => false,
+        'title' => __('LightGallery Lightbox Effect JSON','sakurairo_csf'),
+        'label' => __('https://www.lightgalleryjs.com/docs/settings/ ','sakurairo_csf'),
+        'dependency' => array( 'lightgallery', '==', 'true' ),
+        'default' => '{
+          plugins:["hash","zoom"],
+          supportLegacyBrowser:false,
+          selector:"figure > img",
+        }'
+      ), 
+
+      array(
         'type' => 'subheading',
         'content' => __('Code Highlighting','sakurairo_csf'),
       ),

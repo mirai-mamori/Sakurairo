@@ -16,6 +16,10 @@ var mashiro_option = {
     echo_if_true('footer_yiyan','yiyan');
     echo_if_true('baguetteBox','baguetteBoxON');
     echo_if_true('fancybox','fancybox');
+    if(iro_opt('lightgallery')){
+        $options = iro_opt('lightgallery_option');
+        echo "lightGallery:$options,";
+    }
     ?>
     darkmode :<?php echo iro_opt('theme_darkmode_auto') ? 'true':'false';?>,
     <?php if ( iro_opt('theme_darkmode_auto') ):echo 'dm_strategy:"'.iro_opt('theme_darkmode_strategy','time').'",'.PHP_EOL;endif; ?>
