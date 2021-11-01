@@ -3162,17 +3162,24 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'lightgallery',
         'type' => 'switcher',
         'title' => __('LightGallery Lightbox Effect','sakurairo_csf'),
-        'label' => __('License is required for commercial propose. ','sakurairo_csf'),
+        'label' => __('LightGallery will be used as an image lightbox effect after turning on.','sakurairo_csf'),
         'dependency' => array(array( 'baguetteBox', '==', 'false' ),array('fancybox','==','false')),
         'default' => false
       ), 
-
+      array(
+        'type'    => 'content',
+        'content'=>__('<strong>Attension: Please read <a href="https://github.com/sachinchoolur/lightGallery#license">License Instruction</a> before use.</strong>'
+        .'<br/><strong><a href="https://www.lightgalleryjs.com/demos/thumbnails/">Demos</a></strong> | <strong><a href="https://www.lightgalleryjs.com/docs/settings/">Reference</a></strong> | <strong><a href="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/">Plugin List</a></strong> '
+        .'<br/> Please write settings in JavaScript. An example has been provided as default setting.'
+        .'<br/> It should be captiable for Most User using WordPress Guttenberg Editor.'
+        .'<br/>Submit new discussion on Github for assistance. https://github.com/mirai-mamori/Sakurairo/discussions','sakurairo_csf')       ,
+        'dependency' => array( 'lightgallery', '==', 'true' ),
+      ),
       array(
         'id' => 'lightgallery_option',
         'type' => 'code_editor',
         'sanitize' => false,
-        'title' => __('LightGallery Lightbox Effect JSON','sakurairo_csf'),
-        'label' => __('https://www.lightgalleryjs.com/docs/settings/ ','sakurairo_csf'),
+        'title' => __('LightGallery Lightbox Effect Options','sakurairo_csf'),
         'dependency' => array( 'lightgallery', '==', 'true' ),
         'default' => '{
           plugins:["hash","zoom"],
