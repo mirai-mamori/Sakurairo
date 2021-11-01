@@ -1614,7 +1614,7 @@ li.link-item {
     -webkit-transition: all .4s ease;
     transition: all .4s ease;
     position: fixed;
-    z-index: 9999;
+    z-index: 999;
     border-radius: 0px;
 }
 
