@@ -1579,14 +1579,14 @@ i.iconfont.hotpost {
     border-radius: 0 10px 10px 0
 }
 
-.post-thumb a img {
+.post-thumb a * {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: all .6s
 }
 
-.post-thumb a img:hover {
+.post-thumb a *:hover {
     transform: scale(1.1)
 }
 

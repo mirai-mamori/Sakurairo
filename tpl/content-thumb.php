@@ -14,22 +14,45 @@ $i=0; while ( have_posts() ) : the_post(); $i++;
 if( $i == 1 ){
     $class = ' post-list-show';
 }
-if(has_post_thumbnail()){
-	$post_thumbnail_id= get_post_thumbnail_id($post->ID);
-	$large_image_url = wp_get_attachment_image_src($post_thumbnail_id, 'large');
-	if($large_image_url==false){
-		$large_image_url = wp_get_attachment_image_src($post_thumbnail_id, 'medium');
+//封面视频
+$use_as_thumb = get_post_meta(get_the_ID(), 'use_as_thumb', true);//'true','only',(default)
+$cover_type = $use_as_thumb == 'true' || $use_as_thumb == 'only'?get_post_meta(get_the_ID(), 'cover_type', true):'';
+$cover_html = "";
+switch ($cover_type) {
+	case 'hls':
+		$video_cover = get_post_meta(get_the_ID(), 'video_cover', true);
+		$cover_html = '<video class="hls" poster="'.iro_opt('load_out_svg').'#lazyload-blur" src="'.  $video_cover.'" autoplay loop muted="true" disablePictureInPicture disableRemotePlayback>'
+		. __('Your browser does not support HTML5 video.','sakurairo')
+		.'</video>';
+		break;
+	case 'normal':
+		$video_cover = get_post_meta(get_the_ID(), 'video_cover', true);
+		$cover_html = '<video poster="'.iro_opt('load_out_svg').'#lazyload-blur" src="'.  $video_cover.'" autoplay loop muted="true" disablePictureInPicture disableRemotePlayback>'
+		. __('Your browser does not support HTML5 video.','sakurairo')
+		.'</video>';
+		break;
+	default:
+	$post_img = '';
+	if(has_post_thumbnail()){
+		$post_thumbnail_id= get_post_thumbnail_id($post->ID);
+		$large_image_url = wp_get_attachment_image_src($post_thumbnail_id, 'large');
 		if($large_image_url==false){
-			$large_image_url = wp_get_attachment_image_src($post_thumbnail_id);
+			$large_image_url = wp_get_attachment_image_src($post_thumbnail_id, 'medium');
 			if($large_image_url==false){
-				$post_img = DEFAULT_FEATURE_IMAGE();
+				$large_image_url = wp_get_attachment_image_src($post_thumbnail_id);
+				if($large_image_url==false){
+					$post_img = DEFAULT_FEATURE_IMAGE();
+				}
 			}
 		}
+		$post_img = $large_image_url[0] ?? DEFAULT_FEATURE_IMAGE();
+	}else{
+		$post_img = DEFAULT_FEATURE_IMAGE();
 	}
-	$post_img = $large_image_url[0] ?? DEFAULT_FEATURE_IMAGE();
-}else{
-	$post_img = DEFAULT_FEATURE_IMAGE();
+	$cover_html = '<img class="lazyload" src="'.iro_opt('load_out_svg').'#lazyload-blur" data-src="'. $post_img.'"/>';
+		break;
 }
+
 $the_cat = get_the_category();
 // 摘要字数限制
 
@@ -37,7 +60,9 @@ $the_cat = get_the_category();
 ?>
 	<article class="post post-list-thumb <?php echo $class; ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
 		<div class="post-thumb">
-			<a href="<?php the_permalink(); ?>"><img class="lazyload" src="<?php echo iro_opt('load_out_svg'); ?>#lazyload-blur" data-src="<?php echo $post_img; ?>"></a>
+			<a href="<?php the_permalink(); ?>">
+			<?php echo $cover_html;?>
+		</a>
 		</div><!-- thumbnail-->
 		<div class="post-content-wrap">
 			<div class="post-content">
