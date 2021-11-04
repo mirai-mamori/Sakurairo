@@ -406,14 +406,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id'     => 'google_fonts_api',
+        'id'     => 'gfonts_api',
         'type'   => 'text',
         'title'  => __('Google Fonts Api Link','sakurairo_csf'),
-        'default' => 'fonts.maho.cc'
+        'default' => 'fonts.loli.net'
       ),
 
       array(
-        'id'     => 'google_fonts_add',
+        'id'     => 'gfonts_add_name',
         'type'   => 'text',
         'title'  => __('Google Fonts Name','sakurairo_csf'),
         'desc'   => __('Please make sure that the added fonts can be referenced in Google Fonts library. Fill in the font names. The added fonts must be preceded by "|". If multiple fonts are referenced, use "|" as the separator. If the font name has spaces, use a plus sign instead. For example: | zcool + xiaowei| Ma + Shan + Zheng','sakurairo_csf'),
@@ -628,7 +628,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'text_b'     => '',
           'text_c'     => '',
           'text_secondary' => '',
-          'font_link'     => 'https://fonts.maho.cc/css?family=ZCOOL+QingKe+HuangYou&display=swap',
+          'font_link'     => 'https://fonts.loli.net/css?family=ZCOOL+QingKe+HuangYou&display=swap',
           'font_name'    => 'ZCOOL QingKe HuangYou',
         ),
       ),
