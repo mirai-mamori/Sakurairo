@@ -17,13 +17,14 @@ while (have_posts()) : the_post();
 		$class = ' post-list-show';
 	}
 	//封面视频
+	//@seealso https://github.com/mashirozx/Sakura/wiki/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2%E8%A7%86%E9%A2%91
 	$use_as_thumb = get_post_meta(get_the_ID(), 'use_as_thumb', true); //'true','only',(default)
 	$cover_type = $use_as_thumb == 'true' || $use_as_thumb == 'only' ? get_post_meta(get_the_ID(), 'cover_type', true) : '';
 	$cover_html = "";
 	switch ($cover_type) {
 		case 'hls':
 			$video_cover = get_post_meta(get_the_ID(), 'video_cover', true);
-			$cover_html = '<video class="hls" poster="' . iro_opt('load_out_svg') . '#lazyload-blur" src="' .  $video_cover . '" autoplay loop muted="true" disablePictureInPicture disableRemotePlayback>'
+			$cover_html = '<video class="hls" poster="' . iro_opt('load_out_svg') . '#lazyload-blur" src="' .  $video_cover . '" loop muted="true" disablePictureInPicture disableRemotePlayback>'
 				. __('Your browser does not support HTML5 video.', 'sakurairo')
 				. '</video>';
 			break;
