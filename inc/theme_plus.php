@@ -390,7 +390,7 @@ function the_video_headPattern(bool $isHls = false)
                 <?php
                 if ($isHls) {
                 ?>
-                    <video loop id="coverVideo" class='hls' <?php echo $video_poster_attr; ?> data-src="<?php echo $video_cover; ?>"></video>
+                    <video loop id="coverVideo" class="hls" <?php echo $video_poster_attr; ?> data-src="<?php echo $video_cover; ?>"></video>
                 <?php
                 } else {
                 ?>
