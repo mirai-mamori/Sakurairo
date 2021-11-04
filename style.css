@@ -1788,7 +1788,7 @@ i.iconfont.hotpost {
 }
 
 .site-footer {
-    padding: 2%;
+    padding: max(2%,45px);
     background: rgba(255, 255, 255, .8);
     margin-left: auto;
     margin-right: auto;
