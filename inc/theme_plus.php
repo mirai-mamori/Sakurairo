@@ -336,7 +336,6 @@ function the_headPattern(){
 function the_video_headPattern(bool $isHls = false)
 {
     $t = ''; // 标题
-    $full_image_urls = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
     $thubm_image_urls = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'thumbnail');
 
     $video_cover = get_post_meta(get_the_ID(), 'video_cover', true);
@@ -347,7 +346,6 @@ function the_video_headPattern(bool $isHls = false)
     } else {
         $video_poster_attr = ' poster="' . $video_cover_thumb . '" ';
     }
-    $full_image_url = !empty($full_image_urls) ? $full_image_urls[0] : null;
     $thubm_image_url = !empty($thubm_image_urls) ? $thubm_image_urls[0] : null;
     if (is_single()) {
         while (have_posts()) {
@@ -369,20 +367,17 @@ function the_video_headPattern(bool $isHls = false)
     } elseif (is_page()) {
         $t .= the_title('<h1 class="entry-title">', '</h1>', false);
     } elseif (is_archive()) {
-        $full_image_url = z_taxonomy_image_url();
         $thubm_image_url = iro_opt('load_out_svg');
         $des = category_description() ? category_description() : ''; // 描述
         $t .= '<h1 class="cat-title">' . single_cat_title('', false) . '</h1>';
         $t .= ' <span class="cat-des">' . $des . '</span>';
     } elseif (is_search()) {
-        $full_image_url = get_random_bg_url();
         $thubm_image_url = iro_opt('load_out_svg');
         $t .= '<h1 class="entry-title search-title"> ' . sprintf(__("Search results for \" %s \"", "sakurairo"), get_search_query()) ./*关于“ '.get_search_query().' ”的搜索结果*/ '</h1>';
     }
     $thubm_image_url = $thubm_image_url . "#lazyload-blur";
     $thubm_image_url = str_replace(iro_opt('image_cdn'), 'https://cdn.2heng.xin/', $thubm_image_url);
-    if (!iro_opt('patternimg')) $full_image_url = false;
-    if (!is_home()  && $full_image_url) { ?>
+    if (!is_home()) { ?>
         <div class="pattern-center-blank"></div>
         <div class="pattern-center <?php if (is_single()) : echo $center;
                                     endif; ?>">
