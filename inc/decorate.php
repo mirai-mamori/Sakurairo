@@ -934,7 +934,8 @@ body.dark .headertop-down i
 body.dark img,
 body.dark .highlight-wrap,
 body.dark iframe,
-body.dark .entry-content .aplayer
+body.dark .entry-content .aplayer,
+body.dark .post-thumb video
 {filter:brightness(<?php echo iro_opt('theme_darkmode_img_bright'); ?>);}
 
 /*深色模式主题色*/

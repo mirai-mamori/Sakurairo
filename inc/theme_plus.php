@@ -321,7 +321,7 @@ function the_headPattern(){
   if(!is_home() && $full_image_url) : ?>
   <div class="pattern-center-blank"></div>
   <div class="pattern-center <?php if(is_single()){echo $center;} ?>">
-    <div class="pattern-attachment-img lazyload" style="background-image: url(<?php echo iro_opt('load_out_svg'); ?>)" data-src="<?php echo $full_image_url; ?>"> </div>
+    <div class="pattern-attachment bg lazyload" style="background-image: url(<?php echo iro_opt('load_out_svg'); ?>)" data-src="<?php echo $full_image_url; ?>"> </div>
     <header class="pattern-header <?php if(is_single()){echo $header;} ?>"><?php echo $t; ?></header>
   </div>
   <?php else :
@@ -379,9 +379,8 @@ function the_video_headPattern(bool $isHls = false)
     $thubm_image_url = str_replace(iro_opt('image_cdn'), 'https://cdn.2heng.xin/', $thubm_image_url);
     if (!is_home()) { ?>
         <div class="pattern-center-blank"></div>
-        <div class="pattern-center <?php if (is_single()) : echo $center;
-                                    endif; ?>">
-            <div class="pattern-attachment-img" style="height: auto;">
+        <div class="pattern-center <?php if (is_single()) : echo $center;endif; ?>">
+            <div class="pattern-attachment">
                 <?php
                 if ($isHls) {
                 ?>
@@ -397,12 +396,6 @@ function the_video_headPattern(bool $isHls = false)
                 }
                 ?>
             </div>
-            <style>
-                .pattern-center::before,
-                .pattern-center-sakura::before {
-                    display: none
-                }
-            </style>
             <header class="pattern-header <?php if (is_single()) : echo $header;
                                             endif; ?>">
                 <?php echo $t; ?>
