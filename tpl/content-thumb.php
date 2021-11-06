@@ -24,13 +24,13 @@ while (have_posts()) : the_post();
 	switch ($cover_type) {
 		case 'hls':
 			$video_cover = get_post_meta(get_the_ID(), 'video_cover', true);
-			$cover_html = '<video class="hls" poster="' . iro_opt('load_out_svg') . '#lazyload-blur" src="' .  $video_cover . '" loop muted="true" disablePictureInPicture disableRemotePlayback>'
+			$cover_html = '<video class="hls" poster="' . iro_opt('load_out_svg') . '#lazyload-blur" src="' .  $video_cover . '" loop muted="true" disablePictureInPicture disableRemotePlayback playsinline>'
 				. __('Your browser does not support HTML5 video.', 'sakurairo')
 				. '</video>';
 			break;
 		case 'normal':
 			$video_cover = get_post_meta(get_the_ID(), 'video_cover', true);
-			$cover_html = '<video class="lazyload" poster="' . iro_opt('load_out_svg') . '#lazyload-blur" data-src="' .  $video_cover . '" autoplay loop muted="true" disablePictureInPicture disableRemotePlayback>'
+			$cover_html = '<video class="lazyload" poster="' . iro_opt('load_out_svg') . '#lazyload-blur" data-src="' .  $video_cover . '" autoplay loop muted="true" disablePictureInPicture disableRemotePlayback playsinline>'
 				. __('Your browser does not support HTML5 video.', 'sakurairo')
 				. '</video>';
 			break;
