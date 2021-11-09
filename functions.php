@@ -2066,7 +2066,12 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
                     return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
                 }
             } else {
-                return new WP_Error('prooffail', '<strong>错误</strong>：' . $response);
+                if ($response->success === 0 && $response->msg){
+                    $errorcode = $response->msg;
+                    return new WP_Error('prooffail', '<strong>错误</strong>：' . $errorcode);
+                } else {
+                    return new WP_Error('prooffail', '<strong>错误</strong>：未知错误');
+                }
             }
         } else {
             return new WP_Error('prooffail', '<strong>错误</strong>：请先进行人机验证');
