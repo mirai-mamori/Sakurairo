@@ -418,7 +418,8 @@ function header_user_menu(){
     <div class="header-user-avatar">
       <img class="faa-spin animated-hover" src="<?php echo get_avatar_url( $current_user->ID, 64 );/*$ava;*/ ?>" width="30" height="30">
       <div class="header-user-menu">
-        <div class="herder-user-name">当前已登录 
+        <div class="herder-user-name">
+          <?php _e("Signed in as","sakurairo")?> 
           <div class="herder-user-name-u"><?php echo $current_user->display_name; ?></div>
         </div>
         <div class="user-menu-option">
