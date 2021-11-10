@@ -534,9 +534,13 @@ msgstr[0] "表示"
 msgid "Search results for \" %s \""
 msgstr "\"%s\" の検索結果"
 
-#: inc/theme_plus.php:421
+#: inc/theme_plus.php:16
 msgid "EDIT"
 msgstr "編集"
+
+#: inc/theme_plus.php:422
+msgid "Signed in as"
+msgstr "ようこそ"
 
 #: inc/theme_plus.php:484
 msgid "New post"
