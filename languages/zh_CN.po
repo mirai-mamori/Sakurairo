@@ -468,9 +468,17 @@ msgstr[0] "次阅读"
 msgid "Search results for \" %s \""
 msgstr "关于“ %s ”的搜索结果"
 
-#: inc/theme_plus.php:421
+#: inc/theme_plus.php:16
 msgid "EDIT"
 msgstr "编辑"
+
+#: inc/theme_plus.php:422
+msgid "Signed in as"
+msgstr "当前已登录"
+
+#: inc/theme_plus.php:449
+msgid "Log in"
+msgstr "登录"
 
 #: inc/theme_plus.php:484
 msgid "New post"

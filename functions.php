@@ -2059,14 +2059,19 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
             $ip = get_the_user_ip();
             $vaptcha = new Sakura\API\Vaptcha;
             $response = $vaptcha->checkVaptcha($url, $token, $ip);
-            if ($response->msg && $response->msg === 'success') {
+            if ($response->msg && $response->success && $response->score) {
                 if ($response->success === 1 && $response->score >= 70) {
                     return $user;
+                } else if ($response->success === 0) {
+                    $errorcode = $response->msg;
+                    return new WP_Error('prooffail', '<strong>错误</strong>：' . $errorcode);
                 } else {
                     return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
                 }
-            } else {
+            } else if (is_string($response)) {
                 return new WP_Error('prooffail', '<strong>错误</strong>：' . $response);
+            } else {
+                return new WP_Error('prooffail', '<strong>错误</strong>：未知错误');
             }
         } else {
             return new WP_Error('prooffail', '<strong>错误</strong>：请先进行人机验证');
