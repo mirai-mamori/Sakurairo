@@ -472,6 +472,10 @@ msgstr ""
 msgid "Signed in as"
 msgstr ""
 
+#: inc/theme_plus.php:449
+msgid "Log in"
+msgstr ""
+
 #: inc/theme_plus.php:484
 msgid "New post"
 msgstr ""

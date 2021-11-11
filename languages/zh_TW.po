@@ -485,6 +485,10 @@ msgstr "編輯"
 msgid "Signed in as"
 msgstr "當前已登入"
 
+#: inc/theme_plus.php:449
+msgid "Log in"
+msgstr "登入"
+
 #: inc/theme_plus.php:484
 msgid "New post"
 msgstr "撰寫文章"

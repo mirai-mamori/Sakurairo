@@ -542,6 +542,10 @@ msgstr "編集"
 msgid "Signed in as"
 msgstr "ようこそ"
 
+#: inc/theme_plus.php:449
+msgid "Log in"
+msgstr "ログイン"
+
 #: inc/theme_plus.php:484
 msgid "New post"
 msgstr "新しい記事"

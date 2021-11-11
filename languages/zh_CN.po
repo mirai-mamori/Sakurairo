@@ -476,6 +476,10 @@ msgstr "编辑"
 msgid "Signed in as"
 msgstr "当前已登录"
 
+#: inc/theme_plus.php:449
+msgid "Log in"
+msgstr "登录"
+
 #: inc/theme_plus.php:484
 msgid "New post"
 msgstr "撰写文章"
