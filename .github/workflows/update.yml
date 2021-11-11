@@ -53,10 +53,8 @@ jobs:
           path: ./theme
         
       - name: Copy files
-        run: |
-             cp $GITHUB_WORKSPACE/script/dist/sakura-app.js $GITHUB_WORKSPACE/theme/js/sakura-app.js
-             cp $GITHUB_WORKSPACE/script/dist/sakura-app.js.map $GITHUB_WORKSPACE/theme/js/sakura-app.js.map
-             cp $GITHUB_WORKSPACE/script/dist/sakura-app.js.LICENSE.txt $GITHUB_WORKSPACE/theme/js/sakura-app.js.LICENSE.txt
+        run:  cp -r $GITHUB_WORKSPACE/script/dist/* $GITHUB_WORKSPACE/theme/js/
+             
       
       - name: Make Commit Message （Last Commit）
         run:  |
