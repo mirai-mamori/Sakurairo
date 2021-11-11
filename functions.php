@@ -322,7 +322,17 @@ function sakura_scripts()
             "上传失败！\n文件名=> {0}\ncode=> {1}\n{2}" => __("Upload failed!\nFile Name=> {0}\ncode=> {1}\n{2}", 'sakurairo'),
             '上传失败，请重试.' => __('Upload failed, please retry.', 'sakurairo'),
             '页面加载出错了 HTTP {0}' => __("Page Load failed. HTTP {0}", 'sakurairo'),
-            '很高兴你翻到这里，但是真的没有了...' => __("Glad you come, but we've got nothing left.", 'sakurairo')
+            '很高兴你翻到这里，但是真的没有了...' => __("Glad you come, but we've got nothing left.", 'sakurairo'),
+            "文章" => __("Post", 'sakurairo'),
+            "标签" => __("Tag", 'sakurairo'),
+            "目录" => __("Category", 'sakurairo'),
+            "页面" => __("Page", 'sakurairo'),
+            "评论" => __("Comment", 'sakurairo'),
+            "已暂停..." => __("Paused...", 'sakurairo'),
+            "正在载入视频 ..." => __("Loading Video...", 'sakurairo'),
+            "将从网络加载字体，流量请注意" => __("Downloading fonts, be aware of your data usage.", 'sakurairo'),
+            "您真的要设为私密吗？" => __("Are you sure you want set it private?", 'sakurairo'),
+            "您之前已设过私密评论" => __("You had set private comment before", 'sakurairo')
         ));
     }
 }
