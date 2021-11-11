@@ -751,7 +751,7 @@ add_filter("mce_buttons_3", "enable_more_buttons");
 function download($atts, $content = null)
 {
     return '<a class="download" href="' . $content . '" rel="external"
-target="_blank" title="下载地址">
+target="_blank" title="'.__("Download Link","sakurairo").'">
 <span><i class="iconfont down icon-pulldown"></i>Download</span></a>';
 }
 add_shortcode("download", "download");
