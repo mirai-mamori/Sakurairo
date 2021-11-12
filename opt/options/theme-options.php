@@ -409,7 +409,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id'     => 'google_fonts_api',
         'type'   => 'text',
         'title'  => __('Google Fonts Api Link','sakurairo_csf'),
-        'default' => 'fonts.maho.cc'
+        'default' => 'fonts.googleapis.com'
       ),
 
       array(
@@ -628,7 +628,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'text_b'     => '',
           'text_c'     => '',
           'text_secondary' => '',
-          'font_link'     => 'https://fonts.maho.cc/css?family=ZCOOL+QingKe+HuangYou&display=swap',
+          'font_link'     => 'https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap',
           'font_name'    => 'ZCOOL QingKe HuangYou',
         ),
       ),
