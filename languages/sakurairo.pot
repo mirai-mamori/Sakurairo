@@ -283,6 +283,10 @@ msgstr ""
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
+#: functions.php:754
+msgid "Download Link"
+msgstr ""
+
 #: functions.php:1213
 msgid "All expand/collapse"
 msgstr ""
@@ -604,6 +608,22 @@ msgstr ""
 
 #: user/page-register.php:43
 msgid "administrator"
+msgstr ""
+
+#: user/page-register.php:64
+msgid "User Name"
+msgstr ""
+
+#: user/page-register.php:65
+msgid "Email Address"
+msgstr ""
+
+#: user/page-register.php:66
+msgid "Password"
+msgstr ""
+
+#: user/page-register.php:67
+msgid "Confirm your password"
 msgstr ""
 
 #: user/page-register.php:70

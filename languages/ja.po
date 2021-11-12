@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
 "POT-Creation-Date: 2021-08-24 18:19+0800\n"
-"PO-Revision-Date: 2021-11-11 13:27+0800\n"
+"PO-Revision-Date: 2021-11-12 10:44+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -27,19 +27,16 @@ msgid "page %s"
 msgstr "%s ページ"
 
 #: 404.php:47
-#, fuzzy
 msgid "return to previous page"
 msgstr "前のページに戻る"
 
 #: 404.php:48
-#, fuzzy
 msgid "return to home page"
-msgstr "ホーム ページに戻る"
+msgstr "ホームページに戻る"
 
 #: 404.php:51
-#, fuzzy
 msgid "Don't worry, search in site?"
-msgstr "心配しないで、サイト内を検索しますか?"
+msgstr "心配しないで、サイト内検索はどうでしょうか?"
 
 #: 404.php:54 footer.php:56 search.php:42
 msgid "Search..."
@@ -50,7 +47,6 @@ msgid " Previous"
 msgstr " 前へ"
 
 #: comments.php:21
-#, fuzzy
 msgid "view comments"
 msgstr "コメントを表示する"
 
@@ -91,7 +87,6 @@ msgid "BiuBiuBiu~"
 msgstr "BiuBiuBiu~"
 
 #: comments.php:74
-#, fuzzy
 msgid "You are a surprise that I will only meet once in my life"
 msgstr "あなたは私が私の人生で一度だけ会う驚きです"
 
@@ -106,7 +101,6 @@ msgid "Woooooow ヾ(≧∇≦*)ゝ"
 msgstr "うわーうわー(≧∇≦*)うわー"
 
 #: comments.php:100
-#, fuzzy
 msgid "Auto pull nickname and avatar with a QQ num. entered"
 msgstr "QQ 番号が入力された自動プルニックネームとアバター"
 
@@ -116,12 +110,10 @@ msgid "Nickname or QQ number"
 msgstr "ニックネームまたは QQ 番号"
 
 #: comments.php:100
-#, fuzzy
 msgid "Name* "
-msgstr "サイト名"
+msgstr "サイト名 "
 
 #: comments.php:102
-#, fuzzy
 msgid "You will receive notification by email"
 msgstr "メールで通知を受け取ります"
 
@@ -130,12 +122,10 @@ msgid "email"
 msgstr "メールアドレス"
 
 #: comments.php:102
-#, fuzzy
 msgid "Must* "
-msgstr "必須*"
+msgstr "必須* "
 
 #: comments.php:104
-#, fuzzy
 msgid "Advertisement is forbidden 😀"
 msgstr "広告は禁止されています😀"
 
@@ -144,7 +134,6 @@ msgid "Site"
 msgstr "サイト"
 
 #: footer.php:70 footer.php:78
-#, fuzzy
 msgid "Want to find something?"
 msgstr "何かを見つけたいですか?"
 
@@ -161,7 +150,6 @@ msgid "Nav Menus"
 msgstr "メニュー"
 
 #: functions.php:199 functions.php:210
-#, fuzzy
 msgid "Ideas"
 msgstr "アイデア"
 
@@ -175,8 +163,6 @@ msgid "Publish New Idea"
 msgstr "新しいアイデアを公開"
 
 #: functions.php:203
-#, fuzzy
-#| msgid "Edit %s"
 msgid "Edit Idea"
 msgstr "%sを編集"
 
@@ -231,7 +217,6 @@ msgid "Commiting...."
 msgstr "コミットしています。"
 
 #: functions.php:311
-#, fuzzy
 msgid "Succeed"
 msgstr "継ぐ"
 
@@ -240,7 +225,6 @@ msgid "10 files max per request"
 msgstr "1回のリクエストで送信できるファイル数の上限は10個です"
 
 #: functions.php:313
-#, fuzzy
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -259,12 +243,10 @@ msgid "Uploading..."
 msgstr "アップロード中..."
 
 #: functions.php:315
-#, fuzzy
 msgid "Uploaded successfully~"
-msgstr "アップロードに成功しました。"
+msgstr "アップロードに成功しました~"
 
 #: functions.php:316
-#, fuzzy
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -277,17 +259,14 @@ msgstr ""
 "{2}"
 
 #: functions.php:317
-#, fuzzy
 msgid "Upload failed, please retry."
 msgstr "アップロードに失敗しました、もう一度やり直してください。"
 
 #: functions.php:318
-#, fuzzy
 msgid "Page Load failed. HTTP {0}"
 msgstr "ページの読み込みに失敗しました。HTTP {0}"
 
 #: functions.php:319
-#, fuzzy
 msgid "Glad you come, but we've got nothing left."
 msgstr "あなたが来てうれしいですが、私たちは何も残っていません。"
 
@@ -320,7 +299,6 @@ msgid "Edit"
 msgstr "編集"
 
 #: functions.php:514
-#, fuzzy
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
@@ -329,12 +307,14 @@ msgstr ""
 "\"_blank\">WP-統計を</a>インストールしてください"
 
 #: functions.php:544
-#, fuzzy
 msgid "This guy is so lazy ╮(╯▽╰)╭"
-msgstr "この子はとても怠惰な╮(╯▽╰)╭"
+msgstr "こやつはとても怠惰な╮(╯▽╰)╭"
+
+#: functions.php:754
+msgid "Download Link"
+msgstr "ダウンロードリンク"
 
 #: functions.php:1213
-#, fuzzy
 msgid "All expand/collapse"
 msgstr "すべての展開/折りたたみ"
 
@@ -343,7 +323,6 @@ msgid " "
 msgstr " "
 
 #: functions.php:1238
-#, fuzzy
 msgid " post(s)"
 msgstr "投稿(複数可)"
 
@@ -408,7 +387,7 @@ msgstr "画像なし"
 #: inc/classes/Cache.php:70 inc/theme_plus.php:723
 #, fuzzy
 msgid "The comment is private"
-msgstr "コメントは非公開です"
+msgstr "このコメントは非公開です"
 
 #: inc/template-tags.php:28
 #, php-format
@@ -435,7 +414,7 @@ msgstr "%1$s への投稿"
 #: inc/template-tags.php:58
 #, php-format
 msgid "Tagged %1$s"
-msgstr "タグ %1$s"
+msgstr "タグは %1$s"
 
 #. translators: %s: post title
 #: inc/template-tags.php:65
@@ -463,11 +442,11 @@ msgstr " 分前"
 
 #: inc/theme_plus.php:64
 msgid " seconds ago"
-msgstr " 秒"
+msgstr " 秒前"
 
 #: inc/theme_plus.php:72
 msgid "Posted on "
-msgstr "公開日　"
+msgstr "投稿日時は　"
 
 #: inc/theme_plus.php:131
 #, fuzzy
@@ -483,12 +462,10 @@ msgid "home"
 msgstr "ホーム"
 
 #: inc/theme_plus.php:246
-#, fuzzy
 msgid "Login successful, "
 msgstr "ログインに成功しました。"
 
 #: inc/theme_plus.php:246
-#, fuzzy
 msgid "seconds later automatically transfer to"
 msgstr "秒後に自動的に転送"
 
@@ -513,9 +490,8 @@ msgid "Logout"
 msgstr "ログアウト"
 
 #: inc/theme_plus.php:278
-#, fuzzy
 msgid "Sign out? "
-msgstr "ログアウト"
+msgstr "ログアウト?"
 
 #: inc/theme_plus.php:303 inc/theme_plus.php:358 inc/theme_plus.php:426
 #: tpl/content-single.php:20 tpl/single-image.php:18
@@ -524,7 +500,7 @@ msgid_plural "Views"
 msgstr[0] "表示"
 
 #: inc/theme_plus.php:315 inc/theme_plus.php:373 inc/theme_plus.php:441
-#, fuzzy, php-format
+#, php-format
 msgid "Search results for \" %s \""
 msgstr "\"%s\" の検索結果"
 
@@ -673,13 +649,29 @@ msgstr "登録要求を完了できません。お問い合わせください"
 msgid "administrator"
 msgstr "管理者"
 
+#: user/page-register.php:64
+msgid "User Name"
+msgstr "ユーザー名"
+
+#: user/page-register.php:65
+msgid "Email Address"
+msgstr "メールアドレス"
+
+#: user/page-register.php:66
+msgid "Password"
+msgstr "パスワード"
+
+#: user/page-register.php:67
+msgid "Confirm your password"
+msgstr "パスワードを確認してください"
+
 #: user/page-register.php:70
 msgid "Sign up"
 msgstr "サインアップ"
 
 #: user/page-register.php:77
 msgid "Success! Redirecting......"
-msgstr "成功！リダイレクト。。。。。。"
+msgstr "成功！リダイレクト中......"
 
 #: user/page-register.php:82
 msgid "Registration is not open yet."
