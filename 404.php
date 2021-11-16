@@ -71,7 +71,5 @@ if (!no_report) httpGet(report_url);
         $base_path = 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION;
     }
     ?>
-    <script src="<?php echo $base_path . '/js/anf-3187709c.js' ?>" type="text/javascript"></script>
-    <script src="<?php echo $base_path . '/js/anf-b84330fe.js' ?>" type="text/javascript"></script>
-
+    <script src="<?php echo $base_path . '/js/anf.js' ?>" type="text/javascript"></script>
 </body>
