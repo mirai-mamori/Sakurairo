@@ -8370,7 +8370,7 @@ td.hljs-ln-numbers {
     height:100%;
     object-fit: cover;
 }
-#coverVideo-btn {
+.coverVideo-btn {
     all: initial;
     display: inline-block;
     width: 36px;
@@ -8384,7 +8384,7 @@ td.hljs-ln-numbers {
     text-align: center;
     border-radius: 50%;
 }
-#coverVideo-btn:hover {
+.coverVideo-btn:hover {
     background: #ddd;
     color: black;
 }
