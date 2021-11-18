@@ -354,8 +354,8 @@ function the_video_headPattern(bool $isHls = false)
             $header = 'single-header';
             //$ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
             $edit_this_post_link = get_edit_html();
-            $btn_playControl = '<button id="cv-pc" class="coverVideo-btn .constant-width-to-height-ratio" onclick="coverVideo()"><i class="fa fa-pause" aria-hidden="true"></i></button>';
-/*             $btn_volumeControl = '<button id="cv-vc" class="coverVideo-btn .constant-width-to-height-ratio" onclick="coverVideoMute()"><i class="fa fa-volume-off" aria-hidden="true"></i></button>';
+            $btn_playControl = '<button id="cv-pc" class="coverVideo-btn" onclick="coverVideo()"><i class="fa fa-pause" aria-hidden="true"></i></button>';
+/*             $btn_volumeControl = '<button id="cv-vc" class="coverVideo-btn" onclick="coverVideoMute()"><i class="fa fa-volume-off" aria-hidden="true"></i></button>';
  */            $t .= the_title('<h1 class="entry-title">', $btn_playControl./* $btn_volumeControl. */'</h1>', false);
             $t .= '<p class="entry-census"><span><a href="' 
             . esc_url(get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename'))) . '">' 
