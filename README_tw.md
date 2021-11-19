@@ -1,4 +1,4 @@
-[简体中文](README.md) | **繁體中文** | [English](README_en.md)
+[简体中文](README.md) | **繁體中文** | [English](README_en.md) | [日本語](README_ja.md)
 
 [![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/banner.png)](https://github.com/mirai-mamori/Sakurairo)
 
