@@ -1,6 +1,6 @@
 # 版本发布记录
 ## 2.3 ツバメ　燕
-### 版本特性
+### 重要特性
 #### 前台登陆
 * **登陆界面:** 超过3秒登陆界面的预加载动画会自行消失 ([78e307d](https://github.com/mirai-mamori/Sakurairo/commit/78e307dd40e51437a07e1e7a1aae1fea36740408)), closes [#357](https://github.com/mirai-mamori/Sakurairo/issues/357)
 * **登陆界面:** *重大更改* 使用body来显示登陆界面背景；使登陆面板更加可读与美观；移动不变的样式定义 ([3777cee](https://github.com/mirai-mamori/Sakurairo/commit/3777cee0852bfe2edc46a202bbdf20536692f09c))
@@ -11,13 +11,27 @@
 * **文章封面视频:** 静音按钮 ([bd54d8e](https://github.com/Fuukei/Sakurairo_Scripts/commit/bd54d8e63338590188fe103a2f05e92165f347c3))
 #### 新灯箱插件LightGallery
 使用方法请参照[官方文档](https://www.lightgalleryjs.com/docs/getting-started/)
+
 相关commit：[bf17260](https://github.com/Fuukei/Sakurairo_Scripts/commit/bf172602d990549aa5847457468eacee83393802)
+#### \<meta>标签[theme-color](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color) 支持
+在支持的浏览器（如[Safari 15](https://developer.apple.com/documentation/safari-release-notes/safari-15-release-notes#HTML))上，标题栏颜色将随前台背景图的主题颜色变化（使用[@kotorik/palette](https://www.npmjs.com/package/@kotorik/palette)取色）
+
+从前台背景图取色失败时将使用主题设置的颜色值。
+* meta **theme-color** 使用主题设置的颜色值 ([6e50fcb](https://github.com/mirai-mamori/Sakurairo/commit/6e50fcb43ec8b406646db6fda2b6822db9e984d0))
+
 #### 体验改进
 * 可以在HTML标签中加入```data-no-pjax```属性来避免pjax加载。([7290f23](https://github.com/Fuukei/Sakurairo_Scripts/commit/7290f23a0f1e8308086a31af8225347698ae5b76))
 * 添加事件ajax_post_loaded ([2016881](https://github.com/Fuukei/Sakurairo_Scripts/commit/2016881d1dc1f9df7410604bcd9d64d38ffd61a1))
 * *重大更改* site-header z-index过高 ([90a48a0](https://github.com/mirai-mamori/Sakurairo/commit/90a48a07a38af93cb2a67ff90e7dea1d1b9d41cf))
 * *重大更改* 登录界面不再加载jQuery ([8bf5ef8](https://github.com/mirai-mamori/Sakurairo/commit/8bf5ef8c30867fb7dc40086e6fc145d15fcb2bcb))
-##### 
+* pjax下登录/登出操作体验问题 ([6ea0daf](https://github.com/mirai-mamori/Sakurairo/commit/6ea0dafd47d4563eda56a69da15889c589142a8a))
+* pjax下登录跳转网址不更新 ([8c1c8ac](https://github.com/Fuukei/Sakurairo_Scripts/commit/8c1c8ac4d694e438749b5bb76ebbdba70e85271c))
+* **设置项** 在<head>注入HTML代码 ([1b9eaa7](https://github.com/mirai-mamori/Sakurairo/commit/1b9eaa7723391e7a2e3e6aa3151c87f86501567e))
+
+***
+  
+*以下是commit信息*
+  
 ### 错误修复
 
 * 潜在的逻辑错误 ([cc63233](https://github.com/mirai-mamori/Sakurairo/commit/cc6323315b18a07daf190e0354d2d51b2f32d077))
