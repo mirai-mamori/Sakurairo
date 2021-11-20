@@ -2936,7 +2936,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Login Screen Background Image','sakurairo_csf'),
         'desc' => __('Set your login screen background image, leave this option blank to show the default','sakurairo_csf'),
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/login_background.jpg'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/login_background.jpeg'
       ),
 
       array(
@@ -2994,7 +2994,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Primary Menu Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#88cfef'
+        'default' => '#8acdea'
       ),  
 
       array(
@@ -3002,7 +3002,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Secondary Menu Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#67c4ef'
+        'default' => '#6ec5ea'
       ),  
 
       array(
@@ -3010,7 +3010,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Emphasis Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#342a29'
+        'default' => '#f9bcae'
       ),  
 
       array(
@@ -3018,7 +3018,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Button Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#d1976d'
+        'default' => '#f4c57f'
       ),  
 
       array(
