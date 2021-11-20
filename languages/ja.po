@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
 "POT-Creation-Date: 2021-08-24 18:19+0800\n"
-"PO-Revision-Date: 2021-11-12 10:44+0800\n"
+"PO-Revision-Date: 2021-11-20 21:58+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -91,21 +91,18 @@ msgid "You are a surprise that I will only meet once in my life"
 msgstr "あなたは私が私の人生で一度だけ会う驚きです"
 
 #: comments.php:78
-#, fuzzy
 msgid "Click me OωO"
-msgstr "私をクリックOωO"
+msgstr "Click me OωO"
 
 #: comments.php:79
-#, fuzzy
 msgid "Woooooow ヾ(≧∇≦*)ゝ"
-msgstr "うわーうわー(≧∇≦*)うわー"
+msgstr "うわーうわーヾ(≧∇≦*)ゝ"
 
 #: comments.php:100
 msgid "Auto pull nickname and avatar with a QQ num. entered"
 msgstr "QQ 番号が入力された自動プルニックネームとアバター"
 
 #: comments.php:100
-#, fuzzy
 msgid "Nickname or QQ number"
 msgstr "ニックネームまたは QQ 番号"
 
@@ -158,41 +155,32 @@ msgid "Idea"
 msgstr "アイデア"
 
 #: functions.php:201 functions.php:202
-#, fuzzy
 msgid "Publish New Idea"
-msgstr "新しいアイデアを公開"
+msgstr "新規追加"
 
 #: functions.php:203
 msgid "Edit Idea"
 msgstr "%sを編集"
 
 #: functions.php:204
-#, fuzzy
 msgid "New Idea"
 msgstr "新しいアイデア"
 
 #: functions.php:205
-#, fuzzy
-#| msgid "View"
-#| msgid_plural "Views"
 msgid "View Idea"
 msgstr "表示"
 
 #: functions.php:206
-#, fuzzy
-#| msgid "Search"
 msgid "Search Idea"
 msgstr "検索"
 
 #: functions.php:207
-#, fuzzy
 msgid "Not Found Idea"
 msgstr "アイデアが見つかりません"
 
 #: functions.php:208
-#, fuzzy
 msgid "No Idea in the Trash"
-msgstr "ゴミ箱にアイデアがない"
+msgstr "ゴミ箱の中には何もない"
 
 #: functions.php:307
 msgid "Copied!"
@@ -203,18 +191,16 @@ msgid "Copy Code"
 msgstr "コードをコピー"
 
 #: functions.php:309
-#, fuzzy
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
 msgstr ""
-"カバー API はクロス オリジン アクセスをサポートしていないようです。この場合、"
-"カバーキャッシュは有効になりません。"
+"あなたのカバー API はクロスオリジンアクセスをサポートしていないようです。この"
+"場合、Cover Cacheは有効になりません。"
 
 #: functions.php:310
-#, fuzzy
 msgid "Commiting...."
-msgstr "コミットしています。"
+msgstr "提出中…."
 
 #: functions.php:311
 msgid "Succeed"
@@ -324,16 +310,15 @@ msgstr " "
 
 #: functions.php:1238
 msgid " post(s)"
-msgstr "投稿(複数可)"
+msgstr "記事"
 
 #: functions.php:1261 functions.php:1264 inc/theme_plus.php:483
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
 #: functions.php:1492
-#, fuzzy
 msgid "<b>ERROR</b>: This email domain (<b>@"
-msgstr "<b>エラー</b>: この電子メール ドメイン (<b>@</b>"
+msgstr "<b>エラー</b>: このメールドメイン (<b>@"
 
 #: functions.php:1591
 msgid "QQ"
@@ -344,31 +329,28 @@ msgid "Sidebar"
 msgstr "サイドバー"
 
 #: functions.php:1783
-#, fuzzy
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
 "configure <a href=\"https://www.wpdaxue.com/wordpress-rewriterule.html\" "
 "target=\"_blank\"> pseudo-static </a>. </ b>"
 msgstr ""
-"<b> より良い経験のために、 <a href=\"/wp-admin/options-permalink.php\"> パー"
+"<b> より良い体験のために、 <a href=\"/wp-admin/options-permalink.php\"> パー"
 "マリンク </a> をプレーンとして設定しないでください。これを行うには、 <a href="
-"\"https://www.wpdaxue.com/wordpress-rewriterule.html\" target=\"_blank\"> 疑"
-"似静的 </a>を構成する必要があります。 </b>"
+"\"https://qiita.com/cyborg__ninja/items/8a191a00d402e78d8823\" target="
+"\"_blank\"> 擬似静的化 </a>を構成する必要があります。 </b>"
 
 #: header.php:41
-#, fuzzy, php-format
+#, php-format
 msgid "page %s "
 msgstr "ページ %s"
 
 #: inc/categories-images.php:45 inc/categories-images.php:66
-#, fuzzy
 msgid "category/tag image"
 msgstr "カテゴリ/タグ画像"
 
 #: inc/categories-images.php:48 inc/categories-images.php:68
 #: inc/categories-images.php:197
-#, fuzzy
 msgid "add image"
 msgstr "画像を追加する"
 
@@ -385,7 +367,6 @@ msgid "no image"
 msgstr "画像なし"
 
 #: inc/classes/Cache.php:70 inc/theme_plus.php:723
-#, fuzzy
 msgid "The comment is private"
 msgstr "このコメントは非公開です"
 
@@ -449,9 +430,8 @@ msgid "Posted on "
 msgstr "投稿日時は　"
 
 #: inc/theme_plus.php:131
-#, fuzzy
 msgid "Please upgrade wordpress to version 4.4+"
-msgstr "ワードプレスをバージョン4.4+にアップグレードしてください"
+msgstr "WordPressバージョン4.4以上が必要です"
 
 #: inc/theme_plus.php:237
 msgid "dashboard"
@@ -690,8 +670,8 @@ msgid ""
 "A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable "
 "WordPress Theme (Based on Theme Sakura)"
 msgstr ""
-"カラフルで使いやすい、完璧な経験、そして強力なカスタマイズ可能なワードプレス"
-"のテーマ(テーマさくらベース)"
+"デザインが多彩、操作が簡単、体験が完璧、カスタマイズ性が高いのWordPressテーマ"
+"です(Based on Theme Sakura)"
 
 #. Author of the plugin/theme
 msgid "Created by Fuukei"
