@@ -3331,7 +3331,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.9/vision/tsubame/tsubamelogo.gif"  alt="Theme Information" />','sakurairo_csf'),
+        'content' => __('<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/tsubame/tsubamelogo.gif"  alt="Theme Information" />','sakurairo_csf'),
       ),
 
       array(
