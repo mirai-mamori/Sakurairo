@@ -11,8 +11,6 @@
 
 ## 版本简介：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/banner2.png)](https://iro.tw/)
-
 [![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/function.png)](https://iro.tw/)
 
 ## 使用相关：

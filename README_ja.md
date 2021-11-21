@@ -1,6 +1,6 @@
 [简体中文](README.md) | [繁體中文](README_tw.md) | [English](README_en.md) | **日本語**
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/hyouryu/banner.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/banner.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -11,13 +11,11 @@
 
 ## バージョン紹介：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/hyouryu/whatsnew.png)](https://iro.tw/)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/hyouryu/function.png)](https://iro.tw/)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/jp/function.png)](https://iro.tw/)
 
 ## 活用方法：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/hyouryu/irotw.png)](https://iro.tw/)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/irotw.png)](https://iro.tw/)
 
 - 本テーマを利用しているサイト：https://iro.tw/demo.html
 
@@ -26,20 +24,6 @@
 - このテーマの使い方についてご不明な点がございましたら、[公式サイト](https://iro.tw/)を**ご覧ください**。 
 
 - 自分が体験している現象が本当にBugであることを確認した上で、 [issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) で質問をお寄せください。テンプレートに沿って、出来るだけ詳しく説明してください。ご協力ありがとうございました。
-
-## テーマをダウンロード：
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/hyouryu/dl.png)](https://iro.tw/)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/hyouryu/github.png)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/hyouryu/gitee.png)](https://gitee.com/mirai-mamori/Sakurairo)
-
-## 応援する：
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/hyouryu/star.png)](https://github.com/mirai-mamori/Sakurairo)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/hyouryu/sponsor.png)](https://afdian.net/@mamori)
 
 ## テーマの開発者たち：
 
