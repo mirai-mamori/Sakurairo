@@ -7253,7 +7253,6 @@ li>ol {
     background-color: rgba(255, 255, 255, 0);
     transform: translateX(0);
     right: calc((100% - 1040px - 250px)/ 2);
-    position: absolute !important;
     top: 480px;
     position: absolute;
     padding-top: 10px;
