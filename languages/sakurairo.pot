@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2021-08-24 18:18+0800\n"
+"POT-Creation-Date: 2021-11-11 11:45+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -283,6 +283,10 @@ msgstr ""
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
+#: functions.php:754
+msgid "Download Link"
+msgstr ""
+
 #: functions.php:1213
 msgid "All expand/collapse"
 msgstr ""
@@ -464,8 +468,16 @@ msgstr[1] ""
 msgid "Search results for \" %s \""
 msgstr ""
 
-#: inc/theme_plus.php:421
+#: inc/theme_plus.php:16
 msgid "EDIT"
+msgstr ""
+
+#: inc/theme_plus.php:422
+msgid "Signed in as"
+msgstr ""
+
+#: inc/theme_plus.php:449
+msgid "Log in"
 msgstr ""
 
 #: inc/theme_plus.php:484
@@ -596,6 +608,22 @@ msgstr ""
 
 #: user/page-register.php:43
 msgid "administrator"
+msgstr ""
+
+#: user/page-register.php:64
+msgid "User Name"
+msgstr ""
+
+#: user/page-register.php:65
+msgid "Email Address"
+msgstr ""
+
+#: user/page-register.php:66
+msgid "Password"
+msgstr ""
+
+#: user/page-register.php:67
+msgid "Confirm your password"
 msgstr ""
 
 #: user/page-register.php:70

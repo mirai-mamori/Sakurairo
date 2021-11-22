@@ -61,10 +61,10 @@ if( !empty($_POST['register_reg']) ) {
 					<h3>New Account</h3>
 				</div>
 				<form action="<?php echo $_SERVER["REQUEST_URI"]; ?>" method="post">  
-					<p><input type="text" name="user_login" tabindex="1" id="user_login" class="input" value="<?php if(!empty($sanitized_user_login)) echo $sanitized_user_login; ?>" placeholder="用户名" required /></p>
-					<p><input type="text" name="user_email" tabindex="2" id="user_email" class="input" value="<?php if(!empty($user_email)) echo $user_email; ?>" size="25" placeholder="电子邮箱" required /></p>
-					<p><input id="user_pwd1" class="input" tabindex="3" type="password" tabindex="21" size="25" value="" name="user_pass" placeholder="密码" required /></p>
-					<p><input id="user_pwd2" class="input" tabindex="4" type="password" tabindex="21" size="25" value="" name="user_pass2" placeholder="确认密码" required /></p>
+					<p><input type="text" name="user_login" tabindex="1" id="user_login" class="input" value="<?php if(!empty($sanitized_user_login)) echo $sanitized_user_login; ?>" placeholder="<?php _e("User Name",'sakurairo'); ?>" required /></p>
+					<p><input type="text" name="user_email" tabindex="2" id="user_email" class="input" value="<?php if(!empty($user_email)) echo $user_email; ?>" size="25" placeholder="<?php _e("Email Address","sakurairo");?>" required /></p>
+					<p><input id="user_pwd1" class="input" tabindex="3" type="password" tabindex="21" size="25" value="" name="user_pass" placeholder="<?php _e("Password","sakurairo");?>" required /></p>
+					<p><input id="user_pwd2" class="input" tabindex="4" type="password" tabindex="21" size="25" value="" name="user_pass2" placeholder="<?php _e("Confirm your password","sakurairo");?>" required /></p>
 					<input type="hidden" name="register_reg" value="ok" />
 					<?php if(!empty($error)) { echo '<p class="user-error">'.$error.'</p>'; } ?>
 					<input class="button register-button" name="submit" type="submit" value="<?php _e("Sign up","sakurairo")/*注 册*/?>">

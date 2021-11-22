@@ -1,6 +1,6 @@
-[简体中文](README.md) | [繁體中文](README_tw.md) | **English** 
+[简体中文](README.md) | [繁體中文](README_tw.md) | **English** | [日本語](README_ja.md)
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/banner-en.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/en/banner.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -11,13 +11,11 @@
 
 ## What's new：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/whatsnew.png)](https://iro.tw/)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/function-en.png)](https://iro.tw/)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/en/function.png)](https://iro.tw/)
 
 ## How to use:
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.2/vision/readme/hyouryu/irotw.png)](https://iro.tw/)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/irotw.png)](https://iro.tw/)
 
 - Blogs based on iro：https://iro.tw/demo.html
 
@@ -27,20 +25,6 @@
 
 - When you are sure that you are faced with a bug, please [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) the bug, and make a description as detailed as possible.
 Please fill in with the issue template. Thanks for your cooperation.
-
-## Downloads:
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/dl-en.png)](https://iro.tw/)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/github.png)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/gitee.png)](https://gitee.com/mirai-mamori/Sakurairo)
-
-## Support us：
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/star-en.png)](https://github.com/mirai-mamori/Sakurairo)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/sponsor-en.png)](https://afdian.net/@mamori)
 
 ## Contributors:
 

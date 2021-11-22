@@ -880,7 +880,6 @@ body.dark .comment-respond .logged-in-as a,
 body.dark span.sitename 
 {color:#CCCCCC;}
 
-body.dark .header-user-avatar:hover ,
 body.dark .aplayer .aplayer-list ol li.aplayer-list-light ,
 body.dark .site-header:hover 
 {background:#333333;}
@@ -935,7 +934,8 @@ body.dark .headertop-down i
 body.dark img,
 body.dark .highlight-wrap,
 body.dark iframe,
-body.dark .entry-content .aplayer
+body.dark .entry-content .aplayer,
+body.dark .post-thumb video
 {filter:brightness(<?php echo iro_opt('theme_darkmode_img_bright'); ?>);}
 
 /*深色模式主题色*/
@@ -1615,7 +1615,7 @@ li.link-item {
     -webkit-transition: all .4s ease;
     transition: all .4s ease;
     position: fixed;
-    z-index: 9999;
+    z-index: 999;
     border-radius: 0px;
 }
 

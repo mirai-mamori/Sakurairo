@@ -1,6 +1,6 @@
-[简体中文](README.md) | **繁體中文** | [English](README_en.md)
+[简体中文](README.md) | **繁體中文** | [English](README_en.md) | [日本語](README_ja.md)
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/banner.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/banner.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -11,13 +11,11 @@
 
 ## 版本宣傳：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/whatsnew.png)](https://iro.tw/)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/function.png)](https://iro.tw/)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/tw/function.png)](https://iro.tw/)
 
 ## 使用相關：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/irotw.png)](https://iro.tw/)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/irotw.png)](https://iro.tw/)
 
 - 使用本主題的站點：https://iro.tw/demo.html
 
@@ -27,20 +25,6 @@
 
 - 在確認你遇到的現象確實是一個Bug後，請在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交問題，並為該問題可以的描述清楚，
 按照提供的問題模板進行填寫，謝謝配合。
-
-## 主題下載：
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/dl.png)](https://iro.tw/)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/github.png)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/gitee.png)](https://gitee.com/mirai-mamori/Sakurairo)
-
-## 支持我們：
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/star.png)](https://github.com/mirai-mamori/Sakurairo)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.1/vision/readme/hyouryu/sponsor.png)](https://afdian.net/@mamori)
 
 ## 主題貢獻：
 

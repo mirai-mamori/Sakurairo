@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
 "POT-Creation-Date: 2021-08-24 18:20+0800\n"
-"PO-Revision-Date: 2021-08-24 18:20+0800\n"
+"PO-Revision-Date: 2021-11-12 10:44+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -285,6 +285,10 @@ msgstr ""
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
+#: functions.php:754
+msgid "Download Link"
+msgstr "下载地址"
+
 #: functions.php:1213
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
@@ -468,9 +472,17 @@ msgstr[0] "次阅读"
 msgid "Search results for \" %s \""
 msgstr "关于“ %s ”的搜索结果"
 
-#: inc/theme_plus.php:421
+#: inc/theme_plus.php:16
 msgid "EDIT"
 msgstr "编辑"
+
+#: inc/theme_plus.php:422
+msgid "Signed in as"
+msgstr "当前已登录"
+
+#: inc/theme_plus.php:449
+msgid "Log in"
+msgstr "登录"
 
 #: inc/theme_plus.php:484
 msgid "New post"
@@ -600,6 +612,22 @@ msgstr "无法完成注册请求... 请联系"
 #: user/page-register.php:43
 msgid "administrator"
 msgstr "管理员"
+
+#: user/page-register.php:64
+msgid "User Name"
+msgstr "用户名"
+
+#: user/page-register.php:65
+msgid "Email Address"
+msgstr "电子邮箱"
+
+#: user/page-register.php:66
+msgid "Password"
+msgstr "密码"
+
+#: user/page-register.php:67
+msgid "Confirm your password"
+msgstr "确认密码"
 
 #: user/page-register.php:70
 msgid "Sign up"

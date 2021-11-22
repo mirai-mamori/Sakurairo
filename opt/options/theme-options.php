@@ -406,14 +406,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id'     => 'google_fonts_api',
+        'id'     => 'gfonts_api',
         'type'   => 'text',
         'title'  => __('Google Fonts Api Link','sakurairo_csf'),
-        'default' => 'fonts.maho.cc'
+        'default' => 'fonts.loli.net'
       ),
 
       array(
-        'id'     => 'google_fonts_add',
+        'id'     => 'gfonts_add_name',
         'type'   => 'text',
         'title'  => __('Google Fonts Name','sakurairo_csf'),
         'desc'   => __('Please make sure that the added fonts can be referenced in Google Fonts library. Fill in the font names. The added fonts must be preceded by "|". If multiple fonts are referenced, use "|" as the separator. If the font name has spaces, use a plus sign instead. For example: | zcool + xiaowei| Ma + Shan + Zheng','sakurairo_csf'),
@@ -628,7 +628,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'text_b'     => '',
           'text_c'     => '',
           'text_secondary' => '',
-          'font_link'     => 'https://fonts.maho.cc/css?family=ZCOOL+QingKe+HuangYou&display=swap',
+          'font_link'     => 'https://fonts.loli.net/css?family=ZCOOL+QingKe+HuangYou&display=swap',
           'font_name'    => 'ZCOOL QingKe HuangYou',
         ),
       ),
@@ -2055,7 +2055,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         ),
         'desc' => __('Best width 820px, best height 67px','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/announcement_bg.jpg'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/announcement_bg.jpg'
       ),
 
       array(
@@ -2296,9 +2296,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'link1' => '',
           'link2' => '',
           'link3' => '',
-          'img1'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/exhibition1.jpg',
-          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/exhibition2.jpg',
-          'img3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/exhibition3.jpg',
+          'img1'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/exhibition1.jpg',
+          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/exhibition2.jpg',
+          'img3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/exhibition3.jpg',
           'title1' => 'アンコール',
           'title2' => 'ハルジオン',
           'title3' => 'かいぶつ',
@@ -2883,7 +2883,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Mail Template Featured Image','sakurairo_csf'),
         'desc' => __('Set the background image of your reply email','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/mail_head.jpg'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/mail_head.jpg'
       ),
 
       array(
@@ -2936,7 +2936,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Login Screen Background Image','sakurairo_csf'),
         'desc' => __('Set your login screen background image, leave this option blank to show the default','sakurairo_csf'),
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/login_background.jpg'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/login_background.jpeg'
       ),
 
       array(
@@ -2953,7 +2953,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Login Screen Logo','sakurairo_csf'),
         'desc' => __('Set your login screen Logo','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/login_logo.png'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/login_logo.png'
       ),
 
       array(
@@ -2975,7 +2975,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Dashboard Background Image','sakurairo_csf'),
         'desc' => __('Set your dashboard background image, leave this option blank to show white background','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/admin_background.jpg'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/admin_background.jpg'
       ),
 
       array(
@@ -2994,7 +2994,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Primary Menu Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#88cfef'
+        'default' => '#8acdea'
       ),  
 
       array(
@@ -3002,7 +3002,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Secondary Menu Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#67c4ef'
+        'default' => '#6ec5ea'
       ),  
 
       array(
@@ -3010,7 +3010,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Emphasis Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#342a29'
+        'default' => '#f9bcae'
       ),  
 
       array(
@@ -3018,7 +3018,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Button Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#d1976d'
+        'default' => '#f4c57f'
       ),  
 
       array(
@@ -3156,6 +3156,36 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'label' => __('FancyBox will be used as an image lightbox effect after turning on, additional JQ libraries will be loaded','sakurairo_csf'),
         'dependency' => array( 'baguetteBox', '==', 'false' ),
         'default' => false
+      ), 
+
+      array(
+        'id' => 'lightgallery',
+        'type' => 'switcher',
+        'title' => __('LightGallery Lightbox Effect','sakurairo_csf'),
+        'label' => __('LightGallery will be used as an image lightbox effect after turning on.','sakurairo_csf'),
+        'dependency' => array(array( 'baguetteBox', '==', 'false' ),array('fancybox','==','false')),
+        'default' => false
+      ), 
+      array(
+        'type'    => 'content',
+        'content'=>__('<strong>Attension: Please read <a href="https://github.com/sachinchoolur/lightGallery#license">License Instruction</a> before use.</strong>'
+        .'<br/><strong><a href="https://www.lightgalleryjs.com/demos/thumbnails/">Demos</a></strong> | <strong><a href="https://www.lightgalleryjs.com/docs/settings/">Reference</a></strong> | <strong><a href="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/">Plugin List</a></strong> '
+        .'<br/> Please write settings in JavaScript. An example has been provided as default setting.'
+        .'<br/> It should be captiable for Most User using WordPress Guttenberg Editor.'
+        .'<br/>Submit new discussion on Github for assistance. https://github.com/mirai-mamori/Sakurairo/discussions','sakurairo_csf')       ,
+        'dependency' => array( 'lightgallery', '==', 'true' ),
+      ),
+      array(
+        'id' => 'lightgallery_option',
+        'type' => 'code_editor',
+        'sanitize' => false,
+        'title' => __('LightGallery Lightbox Effect Options','sakurairo_csf'),
+        'dependency' => array( 'lightgallery', '==', 'true' ),
+        'default' => '{
+          plugins:["hash","zoom"],
+          supportLegacyBrowser:false,
+          selector:"figure > img",
+        }'
       ), 
 
       array(
@@ -3301,7 +3331,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/hyouryulogo.gif"  alt="Theme Information" />','sakurairo_csf'),
+        'content' => __('<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/tsubame/tsubamelogo.gif"  alt="Theme Information" />','sakurairo_csf'),
       ),
 
       array(

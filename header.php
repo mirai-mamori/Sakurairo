@@ -28,7 +28,7 @@ $mashiro_logo = iro_opt('mashiro_logo');
 <html <?php language_attributes(); ?>>
 
 <head>
-	<link rel="stylesheet" href="https://<?php echo iro_opt('google_fonts_api'); ?>/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC<?php echo iro_opt('google_fonts_add'); ?>" media="all">
+	<link rel="stylesheet" href="https://<?php echo iro_opt('gfonts_api','fonts.loli.net'); ?>/css?family=Noto+Serif|Merriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC<?php echo iro_opt('gfonts_add_name'); ?>" media="all">
 	<meta name="theme-color" content="<?php echo iro_opt('theme_skin_matching')?>" media="(prefers-color-scheme: light)">
 	<meta name="theme-color" content="<?php echo iro_opt('theme_skin_dark')?>" media="(prefers-color-scheme: dark)">
 
@@ -156,12 +156,17 @@ $mashiro_logo = iro_opt('mashiro_logo');
 			</div>
 		<?php } ?>
 		<div id="page" class="site wrapper">
-			<?php 
-			$cover_type = get_post_meta(get_the_ID(), 'cover_type', true);
-			if ($cover_type == 'hls') {
-				the_video_headPattern(true);
-			} elseif ($cover_type == 'normal') {
-				the_video_headPattern(false);
+			<?php
+			$use_as_thumb = get_post_meta(get_the_ID(), 'use_as_thumb', true); //'true','only',(default)
+			if ($use_as_thumb != 'only') {
+				$cover_type = get_post_meta(get_the_ID(), 'cover_type', true);
+				if ($cover_type == 'hls') {
+					the_video_headPattern(true);
+				} elseif ($cover_type == 'normal') {
+					the_video_headPattern(false);
+				} else {
+					the_headPattern();
+				}
 			} else {
 				the_headPattern();
 			} ?>

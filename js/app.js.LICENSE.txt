@@ -15,7 +15,7 @@
  * @date 2021.3.21
  * Github Repository:
  * @url https://github.com/Fuukei/Sakurairo_Scripts
- * @url https://github.com/mirai-mamori/Sakurairo commit f7db3c5 
+ * @url https://github.com/mirai-mamori/Sakurairo commit f7db3c5
  * 
  * *** ACKNOWLEDGEMENT *** 
  * 
@@ -34,10 +34,13 @@
  * *** ***
  * 
  * inherited from Xoin-Yang/Akina/js/global.js
- * *** ACKNOWLEDGEMENT *** 
+ * @author Xoin-Yang
+ * @date 2017.04.25
+ * @url http://www.akina.pw/
+ * *** END OF ACKNOWLEDGEMENT *** 
  * 
  * Press 'F' to pay respects.
  * 
  */
 
-//! build 8d9641c 2021/9/17
+//! build be47151 2021/11/21

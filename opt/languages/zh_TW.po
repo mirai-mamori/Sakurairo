@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-10-05 11:57+0800\n"
-"PO-Revision-Date: 2021-10-05 12:08+0800\n"
+"POT-Creation-Date: 2021-11-21 17:39+0530\n"
+"PO-Revision-Date: 2021-11-21 17:46+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -3336,11 +3336,46 @@ msgid ""
 "additional JQ libraries will be loaded"
 msgstr "開啟之後將使用FancyBox作為圖像燈箱效果，將會額外載入JQ庫"
 
-#: options/theme-options.php:3163
+#: options/theme-options.php:3164
+msgid "LightGallery Lightbox Effect"
+msgstr "LightGallery燈箱效果"
+
+#: options/theme-options.php:3165
+msgid "LightGallery will be used as an image lightbox effect after turning on."
+msgstr "開啟之後將使用LightGallery作為圖像燈箱效果"
+
+#: options/theme-options.php:3171
+msgid ""
+"<strong>Attension: Please read <a href=\"https://github.com/sachinchoolur/"
+"lightGallery#license\">License Instruction</a> before use.</strong><br/"
+"><strong><a href=\"https://www.lightgalleryjs.com/demos/thumbnails/\">Demos</"
+"a></strong> | <strong><a href=\"https://www.lightgalleryjs.com/docs/settings/"
+"\">Reference</a></strong> | <strong><a href=\"https://cdn.jsdelivr.net/npm/"
+"lightgallery@latest/plugins/\">Plugin List</a></strong> <br/> Please write "
+"settings in JavaScript. An example has been provided as default setting.<br/"
+"> It should be captiable for Most User using WordPress Guttenberg Editor.<br/"
+">Submit new discussion on Github for assistance. https://github.com/mirai-"
+"mamori/Sakurairo/discussions"
+msgstr ""
+"<strong>內涵：使用前請閱讀 <a href=\"https://github.com/sachinchoolur/"
+"lightGallery#license\">許可證說明</a> 。</strong><br/><strong><a href="
+"\"https://www.lightgalleryjs.com/demos/thumbnails/\">演示</a></strong> | "
+"<strong><a href=\"https://www.lightgalleryjs.com/docs/settings/\">參考</a></"
+"strong> | <strong><a href=\"https://cdn.jsdelivr.net/npm/lightgallery@latest/"
+"plugins/\">外掛程式清單</a></strong> <br/> 請在 JavaScript 中寫下設置。範例已"
+"作為預設設置提供。<br/> 對於使用 WordPress 古滕貝格編輯器的大多數用戶來說， "
+"它應該是可圈可的。<br/>提交關於 Github 的新討論以尋求説明。https://github."
+"com/mirai-mamori/Sakurairo/discussions"
+
+#: options/theme-options.php:3182
+msgid "LightGallery Lightbox Effect Options"
+msgstr "LightGallery燈箱效果選項"
+
+#: options/theme-options.php:3193
 msgid "Code Highlighting"
 msgstr "程式碼高亮"
 
-#: options/theme-options.php:3168
+#: options/theme-options.php:3198
 msgid ""
 "<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </"
 "p> <p><strong>Prism.js:</strong> Requires a language to be specified, see <a "
@@ -3355,52 +3390,52 @@ msgstr ""
 "prismjs.com/ plugins/file-highlight/\">如何程式碼高亮顯示動態載入的檔案</"
 "a>。 </p><p><strong>自定義：</strong> 適用於另有配置的情況。</p>"
 
-#: options/theme-options.php:3176
+#: options/theme-options.php:3206
 msgid "Code Highlight Method"
 msgstr "程式碼高亮程式"
 
-#: options/theme-options.php:3188
+#: options/theme-options.php:3218
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
 msgstr "Prism.js：為所有程式碼塊增加行數顯示"
 
-#: options/theme-options.php:3192
+#: options/theme-options.php:3222
 msgid ""
 "See the <a href=\"https://prismjs.com/plugins/line-numbers/\">plugin "
 "description documentation</a>"
 msgstr ""
 "請查閱 <a href=\"https://prismjs.com/plugins/line-numbers/\">外掛描述文件</a>"
 
-#: options/theme-options.php:3198
+#: options/theme-options.php:3228
 msgid "Prism.js: Autoload Address"
 msgstr "Prism.js：自動載入地址"
 
-#: options/theme-options.php:3202
+#: options/theme-options.php:3232
 msgid "Leave blank to use default values"
 msgstr "留空以使用默認值"
 
-#: options/theme-options.php:3209
+#: options/theme-options.php:3239
 msgid "Prism.js: Code Highlight Theme"
 msgstr "Prism.js：程式碼高亮主題"
 
-#: options/theme-options.php:3210 options/theme-options.php:3221
+#: options/theme-options.php:3240 options/theme-options.php:3251
 msgid "Relative to autoload address. Leave blank to use default values"
 msgstr "相對於自動載入地址。留空以使用默認值"
 
-#: options/theme-options.php:3220
+#: options/theme-options.php:3250
 msgid "Prism.js: Code Highlight Theme (Dark Mode)"
 msgstr "Prism.js：程式碼高亮主題（深色模式）"
 
-#: options/theme-options.php:3231
+#: options/theme-options.php:3261
 msgid ""
 "The following Options are not recommended to be modified blindly, please use "
 "them under the guidance of others"
 msgstr "以下設定不推薦盲目進行修改，請在他人的指導下使用"
 
-#: options/theme-options.php:3237
+#: options/theme-options.php:3267
 msgid "Image CDN"
 msgstr "圖像CDN"
 
-#: options/theme-options.php:3238
+#: options/theme-options.php:3268
 msgid ""
 "Note: fill in the format https://your CDN domain/. This means that images "
 "with original path http://your.domain/wp-content/uploads/2018/05/xx.png will "
@@ -3410,23 +3445,23 @@ msgstr ""
 "domain/wp-content/uploads/2018/05/xx.png 的圖像將從 http://你的CDN域"
 "名/2018/05/xx.png 載入"
 
-#: options/theme-options.php:3245
+#: options/theme-options.php:3275
 msgid "Articles Categories (Do not display)"
 msgstr "文章分類（不顯示）"
 
-#: options/theme-options.php:3246 options/theme-options.php:3253
+#: options/theme-options.php:3276 options/theme-options.php:3283
 msgid "Fill in category ID, seperate in English\" , \" when more than one"
 msgstr "'填寫分類ID，多個用英文“ , ”分開"
 
-#: options/theme-options.php:3252
+#: options/theme-options.php:3282
 msgid "Image Display Category"
 msgstr "圖像展示分類"
 
-#: options/theme-options.php:3259
+#: options/theme-options.php:3289
 msgid "Specify Login Address"
 msgstr "指定登入地址"
 
-#: options/theme-options.php:3260
+#: options/theme-options.php:3290
 msgid ""
 "Force not to use the WordPress login page address to login, fill in the new "
 "login page address, such as: http://www.xxx.com/login. Note that before "
@@ -3437,62 +3472,62 @@ msgstr ""
 "www.xxx.com/login。注意填寫前先測試下你新建的頁面是可以正常打開的，以免造成無"
 "法進入後台等情況。"
 
-#: options/theme-options.php:3266
+#: options/theme-options.php:3296
 msgid "Specify Registration Address"
 msgstr "指定註冊地址"
 
-#: options/theme-options.php:3267
+#: options/theme-options.php:3297
 msgid ""
 "This address is used as the registration entry on the login page, if you "
 "specify a login address, it is recommended to fill in"
 msgstr "該地址在登入頁面作為註冊入口，如果你指定了登入地址，則建議填寫"
 
-#: options/theme-options.php:3273
+#: options/theme-options.php:3303
 msgid "Version Control"
 msgstr "版本控制"
 
-#: options/theme-options.php:3274
+#: options/theme-options.php:3304
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr "用於更新前端Cookie和瀏覽器快取，可使用任意字符串"
 
-#: options/theme-options.php:3280
+#: options/theme-options.php:3310
 msgid "Backup&Recovery"
 msgstr "備份恢復"
 
-#: options/theme-options.php:3282
+#: options/theme-options.php:3312
 msgid "Backup or Recovery your theme options"
 msgstr "備份或恢復你的主題設定"
 
-#: options/theme-options.php:3293
+#: options/theme-options.php:3323
 msgid "About Theme"
 msgstr "關於主題"
 
-#: options/theme-options.php:3299
+#: options/theme-options.php:3329
 msgid "Version Info"
 msgstr "版本資訊"
 
-#: options/theme-options.php:3304
+#: options/theme-options.php:3334
 msgid ""
-"<img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/"
-"vision/hyouryu/hyouryulogo.gif\"  alt=\"Theme Information\" />"
+"<img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/"
+"tsubame/tsubamelogo.gif\"  alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:3310
+#: options/theme-options.php:3340
 #, php-format
 msgid ""
 "iro 主题版本 / Theme Version %s | <a href=\"https://github.com/mirai-mamori/"
 "Sakurairo\">项目地址 / Project Address</a>"
 msgstr ""
 
-#: options/theme-options.php:3315
+#: options/theme-options.php:3345
 msgid "Update Related"
 msgstr "更新相關"
 
-#: options/theme-options.php:3321
+#: options/theme-options.php:3351
 msgid "Theme Update Source"
 msgstr "主題更新源"
 
-#: options/theme-options.php:3327
+#: options/theme-options.php:3357
 msgid ""
 "If you are using a server set up in mainland China, please use the jsDelivr "
 "source or the official theme source as your theme update source"
@@ -3500,11 +3535,11 @@ msgstr ""
 "如果你使用的是架設在中國的伺服器，請使用jsDelivr源或主題官方源作為你的主題更"
 "新源"
 
-#: options/theme-options.php:3334
+#: options/theme-options.php:3364
 msgid "Theme Update Test Channel Disclaimer"
 msgstr "主題更新測試通道免責聲明"
 
-#: options/theme-options.php:3339
+#: options/theme-options.php:3369
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -3517,63 +3552,63 @@ msgstr ""
 "內 <strong> \"I agree and am willing to bear all unexpected consequences\" </"
 "strong>"
 
-#: options/theme-options.php:3345
+#: options/theme-options.php:3375
 msgid "Theme Update Channel"
 msgstr "主題更新頻道"
 
-#: options/theme-options.php:3351
+#: options/theme-options.php:3381
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr "你可以在此切換更新頻道以參與到新版本的測試中"
 
-#: options/theme-options.php:3353
+#: options/theme-options.php:3383
 msgid "Stable Channel"
 msgstr "正式通道"
 
-#: options/theme-options.php:3354
+#: options/theme-options.php:3384
 msgid "Beta Channel"
 msgstr "公共測試頻道"
 
-#: options/theme-options.php:3355
+#: options/theme-options.php:3385
 msgid "Preview Channel"
 msgstr "預覽測試頻道"
 
-#: options/theme-options.php:3362
+#: options/theme-options.php:3392
 msgid "Localization"
 msgstr "本地化"
 
-#: options/theme-options.php:3368
+#: options/theme-options.php:3398
 msgid "Localize the Frontend Library"
 msgstr "本地化前端庫"
 
-#: options/theme-options.php:3369
+#: options/theme-options.php:3399
 msgid "The frontend library will not use jsDelivr CDN after turning it on"
 msgstr "開啟之後前端庫將不走jsDelivr CDN"
 
-#: options/theme-options.php:3376
+#: options/theme-options.php:3406
 msgid "Localize JS/CSS Files"
 msgstr "本地化JS/CSS檔案"
 
-#: options/theme-options.php:3377
+#: options/theme-options.php:3407
 msgid "Enabled by default, some JS files and CSS files do not use jsDelivr CDN"
 msgstr "默認開啟，部分JS檔案和CSS檔案不走jsDelivr CDN"
 
-#: options/theme-options.php:3383
+#: options/theme-options.php:3413
 msgid "Theme Contributors"
 msgstr "貢獻者"
 
-#: options/theme-options.php:3388
+#: options/theme-options.php:3418
 msgid ""
 "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
 "Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:3393
+#: options/theme-options.php:3423
 msgid "Reference Information"
 msgstr "引用資訊"
 
-#: options/theme-options.php:3398
+#: options/theme-options.php:3428
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
 "com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -3595,11 +3630,11 @@ msgstr ""
 "        <p>白貓樣式Logo參考原主題作者白貓，由 <a href=\"https://hyacm.com/"
 "acai/ui/143/sakura-logo/\">Hyacm</a> 提供方案並引用</p>"
 
-#: options/theme-options.php:3406
+#: options/theme-options.php:3436
 msgid "Dependency Information"
 msgstr "依賴資訊"
 
-#: options/theme-options.php:3411
+#: options/theme-options.php:3441
 msgid ""
 "<p>Static Resources Relies on the <a href=\"https://github.com/Fuukei/"
 "Public_Repository\">Public Repository</a> Project Created by Fuukei</p>\n"
@@ -3617,7 +3652,7 @@ msgstr ""
 "        <p>更新功能依賴於 YahnisElsts 開源的 <a href=\"https://github.com/"
 "YahnisElsts/plugin-update-checker\">Plugin Update Checker</a> 專案</p>"
 
-#: options/theme-options.php:3418
+#: options/theme-options.php:3448
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "

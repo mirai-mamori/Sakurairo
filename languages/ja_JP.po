@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
 "POT-Creation-Date: 2021-08-24 18:19+0800\n"
-"PO-Revision-Date: 2021-08-24 18:19+0800\n"
+"PO-Revision-Date: 2021-11-11 11:47+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -22,9 +22,9 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
 #: 404.php:18
-#, fuzzy, php-format
+#, php-format
 msgid "page %s"
-msgstr "ページ %s"
+msgstr "%s ページ"
 
 #: 404.php:47
 #, fuzzy
@@ -67,22 +67,18 @@ msgid "no comment"
 msgstr "コメントはありません。"
 
 #: comments.php:61
-#, fuzzy
 msgid "I'm not a robot"
 msgstr "私はロボットではありません"
 
 #: comments.php:62
-#, fuzzy
 msgid "Comment in private"
 msgstr "プライベートでコメント"
 
 #: comments.php:63
-#, fuzzy
 msgid "Comment reply notify"
 msgstr "コメント返信通知"
 
 #: comments.php:71
-#, fuzzy
 msgid "Leave a Reply to"
 msgstr "返信を残す"
 
@@ -91,9 +87,8 @@ msgid "Cancel Reply"
 msgstr "返信をキャンセル"
 
 #: comments.php:73
-#, fuzzy
 msgid "BiuBiuBiu~"
-msgstr "ビウビウビウ~"
+msgstr "BiuBiuBiu~"
 
 #: comments.php:74
 #, fuzzy
@@ -241,9 +236,8 @@ msgid "Succeed"
 msgstr "継ぐ"
 
 #: functions.php:312
-#, fuzzy
 msgid "10 files max per request"
-msgstr "1回のリクエストで送信できるファイル数の上限は10個です。"
+msgstr "1回のリクエストで送信できるファイル数の上限は10個です"
 
 #: functions.php:313
 #, fuzzy
@@ -534,9 +528,17 @@ msgstr[0] "表示"
 msgid "Search results for \" %s \""
 msgstr "\"%s\" の検索結果"
 
-#: inc/theme_plus.php:421
+#: inc/theme_plus.php:16
 msgid "EDIT"
 msgstr "編集"
+
+#: inc/theme_plus.php:422
+msgid "Signed in as"
+msgstr "ようこそ"
+
+#: inc/theme_plus.php:449
+msgid "Log in"
+msgstr "ログイン"
 
 #: inc/theme_plus.php:484
 msgid "New post"
@@ -559,13 +561,12 @@ msgid "Next Post"
 msgstr "次の投稿"
 
 #: search.php:19
-#, fuzzy, php-format
+#, php-format
 msgid "search result: %s"
 msgstr "検索結果: %s"
 
 #: tpl/content-category.php:31 tpl/content-image.php:36
 #: tpl/content-status.php:32 tpl/content-thumb.php:61 tpl/content.php:36
-#, fuzzy
 msgid "NOTHING"
 msgstr "何もない"
 
@@ -591,12 +592,11 @@ msgid_plural "Hits"
 msgstr[0] "ヒット"
 
 #: tpl/content-none.php:14
-#, fuzzy
 msgid "There is nothing here！"
-msgstr "ここには何もありません!"
+msgstr "ここには何もありません！"
 
 #: tpl/content-none.php:21
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Ready to post your first article? <a href=\"%1$s\">Click here to start</a>."
 msgstr ""
@@ -604,12 +604,10 @@ msgstr ""
 "は、ここをクリック</a>してください。"
 
 #: tpl/content-none.php:25
-#, fuzzy
 msgid "Didn't find what you want, look at the other ones."
 msgstr "あなたが望むものを見つけられなかった、他のものを見てください。"
 
 #: tpl/content-none.php:43
-#, fuzzy
 msgid "We didn't seem to find what you want. Maybe you can search for it."
 msgstr ""
 "私たちはあなたが望むものを見つけられなかったようです。たぶん、あなたはそれを"
@@ -620,12 +618,10 @@ msgid "Pages:"
 msgstr "ページ:"
 
 #: user/page-bangumi.php:30 user/page-followVideos.php:29
-#, fuzzy
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr "さくらオプションでビリビリのUIDを記入してください。"
 
 #: user/page-login.php:18
-#, fuzzy
 msgid "Remember_Me"
 msgstr "Remember_Me"
 
@@ -642,17 +638,14 @@ msgid "Please enter username."
 msgstr "ユーザー名をご入力ください。"
 
 #: user/page-register.php:16
-#, fuzzy
 msgid "Invalid characters, please enter a valid username."
 msgstr "使用不可文字が含んでいます、有効なユーザー名を入力してください。"
 
 #: user/page-register.php:19
-#, fuzzy
 msgid "This username has been registered."
 msgstr "このユーザー名は登録されています。"
 
 #: user/page-register.php:24
-#, fuzzy
 msgid "Please enter email address."
 msgstr "メールアドレスを入力してください。"
 
@@ -661,22 +654,18 @@ msgid "Invalid email address."
 msgstr "無効なメールアドレス"
 
 #: user/page-register.php:29
-#, fuzzy
 msgid "This email address has been registered."
 msgstr "このメールアドレスは登録されています。"
 
 #: user/page-register.php:34
-#, fuzzy
 msgid "Password length is at least 6 digits."
 msgstr "パスワードの長さは 6 桁以上です。"
 
 #: user/page-register.php:36
-#, fuzzy
 msgid "Inconsistent password entered twice."
 msgstr "パスワードが 2 回入力されました。"
 
 #: user/page-register.php:43
-#, fuzzy
 msgid "Unable to complete registration request...Please contact"
 msgstr "登録要求を完了できません。お問い合わせください"
 
@@ -689,25 +678,22 @@ msgid "Sign up"
 msgstr "サインアップ"
 
 #: user/page-register.php:77
-#, fuzzy
 msgid "Success! Redirecting......"
 msgstr "成功！リダイレクト。。。。。。"
 
 #: user/page-register.php:82
-#, fuzzy
 msgid "Registration is not open yet."
 msgstr "登録はまだ開かれていない。"
 
 #. Theme Name of the plugin/theme
 msgid "Sakurairo"
-msgstr "さくら色"
+msgstr "桜いろ"
 
 #. Theme URI of the plugin/theme
 msgid "https://github.com/mirai-mamori/Sakurairo"
 msgstr "https://github.com/mirai-mamori/Sakurairo"
 
 #. Description of the plugin/theme
-#, fuzzy
 msgid ""
 "A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable "
 "WordPress Theme (Based on Theme Sakura)"
@@ -740,14 +726,14 @@ msgstr "说说模版"
 #~ "如果你选择使用Webp优化随机图片，请点击 <a href = \"%s\">这里</a> 来更新 "
 #~ "Manifest 路径"
 #~ msgstr ""
-#~ "ランダムな画像を最適化するためにWebpを使用する方は、<a href=\"%s\">こち "
-#~ "ら</a>　をクリックするとManifestのリンクが更新されます"
+#~ "ランダムな画像を最適化するためにWebpを使用する方は、<a href=\"%s\">こち ら"
+#~ "</a>　をクリックするとManifestのリンクが更新されます"
 
 #, fuzzy, php-format
 #~ msgid ""
 #~ "正在使用 iro 主题 版本 %s  |  <a href=\"https://iro.tw\">主题文档</a>  |  "
 #~ "<a href=\"https://github.com/mirai-mamori/Sakurairo\">源码地址</a>"
 #~ msgstr ""
-#~ "iroテーマを使用している バージョン %s | <a href=\"https://iro.tw\">テーマド"
-#~ "キュメント</a>  | <a href=\"https://github.com/mirai-mamori/Sakurairo\">ソ "
-#~ "ースコード</a>"
+#~ "iroテーマを使用している バージョン %s | <a href=\"https://iro.tw\">テーマ"
+#~ "ドキュメント</a>  | <a href=\"https://github.com/mirai-mamori/Sakurairo\">"
+#~ "ソ ースコード</a>"

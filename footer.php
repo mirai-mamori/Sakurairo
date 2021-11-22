@@ -48,7 +48,7 @@ $reception_background = iro_opt('reception_background');
 			<?php 
 			$personal_avatar = iro_opt('personal_avatar');
 			$iro_logo = iro_opt('iro_logo');
-			$ava = iro_opt('personal_avatar') ? $personal_avatar: ($iro_logo ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/avatar.jpg'); ?>
+			$ava = iro_opt('personal_avatar') ? $personal_avatar: ($iro_logo ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/avatar.jpg'); ?>
 			<img src="<?php echo $ava ?>">
 		</div>
 		<div class="m-search">
@@ -164,11 +164,12 @@ $reception_background = iro_opt('reception_background');
 <?php if (iro_opt('live2d_options', 'true')): ?>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/<?php echo iro_opt('live2d_custom_user'); ?>/live2d-widget@<?php echo iro_opt('live2d_custom_user_ver'); ?>/autoload.js"></script>
 <?php endif; ?>
-
 <!-- logo字体部分 -->
-<link rel="stylesheet" href="<?php echo $mashiro_logo['font_link']; ?>" media="all">
-<?php 
-echo iro_opt('footer_addition','');
+<?php if (iro_opt('mashiro_logo_option') == true) { ?>
+	<link rel="stylesheet" href="<?php echo $mashiro_logo['font_link']; ?>" media="all">
+<?php } ?>
+<?php
+echo iro_opt('footer_addition', '');
 ?>
 </body>
 <!-- Particles动效 -->

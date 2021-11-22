@@ -321,7 +321,7 @@ function the_headPattern(){
   if(!is_home() && $full_image_url) : ?>
   <div class="pattern-center-blank"></div>
   <div class="pattern-center <?php if(is_single()){echo $center;} ?>">
-    <div class="pattern-attachment-img lazyload" style="background-image: url(<?php echo iro_opt('load_out_svg'); ?>)" data-src="<?php echo $full_image_url; ?>"> </div>
+    <div class="pattern-attachment bg lazyload" style="background-image: url(<?php echo iro_opt('load_out_svg'); ?>)" data-src="<?php echo $full_image_url; ?>"> </div>
     <header class="pattern-header <?php if(is_single()){echo $header;} ?>"><?php echo $t; ?></header>
   </div>
   <?php else :
@@ -336,7 +336,6 @@ function the_headPattern(){
 function the_video_headPattern(bool $isHls = false)
 {
     $t = ''; // 标题
-    $full_image_urls = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
     $thubm_image_urls = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'thumbnail');
 
     $video_cover = get_post_meta(get_the_ID(), 'video_cover', true);
@@ -347,7 +346,6 @@ function the_video_headPattern(bool $isHls = false)
     } else {
         $video_poster_attr = ' poster="' . $video_cover_thumb . '" ';
     }
-    $full_image_url = !empty($full_image_urls) ? $full_image_urls[0] : null;
     $thubm_image_url = !empty($thubm_image_urls) ? $thubm_image_urls[0] : null;
     if (is_single()) {
         while (have_posts()) {
@@ -356,7 +354,9 @@ function the_video_headPattern(bool $isHls = false)
             $header = 'single-header';
             //$ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
             $edit_this_post_link = get_edit_html();
-            $t .= the_title('<h1 class="entry-title">', '<button id="coverVideo-btn" class=".constant-width-to-height-ratio" onclick="coverVideo()"><i class="fa fa-pause" aria-hidden="true"></i></button></h1>', false);
+            $btn_playControl = '<button id="cv-pc" class="coverVideo-btn" onclick="coverVideo()"><i class="fa fa-pause" aria-hidden="true"></i></button>';
+/*             $btn_volumeControl = '<button id="cv-vc" class="coverVideo-btn" onclick="coverVideoMute()"><i class="fa fa-volume-off" aria-hidden="true"></i></button>';
+ */            $t .= the_title('<h1 class="entry-title">', $btn_playControl./* $btn_volumeControl. */'</h1>', false);
             $t .= '<p class="entry-census"><span><a href="' 
             . esc_url(get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename'))) . '">' 
             . get_avatar(get_the_author_meta('ID'), 64) . '</a></span><span><a href="' 
@@ -369,32 +369,28 @@ function the_video_headPattern(bool $isHls = false)
     } elseif (is_page()) {
         $t .= the_title('<h1 class="entry-title">', '</h1>', false);
     } elseif (is_archive()) {
-        $full_image_url = z_taxonomy_image_url();
         $thubm_image_url = iro_opt('load_out_svg');
         $des = category_description() ? category_description() : ''; // 描述
         $t .= '<h1 class="cat-title">' . single_cat_title('', false) . '</h1>';
         $t .= ' <span class="cat-des">' . $des . '</span>';
     } elseif (is_search()) {
-        $full_image_url = get_random_bg_url();
         $thubm_image_url = iro_opt('load_out_svg');
         $t .= '<h1 class="entry-title search-title"> ' . sprintf(__("Search results for \" %s \"", "sakurairo"), get_search_query()) ./*关于“ '.get_search_query().' ”的搜索结果*/ '</h1>';
     }
     $thubm_image_url = $thubm_image_url . "#lazyload-blur";
     $thubm_image_url = str_replace(iro_opt('image_cdn'), 'https://cdn.2heng.xin/', $thubm_image_url);
-    if (!iro_opt('patternimg')) $full_image_url = false;
-    if (!is_home()  && $full_image_url) { ?>
+    if (!is_home()) { ?>
         <div class="pattern-center-blank"></div>
-        <div class="pattern-center <?php if (is_single()) : echo $center;
-                                    endif; ?>">
-            <div class="pattern-attachment-img" style="height: auto;">
+        <div class="pattern-center <?php if (is_single()) : echo $center;endif; ?>">
+            <div class="pattern-attachment">
                 <?php
                 if ($isHls) {
                 ?>
-                    <video loop id="coverVideo" class='hls' <?php echo $video_poster_attr; ?> data-src="<?php echo $video_cover; ?>"></video>
+                    <video loop playsinline muted id="coverVideo" class="hls" <?php echo $video_poster_attr; ?> data-src="<?php echo $video_cover; ?>"></video>
                 <?php
                 } else {
                 ?>
-                    <video autoplay loop id="coverVideo" class="normal-cover-video" <?php echo $video_poster_attr; ?>>
+                    <video autoplay loop playsinline muted id="coverVideo" class="normal-cover-video" <?php echo $video_poster_attr; ?>>
                         <source src="<?php echo $video_cover; ?>" type="video/mp4">
                         <?php _e('Your browser does not support HTML5 video.','sakurairo')?>
                     </video>
@@ -402,12 +398,6 @@ function the_video_headPattern(bool $isHls = false)
                 }
                 ?>
             </div>
-            <style>
-                .pattern-center::before,
-                .pattern-center-sakura::before {
-                    display: none
-                }
-            </style>
             <header class="pattern-header <?php if (is_single()) : echo $header;
                                             endif; ?>">
                 <?php echo $t; ?>
@@ -430,7 +420,8 @@ function header_user_menu(){
     <div class="header-user-avatar">
       <img class="faa-spin animated-hover" src="<?php echo get_avatar_url( $current_user->ID, 64 );/*$ava;*/ ?>" width="30" height="30">
       <div class="header-user-menu">
-        <div class="herder-user-name">当前已登录 
+        <div class="herder-user-name">
+          <?php _e("Signed in as","sakurairo")?> 
           <div class="herder-user-name-u"><?php echo $current_user->display_name; ?></div>
         </div>
         <div class="user-menu-option">
@@ -439,21 +430,25 @@ function header_user_menu(){
             <a href="<?php bloginfo('url'); ?>/wp-admin/post-new.php" target="_blank"><?php _e('New post','sakurairo')/*撰写文章*/?></a>
           <?php } ?>
           <a href="<?php bloginfo('url'); ?>/wp-admin/profile.php" target="_blank"><?php _e('Profile','sakurairo')/*个人资料*/?></a>
-          <a href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" target="_top"><?php _e('Sign out','sakurairo')/*退出登录*/?></a>
+          <a href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" target="_top" data-no-pjax><?php _e('Sign out','sakurairo')/*退出登录*/?></a>
         </div>
       </div>
     </div>
   <?php
   }else{ 
     $ava = iro_opt('unlisted_avatar');
-    $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : get_bloginfo('url').'/wp-login.php';
+    global $wp;
+    //https://wordpress.stackexchange.com/questions/274569/how-to-get-url-of-current-page-displayed
+    //可以测试一下对不同的固定链接的兼容性
+    $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(add_query_arg( $wp->query_vars, home_url( $wp->request ) ));
   ?>
   <div class="header-user-avatar">
     <a href="<?php echo $login_url; ?>">
       <img class="faa-shake animated-hover" src="<?php echo $ava; ?>" width="30" height="30">
     </a>
     <div class="header-user-menu">
- <div class="herder-user-name no-logged">  <a href="<?php echo $login_url; ?>" target="_blank" style="font-weight:bold;text-decoration:none">登录</a>  
+ <div class="herder-user-name no-logged">  
+   <a id="login-link" href="<?php echo $login_url; ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in','sakurairo')/*登录*/?></a>  
       </div>
     </div>
   </div>

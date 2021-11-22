@@ -6,8 +6,8 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://iro.tw/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.2.12
-Tested up to: 5.8
+Version: 2.3.0
+Tested up to: 5.8.2
 Requires at least: 5.5
 Requires PHP: 7.1
 License: GNU General Public License v2 or later
@@ -766,11 +766,13 @@ a:hover {
     position: absolute
 }
 
-.pattern-attachment-img {
+.pattern-attachment.bg{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     background-origin: border-box;
+}
+.pattern-attachment {
     width: 100%;
     height: 400px
 }
@@ -885,7 +887,7 @@ a:hover {
     .pattern-center header.single-header {
         padding: 0 4%
     }
-    .pattern-attachment-img {
+    .pattern-attachment {
         height: 280px
     }
     .pattern-center h1.cat-title,
@@ -929,15 +931,6 @@ a:hover {
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, .3)
-}
-
-.pattern-attachment-img {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-origin: border-box;
-    width: 100%;
-    height: 400px
 }
 
 .pattern-center-sakura header.pattern-header {
@@ -1013,7 +1006,7 @@ a:hover {
     .pattern-center-sakura header.single-header {
         padding: 0 4%
     }
-    .pattern-attachment-img {
+    .pattern-attachment {
         height: 280px
     }
     .pattern-center-sakura h1.cat-title,
@@ -1031,7 +1024,7 @@ a:hover {
     position: fixed;
     left: 2.5%;
     top: 2.5%;
-    z-index: 9999;
+    z-index: 999;
     border-radius: 20px;
 }
 
@@ -1579,14 +1572,14 @@ i.iconfont.hotpost {
     border-radius: 0 10px 10px 0
 }
 
-.post-thumb a img {
+.post-thumb a * {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: all .6s
 }
 
-.post-thumb a img:hover {
+.post-thumb a *:hover {
     transform: scale(1.1)
 }
 
@@ -1788,7 +1781,7 @@ i.iconfont.hotpost {
 }
 
 .site-footer {
-    padding: 2%;
+    padding: max(2%,45px);
     background: rgba(255, 255, 255, .8);
     margin-left: auto;
     margin-right: auto;
@@ -3730,7 +3723,7 @@ li.feature-2 {
 }
 
 .headertop.filter-grid::before {
-    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.2/vision/basic/grid.png)
+    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/basic/grid.png)
 }
 
 .headertop.filter-dot::before {
@@ -3739,7 +3732,7 @@ li.feature-2 {
 
 @media (max-width:860px) {
     .headertop.filter-dot::before {
-        background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.8.2/vision/basic/grid.png)
+        background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/basic/grid.png)
     }
 }
 
@@ -8375,8 +8368,9 @@ td.hljs-ln-numbers {
 #coverVideo{
     width:100%;
     height:100%;
+    object-fit: cover;
 }
-#coverVideo-btn {
+.coverVideo-btn {
     all: initial;
     display: inline-block;
     width: 36px;
@@ -8390,7 +8384,7 @@ td.hljs-ln-numbers {
     text-align: center;
     border-radius: 50%;
 }
-#coverVideo-btn:hover {
+.coverVideo-btn:hover {
     background: #ddd;
     color: black;
 }

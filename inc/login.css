@@ -4,10 +4,7 @@
 
 /* common */
 html { overflow:hidden; background-color: #000;}
-body { background:none !important; overflow:hidden;}
-
-
-#bg img { opacity: 1 !important;; }
+body { overflow:hidden;background-position: center;background-size: cover;}
 
 .login #login_error, .login .message {
 	/*position: absolute;
@@ -32,7 +29,7 @@ body { background:none !important; overflow:hidden;}
 	/*text-shadow:1px 1px 0px #000;*/ 
 	margin-bottom:10px;
 	margin-top: 25px; 
-	background-image:url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/hyouryu/login_logo.png);
+	background-image:url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/login_logo.png);
 	background-position: center bottom !important;
 	background-size: contain;
 	padding-top: 20px;
@@ -43,6 +40,21 @@ input:-webkit-autofill {
 	-webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
 	box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
 	color: #676767 !important
+}
+
+#login { 
+	font:14px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+	position:absolute;
+	background: #FFF9;
+	border-radius: 12px;
+	top:50%;
+	left:50%;
+	width:350px;
+	padding:0px !important;
+	margin:-235px 0px 0px -175px !important; 
+    background-position: center 48%;
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
 }
 
 #login form { 
