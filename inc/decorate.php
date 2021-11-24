@@ -13,6 +13,7 @@ if(iro_opt('nav_menu_display') == 'unfold'){ ?>
 if (iro_opt('theme_skin')) { ?>
 :root{
     --theme-skin: <?php echo iro_opt('theme_skin'); ?>;
+    --theme-skin-matching:<?php echo iro_opt('theme_skin_matching'); ?>
 }
 .author-profile i , .post-like a , .post-share .show-share , .sub-text , .we-info a , span.sitename { color: <?php echo iro_opt('theme_skin'); ?> }
 <?php if (iro_opt('theme_commemorate_mode')) {?>
