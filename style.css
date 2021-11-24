@@ -8387,12 +8387,11 @@ td.hljs-ln-numbers {
     background: #ddd;
     color: black;
 }
-h1[id*=toc-head]::before,
-h2[id*=toc-head]::before,
-h3[id*=toc-head]::before,
-h4[id*=toc-head]::before,
-h5[id*=toc-head]::before,
-h6[id*=toc-head]::before {
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before {
     display: block;
     content: " ";
     height: 80px;
