@@ -1618,7 +1618,7 @@ i.iconfont.hotpost {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
-    height: 85px;
+    height:6em;
     overflow: hidden
 }
 
