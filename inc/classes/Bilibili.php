@@ -32,7 +32,11 @@ class Bilibili
             )
         );
         $response = wp_remote_get($url, $args);
-        return json_decode($response["body"], true);
+        if(is_array($response)){
+            return json_decode($response["body"], true);
+        }else{
+            return array('code'=>-1);
+        }
     }
 
     public function get_bgm_items($page = 1)
@@ -40,6 +44,8 @@ class Bilibili
         $resp = $this->fetch_api(1, $page);
         $code = $resp["code"];
         switch ($code) {
+            case -1://指示在网络请求阶段发生了错误
+                return '<div>后端发生了错误 QwQ</div>';
             case 0: {
                     $bgm = $resp['data'];
                     $totalpage = $bgm["total"] / 15;
