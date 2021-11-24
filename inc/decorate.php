@@ -508,7 +508,10 @@ if ( iro_opt('post_list_akina_type') == 'square') { ?>
 //$image_api = 'background-image: url("'.rest_url('sakura/v1/image/cover').'");';
 $bg_style = !iro_opt('cover_full_screen') ? 'background-position: center center;background-attachment: inherit;' : '';
 ?>
-.centerbg{<?php echo $bg_style ?>background-position: center center;background-attachment: inherit;}
+#centerbg{<?php 
+echo $bg_style;
+echo iro_opt('site_bg_as_cover',false)? 'background:#0000;':'';
+ ?>}
 .rotating {
     -webkit-animation: rotating 6s linear infinite;
     -moz-animation: rotating 6s linear infinite;
