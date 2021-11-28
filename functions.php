@@ -2098,5 +2098,5 @@ function should_show_title():bool{
     $use_as_thumb = get_post_meta($id, 'use_as_thumb', true); //'true','only',(default)
     return !iro_opt('patternimg') 
     || !get_post_thumbnail_id($id) 
-    && $use_as_thumb == 'only' && !get_post_meta($id, 'video_cover', true);
+    && $use_as_thumb != 'true' && !get_post_meta($id, 'video_cover', true);
 }

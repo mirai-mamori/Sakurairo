@@ -29,7 +29,7 @@ $mashiro_logo = iro_opt('mashiro_logo');
 
 <head>
 	<link rel="stylesheet" href="https://<?php echo iro_opt('gfonts_api','fonts.loli.net'); ?>/css?family=Noto+Serif|Merriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC<?php echo iro_opt('gfonts_add_name'); ?>" media="all">
-	<meta name="theme-color" content="<?php echo iro_opt('theme_skin_matching')?>" media="(prefers-color-scheme: light)">
+	<meta name="theme-color" content="" media="(prefers-color-scheme: light)">
 	<meta name="theme-color" content="<?php echo iro_opt('theme_skin_dark')?>" media="(prefers-color-scheme: dark)">
 
 	<meta charset="<?php bloginfo('charset'); ?>">

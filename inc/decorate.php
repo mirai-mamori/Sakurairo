@@ -13,6 +13,7 @@ if(iro_opt('nav_menu_display') == 'unfold'){ ?>
 if (iro_opt('theme_skin')) { ?>
 :root{
     --theme-skin: <?php echo iro_opt('theme_skin'); ?>;
+    --theme-skin-matching:<?php echo iro_opt('theme_skin_matching'); ?>
 }
 .author-profile i , .post-like a , .post-share .show-share , .sub-text , .we-info a , span.sitename { color: <?php echo iro_opt('theme_skin'); ?> }
 <?php if (iro_opt('theme_commemorate_mode')) {?>
@@ -508,7 +509,10 @@ if ( iro_opt('post_list_akina_type') == 'square') { ?>
 //$image_api = 'background-image: url("'.rest_url('sakura/v1/image/cover').'");';
 $bg_style = !iro_opt('cover_full_screen') ? 'background-position: center center;background-attachment: inherit;' : '';
 ?>
-.centerbg{<?php echo $bg_style ?>background-position: center center;background-attachment: inherit;}
+#centerbg{<?php 
+echo $bg_style;
+echo iro_opt('site_bg_as_cover',false)? 'background:#0000;':'';
+ ?>}
 .rotating {
     -webkit-animation: rotating 6s linear infinite;
     -moz-animation: rotating 6s linear infinite;
