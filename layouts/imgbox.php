@@ -3,17 +3,16 @@ include_once('all_opt.php');
 $text_logo = iro_opt('text_logo');
 function print_social_zone(string $social_display_icon, array $all_opt)
 {
- if (iro_opt('cover_random_graphs_switch', 'true')) : ?>
-<li id="bg-pre"><img src="<?=$social_display_icon?>pre.png" /></li>
-<?php endif; ?>
-<?php if (iro_opt('wechat')) { ?>
+ if (iro_opt('cover_random_graphs_switch', 'true')){ ?>
+    <li id="bg-pre"><img src="<?=$social_display_icon?>pre.png" /></li>
+<?php }
+if (iro_opt('wechat')) { ?>
 <li class="wechat"><a href="#" title="wechat"><img src="<?=$social_display_icon?>wechat.png" /></a>
     <div class="wechatInner">
-        <img src="<?php echo iro_opt('wechat', ''); ?>" alt="WeChat">
+        <img src="<?=iro_opt('wechat', ''); ?>" alt="WeChat">
     </div>
 </li>
-<?php } ?>
-<?php 
+<?php }
     foreach ($all_opt as $key => $value) {
         if (!empty($value['link'])) {
             switch(true){
@@ -52,11 +51,11 @@ function print_social_zone(string $social_display_icon, array $all_opt)
     <?php if (iro_opt('infor_bar')) { ?>
     <div class="focusinfo">
         <?php if (isset($text_logo['text']) && iro_opt('text_logo_options', 'true')) : ?>
-        <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="<?php echo $text_logo['text']; ?>">
+        <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="<?=$text_logo['text']; ?>">
             <?php echo $text_logo['text']; ?></h1>
         <?php elseif (iro_opt('personal_avatar')) : ?>
         <div class="header-tou"><a href="<?php bloginfo('url'); ?>"><img
-                    src="<?php echo iro_opt('personal_avatar', ''); ?>"></a></div>
+                    src="<?=iro_opt('personal_avatar', ''); ?>"></a></div>
         <?php else : ?>
         <div class="header-tou"><a href="<?php bloginfo('url'); ?>"><img
                     src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/avatar.jpg"></a>
