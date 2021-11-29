@@ -207,7 +207,7 @@ function z_quick_edit_custom_box($column_name, $screen, $name) {
  */
 function z_taxonomy_columns( $columns ) {
 	$new_columns = array();
-	if(array_key_exists('cb',$columns)){
+	if(isset($columns)){
 		$new_columns['cb'] = $columns['cb'];
 		unset( $columns['cb'] );
 	}
