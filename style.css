@@ -652,7 +652,7 @@ input[type=week] {
 
 #changskin {
   position: fixed;
-  bottom: 70px;
+  bottom: 15px;
   right: 10px;
   z-index: 99;
   border: 0;

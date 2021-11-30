@@ -39,12 +39,15 @@ if (iro_opt('wechat')) { ?>
 <?php
 }
 ?>
-<style>
+<?php
+/*未定义的伪类 */
+/* <style>
 .header-info::before {
     display: none !important;
     opacity: 0 !important;
 }
-</style>
+</style> */
+?>
 <div id="banner_wave_1"></div>
 <div id="banner_wave_2"></div>
 <figure id="centerbg" class="centerbg">
