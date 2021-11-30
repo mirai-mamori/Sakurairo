@@ -871,28 +871,6 @@ position:relative;bottom:0;left:0;display:block;width:100%;height:2px;background
     -webkit-animation:fadeInUp <?=iro_opt('page_title_animation_time'); ?>s;
 	animation: fadeInUp <?=iro_opt('page_title_animation_time'); ?>s;
 }
-<?php endif; ?>
-
-/*首页封面动画*/
-<?php if (iro_opt('cover_animation', 'true')): ?>
-h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,.header-info p,.header-info,.focusinfo .header-tou img,.top-social img,.center-text{
-	-moz-animation: fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
-    -webkit-animation:fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
-	animation: fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
-}
-<?php endif; ?>
-
-/*导航菜单动画*/
-<?php if (iro_opt('nav_menu_animation', 'true')): ?>
-.site-top ul {
-	-moz-animation: fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
-    -webkit-animation:fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
-	animation: fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
-}
-<?php endif; ?>
-
-/*浮起动画*/
-/*向上*/
 @-moz-keyframes fadeInUp {
 	0% {
 		-moz-transform: translateY(200%);
@@ -958,7 +936,15 @@ h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,.header-info 
 		opacity: 1
 	}
 }
-/*向下*/
+<?php endif; ?>
+
+/*首页封面动画*/
+<?php if (iro_opt('cover_animation', 'true')): ?>
+h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,.header-info p,.header-info,.focusinfo .header-tou img,.top-social img,.center-text{
+	-moz-animation: fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
+    -webkit-animation:fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
+	animation: fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
+}
 @-moz-keyframes fadeInDown {
 	0% {
 		-moz-transform: translateY(-100%);
@@ -1024,7 +1010,15 @@ h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,.header-info 
 		opacity: 1
 	}
 }
-/*向左*/
+<?php endif; ?>
+
+/*导航菜单动画*/
+<?php if (iro_opt('nav_menu_animation', 'true')): ?>
+.site-top ul {
+	-moz-animation: fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
+    -webkit-animation:fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
+	animation: fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
+}
 @-moz-keyframes fadeInLeft {
 	0% {
 		-moz-transform: translateX(100%);
@@ -1090,8 +1084,18 @@ h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,.header-info 
 		opacity: 1
 	}
 }
+<?php endif; ?>
 
 /*其他*/
+
+.widget-area .sakura_widget{
+    background-image: url(<?=iro_opt('sakura_widget_background', ''); ?>);
+}
+
+.headertop{
+    border-radius: 0 0 <?=iro_opt('cover_radius', ''); ?>px <?=iro_opt('cover_radius', ''); ?>px;
+}
+
 <?php if (!iro_opt('article_lincenses', 'true')): ?>
 .post-footer {
 display:none;
@@ -1111,14 +1115,6 @@ display:none;
     }
 }
 <?php endif; ?>
-
-.widget-area .sakura_widget{
-    background-image: url(<?=iro_opt('sakura_widget_background', ''); ?>);
-}
-
-.headertop{
-    border-radius: 0 0 <?=iro_opt('cover_radius', ''); ?>px <?=iro_opt('cover_radius', ''); ?>px;
-}
 
 <?php if (!iro_opt('post_icon_more', 'true')): ?>
 .float-content i {
@@ -1148,7 +1144,7 @@ i.iconfont.js-toggle-search.iconsearch {
     height: 33px;
 }
 
-<?php }if(iro_opt('nav_menu_search_size') == 'standard'){ ?>
+<?php }else if(iro_opt('nav_menu_search_size') == 'standard'){ ?>
 
 <?php } ?>
 
@@ -1167,7 +1163,7 @@ li.link-item {
 	float:none;
 }
 
-<?php }if(iro_opt('friend_link_align') == 'center'){ ?>
+<?php }else if(iro_opt('friend_link_align') == 'center'){ ?>
 
 span.sitename {
    margin: 0px;
@@ -1201,7 +1197,7 @@ li.link-item {
     border-radius: 10px 0 0 10px
 }
 
-<?php }if(iro_opt('post_list_image_align') == 'alternate'){ ?>
+<?php }else if(iro_opt('post_list_image_align') == 'alternate'){ ?>
 .post-list-thumb:nth-child(2n) .post-content-wrap {
     float: left;
     padding-left: 30px;
@@ -1226,7 +1222,7 @@ li.link-item {
     display:none;
 }
 
-<?php }if(iro_opt('page_style') == 'sakura'){ ?>
+<?php }else if(iro_opt('page_style') == 'sakura'){ ?>
 .pattern-center {
     position: relative;
     top: 0;
