@@ -121,11 +121,6 @@ if (iro_opt('theme_skin')) { ?>
 
 
 /*非全局色彩管理*/
-
-:root{
-    --post-list-thumb: <?php echo iro_opt('post_border_shadow_color'); ?>;
-}
-
 .font-family-controls button {
     background-color: <?php echo iro_opt('style_menu_selection_color'); ?>;
 }
@@ -180,9 +175,6 @@ font-family: <?php echo $text_logo['font']; ?> ;
 }
 <?php } ?>
 
-.post-list-thumb{opacity: 0}
-.post-list-show {opacity: 1}
-
 <?php } // theme-skin ?>
 <?php // Custom style
 if ( iro_opt('site_custom_style') ) {
@@ -191,8 +183,8 @@ if ( iro_opt('site_custom_style') ) {
 // Custom style end ?>
 <?php // liststyle
 if ( iro_opt('post_list_akina_type') == 'square') { ?>
-.feature img{ border-radius: 0px; !important; }
-.feature i { border-radius: 0px; !important; }
+.feature img{ border-radius: 0px !important; }
+.feature i { border-radius: 0px !important; }
 <?php } // liststyle ?>
 <?php 
 //$image_api = 'background-image: url("'.rest_url('sakura/v1/image/cover').'");';
