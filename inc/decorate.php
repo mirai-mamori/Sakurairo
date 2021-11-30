@@ -12,31 +12,32 @@ if(iro_opt('nav_menu_display') == 'unfold'){ ?>
 
 if (iro_opt('theme_skin')) { ?>
 :root{
-    --theme-skin: <?php echo iro_opt('theme_skin'); ?>;
-    --theme-skin-matching:<?php echo iro_opt('theme_skin_matching'); ?>;
-    --infor_bar_bgcolor:<?php echo iro_opt('infor_bar_bgcolor'); ?>;
-    --style_menu_background_color:<?php echo iro_opt('style_menu_background_color'); ?>;
-    --style_menu_selection_radius:<?php echo iro_opt('style_menu_selection_radius', ''); ?>px;
-    --post_date_text_color:<?php echo iro_opt('post_date_text_color'); ?>;
-    --load_nextpage_svg:url("<?php echo iro_opt('load_nextpage_svg'); ?>");
-    --style_menu_radius:<?php echo iro_opt('style_menu_radius', ''); ?>px;
-    --post-list-thumb: <?php echo iro_opt('post_border_shadow_color'); ?>;
+    --theme-skin: <?=iro_opt('theme_skin'); ?>;
+    --theme-skin-matching:<?=iro_opt('theme_skin_matching'); ?>;
+    --infor_bar_bgcolor:<?=iro_opt('infor_bar_bgcolor'); ?>;
+    --style_menu_background_color:<?=iro_opt('style_menu_background_color'); ?>;
+    --style_menu_selection_radius:<?=iro_opt('style_menu_selection_radius', ''); ?>px;
+    --post_date_text_color:<?=iro_opt('post_date_text_color'); ?>;
+    --load_nextpage_svg:url("<?=iro_opt('load_nextpage_svg'); ?>");
+    --style_menu_radius:<?=iro_opt('style_menu_radius', ''); ?>px;
+    --post-list-thumb: <?=iro_opt('post_border_shadow_color'); ?>;
     --style_menu_selection_color: <?=iro_opt('style_menu_selection_color'); ?>;
-
+    <?php //深色模式主题色 ?>
+    --theme-skin-dark: <?=iro_opt('theme_skin_dark'); ?>
 }
 <?php if (iro_opt('theme_commemorate_mode')) {?>
     html{
         filter: grayscale(100%) !important;
     }
 <?php } ?>
-.the-feature.from_left_and_right .info,.the-feature.from_left_and_right .info h3{background: <?php echo iro_opt('exhibition_background_color'); ?> ;}
+.the-feature.from_left_and_right .info,.the-feature.from_left_and_right .info h3{background: <?=iro_opt('exhibition_background_color'); ?> ;}
 
 /*白猫样式Logo*/
 <?php if (iro_opt('mashiro_logo_option', 'true')) {?>
 .logolink .sakuraso {
     background-color: rgba(255, 255, 255, .5);
     border-radius: 5px;
-    color: <?php echo iro_opt('theme_skin'); ?>;
+    color: <?=iro_opt('theme_skin'); ?>;
     height: auto;
     line-height: 25px;
     margin-right: 0;
@@ -47,18 +48,18 @@ if (iro_opt('theme_skin')) { ?>
 }
  
 .logolink a:hover .sakuraso {
-    background-color: <?php echo iro_opt('theme_skin_matching'); ?>;
+    background-color: <?=iro_opt('theme_skin_matching'); ?>;
     color: #fff;
 }
  
 .logolink a:hover .shironeko,
 .logolink a:hover .no,
 .logolink a:hover rt {
-    color: <?php echo iro_opt('theme_skin_matching'); ?>;
+    color: <?=iro_opt('theme_skin_matching'); ?>;
 }
  
 .logolink.moe-mashiro a {
-    color: <?php echo iro_opt('theme_skin'); ?>;
+    color: <?=iro_opt('theme_skin'); ?>;
     float: left;
     font-size: 25px;
     font-weight: 800;
@@ -71,7 +72,7 @@ if (iro_opt('theme_skin')) { ?>
 }
 @media (max-width:860px) {
 .logolink.moe-mashiro a {
-    color: <?php echo iro_opt('theme_skin'); ?>;
+    color: <?=iro_opt('theme_skin'); ?>;
     float: left;
     font-size: 25px;
     font-weight: 800;
@@ -122,49 +123,49 @@ if (iro_opt('theme_skin')) { ?>
 
 /*非全局色彩管理*/
 .font-family-controls button {
-    background-color: <?php echo iro_opt('style_menu_selection_color'); ?>;
+    background-color: <?=iro_opt('style_menu_selection_color'); ?>;
 }
 h1.fes-title,
 h1.main-title {
-    border-bottom: 6px dotted <?php echo iro_opt('area_title_bottom_color'); ?>;
+    border-bottom: 6px dotted <?=iro_opt('area_title_bottom_color'); ?>;
 }
 .post-date {
-    background-color: <?php echo iro_opt('post_date_background_color'); ?>;
+    background-color: <?=iro_opt('post_date_background_color'); ?>;
 }
 .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
-    background: <?php echo iro_opt('shuoshuo_background_color1'); ?>;
+    background: <?=iro_opt('shuoshuo_background_color1'); ?>;
 }
 .cbp_tmtimeline > li .cbp_tmlabel {
-    background: <?php echo iro_opt('shuoshuo_background_color2'); ?>;
+    background: <?=iro_opt('shuoshuo_background_color2'); ?>;
 }
 .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
-    border-right-color: <?php echo iro_opt('shuoshuo_background_color1'); ?>;
+    border-right-color: <?=iro_opt('shuoshuo_background_color1'); ?>;
 }
 .cbp_tmtimeline > li .cbp_tmlabel:after {
-    border-right-color: <?php echo iro_opt('shuoshuo_background_color2'); ?>;
+    border-right-color: <?=iro_opt('shuoshuo_background_color2'); ?>;
 }
 
 <?php $text_logo = iro_opt('text_logo'); ?>
 .center-text{
-color: <?php echo $text_logo['color']; ?> ;
-font-size: <?php echo $text_logo['size']; ?>px;
+color: <?=$text_logo['color']; ?> ;
+font-size: <?=$text_logo['size']; ?>px;
 }
 .Ubuntu-font,.center-text{
-font-family: <?php echo $text_logo['font']; ?> ;
+font-family: <?=$text_logo['font']; ?> ;
 }
 
 .notice i ,
 .notice {
-    color: <?php echo iro_opt('bulletin_text_color'); ?>;
+    color: <?=iro_opt('bulletin_text_color'); ?>;
 }
 
 .notice {
-    border: 1px solid <?php echo iro_opt('bulletin_board_border_color'); ?>;
+    border: 1px solid <?=iro_opt('bulletin_board_border_color'); ?>;
 }
 
 <?php if(iro_opt('entry_content_style') == "sakurairo"){ ?>
 .entry-content th {
-    background-color: <?php echo iro_opt('theme_skin'); ?>
+    background-color: <?=iro_opt('theme_skin'); ?>
 }
 <?php } ?>
 
@@ -194,13 +195,6 @@ $bg_style = !iro_opt('cover_full_screen') ? 'background-position: center center;
 echo $bg_style;
 echo iro_opt('site_bg_as_cover',false)? 'background:#0000;':'';
  ?>}
-.rotating {
-    -webkit-animation: rotating 6s linear infinite;
-    -moz-animation: rotating 6s linear infinite;
-    -ms-animation: rotating 6s linear infinite;
-    -o-animation: rotating 6s linear infinite;
-    animation: rotating 6s linear infinite;
-}
 
 /*预加载部分*/
 
@@ -233,10 +227,10 @@ html {
     width:20px;
     height:20px;
     border-radius:20px;
-    background:<?php echo iro_opt('preload_animation_color1'); ?>;
+    background:<?=iro_opt('preload_animation_color1'); ?>;
     content:'';
     position:absolute;
-    background:<?php echo iro_opt('preload_animation_color2'); ?>;
+    background:<?=iro_opt('preload_animation_color2'); ?>;
     -webkit-animation: preloader_3_before 1.5s infinite ease-in-out;
     -moz-animation: preloader_3_before 1.5s infinite ease-in-out;
     -ms-animation: preloader_3_before 1.5s infinite ease-in-out;
@@ -246,10 +240,10 @@ html {
     width:20px;
     height:20px;
     border-radius:20px;
-    background:<?php echo iro_opt('preload_animation_color1'); ?>;
+    background:<?=iro_opt('preload_animation_color1'); ?>;
     content:'';
     position:absolute;
-    background:<?php echo iro_opt('preload_animation_color1'); ?>;
+    background:<?=iro_opt('preload_animation_color1'); ?>;
     left:22px;
     -webkit-animation: preloader_3_after 1.5s infinite ease-in-out;
     -moz-animation: preloader_3_after 1.5s infinite ease-in-out;
@@ -262,7 +256,7 @@ html {
     }
     50% {
         -webkit-transform: translateX(50px) scale(1.2) rotate(260deg);
-        background:<?php echo iro_opt('preload_animation_color1'); ?>;
+        background:<?=iro_opt('preload_animation_color1'); ?>;
         border-radius:0px;
     }
     100% {
@@ -275,7 +269,7 @@ html {
     }
     50% {
         -webkit-transform: translateX(-50px) scale(1.2) rotate(-260deg);
-        background:<?php echo iro_opt('preload_animation_color2'); ?>;
+        background:<?=iro_opt('preload_animation_color2'); ?>;
         border-radius:0px;
     }
     100% {
@@ -288,7 +282,7 @@ html {
     }
     50% {
         -moz-transform: translateX(50px) scale(1.2) rotate(260deg);
-        background:<?php echo iro_opt('preload_animation_color1'); ?>;
+        background:<?=iro_opt('preload_animation_color1'); ?>;
         border-radius:0px;
     }
     100% {
@@ -301,7 +295,7 @@ html {
     }
     50% {
         -moz-transform: translateX(-50px) scale(1.2) rotate(-260deg);
-        background:<?php echo iro_opt('preload_animation_color2'); ?>;
+        background:<?=iro_opt('preload_animation_color2'); ?>;
         border-radius:0px;
     }
     100% {
@@ -314,7 +308,7 @@ html {
     }
     50% {
         -ms-transform: translateX(50px) scale(1.2) rotate(260deg);
-        background:<?php echo iro_opt('preload_animation_color1'); ?>;
+        background:<?=iro_opt('preload_animation_color1'); ?>;
         border-radius:0px;
     }
     100% {
@@ -327,7 +321,7 @@ html {
     }
     50% {
         -ms-transform: translateX(-50px) scale(1.2) rotate(-260deg);
-        background:<?php echo iro_opt('preload_animation_color2'); ?>;
+        background:<?=iro_opt('preload_animation_color2'); ?>;
         border-radius:0px;
     }
     100% {
@@ -340,7 +334,7 @@ html {
     }
     50% {
         transform: translateX(50px) scale(1.2) rotate(260deg);
-        background:<?php echo iro_opt('preload_animation_color1'); ?>;
+        background:<?=iro_opt('preload_animation_color1'); ?>;
         border-radius:0px;
     }
     100% {
@@ -353,7 +347,7 @@ html {
     }
     50% {
         transform: translateX(-50px) scale(1.2) rotate(-260deg);
-        background:<?php echo iro_opt('preload_animation_color2'); ?>;
+        background:<?=iro_opt('preload_animation_color2'); ?>;
         border-radius:0px;
     }
     100% {
@@ -374,7 +368,7 @@ body.dark .post-list hr,
 body.dark .lower li ul,
 body.dark .header-user-menu,
 body.dark .headertop-bar::after 
-{background:rgba(51,51,51,<?php echo iro_opt('theme_darkmode_background_transparency')?>) !important;}
+{background:rgba(51,51,51,<?=iro_opt('theme_darkmode_background_transparency')?>) !important;}
 
 body.dark .toc,
 body.dark .search-form input
@@ -393,7 +387,7 @@ body.dark .ins-section .ins-search-item.active .ins-slug,
 body.dark .ins-section .ins-search-item.active .ins-search-preview,
 body.dark .herder-user-name-u,
 body.dark .herder-user-name,
-body.dark .herder-user-name no-logged,
+body.dark .herder-user-name .no-logged,
 body.dark .header-user-menu .user-menu-option
 {color:#fff;background:#333333;}
 
@@ -600,20 +594,20 @@ body.dark .post-footer
 /*深色模式控件透明度*/
 body.dark .header-info,
 body.dark .top-social img
-{color:#fff;background:rgba(51,51,51,<?php echo iro_opt('theme_darkmode_widget_transparency'); ?>);}
+{color:#fff;background:rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);}
 
 body.dark .the-feature.from_left_and_right .info
-{background-color: rgba(51,51,51,<?php echo iro_opt('theme_darkmode_widget_transparency'); ?>);}
+{background-color: rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);}
 
 body.dark .yya,
 body.dark .widget-area,
 body.dark .skin-menu,
 body.dark input[type=submit] 
-{background-color:rgba(38,38,38,<?php echo iro_opt('theme_darkmode_widget_transparency'); ?>) !important;}
+{background-color:rgba(38,38,38,<?=iro_opt('theme_darkmode_widget_transparency'); ?>) !important;}
 
 /*深色模式自定义颜色*/
 body.dark .headertop-down i 
-{color: <?php echo iro_opt('drop_down_arrow_dark_color'); ?> !important;}
+{color: <?=iro_opt('drop_down_arrow_dark_color'); ?> !important;}
 
 /*深色模式图像亮度*/
 body.dark img,
@@ -621,17 +615,14 @@ body.dark .highlight-wrap,
 body.dark iframe,
 body.dark .entry-content .aplayer,
 body.dark .post-thumb video
-{filter:brightness(<?php echo iro_opt('theme_darkmode_img_bright'); ?>);}
+{filter:brightness(<?=iro_opt('theme_darkmode_img_bright'); ?>);}
 
 /*深色模式主题色*/
-:root{
-    --theme-skin-dark: <?php echo iro_opt('theme_skin_dark'); ?>;
-}
 body.dark .scrollbar,
 body.dark .butterBar-message,
 body.dark .aplayer .aplayer-list ol li:hover ,
 body.dark .pattern-center:after 
-{background: <?php echo iro_opt('theme_skin_dark'); ?> !important;}
+{background: <?=iro_opt('theme_skin_dark'); ?> !important;}
 
 body.dark .aplayer .aplayer-list ol li.aplayer-list-light .aplayer-list-cur,
 body.dark .user-menu-option a:hover ,
@@ -642,7 +633,7 @@ body.dark .openNav .icon:before ,
 body.dark .openNav .icon:after ,
 body.dark .openNav .icon:after ,
 body.dark .site-top ul li a:after 
-{background-color: <?php echo iro_opt('theme_skin_dark'); ?>;}
+{background-color: <?=iro_opt('theme_skin_dark'); ?>;}
 
 body.dark #moblieGoTop,
 body.dark #changskin,
@@ -660,17 +651,17 @@ body.dark .menhera-container .emoji-item:hover ,
 body.dark .comment-respond .logged-in-as a:hover ,
 body.dark .site-top ul li a:hover ,
 body.dark i.iconfont.js-toggle-search.iconsearch:hover
-{color:<?php echo iro_opt('theme_skin_dark'); ?>;}
+{color:<?=iro_opt('theme_skin_dark'); ?>;}
 
 body.dark .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path 
-{fill:<?php echo iro_opt('theme_skin_dark'); ?>;}
+{fill:<?=iro_opt('theme_skin_dark'); ?>;}
 
 body.dark #moblieGoTop:hover , 
 body.dark #changskin:hover 
-{color:<?php echo iro_opt('theme_skin_dark'); ?>;opacity:.8;}
+{color:<?=iro_opt('theme_skin_dark'); ?>;opacity:.8;}
 
 body.dark .focusinfo .header-tou img 
-{box-shadow: inset 0 0 10px <?php echo iro_opt('theme_skin_dark'); ?>;}
+{box-shadow: inset 0 0 10px <?=iro_opt('theme_skin_dark'); ?>;}
 
 
 @media (max-width: 1200px){
@@ -729,64 +720,64 @@ h1.page-title
 
 /*字重*/
 
-h1,small,sub,sup,code,kbd,pre,samp,body,button,input,select,textarea,blockquote:before,blockquote:after,code,kbd,tt,var,big,button,input[type=button],input[type=reset],input[type=submit],.video-stu,.pattern-center h1.cat-title,.pattern-center h1.entry-title,.pattern-center .cat-des,.single-center .single-header h1.entry-title,.single-center .entry-census,.pattern-center-sakura h1.cat-title,.pattern-center-sakura h1.entry-title,.pattern-center-sakura .cat-des,.single-center .single-header h1.entry-title,.single-center .entry-census,.site-top .lower,.site-top .menu-item-has-children li a,.feature i,.p-time,.p-time i,i.iconfont.hotpost,.post-list p,.post-more i,.info-meta span,.post-list-thumb i,.post-date,.post-meta,.post-meta a,.float-content .post-text,.float-content i,.s-time,.s-time i,.navigator i,.site-info,.entry-census,h1.page-title,.post-tags,.post-like a,.post-like i,.post-share ul li i ,.post-squares .category,.post-squares h3,.post-squares .label,.author-profile .meta h3 a,.author-profile p,.author-profile i,.mashiro-profile .box a,#comments-list-title span,.butterBar-message ,h1.works-title,.works-p-time,.works-p-time i,.works-meta i,.works-meta span,#archives-temp h3,h1.cat-title,span.sitename,span.linkss-title,.comment .commeta,.comment .comment-reply-link,.comment .info,.comment .info .useragent-info-m,.comment h4,.comment h4 a,.comment-respond #cancel-comment-reply-link,.comment-respond input,.comment-respond textarea,.comment-respond .logged-in-as i,.notification i,.notification span,.siren-checkbox-label,h1.fes-title,h1.main-title,.foverlay-bg,.feature-title .foverlay,.notice i,.bio-text,.header-info,.site-header.iconsearch,i.iconfont.js-toggle-search.iconsearch,.search-form i ,.search-form input,.s-search input,.s-search i,.ins-section,.ins-section .iconfont.icon-mark,.ins-section .fa ,.ins-section.ins-search-item .search-keyword,.ins-section .ins-search-item .ins-search-preview,i.iconfont.down,#pagination span,#bangumi-pagination span,.ex-login-title ,.ex-register-title h3,.ex-login input,.ex-register input,.admin-login-check,.user-login-check,.ex-login-username,.ex-new-account a,.ex-register .user-error,.register-close,.herder-user-name,.header-user-menu a,.no-logged,.no-logged a,.single-reward .reward-open,.reward-row li::after ,.botui-container,button.botui-actions-buttons-button,input.botui-actions-text-input,.load-button span,.prpr,.mashiro-tips,.live2d-tool,.center-text,.bb-comment,.finish-icon-container,.skill div,#footer-sponsor,.comment-user-avatar .socila-check ,.insert-image-tips ,.the-feature.from_left_and_right .info h3,.the-feature.from_left_and_right .info p,.highlight-wrap .copy-code ,#bangumi-pagination {font-weight: <?php echo iro_opt('global_font_weight'); ?> !important}
+h1,small,sub,sup,code,kbd,pre,samp,body,button,input,select,textarea,blockquote:before,blockquote:after,code,kbd,tt,var,big,button,input[type=button],input[type=reset],input[type=submit],.video-stu,.pattern-center h1.cat-title,.pattern-center h1.entry-title,.pattern-center .cat-des,.single-center .single-header h1.entry-title,.single-center .entry-census,.pattern-center-sakura h1.cat-title,.pattern-center-sakura h1.entry-title,.pattern-center-sakura .cat-des,.single-center .single-header h1.entry-title,.single-center .entry-census,.site-top .lower,.site-top .menu-item-has-children li a,.feature i,.p-time,.p-time i,i.iconfont.hotpost,.post-list p,.post-more i,.info-meta span,.post-list-thumb i,.post-date,.post-meta,.post-meta a,.float-content .post-text,.float-content i,.s-time,.s-time i,.navigator i,.site-info,.entry-census,h1.page-title,.post-tags,.post-like a,.post-like i,.post-share ul li i ,.post-squares .category,.post-squares h3,.post-squares .label,.author-profile .meta h3 a,.author-profile p,.author-profile i,.mashiro-profile .box a,#comments-list-title span,.butterBar-message ,h1.works-title,.works-p-time,.works-p-time i,.works-meta i,.works-meta span,#archives-temp h3,h1.cat-title,span.sitename,span.linkss-title,.comment .commeta,.comment .comment-reply-link,.comment .info,.comment .info .useragent-info-m,.comment h4,.comment h4 a,.comment-respond #cancel-comment-reply-link,.comment-respond input,.comment-respond textarea,.comment-respond .logged-in-as i,.notification i,.notification span,.siren-checkbox-label,h1.fes-title,h1.main-title,.foverlay-bg,.feature-title .foverlay,.notice i,.bio-text,.header-info,.site-header.iconsearch,i.iconfont.js-toggle-search.iconsearch,.search-form i ,.search-form input,.s-search input,.s-search i,.ins-section,.ins-section .iconfont.icon-mark,.ins-section .fa ,.ins-section.ins-search-item .search-keyword,.ins-section .ins-search-item .ins-search-preview,i.iconfont.down,#pagination span,#bangumi-pagination span,.ex-login-title ,.ex-register-title h3,.ex-login input,.ex-register input,.admin-login-check,.user-login-check,.ex-login-username,.ex-new-account a,.ex-register .user-error,.register-close,.herder-user-name,.header-user-menu a,.no-logged,.no-logged a,.single-reward .reward-open,.reward-row li::after ,.botui-container,button.botui-actions-buttons-button,input.botui-actions-text-input,.load-button span,.prpr,.mashiro-tips,.live2d-tool,.center-text,.bb-comment,.finish-icon-container,.skill div,#footer-sponsor,.comment-user-avatar .socila-check ,.insert-image-tips ,.the-feature.from_left_and_right .info h3,.the-feature.from_left_and_right .info p,.highlight-wrap .copy-code ,#bangumi-pagination {font-weight: <?=iro_opt('global_font_weight'); ?> !important}
 
 /*字体*/
 
 <?php if (iro_opt('reference_exter_font', 'true')): ?>
 @font-face {
-font-family: '<?php echo iro_opt('exter_font_name'); ?>';
-src : url('<?php echo iro_opt('exter_font_link'); ?>');
+font-family: '<?=iro_opt('exter_font_name'); ?>';
+src : url('<?=iro_opt('exter_font_link'); ?>');
 }
 <?php endif; ?>
 
 .serif{
-font-family:<?php echo iro_opt('global_default_font'); ?> !important ;
-font-size: <?php echo iro_opt('global_font_size'); ?>px !important;
+font-family:<?=iro_opt('global_default_font'); ?> !important ;
+font-size: <?=iro_opt('global_font_size'); ?>px !important;
 }
 
 body{
-font-family:<?php echo iro_opt('global_font_2'); ?> !important;
-font-size: <?php echo iro_opt('global_font_size'); ?>px !important;
+font-family:<?=iro_opt('global_font_2'); ?> !important;
+font-size: <?=iro_opt('global_font_size'); ?>px !important;
 }
 
 h1.main-title,h1.fes-title{
-font-family:<?php echo iro_opt('area_title_font'); ?> !important;
+font-family:<?=iro_opt('area_title_font'); ?> !important;
 }
 
 .header-info p{
-font-family:<?php echo iro_opt('signature_font'); ?> !important;
-font-size: <?php echo iro_opt('signature_font_size'); ?>px !important;
+font-family:<?=iro_opt('signature_font'); ?> !important;
+font-size: <?=iro_opt('signature_font_size'); ?>px !important;
 }
 
 .cbp_tmtimeline > li .cbp_tmlabel {
-font-family:<?php echo iro_opt('shuoshuo_font'); ?> !important;
+font-family:<?=iro_opt('shuoshuo_font'); ?> !important;
 }
 
 .post-list-thumb .post-title h3{
-font-size: <?php echo iro_opt('post_title_font_size'); ?>px !important;
+font-size: <?=iro_opt('post_title_font_size'); ?>px !important;
 }
 
 .post-meta, .post-meta a{
-font-size: <?php echo iro_opt('post_date_font_size'); ?>px !important;
+font-size: <?=iro_opt('post_date_font_size'); ?>px !important;
 }
 
 .pattern-center h1.cat-title,
 .pattern-center h1.entry-title {
-font-size: <?php echo iro_opt('page_temp_title_font_size'); ?>px !important;
+font-size: <?=iro_opt('page_temp_title_font_size'); ?>px !important;
 }
 .pattern-center-sakura h1.cat-title,
 .pattern-center-sakura h1.entry-title {
-font-size: <?php echo iro_opt('page_temp_title_font_size'); ?>px !important;
+font-size: <?=iro_opt('page_temp_title_font_size'); ?>px !important;
 }
 
 .single-center .single-header h1.entry-title {
-font-size: <?php echo iro_opt('article_title_font_size'); ?>px !important;
+font-size: <?=iro_opt('article_title_font_size'); ?>px !important;
 }
 
 /*鼠标*/
 body{
-cursor: url(<?php echo iro_opt('cursor_nor'); ?>), auto;
+cursor: url(<?=iro_opt('cursor_nor'); ?>), auto;
 }
 
 .botui-actions-buttons-button,
@@ -808,7 +799,7 @@ button.botui-actions-buttons-button,
 .tieba-container span,
 #moblieGoTop,
 #changskin{
-cursor: url(<?php echo iro_opt('cursor_no'); ?>), auto;
+cursor: url(<?=iro_opt('cursor_no'); ?>), auto;
 }
 
 a,
@@ -816,52 +807,52 @@ a,
 .font-family-controls button,
 .menu-list li,.ins-section .ins-search-item,
 .ins-section .ins-search-item .ins-search-preview{
-cursor: url(<?php echo iro_opt('cursor_ayu'); ?>), auto;
+cursor: url(<?=iro_opt('cursor_ayu'); ?>), auto;
 }
 
 p,
 .highlight-wrap code,
 .highlight-wrap,
 .hljs-ln-code .hljs-ln-line{
-cursor: url(<?php echo iro_opt('cursor_text'); ?>), auto;
+cursor: url(<?=iro_opt('cursor_text'); ?>), auto;
 }
 
 a:active{
-cursor: url(<?php echo iro_opt('cursor_work'); ?>), alias;
+cursor: url(<?=iro_opt('cursor_work'); ?>), alias;
 }
 
 /*背景类*/
 .comment-respond textarea {
-background-image: url(<?php echo iro_opt('comment_area_image'); ?>); 
+background-image: url(<?=iro_opt('comment_area_image'); ?>); 
 }
 
 .search-form.is-visible{
-background-image: url(<?php echo iro_opt('search_area_background'); ?>);
+background-image: url(<?=iro_opt('search_area_background'); ?>);
 }
 
 .site-footer {
-background-color: rgba(255, 255, 255,<?php echo iro_opt('reception_background_transparency'); ?>);
+background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparency'); ?>);
 <?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: blur(10px); <?php endif; ?>
 <?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: blur(10px); <?php endif; ?>
 }
 
 .wrapper {
-background-color: rgba(255, 255, 255,<?php echo iro_opt('reception_background_transparency'); ?>);
+background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparency'); ?>);
 <?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: blur(10px); <?php endif; ?>
 <?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: blur(10px); <?php endif; ?>
 }
 
 /*首页圆角设置*/
 .header-info{
-border-radius: <?php echo iro_opt('signature_radius'); ?>px;
+border-radius: <?=iro_opt('signature_radius'); ?>px;
 }
 
 .focusinfo img{
-border-radius: <?php echo iro_opt('social_area_radius'); ?>px;
+border-radius: <?=iro_opt('social_area_radius'); ?>px;
 }
 
 .focusinfo .header-tou img{
-border-radius: <?php echo iro_opt('avatar_radius'); ?>px;
+border-radius: <?=iro_opt('avatar_radius'); ?>px;
 }
 
 /*标题横线动画*/
@@ -876,27 +867,27 @@ position:relative;bottom:0;left:0;display:block;width:100%;height:2px;background
 /*标题动画*/
 <?php if (iro_opt('page_title_animation', 'true')): ?>
 .entry-title,.single-center .entry-census a,.entry-census,.post-list p,.post-more i,.p-time,.feature{
-	-moz-animation: fadeInUp <?php echo iro_opt('page_title_animation_time'); ?>s;
-    -webkit-animation:fadeInUp <?php echo iro_opt('page_title_animation_time'); ?>s;
-	animation: fadeInUp <?php echo iro_opt('page_title_animation_time'); ?>s;
+	-moz-animation: fadeInUp <?=iro_opt('page_title_animation_time'); ?>s;
+    -webkit-animation:fadeInUp <?=iro_opt('page_title_animation_time'); ?>s;
+	animation: fadeInUp <?=iro_opt('page_title_animation_time'); ?>s;
 }
 <?php endif; ?>
 
 /*首页封面动画*/
 <?php if (iro_opt('cover_animation', 'true')): ?>
 h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,.header-info p,.header-info,.focusinfo .header-tou img,.top-social img,.center-text{
-	-moz-animation: fadeInDown  <?php echo iro_opt('cover_animation_time'); ?>s;
-    -webkit-animation:fadeInDown  <?php echo iro_opt('cover_animation_time'); ?>s;
-	animation: fadeInDown  <?php echo iro_opt('cover_animation_time'); ?>s;
+	-moz-animation: fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
+    -webkit-animation:fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
+	animation: fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
 }
 <?php endif; ?>
 
 /*导航菜单动画*/
 <?php if (iro_opt('nav_menu_animation', 'true')): ?>
 .site-top ul {
-	-moz-animation: fadeInLeft  <?php echo iro_opt('nav_menu_animation_time'); ?>s;
-    -webkit-animation:fadeInLeft  <?php echo iro_opt('nav_menu_animation_time'); ?>s;
-	animation: fadeInLeft  <?php echo iro_opt('nav_menu_animation_time'); ?>s;
+	-moz-animation: fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
+    -webkit-animation:fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
+	animation: fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
 }
 <?php endif; ?>
 
@@ -1122,11 +1113,11 @@ display:none;
 <?php endif; ?>
 
 .widget-area .sakura_widget{
-    background-image: url(<?php echo iro_opt('sakura_widget_background', ''); ?>);
+    background-image: url(<?=iro_opt('sakura_widget_background', ''); ?>);
 }
 
 .headertop{
-    border-radius: 0 0 <?php echo iro_opt('cover_radius', ''); ?>px <?php echo iro_opt('cover_radius', ''); ?>px;
+    border-radius: 0 0 <?=iro_opt('cover_radius', ''); ?>px <?=iro_opt('cover_radius', ''); ?>px;
 }
 
 <?php if (!iro_opt('post_icon_more', 'true')): ?>
@@ -1251,23 +1242,23 @@ li.link-item {
     position: fixed;
     -webkit-transition: all 1s ease !important;
     transition: all 1s ease !important;
-    width:<?php echo iro_opt('nav_menu_shrink_animation', ''); ?>% ;
-	left:calc(97.5% - <?php echo iro_opt('nav_menu_shrink_animation', ''); ?>%);
+    width:<?=iro_opt('nav_menu_shrink_animation', ''); ?>% ;
+	left:calc(97.5% - <?=iro_opt('nav_menu_shrink_animation', ''); ?>%);
     background: rgba(255, 255, 255, .75);
     box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4);
-    border-radius: <?php echo iro_opt('nav_menu_radius', ''); ?>px !important;
+    border-radius: <?=iro_opt('nav_menu_radius', ''); ?>px !important;
 }
 .site-title img {
     margin-left: 10px;
 }
 .site-header {
-    border-radius: <?php echo iro_opt('nav_menu_radius', ''); ?>px !important;
+    border-radius: <?=iro_opt('nav_menu_radius', ''); ?>px !important;
 }
 .header-user-menu {
-    border-radius: <?php echo iro_opt('nav_menu_secondary_radius', ''); ?>px !important;
+    border-radius: <?=iro_opt('nav_menu_secondary_radius', ''); ?>px !important;
 }
 .lower li ul {
-    border-radius: <?php echo iro_opt('nav_menu_secondary_radius', ''); ?>px !important;
+    border-radius: <?=iro_opt('nav_menu_secondary_radius', ''); ?>px !important;
 }
 @media (max-width:860px) {
 .openNav .icon {
@@ -1348,7 +1339,7 @@ li.link-item {
 <?php if (iro_opt('exhibition_area_compat', 'true')): ?>
 .the-feature.from_left_and_right {
     position: relative;
-    border-radius: <?php echo iro_opt('exhibition_radius', ''); ?>px;
+    border-radius: <?=iro_opt('exhibition_radius', ''); ?>px;
     height: 160px;
     width: 258px;
     margin: 6px 6px 0 6px;
@@ -1388,7 +1379,7 @@ h1.main-title {
 
 <?php if(iro_opt('bulletin_board_style') == 'picture'){ ?>
 .notice {
-    background-image:url(<?php echo iro_opt('bulletin_board_bg', ''); ?>);
+    background-image:url(<?=iro_opt('bulletin_board_bg', ''); ?>);
     border: none;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
 }
@@ -1403,8 +1394,8 @@ $nav_menu_blur=iro_opt('nav_menu_blur','0');
 if($nav_menu_blur != '0'){
 ?>
 .yya{
-    backdrop-filter: blur(<?php echo $nav_menu_blur?>px);
-    -webkit-backdrop-filter: blur(<?php echo $nav_menu_blur?>px);
+    backdrop-filter: blur(<?=$nav_menu_blur?>px);
+    -webkit-backdrop-filter: blur(<?=$nav_menu_blur?>px);
 }
 <?php
 }
@@ -1427,8 +1418,7 @@ if(iro_opt('cover_half_screen_curve',true)){
 }
 ?>
 body{
-    background-size:<?php
-echo iro_opt(('reception_background_size'),'auto')
+    background-size:<?=iro_opt(('reception_background_size'),'auto')
 ?>;
 }
 </style>
