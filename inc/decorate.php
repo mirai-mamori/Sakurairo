@@ -23,7 +23,8 @@ if (iro_opt('theme_skin')) { ?>
     --post-list-thumb: <?=iro_opt('post_border_shadow_color'); ?>;
     --style_menu_selection_color: <?=iro_opt('style_menu_selection_color'); ?>;
     <?php //深色模式主题色 ?>
-    --theme-skin-dark: <?=iro_opt('theme_skin_dark'); ?>
+    --theme-skin-dark: var(--theme-skin-dark);
+    --global-font-weight:<?=iro_opt('global_font_weight');?>
 }
 <?php if (iro_opt('theme_commemorate_mode')) {?>
     html{
@@ -224,12 +225,6 @@ html {
     position:relative;
 }
 #preloader_3:before {
-    width:20px;
-    height:20px;
-    border-radius:20px;
-    background:<?=iro_opt('preload_animation_color1'); ?>;
-    content:'';
-    position:absolute;
     background:<?=iro_opt('preload_animation_color2'); ?>;
     -webkit-animation: preloader_3_before 1.5s infinite ease-in-out;
     -moz-animation: preloader_3_before 1.5s infinite ease-in-out;
@@ -237,18 +232,20 @@ html {
     animation: preloader_3_before 1.5s infinite ease-in-out;
 }
 #preloader_3:after {
-    width:20px;
-    height:20px;
-    border-radius:20px;
-    background:<?=iro_opt('preload_animation_color1'); ?>;
-    content:'';
-    position:absolute;
     background:<?=iro_opt('preload_animation_color1'); ?>;
     left:22px;
     -webkit-animation: preloader_3_after 1.5s infinite ease-in-out;
     -moz-animation: preloader_3_after 1.5s infinite ease-in-out;
     -ms-animation: preloader_3_after 1.5s infinite ease-in-out;
     animation: preloader_3_after 1.5s infinite ease-in-out;
+}
+#preloader_3:before,#preloader_3:after {
+    width:20px;
+    height:20px;
+    border-radius:20px;
+    background:<?=iro_opt('preload_animation_color1'); ?>;
+    position:absolute;
+    content:'';
 }
 @-webkit-keyframes preloader_3_before {
     0% {
@@ -357,238 +354,6 @@ html {
 <?php endif; ?>
 
 /*深色模式*/
-
-/*固定项目*/
-body.dark #main-container,
-body.dark .comments,
-body.dark .site-footer,
-body.dark .wrapper,
-body.dark .post-list-show,
-body.dark .post-list hr,
-body.dark .lower li ul,
-body.dark .header-user-menu,
-body.dark .headertop-bar::after 
-{background:rgba(51,51,51,<?=iro_opt('theme_darkmode_background_transparency')?>) !important;}
-
-body.dark .toc,
-body.dark .search-form input
-{background:rgba(51,51,51,0.8);}
-
-body.dark #mo-nav{
-    background:#333333;
-}
-
-body.dark .single-reward .reward-row,
-body.dark input.m-search-input
-{background:#999999;}
-
-body.dark .ins-section .ins-search-item.active,
-body.dark .ins-section .ins-search-item.active .ins-slug,
-body.dark .ins-section .ins-search-item.active .ins-search-preview,
-body.dark .herder-user-name-u,
-body.dark .herder-user-name,
-body.dark .herder-user-name .no-logged,
-body.dark .header-user-menu .user-menu-option
-{color:#fff;background:#333333;}
-
-body.dark .single-reward .reward-row:before
-{border-bottom:13px solid #999999;}
-
-body.dark .search-form--modal,
-body.dark .ins-section .ins-section-header
-{border-bottom:none;background:rgba(51,51,51,0.9) !important;}
-
-body.dark .search_close:after,
-body.dark .search_close:before,
-body.dark .openNav .icon,
-body.dark .openNav .icon:before
-{background-color:#CCCCCC;}
-
-body.dark .centerbg
-{background-blend-mode:hard-light;background-color:#333333;}
-
-body.dark input[type=color]:focus,
-body.dark input[type=date]:focus,
-body.dark input[type=datetime-local]:focus,
-body.dark input[type=datetime]:focus,
-body.dark input[type=email]:focus,
-body.dark input[type=month]:focus,
-body.dark input[type=number]:focus,
-body.dark input[type=password]:focus,
-body.dark input[type=range]:focus,
-body.dark input[type=search]:focus,
-body.dark input[type=tel]:focus,
-body.dark input[type=text]:focus,
-body.dark input[type=time]:focus,
-body.dark input[type=url]:focus,
-body.dark input[type=week]:focus,
-body.dark textarea:focus,
-body.dark .post-date,
-body.dark #mo-nav .m-search form
-{color:#CCCCCC;background-color:#333333;}
-
-body.dark .header-user-menu::before,
-body.dark .lower li ul::before
-{border-color:transparent transparent #333333 transparent;}
-
-body.dark .header-user-menu .user-menu-option,
-body.dark .post-list-thumb a 
-{color:#333333;}
-
-body.dark .entry-content p,
-body.dark .entry-content ul,
-body.dark .entry-content ol,
-body.dark .comments .body p,
-body.dark .float-content,
-body.dark .post-list p,
-body.dark .link-title
-{color:#999999 !important;}
-
-body.dark .entry-title a,
-body.dark .post-list-thumb .post-title,
-body.dark .art-content #archives .al_mon_list .al_mon,
-body.dark .art-content #archives .al_mon_list span,
-body.dark .art .art-content #archives a,
-body.dark .menhera-container .emoji-item,
-body.dark .ex-login-username,
-body.dark .admin-login-check p,
-body.dark .user-login-check p,
-body.dark .ex-logout a,
-body.dark .ex-new-account a
-{color:#999999;}
-
-body.dark .site-top ul li a,
-body.dark .header-user-menu a,
-body.dark #mo-nav ul li a,
-body.dark .site-title a,
-body.dark header.page-header,
-body.dark h1.cat-title,
-body.dark .art .art-content #archives .al_year,
-body.dark .comment-respond input,
-body.dark .comment-respond textarea,
-body.dark .siren-checkbox-label,
-body.dark .aplayer .aplayer-list ol li .aplayer-list-author,
-body.dark,
-body.dark button,
-body.dark input,
-body.dark select,
-body.dark textarea,
-body.dark i.iconfont.js-toggle-search.iconsearch,
-body.dark .info-meta a,
-body.dark .info-meta span,
-body.dark .skin-menu
-{color:#CCCCCC;}
-
-body.dark .post-date,
-body.dark .post-list-thumb a,
-body.dark .post-list-thumb i,
-body.dark .post-meta
-{color:#666666;}
-
-body.dark .post-list-thumb
-{box-shadow:0 1px 35px -8px rgba(26,26,26,0.6);}
-
-body.dark .notice,
-body.dark .notification 
-{color:#CCCCCC;background:#666666;border:none;}
-
-body.dark .author-profile p
-{border-top: 1px solid #3B3B3B;border-bottom: 1px solid #3B3B3B;color: #CCCCCC;}
-
-body.dark .author-profile .meta h3 a,
-body.dark .author-profile i 
-{color: #CCCCCC;}
-
-body.dark h1.page-title
-{border: 1px dashed #3B3B3B;color: #CCCCCC;}
-
-body.dark .entry-header hr
-{background:#3B3B3B;}
-
-body.dark h1.fes-title,
-body.dark h1.main-title
-{border-bottom:6px dotted #666666;color:#CCCCCC;}
-
-body.dark .widget-area .heading,
-body.dark .widget-area .show-hide svg,
-body.dark #aplayer-float,
-body.dark .aplayer.aplayer-fixed .aplayer-body,
-body.dark .aplayer .aplayer-miniswitcher,
-body.dark .aplayer .aplayer-pic
-{color:#CCCCCC;background-color:#262626 !important;}
-
-body.dark #aplayer-float .aplayer-lrc-current
-{color:transparent !important;}
-
-body.dark .aplayer.aplayer-fixed .aplayer-lrc
-{text-shadow:-1px -1px 0 #999999;}
-
-body.dark .aplayer.aplayer-fixed .aplayer-list
-{border:none !important;}
-
-body.dark .aplayer.aplayer-fixed .aplayer-info,
-body.dark .aplayer .aplayer-list ol li
-{border-top:none !important;}
-
-body.dark .yya
-{box-shadow: 0 1px 40px -8px #333333;}
-
-body.dark .font-family-controls button,
-body.dark .menu-list li
-{background-color:#666666;}
-
-body.dark .s-content,body.dark .font-family-controls button.selected
-{background-color:#808080;}
-
-body.dark #banner_wave_1,
-body.dark #banner_wave_2
-{display:none;}
-
-body.dark .widget-area .show-hide svg path
-{fill:#CCCCCC;}
-
-body.dark button,
-body.dark input[type=button],
-body.dark input[type=reset],
-body.dark input[type=submit]
-{box-shadow:none;}
-
-body.dark .comment .info,
-body.dark .comment-respond .logged-in-as,
-body.dark .comment-respond .logged-in-as a,
-body.dark span.sitename 
-{color:#CCCCCC;}
-
-body.dark .aplayer .aplayer-list ol li.aplayer-list-light ,
-body.dark .site-header:hover 
-{background:#333333;}
-
-body.dark #preload
-{background: #333333;}
-
-body.dark #moblieGoTop,
-body.dark #changskin
-{background-color:#262626;}
-
-body.dark #show-nav .line 
-{background: #CCCCCC;}
-
-body.dark .linkdes
-{
-    border-top: 1px dotted #CCCCCC !important;
-    color:#CCCCCC;
-}
-
-body.dark .links ul li
-{
-    background-color: #666666;
-    border: none;
-    opacity:.8;
-}
-
-body.dark .post-footer 
-{background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/creativecommons-dark.png);}
-
 /*可变项目*/
 
 /*深色模式控件透明度*/
@@ -616,111 +381,10 @@ body.dark iframe,
 body.dark .entry-content .aplayer,
 body.dark .post-thumb video
 {filter:brightness(<?=iro_opt('theme_darkmode_img_bright'); ?>);}
-
-/*深色模式主题色*/
-body.dark .scrollbar,
-body.dark .butterBar-message,
-body.dark .aplayer .aplayer-list ol li:hover ,
-body.dark .pattern-center:after 
-{background: <?=iro_opt('theme_skin_dark'); ?> !important;}
-
-body.dark .aplayer .aplayer-list ol li.aplayer-list-light .aplayer-list-cur,
-body.dark .user-menu-option a:hover ,
-body.dark .menu-list li:hover ,
-body.dark .font-family-controls button:hover ,
-body.dark .openNav .icon, 
-body.dark .openNav .icon:before ,
-body.dark .openNav .icon:after ,
-body.dark .openNav .icon:after ,
-body.dark .site-top ul li a:after 
-{background-color: <?=iro_opt('theme_skin_dark'); ?>;}
-
-body.dark #moblieGoTop,
-body.dark #changskin,
-body.dark .post-content a:hover ,
-body.dark .entry-title a:hover ,
-body.dark .art .art-content #archives a:hover ,
-body.dark .the-feature.from_left_and_right a:hover .info p,
-body.dark .the-feature.from_left_and_right .info,
-body.dark .ins-section .ins-search-item:hover,
-body.dark .ins-section .ins-search-item:hover .ins-slug,
-body.dark .ins-section .ins-search-item:hover .ins-search-preview,
-body.dark .ins-section .ins-search-item:hover .iconfont ,
-body.dark .float-content i:hover,
-body.dark .menhera-container .emoji-item:hover ,
-body.dark .comment-respond .logged-in-as a:hover ,
-body.dark .site-top ul li a:hover ,
-body.dark i.iconfont.js-toggle-search.iconsearch:hover
-{color:<?=iro_opt('theme_skin_dark'); ?>;}
-
-body.dark .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path 
-{fill:<?=iro_opt('theme_skin_dark'); ?>;}
-
-body.dark #moblieGoTop:hover , 
-body.dark #changskin:hover 
-{color:<?=iro_opt('theme_skin_dark'); ?>;opacity:.8;}
-
-body.dark .focusinfo .header-tou img 
-{box-shadow: inset 0 0 10px <?=iro_opt('theme_skin_dark'); ?>;}
-
-
 @media (max-width: 1200px){
 body.dark .site-top .lower nav.navbar ul 
 {background: rgba(255,255,255,0);}
 }
-
-/*切换动画*/
-html,
-#main-container,
-.pattern-center:after,
-#mo-nav,
-.headertop-bar::after,
-.comments,
-.site-footer,
-.pattern-center-blank,
-.yya,
-.blank,
-.toc
-{transition:background 0.8s;}
-
-.notice,
-.notification,
-.author-profile p,
-.author-profile .meta h3 a,
-.author-profile i,
-.entry-header hr,
-.header-info p,
-.header-info,
-.focusinfo .header-tou img,
-.top-social img, 
-.center-text,
-.entry-content p,
-.entry-content ul,
-.entry-content ol,
-.comments .body p,
-.float-content,
-.post-list p,
-.link-title,
-.search-form input,
-.wrapper,
-.site-footer,
-.site-wrapper,
-#moblieGoTop,
-#changskin,
-#moblieGoTop:hover,
-#changskin:hover,
-.post-list-show,
-.post-list hr,
-.post-date,
-.float-content i:hover,
-h1.fes-title,
-h1.main-title,
-h1.page-title
-{transition:all 0.8s ease !important;}
-
-/*字重*/
-
-h1,small,sub,sup,code,kbd,pre,samp,body,button,input,select,textarea,blockquote:before,blockquote:after,code,kbd,tt,var,big,button,input[type=button],input[type=reset],input[type=submit],.video-stu,.pattern-center h1.cat-title,.pattern-center h1.entry-title,.pattern-center .cat-des,.single-center .single-header h1.entry-title,.single-center .entry-census,.pattern-center-sakura h1.cat-title,.pattern-center-sakura h1.entry-title,.pattern-center-sakura .cat-des,.single-center .single-header h1.entry-title,.single-center .entry-census,.site-top .lower,.site-top .menu-item-has-children li a,.feature i,.p-time,.p-time i,i.iconfont.hotpost,.post-list p,.post-more i,.info-meta span,.post-list-thumb i,.post-date,.post-meta,.post-meta a,.float-content .post-text,.float-content i,.s-time,.s-time i,.navigator i,.site-info,.entry-census,h1.page-title,.post-tags,.post-like a,.post-like i,.post-share ul li i ,.post-squares .category,.post-squares h3,.post-squares .label,.author-profile .meta h3 a,.author-profile p,.author-profile i,.mashiro-profile .box a,#comments-list-title span,.butterBar-message ,h1.works-title,.works-p-time,.works-p-time i,.works-meta i,.works-meta span,#archives-temp h3,h1.cat-title,span.sitename,span.linkss-title,.comment .commeta,.comment .comment-reply-link,.comment .info,.comment .info .useragent-info-m,.comment h4,.comment h4 a,.comment-respond #cancel-comment-reply-link,.comment-respond input,.comment-respond textarea,.comment-respond .logged-in-as i,.notification i,.notification span,.siren-checkbox-label,h1.fes-title,h1.main-title,.foverlay-bg,.feature-title .foverlay,.notice i,.bio-text,.header-info,.site-header.iconsearch,i.iconfont.js-toggle-search.iconsearch,.search-form i ,.search-form input,.s-search input,.s-search i,.ins-section,.ins-section .iconfont.icon-mark,.ins-section .fa ,.ins-section.ins-search-item .search-keyword,.ins-section .ins-search-item .ins-search-preview,i.iconfont.down,#pagination span,#bangumi-pagination span,.ex-login-title ,.ex-register-title h3,.ex-login input,.ex-register input,.admin-login-check,.user-login-check,.ex-login-username,.ex-new-account a,.ex-register .user-error,.register-close,.herder-user-name,.header-user-menu a,.no-logged,.no-logged a,.single-reward .reward-open,.reward-row li::after ,.botui-container,button.botui-actions-buttons-button,input.botui-actions-text-input,.load-button span,.prpr,.mashiro-tips,.live2d-tool,.center-text,.bb-comment,.finish-icon-container,.skill div,#footer-sponsor,.comment-user-avatar .socila-check ,.insert-image-tips ,.the-feature.from_left_and_right .info h3,.the-feature.from_left_and_right .info p,.highlight-wrap .copy-code ,#bangumi-pagination {font-weight: <?=iro_opt('global_font_weight'); ?> !important}
 
 /*字体*/
 
