@@ -23,7 +23,7 @@ if (iro_opt('theme_skin')) { ?>
     --post-list-thumb: <?=iro_opt('post_border_shadow_color'); ?>;
     --style_menu_selection_color: <?=iro_opt('style_menu_selection_color'); ?>;
     <?php //深色模式主题色 ?>
-    --theme-skin-dark: var(--theme-skin-dark);
+    --theme-skin-dark:  <?=iro_opt('theme_skin_dark'); ?>;
     --global-font-weight:<?=iro_opt('global_font_weight');?>;
     --theme-dm-background_transparency:<?=iro_opt('theme_darkmode_background_transparency')?>
 }
