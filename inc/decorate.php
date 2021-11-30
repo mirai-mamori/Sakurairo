@@ -20,6 +20,9 @@ if (iro_opt('theme_skin')) { ?>
     --post_date_text_color:<?php echo iro_opt('post_date_text_color'); ?>;
     --load_nextpage_svg:url("<?php echo iro_opt('load_nextpage_svg'); ?>");
     --style_menu_radius:<?php echo iro_opt('style_menu_radius', ''); ?>px;
+    --post-list-thumb: <?php echo iro_opt('post_border_shadow_color'); ?>;
+    --style_menu_selection_color: <?=iro_opt('style_menu_selection_color'); ?>;
+
 }
 <?php if (iro_opt('theme_commemorate_mode')) {?>
     html{
@@ -29,7 +32,7 @@ if (iro_opt('theme_skin')) { ?>
 .the-feature.from_left_and_right .info,.the-feature.from_left_and_right .info h3{background: <?php echo iro_opt('exhibition_background_color'); ?> ;}
 
 /*白猫样式Logo*/
-<?php if (iro_opt('mashiro_logo_option', 'true')): ?>
+<?php if (iro_opt('mashiro_logo_option', 'true')) {?>
 .logolink .sakuraso {
     background-color: rgba(255, 255, 255, .5);
     border-radius: 5px;
@@ -114,93 +117,8 @@ if (iro_opt('theme_skin')) { ?>
 .logolink a:hover ruby rt {
     opacity: 1
 }
-<?php endif; ?>
+<?php } ?>
 
-.logolink a {
-    color: <?php echo iro_opt('theme_skin'); ?>;
-}
-
-.art .art-content .al_mon_list .al_post_list>li:after {
-    background: <?php echo iro_opt('theme_skin'); ?>;
-}
-@media (min-width:861px) {
-    .hide-live2d {
-        background-color: <?php echo iro_opt('theme_skin'); ?>;
-    }
-}
-.art-content #archives .al_mon_list .al_mon:after {
-    background: <?php echo iro_opt('theme_skin'); ?>;
-}
-.art-content #archives .al_mon_list:before {
-    background: <?php echo iro_opt('theme_skin'); ?>;
-}
-.changeSkin-gear {
-    color: <?php echo iro_opt('theme_skin'); ?>;
-}
-.art .art-content .al_mon_list .al_post_list>li:after,
-.art-content #archives .al_mon_list .al_mon:after {
-    background: <?php echo iro_opt('theme_skin'); ?>;
-}
-.is-active-link::before {
-    background-color: <?php echo iro_opt('theme_skin'); ?>; /*!important*/ /*mark*/
-}
-.motion-switcher-table th:hover {
-    color: <?php echo iro_opt('theme_skin_matching'); ?>;
-}
-.motion-switcher-table .on-hover {
-    color: <?php echo iro_opt('theme_skin_matching'); ?>;
-}
-.menhera-container .emoji-item {
-    color: <?php echo iro_opt('theme_skin'); ?>;
-}
-.scrollbar {
-    background: <?php echo iro_opt('theme_skin'); ?>;
-}
-.insert-image-tips:hover {
-    color: <?php echo iro_opt('theme_skin_matching'); ?>;
-    border: 1px solid <?php echo iro_opt('theme_skin_matching'); ?>;
-}
-.insert-image-tips-hover {
-    color: <?php echo iro_opt('theme_skin_matching'); ?>;
-    border: 1px solid <?php echo iro_opt('theme_skin_matching'); ?>;
-}
-.the-feature a {
-    color: <?php echo iro_opt('theme_skin'); ?>;
-}
-#moblieGoTop:hover,
-#changskin:hover {
-    color: <?php echo iro_opt('theme_skin_matching'); ?>;
-    background-color: #fff;
-    opacity: .8;
-}
-.menu-list li:hover {
-    background-color: <?php echo iro_opt('theme_skin_matching'); ?>;
-}
-.art .art-content #archives a:hover {
-    color: <?php echo iro_opt('theme_skin_matching'); ?>;
-}
-.art .art-content .al_mon_list .al_post_list>li,
-.art-content #archives .al_mon_list .al_mon {
-	color: <?php echo iro_opt('theme_skin'); ?>;
-}
-.font-family-controls button.selected{
-    background-color: <?php echo iro_opt('theme_skin'); ?>;
-}
-.font-family-controls button:hover{
-    background-color: <?php echo iro_opt('theme_skin_matching'); ?>;
-}
-.art-content #archives .al_mon_list .al_mon,
-.art-content #archives .al_mon_list span {
-    color: <?php echo iro_opt('theme_skin'); ?>;
-}
-h1.fes-title,
-h1.main-title {
-    color: <?php echo iro_opt('theme_skin'); ?>;
-}
-.font-family-controls button {
-    color: <?php echo iro_opt('theme_skin'); ?>;
-    border-radius: <?php echo iro_opt('style_menu_radius', ''); ?>px;
-}
 
 /*非全局色彩管理*/
 
@@ -208,10 +126,6 @@ h1.main-title {
     --post-list-thumb: <?php echo iro_opt('post_border_shadow_color'); ?>;
 }
 
-.menu-list li {
-    background-color: <?php echo iro_opt('style_menu_selection_color'); ?>;
-    border-radius: <?php echo iro_opt('style_menu_radius', ''); ?>px;
-}
 .font-family-controls button {
     background-color: <?php echo iro_opt('style_menu_selection_color'); ?>;
 }
