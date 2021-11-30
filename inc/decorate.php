@@ -444,7 +444,6 @@ body{
 cursor: url(<?=iro_opt('cursor_nor'); ?>), auto;
 }
 
-.botui-actions-buttons-button,
 .headertop-down i,
 .faa-parent.animated-hover:hover>.faa-spin,
 .faa-spin.animated,
@@ -454,7 +453,6 @@ i.iconfont.js-toggle-search.iconsearch,
 .aplayer svg,
 .aplayer.aplayer-narrow .aplayer-body,
 .aplayer.aplayer-narrow .aplayer-pic,
-button.botui-actions-buttons-button,
 #emotion-toggle,
 .emoji-item,
 .emotion-box,
