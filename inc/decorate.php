@@ -398,12 +398,12 @@ src : url('<?=iro_opt('exter_font_link'); ?>');
 
 .serif{
 font-family:<?=iro_opt('global_default_font'); ?> !important ;
-font-size: <?=iro_opt('global_font_size'); ?>px !important;
+font-size: <?=iro_opt('global_font_size'); ?>px;
 }
 
 body{
 font-family:<?=iro_opt('global_font_2'); ?> !important;
-font-size: <?=iro_opt('global_font_size'); ?>px !important;
+font-size: <?=iro_opt('global_font_size'); ?>px;
 }
 
 h1.main-title,h1.fes-title{
