@@ -34,11 +34,11 @@ function font_end_js_control() {
         'yiyan_api' => json_decode(iro_opt('yiyan_api'))
     ];
     $reception_background = iro_opt('reception_background');
-    $mashiro_opt['skin_bg0'] = $reception_background['img1'] ?? 'none';
-    $mashiro_opt['skin_bg1'] = $reception_background['img2'] ?? 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg1.png';
-    $mashiro_opt['skin_bg2'] = $reception_background['img3'] ?? 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg2.png';
-    $mashiro_opt['skin_bg3'] = $reception_background['img4'] ?? 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg3.png';
-    $mashiro_opt['skin_bg4'] = $reception_background['img5'] ?? 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png';
+    $mashiro_opt['skin_bg0'] = $reception_background['img1'] ?: 'none';
+    $mashiro_opt['skin_bg1'] = $reception_background['img2'] ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg1.png';
+    $mashiro_opt['skin_bg2'] = $reception_background['img3'] ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg2.png';
+    $mashiro_opt['skin_bg3'] = $reception_background['img4'] ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg3.png';
+    $mashiro_opt['skin_bg4'] = $reception_background['img5'] ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png';
     $mashiro_opt['entry_content_style_src'] = iro_opt('entry_content_style') == 'sakurairo' ? $ecs_src('sakura') : $ecs_src('github');
     $mashiro_opt['jsdelivr_css_src'] = iro_opt('local_global_library') ? (get_template_directory_uri().'/css/lib.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'.IRO_VERSION.'/css/lib.css');
     if (iro_opt('lightgallery')){$mashiro_opt['lightGallery'] = iro_opt('lightgallery_option');}
