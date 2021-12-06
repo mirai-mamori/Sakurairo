@@ -3,8 +3,12 @@
  * 仅对boolean类型的设置项有效
  */
 function font_end_js_control() {
-    $check = fn($a):bool => $a ? true : false;
-    $ecs_src = fn($a):string => get_template_directory_uri().'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
+    $check = function($a):bool {
+        return  $a ? true : false;
+    };
+    $ecs_src = function(string $a):string {
+        return get_template_directory_uri().'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
+    };
     $mashiro_opt = [
         'NProgressON' => $check(iro_opt('nprogress_on')),
         'audio' => $check(iro_opt('note_effects')),
