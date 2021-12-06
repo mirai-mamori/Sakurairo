@@ -1,18 +1,17 @@
 <?php
-include_once('all_opt.php');
+include('all_opt.php');
 $text_logo = iro_opt('text_logo');
-function print_social_zone(string $social_display_icon, array $all_opt)
-{
- if (iro_opt('cover_random_graphs_switch', 'true')){ ?>
-    <li id="bg-pre"><img src="<?=$social_display_icon?>pre.png" /></li>
-<?php }
-if (iro_opt('wechat')) { ?>
-<li class="wechat"><a href="#" title="wechat"><img src="<?=$social_display_icon?>wechat.png" /></a>
-    <div class="wechatInner">
-        <img src="<?=iro_opt('wechat', ''); ?>" alt="WeChat">
-    </div>
-</li>
-<?php }
+$print_social_zone = function() use (&$all_opt,&$social_display_icon){
+    if (iro_opt('cover_random_graphs_switch', 'true')){
+        echo '<li id="bg-pre"><img src="',$social_display_icon,'pre.png" /></li>';
+    }
+    if (iro_opt('wechat')) {
+        echo '<li class="wechat"><a href="#" title="wechat"><img src="',$social_display_icon,'wechat.png" /></a>
+            <div class="wechatInner">
+                <img src="',ro_opt('wechat', ''),'" alt="WeChat">
+            </div>
+        </li>';
+    }
     foreach ($all_opt as $key => $value) {
         if (!empty($value['link'])) {
             switch(true){
@@ -28,15 +27,13 @@ if (iro_opt('wechat')) { ?>
             echo '<li><a href="',$value['link'],'" target="_blank" class="social-', $value['class'] ?? $key ,'" title="' , $value['title'] ?? $key , '"><img src="' , $img_url , '" /></a></li>';
         }
     }
-    ?>
-<?php if (iro_opt('email_name') && iro_opt('email_domain')) { ?>
-<li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img
-            src="<?php echo iro_opt('social_display_icon'); ?>/mail.png" /></a></li>
-<?php } ?>
-<?php if (iro_opt('cover_random_graphs_switch', 'true')) : ?>
-<li id="bg-next"><img src="<?=$social_display_icon?>next.png" /></li>
-<?php endif; ?>
-<?php
+    if (iro_opt('email_name') && iro_opt('email_domain')) {
+        echo '<li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img
+                    src="',iro_opt('social_display_icon'),'/mail.png" /></a></li>';
+    }
+    if (iro_opt('cover_random_graphs_switch', 'true')){
+        echo '<li id="bg-next"><img src="',$social_display_icon,'next.png" /></li>';
+    }
 }
 ?>
 <?php
@@ -87,13 +84,13 @@ if (iro_opt('wechat')) { ?>
             <p><?php echo iro_opt('signature_text', 'Hi, Mashiro?'); ?></p>
             <?php if (iro_opt('infor_bar_style') == "v2") : ?>
             <div class="top-social_v2">
-                <?php print_social_zone($social_display_icon,$all_opt); ?>
+                <?php $print_social_zone(); ?>
             </div>
             <?php endif; ?>
         </div>
         <?php if (iro_opt('infor_bar_style') == "v1") : ?>
         <div class="top-social">
-            <?php print_social_zone($social_display_icon,$all_opt); ?>
+            <?php $print_social_zone(); ?>
         </div>
         <?php endif; ?>
     </div>

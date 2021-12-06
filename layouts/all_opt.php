@@ -6,6 +6,9 @@ $all_opt = [
         'icon' => 'bilibili',
         'title' => 'bilibili',
     ],
+    'qq' => [
+        'link' => iro_opt('qq', '')
+    ],
     'wangyiyun' => [
         'link' => iro_opt('wangyiyun', ''),
         'title' => 'CloudMusic',
