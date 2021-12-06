@@ -3083,7 +3083,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'id' => 'google_analytics_id',
         'type' => 'text',
-        'title' => __('Google Stats Code','sakurairo_csf'),
+        'title' => __('Google Analytics Id','sakurairo_csf'),
+        'label' => __('If you already have a plugin to handle it, please keep here empty.','sakurairo_csf'),
       ),
 
       array(

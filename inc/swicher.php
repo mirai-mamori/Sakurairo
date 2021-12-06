@@ -2,125 +2,67 @@
 /**
  * 仅对boolean类型的设置项有效
  */
-function echo_if_true($key,$overwrite_key = null){
-$value = iro_opt($key);
-if($value)echo ($overwrite_key ?? $key).":true,";
+function font_end_js_control() {
+    $check = fn($a):bool => $a ? true : false;
+    $ecs_src = fn($a):string => get_template_directory_uri().'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
+    $mashiro_opt = [
+        'NProgressON' => $check(iro_opt('nprogress_on')),
+        'audio' => $check(iro_opt('note_effects')),
+        'yiyan' => $check(iro_opt('footer_yiyan')),
+        'baguetteBox' => $check(iro_opt('baguetteBox')),
+        'fancybox' => $check(iro_opt('fancybox')),
+        'darkmode' => $check(iro_opt('theme_darkmode_auto')),
+        'email_domain' => iro_opt('email_domain', ''),
+        'email_name' => iro_opt('email_name', ''),
+        'cookie_version_control' => iro_opt('cookie_version', ''),
+        'qzone_autocomplete' => false,
+        'site_name' => iro_opt('site_name', ''),
+        'author_name' => iro_opt('author_name', ''),
+        'template_url' => get_template_directory_uri(),
+        'site_url' => site_url(),
+        'qq_api_url' => rest_url('sakura/v1/qqinfo/json'),
+        'live_search' => $check(iro_opt('live_search')),
+        'land_at_home' => $check(is_home()),
+        'clipboardCopyright' => iro_opt('clipboard_copyright') == "0" ? false:true,
+        'entry_content_style' => iro_opt('entry_content_style'),
+        'cover_api' => rest_url('sakura/v1/image/cover'),
+        'random_graphs_mts' => $check(iro_opt('random_graphs_mts' )),
+        'code_highlight' => iro_opt('code_highlight_method','hljs'),
+        'comment_upload_img' => iro_opt('img_upload_api')=='off' ? false : true,
+        'cache_cover' => $check(iro_opt('cache_cover')),
+        'site_bg_as_cover' => $check(iro_opt('site_bg_as_cover')),
+        'yiyan_api' => json_decode(iro_opt('yiyan_api'))
+    ];
+    $reception_background = iro_opt('reception_background');
+    $mashiro_opt['skin_bg0'] = $reception_background['img1'] ?: 'none';
+    $mashiro_opt['skin_bg1'] = $reception_background['img2'] ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg1.png';
+    $mashiro_opt['skin_bg2'] = $reception_background['img3'] ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg2.png';
+    $mashiro_opt['skin_bg3'] = $reception_background['img4'] ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg3.png';
+    $mashiro_opt['skin_bg4'] = $reception_background['img5'] ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png';
+    $mashiro_opt['entry_content_style_src'] = iro_opt('entry_content_style') == 'sakurairo' ? $ecs_src('sakura') : $ecs_src('github');
+    $mashiro_opt['jsdelivr_css_src'] = iro_opt('local_global_library') ? (get_template_directory_uri().'/css/lib.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'.IRO_VERSION.'/css/lib.css');
+    if (iro_opt('lightgallery')){$mashiro_opt['lightGallery'] = iro_opt('lightgallery_option');}
+    if (iro_opt('theme_darkmode_auto')){$mashiro_opt['dm_strategy'] = iro_opt('theme_darkmode_strategy','time');}
+    if (iro_opt('preload_blur',0)){$mashiro_opt['preload_blur'] = iro_opt('preload_blur',0);}
+    if (iro_opt('aplayer_server') != 'off'){
+        $mashiro_opt['float_player_on'] = true;
+        $mashiro_opt['meting_api_url'] = rest_url('sakura/v1/meting/aplayer');
+    }
+    if (iro_opt('code_highlight_method','hljs')=='prism'){
+        $mashiro_opt['code_highlight_prism'] = [
+            'line_number_all' => $check(iro_opt('code_highlight_prism_line_number_all')),
+            'autoload_path' => $iro_opt('code_highlight_prism_autoload_path','') ?: 'undefined'
+        ];
+        $theme_light = iro_opt('code_highlight_prism_theme_light');
+        $theme_dark = iro_opt('code_highlight_prism_theme_dark');
+        if ($theme_light != ''){
+            $mashiro_opt['code_highlight_prism']['theme'] = ['light' => $theme_light];
+        }
+        if ($theme_dark != ''){
+            $mashiro_opt['code_highlight_prism']['theme'] = ['dark' => $theme_dark];
+        }
+    }
+    wp_add_inline_script('app', 'const mashiro_option = '.json_encode($mashiro_opt,JSON_NUMERIC_CHECK|JSON_UNESCAPED_UNICODE),'before');
+    wp_add_inline_script('app', 'const mashiro_global = {}', 'before');
 }
-function font_end_js_control() { ?>
-<script id="_mashiro_">
-/*Initial Variables*/
-var mashiro_option = {
-    <?php 
-    echo_if_true('nprogress_on','NProgressON');
-    echo_if_true('note_effects','audio');
-    echo_if_true('footer_yiyan','yiyan');
-    echo_if_true('baguetteBox','baguetteBoxON');
-    echo_if_true('fancybox','fancybox');
-    if(iro_opt('lightgallery')){
-        $options = iro_opt('lightgallery_option');
-        echo "lightGallery:$options,";
-    }
-    ?>
-    darkmode :<?php echo iro_opt('theme_darkmode_auto') ? 'true':'false';?>,
-    <?php if ( iro_opt('theme_darkmode_auto') ):echo 'dm_strategy:"'.iro_opt('theme_darkmode_strategy','time').'",'.PHP_EOL;endif; ?>
-    <?php 
-    $preload_blur = iro_opt('preload_blur',0);
-    if($preload_blur){
-        echo "preload_blur:$preload_blur,";
-    }
-    ?>
-    email_domain:"<?php echo iro_opt('email_domain', ''); ?>",
-    email_name:"<?php echo iro_opt('email_name', ''); ?>",
-    cookie_version_control:"<?php echo iro_opt('cookie_version', ''); ?>",
-    qzone_autocomplete:false,
-    site_name:"<?php echo iro_opt('site_name', ''); ?>",
-    author_name:"<?php echo iro_opt('author_name', ''); ?>",
-    template_url:"<?php echo get_template_directory_uri(); ?>",
-    site_url:"<?php echo site_url(); ?>",
-    qq_api_url:"<?php echo rest_url('sakura/v1/qqinfo/json'); ?>",
-    // qq_avatar_api_url:"https://api.2heng.xin/qqinfo/",
-    live_search:<?php echo iro_opt('live_search') ? 'true':'false'?>,
-    <?php $reception_background = iro_opt('reception_background'); ?>
-    <?php if(isset($reception_background['img1'])){ $bg_arry=explode(",", $reception_background['img1']);?>
-    skin_bg0:"<?php echo $bg_arry[0] ?>",
-    <?php }else {?>
-    skin_bg0:"none",
-    <?php } ?>
-
-    <?php if(isset($reception_background['img2'])){ $bg_arry=explode(",", $reception_background['img2']);?>
-    skin_bg1:"<?php echo $bg_arry[0] ?>",
-    <?php }else {?>
-    skin_bg1:"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg1.png",
-    <?php } ?>
-
-    <?php if(isset($reception_background['img3'])){ $bg_arry=explode(",", $reception_background['img3']);?>
-    skin_bg2:"<?php echo $bg_arry[0] ?>",
-    <?php }else {?>
-    skin_bg2:"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg2.png",
-    <?php } ?>
-
-    <?php if(isset($reception_background['img4'])){ $bg_arry=explode(",", $reception_background['img4']);?>
-    skin_bg3:"<?php echo $bg_arry[0] ?>",
-    <?php }else {?>
-    skin_bg3:"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg3.png",
-    <?php } ?>
-
-    <?php if(isset($reception_background['img5'])){ $bg_arry=explode(",", $reception_background['img5']);?>
-    skin_bg4:"<?php echo $bg_arry[0] ?>",
-    <?php }else {?>
-    skin_bg4:"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png",
-    <?php } ?>
-    land_at_home:<?php echo is_home() ? 'true':'false'; ?>,
-    clipboardCopyright:<?php echo iro_opt('clipboard_copyright') == "0" ? 'false':'true' ?>,
-
-    <?php if(iro_opt('entry_content_style') == "sakurairo"){ ?>
-    entry_content_style_src:"<?php echo get_template_directory_uri() ?>/css/theme/sakura.css?<?php echo IRO_VERSION.iro_opt('cookie_version', ''); ?>",
-    <?php }elseif(iro_opt('entry_content_style') == "github") {?>
-    entry_content_style_src:"<?php echo get_template_directory_uri() ?>/css/theme/github.css?<?php echo IRO_VERSION.iro_opt('cookie_version', ''); ?>",
-    <?php } ?>
-    entry_content_style:"<?php echo iro_opt('entry_content_style'); ?>",
-
-    <?php if(iro_opt('local_global_library')){ ?>
-    jsdelivr_css_src:"<?php echo get_template_directory_uri() ?>/css/lib.css?<?php echo IRO_VERSION.iro_opt('cookie_version', ''); ?>",
-    <?php } else { ?>
-    jsdelivr_css_src:"https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@<?php echo IRO_VERSION; ?>/css/lib.min.css",
-    <?php } ?>
-    <?php if (iro_opt('aplayer_server') != 'off'): ?>
-    float_player_on:true,
-    meting_api_url:"<?php echo rest_url('sakura/v1/meting/aplayer'); ?>",
-    <?php endif; ?>
-
-    cover_api:"<?php echo rest_url('sakura/v1/image/cover'); ?>",
-    random_graphs_mts:<?php echo iro_opt('random_graphs_mts' ) ? 'true':'false'?>,
-    <?php
-    $highlight_method = iro_opt('code_highlight_method','hljs');
-    echo 'code_highlight:"'.$highlight_method.'",';
-
-    if($highlight_method=='prism'){
-        $autoload_path=iro_opt('code_highlight_prism_autoload_path');
-        $theme_light=iro_opt('code_highlight_prism_theme_light');
-        $theme_dark=iro_opt('code_highlight_prism_theme_dark');
-        ?>
-
-    code_highlight_prism: {
-        line_number_all:<?php echo iro_opt('code_highlight_prism_line_number_all')?'true':'false' ?>,
-        autoload_path:<?php  echo ($autoload_path=='' ? 'undefined' : '"'.$autoload_path.'"')  ?>,
-        theme:{
-                <?php  echo ($theme_light=='' ? '' : 'light:"'.$theme_light.'",');
-                echo ($theme_dark=='' ? '' : 'dark:"'.$theme_dark.'",') ; ?>
-              },
-    },   
-        <?php }?>    
-    comment_upload_img:<?php echo iro_opt('img_upload_api')=='off'?'false':'true' ?>,
-    <?php
-    echo_if_true('cache_cover');
-    echo_if_true('site_bg_as_cover');
-    $yiyan_api = iro_opt('yiyan_api');
-    if($yiyan_api) echo "yiyan_api:$yiyan_api,";
-    ?>
-};
-/*End of Initial Variables*/
-</script>
-<script>const mashiro_global = {};</script>
-<?php }
 add_action('wp_head', 'font_end_js_control');

@@ -119,6 +119,11 @@ if (!function_exists('akina_setup')) :
             'default-color' => 'ffffff',
             'default-image' => '',
         )));
+        /**
+         * 废弃过时的wp_title
+         * @seealso https://make.wordpress.org/core/2015/10/20/document-title-in-4-4/
+         */
+        add_theme_support( 'title-tag' );
 
         add_filter('pre_option_link_manager_enabled', '__return_true');
 

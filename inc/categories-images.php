@@ -207,11 +207,11 @@ function z_quick_edit_custom_box($column_name, $screen, $name) {
  */
 function z_taxonomy_columns( $columns ) {
 	$new_columns = array();
-	if(isset($columns['cb']))$new_columns['cb'] = $columns['cb'];
+	if(isset($columns)){
+		$new_columns['cb'] = $columns['cb'];
+		unset( $columns['cb'] );
+	}
 	$new_columns['thumb'] = __('image', 'sakurairo')/*图像*/;
-
-	unset( $columns['cb'] );
-
 	return array_merge( $new_columns, $columns );
 }
 

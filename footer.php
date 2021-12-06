@@ -59,8 +59,8 @@ $reception_background = iro_opt('reception_background');
 		<?php wp_nav_menu( array( 'depth' => 2, 'theme_location' => 'primary', 'container' => false ) ); ?>
 	</div><!-- m-nav-center end -->
 	<a class="cd-top faa-float animated "></a>
-	<button id="moblieGoTop" title="Go to top"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
-    <button id="changskin" style="bottom: 15px;"><i class="iconfont icon-gear inline-block rotating"></i></button>
+	<button id="moblieGoTop" title="<?=__('Go to top','sakurairo');?>"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+    <button id="changskin"><i class="iconfont icon-gear inline-block rotating"></i></button>
 	<!-- search start -->
 	<form class="js-search search-form search-form--modal" method="get" action="<?php echo home_url(); ?>" role="search">
 		<div class="search-form__inner">
