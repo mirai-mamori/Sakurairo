@@ -1,7 +1,7 @@
 <?php
 include('all_opt.php');
 $text_logo = iro_opt('text_logo');
-$print_social_zone = function() use (&$all_opt,&$social_display_icon){
+$print_social_zone = function() use ($all_opt,$social_display_icon):void{
     if (iro_opt('cover_random_graphs_switch', 'true')){
         echo '<li id="bg-pre"><img src="',$social_display_icon,'pre.png" /></li>';
     }
