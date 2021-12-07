@@ -2228,7 +2228,7 @@ h1.fes-title {
   font-weight: var(--global-font-weight,400);
   padding-bottom: 10px;
   margin-bottom: 30px;
-  border-bottom: 6px dotted #ffeeeB;
+  border-bottom: 6px dotted var(--area_title_bottom_color,#ffeeeB);
   transition: all 0.8s ease !important;
 }
 
@@ -2238,7 +2238,7 @@ h1.main-title {
   font-weight: var(--global-font-weight,400);
   padding-bottom: 10px;
   margin-bottom: 30px;
-  border-bottom: 6px dotted #ffeeeB;
+  border-bottom: 6px dotted var(--area_title_bottom_color,#ffeeeB);
   transition: all 0.8s ease !important;
 }
 
@@ -4373,7 +4373,7 @@ td.hljs-ln-numbers {
   vertical-align: middle;
   margin: 0 4px;
   box-shadow: none;
-  background-color: #FFEEEB;
+  background-color: var(--style_menu_selection_color,#FFEEEB);
   transition: .3s;
   cursor: pointer;
 }
@@ -4688,7 +4688,7 @@ input#wp-comment-cookies-consent {
 
 .cbp_tmtimeline > li .cbp_tmlabel {
   margin: 0 0 45px 65px;
-  background: #EE9CA7;
+  background: var(--shuoshuo_background_color2,#EE9CA7);
   color: #fff;
   padding: .1em 1.2em .4em 1.2em;
   font-size: 18px;
@@ -4718,7 +4718,7 @@ input#wp-comment-cookies-consent {
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-right-color: #EE9CA7;
+  border-right-color: var(--shuoshuo_background_color2,#EE9CA7);
   border-width: 10px;
   top: 15px;
 }
@@ -7101,11 +7101,11 @@ body.theme-dark .cbp_tmtimeline::before {
 }
 
 .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
-  background: #EE9999;
+  background: var(--shuoshuo_background_color1,#EE9999);
 }
 
 .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
-  border-right-color: #EE9999;
+  border-right-color: var(--shuoshuo_background_color1,#EE9999);
   top: 15px;
 }
 

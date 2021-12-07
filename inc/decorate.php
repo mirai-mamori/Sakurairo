@@ -22,10 +22,13 @@ if (iro_opt('theme_skin')) { ?>
     --style_menu_radius:<?=iro_opt('style_menu_radius', ''); ?>px;
     --post-list-thumb: <?=iro_opt('post_border_shadow_color'); ?>;
     --style_menu_selection_color: <?=iro_opt('style_menu_selection_color'); ?>;
+    --shuoshuo_background_color1:<?=iro_opt('shuoshuo_background_color1');?>;
+    --shuoshuo_background_color2:<?=iro_opt('shuoshuo_background_color2');?>;
     <?php //深色模式主题色 ?>
     --theme-skin-dark:  <?=iro_opt('theme_skin_dark'); ?>;
     --global-font-weight:<?=iro_opt('global_font_weight');?>;
-    --theme-dm-background_transparency:<?=iro_opt('theme_darkmode_background_transparency')?>
+    --theme-dm-background_transparency:<?=iro_opt('theme_darkmode_background_transparency')?>;
+    --area_title_bottom_color:<?=iro_opt('area_title_bottom_color');?>;
 }
 <?php if (iro_opt('theme_commemorate_mode')) {?>
     html{
@@ -124,27 +127,8 @@ if (iro_opt('theme_skin')) { ?>
 
 
 /*非全局色彩管理*/
-.font-family-controls button {
-    background-color: <?=iro_opt('style_menu_selection_color'); ?>;
-}
-h1.fes-title,
-h1.main-title {
-    border-bottom: 6px dotted <?=iro_opt('area_title_bottom_color'); ?>;
-}
 .post-date {
     background-color: <?=iro_opt('post_date_background_color'); ?>;
-}
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
-    background: <?=iro_opt('shuoshuo_background_color1'); ?>;
-}
-.cbp_tmtimeline > li .cbp_tmlabel {
-    background: <?=iro_opt('shuoshuo_background_color2'); ?>;
-}
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
-    border-right-color: <?=iro_opt('shuoshuo_background_color1'); ?>;
-}
-.cbp_tmtimeline > li .cbp_tmlabel:after {
-    border-right-color: <?=iro_opt('shuoshuo_background_color2'); ?>;
 }
 
 <?php $text_logo = iro_opt('text_logo'); ?>
