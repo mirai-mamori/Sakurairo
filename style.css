@@ -1003,7 +1003,7 @@ input[type=week] {
 
 .post-list-thumb i {
   margin-right: 5px;
-  color: var(--theme-skin,#989898);
+  color: var(--post_date_text_color,#505050);
   font-size: 14px;
   font-weight: var(--global-font-weight) !important;
 }
