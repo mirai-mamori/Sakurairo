@@ -61,7 +61,7 @@ function font_end_js_control() {
     if (iro_opt('code_highlight_method','hljs')=='prism'){
         $mashiro_opt['code_highlight_prism'] = [
             'line_number_all' => $check(iro_opt('code_highlight_prism_line_number_all')),
-            'autoload_path' => $iro_opt('code_highlight_prism_autoload_path','') ?: 'undefined'
+            'autoload_path' => iro_opt('code_highlight_prism_autoload_path','') ?: 'undefined'
         ];
         $theme_light = iro_opt('code_highlight_prism_theme_light');
         $theme_dark = iro_opt('code_highlight_prism_theme_dark');
