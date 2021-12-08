@@ -8,7 +8,7 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
     if (iro_opt('wechat')) {
         echo '<li class="wechat"><a href="#" title="wechat"><img src="',$social_display_icon,'wechat.png" /></a>
             <div class="wechatInner">
-                <img src="',ro_opt('wechat', ''),'" alt="WeChat">
+                <img src="',iro_opt('wechat', ''),'" alt="WeChat">
             </div>
         </li>';
     }
