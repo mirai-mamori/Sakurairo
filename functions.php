@@ -1676,7 +1676,7 @@ function change_avatar($avatar)
         if (get_comment_meta($comment->comment_ID, 'new_field_qq', true)) {
             $qq_number = get_comment_meta($comment->comment_ID, 'new_field_qq', true);
             if (iro_opt('qq_avatar_link') == 'off') {
-                return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" data-src="' . stripslashes($m[1] ?? null) . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+                return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" data-src="' . stripslashes($m[1] ?? '') . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
             } elseif (iro_opt('qq_avatar_link') == 'type_3') {
                 $qqavatar = file_get_contents('http://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin=' . $qq_number);
                 preg_match('/:\"([^\"]*)\"/i', $qqavatar, $matches);

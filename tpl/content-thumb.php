@@ -98,7 +98,7 @@ while (have_posts()) : the_post();
 					</span>
 				</div>
 				<div class="float-content">
-					<?php substr(the_excerpt(), 0, 3); ?>
+					<?php the_excerpt() ?>
 					<div class="post-bottom">
 						<a href="<?php the_permalink(); ?>" class="button-normal"><i class="iconfont icon-caidan"></i></a>
 					</div>
