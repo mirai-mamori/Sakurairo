@@ -748,6 +748,7 @@ input[type=week] {
   top: 2.5%;
   z-index: 999;
   border-radius: 20px;
+  word-break: keep-all;
 }
 
 .yya {
