@@ -803,7 +803,7 @@ function siren_get_os($ua){
   if (preg_match('/win/i', $ua)) {
     if (preg_match('/Windows NT 10.0/i', $ua)) {
       $title = "Windows 10/11";
-      $icon = "windows_win10";
+      $icon = "windows_win10_win11";
     }elseif (preg_match('/Windows NT 6.1/i', $ua)) {
       $title = "Windows 7";
       $icon = "windows_win7";

@@ -1,6 +1,6 @@
 **简体中文** | [繁體中文](README_tw.md) | [English](README_en.md) | [日本語](README_ja.md)
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/banner.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/banner.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -11,11 +11,11 @@
 
 ## 版本简介：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/function.png)](https://iro.tw/)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/function.png)](https://iro.tw/)
 
 ## 使用相关：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/irotw.png)](https://iro.tw/)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/irotw.png)](https://iro.tw/)
 
 - 使用本主题的博客：https://iro.tw/demo.html
 
@@ -28,17 +28,17 @@
 
 ## 主题下载：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/dl.png)](https://iro.tw/)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/dl.png)](https://iro.tw/)
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/github.png)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/github.png)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/gitee.png)](https://gitee.com/mirai-mamori/Sakurairo)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/gitee.png)](https://gitee.com/mirai-mamori/Sakurairo)
 
 ## 支持我们：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/star.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/star.png)](https://github.com/mirai-mamori/Sakurairo)
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/readme/tsubame/cn/sponsor.png)](https://afdian.net/@mamori)
+[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/sponsor.png)](https://afdian.net/@mamori)
 
 ## 主题贡献：
 
