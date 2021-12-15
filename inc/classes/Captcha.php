@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-
+// 打个标记 下次一定改静态类（
 namespace Sakura\API;
 
 class Captcha

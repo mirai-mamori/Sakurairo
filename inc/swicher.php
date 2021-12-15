@@ -3,8 +3,12 @@
  * 仅对boolean类型的设置项有效
  */
 function font_end_js_control() {
-    $check = fn($a):bool => $a ? true : false;
-    $ecs_src = fn($a):string => get_template_directory_uri().'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
+    $check = function($a):bool {
+        return  $a ? true : false;
+    };
+    $ecs_src = function(string $a):string {
+        return get_template_directory_uri().'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
+    };
     $mashiro_opt = [
         'NProgressON' => $check(iro_opt('nprogress_on')),
         'audio' => $check(iro_opt('note_effects')),
@@ -31,14 +35,20 @@ function font_end_js_control() {
         'comment_upload_img' => iro_opt('img_upload_api')=='off' ? false : true,
         'cache_cover' => $check(iro_opt('cache_cover')),
         'site_bg_as_cover' => $check(iro_opt('site_bg_as_cover')),
-        'yiyan_api' => json_decode(iro_opt('yiyan_api'))
+        'yiyan_api' => json_decode(iro_opt('yiyan_api')),
+        'skin_bg0' => 'none',
+        'skin_bg1' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg1.png',
+        'skin_bg2' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg2.png',
+        'skin_bg3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg3.png',
+        'skin_bg4' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png',
     ];
     $reception_background = iro_opt('reception_background');
-    $mashiro_opt['skin_bg0'] = $reception_background['img1'] ?: 'none';
-    $mashiro_opt['skin_bg1'] = $reception_background['img2'] ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg1.png';
-    $mashiro_opt['skin_bg2'] = $reception_background['img3'] ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg2.png';
-    $mashiro_opt['skin_bg3'] = $reception_background['img4'] ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg3.png';
-    $mashiro_opt['skin_bg4'] = $reception_background['img5'] ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png';
+    // 判空 empty 如果变量不存在也会返回true
+    !empty($reception_background['img1']) && $mashiro_opt['skin_bg0'] = $reception_background['img1'];
+    !empty($reception_background['img2']) && $mashiro_opt['skin_bg1'] = $reception_background['img2'];
+    !empty($reception_background['img3']) && $mashiro_opt['skin_bg2'] = $reception_background['img3'];
+    !empty($reception_background['img4']) && $mashiro_opt['skin_bg3'] = $reception_background['img4'];
+    !empty($reception_background['img5']) && $mashiro_opt['skin_bg4'] = $reception_background['img5'];
     $mashiro_opt['entry_content_style_src'] = iro_opt('entry_content_style') == 'sakurairo' ? $ecs_src('sakura') : $ecs_src('github');
     $mashiro_opt['jsdelivr_css_src'] = iro_opt('local_global_library') ? (get_template_directory_uri().'/css/lib.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'.IRO_VERSION.'/css/lib.css');
     if (iro_opt('lightgallery')){$mashiro_opt['lightGallery'] = iro_opt('lightgallery_option');}
@@ -51,7 +61,7 @@ function font_end_js_control() {
     if (iro_opt('code_highlight_method','hljs')=='prism'){
         $mashiro_opt['code_highlight_prism'] = [
             'line_number_all' => $check(iro_opt('code_highlight_prism_line_number_all')),
-            'autoload_path' => $iro_opt('code_highlight_prism_autoload_path','') ?: 'undefined'
+            'autoload_path' => iro_opt('code_highlight_prism_autoload_path','') ?: 'undefined'
         ];
         $theme_light = iro_opt('code_highlight_prism_theme_light');
         $theme_dark = iro_opt('code_highlight_prism_theme_dark');

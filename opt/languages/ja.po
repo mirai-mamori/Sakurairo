@@ -3642,7 +3642,7 @@ msgstr "バージョン情報"
 
 #: options/theme-options.php:3334
 msgid ""
-"<img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/"
+"<img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/"
 "tsubame/tsubamelogo.gif\"  alt=\"Theme Information\" />"
 msgstr ""
 

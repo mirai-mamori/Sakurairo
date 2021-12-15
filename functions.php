@@ -951,12 +951,12 @@ function comment_mail_notify($comment_id)
                       margin: 10px auto 0; " target="_blank" href="' . htmlspecialchars(get_comment_link($parent_id)) . '">点击查看回复的完整內容</a>
       </div>
         <p style="font-size: 12px;text-align: center;color: #999;">本邮件为系统自动发出，请勿直接回复<br>
-        &copy; ' . date(Y) . ' ' . get_option("blogname") . '</p>
+        &copy; ' . date('Y') . ' ' . get_option("blogname") . '</p>
       </div>
     </div>
 ';
         $message = convert_smilies($message);
-        $message = str_replace('{{', '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.0/vision/smilies/bilipng/emoji_', $message);
+        $message = str_replace('{{', '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/smilies/bilipng/emoji_', $message);
         $message = str_replace('}}', '.png" alt="emoji" style="height: 2em; max-height: 2em;">', $message);
 
         $message = str_replace('{UPLOAD}', 'https://i.loli.net/', $message);
@@ -1676,7 +1676,7 @@ function change_avatar($avatar)
         if (get_comment_meta($comment->comment_ID, 'new_field_qq', true)) {
             $qq_number = get_comment_meta($comment->comment_ID, 'new_field_qq', true);
             if (iro_opt('qq_avatar_link') == 'off') {
-                return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" data-src="' . stripslashes($m[1] ?? null) . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+                return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" data-src="' . stripslashes($m[1] ?? '') . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
             } elseif (iro_opt('qq_avatar_link') == 'type_3') {
                 $qqavatar = file_get_contents('http://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin=' . $qq_number);
                 preg_match('/:\"([^\"]*)\"/i', $qqavatar, $matches);
