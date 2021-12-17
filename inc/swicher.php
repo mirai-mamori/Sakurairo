@@ -73,6 +73,5 @@ function font_end_js_control() {
         }
     }
     wp_add_inline_script('app', 'var mashiro_option = '.json_encode($mashiro_opt,JSON_NUMERIC_CHECK|JSON_UNESCAPED_UNICODE),'before');
-    wp_add_inline_script('app', 'var mashiro_global = {}', 'before');
 }
 add_action('wp_head', 'font_end_js_control');
