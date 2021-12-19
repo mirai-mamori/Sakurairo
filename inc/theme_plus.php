@@ -845,10 +845,62 @@ function siren_get_os($ua){
     elseif(count(explode(8,$matches[1]))>1) $matches[1] = 'Mountain Lion '.$matches[1];
     $title= $matches[0];
     $icon = "android";
-  } elseif (preg_match('/Mac OS X.([0-9. _]+)/i', $ua, $matches)) {
-    if(count(explode(7,$matches[1]))>1) $matches[1] = 'Lion '.$matches[1];
-    elseif(count(explode(8,$matches[1]))>1) $matches[1] = 'Mountain Lion '.$matches[1];
-    $title = "Mac OSX ".$matches[1];
+  } elseif (preg_match('/Mac OS X.([\d. _]+)/i', $ua, $matches)) {
+    $mac_ver =  intval(explode('_',$matches[1])[1]);
+    $mac_code_name = '';
+    $has_x = $mac_ver <12;
+    switch($mac_ver){
+        case 0:
+            $mac_code_name = 'Cheetah';
+            break;
+            case 1:
+                $mac_code_name = 'Puma';
+                break;
+                case 2:
+                $mac_code_name = 'Jaguar';
+                break;
+                case 3:
+                $mac_code_name = 'Panther';
+                break;
+                case 4:
+                $mac_code_name = 'Tiger';
+                break;
+                case 5:
+                $mac_code_name = 'Leopard';
+                break;
+                case 6:
+                $mac_code_name = 'Snow Leopard';
+                break;
+                case 7:
+                $mac_code_name = 'Lion';
+                break;
+                case 8:
+                $mac_code_name = 'Mountain Lion';
+                break;
+                case 9:
+                $mac_code_name = 'Mavericks';
+                break;
+                case 10:
+                $mac_code_name = 'Yosemite';
+                break;
+                case 11:
+                $mac_code_name = 'El Capitan';
+                break;
+                case 12:
+                $mac_code_name = 'Sierra';
+                break;
+                case 13:
+                $mac_code_name = 'High Sierra';
+                break;
+                case 14:
+                $mac_code_name = 'Mojave';
+                break;
+                case 15:
+                $mac_code_name = 'Catalina or Higher';
+                break;
+    }
+    $matches[1] = $mac_code_name.' '.$matches[1];
+    $title = "Mac OS ".$has_x?'X':''.' '.$matches[1];
     $icon = "macos";
   } elseif (preg_match('/Macintosh/i', $ua)) {
     $title = "Mac OS";
