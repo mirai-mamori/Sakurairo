@@ -835,7 +835,7 @@ function siren_get_os($ua){
     $title = "iPod ".$matches[1];
     $icon = "iphone";
   } elseif (preg_match('#iPhone OS ([a-zA-Z0-9.( _)]+)#i', $ua, $matches)) {// 1.2 修改成 iphone os 来判断 
-    $title = "Iphone ".$matches[1];
+    $title = "iPhone ".$matches[1];
     $icon = "iphone";
   } elseif (preg_match('#iPad.*.CPU.([a-zA-Z0-9.( _)]+)#i', $ua, $matches)) {
     $title = "iPad ".$matches[1];
