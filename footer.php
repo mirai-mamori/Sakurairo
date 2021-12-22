@@ -150,11 +150,6 @@ $reception_background = iro_opt('reception_background');
     </div>
 <?php endif; ?>
 
-<!-- 樱花飘落动效 -->
-<?php if (iro_opt('sakura_falling_effects') != 'off'): ?>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/js/<?php echo iro_opt('sakura_falling_effects'); ?>.js"></script>
-<?php endif; ?>
-
 <!-- 首页波浪特效 -->
 <?php if (iro_opt('wave_effects', 'true')): ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/css/bolang.css">

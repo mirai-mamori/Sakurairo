@@ -1119,10 +1119,10 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Sakura Falling Effects','sakurairo_csf'),
         'options' => array(
           'off' => __('Off','sakurairo_csf'),
-          'sakura-native' => __('Native Quantity','sakurairo_csf'),
-          'sakura-quarter' => __('Quarter Quantity','sakurairo_csf'),
-          'sakura-half' => __('Half Quantity','sakurairo_csf'),
-          'sakura-less' => __('Less Quantity','sakurairo_csf'),
+          'native' => __('Native Quantity','sakurairo_csf'),
+          'quarter' => __('Quarter Quantity','sakurairo_csf'),
+          'half' => __('Half Quantity','sakurairo_csf'),
+          'less' => __('Less Quantity','sakurairo_csf'),
         ),
         'default' => 'off'
       ),

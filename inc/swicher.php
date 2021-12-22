@@ -72,6 +72,10 @@ function font_end_js_control() {
             $mashiro_opt['code_highlight_prism']['theme'] = ['dark' => $theme_dark];
         }
     }
+    $sakura_effect = iro_opt('sakura_falling_effects');
+    if($sakura_effect != 'off'){
+        $mashiro_opt['effect'] = array('amount'=>$sakura_effect);
+    }
     wp_add_inline_script('app', 'var mashiro_option = '.json_encode($mashiro_opt,JSON_NUMERIC_CHECK|JSON_UNESCAPED_UNICODE),'before');
 }
 add_action('wp_head', 'font_end_js_control');
