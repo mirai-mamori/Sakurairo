@@ -3396,16 +3396,16 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'id' => 'local_global_library',
         'type' => 'switcher',
-        'title' => __('Localize the Frontend Library','sakurairo_csf'),
-        'label' => __('The frontend library will not use jsDelivr CDN after turning it on','sakurairo_csf'),
+        'title' => __('Provide Shared Library locally','sakurairo_csf'),
+        'label' => __('Shared library will be provided via jsDelivr CDN by default.','sakurairo_csf'),
         'default' => false
       ),
 
       array(
         'id' => 'local_application_library',
         'type' => 'switcher',
-        'title' => __('Localize JS/CSS Files','sakurairo_csf'),
-        'label' => __('Enabled by default, some JS files and CSS files do not use jsDelivr CDN','sakurairo_csf'),
+        'title' => __('Provide critical frontend resource locally','sakurairo_csf'),
+        'label' => __('Critical frontend resource will be provided locally by default. Critical resources are those resources whose loading performance will have a significant impact on the user experience','sakurairo_csf'),
         'default' => true
       ),
       
