@@ -849,55 +849,9 @@ function siren_get_os($ua){
     $mac_ver =  intval(explode('_',$matches[1])[1]);
     $mac_code_name = '';
     $has_x = $mac_ver <12;
-    switch($mac_ver){
-        case 0:
-            $mac_code_name = 'Cheetah';
-            break;
-            case 1:
-                $mac_code_name = 'Puma';
-                break;
-                case 2:
-                $mac_code_name = 'Jaguar';
-                break;
-                case 3:
-                $mac_code_name = 'Panther';
-                break;
-                case 4:
-                $mac_code_name = 'Tiger';
-                break;
-                case 5:
-                $mac_code_name = 'Leopard';
-                break;
-                case 6:
-                $mac_code_name = 'Snow Leopard';
-                break;
-                case 7:
-                $mac_code_name = 'Lion';
-                break;
-                case 8:
-                $mac_code_name = 'Mountain Lion';
-                break;
-                case 9:
-                $mac_code_name = 'Mavericks';
-                break;
-                case 10:
-                $mac_code_name = 'Yosemite';
-                break;
-                case 11:
-                $mac_code_name = 'El Capitan';
-                break;
-                case 12:
-                $mac_code_name = 'Sierra';
-                break;
-                case 13:
-                $mac_code_name = 'High Sierra';
-                break;
-                case 14:
-                $mac_code_name = 'Mojave';
-                break;
-                case 15:
-                $mac_code_name = 'Catalina or Higher';
-                break;
+    $mac_code_list = ['Cheetah','Puma','Jaguar','Panther','Tiger','Leopard','Snow Leopard','Lion','Mountain Lion','Mavericks','Yosemite','El Capitan','Sierra','High Sierra','Mojave','Catalina or Higher'];
+    if (isset($mac_code_list[$mac_ver])) {
+      $mac_code_name = $mac_code_list[$mac_ver];
     }
     $matches[1] = $mac_code_name.' '.$matches[1];
     $title = "Mac OS ".$has_x?'X':''.' '.$matches[1];
