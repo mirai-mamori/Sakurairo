@@ -724,22 +724,35 @@ add_action('admin_menu', 'disable_dashboard_widgets');
 function siren_get_browsers($ua){
   $title = 'unknow';
   $icon = 'unknow'; 
-    if (preg_match('#MSIE ([a-zA-Z0-9.]+)#i', $ua, $matches)) {
-    $title = 'Internet Explorer '. $matches[1];
-    if ( strpos($matches[1], '7') !== false || strpos($matches[1], '8') !== false)
-      $icon = 'ie8';
-    elseif ( strpos($matches[1], '9') !== false)
-      $icon = 'ie9';
-    elseif ( strpos($matches[1], '10') !== false)
-      $icon = 'ie10';
-    else
-      $icon = 'ie';
-    }elseif (preg_match('#Edge/([a-zA-Z0-9.]+)#i', $ua, $matches)){
-    $title = 'Edge '. $matches[1];
-        $icon = 'edge';
+  if (preg_match('#Chrome/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
+    $title = 'Google Chrome '. $matches[1];
+    $icon = 'chrome';
+    if (preg_match('#OPR/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
+      $title = 'Opera '. $matches[1];
+      $icon = 'opera15';
+      if (preg_match('#opera mini#i', $ua)) $title = 'Opera Mini'. $matches[1];
+    }
   }elseif (preg_match('#Edg/([a-zA-Z0-9.]+)#i', $ua, $matches)){
     $title = 'Edge (Chromium) '. $matches[1];
         $icon = 'edge';
+  }elseif (preg_match('#Firefox/([a-zA-Z0-9.]+)#i', $ua, $matches)){
+    $title = 'Firefox '. $matches[1];
+        $icon = 'firefox';
+  }elseif (preg_match('#CriOS/([a-zA-Z0-9.]+)#i', $ua, $matches)){
+    $title = 'Chrome for iOS '. $matches[1];
+    $icon = 'crios';
+  }elseif (preg_match('#Safari/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
+    $title = 'Safari '. $matches[1];
+    $icon = 'safari';
+  }elseif (preg_match('#Edge/([a-zA-Z0-9.]+)#i', $ua, $matches)){
+    $title = 'Edge '. $matches[1];
+        $icon = 'edge';
+  }elseif (preg_match('#MicroMessenger/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
+    $title = 'Built-in Browser of WeChat '.$matches[1];
+    $icon = 'wechat';
+  }elseif (preg_match('#QQBrowser/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
+    $title = 'QQBrowser '.$matches[1];
+    $icon = 'QQBrowser';
   }elseif (preg_match('#360([a-zA-Z0-9.]+)#i', $ua, $matches)) {
     $title = '360 Browser '. $matches[1];
     $icon = '360se';
@@ -749,35 +762,12 @@ function siren_get_browsers($ua){
   }elseif (preg_match('#LBBROWSER#i', $ua, $matches)) {
     $title = 'CM Browser';
     $icon = 'LBBROWSER';
-  }elseif (preg_match('#MicroMessenger/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
-    $title = 'Built-in Browser of WeChat '.$matches[1];
-    $icon = 'wechat';
-  }elseif (preg_match('#QQBrowser/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
-    $title = 'QQBrowser '.$matches[1];
-    $icon = 'QQBrowser';
   }elseif (preg_match('#BIDUBrowser/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
     $title = 'Baidu Browser '.$matches[1];
     $icon = 'baidu';
   }elseif (preg_match('#UCWEB([a-zA-Z0-9.]+)#i', $ua, $matches)) {
     $title = 'UCWEB '. $matches[1];
     $icon = 'ucweb';
-  }elseif (preg_match('#Firefox/([a-zA-Z0-9.]+)#i', $ua, $matches)){
-    $title = 'Firefox '. $matches[1];
-        $icon = 'firefox';
-  }elseif (preg_match('#CriOS/([a-zA-Z0-9.]+)#i', $ua, $matches)){
-    $title = 'Chrome for iOS '. $matches[1];
-    $icon = 'crios';
-  }elseif (preg_match('#Chrome/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
-    $title = 'Google Chrome '. $matches[1];
-    $icon = 'chrome';
-    if (preg_match('#OPR/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
-      $title = 'Opera '. $matches[1];
-      $icon = 'opera15';
-      if (preg_match('#opera mini#i', $ua)) $title = 'Opera Mini'. $matches[1];
-    }
-  }elseif (preg_match('#Safari/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
-    $title = 'Safari '. $matches[1];
-    $icon = 'safari';
   }elseif (preg_match('#Opera.(.*)Version[ /]([a-zA-Z0-9.]+)#i', $ua, $matches)) {
     $title = 'Opera '. $matches[2];
     $icon = 'opera';
@@ -849,7 +839,7 @@ function siren_get_os($ua){
     $mac_ver =  intval(explode('_',$matches[1])[1]);
     $mac_code_name = '';
     $has_x = $mac_ver <12;
-    $mac_code_list = ['Cheetah','Puma','Jaguar','Panther','Tiger','Leopard','Snow Leopard','Lion','Mountain Lion','Mavericks','Yosemite','El Capitan','Sierra','High Sierra','Mojave','Catalina or Higher'];
+    $mac_code_list = ['Cheetah','Puma','Jaguar','Panther','Tiger','Leopard','Snow Leopard','Lion','Mountain Lion','Mavericks','Yosemite','El Capitan','Sierra','High Sierra','Mojave','Catalina or Higher'];    // 总16个,后续请在最后添加并且修改该条注释.
     if (isset($mac_code_list[$mac_ver])) {
       $mac_code_name = $mac_code_list[$mac_ver];
     }
