@@ -762,9 +762,6 @@ function siren_get_browsers($ua){
   }elseif (preg_match('#LBBROWSER#i', $ua, $matches)) {
     $title = 'CM Browser';
     $icon = 'LBBROWSER';
-  }elseif (preg_match('#BIDUBrowser/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
-    $title = 'Baidu Browser '.$matches[1];
-    $icon = 'baidu';
   }elseif (preg_match('#UCWEB([a-zA-Z0-9.]+)#i', $ua, $matches)) {
     $title = 'UCWEB '. $matches[1];
     $icon = 'ucweb';
