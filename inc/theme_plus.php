@@ -722,8 +722,8 @@ add_action('admin_menu', 'disable_dashboard_widgets');
  */
 // 浏览器信息
 function siren_get_browsers(string $ua):array{
-  $title = 'unknow';
-  $icon = 'unknow';
+  $title = 'Unknow';
+  $icon = 'unknown';
   if (strpos($ua, 'Chrome')){
     if (preg_match('#Chrome/([0-9]+)#i', $ua, $matches)) {
       $title = 'Chrome '. $matches[1];
@@ -738,7 +738,7 @@ function siren_get_browsers(string $ua):array{
       }
       if (preg_match('#OPR/([0-9]+)#i', $ua, $matches)) {
         $title = 'Opera '. $matches[1];
-        $icon = 'opera15';
+        $icon = 'opera';
       }
     }
   }elseif (strpos($ua, 'Firefox')){
@@ -761,26 +761,26 @@ function siren_get_browsers(string $ua):array{
 
 // 操作系统信息
 function siren_get_os(string $ua):array{
-  $title = 'unknow';
-  $icon = 'unknow';
+  $title = 'Unknow';
+  $icon = 'unknown';
   // UA样式决定strpos返回值不可能为0 所以不需要考虑为0的情况
   if (strpos($ua, 'Win')) {
     if (strpos($ua, 'Windows NT 10.0')){
       $title = "Windows 10/11";
-      $icon = "windows_win10_win11";
+      $icon = "win10-11";
     }elseif (strpos($ua, 'Windows NT 6.1')) {
       $title = "Windows 7";
-      $icon = "windows_win7";
+      $icon = "win7";
     }elseif (strpos($ua, 'Windows NT 6.2')) {
       $title = "Windows 8";
-      $icon = "windows_win8";
+      $icon = "win8";
     }elseif (strpos($ua, 'Windows NT 6.3')) {
       $title = "Windows 8.1";
-      $icon = "windows_win8";
+      $icon = "win8";
     }
-  }elseif (preg_match('#iPhone OS ([a-zA-Z0-9.( _)]+)#i', $ua, $matches)) {// 1.2 修改成 iphone os 来判断 
-    $title = "iPhone ".$matches[1];
-    $icon = "iphone";
+  }elseif (preg_match('#iPhone OS ([0-9]+)#i', $ua, $matches)) {// 1.2 修改成 iphone os 来判断 
+    $title = "iOS ".$matches[1];
+    $icon = "apple";
   }elseif (preg_match('/Android.([0-9. _]+)/i', $ua, $matches)) {
     if(count(explode(7,$matches[1]))>1) $matches[1] = 'Lion '.$matches[1];
     elseif(count(explode(8,$matches[1]))>1) $matches[1] = 'Mountain Lion '.$matches[1];
@@ -795,11 +795,11 @@ function siren_get_os(string $ua):array{
       $mac_code_name = $mac_code_list[$mac_ver];
     }
     $matches[1] = $mac_code_name.' '.$matches[1];
-    $title = 'Mac OS '.($has_x?'X':''.' ').str_replace('_','.',$matches[1]);;
-    $icon = "macos";
+    $title = 'macOS '.($has_x?'X':''.' ').str_replace('_','.',$matches[1]);
+    $icon = "apple";
   } elseif (strpos($ua, 'Macintosh')) {
-    $title = "Mac OS";
-    $icon = "macos";
+    $title = "macOS";
+    $icon = "apple";
   } elseif (strpos($ua, 'Linux')) {
     $title = 'Linux';
     $icon = 'linux';
@@ -813,7 +813,7 @@ function siren_get_os(string $ua):array{
 function siren_get_useragent(string $ua){
   if(iro_opt('comment_useragent')){
     // $imgurl = get_bloginfo('template_directory') . '/images/ua/';
-    $imgurl = 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ua/svg/';
+    $imgurl = 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/ua/';
     $browser = siren_get_browsers($ua);
     $os = siren_get_os($ua);
     return '&nbsp;&nbsp;<span class="useragent-info">( <img src="'. $imgurl.$browser['icon'] .'.svg">&nbsp;'. $browser['title'] .'&nbsp;&nbsp;<img src="'. $imgurl.$os['icon'] .'.svg">&nbsp;'. $os['title'] .' )</span>';
@@ -824,7 +824,7 @@ function siren_get_useragent(string $ua){
 // UA 显示移动定制
 function mobile_get_useragent_icon(string $ua){
   if(iro_opt('comment_useragent')){
-    $imgurl = 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ua/svg/';
+    $imgurl = 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/ua/';
     $browser = siren_get_browsers($ua);
     $os = siren_get_os($ua);
     return '<span class="useragent-info-m">( <img src="'. $imgurl.$browser['icon'] .'.svg">&nbsp;&nbsp;<img src="'. $imgurl.$os['icon'] .'.svg"> )</span>';
