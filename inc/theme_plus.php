@@ -722,7 +722,7 @@ add_action('admin_menu', 'disable_dashboard_widgets');
  */
 // 浏览器信息
 function siren_get_browsers(string $ua):array{
-  $title = 'unknow';
+  $title = 'Unknow';
   $icon = 'unknow';
   if (strpos($ua, 'Chrome')){
     if (preg_match('#Chrome/([0-9]+)#i', $ua, $matches)) {
@@ -761,7 +761,7 @@ function siren_get_browsers(string $ua):array{
 
 // 操作系统信息
 function siren_get_os(string $ua):array{
-  $title = 'unknow';
+  $title = 'Unknow';
   $icon = 'unknow';
   if (strpos($ua, 'Win')) {
     if (preg_match('/Windows NT 10.0/i', $ua)) {
@@ -794,10 +794,10 @@ function siren_get_os(string $ua):array{
       $mac_code_name = $mac_code_list[$mac_ver];
     }
     $matches[1] = $mac_code_name.' '.$matches[1];
-    $title = 'Mac OS '.($has_x?'X':''.' ').str_replace('_','.',$matches[1]);;
+    $title = 'macOS '.($has_x?'X':''.' ').str_replace('_','.',$matches[1]);;
     $icon = "macos";
   } elseif (preg_match('/Macintosh/i', $ua)) {
-    $title = "Mac OS";
+    $title = "macOS";
     $icon = "macos";
   } elseif (preg_match('/Linux/i', $ua)) {
     $title = 'Linux';
