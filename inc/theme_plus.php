@@ -777,8 +777,8 @@ function siren_get_os(string $ua):array{
       $title = "Windows 8.1";
       $icon = "windows_win8";
     }
-  }elseif (preg_match('#iPhone OS ([a-zA-Z0-9.( _)]+)#i', $ua, $matches)) {// 1.2 修改成 iphone os 来判断 
-    $title = "iPhone ".$matches[1];
+  }elseif (preg_match('#iPhone OS ([0-9]+)#i', $ua, $matches)) {// 1.2 修改成 iphone os 来判断 
+    $title = "iOS ".$matches[1];
     $icon = "iphone";
   }elseif (preg_match('/Android.([0-9. _]+)/i', $ua, $matches)) {
     if(count(explode(7,$matches[1]))>1) $matches[1] = 'Lion '.$matches[1];
