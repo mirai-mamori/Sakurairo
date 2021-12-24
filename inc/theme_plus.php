@@ -726,10 +726,10 @@ function siren_get_browsers(string $ua):array{
   $icon = 'unknow';
   if (strpos($ua, 'Chrome')){
     if (preg_match('#Chrome/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
-      $title = 'Google Chrome '. $matches[1];
+      $title = 'Chrome '. $matches[1];
       $icon = 'chrome';
       if (preg_match('#Edg/([a-zA-Z0-9.]+)#i', $ua, $matches)){
-        $title = 'Edge (Chromium) '. $matches[1];
+        $title = 'Edge '. $matches[1];
             $icon = 'edge';
       }
       if (preg_match('#360([a-zA-Z0-9.]+)#i', $ua, $matches)) {
