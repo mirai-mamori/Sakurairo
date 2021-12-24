@@ -12,7 +12,7 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
 
     // Default constants
     public static $premium  = false;
-    public static $version  = '2.2.4';
+    public static $version  = '2.2.5';
     public static $dir      = '';
     public static $url      = '';
     public static $css      = '';
@@ -494,6 +494,8 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
     // Enqueue admin and fields styles and scripts
     public static function add_admin_enqueue_scripts() {
 
+      if ( ! self::$enqueue ) {
+
       // Loads scripts and styles only when needed
       $wpscreen = get_current_screen();
 
@@ -553,6 +555,8 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
         self::$enqueue = true;
       }
 
+    }
+    
       if ( ! apply_filters( 'csf_enqueue_assets', self::$enqueue ) ) {
         return;
       }

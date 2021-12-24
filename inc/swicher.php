@@ -72,7 +72,6 @@ function font_end_js_control() {
             $mashiro_opt['code_highlight_prism']['theme'] = ['dark' => $theme_dark];
         }
     }
-    wp_add_inline_script('app', 'const mashiro_option = '.json_encode($mashiro_opt,JSON_NUMERIC_CHECK|JSON_UNESCAPED_UNICODE),'before');
-    wp_add_inline_script('app', 'const mashiro_global = {}', 'before');
+    wp_add_inline_script('app', 'var mashiro_option = '.json_encode($mashiro_opt,JSON_NUMERIC_CHECK|JSON_UNESCAPED_UNICODE),'before');
 }
 add_action('wp_head', 'font_end_js_control');
