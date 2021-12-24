@@ -725,10 +725,10 @@ function siren_get_browsers(string $ua):array{
   $title = 'unknow';
   $icon = 'unknow';
   if (strpos($ua, 'Chrome')){
-    if (preg_match('#Chrome/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
+    if (preg_match('#Chrome/([0-9]+)#i', $ua, $matches)) {
       $title = 'Google Chrome '. $matches[1];
       $icon = 'chrome';
-      if (preg_match('#Edg/([a-zA-Z0-9.]+)#i', $ua, $matches)){
+      if (preg_match('#Edg/([0-9]+)#i', $ua, $matches)){
         $title = 'Edge (Chromium) '. $matches[1];
             $icon = 'edge';
       }
@@ -736,18 +736,18 @@ function siren_get_browsers(string $ua):array{
         $title = '360 Browser '. $matches[1];
         $icon = '360se';
       }
-      if (preg_match('#OPR/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
+      if (preg_match('#OPR/([0-9]+)#i', $ua, $matches)) {
         $title = 'Opera '. $matches[1];
         $icon = 'opera15';
       }
     }
   }elseif (strpos($ua, 'Firefox')){
-    if (preg_match('#Firefox/([a-zA-Z0-9.]+)#i', $ua, $matches)){
+    if (preg_match('#Firefox/([0-9]+)#i', $ua, $matches)){
       $title = 'Firefox '. $matches[1];
           $icon = 'firefox';
     }
   }elseif (strpos($ua, 'Safari')){
-    if (preg_match('#Safari/([a-zA-Z0-9.]+)#i', $ua, $matches)) {
+    if (preg_match('#Safari/([0-9]+)#i', $ua, $matches)) {
       $title = 'Safari '. $matches[1];
       $icon = 'safari';
     }
@@ -794,7 +794,7 @@ function siren_get_os(string $ua):array{
       $mac_code_name = $mac_code_list[$mac_ver];
     }
     $matches[1] = $mac_code_name.' '.$matches[1];
-    $title = "Mac OS ".$has_x?'X':''.' '.$matches[1];
+    $title = 'Mac OS '.($has_x?'X':''.' ').str_replace('_','.',$matches[1]);;
     $icon = "macos";
   } elseif (preg_match('/Macintosh/i', $ua)) {
     $title = "Mac OS";
