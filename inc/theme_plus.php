@@ -732,8 +732,8 @@ function siren_get_browsers(string $ua):array{
         $title = 'Edge '. $matches[1];
             $icon = 'edge';
       }
-      if (preg_match('#360([a-zA-Z0-9.]+)#i', $ua, $matches)) {
-        $title = '360 Browser '. $matches[1];
+      if (strpos($ua, '360EE')) {
+        $title = '360 Browser ';
         $icon = '360se';
       }
       if (preg_match('#OPR/([0-9]+)#i', $ua, $matches)) {
@@ -763,17 +763,18 @@ function siren_get_browsers(string $ua):array{
 function siren_get_os(string $ua):array{
   $title = 'unknow';
   $icon = 'unknow';
+  // UA样式决定strpos返回值不可能为0 所以不需要考虑为0的情况
   if (strpos($ua, 'Win')) {
-    if (preg_match('/Windows NT 10.0/i', $ua)) {
+    if (strpos($ua, 'Windows NT 10.0')){
       $title = "Windows 10/11";
       $icon = "windows_win10_win11";
-    }elseif (preg_match('/Windows NT 6.1/i', $ua)) {
+    }elseif (strpos($ua, 'Windows NT 6.1')) {
       $title = "Windows 7";
       $icon = "windows_win7";
-    }elseif (preg_match('/Windows NT 6.2/i', $ua)) {
+    }elseif (strpos($ua, 'Windows NT 6.2')) {
       $title = "Windows 8";
       $icon = "windows_win8";
-    }elseif (preg_match('/Windows NT 6.3/i', $ua)) {
+    }elseif (strpos($ua, 'Windows NT 6.3')) {
       $title = "Windows 8.1";
       $icon = "windows_win8";
     }
@@ -796,16 +797,12 @@ function siren_get_os(string $ua):array{
     $matches[1] = $mac_code_name.' '.$matches[1];
     $title = 'Mac OS '.($has_x?'X':''.' ').str_replace('_','.',$matches[1]);;
     $icon = "macos";
-  } elseif (preg_match('/Macintosh/i', $ua)) {
+  } elseif (strpos($ua, 'Macintosh')) {
     $title = "Mac OS";
     $icon = "macos";
-  } elseif (preg_match('/Linux/i', $ua)) {
+  } elseif (strpos($ua, 'Linux')) {
     $title = 'Linux';
     $icon = 'linux';
-    if (preg_match('/Android.([0-9. _]+)/i',$ua, $matches)) {
-      $title= $matches[0];
-      $icon = "android";
-    }
   }
   return [
     'title' => $title,
@@ -813,7 +810,7 @@ function siren_get_os(string $ua):array{
   ];
 }
 
-function siren_get_useragent($ua){
+function siren_get_useragent(string $ua){
   if(iro_opt('comment_useragent')){
     // $imgurl = get_bloginfo('template_directory') . '/images/ua/';
     $imgurl = 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ua/svg/';
@@ -825,7 +822,7 @@ function siren_get_useragent($ua){
 }
 
 // UA 显示移动定制
-function mobile_get_useragent_icon($ua){
+function mobile_get_useragent_icon(string $ua){
   if(iro_opt('comment_useragent')){
     $imgurl = 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/ua/svg/';
     $browser = siren_get_browsers($ua);
