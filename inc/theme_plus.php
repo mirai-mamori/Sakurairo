@@ -81,9 +81,9 @@ function poi_time_since( $older_date, $comment_date = false, $text = false ) {
   }
 
   if ( $since < 30 * 24 * 60 * 60 ) {
-    for ( $i = 0, $j = count( $chunks ); $i < $j; $i ++ ) {
-      $seconds = $chunks[ $i ][0];
-      $name    = $chunks[ $i ][1];
+    foreach( $chunks as $chunk ) {
+      $seconds = $chunk[0];
+      $name    = $chunk[1];
       if ( ( $count = floor( $since / $seconds ) ) != 0 ) {
         break;
       }
@@ -246,7 +246,7 @@ function Exuser_center(){ ?>
         }else{
           TYPE = <?php _e('home','sakurairo')/*主页*/?>;
         }
-        for(var i=secs;i>=0;i--){ 
+        for(let i=secs;i>=0;i--){ 
             window.setTimeout('doUpdate(' + i + ')', (secs-i) * 1000); 
         } 
     } 
@@ -526,10 +526,10 @@ function siren_auto_link_nofollow( $content ) {
   if(preg_match_all("/$regexp/siU", $content, $matches, PREG_SET_ORDER)) {
     if( !empty($matches) ) {
       $srcUrl = get_option('siteurl');
-      for ($i=0; $i < count($matches); $i++){
-        $tag = $matches[$i][0];
-        $tag2 = $matches[$i][0];
-        $url = $matches[$i][0];
+      foreach($matches as $result){
+        $tag = $result[0];
+        $tag2 = $result[0];
+        $url = $result[0];
         $noFollow = '';
         $pattern = '/target\s*=\s*"\s*_blank\s*"/';
         preg_match($pattern, $tag2, $match, PREG_OFFSET_CAPTURE);
@@ -779,7 +779,7 @@ function siren_get_os(string $ua):array{
     elseif(count(explode(8,$matches[1]))>1) $matches[1] = 'Mountain Lion '.$matches[1];
     $title= $matches[0];
     $icon = "android";
-  } elseif (strpos($ua, 'Mac OS') && preg_match('/Mac OS X.([\d. _]+)/i', $ua, $matches)) {
+  }elseif (strpos($ua, 'Mac OS') && preg_match('/Mac OS X.([\d. _]+)/i', $ua, $matches)) {
     $mac_ver =  intval(explode('_',$matches[1])[1]);
     $mac_code_name = '';
     $has_x = $mac_ver <12;
@@ -790,10 +790,10 @@ function siren_get_os(string $ua):array{
     $matches[1] = $mac_code_name.' '.$matches[1];
     $title = 'macOS '.($has_x?'X':''.' ').str_replace('_','.',$matches[1]);
     $icon = "apple";
-  } elseif (strpos($ua, 'Macintosh')) {
+  }elseif (strpos($ua, 'Macintosh')) {
     $title = "macOS";
     $icon = "apple";
-  } elseif (strpos($ua, 'Linux')) {
+  }elseif (strpos($ua, 'Linux')) {
     $title = 'Linux';
     $icon = 'linux';
   }
@@ -815,14 +815,14 @@ function siren_get_useragent(string $ua):string{
 }
 
 // UA 显示移动定制
-function mobile_get_useragent_icon(string $ua){
+function mobile_get_useragent_icon(string $ua):string{
   if(iro_opt('comment_useragent')){
     $imgurl = 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/ua/';
     $browser = siren_get_browsers($ua);
     $os = siren_get_os($ua);
     return '<span class="useragent-info-m">( <img src="'. $imgurl.$browser['icon'] .'.svg">&nbsp;&nbsp;<img src="'. $imgurl.$os['icon'] .'.svg"> )</span>';
   }
-  return false;
+  return '';
 }
 
 /*

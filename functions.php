@@ -1588,10 +1588,9 @@ function html_tag_parser($content)
 
         //With Thumbnail: !{alt}(url)[th_url]
         if (preg_match_all('/\!\{.*?\)\[.*?\]/i', $content, $matches)) {
-            // 等待替换为forEach
-            for ($i = 0; $i < count($matches); $i++) {
+            foreach($matches as $result){
                 $content = str_replace(
-                    $matches[$i],
+                    $result,
                     preg_replace(
                         '/!\{([^\{\}]+)*\}\(' . $url_regex . '\)\[' . $url_regex . '\]/i',
                         '<a data-fancybox="gallery"
@@ -1600,7 +1599,7 @@ function html_tag_parser($content)
                         href="$2"
                         alt="$1"
                         title="$1"><img src="$7" target="_blank" rel="nofollow" class="fancybox"></a>',
-                        $matches[$i]
+                        $result
                     ),
                     $content
                 );
@@ -1624,11 +1623,10 @@ function html_tag_parser($content)
         //Fancybox
         $url_regex = '((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))';
         if (preg_match_all('/\!\{.*?\)\[.*?\]/i', $content, $matches)) {
-            // 等待替换为forEach
-            for ($i = 0; $i < count($matches); $i++) {
+            foreach ($matches as $result){
                 $content = str_replace(
-                    $matches[$i],
-                    preg_replace('/!\{([^\{\}]+)*\}\(' . $url_regex . '\)\[' . $url_regex . '\]/i', '<a href="$2"><img src="$7" alt="$1" title="$1"></a>', $matches[$i]),
+                    $result,
+                    preg_replace('/!\{([^\{\}]+)*\}\(' . $url_regex . '\)\[' . $url_regex . '\]/i', '<a href="$2"><img src="$7" alt="$1" title="$1"></a>', $result),
                     $content
                 );
             }
