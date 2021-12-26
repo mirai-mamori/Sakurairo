@@ -38,12 +38,8 @@ function bgvideo(){
 /*
  * 使用本地图片作为头像，防止外源抽风问题
  */
-function get_avatar_profile_url(){ 
-  if(iro_opt('personal_avatar')){
-    $avatar = iro_opt('personal_avatar');
-  }else{
-    $avatar = get_avatar_url(get_the_author_meta( 'ID' ));
-  }
+function get_avatar_profile_url():string{ 
+  $avatar = iro_opt('personal_avatar') ?: get_avatar_url(get_the_author_meta( 'ID' ));
   return $avatar;
 }
 
@@ -51,7 +47,7 @@ function get_avatar_profile_url(){
 /*
  * 随机图
  */
-function get_random_bg_url(){
+function get_random_bg_url():string{
   return rest_url('sakura/v1/image/feature').'?'.rand(1,1000);
 }
 

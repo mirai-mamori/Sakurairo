@@ -462,17 +462,14 @@ function restyle_text($number)
     switch (iro_opt('statistics_format')) {
         case "type_2": //23,333 次访问
             return number_format($number);
-            break;
         case "type_3": //23 333 次访问
             return number_format($number, 0, '.', ' ');
-            break;
         case "type_4": //23k 次访问
             if ($number >= 1000) {
                 return round($number / 1000, 2) . 'k';
             } else {
                 return $number;
             }
-            break;
         default:
             return $number;
     }
@@ -564,7 +561,7 @@ function get_link_items()
 /*
  * Gravatar头像使用中国服务器
  */
-function gravatar_cn($url)
+function gravatar_cn(string $url):string
 {
     $gravatar_url = array('0.gravatar.com/avatar', '1.gravatar.com/avatar', '2.gravatar.com/avatar', 'secure.gravatar.com/avatar');
     return str_replace($gravatar_url, iro_opt('gravatar_proxy'), $url);
@@ -701,11 +698,7 @@ function akina_infinite_scroll_render()
 {
     while (have_posts()) {
         the_post();
-        if (is_search()) :
-            get_template_part('tpl/content', 'search');
-        else :
-            get_template_part('tpl/content', get_post_format());
-        endif;
+        get_template_part('tpl/content', is_search() ? 'search' : get_post_format());
     }
 }
 
@@ -1195,11 +1188,7 @@ function siren_private()
     if ($action == 'set_private') {
         update_comment_meta($comment_id, '_private', 'true');
         $i_private = get_comment_meta($comment_ID, '_private', true);
-        if (!empty($i_private)) {
-            echo '否';
-        } else {
-            echo '是';
-        }
+        echo !empty($i_private) ? '否' : '是';
     }
     die;
 }
@@ -1207,6 +1196,7 @@ function siren_private()
 //时间序列
 function memory_archives_list()
 {
+    // 始终为true, 为什么要这么做呢 
     if (true) {
         $output = '<div id="archives"><p style="text-align:right;">[<span id="al_expand_collapse">' . __("All expand/collapse", "sakurairo") /*全部展开/收缩*/ . '</span>]<!-- (注: 点击月份可以展开)--></p>';
         $the_query = new WP_Query('posts_per_page=-1&ignore_sticky_posts=1&post_type=post'); //update: 加上忽略置顶文章
@@ -1365,17 +1355,19 @@ add_action('admin_footer', 'custom_admin_js');
  */
 function scheme_tip()
 {
-    $msg = '<b>Why not try the new admin dashboard color scheme <a href="/wp-admin/profile.php">here</a>?</b>';
-    if (get_user_locale(get_current_user_id()) == "zh_CN") {
-        $msg = '<b>试一试新后台界面<a href="/wp-admin/profile.php">配色方案</a>吧？</b>';
+    switch(get_user_locale(get_current_user_id())){
+        case 'zh_CN':
+            $msg = '<b>试一试新后台界面<a href="/wp-admin/profile.php">配色方案</a>吧？</b>';
+            break;
+        case 'zh_TW':
+            $msg = '<b>試一試新後台界面<a href="/wp-admin/profile.php">色彩配置</a>吧？</b>';
+            break;
+        case 'ja-JP':
+            $msg = '<b>新しい<a href="/wp-admin/profile.php">管理画面の配色</a>を試しますか？</b>';
+            break;
+        default:
+            $msg = '<b>Why not try the new admin dashboard color scheme <a href="/wp-admin/profile.php">here</a>?</b>';
     }
-    if (get_user_locale(get_current_user_id()) == "zh_TW") {
-        $msg = '<b>試一試新後台界面<a href="/wp-admin/profile.php">色彩配置</a>吧？</b>';
-    }
-    if (get_user_locale(get_current_user_id()) == "ja-JP") {
-        $msg = '<b>新しい<a href="/wp-admin/profile.php">管理画面の配色</a>を試しますか？</b>';
-    }
-
     $user_id = get_current_user_id();
     if (!get_user_meta($user_id, 'scheme-tip-dismissed' . BUILD_VERSION)) {
         echo '<div class="notice notice-success is-dismissible" id="scheme-tip"><p><b>' . $msg . '</b></p></div>';
@@ -1638,31 +1630,26 @@ add_filter('get_avatar', 'change_avatar', 10, 3);
 function change_avatar($avatar)
 {
     global $comment, $sakura_privkey;
-    if ($comment) {
-        if (get_comment_meta($comment->comment_ID, 'new_field_qq', true)) {
-            $qq_number = get_comment_meta($comment->comment_ID, 'new_field_qq', true);
-            if (iro_opt('qq_avatar_link') == 'off') {
-                return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" data-src="' . stripslashes($m[1] ?? '') . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
-            } elseif (iro_opt('qq_avatar_link') == 'type_3') {
-                $qqavatar = file_get_contents('http://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin=' . $qq_number);
-                preg_match('/:\"([^\"]*)\"/i', $qqavatar, $matches);
-                return '<img src="' . $matches[1] . '" data-src="' . stripslashes($m[1]) . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
-            } else {
-                $iv = str_repeat($sakura_privkey, 2);
-                $encrypted = openssl_encrypt($qq_number, 'aes-128-cbc', $sakura_privkey, 0, $iv);
-                $encrypted = urlencode(base64_encode($encrypted));
-                return '<img src="' . rest_url("sakura/v1/qqinfo/avatar") . '?qq=' . $encrypted . '"class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
-            }
+    if ($comment && get_comment_meta($comment->comment_ID, 'new_field_qq', true)) {
+        $qq_number = get_comment_meta($comment->comment_ID, 'new_field_qq', true);
+        if (iro_opt('qq_avatar_link') == 'off') {
+            return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" data-src="' . stripslashes($m[1] ?? '') . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+        } elseif (iro_opt('qq_avatar_link') == 'type_3') {
+            $qqavatar = file_get_contents('http://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin=' . $qq_number);
+            preg_match('/:\"([^\"]*)\"/i', $qqavatar, $matches);
+            return '<img src="' . $matches[1] . '" data-src="' . stripslashes($m[1]) . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
         } else {
-            return $avatar;
+            $iv = str_repeat($sakura_privkey, 2);
+            $encrypted = openssl_encrypt($qq_number, 'aes-128-cbc', $sakura_privkey, 0, $iv);
+            $encrypted = urlencode(base64_encode($encrypted));
+            return '<img src="' . rest_url("sakura/v1/qqinfo/avatar") . '?qq=' . $encrypted . '"class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
         }
-    } else {
-        return $avatar;
     }
+    return $avatar;
 }
 
 // default feature image
-function DEFAULT_FEATURE_IMAGE()
+function DEFAULT_FEATURE_IMAGE():string
 {
     $_api_url = rest_url('sakura/v1/image/feature');
     return $_api_url . (preg_match('/index.php\?/i', $_api_url) ? '&' : '?') . rand(1, 1000);
