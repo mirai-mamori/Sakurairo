@@ -27,43 +27,23 @@ if (!function_exists('iro_opt')) {
 //Update-Checker
 
 require 'update-checker/update-checker.php';
-$iro_update_source = iro_opt('iro_update_source');
-$iro_update_channel = iro_opt('iro_update_channel');
-
-if ($iro_update_source == 'github') {
-    $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-        'https://github.com/mirai-mamori/Sakurairo',
+$UpdateChecker = function(string $url,string $flag = 'Sakurairo'){
+    return Puc_v4_Factory::buildUpdateChecker(
+        $url,
         __FILE__,
-        'unique-plugin-or-theme-slug'
+        $flag
     );
-} else if ($iro_update_source == 'jsdelivr') {
-    $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-        'https://update.maho.cc/jsdelivr.json',
-        __FILE__,
-        'Sakurairo'
-    );
-} else if ($iro_update_source == 'official_building') {
-    if ($iro_update_channel == 'stable') {
-        $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-            'https://update.maho.cc/stable/check.json',
-            __FILE__,
-            'Sakurairo'
-        );
-    } else if ($iro_update_channel == 'beta') {
-        $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-            'https://update.maho.cc/beta/check.json',
-            __FILE__,
-            'Sakurairo'
-        );
-    } else if ($iro_update_channel == 'preview') {
-        $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-            'https://update.maho.cc/preview/check.json',
-            __FILE__,
-            'Sakurairo'
-        );
-    }
+};
+switch(iro_opt('iro_update_source')){
+    case 'github':
+        $iroThemeUpdateChecker = $UpdateChecker('https://github.com/mirai-mamori/Sakurairo','unique-plugin-or-theme-slug');
+        break;
+    case 'jsdelivr':
+        $iroThemeUpdateChecker = $UpdateChecker('https://update.maho.cc/jsdelivr.json');
+        break;
+    case 'official_building':
+        $iroThemeUpdateChecker = $UpdateChecker('https://update.maho.cc/'.iro_opt('iro_update_channel').'/check.json');
 }
-
 //ini_set('display_errors', true);
 //error_reporting(E_ALL);
 error_reporting(E_ALL & ~E_NOTICE);
