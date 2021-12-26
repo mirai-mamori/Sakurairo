@@ -725,32 +725,25 @@ function siren_get_browsers(string $ua):array{
   $title = 'Unknow';
   $icon = 'unknown';
   if (strpos($ua, 'Chrome')){
-    if (preg_match('#Chrome/([0-9]+)#i', $ua, $matches)) {
+    if (strpos($ua, 'Edg') && preg_match('#Edg/([0-9]+)#i', $ua, $matches)){
+      $title = 'Edge '. $matches[1];
+      $icon = 'edge';
+    }elseif (strpos($ua, '360EE')) {
+      $title = '360 Browser ';
+      $icon = '360se';
+    }elseif (strpos($ua, 'OPR') && preg_match('#OPR/([0-9]+)#i', $ua, $matches)) {
+      $title = 'Opera '. $matches[1];
+      $icon = 'opera';
+    }elseif (preg_match('#Chrome/([0-9]+)#i', $ua, $matches)) {
       $title = 'Chrome '. $matches[1];
       $icon = 'chrome';
-      if (preg_match('#Edg/([0-9]+)#i', $ua, $matches)){
-        $title = 'Edge '. $matches[1];
-            $icon = 'edge';
-      }
-      if (strpos($ua, '360EE')) {
-        $title = '360 Browser ';
-        $icon = '360se';
-      }
-      if (preg_match('#OPR/([0-9]+)#i', $ua, $matches)) {
-        $title = 'Opera '. $matches[1];
-        $icon = 'opera';
-      }
     }
-  }elseif (strpos($ua, 'Firefox')){
-    if (preg_match('#Firefox/([0-9]+)#i', $ua, $matches)){
-      $title = 'Firefox '. $matches[1];
-          $icon = 'firefox';
-    }
-  }elseif (strpos($ua, 'Safari')){
-    if (preg_match('#Safari/([0-9]+)#i', $ua, $matches)) {
-      $title = 'Safari '. $matches[1];
-      $icon = 'safari';
-    }
+  }elseif (strpos($ua, 'Firefox') && preg_match('#Firefox/([0-9]+)#i', $ua, $matches)){
+    $title = 'Firefox '. $matches[1];
+    $icon = 'firefox';
+  }elseif (strpos($ua, 'Safari') && preg_match('#Safari/([0-9]+)#i', $ua, $matches)){
+    $title = 'Safari '. $matches[1];
+    $icon = 'safari';
   }
   
   return [
@@ -778,15 +771,15 @@ function siren_get_os(string $ua):array{
       $title = "Windows 8.1";
       $icon = "win8";
     }
-  }elseif (preg_match('#iPhone OS ([0-9]+)#i', $ua, $matches)) {// 1.2 修改成 iphone os 来判断 
+  }elseif (strpos($ua, 'iPhone OS') && preg_match('#iPhone OS ([0-9]+)#i', $ua, $matches)) {// 1.2 修改成 iphone os 来判断 
     $title = "iOS ".$matches[1];
     $icon = "apple";
-  }elseif (preg_match('/Android.([0-9. _]+)/i', $ua, $matches)) {
+  }elseif (strpos($ua, 'Android') && preg_match('/Android.([0-9. _]+)/i', $ua, $matches)) {
     if(count(explode(7,$matches[1]))>1) $matches[1] = 'Lion '.$matches[1];
     elseif(count(explode(8,$matches[1]))>1) $matches[1] = 'Mountain Lion '.$matches[1];
     $title= $matches[0];
     $icon = "android";
-  } elseif (preg_match('/Mac OS X.([\d. _]+)/i', $ua, $matches)) {
+  } elseif (strpos($ua, 'Mac OS') && preg_match('/Mac OS X.([\d. _]+)/i', $ua, $matches)) {
     $mac_ver =  intval(explode('_',$matches[1])[1]);
     $mac_code_name = '';
     $has_x = $mac_ver <12;
@@ -810,7 +803,7 @@ function siren_get_os(string $ua):array{
   ];
 }
 
-function siren_get_useragent(string $ua){
+function siren_get_useragent(string $ua):string{
   if(iro_opt('comment_useragent')){
     // $imgurl = get_bloginfo('template_directory') . '/images/ua/';
     $imgurl = 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/ua/';
@@ -818,7 +811,7 @@ function siren_get_useragent(string $ua){
     $os = siren_get_os($ua);
     return '&nbsp;&nbsp;<span class="useragent-info">( <img src="'. $imgurl.$browser['icon'] .'.svg">&nbsp;'. $browser['title'] .'&nbsp;&nbsp;<img src="'. $imgurl.$os['icon'] .'.svg">&nbsp;'. $os['title'] .' )</span>';
   }
-  return false;
+  return '';
 }
 
 // UA 显示移动定制
