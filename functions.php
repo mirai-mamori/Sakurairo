@@ -450,41 +450,7 @@ function get_author_class($comment_author_email, $user_id)
     $author_count = count($wpdb->get_results(
         "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email = '$comment_author_email' "
     ));
-    $Lv = 0;
-    // 1 
     $Lv = $author_count < 5 ? 0 : ($author_count < 10 ? 1 : ($author_count < 20 ? 2 : ($author_count < 40 ? 3 : ($author_count < 80 ? 4 : ($author_count < 160 ? 5 : 6)))));
-    // 2 
-    // switch (true){
-    //     case ($author_count < 5):
-    //         break;
-    //     case ($author_count < 10):
-    //         $Lv = 1;
-    //         break;
-    //     case ($author_count < 20):
-    //         $Lv = 2;
-    //         break;
-    //     case ($author_count < 40):
-    //         $Lv = 3;
-    //         break;
-    //     case ($author_count < 80):
-    //         $Lv = 4;
-    //         break;
-    //     case ($author_count < 160):
-    //         $Lv = 5;
-    //         break;
-    //     default:
-    //         $Lv = 6;
-    // }
-    // 3 PHP 8
-    // $Lv = match(true){
-    //     $author_count < 5 => 0,
-    //     $author_count < 10 => 1,
-    //     $author_count < 20 => 2,
-    //     $author_count < 40 => 3,
-    //     $author_count < 80 => 4,
-    //     $author_count < 160 => 5,
-    //     default => 6
-    // }
     echo "<span class=\"showGrade{$Lv}\" title=\"Lv{$Lv}\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/comment/level/level_{$Lv}.svg\" style=\"height: 1.5em; max-height: 1.5em; display: inline-block;\"></span>";
 }
 
