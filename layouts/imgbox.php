@@ -2,10 +2,12 @@
 include(get_stylesheet_directory().'/layouts/all_opt.php');
 $text_logo = iro_opt('text_logo');
 $print_social_zone = function() use ($all_opt,$social_display_icon):void{
+    // 左箭头
     if (iro_opt('cover_random_graphs_switch', 'true')):?>
         <li id="bg-pre"><img src="<?=$social_display_icon?>pre.png" /></li>
     <?php
     endif;
+    // 微信
     if (iro_opt('wechat')):?>
         <li class="wechat"><a href="#" title="wechat"><img src="<?=$social_display_icon?>wechat.png" /></a>
             <div class="wechatInner">
@@ -14,19 +16,23 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
         </li>
     <?php
     endif;
+    // 大体(all_opt.php)
     foreach ($all_opt as $key => $value):
         if (!empty($value['link'])):
+            // 显然 这里的逻辑可以看看all_opt的结构（
             $img_url = $value['img'] ?? ($social_display_icon . ($value['icon'] ?? $key) . '.png');
             ?>
             <li><a href="<?=$value['link'];?>" target="_blank" class="social-<?=$value['class'] ?? $key?>" title="<?=$value['title'] ?? $key?>"><img src="<?=$img_url?>" /></a></li>
         <?php
         endif;
     endforeach;
+    // 邮箱
     if (iro_opt('email_name') && iro_opt('email_domain')):?>
         <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img
                     src="<?=iro_opt('social_display_icon')?>/mail.png" /></a></li>
     <?php
     endif;
+    // 右箭头
     if (iro_opt('cover_random_graphs_switch', 'true')):?>
         <li id="bg-next"><img src="<?=$social_display_icon?>next.png" /></li>
     <?php endif;
