@@ -2,38 +2,34 @@
 include(get_stylesheet_directory().'/layouts/all_opt.php');
 $text_logo = iro_opt('text_logo');
 $print_social_zone = function() use ($all_opt,$social_display_icon):void{
-    if (iro_opt('cover_random_graphs_switch', 'true')){
-        echo '<li id="bg-pre"><img src="',$social_display_icon,'pre.png" /></li>';
-    }
-    if (iro_opt('wechat')) {
-        echo '<li class="wechat"><a href="#" title="wechat"><img src="',$social_display_icon,'wechat.png" /></a>
+    if (iro_opt('cover_random_graphs_switch', 'true')):?>
+        <li id="bg-pre"><img src="<?=$social_display_icon?>pre.png" /></li>
+    <?php
+    endif;
+    if (iro_opt('wechat')):?>
+        <li class="wechat"><a href="#" title="wechat"><img src="<?=$social_display_icon?>wechat.png" /></a>
             <div class="wechatInner">
-                <img src="',iro_opt('wechat', ''),'" alt="WeChat">
+                <img src="<?=iro_opt('wechat', '')?>" alt="WeChat">
             </div>
-        </li>';
-    }
-    foreach ($all_opt as $key => $value) {
-        if (!empty($value['link'])) {
-            switch(true){
-                case isset($value['icon']):
-                    $img_url = $social_display_icon.$value['icon'].'.png';
-                    break;
-                case isset($value['img']):
-                    $img_url = $value['img'];
-                    break;
-                default:
-                    $img_url = $social_display_icon.$key.'.png';
-            }
-            echo '<li><a href="',$value['link'],'" target="_blank" class="social-', $value['class'] ?? $key ,'" title="' , $value['title'] ?? $key , '"><img src="' , $img_url , '" /></a></li>';
-        }
-    }
-    if (iro_opt('email_name') && iro_opt('email_domain')) {
-        echo '<li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img
-                    src="',iro_opt('social_display_icon'),'/mail.png" /></a></li>';
-    }
-    if (iro_opt('cover_random_graphs_switch', 'true')){
-        echo '<li id="bg-next"><img src="',$social_display_icon,'next.png" /></li>';
-    }
+        </li>
+    <?php
+    endif;
+    foreach ($all_opt as $key => $value):
+        if (!empty($value['link'])):
+            $img_url = $value['img'] ?? ($social_display_icon . ($value['icon'] ?? $key) . '.png');
+            ?>
+            <li><a href="<?=$value['link'];?>" target="_blank" class="social-<?=$value['class'] ?? $key?>" title="<?=$value['title'] ?? $key?>"><img src="<?=$img_url?>" /></a></li>
+        <?php
+        endif;
+    endforeach;
+    if (iro_opt('email_name') && iro_opt('email_domain')):?>
+        <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img
+                    src="<?=iro_opt('social_display_icon')?>/mail.png" /></a></li>
+    <?php
+    endif;
+    if (iro_opt('cover_random_graphs_switch', 'true')):?>
+        <li id="bg-next"><img src="<?=$social_display_icon?>next.png" /></li>
+    <?php endif;
 }
 ?>
 <?php
@@ -78,13 +74,13 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
                 </script>
                 <?php endif; ?>
                 <p><?php echo iro_opt('signature_text', 'Hi, Mashiro?'); ?></p>
-                <?php if (iro_opt('infor_bar_style') == "v2") : ?>
+                <?php if (iro_opt('infor_bar_style') === 'v2') : ?>
                     <div class="top-social_v2">
                         <?php $print_social_zone(); ?>
                     </div>
                 <?php endif; ?>
             </div>
-            <?php if (iro_opt('infor_bar_style') == "v1") : ?>
+            <?php if (iro_opt('infor_bar_style') === 'v1') : ?>
                 <div class="top-social">
                     <?php $print_social_zone(); ?>
                 </div>
