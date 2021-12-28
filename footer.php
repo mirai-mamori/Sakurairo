@@ -152,7 +152,7 @@ $reception_background = iro_opt('reception_background');
 
 <!-- 首页波浪特效 -->
 <?php if (iro_opt('wave_effects', 'true')): ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/css/bolang.css">
+<link rel="stylesheet" href="<?php global $shared_library_basepath;echo $shared_library_basepath?>/css/bolang.css">
 <?php endif; ?>
 
 <!-- Live2D看板娘 -->
