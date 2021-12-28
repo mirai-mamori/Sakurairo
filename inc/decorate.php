@@ -29,6 +29,7 @@ if (iro_opt('theme_skin')) { ?>
     --global-font-weight:<?=iro_opt('global_font_weight');?>;
     --theme-dm-background_transparency:<?=iro_opt('theme_darkmode_background_transparency')?>;
     --area_title_bottom_color:<?=iro_opt('area_title_bottom_color');?>;
+    --vision_resource_basepath:<?=iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/')?>;
 }
 <?php if (iro_opt('theme_commemorate_mode')) {?>
     html{
