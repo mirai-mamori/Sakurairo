@@ -3408,7 +3408,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'label' => __('Critical frontend resource will be provided locally by default. Critical resources are those resources whose loading performance will have a significant impact on the user experience','sakurairo_csf'),
         'default' => true
       ),
-      
+
+      array(
+        'id' => 'vision_resource_basepath',
+        'type' => 'text',
+        'title' => __('Vision Resource Basepath','sakurairo_csf'),
+        'default' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/"
+      ),
+
       array(
         'type' => 'subheading',
         'content' => __('Theme Contributors','sakurairo_csf'),
