@@ -3404,7 +3404,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'id' => 'local_application_library',
         'type' => 'switcher',
-        'title' => __('Provide critical frontend resource locally','sakurairo_csf'),
+        'title' => __('Provide Critical Frontend Resource locally','sakurairo_csf'),
         'label' => __('Critical frontend resource will be provided locally by default. Critical resources are those resources whose loading performance will have a significant impact on the user experience','sakurairo_csf'),
         'default' => true
       ),
