@@ -2105,3 +2105,6 @@ function should_show_title():bool{
     || !get_post_thumbnail_id($id) 
     && $use_as_thumb != 'true' && !get_post_meta($id, 'video_cover', true);
 }
+
+$shared_library_basepath = iro_opt('local_global_library')?get_template_directory_uri() :'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . IRO_VERSION ;
+$local_library_basepath =  iro_opt('local_application_library')?get_template_directory_uri():'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION;
