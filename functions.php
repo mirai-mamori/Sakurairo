@@ -28,43 +28,23 @@ $local_library_basepath =  iro_opt('local_application_library') ? get_template_d
 //Update-Checker
 
 require 'update-checker/update-checker.php';
-$iro_update_source = iro_opt('iro_update_source');
-$iro_update_channel = iro_opt('iro_update_channel');
-
-if ($iro_update_source == 'github') {
-    $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-        'https://github.com/mirai-mamori/Sakurairo',
+$UpdateChecker = function(string $url,string $flag = 'Sakurairo'){
+    return Puc_v4_Factory::buildUpdateChecker(
+        $url,
         __FILE__,
-        'unique-plugin-or-theme-slug'
+        $flag
     );
-} else if ($iro_update_source == 'jsdelivr') {
-    $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-        'https://update.maho.cc/jsdelivr.json',
-        __FILE__,
-        'Sakurairo'
-    );
-} else if ($iro_update_source == 'official_building') {
-    if ($iro_update_channel == 'stable') {
-        $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-            'https://update.maho.cc/stable/check.json',
-            __FILE__,
-            'Sakurairo'
-        );
-    } else if ($iro_update_channel == 'beta') {
-        $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-            'https://update.maho.cc/beta/check.json',
-            __FILE__,
-            'Sakurairo'
-        );
-    } else if ($iro_update_channel == 'preview') {
-        $iroThemeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-            'https://update.maho.cc/preview/check.json',
-            __FILE__,
-            'Sakurairo'
-        );
-    }
+};
+switch(iro_opt('iro_update_source')){
+    case 'github':
+        $iroThemeUpdateChecker = $UpdateChecker('https://github.com/mirai-mamori/Sakurairo','unique-plugin-or-theme-slug');
+        break;
+    case 'jsdelivr':
+        $iroThemeUpdateChecker = $UpdateChecker('https://update.maho.cc/jsdelivr.json');
+        break;
+    case 'official_building':
+        $iroThemeUpdateChecker = $UpdateChecker('https://update.maho.cc/'.iro_opt('iro_update_channel').'/check.json');
 }
-
 //ini_set('display_errors', true);
 //error_reporting(E_ALL);
 error_reporting(E_ALL & ~E_NOTICE);
@@ -155,21 +135,24 @@ if (!function_exists('akina_setup')) :
         }
         add_action('init', 'coolwp_remove_open_sans_from_wp_core');
 
-        /**
-         * Disable the emoji's
-         */
-        function disable_emojis()
-        {
-            remove_action('wp_head', 'print_emoji_detection_script', 7);
-            remove_action('admin_print_scripts', 'print_emoji_detection_script');
-            remove_action('wp_print_styles', 'print_emoji_styles');
-            remove_action('admin_print_styles', 'print_emoji_styles');
-            remove_filter('the_content_feed', 'wp_staticize_emoji');
-            remove_filter('comment_text_rss', 'wp_staticize_emoji');
-            remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
-            add_filter('tiny_mce_plugins', 'disable_emojis_tinymce');
+        if (!function_exists('disable_emojis')) {
+            /**
+             * Disable the emoji's
+             * @see https://wordpress.org/plugins/disable-emojis/
+             */
+            function disable_emojis()
+            {
+                remove_action('wp_head', 'print_emoji_detection_script', 7);
+                remove_action('admin_print_scripts', 'print_emoji_detection_script');
+                remove_action('wp_print_styles', 'print_emoji_styles');
+                remove_action('admin_print_styles', 'print_emoji_styles');
+                remove_filter('the_content_feed', 'wp_staticize_emoji');
+                remove_filter('comment_text_rss', 'wp_staticize_emoji');
+                remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+                add_filter('tiny_mce_plugins', 'disable_emojis_tinymce');
+            }
+            add_action('init', 'disable_emojis');
         }
-        add_action('init', 'disable_emojis');
 
         /**
          * Filter function used to remove the tinymce emoji plugin.
@@ -430,7 +413,7 @@ if (!function_exists('akina_comment_format')) {
                                 <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
                                 <div class="right">
                                     <div class="info"><time datetime="<?php comment_date('Y-m-d'); ?>"><?php echo poi_time_since(strtotime($comment->comment_date_gmt), true); //comment_date(get_option('date_format'));  
-                                                                                                        ?></time><?php echo siren_get_useragent($comment->comment_agent); ?><?php echo mobile_get_useragent_icon($comment->comment_agent); ?>&nbsp;<?php if (iro_opt('comment_location')) {
+                                                                                                        ?></time><?= siren_get_useragent($comment->comment_agent); ?><?php echo mobile_get_useragent_icon($comment->comment_agent); ?>&nbsp;<?php if (iro_opt('comment_location')) {
                                                                                                                                                                                                                                                         _e('Location', 'sakurairo'); /*来自*/ ?>: <?php echo convertip(get_comment_author_ip());
                                                                                                                                                                                                                                                                                                                                                                                                                 } ?>
                                     <?php if (current_user_can('manage_options') and (wp_is_mobile() == false)) {
@@ -471,22 +454,8 @@ function get_author_class($comment_author_email, $user_id)
     $author_count = count($wpdb->get_results(
         "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email = '$comment_author_email' "
     ));
-    if ($author_count >= 1 && $author_count < 5) //数字可自行修改，代表评论次数。
-    {
-        echo '<span class="showGrade0" title="Lv0"><img src="'.iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'comment/level/level_0.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
-    } else if ($author_count >= 6 && $author_count < 10) {
-        echo '<span class="showGrade1" title="Lv1"><img src="'.iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'comment/level/level_1.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
-    } else if ($author_count >= 10 && $author_count < 20) {
-        echo '<span class="showGrade2" title="Lv2"><img src="'.iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'comment/level/level_2.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
-    } else if ($author_count >= 20 && $author_count < 40) {
-        echo '<span class="showGrade3" title="Lv3"><img src="'.iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'comment/level/level_3.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
-    } else if ($author_count >= 40 && $author_count < 80) {
-        echo '<span class="showGrade4" title="Lv4"><img src="'.iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'comment/level/level_4.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
-    } else if ($author_count >= 80 && $author_count < 160) {
-        echo '<span class="showGrade5" title="Lv5"><img src="'.iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'comment/level/level_5.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
-    } else if ($author_count >= 160) {
-        echo '<span class="showGrade6" title="Lv6"><img src="'.iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'comment/level/level_6.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;"></span>';
-    }
+    $Lv = $author_count < 5 ? 0 : ($author_count < 10 ? 1 : ($author_count < 20 ? 2 : ($author_count < 40 ? 3 : ($author_count < 80 ? 4 : ($author_count < 160 ? 5 : 6)))));
+    echo "<span class=\"showGrade{$Lv}\" title=\"Lv{$Lv}\"><img src=\"".iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/')."comment/level/level_{$Lv}.svg\" style=\"height: 1.5em; max-height: 1.5em; display: inline-block;\"></span>";
 }
 
 /**
@@ -497,17 +466,14 @@ function restyle_text($number)
     switch (iro_opt('statistics_format')) {
         case "type_2": //23,333 次访问
             return number_format($number);
-            break;
         case "type_3": //23 333 次访问
             return number_format($number, 0, '.', ' ');
-            break;
         case "type_4": //23k 次访问
             if ($number >= 1000) {
                 return round($number / 1000, 2) . 'k';
             } else {
                 return $number;
             }
-            break;
         default:
             return $number;
     }
@@ -599,7 +565,7 @@ function get_link_items()
 /*
  * Gravatar头像使用中国服务器
  */
-function gravatar_cn($url)
+function gravatar_cn(string $url):string
 {
     $gravatar_url = array('0.gravatar.com/avatar', '1.gravatar.com/avatar', '2.gravatar.com/avatar', 'secure.gravatar.com/avatar');
     return str_replace($gravatar_url, iro_opt('gravatar_proxy'), $url);
@@ -736,11 +702,7 @@ function akina_infinite_scroll_render()
 {
     while (have_posts()) {
         the_post();
-        if (is_search()) :
-            get_template_part('tpl/content', 'search');
-        else :
-            get_template_part('tpl/content', get_post_format());
-        endif;
+        get_template_part('tpl/content', is_search() ? 'search' : get_post_format());
     }
 }
 
@@ -1230,11 +1192,7 @@ function siren_private()
     if ($action == 'set_private') {
         update_comment_meta($comment_id, '_private', 'true');
         $i_private = get_comment_meta($comment_ID, '_private', true);
-        if (!empty($i_private)) {
-            echo '否';
-        } else {
-            echo '是';
-        }
+        echo !empty($i_private) ? '否' : '是';
     }
     die;
 }
@@ -1242,6 +1200,7 @@ function siren_private()
 //时间序列
 function memory_archives_list()
 {
+    // 始终为true, 为什么要这么做呢 
     if (true) {
         $output = '<div id="archives"><p style="text-align:right;">[<span id="al_expand_collapse">' . __("All expand/collapse", "sakurairo") /*全部展开/收缩*/ . '</span>]<!-- (注: 点击月份可以展开)--></p>';
         $the_query = new WP_Query('posts_per_page=-1&ignore_sticky_posts=1&post_type=post'); //update: 加上忽略置顶文章
@@ -1400,17 +1359,19 @@ add_action('admin_footer', 'custom_admin_js');
  */
 function scheme_tip()
 {
-    $msg = '<b>Why not try the new admin dashboard color scheme <a href="/wp-admin/profile.php">here</a>?</b>';
-    if (get_user_locale(get_current_user_id()) == "zh_CN") {
-        $msg = '<b>试一试新后台界面<a href="/wp-admin/profile.php">配色方案</a>吧？</b>';
+    switch(get_user_locale(get_current_user_id())){
+        case 'zh_CN':
+            $msg = '<b>试一试新后台界面<a href="/wp-admin/profile.php">配色方案</a>吧？</b>';
+            break;
+        case 'zh_TW':
+            $msg = '<b>試一試新後台界面<a href="/wp-admin/profile.php">色彩配置</a>吧？</b>';
+            break;
+        case 'ja-JP':
+            $msg = '<b>新しい<a href="/wp-admin/profile.php">管理画面の配色</a>を試しますか？</b>';
+            break;
+        default:
+            $msg = '<b>Why not try the new admin dashboard color scheme <a href="/wp-admin/profile.php">here</a>?</b>';
     }
-    if (get_user_locale(get_current_user_id()) == "zh_TW") {
-        $msg = '<b>試一試新後台界面<a href="/wp-admin/profile.php">色彩配置</a>吧？</b>';
-    }
-    if (get_user_locale(get_current_user_id()) == "ja-JP") {
-        $msg = '<b>新しい<a href="/wp-admin/profile.php">管理画面の配色</a>を試しますか？</b>';
-    }
-
     $user_id = get_current_user_id();
     if (!get_user_meta($user_id, 'scheme-tip-dismissed' . BUILD_VERSION)) {
         echo '<div class="notice notice-success is-dismissible" id="scheme-tip"><p><b>' . $msg . '</b></p></div>';
@@ -1589,9 +1550,9 @@ function html_tag_parser($content)
 
         //With Thumbnail: !{alt}(url)[th_url]
         if (preg_match_all('/\!\{.*?\)\[.*?\]/i', $content, $matches)) {
-            for ($i = 0; $i < sizeof($matches); $i++) {
+            foreach($matches as $result){
                 $content = str_replace(
-                    $matches[$i],
+                    $result,
                     preg_replace(
                         '/!\{([^\{\}]+)*\}\(' . $url_regex . '\)\[' . $url_regex . '\]/i',
                         '<a data-fancybox="gallery"
@@ -1600,7 +1561,7 @@ function html_tag_parser($content)
                         href="$2"
                         alt="$1"
                         title="$1"><img src="$7" target="_blank" rel="nofollow" class="fancybox"></a>',
-                        $matches[$i]
+                        $result
                     ),
                     $content
                 );
@@ -1624,10 +1585,10 @@ function html_tag_parser($content)
         //Fancybox
         $url_regex = '((?:https?:\/\/|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))';
         if (preg_match_all('/\!\{.*?\)\[.*?\]/i', $content, $matches)) {
-            for ($i = 0; $i < sizeof($matches); $i++) {
+            foreach ($matches as $result){
                 $content = str_replace(
-                    $matches[$i],
-                    preg_replace('/!\{([^\{\}]+)*\}\(' . $url_regex . '\)\[' . $url_regex . '\]/i', '<a href="$2"><img src="$7" alt="$1" title="$1"></a>', $matches[$i]),
+                    $result,
+                    preg_replace('/!\{([^\{\}]+)*\}\(' . $url_regex . '\)\[' . $url_regex . '\]/i', '<a href="$2"><img src="$7" alt="$1" title="$1"></a>', $result),
                     $content
                 );
             }
@@ -1673,31 +1634,26 @@ add_filter('get_avatar', 'change_avatar', 10, 3);
 function change_avatar($avatar)
 {
     global $comment, $sakura_privkey;
-    if ($comment) {
-        if (get_comment_meta($comment->comment_ID, 'new_field_qq', true)) {
-            $qq_number = get_comment_meta($comment->comment_ID, 'new_field_qq', true);
-            if (iro_opt('qq_avatar_link') == 'off') {
-                return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" data-src="' . stripslashes($m[1] ?? '') . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
-            } elseif (iro_opt('qq_avatar_link') == 'type_3') {
-                $qqavatar = file_get_contents('http://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin=' . $qq_number);
-                preg_match('/:\"([^\"]*)\"/i', $qqavatar, $matches);
-                return '<img src="' . $matches[1] . '" data-src="' . stripslashes($m[1]) . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
-            } else {
-                $iv = str_repeat($sakura_privkey, 2);
-                $encrypted = openssl_encrypt($qq_number, 'aes-128-cbc', $sakura_privkey, 0, $iv);
-                $encrypted = urlencode(base64_encode($encrypted));
-                return '<img src="' . rest_url("sakura/v1/qqinfo/avatar") . '?qq=' . $encrypted . '"class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
-            }
+    if ($comment && get_comment_meta($comment->comment_ID, 'new_field_qq', true)) {
+        $qq_number = get_comment_meta($comment->comment_ID, 'new_field_qq', true);
+        if (iro_opt('qq_avatar_link') == 'off') {
+            return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" data-src="' . stripslashes($m[1] ?? '') . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+        } elseif (iro_opt('qq_avatar_link') == 'type_3') {
+            $qqavatar = file_get_contents('http://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin=' . $qq_number);
+            preg_match('/:\"([^\"]*)\"/i', $qqavatar, $matches);
+            return '<img src="' . $matches[1] . '" data-src="' . stripslashes($m[1]) . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
         } else {
-            return $avatar;
+            $iv = str_repeat($sakura_privkey, 2);
+            $encrypted = openssl_encrypt($qq_number, 'aes-128-cbc', $sakura_privkey, 0, $iv);
+            $encrypted = urlencode(base64_encode($encrypted));
+            return '<img src="' . rest_url("sakura/v1/qqinfo/avatar") . '?qq=' . $encrypted . '"class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
         }
-    } else {
-        return $avatar;
     }
+    return $avatar;
 }
 
 // default feature image
-function DEFAULT_FEATURE_IMAGE()
+function DEFAULT_FEATURE_IMAGE():string
 {
     $_api_url = rest_url('sakura/v1/image/feature');
     return $_api_url . (preg_match('/index.php\?/i', $_api_url) ? '&' : '?') . rand(1, 1000);

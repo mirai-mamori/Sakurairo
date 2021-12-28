@@ -90,7 +90,7 @@ class Captcha
         }
 
         //添加干扰点
-        for ($i = 1; $i <= 180 * 40 * 0.02; $i++) {
+        for ($i = 1; $i <= 144; $i++) {
             $pixelcolor = imagecolorallocate($img, mt_rand(100, 150), mt_rand(0, 120), mt_rand(0, 255));
             imagesetpixel($img, mt_rand(0, 179), mt_rand(0, 39), $pixelcolor);
         }
