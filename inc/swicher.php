@@ -51,7 +51,22 @@ function font_end_js_control() {
     !empty($reception_background['img5']) && $mashiro_opt['skin_bg4'] = $reception_background['img5'];
     $mashiro_opt['entry_content_style_src'] = iro_opt('entry_content_style') == 'sakurairo' ? $ecs_src('sakura') : $ecs_src('github');
     $mashiro_opt['jsdelivr_css_src'] = iro_opt('local_global_library') ? (get_template_directory_uri().'/css/lib.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'.IRO_VERSION.'/css/lib.css');
-    if (iro_opt('lightgallery')){$mashiro_opt['lightGallery'] = iro_opt('lightgallery_option');}
+    if (iro_opt('lightgallery')){
+        $lightGallery = str_replace(PHP_EOL, '', iro_opt('lightgallery_option')); 
+        # 这里简单的做一下处理，请务必使用正确标准的json格式
+        # 例：
+        /*
+        {"a":"b",
+         "c":1,
+         "d":true,
+         "e":[1,2,3]
+        }
+        */
+        if(preg_match('/\w:/', $lightGallery)){
+            $lightGallery = preg_replace('/(\w+):/is', '"$1":', $lightGallery);
+        }
+        $mashiro_opt['lightGallery'] = json_decode($lightGallery,true);
+    }
     if (iro_opt('theme_darkmode_auto')){$mashiro_opt['dm_strategy'] = iro_opt('theme_darkmode_strategy','time');}
     if (iro_opt('preload_blur',0)){$mashiro_opt['preload_blur'] = iro_opt('preload_blur',0);}
     if (iro_opt('aplayer_server') != 'off'){
