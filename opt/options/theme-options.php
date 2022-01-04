@@ -3183,9 +3183,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('LightGallery Lightbox Effect Options','sakurairo_csf'),
         'dependency' => array( 'lightgallery', '==', 'true' ),
         'default' => '{
-          plugins:["hash","zoom"],
-          supportLegacyBrowser:false,
-          selector:"figure > img",
+          "plugins":["hash","zoom"],
+          "supportLegacyBrowser":false,
+          "selector":"figure > img"
         }'
       ), 
 
