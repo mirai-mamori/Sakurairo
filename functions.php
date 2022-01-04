@@ -244,22 +244,16 @@ add_action('after_setup_theme', 'akina_content_width', 0);
  */
 function sakura_scripts()
 {
-    if (iro_opt('local_global_library')) {
-        if (iro_opt('smoothscroll_option')) {
-            wp_enqueue_script('SmoothScroll', get_template_directory_uri() . '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
-        }
-    } elseif (iro_opt('smoothscroll_option')) {
-        wp_enqueue_script('SmoothScroll',  'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . IRO_VERSION . '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
+    global $local_library_basepath;
+    global $shared_library_basepath;
+
+    if (iro_opt('smoothscroll_option')) {
+        wp_enqueue_script('SmoothScroll', $shared_library_basepath. '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
     }
-    if (iro_opt('local_application_library')) {
-        wp_enqueue_style('saukra_css', get_stylesheet_uri(), array(), IRO_VERSION);
-        wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), IRO_VERSION, true);
-        if (!is_home()) wp_enqueue_script('app-page', get_template_directory_uri() . '/js/page.js', array('app'), IRO_VERSION, true);
-    } else {
-        wp_enqueue_style('saukra_css', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION . '/style.min.css', array(), IRO_VERSION);
-        wp_enqueue_script('app', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION . '/js/app.js', array(), IRO_VERSION, true);
-        if (!is_home()) wp_enqueue_script('app-page', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION .  '/js/page.js', array('app'), IRO_VERSION, true);
-    }
+
+    wp_enqueue_style('saukra_css',  $local_library_basepath.'/style.css', array(), IRO_VERSION);
+    wp_enqueue_script('app', $local_library_basepath . '/js/app.js', array(), IRO_VERSION, true);
+    if (!is_home()) wp_enqueue_script('app-page', $local_library_basepath . '/js/page.js', array('app'), IRO_VERSION, true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
