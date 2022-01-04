@@ -1,4 +1,4 @@
-/*! build 5552956 2022/1/4*/
+/*! build a4bec0f 2022/1/5*/
 
 .container-siroi {
   display: flex;
@@ -37,8 +37,7 @@
   position: absolute;
   bottom: 0;
   color: #fff;
-  -webkit-transform: translateY(40%);
-          transform: translateY(40%);
+  transform: translateY(40%);
   transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .siroi-info p {
@@ -65,8 +64,7 @@
   );
   background-blend-mode: overlay;
   opacity: 0;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
+  transform: translateY(100%);
   transition: 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 .siroi-info h1 {
@@ -79,15 +77,12 @@
 
 .siroi-wrap {
   margin: 10px;
-  -webkit-transform: perspective(800px);
-          transform: perspective(800px);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform: perspective(800px);
+  transform-style: preserve-3d;
   cursor: pointer;
 }
 .siroi-wrap:hover .siroi-info {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
 }
 .siroi-wrap:hover .siroi-info p {
   opacity: 1;
@@ -99,8 +94,7 @@
 .siroi-wrap:hover .siroi-info:after {
   transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
   opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
 }
 .siroi-wrap:hover .siroi-bg {
   transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1),
