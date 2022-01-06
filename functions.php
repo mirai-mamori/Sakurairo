@@ -773,7 +773,7 @@ function custom_html()
 {
     $loginbg = iro_opt('login_background') ?: iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'tsubame/login_background.jpg'; ?>
         <script type="text/javascript">
-            document.body.insertAdjacentHTML("afterbegin", "<div class=\"loading\"><img src=\".'iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'basic/login_loading.gif\" width=\"58\" height=\"10\"></div>");
+            document.body.insertAdjacentHTML("afterbegin", "<div class=\"loading\"><img src=\"<?=iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/')?>basic/login_loading.gif\" width=\"58\" height=\"10\"></div>");
             document.head.insertAdjacentHTML("afterbegin", "<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
             let isLoading = true
             const loading = document.querySelector(".loading")
