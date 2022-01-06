@@ -776,8 +776,8 @@ function custom_html()
             document.body.insertAdjacentHTML("afterbegin", "<div class=\"loading\"><img src=\"<?=iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/')?>basic/login_loading.gif\" width=\"58\" height=\"10\"></div>");
             document.head.insertAdjacentHTML("afterbegin", "<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
             let isLoading = true
-            const loading = document.querySelector(".loading")
-            const src = "<?php echo $loginbg; ?>",
+            const loading = document.querySelector(".loading"),
+             src = "<?= $loginbg ?>",
                 afterLoaded = () => {
                     if (!isLoading) return
                     document.body.style.backgroundImage = `url(${src})`
@@ -794,16 +794,14 @@ function custom_html()
             <?php //3秒钟内加载不到图片也移除加载中提示
             ?>
             setTimeout(afterLoaded, 3000)
-        </script>
-    <?php
-    echo '<script>
-    document.addEventListener("DOMContentLoaded", ()=>{
-        document.querySelector("h1 a").style.backgroundImage = "url(\'', iro_opt('login_logo_img'), '\') ";
-        document.querySelector(".forgetmenot").outerHTML = \'<p class="forgetmenot">Remember Me<input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p> \';
+            document.addEventListener("DOMContentLoaded", ()=>{
+        document.querySelector("h1 a").style.backgroundImage = "url('<?= iro_opt('login_logo_img')?>')";
+        document.querySelector(".forgetmenot").outerHTML = '<p class="forgetmenot"><?=__("Remember me","sakurairo")?><input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>';
+        
         const captchaimg = document.getElementById("captchaimg");
         captchaimg && captchaimg.addEventListener("click",(e)=>{
-            fetch("', rest_url('sakura/v1/captcha/create'), '")
-            .then(response=>response.json())
+            fetch("<?= rest_url('sakura/v1/captcha/create')?>")
+            .then(resp=>resp.json())
             .then(json=>{
                 e.target.src = json["data"];
                 document.querySelector("input[name=\'timestamp\']").value = json["time"];
@@ -811,7 +809,8 @@ function custom_html()
             });
         })
     }, false);
-    </script>';
+        </script>
+    <?php
 }
 add_action('login_footer', 'custom_html');
 
