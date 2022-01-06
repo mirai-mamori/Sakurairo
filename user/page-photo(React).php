@@ -147,7 +147,7 @@ get_header();
             <p>如下代码会被渲染成 <a href="https://www.sakurairo.top/photo/" target="_blank">展示页</a></p>
             <pre>
         &lt; src="https://www.wahaotu.com/uploads/allimg/202010/1602912171649821.jpg" alt="" data-header="标题"
-             data-info="信息" &gt;
+             data-info="信息" url="https://www.baidu.com"&gt;
         &lt; img src="https://www.wahaotu.com/uploads/allimg/202010/1602912171649821.jpg" alt="" &gt;
         &lt; img src="https://www.wahaotu.com/uploads/allimg/202010/1602912171649821.jpg" alt="" data-info="信息" &gt;
         &lt; img src="https://www.wahaotu.com/uploads/allimg/202010/1602912171649821.jpg" alt="" vertical=false
@@ -164,6 +164,9 @@ get_header();
                 </li>
                 <li>
                     vertical:是否竖向排列(默认竖向即vertical=true)
+                </li>
+                <li>
+                    url:点击图片跳转路径(默认无跳转)
                 </li>
             </ol>
         </div>
