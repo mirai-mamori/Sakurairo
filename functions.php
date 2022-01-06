@@ -1921,7 +1921,7 @@ add_action("wp_ajax_nopriv_getPhoto", "get_photo");
 add_action("wp_ajax_getPhoto", "get_photo");
 /**
  * 相册模板
- * @author siroi <mrgaopw@hotmail.com>
+ * @author siroi <1152910080@qq.com>
  * @return Json
  */
 function get_photo()
@@ -1937,12 +1937,13 @@ function get_photo()
         $meta = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
         $dom->loadHTML($meta . $page->post_content);
         $imgS = $dom->getElementsByTagName('img');
-        //<img src="..." data-header="标题" data-info="信息" vertical=false>
+        //<img src="..." data-header="标题" data-info="信息" vertical=false url="https://www.baidu.com">
         foreach ($imgS as $key => $value) {
             $attr = $value->attributes;
             $header = $attr->getNamedItem('header');
             $info = $attr->getNamedItem('data-info');
             $vertical = $attr->getNamedItem('vertical');
+            $url = $attr->getNamedItem('url');
 
             //图片资源地址
             $temp['img'] = $value->attributes->getNamedItem('src')->nodeValue;
@@ -1952,6 +1953,8 @@ function get_photo()
             $temp['info'] = $info->nodeValue ?? null;
             //是否竖向展示 默认false
             $temp['vertical'] = $vertical->nodeValue ?? null;
+            //点击图片进行跳转
+            $temp['url'] = $url->nodeValue ?? null;
             array_push($back['imgs'], $temp);
         }
     }
