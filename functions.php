@@ -17,10 +17,10 @@ define('BUILD_VERSION', '2');
 require get_template_directory() . '/opt/option-framework.php';
 
 if (!function_exists('iro_opt')) {
+    $GLOBALS['iro_options'] = get_option('iro_options');
     function iro_opt($option = '', $default = null)
     {
-        $options = get_option('iro_options');
-        return (isset($options[$option])) ? $options[$option] : $default;
+        return $GLOBALS['iro_options'][$option] ?? $default;
     }
 }
 
