@@ -27,22 +27,22 @@ if (!function_exists('iro_opt')) {
 //Update-Checker
 
 require 'update-checker/update-checker.php';
-$UpdateChecker = function(string $url,string $flag = 'Sakurairo'){
+function UpdateCheck($url,$flag = 'Sakurairo'){
     return Puc_v4_Factory::buildUpdateChecker(
         $url,
         __FILE__,
         $flag
     );
-};
+}
 switch(iro_opt('iro_update_source')){
     case 'github':
-        $iroThemeUpdateChecker = $UpdateChecker('https://github.com/mirai-mamori/Sakurairo','unique-plugin-or-theme-slug');
+        $iroThemeUpdateChecker = UpdateChecker('https://github.com/mirai-mamori/Sakurairo','unique-plugin-or-theme-slug');
         break;
     case 'jsdelivr':
-        $iroThemeUpdateChecker = $UpdateChecker('https://update.maho.cc/jsdelivr.json');
+        $iroThemeUpdateChecker = UpdateChecker('https://update.maho.cc/jsdelivr.json');
         break;
     case 'official_building':
-        $iroThemeUpdateChecker = $UpdateChecker('https://update.maho.cc/'.iro_opt('iro_update_channel').'/check.json');
+        $iroThemeUpdateChecker = UpdateChecker('https://update.maho.cc/'.iro_opt('iro_update_channel').'/check.json');
 }
 //ini_set('display_errors', true);
 //error_reporting(E_ALL);
