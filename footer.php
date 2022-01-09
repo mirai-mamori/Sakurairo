@@ -182,20 +182,10 @@ echo iro_opt('footer_addition', '');
   z-index: -1;
 }
 </style>
-
-<div id="particles-js"></div>
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-<script type="text/javascript">
-particlesJS('particles-js',
-
-<?php 
-echo iro_opt('particles_json','');
-?>
-
-);
+<div id="particles-js">
+</div>
+<script type="application/json" id="particles-js-cfg">
+<?=iro_opt('particles_json','')?>
 </script>
-
 <?php endif; ?>
 </html>
