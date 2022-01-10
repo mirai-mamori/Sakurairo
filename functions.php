@@ -23,7 +23,7 @@ if (!function_exists('iro_opt')) {
         return $GLOBALS['iro_options'][$option] ?? $default;
     }
 }
-$shared_library_basepath = iro_opt('local_global_library') ? get_template_directory_uri() : 'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . IRO_VERSION;
+$shared_library_basepath = iro_opt('local_global_library') ? get_template_directory_uri() : 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION;
 $local_library_basepath =  iro_opt('local_application_library') ? get_template_directory_uri() : 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION;
 //Update-Checker
 
