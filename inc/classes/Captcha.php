@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-// 打个标记 下次一定改静态类（
+//TODO: 打个标记 下次一定改静态类（
 namespace Sakura\API;
 
 class Captcha
@@ -141,11 +141,11 @@ class Captcha
                 $msg = __("Captcha check passed.","sakurairo");//'验证码正确!'
             } else {
                 $code = 1;
-                $msg = __("Captcha incorrect.","sakurairo")//'验证码错误!'
+                $msg = __("Captcha incorrect.","sakurairo");//'验证码错误!'
             }
         } else {
             $code = 1;
-            $msg = __("An error has occurred.","sakurairo")//'错误!'
+            $msg = __("An error has occurred.","sakurairo");//'错误!'
         }
         return [
             'code' => $code,
