@@ -1,0 +1,52 @@
+/*  波浪动画  */
+#banner_wave_1 {
+    width: auto;
+    height: 65px;
+    background: url(https://cdn.jsdelivr.net/gh/Ukenn2112/UkennWeb@5.3/wave/wave1.png) repeat-x;
+    _filter: alpha(opacity=80);
+    position: absolute;
+    bottom: 0;
+    width: 400%;
+    left: -236px;
+    z-index: 4;
+    opacity: 1;
+    transiton-property: opacity,bottom;
+    transition-duration: .4s,.4s;
+    animation-name: move2;
+    animation-duration: 240s;
+    animation-fill-mode: backwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#banner_wave_2 {
+    width: auto;
+    height: 80px;
+    background: url(https://cdn.jsdelivr.net/gh/Ukenn2112/UkennWeb@5.3/wave/wave2.png) repeat-x;
+    _filter: alpha(opacity=80);
+    position: absolute;
+    bottom: 0;
+    width: 400%;
+    left: 0;
+    z-index: 3;
+    opacity: 1;
+    transiton-property: opacity,bottom;
+    transition-duration: .4s,.4s;
+    animation-name: move2;
+    animation-duration: 160s;
+    animation-fill-mode: backwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+ 
+@keyframes move1 {
+  100%{
+    background-position: 100% 0;
+  }
+}
+ 
+@keyframes move2 {
+  100%{
+    background-position: -100% 0;
+  }
+}
+/*  波浪动画 END  */

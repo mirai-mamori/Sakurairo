@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Moe-Mashiro';
+    src: url('Moe-Mashiro.eot');
+    src: url('Moe-Mashiro.eot?#iefix') format('embedded-opentype'),
+        url('Moe-Mashiro.woff2') format('woff2'),
+        url('Moe-Mashiro.woff') format('woff'),
+        url('Moe-Mashiro.ttf') format('truetype'),
+        url('Moe-Mashiro.svg#Moe-Mashiro') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

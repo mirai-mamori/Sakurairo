@@ -37,10 +37,10 @@ function font_end_js_control() {
         'site_bg_as_cover' => check(iro_opt('site_bg_as_cover')),
         'yiyan_api' => json_decode(iro_opt('yiyan_api')),
         'skin_bg0' => 'none',
-        'skin_bg1' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg1.png',
-        'skin_bg2' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg2.png',
-        'skin_bg3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg3.png',
-        'skin_bg4' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/foreground/bg4.png',
+        'skin_bg1' => iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'background/foreground/bg1.png',
+        'skin_bg2' => iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'background/foreground/bg2.png',
+        'skin_bg3' => iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'background/foreground/bg3.png',
+        'skin_bg4' => iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'background/foreground/bg4.png',
     ];
     $reception_background = iro_opt('reception_background');
     // 判空 empty 如果变量不存在也会返回true
@@ -89,6 +89,10 @@ function font_end_js_control() {
         if ($theme_dark != ''){
             $mashiro_opt['code_highlight_prism']['theme'] = ['dark' => $theme_dark];
         }
+    }
+    $sakura_effect = iro_opt('sakura_falling_effects');
+    if($sakura_effect != 'off'){
+        $mashiro_opt['effect'] = array('amount'=>$sakura_effect);
     }
     wp_add_inline_script('app', 'var mashiro_option = '.json_encode($mashiro_opt,JSON_NUMERIC_CHECK|JSON_UNESCAPED_UNICODE),'before');
 }
