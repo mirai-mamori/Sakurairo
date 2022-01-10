@@ -17,32 +17,33 @@ define('BUILD_VERSION', '2');
 require get_template_directory() . '/opt/option-framework.php';
 
 if (!function_exists('iro_opt')) {
+    $GLOBALS['iro_options'] = get_option('iro_options');
     function iro_opt($option = '', $default = null)
     {
-        $options = get_option('iro_options');
-        return (isset($options[$option])) ? $options[$option] : $default;
+        return $GLOBALS['iro_options'][$option] ?? $default;
     }
 }
-
+$shared_library_basepath = iro_opt('local_global_library') ? get_template_directory_uri() : 'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . IRO_VERSION;
+$local_library_basepath =  iro_opt('local_application_library') ? get_template_directory_uri() : 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION;
 //Update-Checker
 
 require 'update-checker/update-checker.php';
-$UpdateChecker = function(string $url,string $flag = 'Sakurairo'){
+function UpdateCheck($url,$flag = 'Sakurairo'){
     return Puc_v4_Factory::buildUpdateChecker(
         $url,
         __FILE__,
         $flag
     );
-};
+}
 switch(iro_opt('iro_update_source')){
     case 'github':
-        $iroThemeUpdateChecker = $UpdateChecker('https://github.com/mirai-mamori/Sakurairo','unique-plugin-or-theme-slug');
+        $iroThemeUpdateChecker = UpdateChecker('https://github.com/mirai-mamori/Sakurairo','unique-plugin-or-theme-slug');
         break;
     case 'jsdelivr':
-        $iroThemeUpdateChecker = $UpdateChecker('https://update.maho.cc/jsdelivr.json');
+        $iroThemeUpdateChecker = UpdateChecker('https://update.maho.cc/jsdelivr.json');
         break;
     case 'official_building':
-        $iroThemeUpdateChecker = $UpdateChecker('https://update.maho.cc/'.iro_opt('iro_update_channel').'/check.json');
+        $iroThemeUpdateChecker = UpdateChecker('https://update.maho.cc/'.iro_opt('iro_update_channel').'/check.json');
 }
 //ini_set('display_errors', true);
 //error_reporting(E_ALL);
@@ -243,22 +244,16 @@ add_action('after_setup_theme', 'akina_content_width', 0);
  */
 function sakura_scripts()
 {
-    if (iro_opt('local_global_library')) {
-        if (iro_opt('smoothscroll_option')) {
-            wp_enqueue_script('SmoothScroll', get_template_directory_uri() . '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
-        }
-    } elseif (iro_opt('smoothscroll_option')) {
-        wp_enqueue_script('SmoothScroll',  'https://cdn.jsdelivr.net/combine/gh/mirai-mamori/Sakurairo@' . IRO_VERSION . '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
+    global $local_library_basepath;
+    global $shared_library_basepath;
+
+    if (iro_opt('smoothscroll_option')) {
+        wp_enqueue_script('SmoothScroll', $shared_library_basepath. '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
     }
-    if (iro_opt('local_application_library')) {
-        wp_enqueue_style('saukra_css', get_stylesheet_uri(), array(), IRO_VERSION);
-        wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array(), IRO_VERSION, true);
-        if (!is_home()) wp_enqueue_script('app-page', get_template_directory_uri() . '/js/page.js', array('app'), IRO_VERSION, true);
-    } else {
-        wp_enqueue_style('saukra_css', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION . '/style.min.css', array(), IRO_VERSION);
-        wp_enqueue_script('app', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION . '/js/app.js', array(), IRO_VERSION, true);
-        if (!is_home()) wp_enqueue_script('app-page', 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION .  '/js/page.js', array('app'), IRO_VERSION, true);
-    }
+
+    wp_enqueue_style('saukra_css',  $local_library_basepath.'/style.css', array(), IRO_VERSION);
+    wp_enqueue_script('app', $local_library_basepath . '/js/app.js', array(), IRO_VERSION, true);
+    if (!is_home()) wp_enqueue_script('app-page', $local_library_basepath . '/js/page.js', array('app'), IRO_VERSION, true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -454,7 +449,7 @@ function get_author_class($comment_author_email, $user_id)
         "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email = '$comment_author_email' "
     ));
     $Lv = $author_count < 5 ? 0 : ($author_count < 10 ? 1 : ($author_count < 20 ? 2 : ($author_count < 40 ? 3 : ($author_count < 80 ? 4 : ($author_count < 160 ? 5 : 6)))));
-    echo "<span class=\"showGrade{$Lv}\" title=\"Lv{$Lv}\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/comment/level/level_{$Lv}.svg\" style=\"height: 1.5em; max-height: 1.5em; display: inline-block;\"></span>";
+    echo "<span class=\"showGrade{$Lv}\" title=\"Lv{$Lv}\"><img src=\"".iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/')."comment/level/level_{$Lv}.svg\" style=\"height: 1.5em; max-height: 1.5em; display: inline-block;\"></span>";
 }
 
 /**
@@ -776,13 +771,13 @@ add_filter('login_headerurl', 'custom_loginlogo_url');
 //Login Page Footer
 function custom_html()
 {
-    $loginbg = iro_opt('login_background') ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/login_background.jpg'; ?>
+    $loginbg = iro_opt('login_background') ?: iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'tsubame/login_background.jpg'; ?>
         <script type="text/javascript">
-            document.body.insertAdjacentHTML("afterbegin", "<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/login_loading.gif\" width=\"58\" height=\"10\"></div>");
+            document.body.insertAdjacentHTML("afterbegin", "<div class=\"loading\"><img src=\"<?=iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/')?>basic/login_loading.gif\" width=\"58\" height=\"10\"></div>");
             document.head.insertAdjacentHTML("afterbegin", "<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
             let isLoading = true
-            const loading = document.querySelector(".loading")
-            const src = "<?php echo $loginbg; ?>",
+            const loading = document.querySelector(".loading"),
+             src = "<?= $loginbg ?>",
                 afterLoaded = () => {
                     if (!isLoading) return
                     document.body.style.backgroundImage = `url(${src})`
@@ -799,16 +794,14 @@ function custom_html()
             <?php //3秒钟内加载不到图片也移除加载中提示
             ?>
             setTimeout(afterLoaded, 3000)
-        </script>
-    <?php
-    echo '<script>
-    document.addEventListener("DOMContentLoaded", ()=>{
-        document.querySelector("h1 a").style.backgroundImage = "url(\'', iro_opt('login_logo_img'), '\') ";
-        document.querySelector(".forgetmenot").outerHTML = \'<p class="forgetmenot">Remember Me<input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p> \';
+            document.addEventListener("DOMContentLoaded", ()=>{
+        document.querySelector("h1 a").style.backgroundImage = "url('<?= iro_opt('login_logo_img')?>')";
+        document.querySelector(".forgetmenot").outerHTML = '<p class="forgetmenot"><?=__("Remember me","sakurairo")?><input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>';
+        
         const captchaimg = document.getElementById("captchaimg");
         captchaimg && captchaimg.addEventListener("click",(e)=>{
-            fetch("', rest_url('sakura/v1/captcha/create'), '")
-            .then(response=>response.json())
+            fetch("<?= rest_url('sakura/v1/captcha/create')?>")
+            .then(resp=>resp.json())
             .then(json=>{
                 e.target.src = json["data"];
                 document.querySelector("input[name=\'timestamp\']").value = json["time"];
@@ -816,7 +809,8 @@ function custom_html()
             });
         })
     }, false);
-    </script>';
+        </script>
+    <?php
 }
 add_action('login_footer', 'custom_html');
 
@@ -900,7 +894,7 @@ function comment_mail_notify($comment_id)
             . trim($comment->comment_content) . '</div>
 
       <div style="text-align: center;">
-          <img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/comment/comment-mail.png" alt="hr" style="width:100%;
+          <img src="'.iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'comment/comment-mail.png" alt="hr" style="width:100%;
                                                                                                   margin:5px auto 5px auto;
                                                                                                   display: block;">
           <a style="text-transform: uppercase;
@@ -918,7 +912,7 @@ function comment_mail_notify($comment_id)
     </div>
 ';
         $message = convert_smilies($message);
-        $message = str_replace('{{', '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/smilies/bilipng/emoji_', $message);
+        $message = str_replace('{{', '<img src="'.iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'/smilies/bilipng/emoji_', $message);
         $message = str_replace('}}', '.png" alt="emoji" style="height: 2em; max-height: 2em;">', $message);
 
         $message = str_replace('{UPLOAD}', 'https://i.loli.net/', $message);
@@ -1011,9 +1005,9 @@ function push_tieba_smilies()
     $smiliesgs = '.' . $type;
     foreach ($tiebaname as $tieba_Name) {
         // 选择面版
-        $return_smiles = $return_smiles . '<span title="' . $tieba_Name . '" onclick="grin(' . "'" . $tieba_Name . "'" . ',type = \'tieba\')"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/' . $tiebaimgdir . 'icon_' . $tieba_Name . $smiliesgs . '" /></span>';
+        $return_smiles = $return_smiles . '<span title="' . $tieba_Name . '" onclick="grin(' . "'" . $tieba_Name . "'" . ',type = \'tieba\')"><img src="'.iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'smilies/' . $tiebaimgdir . 'icon_' . $tieba_Name . $smiliesgs . '" /></span>';
         // 正文转换
-        $wpsmiliestrans['::' . $tieba_Name . '::'] = '<span title="' . $tieba_Name . '" onclick="grin(' . "'" . $tieba_Name . "'" . ',type = \'tieba\')"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/' . $tiebaimgdir . 'icon_' . $tieba_Name . $smiliesgs . '" /></span>';
+        $wpsmiliestrans['::' . $tieba_Name . '::'] = '<span title="' . $tieba_Name . '" onclick="grin(' . "'" . $tieba_Name . "'" . ',type = \'tieba\')"><img src="'.iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'smilies/' . $tiebaimgdir . 'icon_' . $tieba_Name . $smiliesgs . '" /></span>';
     }
     return $return_smiles;
 }
@@ -1089,9 +1083,9 @@ function push_bili_smilies()
     $smiliesgs = '.' . $type;
     foreach ($name as $smilies_Name) {
         // 选择面版
-        $return_smiles = $return_smiles . '<span title="' . $smilies_Name . '" onclick="grin(' . "'" . $smilies_Name . "'" . ',type = \'Math\')"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/' . $biliimgdir . 'emoji_' . $smilies_Name . $smiliesgs . '" /></span>';
+        $return_smiles = $return_smiles . '<span title="' . $smilies_Name . '" onclick="grin(' . "'" . $smilies_Name . "'" . ',type = \'Math\')"><img src="'.iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'smilies/' . $biliimgdir . 'emoji_' . $smilies_Name . $smiliesgs . '" /></span>';
         // 正文转换
-        $bilismiliestrans['{{' . $smilies_Name . '}}'] = '<span title="' . $smilies_Name . '" onclick="grin(' . "'" . $smilies_Name . "'" . ',type = \'Math\')"><img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/' . $biliimgdir . 'emoji_' . $smilies_Name . $smiliesgs . '" /></span>';
+        $bilismiliestrans['{{' . $smilies_Name . '}}'] = '<span title="' . $smilies_Name . '" onclick="grin(' . "'" . $smilies_Name . "'" . ',type = \'Math\')"><img src="'.iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'smilies/' . $biliimgdir . 'emoji_' . $smilies_Name . $smiliesgs . '" /></span>';
     }
     return $return_smiles;
 }
@@ -1123,7 +1117,7 @@ function bili_smile_filter_rss($content)
     $type = is_webp() ? 'webp' : 'png';
     $biliimgdir = 'bili' . $type . '/';
     $smiliesgs = '.' . $type;
-    $content = str_replace('{{', '<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/smilies/' . $biliimgdir, $content);
+    $content = str_replace('{{', '<img src="'.iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'smilies/' . $biliimgdir, $content);
     $content = str_replace('}}', $smilesgs . '" alt="emoji" style="height: 2em; max-height: 2em;">', $content);
     $content =  str_replace('[img]', '<img src="', $content);
     $content =  str_replace('[/img]', '" style="display: block;margin-left: auto;margin-right: auto;">', $content);
@@ -1332,7 +1326,7 @@ return preg_replace( $old, $new, $url, 1);
 function admin_ini()
 {
     wp_enqueue_style('admin-styles-fix-icon', get_site_url() . '/wp-includes/css/dashicons.css');
-    wp_enqueue_style('cus-styles-fit', get_template_directory_uri() . '/css/dashboard/dashboard-fix.css');
+    wp_enqueue_style('cus-styles-fit', get_template_directory_uri() . '/css/dashboard-fix.css');
     wp_enqueue_script('lazyload', 'https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.min.js');
 }
 add_action('admin_enqueue_scripts', 'admin_ini');

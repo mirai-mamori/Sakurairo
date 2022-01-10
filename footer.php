@@ -48,7 +48,7 @@ $reception_background = iro_opt('reception_background');
 			<?php 
 			$personal_avatar = iro_opt('personal_avatar');
 			$iro_logo = iro_opt('iro_logo');
-			$ava = iro_opt('personal_avatar') ? $personal_avatar: ($iro_logo ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/avatar.jpg'); ?>
+			$ava = iro_opt('personal_avatar') ? $personal_avatar: ($iro_logo ?: iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'tsubame/avatar.jpg'); ?>
 			<img src="<?php echo $ava ?>">
 		</div>
 		<div class="m-search">
@@ -150,14 +150,9 @@ $reception_background = iro_opt('reception_background');
     </div>
 <?php endif; ?>
 
-<!-- 樱花飘落动效 -->
-<?php if (iro_opt('sakura_falling_effects') != 'off'): ?>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/js/<?php echo iro_opt('sakura_falling_effects'); ?>.js"></script>
-<?php endif; ?>
-
 <!-- 首页波浪特效 -->
 <?php if (iro_opt('wave_effects', 'true')): ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/css/bolang.css">
+<link rel="stylesheet" href="<?php global $shared_library_basepath;echo $shared_library_basepath?>/css/bolang.css">
 <?php endif; ?>
 
 <!-- Live2D看板娘 -->
@@ -187,20 +182,10 @@ echo iro_opt('footer_addition', '');
   z-index: -1;
 }
 </style>
-
-<div id="particles-js"></div>
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-<script type="text/javascript">
-particlesJS('particles-js',
-
-<?php 
-echo iro_opt('particles_json','');
-?>
-
-);
+<div id="particles-js">
+</div>
+<script type="application/json" id="particles-js-cfg">
+<?=iro_opt('particles_json','')?>
 </script>
-
 <?php endif; ?>
 </html>

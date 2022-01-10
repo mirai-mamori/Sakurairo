@@ -15,7 +15,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo iro_opt('favicon_link', ''); ?>" />
-    <link type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/css/basic/404_lib.css" rel="stylesheet" />
+    <link type="text/css" media="all" href="<?=$shared_library_basepath?>/css/404_lib.css" rel="stylesheet" />
     <?php wp_head(); ?>
     <?php
     /* <script>
@@ -56,13 +56,5 @@ if (!no_report) httpGet(report_url);
             </form>
         </div>
     </section>
-    <?php
-    $base_path = "";
-    if (iro_opt('local_application_library')) {
-        $base_path = get_template_directory_uri();
-    } else {
-        $base_path = 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION;
-    }
-    ?>
-    <script src="<?php echo $base_path . '/js/anf.js' ?>" type="text/javascript"></script>
+    <script src="<?php echo $shared_library_basepath . '/js/anf.js' ?>" type="text/javascript"></script>
 </body>
