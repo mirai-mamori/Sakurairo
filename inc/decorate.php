@@ -39,12 +39,7 @@ if (iro_opt('theme_skin')) { ?>
 
 /*白猫样式Logo*/
 <?php if (iro_opt('mashiro_logo_option', 'true')) {
-    $mashiro_logo = iro_opt('mashiro_logo');
-$font_name = $mashiro_logo['font_name'];
-if($font_name == 'Moe-Mashiro'){
-    global $shared_library_basepath;
-    wp_enqueue_style("moe-mashiro",$shared_library_basepath.'/fonts/Moe-Mashiro/index.css');
-}
+     $mashiro_logo = iro_opt('mashiro_logo');
     ?>
     .logolink{
         font-family: '<?= $mashiro_logo['font_name']; ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
