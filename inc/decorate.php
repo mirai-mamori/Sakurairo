@@ -38,7 +38,14 @@ if (iro_opt('theme_skin')) { ?>
 .the-feature.from_left_and_right .info,.the-feature.from_left_and_right .info h3{background: <?=iro_opt('exhibition_background_color'); ?> ;}
 
 /*白猫样式Logo*/
-<?php if (iro_opt('mashiro_logo_option', 'true')) {?>
+<?php if (iro_opt('mashiro_logo_option', 'true')) {
+    $mashiro_logo = iro_opt('mashiro_logo');
+$font_name = $mashiro_logo['font_name'];
+if($font_name == 'Moe-Mashiro'){
+    global $shared_library_basepath;
+    wp_enqueue_style("moe-mashiro",$shared_library_basepath.'/fonts/Moe-Mashiro/index.css');
+}
+    ?>
 .logolink .sakuraso {
     background-color: rgba(255, 255, 255, .5);
     border-radius: 5px;
