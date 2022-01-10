@@ -107,9 +107,9 @@ $mashiro_logo = iro_opt('mashiro_logo');
 						<span class="logolink moe-mashiro">
 							<a href="<?php bloginfo('url'); ?>">
 								<ruby>
-									<span class="sakuraso" style="font-family: '<?php echo $mashiro_logo['font_name']; ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;;"><?php echo $mashiro_logo['text_a']; ?></span>
-									<span class="no" style="font-family: '<?php echo $mashiro_logo['font_name']; ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;"><?php echo $mashiro_logo['text_b']; ?></span>
-									<span class="shironeko" style="font-family: '<?php echo $mashiro_logo['font_name']; ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;"><?php echo iro_opt('logo_text'); ?><?php echo $mashiro_logo['text_c']; ?></span>
+									<span class="sakuraso"><?php echo $mashiro_logo['text_a']; ?></span>
+									<span class="no"><?php echo $mashiro_logo['text_b']; ?></span>
+									<span class="shironeko"><?php echo iro_opt('logo_text'); ?><?php echo $mashiro_logo['text_c']; ?></span>
 									<rp></rp>
 									<rt class="chinese-font"><?php echo $mashiro_logo['text_secondary']; ?></rt>
 									<rp></rp>

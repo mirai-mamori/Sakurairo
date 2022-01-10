@@ -46,6 +46,9 @@ if($font_name == 'Moe-Mashiro'){
     wp_enqueue_style("moe-mashiro",$shared_library_basepath.'/fonts/Moe-Mashiro/index.css');
 }
     ?>
+    .logolink{
+        font-family: '<?= $mashiro_logo['font_name']; ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+    }
 .logolink .sakuraso {
     background-color: rgba(255, 255, 255, .5);
     border-radius: 5px;
