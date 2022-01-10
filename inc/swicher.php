@@ -7,7 +7,8 @@ function font_end_js_control() {
         return !!$a;
     };
     function ecs_src($a) {
-        return get_template_directory_uri().'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
+        global $local_library_basepath;
+        return $local_library_basepath.'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
     };
     $mashiro_opt = [
         'NProgressON' => check(iro_opt('nprogress_on')),
