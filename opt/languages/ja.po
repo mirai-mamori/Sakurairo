@@ -1,14 +1,16 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=1; plural=0;\n"
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2021-11-21 17:39+0530\n"
-"PO-Revision-Date: 2021-11-22 12:23+0800\n"
+"POT-Creation-Date: 2022-01-11 14:02+0800\n"
+"PO-Revision-Date: 2022-01-11 14:02+0800\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: option-framework.php\n"
@@ -16,97 +18,95 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
-"Language: ja\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: classes/admin-options.class.php:226
+#: classes/admin-options.class.php:230
 msgid "Error while saving the changes."
 msgstr "変更の保存中にエラーが発生しました。"
 
-#: classes/admin-options.class.php:286
+#: classes/admin-options.class.php:290
 msgid "Settings successfully imported."
 msgstr "設定をインポートしました。"
 
-#: classes/admin-options.class.php:298 classes/admin-options.class.php:314
+#: classes/admin-options.class.php:302 classes/admin-options.class.php:318
 msgid "Default settings restored."
 msgstr "既定の設定に復帰されました。"
 
-#: classes/admin-options.class.php:385
+#: classes/admin-options.class.php:389
 msgid "Settings saved."
 msgstr "設定保存"
 
-#: classes/admin-options.class.php:565
+#: classes/admin-options.class.php:569
 msgid "You have unsaved changes, save your changes!"
 msgstr "変更されている設定がありますので、忘れずに保存してください"
 
-#: classes/admin-options.class.php:567
+#: classes/admin-options.class.php:571
 msgid "show all settings"
 msgstr "カスタム設定"
 
-#: classes/admin-options.class.php:569 fields/icon/icon.php:57
+#: classes/admin-options.class.php:573 fields/icon/icon.php:57
 #: fields/map/map.php:23
 msgid "Search..."
 msgstr "検索…"
 
-#: classes/admin-options.class.php:572 classes/admin-options.class.php:695
+#: classes/admin-options.class.php:576 classes/admin-options.class.php:699
 msgid "Save"
 msgstr "保存"
 
-#: classes/admin-options.class.php:572 classes/admin-options.class.php:695
+#: classes/admin-options.class.php:576 classes/admin-options.class.php:699
 msgid "Saving..."
 msgstr "保存中…"
 
-#: classes/admin-options.class.php:573 classes/admin-options.class.php:696
+#: classes/admin-options.class.php:577 classes/admin-options.class.php:700
 msgid "Reset Section"
 msgstr "セクションをリセット"
 
-#: classes/admin-options.class.php:573 classes/admin-options.class.php:696
+#: classes/admin-options.class.php:577 classes/admin-options.class.php:700
 msgid "Are you sure to reset this section options?"
 msgstr "このセクションオプションをリセットしてよろしいですか？"
 
-#: classes/admin-options.class.php:574 classes/admin-options.class.php:697
+#: classes/admin-options.class.php:578 classes/admin-options.class.php:701
 msgid "Reset All"
 msgstr "すべてをリセット"
 
-#: classes/admin-options.class.php:574 classes/admin-options.class.php:697
+#: classes/admin-options.class.php:578 classes/admin-options.class.php:701
 #: fields/backup/backup.php:31
 msgid "Reset"
 msgstr "リセット"
 
-#: classes/admin-options.class.php:574 classes/admin-options.class.php:697
+#: classes/admin-options.class.php:578 classes/admin-options.class.php:701
 msgid "Are you sure you want to reset all settings to default values?"
 msgstr "すべての設定を既定値にリセットしてもよろしいですか?"
 
-#: classes/admin-options.class.php:672 fields/button_set/button_set.php:56
+#: classes/admin-options.class.php:676 fields/button_set/button_set.php:56
 #: fields/checkbox/checkbox.php:76 fields/radio/radio.php:75
 #: fields/select/select.php:113 functions/actions.php:41
 msgid "No data available."
 msgstr "データがありません。"
 
-#: classes/setup.class.php:594
+#: classes/setup.class.php:598
 msgid "Are you sure?"
 msgstr "本当に実行しますか ?"
 
-#: classes/setup.class.php:595
+#: classes/setup.class.php:599
 #, php-format
 msgid "Please enter %s or more characters"
 msgstr "%s 文字以上入力してください"
 
-#: classes/setup.class.php:596
+#: classes/setup.class.php:600
 msgid "Searching..."
 msgstr "検索中..."
 
-#: classes/setup.class.php:597
+#: classes/setup.class.php:601
 msgid "No results found."
 msgstr "見つかりませんでした。"
 
-#: classes/setup.class.php:698
+#: classes/setup.class.php:702
 msgid "Oops! Not allowed."
 msgstr "許可されていません。"
 
-#: classes/setup.class.php:770 classes/setup.class.php:774
+#: classes/setup.class.php:774 classes/setup.class.php:778
 msgid "Field not found!"
 msgstr "フィールドが見つかりません!"
 
@@ -3364,30 +3364,36 @@ msgstr ""
 "推奨されません)"
 
 #: options/theme-options.php:3086
-msgid "Google Stats Code"
+#, fuzzy
+#| msgid "Google Stats Code"
+msgid "Google Analytics Id"
 msgstr "グーグル統計コード"
 
-#: options/theme-options.php:3092
+#: options/theme-options.php:3087
+msgid "If you already have a plugin to handle it, please keep here empty."
+msgstr ""
+
+#: options/theme-options.php:3093
 msgid "Custom CSS Styles"
 msgstr "カスタム CSS スタイル"
 
-#: options/theme-options.php:3093
+#: options/theme-options.php:3094
 msgid "Fill in the CSS code without writing style tag"
 msgstr "スタイルタグを書かずにCSSコードを入力する"
 
-#: options/theme-options.php:3100
+#: options/theme-options.php:3101
 msgid "Code inserted in the header"
 msgstr ""
 
-#: options/theme-options.php:3101
+#: options/theme-options.php:3102
 msgid "Insert HTML code at the end of <head>."
 msgstr ""
 
-#: options/theme-options.php:3107
+#: options/theme-options.php:3108
 msgid "Timezone Fix"
 msgstr "タイムゾーン修正"
 
-#: options/theme-options.php:3108
+#: options/theme-options.php:3109
 msgid ""
 "Slide to adjust. If the comment has a time difference problem, adjust it "
 "here, fill in an integer. Calculation method: actual time = time of display "
@@ -3396,11 +3402,11 @@ msgstr ""
 "スライドして調整します。コメントに時間差の問題がある場合は、ここで調整し、整"
 "数を入力します。計算方法: 実際の時間 = 表示エラーの時間 - 入力した整数 (時間)"
 
-#: options/theme-options.php:3116
+#: options/theme-options.php:3117
 msgid "Gravatar Service"
 msgstr "グラバタープロキシ"
 
-#: options/theme-options.php:3121
+#: options/theme-options.php:3122
 msgid ""
 "<p><strong>Cravatar Service:</strong> Cravatar Service is an alternative to "
 "Gravatar Service in China. You can upload and share avatars freely. Go to <a "
@@ -3410,11 +3416,11 @@ msgstr ""
 "もの。アバターを自由にアップロードして共有できます。詳細は <a href=\"https://"
 "cravatar.cn/\">公式サイト</a> をご覧ください </p>"
 
-#: options/theme-options.php:3127
+#: options/theme-options.php:3128
 msgid "Gravatar Service Proxy"
 msgstr "グラバタープロキシ"
 
-#: options/theme-options.php:3128
+#: options/theme-options.php:3129
 msgid ""
 "You can select multiple proxy as the Gravatar Service Proxy. By default, "
 "Cravatar Service is used as the Gravatar Service Proxy."
@@ -3422,45 +3428,45 @@ msgstr ""
 "gravatar プロキシとして複数のプロキシを選択できます。デフォルトでは、Geekzu "
 "はグラバター プロキシとして使用されます。"
 
-#: options/theme-options.php:3130
+#: options/theme-options.php:3131
 msgid "Cravatar Service"
 msgstr "グラバタープロキシ"
 
-#: options/theme-options.php:3131
+#: options/theme-options.php:3132
 msgid "Geekzu"
 msgstr "ゲクズ"
 
-#: options/theme-options.php:3132
+#: options/theme-options.php:3133
 msgid "Loli Net"
 msgstr "ロリネット"
 
-#: options/theme-options.php:3133
+#: options/theme-options.php:3134
 msgid "Official"
 msgstr "公式"
 
-#: options/theme-options.php:3134
+#: options/theme-options.php:3135
 msgid "Official CN"
 msgstr "公式の中国ミラー"
 
-#: options/theme-options.php:3141
+#: options/theme-options.php:3142
 msgid "Lightbox"
 msgstr "Lightbox"
 
-#: options/theme-options.php:3147
+#: options/theme-options.php:3148
 msgid "BaguetteBox Lightbox Effect"
 msgstr "バゲットボックスライトボックス効果"
 
-#: options/theme-options.php:3148
+#: options/theme-options.php:3149
 msgid "BaguetteBox will be used as the image lightbox effect when turned on"
 msgstr ""
 "バゲットボックスは、オンにすると、イメージライトボックス効果として使用されま"
 "す"
 
-#: options/theme-options.php:3155
+#: options/theme-options.php:3156
 msgid "FancyBox Lightbox Effect"
 msgstr "ファンシーボックスライトボックス効果"
 
-#: options/theme-options.php:3156
+#: options/theme-options.php:3157
 msgid ""
 "FancyBox will be used as an image lightbox effect after turning on, "
 "additional JQ libraries will be loaded"
@@ -3468,16 +3474,16 @@ msgstr ""
 "ファンシーボックスは、オンにすると、追加のJQライブラリがロードされた後、イ"
 "メージライトボックス効果として使用されます"
 
-#: options/theme-options.php:3164
+#: options/theme-options.php:3165
 msgid "LightGallery Lightbox Effect"
 msgstr "LightGalleryライトボックスエフェクト"
 
-#: options/theme-options.php:3165
+#: options/theme-options.php:3166
 msgid "LightGallery will be used as an image lightbox effect after turning on."
 msgstr ""
 "LightGalleryをオンにすると、画像のライトボックス効果として使用されます。"
 
-#: options/theme-options.php:3171
+#: options/theme-options.php:3172
 msgid ""
 "<strong>Attension: Please read <a href=\"https://github.com/sachinchoolur/"
 "lightGallery#license\">License Instruction</a> before use.</strong><br/"
@@ -3491,15 +3497,15 @@ msgid ""
 "mamori/Sakurairo/discussions"
 msgstr ""
 
-#: options/theme-options.php:3182
+#: options/theme-options.php:3183
 msgid "LightGallery Lightbox Effect Options"
 msgstr "LightGalleryライトボックス効果のオプション"
 
-#: options/theme-options.php:3193
+#: options/theme-options.php:3194
 msgid "Code Highlighting"
 msgstr "コードの強調表示"
 
-#: options/theme-options.php:3198
+#: options/theme-options.php:3199
 msgid ""
 "<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </"
 "p> <p><strong>Prism.js:</strong> Requires a language to be specified, see <a "
@@ -3515,15 +3521,15 @@ msgstr ""
 "るコードの方法</a>を参照してください。 </p><p><strong>カスタム:</strong> 別の"
 "構成が使用可能な場合。 </p>"
 
-#: options/theme-options.php:3206
+#: options/theme-options.php:3207
 msgid "Code Highlight Method"
 msgstr "コードの強調表示方法"
 
-#: options/theme-options.php:3218
+#: options/theme-options.php:3219
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
 msgstr "プリズム.js: すべてのコードブロックに行番号表示を追加"
 
-#: options/theme-options.php:3222
+#: options/theme-options.php:3223
 msgid ""
 "See the <a href=\"https://prismjs.com/plugins/line-numbers/\">plugin "
 "description documentation</a>"
@@ -3531,28 +3537,28 @@ msgstr ""
 "<a href=\"https://prismjs.com/plugins/line-numbers/\">プラグインの説明のド"
 "キュメント</a>を参照してください。"
 
-#: options/theme-options.php:3228
+#: options/theme-options.php:3229
 msgid "Prism.js: Autoload Address"
 msgstr "プリズム.js: 自動ロードアドレス"
 
-#: options/theme-options.php:3232
+#: options/theme-options.php:3233
 msgid "Leave blank to use default values"
 msgstr "既定値を使用するには空白のままにします。"
 
-#: options/theme-options.php:3239
+#: options/theme-options.php:3240
 msgid "Prism.js: Code Highlight Theme"
 msgstr "プリズム.js: コードハイライトテーマ"
 
-#: options/theme-options.php:3240 options/theme-options.php:3251
+#: options/theme-options.php:3241 options/theme-options.php:3252
 msgid "Relative to autoload address. Leave blank to use default values"
 msgstr ""
 "自動ロード アドレスに対する相対値。既定値を使用するには空白のままにします。"
 
-#: options/theme-options.php:3250
+#: options/theme-options.php:3251
 msgid "Prism.js: Code Highlight Theme (Dark Mode)"
 msgstr "プリズム.js: コードハイライトテーマ(ダークモード)"
 
-#: options/theme-options.php:3261
+#: options/theme-options.php:3262
 msgid ""
 "The following Options are not recommended to be modified blindly, please use "
 "them under the guidance of others"
@@ -3560,11 +3566,11 @@ msgstr ""
 "以下のオプションは、盲目的に変更することは推奨されません、他の人の指導の下で"
 "それらを使用してください"
 
-#: options/theme-options.php:3267
+#: options/theme-options.php:3268
 msgid "Image CDN"
 msgstr "イメージ CDN"
 
-#: options/theme-options.php:3268
+#: options/theme-options.php:3269
 msgid ""
 "Note: fill in the format https://your CDN domain/. This means that images "
 "with original path http://your.domain/wp-content/uploads/2018/05/xx.png will "
@@ -3574,23 +3580,23 @@ msgstr ""
 "http://your.domain/wp-content/uploads/2018/05/xx.png を持つイメージは CDN ド"
 "メイン/2018/05/xx http://your ロードされます.png"
 
-#: options/theme-options.php:3275
+#: options/theme-options.php:3276
 msgid "Articles Categories (Do not display)"
 msgstr "記事のカテゴリ (表示しない)"
 
-#: options/theme-options.php:3276 options/theme-options.php:3283
+#: options/theme-options.php:3277 options/theme-options.php:3284
 msgid "Fill in category ID, seperate in English\" , \" when more than one"
 msgstr "カテゴリ ID を英語で区切って入力する\" と、複数の場合"
 
-#: options/theme-options.php:3282
+#: options/theme-options.php:3283
 msgid "Image Display Category"
 msgstr "画像表示カテゴリ"
 
-#: options/theme-options.php:3289
+#: options/theme-options.php:3290
 msgid "Specify Login Address"
 msgstr "ログイン アドレスの指定"
 
-#: options/theme-options.php:3290
+#: options/theme-options.php:3291
 msgid ""
 "Force not to use the WordPress login page address to login, fill in the new "
 "login page address, such as: http://www.xxx.com/login. Note that before "
@@ -3602,11 +3608,11 @@ msgstr ""
 "いページに記入する前に、通常の開口部をテストして、背景などを入力できなくなる"
 "ように注意してください。"
 
-#: options/theme-options.php:3296
+#: options/theme-options.php:3297
 msgid "Specify Registration Address"
 msgstr "登録アドレスの指定"
 
-#: options/theme-options.php:3297
+#: options/theme-options.php:3298
 msgid ""
 "This address is used as the registration entry on the login page, if you "
 "specify a login address, it is recommended to fill in"
@@ -3614,39 +3620,39 @@ msgstr ""
 "このアドレスはログインページの登録エントリとして使用され、ログインアドレスを"
 "指定した場合は、入力することをお勧めします。"
 
-#: options/theme-options.php:3303
+#: options/theme-options.php:3304
 msgid "Version Control"
 msgstr "バージョン管理システム"
 
-#: options/theme-options.php:3304
+#: options/theme-options.php:3305
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr ""
 "フロントエンドクッキーとブラウザキャッシュを更新するために使用され、任意の文"
 "字列を使用できます"
 
-#: options/theme-options.php:3310
+#: options/theme-options.php:3311
 msgid "Backup&Recovery"
 msgstr "バックアップとリカバリ"
 
-#: options/theme-options.php:3312
+#: options/theme-options.php:3313
 msgid "Backup or Recovery your theme options"
 msgstr "テーマオプションのバックアップまたはリカバリ"
 
-#: options/theme-options.php:3323
+#: options/theme-options.php:3324
 msgid "About Theme"
 msgstr "テーマについて"
 
-#: options/theme-options.php:3329
+#: options/theme-options.php:3330
 msgid "Version Info"
 msgstr "バージョン情報"
 
-#: options/theme-options.php:3334
+#: options/theme-options.php:3335
 msgid ""
 "<img src=\"https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/"
 "tsubame/tsubamelogo.gif\"  alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:3340
+#: options/theme-options.php:3341
 #, php-format
 msgid ""
 "iro 主题版本 / Theme Version %s | <a href=\"https://github.com/mirai-mamori/"
@@ -3656,15 +3662,15 @@ msgstr ""
 "ント</a>|<a href=\"https://github.com/mirai-mamori/Sakurairo\">ソース アドレ"
 "ス</a>"
 
-#: options/theme-options.php:3345
+#: options/theme-options.php:3346
 msgid "Update Related"
 msgstr "関連する更新プログラム"
 
-#: options/theme-options.php:3351
+#: options/theme-options.php:3352
 msgid "Theme Update Source"
 msgstr "テーマの更新元"
 
-#: options/theme-options.php:3357
+#: options/theme-options.php:3358
 msgid ""
 "If you are using a server set up in mainland China, please use the jsDelivr "
 "source or the official theme source as your theme update source"
@@ -3672,11 +3678,11 @@ msgstr ""
 "中国本土で設定されたサーバーを使用している場合は、jsDelivrソースまたは公式"
 "テーマソースをテーマアップデートソースとして使用してください。"
 
-#: options/theme-options.php:3364
+#: options/theme-options.php:3365
 msgid "Theme Update Test Channel Disclaimer"
 msgstr "テーマ更新テスト チャネルの免責事項"
 
-#: options/theme-options.php:3369
+#: options/theme-options.php:3370
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -3688,66 +3694,70 @@ msgstr ""
 "の可能性を含むがこれらに限定されない)すべての結果を自己責任で引き受ける意思が"
 "あることを確認した後、引用符でテキストをコピーしてください<strong>。</strong>"
 
-#: options/theme-options.php:3375
+#: options/theme-options.php:3376
 msgid "Theme Update Channel"
 msgstr "テーマ更新チャネル"
 
-#: options/theme-options.php:3381
+#: options/theme-options.php:3382
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr "更新チャネルを切り替えて、新しいバージョンのテストに参加できます。"
 
-#: options/theme-options.php:3383
+#: options/theme-options.php:3384
 msgid "Stable Channel"
 msgstr "安定したチャネル"
 
-#: options/theme-options.php:3384
+#: options/theme-options.php:3385
 msgid "Beta Channel"
 msgstr "ベータチャンネル"
 
-#: options/theme-options.php:3385
+#: options/theme-options.php:3386
 msgid "Preview Channel"
 msgstr "チャンネルのプレビュー"
 
-#: options/theme-options.php:3392
+#: options/theme-options.php:3393
 msgid "Localization"
 msgstr "ローカリゼーション"
 
-#: options/theme-options.php:3398
-msgid "Localize the Frontend Library"
-msgstr "フロントエンド ライブラリのローカライズ"
-
 #: options/theme-options.php:3399
-msgid "The frontend library will not use jsDelivr CDN after turning it on"
+msgid "Provide Shared Library locally"
 msgstr ""
-"フロントエンド ライブラリは、オンにした後、jsDelivr CDN を使用しません。"
 
-#: options/theme-options.php:3406
-msgid "Localize JS/CSS Files"
-msgstr "JS/CSS ファイルのローカライズ"
+#: options/theme-options.php:3400
+msgid "Shared library will be provided via jsDelivr CDN by default."
+msgstr ""
 
 #: options/theme-options.php:3407
-msgid "Enabled by default, some JS files and CSS files do not use jsDelivr CDN"
+msgid "Provide Critical Frontend Resource locally"
 msgstr ""
-"デフォルトで有効になっている場合、JS ファイルと CSS ファイルの中には "
-"jsDelivr CDN を使用しないものもあります。"
 
-#: options/theme-options.php:3413
+#: options/theme-options.php:3408
+msgid ""
+"Critical frontend resource will be provided locally by default. Critical "
+"resources are those resources whose loading performance will have a "
+"significant impact on the user experience"
+msgstr ""
+
+#: options/theme-options.php:3415
+msgid "Vision Resource Basepath"
+msgstr ""
+
+#: options/theme-options.php:3421
 msgid "Theme Contributors"
 msgstr "貢献者"
 
-#: options/theme-options.php:3418
+#: options/theme-options.php:3426
 msgid ""
 "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
 "Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:3423
+#: options/theme-options.php:3431
 msgid "Reference Information"
 msgstr "参照情報"
 
-#: options/theme-options.php:3428
+#: options/theme-options.php:3436
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
 "com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -3771,11 +3781,11 @@ msgstr ""
 "\"https://hyacm.com/acai/ui/143/sakura-logo/\">提供され、Hyacm</a>によって参"
 "照されるように</p>"
 
-#: options/theme-options.php:3436
+#: options/theme-options.php:3444
 msgid "Dependency Information"
 msgstr "依存情報"
 
-#: options/theme-options.php:3441
+#: options/theme-options.php:3449
 msgid ""
 "<p>Static Resources Relies on the <a href=\"https://github.com/Fuukei/"
 "Public_Repository\">Public Repository</a> Project Created by Fuukei</p>\n"
@@ -3796,7 +3806,7 @@ msgstr ""
 "YahnisElsts/plugin-update-checker\">プラグイン更新チェッカー</a> プロジェクト"
 "に依存しています</p>"
 
-#: options/theme-options.php:3448
+#: options/theme-options.php:3456
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "
@@ -3826,3 +3836,19 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
+
+#~ msgid "Localize the Frontend Library"
+#~ msgstr "フロントエンド ライブラリのローカライズ"
+
+#~ msgid "The frontend library will not use jsDelivr CDN after turning it on"
+#~ msgstr ""
+#~ "フロントエンド ライブラリは、オンにした後、jsDelivr CDN を使用しません。"
+
+#~ msgid "Localize JS/CSS Files"
+#~ msgstr "JS/CSS ファイルのローカライズ"
+
+#~ msgid ""
+#~ "Enabled by default, some JS files and CSS files do not use jsDelivr CDN"
+#~ msgstr ""
+#~ "デフォルトで有効になっている場合、JS ファイルと CSS ファイルの中には "
+#~ "jsDelivr CDN を使用しないものもあります。"
