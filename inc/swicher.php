@@ -23,6 +23,7 @@ function font_end_js_control() {
         'darkmode' => check(iro_opt('theme_darkmode_auto')),
         'email_domain' => iro_opt('email_domain', ''),
         'email_name' => iro_opt('email_name', ''),
+        'ext_shared_lib'=>!iro_opt('local_global_library'),
         'cookie_version_control' => iro_opt('cookie_version', ''),
         'qzone_autocomplete' => false,
         'site_name' => iro_opt('site_name', ''),
