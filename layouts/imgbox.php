@@ -4,14 +4,14 @@ $text_logo = iro_opt('text_logo');
 $print_social_zone = function() use ($all_opt,$social_display_icon):void{
     // 左箭头
     if (iro_opt('cover_random_graphs_switch', 'true')):?>
-        <li id="bg-pre"><img src="<?=$social_display_icon?>pre.png" /></li>
+        <li id="bg-pre"><img src="<?=$social_display_icon?>pre.png" loading="lazy"/></li>
     <?php
     endif;
     // 微信
     if (iro_opt('wechat')):?>
-        <li class="wechat"><a href="#" title="wechat"><img src="<?=$social_display_icon?>wechat.png" /></a>
+        <li class="wechat"><a href="#" title="wechat"><img loading="lazy" src="<?=$social_display_icon?>wechat.png" /></a>
             <div class="wechatInner">
-                <img src="<?=iro_opt('wechat', '')?>" alt="WeChat">
+                <img loading="lazy" src="<?=iro_opt('wechat', '')?>" alt="WeChat">
             </div>
         </li>
     <?php
@@ -22,19 +22,19 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
             // 显然 这里的逻辑可以看看all_opt的结构（
             $img_url = $value['img'] ?? ($social_display_icon . ($value['icon'] ?? $key) . '.png');
             ?>
-            <li><a href="<?=$value['link'];?>" target="_blank" class="social-<?=$value['class'] ?? $key?>" title="<?=$value['title'] ?? $key?>"><img src="<?=$img_url?>" /></a></li>
+            <li><a href="<?=$value['link'];?>" target="_blank" class="social-<?=$value['class'] ?? $key?>" title="<?=$value['title'] ?? $key?>"><img loading="lazy" src="<?=$img_url?>" /></a></li>
         <?php
         endif;
     endforeach;
     // 邮箱
     if (iro_opt('email_name') && iro_opt('email_domain')):?>
-        <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img
+        <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img loading="lazy"
                     src="<?=iro_opt('social_display_icon')?>/mail.png" /></a></li>
     <?php
     endif;
     // 右箭头
     if (iro_opt('cover_random_graphs_switch', 'true')):?>
-        <li id="bg-next"><img src="<?=$social_display_icon?>next.png" /></li>
+        <li id="bg-next"><img loading="lazy" src="<?=$social_display_icon?>next.png" /></li>
     <?php endif;
 }
 ?>
@@ -56,7 +56,7 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
                 <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="<?=$text_logo['text']; ?>">
                     <?php echo $text_logo['text']; ?></h1>
             <?php else : ?>
-                <div class="header-tou"><a href="<?php bloginfo('url'); ?>"><img src="<?=iro_opt('personal_avatar', '') ?: iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'tsubame/avatar.jpg'?>"></a>
+                <div class="header-tou"><a href="<?php bloginfo('url'); ?>"><img loading="lazy" src="<?=iro_opt('personal_avatar', '') ?: iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'tsubame/avatar.jpg'?>"></a>
                 </div>
             <?php endif; ?>
             <div class="header-info">
