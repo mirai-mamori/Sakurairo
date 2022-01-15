@@ -4,12 +4,16 @@
  */
 function font_end_js_control() {
     function check($a) {
-        return !!$a;
+        if ($a) {
+            return true;
+        }
+        return false;
     };
     function ecs_src($a) {
         global $local_library_basepath;
         return $local_library_basepath.'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
     };
+    $vision_resource_basepath = iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/');
     $mashiro_opt = [
         'NProgressON' => check(iro_opt('nprogress_on')),
         'audio' => check(iro_opt('note_effects')),
@@ -38,10 +42,10 @@ function font_end_js_control() {
         'site_bg_as_cover' => check(iro_opt('site_bg_as_cover')),
         'yiyan_api' => json_decode(iro_opt('yiyan_api')),
         'skin_bg0' => 'none',
-        'skin_bg1' => iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'background/foreground/bg1.png',
-        'skin_bg2' => iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'background/foreground/bg2.png',
-        'skin_bg3' => iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'background/foreground/bg3.png',
-        'skin_bg4' => iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/').'background/foreground/bg4.png',
+        'skin_bg1' => $vision_resource_basepath.'background/foreground/bg1.png',
+        'skin_bg2' => $vision_resource_basepath.'background/foreground/bg2.png',
+        'skin_bg3' => $vision_resource_basepath.'background/foreground/bg3.png',
+        'skin_bg4' => $vision_resource_basepath.'background/foreground/bg4.png',
     ];
     $reception_background = iro_opt('reception_background');
     // 判空 empty 如果变量不存在也会返回true
@@ -76,7 +80,7 @@ function font_end_js_control() {
     if (iro_opt('code_highlight_method','hljs')=='prism'){
         $mashiro_opt['code_highlight_prism'] = [
             'line_number_all' => check(iro_opt('code_highlight_prism_line_number_all')),
-            'autoload_path' => iro_opt('code_highlight_prism_autoload_path','') ?: 'undefined'
+            'autoload_path' => iro_opt('code_highlight_prism_autoload_path','') ?: null
         ];
         $theme_light = iro_opt('code_highlight_prism_theme_light');
         $theme_dark = iro_opt('code_highlight_prism_theme_dark');
