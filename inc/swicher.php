@@ -13,7 +13,6 @@ function font_end_js_control() {
     $mashiro_opt = [
         'NProgressON' => check(iro_opt('nprogress_on')),
         'audio' => check(iro_opt('note_effects')),
-        'yiyan' => check(iro_opt('footer_yiyan')),
         'baguetteBox' => check(iro_opt('baguetteBox')),
         'fancybox' => check(iro_opt('fancybox')),
         'darkmode' => check(iro_opt('theme_darkmode_auto')),
