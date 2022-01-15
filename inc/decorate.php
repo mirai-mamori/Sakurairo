@@ -180,7 +180,7 @@ if ( iro_opt('post_list_akina_type') == 'square') { ?>
 <?php } // liststyle ?>
 <?php 
 //$image_api = 'background-image: url("'.rest_url('sakura/v1/image/cover').'");';
-$bg_style = !iro_opt('cover_full_screen') ? 'background-position: center center;background-attachment: inherit;' : '';
+$bg_style = iro_opt('cover_full_screen') ?'': 'background-position: center center;background-attachment: inherit;';
 ?>
 #centerbg{<?php 
 echo $bg_style;
