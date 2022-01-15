@@ -4,12 +4,12 @@ $text_logo = iro_opt('text_logo');
 $print_social_zone = function() use ($all_opt,$social_display_icon):void{
     // 左箭头
     if (iro_opt('cover_random_graphs_switch', 'true')):?>
-        <li id="bg-pre"><img src="<?=$social_display_icon?>pre.png" loading="lazy"/></li>
+        <li id="bg-pre"><img src="<?=$social_display_icon?>pre.png" loading="lazy" alt="<?=__('Previous','sakurairo')?>"/></li>
     <?php
     endif;
     // 微信
     if (iro_opt('wechat')):?>
-        <li class="wechat"><a href="#" title="wechat"><img loading="lazy" src="<?=$social_display_icon?>wechat.png" /></a>
+        <li class="wechat"><a href="#" title="WeChat"><img loading="lazy" src="<?=$social_display_icon?>wechat.png" /></a>
             <div class="wechatInner">
                 <img loading="lazy" src="<?=iro_opt('wechat', '')?>" alt="WeChat">
             </div>
@@ -21,20 +21,22 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
         if (!empty($value['link'])):
             // 显然 这里的逻辑可以看看all_opt的结构（
             $img_url = $value['img'] ?? ($social_display_icon . ($value['icon'] ?? $key) . '.png');
+            $title = $value['title'] ?? $key;
             ?>
-            <li><a href="<?=$value['link'];?>" target="_blank" class="social-<?=$value['class'] ?? $key?>" title="<?=$value['title'] ?? $key?>"><img loading="lazy" src="<?=$img_url?>" /></a></li>
+            <li><a href="<?=$value['link'];?>" target="_blank" class="social-<?=$value['class'] ?? $key?>" title="<?=$title?>"><img alt="<?=$title?>" loading="lazy" src="<?=$img_url?>" /></a></li>
         <?php
         endif;
     endforeach;
     // 邮箱
     if (iro_opt('email_name') && iro_opt('email_domain')):?>
         <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img loading="lazy"
+        alt="E-mail"
                     src="<?=iro_opt('social_display_icon')?>/mail.png" /></a></li>
     <?php
     endif;
     // 右箭头
     if (iro_opt('cover_random_graphs_switch', 'true')):?>
-        <li id="bg-next"><img loading="lazy" src="<?=$social_display_icon?>next.png" /></li>
+        <li id="bg-next"><img loading="lazy" src="<?=$social_display_icon?>next.png" alt="<?=__('Next','sakurairo')?>"/></li>
     <?php endif;
 }
 ?>
