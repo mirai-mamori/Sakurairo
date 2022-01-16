@@ -3404,8 +3404,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'id' => 'local_global_library',
         'type' => 'switcher',
-        'title' => __('Provide Shared Library locally','sakurairo_csf'),
-        'label' => __('Shared library will be provided via jsDelivr CDN by default.','sakurairo_csf'),
+        'title' => __('Provide 3rd-party Frontend Resource locally','sakurairo_csf'),
+        'label' => __('Dsiabled by default. The 3rd-party Frontend Resource are provided via jsDelivr CDN','sakurairo_csf'),
         'default' => false
       ),
 
@@ -3413,7 +3413,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'local_application_library',
         'type' => 'switcher',
         'title' => __('Provide Critical Frontend Resource locally','sakurairo_csf'),
-        'label' => __('Critical frontend resource will be provided locally by default. Critical resources are those resources whose loading performance will have a significant impact on the user experience','sakurairo_csf'),
+        'label' => __('Enabeld by default. Critical resources are those resources whose loading performance will have a significant impact on the user experience.','sakurairo_csf'),
         'default' => true
       ),
 
