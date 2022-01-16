@@ -260,6 +260,7 @@ function sakura_scripts()
         wp_enqueue_script('app-page', $local_library_basepath . '/js/page.js', array('app'), IRO_VERSION, true);
     }
     wp_enqueue_script('app', $local_library_basepath . '/js/app.js', array(), IRO_VERSION, true);
+    wp_enqueue_script('polyfills', $local_library_basepath . '/js/polyfills.js', array(), IRO_VERSION, true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
