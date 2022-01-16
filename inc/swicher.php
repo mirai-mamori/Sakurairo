@@ -54,7 +54,6 @@ function font_end_js_control() {
     !empty($reception_background['img3']) && $mashiro_opt['skin_bg2'] = $reception_background['img3'];
     !empty($reception_background['img4']) && $mashiro_opt['skin_bg3'] = $reception_background['img4'];
     !empty($reception_background['img5']) && $mashiro_opt['skin_bg4'] = $reception_background['img5'];
-    $mashiro_opt['entry_content_style_src'] = iro_opt('entry_content_style') == 'sakurairo' ? ecs_src('sakura') : ecs_src('github');
     $mashiro_opt['jsdelivr_css_src'] = iro_opt('local_global_library') ? (get_template_directory_uri().'/css/lib.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'.IRO_VERSION.'/css/lib.css');
     if (iro_opt('lightgallery')){
         $lightGallery = str_replace(PHP_EOL, '', iro_opt('lightgallery_option')); 
