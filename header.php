@@ -28,7 +28,6 @@ $mashiro_logo = iro_opt('mashiro_logo');
 <html <?php language_attributes(); ?>>
 
 <head>
-	<link rel="stylesheet" href="https://<?php echo iro_opt('gfonts_api','fonts.loli.net'); ?>/css?family=Noto+Serif|Merriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC<?php echo iro_opt('gfonts_add_name'); ?>" media="all">
 	<meta name="theme-color" content="" media="(prefers-color-scheme: light)">
 	<meta name="theme-color" content="<?php echo iro_opt('theme_skin_dark')?>" media="(prefers-color-scheme: dark)">
 
@@ -76,6 +75,7 @@ $mashiro_logo = iro_opt('mashiro_logo');
 	}
 	?>
 	<?php wp_head(); ?>
+	<link rel="stylesheet" href="https://<?php echo iro_opt('gfonts_api','fonts.loli.net'); ?>/css?family=Noto+Serif|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC<?php echo iro_opt('gfonts_add_name'); ?>" media="all">
 	<script type="text/javascript">
 		if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
 			alert('朋友，IE浏览器未适配哦~\n如果是 360、QQ 等双核浏览器，请关闭 IE 模式！');
