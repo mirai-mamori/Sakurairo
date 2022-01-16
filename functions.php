@@ -393,6 +393,7 @@ function convertip($ip)
  * <?php echo get_avatar( $comment->comment_author_email, '80', '', get_comment_author() ); ?>
  *
  */
+
 if (!function_exists('akina_comment_format')) {
     function akina_comment_format($comment, $args, $depth)
     {
