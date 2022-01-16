@@ -38,7 +38,7 @@ $reception_background = iro_opt('reception_background');
 						<?php if (iro_opt('footer_load_occupancy', 'true')): ?>
                         <?php printf(' 耗时 %.3f 秒 | 查询 %d 次 | 内存 %.2f MB',timer_stop( 0, 3 ),get_num_queries(),memory_get_peak_usage() / 1024 / 1024);?>
                         <?php endif; ?>
-						Theme <a href="https://github.com/mirai-mamori/Sakurairo" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://iro.tw" target="_blank" id="site-info" >Fuukei</a> 
+						Theme <a href="https://github.com/mirai-mamori/Sakurairo" rel="noopener" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://iro.tw" rel="noopener" target="_blank" id="site-info" >Fuukei</a> 
 					</span>
 			</div>
 		</div><!-- .site-info -->
@@ -60,7 +60,6 @@ $reception_background = iro_opt('reception_background');
 		</div>
 		<?php wp_nav_menu( array( 'depth' => 2, 'theme_location' => 'primary', 'container' => false ) ); ?>
 	</div><!-- m-nav-center end -->
-	<a class="cd-top faa-float animated "></a>
 	<button id="moblieGoTop" title="<?=__('Go to top','sakurairo');?>"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
     <button id="changskin"><i class="iconfont icon-gear inline-block rotating"></i></button>
 	<!-- search start -->
