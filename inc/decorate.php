@@ -396,7 +396,7 @@ font-size: <?=iro_opt('global_font_size'); ?>px;
 }
 
 h1.main-title,h1.fes-title{
-font-family:<?=iro_opt('area_title_font'); ?> !important;
+font-family:<?=iro_opt('area_title_font'); ?>;
 }
 
 .header-info p{

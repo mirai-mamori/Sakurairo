@@ -2134,7 +2134,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Area Title Font','sakurairo_csf'),
         'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
-        'default' => 'Noto Serif SC'
+        'default' => 'Ubuntu'
       ),
 
       array(

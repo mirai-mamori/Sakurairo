@@ -28,8 +28,7 @@ $reception_background = iro_opt('reception_background');
 				<?php endif; ?>
 				<p style="color: #666666;"><?php echo iro_opt('footer_info', ''); ?></p>
 			</div>
-			<div class="footer-device">
-			<p style="font-family: 'Ubuntu', sans-serif;">
+			<div class="footer-device Ubuntu-font">
 					<?php if(iro_opt('footer_yiyan')){ ?>
 						<p id="footer_yiyan"></p>
 						<?php } ?>
