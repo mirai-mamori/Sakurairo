@@ -15,7 +15,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo iro_opt('favicon_link', ''); ?>" />
-    <link type="text/css" media="all" href="<?=$shared_library_basepath?>/css/404_lib.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<?= $shared_lib_basepath ?>/css/404_lib.css" type="text/css" media="all"/>
     <?php wp_head(); ?>
     <?php
     /* <script>
@@ -56,5 +56,5 @@ if (!no_report) httpGet(report_url);
             </form>
         </div>
     </section>
-    <script src="<?php echo $shared_library_basepath . '/js/anf.js' ?>" type="text/javascript"></script>
+    <script src="<?php echo $shared_lib_basepath . '/js/anf.js' ?>" type="text/javascript"></script>
 </body>

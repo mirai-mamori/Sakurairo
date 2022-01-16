@@ -10,8 +10,8 @@ function font_end_js_control() {
         return false;
     };
     function ecs_src($a) {
-        global $local_library_basepath;
-        return $local_library_basepath.'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
+        global $core_lib_basepath;
+        return $core_lib_basepath.'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
     };
     $vision_resource_basepath = iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/');
     $mashiro_opt = [

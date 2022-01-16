@@ -23,8 +23,8 @@ if (!function_exists('iro_opt')) {
         return $GLOBALS['iro_options'][$option] ?? $default;
     }
 }
-$shared_library_basepath = iro_opt('local_global_library') ? get_template_directory_uri() : 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION;
-$local_library_basepath =  iro_opt('local_application_library') ? get_template_directory_uri() : 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION;
+$shared_lib_basepath = iro_opt('local_global_library') ? get_template_directory_uri() : 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION;
+$core_lib_basepath =  iro_opt('local_application_library') ? get_template_directory_uri() : 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION;
 //Update-Checker
 
 require 'update-checker/update-checker.php';
@@ -244,23 +244,23 @@ add_action('after_setup_theme', 'akina_content_width', 0);
  */
 function sakura_scripts()
 {
-    global $local_library_basepath;
-    global $shared_library_basepath;
+    global $core_lib_basepath;
+    global $shared_lib_basepath;
 
     if (iro_opt('smoothscroll_option')) {
-        wp_enqueue_script('SmoothScroll', $shared_library_basepath. '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
+        wp_enqueue_script('SmoothScroll', $shared_lib_basepath. '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
     }
 
-    wp_enqueue_style('saukra-css',  $local_library_basepath.'/style.css', array(), IRO_VERSION);
+    wp_enqueue_style('saukra-css',  $core_lib_basepath.'/style.css', array(), IRO_VERSION);
     if (!is_home()){
         //非主页的资源
         wp_enqueue_style('entry-content',     
-     $local_library_basepath.'/css/theme/'.(iro_opt('entry_content_style') == 'sakurairo' ?'sakura' : 'github').'.css',
+     $core_lib_basepath.'/css/theme/'.(iro_opt('entry_content_style') == 'sakurairo' ?'sakura' : 'github').'.css',
     array(), IRO_VERSION);
-        wp_enqueue_script('app-page', $local_library_basepath . '/js/page.js', array('app','polyfills'), IRO_VERSION, true);
+        wp_enqueue_script('app-page', $core_lib_basepath . '/js/page.js', array('app','polyfills'), IRO_VERSION, true);
     }
-    wp_enqueue_script('app', $local_library_basepath . '/js/app.js', array('polyfills'), IRO_VERSION, true);
-    wp_enqueue_script('polyfills', $local_library_basepath . '/js/polyfills.js', array(), IRO_VERSION, true);
+    wp_enqueue_script('app', $core_lib_basepath . '/js/app.js', array('polyfills'), IRO_VERSION, true);
+    wp_enqueue_script('polyfills', $core_lib_basepath . '/js/polyfills.js', array(), IRO_VERSION, true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }

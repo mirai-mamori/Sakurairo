@@ -29,7 +29,7 @@ $mashiro_logo = iro_opt('mashiro_logo');
 
 <head>
 	<meta name="theme-color" content="" media="(prefers-color-scheme: light)">
-	<meta name="theme-color" content="<?php echo iro_opt('theme_skin_dark')?>" media="(prefers-color-scheme: dark)">
+	<meta name="theme-color" content="<?php echo iro_opt('theme_skin_dark') ?>" media="(prefers-color-scheme: dark)">
 
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
@@ -63,19 +63,19 @@ $mashiro_logo = iro_opt('mashiro_logo');
 	<?php } ?>
 	<link rel="shortcut icon" href="<?php echo iro_opt('favicon_link', ''); ?>" />
 	<meta http-equiv="x-dns-prefetch-control" content="on">
-	<?php 
-	if(is_home()){
+	<?php
+	if (is_home()) {
 		//预载资源
 		//id需要一致，使pjax可以完成自动替换
-		global $local_library_basepath;
-?>
-<link id="entry-content-css" rel="prefetch" href="<?=$local_library_basepath.'/css/theme/'.(iro_opt('entry_content_style') == 'sakurairo' ?'sakura' : 'github').'.css?ver='.IRO_VERSION?>"/>
-<link rel="prefetch" href="<?= $local_library_basepath . '/js/page.js?ver='.IRO_VERSION?>"/>
-<?php
+		global $core_lib_basepath;
+	?>
+		<link id="entry-content-css" rel="prefetch" href="<?= $core_lib_basepath . '/css/theme/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css?ver=' . IRO_VERSION ?>" />
+		<link rel="prefetch" href="<?= $core_lib_basepath . '/js/page.js?ver=' . IRO_VERSION ?>" />
+	<?php
 	}
 	?>
 	<?php wp_head(); ?>
-	<link rel="stylesheet" href="https://<?php echo iro_opt('gfonts_api','fonts.loli.net'); ?>/css?family=Merriweather+Sans|Noto+Serif|Noto+Serif+SC|Source+Code+Pro|Ubuntu:400,700<?php echo iro_opt('gfonts_add_name'); ?>&display=swap" media="all">
+	<link rel="stylesheet" href="https://<?php echo iro_opt('gfonts_api', 'fonts.loli.net'); ?>/css?family=Merriweather+Sans|Noto+Serif|Noto+Serif+SC|Source+Code+Pro|Ubuntu:400,700<?php echo iro_opt('gfonts_add_name'); ?>&display=swap" media="all">
 	<script type="text/javascript">
 		if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
 			alert('朋友，IE浏览器未适配哦~\n如果是 360、QQ 等双核浏览器，请关闭 IE 模式！');
@@ -86,7 +86,6 @@ $mashiro_logo = iro_opt('mashiro_logo');
 		<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo iro_opt('google_analytics_id', ''); ?>"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
-
 			function gtag() {dataLayer.push(arguments)}
 			gtag('js', new Date());
 			gtag('config', '<?php echo iro_opt('google_analytics_id', ''); ?>');
