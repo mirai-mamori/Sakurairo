@@ -3402,20 +3402,28 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'local_global_library',
-        'type' => 'switcher',
-        'title' => __('Provide 3rd-party Frontend Resource locally','sakurairo_csf'),
-        'label' => __('Dsiabled by default. The 3rd-party Frontend Resource are provided via jsDelivr CDN','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
         'id' => 'local_application_library',
         'type' => 'switcher',
         'title' => __('Provide Critical Frontend Resource locally','sakurairo_csf'),
         'label' => __('Enabeld by default. Critical resources are those resources whose loading performance will have a significant impact on the user experience.','sakurairo_csf'),
         'default' => true
       ),
+
+      array(
+        'id' => 'local_global_library',
+        'type' => 'switcher',
+        'title' => __('Provide Other Frontend Resource locally','sakurairo_csf'),
+        'label' => __('Less important frontend resource in the theme\'s folder.','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(        
+      'id' => 'external_vendor_lib',
+      'type' => 'switcher',
+      'title' => __('Provide 3rd-party library from public CDN','sakurairo_csf'),
+      'label' => __('When disabled, 3rd-party dependencies, which have been built to bundles along with themes\'s entry script, will be loaded from the exact same origin with Critical Frontend Resource. ','sakurairo_csf'),
+      'default' => false
+    ),
 
       array(
         'id' => 'vision_resource_basepath',
