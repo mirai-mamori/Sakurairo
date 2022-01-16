@@ -251,15 +251,15 @@ function sakura_scripts()
         wp_enqueue_script('SmoothScroll', $shared_library_basepath. '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
     }
 
-    wp_enqueue_style('saukra_css',  $local_library_basepath.'/style.css', array(), IRO_VERSION);
+    wp_enqueue_style('saukra-css',  $local_library_basepath.'/style.css', array(), IRO_VERSION);
     if (!is_home()){
         //非主页的资源
-        wp_enqueue_style('entry_content',     
+        wp_enqueue_style('entry-content',     
      $local_library_basepath.'/css/theme/'.(iro_opt('entry_content_style') == 'sakurairo' ?'sakura' : 'github').'.css',
     array(), IRO_VERSION);
-        wp_enqueue_script('app-page', $local_library_basepath . '/js/page.js', array('app'), IRO_VERSION, true);
+        wp_enqueue_script('app-page', $local_library_basepath . '/js/page.js', array('app','polyfills'), IRO_VERSION, true);
     }
-    wp_enqueue_script('app', $local_library_basepath . '/js/app.js', array(), IRO_VERSION, true);
+    wp_enqueue_script('app', $local_library_basepath . '/js/app.js', array('polyfills'), IRO_VERSION, true);
     wp_enqueue_script('polyfills', $local_library_basepath . '/js/polyfills.js', array(), IRO_VERSION, true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');

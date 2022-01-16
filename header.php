@@ -64,6 +64,17 @@ $mashiro_logo = iro_opt('mashiro_logo');
 	<?php } ?>
 	<link rel="shortcut icon" href="<?php echo iro_opt('favicon_link', ''); ?>" />
 	<meta http-equiv="x-dns-prefetch-control" content="on">
+	<?php 
+	if(is_home()){
+		//预载资源
+		//id需要一致，使pjax可以完成自动替换
+		global $local_library_basepath;
+?>
+<link id="entry-content-css" rel="prefetch" href="<?=$local_library_basepath.'/css/theme/'.(iro_opt('entry_content_style') == 'sakurairo' ?'sakura' : 'github').'.css?ver='.IRO_VERSION?>"/>
+<link rel="prefetch" href="<?= $local_library_basepath . '/js/page.js?ver='.IRO_VERSION?>"/>
+<?php
+	}
+	?>
 	<?php wp_head(); ?>
 	<script type="text/javascript">
 		if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
