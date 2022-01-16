@@ -87,9 +87,7 @@ $mashiro_logo = iro_opt('mashiro_logo');
 		<script>
 			window.dataLayer = window.dataLayer || [];
 
-			function gtag() {
-				dataLayer.push(arguments)
-			}
+			function gtag() {dataLayer.push(arguments)}
 			gtag('js', new Date());
 			gtag('config', '<?php echo iro_opt('google_analytics_id', ''); ?>');
 		</script>
