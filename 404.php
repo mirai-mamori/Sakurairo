@@ -9,7 +9,13 @@
  */
 
 ?>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes();
+add_action('wp_head',function(){
+        wp_dequeue_style('wp-block-library');
+        wp_dequeue_style('wp-block-library-theme');
+        wp_dequeue_style('entry-content');
+},5);
+?>>
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
