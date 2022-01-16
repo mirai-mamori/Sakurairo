@@ -1564,12 +1564,20 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'signature_typing_text',
-        'type' => 'text',
-        'title' => __('Cover Signature Text','sakurairo_csf'),
+        'id' => 'signature_typing_placeholder',
+        'type'     => 'text',
+        'title' => __('Cover Signature Field Typing Effects Placeholder','sakurairo_csf'),
         'dependency' => array( 'signature_typing', '==', 'true' ),
-        'desc' => __('Fill in the text of the typing effect. Use English double quotes outside the text, and English commas to separate the two sentences. Support HTML tags','sakurairo_csf'),
-        'default' => '"寒蝉黎明之时,便是重生之日"'
+        'default' => '疯狂造句中......'
+      ),
+
+      array(
+        'id' => 'signature_typing_json',
+        'type'     => 'code_editor',
+        'sanitize' => false,
+        'title' => __('Typed.js initial option','sakurairo_csf'),
+        'dependency' => array( 'signature_typing', '==', 'true' ),
+        'default' => '{"strings":["给时光以生命，给岁月以文明"],"typeSpeed":140,"backSpeed":50,"loop":false,"showCursor":true}'
       ),
 
       array(

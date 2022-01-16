@@ -64,22 +64,21 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
             <div class="header-info">
                 <!-- 首页一言打字效果 -->
                 <?php if (iro_opt('signature_typing', 'true')) : ?>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
                 <?php if (iro_opt('signature_typing_marks', 'true')) : ?><i class="fa fa-quote-left"></i><?php endif; ?>
-                <span class="element">疯狂造句中......</span>
+                <span class="element"><?=iro_opt('signature_typing_placeholder','疯狂造句中......')?></span>
                 <?php if (iro_opt('signature_typing_marks', 'true')) : ?><i class="fa fa-quote-right"></i><?php endif; ?>
                 <span class="element"></span>
-                <script>
-                    var typed = new Typed('.element', {
-                        strings: ["给时光以生命，给岁月以文明",
-                        <?php echo iro_opt('signature_typing_text', ''); ?>, ], //输入内容, 支持html标签
+                <script type="application/json" id="typed-js-initial">
+                <?= iro_opt('signature_typing_json', ''); ?>
+                </script>
+                <!-- var typed = new Typed('.element', {
+                        strings: ["给时光以生命，给岁月以文明", ], //输入内容, 支持html标签
                         typeSpeed: 140, //打字速度
                         backSpeed: 50, //回退速度
                         loop: false, //是否循环
                         loopCount: Infinity,
                         showCursor: true //是否开启光标
-                    });
-                </script>
+                    }); -->
                 <?php endif; ?>
                 <p><?php echo iro_opt('signature_text', 'Hi, Mashiro?'); ?></p>
                 <?php if (iro_opt('infor_bar_style') === 'v2') : ?>
