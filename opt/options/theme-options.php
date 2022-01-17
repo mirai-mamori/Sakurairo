@@ -3184,6 +3184,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         .'<br/>Submit new discussion on Github for assistance. https://github.com/mirai-mamori/Sakurairo/discussions','sakurairo_csf')       ,
         'dependency' => array( 'lightgallery', '==', 'true' ),
       ),
+
+      array(
+        'type'    => 'submessage',
+        'style'   => 'warning',
+        'content'=>__('Start from Sakurairo v2.4.0, plugins names in LightGallery option follow the form cite in official document (eg. lgHash instead of "hash")','sakurairo_csf')       ,
+        'dependency' => array( 'lightgallery', '==', 'true' ),
+      ),
+
       array(
         'id' => 'lightgallery_option',
         'type' => 'code_editor',
@@ -3191,7 +3199,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('LightGallery Lightbox Effect Options','sakurairo_csf'),
         'dependency' => array( 'lightgallery', '==', 'true' ),
         'default' => '{
-          "plugins":["hash","zoom"],
+          "plugins":["lgHash","lgZoom"],
           "supportLegacyBrowser":false,
           "selector":"figure > img"
         }'
