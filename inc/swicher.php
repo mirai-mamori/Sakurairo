@@ -13,7 +13,7 @@ function font_end_js_control() {
         global $core_lib_basepath;
         return $core_lib_basepath.'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
     };
-    $vision_resource_basepath = iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/');
+    $vision_resource_basepath = iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/');
     $mashiro_opt = [
         'NProgressON' => check(iro_opt('nprogress_on')),
         'audio' => check(iro_opt('note_effects')),
@@ -54,7 +54,7 @@ function font_end_js_control() {
     !empty($reception_background['img3']) && $mashiro_opt['skin_bg2'] = $reception_background['img3'];
     !empty($reception_background['img4']) && $mashiro_opt['skin_bg3'] = $reception_background['img4'];
     !empty($reception_background['img5']) && $mashiro_opt['skin_bg4'] = $reception_background['img5'];
-    $mashiro_opt['jsdelivr_css_src'] = iro_opt('local_global_library') ? (get_template_directory_uri().'/css/lib.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'.IRO_VERSION.'/css/lib.css');
+    $mashiro_opt['jsdelivr_css_src'] = iro_opt('shared_library_basepath') ? (get_template_directory_uri().'/css/lib.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'.IRO_VERSION.'/css/lib.css');
     if (iro_opt('lightgallery')){
         $lightGallery = str_replace(PHP_EOL, '', iro_opt('lightgallery_option')); 
         # 这里简单的做一下处理，请务必使用正确标准的json格式

@@ -139,7 +139,7 @@ body {
   background: #0000;
   background-attachment: fixed;
   background-position: center;
-  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/normal.cur), auto;
+  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/normal.cur), auto;
   scrollbar-width: 6px;
   font-weight: var(--global-font-weight);
 
@@ -160,7 +160,7 @@ progress {
 a {
   background-color: transparent;
   text-decoration: none;
-  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/ayuda.cur), auto;
+  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/ayuda.cur), auto;
   color: #e67474;
   outline: 0;
   -webkit-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
@@ -516,7 +516,7 @@ input[type=week] {
   -webkit-animation: poi-face 10s linear infinite alternate;
   -o-animation: poi-face 10s linear infinite alternate;
   animation: poi-face 10s linear infinite alternate;
-  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/add.png);
+  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/basic/add.png);
   display: none;
 }
 
@@ -1257,7 +1257,7 @@ h1.page-title {
   left: 50%;
   margin-left: -370px;
   position: relative;
-  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/creativecommons-light.png);
+  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/basic/creativecommons-light.png);
   background-size: 100%100%;
   border: none;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
@@ -1562,7 +1562,7 @@ h1.page-title {
   height: 40px;
   text-align: center;
   line-height: 45px;
-  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/theme/sakura/load/ball.svg);
+  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/load_svg/ball.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -2762,7 +2762,7 @@ i.iconfont.js-toggle-search.iconsearch {
 
 .ins-section .ins-section-header {
   padding: 8px 15px;
-  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/ayuda.cur), auto;
+  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/ayuda.cur), auto;
   position: sticky;
   top: 0;
   background: #fff;
@@ -2789,7 +2789,7 @@ i.iconfont.js-toggle-search.iconsearch {
   margin-left: 20px;
   font-size: 12px;
   margin: 5px 0 0 0px;
-  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/ayuda.cur), auto;
+  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/ayuda.cur), auto;
   font-weight: var(--global-font-weight);
 
 }
@@ -3928,7 +3928,7 @@ input[type=radio]:checked:before {
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/No_Disponible.cur), auto;
+  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/No_Disponible.cur), auto;
   transition: all .5s;
   overflow: hidden;
   height: 0px;
@@ -3942,7 +3942,7 @@ input[type=radio]:checked:before {
   overflow: hidden;
   border-radius: 4px;
   margin-bottom: -8px;
-  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/No_Disponible.cur), auto;
+  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/No_Disponible.cur), auto;
 }
 
 .emotion-item .img {
@@ -4958,7 +4958,7 @@ body.dark #banner_wave_2 {
 
 a:active {
   outline: 0;
-  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/work.cur), alias;
+  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/work.cur), alias;
   color: #505050;
 }
 
@@ -5080,7 +5080,7 @@ h6 {
 
 p {
   margin-bottom: 1.5em;
-  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/texto.cur), auto;
+  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/texto.cur), auto;
 }
 
 blockquote p {
@@ -5217,11 +5217,11 @@ a:focus {
 
 .loadvideo,
 .video-play {
-  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/play.png);
+  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/basic/play.png);
 }
 
 .video-pause {
-  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/stop.png);
+  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/basic/stop.png);
 }
 
 .pattern-attachment {
@@ -6055,11 +6055,11 @@ li.feature-2 {
 }
 
 .headertop.filter-grid::before {
-  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/basic/grid.png);
+  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/basic/grid.png);
 }
 
 .headertop.filter-dot::before {
-  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/dot.gif);
+  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/basic/dot.gif);
 }
 
 .blank {
@@ -6170,7 +6170,7 @@ body.dark .ins-section .fa {
 
 .ins-section .ins-search-item {
   padding: 8px 15px;
-  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/ayuda.cur), auto;
+  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/ayuda.cur), auto;
 }
 
 .ins-section .ins-search-item .search-keyword {
@@ -6700,7 +6700,7 @@ a.toc-link {
 .tieba-container span {
   width: 32px;
   height: 32px;
-  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/No_Disponible.cur), auto;
+  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/No_Disponible.cur), auto;
 }
 
 .tieba-container img,
@@ -6737,7 +6737,7 @@ a.toc-link {
 #emotion-toggle {
   text-align: center;
   margin-bottom: 5px;
-  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/No_Disponible.cur), auto;
+  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/No_Disponible.cur), auto;
 }
 
 .motion-switcher-table td,
@@ -6758,7 +6758,7 @@ a.toc-link {
 
 .emoji-item,
 .on-hover {
-  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/No_Disponible.cur), auto;
+  cursor: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/No_Disponible.cur), auto;
 }
 
 #footer-sponsor {
@@ -7750,7 +7750,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 
 @media (max-width:860px) {
   .headertop.filter-dot::before {
-    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/basic/grid.png);
+    background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/basic/grid.png);
   }
 }
 
@@ -9678,7 +9678,7 @@ body.dark .links ul li {
 }
 
 body.dark .post-footer {
-  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/creativecommons-dark.png);
+  background-image: url(https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/basic/creativecommons-dark.png);
 }
 
 body.dark .scrollbar,

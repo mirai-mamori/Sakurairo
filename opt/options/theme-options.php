@@ -184,7 +184,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'  => 'text',
         'title' => __('Site Icon','sakurairo_csf'),
         'desc'   => __('Fill in the address, which decides the icon next to the title above the browser','sakurairo_csf'),
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/favicon.ico'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/basic/favicon.ico'
       ),
 
       array(
@@ -338,7 +338,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'   => 'text',
         'title'  => __('Occupying SVG while Loading Control Units','sakurairo_csf'),
         'desc'   => __('Fill in the address, which is the SVG displayed when loading control units','sakurairo_csf'),
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/outload.svg'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/load_svg/outload.svg'
       ),
 
     )
@@ -433,8 +433,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'       => 'image_select',
         'title'      => __('Nav Menu Style','sakurairo_csf'),
         'options'    => array(
-          'sakurairo' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/nav_menu_style_iro.png',
-          'sakura' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/nav_menu_style_sakura.png',
+          'sakurairo' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/nav_menu_style_iro.png',
+          'sakura' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/nav_menu_style_sakura.png',
         ),
         'default'    => 'sakurairo'
       ),
@@ -529,7 +529,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Search Area Background Image','sakurairo_csf'),
         'desc'   => __('Set the background image of your search area. Leave this option blank to display a white background','sakurairo_csf'),
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/iloli.gif'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/basic/iloli.gif'
       ),
 
       array(
@@ -547,7 +547,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'dependency' => array( 'nav_menu_user_avatar', '==', 'true' ),
         'desc'   => __('The best length-width ratio of is 1:1','sakurairo_csf'),
         'library'      => 'image',
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/basic/topavatar.png'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/basic/topavatar.png'
       ),
 
       array(
@@ -653,8 +653,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Style Menu Display','sakurairo_csf'),
         'desc' => __('You can choose to display the style menu simply or in full. The full display will show the font toggle function and text hints','sakurairo_csf'),
         'options' => array(
-          'full' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/style_menu_full.png',
-          'mini' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/style_menu_mini.png',
+          'full' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/style_menu_full.png',
+          'mini' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/style_menu_mini.png',
         ),
         'default' => 'full'
       ),
@@ -807,10 +807,10 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'star_shaped'  => true,
           'square_shaped'  => true,
           'lemon_shaped'  => true,
-          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/bg1.png',
-          'img3'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/bg2.png',
-          'img4' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/bg3.png',
-          'img5' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/background/bg4.png',
+          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/background/bg1.png',
+          'img3'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/background/bg2.png',
+          'img4' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/background/bg3.png',
+          'img5' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/background/bg4.png',
         )
       ),
 
@@ -1027,7 +1027,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Standard Cursor Style','sakurairo_csf'),
         'desc' => __('Apply to global, fill in ".cur" mouse file link','sakurairo_csf'),
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/normal.cur'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/normal.cur'
       ),
 
       array(
@@ -1035,7 +1035,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Selected Cursor Style','sakurairo_csf'),
         'desc' => __('Apply to multiple styles, fill in ".cur" file link','sakurairo_csf'),
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/No_Disponible.cur'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/No_Disponible.cur'
       ),
 
       array(
@@ -1043,7 +1043,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Selected Control Unit Cursor Style','sakurairo_csf'),
         'desc' => __('Apply to selected control unit, fill in ".cur" file link','sakurairo_csf'),
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/ayuda.cur'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/ayuda.cur'
       ),
 
       array(
@@ -1051,7 +1051,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Selected Text Cursor Style','sakurairo_csf'),
         'desc' => __('Apply to selected text, fill in ".cur" file link','sakurairo_csf'),
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/texto.cur'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/texto.cur'
       ),
 
       array(
@@ -1059,7 +1059,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Work Status Cursor Style','sakurairo_csf'),
         'desc' => __('Apply to load control unit, fill in ".cur" file link','sakurairo_csf'),
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/cursor/work.cur'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/cursor/work.cur'
       ),
 
     )
@@ -1401,7 +1401,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Placeholder SVG when loading the next page','sakurairo_csf'),
         'desc' => __('Fill in the address, this is the SVG that will be displayed as a placeholder when the next page is loading','sakurairo_csf'),
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/ball.svg'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/load_svg/ball.svg'
       ),
     )
   ) );
@@ -1486,8 +1486,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'image_select',
         'title' => __('Cover Info Bar Style','sakurairo_csf'),
         'options' => array(
-          'v1' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/infor_bar_style_v1.png',
-          'v2' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/infor_bar_style_v2.png',
+          'v1' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/infor_bar_style_v1.png',
+          'v2' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/infor_bar_style_v2.png',
         ),
         'default' => 'v1'
       ),
@@ -1766,20 +1766,20 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Social Icon','sakurairo_csf'),
         'desc' => __('Select your favorite icon pack. Icon pack references are detailed in the "About Theme" section','sakurairo_csf'),
         'options'     => array(
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/fluent_design'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_fd.gif',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/muh2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_h2.gif',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/flat_colorful'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_fc.gif',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/sakura'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_sa.gif',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/macaronblue'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_mb.png',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/macarongreen'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_mg.png',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/macaronpurple'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_mp.png',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/pink'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_sp.png',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/orange'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_so.png',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/sangosyu'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_sg.png',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/sora'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_ts.png',
-          'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/nae'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/display_icon_nn.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/display_icon/fluent_design'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/display_icon_fd.gif',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/display_icon/muh2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/display_icon_h2.gif',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/display_icon/flat_colorful'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/display_icon_fc.gif',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/display_icon/sakura'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/display_icon_sa.gif',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/display_icon/macaronblue'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/display_icon_mb.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/display_icon/macarongreen'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/display_icon_mg.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/display_icon/macaronpurple'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/display_icon_mp.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/display_icon/pink'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/display_icon_sp.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/display_icon/orange'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/display_icon_so.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/display_icon/sangosyu'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/display_icon_sg.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/display_icon/sora'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/display_icon_ts.png',
+          'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/display_icon/nae'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/display_icon_nn.png',
         ),
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/display_icon/fluent_design'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/display_icon/fluent_design'
       ),
 
       array(
@@ -2063,7 +2063,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         ),
         'desc' => __('Best width 820px, best height 67px','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/announcement_bg.jpg'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/series/announcement_bg.jpg'
       ),
 
       array(
@@ -2092,9 +2092,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Bulletin Board Alignment','sakurairo_csf'),
         'dependency' => array( 'bulletin_board', '==', 'true' ),
         'options'     => array(
-          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_left.png',
-          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_right.png',
-          'center'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/announce_text_center.png',
+          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/announce_text_left.png',
+          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/announce_text_right.png',
+          'center'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/announce_text_center.png',
         ),
         'default'     => 'left'
       ),
@@ -2142,9 +2142,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'image_select',
         'title' => __('Area Title Alignment','sakurairo_csf'),
         'options' => array(
-          'left' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_left.png',
-          'right' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_right.png',
-          'center' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/area_title_text_center.png',
+          'left' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/area_title_text_left.png',
+          'right' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/area_title_text_right.png',
+          'center' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/area_title_text_center.png',
         ),
         'default' => 'left'
       ),
@@ -2179,8 +2179,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'image_select',
         'title' => __('Display Area Style','sakurairo_csf'),
         'options' => array(
-          'left_and_right' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/exhibition_area_style_lr.png',
-          'bottom_to_top' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/exhibition_area_style_ud.png',
+          'left_and_right' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/exhibition_area_style_lr.png',
+          'bottom_to_top' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/exhibition_area_style_ud.png',
         ),
         'default' => 'left_and_right'
       ),
@@ -2304,9 +2304,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'link1' => '',
           'link2' => '',
           'link3' => '',
-          'img1'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/exhibition1.jpg',
-          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/exhibition2.jpg',
-          'img3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/exhibition3.jpg',
+          'img1'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/series/exhibition1.jpg',
+          'img2'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/series/exhibition2.jpg',
+          'img3' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/series/exhibition3.jpg',
           'title1' => 'アンコール',
           'title2' => 'ハルジオン',
           'title3' => 'かいぶつ',
@@ -2330,8 +2330,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'       => 'image_select',
         'title' => __('Article Area Display Style','sakurairo_csf'),
         'options'    => array(
-          'imageflow' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura_left.png',
-          'akinastyle' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina.png',
+          'imageflow' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/post_list_style_sakura_left.png',
+          'akinastyle' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/post_list_style_akina.png',
         ),
         'default'    => 'imageflow'
       ),
@@ -2343,8 +2343,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'dependency' => array( 'post_list_style', '==', 'akinastyle' ),
         'desc' => __('You can choose a circular or a rectangular display of the featured image','sakurairo_csf'),
         'options'    => array(
-          'round' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina.png',
-          'square' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_akina2.png',
+          'round' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/post_list_style_akina.png',
+          'square' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/post_list_style_akina2.png',
         ),
         'default'    => 'round'
       ),
@@ -2356,9 +2356,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
         'desc' => __('You can choose different directions to display the featured images','sakurairo_csf'),
         'options' => array(
-          'alternate' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura1.png',
-          'left' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura2.png',
-          'right' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/post_list_style_sakura3.png',
+          'alternate' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/post_list_style_sakura1.png',
+          'left' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/post_list_style_sakura2.png',
+          'right' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/post_list_style_sakura3.png',
         ),
         'default' => 'alternate'
       ),
@@ -2478,8 +2478,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'image_select',
         'title' => __('Page Style','sakurairo_csf'),
         'options' => array(
-          'sakurairo' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/page_style_iro.png',
-          'sakura' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/page_style_sakura.png',
+          'sakurairo' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/page_style_iro.png',
+          'sakura' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/page_style_sakura.png',
         ),
         'default' => 'sakurairo'
       ),
@@ -2545,7 +2545,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Page LazyLoad Placeholder SVG','sakurairo_csf'),
         'dependency' => array( 'page_lazyload', '==', 'true' ),
         'desc' => __('Fill in the address, this is the placeholder image that will be displayed when the page LazyLoad is being loaded','sakurairo_csf'),
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/inload.svg'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/load_svg/inload.svg'
       ),
 
       array(
@@ -2553,7 +2553,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Page Image Placeholder SVG','sakurairo_csf'),
         'desc' => __('Fill address, this is the SVG that will be displayed as a placeholder when the page image is being loaded','sakurairo_csf'),
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/load_svg/inload.svg'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/load_svg/inload.svg'
       ),
 
     )
@@ -2714,9 +2714,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'image_select',
         'title' => __('Friend Link Template Unit Alignment','sakurairo_csf'),
         'options'     => array(
-          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/friend_link_left.png',
-          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/friend_link_right.png',
-          'center'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/friend_link_center.png',
+          'left'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/friend_link_left.png',
+          'right'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/friend_link_right.png',
+          'center'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/friend_link_center.png',
         ),
         'default'     => 'left'
       ),
@@ -2891,7 +2891,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Mail Template Featured Image','sakurairo_csf'),
         'desc' => __('Set the background image of your reply email','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/mail_head.jpg'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/series/mail_head.jpg'
       ),
 
       array(
@@ -2944,7 +2944,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Login Screen Background Image','sakurairo_csf'),
         'desc' => __('Set your login screen background image, leave this option blank to show the default','sakurairo_csf'),
         'library'      => 'image',
-        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/login_background.jpg'
+        'default'     => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/series/login_background.jpg'
       ),
 
       array(
@@ -2961,7 +2961,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Login Screen Logo','sakurairo_csf'),
         'desc' => __('Set your login screen Logo','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/login_logo.png'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/series/login_logo.png'
       ),
 
       array(
@@ -2983,7 +2983,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Dashboard Background Image','sakurairo_csf'),
         'desc' => __('Set your dashboard background image, leave this option blank to show white background','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/admin_background.jpeg'
+        'default' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/series/admin_background.jpeg'
       ),
 
       array(
@@ -2991,8 +2991,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'image_select',
         'title' => __('Dashboard Options Menu Style','sakurairo_csf'),
         'options' => array(
-          'v1' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/admin_left_style_v1.png',
-          'v2' => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/admin_left_style_v2.png',
+          'v1' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/admin_left_style_v1.png',
+          'v2' => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/admin_left_style_v2.png',
         ),
         'default' => 'v1'
       ),  
@@ -3340,7 +3340,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/tsubame/tsubamelogo.gif"  alt="Theme Information" />','sakurairo_csf'),
+        'content' => __('<img src="https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/series/tsubamelogo.gif"  alt="Theme Information" />','sakurairo_csf'),
       ),
 
       array(
@@ -3359,9 +3359,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'        => 'image_select',
         'title' => __('Theme Update Source','sakurairo_csf'),
         'options'     => array(
-          'github'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_github.png',
-          'jsdelivr'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_jsd.png',
-          'official_building'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/options/update_source_iro.png',
+          'github'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/update_source_github.png',
+          'jsdelivr'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/update_source_jsd.png',
+          'official_building'  => 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/options/update_source_iro.png',
         ),
         'desc' => __('If you are using a server set up in mainland China, please use the jsDelivr source or the official theme source as your theme update source','sakurairo_csf'),
         'default'     => 'github'
@@ -3372,7 +3372,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Theme Update Test Channel Disclaimer','sakurairo_csf'),
         'dependency' => array(
-          array( 'local_global_library', '==', 'true' ),
+          array( 'shared_library_basepath', '==', 'true' ),
           array( 'iro_update_source', '==', 'official_building' ),
         ),
         'desc' => __('Please copy the text in quotes after <strong>ensure that you have carefully understood the risks associated with participating in the test and are willing to assume all consequences at your own risk</strong> (including but not limited to possible data loss) into the options text box <strong> "I agree and am willing to bear all unexpected consequences"</strong>','sakurairo_csf'),
@@ -3384,7 +3384,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Theme Update Channel','sakurairo_csf'),
         'dependency' => array(
           array( 'channel_validate_value', '==', 'I agree and am willing to bear all unexpected consequences' ),
-          array( 'local_global_library', '==', 'true' ),
+          array( 'shared_library_basepath', '==', 'true' ),
           array( 'iro_update_source', '==', 'official_building' ), array( 'iro_update_source', '==', 'official_building' ),
         ),
         'desc' => __('You can toggle the update channel here to participate in the testing of the new version','sakurairo_csf'),
@@ -3402,7 +3402,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'local_application_library',
+        'id' => 'core_library_basepath',
         'type' => 'switcher',
         'title' => __('Provide Critical Frontend Resource locally','sakurairo_csf'),
         'label' => __('Enabeld by default. Critical resources are those resources whose loading performance will have a significant impact on the user experience.','sakurairo_csf'),
@@ -3410,7 +3410,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'local_global_library',
+        'id' => 'shared_library_basepath',
         'type' => 'switcher',
         'title' => __('Provide Other Frontend Resource locally','sakurairo_csf'),
         'label' => __('Less important frontend resource in the theme\'s folder.','sakurairo_csf'),
@@ -3429,7 +3429,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'vision_resource_basepath',
         'type' => 'text',
         'title' => __('Vision Resource Basepath','sakurairo_csf'),
-        'default' => "https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/"
+        'default' => "https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/"
       ),
 
       array(
