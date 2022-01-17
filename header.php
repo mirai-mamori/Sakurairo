@@ -69,8 +69,8 @@ $mashiro_logo = iro_opt('mashiro_logo');
 		//id需要一致，使pjax可以完成自动替换
 		global $core_lib_basepath;
 	?>
-		<link id="entry-content-css" rel="prefetch" href="<?= $core_lib_basepath . '/css/theme/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css?ver=' . IRO_VERSION ?>" />
-		<link rel="prefetch" href="<?= $core_lib_basepath . '/js/page.js?ver=' . IRO_VERSION ?>" />
+		<link id="entry-content-css" rel="preload" as="style" href="<?= $core_lib_basepath . '/css/theme/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css?ver=' . IRO_VERSION ?>" />
+		<link rel="preload" as="script" href="<?= $core_lib_basepath . '/js/page.js?ver=' . IRO_VERSION ?>" />
 	<?php
 	}
 	?>
