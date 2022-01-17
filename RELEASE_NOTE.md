@@ -1,4 +1,47 @@
 # 版本发布记录
+## 2.4
+### 错误修复
+
+* 翻译丢失 ([404f1a6](https://github.com/Fuukei/Sakurairo_Scripts/commit/404f1a601e287e160f08b42c01162cadde3a052a)), closes [mirai-mamori/Sakurairo#400](https://github.com/mirai-mamori/Sakurairo/issues/400)
+* 评论图片上传图片加载占位符未跟随主题设置 ([9a51ca9](https://github.com/Fuukei/Sakurairo_Scripts/commit/9a51ca900bddb0f8d9649629aed4ca21d5b47ebc))
+* 未导入resolvePath ([33466c6](https://github.com/Fuukei/Sakurairo_Scripts/commit/33466c6e80cea88fc08dd965dbb4f0df688cd105))
+* aplayer导入css会有额外的js ([8dc3631](https://github.com/Fuukei/Sakurairo_Scripts/commit/8dc3631365024c25acfb0947fa31103b2f074839))
+* buildAPI undefined ([80e36a8](https://github.com/Fuukei/Sakurairo_Scripts/commit/80e36a83dbf5b9cf660a5d55b4ad39b416aaeb19)), closes [mirai-mamori/Sakurairo#410](https://github.com/mirai-mamori/Sakurairo/issues/410)
+* **lightGallery:** 插件lgMediumZoom可能无法加载 ([6d0e9cc](https://github.com/Fuukei/Sakurairo_Scripts/commit/6d0e9ccce1de6a5a593475d0f4ac7418e34b4ace))
+* **lightGallery:** 未给定plugins设置项可能导致加载失败 ([3a344f9](https://github.com/Fuukei/Sakurairo_Scripts/commit/3a344f950c1603dd21223e634b91c5a180f0f005))
+* Pjax开启时typed.js可能重复加载 ([fe48542](https://github.com/Fuukei/Sakurairo_Scripts/commit/fe48542d948ed306d186f7f0546196e5efc24d30))
+* typed.js 在非主页启动 ([796ec41](https://github.com/Fuukei/Sakurairo_Scripts/commit/796ec41676bf051dc0e505961ac810ca2fa1b575))
+* **yiyan:** mashiro_option.yiyan_api未定义时抛出错误 ([a365bcb](https://github.com/Fuukei/Sakurairo_Scripts/commit/a365bcbd9599323724e2391555b5eb79e3c29dfa))
+
+
+### 特性变更
+
+* **imgbox:** 添加替代文本 ([87f0cb1](https://github.com/mirai-mamori/Sakurairo/commit/87f0cb1f4e2874574e4cb61a2f0f9d36bc28a128))
+* _sakurairo.build ([49a559d](https://github.com/Fuukei/Sakurairo_Scripts/commit/49a559d9da77773f6d70c9cc153dc42d51691cb3))
+* 本地提供aplayer 的css ([4f19ad4](https://github.com/Fuukei/Sakurairo_Scripts/commit/4f19ad4eb26758794673816c9bc9a064c0abdc78))
+* 第三方css自动切换cdn ([be8746a](https://github.com/Fuukei/Sakurairo_Scripts/commit/be8746a411c838c22249e9731ccbdc5a12eba89a)), closes [mirai-mamori/Sakurairo#417](https://github.com/mirai-mamori/Sakurairo/issues/417)
+* 封面视频播放时不再销毁所有APlayer，并且会在封面视频暂停时继续播放aplayer ([1efc97c](https://github.com/Fuukei/Sakurairo_Scripts/commit/1efc97c194d43aa91bb41675076a301c16b7168d)), closes [mirai-mamori/Sakurairo#421](https://github.com/mirai-mamori/Sakurairo/issues/421)
+* 添加全局函数getAPlayers、pauseAllPlayer ([e126340](https://github.com/Fuukei/Sakurairo_Scripts/commit/e126340e4a7733af6c11daecde87a292b3216f74))
+* const PRISM_VERSION ([f92fd0f](https://github.com/Fuukei/Sakurairo_Scripts/commit/f92fd0fb2b98a0f9f4c1123e9cc1dad4ffa77a30))
+* ext_shared_lib ([c16a959](https://github.com/Fuukei/Sakurairo_Scripts/commit/c16a9595e3cc41247d89b9c41d83078d5722b606))
+
+
+### 性能提升
+
+* 避免重复querySelect ([b3cb520](https://github.com/Fuukei/Sakurairo_Scripts/commit/b3cb520099696fe7c73d22f01ea7a755420c372a))
+* 调整粒子特效的执行顺序 ([959ffb6](https://github.com/Fuukei/Sakurairo_Scripts/commit/959ffb6c7dbb58cdaddf7506038ccae1382bf647))
+* 调整css加载 ([f3fd6ec](https://github.com/Fuukei/Sakurairo_Scripts/commit/f3fd6ece8bad9d58bb2fceaf87ab1f9b58e014aa))
+* 缓存document.body.clientWidth的值，避免出现意外回流 ([bd7fe34](https://github.com/Fuukei/Sakurairo_Scripts/commit/bd7fe34ebe00daaaafe79061cadce111da84f96b))
+* 使用hls.light ([47b4ebf](https://github.com/Fuukei/Sakurairo_Scripts/commit/47b4ebf1e1ea06c279be061f4c4a0d6123659b00))
+* 延迟aplayer加载 ([cb88d57](https://github.com/Fuukei/Sakurairo_Scripts/commit/cb88d57bd1a49b8ad9fa193cde1a891909316ca2))
+* 优化滚动性能 ([9763953](https://github.com/Fuukei/Sakurairo_Scripts/commit/9763953271fcab1276b1ec916764a9992739afc4))
+* 404页去除不需要的资源 ([dbb459f](https://github.com/mirai-mamori/Sakurairo/commit/dbb459fd67fcddca74ce0025aacdad71fae3ee42))
+* 表情面板图片loading="lazy" ([b9835dc](https://github.com/mirai-mamori/Sakurairo/commit/b9835dccaec77040117c11fe9ab3cb4066f8d679))
+* 非主页页面所需资源预载 ([aa8d2dc](https://github.com/mirai-mamori/Sakurairo/commit/aa8d2dc36ca9a7e80de8f29228a94d0fc8c6d475))
+* 那就还是用isset ([39a5926](https://github.com/mirai-mamori/Sakurairo/commit/39a59263008057cba56b23a4f69cea192a14bff5))
+* 去除不必要的! ([73567f8](https://github.com/mirai-mamori/Sakurairo/commit/73567f8c8adcf8bae229b0646ab11989fbd7ba47))
+* 毋须再加载jQuery ([8bf5ef8](https://github.com/mirai-mamori/Sakurairo/commit/8bf5ef8c30867fb7dc40086e6fc145d15fcb2bcb))
+
 ## 2.3 ツバメ　燕
 ### 重要特性
 #### 前台登陆
