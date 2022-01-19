@@ -23,18 +23,24 @@ get_header();
 			</div>
 			<?php if (iro_opt('captcha_select') === 'iro_captcha') {?>
 				<script>
-					const get_captcha = ele=>fetch("<?php echo rest_url('sakura/v1/captcha/create')?>")
+					if(!'get_captcha' in window){
+					var get_captcha = ele=>fetch("<?php echo rest_url('sakura/v1/captcha/create')?>")
 										.then(async res=>{
-											const data = res.json();
 											if (res.ok){
+												const json = await res.json();
 												ele.src = json['data'];
 												document.querySelector("input[name='timestamp']").value = json["time"];
 												document.querySelector("input[name='id']").value = json["id"];
+											}else{
+												//TODO: 错误处理
 											}
-										});
+										});			
 					const captcha = document.getElementById("captchaimg");
-					captcha && captcha.addEventListener("click",e=>get_captcha(e.target));
-					captcha && get_captcha(captcha);
+					if(captcha){
+						captcha.addEventListener("click",e=>get_captcha(e.target));
+						get_captcha(captcha);
+					}
+					}
 				</script>
 			<?php } ?>
 		<?php }else{ echo Exuser_center(); } ?>
