@@ -1128,6 +1128,7 @@ input[type=week] {
   -webkit-line-clamp: 4;
   height: 6em;
   overflow: hidden;
+  margin-bottom: 0;
 }
 
 .post-list-show {
@@ -7486,7 +7487,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
   .post-list-thumb .post-content-wrap {
     text-align: left !important;
     margin: 0 !important;
-    padding: 6px 15px 0px 15px !important;
+    padding: 6px 15px 20px 15px !important;
     float: none !important;
     box-shadow: none;
     border-top: 0;
