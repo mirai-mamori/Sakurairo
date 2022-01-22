@@ -768,14 +768,16 @@ input[type=week] {
   border-radius: 20px;
   word-break: keep-all;
 }
-
+.site-header.yya{
+  /* background: hsla(var(--header-color-h,0deg),var(--header-color-s,0%),var(--header-color-l,100%),.75); */
+  background: rgba(255, 255, 255, .75);
+  box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4);
+}
 .yya {
   /*     -webkit-transition: all 1s ease !important;
     transition: all 1s ease !important; */
   width: 50%;
   left: 47.5%;
-  background: rgba(255, 255, 255, .75);
-  box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4);
   transition: background 0.8s;
 }
 
