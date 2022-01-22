@@ -884,7 +884,6 @@ li.link-item {
     overflow: hidden;
 }
 <?php } ?>
-
 <?php if(iro_opt('nav_menu_style') == 'sakurairo'){ ?>
 .yya {
     position: fixed;
@@ -892,7 +891,6 @@ li.link-item {
     transition: all 1s ease !important;
     width:<?=iro_opt('nav_menu_shrink_animation', ''); ?>% ;
 	left:calc(97.5% - <?=iro_opt('nav_menu_shrink_animation', ''); ?>%);
-    background: rgba(255, 255, 255, .75);
     box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4);
     border-radius: <?=iro_opt('nav_menu_radius', ''); ?>px !important;
 }
@@ -922,10 +920,7 @@ li.link-item {
     border-radius: 0 !important;
 }
 .yya {
-    position: fixed;
-    background: rgba(255, 255, 255, .75);
     border-radius: 0 !important;
-    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
 }
 }
 
@@ -942,23 +937,6 @@ li.link-item {
     z-index: 999;
     border-radius: 0px;
 }
-
-.yya {
-    position: fixed;
-    left: 0;
-    background: rgba(255, 255, 255, .75);
-    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
-}
-
-@media(max-width:1200px) {
-.yya {
-    position: fixed;
-    left: 0;
-    background: rgba(255, 255, 255, .75);
-    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
-}
-}
-
 @media (max-width:860px) {
 .site-header {
     height: 60px;
