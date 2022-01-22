@@ -28,9 +28,7 @@ $mashiro_logo = iro_opt('mashiro_logo');
 <html <?php language_attributes(); ?>>
 
 <head>
-	<meta name="theme-color" content="" media="(prefers-color-scheme: light)">
-	<meta name="theme-color" content="<?php echo iro_opt('theme_skin_dark') ?>" media="(prefers-color-scheme: dark)">
-
+	<meta name="theme-color">
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
