@@ -13,7 +13,7 @@ function font_end_js_control() {
         global $core_lib_basepath;
         return $core_lib_basepath.'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
     };
-    $vision_resource_basepath = iro_opt('vision_resource_basepath','https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/');
+    $vision_resource_basepath = iro_opt('vision_resource_basepath','https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/');
     $mashiro_opt = [
         'NProgressON' => check(iro_opt('nprogress_on')),
         'audio' => check(iro_opt('note_effects')),
