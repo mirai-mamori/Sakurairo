@@ -782,22 +782,19 @@ function custom_html()
         <script type="text/javascript">
             document.body.insertAdjacentHTML("afterbegin", "<div class=\"loading\"><img src=\"<?=iro_opt('vision_resource_basepath','https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/')?>basic/login_loading.gif\" width=\"58\" height=\"10\"></div>");
             document.head.insertAdjacentHTML("afterbegin", "<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
-            let isLoading = true
             const loading = document.querySelector(".loading"),
              src = "<?= $loginbg ?>",
                 afterLoaded = () => {
-                    if (!isLoading) return
                     document.body.style.backgroundImage = `url(${src})`
                     loading.classList.add("hide");
                     loading.classList.remove("show");
                     loading.addEventListener("transitionend", () => {
-                        loading.style.display = "none"
+                        loading.remove()
                     });
-                    isLoading = false
                 },
                 img = document.createElement('img')
             img.src = src
-            img.onload = afterLoaded
+            img.addEventListener('load',afterLoaded,{once:true})
             <?php //3秒钟内加载不到图片也移除加载中提示
             ?>
             setTimeout(afterLoaded, 3000)
