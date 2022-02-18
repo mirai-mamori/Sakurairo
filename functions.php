@@ -23,8 +23,8 @@ if (!function_exists('iro_opt')) {
         return $GLOBALS['iro_options'][$option] ?? $default;
     }
 }
-$shared_lib_basepath = iro_opt('shared_library_basepath') ? get_template_directory_uri() : 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION;
-$core_lib_basepath =  iro_opt('core_library_basepath') ? get_template_directory_uri() : 'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@' . IRO_VERSION;
+$shared_lib_basepath = iro_opt('shared_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path','https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'). IRO_VERSION);
+$core_lib_basepath =  iro_opt('core_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path','https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'). IRO_VERSION);
 //Update-Checker
 
 require 'update-checker/update-checker.php';

@@ -3425,6 +3425,16 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'default' => false
       ),
 
+      array(
+        'id' => 'lib_cdn_path',
+        'type' => 'select',
+        'title' => __('CDN basepath','sakurairo_csf'),
+        'options'     => array(
+          'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => 'jsDelivr',
+          'https://x.jscdn.host/release/ucode-x/source/Sakurairo/@'  => 'UCode',
+        ),
+      ),
+
       array(        
       'id' => 'external_vendor_lib',
       'type' => 'switcher',
