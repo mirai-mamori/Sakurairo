@@ -3,6 +3,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
   $prefix = 'iro_options';
 
+  if ( ! function_exists( 'iro_validate_optional_url' ) ) {
+    function iro_validate_optional_url( $value ) {
+      if ( !empty( $value ) ) {
+        return csf_validate_url($value);
+      }
+    }
+  }
+
   Sakurairo_CSF::createOptions( $prefix, array(
     'menu_title' => __('iro-Options','sakurairo_csf'),
     'menu_slug'  => 'iro_options',
@@ -1605,7 +1613,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Webp Optimization/External API Desktop Side Random Graphics Address','sakurairo_csf'),
         'desc' => __('Fill in the address','sakurairo_csf'),
-        'default' => 'https://api.maho.cc/random-img/pc.php'
+        'default' => 'https://api.maho.cc/random-img/pc.php',
+        'sanitize' => false,
+        'validate' => 'csf_validate_url',
       ),
 
       array(
@@ -1620,7 +1630,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('External API Mobile Devices Random Image Address','sakurairo_csf'),
         'dependency' => array( 'random_graphs_mts', '==', 'true' ),
         'desc' => __('fill address','sakurairo_csf'),
-        'default' => 'https://api.maho.cc/random-img/mobile.php'
+        'default' => 'https://api.maho.cc/random-img/mobile.php',
+        'sanitize' => false,
+        'validate' => 'csf_validate_url',
       ),
 
       array(
@@ -1727,6 +1739,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Cover Video URL Base Path','sakurairo_csf'),
         'dependency' => array( 'cover_video', '==', 'true' ),
+        'validate' => 'iro_validate_optional_url',
         'desc' => __("Fill in the base path your video located at. For example: https://localhost. Your site's URL is used as default. Please pay attention to the protocol name of the URL.",'sakurairo_csf'),
       ),
 
@@ -2380,6 +2393,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Article Area Featured Image External API Random Image Address','sakurairo_csf'),
         'dependency' => array( 'post_cover_options', '==', 'type_2' ),
         'desc' => __('add URL','sakurairo_csf'),
+        'sanitize' => false,
+        'validate' => 'iro_validate_optional_url',
       ),
 
       array(
