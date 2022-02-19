@@ -264,38 +264,6 @@ function sakura_scripts()
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
-
-    // 20161116 @Louie
-    $movies = iro_opt('cover_video') ?
-        array(
-            'url' => iro_opt('cover_video_link'),
-            'name' => iro_opt('cover_video_title'),
-            'live' => iro_opt('cover_video_live') ? true : false,
-            'loop' => iro_opt('cover_video_loop') ? true : false
-        )
-        : 'close';
-    $auto_height = !iro_opt('cover_full_screen') ? 'fixed' : 'auto';
-    /*     $code_lamp = 'close';
- */    // if (wp_is_mobile()) {
-    //     $auto_height = 'fixed';
-    // }
-    //拦截移动端
-    version_compare($GLOBALS['wp_version'], '5.1', '>=') ? $reply_link_version = 'new' : $reply_link_version = 'old';
-    $gravatar_url = iro_opt('gravatar_proxy') ?: 'secure.gravatar.com/avatar';
-    wp_localize_script('app', 'Poi', array(
-        'pjax' => iro_opt('poi_pjax') ? '1' : '',
-        'movies' => $movies,
-        'windowheight' => $auto_height,
-        /*         'codelamp' => $code_lamp,
- */        'ajaxurl' => admin_url('admin-ajax.php'),
-        'order' => get_option('comment_order'), // ajax comments
-        'formpostion' => 'bottom', // ajax comments 默认为bottom，如果你的表单在顶部则设置为top。
-        'reply_link_version' => $reply_link_version,
-        'api' => esc_url_raw(rest_url()),
-        'nonce' => wp_create_nonce('wp_rest'),
-        'google_analytics_id' => iro_opt('google_analytics_id', ''),
-        'gravatar_url' => $gravatar_url
-    ));
     //前端脚本本地化
     if (!get_locale("zh-CN")) {
         wp_localize_script('app', '_sakurairoi18n', array(
