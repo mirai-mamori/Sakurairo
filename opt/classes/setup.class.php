@@ -12,7 +12,7 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
 
     // Default constants
     public static $premium  = false;
-    public static $version  = '2.2.5';
+    public static $version  = '2.2.6';
     public static $dir      = '';
     public static $url      = '';
     public static $css      = '';
@@ -414,6 +414,7 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
         'color_group',
         'content',
         'date',
+        'datetime',
         'dimensions',
         'fieldset',
         'gallery',
@@ -496,67 +497,67 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
 
       if ( ! self::$enqueue ) {
 
-      // Loads scripts and styles only when needed
-      $wpscreen = get_current_screen();
+        // Loads scripts and styles only when needed
+        $wpscreen = get_current_screen();
 
-      if ( ! empty( self::$args['admin_options'] ) ) {
-        foreach ( self::$args['admin_options'] as $argument ) {
-          if ( substr( $wpscreen->id, -strlen( $argument['menu_slug'] ) ) === $argument['menu_slug'] ) {
-            self::$enqueue = true;
+        if ( ! empty( self::$args['admin_options'] ) ) {
+          foreach ( self::$args['admin_options'] as $argument ) {
+            if ( substr( $wpscreen->id, -strlen( $argument['menu_slug'] ) ) === $argument['menu_slug'] ) {
+              self::$enqueue = true;
+            }
           }
         }
-      }
 
-      if ( ! empty( self::$args['metabox_options'] ) ) {
-        foreach ( self::$args['metabox_options'] as $argument ) {
-          if ( in_array( $wpscreen->post_type, (array) $argument['post_type'] ) ) {
-            self::$enqueue = true;
+        if ( ! empty( self::$args['metabox_options'] ) ) {
+          foreach ( self::$args['metabox_options'] as $argument ) {
+            if ( in_array( $wpscreen->post_type, (array) $argument['post_type'] ) ) {
+              self::$enqueue = true;
+            }
           }
         }
-      }
 
-      if ( ! empty( self::$args['taxonomy_options'] ) ) {
-        foreach ( self::$args['taxonomy_options'] as $argument ) {
-          if ( in_array( $wpscreen->taxonomy, (array) $argument['taxonomy'] ) ) {
-            self::$enqueue = true;
+        if ( ! empty( self::$args['taxonomy_options'] ) ) {
+          foreach ( self::$args['taxonomy_options'] as $argument ) {
+            if ( in_array( $wpscreen->taxonomy, (array) $argument['taxonomy'] ) ) {
+              self::$enqueue = true;
+            }
           }
         }
-      }
 
-      if ( ! empty( self::$shortcode_instances ) ) {
-        foreach ( self::$shortcode_instances as $argument ) {
-          if ( ( $argument['show_in_editor'] && $wpscreen->base === 'post' ) || $argument['show_in_custom'] ) {
-            self::$enqueue = true;
+        if ( ! empty( self::$shortcode_instances ) ) {
+          foreach ( self::$shortcode_instances as $argument ) {
+            if ( ( $argument['show_in_editor'] && $wpscreen->base === 'post' ) || $argument['show_in_custom'] ) {
+              self::$enqueue = true;
+            }
           }
         }
+
+        if ( ! empty( self::$args['widget_options'] ) && ( $wpscreen->id === 'widgets' || $wpscreen->id === 'customize' ) ) {
+          self::$enqueue = true;
+        }
+
+        if ( ! empty( self::$args['customize_options'] ) && $wpscreen->id === 'customize' ) {
+          self::$enqueue = true;
+        }
+
+        if ( ! empty( self::$args['nav_menu_options'] ) && $wpscreen->id === 'nav-menus' ) {
+          self::$enqueue = true;
+        }
+
+        if ( ! empty( self::$args['profile_options'] ) && ( $wpscreen->id === 'profile' || $wpscreen->id === 'user-edit' ) ) {
+          self::$enqueue = true;
+        }
+
+        if ( ! empty( self::$args['comment_options'] ) && $wpscreen->id === 'comment' ) {
+          self::$enqueue = true;
+        }
+
+        if ( $wpscreen->id === 'tools_page_csf-welcome' ) {
+          self::$enqueue = true;
+        }
+
       }
 
-      if ( ! empty( self::$args['widget_options'] ) && ( $wpscreen->id === 'widgets' || $wpscreen->id === 'customize' ) ) {
-        self::$enqueue = true;
-      }
-
-      if ( ! empty( self::$args['customize_options'] ) && $wpscreen->id === 'customize' ) {
-        self::$enqueue = true;
-      }
-
-      if ( ! empty( self::$args['nav_menu_options'] ) && $wpscreen->id === 'nav-menus' ) {
-        self::$enqueue = true;
-      }
-
-      if ( ! empty( self::$args['profile_options'] ) && ( $wpscreen->id === 'profile' || $wpscreen->id === 'user-edit' ) ) {
-        self::$enqueue = true;
-      }
-
-      if ( ! empty( self::$args['comment_options'] ) && $wpscreen->id === 'comment' ) {
-        self::$enqueue = true;
-      }
-
-      if ( $wpscreen->id === 'tools_page_csf-welcome' ) {
-        self::$enqueue = true;
-      }
-
-    }
-    
       if ( ! apply_filters( 'csf_enqueue_assets', self::$enqueue ) ) {
         return;
       }
