@@ -61,7 +61,7 @@ function font_end_js_control() {
         'cache_cover' => check(iro_opt('cache_cover')),
         'site_bg_as_cover' => check(iro_opt('site_bg_as_cover')),
         'yiyan_api' => json_decode(iro_opt('yiyan_api')),
-        'skin_bg0' => 'none',
+        'skin_bg0' => '',
         'skin_bg1' => $vision_resource_basepath.'background/foreground/bg1.png',
         'skin_bg2' => $vision_resource_basepath.'background/foreground/bg2.png',
         'skin_bg3' => $vision_resource_basepath.'background/foreground/bg3.png',
