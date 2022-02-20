@@ -58,7 +58,7 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
                 <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="<?=$text_logo['text']; ?>">
                     <?php echo $text_logo['text']; ?></h1>
             <?php else : ?>
-                <div class="header-tou"><a href="<?php bloginfo('url'); ?>"><img loading="lazy" src="<?=iro_opt('personal_avatar', '') ?: iro_opt('vision_resource_basepath','https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/').'series/avatar.jpg'?>"></a>
+                <div class="header-tou"><a href="<?php bloginfo('url'); ?>"><img loading="lazy" src="<?=iro_opt('personal_avatar', '') ?: iro_opt('vision_resource_basepath','https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/').'series/avatar.jpg'?>"></a>
                 </div>
             <?php endif; ?>
             <div class="header-info">
