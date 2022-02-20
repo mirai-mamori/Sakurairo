@@ -3421,7 +3421,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'type' => 'subheading',
-        'content' => __('Localization','sakurairo_csf'),
+        'content' => __('Resource Control','sakurairo_csf'),
       ),
 
       array(
@@ -3440,16 +3440,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'default' => false
       ),
 
-      array(
-        'id' => 'lib_cdn_path',
-        'type' => 'select',
-        'title' => __('CDN basepath','sakurairo_csf'),
-        'options'     => array(
-          'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => 'jsDelivr',
-          'https://x.jscdn.host/release/ucode-x/source/Sakurairo/@'  => 'UCode',
-        ),
-      ),
-
       array(        
       'id' => 'external_vendor_lib',
       'type' => 'switcher',
@@ -3459,14 +3449,20 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     ),
 
     array(
-      'type'    => 'content',
-      'content' => __('Suggestion: <p>jsDelivr: https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/</p><p>U-Code: https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/</p>','sakurairo_csf'),
+      'id' => 'lib_cdn_path',
+      'type' => 'select',
+      'title' => __('Public CDN Basepath','sakurairo_csf'),
+      'options'     => array(
+        'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => 'jsDelivr',
+        'https://x.jscdn.host/release/ucode-x/source/Sakurairo/@'  => 'U-Code',
+      ),
     ),
 
       array(
         'id' => 'vision_resource_basepath',
         'type' => 'text',
         'title' => __('Vision Resource Basepath','sakurairo_csf'),
+        'desc' => __('This link directory structure needs to be consistent with the <a href="https://github.com/Fuukei/Sakurairo_Vision">Sakurairo Vision</a> repositories officially provided by fuukei, otherwise some resources 404 may appear. The image source officially provided by <a href="https://www.jscdn.pro/">U-Code</a> is adopted by default.','sakurairo_csf'),
         'default' => "https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/"
       ),
 
@@ -3500,8 +3496,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<p>Static Resources Relies on the <a href="https://github.com/Fuukei/Public_Repository">Public Repository</a> Project Created by Fuukei</p>
-        <p>Options Framework Relies on the Codestar Open Source <a href="https://github.com/Codestar/codestar-framework">Codestar Framework</a> Project</p>
+        'content' => __('<p>Options Framework Relies on the Codestar Open Source <a href="https://github.com/Codestar/codestar-framework">Codestar Framework</a> Project</p>
         <p>Update Function Relies on YahnisElsts Open Source <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin Update Checker</a> Project</p>','sakurairo_csf'),
       ),
 
