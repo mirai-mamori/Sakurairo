@@ -3453,9 +3453,10 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       'type' => 'select',
       'title' => __('Public CDN Basepath','sakurairo_csf'),
       'options'     => array(
-        'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => 'jsDelivr',
         'https://x.jscdn.host/release/ucode-x/source/Sakurairo/@'  => 'U-Code',
+        'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => 'jsDelivr',
       ),
+      'default'     => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo/@'
     ),
 
       array(
