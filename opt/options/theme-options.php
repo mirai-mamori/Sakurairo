@@ -3383,7 +3383,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Theme Update Source','sakurairo_csf'),
         'options'     => array(
           'github'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_github.png',
-          'jsdelivr'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_jsd.png',
+          'ucode'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_ucode.png',
           'official_building'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_iro.png',
         ),
         'desc' => __('If you are using a server set up in mainland China, please use the jsDelivr source or the official theme source as your theme update source','sakurairo_csf'),
@@ -3450,11 +3450,11 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
     array(
       'id' => 'lib_cdn_path',
-      'type' => 'select',
+      'type' => 'image_select',
       'title' => __('Public CDN Basepath','sakurairo_csf'),
       'options'     => array(
-        'https://x.jscdn.host/release/ucode-x/source/Sakurairo/@'  => 'U-Code',
-        'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => 'jsDelivr',
+        'https://x.jscdn.host/release/ucode-x/source/Sakurairo/@'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_ucode.png',
+        'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_jsd.png',
       ),
       'default'     => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo/@'
     ),
