@@ -2998,7 +2998,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Dashboard Background Image','sakurairo_csf'),
         'desc' => __('Set your dashboard background image, leave this option blank to show white background','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/admin_background.jpeg'
+        'default' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/admin_background.webp'
       ),
 
       array(
@@ -3017,7 +3017,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Primary Menu Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#8acdea'
+        'default' => '#caa583'
       ),  
 
       array(
@@ -3025,7 +3025,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Secondary Menu Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#6ec5ea'
+        'default' => '#c9915c'
       ),  
 
       array(
@@ -3033,7 +3033,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Emphasis Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#f9bcae'
+        'default' => '#c96100'
       ),  
 
       array(
@@ -3041,7 +3041,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Button Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#f4c57f'
+        'default' => '#7d775f'
       ),  
 
       array(
