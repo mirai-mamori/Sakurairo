@@ -39,7 +39,7 @@ switch(iro_opt('iro_update_source')){
     case 'github':
         $iroThemeUpdateChecker = UpdateCheck('https://github.com/mirai-mamori/Sakurairo','unique-plugin-or-theme-slug');
         break;
-    case 'jsdelivr':
+    case 'ucode':
         $iroThemeUpdateChecker = UpdateCheck('https://update.maho.cc/jsdelivr.json');
         break;
     case 'official_building':
