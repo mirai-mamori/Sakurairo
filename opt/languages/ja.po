@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
 "POT-Creation-Date: 2022-02-22 19:35+0800\n"
-"PO-Revision-Date: 2022-02-22 20:51+0800\n"
+"PO-Revision-Date: 2022-02-22 21:22+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -3416,7 +3416,7 @@ msgstr "ヘッダーに挿入されたコード"
 #: options/theme-options.php:3125
 #, fuzzy
 msgid "Insert HTML code at the end of <head>."
-msgstr "の末尾に HTML コードを挿入します。 <head>.</head>"
+msgstr "</head>の前に HTML コードを挿入します。 "
 
 #: options/theme-options.php:3131
 msgid "Timezone Fix"

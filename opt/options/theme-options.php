@@ -3122,7 +3122,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'     => 'code_editor',
         'sanitize' => false,
         'title' => __('Code inserted in the header','sakurairo_csf'),
-        'desc' => __('Insert HTML code at the end of <head>.','sakurairo_csf'),
+        'desc' => __('Insert HTML code right before </head>.','sakurairo_csf'),
       ),
 
       array(
