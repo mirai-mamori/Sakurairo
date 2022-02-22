@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-02-20 16:03+0800\n"
+"POT-Creation-Date: 2022-02-22 19:35+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -2588,7 +2588,7 @@ msgid "Page Options"
 msgstr ""
 
 #: options/theme-options.php:2487
-msgid "Integrated Options"
+msgid "Common Options"
 msgstr ""
 
 #: options/theme-options.php:2494
@@ -3329,6 +3329,10 @@ msgstr ""
 msgid "Code Highlight Method"
 msgstr ""
 
+#: options/theme-options.php:3242
+msgid "Custom Program"
+msgstr ""
+
 #: options/theme-options.php:3250
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
 msgstr ""
@@ -3533,11 +3537,11 @@ msgstr ""
 msgid "Public CDN Basepath"
 msgstr ""
 
-#: options/theme-options.php:3464
+#: options/theme-options.php:3465
 msgid "Vision Resource Basepath"
 msgstr ""
 
-#: options/theme-options.php:3465
+#: options/theme-options.php:3466
 msgid ""
 "This link directory structure needs to be consistent with the <a href="
 "\"https://github.com/Fuukei/Sakurairo_Vision\">Sakurairo Vision</a> "
@@ -3546,21 +3550,21 @@ msgid ""
 "jscdn.pro/\">U-Code</a> is adopted by default."
 msgstr ""
 
-#: options/theme-options.php:3471
+#: options/theme-options.php:3472
 msgid "Theme Contributors"
 msgstr ""
 
-#: options/theme-options.php:3476
+#: options/theme-options.php:3477
 msgid ""
 "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
 "Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:3481
+#: options/theme-options.php:3482
 msgid "Reference Information"
 msgstr ""
 
-#: options/theme-options.php:3486
+#: options/theme-options.php:3487
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
 "com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -3574,11 +3578,11 @@ msgid ""
 "sakura-logo/\">Hyacm</a></p>"
 msgstr ""
 
-#: options/theme-options.php:3494
+#: options/theme-options.php:3495
 msgid "Dependency Information"
 msgstr ""
 
-#: options/theme-options.php:3499
+#: options/theme-options.php:3500
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</"
@@ -3588,7 +3592,7 @@ msgid ""
 "Checker</a> Project</p>"
 msgstr ""
 
-#: options/theme-options.php:3505
+#: options/theme-options.php:3506
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-"

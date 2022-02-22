@@ -2484,7 +2484,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'page', 
-    'title' => __('Integrated Options','sakurairo_csf'),
+    'title' => __('Common Options','sakurairo_csf'),
     'icon' => 'fa fa-compass',
     'fields' => array(
 
@@ -3239,7 +3239,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'options' => array(
           'hljs' => 'highlight.js',
           'prism' => 'Prism.js',
-          'custom' => 'Custom Program',
+          'custom' => __('Custom Program','sakurairo_csf'),
         ),
         "default" => "hljs"
       ),

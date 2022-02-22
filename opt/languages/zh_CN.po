@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-02-20 16:05+0800\n"
-"PO-Revision-Date: 2022-02-20 16:15+0800\n"
+"POT-Creation-Date: 2022-02-22 19:35+0800\n"
+"PO-Revision-Date: 2022-02-22 20:01+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1967,14 +1967,12 @@ msgid "Typing effects will be appended with double quotes when turned on"
 msgstr "开启之后打字特效将追加双引号"
 
 #: options/theme-options.php:1577
-#, fuzzy
-#| msgid "Cover Signature Field Typing Effects Double Quotes"
 msgid "Cover Signature Field Typing Effects Placeholder"
-msgstr "封面签名栏打字特效双引号"
+msgstr "封面签名栏打字特效占位语句"
 
 #: options/theme-options.php:1586
 msgid "Typed.js initial option"
-msgstr ""
+msgstr "Typed.js初始化选项"
 
 #: options/theme-options.php:1594
 msgid "Cover Random Image Options"
@@ -2625,7 +2623,7 @@ msgid "Page Options"
 msgstr "页面设置"
 
 #: options/theme-options.php:2487
-msgid "Integrated Options"
+msgid "Common Options"
 msgstr "综合设置"
 
 #: options/theme-options.php:2494
@@ -3234,14 +3232,12 @@ msgid ""
 msgstr "启开启之后将在可在实时搜索中搜索评论（如果网站评论数量太多不建议开启）"
 
 #: options/theme-options.php:3109
-#, fuzzy
-#| msgid "Google Stats Code"
 msgid "Google Analytics Id"
-msgstr "谷歌统计代码"
+msgstr "谷歌统计ID"
 
 #: options/theme-options.php:3110
 msgid "If you already have a plugin to handle it, please keep here empty."
-msgstr ""
+msgstr "如果已有类似功能插件，请将此处留空"
 
 #: options/theme-options.php:3116
 msgid "Custom CSS Styles"
@@ -3256,8 +3252,9 @@ msgid "Code inserted in the header"
 msgstr "自定义插入 Header 代码"
 
 #: options/theme-options.php:3125
+#, fuzzy
 msgid "Insert HTML code at the end of <head>."
-msgstr "在 HTML 代码的末尾插入</head>"
+msgstr "在<head>后插入HTML代码"
 
 #: options/theme-options.php:3131
 msgid "Timezone Fix"
@@ -3376,6 +3373,8 @@ msgid ""
 "Start from Sakurairo v2.4.0, plugins names in LightGallery option follow the "
 "form cite in official document (eg. lgHash instead of \"hash\")"
 msgstr ""
+"从Sakurairo v2.4.0开始，LightGallery中的插件名称会与官方文档中引用的表格保持"
+"一致（例如“hash”将被表示为IgHash）"
 
 #: options/theme-options.php:3214
 msgid "LightGallery Lightbox Effect Options"
@@ -3403,6 +3402,10 @@ msgstr ""
 #: options/theme-options.php:3238
 msgid "Code Highlight Method"
 msgstr "代码高亮程序"
+
+#: options/theme-options.php:3242
+msgid "Custom Program"
+msgstr "自定义"
 
 #: options/theme-options.php:3250
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
@@ -3623,11 +3626,11 @@ msgstr ""
 msgid "Public CDN Basepath"
 msgstr "公共 CDN 路径"
 
-#: options/theme-options.php:3464
+#: options/theme-options.php:3465
 msgid "Vision Resource Basepath"
 msgstr "视觉资源路径"
 
-#: options/theme-options.php:3465
+#: options/theme-options.php:3466
 msgid ""
 "This link directory structure needs to be consistent with the <a href="
 "\"https://github.com/Fuukei/Sakurairo_Vision\">Sakurairo Vision</a> "
@@ -3640,21 +3643,21 @@ msgstr ""
 "资源 404。默认采用 <a href=\"https://www.jscdn.pro/\">U-Code</a> 官方提供的镜"
 "像源。"
 
-#: options/theme-options.php:3471
+#: options/theme-options.php:3472
 msgid "Theme Contributors"
 msgstr "贡献者"
 
-#: options/theme-options.php:3476
+#: options/theme-options.php:3477
 msgid ""
 "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
 "Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:3481
+#: options/theme-options.php:3482
 msgid "Reference Information"
 msgstr "引用信息"
 
-#: options/theme-options.php:3486
+#: options/theme-options.php:3487
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
 "com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -3676,11 +3679,11 @@ msgstr ""
 "        <p>白猫样式Logo参考原主题作者白猫，由 <a href=\"https://hyacm.com/"
 "acai/ui/143/sakura-logo/\">Hyacm</a> 提供方案并引用</p>"
 
-#: options/theme-options.php:3494
+#: options/theme-options.php:3495
 msgid "Dependency Information"
 msgstr "依赖信息"
 
-#: options/theme-options.php:3499
+#: options/theme-options.php:3500
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
@@ -3693,7 +3696,7 @@ msgstr ""
 "        <p>更新功能依赖于 YahnisElsts 开源的 <a href=\"https://github.com/"
 "YahnisElsts/plugin-update-checker\">Plugin Update Checker</a> 项目</p>"
 
-#: options/theme-options.php:3505
+#: options/theme-options.php:3506
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "
@@ -3714,7 +3717,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid "A Simple and Lightweight WordPress Option Framework for Sakurairo"
-msgstr ""
+msgstr "一个简单，轻量的WordPress设置框架，专为Sakurairo设计"
 
 #. Author of the plugin/theme
 msgid "Codestar with Fuukei"
@@ -3723,6 +3726,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
+
+#~ msgid "Integrated Options"
+#~ msgstr "综合设置"
 
 #~ msgid "Cover Signature Text"
 #~ msgstr "封面签名栏文本"
