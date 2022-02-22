@@ -2484,7 +2484,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'page', 
-    'title' => __('Integrated Options','sakurairo_csf'),
+    'title' => __('Common Options','sakurairo_csf'),
     'icon' => 'fa fa-compass',
     'fields' => array(
 
@@ -3122,7 +3122,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'     => 'code_editor',
         'sanitize' => false,
         'title' => __('Code inserted in the header','sakurairo_csf'),
-        'desc' => __('Insert HTML code at the end of <head>.','sakurairo_csf'),
+        'desc' => __('Insert HTML code right before </head>.','sakurairo_csf'),
       ),
 
       array(
@@ -3239,7 +3239,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'options' => array(
           'hljs' => 'highlight.js',
           'prism' => 'Prism.js',
-          'custom' => 'Custom Program',
+          'custom' => __('Custom Program','sakurairo_csf'),
         ),
         "default" => "hljs"
       ),

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-02-20 16:04+0800\n"
-"PO-Revision-Date: 2022-02-20 16:05+0800\n"
+"POT-Creation-Date: 2022-02-22 19:35+0800\n"
+"PO-Revision-Date: 2022-02-22 21:22+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2738,7 +2738,8 @@ msgid "Page Options"
 msgstr "ページオプション"
 
 #: options/theme-options.php:2487
-msgid "Integrated Options"
+#, fuzzy
+msgid "Common Options"
 msgstr "統合オプション"
 
 #: options/theme-options.php:2494
@@ -3415,7 +3416,7 @@ msgstr "ヘッダーに挿入されたコード"
 #: options/theme-options.php:3125
 #, fuzzy
 msgid "Insert HTML code at the end of <head>."
-msgstr "の末尾に HTML コードを挿入します。 <head>.</head>"
+msgstr "</head>の前に HTML コードを挿入します。 "
 
 #: options/theme-options.php:3131
 msgid "Timezone Fix"
@@ -3573,6 +3574,10 @@ msgstr ""
 #: options/theme-options.php:3238
 msgid "Code Highlight Method"
 msgstr "コードの強調表示方法"
+
+#: options/theme-options.php:3242
+msgid "Custom Program"
+msgstr ""
 
 #: options/theme-options.php:3250
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
@@ -3819,12 +3824,12 @@ msgstr ""
 msgid "Public CDN Basepath"
 msgstr "パブリック CDN ベースパス"
 
-#: options/theme-options.php:3464
+#: options/theme-options.php:3465
 #, fuzzy
 msgid "Vision Resource Basepath"
 msgstr "ビジョン リソース ベースパス"
 
-#: options/theme-options.php:3465
+#: options/theme-options.php:3466
 #, fuzzy
 msgid ""
 "This link directory structure needs to be consistent with the <a href="
@@ -3839,21 +3844,21 @@ msgstr ""
 "href=\"https://www.jscdn.pro/\">U-Code</a> によって正式に提供されるイメージ"
 "ソースはデフォルトで採用されています。"
 
-#: options/theme-options.php:3471
+#: options/theme-options.php:3472
 msgid "Theme Contributors"
 msgstr "貢献者"
 
-#: options/theme-options.php:3476
+#: options/theme-options.php:3477
 msgid ""
 "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
 "Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:3481
+#: options/theme-options.php:3482
 msgid "Reference Information"
 msgstr "参照情報"
 
-#: options/theme-options.php:3486
+#: options/theme-options.php:3487
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
 "com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -3877,11 +3882,11 @@ msgstr ""
 "\"https://hyacm.com/acai/ui/143/sakura-logo/\">提供され、Hyacm</a>によって参"
 "照されるように</p>"
 
-#: options/theme-options.php:3494
+#: options/theme-options.php:3495
 msgid "Dependency Information"
 msgstr "依存情報"
 
-#: options/theme-options.php:3499
+#: options/theme-options.php:3500
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
@@ -3890,7 +3895,7 @@ msgid ""
 "Checker</a> Project</p>"
 msgstr ""
 
-#: options/theme-options.php:3505
+#: options/theme-options.php:3506
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "
@@ -3920,6 +3925,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
+
+#~ msgid "Integrated Options"
+#~ msgstr "統合オプション"
 
 #~ msgid "Cover Signature Text"
 #~ msgstr "表紙署名テキスト"
