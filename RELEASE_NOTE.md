@@ -1,5 +1,11 @@
 # 版本发布记录
 ## 2.4
+### 版本亮点
+1. 优化了页面首次渲染性能，减少了首次渲染时出现卡帧的情况
+2. 整理了所有对jsDelivr的依赖，主题可以完全脱离jsDelivr运行。现在可以将脚本与样式表资源切换到本地或者UCode CDN上
+3. 可编程查询客户端脚本的构建版本 \_sakurairo.build
+4. 合并mashiro_options和Poi
+
 ### 错误修复
 
 * 翻译丢失 ([404f1a6](https://github.com/Fuukei/Sakurairo_Scripts/commit/404f1a601e287e160f08b42c01162cadde3a052a)), closes [mirai-mamori/Sakurairo#400](https://github.com/mirai-mamori/Sakurairo/issues/400)
@@ -12,19 +18,24 @@
 * Pjax开启时typed.js可能重复加载 ([fe48542](https://github.com/Fuukei/Sakurairo_Scripts/commit/fe48542d948ed306d186f7f0546196e5efc24d30))
 * typed.js 在非主页启动 ([796ec41](https://github.com/Fuukei/Sakurairo_Scripts/commit/796ec41676bf051dc0e505961ac810ca2fa1b575))
 * **yiyan:** mashiro_option.yiyan_api未定义时抛出错误 ([a365bcb](https://github.com/Fuukei/Sakurairo_Scripts/commit/a365bcbd9599323724e2391555b5eb79e3c29dfa))
-
+* **登录页面**: 登录表单提交发生错误时，表单可能被遮挡而无法获得焦点 ([7139ddf](https://github.com/mirai-mamori/Sakurairo/commit/7139ddff849cb4c7e14c9a0f36034ea75700440c))
+* **主题设置**: 部分选项对含参数的URL处理不当；增加自动验证  Fix #440 ((563abae)[https://github.com/mirai-mamori/Sakurairo/commit/563abaec3bbdfbe6de80b443c9563f6957787b38])
+* 没有摘要的文章显示不正常 ([309aae0](https://github.com/mirai-mamori/Sakurairo/commit/309aae02f29f4f3962d47af2f44d9b0fa64ff5ac))
+* 登陆模板 ([3f5e43e](https://github.com/mirai-mamori/Sakurairo/commit/3f5e43e8e244f55906430ef6dfb97039f8869102))
 
 ### 特性变更
 
 * **imgbox:** 添加替代文本 ([87f0cb1](https://github.com/mirai-mamori/Sakurairo/commit/87f0cb1f4e2874574e4cb61a2f0f9d36bc28a128))
-* _sakurairo.build ([49a559d](https://github.com/Fuukei/Sakurairo_Scripts/commit/49a559d9da77773f6d70c9cc153dc42d51691cb3))
+* \_sakurairo.build ([49a559d](https://github.com/Fuukei/Sakurairo_Scripts/commit/49a559d9da77773f6d70c9cc153dc42d51691cb3))
 * 本地提供aplayer 的css ([4f19ad4](https://github.com/Fuukei/Sakurairo_Scripts/commit/4f19ad4eb26758794673816c9bc9a064c0abdc78))
 * 第三方css自动切换cdn ([be8746a](https://github.com/Fuukei/Sakurairo_Scripts/commit/be8746a411c838c22249e9731ccbdc5a12eba89a)), closes [mirai-mamori/Sakurairo#417](https://github.com/mirai-mamori/Sakurairo/issues/417)
 * 封面视频播放时不再销毁所有APlayer，并且会在封面视频暂停时继续播放aplayer ([1efc97c](https://github.com/Fuukei/Sakurairo_Scripts/commit/1efc97c194d43aa91bb41675076a301c16b7168d)), closes [mirai-mamori/Sakurairo#421](https://github.com/mirai-mamori/Sakurairo/issues/421)
 * 添加全局函数getAPlayers、pauseAllPlayer ([e126340](https://github.com/Fuukei/Sakurairo_Scripts/commit/e126340e4a7733af6c11daecde87a292b3216f74))
 * const PRISM_VERSION ([f92fd0f](https://github.com/Fuukei/Sakurairo_Scripts/commit/f92fd0fb2b98a0f9f4c1123e9cc1dad4ffa77a30))
 * ext_shared_lib ([c16a959](https://github.com/Fuukei/Sakurairo_Scripts/commit/c16a9595e3cc41247d89b9c41d83078d5722b606))
-
+* 合并mashiro_options和Poi([86ed17c9](https://github.com/mirai-mamori/Sakurairo/commit/86ed17c94d78213dcbdaeed7e8723a6eb79ce580))
+* **设置框架**: 升级到2.2.6([56c8a3b0](https://github.com/mirai-mamori/Sakurairo/commit/56c8a3b0bd1327fbee8fa4b2c083b258ae6b0f20))
+* 可更换库的basepath([7b688799](https://github.com/mirai-mamori/Sakurairo/commit/7b6887997a89d0ef2582aa848c192d29812dc980))
 
 ### 性能提升
 
@@ -40,7 +51,7 @@
 * 非主页页面所需资源预载 ([aa8d2dc](https://github.com/mirai-mamori/Sakurairo/commit/aa8d2dc36ca9a7e80de8f29228a94d0fc8c6d475))
 * 那就还是用isset ([39a5926](https://github.com/mirai-mamori/Sakurairo/commit/39a59263008057cba56b23a4f69cea192a14bff5))
 * 去除不必要的! ([73567f8](https://github.com/mirai-mamori/Sakurairo/commit/73567f8c8adcf8bae229b0646ab11989fbd7ba47))
-* 毋须再加载jQuery ([8bf5ef8](https://github.com/mirai-mamori/Sakurairo/commit/8bf5ef8c30867fb7dc40086e6fc145d15fcb2bcb))
+* 评论图片上传图片加载占位符未跟随主题设置 ([9a51ca9](https://github.com/Fuukei/Sakurairo_Scripts/commit/9a51ca900bddb0f8d9649629aed4ca21d5b47ebc))
 
 ## 2.3 ツバメ　燕
 ### 重要特性
