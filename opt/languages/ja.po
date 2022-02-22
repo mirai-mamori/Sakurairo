@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-02-22 19:35+0800\n"
-"PO-Revision-Date: 2022-02-22 21:22+0800\n"
+"POT-Creation-Date: 2022-02-22 22:39+0800\n"
+"PO-Revision-Date: 2022-02-22 22:39+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -3415,7 +3415,7 @@ msgstr "ヘッダーに挿入されたコード"
 
 #: options/theme-options.php:3125
 #, fuzzy
-msgid "Insert HTML code at the end of <head>."
+msgid "Insert HTML code right before </head>."
 msgstr "</head>の前に HTML コードを挿入します。 "
 
 #: options/theme-options.php:3131
@@ -3539,13 +3539,12 @@ msgstr ""
 "discussions"
 
 #: options/theme-options.php:3206
-#, fuzzy
 msgid ""
 "Start from Sakurairo v2.4.0, plugins names in LightGallery option follow the "
 "form cite in official document (eg. lgHash instead of \"hash\")"
 msgstr ""
-"桜里v2.4.0から始めると、LightGalleryオプションのプラグイン名は公式文書の形式"
-"に従います(例えば「ハッシュ」の代わりにlgHash)"
+"v2.4.0から始めると、LightGalleryオプションのプラグイン名は公式文書の形式に従"
+"います(例えば「ハッシュ」の代わりにlgHash)"
 
 #: options/theme-options.php:3214
 msgid "LightGallery Lightbox Effect Options"
@@ -3729,11 +3728,11 @@ msgstr "テーマの更新元"
 
 #: options/theme-options.php:3389
 msgid ""
-"If you are using a server set up in mainland China, please use the jsDelivr "
+"If you are using a server set up in mainland China, please use the U-Code "
 "source or the official theme source as your theme update source"
 msgstr ""
-"中国本土で設定されたサーバーを使用している場合は、jsDelivrソースまたは公式"
-"テーマソースをテーマアップデートソースとして使用してください。"
+"中国本土で設定されたサーバーを使用している場合は、U-Codeソースまたは公式テー"
+"マソースをテーマアップデートソースとして使用してください。"
 
 #: options/theme-options.php:3396
 msgid "Theme Update Test Channel Disclaimer"

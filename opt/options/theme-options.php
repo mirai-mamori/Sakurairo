@@ -3386,7 +3386,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'ucode'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_ucode.png',
           'official_building'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_iro.png',
         ),
-        'desc' => __('If you are using a server set up in mainland China, please use the jsDelivr source or the official theme source as your theme update source','sakurairo_csf'),
+        'desc' => __('If you are using a server set up in mainland China, please use the U-Code source or the official theme source as your theme update source','sakurairo_csf'),
         'default'     => 'github'
       ),
 

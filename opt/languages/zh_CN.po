@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-02-22 21:18+0800\n"
-"PO-Revision-Date: 2022-02-22 21:19+0800\n"
+"POT-Creation-Date: 2022-02-22 22:40+0800\n"
+"PO-Revision-Date: 2022-02-22 22:41+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -3541,10 +3541,10 @@ msgstr "主题更新源"
 
 #: options/theme-options.php:3389
 msgid ""
-"If you are using a server set up in mainland China, please use the jsDelivr "
+"If you are using a server set up in mainland China, please use the U-Code "
 "source or the official theme source as your theme update source"
 msgstr ""
-"如果你使用的是架设在国内的服务器，请使用jsDelivr源或主题官方源作为你的主题更"
+"如果你使用的是架设在国内的服务器，请使用 U-Code 源或主题官方源作为你的主题更"
 "新源"
 
 #: options/theme-options.php:3396
