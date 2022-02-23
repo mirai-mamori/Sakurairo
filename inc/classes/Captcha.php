@@ -42,7 +42,8 @@ class Captcha
     private function crypt_captcha(): string
     {
         //return md5($this->captchCode);
-        return password_hash($this->captchCode, PASSWORD_DEFAULT);
+        // return password_hash($this->captchCode, PASSWORD_DEFAULT);
+        return wp_hash_password($this->captchCode);
     }
 
     /**
@@ -55,7 +56,8 @@ class Captcha
     public function verify_captcha(string $captcha, string $hash): bool
     {
         //return md5($captcha) == $hash ? true : false;
-        return password_verify($captcha, $hash);
+        // return password_verify($captcha, $hash);
+        return wp_check_password($captcha, $hash);
     }
 
     /**

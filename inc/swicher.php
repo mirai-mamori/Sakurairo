@@ -76,22 +76,10 @@ function font_end_js_control() {
     !empty($reception_background['img5']) && $iro_opt['skin_bg4'] = $reception_background['img5'];
     $iro_opt['jsdelivr_css_src'] = iro_opt('shared_library_basepath') ? (get_template_directory_uri().'/css/lib.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'.IRO_VERSION.'/css/lib.css');
     if (iro_opt('lightgallery')){
+        # 请务必使用正确标准的json格式
         $lightGallery = str_replace(PHP_EOL, '', iro_opt('lightgallery_option')); 
-        # 这里简单的做一下处理，请务必使用正确标准的json格式
-        # 例：
-        /*
-        {"a":"b",
-         "c":1,
-         "d":true,
-         "e":[1,2,3]
-        }
-        */
-        // if(preg_match('/\w:/', $lightGallery)){
-        //     $lightGallery = preg_replace('/(\w+):/is', '"$1":', $lightGallery);
-        // }
         $iro_opt['lightGallery'] = json_decode($lightGallery,true);
     }
-    if (iro_opt('theme_darkmode_auto')){$iro_opt['dm_strategy'] = iro_opt('theme_darkmode_strategy','time');}
     if (iro_opt('aplayer_server') != 'off'){
         $iro_opt['float_player_on'] = true;
         $iro_opt['meting_api_url'] = rest_url('sakura/v1/meting/aplayer');
@@ -104,20 +92,13 @@ function font_end_js_control() {
         $theme_light = iro_opt('code_highlight_prism_theme_light');
         $theme_dark = iro_opt('code_highlight_prism_theme_dark');
         $preload_blur = iro_opt('preload_blur',0);
-        if ($preload_blur){
-            $iro_opt['preload_blur'] = $preload_blur;
-        }
-        if ($theme_light != ''){
-            $iro_opt['code_highlight_prism']['theme'] = ['light' => $theme_light];
-        }
-        if ($theme_dark != ''){
-            $iro_opt['code_highlight_prism']['theme'] = ['dark' => $theme_dark];
-        }
+        if ($preload_blur) $iro_opt['preload_blur'] = $preload_blur;
+        if ($theme_light) $iro_opt['code_highlight_prism']['theme'] = ['light' => $theme_light];
+        if ($theme_dark) $iro_opt['code_highlight_prism']['theme'] = ['dark' => $theme_dark];
     }
     $sakura_effect = iro_opt('sakura_falling_effects');
-    if($sakura_effect != 'off'){
-        $iro_opt['effect'] = array('amount'=>$sakura_effect);
-    }
+    if($sakura_effect != 'off') $iro_opt['effect'] = array('amount'=>$sakura_effect);
+    if (iro_opt('theme_darkmode_auto')) $iro_opt['dm_strategy'] = iro_opt('theme_darkmode_strategy','time');
     wp_add_inline_script('app', 'var _iro = '.json_encode($iro_opt,JSON_NUMERIC_CHECK|JSON_UNESCAPED_UNICODE),'before');
 }
 add_action('wp_head', 'font_end_js_control');
