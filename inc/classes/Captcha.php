@@ -15,7 +15,7 @@ class Captcha
      */
     public function __construct()
     {
-        $this->font = dirname(dirname(__FILE__)) . '/KumoFont.ttf';
+        $this->font = STYLESHEETPATH . '/inc/KumoFont.ttf';
         $this->timestamp = time();
         $this->captchCode = '';
     }
