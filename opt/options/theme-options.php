@@ -441,8 +441,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'       => 'image_select',
         'title'      => __('Nav Menu Style','sakurairo_csf'),
         'options'    => array(
-          'sakurairo' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/nav_menu_style_iro.png',
-          'sakura' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/nav_menu_style_sakura.png',
+          'sakurairo' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/nav_menu_style_iro.webp',
+          'sakura' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/nav_menu_style_sakura.webp',
         ),
         'default'    => 'sakurairo'
       ),
@@ -661,8 +661,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Style Menu Display','sakurairo_csf'),
         'desc' => __('You can choose to display the style menu simply or in full. The full display will show the font toggle function and text hints','sakurairo_csf'),
         'options' => array(
-          'full' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/style_menu_full.png',
-          'mini' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/style_menu_mini.png',
+          'full' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/style_menu_full.webp',
+          'mini' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/style_menu_mini.webp',
         ),
         'default' => 'full'
       ),
@@ -1494,8 +1494,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'image_select',
         'title' => __('Cover Info Bar Style','sakurairo_csf'),
         'options' => array(
-          'v1' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/infor_bar_style_v1.png',
-          'v2' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/infor_bar_style_v2.png',
+          'v1' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/infor_bar_style_v1.webp',
+          'v2' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/infor_bar_style_v2.webp',
         ),
         'default' => 'v1'
       ),
@@ -1783,14 +1783,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/muh2'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_h2.gif',
           'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/flat_colorful'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_fc.gif',
           'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/sakura'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_sa.gif',
-          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/macaronblue'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_mb.png',
-          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/macarongreen'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_mg.png',
-          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/macaronpurple'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_mp.png',
-          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/pink'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_sp.png',
-          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/orange'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_so.png',
-          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/sangosyu'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_sg.png',
-          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/sora'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_ts.png',
-          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/nae'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_nn.png',
+          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/macaronblue'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_mb.webp',
+          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/macarongreen'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_mg.webp',
+          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/macaronpurple'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_mp.webp',
+          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/pink'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_sp.webp',
+          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/orange'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_so.webp',
+          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/sangosyu'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_sg.webp',
+          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/sora'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_ts.webp',
+          'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/nae'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/display_icon_nn.webp',
         ),
         'default'     => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/display_icon/fluent_design'
       ),
@@ -2076,7 +2076,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         ),
         'desc' => __('Best width 820px, best height 67px','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/announcement_bg.jpg'
+        'default' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/announcement_bg.webp'
       ),
 
       array(
@@ -2105,9 +2105,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Bulletin Board Alignment','sakurairo_csf'),
         'dependency' => array( 'bulletin_board', '==', 'true' ),
         'options'     => array(
-          'left'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/announce_text_left.png',
-          'right'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/announce_text_right.png',
-          'center'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/announce_text_center.png',
+          'left'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/announce_text_left.webp',
+          'right'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/announce_text_right.webp',
+          'center'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/announce_text_center.webp',
         ),
         'default'     => 'left'
       ),
@@ -2155,9 +2155,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'image_select',
         'title' => __('Area Title Alignment','sakurairo_csf'),
         'options' => array(
-          'left' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/area_title_text_left.png',
-          'right' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/area_title_text_right.png',
-          'center' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/area_title_text_center.png',
+          'left' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/area_title_text_left.webp',
+          'right' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/area_title_text_right.webp',
+          'center' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/area_title_text_center.webp',
         ),
         'default' => 'left'
       ),
@@ -2192,8 +2192,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'image_select',
         'title' => __('Display Area Style','sakurairo_csf'),
         'options' => array(
-          'left_and_right' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/exhibition_area_style_lr.png',
-          'bottom_to_top' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/exhibition_area_style_ud.png',
+          'left_and_right' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/exhibition_area_style_lr.webp',
+          'bottom_to_top' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/exhibition_area_style_ud.webp',
         ),
         'default' => 'left_and_right'
       ),
@@ -2317,9 +2317,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'link1' => '',
           'link2' => '',
           'link3' => '',
-          'img1'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/exhibition1.jpg',
-          'img2'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/exhibition2.jpg',
-          'img3' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/exhibition3.jpg',
+          'img1'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/exhibition1.webp',
+          'img2'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/exhibition2.webp',
+          'img3' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/exhibition3.webp',
           'title1' => 'アンコール',
           'title2' => 'ハルジオン',
           'title3' => 'かいぶつ',
@@ -2343,8 +2343,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'       => 'image_select',
         'title' => __('Article Area Display Style','sakurairo_csf'),
         'options'    => array(
-          'imageflow' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/post_list_style_sakura_left.png',
-          'akinastyle' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/post_list_style_akina.png',
+          'imageflow' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/post_list_style_sakura_left.webp',
+          'akinastyle' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/post_list_style_akina.webp',
         ),
         'default'    => 'imageflow'
       ),
@@ -2356,8 +2356,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'dependency' => array( 'post_list_style', '==', 'akinastyle' ),
         'desc' => __('You can choose a circular or a rectangular display of the featured image','sakurairo_csf'),
         'options'    => array(
-          'round' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/post_list_style_akina.png',
-          'square' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/post_list_style_akina2.png',
+          'round' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/post_list_style_akina.webp',
+          'square' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/post_list_style_akina2.webp',
         ),
         'default'    => 'round'
       ),
@@ -2369,9 +2369,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
         'desc' => __('You can choose different directions to display the featured images','sakurairo_csf'),
         'options' => array(
-          'alternate' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/post_list_style_sakura1.png',
-          'left' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/post_list_style_sakura2.png',
-          'right' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/post_list_style_sakura3.png',
+          'alternate' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/post_list_style_sakura1.webp',
+          'left' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/post_list_style_sakura2.webp',
+          'right' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/post_list_style_sakura3.webp',
         ),
         'default' => 'alternate'
       ),
@@ -2493,8 +2493,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'image_select',
         'title' => __('Page Style','sakurairo_csf'),
         'options' => array(
-          'sakurairo' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/page_style_iro.png',
-          'sakura' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/page_style_sakura.png',
+          'sakurairo' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/page_style_iro.webp',
+          'sakura' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/page_style_sakura.webp',
         ),
         'default' => 'sakurairo'
       ),
@@ -2729,9 +2729,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'image_select',
         'title' => __('Friend Link Template Unit Alignment','sakurairo_csf'),
         'options'     => array(
-          'left'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/friend_link_left.png',
-          'right'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/friend_link_right.png',
-          'center'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/friend_link_center.png',
+          'left'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/friend_link_left.webp',
+          'right'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/friend_link_right.webp',
+          'center'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/friend_link_center.webp',
         ),
         'default'     => 'left'
       ),
@@ -2906,7 +2906,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Mail Template Featured Image','sakurairo_csf'),
         'desc' => __('Set the background image of your reply email','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/mail_head.jpg'
+        'default' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/mail_head.webp'
       ),
 
       array(
@@ -2959,7 +2959,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Login Screen Background Image','sakurairo_csf'),
         'desc' => __('Set your login screen background image, leave this option blank to show the default','sakurairo_csf'),
         'library'      => 'image',
-        'default'     => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/login_background.jpg'
+        'default'     => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/login_background.webp'
       ),
 
       array(
@@ -2976,7 +2976,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Login Screen Logo','sakurairo_csf'),
         'desc' => __('Set your login screen Logo','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/login_logo.png'
+        'default' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/login_logo.webp'
       ),
 
       array(
@@ -3006,8 +3006,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'image_select',
         'title' => __('Dashboard Options Menu Style','sakurairo_csf'),
         'options' => array(
-          'v1' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/admin_left_style_v1.png',
-          'v2' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/admin_left_style_v2.png',
+          'v1' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/admin_left_style_v1.webp',
+          'v2' => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/admin_left_style_v2.webp',
         ),
         'default' => 'v1'
       ),  
@@ -3363,7 +3363,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/tsubamelogo.gif"  alt="Theme Information" />','sakurairo_csf'),
+        'content' => __('<img src="https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/headlogo.webp"  alt="Theme Information" />','sakurairo_csf'),
       ),
 
       array(
@@ -3382,9 +3382,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'        => 'image_select',
         'title' => __('Theme Update Source','sakurairo_csf'),
         'options'     => array(
-          'github'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_github.png',
-          'ucode'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_ucode.png',
-          'official_building'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_iro.png',
+          'github'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_github.webp',
+          'ucode'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_ucode.webp',
+          'official_building'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_iro.webp',
         ),
         'desc' => __('If you are using a server set up in mainland China, please use the U-Code source or the official theme source as your theme update source','sakurairo_csf'),
         'default'     => 'github'
@@ -3453,8 +3453,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       'type' => 'image_select',
       'title' => __('Public CDN Basepath','sakurairo_csf'),
       'options'     => array(
-        'https://x.jscdn.host/release/ucode-x/source/Sakurairo/@'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_ucode.png',
-        'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_jsd.png',
+        'https://x.jscdn.host/release/ucode-x/source/Sakurairo/@'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_ucode.webp',
+        'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/options/update_source_jsd.webp',
       ),
       'default'     => 'https://x.jscdn.host/release/ucode-x/source/Sakurairo/@'
     ),
