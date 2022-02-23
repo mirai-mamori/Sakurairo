@@ -27,10 +27,10 @@ class Captcha
      */
     private function create_captcha(): void
     {
-        $dict = 'abcdefhjkmnpqrstuvwxy12345678';
-        for ($i = 0; $i < 5; $i++) {
-            $fontcontent = substr($dict, mt_rand(0, strlen($dict) - 1), 1);
-            $this->captchCode .= $fontcontent;
+        $dict = str_split('abcdefhjkmnpqrstuvwxy12345678');
+        $rand_keys = array_rand($dict,5);
+        foreach($rand_keys as $value){
+            $this-> captchCode .= $dict[$value];
         }
     }
 
