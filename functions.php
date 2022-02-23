@@ -241,6 +241,7 @@ add_action('after_setup_theme', 'akina_content_width', 0);
 /**
  * Enqueue scripts and styles.
  */
+
 function sakura_scripts()
 {
     global $core_lib_basepath;
