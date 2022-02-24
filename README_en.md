@@ -15,8 +15,6 @@
 
 ## How to use:
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/irotw.png)](https://iro.tw/)
-
 - Blogs based on iro：https://iro.tw/demo.html
 
 - QQ Group：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
@@ -59,8 +57,6 @@ Please fill in with the issue template. Thanks for your cooperation.
 - The theme uses the [Live2d-Widget](https://github.com/stevenjoezhang/live2d-widget) by Stevenjoezhang as default Live2D Model.
 
 ### Dependencies:
-
-- The theme uses Fuukei [Public Repository](https://github.com/Fuukei/Public_Repository) as default static resource repository.
 
 - The theme uses Codestar [Codestar Framework](https://github.com/Codestar/codestar-framework) as settings framework. 
 

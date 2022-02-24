@@ -15,8 +15,6 @@
 
 ## 使用相關：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/irotw.png)](https://iro.tw/)
-
 - 使用本主題的站點：https://iro.tw/demo.html
 
 - 主題交流QQ群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
@@ -59,8 +57,6 @@
 - 本主題使用 Stevenjoezhang [Live2d-Widget](https://github.com/stevenjoezhang/live2d-widget) 作為默認看板娘
 
 ### 依賴相關：
-
-- 本主題使用 Fuukei [Public Repository](https://github.com/Fuukei/Public_Repository) 作為默認靜態資源庫
 
 - 本主題使用 Codestar [Codestar Framework](https://github.com/Codestar/codestar-framework) 作為設置框架
 

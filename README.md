@@ -15,8 +15,6 @@
 
 ## 使用相关：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/irotw.png)](https://iro.tw/)
-
 - 使用本主题的博客：https://iro.tw/demo.html
 
 - 主题交流群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
@@ -28,17 +26,13 @@
 
 ## 主题下载：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/dl.png)](https://iro.tw/)
+[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/github.png)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/github.png)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/gitee.png)](https://gitee.com/mirai-mamori/Sakurairo)
+[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/gitee.png)](https://gitee.com/mirai-mamori/Sakurairo)
 
 ## 支持我们：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/star.png)](https://github.com/mirai-mamori/Sakurairo)
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/sponsor.png)](https://afdian.net/@mamori)
+[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/twos.png)](https://afdian.net/@mamori)
 
 ## 主题贡献：
 
@@ -73,8 +67,6 @@
 - 本主题使用 Stevenjoezhang [Live2d-Widget](https://github.com/stevenjoezhang/live2d-widget) 作为默认看板娘
 
 ### 依赖相关：
-
-- 本主题使用 Fuukei [Public Repository](https://github.com/Fuukei/Public_Repository) 作为默认静态资源库
 
 - 本主题使用 Codestar [Codestar Framework](https://github.com/Codestar/codestar-framework) 作为设置框架
 
