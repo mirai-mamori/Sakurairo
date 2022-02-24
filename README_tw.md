@@ -1,6 +1,6 @@
 [简体中文](README.md) | **繁體中文** | [English](README_en.md) | [日本語](README_ja.md)
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/banner.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -11,11 +11,9 @@
 
 ## 版本宣傳：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/tw/function.png)](https://iro.tw/)
+[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/versions_tw.png)](https://iro.tw/)
 
 ## 使用相關：
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/irotw.png)](https://iro.tw/)
 
 - 使用本主題的站點：https://iro.tw/demo.html
 
@@ -59,8 +57,6 @@
 - 本主題使用 Stevenjoezhang [Live2d-Widget](https://github.com/stevenjoezhang/live2d-widget) 作為默認看板娘
 
 ### 依賴相關：
-
-- 本主題使用 Fuukei [Public Repository](https://github.com/Fuukei/Public_Repository) 作為默認靜態資源庫
 
 - 本主題使用 Codestar [Codestar Framework](https://github.com/Codestar/codestar-framework) 作為設置框架
 

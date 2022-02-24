@@ -1,6 +1,6 @@
 [简体中文](README.md) | [繁體中文](README_tw.md) | [English](README_en.md) | **日本語**
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/banner.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -11,11 +11,9 @@
 
 ## バージョン紹介：
 
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/jp/function.png)](https://iro.tw/)
+[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/versions_jp.png)](https://iro.tw/)
 
 ## 活用方法：
-
-[![image](https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@0.9.3/vision/readme/tsubame/cn/irotw.png)](https://iro.tw/)
 
 - 本テーマを利用しているサイト：https://iro.tw/demo.html
 
@@ -58,8 +56,6 @@
 - 本テーマは Stevenjoezhangさんの [Live2d-Widget](https://github.com/stevenjoezhang/live2d-widget) をデフォルト看板娘として使用しています。
 
 ### 依存関係：
-
-- 本テーマでは、Fuukeiさんの[Public Repository](https://github.com/Fuukei/Public_Repository) をデフォルトの静的リソースリポジトリとして使用しています。
 
 - 本テーマでは、Codestarさんの[Codestar Framework](https://github.com/Codestar/codestar-framework) を設定用フレームワークとして使用しています。
 

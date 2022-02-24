@@ -9,7 +9,7 @@
 
 ?>
 <div class="top-feature-row">
-    <h1 class="fes-title" style="font-family: 'Ubuntu', sans-serif;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> <?php echo iro_opt('exhibition_area_title', '展示'); ?></h1>
+    <h1 class="fes-title"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> <?php echo iro_opt('exhibition_area_title', '展示'); ?></h1>
     <div class="top-feature-v2">
         <div class="the-feature square from_left_and_right">
             <a href="<?php echo $exhibition['link1']; ?>" target="_blank">

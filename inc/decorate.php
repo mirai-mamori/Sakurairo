@@ -38,7 +38,12 @@ if (iro_opt('theme_skin')) { ?>
 .the-feature.from_left_and_right .info,.the-feature.from_left_and_right .info h3{background: <?=iro_opt('exhibition_background_color'); ?> ;}
 
 /*白猫样式Logo*/
-<?php if (iro_opt('mashiro_logo_option', 'true')) {?>
+<?php if (iro_opt('mashiro_logo_option', 'true')) {
+     $mashiro_logo = iro_opt('mashiro_logo');
+    ?>
+    .logolink{
+        font-family: '<?= $mashiro_logo['font_name']; ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+    }
 .logolink .sakuraso {
     background-color: rgba(255, 255, 255, .5);
     border-radius: 5px;
@@ -175,7 +180,7 @@ if ( iro_opt('post_list_akina_type') == 'square') { ?>
 <?php } // liststyle ?>
 <?php 
 //$image_api = 'background-image: url("'.rest_url('sakura/v1/image/cover').'");';
-$bg_style = !iro_opt('cover_full_screen') ? 'background-position: center center;background-attachment: inherit;' : '';
+$bg_style = iro_opt('cover_full_screen') ?'': 'background-position: center center;background-attachment: inherit;';
 ?>
 #centerbg{<?php 
 echo $bg_style;
@@ -391,7 +396,7 @@ font-size: <?=iro_opt('global_font_size'); ?>px;
 }
 
 h1.main-title,h1.fes-title{
-font-family:<?=iro_opt('area_title_font'); ?> !important;
+font-family:<?=iro_opt('area_title_font'); ?>;
 }
 
 .header-info p{
@@ -879,7 +884,6 @@ li.link-item {
     overflow: hidden;
 }
 <?php } ?>
-
 <?php if(iro_opt('nav_menu_style') == 'sakurairo'){ ?>
 .yya {
     position: fixed;
@@ -887,7 +891,6 @@ li.link-item {
     transition: all 1s ease !important;
     width:<?=iro_opt('nav_menu_shrink_animation', ''); ?>% ;
 	left:calc(97.5% - <?=iro_opt('nav_menu_shrink_animation', ''); ?>%);
-    background: rgba(255, 255, 255, .75);
     box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4);
     border-radius: <?=iro_opt('nav_menu_radius', ''); ?>px !important;
 }
@@ -917,10 +920,7 @@ li.link-item {
     border-radius: 0 !important;
 }
 .yya {
-    position: fixed;
-    background: rgba(255, 255, 255, .75);
     border-radius: 0 !important;
-    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
 }
 }
 
@@ -937,23 +937,6 @@ li.link-item {
     z-index: 999;
     border-radius: 0px;
 }
-
-.yya {
-    position: fixed;
-    left: 0;
-    background: rgba(255, 255, 255, .75);
-    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
-}
-
-@media(max-width:1200px) {
-.yya {
-    position: fixed;
-    left: 0;
-    background: rgba(255, 255, 255, .75);
-    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4)
-}
-}
-
 @media (max-width:860px) {
 .site-header {
     height: 60px;
@@ -1064,6 +1047,76 @@ body{
     background-size:<?=iro_opt(('reception_background_size'),'auto')
 ?>;
 }
+#video-add{
+    background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/add.png);
+}
+a{
+    cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/ayuda.cur), auto;
+}
+a:active{
+    cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/work.cur), alias;
+}
+body{
+    cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/normal.cur), auto;
+}
+p{
+    cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/texto.cur), auto;
+}
+body.dark .post-footer {
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/creativecommons-dark.png);
+}
+@media (max-width:860px) {
+  .headertop.filter-dot::before {
+    background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/grid.png);
+  }
+}
+.emoji-item,
+.on-hover {
+  cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/No_Disponible.cur), auto;
+}
+.emotion-item{
+    cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/No_Disponible.cur), auto;
+}
+.emotion-box{
+    cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/No_Disponible.cur), auto;
+}
+#emotion-toggle {
+  cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/No_Disponible.cur), auto;
+}
+.tieba-container span {
+  cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/No_Disponible.cur), auto;
+}
+.ins-section .ins-search-item {
+  cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/ayuda.cur), auto;
+}
+.post-footer
+{
+    background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/creativecommons-light.png);
+
+}
+.headertop.filter-grid::before {
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/grid.png);
+}
+
+.headertop.filter-dot::before {
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/dot.gif);
+}
+.loadvideo,.video-play {
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/play.png);
+}
+
+.video-pause {
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/stop.png);
+}
+.ins-section .ins-search-item .ins-search-preview {
+  cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/ayuda.cur), auto;
+}
+.ins-section .ins-section-header {
+cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/ayuda.cur), auto;
+}
+#loading-comments {
+background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>load_svg/ball.svg);}
+
 </style>
 <?php }
 add_action('wp_head', 'customizer_css');

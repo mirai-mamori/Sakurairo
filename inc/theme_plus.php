@@ -38,12 +38,8 @@ function bgvideo(){
 /*
  * 使用本地图片作为头像，防止外源抽风问题
  */
-function get_avatar_profile_url(){ 
-  if(iro_opt('personal_avatar')){
-    $avatar = iro_opt('personal_avatar');
-  }else{
-    $avatar = get_avatar_url(get_the_author_meta( 'ID' ));
-  }
+function get_avatar_profile_url():string{ 
+  $avatar = iro_opt('personal_avatar') ?: get_avatar_url(get_the_author_meta( 'ID' ));
   return $avatar;
 }
 
@@ -51,7 +47,7 @@ function get_avatar_profile_url(){
 /*
  * 随机图
  */
-function get_random_bg_url(){
+function get_random_bg_url():string{
   return rest_url('sakura/v1/image/feature').'?'.rand(1,1000);
 }
 
@@ -71,7 +67,6 @@ function poi_time_since( $older_date, $comment_date = false, $text = false ) {
     array( 60 , __( ' minutes ago', 'sakurairo' ) ),/*分钟前*/
     array( 1, __( ' seconds ago', 'sakurairo' ) )/*秒前*/
   );
-
   $newer_date = time() - (iro_opt('time_zone_fix')*60*60);
   $since = abs( $newer_date - $older_date );
   if($text){
@@ -81,9 +76,9 @@ function poi_time_since( $older_date, $comment_date = false, $text = false ) {
   }
 
   if ( $since < 30 * 24 * 60 * 60 ) {
-    for ( $i = 0, $j = count( $chunks ); $i < $j; $i ++ ) {
-      $seconds = $chunks[ $i ][0];
-      $name    = $chunks[ $i ][1];
+    foreach( $chunks as $chunk ) {
+      $seconds = $chunk[0];
+      $name    = $chunk[1];
       if ( ( $count = floor( $since / $seconds ) ) != 0 ) {
         break;
       }
@@ -199,7 +194,7 @@ if(!function_exists('siren_ajax_comment_callback')) {
                       <h4 class="author"><a href="<?php comment_author_url(); ?>"><?php echo get_avatar( $comment->comment_author_email, '80', '', get_comment_author() ); ?><?php comment_author(); ?> <span class="isauthor" title="<?php esc_attr_e('Author', 'sakurairo'); ?>"></span></a></h4>
                     </div>
                     <div class="right">
-                      <div class="info"><time datetime="<?php comment_date('Y-m-d'); ?>"><?php echo poi_time_since(strtotime($comment->comment_date), true );//comment_date(get_option('date_format')); ?></time></div>
+                      <div class="info"><time datetime="<?php comment_date('Y-m-d'); ?>"><?php echo poi_time_since(strtotime($comment->comment_date_gmt), true );//comment_date(get_option('date_format')); ?></time></div>
                     </div>
                   </section>
                 </div>
@@ -246,7 +241,7 @@ function Exuser_center(){ ?>
         }else{
           TYPE = <?php _e('home','sakurairo')/*主页*/?>;
         }
-        for(var i=secs;i>=0;i--){ 
+        for(let i=secs;i>=0;i--){ 
             window.setTimeout('doUpdate(' + i + ')', (secs-i) * 1000); 
         } 
     } 
@@ -526,10 +521,10 @@ function siren_auto_link_nofollow( $content ) {
   if(preg_match_all("/$regexp/siU", $content, $matches, PREG_SET_ORDER)) {
     if( !empty($matches) ) {
       $srcUrl = get_option('siteurl');
-      for ($i=0; $i < count($matches); $i++){
-        $tag = $matches[$i][0];
-        $tag2 = $matches[$i][0];
-        $url = $matches[$i][0];
+      foreach($matches as $result){
+        $tag = $result[0];
+        $tag2 = $result[0];
+        $url = $result[0];
         $noFollow = '';
         $pattern = '/target\s*=\s*"\s*_blank\s*"/';
         preg_match($pattern, $tag2, $match, PREG_OFFSET_CAPTURE);
@@ -725,32 +720,25 @@ function siren_get_browsers(string $ua):array{
   $title = 'Unknow';
   $icon = 'unknown';
   if (strpos($ua, 'Chrome')){
-    if (preg_match('#Chrome/([0-9]+)#i', $ua, $matches)) {
+    if (strpos($ua, 'Edg') && preg_match('#Edg/([0-9]+)#i', $ua, $matches)){
+      $title = 'Edge '. $matches[1];
+      $icon = 'edge';
+    }elseif (strpos($ua, '360EE')) {
+      $title = '360 Browser ';
+      $icon = '360se';
+    }elseif (strpos($ua, 'OPR') && preg_match('#OPR/([0-9]+)#i', $ua, $matches)) {
+      $title = 'Opera '. $matches[1];
+      $icon = 'opera';
+    }elseif (preg_match('#Chrome/([0-9]+)#i', $ua, $matches)) {
       $title = 'Chrome '. $matches[1];
       $icon = 'chrome';
-      if (preg_match('#Edg/([0-9]+)#i', $ua, $matches)){
-        $title = 'Edge '. $matches[1];
-            $icon = 'edge';
-      }
-      if (preg_match('#360([a-zA-Z0-9.]+)#i', $ua, $matches)) {
-        $title = '360 Browser '. $matches[1];
-        $icon = '360se';
-      }
-      if (preg_match('#OPR/([0-9]+)#i', $ua, $matches)) {
-        $title = 'Opera '. $matches[1];
-        $icon = 'opera';
-      }
     }
-  }elseif (strpos($ua, 'Firefox')){
-    if (preg_match('#Firefox/([0-9]+)#i', $ua, $matches)){
-      $title = 'Firefox '. $matches[1];
-          $icon = 'firefox';
-    }
-  }elseif (strpos($ua, 'Safari')){
-    if (preg_match('#Safari/([0-9]+)#i', $ua, $matches)) {
-      $title = 'Safari '. $matches[1];
-      $icon = 'safari';
-    }
+  }elseif (strpos($ua, 'Firefox') && preg_match('#Firefox/([0-9]+)#i', $ua, $matches)){
+    $title = 'Firefox '. $matches[1];
+    $icon = 'firefox';
+  }elseif (strpos($ua, 'Safari') && preg_match('#Safari/([0-9]+)#i', $ua, $matches)){
+    $title = 'Safari '. $matches[1];
+    $icon = 'safari';
   }
   
   return [
@@ -763,29 +751,30 @@ function siren_get_browsers(string $ua):array{
 function siren_get_os(string $ua):array{
   $title = 'Unknow';
   $icon = 'unknown';
+  // UA样式决定strpos返回值不可能为0 所以不需要考虑为0的情况
   if (strpos($ua, 'Win')) {
-    if (preg_match('/Windows NT 10.0/i', $ua)) {
+    if (strpos($ua, 'Windows NT 10.0')){
       $title = "Windows 10/11";
       $icon = "win10-11";
-    }elseif (preg_match('/Windows NT 6.1/i', $ua)) {
+    }elseif (strpos($ua, 'Windows NT 6.1')) {
       $title = "Windows 7";
       $icon = "win7";
-    }elseif (preg_match('/Windows NT 6.2/i', $ua)) {
+    }elseif (strpos($ua, 'Windows NT 6.2')) {
       $title = "Windows 8";
       $icon = "win8";
-    }elseif (preg_match('/Windows NT 6.3/i', $ua)) {
+    }elseif (strpos($ua, 'Windows NT 6.3')) {
       $title = "Windows 8.1";
       $icon = "win8";
     }
-  }elseif (preg_match('#iPhone OS ([0-9]+)#i', $ua, $matches)) {// 1.2 修改成 iphone os 来判断 
+  }elseif (strpos($ua, 'iPhone OS') && preg_match('#iPhone OS ([0-9]+)#i', $ua, $matches)) {// 1.2 修改成 iphone os 来判断 
     $title = "iOS ".$matches[1];
     $icon = "apple";
-  }elseif (preg_match('/Android.([0-9. _]+)/i', $ua, $matches)) {
+  }elseif (strpos($ua, 'Android') && preg_match('/Android.([0-9. _]+)/i', $ua, $matches)) {
     if(count(explode(7,$matches[1]))>1) $matches[1] = 'Lion '.$matches[1];
     elseif(count(explode(8,$matches[1]))>1) $matches[1] = 'Mountain Lion '.$matches[1];
     $title= $matches[0];
     $icon = "android";
-  } elseif (preg_match('/Mac OS X.([\d. _]+)/i', $ua, $matches)) {
+  }elseif (strpos($ua, 'Mac OS') && preg_match('/Mac OS X.([\d. _]+)/i', $ua, $matches)) {
     $mac_ver =  intval(explode('_',$matches[1])[1]);
     $mac_code_name = '';
     $has_x = $mac_ver <12;
@@ -794,18 +783,14 @@ function siren_get_os(string $ua):array{
       $mac_code_name = $mac_code_list[$mac_ver];
     }
     $matches[1] = $mac_code_name.' '.$matches[1];
-    $title = 'macOS '.($has_x?'X':''.' ').str_replace('_','.',$matches[1]);;
+    $title = 'macOS '.($has_x?'X':''.' ').str_replace('_','.',$matches[1]);
     $icon = "apple";
-  } elseif (preg_match('/Macintosh/i', $ua)) {
+  }elseif (strpos($ua, 'Macintosh')) {
     $title = "macOS";
     $icon = "apple";
-  } elseif (preg_match('/Linux/i', $ua)) {
+  }elseif (strpos($ua, 'Linux')) {
     $title = 'Linux';
     $icon = 'linux';
-    if (preg_match('/Android.([0-9. _]+)/i',$ua, $matches)) {
-      $title= $matches[0];
-      $icon = "android";
-    }
   }
   return [
     'title' => $title,
@@ -813,26 +798,26 @@ function siren_get_os(string $ua):array{
   ];
 }
 
-function siren_get_useragent($ua){
+function siren_get_useragent(string $ua):string{
   if(iro_opt('comment_useragent')){
     // $imgurl = get_bloginfo('template_directory') . '/images/ua/';
-    $imgurl = 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/ua/';
+    $imgurl = 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/ua/';
     $browser = siren_get_browsers($ua);
     $os = siren_get_os($ua);
     return '&nbsp;&nbsp;<span class="useragent-info">( <img src="'. $imgurl.$browser['icon'] .'.svg">&nbsp;'. $browser['title'] .'&nbsp;&nbsp;<img src="'. $imgurl.$os['icon'] .'.svg">&nbsp;'. $os['title'] .' )</span>';
   }
-  return false;
+  return '';
 }
 
 // UA 显示移动定制
-function mobile_get_useragent_icon($ua){
+function mobile_get_useragent_icon(string $ua):string{
   if(iro_opt('comment_useragent')){
-    $imgurl = 'https://cdn.jsdelivr.net/gh/Fuukei/Sakurairo_Vision@latest/ua/';
+    $imgurl = 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/ua/';
     $browser = siren_get_browsers($ua);
     $os = siren_get_os($ua);
     return '<span class="useragent-info-m">( <img src="'. $imgurl.$browser['icon'] .'.svg">&nbsp;&nbsp;<img src="'. $imgurl.$os['icon'] .'.svg"> )</span>';
   }
-  return false;
+  return '';
 }
 
 /*

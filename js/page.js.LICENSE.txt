@@ -4,5 +4,3 @@
  * @author   Feross Aboukhadijeh <https://feross.org>
  * @license  MIT
  */
-
-//! build d123fca 2021/12/17

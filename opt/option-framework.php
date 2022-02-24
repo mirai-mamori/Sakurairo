@@ -4,14 +4,14 @@
  * @package   Codestar Framework - WordPress Options Framework
  * @author    Codestar <info@codestarthemes.com>
  * @link      http://codestarframework.com
- * @copyright 2015-2021 Codestar
+ * @copyright 2015-2022 Codestar
  *
  *
  * Plugin Name: Sakurairo_CSF
  * Plugin URI: https://github.com/Fuukei/Sakurairo_CSF
  * Author: Codestar with Fuukei
  * Author URI: https://github.com/Fuukei
- * Version: 2.2.5
+ * Version: 2.2.6
  * Description: A Simple and Lightweight WordPress Option Framework for Sakurairo
  * Text Domain: sakurairo_csf
  * Domain Path: /languages

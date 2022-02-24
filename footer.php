@@ -28,15 +28,16 @@ $reception_background = iro_opt('reception_background');
 				<?php endif; ?>
 				<p style="color: #666666;"><?php echo iro_opt('footer_info', ''); ?></p>
 			</div>
-			<div class="footer-device">
-			<p style="font-family: 'Ubuntu', sans-serif;">
-					<p id="footer_yiyan"></p>
+			<div class="footer-device Ubuntu-font">
+					<?php if(iro_opt('footer_yiyan')){ ?>
+						<p id="footer_yiyan"></p>
+						<?php } ?>
 					<span style="color: #b9b9b9;">
 						<?php /* 能保留下面两个链接吗？算是我一个小小的心愿吧~ */ ?>
 						<?php if (iro_opt('footer_load_occupancy', 'true')): ?>
                         <?php printf(' 耗时 %.3f 秒 | 查询 %d 次 | 内存 %.2f MB',timer_stop( 0, 3 ),get_num_queries(),memory_get_peak_usage() / 1024 / 1024);?>
                         <?php endif; ?>
-						Theme <a href="https://github.com/mirai-mamori/Sakurairo" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://iro.tw" target="_blank" id="site-info" >Fuukei</a> 
+						Theme <a href="https://github.com/mirai-mamori/Sakurairo" rel="noopener" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://iro.tw" rel="noopener" target="_blank" id="site-info" >Fuukei</a> 
 					</span>
 			</div>
 		</div><!-- .site-info -->
@@ -48,7 +49,7 @@ $reception_background = iro_opt('reception_background');
 			<?php 
 			$personal_avatar = iro_opt('personal_avatar');
 			$iro_logo = iro_opt('iro_logo');
-			$ava = iro_opt('personal_avatar') ? $personal_avatar: ($iro_logo ?: 'https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/vision/tsubame/avatar.jpg'); ?>
+			$ava = iro_opt('personal_avatar') ? $personal_avatar: ($iro_logo ?: iro_opt('vision_resource_basepath','https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/').'series/avatar.webp'); ?>
 			<img src="<?php echo $ava ?>">
 		</div>
 		<div class="m-search">
@@ -58,7 +59,6 @@ $reception_background = iro_opt('reception_background');
 		</div>
 		<?php wp_nav_menu( array( 'depth' => 2, 'theme_location' => 'primary', 'container' => false ) ); ?>
 	</div><!-- m-nav-center end -->
-	<a class="cd-top faa-float animated "></a>
 	<button id="moblieGoTop" title="<?=__('Go to top','sakurairo');?>"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
     <button id="changskin"><i class="iconfont icon-gear inline-block rotating"></i></button>
 	<!-- search start -->
@@ -150,14 +150,9 @@ $reception_background = iro_opt('reception_background');
     </div>
 <?php endif; ?>
 
-<!-- 樱花飘落动效 -->
-<?php if (iro_opt('sakura_falling_effects') != 'off'): ?>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/js/<?php echo iro_opt('sakura_falling_effects'); ?>.js"></script>
-<?php endif; ?>
-
 <!-- 首页波浪特效 -->
 <?php if (iro_opt('wave_effects', 'true')): ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/css/bolang.css">
+<link rel="stylesheet" href="<?php global $shared_lib_basepath;echo $shared_lib_basepath?>/css/wave.css">
 <?php endif; ?>
 
 <!-- Live2D看板娘 -->
@@ -187,20 +182,10 @@ echo iro_opt('footer_addition', '');
   z-index: -1;
 }
 </style>
-
-<div id="particles-js"></div>
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-<script type="text/javascript">
-particlesJS('particles-js',
-
-<?php 
-echo iro_opt('particles_json','');
-?>
-
-);
+<div id="particles-js">
+</div>
+<script type="application/json" id="particles-js-cfg">
+<?=iro_opt('particles_json','')?>
 </script>
-
 <?php endif; ?>
 </html>
