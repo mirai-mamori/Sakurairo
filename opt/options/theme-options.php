@@ -2131,7 +2131,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Display Area Title','sakurairo_csf'),
         'desc' => __('Default is "Display", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'sakurairo_csf'),
-        'default' => 'Display'
+        'default' => __('Display','sakurairo_csf')
       ),
 
       array(
@@ -2139,7 +2139,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Post Area Title','sakurairo_csf'),
         'desc' => __('Default is "Article", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'sakurairo_csf'),
-        'default' => 'Article'
+        'default' => __('Article','sakurairo_csf')
       ),
 
       array(
