@@ -1018,7 +1018,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Hitokoto API address','sakurairo_csf'),
         'dependency' => array( 'footer_yiyan', '==', 'true' ),
         'desc' => __('Fill in the address in JavaScript array format','sakurairo_csf'),
-        'default' => '["https://api.maho.cc/yiyan/", "https://v1.hitokoto.cn/"]'
+        'default' => '["https://v1.hitokoto.cn/","https://api.maho.cc/yiyan/"]'
       ),
 
     )
