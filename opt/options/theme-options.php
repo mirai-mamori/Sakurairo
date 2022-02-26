@@ -970,7 +970,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'footer_load_occupancy',
         'type' => 'switcher',
         'title' => __('Footer Load Occupancy Query','sakurairo_csf'),
-        'label' => __('Load occupancy information will appear at the end of the page after turning it on','sakurairo_csf'),
+        'label' => __('Load occupancy information will appear at the end of the page after turning it on. Not recommended in production environment.','sakurairo_csf'),
         'default' => false
       ),
 
