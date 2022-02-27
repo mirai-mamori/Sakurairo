@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-02-22 22:41+0800\n"
-"PO-Revision-Date: 2022-02-22 22:42+0800\n"
+"POT-Creation-Date: 2022-02-27 12:11+0800\n"
+"PO-Revision-Date: 2022-02-27 12:11+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -1486,8 +1486,8 @@ msgstr "頁尾負載佔用查詢"
 #: options/theme-options.php:973
 msgid ""
 "Load occupancy information will appear at the end of the page after turning "
-"it on"
-msgstr "開啟之後頁尾將出現負載佔用資訊"
+"it on. Not recommended in production environment."
+msgstr "開啟佔用資訊之後，該資訊將顯示在頁面末尾。不建議在生產環境中使用。"
 
 #: options/theme-options.php:980
 msgid "Footer Info"
@@ -3523,7 +3523,7 @@ msgstr "版本資訊"
 #: options/theme-options.php:3366
 msgid ""
 "<img src=\"https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/"
-"series/tsubamelogo.gif\"  alt=\"Theme Information\" />"
+"series/headlogo.webp\"  alt=\"Theme Information\" />"
 msgstr ""
 
 #: options/theme-options.php:3372
