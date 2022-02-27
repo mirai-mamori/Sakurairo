@@ -6,9 +6,7 @@ namespace Sakura\API;
 
 class Captcha
 {
-    private $font;
     private $captchCode;
-    private $timestamp;
 
     /**
      * CAPTCHA constructor.
@@ -92,7 +90,8 @@ class Captcha
             $pixelcolor = imagecolorallocate($img, mt_rand(100, 150), mt_rand(0, 120), mt_rand(0, 255));
             imagesetpixel($img, mt_rand(0, 179), mt_rand(0, 39), $pixelcolor);
         }
-
+        $timestamp = time();
+        $this->captchCode .= $timestamp;
         //打开缓存区
         ob_start();
         imagepng($img);
@@ -109,7 +108,7 @@ class Captcha
             'data' => $captchaimg,
             'msg' => '',
             'id' => $this->crypt_captcha(),
-            'time' => time(),
+            'time' => $timestamp,
         ];
     }
 
@@ -134,7 +133,7 @@ class Captcha
             $code = 2;
             $msg =  __("Captcha timeout.","sakurairo");//超时!
         } elseif ($timestamp >= $temp1 && $timestamp <= $temp) {
-            if ($this->verify_captcha($captcha, $id) == true) {
+            if ($this->verify_captcha($captcha.$timestamp, $id) == true) {
                 $code = 5;
                 $msg = __("Captcha check passed.","sakurairo");//'验证码正确!'
             } else {
