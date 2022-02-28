@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-02-22 22:39+0800\n"
-"PO-Revision-Date: 2022-02-22 22:39+0800\n"
+"POT-Creation-Date: 2022-02-27 12:09+0800\n"
+"PO-Revision-Date: 2022-02-27 12:09+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -1540,9 +1540,13 @@ msgid "Footer Load Occupancy Query"
 msgstr "フッター負荷の占有率表示"
 
 #: options/theme-options.php:973
+#, fuzzy
+#| msgid ""
+#| "Load occupancy information will appear at the end of the page after "
+#| "turning it on"
 msgid ""
 "Load occupancy information will appear at the end of the page after turning "
-"it on"
+"it on. Not recommended in production environment."
 msgstr "オンにすると、ページの最後にサーバーの負荷占有情報が表示される"
 
 #: options/theme-options.php:980
@@ -3703,7 +3707,7 @@ msgstr "バージョン情報"
 #, fuzzy
 msgid ""
 "<img src=\"https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/"
-"series/tsubamelogo.gif\"  alt=\"Theme Information\" />"
+"series/headlogo.webp\"  alt=\"Theme Information\" />"
 msgstr ""
 "<img src=\"https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/"
 "series/tsubamelogo.gif\"  alt=\"Theme Information\" />"

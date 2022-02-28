@@ -11,12 +11,12 @@ $all_opt = [
     ],
     'wangyiyun' => [
         'link' => iro_opt('wangyiyun', ''),
-        'title' => 'CloudMusic',
+        'title' => 'cloudmusic',
         'icon' => 'ncm'
     ],
     'sina' => [
         'link' => iro_opt('sina', ''),
-        'title' => 'sina',
+        'title' => 'weibo',
         'icon' => 'weibo'
     ],
     'github' => [

@@ -6,17 +6,13 @@ namespace Sakura\API;
 
 class Captcha
 {
-    private $font;
     private $captchCode;
-    private $timestamp;
 
     /**
      * CAPTCHA constructor.
      */
     public function __construct()
     {
-        $this->font = STYLESHEETPATH . '/inc/KumoFont.ttf';
-        $this->timestamp = time();
         $this->captchCode = '';
     }
 
@@ -42,8 +38,8 @@ class Captcha
     private function crypt_captcha(): string
     {
         //return md5($this->captchCode);
-        // return password_hash($this->captchCode, PASSWORD_DEFAULT);
-        return wp_hash_password($this->captchCode);
+        return password_hash($this->captchCode, PASSWORD_DEFAULT);
+        // return wp_hash_password($this->captchCode);
     }
 
     /**
@@ -56,8 +52,8 @@ class Captcha
     public function verify_captcha(string $captcha, string $hash): bool
     {
         //return md5($captcha) == $hash ? true : false;
-        // return password_verify($captcha, $hash);
-        return wp_check_password($captcha, $hash);
+        return password_verify($captcha, $hash);
+        // return wp_check_password($captcha, $hash);
     }
 
     /**
@@ -69,8 +65,7 @@ class Captcha
     {
         //创建画布
         $img = imagecreatetruecolor(120, 40);
-        //setcookie('timestamp',$this->timestamp,$this->timestamp+60,'/');
-        //setcookie('id',$this->uniqid,$this->timestamp+60,'/');
+        $file = STYLESHEETPATH . '/inc/KumoFont.ttf';
         //填充背景色
         $backcolor = imagecolorallocate($img, mt_rand(200, 255), mt_rand(200, 255), mt_rand(0, 255));
         imagefill($img, 0, 0, $backcolor);
@@ -81,7 +76,6 @@ class Captcha
         for ($i = 1; $i <= 5; $i++) {
             $span = 20;
             $stringcolor = imagecolorallocate($img, mt_rand(0, 255), mt_rand(0, 100), mt_rand(0, 80));
-            $file = $this->font;
             imagefttext($img, 25, 2, $i * $span, 30, $stringcolor, $file, $this->captchCode[$i - 1]);
         }
 
@@ -96,7 +90,8 @@ class Captcha
             $pixelcolor = imagecolorallocate($img, mt_rand(100, 150), mt_rand(0, 120), mt_rand(0, 255));
             imagesetpixel($img, mt_rand(0, 179), mt_rand(0, 39), $pixelcolor);
         }
-
+        $timestamp = time();
+        $this->captchCode .= $timestamp;
         //打开缓存区
         ob_start();
         imagepng($img);
@@ -113,7 +108,7 @@ class Captcha
             'data' => $captchaimg,
             'msg' => '',
             'id' => $this->crypt_captcha(),
-            'time' => $this->timestamp,
+            'time' => $timestamp,
         ];
     }
 
@@ -138,7 +133,7 @@ class Captcha
             $code = 2;
             $msg =  __("Captcha timeout.","sakurairo");//超时!
         } elseif ($timestamp >= $temp1 && $timestamp <= $temp) {
-            if ($this->verify_captcha($captcha, $id) == true) {
+            if ($this->verify_captcha($captcha.$timestamp, $id) == true) {
                 $code = 5;
                 $msg = __("Captcha check passed.","sakurairo");//'验证码正确!'
             } else {

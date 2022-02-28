@@ -169,8 +169,7 @@ echo iro_opt('footer_addition', '');
 </body>
 <!-- Particles动效 -->
 <?php if (iro_opt('particles_effects', 'true')): ?>
-
-<style type="text/css">
+<style>
   #particles-js {
   width: 100%;
   height: 100%;
@@ -182,10 +181,7 @@ echo iro_opt('footer_addition', '');
   z-index: -1;
 }
 </style>
-<div id="particles-js">
-</div>
-<script type="application/json" id="particles-js-cfg">
-<?=iro_opt('particles_json','')?>
-</script>
+<div id="particles-js"></div>
+<script type="application/json" id="particles-js-cfg"><?=iro_opt('particles_json','')?></script>
 <?php endif; ?>
 </html>

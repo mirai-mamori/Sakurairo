@@ -1050,18 +1050,6 @@ body{
 #video-add{
     background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/add.png);
 }
-a{
-    cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/ayuda.cur), auto;
-}
-a:active{
-    cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/work.cur), alias;
-}
-body{
-    cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/normal.cur), auto;
-}
-p{
-    cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/texto.cur), auto;
-}
 body.dark .post-footer {
   background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/creativecommons-dark.png);
 }
@@ -1070,30 +1058,7 @@ body.dark .post-footer {
     background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/grid.png);
   }
 }
-.emoji-item,
-.on-hover {
-  cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/No_Disponible.cur), auto;
-}
-.emotion-item{
-    cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/No_Disponible.cur), auto;
-}
-.emotion-box{
-    cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/No_Disponible.cur), auto;
-}
-#emotion-toggle {
-  cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/No_Disponible.cur), auto;
-}
-.tieba-container span {
-  cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/No_Disponible.cur), auto;
-}
-.ins-section .ins-search-item {
-  cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/ayuda.cur), auto;
-}
-.post-footer
-{
-    background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/creativecommons-light.png);
-
-}
+.post-footer{background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/creativecommons-light.png);}
 .headertop.filter-grid::before {
   background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/grid.png);
 }
@@ -1107,12 +1072,6 @@ body.dark .post-footer {
 
 .video-pause {
   background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/stop.png);
-}
-.ins-section .ins-search-item .ins-search-preview {
-  cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/ayuda.cur), auto;
-}
-.ins-section .ins-section-header {
-cursor: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>cursor/ayuda.cur), auto;
 }
 #loading-comments {
 background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>load_svg/ball.svg);}
