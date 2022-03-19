@@ -144,6 +144,9 @@ class Images
     public static function cover_gallery() {
         if (iro_opt('random_graphs_options') == 'local') {
             $img_array = glob(get_template_directory() . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
+            if (count($img_array) == 0){
+                return ['status'=>False,'msg'=>'ERROR：请联系管理员查看gallary目录中是否存在图片！'];
+            }
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
             $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
@@ -156,16 +159,20 @@ class Images
             $img_domain = iro_opt('random_graphs_link') ?: get_template_directory_uri();
             if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') !== false) {
                 $imgurl = $img_domain . "/manifest/" . $img_array[$img]['webp'][0];
+                var_dump($imgurl);
             } else {
                 $imgurl = $img_domain . "/manifest/" . $img_array[$img]['jpeg'][0];
             }
         }
-        return $imgurl;
+        return ['status'=>True,'url'=>$imgurl];
     }
 
     public static function mobile_cover_gallery() {
         if (iro_opt('random_graphs_options') == 'local') {
             $img_array = glob(get_template_directory() . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
+            if (count($img_array) == 0){
+                return ['status'=>False,'msg'=>'没有找到图片，请联系管理员检查gallary目录下是否存在图片'];
+            }
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
             $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
@@ -183,12 +190,12 @@ class Images
               $imgurl = $img_domain . "/manifest/" . $img_array[$img]['jpeg'][0];
             }
         }
-        return $imgurl;
+        return ['status'=>True,'url'=>$imgurl];
     }
 
     public static function feature_gallery() {
         if (iro_opt('post_cover_options') == 'type_2') {
-            $imgurl = iro_opt('post_cover');
+            return ['status'=>True,'url'=>iro_opt('post_cover')];
         } else {
             $imgurl = self::cover_gallery();
         }
