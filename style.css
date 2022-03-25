@@ -6770,6 +6770,7 @@ a.toc-link {
   width: 100%;
   height: auto;
   margin-top: 55px;
+  white-space: nowrap;
 }
 
 .the-feature * {
