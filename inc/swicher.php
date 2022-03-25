@@ -54,7 +54,6 @@ function font_end_js_control() {
         'loading_ph'=>iro_opt('load_in_svg'),
         'clipboardCopyright' => iro_opt('clipboard_copyright') == '0' ? false:true,
         'entry_content_style' => iro_opt('entry_content_style'),
-        'cover_api' => rest_url('sakura/v1/image/cover'),
         'random_graphs_mts' => check(iro_opt('random_graphs_mts' )),
         'code_highlight' => iro_opt('code_highlight_method','hljs'),
         'comment_upload_img' => iro_opt('img_upload_api')=='off' ? false : true,
@@ -69,6 +68,15 @@ function font_end_js_control() {
     ];
     $reception_background = iro_opt('reception_background');
     // 判空 empty 如果变量不存在也会返回true
+    if (iro_opt('random_graphs_options') == 'external_api') {
+        if (wp_is_mobile()) {
+            $iro_opt['cover_api'] = iro_opt('random_graphs_link_mobile');
+        }else{
+            $iro_opt['cover_api'] = iro_opt('random_graphs_link');
+        }
+    } else {
+        $iro_opt['cover_api'] =  rest_url('sakura/v1/image/cover');
+    }
     !empty($reception_background['img1']) && $iro_opt['skin_bg0'] = $reception_background['img1'];
     !empty($reception_background['img2']) && $iro_opt['skin_bg1'] = $reception_background['img2'];
     !empty($reception_background['img3']) && $iro_opt['skin_bg2'] = $reception_background['img3'];

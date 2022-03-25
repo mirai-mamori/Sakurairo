@@ -324,7 +324,7 @@ function convertip($ip)
     if (empty($ip)) $ip = get_comment_author_IP();
     $ch = curl_init();
     $timeout = 5;
-    if (iro_opt('statistics_format') === 'type_1') {
+    if (iro_opt('ipsource') === 'type_1') {
         $url = 'https://api.maho.cc/ip?ip=' . $ip;
     } else {
         $url = 'https://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip=' . $ip;

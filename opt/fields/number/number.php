@@ -17,12 +17,15 @@ if ( ! class_exists( 'CSF_Field_number' ) ) {
     public function render() {
 
       $args = wp_parse_args( $this->field, array(
+        'min'  => 'any',
+        'max'  => 'any',
+        'step' => 'any',
         'unit' => '',
       ) );
 
       echo $this->field_before();
       echo '<div class="csf--wrap">';
-      echo '<input type="number" name="'. esc_attr( $this->field_name() ) .'" value="'. esc_attr( $this->value ) .'"'. $this->field_attributes( array( 'class' => 'csf-input-number' ) ) .' step="any" />';
+      echo '<input type="number" name="'. esc_attr( $this->field_name() ) .'" value="'. esc_attr( $this->value ) .'"'. $this->field_attributes() .' min="'. esc_attr( $args['min'] ) .'" max="'. esc_attr( $args['max'] ) .'" step="'. esc_attr( $args['step'] ) .'"/>';
       echo ( ! empty( $args['unit'] ) ) ? '<span class="csf--unit">'. esc_attr( $args['unit'] ) .'</span>' : '';
       echo '</div>';
       echo $this->field_after();

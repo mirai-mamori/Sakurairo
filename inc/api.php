@@ -118,10 +118,20 @@ function cover_gallery() {
     }else{
         $imgurl = Images::cover_gallery();
     }
+    if (!$imgurl['status']){
+        return new WP_REST_Response(
+            array(
+                'status' => 500,
+                'success' => false,
+                'message' => $imgurl['msg']
+            ),
+            500
+        );
+    }
     $data = array('cover image');
     $response = new WP_REST_Response($data);
     $response->set_status(302);
-    $response->header('Location', $imgurl);
+    $response->header('Location', $imgurl['url']);
     return $response;
 }
 
@@ -131,10 +141,21 @@ function cover_gallery() {
  */
 function feature_gallery() {
     $imgurl = Images::feature_gallery();
+    if (!$imgurl['status']){
+        return new WP_REST_Response(
+            array(
+                'status' => 500,
+                'success' => false,
+                'message' => $imgurl['msg']
+            ),
+            500
+        );
+    }
     $data = array('feature image');
     $response = new WP_REST_Response($data);
     $response->set_status(302);
-    $response->header('Location', $imgurl);
+    var_dump($imgurl);
+    $response->header('Location', $imgurl['url']);
     return $response;
 }
 

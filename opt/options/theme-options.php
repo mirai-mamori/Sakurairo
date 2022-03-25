@@ -3395,6 +3395,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Theme Update Test Channel Disclaimer','sakurairo_csf'),
         'dependency' => array(
+          array( 'core_library_basepath', '==', 'true' ),
           array( 'shared_library_basepath', '==', 'true' ),
           array( 'iro_update_source', '==', 'official_building' ),
         ),
@@ -3407,8 +3408,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Theme Update Channel','sakurairo_csf'),
         'dependency' => array(
           array( 'channel_validate_value', '==', 'I agree and am willing to bear all unexpected consequences' ),
+          array( 'core_library_basepath', '==', 'true' ),
           array( 'shared_library_basepath', '==', 'true' ),
-          array( 'iro_update_source', '==', 'official_building' ), array( 'iro_update_source', '==', 'official_building' ),
+          array( 'iro_update_source', '==', 'official_building' ),
         ),
         'desc' => __('You can toggle the update channel here to participate in the testing of the new version','sakurairo_csf'),
         'options' => array(
