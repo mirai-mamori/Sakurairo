@@ -1,4 +1,11 @@
 <?php
+/**
+ * @Author: fuukei
+ * @Date:   2022-03-13 18:16:15
+ * @Last Modified by:   bymoye
+ * @Last Modified time: 2022-03-27 00:47:46
+ */
+
 
 /**
  * Classes
@@ -154,7 +161,6 @@ function feature_gallery() {
     $data = array('feature image');
     $response = new WP_REST_Response($data);
     $response->set_status(302);
-    var_dump($imgurl);
     $response->header('Location', $imgurl['url']);
     return $response;
 }
