@@ -147,7 +147,8 @@ function cover_gallery() {
  * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/image/feature
  */
 function feature_gallery() {
-    $imgurl = Images::feature_gallery();
+    $size = $_GET['size'] ?? 'source';
+    $imgurl = Images::feature_gallery($size);
     if (!$imgurl['status']){
         return new WP_REST_Response(
             array(

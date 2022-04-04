@@ -141,7 +141,7 @@ class Images
         return $output;
     }
 
-    public static function cover_gallery() {
+    public static function cover_gallery($size = 'source') {
         if (iro_opt('random_graphs_options') == 'local') {
             $img_array = glob(STYLESHEETPATH . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
             if (count($img_array) == 0){
@@ -168,7 +168,7 @@ class Images
                 $img_domain = get_template_directory_uri();
             }
             $format = strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') ? 'webp' : 'jpeg';
-            $imgurl = "{$img_domain}/manifest/{$format}/{$array_keys[$img]}.source.{$format}";
+            $imgurl = "{$img_domain}/manifest/{$format}/{$array_keys[$img]}.{$size}.{$format}";
         }
         return ['status'=>True,'url'=>$imgurl];
     }
@@ -207,11 +207,11 @@ class Images
         return ['status'=>True,'url'=>$imgurl];
     }
 
-    public static function feature_gallery() {
+    public static function feature_gallery($size = 'source') {
         if (iro_opt('post_cover_options') == 'type_2') {
             return ['status'=>True,'url'=>iro_opt('post_cover')];
         } else {
-            $imgurl = self::cover_gallery();
+            $imgurl = self::cover_gallery($size);
         }
         return $imgurl;
     }

@@ -1618,10 +1618,19 @@ function change_avatar($avatar)
 }
 
 // default feature image
-function DEFAULT_FEATURE_IMAGE():string
+function DEFAULT_FEATURE_IMAGE(string $size='source'):string
 {
+    if (iro_opt('random_graphs_options') == 'external_api'){
+        return iro_opt('random_graphs_link').'?'.rand(1,100);
+    }
     $_api_url = rest_url('sakura/v1/image/feature');
-    return $_api_url . (preg_match('/index.php\?/i', $_api_url) ? '&' : '?') . rand(1, 1000);
+    $rand = rand(1, 100);
+    if (strpos($_api_url, 'index.php?') !== false) {
+        $_api_url = "{$_api_url}&size={$size}&$rand";
+    }else{
+        $_api_url = "{$_api_url}?size={$size}&$rand";
+    }
+    return $_api_url;
 }
 
 //评论回复

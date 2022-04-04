@@ -48,9 +48,9 @@ while (have_posts()) : the_post();
 						}
 					}
 				}
-				$post_img = $large_image_url[0] ?? DEFAULT_FEATURE_IMAGE();
+				$post_img = $large_image_url[0] ?? DEFAULT_FEATURE_IMAGE('th');
 			} else {
-				$post_img = DEFAULT_FEATURE_IMAGE();
+				$post_img = DEFAULT_FEATURE_IMAGE('th');
 			}
 			$cover_html = '<img class="lazyload" src="' . iro_opt('load_out_svg') . '#lazyload-blur" data-src="' . $post_img . '"/>';
 			break;
