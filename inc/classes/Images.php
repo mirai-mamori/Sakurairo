@@ -143,52 +143,66 @@ class Images
 
     public static function cover_gallery() {
         if (iro_opt('random_graphs_options') == 'local') {
-            $img_array = glob(get_template_directory() . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
+            $img_array = glob(STYLESHEETPATH . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
             if (count($img_array) == 0){
                 return ['status'=>False,'msg'=>'ERROR：请联系管理员查看gallary目录中是否存在图片！'];
             }
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
-            $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
+            $imgurl = str_replace(STYLESHEETPATH, get_template_directory_uri(), $imgurl);
         } elseif (iro_opt('random_graphs_options') == 'external_api') {
             $imgurl = iro_opt('random_graphs_link');
         } else {
-            global $sakura_image_array;
-            $img_array = json_decode($sakura_image_array, true);
-            $img = array_rand($img_array);
-            $img_domain = iro_opt('random_graphs_link') ?: get_template_directory_uri();
-            if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') !== false) {
-                $imgurl = $img_domain . "/manifest/" . $img_array[$img]['webp'][0];
-                var_dump($imgurl);
-            } else {
-                $imgurl = $img_domain . "/manifest/" . $img_array[$img]['jpeg'][0];
+            // global $sakura_image_array;
+            $temp = file_get_contents(STYLESHEETPATH . "/manifest/manifest.json");
+            // $img_array = json_decode($sakura_image_array, true);
+            $img_array = json_decode($temp, true);
+            if (!$img_array){
+                return ['status'=>False,'msg'=>'ERROR：请联系管理员查看manifest.json中是否存在图片！'];
             }
+            $array_keys = array_keys($img_array);
+            $img = array_rand($array_keys);
+            if (iro_opt('random_graphs_link',NULL) && iro_opt('random_graphs_link') != home_url( '/')) {
+                $img_domain = iro_opt('random_graphs_link');
+            } else {
+                $img_domain = get_template_directory_uri();
+            }
+            $format = strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') ? 'webp' : 'jpeg';
+            $imgurl = "{$img_domain}/manifest/{$format}/{$array_keys[$img]}.source.{$format}";
         }
         return ['status'=>True,'url'=>$imgurl];
     }
 
     public static function mobile_cover_gallery() {
         if (iro_opt('random_graphs_options') == 'local') {
-            $img_array = glob(get_template_directory() . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
+            $img_array = glob(STYLESHEETPATH . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
             if (count($img_array) == 0){
                 return ['status'=>False,'msg'=>'没有找到图片，请联系管理员检查gallary目录下是否存在图片'];
             }
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
-            $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
+            $imgurl = str_replace(STYLESHEETPATH, get_template_directory_uri(), $imgurl);
         } elseif (iro_opt('random_graphs_options') == 'external_api') {
           //$imgurl = iro_opt('random_graphs_link');
            $imgurl = iro_opt('random_graphs_link_mobile');
         } else {
-            global $sakura_mobile_image_array;
-            $img_array = json_decode($sakura_mobile_image_array, true);
-            $img = array_rand($img_array);
-            $img_domain = iro_opt('random_graphs_link') ?: get_template_directory_uri();
-            if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp')) {
-              $imgurl = $img_domain . "/manifest/" . $img_array[$img]['webp'][0];
-            } else {
-              $imgurl = $img_domain . "/manifest/" . $img_array[$img]['jpeg'][0];
+            // global $sakura_mobile_image_array;
+            $temp = file_get_contents(STYLESHEETPATH . '/manifest/manifest_mobile.json');
+            // $img_array = json_decode($sakura_mobile_image_array, true);
+            $img_array = json_decode($temp, true);
+            if (!$img_array){
+                return ['status'=>False,'msg'=>'没有找到图片，请联系管理员检查manifest_mobile.json下是否存在图片'];
             }
+            $array_keys = array_keys($img_array);
+            $img = array_rand($array_keys);
+            // $img_domain = iro_opt('random_graphs_link_mobile') ?: get_template_directory_uri();
+            if (iro_opt('random_graphs_link_mobile',NULL) && iro_opt('random_graphs_link_mobile') != home_url( '/')) {
+                $img_domain = iro_opt('random_graphs_link_mobile');
+            } else {
+                $img_domain = get_template_directory_uri();
+            }
+            $format = strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') ? 'webp' : 'jpeg';
+            $imgurl = "{$img_domain}/manifest/{$format}/{$array_keys[$img]}.source.{$format}";
         }
         return ['status'=>True,'url'=>$imgurl];
     }
