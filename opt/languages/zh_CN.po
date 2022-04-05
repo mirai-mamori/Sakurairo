@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
 "POT-Creation-Date: 2022-02-27 12:10+0800\n"
-"PO-Revision-Date: 2022-02-27 12:10+0800\n"
+"PO-Revision-Date: 2022-04-06 00:55+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -1132,7 +1132,7 @@ msgstr "大"
 
 #: options/theme-options.php:520
 msgid "Nav Menu Search"
-msgstr "导航菜单搜素"
+msgstr "导航菜单搜索"
 
 #: options/theme-options.php:521
 msgid "It is on by default. Click to enter the search area"
