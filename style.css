@@ -8208,7 +8208,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
   }
 
   #mo-nav {
-    background-color: #FFF;
+    background-color: rgb(255,255,255,0.6);
     width: 250px;
     max-width: 250px !important;
     height: 100%;
@@ -8245,7 +8245,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     max-width: 250px;
     margin: 0 0 20px;
     padding: 8px 15px;
-    background-color: #fafafa;
+    background-color: transparent;
   }
 
   #mo-nav .m-search input {
@@ -9462,7 +9462,7 @@ body.dark input[type=week]:focus,
 body.dark textarea:focus,
 body.dark #mo-nav .m-search form {
   color: #CCCCCC;
-  background-color: #333333;
+  background-color: transparent;
 }
 
 body.dark .post-date {
