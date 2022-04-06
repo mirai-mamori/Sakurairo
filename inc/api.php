@@ -98,6 +98,10 @@ function upload_image(WP_REST_Request $request) {
             $image = file_get_contents($_FILES["cmt_img_file"]["tmp_name"]);
             $API_Request = $images->Chevereto_API($image);
             break;
+        case 'lsky':
+            $image = $_FILES;
+            $API_Request = $images->LSKY_API($image);
+            break;
     }
 
     $result = new WP_REST_Response($API_Request, $API_Request['status']);
