@@ -108,7 +108,7 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   position: relative;
   margin: 20px 0 20px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: #fff0;
   box-shadow: 0 1px 30px -4px var(--post-list-thumb);
   opacity: 0;
 }
@@ -8208,7 +8208,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
   }
 
   #mo-nav {
-    background-color: rgb(255,255,255,0.6);
+    background-color: #fff9;
     width: 250px;
     max-width: 250px !important;
     height: 100%;
