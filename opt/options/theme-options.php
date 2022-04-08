@@ -2847,7 +2847,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'imgur'  => 'Imgur (https://imgur.com)',
           'smms'  => 'SM.MS (https://sm.ms)',
           'chevereto'  => 'Chevereto (https://chevereto.com)',
-          'lsky'  =>  'LSky Pro (https://www.lsky.pro)',
+          'lsky'  =>  'Lsky Pro (https://www.lsky.pro)',
         ),
         'default'     => 'off'
       ),
@@ -2896,17 +2896,17 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'id' => 'lsky_api_key',
         'type' => 'text',
-        'title' => __('LSky Pro v1 Token','sakurairo_csf'),
+        'title' => __('Lsky Pro v1 Token','sakurairo_csf'),
         'dependency' => array( 'img_upload_api', '==', 'lsky' ),
-        'desc' => __('Fill in the Token here, Please note that there is no "Bearer " at first, to get please visit your LSky Pro home page address/api','sakurairo_csf'),
+        'desc' => __('Fill in the Token here, Please note that there is no "Bearer " at first, to get please visit your Lsky Pro home page address/api','sakurairo_csf'),
       ),
 
       array(
         'id' => 'lsky_url',
         'type' => 'text',
-        'title' => __('LSky Pro Address','sakurairo_csf'),
+        'title' => __('Lsky Pro Address','sakurairo_csf'),
         'dependency' => array( 'img_upload_api', '==', 'lsky' ),
-        'desc' => __('Your LSky Pro home page address. Please note that there is no "/" at the end, e.g. https://your.lskypro.com','sakurairo_csf'),
+        'desc' => __('Your Lsky Pro home page address. Please note that there is no "/" at the end, e.g. https://your.lskypro.com','sakurairo_csf'),
       ),
       
       array(
