@@ -7,13 +7,58 @@ class Images
     private $chevereto_api_key;
     private $imgur_client_id;
     private $smms_client_id;
+    private $lsky_api_key;
 
     public function __construct() {
         $this->chevereto_api_key = iro_opt('chevereto_api_key');
+        $this->lsky_api_key = iro_opt('lsky_api_key');
         $this->imgur_client_id = iro_opt('imgur_client_id');
         $this->smms_client_id = iro_opt('smms_client_id');
     }
 
+    /**
+     * LSky Pro upload interface
+     */
+    public function LSKY_API($image) {
+        $upload_url = iro_opt('lsky_url') . '/api/v1/upload';
+        $filename = $image['cmt_img_file']['name'];
+        $filedata = $image['cmt_img_file']['tmp_name'];
+        $Boundary = wp_generate_password();
+        $bits = file_get_contents($filedata);
+        $args = array(
+            'headers' => array(
+                'Authorization' => 'Bearer ' . $this->lsky_api_key,
+                'Accept' => 'application/json',
+                'Content-Type' => 'multipart/form-data; boundary='.$Boundary,
+            ),
+            'body' => "--$Boundary\r\nContent-Disposition: form-data; name=\"file\"; filename=\"$filename\"\r\n\r\n$bits\r\n\r\n--$Boundary--"
+        );
+
+        $response = wp_remote_post($upload_url, $args);
+        $reply = json_decode($response['body']);
+
+        if ($reply->status == true) {
+            $status = 200;
+            $success = true;
+            $message = 'success';
+            $link = $reply->data->links->url;
+            $proxy = iro_opt('comment_image_proxy') . $link;
+        } else {
+            $status = 400;
+            $success = false;
+            $message = $reply->message;
+            $link = 'https://view.moezx.cc/images/2019/10/28/default_d_h_large.gif';
+            $proxy = iro_opt('comment_image_proxy') . $link;
+        }
+        $output = array(
+            'status' => $status,
+            'success' => $success,
+            'message' => $message,
+            'link' => $link,
+            'proxy' => $proxy,
+        );
+        return $output;
+    }
 
     /**
      * Chevereto upload interface
