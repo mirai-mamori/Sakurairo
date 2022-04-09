@@ -2752,10 +2752,11 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 		'title' => __('My Anime List Sort','sakurairo_csf'),
 		'dependency' => array( 'bangumi_source', '==', 'myanimelist' ),
 		'options'    => array(
+			'?order=16&order2=5&status=7' => __('My Anime List Status and Last Updated', 'sakurairo_csf'),
 			'?order=5&status=7' => __('Last Updated', 'sakurairo_csf'),
 			'?order=1&status=7' => __('Alphabetically', 'sakurairo_csf'),
 		),
-		'default' => '?order=5&status=7'
+		'default' => '?order=16&order2=5&status=7'
 	  ),
 
       array(
