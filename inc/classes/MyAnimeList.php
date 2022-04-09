@@ -100,7 +100,7 @@ class MyAnimeList
 			case 1: // Watching
 			{
 				return '<div class="bangumi-status-bar" style="width: '.
-				       ($item['num_watched_episodes']/0.1+$item['anime_num_episodes']) * 100 .
+				       MyAnimeList::status_percent($item) .
 				       '%; background: #0275d8;"></div>' .
 				       '<p>' .
 				       __('Watching ', 'sakurairo') . $item['num_watched_episodes'] . '/' . $item['anime_num_episodes'] .
@@ -116,7 +116,7 @@ class MyAnimeList
 			case 4: // Dropped
 			{
 				return '<div class="bangumi-status-bar" style="width: '.
-				       ($item['num_watched_episodes']/0.1+$item['anime_num_episodes']) * 100 .
+				       MyAnimeList::status_percent($item) .
 				       '%; background: #d9534f;"></div>' .
 				       '<p>' .
 				       __('Dropped ', 'sakurairo') . $item['num_watched_episodes'] . '/' . $item['anime_num_episodes'] .
@@ -125,7 +125,7 @@ class MyAnimeList
 			case 3: // On Hold
 			{
 				return '<div class="bangumi-status-bar" style="width: '.
-				       ($item['num_watched_episodes']/0.1+$item['anime_num_episodes']) * 100 .
+				       MyAnimeList::status_percent($item) .
 				       '%; background: #f0ad4e;"></div>' .
 				       '<p>' .
 				       __('Paused ', 'sakurairo') . $item['num_watched_episodes'] . '/' . $item['anime_num_episodes'] .
@@ -135,6 +135,18 @@ class MyAnimeList
 			{
 				return '';
 			}
+		}
+	}
+
+	private static function status_percent(array $item)
+	{
+		if ($item['anime_num_episodes'] == 0)
+		{
+			return 0;
+		}
+		else
+		{
+			return ($item['num_watched_episodes']/$item['anime_num_episodes']) * 100;
 		}
 	}
 }
