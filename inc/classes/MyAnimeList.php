@@ -2,12 +2,15 @@
 
 namespace Sakura\API;
 
-class MyAnimeList {
+class MyAnimeList
+{
 	private $username;
+	private $sort;
 
 	public function __construct()
 	{
 		$this->username = iro_opt('my_anime_list_username');
+		$this->sort = iro_opt('my_anime_list_sort');
 	}
 
 	/**
@@ -19,7 +22,8 @@ class MyAnimeList {
 	function get_data()
 	{
 		$username = $this->username;
-		$url = "https://myanimelist.net/animelist/$username/load.json";
+		$sort = $this->sort;
+		$url = "https://myanimelist.net/animelist/$username/load.json$sort";
 		$args = array(
 			'headers' => array(
 				'Host' => 'myanimelist.net',
@@ -34,44 +38,103 @@ class MyAnimeList {
 		}
 	}
 
-	function get_all_items()
+	public function get_all_items()
 	{
 		$resp = $this->get_data();
 		if ($resp === false)
 		{
-			return '<div>Backend Error QwQ</div>';
+			return "<div>" . __('Backend error', 'sakurairo') . "</div>";
 		}
 		else
 		{
 			$item_count = count($resp);
-			$next = '<span>Following ' . $item_count . ' seasons of anime!</span>';
-			$html = "";
+			$total_episodes = 0;
 			foreach ((array)$resp as $item)
 			{
 				$html .= MyAnimeList::get_item_details($item);
+				$total_episodes += $item['num_watched_episodes'];
 			}
-			$html .= '</div><br><div id="bangumi-pagination">' . $next . '</div>';
+			$top_info = '<br><div id="bangumi-pagination"><span>' .
+			            __('Following ', 'sakurairo') . $item_count . __(' anime. ', 'sakurairo') .
+			            __('Watched ', 'sakurairo') . $total_episodes . __(' episodes. ', 'sakurairo') .
+			            '</span></div>';
+			$html = $top_info . $html . '</div>';
 			return $html;
 		}
 	}
 
 	private static function get_item_details(array $item)
 	{
+
 		return '<div class="column">' .
 		       '<a class="bangumi-item" href="https://myanimelist.net' . $item['anime_url'] . '/" target="_blank" rel="nofollow">'
-		       .lazyload_img(str_replace('http://', 'https://', $item['anime_image_path']),'bangumi-image',array('alt'=>$item['anime_title'])).
+		       .lazyload_img(MyAnimeList::get_image($item['anime_image_path']),'bangumi-image',array('alt'=>$item['anime_title'])).
 		       '<div class="bangumi-info">' .
-		       '<h3 class="bangumi-title" title="' . $item['anime_title'] . '">' . $item['anime_title'] . '</h2>'
-		       . '<div class="bangumi-summary"> ' . $item['anime_title_eng'] . ' </div>' .
-		       '<div class="bangumi-status">'
-		       . '<div class="bangumi-status-bar" style="width: 100%"></div>'
-		       . '<p>' . 'placeholder' .  '</p>'
-		       . '</div>'
-		       . '</div>'
-		       . '</a>'
-		       . '</div>';
+		       '<h3 class="bangumi-title" title="' . $item['anime_title'] . '">' . $item['anime_title'] . '</h2>' .
+		       '<div class="bangumi-summary"> ' . $item['anime_title_eng'] . ' </div>' .
+		       '<div class="bangumi-status">' .
+		       MyAnimeList::bangumi_status($item) .
+		       '</div>' .
+		       '</div>' .
+		       '</a>' .
+		       '</div>';
 	}
 
+	private static function get_image(string $image_path)
+	{
+		preg_match('/\/anime(.*?)\./', $image_path, $output);
+		return "https://cdn.myanimelist.net/images/anime/$output[1].jpg";
+	}
 
-
+	private static function bangumi_status(array $item)
+	{
+		switch($item['status'])
+		{
+			case 2: // Completed
+			{
+				return '<div class="bangumi-status-bar" style="width: 100%; background: #5cb85c;"></div>' .
+				       '<p>' .
+				       __('Finished ', 'sakurairo') . $item['num_watched_episodes'] . '/' . $item['anime_num_episodes'] .
+				       '</p>';
+			}
+			case 1: // Watching
+			{
+				return '<div class="bangumi-status-bar" style="width: '.
+				       ($item['num_watched_episodes']/$item['anime_num_episodes']) * 100 .
+				       '%; background: #0275d8;"></div>' .
+				       '<p>' .
+				       __('Watching ', 'sakurairo') . $item['num_watched_episodes'] . '/' . $item['anime_num_episodes'] .
+				       '</p>';
+			}
+			case 6: // Plan to watch
+			{
+				return '<div class="bangumi-status-bar" style="width: 100%; background: #969ea4;"></div>' .
+				       '<p>' .
+				       __('Planning to Watch ', 'sakurairo') .
+				       '</p>';
+			}
+			case 4: // Dropped
+			{
+				return '<div class="bangumi-status-bar" style="width: '.
+				       ($item['num_watched_episodes']/$item['anime_num_episodes']) * 100 .
+				       '%; background: #d9534f;"></div>' .
+				       '<p>' .
+				       __('Dropped ', 'sakurairo') . $item['num_watched_episodes'] . '/' . $item['anime_num_episodes'] .
+				       '</p>';
+			}
+			case 3: // On Hold
+			{
+				return '<div class="bangumi-status-bar" style="width: '.
+				       ($item['num_watched_episodes']/$item['anime_num_episodes']) * 100 .
+				       '%; background: #f0ad4e;"></div>' .
+				       '<p>' .
+				       __('Paused ', 'sakurairo') . $item['num_watched_episodes'] . '/' . $item['anime_num_episodes'] .
+				       '</p>';
+			}
+			default: // TODO: other possible status code
+			{
+				return '';
+			}
+		}
+	}
 }

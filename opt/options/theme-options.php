@@ -2708,10 +2708,22 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'default' => 'Noto Serif SC'
       ),
 
+	  array(
+		'id' => 'bangumi_source',
+		'type' => 'radio',
+		'title' => __('Bangumi Template Source', 'sakurairo_csf'),
+		'options'    => array(
+			'bilibili' => __('Bilibili', 'sakurairo_csf'),
+			'myanimelist' => __('My Anime List', 'sakurairo_csf'),
+		),
+		'default' => 'bilibili'
+	  ),
+
       array(
         'id' => 'bilibili_id',
         'type' => 'text',
         'title' => __('Bilibili Bangumi Catch-up Template Account ID','sakurairo_csf'),
+        'dependency' => array( 'bangumi_source', '==', 'bilibili' ),
         'desc' => __('Fill in your account ID, e.g. https://space.bilibili.com/13972644/, just the number part "13972644"','sakurairo_csf'),
         'default' => '13972644'
       ),
@@ -2720,16 +2732,30 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'bilibili_cookie',
         'type' => 'text',
         'title' => __('Bilibili Bangumi Catch-up Template Account Cookies','sakurairo_csf'),
+        'dependency' => array( 'bangumi_source', '==', 'bilibili' ),
         'desc' => __('Fill in your account cookies, F12 to open your browser web panel, go to your bilibili homepage to get cookies. If left empty, it will not show the progress of catching up bangumis','sakurairo_csf'),
         'default' => 'LIVE_BUVID='
       ),
 
 	  array(
-		  'id' => 'my_anime_list_username',
-		  'type' => 'text',
-		  'title' => __('My Anime List Username','sakurairo_csf'),
-		  'desc' => __('Username on https://myanimelist.net/','sakurairo_csf'),
-		  'default' => ''
+	    'id' => 'my_anime_list_username',
+	    'type' => 'text',
+	    'title' => __('My Anime List Username','sakurairo_csf'),
+	    'dependency' => array( 'bangumi_source', '==', 'myanimelist' ),
+	    'desc' => __('Username on https://myanimelist.net/','sakurairo_csf'),
+	    'default' => ''
+      ),
+
+	  array(
+		'id' => 'my_anime_list_sort',
+		'type' => 'radio',
+		'title' => __('My Anime List Sort','sakurairo_csf'),
+		'dependency' => array( 'bangumi_source', '==', 'myanimelist' ),
+		'options'    => array(
+			'?order=5&status=7' => __('Last Updated', 'sakurairo_csf'),
+			'?order=1&status=7' => __('Alphabetically', 'sakurairo_csf'),
+		),
+		'default' => '?order=5&status=7'
 	  ),
 
       array(

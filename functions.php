@@ -917,7 +917,7 @@ function rt_add_link_target($content)
         }
 
         // fix the target="_blank" bug in the codeblock
-        if (strpos(preg_replace('/code([\s\S]*?)\/code[\s]*/m', 'temp', $content), $bit) === false) {
+        if (strpos(preg_replace('/code([\s\S]*?)\/code[\s]*/m', 'myAnimeList', $content), $bit) === false) {
             continue;
         }
 
@@ -1661,7 +1661,7 @@ function markdown_parser($incoming_comment)
 {
     global $wpdb, $comment_markdown_content;
     $re = '/```([\s\S]*?)```[\s]*|`{1,2}[^`](.*?)`{1,2}|\[.*?\]\([\s\S]*?\)/m';
-    if (preg_replace($re, 'temp', $incoming_comment['comment_content']) != strip_tags(preg_replace($re, 'temp', $incoming_comment['comment_content']))) {
+    if (preg_replace($re, 'myAnimeList', $incoming_comment['comment_content']) != strip_tags(preg_replace($re, 'myAnimeList', $incoming_comment['comment_content']))) {
         siren_ajax_comment_err('评论只支持Markdown啦，见谅╮(￣▽￣)╭<br>Markdown Supported while <i class="fa fa-code" aria-hidden="true"></i> Forbidden');
         return ($incoming_comment);
     }
