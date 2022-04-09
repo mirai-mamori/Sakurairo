@@ -2724,6 +2724,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'default' => 'LIVE_BUVID='
       ),
 
+	  array(
+		  'id' => 'my_anime_list_username',
+		  'type' => 'text',
+		  'title' => __('My Anime List Username','sakurairo_csf'),
+		  'desc' => __('Username on https://myanimelist.net/','sakurairo_csf'),
+		  'default' => ''
+	  ),
+
       array(
         'id' => 'friend_link_align',
         'type' => 'image_select',
