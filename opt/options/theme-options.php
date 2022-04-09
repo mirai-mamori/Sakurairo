@@ -2712,7 +2712,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 		'id' => 'bangumi_source',
 		'type' => 'radio',
 		'title' => __('Bangumi Template Source', 'sakurairo_csf'),
-		'options'    => array(
+		'options' => array(
 			'bilibili' => __('Bilibili', 'sakurairo_csf'),
 			'myanimelist' => __('My Anime List (Not recommended for China mainland)', 'sakurairo_csf'),
 		),
@@ -2751,12 +2751,11 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 		'type' => 'radio',
 		'title' => __('My Anime List Sort','sakurairo_csf'),
 		'dependency' => array( 'bangumi_source', '==', 'myanimelist' ),
-		'options'    => array(
-			'?order=16&order2=5&status=7' => __('My Anime List Status and Last Updated', 'sakurairo_csf'),
-			'?order=5&status=7' => __('Last Updated', 'sakurairo_csf'),
-			'?order=1&status=7' => __('Alphabetically', 'sakurairo_csf'),
+		'options' => array(
+			'order=5&status=7' => __('Last Updated', 'sakurairo_csf'),
+			'order=16&status=7' => __('Status', 'sakurairo_csf'),
 		),
-		'default' => '?order=16&order2=5&status=7'
+		'default' => 'order=16&status=7'
 	  ),
 
       array(

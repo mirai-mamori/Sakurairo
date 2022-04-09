@@ -23,7 +23,7 @@ class MyAnimeList
 	{
 		$username = $this->username;
 		$sort = $this->sort;
-		$url = "https://myanimelist.net/animelist/$username/load.json$sort";
+		$url = "https://myanimelist.net/animelist/$username/load.json?$sort";
 		$args = array(
 			'headers' => array(
 				'Host' => 'myanimelist.net',
