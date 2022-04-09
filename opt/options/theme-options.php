@@ -2714,7 +2714,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 		'title' => __('Bangumi Template Source', 'sakurairo_csf'),
 		'options'    => array(
 			'bilibili' => __('Bilibili', 'sakurairo_csf'),
-			'myanimelist' => __('My Anime List', 'sakurairo_csf'),
+			'myanimelist' => __('My Anime List (Not recommended for China mainland)', 'sakurairo_csf'),
 		),
 		'default' => 'bilibili'
 	  ),
