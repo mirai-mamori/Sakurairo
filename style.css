@@ -1257,7 +1257,7 @@ h1.page-title {
   left: 50%;
   margin-left: -370px;
   position: relative;
-  background-size: 100%100%;
+  background-size: 100%;
   border: none;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
   margin-bottom: 50px;
@@ -9684,4 +9684,22 @@ body.dark #changskin:hover {
 
 body.dark .focusinfo .header-tou img {
   box-shadow: inset 0 0 10px var(--theme-skin-dark);
+}
+
+body.dark li .cbp_tmlabel {
+  background: #505050 !important;
+  color: #bbb !important;
+  border: 1px dashed #949494;
+}
+
+body.dark .header-info {
+  color:#CCCCCC !important;
+}
+
+body.dark .pattern-center h1.entry-title,body.dark .post-squares h3 {
+  color: #CCCCCC
+}
+
+body.dark .header-user-menu .herder-user-name,body.dark .header-user-menu .herder-user-name-u {
+  color: #CCCCCC
 }
