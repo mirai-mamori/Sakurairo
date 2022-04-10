@@ -55,8 +55,8 @@ class MyAnimeList
 				$total_episodes += $item['num_watched_episodes'];
 			}
 			$top_info = '<br><div id="bangumi-pagination"><span>' .
-			            __('Following ', 'sakurairo') . $item_count . __(' anime. ', 'sakurairo') .
-			            __('Watched ', 'sakurairo') . $total_episodes . __(' episodes. ', 'sakurairo') .
+			            __('Following ', 'sakurairo') . $item_count . __(' anime.', 'sakurairo') .
+			            __('Watched ', 'sakurairo') . $total_episodes . __(' episodes.', 'sakurairo') .
 			            '</span></div>';
 			$html = $top_info . $html . '</div>';
 			return $html;

@@ -50,7 +50,7 @@ class Bilibili
                     $bgm = $resp['data'];
                     $totalpage = $bgm["total"] / 15;
                     if ($totalpage - $page < 0) {
-                        $next = "<span>"  . __('Following ', 'sakurairo') . $bgm["total"] . __('anime.', 'sakurairo') . "</span>";
+                        $next = "<span>"  . __('Following ', 'sakurairo') . $bgm["total"] . __(' anime.', 'sakurairo') . "</span>";
                     } else {
                         $next = Bilibili::anchor_pagination_next(rest_url('sakura/v1/bangumi/bilibili') . '?page=' . ++$page);
                     }
