@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-04-09 21:53-0700\n"
-"PO-Revision-Date: 2022-04-09 21:53-0700\n"
+"POT-Creation-Date: 2022-04-10 10:23-0700\n"
+"PO-Revision-Date: 2022-04-10 10:23-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -464,7 +464,7 @@ msgid "An error has occurred."
 msgstr ""
 
 #: inc/classes/MyAnimeList.php:59
-msgid "Watched "
+msgid " Watched "
 msgstr ""
 
 #: inc/classes/MyAnimeList.php:59
@@ -4484,7 +4484,7 @@ msgstr ""
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr "さくらオプションでビリビリのUIDを記入してください。"
 
-#: user/page-bangumi.php:45
+#: user/page-bangumi.php:43
 #, fuzzy
 #| msgid "Please fill in the Bilibili UID in Sakura Options."
 msgid "Please fill in the My Anime List Username in Sakura Options."

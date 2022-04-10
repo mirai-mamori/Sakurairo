@@ -31,9 +31,7 @@ get_header();
                             <p> <?php _e("Please fill in the Bilibili UID in Sakura Options.","sakura"); ?></p>
                         </div>
                     <?php endif; ?>
-				<?php endif; ?>
-
-                <?php if (iro_opt('bangumi_source') == 'myanimelist'):?>
+                <?php else:?>
                     <?php if (iro_opt('my_anime_list_username') ):?>
                         <div class="row">
                         <?php
