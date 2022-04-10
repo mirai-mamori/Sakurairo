@@ -8120,10 +8120,6 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     opacity: 0;
   }
 
-  .wrapper section {
-    max-width: 600px;
-  }
-
   .wrapper section h1 {
     font-weight: 300;
     font-size: 30px;
