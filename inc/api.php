@@ -16,6 +16,7 @@ include_once('classes/Cache.php');
 include_once('classes/Images.php');
 include_once('classes/QQ.php');
 include_once('classes/Captcha.php');
+include_once ('classes/MyAnimeList.php');
 use Sakura\API\Images;
 use Sakura\API\QQ;
 use Sakura\API\Cache;

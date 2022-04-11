@@ -45,12 +45,12 @@ class Bilibili
         $code = $resp["code"];
         switch ($code) {
             case -1://指示在网络请求阶段发生了错误
-                return '<div>后端发生了错误 QwQ</div>';
+                return "<div>" . __('Backend error', 'sakurairo') . "</div>";
             case 0: {
                     $bgm = $resp['data'];
                     $totalpage = $bgm["total"] / 15;
                     if ($totalpage - $page < 0) {
-                        $next = '<span>共追番' . $bgm["total"] . '部，继续加油吧！٩(ˊᗜˋ*)و</span>';
+                        $next = "<span>"  . __('Following ', 'sakurairo') . $bgm["total"] . __(' anime.', 'sakurairo') . "</span>";
                     } else {
                         $next = Bilibili::anchor_pagination_next(rest_url('sakura/v1/bangumi/bilibili') . '?page=' . ++$page);
                     }
@@ -65,7 +65,7 @@ class Bilibili
                 }
             case 53013: //用户隐私设置未公开
                 //TODO:制作错误页面
-                return '<div>博主似乎隐藏了追番列表。</div>';
+                return "<div>" . __('The author seems to have hidden their bangumi list.', 'sakurairo') . "</div>";
         }
     }
 
