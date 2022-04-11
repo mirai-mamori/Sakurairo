@@ -389,14 +389,14 @@ if (!function_exists('akina_comment_format')) {
                                         $comment_ID = $comment->comment_ID;
                                         $i_private = get_comment_meta($comment_ID, '_private', true);
                                         $flag = null;
-                                        $flag .= ' <i class="fa fa-snowflake-o" aria-hidden="true"></i> <a href="javascript:;" data-actionp="set_private" data-idp="' . get_comment_id() . '" id="sp" class="sm" style="color:rgba(0,0,0,.35)">' . __("Private", "sakurairo") . ': <span class="has_set_private">';
+                                        $flag .= ' <i class="fa-solid fa-snowflake"></i> <a href="javascript:;" data-actionp="set_private" data-idp="' . get_comment_id() . '" id="sp" class="sm" style="color:rgba(0,0,0,.35)">' . __("Private", "sakurairo") . ': <span class="has_set_private">';
                                         if (!empty($i_private)) {
-                                            $flag .= __("Yes", "sakurairo") . ' <i class="fa fa-lock" aria-hidden="true"></i>';
+                                            $flag .= __("Yes", "sakurairo") . ' <i class="fa-solid fa-lock"></i>';
                                         } else {
-                                            $flag .= __("No", "sakurairo") . ' <i class="fa fa-unlock" aria-hidden="true"></i>';
+                                            $flag .= __("No", "sakurairo") . ' <i class="fa-solid fa-lock-open"></i>';
                                         }
                                         $flag .= '</span></a>';
-                                        $flag .= edit_comment_link('<i class="fa fa-pencil-square-o" aria-hidden="true"></i> ' . __("Edit", "mashiro"), ' <span style="color:rgba(0,0,0,.35)">', '</span>');
+                                        $flag .= edit_comment_link('<i class="fa-solid fa-square-pen"></i> ' . __("Edit", "mashiro"), ' <span style="color:rgba(0,0,0,.35)">', '</span>');
                                         echo $flag;
                                     } ?></div>
                                 </div>
@@ -1662,7 +1662,7 @@ function markdown_parser($incoming_comment)
     global $wpdb, $comment_markdown_content;
     $re = '/```([\s\S]*?)```[\s]*|`{1,2}[^`](.*?)`{1,2}|\[.*?\]\([\s\S]*?\)/m';
     if (preg_replace($re, 'temp', $incoming_comment['comment_content']) != strip_tags(preg_replace($re, 'temp', $incoming_comment['comment_content']))) {
-        siren_ajax_comment_err('评论只支持Markdown啦，见谅╮(￣▽￣)╭<br>Markdown Supported while <i class="fa fa-code" aria-hidden="true"></i> Forbidden');
+        siren_ajax_comment_err('评论只支持Markdown啦，见谅╮(￣▽￣)╭<br>Markdown Supported while <i class="fa-solid fa-code"></i> Forbidden');
         return ($incoming_comment);
     }
     $column_names = $wpdb->get_row("SELECT * FROM information_schema.columns where 
@@ -1787,25 +1787,25 @@ add_action('admin_notices', 'permalink_tip');
 add_shortcode('task', 'task_shortcode');
 function task_shortcode($attr, $content = '')
 {
-    $out = '<div class="task shortcodestyle"><i class="fa fa-tasks"></i>' . $content . '</div>';
+    $out = '<div class="task shortcodestyle"><i class="fa-solid fa-list-check"></i>' . $content . '</div>';
     return $out;
 }
 add_shortcode('warning', 'warning_shortcode');
 function warning_shortcode($attr, $content = '')
 {
-    $out = '<div class="warning shortcodestyle"><i class="fa fa fa-exclamation-triangle"></i>' . $content . '</div>';
+    $out = '<div class="warning shortcodestyle"><i class="fa-solid fa-triangle-exclamation"></i>' . $content . '</div>';
     return $out;
 }
 add_shortcode('noway', 'noway_shortcode');
 function noway_shortcode($attr, $content = '')
 {
-    $out = '<div class="noway shortcodestyle"><i class="fa fa-times-rectangle"></i>' . $content . '</div>';
+    $out = '<div class="noway shortcodestyle"><i class="fa-regular fa-rectangle-xmark"></i>' . $content . '</div>';
     return $out;
 }
 add_shortcode('buy', 'buy_shortcode');
 function buy_shortcode($attr, $content = '')
 {
-    $out = '<div class="buy shortcodestyle"><i class="fa fa-check-square"></i>' . $content . '</div>';
+    $out = '<div class="buy shortcodestyle"><i class="fa-regular fa-circle-check"></i>' . $content . '</div>';
     return $out;
 }
 
@@ -1836,7 +1836,7 @@ function xcollapse($atts, $content = null)
     extract(shortcode_atts(array("title" => ""), $atts));
     return '<div style="margin: 0.5em 0;">
     <div class="xControl">
-    <i class="fa fa-arrow-down" style="color: #9F6F26;"></i> &nbsp;&nbsp;
+    <i class="fa-solid fa-arrow-down" style="color: #9F6F26;"></i> &nbsp;&nbsp;
     <span class="xTitle">' . $title . '</span>&nbsp;&nbsp;==>&nbsp;&nbsp;<a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02">展开 / 收缩</span></a>
     <div style="clear: both;"></div>
     </div>
