@@ -45,12 +45,12 @@ class Bilibili
         $code = $resp["code"];
         switch ($code) {
             case -1://指示在网络请求阶段发生了错误
-                return "<div>" . __('Backend error', 'sakurairo') . "</div>";
+                return '<div>后端发生了错误 QwQ</div>';
             case 0: {
                     $bgm = $resp['data'];
                     $totalpage = $bgm["total"] / 15;
                     if ($totalpage - $page < 0) {
-                        $next = "<span>"  . __('Following ', 'sakurairo') . $bgm["total"] . __(' anime.', 'sakurairo') . "</span>";
+                        $next = '<span>共追番' . $bgm["total"] . '部，继续加油吧！٩(ˊᗜˋ*)و</span>';
                     } else {
                         $next = Bilibili::anchor_pagination_next(rest_url('sakura/v1/bangumi/bilibili') . '?page=' . ++$page);
                     }
@@ -65,7 +65,7 @@ class Bilibili
                 }
             case 53013: //用户隐私设置未公开
                 //TODO:制作错误页面
-                return "<div>" . __('The author seems to have hidden their bangumi list.', 'sakurairo') . "</div>";
+                return '<div>博主似乎隐藏了追番列表。</div>';
         }
     }
 
@@ -95,7 +95,7 @@ class Bilibili
     }
     private static function anchor_pagination_next(string $href)
     {
-        return '<a class="bangumi-next" data-href="' . $href . '"><i class="fa fa-bolt" aria-hidden="true"></i> NEXT </a>';
+        return '<a class="bangumi-next" data-href="' . $href . '"><i class="fa-solid fa-bolt"></i> NEXT </a>';
     }
     private static function bangumi_item(array $item, $percent)
     {

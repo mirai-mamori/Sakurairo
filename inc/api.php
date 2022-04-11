@@ -1,11 +1,4 @@
 <?php
-/**
- * @Author: fuukei
- * @Date:   2022-03-13 18:16:15
- * @Last Modified by:   bymoye
- * @Last Modified time: 2022-03-27 00:47:46
- */
-
 
 /**
  * Classes
@@ -16,7 +9,6 @@ include_once('classes/Cache.php');
 include_once('classes/Images.php');
 include_once('classes/QQ.php');
 include_once('classes/Captcha.php');
-include_once ('classes/MyAnimeList.php');
 use Sakura\API\Images;
 use Sakura\API\QQ;
 use Sakura\API\Cache;
@@ -106,10 +98,6 @@ function upload_image(WP_REST_Request $request) {
             $image = file_get_contents($_FILES["cmt_img_file"]["tmp_name"]);
             $API_Request = $images->Chevereto_API($image);
             break;
-        case 'lsky':
-            $image = $_FILES;
-            $API_Request = $images->LSKY_API($image);
-            break;
     }
 
     $result = new WP_REST_Response($API_Request, $API_Request['status']);
@@ -152,8 +140,7 @@ function cover_gallery() {
  * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/image/feature
  */
 function feature_gallery() {
-    $size = isset($_GET['size']) ? (in_array($_GET['size'], ['source','th']) ? $_GET['size'] : 'source') : 'source';
-    $imgurl = Images::feature_gallery($size);
+    $imgurl = Images::feature_gallery();
     if (!$imgurl['status']){
         return new WP_REST_Response(
             array(
@@ -167,6 +154,7 @@ function feature_gallery() {
     $data = array('feature image');
     $response = new WP_REST_Response($data);
     $response->set_status(302);
+    var_dump($imgurl);
     $response->header('Location', $imgurl['url']);
     return $response;
 }
