@@ -1257,7 +1257,7 @@ h1.page-title {
   left: 50%;
   margin-left: -370px;
   position: relative;
-  background-size: 100%100%;
+  background-size: 100% 100%;
   border: none;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
   margin-bottom: 50px;
@@ -4624,6 +4624,7 @@ h5::before {
   position: relative;
   padding-bottom: 130%;
   box-shadow: 0 0 10px rgba(0, 0, 0, .1), 0 5px 20px rgba(0, 0, 0, .2);
+  border-radius: 10px;
 }
 
 .bangumi-item img {
@@ -4665,6 +4666,7 @@ h5::before {
   max-width: 100%;
   position: absolute;
   background: #dc143c;
+  border-radius: 3px;
 }
 
 #bangumi-pagination {
@@ -7053,6 +7055,7 @@ a.toc-link {
 .bangumi-status {
   position: relative;
   background: rgba(0, 0, 0, .6);
+  border-radius: 3px;
 }
 
 .bangumi-next.loading:before {
@@ -8120,10 +8123,6 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     opacity: 0;
   }
 
-  .wrapper section {
-    max-width: 600px;
-  }
-
   .wrapper section h1 {
     font-weight: 300;
     font-size: 30px;
@@ -8245,7 +8244,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     max-width: 250px;
     margin: 0 0 20px;
     padding: 8px 15px;
-    background-color: transparent;
+    background-color: #fafafa;
   }
 
   #mo-nav .m-search input {
@@ -9684,4 +9683,22 @@ body.dark #changskin:hover {
 
 body.dark .focusinfo .header-tou img {
   box-shadow: inset 0 0 10px var(--theme-skin-dark);
+}
+
+body.dark li .cbp_tmlabel {
+  background: #505050 !important;
+  color: #bbb !important;
+  border: 1px dashed #949494;
+}
+
+body.dark .header-info {
+  color:#CCCCCC !important;
+}
+
+body.dark .pattern-center h1.entry-title,body.dark .post-squares h3 {
+  color: #CCCCCC;
+}
+
+body.dark .header-user-menu .herder-user-name,body.dark .header-user-menu .herder-user-name-u {
+  color: #CCCCCC;
 }
