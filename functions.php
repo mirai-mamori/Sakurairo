@@ -1787,25 +1787,25 @@ add_action('admin_notices', 'permalink_tip');
 add_shortcode('task', 'task_shortcode');
 function task_shortcode($attr, $content = '')
 {
-    $out = '<div class="task shortcodestyle"><i class="fa-solid fa-list-check" aria-hidden="true"></i>' . $content . '</div>';
+    $out = '<div class="task shortcodestyle"><i class="fa-solid fa-list-check"></i>' . $content . '</div>';
     return $out;
 }
 add_shortcode('warning', 'warning_shortcode');
 function warning_shortcode($attr, $content = '')
 {
-    $out = '<div class="warning shortcodestyle"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>' . $content . '</div>';
+    $out = '<div class="warning shortcodestyle"><i class="fa-solid fa-triangle-exclamation"></i>' . $content . '</div>';
     return $out;
 }
 add_shortcode('noway', 'noway_shortcode');
 function noway_shortcode($attr, $content = '')
 {
-    $out = '<div class="noway shortcodestyle"><i class="fa-regular fa-rectangle-xmark" aria-hidden="true"></i>' . $content . '</div>';
+    $out = '<div class="noway shortcodestyle"><i class="fa-regular fa-rectangle-xmark"></i>' . $content . '</div>';
     return $out;
 }
 add_shortcode('buy', 'buy_shortcode');
 function buy_shortcode($attr, $content = '')
 {
-    $out = '<div class="buy shortcodestyle"><i class="fa-regular fa-circle-check" aria-hidden="true"></i>' . $content . '</div>';
+    $out = '<div class="buy shortcodestyle"><i class="fa-regular fa-circle-check"></i>' . $content . '</div>';
     return $out;
 }
 
@@ -1836,7 +1836,7 @@ function xcollapse($atts, $content = null)
     extract(shortcode_atts(array("title" => ""), $atts));
     return '<div style="margin: 0.5em 0;">
     <div class="xControl">
-    <i class="fa-solid fa-arrow-down" aria-hidden="true" style="color: #9F6F26;"></i> &nbsp;&nbsp;
+    <i class="fa-solid fa-arrow-down" style="color: #9F6F26;"></i> &nbsp;&nbsp;
     <span class="xTitle">' . $title . '</span>&nbsp;&nbsp;==>&nbsp;&nbsp;<a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02">展开 / 收缩</span></a>
     <div style="clear: both;"></div>
     </div>

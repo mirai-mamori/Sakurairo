@@ -92,30 +92,30 @@ $reception_background = iro_opt('reception_background');
     <div class="theme-controls row-container">
         <ul class="menu-list">
             <li id="white-bg">
-				<i class="fa-solid fa-tv" aria-hidden="true"></i>
+				<i class="fa-solid fa-tv faa-tada animated-hover faa-fast" aria-hidden="true"></i>
 			</li><!--Default-->
 			<?php if($reception_background['heart_shaped'] == '1'): ?>
             <li id="diy1-bg">
-				<i class="fa-solid fa-heart" aria-hidden="true"></i>
+				<i class="fa-solid fa-heart faa-tada animated-hover faa-fast" aria-hidden="true"></i>
 			</li><!--Diy1-->
 			<?php endif; ?>
 			<?php if($reception_background['star_shaped'] == '1'): ?>
             <li id="diy2-bg">
-				<i class="fa-solid fa-star" aria-hidden="true"></i>
+				<i class="fa-solid fa-star faa-tada animated-hover faa-fast" aria-hidden="true"></i>
 			</li><!--Diy2-->
 			<?php endif; ?>
 			<?php if($reception_background['square_shaped'] == '1'): ?>
             <li id="diy3-bg">
-				<i class="fa-brands fa-delicious" aria-hidden="true"></i>
+				<i class="fa-brands fa-delicious faa-tada animated-hover faa-fast" aria-hidden="true"></i>
 			</li><!--Diy3-->
 			<?php endif; ?>
 			<?php if($reception_background['lemon_shaped'] == '1'): ?>
             <li id="diy4-bg">
-				<i class="fa-regular fa-lemon" aria-hidden="true"></i>
+				<i class="fa-regular fa-lemon faa-tada animated-hover faa-fast" aria-hidden="true"></i>
 			</li><!--Diy4-->
 			<?php endif; ?>
             <li id="dark-bg">
-				<i class="fa-regular fa-moon" aria-hidden="true"></i>
+				<i class="fa-regular fa-moon faa-tada animated-hover faa-fast" aria-hidden="true"></i>
             </li><!--Night-->
         </ul>
 	</div>
