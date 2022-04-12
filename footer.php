@@ -59,7 +59,7 @@ $reception_background = iro_opt('reception_background');
 		</div>
 		<?php wp_nav_menu( array( 'depth' => 2, 'theme_location' => 'primary', 'container' => false ) ); ?>
 	</div><!-- m-nav-center end -->
-	<button id="moblieGoTop" title="<?=__('Go to top','sakurairo');?>"><i class="fa-solid fa-chevron-up"></i></button>
+	<button id="moblieGoTop" title="<?=__('Go to top','sakurairo');?>"><i class="fa-solid fa-chevron-up" aria-hidden="true"></i></button>
     <button id="changskin"><i class="iconfont icon-gear inline-block rotating"></i></button>
 	<!-- search start -->
 	<form class="js-search search-form search-form--modal" method="get" action="<?php echo home_url(); ?>" role="search">
@@ -92,38 +92,38 @@ $reception_background = iro_opt('reception_background');
     <div class="theme-controls row-container">
         <ul class="menu-list">
             <li id="white-bg">
-				<i class="fa-solid fa-tv"></i>
+				<i class="fa-solid fa-tv" aria-hidden="true"></i>
 			</li><!--Default-->
 			<?php if($reception_background['heart_shaped'] == '1'): ?>
             <li id="diy1-bg">
-				<i class="fa-solid fa-heart"></i>
+				<i class="fa-solid fa-heart" aria-hidden="true"></i>
 			</li><!--Diy1-->
 			<?php endif; ?>
 			<?php if($reception_background['star_shaped'] == '1'): ?>
             <li id="diy2-bg">
-				<i class="fa-solid fa-star"></i>
+				<i class="fa-solid fa-star" aria-hidden="true"></i>
 			</li><!--Diy2-->
 			<?php endif; ?>
 			<?php if($reception_background['square_shaped'] == '1'): ?>
             <li id="diy3-bg">
-				<i class="fa-brands fa-delicious"></i>
+				<i class="fa-brands fa-delicious" aria-hidden="true"></i>
 			</li><!--Diy3-->
 			<?php endif; ?>
 			<?php if($reception_background['lemon_shaped'] == '1'): ?>
             <li id="diy4-bg">
-				<i class="fa-regular fa-lemon"></i>
+				<i class="fa-regular fa-lemon" aria-hidden="true"></i>
 			</li><!--Diy4-->
 			<?php endif; ?>
             <li id="dark-bg">
-				<i class="fa-regular fa-moon"></i>
+				<i class="fa-regular fa-moon" aria-hidden="true"></i>
             </li><!--Night-->
         </ul>
 	</div>
 	<?php if(iro_opt('style_menu_display') == 'full'): ?>
 	<p style="margin-bottom: 0.1em;">Fonts</p>
     <div class="font-family-controls row-container">
-        <button type="button" class="control-btn-serif selected" data-name="serif" ><i class="fa-solid fa-font"></i></button>
-        <button type="button" class="control-btn-sans-serif" data-name="sans-serif"><i class="fa-solid fa-bold"></i></button>
+        <button type="button" class="control-btn-serif selected" data-name="serif" ><i class="fa-solid fa-font" aria-hidden="true"></i></button>
+        <button type="button" class="control-btn-sans-serif" data-name="sans-serif"><i class="fa-solid fa-bold" aria-hidden="true"></i></button>
 	</div>
 	<?php endif; ?>
 </div>
