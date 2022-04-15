@@ -49,7 +49,7 @@ switch(iro_opt('iro_update_source')){
 //error_reporting(E_ALL);
 error_reporting(E_ALL & ~E_NOTICE);
 
-if (!function_exists('akina_setup')) :
+if (!function_exists('akina_setup')){
     function akina_setup()
     {
         /*
@@ -179,7 +179,7 @@ if (!function_exists('akina_setup')) :
             return is_array($var) ? array_intersect($var, array('current-menu-item', 'current-post-ancestor', 'current-menu-ancestor', 'current-menu-parent')) : '';
         }
     }
-endif;
+};
 add_action('after_setup_theme', 'akina_setup');
 
 //说说页面
