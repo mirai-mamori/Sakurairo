@@ -49,7 +49,8 @@ switch(iro_opt('iro_update_source')){
 //error_reporting(E_ALL);
 error_reporting(E_ALL & ~E_NOTICE);
 
-if (!function_exists('akina_setup')){
+if (!function_exists('akina_setup'))
+{
     function akina_setup()
     {
         /*
@@ -153,7 +154,7 @@ if (!function_exists('akina_setup')){
             }
             add_action('init', 'disable_emojis');
         }
-        if (!function_exists('disable_emojis_tinymce')) {
+        if (!function_exists('disable_emojis_tinymce')) 
         {
             /**
              * Filter function used to remove the tinymce emoji plugin.
