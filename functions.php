@@ -153,22 +153,23 @@ if (!function_exists('akina_setup')){
             }
             add_action('init', 'disable_emojis');
         }
-
-        /**
-         * Filter function used to remove the tinymce emoji plugin.
-         *
-         * @param    array  $plugins
-         * @return   array             Difference betwen the two arrays
-         */
-        function disable_emojis_tinymce($plugins)
+        if (!function_exists('disable_emojis_tinymce')) {
         {
-            if (is_array($plugins)) {
-                return array_diff($plugins, array('wpemoji'));
-            } else {
-                return array();
+            /**
+             * Filter function used to remove the tinymce emoji plugin.
+             *
+             * @param    array  $plugins
+             * @return   array             Difference betwen the two arrays
+             */
+            function disable_emojis_tinymce($plugins)
+            {
+                if (is_array($plugins)) {
+                    return array_diff($plugins, array('wpemoji'));
+                } else {
+                    return array();
+                }
             }
         }
-
         // 移除菜单冗余代码
         add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1);
         add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
