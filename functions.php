@@ -49,7 +49,8 @@ switch(iro_opt('iro_update_source')){
 //error_reporting(E_ALL);
 error_reporting(E_ALL & ~E_NOTICE);
 
-if (!function_exists('akina_setup')) :
+if (!function_exists('akina_setup'))
+{
     function akina_setup()
     {
         /*
@@ -153,22 +154,23 @@ if (!function_exists('akina_setup')) :
             }
             add_action('init', 'disable_emojis');
         }
-
-        /**
-         * Filter function used to remove the tinymce emoji plugin.
-         *
-         * @param    array  $plugins
-         * @return   array             Difference betwen the two arrays
-         */
-        function disable_emojis_tinymce($plugins)
+        if (!function_exists('disable_emojis_tinymce')) 
         {
-            if (is_array($plugins)) {
-                return array_diff($plugins, array('wpemoji'));
-            } else {
-                return array();
+            /**
+             * Filter function used to remove the tinymce emoji plugin.
+             *
+             * @param    array  $plugins
+             * @return   array             Difference betwen the two arrays
+             */
+            function disable_emojis_tinymce($plugins)
+            {
+                if (is_array($plugins)) {
+                    return array_diff($plugins, array('wpemoji'));
+                } else {
+                    return array();
+                }
             }
         }
-
         // 移除菜单冗余代码
         add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1);
         add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
@@ -178,7 +180,7 @@ if (!function_exists('akina_setup')) :
             return is_array($var) ? array_intersect($var, array('current-menu-item', 'current-post-ancestor', 'current-menu-ancestor', 'current-menu-parent')) : '';
         }
     }
-endif;
+};
 add_action('after_setup_theme', 'akina_setup');
 
 //说说页面
@@ -1618,10 +1620,19 @@ function change_avatar($avatar)
 }
 
 // default feature image
-function DEFAULT_FEATURE_IMAGE():string
+function DEFAULT_FEATURE_IMAGE(string $size='source'):string
 {
+    if (iro_opt('random_graphs_options') == 'external_api'){
+        return iro_opt('random_graphs_link').'?'.rand(1,100);
+    }
     $_api_url = rest_url('sakura/v1/image/feature');
-    return $_api_url . (preg_match('/index.php\?/i', $_api_url) ? '&' : '?') . rand(1, 1000);
+    $rand = rand(1, 100);
+    if (strpos($_api_url, 'index.php?') !== false) {
+        $_api_url = "{$_api_url}&size={$size}&$rand";
+    }else{
+        $_api_url = "{$_api_url}?size={$size}&$rand";
+    }
+    return $_api_url;
 }
 
 //评论回复

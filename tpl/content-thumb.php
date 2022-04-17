@@ -48,9 +48,9 @@ while (have_posts()) : the_post();
 						}
 					}
 				}
-				$post_img = $large_image_url[0] ?? DEFAULT_FEATURE_IMAGE();
+				$post_img = $large_image_url[0] ?? DEFAULT_FEATURE_IMAGE('th');
 			} else {
-				$post_img = DEFAULT_FEATURE_IMAGE();
+				$post_img = DEFAULT_FEATURE_IMAGE('th');
 			}
 			$cover_html = '<img class="lazyload" src="' . iro_opt('load_out_svg') . '#lazyload-blur" data-src="' . $post_img . '"/>';
 			break;
@@ -94,7 +94,20 @@ while (have_posts()) : the_post();
 							/**评论关闭 */
 						); ?>
 					</span>
-					<span><i class="iconfont icon-file"></i><a href="<?php echo esc_url(get_category_link($the_cat[0]->cat_ID)); ?>"><?php echo $the_cat[0]->cat_name; ?></a>
+					<span><i class="iconfont icon-file"></i>
+					<a href="<?php
+						if (isset($the_cat[0])) {
+							echo $cat_id = esc_url(get_category_link($the_cat[0]->cat_ID  ?? ''));
+						}
+					?>">
+					<?php
+						if (isset($the_cat[0])) {
+							echo $the_cat[0]->cat_name ?? '未分类';
+						} else {
+							echo '未分类';
+						}
+					?>
+					</a>
 					</span>
 				</div>
 				<div class="float-content">

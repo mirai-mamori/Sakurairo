@@ -1,7 +1,7 @@
 <?php
 
 /**
- Template Name: 哔哩哔哩追番模板
+ Template Name: 追番模板
  */
 get_header(); 
 ?>
@@ -19,17 +19,31 @@ get_header();
 	<article <?php post_class("post-item"); ?>>
 		<?php the_content(); ?>
 			<section class="bangumi">
-            <?php if (iro_opt('bilibili_id') ):?>
-                <div class="row">
-            <?php
-                $bgm = new \Sakura\API\Bilibili();
-                echo $bgm->get_bgm_items(); 
-            ?>
-            <?php else: ?>
-                <div class="row">
-                    <p> <?php _e("Please fill in the Bilibili UID in Sakura Options.","sakura"); ?></p>
-                </div>
-            <?php endif; ?>
+                <?php if (iro_opt('bangumi_source') == 'bilibili'):?>
+                    <?php if (iro_opt('bilibili_id') ):?>
+                        <div class="row">
+                        <?php
+                        $bgm = new \Sakura\API\Bilibili();
+                        echo $bgm->get_bgm_items();
+                        ?>
+                    <?php else: ?>
+                        <div class="row">
+                            <p> <?php _e("Please fill in the Bilibili UID in Sakura Options.","sakura"); ?></p>
+                        </div>
+                    <?php endif; ?>
+                <?php else:?>
+                    <?php if (iro_opt('my_anime_list_username') ):?>
+                        <div class="row">
+                        <?php
+                        $bgm = new \Sakura\API\MyAnimeList();
+                        echo $bgm->get_all_items();
+                        ?>
+                    <?php else: ?>
+                        <div class="row">
+                            <p> <?php _e("Please fill in the My Anime List Username in Sakura Options.","sakura"); ?></p>
+                        </div>
+                    <?php endif; ?>
+                <?php endif; ?>
             </section>
 	</article>
 <?php endwhile; ?>

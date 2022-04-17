@@ -2708,10 +2708,22 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'default' => 'Noto Serif SC'
       ),
 
+	  array(
+		'id' => 'bangumi_source',
+		'type' => 'radio',
+		'title' => __('Bangumi Template Source', 'sakurairo_csf'),
+		'options' => array(
+			'bilibili' => __('Bilibili', 'sakurairo_csf'),
+			'myanimelist' => __('My Anime List (Not recommended for China mainland)', 'sakurairo_csf'),
+		),
+		'default' => 'bilibili'
+	  ),
+
       array(
         'id' => 'bilibili_id',
         'type' => 'text',
         'title' => __('Bilibili Bangumi Catch-up Template Account ID','sakurairo_csf'),
+        'dependency' => array( 'bangumi_source', '==', 'bilibili' ),
         'desc' => __('Fill in your account ID, e.g. https://space.bilibili.com/13972644/, just the number part "13972644"','sakurairo_csf'),
         'default' => '13972644'
       ),
@@ -2720,9 +2732,31 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'bilibili_cookie',
         'type' => 'text',
         'title' => __('Bilibili Bangumi Catch-up Template Account Cookies','sakurairo_csf'),
+        'dependency' => array( 'bangumi_source', '==', 'bilibili' ),
         'desc' => __('Fill in your account cookies, F12 to open your browser web panel, go to your bilibili homepage to get cookies. If left empty, it will not show the progress of catching up bangumis','sakurairo_csf'),
         'default' => 'LIVE_BUVID='
       ),
+
+	  array(
+	    'id' => 'my_anime_list_username',
+	    'type' => 'text',
+	    'title' => __('My Anime List Username','sakurairo_csf'),
+	    'dependency' => array( 'bangumi_source', '==', 'myanimelist' ),
+	    'desc' => __('Username on https://myanimelist.net/','sakurairo_csf'),
+	    'default' => ''
+      ),
+
+	  array(
+		'id' => 'my_anime_list_sort',
+		'type' => 'radio',
+		'title' => __('My Anime List Sort','sakurairo_csf'),
+		'dependency' => array( 'bangumi_source', '==', 'myanimelist' ),
+		'options' => array(
+			'order=5&status=7' => __('Last Updated', 'sakurairo_csf'),
+			'order=16&status=7' => __('Status', 'sakurairo_csf'),
+		),
+		'default' => 'order=16&status=7'
+	  ),
 
       array(
         'id' => 'friend_link_align',
@@ -2847,6 +2881,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'imgur'  => 'Imgur (https://imgur.com)',
           'smms'  => 'SM.MS (https://sm.ms)',
           'chevereto'  => 'Chevereto (https://chevereto.com)',
+          'lsky'  =>  'Lsky Pro (https://www.lsky.pro)',
         ),
         'default'     => 'off'
       ),
@@ -2892,6 +2927,22 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'desc' => __('Your Chevereto home page address. Please note that there is no "/" at the end, e.g. https://your.cherverto.com','sakurairo_csf'),
       ),
 
+      array(
+        'id' => 'lsky_api_key',
+        'type' => 'text',
+        'title' => __('Lsky Pro v1 Token','sakurairo_csf'),
+        'dependency' => array( 'img_upload_api', '==', 'lsky' ),
+        'desc' => __('Fill in the Token here, Please note that there is no "Bearer " at first, to get please visit your Lsky Pro home page address/api','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'lsky_url',
+        'type' => 'text',
+        'title' => __('Lsky Pro Address','sakurairo_csf'),
+        'dependency' => array( 'img_upload_api', '==', 'lsky' ),
+        'desc' => __('Your Lsky Pro home page address. Please note that there is no "/" at the end, e.g. https://your.lskypro.com','sakurairo_csf'),
+      ),
+      
       array(
         'id' => 'comment_image_proxy',
         'type' => 'text',
