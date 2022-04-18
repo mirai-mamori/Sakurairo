@@ -2,8 +2,8 @@
 /**
  * @Author: fuukei
  * @Date:   2022-03-13 18:16:15
- * @Last Modified by:   bymoye
- * @Last Modified time: 2022-03-27 00:47:46
+ * @Last Modified by: cocdeshijie
+ * @Last Modified time: 2022-04-16 13:27:30
  */
 
 
@@ -16,7 +16,8 @@ include_once('classes/Cache.php');
 include_once('classes/Images.php');
 include_once('classes/QQ.php');
 include_once('classes/Captcha.php');
-include_once ('classes/MyAnimeList.php');
+include_once('classes/MyAnimeList.php');
+include_once('classes/BilibiliFavList.php');
 use Sakura\API\Images;
 use Sakura\API\QQ;
 use Sakura\API\Cache;
@@ -57,6 +58,10 @@ add_action('rest_api_init', function () {
         'methods' => 'POST',
         'callback' => 'bgm_bilibili',
     ));
+	register_rest_route('sakura/v1', '/favlist/bilibili', array(
+		'methods' => 'POST',
+		'callback' => 'favlist_bilibili',
+	));
     register_rest_route('sakura/v1', '/meting/aplayer', array(
         'methods' => 'GET',
         'callback' => 'meting_aplayer',
@@ -275,7 +280,29 @@ function bgm_bilibili() {
         $html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->get_bgm_items($page));
         $response = new WP_REST_Response($html, 200);
     }
+	$page = $_GET["page"] ?: 2;
+	$bgm = new \Sakura\API\Bilibili();
+	$html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->get_bgm_items($page));
+	$response = new WP_REST_Response($html, 200);
     return $response;
+}
+
+function favlist_bilibili() {
+	if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+		$output = array(
+			'status' => 403,
+			'success' => false,
+			'message' => 'Unauthorized client.'
+		);
+		$response = new WP_REST_Response($output, 403);
+	} else {
+		$page = $_GET["page"] ?: 2;
+		$folder_id = $_GET["folder_id"];
+		$bgm = new \Sakura\API\BilibiliFavList();
+		$html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->load_folder_items($folder_id, $page));
+		$response = new WP_REST_Response($html, 200);
+	}
+	return $response;
 }
 
 function meting_aplayer() {
