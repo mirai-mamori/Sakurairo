@@ -55,11 +55,11 @@ class BilibiliFavList
 		}
 		$folders_data = $resp['data'];
 		$folders = $folders_data['list'];
-		$html = '<span>Folder count: ' . $folders_data['count'] . '</span></br>';
+		$html = '';
 		foreach ((array)$folders as $folder){
 			$html .= BilibiliFavList::folder_display($folder['id']);
 		}
-		return $html . "</br><span>end placeholder</span>";
+		return $html;
 	}
 
 	public function folder_display(int $folder_id)
@@ -67,12 +67,13 @@ class BilibiliFavList
 		$folder_resp = $this->fetch_folder_item_api($folder_id, 1);
 		$folder_content_info = $folder_resp['data']['info'];
 		$html = '<div class="folder"><div class="folder-top">'.
-		        lazyload_img(str_replace('http://', 'https://', $folder_content_info['cover']),'item-image',array('alt'=>$folder_content_info['title'])).
+		        lazyload_img(str_replace('http://', 'https://', $folder_content_info['cover']),'folder-img',array('alt'=>$folder_content_info['title'])).
 		        '<div class="folder-detail"><h3>' . $folder_content_info['title'] . '</h3>'.
 		        '<p>' . __('Video count: ', 'sakurairo') . $folder_content_info['media_count'] . '</p>'.
 		        '<button class="expand-button">Expand placeholder</button></div></div>'.
 		        '<hr><div class="folder-content">';
-		return $html . $this->load_folder_items($folder_id) . '</div></div></br>';
+		$load = BilibiliFavList::load_more(rest_url('sakura/v1/favlist/bilibili') . '?page=1' . '&folder_id=' . $folder_id);
+		return $html . $load . '</div></div></br>';
 	}
 
 	public function load_folder_items(int $folder_id, $page = 1)
@@ -86,7 +87,7 @@ class BilibiliFavList
 		if ($folder_resp['data']['has_more']){
 			$load = BilibiliFavList::load_more(rest_url('sakura/v1/favlist/bilibili') . '?page=' . ++$page . '&folder_id=' . $folder_id);
 		}else{
-			$load = 'end';
+			$load = '<a class="load-more"><i class="fa fa-ban" aria-hidden="true"></i>' . __('All item has been loaded.', 'sakurairo') . '</a>';
 		}
 		return $html . $load;
 	}
@@ -107,6 +108,6 @@ class BilibiliFavList
 
 	private static function load_more($href)
 	{
-		return '<a class="load-more" data-href="' . $href . '"><i class="fa fa-bolt" aria-hidden="true"></i> LOAD MORE </a>';
+		return '<a class="load-more" data-href="' . $href . '"><i class="fa fa-bolt" aria-hidden="true"></i>' . __('Load More', 'sakurairo') . '</a>';
 	}
 }
