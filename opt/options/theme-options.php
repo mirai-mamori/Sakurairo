@@ -2708,13 +2708,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'default' => 'Noto Serif SC'
       ),
 
+	  //TODO: change image source
 	  array(
 		'id' => 'bangumi_source',
-		'type' => 'radio',
+		'type' => 'image_select',
 		'title' => __('Bangumi Template Source', 'sakurairo_csf'),
 		'options' => array(
-			'bilibili' => __('Bilibili', 'sakurairo_csf'),
-			'myanimelist' => __('My Anime List (Not recommended for China mainland)', 'sakurairo_csf'),
+			'bilibili' => 'https://raw.githubusercontent.com/cocdeshijie/Sakurairo_Vision/main/options/bangumi_source_bilibili.webp',
+			'myanimelist' => 'https://raw.githubusercontent.com/cocdeshijie/Sakurairo_Vision/main/options/bangumi_source_myanimelist.webp',
 		),
 		'default' => 'bilibili'
 	  ),
@@ -2734,10 +2735,11 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 		    'title' => __('My Anime List Sort','sakurairo_csf'),
 		    'dependency' => array( 'bangumi_source', '==', 'myanimelist' ),
 		    'options' => array(
-			    'order=5&status=7' => __('Last Updated', 'sakurairo_csf'),
-			    'order=16&status=7' => __('Status', 'sakurairo_csf'),
+			    '1' => __('Status and Last Updated', 'sakurairo_csf'),
+			    '2' => __('Last Updated', 'sakurairo_csf'),
+			    '3' => __('Status', 'sakurairo_csf'),
 		    ),
-		    'default' => 'order=16&status=7'
+		    'default' => '1'
 	    ),
 
       array(
