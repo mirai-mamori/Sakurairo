@@ -801,7 +801,7 @@ function siren_get_os(string $ua):array{
 function siren_get_useragent(string $ua):string{
   if(iro_opt('comment_useragent')){
     // $imgurl = get_bloginfo('template_directory') . '/images/ua/';
-    $imgurl = 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/ua/';
+    $imgurl = 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/ua/';
     $browser = siren_get_browsers($ua);
     $os = siren_get_os($ua);
     return '&nbsp;&nbsp;<span class="useragent-info">( <img src="'. $imgurl.$browser['icon'] .'.svg">&nbsp;'. $browser['title'] .'&nbsp;&nbsp;<img src="'. $imgurl.$os['icon'] .'.svg">&nbsp;'. $os['title'] .' )</span>';
@@ -812,7 +812,7 @@ function siren_get_useragent(string $ua):string{
 // UA 显示移动定制
 function mobile_get_useragent_icon(string $ua):string{
   if(iro_opt('comment_useragent')){
-    $imgurl = 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/ua/';
+    $imgurl = 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/ua/';
     $browser = siren_get_browsers($ua);
     $os = siren_get_os($ua);
     return '<span class="useragent-info-m">( <img src="'. $imgurl.$browser['icon'] .'.svg">&nbsp;&nbsp;<img src="'. $imgurl.$os['icon'] .'.svg"> )</span>';

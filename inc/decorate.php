@@ -1048,33 +1048,33 @@ body{
 ?>;
 }
 #video-add{
-    background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/add.png);
+    background-image: url(<?=iro_opt('vision_resource_basepath', 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/')?>basic/add.png);
 }
 body.dark .post-footer {
-  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/creativecommons-dark.png);
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/')?>basic/creativecommons-dark.png);
 }
 @media (max-width:860px) {
   .headertop.filter-dot::before {
-    background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/grid.png);
+    background-image: url(<?=iro_opt('vision_resource_basepath', 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/')?>basic/grid.png);
   }
 }
-.post-footer{background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/creativecommons-light.png);}
+.post-footer{background-image: url(<?=iro_opt('vision_resource_basepath', 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/')?>basic/creativecommons-light.png);}
 .headertop.filter-grid::before {
-  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/grid.png);
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/')?>basic/grid.png);
 }
 
 .headertop.filter-dot::before {
-  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/dot.gif);
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/')?>basic/dot.gif);
 }
 .loadvideo,.video-play {
-  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/play.png);
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/')?>basic/play.png);
 }
 
 .video-pause {
-  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>basic/stop.png);
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/')?>basic/stop.png);
 }
 #loading-comments {
-background-image: url(<?=iro_opt('vision_resource_basepath', 'https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/')?>load_svg/ball.svg);}
+background-image: url(<?=iro_opt('vision_resource_basepath', 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/')?>load_svg/ball.svg);}
 
 </style>
 <?php }

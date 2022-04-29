@@ -1,5 +1,5 @@
 <?php
-$social_display_icon = iro_opt('social_display_icon').'/';
+$social_display_icon = iro_opt('vision_resource_basepath').iro_opt('social_display_icon').'/';
 $all_opt = [
     'bili' => [
         'link' => iro_opt('bili', ''),

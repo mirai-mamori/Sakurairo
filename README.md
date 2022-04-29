@@ -1,6 +1,6 @@
 **简体中文** | [繁體中文](README_tw.md) | [English](README_en.md) | [日本語](README_ja.md)
 
-[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -12,7 +12,7 @@
 
 ## 版本简介：
 
-[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/versions_cn.png)](https://iro.tw/)
+[![image](https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/readme/versions_cn.png)](https://iro.tw/)
 
 ## 使用相关：
 
@@ -27,13 +27,13 @@
 
 ## 主题下载：
 
-[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/github.png)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
+[![image](https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/readme/github.png)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
 
-[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/gitee.png)](https://gitee.com/mirai-mamori/Sakurairo)
+[![image](https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/readme/gitee.png)](https://gitee.com/mirai-mamori/Sakurairo)
 
 ## 支持我们：
 
-[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/twos.png)](https://afdian.net/@mamori)
+[![image](https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/readme/twos.png)](https://afdian.net/@mamori)
 
 ## 主题贡献：
 

@@ -4216,7 +4216,7 @@ msgstr ""
 
 #: opt/options/theme-options.php:3417
 msgid ""
-"<img src=\"https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/"
+"<img src=\"https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/"
 "series/headlogo.webp\"  alt=\"Theme Information\" />"
 msgstr ""
 

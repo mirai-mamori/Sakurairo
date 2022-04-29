@@ -1,6 +1,6 @@
 [简体中文](README.md) | [繁體中文](README_tw.md) | [English](README_en.md) | **日本語**
 
-[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -12,7 +12,7 @@
 
 ## バージョン紹介：
 
-[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/versions_jp.png)](https://iro.tw/)
+[![image](https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/readme/versions_jp.png)](https://iro.tw/)
 
 ## 活用方法：
 

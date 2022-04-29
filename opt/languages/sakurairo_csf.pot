@@ -3488,7 +3488,7 @@ msgstr ""
 
 #: options/theme-options.php:3417
 msgid ""
-"<img src=\"https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/"
+"<img src=\"https://fuukei.coding.net/p/Sakurairo/d/Sakurairo/git/raw_Vision/"
 "@2.4/series/headlogo.webp\"  alt=\"Theme Information\" />"
 msgstr ""
 
