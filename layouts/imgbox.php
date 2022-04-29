@@ -31,7 +31,7 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
     if (iro_opt('email_name') && iro_opt('email_domain')):?>
         <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img loading="lazy"
         alt="E-mail"
-                    src="<?=iro_opt('social_display_icon')?>/mail.png" /></a></li>
+                    src="<?=iro_opt('vision_resource_basepath')?><?=iro_opt('social_display_icon')?>/mail.png" /></a></li>
     <?php
     endif;
     // 右箭头
