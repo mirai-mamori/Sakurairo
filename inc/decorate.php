@@ -1074,7 +1074,15 @@ body.dark .post-footer {
   background-image: url(<?=iro_opt('vision_resource_basepath', 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/')?>basic/stop.png);
 }
 #loading-comments {
-background-image: url(<?=iro_opt('vision_resource_basepath', 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/')?>load_svg/ball.svg);}
+background-image: url(<?=iro_opt('vision_resource_basepath', 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/')?>load_svg/ball.svg);
+}
+
+#banner_wave_1 {
+    background: url(<?=iro_opt('vision_resource_basepath', 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/')?>basic/wave1.png) repeat-x;
+}
+#banner_wave_2 {
+    background: url(<?=iro_opt('vision_resource_basepath', 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/')?>basic/wave2.png) repeat-x;
+}
 
 </style>
 <?php }
