@@ -34,41 +34,60 @@ get_header();
 				<?php endif; ?>
             </section>
 
-        <!-- TODO: remove jquery requirement and use typescript with imag lazyload -->
         <script>
-            $('.expand-button').click(function () {
-                if ($(this).closest('.folder').css('max-height') == '200px'){
-                    $(this).closest('.folder').css('max-height', 200 + $(this).closest('.folder').find('.folder-content')[0].scrollHeight + 'px');
-                } else {
-                    $(this).closest('.folder').css('max-height', '200px');
+            let expandButton = document.querySelectorAll('.expand-button');
+            expandButton.forEach(
+                function(elem) {
+                    elem.addEventListener('click', function() {
+                        let folder = elem.closest('.folder');
+                        let folderStyle = getComputedStyle(folder);
+                        if (folderStyle.maxHeight == '200px'){
+                            let folderContent = folder.querySelector(".folder-content");
+                            folder.style.maxHeight = 200 + folderContent.scrollHeight + 'px';
+                        } else {
+                            folder.style.maxHeight = '200px';
+                        }
+                    }, true);
+                }
+            );
+
+            window.addEventListener('resize', function() {
+                setTimeout( () => {
+                    expandButton.forEach(
+                        function(elem) {
+                            let folder = elem.closest('.folder');
+                            let folderStyle = getComputedStyle(folder);
+                            if (folderStyle.maxHeight != '200px'){
+                                let folderContent = folder.querySelector(".folder-content");
+                                folder.style.maxHeight = 200 + folderContent.scrollHeight + 'px';
+                            }
+                        }
+                    );
+                }, 500);
+            }, true);
+
+            document.addEventListener('click',function(e){
+                if(e.target && e.target.classList.contains('load-more')){
+                    let elem = e.target;
+                    let href = elem.getAttribute('data-href') + "&_wpnonce=" + _iro.nonce;
+                    fetch(href, {method: 'POST'})
+                        .then((response) => {
+                            return response.json();
+                        })
+                        .then((html) => {
+                            var htmlObject = document.createElement('div');
+                            htmlObject.innerHTML = html;
+                            while (htmlObject.childNodes.length > 0) {
+                                elem.parentNode.appendChild(htmlObject.childNodes[0]);
+                            }
+                            let folder = elem.closest('.folder');
+                            let folderContent = folder.querySelector(".folder-content");
+                            folder.style.maxHeight = 200 + folderContent.scrollHeight + 'px';
+                            elem.remove();
+                        });
                 }
             });
-            $(window).on('resize', function(){
-                setTimeout(() => {
-                    $('.expand-button').each(function() {
-                        if ($(this).closest('.folder').css('max-height') != '200px'){
-                            $(this).closest('.folder').css('max-height', 200 + $(this).closest('.folder').find('.folder-content')[0].scrollHeight + 'px');
-                        }
-                    });
-                }, 500);
-            });
         </script>
-        <!-- load more -->
-        <script>
-            $('.folder-content').on('click', '.load-more',function () {
-                var href = $(this).data('href') + "&_wpnonce=" + _iro.nonce;
-                fetch(href, {method: 'POST'})
-                    .then((response) => {
-                        return response.json();
-                    })
-                    .then((html) => {
-                        $(this).closest('.folder-content').append(html);
-                        $(this).closest('.folder').css('max-height', 200 + $(this).closest('.folder').find('.folder-content')[0].scrollHeight + 'px');
-                        $(this).remove();
-                    });
-            });
-        </script>
-
 
 	</article>
 <?php endwhile; ?>
