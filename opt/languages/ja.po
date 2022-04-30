@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-04-29 18:06-0700\n"
-"PO-Revision-Date: 2022-04-29 18:06-0700\n"
+"POT-Creation-Date: 2022-04-30 15:08+0800\n"
+"PO-Revision-Date: 2022-04-30 15:24+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: classes/admin-options.class.php:230
 msgid "Error while saving the changes."
-msgstr ""
+msgstr "変更の保存中にエラーが発生しました。"
 
 #: classes/admin-options.class.php:290
 msgid "Settings successfully imported."
@@ -669,20 +669,26 @@ msgid "News+"
 msgstr "ニュース+"
 
 #: options/theme-options.php:31
+#, fuzzy
 msgid ""
 "<img src=\"https://news.maho.cc/sakurairo.php\"  alt=\"News_Plus\" width="
 "\"100%\" height=\"100%\" />"
 msgstr ""
+"<img src=\"https://news.maho.cc/sakurairo.php\"  alt=\"News_Plus\" width="
+"\"100%\" height=\"100%\" />"
 
 #: options/theme-options.php:36
 msgid "Theme Official Website"
 msgstr "テーマ公式サイト"
 
 #: options/theme-options.php:42
+#, fuzzy
 msgid ""
 "The Theme <a href=\"https://iro.tw\">Official Website</a> is the best place "
 "to help novices quickly build and get started"
 msgstr ""
+"テーマ <a href=\"https://iro.tw\">公式ウェブサイト</a> は初心者がすぐに構築"
+"し、開始するのに最適な場所です"
 
 #: options/theme-options.php:48
 msgid "Theme Official Website in Option"
@@ -705,44 +711,60 @@ msgid "Guide"
 msgstr "ガイド"
 
 #: options/theme-options.php:65
+#, fuzzy
 msgid ""
 "<iframe src=\"https://iro.tw/guide/about.html\" width=\"100%\" height= "
 "\"800px\" name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" "
 "frameborder=\"0\" id=\"guide\"></iframe>"
 msgstr ""
+"<iframe src=\"https://iro.tw/guide/about.html\" width=\"100%\" height= "
+"\"800px\" name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" "
+"frameborder=\"0\" id=\"guide\"></iframe>"
 
 #: options/theme-options.php:70
 msgid "Demo"
 msgstr "デモ"
 
 #: options/theme-options.php:75
+#, fuzzy
 msgid ""
 "<iframe src=\"https://iro.tw/demo.html\" width=\"100%\" height= \"800px\" "
 "name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" frameborder=\"0\" id="
 "\"guide\"></iframe>"
 msgstr ""
+"<iframe src=\"https://iro.tw/demo.html\" width=\"100%\" height= \"800px\" "
+"name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" frameborder=\"0\" id="
+"\"guide\"></iframe>"
 
 #: options/theme-options.php:80
 msgid "ChangeLog"
 msgstr "変更ログ"
 
 #: options/theme-options.php:85
+#, fuzzy
 msgid ""
 "<iframe src=\"https://iro.tw/releases.html\" width=\"100%\" height= \"800px"
 "\" name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" frameborder=\"0\" "
 "id=\"guide\"></iframe>"
 msgstr ""
+"<iframe src=\"https://iro.tw/releases.html\" width=\"100%\" height= \"800px"
+"\" name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" frameborder=\"0\" "
+"id=\"guide\"></iframe>"
 
 #: options/theme-options.php:90
 msgid "Sponsors"
 msgstr "スポンサー"
 
 #: options/theme-options.php:95
+#, fuzzy
 msgid ""
 "<iframe src=\"https://iro.tw/sponsors.html\" width=\"100%\" height= \"800px"
 "\" name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" frameborder=\"0\" "
 "id=\"guide\"></iframe>"
 msgstr ""
+"<iframe src=\"https://iro.tw/sponsors.html\" width=\"100%\" height= \"800px"
+"\" name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" frameborder=\"0\" "
+"id=\"guide\"></iframe>"
 
 #: options/theme-options.php:107
 msgid "Preliminary Options"
@@ -2716,9 +2738,8 @@ msgid "Page Options"
 msgstr "ページオプション"
 
 #: options/theme-options.php:2487
-#, fuzzy
 msgid "Common Options"
-msgstr "統合オプション"
+msgstr "一般的なオプション"
 
 #: options/theme-options.php:2494
 msgid "Page Style"
@@ -2946,28 +2967,32 @@ msgid "My Anime List Username"
 msgstr "電子メールユーザー名"
 
 #: options/theme-options.php:2728
+#, fuzzy
 msgid "Username on https://myanimelist.net/"
-msgstr ""
+msgstr "https://myanimelist.net/ のユーザー名"
 
 #: options/theme-options.php:2735
+#, fuzzy
 msgid "My Anime List Sort"
-msgstr ""
+msgstr "私のアニメリストソート"
 
 #: options/theme-options.php:2738
+#, fuzzy
 msgid "Status and Last Updated"
-msgstr ""
+msgstr "ステータスと最終更新日"
 
 #: options/theme-options.php:2739
 msgid "Last Updated"
-msgstr ""
+msgstr "最終更新"
 
 #: options/theme-options.php:2740
 msgid "Status"
-msgstr ""
+msgstr "ステータス"
 
 #: options/theme-options.php:2748
+#, fuzzy
 msgid "Bilibili Account UID"
-msgstr ""
+msgstr "Bilibili Account UID"
 
 #: options/theme-options.php:2749
 msgid ""
@@ -3605,8 +3630,9 @@ msgid "Code Highlight Method"
 msgstr "コードの強調表示方法"
 
 #: options/theme-options.php:3293
+#, fuzzy
 msgid "Custom Program"
-msgstr ""
+msgstr "カスタムプログラム"
 
 #: options/theme-options.php:3301
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
@@ -3730,10 +3756,13 @@ msgid "Version Info"
 msgstr "バージョン情報"
 
 #: options/theme-options.php:3417
+#, fuzzy
 msgid ""
-"<img src=\"https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/"
-"series/headlogo.webp\"  alt=\"Theme Information\" />"
+"<img src=\"https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/"
+"git/raw/2.4/series/headlogo.webp\"  alt=\"Theme Information\" />"
 msgstr ""
+"<img src=\"https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/"
+"git/raw/2.4/series/headlogo.webp\"  alt=\"Theme Information\" />"
 
 #: options/theme-options.php:3423
 #, php-format
@@ -3864,10 +3893,13 @@ msgid "Theme Contributors"
 msgstr "貢献者"
 
 #: options/theme-options.php:3530
+#, fuzzy
 msgid ""
 "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
 "Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
+"<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
+"Contributors\" width=\"100%\" height=\"100%\" />"
 
 #: options/theme-options.php:3535
 msgid "Reference Information"
@@ -3902,6 +3934,7 @@ msgid "Dependency Information"
 msgstr "依存情報"
 
 #: options/theme-options.php:3553
+#, fuzzy
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
@@ -3909,8 +3942,18 @@ msgid ""
 "\"https://github.com/YahnisElsts/plugin-update-checker\">Plugin Update "
 "Checker</a> Project</p>"
 msgstr ""
+"<p>静的リソースは、深英によって作成された <a href=\"https://github.com/"
+"Fuukei/Public_Repository\">パブリックリポジトリ</a> プロジェクトに依存してい"
+"ます</p>\n"
+"        <p>オプションフレームワークは、コードスターオープンソース <a href="
+"\"https://github.com/Codestar/codestar-framework\">コードスターフレームワーク"
+"</a> プロジェクトに依存しています</p>\n"
+"        <p>更新機能はYahnisElstsオープンソース <a href=\"https://github.com/"
+"YahnisElsts/plugin-update-checker\">プラグイン更新チェッカー</a> プロジェクト"
+"に依存しています</p>"
 
 #: options/theme-options.php:3559
+#, fuzzy
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "
@@ -3920,26 +3963,47 @@ msgid ""
 "package/gh/Fuukei/Public_Repository/badge\"  alt=\"Theme CDN resource access"
 "\" style=\"border-radius: 3px;\" />"
 msgstr ""
+"<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
+"svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "
+"3px;\" />  <img src=\"https://img.shields.io/github/release-date/mirai-"
+"mamori/Sakurairo?style=flat-square\"  alt=\"Theme latest version release date"
+"\" style=\"border-radius: 3px;\" />  <img src=\"https://data.jsdelivr.com/v1/"
+"package/gh/Fuukei/Public_Repository/badge\"  alt=\"Theme CDN resource access"
+"\" style=\"border-radius: 3px;\" />"
 
 #. Plugin Name of the plugin/theme
+#, fuzzy
 msgid "Sakurairo_CSF"
-msgstr ""
+msgstr "Sakurairo_CSF"
 
 #. Plugin URI of the plugin/theme
+#, fuzzy
 msgid "https://github.com/Fuukei/Sakurairo_CSF"
-msgstr ""
+msgstr "https://github.com/Fuukei/Sakurairo_CSF"
 
 #. Description of the plugin/theme
+#, fuzzy
 msgid "A Simple and Lightweight WordPress Option Framework for Sakurairo"
-msgstr ""
+msgstr "さくらりのためのシンプルで軽量なワードプレスオプションフレームワーク"
 
 #. Author of the plugin/theme
+#, fuzzy
 msgid "Codestar with Fuukei"
-msgstr ""
+msgstr "コードスターと深英"
 
 #. Author URI of the plugin/theme
+#, fuzzy
 msgid "https://github.com/Fuukei"
 msgstr ""
+"<p>静的リソースは、深英によって作成された <a href=\"https://github.com/"
+"Fuukei/Public_Repository\">パブリックリポジトリ</a> プロジェクトに依存してい"
+"ます</p>\n"
+"        <p>オプションフレームワークは、コードスターオープンソース <a href="
+"\"https://github.com/Codestar/codestar-framework\">コードスターフレームワーク"
+"</a> プロジェクトに依存しています</p>\n"
+"        <p>更新機能はYahnisElstsオープンソース <a href=\"https://github.com/"
+"YahnisElsts/plugin-update-checker\">プラグイン更新チェッカー</a> プロジェクト"
+"に依存しています</p>"
 
 #~ msgid "Bilibili Bangumi Catch-up Template Account ID"
 #~ msgstr "ビリビリバングミキャッチアップテンプレートアカウントID"

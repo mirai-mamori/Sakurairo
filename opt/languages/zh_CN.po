@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-04-29 18:06-0700\n"
-"PO-Revision-Date: 2022-04-29 18:06-0700\n"
+"POT-Creation-Date: 2022-04-30 15:24+0800\n"
+"PO-Revision-Date: 2022-04-30 16:31+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -2827,10 +2827,8 @@ msgid "Ideas Template Font"
 msgstr "说说模板说说字体"
 
 #: options/theme-options.php:2715
-#, fuzzy
-#| msgid "Theme Update Source"
 msgid "Bangumi Template Source"
-msgstr "追番源"
+msgstr "追番模板源"
 
 #: options/theme-options.php:2726
 msgid "My Anime List Username"
@@ -2838,11 +2836,11 @@ msgstr "My Anime List用户名"
 
 #: options/theme-options.php:2728
 msgid "Username on https://myanimelist.net/"
-msgstr ""
+msgstr "https://myanimelist.net/ 上的用户名"
 
 #: options/theme-options.php:2735
 msgid "My Anime List Sort"
-msgstr ""
+msgstr "My Anime List分类"
 
 #: options/theme-options.php:2738
 msgid "Status and Last Updated"
@@ -2869,10 +2867,8 @@ msgstr ""
 "字“13972644”部分"
 
 #: options/theme-options.php:2756
-#, fuzzy
-#| msgid "Bilibili Bangumi Catch-up Template Account Cookies"
 msgid "Bilibili Account Cookies"
-msgstr "哔哩哔哩追番模板帐号Cookies"
+msgstr "哔哩哔哩帐号Cookies"
 
 #: options/theme-options.php:2757
 msgid ""
@@ -3575,8 +3571,8 @@ msgstr "版本信息"
 
 #: options/theme-options.php:3417
 msgid ""
-"<img src=\"https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/"
-"series/headlogo.webp\"  alt=\"Theme Information\" />"
+"<img src=\"https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/"
+"git/raw/2.4/series/headlogo.webp\"  alt=\"Theme Information\" />"
 msgstr ""
 
 #: options/theme-options.php:3423

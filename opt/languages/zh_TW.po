@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-04-29 18:06-0700\n"
-"PO-Revision-Date: 2022-04-29 18:06-0700\n"
+"POT-Creation-Date: 2022-04-30 16:33+0800\n"
+"PO-Revision-Date: 2022-04-30 16:38+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: classes/admin-options.class.php:230
 msgid "Error while saving the changes."
-msgstr "儲存變更時出錯了"
+msgstr "在儲存更改時發生錯誤。"
 
 #: classes/admin-options.class.php:290
 msgid "Settings successfully imported."
@@ -2828,40 +2828,36 @@ msgid "Ideas Template Font"
 msgstr "推文模板推文字體"
 
 #: options/theme-options.php:2715
-#, fuzzy
-#| msgid "Theme Update Source"
 msgid "Bangumi Template Source"
-msgstr "主題更新源"
+msgstr "動漫模板源"
 
 #: options/theme-options.php:2726
-#, fuzzy
-#| msgid "Email Username"
 msgid "My Anime List Username"
-msgstr "電子郵箱用戶名"
+msgstr "我的動漫清單使用者名"
 
 #: options/theme-options.php:2728
 msgid "Username on https://myanimelist.net/"
-msgstr ""
+msgstr "https://myanimelist.net/ 上的使用者名"
 
 #: options/theme-options.php:2735
 msgid "My Anime List Sort"
-msgstr ""
+msgstr "我的動漫清單分类"
 
 #: options/theme-options.php:2738
 msgid "Status and Last Updated"
-msgstr ""
+msgstr "狀態和上次更新時間"
 
 #: options/theme-options.php:2739
 msgid "Last Updated"
-msgstr ""
+msgstr "最後更新"
 
 #: options/theme-options.php:2740
 msgid "Status"
-msgstr ""
+msgstr "狀態"
 
 #: options/theme-options.php:2748
 msgid "Bilibili Account UID"
-msgstr ""
+msgstr "嗶哩嗶哩帳戶UID"
 
 #: options/theme-options.php:2749
 msgid ""
@@ -2872,10 +2868,8 @@ msgstr ""
 "字“13972644”部分"
 
 #: options/theme-options.php:2756
-#, fuzzy
-#| msgid "Bilibili Bangumi Catch-up Template Account Cookies"
 msgid "Bilibili Account Cookies"
-msgstr "嗶哩嗶哩追番模板帳號Cookies"
+msgstr "嗶哩嗶哩帳戶Cookies"
 
 #: options/theme-options.php:2757
 msgid ""
@@ -3578,8 +3572,8 @@ msgstr "版本資訊"
 
 #: options/theme-options.php:3417
 msgid ""
-"<img src=\"https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/"
-"series/headlogo.webp\"  alt=\"Theme Information\" />"
+"<img src=\"https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/"
+"git/raw/2.4/series/headlogo.webp\"  alt=\"Theme Information\" />"
 msgstr ""
 
 #: options/theme-options.php:3423

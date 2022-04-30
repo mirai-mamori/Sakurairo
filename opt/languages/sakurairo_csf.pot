@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-04-29 18:06-0700\n"
+"POT-Creation-Date: 2022-04-30 15:08+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -3488,8 +3488,8 @@ msgstr ""
 
 #: options/theme-options.php:3417
 msgid ""
-"<img src=\"https://fuukei.coding.net/p/Sakurairo/d/Sakurairo/git/raw_Vision/"
-"@2.4/series/headlogo.webp\"  alt=\"Theme Information\" />"
+"<img src=\"https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/"
+"git/raw/2.4/series/headlogo.webp\"  alt=\"Theme Information\" />"
 msgstr ""
 
 #: options/theme-options.php:3423
