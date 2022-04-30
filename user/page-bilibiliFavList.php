@@ -10,8 +10,6 @@ get_header();
     .comments{display: none}
     .site-content{max-width:1280px}
 </style>
-<!-- TODO: remove jquery requirement -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
 </head>
 
 <?php while(have_posts()) : the_post(); ?>
