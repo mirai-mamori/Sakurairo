@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-04-30 15:08+0800\n"
+"POT-Creation-Date: 2022-04-30 18:25+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -3509,7 +3509,7 @@ msgstr ""
 
 #: options/theme-options.php:3440
 msgid ""
-"If you are using a server set up in mainland China, please use the U-Code "
+"If you are using a server set up in mainland China, please use the Upyun "
 "source or the official theme source as your theme update source"
 msgstr ""
 
@@ -3595,7 +3595,7 @@ msgid ""
 "\"https://github.com/Fuukei/Sakurairo_Vision\">Sakurairo Vision</a> "
 "repositories officially provided by fuukei, otherwise some resources 404 "
 "may appear. The image source officially provided by <a href=\"https://www."
-"jscdn.pro/\">U-Code</a> is adopted by default."
+"upyun.com/\">Upyun</a> is adopted by default."
 msgstr ""
 
 #: options/theme-options.php:3525
