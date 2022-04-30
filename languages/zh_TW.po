@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-04-15 00:51+0800\n"
-"PO-Revision-Date: 2022-04-15 15:25+0800\n"
+"POT-Creation-Date: 2022-04-29 18:06-0700\n"
+"PO-Revision-Date: 2022-04-29 18:06-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -121,7 +121,7 @@ msgstr "必須* "
 #: comments.php:100
 #, fuzzy
 #| msgid "Advertisement is forbidden \\uD83D\\uDE00"
-msgid "Advertisement is forbidden 😀"
+msgid "Advertisement is forbidden \uD83D\uDE00"
 msgstr "禁止小廣告\\uD83D\\uDE00"
 
 #: comments.php:100
@@ -144,73 +144,73 @@ msgstr "搜尋"
 msgid "Widgets"
 msgstr "小工具"
 
-#: functions.php:73
+#: functions.php:74
 msgid "Nav Menus"
 msgstr "導航菜單"
 
-#: functions.php:189 functions.php:200
+#: functions.php:190 functions.php:201
 msgid "Ideas"
 msgstr "推文"
 
-#: functions.php:190
+#: functions.php:191
 msgid "Idea"
 msgstr "推文"
 
-#: functions.php:191 functions.php:192
+#: functions.php:192 functions.php:193
 msgid "Publish New Idea"
 msgstr "發佈新推文"
 
-#: functions.php:193
+#: functions.php:194
 msgid "Edit Idea"
 msgstr "編輯推文"
 
-#: functions.php:194
+#: functions.php:195
 msgid "New Idea"
 msgstr "新推文"
 
-#: functions.php:195
+#: functions.php:196
 msgid "View Idea"
 msgstr "查看推文"
 
-#: functions.php:196
+#: functions.php:197
 msgid "Search Idea"
 msgstr "搜尋推文"
 
-#: functions.php:197
+#: functions.php:198
 msgid "Not Found Idea"
 msgstr "未找到推文"
 
-#: functions.php:198
+#: functions.php:199
 msgid "No Idea in the Trash"
 msgstr "垃圾桶里沒有推文"
 
-#: functions.php:271
+#: functions.php:272
 msgid "Copied!"
 msgstr "已複製!"
 
-#: functions.php:272
+#: functions.php:273
 msgid "Copy Code"
 msgstr "拷貝程式碼"
 
-#: functions.php:273
+#: functions.php:274
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
 msgstr "您的封面API似乎不支援跨來源請求。這種情況下暫存是不會生效的哦。"
 
-#: functions.php:274
+#: functions.php:275
 msgid "Commiting...."
 msgstr "提交中。。。"
 
-#: functions.php:275
+#: functions.php:276
 msgid "Succeed"
 msgstr "成功"
 
-#: functions.php:276
+#: functions.php:277
 msgid "10 files max per request"
 msgstr "每次上傳上限為10張"
 
-#: functions.php:277
+#: functions.php:278
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -224,15 +224,15 @@ msgstr ""
 "\n"
 "這張圖太大啦~請重新上傳噢！"
 
-#: functions.php:278
+#: functions.php:279
 msgid "Uploading..."
 msgstr "上傳中..."
 
-#: functions.php:279
+#: functions.php:280
 msgid "Uploaded successfully~"
 msgstr "上傳成功～"
 
-#: functions.php:280
+#: functions.php:281
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -244,95 +244,95 @@ msgstr ""
 "錯誤碼=> {1}\n"
 "{2}"
 
-#: functions.php:281
+#: functions.php:282
 msgid "Upload failed, please retry."
 msgstr "上傳失敗，請重試。"
 
-#: functions.php:282
+#: functions.php:283
 msgid "Page Load failed. HTTP {0}"
 msgstr "頁面載入出錯了。HTTP{0}"
 
-#: functions.php:283
+#: functions.php:284
 msgid "Glad you come, but we've got nothing left."
 msgstr "很高興你翻到這裡，但是真的沒有了..."
 
-#: functions.php:284
+#: functions.php:285
 #, fuzzy
 #| msgid "Next Post"
 msgid "Post"
 msgstr "下一篇文章"
 
-#: functions.php:285
+#: functions.php:286
 msgid "Tag"
 msgstr ""
 
-#: functions.php:286
+#: functions.php:287
 msgid "Category"
 msgstr ""
 
-#: functions.php:287
+#: functions.php:288
 #, fuzzy
 #| msgid "Pages:"
 msgid "Page"
 msgstr "頁面:"
 
-#: functions.php:288
+#: functions.php:289
 #, fuzzy
 #| msgid "Comments"
 msgid "Comment"
 msgstr "條留言"
 
-#: functions.php:289
+#: functions.php:290
 msgid "Paused..."
 msgstr ""
 
-#: functions.php:290
+#: functions.php:291
 #, fuzzy
 #| msgid "Uploading..."
 msgid "Loading Video..."
 msgstr "上傳中..."
 
-#: functions.php:291
+#: functions.php:292
 msgid "Downloading fonts, be aware of your data usage."
 msgstr ""
 
-#: functions.php:292
+#: functions.php:293
 msgid "Are you sure you want set it private?"
 msgstr ""
 
-#: functions.php:293
+#: functions.php:294
 msgid "You had set private comment before"
 msgstr ""
 
-#: functions.php:381 inc/theme_plus.php:194 layouts/authorprofile.php:12
+#: functions.php:382 inc/theme_plus.php:194 layouts/authorprofile.php:12
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:381
+#: functions.php:382
 msgid "Blogger"
 msgstr "部落客"
 
-#: functions.php:387
+#: functions.php:388
 msgid "Location"
 msgstr "來自"
 
-#: functions.php:393
+#: functions.php:394
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:395
+#: functions.php:396
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:397
+#: functions.php:398
 msgid "No"
 msgstr "否"
 
-#: functions.php:400
+#: functions.php:401
 msgid "Edit"
 msgstr "編輯"
 
-#: functions.php:472
+#: functions.php:473
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
@@ -340,50 +340,50 @@ msgstr ""
 "請安裝外掛程式 <a href=\"https://wordpress.org/plugins/wp-statistics/\" "
 "target=\"_blank\">WP-Statistics</a>"
 
-#: functions.php:502
+#: functions.php:503
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "這傢伙好懶╮(╯▽╰)╭"
 
-#: functions.php:702
+#: functions.php:703
 msgid "Download Link"
 msgstr "下載連結"
 
-#: functions.php:772
+#: functions.php:773
 #, fuzzy
 #| msgid "Remember_Me"
 msgid "Remember me"
 msgstr "記住我"
 
-#: functions.php:1171
+#: functions.php:1172
 msgid "All expand/collapse"
 msgstr "全部展開/收縮"
 
-#: functions.php:1192
+#: functions.php:1193
 msgid " "
 msgstr " "
 
-#: functions.php:1196
+#: functions.php:1197
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1219 functions.php:1222 inc/theme_plus.php:424
+#: functions.php:1220 functions.php:1223 inc/theme_plus.php:424
 #: opt/options/theme-options.php:3043
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:1459
+#: functions.php:1460
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>錯誤</b>: 電子郵箱格式出錯 (<b>@"
 
-#: functions.php:1584 opt/options/theme-options.php:1835
+#: functions.php:1585 opt/options/theme-options.php:1835
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1650
+#: functions.php:1651
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:1780
+#: functions.php:1781
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -416,21 +416,38 @@ msgstr "圖像"
 msgid "no image"
 msgstr "暫無"
 
-#: inc/classes/Bilibili.php:48 inc/classes/MyAnimeList.php:46
+#: inc/classes/Bilibili.php:48 inc/classes/BilibiliFavList.php:54
+#: inc/classes/MyAnimeList.php:57
 msgid "Backend error"
 msgstr "後端發生了錯誤 QwQ"
 
-#: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:58
+#: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:69
 msgid "Following "
 msgstr "已追蹤的新番"
 
-#: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:58
+#: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:69
 msgid " anime."
 msgstr "部。"
 
 #: inc/classes/Bilibili.php:68
 msgid "The author seems to have hidden their bangumi list."
 msgstr "部落客似乎隱藏了新番追蹤列表。"
+
+#: inc/classes/BilibiliFavList.php:72
+msgid "Item count: "
+msgstr ""
+
+#: inc/classes/BilibiliFavList.php:73 opt/options/theme-options.php:2796
+msgid "Expand"
+msgstr ""
+
+#: inc/classes/BilibiliFavList.php:90
+msgid "All item has been loaded."
+msgstr ""
+
+#: inc/classes/BilibiliFavList.php:112
+msgid "Load More"
+msgstr ""
 
 #: inc/classes/Cache.php:70 inc/theme_plus.php:668
 msgid "The comment is private"
@@ -460,31 +477,31 @@ msgstr ""
 msgid "An error has occurred."
 msgstr ""
 
-#: inc/classes/MyAnimeList.php:59
+#: inc/classes/MyAnimeList.php:70
 msgid " Watched "
 msgstr "已觀看"
 
-#: inc/classes/MyAnimeList.php:59
+#: inc/classes/MyAnimeList.php:70
 msgid " episodes."
 msgstr "話。"
 
-#: inc/classes/MyAnimeList.php:97
+#: inc/classes/MyAnimeList.php:108
 msgid "Finished "
 msgstr "已看完"
 
-#: inc/classes/MyAnimeList.php:106
+#: inc/classes/MyAnimeList.php:117
 msgid "Watching "
 msgstr "追番中"
 
-#: inc/classes/MyAnimeList.php:113
+#: inc/classes/MyAnimeList.php:124
 msgid "Planning to Watch "
 msgstr "打算看"
 
-#: inc/classes/MyAnimeList.php:122
+#: inc/classes/MyAnimeList.php:133
 msgid "Dropped "
 msgstr "棄坑"
 
-#: inc/classes/MyAnimeList.php:131
+#: inc/classes/MyAnimeList.php:142
 msgid "Paused "
 msgstr "暫停"
 
@@ -2908,7 +2925,7 @@ msgid ""
 "uin=123456"
 msgstr ""
 
-#: opt/options/theme-options.php:1843 opt/options/theme-options.php:2716
+#: opt/options/theme-options.php:1843
 msgid "Bilibili"
 msgstr ""
 
@@ -3503,55 +3520,55 @@ msgstr ""
 msgid "Ideas Template Font"
 msgstr ""
 
-#: opt/options/theme-options.php:2714
+#: opt/options/theme-options.php:2715
 msgid "Bangumi Template Source"
 msgstr ""
 
-#: opt/options/theme-options.php:2717
-msgid "My Anime List (Not recommended for China mainland)"
-msgstr ""
-
-#: opt/options/theme-options.php:2725
-msgid "Bilibili Bangumi Catch-up Template Account ID"
-msgstr ""
-
-#: opt/options/theme-options.php:2727
-msgid ""
-"Fill in your account ID, e.g. https://space.bilibili.com/13972644/, just the "
-"number part \"13972644\""
-msgstr ""
-
-#: opt/options/theme-options.php:2734
-msgid "Bilibili Bangumi Catch-up Template Account Cookies"
-msgstr ""
-
-#: opt/options/theme-options.php:2736
-msgid ""
-"Fill in your account cookies, F12 to open your browser web panel, go to your "
-"bilibili homepage to get cookies. If left empty, it will not show the "
-"progress of catching up bangumis"
-msgstr ""
-
-#: opt/options/theme-options.php:2743
+#: opt/options/theme-options.php:2726
 #, fuzzy
 #| msgid "User Name"
 msgid "My Anime List Username"
 msgstr "用戶名"
 
-#: opt/options/theme-options.php:2745
+#: opt/options/theme-options.php:2728
 msgid "Username on https://myanimelist.net/"
 msgstr ""
 
-#: opt/options/theme-options.php:2752
+#: opt/options/theme-options.php:2735
 msgid "My Anime List Sort"
 msgstr ""
 
-#: opt/options/theme-options.php:2755
+#: opt/options/theme-options.php:2738
+msgid "Status and Last Updated"
+msgstr ""
+
+#: opt/options/theme-options.php:2739
 msgid "Last Updated"
 msgstr ""
 
-#: opt/options/theme-options.php:2756
+#: opt/options/theme-options.php:2740
 msgid "Status"
+msgstr ""
+
+#: opt/options/theme-options.php:2748
+msgid "Bilibili Account UID"
+msgstr ""
+
+#: opt/options/theme-options.php:2749
+msgid ""
+"Fill in your account ID, e.g. https://space.bilibili.com/13972644/, just the "
+"number part \"13972644\""
+msgstr ""
+
+#: opt/options/theme-options.php:2756
+msgid "Bilibili Account Cookies"
+msgstr ""
+
+#: opt/options/theme-options.php:2757
+msgid ""
+"Fill in your account cookies, F12 to open your browser web panel, go to your "
+"bilibili homepage to get cookies. If left empty, it will not show the "
+"progress of catching up bangumis"
 msgstr ""
 
 #: opt/options/theme-options.php:2764
@@ -3578,10 +3595,6 @@ msgstr ""
 
 #: opt/options/theme-options.php:2794
 msgid "You can choose to expand or shirink the content of the comment area"
-msgstr ""
-
-#: opt/options/theme-options.php:2796
-msgid "Expand"
 msgstr ""
 
 #: opt/options/theme-options.php:2797
@@ -4466,7 +4479,8 @@ msgstr ""
 msgid "There is no changelog available."
 msgstr ""
 
-#: user/page-bangumi.php:31 user/page-followVideos.php:29
+#: user/page-bangumi.php:31 user/page-bilibiliFavList.php:32
+#: user/page-followVideos.php:29
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr "請在後台設置填寫 Bilibili UID 後繼續"
 

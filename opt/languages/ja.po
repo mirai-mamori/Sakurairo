@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-04-10 10:23-0700\n"
-"PO-Revision-Date: 2022-04-10 10:23-0700\n"
+"POT-Creation-Date: 2022-04-29 18:06-0700\n"
+"PO-Revision-Date: 2022-04-29 18:06-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2304,7 +2304,7 @@ msgstr ""
 "フォームへの記入の形式に注意してください(例えば、tencent://message/?"
 "uin=123456）"
 
-#: options/theme-options.php:1843 options/theme-options.php:2716
+#: options/theme-options.php:1843
 msgid "Bilibili"
 msgstr "ビリビリ"
 
@@ -2933,21 +2933,43 @@ msgstr "警告矢印をオンにすると、コメントの左側に表示され
 msgid "Ideas Template Font"
 msgstr "アイデアテンプレートフォント"
 
-#: options/theme-options.php:2714
+#: options/theme-options.php:2715
 #, fuzzy
 #| msgid "Theme Update Source"
 msgid "Bangumi Template Source"
 msgstr "テーマの更新元"
 
-#: options/theme-options.php:2717
-msgid "My Anime List (Not recommended for China mainland)"
+#: options/theme-options.php:2726
+#, fuzzy
+#| msgid "Email Username"
+msgid "My Anime List Username"
+msgstr "電子メールユーザー名"
+
+#: options/theme-options.php:2728
+msgid "Username on https://myanimelist.net/"
 msgstr ""
 
-#: options/theme-options.php:2725
-msgid "Bilibili Bangumi Catch-up Template Account ID"
-msgstr "ビリビリバングミキャッチアップテンプレートアカウントID"
+#: options/theme-options.php:2735
+msgid "My Anime List Sort"
+msgstr ""
 
-#: options/theme-options.php:2727
+#: options/theme-options.php:2738
+msgid "Status and Last Updated"
+msgstr ""
+
+#: options/theme-options.php:2739
+msgid "Last Updated"
+msgstr ""
+
+#: options/theme-options.php:2740
+msgid "Status"
+msgstr ""
+
+#: options/theme-options.php:2748
+msgid "Bilibili Account UID"
+msgstr ""
+
+#: options/theme-options.php:2749
 msgid ""
 "Fill in your account ID, e.g. https://space.bilibili.com/13972644/, just the "
 "number part \"13972644\""
@@ -2955,11 +2977,13 @@ msgstr ""
 "アカウント ID (例 https://space.bilibili.com/13972644/)を記入し、番号部分 "
 "「13972644」"
 
-#: options/theme-options.php:2734
-msgid "Bilibili Bangumi Catch-up Template Account Cookies"
+#: options/theme-options.php:2756
+#, fuzzy
+#| msgid "Bilibili Bangumi Catch-up Template Account Cookies"
+msgid "Bilibili Account Cookies"
 msgstr "ビリビリバングミキャッチアップテンプレートアカウントクッキー"
 
-#: options/theme-options.php:2736
+#: options/theme-options.php:2757
 msgid ""
 "Fill in your account cookies, F12 to open your browser web panel, go to your "
 "bilibili homepage to get cookies. If left empty, it will not show the "
@@ -2968,28 +2992,6 @@ msgstr ""
 "アカウントのクッキー(F12)を入力してブラウザのウェブパネルを開き、bilibiliホー"
 "ムページにアクセスしてクッキーを取得します。空のままにした場合、バングミを追"
 "いつぶの進行状況は表示されません"
-
-#: options/theme-options.php:2743
-#, fuzzy
-#| msgid "Email Username"
-msgid "My Anime List Username"
-msgstr "電子メールユーザー名"
-
-#: options/theme-options.php:2745
-msgid "Username on https://myanimelist.net/"
-msgstr ""
-
-#: options/theme-options.php:2752
-msgid "My Anime List Sort"
-msgstr ""
-
-#: options/theme-options.php:2755
-msgid "Last Updated"
-msgstr ""
-
-#: options/theme-options.php:2756
-msgid "Status"
-msgstr ""
 
 #: options/theme-options.php:2764
 msgid "Friend Link Template Unit Alignment"
@@ -3938,3 +3940,6 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
+
+#~ msgid "Bilibili Bangumi Catch-up Template Account ID"
+#~ msgstr "ビリビリバングミキャッチアップテンプレートアカウントID"
