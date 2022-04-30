@@ -34,7 +34,7 @@ get_header();
 				<?php endif; ?>
             </section>
 
-        <!-- TODO: remove jquery requirement -->
+        <!-- TODO: remove jquery requirement and use typescript with imag lazyload -->
         <script>
             $('.expand-button').click(function () {
                 if ($(this).closest('.folder').css('max-height') == '200px'){
@@ -67,7 +67,6 @@ get_header();
                         $(this).remove();
                     });
             });
-
         </script>
 
 
@@ -189,6 +188,12 @@ get_header();
     margin-top: 0;
 }
 
+.item-intro{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .load-more{
     flex: 0 0 100%;
     text-align: center;
@@ -213,7 +218,7 @@ get_header();
         align-self: center;
         width: 100%;
         text-align: center;
-        background: rgba(0, 0, 0, .1);
+        background: rgba(0, 0, 0, .3);
     }
     .folder-top{
         display: flex;

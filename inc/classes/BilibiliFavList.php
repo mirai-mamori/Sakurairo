@@ -69,8 +69,8 @@ class BilibiliFavList
 		$html = '<div class="folder"><div class="folder-top">'.
 		        lazyload_img(str_replace('http://', 'https://', $folder_content_info['cover']),'folder-img',array('alt'=>$folder_content_info['title'])).
 		        '<div class="folder-detail"><h3>' . $folder_content_info['title'] . '</h3>'.
-		        '<p>' . __('Video count: ', 'sakurairo') . $folder_content_info['media_count'] . '</p>'.
-		        '<button class="expand-button">Expand placeholder</button></div></div>'.
+		        '<p>' . __('Item count: ', 'sakurairo') . $folder_content_info['media_count'] . '</p>'.
+		        '<button class="expand-button">' . __('Expand', 'sakurairo') . '</button></div></div>'.
 		        '<hr><div class="folder-content">';
 		$load = BilibiliFavList::load_more(rest_url('sakura/v1/favlist/bilibili') . '?page=1' . '&folder_id=' . $folder_id);
 		return $html . $load . '</div></div></br>';
@@ -99,8 +99,9 @@ class BilibiliFavList
 		}else{
 			$link = "https://www.bilibili.com/video/" . $item['bvid'];
 		}
+		// TODO: add lazyload to item-image with typescript
 		return '<div class="column"><a class="folder-item" href="' . $link . '" target="_blank" rel="nofollow">'.
-		       lazyload_img(str_replace('http://', 'https://', $item['cover']),'item-image',array('alt'=>$item['title'])).
+		       '<img class="item-image" src="' . $item['cover'] . '">'.
 		       '<div class="item-info"><h3 class="item-title" title="' . $item['title'] . '">' . $item['title'] . '</h3>'.
 		       '<div class="item-intro" title="' . $item['intro'] . '">' . $item['intro'] . '</div>'.
 		       '</div></a></div>';
