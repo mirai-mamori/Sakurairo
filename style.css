@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://iro.tw/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.4.6
+Version: 2.4.7
 Tested up to: 6.0
 Requires at least: 5.6
 Requires PHP: 7.2
@@ -1046,12 +1046,11 @@ input[type=week] {
   background-color: #FFEEEB;
   font-size: 12px;
   width: max-content;
-  padding: 2px 7px 2px 7px;
+  padding: 4px 10px 4px 10px;
   border-radius: 6px;
   color: var(--post_date_text_color,#505050);
   white-space: nowrap;
   font-weight: var(--global-font-weight);
-
   transition: all 0.8s ease !important;
 }
 
@@ -1815,17 +1814,23 @@ span.ar-circle {
 
 h1.cat-title {
   display: inline-block;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: var(--global-font-weight,400);
-  padding-right: 15px;
-  border-right: 1px dashed #ddd;
   color: var(--theme-skin,#505050);
 }
 
 header.page-header {
   position: relative;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 6.5%;
+  color: #9C9C9C;
+}
+
+header.timeline-header {
+  position: relative;
+  text-align: center;
+  margin-top: 7.5%;
+  margin-bottom: 6.5%;
   color: #9C9C9C;
 }
 
@@ -1937,11 +1942,11 @@ span.sitename {
 }
 
 span.linkss-title {
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
   display: block;
-  margin: 50px 0 30px;
-  letter-spacing: 5px;
+  margin: 6.5% 0 7.5%;
+  letter-spacing: 2px;
   font-weight: var(--global-font-weight);
 
 }
@@ -2274,7 +2279,7 @@ nav#comments-navi {
 
 h1.fes-title {
   color: var(--theme-skin,#505050);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: var(--global-font-weight,400);
   padding-bottom: 10px;
   margin-bottom: 30px;
@@ -2284,7 +2289,7 @@ h1.fes-title {
 
 h1.main-title {
   color: var(--theme-skin,#505050);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: var(--global-font-weight,400);
   padding-bottom: 10px;
   margin-bottom: 30px;
@@ -5344,7 +5349,7 @@ object {
 }
 
 .site-main {
-  padding: 60px 0 0;
+  padding: 7.5% 0 0;
 }
 
 .feature {
@@ -5806,6 +5811,7 @@ span.time {
 .cat-des p {
   display: inline-block;
   padding-left: 10px;
+  font-size: 18px;
 }
 
 .link-title span.link-fix {
@@ -7415,12 +7421,6 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 @media (max-width:860px) {
   .site-top .lower nav ul li .animated-hover i {
     display: inline;
-  }
-}
-
-@media (max-width:860px) {
-  .site-main {
-    padding: 40px 0 0;
   }
 }
 
@@ -9526,6 +9526,8 @@ body.dark .author-profile i,
 body.dark .comment .info,
 body.dark .comment-respond .logged-in-as,
 body.dark .comment-respond .logged-in-as a,
+body.dark .comment h4 a,
+body.dark .comment .body .comment-at,
 body.dark span.sitename {
   color: #CCCCCC;
 }
