@@ -228,7 +228,7 @@ if(iro_opt('exlogin_url')){
   }
 }
 
-//attension: 目前仅有登陆模板在用这个函数捏，登陆模板是一个要deprecate的状态
+//attention: 目前仅有登陆模板在用这个函数捏，登陆模板是一个要deprecate的状态
 // 登录跳转
 function Exuser_center(){ ?>
   <script type='text/javascript'>
