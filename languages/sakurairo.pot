@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-04-29 18:06-0700\n"
+"POT-Creation-Date: 2022-05-01 14:47-0700\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Don't worry, search in site?"
 msgstr ""
 
-#: 404.php:61 footer.php:57 opt/classes/admin-options.class.php:574
+#: 404.php:61 footer.php:61 opt/classes/admin-options.class.php:574
 #: opt/fields/icon/icon.php:57 opt/fields/map/map.php:23 search.php:40
 msgid "Search..."
 msgstr ""
@@ -119,26 +119,32 @@ msgid "Must* "
 msgstr ""
 
 #: comments.php:100
-msgid "Advertisement is forbidden \uD83D\uDE00"
+msgid "Advertisement is forbidden 😀"
 msgstr ""
 
 #: comments.php:100
 msgid "Site"
 msgstr ""
 
-#: footer.php:62
+#: footer.php:39
+#, php-format
+msgctxt "footer load occupancy"
+msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
+msgstr ""
+
+#: footer.php:66
 msgid "Go to top"
 msgstr ""
 
-#: footer.php:70 footer.php:78
+#: footer.php:74 footer.php:82
 msgid "Want to find something?"
 msgstr ""
 
-#: footer.php:80
+#: footer.php:84
 msgid "Search"
 msgstr ""
 
-#: footer.php:132
+#: footer.php:136
 msgid "Widgets"
 msgstr ""
 
@@ -4393,7 +4399,7 @@ msgstr ""
 msgid "There is no changelog available."
 msgstr ""
 
-#: user/page-bangumi.php:31 user/page-bilibiliFavList.php:32
+#: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30
 #: user/page-followVideos.php:29
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr ""

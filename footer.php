@@ -35,8 +35,12 @@ $reception_background = iro_opt('reception_background');
 					<span style="color: #b9b9b9;">
 						<?php /* 能保留下面两个链接吗？算是我一个小小的心愿吧~ */ ?>
 						<?php if (iro_opt('footer_load_occupancy', 'true')): ?>
-                        <?php printf(' 耗时 %.3f 秒 | 查询 %d 次 | 内存 %.2f MB',timer_stop( 0, 3 ),get_num_queries(),memory_get_peak_usage() / 1024 / 1024);?>
-                        <?php endif; ?>
+                        <?php printf(
+								_x( 'Load Time %.3f seconds | %d Query | RAM Usage %.2f MB ', 'footer load occupancy', 'sakurairo' ),
+								timer_stop( 0, 3 ),get_num_queries(),memory_get_peak_usage() / 1024 / 1024);
+                        ?>
+                        <?php endif ?>
+                        <br>
 						Theme <a href="https://github.com/mirai-mamori/Sakurairo" rel="noopener" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://iro.tw" rel="noopener" target="_blank" id="site-info" >Fuukei</a> 
 					</span>
 			</div>
