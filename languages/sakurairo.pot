@@ -119,7 +119,7 @@ msgid "Must* "
 msgstr ""
 
 #: comments.php:100
-msgid "Advertisement is forbidden 😀"
+msgid "Advertisement is forbidden \uD83D\uDE00"
 msgstr ""
 
 #: comments.php:100

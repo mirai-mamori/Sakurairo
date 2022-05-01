@@ -121,7 +121,7 @@ msgstr "必須* "
 #: comments.php:100
 #, fuzzy
 #| msgid "Advertisement is forbidden \\uD83D\\uDE00"
-msgid "Advertisement is forbidden 😀"
+msgid "Advertisement is forbidden \uD83D\uDE00"
 msgstr "広告は禁止されています\\uD83D\\uDE00"
 
 #: comments.php:100
