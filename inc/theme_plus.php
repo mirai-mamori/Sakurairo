@@ -237,9 +237,9 @@ function Exuser_center(){ ?>
     function gopage(url,type){ 
         URL = url; 
         if(type == 1){
-          TYPE = <?php _e('dashboard','sakurairo')/*管理后台*/?>;
+          TYPE = '<?php _e('dashboard','sakurairo')/*管理后台*/?>';
         }else{
-          TYPE = <?php _e('home','sakurairo')/*主页*/?>;
+          TYPE = '<?php _e('home','sakurairo')/*主页*/?>';
         }
         for(let i=secs;i>=0;i--){ 
             window.setTimeout('doUpdate(' + i + ')', (secs-i) * 1000); 
