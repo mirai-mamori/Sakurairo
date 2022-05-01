@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-04-30 18:28+0800\n"
-"PO-Revision-Date: 2022-04-30 18:31+0800\n"
+"POT-Creation-Date: 2022-05-01 21:05+0800\n"
+"PO-Revision-Date: 2022-05-01 21:05+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -3174,8 +3174,12 @@ msgid "Jump after login"
 msgstr "登入後跳轉"
 
 #: options/theme-options.php:3037
-msgid "Jump to backend for admins and home for users after turning on"
-msgstr "開啟之後管理員跳轉至後台，用戶跳轉至主頁"
+msgid ""
+"Jump to backend for admins and home for users after turning on. Attention: "
+"Only takes effect when logging in from a page with Loggin Template. "
+msgstr ""
+"打開后，跳轉到管理員的後端和使用者的家庭。注意： 僅當使用 Loggin 樣本從頁面登"
+"錄時才生效。"
 
 #: options/theme-options.php:3043
 msgid "Dashboard"
