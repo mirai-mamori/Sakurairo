@@ -228,37 +228,38 @@ if(iro_opt('exlogin_url')){
   }
 }
 
+//attension: 目前仅有登陆模板在用这个函数捏，登陆模板是一个要deprecate的状态
 // 登录跳转
 function Exuser_center(){ ?>
   <script type='text/javascript'>
-    var secs = 5; //倒计时的秒数 
-    var URL;
-    var TYPE; 
-    function gopage(url,type){ 
-        URL = url; 
-        if(type == 1){
-          TYPE = <?php _e('dashboard','sakurairo')/*管理后台*/?>;
-        }else{
-          TYPE = <?php _e('home','sakurairo')/*主页*/?>;
-        }
-        for(let i=secs;i>=0;i--){ 
-            window.setTimeout('doUpdate(' + i + ')', (secs-i) * 1000); 
-        } 
-    } 
-    function doUpdate(num){ 
-        document.getElementById('login-showtime').innerHTML = '<?php _e("Login successful, ","sakurairo")/*空降成功*/?>'+num+'<?php _e("seconds later automatically transfer to","sakurairo")/*秒后自动转到*/?>'+TYPE; 
-        if(num == 0) { window.location=URL; } 
-    } 
-  </script>    
+    <?php
+/* var URL;
+var TYPE; */ //不要污染全局命名空间啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+?>
+function gopage(url,descr) {
+    function cb(sec) {
+        document.getElementById('login-showtime').innerHTML = '<?=__("Login successful, ","sakurairo")/*空降成功*/?>' 
+        + sec + '<?=__("seconds later automatically transfer to","sakurairo")/*秒后自动转到*/?>' + descr;
+        if (sec == 0) { window.location = url; } else {setTimeout(cb((sec - 1)*1000)) }
+    }
+    setTimeout(cb(5)) <?php /*倒计时秒数在这捏*/ ?>
+}
+  </script>  
   <?php if(current_user_can('level_10')){ ?>
   <div class="admin-login-check">
-    <?php echo login_ok(); ?>
-    <?php if(iro_opt('login_urlskip')){ ?><script>window.open("<?php bloginfo('url'); ?>/wp-admin/",1);gopage("<?php bloginfo('url'); ?>",0);</script><?php } ?>
+    <?php 
+    echo login_ok(); 
+     if(iro_opt('login_urlskip')){ ?>
+     <script>gopage("<?php bloginfo('url'); ?>/wp-admin/","<?=__('dashboard','sakurairo')/*管理后台*/?>");</script>
+     <?php } ?>
   </div>
   <?php }else{ ?>
   <div class="user-login-check">
-    <?php echo login_ok(); ?>
-    <?php if(iro_opt('login_urlskip')){ ?><script>gopage("<?php bloginfo('url'); ?>",0);</script><?php } ?>
+    <?php 
+    echo login_ok(); 
+     if(iro_opt('login_urlskip')){?>
+     <script>gopage("<?php bloginfo('url'); ?>","<?=__('home','sakurairo')/*主页*/?>");</script>
+        <?php } ?>
   </div>
 <?php 
   }
