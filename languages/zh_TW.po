@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-04-30 14:46+0800\n"
-"PO-Revision-Date: 2022-04-30 14:54+0800\n"
+"POT-Creation-Date: 2022-05-02 13:15+0800\n"
+"PO-Revision-Date: 2022-05-02 13:18+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -33,7 +33,7 @@ msgstr "返回首頁"
 msgid "Don't worry, search in site?"
 msgstr "別著急，試試站內檢索？"
 
-#: 404.php:61 footer.php:57 search.php:40
+#: 404.php:61 footer.php:61 search.php:40
 msgid "Search..."
 msgstr "搜尋..."
 
@@ -125,19 +125,25 @@ msgstr "禁止小廣告😀"
 msgid "Site"
 msgstr "網站"
 
-#: footer.php:62
+#: footer.php:39
+#, php-format
+msgctxt "footer load occupancy"
+msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
+msgstr "載入時間 %.3f 秒 | %d 查詢 | 記憶體使用 %.2f MB "
+
+#: footer.php:66
 msgid "Go to top"
 msgstr "回到頂端"
 
-#: footer.php:70 footer.php:78
+#: footer.php:74 footer.php:82
 msgid "Want to find something?"
 msgstr "想要找點什麼呢？"
 
-#: footer.php:80
+#: footer.php:84
 msgid "Search"
 msgstr "搜尋"
 
-#: footer.php:132
+#: footer.php:136
 msgid "Widgets"
 msgstr "小工具"
 
@@ -353,7 +359,7 @@ msgstr " "
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1220 functions.php:1223 inc/theme_plus.php:424
+#: functions.php:1220 functions.php:1223 inc/theme_plus.php:425
 msgid "Dashboard"
 msgstr "管理後台"
 
@@ -434,7 +440,7 @@ msgstr "所有專案均已載入。"
 msgid "Load More"
 msgstr "載入更多"
 
-#: inc/classes/Cache.php:70 inc/theme_plus.php:668
+#: inc/classes/Cache.php:70 inc/theme_plus.php:669
 msgid "The comment is private"
 msgstr "這是一條私密留言"
 
@@ -557,80 +563,116 @@ msgstr "發布於 "
 msgid "Please upgrade wordpress to version 4.4+"
 msgstr "請更新到4.4以上版本"
 
-#: inc/theme_plus.php:240
-msgid "dashboard"
-msgstr "管理後台"
-
-#: inc/theme_plus.php:242
-msgid "home"
-msgstr "首頁"
-
-#: inc/theme_plus.php:249
+#: inc/theme_plus.php:241
 msgid "Login successful, "
 msgstr "登入成功， "
 
-#: inc/theme_plus.php:249
+#: inc/theme_plus.php:242
 msgid "seconds later automatically transfer to"
 msgstr "秒後自動轉到"
 
-#: inc/theme_plus.php:272
+#: inc/theme_plus.php:253
+msgid "dashboard"
+msgstr "管理後台"
+
+#: inc/theme_plus.php:261
+msgid "home"
+msgstr "首頁"
+
+#: inc/theme_plus.php:273
 msgid "Change avatar"
 msgstr "更換頭貼"
 
-#: inc/theme_plus.php:273
+#: inc/theme_plus.php:274
 msgid "Hello, "
 msgstr "歡迎 "
 
-#: inc/theme_plus.php:277
+#: inc/theme_plus.php:278
 msgid "Home"
 msgstr "首頁"
 
-#: inc/theme_plus.php:279
+#: inc/theme_plus.php:280
 msgid "Manage"
 msgstr "管理"
 
-#: inc/theme_plus.php:281
+#: inc/theme_plus.php:282
 msgid "Logout"
 msgstr "登出"
 
-#: inc/theme_plus.php:281
+#: inc/theme_plus.php:282
 msgid "Sign out? "
 msgstr "登出？ "
 
-#: inc/theme_plus.php:301 inc/theme_plus.php:362 tpl/content-single.php:20
+#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:20
 #: tpl/single-image.php:18
 msgid "View"
 msgid_plural "Views"
 msgstr[0] "次瀏覽"
 
-#: inc/theme_plus.php:313 inc/theme_plus.php:373
+#: inc/theme_plus.php:314 inc/theme_plus.php:374
 #, php-format
 msgid "Search results for \" %s \""
 msgstr "關於“ %s ”的搜尋結果"
 
-#: inc/theme_plus.php:390 tpl/content-thumb.php:28 tpl/content-thumb.php:34
+#: inc/theme_plus.php:391 tpl/content-thumb.php:28 tpl/content-thumb.php:34
 msgid "Your browser does not support HTML5 video."
 msgstr "您的瀏覽器不支援 HTML5 影片。"
 
-#: inc/theme_plus.php:419
+#: inc/theme_plus.php:420
 msgid "Signed in as"
 msgstr "當前已登入"
 
-#: inc/theme_plus.php:425
+#: inc/theme_plus.php:426
 msgid "New post"
 msgstr "撰寫文章"
 
-#: inc/theme_plus.php:427
+#: inc/theme_plus.php:428
 msgid "Profile"
 msgstr "個人資訊"
 
-#: inc/theme_plus.php:428
+#: inc/theme_plus.php:429
 msgid "Sign out"
 msgstr "登出"
 
-#: inc/theme_plus.php:446
+#: inc/theme_plus.php:447
 msgid "Log in"
 msgstr "登入"
+
+#: js/578.js:1
+msgid "(?:m|qr)?"
+msgstr ""
+
+#: js/578.js:1
+msgid "m|qr"
+msgstr ""
+
+#: js/826.js:1
+msgid "'"
+msgstr ""
+
+#: js/826.js:1
+msgid "\""
+msgstr ""
+
+#: js/870.js:2
+msgid "baguetteBox-overlay"
+msgstr ""
+
+#: js/870.js:2
+msgid "baguetteBox-slider"
+msgstr ""
+
+#: js/870.js:2
+msgid "previous-button"
+msgstr "上一個按鈕"
+
+#: js/870.js:2
+msgid "next-button"
+msgstr "下一個按鈕"
+
+#: js/870.js:2
+msgid "close-button"
+msgstr "關閉按鈕"
 
 #: layouts/imgbox.php:7
 msgid "Previous"
@@ -700,46 +742,6 @@ msgstr "似乎沒有找到你想要的東西，或許你可以搜尋一下試式
 #: tpl/content-page.php:25 tpl/content-single.php:29 tpl/single-image.php:28
 msgid "Pages:"
 msgstr "頁面:"
-
-#: update-checker/Puc/v4p11/Plugin/Ui.php:54
-msgid "View details"
-msgstr "查看詳情"
-
-#: update-checker/Puc/v4p11/Plugin/Ui.php:77
-#, php-format
-msgid "More information about %s"
-msgstr "進一步瞭解 %s 的相關資訊"
-
-#: update-checker/Puc/v4p11/Plugin/Ui.php:128
-msgid "Check for updates"
-msgstr "檢查更新"
-
-#: update-checker/Puc/v4p11/Plugin/Ui.php:214
-#, php-format
-msgctxt "the plugin title"
-msgid "The %s plugin is up to date."
-msgstr ""
-
-#: update-checker/Puc/v4p11/Plugin/Ui.php:216
-#, php-format
-msgctxt "the plugin title"
-msgid "A new version of the %s plugin is available."
-msgstr ""
-
-#: update-checker/Puc/v4p11/Plugin/Ui.php:218
-#, php-format
-msgctxt "the plugin title"
-msgid "Could not determine if updates are available for %s."
-msgstr ""
-
-#: update-checker/Puc/v4p11/Plugin/Ui.php:224
-#, php-format
-msgid "Unknown update checker status \"%s\""
-msgstr "未知的更新檢查程式狀態: %s"
-
-#: update-checker/Puc/v4p11/Vcs/PluginUpdateChecker.php:98
-msgid "There is no changelog available."
-msgstr "無更新紀錄。"
 
 #: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30
 #: user/page-followVideos.php:29
@@ -865,6 +867,23 @@ msgstr "友情連結模版"
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr "推文模版"
+
+#~ msgid "View details"
+#~ msgstr "查看詳情"
+
+#, php-format
+#~ msgid "More information about %s"
+#~ msgstr "進一步瞭解 %s 的相關資訊"
+
+#~ msgid "Check for updates"
+#~ msgstr "檢查更新"
+
+#, php-format
+#~ msgid "Unknown update checker status \"%s\""
+#~ msgstr "未知的更新檢查程式狀態: %s"
+
+#~ msgid "There is no changelog available."
+#~ msgstr "無更新紀錄。"
 
 #, fuzzy
 #~| msgid "Uploading..."

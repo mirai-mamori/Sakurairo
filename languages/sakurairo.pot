@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-04-30 14:38+0800\n"
+"POT-Creation-Date: 2022-05-02 13:13+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Don't worry, search in site?"
 msgstr ""
 
-#: 404.php:61 footer.php:57 search.php:40
+#: 404.php:61 footer.php:61 search.php:40
 msgid "Search..."
 msgstr ""
 
@@ -125,19 +125,25 @@ msgstr ""
 msgid "Site"
 msgstr ""
 
-#: footer.php:62
+#: footer.php:39
+#, php-format
+msgctxt "footer load occupancy"
+msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
+msgstr ""
+
+#: footer.php:66
 msgid "Go to top"
 msgstr ""
 
-#: footer.php:70 footer.php:78
+#: footer.php:74 footer.php:82
 msgid "Want to find something?"
 msgstr ""
 
-#: footer.php:80
+#: footer.php:84
 msgid "Search"
 msgstr ""
 
-#: footer.php:132
+#: footer.php:136
 msgid "Widgets"
 msgstr ""
 
@@ -342,7 +348,7 @@ msgstr ""
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1220 functions.php:1223 inc/theme_plus.php:424
+#: functions.php:1220 functions.php:1223 inc/theme_plus.php:425
 msgid "Dashboard"
 msgstr ""
 
@@ -420,7 +426,7 @@ msgstr ""
 msgid "Load More"
 msgstr ""
 
-#: inc/classes/Cache.php:70 inc/theme_plus.php:668
+#: inc/classes/Cache.php:70 inc/theme_plus.php:669
 msgid "The comment is private"
 msgstr ""
 
@@ -543,80 +549,116 @@ msgstr ""
 msgid "Please upgrade wordpress to version 4.4+"
 msgstr ""
 
-#: inc/theme_plus.php:240
-msgid "dashboard"
-msgstr ""
-
-#: inc/theme_plus.php:242
-msgid "home"
-msgstr ""
-
-#: inc/theme_plus.php:249
+#: inc/theme_plus.php:241
 msgid "Login successful, "
 msgstr ""
 
-#: inc/theme_plus.php:249
+#: inc/theme_plus.php:242
 msgid "seconds later automatically transfer to"
 msgstr ""
 
-#: inc/theme_plus.php:272
-msgid "Change avatar"
+#: inc/theme_plus.php:253
+msgid "dashboard"
+msgstr ""
+
+#: inc/theme_plus.php:261
+msgid "home"
 msgstr ""
 
 #: inc/theme_plus.php:273
+msgid "Change avatar"
+msgstr ""
+
+#: inc/theme_plus.php:274
 msgid "Hello, "
 msgstr ""
 
-#: inc/theme_plus.php:277
+#: inc/theme_plus.php:278
 msgid "Home"
 msgstr ""
 
-#: inc/theme_plus.php:279
+#: inc/theme_plus.php:280
 msgid "Manage"
 msgstr ""
 
-#: inc/theme_plus.php:281
+#: inc/theme_plus.php:282
 msgid "Logout"
 msgstr ""
 
-#: inc/theme_plus.php:281
+#: inc/theme_plus.php:282
 msgid "Sign out? "
 msgstr ""
 
-#: inc/theme_plus.php:301 inc/theme_plus.php:362 tpl/content-single.php:20
+#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:20
 #: tpl/single-image.php:18
 msgid "View"
 msgid_plural "Views"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/theme_plus.php:313 inc/theme_plus.php:373
+#: inc/theme_plus.php:314 inc/theme_plus.php:374
 #, php-format
 msgid "Search results for \" %s \""
 msgstr ""
 
-#: inc/theme_plus.php:390 tpl/content-thumb.php:28 tpl/content-thumb.php:34
+#: inc/theme_plus.php:391 tpl/content-thumb.php:28 tpl/content-thumb.php:34
 msgid "Your browser does not support HTML5 video."
 msgstr ""
 
-#: inc/theme_plus.php:419
+#: inc/theme_plus.php:420
 msgid "Signed in as"
 msgstr ""
 
-#: inc/theme_plus.php:425
+#: inc/theme_plus.php:426
 msgid "New post"
 msgstr ""
 
-#: inc/theme_plus.php:427
+#: inc/theme_plus.php:428
 msgid "Profile"
 msgstr ""
 
-#: inc/theme_plus.php:428
+#: inc/theme_plus.php:429
 msgid "Sign out"
 msgstr ""
 
-#: inc/theme_plus.php:446
+#: inc/theme_plus.php:447
 msgid "Log in"
+msgstr ""
+
+#: js/578.js:1
+msgid "(?:m|qr)?"
+msgstr ""
+
+#: js/578.js:1
+msgid "m|qr"
+msgstr ""
+
+#: js/826.js:1
+msgid "'"
+msgstr ""
+
+#: js/826.js:1
+msgid "\""
+msgstr ""
+
+#: js/870.js:2
+msgid "baguetteBox-overlay"
+msgstr ""
+
+#: js/870.js:2
+msgid "baguetteBox-slider"
+msgstr ""
+
+#: js/870.js:2
+msgid "previous-button"
+msgstr ""
+
+#: js/870.js:2
+msgid "next-button"
+msgstr ""
+
+#: js/870.js:2
+msgid "close-button"
 msgstr ""
 
 #: layouts/imgbox.php:7
@@ -687,46 +729,6 @@ msgstr ""
 
 #: tpl/content-page.php:25 tpl/content-single.php:29 tpl/single-image.php:28
 msgid "Pages:"
-msgstr ""
-
-#: update-checker/Puc/v4p11/Plugin/Ui.php:54
-msgid "View details"
-msgstr ""
-
-#: update-checker/Puc/v4p11/Plugin/Ui.php:77
-#, php-format
-msgid "More information about %s"
-msgstr ""
-
-#: update-checker/Puc/v4p11/Plugin/Ui.php:128
-msgid "Check for updates"
-msgstr ""
-
-#: update-checker/Puc/v4p11/Plugin/Ui.php:214
-#, php-format
-msgctxt "the plugin title"
-msgid "The %s plugin is up to date."
-msgstr ""
-
-#: update-checker/Puc/v4p11/Plugin/Ui.php:216
-#, php-format
-msgctxt "the plugin title"
-msgid "A new version of the %s plugin is available."
-msgstr ""
-
-#: update-checker/Puc/v4p11/Plugin/Ui.php:218
-#, php-format
-msgctxt "the plugin title"
-msgid "Could not determine if updates are available for %s."
-msgstr ""
-
-#: update-checker/Puc/v4p11/Plugin/Ui.php:224
-#, php-format
-msgid "Unknown update checker status \"%s\""
-msgstr ""
-
-#: update-checker/Puc/v4p11/Vcs/PluginUpdateChecker.php:98
-msgid "There is no changelog available."
 msgstr ""
 
 #: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30
