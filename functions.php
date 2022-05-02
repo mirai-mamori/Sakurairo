@@ -267,7 +267,7 @@ function sakura_scripts()
         wp_enqueue_script('comment-reply');
     }
     //前端脚本本地化
-    if (!get_locale("zh-CN")) {
+    if (get_locale() != 'zh_CN') {
         wp_localize_script('app', '_sakurairoi18n', array(
             '复制成功！' => __("Copied!", 'sakurairo'),
             '拷贝代码' => __("Copy Code", 'sakurairo'),
