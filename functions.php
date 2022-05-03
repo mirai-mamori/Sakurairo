@@ -1893,6 +1893,9 @@ function get_photo()
     exit();
 }
 
+if (iro_opt('login_language_opt') === '0') {
+add_filter( 'login_display_language_dropdown', '__return_false' );
+}
 
 if (iro_opt('captcha_select') === 'iro_captcha') {
     function login_CAPTCHA()

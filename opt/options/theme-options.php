@@ -3039,6 +3039,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'login_language_opt',
+        'type' => 'switcher',
+        'title' => __('Login Screen Language Option','sakurairo_csf'),
+        'label' => __('Login screen language option will be display when enabled','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
         'type' => 'subheading',
         'content' => __('Dashboard','sakurairo_csf'),
       ),

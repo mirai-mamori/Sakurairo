@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-05-01 21:02+0800\n"
+"POT-Creation-Date: 2022-05-03 11:14+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -887,9 +887,9 @@ msgstr ""
 #: options/theme-options.php:246 options/theme-options.php:254
 #: options/theme-options.php:267 options/theme-options.php:1100
 #: options/theme-options.php:1109 options/theme-options.php:2683
-#: options/theme-options.php:2691 options/theme-options.php:3070
-#: options/theme-options.php:3078 options/theme-options.php:3086
-#: options/theme-options.php:3094 options/theme-options.php:3102
+#: options/theme-options.php:2691 options/theme-options.php:3078
+#: options/theme-options.php:3086 options/theme-options.php:3094
+#: options/theme-options.php:3102 options/theme-options.php:3110
 msgid "Customize the colors"
 msgstr ""
 
@@ -3126,218 +3126,226 @@ msgid ""
 "Only takes effect when logging in from a page with Loggin Template. "
 msgstr ""
 
-#: options/theme-options.php:3043
+#: options/theme-options.php:3044
+msgid "Login Screen Language Option"
+msgstr ""
+
+#: options/theme-options.php:3045
+msgid "Login screen language option will be display when enabled"
+msgstr ""
+
+#: options/theme-options.php:3051
 msgid "Dashboard"
 msgstr ""
 
-#: options/theme-options.php:3049
+#: options/theme-options.php:3057
 msgid "Dashboard Background Image"
 msgstr ""
 
-#: options/theme-options.php:3050
+#: options/theme-options.php:3058
 msgid ""
 "Set your dashboard background image, leave this option blank to show white "
 "background"
 msgstr ""
 
-#: options/theme-options.php:3058
+#: options/theme-options.php:3066
 msgid "Dashboard Options Menu Style"
 msgstr ""
 
-#: options/theme-options.php:3069
+#: options/theme-options.php:3077
 msgid "Dashboard Primary Menu Color"
 msgstr ""
 
-#: options/theme-options.php:3077
+#: options/theme-options.php:3085
 msgid "Dashboard Secondary Menu Color"
 msgstr ""
 
-#: options/theme-options.php:3085
+#: options/theme-options.php:3093
 msgid "Dashboard Emphasis Color"
 msgstr ""
 
-#: options/theme-options.php:3093
+#: options/theme-options.php:3101
 msgid "Dashboard Button Color"
 msgstr ""
 
-#: options/theme-options.php:3101
+#: options/theme-options.php:3109
 msgid "Dashboard Text Color"
 msgstr ""
 
-#: options/theme-options.php:3110
+#: options/theme-options.php:3118
 msgid "Low Use Options"
 msgstr ""
 
-#: options/theme-options.php:3117
+#: options/theme-options.php:3125
 msgid "Statistics API"
 msgstr ""
 
-#: options/theme-options.php:3118
+#: options/theme-options.php:3126
 msgid ""
 "You can choose WP-Statistics plugin statistics or theme built-in statistics "
 "to display"
 msgstr ""
 
-#: options/theme-options.php:3120
+#: options/theme-options.php:3128
 msgid "Theme Built in Statistics"
 msgstr ""
 
-#: options/theme-options.php:3121
+#: options/theme-options.php:3129
 msgid "WP-Statistics Plugin Statistics"
 msgstr ""
 
-#: options/theme-options.php:3129
+#: options/theme-options.php:3137
 msgid "Statistics display format"
 msgstr ""
 
-#: options/theme-options.php:3130
+#: options/theme-options.php:3138
 msgid "You can choose from four different data display formats"
 msgstr ""
 
-#: options/theme-options.php:3132
+#: options/theme-options.php:3140
 msgid "23333 Visits"
 msgstr ""
 
-#: options/theme-options.php:3133
+#: options/theme-options.php:3141
 msgid "23,333 Visits"
 msgstr ""
 
-#: options/theme-options.php:3134
+#: options/theme-options.php:3142
 msgid "23 333 Visits"
 msgstr ""
 
-#: options/theme-options.php:3135
+#: options/theme-options.php:3143
 msgid "23K Visits"
 msgstr ""
 
-#: options/theme-options.php:3143
+#: options/theme-options.php:3151
 msgid "Live Search"
 msgstr ""
 
-#: options/theme-options.php:3144
+#: options/theme-options.php:3152
 msgid ""
 "After turning on the live search in the frontend, call Rest API to update "
 "the cache once an hour. You can set the cache time manually in api.php"
 msgstr ""
 
-#: options/theme-options.php:3151
+#: options/theme-options.php:3159
 msgid "Live Search Comment Support"
 msgstr ""
 
-#: options/theme-options.php:3153
+#: options/theme-options.php:3161
 msgid ""
 "Enable to search for comments in live search (not recommended if site has "
 "too many comments)"
 msgstr ""
 
-#: options/theme-options.php:3160
+#: options/theme-options.php:3168
 msgid "Google Analytics Id"
 msgstr ""
 
-#: options/theme-options.php:3161
+#: options/theme-options.php:3169
 msgid "If you already have a plugin to handle it, please keep here empty."
 msgstr ""
 
-#: options/theme-options.php:3167
+#: options/theme-options.php:3175
 msgid "Custom CSS Styles"
 msgstr ""
 
-#: options/theme-options.php:3168
+#: options/theme-options.php:3176
 msgid "Fill in the CSS code without writing style tag"
 msgstr ""
 
-#: options/theme-options.php:3175
+#: options/theme-options.php:3183
 msgid "Code inserted in the header"
 msgstr ""
 
-#: options/theme-options.php:3176
+#: options/theme-options.php:3184
 msgid "Insert HTML code right before </head>."
 msgstr ""
 
-#: options/theme-options.php:3182
+#: options/theme-options.php:3190
 msgid "Timezone Fix"
 msgstr ""
 
-#: options/theme-options.php:3183
+#: options/theme-options.php:3191
 msgid ""
 "Slide to adjust. If the comment has a time difference problem, adjust it "
 "here, fill in an integer. Calculation method: actual time = time of display "
 "error - the integer you entered (in hours)"
 msgstr ""
 
-#: options/theme-options.php:3191
+#: options/theme-options.php:3199
 msgid "Gravatar Service"
 msgstr ""
 
-#: options/theme-options.php:3196
+#: options/theme-options.php:3204
 msgid ""
 "<p><strong>Cravatar Service:</strong> Cravatar Service is an alternative to "
 "Gravatar Service in China. You can upload and share avatars freely. Go to "
 "<a href=\"https://cravatar.cn/\">official website</a> for details </p>"
 msgstr ""
 
-#: options/theme-options.php:3202
+#: options/theme-options.php:3210
 msgid "Gravatar Service Proxy"
 msgstr ""
 
-#: options/theme-options.php:3203
+#: options/theme-options.php:3211
 msgid ""
 "You can select multiple proxy as the Gravatar Service Proxy. By default, "
 "Cravatar Service is used as the Gravatar Service Proxy."
 msgstr ""
 
-#: options/theme-options.php:3205
+#: options/theme-options.php:3213
 msgid "Cravatar Service"
 msgstr ""
 
-#: options/theme-options.php:3206
+#: options/theme-options.php:3214
 msgid "Geekzu"
 msgstr ""
 
-#: options/theme-options.php:3207
+#: options/theme-options.php:3215
 msgid "Loli Net"
 msgstr ""
 
-#: options/theme-options.php:3208
+#: options/theme-options.php:3216
 msgid "Official"
 msgstr ""
 
-#: options/theme-options.php:3209
+#: options/theme-options.php:3217
 msgid "Official CN"
 msgstr ""
 
-#: options/theme-options.php:3216
+#: options/theme-options.php:3224
 msgid "Lightbox"
 msgstr ""
 
-#: options/theme-options.php:3222
+#: options/theme-options.php:3230
 msgid "BaguetteBox Lightbox Effect"
 msgstr ""
 
-#: options/theme-options.php:3223
+#: options/theme-options.php:3231
 msgid "BaguetteBox will be used as the image lightbox effect when turned on"
 msgstr ""
 
-#: options/theme-options.php:3230
+#: options/theme-options.php:3238
 msgid "FancyBox Lightbox Effect"
 msgstr ""
 
-#: options/theme-options.php:3231
+#: options/theme-options.php:3239
 msgid ""
 "FancyBox will be used as an image lightbox effect after turning on, "
 "additional JQ libraries will be loaded"
 msgstr ""
 
-#: options/theme-options.php:3239
+#: options/theme-options.php:3247
 msgid "LightGallery Lightbox Effect"
 msgstr ""
 
-#: options/theme-options.php:3240
+#: options/theme-options.php:3248
 msgid ""
 "LightGallery will be used as an image lightbox effect after turning on."
 msgstr ""
 
-#: options/theme-options.php:3246
+#: options/theme-options.php:3254
 msgid ""
 "<strong>Attension: Please read <a href=\"https://github.com/sachinchoolur/"
 "lightGallery#license\">License Instruction</a> before use.</strong><br/"
@@ -3351,21 +3359,21 @@ msgid ""
 "https://github.com/mirai-mamori/Sakurairo/discussions"
 msgstr ""
 
-#: options/theme-options.php:3257
+#: options/theme-options.php:3265
 msgid ""
 "Start from Sakurairo v2.4.0, plugins names in LightGallery option follow "
 "the form cite in official document (eg. lgHash instead of \"hash\")"
 msgstr ""
 
-#: options/theme-options.php:3265
+#: options/theme-options.php:3273
 msgid "LightGallery Lightbox Effect Options"
 msgstr ""
 
-#: options/theme-options.php:3276
+#: options/theme-options.php:3284
 msgid "Code Highlighting"
 msgstr ""
 
-#: options/theme-options.php:3281
+#: options/theme-options.php:3289
 msgid ""
 "<p><strong>Highlight.js:</strong> Default. Automatic language recognition. "
 "</p> <p><strong>Prism.js:</strong> Requires a language to be specified, see "
@@ -3375,78 +3383,78 @@ msgid ""
 "where another configuration is available. </p>"
 msgstr ""
 
-#: options/theme-options.php:3289
+#: options/theme-options.php:3297
 msgid "Code Highlight Method"
 msgstr ""
 
-#: options/theme-options.php:3293
+#: options/theme-options.php:3301
 msgid "Custom Program"
 msgstr ""
 
-#: options/theme-options.php:3301
+#: options/theme-options.php:3309
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
 msgstr ""
 
-#: options/theme-options.php:3305
+#: options/theme-options.php:3313
 msgid ""
 "See the <a href=\"https://prismjs.com/plugins/line-numbers/\">plugin "
 "description documentation</a>"
 msgstr ""
 
-#: options/theme-options.php:3311
+#: options/theme-options.php:3319
 msgid "Prism.js: Autoload Address"
 msgstr ""
 
-#: options/theme-options.php:3315
+#: options/theme-options.php:3323
 msgid "Leave blank to use default values"
 msgstr ""
 
-#: options/theme-options.php:3322
+#: options/theme-options.php:3330
 msgid "Prism.js: Code Highlight Theme"
 msgstr ""
 
-#: options/theme-options.php:3323 options/theme-options.php:3334
+#: options/theme-options.php:3331 options/theme-options.php:3342
 msgid "Relative to autoload address. Leave blank to use default values"
 msgstr ""
 
-#: options/theme-options.php:3333
+#: options/theme-options.php:3341
 msgid "Prism.js: Code Highlight Theme (Dark Mode)"
 msgstr ""
 
-#: options/theme-options.php:3344
+#: options/theme-options.php:3352
 msgid ""
 "The following Options are not recommended to be modified blindly, please "
 "use them under the guidance of others"
 msgstr ""
 
-#: options/theme-options.php:3350
+#: options/theme-options.php:3358
 msgid "Image CDN"
 msgstr ""
 
-#: options/theme-options.php:3351
+#: options/theme-options.php:3359
 msgid ""
 "Note: fill in the format https://your CDN domain/. This means that images "
 "with original path http://your.domain/wp-content/uploads/2018/05/xx.png "
 "will be loaded from http://your CDN domain/2018/05/xx.png"
 msgstr ""
 
-#: options/theme-options.php:3358
+#: options/theme-options.php:3366
 msgid "Articles Categories (Do not display)"
 msgstr ""
 
-#: options/theme-options.php:3359 options/theme-options.php:3366
+#: options/theme-options.php:3367 options/theme-options.php:3374
 msgid "Fill in category ID, seperate in English\" , \" when more than one"
 msgstr ""
 
-#: options/theme-options.php:3365
+#: options/theme-options.php:3373
 msgid "Image Display Category"
 msgstr ""
 
-#: options/theme-options.php:3372
+#: options/theme-options.php:3380
 msgid "Specify Login Address"
 msgstr ""
 
-#: options/theme-options.php:3373
+#: options/theme-options.php:3381
 msgid ""
 "Force not to use the WordPress login page address to login, fill in the new "
 "login page address, such as: http://www.xxx.com/login. Note that before "
@@ -3454,72 +3462,72 @@ msgid ""
 "the inability to enter the background, etc."
 msgstr ""
 
-#: options/theme-options.php:3379
+#: options/theme-options.php:3387
 msgid "Specify Registration Address"
 msgstr ""
 
-#: options/theme-options.php:3380
+#: options/theme-options.php:3388
 msgid ""
 "This address is used as the registration entry on the login page, if you "
 "specify a login address, it is recommended to fill in"
 msgstr ""
 
-#: options/theme-options.php:3386
+#: options/theme-options.php:3394
 msgid "Version Control"
 msgstr ""
 
-#: options/theme-options.php:3387
+#: options/theme-options.php:3395
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr ""
 
-#: options/theme-options.php:3393
+#: options/theme-options.php:3401
 msgid "Backup&Recovery"
 msgstr ""
 
-#: options/theme-options.php:3395
+#: options/theme-options.php:3403
 msgid "Backup or Recovery your theme options"
 msgstr ""
 
-#: options/theme-options.php:3406
+#: options/theme-options.php:3414
 msgid "About Theme"
 msgstr ""
 
-#: options/theme-options.php:3412
+#: options/theme-options.php:3420
 msgid "Version Info"
 msgstr ""
 
-#: options/theme-options.php:3417
+#: options/theme-options.php:3425
 msgid ""
 "<img src=\"https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/"
 "git/raw/2.4/series/headlogo.webp\"  alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:3423
+#: options/theme-options.php:3431
 #, php-format
 msgid ""
 "iro 主题版本 / Theme Version %s | <a href=\"https://github.com/mirai-mamori/"
 "Sakurairo\">项目地址 / Project Address</a>"
 msgstr ""
 
-#: options/theme-options.php:3428
+#: options/theme-options.php:3436
 msgid "Update Related"
 msgstr ""
 
-#: options/theme-options.php:3434
+#: options/theme-options.php:3442
 msgid "Theme Update Source"
 msgstr ""
 
-#: options/theme-options.php:3440
+#: options/theme-options.php:3448
 msgid ""
 "If you are using a server set up in mainland China, please use the Upyun "
 "source or the official theme source as your theme update source"
 msgstr ""
 
-#: options/theme-options.php:3447
+#: options/theme-options.php:3455
 msgid "Theme Update Test Channel Disclaimer"
 msgstr ""
 
-#: options/theme-options.php:3453
+#: options/theme-options.php:3461
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -3528,70 +3536,70 @@ msgid ""
 "agree and am willing to bear all unexpected consequences\"</strong>"
 msgstr ""
 
-#: options/theme-options.php:3459
+#: options/theme-options.php:3467
 msgid "Theme Update Channel"
 msgstr ""
 
-#: options/theme-options.php:3466
+#: options/theme-options.php:3474
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr ""
 
-#: options/theme-options.php:3468
+#: options/theme-options.php:3476
 msgid "Stable Channel"
 msgstr ""
 
-#: options/theme-options.php:3469
+#: options/theme-options.php:3477
 msgid "Beta Channel"
 msgstr ""
 
-#: options/theme-options.php:3470
+#: options/theme-options.php:3478
 msgid "Preview Channel"
 msgstr ""
 
-#: options/theme-options.php:3477
+#: options/theme-options.php:3485
 msgid "Resource Control"
 msgstr ""
 
-#: options/theme-options.php:3483
+#: options/theme-options.php:3491
 msgid "Provide Critical Frontend Resource locally"
 msgstr ""
 
-#: options/theme-options.php:3484
+#: options/theme-options.php:3492
 msgid ""
 "Enabeld by default. Critical resources are those resources whose loading "
 "performance will have a significant impact on the user experience."
 msgstr ""
 
-#: options/theme-options.php:3491
+#: options/theme-options.php:3499
 msgid "Provide Other Frontend Resource locally"
 msgstr ""
 
-#: options/theme-options.php:3492
+#: options/theme-options.php:3500
 msgid "Less important frontend resource in the theme's folder."
 msgstr ""
 
-#: options/theme-options.php:3499
+#: options/theme-options.php:3507
 msgid "Provide 3rd-party library from public CDN"
 msgstr ""
 
-#: options/theme-options.php:3500
+#: options/theme-options.php:3508
 msgid ""
 "When disabled, 3rd-party dependencies, which have been built to bundles "
 "along with themes's entry script, will be loaded from the exact same origin "
 "with Critical Frontend Resource. "
 msgstr ""
 
-#: options/theme-options.php:3507
+#: options/theme-options.php:3515
 msgid "Public CDN Basepath"
 msgstr ""
 
-#: options/theme-options.php:3518
+#: options/theme-options.php:3526
 msgid "Vision Resource Basepath"
 msgstr ""
 
-#: options/theme-options.php:3519
+#: options/theme-options.php:3527
 msgid ""
 "This link directory structure needs to be consistent with the <a href="
 "\"https://github.com/Fuukei/Sakurairo_Vision\">Sakurairo Vision</a> "
@@ -3600,21 +3608,21 @@ msgid ""
 "upyun.com/\">Upyun</a> is adopted by default."
 msgstr ""
 
-#: options/theme-options.php:3525
+#: options/theme-options.php:3533
 msgid "Theme Contributors"
 msgstr ""
 
-#: options/theme-options.php:3530
+#: options/theme-options.php:3538
 msgid ""
 "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
 "Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:3535
+#: options/theme-options.php:3543
 msgid "Reference Information"
 msgstr ""
 
-#: options/theme-options.php:3540
+#: options/theme-options.php:3548
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
 "com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -3628,11 +3636,11 @@ msgid ""
 "sakura-logo/\">Hyacm</a></p>"
 msgstr ""
 
-#: options/theme-options.php:3548
+#: options/theme-options.php:3556
 msgid "Dependency Information"
 msgstr ""
 
-#: options/theme-options.php:3553
+#: options/theme-options.php:3561
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</"
@@ -3642,7 +3650,7 @@ msgid ""
 "Checker</a> Project</p>"
 msgstr ""
 
-#: options/theme-options.php:3559
+#: options/theme-options.php:3567
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-"
