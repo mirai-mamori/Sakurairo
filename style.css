@@ -9601,7 +9601,7 @@ body.dark .entry-header hr {
 
 body.dark h1.fes-title,
 body.dark h1.main-title {
-  border-bottom: 6px dotted #666666;
+  border-bottom: none;
   color: #CCCCCC;
 }
 
