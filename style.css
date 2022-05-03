@@ -9577,9 +9577,14 @@ body.dark .post-list-thumb {
   box-shadow: 0 1px 35px -8px rgba(26,26,26,0.6);
 }
 
-body.dark .notice,
-body.dark .notification {
+body.dark .notice{
   filter: brightness(90%);
+}
+
+body.dark .notification {
+  color: #CCCCCC;
+  background: #666666;
+  border: none;
 }
 
 body.dark .author-profile p {
