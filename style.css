@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://iro.tw/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.4.9
+Version: 2.4.10
 Tested up to: 6.0
 Requires at least: 5.6
 Requires PHP: 7.2
@@ -4320,7 +4320,7 @@ input[type=radio]:checked:before {
   background: #1d1f21;
   color: #fff;
   word-break: break-word;
-  font-family: 'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+  font-family: 'Noto Sans SC', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
   padding: 2px;
   text-shadow: none;
   border-radius: 0 0 5px 5px;
@@ -4371,7 +4371,7 @@ td.hljs-ln-numbers {
   text-align: center;
   color: #888f96;
   background: #1d1f21;
-  font-family: 'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+  font-family: 'Noto Sans SC', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
   vertical-align: top;
   position: absolute;
   left: 0;
@@ -6918,7 +6918,7 @@ a.toc-link {
 }
 
 .code-font {
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Noto Sans SC', monospace;
 }
 
 .Ubuntu-font,
@@ -9376,8 +9376,33 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     font-size: 1.2em;
   }
 }
+
+.entry-content h3:after,
+.entry-content h4:after,
+.entry-content h5:after {
+color: var(--theme-skin-matching,#ffe066);
+}
+
+.entry-content a {
+  color: var(--theme-skin-matching,#ffe066);
+}
+
+.entry-content a:hover {
+  color: var(--theme-skin-dark,#ffcc00);
+  text-decoration: underline var(--theme-skin-dark,#ffcc00);
+}
+
+.entry-content code {
+  background: #505050;
+  color: var(--theme-skin-matching,#ffe066);
+  word-break: break-word;
+  font-family: 'Noto Sans SC';
+  padding: 5px;
+  text-shadow: none;
+  border-radius: 5px
+}
+
 body.dark #main-container,
-body.dark .comments,
 body.dark .site-footer,
 body.dark .wrapper,
 body.dark .post-list-show,
@@ -9389,6 +9414,10 @@ body.dark .headertop-bar::after {
 }
 
 body.dark .toc,
+body.dark .comments {
+  background: none !important;
+}
+
 body.dark .search-form input {
   background: rgba(51,51,51,0.8);
 }
@@ -9467,7 +9496,7 @@ body.dark #mo-nav .m-search form {
 }
 
 body.dark .post-date {
-  color: #666666/*!covered#CCCCCC*/;
+  color: #888/*!covered#CCCCCC*/;
   background-color: #333333;
 }
 
@@ -9477,7 +9506,7 @@ body.dark .lower li ul::before {
 }
 
 body.dark .post-list-thumb a {
-  color: #666666/*!covered#333333*/;
+  color: #888/*!covered#333333*/;
 }
 
 body.dark .entry-content p,
@@ -9541,7 +9570,7 @@ body.dark button {
 
 body.dark .post-list-thumb i,
 body.dark .post-meta {
-  color: #666666;
+  color: #888;
 }
 
 body.dark .post-list-thumb {
@@ -9633,6 +9662,15 @@ body.dark #show-nav .line {
 
 body.dark .linkdes {
   border-top: 1px dotted #CCCCCC !important;
+  color: #CCCCCC;
+}
+
+body.dark .entry-content h1,
+body.dark .entry-content h2,
+body.dark .entry-content h3,
+body.dark .entry-content h4,
+body.dark .entry-content h5,
+body.dark .entry-content h6 {
   color: #CCCCCC;
 }
 
