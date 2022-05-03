@@ -9579,9 +9579,7 @@ body.dark .post-list-thumb {
 
 body.dark .notice,
 body.dark .notification {
-  color: #CCCCCC;
-  background: #666666;
-  border: none;
+  filter: brightness(90%);
 }
 
 body.dark .author-profile p {
