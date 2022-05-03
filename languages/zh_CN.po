@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
 "POT-Creation-Date: 2022-05-02 13:14+0800\n"
-"PO-Revision-Date: 2022-05-03 14:39+0800\n"
+"PO-Revision-Date: 2022-05-03 14:43+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -129,7 +129,7 @@ msgstr "网站"
 #, php-format
 msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
-msgstr "加载耗时 %.3f 秒 | %d 次查询 | 内存使用 %.2f MB "
+msgstr "加载耗时 %.3f 秒 | 查询 %d 次 | 内存使用 %.2f MB "
 
 #: footer.php:66
 msgid "Go to top"
