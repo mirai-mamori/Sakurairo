@@ -74,6 +74,16 @@ $mashiro_logo = iro_opt('mashiro_logo');
 	?>
 	<?php wp_head(); ?>
 	<link rel="stylesheet" href="https://<?php echo iro_opt('gfonts_api', 'fonts.loli.net'); ?>/css?family=Merriweather+Sans|Noto+Serif|Noto+Serif+SC|Noto+Sans+SC|Ubuntu:400,700<?php echo iro_opt('gfonts_add_name'); ?>&display=swap" media="all">
+	<?php 
+		$fa_basepath = iro_opt('vision_resource_basepath');
+		if ($fa_basepath == ''){
+	    	    $fa_basepath = 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/';
+		    }
+		$fa6_source = $fa_basepath . 'fonts/fontawesome/css/all.min.css';
+		$fa4_source = $fa_basepath . 'fonts/fontawesome/css/v4-shims.min.css';
+	?>
+	<link rel="stylesheet" href="<?php echo $fa6_source ?>">
+	<link rel="stylesheet" href="<?php echo $fa4_source ?>">
 	<script type="text/javascript">
 		if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
 			alert('朋友，IE浏览器未适配哦~\n如果是 360、QQ 等双核浏览器，请关闭 IE 模式！');
