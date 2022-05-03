@@ -29,46 +29,57 @@ add_action('rest_api_init', function () {
     register_rest_route('sakura/v1', '/image/upload', array(
         'methods' => 'POST',
         'callback' => 'upload_image',
+        'permission_callback'=>'__return_true'
     ));
     register_rest_route('sakura/v1', '/cache_search/json', array(
         'methods' => 'GET',
         'callback' => 'cache_search_json',
+        'permission_callback'=>'__return_true'
     ));
     register_rest_route('sakura/v1', '/image/cover', array(
         'methods' => 'GET',
         'callback' => 'cover_gallery',
+        'permission_callback'=>'__return_true'
     ));
     register_rest_route('sakura/v1', '/image/feature', array(
         'methods' => 'GET',
         'callback' => 'feature_gallery',
+        'permission_callback'=>'__return_true'
     ));
-    register_rest_route('sakura/v1', '/database/update', array(
-        'methods' => 'GET',
-        'callback' => 'update_database',
-    ));
+    // register_rest_route('sakura/v1', '/database/update', array(
+    //     'methods' => 'GET',
+    //     'callback' => 'update_database',
+    //     'permission_callback'=>'__return_true'
+    // ));
     register_rest_route('sakura/v1', '/qqinfo/json', array(
         'methods' => 'GET',
         'callback' => 'get_qq_info',
+        'permission_callback'=>'__return_true'
     ));
     register_rest_route('sakura/v1', '/qqinfo/avatar', array(
         'methods' => 'GET',
         'callback' => 'get_qq_avatar',
+        'permission_callback'=>'__return_true'
     ));
     register_rest_route('sakura/v1', '/bangumi/bilibili', array(
         'methods' => 'POST',
         'callback' => 'bgm_bilibili',
+        'permission_callback'=>'__return_true'
     ));
 	register_rest_route('sakura/v1', '/favlist/bilibili', array(
 		'methods' => 'POST',
 		'callback' => 'favlist_bilibili',
+        'permission_callback'=>'__return_true'
 	));
     register_rest_route('sakura/v1', '/meting/aplayer', array(
         'methods' => 'GET',
         'callback' => 'meting_aplayer',
+        'permission_callback'=>'__return_true'
     ));
     register_rest_route('sakura/v1', '/captcha/create', array(
         'methods' => 'GET',
         'callback' => 'create_CAPTCHA',
+        'permission_callback'=>'__return_true'
     ));
 });
 
@@ -180,15 +191,15 @@ function feature_gallery() {
  * update database rest api
  * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/database/update
  */
-function update_database() {
-    if (iro_opt('random_graphs_options') == "webp_optimization") {
-        $output = Cache::update_database();
-        $result = new WP_REST_Response($output, 200);
-        return $result;
-    } else {
-        return new WP_REST_Response("Invalid access", 200);
-    }
-}
+// function update_database() {
+//     if (iro_opt('random_graphs_options') == "webp_optimization") {
+//         $output = Cache::update_database();
+//         $result = new WP_REST_Response($output, 200);
+//         return $result;
+//     } else {
+//         return new WP_REST_Response("Invalid access", 200);
+//     }
+// }
 
 /*
  * 定制实时搜索 rest api
