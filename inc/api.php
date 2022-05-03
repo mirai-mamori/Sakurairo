@@ -46,11 +46,11 @@ add_action('rest_api_init', function () {
         'callback' => 'feature_gallery',
         'permission_callback'=>'__return_true'
     ));
-    register_rest_route('sakura/v1', '/database/update', array(
-        'methods' => 'GET',
-        'callback' => 'update_database',
-        'permission_callback'=>'__return_true'
-    ));
+    // register_rest_route('sakura/v1', '/database/update', array(
+    //     'methods' => 'GET',
+    //     'callback' => 'update_database',
+    //     'permission_callback'=>'__return_true'
+    // ));
     register_rest_route('sakura/v1', '/qqinfo/json', array(
         'methods' => 'GET',
         'callback' => 'get_qq_info',
@@ -191,15 +191,15 @@ function feature_gallery() {
  * update database rest api
  * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/database/update
  */
-function update_database() {
-    if (iro_opt('random_graphs_options') == "webp_optimization") {
-        $output = Cache::update_database();
-        $result = new WP_REST_Response($output, 200);
-        return $result;
-    } else {
-        return new WP_REST_Response("Invalid access", 200);
-    }
-}
+// function update_database() {
+//     if (iro_opt('random_graphs_options') == "webp_optimization") {
+//         $output = Cache::update_database();
+//         $result = new WP_REST_Response($output, 200);
+//         return $result;
+//     } else {
+//         return new WP_REST_Response("Invalid access", 200);
+//     }
+// }
 
 /*
  * 定制实时搜索 rest api
