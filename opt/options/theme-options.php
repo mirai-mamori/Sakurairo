@@ -2070,7 +2070,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         ),
         'desc' => __('Best width 820px, best height 67px','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/series/announcement_bg.webp'
+        'default' => 'https://api.qaq.tw/Sakurairo_Vison/series/announcement_bg.webp'
       ),
 
       array(
@@ -2311,9 +2311,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'link1' => '',
           'link2' => '',
           'link3' => '',
-          'img1'  => 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/series/exhibition1.webp',
-          'img2'  => 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/series/exhibition2.webp',
-          'img3' => 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/series/exhibition3.webp',
+          'img1'  => 'https://api.qaq.tw/Sakurairo_Vison/series/exhibition1.webp',
+          'img2'  => 'https://api.qaq.tw/Sakurairo_Vison/series/exhibition2.webp',
+          'img3' => 'https://api.qaq.tw/Sakurairo_Vison/series/exhibition3.webp',
           'title1' => 'アンコール',
           'title2' => 'ハルジオン',
           'title3' => 'かいぶつ',
@@ -2951,7 +2951,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Mail Template Featured Image','sakurairo_csf'),
         'desc' => __('Set the background image of your reply email','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/series/mail_head.webp'
+        'default' => 'https://api.qaq.tw/Sakurairo_Vison/series/mail_head.webp'
       ),
 
       array(
@@ -3004,7 +3004,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Login Screen Background Image','sakurairo_csf'),
         'desc' => __('Set your login screen background image, leave this option blank to show the default','sakurairo_csf'),
         'library'      => 'image',
-        'default'     => 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/series/login_background.webp'
+        'default'     => 'https://api.qaq.tw/Sakurairo_Vison/series/login_background.webp'
       ),
 
       array(
@@ -3021,7 +3021,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Login Screen Logo','sakurairo_csf'),
         'desc' => __('Set your login screen Logo','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/series/login_logo.webp'
+        'default' => 'https://api.qaq.tw/Sakurairo_Vison/series/login_logo.webp'
       ),
 
       array(
@@ -3051,7 +3051,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Dashboard Background Image','sakurairo_csf'),
         'desc' => __('Set your dashboard background image, leave this option blank to show white background','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/series/admin_background.webp'
+        'default' => 'https://api.qaq.tw/Sakurairo_Vison/series/admin_background.webp'
       ),
 
       array(
@@ -3416,7 +3416,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/series/headlogo.webp"  alt="Theme Information" />','sakurairo_csf'),
+        'content' => __('<img src="https://api.qaq.tw/Sakurairo_Vison/series/headlogo.webp"  alt="Theme Information" />','sakurairo_csf'),
       ),
 
       array(
