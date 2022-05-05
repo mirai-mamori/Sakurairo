@@ -3114,13 +3114,13 @@ i.iconfont.down {
   -moz-box-shadow: 0 0 4px rgba(255,204,0, .85);
   -o-box-shadow: 0 0 4px rgba(255,204,0, .85);
   box-shadow: 0 0 4px rgba(255,204,0, .85);
-  border: 1px solid var(--theme-skin-matching,#505050);
+  border: 2px solid var(--theme-skin-matching,#505050);
   color: var(--theme-skin-matching,#505050);
 }
 
 #pagination a {
   padding: 13px 35px;
-  border: 1px solid #D6D6D6;
+  border: 2px solid #D6D6D6;
   border-radius: 50px;
   color: #ADADAD;
 }
