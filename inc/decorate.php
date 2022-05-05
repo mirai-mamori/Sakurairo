@@ -1006,6 +1006,7 @@ h1.main-title {
 <?php if(iro_opt('bulletin_board_style') == 'picture'){ ?>
 .notice {
     background-image:url(<?=iro_opt('bulletin_board_bg', ''); ?>);
+    background-repeat: round;
     border: none;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
 }
