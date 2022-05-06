@@ -40,6 +40,9 @@ $reception_background = iro_opt('reception_background');
                             timer_stop( 0, 3 ),get_num_queries(),memory_get_peak_usage() / 1024 / 1024);
                         ?>
                         <?php endif; ?>
+						<?php if (iro_opt('footer_upyun', 'true')): ?>
+							本网站由 <a href="https://www.upyun.com/league" target="_blank"><img src="https://api.qaq.tw/Sakurairo_Vison/options/upyun_logo.webp" width="60px" height="20px"></a> 提供 CDN 加速 / 云存储 服务
+                        <?php endif; ?>
                         <br>
 						Theme <a href="https://github.com/mirai-mamori/Sakurairo" rel="noopener" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://iro.tw" rel="noopener" target="_blank" id="site-info" >Fuukei</a> 
 					</span>

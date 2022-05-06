@@ -975,6 +975,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'footer_upyun',
+        'type' => 'switcher',
+        'title' => __('Footer Upyun League Logo','sakurairo_csf'),
+        'label' => __('Upyun Logo will appear at the end of the page after turning it on','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
         'id' => 'footer_info',
         'type' => 'textarea',
         'title' => __('Footer Info','sakurairo_csf'),
@@ -3520,6 +3528,16 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Vision Resource Basepath','sakurairo_csf'),
         'desc' => __('This link directory structure needs to be consistent with the <a href="https://github.com/Fuukei/Sakurairo_Vision">Sakurairo Vision</a> repositories officially provided by fuukei, otherwise some resources 404 may appear. The image source officially provided by <a href="https://www.upyun.com/">Upyun</a> is adopted by default.','sakurairo_csf'),
         'default' => "https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/"
+      ),
+
+      array(
+        'type' => 'subheading',
+        'content' => __('Theme Sponsors','sakurairo_csf'),
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => __('<img src="https://api.qaq.tw/Sakurairo_Vison/options/upyun_logo.webp" alt="Theme Sponsors" width="15%" height="15%"/>','sakurairo_csf'),
       ),
 
       array(

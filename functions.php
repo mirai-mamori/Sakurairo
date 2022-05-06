@@ -1893,7 +1893,7 @@ function get_photo()
     exit();
 }
 
-if (iro_opt('login_language_opt') === '0') {
+if (!iro_opt('login_language_opt') == '1') {
 add_filter( 'login_display_language_dropdown', '__return_false' );
 }
 
