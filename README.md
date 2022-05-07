@@ -14,7 +14,9 @@
 
 [![image](https://api.qaq.tw/Sakurairo_Vison/readme/versions_cn.png)](https://iro.tw/)
 
-## 使用相关：
+## 下载及使用相关：
+
+- 你可以前往 [Github Release](https://github.com/mirai-mamori/Sakurairo/releases/latest) 或 [Gitee 中国大陆](https://gitee.com/mirai-mamori/Sakurairo) 下载
 
 - 使用本主题的博客：https://iro.tw/demo.html
 
@@ -25,11 +27,9 @@
 - 在确认你遇到的现象确实是一个 Bug 后，请在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交问题，并为该问题尽可能的描述清楚，
 按照提供的 issue 模板进行填写，谢谢配合。
 
-## 主题下载：
+## 赞助商：
 
-[![image](https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/readme/github.png)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
-
-[![image](https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/readme/gitee.png)](https://gitee.com/mirai-mamori/Sakurairo)
+<a href="https://www.upyun.com/"><img src="https://api.qaq.tw/Sakurairo_Vison/options/upyun_logo.webp" alt="UPYUN" width="200"></a>
 
 ## 支持我们：
 
@@ -43,7 +43,7 @@
 
 ### 特别贡献：
 
-<a href="https://github.com/spirit1431007"><img src="https://avatars1.githubusercontent.com/u/29689177?s=400" alt="Spirit" width="100"></a>  <a href="https://jokerm.com/"><img src="https://cdn.jokerm.com/?/imgcdn/logo.png" alt="JokerM" width="100"></a>  <a href="https://github.com/FeiyuCode"><img src="https://avatars0.githubusercontent.com/u/46924793?s=400" alt="FeiyuCode" width="100"></a>  <a href="https://github.com/tumeneco"><img src="https://avatars0.githubusercontent.com/u/68286041?s=400" alt="Tumeneco" width="100"></a>  <a href="https://github.com/flurrychan "><img src="https://cdn.jsdelivr.net/gh/flurrychan/CDN/tx.jpg" alt="Flurrychan" width="100"></a>
+<a href="https://github.com/spirit1431007"><img src="https://avatars1.githubusercontent.com/u/29689177?s=400" alt="Spirit" width="100"></a>  <a href="https://jokerm.com/"><img src="https://cdn.jokerm.com/?/imgcdn/logo.png" alt="JokerM" width="100"></a>  <a href="https://github.com/FeiyuCode"><img src="https://avatars0.githubusercontent.com/u/46924793?s=400" alt="FeiyuCode" width="100"></a>  <a href="https://github.com/tumeneco"><img src="https://avatars0.githubusercontent.com/u/68286041?s=400" alt="Tumeneco" width="100"></a>  <a href="https://github.com/flurrychan "><img src="https://avatars.githubusercontent.com/u/63506003?v=4" alt="Flurrychan" width="100"></a>
 
 ### 参与贡献：
 
