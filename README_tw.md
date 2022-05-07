@@ -25,6 +25,10 @@
 - 在確認你遇到的現象確實是一個Bug後，請在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交問題，並為該問題可以的描述清楚，
 按照提供的問題模板進行填寫，謝謝配合。
 
+## 贊助商：
+
+<a href="https://www.upyun.com/"><img src="https://api.qaq.tw/Sakurairo_Vison/options/upyun_logo.webp" alt="UPYUN" width="200"></a>
+
 ## 主題貢獻：
 
 ### 主要貢獻：
