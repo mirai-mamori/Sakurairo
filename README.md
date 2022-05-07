@@ -1,6 +1,6 @@
 **简体中文** | [繁體中文](README_tw.md) | [English](README_en.md) | [日本語](README_ja.md)
 
-[![image](https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://api.qaq.tw/Sakurairo_Vison/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -12,7 +12,7 @@
 
 ## 版本简介：
 
-[![image](https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/readme/versions_cn.png)](https://iro.tw/)
+[![image](https://api.qaq.tw/Sakurairo_Vison/readme/versions_cn.png)](https://iro.tw/)
 
 ## 使用相关：
 
