@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-05-06 21:41+0800\n"
-"PO-Revision-Date: 2022-05-06 22:00+0800\n"
+"POT-Creation-Date: 2022-05-07 13:34+0800\n"
+"PO-Revision-Date: 2022-05-07 13:35+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -224,16 +224,16 @@ msgstr "固定(Fixed)"
 msgid "Background Size"
 msgstr "背景サイズ"
 
-#: fields/background/background.php:219 options/theme-options.php:715
+#: fields/background/background.php:219 options/theme-options.php:647
 msgid "Cover"
 msgstr "カバー"
 
-#: fields/background/background.php:220 options/theme-options.php:716
+#: fields/background/background.php:220 options/theme-options.php:648
 msgid "Contain"
 msgstr "画像全体を表示"
 
-#: fields/background/background.php:221 options/theme-options.php:717
-#: options/theme-options.php:920
+#: fields/background/background.php:221 options/theme-options.php:649
+#: options/theme-options.php:852
 msgid "Auto"
 msgstr "自動"
 
@@ -294,7 +294,7 @@ msgstr "カラーダッジ"
 msgid "Saturation"
 msgstr "彩度"
 
-#: fields/background/background.php:278 options/theme-options.php:171
+#: fields/background/background.php:278 options/theme-options.php:103
 msgid "Color"
 msgstr "色"
 
@@ -472,10 +472,10 @@ msgstr "無効"
 msgid "On"
 msgstr "オン"
 
-#: fields/switcher/switcher.php:21 options/theme-options.php:871
-#: options/theme-options.php:918 options/theme-options.php:1137
-#: options/theme-options.php:1343 options/theme-options.php:2869
-#: options/theme-options.php:2882
+#: fields/switcher/switcher.php:21 options/theme-options.php:803
+#: options/theme-options.php:850 options/theme-options.php:1069
+#: options/theme-options.php:1275 options/theme-options.php:2801
+#: options/theme-options.php:2814
 msgid "Off"
 msgstr "オフ"
 
@@ -495,7 +495,7 @@ msgstr "Backup Font Family"
 #: fields/typography/typography.php:145 fields/typography/typography.php:160
 #: fields/typography/typography.php:176 fields/typography/typography.php:189
 #: fields/typography/typography.php:203 fields/typography/typography.php:221
-#: options/theme-options.php:738
+#: options/theme-options.php:670
 msgid "Default"
 msgstr "デフォルト"
 
@@ -677,130 +677,41 @@ msgstr ""
 "<img src=\"https://news.maho.cc/sakurairo.php\"  alt=\"News_Plus\" width="
 "\"100%\" height=\"100%\" />"
 
-#: options/theme-options.php:36
-msgid "Theme Official Website"
-msgstr "テーマ公式サイト"
-
-#: options/theme-options.php:42
-#, fuzzy
-msgid ""
-"The Theme <a href=\"https://iro.tw\">Official Website</a> is the best place "
-"to help novices quickly build and get started"
-msgstr ""
-"テーマ <a href=\"https://iro.tw\">公式ウェブサイト</a> は初心者がすぐに構築"
-"し、開始するのに最適な場所です"
-
-#: options/theme-options.php:48
-msgid "Theme Official Website in Option"
-msgstr "オプションのテーマ公式サイト"
-
-#: options/theme-options.php:49
-msgid ""
-"It is enabled by default, and the theme official website will be embedded in "
-"the theme option."
-msgstr ""
-"これは、デフォルトで有効にされ、テーマの公式ウェブサイトは、テーマオプション"
-"に埋め込まれます。"
-
-#: options/theme-options.php:57
-msgid "Theme Official Website Menu"
-msgstr "テーマ公式ウェブサイトメニュー"
-
-#: options/theme-options.php:60
-msgid "Guide"
-msgstr "ガイド"
-
-#: options/theme-options.php:65
-#, fuzzy
-msgid ""
-"<iframe src=\"https://iro.tw/guide/about.html\" width=\"100%\" height= "
-"\"800px\" name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" "
-"frameborder=\"0\" id=\"guide\"></iframe>"
-msgstr ""
-"<iframe src=\"https://iro.tw/guide/about.html\" width=\"100%\" height= "
-"\"800px\" name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" "
-"frameborder=\"0\" id=\"guide\"></iframe>"
-
-#: options/theme-options.php:70
-msgid "Demo"
-msgstr "デモ"
-
-#: options/theme-options.php:75
-#, fuzzy
-msgid ""
-"<iframe src=\"https://iro.tw/demo.html\" width=\"100%\" height= \"800px\" "
-"name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" frameborder=\"0\" id="
-"\"guide\"></iframe>"
-msgstr ""
-"<iframe src=\"https://iro.tw/demo.html\" width=\"100%\" height= \"800px\" "
-"name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" frameborder=\"0\" id="
-"\"guide\"></iframe>"
-
-#: options/theme-options.php:80
-msgid "ChangeLog"
-msgstr "変更ログ"
-
-#: options/theme-options.php:85
-#, fuzzy
-msgid ""
-"<iframe src=\"https://iro.tw/releases.html\" width=\"100%\" height= \"800px"
-"\" name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" frameborder=\"0\" "
-"id=\"guide\"></iframe>"
-msgstr ""
-"<iframe src=\"https://iro.tw/releases.html\" width=\"100%\" height= \"800px"
-"\" name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" frameborder=\"0\" "
-"id=\"guide\"></iframe>"
-
-#: options/theme-options.php:90
-msgid "Sponsors"
-msgstr "スポンサー"
-
-#: options/theme-options.php:95
-#, fuzzy
-msgid ""
-"<iframe src=\"https://iro.tw/sponsors.html\" width=\"100%\" height= \"800px"
-"\" name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" frameborder=\"0\" "
-"id=\"guide\"></iframe>"
-msgstr ""
-"<iframe src=\"https://iro.tw/sponsors.html\" width=\"100%\" height= \"800px"
-"\" name=\"guide\" scrolling=\"auto\" noresize=\"noresize\" frameborder=\"0\" "
-"id=\"guide\"></iframe>"
-
-#: options/theme-options.php:107
+#: options/theme-options.php:39
 msgid "Preliminary Options"
 msgstr "予備的なオプション"
 
-#: options/theme-options.php:114
+#: options/theme-options.php:46
 msgid "Site Name"
 msgstr "サイト名"
 
-#: options/theme-options.php:115
+#: options/theme-options.php:47
 msgid "For example: Sakurairo Blog"
 msgstr "例: 桜いろのブログ"
 
-#: options/theme-options.php:121
+#: options/theme-options.php:53
 msgid "Author Name"
 msgstr "投稿者名"
 
-#: options/theme-options.php:122
+#: options/theme-options.php:54
 msgid "For example: Fuukei"
 msgstr "例: フーケイ"
 
-#: options/theme-options.php:128
+#: options/theme-options.php:60
 msgid "Personal Avatar"
 msgstr "個人アバター"
 
-#: options/theme-options.php:129 options/theme-options.php:556
-#: options/theme-options.php:1830 options/theme-options.php:1983
-#: options/theme-options.php:2008
+#: options/theme-options.php:61 options/theme-options.php:488
+#: options/theme-options.php:1762 options/theme-options.php:1915
+#: options/theme-options.php:1940
 msgid "The best length-width ratio of is 1:1"
 msgstr "最適な縦横比は1:1です"
 
-#: options/theme-options.php:136
+#: options/theme-options.php:68
 msgid "Mashiro Special Effects Text"
 msgstr "マシロ特殊効果テキスト"
 
-#: options/theme-options.php:137
+#: options/theme-options.php:69
 msgid ""
 "After turned on, the personal avatar will be replaced by the text as the "
 "home page display content"
@@ -808,50 +719,50 @@ msgstr ""
 "オンにすると、個人アバターはホームページの表示コンテンツとしてテキストに置き"
 "換えられます。"
 
-#: options/theme-options.php:144
+#: options/theme-options.php:76
 msgid "Mashiro Special Effects Text Options"
 msgstr "マシロ特殊効果テキストオプション"
 
-#: options/theme-options.php:150
+#: options/theme-options.php:82
 msgid "Text"
 msgstr "テキスト"
 
-#: options/theme-options.php:151
+#: options/theme-options.php:83
 msgid ""
 "The text content should not be too long, and the recommended length is 16 "
 "bytes."
 msgstr ""
 "テキストコンテンツは長すぎないようにし、推奨される長さは 16 バイトです。"
 
-#: options/theme-options.php:156
+#: options/theme-options.php:88
 msgid "Font"
 msgstr "フォント"
 
-#: options/theme-options.php:157 options/theme-options.php:845
-#: options/theme-options.php:853 options/theme-options.php:1550
-#: options/theme-options.php:2709
+#: options/theme-options.php:89 options/theme-options.php:777
+#: options/theme-options.php:785 options/theme-options.php:1482
+#: options/theme-options.php:2641
 msgid "Fill in the font name. For example: Ma Shan Zheng"
 msgstr "フォント名を入力します。例：Ma Shan Zheng"
 
-#: options/theme-options.php:162
+#: options/theme-options.php:94
 msgid "Size"
 msgstr "サイズ"
 
-#: options/theme-options.php:163
+#: options/theme-options.php:95
 msgid "Slide to adjust, the recommended value range is 70-90"
 msgstr "スライドで調整、推奨値の範囲は70-90です"
 
-#: options/theme-options.php:172 options/theme-options.php:684
-#: options/theme-options.php:1515 options/theme-options.php:1700
-#: options/theme-options.php:2217
+#: options/theme-options.php:104 options/theme-options.php:616
+#: options/theme-options.php:1447 options/theme-options.php:1632
+#: options/theme-options.php:2149
 msgid "Customize the colors, light colors are recommended"
 msgstr "色をカスタマイズし、明るい色をお勧めします"
 
-#: options/theme-options.php:185
+#: options/theme-options.php:117
 msgid "Navigation Menu Logo"
 msgstr "ナビゲーションメニューロゴ"
 
-#: options/theme-options.php:186
+#: options/theme-options.php:118
 msgid ""
 "The best size is 40px, and the nav menu text logo will not be displayed "
 "after filling in"
@@ -859,91 +770,91 @@ msgstr ""
 "最適なサイズは 40 pxで、入力後にナビゲーションメニューのテキストロゴは表示さ"
 "れません"
 
-#: options/theme-options.php:193
+#: options/theme-options.php:125
 msgid "Site Icon"
 msgstr "サイトアイコン"
 
-#: options/theme-options.php:194
+#: options/theme-options.php:126
 msgid ""
 "Fill in the address, which decides the icon next to the title above the "
 "browser"
 msgstr "ブラウザの上のタイトルの横にあるアイコンであるアドレスを入力します"
 
-#: options/theme-options.php:201
+#: options/theme-options.php:133
 msgid "Custom Site Keywords and Descriptions"
 msgstr "カスタムサイトのキーワードと説明"
 
-#: options/theme-options.php:202
+#: options/theme-options.php:134
 msgid "After turning on, you can customize the site keywords and descriptions"
 msgstr "オン時にサイトのキーワードと説明文をカスタマイズ可能"
 
-#: options/theme-options.php:209
+#: options/theme-options.php:141
 msgid "Site Keywords"
 msgstr "サイトのキーワード"
 
-#: options/theme-options.php:211
+#: options/theme-options.php:143
 msgid ""
 "The keywords should be separated with half width comma \",\" and it's better "
 "to set within 5 keywords"
 msgstr "キーワードは半角カンマ \",\" で区切って、5つまでの設定を推奨します"
 
-#: options/theme-options.php:217
+#: options/theme-options.php:149
 msgid "Site Descriptions"
 msgstr "サイトの説明"
 
-#: options/theme-options.php:219
+#: options/theme-options.php:151
 msgid ""
 "Use concise words to describe the site, it is recommended to write within "
 "120 words"
 msgstr ""
 "サイトを説明するために簡潔な言葉を使用して、単語の数は120語以内にお勧めします"
 
-#: options/theme-options.php:227
+#: options/theme-options.php:159
 msgid "Global Options"
 msgstr "全般オプション"
 
-#: options/theme-options.php:233
+#: options/theme-options.php:165
 msgid "Appearance Options"
 msgstr "外観オプション"
 
-#: options/theme-options.php:239
+#: options/theme-options.php:171
 msgid "Color Schemes"
 msgstr "カラースキーム"
 
-#: options/theme-options.php:245
+#: options/theme-options.php:177
 msgid "Theme Color"
 msgstr "テーマ色"
 
-#: options/theme-options.php:246 options/theme-options.php:254
-#: options/theme-options.php:267 options/theme-options.php:1108
-#: options/theme-options.php:1117 options/theme-options.php:2685
-#: options/theme-options.php:2693 options/theme-options.php:3080
-#: options/theme-options.php:3088 options/theme-options.php:3096
-#: options/theme-options.php:3104 options/theme-options.php:3112
+#: options/theme-options.php:178 options/theme-options.php:186
+#: options/theme-options.php:199 options/theme-options.php:1040
+#: options/theme-options.php:1049 options/theme-options.php:2617
+#: options/theme-options.php:2625 options/theme-options.php:3012
+#: options/theme-options.php:3020 options/theme-options.php:3028
+#: options/theme-options.php:3036 options/theme-options.php:3044
 msgid "Customize the colors"
 msgstr "色をカスタマイズする"
 
-#: options/theme-options.php:253
+#: options/theme-options.php:185
 msgid "Matching Color"
 msgstr "テーママッチカラー"
 
-#: options/theme-options.php:260
+#: options/theme-options.php:192
 msgid "Dark Mode"
 msgstr "ダークモード"
 
-#: options/theme-options.php:266
+#: options/theme-options.php:198
 msgid "Dark Mode Theme Color"
 msgstr "ダークモードのテーマ色"
 
-#: options/theme-options.php:273
+#: options/theme-options.php:205
 msgid "Automatically Switch to Dark Mode"
 msgstr "自動的にダークモードに切り替える"
 
-#: options/theme-options.php:274 options/theme-options.php:1449
+#: options/theme-options.php:206 options/theme-options.php:1381
 msgid "Default on"
 msgstr "デフォルトではオン"
 
-#: options/theme-options.php:280
+#: options/theme-options.php:212
 msgid ""
 "<p><strong>Client local time:</strong>Dark mode will switch on automatically "
 "from 22:00 to 7:00</p><p><strong>Follow client settings:</strong>Follow "
@@ -955,39 +866,39 @@ msgstr ""
 "アントのブラウザ設定に従う</p><p><strong>常にオン:</strong>クライアントが設定"
 "している場合を除き、常にオン</p>"
 
-#: options/theme-options.php:289
+#: options/theme-options.php:221
 msgid "Automatic Switch Strategy of Dark Mode"
 msgstr "ダークモード自動切替機能"
 
-#: options/theme-options.php:292
+#: options/theme-options.php:224
 msgid "Client local time"
 msgstr "クライアントの現地時間"
 
-#: options/theme-options.php:293
+#: options/theme-options.php:225
 msgid "Follow client settings"
 msgstr "クライアント設定に従う"
 
-#: options/theme-options.php:294
+#: options/theme-options.php:226
 msgid "Always on"
 msgstr "常にオン"
 
-#: options/theme-options.php:302
+#: options/theme-options.php:234
 msgid "Dark Mode Image Brightness"
 msgstr "ダークモード画像の明るさ"
 
-#: options/theme-options.php:303 options/theme-options.php:314
+#: options/theme-options.php:235 options/theme-options.php:246
 msgid "Slide to adjust, the recommended value range is 0.6-0.8"
 msgstr "スライドで調整、推奨値範囲は0.6～0.8"
 
-#: options/theme-options.php:313
+#: options/theme-options.php:245
 msgid "Dark Mode Component Transparency"
 msgstr "ダークモードコンポーネントの透過性"
 
-#: options/theme-options.php:323
+#: options/theme-options.php:255
 msgid "Dark mode Background Transparency"
 msgstr "ダークモード背景の透明度"
 
-#: options/theme-options.php:324
+#: options/theme-options.php:256
 msgid ""
 "Slide to adjust, the recommended value range is 0.6-0.8. In order to ensure "
 "the best appearance, please keep the display of the frontend background image"
@@ -995,61 +906,61 @@ msgstr ""
 "スライドで調整、推奨されるスライディング値の範囲は 0.6 ~ 0.8 です。最高の外観"
 "を確保するために、フロントエンドの背景画像の表示を維持することをお勧めします"
 
-#: options/theme-options.php:333
+#: options/theme-options.php:265
 msgid "Other Appearance Related"
 msgstr "その他の外観関連"
 
-#: options/theme-options.php:339
+#: options/theme-options.php:271
 msgid "Commemorate Mode"
 msgstr "記念モード"
 
-#: options/theme-options.php:340
+#: options/theme-options.php:272
 msgid ""
 "After turning on, a black and white filter will be added to the global theme"
 msgstr "オンにすると、グローバルテーマに白黒フィルタが追加されます。"
 
-#: options/theme-options.php:347
+#: options/theme-options.php:279
 msgid "Occupying SVG while Loading Control Units"
 msgstr "制御ユニットのロード中に SVG を占有する"
 
-#: options/theme-options.php:348
+#: options/theme-options.php:280
 msgid ""
 "Fill in the address, which is the SVG displayed when loading control units"
 msgstr "制御装置のロード時に表示される SVG であるアドレスを入力します。"
 
-#: options/theme-options.php:357
+#: options/theme-options.php:289
 msgid "Font Options"
 msgstr "フォント設定"
 
-#: options/theme-options.php:363
+#: options/theme-options.php:295
 msgid "Global"
 msgstr "グローバル"
 
-#: options/theme-options.php:369
+#: options/theme-options.php:301
 msgid "Non-Emphasis Text Weight"
 msgstr "強調しないテキストの重み"
 
-#: options/theme-options.php:370
+#: options/theme-options.php:302
 msgid "Slide to adjust, the recommended value range is 300-500"
 msgstr "スライドで調整、推奨値の範囲は300-500です"
 
-#: options/theme-options.php:380
+#: options/theme-options.php:312
 msgid "Text Font Size"
 msgstr "テキストのフォントサイズ"
 
-#: options/theme-options.php:381 options/theme-options.php:1558
+#: options/theme-options.php:313 options/theme-options.php:1490
 msgid "Slide to adjust, the recommended value range is 15-18"
 msgstr "スライドで調整、推奨値の範囲は 15-18"
 
-#: options/theme-options.php:391
+#: options/theme-options.php:323
 msgid "External Fonts"
 msgstr "外部フォント"
 
-#: options/theme-options.php:397
+#: options/theme-options.php:329
 msgid "Reference External Fonts"
 msgstr "外部フォントの参照"
 
-#: options/theme-options.php:398
+#: options/theme-options.php:330
 msgid ""
 "After turning on, you can use external fonts as the default font or other "
 "component fonts, but it may affect performance"
@@ -1057,23 +968,23 @@ msgstr ""
 "オンにすると、外部フォントを既定のフォントやその他のコンポーネントフォントと"
 "して使用できますが、パフォーマンスに影響する可能性があります"
 
-#: options/theme-options.php:405
+#: options/theme-options.php:337
 msgid "External Font Link"
 msgstr "外部フォントリンク"
 
-#: options/theme-options.php:412
+#: options/theme-options.php:344
 msgid "External Font Name"
 msgstr "外部フォント名"
 
-#: options/theme-options.php:419
+#: options/theme-options.php:351
 msgid "Google Fonts Api Link"
 msgstr "Google Fonts Api リンク"
 
-#: options/theme-options.php:426
+#: options/theme-options.php:358
 msgid "Google Fonts Name"
 msgstr "Google Fonts 名"
 
-#: options/theme-options.php:427
+#: options/theme-options.php:359
 msgid ""
 "Please make sure that the added fonts can be referenced in Google Fonts "
 "library. Fill in the font names. The added fonts must be preceded by \"|\". "
@@ -1087,28 +998,28 @@ msgstr ""
 "す。フォント名にスペースがある場合は、プラス記号を使用します。たとえば、| "
 "zcool + xiaowei| Ma + Shan + Zheng"
 
-#: options/theme-options.php:435
+#: options/theme-options.php:367
 msgid "Navigation Menu Options"
 msgstr "ナビメニューオプション"
 
-#: options/theme-options.php:442
+#: options/theme-options.php:374
 msgid "Nav Menu Style"
 msgstr "ナビメニュースタイル"
 
-#: options/theme-options.php:453
+#: options/theme-options.php:385
 msgid "Nav Menu Radius"
 msgstr "ナビメニューの角丸の半径"
 
-#: options/theme-options.php:455 options/theme-options.php:575
-#: options/theme-options.php:700 options/theme-options.php:2229
+#: options/theme-options.php:387 options/theme-options.php:507
+#: options/theme-options.php:632 options/theme-options.php:2161
 msgid "Slide to adjust, the recommended value is 15"
 msgstr "スライドで調整、推奨値は 15"
 
-#: options/theme-options.php:464
+#: options/theme-options.php:396
 msgid "Nav Menu Shrinkage Ratio"
 msgstr "ナビメニュー縮退率"
 
-#: options/theme-options.php:466
+#: options/theme-options.php:398
 msgid ""
 "Slide to set the appropriate ratio according to the content length of the "
 "nav menu. When the ratio is set to 95,there will be no shrinkage. This "
@@ -1118,27 +1029,27 @@ msgstr ""
 "に設定すると、収縮は起きなくなります。この関数はデフォルトではオフになってい"
 "ます"
 
-#: options/theme-options.php:477
+#: options/theme-options.php:409
 msgid "Nav Menu Content Display Method"
 msgstr "ナビメニューの内容表示方法"
 
-#: options/theme-options.php:478
+#: options/theme-options.php:410
 msgid "You can choose to unfold or fold the nav menu contents"
 msgstr "ナビメニューの内容を展開または折りたたむことができます"
 
-#: options/theme-options.php:480
+#: options/theme-options.php:412
 msgid "Unfold"
 msgstr "展開"
 
-#: options/theme-options.php:481
+#: options/theme-options.php:413
 msgid "Fold"
 msgstr "フォールド"
 
-#: options/theme-options.php:489
+#: options/theme-options.php:421
 msgid "Nav Menu Animation Effects"
 msgstr "ナビメニューのアニメーション効果"
 
-#: options/theme-options.php:490
+#: options/theme-options.php:422
 msgid ""
 "It is on by default. If it is off, the nav menu content will be displayed "
 "directly without effects"
@@ -1146,50 +1057,50 @@ msgstr ""
 "デフォルトではオンになっています。オフの場合、ナビメニューのコンテンツは効果"
 "なしで直接表示されます"
 
-#: options/theme-options.php:497
+#: options/theme-options.php:429
 msgid "Nav Menu Animation Time"
 msgstr "ナビメニューアニメーション時間"
 
-#: options/theme-options.php:499 options/theme-options.php:1485
+#: options/theme-options.php:431 options/theme-options.php:1417
 msgid "Slide to adjust, the recommended value range is 1-2"
 msgstr "スライドで調整、推奨値の範囲は 1 から 2 です"
 
-#: options/theme-options.php:509
+#: options/theme-options.php:441
 msgid "Nav Menu Icon Size"
 msgstr "ナビメニューアイコンのサイズ"
 
-#: options/theme-options.php:511
+#: options/theme-options.php:443
 msgid "Standard"
 msgstr "標準"
 
-#: options/theme-options.php:512
+#: options/theme-options.php:444
 msgid "Large"
 msgstr "大"
 
-#: options/theme-options.php:520
+#: options/theme-options.php:452
 msgid "Nav Menu Search"
 msgstr "ナビメニューの検索"
 
-#: options/theme-options.php:521
+#: options/theme-options.php:453
 msgid "It is on by default. Click to enter the search area"
 msgstr "デフォルトではオンになっています。クリックして検索エリアに入ります"
 
-#: options/theme-options.php:527
+#: options/theme-options.php:459
 msgid "Nav Menu Blur"
 msgstr "ナビメニューぼかし"
 
-#: options/theme-options.php:528
+#: options/theme-options.php:460
 msgid ""
 "Slide to adjust, the recommended value is 5px, and this function will be off "
 "when set to 0px"
 msgstr ""
 "スライドで調整。推奨値は5pxで、0pxに設定するとこの機能はオフになります。"
 
-#: options/theme-options.php:537
+#: options/theme-options.php:469
 msgid "Search Area Background Image"
 msgstr "検索エリア背景画像"
 
-#: options/theme-options.php:538
+#: options/theme-options.php:470
 msgid ""
 "Set the background image of your search area. Leave this option blank to "
 "display a white background"
@@ -1197,25 +1108,25 @@ msgstr ""
 "検索エリアの背景画像を設定します。白い背景を表示するには、このオプションを空"
 "白のままにします。"
 
-#: options/theme-options.php:546
+#: options/theme-options.php:478
 msgid "Nav Menu User Avatar"
 msgstr "ナビメニューのユーザーアバター"
 
-#: options/theme-options.php:547
+#: options/theme-options.php:479
 msgid "It is on by default. Click to enter the login interface"
 msgstr ""
 "デフォルトではオンになっています。クリックしてログインインターフェイスに入り"
 "ます"
 
-#: options/theme-options.php:554
+#: options/theme-options.php:486
 msgid "Nav Menu Unlisted User Avatar"
 msgstr "ナビメニュー非表示のユーザーアバター"
 
-#: options/theme-options.php:564
+#: options/theme-options.php:496
 msgid "Secondary Menu Prompt Arrow"
 msgstr "セカンダリメニュープロンプトの矢印"
 
-#: options/theme-options.php:565
+#: options/theme-options.php:497
 msgid ""
 "After turning on, the menu prompt arrow will appear in the secondary menu of "
 "the navigation menu"
@@ -1223,15 +1134,15 @@ msgstr ""
 "オンにすると、ナビメニューのセカンダリメニューにメニュープロンプト矢印が表示"
 "されます"
 
-#: options/theme-options.php:573
+#: options/theme-options.php:505
 msgid "Secondary Menu Radius"
 msgstr "セカンダリメニューの角丸の半径"
 
-#: options/theme-options.php:584
+#: options/theme-options.php:516
 msgid "Nav Menu Logo Text"
 msgstr "ナビメニューロゴの文字"
 
-#: options/theme-options.php:585
+#: options/theme-options.php:517
 msgid ""
 "Fill in the text. If the Mashiro logo is turned on, this option will be "
 "invalid"
@@ -1239,11 +1150,11 @@ msgstr ""
 "テキストを入力します。このオプションは、Mashiro Logo を有効にした場合には利用"
 "できません。"
 
-#: options/theme-options.php:592
+#: options/theme-options.php:524
 msgid "Mashiro Logo"
 msgstr "Mashiro Logo"
 
-#: options/theme-options.php:593
+#: options/theme-options.php:525
 msgid ""
 "After turning on, the Mashiro Logo will appear and replace the navigation "
 "menu logo position"
@@ -1251,47 +1162,47 @@ msgstr ""
 "このオプションをオンにすると、Mashiro Logoが表示され、ナビメニューのロゴに置"
 "き換わります"
 
-#: options/theme-options.php:600
+#: options/theme-options.php:532
 msgid "Mashiro Logo Options"
 msgstr "Mashiro Logo オプション"
 
-#: options/theme-options.php:606
+#: options/theme-options.php:538
 msgid "Text A"
 msgstr "文字 A"
 
-#: options/theme-options.php:611
+#: options/theme-options.php:543
 msgid "Text B"
 msgstr "文字 B"
 
-#: options/theme-options.php:616
+#: options/theme-options.php:548
 msgid "Text C"
 msgstr "文字 C"
 
-#: options/theme-options.php:621
+#: options/theme-options.php:553
 msgid "Secondary Text"
 msgstr "セカンダリテキスト"
 
-#: options/theme-options.php:626
+#: options/theme-options.php:558
 msgid "Font Link"
 msgstr "フォントリンク"
 
-#: options/theme-options.php:631
+#: options/theme-options.php:563
 msgid "Font Name"
 msgstr "フォント名"
 
-#: options/theme-options.php:649
+#: options/theme-options.php:581
 msgid "Style Menu and Frontend Background Related Options"
 msgstr "スタイルメニューとフロントエンド背景関連オプション"
 
-#: options/theme-options.php:655
+#: options/theme-options.php:587
 msgid "Style Menu"
 msgstr "スタイルメニュー"
 
-#: options/theme-options.php:661
+#: options/theme-options.php:593
 msgid "Style Menu Display"
 msgstr "スタイルメニュー表示"
 
-#: options/theme-options.php:662
+#: options/theme-options.php:594
 msgid ""
 "You can choose to display the style menu simply or in full. The full display "
 "will show the font toggle function and text hints"
@@ -1299,42 +1210,42 @@ msgstr ""
 "スタイルメニューをシンプルに表示するか、完全に表示するかを選択できます。完全"
 "に表示では、フォントトグル機能とテキストヒントが表示されます。"
 
-#: options/theme-options.php:673
+#: options/theme-options.php:605
 msgid "Style Menu Button Radius"
 msgstr "スタイルメニューボタンの角の丸い半径"
 
-#: options/theme-options.php:674
+#: options/theme-options.php:606
 msgid "Slide to adjust, the recommended value is 10"
 msgstr "スライドで調整、推奨値は 10"
 
-#: options/theme-options.php:683
+#: options/theme-options.php:615
 msgid "Style Menu Background Color"
 msgstr "スタイルメニューの背景色"
 
-#: options/theme-options.php:691
+#: options/theme-options.php:623
 msgid "Style Menu Option Background Color"
 msgstr "スタイルメニューオプションの背景色"
 
-#: options/theme-options.php:692 options/theme-options.php:2092
+#: options/theme-options.php:624 options/theme-options.php:2024
 msgid ""
 "Customize the colors, it is recommended to use a light color that "
 "corresponds with the theme color"
 msgstr ""
 "色をカスタマイズし、テーマの色に対応する明るい色を使用することをお勧めします"
 
-#: options/theme-options.php:699
+#: options/theme-options.php:631
 msgid "Style Menu Options Interface Radius"
 msgstr "スタイルメニューオプションのインタフェース半径"
 
-#: options/theme-options.php:708
+#: options/theme-options.php:640
 msgid "Frontend Background"
 msgstr "フロントエンドの背景"
 
-#: options/theme-options.php:719
+#: options/theme-options.php:651
 msgid "Frontend Background Scaling Method"
 msgstr "フロントエンドの背景スケーリング方法"
 
-#: options/theme-options.php:720
+#: options/theme-options.php:652
 msgid ""
 "You can choose two ways to scale the frontend background, the default is "
 "auto-scaling"
@@ -1342,74 +1253,74 @@ msgstr ""
 "フロントエンドの背景を拡大縮小する方法は 2 種類選択できますが、デフォルトは自"
 "動スケール"
 
-#: options/theme-options.php:727
+#: options/theme-options.php:659
 msgid "Background Transparency Blur"
 msgstr "手前の背景をぼかす"
 
-#: options/theme-options.php:728
+#: options/theme-options.php:660
 msgid "After opening Background Transparency Blur"
 msgstr "機能をオンにした後、手前の背景をぼかす"
 
-#: options/theme-options.php:735
+#: options/theme-options.php:667
 msgid "Frontend Background Options"
 msgstr "フロントエンドの背景オプション"
 
-#: options/theme-options.php:744 options/theme-options.php:760
-#: options/theme-options.php:776 options/theme-options.php:792
-#: options/theme-options.php:808
+#: options/theme-options.php:676 options/theme-options.php:692
+#: options/theme-options.php:708 options/theme-options.php:724
+#: options/theme-options.php:740
 msgid "Image"
 msgstr "画像"
 
-#: options/theme-options.php:749
+#: options/theme-options.php:681
 msgid "Heart Shaped"
 msgstr "ハート型"
 
-#: options/theme-options.php:755 options/theme-options.php:771
-#: options/theme-options.php:787 options/theme-options.php:803
+#: options/theme-options.php:687 options/theme-options.php:703
+#: options/theme-options.php:719 options/theme-options.php:735
 msgid "Switch"
 msgstr "切り替え"
 
-#: options/theme-options.php:765
+#: options/theme-options.php:697
 msgid "Star Shaped"
 msgstr "星形"
 
-#: options/theme-options.php:781
+#: options/theme-options.php:713
 msgid "Square Shaped"
 msgstr "正方形の形"
 
-#: options/theme-options.php:797
+#: options/theme-options.php:729
 msgid "Lemon Shaped"
 msgstr "レモンの形"
 
-#: options/theme-options.php:828
+#: options/theme-options.php:760
 msgid "Background Transparency in the Frontend"
 msgstr "フロントエンドの背景の透明度"
 
-#: options/theme-options.php:829
+#: options/theme-options.php:761
 msgid "Slide to adjust, the recommended sliding value range is 0.6-0.8"
 msgstr "スライドで調整、推奨値の範囲は0.6-0.8です"
 
-#: options/theme-options.php:838
+#: options/theme-options.php:770
 msgid "Font Area"
 msgstr "フォント設定部分"
 
-#: options/theme-options.php:844
+#: options/theme-options.php:776
 msgid "Global Default Font/Style Menu Font A"
 msgstr "既定のフォント/スタイルメニューフォント A"
 
-#: options/theme-options.php:851
+#: options/theme-options.php:783
 msgid "Style Menu Font B"
 msgstr "スタイルメニューフォントB"
 
-#: options/theme-options.php:861
+#: options/theme-options.php:793
 msgid "Footer Options"
 msgstr "フッターオプション"
 
-#: options/theme-options.php:868
+#: options/theme-options.php:800
 msgid "Footer Online Music Player"
 msgstr "footerオンライン音楽プレーヤー"
 
-#: options/theme-options.php:869
+#: options/theme-options.php:801
 msgid ""
 "A button will appear at the bottom left corner of the footer after turning "
 "on, click it and the footer online player will be displayed"
@@ -1417,38 +1328,38 @@ msgstr ""
 "機能をオンにすると、ページの左下にボタンが表示され、ボタンをクリックすると、"
 "ページの最後にあるオンラインプレーヤーが表示されます"
 
-#: options/theme-options.php:872
+#: options/theme-options.php:804
 msgid "Netease Cloud Music"
 msgstr "網易雲音楽"
 
-#: options/theme-options.php:873
+#: options/theme-options.php:805
 msgid "Kugou Music(may not be available)"
 msgstr "KuGouミュージック(利用できない場合あり)"
 
-#: options/theme-options.php:874
+#: options/theme-options.php:806
 msgid "Baidu Music(not available on servers overseas)"
 msgstr "百度ミュージック(中国本土以外で利用できません)"
 
-#: options/theme-options.php:875
+#: options/theme-options.php:807
 msgid "QQ Music(may not be available)"
 msgstr "QQミュージック(利用できない場合があります)"
 
-#: options/theme-options.php:883
+#: options/theme-options.php:815
 msgid "Footer Online Music Player Proxy"
 msgstr "フッター オンライン 音楽 プレーヤー プロキシ"
 
-#: options/theme-options.php:885
+#: options/theme-options.php:817
 msgid ""
 "Ex. http://127.0.0.1:8080. Reference: https://curl.se/libcurl/c/"
 "CURLOPT_PROXY.html"
 msgstr ""
 "例：http://127.0.0.1:8080　参照：https://curl.se/libcurl/c/CURLOPT_PROXY.html"
 
-#: options/theme-options.php:892
+#: options/theme-options.php:824
 msgid "Footer Online Music Player Songlist ID"
 msgstr "フッターオンライン音楽プレーヤーソングリストID"
 
-#: options/theme-options.php:894
+#: options/theme-options.php:826
 msgid ""
 "Fill in the song ID, e.g. https://music.163.com/#/playlist?id=5380675133 "
 "SongID:5380675133"
@@ -1456,47 +1367,47 @@ msgstr ""
 "ソングIDを入力。例えば、https://music.163.com/#/playlist?id=5380675133 ソング"
 "ID:5380675133"
 
-#: options/theme-options.php:901
+#: options/theme-options.php:833
 msgid "Footer Online Music Player Mode"
 msgstr "フッターオンライン音楽プレーヤーモード"
 
-#: options/theme-options.php:903
+#: options/theme-options.php:835
 msgid "Select music player mode"
 msgstr "音楽プレーヤーモードを選択"
 
-#: options/theme-options.php:905
+#: options/theme-options.php:837
 msgid "List"
 msgstr "リスト"
 
-#: options/theme-options.php:906
+#: options/theme-options.php:838
 msgid "Random"
 msgstr "ランダム"
 
-#: options/theme-options.php:914
+#: options/theme-options.php:846
 msgid "Footer Online Music Player Preload"
 msgstr "フッターオンライン音楽プレーヤーを先行読み込み"
 
-#: options/theme-options.php:916
+#: options/theme-options.php:848
 msgid "Whether to preload songs"
 msgstr "曲を先行読み込みの有無"
 
-#: options/theme-options.php:919
+#: options/theme-options.php:851
 msgid "Preload Metadata"
 msgstr "メタデータの先行読み込み"
 
-#: options/theme-options.php:928
+#: options/theme-options.php:860
 msgid "Default Volume of Footer Online Music Player"
 msgstr "フッターオンライン音楽プレーヤーのデフォルトボリューム"
 
-#: options/theme-options.php:930
+#: options/theme-options.php:862
 msgid "Slide to adjust, the recommended sliding value range is 0.4-0.6"
 msgstr "スライドで調整、推奨スライド値の範囲は0.4-0.6"
 
-#: options/theme-options.php:939
+#: options/theme-options.php:871
 msgid "Netease Cloud Music Cookies"
 msgstr "網易雲音楽クッキー"
 
-#: options/theme-options.php:941
+#: options/theme-options.php:873
 msgid ""
 "If you want to play VIP music on Netease Cloud Music Platform, please fill "
 "in your account cookies in this option."
@@ -1504,11 +1415,11 @@ msgstr ""
 "網易雲音楽プラットフォームでVIP音楽を再生したい場合は、このオプションでアカウ"
 "ントのクッキーを記入してください。"
 
-#: options/theme-options.php:947
+#: options/theme-options.php:879
 msgid "Footer Widget Area"
 msgstr "フッターウィジェットエリア"
 
-#: options/theme-options.php:948
+#: options/theme-options.php:880
 msgid ""
 "After turning it on, a button will appear in the bottom of the left corner "
 "of the footer, when you click the button the footer widget area will be "
@@ -1519,27 +1430,27 @@ msgstr ""
 "ターウィジェットエリアが表示され、フッターのオンラインプレーヤーをオンにして"
 "いる場合は、一緒に表示されます"
 
-#: options/theme-options.php:955
+#: options/theme-options.php:887
 msgid "Footer Widget Area Background"
 msgstr "フッターウィジェットエリアの背景"
 
-#: options/theme-options.php:957
+#: options/theme-options.php:889
 msgid "The best picture size is 400px × 460px"
 msgstr "最高の画像サイズは400px × 460pxです"
 
-#: options/theme-options.php:964
+#: options/theme-options.php:896
 msgid "Footer Dynamic Sakura Icon"
 msgstr "フッターのダイナミックな桜アイコン"
 
-#: options/theme-options.php:965
+#: options/theme-options.php:897
 msgid "Dynamic Sakura icon will appear at the end of the page after turning on"
 msgstr "オンにすると、ページの最後にダイナミックな桜のアイコンが表示されます"
 
-#: options/theme-options.php:972
+#: options/theme-options.php:904
 msgid "Footer Load Occupancy Query"
 msgstr "フッター負荷の占有率表示"
 
-#: options/theme-options.php:973
+#: options/theme-options.php:905
 msgid ""
 "Load occupancy information will appear at the end of the page after turning "
 "it on. Not recommended in production environment."
@@ -1547,46 +1458,46 @@ msgstr ""
 "負荷占有率は、オンにするとページの最後に表示されます。運用環境では推奨されま"
 "せん。"
 
-#: options/theme-options.php:980
+#: options/theme-options.php:912
 msgid "Footer Upyun League Logo"
 msgstr "フッターウピョンリーグロゴ"
 
-#: options/theme-options.php:981
+#: options/theme-options.php:913
 msgid "Upyun Logo will appear at the end of the page after turning it on"
 msgstr "ウプユンロゴは、オンにするとページの最後に表示されます"
 
-#: options/theme-options.php:988
+#: options/theme-options.php:920
 msgid "Footer Info"
 msgstr "フッター情報"
 
-#: options/theme-options.php:989
+#: options/theme-options.php:921
 msgid "Footer description text, supports HTML code"
 msgstr "フッターの説明文字、HTMLコードを支援する"
 
-#: options/theme-options.php:997
+#: options/theme-options.php:929
 msgid "Footer Addition"
 msgstr "フッターの付加コード"
 
-#: options/theme-options.php:998
+#: options/theme-options.php:930
 msgid ""
 "Add HTML code at the end of the page. Useful for adding customize JavaScript."
 msgstr ""
 "ページの最後にHTMLコードを添付します。カスタマイズ用のJavaScriptを追加するの"
 "に便利です。"
 
-#: options/theme-options.php:1003
+#: options/theme-options.php:935
 msgid "Hitokoto"
 msgstr "一言"
 
-#: options/theme-options.php:1009
+#: options/theme-options.php:941
 msgid "Footer Hitokoto"
 msgstr "フッターの一言"
 
-#: options/theme-options.php:1010
+#: options/theme-options.php:942
 msgid "Hitokoto will appear at the end of the page after turning it on"
 msgstr "オンにすると、ページの最後に一言は表示します"
 
-#: options/theme-options.php:1017
+#: options/theme-options.php:949
 msgid ""
 "<h4>Hitokoto API Setup Instructions</h4> <p>Fill in as the example:<code> "
 "[\"https://api.maho.cc/yiyan/\", \"https://v1.hitokoto.cn/\"]</code>, where "
@@ -1608,75 +1519,75 @@ msgstr ""
 "バースプロキシミラーです。<a href=\"https://api.maho.cc/yiyan/\">https://api."
 "maho.cc/yiyan/</a></p>"
 
-#: options/theme-options.php:1026
+#: options/theme-options.php:958
 msgid "Hitokoto API address"
 msgstr "一言のAPIアドレス"
 
-#: options/theme-options.php:1028
+#: options/theme-options.php:960
 msgid "Fill in the address in JavaScript array format"
 msgstr "JavaScriptの配列形式でアドレスを記入する"
 
-#: options/theme-options.php:1037
+#: options/theme-options.php:969
 msgid "Cursor Options"
 msgstr "カーソルのオプション"
 
-#: options/theme-options.php:1044
+#: options/theme-options.php:976
 msgid "Standard Cursor Style"
 msgstr "標準カーソルスタイル"
 
-#: options/theme-options.php:1045
+#: options/theme-options.php:977
 msgid "Apply to global, fill in \".cur\" mouse file link"
 msgstr "全体に適用し、「.cur」マウスファイルのリングを入力してください"
 
-#: options/theme-options.php:1052
+#: options/theme-options.php:984
 msgid "Selected Cursor Style"
 msgstr "選択されたカーソルスタイル"
 
-#: options/theme-options.php:1053
+#: options/theme-options.php:985
 msgid "Apply to multiple styles, fill in \".cur\" file link"
 msgstr "複数のスタイルに適用し、「.cur 」ファイルのリンクを入力してください"
 
-#: options/theme-options.php:1060
+#: options/theme-options.php:992
 msgid "Selected Control Unit Cursor Style"
 msgstr "選択されたコントロールユニットのカーソルスタイル"
 
-#: options/theme-options.php:1061
+#: options/theme-options.php:993
 msgid "Apply to selected control unit, fill in \".cur\" file link"
 msgstr ""
 "選択してのコントロールにユニットに適用し、「.cur 」ファイルのリンクを入力して"
 "ください"
 
-#: options/theme-options.php:1068
+#: options/theme-options.php:1000
 msgid "Selected Text Cursor Style"
 msgstr "選択された文字のカーソルスタイル"
 
-#: options/theme-options.php:1069
+#: options/theme-options.php:1001
 msgid "Apply to selected text, fill in \".cur\" file link"
 msgstr "選択しての文字に適用し、「.cur 」ファイルのリンクを入力してください"
 
-#: options/theme-options.php:1076
+#: options/theme-options.php:1008
 msgid "Work Status Cursor Style"
 msgstr "ワークステータスのカーソルスタイル"
 
-#: options/theme-options.php:1077
+#: options/theme-options.php:1009
 msgid "Apply to load control unit, fill in \".cur\" file link"
 msgstr ""
 "ロードコントロールユニットに適用し、「.cur 」ファイルのリンクを入力してくださ"
 "い"
 
-#: options/theme-options.php:1086
+#: options/theme-options.php:1018
 msgid "Additional Options"
 msgstr "追加オプション"
 
-#: options/theme-options.php:1092
+#: options/theme-options.php:1024
 msgid "Effects&Animations"
 msgstr "エフェクトとアニメーション"
 
-#: options/theme-options.php:1098
+#: options/theme-options.php:1030
 msgid "Preload Animation"
 msgstr "先行読み込みアニメーション"
 
-#: options/theme-options.php:1099
+#: options/theme-options.php:1031
 msgid ""
 "Preload animation before new pages load; To enable this option, ensure your "
 "page resources can load properly."
@@ -1684,47 +1595,47 @@ msgstr ""
 "新しいページが読み込まれる前にアニメーションをプリロードします。このオプショ"
 "ンを有効にするには、ページ リソースが正しく読み込まれるようにします。"
 
-#: options/theme-options.php:1106
+#: options/theme-options.php:1038
 msgid "Preload Animation Color A"
 msgstr "プリロード アニメーション カラー A"
 
-#: options/theme-options.php:1115
+#: options/theme-options.php:1047
 msgid "Preload Animation Color B"
 msgstr "プリロード アニメーション カラー B"
 
-#: options/theme-options.php:1123
+#: options/theme-options.php:1055
 msgid "Preload Animation Blur Transition Effect"
 msgstr "プリロード アニメーション ブラー トランジション効果"
 
-#: options/theme-options.php:1125
+#: options/theme-options.php:1057
 msgid "Blur transition duration in milliseconds ms, off when set to 0."
 msgstr "0 に設定すると、ミリ秒単位のブラーの遷移時間(ミリ秒)がオフになります。"
 
-#: options/theme-options.php:1135
+#: options/theme-options.php:1067
 msgid "Sakura Falling Effects"
 msgstr "さくら落下効果"
 
-#: options/theme-options.php:1138
+#: options/theme-options.php:1070
 msgid "Native Quantity"
 msgstr "ネイティブ数量"
 
-#: options/theme-options.php:1139
+#: options/theme-options.php:1071
 msgid "Quarter Quantity"
 msgstr "四半期数量"
 
-#: options/theme-options.php:1140
+#: options/theme-options.php:1072
 msgid "Half Quantity"
 msgstr "半分の数量"
 
-#: options/theme-options.php:1141
+#: options/theme-options.php:1073
 msgid "Less Quantity"
 msgstr "少ない量"
 
-#: options/theme-options.php:1149
+#: options/theme-options.php:1081
 msgid "Particles Effects"
 msgstr "パーティクルエフェクト"
 
-#: options/theme-options.php:1151
+#: options/theme-options.php:1083
 msgid ""
 "Particles effects will appear in the global background. Please open the "
 "Cover-and-Frontend-Background-Integration Options to get the best experience"
@@ -1732,11 +1643,11 @@ msgstr ""
 "パーティクルエフェクトはグローバル背景に表示されます。最高の体験を得るために"
 "カバーとフロントエンド -バックグラウンド統合オプションを開いてください"
 
-#: options/theme-options.php:1159
+#: options/theme-options.php:1091
 msgid "Particles JSON"
 msgstr "パーティクル JSON"
 
-#: options/theme-options.php:1161
+#: options/theme-options.php:1093
 msgid ""
 "You can go to the <a href=\"https://vincentgarreau.com/particles.js/"
 "\">Project Address</a> to generate your unique Particles Effects"
@@ -1744,21 +1655,21 @@ msgstr ""
 "<a href=\"https://vincentgarreau.com/particles.js/\">プロジェクトアドレス</a>"
 "に移動して、独自のパーティクルエフェクトを生成できます。"
 
-#: options/theme-options.php:1278
+#: options/theme-options.php:1210
 msgid "Live2D Model"
 msgstr "ライブ2Dモデル"
 
-#: options/theme-options.php:1279
+#: options/theme-options.php:1211
 msgid ""
 "Live2D Model will be loaded in the bottom left corner of the page after "
 "turning on"
 msgstr "Live2D モデルは、オンにした後、ページの左下隅に読み込まれます"
 
-#: options/theme-options.php:1286
+#: options/theme-options.php:1218
 msgid "Live2D Model Custom Github Project Username"
 msgstr "Live2D モデルカスタム Github プロジェクトのユーザー名"
 
-#: options/theme-options.php:1288
+#: options/theme-options.php:1220
 msgid ""
 "If you want to customize this option, you need to go to Github to fork this "
 "project and make changes to this project first, fill in the Github project "
@@ -1767,11 +1678,11 @@ msgstr ""
 "このオプションをカスタマイズする場合は、Github に移動してこのプロジェクトを"
 "フォークし、このプロジェクトに変更を加える必要があります。"
 
-#: options/theme-options.php:1295
+#: options/theme-options.php:1227
 msgid "Live2D Model Custom Github Project Version"
 msgstr "ライブ2DモデルカスタムGithubプロジェクトバージョン"
 
-#: options/theme-options.php:1297
+#: options/theme-options.php:1229
 msgid ""
 "If you want to customize this option, you need to first go to Github to fork "
 "this project and make changes to this project, fill in the version of the "
@@ -1781,150 +1692,150 @@ msgstr ""
 "トをフォークし、このプロジェクトに変更を加え、Github プロジェクトのバージョン"
 "をここで入力する必要があります。"
 
-#: options/theme-options.php:1304
+#: options/theme-options.php:1236
 msgid "Note Touch Effects"
 msgstr "ノートタッチエフェクト"
 
-#: options/theme-options.php:1305
+#: options/theme-options.php:1237
 msgid ""
 "After turning on, there will be a note sound alert when the back to top "
 "button and Mashiro style logo touch"
 msgstr ""
 "電源を入れると、トップボタンと正代スタイルのロゴタッチ時に音の警告が鳴ります"
 
-#: options/theme-options.php:1311
+#: options/theme-options.php:1243
 msgid "Feature"
 msgstr "機能"
 
-#: options/theme-options.php:1317
+#: options/theme-options.php:1249
 msgid "PJAX Partial Refresh"
 msgstr "PJAX 部分更新"
 
-#: options/theme-options.php:1318
+#: options/theme-options.php:1250
 msgid "Enabled by default, clicking to a new page will not require reloading"
 msgstr ""
 "既定で有効に設定すると、新しいページをクリックしても再読み込みは不要です"
 
-#: options/theme-options.php:1325
+#: options/theme-options.php:1257
 msgid "NProgress Loading Progress Bar"
 msgstr "N進行状況の読み込み進行状況バー"
 
-#: options/theme-options.php:1326
+#: options/theme-options.php:1258
 msgid ""
 "Enabled by default, when loading page there will be a progress bar alert"
 msgstr ""
 "既定で有効に設定され、ページを読み込むときに進行状況バーの警告が表示されま"
 "す。"
 
-#: options/theme-options.php:1333
+#: options/theme-options.php:1265
 msgid "Global Smooth Scroll"
 msgstr "グローバルスムーズスクロール"
 
-#: options/theme-options.php:1334
+#: options/theme-options.php:1266
 msgid "Enabled by default, page scrolling will be smoother"
 msgstr "既定で有効に設定すると、ページのスクロールはよりスムーズになります。"
 
-#: options/theme-options.php:1341
+#: options/theme-options.php:1273
 msgid "Captcha Selection"
 msgstr "セクションをリセット"
 
-#: options/theme-options.php:1344
+#: options/theme-options.php:1276
 msgid "Theme Built in Captcha"
 msgstr "統計に組み込まれたテーマ"
 
-#: options/theme-options.php:1345
+#: options/theme-options.php:1277
 msgid "Vaptcha"
 msgstr "Vaptcha"
 
-#: options/theme-options.php:1353
+#: options/theme-options.php:1285
 msgid "Vaptcha VID"
 msgstr "Vaptcha VID"
 
-#: options/theme-options.php:1355
+#: options/theme-options.php:1287
 msgid "Fill in your Vaptcha VID"
 msgstr "あなたのVaptcha VIDを記入してください"
 
-#: options/theme-options.php:1361
+#: options/theme-options.php:1293
 msgid "Vaptcha KEY"
 msgstr "Vaptcha KEY"
 
-#: options/theme-options.php:1363
+#: options/theme-options.php:1295
 msgid "Fill in your Vaptcha KEY"
 msgstr "Vaptcha KEYを入力する"
 
-#: options/theme-options.php:1369
+#: options/theme-options.php:1301
 msgid "Vaptcha Scene"
 msgstr "Vaptchaシーン"
 
-#: options/theme-options.php:1385
+#: options/theme-options.php:1317
 msgid "Pagination Mode"
 msgstr "ページネーション モード"
 
-#: options/theme-options.php:1387
+#: options/theme-options.php:1319
 msgid "Ajax Load"
 msgstr "AJAX自動読み込み"
 
-#: options/theme-options.php:1388
+#: options/theme-options.php:1320
 msgid "Page Up/Down"
 msgstr "ページアップ/ダウン"
 
-#: options/theme-options.php:1396
+#: options/theme-options.php:1328
 msgid "Next Page Auto Load"
 msgstr "次のページの自動読み込み"
 
-#: options/theme-options.php:1399
+#: options/theme-options.php:1331
 msgid "do not autoload"
 msgstr "自動ロードしない"
 
-#: options/theme-options.php:1400
+#: options/theme-options.php:1332
 msgid "0 Sec"
 msgstr "0秒"
 
-#: options/theme-options.php:1401
+#: options/theme-options.php:1333
 msgid "1 Sec"
 msgstr "1秒"
 
-#: options/theme-options.php:1402
+#: options/theme-options.php:1334
 msgid "2 Sec"
 msgstr "2秒"
 
-#: options/theme-options.php:1403
+#: options/theme-options.php:1335
 msgid "3 Sec"
 msgstr "3秒"
 
-#: options/theme-options.php:1404
+#: options/theme-options.php:1336
 msgid "4 Sec"
 msgstr "4秒"
 
-#: options/theme-options.php:1405
+#: options/theme-options.php:1337
 msgid "5 Sec"
 msgstr "5秒"
 
-#: options/theme-options.php:1406
+#: options/theme-options.php:1338
 msgid "6 Sec"
 msgstr "6秒"
 
-#: options/theme-options.php:1407
+#: options/theme-options.php:1339
 msgid "7 Sec"
 msgstr "7秒"
 
-#: options/theme-options.php:1408
+#: options/theme-options.php:1340
 msgid "8 Sec"
 msgstr "8秒"
 
-#: options/theme-options.php:1409
+#: options/theme-options.php:1341
 msgid "9 Sec"
 msgstr "9秒"
 
-#: options/theme-options.php:1410
+#: options/theme-options.php:1342
 msgid "10 Sec"
 msgstr "10秒"
 
-#: options/theme-options.php:1418
+#: options/theme-options.php:1350
 msgid "Placeholder SVG when loading the next page"
 msgstr "次のページのプレースホルダーSVGを読み込む"
 
-#: options/theme-options.php:1419
+#: options/theme-options.php:1351
 msgid ""
 "Fill in the address, this is the SVG that will be displayed as a placeholder "
 "when the next page is loading"
@@ -1932,60 +1843,60 @@ msgstr ""
 "アドレスを入力すると、これは次のページが読み込まれたときにプレースホルダーと"
 "して表示されるSVGです"
 
-#: options/theme-options.php:1427
+#: options/theme-options.php:1359
 msgid "HomePage Options"
 msgstr "ホームページのオプション"
 
-#: options/theme-options.php:1433
+#: options/theme-options.php:1365
 msgid "Cover Options"
 msgstr "カバーオプション"
 
-#: options/theme-options.php:1440
+#: options/theme-options.php:1372
 msgid "Cover Switch"
 msgstr "カバースイッチ"
 
-#: options/theme-options.php:1441
+#: options/theme-options.php:1373
 msgid "On by default, if off, all options below will be disabled"
 msgstr ""
 "初期設定ではオン。オフにすると、以下のすべてのオプションが無効になります"
 
-#: options/theme-options.php:1448
+#: options/theme-options.php:1380
 msgid "Cover Full Screen"
 msgstr "カバーに全画面表示"
 
-#: options/theme-options.php:1457
+#: options/theme-options.php:1389
 msgid "Cover Arc Occlusion (Below)"
 msgstr "曲線状のカバーオクルージョン(下)"
 
-#: options/theme-options.php:1458
+#: options/theme-options.php:1390
 msgid "An arc occlusion will appear below the cover when turned on"
 msgstr "オンにすると、円弧のオクルージョンがカバーの下に表示されます。"
 
-#: options/theme-options.php:1465
+#: options/theme-options.php:1397
 msgid "Cover Radius"
 msgstr "カバー半径"
 
-#: options/theme-options.php:1466
+#: options/theme-options.php:1398
 msgid "Slide to adjust, the recommended value range is 15-20"
 msgstr "スライドで調整、推奨値の範囲は 15-20 です"
 
-#: options/theme-options.php:1475
+#: options/theme-options.php:1407
 msgid "Cover Animation"
 msgstr "カバーアニメーション"
 
-#: options/theme-options.php:1476
+#: options/theme-options.php:1408
 msgid "On by default, if off, the cover will be displayed directly"
 msgstr "初期設定ではオン。オフにすると、カバーが直接表示されます"
 
-#: options/theme-options.php:1483
+#: options/theme-options.php:1415
 msgid "Cover Animation Time"
 msgstr "カバーのアニメーション時間"
 
-#: options/theme-options.php:1495
+#: options/theme-options.php:1427
 msgid "Cover Info Bar"
 msgstr "カバー情報欄"
 
-#: options/theme-options.php:1496
+#: options/theme-options.php:1428
 msgid ""
 "Enabled by default, show avatar, Mashiro effects text, signature bar, social "
 "area"
@@ -1993,51 +1904,51 @@ msgstr ""
 "初期設定では有効、アバター、Mashiro効果のテキスト、署名バー、ソーシャルエリア"
 "を表示する"
 
-#: options/theme-options.php:1503
+#: options/theme-options.php:1435
 msgid "Cover Info Bar Style"
 msgstr "カバー情報欄のスタイル"
 
-#: options/theme-options.php:1514
+#: options/theme-options.php:1446
 msgid "Cover Info Bar Background Color"
 msgstr "カバー情報欄の背景色"
 
-#: options/theme-options.php:1522
+#: options/theme-options.php:1454
 msgid "Cover Info Bar Avatar Radius"
 msgstr "カバー情報欄のアバター半径"
 
-#: options/theme-options.php:1523
+#: options/theme-options.php:1455
 msgid "Slide to adjust, the recommended value is 100"
 msgstr "スライドで調整、推奨値は100です"
 
-#: options/theme-options.php:1531
+#: options/theme-options.php:1463
 msgid "Cover Signature Bar Rounded"
 msgstr "カバーの署名欄の角が丸い"
 
-#: options/theme-options.php:1532
+#: options/theme-options.php:1464
 msgid "Slide to adjust, the recommended value range 10-20"
 msgstr "スライドで調整、推奨値範囲は10-20"
 
-#: options/theme-options.php:1541
+#: options/theme-options.php:1473
 msgid "Cover Signature Field Text"
 msgstr "カバー署名フィールドテキスト"
 
-#: options/theme-options.php:1542 options/theme-options.php:2641
+#: options/theme-options.php:1474 options/theme-options.php:2573
 msgid "A self-descriptive quote"
 msgstr "自己記述的な引用"
 
-#: options/theme-options.php:1549
+#: options/theme-options.php:1481
 msgid "Cover Signature Field Text Font"
 msgstr "カバー署名フィールドテキストフォント"
 
-#: options/theme-options.php:1557
+#: options/theme-options.php:1489
 msgid "Cover Signature Field Text Font Size"
 msgstr "カバー署名フィールドテキストのフォントサイズ"
 
-#: options/theme-options.php:1568
+#: options/theme-options.php:1500
 msgid "Cover Signature Bar Typing Effects"
 msgstr "カバー署名バーの入力効果"
 
-#: options/theme-options.php:1569
+#: options/theme-options.php:1501
 msgid ""
 "When turned on, the signature bar text will have an additional paragraph of "
 "text and will be rendered with typing effects"
@@ -2045,43 +1956,43 @@ msgstr ""
 "オンにすると、署名バーのテキストには追加の段落が表示され、テキスト効果が表示"
 "されます。"
 
-#: options/theme-options.php:1576
+#: options/theme-options.php:1508
 msgid "Cover Signature Field Typing Effects Double Quotes"
 msgstr "カバー署名フィールド入力効果二重引用符"
 
-#: options/theme-options.php:1578
+#: options/theme-options.php:1510
 msgid "Typing effects will be appended with double quotes when turned on"
 msgstr "オンにすると、入力効果に二重引用符が付加されます。"
 
-#: options/theme-options.php:1585
+#: options/theme-options.php:1517
 msgid "Cover Signature Field Typing Effects Placeholder"
 msgstr "カバー署名フィールドタイピングエフェクトプレースホルダ"
 
-#: options/theme-options.php:1594
+#: options/theme-options.php:1526
 msgid "Typed.js initial option"
 msgstr "型付き.js初期オプション"
 
-#: options/theme-options.php:1602
+#: options/theme-options.php:1534
 msgid "Cover Random Image Options"
 msgstr "ランダムイメージオプションをカバー"
 
-#: options/theme-options.php:1604
+#: options/theme-options.php:1536
 msgid "External API"
 msgstr "外部 API"
 
-#: options/theme-options.php:1605
+#: options/theme-options.php:1537
 msgid "Webp optimized"
 msgstr "最適化されたウェブ"
 
-#: options/theme-options.php:1606
+#: options/theme-options.php:1538
 msgid "Local"
 msgstr "ローカル"
 
-#: options/theme-options.php:1614
+#: options/theme-options.php:1546
 msgid "Cover Random Image Multi-terminal Separation"
 msgstr "ランダム画像マルチ端子分離をカバー"
 
-#: options/theme-options.php:1615
+#: options/theme-options.php:1547
 msgid ""
 "Enabled by default, desktop and mobile devices will use separate random "
 "image addresses"
@@ -2089,28 +2000,28 @@ msgstr ""
 "既定で有効に設定すると、デスクトップ デバイスとモバイル デバイスでは、別々の"
 "ランダム イメージ アドレスが使用されます。"
 
-#: options/theme-options.php:1622
+#: options/theme-options.php:1554
 msgid "Webp Optimization/External API Desktop Side Random Graphics Address"
 msgstr ""
 "Webp 最適化/外部 API デスクトップサイドのランダムなグラフィックアドレス"
 
-#: options/theme-options.php:1623
+#: options/theme-options.php:1555
 msgid "Fill in the address"
 msgstr "住所を入力する"
 
-#: options/theme-options.php:1632
+#: options/theme-options.php:1564
 msgid "External API Mobile Devices Random Image Address"
 msgstr "外部 API モバイル デバイスのランダム イメージ アドレス"
 
-#: options/theme-options.php:1634
+#: options/theme-options.php:1566
 msgid "fill address"
 msgstr "住所を記入する"
 
-#: options/theme-options.php:1643
+#: options/theme-options.php:1575
 msgid "Cover Random Background Image Cache"
 msgstr "ランダム背景画像キャッシュをカバー"
 
-#: options/theme-options.php:1644
+#: options/theme-options.php:1576
 msgid ""
 "Enabled by default, this feature will cache a cover image locally, which can "
 "improve the loading speed of the first cover after entering the homepage. "
@@ -2120,11 +2031,11 @@ msgstr ""
 "ホームページに入った後の最初のカバーの読み込み速度を向上させることができま"
 "す。注: この機能には、クロスドメイン要求を受け入れるカバー API が必要です。"
 
-#: options/theme-options.php:1651
+#: options/theme-options.php:1583
 msgid "Cover and Frontend Background Integration"
 msgstr "カバーとフロントエンドの背景統合"
 
-#: options/theme-options.php:1652
+#: options/theme-options.php:1584
 msgid ""
 "When enabled, the background of the cover will be set to transparent, while "
 "the frontend background will use the cover's random image API"
@@ -2132,35 +2043,35 @@ msgstr ""
 "有効にすると、カバーの背景は透明に設定され、フロントエンドの背景はカバーのラ"
 "ンダムな画像APIを使用します。"
 
-#: options/theme-options.php:1659
+#: options/theme-options.php:1591
 msgid "Cover Random Images Filter"
 msgstr "ランダム画像フィルタをカバー"
 
-#: options/theme-options.php:1661
+#: options/theme-options.php:1593
 msgid "No filter"
 msgstr "フィルターなし"
 
-#: options/theme-options.php:1662
+#: options/theme-options.php:1594
 msgid "Light filter"
 msgstr "ライトフィルター"
 
-#: options/theme-options.php:1663
+#: options/theme-options.php:1595
 msgid "Dimmed filter"
 msgstr "薄暗いフィルター"
 
-#: options/theme-options.php:1664
+#: options/theme-options.php:1596
 msgid "Grid filter"
 msgstr "グリッド フィルター"
 
-#: options/theme-options.php:1665
+#: options/theme-options.php:1597
 msgid "Dot filter"
 msgstr "ドットフィルター"
 
-#: options/theme-options.php:1673
+#: options/theme-options.php:1605
 msgid "Cover Wave Effects"
 msgstr "カバーウェーブエフェクト"
 
-#: options/theme-options.php:1674
+#: options/theme-options.php:1606
 msgid ""
 "Wave effect will appear at the bottom of the cover of the home page after "
 "turning on, and it will be forced off in the dark mode"
@@ -2168,21 +2079,21 @@ msgstr ""
 "波の効果は、オンにすると、ホームページの表紙の下部に表示され、それは暗いモー"
 "ドでオフに強制されます"
 
-#: options/theme-options.php:1681
+#: options/theme-options.php:1613
 msgid "Cover Dropdown Arrow"
 msgstr "カバー ドロップダウン矢印の色"
 
-#: options/theme-options.php:1682
+#: options/theme-options.php:1614
 msgid "Enabled by default, show a dropdown arrow at bottom of home cover"
 msgstr ""
 "デフォルトで有効に設定すると、ホームカバーの下部にドロップダウン矢印が表示さ"
 "れます。"
 
-#: options/theme-options.php:1689
+#: options/theme-options.php:1621
 msgid "Cover Dropdown Arrow Display on Mobile Devices"
 msgstr "モバイル デバイスのドロップダウン矢印の表示"
 
-#: options/theme-options.php:1691
+#: options/theme-options.php:1623
 msgid ""
 "Drop down arrow will appear at the bottom of the mobile devices' home cover "
 "after turning it on"
@@ -2190,49 +2101,49 @@ msgstr ""
 "ドロップダウン矢印は、それをオンにすると、モバイルデバイスのホームカバーの下"
 "部に表示されます"
 
-#: options/theme-options.php:1698
+#: options/theme-options.php:1630
 msgid "Cover Dropdown Arrow Color"
 msgstr "カバー ドロップダウン矢印の色"
 
-#: options/theme-options.php:1707
+#: options/theme-options.php:1639
 msgid "Cover Dropdown Arrow Color (Dark Mode)"
 msgstr "カバー ドロップダウン矢印の色 (ダーク モード)"
 
-#: options/theme-options.php:1709
+#: options/theme-options.php:1641
 msgid "Customize the colors, dark colors are recommended"
 msgstr "色をカスタマイズし、暗い色をお勧めします"
 
-#: options/theme-options.php:1716
+#: options/theme-options.php:1648
 msgid "Cover Video"
 msgstr "カバービデオ"
 
-#: options/theme-options.php:1717
+#: options/theme-options.php:1649
 msgid "Use a video instead of the images as the cover"
 msgstr "画像の代わりにビデオをカバーとして使用する"
 
-#: options/theme-options.php:1724
+#: options/theme-options.php:1656
 msgid "Cover Video Loop"
 msgstr "カバービデオループ"
 
-#: options/theme-options.php:1726
+#: options/theme-options.php:1658
 msgid "Video will loop automatically when enabled."
 msgstr "ビデオは、有効にすると自動的にループします, Pjaxが必要"
 
-#: options/theme-options.php:1733
+#: options/theme-options.php:1665
 msgid "Cover Video Auto Resume"
 msgstr "カバービデオアドレス"
 
-#: options/theme-options.php:1735
+#: options/theme-options.php:1667
 msgid ""
 "Cover Video will resume automatically when coming back to homepage while "
 "Pjax enabled."
 msgstr "ビデオは、有効にすると自動的にループします, Pjaxが必要"
 
-#: options/theme-options.php:1742
+#: options/theme-options.php:1674
 msgid "Cover Video URL Base Path"
 msgstr "カバービデオ名"
 
-#: options/theme-options.php:1745
+#: options/theme-options.php:1677
 msgid ""
 "Fill in the base path your video located at. For example: https://localhost. "
 "Your site's URL is used as default. Please pay attention to the protocol "
@@ -2241,11 +2152,11 @@ msgstr ""
 "ビデオのベース パスを入力します。たとえば、https://localhost。サイトの URL が"
 "既定として使用されます。URLのプロトコル名に注意してください。"
 
-#: options/theme-options.php:1751
+#: options/theme-options.php:1683
 msgid "Cover Video File Name"
 msgstr "カバービデオ名"
 
-#: options/theme-options.php:1753
+#: options/theme-options.php:1685
 msgid ""
 "For example: abc.mp4. Multiple videos should be separated by English commas "
 "like \"abc.mp4,efg.mp4,\" Random play is on by default."
@@ -2254,19 +2165,19 @@ msgstr ""
 "は、\"abc,efg\"のような英語のカンマで区切られるべきです、 ランダムプレイはデ"
 "フォルトでオンになっています。"
 
-#: options/theme-options.php:1761
+#: options/theme-options.php:1693
 msgid "Cover Social Area Options"
 msgstr "ソーシャルエリアのオプションをカバーする"
 
-#: options/theme-options.php:1767
+#: options/theme-options.php:1699
 msgid "Related Options"
 msgstr "関連オプション"
 
-#: options/theme-options.php:1773
+#: options/theme-options.php:1705
 msgid "Cover Social Area"
 msgstr "カバーソーシャルエリア"
 
-#: options/theme-options.php:1774
+#: options/theme-options.php:1706
 msgid ""
 "Enabled by default, show cover random image toggle button and social network "
 "icons"
@@ -2274,11 +2185,11 @@ msgstr ""
 "デフォルトで有効に設定され、カバーランダム画像トグルボタンとソーシャルネット"
 "ワークアイコンを表示"
 
-#: options/theme-options.php:1781
+#: options/theme-options.php:1713
 msgid "Social Icon"
 msgstr "ソーシャルアイコン"
 
-#: options/theme-options.php:1782
+#: options/theme-options.php:1714
 msgid ""
 "Select your favorite icon pack. Icon pack references are detailed in the "
 "\"About Theme\" section"
@@ -2286,35 +2197,35 @@ msgstr ""
 "お気に入りのアイコンパックを選択します。アイコンパックのリファレンスについて"
 "は、「テーマについて」セクションで詳しく説明します。"
 
-#: options/theme-options.php:1803
+#: options/theme-options.php:1735
 msgid "Cover Social Area Rounded Corners"
 msgstr "表紙ソーシャルエリア角丸"
 
-#: options/theme-options.php:1805
+#: options/theme-options.php:1737
 msgid "Slide to adjust, the recommended value range is 10-20"
 msgstr "調整するスライド、推奨値の範囲は10-20です"
 
-#: options/theme-options.php:1814
+#: options/theme-options.php:1746
 msgid "Switch Button of Random Images"
 msgstr "ランダム画像の切り替えボタン"
 
-#: options/theme-options.php:1816
+#: options/theme-options.php:1748
 msgid "Enabled by default, show cover random image toggle button"
 msgstr "デフォルトで有効に設定され、カバーランダム画像トグルボタンを表示"
 
-#: options/theme-options.php:1822
+#: options/theme-options.php:1754
 msgid "Social Network"
 msgstr "ソーシャルネットワーク"
 
-#: options/theme-options.php:1828
+#: options/theme-options.php:1760
 msgid "Wechat"
 msgstr "ウェチャット"
 
-#: options/theme-options.php:1837
+#: options/theme-options.php:1769
 msgid "QQ"
 msgstr "QQ"
 
-#: options/theme-options.php:1839
+#: options/theme-options.php:1771
 msgid ""
 "Please note the format of filling out the form, e.g. tencent://message/?"
 "uin=123456"
@@ -2322,109 +2233,109 @@ msgstr ""
 "フォームへの記入の形式に注意してください(例えば、tencent://message/?"
 "uin=123456）"
 
-#: options/theme-options.php:1845
+#: options/theme-options.php:1777
 msgid "Bilibili"
 msgstr "ビリビリ"
 
-#: options/theme-options.php:1847 options/theme-options.php:1855
-#: options/theme-options.php:1863 options/theme-options.php:1871
-#: options/theme-options.php:1879 options/theme-options.php:1887
-#: options/theme-options.php:1895 options/theme-options.php:1903
-#: options/theme-options.php:1911 options/theme-options.php:1919
-#: options/theme-options.php:1927 options/theme-options.php:1935
-#: options/theme-options.php:1943 options/theme-options.php:1951
-#: options/theme-options.php:1959 options/theme-options.php:1967
-#: options/theme-options.php:1992 options/theme-options.php:2261
-#: options/theme-options.php:2287 options/theme-options.php:2313
-#: options/theme-options.php:2397
+#: options/theme-options.php:1779 options/theme-options.php:1787
+#: options/theme-options.php:1795 options/theme-options.php:1803
+#: options/theme-options.php:1811 options/theme-options.php:1819
+#: options/theme-options.php:1827 options/theme-options.php:1835
+#: options/theme-options.php:1843 options/theme-options.php:1851
+#: options/theme-options.php:1859 options/theme-options.php:1867
+#: options/theme-options.php:1875 options/theme-options.php:1883
+#: options/theme-options.php:1891 options/theme-options.php:1899
+#: options/theme-options.php:1924 options/theme-options.php:2193
+#: options/theme-options.php:2219 options/theme-options.php:2245
+#: options/theme-options.php:2329
 msgid "add URL"
 msgstr "URLを追加"
 
-#: options/theme-options.php:1853
+#: options/theme-options.php:1785
 msgid "NetEase Music"
 msgstr "ネットイーズミュージック"
 
-#: options/theme-options.php:1861
+#: options/theme-options.php:1793
 msgid "Weibo"
 msgstr "Weibo"
 
-#: options/theme-options.php:1869
+#: options/theme-options.php:1801
 msgid "Github"
 msgstr "Github"
 
-#: options/theme-options.php:1877
+#: options/theme-options.php:1809
 msgid "Telegram"
 msgstr "Telegram"
 
-#: options/theme-options.php:1885
+#: options/theme-options.php:1817
 msgid "Steam"
 msgstr "Steam"
 
-#: options/theme-options.php:1893
+#: options/theme-options.php:1825
 msgid "ZhiHu"
 msgstr "知乎"
 
-#: options/theme-options.php:1901
+#: options/theme-options.php:1833
 msgid "QZone"
 msgstr "Qゾーン"
 
-#: options/theme-options.php:1909
+#: options/theme-options.php:1841
 msgid "Lofter"
 msgstr "LOFTER"
 
-#: options/theme-options.php:1917
+#: options/theme-options.php:1849
 msgid "Youku"
 msgstr "Youku"
 
-#: options/theme-options.php:1925
+#: options/theme-options.php:1857
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: options/theme-options.php:1933
+#: options/theme-options.php:1865
 msgid "Twitter"
 msgstr "Twitter"
 
-#: options/theme-options.php:1941
+#: options/theme-options.php:1873
 msgid "Facebook"
 msgstr "Facebook"
 
-#: options/theme-options.php:1949
+#: options/theme-options.php:1881
 msgid "CSDN"
 msgstr "CSDN"
 
-#: options/theme-options.php:1957
+#: options/theme-options.php:1889
 msgid "JianShu"
 msgstr "ジェンシュウ"
 
-#: options/theme-options.php:1965
+#: options/theme-options.php:1897
 msgid "Customized Social Network Ⅰ"
 msgstr "カスタマイズされたソーシャルネットワークII."
 
-#: options/theme-options.php:1973
+#: options/theme-options.php:1905
 msgid "Customized Social Network Ⅰ Title"
 msgstr "カスタマイズされたソーシャルネットワークII."
 
-#: options/theme-options.php:1981
+#: options/theme-options.php:1913
 msgid "Customized Social Network Ⅰ icon"
 msgstr "カスタマイズされたソーシャルネットワークI.アイコン"
 
-#: options/theme-options.php:1990
+#: options/theme-options.php:1922
 msgid "Customized Social Network Ⅱ"
 msgstr "カスタマイズされたソーシャルネットワークII."
 
-#: options/theme-options.php:1998
+#: options/theme-options.php:1930
 msgid "Customized Social Network Ⅱ Title"
 msgstr "カスタマイズされたソーシャルネットワークII."
 
-#: options/theme-options.php:2006
+#: options/theme-options.php:1938
 msgid "Customized Social Network Ⅱ icon"
 msgstr "カスタマイズされたソーシャルネットワークII.アイコン"
 
-#: options/theme-options.php:2015
+#: options/theme-options.php:1947
 msgid "Email Username"
 msgstr "電子メールユーザー名"
 
-#: options/theme-options.php:2017
+#: options/theme-options.php:1949
 msgid ""
 "name@domain.com fo name, the full address can be known only when there is a "
 "js runtime in the frontend, you can fill in with confidence"
@@ -2432,93 +2343,93 @@ msgstr ""
 "fo 名 name@domain.com、完全なアドレスはフロントエンドに js ランタイムがある場"
 "合にのみ知ることができます。"
 
-#: options/theme-options.php:2023
+#: options/theme-options.php:1955
 msgid "Email Domain"
 msgstr "電子メール ドメイン"
 
-#: options/theme-options.php:2025
+#: options/theme-options.php:1957
 msgid "name@domain.com fo domain.com"
 msgstr "domain.com name@domain.com"
 
-#: options/theme-options.php:2033
+#: options/theme-options.php:1965
 msgid "Bulletin Board and Area Title Options"
 msgstr "掲示板とエリアタイトルのオプション"
 
-#: options/theme-options.php:2039 options/theme-options.php:2045
+#: options/theme-options.php:1971 options/theme-options.php:1977
 msgid "Bulletin Board"
 msgstr "掲示板"
 
-#: options/theme-options.php:2046
+#: options/theme-options.php:1978
 msgid "When enabled the bulletin board will be displayed below the front cover"
 msgstr "有効にすると、掲示板が表紙の下に表示されます"
 
-#: options/theme-options.php:2053
+#: options/theme-options.php:1985
 msgid "Bulletin Board Style"
 msgstr "掲示板スタイル"
 
-#: options/theme-options.php:2056
+#: options/theme-options.php:1988
 msgid "Picture Background"
 msgstr "画像の背景"
 
-#: options/theme-options.php:2057
+#: options/theme-options.php:1989
 msgid "Color Background"
 msgstr "色の背景"
 
-#: options/theme-options.php:2065
+#: options/theme-options.php:1997
 msgid "Bulletin Board \"Broadcast\" Icon"
 msgstr "掲示板「放送」アイコン"
 
-#: options/theme-options.php:2067
+#: options/theme-options.php:1999
 msgid ""
 "The \"Broadcast\" icon will be displayed on the left side of the "
 "announcement bar"
 msgstr "アナウンスバーの左側に「ブロードキャスト」アイコンが表示されます。"
 
-#: options/theme-options.php:2074
+#: options/theme-options.php:2006
 msgid "Bulletin Board Background"
 msgstr "掲示板の背景"
 
-#: options/theme-options.php:2079
+#: options/theme-options.php:2011
 msgid "Best width 820px, best height 67px"
 msgstr "最高の幅820px、最高の高さ67px"
 
-#: options/theme-options.php:2087
+#: options/theme-options.php:2019
 msgid "Bulletin Board Border Color"
 msgstr "掲示板のボーダー色"
 
-#: options/theme-options.php:2099
+#: options/theme-options.php:2031
 msgid "Bulletin Board Text"
 msgstr "掲示板のテキスト"
 
-#: options/theme-options.php:2101
+#: options/theme-options.php:2033
 msgid "Fill in the announcement text, the text beyond 142 bytes will be hidden"
 msgstr ""
 "アナウンステキストを入力すると、142 バイトを超えるテキストが非表示になります"
 
-#: options/theme-options.php:2107
+#: options/theme-options.php:2039
 msgid "Bulletin Board Alignment"
 msgstr "掲示板のアライメント"
 
-#: options/theme-options.php:2120
+#: options/theme-options.php:2052
 msgid "Bulletin Board Text Color"
 msgstr "掲示板のテキストの色"
 
-#: options/theme-options.php:2122 options/theme-options.php:2171
-#: options/theme-options.php:2474
+#: options/theme-options.php:2054 options/theme-options.php:2103
+#: options/theme-options.php:2406
 msgid ""
 "Customize the colors, suggest using a corresponding color with the "
 "background color"
 msgstr "背景色に対応する色を使用して、色をカスタマイズする"
 
-#: options/theme-options.php:2128
+#: options/theme-options.php:2060
 msgid "Area Title"
 msgstr "エリアタイトル"
 
-#: options/theme-options.php:2134
+#: options/theme-options.php:2066
 msgid "Display Area Title"
 msgstr "表示領域のタイトル"
 
-#: options/theme-options.php:2135
+#: options/theme-options.php:2067
 msgid ""
 "Default is \"Display\", you can change it to anything else, but of course it "
 "CANNOT be used as an ad! Not allowed!!!"
@@ -2526,11 +2437,11 @@ msgstr ""
 "デフォルトは「ディスプレイ」ですが、他の何かに変更できますが、もちろん広告と"
 "して使用することはできません!禁じられた！！！"
 
-#: options/theme-options.php:2142
+#: options/theme-options.php:2074
 msgid "Post Area Title"
 msgstr "ポストエリアタイトル"
 
-#: options/theme-options.php:2143
+#: options/theme-options.php:2075
 msgid ""
 "Default is \"Article\", you can change it to anything else, but of course it "
 "CANNOT be used as an ad! Not allowed!!!"
@@ -2538,43 +2449,43 @@ msgstr ""
 "デフォルトは「ディスプレイ」ですが、他の何かに変更できますが、もちろん広告と"
 "して使用することはできません!禁じられた！！！"
 
-#: options/theme-options.php:2150
+#: options/theme-options.php:2082
 msgid "Area Title Font"
 msgstr "エリア タイトル フォント"
 
-#: options/theme-options.php:2151
+#: options/theme-options.php:2083
 msgid "Fill in the font name. For example: Noto Serif SC"
 msgstr "フォント名を入力します。例: ノトセリフSC"
 
-#: options/theme-options.php:2158
+#: options/theme-options.php:2090
 msgid "Area Title Alignment"
 msgstr "エリア タイトルの配置"
 
-#: options/theme-options.php:2170
+#: options/theme-options.php:2102
 msgid "Area Title Bottom Color"
 msgstr "エリア タイトル ボトム カラー"
 
-#: options/theme-options.php:2180 options/theme-options.php:2237
+#: options/theme-options.php:2112 options/theme-options.php:2169
 msgid "Display Area Options"
 msgstr "表示領域オプション"
 
-#: options/theme-options.php:2187
+#: options/theme-options.php:2119
 msgid "Display Area"
 msgstr "表示領域"
 
-#: options/theme-options.php:2188
+#: options/theme-options.php:2120
 msgid "Enabled by default, display area is above article area"
 msgstr "デフォルトで有効に設定すると、表示領域は記事領域の上にあります"
 
-#: options/theme-options.php:2195
+#: options/theme-options.php:2127
 msgid "Display Area Style"
 msgstr "表示領域スタイル"
 
-#: options/theme-options.php:2206
+#: options/theme-options.php:2138
 msgid "Display Area Compatibility Mode"
 msgstr "表示領域の互換モード"
 
-#: options/theme-options.php:2208
+#: options/theme-options.php:2140
 msgid ""
 "Enabled by default, this option avoids the problem of misaligned display "
 "areas"
@@ -2582,182 +2493,182 @@ msgstr ""
 "デフォルトで有効になっている場合、このオプションを使用すると、表示領域の位置"
 "がずれる問題を回避できます。"
 
-#: options/theme-options.php:2215
+#: options/theme-options.php:2147
 msgid "Display Area Background Color"
 msgstr "表示領域の背景色"
 
-#: options/theme-options.php:2224
+#: options/theme-options.php:2156
 msgid "Display Area Rounded Corners"
 msgstr "表示領域丸いコーナー"
 
-#: options/theme-options.php:2240
+#: options/theme-options.php:2172
 msgid "First Display Area"
 msgstr "最初の表示領域"
 
-#: options/theme-options.php:2245 options/theme-options.php:2271
-#: options/theme-options.php:2297
+#: options/theme-options.php:2177 options/theme-options.php:2203
+#: options/theme-options.php:2229
 msgid "image"
 msgstr "画像"
 
-#: options/theme-options.php:2246 options/theme-options.php:2272
-#: options/theme-options.php:2298
+#: options/theme-options.php:2178 options/theme-options.php:2204
+#: options/theme-options.php:2230
 msgid "best width 260px, best height 160px"
 msgstr "最高の幅260px、最高の高さ160px"
 
-#: options/theme-options.php:2251 options/theme-options.php:2277
-#: options/theme-options.php:2303
+#: options/theme-options.php:2183 options/theme-options.php:2209
+#: options/theme-options.php:2235
 msgid "title"
 msgstr "タイトル"
 
-#: options/theme-options.php:2256 options/theme-options.php:2282
-#: options/theme-options.php:2308
+#: options/theme-options.php:2188 options/theme-options.php:2214
+#: options/theme-options.php:2240
 msgid "description"
 msgstr "説明"
 
-#: options/theme-options.php:2266
+#: options/theme-options.php:2198
 msgid "Second Display Area"
 msgstr "2 番目の表示領域"
 
-#: options/theme-options.php:2292
+#: options/theme-options.php:2224
 msgid "Third Display Area"
 msgstr "第3表示領域"
 
-#: options/theme-options.php:2339
+#: options/theme-options.php:2271
 msgid "Article Area Options"
 msgstr "アーティクルエリアオプション"
 
-#: options/theme-options.php:2346
+#: options/theme-options.php:2278
 msgid "Article Area Display Style"
 msgstr "記事エリアの表示スタイル"
 
-#: options/theme-options.php:2357
+#: options/theme-options.php:2289
 msgid "Article Area Featured Image Display Shapes"
 msgstr "記事エリアの注目画像表示図形"
 
-#: options/theme-options.php:2359
+#: options/theme-options.php:2291
 msgid ""
 "You can choose a circular or a rectangular display of the featured image"
 msgstr ""
 "あなたは、円形の表示または注目の画像で飾られた記事領域の長方形の表示の間で選"
 "択することができます"
 
-#: options/theme-options.php:2370
+#: options/theme-options.php:2302
 msgid "Article Area Featured Image Alignment"
 msgstr "記事エリアの注目画像配置"
 
-#: options/theme-options.php:2372
+#: options/theme-options.php:2304
 msgid "You can choose different directions to display the featured images"
 msgstr ""
 "あなたは、特色画像で飾られた記事エリアを表示するために、さまざまな方向を選択"
 "することができます"
 
-#: options/theme-options.php:2384
+#: options/theme-options.php:2316
 msgid "Article Area Featured Image Options"
 msgstr "アーティクルエリアの注目画像オプション"
 
-#: options/theme-options.php:2386
+#: options/theme-options.php:2318
 msgid "Cover Random Image"
 msgstr "ランダム画像をカバー"
 
-#: options/theme-options.php:2387
+#: options/theme-options.php:2319
 msgid "External API Random Image"
 msgstr "外部 API のランダム イメージ"
 
-#: options/theme-options.php:2395
+#: options/theme-options.php:2327
 msgid "Article Area Featured Image External API Random Image Address"
 msgstr "記事特集画像外部 API ランダムイメージアドレス"
 
-#: options/theme-options.php:2405
+#: options/theme-options.php:2337
 msgid "Article Area Title Font Size"
 msgstr "アーティクル領域のタイトルのフォント サイズ"
 
-#: options/theme-options.php:2406
+#: options/theme-options.php:2338
 msgid "Slide to adjust, the recommended value range is 16-20"
 msgstr "調整するスライド、推奨値の範囲は 16-20 です"
 
-#: options/theme-options.php:2418
+#: options/theme-options.php:2350
 msgid "Article Area Time Display Area Background Color"
 msgstr "記事エリア時間表示領域背景色"
 
-#: options/theme-options.php:2420
+#: options/theme-options.php:2352
 msgid ""
 "Customize the colors, it is recommended to use a light color corresponding "
 "with the main color"
 msgstr ""
 "色をカスタマイズし、テーマの色に対応する明るい色を使用することをお勧めします"
 
-#: options/theme-options.php:2427
+#: options/theme-options.php:2359
 msgid "Article Area Time Display Area Text Color"
 msgstr "記事エリア時間表示領域テキストの色"
 
-#: options/theme-options.php:2429 options/theme-options.php:2465
+#: options/theme-options.php:2361 options/theme-options.php:2397
 msgid "Customize the colors, suggest the same as the matching color"
 msgstr "色をカスタマイズし、一致する色と同じものを提案する"
 
-#: options/theme-options.php:2436
+#: options/theme-options.php:2368
 msgid "Article Area Time Display Area Font Size"
 msgstr "アーティクルエリア時刻表示領域のフォントサイズ"
 
-#: options/theme-options.php:2438
+#: options/theme-options.php:2370
 msgid "Slide to adjust, the recommended values range is 10-14"
 msgstr "スライドして調整し、推奨値の範囲は 10 ~ 14"
 
-#: options/theme-options.php:2449
+#: options/theme-options.php:2381
 msgid "Article Area \"Detail\" Icon"
 msgstr "記事エリア「詳細」アイコン"
 
-#: options/theme-options.php:2450
+#: options/theme-options.php:2382
 msgid ""
 "When enabled the \"Detail\" icon will be displayed below the article area"
 msgstr "有効にすると、記事領域の下に「詳細」アイコンが表示されます。"
 
-#: options/theme-options.php:2455
+#: options/theme-options.php:2387
 msgid "Article Area Author Info"
 msgstr "記事エリア作成者情報"
 
-#: options/theme-options.php:2456
+#: options/theme-options.php:2388
 msgid ""
 "When turned on, author information will be added to the article metadata "
 "section."
 msgstr "オンにすると、作成者情報が記事のメタデータ セクションに追加されます。"
 
-#: options/theme-options.php:2463
+#: options/theme-options.php:2395
 msgid "Article Area Icon Color"
 msgstr "記事領域アイコンの色"
 
-#: options/theme-options.php:2472
+#: options/theme-options.php:2404
 msgid "Article Area Border Shadow Color"
 msgstr "記事領域の境界線の影の色"
 
-#: options/theme-options.php:2483
+#: options/theme-options.php:2415
 msgid "Page Options"
 msgstr "ページオプション"
 
-#: options/theme-options.php:2489
+#: options/theme-options.php:2421
 msgid "Common Options"
 msgstr "一般的なオプション"
 
-#: options/theme-options.php:2496
+#: options/theme-options.php:2428
 msgid "Page Style"
 msgstr "ページスタイル"
 
-#: options/theme-options.php:2507
+#: options/theme-options.php:2439
 msgid "Page Layout Style"
 msgstr "固定ページレイアウトスタイル"
 
-#: options/theme-options.php:2509
+#: options/theme-options.php:2441
 msgid "Default Style"
 msgstr "既定のスタイル"
 
-#: options/theme-options.php:2510
+#: options/theme-options.php:2442
 msgid "Github Style"
 msgstr "ギトハブスタイル"
 
-#: options/theme-options.php:2518
+#: options/theme-options.php:2450
 msgid "Page Decoration Image"
 msgstr "ページ装飾イメージ"
 
-#: options/theme-options.php:2519
+#: options/theme-options.php:2451
 msgid ""
 "Enabled by default, show on article pages, standalone pages and category "
 "pages"
@@ -2765,28 +2676,28 @@ msgstr ""
 "既定で有効に設定されている、記事ページ、スタンドアロン ページ、カテゴリ ペー"
 "ジに表示する"
 
-#: options/theme-options.php:2526
+#: options/theme-options.php:2458
 msgid "Page Title Animation"
 msgstr "ページ タイトル アニメーション"
 
-#: options/theme-options.php:2527
+#: options/theme-options.php:2459
 msgid "Page title will have float-in animation when turned on"
 msgstr ""
 "オンにすると、ページ タイトルにフロートイン アニメーションが表示されます。"
 
-#: options/theme-options.php:2534
+#: options/theme-options.php:2466
 msgid "Page Title Animation Time"
 msgstr "ページ タイトル アニメーション時間"
 
-#: options/theme-options.php:2536
+#: options/theme-options.php:2468
 msgid "Slide to adjust, recommended value range is 1-2"
 msgstr "調整するスライド、推奨値の範囲は1-2"
 
-#: options/theme-options.php:2546
+#: options/theme-options.php:2478
 msgid "Page Clipboard Copyright Notice"
 msgstr "ページクリップボードの著作権情報"
 
-#: options/theme-options.php:2547
+#: options/theme-options.php:2479
 msgid ""
 "Enabled by default, users will have copyright notice text when copying text "
 "content over 30 bytes"
@@ -2794,11 +2705,11 @@ msgstr ""
 "デフォルトで有効に設定すると、30 バイトを超えるテキストコンテンツをコピーする"
 "際に、ユーザーは著作権情報のテキストを表示します。"
 
-#: options/theme-options.php:2554
+#: options/theme-options.php:2486
 msgid "Page LazyLoad"
 msgstr "ページ遅延読み込み"
 
-#: options/theme-options.php:2555
+#: options/theme-options.php:2487
 msgid ""
 "LazyLoad effect for page images, WordPress block editor already comes with "
 "similar effect, not recommended to turn on"
@@ -2806,11 +2717,11 @@ msgstr ""
 "ページ画像のレイジーロード効果は、WordPressブロックエディタは、すでに同様の効"
 "果が付属しています、 オンにすることはお勧めしません"
 
-#: options/theme-options.php:2562
+#: options/theme-options.php:2494
 msgid "Page LazyLoad Placeholder SVG"
 msgstr "ページレイジーロードプレースホルダSVG"
 
-#: options/theme-options.php:2564
+#: options/theme-options.php:2496
 msgid ""
 "Fill in the address, this is the placeholder image that will be displayed "
 "when the page LazyLoad is being loaded"
@@ -2818,11 +2729,11 @@ msgstr ""
 "アドレスを入力すると、これはページ LazyLoad が読み込まれるときに表示されるプ"
 "レースホルダイメージです。"
 
-#: options/theme-options.php:2571
+#: options/theme-options.php:2503
 msgid "Page Image Placeholder SVG"
 msgstr "ページイメージ読み込みプレースホルダ SVG"
 
-#: options/theme-options.php:2572
+#: options/theme-options.php:2504
 msgid ""
 "Fill address, this is the SVG that will be displayed as a placeholder when "
 "the page image is being loaded"
@@ -2830,15 +2741,15 @@ msgstr ""
 "塗りつぶしアドレス、これはページ画像がロードされたときにプレースホルダとして"
 "表示されるSVGです"
 
-#: options/theme-options.php:2581
+#: options/theme-options.php:2513
 msgid "Article Page Options"
 msgstr "アーティクル ページのオプション"
 
-#: options/theme-options.php:2588
+#: options/theme-options.php:2520
 msgid "Article Page Title Font Size"
 msgstr "記事ページタイトルフォントサイズ"
 
-#: options/theme-options.php:2589
+#: options/theme-options.php:2521
 msgid ""
 "Slide to adjust, recommended value range is 28-36. This option is only "
 "available for article pages that have a featured image set"
@@ -2846,11 +2757,11 @@ msgstr ""
 "調整するスライド、推奨値の範囲は 28 -36 です。このオプションは、注目の画像"
 "セットを持つ記事ページでのみ使用できます。"
 
-#: options/theme-options.php:2599
+#: options/theme-options.php:2531
 msgid "Article Page Title Underline Animation"
 msgstr "記事ページタイトル下線アニメーション"
 
-#: options/theme-options.php:2600
+#: options/theme-options.php:2532
 msgid ""
 "Article title will have underline animation when this is enabled and article "
 "has a featured image set"
@@ -2858,70 +2769,70 @@ msgstr ""
 "これが有効で、記事に注目の画像セットがある場合、記事のタイトルには下線のアニ"
 "メーションが表示されます。"
 
-#: options/theme-options.php:2607
+#: options/theme-options.php:2539
 msgid "Article Page Auto Show Menu"
 msgstr "アーティクルページの自動表示メニュー"
 
-#: options/theme-options.php:2608
+#: options/theme-options.php:2540
 msgid "Enabled by default, the article page will automatically show the menu"
 msgstr ""
 "既定で有効になっている場合、記事ページには自動的にメニューが表示されます。"
 
-#: options/theme-options.php:2615
+#: options/theme-options.php:2547
 msgid "Article Page Prev/Next Article Switcher"
 msgstr "記事ページ前/次の記事スイッチャー"
 
-#: options/theme-options.php:2616
+#: options/theme-options.php:2548
 msgid ""
 "After turning on, the previous and next article switch will appear on the "
 "article pages"
 msgstr "記事ページをオンにすると、前の記事と次の記事の切り替えが表示されます"
 
-#: options/theme-options.php:2623
+#: options/theme-options.php:2555
 msgid "Article Page Copyright Tips and Labels"
 msgstr "記事ページの著作権のヒントとラベル"
 
-#: options/theme-options.php:2624
+#: options/theme-options.php:2556
 msgid "Copyright hint and label will appear on article pages when enabled"
 msgstr "著作権のヒントとラベルは、オンにすると記事ページに表示されます"
 
-#: options/theme-options.php:2631
+#: options/theme-options.php:2563
 msgid "Article Page Author Info"
 msgstr "記事ページの作成者情報"
 
-#: options/theme-options.php:2632
+#: options/theme-options.php:2564
 msgid "Author information will appear on the article page when enabled"
 msgstr "作成者情報は、オンにした後、記事ページに表示されます。"
 
-#: options/theme-options.php:2639
+#: options/theme-options.php:2571
 msgid "Article Page Author Info Signature Field Text"
 msgstr "記事ページ作成者情報署名フィールドテキスト"
 
-#: options/theme-options.php:2648
+#: options/theme-options.php:2580
 msgid "Article Page Appreciation Button (Alipay QR Code)"
 msgstr "記事ページ感謝ボタン(アリペイQRコード)"
 
-#: options/theme-options.php:2649
+#: options/theme-options.php:2581
 msgid "Upload Alipay Receipt QR Code Image"
 msgstr "アップロード アリペイレシート QR コードイメージ"
 
-#: options/theme-options.php:2656
+#: options/theme-options.php:2588
 msgid "Article Page Appreciation Button (Wechat QR Code)"
 msgstr "記事ページ感謝ボタン(ウェチャットQRコード)"
 
-#: options/theme-options.php:2657
+#: options/theme-options.php:2589
 msgid "Upload WeChat Receipt QR Code Image"
 msgstr "WeChatの領収書QRコード画像をアップロード"
 
-#: options/theme-options.php:2666
+#: options/theme-options.php:2598
 msgid "Template Page Options"
 msgstr "テンプレート ページのオプション"
 
-#: options/theme-options.php:2673
+#: options/theme-options.php:2605
 msgid "Template Page Title Font Size"
 msgstr "テンプレート ページ タイトルのフォント サイズ"
 
-#: options/theme-options.php:2674
+#: options/theme-options.php:2606
 msgid ""
 "Slide to adjust, recommended value range is 36-48. This option is only "
 "available for template pages with featured images already set"
@@ -2929,68 +2840,68 @@ msgstr ""
 "調整するスライド、推奨値の範囲は 36 から 48 です。このオプションは、既に設定"
 "されている注目の画像を含むテンプレートページでのみ使用できます。"
 
-#: options/theme-options.php:2684
+#: options/theme-options.php:2616
 msgid "Ideas Template Background ColorⅠ"
 msgstr "アイデアテンプレートの背景色I."
 
-#: options/theme-options.php:2692
+#: options/theme-options.php:2624
 msgid "Ideas Template Background Color II"
 msgstr "アイデアテンプレート背景色II"
 
-#: options/theme-options.php:2700
+#: options/theme-options.php:2632
 msgid "Ideas Template Tip Arrow"
 msgstr "アイデア テンプレート ヒント矢印"
 
-#: options/theme-options.php:2701
+#: options/theme-options.php:2633
 msgid ""
 "After turning on the alert arrow will appear on the left side of the comment"
 msgstr "警告矢印をオンにすると、コメントの左側に表示されます"
 
-#: options/theme-options.php:2708
+#: options/theme-options.php:2640
 msgid "Ideas Template Font"
 msgstr "アイデアテンプレートフォント"
 
-#: options/theme-options.php:2717
+#: options/theme-options.php:2649
 #, fuzzy
 #| msgid "Theme Update Source"
 msgid "Bangumi Template Source"
 msgstr "テーマの更新元"
 
-#: options/theme-options.php:2728
+#: options/theme-options.php:2660
 #, fuzzy
 #| msgid "Email Username"
 msgid "My Anime List Username"
 msgstr "電子メールユーザー名"
 
-#: options/theme-options.php:2730
+#: options/theme-options.php:2662
 #, fuzzy
 msgid "Username on https://myanimelist.net/"
 msgstr "https://myanimelist.net/ のユーザー名"
 
-#: options/theme-options.php:2737
+#: options/theme-options.php:2669
 #, fuzzy
 msgid "My Anime List Sort"
 msgstr "私のアニメリストソート"
 
-#: options/theme-options.php:2740
+#: options/theme-options.php:2672
 #, fuzzy
 msgid "Status and Last Updated"
 msgstr "ステータスと最終更新日"
 
-#: options/theme-options.php:2741
+#: options/theme-options.php:2673
 msgid "Last Updated"
 msgstr "最終更新"
 
-#: options/theme-options.php:2742
+#: options/theme-options.php:2674
 msgid "Status"
 msgstr "ステータス"
 
-#: options/theme-options.php:2750
+#: options/theme-options.php:2682
 #, fuzzy
 msgid "Bilibili Account UID"
 msgstr "Bilibili Account UID"
 
-#: options/theme-options.php:2751
+#: options/theme-options.php:2683
 msgid ""
 "Fill in your account ID, e.g. https://space.bilibili.com/13972644/, just the "
 "number part \"13972644\""
@@ -2998,13 +2909,13 @@ msgstr ""
 "アカウント ID (例 https://space.bilibili.com/13972644/)を記入し、番号部分 "
 "「13972644」"
 
-#: options/theme-options.php:2758
+#: options/theme-options.php:2690
 #, fuzzy
 #| msgid "Bilibili Bangumi Catch-up Template Account Cookies"
 msgid "Bilibili Account Cookies"
 msgstr "ビリビリバングミキャッチアップテンプレートアカウントクッキー"
 
-#: options/theme-options.php:2759
+#: options/theme-options.php:2691
 msgid ""
 "Fill in your account cookies, F12 to open your browser web panel, go to your "
 "bilibili homepage to get cookies. If left empty, it will not show the "
@@ -3014,61 +2925,61 @@ msgstr ""
 "ムページにアクセスしてクッキーを取得します。空のままにした場合、バングミを追"
 "いつぶの進行状況は表示されません"
 
-#: options/theme-options.php:2766
+#: options/theme-options.php:2698
 msgid "Friend Link Template Unit Alignment"
 msgstr "フレンド リンク テンプレート ユニットの配置"
 
-#: options/theme-options.php:2778
+#: options/theme-options.php:2710
 msgid "Login Template Registration Function"
 msgstr "ログインテンプレート登録機能"
 
-#: options/theme-options.php:2779
+#: options/theme-options.php:2711
 msgid "Login template will allow registration when enabled"
 msgstr "ログインテンプレートは、有効にした場合に登録を許可します"
 
-#: options/theme-options.php:2788
+#: options/theme-options.php:2720
 msgid "Comment-related Options"
 msgstr "コメント関連のオプション"
 
-#: options/theme-options.php:2795
+#: options/theme-options.php:2727
 msgid "Page Comment Area Display"
 msgstr "ページコメントエリア表示"
 
-#: options/theme-options.php:2796
+#: options/theme-options.php:2728
 msgid "You can choose to expand or shirink the content of the comment area"
 msgstr "コメントエリアのコンテンツを拡大またはリンクすることができます"
 
-#: options/theme-options.php:2798
+#: options/theme-options.php:2730
 msgid "Expand"
 msgstr "拡張"
 
-#: options/theme-options.php:2799
+#: options/theme-options.php:2731
 msgid "Shrink"
 msgstr "縮める"
 
-#: options/theme-options.php:2807
+#: options/theme-options.php:2739
 msgid "Page Comment Area Bilibili Emoji Pack"
 msgstr "ページコメントエリアビリビリ絵文字パック"
 
-#: options/theme-options.php:2808
+#: options/theme-options.php:2740
 msgid "Default on, bilibili emotions are displayed below the comment box"
 msgstr "デフォルトでは、ビリビリビの感情はコメントボックスの下に表示されます"
 
-#: options/theme-options.php:2815
+#: options/theme-options.php:2747
 msgid "Page Comment Area Bottom Right Background Image"
 msgstr "ページコメント領域右下背景画像"
 
-#: options/theme-options.php:2816
+#: options/theme-options.php:2748
 msgid ""
 "If this option is blank, there will be no image, no best recommendation here"
 msgstr ""
 "このオプションが空白の場合、画像はなく、ここでは最善の推奨事項はありません"
 
-#: options/theme-options.php:2823
+#: options/theme-options.php:2755
 msgid "Page Comment Area UA Info"
 msgstr "ページコメントエリア UA 情報"
 
-#: options/theme-options.php:2824
+#: options/theme-options.php:2756
 msgid ""
 "When enabled, the page comment area will display the user’s browser, "
 "operating system information"
@@ -3076,20 +2987,20 @@ msgstr ""
 "有効にすると、ページコメント領域にユーザーのブラウザ、オペレーティング システ"
 "ムの情報が表示されます。"
 
-#: options/theme-options.php:2831
+#: options/theme-options.php:2763
 msgid "Page Comment Area Location Information"
 msgstr "ページコメントエリアの位置情報"
 
-#: options/theme-options.php:2832
+#: options/theme-options.php:2764
 msgid ""
 "When enabled, the page comment area will show the user’s location information"
 msgstr "有効にすると、ページコメント領域にユーザーの位置情報が表示されます。"
 
-#: options/theme-options.php:2839
+#: options/theme-options.php:2771
 msgid "Page Comment Area IP Source"
 msgstr "ページコメントエリア UA 情報"
 
-#: options/theme-options.php:2840
+#: options/theme-options.php:2772
 msgid ""
 "You can choose the theme self built IP library or Taobao IP library as the "
 "comment location information source"
@@ -3097,19 +3008,19 @@ msgstr ""
 "あなたは、コメントの場所の情報源としてテーマ自己構築IPライブラリまたはTaobao "
 "IPライブラリを選択することができます"
 
-#: options/theme-options.php:2842
+#: options/theme-options.php:2774
 msgid "Theme Self Built IP Lib"
 msgstr "テーマ自己構築IP Lib"
 
-#: options/theme-options.php:2843
+#: options/theme-options.php:2775
 msgid "Taobao IP Lib"
 msgstr "タオバオIPリブ"
 
-#: options/theme-options.php:2851
+#: options/theme-options.php:2783
 msgid "Private Comment Function"
 msgstr "プライベートコメント機能"
 
-#: options/theme-options.php:2852
+#: options/theme-options.php:2784
 msgid ""
 "When enabled, users are allowed to set their comments to be invisible to "
 "others"
@@ -3117,40 +3028,40 @@ msgstr ""
 "有効にすると、ユーザーはコメントを他のユーザーに表示できないように設定できま"
 "す。"
 
-#: options/theme-options.php:2859
+#: options/theme-options.php:2791
 msgid "Page Comment Area Bot Verification"
 msgstr "ページコメントエリアボットの検証"
 
-#: options/theme-options.php:2860
+#: options/theme-options.php:2792
 msgid "After turning on user comments need to be verified before posting"
 msgstr "ユーザーコメントをオンにした後、投稿する前に確認する必要があります"
 
-#: options/theme-options.php:2867
+#: options/theme-options.php:2799
 msgid "QQ Avatar Link Encryption"
 msgstr "QQアバターリンクの暗号化"
 
-#: options/theme-options.php:2870
+#: options/theme-options.php:2802
 msgid "Redirect (low security)"
 msgstr "リダイレクト (低セキュリティ)"
 
-#: options/theme-options.php:2871
+#: options/theme-options.php:2803
 msgid "Get avatar data in the backend (medium security)"
 msgstr "バックエンドでアバターデータを取得する(中程度のセキュリティ)"
 
-#: options/theme-options.php:2872
+#: options/theme-options.php:2804
 msgid "Parse avatar interface in the backend (high security, slow)"
 msgstr ""
 "バックエンドでアバターインターフェイスを解析する(高いセキュリティ、遅い)"
 
-#: options/theme-options.php:2880
+#: options/theme-options.php:2812
 msgid "Page Comment Area Upload Image Interface"
 msgstr "ページコメントエリアアップロード画像インタフェース"
 
-#: options/theme-options.php:2894
+#: options/theme-options.php:2826
 msgid "Imgur Client ID"
 msgstr "Imgur クライアント ID"
 
-#: options/theme-options.php:2896
+#: options/theme-options.php:2828
 msgid ""
 "Fill in Client ID here, to register please visit https://api.imgur.com/"
 "oauth2/addclient"
@@ -3158,11 +3069,11 @@ msgstr ""
 "クライアントIDをここに記入し、登録するには https://api.imgur.com/oauth2/"
 "addclient"
 
-#: options/theme-options.php:2902
+#: options/theme-options.php:2834
 msgid "Imgur Upload Proxy"
 msgstr "Imgur アップロード プロキシ"
 
-#: options/theme-options.php:2904
+#: options/theme-options.php:2836
 msgid ""
 "The proxy used by the backend when uploading images to Imgur. You can refer "
 "to the tutorial: https://2heng.xin/2018/06/06/javascript-upload-images-with-"
@@ -3172,21 +3083,21 @@ msgstr ""
 "チュートリアルを参照できます https://2heng.xin/2018/06/06/javascript-upload-"
 "images-with-imgur-api/。"
 
-#: options/theme-options.php:2911
+#: options/theme-options.php:2843
 msgid "SM.MS Secret Token"
 msgstr "SM.MS シークレットトークン"
 
-#: options/theme-options.php:2913
+#: options/theme-options.php:2845
 msgid ""
 "Fill in your Key here, to get it please visit https://sm.ms/home/apitoken"
 msgstr ""
 "鍵をここに記入してください、それを得るためには https://sm.ms/home/apitoken"
 
-#: options/theme-options.php:2919
+#: options/theme-options.php:2851
 msgid "Chevereto API v1 Key"
 msgstr "チェベレト API v1 キー"
 
-#: options/theme-options.php:2921
+#: options/theme-options.php:2853
 msgid ""
 "Fill in the Key here, to get please visit your Chevereto home page address/"
 "dashboard/settings/api"
@@ -3194,11 +3105,11 @@ msgstr ""
 "ここにキーを記入してください、取得するためにあなたのChhereetoホームページアド"
 "レス/ダッシュボード/設定/APIをご覧ください"
 
-#: options/theme-options.php:2927
+#: options/theme-options.php:2859
 msgid "Chevereto Address"
 msgstr "チェヴェレトアドレス"
 
-#: options/theme-options.php:2929
+#: options/theme-options.php:2861
 msgid ""
 "Your Chevereto home page address. Please note that there is no \"/\" at the "
 "end, e.g. https://your.cherverto.com"
@@ -3206,11 +3117,11 @@ msgstr ""
 "あなたのチェベレトのホームページのアドレス。最後に「/」は存在しませんので、"
 "https://your.cherverto.com"
 
-#: options/theme-options.php:2935
+#: options/theme-options.php:2867
 msgid "Lsky Pro v1 Token"
 msgstr "Lsky Pro v1トークン"
 
-#: options/theme-options.php:2937
+#: options/theme-options.php:2869
 msgid ""
 "Fill in the Token here, Please note that there is no \"Bearer \" at first, "
 "to get please visit your Lsky Pro home page address/api"
@@ -3218,11 +3129,11 @@ msgstr ""
 "ここにトークンを記入してください、最初は \"ベアラー\"がないことに注意してくだ"
 "さい、あなたのLsky Proホームページのアドレス/ APIにアクセスしてください"
 
-#: options/theme-options.php:2943
+#: options/theme-options.php:2875
 msgid "Lsky Pro Address"
 msgstr "Lsky Proアドレス"
 
-#: options/theme-options.php:2945
+#: options/theme-options.php:2877
 msgid ""
 "Your Lsky Pro home page address. Please note that there is no \"/\" at the "
 "end, e.g. https://your.lskypro.com"
@@ -3230,27 +3141,27 @@ msgstr ""
 "Lsky Proのホームページアドレス。末尾に「/」はありませんのでご注意くださ "
 "https://your.lskypro.com"
 
-#: options/theme-options.php:2951
+#: options/theme-options.php:2883
 msgid "Comment Image Proxy"
 msgstr "コメントイメージプロキシ"
 
-#: options/theme-options.php:2952
+#: options/theme-options.php:2884
 msgid "Proxy for the image displayed on the frontend"
 msgstr "フロントエンドに表示されるイメージのプロキシ"
 
-#: options/theme-options.php:2959
+#: options/theme-options.php:2891
 msgid "Mail Template Featured Image"
 msgstr "メール テンプレートの注目画像"
 
-#: options/theme-options.php:2960
+#: options/theme-options.php:2892
 msgid "Set the background image of your reply email"
 msgstr "返信メールの背景画像を設定する"
 
-#: options/theme-options.php:2968
+#: options/theme-options.php:2900
 msgid "Mail Template Sending Address Prefix"
 msgstr "メール テンプレート送信アドレス プレフィックス"
 
-#: options/theme-options.php:2969
+#: options/theme-options.php:2901
 msgid ""
 "Used to send system mail. The sender address will be displayed in the user's "
 "mailbox, don't use Non-English Characters. The default system mail address "
@@ -3260,11 +3171,11 @@ msgstr ""
 "クスに表示され、英語以外の文字は使用されません。デフォルトのシステムメールア"
 "ドレスはドメインbibi@your"
 
-#: options/theme-options.php:2976
+#: options/theme-options.php:2908
 msgid "User Mail Reply Notification"
 msgstr "ユーザー メール返信通知"
 
-#: options/theme-options.php:2977
+#: options/theme-options.php:2909
 msgid ""
 "By default WordPress will use email notifications to notify users when their "
 "comments receive a reply. After turning it on users are allowed to set "
@@ -3274,34 +3185,34 @@ msgstr ""
 "たときにユーザーに通知します。オンにすると、コメントが返信を受け取ったときに"
 "電子メール通知を使用するかどうかをユーザーが設定できます"
 
-#: options/theme-options.php:2984
+#: options/theme-options.php:2916
 msgid "Admin Email Reply Notification"
 msgstr "管理者の電子メール返信通知"
 
-#: options/theme-options.php:2985
+#: options/theme-options.php:2917
 msgid ""
 "Use email notifications when admin comments receive a reply after turning it "
 "on"
 msgstr ""
 "管理者のコメントがオンにした後に返信を受信したときに電子メール通知を使用する"
 
-#: options/theme-options.php:2994
+#: options/theme-options.php:2926
 msgid "Other Options"
 msgstr "その他のオプション"
 
-#: options/theme-options.php:3000
+#: options/theme-options.php:2932
 msgid "Login Screen and Dashboard Related Options"
 msgstr "ログイン画面とダッシュボード関連のオプション"
 
-#: options/theme-options.php:3006
+#: options/theme-options.php:2938
 msgid "Login Screen"
 msgstr "ログイン画面のロゴ"
 
-#: options/theme-options.php:3012
+#: options/theme-options.php:2944
 msgid "Login Screen Background Image"
 msgstr "ログイン画面背景画像"
 
-#: options/theme-options.php:3013
+#: options/theme-options.php:2945
 msgid ""
 "Set your login screen background image, leave this option blank to show the "
 "default"
@@ -3309,27 +3220,27 @@ msgstr ""
 "ログイン画面の背景画像を設定し、このオプションを空白のままにしてデフォルトを"
 "表示します。"
 
-#: options/theme-options.php:3021
+#: options/theme-options.php:2953
 msgid "Login Screen Background Blur"
 msgstr "ログイン画面背景ぼかし"
 
-#: options/theme-options.php:3022
+#: options/theme-options.php:2954
 msgid "Login screen background image will be blurred when enabled"
 msgstr "ログイン画面の背景画像が有効になるとぼやける"
 
-#: options/theme-options.php:3029
+#: options/theme-options.php:2961
 msgid "Login Screen Logo"
 msgstr "ログイン画面のロゴ"
 
-#: options/theme-options.php:3030
+#: options/theme-options.php:2962
 msgid "Set your login screen Logo"
 msgstr "ログイン画面のロゴを設定する"
 
-#: options/theme-options.php:3038
+#: options/theme-options.php:2970
 msgid "Jump after login"
 msgstr "ログイン後にジャンプ"
 
-#: options/theme-options.php:3039
+#: options/theme-options.php:2971
 msgid ""
 "Jump to backend for admins and home for users after turning on. Attention: "
 "Only takes effect when logging in from a page with Loggin Template. "
@@ -3338,23 +3249,23 @@ msgstr ""
 "プします。重要: Loggin テンプレートを使用してページからログインする場合にのみ"
 "有効になります。"
 
-#: options/theme-options.php:3046
+#: options/theme-options.php:2978
 msgid "Login Screen Language Option"
 msgstr "ログイン画面の言語オプション"
 
-#: options/theme-options.php:3047
+#: options/theme-options.php:2979
 msgid "Login screen language option will be display when enabled"
 msgstr "ログイン画面の言語オプションを有効にすると表示されます"
 
-#: options/theme-options.php:3053
+#: options/theme-options.php:2985
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: options/theme-options.php:3059
+#: options/theme-options.php:2991
 msgid "Dashboard Background Image"
 msgstr "ダッシュボードの背景画像"
 
-#: options/theme-options.php:3060
+#: options/theme-options.php:2992
 msgid ""
 "Set your dashboard background image, leave this option blank to show white "
 "background"
@@ -3362,82 +3273,82 @@ msgstr ""
 "ダッシュボードの背景画像を設定し、このオプションを空白のままにして白い背景を"
 "表示します。"
 
-#: options/theme-options.php:3068
+#: options/theme-options.php:3000
 msgid "Dashboard Options Menu Style"
 msgstr "ダッシュボード オプション メニュー スタイル"
 
-#: options/theme-options.php:3079
+#: options/theme-options.php:3011
 msgid "Dashboard Primary Menu Color"
 msgstr "ダッシュボードのメインメニューの色"
 
-#: options/theme-options.php:3087
+#: options/theme-options.php:3019
 msgid "Dashboard Secondary Menu Color"
 msgstr "ダッシュボードのセカンダリ メニューの色"
 
-#: options/theme-options.php:3095
+#: options/theme-options.php:3027
 msgid "Dashboard Emphasis Color"
 msgstr "ダッシュボード強調色"
 
-#: options/theme-options.php:3103
+#: options/theme-options.php:3035
 msgid "Dashboard Button Color"
 msgstr "ダッシュボード ボタンの色"
 
-#: options/theme-options.php:3111
+#: options/theme-options.php:3043
 msgid "Dashboard Text Color"
 msgstr "ダッシュボードテキストの色"
 
-#: options/theme-options.php:3120
+#: options/theme-options.php:3052
 msgid "Low Use Options"
 msgstr "低使用オプション"
 
-#: options/theme-options.php:3127
+#: options/theme-options.php:3059
 msgid "Statistics API"
 msgstr "統計 API"
 
-#: options/theme-options.php:3128
+#: options/theme-options.php:3060
 msgid ""
 "You can choose WP-Statistics plugin statistics or theme built-in statistics "
 "to display"
 msgstr ""
 "WP-Statistics プラグイン統計またはテーマ組み込み統計を選択して表示できます。"
 
-#: options/theme-options.php:3130
+#: options/theme-options.php:3062
 msgid "Theme Built in Statistics"
 msgstr "統計に組み込まれたテーマ"
 
-#: options/theme-options.php:3131
+#: options/theme-options.php:3063
 msgid "WP-Statistics Plugin Statistics"
 msgstr "WP-統計プラグイン統計"
 
-#: options/theme-options.php:3139
+#: options/theme-options.php:3071
 msgid "Statistics display format"
 msgstr "統計表示形式"
 
-#: options/theme-options.php:3140
+#: options/theme-options.php:3072
 msgid "You can choose from four different data display formats"
 msgstr "4種類のデータ表示形式から選択できます。"
 
-#: options/theme-options.php:3142
+#: options/theme-options.php:3074
 msgid "23333 Visits"
 msgstr "23333訪問"
 
-#: options/theme-options.php:3143
+#: options/theme-options.php:3075
 msgid "23,333 Visits"
 msgstr "23,333訪問"
 
-#: options/theme-options.php:3144
+#: options/theme-options.php:3076
 msgid "23 333 Visits"
 msgstr "23 333訪問"
 
-#: options/theme-options.php:3145
+#: options/theme-options.php:3077
 msgid "23K Visits"
 msgstr "23K訪問"
 
-#: options/theme-options.php:3153
+#: options/theme-options.php:3085
 msgid "Live Search"
 msgstr "ライブ検索を利用"
 
-#: options/theme-options.php:3154
+#: options/theme-options.php:3086
 msgid ""
 "After turning on the live search in the frontend, call Rest API to update "
 "the cache once an hour. You can set the cache time manually in api.php"
@@ -3445,11 +3356,11 @@ msgstr ""
 "フロントエンドでライブ検索を有効にした後、Rest API を呼び出して 1 時間に 1 回"
 "キャッシュを更新します。api でキャッシュ時間を手動で設定できます.php"
 
-#: options/theme-options.php:3161
+#: options/theme-options.php:3093
 msgid "Live Search Comment Support"
 msgstr "ライブ検索コメントのサポート"
 
-#: options/theme-options.php:3163
+#: options/theme-options.php:3095
 msgid ""
 "Enable to search for comments in live search (not recommended if site has "
 "too many comments)"
@@ -3457,36 +3368,36 @@ msgstr ""
 "ライブ検索でコメントを検索できるようにする (サイトのコメントが多すぎる場合は"
 "推奨されません)"
 
-#: options/theme-options.php:3170
+#: options/theme-options.php:3102
 msgid "Google Analytics Id"
 msgstr "グーグルアナリティクスID"
 
-#: options/theme-options.php:3171
+#: options/theme-options.php:3103
 msgid "If you already have a plugin to handle it, please keep here empty."
 msgstr ""
 "すでにそれを処理するプラグインがある場合は、ここに空のままにしてください。"
 
-#: options/theme-options.php:3177
+#: options/theme-options.php:3109
 msgid "Custom CSS Styles"
 msgstr "カスタム CSS スタイル"
 
-#: options/theme-options.php:3178
+#: options/theme-options.php:3110
 msgid "Fill in the CSS code without writing style tag"
 msgstr "スタイルタグを書かずにCSSコードを入力する"
 
-#: options/theme-options.php:3185
+#: options/theme-options.php:3117
 msgid "Code inserted in the header"
 msgstr "ヘッダーに挿入されたコード"
 
-#: options/theme-options.php:3186
+#: options/theme-options.php:3118
 msgid "Insert HTML code right before </head>."
 msgstr "HTML コードを の直前に挿入します。"
 
-#: options/theme-options.php:3192
+#: options/theme-options.php:3124
 msgid "Timezone Fix"
 msgstr "タイムゾーン修正"
 
-#: options/theme-options.php:3193
+#: options/theme-options.php:3125
 msgid ""
 "Slide to adjust. If the comment has a time difference problem, adjust it "
 "here, fill in an integer. Calculation method: actual time = time of display "
@@ -3495,11 +3406,11 @@ msgstr ""
 "スライドして調整します。コメントに時間差の問題がある場合は、ここで調整し、整"
 "数を入力します。計算方法: 実際の時間 = 表示エラーの時間 - 入力した整数 (時間)"
 
-#: options/theme-options.php:3201
+#: options/theme-options.php:3133
 msgid "Gravatar Service"
 msgstr "グラバタープロキシ"
 
-#: options/theme-options.php:3206
+#: options/theme-options.php:3138
 msgid ""
 "<p><strong>Cravatar Service:</strong> Cravatar Service is an alternative to "
 "Gravatar Service in China. You can upload and share avatars freely. Go to <a "
@@ -3509,11 +3420,11 @@ msgstr ""
 "もの。アバターを自由にアップロードして共有できます。詳細は <a href=\"https://"
 "cravatar.cn/\">公式サイト</a> をご覧ください </p>"
 
-#: options/theme-options.php:3212
+#: options/theme-options.php:3144
 msgid "Gravatar Service Proxy"
 msgstr "グラバタープロキシ"
 
-#: options/theme-options.php:3213
+#: options/theme-options.php:3145
 msgid ""
 "You can select multiple proxy as the Gravatar Service Proxy. By default, "
 "Cravatar Service is used as the Gravatar Service Proxy."
@@ -3521,45 +3432,45 @@ msgstr ""
 "gravatar プロキシとして複数のプロキシを選択できます。デフォルトでは、Geekzu "
 "はグラバター プロキシとして使用されます。"
 
-#: options/theme-options.php:3215
+#: options/theme-options.php:3147
 msgid "Cravatar Service"
 msgstr "グラバタープロキシ"
 
-#: options/theme-options.php:3216
+#: options/theme-options.php:3148
 msgid "Geekzu"
 msgstr "ゲクズ"
 
-#: options/theme-options.php:3217
+#: options/theme-options.php:3149
 msgid "Loli Net"
 msgstr "ロリネット"
 
-#: options/theme-options.php:3218
+#: options/theme-options.php:3150
 msgid "Official"
 msgstr "公式"
 
-#: options/theme-options.php:3219
+#: options/theme-options.php:3151
 msgid "Official CN"
 msgstr "公式の中国ミラー"
 
-#: options/theme-options.php:3226
+#: options/theme-options.php:3158
 msgid "Lightbox"
 msgstr "Lightbox"
 
-#: options/theme-options.php:3232
+#: options/theme-options.php:3164
 msgid "BaguetteBox Lightbox Effect"
 msgstr "バゲットボックスライトボックス効果"
 
-#: options/theme-options.php:3233
+#: options/theme-options.php:3165
 msgid "BaguetteBox will be used as the image lightbox effect when turned on"
 msgstr ""
 "バゲットボックスは、オンにすると、イメージライトボックス効果として使用されま"
 "す"
 
-#: options/theme-options.php:3240
+#: options/theme-options.php:3172
 msgid "FancyBox Lightbox Effect"
 msgstr "ファンシーボックスライトボックス効果"
 
-#: options/theme-options.php:3241
+#: options/theme-options.php:3173
 msgid ""
 "FancyBox will be used as an image lightbox effect after turning on, "
 "additional JQ libraries will be loaded"
@@ -3567,16 +3478,16 @@ msgstr ""
 "ファンシーボックスは、オンにすると、追加のJQライブラリがロードされた後、イ"
 "メージライトボックス効果として使用されます"
 
-#: options/theme-options.php:3249
+#: options/theme-options.php:3181
 msgid "LightGallery Lightbox Effect"
 msgstr "LightGalleryライトボックスエフェクト"
 
-#: options/theme-options.php:3250
+#: options/theme-options.php:3182
 msgid "LightGallery will be used as an image lightbox effect after turning on."
 msgstr ""
 "LightGalleryをオンにすると、画像のライトボックス効果として使用されます。"
 
-#: options/theme-options.php:3256
+#: options/theme-options.php:3188
 msgid ""
 "<strong>Attension: Please read <a href=\"https://github.com/sachinchoolur/"
 "lightGallery#license\">License Instruction</a> before use.</strong><br/"
@@ -3601,7 +3512,7 @@ msgstr ""
 "提出して支援を受けてください。https://github.com/mirai-mamori/Sakurairo/"
 "discussions"
 
-#: options/theme-options.php:3267
+#: options/theme-options.php:3199
 msgid ""
 "Start from Sakurairo v2.4.0, plugins names in LightGallery option follow the "
 "form cite in official document (eg. lgHash instead of \"hash\")"
@@ -3609,15 +3520,15 @@ msgstr ""
 "v2.4.0から始めると、LightGalleryオプションのプラグイン名は公式文書の形式に従"
 "います(例えば「ハッシュ」の代わりにlgHash)"
 
-#: options/theme-options.php:3275
+#: options/theme-options.php:3207
 msgid "LightGallery Lightbox Effect Options"
 msgstr "LightGalleryライトボックス効果のオプション"
 
-#: options/theme-options.php:3286
+#: options/theme-options.php:3218
 msgid "Code Highlighting"
 msgstr "コードの強調表示"
 
-#: options/theme-options.php:3291
+#: options/theme-options.php:3223
 msgid ""
 "<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </"
 "p> <p><strong>Prism.js:</strong> Requires a language to be specified, see <a "
@@ -3633,20 +3544,20 @@ msgstr ""
 "るコードの方法</a>を参照してください。 </p><p><strong>カスタム:</strong> 別の"
 "構成が使用可能な場合。 </p>"
 
-#: options/theme-options.php:3299
+#: options/theme-options.php:3231
 msgid "Code Highlight Method"
 msgstr "コードの強調表示方法"
 
-#: options/theme-options.php:3303
+#: options/theme-options.php:3235
 #, fuzzy
 msgid "Custom Program"
 msgstr "カスタムプログラム"
 
-#: options/theme-options.php:3311
+#: options/theme-options.php:3243
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
 msgstr "プリズム.js: すべてのコードブロックに行番号表示を追加"
 
-#: options/theme-options.php:3315
+#: options/theme-options.php:3247
 msgid ""
 "See the <a href=\"https://prismjs.com/plugins/line-numbers/\">plugin "
 "description documentation</a>"
@@ -3654,28 +3565,28 @@ msgstr ""
 "<a href=\"https://prismjs.com/plugins/line-numbers/\">プラグインの説明のド"
 "キュメント</a>を参照してください。"
 
-#: options/theme-options.php:3321
+#: options/theme-options.php:3253
 msgid "Prism.js: Autoload Address"
 msgstr "プリズム.js: 自動ロードアドレス"
 
-#: options/theme-options.php:3325
+#: options/theme-options.php:3257
 msgid "Leave blank to use default values"
 msgstr "既定値を使用するには空白のままにします。"
 
-#: options/theme-options.php:3332
+#: options/theme-options.php:3264
 msgid "Prism.js: Code Highlight Theme"
 msgstr "プリズム.js: コードハイライトテーマ"
 
-#: options/theme-options.php:3333 options/theme-options.php:3344
+#: options/theme-options.php:3265 options/theme-options.php:3276
 msgid "Relative to autoload address. Leave blank to use default values"
 msgstr ""
 "自動ロード アドレスに対する相対値。既定値を使用するには空白のままにします。"
 
-#: options/theme-options.php:3343
+#: options/theme-options.php:3275
 msgid "Prism.js: Code Highlight Theme (Dark Mode)"
 msgstr "プリズム.js: コードハイライトテーマ(ダークモード)"
 
-#: options/theme-options.php:3354
+#: options/theme-options.php:3286
 msgid ""
 "The following Options are not recommended to be modified blindly, please use "
 "them under the guidance of others"
@@ -3683,11 +3594,11 @@ msgstr ""
 "以下のオプションは、盲目的に変更することは推奨されません、他の人の指導の下で"
 "それらを使用してください"
 
-#: options/theme-options.php:3360
+#: options/theme-options.php:3292
 msgid "Image CDN"
 msgstr "イメージ CDN"
 
-#: options/theme-options.php:3361
+#: options/theme-options.php:3293
 msgid ""
 "Note: fill in the format https://your CDN domain/. This means that images "
 "with original path http://your.domain/wp-content/uploads/2018/05/xx.png will "
@@ -3697,23 +3608,23 @@ msgstr ""
 "http://your.domain/wp-content/uploads/2018/05/xx.png を持つイメージは CDN ド"
 "メイン/2018/05/xx http://your ロードされます.png"
 
-#: options/theme-options.php:3368
+#: options/theme-options.php:3300
 msgid "Articles Categories (Do not display)"
 msgstr "記事のカテゴリ (表示しない)"
 
-#: options/theme-options.php:3369 options/theme-options.php:3376
+#: options/theme-options.php:3301 options/theme-options.php:3308
 msgid "Fill in category ID, seperate in English\" , \" when more than one"
 msgstr "カテゴリ ID を英語で区切って入力する\" と、複数の場合"
 
-#: options/theme-options.php:3375
+#: options/theme-options.php:3307
 msgid "Image Display Category"
 msgstr "画像表示カテゴリ"
 
-#: options/theme-options.php:3382
+#: options/theme-options.php:3314
 msgid "Specify Login Address"
 msgstr "ログイン アドレスの指定"
 
-#: options/theme-options.php:3383
+#: options/theme-options.php:3315
 msgid ""
 "Force not to use the WordPress login page address to login, fill in the new "
 "login page address, such as: http://www.xxx.com/login. Note that before "
@@ -3725,11 +3636,11 @@ msgstr ""
 "いページに記入する前に、通常の開口部をテストして、背景などを入力できなくなる"
 "ように注意してください。"
 
-#: options/theme-options.php:3389
+#: options/theme-options.php:3321
 msgid "Specify Registration Address"
 msgstr "登録アドレスの指定"
 
-#: options/theme-options.php:3390
+#: options/theme-options.php:3322
 msgid ""
 "This address is used as the registration entry on the login page, if you "
 "specify a login address, it is recommended to fill in"
@@ -3737,33 +3648,33 @@ msgstr ""
 "このアドレスはログインページの登録エントリとして使用され、ログインアドレスを"
 "指定した場合は、入力することをお勧めします。"
 
-#: options/theme-options.php:3396
+#: options/theme-options.php:3328
 msgid "Version Control"
 msgstr "バージョン管理システム"
 
-#: options/theme-options.php:3397
+#: options/theme-options.php:3329
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr ""
 "フロントエンドクッキーとブラウザキャッシュを更新するために使用され、任意の文"
 "字列を使用できます"
 
-#: options/theme-options.php:3403
+#: options/theme-options.php:3335
 msgid "Backup&Recovery"
 msgstr "バックアップとリカバリ"
 
-#: options/theme-options.php:3405
+#: options/theme-options.php:3337
 msgid "Backup or Recovery your theme options"
 msgstr "テーマオプションのバックアップまたはリカバリ"
 
-#: options/theme-options.php:3416
+#: options/theme-options.php:3348
 msgid "About Theme"
 msgstr "テーマについて"
 
-#: options/theme-options.php:3422
+#: options/theme-options.php:3354
 msgid "Version Info"
 msgstr "バージョン情報"
 
-#: options/theme-options.php:3427
+#: options/theme-options.php:3359
 #, fuzzy
 msgid ""
 "<img src=\"https://api.qaq.tw/Sakurairo_Vison/series/headlogo.webp\"  alt="
@@ -3772,7 +3683,7 @@ msgstr ""
 "<img src=\"https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/"
 "git/raw/2.4/series/headlogo.webp\"  alt=\"Theme Information\" />"
 
-#: options/theme-options.php:3433
+#: options/theme-options.php:3365
 #, php-format
 msgid ""
 "iro 主题版本 / Theme Version %s | <a href=\"https://github.com/mirai-mamori/"
@@ -3782,15 +3693,15 @@ msgstr ""
 "ント</a>|<a href=\"https://github.com/mirai-mamori/Sakurairo\">ソース アドレ"
 "ス</a>"
 
-#: options/theme-options.php:3438
+#: options/theme-options.php:3370
 msgid "Update Related"
 msgstr "関連する更新プログラム"
 
-#: options/theme-options.php:3444
+#: options/theme-options.php:3376
 msgid "Theme Update Source"
 msgstr "テーマの更新元"
 
-#: options/theme-options.php:3450
+#: options/theme-options.php:3382
 msgid ""
 "If you are using a server set up in mainland China, please use the Upyun "
 "source or the official theme source as your theme update source"
@@ -3798,11 +3709,11 @@ msgstr ""
 "中国本土で設定されたサーバーを使用している場合は、UPYUNソースまたは公式テーマ"
 "ソースをテーマアップデートソースとして使用してください。"
 
-#: options/theme-options.php:3457
+#: options/theme-options.php:3389
 msgid "Theme Update Test Channel Disclaimer"
 msgstr "テーマ更新テスト チャネルの免責事項"
 
-#: options/theme-options.php:3463
+#: options/theme-options.php:3395
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -3814,37 +3725,37 @@ msgstr ""
 "の可能性を含むがこれらに限定されない)すべての結果を自己責任で引き受ける意思が"
 "あることを確認した後、引用符でテキストをコピーしてください<strong>。</strong>"
 
-#: options/theme-options.php:3469
+#: options/theme-options.php:3401
 msgid "Theme Update Channel"
 msgstr "テーマ更新チャネル"
 
-#: options/theme-options.php:3476
+#: options/theme-options.php:3408
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr "更新チャネルを切り替えて、新しいバージョンのテストに参加できます。"
 
-#: options/theme-options.php:3478
+#: options/theme-options.php:3410
 msgid "Stable Channel"
 msgstr "安定したチャネル"
 
-#: options/theme-options.php:3479
+#: options/theme-options.php:3411
 msgid "Beta Channel"
 msgstr "ベータチャンネル"
 
-#: options/theme-options.php:3480
+#: options/theme-options.php:3412
 msgid "Preview Channel"
 msgstr "チャンネルのプレビュー"
 
-#: options/theme-options.php:3487
+#: options/theme-options.php:3419
 msgid "Resource Control"
 msgstr "資源制御"
 
-#: options/theme-options.php:3493
+#: options/theme-options.php:3425
 msgid "Provide Critical Frontend Resource locally"
 msgstr "重要なフロントエンド リソースをローカルに提供する"
 
-#: options/theme-options.php:3494
+#: options/theme-options.php:3426
 msgid ""
 "Enabeld by default. Critical resources are those resources whose loading "
 "performance will have a significant impact on the user experience."
@@ -3852,19 +3763,19 @@ msgstr ""
 "既定ではエナベルド。重要なリソースとは、読み込みパフォーマンスがユーザー エク"
 "スペリエンスに大きな影響を与えるリソースです。"
 
-#: options/theme-options.php:3501
+#: options/theme-options.php:3433
 msgid "Provide Other Frontend Resource locally"
 msgstr "他のフロントエンド リソースをローカルに提供する"
 
-#: options/theme-options.php:3502
+#: options/theme-options.php:3434
 msgid "Less important frontend resource in the theme's folder."
 msgstr "テーマのフォルダー内のあまり重要でないフロント エンド リソース。"
 
-#: options/theme-options.php:3509
+#: options/theme-options.php:3441
 msgid "Provide 3rd-party library from public CDN"
 msgstr "公共CDNからサードパーティのライブラリを提供する"
 
-#: options/theme-options.php:3510
+#: options/theme-options.php:3442
 msgid ""
 "When disabled, 3rd-party dependencies, which have been built to bundles "
 "along with themes's entry script, will be loaded from the exact same origin "
@@ -3874,15 +3785,15 @@ msgstr ""
 "ティの依存関係は、クリティカル フロントエンド リソースとまったく同じオリジン"
 "から読み込まれます。"
 
-#: options/theme-options.php:3517
+#: options/theme-options.php:3449
 msgid "Public CDN Basepath"
 msgstr "パブリック CDN ベースパス"
 
-#: options/theme-options.php:3528
+#: options/theme-options.php:3460
 msgid "Vision Resource Basepath"
 msgstr "ビジョン リソース ベースパス"
 
-#: options/theme-options.php:3529
+#: options/theme-options.php:3461
 msgid ""
 "This link directory structure needs to be consistent with the <a href="
 "\"https://github.com/Fuukei/Sakurairo_Vision\">Sakurairo Vision</a> "
@@ -3896,31 +3807,31 @@ msgstr ""
 "ります。 <a href=\"https://www.upyun.com/\">UPYUN</a> によって正式に提供され"
 "るイメージソースはデフォルトで採用されています。"
 
-#: options/theme-options.php:3535
+#: options/theme-options.php:3467
 msgid "Theme Sponsors"
 msgstr "テーマスポンサー"
 
-#: options/theme-options.php:3540
+#: options/theme-options.php:3472
 msgid ""
 "<img src=\"https://api.qaq.tw/Sakurairo_Vison/options/upyun_logo.webp\" alt="
 "\"Theme Sponsors\" width=\"15%\" height=\"15%\"/>"
 msgstr ""
 
-#: options/theme-options.php:3545
+#: options/theme-options.php:3477
 msgid "Theme Contributors"
 msgstr "貢献者"
 
-#: options/theme-options.php:3550
+#: options/theme-options.php:3482
 msgid ""
 "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
 "Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:3555
+#: options/theme-options.php:3487
 msgid "Reference Information"
 msgstr "参照情報"
 
-#: options/theme-options.php:3560
+#: options/theme-options.php:3492
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
 "com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -3944,11 +3855,11 @@ msgstr ""
 "\"https://hyacm.com/acai/ui/143/sakura-logo/\">提供され、Hyacm</a>によって参"
 "照されるように</p>"
 
-#: options/theme-options.php:3568
+#: options/theme-options.php:3500
 msgid "Dependency Information"
 msgstr "依存情報"
 
-#: options/theme-options.php:3573
+#: options/theme-options.php:3505
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
@@ -3963,7 +3874,7 @@ msgstr ""
 "com/YahnisElsts/plugin-update-checker\">プラグイン更新チェッカー</a> プロジェ"
 "クトに依存しています</p>"
 
-#: options/theme-options.php:3579
+#: options/theme-options.php:3511
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "
@@ -3993,15 +3904,3 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
-
-#, php-format
-#~ msgid ""
-#~ "如果你选择使用Webp优化随机图片 / If you choose to use Webp to optimize "
-#~ "random images, 点击 / Click <a href=\"%s\">这里 / here </a>来更新 "
-#~ "Manifest 路径 / to update the Manifest path"
-#~ msgstr ""
-#~ "Webp を使用してランダムな画像を最適化する場合は、ここをクリックしてマニ"
-#~ "フェストのパスを更新します<a href=\"%s\">。</a>"
-
-#~ msgid "Bilibili Bangumi Catch-up Template Account ID"
-#~ msgstr "ビリビリバングミキャッチアップテンプレートアカウントID"
