@@ -16,7 +16,7 @@
 
 ## 下载及使用相关：
 
-- 你可以前往 [Github Release](https://github.com/mirai-mamori/Sakurairo/releases/latest) 或 [Gitee 中国大陆](https://gitee.com/mirai-mamori/Sakurairo) 下载
+- 你可以前往 [Github Release](https://github.com/mirai-mamori/Sakurairo/releases/latest) 或 [Gitee 镜像](https://gitee.com/mirai-mamori/Sakurairo) 下载
 
 - 使用本主题的博客：https://iro.tw/demo.html
 
