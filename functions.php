@@ -10,7 +10,7 @@
 
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '24130');
+define('INT_VERSION', '220509');
 define('BUILD_VERSION', '2');
 
 //Option-Framework
