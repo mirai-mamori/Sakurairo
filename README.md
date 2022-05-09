@@ -12,7 +12,7 @@
 
 ## 版本简介：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/versions_cn.png)](https://iro.tw/)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/versions_cn.png)](https://fuukei.org//)
 
 ## 下载及使用相关：
 
@@ -22,7 +22,7 @@
 
 - 主题交流群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
 
-- 如果在使用过程中遇到了任何问题，请**访问**本主题的 [官方站点](https://iro.tw/) 
+- 如果在使用过程中遇到了任何问题，请**访问**本主题的 [官方站点](https://wiki.fuukei.org/) 
 
 - 在确认你遇到的现象确实是一个 Bug 后，请在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交问题，并为该问题尽可能的描述清楚，
 按照提供的 issue 模板进行填写，谢谢配合。

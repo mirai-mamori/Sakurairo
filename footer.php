@@ -44,7 +44,7 @@ $reception_background = iro_opt('reception_background');
 							本网站由 <a href="https://www.upyun.com/league" target="_blank"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.5/options/upyun_logo.webp" width="60px" height="20px"></a> 提供 CDN 加速 / 云存储 服务
                         <?php endif; ?>
                         <br>
-						Theme <a href="https://github.com/mirai-mamori/Sakurairo" rel="noopener" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://iro.tw" rel="noopener" target="_blank" id="site-info" >Fuukei</a> 
+						Theme <a href="https://github.com/mirai-mamori/Sakurairo" rel="noopener" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://fuukei.org/" rel="noopener" target="_blank" id="site-info" >Fuukei</a> 
 					</span>
 			</div>
 		</div><!-- .site-info -->

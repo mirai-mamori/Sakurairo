@@ -12,7 +12,7 @@
 
 ## 版本宣傳：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/versions_tw.png)](https://iro.tw/)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/versions_tw.png)](https://fuukei.org//)
 
 ## 使用相關：
 
@@ -20,7 +20,7 @@
 
 - 主題交流QQ群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
 
-- 如果在使用過程中遇到了任何問題，請**訪問**本主題的 [官方站點](https://iro.tw/) 
+- 如果在使用過程中遇到了任何問題，請**訪問**本主題的 [官方站點](https://wiki.fuukei.org/) 
 
 - 在確認你遇到的現象確實是一個Bug後，請在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交問題，並為該問題可以的描述清楚，
 按照提供的問題模板進行填寫，謝謝配合。

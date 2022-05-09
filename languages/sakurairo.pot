@@ -839,7 +839,7 @@ msgid "Created by Fuukei"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://iro.tw/"
+msgid "https://fuukei.org//"
 msgstr ""
 
 #. Template Name of the plugin/theme
