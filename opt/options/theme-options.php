@@ -41,6 +41,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/preliminary/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'id'    => 'site_name',
         'type'  => 'text',
         'title' => __('Site Name','sakurairo_csf'),
@@ -167,6 +173,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/global/appearance/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'type'    => 'subheading',
         'content' => __('Color Schemes','sakurairo_csf'),
       ),
@@ -291,6 +303,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/global/font/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'type'    => 'subheading',
         'content' => __('Global','sakurairo_csf'),
       ),
@@ -367,6 +385,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'title'  => __('Navigation Menu Options','sakurairo_csf'),
     'icon'      => 'fa fa-map-signs',
     'fields' => array(
+
+      array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/global/navigation_menu/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
 
       array(
         'id'         => 'nav_menu_style',
@@ -583,6 +607,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/global/style_menu_and_frontend_background_related/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'type' => 'subheading',
         'content' => __('Style Menu','sakurairo_csf'),
       ),
@@ -795,6 +825,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/global/footer/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'id' => 'aplayer_server',
         'type' => 'select',
         'title' => __('Footer Online Music Player','sakurairo_csf'),
@@ -971,6 +1007,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/global/cursor/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'id' => 'cursor_nor',
         'type' => 'text',
         'title' => __('Standard Cursor Style','sakurairo_csf'),
@@ -1018,6 +1060,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'title' => __('Additional Options','sakurairo_csf'),
     'icon' => 'fa fa-gift',
     'fields' => array(
+
+      array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/global/additional/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
 
       array(
         'type' => 'subheading',
@@ -1367,6 +1415,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/homepage/cover/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'id' => 'cover_switch',
         'type' => 'switcher',
         'title' => __('Cover Switch','sakurairo_csf'),
@@ -1695,6 +1749,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/homepage/cover_social_area/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'type' => 'subheading',
         'content' => __('Related Options','sakurairo_csf'),
       ),
@@ -1967,6 +2027,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/homepage/bulletin_board_and_area_title/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'type' => 'subheading',
         'content' => __('Bulletin Board','sakurairo_csf'),
       ),
@@ -2112,6 +2178,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'title' => __('Display Area Options','sakurairo_csf'),
     'icon' => 'fa fa-bookmark',
     'fields' => array(
+
+      array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/homepage/display_area/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
 
       array(
         'id' => 'exhibition_area',
@@ -2273,6 +2345,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/homepage/article_area/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'id'         => 'post_list_style',
         'type'       => 'image_select',
         'title' => __('Article Area Display Style','sakurairo_csf'),
@@ -2423,6 +2501,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/page/common/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'id' => 'page_style',
         'type' => 'image_select',
         'title' => __('Page Style','sakurairo_csf'),
@@ -2515,6 +2599,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/page/article_page/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'id' => 'article_title_font_size',
         'type' => 'slider',
         'title' => __('Article Page Title Font Size','sakurairo_csf'),
@@ -2598,6 +2688,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'title' => __('Template Page Options','sakurairo_csf'),
     'icon' => 'fa fa-window-maximize',
     'fields' => array(
+
+      array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/page/template_page/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
 
       array(
         'id' => 'page_temp_title_font_size',
@@ -2720,6 +2816,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'title' => __('Comment-related Options','sakurairo_csf'),
     'icon' => 'fa fa-comments-o',
     'fields' => array(
+
+      array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/page/comment-related/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
 
       array(
         'id' => 'comment_area',
@@ -2934,6 +3036,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/other/login_screen_and_dashboard_related/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'type' => 'subheading',
         'content' => __('Login Screen','sakurairo_csf'),
       ),
@@ -3052,6 +3160,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'title' => __('Low Use Options','sakurairo_csf'),
     'icon' => 'fa fa-low-vision',
     'fields' => array(
+
+      array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://wiki.fuukei.org/category/theme_sakurairo/other/low_use/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
 
       array(
         'id' => 'statistics_api',
