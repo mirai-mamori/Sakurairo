@@ -3476,7 +3476,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type'    => 'submessage',
         'style'   => 'success',
-        'content' => sprintf(__('iro 主题版本 / Theme Version %s | <a href="https://github.com/mirai-mamori/Sakurairo">项目地址 / Project Address</a>', 'sakurairo', 'sakurairo_csf'), IRO_VERSION), 
+        'content' => sprintf(__('Sakurairo 主题版本 / Theme Version %s | 内部版本 / Internal Version %s | <a href="https://github.com/mirai-mamori/Sakurairo">项目地址 / Project Address</a>', 'sakurairo', 'sakurairo_csf'), IRO_VERSION, INT_VERSION), 
       ),
 
       array(
