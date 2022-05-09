@@ -3430,7 +3430,7 @@ msgstr ""
 
 #: options/theme-options.php:3359
 msgid ""
-"<img src=\"https://api.qaq.tw/Sakurairo_Vison/series/headlogo.webp\"  alt="
+"<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.5/series/headlogo.webp\"  alt="
 "\"Theme Information\" />"
 msgstr ""
 
@@ -3546,7 +3546,7 @@ msgstr ""
 
 #: options/theme-options.php:3472
 msgid ""
-"<img src=\"https://api.qaq.tw/Sakurairo_Vison/options/upyun_logo.webp\" alt="
+"<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.5/options/upyun_logo.webp\" alt="
 "\"Theme Sponsors\" width=\"15%\" height=\"15%\"/>"
 msgstr ""
 

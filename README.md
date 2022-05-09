@@ -1,6 +1,6 @@
 **简体中文** | [繁體中文](README_tw.md) | [English](README_en.md) | [日本語](README_ja.md)
 
-[![image](https://api.qaq.tw/Sakurairo_Vison/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -12,7 +12,7 @@
 
 ## 版本简介：
 
-[![image](https://api.qaq.tw/Sakurairo_Vison/readme/versions_cn.png)](https://iro.tw/)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/versions_cn.png)](https://iro.tw/)
 
 ## 下载及使用相关：
 
@@ -29,11 +29,11 @@
 
 ## 赞助商：
 
-<a href="https://www.upyun.com/"><img src="https://api.qaq.tw/Sakurairo_Vison/options/upyun_logo.webp" alt="UPYUN" width="200"></a>
+<a href="https://www.upyun.com/"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.5/options/upyun_logo.webp" alt="UPYUN" width="200"></a>
 
 ## 支持我们：
 
-[![image](https://api.qaq.tw/Sakurairo_Vison/readme/starandsponsor.png)](https://afdian.net/@mamori)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/starandsponsor.png)](https://afdian.net/@mamori)
 
 ## 主题贡献：
 

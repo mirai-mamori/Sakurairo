@@ -10,7 +10,7 @@ function font_end_js_control() {
         global $core_lib_basepath;
         return $core_lib_basepath.'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
     };
-    $vision_resource_basepath = iro_opt('vision_resource_basepath','https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/');
+    $vision_resource_basepath = iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.5/');
     $movies = iro_opt('cover_video') ?
     array(
         'url' => iro_opt('cover_video_link'),
