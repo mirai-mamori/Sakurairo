@@ -41,7 +41,7 @@ $reception_background = iro_opt('reception_background');
                         ?>
                         <?php endif; ?>
 						<?php if (iro_opt('footer_upyun', 'true')): ?>
-							本网站由 <a href="https://www.upyun.com/league" target="_blank"><img src="https://api.qaq.tw/Sakurairo_Vison/options/upyun_logo.webp" width="60px" height="20px"></a> 提供 CDN 加速 / 云存储 服务
+							本网站由 <a href="https://www.upyun.com/league" target="_blank"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.5/options/upyun_logo.webp" width="60px" height="20px"></a> 提供 CDN 加速 / 云存储 服务
                         <?php endif; ?>
                         <br>
 						Theme <a href="https://github.com/mirai-mamori/Sakurairo" rel="noopener" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://iro.tw" rel="noopener" target="_blank" id="site-info" >Fuukei</a> 
@@ -56,7 +56,7 @@ $reception_background = iro_opt('reception_background');
 			<?php 
 			$personal_avatar = iro_opt('personal_avatar');
 			$iro_logo = iro_opt('iro_logo');
-			$ava = iro_opt('personal_avatar') ? $personal_avatar: ($iro_logo ?: iro_opt('vision_resource_basepath','https://fuukei.coding.net/p/sakurairo_vision/d/Sakurairo_Vision/git/raw/2.4/').'series/avatar.webp'); ?>
+			$ava = iro_opt('personal_avatar') ? $personal_avatar: ($iro_logo ?: iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.5/').'series/avatar.webp'); ?>
 			<img src="<?php echo $ava ?>">
 		</div>
 		<div class="m-search">
