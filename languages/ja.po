@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-05-02 13:13+0800\n"
-"PO-Revision-Date: 2022-05-02 13:19+0800\n"
+"POT-Creation-Date: 2022-05-09 14:20+0800\n"
+"PO-Revision-Date: 2022-05-09 14:20+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -33,7 +33,7 @@ msgstr "ホームページに戻る"
 msgid "Don't worry, search in site?"
 msgstr "心配しないで、サイト内検索はどうでしょうか?"
 
-#: 404.php:61 footer.php:61 search.php:40
+#: 404.php:61 footer.php:64 search.php:40
 msgid "Search..."
 msgstr "検索…"
 
@@ -131,19 +131,19 @@ msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr "ロード時間 %.3f 秒 | %d クエリ | RAM 使用量  %.2f MB "
 
-#: footer.php:66
+#: footer.php:69
 msgid "Go to top"
 msgstr "このページのトップへ"
 
-#: footer.php:74 footer.php:82
+#: footer.php:77 footer.php:85
 msgid "Want to find something?"
 msgstr "何かを見つけたいですか?"
 
-#: footer.php:84
+#: footer.php:87
 msgid "Search"
 msgstr "検索"
 
-#: footer.php:136
+#: footer.php:139
 msgid "Widgets"
 msgstr "ウィジェット"
 
@@ -659,44 +659,6 @@ msgstr "ログアウト"
 msgid "Log in"
 msgstr "ログイン"
 
-#: js/578.js:1
-msgid "(?:m|qr)?"
-msgstr ""
-
-#: js/578.js:1
-msgid "m|qr"
-msgstr ""
-
-#: js/826.js:1
-msgid "'"
-msgstr ""
-
-#: js/826.js:1
-msgid "\""
-msgstr ""
-
-#: js/870.js:2
-msgid "baguetteBox-overlay"
-msgstr ""
-
-#: js/870.js:2
-msgid "baguetteBox-slider"
-msgstr ""
-
-#: js/870.js:2
-#, fuzzy
-#| msgid "Previous"
-msgid "previous-button"
-msgstr "前へ"
-
-#: js/870.js:2
-msgid "next-button"
-msgstr "次へボタン"
-
-#: js/870.js:2
-msgid "close-button"
-msgstr "閉じるボタン"
-
 #: layouts/imgbox.php:7
 msgid "Previous"
 msgstr "前へ"
@@ -882,7 +844,9 @@ msgid "Created by Fuukei"
 msgstr "Created by Fuukei"
 
 #. Author URI of the plugin/theme
-msgid "https://fuukei.org//"
+#, fuzzy
+#| msgid "https://fuukei.org//"
+msgid "https://fuukei.org/"
 msgstr "https://fuukei.org//"
 
 #. Template Name of the plugin/theme
@@ -896,6 +860,17 @@ msgstr "友情链接模版"
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr "说说模版"
+
+#, fuzzy
+#~| msgid "Previous"
+#~ msgid "previous-button"
+#~ msgstr "前へ"
+
+#~ msgid "next-button"
+#~ msgstr "次へボタン"
+
+#~ msgid "close-button"
+#~ msgstr "閉じるボタン"
 
 #~ msgid "View details"
 #~ msgstr "詳細を見る"

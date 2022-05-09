@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-05-02 13:15+0800\n"
-"PO-Revision-Date: 2022-05-03 14:44+0800\n"
+"POT-Creation-Date: 2022-05-09 14:21+0800\n"
+"PO-Revision-Date: 2022-05-09 14:21+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -33,7 +33,7 @@ msgstr "返回首頁"
 msgid "Don't worry, search in site?"
 msgstr "別著急，試試站內檢索？"
 
-#: 404.php:61 footer.php:61 search.php:40
+#: 404.php:61 footer.php:64 search.php:40
 msgid "Search..."
 msgstr "搜尋..."
 
@@ -131,19 +131,19 @@ msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr "載入時間 %.3f 秒 | 查詢 %d 次 | 記憶體使用 %.2f MB "
 
-#: footer.php:66
+#: footer.php:69
 msgid "Go to top"
 msgstr "回到頂端"
 
-#: footer.php:74 footer.php:82
+#: footer.php:77 footer.php:85
 msgid "Want to find something?"
 msgstr "想要找點什麼呢？"
 
-#: footer.php:84
+#: footer.php:87
 msgid "Search"
 msgstr "搜尋"
 
-#: footer.php:136
+#: footer.php:139
 msgid "Widgets"
 msgstr "小工具"
 
@@ -638,42 +638,6 @@ msgstr "登出"
 msgid "Log in"
 msgstr "登入"
 
-#: js/578.js:1
-msgid "(?:m|qr)?"
-msgstr ""
-
-#: js/578.js:1
-msgid "m|qr"
-msgstr ""
-
-#: js/826.js:1
-msgid "'"
-msgstr ""
-
-#: js/826.js:1
-msgid "\""
-msgstr ""
-
-#: js/870.js:2
-msgid "baguetteBox-overlay"
-msgstr ""
-
-#: js/870.js:2
-msgid "baguetteBox-slider"
-msgstr ""
-
-#: js/870.js:2
-msgid "previous-button"
-msgstr "上一個按鈕"
-
-#: js/870.js:2
-msgid "next-button"
-msgstr "下一個按鈕"
-
-#: js/870.js:2
-msgid "close-button"
-msgstr "關閉按鈕"
-
 #: layouts/imgbox.php:7
 msgid "Previous"
 msgstr "上一篇"
@@ -853,7 +817,7 @@ msgid "Created by Fuukei"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://fuukei.org//"
+msgid "https://fuukei.org/"
 msgstr ""
 
 #. Template Name of the plugin/theme
@@ -867,6 +831,15 @@ msgstr "友情連結模版"
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr "推文模版"
+
+#~ msgid "previous-button"
+#~ msgstr "上一個按鈕"
+
+#~ msgid "next-button"
+#~ msgstr "下一個按鈕"
+
+#~ msgid "close-button"
+#~ msgstr "關閉按鈕"
 
 #~ msgid "View details"
 #~ msgstr "查看詳情"

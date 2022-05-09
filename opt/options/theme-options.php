@@ -3448,10 +3448,10 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       'type' => 'image_select',
       'title' => __('Public CDN Basepath','sakurairo_csf'),
       'options'     => array(
-        'https://fuukei.coding.net/p/Sakurairo/d/Sakurairo/git/raw/'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.5/options/update_source_upyun.webp',
+        'https://s.nmxc.ltd/sakurairo/'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.5/options/update_source_upyun.webp',
         'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.5/options/update_source_jsd.webp',
       ),
-      'default'     => 'https://fuukei.coding.net/p/Sakurairo/d/Sakurairo/git/raw/'
+      'default'     => 'https://s.nmxc.ltd/sakurairo/'
     ),
 
       array(

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-05-02 13:13+0800\n"
+"POT-Creation-Date: 2022-05-09 14:20+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Don't worry, search in site?"
 msgstr ""
 
-#: 404.php:61 footer.php:61 search.php:40
+#: 404.php:61 footer.php:64 search.php:40
 msgid "Search..."
 msgstr ""
 
@@ -131,19 +131,19 @@ msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr ""
 
-#: footer.php:66
+#: footer.php:69
 msgid "Go to top"
 msgstr ""
 
-#: footer.php:74 footer.php:82
+#: footer.php:77 footer.php:85
 msgid "Want to find something?"
 msgstr ""
 
-#: footer.php:84
+#: footer.php:87
 msgid "Search"
 msgstr ""
 
-#: footer.php:136
+#: footer.php:139
 msgid "Widgets"
 msgstr ""
 
@@ -625,42 +625,6 @@ msgstr ""
 msgid "Log in"
 msgstr ""
 
-#: js/578.js:1
-msgid "(?:m|qr)?"
-msgstr ""
-
-#: js/578.js:1
-msgid "m|qr"
-msgstr ""
-
-#: js/826.js:1
-msgid "'"
-msgstr ""
-
-#: js/826.js:1
-msgid "\""
-msgstr ""
-
-#: js/870.js:2
-msgid "baguetteBox-overlay"
-msgstr ""
-
-#: js/870.js:2
-msgid "baguetteBox-slider"
-msgstr ""
-
-#: js/870.js:2
-msgid "previous-button"
-msgstr ""
-
-#: js/870.js:2
-msgid "next-button"
-msgstr ""
-
-#: js/870.js:2
-msgid "close-button"
-msgstr ""
-
 #: layouts/imgbox.php:7
 msgid "Previous"
 msgstr ""
@@ -839,7 +803,7 @@ msgid "Created by Fuukei"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://fuukei.org//"
+msgid "https://fuukei.org/"
 msgstr ""
 
 #. Template Name of the plugin/theme

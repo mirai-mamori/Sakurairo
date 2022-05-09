@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-05-07 13:35+0800\n"
-"PO-Revision-Date: 2022-05-07 13:35+0800\n"
+"POT-Creation-Date: 2022-05-09 14:18+0800\n"
+"PO-Revision-Date: 2022-05-09 14:18+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -3511,8 +3511,8 @@ msgstr "版本資訊"
 
 #: options/theme-options.php:3359
 msgid ""
-"<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.5/series/headlogo.webp\"  alt="
-"\"Theme Information\" />"
+"<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.5/series/headlogo.webp\"  "
+"alt=\"Theme Information\" />"
 msgstr ""
 
 #: options/theme-options.php:3365
@@ -3638,8 +3638,8 @@ msgstr "贊助商"
 
 #: options/theme-options.php:3472
 msgid ""
-"<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.5/options/upyun_logo.webp\" alt="
-"\"Theme Sponsors\" width=\"15%\" height=\"15%\"/>"
+"<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.5/options/upyun_logo.webp"
+"\" alt=\"Theme Sponsors\" width=\"15%\" height=\"15%\"/>"
 msgstr ""
 
 #: options/theme-options.php:3477
