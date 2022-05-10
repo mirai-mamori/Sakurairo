@@ -1623,6 +1623,9 @@ function change_avatar($avatar)
 // default feature image
 function DEFAULT_FEATURE_IMAGE(string $size='source'):string
 {
+    if (iro_opt('post_cover_options') == 'type_2') {
+        return iro_opt('post_cover').'?'.rand(1,100);
+    }
     if (iro_opt('random_graphs_options') == 'external_api'){
         return iro_opt('random_graphs_link').'?'.rand(1,100);
     }
