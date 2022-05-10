@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-05-09 16:37+0800\n"
-"PO-Revision-Date: 2022-05-09 16:38+0800\n"
+"POT-Creation-Date: 2022-05-10 18:07+0800\n"
+"PO-Revision-Date: 2022-05-10 18:07+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -2016,17 +2016,13 @@ msgstr "默認開啟，桌面端和行動端會分別使用不同的隨機圖像
 msgid "Webp Optimization/External API Desktop Side Random Graphics Address"
 msgstr "Webp優化/外部API桌面端隨機圖像地址"
 
-#: options/theme-options.php:1609
-msgid "Fill in the address"
-msgstr "填寫地址"
+#: options/theme-options.php:1609 options/theme-options.php:1620
+msgid "Fill in an URL"
+msgstr "填寫URL"
 
 #: options/theme-options.php:1618
 msgid "External API Mobile Devices Random Image Address"
 msgstr "外部API行動端隨機圖像地址"
-
-#: options/theme-options.php:1620
-msgid "fill address"
-msgstr "填寫地址"
 
 #: options/theme-options.php:1629
 msgid "Cover Random Background Image Cache"
@@ -3678,8 +3674,9 @@ msgstr ""
 #: options/theme-options.php:3479
 #, php-format
 msgid ""
-"iro 主题版本 / Theme Version %s | <a href=\"https://github.com/mirai-mamori/"
-"Sakurairo\">项目地址 / Project Address</a>"
+"Sakurairo 主题版本 / Theme Version %s | 内部版本 / Internal Version %s | <a "
+"href=\"https://github.com/mirai-mamori/Sakurairo\">项目地址 / Project "
+"Address</a>"
 msgstr ""
 
 #: options/theme-options.php:3484
@@ -3885,3 +3882,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
+
+#~ msgid "Fill in the address"
+#~ msgstr "填寫地址"
+
+#~ msgid "fill address"
+#~ msgstr "填寫地址"

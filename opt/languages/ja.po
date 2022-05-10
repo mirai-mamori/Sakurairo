@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-05-09 16:37+0800\n"
-"PO-Revision-Date: 2022-05-09 16:37+0800\n"
+"POT-Creation-Date: 2022-05-10 18:05+0800\n"
+"PO-Revision-Date: 2022-05-10 18:06+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -669,13 +669,10 @@ msgid "News+"
 msgstr "ニュース+"
 
 #: options/theme-options.php:31
-#, fuzzy
 msgid ""
 "<img src=\"https://news.maho.cc/sakurairo.php\"  alt=\"News_Plus\" width="
 "\"100%\" height=\"100%\" />"
 msgstr ""
-"<img src=\"https://news.maho.cc/sakurairo.php\"  alt=\"News_Plus\" width="
-"\"100%\" height=\"100%\" />"
 
 #: options/theme-options.php:39
 msgid "Preliminary Options"
@@ -2089,17 +2086,13 @@ msgid "Webp Optimization/External API Desktop Side Random Graphics Address"
 msgstr ""
 "Webp 最適化/外部 API デスクトップサイドのランダムなグラフィックアドレス"
 
-#: options/theme-options.php:1609
-msgid "Fill in the address"
-msgstr "住所を入力する"
+#: options/theme-options.php:1609 options/theme-options.php:1620
+msgid "Fill in an URL"
+msgstr "URL を入力する"
 
 #: options/theme-options.php:1618
 msgid "External API Mobile Devices Random Image Address"
 msgstr "外部 API モバイル デバイスのランダム イメージ アドレス"
-
-#: options/theme-options.php:1620
-msgid "fill address"
-msgstr "住所を記入する"
 
 #: options/theme-options.php:1629
 msgid "Cover Random Background Image Cache"
@@ -3851,8 +3844,9 @@ msgstr ""
 #: options/theme-options.php:3479
 #, php-format
 msgid ""
-"iro 主题版本 / Theme Version %s | <a href=\"https://github.com/mirai-mamori/"
-"Sakurairo\">项目地址 / Project Address</a>"
+"Sakurairo 主题版本 / Theme Version %s | 内部版本 / Internal Version %s | <a "
+"href=\"https://github.com/mirai-mamori/Sakurairo\">项目地址 / Project "
+"Address</a>"
 msgstr ""
 
 #: options/theme-options.php:3484
@@ -4066,3 +4060,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
+
+#~ msgid "Fill in the address"
+#~ msgstr "住所を入力する"
+
+#~ msgid "fill address"
+#~ msgstr "住所を記入する"
