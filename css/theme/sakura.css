@@ -60,50 +60,33 @@
 }
 
 .entry-content h3 {
-    padding-bottom: 8px;
-    border-bottom: 1px dashed #ddd;
-    color: #737373
+    padding-bottom: 10px;
 }
 
 .entry-content h3:after {
     content: "#";
     position: absolute;
     left: 0;
-    color: #FF6D6D
 }
 
 .entry-content h4:after {
     content: ">";
     position: absolute;
     left: 0;
-    color: #FF6D6D
 }
 
 .entry-content h5:after {
-    content: "?";
+    content: "~";
     position: absolute;
     left: 0;
-    color: #FF6D6D
-}
-
-.entry-content code {
-    background: rgba(254, 250, 199, 1);
-    color: #E67474;
-    word-break: break-word;
-    font-family: 'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
-    padding: 2px;
-    text-shadow: none;
-    border-radius: 5px
 }
 
 .entry-content a {
-    color: #e67474;
-    text-decoration: underline dotted rgba(0, 0, 0, .1)
+    text-decoration: none;
 }
 
 .entry-content a:hover {
-    color: orange;
-    text-decoration: underline orange
+    text-decoration: underline;
 }
 
 h1.entry-title {
@@ -231,7 +214,7 @@ body.dark .entry-content tr:nth-child(even){background-color: unset}
     background: #1d1f21;
     color: #fff;
     word-break: break-word;
-    font-family: 'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+    font-family: 'Noto Sans SC', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
     padding: 2px;
     text-shadow: none;
     border-radius: 0 0 5px 5px;
@@ -355,7 +338,7 @@ td.hljs-ln-numbers {
     text-align: center;
     color: #888f96;
     background: #1d1f21;
-    font-family: 'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+    font-family: 'Noto Sans SC', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
     vertical-align: top;
     position: absolute;
     left: 0;

@@ -23,7 +23,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
     public $args         = array(
 
       // framework title
-      'framework_title'         => '<img src="https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/series/login_logo.webp" style="width:50px;height:50px;transform:translateY(32%);margin-right: 13px;">iro 主题设置 <small> / Theme Options / テーマの設定</small>',
+      'framework_title'         => '<img src="https://s.nmxc.ltd/sakurairo_vision/@2.5/series/login_logo.webp" style="width:50px;height:50px;transform:translateY(32%);margin-right: 13px;">iro 主题设置 <small> / Theme Options / テーマの設定</small>',
       'framework_class'         => '',
 
       // menu settings

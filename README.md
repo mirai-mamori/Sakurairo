@@ -1,6 +1,6 @@
 **简体中文** | [繁體中文](README_tw.md) | [English](README_en.md) | [日本語](README_ja.md)
 
-[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -12,42 +12,42 @@
 
 ## 版本简介：
 
-[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/versions_cn.png)](https://iro.tw/)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/versions_cn.png)](https://fuukei.org//)
 
-## 使用相关：
+## 下载及使用相关：
+
+- 你可以前往 [Github Release](https://github.com/mirai-mamori/Sakurairo/releases/latest) 或 [Gitee 镜像](https://gitee.com/mirai-mamori/Sakurairo) 下载
 
 - 使用本主题的博客：https://iro.tw/demo.html
 
 - 主题交流群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
 
-- 如果在使用过程中遇到了任何问题，请**访问**本主题的 [官方站点](https://iro.tw/) 
+- 如果在使用过程中遇到了任何问题，请**访问**本主题的 [官方站点](https://wiki.fuukei.org/) 
 
 - 在确认你遇到的现象确实是一个 Bug 后，请在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交问题，并为该问题尽可能的描述清楚，
 按照提供的 issue 模板进行填写，谢谢配合。
 
-## 主题下载：
+## 赞助商：
 
-[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/github.png)](https://github.com/mirai-mamori/Sakurairo/releases/latest)
-
-[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/gitee.png)](https://gitee.com/mirai-mamori/Sakurairo)
+<a href="https://www.upyun.com/"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.5/options/upyun_logo.webp" alt="UPYUN" width="200"></a>
 
 ## 支持我们：
 
-[![image](https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/readme/twos.png)](https://afdian.net/@mamori)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/starandsponsor.png)](https://afdian.net/@mamori)
 
 ## 主题贡献：
 
 ### 主要贡献：
 
-<a href="https://github.com/mirai-mamori"><img src="https://avatars3.githubusercontent.com/u/61381142?s=400" alt="mirai-mamori" width="100"></a>  <a href="https://github.com/Ukenn2112"><img src="https://avatars3.githubusercontent.com/u/60847880?s=400" alt="Ukenn" width="100"></a>  <a href="https://github.com/bymoye"><img src="https://avatars2.githubusercontent.com/u/27877470?s=400" alt="bymoye" width="100"></a> <a href="https://github.com/KotoriK"><img src="https://avatars.githubusercontent.com/u/52659125?s=400" alt="KotoriK" width="100"></a>
+<a href="https://github.com/mirai-mamori"><img src="https://avatars3.githubusercontent.com/u/61381142?s=400" alt="mirai-mamori" width="100"></a>  <a href="https://github.com/Ukenn2112"><img src="https://avatars3.githubusercontent.com/u/60847880?s=400" alt="Ukenn" width="100"></a>  <a href="https://github.com/bymoye"><img src="https://avatars2.githubusercontent.com/u/27877470?s=400" alt="bymoye" width="100"></a> <a href="https://github.com/KotoriK"><img src="https://avatars.githubusercontent.com/u/52659125?s=400" alt="KotoriK" width="100"></a>  <a href="https://github.com/QL-A103"><img src="https://avatars.githubusercontent.com/u/57120572?v=4" alt="QL-A103" width="100"></a>  <a href="https://github.com/robert1chi"><img src="https://avatars.githubusercontent.com/u/40431036?v=4" alt="robert1chi" width="100"></a>  
 
 ### 特别贡献：
 
-<a href="https://github.com/spirit1431007"><img src="https://avatars1.githubusercontent.com/u/29689177?s=400" alt="Spirit" width="100"></a>  <a href="https://jokerm.com/"><img src="https://cdn.jokerm.com/?/imgcdn/logo.png" alt="JokerM" width="100"></a>  <a href="https://github.com/FeiyuCode"><img src="https://avatars0.githubusercontent.com/u/46924793?s=400" alt="FeiyuCode" width="100"></a>  <a href="https://github.com/tumeneco"><img src="https://avatars0.githubusercontent.com/u/68286041?s=400" alt="Tumeneco" width="100"></a>  <a href="https://github.com/flurrychan "><img src="https://cdn.jsdelivr.net/gh/flurrychan/CDN/tx.jpg" alt="Flurrychan" width="100"></a>
+<a href="https://github.com/spirit1431007"><img src="https://avatars1.githubusercontent.com/u/29689177?s=400" alt="Spirit" width="100"></a>  <a href="https://jokerm.com/"><img src="https://cdn.jokerm.com/?/imgcdn/logo.png" alt="JokerM" width="100"></a>  <a href="https://github.com/cocdeshijie"><img src="https://avatars.githubusercontent.com/u/39603339?v=4" alt="cocdeshijie" width="100"></a>  <a href="https://github.com/FeiyuCode"><img src="https://avatars0.githubusercontent.com/u/46924793?s=400" alt="FeiyuCode" width="100"></a>  <a href="https://github.com/tumeneco"><img src="https://avatars0.githubusercontent.com/u/68286041?s=400" alt="Tumeneco" width="100"></a>  <a href="https://github.com/flurrychan "><img src="https://avatars.githubusercontent.com/u/63506003?v=4" alt="Flurrychan" width="100"></a>
 
 ### 参与贡献：
 
-<a href="https://github.com/QL-A103"><img src="https://avatars.githubusercontent.com/u/57120572?v=4" alt="QL-A103" width="100"></a>  <a href="https://github.com/laoxong"><img src="https://avatars.githubusercontent.com/u/31268830?v=4" alt="laoxong" width="100"></a>  <a href="https://github.com/Gao-pw"><img src="https://avatars.githubusercontent.com/u/48815350?v=4" alt="Gao-pw" width="100"></a>  <a href="https://github.com/AriharaShirone"><img src="https://avatars.githubusercontent.com/u/30365341?v=4" alt="AriharaShirone" width="100"></a>  <a href="https://github.com/Sakurakouji-Runa"><img src="https://avatars2.githubusercontent.com/u/46081776?s=400" alt="Sakurakouji-Runa" width="100"></a>  <a href="https://github.com/givenhyh"><img src="https://avatars3.githubusercontent.com/u/37971883?s=400" alt="givenhyh" width="100"></a>
+<a href="https://github.com/laoxong"><img src="https://avatars.githubusercontent.com/u/31268830?v=4" alt="laoxong" width="100"></a>  <a href="https://github.com/Gao-pw"><img src="https://avatars.githubusercontent.com/u/48815350?v=4" alt="Gao-pw" width="100"></a>  <a href="https://github.com/AriharaShirone"><img src="https://avatars.githubusercontent.com/u/30365341?v=4" alt="AriharaShirone" width="100"></a>  <a href="https://github.com/NyaDoo"><img src="https://avatars.githubusercontent.com/u/65238336?v=4" alt="NyaDoo" width="100"></a>  <a href="https://github.com/Sakurakouji-Runa"><img src="https://avatars2.githubusercontent.com/u/46081776?s=400" alt="Sakurakouji-Runa" width="100"></a>  <a href="https://github.com/givenhyh"><img src="https://avatars3.githubusercontent.com/u/37971883?s=400" alt="givenhyh" width="100"></a>
 
 ## 主题说明：
 
