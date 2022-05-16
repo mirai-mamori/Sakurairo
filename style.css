@@ -4,9 +4,9 @@
 Theme Name: Sakurairo
 Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
-Author URI: https://iro.tw/
+Author URI: https://fuukei.org/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.4.5
+Version: 2.5.0.1
 Tested up to: 6.0
 Requires at least: 5.6
 Requires PHP: 7.2
@@ -159,7 +159,7 @@ progress {
 a {
   background-color: transparent;
   text-decoration: none;
-  color: #e67474;
+  color: var(--theme-skin-matching,#ffe066);
   outline: 0;
   -webkit-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
   -moz-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
@@ -813,12 +813,13 @@ input[type=week] {
   content: "";
   display: block;
   position: absolute;
-  bottom: -16px;
-  height: 6px;
-  background-color: var(--theme-skin-matching,#FE9600);
+  bottom: -5px;
+  height: 4px;
+  background-color: var(--theme-skin-matching,#fe9600);
   width: 100%;
+  border-radius: 30px;
   max-width: 0;
-  transition: max-width .25s ease-in-out;
+  transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-top ul li ul li a:after {
@@ -826,11 +827,12 @@ input[type=week] {
   display: none;
   position: absolute;
   bottom: -21px;
-  height: 6px;
+  height: 4px;
   background-color: #FE9600;
   width: 100%;
+  border-radius: 30px;
   max-width: 0;
-  transition: max-width .25s ease-in-out;
+  transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #show-nav {
@@ -1046,12 +1048,11 @@ input[type=week] {
   background-color: #FFEEEB;
   font-size: 12px;
   width: max-content;
-  padding: 2px 7px 2px 7px;
+  padding: 4px 10px 4px 10px;
   border-radius: 6px;
   color: var(--post_date_text_color,#505050);
   white-space: nowrap;
   font-weight: var(--global-font-weight);
-
   transition: all 0.8s ease !important;
 }
 
@@ -1815,17 +1816,23 @@ span.ar-circle {
 
 h1.cat-title {
   display: inline-block;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: var(--global-font-weight,400);
-  padding-right: 15px;
-  border-right: 1px dashed #ddd;
   color: var(--theme-skin,#505050);
 }
 
 header.page-header {
   position: relative;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 6.5%;
+  color: #9C9C9C;
+}
+
+header.timeline-header {
+  position: relative;
+  text-align: center;
+  margin-top: 7.5%;
+  margin-bottom: 6.5%;
   color: #9C9C9C;
 }
 
@@ -1937,11 +1944,11 @@ span.sitename {
 }
 
 span.linkss-title {
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
   display: block;
-  margin: 50px 0 30px;
-  letter-spacing: 5px;
+  margin: 6.5% 0 7.5%;
+  letter-spacing: 2px;
   font-weight: var(--global-font-weight);
 
 }
@@ -2274,7 +2281,7 @@ nav#comments-navi {
 
 h1.fes-title {
   color: var(--theme-skin,#505050);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: var(--global-font-weight,400);
   padding-bottom: 10px;
   margin-bottom: 30px;
@@ -2284,7 +2291,7 @@ h1.fes-title {
 
 h1.main-title {
   color: var(--theme-skin,#505050);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: var(--global-font-weight,400);
   padding-bottom: 10px;
   margin-bottom: 30px;
@@ -3107,13 +3114,13 @@ i.iconfont.down {
   -moz-box-shadow: 0 0 4px rgba(255,204,0, .85);
   -o-box-shadow: 0 0 4px rgba(255,204,0, .85);
   box-shadow: 0 0 4px rgba(255,204,0, .85);
-  border: 1px solid var(--theme-skin-matching,#505050);
+  border: 2px solid var(--theme-skin-matching,#505050);
   color: var(--theme-skin-matching,#505050);
 }
 
 #pagination a {
   padding: 13px 35px;
-  border: 1px solid #D6D6D6;
+  border: 2px solid #D6D6D6;
   border-radius: 50px;
   color: #ADADAD;
 }
@@ -4313,7 +4320,7 @@ input[type=radio]:checked:before {
   background: #1d1f21;
   color: #fff;
   word-break: break-word;
-  font-family: 'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+  font-family: 'Noto Sans SC', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
   padding: 2px;
   text-shadow: none;
   border-radius: 0 0 5px 5px;
@@ -4364,7 +4371,7 @@ td.hljs-ln-numbers {
   text-align: center;
   color: #888f96;
   background: #1d1f21;
-  font-family: 'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+  font-family: 'Noto Sans SC', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
   vertical-align: top;
   position: absolute;
   left: 0;
@@ -5344,7 +5351,7 @@ object {
 }
 
 .site-main {
-  padding: 60px 0 0;
+  padding: 7.5% 0 0;
 }
 
 .feature {
@@ -5806,6 +5813,7 @@ span.time {
 .cat-des p {
   display: inline-block;
   padding-left: 10px;
+  font-size: 18px;
 }
 
 .link-title span.link-fix {
@@ -6910,12 +6918,12 @@ a.toc-link {
 }
 
 .code-font {
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Noto Sans SC', monospace;
 }
 
 .Ubuntu-font,
 .control-btn-sans-serif {
-  font-family: Ubuntu, sans-serif;
+  font-family: 'Noto Sans SC';
 }
 
 .serif,
@@ -7415,12 +7423,6 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 @media (max-width:860px) {
   .site-top .lower nav ul li .animated-hover i {
     display: inline;
-  }
-}
-
-@media (max-width:860px) {
-  .site-main {
-    padding: 40px 0 0;
   }
 }
 
@@ -9374,8 +9376,33 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     font-size: 1.2em;
   }
 }
+
+.entry-content h3:after,
+.entry-content h4:after,
+.entry-content h5:after {
+color: var(--theme-skin-matching,#ffe066);
+}
+
+.entry-content a {
+  color: var(--theme-skin-matching,#ffe066);
+}
+
+.entry-content a:hover {
+  color: var(--theme-skin-dark,#ffcc00);
+  text-decoration: underline var(--theme-skin-dark,#ffcc00);
+}
+
+.entry-content code {
+  background: #505050;
+  color: var(--theme-skin-matching,#ffe066);
+  word-break: break-word;
+  font-family: 'Noto Sans SC';
+  padding: 5px;
+  text-shadow: none;
+  border-radius: 5px
+}
+
 body.dark #main-container,
-body.dark .comments,
 body.dark .site-footer,
 body.dark .wrapper,
 body.dark .post-list-show,
@@ -9387,6 +9414,10 @@ body.dark .headertop-bar::after {
 }
 
 body.dark .toc,
+body.dark .comments {
+  background: none !important;
+}
+
 body.dark .search-form input {
   background: rgba(51,51,51,0.8);
 }
@@ -9465,7 +9496,7 @@ body.dark #mo-nav .m-search form {
 }
 
 body.dark .post-date {
-  color: #666666/*!covered#CCCCCC*/;
+  color: #888/*!covered#CCCCCC*/;
   background-color: #333333;
 }
 
@@ -9475,7 +9506,7 @@ body.dark .lower li ul::before {
 }
 
 body.dark .post-list-thumb a {
-  color: #666666/*!covered#333333*/;
+  color: #888/*!covered#333333*/;
 }
 
 body.dark .entry-content p,
@@ -9526,6 +9557,8 @@ body.dark .author-profile i,
 body.dark .comment .info,
 body.dark .comment-respond .logged-in-as,
 body.dark .comment-respond .logged-in-as a,
+body.dark .comment h4 a,
+body.dark .comment .body .comment-at,
 body.dark span.sitename {
   color: #CCCCCC;
 }
@@ -9537,14 +9570,17 @@ body.dark button {
 
 body.dark .post-list-thumb i,
 body.dark .post-meta {
-  color: #666666;
+  color: #888;
 }
 
 body.dark .post-list-thumb {
   box-shadow: 0 1px 35px -8px rgba(26,26,26,0.6);
 }
 
-body.dark .notice,
+body.dark .notice{
+  filter: brightness(90%);
+}
+
 body.dark .notification {
   color: #CCCCCC;
   background: #666666;
@@ -9568,7 +9604,7 @@ body.dark .entry-header hr {
 
 body.dark h1.fes-title,
 body.dark h1.main-title {
-  border-bottom: 6px dotted #666666;
+  border-bottom: 6px dotted rgba(102,102,102,0);
   color: #CCCCCC;
 }
 
@@ -9629,6 +9665,15 @@ body.dark #show-nav .line {
 
 body.dark .linkdes {
   border-top: 1px dotted #CCCCCC !important;
+  color: #CCCCCC;
+}
+
+body.dark .entry-content h1,
+body.dark .entry-content h2,
+body.dark .entry-content h3,
+body.dark .entry-content h4,
+body.dark .entry-content h5,
+body.dark .entry-content h6 {
   color: #CCCCCC;
 }
 

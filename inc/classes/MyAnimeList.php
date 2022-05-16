@@ -23,6 +23,17 @@ class MyAnimeList
 	{
 		$username = $this->username;
 		$sort = $this->sort;
+		switch ($sort) {
+			case 1: // Status and Last Updated
+				$sort = 'order=16&order2=5&status=7';
+				break;
+			case 2: // Last Updated
+				$sort = 'order=5&status=7';
+				break;
+			case 3: // Status
+				$sort = 'order=16&status=7';
+				break;
+		}
 		$url = "https://myanimelist.net/animelist/$username/load.json?$sort";
 		$args = array(
 			'headers' => array(

@@ -2,7 +2,6 @@
 #banner_wave_1 {
     width: auto;
     height: 65px;
-    background: url(https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/basic/wave1.png) repeat-x;
     _filter: alpha(opacity=80);
     position: absolute;
     bottom: 0;
@@ -21,7 +20,6 @@
 #banner_wave_2 {
     width: auto;
     height: 80px;
-    background: url(https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/basic/wave2.png) repeat-x;
     _filter: alpha(opacity=80);
     position: absolute;
     bottom: 0;

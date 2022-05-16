@@ -10,7 +10,7 @@ function font_end_js_control() {
         global $core_lib_basepath;
         return $core_lib_basepath.'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
     };
-    $vision_resource_basepath = iro_opt('vision_resource_basepath','https://x.jscdn.host/release/ucode-x/source/Sakurairo_Vision/@2.4/');
+    $vision_resource_basepath = iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.5/');
     $movies = iro_opt('cover_video') ?
     array(
         'url' => iro_opt('cover_video_link'),
@@ -82,7 +82,7 @@ function font_end_js_control() {
     !empty($reception_background['img3']) && $iro_opt['skin_bg2'] = $reception_background['img3'];
     !empty($reception_background['img4']) && $iro_opt['skin_bg3'] = $reception_background['img4'];
     !empty($reception_background['img5']) && $iro_opt['skin_bg4'] = $reception_background['img5'];
-    $iro_opt['jsdelivr_css_src'] = iro_opt('shared_library_basepath') ? (get_template_directory_uri().'/css/lib.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://x.jscdn.host/release/ucode-x/source/Sakurairo/@'.IRO_VERSION.'/css/lib.css');
+    $iro_opt['jsdelivr_css_src'] = iro_opt('shared_library_basepath') ? (get_template_directory_uri().'/css/lib.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://s.nmxc.ltd/sakurairo/@'.IRO_VERSION.'/css/lib.css');
     if (iro_opt('lightgallery')){
         # 请务必使用正确标准的json格式
         $lightGallery = str_replace(PHP_EOL, '', iro_opt('lightgallery_option')); 

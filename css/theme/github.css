@@ -169,7 +169,6 @@
   border-style: none;
 }
 
-.entry-content code,
 .entry-content kbd {
   font-family: monospace, monospace;
   font-size: 1em;
@@ -206,7 +205,6 @@
 }
 
 .entry-content a {
-  color: #0366d6;
   text-decoration: none;
 }
 
@@ -318,11 +316,6 @@
 
 .entry-content dd {
   margin-left: 0;
-}
-
-.entry-content code {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 12px;
 }
 
 .entry-content .octicon {
@@ -589,14 +582,6 @@
   padding-right: 20px;
 }
 
-.entry-content code {
-  padding: 0.2em 0.4em;
-  margin: 0;
-  font-size: 85%;
-  background-color: rgba(27,31,35,0.05);
-  border-radius: 3px;
-}
-
 .entry-content .full-commit .btn-outline:not(:disabled):hover {
   color: #005cc5;
   border-color: #005cc5;
@@ -734,7 +719,7 @@
     background: #1d1f21;
     color: #fff;
     word-break: break-word;
-    font-family: 'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+    font-family: 'Noto Sans SC', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
     padding: 2px;
     text-shadow: none;
     border-radius: 0 0 5px 5px;
@@ -858,7 +843,7 @@
     text-align: center;
     color: #888f96;
     background: #1d1f21;
-    font-family: 'Source Code Pro', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+    font-family: 'Noto Sans SC', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
     vertical-align: top;
     position: absolute;
     left: 0;
