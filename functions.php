@@ -285,7 +285,7 @@ function sakura_scripts()
             '很高兴你翻到这里，但是真的没有了...' => __("Glad you come, but we've got nothing left.", 'sakurairo'),
             "文章" => __("Post", 'sakurairo'),
             "标签" => __("Tag", 'sakurairo'),
-            "目录" => __("Category", 'sakurairo'),
+            "分类" => __("Category", 'sakurairo'),
             "页面" => __("Page", 'sakurairo'),
             "评论" => __("Comment", 'sakurairo'),
             "已暂停..." => __("Paused...", 'sakurairo'),
