@@ -10,7 +10,7 @@
 
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '17.0.1');
+define('INT_VERSION', '17.0.2');
 define('BUILD_VERSION', '2');
 
 //Option-Framework
@@ -328,7 +328,7 @@ function convertip($ip)
     $ch = curl_init();
     $timeout = 5;
     if (iro_opt('ipsource') === 'type_1') {
-        $url = 'https://api.nmxc.ltd/ip/{str:ip}' . $ip;
+        $url = 'https://api.nmxc.ltd/ip/' . $ip;
     } else {
         $url = 'https://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip=' . $ip;
     }
