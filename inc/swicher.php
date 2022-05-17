@@ -70,7 +70,7 @@ function font_end_js_control() {
     // 判空 empty 如果变量不存在也会返回true
     if (iro_opt('random_graphs_options') == 'external_api') {
         if (wp_is_mobile()) {
-            $iro_opt['cover_api'] = iro_opt('random_graphs_link_mobile');
+            $iro_opt['cover_api'] = iro_opt('random_graphs_mts')?iro_opt('random_graphs_link_mobile'):iro_opt('random_graphs_link');
         }else{
             $iro_opt['cover_api'] = iro_opt('random_graphs_link');
         }

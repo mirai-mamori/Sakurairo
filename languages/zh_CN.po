@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-05-09 14:20+0800\n"
-"PO-Revision-Date: 2022-05-09 14:20+0800\n"
+"POT-Creation-Date: 2022-05-17 12:27+0800\n"
+"PO-Revision-Date: 2022-05-17 12:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -147,73 +147,73 @@ msgstr "搜索"
 msgid "Widgets"
 msgstr "小工具"
 
-#: functions.php:74
+#: functions.php:75
 msgid "Nav Menus"
 msgstr "导航菜单"
 
-#: functions.php:190 functions.php:201
+#: functions.php:191 functions.php:202
 msgid "Ideas"
 msgstr "说说"
 
-#: functions.php:191
+#: functions.php:192
 msgid "Idea"
 msgstr "说说"
 
-#: functions.php:192 functions.php:193
+#: functions.php:193 functions.php:194
 msgid "Publish New Idea"
 msgstr "发布新说说"
 
-#: functions.php:194
+#: functions.php:195
 msgid "Edit Idea"
 msgstr "编辑说说"
 
-#: functions.php:195
+#: functions.php:196
 msgid "New Idea"
 msgstr "新说说"
 
-#: functions.php:196
+#: functions.php:197
 msgid "View Idea"
 msgstr "查看说说"
 
-#: functions.php:197
+#: functions.php:198
 msgid "Search Idea"
 msgstr "搜索说说"
 
-#: functions.php:198
+#: functions.php:199
 msgid "Not Found Idea"
 msgstr "没有找到说说"
 
-#: functions.php:199
+#: functions.php:200
 msgid "No Idea in the Trash"
 msgstr "没有在垃圾桶的说说"
 
-#: functions.php:272
+#: functions.php:273
 msgid "Copied!"
 msgstr "复制成功！"
 
-#: functions.php:273
+#: functions.php:274
 msgid "Copy Code"
 msgstr "拷贝代码"
 
-#: functions.php:274
+#: functions.php:275
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
 msgstr "你的封面API好像不支持跨域调用,这种情况下缓存是不会生效的哦。"
 
-#: functions.php:275
+#: functions.php:276
 msgid "Commiting...."
 msgstr "提交中...."
 
-#: functions.php:276
+#: functions.php:277
 msgid "Succeed"
 msgstr "成功"
 
-#: functions.php:277
+#: functions.php:278
 msgid "10 files max per request"
 msgstr "每次上传上限为10张"
 
-#: functions.php:278
+#: functions.php:279
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -222,15 +222,15 @@ msgid ""
 "This image is too large~Please reupload!"
 msgstr "图片上传大小限制为5 MB\\n\\n「{0}」\\n\\n这张图太大啦~请重新上传噢！"
 
-#: functions.php:279
+#: functions.php:280
 msgid "Uploading..."
 msgstr "上传中..."
 
-#: functions.php:280
+#: functions.php:281
 msgid "Uploaded successfully~"
 msgstr "上传成功~"
 
-#: functions.php:281
+#: functions.php:282
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -238,87 +238,87 @@ msgid ""
 "{2}"
 msgstr "上传失败！\\n文件名=> {0}\\ncode=> {1}\\n{2}"
 
-#: functions.php:282
+#: functions.php:283
 msgid "Upload failed, please retry."
 msgstr "上传失败，请重试."
 
-#: functions.php:283
+#: functions.php:284
 msgid "Page Load failed. HTTP {0}"
 msgstr "页面加载出错了 HTTP {0}"
 
-#: functions.php:284
+#: functions.php:285
 msgid "Glad you come, but we've got nothing left."
 msgstr "很高兴你翻到这里，但是真的没有了..."
 
-#: functions.php:285
+#: functions.php:286
 msgid "Post"
 msgstr "文章"
 
-#: functions.php:286
+#: functions.php:287
 msgid "Tag"
 msgstr "标签"
 
-#: functions.php:287
+#: functions.php:288
 msgid "Category"
 msgstr "分类"
 
-#: functions.php:288
+#: functions.php:289
 msgid "Page"
 msgstr "页面"
 
-#: functions.php:289
+#: functions.php:290
 msgid "Comment"
 msgstr "评论"
 
-#: functions.php:290
+#: functions.php:291
 msgid "Paused..."
 msgstr "停止中"
 
-#: functions.php:291
+#: functions.php:292
 msgid "Loading Video..."
 msgstr "正在加载视频..."
 
-#: functions.php:292
+#: functions.php:293
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "下载字体时，请注意您的数据使用情况。"
 
-#: functions.php:293
+#: functions.php:294
 msgid "Are you sure you want set it private?"
 msgstr "是否要将其设置为私密？"
 
-#: functions.php:294
+#: functions.php:295
 msgid "You had set private comment before"
 msgstr "您之前设置了私人评论"
 
-#: functions.php:382 inc/theme_plus.php:194 layouts/authorprofile.php:12
+#: functions.php:383 inc/theme_plus.php:194 layouts/authorprofile.php:12
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:382
+#: functions.php:383
 msgid "Blogger"
 msgstr "博客作者"
 
-#: functions.php:388
+#: functions.php:389
 msgid "Location"
 msgstr "来自"
 
-#: functions.php:394
+#: functions.php:395
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:396
+#: functions.php:397
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:398
+#: functions.php:399
 msgid "No"
 msgstr "否"
 
-#: functions.php:401
+#: functions.php:402
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:473
+#: functions.php:474
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
@@ -326,47 +326,47 @@ msgstr ""
 "请安装插件 <a href=\"https://wordpress.org/plugins/wp-statistics/\" target="
 "\"_blank\">WP-Statistics</a>"
 
-#: functions.php:503
+#: functions.php:504
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:703
+#: functions.php:704
 msgid "Download Link"
 msgstr "下载地址"
 
-#: functions.php:773
+#: functions.php:774
 msgid "Remember me"
 msgstr "记住我"
 
-#: functions.php:1172
+#: functions.php:1173
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1193
+#: functions.php:1194
 msgid " "
 msgstr " "
 
-#: functions.php:1197
+#: functions.php:1198
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1220 functions.php:1223 inc/theme_plus.php:425
+#: functions.php:1221 functions.php:1224 inc/theme_plus.php:425
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1460
+#: functions.php:1461
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:1585
+#: functions.php:1586
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1651
+#: functions.php:1655
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1781
+#: functions.php:1785
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -822,219 +822,3 @@ msgstr "友情链接模版"
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr "说说模版"
-
-#~ msgid "previous-button"
-#~ msgstr "上一个按钮"
-
-#~ msgid "next-button"
-#~ msgstr "下一个按钮"
-
-#~ msgid "close-button"
-#~ msgstr "关闭按钮"
-
-#~ msgid "View details"
-#~ msgstr "查看详情"
-
-#, php-format
-#~ msgid "More information about %s"
-#~ msgstr "关于%s的更多信息"
-
-#~ msgid "Check for updates"
-#~ msgstr "检查更新"
-
-#, php-format
-#~ msgid "Unknown update checker status \"%s\""
-#~ msgstr "未知的更新检查程序状态 \"%s\""
-
-#~ msgid "There is no changelog available."
-#~ msgstr "没有可用的更新日志。"
-
-#, fuzzy
-#~| msgid "Uploading..."
-#~ msgid "Saving..."
-#~ msgstr "上传中..."
-
-#, fuzzy, php-format
-#~| msgid "Please enter username."
-#~ msgid "Please enter %s or more characters"
-#~ msgstr "请输入用户名。"
-
-#, fuzzy
-#~| msgid "Search..."
-#~ msgid "Searching..."
-#~ msgstr "搜索..."
-
-#~ msgid "From"
-#~ msgstr "从"
-
-#~ msgid "To"
-#~ msgstr "到"
-
-#, fuzzy
-#~| msgid "Dashboard"
-#~ msgid "Dashed"
-#~ msgstr "管理后台"
-
-#, fuzzy
-#~| msgid "Widgets"
-#~ msgid "ridge"
-#~ msgstr "小工具"
-
-#, fuzzy
-#~| msgid "Edit %s"
-#~ msgid "Edit Link"
-#~ msgstr "编辑 %s"
-
-#, fuzzy
-#~| msgid "remove image"
-#~ msgid "Remove Link"
-#~ msgstr "删除图像"
-
-#, fuzzy
-#~| msgid "Uploading..."
-#~ msgid "Upload"
-#~ msgstr "上传中..."
-
-#, fuzzy
-#~| msgid "All expand/collapse"
-#~ msgid "All Small Caps"
-#~ msgstr "全部展开/收缩"
-
-#, fuzzy
-#~| msgid "Please enter email address."
-#~ msgid "Please enter a valid email address."
-#~ msgstr "请填写电子邮件地址。"
-
-#, fuzzy
-#~| msgid "Please enter email address."
-#~ msgid "Please enter a valid number."
-#~ msgstr "请填写电子邮件地址。"
-
-#, fuzzy
-#~| msgid "Please enter email address."
-#~ msgid "Please enter a valid URL."
-#~ msgstr "请填写电子邮件地址。"
-
-#, fuzzy
-#~| msgid "Hello, "
-#~ msgid "Hello!"
-#~ msgstr "欢迎 "
-
-#, fuzzy
-#~| msgid "User Name"
-#~ msgid "Site Name"
-#~ msgstr "用户名"
-
-#, fuzzy
-#~| msgid "Author"
-#~ msgid "Author Name"
-#~ msgstr "作者"
-
-#, fuzzy
-#~| msgid "Site"
-#~ msgid "Site Icon"
-#~ msgstr "网站"
-
-#, fuzzy
-#~| msgid "Comment Closed"
-#~ msgid "Commemorate Mode"
-#~ msgstr "评论关闭"
-
-#, fuzzy
-#~| msgid "Nav Menus"
-#~ msgid "Nav Menu Style"
-#~ msgstr "导航菜单"
-
-#, fuzzy
-#~| msgid "Nav Menus"
-#~ msgid "Nav Menu Radius"
-#~ msgstr "导航菜单"
-
-#, fuzzy
-#~| msgid "Nav Menus"
-#~ msgid "Nav Menu Search"
-#~ msgstr "导航菜单"
-
-#, fuzzy
-#~| msgid "Nav Menus"
-#~ msgid "Nav Menu Blur"
-#~ msgstr "导航菜单"
-
-#, fuzzy
-#~| msgid "Nav Menus"
-#~ msgid "Nav Menu User Avatar"
-#~ msgstr "导航菜单"
-
-#, fuzzy
-#~| msgid "Download Link"
-#~ msgid "Font Link"
-#~ msgstr "下载地址"
-
-#, fuzzy
-#~| msgid "image"
-#~ msgid "Image"
-#~ msgstr "图像"
-
-#, fuzzy
-#~| msgid "Location"
-#~ msgid "Local"
-#~ msgstr "来自"
-
-#, fuzzy
-#~| msgid "Email Address"
-#~ msgid "fill address"
-#~ msgstr "电子邮箱"
-
-#, fuzzy
-#~| msgid "User Name"
-#~ msgid "Email Username"
-#~ msgstr "用户名"
-
-#, fuzzy
-#~| msgid "Comment reply notify"
-#~ msgid "Common Options"
-#~ msgstr "邮件通知"
-
-#, fuzzy
-#~| msgid "User Name"
-#~ msgid "My Anime List Username"
-#~ msgstr "用户名"
-
-#~ msgid "Bilibili Account UID"
-#~ msgstr "哔哩哔哩UID"
-
-#~ msgid "Bilibili Account Cookies"
-#~ msgstr "哔哩哔哩 Cookies"
-
-#, fuzzy
-#~| msgid "Comment reply notify"
-#~ msgid "Comment-related Options"
-#~ msgstr "邮件通知"
-
-#, fuzzy
-#~| msgid "Comment reply notify"
-#~ msgid "Comment Image Proxy"
-#~ msgstr "邮件通知"
-
-#, fuzzy
-#~| msgid "Dashboard"
-#~ msgid "Dashboard Text Color"
-#~ msgstr "管理后台"
-
-#, fuzzy
-#~| msgid "Search"
-#~ msgid "Live Search"
-#~ msgstr "搜索"
-
-#, fuzzy
-#~| msgid "Location"
-#~ msgid "Localization"
-#~ msgstr "来自"
-
-#, php-format
-#~ msgid "page %s"
-#~ msgstr "第 %s 页"
-
-#, php-format
-#~ msgid "page %s "
-#~ msgstr "第 %s 页 "

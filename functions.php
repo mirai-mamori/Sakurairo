@@ -10,7 +10,7 @@
 
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '17.0.1');
+define('INT_VERSION', '17.0.2');
 define('BUILD_VERSION', '2');
 
 //Option-Framework
@@ -285,7 +285,7 @@ function sakura_scripts()
             '很高兴你翻到这里，但是真的没有了...' => __("Glad you come, but we've got nothing left.", 'sakurairo'),
             "文章" => __("Post", 'sakurairo'),
             "标签" => __("Tag", 'sakurairo'),
-            "目录" => __("Category", 'sakurairo'),
+            "分类" => __("Category", 'sakurairo'),
             "页面" => __("Page", 'sakurairo'),
             "评论" => __("Comment", 'sakurairo'),
             "已暂停..." => __("Paused...", 'sakurairo'),
@@ -328,7 +328,7 @@ function convertip($ip)
     $ch = curl_init();
     $timeout = 5;
     if (iro_opt('ipsource') === 'type_1') {
-        $url = 'https://api.nmxc.ltd/ip/{str:ip}' . $ip;
+        $url = 'https://api.nmxc.ltd/ip/' . $ip;
     } else {
         $url = 'https://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip=' . $ip;
     }

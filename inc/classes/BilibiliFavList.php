@@ -23,7 +23,7 @@ class BilibiliFavList
 		);
 		$response = wp_remote_get($url, $args);
 		if(is_array($response)){
-			return json_decode($response["body"], true);
+			return json_decode($response["body"], true) || false;
 		}else{
 			return false;
 		}
@@ -40,7 +40,7 @@ class BilibiliFavList
 		);
 		$response = wp_remote_get($url, $args);
 		if(is_array($response)){
-			return json_decode($response["body"], true);
+			return json_decode($response["body"], true) || false;
 		}else{
 			return false;
 		}
