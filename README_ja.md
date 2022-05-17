@@ -20,7 +20,7 @@
 
 - 公式QQグルプ：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
 
-- このテーマの使い方についてご不明な点がございましたら、[公式サイト](https://wiki.fuukei.org/)を**ご覧ください**。 
+- このテーマの使い方についてご不明な点がございましたら、[サポートドキュメント](https://wiki.fuukei.org/)を**ご覧ください**。 
 
 - 自分が体験している現象が本当にBugであることを確認した上で、 [issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) で質問をお寄せください。テンプレートに沿って、出来るだけ詳しく説明してください。ご協力ありがとうございました。
 

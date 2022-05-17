@@ -20,7 +20,7 @@
 
 - QQ Group：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
 
-- If you have any question using this theme, please **visit**  [Offical Website](https://wiki.fuukei.org/) 
+- If you have any question using this theme, please **visit**  [Support Documentation](https://wiki.fuukei.org/) 
 
 - When you are sure that you are faced with a bug, please [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) the bug, and make a description as detailed as possible.
 Please fill in with the issue template. Thanks for your cooperation.
