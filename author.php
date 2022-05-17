@@ -9,7 +9,7 @@ get_header();
 	</div>
 	<div class="author-center">
 		<h3><?php the_author() ?></h3>
-		<div class="description"><?= get_the_author_meta('description') || iro_opt('signature_text', 'Carpe Diem and Do what I like'); ?></div>
+		<div class="description"><?php echo get_the_author_meta('description') ? get_the_author_meta('description') : iro_opt('signature_text', 'Carpe Diem and Do what I like'); ?></div>
 	</div>
 </div>
 <style>

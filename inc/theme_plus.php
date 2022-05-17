@@ -238,11 +238,11 @@ var TYPE; */ //不要污染全局命名空间啊啊啊啊啊啊啊啊啊啊啊�
 ?>
 function gopage(url,descr) {
     function cb(sec) {
-        document.getElementById('login-showtime').innerHTML = '<?=__("Login successful, ","sakurairo")/*空降成功*/?>' 
-        + sec + '<?=__("seconds later automatically transfer to","sakurairo")/*秒后自动转到*/?>' + descr;
-        if (sec == 0) { window.location = url; } else {setTimeout(cb((sec - 1)*1000)) }
+        document.getElementById('login-showtime').innerHTML = '<?= __("Login successful, ","sakurairo")/*空降成功*/?>'
+        + sec + '<?= __("seconds later automatically transfer to","sakurairo")/*秒后自动转到*/?>' + descr;
+        if (sec == 0) { window.location = url; } else { window.setTimeout(() => { cb(sec - 1); }, 1000); }
     }
-    setTimeout(cb(5)) <?php /*倒计时秒数在这捏*/ ?>
+    window.setTimeout(() => { cb(5); }, 1000); //倒计时秒数在这捏
 }
   </script>  
   <?php if(current_user_can('level_10')){ ?>
