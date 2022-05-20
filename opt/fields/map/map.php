@@ -11,7 +11,7 @@ if ( ! class_exists( 'CSF_Field_map' ) ) {
   class CSF_Field_map extends CSF_Fields {
 
     public $version = '1.7.1';
-    public $cdn_url = 'https://cdn.jsdelivr.net/npm/leaflet@';
+    public $cdn_url = 'https://lib.baomitu.com/leaflet/';
 
     public function __construct( $field, $value = '', $unique = '', $where = '', $parent = '' ) {
       parent::__construct( $field, $value, $unique, $where, $parent );

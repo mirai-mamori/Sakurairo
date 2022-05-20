@@ -11,7 +11,7 @@ if ( ! class_exists( 'CSF_Field_code_editor' ) ) {
   class CSF_Field_code_editor extends CSF_Fields {
 
     public $version = '5.65.2';
-    public $cdn_url = 'https://cdn.jsdelivr.net/npm/codemirror@';
+    public $cdn_url = 'https://lib.baomitu.com/codemirror/';
 
     public function __construct( $field, $value = '', $unique = '', $where = '', $parent = '' ) {
       parent::__construct( $field, $value, $unique, $where, $parent );

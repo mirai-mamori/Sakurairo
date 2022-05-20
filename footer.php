@@ -164,7 +164,7 @@ $reception_background = iro_opt('reception_background');
 
 <!-- Live2D看板娘 -->
 <?php if (iro_opt('live2d_options', 'true')): ?>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/<?php echo iro_opt('live2d_custom_user'); ?>/live2d-widget@<?php echo iro_opt('live2d_custom_user_ver'); ?>/autoload.js"></script>
+<script type="text/javascript" src="https://fastly.jsdelivr.net/gh/<?php echo iro_opt('live2d_custom_user'); ?>/live2d-widget@<?php echo iro_opt('live2d_custom_user_ver'); ?>/autoload.js"></script>
 <?php endif; ?>
 <!-- logo字体部分 -->
 <?php if (iro_opt('mashiro_logo_option') == true) { ?>
