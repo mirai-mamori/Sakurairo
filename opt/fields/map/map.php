@@ -81,11 +81,11 @@ if ( ! class_exists( 'CSF_Field_map' ) ) {
     public function enqueue() {
 
       if ( ! wp_script_is( 'csf-leaflet' ) ) {
-        wp_enqueue_script( 'csf-leaflet', esc_url( $this->cdn_url . $this->version .'/dist/leaflet.js' ), array( 'sakurairo_csf' ), $this->version, true );
+        wp_enqueue_script( 'csf-leaflet', esc_url( $this->cdn_url . $this->version .'/leaflet.js' ), array( 'sakurairo_csf' ), $this->version, true );
       }
 
       if ( ! wp_style_is( 'csf-leaflet' ) ) {
-        wp_enqueue_style( 'csf-leaflet', esc_url( $this->cdn_url . $this->version .'/dist/leaflet.css' ), array(), $this->version );
+        wp_enqueue_style( 'csf-leaflet', esc_url( $this->cdn_url . $this->version .'/leaflet.css' ), array(), $this->version );
       }
 
       if ( ! wp_script_is( 'jquery-ui-autocomplete' ) ) {

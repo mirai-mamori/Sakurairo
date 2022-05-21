@@ -1302,7 +1302,7 @@ function admin_ini()
 {
     wp_enqueue_style('admin-styles-fix-icon', get_site_url() . '/wp-includes/css/dashicons.css');
     wp_enqueue_style('cus-styles-fit', get_template_directory_uri() . '/css/dashboard-fix.css');
-    wp_enqueue_script('lazyload', 'https://lib.baomitu.com/lazyload/2.0.3/lazyload-min.js');
+    wp_enqueue_script('lazyload', get_template_directory_uri() . '/js/lazyload.min.js');
 }
 add_action('admin_enqueue_scripts', 'admin_ini');
 
