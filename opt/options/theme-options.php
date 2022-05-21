@@ -1253,32 +1253,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'live2d_options',
-        'type' => 'switcher',
-        'title' => __('Live2D Model','sakurairo_csf'),
-        'label' => __('Live2D Model will be loaded in the bottom left corner of the page after turning on','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
-        'id' => 'live2d_custom_user',
-        'type' => 'text',
-        'title' => __('Live2D Model Custom Github Project Username','sakurairo_csf'),
-        'dependency' => array( 'live2d_options', '==', 'true' ),
-        'desc' => __('If you want to customize this option, you need to go to Github to fork this project and make changes to this project first, fill in the Github project username here','sakurairo_csf'),
-        'default' => 'mirai-mamori'
-      ),
-
-      array(
-        'id' => 'live2d_custom_user_ver',
-        'type' => 'text',
-        'title' => __('Live2D Model Custom Github Project Version','sakurairo_csf'),
-        'dependency' => array( 'live2d_options', '==', 'true' ),
-        'desc' => __('If you want to customize this option, you need to first go to Github to fork this project and make changes to this project, fill in the version of the Github project here','sakurairo_csf'),
-        'default' => 'latest'
-      ),
-
-      array(
         'id' => 'note_effects',
         'type' => 'switcher',
         'title' => __('Note Touch Effects','sakurairo_csf'),
@@ -3300,7 +3274,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type'    => 'content',
         'content'=>__('<strong>Attension: Please read <a href="https://github.com/sachinchoolur/lightGallery#license">License Instruction</a> before use.</strong>'
-        .'<br/><strong><a href="https://www.lightgalleryjs.com/demos/thumbnails/">Demos</a></strong> | <strong><a href="https://www.lightgalleryjs.com/docs/settings/">Reference</a></strong> | <strong><a href="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/">Plugin List</a></strong> '
+        .'<br/><strong><a href="https://www.lightgalleryjs.com/demos/thumbnails/">Demos</a></strong> | <strong><a href="https://www.lightgalleryjs.com/docs/settings/">Reference</a></strong> | <strong><a href="https://fastly.jsdelivr.net/npm/lightgallery@latest/plugins/">Plugin List</a></strong> '
         .'<br/> Please write settings in JavaScript. An example has been provided as default setting.'
         .'<br/> It should be captiable for Most User using WordPress Guttenberg Editor.'
         .'<br/>Submit new discussion on Github for assistance. https://github.com/mirai-mamori/Sakurairo/discussions','sakurairo_csf')       ,
@@ -3369,7 +3343,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           array( 'code_highlight_method', '==', 'prism' ),
         ),
         'desc' => __('Leave blank to use default values','sakurairo_csf'),
-        'default'=>'https://cdn.jsdelivr.net/npm/prismjs@1.23.0/'
+        'default'=>'https://fastly.jsdelivr.net/npm/prismjs@1.23.0/'
       ),
 
       array(
@@ -3563,7 +3537,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       'title' => __('Public CDN Basepath','sakurairo_csf'),
       'options'     => array(
         'https://s.nmxc.ltd/sakurairo/@'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.5/options/update_source_upyun.webp',
-        'https://cdn.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.5/options/update_source_jsd.webp',
+        'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.5/options/update_source_jsd.webp',
       ),
       'default'     => 'https://s.nmxc.ltd/sakurairo/@'
     ),
@@ -3605,7 +3579,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'    => 'content',
         'content' => __('<p>Fluent Design Icon Referenced by Paradox <a href="https://wwi.lanzous.com/ikyq5kgx0wb">Fluent Icon Pack</a></p>
         <p>MUH2 Design Icon Referenced by 缄默 <a href="https://www.coolapk.com/apk/com.muh2.icon">MUH2 Icon Pack</a></p>
-        <p>Live2D Model Referenced by Stevenjoezhang <a href="https://github.com/stevenjoezhang/live2d-widget">Live2d-Widget</a> Open Source Project</p>
         <p>Mashiro Style Logo References the Original Theme Author Mashiro, As Provided and Referenced by <a href="https://hyacm.com/acai/ui/143/sakura-logo/">Hyacm</a></p>','sakurairo_csf'),
       ),
 

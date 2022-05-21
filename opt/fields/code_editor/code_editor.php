@@ -11,7 +11,7 @@ if ( ! class_exists( 'CSF_Field_code_editor' ) ) {
   class CSF_Field_code_editor extends CSF_Fields {
 
     public $version = '5.65.2';
-    public $cdn_url = 'https://cdn.jsdelivr.net/npm/codemirror@';
+    public $cdn_url = 'https://lib.baomitu.com/codemirror/';
 
     public function __construct( $field, $value = '', $unique = '', $where = '', $parent = '' ) {
       parent::__construct( $field, $value, $unique, $where, $parent );
@@ -44,12 +44,12 @@ if ( ! class_exists( 'CSF_Field_code_editor' ) ) {
       if ( in_array( $page, array( 'revslider' ) ) ) { return; }
 
       if ( ! wp_script_is( 'csf-codemirror' ) ) {
-        wp_enqueue_script( 'csf-codemirror', esc_url( $this->cdn_url . $this->version .'/lib/codemirror.min.js' ), array( 'sakurairo_csf' ), $this->version, true );
+        wp_enqueue_script( 'csf-codemirror', esc_url( $this->cdn_url . $this->version .'/codemirror.min.js' ), array( 'sakurairo_csf' ), $this->version, true );
         wp_enqueue_script( 'csf-codemirror-loadmode', esc_url( $this->cdn_url . $this->version .'/addon/mode/loadmode.min.js' ), array( 'csf-codemirror' ), $this->version, true );
       }
 
       if ( ! wp_style_is( 'csf-codemirror' ) ) {
-        wp_enqueue_style( 'csf-codemirror', esc_url( $this->cdn_url . $this->version .'/lib/codemirror.min.css' ), array(), $this->version );
+        wp_enqueue_style( 'csf-codemirror', esc_url( $this->cdn_url . $this->version .'/codemirror.min.css' ), array(), $this->version );
       }
 
     }
