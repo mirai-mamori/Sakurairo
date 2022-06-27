@@ -70,7 +70,7 @@ while (have_posts()) : the_post();
 		<div class="post-content-wrap">
 			<div class="post-content">
 				<div class="post-date">
-					<i class="iconfont icon-time"></i><?php echo poi_time_since(strtotime($post->post_date_gmt)); ?>
+					<i class="iconfont icon-time"></i><?php echo poi_time_since(strtotime($post->post_date)); ?>
 					<?php if (is_sticky()) : ?>
 						&nbsp;<i class="iconfont hotpost icon-hot"></i>
 					<?php endif ?>
