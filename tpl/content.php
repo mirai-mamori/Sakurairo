@@ -22,7 +22,7 @@
 		<?php if(is_sticky()) : ?>
 			<i class="iconfont hotpost icon-hot"></i>
 		 <?php endif ?>
-	  	<i class="iconfont icon-time"></i><?php echo poi_time_since(strtotime($post->post_date_gmt)); ?>
+	  	<i class="iconfont icon-time"></i><?php echo poi_time_since(strtotime($post->post_date)); ?>
 	  	</div>
 		<?php the_excerpt(); ?>
 		<footer class="entry-footer">
