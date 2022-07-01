@@ -4,12 +4,12 @@ get_header();
 
 ?>
 <div class="author_info">
-	<div class="avatar">
-		<img src="<?php echo get_avatar_profile_url(); ?>" itemprop="image" alt="<?php the_author(); ?>" height="70" width="70">
+	<div class="avatar" style="height: 70px;width: 70px;">
+	    <?php echo get_avatar($author) ?>
 	</div>
 	<div class="author-center">
 		<h3><?php the_author() ?></h3>
-		<div class="description"><?php echo get_the_author_meta('description') ? get_the_author_meta('description') : iro_opt('signature_text', 'Carpe Diem and Do what I like'); ?></div>
+		<div class="description"><?php echo get_the_author_meta('description') ? get_the_author_meta('description') : '此用户暂未设置个人简介'; ?></div>
 	</div>
 </div>
 <style>
