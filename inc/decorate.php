@@ -401,7 +401,7 @@ font-family:<?=iro_opt('area_title_font'); ?>;
 
 .header-info p{
 font-family:<?=iro_opt('signature_font'); ?> !important;
-font-size: <?=iro_opt('signature_font_size'); ?>px !important;
+font-size: <?=iro_opt('signature_font_size'); ?>px;
 }
 
 .cbp_tmtimeline > li .cbp_tmlabel {
@@ -418,7 +418,7 @@ font-size: <?=iro_opt('post_date_font_size'); ?>px !important;
 
 .pattern-center h1.cat-title,
 .pattern-center h1.entry-title {
-font-size: <?=iro_opt('page_temp_title_font_size'); ?>px !important;
+font-size: <?=iro_opt('page_temp_title_font_size'); ?>px ;
 }
 .pattern-center-sakura h1.cat-title,
 .pattern-center-sakura h1.entry-title {
@@ -426,7 +426,7 @@ font-size: <?=iro_opt('page_temp_title_font_size'); ?>px !important;
 }
 
 .single-center .single-header h1.entry-title {
-font-size: <?=iro_opt('article_title_font_size'); ?>px !important;
+font-size: <?=iro_opt('article_title_font_size'); ?>px ;
 }
 
 /*鼠标*/
