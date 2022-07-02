@@ -1,0 +1,16 @@
+name: Issue Add Assigness
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  mark-duplicate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wow-actions/auto-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          issuesOpened: |
+            @{{ author }}，感谢你给 sakurairo 提出了 issue。ヾ(≧▽≦*)o
+            请根据 issue 模版确保背景信息的完善，我们将调查并尽快回复你。
