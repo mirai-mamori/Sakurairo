@@ -62,7 +62,7 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
 .site-top .lower {
   animation: searchbox 1s;
   position: relative;
-  display: inline-block;
+  display: block;
   float: right;
   margin: 15px 0 0 0;
   font-size: 16px;
@@ -1095,7 +1095,7 @@ input[type=week] {
 
 .post-content-wrap {
   position: relative;
-  display: inline-block;
+  display: block;
   float: right;
   padding-right: 30px;
   padding-left: 0;
@@ -2968,7 +2968,6 @@ i.iconfont.js-toggle-search.iconsearch {
 .gallery .gallery-item {
   display: inline-block;
   vertical-align: top;
-  float: left;
   width: 280px;
   height: 180px;
   position: relative;
@@ -3547,7 +3546,6 @@ i.iconfont.down {
   content: "✔";
   margin: -3px 0 0 -4px;
   color: #1e8cbe;
-  float: left;
   display: inline-block;
   vertical-align: middle;
   width: 16px;
@@ -3558,7 +3556,6 @@ i.iconfont.down {
 }
 
 input[type=radio]:checked:before {
-  float: left;
   display: inline-block;
   vertical-align: middle;
   width: 16px;
