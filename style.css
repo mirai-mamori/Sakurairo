@@ -9284,6 +9284,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 
 .post-content{
   margin-top: 12px;
+  display: inline-block;
 }
 
 .header-info {
