@@ -4,12 +4,12 @@ get_header();
 
 ?>
 <div class="author_info">
-	<div class="avatar">
-		<img src="<?php echo get_avatar_profile_url(); ?>" itemprop="image" alt="<?php the_author(); ?>" height="70" width="70">
+	<div class="avatar" style="height: 75px;width: 75px;">
+	    <?php echo get_avatar($author) ?>
 	</div>
 	<div class="author-center">
 		<h3><?php the_author() ?></h3>
-		<div class="description"><?php echo get_the_author_meta('description') ? get_the_author_meta('description') : iro_opt('signature_text', 'Carpe Diem and Do what I like'); ?></div>
+		<div class="description"><?php echo get_the_author_meta('description') ? get_the_author_meta('description') : __("No personal profile set yet","sakurairo"); ?></div>
 	</div>
 </div>
 <style>
@@ -18,14 +18,13 @@ get_header();
 		overflow: hidden;
 		padding: 40px 0;
 		position: relative;
-		border-bottom: 6px dotted #eee;
-		font-family: miranafont, "Hiragino Sans GB", STXihei, "Microsoft YaHei", SimSun, sans-serif;
+		font-family:'Noto Sans SC';
 	}
 
 	.author_info .avatar {
 		float: left;
-		margin-right: 12px;
-		margin-left: 8px;
+		margin-right: 30px;
+		margin-left: 0px;
 	}
 
 	.author_info .avatar img {
@@ -36,8 +35,8 @@ get_header();
 	}
 
 	.author_info .author-center {
-		line-height: 28px;
-		padding-top: 9px;
+		line-height: 27px;
+		padding-top: 10px;
 	}
 
 	.author_info .author-center h3 {

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-05-17 12:27+0800\n"
+"POT-Creation-Date: 2022-07-01 17:25+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -39,6 +39,10 @@ msgstr ""
 
 #: archive.php:58 author.php:80 index.php:74
 msgid " Previous"
+msgstr ""
+
+#: author.php:12
+msgid "No personal profile set yet"
 msgstr ""
 
 #: comments.php:20

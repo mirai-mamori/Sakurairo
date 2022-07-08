@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-05-17 12:27+0800\n"
-"PO-Revision-Date: 2022-05-17 12:28+0800\n"
+"POT-Creation-Date: 2022-07-01 17:26+0800\n"
+"PO-Revision-Date: 2022-07-01 17:26+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -40,6 +40,10 @@ msgstr "搜尋..."
 #: archive.php:58 author.php:80 index.php:74
 msgid " Previous"
 msgstr " 更早的文章"
+
+#: author.php:12
+msgid "No personal profile set yet"
+msgstr "尚未設置個人資料"
 
 #: comments.php:20
 msgid "view comments"

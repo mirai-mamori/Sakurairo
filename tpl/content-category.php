@@ -23,7 +23,7 @@
  	<div class="works-overlay">
 	<h1 class="works-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
 	<div class="works-p-time">		
-	  <i class="iconfont icon-calendar"></i> <?php echo poi_time_since(strtotime($post->post_date_gmt));//the_time('Y-m-d');?>
+	  <i class="iconfont icon-calendar"></i> <?php echo poi_time_since(strtotime($post->post_date));//the_time('Y-m-d');?>
 	  </div>
 	<div class="works-meta">
        <div class="works-comnum">  

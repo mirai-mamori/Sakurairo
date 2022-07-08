@@ -41,10 +41,10 @@ $reception_background = iro_opt('reception_background');
                         ?>
                         <?php endif; ?>
 						<?php if (iro_opt('footer_upyun', 'true')): ?>
-							本网站由 <a href="https://www.upyun.com/league" target="_blank"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.5/options/upyun_logo.webp" width="60px" height="20px"></a> 提供 CDN 加速 / 云存储 服务
+							本网站由 <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"> <img alt="upyun-logo" src="https://s.nmxc.ltd/sakurairo_vision/@2.5/options/upyun_logo.webp"  style="display:inline-block;vertical-align:middle;width:60px;height:30px;"/> 提供 CDN 加速 / 云存储 服务
                         <?php endif; ?>
                         <br>
-						Theme <a href="https://github.com/mirai-mamori/Sakurairo" rel="noopener" target="_blank" id="site-info" >Sakurairo</a>  by <a href="https://fuukei.org/" rel="noopener" target="_blank" id="site-info" >Fuukei</a> 
+						<a href="https://github.com/mirai-mamori/Sakurairo" rel="noopener" target="_blank" id="site-info" >Theme Sakurairo</a>  by <a href="https://fuukei.org/" rel="noopener" target="_blank" id="site-info" >Fuukei</a> 
 					</span>
 			</div>
 		</div><!-- .site-info -->

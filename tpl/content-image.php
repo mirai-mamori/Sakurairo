@@ -23,7 +23,7 @@
 	 <?php if(is_sticky()) : ?>
 			<i class="iconfont hotpost icon-hot"></i>
 		 <?php endif ?>
-	  <i class="iconfont icon-time"></i><?php echo poi_time_since(strtotime($post->post_date_gmt));//the_time('Y-m-d');?>
+	  <i class="iconfont icon-time"></i><?php echo poi_time_since(strtotime($post->post_date));//the_time('Y-m-d');?>
 	  </div>
 		<p><?php echo mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, 150,"...");?></p>
 	<footer class="entry-footer">
