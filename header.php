@@ -126,8 +126,24 @@ $mashiro_logo = iro_opt('mashiro_logo');
 				<?php } ?>
 				<!-- logo end -->
 			</div><!-- .site-branding -->
-			<?php header_user_menu();
-			if (iro_opt('nav_menu_search') == '1') { ?>
+			<?php header_user_menu(); ?>
+			<!--  自定义菜单 -->
+		<?php
+			if (iro_opt('beta_response_menu') == '1') { ?>
+			<style>
+			    .site-branding {
+			        float: left;
+			    }
+			</style>
+				<div class="dropdown">
+					<span class="menu-button"><i class="fa fa-bars fa-xl" style="--fa-primary-color: #ffffff; --fa-secondary-color: #c0e7ff;"></i></span>
+					<div class="dropdown-content">
+							<nav><?php wp_nav_menu(array('depth' => 2, 'theme_location' => 'primary', 'container' => false)); ?></nav>
+						</div>
+				</div>
+		<?php } else 
+				{ ?>
+			<?php if (iro_opt('nav_menu_search')) { ?>
 				<div class="searchbox"><i class="iconfont js-toggle-search iconsearch icon-search"></i></div>
 			<?php } ?>
 			<div class="lower"><?php if (iro_opt('nav_menu_display') == 'fold') { ?>
@@ -136,15 +152,33 @@ $mashiro_logo = iro_opt('mashiro_logo');
 						<div class="line line2"></div>
 						<div class="line line3"></div>
 					</div><?php } ?>
-				<nav><?php wp_nav_menu(array('depth' => 2, 'theme_location' => 'primary', 'container' => false)); ?></nav><!-- #site-navigation -->
+				<nav><?php wp_nav_menu(array('depth' => 2, 'theme_location' => 'primary', 'container' => false)); ?></nav>
+				<!-- #site-navigation -->
 			</div>
-		</div>
-	</header><!-- #masthead -->
-	<div class="openNav no-select">
-		<div class="iconflat no-select">
-			<div class="icon"></div>
-		</div>
+				<!-- m-nav-center -->
+			<div id="mo-nav">
+				<div class="m-avatar">
+					<?php 
+					$personal_avatar = iro_opt('personal_avatar');
+					$iro_logo = iro_opt('iro_logo');
+					$ava = iro_opt('personal_avatar') ? $personal_avatar: ($iro_logo ?: iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.5/').'series/avatar.webp'); ?>
+				<img src="<?php echo $ava ?>">
+			</div>
+			<div class="m-search">
+				<form class="m-search-form" method="get" action="<?php echo home_url(); ?>" role="search">
+					<input class="m-search-input" type="search" name="s" placeholder="<?php _e('Search...', 'sakurairo') /*搜索...*/?>" required>
+				</form>
+			</div>
+			<div class="openNav no-select">
+	        	<div class="iconflat no-select">
+			    <div class="icon"></div>
+		    </div>
 	</div><!-- m-nav-bar -->
+				<?php wp_nav_menu( array( 'depth' => 2, 'theme_location' => 'primary', 'container' => false ) ); ?>
+		</div><!-- m-nav-center end -->
+		<?php }?>
+	</div>
+	</header><!-- #masthead -->
 	<section id="main-container">
 		<?php
 		if (iro_opt('cover_switch')) {

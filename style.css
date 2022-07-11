@@ -9805,3 +9805,126 @@ body.dark .pattern-center h1.entry-title,body.dark .post-squares h3 {
 body.dark .header-user-menu .herder-user-name,body.dark .header-user-menu .herder-user-name-u {
   color: #CCCCCC;
 }
+
+/*新菜单开始*/
+.dropdown {
+  position: absolute;
+  display: block;
+  float: right;
+  right: 65px;
+  top: 15px;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    min-width: 160px;
+    transition: all .6s;
+    float: right;
+    right: 60px;
+    FONT-WEIGHT: 100;
+    font-weight: var(--global-font-weight);
+    z-index: 35;
+    background: rgba(255, 255, 255, .95);
+    border-radius: 10px;
+    padding-right: 20px;
+    animation: searchbox 0.6s;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .menu-button {
+  opacity: 0;
+}
+
+.site-top .dropdown-content nav {
+  position: relative;
+  float: right;
+  animation: searchbox .6s;
+  /* text-shadow: 0.5px 0.5px 0 #000000, 0px 0px 3px #ffffff3f; */
+}
+.dropdown-content li ul {
+  display: none;
+  opacity: 1;
+  position: absolute;
+  background: #ffffff;
+  padding: 10px;
+  top: 46px;
+  right: -2.7em;
+  min-width: 80px;
+  max-width: 180px;
+  white-space: nowrap;
+  z-index: 9999;
+  border-radius: 10px;
+  box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .2);
+  animation: header-menu .8s;
+}
+.dropdown-content li ul::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+.site-top .dropdown-content nav.navbar {
+    display: block;
+}
+.dropdown-content li:hover ul {
+  display: inline-block;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+.dropdown-content li:hover ul {
+  display: inline-block;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.dropdown-content li ul li {
+  width: 100%;
+  margin: 0 5px;
+}
+
+.menu-button {
+    display: inline-block;
+    float: right;
+    margin-top: 9px;
+    transition: all .3s;
+    z-index: 30;
+}
+
+
+@media (max-width:860px) {
+  .dropdown {
+    top: 10px;
+  }
+  .dropdown-content {
+    min-width: 160px;
+    right: 0px;
+    top: 60px;
+    margin: 0 30px;
+    FONT-VARIANT: JIS04;
+    font-weight: var(--global-font-weight);
+    }
+    
+  .dropdown:hover .menu-button {
+    opacity: 1;
+    }
+    
+  .menu-button {
+    display: inline-block;
+    float: right;
+    margin-top: 9px;
+    transition: all .3s;
+    z-index: 30;
+  }
+  .dropdown {
+  right: 20px;
+}
+}
+/*新菜单结束*/
