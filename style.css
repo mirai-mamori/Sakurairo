@@ -9812,6 +9812,7 @@ body.dark .header-user-menu .herder-user-name,body.dark .header-user-menu .herde
   display: block;
   float: right;
   right: 65px;
+  top: 15px;
 }
 
 .dropdown-content {
@@ -9898,7 +9899,10 @@ body.dark .header-user-menu .herder-user-name,body.dark .header-user-menu .herde
 }
 
 
-@media (max-width:1111px) {
+@media (max-width:860px) {
+  .dropdown {
+    top: 10px;
+  }
   .dropdown-content {
     min-width: 160px;
     right: 0px;
@@ -9907,12 +9911,11 @@ body.dark .header-user-menu .herder-user-name,body.dark .header-user-menu .herde
     FONT-VARIANT: JIS04;
     font-weight: var(--global-font-weight);
     }
+    
   .dropdown:hover .menu-button {
     opacity: 1;
     }
-}
-
-@media (max-width:500px) {
+    
   .menu-button {
     display: inline-block;
     float: right;
