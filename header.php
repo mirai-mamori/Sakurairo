@@ -136,8 +136,8 @@ $mashiro_logo = iro_opt('mashiro_logo');
 			    }
 			</style>
 				<div class="dropdown">
-					<span class="menu-button"><i class="fa-duotone fa-bars fa-xl" style="--fa-primary-color: #ffffff; --fa-secondary-color: #c0e7ff;"></i></span>
-						<div class="dropdown-content">
+					<span class="menu-button"><i class="fa fa-bars fa-xl" style="color: var(--theme-skin); font-size: 1.5em; line-height: .04167em; vertical-align: -.125em;"></i></span>
+					<div class="dropdown-content">
 							<nav><?php wp_nav_menu(array('depth' => 2, 'theme_location' => 'primary', 'container' => false)); ?></nav>
 						</div>
 				</div>
