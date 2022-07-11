@@ -3416,14 +3416,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Version Control','sakurairo_csf'),
         'desc' => __('Used to update front-end cookies and browser cache, can use any string','sakurairo_csf'),
       ),
-	
-      array(
-        'id'    => 'beta_response_menu',
-        'type'  => 'switcher',
-        'title' => __('Beta responstive head menu','sakurairo_csf'),
-        'label'   => __('Beta responstive head menu','sakurairo_csf'),
-        'default' => true
-      ),
     )
   ) );
 
