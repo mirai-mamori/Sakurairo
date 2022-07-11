@@ -129,16 +129,34 @@ $mashiro_logo = iro_opt('mashiro_logo');
 			<?php header_user_menu(); ?>
 			<!--  自定义菜单 -->
 		<?php
-			if (iro_opt('beta_response_menu') == '1') { ?>
+			if (iro_opt('beta_response_menu')) { ?>
 			<style>
 			    .site-branding {
 			        float: left;
 			    }
+			    .m-search {
+			        display: none;
+			     }
+			    @media(max-width:860px){
+			         .m-search {
+			             display: block;
+			             margin: 0 0 10px 20px;
+			         }
+			     }
 			</style>
 				<div class="dropdown">
-					<span class="menu-button"><i class="fa fa-bars fa-xl" style="color: var(--theme-skin); font-size: 1.5em; line-height: .04167em; vertical-align: -.125em;"></i></span>
+					<span class="menu-button"><i class="fa fa-bars" style="color: var(--theme-skin); font-size: 1.5em; line-height: .04167em; vertical-align: -.125em;"></i></span>
 					<div class="dropdown-content">
-							<nav><?php wp_nav_menu(array('depth' => 2, 'theme_location' => 'primary', 'container' => false)); ?></nav>
+							<nav><?php wp_nav_menu(array('depth' => 2, 'theme_location' => 'primary', 'container' => false)); ?>
+							    <?php if (iro_opt('nav_menu_search')) { ?>
+							        <div class="m-search">
+				                        <form class="m-search-form" method="get" action="<?php echo home_url(); ?>" role="search">
+					                        <input class="m-search-input" type="search" name="s" placeholder="<?php _e('Search...', 'sakurairo') /*搜索...*/?>" required>
+					                    </form>
+					                </div>
+				                    <div class="searchbox" style="animation: searchbox .6s; margin-top: 5px; height: auto; line-height: unset;"><i class="iconfont js-toggle-search iconsearch icon-search"></i></div>
+			                    <?php } ?>
+							</nav>
 						</div>
 				</div>
 		<?php } else 
