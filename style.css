@@ -9892,7 +9892,7 @@ body.dark .header-user-menu .herder-user-name,body.dark .header-user-menu .herde
 .menu-button {
     display: inline-block;
     float: right;
-    margin-top: 9px;
+    margin-top: 10px;
     transition: all .3s;
     z-index: 30;
 }
@@ -9907,6 +9907,7 @@ body.dark .header-user-menu .herder-user-name,body.dark .header-user-menu .herde
     right: 0px;
     top: 60px;
     margin: 0 30px;
+    margin-top: 20px;
     FONT-VARIANT: JIS04;
     font-weight: var(--global-font-weight);
     }
