@@ -15,7 +15,7 @@ jobs:
           stale-issue-message: "这个 Issue 已经 30 天没有任何活动了，将被标记为过时 stale。删除 stale 标签或评论，否则将在 7 天内关闭。"
           stale-pr-message: '这个 PR 已经 45 天没有任何活动了，将被标记为过时 stale 。 删除 stale 的标签或评论，否则将在 10 天内关闭。'
           close-issue-message: "此 Issue 由于被标记为过时 stale 且超过 7 天没有活动，已自动关闭。"
-          close-pr-message: "此 PR 由于被标记为 stable 且超过 10 天没有活动，已自动关闭。"
+          close-pr-message: "此 PR 由于被标记为 stale 且超过 10 天没有活动，已自动关闭。"
           days-before-stale: 30
           days-before-close: 7
           days-before-pr-stale: 45
