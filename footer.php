@@ -50,22 +50,6 @@ $reception_background = iro_opt('reception_background');
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 	</section><!-- #section -->
-	<!-- m-nav-center -->
-	<div id="mo-nav">
-		<div class="m-avatar">
-			<?php 
-			$personal_avatar = iro_opt('personal_avatar');
-			$iro_logo = iro_opt('iro_logo');
-			$ava = iro_opt('personal_avatar') ? $personal_avatar: ($iro_logo ?: iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.5/').'series/avatar.webp'); ?>
-			<img src="<?php echo $ava ?>">
-		</div>
-		<div class="m-search">
-			<form class="m-search-form" method="get" action="<?php echo home_url(); ?>" role="search">
-				<input class="m-search-input" type="search" name="s" placeholder="<?php _e('Search...', 'sakurairo') /*搜索...*/?>" required>
-			</form>
-		</div>
-		<?php wp_nav_menu( array( 'depth' => 2, 'theme_location' => 'primary', 'container' => false ) ); ?>
-	</div><!-- m-nav-center end -->
 	<button id="moblieGoTop" title="<?=__('Go to top','sakurairo');?>"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
     <button id="changskin"><i class="iconfont icon-gear inline-block rotating"></i></button>
 	<!-- search start -->
