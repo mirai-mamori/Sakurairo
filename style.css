@@ -1095,7 +1095,7 @@ input[type=week] {
 
 .post-content-wrap {
   position: relative;
-  display: block;
+  display: inline-block;
   float: right;
   padding-right: 30px;
   padding-left: 0;
