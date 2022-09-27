@@ -3557,7 +3557,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://s.nmxc.ltd/sakurairo_vision/@2.5/options/upyun_logo.webp" alt="Theme Sponsors" width="15%" height="15%"/>','sakurairo_csf'),
+        'content' => __('<img src="https://news.maho.cc/sponsors.php"  alt="sponsors" width="65%" height="65%" />','sakurairo_csf'),
       ),
 
       array(
