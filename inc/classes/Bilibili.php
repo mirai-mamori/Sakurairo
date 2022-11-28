@@ -128,7 +128,7 @@ class Bilibili
                 $progress = 0;
             }
             $total = (isset($matches_new[1]) && is_numeric($matches_new[1])) ? $matches_new[1] : $item['total_count'];
-            if ($total < 0) {
+            if ($total == 0) {
                 //电影类剧集$total可能得到0
                 $percent = 0;
             } else {
