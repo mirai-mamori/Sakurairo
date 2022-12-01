@@ -1855,48 +1855,48 @@ add_shortcode('collapse', 'xcollapse');
 //code end
 
 
-add_action("wp_ajax_nopriv_getPhoto", "get_photo");
-add_action("wp_ajax_getPhoto", "get_photo");
-/**
- * 相册模板
- * @author siroi <mrgaopw@hotmail.com>
- * @return Json
- */
-function get_photo()
-{
-    $postId = $_GET['post'];
-    $page = get_post($postId);
-    if ($page->post_type != "page") {
-        $back['code'] = 201;
-    } else {
-        $back['code'] = 200;
-        $back['imgs'] = array();
-        $dom = new DOMDocument('1.0', 'utf-8');
-        $meta = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
-        $dom->loadHTML($meta . $page->post_content);
-        $imgS = $dom->getElementsByTagName('img');
-        //<img src="..." data-header="标题" data-info="信息" vertical=false>
-        foreach ($imgS as $key => $value) {
-            $attr = $value->attributes;
-            $header = $attr->getNamedItem('header');
-            $info = $attr->getNamedItem('data-info');
-            $vertical = $attr->getNamedItem('vertical');
+// add_action("wp_ajax_nopriv_getPhoto", "get_photo");
+// add_action("wp_ajax_getPhoto", "get_photo");
+// /**
+//  * 相册模板
+//  * @author siroi <mrgaopw@hotmail.com>
+//  * @return Json
+//  */
+// function get_photo()
+// {
+//     $postId = $_GET['post'];
+//     $page = get_post($postId);
+//     if ($page->post_type != "page") {
+//         $back['code'] = 201;
+//     } else {
+//         $back['code'] = 200;
+//         $back['imgs'] = array();
+//         $dom = new DOMDocument('1.0', 'utf-8');
+//         $meta = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
+//         $dom->loadHTML($meta . $page->post_content);
+//         $imgS = $dom->getElementsByTagName('img');
+//         //<img src="..." data-header="标题" data-info="信息" vertical=false>
+//         foreach ($imgS as $key => $value) {
+//             $attr = $value->attributes;
+//             $header = $attr->getNamedItem('header');
+//             $info = $attr->getNamedItem('data-info');
+//             $vertical = $attr->getNamedItem('vertical');
 
-            //图片资源地址
-            $temp['img'] = $value->attributes->getNamedItem('src')->nodeValue;
-            //图片上的标题
-            $temp['header'] = $header->nodeValue ?? null;
-            //图片上的信息
-            $temp['info'] = $info->nodeValue ?? null;
-            //是否竖向展示 默认false
-            $temp['vertical'] = $vertical->nodeValue ?? null;
-            array_push($back['imgs'], $temp);
-        }
-    }
-    header('Content-Type:application/json;charset=utf-8');
-    echo json_encode($back);
-    exit();
-}
+//             //图片资源地址
+//             $temp['img'] = $value->attributes->getNamedItem('src')->nodeValue;
+//             //图片上的标题
+//             $temp['header'] = $header->nodeValue ?? null;
+//             //图片上的信息
+//             $temp['info'] = $info->nodeValue ?? null;
+//             //是否竖向展示 默认false
+//             $temp['vertical'] = $vertical->nodeValue ?? null;
+//             array_push($back['imgs'], $temp);
+//         }
+//     }
+//     header('Content-Type:application/json;charset=utf-8');
+//     echo json_encode($back);
+//     exit();
+// }
 
 if (!iro_opt('login_language_opt') == '1') {
 add_filter( 'login_display_language_dropdown', '__return_false' );
