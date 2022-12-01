@@ -29,8 +29,9 @@ $core_lib_basepath =  iro_opt('core_library_basepath') ? get_template_directory_
 //Update-Checker
 
 require 'update-checker/update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 function UpdateCheck($url,$flag = 'Sakurairo'){
-    return Puc_v4_Factory::buildUpdateChecker(
+    return PucFactory::buildUpdateChecker(
         $url,
         __FILE__,
         $flag

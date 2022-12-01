@@ -9,15 +9,15 @@
 		{
 			"name": "Yahnis Elsts",
 			"email": "whiteshadow@w-shadow.com",
-			"homepage": "http://w-shadow.com/",
+			"homepage": "https://w-shadow.com/",
 			"role": "Developer"
 		}
 	],
 	"require": {
-		"php": ">=5.2.0",
+		"php": ">=5.6.20",
 		"ext-json": "*"
 	},
 	"autoload": {
-		"files": ["load-v4p11.php"]
+		"files": ["load-v5p0.php"]
 	}
 }

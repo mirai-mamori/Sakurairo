@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-07-01 17:25+0800\n"
-"PO-Revision-Date: 2022-07-01 17:26+0800\n"
+"POT-Creation-Date: 2022-12-01 22:33+0800\n"
+"PO-Revision-Date: 2022-12-01 22:33+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -37,7 +37,7 @@ msgstr "别着急，试试站内检索？"
 msgid "Search..."
 msgstr "搜索..."
 
-#: archive.php:58 author.php:80 index.php:74
+#: archive.php:58 author.php:79 index.php:74
 msgid " Previous"
 msgstr " 更早的文章"
 
@@ -151,73 +151,73 @@ msgstr "搜索"
 msgid "Widgets"
 msgstr "小工具"
 
-#: functions.php:75
+#: functions.php:76
 msgid "Nav Menus"
 msgstr "导航菜单"
 
-#: functions.php:191 functions.php:202
+#: functions.php:192 functions.php:203
 msgid "Ideas"
 msgstr "说说"
 
-#: functions.php:192
+#: functions.php:193
 msgid "Idea"
 msgstr "说说"
 
-#: functions.php:193 functions.php:194
+#: functions.php:194 functions.php:195
 msgid "Publish New Idea"
 msgstr "发布新说说"
 
-#: functions.php:195
+#: functions.php:196
 msgid "Edit Idea"
 msgstr "编辑说说"
 
-#: functions.php:196
+#: functions.php:197
 msgid "New Idea"
 msgstr "新说说"
 
-#: functions.php:197
+#: functions.php:198
 msgid "View Idea"
 msgstr "查看说说"
 
-#: functions.php:198
+#: functions.php:199
 msgid "Search Idea"
 msgstr "搜索说说"
 
-#: functions.php:199
+#: functions.php:200
 msgid "Not Found Idea"
 msgstr "没有找到说说"
 
-#: functions.php:200
+#: functions.php:201
 msgid "No Idea in the Trash"
 msgstr "没有在垃圾桶的说说"
 
-#: functions.php:273
+#: functions.php:274
 msgid "Copied!"
 msgstr "复制成功！"
 
-#: functions.php:274
+#: functions.php:275
 msgid "Copy Code"
 msgstr "拷贝代码"
 
-#: functions.php:275
+#: functions.php:276
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
 msgstr "你的封面API好像不支持跨域调用,这种情况下缓存是不会生效的哦。"
 
-#: functions.php:276
+#: functions.php:277
 msgid "Commiting...."
 msgstr "提交中...."
 
-#: functions.php:277
+#: functions.php:278
 msgid "Succeed"
 msgstr "成功"
 
-#: functions.php:278
+#: functions.php:279
 msgid "10 files max per request"
 msgstr "每次上传上限为10张"
 
-#: functions.php:279
+#: functions.php:280
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -226,15 +226,15 @@ msgid ""
 "This image is too large~Please reupload!"
 msgstr "图片上传大小限制为5 MB\\n\\n「{0}」\\n\\n这张图太大啦~请重新上传噢！"
 
-#: functions.php:280
+#: functions.php:281
 msgid "Uploading..."
 msgstr "上传中..."
 
-#: functions.php:281
+#: functions.php:282
 msgid "Uploaded successfully~"
 msgstr "上传成功~"
 
-#: functions.php:282
+#: functions.php:283
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -242,87 +242,87 @@ msgid ""
 "{2}"
 msgstr "上传失败！\\n文件名=> {0}\\ncode=> {1}\\n{2}"
 
-#: functions.php:283
+#: functions.php:284
 msgid "Upload failed, please retry."
 msgstr "上传失败，请重试."
 
-#: functions.php:284
+#: functions.php:285
 msgid "Page Load failed. HTTP {0}"
 msgstr "页面加载出错了 HTTP {0}"
 
-#: functions.php:285
+#: functions.php:286
 msgid "Glad you come, but we've got nothing left."
 msgstr "很高兴你翻到这里，但是真的没有了..."
 
-#: functions.php:286
+#: functions.php:287
 msgid "Post"
 msgstr "文章"
 
-#: functions.php:287
+#: functions.php:288
 msgid "Tag"
 msgstr "标签"
 
-#: functions.php:288
+#: functions.php:289
 msgid "Category"
 msgstr "分类"
 
-#: functions.php:289
+#: functions.php:290
 msgid "Page"
 msgstr "页面"
 
-#: functions.php:290
+#: functions.php:291
 msgid "Comment"
 msgstr "评论"
 
-#: functions.php:291
+#: functions.php:292
 msgid "Paused..."
 msgstr "停止中"
 
-#: functions.php:292
+#: functions.php:293
 msgid "Loading Video..."
 msgstr "正在加载视频..."
 
-#: functions.php:293
+#: functions.php:294
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "下载字体时，请注意您的数据使用情况。"
 
-#: functions.php:294
+#: functions.php:295
 msgid "Are you sure you want set it private?"
 msgstr "是否要将其设置为私密？"
 
-#: functions.php:295
+#: functions.php:296
 msgid "You had set private comment before"
 msgstr "您之前设置了私人评论"
 
-#: functions.php:383 inc/theme_plus.php:194 layouts/authorprofile.php:12
+#: functions.php:384 inc/theme_plus.php:194 layouts/authorprofile.php:12
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:383
+#: functions.php:384
 msgid "Blogger"
 msgstr "博客作者"
 
-#: functions.php:389
+#: functions.php:390
 msgid "Location"
 msgstr "来自"
 
-#: functions.php:395
+#: functions.php:396
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:397
+#: functions.php:398
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:399
+#: functions.php:400
 msgid "No"
 msgstr "否"
 
-#: functions.php:402
+#: functions.php:403
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:474
+#: functions.php:475
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
@@ -330,47 +330,47 @@ msgstr ""
 "请安装插件 <a href=\"https://wordpress.org/plugins/wp-statistics/\" target="
 "\"_blank\">WP-Statistics</a>"
 
-#: functions.php:504
+#: functions.php:505
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:704
+#: functions.php:705
 msgid "Download Link"
 msgstr "下载地址"
 
-#: functions.php:774
+#: functions.php:775
 msgid "Remember me"
 msgstr "记住我"
 
-#: functions.php:1173
+#: functions.php:1174
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1194
+#: functions.php:1195
 msgid " "
 msgstr " "
 
-#: functions.php:1198
+#: functions.php:1199
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1221 functions.php:1224 inc/theme_plus.php:425
+#: functions.php:1222 functions.php:1225 inc/theme_plus.php:425
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1461
+#: functions.php:1462
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:1586
+#: functions.php:1587
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1655
+#: functions.php:1656
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1785
+#: functions.php:1786
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -632,6 +632,32 @@ msgstr "退出登录"
 #: inc/theme_plus.php:447
 msgid "Log in"
 msgstr "登录"
+
+#: js/1541.js:2
+msgid "baguetteBox-overlay"
+msgstr ""
+
+#: js/1541.js:2
+msgid "baguetteBox-slider"
+msgstr ""
+
+#: js/1541.js:2
+#, fuzzy
+#| msgid "Previous"
+msgid "previous-button"
+msgstr "上一篇"
+
+#: js/1541.js:2
+msgid "next-button"
+msgstr ""
+
+#: js/1541.js:2
+msgid "close-button"
+msgstr ""
+
+#: js/4445.js:1
+msgid "s|tr|y"
+msgstr ""
 
 #: layouts/imgbox.php:7
 msgid "Previous"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-09-27 14:19+0800\n"
-"PO-Revision-Date: 2022-09-27 14:19+0800\n"
+"POT-Creation-Date: 2022-12-01 22:18+0800\n"
+"PO-Revision-Date: 2022-12-01 22:18+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -21,92 +21,92 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: classes/admin-options.class.php:230
+#: classes/admin-options.class.php:169
 msgid "Error while saving the changes."
 msgstr "保存时发生错误。"
 
-#: classes/admin-options.class.php:290
+#: classes/admin-options.class.php:229
 msgid "Settings successfully imported."
 msgstr "设置导入成功。"
 
-#: classes/admin-options.class.php:302 classes/admin-options.class.php:318
+#: classes/admin-options.class.php:241 classes/admin-options.class.php:257
 msgid "Default settings restored."
 msgstr "已恢复默认设置。"
 
-#: classes/admin-options.class.php:389
+#: classes/admin-options.class.php:328
 msgid "Settings saved."
 msgstr "设置已保存。"
 
-#: classes/admin-options.class.php:570
+#: classes/admin-options.class.php:509
 msgid "You have unsaved changes, save your changes!"
 msgstr "有设置已修改，请记得保存！"
 
-#: classes/admin-options.class.php:572
+#: classes/admin-options.class.php:511
 msgid "show all settings"
 msgstr "显示所有选项"
 
-#: classes/admin-options.class.php:574 fields/icon/icon.php:57
+#: classes/admin-options.class.php:513 fields/icon/icon.php:57
 #: fields/map/map.php:23
 msgid "Search..."
 msgstr "搜索..."
 
-#: classes/admin-options.class.php:577 classes/admin-options.class.php:700
+#: classes/admin-options.class.php:516 classes/admin-options.class.php:639
 msgid "Save"
 msgstr "保存"
 
-#: classes/admin-options.class.php:577 classes/admin-options.class.php:700
+#: classes/admin-options.class.php:516 classes/admin-options.class.php:639
 msgid "Saving..."
 msgstr "正在保存..."
 
-#: classes/admin-options.class.php:578 classes/admin-options.class.php:701
+#: classes/admin-options.class.php:517 classes/admin-options.class.php:640
 msgid "Reset Section"
 msgstr "重置选区"
 
-#: classes/admin-options.class.php:578 classes/admin-options.class.php:701
+#: classes/admin-options.class.php:517 classes/admin-options.class.php:640
 msgid "Are you sure to reset this section options?"
 msgstr "是否要将本选区所有设置重置为默认值?"
 
-#: classes/admin-options.class.php:579 classes/admin-options.class.php:702
+#: classes/admin-options.class.php:518 classes/admin-options.class.php:641
 msgid "Reset All"
 msgstr "重置全部"
 
-#: classes/admin-options.class.php:579 classes/admin-options.class.php:702
+#: classes/admin-options.class.php:518 classes/admin-options.class.php:641
 #: fields/backup/backup.php:31
 msgid "Reset"
 msgstr "重置"
 
-#: classes/admin-options.class.php:579 classes/admin-options.class.php:702
+#: classes/admin-options.class.php:518 classes/admin-options.class.php:641
 msgid "Are you sure you want to reset all settings to default values?"
 msgstr "是否要将所有设置重置为默认值?"
 
-#: classes/admin-options.class.php:677 fields/button_set/button_set.php:56
-#: fields/checkbox/checkbox.php:76 fields/radio/radio.php:75
+#: classes/admin-options.class.php:616 fields/button_set/button_set.php:56
+#: fields/checkbox/checkbox.php:82 fields/radio/radio.php:75
 #: fields/select/select.php:113 functions/actions.php:41
 msgid "No data available."
 msgstr "没有可用数据。"
 
-#: classes/setup.class.php:599
+#: classes/setup.class.php:588
 msgid "Are you sure?"
 msgstr "是否确定?"
 
-#: classes/setup.class.php:600
+#: classes/setup.class.php:589
 #, php-format
 msgid "Please enter %s or more characters"
 msgstr "请输入至少 %s 字符"
 
-#: classes/setup.class.php:601
+#: classes/setup.class.php:590
 msgid "Searching..."
 msgstr "搜索中..."
 
-#: classes/setup.class.php:602
+#: classes/setup.class.php:591
 msgid "No results found."
 msgstr "未找到结果。"
 
-#: classes/setup.class.php:703
+#: classes/setup.class.php:692
 msgid "Oops! Not allowed."
 msgstr "哎呀! 不允许。"
 
-#: classes/setup.class.php:771 classes/setup.class.php:775
+#: classes/setup.class.php:760 classes/setup.class.php:764
 msgid "Field not found!"
 msgstr "未找到字段!"
 
@@ -366,6 +366,10 @@ msgstr "凸出"
 #: fields/typography/typography.php:213
 msgid "None"
 msgstr "无"
+
+#: fields/checkbox/checkbox.php:23
+msgid "Check/Uncheck All"
+msgstr ""
 
 #: fields/dimensions/dimensions.php:22
 msgid "width"
