@@ -11,7 +11,7 @@
  * Plugin URI: https://github.com/Fuukei/Sakurairo_CSF
  * Author: Codestar with Fuukei
  * Author URI: https://github.com/Fuukei
- * Version: 2.2.7
+ * Version: 2.2.9
  * Description: A Simple and Lightweight WordPress Option Framework for Sakurairo
  * Text Domain: sakurairo_csf
  * Domain Path: /languages

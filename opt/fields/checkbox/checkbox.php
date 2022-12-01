@@ -16,9 +16,11 @@ if ( ! class_exists( 'CSF_Field_checkbox' ) ) {
 
     public function render() {
 
-      $args = wp_parse_args( $this->field, array(
-        'inline'     => false,
-        'query_args' => array(),
+      $args              = wp_parse_args( $this->field, array(
+        'inline'         => false,
+        'query_args'     => array(),
+        'check_all'      => false,
+        'check_all_text' => esc_html__( 'Check/Uncheck All' ),
       ) );
 
       $inline_class = ( $args['inline'] ) ? ' class="csf--inline-list"' : '';
@@ -70,6 +72,10 @@ if ( ! class_exists( 'CSF_Field_checkbox' ) ) {
           }
 
           echo '</ul>';
+
+          if ( $args['check_all'] ) {
+            echo '<div class="csf-checkbox-all">'. esc_html( $args['check_all_text'] ) .'</div>';
+          }
 
         } else {
 

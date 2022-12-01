@@ -104,12 +104,12 @@ if ( ! class_exists( 'CSF_Options' ) ) {
       $this->set_options();
       $this->save_defaults();
 
-      add_action( 'admin_menu', array( &$this, 'add_admin_menu' ) );
-      add_action( 'admin_bar_menu', array( &$this, 'add_admin_bar_menu' ), $this->args['admin_bar_menu_priority'] );
-      add_action( 'wp_ajax_csf_'. $this->unique .'_ajax_save', array( &$this, 'ajax_save' ) );
+      add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
+      add_action( 'admin_bar_menu', array( $this, 'add_admin_bar_menu' ), $this->args['admin_bar_menu_priority'] );
+      add_action( 'wp_ajax_csf_'. $this->unique .'_ajax_save', array( $this, 'ajax_save' ) );
 
       if ( $this->args['database'] === 'network' && ! empty( $this->args['show_in_network'] ) ) {
-        add_action( 'network_admin_menu', array( &$this, 'add_admin_menu' ) );
+        add_action( 'network_admin_menu', array( $this, 'add_admin_menu' ) );
       }
 
       // wp enqeueu for typography and output css
@@ -120,67 +120,6 @@ if ( ! class_exists( 'CSF_Options' ) ) {
     // instance
     public static function instance( $key, $params = array() ) {
       return new self( $key, $params );
-    }
-
-    public function pre_tabs( $sections ) {
-
-      $result  = array();
-      $parents = array();
-      $count   = 100;
-
-      foreach ( $sections as $key => $section ) {
-        if ( ! empty( $section['parent'] ) ) {
-          $section['priority'] = ( isset( $section['priority'] ) ) ? $section['priority'] : $count;
-          $parents[$section['parent']][] = $section;
-          unset( $sections[$key] );
-        }
-        $count++;
-      }
-
-      foreach ( $sections as $key => $section ) {
-        $section['priority'] = ( isset( $section['priority'] ) ) ? $section['priority'] : $count;
-        if ( ! empty( $section['id'] ) && ! empty( $parents[$section['id']] ) ) {
-          $section['subs'] = wp_list_sort( $parents[$section['id']], array( 'priority' => 'ASC' ), 'ASC', true );
-        }
-        $result[] = $section;
-        $count++;
-      }
-
-      return wp_list_sort( $result, array( 'priority' => 'ASC' ), 'ASC', true );
-    }
-
-    public function pre_fields( $sections ) {
-
-      $result  = array();
-
-      foreach ( $sections as $key => $section ) {
-        if ( ! empty( $section['fields'] ) ) {
-          foreach ( $section['fields'] as $field ) {
-            $result[] = $field;
-          }
-        }
-      }
-
-      return $result;
-    }
-
-    public function pre_sections( $sections ) {
-
-      $result = array();
-
-      foreach ( $this->pre_tabs as $tab ) {
-        if ( ! empty( $tab['subs'] ) ) {
-          foreach ( $tab['subs'] as $sub ) {
-            $sub['ptitle'] = $tab['title'];
-            $result[] = $sub;
-          }
-        }
-        if ( empty( $tab['subs'] ) ) {
-          $result[] = $tab;
-        }
-      }
-
-      return $result;
     }
 
     // add admin bar menu
@@ -442,14 +381,14 @@ if ( ! class_exists( 'CSF_Options' ) ) {
 
       if ( $menu_type === 'submenu' ) {
 
-        $menu_page = call_user_func( 'add_submenu_page', $menu_parent, esc_attr( $menu_title ), esc_attr( $menu_title ), $menu_capability, $menu_slug, array( &$this, 'add_options_html' ) );
+        $menu_page = call_user_func( 'add_submenu_page', $menu_parent, esc_attr( $menu_title ), esc_attr( $menu_title ), $menu_capability, $menu_slug, array( $this, 'add_options_html' ) );
 
       } else {
 
-        $menu_page = call_user_func( 'add_menu_page', esc_attr( $menu_title ), esc_attr( $menu_title ), $menu_capability, $menu_slug, array( &$this, 'add_options_html' ), $menu_icon, $menu_position );
+        $menu_page = call_user_func( 'add_menu_page', esc_attr( $menu_title ), esc_attr( $menu_title ), $menu_capability, $menu_slug, array( $this, 'add_options_html' ), $menu_icon, $menu_position );
 
         if ( ! empty( $sub_menu_title ) ) {
-          call_user_func( 'add_submenu_page', $menu_slug, esc_attr( $sub_menu_title ), esc_attr( $sub_menu_title ), $menu_capability, $menu_slug, array( &$this, 'add_options_html' ) );
+          call_user_func( 'add_submenu_page', $menu_slug, esc_attr( $sub_menu_title ), esc_attr( $sub_menu_title ), $menu_capability, $menu_slug, array( $this, 'add_options_html' ) );
         }
 
         if ( ! empty( $this->args['show_sub_menu'] ) && count( $this->pre_tabs ) > 1 ) {
@@ -469,7 +408,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
 
       }
 
-      add_action( 'load-'. $menu_page, array( &$this, 'add_page_on_load' ) );
+      add_action( 'load-'. $menu_page, array( $this, 'add_page_on_load' ) );
 
     }
 
@@ -531,7 +470,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
     // option page html output
     public function add_options_html() {
 
-      $has_nav       = count( $this->pre_tabs ) > 1;
+      $has_nav       = ( count( $this->pre_tabs ) > 1 ) ? true : false;
       $show_all      = ( ! $has_nav ) ? ' csf-show-all' : '';
       $ajax_class    = ( $this->args['ajax_save'] ) ? ' csf-save-ajax' : '';
       $sticky_class  = ( $this->args['sticky_header'] ) ? ' csf-sticky-header' : '';
@@ -539,7 +478,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
       $theme         = ( $this->args['theme'] ) ? ' csf-theme-'. $this->args['theme'] : '';
       $class         = ( $this->args['class'] ) ? ' '. $this->args['class'] : '';
       $nav_type      = ( $this->args['nav'] === 'inline' ) ? 'inline' : 'normal';
-      $form_action   = ( $this->args['form_action'] ) ?: '';
+      $form_action   = ( $this->args['form_action'] ) ? $this->args['form_action'] : '';
 
       do_action( 'csf_options_before' );
 
