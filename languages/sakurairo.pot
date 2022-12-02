@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-12-01 22:33+0800\n"
+"POT-Creation-Date: 2022-12-02 22:21+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -627,30 +627,6 @@ msgstr ""
 
 #: inc/theme_plus.php:447
 msgid "Log in"
-msgstr ""
-
-#: js/1541.js:2
-msgid "baguetteBox-overlay"
-msgstr ""
-
-#: js/1541.js:2
-msgid "baguetteBox-slider"
-msgstr ""
-
-#: js/1541.js:2
-msgid "previous-button"
-msgstr ""
-
-#: js/1541.js:2
-msgid "next-button"
-msgstr ""
-
-#: js/1541.js:2
-msgid "close-button"
-msgstr ""
-
-#: js/4445.js:1
-msgid "s|tr|y"
 msgstr ""
 
 #: layouts/imgbox.php:7
