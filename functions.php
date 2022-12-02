@@ -264,7 +264,7 @@ function sakura_scripts()
         wp_enqueue_script('app-page', $core_lib_basepath . '/js/page.js', array('app','polyfills'), IRO_VERSION, true);
     }
     wp_enqueue_script('app', $core_lib_basepath . '/js/app.js', array('polyfills'), IRO_VERSION, true);
-    wp_enqueue_script('polyfills', $core_lib_basepath . '/js/polyfills.js', array(), IRO_VERSION, true);
+    wp_enqueue_script('polyfills', $core_lib_basepath . '/js/polyfill.js', array(), IRO_VERSION, true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
