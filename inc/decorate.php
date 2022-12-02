@@ -395,6 +395,22 @@ font-family:<?=iro_opt('global_font_2'); ?> !important;
 font-size: <?=iro_opt('global_font_size'); ?>px;
 }
 
+.site-top ul li a,.header-user-name,.header-user-menu a {
+font-family:<?=iro_opt('nav_menu_font'); ?> !important;
+}
+
+.site-title a{
+font-family:<?=iro_opt('nav_logo_text_font'); ?> !important;
+}
+
+.site-info,.site-info a{
+font-family:<?=iro_opt('footer_text_font'); ?> !important;
+}
+
+.skin-menu {
+font-family:<?=iro_opt('style_menu_font'); ?> !important;
+}
+
 h1.main-title,h1.fes-title{
 font-family:<?=iro_opt('area_title_font'); ?>;
 }

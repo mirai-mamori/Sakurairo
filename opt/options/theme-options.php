@@ -460,6 +460,13 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'nav_menu_font',
+        'type' => 'text',
+        'title' => __('Nav Menu Font','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+      ),
+
+      array(
         'id'         => 'nav_menu_icon_size',
         'type'       => 'radio',
         'title'      => __('Nav Menu Icon Size','sakurairo_csf'),
@@ -539,6 +546,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'   => 'text',
         'title'  => __('Nav Menu Logo Text','sakurairo_csf'),
         'desc'   => __('Fill in the text. If the Mashiro logo is turned on, this option will be invalid','sakurairo_csf'),
+        'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
+      ),
+
+      array(
+        'id' => 'nav_logo_text_font',
+        'type' => 'text',
+        'title' => __('Nav Menu Logo Text Font','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
         'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
       ),
 
@@ -663,6 +678,29 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'unit' => 'px',
         'max' => '30',
         'default' => '15'
+      ),
+
+      array(
+        'id' => 'style_menu_reception_text',
+        'type' => 'text',
+        'title' => __('Frontend Background Area Title','sakurairo_csf'),
+        'desc' => __('Default is "Style", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'sakurairo_csf'),
+        'default' => 'Style'
+      ),
+
+      array(
+        'id' => 'style_menu_font_area_text',
+        'type' => 'text',
+        'title' => __('Font Area Title','sakurairo_csf'),
+        'desc' => __('Default is "Fonts", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'sakurairo_csf'),
+        'default' => 'Fonts'
+      ),
+
+      array(
+        'id' => 'style_menu_font',
+        'type' => 'text',
+        'title' => __('Style Menu Font','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
       ),
 
       array(
@@ -935,6 +973,21 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'footer_info',
+        'type' => 'textarea',
+        'title' => __('Footer Info','sakurairo_csf'),
+        'desc' => __('Footer description text, supports HTML code','sakurairo_csf'),
+        'default' => 'Copyright &copy; by FUUKEI All Rights Reserved.'
+      ),
+
+      array(
+        'id' => 'footer_text_font',
+        'type' => 'text',
+        'title' => __('Footer Text Font','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+      ),
+
+      array(
         'id' => 'footer_load_occupancy',
         'type' => 'switcher',
         'title' => __('Footer Load Occupancy Query','sakurairo_csf'),
@@ -948,14 +1001,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Footer Upyun League Logo','sakurairo_csf'),
         'label' => __('Upyun Logo will appear at the end of the page after turning it on','sakurairo_csf'),
         'default' => false
-      ),
-
-      array(
-        'id' => 'footer_info',
-        'type' => 'textarea',
-        'title' => __('Footer Info','sakurairo_csf'),
-        'desc' => __('Footer description text, supports HTML code','sakurairo_csf'),
-        'default' => 'Copyright &copy; by FUUKEI All Rights Reserved.'
       ),
 
       array(
