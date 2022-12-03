@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://fuukei.org/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.5.2.2
+Version: 2.5.2.3
 Tested up to: 6.0
 Requires at least: 5.6
 Requires PHP: 7.2
@@ -17,7 +17,7 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
 */
 
 .headertop {
-  animation: header 1s;
+  animation: blur .8s;
   position: relative;
   overflow: hidden;
   height: 0;
@@ -25,7 +25,7 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
 }
 
 .pattern-center {
-  animation: header 1s;
+  animation: blur .8s;
   position: relative;
   top: 0;
   left: 0;
@@ -479,9 +479,9 @@ input[type=week] {
 }
 
 .wrapper {
-  animation: fade-in;
-  animation-duration: .5s;
-  -webkit-animation: fade-in .5s;
+  animation: blur .8s;
+  animation-duration: .8s;
+  -webkit-animation: blur .8s;
   background-color: rgba(255, 255, 255, .8);
   transition: all 0.8s ease !important;
 }
@@ -765,10 +765,12 @@ input[type=week] {
   border-radius: 20px;
   word-break: keep-all;
 }
+
 .site-header.yya{
   /* background: hsla(var(--header-color-h,0deg),var(--header-color-s,0%),var(--header-color-l,100%),.75); */
   background: rgba(255, 255, 255, .75);
   box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4);
+  backdrop-filter: blur(10px);
 }
 .yya {
   /*     -webkit-transition: all 1s ease !important;
@@ -1234,11 +1236,9 @@ input[type=week] {
 
 .entry-header hr {
   width: 30%;
-  height: 1px;
+  height: 0px;
   border: 0;
-  background: #EFEFEF;
   margin: 20px auto;
-  transition: all 0.8s ease !important;
 }
 
 h1.page-title {
@@ -1375,7 +1375,7 @@ h1.page-title {
 }
 
 .author-profile .meta h3 a {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: var(--global-font-weight,400);
   line-height: normal;
   letter-spacing: 1px;
@@ -1384,18 +1384,15 @@ h1.page-title {
 }
 
 .author-profile p {
-  font-size: 13px;
+  font-size: 12px;
   line-height: 30px;
-  margin: 15px 0 0;
+  margin: 10px 0 0;
   color: #7d8588;
   letter-spacing: 0;
   display: inline-block;
   padding: 10px 20px;
-  border-top: 1px solid #EFEFEF;
-  border-bottom: 1px solid #EFEFEF;
   margin-bottom: 50px;
   font-weight: var(--global-font-weight);
-
   transition: all 0.8s ease !important;
 }
 
@@ -1406,7 +1403,6 @@ h1.page-title {
   margin-right: 10px;
   font-size: 16px;
   font-weight: var(--global-font-weight);
-
   transition: all 0.8s ease !important;
 }
 
@@ -2284,8 +2280,11 @@ h1.fes-title {
   font-size: 20px;
   font-weight: var(--global-font-weight,400);
   padding-bottom: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
   margin-bottom: 30px;
-  border-bottom: 6px dotted var(--area_title_bottom_color,#ffeeeB);
+  text-underline-offset: 10px;
+  text-decoration: underline wavy var(--area_title_bottom_color,#ffeeeB);
   transition: all 0.8s ease !important;
 }
 
@@ -2294,8 +2293,11 @@ h1.main-title {
   font-size: 20px;
   font-weight: var(--global-font-weight,400);
   padding-bottom: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
   margin-bottom: 30px;
-  border-bottom: 6px dotted var(--area_title_bottom_color,#ffeeeB);
+  text-underline-offset: 10px;
+  text-decoration: underline wavy var(--area_title_bottom_color,#ffeeeB);
   transition: all 0.8s ease !important;
 }
 
@@ -2404,10 +2406,10 @@ h1.main-title {
   height: 130px;
   padding: 2px;
   border-radius: 100%;
+  backdrop-filter: blur(10px);
 }
 
 .focusinfo .header-tou img {
-  box-shadow: inset 0 0 10px var(--theme-skin,#505050);
   padding: 5px;
   opacity: 1;
   transform: rotate(0);
@@ -2471,7 +2473,7 @@ h1.main-title {
 }
 
 .header-info {
-  width: 63%;
+  width: 65%;
   margin: auto;
   font-size: 16px;
   color: var(--theme-skin,#505050);
@@ -2484,7 +2486,7 @@ h1.main-title {
   box-sizing: initial;
   white-space: nowrap;
   font-weight: var(--global-font-weight);
-
+  backdrop-filter: blur(10px);
   transition: all 0.8s ease !important;
 }
 
@@ -3393,11 +3395,11 @@ i.iconfont.down {
 
 .single-reward .reward-main {
   position: absolute;
-  top: 40px;
-  left: -157px;
+  top: 45px;
+  left: -180px;
   margin: 0;
   padding: 15px 0 0;
-  width: 355px;
+  width: 400px;
   background: 0 0;
   display: none;
   animation: main .4s;
@@ -3427,8 +3429,8 @@ i.iconfont.down {
 }
 
 .reward-row li img {
-  width: 130px;
-  max-width: 130px;
+  width: 150px;
+  max-width: 150px;
   border-radius: 3px;
   position: relative;
 }
@@ -3888,9 +3890,9 @@ input[type=radio]:checked:before {
 
 .toc {
   position: sticky/*!covered-webkit-sticky*/;
-  top: 100px;
+  top: 16%;
   overflow-y: auto;
-  transition: background 0.8s;
+  transition: background 1s;
 }
 
 .toc-link::before {
@@ -4196,9 +4198,8 @@ input[type=radio]:checked:before {
   text-transform: uppercase;
   color: var(--theme-skin,#fff);
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   padding: 6px;
-  background: rgba(255, 255, 255, .3);
   margin: 30px 0 0 0;
   -webkit-transition: all .35s ease-in-out;
   -moz-transition: all .35s ease-in-out;
@@ -4217,7 +4218,7 @@ input[type=radio]:checked:before {
   font-size: 12px;
   position: relative;
   color: var(--theme-skin,#EE9CA1);
-  padding: 10px 10px 10px;
+  padding: 0px 10px 10px;
   text-align: center;
   -webkit-transition: all .35s .1s linear;
   -moz-transition: all .35s .1s linear;
@@ -6637,12 +6638,13 @@ body.dark::-webkit-scrollbar-track {
 
 .toc-list {
   margin: 0;
-  padding-left: 10px;
+  padding-left: 12px;
 }
 
 a.toc-link {
   color: currentColor;
   height: 100%;
+  font-size: 16px;
 }
 
 .is-collapsible {
@@ -6763,8 +6765,8 @@ a.toc-link {
 
 .popup .show {
   visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
+  -webkit-animation: blur .8s;
+  animation: blur .8s;
 }
 
 .insert-image-tips:hover,
@@ -7288,17 +7290,6 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 .site-wrapper {
   transition: all 0.8s ease !important;
 }
-@keyframes header {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 @keyframes main {
   0% {
@@ -7336,32 +7327,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
   }
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  40% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  40% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+@keyframes blur {0% {-webkit-filter: blur(10px); -moz-filter: blur(10px);-ms-filter: blur(10px);filter: blur(10px);}50% {-webkit-filter: blur(5px);-moz-filter: blur(5px);-ms-filter: blur(5px);filter: blur(5px);}100% {-webkit-filter: blur(0px); -moz-filter: blur(0px);-ms-filter: blur(0px);filter: blur(0px);}
 }
 
 @media (max-width:860px) {
@@ -9213,26 +9179,6 @@ i.iconfont.js-toggle-search.iconsearch:hover {
   }
 }
 
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 /* @media (max-width:860px) {
     .serif {
         font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif
@@ -9288,7 +9234,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 }
 
 .header-info {
-  width: 55%;
+  width: 60%;
   font-size: 15px;
   line-height: 20px;
 }
@@ -9646,8 +9592,6 @@ body.dark .notification {
 }
 
 body.dark .author-profile p {
-  border-top: 1px solid #3B3B3B;
-  border-bottom: 1px solid #3B3B3B;
   color: #CCCCCC;
 }
 
@@ -9656,13 +9600,8 @@ body.dark h1.page-title {
   color: #CCCCCC;
 }
 
-body.dark .entry-header hr {
-  background: #3B3B3B;
-}
-
 body.dark h1.fes-title,
 body.dark h1.main-title {
-  border-bottom: 6px dotted rgba(102,102,102,0);
   color: #CCCCCC;
 }
 
@@ -9784,10 +9723,6 @@ body.dark #changskin:hover {
   opacity: .8;
 }
 
-body.dark .focusinfo .header-tou img {
-  box-shadow: inset 0 0 10px var(--theme-skin-dark);
-}
-
 body.dark li .cbp_tmlabel {
   background: #505050 !important;
   color: #bbb !important;
@@ -9804,4 +9739,9 @@ body.dark .pattern-center h1.entry-title,body.dark .post-squares h3 {
 
 body.dark .header-user-menu .header-user-name,body.dark .header-user-menu .header-user-name-u {
   color: #CCCCCC;
+}
+
+body.dark .the-feature.from_left_and_right .info,body.dark .the-feature.from_left_and_right .info h3{
+  color: #CCCCCC;
+  background:rgb(0 0 0 / 20%);
 }

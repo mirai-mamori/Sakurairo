@@ -18,7 +18,7 @@ get_header();
 		overflow: hidden;
 		padding: 40px 0;
 		position: relative;
-		font-family:'Noto Sans SC';
+		font-weight: var(--global-font-weight);
 	}
 
 	.author_info .avatar {
@@ -47,10 +47,11 @@ get_header();
 		display: inline;
 	}
 
-	.author-description {
+	.author_info .author-center .description {
 		font-size: 14px;
 		color: rgba(0, 0, 0, .4);
-		line-height: 1.2;
+		line-height: 1.6;
+		font-weight: var(--global-font-weight);
 	}
 </style>
 <div id="primary" class="content-area">

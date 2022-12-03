@@ -535,9 +535,9 @@ position:relative;bottom:0;left:0;display:block;width:100%;height:2px;background
 /*标题动画*/
 <?php if (iro_opt('page_title_animation', 'true')): ?>
 .entry-title,.single-center .entry-census a,.entry-census,.post-list p,.post-more i,.p-time,.feature{
-	-moz-animation: fadeInUp <?=iro_opt('page_title_animation_time'); ?>s;
-    -webkit-animation:fadeInUp <?=iro_opt('page_title_animation_time'); ?>s;
-	animation: fadeInUp <?=iro_opt('page_title_animation_time'); ?>s;
+	-moz-animation: fadeInDown <?=iro_opt('page_title_animation_time'); ?>s;
+    -webkit-animation:fadeInDown <?=iro_opt('page_title_animation_time'); ?>s;
+	animation: fadeInDown <?=iro_opt('page_title_animation_time'); ?>s;
 }
 @-moz-keyframes fadeInUp {
 	0% {

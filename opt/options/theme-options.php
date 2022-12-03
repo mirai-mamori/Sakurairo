@@ -92,7 +92,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
             'id'     => 'font',
             'type'   => 'text',
             'title'  => __('Font','sakurairo_csf'),
-            'desc'   => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+            'desc'   => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
           ),
           array(
             'id'     => 'size',
@@ -463,7 +463,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'nav_menu_font',
         'type' => 'text',
         'title' => __('Nav Menu Font','sakurairo_csf'),
-        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
+        'default' => 'Noto Serif SC'
       ),
 
       array(
@@ -553,8 +554,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'nav_logo_text_font',
         'type' => 'text',
         'title' => __('Nav Menu Logo Text Font','sakurairo_csf'),
-        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
         'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
+        'default' => 'Noto Serif SC'
       ),
 
       array(
@@ -700,7 +702,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'style_menu_font',
         'type' => 'text',
         'title' => __('Style Menu Font','sakurairo_csf'),
-        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
+        'default' => 'Noto Serif SC'
       ),
 
       array(
@@ -842,7 +845,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'global_default_font',
         'type' => 'text',
         'title' => __('Global Default Font/Style Menu Font A','sakurairo_csf'),
-        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
       ),
 
       array(
@@ -850,7 +853,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Style Menu Font B','sakurairo_csf'),
         'dependency' => array( 'style_menu_display', '==', 'full' ),
-        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
       ),
 
     )
@@ -984,7 +987,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'footer_text_font',
         'type' => 'text',
         'title' => __('Footer Text Font','sakurairo_csf'),
-        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
+        'default' => 'Noto Serif SC'
       ),
 
       array(
@@ -1518,7 +1522,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Cover Info Bar Background Color','sakurairo_csf'),
         'desc' => __('Customize the colors, light colors are recommended','sakurairo_csf'),
-        'default' => 'rgba(255,255,255,0.8)'
+        'default' => 'rgba(255,255,255,0.6)'
       ),     
 
       array(
@@ -1552,7 +1556,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'signature_font',
         'type' => 'text',
         'title' => __('Cover Signature Field Text Font','sakurairo_csf'),
-        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
         'default' => 'Noto Serif SC'
       ),
 
@@ -2146,11 +2150,27 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'exhibition_area_icon',
+        'type' => 'text',
+        'title' => __('Display Area Icon','sakurairo_csf'),
+        'desc' => __('Default is "fa fa-laptop", You can check the <a href="https://fontawesome.com.cn/faicons/">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
+        'default' => 'fa fa-laptop'
+      ),
+
+      array(
         'id' => 'exhibition_area_title',
         'type' => 'text',
         'title' => __('Display Area Title','sakurairo_csf'),
         'desc' => __('Default is "Display", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'sakurairo_csf'),
         'default' => 'Display'
+      ),
+
+      array(
+        'id' => 'post_area_icon',
+        'type' => 'text',
+        'title' => __('Post Area Icon','sakurairo_csf'),
+        'desc' => __('Default is "fa fa-bookmark-o", You can check the <a href="https://fontawesome.com.cn/faicons/">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
+        'default' => 'fa fa-bookmark-o'
       ),
 
       array(
@@ -2186,7 +2206,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Area Title Bottom Color','sakurairo_csf'),
         'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => 'rgba(99,99,99,0.2)'
+        'default' => '#ffe066'
       ),  
 
     )
@@ -2753,7 +2773,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'shuoshuo_font',
         'type' => 'text',
         'title' => __('Ideas Template Font','sakurairo_csf'),
-        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
         'default' => 'Noto Serif SC'
       ),
 
