@@ -22,6 +22,7 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   overflow: hidden;
   height: 0;
   border-radius: 0 0 20px 20px;
+  transition: all 0.8s ease !important;
 }
 
 .pattern-center {
@@ -32,6 +33,7 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   width: 100%;
   border-radius: 0 0 20px 20px;
   overflow: hidden;
+  transition: all 0.8s ease !important;
 }
 
 .site-branding {
@@ -1203,6 +1205,7 @@ input[type=week] {
   background: rgba(255, 255, 255, .8);
   margin-left: auto;
   margin-right: auto;
+  animation: blur .8s;
   transition: all 0.8s ease !important;
 }
 
