@@ -1303,25 +1303,8 @@ function admin_ini()
 {
     wp_enqueue_style('admin-styles-fix-icon', get_site_url() . '/wp-includes/css/dashicons.css');
     wp_enqueue_style('cus-styles-fit', get_template_directory_uri() . '/css/dashboard-fix.css');
-    wp_enqueue_script('lazyload', get_template_directory_uri() . '/js/lazyload.min.js');
 }
 add_action('admin_enqueue_scripts', 'admin_ini');
-
-function custom_admin_js()
-{
-    echo '<script>
-    window.onload=function(){
-        lazyload();
-
-        try{
-            document.querySelector("#scheme-tip .notice-dismiss").addEventListener("click", function(){
-                location.href="?scheme-tip-dismissed' . BUILD_VERSION . '";
-            });
-        } catch(e){}
-    }
-    </script>';
-}
-add_action('admin_footer', 'custom_admin_js');
 
 /*
  * 后台通知
