@@ -21,6 +21,8 @@ if (iro_opt('theme_skin')) { ?>
     --load_nextpage_svg:url("<?=iro_opt('load_nextpage_svg'); ?>");
     --style_menu_radius:<?=iro_opt('style_menu_radius', ''); ?>px;
     --post-list-thumb: <?=iro_opt('post_border_shadow_color'); ?>;
+    --friend-link-shadow: <?=iro_opt('friend_link_shadow_color'); ?>;
+    --friend-link-title: <?=iro_opt('friend_link_title_bottom_color'); ?>;
     --style_menu_selection_color: <?=iro_opt('style_menu_selection_color'); ?>;
     --shuoshuo_background_color1:<?=iro_opt('shuoshuo_background_color1');?>;
     --shuoshuo_background_color2:<?=iro_opt('shuoshuo_background_color2');?>;
@@ -395,6 +397,22 @@ font-family:<?=iro_opt('global_font_2'); ?> !important;
 font-size: <?=iro_opt('global_font_size'); ?>px;
 }
 
+.site-top ul li a,.header-user-name,.header-user-menu a {
+font-family:<?=iro_opt('nav_menu_font'); ?> !important;
+}
+
+.site-title a{
+font-family:<?=iro_opt('nav_logo_text_font'); ?> !important;
+}
+
+.site-info,.site-info a{
+font-family:<?=iro_opt('footer_text_font'); ?> !important;
+}
+
+.skin-menu {
+font-family:<?=iro_opt('style_menu_font'); ?> !important;
+}
+
 h1.main-title,h1.fes-title{
 font-family:<?=iro_opt('area_title_font'); ?>;
 }
@@ -519,9 +537,9 @@ position:relative;bottom:0;left:0;display:block;width:100%;height:2px;background
 /*标题动画*/
 <?php if (iro_opt('page_title_animation', 'true')): ?>
 .entry-title,.single-center .entry-census a,.entry-census,.post-list p,.post-more i,.p-time,.feature{
-	-moz-animation: fadeInUp <?=iro_opt('page_title_animation_time'); ?>s;
-    -webkit-animation:fadeInUp <?=iro_opt('page_title_animation_time'); ?>s;
-	animation: fadeInUp <?=iro_opt('page_title_animation_time'); ?>s;
+	-moz-animation: fadeInDown <?=iro_opt('page_title_animation_time'); ?>s;
+    -webkit-animation:fadeInDown <?=iro_opt('page_title_animation_time'); ?>s;
+	animation: fadeInDown <?=iro_opt('page_title_animation_time'); ?>s;
 }
 @-moz-keyframes fadeInUp {
 	0% {
@@ -803,10 +821,8 @@ i.iconfont.js-toggle-search.iconsearch {
 <?php if(iro_opt('friend_link_align') == 'right'){ ?>
 
 span.sitename {
-   margin: 0px;
-}
-.linkdes {
-    margin: 0px;
+   margin-bottom: 0px;
+   margin-top: 8px;
 }
 li.link-item {
     text-align: right;
@@ -818,10 +834,8 @@ li.link-item {
 <?php }else if(iro_opt('friend_link_align') == 'center'){ ?>
 
 span.sitename {
-   margin: 0px;
-}
-.linkdes {
-    margin: 0px;
+   margin-bottom: 0px;
+   margin-top: 8px;
 }
 li.link-item {
     text-align: center;

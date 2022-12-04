@@ -92,7 +92,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
             'id'     => 'font',
             'type'   => 'text',
             'title'  => __('Font','sakurairo_csf'),
-            'desc'   => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+            'desc'   => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
           ),
           array(
             'id'     => 'size',
@@ -460,6 +460,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'nav_menu_font',
+        'type' => 'text',
+        'title' => __('Nav Menu Font','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
+        'default' => 'Noto Serif SC'
+      ),
+
+      array(
         'id'         => 'nav_menu_icon_size',
         'type'       => 'radio',
         'title'      => __('Nav Menu Icon Size','sakurairo_csf'),
@@ -540,6 +548,15 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title'  => __('Nav Menu Logo Text','sakurairo_csf'),
         'desc'   => __('Fill in the text. If the Mashiro logo is turned on, this option will be invalid','sakurairo_csf'),
         'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
+      ),
+
+      array(
+        'id' => 'nav_logo_text_font',
+        'type' => 'text',
+        'title' => __('Nav Menu Logo Text Font','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
+        'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
+        'default' => 'Noto Serif SC'
       ),
 
       array(
@@ -663,6 +680,30 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'unit' => 'px',
         'max' => '30',
         'default' => '15'
+      ),
+
+      array(
+        'id' => 'style_menu_reception_text',
+        'type' => 'text',
+        'title' => __('Frontend Background Area Title','sakurairo_csf'),
+        'desc' => __('Default is "Style", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'sakurairo_csf'),
+        'default' => 'Style'
+      ),
+
+      array(
+        'id' => 'style_menu_font_area_text',
+        'type' => 'text',
+        'title' => __('Font Area Title','sakurairo_csf'),
+        'desc' => __('Default is "Fonts", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'sakurairo_csf'),
+        'default' => 'Fonts'
+      ),
+
+      array(
+        'id' => 'style_menu_font',
+        'type' => 'text',
+        'title' => __('Style Menu Font','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
+        'default' => 'Noto Serif SC'
       ),
 
       array(
@@ -804,7 +845,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'global_default_font',
         'type' => 'text',
         'title' => __('Global Default Font/Style Menu Font A','sakurairo_csf'),
-        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
       ),
 
       array(
@@ -812,7 +853,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Style Menu Font B','sakurairo_csf'),
         'dependency' => array( 'style_menu_display', '==', 'full' ),
-        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
       ),
 
     )
@@ -935,6 +976,22 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'footer_info',
+        'type' => 'textarea',
+        'title' => __('Footer Info','sakurairo_csf'),
+        'desc' => __('Footer description text, supports HTML code','sakurairo_csf'),
+        'default' => 'Copyright &copy; by FUUKEI All Rights Reserved.'
+      ),
+
+      array(
+        'id' => 'footer_text_font',
+        'type' => 'text',
+        'title' => __('Footer Text Font','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
+        'default' => 'Noto Serif SC'
+      ),
+
+      array(
         'id' => 'footer_load_occupancy',
         'type' => 'switcher',
         'title' => __('Footer Load Occupancy Query','sakurairo_csf'),
@@ -948,14 +1005,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Footer Upyun League Logo','sakurairo_csf'),
         'label' => __('Upyun Logo will appear at the end of the page after turning it on','sakurairo_csf'),
         'default' => false
-      ),
-
-      array(
-        'id' => 'footer_info',
-        'type' => 'textarea',
-        'title' => __('Footer Info','sakurairo_csf'),
-        'desc' => __('Footer description text, supports HTML code','sakurairo_csf'),
-        'default' => 'Copyright &copy; by FUUKEI All Rights Reserved.'
       ),
 
       array(
@@ -983,9 +1032,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'content',
         'dependency' => array( 'footer_yiyan', '==', 'true' ),
         'content' => __('<h4>Hitokoto API Setup Instructions</h4>'
-        .' <p>Fill in as the example:<code> ["https://api.maho.cc/yiyan/", "https://v1.hitokoto.cn/"]</code>, where the first API will be used first and the next ones will be the backup. </p>'
+        .' <p>Fill in as the example:<code> ["https://api.nmxc.ltd/yiyan/", "https://v1.hitokoto.cn/"]</code>, where the first API will be used first and the next ones will be the backup. </p>'
         .' <p><strong>Official API:</strong> See the <a href="https://developer.hitokoto.cn/sentence/"> documentation</a> for how to use it, and the parameter "return code" should not be anything except JSON. <a href="https://v1.hitokoto.cn/">https://v1.hitokoto.cn/</a></p>'
-        .' <p><strong>Maho API:</strong> An reverse proxy mirror of the official API. <a href="https://api.maho.cc/yiyan/">https://api.maho.cc/yiyan/</a></p>','sakurairo_csf'),
+        .' <p><strong>Maho API:</strong> An reverse proxy mirror of the official API. <a href="https://api.nmxc.ltd/yiyan/">https://api.nmxc.ltd/yiyan/</a></p>','sakurairo_csf'),
       ),
 
       array(
@@ -994,7 +1043,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Hitokoto API address','sakurairo_csf'),
         'dependency' => array( 'footer_yiyan', '==', 'true' ),
         'desc' => __('Fill in the address in JavaScript array format','sakurairo_csf'),
-        'default' => '["https://v1.hitokoto.cn/","https://api.maho.cc/yiyan/"]'
+        'default' => '["https://v1.hitokoto.cn/","https://api.nmxc.ltd/yiyan/"]'
       ),
 
     )
@@ -1473,7 +1522,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Cover Info Bar Background Color','sakurairo_csf'),
         'desc' => __('Customize the colors, light colors are recommended','sakurairo_csf'),
-        'default' => 'rgba(255,255,255,0.8)'
+        'default' => 'rgba(255,255,255,0.6)'
       ),     
 
       array(
@@ -1507,7 +1556,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'signature_font',
         'type' => 'text',
         'title' => __('Cover Signature Field Text Font','sakurairo_csf'),
-        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
         'default' => 'Noto Serif SC'
       ),
 
@@ -2101,11 +2150,27 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'exhibition_area_icon',
+        'type' => 'text',
+        'title' => __('Display Area Icon','sakurairo_csf'),
+        'desc' => __('Default is "fa fa-laptop", You can check the <a href="https://fontawesome.com.cn/faicons/">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
+        'default' => 'fa fa-laptop'
+      ),
+
+      array(
         'id' => 'exhibition_area_title',
         'type' => 'text',
         'title' => __('Display Area Title','sakurairo_csf'),
         'desc' => __('Default is "Display", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'sakurairo_csf'),
         'default' => 'Display'
+      ),
+
+      array(
+        'id' => 'post_area_icon',
+        'type' => 'text',
+        'title' => __('Post Area Icon','sakurairo_csf'),
+        'desc' => __('Default is "fa fa-bookmark-o", You can check the <a href="https://fontawesome.com.cn/faicons/">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
+        'default' => 'fa fa-bookmark-o'
       ),
 
       array(
@@ -2141,7 +2206,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Area Title Bottom Color','sakurairo_csf'),
         'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => 'rgba(99,99,99,0.2)'
+        'default' => '#ffe066'
       ),  
 
     )
@@ -2708,7 +2773,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'shuoshuo_font',
         'type' => 'text',
         'title' => __('Ideas Template Font','sakurairo_csf'),
-        'desc' => __('Fill in the font name. For example: Ma Shan Zheng','sakurairo_csf'),
+        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
         'default' => 'Noto Serif SC'
       ),
 
@@ -2772,6 +2837,22 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'center'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.5/options/friend_link_center.webp',
         ),
         'default'     => 'left'
+      ),
+
+      array(
+        'id' => 'friend_link_title_bottom_color',
+        'type' => 'color',
+        'title' => __('Friend Link Template Unit Title Bottom Color','sakurairo_csf'),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
+        'default' => '#ffe066'
+      ),  
+
+      array(
+        'id' => 'friend_link_shadow_color',
+        'type' => 'color',
+        'title' => __('Friend Link Template Unit Border Shadow Color','sakurairo_csf'),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
+        'default' => '#e8e8e8'
       ),
 
       array(

@@ -11,8 +11,8 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
   class Sakurairo_CSF {
 
     // Default constants
-    public static $premium  = false;
-    public static $version  = '2.2.7';
+    public static $debug  = false;
+    public static $version  = '2.2.9';
     public static $dir      = '';
     public static $url      = '';
     public static $css      = '';
@@ -79,9 +79,6 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
 
     // Setup frameworks
     public static function setup() {
-
-      // Welcome page
-      self::include_plugin_file( 'views/welcome.php' );
 
       // Setup admin option framework
       $params = array();
@@ -377,28 +374,16 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
     // Include files
     public static function includes() {
 
-      // Helpers
+      // Include common functions
       self::include_plugin_file( 'functions/actions.php'  );
       self::include_plugin_file( 'functions/helpers.php'  );
       self::include_plugin_file( 'functions/sanitize.php' );
       self::include_plugin_file( 'functions/validate.php' );
 
-      // Includes free version classes
+      // Include free version classes
       self::include_plugin_file( 'classes/abstract.class.php'      );
       self::include_plugin_file( 'classes/fields.class.php'        );
       self::include_plugin_file( 'classes/admin-options.class.php' );
-
-      // Includes premium version classes
-      if ( self::$premium ) {
-        self::include_plugin_file( 'classes/customize-options.class.php' );
-        self::include_plugin_file( 'classes/metabox-options.class.php'   );
-        self::include_plugin_file( 'classes/nav-menu-options.class.php'  );
-        self::include_plugin_file( 'classes/profile-options.class.php'   );
-        self::include_plugin_file( 'classes/shortcode-options.class.php' );
-        self::include_plugin_file( 'classes/taxonomy-options.class.php'  );
-        self::include_plugin_file( 'classes/widget-options.class.php'    );
-        self::include_plugin_file( 'classes/comment-options.class.php'   );
-      }
 
       // Include all framework fields
       $fields = apply_filters( 'csf_fields', array(
@@ -482,6 +467,10 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
             self::set_used_fields( array( 'fields' => $field['accordions'] ) );
           }
 
+          if ( ! empty( $field['elements'] ) ) {
+            self::set_used_fields( array( 'fields' => $field['elements'] ) );
+          }
+
           if ( ! empty( $field['type'] ) ) {
             self::$fields[$field['type']] = $field;
           }
@@ -563,7 +552,7 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
       }
 
       // Check for developer mode
-      $min = ( self::$premium && SCRIPT_DEBUG ) ? '' : '.min';
+      $min = ( self::$debug && SCRIPT_DEBUG ) ? '' : '.min';
 
       // Admin utilities
       wp_enqueue_media();
@@ -775,7 +764,7 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
         echo '<p>'. esc_html__( 'Field not found!', 'sakurairo_csf' ) .'</p>';
       }
 
-      echo ( ! empty( $field['title'] ) || ! empty( $field['fancy_title'] ) ) ? '</div>' : '';
+      echo ( ! empty( $field['title'] ) ) ? '</div>' : '';
       echo '<div class="clear"></div>';
       echo '</div>';
 

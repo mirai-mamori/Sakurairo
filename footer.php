@@ -28,7 +28,7 @@ $reception_background = iro_opt('reception_background');
 				<?php endif; ?>
 				<p style="color: #666666;"><?php echo iro_opt('footer_info', ''); ?></p>
 			</div>
-			<div class="footer-device Ubuntu-font">
+			<div class="footer-device function_area">
 					<?php if(iro_opt('footer_yiyan')){ ?>
 						<p id="footer_yiyan"></p>
 						<?php } ?>
@@ -44,7 +44,7 @@ $reception_background = iro_opt('reception_background');
 							本网站由 <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"> <img alt="upyun-logo" src="https://s.nmxc.ltd/sakurairo_vision/@2.5/options/upyun_logo.webp"  style="display:inline-block;vertical-align:middle;width:60px;height:30px;"/> 提供 CDN 加速 / 云存储 服务
                         <?php endif; ?>
                         <br>
-						<a href="https://github.com/mirai-mamori/Sakurairo" rel="noopener" target="_blank" id="site-info" >Theme Sakurairo</a>  by <a href="https://fuukei.org/" rel="noopener" target="_blank" id="site-info" >Fuukei</a> 
+						<a href="https://github.com/mirai-mamori/Sakurairo" rel="noopener" target="_blank" id="site-info" >Theme Sakurairo</a><a href="https://fuukei.org/" rel="noopener" target="_blank" id="site-info" > by Fuukei</a> 
 					</span>
 			</div>
 		</div><!-- .site-info -->
@@ -94,7 +94,7 @@ $reception_background = iro_opt('reception_background');
 <?php wp_footer(); ?>
 <div class="skin-menu no-select">
 <?php if(iro_opt('style_menu_display') == 'full'): ?>
-	<p style="margin-bottom: 0.5em;">Style</p>
+	<p style="margin-bottom: 0.5em;"><?php echo iro_opt('style_menu_reception_text', ''); ?></p>
 <?php endif; ?>
     <div class="theme-controls row-container">
         <ul class="menu-list">
@@ -127,7 +127,7 @@ $reception_background = iro_opt('reception_background');
         </ul>
 	</div>
 	<?php if(iro_opt('style_menu_display') == 'full'): ?>
-	<p style="margin-bottom: 0.1em;">Fonts</p>
+	<p style="margin-bottom: 0.1em;"><?php echo iro_opt('style_menu_font_area_text', ''); ?></p>
     <div class="font-family-controls row-container">
         <button type="button" class="control-btn-serif selected" data-name="serif" ><i class="fa fa-font faa-vertical animated-hover" aria-hidden="true"></i></button>
         <button type="button" class="control-btn-sans-serif" data-name="sans-serif"><i class="fa fa-bold faa-vertical animated-hover" aria-hidden="true"></i></button>

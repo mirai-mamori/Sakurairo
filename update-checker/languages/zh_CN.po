@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plugin-update-checker\n"
 "POT-Creation-Date: 2022-04-29 18:06-0700\n"
-"PO-Revision-Date: 2022-04-29 18:06-0700\n"
+"PO-Revision-Date: 2022-12-01 22:18+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_x\n"
@@ -18,12 +18,12 @@ msgstr ""
 
 #: Puc/v4p11/Plugin/Ui.php:54
 msgid "View details"
-msgstr ""
+msgstr "查看详情"
 
 #: Puc/v4p11/Plugin/Ui.php:77
 #, php-format
 msgid "More information about %s"
-msgstr ""
+msgstr "关于 %s 的更多信息"
 
 #: Puc/v4p11/Plugin/Ui.php:128
 msgid "Check for updates"

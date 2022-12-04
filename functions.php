@@ -10,7 +10,7 @@
 
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '17.2.0');
+define('INT_VERSION', '17.5.0');
 define('BUILD_VERSION', '2');
 
 //Option-Framework
@@ -29,8 +29,9 @@ $core_lib_basepath =  iro_opt('core_library_basepath') ? get_template_directory_
 //Update-Checker
 
 require 'update-checker/update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 function UpdateCheck($url,$flag = 'Sakurairo'){
-    return Puc_v4_Factory::buildUpdateChecker(
+    return PucFactory::buildUpdateChecker(
         $url,
         __FILE__,
         $flag
@@ -263,7 +264,7 @@ function sakura_scripts()
         wp_enqueue_script('app-page', $core_lib_basepath . '/js/page.js', array('app','polyfills'), IRO_VERSION, true);
     }
     wp_enqueue_script('app', $core_lib_basepath . '/js/app.js', array('polyfills'), IRO_VERSION, true);
-    wp_enqueue_script('polyfills', $core_lib_basepath . '/js/polyfills.js', array(), IRO_VERSION, true);
+    wp_enqueue_script('polyfills', $core_lib_basepath . '/js/polyfill.js', array(), IRO_VERSION, true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
@@ -508,7 +509,7 @@ function get_the_link_items($id = null)
                 $bookmark->link_image = 'https://view.moezx.cc/images/2017/12/30/Transparent_Akkarin.th.jpg';
             }
 
-            $output .= '<li class="link-item"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" rel="friend"><img class="lazyload" onerror="imgError(this,1)" data-src="' . $bookmark->link_image . '" src="' . iro_opt('load_in_svg') . '"><span class="sitename">' . $bookmark->link_name . '</span><div class="linkdes">' . $bookmark->link_description . '</div></a></li>';
+            $output .= '<li class="link-item"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" rel="friend"><img class="lazyload" onerror="imgError(this,1)" data-src="' . $bookmark->link_image . '" src="' . iro_opt('load_in_svg') . '"></br><span class="sitename">' . $bookmark->link_name . '</span><div class="linkdes">' . $bookmark->link_description . '</div></a></li>';
         }
         $output .= '</ul>';
     }
@@ -1302,25 +1303,8 @@ function admin_ini()
 {
     wp_enqueue_style('admin-styles-fix-icon', get_site_url() . '/wp-includes/css/dashicons.css');
     wp_enqueue_style('cus-styles-fit', get_template_directory_uri() . '/css/dashboard-fix.css');
-    wp_enqueue_script('lazyload', get_template_directory_uri() . '/js/lazyload.min.js');
 }
 add_action('admin_enqueue_scripts', 'admin_ini');
-
-function custom_admin_js()
-{
-    echo '<script>
-    window.onload=function(){
-        lazyload();
-
-        try{
-            document.querySelector("#scheme-tip .notice-dismiss").addEventListener("click", function(){
-                location.href="?scheme-tip-dismissed' . BUILD_VERSION . '";
-            });
-        } catch(e){}
-    }
-    </script>';
-}
-add_action('admin_footer', 'custom_admin_js');
 
 /*
  * 后台通知
@@ -1854,48 +1838,48 @@ add_shortcode('collapse', 'xcollapse');
 //code end
 
 
-add_action("wp_ajax_nopriv_getPhoto", "get_photo");
-add_action("wp_ajax_getPhoto", "get_photo");
-/**
- * 相册模板
- * @author siroi <mrgaopw@hotmail.com>
- * @return Json
- */
-function get_photo()
-{
-    $postId = $_GET['post'];
-    $page = get_post($postId);
-    if ($page->post_type != "page") {
-        $back['code'] = 201;
-    } else {
-        $back['code'] = 200;
-        $back['imgs'] = array();
-        $dom = new DOMDocument('1.0', 'utf-8');
-        $meta = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
-        $dom->loadHTML($meta . $page->post_content);
-        $imgS = $dom->getElementsByTagName('img');
-        //<img src="..." data-header="标题" data-info="信息" vertical=false>
-        foreach ($imgS as $key => $value) {
-            $attr = $value->attributes;
-            $header = $attr->getNamedItem('header');
-            $info = $attr->getNamedItem('data-info');
-            $vertical = $attr->getNamedItem('vertical');
+// add_action("wp_ajax_nopriv_getPhoto", "get_photo");
+// add_action("wp_ajax_getPhoto", "get_photo");
+// /**
+//  * 相册模板
+//  * @author siroi <mrgaopw@hotmail.com>
+//  * @return Json
+//  */
+// function get_photo()
+// {
+//     $postId = $_GET['post'];
+//     $page = get_post($postId);
+//     if ($page->post_type != "page") {
+//         $back['code'] = 201;
+//     } else {
+//         $back['code'] = 200;
+//         $back['imgs'] = array();
+//         $dom = new DOMDocument('1.0', 'utf-8');
+//         $meta = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
+//         $dom->loadHTML($meta . $page->post_content);
+//         $imgS = $dom->getElementsByTagName('img');
+//         //<img src="..." data-header="标题" data-info="信息" vertical=false>
+//         foreach ($imgS as $key => $value) {
+//             $attr = $value->attributes;
+//             $header = $attr->getNamedItem('header');
+//             $info = $attr->getNamedItem('data-info');
+//             $vertical = $attr->getNamedItem('vertical');
 
-            //图片资源地址
-            $temp['img'] = $value->attributes->getNamedItem('src')->nodeValue;
-            //图片上的标题
-            $temp['header'] = $header->nodeValue ?? null;
-            //图片上的信息
-            $temp['info'] = $info->nodeValue ?? null;
-            //是否竖向展示 默认false
-            $temp['vertical'] = $vertical->nodeValue ?? null;
-            array_push($back['imgs'], $temp);
-        }
-    }
-    header('Content-Type:application/json;charset=utf-8');
-    echo json_encode($back);
-    exit();
-}
+//             //图片资源地址
+//             $temp['img'] = $value->attributes->getNamedItem('src')->nodeValue;
+//             //图片上的标题
+//             $temp['header'] = $header->nodeValue ?? null;
+//             //图片上的信息
+//             $temp['info'] = $info->nodeValue ?? null;
+//             //是否竖向展示 默认false
+//             $temp['vertical'] = $vertical->nodeValue ?? null;
+//             array_push($back['imgs'], $temp);
+//         }
+//     }
+//     header('Content-Type:application/json;charset=utf-8');
+//     echo json_encode($back);
+//     exit();
+// }
 
 if (!iro_opt('login_language_opt') == '1') {
 add_filter( 'login_display_language_dropdown', '__return_false' );

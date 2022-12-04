@@ -416,9 +416,9 @@ function header_user_menu(){
     <div class="header-user-avatar">
       <img class="faa-spin animated-hover" src="<?php echo get_avatar_url( $current_user->ID, 64 );/*$ava;*/ ?>" width="30" height="30">
       <div class="header-user-menu">
-        <div class="herder-user-name">
+        <div class="header-user-name">
           <?php _e("Signed in as","sakurairo")?> 
-          <div class="herder-user-name-u"><?php echo $current_user->display_name; ?></div>
+          <div class="header-user-name-u"><?php echo $current_user->display_name; ?></div>
         </div>
         <div class="user-menu-option">
           <?php if (current_user_can('level_10')) { ?>
@@ -443,7 +443,7 @@ function header_user_menu(){
       <img class="faa-shake animated-hover" src="<?php echo $ava; ?>" width="30" height="30">
     </a>
     <div class="header-user-menu">
- <div class="herder-user-name no-logged">  
+ <div class="header-user-name no-logged">  
    <a id="login-link" href="<?php echo $login_url; ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in','sakurairo')/*登录*/?></a>  
       </div>
     </div>
@@ -832,7 +832,7 @@ function mobile_get_useragent_icon(string $ua):string{
   $wechat = $wechat ? '<li class="wechat-code"><img src="'.$wechat.'"></li>' : '';
   ?>
   <div class="single-reward">
-    <div class="reward-open">赏
+    <div class="reward-open"> <i class="fa fa-usd" aria-hidden="true"></i>
       <div class="reward-main">
         <ul class="reward-row">
           <?php echo $alipay.$wechat; ?>
