@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://fuukei.org/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.5.2.3
+Version: 2.5.5
 Tested up to: 6.0
 Requires at least: 5.6
 Requires PHP: 7.2
@@ -1845,21 +1845,35 @@ header.timeline-header {
 }
 
 .links ul li {
-  width: 32%;
+  width: 22%;
   float: left;
-  border: 1px solid var(--theme-skin,#505050);
-  padding: 15px 15px;
-  margin: 4px 4px;
+  box-shadow: 0 1px 30px -4px var(--friend-link-shadow);
+  background: rgba(255,255,255,0.5);
+  padding: 12px 12px;
+  margin: 12px 12px;
   position: relative;
   overflow: hidden;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+  border-radius: 10px;
+}
+
+.links ul li:hover{
+  width: 22%;
+  float: left;
+  box-shadow: 0 1px 20px 10px var(--friend-link-shadow);
+  background: rgba(255,255,255,0.8);
+  padding: 12px 12px;
+  margin: 12px 12px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all .8s;
+  transition: all .8s;
   border-radius: 10px;
 }
 
 .links ul li img {
   float: left;
-  box-shadow: inset 0 0 10px var(--theme-skin,#505050);
   padding: 1px/*!covered5px*/;
   opacity: 1;
   transform: rotate(0);
@@ -1873,8 +1887,9 @@ header.timeline-header {
   -o-transition: all ease 1s;
   margin-top: 3px;
   margin-left: 3px;
-  width: 70px;
-  height: 70px;
+  margin-right: 3px;
+  width: 90px;
+  height: 90px;
   border-radius: 100%;
 }
 
@@ -1888,8 +1903,9 @@ header.timeline-header {
 
 span.sitename {
   font-size: 20px;
-  margin-top: 85px;
+  margin-top: 84px;
   margin-left: 8px;
+  margin-right: 8px;
   color: var(--theme-skin)/*!covered#505050*/;
   padding-bottom: 10px;
   display: block;
@@ -1900,14 +1916,14 @@ span.sitename {
   -o-text-overflow: ellipsis;
   white-space: nowrap;
   font-weight: var(--global-font-weight);
-
+  text-underline-offset: 10px;
+  text-decoration: underline wavy var(--friend-link-title,#ffeeeB)
 }
 
 .linkdes {
   font-size: 14px;
-  padding: 4px 0;
   margin-left: 8px;
-  border-top: 1px dotted var(--theme-skin,#505050) !important;
+  margin-right: 8px;
   text-overflow: ellipsis;
   color: var(--theme-skin);
   overflow: hidden;
@@ -1918,28 +1934,15 @@ span.sitename {
 }
 
 .link-title {
-  font-weight: 400;
+  font-weight: 600;
   color: #6D6D6D;
   padding-left: 10px;
   border-left: none;
   border-color: var(--theme-skin);
-  margin: 50px 0 20px;
+  margin: 50px 0 10px;
+  text-underline-offset: 10px;
+  text-decoration: underline solid var(--friend-link-title,#ffeeeB);
   transition: all 0.8s ease !important;
-}
-
-.links ul li:before {
-  content: "";
-  background-color: var(--theme-skin,#505050);
-  -webkit-transform: skew(45deg, 0);
-  transform: skew(45deg, 0);
-  width: 0;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: -60px;
-  z-index: -1;
-  -webkit-transition: all .5s;
-  transition: all .5s;
 }
 
 span.linkss-title {
@@ -5817,22 +5820,8 @@ span.time {
   font-size: 18px;
 }
 
-.link-title span.link-fix {
-  padding-left: 10px;
-  border-left: 3px solid var(--theme-skin,#505050);
-}
-
-.links ul li:hover {
-  color: #27323A;
-  border: 1px solid #505050;
-}
-
 .links ul li:hover:before {
   width: 180%;
-}
-
-.links ul li:hover .linkdes {
-  border-top: 1px dashed #fff;
 }
 
 form#commentform,
@@ -7832,6 +7821,12 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     margin-bottom: 8px;
   }
 
+  .links ul li:hover{
+    width: 100% !important;
+    margin: 0px;
+    margin-bottom: 8px;
+  }
+
   .we-content li {
     width: 100%;
     margin-top: 0;
@@ -8006,15 +8001,6 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 
   .links ul li:before {
     display: none;
-  }
-
-  .links ul li:hover .sitename {
-    color: var(--theme-skin-matching,#505050);
-  }
-
-  .links ul li:hover .linkdes {
-    color: #949494;
-    border-top: 1px dashed #ddd;
   }
 
   .author-box {
@@ -9664,7 +9650,6 @@ body.dark #show-nav .line {
 }
 
 body.dark .linkdes {
-  border-top: 1px dotted #CCCCCC !important;
   color: #CCCCCC;
 }
 
@@ -9678,9 +9663,17 @@ body.dark .entry-content h6 {
 }
 
 body.dark .links ul li {
-  background-color: #666666;
-  border: none;
-  opacity: .8;
+  box-shadow: 0 1px 20px 2px rgba(26,26,26,0.8);
+  background: rgba(26,26,26,0.6);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .links ul li:hover{
+  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
+  background: rgba(26,26,26,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
 body.dark .scrollbar,

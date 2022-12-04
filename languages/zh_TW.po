@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-12-02 22:21+0800\n"
-"PO-Revision-Date: 2022-12-02 22:22+0800\n"
+"POT-Creation-Date: 2022-12-04 14:15+0800\n"
+"PO-Revision-Date: 2022-12-04 14:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -37,7 +37,7 @@ msgstr "別著急，試試站內檢索？"
 msgid "Search..."
 msgstr "搜尋..."
 
-#: archive.php:58 author.php:79 index.php:74
+#: archive.php:58 author.php:80 index.php:74
 msgid " Previous"
 msgstr " 更早的文章"
 
@@ -367,19 +367,19 @@ msgstr " 篇文章"
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:1462
+#: functions.php:1445
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>錯誤</b>: 電子郵箱格式出錯 (<b>@"
 
-#: functions.php:1587
+#: functions.php:1570
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1656
+#: functions.php:1639
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:1786
+#: functions.php:1769
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "

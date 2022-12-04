@@ -2840,6 +2840,22 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'friend_link_title_bottom_color',
+        'type' => 'color',
+        'title' => __('Friend Link Template Unit Title Bottom Color','sakurairo_csf'),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
+        'default' => '#ffe066'
+      ),  
+
+      array(
+        'id' => 'friend_link_shadow_color',
+        'type' => 'color',
+        'title' => __('Friend Link Template Unit Border Shadow Color','sakurairo_csf'),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
+        'default' => '#e8e8e8'
+      ),
+
+      array(
         'id' => 'ex_register_open',
         'type' => 'switcher',
         'title' => __('Login Template Registration Function','sakurairo_csf'),
