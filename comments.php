@@ -22,7 +22,7 @@
 			</div>
 		</div>
 		<div class="comments-main">
-		 <h3 id="comments-list-title">Comments | <span class="noticom"><?php comments_number('NOTHING', '1'.__(" comment","sakurairo"), '%'.__(" comments","sakurairo")); ?> </span></h3> 
+		 <h3 id="comments-list-title">Comments <span class="noticom"><?php comments_number('NOTHING', '1'.__(" comment","sakurairo"), '%'.__(" comments","sakurairo")); ?> </span></h3> 
 		<div id="loading-comments"><span></span></div>
 			<?php if(have_comments()): ?>
 				<ul class="commentwrap">

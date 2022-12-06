@@ -2837,9 +2837,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'friend_link_title_bottom_color',
+        'id' => 'friend_link_title_matching_color',
         'type' => 'color',
-        'title' => __('Friend Link Template Unit Title Bottom Color','sakurairo_csf'),
+        'title' => __('Friend Link Template Unit Matching Color','sakurairo_csf'),
         'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
         'default' => '#ffe066'
       ),  
@@ -2885,6 +2885,22 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'fold' => __('Shrink','sakurairo_csf'),
         ),
         'default' => 'unfold'
+      ),
+
+      array(
+        'id' => 'comment_area_matching_color',
+        'type' => 'color',
+        'title' => __('Page Comment Area Matching Color','sakurairo_csf'),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
+        'default' => '#ffe066'
+      ),  
+
+      array(
+        'id' => 'comment_area_shadow_color',
+        'type' => 'color',
+        'title' => __('Page Comment Area Shadow Color','sakurairo_csf'),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
+        'default' => '#e8e8e8'
       ),
 
       array(

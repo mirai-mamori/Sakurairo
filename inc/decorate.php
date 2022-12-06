@@ -22,7 +22,9 @@ if (iro_opt('theme_skin')) { ?>
     --style_menu_radius:<?=iro_opt('style_menu_radius', ''); ?>px;
     --post-list-thumb: <?=iro_opt('post_border_shadow_color'); ?>;
     --friend-link-shadow: <?=iro_opt('friend_link_shadow_color'); ?>;
-    --friend-link-title: <?=iro_opt('friend_link_title_bottom_color'); ?>;
+    --friend-link-title: <?=iro_opt('friend_link_title_matching_color'); ?>;
+    --comment_area_matching: <?=iro_opt('comment_area_matching_color'); ?>;
+    --comment_area_shadow: <?=iro_opt('comment_area_shadow_color'); ?>;
     --style_menu_selection_color: <?=iro_opt('style_menu_selection_color'); ?>;
     --shuoshuo_background_color1:<?=iro_opt('shuoshuo_background_color1');?>;
     --shuoshuo_background_color2:<?=iro_opt('shuoshuo_background_color2');?>;
