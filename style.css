@@ -5322,9 +5322,12 @@ a:focus {
 .ins-section .ins-search-item:hover header,
 .ins-section .ins-search-item:hover .iconfont,
 .sorry li a:hover,
-.art .art-content #archives a:hover,
-.motion-switcher-table .on-hover {
+.art .art-content #archives a:hover{
   color: var(--theme-skin-matching,#505050);
+}
+
+.motion-switcher-table .on-hover {
+  color: var(--comment_area_matching,#505050);
 }
 
 .site-description,
