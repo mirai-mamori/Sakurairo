@@ -7704,6 +7704,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 
 @media (max-width:1080px) {
   .comment-respond {
+    width: 92%;
     max-width: 1245px;
   }
 }
