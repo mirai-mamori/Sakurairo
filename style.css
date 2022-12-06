@@ -6791,7 +6791,7 @@ a.toc-link {
 
 .motion-switcher-table th:hover {
   background-color: rgba(245, 245, 245, .5);
-  color: var(--theme-skin-matching,#505050);
+  color: var(--comment_area_matching);
 }
 
 .menhera-container .emoji-item:hover {
