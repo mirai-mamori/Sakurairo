@@ -2436,7 +2436,6 @@ h1.main-title {
   height: 130px;
   padding: 2px;
   border-radius: 100%;
-  backdrop-filter: blur(10px);
 }
 
 .focusinfo .header-tou img {
@@ -2543,6 +2542,7 @@ h1.main-title {
   padding: 9px;
   background: var(--infor_bar_bgcolor,rgba(255, 250, 250, 0.92));
   transition: all 0.8s ease !important;
+  backdrop-filter: blur(10px);
 }
 
 .top-social_v2 {
