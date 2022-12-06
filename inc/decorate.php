@@ -1027,7 +1027,7 @@ h1.main-title {
     text-align: center;
 }
 
-<?php }if(iro_opt('area_title_text_align') == 'right'){ ?>
+<?php }else if(iro_opt('area_title_text_align') == 'right'){ ?>
 h1.fes-title,
 h1.main-title {
     text-align: right;
