@@ -115,7 +115,7 @@ $mashiro_logo = iro_opt('mashiro_logo');
 								<ruby>
 									<span class="sakuraso"><?php echo $mashiro_logo['text_a']; ?></span>
 									<span class="no"><?php echo $mashiro_logo['text_b']; ?></span>
-									<span class="shironeko"><?php echo iro_opt('logo_text'); ?><?php echo $mashiro_logo['text_c']; ?></span>
+									<span class="shironeko"><?php echo $mashiro_logo['text_c']; ?></span>
 									<rp></rp>
 									<rt class="chinese-font"><?php echo $mashiro_logo['text_secondary']; ?></rt>
 									<rp></rp>

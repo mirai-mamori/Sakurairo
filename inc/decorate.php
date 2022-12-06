@@ -46,6 +46,7 @@ if (iro_opt('theme_skin')) { ?>
     .logolink{
         font-family: '<?= $mashiro_logo['font_name']; ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
     }
+
 .logolink .sakuraso {
     background-color: rgba(255, 255, 255, .5);
     border-radius: 5px;
@@ -380,12 +381,21 @@ body.dark .site-top .lower nav.navbar ul
 
 /*字体*/
 
-<?php if (iro_opt('reference_exter_font', 'true')): ?>
+<?php if (iro_opt('reference_exter_font', 'true')) {
+$exter_font = iro_opt('exter_font');
+?>
+
 @font-face {
-font-family: '<?=iro_opt('exter_font_name'); ?>';
-src : url('<?=iro_opt('exter_font_link'); ?>');
+font-family: '<?php echo $exter_font['font1']; ?>';
+src : url('<?php echo $exter_font['link1']; ?>');
 }
-<?php endif; ?>
+
+@font-face {
+font-family: '<?php echo $exter_font['font2']; ?>';
+src : url('<?php echo $exter_font['link2']; ?>');
+}
+
+<?php } ?>
 
 .serif{
 font-family:<?=iro_opt('global_default_font'); ?> !important ;
@@ -401,9 +411,15 @@ font-size: <?=iro_opt('global_font_size'); ?>px;
 font-family:<?=iro_opt('nav_menu_font'); ?> !important;
 }
 
+<?php if (iro_opt('mashiro_logo')) {
+$mashiro_logo = iro_opt('mashiro_logo');
+?>
+
 .site-title a{
-font-family:<?=iro_opt('nav_logo_text_font'); ?> !important;
+font-family: '<?php echo $mashiro_logo['font_name']; ?>';
 }
+
+<?php } ?>
 
 .site-info,.site-info a{
 font-family:<?=iro_opt('footer_text_font'); ?> !important;

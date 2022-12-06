@@ -772,8 +772,8 @@ input[type=week] {
   /* background: hsla(var(--header-color-h,0deg),var(--header-color-s,0%),var(--header-color-l,100%),.75); */
   background: rgba(255, 255, 255, .75);
   box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4);
-  backdrop-filter: blur(10px);
 }
+
 .yya {
   /*     -webkit-transition: all 1s ease !important;
     transition: all 1s ease !important; */
@@ -6892,22 +6892,6 @@ a.toc-link {
   background-color: rgba(255, 255, 255, .1);
 }
 
-.chinese-font {
-  font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
-}
-
-.chinese-tranditional-font {
-  font-family: Helvetica, Tahoma, Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", "標楷體", DFKai-SB, sans-serif;
-}
-
-.japanese-font {
-  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-}
-
-.english-serif {
-  font-family: 'Noto Serif CJK SC', 'Noto Serif CJK', serif;
-}
-
 .code-font {
   font-family: 'Noto Sans SC', monospace;
 }
@@ -7078,24 +7062,24 @@ a.toc-link {
 }
 
 .warning {
-  background: #FFEA97 !important;
+  background: rgba(255,234,151,0.5) !important;
   color: #9F6F26 !important;
   text-indent: 0 !important;
 }
 
 .noway {
-  background: #EFCEC9 !important;
+  background: rgba(239,206,201,0.5) !important;
   color: #820B0B !important;
   text-indent: 0 !important;
 }
 
 .task {
-  background: #E7E7E7 !important;
+  background: rgba(231,231,231,0.5)  !important;
   color: #333 !important;
 }
 
 .buy {
-  background: #9dd7e8 !important;
+  background: rgba(157,215,232,0.5) !important;
   color: #03536b !important;
   text-indent: 0 !important;
 }

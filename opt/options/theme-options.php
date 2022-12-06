@@ -350,17 +350,38 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id'     => 'exter_font_link',
-        'type'   => 'text',
-        'title'  => __('External Font Link','sakurairo_csf'),
+        'id'     => 'exter_font',
+        'type'   => 'fieldset',
+        'title'  => __('External Font Options','sakurairo_csf'),
         'dependency' => array( 'reference_exter_font', '==', 'true' ),
-      ),
-
-      array(
-        'id'     => 'exter_font_name',
-        'type'   => 'text',
-        'title'  => __('External Font Name','sakurairo_csf'),
-        'dependency' => array( 'reference_exter_font', '==', 'true' ),
+        'fields' => array(
+          array(
+            'id'    => 'font1',
+            'type'  => 'text',
+            'title' => __('Font 1 Name','sakurairo_csf'),
+          ),
+          array(
+            'id'    => 'link1',
+            'type'  => 'text',
+            'title' => __('Font 1 Link','sakurairo_csf'),
+          ),
+          array(
+            'id'    => 'font2',
+            'type'  => 'text',
+            'title' => __('Font 2 Name','sakurairo_csf'),
+          ),
+          array(
+            'id'    => 'link2',
+            'type'  => 'text',
+            'title' => __('Font 2 Link','sakurairo_csf'),
+          ),
+        ),
+        'default'        => array(
+          'font1'     => '',
+          'link1'     => '',
+          'font2'     => '',
+          'link2'     => '',
+        ),
       ),
 
       array(
@@ -543,26 +564,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id'     => 'logo_text',
-        'type'   => 'text',
-        'title'  => __('Nav Menu Logo Text','sakurairo_csf'),
-        'desc'   => __('Fill in the text. If the Mashiro logo is turned on, this option will be invalid','sakurairo_csf'),
-        'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
-      ),
-
-      array(
-        'id' => 'nav_logo_text_font',
-        'type' => 'text',
-        'title' => __('Nav Menu Logo Text Font','sakurairo_csf'),
-        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
-        'dependency' => array( 'mashiro_logo_option', '==', 'false' ),
-        'default' => 'Noto Serif SC'
-      ),
-
-      array(
         'id'    => 'mashiro_logo_option',
         'type'  => 'switcher',
-        'title' => __('Mashiro Logo','sakurairo_csf'),
+        'title' => __('Mashiro Logo Style','sakurairo_csf'),
         'label'   => __('After turning on, the Mashiro Logo will appear and replace the navigation menu logo position','sakurairo_csf'),
         'default' => false
       ),
@@ -570,8 +574,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'id'     => 'mashiro_logo',
         'type'   => 'fieldset',
-        'title'  => __('Mashiro Logo Options','sakurairo_csf'),
-        'dependency' => array( 'mashiro_logo_option', '==', 'true' ),
+        'title'  => __('Nav Menu Text Logo Options','sakurairo_csf'),
         'fields' => array(
           array(
             'id'    => 'text_a',
@@ -594,11 +597,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
             'title' => __('Secondary Text','sakurairo_csf'),
           ),
           array(
-            'id'    => 'font_link',
-            'type'  => 'text',
-            'title' => __('Font Link','sakurairo_csf'),
-          ),
-          array(
             'id'    => 'font_name',
             'type'  => 'text',
             'title' => __('Font Name','sakurairo_csf'),
@@ -609,8 +607,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'text_b'     => '',
           'text_c'     => '',
           'text_secondary' => '',
-          'font_link'     => 'https://fonts.loli.net/css?family=ZCOOL+QingKe+HuangYou&display=swap',
-          'font_name'    => 'ZCOOL QingKe HuangYou',
+          'font_name'    => 'Noto Serif SC',
         ),
       ),
 
