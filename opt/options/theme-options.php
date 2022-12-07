@@ -595,6 +595,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
             'id'    => 'text_secondary',
             'type'  => 'text',
             'title' => __('Secondary Text','sakurairo_csf'),
+            'dependency' => array( 'text_b', '!=', '' ),
           ),
           array(
             'id'    => 'font_name',
