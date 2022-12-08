@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-12-08 18:15+0800\n"
-"PO-Revision-Date: 2022-12-08 18:15+0800\n"
+"POT-Creation-Date: 2022-12-08 18:23+0800\n"
+"PO-Revision-Date: 2022-12-08 18:23+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -2246,7 +2246,7 @@ msgstr "嗶哩嗶哩"
 #: options/theme-options.php:1972 options/theme-options.php:1980
 #: options/theme-options.php:2005 options/theme-options.php:2302
 #: options/theme-options.php:2328 options/theme-options.php:2354
-#: options/theme-options.php:2453
+#: options/theme-options.php:2462
 msgid "add URL"
 msgstr "填寫地址"
 
@@ -2422,7 +2422,7 @@ msgid "Bulletin Board Text Color"
 msgstr "公告板文本顏色"
 
 #: options/theme-options.php:2141 options/theme-options.php:2229
-#: options/theme-options.php:2505 options/theme-options.php:2828
+#: options/theme-options.php:2415 options/theme-options.php:2828
 #: options/theme-options.php:2836 options/theme-options.php:2879
 #: options/theme-options.php:2887
 msgid ""
@@ -2510,8 +2510,6 @@ msgid "Enabled by default, display area is above article area"
 msgstr "默認開啟，展示區域顯示在文章區域上方"
 
 #: options/theme-options.php:2228
-#, fuzzy
-#| msgid "Display Area Title Matching Color"
 msgid "Display Area Matching Color"
 msgstr "展示區域匹配顏色"
 
@@ -2597,76 +2595,76 @@ msgid ""
 msgstr "自定義顏色，此選項僅支援填充十六進位顏色，建議與匹配顏色相同"
 
 #: options/theme-options.php:2413
+msgid "Article Area Border Shadow Color"
+msgstr "文章區域邊框陰影顏色"
+
+#: options/theme-options.php:2422
 msgid "Article Area Featured Image Display Shapes"
 msgstr "文章區域裝飾特色圖像展示形狀"
 
-#: options/theme-options.php:2415
+#: options/theme-options.php:2424
 msgid ""
 "You can choose a circular or a rectangular display of the featured image"
 msgstr "你可以選擇圓形展示或者矩形展示文章區域裝飾特色圖像"
 
-#: options/theme-options.php:2426
+#: options/theme-options.php:2435
 msgid "Article Area Featured Image Alignment"
 msgstr "文章區域裝飾特色圖像對齊方向"
 
-#: options/theme-options.php:2428
+#: options/theme-options.php:2437
 msgid "You can choose different directions to display the featured images"
 msgstr "你可以選擇不同方向展示文章區域裝飾特色圖像"
 
-#: options/theme-options.php:2440
+#: options/theme-options.php:2449
 msgid "Article Area Featured Image Options"
 msgstr "文章區域裝飾特色圖像選項"
 
-#: options/theme-options.php:2442
+#: options/theme-options.php:2451
 msgid "Cover Random Image"
 msgstr "封面隨機圖像"
 
-#: options/theme-options.php:2443
+#: options/theme-options.php:2452
 msgid "External API Random Image"
 msgstr "外部API隨機圖像"
 
-#: options/theme-options.php:2451
+#: options/theme-options.php:2460
 msgid "Article Area Featured Image External API Random Image Address"
 msgstr "文章區域裝飾特色圖像外部API隨機圖像地址"
 
-#: options/theme-options.php:2461
+#: options/theme-options.php:2470
 msgid "Article Area Title Font Size"
 msgstr "文章區域標題字體大小"
 
-#: options/theme-options.php:2462
+#: options/theme-options.php:2471
 msgid "Slide to adjust, the recommended value range is 16-20"
 msgstr "滑動滑塊，推薦數值範圍為16-20"
 
-#: options/theme-options.php:2474
+#: options/theme-options.php:2483
 msgid "Article Area Time Display Area Font Size"
 msgstr "文章區域時間提示區域字體大小"
 
-#: options/theme-options.php:2476
+#: options/theme-options.php:2485
 msgid "Slide to adjust, the recommended values range is 10-14"
 msgstr "滑動滑塊，推薦數值範圍為10-14"
 
-#: options/theme-options.php:2487
+#: options/theme-options.php:2496
 msgid "Article Area \"Detail\" Icon"
 msgstr "文章區域“詳細”圖標"
 
-#: options/theme-options.php:2488
+#: options/theme-options.php:2497
 msgid ""
 "When enabled the \"Detail\" icon will be displayed below the article area"
 msgstr "開啟之後“詳細”圖標將顯示在文章區域內下方"
 
-#: options/theme-options.php:2495
+#: options/theme-options.php:2504
 msgid "Article Area Author Info"
 msgstr "文章區域“作者資訊”"
 
-#: options/theme-options.php:2496
+#: options/theme-options.php:2505
 msgid ""
 "When turned on, author information will be added to the article metadata "
 "section."
 msgstr "開啟之後，文章元資料部分將增加作者資訊。"
-
-#: options/theme-options.php:2503
-msgid "Article Area Border Shadow Color"
-msgstr "文章區域邊框陰影顏色"
 
 #: options/theme-options.php:2514
 msgid "Page Options"

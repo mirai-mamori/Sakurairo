@@ -2408,6 +2408,15 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),    
 
       array(
+        'id' => 'post_border_shadow_color',
+        'type' => 'color',
+        'title' => __('Article Area Border Shadow Color','sakurairo_csf'),
+        'dependency' => array( 'post_list_style', '==', 'imageflow' ),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
+        'default' => '#e8e8e8'
+      ),    
+
+      array(
         'id'         => 'post_list_akina_type',
         'type'       => 'image_select',
         'title' => __('Article Area Featured Image Display Shapes','sakurairo_csf'),
@@ -2496,15 +2505,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'label' => __('When turned on, author information will be added to the article metadata section.' ,'sakurairo_csf'),
         'default' => false
       ),
-
-      array(
-        'id' => 'post_border_shadow_color',
-        'type' => 'color',
-        'title' => __('Article Area Border Shadow Color','sakurairo_csf'),
-        'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#e8e8e8'
-      ),    
 
     )
   ) );

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-12-08 18:14+0800\n"
+"POT-Creation-Date: 2022-12-08 18:23+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -2179,7 +2179,7 @@ msgstr ""
 #: options/theme-options.php:1972 options/theme-options.php:1980
 #: options/theme-options.php:2005 options/theme-options.php:2302
 #: options/theme-options.php:2328 options/theme-options.php:2354
-#: options/theme-options.php:2453
+#: options/theme-options.php:2462
 msgid "add URL"
 msgstr ""
 
@@ -2350,7 +2350,7 @@ msgid "Bulletin Board Text Color"
 msgstr ""
 
 #: options/theme-options.php:2141 options/theme-options.php:2229
-#: options/theme-options.php:2505 options/theme-options.php:2828
+#: options/theme-options.php:2415 options/theme-options.php:2828
 #: options/theme-options.php:2836 options/theme-options.php:2879
 #: options/theme-options.php:2887
 msgid ""
@@ -2510,72 +2510,72 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:2413
+msgid "Article Area Border Shadow Color"
+msgstr ""
+
+#: options/theme-options.php:2422
 msgid "Article Area Featured Image Display Shapes"
 msgstr ""
 
-#: options/theme-options.php:2415
+#: options/theme-options.php:2424
 msgid "You can choose a circular or a rectangular display of the featured image"
 msgstr ""
 
-#: options/theme-options.php:2426
+#: options/theme-options.php:2435
 msgid "Article Area Featured Image Alignment"
 msgstr ""
 
-#: options/theme-options.php:2428
+#: options/theme-options.php:2437
 msgid "You can choose different directions to display the featured images"
 msgstr ""
 
-#: options/theme-options.php:2440
+#: options/theme-options.php:2449
 msgid "Article Area Featured Image Options"
 msgstr ""
 
-#: options/theme-options.php:2442
+#: options/theme-options.php:2451
 msgid "Cover Random Image"
 msgstr ""
 
-#: options/theme-options.php:2443
+#: options/theme-options.php:2452
 msgid "External API Random Image"
 msgstr ""
 
-#: options/theme-options.php:2451
+#: options/theme-options.php:2460
 msgid "Article Area Featured Image External API Random Image Address"
 msgstr ""
 
-#: options/theme-options.php:2461
+#: options/theme-options.php:2470
 msgid "Article Area Title Font Size"
 msgstr ""
 
-#: options/theme-options.php:2462
+#: options/theme-options.php:2471
 msgid "Slide to adjust, the recommended value range is 16-20"
 msgstr ""
 
-#: options/theme-options.php:2474
+#: options/theme-options.php:2483
 msgid "Article Area Time Display Area Font Size"
 msgstr ""
 
-#: options/theme-options.php:2476
+#: options/theme-options.php:2485
 msgid "Slide to adjust, the recommended values range is 10-14"
 msgstr ""
 
-#: options/theme-options.php:2487
+#: options/theme-options.php:2496
 msgid "Article Area \"Detail\" Icon"
 msgstr ""
 
-#: options/theme-options.php:2488
+#: options/theme-options.php:2497
 msgid "When enabled the \"Detail\" icon will be displayed below the article area"
 msgstr ""
 
-#: options/theme-options.php:2495
+#: options/theme-options.php:2504
 msgid "Article Area Author Info"
 msgstr ""
 
-#: options/theme-options.php:2496
+#: options/theme-options.php:2505
 msgid ""
 "When turned on, author information will be added to the article metadata section."
-msgstr ""
-
-#: options/theme-options.php:2503
-msgid "Article Area Border Shadow Color"
 msgstr ""
 
 #: options/theme-options.php:2514
