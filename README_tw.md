@@ -18,7 +18,7 @@
 
 - 使用本主題的站點：https://iro.tw/demo.html
 
-- 主題交流QQ群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
+- 主題交流：[QQ群:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik) [Telegram群:fksakurairo](https://t.me/fksakurairo)
 
 - 如果在使用過程中遇到了任何問題，請**訪問**本主題的 [支持文檔](https://wiki.fuukei.org/) 
 
@@ -58,8 +58,6 @@
 - 本主題社交網絡圖標中，沐氫圖標引用於由緘默設計的[沐氫圖標包](https://www.coolapk.com/apk/com.muh2.icon)
 
 - 本主題白貓樣式徽標參考原主題作者白貓，由 [Hyacm](https://hyacm.com/acai/ui/143/sakura-logo/) 提供方案
-
-- 本主題使用 Stevenjoezhang [Live2d-Widget](https://github.com/stevenjoezhang/live2d-widget) 作為默認看板娘
 
 ### 依賴相關：
 

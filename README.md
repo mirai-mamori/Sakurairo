@@ -20,7 +20,7 @@
 
 - 使用本主题的博客：https://iro.tw/demo.html
 
-- 主题交流群：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
+- 主题交流：[QQ群:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik) [Telegram群:fksakurairo](https://t.me/fksakurairo)
 
 - 如果在使用过程中遇到了任何问题，请**访问**本主题的 [支持文档](https://wiki.fuukei.org/) 
 
@@ -64,8 +64,6 @@
 - 本主题社交网络图标中，沐氢图标引用于由缄默设计的 [沐氢图标包](https://www.coolapk.com/apk/com.muh2.icon)
 
 - 本主题白猫样式Logo参考原主题作者白猫，由 [Hyacm](https://hyacm.com/acai/ui/143/sakura-logo/) 提供方案
-
-- 本主题使用 Stevenjoezhang [Live2d-Widget](https://github.com/stevenjoezhang/live2d-widget) 作为默认看板娘
 
 ### 依赖相关：
 

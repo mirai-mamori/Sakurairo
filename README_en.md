@@ -18,7 +18,7 @@
 
 - Blogs based on iro：https://iro.tw/demo.html
 
-- QQ Group：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
+- Communication channels：[QQ Group:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik) [Telegram Group:fksakurairo](https://t.me/fksakurairo)
 
 - If you have any question using this theme, please **visit**  [Support Documentation](https://wiki.fuukei.org/) 
 
@@ -54,8 +54,6 @@ Please fill in with the issue template. Thanks for your cooperation.
 - For social network icons of the theme, MUH2 icons reference the [MUH2 Icon Pack](https://www.coolapk.com/apk/com.muh2.icon) designed by 缄默.
 
 - The Mashiro Logo references the design by Mashiro, the developer of the original theme. Solutions provided by [Hyacm](https://hyacm.com/acai/ui/143/sakura-logo/).
-
-- The theme uses the [Live2d-Widget](https://github.com/stevenjoezhang/live2d-widget) by Stevenjoezhang as default Live2D Model.
 
 ### Dependencies:
 
