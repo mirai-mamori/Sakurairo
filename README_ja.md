@@ -18,7 +18,7 @@
 
 - 本テーマを利用しているサイト：https://iro.tw/demo.html
 
-- 公式通信情報：[QQグループ:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik) [Telegramグループ:fksakurairo](https://t.me/fksakurairo)
+- 公式通信情報：[QQグループ:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)     [Telegramグループ:fksakurairo](https://t.me/fksakurairo)
 
 - このテーマの使い方についてご不明な点がございましたら、[サポートドキュメント](https://wiki.fuukei.org/)を**ご覧ください**。 
 
