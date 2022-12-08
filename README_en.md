@@ -18,7 +18,7 @@
 
 - Blogs based on iro：https://iro.tw/demo.html
 
-- Communication channels：[QQ Group:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)    [Telegram Group:fksakurairo](https://t.me/fksakurairo)
+- Communication channels：[QQ Group:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)  ＆  [Telegram Group:fksakurairo](https://t.me/fksakurairo)
 
 - If you have any question using this theme, please **visit**  [Support Documentation](https://wiki.fuukei.org/) 
 

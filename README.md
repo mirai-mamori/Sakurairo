@@ -20,7 +20,7 @@
 
 - 使用本主题的博客：https://iro.tw/demo.html
 
-- 主题交流：[QQ群:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)     [Telegram群:fksakurairo](https://t.me/fksakurairo)
+- 主题交流：[QQ群:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)  ＆  [Telegram群:fksakurairo](https://t.me/fksakurairo)
 
 - 如果在使用过程中遇到了任何问题，请**访问**本主题的 [支持文档](https://wiki.fuukei.org/) 
 
