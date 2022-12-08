@@ -17,7 +17,7 @@ if (iro_opt('theme_skin')) { ?>
     --infor_bar_bgcolor:<?=iro_opt('infor_bar_bgcolor'); ?>;
     --style_menu_background_color:<?=iro_opt('style_menu_background_color'); ?>;
     --style_menu_selection_radius:<?=iro_opt('style_menu_selection_radius', ''); ?>px;
-    --post_date_text_color:<?=iro_opt('post_date_text_color'); ?>;
+    --post_list_matching_color:<?=iro_opt('post_list_matching_color'); ?>;
     --load_nextpage_svg:url("<?=iro_opt('load_nextpage_svg'); ?>");
     --style_menu_radius:<?=iro_opt('style_menu_radius', ''); ?>px;
     --post-list-thumb: <?=iro_opt('post_border_shadow_color'); ?>;
@@ -32,7 +32,7 @@ if (iro_opt('theme_skin')) { ?>
     --theme-skin-dark:  <?=iro_opt('theme_skin_dark'); ?>;
     --global-font-weight:<?=iro_opt('global_font_weight');?>;
     --theme-dm-background_transparency:<?=iro_opt('theme_darkmode_background_transparency')?>;
-    --area_title_bottom_color:<?=iro_opt('area_title_bottom_color');?>;
+    --exhibition_area_matching_color:<?=iro_opt('exhibition_area_matching_color');?>;
 }
 <?php if (iro_opt('theme_commemorate_mode')) {?>
     html{
@@ -138,7 +138,7 @@ if (iro_opt('theme_skin')) { ?>
 
 /*非全局色彩管理*/
 .post-date {
-    background-color: <?=iro_opt('post_date_background_color'); ?>;
+    background-color: <?=iro_opt('post_list_matching_color'); ?>26;
 }
 
 <?php $text_logo = iro_opt('text_logo'); ?>

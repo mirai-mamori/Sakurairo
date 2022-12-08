@@ -2199,14 +2199,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'default' => 'left'
       ),
 
-      array(
-        'id' => 'area_title_bottom_color',
-        'type' => 'color',
-        'title' => __('Area Title Bottom Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#ffe066'
-      ),  
-
     )
   ) );
 
@@ -2229,6 +2221,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'label' => __('Enabled by default, display area is above article area','sakurairo_csf'),
         'default' => true
       ),
+
+      array(
+        'id' => 'exhibition_area_matching_color',
+        'type' => 'color',
+        'title' => __('Display Area Matching Color','sakurairo_csf'),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
+        'default' => '#ffe066'
+      ),  
 
       array(
         'id' => 'exhibition_area_style',
@@ -2399,6 +2399,15 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'post_list_matching_color',
+        'type' => 'color',
+        'title' => __('Article Area Matching Color','sakurairo_csf'),
+        'dependency' => array( 'post_list_style', '==', 'imageflow' ),
+        'desc' => __('Customize the colors, This option only supports filling in hexadecimal colors, suggest the same as the matching color','sakurairo_csf'),
+        'default' => '#ffcc00'
+      ),    
+
+      array(
         'id'         => 'post_list_akina_type',
         'type'       => 'image_select',
         'title' => __('Article Area Featured Image Display Shapes','sakurairo_csf'),
@@ -2460,24 +2469,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'post_date_background_color',
-        'type' => 'color',
-        'title' => __('Article Area Time Display Area Background Color','sakurairo_csf'),
-        'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('Customize the colors, it is recommended to use a light color corresponding with the main color','sakurairo_csf'),
-        'default' => '#fff5e0'
-      ),    
-
-      array(
-        'id' => 'post_date_text_color',
-        'type' => 'color',
-        'title' => __('Article Area Time Display Area Text Color','sakurairo_csf'),
-        'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('Customize the colors, suggest the same as the matching color','sakurairo_csf'),
-        'default' => '#ffcc00'
-      ),    
-
-      array(
         'id' => 'post_date_font_size',
         'type' => 'slider',
         'title' => __('Article Area Time Display Area Font Size','sakurairo_csf'),
@@ -2496,22 +2487,15 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Article Area "Detail" Icon','sakurairo_csf'),
         'label' => __('When enabled the "Detail" icon will be displayed below the article area','sakurairo_csf'),
         'default' => false
-      ),array(
+      ),
+      
+      array(
         'id' => 'is_author_meta_show',
         'type' => 'switcher',
         'title' => __('Article Area Author Info','sakurairo_csf'),
         'label' => __('When turned on, author information will be added to the article metadata section.' ,'sakurairo_csf'),
         'default' => false
       ),
-
-      array(
-        'id' => 'post_icon_color',
-        'type' => 'color',
-        'title' => __('Article Area Icon Color','sakurairo_csf'),
-        'dependency' => array( 'post_list_style', '==', 'imageflow' ),
-        'desc' => __('Customize the colors, suggest the same as the matching color','sakurairo_csf'),
-        'default' => '#ffcc00'
-      ),    
 
       array(
         'id' => 'post_border_shadow_color',
