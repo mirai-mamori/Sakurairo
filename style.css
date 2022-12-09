@@ -6022,9 +6022,9 @@ div.cbp_tmlabel > p {
 }
 
 .comment-respond input[type=submit]:hover {
-  border: 1px solid #FE9600;
+  border: 1px solid var(--comment_area_matching,#505050);
   background: 0 0 !important;
-  color: #FE9600;
+  color: var(--comment_area_matching,#505050);
 }
 
 .comment-respond input::-webkit-input-placeholder,
