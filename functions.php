@@ -772,8 +772,10 @@ function custom_html()
             setTimeout(afterLoaded, 3000)
             document.addEventListener("DOMContentLoaded", ()=>{
         document.querySelector("h1 a").style.backgroundImage = "url('<?= iro_opt('login_logo_img')?>')";
-        document.querySelector(".forgetmenot").outerHTML = '<p class="forgetmenot"><?=__("Remember me","sakurairo")?><input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>';
-        
+        forgetmenot = document.querySelector(".forgetmenot");
+        if (forgetmenot){
+            forgetmenot.outerHTML = '<p class="forgetmenot"><?=__("Remember me","sakurairo")?><input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>';
+        }
         const captchaimg = document.getElementById("captchaimg");
         captchaimg && captchaimg.addEventListener("click",(e)=>{
             fetch("<?= rest_url('sakura/v1/captcha/create')?>")
@@ -794,20 +796,17 @@ add_action('login_footer', 'custom_html');
 //* Add custom message to WordPress login page
 function smallenvelop_login_message($message)
 {
-    if (empty($message)) {
-        return '<p class="message"><strong>You may try 3 times for every 5 minutes!</strong></p>';
-    } else {
-        return $message;
-    }
+    return empty($message) ? '<p class="message"><strong>You may try 3 times for every 5 minutes!</strong></p>' : $message;
 }
 //add_filter( 'login_message', 'smallenvelop_login_message' );
 
 //Fix password reset bug </>
 function resetpassword_message_fix($message)
 {
-    $message = str_replace('<', '', $message);
-    $message = str_replace('>', '', $message);
-    return $message;
+    return str_replace(['>','<'], '', $message);
+    // $message = str_replace('<', '', $message);
+    // $message = str_replace('>', '', $message);
+    // return $message;
 }
 add_filter('retrieve_password_message', 'resetpassword_message_fix');
 
@@ -1919,9 +1918,9 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
                 return new WP_Error('prooffail', '<strong>错误</strong>：' . $check['msg']);
                 //return home_url('/wp-admin/');
             }
-        } else {
-            return new WP_Error('prooffail', '<strong>错误</strong>：验证码为空！');
         }
+        return new WP_Error('prooffail', '<strong>错误</strong>：验证码为空！');
+        
     }
     add_filter('authenticate', 'CAPTCHA_CHECK', 20, 3);
     /**
