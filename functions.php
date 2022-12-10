@@ -355,17 +355,6 @@ function convertip($ip)
 }
 //Comment Location End
 
-/**
- * COMMENT FORMATTING
- *
- * 标准的 lazyload 输出头像
- * <?php echo str_replace( 'src=', 'src="https://fastly.jsdelivr.net/gh/moezx/cdn@3.0.1/img/svg/loader/index.ajax-spinner-preloader.svg" onerror="imgError(this,1)" data-src=', get_avatar( $comment->comment_author_email, '80', '', get_comment_author(), array( 'class' => array( 'lazyload' ) ) ) ); ?>
- *
- * 如果不延时是这样的
- * <?php echo get_avatar( $comment->comment_author_email, '80', '', get_comment_author() ); ?>
- *
- */
-
 if (!function_exists('akina_comment_format')) {
     function akina_comment_format($comment, $args, $depth)
     {
@@ -506,7 +495,7 @@ function get_the_link_items($id = null)
             }
 
             if (empty($bookmark->link_image)) {
-                $bookmark->link_image = 'https://view.moezx.cc/images/2017/12/30/Transparent_Akkarin.th.jpg';
+                $bookmark->link_image = 'https://s.nmxc.ltd/sakurairo_vision/@2.5/basic/friendlink.jpg';
             }
 
             $output .= '<li class="link-item"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" rel="friend"><img class="lazyload" onerror="imgError(this,1)" data-src="' . $bookmark->link_image . '" src="' . iro_opt('load_in_svg') . '"></br><span class="sitename">' . $bookmark->link_name . '</span><div class="linkdes">' . $bookmark->link_description . '</div></a></li>';
