@@ -1810,10 +1810,11 @@ add_filter('mime_types', 'mimvp_filter_mime_types', 10, 1);
 function mimvp_file_is_displayable_image($result, $path)
 {
     $info = @getimagesize($path);
-    if ($info['mime'] == 'image/webp') {
-        $result = true;
-    }
-    return $result;
+    // if ($info['mime'] == 'image/webp') {
+    //     $result = true;
+    // }
+    // return $result;
+    return $info['mime'] == 'image/webp';
 }
 add_filter('file_is_displayable_image', 'mimvp_file_is_displayable_image', 10, 2);
 
@@ -1914,10 +1915,10 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
             $check = $img->check_captcha($_POST['yzm'], $_POST['timestamp'], $_POST['id']);
             if ($check['code'] == 5) {
                 return $user;
-            } else {
-                return new WP_Error('prooffail', '<strong>错误</strong>：' . $check['msg']);
-                //return home_url('/wp-admin/');
             }
+            return new WP_Error('prooffail', '<strong>错误</strong>：' . $check['msg']);
+            //return home_url('/wp-admin/');
+            
         }
         return new WP_Error('prooffail', '<strong>错误</strong>：验证码为空！');
         
@@ -1941,9 +1942,9 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
             if ($check['code'] != 5) {
                 return $errors->add('invalid_department ', '<strong>错误</strong>：' . $check['msg']);
             }
-        } else {
-            return $errors->add('invalid_department', '<strong>错误</strong>：验证码为空！');
         }
+        return $errors->add('invalid_department', '<strong>错误</strong>：验证码为空！');
+        
     }
 
     add_action('lostpassword_post', 'lostpassword_CHECK');
@@ -1955,21 +1956,19 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
         if (empty($_POST)) {
             return new WP_Error();
         }
-        if (isset($_POST['yzm']) && !empty(trim($_POST['yzm']))) {
-            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])) {
-                return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
-            }
-            include_once('inc/classes/Captcha.php');
-            $img = new Sakura\API\Captcha;
-            $check = $img->check_captcha($_POST['yzm'], $_POST['timestamp'], $_POST['id']);
-            if ($check['code'] == 5) {
-                return $errors;
-            } else {
-                return new WP_Error('prooffail', '<strong>错误</strong>：' . $check['msg']);
-            }
-        } else {
+        if (!(isset($_POST['yzm']) && !empty(trim($_POST['yzm'])))) {
             return new WP_Error('prooffail', '<strong>错误</strong>：验证码为空！');
         }
+        if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])) {
+            return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
+        }
+        include_once('inc/classes/Captcha.php');
+        $img = new Sakura\API\Captcha;
+        $check = $img->check_captcha($_POST['yzm'], $_POST['timestamp'], $_POST['id']);
+        if ($check['code'] == 5) return $errors;
+
+        return new WP_Error('prooffail', '<strong>错误</strong>：' . $check['msg']);
+        
     }
     add_filter('registration_errors', 'registration_CAPTCHA_CHECK', 2, 3);
 } elseif (iro_opt('captcha_select') === 'vaptcha') {
@@ -1987,33 +1986,35 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
         if (empty($_POST)) {
             return new WP_Error();
         }
-        if (isset($_POST['vaptcha_server']) && isset($_POST['vaptcha_token'])) {
-            if (!preg_match('/^https:\/\/([\w-]+\.)+[\w-]*([^<>=?\"\'])*$/', $_POST['vaptcha_server']) || !preg_match('/^[\w\-\$]+$/', $_POST['vaptcha_token'])) {
-                return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
-            }
-            include_once('inc/classes/Vaptcha.php');
-            $url = $_POST['vaptcha_server'];
-            $token = $_POST['vaptcha_token'];
-            $ip = get_the_user_ip();
-            $vaptcha = new Sakura\API\Vaptcha;
-            $response = $vaptcha->checkVaptcha($url, $token, $ip);
-            if ($response->msg && $response->success && $response->score) {
-                if ($response->success === 1 && $response->score >= 70) {
-                    return $user;
-                } else if ($response->success === 0) {
-                    $errorcode = $response->msg;
-                    return new WP_Error('prooffail', '<strong>错误</strong>：' . $errorcode);
-                } else {
-                    return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
-                }
-            } else if (is_string($response)) {
-                return new WP_Error('prooffail', '<strong>错误</strong>：' . $response);
-            } else {
-                return new WP_Error('prooffail', '<strong>错误</strong>：未知错误');
-            }
-        } else {
+        if (!(isset($_POST['vaptcha_server']) && isset($_POST['vaptcha_token']))) {
             return new WP_Error('prooffail', '<strong>错误</strong>：请先进行人机验证');
+
         }
+        if (!preg_match('/^https:\/\/([\w-]+\.)+[\w-]*([^<>=?\"\'])*$/', $_POST['vaptcha_server']) || !preg_match('/^[\w\-\$]+$/', $_POST['vaptcha_token'])) {
+            return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
+        }
+        include_once('inc/classes/Vaptcha.php');
+        $url = $_POST['vaptcha_server'];
+        $token = $_POST['vaptcha_token'];
+        $ip = get_the_user_ip();
+        $vaptcha = new Sakura\API\Vaptcha;
+        $response = $vaptcha->checkVaptcha($url, $token, $ip);
+        if ($response->msg && $response->success && $response->score) {
+            if ($response->success === 1 && $response->score >= 70) {
+                return $user;
+            }
+            if ($response->success === 0) {
+                $errorcode = $response->msg;
+                return new WP_Error('prooffail', '<strong>错误</strong>：' . $errorcode);
+            }
+            return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
+            
+        } else if (is_string($response)) {
+            return new WP_Error('prooffail', '<strong>错误</strong>：' . $response);
+        }
+        return new WP_Error('prooffail', '<strong>错误</strong>：未知错误');
+        
+
     }
     add_filter('authenticate', 'checkVaptchaAction', 20, 3);
 }
