@@ -328,11 +328,7 @@ function convertip($ip)
     if (empty($ip)) $ip = get_comment_author_IP();
     $ch = curl_init();
     $timeout = 5;
-    if (iro_opt('ipsource') === 'type_1') {
-        $url = 'https://api.nmxc.ltd/ip/' . $ip;
-    } else {
-        $url = 'https://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip=' . $ip;
-    }
+    $url = 'https://api.nmxc.ltd/ip/' . $ip;
     $timeout = 5;
     curl_setopt($ch, CURLOPT_URL, $url);
     // curl_setopt ($ch, CURLOPT_URL, 'http://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip='.$ip);  
@@ -349,7 +345,7 @@ function convertip($ip)
     if ($result['data']['country'] != '中国') {
         return $result['data']['country'];
     }
-    return $result['data']['country'] . '&nbsp;·&nbsp;' . $result['data']['region'] . '&nbsp;·&nbsp;' . $result['data']['city'] . '&nbsp;·&nbsp;' . $result['data']['isp'];
+    return $result['data']['country'] . '&nbsp;·&nbsp;' . $result['data']['region'] . '&nbsp;·&nbsp;' . $result['data']['city'];
 }
 //Comment Location End
 
