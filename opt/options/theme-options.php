@@ -2921,18 +2921,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'ipsource',
-        'type' => 'select',
-        'title' => __('Page Comment Area IP Source','sakurairo_csf'),
-        'desc' => __('You can choose the theme self built IP library or Taobao IP library as the comment location information source','sakurairo_csf'),
-        'options' => array(
-          'type_1' => __('Theme Self Built IP Lib','sakurairo_csf'),
-          'type_2' => __('Taobao IP Lib','sakurairo_csf'),
-        ),
-        'default' => 'type_1'
-      ),
-
-      array(
         'id' => 'comment_private_message',
         'type' => 'switcher',
         'title' => __('Private Comment Function','sakurairo_csf'),
