@@ -1584,36 +1584,39 @@ function change_avatar($avatar)
     return $avatar;
 }
 
+
+function get_random_url(string $url):string
+{
+    $array = parse_url($url);
+    if (!isset($array['query'])) {
+        // 无参数
+        return $url.'?'.rand(1,100);
+    }
+    // 有参数
+    return $url.'&'.rand(1,100);
+}
+
+
 // default feature image
 function DEFAULT_FEATURE_IMAGE(string $size='source'):string
 {
     if (iro_opt('post_cover_options') == 'type_2') {
-        // 识别URL是否包含参数
-        $array = parse_url(iro_opt('post_cover'));
-        if (!isset($array['query'])) {
-            // 无参数
-            return iro_opt('post_cover').'?'.rand(1,100);
-        }
-        // 有参数
-        return iro_opt('post_cover').'&'.rand(1,100);
+        return get_random_url(iro_opt('post_cover'));
     }
     if (iro_opt('random_graphs_options') == 'external_api'){
-        // 识别URL是否包含参数
-        $array = parse_url(iro_opt('random_graphs_link'));
-        if (!isset($array['query'])) {
-            // 无参数
-            return iro_opt('random_graphs_link').'?'.rand(1,100);
-        }
-        // 有参数
-        return iro_opt('random_graphs_link').'&'.rand(1,100);
+        return get_random_url(iro_opt('random_graphs_link'));
     }
     $_api_url = rest_url('sakura/v1/image/feature');
     $rand = rand(1, 100);
-    if (strpos($_api_url, 'index.php?') !== false) {
-        $_api_url = "{$_api_url}&size={$size}&$rand";
-    }else{
-        $_api_url = "{$_api_url}?size={$size}&$rand";
-    }
+    # 拼接符
+    $splice = strpos($_api_url, 'index.php?') !== false ? '&' : '?';
+    $_api_url = "{$_api_url}{$splice}size={$size}&$rand";
+
+    // if (strpos($_api_url, 'index.php?') !== false) {
+    //     $_api_url = "{$_api_url}&size={$size}&$rand";
+    // }else{
+    //     $_api_url = "{$_api_url}?size={$size}&$rand";
+    // }
     return $_api_url;
 }
 
