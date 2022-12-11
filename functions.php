@@ -327,7 +327,6 @@ function convertip($ip)
 {
     if (empty($ip)) $ip = get_comment_author_IP();
     $ch = curl_init();
-    $timeout = 5;
     $url = 'https://api.nmxc.ltd/ip/' . $ip;
     $timeout = 5;
     curl_setopt($ch, CURLOPT_URL, $url);
