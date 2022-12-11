@@ -1593,10 +1593,24 @@ function change_avatar($avatar)
 function DEFAULT_FEATURE_IMAGE(string $size='source'):string
 {
     if (iro_opt('post_cover_options') == 'type_2') {
-        return iro_opt('post_cover').'?'.rand(1,100);
+        // 识别URL是否包含参数
+        $array = parse_url(iro_opt('post_cover'));
+        if (!isset($array['query'])) {
+            // 无参数
+            return iro_opt('post_cover').'?'.rand(1,100);
+        }
+        // 有参数
+        return iro_opt('post_cover').'&'.rand(1,100);
     }
     if (iro_opt('random_graphs_options') == 'external_api'){
-        return iro_opt('random_graphs_link').'?'.rand(1,100);
+        // 识别URL是否包含参数
+        $array = parse_url(iro_opt('random_graphs_link'));
+        if (!isset($array['query'])) {
+            // 无参数
+            return iro_opt('random_graphs_link').'?'.rand(1,100);
+        }
+        // 有参数
+        return iro_opt('random_graphs_link').'&'.rand(1,100);
     }
     $_api_url = rest_url('sakura/v1/image/feature');
     $rand = rand(1, 100);
