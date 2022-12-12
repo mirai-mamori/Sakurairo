@@ -9,7 +9,6 @@
  * @package Sakura
  */
 
-$mashiro_logo = iro_opt('mashiro_logo');
 $reception_background = iro_opt('reception_background');
 ?>
 	</div><!-- #content -->
@@ -162,10 +161,6 @@ $reception_background = iro_opt('reception_background');
 <link rel="stylesheet" href="<?php global $shared_lib_basepath;echo $shared_lib_basepath?>/css/wave.css">
 <?php endif; ?>
 
-<!-- logo字体部分 -->
-<?php if (iro_opt('mashiro_logo_option') == true) { ?>
-	<link rel="stylesheet" href="<?php echo $mashiro_logo['font_link']; ?>" media="all">
-<?php } ?>
 <?php
 echo iro_opt('footer_addition', '');
 ?>

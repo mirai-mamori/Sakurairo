@@ -10,7 +10,7 @@
 
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '17.5.0');
+define('INT_VERSION', '17.6.0');
 define('BUILD_VERSION', '2');
 
 //Option-Framework
@@ -327,12 +327,7 @@ function convertip($ip)
 {
     if (empty($ip)) $ip = get_comment_author_IP();
     $ch = curl_init();
-    $timeout = 5;
-    if (iro_opt('ipsource') === 'type_1') {
-        $url = 'https://api.nmxc.ltd/ip/' . $ip;
-    } else {
-        $url = 'https://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip=' . $ip;
-    }
+    $url = 'https://api.nmxc.ltd/ip/' . $ip;
     $timeout = 5;
     curl_setopt($ch, CURLOPT_URL, $url);
     // curl_setopt ($ch, CURLOPT_URL, 'http://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip='.$ip);  
@@ -343,28 +338,15 @@ function convertip($ip)
     curl_close($ch);
     $result = null;
     $result = json_decode($file_contents, true);
-    if ($result && $result['code'] == 0) {
-        if ($result['data']['country'] != '中国') {
-            return $result['data']['country'];
-        } else {
-            return $result['data']['country'] . '&nbsp;·&nbsp;' . $result['data']['region'] . '&nbsp;·&nbsp;' . $result['data']['city'] . '&nbsp;·&nbsp;' . $result['data']['isp'];
-        }
-    } else {
+    if ($result && $result['code'] != 0) {
         return "未知";
     }
+    if ($result['data']['country'] != '中国') {
+        return $result['data']['country'];
+    }
+    return $result['data']['country'] . '&nbsp;·&nbsp;' . $result['data']['region'] . '&nbsp;·&nbsp;' . $result['data']['city'];
 }
 //Comment Location End
-
-/**
- * COMMENT FORMATTING
- *
- * 标准的 lazyload 输出头像
- * <?php echo str_replace( 'src=', 'src="https://fastly.jsdelivr.net/gh/moezx/cdn@3.0.1/img/svg/loader/index.ajax-spinner-preloader.svg" onerror="imgError(this,1)" data-src=', get_avatar( $comment->comment_author_email, '80', '', get_comment_author(), array( 'class' => array( 'lazyload' ) ) ) ); ?>
- *
- * 如果不延时是这样的
- * <?php echo get_avatar( $comment->comment_author_email, '80', '', get_comment_author() ); ?>
- *
- */
 
 if (!function_exists('akina_comment_format')) {
     function akina_comment_format($comment, $args, $depth)
@@ -427,7 +409,15 @@ function get_author_class($comment_author_email, $user_id)
     $author_count = count($wpdb->get_results(
         "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email = '$comment_author_email' "
     ));
-    $Lv = $author_count < 5 ? 0 : ($author_count < 10 ? 1 : ($author_count < 20 ? 2 : ($author_count < 40 ? 3 : ($author_count < 80 ? 4 : ($author_count < 160 ? 5 : 6)))));
+    # 等级梯度
+    $lv_array = [0, 5, 10, 20, 40, 80, 160];
+    $Lv = 0;
+    foreach ($lv_array as $key => $value) {
+        if ($value >= $author_count) break;
+        $Lv = $key;
+    }
+
+    // $Lv = $author_count < 5 ? 0 : ($author_count < 10 ? 1 : ($author_count < 20 ? 2 : ($author_count < 40 ? 3 : ($author_count < 80 ? 4 : ($author_count < 160 ? 5 : 6)))));
     echo "<span class=\"showGrade{$Lv}\" title=\"Lv{$Lv}\"><img src=\"".iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.5/')."comment_level/level_{$Lv}.svg\" style=\"height: 1.5em; max-height: 1.5em; display: inline-block;\"></span>";
 }
 
@@ -444,9 +434,8 @@ function restyle_text($number)
         case "type_4": //23k 次访问
             if ($number >= 1000) {
                 return round($number / 1000, 2) . 'k';
-            } else {
-                return $number;
             }
+            return $number;
         default:
             return $number;
     }
@@ -454,15 +443,14 @@ function restyle_text($number)
 
 function set_post_views()
 {
-    if (is_singular()) {
-        global $post;
-        $post_id = intval($post->ID);
-        if ($post_id) {
-            $views = (int) get_post_meta($post_id, 'views', true);
-            if (!update_post_meta($post_id, 'views', ($views + 1))) {
-                add_post_meta($post_id, 'views', 1, true);
-            }
-        }
+    if (!is_singular()) return;
+    
+    global $post;
+    $post_id = intval($post->ID);
+    if (!$post_id) return;
+    $views = (int) get_post_meta($post_id, 'views', true);
+    if (!update_post_meta($post_id, 'views', ($views + 1))) {
+        add_post_meta($post_id, 'views', 1, true);
     }
 }
 
@@ -473,17 +461,11 @@ function get_post_views($post_id)
     if (iro_opt('statistics_api') == 'wp_statistics') {
         if (!function_exists('wp_statistics_pages')) {
             return __('Please install pulgin <a href="https://wordpress.org/plugins/wp-statistics/" target="_blank">WP-Statistics</a>', 'sakurairo');
-        } else {
-            return restyle_text(wp_statistics_pages('total', 'uri', $post_id));
         }
-    } else {
-        $views = get_post_meta($post_id, 'views', true);
-        if ($views == '') {
-            return 0;
-        } else {
-            return restyle_text($views);
-        }
-    }
+        return restyle_text(wp_statistics_pages('total', 'uri', $post_id));
+    } 
+    $views = get_post_meta($post_id, 'views', true);
+    return $views == '' ? 0 :restyle_text($views);
 }
 
 function is_webp(): bool
@@ -506,7 +488,7 @@ function get_the_link_items($id = null)
             }
 
             if (empty($bookmark->link_image)) {
-                $bookmark->link_image = 'https://view.moezx.cc/images/2017/12/30/Transparent_Akkarin.th.jpg';
+                $bookmark->link_image = 'https://s.nmxc.ltd/sakurairo_vision/@2.5/basic/friendlink.jpg';
             }
 
             $output .= '<li class="link-item"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" rel="friend"><img class="lazyload" onerror="imgError(this,1)" data-src="' . $bookmark->link_image . '" src="' . iro_opt('load_in_svg') . '"></br><span class="sitename">' . $bookmark->link_name . '</span><div class="linkdes">' . $bookmark->link_description . '</div></a></li>';
@@ -520,17 +502,14 @@ function get_link_items()
 {
     $linkcats = get_terms('link_category');
     $result = null;
-    if (!empty($linkcats)) {
-        foreach ($linkcats as $linkcat) {
-            $result .= '<h3 class="link-title"><span class="link-fix">' . $linkcat->name . '</span></h3>';
-            if ($linkcat->description) {
-                $result .= '<div class="link-description">' . $linkcat->description . '</div>';
-            }
-
-            $result .= get_the_link_items($linkcat->term_id);
+    if (empty($linkcats)) return get_the_link_items();    
+    foreach ($linkcats as $linkcat) {
+        $result .= '<h3 class="link-title"><span class="link-fix">' . $linkcat->name . '</span></h3>';
+        if ($linkcat->description) {
+            $result .= '<div class="link-description">' . $linkcat->description . '</div>';
         }
-    } else {
-        $result = get_the_link_items();
+
+        $result .= get_the_link_items($linkcat->term_id);
     }
     return $result;
 }
@@ -772,8 +751,10 @@ function custom_html()
             setTimeout(afterLoaded, 3000)
             document.addEventListener("DOMContentLoaded", ()=>{
         document.querySelector("h1 a").style.backgroundImage = "url('<?= iro_opt('login_logo_img')?>')";
-        document.querySelector(".forgetmenot").outerHTML = '<p class="forgetmenot"><?=__("Remember me","sakurairo")?><input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>';
-        
+        forgetmenot = document.querySelector(".forgetmenot");
+        if (forgetmenot){
+            forgetmenot.outerHTML = '<p class="forgetmenot"><?=__("Remember me","sakurairo")?><input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>';
+        }
         const captchaimg = document.getElementById("captchaimg");
         captchaimg && captchaimg.addEventListener("click",(e)=>{
             fetch("<?= rest_url('sakura/v1/captcha/create')?>")
@@ -794,20 +775,17 @@ add_action('login_footer', 'custom_html');
 //* Add custom message to WordPress login page
 function smallenvelop_login_message($message)
 {
-    if (empty($message)) {
-        return '<p class="message"><strong>You may try 3 times for every 5 minutes!</strong></p>';
-    } else {
-        return $message;
-    }
+    return empty($message) ? '<p class="message"><strong>You may try 3 times for every 5 minutes!</strong></p>' : $message;
 }
 //add_filter( 'login_message', 'smallenvelop_login_message' );
 
 //Fix password reset bug </>
 function resetpassword_message_fix($message)
 {
-    $message = str_replace('<', '', $message);
-    $message = str_replace('>', '', $message);
-    return $message;
+    return str_replace(['>','<'], '', $message);
+    // $message = str_replace('<', '', $message);
+    // $message = str_replace('>', '', $message);
+    // return $message;
 }
 add_filter('retrieve_password_message', 'resetpassword_message_fix');
 
@@ -1161,7 +1139,7 @@ function siren_private()
     if ($action == 'set_private') {
         update_comment_meta($comment_id, '_private', 'true');
         $i_private = get_comment_meta($comment_ID, '_private', true);
-        echo !empty($i_private) ? '否' : '是';
+        echo empty($i_private) ? '是' : '否';
     }
     die;
 }
@@ -1590,36 +1568,55 @@ function change_avatar($avatar)
         $qq_number = get_comment_meta($comment->comment_ID, 'new_field_qq', true);
         if (iro_opt('qq_avatar_link') == 'off') {
             return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
-        } elseif (iro_opt('qq_avatar_link') == 'type_3') {
+        }
+        if (iro_opt('qq_avatar_link') == 'type_3') {
             $qqavatar = file_get_contents('http://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin=' . $qq_number);
             preg_match('/:\"([^\"]*)\"/i', $qqavatar, $matches);
             return '<img src="' . $matches[1] . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
-        } else {
-            $iv = str_repeat($sakura_privkey, 2);
-            $encrypted = openssl_encrypt($qq_number, 'aes-128-cbc', $sakura_privkey, 0, $iv);
-            $encrypted = urlencode(base64_encode($encrypted));
-            return '<img src="' . rest_url("sakura/v1/qqinfo/avatar") . '?qq=' . $encrypted . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
         }
+        $iv = str_repeat($sakura_privkey, 2);
+        $encrypted = openssl_encrypt($qq_number, 'aes-128-cbc', $sakura_privkey, 0, $iv);
+        
+        $encrypted = urlencode(base64_encode($encrypted));
+        return '<img src="' . rest_url("sakura/v1/qqinfo/avatar") . '?qq=' . $encrypted . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+        
     }
     return $avatar;
 }
+
+
+function get_random_url(string $url):string
+{
+    $array = parse_url($url);
+    if (!isset($array['query'])) {
+        // 无参数
+        return $url.'?'.rand(1,100);
+    }
+    // 有参数
+    return $url.'&'.rand(1,100);
+}
+
 
 // default feature image
 function DEFAULT_FEATURE_IMAGE(string $size='source'):string
 {
     if (iro_opt('post_cover_options') == 'type_2') {
-        return iro_opt('post_cover').'?'.rand(1,100);
+        return get_random_url(iro_opt('post_cover'));
     }
     if (iro_opt('random_graphs_options') == 'external_api'){
-        return iro_opt('random_graphs_link').'?'.rand(1,100);
+        return get_random_url(iro_opt('random_graphs_link'));
     }
     $_api_url = rest_url('sakura/v1/image/feature');
     $rand = rand(1, 100);
-    if (strpos($_api_url, 'index.php?') !== false) {
-        $_api_url = "{$_api_url}&size={$size}&$rand";
-    }else{
-        $_api_url = "{$_api_url}?size={$size}&$rand";
-    }
+    # 拼接符
+    $splice = strpos($_api_url, 'index.php?') !== false ? '&' : '?';
+    $_api_url = "{$_api_url}{$splice}size={$size}&$rand";
+
+    // if (strpos($_api_url, 'index.php?') !== false) {
+    //     $_api_url = "{$_api_url}&size={$size}&$rand";
+    // }else{
+    //     $_api_url = "{$_api_url}?size={$size}&$rand";
+    // }
     return $_api_url;
 }
 
@@ -1730,14 +1727,13 @@ function create_sakura_table()
         );
         $wpdb->insert($sakura_table_name, $manifest);
     }
-    if (iro_opt('random_graphs_mts')) {
-        if (!$wpdb->get_var("SELECT COUNT(*) FROM $sakura_table_name WHERE mate_key = 'mobile_manifest_json'")) {
-            $mobile_manifest = array(
-                "mate_key" => "mobile_manifest_json",
-                "mate_value" => file_get_contents(get_template_directory() . "/manifest/manifest_mobile.json"),
-            );
-            $wpdb->insert($sakura_table_name, $mobile_manifest);
-        }
+    if (iro_opt('random_graphs_mts') && !$wpdb->get_var("SELECT COUNT(*) FROM $sakura_table_name WHERE mate_key = 'mobile_manifest_json'")) {
+        $mobile_manifest = array(
+            "mate_key" => "mobile_manifest_json",
+            "mate_value" => file_get_contents(get_template_directory() . "/manifest/manifest_mobile.json"),
+        );
+        $wpdb->insert($sakura_table_name, $mobile_manifest);
+        
     }
     if (!$wpdb->get_var("SELECT COUNT(*) FROM $sakura_table_name WHERE mate_key = 'json_time'")) {
         $time = array(
@@ -1811,10 +1807,11 @@ add_filter('mime_types', 'mimvp_filter_mime_types', 10, 1);
 function mimvp_file_is_displayable_image($result, $path)
 {
     $info = @getimagesize($path);
-    if ($info['mime'] == 'image/webp') {
-        $result = true;
-    }
-    return $result;
+    // if ($info['mime'] == 'image/webp') {
+    //     $result = true;
+    // }
+    // return $result;
+    return $info['mime'] == 'image/webp';
 }
 add_filter('file_is_displayable_image', 'mimvp_file_is_displayable_image', 10, 2);
 
@@ -1906,22 +1903,22 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
         if (empty($_POST)) {
             return new WP_Error();
         }
-        if (isset($_POST['yzm']) && !empty(trim($_POST['yzm']))) {
-            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])) {
-                return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
-            }
-            include_once('inc/classes/Captcha.php');
-            $img = new Sakura\API\Captcha;
-            $check = $img->check_captcha($_POST['yzm'], $_POST['timestamp'], $_POST['id']);
-            if ($check['code'] == 5) {
-                return $user;
-            } else {
-                return new WP_Error('prooffail', '<strong>错误</strong>：' . $check['msg']);
-                //return home_url('/wp-admin/');
-            }
-        } else {
+        if (!(isset($_POST['yzm']) && !empty(trim($_POST['yzm'])))) {
             return new WP_Error('prooffail', '<strong>错误</strong>：验证码为空！');
         }
+        if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])) {
+            return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
+        }
+        include_once('inc/classes/Captcha.php');
+        $img = new Sakura\API\Captcha;
+        $check = $img->check_captcha($_POST['yzm'], $_POST['timestamp'], $_POST['id']);
+        if ($check['code'] == 5) {
+            return $user;
+        }
+        return new WP_Error('prooffail', '<strong>错误</strong>：' . $check['msg']);
+            //return home_url('/wp-admin/');
+            
+        
     }
     add_filter('authenticate', 'CAPTCHA_CHECK', 20, 3);
     /**
@@ -1942,9 +1939,9 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
             if ($check['code'] != 5) {
                 return $errors->add('invalid_department ', '<strong>错误</strong>：' . $check['msg']);
             }
-        } else {
-            return $errors->add('invalid_department', '<strong>错误</strong>：验证码为空！');
         }
+        return $errors->add('invalid_department', '<strong>错误</strong>：验证码为空！');
+        
     }
 
     add_action('lostpassword_post', 'lostpassword_CHECK');
@@ -1956,21 +1953,19 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
         if (empty($_POST)) {
             return new WP_Error();
         }
-        if (isset($_POST['yzm']) && !empty(trim($_POST['yzm']))) {
-            if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])) {
-                return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
-            }
-            include_once('inc/classes/Captcha.php');
-            $img = new Sakura\API\Captcha;
-            $check = $img->check_captcha($_POST['yzm'], $_POST['timestamp'], $_POST['id']);
-            if ($check['code'] == 5) {
-                return $errors;
-            } else {
-                return new WP_Error('prooffail', '<strong>错误</strong>：' . $check['msg']);
-            }
-        } else {
+        if (!(isset($_POST['yzm']) && !empty(trim($_POST['yzm'])))) {
             return new WP_Error('prooffail', '<strong>错误</strong>：验证码为空！');
         }
+        if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])) {
+            return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
+        }
+        include_once('inc/classes/Captcha.php');
+        $img = new Sakura\API\Captcha;
+        $check = $img->check_captcha($_POST['yzm'], $_POST['timestamp'], $_POST['id']);
+        if ($check['code'] == 5) return $errors;
+
+        return new WP_Error('prooffail', '<strong>错误</strong>：' . $check['msg']);
+        
     }
     add_filter('registration_errors', 'registration_CAPTCHA_CHECK', 2, 3);
 } elseif (iro_opt('captcha_select') === 'vaptcha') {
@@ -1988,33 +1983,35 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
         if (empty($_POST)) {
             return new WP_Error();
         }
-        if (isset($_POST['vaptcha_server']) && isset($_POST['vaptcha_token'])) {
-            if (!preg_match('/^https:\/\/([\w-]+\.)+[\w-]*([^<>=?\"\'])*$/', $_POST['vaptcha_server']) || !preg_match('/^[\w\-\$]+$/', $_POST['vaptcha_token'])) {
-                return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
-            }
-            include_once('inc/classes/Vaptcha.php');
-            $url = $_POST['vaptcha_server'];
-            $token = $_POST['vaptcha_token'];
-            $ip = get_the_user_ip();
-            $vaptcha = new Sakura\API\Vaptcha;
-            $response = $vaptcha->checkVaptcha($url, $token, $ip);
-            if ($response->msg && $response->success && $response->score) {
-                if ($response->success === 1 && $response->score >= 70) {
-                    return $user;
-                } else if ($response->success === 0) {
-                    $errorcode = $response->msg;
-                    return new WP_Error('prooffail', '<strong>错误</strong>：' . $errorcode);
-                } else {
-                    return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
-                }
-            } else if (is_string($response)) {
-                return new WP_Error('prooffail', '<strong>错误</strong>：' . $response);
-            } else {
-                return new WP_Error('prooffail', '<strong>错误</strong>：未知错误');
-            }
-        } else {
+        if (!(isset($_POST['vaptcha_server']) && isset($_POST['vaptcha_token']))) {
             return new WP_Error('prooffail', '<strong>错误</strong>：请先进行人机验证');
+
         }
+        if (!preg_match('/^https:\/\/([\w-]+\.)+[\w-]*([^<>=?\"\'])*$/', $_POST['vaptcha_server']) || !preg_match('/^[\w\-\$]+$/', $_POST['vaptcha_token'])) {
+            return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
+        }
+        include_once('inc/classes/Vaptcha.php');
+        $url = $_POST['vaptcha_server'];
+        $token = $_POST['vaptcha_token'];
+        $ip = get_the_user_ip();
+        $vaptcha = new Sakura\API\Vaptcha;
+        $response = $vaptcha->checkVaptcha($url, $token, $ip);
+        if ($response->msg && $response->success && $response->score) {
+            if ($response->success === 1 && $response->score >= 70) {
+                return $user;
+            }
+            if ($response->success === 0) {
+                $errorcode = $response->msg;
+                return new WP_Error('prooffail', '<strong>错误</strong>：' . $errorcode);
+            }
+            return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
+            
+        } else if (is_string($response)) {
+            return new WP_Error('prooffail', '<strong>错误</strong>：' . $response);
+        }
+        return new WP_Error('prooffail', '<strong>错误</strong>：未知错误');
+        
+
     }
     add_filter('authenticate', 'checkVaptchaAction', 20, 3);
 }

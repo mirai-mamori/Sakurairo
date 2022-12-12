@@ -16,11 +16,11 @@
 
 ## 活用方法：
 
-- 本テーマを利用しているサイト：https://iro.tw/demo.html
+- 本テーマを利用しているサイト：https://docs.fuukei.org/demo/
 
-- 公式QQグルプ：[784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)
+- 公式通信情報：[QQグループ:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)  ＆  [Telegramグループ:fksakurairo](https://t.me/fksakurairo)
 
-- このテーマの使い方についてご不明な点がございましたら、[サポートドキュメント](https://wiki.fuukei.org/)を**ご覧ください**。 
+- このテーマの使い方についてご不明な点がございましたら、[サポートドキュメント](https://docs.fuukei.org)を**ご覧ください**。 
 
 - 自分が体験している現象が本当にBugであることを確認した上で、 [issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) で質問をお寄せください。テンプレートに沿って、出来るだけ詳しく説明してください。ご協力ありがとうございました。
 
@@ -53,8 +53,6 @@
 - 本テーマのSNSアイコンは、MUH2 icons部分は缄默（ジェンモー）さんの[MUH2 Icon Pack](https://www.coolapk.com/apk/com.muh2.icon)を参考にしています。
 
 - 本テーマの白ネコロゴは、オリジナルテーマの開発者Mashiroさんのデザインを参考にしています。ソリューションは [Hyacm](https://hyacm.com/acai/ui/143/sakura-logo/) さんが提供しています。
-
-- 本テーマは Stevenjoezhangさんの [Live2d-Widget](https://github.com/stevenjoezhang/live2d-widget) をデフォルト看板娘として使用しています。
 
 ### 依存関係：
 

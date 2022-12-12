@@ -17,12 +17,14 @@ if (iro_opt('theme_skin')) { ?>
     --infor_bar_bgcolor:<?=iro_opt('infor_bar_bgcolor'); ?>;
     --style_menu_background_color:<?=iro_opt('style_menu_background_color'); ?>;
     --style_menu_selection_radius:<?=iro_opt('style_menu_selection_radius', ''); ?>px;
-    --post_date_text_color:<?=iro_opt('post_date_text_color'); ?>;
+    --post_list_matching_color:<?=iro_opt('post_list_matching_color'); ?>;
     --load_nextpage_svg:url("<?=iro_opt('load_nextpage_svg'); ?>");
     --style_menu_radius:<?=iro_opt('style_menu_radius', ''); ?>px;
     --post-list-thumb: <?=iro_opt('post_border_shadow_color'); ?>;
     --friend-link-shadow: <?=iro_opt('friend_link_shadow_color'); ?>;
-    --friend-link-title: <?=iro_opt('friend_link_title_bottom_color'); ?>;
+    --friend-link-title: <?=iro_opt('friend_link_title_matching_color'); ?>;
+    --comment_area_matching: <?=iro_opt('comment_area_matching_color'); ?>;
+    --comment_area_shadow: <?=iro_opt('comment_area_shadow_color'); ?>;
     --style_menu_selection_color: <?=iro_opt('style_menu_selection_color'); ?>;
     --shuoshuo_background_color1:<?=iro_opt('shuoshuo_background_color1');?>;
     --shuoshuo_background_color2:<?=iro_opt('shuoshuo_background_color2');?>;
@@ -30,7 +32,7 @@ if (iro_opt('theme_skin')) { ?>
     --theme-skin-dark:  <?=iro_opt('theme_skin_dark'); ?>;
     --global-font-weight:<?=iro_opt('global_font_weight');?>;
     --theme-dm-background_transparency:<?=iro_opt('theme_darkmode_background_transparency')?>;
-    --area_title_bottom_color:<?=iro_opt('area_title_bottom_color');?>;
+    --exhibition_area_matching_color:<?=iro_opt('exhibition_area_matching_color');?>;
 }
 <?php if (iro_opt('theme_commemorate_mode')) {?>
     html{
@@ -46,6 +48,7 @@ if (iro_opt('theme_skin')) { ?>
     .logolink{
         font-family: '<?= $mashiro_logo['font_name']; ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
     }
+
 .logolink .sakuraso {
     background-color: rgba(255, 255, 255, .5);
     border-radius: 5px;
@@ -135,7 +138,7 @@ if (iro_opt('theme_skin')) { ?>
 
 /*非全局色彩管理*/
 .post-date {
-    background-color: <?=iro_opt('post_date_background_color'); ?>;
+    background-color: <?=iro_opt('post_list_matching_color'); ?>26;
 }
 
 <?php $text_logo = iro_opt('text_logo'); ?>
@@ -380,12 +383,21 @@ body.dark .site-top .lower nav.navbar ul
 
 /*字体*/
 
-<?php if (iro_opt('reference_exter_font', 'true')): ?>
+<?php if (iro_opt('reference_exter_font', 'true')) {
+$exter_font = iro_opt('exter_font');
+?>
+
 @font-face {
-font-family: '<?=iro_opt('exter_font_name'); ?>';
-src : url('<?=iro_opt('exter_font_link'); ?>');
+font-family: '<?php echo $exter_font['font1']; ?>';
+src : url('<?php echo $exter_font['link1']; ?>');
 }
-<?php endif; ?>
+
+@font-face {
+font-family: '<?php echo $exter_font['font2']; ?>';
+src : url('<?php echo $exter_font['link2']; ?>');
+}
+
+<?php } ?>
 
 .serif{
 font-family:<?=iro_opt('global_default_font'); ?> !important ;
@@ -401,9 +413,15 @@ font-size: <?=iro_opt('global_font_size'); ?>px;
 font-family:<?=iro_opt('nav_menu_font'); ?> !important;
 }
 
+<?php if (iro_opt('mashiro_logo')) {
+$mashiro_logo = iro_opt('mashiro_logo');
+?>
+
 .site-title a{
-font-family:<?=iro_opt('nav_logo_text_font'); ?> !important;
+font-family: '<?php echo $mashiro_logo['font_name']; ?>';
 }
+
+<?php } ?>
 
 .site-info,.site-info a{
 font-family:<?=iro_opt('footer_text_font'); ?> !important;
@@ -1009,7 +1027,7 @@ h1.main-title {
     text-align: center;
 }
 
-<?php }if(iro_opt('area_title_text_align') == 'right'){ ?>
+<?php }else if(iro_opt('area_title_text_align') == 'right'){ ?>
 h1.fes-title,
 h1.main-title {
     text-align: right;
