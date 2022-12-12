@@ -16,11 +16,11 @@
 
 ## 使用相關：
 
-- 使用本主題的站點：https://iro.tw/demo.html
+- 使用本主題的站點：https://docs.fuukei.org/demo/
 
 - 主題交流：[QQ群:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)  ＆  [Telegram群:fksakurairo](https://t.me/fksakurairo)
 
-- 如果在使用過程中遇到了任何問題，請**訪問**本主題的 [支持文檔](https://wiki.fuukei.org/) 
+- 如果在使用過程中遇到了任何問題，請**訪問**本主題的 [支持文檔](https://docs.fuukei.org) 
 
 - 在確認你遇到的現象確實是一個Bug後，請在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交問題，並為該問題可以的描述清楚，
 按照提供的問題模板進行填寫，謝謝配合。

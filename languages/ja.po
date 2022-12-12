@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-12-04 14:15+0800\n"
-"PO-Revision-Date: 2022-12-04 14:15+0800\n"
+"POT-Creation-Date: 2022-12-12 14:05+0800\n"
+"PO-Revision-Date: 2022-12-12 14:05+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -33,7 +33,7 @@ msgstr "ホームページに戻る"
 msgid "Don't worry, search in site?"
 msgstr "心配しないで、サイト内検索はどうでしょうか?"
 
-#: 404.php:61 footer.php:64 search.php:40
+#: 404.php:61 footer.php:63 search.php:40
 msgid "Search..."
 msgstr "検索…"
 
@@ -129,25 +129,25 @@ msgstr "広告は禁止されています"
 msgid "Site"
 msgstr "サイト"
 
-#: footer.php:39
+#: footer.php:38
 #, php-format
 msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr "ロード時間 %.3f 秒 | %d クエリ | RAM 使用量  %.2f MB "
 
-#: footer.php:69
+#: footer.php:68
 msgid "Go to top"
 msgstr "このページのトップへ"
 
-#: footer.php:77 footer.php:85
+#: footer.php:76 footer.php:84
 msgid "Want to find something?"
 msgstr "何かを見つけたいですか?"
 
-#: footer.php:87
+#: footer.php:86
 msgid "Search"
 msgstr "検索"
 
-#: footer.php:139
+#: footer.php:138
 msgid "Widgets"
 msgstr "ウィジェット"
 
@@ -305,83 +305,83 @@ msgstr "プライベートに設定してもよろしいですか?"
 msgid "You had set private comment before"
 msgstr "以前にプライベートコメントを設定していた"
 
-#: functions.php:384 inc/theme_plus.php:194 layouts/authorprofile.php:12
+#: functions.php:366 inc/theme_plus.php:194 layouts/authorprofile.php:12
 msgid "Author"
 msgstr "投稿者"
 
-#: functions.php:384
+#: functions.php:366
 msgid "Blogger"
 msgstr "Blogger"
 
-#: functions.php:390
+#: functions.php:372
 msgid "Location"
 msgstr "場所"
 
-#: functions.php:396
+#: functions.php:378
 msgid "Private"
 msgstr "プライベート"
 
-#: functions.php:398
+#: functions.php:380
 msgid "Yes"
 msgstr "はい"
 
-#: functions.php:400
+#: functions.php:382
 msgid "No"
 msgstr "いいえ"
 
-#: functions.php:403
+#: functions.php:385
 msgid "Edit"
 msgstr "編集"
 
-#: functions.php:475
+#: functions.php:463
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
 msgstr ""
-"パルギン<a href=\"https://wordpress.org/plugins/wp-statistics/\" target="
-"\"_blank\">WP-統計を</a>インストールしてください"
+"パルギン<a href=\"https://wordpress.org/plugins/wp-statistics/\" "
+"target=\"_blank\">WP-統計を</a>インストールしてください"
 
-#: functions.php:505
+#: functions.php:487
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "こやつはとても怠惰な╮(╯▽╰)╭"
 
-#: functions.php:705
+#: functions.php:684
 msgid "Download Link"
 msgstr "ダウンロードリンク"
 
-#: functions.php:775
+#: functions.php:756
 msgid "Remember me"
 msgstr "ログイン状態を保存する"
 
-#: functions.php:1174
+#: functions.php:1152
 msgid "All expand/collapse"
 msgstr "すべての展開/折りたたみ"
 
-#: functions.php:1195
+#: functions.php:1173
 msgid " "
 msgstr " "
 
-#: functions.php:1199
+#: functions.php:1177
 msgid " post(s)"
 msgstr "記事"
 
-#: functions.php:1222 functions.php:1225 inc/theme_plus.php:425
+#: functions.php:1200 functions.php:1203 inc/theme_plus.php:425
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: functions.php:1445
+#: functions.php:1423
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>エラー</b>: このメールドメイン (<b>@"
 
-#: functions.php:1570
+#: functions.php:1548
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1639
+#: functions.php:1636
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:1769
+#: functions.php:1765
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -389,9 +389,9 @@ msgid ""
 "target=\"_blank\"> pseudo-static </a>. </ b>"
 msgstr ""
 "<b> より良い体験のために、 <a href=\"/wp-admin/options-permalink.php\"> パー"
-"マリンク </a> をプレーンとして設定しないでください。これを行うには、 <a href="
-"\"https://qiita.com/cyborg__ninja/items/8a191a00d402e78d8823\" target="
-"\"_blank\"> 擬似静的化 </a>を構成する必要があります。 </b>"
+"マリンク </a> をプレーンとして設定しないでください。これを行うには、 <a "
+"href=\"https://qiita.com/cyborg__ninja/items/8a191a00d402e78d8823\" "
+"target=\"_blank\"> 擬似静的化 </a>を構成する必要があります。 </b>"
 
 #: inc/categories-images.php:44 inc/categories-images.php:65
 msgid "category/tag image"

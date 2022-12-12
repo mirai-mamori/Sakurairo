@@ -16,11 +16,11 @@
 
 ## How to use:
 
-- Blogs based on iro：https://iro.tw/demo.html
+- Blogs based on iro：https://docs.fuukei.org/demo/
 
 - Communication channels：[QQ Group:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)  ＆  [Telegram Group:fksakurairo](https://t.me/fksakurairo)
 
-- If you have any question using this theme, please **visit**  [Support Documentation](https://wiki.fuukei.org/) 
+- If you have any question using this theme, please **visit**  [Support Documentation](https://docs.fuukei.org) 
 
 - When you are sure that you are faced with a bug, please [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) the bug, and make a description as detailed as possible.
 Please fill in with the issue template. Thanks for your cooperation.

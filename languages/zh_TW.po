@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-12-04 14:15+0800\n"
-"PO-Revision-Date: 2022-12-04 14:15+0800\n"
+"POT-Creation-Date: 2022-12-12 14:05+0800\n"
+"PO-Revision-Date: 2022-12-12 14:05+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -33,7 +33,7 @@ msgstr "返回首頁"
 msgid "Don't worry, search in site?"
 msgstr "別著急，試試站內檢索？"
 
-#: 404.php:61 footer.php:64 search.php:40
+#: 404.php:61 footer.php:63 search.php:40
 msgid "Search..."
 msgstr "搜尋..."
 
@@ -129,25 +129,25 @@ msgstr "禁止小廣告😀"
 msgid "Site"
 msgstr "網站"
 
-#: footer.php:39
+#: footer.php:38
 #, php-format
 msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr "載入時間 %.3f 秒 | 查詢 %d 次 | 記憶體使用 %.2f MB "
 
-#: footer.php:69
+#: footer.php:68
 msgid "Go to top"
 msgstr "回到頂端"
 
-#: footer.php:77 footer.php:85
+#: footer.php:76 footer.php:84
 msgid "Want to find something?"
 msgstr "想要找點什麼呢？"
 
-#: footer.php:87
+#: footer.php:86
 msgid "Search"
 msgstr "搜尋"
 
-#: footer.php:139
+#: footer.php:138
 msgid "Widgets"
 msgstr "小工具"
 
@@ -303,35 +303,35 @@ msgstr "是否確實要將其設置為專用？"
 msgid "You had set private comment before"
 msgstr "您之前設置了私人評論"
 
-#: functions.php:384 inc/theme_plus.php:194 layouts/authorprofile.php:12
+#: functions.php:366 inc/theme_plus.php:194 layouts/authorprofile.php:12
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:384
+#: functions.php:366
 msgid "Blogger"
 msgstr "部落客"
 
-#: functions.php:390
+#: functions.php:372
 msgid "Location"
 msgstr "來自"
 
-#: functions.php:396
+#: functions.php:378
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:398
+#: functions.php:380
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:400
+#: functions.php:382
 msgid "No"
 msgstr "否"
 
-#: functions.php:403
+#: functions.php:385
 msgid "Edit"
 msgstr "編輯"
 
-#: functions.php:475
+#: functions.php:463
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
@@ -339,47 +339,47 @@ msgstr ""
 "請安裝外掛程式 <a href=\"https://wordpress.org/plugins/wp-statistics/\" "
 "target=\"_blank\">WP-Statistics</a>"
 
-#: functions.php:505
+#: functions.php:487
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "這傢伙好懶╮(╯▽╰)╭"
 
-#: functions.php:705
+#: functions.php:684
 msgid "Download Link"
 msgstr "下載連結"
 
-#: functions.php:775
+#: functions.php:756
 msgid "Remember me"
 msgstr "保持登入"
 
-#: functions.php:1174
+#: functions.php:1152
 msgid "All expand/collapse"
 msgstr "全部展開/收縮"
 
-#: functions.php:1195
+#: functions.php:1173
 msgid " "
 msgstr " "
 
-#: functions.php:1199
+#: functions.php:1177
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1222 functions.php:1225 inc/theme_plus.php:425
+#: functions.php:1200 functions.php:1203 inc/theme_plus.php:425
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:1445
+#: functions.php:1423
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>錯誤</b>: 電子郵箱格式出錯 (<b>@"
 
-#: functions.php:1570
+#: functions.php:1548
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1639
+#: functions.php:1636
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:1769
+#: functions.php:1765
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "

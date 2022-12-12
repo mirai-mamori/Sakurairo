@@ -18,11 +18,11 @@
 
 - 你可以前往 [Github Release](https://github.com/mirai-mamori/Sakurairo/releases/latest) 或 [Gitee 镜像](https://gitee.com/mirai-mamori/Sakurairo) 下载
 
-- 使用本主题的博客：https://iro.tw/demo.html
+- 使用本主题的博客：https://docs.fuukei.org/demo/
 
 - 主题交流：[QQ群:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)  ＆  [Telegram群:fksakurairo](https://t.me/fksakurairo)
 
-- 如果在使用过程中遇到了任何问题，请**访问**本主题的 [支持文档](https://wiki.fuukei.org/) 
+- 如果在使用过程中遇到了任何问题，请**访问**本主题的 [支持文档](https://docs.fuukei.org) 
 
 - 在确认你遇到的现象确实是一个 Bug 后，请在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交问题，并为该问题尽可能的描述清楚，
 按照提供的 issue 模板进行填写，谢谢配合。

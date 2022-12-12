@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-12-04 14:15+0800\n"
+"POT-Creation-Date: 2022-12-12 14:05+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Don't worry, search in site?"
 msgstr ""
 
-#: 404.php:61 footer.php:64 search.php:40
+#: 404.php:61 footer.php:63 search.php:40
 msgid "Search..."
 msgstr ""
 
@@ -129,25 +129,25 @@ msgstr ""
 msgid "Site"
 msgstr ""
 
-#: footer.php:39
+#: footer.php:38
 #, php-format
 msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr ""
 
-#: footer.php:69
+#: footer.php:68
 msgid "Go to top"
 msgstr ""
 
-#: footer.php:77 footer.php:85
+#: footer.php:76 footer.php:84
 msgid "Want to find something?"
 msgstr ""
 
-#: footer.php:87
+#: footer.php:86
 msgid "Search"
 msgstr ""
 
-#: footer.php:139
+#: footer.php:138
 msgid "Widgets"
 msgstr ""
 
@@ -294,81 +294,81 @@ msgstr ""
 msgid "You had set private comment before"
 msgstr ""
 
-#: functions.php:384 inc/theme_plus.php:194 layouts/authorprofile.php:12
+#: functions.php:366 inc/theme_plus.php:194 layouts/authorprofile.php:12
 msgid "Author"
 msgstr ""
 
-#: functions.php:384
+#: functions.php:366
 msgid "Blogger"
 msgstr ""
 
-#: functions.php:390
+#: functions.php:372
 msgid "Location"
 msgstr ""
 
-#: functions.php:396
+#: functions.php:378
 msgid "Private"
 msgstr ""
 
-#: functions.php:398
+#: functions.php:380
 msgid "Yes"
 msgstr ""
 
-#: functions.php:400
+#: functions.php:382
 msgid "No"
 msgstr ""
 
-#: functions.php:403
+#: functions.php:385
 msgid "Edit"
 msgstr ""
 
-#: functions.php:475
+#: functions.php:463
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
 msgstr ""
 
-#: functions.php:505
+#: functions.php:487
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:705
+#: functions.php:684
 msgid "Download Link"
 msgstr ""
 
-#: functions.php:775
+#: functions.php:756
 msgid "Remember me"
 msgstr ""
 
-#: functions.php:1174
+#: functions.php:1152
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1195
+#: functions.php:1173
 msgid " "
 msgstr ""
 
-#: functions.php:1199
+#: functions.php:1177
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1222 functions.php:1225 inc/theme_plus.php:425
+#: functions.php:1200 functions.php:1203 inc/theme_plus.php:425
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1445
+#: functions.php:1423
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1570
+#: functions.php:1548
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1639
+#: functions.php:1636
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:1769
+#: functions.php:1765
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
