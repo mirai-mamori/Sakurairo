@@ -82,7 +82,8 @@ while (have_posts()) : the_post();
 					<?php
 					if (iro_opt("is_author_meta_show")) {
 						if (!function_exists('get_author_meta_spans')) {
-							require get_stylesheet_directory() . '/tpl/meta-author.php';
+							if (iro_opt('child_theme_compatible') == false) {require get_stylesheet_directory() . '/tpl/meta-author.php';}
+							else {require get_template_directory() . '/tpl/meta-author.php';}
 						}
 						get_author_meta_spans();
 					}
