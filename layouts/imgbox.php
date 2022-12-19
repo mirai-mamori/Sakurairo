@@ -1,5 +1,5 @@
 <?php
-include(get_stylesheet_directory().'/layouts/all_opt.php');
+if (iro_opt('child_theme_compatible') == false) {include(get_stylesheet_directory().'/layouts/all_opt.php'); } else {include(get_template_directory().'/layouts/all_opt.php');}
 $text_logo = iro_opt('text_logo');
 $print_social_zone = function() use ($all_opt,$social_display_icon):void{
     // 左箭头
