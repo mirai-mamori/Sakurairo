@@ -89,13 +89,19 @@ $mashiro_logo = iro_opt('mashiro_logo');
 			gtag('config', '<?php echo iro_opt('google_analytics_id', ''); ?>');
 		</script>
 	<?php endif; ?>
-	<?php if (iro_opt('preload_animation', 'true')) : ?>
+	<?php if (iro_opt('fontawesome6_switch', 'true')) : ?>
+		<link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css">
+	<?php endif; ?>
 	<?php echo iro_opt("site_header_insert"); ?>
 </head>
 
 <body <?php body_class(); ?>>
-	<?php if (iro_opt('fontawesome6_switch', 'true')) : ?>
-		<link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css">
+	<?php if (iro_opt('preload_animation', 'true')) : ?>
+		<div id="preload">
+			<li data-id="3" class="active">
+				<div id="preloader_3"></div>
+			</li>
+		</div>
 	<?php endif; ?>
 	<div class="scrollbar" id="bar"></div>
 	<header class="site-header no-select" role="banner">
