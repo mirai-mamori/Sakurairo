@@ -3573,6 +3573,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'subheading',
         'content' => __('Resource Control','sakurairo_csf'),
       ),
+	    
+      array(
+        'id' => 'child_theme_compatible',
+        'type' => 'switcher',
+        'title' => __('Child Theme Compatible','sakurairo_csf'),
+        'label' => __('Child Theme Compatible.','sakurairo_csf'),
+        'default' => false
+      ),
 
       array(
         'id' => 'core_library_basepath',
