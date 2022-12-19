@@ -439,16 +439,27 @@ function header_user_menu(){
     $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(add_query_arg( $wp->query_vars, home_url( $wp->request ) ));
   ?>
   <div class="header-user-avatar">
+    <?php if (iro_opt('login_urlskip') == false) { ?>
     <a href="<?php echo $login_url; ?>">
       <img class="faa-shake animated-hover" src="<?php echo $ava; ?>" width="30" height="30">
     </a>
     <div class="header-user-menu">
- <div class="header-user-name no-logged">  
-   <a id="login-link" href="<?php echo $login_url; ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in','sakurairo')/*登录*/?></a>  
+      <div class="header-user-name no-logged">  
+        <a id="login-link" href="<?php echo $login_url; ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in','sakurairo')/*登录*/?></a>  
+      </div>
+    </div>
+    <?php } else { ?>
+    <a href="<?php echo wp_login_url(); ?>">
+      <img class="faa-shake animated-hover" src="<?php echo $ava; ?>" width="30" height="30">
+    </a>
+    <div class="header-user-menu">
+      <div class="header-user-name no-logged">  
+        <a id="login-link" href="<?php echo wp_login_url(); ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in','sakurairo')/*登录*/?></a>  
       </div>
     </div>
   </div>
   <?php 
+  }
   }
 }
 
