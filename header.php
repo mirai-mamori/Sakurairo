@@ -90,7 +90,7 @@ $mashiro_logo = iro_opt('mashiro_logo');
 		</script>
 	<?php endif; ?>
 	<?php if (iro_opt('fontawesome6_switch', 'true')) : ?>
-		<link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css">
+		<link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-y/font-awesome/6.0.0/css/all.min.css">
 	<?php endif; ?>
 	<?php echo iro_opt("site_header_insert"); ?>
 </head>
