@@ -3575,6 +3575,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'fontawesome6_switch',
+        'type' => 'switcher',
+        'title' => __('Load FontAwesome6 From ByteDance Frontend CDN','sakurairo_csf'),
+        'label' => __('Resource Version is 6.0.0.','sakurairo_csf'),
+        'default' => false
+      ),
+	    
+      array(
         'id' => 'core_library_basepath',
         'type' => 'switcher',
         'title' => __('Provide Critical Frontend Resource locally','sakurairo_csf'),
