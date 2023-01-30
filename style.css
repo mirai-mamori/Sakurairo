@@ -3776,6 +3776,9 @@ input[type=radio]:checked:before {
   clip: rect(0, 0, 0, 0);
   left: -1px;
   text-shadow: 1px 0 #ff3f1a;
+  margin-top:initial;
+  visibility:visible;
+  height:initial;
 }
 
 .bb-comment {
