@@ -1811,7 +1811,7 @@ function mimvp_file_is_displayable_image($result, $path)
     //     $result = true;
     // }
     // return $result;
-    return $info['mime'] == 'image/webp';
+    return (bool)($info); // 根据文档这里需要返回一个bool
 }
 add_filter('file_is_displayable_image', 'mimvp_file_is_displayable_image', 10, 2);
 
