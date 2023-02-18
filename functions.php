@@ -503,7 +503,11 @@ function get_link_items()
     $linkcats = get_terms('link_category');
     $result = null;
     if (empty($linkcats)) return get_the_link_items();    
+    $link_category_need_display = get_post_meta(get_queried_object_id(), 'link_category_need_display', false);
     foreach ($linkcats as $linkcat) {
+        if (!empty($link_category_need_display) && !in_array($linkcat->name, $link_category_need_display, true)) {
+            continue;
+        }
         $result .= '<h3 class="link-title"><span class="link-fix">' . $linkcat->name . '</span></h3>';
         if ($linkcat->description) {
             $result .= '<div class="link-description">' . $linkcat->description . '</div>';
