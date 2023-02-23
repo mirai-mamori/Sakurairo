@@ -436,15 +436,15 @@ function header_user_menu(){
     global $wp;
     //https://wordpress.stackexchange.com/questions/274569/how-to-get-url-of-current-page-displayed
     //可以测试一下对不同的固定链接的兼容性
-    $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(add_query_arg( $wp->query_vars, home_url( $wp->request ) ));
+    $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(iro_opt('login_urlskip')?'':add_query_arg( $wp->query_vars, home_url( $wp->request ) ));
   ?>
   <div class="header-user-avatar">
-      <a href="<?php if (iro_opt('login_urlskip') == false) {echo $login_url; } else { echo wp_login_url();} ?>">
-        <img class="faa-shake animated-hover" src="<?php echo $ava; ?>" width="30" height="30">
+      <a href="<?=$login_url ?>">
+        <img class="faa-shake animated-hover" src="<?= $ava?>" width="30" height="30">
       </a>
     <div class="header-user-menu">
       <div class="header-user-name no-logged">  
-        <a id="login-link" href="<?php if (iro_opt('login_urlskip') == false) {echo $login_url; } else { echo wp_login_url();} ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in','sakurairo')/*登录*/?></a>  
+        <a id="login-link"  href="<?=$login_url ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in','sakurairo')/*登录*/?></a>  
       </div>
     </div>
   </div>
