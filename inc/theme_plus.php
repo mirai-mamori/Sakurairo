@@ -408,47 +408,49 @@ function the_video_headPattern(bool $isHls = false)
 /*
  * 导航栏用户菜单
  */
-function header_user_menu(){
-  global $current_user;wp_get_current_user(); 
-  if(is_user_logged_in()){
-    $ava = iro_opt('personal_avatar') ? iro_opt('personal_avatar') : get_avatar_url( $current_user->user_email );
-    ?>
+function header_user_menu()
+{
+  global $current_user;
+  wp_get_current_user();
+  if (is_user_logged_in()) {
+    $ava = iro_opt('personal_avatar') ? iro_opt('personal_avatar') : get_avatar_url($current_user->user_email);
+  ?>
     <div class="header-user-avatar">
-      <img class="faa-spin animated-hover" src="<?php echo get_avatar_url( $current_user->ID, 64 );/*$ava;*/ ?>" width="30" height="30">
+      <img class="faa-spin animated-hover" src="<?php echo get_avatar_url($current_user->ID, 64);/*$ava;*/ ?>" width="30" height="30">
       <div class="header-user-menu">
         <div class="header-user-name">
-          <?php _e("Signed in as","sakurairo")?> 
+          <?php _e("Signed in as", "sakurairo") ?>
           <div class="header-user-name-u"><?php echo $current_user->display_name; ?></div>
         </div>
         <div class="user-menu-option">
           <?php if (current_user_can('level_10')) { ?>
-            <a href="<?php bloginfo('url'); ?>/wp-admin/" target="_blank"><?php _e('Dashboard','sakurairo')/*管理中心*/?></a>
-            <a href="<?php bloginfo('url'); ?>/wp-admin/post-new.php" target="_blank"><?php _e('New post','sakurairo')/*撰写文章*/?></a>
+            <a href="<?php bloginfo('url'); ?>/wp-admin/" target="_blank"><?php _e('Dashboard', 'sakurairo')/*管理中心*/ ?></a>
+            <a href="<?php bloginfo('url'); ?>/wp-admin/post-new.php" target="_blank"><?php _e('New post', 'sakurairo')/*撰写文章*/ ?></a>
           <?php } ?>
-          <a href="<?php bloginfo('url'); ?>/wp-admin/profile.php" target="_blank"><?php _e('Profile','sakurairo')/*个人资料*/?></a>
-          <a href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" target="_top" data-no-pjax><?php _e('Sign out','sakurairo')/*退出登录*/?></a>
+          <a href="<?php bloginfo('url'); ?>/wp-admin/profile.php" target="_blank"><?php _e('Profile', 'sakurairo')/*个人资料*/ ?></a>
+          <a href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" target="_top" data-no-pjax><?php _e('Sign out', 'sakurairo')/*退出登录*/ ?></a>
         </div>
       </div>
     </div>
   <?php
-  }else{ 
+  } else {
     $ava = iro_opt('unlisted_avatar');
     global $wp;
     //https://wordpress.stackexchange.com/questions/274569/how-to-get-url-of-current-page-displayed
     //可以测试一下对不同的固定链接的兼容性
-    $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(iro_opt('login_urlskip')?'':add_query_arg( $wp->query_vars, home_url( $wp->request ) ));
+    $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(iro_opt('login_urlskip') ? '' : add_query_arg($wp->query_vars, home_url($wp->request)));
   ?>
-  <div class="header-user-avatar">
-      <a href="<?=$login_url ?>">
-        <img class="faa-shake animated-hover" src="<?= $ava?>" width="30" height="30">
+    <div class="header-user-avatar">
+      <a href="<?= $login_url ?>">
+        <img class="faa-shake animated-hover" src="<?= $ava ?>" width="30" height="30">
       </a>
-    <div class="header-user-menu">
-      <div class="header-user-name no-logged">  
-        <a id="login-link"  href="<?=$login_url ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in','sakurairo')/*登录*/?></a>  
+      <div class="header-user-menu">
+        <div class="header-user-name no-logged">
+          <a id="login-link" href="<?= $login_url ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in', 'sakurairo')/*登录*/ ?></a>
+        </div>
       </div>
     </div>
-  </div>
-  <?php 
+  <?php
   }
 }
 /*
