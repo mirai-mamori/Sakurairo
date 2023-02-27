@@ -3117,7 +3117,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'login_urlskip',
         'type' => 'switcher',
         'title' => __('Jump after login','sakurairo_csf'),
-        'label' => __('Jump to backend for admins and home for users after turning on. Attention: Only takes effect when logging in from a page with Loggin Template. ','sakurairo_csf'),
+        'label' => __('Jump to backend for admins and home for users after turning on.','sakurairo_csf'),
         'default' => false
       ),
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-12-12 14:01+0800\n"
-"PO-Revision-Date: 2022-12-12 14:03+0800\n"
+"POT-Creation-Date: 2023-02-27 16:50+0800\n"
+"PO-Revision-Date: 2023-02-27 16:50+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -3281,11 +3281,8 @@ msgid "Jump after login"
 msgstr "登录后跳转"
 
 #: options/theme-options.php:3120
-msgid ""
-"Jump to backend for admins and home for users after turning on. Attention: "
-"Only takes effect when logging in from a page with Loggin Template. "
-msgstr ""
-"开启之后管理员跳转至后台，用户跳转至主页。注意：仅当从登录模板登录时生效"
+msgid "Jump to backend for admins and home for users after turning on."
+msgstr "开启之后管理员跳转至后台，用户跳转至主页。"
 
 #: options/theme-options.php:3127
 msgid "Login Screen Language Option"

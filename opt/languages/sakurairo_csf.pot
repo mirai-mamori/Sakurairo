@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2022-12-12 14:00+0800\n"
+"POT-Creation-Date: 2023-02-27 16:49+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -3152,9 +3152,7 @@ msgid "Jump after login"
 msgstr ""
 
 #: options/theme-options.php:3120
-msgid ""
-"Jump to backend for admins and home for users after turning on. Attention: Only "
-"takes effect when logging in from a page with Loggin Template. "
+msgid "Jump to backend for admins and home for users after turning on."
 msgstr ""
 
 #: options/theme-options.php:3127
