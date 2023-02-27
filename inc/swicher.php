@@ -99,8 +99,6 @@ function font_end_js_control() {
         ];
         $theme_light = iro_opt('code_highlight_prism_theme_light');
         $theme_dark = iro_opt('code_highlight_prism_theme_dark');
-        $preload_blur = iro_opt('preload_blur',0);
-        if ($preload_blur) $iro_opt['preload_blur'] = $preload_blur;
         if($theme_light){
             if($theme_dark){
                 $iro_opt['code_highlight_prism']['theme'] = ['light' => $theme_light,'dark' => $theme_dark];
@@ -111,6 +109,8 @@ function font_end_js_control() {
             $iro_opt['code_highlight_prism']['theme'] = ['dark' => $theme_dark];
         }
     }
+    $preload_blur = iro_opt('preload_blur',0);
+    if ($preload_blur) $iro_opt['preload_blur'] = $preload_blur;
     $sakura_effect = iro_opt('sakura_falling_effects');
     if($sakura_effect != 'off') $iro_opt['effect'] = array('amount'=>$sakura_effect);
     if (iro_opt('theme_darkmode_auto')) $iro_opt['dm_strategy'] = iro_opt('theme_darkmode_strategy','time');
