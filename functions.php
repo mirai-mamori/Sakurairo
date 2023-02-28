@@ -590,16 +590,16 @@ add_filter('body_class', 'akina_body_classes');
 add_filter('upload_dir', 'wpjam_custom_upload_dir');
 function wpjam_custom_upload_dir($uploads)
 {
-    $upload_path = '';
-    $upload_url_path = iro_opt('image_cdn');
+/*     $upload_path = '';
+ */    $upload_url_path = iro_opt('image_cdn');
 
-    if (empty($upload_path) || 'wp-content/uploads' == $upload_path) {
+/*     if (empty($upload_path) || 'wp-content/uploads' == $upload_path) {
         $uploads['basedir'] = WP_CONTENT_DIR . '/uploads';
     } elseif (0 !== strpos($upload_path, ABSPATH)) {
         $uploads['basedir'] = path_join(ABSPATH, $upload_path);
     } else {
         $uploads['basedir'] = $upload_path;
-    }
+    } */
 
     $uploads['path'] = $uploads['basedir'] . $uploads['subdir'];
 
