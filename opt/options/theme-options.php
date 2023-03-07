@@ -2661,11 +2661,11 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'article_lincenses',
+        'id' => 'article_function',
         'type' => 'switcher',
-        'title' => __('Article Page Copyright Tips and Labels','sakurairo_csf'),
-        'label' => __('Copyright hint and label will appear on article pages when enabled','sakurairo_csf'),
-        'default' => false
+        'title' => __('Article Page Function Bar','sakurairo_csf'),
+        'label' => __('Creative Commons tips / appreciation function / article tagging will appear on article pages when enabled','sakurairo_csf'),
+        'default' => true
       ),
 
       array(
@@ -2688,7 +2688,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'id' => 'alipay_code',
         'type' => 'upload',
-        'title' => __('Article Page Appreciation Button (Alipay QR Code)','sakurairo_csf'),
+        'title' => __('Article Page Appreciation Function (Alipay QR Code)','sakurairo_csf'),
+        'dependency' => array( 'article_function', '==', 'true' ),
         'desc' => __('Upload Alipay Receipt QR Code Image','sakurairo_csf'),
         'library' => 'image',
       ),
@@ -2696,7 +2697,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'id' => 'wechat_code',
         'type' => 'upload',
-        'title' => __('Article Page Appreciation Button (Wechat QR Code)','sakurairo_csf'),
+        'title' => __('Article Page Appreciation Function (Wechat QR Code)','sakurairo_csf'),
+        'dependency' => array( 'article_function', '==', 'true' ),
         'desc' => __('Upload WeChat Receipt QR Code Image','sakurairo_csf'),
         'library' => 'image',
       ),

@@ -30,8 +30,9 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php the_reward(); ?>
 	<footer class="post-footer">
+	<div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i></a></div>
+	<?php the_reward(); ?>
 	<div class="post-tags">
 		<?php if ( has_tag() ) { echo '<i class="iconfont icon-tags"></i> '; the_tags('', ' ', ' ');}?>
 	</div>

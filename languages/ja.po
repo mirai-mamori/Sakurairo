@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-12-12 14:05+0800\n"
-"PO-Revision-Date: 2022-12-12 14:05+0800\n"
+"POT-Creation-Date: 2023-03-07 15:12+0800\n"
+"PO-Revision-Date: 2023-03-07 15:12+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -345,43 +345,43 @@ msgstr ""
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "こやつはとても怠惰な╮(╯▽╰)╭"
 
-#: functions.php:684
+#: functions.php:688
 msgid "Download Link"
 msgstr "ダウンロードリンク"
 
-#: functions.php:756
+#: functions.php:760
 msgid "Remember me"
 msgstr "ログイン状態を保存する"
 
-#: functions.php:1152
+#: functions.php:1156
 msgid "All expand/collapse"
 msgstr "すべての展開/折りたたみ"
 
-#: functions.php:1173
+#: functions.php:1177
 msgid " "
 msgstr " "
 
-#: functions.php:1177
+#: functions.php:1181
 msgid " post(s)"
 msgstr "記事"
 
-#: functions.php:1200 functions.php:1203 inc/theme_plus.php:425
+#: functions.php:1204 functions.php:1207 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: functions.php:1423
+#: functions.php:1427
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>エラー</b>: このメールドメイン (<b>@"
 
-#: functions.php:1548
+#: functions.php:1552
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1636
+#: functions.php:1640
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:1765
+#: functions.php:1769
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -643,23 +643,23 @@ msgstr "\"%s\" の検索結果"
 msgid "Your browser does not support HTML5 video."
 msgstr "お使いのブラウザはHTML5ビデオをサポートしていません."
 
-#: inc/theme_plus.php:420
+#: inc/theme_plus.php:422
 msgid "Signed in as"
 msgstr "ようこそ"
 
-#: inc/theme_plus.php:426
+#: inc/theme_plus.php:428
 msgid "New post"
 msgstr "新しい記事"
 
-#: inc/theme_plus.php:428
+#: inc/theme_plus.php:430
 msgid "Profile"
 msgstr "プロフィール"
 
-#: inc/theme_plus.php:429
+#: inc/theme_plus.php:431
 msgid "Sign out"
 msgstr "ログアウト"
 
-#: inc/theme_plus.php:447
+#: inc/theme_plus.php:449
 msgid "Log in"
 msgstr "ログイン"
 

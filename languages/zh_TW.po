@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-12-12 14:05+0800\n"
-"PO-Revision-Date: 2022-12-12 14:05+0800\n"
+"POT-Creation-Date: 2023-03-07 15:12+0800\n"
+"PO-Revision-Date: 2023-03-07 15:12+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -343,43 +343,43 @@ msgstr ""
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "這傢伙好懶╮(╯▽╰)╭"
 
-#: functions.php:684
+#: functions.php:688
 msgid "Download Link"
 msgstr "下載連結"
 
-#: functions.php:756
+#: functions.php:760
 msgid "Remember me"
 msgstr "保持登入"
 
-#: functions.php:1152
+#: functions.php:1156
 msgid "All expand/collapse"
 msgstr "全部展開/收縮"
 
-#: functions.php:1173
+#: functions.php:1177
 msgid " "
 msgstr " "
 
-#: functions.php:1177
+#: functions.php:1181
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1200 functions.php:1203 inc/theme_plus.php:425
+#: functions.php:1204 functions.php:1207 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:1423
+#: functions.php:1427
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>錯誤</b>: 電子郵箱格式出錯 (<b>@"
 
-#: functions.php:1548
+#: functions.php:1552
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1636
+#: functions.php:1640
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:1765
+#: functions.php:1769
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -622,23 +622,23 @@ msgstr "關於“ %s ”的搜尋結果"
 msgid "Your browser does not support HTML5 video."
 msgstr "您的瀏覽器不支援 HTML5 影片。"
 
-#: inc/theme_plus.php:420
+#: inc/theme_plus.php:422
 msgid "Signed in as"
 msgstr "當前已登入"
 
-#: inc/theme_plus.php:426
+#: inc/theme_plus.php:428
 msgid "New post"
 msgstr "撰寫文章"
 
-#: inc/theme_plus.php:428
+#: inc/theme_plus.php:430
 msgid "Profile"
 msgstr "個人資訊"
 
-#: inc/theme_plus.php:429
+#: inc/theme_plus.php:431
 msgid "Sign out"
 msgstr "登出"
 
-#: inc/theme_plus.php:447
+#: inc/theme_plus.php:449
 msgid "Log in"
 msgstr "登入"
 

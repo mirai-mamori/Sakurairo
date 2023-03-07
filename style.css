@@ -1256,27 +1256,58 @@ h1.page-title {
 
 .post-footer {
   padding: 30px 0;
-  width: 740px;
+  width: 95%;
   height: 80px;
   left: 50%;
-  margin-left: -370px;
+  margin-left: -48%;
   position: relative;
-  background-size: 100% 100%;
   border: none;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
   margin-bottom: 50px;
   margin-top: 50px;
-  border-radius: 15px;
+}
+
+.post-lincenses {
+  float: left;
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  background: rgba(255,255,255,0.5);
+  color: #7D7D7D;
+  padding: 6px 14px;
+  font-size: 24px;
+  position: inherit;
+  text-transform: uppercase;
+  border-radius: 10px;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.post-lincenses:hover{
+  box-shadow: 0 1px 20px 10px #e8e8e8;
+  background: rgba(255,255,255,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
 .post-tags {
   float: left;
-  margin-left: 290px;
+  margin-left: 10px;
   font-size: 13px;
-  color: #B3B3B3;
+  color: #7D7D7D;
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  background: rgba(255,255,255,0.5);
+  padding: 12px 18px;
   text-transform: uppercase;
+  position: inherit;
+  border-radius: 10px;
   font-weight: var(--global-font-weight);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
 
+.post-tags:hover{
+  box-shadow: 0 1px 20px 10px #e8e8e8;
+  background: rgba(255,255,255,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
 .post-squares {
@@ -1382,7 +1413,7 @@ h1.page-title {
   font-weight: var(--global-font-weight,400);
   line-height: normal;
   letter-spacing: 1px;
-  color: #ABABAB;
+  color: #7D7D7D;
   transition: all 0.8s ease !important;
 }
 
@@ -3411,34 +3442,34 @@ i.iconfont.down {
   margin: 0 auto;
 }
 
-.single-reward {
-  position: relative;
-  width: 100%;
-  margin: 35px auto;
-  text-align: center;
-  z-index: 999;
-}
-
-.single-reward .reward-open {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  font-size: 18px;
-  padding: 7px;
-  color: var(--theme-skin,#fff);
+.reward-open {
+  float: left;
+  font-size: 24px;
+  padding: 6px 17px;
   text-align: center;
   display: inline-block;
-  border-radius: 100%;
-  background: var(--theme-skin-matching,#d34836);
+  border-radius: 10px;
+  color: #7d7d7d;
+  margin-left: 10px;
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  background: rgba(255,255,255,0.5);
   cursor: pointer;
   font-weight: var(--global-font-weight);
-
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
-.single-reward .reward-main {
+.reward-open:hover{
+  box-shadow: 0 1px 20px 10px #e8e8e8;
+  background: rgba(255,255,255,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.reward-main {
   position: absolute;
-  top: 45px;
-  left: -180px;
+  top: 90px;
+  left: -115px;
   margin: 0;
   padding: 15px 0 0;
   width: 400px;
@@ -3447,27 +3478,13 @@ i.iconfont.down {
   animation: main .4s;
 }
 
-.single-reward .reward-row {
+.reward-row {
   margin: 0 auto;
   padding: 20px 15px 10px;
-  background: #f5f5f5;
+  background: rgba(255,255,255,0.5);
   display: inline-block;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: auto;
-}
-
-.single-reward .reward-row:before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 13px solid transparent;
-  border-right: 13px solid transparent;
-  border-bottom: 13px solid #F5F5F5;
-  position: absolute;
-  top: 2px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
 }
 
 .reward-row li img {
@@ -3481,9 +3498,8 @@ i.iconfont.down {
   display: block;
   padding: 5px 0 0;
   font-size: 13px;
-  color: #555;
+  color: none;
   font-weight: var(--global-font-weight);
-
 }
 
 .poptitle {
@@ -5317,6 +5333,7 @@ a:focus {
 .site-top ul li a:hover,
 .entry-title a:hover,
 .site-info a:hover,
+.post-lincenses a:hover,
 .post-tags a:hover,
 .comment h4 a:hover,
 .ins-section .ins-search-item:hover .ins-slug,
@@ -5533,8 +5550,12 @@ h1.page-title.mb- {
   margin-top: 100px;
 }
 
+.post-lincenses a {
+  color: #7D7D7D;
+}
+
 .post-tags a {
-  color: #B3B3B3;
+  color: #7D7D7D;
   margin-right: 5px;
 }
 
@@ -6501,7 +6522,7 @@ body.dark::-webkit-scrollbar-track {
   background-color: #f1f1f1;
 }
 
-.single-reward .reward-row li {
+.reward-row li {
   list-style-type: none;
   padding: 0 12px;
   display: inline-block;
@@ -9480,9 +9501,9 @@ body.dark #preload {
   background: #333333;
 }
 
-body.dark .single-reward .reward-row,
+body.dark .reward-row,
 body.dark input.m-search-input {
-  background: #999999;
+  background: rgba(26,26,26,0.8);
 }
 
 body.dark .ins-section .ins-search-item.active,
@@ -9498,10 +9519,6 @@ body.dark .header-user-name .no-logged {
 body.dark .header-user-menu .user-menu-option {
   color: #333333/*!covered#fff*/;
   background: #333333;
-}
-
-body.dark .single-reward .reward-row:before {
-  border-bottom: 13px solid #999999;
 }
 
 body.dark .search-form--modal,
@@ -9738,6 +9755,48 @@ body.dark .links ul li {
 
 body.dark .links ul li:hover{
   box-shadow: 0 1px 30px -2px var(--friend-link-title) !important;
+  background: rgba(26,26,26,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .post-lincenses {
+  box-shadow: 0 1px 20px 2px rgba(26,26,26,0.8);
+  background: rgba(26,26,26,0.6);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .post-lincenses:hover{
+  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
+  background: rgba(26,26,26,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .post-tags {
+  box-shadow: 0 1px 20px 2px rgba(26,26,26,0.8);
+  background: rgba(26,26,26,0.6);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .post-tags:hover{
+  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
+  background: rgba(26,26,26,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .reward-open {
+  box-shadow: 0 1px 20px 2px rgba(26,26,26,0.8);
+  background: rgba(26,26,26,0.6);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .reward-open:hover{
+  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
   background: rgba(26,26,26,0.8);
   -webkit-transition: all .8s;
   transition: all .8s;

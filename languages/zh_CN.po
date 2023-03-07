@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-12-12 14:05+0800\n"
-"PO-Revision-Date: 2022-12-12 14:05+0800\n"
+"POT-Creation-Date: 2023-03-07 15:12+0800\n"
+"PO-Revision-Date: 2023-03-07 15:12+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -334,43 +334,43 @@ msgstr ""
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:684
+#: functions.php:688
 msgid "Download Link"
 msgstr "下载地址"
 
-#: functions.php:756
+#: functions.php:760
 msgid "Remember me"
 msgstr "记住我"
 
-#: functions.php:1152
+#: functions.php:1156
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1173
+#: functions.php:1177
 msgid " "
 msgstr " "
 
-#: functions.php:1177
+#: functions.php:1181
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1200 functions.php:1203 inc/theme_plus.php:425
+#: functions.php:1204 functions.php:1207 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1423
+#: functions.php:1427
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:1548
+#: functions.php:1552
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1636
+#: functions.php:1640
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1765
+#: functions.php:1769
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -613,23 +613,23 @@ msgstr "关于“ %s ”的搜索结果"
 msgid "Your browser does not support HTML5 video."
 msgstr ""
 
-#: inc/theme_plus.php:420
+#: inc/theme_plus.php:422
 msgid "Signed in as"
 msgstr "当前已登录"
 
-#: inc/theme_plus.php:426
+#: inc/theme_plus.php:428
 msgid "New post"
 msgstr "撰写文章"
 
-#: inc/theme_plus.php:428
+#: inc/theme_plus.php:430
 msgid "Profile"
 msgstr "个人资料"
 
-#: inc/theme_plus.php:429
+#: inc/theme_plus.php:431
 msgid "Sign out"
 msgstr "退出登录"
 
-#: inc/theme_plus.php:447
+#: inc/theme_plus.php:449
 msgid "Log in"
 msgstr "登录"
 

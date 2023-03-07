@@ -784,7 +784,7 @@ h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,.header-info 
     border-radius: 0 0 <?=iro_opt('cover_radius', ''); ?>px <?=iro_opt('cover_radius', ''); ?>px;
 }
 
-<?php if (!iro_opt('article_lincenses', 'true')): ?>
+<?php if (!iro_opt('article_function', 'true')): ?>
 .post-footer {
 display:none;
 }
@@ -1083,15 +1083,11 @@ body{
 #video-add{
     background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.5/')?>basic/add.png);
 }
-body.dark .post-footer {
-  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.5/')?>basic/creativecommons-dark.png);
-}
 @media (max-width:860px) {
   .headertop.filter-dot::before {
     background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.5/')?>basic/grid.png);
   }
 }
-.post-footer{background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.5/')?>basic/creativecommons-light.png);}
 .headertop.filter-grid::before {
   background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.5/')?>basic/grid.png);
 }
