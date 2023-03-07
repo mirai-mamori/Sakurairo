@@ -388,7 +388,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id'     => 'gfonts_api',
         'type'   => 'text',
         'title'  => __('Google Fonts Api Link','sakurairo_csf'),
-        'default' => 'fonts.loli.net'
+        'default' => 'fonts.geekzu.org'
       ),
 
       array(
@@ -2664,7 +2664,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'article_function',
         'type' => 'switcher',
         'title' => __('Article Page Function Bar','sakurairo_csf'),
-        'label' => __('Creative Commons tips / appreciation function / article tagging will appear on article pages when enabled','sakurairo_csf'),
+        'label' => __('Enabled by default, Creative Commons tips / appreciation function / article tagging will appear on article pages','sakurairo_csf'),
         'default' => true
       ),
 
@@ -3286,28 +3286,18 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'type' => 'subheading',
-        'content' => __('Gravatar Service','sakurairo_csf'),
-      ),
-
-      array(
-        'type'    => 'content',
-        'content' => __('<p><strong>Cravatar Service:</strong> Cravatar Service is an alternative to Gravatar Service in China. You can upload and share avatars freely. Go to <a href="https://cravatar.cn/">official website</a> for details </p>','sakurairo_csf'),
-      ),
-
-      array(
         'id' => 'gravatar_proxy',
         'type' => 'select',
         'title' => __('Gravatar Service Proxy','sakurairo_csf'),
-        'desc' => __('You can select multiple proxy as the Gravatar Service Proxy. By default, Cravatar Service is used as the Gravatar Service Proxy.','sakurairo_csf'),
+        'desc' => __('You can select multiple proxy as the Gravatar Service Proxy. By default, Geekzu is used as the Gravatar Service Proxy.','sakurairo_csf'),
         'options'     => array(
-          'cravatar.cn/avatar'  => __('Cravatar Service','sakurairo_csf'),
           'sdn.geekzu.org/avatar'  => __('Geekzu','sakurairo_csf'),
+          'cravatar.cn/avatar'  => __('Cravatar Service','sakurairo_csf'),
           'gravatar.loli.net/avatar'  => __('Loli Net','sakurairo_csf'),
           'gravatar.com/avatar'  => __('Official','sakurairo_csf'),
           'cn.gravatar.com/avatar'  => __('Official CN','sakurairo_csf'),
         ),
-        'default'     => 'cravatar.cn/avatar'
+        'default'     => 'sdn.geekzu.org/avatar'
       ),
 
       array(
