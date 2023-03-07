@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-03-07 15:12+0800\n"
-"PO-Revision-Date: 2023-03-07 15:12+0800\n"
+"POT-Creation-Date: 2023-03-07 19:09+0800\n"
+"PO-Revision-Date: 2023-03-07 19:09+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -710,6 +710,10 @@ msgstr "似乎沒有找到你想要的東西，或許你可以搜尋一下試式
 #: tpl/content-page.php:25 tpl/content-single.php:29 tpl/single-image.php:28
 msgid "Pages:"
 msgstr "頁面:"
+
+#: tpl/content-single.php:40
+msgid "Nothing~"
+msgstr "無~"
 
 #: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30
 #: user/page-followVideos.php:29

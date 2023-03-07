@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-03-07 15:12+0800\n"
+"POT-Creation-Date: 2023-03-07 19:08+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -697,6 +697,10 @@ msgstr ""
 
 #: tpl/content-page.php:25 tpl/content-single.php:29 tpl/single-image.php:28
 msgid "Pages:"
+msgstr ""
+
+#: tpl/content-single.php:40
+msgid "Nothing~"
 msgstr ""
 
 #: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30
