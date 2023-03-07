@@ -3453,7 +3453,6 @@ i.iconfont.down {
   margin-left: 10px;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background: rgba(255,255,255,0.5);
-  cursor: pointer;
   font-weight: var(--global-font-weight);
   -webkit-transition: all .8s;
   transition: all .8s;
