@@ -49,7 +49,7 @@ if (iro_opt('author_profile_quote') == '1') {
 		<div class="meta">
 			<a href="<?= esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" itemprop="url" rel="author"><?php the_author(); ?></a>						
 		</div>
-		<?php if($author_description){/*TODO: <hr>实际上没有显示出来，高度为0*/?>
+		<?php if($author_description){?>
 		<div class="desc">
 		<i class="iconfont icon-write"></i><?=$author_description ?>
 		</div>
