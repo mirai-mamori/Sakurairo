@@ -82,6 +82,7 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   max-width: 860px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 2%;
   transition: background 0.8s;
 }
 
@@ -1262,7 +1263,7 @@ h1.page-title {
   margin-left: -48%;
   position: relative;
   border: none;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   margin-top: 50px;
 }
 
@@ -1312,11 +1313,11 @@ h1.page-title {
 
 .post-squares {
   overflow: hidden;
-  margin: 55px 0;
+  margin: 10px 0 0 0;
   background: #000;
-  width: 800px;
+  width: 96%;
   left: 50%;
-  margin-left: -400px;
+  margin-left: -48%;
   position: relative;
   border-radius: 15px;
 }
@@ -5665,7 +5666,7 @@ h1.page-title.mb- {
 .author-profile .info {
   overflow: hidden;
   text-align: center;
-  margin-top: 25px;
+  margin-top: 10%;
 }
 
 .author-profile .profile {
