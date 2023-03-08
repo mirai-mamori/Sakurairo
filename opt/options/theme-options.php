@@ -2653,36 +2653,25 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'article_nextpre',
-        'type' => 'switcher',
-        'title' => __('Article Page Prev/Next Article Switcher','sakurairo_csf'),
-        'label' => __('After turning on, the previous and next article switch will appear on the article pages','sakurairo_csf'),
-        'default' => false
+        'type' => 'subheading',
+        'content' => __('Article Expansion Area','sakurairo_csf'),
       ),
 
       array(
         'id' => 'article_function',
         'type' => 'switcher',
         'title' => __('Article Page Function Bar','sakurairo_csf'),
-        'label' => __('Enabled by default, Creative Commons tips / appreciation function / article tagging will appear on article pages','sakurairo_csf'),
+        'label' => __('Enabled by default, will be displayed on the article page with the features enabled below','sakurairo_csf'),
         'default' => true
       ),
 
       array(
-        'id' => 'author_profile',
+        'id' => 'article_lincenses',
         'type' => 'switcher',
-        'title' => __('Article Page Author Info','sakurairo_csf'),
-        'label' => __('Author information will appear on the article page when enabled','sakurairo_csf'),
+        'title' => __('Article Lincenses','sakurairo_csf'),
+        'dependency' => array( 'article_function', '==', 'true' ),
+        'label' => __('Article lincenses will appear on the function bar when enabled','sakurairo_csf'),
         'default' => false
-      ),
-
-      array(
-        'id' => 'author_profile_text',
-        'type' => 'text',
-        'title' => __('Article Page Author Info Signature Field Text','sakurairo_csf'),
-        'dependency' => array( 'author_profile', '==', 'true' ),
-        'desc' => __('A self-descriptive quote','sakurairo_csf'),
-        'default' => '本当の声を響かせてよ'
       ),
 
       array(
@@ -2701,6 +2690,62 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'dependency' => array( 'article_function', '==', 'true' ),
         'desc' => __('Upload WeChat Receipt QR Code Image','sakurairo_csf'),
         'library' => 'image',
+      ),
+
+      array(
+        'id' => 'author_profile_avatar',
+        'type' => 'switcher',
+        'title' => __('Article Page Author Avatar','sakurairo_csf'),
+        'dependency' => array( 'article_function', '==', 'true' ),
+        'label' => __('Author avatar will appear on the function bar when enabled','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'author_profile_name',
+        'type' => 'switcher',
+        'title' => __('Article Page Author Name','sakurairo_csf'),
+        'dependency' => array( 'article_function', '==', 'true' ),
+        'label' => __('Author name will appear on the function bar when enabled','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'author_profile_quote',
+        'type' => 'switcher',
+        'title' => __('Article Page Author Signature','sakurairo_csf'),
+        'dependency' => array( 'article_function', '==', 'true' ),
+        'label' => __('Author signature will appear on the function bar when enabled','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'author_profile_quote_text',
+        'type' => 'text',
+        'title' => __('Article Page Author Info Signature Text','sakurairo_csf'),
+        'dependency' => array(
+          array( 'article_function', '==', 'true' ),
+          array( 'author_profile_quote', '==', 'true' ),
+        ),
+        'desc' => __('A self-descriptive quote','sakurairo_csf'),
+        'default' => '本当の声を響かせてよ'
+      ),
+
+      array(
+        'id' => 'article_tag',
+        'type' => 'switcher',
+        'title' => __('Article Tag','sakurairo_csf'),
+        'dependency' => array( 'article_function', '==', 'true' ),
+        'label' => __('Article tag will appear on the function bar when enabled','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'article_nextpre',
+        'type' => 'switcher',
+        'title' => __('Article Page Prev/Next Article Switcher','sakurairo_csf'),
+        'label' => __('After turning on, the previous and next article switch will appear on the article pages','sakurairo_csf'),
+        'default' => false
       ),
 
     )
@@ -2761,7 +2806,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'default' => 'Noto Serif SC'
       ),
 
-	  //TODO: change image source
 	  array(
 		'id' => 'bangumi_source',
 		'type' => 'image_select',

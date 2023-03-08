@@ -790,6 +790,33 @@ display:none;
 }
 <?php endif; ?>
 
+<?php if (!iro_opt('article_lincenses', 'true')): ?>
+.post-lincenses {
+display:none;
+}
+.reward-main {
+left: -170px;
+}
+<?php endif; ?>
+
+<?php if (!iro_opt('author_profile_avatar', 'true')): ?>
+.author-profile .info {
+display:none;
+}
+<?php endif; ?>
+
+<?php if (!iro_opt('author_profile_name', 'true')): ?>
+.author-profile .meta {
+display:none;
+}
+<?php endif; ?>
+
+<?php if (!iro_opt('article_tag', 'true')): ?>
+.post-tags {
+display:none;
+}
+<?php endif; ?>
+
 <?php if (!iro_opt('nav_menu_user_avatar', 'true')): ?>
 .header-user-avatar{
 display:none;

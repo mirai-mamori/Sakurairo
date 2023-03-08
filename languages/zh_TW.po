@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-03-07 19:09+0800\n"
-"PO-Revision-Date: 2023-03-07 19:09+0800\n"
+"POT-Creation-Date: 2023-03-08 20:13+0800\n"
+"PO-Revision-Date: 2023-03-08 20:13+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -303,7 +303,7 @@ msgstr "是否確實要將其設置為專用？"
 msgid "You had set private comment before"
 msgstr "您之前設置了私人評論"
 
-#: functions.php:366 inc/theme_plus.php:194 layouts/authorprofile.php:12
+#: functions.php:366 inc/theme_plus.php:194
 msgid "Author"
 msgstr "作者"
 
@@ -607,7 +607,7 @@ msgstr "登出"
 msgid "Sign out? "
 msgstr "登出？ "
 
-#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:20
+#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:26
 #: tpl/single-image.php:18
 msgid "View"
 msgid_plural "Views"
@@ -707,11 +707,11 @@ msgstr "沒有找到你想要的，看看其他的吧"
 msgid "We didn't seem to find what you want. Maybe you can search for it."
 msgstr "似乎沒有找到你想要的東西，或許你可以搜尋一下試式試"
 
-#: tpl/content-page.php:25 tpl/content-single.php:29 tpl/single-image.php:28
+#: tpl/content-page.php:25 tpl/content-single.php:35 tpl/single-image.php:28
 msgid "Pages:"
 msgstr "頁面:"
 
-#: tpl/content-single.php:40
+#: tpl/content-single.php:61
 msgid "Nothing~"
 msgstr "無~"
 
