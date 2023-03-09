@@ -228,6 +228,7 @@ button {
   overflow: visible;
   text-transform: none;
   -webkit-appearance: button;
+  appearance: button;
   cursor: pointer;
   font-size: .75rem/*!covered15px,12px*/;
   line-height: 1/*!covered1.5*/;
@@ -287,6 +288,7 @@ textarea {
 
 input[type=reset] {
   -webkit-appearance: button;
+  appearance: button;
   cursor: pointer;
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
@@ -303,6 +305,7 @@ input[type=reset] {
 
 input[type=submit] {
   -webkit-appearance: button;
+  appearance: button;
   cursor: pointer;
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
@@ -1099,7 +1102,7 @@ input[type=week] {
 
 .post-content-wrap {
   position: relative;
-  display: inline-block;
+  display: block;
   float: right;
   padding-right: 30px;
   padding-left: 0;
@@ -3448,7 +3451,7 @@ i.iconfont.down {
   font-size: 24px;
   padding: 6px 17px;
   text-align: center;
-  display: inline-block;
+  display: block;
   border-radius: 10px;
   color: #7d7d7d;
   margin: 5px;
@@ -3597,6 +3600,7 @@ i.iconfont.down {
   width: 16px;
   min-width: 16px;
   -webkit-appearance: none;
+  appearance: none;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
   -webkit-transition: .05s border-color ease-in-out;
@@ -5101,6 +5105,7 @@ samp {
 
 html input[type=button] {
   -webkit-appearance: button;
+  appearance: button;
   cursor: pointer;
 }
 
