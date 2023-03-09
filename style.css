@@ -7956,18 +7956,6 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 }
 
 @media (max-width:630px) {
-  .links ul li {
-    width: 100% !important;
-    margin: 0px;
-    margin-bottom: 8px;
-  }
-
-  .links ul li:hover{
-    width: 100% !important;
-    margin: 0px;
-    margin-bottom: 8px;
-  }
-
   .we-content li {
     width: 100%;
     margin-top: 0;
@@ -8123,8 +8111,15 @@ i.iconfont.js-toggle-search.iconsearch:hover {
   }
 
   .links ul li {
-    width: 48.6%;
-  }
+    width: 45%;
+    margin: 2%;
+    max-width: 860px;
+}
+
+  .links ul li:hover{
+    width: 45%;
+    margin: 2%;
+}
 
   .links ul li:before {
     display: none;
