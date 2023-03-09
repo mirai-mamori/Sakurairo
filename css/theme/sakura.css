@@ -25,7 +25,7 @@
 
 .entry-content ul {
     list-style: disc;
-    border: 1px dashed #E4E4E4;
+    border: 1px solid #E4E4E4;
     padding: 15px 10px 15px 50px;
     color: #616161;
     margin-left: 0;
@@ -39,7 +39,7 @@
 
 .entry-content ol {
     list-style: decimal;
-    border: 1px dashed #E4E4E4;
+    border: 1px solid #E4E4E4;
     padding: 15px 10px 15px 50px;
     color: #616161;
     margin-left: 0;

@@ -1169,7 +1169,7 @@ input[type=week] {
   margin: 0 14% 0 2%;
   padding: 15px 30px;
   line-height: 30px;
-  border: 1px dashed #E0E0E0;
+  border: 1px solid #E0E0E0;
   background: #FBFBFB;
 }
 
@@ -1248,7 +1248,7 @@ input[type=week] {
 h1.page-title {
   font-size: 20px;
   font-weight: var(--global-font-weight,400);
-  border: 1px dashed #ddd;
+  border: 1px solid #ddd;
   padding: 10px 15px;
   color: #505050;
   margin-bottom: 30px;
@@ -9711,7 +9711,7 @@ body.dark .author-profile p {
 }
 
 body.dark h1.page-title {
-  border: 1px dashed #3B3B3B;
+  border: 1px solid #3B3B3B;
   color: #CCCCCC;
 }
 
@@ -9974,7 +9974,7 @@ body.dark #changskin:hover {
 body.dark li .cbp_tmlabel {
   background: #505050 !important;
   color: #bbb !important;
-  border: 1px dashed #949494;
+  border: 1px solid #949494;
 }
 
 body.dark .header-info {
