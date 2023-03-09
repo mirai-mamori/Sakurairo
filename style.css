@@ -659,11 +659,11 @@ input[type=week] {
   z-index: 99;
   border: 0;
   outline: 0;
-  background-color: #fff;
-  color: var(--theme-skin,#505050);
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  background: rgba(255,255,255,0.5);
+  color: #7D7D7D;
   padding: 15px;
   border-radius: var(--style_menu_radius,12px);
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
   transform: scale(0);
   transition: all 0.8s ease !important;
 }
@@ -675,27 +675,27 @@ input[type=week] {
   z-index: 99;
   border: 0;
   outline: 0;
-  background-color: #fff;
-  color: var(--theme-skin,#505050);
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  background: rgba(255,255,255,0.5);
+  color: #7D7D7D;
   padding: 15px;
-  border-radius: var(--style_menu_radius,12px);
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
+  border-radius: var(--style_menu_radius,10px);
   transform: scale(0);
   transition: all 0.8s ease !important;
 }
 
 #moblieGoTop:hover {
   color: var(--theme-skin-matching);
-  background-color: #fff;
-  opacity: .8;
+  box-shadow: 0 1px 20px 10px #e8e8e8;
+  background: rgba(255,255,255,0.8);
   transition: all 0.8s ease !important;
 }
 
 #changskin:hover {
   color: var(--theme-skin-matching);
-  background-color: #fff;
-  opacity: .8;
   transition: all 0.8s ease !important;
+  box-shadow: 0 1px 20px 10px #e8e8e8;
+  background: rgba(255,255,255,0.8);
 }
 
 .pattern-center-sakura {
@@ -4465,20 +4465,18 @@ td.hljs-ln-numbers {
 .skin-menu {
   position: fixed;
   left: auto;
-  bottom: 12px;
-  right: -50px;
+  bottom: 15px;
   height: auto;
-  width: 220px;
+  width: 210px;
   border-radius: var(--style_menu_selection_radius,15px);
   font-size: larger;
-  background-color: var(--style_menu_background_color,#fff);
   text-align: center;
   box-shadow: none;
   z-index: 99;
+  background: rgb(255 255 255 / 40%);
   transform: scaleX(0);
   transition: .5s;
-  -webkit-backdrop-filter: blur(9px);
-  backdrop-filter: blur(9px);
+  right: -50px;
 }
 
 .skin-menu.show {
@@ -4504,10 +4502,10 @@ td.hljs-ln-numbers {
 
 .menu-list li {
   display: inline-block;
-  margin: 5px;
+  margin: 5px 2.5px;
   line-height: 50px;
   width: 50px;
-  background-color: var(--style_menu_selection_color,#FFEEEB);
+  background-color: rgb(255 255 255 / 50%);
   border-radius: var(--style_menu_radius,20%);
   transition: .3s;
   cursor: pointer;
@@ -4528,7 +4526,7 @@ td.hljs-ln-numbers {
   vertical-align: middle;
   margin: 0 4px;
   box-shadow: none;
-  background-color: var(--style_menu_selection_color,#FFEEEB);
+  background-color: rgb(255 255 255 / 50%);
   transition: .3s;
   cursor: pointer;
 }
@@ -7657,12 +7655,17 @@ i.iconfont.js-toggle-search.iconsearch:hover {
   }
 }
 
-@media (max-width:1150px) {
-  .comments .commentwrap {
-    width: 100%;
-    padding: 0 4%;
-    max-width: 1245px;
-    margin-bottom: 40px;
+@media (max-width:1080px) {
+  .post-footer {
+    max-width: 800px;
+    margin-left: -43%;
+  }
+}
+
+@media (max-width:860px) {
+  .post-footer {
+    max-width: 800px;
+    margin-left: -49%;
   }
 }
 
@@ -7675,6 +7678,15 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     margin-left: auto;
     margin-right: auto;
   }
+  .comments .commentwrap {
+    width: 100%;
+    max-width: 1245px;
+    margin-bottom: 40px;
+    padding: 0 4%;
+  }
+  .comment-respond {
+    width: 88% !important;  
+}
 }
 
 @media (max-width:860px) {
@@ -7685,6 +7697,12 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     margin-left: auto;
     margin-right: auto;
   }
+  .comments .commentwrap {
+    padding: 0 6%;
+  }
+  .comment-respond {
+    width: 88% !important;  
+}
 }
 
 @media (max-width:580px) {
@@ -8037,20 +8055,6 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 
   .entry-content p {
     font-size: 14px;
-  }
-
-  .post-footer {
-    display: none;
-  }
-
-  .post-tags {
-    text-align: center;
-    float: none;
-    font-size: 12px;
-  }
-
-  .author-profile {
-    display: none;
   }
 
   .site-footer {
@@ -9752,8 +9756,10 @@ body.dark .widget-area .show-hide svg path {
 
 body.dark #moblieGoTop,
 body.dark #changskin {
-  background-color: #262626;
-  color: var(--theme-skin-dark);
+  box-shadow: 0 1px 20px 2px rgba(26,26,26,0.8);
+  background: rgba(26,26,26,0.6);
+  color:#7D7D7D;
+  transition: all 0.8s ease !important;
 }
 
 body.dark #show-nav .line {
@@ -9920,8 +9926,10 @@ body.dark .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon
 
 body.dark #moblieGoTop:hover,
 body.dark #changskin:hover {
-  color: var(--theme-skin-dark);
-  opacity: .8;
+  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
+  background: rgba(26,26,26,0.8);
+  color: var(--theme-skin-matching);
+  transition: all 0.8s ease !important;
 }
 
 body.dark li .cbp_tmlabel {

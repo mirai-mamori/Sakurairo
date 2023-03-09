@@ -15,7 +15,6 @@ if (iro_opt('theme_skin')) { ?>
     --theme-skin: <?=iro_opt('theme_skin'); ?>;
     --theme-skin-matching:<?=iro_opt('theme_skin_matching'); ?>;
     --infor_bar_bgcolor:<?=iro_opt('infor_bar_bgcolor'); ?>;
-    --style_menu_background_color:<?=iro_opt('style_menu_background_color'); ?>;
     --style_menu_selection_radius:<?=iro_opt('style_menu_selection_radius', ''); ?>px;
     --post_list_matching_color:<?=iro_opt('post_list_matching_color'); ?>;
     --load_nextpage_svg:url("<?=iro_opt('load_nextpage_svg'); ?>");
@@ -25,7 +24,6 @@ if (iro_opt('theme_skin')) { ?>
     --friend-link-title: <?=iro_opt('friend_link_title_matching_color'); ?>;
     --comment_area_matching: <?=iro_opt('comment_area_matching_color'); ?>;
     --comment_area_shadow: <?=iro_opt('comment_area_shadow_color'); ?>;
-    --style_menu_selection_color: <?=iro_opt('style_menu_selection_color'); ?>;
     --shuoshuo_background_color1:<?=iro_opt('shuoshuo_background_color1');?>;
     --shuoshuo_background_color2:<?=iro_opt('shuoshuo_background_color2');?>;
     <?php //深色模式主题色 ?>

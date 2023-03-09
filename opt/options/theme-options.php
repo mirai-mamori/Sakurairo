@@ -655,22 +655,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'style_menu_background_color',
-        'type' => 'color',
-        'title' => __('Style Menu Background Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, light colors are recommended','sakurairo_csf'),
-        'default' => 'rgba(255,255,255,0.8)'
-      ),   
-
-      array(
-        'id' => 'style_menu_selection_color',
-        'type' => 'color',
-        'title' => __('Style Menu Option Background Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, it is recommended to use a light color that corresponds with the theme color','sakurairo_csf'),
-        'default' => '#e8e8e8'
-      ),
-
-      array(
         'id' => 'style_menu_selection_radius',
         'type' => 'slider',
         'title' => __('Style Menu Options Interface Radius','sakurairo_csf'),
