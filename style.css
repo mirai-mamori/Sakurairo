@@ -4337,10 +4337,12 @@ input[type=radio]:checked:before {
 .highlight-wrap {
   position: relative;
   background: #21252b;
-  border-radius: 5px;
+  border-radius: 10px;
   font: 15px/22px "Microsoft YaHei", Arial, Sans-Serif;
   line-height: 1.6;
   margin-bottom: 1.6em;
+  margin-left: 8px;
+  margin-right: 8px;
   max-width: 100%;
   overflow: auto;
   text-shadow: none;
@@ -4766,40 +4768,53 @@ h5::before {
 }
 
 .shortcodestyle {
-  margin: 20px 0px !important;
+  margin: 20px 8px !important;
   padding: 15px 15px 15px 40px !important;
   position: relative !important;
-  -moz-box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2) !important;
-  -webkit-box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2) !important;
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2) !important;
-  border-radius: 6px !important;
-  -webkit-border-radius: 6px !important;
-  -moz-border-radius: 6px !important;
-  -khtml-border-radius: 6px !important;
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  background: rgba(255,255,255,0.5);
+  border-radius: 10px !important;
   text-indent: 0 !important;
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
-.shortcodestyle a:hover {
-  background: none !important;
-  border-radius: 0px !important;
-  -webkit-border-radius: 0px !important;
-  -moz-border-radius: 0px !important;
-  -khtml-border-radius: 0px !important;
+.shortcodestyle:hover {
+  box-shadow: 0 1px 20px 10px #e8e8e8;
+  background: rgba(255,255,255,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
 .xControl {
-  margin: 20px 0px !important;
+  margin: 20px 8px !important;
   padding: 15px 15px 15px 40px !important;
   position: relative !important;
-  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) !important;
-  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) !important;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) !important;
-  border-radius: 5px !important;
-  -webkit-border-radius: 5px !important;
-  -moz-border-radius: 5px !important;
-  -khtml-border-radius: 5px !important;
-  background: #FFF4C5 !important;
-  color: #9F6F26 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  background: rgba(255,255,255,0.5);
+  border-radius: 10px !important;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.xControl:hover {
+  box-shadow: 0 1px 20px 10px #e8e8e8;
+  background: rgba(255,255,255,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.xbtn02 {
+  color: #7D7D7D !important;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.xbtn02:hover {
+  color: var(--theme-skin-matching) !important;
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
 input#wp-comment-cookies-consent {
@@ -7184,26 +7199,30 @@ a.toc-link {
   padding: 5px !important;
 }
 
-.warning {
-  background: rgba(255,234,151,0.5) !important;
-  color: #9F6F26 !important;
+.warning,
+.noway,
+.task,
+.buy{
   text-indent: 0 !important;
 }
 
-.noway {
-  background: rgba(239,206,201,0.5) !important;
-  color: #820B0B !important;
+.warning i {
+  color: #F1C700 !important;
   text-indent: 0 !important;
 }
 
-.task {
-  background: rgba(231,231,231,0.5)  !important;
-  color: #333 !important;
+.noway i {
+  color: #7D2027 !important;
+  text-indent: 0 !important;
 }
 
-.buy {
-  background: rgba(157,215,232,0.5) !important;
-  color: #03536b !important;
+.task i {
+  color: #7d7d7d !important;
+  text-indent: 0 !important;
+}
+
+.buy i {
+  color: #6E81BE !important;
   text-indent: 0 !important;
 }
 
@@ -7252,14 +7271,6 @@ body:not(.heimu_toggle_on) .heimu.off .new:hover,
 body:not(.heimu_toggle_on) .new:hover .heimu.off {
   transition: color .13s linear;
   color: #BA0000;
-}
-
-.xTitle {
-  color: #9F6F26 !important;
-}
-
-.xbtn02 {
-  color: black !important;
 }
 
 .comment-form-cookies-consent label {
@@ -9871,6 +9882,34 @@ body.dark .author-profile .desc {
 }
 
 body.dark .author-profile .desc:hover{
+  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
+  background: rgba(26,26,26,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .shortcodestyle {
+  box-shadow: 0 1px 20px 2px rgba(26,26,26,0.8);
+  background: rgba(26,26,26,0.6);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .shortcodestyle:hover{
+  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
+  background: rgba(26,26,26,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .xControl {
+  box-shadow: 0 1px 20px 2px rgba(26,26,26,0.8);
+  background: rgba(26,26,26,0.6);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .xControl:hover{
   box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
   background: rgba(26,26,26,0.8);
   -webkit-transition: all .8s;

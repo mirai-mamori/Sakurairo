@@ -1777,7 +1777,7 @@ add_action('admin_notices', 'permalink_tip');
 add_shortcode('task', 'task_shortcode');
 function task_shortcode($attr, $content = '')
 {
-    $out = '<div class="task shortcodestyle"><i class="fa fa-tasks"></i>' . $content . '</div>';
+    $out = '<div class="task shortcodestyle"><i class="fa fa-bars"></i>' . $content . '</div>';
     return $out;
 }
 add_shortcode('warning', 'warning_shortcode');
@@ -1827,7 +1827,7 @@ function xcollapse($atts, $content = null)
     extract(shortcode_atts(array("title" => ""), $atts));
     return '<div style="margin: 0.5em 0;">
     <div class="xControl">
-    <i class="fa fa-arrow-down" style="color: #9F6F26;"></i> &nbsp;&nbsp;
+    <i class="fa fa-arrow-down" style="color: #16AF90;"></i> &nbsp;&nbsp;
     <span class="xTitle">' . $title . '</span>&nbsp;&nbsp;==>&nbsp;&nbsp;<a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02">展开 / 收缩</span></a>
     <div style="clear: both;"></div>
     </div>
