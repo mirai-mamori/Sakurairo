@@ -2771,7 +2771,6 @@ i.iconfont.js-toggle-search.iconsearch {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-weight: var(--global-font-weight);
-
   transition: all 0.8s ease !important;
 }
 
@@ -9546,7 +9545,10 @@ body.dark .search-form input {
   background: rgba(51,51,51,0.8);
 }
 
-body.dark #mo-nav,
+body.dark #mo-nav {
+  background: rgba(26,26,26,0.85);
+}
+
 body.dark .aplayer .aplayer-list ol li.aplayer-list-light,
 body.dark .site-header:hover,
 body.dark #preload {
