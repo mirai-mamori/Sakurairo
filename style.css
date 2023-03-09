@@ -623,7 +623,7 @@ input[type=week] {
   margin-right: auto;
   text-align: left;
   top: auto;
-  bottom: 20px;
+  bottom: 30px;
 }
 
 .single-center .single-header h1.entry-title {
@@ -637,15 +637,14 @@ input[type=week] {
 .single-center .entry-census {
   color: #fff;
   font-size: 14px;
-  padding: 18px 0 0;
-  line-height: 39px;
+  padding: 12px 0 0;
+  line-height: 30px;
   font-weight: var(--global-font-weight);
-
 }
 
 .single-center .entry-census span img {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
   float: left;
   margin-right: 12px;
