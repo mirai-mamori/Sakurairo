@@ -52,7 +52,7 @@
 
 - 本テーマのSNSアイコンは、MUH2 icons部分は缄默（ジェンモー）さんの[MUH2 Icon Pack](https://www.coolapk.com/apk/com.muh2.icon)を参考にしています。
 
-- 本テーマの白ネコロゴは、オリジナルテーマの開発者Mashiroさんのデザインを参考にしています。ソリューションは [Hyacm](https://hyacm.com/acai/ui/143/sakura-logo/) さんが提供しています。
+- 本テーマの白ネコロゴは、オリジナルテーマの開発者Mashiroさんのデザインを参考にしています。ソリューションは Hyacm さんが提供しています。
 
 ### 依存関係：
 

@@ -668,6 +668,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'style_menu_reception_text',
         'type' => 'text',
         'title' => __('Frontend Background Area Title','sakurairo_csf'),
+        'dependency' => array( 'style_menu_display', '==', 'full' ),
         'desc' => __('Default is "Style", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'sakurairo_csf'),
         'default' => 'Style'
       ),
@@ -676,6 +677,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'style_menu_font_area_text',
         'type' => 'text',
         'title' => __('Font Area Title','sakurairo_csf'),
+        'dependency' => array( 'style_menu_display', '==', 'full' ),
         'desc' => __('Default is "Fonts", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!' ,'sakurairo_csf'),
         'default' => 'Fonts'
       ),
@@ -684,6 +686,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'style_menu_font',
         'type' => 'text',
         'title' => __('Style Menu Font','sakurairo_csf'),
+        'dependency' => array( 'style_menu_display', '==', 'full' ),
         'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
         'default' => 'Noto Serif SC'
       ),
@@ -3666,7 +3669,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'    => 'content',
         'content' => __('<p>Fluent Design Icon Referenced by Paradox <a href="https://wwi.lanzous.com/ikyq5kgx0wb">Fluent Icon Pack</a></p>
         <p>MUH2 Design Icon Referenced by 缄默 <a href="https://www.coolapk.com/apk/com.muh2.icon">MUH2 Icon Pack</a></p>
-        <p>Mashiro Style Logo References the Original Theme Author Mashiro, As Provided and Referenced by <a href="https://hyacm.com/acai/ui/143/sakura-logo/">Hyacm</a></p>','sakurairo_csf'),
+        <p>Mashiro Style Logo References the Original Theme Author Mashiro, As Provided and Referenced by Hyacm</p>','sakurairo_csf'),
       ),
 
       array(

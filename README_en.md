@@ -53,7 +53,7 @@ Please fill in with the issue template. Thanks for your cooperation.
 
 - For social network icons of the theme, MUH2 icons reference the [MUH2 Icon Pack](https://www.coolapk.com/apk/com.muh2.icon) designed by 缄默.
 
-- The Mashiro Logo references the design by Mashiro, the developer of the original theme. Solutions provided by [Hyacm](https://hyacm.com/acai/ui/143/sakura-logo/).
+- The Mashiro Logo references the design by Mashiro, the developer of the original theme. Solutions provided by Hyacm.
 
 ### Dependencies:
 

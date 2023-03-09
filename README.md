@@ -63,7 +63,7 @@
 
 - 本主题社交网络图标中，沐氢图标引用于由缄默设计的 [沐氢图标包](https://www.coolapk.com/apk/com.muh2.icon)
 
-- 本主题白猫样式Logo参考原主题作者白猫，由 [Hyacm](https://hyacm.com/acai/ui/143/sakura-logo/) 提供方案
+- 本主题白猫样式Logo参考原主题作者白猫，由 Hyacm 提供方案
 
 ### 依赖相关：
 

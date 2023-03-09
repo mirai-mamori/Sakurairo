@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-03-08 20:13+0800\n"
-"PO-Revision-Date: 2023-03-08 20:13+0800\n"
+"POT-Creation-Date: 2023-03-09 16:56+0800\n"
+"PO-Revision-Date: 2023-03-09 16:56+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -629,7 +629,7 @@ msgid "Sign out? "
 msgstr "ログアウト?"
 
 #: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:26
-#: tpl/single-image.php:18
+#: tpl/single-image.php:24
 msgid "View"
 msgid_plural "Views"
 msgstr[0] "表示"
@@ -732,11 +732,11 @@ msgstr ""
 "私たちはあなたが望むものを見つけられなかったようです。たぶん、あなたはそれを"
 "検索することができます。"
 
-#: tpl/content-page.php:25 tpl/content-single.php:35 tpl/single-image.php:28
+#: tpl/content-page.php:25 tpl/content-single.php:35 tpl/single-image.php:34
 msgid "Pages:"
 msgstr "ページ:"
 
-#: tpl/content-single.php:61
+#: tpl/content-single.php:61 tpl/single-image.php:58
 msgid "Nothing~"
 msgstr "何もない~"
 
