@@ -8084,7 +8084,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 
   .site-header {
     /*移动端logo后背板高度*/
-    height: 65px;
+    height: 8%;
   }
 
   .site-branding {
@@ -8236,7 +8236,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     width: 20px;
     height: 3px;
     background-color: var(--theme-skin,#505050);
-    top: 30px;
+    top: 28px;
     left: 20px;
   }
 
@@ -8281,7 +8281,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
   }
 
   #mo-nav {
-    background-color: #FFF;
+    background-color: rgb(255 255 255 / 90%);
     width: 250px;
     max-width: 250px !important;
     height: 100%;
@@ -8301,14 +8301,14 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     max-width: 250px;
     height: auto;
     margin: 0 auto;
-    padding: 40px 0 30px;
+    padding: 40px 0 0;
     text-align: center;
   }
 
   #mo-nav .m-avatar img {
-    width: 100px;
-    height: 100px;
-    max-width: 100px;
+    width: 80px;
+    height: 80px;
+    max-width: 80px;
     border-radius: 100%;
   }
 
@@ -8316,18 +8316,27 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     position: relative;
     width: 250px;
     max-width: 250px;
-    margin: 0 0 20px;
-    padding: 8px 15px;
-    background-color: #fafafa;
+    margin: 20px 0px;
+    padding: 0px 20px;
   }
 
   #mo-nav .m-search input {
     width: 100%;
     border: 0;
-    padding: 5px;
-    text-align: center;
-    border-radius: 3px;
+    padding: 10px;
+    box-shadow: 0 1px 30px -4px #e8e8e8;
+    background: rgba(255,255,255,0.5);
+    border-radius: 10px;
     outline: 0;
+    -webkit-transition: all .8s;
+    transition: all .8s;
+  }
+
+  #mo-nav .m-search input:hover {
+    box-shadow: 0 1px 20px 10px #e8e8e8;
+    background: rgba(255,255,255,0.8);
+    -webkit-transition: all .8s;
+    transition: all .8s;
   }
 
   #mo-nav .menu {
@@ -8345,7 +8354,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
   #mo-nav ul li {
     transition-duration: .25s;
     display: block;
-    padding: 6px 0px;
+    padding: 10px 0px;
     color: #fff;
     letter-spacing: .02em;
     text-align: center;
@@ -9600,10 +9609,25 @@ body.dark input[type=text]:focus,
 body.dark input[type=time]:focus,
 body.dark input[type=url]:focus,
 body.dark input[type=week]:focus,
-body.dark textarea:focus,
-body.dark #mo-nav .m-search form {
+body.dark textarea:focus {
   color: #CCCCCC;
   background-color: #333333;
+}
+
+body.dark #mo-nav .m-search input{
+  color: #CCCCCC;
+  box-shadow: 0 1px 20px 2px rgb(26 26 26 / 80%);
+  background: rgba(26,26,26,0.6);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark #mo-nav .m-search input:hover {
+  color: #CCCCCC;
+  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
+  background: rgba(26,26,26,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
 body.dark .post-date {
