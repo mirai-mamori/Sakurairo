@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-03-09 16:54+0800\n"
-"PO-Revision-Date: 2023-03-09 16:55+0800\n"
+"POT-Creation-Date: 2023-03-10 12:21+0800\n"
+"PO-Revision-Date: 2023-03-10 12:26+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -2834,8 +2834,8 @@ msgid "Article Lincenses"
 msgstr "文章知识共享协议"
 
 #: options/theme-options.php:2660
-msgid "Article lincenses will appear on the function bar when enabled"
-msgstr "开启之后文章页面功能栏将出现知识共享协议信息"
+msgid "Enabled by default, Article lincenses will appear on the function bar"
+msgstr "默认开启，将在文章页面功能栏显示知识共享协议信息"
 
 #: options/theme-options.php:2667
 msgid "Article Page Appreciation Function (Alipay QR Code)"
@@ -2858,8 +2858,8 @@ msgid "Article Page Author Avatar"
 msgstr "文章页面作者头像"
 
 #: options/theme-options.php:2687
-msgid "Author avatar will appear on the function bar when enabled"
-msgstr "开启之后文章页面功能栏将出现作者头像"
+msgid "Enabled by default, Author avatar will appear on the function bar"
+msgstr "默认开启，将在文章页面功能栏显示作者头像"
 
 #: options/theme-options.php:2694
 msgid "Article Page Author Name"
@@ -2874,8 +2874,8 @@ msgid "Article Page Author Signature"
 msgstr "文章页面作者签名"
 
 #: options/theme-options.php:2705
-msgid "Author signature will appear on the function bar when enabled"
-msgstr "开启之后文章页面功能栏将出现作者签名"
+msgid "Enabled by default, Author signature will appear on the function bar"
+msgstr "默认开启，将在文章页面功能栏显示作者签名"
 
 #: options/theme-options.php:2712
 msgid "Article Page Author Info Signature Text"
@@ -2886,8 +2886,8 @@ msgid "Article Tag"
 msgstr "文章标签"
 
 #: options/theme-options.php:2726
-msgid "Article tag will appear on the function bar when enabled"
-msgstr "开启之后文章页面功能栏将出现文章标签"
+msgid "Enabled by default, Article tag will appear on the function bar"
+msgstr "默认开启，将在文章页面功能栏显示文章标签"
 
 #: options/theme-options.php:2733
 msgid "Article Page Prev/Next Article Switcher"
@@ -2895,9 +2895,9 @@ msgstr "文章页面上下文章切换"
 
 #: options/theme-options.php:2734
 msgid ""
-"After turning on, the previous and next article switch will appear on the "
+"Enabled by default, the previous and next article switch will appear on the "
 "article pages"
-msgstr "开启之后文章页面将出现上下文章切换"
+msgstr "默认开启，将在文章页面显示上下文章切换"
 
 #: options/theme-options.php:2743
 msgid "Template Page Options"

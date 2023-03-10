@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-03-09 16:54+0800\n"
+"POT-Creation-Date: 2023-03-10 12:21+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -2733,7 +2733,7 @@ msgid "Article Lincenses"
 msgstr ""
 
 #: options/theme-options.php:2660
-msgid "Article lincenses will appear on the function bar when enabled"
+msgid "Enabled by default, Article lincenses will appear on the function bar"
 msgstr ""
 
 #: options/theme-options.php:2667
@@ -2757,7 +2757,7 @@ msgid "Article Page Author Avatar"
 msgstr ""
 
 #: options/theme-options.php:2687
-msgid "Author avatar will appear on the function bar when enabled"
+msgid "Enabled by default, Author avatar will appear on the function bar"
 msgstr ""
 
 #: options/theme-options.php:2694
@@ -2773,7 +2773,7 @@ msgid "Article Page Author Signature"
 msgstr ""
 
 #: options/theme-options.php:2705
-msgid "Author signature will appear on the function bar when enabled"
+msgid "Enabled by default, Author signature will appear on the function bar"
 msgstr ""
 
 #: options/theme-options.php:2712
@@ -2785,7 +2785,7 @@ msgid "Article Tag"
 msgstr ""
 
 #: options/theme-options.php:2726
-msgid "Article tag will appear on the function bar when enabled"
+msgid "Enabled by default, Article tag will appear on the function bar"
 msgstr ""
 
 #: options/theme-options.php:2733
@@ -2794,8 +2794,8 @@ msgstr ""
 
 #: options/theme-options.php:2734
 msgid ""
-"After turning on, the previous and next article switch will appear on the article "
-"pages"
+"Enabled by default, the previous and next article switch will appear on the "
+"article pages"
 msgstr ""
 
 #: options/theme-options.php:2743

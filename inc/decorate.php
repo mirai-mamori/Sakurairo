@@ -792,9 +792,6 @@ display:none;
 .post-lincenses {
 display:none;
 }
-.reward-main {
-left: -170px;
-}
 <?php endif; ?>
 
 <?php if (!iro_opt('author_profile_avatar', 'true')): ?>

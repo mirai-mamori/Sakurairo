@@ -1534,7 +1534,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Cover Signature Field Text','sakurairo_csf'),
         'desc' => __('A self-descriptive quote','sakurairo_csf'),
-        'default' => '本当の声を響かせてよ'
+        'default' => '届ける言葉を今は育ててる'
       ),
 
       array(
@@ -2657,8 +2657,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'switcher',
         'title' => __('Article Lincenses','sakurairo_csf'),
         'dependency' => array( 'article_function', '==', 'true' ),
-        'label' => __('Article lincenses will appear on the function bar when enabled','sakurairo_csf'),
-        'default' => false
+        'label' => __('Enabled by default, Article lincenses will appear on the function bar','sakurairo_csf'),
+        'default' => true
       ),
 
       array(
@@ -2684,8 +2684,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'switcher',
         'title' => __('Article Page Author Avatar','sakurairo_csf'),
         'dependency' => array( 'article_function', '==', 'true' ),
-        'label' => __('Author avatar will appear on the function bar when enabled','sakurairo_csf'),
-        'default' => false
+        'label' => __('Enabled by default, Author avatar will appear on the function bar','sakurairo_csf'),
+        'default' => true
       ),
 
       array(
@@ -2702,8 +2702,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'switcher',
         'title' => __('Article Page Author Signature','sakurairo_csf'),
         'dependency' => array( 'article_function', '==', 'true' ),
-        'label' => __('Author signature will appear on the function bar when enabled','sakurairo_csf'),
-        'default' => false
+        'label' => __('Enabled by default, Author signature will appear on the function bar','sakurairo_csf'),
+        'default' => true
       ),
 
       array(
@@ -2715,7 +2715,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           array( 'author_profile_quote', '==', 'true' ),
         ),
         'desc' => __('A self-descriptive quote','sakurairo_csf'),
-        'default' => '本当の声を響かせてよ'
+        'default' => '届ける言葉を今は育ててる'
       ),
 
       array(
@@ -2723,16 +2723,16 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'switcher',
         'title' => __('Article Tag','sakurairo_csf'),
         'dependency' => array( 'article_function', '==', 'true' ),
-        'label' => __('Article tag will appear on the function bar when enabled','sakurairo_csf'),
-        'default' => false
+        'label' => __('Enabled by default, Article tag will appear on the function bar','sakurairo_csf'),
+        'default' => true
       ),
 
       array(
         'id' => 'article_nextpre',
         'type' => 'switcher',
         'title' => __('Article Page Prev/Next Article Switcher','sakurairo_csf'),
-        'label' => __('After turning on, the previous and next article switch will appear on the article pages','sakurairo_csf'),
-        'default' => false
+        'label' => __('Enabled by default, the previous and next article switch will appear on the article pages','sakurairo_csf'),
+        'default' => true
       ),
 
     )
