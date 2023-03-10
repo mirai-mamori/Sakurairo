@@ -9,15 +9,17 @@
 
 ?>
 
-<?php if (iro_opt('article_auto_toc', 'true')): ?>
+<?php 
+$author_description = '';
+if (iro_opt('article_auto_toc', 'true')): ?>
 <div class="has-toc have-toc"></div>
 <?php endif; ?>
 
 <?php 
 if (iro_opt('author_profile_quote') == '1') {
-	$author_description = get_the_author_meta( 'description' ) ? get_the_author_meta( 'description' ) :iro_opt('author_profile_quote_text', 'Carpe Diem and Do what I like');
-?>
-<?php } ?>
+	$author_meta =  get_the_author_meta( 'description' );
+	$author_description = $author_meta ? $author_meta :iro_opt('author_profile_quote_text', 'Carpe Diem and Do what I like');
+} ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if(should_show_title()) { ?>
