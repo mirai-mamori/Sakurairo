@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://fuukei.org/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.5.8
+Version: 2.5.9
 Tested up to: 6.0
 Requires at least: 5.6
 Requires PHP: 7.2
@@ -1308,6 +1308,29 @@ h1.page-title {
 }
 
 .post-tags:hover{
+  box-shadow: 0 1px 20px 10px #e8e8e8;
+  background: rgba(255,255,255,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.post-modified-time {
+  float: left;
+  font-size: 13px;
+  color: #7D7D7D;
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  background: rgba(255,255,255,0.5);
+  padding: 14.3px 18px;
+  text-transform: uppercase;
+  position: inherit;
+  border-radius: 10px;
+  font-weight: var(--global-font-weight);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+  margin: 5px;
+}
+
+.post-modified-time:hover{
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255,255,255,0.8);
   -webkit-transition: all .8s;
@@ -5581,6 +5604,11 @@ h1.page-title.mb- {
 }
 
 .post-tags i {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.post-modified-time i {
   margin-right: 5px;
 }
 
@@ -9859,6 +9887,20 @@ body.dark .post-tags {
 }
 
 body.dark .post-tags:hover{
+  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
+  background: rgba(26,26,26,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .post-modified-time {
+  box-shadow: 0 1px 20px 2px rgba(26,26,26,0.8);
+  background: rgba(26,26,26,0.6);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .post-modified-time:hover{
   box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
   background: rgba(26,26,26,0.8);
   -webkit-transition: all .8s;

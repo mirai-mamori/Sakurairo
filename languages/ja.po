@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-03-09 16:56+0800\n"
-"PO-Revision-Date: 2023-03-09 16:56+0800\n"
+"POT-Creation-Date: 2023-03-11 11:21+0800\n"
+"PO-Revision-Date: 2023-03-11 11:23+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -628,7 +628,7 @@ msgstr "ログアウト"
 msgid "Sign out? "
 msgstr "ログアウト?"
 
-#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:26
+#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:28
 #: tpl/single-image.php:24
 msgid "View"
 msgid_plural "Views"
@@ -732,13 +732,17 @@ msgstr ""
 "私たちはあなたが望むものを見つけられなかったようです。たぶん、あなたはそれを"
 "検索することができます。"
 
-#: tpl/content-page.php:25 tpl/content-single.php:35 tpl/single-image.php:34
+#: tpl/content-page.php:25 tpl/content-single.php:37 tpl/single-image.php:34
 msgid "Pages:"
 msgstr "ページ:"
 
-#: tpl/content-single.php:61 tpl/single-image.php:58
+#: tpl/content-single.php:63 tpl/single-image.php:58
 msgid "Nothing~"
 msgstr "何もない~"
+
+#: tpl/content-single.php:66 tpl/single-image.php:61
+msgid "Last updated on "
+msgstr "最終更新日 "
 
 #: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30
 #: user/page-followVideos.php:29

@@ -812,6 +812,12 @@ display:none;
 }
 <?php endif; ?>
 
+<?php if (!iro_opt('article_modified_time', 'true')): ?>
+.post-modified-time {
+display:none;
+}
+<?php endif; ?>
+
 <?php if (!iro_opt('nav_menu_user_avatar', 'true')): ?>
 .header-user-avatar{
 display:none;

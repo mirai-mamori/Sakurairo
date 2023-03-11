@@ -2728,6 +2728,15 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'article_modified_time',
+        'type' => 'switcher',
+        'title' => __('Article Last Update Time','sakurairo_csf'),
+        'dependency' => array( 'article_function', '==', 'true' ),
+        'label' => __('Article last update time will appear on the function bar when enabled','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
         'id' => 'article_nextpre',
         'type' => 'switcher',
         'title' => __('Article Page Prev/Next Article Switcher','sakurairo_csf'),
