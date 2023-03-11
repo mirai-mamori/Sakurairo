@@ -1813,19 +1813,19 @@ h1.works-title {
 #archives-temp h2 {
   font-weight: 400;
   color: var(--theme-skin,#505050);
-  padding-bottom: 15px;
-  border-bottom: 1px dashed #F1F1F1;
   text-align: center;
 }
 
 #archives-temp h3 {
-  letter-spacing: 2px;
+  letter-spacing: 10px;
   font-style: italic;
   font-size: 20px;
   font-weight: var(--global-font-weight,400);
   color: var(--theme-skin,#505050);
-  margin-left: 30px;
+  margin-left: 35px;
   margin-top: 50px;
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
 .brick a {
@@ -1835,26 +1835,22 @@ h1.works-title {
   margin-bottom: 20px;
   display: block;
   letter-spacing: 0;
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  background: rgba(255,255,255,0.5);
+  border-radius: 10px;
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
-.ar-time i {
+#archives-temp h2 i {
   padding: 10px;
-  border-radius: 100px;
-  background: var(--theme-skin,#505050);
-  color: #fff;
-}
-
-.ar-time {
-  position: absolute;
-  left: -18px;
-  top: px;
-  margin-top: 3px;
+  font-size: 20px;
 }
 
 .arrow-left-ar {
   width: 0;
   height: 0;
-  display: block;
+  display: none;
   float: left;
   margin-top: 10px;
   border-left: 20px solid transparent;
@@ -1869,7 +1865,7 @@ span.ar-circle {
   display: inline-block;
   position: absolute;
   left: -5px;
-  margin-top: 22px;
+  margin-top: 3.2%;
   border-radius: 100px;
 }
 
@@ -5929,13 +5925,23 @@ h1.page-title.mb- {
 }
 
 #archives-temp h3:hover {
-  color: #ddd;
+  color: var(--theme-skin-matching);
   cursor: pointer;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.brick a:hover {
+  color: var(--theme-skin-matching);
+  box-shadow: 0 1px 20px 10px #e8e8e8;
+  background: rgba(255,255,255,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
 span.time {
   float: right;
-  color: #CACACA;
+  color: #7d7d7d;
 }
 
 .brick {
@@ -5944,7 +5950,7 @@ span.time {
 
 #archives-content {
   position: relative;
-  border-left: 1px dashed #F5F5F5;
+  margin-top: 10%;
 }
 
 .brick em {
@@ -9822,6 +9828,19 @@ body.dark .font-family-controls button.selected {
   background-color: #808080;
 }
 
+body.dark #archives-temp h3,
+body.dark #archives-temp h2 {
+  color: #CCCCCC;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark #archives-temp h3:hover {
+  color: var(--theme-skin-matching);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
 body.dark .widget-area .show-hide svg path {
   fill: #CCCCCC;
 }
@@ -9849,6 +9868,28 @@ body.dark .entry-content h4,
 body.dark .entry-content h5,
 body.dark .entry-content h6 {
   color: #CCCCCC;
+}
+
+body.dark .brick a {
+  color: #7D7D7D;
+  box-shadow: 0 1px 20px 2px rgba(26,26,26,0.8);
+  background: rgba(26,26,26,0.6);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .brick a:hover {
+  color: var(--theme-skin-matching);
+  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
+  background: rgba(26,26,26,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark span.ar-circle{
+  background-color: var(--theme-skin-dark);
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
 body.dark .links ul li {
