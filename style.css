@@ -7272,6 +7272,14 @@ a.toc-link {
   text-indent: 0 !important;
 }
 
+.ghcard {
+  position: relative;
+}
+
+.ghcard img{
+  border-radius: 10px;
+}
+
 .contents span img,
 .entry-content span img {
   height: 30px;
