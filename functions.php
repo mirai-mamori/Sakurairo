@@ -1805,6 +1805,26 @@ function gh_card($attr, $content = '')
     return '<div class="ghcard"><a href="https://github.com/'. $path .'"><img src="https://github-readme-stats.maho.cc/api'. $content .'" alt="Github-Card"></a></div>';
 }
 
+add_shortcode('showcard', 'show_card');
+function show_card($attr, $content = '')
+{
+    extract(shortcode_atts(array("icon" => "", "title" => "", "img" => "", "color" => ""), $attr));
+    return '<section class="showcard">
+    <div class="img" alt="Show-Card" style="background:url('. $img .');background-size:cover;background-position: center;">
+    </div>
+    <br>
+    <div class="icon">
+    <i class="fa '. $icon .'"></i>
+    </div>
+    <div class="title">
+    '. $title .'					
+    </div>
+    <div class="link" style="background:'. $color .' !important;">
+    <a href="'. $content .'"><i class="fa fa-arrow-right" aria-hidden="true" /></i></a>
+    </div>
+</section>';
+}
+
 //code end
 
 //WEBP支持
