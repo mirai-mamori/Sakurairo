@@ -5375,7 +5375,6 @@ a:focus {
 .site-info a:hover,
 .post-lincenses a:hover,
 .post-tags a:hover,
-.comment h4 a:hover,
 .ins-section .ins-search-item:hover .ins-slug,
 .ins-section .ins-search-item:hover .ins-search-preview,
 .ins-section .ins-search-item:hover header,
@@ -5383,6 +5382,10 @@ a:focus {
 .sorry li a:hover,
 .art .art-content #archives a:hover{
   color: var(--theme-skin-matching,#505050);
+}
+
+.comment h4 a:hover{
+  color: var(--comment_area_matching);
 }
 
 .motion-switcher-table .on-hover {
