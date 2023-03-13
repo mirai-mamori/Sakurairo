@@ -10186,6 +10186,7 @@ body.dark .showcard .link {
 
 body.dark .showcard .link:hover{
   box-shadow: 0 1px 30px -2px rgba(26,26,26,0.95);
+  filter: opacity(0.85);
   -webkit-transition: all .8s;
   transition: all .8s;
 }
