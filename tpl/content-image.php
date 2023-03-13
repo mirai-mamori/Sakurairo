@@ -15,7 +15,7 @@
 	<?php if ( has_post_thumbnail() ) { ?>
 		<a href="<?php the_permalink();?>"><div class="overlay"><i class="iconfont icon-text"></i></div><?php the_post_thumbnail(); ?></a>
 		<?php } else {?>
-		<a href="<?php the_permalink();?>"><div class="overlay"><i class="iconfont icon-text"></i></div><img src="<?php bloginfo('template_url'); ?>/inc/content-image/d-<?php echo rand(1,4)?>.jpg" /></a>
+		<a href="<?php the_permalink();?>"><div class="overlay"><i class="iconfont icon-text"></i></div><img src="<?=iro_opt('vision_resource_basepath')?>basic/content-image-<?php echo rand(1,4)?>.jpg" /></a>
 		<?php } ?>
 	</div>	
 	<h1 class="entry-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
