@@ -343,7 +343,6 @@ blockquote:before {
   color: var(--theme-skin,#505050);
   font-family: FontAwesome;
   font-weight: var(--global-font-weight);
-
 }
 
 blockquote:after {
@@ -355,7 +354,6 @@ blockquote:after {
   color: var(--theme-skin,#505050);
   font-family: FontAwesome;
   font-weight: var(--global-font-weight);
-
 }
 
 input[type=button] {
@@ -7314,6 +7312,7 @@ a.toc-link {
   border-radius: 10px;
   margin: auto;
   margin-top: 4%;
+  margin-bottom: 0%;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   -webkit-transition: all .8s;
   transition: all .8s;
@@ -7322,6 +7321,10 @@ a.toc-link {
 
 .showcard .img:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
+  height: 180px;
+  margin-top: 8%;
+  margin-bottom: 5%;
+  width: 180px;
   opacity: 0.9;
   -webkit-transition: all .8s;
   transition: all .8s;
@@ -7366,6 +7369,8 @@ a.toc-link {
 
 .showcard .link:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
+  padding-right: 11px;
+  padding-left: 12px;
   -webkit-transition: all .8s;
   transition: all .8s;
 }
@@ -9846,6 +9851,14 @@ body.dark span.sitename {
 body.dark button {
   color: #CCCCCC;
   box-shadow: none;
+}
+
+body.dark blockquote:before {
+  color: #CCCCCC;
+}
+
+body.dark blockquote:after {
+  color: #CCCCCC;
 }
 
 body.dark .post-list-thumb i,
