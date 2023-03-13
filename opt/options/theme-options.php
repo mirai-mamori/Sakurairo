@@ -196,7 +196,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'    => 'color',
         'title'   => __('Matching Color','sakurairo_csf'),
         'desc'    => __('Customize the colors','sakurairo_csf'),
-        'default' => '#ffe066'
+        'default' => '#F9D938'
       ),  
 
       array(
@@ -209,7 +209,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'    => 'color',
         'title'   => __('Dark Mode Theme Color','sakurairo_csf'),
         'desc'    => __('Customize the colors','sakurairo_csf'),
-        'default' => '#ffcc00'
+        'default' => '#FCCD00'
       ),  
       array(
         'id'    => 'theme_darkmode_auto',
@@ -1129,7 +1129,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Preload Animation Color B','sakurairo_csf'),
         'dependency' => array( 'preload_animation', '==', 'true' ),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#ffcc00'
+        'default' => '#FCCD00'
       ),   
 
       array(
@@ -2214,7 +2214,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Display Area Matching Color','sakurairo_csf'),
         'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#ffe066'
+        'default' => '#a0daa9'
       ),  
 
       array(
@@ -2391,7 +2391,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Article Area Matching Color','sakurairo_csf'),
         'dependency' => array( 'post_list_style', '==', 'imageflow' ),
         'desc' => __('Customize the colors, This option only supports filling in hexadecimal colors, suggest the same as the matching color','sakurairo_csf'),
-        'default' => '#ffcc00'
+        'default' => '#FCCD00'
       ),    
 
       array(
@@ -2775,7 +2775,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Ideas Template Background ColorⅠ','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#ffe066'
+        'default' => '#F9D938'
       ),    
 
       array(
@@ -2783,7 +2783,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Ideas Template Background Color II','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#ffcc00'
+        'default' => '#FCCD00'
       ),    
 
       array(
@@ -2868,7 +2868,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Friend Link Template Unit Matching Color','sakurairo_csf'),
         'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#ffe066'
+        'default' => '#ac354b'
       ),  
 
       array(
@@ -2919,7 +2919,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Page Comment Area Matching Color','sakurairo_csf'),
         'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#ffe066'
+        'default' => '#6667ab'
       ),  
 
       array(

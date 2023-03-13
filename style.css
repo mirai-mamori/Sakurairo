@@ -162,7 +162,7 @@ progress {
 a {
   background-color: transparent;
   text-decoration: none;
-  color: var(--theme-skin-matching,#ffe066);
+  color: var(--theme-skin-matching,#F9D938);
   outline: 0;
   -webkit-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
   -moz-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
@@ -6021,7 +6021,7 @@ a.page-numbers {
 }
 
 .comment .body p a {
-  color: var(--comment_area_matching,#ffe066);
+  color: var(--comment_area_matching,#F9D938);
   padding: 0 5px;
   text-decoration: underline;
 }
@@ -9651,21 +9651,21 @@ h3::before {
 .entry-content h3:after,
 .entry-content h4:after,
 .entry-content h5:after {
-color: var(--theme-skin-matching,#ffe066);
+color: var(--theme-skin-matching,#F9D938);
 }
 
 .entry-content a {
-  color: var(--theme-skin-matching,#ffe066);
+  color: var(--theme-skin-matching,#F9D938);
 }
 
 .entry-content a:hover {
-  color: var(--theme-skin-dark,#ffcc00);
-  text-decoration: underline var(--theme-skin-dark,#ffcc00);
+  color: var(--theme-skin-dark,#FCCD00);
+  text-decoration: underline var(--theme-skin-dark,#FCCD00);
 }
 
 .entry-content code {
   background: #505050;
-  color: var(--theme-skin-matching,#ffe066);
+  color: var(--theme-skin-matching,#F9D938);
   word-break: break-word;
   font-family: 'Noto Sans SC';
   padding: 5px;
