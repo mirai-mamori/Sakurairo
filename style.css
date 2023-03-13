@@ -7368,7 +7368,8 @@ a.toc-link {
 }
 
 .showcard .link:hover {
-  box-shadow: 0 1px 20px 10px #e8e8e8;
+  box-shadow: 0 1px 20px 8px #e8e8e8;
+  filter: opacity(0.75);
   -webkit-transition: all .8s;
   transition: all .8s;
 }
