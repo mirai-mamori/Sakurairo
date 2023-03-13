@@ -7285,13 +7285,13 @@ a.toc-link {
 
 .showcard {
   position: relative;
-  transition: .8s;
   float: left;
   width: 240px;
   height: auto;
   left: 0;
-  margin-top: 20px;
   top: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 1px 30px -4px #e8e8e8;
@@ -7339,10 +7339,12 @@ a.toc-link {
 .showcard .title {
   position: relative;
   float: left;
+  width: 63%;
   font-size: 17px;
-  margin-top: 2px;
   margin-left: 8px;
-  margin-bottom: 16px;
+  margin-top: 2px;
+  margin-bottom: 12px;
+  overflow: hidden;
 }
 
 .showcard .link {
@@ -7356,7 +7358,7 @@ a.toc-link {
   padding-bottom: 2px;
   border-radius: 10px;
   margin-right: 4%;
-  margin-top: 1px;
+  margin-top: 2px;
   margin-bottom: 16px;
   -webkit-transition: all .8s;
   transition: all .8s;

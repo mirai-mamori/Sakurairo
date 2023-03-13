@@ -1817,7 +1817,7 @@ function show_card($attr, $content = '')
     <i class="fa '. $icon .'"></i>
     </div>
     <div class="title">
-    '. $title .'					
+    '. $title .'		
     </div>
     <div class="link" style="background:'. $color .' !important;">
     <a href="'. $content .'"><i class="fa fa-arrow-right" aria-hidden="true" /></i></a>
