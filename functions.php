@@ -1097,17 +1097,18 @@ add_filter('the_content_feed', 'toc_support');
 // 显示访客当前 IP
 function get_the_user_ip()
 {
-    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-        //check ip from share internet
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-        //to check ip is pass from proxy
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    } else {
-        $ip = $_SERVER['REMOTE_ADDR'];
-    }
+    // if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    //     //check ip from share internet
+    //     $ip = $_SERVER['HTTP_CLIENT_IP'];
+    // } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    //     //to check ip is pass from proxy
+    //     $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    // } else {
+    //     $ip = $_SERVER['REMOTE_ADDR'];
+    // }
     // 简略版
     // $ip = $_SERVER['HTTP_CLIENT_IP'] ?: ($_SERVER['HTTP_X_FORWARDED_FOR'] ?: $_SERVER['REMOTE_ADDR']);
+    $ip = $_SERVER['HTTP_CLIENT_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
     return apply_filters('wpb_get_ip', $ip);
 }
 
@@ -1148,44 +1149,92 @@ function siren_private()
     die;
 }
 
+// 时间序列
+// function memory_archives_list()
+// {
+//     $output = '<div id="archives"><p style="text-align:right;">[<span id="al_expand_collapse">' . __("All expand/collapse", "sakurairo") /*全部展开/收缩*/ . '</span>]<!-- (注: 点击月份可以展开)--></p>';
+//     $the_query = new WP_Query('posts_per_page=-1&ignore_sticky_posts=1&post_type=post'); //update: 加上忽略置顶文章
+//     $year = 0;
+//     $mon = 0;
+//     $i = 0;
+//     $j = 0;
+//     while ($the_query->have_posts()) : $the_query->the_post();
+//         $year_tmp = get_the_time('Y');
+//         $mon_tmp = get_the_time('m');
+//         $y = $year;
+//         $m = $mon;
+//         if ($mon != $mon_tmp && $mon > 0) {
+//             $output .= '</ul></li>';
+//         }
+
+//         if ($year != $year_tmp && $year > 0) {
+//             $output .= '</ul>';
+//         }
+
+//         if ($year != $year_tmp) {
+//             $year = $year_tmp;
+//             $output .= '<h3 class="al_year">' . $year . __(" ", "year", "sakurairo") . /*年*/ ' </h3><ul class="al_mon_list">'; //输出年份
+//         }
+//         if ($mon != $mon_tmp) {
+//             $mon = $mon_tmp;
+//             $output .= '<li class="al_li"><span class="al_mon"><span style="color:' . iro_opt('theme_skin') . ';">' . get_the_time('M') . '</span> (<span id="post-num"></span>' . __(" post(s)", "sakurairo") /*篇文章*/ . ')</span><ul class="al_post_list">'; //输出月份
+//         }
+//         $output .= '<li>' . '<a href="' . get_permalink() . '"><span style="color:' . iro_opt('theme_skin') . ';">' /*get_the_time('d'.__(" ","sakurairo")) 日*/ . '</span>' . get_the_title() . ' <span>(' . get_post_views(get_the_ID()) . ' <span class="fa fa-fire" aria-hidden="true"></span> / ' . get_comments_number('0', '1', '%') . ' <span class="fa fa-commenting" aria-hidden="true"></span>)</span></a></li>'; //输出文章日期和标题
+//     endwhile;
+//     wp_reset_postdata();
+//     $output .= '</ul></li></ul> <!--<ul class="al_mon_list"><li><ul class="al_post_list" style="display: block;"><li>博客已经萌萌哒运行了<span id="monitorday"></span>天</li></ul></li></ul>--></div>';
+//     #update_option('memory_archives_list', $output);
+//     echo $output;
+// }
+
+
 //时间序列
 function memory_archives_list()
 {
-    // 始终为true, 为什么要这么做呢 
-    if (true) {
-        $output = '<div id="archives"><p style="text-align:right;">[<span id="al_expand_collapse">' . __("All expand/collapse", "sakurairo") /*全部展开/收缩*/ . '</span>]<!-- (注: 点击月份可以展开)--></p>';
-        $the_query = new WP_Query('posts_per_page=-1&ignore_sticky_posts=1&post_type=post'); //update: 加上忽略置顶文章
-        $year = 0;
-        $mon = 0;
-        $i = 0;
-        $j = 0;
-        while ($the_query->have_posts()) : $the_query->the_post();
-            $year_tmp = get_the_time('Y');
-            $mon_tmp = get_the_time('m');
-            $y = $year;
-            $m = $mon;
-            if ($mon != $mon_tmp && $mon > 0) {
-                $output .= '</ul></li>';
-            }
+    // 尝试从缓存中获取结果
+    $cache_key = 'memory_archives_list';
+    $output = get_transient($cache_key);
 
-            if ($year != $year_tmp && $year > 0) {
-                $output .= '</ul>';
-            }
-
-            if ($year != $year_tmp) {
-                $year = $year_tmp;
-                $output .= '<h3 class="al_year">' . $year . __(" ", "year", "sakurairo") . /*年*/ ' </h3><ul class="al_mon_list">'; //输出年份
-            }
-            if ($mon != $mon_tmp) {
-                $mon = $mon_tmp;
-                $output .= '<li class="al_li"><span class="al_mon"><span style="color:' . iro_opt('theme_skin') . ';">' . get_the_time('M') . '</span> (<span id="post-num"></span>' . __(" post(s)", "sakurairo") /*篇文章*/ . ')</span><ul class="al_post_list">'; //输出月份
-            }
-            $output .= '<li>' . '<a href="' . get_permalink() . '"><span style="color:' . iro_opt('theme_skin') . ';">' /*get_the_time('d'.__(" ","sakurairo")) 日*/ . '</span>' . get_the_title() . ' <span>(' . get_post_views(get_the_ID()) . ' <span class="fa fa-fire" aria-hidden="true"></span> / ' . get_comments_number('0', '1', '%') . ' <span class="fa fa-commenting" aria-hidden="true"></span>)</span></a></li>'; //输出文章日期和标题
-        endwhile;
-        wp_reset_postdata();
-        $output .= '</ul></li></ul> <!--<ul class="al_mon_list"><li><ul class="al_post_list" style="display: block;"><li>博客已经萌萌哒运行了<span id="monitorday"></span>天</li></ul></li></ul>--></div>';
-        #update_option('memory_archives_list', $output);
+    if ($output !== false) {
+        echo $output;
+        return;
     }
+    $output = '<div id="archives"><p style="text-align:right;">[<span id="al_expand_collapse">' . __("All expand/collapse", "sakurairo") /*全部展开/收缩*/ . '</span>]<!-- (注: 点击月份可以展开)--></p>';
+    $posts = get_posts(array(
+        'posts_per_page' => -1,
+        'ignore_sticky_posts' => true,
+        'post_type' => 'post'
+    ));
+    $year = 0;
+    $mon = 0;
+    foreach ($posts as $post){
+        setup_postdata($post);
+        $year_tmp = get_the_time('Y');
+        $mon_tmp = get_the_time('m');
+        $y = $year;
+        $m = $mon;
+        if ($mon != $mon_tmp && $mon > 0) {
+            $output .= '</ul></li>';
+        }
+
+        if ($year != $year_tmp && $year > 0) {
+            $output .= '</ul>';
+        }
+
+        if ($year != $year_tmp) {
+            $year = $year_tmp;
+            $output .= '<h3 class="al_year">' . $year . __(" ", "year", "sakurairo") . /*年*/ ' </h3><ul class="al_mon_list">'; //输出年份
+        }
+        if ($mon != $mon_tmp) {
+            $mon = $mon_tmp;
+            $output .= '<li class="al_li"><span class="al_mon"><span style="color:' . iro_opt('theme_skin') . ';">' . get_the_time('M') . '</span> (<span id="post-num"></span>' . __(" post(s)", "sakurairo") /*篇文章*/ . ')</span><ul class="al_post_list">'; //输出月份
+        }
+        $output .= '<li>' . '<a href="' . get_permalink() . '"><span style="color:' . iro_opt('theme_skin') . ';">' /*get_the_time('d'.__(" ","sakurairo")) 日*/ . '</span>' . get_the_title() . ' <span>(' . get_post_views(get_the_ID()) . ' <span class="fa fa-fire" aria-hidden="true"></span> / ' . get_comments_number('0', '1', '%') . ' <span class="fa fa-commenting" aria-hidden="true"></span>)</span></a></li>'; //输出文章日期和标题
+    }
+    wp_reset_postdata();
+    $output .= '</ul></li></ul> <!--<ul class="al_mon_list"><li><ul class="al_post_list" style="display: block;"><li>博客已经萌萌哒运行了<span id="monitorday"></span>天</li></ul></li></ul>--></div>';
+    set_transient($cache_key, $output, 3600);
+    #update_option('memory_archives_list', $output);
     echo $output;
 }
 
@@ -1594,10 +1643,12 @@ function get_random_url(string $url):string
     $array = parse_url($url);
     if (!isset($array['query'])) {
         // 无参数
-        return $url.'?'.rand(1,100);
+        $url .= '?';
+    } else {
+        // 有参数
+        $url .= '&';
     }
-    // 有参数
-    return $url.'&'.rand(1,100);
+    return $url.random_int(1,100);
 }
 
 
@@ -1615,12 +1666,6 @@ function DEFAULT_FEATURE_IMAGE(string $size='source'):string
     # 拼接符
     $splice = strpos($_api_url, 'index.php?') !== false ? '&' : '?';
     $_api_url = "{$_api_url}{$splice}size={$size}&$rand";
-
-    // if (strpos($_api_url, 'index.php?') !== false) {
-    //     $_api_url = "{$_api_url}&size={$size}&$rand";
-    // }else{
-    //     $_api_url = "{$_api_url}?size={$size}&$rand";
-    // }
     return $_api_url;
 }
 
