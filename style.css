@@ -1258,12 +1258,12 @@ h1.page-title {
 .post-footer {
   padding: 30px 0;
   width: 98%;
-  height: 80px;
+  height: auto;
   left: 50%;
   margin-left: -49%;
   position: relative;
+  float: left;
   border: none;
-  margin-bottom: 10px;
   margin-top: 50px;
 }
 
@@ -7754,11 +7754,9 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 
   .post-squares {
     overflow: hidden;
-    width: 100%;
-    margin: 55px 0;
+    margin: auto;
     background: #000;
     left: 0;
-    margin-left: 0;
   }
 }
 
