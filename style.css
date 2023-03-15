@@ -7757,8 +7757,8 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     margin: auto;
     background: #000;
     left: 0;
-    width: 96%;
-    margin-left: 0;
+    width: 96% !important;
+    margin-left: 2% !important;
   }
 }
 
