@@ -7820,6 +7820,12 @@ i.iconfont.js-toggle-search.iconsearch:hover {
   .post-footer {
     max-width: 800px;
     margin-left: -43%;
+    width: 86%;
+  }
+  .post-squares{
+    max-width: 800px;
+    margin-left: -43%;
+    width: 86%;
   }
 }
 
