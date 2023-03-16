@@ -506,15 +506,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'label'   => __('It is on by default. Click to enter the search area','sakurairo_csf'),
         'default' => true
       ),
-      array(
-        'id'    => 'nav_menu_blur',
-        'type'  => 'slider',
-        'title' => __('Nav Menu Blur','sakurairo_csf'),
-        'desc'   => __('Slide to adjust, the recommended value is 5px, and this function will be off when set to 0px','sakurairo_csf'),
-        'unit'    => 'px',
-        'max'   => '20',
-        'default' => '0'
-      ),
 
       array(
         'id'    => 'search_area_background',

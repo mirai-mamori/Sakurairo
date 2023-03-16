@@ -951,7 +951,6 @@ li.link-item {
     transition: all 1s ease !important;
     width:<?=iro_opt('nav_menu_shrink_animation', ''); ?>% ;
 	left:calc(97.5% - <?=iro_opt('nav_menu_shrink_animation', ''); ?>%);
-    box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4);
     border-radius: <?=iro_opt('nav_menu_radius', ''); ?>px !important;
 }
 .site-title img {
@@ -1077,16 +1076,9 @@ h1.main-title {
 }
 
 <?php } 
-$nav_menu_blur=iro_opt('nav_menu_blur','0');
-if($nav_menu_blur != '0'){
+
 ?>
-.yya{
-    backdrop-filter: blur(<?=$nav_menu_blur?>px);
-    -webkit-backdrop-filter: blur(<?=$nav_menu_blur?>px);
-}
-<?php
-}
-?>
+
 <?php 
 if(iro_opt('cover_half_screen_curve',true)){
    ?> 
