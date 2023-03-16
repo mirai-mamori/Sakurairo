@@ -772,7 +772,7 @@ input[type=week] {
 .site-header.yya{
   /* background: hsla(var(--header-color-h,0deg),var(--header-color-s,0%),var(--header-color-l,100%),.75); */
   background: rgba(255, 255, 255, .75);
-  box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4);
+  /* box-shadow: 0 1px 40px -8px rgba(255, 255, 255, .4);*/
 }
 
 .yya {
@@ -877,7 +877,7 @@ input[type=week] {
   white-space: nowrap;
   z-index: 9999;
   border-radius: 15px;
-  box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .2);
+  /*box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .2);*/
   animation: header-menu .8s;
 }
 
