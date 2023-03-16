@@ -122,7 +122,7 @@ if (iro_opt('theme_skin')) { ?>
 .logolink ruby rt {
     font-size: 10px;
     letter-spacing:2px;
-    transform: translateY(-15px);
+    transform: translateY(-12px);
     opacity: 0;
     transiton-property: opacity;
     transition-duration: 0.5s, 0.5s;
