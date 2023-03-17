@@ -1045,7 +1045,7 @@ input[type=week] {
 }
 
 .post-date {
-  background-color: #FFEEEB;
+  background-color: #FFFFFF;
   font-size: 12px;
   width: max-content;
   padding: 4px 10px 4px 10px;
@@ -2082,6 +2082,10 @@ nav#comments-navi {
   color: var(--comment_area_matching);
 }
 
+.comment-reply-login:hover{
+  color: #7D7D7D;
+}
+
 .comment .comment-reply-link {
   font-size: 12px;
   display: block;
@@ -2095,7 +2099,14 @@ nav#comments-navi {
   border-radius: 3px;
   opacity: 0;
   font-weight: var(--global-font-weight);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
 
+.comment .comment-reply-link:hover {
+  background-color: #7D7D7D;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
 .comment .info {
@@ -5632,6 +5643,14 @@ h1.page-title.mb- {
   width: 94.5%;
 }
 
+.must-log-in a {
+  color: var(--comment_area_matching);
+}
+
+.must-log-in a:hover {
+  color: #7d7d7d;
+}
+
 .post-squares .half {
   width: 50%;
   float: left;
@@ -6084,6 +6103,10 @@ div.cbp_tmlabel > p {
 
 .comment-edit-link{
   color: var(--comment_area_matching);
+}
+
+.comment-edit-link:hover {
+  color: #7D7D7D;
 }
 
 .comment .children {
@@ -6619,8 +6642,11 @@ body.dark::-webkit-scrollbar-track {
 }
 
 .sm {
-  cursor: wait;
   color: var(--comment_area_matching);
+}
+
+.sm:hover {
+  color:#7D7D7D;
 }
 
 .popcontainer {
