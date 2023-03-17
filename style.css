@@ -922,7 +922,7 @@ input[type=week] {
   height: 80px;
   line-height: 80px;
   text-align: center;
-  background: var(--theme-skin,#BBE2DB);
+  background: var(--theme-skin,#505050);
   border-radius: 50%;
   opacity: 0;
   z-index: 1;
@@ -1639,7 +1639,7 @@ h3#comments-list-title {
 }
 
 .butterBar-message {
-  background: var(--theme-skin,#FE9600);
+  background: var(--theme-skin,#505050);
   color: #fff;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -2649,6 +2649,7 @@ h1.main-title {
 }
 
 .wechatInner:before {
+  display: none;
   content: "";
   position: absolute;
   top: -30px;
@@ -3132,10 +3133,10 @@ i.iconfont.js-toggle-search.iconsearch {
   -o-transition: all .3s;
   transition: all .3s;
   position: relative;
-  border: 1px solid var(--theme-skin,#72C5A6);
+  border: 1px solid var(--theme-skin,#505050);
   overflow: hidden;
   display: inline-block;
-  background: var(--theme-skin,#72C5A6);
+  background: var(--theme-skin,#505050);
 }
 
 .download::after {
@@ -4274,7 +4275,7 @@ input[type=radio]:checked:before {
 
 .the-feature.from_left_and_right .info h3 {
   text-transform: uppercase;
-  color: var(--theme-skin,#fff);
+  color: var(--theme-skin,#505050);
   text-align: center;
   font-size: 20px;
   padding: 6px;
@@ -4295,7 +4296,7 @@ input[type=radio]:checked:before {
   font-style: italic;
   font-size: 12px;
   position: relative;
-  color: var(--theme-skin,#EE9CA1);
+  color: var(--theme-skin,#505050);
   padding: 0px 10px 10px;
   text-align: center;
   -webkit-transition: all .35s .1s linear;
@@ -5979,7 +5980,7 @@ form#commentform,
 }
 
 span.page-numbers.current {
-  color: var(--theme-skin,#74CCC4);
+  color: var(--theme-skin,#505050);
   padding: 0 5px;
 }
 
