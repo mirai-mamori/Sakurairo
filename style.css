@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://fuukei.org/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.5.11
+Version: 2.5.12
 Tested up to: 6.0
 Requires at least: 5.6
 Requires PHP: 7.2
@@ -31,7 +31,6 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   top: 0;
   left: 0;
   width: 100%;
-  border-radius: 0 0 20px 20px;
   overflow: hidden;
   transition: all 0.8s ease !important;
 }
@@ -816,7 +815,7 @@ input[type=week] {
   position: absolute;
   bottom: -5px;
   height: 4px;
-  background-color: var(--theme-skin-matching,#fe9600);
+  background-color: var(--theme-skin-matching,#F9D938);
   width: 100%;
   border-radius: 30px;
   max-width: 0;
@@ -1188,9 +1187,9 @@ input[type=week] {
 }
 
 .navigator i:hover {
-  color: var(--theme-skin-matching,#fff);
-  background: var(--theme-skin-matching,#505050);
-  border: 2px solid var(--theme-skin-matching,#505050);
+  color: var(--theme-skin-matching,#F9D938);
+  background: var(--theme-skin-matching,#F9D938);
+  border: 2px solid var(--theme-skin-matching,#F9D938);
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
   -o-transition: all .2s ease-in-out;
@@ -4071,7 +4070,7 @@ input[type=radio]:checked:before {
   position: fixed;
   top: 0;
   height: 3px;
-  background: var(--theme-skin,#505050);
+  background: var(--theme-skin-matching,#F9D938);
   transition-property: width, background;
   transition-duration: 1s, 1s;
   z-index: 99999;
@@ -5377,7 +5376,7 @@ a:focus {
 .ins-section .ins-search-item:hover .iconfont,
 .sorry li a:hover,
 .art .art-content #archives a:hover{
-  color: var(--theme-skin-matching,#505050);
+  color: var(--theme-skin-matching,#F9D938);
 }
 
 .comment h4 a:hover{
@@ -6543,8 +6542,8 @@ body.dark::-webkit-scrollbar-track {
 
 .ex-login input.login-button:hover,
 .ex-register input.register-button:hover {
-  background-color: var(--theme-skin-matching,#505050);
-  border-color: var(--theme-skin-matching,#505050);
+  background-color: var(--theme-skin-matching,#F9D938);
+  border-color: var(--theme-skin-matching,#F9D938);
   color: #fff;
 }
 
@@ -6940,8 +6939,8 @@ a.toc-link {
 
 .insert-image-tips:hover,
 .insert-image-tips-hover {
-  color: var(--theme-skin-matching,#505050);
-  border: 1px solid var(--theme-skin-matching,#505050);
+  color: var(--theme-skin-matching,#F9D938);
+  border: 1px solid var(--theme-skin-matching,#F9D938);
 }
 
 .top-feature-row {
@@ -7085,7 +7084,7 @@ a.toc-link {
 
 .menu-list li:hover,
 .font-family-controls button:hover {
-  background-color: var(--theme-skin-matching,#505050);
+  background-color: var(--theme-skin-matching,#F9D938);
   -webkit-transition: all .8s;
   transition: all .8s;
   color: #fff;
@@ -8535,7 +8534,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 
   #mo-nav ul li a:hover {
     cursor: pointer;
-    color: var(--theme-skin-matching,#505050);
+    color: var(--theme-skin-matching,#F9D938);
   }
 
   .we-content li {

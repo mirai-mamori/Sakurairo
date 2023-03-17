@@ -49,8 +49,7 @@ get_header();
 
 	.author_info .author-center .description {
 		font-size: 14px;
-		color: rgba(0, 0, 0, .4);
-		line-height: 1.6;
+		line-height: 2;
 		font-weight: var(--global-font-weight);
 	}
 </style>

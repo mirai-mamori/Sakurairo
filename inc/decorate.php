@@ -940,7 +940,6 @@ li.link-item {
     top: 0;
     left: 0;
     width: 100%;
-    border-radius: 0px;
     overflow: hidden;
 }
 <?php } ?>
