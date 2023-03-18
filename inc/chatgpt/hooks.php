@@ -37,31 +37,30 @@ namespace IROChatGPT {
         }
         return $chatGPT->ask(iro_opt('chatgpt_ask_prompt', DEFAULT_ASK_PROMPT))['answer'];
     }
-    function update_excerpt(int $post_id, WP_Post $post, bool $update)
-    {
-        if (!has_excerpt($post_id)) {
-            try {
-                $excerpt = summon_article_excerpt($post);
-                update_post_meta($post_id, POST_METADATA_KEY, $excerpt);
-            } catch (\Throwable $th) {
-                //throw $th;
-                error_log('使用ChatGPT生成文章摘要时出现了下述错误'.$th);
-            }
-        }
-    }
-    function show_ai_excerpt(string $post_excerpt, $post)
-    {
-        if (has_excerpt($post)) {
-            return $post_excerpt;
-        } else {
-            return get_post_meta($post, POST_METADATA_KEY, true);
-        }
-    }
+
     function apply_chatgpt_hook()
     {
         if (iro_opt('chatgpt_article_summarize')) {
-            add_action('save_post_post', 'update_excerpt');
-            add_filter('get_the_excerpt', 'show_ai_excerpt', 10, 2);
+            add_action('save_post_post', function (int $post_id, WP_Post $post, bool $update)
+            {
+                if (!has_excerpt($post_id)) {
+                    try {
+                        $excerpt = summon_article_excerpt($post);
+                        update_post_meta($post_id, POST_METADATA_KEY, $excerpt);
+                    } catch (\Throwable $th) {
+                        //throw $th;
+                        error_log('使用ChatGPT生成文章摘要时出现了下述错误'.$th);
+                    }
+                }
+            });
+            add_filter('get_the_excerpt', function (string $post_excerpt, $post)
+            {
+                if (has_excerpt($post)) {
+                    return $post_excerpt;
+                } else {
+                    return get_post_meta($post, POST_METADATA_KEY, true);
+                }
+            }, 10, 2);
         }
     }
 }
