@@ -13,7 +13,12 @@
     "require": {
         "haozi-team/chatgpt-php": "^1.7.2"
     },
-    "platform": {
-        "php": "7.4"
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "platform": {
+            "php": "7.4"
+        }
     }
 }
