@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-03-16 11:38+0800\n"
+"POT-Creation-Date: 2023-03-18 15:55+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,6 +20,13 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: classes/admin-options.class.php:26
+msgid ""
+"<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.5/series/login_logo.webp\" "
+"style=\"width:50px;height:50px;transform:translateY(32%);margin-right: 13px;"
+"\">Theme Sakurairo <small>Options</small>"
+msgstr ""
 
 #: classes/admin-options.class.php:169
 msgid "Error while saving the changes."
@@ -3556,8 +3563,8 @@ msgstr ""
 #: options/theme-options.php:3543
 #, php-format
 msgid ""
-"Sakurairo 主题版本 / Theme Version %s | 内部版本 / Internal Version %s | <a "
-"href=\"https://github.com/mirai-mamori/Sakurairo\">项目地址 / Project Address</a>"
+"Theme Sakurairo Version %s | Internal Version %s | <a href=\"https://github.com/"
+"mirai-mamori/Sakurairo\">Project Address</a>"
 msgstr ""
 
 #: options/theme-options.php:3548

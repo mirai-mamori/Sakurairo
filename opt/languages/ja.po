@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-03-16 11:38+0800\n"
-"PO-Revision-Date: 2023-03-16 11:38+0800\n"
+"POT-Creation-Date: 2023-03-18 15:45+0800\n"
+"PO-Revision-Date: 2023-03-18 15:50+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -3886,10 +3886,11 @@ msgstr ""
 #: options/theme-options.php:3543
 #, php-format
 msgid ""
-"Sakurairo 主题版本 / Theme Version %s | 内部版本 / Internal Version %s | <a "
-"href=\"https://github.com/mirai-mamori/Sakurairo\">项目地址 / Project "
-"Address</a>"
+"Theme Sakurairo Version %s | Internal Version %s | <a href=\"https://github."
+"com/mirai-mamori/Sakurairo\">Project Address</a>"
 msgstr ""
+"テーマ Sakurairo バージョン %s | 内部バージョン %s | <a href=\"https://"
+"github.com/mirai-mamori/Sakurairo\">プロジェクトアドレス</a>"
 
 #: options/theme-options.php:3548
 msgid "Update Related"
