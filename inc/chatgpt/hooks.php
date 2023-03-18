@@ -52,7 +52,7 @@ namespace IROChatGPT {
                         error_log('使用ChatGPT生成文章摘要时出现了下述错误'.$th);
                     }
                 }
-            });
+            },10,3);
             add_filter('get_the_excerpt', function (string $post_excerpt, $post)
             {
                 if (has_excerpt($post)) {
