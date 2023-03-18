@@ -40,7 +40,7 @@ namespace IROChatGPT {
                         update_post_meta($post_id, POST_METADATA_KEY, $excerpt);
                     } catch (\Throwable $th) {
                         //throw $th;
-                        error_log('使用ChatGPT生成文章摘要时出现了下述错误'.$th);
+                        error_log('ChatGPT-excerpt-err:'.$th);
                     }
                 }
             },10,3);
