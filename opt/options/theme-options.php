@@ -3236,36 +3236,24 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Others/#ChatGPT%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'id' => 'chatgpt_base_url',
         'type' => 'text',
         'title' => __('ChatGPT Base URL','sakurairo_csf'),
-        'desc' => __('Fill in the ChatGPT Base URL','sakurairo_csf'),
+        'desc' => __('Fill in the ChatGPT Base URL, The default is http://sxy.gay/','sakurairo_csf'),
+        'default' => 'http://sxy.gay/'
       ),
 
       array(
         'id' => 'chatgpt_access_token',
         'type' => 'text',
-        'title' => __('ChatGPT Access Token','sakurairo_csf'),
-        'desc' => __('Fill in the ChatGPT Access Token','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'chatgpt_init_prompt',
-        'type' => 'textarea',
-        'title' => __('ChatGPT Init Prompt','sakurairo_csf'),
-        'desc' => __('Fill in the ChatGPT Init Prompt','sakurairo_csf'),
-        'default' => '
-        "You are a excerpt generator. " .
-        "You can summarize articles given their title and full text. " .
-        "You should use the same language as the article for your excerpt. " .
-        "You do not need to write in third person."'
-      ),
-
-      array(
-        'id' => 'chatgpt_ask_prompt',
-        'type' => 'text',
-        'title' => __('ChatGPT Ask Prompt','sakurairo_csf'),
-        'desc' => __('Fill in the ChatGPT Ask Prompt','sakurairo_csf'),
+        'title' => __('ChatGPT API keys','sakurairo_csf'),
+        'desc' => __('Fill in Your ChatGPT API keys','sakurairo_csf'),
       ),
 
       array(
@@ -3274,6 +3262,27 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('ChatGPT Article Summarize','sakurairo_csf'),
         'label' => __('After turning on the ChatGPT Article Summarize, ChatGPT will automatically generate article abstracts','sakurairo_csf'),
         'default' => false
+      ),
+
+      array(
+        'id' => 'chatgpt_init_prompt',
+        'type' => 'textarea',
+        'title' => __('ChatGPT Article Summarize Init Prompt','sakurairo_csf'),
+        'dependency' => array( 'chatgpt_article_summarize', '==', 'true' ),
+        'desc' => __('Fill in the Init Prompt','sakurairo_csf'),
+        'default' => '
+"You are a excerpt generator. " .
+"You can summarize articles given their title and full text. " .
+"You should use the same language as the article for your excerpt. " .
+"You do not need to write in third person."'
+      ),
+
+      array(
+        'id' => 'chatgpt_ask_prompt',
+        'type' => 'text',
+        'title' => __('ChatGPT Article Summarize Ask Prompt','sakurairo_csf'),
+        'dependency' => array( 'chatgpt_article_summarize', '==', 'true' ),
+        'desc' => __('Fill in the Ask Prompt','sakurairo_csf'),
       ),
 
       )
