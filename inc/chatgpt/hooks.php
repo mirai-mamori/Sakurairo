@@ -18,23 +18,14 @@ namespace IROChatGPT {
     function summon_article_excerpt(WP_Post $post)
     {
         $chatGPT = new ChatGPTV2(iro_opt('chatgpt_access_token'), iro_opt('chatgpt_base_url'));
+
         $chatGPT->addMessage(iro_opt('chatgpt_system_prompt', DEFAULT_INIT_PROMPT), 'system');
-        $chatGPT->addMessage("文章标题：" . $post->post_title);
+        $chatGPT->addMessage("文章标题：" . $post->post_title,'user');
         $content = $post->post_content;
-        $content = apply_filters('the_content', $content);
+        $content = wp_strip_all_tags(apply_filters('the_content', $content));
 
-        //将$content分割成多个子字符串，每个子字符串的长度不超过限制
-        $chunks = str_split($content, MAX_MESSAGE_LENGTH);
+        $chatGPT->addMessage("正文：" .$content, 'user');
 
-        //遍历每个子字符串，并用$chatGPT->addMessage加入消息
-        foreach ($chunks as $chunk) {
-            //去除子字符串两端的空白字符
-            $chunk = trim($chunk);
-            //如果子字符串不为空，则加入消息
-            if ($chunk !== '') {
-                $chatGPT->addMessage($chunk, 'user');
-            }
-        }
         return $chatGPT->ask(iro_opt('chatgpt_ask_prompt', DEFAULT_ASK_PROMPT))['answer'];
     }
 
