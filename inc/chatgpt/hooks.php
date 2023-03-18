@@ -22,7 +22,7 @@ namespace IROChatGPT {
         $chatGPT->addMessage(iro_opt('chatgpt_system_prompt', DEFAULT_INIT_PROMPT), 'system');
         $chatGPT->addMessage("文章标题：" . $post->post_title,'user');
         $content = $post->post_content;
-        $content = wp_strip_all_tags(apply_filters('the_content', $content));
+        $content = substr(wp_strip_all_tags(apply_filters('the_content', $content)),0,4050);
 
         $chatGPT->addMessage("正文：" .$content, 'user');
 
