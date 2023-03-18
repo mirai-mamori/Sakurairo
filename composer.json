@@ -12,5 +12,8 @@
     ],
     "require": {
         "haozi-team/chatgpt-php": "^1.7.2"
+    },
+    "platform": {
+        "php": "7.4"
     }
 }
