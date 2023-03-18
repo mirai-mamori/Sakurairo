@@ -17,6 +17,11 @@ define('BUILD_VERSION', '2');
 
 require get_template_directory() . '/opt/option-framework.php';
 
+/**
+ * composer autoload
+ */
+require_once 'vendor/autoload.php';
+
 if (!function_exists('iro_opt')) {
     $GLOBALS['iro_options'] = get_option('iro_options');
     function iro_opt($option = '', $default = null)
@@ -1303,6 +1308,12 @@ function GBsubstr($string, $start, $length)
     }
 }
 
+/**
+ * chatgpt excerpt
+ */
+require_once __DIR__.'/inc/chatgpt/hooks.php';
+IROChatGPT\apply_chatgpt_hook();
+
 function excerpt_length($exp)
 {
     if (!function_exists('mb_substr')) {
@@ -1315,7 +1326,7 @@ function excerpt_length($exp)
     }
     return $exp;
 }
-add_filter('the_excerpt', 'excerpt_length');
+add_filter('the_excerpt', 'excerpt_length',11);
 
 /*
  * 后台路径

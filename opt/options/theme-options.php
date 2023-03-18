@@ -3231,6 +3231,56 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'others', 
+    'title' => __('ChatGPT Options','sakurairo_csf'),
+    'icon' => 'fa fa-connectdevelop',
+    'fields' => array(
+
+      array(
+        'id' => 'chatgpt_base_url',
+        'type' => 'text',
+        'title' => __('ChatGPT Base URL','sakurairo_csf'),
+        'desc' => __('Fill in the ChatGPT Base URL','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'chatgpt_access_token',
+        'type' => 'text',
+        'title' => __('ChatGPT Access Token','sakurairo_csf'),
+        'desc' => __('Fill in the ChatGPT Access Token','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'chatgpt_init_prompt',
+        'type' => 'textarea',
+        'title' => __('ChatGPT Init Prompt','sakurairo_csf'),
+        'desc' => __('Fill in the ChatGPT Init Prompt','sakurairo_csf'),
+        'default' => '
+        "You are a excerpt generator. " .
+        "You can summarize articles given their title and full text. " .
+        "You should use the same language as the article for your excerpt. " .
+        "You do not need to write in third person."'
+      ),
+
+      array(
+        'id' => 'chatgpt_ask_prompt',
+        'type' => 'text',
+        'title' => __('ChatGPT Ask Prompt','sakurairo_csf'),
+        'desc' => __('Fill in the ChatGPT Ask Prompt','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'chatgpt_article_summarize',
+        'type' => 'switcher',
+        'title' => __('ChatGPT Article Summarize','sakurairo_csf'),
+        'label' => __('After turning on the ChatGPT Article Summarize, ChatGPT will automatically generate article abstracts','sakurairo_csf'),
+        'default' => false
+      ),
+
+      )
+    ) );
+
+  Sakurairo_CSF::createSection( $prefix, array(
+    'parent' => 'others', 
     'title' => __('Low Use Options','sakurairo_csf'),
     'icon' => 'fa fa-low-vision',
     'fields' => array(
