@@ -17,6 +17,11 @@ define('BUILD_VERSION', '2');
 
 require get_template_directory() . '/opt/option-framework.php';
 
+/**
+ * composer autoload
+ */
+require_once 'vendor/autoload.php';
+
 if (!function_exists('iro_opt')) {
     $GLOBALS['iro_options'] = get_option('iro_options');
     function iro_opt($option = '', $default = null)
