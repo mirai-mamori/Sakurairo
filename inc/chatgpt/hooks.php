@@ -53,14 +53,15 @@ namespace IROChatGPT {
                     }
                 }
             },10,3);
-            add_filter('get_the_excerpt', function (string $post_excerpt, $post)
+            add_filter('the_excerpt', function (string $post_excerpt)
             {
+                global $post;
                 if (has_excerpt($post)) {
-                    return $post_excerpt;
+                     return $post_excerpt;
                 } else {
-                    return get_post_meta($post, POST_METADATA_KEY, true);
+                    return get_post_meta($post->ID, POST_METADATA_KEY, true);
                 }
-            }, 10, 2);
+            });
         }
     }
 }
