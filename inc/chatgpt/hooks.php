@@ -59,7 +59,8 @@ namespace IROChatGPT {
                 if (has_excerpt($post)) {
                      return $post_excerpt;
                 } else {
-                    return get_post_meta($post->ID, POST_METADATA_KEY, true);
+                    $ai_excerpt =  get_post_meta($post->ID, POST_METADATA_KEY, true);
+                    return $ai_excerpt ? $ai_excerpt:$post_excerpt;
                 }
             });
         }
