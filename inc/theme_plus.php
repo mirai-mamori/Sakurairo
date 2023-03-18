@@ -843,3 +843,9 @@ function mobile_get_useragent_icon(string $ua):string{
   <?php
   }
 }
+
+/**
+ * chatgpt excerpt
+ */
+require_once './chatgpt/hooks.php';
+IROChatGPT\apply_chatgpt_hook();
