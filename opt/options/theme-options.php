@@ -2467,14 +2467,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'max' => '20',
         'default' => '12'
       ),
-
-      array(
-        'id' => 'post_icon_more',
-        'type' => 'switcher',
-        'title' => __('Article Area "Detail" Icon','sakurairo_csf'),
-        'label' => __('When enabled the "Detail" icon will be displayed below the article area','sakurairo_csf'),
-        'default' => false
-      ),
       
       array(
         'id' => 'is_author_meta_show',
@@ -3262,6 +3254,12 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('ChatGPT Article Summarize','sakurairo_csf'),
         'label' => __('After turning on ChatGPT will automatically generate article abstracts','sakurairo_csf'),
         'default' => false
+      ),
+
+      array(
+        'type'    => 'content',
+        'content'=> __('Each update of your post will trigger a request to generate a summary. Due to current API limitations, if your article exceeds 4097 Token, the system will only send the unexceeded portion to generate a summary','sakurairo_csf'),
+        'dependency' => array( 'chatgpt_article_summarize', '==', 'true' ),
       ),
 
       array(

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-03-11 11:21+0800\n"
+"POT-Creation-Date: 2023-03-19 11:31+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
-#: archive.php:58 author.php:80 index.php:74
+#: archive.php:58 author.php:79 index.php:74
 msgid " Previous"
 msgstr ""
 
@@ -151,73 +151,73 @@ msgstr ""
 msgid "Widgets"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:81
 msgid "Nav Menus"
 msgstr ""
 
-#: functions.php:192 functions.php:203
+#: functions.php:197 functions.php:208
 msgid "Ideas"
 msgstr ""
 
-#: functions.php:193
+#: functions.php:198
 msgid "Idea"
 msgstr ""
 
-#: functions.php:194 functions.php:195
+#: functions.php:199 functions.php:200
 msgid "Publish New Idea"
 msgstr ""
 
-#: functions.php:196
+#: functions.php:201
 msgid "Edit Idea"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:202
 msgid "New Idea"
 msgstr ""
 
-#: functions.php:198
+#: functions.php:203
 msgid "View Idea"
 msgstr ""
 
-#: functions.php:199
+#: functions.php:204
 msgid "Search Idea"
 msgstr ""
 
-#: functions.php:200
+#: functions.php:205
 msgid "Not Found Idea"
 msgstr ""
 
-#: functions.php:201
+#: functions.php:206
 msgid "No Idea in the Trash"
 msgstr ""
 
-#: functions.php:274
+#: functions.php:279
 msgid "Copied!"
 msgstr ""
 
-#: functions.php:275
+#: functions.php:280
 msgid "Copy Code"
 msgstr ""
 
-#: functions.php:276
+#: functions.php:281
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, "
 "Cover Cache won't take effect."
 msgstr ""
 
-#: functions.php:277
+#: functions.php:282
 msgid "Commiting...."
 msgstr ""
 
-#: functions.php:278
+#: functions.php:283
 msgid "Succeed"
 msgstr ""
 
-#: functions.php:279
+#: functions.php:284
 msgid "10 files max per request"
 msgstr ""
 
-#: functions.php:280
+#: functions.php:285
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -226,15 +226,15 @@ msgid ""
 "This image is too large~Please reupload!"
 msgstr ""
 
-#: functions.php:281
+#: functions.php:286
 msgid "Uploading..."
 msgstr ""
 
-#: functions.php:282
+#: functions.php:287
 msgid "Uploaded successfully~"
 msgstr ""
 
-#: functions.php:283
+#: functions.php:288
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -242,133 +242,133 @@ msgid ""
 "{2}"
 msgstr ""
 
-#: functions.php:284
+#: functions.php:289
 msgid "Upload failed, please retry."
 msgstr ""
 
-#: functions.php:285
+#: functions.php:290
 msgid "Page Load failed. HTTP {0}"
 msgstr ""
 
-#: functions.php:286
+#: functions.php:291
 msgid "Glad you come, but we've got nothing left."
 msgstr ""
 
-#: functions.php:287
+#: functions.php:292
 msgid "Post"
 msgstr ""
 
-#: functions.php:288
+#: functions.php:293
 msgid "Tag"
 msgstr ""
 
-#: functions.php:289
+#: functions.php:294
 msgid "Category"
 msgstr ""
 
-#: functions.php:290
+#: functions.php:295
 msgid "Page"
 msgstr ""
 
-#: functions.php:291
+#: functions.php:296
 msgid "Comment"
 msgstr ""
 
-#: functions.php:292
+#: functions.php:297
 msgid "Paused..."
 msgstr ""
 
-#: functions.php:293
+#: functions.php:298
 msgid "Loading Video..."
 msgstr ""
 
-#: functions.php:294
+#: functions.php:299
 msgid "Downloading fonts, be aware of your data usage."
 msgstr ""
 
-#: functions.php:295
+#: functions.php:300
 msgid "Are you sure you want set it private?"
 msgstr ""
 
-#: functions.php:296
+#: functions.php:301
 msgid "You had set private comment before"
 msgstr ""
 
-#: functions.php:366 inc/theme_plus.php:194
+#: functions.php:371 inc/theme_plus.php:194
 msgid "Author"
 msgstr ""
 
-#: functions.php:366
+#: functions.php:371
 msgid "Blogger"
 msgstr ""
 
-#: functions.php:372
+#: functions.php:377
 msgid "Location"
 msgstr ""
 
-#: functions.php:378
+#: functions.php:383
 msgid "Private"
 msgstr ""
 
-#: functions.php:380
+#: functions.php:385
 msgid "Yes"
 msgstr ""
 
-#: functions.php:382
+#: functions.php:387
 msgid "No"
 msgstr ""
 
-#: functions.php:385
+#: functions.php:390
 msgid "Edit"
 msgstr ""
 
-#: functions.php:463
+#: functions.php:468
 msgid ""
 "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
 "\" target=\"_blank\">WP-Statistics</a>"
 msgstr ""
 
-#: functions.php:487
+#: functions.php:492
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:688
+#: functions.php:693
 msgid "Download Link"
 msgstr ""
 
-#: functions.php:760
+#: functions.php:765
 msgid "Remember me"
 msgstr ""
 
-#: functions.php:1156
+#: functions.php:1207
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1177
+#: functions.php:1231
 msgid " "
 msgstr ""
 
-#: functions.php:1181
+#: functions.php:1235
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1204 functions.php:1207 inc/theme_plus.php:427
+#: functions.php:1258 functions.php:1261 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1427
+#: functions.php:1487
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1552
+#: functions.php:1612
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1640
+#: functions.php:1696
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:1769
+#: functions.php:1825
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -705,6 +705,10 @@ msgstr ""
 
 #: tpl/content-single.php:66 tpl/single-image.php:61
 msgid "Last updated on "
+msgstr ""
+
+#: tpl/content-thumb.php:114
+msgid "AI Excerpt"
 msgstr ""
 
 #: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30

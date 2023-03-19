@@ -111,10 +111,8 @@ while (have_posts()) : the_post();
 					</span>
 				</div>
 				<div class="float-content">
-					<?php the_excerpt() ?>
-					<div class="post-bottom">
-						<a href="<?php the_permalink(); ?>" class="button-normal"><i class="iconfont icon-caidan"></i></a>
-					</div>
+				<div class="ai-excerpt-tip"><i class="fa fa-connectdevelop" aria-hidden="true"></i><?php _e("AI Excerpt", "sakurairo") ?></div>
+				<?php the_excerpt() ?>
 				</div>
 			</div>
 		</div>

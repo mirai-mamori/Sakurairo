@@ -832,8 +832,8 @@ display:none;
 }
 <?php endif; ?>
 
-<?php if (!iro_opt('post_icon_more', 'true')): ?>
-.float-content i {
+<?php if (!iro_opt('chatgpt_article_summarize', 'true')): ?>
+.ai-excerpt-tip {
     display: none;
 }
 <?php endif; ?>
