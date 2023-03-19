@@ -3253,14 +3253,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'chatgpt_access_token',
         'type' => 'text',
         'title' => __('ChatGPT API keys','sakurairo_csf'),
-        'desc' => __('Fill in Your ChatGPT API keys','sakurairo_csf'),
+        'desc' => __('Fill in Your ChatGPT API keys, You can go to <a href="https://platform.openai.com/account/api-keys">OpenAI Website</a> to get your API Keys','sakurairo_csf'),
       ),
 
       array(
         'id' => 'chatgpt_article_summarize',
         'type' => 'switcher',
         'title' => __('ChatGPT Article Summarize','sakurairo_csf'),
-        'label' => __('After turning on the ChatGPT Article Summarize, ChatGPT will automatically generate article abstracts','sakurairo_csf'),
+        'label' => __('After turning on ChatGPT will automatically generate article abstracts','sakurairo_csf'),
         'default' => false
       ),
 
@@ -3269,7 +3269,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'textarea',
         'title' => __('ChatGPT Article Summarize Init Prompt','sakurairo_csf'),
         'dependency' => array( 'chatgpt_article_summarize', '==', 'true' ),
-        'desc' => __('Fill in the Init Prompt','sakurairo_csf'),
+        'desc' => __('Fill in the Init Prompt, Please make changes if you know how to configure it correctly','sakurairo_csf'),
         'default' => '
 "You are a excerpt generator. " .
 "You can summarize articles given their title and full text. " .
@@ -3282,7 +3282,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('ChatGPT Article Summarize Ask Prompt','sakurairo_csf'),
         'dependency' => array( 'chatgpt_article_summarize', '==', 'true' ),
-        'desc' => __('Fill in the Ask Prompt','sakurairo_csf'),
+        'desc' => __('Fill in the Ask Prompt, Use preset value when option is empty, Please make changes if you know how to configure it correctly','sakurairo_csf'),
       ),
 
       )
