@@ -19,7 +19,7 @@
     border-radius: 10px 10px 0 0;
 }
 .csf-field-heading,
-.csf-field-subheading,.csf-submessage-success,.csf-submessage-danger,
+.csf-field-subheading,.csf-submessage-success,.csf-submessage-danger,.csf-submessage-normal,.csf-submessage-warning,
 .wp-picker-container .iris-picker,
 .csf-submessage-info {
     border-radius: 10px;

@@ -6,7 +6,7 @@
  *
  * @package Akina
  */
-
+$ai_excerpt = get_post_meta($post->ID, POST_METADATA_KEY, true); 
 ?>
 
 <?php 
@@ -30,6 +30,9 @@ if (iro_opt('author_profile_quote') == '1') {
 	</header><!-- .entry-header -->
 	<?php } ?>
 	<!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+	<div class="ai-excerpt">
+	<h4><i class="fa fa-connectdevelop" aria-hidden="true"></i><?php _e("AI Excerpt", "sakurairo") ?></h4><?php echo $ai_excerpt; ?>
+	</div>
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php

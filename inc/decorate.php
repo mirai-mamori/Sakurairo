@@ -833,6 +833,7 @@ display:none;
 <?php endif; ?>
 
 <?php if (!iro_opt('chatgpt_article_summarize', 'true')): ?>
+.ai-excerpt,
 .ai-excerpt-tip {
     display: none;
 }
