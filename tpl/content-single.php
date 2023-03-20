@@ -30,9 +30,11 @@ if (iro_opt('author_profile_quote') == '1') {
 	</header><!-- .entry-header -->
 	<?php } ?>
 	<!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+	<?php if(!empty($ai_excerpt)) { ?>
 	<div class="ai-excerpt">
 	<h4><i class="fa fa-connectdevelop" aria-hidden="true"></i><?php _e("AI Excerpt", "sakurairo") ?></h4><?php echo $ai_excerpt; ?>
 	</div>
+	<?php } ?>
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
