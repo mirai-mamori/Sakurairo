@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-03-19 11:35+0800\n"
-"PO-Revision-Date: 2023-03-19 11:35+0800\n"
+"POT-Creation-Date: 2023-03-20 14:23+0800\n"
+"PO-Revision-Date: 2023-03-20 14:23+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -707,21 +707,21 @@ msgstr "沒有找到你想要的，看看其他的吧"
 msgid "We didn't seem to find what you want. Maybe you can search for it."
 msgstr "似乎沒有找到你想要的東西，或許你可以搜尋一下試式試"
 
-#: tpl/content-page.php:25 tpl/content-single.php:37 tpl/single-image.php:34
+#: tpl/content-page.php:25 tpl/content-single.php:42 tpl/single-image.php:34
 msgid "Pages:"
 msgstr "頁面:"
 
-#: tpl/content-single.php:63 tpl/single-image.php:58
+#: tpl/content-single.php:35 tpl/content-thumb.php:115
+msgid "AI Excerpt"
+msgstr "AI 摘錄"
+
+#: tpl/content-single.php:68 tpl/single-image.php:58
 msgid "Nothing~"
 msgstr "無~"
 
-#: tpl/content-single.php:66 tpl/single-image.php:61
+#: tpl/content-single.php:71 tpl/single-image.php:61
 msgid "Last updated on "
 msgstr "最後更新於 "
-
-#: tpl/content-thumb.php:114
-msgid "AI Excerpt"
-msgstr "AI 摘錄"
 
 #: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30
 #: user/page-followVideos.php:29

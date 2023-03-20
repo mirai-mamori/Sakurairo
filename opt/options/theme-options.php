@@ -3737,7 +3737,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type'    => 'content',
         'content' => __('<p>Options Framework Relies on the Codestar Open Source <a href="https://github.com/Codestar/codestar-framework">Codestar Framework</a> Project</p>
-        <p>Update Function Relies on YahnisElsts Open Source <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin Update Checker</a> Project</p>','sakurairo_csf'),
+        <p>Update Function Relies on YahnisElsts Open Source <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin Update Checker</a> Project</p>
+        <p>ChatGPT-related Capabilities Relies on HaoZi-Team Open Source <a href="https://github.com/HaoZi-Team/ChatGPT-PHP">ChatGPT PHP</a> Project</p>','sakurairo_csf'),
       ),
 
       array(

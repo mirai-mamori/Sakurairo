@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-03-19 13:00+0800\n"
+"POT-Creation-Date: 2023-03-20 13:58+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -3758,10 +3758,12 @@ msgid ""
 "com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
 "        <p>Update Function Relies on YahnisElsts Open Source <a href=\"https://"
 "github.com/YahnisElsts/plugin-update-checker\">Plugin Update Checker</a> Project</"
-"p>"
+"p>\n"
+"        <p>ChatGPT-related Capabilities Relies on HaoZi-Team Open Source <a "
+"href=\"https://github.com/HaoZi-Team/ChatGPT-PHP\">ChatGPT PHP</a> Project</p>"
 msgstr ""
 
-#: options/theme-options.php:3745
+#: options/theme-options.php:3746
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?"
 "style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: 3px;\" /"
