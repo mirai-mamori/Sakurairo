@@ -58,7 +58,7 @@ while (have_posts()) : the_post();
 
 	$the_cat = get_the_category();
 	// 摘要字数限制
-
+	$ai_excerpt = get_post_meta($post->ID, POST_METADATA_KEY, true); 
 	//add_filter( 'excerpt_length', 'custom_excerpt_length', 120 );
 ?>
 	<article class="post post-list-thumb <?php echo $class; ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
@@ -111,7 +111,9 @@ while (have_posts()) : the_post();
 					</span>
 				</div>
 				<div class="float-content">
+				<?php if(!empty($ai_excerpt)) { ?>
 				<div class="ai-excerpt-tip"><i class="fa fa-connectdevelop" aria-hidden="true"></i><?php _e("AI Excerpt", "sakurairo") ?></div>
+				<?php } ?>
 				<?php the_excerpt() ?>
 				</div>
 			</div>
