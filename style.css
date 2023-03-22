@@ -665,7 +665,7 @@ input[type=week] {
   border-radius: var(--style_menu_radius,12px);
   transform: scale(0);
   transition: all 0.8s ease !important;
-  border: 1.5px solid #FFFFFF;
+  border: 1px solid #FFFFFF;
 }
 
 #changskin {
@@ -682,7 +682,7 @@ input[type=week] {
   border-radius: var(--style_menu_radius,10px);
   transform: scale(0);
   transition: all 0.8s ease !important;
-  border: 1.5px solid #FFFFFF;
+  border: 1px solid #FFFFFF;
 }
 
 #moblieGoTop:hover {
@@ -1281,7 +1281,7 @@ h1.page-title {
   -webkit-transition: all .8s;
   transition: all .8s;
   margin: 5px;
-  border: 1.5px solid #FFFFFF;
+  border: 1px solid #FFFFFF;
 }
 
 .post-lincenses:hover{
@@ -1305,7 +1305,7 @@ h1.page-title {
   -webkit-transition: all .8s;
   transition: all .8s;
   margin: 5px;
-  border: 1.5px solid #FFFFFF;
+  border: 1px solid #FFFFFF;
 }
 
 .post-tags:hover{
@@ -1329,7 +1329,7 @@ h1.page-title {
   -webkit-transition: all .8s;
   transition: all .8s;
   margin: 5px;
-  border: 1.5px solid #FFFFFF;
+  border: 1px solid #FFFFFF;
 }
 
 .post-modified-time:hover{
@@ -1451,7 +1451,7 @@ h1.page-title {
   -webkit-transition: all .8s;
   transition: all .8s;
   overflow: hidden;
-  border: 1.5px solid #FFFFFF;
+  border: 1px solid #FFFFFF;
 }
 
 .author-profile .desc:hover{
@@ -3461,7 +3461,6 @@ i.iconfont.down {
   border-radius: 4px;
   border: 0;
   font-weight: var(--global-font-weight);
-
 }
 
 .no-logged a {
@@ -3495,7 +3494,7 @@ i.iconfont.down {
   font-weight: var(--global-font-weight);
   -webkit-transition: all .8s;
   transition: all .8s;
-  border: 1.5px solid #FFFFFF;
+  border: 1px solid #FFFFFF;
 }
 
 .reward-open:hover{
@@ -3526,6 +3525,7 @@ i.iconfont.down {
   border-radius: 10px;
   cursor: auto;
   margin-left: 3%;
+  border: 1px solid #FFFFFF;
 }
 
 .reward-row li img {
@@ -5766,7 +5766,7 @@ h1.page-title.mb- {
   border-radius: 10px;
   -webkit-transition: all .8s;
   transition: all .8s;
-  border: 1.5px solid #FFFFFF;
+  border: 1px solid #FFFFFF;
 }
 
 .author-profile .info:hover{
@@ -5791,7 +5791,7 @@ h1.page-title.mb- {
   border-radius: 10px;
   -webkit-transition: all .8s;
   transition: all .8s;
-  border: 1.5px solid #FFFFFF;
+  border: 1px solid #FFFFFF;
 }
 
 .author-profile .meta:hover{
@@ -10050,7 +10050,7 @@ body.dark #changskin {
   background: rgba(26,26,26,0.6);
   color:#7D7D7D;
   transition: all 0.8s ease !important;
-  border: 1.5px solid #7d7d7d30;
+  border: 1px solid #7d7d7d30;
 }
 
 body.dark #show-nav .line {
@@ -10128,7 +10128,7 @@ body.dark .post-lincenses {
   background: rgba(26,26,26,0.6);
   -webkit-transition: all .8s;
   transition: all .8s;
-  border: 1.5px solid #7d7d7d30;
+  border: 1px solid #7d7d7d30;
 }
 
 body.dark .post-lincenses:hover{
@@ -10143,7 +10143,7 @@ body.dark .post-tags {
   background: rgba(26,26,26,0.6);
   -webkit-transition: all .8s;
   transition: all .8s;
-  border: 1.5px solid #7d7d7d30;
+  border: 1px solid #7d7d7d30;
 }
 
 body.dark .post-tags:hover{
@@ -10158,7 +10158,7 @@ body.dark .post-modified-time {
   background: rgba(26,26,26,0.6);
   -webkit-transition: all .8s;
   transition: all .8s;
-  border: 1.5px solid #7d7d7d30;
+  border: 1px solid #7d7d7d30;
 }
 
 body.dark .post-modified-time:hover{
@@ -10173,7 +10173,7 @@ body.dark .reward-open {
   background: rgba(26,26,26,0.6);
   -webkit-transition: all .8s;
   transition: all .8s;
-  border: 1.5px solid #7d7d7d30;
+  border: 1px solid #7d7d7d30;
 }
 
 body.dark .reward-open:hover{
@@ -10188,7 +10188,7 @@ body.dark .author-profile .info {
   background: rgba(26,26,26,0.6);
   -webkit-transition: all .8s;
   transition: all .8s;
-  border: 1.5px solid #7d7d7d30;
+  border: 1px solid #7d7d7d30;
 }
 
 body.dark .author-profile .info:hover{
@@ -10203,7 +10203,7 @@ body.dark .author-profile .meta {
   background: rgba(26,26,26,0.6);
   -webkit-transition: all .8s;
   transition: all .8s;
-  border: 1.5px solid #7d7d7d30;
+  border: 1px solid #7d7d7d30;
 }
 
 body.dark .author-profile .meta:hover{
@@ -10218,7 +10218,7 @@ body.dark .author-profile .desc {
   background: rgba(26,26,26,0.6);
   -webkit-transition: all .8s;
   transition: all .8s;
-  border: 1.5px solid #7d7d7d30;
+  border: 1px solid #7d7d7d30;
 }
 
 body.dark .author-profile .desc:hover{
