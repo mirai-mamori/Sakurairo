@@ -3980,30 +3980,42 @@ input[type=radio]:checked:before {
 
 .toc-container {
   z-index: 98;
-  width: 200px;
-  height: 100%;
+  width: 190px;
+  height: auto;
   background-color: rgba(255, 255, 255, 0);
-  transform: translateX(0);
-  right: calc((100% - 1040px - 250px)/ 2);
-  top: 480px;
-  position: absolute;
+  right: calc((100% - 1250px)/ 2);
+  top: 470px;
+  position: fixed;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 .toc {
-  position: sticky/*!covered-webkit-sticky*/;
-  top: 16%;
+  position: sticky;
+  top: 12%;
+  box-shadow: 0 1px 30px -4px var(--friend-link-shadow);
+  background: rgba(255,255,255,0.5);
+  padding: 12px 12px;
   overflow-y: auto;
-  transition: background 1s;
+  border-radius: 10px;
+  border: 1.5px solid #FFFFFF;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.toc:hover{
+  box-shadow: 0 1px 20px 10px #e8e8e8;
+  background: rgba(255,255,255,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
 .toc-link::before {
-  background-color: #EEE;
+  background-color: rgba(255, 255, 255);
   content: ' ';
   display: inline-block;
   height: inherit;
-  left: 0;
+  left: 1%;
   margin-top: -1px;
   position: absolute;
   width: 2px;
@@ -6889,7 +6901,7 @@ body.dark::-webkit-scrollbar-track {
 
 .toc-list {
   margin: 0;
-  padding-left: 12px;
+  padding-left: 16px;
 }
 
 a.toc-link {
@@ -9410,7 +9422,7 @@ i.iconfont.js-toggle-search.iconsearch:hover {
   }
 }
 
-@media (max-width:1080px) {
+@media (max-width:1160px) {
   .toc-container {
     display: none;
   }
@@ -9759,7 +9771,6 @@ body.dark .headertop-bar::after {
   background: rgba(51,51,51,var(--theme-dm-background_transparency,1)) !important;
 }
 
-body.dark .toc,
 body.dark .comments {
   background: none !important;
 }
@@ -10092,6 +10103,21 @@ body.dark .links ul li {
 
 body.dark .links ul li:hover{
   box-shadow: 0 1px 30px -2px var(--friend-link-title) !important;
+  background: rgba(26,26,26,0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+body.dark .toc {
+  box-shadow: 0 1px 20px 2px rgba(26,26,26,0.8);
+  background: rgba(26,26,26,0.6);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+  border: 1.5px solid #7d7d7d30;
+}
+
+body.dark .toc:hover{
+  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
   background: rgba(26,26,26,0.8);
   -webkit-transition: all .8s;
   transition: all .8s;
