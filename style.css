@@ -772,7 +772,7 @@ input[type=week] {
 }
 
 .site-header.yya{
-  background: rgba(255, 255, 255, .75);
+  background: rgba(255, 255, 255, .7);
   border: 1.5px solid #FFFFFF;
   transition: all 0.8s ease;
   width: 100%;
@@ -782,8 +782,6 @@ input[type=week] {
 }
 
 .yya {
-  width: 50%;
-  left: 47.5%;
   transition: all 0.8s ease;
 }
 
@@ -7733,13 +7731,6 @@ i.iconfont.js-toggle-search.iconsearch:hover {
   .pattern-center-sakura h1.entry-title,
   .single-center .single-header h1.entry-title {
     font-size: 24px !important;
-  }
-}
-
-@media (max-width:1200px) {
-  .yya {
-    width: 95%;
-    left: 2.5%;
   }
 }
 

@@ -949,8 +949,6 @@ li.link-item {
     position: fixed;
     -webkit-transition: all 1s ease !important;
     transition: all 1s ease !important;
-    width:<?=iro_opt('nav_menu_shrink_animation', ''); ?>% ;
-	left:calc(97.5% - <?=iro_opt('nav_menu_shrink_animation', ''); ?>%);
     border-radius: <?=iro_opt('nav_menu_radius', ''); ?>px !important;
 }
 .site-title img {

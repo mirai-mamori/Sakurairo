@@ -436,19 +436,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id'     => 'nav_menu_shrink_animation',
-        'type'   => 'slider',
-        'title'  => __('Nav Menu Shrinkage Ratio','sakurairo_csf'),
-        'dependency' => array( 'nav_menu_style', '==', 'sakurairo' ),
-        'desc'   => __('Slide to set the appropriate ratio according to the content length of the nav menu. When the ratio is set to 95,there will be no shrinkage. This function is off by default','sakurairo_csf'),
-        'step'   => '0.5',
-        'unit'    => '%',
-        'max'   => '95',
-        'min'   => '30',
-        'default' => '95'
-      ),
-
-      array(
         'id'         => 'nav_menu_display',
         'type'       => 'radio',
         'title'      => __('Nav Menu Content Display Method','sakurairo_csf'),
