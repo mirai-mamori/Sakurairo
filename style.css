@@ -39,8 +39,8 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   animation: sitetop 1s;
   float: left;
   position: relative;
-  height: 75px;
-  line-height: 75px;
+  height: 60px;
+  line-height: 60px;
   margin-left: -6px;
 }
 
@@ -49,14 +49,14 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   position: relative;
   float: right;
   margin-left: 20px;
-  margin-top: 22px;
+  margin-top: 15px;
 }
 
 .searchbox {
   animation: searchbox 1s;
   float: right;
   height: 75px;
-  line-height: 75px;
+  line-height: 60px;
   margin-left: 20px;
 }
 
@@ -65,10 +65,9 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   position: relative;
   display: block;
   float: right;
-  margin: 15px 0 0 0;
+  margin: 7.5px 0 0 0;
   font-size: 16px;
   font-weight: var(--global-font-weight);
-
 }
 
 .comments {
@@ -759,7 +758,7 @@ input[type=week] {
 
 .site-header {
   width: 95%;
-  height: 75px;
+  height: 60px;
   -webkit-transition: all 1s ease !important;
   transition: all 1s ease !important;
   position: fixed;
@@ -787,7 +786,7 @@ input[type=week] {
 
 .site-title img {
   height: 40px;
-  margin-top: 17px;
+  margin-top: 10px;
   opacity: .75;
   -webkit-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
   -moz-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
@@ -872,8 +871,8 @@ input[type=week] {
   position: absolute;
   background: rgba(255, 255, 255, .95);
   padding: 10px;
-  top: 46px;
-  right: -24px;
+  top: 44px;
+  right: -16px;
   min-width: 80px;
   text-align: center;
   white-space: nowrap;
@@ -3406,9 +3405,9 @@ i.iconfont.down {
 .header-user-menu {
   position: absolute;
   width: 110px;
-  right: -11px;
+  right: -20px;
   background: 0 0;
-  top: 44px;
+  top: 52px;
   visibility: hidden;
   overflow: hidden;
   box-shadow: 0 1px 40px -8px rgba(0, 0, 0, .2);
@@ -3617,8 +3616,8 @@ i.iconfont.down {
   float: left;
   font-size: 25px;
   font-weight: 800;
-  height: 56px;
-  line-height: 56px;
+  height: 50px;
+  line-height: 50px;
   padding-left: 35px;
   padding-right: 15px;
   padding-top: 11px;
@@ -5405,6 +5404,7 @@ a:focus {
 .site-title a {
   color: #464646;
   font-weight: 400;
+  line-height: 40px;
   white-space: nowrap;
 }
 

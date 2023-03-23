@@ -76,8 +76,8 @@ if (iro_opt('theme_skin')) { ?>
     float: left;
     font-size: 25px;
     font-weight: 800;
-    height: 56px;
-    line-height: 56px;
+    height: 50px;
+    line-height: 40px;
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 8px;
@@ -96,13 +96,20 @@ if (iro_opt('theme_skin')) { ?>
     padding-top: 11px;
 }
 }
-.logolink.moe-mashiro .sakuraso,.logolink.moe-mashiro .no {
+.logolink.moe-mashiro .sakuraso {
     font-size: 25px;
-    border-radius: 9px;
-    padding-bottom: 2px;
-    padding-top: 5px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
 }
  
+.logolink.moe-mashiro .no {
+    font-size: 25px;
+    padding-bottom: 4px;
+    padding-top: 2px;
+}
+
 .logolink.moe-mashiro .no {
     font-size: 20px;
     display: inline-block;
@@ -120,9 +127,9 @@ if (iro_opt('theme_skin')) { ?>
 }
  
 .logolink ruby rt {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing:2px;
-    transform: translateY(-12px);
+    transform: translateY(-8px);
     opacity: 0;
     transiton-property: opacity;
     transition-duration: 0.5s, 0.5s;
@@ -993,6 +1000,37 @@ li.link-item {
     position: fixed;
     z-index: 999;
     border-radius: 0px;
+}
+.searchbox {
+  line-height: 75px;
+}
+.header-user-avatar {
+  margin-top: 22px;
+}
+.site-branding {
+  height: 75px;
+  line-height: 75px;
+}
+.site-title img {
+  margin-top: 17px;
+}
+.site-top .lower {
+  margin: 15px 0 0 0;
+}
+.lower li ul {
+  top: 46px;
+  right: -24px;
+}
+.header-user-menu {
+  right: -11px;
+  top: 44px;
+}
+.logolink a {
+  height: 56px;
+  line-height: 56px;
+}
+.logolink.moe-mashiro a{
+  line-height: 56px !important;
 }
 @media (max-width:860px) {
 .site-header {
