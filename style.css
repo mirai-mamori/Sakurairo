@@ -4568,6 +4568,7 @@ td.hljs-ln-numbers {
   border-radius: var(--style_menu_radius,20%);
   -webkit-transition: all .8s;
   transition: all .8s;
+  border: 1px solid #FFFFFF;
   cursor: pointer;
 }
 
@@ -4589,6 +4590,7 @@ td.hljs-ln-numbers {
   background-color: rgb(255 255 255 / 50%);
   -webkit-transition: all .8s;
   transition: all .8s;
+  border: 1px solid #FFFFFF;
   cursor: pointer;
 }
 
@@ -10018,6 +10020,7 @@ body.dark .menu-list li {
   background: rgba(26,26,26,0.8);
   -webkit-transition: all .8s;
   transition: all .8s;
+  border: 1px solid #7d7d7d30;
 }
 
 body.dark .s-content,
