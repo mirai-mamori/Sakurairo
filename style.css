@@ -768,16 +768,23 @@ input[type=week] {
   z-index: 999;
   border-radius: 20px;
   word-break: keep-all;
+  border: 1.5px solid transparent;
 }
 
 .site-header.yya{
   background: rgba(255, 255, 255, .75);
+  border: 1.5px solid #FFFFFF;
+  transition: all 0.8s ease;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 0px !important;
 }
 
 .yya {
   width: 50%;
   left: 47.5%;
-  transition: background 0.8s;
+  transition: all 0.8s ease;
 }
 
 .site-title img {
@@ -3985,7 +3992,7 @@ input[type=radio]:checked:before {
   background-color: rgba(255, 255, 255, 0);
   right: calc((100% - 1250px)/ 2);
   top: 470px;
-  position: fixed;
+  position: absolute;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -10068,6 +10075,11 @@ body.dark .entry-content h4,
 body.dark .entry-content h5,
 body.dark .entry-content h6 {
   color: #CCCCCC;
+}
+
+body.dark .site-header.yya{
+  border: 1.5px solid #7d7d7d30;
+  transition: all 0.8s ease;
 }
 
 body.dark .brick a {
