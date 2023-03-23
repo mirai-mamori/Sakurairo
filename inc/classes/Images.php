@@ -47,7 +47,7 @@ class Images
             $status = 400;
             $success = false;
             $message = $reply->message;
-            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.5/basic/default_d_h_large.gif';
+            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/default_d_h_large.gif';
             $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(
@@ -85,7 +85,7 @@ class Images
             $status = $reply->status_code;
             $success = false;
             $message = $reply->error->message;
-            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.5/basic/default_d_h_large.gif';
+            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/default_d_h_large.gif';
             $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(
@@ -125,7 +125,7 @@ class Images
             $status = $reply->status;
             $success = false;
             $message = $reply->data->error;
-            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.5/basic/default_d_h_large.gif';
+            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/default_d_h_large.gif';
             $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(
@@ -173,7 +173,7 @@ class Images
             $status = 400;
             $success = false;
             $message = $reply->message;
-            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.5/basic/default_d_h_large.gif';
+            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/default_d_h_large.gif';
             $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(
