@@ -9755,7 +9755,7 @@ color: var(--theme-skin-matching,#F9D938);
   color: var(--theme-skin-matching,#F9D938);
   word-break: break-word;
   font-family: 'Noto Sans SC';
-  padding: 5px;
+  padding: 3px;
   text-shadow: none;
   border-radius: 5px
 }
