@@ -67,7 +67,7 @@ function poi_time_since( $older_date, $comment_date = false, $text = false ) {
     array( 60 , __( ' minutes ago', 'sakurairo' ) ),/*分钟前*/
     array( 1, __( ' seconds ago', 'sakurairo' ) )/*秒前*/
   );
-  $newer_date = time() - (iro_opt('time_zone_fix')*60*60);
+  $newer_date = current_time('timestamp') - (iro_opt('time_zone_fix')*60*60);
   $since = abs( $newer_date - $older_date );
   if($text){
     $output = '';
@@ -194,7 +194,7 @@ if(!function_exists('siren_ajax_comment_callback')) {
                       <h4 class="author"><a href="<?php comment_author_url(); ?>"><?php echo get_avatar( $comment->comment_author_email, '80', '', get_comment_author() ); ?><?php comment_author(); ?> <span class="isauthor" title="<?php esc_attr_e('Author', 'sakurairo'); ?>"></span></a></h4>
                     </div>
                     <div class="right">
-                      <div class="info"><time datetime="<?php comment_date('Y-m-d'); ?>"><?php echo poi_time_since(strtotime($comment->comment_date_gmt), true );//comment_date(get_option('date_format')); ?></time></div>
+                      <div class="info"><time datetime="<?php comment_date('Y-m-d'); ?>"><?php echo poi_time_since(strtotime($comment->comment_date), true );//comment_date(get_option('date_format')); ?></time></div>
                     </div>
                   </section>
                 </div>
@@ -299,7 +299,7 @@ function the_headPattern(){
     //$ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
         $edit_this_post_link = get_edit_html();
     $t .= the_title( '<h1 class="entry-title">', '</h1>', false);
-    $t .= '<span class="toppic-line"></span><p class="entry-census"><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'.get_avatar(get_the_author_meta('ID'),64) .'</a></span><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'. get_the_author() .'</a></span><span class="bull">·</span>'. poi_time_since(get_post_time('U', true),false,true) .'<span class="bull">·</span>'. get_post_views(get_the_ID()) .' '._n("View","Views",get_post_views(get_the_ID()),"sakurairo")/*次阅读*/.$edit_this_post_link.'</p>';
+    $t .= '<span class="toppic-line"></span><p class="entry-census"><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'.get_avatar(get_the_author_meta('ID'),64) .'</a></span><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'. get_the_author() .'</a></span><span class="bull">·</span>'. poi_time_since(get_post_time('U', false),false,true) .'<span class="bull">·</span>'. get_post_views(get_the_ID()) .' '._n("View","Views",get_post_views(get_the_ID()),"sakurairo")/*次阅读*/.$edit_this_post_link.'</p>';
     endwhile; endif;
   }elseif(is_page()){
     $full_image_url = !empty($full_image_url) ? $full_image_url[0] : null;
@@ -358,7 +358,7 @@ function the_video_headPattern(bool $isHls = false)
             . get_avatar(get_the_author_meta('ID'), 64) . '</a></span><span><a href="' 
             . esc_url(get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename'))) . '">' 
             . get_the_author() . '</a></span><span class="bull">·</span>' 
-            . poi_time_since(get_post_time('U', true), false, true) . '<span class="bull">·</span>' 
+            . poi_time_since(get_post_time('U', false), false, true) . '<span class="bull">·</span>' /*时间前*/
             . get_post_views(get_the_ID()) . ' ' 
             . _n("View", "Views", get_post_views(get_the_ID()), "sakurairo")/*次阅读*/ . $edit_this_post_link . '</p>';
         }
