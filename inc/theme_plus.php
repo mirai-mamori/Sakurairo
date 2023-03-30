@@ -67,7 +67,7 @@ function poi_time_since( $older_date, $comment_date = false, $text = false ) {
     array( 60 , __( ' minutes ago', 'sakurairo' ) ),/*分钟前*/
     array( 1, __( ' seconds ago', 'sakurairo' ) )/*秒前*/
   );
-  $newer_date = time() - (iro_opt('time_zone_fix')*60*60);
+  $newer_date = current_time('timestamp') - (iro_opt('time_zone_fix')*60*60);
   $since = abs( $newer_date - $older_date );
   if($text){
     $output = '';
