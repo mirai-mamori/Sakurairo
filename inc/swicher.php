@@ -115,5 +115,6 @@ function font_end_js_control() {
     if($sakura_effect != 'off') $iro_opt['effect'] = array('amount'=>$sakura_effect);
     if (iro_opt('theme_darkmode_auto')) $iro_opt['dm_strategy'] = iro_opt('theme_darkmode_strategy','time');
     wp_add_inline_script('app', 'var _iro = '.json_encode($iro_opt,JSON_NUMERIC_CHECK|JSON_UNESCAPED_UNICODE),'before');
+    get_template_directory_uri().'/css/lib_fa6.css?'.IRO_VERSION.iro_opt('cookie_version', '');
 }
 add_action('wp_head', 'font_end_js_control');

@@ -479,7 +479,6 @@ cursor: url(<?=iro_opt('cursor_nor'); ?>), auto;
 .faa-parent.animated-hover:hover>.faa-spin,
 .faa-spin.animated,
 .faa-spin.animated-hover:hover,
-i.iconfont.js-toggle-search.iconsearch,
 #waifu #live2d,
 .aplayer svg,
 .aplayer.aplayer-narrow .aplayer-body,
@@ -853,9 +852,6 @@ display:none;
 <?php endif; ?>
 
 <?php if(iro_opt('nav_menu_icon_size') == 'large'){ ?>
-i.iconfont.js-toggle-search.iconsearch {
-    font-size: 25px;
-}
 .lower li ul {
     right: -13px;
 }
