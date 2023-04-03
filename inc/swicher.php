@@ -82,7 +82,9 @@ function font_end_js_control() {
     !empty($reception_background['img3']) && $iro_opt['skin_bg2'] = $reception_background['img3'];
     !empty($reception_background['img4']) && $iro_opt['skin_bg3'] = $reception_background['img4'];
     !empty($reception_background['img5']) && $iro_opt['skin_bg4'] = $reception_background['img5'];
-    $iro_opt['jsdelivr_css_src'] = iro_opt('shared_library_basepath') ? (get_template_directory_uri().'/css/lib.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://s.nmxc.ltd/sakurairo/@'.IRO_VERSION.'/css/lib.css');
+    $iro_opt['jsdelivr_css_src'] =  iro_opt('shared_library_basepath') ? (get_template_directory_uri().'/css/fa4.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://s.nmxc.ltd/sakurairo/@'.IRO_VERSION.'/css/fa4.css');
+    $iro_opt['jsdelivr_css_src'] =  iro_opt('shared_library_basepath') ? (get_template_directory_uri().'/css/aplayer.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://s.nmxc.ltd/sakurairo/@'.IRO_VERSION.'/css/aplayer.css');
+    $iro_opt['jsdelivr_css_src'] =  iro_opt('shared_library_basepath') ? (get_template_directory_uri().'/css/fa6.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://s.nmxc.ltd/sakurairo/@'.IRO_VERSION.'/css/fa6.css');
     if (iro_opt('lightgallery')){
         # 请务必使用正确标准的json格式
         $lightGallery = str_replace(PHP_EOL, '', iro_opt('lightgallery_option')); 
@@ -115,6 +117,5 @@ function font_end_js_control() {
     if($sakura_effect != 'off') $iro_opt['effect'] = array('amount'=>$sakura_effect);
     if (iro_opt('theme_darkmode_auto')) $iro_opt['dm_strategy'] = iro_opt('theme_darkmode_strategy','time');
     wp_add_inline_script('app', 'var _iro = '.json_encode($iro_opt,JSON_NUMERIC_CHECK|JSON_UNESCAPED_UNICODE),'before');
-    get_template_directory_uri().'/css/lib_fa6.css?'.IRO_VERSION.iro_opt('cookie_version', '');
 }
 add_action('wp_head', 'font_end_js_control');
