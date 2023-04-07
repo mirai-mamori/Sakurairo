@@ -2702,16 +2702,6 @@ h1.main-title {
 
 }
 
-i.iconfont.js-toggle-search.iconsearch {
-  color: var(--theme-skin,#505050);
-  cursor: pointer;
-  font-size: 20px;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  font-weight: var(--global-font-weight);
-
-}
-
 .search-form--modal {
   -webkit-transition: opacity .25s ease;
   -moz-transition: opacity .25s ease;
@@ -2858,19 +2848,6 @@ i.iconfont.js-toggle-search.iconsearch {
   background: transparent;
   border-radius: 5px;
   font-family: none;
-}
-
-.ins-section .iconfont.icon-mark {
-  font-size: 13px;
-  color: #ccc;
-  bottom: unset;
-  margin-top: unset;
-  line-height: unset;
-  margin-left: 16px;
-  left: unset;
-  position: unset;
-  font-weight: var(--global-font-weight);
-
 }
 
 .ins-section .fa {
@@ -3208,15 +3185,6 @@ i.iconfont.js-toggle-search.iconsearch {
   border-bottom-style: solid;
   border-bottom-color: rgba(255, 255, 255, 1);
   background-color: rgba(255, 255, 255, .25);
-}
-
-i.iconfont.down {
-  margin-right: 6px;
-  font-size: 18px;
-  position: relative;
-  top: 1px;
-  font-weight: var(--global-font-weight);
-
 }
 
 #pagination {
@@ -5419,7 +5387,6 @@ a:focus {
 .ins-section .ins-search-item:hover .ins-slug,
 .ins-section .ins-search-item:hover .ins-search-preview,
 .ins-section .ins-search-item:hover header,
-.ins-section .ins-search-item:hover .iconfont,
 .sorry li a:hover,
 .art .art-content #archives a:hover{
   color: var(--theme-skin-matching,#F9D938);
@@ -5514,13 +5481,6 @@ object {
 .p-time i {
   font-size: 14px;
   margin-right: 5px;
-  font-weight: var(--global-font-weight);
-
-}
-
-i.iconfont.hotpost {
-  font-size: 14px;
-  color: #FF3B00;
   font-weight: var(--global-font-weight);
 
 }
@@ -7612,9 +7572,6 @@ body.dark .post-list-thumb:hover {
 
 .post-share ul li a:hover,
 .entry-content a:hover,
-i.iconfont.js-toggle-search.iconsearch:hover {
-  color: var(--theme-skin-matching);
-}
 
 .post-content a:hover{
   color: var(--post_list_matching_color);
@@ -8316,11 +8273,6 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     /*移动端搜索关闭*/
   }
 
-  i.iconfont.js-toggle-search.iconsearch {
-    display: none;
-    /*移动端登录关闭*/
-  }
-
   .site-header {
     /*移动端logo后背板高度*/
     height: 8%;
@@ -8460,13 +8412,6 @@ i.iconfont.js-toggle-search.iconsearch:hover {
     z-index: 9999;
     display: block;
     background: 0 0;
-  }
-
-  .iconflat {
-    background: 0 0;
-    width: 50px;
-    height: 50px;
-    float: left;
   }
 
   .openNav .icon {
@@ -9919,7 +9864,6 @@ body.dark,
 body.dark input,
 body.dark select,
 body.dark textarea,
-body.dark i.iconfont.js-toggle-search.iconsearch,
 body.dark .info-meta a,
 body.dark .info-meta span,
 body.dark .skin-menu,
@@ -10355,13 +10299,9 @@ body.dark .art .art-content #archives a:hover,
 body.dark .ins-section .ins-search-item:hover,
 body.dark .ins-section .ins-search-item:hover .ins-slug,
 body.dark .ins-section .ins-search-item:hover .ins-search-preview,
-body.dark .ins-section .ins-search-item:hover .iconfont,
 body.dark .menhera-container .emoji-item:hover,
 body.dark .comment-respond .logged-in-as a:hover,
 body.dark .site-top ul li a:hover,
-body.dark i.iconfont.js-toggle-search.iconsearch:hover {
-  color: var(--theme-skin-dark);
-}
 
 body.dark .comment-respond .logged-in-as a:hover{
   color: var(--comment_area_matching);
@@ -10471,3 +10411,8 @@ body.dark .navigator i:hover {
   transition: all 0.8s ease !important;
   color: var(--theme-skin-dark);
 }
+
+.aplayer{
+  background:rgba(255,255,255,.3);
+  font-family:'Noto Serif CJK SC','Noto Serif CJK','Source Han Serif SC','Source Han Serif','source-han-serif-sc','PT Serif','SongTi SC','MicroSoft Yahei',Georgia,serif
+}.aplayer .aplayer-lrc::before{background:rgba(255,255,255,0);filter:none}.aplayer .aplayer-lrc::after{background:rgba(255,255,255,0);filter:none}.aplayer{box-shadow:0 0 0 1px #eee;border-radius:3px;margin:15px 0}.aplayer .aplayer-info{padding:9px 7px 0 10px}.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap{margin-left:1px;padding-right:3px}.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar,.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded,.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played{height:6px;border-radius:10px}.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb{height:12px;width:12px;right:3px;box-shadow:0 0 5px 0 rgba(0,0,0,.18);transition:all .35s}.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar,.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar .aplayer-volume{border-radius:10px;width:6px}.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar{right:10.5px}.aplayer .aplayer-list ol li{border-top:0}.aplayer .aplayer-list ol li.aplayer-list-light{background:#f8f8f8}#aplayer-float{background:rgba(255,255,255,1);margin:0}.ap-hover{left:-66px !important}.ap-hover:hover{left:0 !important}#aplayer-float .aplayer-lrc-current{color:orange;font-size:15px;font-weight:bold}.aplayer-lrc{pointer-events:none}
