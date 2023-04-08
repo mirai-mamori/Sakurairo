@@ -113,7 +113,7 @@ while (have_posts()) : the_post();
 				</div>
 				<div class="float-content">
 				<?php if(!empty($ai_excerpt) && empty($excerpt)) { ?>
-				<div class="ai-excerpt-tip"><i class="fa fa-connectdevelop" aria-hidden="true"></i><?php _e("AI Excerpt", "sakurairo") ?></div>
+				<div class="ai-excerpt-tip"><i class="fa-regular fa-lightbulb"></i><?php _e("AI Excerpt", "sakurairo") ?></div>
 				<?php } ?>
 				<?php the_excerpt() ?>
 				</div>

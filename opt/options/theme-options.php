@@ -3211,7 +3211,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'others', 
     'title' => __('ChatGPT Options','sakurairo_csf'),
-    'icon' => 'fa fa-connectdevelop',
+    'icon' => 'fa fa-lightbulb',
     'fields' => array(
 
       array(
