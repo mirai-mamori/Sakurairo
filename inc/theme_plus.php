@@ -831,7 +831,7 @@ function mobile_get_useragent_icon(string $ua):string{
   $alipay =  $alipay ? '<li class="alipay-code"><img src="'.$alipay.'"></li>' : '';
   $wechat = $wechat ? '<li class="wechat-code"><img src="'.$wechat.'"></li>' : '';
   ?>
-    <div class="reward-open"> <i class="fa fa-rmb" aria-hidden="true"></i>
+    <div class="reward-open"> <i class="fa-solid fa-piggy-bank fa-sm"></i>
       <div class="reward-main">
         <ul class="reward-row">
           <?php echo $alipay.$wechat; ?>

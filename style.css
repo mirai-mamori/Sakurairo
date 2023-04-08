@@ -1301,7 +1301,7 @@ h1.page-title {
   color: #7D7D7D;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background: rgba(255,255,255,0.5);
-  padding: 12px 18px;
+  padding: 14px 18px;
   text-transform: uppercase;
   position: inherit;
   border-radius: 10px;
@@ -1450,7 +1450,7 @@ h1.page-title {
   color: #7D7D7D;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background: rgba(255,255,255,0.5);
-  padding: 12px 18px;
+  padding: 14px 18px;
   border-radius: 10px;
   -webkit-transition: all .8s;
   transition: all .8s;
@@ -3455,7 +3455,7 @@ h1.main-title {
 .reward-open {
   float: left;
   font-size: 24px;
-  padding: 6px 17px;
+  padding: 6px 12px;
   text-align: center;
   display: block;
   border-radius: 10px;
