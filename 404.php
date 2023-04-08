@@ -21,9 +21,11 @@ add_action('wp_head',function(){
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo iro_opt('favicon_link', ''); ?>" />
-    <link rel="stylesheet" href="<?= $shared_lib_basepath ?>/css/fa4.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="<?= $shared_lib_basepath ?>/css/404.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?= $shared_lib_basepath ?>/css/fa6.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?= $shared_lib_basepath ?>/inc/fontawesome/css/fontawesome.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?= $shared_lib_basepath ?>/inc/fontawesome/css/brands.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?= $shared_lib_basepath ?>/inc/fontawesome/css/solid.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?= $shared_lib_basepath ?>/inc/fontawesome/css/v4-font-face.min.css" type="text/css" media="all"/>
     <?php wp_head(); ?>
     <?php
     /* <script>

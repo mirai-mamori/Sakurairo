@@ -59,14 +59,14 @@ if (iro_opt('author_profile_quote') == '1') {
 		</div>
 		<?php if($author_description){?>
 		<div class="desc">
-		<i class="iconfont icon-write"></i><?=$author_description ?>
+		<i class="fa-solid fa-feather" aria-hidden="true"></i><?=$author_description ?>
 		</div>
 <?php
 		}
 		?>
 	</section>
 	<div class="post-tags">
-		<?php if ( has_tag() ) { echo '<i class="iconfont icon-tags"></i> '; the_tags('', ' ', ' ');} else { echo '<i class="iconfont icon-tags"></i> '; _e('Nothing~', 'sakurairo');} ?>
+		<?php if ( has_tag() ) { echo '<i class="fa-solid fa-tag" aria-hidden="true"></i> '; the_tags('', ' ', ' ');} else { echo '<i class="fa-solid fa-tag" aria-hidden="true"></i> '; _e('Nothing~', 'sakurairo');} ?>
 	</div>
 	<div class="post-modified-time">
 	    <i class="fa fa-calendar" aria-hidden="true"></i><?php _e('Last updated on ', 'sakurairo'); echo get_the_modified_time('Y-m-d'); ?>
