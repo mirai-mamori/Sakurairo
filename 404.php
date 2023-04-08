@@ -8,6 +8,8 @@
  * @package Akina
  */
 
+ $vision_resource_basepath = iro_opt('vision_resource_basepath');
+ $shared_lib_basepath = iro_opt('shared_library_basepath');
 ?>
 <html <?php language_attributes();
 add_action('wp_head',function(){
@@ -22,10 +24,10 @@ add_action('wp_head',function(){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo iro_opt('favicon_link', ''); ?>" />
     <link rel="stylesheet" href="<?= $shared_lib_basepath ?>/css/404.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?= $shared_lib_basepath ?>/inc/fontawesome/css/fontawesome.min.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?= $shared_lib_basepath ?>/inc/fontawesome/css/brands.min.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?= $shared_lib_basepath ?>/inc/fontawesome/css/solid.min.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?= $shared_lib_basepath ?>/inc/fontawesome/css/v4-font-face.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/fontawesome.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/brands.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/solid.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/v4-font-face.min.css" type="text/css" media="all"/>
     <?php wp_head(); ?>
     <?php
     /* <script>

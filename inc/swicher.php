@@ -82,10 +82,6 @@ function font_end_js_control() {
     !empty($reception_background['img3']) && $iro_opt['skin_bg2'] = $reception_background['img3'];
     !empty($reception_background['img4']) && $iro_opt['skin_bg3'] = $reception_background['img4'];
     !empty($reception_background['img5']) && $iro_opt['skin_bg4'] = $reception_background['img5'];
-    $iro_opt['jsdelivr_css_src'] =  iro_opt('shared_library_basepath') ? (get_template_directory_uri().'/inc/fontawesome/css/fontawesome.min.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://s.nmxc.ltd/sakurairo/@'.IRO_VERSION.'/inc/fontawesome/css/fontawesome.min.css');
-    $iro_opt['jsdelivr_css_src'] =  iro_opt('shared_library_basepath') ? (get_template_directory_uri().'/inc/fontawesome/css/brands.min.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://s.nmxc.ltd/sakurairo/@'.IRO_VERSION.'/inc/fontawesome/css/brands.min.css');
-    $iro_opt['jsdelivr_css_src'] =  iro_opt('shared_library_basepath') ? (get_template_directory_uri().'/inc/fontawesome/css/solid.min.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://s.nmxc.ltd/sakurairo/@'.IRO_VERSION.'/inc/fontawesome/css/solid.min.css');
-    $iro_opt['jsdelivr_css_src'] =  iro_opt('shared_library_basepath') ? (get_template_directory_uri().'/inc/fontawesome/css/v4-font-face.min.css?'.IRO_VERSION.iro_opt('cookie_version', '')) : ('https://s.nmxc.ltd/sakurairo/@'.IRO_VERSION.'/inc/fontawesome/css/v4-font-face.min.css');
     if (iro_opt('lightgallery')){
         # 请务必使用正确标准的json格式
         $lightGallery = str_replace(PHP_EOL, '', iro_opt('lightgallery_option')); 
