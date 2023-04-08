@@ -23,7 +23,7 @@ $reception_background = iro_opt('reception_background');
 					<img src="<?php echo iro_opt('load_nextpage_svg'); ?>"><!-- 加载下一部分圈圈 -->
 				</div>
 				<?php if (iro_opt('footer_sakura_icon', 'true')): ?>
-				<i class="iconfont icon-sakura rotating" style="color: <?php echo iro_opt('theme_skin_matching'); ?>;display:inline-block;font-size:26px"></i>
+				<i class="fa-solid fa-icons" style="color: <?php echo iro_opt('theme_skin_matching'); ?>;display:inline-block;font-size:26px"></i>
 				<?php endif; ?>
 				<p style="color: #666666;"><?php echo iro_opt('footer_info', ''); ?></p>
 			</div>
@@ -65,14 +65,14 @@ $reception_background = iro_opt('reception_background');
 		</div>
 		<?php wp_nav_menu( array( 'depth' => 2, 'theme_location' => 'primary', 'container' => false ) ); ?>
 	</div><!-- m-nav-center end -->
-	<button id="moblieGoTop" title="<?=__('Go to top','sakurairo');?>"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
-    <button id="changskin"><i class="iconfont icon-gear inline-block rotating"></i></button>
+	<button id="moblieGoTop" title="<?=__('Go to top','sakurairo');?>"><i class="fa-solid fa-caret-up fa-lg"></i></button>
+    <button id="changskin"><i class="fa-solid fa-gear fa-spin fa-lg" ></i></button>
 	<!-- search start -->
 	<form class="js-search search-form search-form--modal" method="get" action="<?php echo home_url(); ?>" role="search">
 		<div class="search-form__inner">
 		<?php if(iro_opt('live_search')){ ?>
 			<div class="micro">
-				<i class="iconfont icon-search"></i>
+				<i class="fa-solid fa-magnifying-glass"></i>
 				<input id="search-input" class="text-input" type="search" name="s" placeholder="<?php _e('Want to find something?', 'sakurairo') /*想要找点什么呢*/?>" required>
 			</div>
 			<div class="ins-section-wrapper">
@@ -82,7 +82,7 @@ $reception_background = iro_opt('reception_background');
 		<?php }else{ ?>
 			<div class="micro">
 				<p class="micro mb-"><?php _e('Want to find something?', 'sakurairo') /*想要找点什么呢*/?></p>
-				<i class="iconfont icon-search"></i>
+				<i class="fa-solid fa-magnifying-glass"></i>
 				<input class="text-input" type="search" name="s" placeholder="<?php _e('Search', 'sakurairo') ?>" required>
 			</div>
 		<?php } ?>

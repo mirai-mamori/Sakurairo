@@ -17,7 +17,7 @@
 
 	<section id="comments" class="comments">
 		<div class="commentwrap comments-hidden<?php echo iro_opt('comment_area')=='fold'?' comments-fold':'' ?>">
-			<div class="notification"><i class="iconfont icon-mark"></i><?php _e('view comments', 'sakurairo'); /*查看评论*/?> -
+			<div class="notification"><i class="fa-regular fa-comment"></i><?php _e('view comments', 'sakurairo'); /*查看评论*/?> -
 			<span class="noticom"><?php comments_number('NOTHING', '1'.__(" comment","sakurairo"), '%'.__(" comments","sakurairo")); ?> </span>
 			</div>
 		</div>
@@ -43,7 +43,7 @@
 
 				<?php if(comments_open()): ?>
 					<div class="commentwrap">
-						<div class="notification-hidden"><i class="iconfont icon-mark"></i> <?php _e('no comment', 'sakurairo'); /*暂无评论*/?></div>
+						<div class="notification-hidden"><i class="fa-regular fa-comment"></i> <?php _e('no comment', 'sakurairo'); /*暂无评论*/?></div>
 					
 					</div>
 				<?php endif; ?>
@@ -67,7 +67,7 @@
 						'title_reply_to' => '<div class="graybar"><i class="fa fa-comments-o"></i>' . __('Leave a Reply to', 'sakurairo') . ' %s' . '</div>',
 						'cancel_reply_link' => __('Cancel Reply', 'sakurairo'),
 						'label_submit' => __('BiuBiuBiu~', 'sakurairo'),
-						'comment_field' => '<p style="font-style:italic"><a href="https://segmentfault.com/markdown" target="_blank"><i class="iconfont icon-markdown" style="color:var(--comment_area_matching);"></i></a> Markdown Supported while <i class="fa fa-code" aria-hidden="true"></i> Forbidden</p><div class="comment-textarea"><textarea placeholder="' . __("You are a surprise that I will only meet once in my life", "sakurairo") . ' ..." name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea><label class="input-label">' . __("You are a surprise that I will only meet once in my life", "sakurairo") . ' ...</label></div>
+						'comment_field' => '<p style="font-style:italic"><a href="https://segmentfault.com/markdown" target="_blank"><i class="fa-brands fa-markdown" style="color:var(--comment_area_matching);"></i></a> Markdown Supported while <i class="fa fa-code" aria-hidden="true"></i> Forbidden</p><div class="comment-textarea"><textarea placeholder="' . __("You are a surprise that I will only meet once in my life", "sakurairo") . ' ..." name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea><label class="input-label">' . __("You are a surprise that I will only meet once in my life", "sakurairo") . ' ...</label></div>
                         <div id="upload-img-show"></div>
                         <!--插入表情面版-->
                         <p id="emotion-toggle" class="no-select">

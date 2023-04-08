@@ -691,7 +691,7 @@ function download($atts, $content = null)
 {
     return '<a class="download" href="' . $content . '" rel="external"
 target="_blank" title="'.__("Download Link","sakurairo").'">
-<span><i class="iconfont down icon-pulldown"></i>Download</span></a>';
+<span><i class="fa-solid fa-download"></i>Download</span></a>';
 }
 add_shortcode("download", "download");
 

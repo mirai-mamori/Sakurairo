@@ -32,10 +32,7 @@ $vision_resource_basepath = iro_opt('vision_resource_basepath');
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/fontawesome.min.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/brands.min.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/solid.min.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/v4-font-face.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/all.min.css" type="text/css" media="all"/>
 	<?php
 	if (iro_opt('iro_meta') == true) {
 		$keywords = '';
@@ -132,7 +129,7 @@ $vision_resource_basepath = iro_opt('vision_resource_basepath');
 			</div><!-- .site-branding -->
 			<?php header_user_menu();
 			if (iro_opt('nav_menu_search') == '1') { ?>
-				<div class="searchbox"><i class="iconfont js-toggle-search iconsearch icon-search"></i></div>
+				<div class="searchbox"><i class="fa-solid fa-magnifying-glass"></i></div>
 			<?php } ?>
 			<div class="lower"><?php if (iro_opt('nav_menu_display') == 'fold') { ?>
 					<div id="show-nav" class="showNav">

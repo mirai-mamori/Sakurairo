@@ -71,9 +71,9 @@ while (have_posts()) : the_post();
 		<div class="post-content-wrap">
 			<div class="post-content">
 				<div class="post-date">
-					<i class="iconfont icon-time"></i><?php echo poi_time_since(strtotime($post->post_date)); ?>
+					<i class="fa-regular fa-clock"></i><?php echo poi_time_since(strtotime($post->post_date)); ?>
 					<?php if (is_sticky()) : ?>
-						&nbsp;<i class="iconfont hotpost icon-hot"></i>
+						&nbsp;<i class="fa-solid fa-splotch"></i>
 					<?php endif ?>
 				</div>
 				<a href="<?php the_permalink(); ?>" class="post-title">
@@ -88,14 +88,14 @@ while (have_posts()) : the_post();
 						get_author_meta_spans();
 					}
 					?>
-					<span><i class="iconfont icon-attention"></i><?php echo get_post_views(get_the_ID()) . ' ' . _n('Hit', 'Hits', get_post_views(get_the_ID()), 'sakurairo')/*热度*/ ?></span>
+					<span><i class="fa-regular fa-eye"></i><?php echo get_post_views(get_the_ID()) . ' ' . _n('Hit', 'Hits', get_post_views(get_the_ID()), 'sakurairo')/*热度*/ ?></span>
 					<span class="comments-number">
-						<i class="iconfont icon-mark"></i>
+						<i class="fa-regular fa-comment"></i>
 						<?php comments_popup_link(__("NOTHING", "sakurairo"), __("1 Comment", "sakurairo")/*条评论*/, '% ' . __("Comments", "sakurairo")/*条评论*/, '', __("Comment Closed", "sakurairo")
 							/**评论关闭 */
 						); ?>
 					</span>
-					<span><i class="iconfont icon-file"></i>
+					<span><i class="fa-regular fa-folder"></i>
 					<a href="<?php
 						if (isset($the_cat[0])) {
 							echo $cat_id = esc_url(get_category_link($the_cat[0]->cat_ID  ?? ''));
