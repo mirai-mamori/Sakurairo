@@ -22,9 +22,6 @@ $reception_background = iro_opt('reception_background');
 				<div class="img-preload">
 					<img src="<?php echo iro_opt('load_nextpage_svg'); ?>"><!-- 加载下一部分圈圈 -->
 				</div>
-				<?php if (iro_opt('footer_sakura_icon', 'true')): ?>
-				<i class="fa-solid fa-icons" style="color: <?php echo iro_opt('theme_skin_matching'); ?>;display:inline-block;font-size:26px"></i>
-				<?php endif; ?>
 				<p style="color: #666666;"><?php echo iro_opt('footer_info', ''); ?></p>
 			</div>
 			<div class="footer-device function_area">

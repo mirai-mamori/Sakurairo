@@ -920,14 +920,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'footer_sakura_icon',
-        'type' => 'switcher',
-        'title' => __('Footer Dynamic Sakura Icon','sakurairo_csf'),
-        'label' => __('Dynamic Sakura icon will appear at the end of the page after turning on','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
         'id' => 'footer_info',
         'type' => 'textarea',
         'title' => __('Footer Info','sakurairo_csf'),
