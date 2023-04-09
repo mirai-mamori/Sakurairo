@@ -836,11 +836,11 @@ input[type=week] {
 #show-nav {
   position: relative;
   float: right;
-  margin-left: 20px;
+  margin-left: 25px;
   display: block;
-  width: 20px;
+  width: 10px;
   height: 20px;
-  margin-top: 4.5px;
+  margin-top: 6.5px;
   cursor: pointer;
   z-index: 999;
 }
@@ -849,9 +849,9 @@ input[type=week] {
   position: absolute;
   top: 7px;
   left: 50%;
-  width: 20px;
-  margin-left: -13px;
-  height: 2px;
+  width: 16px;
+  margin-left: -12px;
+  height: 2.5px;
   background: var(--theme-skin,#505050);
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
@@ -5446,11 +5446,11 @@ object {
 }
 
 #show-nav.showNav .line1 {
-  top: 16px;
+  top: 15px;
 }
 
 #show-nav.showNav .line3 {
-  top: 25px;
+  top: 23px;
 }
 
 #show-nav.hideNav .line1 {
@@ -10298,12 +10298,13 @@ body.dark .ins-section .ins-search-item:hover .ins-slug,
 body.dark .ins-section .ins-search-item:hover .ins-search-preview,
 body.dark .menhera-container .emoji-item:hover,
 body.dark .comment-respond .logged-in-as a:hover,
-body.dark .site-top ul li a:hover,
-
 body.dark .comment-respond .logged-in-as a:hover{
   color: var(--comment_area_matching);
 }
 
+body.dark .site-top ul li a:hover {
+  color: var(--theme-skin-dark);
+}
 body.dark .the-feature.from_left_and_right a:hover .info p,
 body.dark .the-feature.from_left_and_right .info{
   color: var(--exhibition_area_matching_color);
@@ -10407,6 +10408,21 @@ body.dark .navigator i:hover {
   box-shadow: 0 1px 10px -2px var(--theme-skin-dark);
   transition: all 0.8s ease !important;
   color: var(--theme-skin-dark);
+}
+
+body.dark .searchbox.js-toggle-search {
+  color: #CCCCCC;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  animation: searchbox 1s;
+}
+
+body.dark .searchbox.js-toggle-search:hover {
+  color: var(--theme-skin-dark);
+  border: 2px solid var(--theme-skin-dark);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  animation: searchbox 1s;
 }
 
 .aplayer{
