@@ -8,7 +8,6 @@
  * @package Akina
  */
 
- $vision_resource_basepath = iro_opt('vision_resource_basepath');
  $shared_lib_basepath = iro_opt('shared_library_basepath');
 ?>
 <html <?php language_attributes();
@@ -23,8 +22,6 @@ add_action('wp_head',function(){
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo iro_opt('favicon_link', ''); ?>" />
-    <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/fontawesome.min.css" type="text/css" media="all"/>
-    <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/solid.min.css" type="text/css" media="all"/>
     <?php wp_head(); ?>
     <?php
     /* <script>
@@ -60,8 +57,7 @@ if (!no_report) httpGet(report_url);
         <div style="display:block; width:284px;margin: auto;">
             <p style="margin-bottom: 1em;margin-top: 1.5em;text-align: center;font-size: 15px;"><?php _e('Don\'t worry, search in site?', 'sakurairo');/*别急，试试站内搜索？*/ ?></p>
             <form class="s-search" method="get" action="/" role="search">
-                <i class="fa-solid fa-magnifying-glass" style="bottom: 9px;left: 15px;"></i>
-                <input class="text-input" style="padding: 8px 20px 8px 46px;" type="search" name="s" placeholder="<?php _e('Search...', 'sakurairo') ?>" required>
+                <input class="text-input" style="padding: 8px 20px;" type="search" name="s" placeholder="<?php _e('Search...', 'sakurairo') ?>" required>
             </form>
         </div>
     </section>
