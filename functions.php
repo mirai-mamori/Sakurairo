@@ -1216,8 +1216,6 @@ function memory_archives_list()
         setup_postdata($post);
         $year_tmp = get_the_time('Y');
         $mon_tmp = get_the_time('m');
-        $y = $year;
-        $m = $mon;
         if ($mon != $mon_tmp && $mon > 0) {
             $output .= '</ul></li>';
         }
