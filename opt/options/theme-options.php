@@ -2097,8 +2097,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'exhibition_area_icon',
         'type' => 'text',
         'title' => __('Display Area Icon','sakurairo_csf'),
-        'desc' => __('Default is "fa fa-laptop", You can check the <a href="https://fontawesome.com.cn/faicons/">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
-        'default' => 'fa fa-laptop'
+        'desc' => __('Default is "fa-solid fa-laptop", You can check the <a href="https://fontawesome.com/search?o=r&m=free">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
+        'default' => 'fa-solid fa-laptop'
       ),
 
       array(
@@ -2113,8 +2113,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'post_area_icon',
         'type' => 'text',
         'title' => __('Post Area Icon','sakurairo_csf'),
-        'desc' => __('Default is "fa fa-bookmark-o", You can check the <a href="https://fontawesome.com.cn/faicons/">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
-        'default' => 'fa fa-bookmark-o'
+        'desc' => __('Default is "fa-regular fa-bookmark", You can check the <a href="https://fontawesome.com/search?o=r&m=free">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
+        'default' => 'fa-regular fa-bookmark'
       ),
 
       array(
