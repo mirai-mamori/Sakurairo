@@ -36,7 +36,6 @@ get_header(); ?>
 			<div class="search-box">
 				<!-- search start -->
 				<form class="s-search">
-					<i class="fa-solid fa-magnifying-glass"></i>
 					<input class="text-input" type="search" name="s" placeholder="<?php _e('Search...', 'sakurairo') ?>" required>
 				</form>
 				<!-- search end -->

@@ -2794,18 +2794,6 @@ h1.main-title {
   -webkit-transform: rotate(-45deg);
 }
 
-.search-form i {
-  font-size: 2rem/*!covered32px*/;
-  line-height: 1;
-  color: #ddd;
-  position: absolute;
-  bottom: 15px;
-  margin-top: -16px;
-  left: 16px;
-  font-weight: var(--global-font-weight);
-
-}
-
 .search-form input {
   font-size: 1.5rem/*!covered24px*/;
   background: rgba(255, 255, 255, 0.7);
@@ -2823,7 +2811,7 @@ h1.main-title {
 .s-search input {
   font-size: 1rem;
   background: none;
-  padding: 12px 24px 12px 64px;
+  padding: 12px 24px;
   width: 100%;
   outline: 0;
   border-radius: 50px;
@@ -2831,19 +2819,6 @@ h1.main-title {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-weight: var(--global-font-weight);
-
-}
-
-.s-search i {
-  font-size: 1.5rem/*!covered32px*/;
-  line-height: 1;
-  color: var(--theme-skin);
-  position: absolute;
-  bottom: 12px;
-  margin-top: -16px;
-  left: 16px;
-  font-weight: var(--global-font-weight);
-
 }
 
 .ins-section-wrapper {

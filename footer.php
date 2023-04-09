@@ -72,7 +72,6 @@ $reception_background = iro_opt('reception_background');
 		<div class="search-form__inner">
 		<?php if(iro_opt('live_search')){ ?>
 			<div class="micro">
-				<i class="fa-solid fa-magnifying-glass"></i>
 				<input id="search-input" class="text-input" type="search" name="s" placeholder="<?php _e('Want to find something?', 'sakurairo') /*想要找点什么呢*/?>" required>
 			</div>
 			<div class="ins-section-wrapper">
