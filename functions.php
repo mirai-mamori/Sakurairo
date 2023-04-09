@@ -380,14 +380,14 @@ if (!function_exists('akina_comment_format')) {
                                         $comment_ID = $comment->comment_ID;
                                         $i_private = get_comment_meta($comment_ID, '_private', true);
                                         $flag = null;
-                                        $flag .= ' <i class="fa fa-snowflake-o" aria-hidden="true"></i> <a href="javascript:;" data-actionp="set_private" data-idp="' . get_comment_id() . '" id="sp" class="sm">' . __("Private", "sakurairo") . ': <span class="has_set_private">';
+                                        $flag .= ' <i class="fa-regular fa-snowflake"></i> <a href="javascript:;" data-actionp="set_private" data-idp="' . get_comment_id() . '" id="sp" class="sm">' . __("Private", "sakurairo") . ': <span class="has_set_private">';
                                         if (!empty($i_private)) {
-                                            $flag .= __("Yes", "sakurairo") . ' <i class="fa fa-lock" aria-hidden="true"></i>';
+                                            $flag .= __("Yes", "sakurairo") . ' <i class="fa-solid fa-lock"></i>';
                                         } else {
-                                            $flag .= __("No", "sakurairo") . ' <i class="fa fa-unlock" aria-hidden="true"></i>';
+                                            $flag .= __("No", "sakurairo") . ' <i class="fa-solid fa-lock-open"></i>';
                                         }
                                         $flag .= '</span></a>';
-                                        $flag .= edit_comment_link('<i class="fa fa-pencil-square-o" aria-hidden="true"></i> ' . __("Edit", "mashiro"), ' <span style="color:rgba(0,0,0,.35)">', '</span>');
+                                        $flag .= edit_comment_link('<i class="fa-solid fa-pen-to-square"></i> ' . __("Edit", "mashiro"), ' <span style="color:rgba(0,0,0,.35)">', '</span>');
                                         echo $flag;
                                     } ?></div>
                                 </div>
@@ -691,7 +691,7 @@ function download($atts, $content = null)
 {
     return '<a class="download" href="' . $content . '" rel="external"
 target="_blank" title="'.__("Download Link","sakurairo").'">
-<span><i class="iconfont down icon-pulldown"></i>Download</span></a>';
+<span><i class="fa-solid fa-download"></i>Download</span></a>';
 }
 add_shortcode("download", "download");
 
@@ -1154,45 +1154,6 @@ function siren_private()
     die;
 }
 
-// 时间序列
-// function memory_archives_list()
-// {
-//     $output = '<div id="archives"><p style="text-align:right;">[<span id="al_expand_collapse">' . __("All expand/collapse", "sakurairo") /*全部展开/收缩*/ . '</span>]<!-- (注: 点击月份可以展开)--></p>';
-//     $the_query = new WP_Query('posts_per_page=-1&ignore_sticky_posts=1&post_type=post'); //update: 加上忽略置顶文章
-//     $year = 0;
-//     $mon = 0;
-//     $i = 0;
-//     $j = 0;
-//     while ($the_query->have_posts()) : $the_query->the_post();
-//         $year_tmp = get_the_time('Y');
-//         $mon_tmp = get_the_time('m');
-//         $y = $year;
-//         $m = $mon;
-//         if ($mon != $mon_tmp && $mon > 0) {
-//             $output .= '</ul></li>';
-//         }
-
-//         if ($year != $year_tmp && $year > 0) {
-//             $output .= '</ul>';
-//         }
-
-//         if ($year != $year_tmp) {
-//             $year = $year_tmp;
-//             $output .= '<h3 class="al_year">' . $year . __(" ", "year", "sakurairo") . /*年*/ ' </h3><ul class="al_mon_list">'; //输出年份
-//         }
-//         if ($mon != $mon_tmp) {
-//             $mon = $mon_tmp;
-//             $output .= '<li class="al_li"><span class="al_mon"><span style="color:' . iro_opt('theme_skin') . ';">' . get_the_time('M') . '</span> (<span id="post-num"></span>' . __(" post(s)", "sakurairo") /*篇文章*/ . ')</span><ul class="al_post_list">'; //输出月份
-//         }
-//         $output .= '<li>' . '<a href="' . get_permalink() . '"><span style="color:' . iro_opt('theme_skin') . ';">' /*get_the_time('d'.__(" ","sakurairo")) 日*/ . '</span>' . get_the_title() . ' <span>(' . get_post_views(get_the_ID()) . ' <span class="fa fa-fire" aria-hidden="true"></span> / ' . get_comments_number('0', '1', '%') . ' <span class="fa fa-commenting" aria-hidden="true"></span>)</span></a></li>'; //输出文章日期和标题
-//     endwhile;
-//     wp_reset_postdata();
-//     $output .= '</ul></li></ul> <!--<ul class="al_mon_list"><li><ul class="al_post_list" style="display: block;"><li>博客已经萌萌哒运行了<span id="monitorday"></span>天</li></ul></li></ul>--></div>';
-//     #update_option('memory_archives_list', $output);
-//     echo $output;
-// }
-
-
 //时间序列
 function memory_archives_list()
 {
@@ -1232,7 +1193,7 @@ function memory_archives_list()
             $mon = $mon_tmp;
             $output .= '<li class="al_li"><span class="al_mon"><span style="color:' . iro_opt('theme_skin') . ';">' . get_the_time('M') . '</span> (<span id="post-num"></span>' . __(" post(s)", "sakurairo") /*篇文章*/ . ')</span><ul class="al_post_list">'; //输出月份
         }
-        $output .= '<li>' . '<a href="' . get_permalink() . '"><span style="color:' . iro_opt('theme_skin') . ';">' /*get_the_time('d'.__(" ","sakurairo")) 日*/ . '</span>' . get_the_title() . ' <span>(' . get_post_views(get_the_ID()) . ' <span class="fa fa-fire" aria-hidden="true"></span> / ' . get_comments_number('0', '1', '%') . ' <span class="fa fa-commenting" aria-hidden="true"></span>)</span></a></li>'; //输出文章日期和标题
+        $output .= '<li>' . '<a href="' . get_permalink() . '"><span style="color:' . iro_opt('theme_skin') . ';">' /*get_the_time('d'.__(" ","sakurairo")) 日*/ . '</span>' . get_the_title() . ' <span>(' . get_post_views(get_the_ID()) . ' <span class="fa-regular fa-gem" aria-hidden="true"></span> / ' . get_comments_number('0', '1', '%') . ' <span class="fa-regular fa-comment-dots" aria-hidden="true"></span>)</span></a></li>'; //输出文章日期和标题
     }
     wp_reset_postdata();
     $output .= '</ul></li></ul> <!--<ul class="al_mon_list"><li><ul class="al_post_list" style="display: block;"><li>博客已经萌萌哒运行了<span id="monitorday"></span>天</li></ul></li></ul>--></div>';
@@ -1707,7 +1668,7 @@ function markdown_parser($incoming_comment)
     global $wpdb, $comment_markdown_content;
     $re = '/```([\s\S]*?)```[\s]*|`{1,2}[^`](.*?)`{1,2}|\[.*?\]\([\s\S]*?\)/m';
     if (preg_replace($re, 'temp', $incoming_comment['comment_content']) != strip_tags(preg_replace($re, 'temp', $incoming_comment['comment_content']))) {
-        siren_ajax_comment_err('评论只支持Markdown啦，见谅╮(￣▽￣)╭<br>Markdown Supported while <i class="fa fa-code" aria-hidden="true"></i> Forbidden');
+        siren_ajax_comment_err('评论只支持Markdown啦，见谅╮(￣▽￣)╭<br>Markdown Supported while <i class="fa-solid fa-code"></i> Forbidden');
         return ($incoming_comment);
     }
     $column_names = $wpdb->get_row("SELECT * FROM information_schema.columns where 
@@ -1831,25 +1792,25 @@ add_action('admin_notices', 'permalink_tip');
 add_shortcode('task', 'task_shortcode');
 function task_shortcode($attr, $content = '')
 {
-    $out = '<div class="task shortcodestyle"><i class="fa fa-bars"></i>' . $content . '</div>';
+    $out = '<div class="task shortcodestyle"><i class="fa-solid fa-bars"></i>' . $content . '</div>';
     return $out;
 }
 add_shortcode('warning', 'warning_shortcode');
 function warning_shortcode($attr, $content = '')
 {
-    $out = '<div class="warning shortcodestyle"><i class="fa fa fa-exclamation-triangle"></i>' . $content . '</div>';
+    $out = '<div class="warning shortcodestyle"><i class="fa-solid fa-triangle-exclamation"></i>' . $content . '</div>';
     return $out;
 }
 add_shortcode('noway', 'noway_shortcode');
 function noway_shortcode($attr, $content = '')
 {
-    $out = '<div class="noway shortcodestyle"><i class="fa fa-times-rectangle"></i>' . $content . '</div>';
+    $out = '<div class="noway shortcodestyle"><i class="fa-solid fa-rectangle-xmark"></i>' . $content . '</div>';
     return $out;
 }
 add_shortcode('buy', 'buy_shortcode');
 function buy_shortcode($attr, $content = '')
 {
-    $out = '<div class="buy shortcodestyle"><i class="fa fa-check-square"></i>' . $content . '</div>';
+    $out = '<div class="buy shortcodestyle"><i class="fa-solid fa-check-to-slot"></i>' . $content . '</div>';
     return $out;
 }
 add_shortcode('ghcard', 'gh_card');
@@ -1874,7 +1835,7 @@ function show_card($attr, $content = '')
     '. $title .'		
     </div>
     <div class="link" style="background:'. $color .' !important;">
-    <a href="'. $content .'"><i class="fa fa-arrow-right" aria-hidden="true" /></i></a>
+    <a href="'. $content .'"><i class="fa-solid fa-angle-right"></i></a>
     </div>
 </section>';
 }
@@ -1907,7 +1868,7 @@ function xcollapse($atts, $content = null)
     extract(shortcode_atts(array("title" => ""), $atts));
     return '<div style="margin: 0.5em 0;">
     <div class="xControl">
-    <i class="fa fa-arrow-down" style="color: #16AF90;"></i> &nbsp;&nbsp;
+    <i class="fa-solid fa-angle-down" style="color: #16AF90;"></i> &nbsp;&nbsp;
     <span class="xTitle">' . $title . '</span>&nbsp;&nbsp;==>&nbsp;&nbsp;<a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02">展开 / 收缩</span></a>
     <div style="clear: both;"></div>
     </div>

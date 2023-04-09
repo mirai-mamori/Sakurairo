@@ -20,20 +20,20 @@
 	<p><?php echo mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, 150,"...");?></p>
 	<div class="s-time">
 	<?php if(is_sticky()) : ?>
-			<i class="iconfont hotpost icon-hot"></i>
+			<i class="fa-regular fa-gem"></i>
 		 <?php endif ?>
-	  <i class="iconfont icon-time"></i><?php echo poi_time_since(strtotime($post->post_date));//the_time('Y-m-d');?>
+		 <i class="fa-regular fa-clock"></i><?php echo poi_time_since(strtotime($post->post_date));//the_time('Y-m-d');?>
 	  </div>
 	</div>
 	<footer class="entry-footer">
 	<div class="info-meta">
        <div class="comnum">  
-        <span><i class="iconfont icon-mark"></i>
+        <span><i class="fa-regular fa-comment"></i>
 	<?php comments_popup_link(__("NOTHING","sakurairo"), __("1 Comment","sakurairo")/*条评论*/, '% '.__("Comments","sakurairo")/*条评论*/,'',__("Comment Closed","sakurairo")/**评论关闭 */); ?>
 		</span>
 		</div>
 		<div class="views"> 
-		<span><i class="iconfont icon-attention"></i><?php echo get_post_views(get_the_ID()).' '._n('Hit','Hits',get_post_views(get_the_ID()),'sakurairo')/*热度*/?></span>
+		<span><i class="fa-regular fa-eye"></i><?php echo get_post_views(get_the_ID()).' '._n('Hit','Hits',get_post_views(get_the_ID()),'sakurairo')/*热度*/?></span>
 		 </div>   
         </div>		
 	</footer><!-- .entry-footer -->

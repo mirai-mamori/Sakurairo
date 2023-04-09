@@ -476,17 +476,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id'         => 'nav_menu_icon_size',
-        'type'       => 'radio',
-        'title'      => __('Nav Menu Icon Size','sakurairo_csf'),
-        'options'    => array(
-          'standard' => __('Standard','sakurairo_csf'),
-          'large' => __('Large','sakurairo_csf'),
-        ),
-        'default'    => 'standard'
-      ),
-
-      array(
         'id'    => 'nav_menu_search',
         'type'  => 'switcher',
         'title' => __('Nav Menu Search','sakurairo_csf'),
@@ -928,14 +917,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'dependency' => array( 'sakura_widget', '==', 'true' ),
         'desc' => __('The best picture size is 400px × 460px','sakurairo_csf'),
         'library' => 'image',
-      ),
-
-      array(
-        'id' => 'footer_sakura_icon',
-        'type' => 'switcher',
-        'title' => __('Footer Dynamic Sakura Icon','sakurairo_csf'),
-        'label' => __('Dynamic Sakura icon will appear at the end of the page after turning on','sakurairo_csf'),
-        'default' => false
       ),
 
       array(
@@ -2116,8 +2097,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'exhibition_area_icon',
         'type' => 'text',
         'title' => __('Display Area Icon','sakurairo_csf'),
-        'desc' => __('Default is "fa fa-laptop", You can check the <a href="https://fontawesome.com.cn/faicons/">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
-        'default' => 'fa fa-laptop'
+        'desc' => __('Default is "fa-solid fa-laptop", You can check the <a href="https://fontawesome.com/search?o=r&m=free">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
+        'default' => 'fa-solid fa-laptop'
       ),
 
       array(
@@ -2132,8 +2113,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'post_area_icon',
         'type' => 'text',
         'title' => __('Post Area Icon','sakurairo_csf'),
-        'desc' => __('Default is "fa fa-bookmark-o", You can check the <a href="https://fontawesome.com.cn/faicons/">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
-        'default' => 'fa fa-bookmark-o'
+        'desc' => __('Default is "fa-regular fa-bookmark", You can check the <a href="https://fontawesome.com/search?o=r&m=free">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
+        'default' => 'fa-regular fa-bookmark'
       ),
 
       array(
@@ -3211,7 +3192,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'others', 
     'title' => __('ChatGPT Options','sakurairo_csf'),
-    'icon' => 'fa fa-connectdevelop',
+    'icon' => 'fa fa-lightbulb',
     'fields' => array(
 
       array(

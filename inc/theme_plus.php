@@ -350,8 +350,8 @@ function the_video_headPattern(bool $isHls = false)
             $header = 'single-header';
             //$ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
             $edit_this_post_link = get_edit_html();
-            $btn_playControl = '<button id="cv-pc" class="coverVideo-btn" onclick="coverVideo()"><i class="fa fa-pause" aria-hidden="true"></i></button>';
-/*             $btn_volumeControl = '<button id="cv-vc" class="coverVideo-btn" onclick="coverVideoMute()"><i class="fa fa-volume-off" aria-hidden="true"></i></button>';
+            $btn_playControl = '<button id="cv-pc" class="coverVideo-btn" onclick="coverVideo()"><i class="fa-solid fa-pause"></i></button>';
+/*             $btn_volumeControl = '<button id="cv-vc" class="coverVideo-btn" onclick="coverVideoMute()"><i class="fa-solid fa-volume-xmark"></i></button>';
  */            $t .= the_title('<h1 class="entry-title">', $btn_playControl./* $btn_volumeControl. */'</h1>', false);
             $t .= '<p class="entry-census"><span><a href="' 
             . esc_url(get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename'))) . '">' 
@@ -416,7 +416,7 @@ function header_user_menu()
     $ava = iro_opt('personal_avatar') ? iro_opt('personal_avatar') : get_avatar_url($current_user->user_email);
   ?>
     <div class="header-user-avatar">
-      <img class="faa-spin animated-hover" src="<?php echo get_avatar_url($current_user->ID, 64);/*$ava;*/ ?>" width="30" height="30">
+      <img src="<?php echo get_avatar_url($current_user->ID, 64);/*$ava;*/ ?>" width="30" height="30">
       <div class="header-user-menu">
         <div class="header-user-name">
           <?php _e("Signed in as", "sakurairo") ?>
@@ -442,7 +442,7 @@ function header_user_menu()
   ?>
     <div class="header-user-avatar">
       <a href="<?= $login_url ?>">
-        <img class="faa-shake animated-hover" src="<?= $ava ?>" width="30" height="30">
+        <img src="<?= $ava ?>" width="30" height="30">
       </a>
       <div class="header-user-menu">
         <div class="header-user-name no-logged">
@@ -666,7 +666,7 @@ function siren_private_message_hook($comment_content , $comment){
     $current_commenter = wp_get_current_commenter();
     if ( $is_private ) $comment_content = '#私密# ' . $comment_content;
     if ( $current_commenter['comment_author_email'] == $email || $parent_email == $current_commenter['comment_author_email'] || current_user_can('delete_user') ) return $comment_content;
-    if ( $is_private ) return '<i class="fa fa-lock" aria-hidden="true"></i> '.__("The comment is private","sakurairo")/*该评论为私密评论*/;
+    if ( $is_private ) return '<i class="fa-solid fa-lock"></i> '.__("The comment is private","sakurairo")/*该评论为私密评论*/;
     return $comment_content;
 }
 add_filter('get_comment_text','siren_private_message_hook',10,2);
@@ -831,7 +831,7 @@ function mobile_get_useragent_icon(string $ua):string{
   $alipay =  $alipay ? '<li class="alipay-code"><img src="'.$alipay.'"></li>' : '';
   $wechat = $wechat ? '<li class="wechat-code"><img src="'.$wechat.'"></li>' : '';
   ?>
-    <div class="reward-open"> <i class="fa fa-rmb" aria-hidden="true"></i>
+    <div class="reward-open"> <i class="fa-solid fa-piggy-bank fa-sm"></i>
       <div class="reward-main">
         <ul class="reward-row">
           <?php echo $alipay.$wechat; ?>

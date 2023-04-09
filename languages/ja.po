@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-03-20 14:23+0800\n"
-"PO-Revision-Date: 2023-03-20 14:23+0800\n"
+"POT-Creation-Date: 2023-04-09 14:50+0800\n"
+"PO-Revision-Date: 2023-04-09 14:50+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -21,19 +21,19 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: 404.php:54
+#: 404.php:57
 msgid "return to previous page"
 msgstr "前のページに戻る"
 
-#: 404.php:55
+#: 404.php:58
 msgid "return to home page"
 msgstr "ホームページに戻る"
 
-#: 404.php:58
+#: 404.php:61
 msgid "Don't worry, search in site?"
 msgstr "心配しないで、サイト内検索はどうでしょうか?"
 
-#: 404.php:61 footer.php:63 search.php:40
+#: 404.php:64 footer.php:60 search.php:39
 msgid "Search..."
 msgstr "検索…"
 
@@ -129,25 +129,25 @@ msgstr "広告は禁止されています"
 msgid "Site"
 msgstr "サイト"
 
-#: footer.php:38
+#: footer.php:35
 #, php-format
 msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr "ロード時間 %.3f 秒 | %d クエリ | RAM 使用量  %.2f MB "
 
-#: footer.php:68
+#: footer.php:65
 msgid "Go to top"
 msgstr "このページのトップへ"
 
-#: footer.php:76 footer.php:84
+#: footer.php:72 footer.php:80
 msgid "Want to find something?"
 msgstr "何かを見つけたいですか?"
 
-#: footer.php:86
+#: footer.php:81
 msgid "Search"
 msgstr "検索"
 
-#: footer.php:138
+#: footer.php:133
 msgid "Widgets"
 msgstr "ウィジェット"
 
@@ -353,35 +353,35 @@ msgstr "ダウンロードリンク"
 msgid "Remember me"
 msgstr "ログイン状態を保存する"
 
-#: functions.php:1207
+#: functions.php:1168
 msgid "All expand/collapse"
 msgstr "すべての展開/折りたたみ"
 
-#: functions.php:1231
+#: functions.php:1192
 msgid " "
 msgstr " "
 
-#: functions.php:1235
+#: functions.php:1196
 msgid " post(s)"
 msgstr "記事"
 
-#: functions.php:1258 functions.php:1261 inc/theme_plus.php:427
+#: functions.php:1219 functions.php:1222 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: functions.php:1487
+#: functions.php:1448
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>エラー</b>: このメールドメイン (<b>@"
 
-#: functions.php:1612
+#: functions.php:1573
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1696
+#: functions.php:1657
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:1825
+#: functions.php:1786
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -610,7 +610,7 @@ msgstr "ログアウト"
 msgid "Sign out? "
 msgstr "ログアウト?"
 
-#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:28
+#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:29
 #: tpl/single-image.php:24
 msgid "View"
 msgid_plural "Views"
@@ -666,28 +666,28 @@ msgstr "次の投稿"
 msgid "search result: %s"
 msgstr "検索結果: %s"
 
-#: tpl/content-category.php:31 tpl/content-image.php:36
-#: tpl/content-status.php:32 tpl/content-thumb.php:93 tpl/content.php:36
+#: tpl/content-category.php:31 tpl/content-image.php:33
+#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
 msgid "NOTHING"
 msgstr "何もない"
 
-#: tpl/content-category.php:31 tpl/content-image.php:36
-#: tpl/content-status.php:32 tpl/content-thumb.php:93 tpl/content.php:36
+#: tpl/content-category.php:31 tpl/content-image.php:33
+#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
 msgid "1 Comment"
 msgstr "1件のコメント"
 
-#: tpl/content-category.php:31 tpl/content-image.php:36
-#: tpl/content-status.php:32 tpl/content-thumb.php:93 tpl/content.php:36
+#: tpl/content-category.php:31 tpl/content-image.php:33
+#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
 msgid "Comments"
 msgstr "コメント"
 
-#: tpl/content-category.php:31 tpl/content-image.php:36
-#: tpl/content-status.php:32 tpl/content-thumb.php:93 tpl/content.php:36
+#: tpl/content-category.php:31 tpl/content-image.php:33
+#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
 msgid "Comment Closed"
 msgstr "コメント募集は終了しました"
 
-#: tpl/content-image.php:40 tpl/content-status.php:36 tpl/content-thumb.php:90
-#: tpl/content.php:40
+#: tpl/content-image.php:37 tpl/content-status.php:36 tpl/content-thumb.php:91
+#: tpl/content.php:37
 msgid "Hit"
 msgid_plural "Hits"
 msgstr[0] "ヒット"
@@ -714,19 +714,19 @@ msgstr ""
 "私たちはあなたが望むものを見つけられなかったようです。たぶん、あなたはそれを"
 "検索することができます。"
 
-#: tpl/content-page.php:25 tpl/content-single.php:42 tpl/single-image.php:34
+#: tpl/content-page.php:25 tpl/content-single.php:43 tpl/single-image.php:34
 msgid "Pages:"
 msgstr "ページ:"
 
-#: tpl/content-single.php:35 tpl/content-thumb.php:115
+#: tpl/content-single.php:36 tpl/content-thumb.php:116
 msgid "AI Excerpt"
 msgstr "AI 概要"
 
-#: tpl/content-single.php:68 tpl/single-image.php:58
+#: tpl/content-single.php:69 tpl/single-image.php:58
 msgid "Nothing~"
 msgstr "何もない~"
 
-#: tpl/content-single.php:71 tpl/single-image.php:61
+#: tpl/content-single.php:72 tpl/single-image.php:61
 msgid "Last updated on "
 msgstr "最終更新日 "
 

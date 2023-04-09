@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-03-20 14:23+0800\n"
+"POT-Creation-Date: 2023-04-09 14:50+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,19 +21,19 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: 404.php:54
+#: 404.php:57
 msgid "return to previous page"
 msgstr ""
 
-#: 404.php:55
+#: 404.php:58
 msgid "return to home page"
 msgstr ""
 
-#: 404.php:58
+#: 404.php:61
 msgid "Don't worry, search in site?"
 msgstr ""
 
-#: 404.php:61 footer.php:63 search.php:40
+#: 404.php:64 footer.php:60 search.php:39
 msgid "Search..."
 msgstr ""
 
@@ -129,25 +129,25 @@ msgstr ""
 msgid "Site"
 msgstr ""
 
-#: footer.php:38
+#: footer.php:35
 #, php-format
 msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr ""
 
-#: footer.php:68
+#: footer.php:65
 msgid "Go to top"
 msgstr ""
 
-#: footer.php:76 footer.php:84
+#: footer.php:72 footer.php:80
 msgid "Want to find something?"
 msgstr ""
 
-#: footer.php:86
+#: footer.php:81
 msgid "Search"
 msgstr ""
 
-#: footer.php:138
+#: footer.php:133
 msgid "Widgets"
 msgstr ""
 
@@ -340,35 +340,35 @@ msgstr ""
 msgid "Remember me"
 msgstr ""
 
-#: functions.php:1207
+#: functions.php:1168
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1231
+#: functions.php:1192
 msgid " "
 msgstr ""
 
-#: functions.php:1235
+#: functions.php:1196
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1258 functions.php:1261 inc/theme_plus.php:427
+#: functions.php:1219 functions.php:1222 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1487
+#: functions.php:1448
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1612
+#: functions.php:1573
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1696
+#: functions.php:1657
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:1825
+#: functions.php:1786
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -593,7 +593,7 @@ msgstr ""
 msgid "Sign out? "
 msgstr ""
 
-#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:28
+#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:29
 #: tpl/single-image.php:24
 msgid "View"
 msgid_plural "Views"
@@ -650,28 +650,28 @@ msgstr ""
 msgid "search result: %s"
 msgstr ""
 
-#: tpl/content-category.php:31 tpl/content-image.php:36
-#: tpl/content-status.php:32 tpl/content-thumb.php:93 tpl/content.php:36
+#: tpl/content-category.php:31 tpl/content-image.php:33
+#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
 msgid "NOTHING"
 msgstr ""
 
-#: tpl/content-category.php:31 tpl/content-image.php:36
-#: tpl/content-status.php:32 tpl/content-thumb.php:93 tpl/content.php:36
+#: tpl/content-category.php:31 tpl/content-image.php:33
+#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
 msgid "1 Comment"
 msgstr ""
 
-#: tpl/content-category.php:31 tpl/content-image.php:36
-#: tpl/content-status.php:32 tpl/content-thumb.php:93 tpl/content.php:36
+#: tpl/content-category.php:31 tpl/content-image.php:33
+#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
 msgid "Comments"
 msgstr ""
 
-#: tpl/content-category.php:31 tpl/content-image.php:36
-#: tpl/content-status.php:32 tpl/content-thumb.php:93 tpl/content.php:36
+#: tpl/content-category.php:31 tpl/content-image.php:33
+#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
 msgid "Comment Closed"
 msgstr ""
 
-#: tpl/content-image.php:40 tpl/content-status.php:36 tpl/content-thumb.php:90
-#: tpl/content.php:40
+#: tpl/content-image.php:37 tpl/content-status.php:36 tpl/content-thumb.php:91
+#: tpl/content.php:37
 msgid "Hit"
 msgid_plural "Hits"
 msgstr[0] ""
@@ -695,19 +695,19 @@ msgstr ""
 msgid "We didn't seem to find what you want. Maybe you can search for it."
 msgstr ""
 
-#: tpl/content-page.php:25 tpl/content-single.php:42 tpl/single-image.php:34
+#: tpl/content-page.php:25 tpl/content-single.php:43 tpl/single-image.php:34
 msgid "Pages:"
 msgstr ""
 
-#: tpl/content-single.php:35 tpl/content-thumb.php:115
+#: tpl/content-single.php:36 tpl/content-thumb.php:116
 msgid "AI Excerpt"
 msgstr ""
 
-#: tpl/content-single.php:68 tpl/single-image.php:58
+#: tpl/content-single.php:69 tpl/single-image.php:58
 msgid "Nothing~"
 msgstr ""
 
-#: tpl/content-single.php:71 tpl/single-image.php:61
+#: tpl/content-single.php:72 tpl/single-image.php:61
 msgid "Last updated on "
 msgstr ""
 

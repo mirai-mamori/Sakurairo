@@ -22,9 +22,6 @@ $reception_background = iro_opt('reception_background');
 				<div class="img-preload">
 					<img src="<?php echo iro_opt('load_nextpage_svg'); ?>"><!-- 加载下一部分圈圈 -->
 				</div>
-				<?php if (iro_opt('footer_sakura_icon', 'true')): ?>
-				<i class="iconfont icon-sakura rotating" style="color: <?php echo iro_opt('theme_skin_matching'); ?>;display:inline-block;font-size:26px"></i>
-				<?php endif; ?>
 				<p style="color: #666666;"><?php echo iro_opt('footer_info', ''); ?></p>
 			</div>
 			<div class="footer-device function_area">
@@ -65,14 +62,13 @@ $reception_background = iro_opt('reception_background');
 		</div>
 		<?php wp_nav_menu( array( 'depth' => 2, 'theme_location' => 'primary', 'container' => false ) ); ?>
 	</div><!-- m-nav-center end -->
-	<button id="moblieGoTop" title="<?=__('Go to top','sakurairo');?>"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
-    <button id="changskin"><i class="iconfont icon-gear inline-block rotating"></i></button>
+	<button id="moblieGoTop" title="<?=__('Go to top','sakurairo');?>"><i class="fa-solid fa-caret-up fa-lg"></i></button>
+    <button id="changskin"><i class="fa-solid fa-gear fa-spin fa-lg" ></i></button>
 	<!-- search start -->
 	<form class="js-search search-form search-form--modal" method="get" action="<?php echo home_url(); ?>" role="search">
 		<div class="search-form__inner">
 		<?php if(iro_opt('live_search')){ ?>
 			<div class="micro">
-				<i class="iconfont icon-search"></i>
 				<input id="search-input" class="text-input" type="search" name="s" placeholder="<?php _e('Want to find something?', 'sakurairo') /*想要找点什么呢*/?>" required>
 			</div>
 			<div class="ins-section-wrapper">
@@ -82,7 +78,6 @@ $reception_background = iro_opt('reception_background');
 		<?php }else{ ?>
 			<div class="micro">
 				<p class="micro mb-"><?php _e('Want to find something?', 'sakurairo') /*想要找点什么呢*/?></p>
-				<i class="iconfont icon-search"></i>
 				<input class="text-input" type="search" name="s" placeholder="<?php _e('Search', 'sakurairo') ?>" required>
 			</div>
 		<?php } ?>
@@ -98,38 +93,38 @@ $reception_background = iro_opt('reception_background');
     <div class="theme-controls row-container">
         <ul class="menu-list">
             <li id="white-bg">
-                <i class="fa fa-television faa-tada animated-hover faa-fast" aria-hidden="true"></i>
+			<i class="fa-solid fa-display fa-sm"></i>
 			</li><!--Default-->
 			<?php if($reception_background['heart_shaped'] == '1'): ?>
             <li id="diy1-bg">
-			    <i class="fa fa-heart-o faa-pulse animated-hover faa-fast" aria-hidden="true"></i>
+			<i class="fa-regular fa-heart"></i>
 			</li><!--Diy1-->
 			<?php endif; ?>
 			<?php if($reception_background['star_shaped'] == '1'): ?>
             <li id="diy2-bg">
-                <i class="fa fa-star-o faa-float animated-hover faa-fast" aria-hidden="true"></i>
+			<i class="fa-regular fa-star"></i>
 			</li><!--Diy2-->
 			<?php endif; ?>
 			<?php if($reception_background['square_shaped'] == '1'): ?>
             <li id="diy3-bg">
-			    <i class="fa fa-delicious faa-horizontal animated-hover faa-fast" aria-hidden="true"></i>
+			<i class="fa-brands fa-delicious"></i>
 			</li><!--Diy3-->
 			<?php endif; ?>
 			<?php if($reception_background['lemon_shaped'] == '1'): ?>
             <li id="diy4-bg">
-			    <i class="fa fa-lemon-o faa-wrench animated-hover faa-fast" aria-hidden="true"></i>
+			<i class="fa-regular fa-lemon"></i>
 			</li><!--Diy4-->
 			<?php endif; ?>
             <li id="dark-bg">
-                <i class="fa fa-moon-o faa-passing animated-hover faa-fast" aria-hidden="true"></i>
+			<i class="fa-regular fa-moon"></i>
             </li><!--Night-->
         </ul>
 	</div>
 	<?php if(iro_opt('style_menu_display') == 'full'): ?>
 	<p style="margin-bottom: 0.1em;"><?php echo iro_opt('style_menu_font_area_text', ''); ?></p>
     <div class="font-family-controls row-container">
-        <button type="button" class="control-btn-serif selected" data-name="serif" ><i class="fa fa-font faa-vertical animated-hover" aria-hidden="true"></i></button>
-        <button type="button" class="control-btn-sans-serif" data-name="sans-serif"><i class="fa fa-bold faa-vertical animated-hover" aria-hidden="true"></i></button>
+        <button type="button" class="control-btn-serif selected" data-name="serif" ><i class="fa-solid fa-font"></i></button>
+        <button type="button" class="control-btn-sans-serif" data-name="sans-serif"><i class="fa-solid fa-bold"></i></button>
 	</div>
 	<?php endif; ?>
 </div>

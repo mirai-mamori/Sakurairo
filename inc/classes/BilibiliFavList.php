@@ -87,7 +87,7 @@ class BilibiliFavList
 		if ($folder_resp['data']['has_more']){
 			$load = BilibiliFavList::load_more(rest_url('sakura/v1/favlist/bilibili') . '?page=' . ++$page . '&folder_id=' . $folder_id);
 		}else{
-			$load = '<a class="load-more"><i class="fa fa-ban" aria-hidden="true"></i>' . __('All item has been loaded.', 'sakurairo') . '</a>';
+			$load = '<a class="load-more"><i class="fa-solid fa-ban"></i>' . __('All item has been loaded.', 'sakurairo') . '</a>';
 		}
 		return $html . $load;
 	}
@@ -109,6 +109,6 @@ class BilibiliFavList
 
 	private static function load_more($href)
 	{
-		return '<a class="load-more" data-href="' . $href . '"><i class="fa fa-bolt" aria-hidden="true"></i>' . __('Load More', 'sakurairo') . '</a>';
+		return '<a class="load-more" data-href="' . $href . '"><i class="fa-solid fa-bolt-lightning"></i>' . __('Load More', 'sakurairo') . '</a>';
 	}
 }

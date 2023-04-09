@@ -64,9 +64,9 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
             <div class="header-info">
                 <!-- 首页一言打字效果 -->
                 <?php if (iro_opt('signature_typing', 'true')) : ?>
-                <?php if (iro_opt('signature_typing_marks', 'true')) : ?><i class="fa fa-quote-left"></i><?php endif; ?>
+                <?php if (iro_opt('signature_typing_marks', 'true')) : ?><i class="fa-solid fa-quote-left"></i><?php endif; ?>
                 <span class="element"><?=iro_opt('signature_typing_placeholder','疯狂造句中......')?></span>
-                <?php if (iro_opt('signature_typing_marks', 'true')) : ?><i class="fa fa-quote-right"></i><?php endif; ?>
+                <?php if (iro_opt('signature_typing_marks', 'true')) : ?><i class="fa-solid fa-quote-right"></i><?php endif; ?>
                 <span class="element"></span>
                 <script type="application/json" id="typed-js-initial">
                 <?= iro_opt('signature_typing_json', ''); ?>
@@ -100,6 +100,6 @@ echo bgvideo(); //BGVideo
 ?>
 <!-- 首页下拉箭头 -->
 <?php if (iro_opt('drop_down_arrow', 'true')) : ?>
-<div class="headertop-down faa-float animated" onclick="headertop_down()"><span><i class="fa fa-chevron-down"
+<div class="headertop-down" onclick="headertop_down()"><span><i class="fa-solid fa-chevron-down fa-bounce fa-xl"
             aria-hidden="true" style="color:<?php echo iro_opt('drop_down_arrow_color'); ?>"></i></span></div>
 <?php endif; ?>

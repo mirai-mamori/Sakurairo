@@ -23,7 +23,7 @@ get_header();
 ?>
 	<div class="notice" style="margin-top:60px">
 		<?php if (iro_opt('bulletin_board_icon', 'true')) : ?>
-			<i class="iconfont icon-notification"></i>
+			<i class="fa-solid fa-bullhorn fa-beat"></i>
 		<?php endif; ?>
 		<?php if (strlen($text) > 142) { ?>
 			<marquee align="middle" behavior="scroll" loop="-1" scrollamount="6" style="margin: 0 8px 0 20px; display: block;" onMouseOut="this.start()" onMouseOver="this.stop()">
@@ -47,7 +47,7 @@ if (iro_opt('exhibition_area') == '1') {
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		<h1 class="main-title"> <i class="<?php echo iro_opt('post_area_icon', 'fa fa-bookmark-o'); ?>" aria-hidden="true"></i> <br> <?php echo iro_opt('post_area_title', '文章'); ?> </h1>
+		<h1 class="main-title"> <i class="<?php echo iro_opt('post_area_icon', 'fa-regular fa-bookmark'); ?>" aria-hidden="true"></i> <br> <?php echo iro_opt('post_area_title', '文章'); ?> </h1>
 		<?php
 		if (have_posts()) :
 
@@ -75,7 +75,7 @@ if (iro_opt('exhibition_area') == '1') {
 		<div id="add_post"><span id="add_post_time" style="visibility: hidden;" title="<?php echo iro_opt('page_auto_load', ''); ?>"></span></div>
 	<?php } else { ?>
 		<nav class="navigator">
-			<?php previous_posts_link('<i class="iconfont icon-back"></i>') ?><?php next_posts_link('<i class="iconfont icon-right"></i>') ?>
+			<?php previous_posts_link('<i class="fa-solid fa-angle-left"></i>') ?><?php next_posts_link('<i class="fa-solid fa-angle-right"></i>') ?>
 		</nav>
 	<?php } ?>
 </div><!-- #primary -->
