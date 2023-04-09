@@ -73,7 +73,7 @@ while (have_posts()) : the_post();
 				<div class="post-date">
 					<i class="fa-regular fa-clock"></i><?php echo poi_time_since(strtotime($post->post_date)); ?>
 					<?php if (is_sticky()) : ?>
-						&nbsp;<i class="fa-solid fa-splotch"></i>
+						&nbsp;<i class="fa-regular fa-gem"></i>
 					<?php endif ?>
 				</div>
 				<a href="<?php the_permalink(); ?>" class="post-title">

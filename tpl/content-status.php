@@ -20,7 +20,7 @@
 	<p><?php echo mb_strimwidth(strip_shortcodes(strip_tags(apply_filters('the_content', $post->post_content))), 0, 150,"...");?></p>
 	<div class="s-time">
 	<?php if(is_sticky()) : ?>
-			<i class="fa-solid fa-splotch"></i>
+			<i class="fa-regular fa-gem"></i>
 		 <?php endif ?>
 		 <i class="fa-regular fa-clock"></i><?php echo poi_time_since(strtotime($post->post_date));//the_time('Y-m-d');?>
 	  </div>

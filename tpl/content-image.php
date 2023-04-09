@@ -21,7 +21,7 @@
 	<h1 class="entry-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
 	<div class="p-time">
 	 <?php if(is_sticky()) : ?>
-		  <i class="fa-solid fa-splotch"></i>
+		  <i class="fa-regular fa-gem"></i>
 		 <?php endif ?>
 		 <i class="fa-regular fa-clock"></i><?php echo poi_time_since(strtotime($post->post_date));//the_time('Y-m-d');?>
 	  </div>
