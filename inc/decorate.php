@@ -851,23 +851,6 @@ display:none;
 }
 <?php endif; ?>
 
-<?php if(iro_opt('nav_menu_icon_size') == 'large'){ ?>
-.lower li ul {
-    right: -13px;
-}
-#show-nav .line {
-    width: 28px;
-    margin-left: -15px;
-}
-#show-nav {
-    width: 30px;
-    height: 33px;
-}
-
-<?php }else if(iro_opt('nav_menu_search_size') == 'standard'){ ?>
-
-<?php } ?>
-
 <?php if(iro_opt('friend_link_align') == 'right'){ ?>
 
 span.sitename {

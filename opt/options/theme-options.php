@@ -476,17 +476,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id'         => 'nav_menu_icon_size',
-        'type'       => 'radio',
-        'title'      => __('Nav Menu Icon Size','sakurairo_csf'),
-        'options'    => array(
-          'standard' => __('Standard','sakurairo_csf'),
-          'large' => __('Large','sakurairo_csf'),
-        ),
-        'default'    => 'standard'
-      ),
-
-      array(
         'id'    => 'nav_menu_search',
         'type'  => 'switcher',
         'title' => __('Nav Menu Search','sakurairo_csf'),
