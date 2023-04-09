@@ -442,7 +442,7 @@ function header_user_menu()
   ?>
     <div class="header-user-avatar">
       <a href="<?= $login_url ?>">
-        <img class="fa-shake" src="<?= $ava ?>" width="30" height="30">
+        <img src="<?= $ava ?>" width="30" height="30">
       </a>
       <div class="header-user-menu">
         <div class="header-user-name no-logged">
