@@ -129,7 +129,7 @@ $vision_resource_basepath = iro_opt('vision_resource_basepath');
 			</div><!-- .site-branding -->
 			<?php header_user_menu();
 			if (iro_opt('nav_menu_search') == '1') { ?>
-				<div class="searchbox"><i class="fa-solid fa-magnifying-glass"></i></div>
+				<div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
 			<?php } ?>
 			<div class="lower"><?php if (iro_opt('nav_menu_display') == 'fold') { ?>
 					<div id="show-nav" class="showNav">

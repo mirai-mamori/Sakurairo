@@ -997,9 +997,6 @@ li.link-item {
     z-index: 999;
     border-radius: 0px;
 }
-.searchbox {
-  line-height: 75px;
-}
 .header-user-avatar {
   margin-top: 22px;
 }

@@ -82,7 +82,6 @@ $reception_background = iro_opt('reception_background');
 		<?php }else{ ?>
 			<div class="micro">
 				<p class="micro mb-"><?php _e('Want to find something?', 'sakurairo') /*想要找点什么呢*/?></p>
-				<i class="fa-solid fa-magnifying-glass"></i>
 				<input class="text-input" type="search" name="s" placeholder="<?php _e('Search', 'sakurairo') ?>" required>
 			</div>
 		<?php } ?>

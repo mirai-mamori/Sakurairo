@@ -48,16 +48,8 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   animation: searchbox 1s;
   position: relative;
   float: right;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-top: 15px;
-}
-
-.searchbox {
-  animation: searchbox 1s;
-  float: right;
-  height: 75px;
-  line-height: 60px;
-  margin-left: 20px;
 }
 
 .site-top .lower {
@@ -2699,7 +2691,31 @@ h1.main-title {
   position: relative;
   z-index: 9998;
   font-weight: var(--global-font-weight);
+}
 
+.searchbox.js-toggle-search {
+  color: var(--theme-skin,#505050);
+  cursor: pointer;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  font-weight: var(--global-font-weight);
+  animation: searchbox 1s;
+  border: 2px solid transparent;
+  float: right;
+  height: auto;
+  font-size: 18px;
+  width: auto;
+  margin: 10px 0;
+  border-radius: 10px;
+  padding: 5px 9px;
+  margin-left: 15px;
+}
+
+.searchbox.js-toggle-search:hover {
+  color: var(--theme-skin-matching);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  border: 2px solid var(--theme-skin-matching);
 }
 
 .search-form--modal {
@@ -2793,7 +2809,7 @@ h1.main-title {
 .search-form input {
   font-size: 1.5rem/*!covered24px*/;
   background: rgba(255, 255, 255, 0.7);
-  padding: 12px 24px 12px 64px;
+  padding: 12px 24px;
   width: 100%;
   outline: 0;
   border-radius: 50px;
