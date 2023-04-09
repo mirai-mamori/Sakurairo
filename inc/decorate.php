@@ -476,9 +476,6 @@ cursor: url(<?=iro_opt('cursor_nor'); ?>), auto;
 }
 
 .headertop-down i,
-.faa-parent.animated-hover:hover>.faa-spin,
-.faa-spin.animated,
-.faa-spin.animated-hover:hover,
 #waifu #live2d,
 .aplayer svg,
 .aplayer.aplayer-narrow .aplayer-body,
@@ -1008,9 +1005,13 @@ li.link-item {
 .logolink.moe-mashiro a{
   line-height: 56px !important;
 }
+.searchbox.js-toggle-search{
+  margin: 17px 0;
+  margin-left: 15px;
+}
 @media (max-width:860px) {
 .site-header {
-    height: 60px;
+  height: 60px;
 }
 }
 <?php } ?>

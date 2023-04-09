@@ -3369,7 +3369,6 @@ h1.main-title {
   padding: 8px;
   background: rgba(241, 241, 241, .5);
   font-weight: var(--global-font-weight);
-
 }
 
 .header-user-avatar:hover .header-user-menu {
@@ -4509,7 +4508,9 @@ td.hljs-ln-numbers {
   left: auto;
   bottom: 15px;
   height: auto;
-  width: 210px;
+  width: auto;
+  max-width: 210px;
+  padding: 0 16px;
   border-radius: var(--style_menu_selection_radius,15px);
   font-size: larger;
   text-align: center;
@@ -4571,7 +4572,7 @@ td.hljs-ln-numbers {
   vertical-align: middle;
   margin: 0 4px;
   box-shadow: none;
-  background-color: rgb(255 255 255 / 50%);
+  background-color: rgb(255 255 255 / 80%);
   -webkit-transition: all .8s;
   transition: all .8s;
   border: 1px solid #FFFFFF;
@@ -4705,19 +4706,20 @@ h5::before {
   position: absolute;
   bottom: 50px;
   left: calc(50% - 14px);
-  cursor: pointer;
   z-index: 5;
 }
 
 .headertop-down i {
-  /* IE 9 */
-  /* Safari */
-  /* Standard syntax */
-  font-size: 28px;
+  font-size: 36px;
   color: #fff;
-  -ms-transform: scale(1.5, 1);
+  cursor: pointer;
   -webkit-transform: scale(1.5, 1);
   transform: scale(1.5, 1);
+  animation-play-state: paused;
+}
+
+.headertop-down i:hover {
+  animation-play-state: running;
 }
 
 .bangumi .column {
@@ -6640,12 +6642,20 @@ body.dark::-webkit-scrollbar-track {
   margin-bottom: 200px;
   font-size: 18px;
   font-weight: var(--global-font-weight);
-
 }
 
 .header-user-avatar img {
   border-radius: 100%;
   cursor: pointer;
+  transform: rotate(0);
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -o-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transition: all 0.8s ease !important;
+  -webkit-transition: all ease 1s;
+  -moz-transition: all ease 1s;
+  -o-transition: all ease 1s;
 }
 
 .header-user-name no-logged {
@@ -7154,7 +7164,7 @@ a.toc-link {
 }
 
 .skin-menu .row-container.font-family-controls {
-  padding: 14px 17px 24px 17px;
+  padding: 14px 0px 24px 0px;
 }
 
 .font-family-controls button.selected {
@@ -8266,6 +8276,10 @@ body.dark .post-list-thumb:hover {
   }
 
   .header-user-avatar img {
+    display: none;
+  }
+
+  .searchbox.js-toggle-search {
     display: none;
     /*移动端搜索关闭*/
   }
@@ -9731,9 +9745,13 @@ body.dark #preload {
   background: #333333;
 }
 
-body.dark .reward-row,
 body.dark input.m-search-input {
   background: rgba(26,26,26,0.8);
+}
+
+body.dark .reward-row {
+  background: rgba(26,26,26,0.8);
+  border: 1.5px solid #7d7d7d30;
 }
 
 body.dark .ins-section .ins-search-item.active,

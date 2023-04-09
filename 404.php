@@ -23,7 +23,6 @@ add_action('wp_head',function(){
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo iro_opt('favicon_link', ''); ?>" />
-    <link rel="stylesheet" href="<?= $shared_lib_basepath ?>/css/404.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/fontawesome.min.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/solid.min.css" type="text/css" media="all"/>
     <?php wp_head(); ?>
