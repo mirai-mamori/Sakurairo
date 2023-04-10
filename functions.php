@@ -1845,7 +1845,7 @@ function show_card($attr, $content = '')
     </div>
     <br>
     <div class="icon">
-    <i class="fa '. $icon .'"></i>
+    <i class="'. $icon .'"></i>
     </div>
     <div class="title">
     '. $title .'		
