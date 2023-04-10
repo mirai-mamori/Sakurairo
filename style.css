@@ -207,7 +207,7 @@ pre {
   font-size: 1em;
   background: rgba(255, 255, 255, .5);
   border-radius: 10px;
-  font: 15px/22px "Microsoft YaHei", Arial, Sans-Serif;
+  font: 15px/22px 'Fira Code','Noto Sans SC';
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -3272,7 +3272,7 @@ h1.main-title {
   outline: 0;
   border-radius: 3px;
   font-size: 16px;
-  font: 300 14px miranafont, "Hiragino Sans GB", "Microsoft YaHei", STXihei, SimSun, sans-serif;
+  font: 300 14px 'Fira Code','Noto Sans SC';
   -webkit-transition: .4s ease all;
   -moz-transition: .4s ease all;
   -o-transition: .4s ease all;
@@ -3289,7 +3289,7 @@ h1.main-title {
   outline: 0;
   border-radius: 3px;
   font-size: 16px;
-  font: 300 14px miranafont, "Hiragino Sans GB", "Microsoft YaHei", STXihei, SimSun, sans-serif;
+  font: 300 14px 'Fira Code','Noto Sans SC';
   -webkit-transition: .4s ease all;
   -moz-transition: .4s ease all;
   -o-transition: .4s ease all;
@@ -4342,7 +4342,7 @@ input[type=radio]:checked:before {
   position: relative;
   background: #21252b;
   border-radius: 10px;
-  font: 15px/22px "Microsoft YaHei", Arial, Sans-Serif;
+  font: 15px/22px 'Fira Code','Noto Sans SC';
   line-height: 1.6;
   margin-bottom: 1.6em;
   margin-left: 8px;
@@ -4438,7 +4438,7 @@ td.hljs-ln-numbers {
   text-align: center;
   color: #888f96;
   background: #1d1f21;
-  font-family: 'Noto Sans SC', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+  font-family: 'Fira Code','Noto Sans SC';
   vertical-align: top;
   position: absolute;
   left: 0;

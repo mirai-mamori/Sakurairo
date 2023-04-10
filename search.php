@@ -53,7 +53,7 @@ get_header(); ?>
 				text-align: center;
 				margin: 40px 0 80px;
 				display: inline-block;
-				font-family: miranafont, "Hiragino Sans GB", "Microsoft YaHei", STXihei, SimSun, sans-serif;
+				font-family: 'Fira Code','Noto Sans SC';
 			}
 
 			.nav-previous,
