@@ -231,7 +231,7 @@ body.dark .entry-content tr:nth-child(even){background-color: unset}
     margin-top: -30px;
     left: 0;
     width: 100%;
-    font-family: Ubuntu, sans-serif;
+    font-family: 'Fira Code','Noto Sans SC';
     font-weight: 700;
     padding: 0 80px;
     text-indent: 15px;

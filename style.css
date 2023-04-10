@@ -2606,7 +2606,7 @@ h1.main-title {
 
 .header-info p {
   margin: 0;
-  font-family: Ubuntu, sans-serif;
+  font-family:Noto Sans SC;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -3676,21 +3676,6 @@ input[type=radio]:checked:before {
 
 }
 
-.live2d-tool {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: auto;
-  height: auto;
-  z-index: 100;
-  border-radius: 0 6px 6px 0 !important;
-  font-size: 13px;
-  cursor: pointer;
-  font-family: Ubuntu;
-  font-weight: var(--global-font-weight);
-
-}
-
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -3741,7 +3726,7 @@ input[type=radio]:checked:before {
   width: auto;
   height: auto;
   z-index: 99;
-  font-family: Ubuntu;
+  font-family: 'Noto Sans SC';
   padding: 10px 20px;
   transition-property: right;
   transition-duration: .3s, .3s;
@@ -3774,7 +3759,7 @@ input[type=radio]:checked:before {
 
 .center-text {
   margin: auto;
-  font-family: Ubuntu, sans-serif;
+  font-family: 'Noto Sans SC';
   font-size: 80px;
   text-transform: none;
   font-weight: var(--global-font-weight);
@@ -6154,7 +6139,6 @@ div.cbp_tmlabel > p {
 
 .comment-textarea,
 .micro,
-.live2d-tool .keys,
 .bangumi-status p {
   position: relative;
 }
@@ -7122,7 +7106,7 @@ a.toc-link {
 }
 
 .code-font {
-  font-family: 'Noto Sans SC', monospace;
+  font-family: 'Fira Code','Noto Sans SC';
 }
 
 .Ubuntu-font,
@@ -7132,7 +7116,7 @@ a.toc-link {
 
 .serif,
 .control-btn-serif {
-  font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Source Han Serif', source-han-serif-sc, 'PT Serif', 'SongTi SC', 'MicroSoft Yahei', Georgia, serif;
+  font-family: 'Noto Serif SC';
 }
 
 .menu-list li:hover,
@@ -9099,110 +9083,6 @@ body.dark .post-list-thumb:hover {
 
   0%, 100% {
     transform: translate(0, 0) rotate(0);
-  }
-}
-
-@media (min-width:861px) {
-  .live2d-tool {
-    border-radius: 0 5px 5px 0;
-    width: 35px;
-    left: -17px;
-    color: #fff;
-    font-size: 13px;
-    padding: 5px 0;
-    padding-top: 5px;
-    padding-right: 0;
-    padding-bottom: 5px;
-    padding-left: 17px;
-    font-weight: 700;
-    z-index: 99;
-    visibility: visible;
-    writing-mode: vertical-rl;
-    transition-property: left, bottom;
-    transition-duration: .5s, .5s;
-  }
-
-  .live2d-tool:hover {
-    left: 0;
-  }
-}
-
-@media (max-width:860px) {
-  .live2d-tool {
-    padding: 0 5px;
-  }
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  .live2d-tool {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-    z-index: 100;
-    border-radius: 5px;
-    font-size: 13px;
-    cursor: pointer;
-  }
-
-@media (min-width:861px) {
-    .live2d-tool {
-      border-radius: 0 5px 5px 0;
-      width: 35px;
-      margin-left: -35px;
-      color: #fff;
-      font-size: 13px;
-      padding: 5px 0;
-      padding-top: 5px;
-      padding-right: 0;
-      padding-bottom: 5px;
-      padding-left: 17px;
-      font-weight: 700;
-      z-index: 99;
-      writing-mode: vertical-rl;
-      transition-property: margin-left, bottom;
-      transition-duration: .5s, .5s;
-    }
-
-    .live2d-tool:hover {
-      margin-left: -17px;
-    }
-}
-}
-
-@supports (-ms-ime-align:auto) {
-  .live2d-tool {
-    margin-left: 0;
-    left: -17px;
-    transition-property: left, bottom;
-  }
-
-  .live2d-tool:hover {
-    margin-left: 0;
-  }
-}
-
-@media (min-width:861px) {
-  .hide-live2d {
-    background-color: var(--theme-skin,#505050);
-    bottom: 156px;
-    visibility: visible;
-    min-height: 38.75px;
-  }
-
-  .switch-live2d {
-    background-color: #F7BB4D;
-    bottom: 105px;
-    visibility: visible;
-    min-height: 51px;
-  }
-
-  .save-live2d {
-    background-color: #EED099;
-    bottom: 66px;
-    visibility: visible;
-    min-height: 39.3px;
   }
 }
 
