@@ -4,7 +4,8 @@ namespace HaoZiTeam\ChatGPT;
 
 use Exception;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Psr7;
 
 class V2
 {
@@ -99,8 +100,12 @@ class V2
                     'stream' => $stream,
                 ]
             );
-        } catch (GuzzleException $e) {
-            throw new Exception($e->getMessage());
+        } catch (RequestException $e) {
+            if ($e->hasResponse()) {
+                throw new Exception(Psr7\Message::toString($e->getResponse()));
+            } else {
+                throw new Exception($e->getMessage());
+            }
         }
 
         // 如果是数据流模式，则直接返回数据流
