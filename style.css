@@ -7377,7 +7377,7 @@ a.toc-link {
 .showcard .title {
   position: relative;
   float: left;
-  width: 62%;
+  width: 75%;
   color: #505050;
   font-size: 17px;
   margin-left: 8px;
@@ -7405,7 +7405,12 @@ a.toc-link {
   margin: 10px;
 }
 
-.showcard-button:hover {
+.showcard-button.hover {
+  font-size: 32px;
+  width: 60px;
+  height: 60px;
+  bottom: 27.5%;
+  right: 27.5%;
   box-shadow: 0 1px 20px 8px #e8e8e8;
   background: rgba(255,255,255,0.8);
   -webkit-transition: all .8s;
