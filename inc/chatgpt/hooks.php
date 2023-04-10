@@ -20,38 +20,40 @@ namespace IROChatGPT {
         $chatGPT = new ChatGPTV2(iro_opt('chatgpt_access_token'), iro_opt('chatgpt_base_url'));
 
         $chatGPT->addMessage(iro_opt('chatgpt_system_prompt', DEFAULT_INIT_PROMPT), 'system');
-        $chatGPT->addMessage("文章标题：" . $post->post_title,'user');
+        $chatGPT->addMessage("文章标题：" . $post->post_title, 'user');
         $content = $post->post_content;
-        $content = substr(wp_strip_all_tags(apply_filters('the_content', $content)),0,4050);
+        $content = substr(wp_strip_all_tags(apply_filters('the_content', $content)), 0, 4050);
 
-        $chatGPT->addMessage("正文：" .$content, 'user');
+        $chatGPT->addMessage("正文：" . $content, 'user');
 
-        return $chatGPT->ask(iro_opt('chatgpt_ask_prompt', DEFAULT_ASK_PROMPT))['answer'];
+        $answer = '';
+        foreach ($chatGPT->ask(iro_opt('chatgpt_ask_prompt', DEFAULT_ASK_PROMPT)) as $item) {
+            $answer .= $item;
+        }
+        return  $answer;
     }
 
     function apply_chatgpt_hook()
     {
         if (iro_opt('chatgpt_article_summarize')) {
-            add_action('save_post_post', function (int $post_id, WP_Post $post, bool $update)
-            {
+            add_action('save_post_post', function (int $post_id, WP_Post $post, bool $update) {
                 if (!has_excerpt($post_id)) {
                     try {
                         $excerpt = summon_article_excerpt($post);
                         update_post_meta($post_id, POST_METADATA_KEY, $excerpt);
                     } catch (\Throwable $th) {
                         //throw $th;
-                        error_log('ChatGPT-excerpt-err:'.$th);
+                        error_log('ChatGPT-excerpt-err:' . $th);
                     }
                 }
-            },10,3);
-            add_filter('the_excerpt', function (string $post_excerpt)
-            {
+            }, 10, 3);
+            add_filter('the_excerpt', function (string $post_excerpt) {
                 global $post;
                 if (has_excerpt($post)) {
-                     return $post_excerpt;
+                    return $post_excerpt;
                 } else {
                     $ai_excerpt =  get_post_meta($post->ID, POST_METADATA_KEY, true);
-                    return $ai_excerpt ? $ai_excerpt:$post_excerpt;
+                    return $ai_excerpt ? $ai_excerpt : $post_excerpt;
                 }
             });
         }
