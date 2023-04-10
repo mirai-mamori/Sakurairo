@@ -7417,14 +7417,6 @@ a.toc-link {
   transition: all .8s;
 }
 
-.showcard .link a {
-  color: #505050;
-}
-
-.showcard .link a:hover {
-  color: #FFFFFF;
-}
-
 .contents span img,
 .entry-content span img {
   height: 30px;
@@ -10139,15 +10131,16 @@ body.dark .showcard .title {
   color: #CCCCCC !important;
 }
 
-body.dark .showcard .link {
+body.dark .showcard-button {
   box-shadow: 0 1px 20px 2px rgba(26,26,26,0.8);
+  background: rgba(26,26,26,0.6);
   -webkit-transition: all .8s;
   transition: all .8s;
 }
 
-body.dark .showcard .link:hover{
+body.dark .showcard-button.hover{
   box-shadow: 0 1px 30px -2px rgba(26,26,26,0.95);
-  filter: opacity(0.85);
+  background: rgba(26,26,26,0.8);
   -webkit-transition: all .8s;
   transition: all .8s;
 }
