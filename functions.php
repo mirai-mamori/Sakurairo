@@ -1841,6 +1841,7 @@ function show_card($attr, $content = '')
     extract(shortcode_atts(array("icon" => "", "title" => "", "img" => "", "color" => ""), $attr));
     return '<section class="showcard">
     <div class="img" alt="Show-Card" style="background:url('. $img .');background-size:cover;background-position: center;">
+    <a href="'. $content .'"><button class="showcard-button" style="color:'. $color .' !important;"><i class="fa-solid fa-angle-right"></i></button> </a>
     </div>
     <br>
     <div class="icon">
@@ -1848,9 +1849,6 @@ function show_card($attr, $content = '')
     </div>
     <div class="title">
     '. $title .'		
-    </div>
-    <div class="link" style="background:'. $color .' !important;">
-    <a href="'. $content .'"><i class="fa-solid fa-angle-right"></i></a>
     </div>
 </section>';
 }

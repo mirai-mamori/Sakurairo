@@ -7386,26 +7386,28 @@ a.toc-link {
   overflow: hidden;
 }
 
-.showcard .link {
-  position: relative;
+.showcard-button {
+  position: absolute;
   float: right;
   box-shadow: 0 1px 30px -4px #e8e8e8;
-  background: var(--theme-skin-matching);
-  padding-right: 9px;
-  padding-left: 10px;
-  padding-top: 1px;
-  padding-bottom: 2px;
-  border-radius: 10px;
-  margin-right: 4%;
-  margin-top: 2px;
-  margin-bottom: 16px;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(10px);
+  padding: 5px;
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 100%;
   -webkit-transition: all .8s;
   transition: all .8s;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
 }
 
-.showcard .link:hover {
+.showcard-button:hover {
   box-shadow: 0 1px 20px 8px #e8e8e8;
-  filter: opacity(0.75);
+  background: rgba(255,255,255,0.8);
   -webkit-transition: all .8s;
   transition: all .8s;
 }
