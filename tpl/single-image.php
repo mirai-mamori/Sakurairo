@@ -63,6 +63,9 @@ if (iro_opt('author_profile_quote') == '1') {
             </div>
         <?php } ?>
     </section>
+    <div class="post-modified-time">
+        <i class="fa-solid fa-calendar-day" aria-hidden="true"></i><?php _e('Last updated on ', 'sakurairo'); echo get_the_modified_time('Y-m-d'); ?>
+    </div>
     <div class="post-tags">
         <?php if ( has_tag() ) { 
             echo '<i class="fa-solid fa-tag" aria-hidden="true"></i> '; 
@@ -71,9 +74,6 @@ if (iro_opt('author_profile_quote') == '1') {
             echo '<i class="fa-solid fa-tag" aria-hidden="true"></i> '; 
             _e('Nothing~', 'sakurairo');
         } ?>
-    </div>
-    <div class="post-modified-time">
-        <i class="fa-solid fa-calendar-day" aria-hidden="true"></i><?php _e('Last updated on ', 'sakurairo'); echo get_the_modified_time('Y-m-d'); ?>
     </div>
 </footer><!-- .entry-footer -->
 </article><!-- #post-## -->
