@@ -28,7 +28,7 @@ get_header();
                         ?>
                     <?php else: ?>
                         <div class="row">
-                            <p> <?php _e("Please fill in the Bilibili UID in Sakura Options.","sakura"); ?></p>
+                            <p> <?php _e("Please fill in the Bilibili UID in Sakura Options.","sakurairo"); ?></p>
                         </div>
                     <?php endif; ?>
                 <?php else:?>
@@ -40,7 +40,7 @@ get_header();
                         ?>
                     <?php else: ?>
                         <div class="row">
-                            <p> <?php _e("Please fill in the My Anime List Username in Sakura Options.","sakura"); ?></p>
+                            <p> <?php _e("Please fill in the My Anime List Username in Sakura Options.","sakurairo"); ?></p>
                         </div>
                     <?php endif; ?>
                 <?php endif; ?>

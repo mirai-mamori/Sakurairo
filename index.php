@@ -23,7 +23,7 @@ get_header();
 ?>
 	<div class="notice" style="margin-top:60px">
 		<?php if (iro_opt('bulletin_board_icon', 'true')) : ?>
-			<div class="notice-icon"><?php _e('Notice') ?></div>
+			<div class="notice-icon"><?php _e('Notice','sakurairo') ?></div>
 		<?php endif; ?>
 		<?php if (strlen($text) > 142) { ?>
 			<marquee align="middle" behavior="scroll" loop="-1" scrollamount="6" style="margin: 0 8px 0 20px; display: block;" onMouseOut="this.start()" onMouseOver="this.stop()">

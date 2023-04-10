@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-04-09 14:50+0800\n"
-"PO-Revision-Date: 2023-04-09 14:50+0800\n"
+"POT-Creation-Date: 2023-04-10 15:22+0800\n"
+"PO-Revision-Date: 2023-04-10 15:22+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -21,19 +21,19 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: 404.php:57
+#: 404.php:53
 msgid "return to previous page"
 msgstr "返回上一頁"
 
-#: 404.php:58
+#: 404.php:54
 msgid "return to home page"
 msgstr "返回首頁"
 
-#: 404.php:61
+#: 404.php:57
 msgid "Don't worry, search in site?"
 msgstr "別著急，試試站內檢索？"
 
-#: 404.php:64 footer.php:60 search.php:39
+#: 404.php:59 footer.php:60 search.php:39
 msgid "Search..."
 msgstr "搜尋..."
 
@@ -351,35 +351,35 @@ msgstr "下載連結"
 msgid "Remember me"
 msgstr "保持登入"
 
-#: functions.php:1168
+#: functions.php:1183
 msgid "All expand/collapse"
 msgstr "全部展開/收縮"
 
-#: functions.php:1192
+#: functions.php:1205
 msgid " "
 msgstr " "
 
-#: functions.php:1196
+#: functions.php:1209
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1219 functions.php:1222 inc/theme_plus.php:427
+#: functions.php:1232 functions.php:1235 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:1448
+#: functions.php:1461
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>錯誤</b>: 電子郵箱格式出錯 (<b>@"
 
-#: functions.php:1573
+#: functions.php:1586
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1657
+#: functions.php:1670
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:1786
+#: functions.php:1799
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -607,7 +607,7 @@ msgstr "登出"
 msgid "Sign out? "
 msgstr "登出？ "
 
-#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:29
+#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:31
 #: tpl/single-image.php:24
 msgid "View"
 msgid_plural "Views"
@@ -641,6 +641,10 @@ msgstr "登出"
 #: inc/theme_plus.php:449
 msgid "Log in"
 msgstr "登入"
+
+#: index.php:26
+msgid "Notice"
+msgstr "公告"
 
 #: layouts/imgbox.php:7
 msgid "Previous"
@@ -707,19 +711,19 @@ msgstr "沒有找到你想要的，看看其他的吧"
 msgid "We didn't seem to find what you want. Maybe you can search for it."
 msgstr "似乎沒有找到你想要的東西，或許你可以搜尋一下試式試"
 
-#: tpl/content-page.php:25 tpl/content-single.php:43 tpl/single-image.php:34
+#: tpl/content-page.php:25 tpl/content-single.php:45 tpl/single-image.php:34
 msgid "Pages:"
 msgstr "頁面:"
 
-#: tpl/content-single.php:36 tpl/content-thumb.php:116
+#: tpl/content-single.php:38 tpl/content-thumb.php:116
 msgid "AI Excerpt"
 msgstr "AI 摘錄"
 
-#: tpl/content-single.php:69 tpl/single-image.php:58
+#: tpl/content-single.php:71 tpl/single-image.php:58
 msgid "Nothing~"
 msgstr "無~"
 
-#: tpl/content-single.php:72 tpl/single-image.php:61
+#: tpl/content-single.php:74 tpl/single-image.php:61
 msgid "Last updated on "
 msgstr "最後更新於 "
 

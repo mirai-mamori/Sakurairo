@@ -4402,7 +4402,7 @@ input[type=radio]:checked:before {
   background: #1d1f21;
   color: #fff;
   word-break: break-word;
-  font-family: 'Noto Sans SC', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+  font-family: 'Fira Code','Noto Sans SC';
   padding: 2px;
   text-shadow: none;
   border-radius: 0 0 5px 5px;
@@ -4419,7 +4419,7 @@ input[type=radio]:checked:before {
   margin-top: -30px;
   left: 0;
   width: 100%;
-  font-family: Ubuntu, sans-serif;
+  font-family: 'Dela Gothic One';
   font-weight: 700;
   padding: 0 80px;
   text-indent: 15px;

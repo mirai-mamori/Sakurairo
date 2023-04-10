@@ -130,7 +130,7 @@ $reception_background = iro_opt('reception_background');
 </div>
 <?php if (iro_opt('sakura_widget')) : ?>
 	<aside id="secondary" class="widget-area" role="complementary" style="left: -400px;">
-    <div class="heading"><?php _e('Widgets') /*小工具*/ ?></div>
+    <div class="heading"><?php _e('Widgets','sakurairo') /*小工具*/ ?></div>
     <div class="sakura_widget">
 	<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('sakura_widget')) : endif; ?>
 	</div>

@@ -27,7 +27,7 @@ get_header();
 				?>
 				<?php else: ?>
 					<div class="row">
-						<p> <?php _e("Please fill in the Bilibili UID in Sakura Options.","sakura"); ?></p>
+						<p> <?php _e("Please fill in the Bilibili UID in Sakura Options.","sakurairo"); ?></p>
 					</div>
 				<?php endif; ?>
             </section>
