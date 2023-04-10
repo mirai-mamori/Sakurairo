@@ -44,7 +44,7 @@ if (iro_opt('theme_skin')) { ?>
      $mashiro_logo = iro_opt('mashiro_logo');
     ?>
     .logolink{
-        font-family: '<?= $mashiro_logo['font_name']; ?>', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+        font-family: '<?= $mashiro_logo['font_name']; ?>','Noto Sans SC';
     }
 
 .logolink .sakuraso {

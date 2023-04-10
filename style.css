@@ -92,6 +92,12 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   transition: all 0.8s ease !important;
 }
 
+.notice-icon{
+  float: left;
+  margin: 2px 10px;
+  font-family: 'Dela Gothic One';
+}
+
 .post-list-thumb {
   animation: main .6s;
   will-change: transform;
@@ -3772,7 +3778,6 @@ input[type=radio]:checked:before {
   font-size: 80px;
   text-transform: none;
   font-weight: var(--global-font-weight);
-
   transition: all 0.8s ease !important;
 }
 
@@ -9468,14 +9473,6 @@ body.dark .post-list-thumb:hover {
     margin-left: 0;
   }
 }
-
-/* @media (max-width:860px) {
-    .serif {
-        font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif
-    }
-} */
-
-/*cover video*/
 
 @media (max-width:860px) {
   .widget-area {
