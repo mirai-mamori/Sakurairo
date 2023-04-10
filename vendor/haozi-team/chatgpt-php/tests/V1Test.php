@@ -6,12 +6,16 @@ $accessToken = getenv('OPENAI_ACCESS_TOKEN');
 $chatGPT = new V1();
 $chatGPT->addAccount($accessToken);
 $test = $chatGPT->ask('Hello');
-$conversationId = $test['conversation_id'];
-$parentId = $test['parent_id'];
+foreach ($test as $answer) {
+    $conversationId = $answer['conversation_id'];
+    $parentId = $answer['id'];
+}
 
 it('should get a new conversation', function () use ($chatGPT) {
     $return = $chatGPT->ask('Hello');
-    $this->assertArrayHasKey('answer', $return);
+    foreach ($return as $answer) {
+        $this->assertArrayHasKey('answer', $answer);
+    }
 })->group('working');
 
 it('should get a conversations array', function () use ($chatGPT) {

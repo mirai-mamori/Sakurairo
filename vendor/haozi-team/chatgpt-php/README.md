@@ -20,7 +20,7 @@ Reconstruct from @acheong08's [ChatGPT](https://github.com/acheong08/ChatGPT)
 > - Rate limited
 > - Needs Bypassing Cloudflare
 
-> Default api endpoint is `https://bypass.duti.tech/`
+> Default api endpoint is `https://bypass.churchless.tech/`
 > 
 > Rate limit at 5 requests / 10 seconds due to small server
 > 
@@ -59,8 +59,10 @@ use HaoZiTeam\ChatGPT\V1 as ChatGPTV1;
 $chatGPT = new ChatGPTV1();
 $chatGPT->addAccount('<your_access_token>');
 
-$answer = $chatGPT->ask('Hello, how are you?');
-print_r($answer);
+$answers = $chatGPT->ask('Hello, how are you?');
+foreach ($answers as $item) {
+    print_r($item);
+}
 //Array(
 //    'answer' => 'I am fine, thank you.',
 //    'conversation_id' => '<uuid>',
@@ -102,8 +104,10 @@ use HaoZiTeam\ChatGPT\V2 as ChatGPTV2;
 $chatGPT = new ChatGPTV2('sk-<your_api_key>');
 $chatGPT->addMessage('You are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible.', 'system');
 
-$answer = $chatGPT->ask('Hello, how are you?');
-print_r($answer);
+$answers = $chatGPT->ask('Hello, how are you?');
+foreach ($answers as $item) {
+    print_r($item);
+}
 ```
 
 ### Advanced example
@@ -128,8 +132,10 @@ $chatGPT->addMessage('You are ChatGPT, a large language model trained by OpenAI.
 $chatGPT->addMessage('Hello, how are you?', 'user');
 $chatGPT->addMessage('I am fine, thank you.', 'assistant');
 
-$answer = $chatGPT->ask('What did I ask you before?');
-print_r($answer);
+$answers = $chatGPT->ask('What did I ask you before?');
+foreach ($answers as $item) {
+    print_r($item);
+}
 //Array(
 //    'answer' => 'Hello, how are you?',
 //    'id' => 'cmpl-xxxxx',
@@ -151,8 +157,10 @@ use HaoZiTeam\ChatGPT\V2 as ChatGPTV2;
 $chatGPT = new ChatGPTV2('sk-<your_api_key>');
 $chatGPT->addMessage('You are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible.', 'system');
 
-$answer = $chatGPT->ask('Hello, how are you?', null, true);
-// GuzzleHttp StreamInterface
+$answers = $chatGPT->ask('Hello, how are you?', null, true);// A Generator
+foreach ($answers as $item) {
+    print_r($item);
+}
 ```
 
 # Disclaimers

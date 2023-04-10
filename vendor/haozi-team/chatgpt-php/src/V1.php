@@ -3,6 +3,7 @@
 namespace HaoZiTeam\ChatGPT;
 
 use Exception;
+use Generator;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
@@ -32,10 +33,12 @@ class V1
 
     /**
      * 设置账号
+     *
      * @param  string  $accessToken
      * @param  mixed  $name
      * @param  bool  $paid
      * @param  string|null  $model
+     *
      * @return void
      */
     public function addAccount(string $accessToken, $name = null, bool $paid = false, string $model = null): void
@@ -57,7 +60,9 @@ class V1
 
     /**
      * 获取账号
+     *
      * @param  string  $name
+     *
      * @return array
      */
     public function getAccount(string $name): array
@@ -76,13 +81,15 @@ class V1
 
     /**
      * 发送消息
+     *
      * @param  string  $prompt
      * @param  string|null  $conversationId
      * @param  string|null  $parentId
      * @param  mixed  $account
      * @param  bool  $stream
-     * @return mixed
-     * @throws Exception
+     *
+     * @return Generator
+     * @throws Exception|GuzzleException
      */
     public function ask(
         string $prompt,
@@ -90,7 +97,7 @@ class V1
         string $parentId = null,
         $account = null,
         bool $stream = false
-    ) {
+    ): Generator {
         // 如果账号为空，则随机选择一个账号
         if ($account === null) {
             $account = array_rand($this->accounts);
@@ -186,71 +193,92 @@ class V1
             }
         }
 
-        // 如果是数据流模式，则直接返回数据流
-        if ($stream) {
-            return $response->getBody();
-        }
-
         $answer = '';
         $conversationId = '';
-        $parentId = '';
+        $messageId = '';
         $model = '';
 
-        foreach (explode("\n", $response->getBody()) as $line) {
-            $line = trim($line);
-            if ($line === 'Internal Server Error') {
-                throw new Exception($line);
+        // 流模式下，返回一个生成器
+        if ($stream) {
+            $data = $response->getBody();
+            while (! $data->eof()) {
+                $raw = Psr7\Utils::readLine($data);
+                $line = self::formatStreamMessage($raw);
+                if (self::checkFields($line)) {
+                    $answer = $line['message']['content']['parts'][0];
+                    $conversationId = $line['conversation_id'] ?? null;
+                    $messageId = $line['message']['id'] ?? null;
+                    $model = $line["message"]["metadata"]["model_slug"] ?? null;
+
+                    yield [
+                        "answer" => $answer,
+                        "id" => $messageId,
+                        'conversation_id' => $conversationId,
+                        "model" => $model,
+                        "account" => $account,
+                    ];
+                }
+                unset($raw, $line);
             }
-            if ($line === '') {
-                continue;
+        } else {
+            foreach (explode("\n", $response->getBody()) as $line) {
+                $line = trim($line);
+                if ($line === 'Internal Server Error') {
+                    throw new Exception($line);
+                }
+                if ($line === '') {
+                    continue;
+                }
+
+                $line = $this->formatStreamMessage($line);
+
+                if (! $this->checkFields($line)) {
+                    if (isset($line["detail"]) && $line["detail"] === "Too many requests in 1 hour. Try again later.") {
+                        throw new Exception("Rate limit exceeded");
+                    }
+                    if (isset($line["detail"]) && $line["detail"] === "Conversation not found") {
+                        throw new Exception("Conversation not found");
+                    }
+                    if (isset($line["detail"]) && $line["detail"] === "Something went wrong, please try reloading the conversation.") {
+                        throw new Exception("Something went wrong, please try reloading the conversation.");
+                    }
+                    if (isset($line["detail"]) && $line["detail"] === "invalid_api_key") {
+                        throw new Exception("Invalid access token");
+                    }
+                    if (isset($line["detail"]) && $line["detail"] === "invalid_token") {
+                        throw new Exception("Invalid access token");
+                    }
+
+                    continue;
+                }
+
+                if ($line['message']['content']['parts'][0] === $prompt) {
+                    continue;
+                }
+
+                $answer = $line['message']['content']['parts'][0];
+                $conversationId = $line['conversation_id'] ?? null;
+                $messageId = $line['message']['id'] ?? null;
+                $model = $line["message"]["metadata"]["model_slug"] ?? null;
             }
 
-            $line = $this->formatStreamMessage($line);
-
-            if (! $this->checkFields($line)) {
-                if (isset($line["detail"]) && $line["detail"] === "Too many requests in 1 hour. Try again later.") {
-                    throw new Exception("Rate limit exceeded");
-                }
-                if (isset($line["detail"]) && $line["detail"] === "Conversation not found") {
-                    throw new Exception("Conversation not found");
-                }
-                if (isset($line["detail"]) && $line["detail"] === "Something went wrong, please try reloading the conversation.") {
-                    throw new Exception("Something went wrong, please try reloading the conversation.");
-                }
-                if (isset($line["detail"]) && $line["detail"] === "invalid_api_key") {
-                    throw new Exception("Invalid access token");
-                }
-                if (isset($line["detail"]) && $line["detail"] === "invalid_token") {
-                    throw new Exception("Invalid access token");
-                }
-
-                continue;
-            }
-
-            if ($line['message']['content']['parts'][0] === $prompt) {
-                continue;
-            }
-
-            $answer = $line['message']['content']['parts'][0];
-            $conversationId = $line['conversation_id'] ?? null;
-            $parentId = $line['message']['id'] ?? null;
-            $model = $line["message"]["metadata"]["model_slug"] ?? null;
+            yield [
+                'answer' => $answer,
+                'id' => $messageId,
+                'conversation_id' => $conversationId,
+                'model' => $model,
+                'account' => $account,
+            ];
         }
-
-        return [
-            'answer' => $answer,
-            'conversation_id' => $conversationId,
-            'parent_id' => $parentId,
-            'model' => $model,
-            'account' => $account,
-        ];
     }
 
     /**
      * 获取会话列表
+     *
      * @param  int  $offset
      * @param  int  $limit
      * @param  mixed  $account
+     *
      * @return array
      * @throws Exception
      */
@@ -292,8 +320,10 @@ class V1
 
     /**
      * 获取会话消息列表
+     *
      * @param  string  $conversationId
      * @param  mixed  $account
+     *
      * @return array
      * @throws Exception
      */
@@ -327,9 +357,11 @@ class V1
 
     /**
      * 生成会话标题
+     *
      * @param  string  $conversationId
      * @param  string  $messageId
      * @param  mixed  $account
+     *
      * @return bool
      * @throws Exception
      */
@@ -371,9 +403,11 @@ class V1
 
     /**
      * 修改会话标题
+     *
      * @param  string  $conversationId
      * @param  string  $title
      * @param  mixed  $account
+     *
      * @return bool
      * @throws Exception
      */
@@ -414,8 +448,10 @@ class V1
 
     /**
      * 删除会话
+     *
      * @param  string  $conversationId
      * @param  mixed  $account
+     *
      * @return bool
      * @throws Exception
      */
@@ -456,7 +492,9 @@ class V1
 
     /**
      * 清空会话
+     *
      * @param  mixed  $account
+     *
      * @return bool
      * @throws Exception
      */
@@ -497,7 +535,9 @@ class V1
 
     /**
      * 检查响应行是否包含必要的字段
+     *
      * @param  mixed  $line
+     *
      * @return bool
      */
     public function checkFields($line): bool
@@ -509,7 +549,9 @@ class V1
 
     /**
      * 格式化流消息为数组
+     *
      * @param  string  $line
+     *
      * @return array|false
      */
     public function formatStreamMessage(string $line)
@@ -531,7 +573,9 @@ class V1
 
     /**
      * access_token 转换为 JWT
+     *
      * @param  string  $accessToken
+     *
      * @return string
      * @throws Exception
      */

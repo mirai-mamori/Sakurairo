@@ -56,9 +56,9 @@
             'dev_requirement' => false,
         ),
         'haozi-team/chatgpt-php' => array(
-            'pretty_version' => '1.8.0',
-            'version' => '1.8.0.0',
-            'reference' => 'fa3eff2a2eb75cdffd19fd9d196b5903ac384a1d',
+            'pretty_version' => '2.0.3',
+            'version' => '2.0.3.0',
+            'reference' => 'ffe5dedcb080740b5d5964da3af660c0272686f7',
             'type' => 'library',
             'install_path' => __DIR__ . '/../haozi-team/chatgpt-php',
             'aliases' => array(),

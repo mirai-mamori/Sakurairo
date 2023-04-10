@@ -3,7 +3,9 @@
 namespace HaoZiTeam\ChatGPT;
 
 use Exception;
+use Generator;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7;
 
@@ -54,8 +56,10 @@ class V2
 
     /**
      * 添加消息
+     *
      * @param  string  $message
      * @param  string  $role
+     *
      * @return void
      */
     public function addMessage(string $message, string $role = 'user'): void
@@ -68,13 +72,15 @@ class V2
 
     /**
      * 发送消息
+     *
      * @param  string  $prompt
      * @param  string|null  $user
      * @param  bool  $stream
-     * @return mixed
-     * @throws Exception
+     *
+     * @return Generator
+     * @throws Exception|GuzzleException
      */
-    public function ask(string $prompt, string $user = null, bool $stream = false)
+    public function ask(string $prompt, string $user = null, bool $stream = false): Generator
     {
         // 将消息添加到消息列表中
         $this->addMessage($prompt);
@@ -108,34 +114,54 @@ class V2
             }
         }
 
-        // 如果是数据流模式，则直接返回数据流
+        $answer = '';
+
+        // 流模式下，返回一个生成器
         if ($stream) {
-            return $response->getBody();
+            $data = $response->getBody();
+            while (! $data->eof()) {
+                $raw = Psr7\Utils::readLine($data);
+                $line = self::formatStreamMessage($raw);
+                if (self::checkStreamFields($line)) {
+                    $answer = $line['choices'][0]['delta']['content'];
+                    $messageId = $line['id'];
+
+                    yield [
+                        "answer" => $answer,
+                        "id" => $messageId,
+                        "model" => $this->model,
+                    ];
+                }
+                unset($raw, $line);
+            }
+            $this->addMessage($answer, 'assistant');
+        } else {
+            $data = json_decode($response->getBody()->getContents(), true);
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                throw new Exception('Response is not json');
+            }
+
+            if (! $this->checkFields($data)) {
+                throw new Exception('Field missing');
+            }
+
+            $answer = $data['choices'][0]['message']['content'];
+            $this->addMessage($answer, 'assistant');
+
+            yield [
+                'answer' => $answer,
+                'id' => $data['id'],
+                'model' => $this->model,
+                'usage' => $data['usage'],
+            ];
         }
-
-        $data = json_decode($response->getBody()->getContents(), true);
-        if (json_last_error() !== JSON_ERROR_NONE) {
-            throw new Exception('Response is not json');
-        }
-
-        if (! $this->checkFields($data)) {
-            throw new Exception('Field missing');
-        }
-
-        $answer = $data['choices'][0]['message']['content'];
-        $this->addMessage($answer, 'assistant');
-
-        return [
-            'answer' => $answer,
-            'id' => $data['id'],
-            'model' => $this->model,
-            'usage' => $data['usage'],
-        ];
     }
 
     /**
      * 检查响应行是否包含必要的字段
+     *
      * @param  mixed  $line
+     *
      * @return bool
      */
     public function checkFields($line): bool
@@ -145,7 +171,9 @@ class V2
 
     /**
      * 检查流响应行是否包含必要的字段
+     *
      * @param  mixed  $line
+     *
      * @return bool
      */
     public function checkStreamFields($line): bool
@@ -155,7 +183,9 @@ class V2
 
     /**
      * 格式化流消息为数组
+     *
      * @param  string  $line
+     *
      * @return mixed
      */
     public function formatStreamMessage(string $line)

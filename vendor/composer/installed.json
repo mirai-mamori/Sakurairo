@@ -405,17 +405,17 @@
         },
         {
             "name": "haozi-team/chatgpt-php",
-            "version": "1.8.0",
-            "version_normalized": "1.8.0.0",
+            "version": "2.0.3",
+            "version_normalized": "2.0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/HaoZi-Team/ChatGPT-PHP.git",
-                "reference": "fa3eff2a2eb75cdffd19fd9d196b5903ac384a1d"
+                "reference": "ffe5dedcb080740b5d5964da3af660c0272686f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/HaoZi-Team/ChatGPT-PHP/zipball/fa3eff2a2eb75cdffd19fd9d196b5903ac384a1d",
-                "reference": "fa3eff2a2eb75cdffd19fd9d196b5903ac384a1d",
+                "url": "https://api.github.com/repos/HaoZi-Team/ChatGPT-PHP/zipball/ffe5dedcb080740b5d5964da3af660c0272686f7",
+                "reference": "ffe5dedcb080740b5d5964da3af660c0272686f7",
                 "shasum": ""
             },
             "require": {
@@ -426,7 +426,7 @@
             "require-dev": {
                 "pestphp/pest": "^1.22"
             },
-            "time": "2023-03-26T03:57:16+00:00",
+            "time": "2023-03-31T14:24:55+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -452,7 +452,7 @@
             ],
             "support": {
                 "issues": "https://github.com/HaoZi-Team/ChatGPT-PHP/issues",
-                "source": "https://github.com/HaoZi-Team/ChatGPT-PHP/tree/1.8.0"
+                "source": "https://github.com/HaoZi-Team/ChatGPT-PHP/tree/2.0.3"
             },
             "install-path": "../haozi-team/chatgpt-php"
         },
