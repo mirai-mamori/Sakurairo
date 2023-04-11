@@ -467,7 +467,7 @@ function get_post_views($post_id) {
         return 'Error: Invalid post ID.';
     }
     // 检查 WP-Statistics 插件是否安装
-    if (function_exists('wp_statistics_pages')) {
+    if ((function_exists('wp_statistics_pages')) && (iro_opt('statistics_api') == 'wp_statistics')){
         // 使用 WP-Statistics 插件获取浏览量
         $views = wp_statistics_pages('total', 'uri', $post_id);
         return empty($views) ? 0 : $views;
