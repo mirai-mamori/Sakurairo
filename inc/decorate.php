@@ -358,6 +358,7 @@ html {
 
 /*深色模式控件透明度*/
 body.dark .header-info,
+body.dark .header-shuo,
 body.dark .top-social img
 {color:#fff;background:rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);}
 
@@ -440,7 +441,7 @@ h1.main-title,h1.fes-title{
 font-family:<?=iro_opt('area_title_font'); ?>;
 }
 
-.header-info p{
+.header-info p, .header-shuo{
 font-family:<?=iro_opt('signature_font'); ?> !important;
 font-size: <?=iro_opt('signature_font_size'); ?>px;
 }
@@ -532,7 +533,7 @@ background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparen
 }
 
 /*首页圆角设置*/
-.header-info{
+.header-info,.header-shuo{
 border-radius: <?=iro_opt('signature_radius'); ?>px;
 }
 
@@ -629,7 +630,7 @@ position:relative;bottom:0;left:0;display:block;width:100%;height:2px;background
 
 /*首页封面动画*/
 <?php if (iro_opt('cover_animation', 'true')): ?>
-h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,.header-info p,.header-info,.focusinfo .header-tou img,.top-social img,.center-text{
+h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,.header-info p,.header-info,.header-shuo,.focusinfo .header-tou img,.top-social img,.center-text{
 	-moz-animation: fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
     -webkit-animation:fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
 	animation: fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;

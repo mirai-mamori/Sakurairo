@@ -2603,7 +2603,6 @@ h1.main-title {
   backdrop-filter: blur(10px);
   transition: all 0.8s ease !important;
   display: block;
-  animation: fadeInRight 1s forwards;
 }
 
 .header-info p {
@@ -2632,7 +2631,6 @@ h1.main-title {
   backdrop-filter: blur(10px);
   transition: all 0.8s ease !important;
   display: none;
-  animation: fadeInRight 1s forwards;
 }
 
 .top-social {
