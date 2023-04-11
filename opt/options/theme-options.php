@@ -2670,21 +2670,21 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'article_tag',
-        'type' => 'switcher',
-        'title' => __('Article Tag','sakurairo_csf'),
-        'dependency' => array( 'article_function', '==', 'true' ),
-        'label' => __('Enabled by default, Article tag will appear on the function bar','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
         'id' => 'article_modified_time',
         'type' => 'switcher',
         'title' => __('Article Last Update Time','sakurairo_csf'),
         'dependency' => array( 'article_function', '==', 'true' ),
         'label' => __('Article last update time will appear on the function bar when enabled','sakurairo_csf'),
         'default' => false
+      ),
+
+      array(
+        'id' => 'article_tag',
+        'type' => 'switcher',
+        'title' => __('Article Tag','sakurairo_csf'),
+        'dependency' => array( 'article_function', '==', 'true' ),
+        'label' => __('Enabled by default, Article tag will appear on the function bar','sakurairo_csf'),
+        'default' => true
       ),
 
       array(

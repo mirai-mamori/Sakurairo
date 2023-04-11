@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-04-09 14:48+0800\n"
-"PO-Revision-Date: 2023-04-09 14:49+0800\n"
+"POT-Creation-Date: 2023-04-11 13:53+0800\n"
+"PO-Revision-Date: 2023-04-11 13:53+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -2827,20 +2827,20 @@ msgid "Article Page Author Info Signature Text"
 msgstr "文章頁面 作者資訊 簽名文本"
 
 #: options/theme-options.php:2675
-msgid "Article Tag"
-msgstr "文章標籤"
-
-#: options/theme-options.php:2677
-msgid "Enabled by default, Article tag will appear on the function bar"
-msgstr "默認啟用，文章標籤將顯示在功能欄上"
-
-#: options/theme-options.php:2684
 msgid "Article Last Update Time"
 msgstr "文章最後更新時間"
 
-#: options/theme-options.php:2686
+#: options/theme-options.php:2677
 msgid "Article last update time will appear on the function bar when enabled"
 msgstr "啟用后，文章上次更新時間將顯示在功能列上"
+
+#: options/theme-options.php:2684
+msgid "Article Tag"
+msgstr "文章標籤"
+
+#: options/theme-options.php:2686
+msgid "Enabled by default, Article tag will appear on the function bar"
+msgstr "默認啟用，文章標籤將顯示在功能欄上"
 
 #: options/theme-options.php:2693
 msgid "Article Page Prev/Next Article Switcher"
