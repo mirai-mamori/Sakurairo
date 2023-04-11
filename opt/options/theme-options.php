@@ -1446,7 +1446,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'infor_bar',
         'type' => 'switcher',
         'title' => __('Cover Info Bar','sakurairo_csf'),
-        'label' => __('Enabled by default, show avatar, Mashiro effects text, signature bar, social area','sakurairo_csf'),
+        'label' => __('Enabled by default, show avatar, Mashiro effects text, signature bar, shuoshuo bar, social area','sakurairo_csf'),
         'default' => true
       ),
 
@@ -1481,7 +1481,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'id' => 'signature_radius',
         'type' => 'slider',
-        'title' => __('Cover Signature Bar Rounded','sakurairo_csf'),
+        'title' => __('Cover Info Bar Rounded','sakurairo_csf'),
         'desc' => __('Slide to adjust, the recommended value range 10-20','sakurairo_csf'),
         'unit' => 'px',
         'max' => '50',
@@ -1547,6 +1547,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Typed.js initial option','sakurairo_csf'),
         'dependency' => array( 'signature_typing', '==', 'true' ),
         'default' => '{"strings":["给时光以生命，给岁月以文明"],"typeSpeed":140,"backSpeed":50,"loop":false,"showCursor":true}'
+      ),
+
+      array(
+        'id' => 'homepage_shuoshuo',
+        'type' => 'switcher',
+        'title' => __('Cover Shuoshuo Bar','sakurairo_csf'),
+        'label' => __('When turned on, the Latest Shuoshuo text will be displayed Under Signature Field','sakurairo_csf'),
+        'default' => true
       ),
 
       array(

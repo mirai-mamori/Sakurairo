@@ -2630,6 +2630,15 @@ h1.main-title {
   transition: all 0.8s ease !important;
 }
 
+.header-shuo:before {
+  content: "\f27a";
+  font-family: "Font Awesome 6 Free";
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .header-shuo p {
   margin: 0;
   font-family:Noto Sans SC;

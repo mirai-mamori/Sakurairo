@@ -88,7 +88,7 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
                 <?php endif; ?>
             </div>
                 <!-- 首页说说 -->
-                <?php if (iro_opt('drop_down_arrow', 'true')) : ?>    
+                <?php if (iro_opt('homepage_shuoshuo', 'true')) : ?>    
                 <?php
                 $args = array(
                 'post_type' => 'shuoshuo',
