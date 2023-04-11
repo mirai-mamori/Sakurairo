@@ -28,7 +28,7 @@ namespace IROChatGPT {
 
         $answer = '';
         foreach ($chatGPT->ask(iro_opt('chatgpt_ask_prompt', DEFAULT_ASK_PROMPT)) as $item) {
-            $answer .= $item;
+            $answer .= $item['answer'];
         }
         return  $answer;
     }
