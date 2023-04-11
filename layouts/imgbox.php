@@ -87,6 +87,26 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
                     </div>
                 <?php endif; ?>
             </div>
+                <!-- 首页说说 -->
+                <?php if (iro_opt('drop_down_arrow', 'true')) : ?>    
+                <?php
+                $args = array(
+                'post_type' => 'shuoshuo',
+                'post_status' => 'publish',
+                'posts_per_page' => 1
+                );
+                $shuoshuo_query = new WP_Query($args);
+                ?>    
+                <?php echo '<div class="header-shuo">';
+                while ( $shuoshuo_query->have_posts() ) {
+                $shuoshuo_query->the_post();
+                $content = get_the_content();
+                $content = strip_tags($content);
+                echo $content;
+                }
+                echo '</div>';?>  
+                <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
             <?php if (iro_opt('infor_bar_style') === 'v1') : ?>
                 <div class="top-social">
                     <?php $print_social_zone(); ?>

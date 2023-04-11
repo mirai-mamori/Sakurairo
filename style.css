@@ -2596,12 +2596,14 @@ h1.main-title {
   margin-top: 22px;
   letter-spacing: 0;
   line-height: 30px;
-  border-radius: 120px;
+  border-radius: 15px;
   box-sizing: initial;
   white-space: nowrap;
   font-weight: var(--global-font-weight);
   backdrop-filter: blur(10px);
   transition: all 0.8s ease !important;
+  display: block;
+  animation: fadeInRight 1s forwards;
 }
 
 .header-info p {
@@ -2611,6 +2613,26 @@ h1.main-title {
   text-overflow: ellipsis;
   white-space: nowrap;
   transition: all 0.8s ease !important;
+}
+
+.header-shuo {
+  width: 65%;
+  margin: auto;
+  font-size: 16px;
+  color: var(--theme-skin,#505050);
+  background: var(--infor_bar_bgcolor,rgba(255, 255, 255, 0.8));
+  padding: 15px;
+  margin-top: 22px;
+  letter-spacing: 0;
+  line-height: 30px;
+  border-radius: 15px;
+  box-sizing: initial;
+  white-space: nowrap;
+  font-weight: var(--global-font-weight);
+  backdrop-filter: blur(10px);
+  transition: all 0.8s ease !important;
+  display: none;
+  animation: fadeInRight 1s forwards;
 }
 
 .top-social {
@@ -4912,12 +4934,12 @@ input#wp-comment-cookies-consent {
 
 .shuoshuo_author_img img {
   border: 1px solid #ddd;
-  padding: 2px;
   float: left;
   border-radius: 64px;
   transition: all 1.0s;
   width: 50px;
   height: 50px;
+  box-shadow: none;
 }
 
 .avatar {
