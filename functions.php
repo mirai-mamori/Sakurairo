@@ -461,16 +461,21 @@ function set_post_views()
 
 add_action('get_header', 'set_post_views');
 
-function get_post_views($post_id)
-{
-    if (iro_opt('statistics_api') == 'wp_statistics') {
-        if (!function_exists('wp_statistics_pages')) {
-            return __('Please install pulgin <a href="https://wordpress.org/plugins/wp-statistics/" target="_blank">WP-Statistics</a>', 'sakurairo');
-        }
-        return restyle_text(wp_statistics_pages('total', 'uri', $post_id));
-    } 
-    $views = get_post_meta($post_id, 'views', true);
-    return $views == '' ? 0 :restyle_text($views);
+function get_post_views($post_id) {
+    // 检查传入的参数是否有效
+    if (empty($post_id) || !is_numeric($post_id)) {
+        return 'Error: Invalid post ID.';
+    }
+    // 检查 WP-Statistics 插件是否安装
+    if (function_exists('wp_statistics_pages')) {
+        // 使用 WP-Statistics 插件获取浏览量
+        $views = wp_statistics_pages('total', 'uri', $post_id);
+        return empty($views) ? 0 : $views;
+    } else {
+        // 使用文章自定义字段获取浏览量
+        $views = get_post_meta($post_id, 'views', true);
+        return empty($views) ? 0 : $views;
+    }
 }
 
 function is_webp(): bool
@@ -1208,7 +1213,7 @@ function memory_archives_list()
             $mon = $mon_tmp;
             $output .= '<li class="al_li"><span class="al_mon"><span style="color:' . iro_opt('theme_skin') . ';">' . get_the_time('M') . '</span> (<span id="post-num"></span>' . __(" post(s)", "sakurairo") /*篇文章*/ . ')</span><ul class="al_post_list">'; //输出月份
         }
-        $output .= '<li>' . '<a href="' . get_permalink($post) . '"><span style="color:' . iro_opt('theme_skin') . ';">' /*get_the_time('d'.__(" ","sakurairo")) 日*/ . '</span>' . get_the_title($post) . ' <span>(' . get_post_views(get_the_ID($post)) . ' <span class="fa-regular fa-gem" aria-hidden="true"></span> / ' . get_comments_number('0', '1', '%') . ' <span class="fa-regular fa-comment-dots" aria-hidden="true"></span>)</span></a></li>'; //输出文章日期和标题
+        $output .= '<li>' . '<a href="' . get_permalink($post) . '"><span style="color:' . iro_opt('theme_skin') . ';">' /*get_the_time('d'.__(" ","sakurairo")) 日*/ . '</span>' . get_the_title($post) . ' <span>(' . get_post_views(get_the_ID()) . ' <span class="fa-regular fa-gem" aria-hidden="true"></span> / ' . get_comments_number($post) . ' <span class="fa-regular fa-comment-dots" aria-hidden="true"></span>)</span></a></li>'; //输出文章日期和标题
     }
     wp_reset_postdata();
     $output .= '</ul></li></ul> <!--<ul class="al_mon_list"><li><ul class="al_post_list" style="display: block;"><li>博客已经萌萌哒运行了<span id="monitorday"></span>天</li></ul></li></ul>--></div>';
