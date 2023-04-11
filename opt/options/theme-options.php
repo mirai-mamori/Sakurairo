@@ -2027,9 +2027,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'id' => 'bulletin_board_icon',
         'type' => 'switcher',
-        'title' => __('Bulletin Board "Broadcast" Icon','sakurairo_csf'),
+        'title' => __('Bulletin Board "Notice" Icon','sakurairo_csf'),
         'dependency' => array( 'bulletin_board', '==', 'true' ),
-        'label' => __('The "Broadcast" icon will be displayed on the left side of the announcement bar','sakurairo_csf'),
+        'label' => __('The "Notice" icon will be displayed on the left side of the announcement bar','sakurairo_csf'),
         'default' => true
       ),
 

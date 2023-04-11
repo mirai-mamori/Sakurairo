@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-04-11 13:53+0800\n"
-"PO-Revision-Date: 2023-04-11 13:53+0800\n"
+"POT-Creation-Date: 2023-04-11 14:27+0800\n"
+"PO-Revision-Date: 2023-04-11 14:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2421,14 +2421,14 @@ msgid "Color Background"
 msgstr "色の背景"
 
 #: options/theme-options.php:2030
-msgid "Bulletin Board \"Broadcast\" Icon"
-msgstr "掲示板「放送」アイコン"
+msgid "Bulletin Board \"Notice\" Icon"
+msgstr "掲示板の「お知らせ」アイコン"
 
 #: options/theme-options.php:2032
 msgid ""
-"The \"Broadcast\" icon will be displayed on the left side of the "
-"announcement bar"
-msgstr "アナウンスバーの左側に「ブロードキャスト」アイコンが表示されます。"
+"The \"Notice\" icon will be displayed on the left side of the announcement "
+"bar"
+msgstr "「お知らせ」アイコンがアナウンスバーの左側に表示されます"
 
 #: options/theme-options.php:2039
 msgid "Bulletin Board Background"
