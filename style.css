@@ -2602,7 +2602,6 @@ h1.main-title {
   font-weight: var(--global-font-weight);
   backdrop-filter: blur(10px);
   transition: all 0.8s ease !important;
-  display: block;
 }
 
 .header-info p {
@@ -2626,11 +2625,18 @@ h1.main-title {
   line-height: 30px;
   border-radius: 15px;
   box-sizing: initial;
-  white-space: nowrap;
   font-weight: var(--global-font-weight);
   backdrop-filter: blur(10px);
   transition: all 0.8s ease !important;
-  display: none;
+}
+
+.header-shuo p {
+  margin: 0;
+  font-family:Noto Sans SC;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all 0.8s ease !important;
 }
 
 .top-social {
@@ -9391,6 +9397,11 @@ body.dark .post-list-thumb:hover {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .header-shuo {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 @media (max-width:860px) {
@@ -9430,6 +9441,16 @@ body.dark .post-list-thumb:hover {
 }
 
 .header-info p {
+  font-size: 15px !important;
+}
+
+.header-shuo {
+  width: 60%;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.header-shuo p {
   font-size: 15px !important;
 }
 
@@ -10232,7 +10253,8 @@ body.dark li .cbp_tmlabel {
   border: 1px solid #949494;
 }
 
-body.dark .header-info {
+body.dark .header-info,
+body.dark .header-shuo {
   color:#CCCCCC !important;
 }
 
