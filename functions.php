@@ -52,7 +52,7 @@ function UpdateCheck($url,$flag = 'Sakurairo'){
 }
 switch(iro_opt('iro_update_source')){
     case 'github':
-        $iroThemeUpdateChecker = UpdateCheck('https://github.com/mirai-mamori/Sakurairo','unique-plugin-or-theme-slug');
+        $iroThemeUpdateChecker = UpdateCheck('https://github.com/mirai-mamori/Sakurairo','Sakurairo');
         break;
     case 'upyun':
         $iroThemeUpdateChecker = UpdateCheck('https://update.maho.cc/jsdelivr.json');
