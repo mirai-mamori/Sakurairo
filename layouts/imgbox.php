@@ -96,15 +96,13 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
                 'posts_per_page' => 1
                 );
                 $shuoshuo_query = new WP_Query($args);
-                ?>    
-                <?php echo '<div class="header-shuo">';
-                while ( $shuoshuo_query->have_posts() ) {
-                $shuoshuo_query->the_post();
-                $content = get_the_content();
-                $content = strip_tags($content);
-                echo $content;
-                }
-                echo '</div>';?>  
+                ?>
+                <?php while ($shuoshuo_query->have_posts()) : $shuoshuo_query->the_post(); ?>
+                <div class="header-shuo">
+                <p><?php echo strip_tags(get_the_content()); ?></p>
+                <p class="header_shuoshuo_time"><i class="fa-regular fa-clock"></i> <?php the_time('Y/n/j G:i'); ?></p>
+                </div>
+                <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
                 <?php endif; ?>
             <?php if (iro_opt('infor_bar_style') === 'v1') : ?>
