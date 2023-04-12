@@ -566,19 +566,6 @@ function visual_resource_updates($specified_version, $option_name, $new_value) {
 visual_resource_updates('2.5.6', 'vision_resource_basepath', '2.6/');
 
 /*
- * 自定义默认头像
- */
-add_filter('avatar_defaults', 'mytheme_default_avatar');
-
-function mytheme_default_avatar($avatar_defaults)
-{
-    //$new_avatar_url = get_template_directory_uri() . '/images/default_avatar.png';
-    $new_avatar_url = 'https://cn.gravatar.com/avatar/b745710ae6b0ce9dfb13f5b7c0956be1';
-    $avatar_defaults[$new_avatar_url] = 'Default Avatar';
-    return $avatar_defaults;
-}
-
-/*
  * 阻止站内文章互相Pingback
  */
 function theme_noself_ping(&$links)
