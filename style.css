@@ -2331,7 +2331,6 @@ nav#comments-navi {
   float: left;
   box-shadow: 0 1px 30px -4px var(--comment_area_shadow);
   margin-bottom: 50px;
-  margin-top: 20px;
   margin-left: 3%;
   -webkit-transition: all .8s;
   transition: all .8s;
@@ -6211,7 +6210,6 @@ div.cbp_tmlabel > p {
   margin-right: 10px;
   font-size: 16px;
   font-weight: var(--global-font-weight);
-
 }
 
 .comment-respond .logged-in-as a {
@@ -6226,7 +6224,6 @@ div.cbp_tmlabel > p {
   font-size: 13px;
   color: #B3B3B3;
   font-weight: var(--global-font-weight);
-
 }
 
 .siren-checkbox-radio:checked+.siren-is-private-checkbox.siren-checkbox-radioInput:after,
