@@ -1194,6 +1194,7 @@ input[type=week] {
   font-weight: 900;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+  border: 1px solid #FFFFFF;
 }
 
 .navigator i:hover {
@@ -2320,18 +2321,21 @@ nav#comments-navi {
 }
 
 .notification {
-  padding: 19px 32px 17px;
-  border-radius: 15px/*!covered3px*/;
+  padding: 16px 24px;
+  border-radius: 10px;
   color: #6F6F6F;
-  max-width: 300px;
+  width: auto;
   margin: auto;
-  text-align: center;
-  background-color:rgb(255 255 255 / 50%);
+  text-align: left;
+  background-color: rgb(255 255 255 / 50%);
+  float: left;
   box-shadow: 0 1px 30px -4px var(--comment_area_shadow);
   margin-bottom: 50px;
-  margin-top: 25px;
+  margin-top: 20px;
+  margin-left: 3%;
   -webkit-transition: all .8s;
   transition: all .8s;
+  border: 1px solid #FFFFFF;
 }
 
 .notification:hover {
@@ -9826,6 +9830,7 @@ body.dark .notification {
   -webkit-transition: all .8s;
   transition: all .8s;
   color: #CCCCCC;
+  border: 1px solid #7d7d7d30;
 }
 
 body.dark .notification:hover{
@@ -10322,6 +10327,7 @@ body.dark #pagination a {
 body.dark .navigator i {
   background:rgb(26 26 26 / 60%);
   box-shadow: 0 1px 20px 2px rgba(26,26,26,0.8);
+  border: 1px solid #7d7d7d30;
   color: #CCCCCC;
   transition: all 0.8s ease !important;
 }

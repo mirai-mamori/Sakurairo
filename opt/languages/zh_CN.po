@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-04-11 22:54+0800\n"
-"PO-Revision-Date: 2023-04-11 22:54+0800\n"
+"POT-Creation-Date: 2023-04-12 12:09+0800\n"
+"PO-Revision-Date: 2023-04-12 12:09+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -3004,7 +3004,7 @@ msgstr "页面评论区域显示"
 
 #: options/theme-options.php:2868
 msgid "You can choose to expand or shirink the content of the comment area"
-msgstr "你可以选择展开显示或者收缩显示导航菜单内容"
+msgstr "你可以选择展开显示或者收缩显示评论区域内容"
 
 #: options/theme-options.php:2870
 msgid "Expand"
