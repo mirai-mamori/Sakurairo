@@ -11,7 +11,7 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
     if (iro_opt('wechat')):?>
         <li class="wechat"><a href="#" title="WeChat"><img loading="lazy" src="<?=$social_display_icon?>wechat.png" /></a>
             <div class="wechatInner">
-                <img loading="lazy" src="<?=iro_opt('wechat', '')?>" alt="WeChat">
+                <img class="wechat-img" style="height: max-content;width: max-content;" loading="lazy" src="<?=iro_opt('wechat', '')?>" alt="WeChat">
             </div>
         </li>
     <?php
