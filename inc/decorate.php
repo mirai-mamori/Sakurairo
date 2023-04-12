@@ -441,7 +441,7 @@ h1.main-title,h1.fes-title{
 font-family:<?=iro_opt('area_title_font'); ?>;
 }
 
-.header-info p, .header-shuo{
+.header-info p, .header-shuo p{
 font-family:<?=iro_opt('signature_font'); ?> !important;
 font-size: <?=iro_opt('signature_font_size'); ?>px;
 }

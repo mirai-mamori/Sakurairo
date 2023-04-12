@@ -2606,7 +2606,7 @@ h1.main-title {
 
 .header-info p {
   margin: 0;
-  font-family:Noto Sans SC;
+  font-family:'Noto Serif SC';
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -2622,7 +2622,7 @@ h1.main-title {
   padding: 15px;
   margin-top: 22px;
   letter-spacing: 0;
-  line-height: 30px;
+  line-height: 25px;
   border-radius: 15px;
   box-sizing: initial;
   font-weight: var(--global-font-weight);
@@ -2632,11 +2632,14 @@ h1.main-title {
 
 .header-shuo p {
   margin: 0;
-  font-family:Noto Sans SC;
+  font-family:'Noto Serif SC';
+  font-style: italic;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
   transition: all 0.8s ease !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .top-social {
@@ -9404,7 +9407,6 @@ body.dark .post-list-thumb:hover {
   .header-shuo {
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
   }
 }
 
