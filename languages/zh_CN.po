@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-04-10 15:22+0800\n"
-"PO-Revision-Date: 2023-04-10 15:22+0800\n"
+"POT-Creation-Date: 2023-04-12 12:32+0800\n"
+"PO-Revision-Date: 2023-04-12 12:39+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -31,7 +31,7 @@ msgstr "返回首页"
 
 #: 404.php:57
 msgid "Don't worry, search in site?"
-msgstr "别着急，试试站内检索？"
+msgstr "别着急，试试搜索？"
 
 #: 404.php:59 footer.php:60 search.php:39
 msgid "Search..."
@@ -63,7 +63,7 @@ msgstr "暂无评论"
 
 #: comments.php:57
 msgid "I'm not a robot"
-msgstr "我可不是机器人呢"
+msgstr "我不是机器人"
 
 #: comments.php:58
 msgid "Comment in private"
@@ -276,7 +276,7 @@ msgstr "评论"
 
 #: functions.php:297
 msgid "Paused..."
-msgstr "停止中"
+msgstr "暂停中..."
 
 #: functions.php:298
 msgid "Loading Video..."
@@ -300,7 +300,7 @@ msgstr "作者"
 
 #: functions.php:371
 msgid "Blogger"
-msgstr "博客作者"
+msgstr "博主"
 
 #: functions.php:377
 msgid "Location"
@@ -322,55 +322,47 @@ msgstr "否"
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:468
-msgid ""
-"Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
-"\" target=\"_blank\">WP-Statistics</a>"
-msgstr ""
-"请安装插件 <a href=\"https://wordpress.org/plugins/wp-statistics/\" "
-"target=\"_blank\">WP-Statistics</a>"
-
-#: functions.php:492
+#: functions.php:497
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:693
+#: functions.php:698
 msgid "Download Link"
 msgstr "下载地址"
 
-#: functions.php:765
+#: functions.php:770
 msgid "Remember me"
 msgstr "记住我"
 
-#: functions.php:1183
+#: functions.php:1188
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1205
+#: functions.php:1213
 msgid " "
 msgstr " "
 
-#: functions.php:1209
+#: functions.php:1217
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1232 functions.php:1235 inc/theme_plus.php:427
+#: functions.php:1240 functions.php:1243 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1461
+#: functions.php:1469
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:1586
+#: functions.php:1594
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1670
+#: functions.php:1678
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1799
+#: functions.php:1807
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -409,11 +401,11 @@ msgstr "后端发生了错误 QwQ"
 
 #: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:69
 msgid "Following "
-msgstr "已追番"
+msgstr "已追番 "
 
 #: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:69
 msgid " anime."
-msgstr "动漫"
+msgstr " 番剧。"
 
 #: inc/classes/Bilibili.php:68
 msgid "The author seems to have hidden their bangumi list."
@@ -465,31 +457,31 @@ msgstr "出现了一个错误。"
 
 #: inc/classes/MyAnimeList.php:70
 msgid " Watched "
-msgstr "已观看"
+msgstr " 已观看 "
 
 #: inc/classes/MyAnimeList.php:70
 msgid " episodes."
-msgstr "集。"
+msgstr " 集。"
 
 #: inc/classes/MyAnimeList.php:108
 msgid "Finished "
-msgstr "已看完"
+msgstr "已看完 "
 
 #: inc/classes/MyAnimeList.php:117
 msgid "Watching "
-msgstr "追番中"
+msgstr "追番中 "
 
 #: inc/classes/MyAnimeList.php:124
 msgid "Planning to Watch "
-msgstr "打算看"
+msgstr "打算看 "
 
 #: inc/classes/MyAnimeList.php:133
 msgid "Dropped "
-msgstr "弃坑"
+msgstr "弃坑 "
 
 #: inc/classes/MyAnimeList.php:142
 msgid "Paused "
-msgstr "暂停"
+msgstr "暂停 "
 
 #: inc/template-tags.php:28
 #, php-format
@@ -653,6 +645,14 @@ msgstr "上一篇文章"
 msgid "Next Post"
 msgstr "下一篇文章"
 
+#: page-word.php:34
+msgid "You have not posted a comment yet"
+msgstr "您尚未发表说说"
+
+#: page-word.php:35
+msgid "Go and post your first comment now"
+msgstr "现在就去发表你的第一条说说吧"
+
 #: search.php:20
 #, php-format
 msgid "search result: %s"
@@ -661,7 +661,7 @@ msgstr "搜索结果：%s"
 #: tpl/content-category.php:31 tpl/content-image.php:33
 #: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
 msgid "NOTHING"
-msgstr "啥也没有呀"
+msgstr "无~"
 
 #: tpl/content-category.php:31 tpl/content-image.php:33
 #: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
@@ -710,13 +710,13 @@ msgstr "页面："
 msgid "AI Excerpt"
 msgstr "AI 摘要"
 
-#: tpl/content-single.php:71 tpl/single-image.php:58
-msgid "Nothing~"
-msgstr "啥也没有呀"
-
-#: tpl/content-single.php:74 tpl/single-image.php:61
+#: tpl/content-single.php:80 tpl/single-image.php:67
 msgid "Last updated on "
 msgstr "最后更新于 "
+
+#: tpl/content-single.php:88 tpl/single-image.php:75
+msgid "Nothing~"
+msgstr "啥也没有呀"
 
 #: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30
 #: user/page-followVideos.php:29
@@ -842,3 +842,10 @@ msgstr "友情链接模版"
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr "说说模版"
+
+#~ msgid ""
+#~ "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-"
+#~ "statistics/\" target=\"_blank\">WP-Statistics</a>"
+#~ msgstr ""
+#~ "请安装插件 <a href=\"https://wordpress.org/plugins/wp-statistics/\" "
+#~ "target=\"_blank\">WP-Statistics</a>"

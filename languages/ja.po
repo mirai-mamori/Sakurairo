@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-04-10 15:22+0800\n"
-"PO-Revision-Date: 2023-04-10 15:22+0800\n"
+"POT-Creation-Date: 2023-04-12 12:30+0800\n"
+"PO-Revision-Date: 2023-04-12 12:32+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -51,7 +51,7 @@ msgstr "コメントを表示する"
 
 #: comments.php:21 comments.php:25
 msgid " comment"
-msgstr "コメント"
+msgstr " コメント"
 
 #: comments.php:21 comments.php:25
 msgid " comments"
@@ -59,7 +59,7 @@ msgstr " コメント"
 
 #: comments.php:46
 msgid "no comment"
-msgstr "コメントはありません。"
+msgstr "コメントはありません"
 
 #: comments.php:57
 msgid "I'm not a robot"
@@ -333,55 +333,47 @@ msgstr "いいえ"
 msgid "Edit"
 msgstr "編集"
 
-#: functions.php:468
-msgid ""
-"Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
-"\" target=\"_blank\">WP-Statistics</a>"
-msgstr ""
-"パルギン<a href=\"https://wordpress.org/plugins/wp-statistics/\" "
-"target=\"_blank\">WP-統計を</a>インストールしてください"
-
-#: functions.php:492
+#: functions.php:497
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "こやつはとても怠惰な╮(╯▽╰)╭"
 
-#: functions.php:693
+#: functions.php:698
 msgid "Download Link"
 msgstr "ダウンロードリンク"
 
-#: functions.php:765
+#: functions.php:770
 msgid "Remember me"
 msgstr "ログイン状態を保存する"
 
-#: functions.php:1183
+#: functions.php:1188
 msgid "All expand/collapse"
 msgstr "すべての展開/折りたたみ"
 
-#: functions.php:1205
+#: functions.php:1213
 msgid " "
 msgstr " "
 
-#: functions.php:1209
+#: functions.php:1217
 msgid " post(s)"
-msgstr "記事"
+msgstr " 記事"
 
-#: functions.php:1232 functions.php:1235 inc/theme_plus.php:427
+#: functions.php:1240 functions.php:1243 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: functions.php:1461
+#: functions.php:1469
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>エラー</b>: このメールドメイン (<b>@"
 
-#: functions.php:1586
+#: functions.php:1594
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1670
+#: functions.php:1678
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:1799
+#: functions.php:1807
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -421,11 +413,11 @@ msgstr "バックエンドエラー"
 
 #: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:69
 msgid "Following "
-msgstr "次"
+msgstr "次 "
 
 #: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:69
 msgid " anime."
-msgstr "アニメ。"
+msgstr " アニメ。"
 
 #: inc/classes/Bilibili.php:68
 msgid "The author seems to have hidden their bangumi list."
@@ -433,7 +425,7 @@ msgstr "著者は彼らのバングミリストを隠したようです。"
 
 #: inc/classes/BilibiliFavList.php:72
 msgid "Item count: "
-msgstr "アイテム数:"
+msgstr "アイテム数: "
 
 #: inc/classes/BilibiliFavList.php:73
 msgid "Expand"
@@ -477,31 +469,31 @@ msgstr "エラーが発生しました。"
 
 #: inc/classes/MyAnimeList.php:70
 msgid " Watched "
-msgstr "見て"
+msgstr " 見て "
 
 #: inc/classes/MyAnimeList.php:70
 msgid " episodes."
-msgstr "エピソード。"
+msgstr " エピソード。"
 
 #: inc/classes/MyAnimeList.php:108
 msgid "Finished "
-msgstr "終えた"
+msgstr "終えた "
 
 #: inc/classes/MyAnimeList.php:117
 msgid "Watching "
-msgstr "ウォッチング"
+msgstr "ウォッチング "
 
 #: inc/classes/MyAnimeList.php:124
 msgid "Planning to Watch "
-msgstr "視聴を計画する"
+msgstr "視聴を計画する "
 
 #: inc/classes/MyAnimeList.php:133
 msgid "Dropped "
-msgstr "削除"
+msgstr "削除 "
 
 #: inc/classes/MyAnimeList.php:142
 msgid "Paused "
-msgstr "一時 停止"
+msgstr "一時 停止 "
 
 #: inc/template-tags.php:28
 #, php-format
@@ -572,7 +564,7 @@ msgstr "WordPressバージョン4.4以上が必要です"
 
 #: inc/theme_plus.php:241
 msgid "Login successful, "
-msgstr "ログインに成功しました。"
+msgstr "ログインに成功しました。 "
 
 #: inc/theme_plus.php:242
 msgid "seconds later automatically transfer to"
@@ -592,7 +584,7 @@ msgstr "アバターを変更"
 
 #: inc/theme_plus.php:274
 msgid "Hello, "
-msgstr "こんにちは、"
+msgstr "こんにちは、 "
 
 #: inc/theme_plus.php:278
 msgid "Home"
@@ -608,7 +600,7 @@ msgstr "ログアウト"
 
 #: inc/theme_plus.php:282
 msgid "Sign out? "
-msgstr "ログアウト?"
+msgstr "ログアウト? "
 
 #: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:31
 #: tpl/single-image.php:24
@@ -664,6 +656,14 @@ msgstr "前の投稿"
 #: layouts/post-nextprev.php:14
 msgid "Next Post"
 msgstr "次の投稿"
+
+#: page-word.php:34
+msgid "You have not posted a comment yet"
+msgstr "あなたはまだコメントを投稿していません"
+
+#: page-word.php:35
+msgid "Go and post your first comment now"
+msgstr "今すぐ最初のコメントを投稿してください"
 
 #: search.php:20
 #, php-format
@@ -726,13 +726,13 @@ msgstr "ページ:"
 msgid "AI Excerpt"
 msgstr "AI 概要"
 
-#: tpl/content-single.php:71 tpl/single-image.php:58
-msgid "Nothing~"
-msgstr "何もない~"
-
-#: tpl/content-single.php:74 tpl/single-image.php:61
+#: tpl/content-single.php:80 tpl/single-image.php:67
 msgid "Last updated on "
 msgstr "最終更新日 "
+
+#: tpl/content-single.php:88 tpl/single-image.php:75
+msgid "Nothing~"
+msgstr "何もない~"
 
 #: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30
 #: user/page-followVideos.php:29
@@ -773,7 +773,7 @@ msgstr "メールアドレスを入力してください。"
 
 #: user/page-register.php:26
 msgid "Invalid email address."
-msgstr "無効なメールアドレス"
+msgstr "無効なメールアドレス。"
 
 #: user/page-register.php:29
 msgid "This email address has been registered."
@@ -858,3 +858,10 @@ msgstr "友情链接模版"
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr "说说模版"
+
+#~ msgid ""
+#~ "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-"
+#~ "statistics/\" target=\"_blank\">WP-Statistics</a>"
+#~ msgstr ""
+#~ "パルギン<a href=\"https://wordpress.org/plugins/wp-statistics/\" "
+#~ "target=\"_blank\">WP-統計を</a>インストールしてください"

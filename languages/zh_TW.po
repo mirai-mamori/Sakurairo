@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-04-10 15:22+0800\n"
-"PO-Revision-Date: 2023-04-10 15:22+0800\n"
+"POT-Creation-Date: 2023-04-12 12:39+0800\n"
+"PO-Revision-Date: 2023-04-12 12:41+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -331,55 +331,47 @@ msgstr "否"
 msgid "Edit"
 msgstr "編輯"
 
-#: functions.php:468
-msgid ""
-"Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
-"\" target=\"_blank\">WP-Statistics</a>"
-msgstr ""
-"請安裝外掛程式 <a href=\"https://wordpress.org/plugins/wp-statistics/\" "
-"target=\"_blank\">WP-Statistics</a>"
-
-#: functions.php:492
+#: functions.php:497
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "這傢伙好懶╮(╯▽╰)╭"
 
-#: functions.php:693
+#: functions.php:698
 msgid "Download Link"
 msgstr "下載連結"
 
-#: functions.php:765
+#: functions.php:770
 msgid "Remember me"
 msgstr "保持登入"
 
-#: functions.php:1183
+#: functions.php:1188
 msgid "All expand/collapse"
 msgstr "全部展開/收縮"
 
-#: functions.php:1205
+#: functions.php:1213
 msgid " "
 msgstr " "
 
-#: functions.php:1209
+#: functions.php:1217
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1232 functions.php:1235 inc/theme_plus.php:427
+#: functions.php:1240 functions.php:1243 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:1461
+#: functions.php:1469
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>錯誤</b>: 電子郵箱格式出錯 (<b>@"
 
-#: functions.php:1586
+#: functions.php:1594
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1670
+#: functions.php:1678
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:1799
+#: functions.php:1807
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -418,11 +410,11 @@ msgstr "後端發生了錯誤 QwQ"
 
 #: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:69
 msgid "Following "
-msgstr "已追蹤的新番"
+msgstr "已追蹤的新番 "
 
 #: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:69
 msgid " anime."
-msgstr "部。"
+msgstr " 動漫。"
 
 #: inc/classes/Bilibili.php:68
 msgid "The author seems to have hidden their bangumi list."
@@ -430,7 +422,7 @@ msgstr "部落客似乎隱藏了新番追蹤列表。"
 
 #: inc/classes/BilibiliFavList.php:72
 msgid "Item count: "
-msgstr "項目計數："
+msgstr "項目計數： "
 
 #: inc/classes/BilibiliFavList.php:73
 msgid "Expand"
@@ -474,31 +466,31 @@ msgstr "發生錯誤。"
 
 #: inc/classes/MyAnimeList.php:70
 msgid " Watched "
-msgstr "已觀看"
+msgstr " 已觀看 "
 
 #: inc/classes/MyAnimeList.php:70
 msgid " episodes."
-msgstr "話。"
+msgstr " 話。"
 
 #: inc/classes/MyAnimeList.php:108
 msgid "Finished "
-msgstr "已看完"
+msgstr "已看完 "
 
 #: inc/classes/MyAnimeList.php:117
 msgid "Watching "
-msgstr "追番中"
+msgstr "追番中 "
 
 #: inc/classes/MyAnimeList.php:124
 msgid "Planning to Watch "
-msgstr "打算看"
+msgstr "打算看 "
 
 #: inc/classes/MyAnimeList.php:133
 msgid "Dropped "
-msgstr "棄坑"
+msgstr "棄坑 "
 
 #: inc/classes/MyAnimeList.php:142
 msgid "Paused "
-msgstr "暫停"
+msgstr "暫停 "
 
 #: inc/template-tags.php:28
 #, php-format
@@ -662,6 +654,14 @@ msgstr "上一篇文章"
 msgid "Next Post"
 msgstr "下一篇文章"
 
+#: page-word.php:34
+msgid "You have not posted a comment yet"
+msgstr "您尚未發表说说"
+
+#: page-word.php:35
+msgid "Go and post your first comment now"
+msgstr "現在就去發表你的第一條说说吧"
+
 #: search.php:20
 #, php-format
 msgid "search result: %s"
@@ -701,15 +701,15 @@ msgstr "沒有找到任何東西！"
 #, php-format
 msgid ""
 "Ready to post your first article? <a href=\"%1$s\">Click here to start</a>."
-msgstr "準備好發佈您的第一篇文章了嗎？ <a href=\"%1$s\">請點擊此處開始</a>"
+msgstr "準備好發佈您的第一篇文章了嗎？ <a href=\"%1$s\">請點擊此處開始</a>。"
 
 #: tpl/content-none.php:25
 msgid "Didn't find what you want, look at the other ones."
-msgstr "沒有找到你想要的，看看其他的吧"
+msgstr "沒有找到你想要的，看看其他的吧。"
 
 #: tpl/content-none.php:43
 msgid "We didn't seem to find what you want. Maybe you can search for it."
-msgstr "似乎沒有找到你想要的東西，或許你可以搜尋一下試式試"
+msgstr "似乎沒有找到你想要的東西，或許你可以搜尋一下試式試。"
 
 #: tpl/content-page.php:25 tpl/content-single.php:45 tpl/single-image.php:34
 msgid "Pages:"
@@ -719,22 +719,22 @@ msgstr "頁面:"
 msgid "AI Excerpt"
 msgstr "AI 摘錄"
 
-#: tpl/content-single.php:71 tpl/single-image.php:58
-msgid "Nothing~"
-msgstr "無~"
-
-#: tpl/content-single.php:74 tpl/single-image.php:61
+#: tpl/content-single.php:80 tpl/single-image.php:67
 msgid "Last updated on "
 msgstr "最後更新於 "
+
+#: tpl/content-single.php:88 tpl/single-image.php:75
+msgid "Nothing~"
+msgstr "無~"
 
 #: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30
 #: user/page-followVideos.php:29
 msgid "Please fill in the Bilibili UID in Sakura Options."
-msgstr "請在後台設置填寫 Bilibili UID 後繼續"
+msgstr "請在後台設置填寫 Bilibili UID 後繼續。"
 
 #: user/page-bangumi.php:43
 msgid "Please fill in the My Anime List Username in Sakura Options."
-msgstr "請在後台設置填寫 My Anime List Username 後繼續"
+msgstr "請在後台設置填寫 My Anime List Username 後繼續。"
 
 #: user/page-login.php:18
 msgid "Remember_Me"
@@ -750,35 +750,35 @@ msgstr "錯誤"
 
 #: user/page-register.php:14
 msgid "Please enter username."
-msgstr "請輸入使用者名稱"
+msgstr "請輸入使用者名稱。"
 
 #: user/page-register.php:16
 msgid "Invalid characters, please enter a valid username."
-msgstr "此使用者名稱包含無效字元，請輸入有效的使用者名稱"
+msgstr "此使用者名稱包含無效字元，請輸入有效的使用者名稱。"
 
 #: user/page-register.php:19
 msgid "This username has been registered."
-msgstr "該使用者名稱已被註冊"
+msgstr "該使用者名稱已被註冊。"
 
 #: user/page-register.php:24
 msgid "Please enter email address."
-msgstr "請填寫電子郵箱地址"
+msgstr "請填寫電子郵箱地址。"
 
 #: user/page-register.php:26
 msgid "Invalid email address."
-msgstr "電子郵箱地址不正確"
+msgstr "電子郵箱地址不正確。"
 
 #: user/page-register.php:29
 msgid "This email address has been registered."
-msgstr "該電子郵箱地址已經被註冊"
+msgstr "該電子郵箱地址已經被註冊。"
 
 #: user/page-register.php:34
 msgid "Password length is at least 6 digits."
-msgstr "密碼長度至少為6位"
+msgstr "密碼長度至少為6位。"
 
 #: user/page-register.php:36
 msgid "Inconsistent password entered twice."
-msgstr "兩次輸入的密碼不一致"
+msgstr "兩次輸入的密碼不一致。"
 
 #: user/page-register.php:43
 msgid "Unable to complete registration request...Please contact"
@@ -814,7 +814,7 @@ msgstr "註冊成功！正在跳轉......"
 
 #: user/page-register.php:82
 msgid "Registration is not open yet."
-msgstr "暫未開放註冊"
+msgstr "暫未開放註冊。"
 
 #. Theme Name of the plugin/theme
 msgid "Sakurairo"
@@ -851,3 +851,10 @@ msgstr "友情連結模版"
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr "推文模版"
+
+#~ msgid ""
+#~ "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-"
+#~ "statistics/\" target=\"_blank\">WP-Statistics</a>"
+#~ msgstr ""
+#~ "請安裝外掛程式 <a href=\"https://wordpress.org/plugins/wp-statistics/\" "
+#~ "target=\"_blank\">WP-Statistics</a>"
