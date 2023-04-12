@@ -29,6 +29,14 @@ if (!function_exists('iro_opt')) {
         return $GLOBALS['iro_options'][$option] ?? $default;
     }
 }
+if (!function_exists('iro_opt_update')) {
+    function iro_opt_update($option = '', $value = null)
+    {
+        $options = get_option('iro_options');
+        $options[$option] = $value;
+        update_option('iro_options', $options);
+    }
+}
 $shared_lib_basepath = iro_opt('shared_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path','https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@'). IRO_VERSION);
 $core_lib_basepath =  iro_opt('core_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path','https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@'). IRO_VERSION);
 //Update-Checker
@@ -539,6 +547,23 @@ function gravatar_cn(string $url):string
 if (iro_opt('gravatar_proxy')) {
     add_filter('get_avatar_url', 'gravatar_cn', 4);
 }
+
+/*
+ * 检查主题版本号，并在更新主题后执行设置选项值的更新
+ */
+function visual_resource_updates($specified_version, $option_name, $new_value) {
+    $theme = wp_get_theme();
+    $current_version = $theme->get('Version');
+    if (version_compare($current_version, $specified_version, '>')) {
+        $option_value = iro_opt($option_name);
+        if (strpos($option_value, '@') === false || substr($option_value, strpos($option_value, '@') + 1) !== $new_value) {
+            $option_value = preg_replace('/@.*/', '@' . $new_value, $option_value);
+        }
+        iro_opt_update($option_name, $option_value);
+    }
+}
+
+visual_resource_updates('2.5.6', 'vision_resource_basepath', '2.6/');
 
 /*
  * 自定义默认头像
