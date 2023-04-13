@@ -1345,61 +1345,53 @@ add_action('admin_enqueue_scripts', 'admin_ini');
 /*
  * 后台通知
  */
-function scheme_tip()
-{
-    switch(get_user_locale(get_current_user_id())){
-        case 'zh_CN':
-            $msg = '<b>试一试新后台界面<a href="/wp-admin/profile.php">配色方案</a>吧？</b>';
-            break;
-        case 'zh_TW':
-            $msg = '<b>試一試新後台界面<a href="/wp-admin/profile.php">色彩配置</a>吧？</b>';
-            break;
-        case 'ja-JP':
-            $msg = '<b>新しい<a href="/wp-admin/profile.php">管理画面の配色</a>を試しますか？</b>';
-            break;
-        default:
-            $msg = '<b>Why not try the new admin dashboard color scheme <a href="/wp-admin/profile.php">here</a>?</b>';
+
+ function theme_admin_notice_callback() {
+    if (!current_user_can('manage_options')) {
+        return;
     }
     $user_id = get_current_user_id();
-    if (!get_user_meta($user_id, 'scheme-tip-dismissed' . BUILD_VERSION)) {
-        echo '<div class="notice notice-success is-dismissible" id="scheme-tip"><p><b>' . $msg . '</b></p></div>';
+    $notice_dismissed = get_user_meta($user_id, 'theme_admin_notice_dismissed', true);
+    if (!$notice_dismissed) {
+        ?>
+        <div class="notice notice-success" id="send-ver-tip">
+            <p><?php _e( 'Thank you for using the theme Sakurairo! Here is some content that requires your permission.', 'Sakurairo' ); ?></p>
+            <button class="button" onclick="dismiss_notice()"><?php _e( 'No, thanks', 'Sakurairo' ); ?></button>
+            <button class="button" onclick="update_option()"><?php _e( 'Allow sending your theme version for statistical purposes', 'Sakurairo' ); ?></button>
+        </div>
+        <script>
+            function dismiss_notice() {
+                // 隐藏通知
+                document.getElementById("send-ver-tip").style.display = "none";
+                // 更新 meta
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "<?php echo admin_url('admin-ajax.php'); ?>", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.send("action=dismiss_theme_admin_notice");
+            }
+            function update_option() {
+                // 隐藏通知
+                document.getElementById("send-ver-tip").style.display = "none";
+                // 发送 AJAX 请求
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "<?php echo admin_url('admin-ajax.php'); ?>", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.send("action=update_theme_option&option=send_theme_version&value=true");
+            }
+        </script>
+        <?php
     }
 }
 
-add_action('admin_notices', 'scheme_tip');
+add_action('admin_notices', 'theme_admin_notice_callback');
 
-function scheme_tip_dismissed()
-{
+function dismiss_theme_admin_notice() {
     $user_id = get_current_user_id();
-    if (isset($_GET['scheme-tip-dismissed' . BUILD_VERSION])) {
-        add_user_meta($user_id, 'scheme-tip-dismissed' . BUILD_VERSION, 'true', true);
-    }
+    update_user_meta($user_id, 'theme_admin_notice_dismissed', true);
+    wp_die();
 }
-add_action('admin_init', 'scheme_tip_dismissed');
 
-function theme_admin_notice_callback() {
-    ?>
-    <div class="notice notice-success" id="send-ver-tip">
-        <p><?php _e( 'Theme activated successfully!', 'Sakurairo' ); ?></p>
-        <button class="button" onclick="dismiss_notice()"><?php _e( 'Dismiss Notice', 'Sakurairo' ); ?></button>
-        <button class="button" onclick="update_option()"><?php _e( 'Allow uploading of your theme version', 'Sakurairo' ); ?></button>
-    </div>
-    <script>
-        function dismiss_notice() {
-            // 隐藏通知
-            document.getElementById("send-ver-tip").style.display = "none";
-        }
-        function update_option() {
-            // 发送 AJAX 请求
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "<?php echo admin_url('admin-ajax.php'); ?>", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.send("action=update_theme_option&option=send_theme_version&value=true");
-        }
-    </script>
-    <?php
-}
-add_action( 'admin_notices', 'theme_admin_notice_callback' );
+add_action('wp_ajax_dismiss_theme_admin_notice', 'dismiss_theme_admin_notice');
 
 // 处理 AJAX 请求
 function update_theme_option_callback() {
@@ -1408,6 +1400,20 @@ function update_theme_option_callback() {
     }
 }
 add_action( 'wp_ajax_update_theme_option', 'update_theme_option_callback' );
+
+// 启用主题时显示通知
+function after_switch_theme_callback() {
+    add_action( 'admin_notices', 'theme_admin_notice_callback' );
+}
+add_action( 'after_switch_theme', 'after_switch_theme_callback' );
+
+// 更新主题时显示通知
+function upgrader_process_complete_callback( $upgrader_object, $options ) {
+    if ( $options['action'] == 'update' && $options['type'] == 'theme' ) {
+        add_action( 'admin_notices', 'theme_admin_notice_callback' );
+    }
+}
+add_action( 'upgrader_process_complete', 'upgrader_process_complete_callback', 10, 2 );
 
 //dashboard scheme
 function dash_scheme($key, $name, $col1, $col2, $col3, $col4, $base, $focus, $current, $rules = "")
