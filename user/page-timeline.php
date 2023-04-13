@@ -16,12 +16,7 @@ get_header();
             <article class="art">
                 <div class="art-main">
                     <div class="art-content">
-                        <?php if ( has_post_thumbnail() ) {
-							the_post_thumbnail();
-						}
-						the_content();
-						memory_archives_list();
-						?>
+                        <?php the_content(); memory_archives_list(); ?>
 					</div>
 				</div>
 			</article>
