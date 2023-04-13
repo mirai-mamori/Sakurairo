@@ -1367,9 +1367,9 @@ function theme_admin_notice_callback() {
     $theme_name = 'Sakurairo';
     switch ( get_locale() ) {
         case 'zh_CN':
-            $thankyou    = '感谢您使用 '.$theme_name.' 主题！这里有一些需要您的许可的东西(*/ω＼*)';
+            $thankyou    = '感谢你使用 '.$theme_name.' 主题！这里有一些需要你的许可的东西(*/ω＼*)';
             $dislike     = '不，谢谢';
-            $allow_send  = '允许发送您的主题版本数据以便官方统计';
+            $allow_send  = '允许发送你的主题版本数据以便官方统计';
             break;
 
         case 'zh_TW':
