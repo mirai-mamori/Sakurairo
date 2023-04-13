@@ -1897,10 +1897,10 @@ function send_theme_version() {
 }
 
 if (iro_opt('send_theme_version') == '1') {
-if (!wp_next_scheduled('my_hourly_event')) {
-    wp_schedule_event(time(), 'hourly', 'my_hourly_event');
+if (!wp_next_scheduled('daily_event')) {
+    wp_schedule_event(time(), 'daily', 'daily_event');
 }
-add_action('my_hourly_event', 'send_theme_version');
+add_action('daily_event', 'send_theme_version');
 }
 
 //解析短代码  
