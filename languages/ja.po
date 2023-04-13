@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-04-12 12:30+0800\n"
-"PO-Revision-Date: 2023-04-12 12:32+0800\n"
+"POT-Creation-Date: 2023-04-13 19:32+0800\n"
+"PO-Revision-Date: 2023-04-13 19:33+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -151,55 +151,55 @@ msgstr "検索"
 msgid "Widgets"
 msgstr "ウィジェット"
 
-#: functions.php:81
+#: functions.php:89
 msgid "Nav Menus"
 msgstr "メニュー"
 
-#: functions.php:197 functions.php:208
+#: functions.php:205 functions.php:216
 msgid "Ideas"
 msgstr "アイデア"
 
-#: functions.php:198
+#: functions.php:206
 msgid "Idea"
 msgstr "アイデア"
 
-#: functions.php:199 functions.php:200
+#: functions.php:207 functions.php:208
 msgid "Publish New Idea"
 msgstr "新規追加"
 
-#: functions.php:201
+#: functions.php:209
 msgid "Edit Idea"
 msgstr "%sを編集"
 
-#: functions.php:202
+#: functions.php:210
 msgid "New Idea"
 msgstr "新しいアイデア"
 
-#: functions.php:203
+#: functions.php:211
 msgid "View Idea"
 msgstr "表示"
 
-#: functions.php:204
+#: functions.php:212
 msgid "Search Idea"
 msgstr "検索"
 
-#: functions.php:205
+#: functions.php:213
 msgid "Not Found Idea"
 msgstr "アイデアが見つかりません"
 
-#: functions.php:206
+#: functions.php:214
 msgid "No Idea in the Trash"
 msgstr "ゴミ箱の中には何もない"
 
-#: functions.php:279
+#: functions.php:287
 msgid "Copied!"
 msgstr "コピーしました!"
 
-#: functions.php:280
+#: functions.php:288
 msgid "Copy Code"
 msgstr "コードをコピー"
 
-#: functions.php:281
+#: functions.php:289
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
@@ -207,19 +207,19 @@ msgstr ""
 "あなたのカバー API はクロスオリジンアクセスをサポートしていないようです。この"
 "場合、Cover Cacheは有効になりません。"
 
-#: functions.php:282
+#: functions.php:290
 msgid "Commiting...."
 msgstr "提出中…."
 
-#: functions.php:283
+#: functions.php:291
 msgid "Succeed"
 msgstr "継ぐ"
 
-#: functions.php:284
+#: functions.php:292
 msgid "10 files max per request"
 msgstr "1回のリクエストで送信できるファイル数の上限は10個です"
 
-#: functions.php:285
+#: functions.php:293
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -233,15 +233,15 @@ msgstr ""
 "\n"
 "この画像が大きすぎる~再アップロードしてください!"
 
-#: functions.php:286
+#: functions.php:294
 msgid "Uploading..."
 msgstr "アップロード中..."
 
-#: functions.php:287
+#: functions.php:295
 msgid "Uploaded successfully~"
 msgstr "アップロードに成功しました~"
 
-#: functions.php:288
+#: functions.php:296
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -253,127 +253,143 @@ msgstr ""
 "コード=> {1}\n"
 "{2}"
 
-#: functions.php:289
+#: functions.php:297
 msgid "Upload failed, please retry."
 msgstr "アップロードに失敗しました、もう一度やり直してください。"
 
-#: functions.php:290
+#: functions.php:298
 msgid "Page Load failed. HTTP {0}"
 msgstr "ページの読み込みに失敗しました。HTTP {0}"
 
-#: functions.php:291
+#: functions.php:299
 msgid "Glad you come, but we've got nothing left."
 msgstr "あなたが来てうれしいですが、私たちは何も残っていません。"
 
-#: functions.php:292
+#: functions.php:300
 msgid "Post"
 msgstr "投稿"
 
-#: functions.php:293
+#: functions.php:301
 msgid "Tag"
 msgstr "タグ"
 
-#: functions.php:294
+#: functions.php:302
 msgid "Category"
 msgstr "カテゴリー"
 
-#: functions.php:295
+#: functions.php:303
 msgid "Page"
 msgstr "ページ"
 
-#: functions.php:296
+#: functions.php:304
 msgid "Comment"
 msgstr "コメント"
 
-#: functions.php:297
+#: functions.php:305
 msgid "Paused..."
 msgstr "一時 停止。。。"
 
-#: functions.php:298
+#: functions.php:306
 msgid "Loading Video..."
 msgstr "ビデオを読み込んでいます..."
 
-#: functions.php:299
+#: functions.php:307
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "フォントをダウンロードするには、データ使用量に注意してください。"
 
-#: functions.php:300
+#: functions.php:308
 msgid "Are you sure you want set it private?"
 msgstr "プライベートに設定してもよろしいですか?"
 
-#: functions.php:301
+#: functions.php:309
 msgid "You had set private comment before"
 msgstr "以前にプライベートコメントを設定していた"
 
-#: functions.php:371 inc/theme_plus.php:194
+#: functions.php:379 inc/theme_plus.php:194
 msgid "Author"
 msgstr "投稿者"
 
-#: functions.php:371
+#: functions.php:379
 msgid "Blogger"
 msgstr "Blogger"
 
-#: functions.php:377
+#: functions.php:385
 msgid "Location"
 msgstr "場所"
 
-#: functions.php:383
+#: functions.php:391
 msgid "Private"
 msgstr "プライベート"
 
-#: functions.php:385
+#: functions.php:393
 msgid "Yes"
 msgstr "はい"
 
-#: functions.php:387
+#: functions.php:395
 msgid "No"
 msgstr "いいえ"
 
-#: functions.php:390
+#: functions.php:398
 msgid "Edit"
 msgstr "編集"
 
-#: functions.php:497
+#: functions.php:505
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "こやつはとても怠惰な╮(╯▽╰)╭"
 
-#: functions.php:698
+#: functions.php:710
 msgid "Download Link"
 msgstr "ダウンロードリンク"
 
-#: functions.php:770
+#: functions.php:782
 msgid "Remember me"
 msgstr "ログイン状態を保存する"
 
-#: functions.php:1188
+#: functions.php:1200
 msgid "All expand/collapse"
 msgstr "すべての展開/折りたたみ"
 
-#: functions.php:1213
+#: functions.php:1225
 msgid " "
 msgstr " "
 
-#: functions.php:1217
+#: functions.php:1229
 msgid " post(s)"
 msgstr " 記事"
 
-#: functions.php:1240 functions.php:1243 inc/theme_plus.php:427
+#: functions.php:1252 functions.php:1255 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: functions.php:1469
+#: functions.php:1369
+msgid ""
+"Thank you for using the theme Sakurairo! Here is some content that requires "
+"your permission."
+msgstr ""
+"テーマ「Sakurairo」をご利用いただきありがとうございます!ここにあなたの許可が"
+"必要ないくつかのコンテンツがあります。"
+
+#: functions.php:1370
+msgid "No, thanks"
+msgstr "いいえ、結構です"
+
+#: functions.php:1371
+msgid "Allow sending your theme version for statistical purposes"
+msgstr "統計目的でテーマバージョンの送信を許可する"
+
+#: functions.php:1534
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>エラー</b>: このメールドメイン (<b>@"
 
-#: functions.php:1594
+#: functions.php:1659
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1678
+#: functions.php:1743
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:1807
+#: functions.php:1872
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "

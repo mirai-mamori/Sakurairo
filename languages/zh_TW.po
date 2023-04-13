@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-04-12 12:39+0800\n"
-"PO-Revision-Date: 2023-04-12 12:41+0800\n"
+"POT-Creation-Date: 2023-04-13 19:38+0800\n"
+"PO-Revision-Date: 2023-04-13 19:39+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -151,73 +151,73 @@ msgstr "搜尋"
 msgid "Widgets"
 msgstr "小工具"
 
-#: functions.php:81
+#: functions.php:89
 msgid "Nav Menus"
 msgstr "導航菜單"
 
-#: functions.php:197 functions.php:208
+#: functions.php:205 functions.php:216
 msgid "Ideas"
 msgstr "推文"
 
-#: functions.php:198
+#: functions.php:206
 msgid "Idea"
 msgstr "推文"
 
-#: functions.php:199 functions.php:200
+#: functions.php:207 functions.php:208
 msgid "Publish New Idea"
 msgstr "發佈新推文"
 
-#: functions.php:201
+#: functions.php:209
 msgid "Edit Idea"
 msgstr "編輯推文"
 
-#: functions.php:202
+#: functions.php:210
 msgid "New Idea"
 msgstr "新推文"
 
-#: functions.php:203
+#: functions.php:211
 msgid "View Idea"
 msgstr "查看推文"
 
-#: functions.php:204
+#: functions.php:212
 msgid "Search Idea"
 msgstr "搜尋推文"
 
-#: functions.php:205
+#: functions.php:213
 msgid "Not Found Idea"
 msgstr "未找到推文"
 
-#: functions.php:206
+#: functions.php:214
 msgid "No Idea in the Trash"
 msgstr "垃圾桶里沒有推文"
 
-#: functions.php:279
+#: functions.php:287
 msgid "Copied!"
 msgstr "已複製!"
 
-#: functions.php:280
+#: functions.php:288
 msgid "Copy Code"
 msgstr "拷貝程式碼"
 
-#: functions.php:281
+#: functions.php:289
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
 msgstr "您的封面API似乎不支援跨來源請求。這種情況下暫存是不會生效的哦。"
 
-#: functions.php:282
+#: functions.php:290
 msgid "Commiting...."
 msgstr "提交中。。。"
 
-#: functions.php:283
+#: functions.php:291
 msgid "Succeed"
 msgstr "成功"
 
-#: functions.php:284
+#: functions.php:292
 msgid "10 files max per request"
 msgstr "每次上傳上限為10張"
 
-#: functions.php:285
+#: functions.php:293
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -231,15 +231,15 @@ msgstr ""
 "\n"
 "這張圖太大啦~請重新上傳噢！"
 
-#: functions.php:286
+#: functions.php:294
 msgid "Uploading..."
 msgstr "上傳中..."
 
-#: functions.php:287
+#: functions.php:295
 msgid "Uploaded successfully~"
 msgstr "上傳成功～"
 
-#: functions.php:288
+#: functions.php:296
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -251,127 +251,141 @@ msgstr ""
 "錯誤碼=> {1}\n"
 "{2}"
 
-#: functions.php:289
+#: functions.php:297
 msgid "Upload failed, please retry."
 msgstr "上傳失敗，請重試。"
 
-#: functions.php:290
+#: functions.php:298
 msgid "Page Load failed. HTTP {0}"
 msgstr "頁面載入出錯了。HTTP{0}"
 
-#: functions.php:291
+#: functions.php:299
 msgid "Glad you come, but we've got nothing left."
 msgstr "很高興你翻到這裡，但是真的沒有了..."
 
-#: functions.php:292
+#: functions.php:300
 msgid "Post"
 msgstr "文章"
 
-#: functions.php:293
+#: functions.php:301
 msgid "Tag"
 msgstr "標籤"
 
-#: functions.php:294
+#: functions.php:302
 msgid "Category"
 msgstr "類別"
 
-#: functions.php:295
+#: functions.php:303
 msgid "Page"
 msgstr "頁面"
 
-#: functions.php:296
+#: functions.php:304
 msgid "Comment"
 msgstr "評論"
 
-#: functions.php:297
+#: functions.php:305
 msgid "Paused..."
 msgstr "暫停。。。"
 
-#: functions.php:298
+#: functions.php:306
 msgid "Loading Video..."
 msgstr "載入影片..."
 
-#: functions.php:299
+#: functions.php:307
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "下載字體時，請注意您的數據使用方式。"
 
-#: functions.php:300
+#: functions.php:308
 msgid "Are you sure you want set it private?"
 msgstr "是否確實要將其設置為專用？"
 
-#: functions.php:301
+#: functions.php:309
 msgid "You had set private comment before"
 msgstr "您之前設置了私人評論"
 
-#: functions.php:371 inc/theme_plus.php:194
+#: functions.php:379 inc/theme_plus.php:194
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:371
+#: functions.php:379
 msgid "Blogger"
 msgstr "部落客"
 
-#: functions.php:377
+#: functions.php:385
 msgid "Location"
 msgstr "來自"
 
-#: functions.php:383
+#: functions.php:391
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:385
+#: functions.php:393
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:387
+#: functions.php:395
 msgid "No"
 msgstr "否"
 
-#: functions.php:390
+#: functions.php:398
 msgid "Edit"
 msgstr "編輯"
 
-#: functions.php:497
+#: functions.php:505
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "這傢伙好懶╮(╯▽╰)╭"
 
-#: functions.php:698
+#: functions.php:710
 msgid "Download Link"
 msgstr "下載連結"
 
-#: functions.php:770
+#: functions.php:782
 msgid "Remember me"
 msgstr "保持登入"
 
-#: functions.php:1188
+#: functions.php:1200
 msgid "All expand/collapse"
 msgstr "全部展開/收縮"
 
-#: functions.php:1213
+#: functions.php:1225
 msgid " "
 msgstr " "
 
-#: functions.php:1217
+#: functions.php:1229
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1240 functions.php:1243 inc/theme_plus.php:427
+#: functions.php:1252 functions.php:1255 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:1469
+#: functions.php:1369
+msgid ""
+"Thank you for using the theme Sakurairo! Here is some content that requires "
+"your permission."
+msgstr "感謝你使用 Sakurairo 主題！以下是一些需要你許可的內容。"
+
+#: functions.php:1370
+msgid "No, thanks"
+msgstr "謝謝，不用了"
+
+#: functions.php:1371
+msgid "Allow sending your theme version for statistical purposes"
+msgstr "允許出於統計目的發送主題版本"
+
+#: functions.php:1534
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>錯誤</b>: 電子郵箱格式出錯 (<b>@"
 
-#: functions.php:1594
+#: functions.php:1659
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1678
+#: functions.php:1743
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:1807
+#: functions.php:1872
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "

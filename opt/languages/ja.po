@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-04-12 12:08+0800\n"
-"PO-Revision-Date: 2023-04-12 12:09+0800\n"
+"POT-Creation-Date: 2023-04-13 19:20+0800\n"
+"PO-Revision-Date: 2023-04-13 19:21+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -4071,10 +4071,45 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:3698
+msgid "Privacy information"
+msgstr "プライバシー情報"
+
+#: options/theme-options.php:3703
+msgid ""
+"<p>The theme respects your privacy</p>\n"
+"        <p>However, when you use a service provider pre-populated by the "
+"theme to provide relevant services in mainland China, the service provider "
+"may collect data about your visitors and compile statistics</p>\n"
+"        <p>You can reduce the amount of information sent to third parties by "
+"localising the theme-related resources, which are pre-configured with "
+"options for you to modify</p>"
+msgstr ""
+"<p>あなたのプライバシーを尊重します</p>\n"
+"        <p>ただし、テーマが事前に入力されたサービスプロバイダーを使用して中国"
+"本土で関連サービスを提供する場合、サービスプロバイダーは訪問者に関するデータ"
+"を収集し、統計を編集する場合があります</p>\n"
+"        <p>変更可能なオプションで事前設定されているテーマ関連のリソースをロー"
+"カライズすることで、サードパーティに送信される情報の量を減らすことができま"
+"す。</p>"
+
+#: options/theme-options.php:3711
+msgid "Send Theme Version to Fuukei"
+msgstr "テーマバージョンをFuukeiに送る"
+
+#: options/theme-options.php:3712
+msgid ""
+"The theme will only send time and version information to Fuukei officials "
+"and the data will be cleaned regularly and used only to count version "
+"updates."
+msgstr ""
+"テーマは時間とバージョンの情報をFuukei Officialにのみ送信し、データは定期的に"
+"クリーンアップされ、バージョンの更新をカウントするためにのみ使用されます。"
+
+#: options/theme-options.php:3718
 msgid "Reference Information"
 msgstr "参照情報"
 
-#: options/theme-options.php:3703
+#: options/theme-options.php:3723
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
 "com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -4090,11 +4125,11 @@ msgstr ""
 "        <p>ましろスタイルのロゴは、Hyacmによって提供および参照されているよう"
 "に、元のテーマ作成者Mashiroを参照しています</p>"
 
-#: options/theme-options.php:3710
+#: options/theme-options.php:3730
 msgid "Dependency Information"
 msgstr "依存情報"
 
-#: options/theme-options.php:3715
+#: options/theme-options.php:3735
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
@@ -4115,7 +4150,7 @@ msgstr ""
 "github.com/HaoZi-Team/ChatGPT-PHP\">ChatGPT PHP</a> プロジェクトに依存してい"
 "る</p>"
 
-#: options/theme-options.php:3722
+#: options/theme-options.php:3742
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "

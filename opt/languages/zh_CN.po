@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-04-12 12:09+0800\n"
-"PO-Revision-Date: 2023-04-12 12:09+0800\n"
+"POT-Creation-Date: 2023-04-13 19:22+0800\n"
+"PO-Revision-Date: 2023-04-13 19:29+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -3893,10 +3893,43 @@ msgid ""
 msgstr ""
 
 #: options/theme-options.php:3698
+msgid "Privacy information"
+msgstr "隐私信息"
+
+#: options/theme-options.php:3703
+msgid ""
+"<p>The theme respects your privacy</p>\n"
+"        <p>However, when you use a service provider pre-populated by the "
+"theme to provide relevant services in mainland China, the service provider "
+"may collect data about your visitors and compile statistics</p>\n"
+"        <p>You can reduce the amount of information sent to third parties by "
+"localising the theme-related resources, which are pre-configured with "
+"options for you to modify</p>"
+msgstr ""
+"<p>主题尊重你的隐私</p>\n"
+"<p>但是，当你使用主题预置的中国大陆服务商提供的服务时，服务商可能会收集有关你"
+"的访问者的数据并统计数据</p>\n"
+"<p>你可以通过本地化与主题相关的资源来减少发送给第三方的信息量，主题提供相关选"
+"项配置</p>"
+
+#: options/theme-options.php:3711
+msgid "Send Theme Version to Fuukei"
+msgstr "发送主题版本到 Fuukei 官方"
+
+#: options/theme-options.php:3712
+msgid ""
+"The theme will only send time and version information to Fuukei officials "
+"and the data will be cleaned regularly and used only to count version "
+"updates."
+msgstr ""
+"主题只会向 Fuukei 官方发送时间和版本信息，数据将定期清理并仅用于统计版本更"
+"新。"
+
+#: options/theme-options.php:3718
 msgid "Reference Information"
 msgstr "引用信息"
 
-#: options/theme-options.php:3703
+#: options/theme-options.php:3723
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox <a href=\"https://wwi.lanzous."
 "com/ikyq5kgx0wb\">Fluent Icon Pack</a></p>\n"
@@ -3911,11 +3944,11 @@ msgstr ""
 "apk/com.muh2.icon\">沐氢图标包</a></p>\n"
 "        <p>白猫样式Logo参考原主题作者白猫，由 Hyacm 提供方案并引用</p>"
 
-#: options/theme-options.php:3710
+#: options/theme-options.php:3730
 msgid "Dependency Information"
 msgstr "依赖信息"
 
-#: options/theme-options.php:3715
+#: options/theme-options.php:3735
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
@@ -3933,7 +3966,7 @@ msgstr ""
 "        <p>ChatGPT 相关能力依赖于 HaoZi-Team 开源的 <a href=\"https://github."
 "com/HaoZi-Team/ChatGPT-PHP\">ChatGPT PHP</a> 项目</p>"
 
-#: options/theme-options.php:3722
+#: options/theme-options.php:3742
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "
