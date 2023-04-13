@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-04-13 19:33+0800\n"
-"PO-Revision-Date: 2023-04-13 19:38+0800\n"
+"POT-Creation-Date: 2023-04-13 21:24+0800\n"
+"PO-Revision-Date: 2023-04-13 21:24+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -350,33 +350,19 @@ msgstr " 篇文章"
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1369
-msgid ""
-"Thank you for using the theme Sakurairo! Here is some content that requires "
-"your permission."
-msgstr "感谢你使用 Sakurairo 主题！这里有些东西需要经过你的许可(*/ω＼*)"
-
-#: functions.php:1370
-msgid "No, thanks"
-msgstr "不，谢谢"
-
-#: functions.php:1371
-msgid "Allow sending your theme version for statistical purposes"
-msgstr "允许发送主题版本数据用于统计"
-
-#: functions.php:1534
+#: functions.php:1560
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:1659
+#: functions.php:1685
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1743
+#: functions.php:1769
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1872
+#: functions.php:1898
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -856,10 +842,3 @@ msgstr "友情链接模版"
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr "说说模版"
-
-#~ msgid ""
-#~ "Please install pulgin <a href=\"https://wordpress.org/plugins/wp-"
-#~ "statistics/\" target=\"_blank\">WP-Statistics</a>"
-#~ msgstr ""
-#~ "请安装插件 <a href=\"https://wordpress.org/plugins/wp-statistics/\" "
-#~ "target=\"_blank\">WP-Statistics</a>"

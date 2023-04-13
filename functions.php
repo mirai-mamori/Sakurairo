@@ -1364,11 +1364,37 @@ function theme_admin_notice_callback() {
     }
 
     // 显示通知
+    $theme_name = 'Sakurairo';
+    switch ( get_locale() ) {
+        case 'zh_CN':
+            $thankyou    = '感谢您使用 '.$theme_name.' 主题！这里有一些需要您的许可的东西(*/ω＼*)';
+            $dislike     = '不，谢谢';
+            $allow_send  = '允许发送您的主题版本数据以便官方统计';
+            break;
+
+        case 'zh_TW':
+            $thankyou    = '感謝你使用 '.$theme_name.' 主題！以下是一些需要你許可的內容。';
+            $dislike     = '謝謝，不用了';
+            $allow_send  = '允許出於統計目的發送主題版本数据';
+            break;
+
+        case 'ja':
+            $thankyou    = 'ご使用いただきありがとうございます！以下は、あなたの許可が必要なコンテンツです。';
+            $dislike     = 'いいえ、結構です';
+            $allow_send  = '統計目的のためにあなたのテーマバージョンを送信することを許可する';
+            break;
+
+        default:
+            $thankyou    = 'Thank you for using the '.$theme_name.' theme! Here is some content that requires your permission.';
+            $dislike     = 'No, thanks';
+            $allow_send  = 'Allow sending your theme version for statistical purposes';
+            break;
+    }
     ?>
     <div class="notice notice-success" id="send-ver-tip">
-        <p><?php _e( 'Thank you for using the theme Sakurairo! Here is some content that requires your permission.', 'Sakurairo' ); ?></p>
-        <button class="button" onclick="dismiss_notice()"><?php _e( 'No, thanks', 'Sakurairo' ); ?></button>
-        <button class="button" onclick="update_option()"><?php _e( 'Allow sending your theme version for statistical purposes', 'Sakurairo' ); ?></button>
+        <p><?php echo $thankyou; ?></p>
+        <button class="button" onclick="dismiss_notice()"><?php echo $dislike; ?></button>
+        <button class="button" onclick="update_option()"><?php echo $allow_send; ?></button>
     </div>
     <script>
         function dismiss_notice() {

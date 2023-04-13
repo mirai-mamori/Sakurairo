@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-04-13 19:32+0800\n"
+"POT-Creation-Date: 2023-04-13 21:23+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -350,33 +350,19 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1369
-msgid ""
-"Thank you for using the theme Sakurairo! Here is some content that requires "
-"your permission."
-msgstr ""
-
-#: functions.php:1370
-msgid "No, thanks"
-msgstr ""
-
-#: functions.php:1371
-msgid "Allow sending your theme version for statistical purposes"
-msgstr ""
-
-#: functions.php:1534
+#: functions.php:1560
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1659
+#: functions.php:1685
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1743
+#: functions.php:1769
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:1872
+#: functions.php:1898
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
