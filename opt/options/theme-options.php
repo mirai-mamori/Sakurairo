@@ -1554,7 +1554,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'switcher',
         'title' => __('Cover Shuoshuo Bar','sakurairo_csf'),
         'label' => __('When turned on, the Latest Shuoshuo text will be displayed Under Signature Field','sakurairo_csf'),
-        'default' => true
+        'default' => false
       ),
 
       array(
@@ -3691,6 +3691,26 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type'    => 'content',
         'content' => __('<img src="https://opencollective.com/fuukei/contributors.svg" alt="Theme Contributors" width="100%" height="100%" />','sakurairo_csf'),
+      ),
+
+      array(
+        'type' => 'subheading',
+        'content' => __('Privacy information','sakurairo_csf'),
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => __('<p>The theme respects your privacy</p>
+        <p>However, when you use a service provider pre-populated by the theme to provide relevant services in mainland China, the service provider may collect data about your visitors and compile statistics</p>
+        <p>You can reduce the amount of information sent to third parties by localising the theme-related resources, which are pre-configured with options for you to modify</p>','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'send_theme_version',
+        'type' => 'switcher',
+        'title' => __('Send Theme Version to Fuukei','sakurairo_csf'),
+        'label' => __('The theme will only send time and version information to Fuukei officials and the data will be cleaned regularly and used only to count version updates.','sakurairo_csf'),
+        'default' => false
       ),
 
       array(

@@ -1377,6 +1377,38 @@ function scheme_tip_dismissed()
 }
 add_action('admin_init', 'scheme_tip_dismissed');
 
+function theme_admin_notice_callback() {
+    ?>
+    <div class="notice notice-success" id="send-ver-tip">
+        <p><?php _e( 'Theme activated successfully!', 'Sakurairo' ); ?></p>
+        <button class="button" onclick="dismiss_notice()"><?php _e( 'Dismiss Notice', 'Sakurairo' ); ?></button>
+        <button class="button" onclick="update_option()"><?php _e( 'Allow uploading of your theme version', 'Sakurairo' ); ?></button>
+    </div>
+    <script>
+        function dismiss_notice() {
+            // 隐藏通知
+            document.getElementById("send-ver-tip").style.display = "none";
+        }
+        function update_option() {
+            // 发送 AJAX 请求
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "<?php echo admin_url('admin-ajax.php'); ?>", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("action=update_theme_option&option=send_theme_version&value=true");
+        }
+    </script>
+    <?php
+}
+add_action( 'admin_notices', 'theme_admin_notice_callback' );
+
+// 处理 AJAX 请求
+function update_theme_option_callback() {
+    if (isset($_POST['option']) && isset($_POST['value'])) {
+        iro_opt_update($_POST['option'], $_POST['value']);
+    }
+}
+add_action( 'wp_ajax_update_theme_option', 'update_theme_option_callback' );
+
 //dashboard scheme
 function dash_scheme($key, $name, $col1, $col2, $col3, $col4, $base, $focus, $current, $rules = "")
 {
@@ -1842,10 +1874,13 @@ function send_theme_version() {
     );
     wp_remote_post('https://api.maho.cc/ver-stat/index.php', $args);
 }
+
+if (iro_opt('send_theme_version') == '1') {
 if (!wp_next_scheduled('my_hourly_event')) {
     wp_schedule_event(time(), 'hourly', 'my_hourly_event');
 }
 add_action('my_hourly_event', 'send_theme_version');
+}
 
 //解析短代码  
 add_shortcode('task', 'task_shortcode');
