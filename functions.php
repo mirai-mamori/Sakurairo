@@ -1346,74 +1346,89 @@ add_action('admin_enqueue_scripts', 'admin_ini');
  * 后台通知
  */
 
- function theme_admin_notice_callback() {
-    if (!current_user_can('manage_options')) {
+/**
+ * 在提供权限的情况下，为管理员用户显示通知并更新 meta 值
+ */
+function theme_admin_notice_callback() {
+    // 判断当前用户是否为管理员
+    if ( !current_user_can( 'manage_options' ) ) {
         return;
     }
-    $user_id = get_current_user_id();
-    $notice_dismissed = get_user_meta($user_id, 'theme_admin_notice_dismissed', true);
-    if (!$notice_dismissed) {
-        ?>
-        <div class="notice notice-success" id="send-ver-tip">
-            <p><?php _e( 'Thank you for using the theme Sakurairo! Here is some content that requires your permission.', 'Sakurairo' ); ?></p>
-            <button class="button" onclick="dismiss_notice()"><?php _e( 'No, thanks', 'Sakurairo' ); ?></button>
-            <button class="button" onclick="update_option()"><?php _e( 'Allow sending your theme version for statistical purposes', 'Sakurairo' ); ?></button>
-        </div>
-        <script>
-            function dismiss_notice() {
-                // 隐藏通知
-                document.getElementById("send-ver-tip").style.display = "none";
-                // 更新 meta
-                var xhr = new XMLHttpRequest();
-                xhr.open("POST", "<?php echo admin_url('admin-ajax.php'); ?>", true);
-                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                xhr.send("action=dismiss_theme_admin_notice");
-            }
-            function update_option() {
-                // 隐藏通知
-                document.getElementById("send-ver-tip").style.display = "none";
-                // 发送 AJAX 请求
-                var xhr = new XMLHttpRequest();
-                xhr.open("POST", "<?php echo admin_url('admin-ajax.php'); ?>", true);
-                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                xhr.send("action=update_theme_option&option=send_theme_version&value=true");
-            }
-        </script>
-        <?php
-    }
-}
 
+    // 读取 meta 值
+    $meta_value = get_user_meta( get_current_user_id(), 'theme_admin_notice', true );
+
+    // 判断 meta 值是否存在
+    if ( $meta_value ) {
+        return; // 如果存在，退出函数，避免重复加载通知
+    }
+
+    // 显示通知
+    ?>
+    <div class="notice notice-success" id="send-ver-tip">
+        <p><?php _e( 'Thank you for using the theme Sakurairo! Here is some content that requires your permission.', 'Sakurairo' ); ?></p>
+        <button class="button" onclick="dismiss_notice()"><?php _e( 'No, thanks', 'Sakurairo' ); ?></button>
+        <button class="button" onclick="update_option()"><?php _e( 'Allow sending your theme version for statistical purposes', 'Sakurairo' ); ?></button>
+    </div>
+    <script>
+        function dismiss_notice() {
+            // 隐藏通知
+            document.getElementById( "send-ver-tip" ).style.display = "none";
+            // 写入 1 到 meta
+            var data = new FormData();
+            data.append( 'action', 'update_theme_admin_notice_meta' );
+            data.append( 'user_id', '<?php echo get_current_user_id(); ?>' );
+            data.append( 'meta_key', 'theme_admin_notice' );
+            data.append( 'meta_value', '1' );
+            fetch( '<?php echo admin_url( 'admin-ajax.php' ); ?>', {
+                method: 'POST',
+                body: data
+            } );
+        }
+
+        function update_option() {
+            // 隐藏通知
+            document.getElementById( "send-ver-tip" ).style.display = "none";
+            // 发送 AJAX 请求
+            var xhr = new XMLHttpRequest();
+            xhr.open( "POST", "<?php echo admin_url( 'admin-ajax.php' ); ?>", true );
+            xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
+            xhr.send( "action=update_theme_option&option=send_theme_version&value=true" );
+
+            // 写入 1 到 meta
+            var data = new FormData();
+            data.append( 'action', 'update_theme_admin_notice_meta' );
+            data.append( 'user_id', '<?php echo get_current_user_id(); ?>' );
+            data.append( 'meta_key', 'theme_admin_notice' );
+            data.append( 'meta_value', '1' );
+            fetch( '<?php echo admin_url( 'admin-ajax.php' ); ?>', {
+                method: 'POST',
+                body: data
+            } );
+        }
+    </script>
+    <?php
+}
 add_action('admin_notices', 'theme_admin_notice_callback');
 
-function dismiss_theme_admin_notice() {
-    $user_id = get_current_user_id();
-    update_user_meta($user_id, 'theme_admin_notice_dismissed', true);
+// AJAX 处理函数 - 更新主题选项
+add_action( 'wp_ajax_update_theme_option', 'update_theme_option' );
+function update_theme_option() {
+    $option = $_POST['option'];
+    $value  = sanitize_text_field( $_POST['value'] );
+    iro_opt_update( $option, $value );
     wp_die();
 }
 
-add_action('wp_ajax_dismiss_theme_admin_notice', 'dismiss_theme_admin_notice');
-
-// 处理 AJAX 请求
-function update_theme_option_callback() {
-    if (isset($_POST['option']) && isset($_POST['value'])) {
-        iro_opt_update($_POST['option'], $_POST['value']);
-    }
+// AJAX 处理函数 - 写入 theme_admin_notice 元值
+add_action( 'wp_ajax_update_theme_admin_notice_meta', 'update_theme_admin_notice_meta' );
+function update_theme_admin_notice_meta() {
+    $user_id     = $_POST['user_id'];
+    $meta_key    = $_POST['meta_key'];
+    $meta_value  = sanitize_text_field( $_POST['meta_value'] );
+    update_user_meta( $user_id, $meta_key, $meta_value );
+    wp_die();
 }
-add_action( 'wp_ajax_update_theme_option', 'update_theme_option_callback' );
-
-// 启用主题时显示通知
-function after_switch_theme_callback() {
-    add_action( 'admin_notices', 'theme_admin_notice_callback' );
-}
-add_action( 'after_switch_theme', 'after_switch_theme_callback' );
-
-// 更新主题时显示通知
-function upgrader_process_complete_callback( $upgrader_object, $options ) {
-    if ( $options['action'] == 'update' && $options['type'] == 'theme' ) {
-        add_action( 'admin_notices', 'theme_admin_notice_callback' );
-    }
-}
-add_action( 'upgrader_process_complete', 'upgrader_process_complete_callback', 10, 2 );
 
 //dashboard scheme
 function dash_scheme($key, $name, $col1, $col2, $col3, $col4, $base, $focus, $current, $rules = "")
