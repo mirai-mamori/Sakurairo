@@ -1385,7 +1385,7 @@ function theme_admin_notice_callback() {
             break;
 
         default:
-            $thankyou    = 'Thank you for using the '.$theme_name.' theme! Here is some content that requires your permission.';
+            $thankyou    = 'Thank you for using the '.$theme_name.' theme! There is something that needs your approval.';
             $dislike     = 'No, thanks';
             $allow_send  = 'Allow sending your theme version for statistical purposes';
             break;
