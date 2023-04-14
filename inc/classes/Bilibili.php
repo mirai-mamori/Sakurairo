@@ -121,7 +121,9 @@ class Bilibili
             $percent = 100;
         } else {
             preg_match('/第(\d+)./m', $item['progress'], $matches_progress);
-            preg_match('/第(\d+)./m', $item["new_ep"]['index_show'] ?? null, $matches_new);
+            if (isset($item["new_ep"]['index_show'])) {
+                preg_match('/第(\d+)./m', $item["new_ep"]['index_show'], $matches_new);
+            }
             if (isset($matches_progress[1])) {
                 $progress = is_numeric($matches_progress[1]) ? $matches_progress[1] : 0;
             } else {
