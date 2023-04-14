@@ -15,102 +15,77 @@ get_header();
 </style>
 </head>
 
-<?php while (have_posts()): the_post(); ?>
-    <?php if (!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID())): ?>
-        <span class="linkss-title"><?php the_title(); ?></span>
-    <?php endif; ?>
-    <article <?php post_class("post-item"); ?>>
-        <?php the_content(); ?>
+<?php while(have_posts()) : the_post(); ?>
+	<?php $bgm = (iro_opt('bilibili_id')) ? new \Sakura\API\BilibiliFavList() : null; ?>
+	<?php if (!empty($bgm) && (!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID()))) : ?>
+		<span class="linkss-title"><?php the_title();?></span>
+	<?php endif; ?>
+	<article <?php post_class("post-item"); ?>>
+		<?php the_content(); ?>
 
-        <?php if (iro_opt('bilibili_id')): ?>
-            <section class="fav-list">
-                <?php
-                $bgm = new \Sakura\API\BilibiliFavList();
-                $folder_list = '';
-                if (!empty($bgm->cookies)) {
-                    $folders = $bgm->get_folders();
-                    if (is_array($folders)) {
-                        $folder_list = implode(", ", $folders);
-                    }
-                }
-                ?>
-                <?php if (!empty($folder_list)): ?>
-                    <div class="folder">
-                        <?php foreach ($folders as $folder): ?>
-                            <div class="folder-item">
-                                <a href="<?php echo esc_url($folder["link"]); ?>" class="folder-item-thumb">
-                                    <img src="<?php echo esc_url($folder["cover"]); ?>" alt="<?php echo esc_attr($folder["name"]); ?>">
-                                </a>
-                                <div class="folder-item-info">
-                                    <a href="<?php echo esc_url($folder["link"]); ?>" class="folder-item-name"><?php echo esc_html($folder["name"]); ?></a>
-                                    <span class="folder-item-count"><?php echo esc_html(sprintf("%d 个视频", $folder["count"])); ?></span>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                <?php else: ?>
-                    <p><?php _e("无法获取 Bilibili 收藏夹列表，请检查您的 Bilibili UID。", "sakurairo"); ?></p>
-                <?php endif; ?>
-            </section>
-        <?php else: ?>
-            <div class="row">
-                <p><?php _e("请在主题选项中填写您的 Bilibili UID。", "sakurairo"); ?></p>
-            </div>
-        <?php endif; ?>
+		<?php if (!empty($bgm)) : ?>
+			<section class="fav-list">
+				<?php echo $bgm->get_folders(); ?>
+			</section>
+		<?php else: ?>
+			<div class="row">
+				<p> <?php _e("Please fill in the Bilibili UID in Sakura Options.", "sakurairo"); ?></p>
+			</div>
+		<?php endif; ?>
 
-        <script>
-            let expandButton = document.querySelectorAll('.expand-button');
-            expandButton.forEach(function (elem) {
-                elem.addEventListener('click', function () {
-                    let folder = elem.closest('.folder');
-                    let folderStyle = getComputedStyle(folder);
-                    if (folderStyle.maxHeight == '200px') {
-                        let folderContent = folder.querySelector(".folder-content");
-                        folder.style.maxHeight = 200 + folderContent.scrollHeight + 'px';
-                    } else {
-                        folder.style.maxHeight = '200px';
-                    }
-                }, true);
-            });
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				let expandButton = document.querySelectorAll('.expand-button');
+				if (expandButton.length) {
+					expandButton.forEach(function(elem) {
+						elem.addEventListener('click', function() {
+							let folder = elem.closest('.folder');
+							let folderStyle = getComputedStyle(folder);
+							if (folderStyle.maxHeight === '200px'){
+								let folderContent = folder.querySelector(".folder-content");
+								folder.style.maxHeight = parseInt(folderStyle.maxHeight) + folderContent.scrollHeight + 'px';
+							} else {
+								folder.style.maxHeight = '200px';
+							}
+						}, true);
+					});
+				}
 
-            window.addEventListener('resize', function () {
-                setTimeout(() => {
-                    expandButton.forEach(function (elem) {
-                        let folder = elem.closest('.folder');
-                        let folderStyle = getComputedStyle(folder);
-                        if (folderStyle.maxHeight != '200px') {
-                            let folderContent = folder.querySelector(".folder-content");
-                            folder.style.maxHeight = 200 + folderContent.scrollHeight + 'px';
-                        }
-                    });
-                }, 500);
-            }, true);
+				window.addEventListener('resize', function() {
+					expandButton.forEach(function(elem) {
+						let folder = elem.closest('.folder');
+						let folderStyle = getComputedStyle(folder);
+						if (folderStyle.maxHeight !== '200px'){
+							let folderContent = folder.querySelector(".folder-content");
+							folder.style.maxHeight = parseInt(folderStyle.maxHeight) + folderContent.scrollHeight + 'px';
+						}
+					});
+				}, true);
 
-            document.addEventListener('click', function (e) {
-                if (e.target && e.target.classList.contains('load-more')) {
-                    let elem = e.target;
-                    let href = elem.getAttribute('data-href') + "&_wpnonce=" + _iro.nonce;
-                    fetch(href, {
-                        method: 'POST'
-                    })
-                        .then((response) => {
-                            return response.json();
-                        })
-                        .then((html) => {
-                            var htmlObject = document.createElement('div');
-                            htmlObject.innerHTML = html;
-                            while (htmlObject.childNodes.length > 0) {
-                                elem.parentNode.appendChild(htmlObject.childNodes[0]);
-                            }
-                            let folder = elem.closest('.folder');
-                            let folderContent = folder.querySelector(".folder-content");
-                            folder.style.maxHeight = 200 + folderContent.scrollHeight + 'px';
-                            elem.remove();
-                        });
-                }
-            });
-        </script>
-    </article>
+				document.addEventListener('click',function(e){
+					if(e.target && e.target.classList.contains('load-more')){
+						let elem = e.target;
+						let href = elem.getAttribute('data-href') + "&_wpnonce=" + _iro.nonce;
+						fetch(href, {method: 'POST'})
+							.then((response) => {
+								return response.json();
+							})
+							.then((html) => {
+								var htmlObject = document.createElement('div');
+								htmlObject.innerHTML = html;
+								while (htmlObject.childNodes.length > 0) {
+									elem.parentNode.appendChild(htmlObject.childNodes[0]);
+								}
+								let folder = elem.closest('.folder');
+								let folderContent = folder.querySelector(".folder-content");
+								folder.style.maxHeight = parseInt(folderStyle.maxHeight) + folderContent.scrollHeight + 'px';
+								elem.remove();
+							});
+					}
+				});
+			});
+		</script>
+	</article>
 <?php endwhile; ?>
 
 <style>
