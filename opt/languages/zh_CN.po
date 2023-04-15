@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-04-13 19:22+0800\n"
-"PO-Revision-Date: 2023-04-14 11:00+0800\n"
+"POT-Creation-Date: 2023-04-15 20:44+0800\n"
+"PO-Revision-Date: 2023-04-15 20:46+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -3382,8 +3382,10 @@ msgstr "ChatGPT 文章摘要初始化提示"
 #: options/theme-options.php:3246
 msgid ""
 "Fill in the Init Prompt, Please make changes if you know how to configure it "
-"correctly"
-msgstr "填写初始化提示，请你在知道如何正确配置的情况下进行修改"
+"correctly. Init Prompt will be passed to ChatGPT as \"system\" role"
+msgstr ""
+"填写初始化提示，请你在知道如何正确配置的情况下进行修改，初始化提示将作为“系"
+"统”角色设定传递给 ChatGPT"
 
 #: options/theme-options.php:3257
 msgid "ChatGPT Article Summarize Ask Prompt"
