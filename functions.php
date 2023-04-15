@@ -1189,7 +1189,7 @@ function siren_private()
 //时间序列
 function memory_archives_list() {
     // 尝试从缓存中获取结果
-    $cache_key = 'memory_archives_list';
+    $cache_key = 'memory_archives_list_' . get_locale();
     $output = get_transient($cache_key);
 
     if ($output !== false) {
@@ -1240,9 +1240,14 @@ function memory_archives_list() {
     wp_reset_postdata();
     $output .= '</ul></li></ul> <!--<ul class="al_mon_list"><li><ul class="al_post_list" style="display: block;"><li>博客已经萌萌哒运行了<span id="monitorday"></span>天</li></ul></li></ul>--></div>';
     set_transient($cache_key, $output, 3600);
-    #update_option('memory_archives_list', $output);
     echo $output;
 }
+
+// 在保存文章后清空缓存
+function clear_memory_archives_list_cache($post_id) {
+    delete_transient('memory_archives_list_' . get_locale());
+}
+add_action('save_post', 'clear_memory_archives_list_cache');
 
 /*
  * 隐藏 Dashboard
