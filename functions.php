@@ -1235,7 +1235,7 @@ function memory_archives_list() {
             $mon = $mon_tmp;
             $output .= '<li class="al_li"><span class="al_mon"><span style="color:' . iro_opt('theme_skin') . ';">' . get_post_time('M', false, $post) . '</span> (<span id="post-num"></span>' . __(" post(s)", "sakurairo") /*篇文章*/ . ')</span><ul class="al_post_list">'; //输出月份
         }
-        $output .= '<li>' . '<a href="' . get_permalink($post) . '"><span style="color:' . iro_opt('theme_skin') . ';">' /*get_post_time('d'.__(" ","sakurairo"), false, $post) 日*/ . '</span>' . get_the_title($post) . ' <span>(' . $post_views . ' <span class="fa-regular fa-gem" aria-hidden="true"></span> / ' . get_comments_number($post) . ' <span class="fa-regular fa-comment-dots" aria-hidden="true"></span>)</span></a></li>'; //输出文章日期和标题
+        $output .= '<li>' . '<a href="' . get_permalink($post) . '"><span style="color:' . iro_opt('theme_skin') . ';">' /*get_post_time('d'.__(" ","sakurairo"), false, $post) 日*/ . '</span>' . get_the_title($post) . ' <span>(' . $post_views . ' <span class="fa-regular fa-gem" aria-hidden="true"></span> / ' . get_comments_number($post) . ' <span class="fa-regular fa-comment-dots" aria-hidden="true"></span>)</span></a></li>'; 
     }
     wp_reset_postdata();
     $output .= '</ul></li></ul> <!--<ul class="al_mon_list"><li><ul class="al_post_list" style="display: block;"><li>博客已经萌萌哒运行了<span id="monitorday"></span>天</li></ul></li></ul>--></div>';
