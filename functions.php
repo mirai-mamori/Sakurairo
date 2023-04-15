@@ -1979,6 +1979,19 @@ function show_card($attr, $content = '')
 </section>';
 }
 
+add_shortcode('conversations', 'conversations');
+function conversations($attr, $content = '') 
+{
+    extract(shortcode_atts(array("avatar" => "", "direction" => ""), $attr));
+
+    $output = '<div class="conversations-code" style="display: flex; flex-direction: ' . $direction . '; padding: 10px;">';
+    $output .= '<img src="' . $avatar . '" style="width: 40px; height: 40px; border-radius: 50%;">';
+    $output .= '<div class="conversations-code-text">' . $content . '</div>';
+    $output .= '</div>';
+
+    return $output;
+}
+
 //code end
 
 //WEBP支持
