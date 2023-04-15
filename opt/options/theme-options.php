@@ -3243,7 +3243,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'textarea',
         'title' => __('ChatGPT Article Summarize Init Prompt','sakurairo_csf'),
         'dependency' => array( 'chatgpt_article_summarize', '==', 'true' ),
-        'desc' => __('Fill in the Init Prompt, Please make changes if you know how to configure it correctly','sakurairo_csf'),
+        'desc' => __('Fill in the Init Prompt, Please make changes if you know how to configure it correctly. Init Prompt will be passed to ChatGPT as "system" role','sakurairo_csf'),
         'default' => '
 "You are a excerpt generator. " .
 "You can summarize articles given their title and full text. " .

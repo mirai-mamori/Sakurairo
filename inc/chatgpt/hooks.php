@@ -19,7 +19,7 @@ namespace IROChatGPT {
     {
         $chatGPT = new ChatGPTV2(iro_opt('chatgpt_access_token'), iro_opt('chatgpt_base_url'));
 
-        $chatGPT->addMessage(iro_opt('chatgpt_system_prompt', DEFAULT_INIT_PROMPT), 'system');
+        $chatGPT->addMessage(iro_opt('chatgpt_init_prompt', DEFAULT_INIT_PROMPT), 'system');
         $chatGPT->addMessage("文章标题：" . $post->post_title, 'user');
         $content = $post->post_content;
         $content = substr(wp_strip_all_tags(apply_filters('the_content', $content)), 0, 4050);
