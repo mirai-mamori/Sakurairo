@@ -2325,6 +2325,7 @@ h1.fes-title {
   padding-bottom: 10px;
   padding-left: 3px;
   padding-right: 3px;
+  margin-top: 55px;
   margin-bottom: 30px;
   text-underline-offset: 10px;
   text-decoration: underline wavy var(--exhibition_area_matching_color,#ffeeeB);
@@ -3421,24 +3422,25 @@ i.iconfont.down {
 
 .single-reward .reward-open {
   position: relative;
-  width: 40px;
+  width: auto;
   height: 40px;
   font-size: 18px;
   padding: 7px;
-  color: var(--theme-skin,#fff);
+  color: #440202;
   text-align: center;
   display: inline-block;
-  border-radius: 100%;
-  background: var(--theme-skin-matching,#d34836);
+  border-radius: 8px;
+  background-image: linear-gradient( 135deg, #FFD3A5 10%, #FD6585 100%);
+  box-shadow: 0 0 20px #eee;
   cursor: pointer;
   font-weight: var(--global-font-weight);
 
 }
-
+         
 .single-reward .reward-main {
   position: absolute;
   top: 45px;
-  left: -180px;
+  left: -120px;
   margin: 0;
   padding: 15px 0 0;
   width: 400px;
@@ -6841,7 +6843,6 @@ a.toc-link {
 .top-feature-row {
   width: 100%;
   height: auto;
-  margin-top: 55px;
   white-space: nowrap;
 }
 
@@ -7919,8 +7920,20 @@ i.iconfont.js-toggle-search.iconsearch:hover {
 
   .top-feature,
   .top-feature-row {
+    overflow-x: scroll;
+  }
+  /* 隐藏 Chrome、Safari 和 Opera 的滚动条 */
+  .top-feature,
+  .top-feature-row::-webkit-scrollbar {
     display: none;
   }
+
+  /* 隐藏 IE、Edge 和 Firefox 的滚动条 */
+  .top-feature,
+  .top-feature-row {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
 
   .site-content {
     padding: 0 4%;
@@ -9855,4 +9868,253 @@ body.dark #pagination a {
   box-shadow: 0 1px 20px 2px rgba(26,26,26,0.8);
   color: #CCCCCC;
   transition: all 0.8s ease !important;
+}
+
+/* 灯笼特效 */
+.deng-box {
+        position: fixed;
+        top: -40px;
+        right: 189px;
+        z-index: -1;
+        pointer-events: none
+    }
+
+    .deng-box1 {
+        position: fixed;
+        top: -30px;
+        right: 10px;
+        z-index: -1;
+        pointer-events: none
+    }
+
+    .deng-box2 {
+        position: fixed;
+        top: -40px;
+        left: 189px;
+        z-index: -1;
+        pointer-events: none
+    }
+
+    .deng-box3 {
+        position: fixed;
+        top: -30px;
+        left: 10px;
+        z-index: -1;
+        pointer-events: none
+    }
+
+    .deng-box1 .deng, .deng-box3 .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, .8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 5s infinite ease-in-out;
+        box-shadow: -5px 5px 30px 4px #fc903d
+    }
+
+    .deng {
+        position: relative;
+        width: 120px;
+        height: 90px;
+        margin: 50px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, .8);
+        border-radius: 50% 50%;
+        -webkit-transform-origin: 50% -100px;
+        -webkit-animation: swing 3s infinite ease-in-out;
+        box-shadow: -5px 5px 50px 4px #fa6c00
+    }
+
+    .deng-a {
+        width: 100px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, .1);
+        margin: 12px 8px 8px 8px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03
+    }
+
+    .deng-b {
+        width: 45px;
+        height: 90px;
+        background: #d8000f;
+        background: rgba(216, 0, 15, .1);
+        margin: -4px 8px 8px 26px;
+        border-radius: 50% 50%;
+        border: 2px solid #dc8f03
+    }
+
+    .xian {
+        position: absolute;
+        top: -20px;
+        left: 60px;
+        width: 2px;
+        height: 20px;
+        background: #dc8f03
+    }
+
+    .shui-a {
+        position: relative;
+        width: 5px;
+        height: 20px;
+        margin: -5px 0 0 59px;
+        -webkit-animation: swing 4s infinite ease-in-out;
+        -webkit-transform-origin: 50% -45px;
+        background: orange;
+        border-radius: 0 0 5px 5px
+    }
+
+    .shui-b {
+        position: absolute;
+        top: 14px;
+        left: -2px;
+        width: 10px;
+        height: 10px;
+        background: #dc8f03;
+        border-radius: 50%
+    }
+
+    .shui-c {
+        position: absolute;
+        top: 18px;
+        left: -2px;
+        width: 10px;
+        height: 35px;
+        background: orange;
+        border-radius: 0 0 0 5px
+    }
+
+    .deng:before {
+        position: absolute;
+        top: -7px;
+        left: 29px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        z-index: 999;
+        border-radius: 5px 5px 0 0;
+        border: solid 1px #dc8f03;
+        background: orange;
+        background: linear-gradient(to right, #dc8f03, orange, #dc8f03, orange, #dc8f03)
+    }
+
+    .deng:after {
+        position: absolute;
+        bottom: -7px;
+        left: 10px;
+        height: 12px;
+        width: 60px;
+        content: " ";
+        display: block;
+        margin-left: 20px;
+        border-radius: 0 0 5px 5px;
+        border: solid 1px #dc8f03;
+        background: orange;
+        background: linear-gradient(to right, #dc8f03, orange, #dc8f03, orange, #dc8f03)
+    }
+
+    .deng-t {
+        font-family: 华文行楷, Arial, Lucida Grande, Tahoma, sans-serif;
+        font-size: 3.2rem;
+        color: #dc8f03;
+        font-weight: 700;
+        line-height: 85px;
+        text-align: center
+    }
+
+    .night .deng-box, .night .deng-box1, .night .deng-t {
+        background: 0 0 !important
+    }
+
+    @-moz-keyframes swing {
+        0% {
+            -moz-transform: rotate(-10deg)
+        }
+        50% {
+            -moz-transform: rotate(10deg)
+        }
+        100% {
+            -moz-transform: rotate(-10deg)
+        }
+    }
+
+    @-webkit-keyframes swing {
+        0% {
+            -webkit-transform: rotate(-10deg)
+        }
+        50% {
+            -webkit-transform: rotate(10deg)
+        }
+        100% {
+            -webkit-transform: rotate(-10deg)
+        }
+    }
+
+/*彩虹文字*/
+.notice-content
+{
+padding-top: 3px;
+background-image: linear-gradient(to left,orangered,orange,gold,lightgreen,cyan,dodgerblue,mediumpurple,hotpink,orangered);
+background-size: 110vw;
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent!important;
+-webkit-animation: rainbowan 60s linear infinite;
+animation: rainbowan 60s linear infinite;
+}
+@-webkit-keyframes rainbowan {
+to {
+  background-position: -2000vw;
+}
+}
+@keyframes rainbowan {
+to {
+  background-position: -2000vw;
+}
+}
+
+/* 公告栏背景 */
+.notice{
+	background-color:rgba(255, 255, 255, .90);
+	font-size:18px;
+}
+.notice i{
+	color: #999 !important;
+}
+
+/* 回复可见 */
+.reply-to-read{
+	font-size:16px;
+	color:black;
+	text-align:center;
+	padding:10px;
+	border:1px solid #96c2f1;
+	background:#eff7ff
+}
+/*赞赏*/
+.reward-btn{
+    background: #f1f3f8;
+    color: #363636;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    padding: 4px 0;
+    border: 1px solid #e3e8f7;
+    margin: 8px;
+    width: 100%;
+}
+.reward-btn-dec{
+    font-size: 0.8rem;
+}
+.reward-btn:hover {
+  color: #fff;
+  background: #f04a63;
+  background-image: url(/wp-content/themes/Sakurairo/image/JgNrST23690481619450556342.gif!cover);
+  box-shadow: 0 8px 12px -3px #ee7d7936;
 }
