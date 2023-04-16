@@ -34,7 +34,7 @@ class BilibiliFavList
 		return false;
 	}
 
-	function fetch_folder_item_api(int $folder_id, int $page)
+	function fetch_folder_item_api(int $folder_id, int $page): mixed
 	{
 		$url = "https://api.bilibili.com/x/v3/fav/resource/list?media_id=$folder_id&pn=$page&ps=9&platform=web&jsonp=jsonp";
 		$args = array(
@@ -42,10 +42,12 @@ class BilibiliFavList
 		);
 		$response = wp_remote_get($url, $args);
 		if (is_array($response)) {
-			return json_decode($response["body"], true) || false;
-		} else {
-			return false;
+			$result = json_decode($response["body"], true);
+			if ($result) {
+				return $result;
+			}
 		}
+		return false;
 	}
 
 	public function get_folders()
@@ -62,7 +64,15 @@ class BilibiliFavList
 		$folders = $folders_data['list'];
 		$html = '';
 		foreach ((array)$folders as $folder) {
-			$html .= $this->folder_display($folder['id']);
+			$render_result = $this->folder_display($folder['id']);
+			if ($render_result) {
+				$html .= $render_result;
+			} else {
+				error_log("BilibiliFavList: folder_display failed, folder_id: " . $folder['id']);
+				$html .= '<div class="folder"><div class="folder-top">'
+					. '<div class="folder-detail"><h3>' . $folder['title'] . '</h3>'
+					. __('Backend error', 'sakurairo') . "</div></div></div>";
+			}
 		}
 		return $html;
 	}
@@ -70,6 +80,9 @@ class BilibiliFavList
 	public function folder_display(int $folder_id)
 	{
 		$folder_resp = $this->fetch_folder_item_api($folder_id, 1);
+		if (!$folder_resp) {
+			return false;
+		}
 		$folder_content_info = $folder_resp['data']['info'];
 		$html = '<div class="folder"><div class="folder-top">' .
 			lazyload_img(str_replace('http://', 'https://', $folder_content_info['cover']), 'folder-img', array('alt' => $folder_content_info['title'])) .
