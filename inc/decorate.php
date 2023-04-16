@@ -535,7 +535,10 @@ background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparen
 /*首页圆角设置*/
 .header-info,.header-shuo{
 border-radius: <?=iro_opt('signature_radius'); ?>px;
+grid-row: 1;
+grid-column: 1;
 }
+
 
 .focusinfo img{
 border-radius: <?=iro_opt('social_area_radius'); ?>px;
@@ -630,7 +633,11 @@ position:relative;bottom:0;left:0;display:block;width:100%;height:2px;background
 
 /*首页封面动画*/
 <?php if (iro_opt('cover_animation', 'true')): ?>
-h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,.header-info p,.header-info,.header-shuo,.header-shuo p,.focusinfo .header-tou img,.top-social img,.center-text{
+h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,
+<?php if (iro_opt("homepage_shuoshuo", 'true') == "false"): ?>
+    .header-info p,.header-info,.header-shuo,.header-shuo p,
+<?php endif; ?>
+.focusinfo .header-tou img,.top-social img,.center-text{
 	-moz-animation: fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
     -webkit-animation:fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
 	animation: fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
