@@ -2639,6 +2639,10 @@ h1.main-title {
   ;
 }
 
+.header-container {
+  display: grid;
+}
+
 .header-info {
   width: 65%;
   margin: auto;
@@ -3322,6 +3326,7 @@ h1.main-title {
   padding: 13px 35px;
   background: rgb(255 255 255 / 50%);
   box-shadow: 0 1px 30px -4px var(--post-list-thumb);
+  border: 1.5px solid #FFFFFF;
   border-radius: 50px;
   color: var(--theme-skin, #505050);
   transition: all 0.8s ease !important;
@@ -10562,6 +10567,7 @@ body.dark #pagination a:hover {
 body.dark #pagination a {
   background: rgb(26 26 26 / 60%);
   box-shadow: 0 1px 20px 2px rgba(26, 26, 26, 0.8);
+  border: 1.5px solid #7d7d7d30;
   color: #CCCCCC;
   transition: all 0.8s ease !important;
 }
@@ -10680,8 +10686,4 @@ body.dark .searchbox.js-toggle-search:hover {
 
 .aplayer-lrc {
   pointer-events: none
-}
-
-.header-container {
-  display: grid;
 }
