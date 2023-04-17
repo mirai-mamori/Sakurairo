@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-04-15 20:44+0800\n"
+"POT-Creation-Date: 2023-04-17 13:59+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1887,7 +1887,7 @@ msgstr ""
 
 #: options/theme-options.php:1556
 msgid ""
-"When turned on, the Latest Shuoshuo text will be displayed Under Signature Field"
+"When turned on, the Latest Shuoshuo text will be Cyclic displayed with info bar "
 msgstr ""
 
 #: options/theme-options.php:1563

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-04-15 20:44+0800\n"
-"PO-Revision-Date: 2023-04-15 20:44+0800\n"
+"POT-Creation-Date: 2023-04-17 13:59+0800\n"
+"PO-Revision-Date: 2023-04-17 14:00+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -2005,9 +2005,11 @@ msgstr "カバーShuoshuoバー"
 
 #: options/theme-options.php:1556
 msgid ""
-"When turned on, the Latest Shuoshuo text will be displayed Under Signature "
-"Field"
-msgstr "オンにすると、最新のShuoshuoテキストが署名フィールドの下に表示されます"
+"When turned on, the Latest Shuoshuo text will be Cyclic displayed with info "
+"bar "
+msgstr ""
+"オンにすると、最新のShuoshuoテキストが情報バーとともにサイクリック表示されま"
+"す"
 
 #: options/theme-options.php:1563
 msgid "Cover Random Image Options"
