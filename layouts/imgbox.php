@@ -170,6 +170,6 @@ echo bgvideo(); //BGVideo
 ?>
 <!-- 首页下拉箭头 -->
 <?php if (iro_opt('drop_down_arrow', 'true')) : ?>
-<div class="headertop-down" onclick="headertop_down()"><span><i class="fa-solid fa-chevron-down fa-bounce fa-xl"
+<div class="headertop-down" onclick="headertop_down()"><span><i class="fa-solid fa-circle-dot fa-2xl"
             aria-hidden="true" style="color:<?php echo iro_opt('drop_down_arrow_color'); ?>"></i></span></div>
 <?php endif; ?>

@@ -4807,21 +4807,18 @@ h5::before {
 .headertop-down {
   position: absolute;
   bottom: 50px;
-  left: calc(50% - 14px);
+  left: calc(50% - 20px);
   z-index: 5;
 }
 
 .headertop-down i {
-  font-size: 36px;
+  font-size: 40px;
   color: #fff;
   cursor: pointer;
   -webkit-transform: scale(1.5, 1);
   transform: scale(1.5, 1);
-  animation-play-state: paused;
-}
-
-.headertop-down i:hover {
-  animation-play-state: running;
+  -webkit-animation: pulsate-bck 3s ease-in-out infinite both;
+  animation: pulsate-bck 3s ease-in-out infinite both;
 }
 
 .bangumi .column {
@@ -9128,6 +9125,35 @@ body.dark .post-list-thumb:hover {
   .prpr:hover {
     -webkit-transform: scale(.5) translate(-150px, 125px);
     transform: scale(.5) translate(-150px, 125px);
+  }
+}
+
+@-webkit-keyframes pulsate-bck {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulsate-bck {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
