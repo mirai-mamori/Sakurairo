@@ -1553,7 +1553,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'homepage_shuoshuo',
         'type' => 'switcher',
         'title' => __('Cover Shuoshuo Bar','sakurairo_csf'),
-        'label' => __('When turned on, the Latest Shuoshuo text will be displayed Under Signature Field','sakurairo_csf'),
+        'label' => __('When turned on, the Latest Shuoshuo text will be Cyclic displayed with info bar ','sakurairo_csf'),
         'default' => false
       ),
 

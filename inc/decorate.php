@@ -634,9 +634,7 @@ position:relative;bottom:0;left:0;display:block;width:100%;height:2px;background
 /*首页封面动画*/
 <?php if (iro_opt('cover_animation', 'true')): ?>
 h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,
-<?php if (iro_opt("homepage_shuoshuo", 'true') == "false"): ?>
-    .header-info p,.header-info,.header-shuo,.header-shuo p,
-<?php endif; ?>
+.header-info p,.header-info,.header-shuo,.header-shuo p,
 .focusinfo .header-tou img,.top-social img,.center-text{
 	-moz-animation: fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
     -webkit-animation:fadeInDown  <?=iro_opt('cover_animation_time'); ?>s;
