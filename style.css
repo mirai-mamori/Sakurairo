@@ -10511,7 +10511,10 @@ body.dark .header-shuo {
   color: #CCCCCC !important;
 }
 
-body.dark .pattern-center h1.entry-title,
+body.dark .pattern-center h1.entry-title {
+  color: #FFFFFF;
+}
+
 body.dark .post-squares h3 {
   color: #CCCCCC;
 }

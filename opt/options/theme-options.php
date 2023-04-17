@@ -3160,7 +3160,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Primary Menu Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#779caf'
+        'default' => '#272151'
       ),  
 
       array(
@@ -3168,7 +3168,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Secondary Menu Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#d4af8d'
+        'default' => '#36307f'
       ),  
 
       array(
@@ -3176,7 +3176,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Emphasis Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#d3a172'
+        'default' => '#7b2a52'
       ),  
 
       array(
@@ -3184,7 +3184,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Button Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#514e3b'
+        'default' => '#7a003d'
       ),  
 
       array(
@@ -3192,6 +3192,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Dashboard Text Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
+        'default' => '#FFFFFF'
       ),  
 
     )
