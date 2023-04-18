@@ -67,7 +67,7 @@ function poi_time_since( $older_date, $comment_date = false, $text = false ) {
     array( 60 , __( ' minutes ago', 'sakurairo' ) ),/*分钟前*/
     array( 1, __( ' seconds ago', 'sakurairo' ) )/*秒前*/
   );
-  $newer_date = time() - (iro_opt('time_zone_fix')*60*60);
+  $newer_date = current_time('timestamp') - (iro_opt('time_zone_fix')*60*60);
   $since = abs( $newer_date - $older_date );
   if($text){
     $output = '';
@@ -194,7 +194,7 @@ if(!function_exists('siren_ajax_comment_callback')) {
                       <h4 class="author"><a href="<?php comment_author_url(); ?>"><?php echo get_avatar( $comment->comment_author_email, '80', '', get_comment_author() ); ?><?php comment_author(); ?> <span class="isauthor" title="<?php esc_attr_e('Author', 'sakurairo'); ?>"></span></a></h4>
                     </div>
                     <div class="right">
-                      <div class="info"><time datetime="<?php comment_date('Y-m-d'); ?>"><?php echo poi_time_since(strtotime($comment->comment_date_gmt), true );//comment_date(get_option('date_format')); ?></time></div>
+                      <div class="info"><time datetime="<?php comment_date('Y-m-d'); ?>"><?php echo poi_time_since(strtotime($comment->comment_date), true );//comment_date(get_option('date_format')); ?></time></div>
                     </div>
                   </section>
                 </div>
@@ -299,7 +299,7 @@ function the_headPattern(){
     //$ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
         $edit_this_post_link = get_edit_html();
     $t .= the_title( '<h1 class="entry-title">', '</h1>', false);
-    $t .= '<span class="toppic-line"></span><p class="entry-census"><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'.get_avatar(get_the_author_meta('ID'),64) .'</a></span><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'. get_the_author() .'</a></span><span class="bull">·</span>'. poi_time_since(get_post_time('U', true),false,true) .'<span class="bull">·</span>'. get_post_views(get_the_ID()) .' '._n("View","Views",get_post_views(get_the_ID()),"sakurairo")/*次阅读*/.$edit_this_post_link.'</p>';
+    $t .= '<span class="toppic-line"></span><p class="entry-census"><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'.get_avatar(get_the_author_meta('ID'),64) .'</a></span><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'. get_the_author() .'</a></span><span class="bull">·</span>'. poi_time_since(get_post_time('U', false),false,true) .'<span class="bull">·</span>'. get_post_views(get_the_ID()) .' '._n("View","Views",get_post_views(get_the_ID()),"sakurairo")/*次阅读*/.$edit_this_post_link.'</p>';
     endwhile; endif;
   }elseif(is_page()){
     $full_image_url = !empty($full_image_url) ? $full_image_url[0] : null;
@@ -350,15 +350,15 @@ function the_video_headPattern(bool $isHls = false)
             $header = 'single-header';
             //$ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
             $edit_this_post_link = get_edit_html();
-            $btn_playControl = '<button id="cv-pc" class="coverVideo-btn" onclick="coverVideo()"><i class="fa fa-pause" aria-hidden="true"></i></button>';
-/*             $btn_volumeControl = '<button id="cv-vc" class="coverVideo-btn" onclick="coverVideoMute()"><i class="fa fa-volume-off" aria-hidden="true"></i></button>';
+            $btn_playControl = '<button id="cv-pc" class="coverVideo-btn" onclick="coverVideo()"><i class="fa-solid fa-pause"></i></button>';
+/*             $btn_volumeControl = '<button id="cv-vc" class="coverVideo-btn" onclick="coverVideoMute()"><i class="fa-solid fa-volume-xmark"></i></button>';
  */            $t .= the_title('<h1 class="entry-title">', $btn_playControl./* $btn_volumeControl. */'</h1>', false);
             $t .= '<p class="entry-census"><span><a href="' 
             . esc_url(get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename'))) . '">' 
             . get_avatar(get_the_author_meta('ID'), 64) . '</a></span><span><a href="' 
             . esc_url(get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename'))) . '">' 
             . get_the_author() . '</a></span><span class="bull">·</span>' 
-            . poi_time_since(get_post_time('U', true), false, true) . '<span class="bull">·</span>' 
+            . poi_time_since(get_post_time('U', false), false, true) . '<span class="bull">·</span>' /*时间前*/
             . get_post_views(get_the_ID()) . ' ' 
             . _n("View", "Views", get_post_views(get_the_ID()), "sakurairo")/*次阅读*/ . $edit_this_post_link . '</p>';
         }
@@ -408,51 +408,51 @@ function the_video_headPattern(bool $isHls = false)
 /*
  * 导航栏用户菜单
  */
-function header_user_menu(){
-  global $current_user;wp_get_current_user(); 
-  if(is_user_logged_in()){
-    $ava = iro_opt('personal_avatar') ? iro_opt('personal_avatar') : get_avatar_url( $current_user->user_email );
-    ?>
+function header_user_menu()
+{
+  global $current_user;
+  wp_get_current_user();
+  if (is_user_logged_in()) {
+    $ava = iro_opt('personal_avatar') ? iro_opt('personal_avatar') : get_avatar_url($current_user->user_email);
+  ?>
     <div class="header-user-avatar">
-      <img class="faa-spin animated-hover" src="<?php echo get_avatar_url( $current_user->ID, 64 );/*$ava;*/ ?>" width="30" height="30">
+      <img src="<?php echo get_avatar_url($current_user->ID, 64);/*$ava;*/ ?>" width="30" height="30">
       <div class="header-user-menu">
         <div class="header-user-name">
-          <?php _e("Signed in as","sakurairo")?> 
+          <?php _e("Signed in as", "sakurairo") ?>
           <div class="header-user-name-u"><?php echo $current_user->display_name; ?></div>
         </div>
         <div class="user-menu-option">
           <?php if (current_user_can('level_10')) { ?>
-            <a href="<?php bloginfo('url'); ?>/wp-admin/" target="_blank"><?php _e('Dashboard','sakurairo')/*管理中心*/?></a>
-            <a href="<?php bloginfo('url'); ?>/wp-admin/post-new.php" target="_blank"><?php _e('New post','sakurairo')/*撰写文章*/?></a>
+            <a href="<?php bloginfo('url'); ?>/wp-admin/" target="_blank"><?php _e('Dashboard', 'sakurairo')/*管理中心*/ ?></a>
+            <a href="<?php bloginfo('url'); ?>/wp-admin/post-new.php" target="_blank"><?php _e('New post', 'sakurairo')/*撰写文章*/ ?></a>
           <?php } ?>
-          <a href="<?php bloginfo('url'); ?>/wp-admin/profile.php" target="_blank"><?php _e('Profile','sakurairo')/*个人资料*/?></a>
-          <a href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" target="_top" data-no-pjax><?php _e('Sign out','sakurairo')/*退出登录*/?></a>
+          <a href="<?php bloginfo('url'); ?>/wp-admin/profile.php" target="_blank"><?php _e('Profile', 'sakurairo')/*个人资料*/ ?></a>
+          <a href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" target="_top" data-no-pjax><?php _e('Sign out', 'sakurairo')/*退出登录*/ ?></a>
         </div>
       </div>
     </div>
   <?php
-  }else{ 
+  } else {
     $ava = iro_opt('unlisted_avatar');
     global $wp;
     //https://wordpress.stackexchange.com/questions/274569/how-to-get-url-of-current-page-displayed
     //可以测试一下对不同的固定链接的兼容性
-    $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(add_query_arg( $wp->query_vars, home_url( $wp->request ) ));
+    $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(iro_opt('login_urlskip') ? '' : add_query_arg($wp->query_vars, home_url($wp->request)));
   ?>
-  <div class="header-user-avatar">
-    <a href="<?php echo $login_url; ?>">
-      <img class="faa-shake animated-hover" src="<?php echo $ava; ?>" width="30" height="30">
-    </a>
-    <div class="header-user-menu">
- <div class="header-user-name no-logged">  
-   <a id="login-link" href="<?php echo $login_url; ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in','sakurairo')/*登录*/?></a>  
+    <div class="header-user-avatar">
+      <a href="<?= $login_url ?>">
+        <img src="<?= $ava ?>" width="30" height="30">
+      </a>
+      <div class="header-user-menu">
+        <div class="header-user-name no-logged">
+          <a id="login-link" href="<?= $login_url ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in', 'sakurairo')/*登录*/ ?></a>
+        </div>
       </div>
     </div>
-  </div>
-  <?php 
+  <?php
   }
 }
-
-
 /*
  * 获取相邻文章缩略图
  * 特色图 -> 文章图 -> 首页图
@@ -666,7 +666,7 @@ function siren_private_message_hook($comment_content , $comment){
     $current_commenter = wp_get_current_commenter();
     if ( $is_private ) $comment_content = '#私密# ' . $comment_content;
     if ( $current_commenter['comment_author_email'] == $email || $parent_email == $current_commenter['comment_author_email'] || current_user_can('delete_user') ) return $comment_content;
-    if ( $is_private ) return '<i class="fa fa-lock" aria-hidden="true"></i> '.__("The comment is private","sakurairo")/*该评论为私密评论*/;
+    if ( $is_private ) return '<i class="fa-solid fa-lock"></i> '.__("The comment is private","sakurairo")/*该评论为私密评论*/;
     return $comment_content;
 }
 add_filter('get_comment_text','siren_private_message_hook',10,2);
@@ -831,15 +831,13 @@ function mobile_get_useragent_icon(string $ua):string{
   $alipay =  $alipay ? '<li class="alipay-code"><img src="'.$alipay.'"></li>' : '';
   $wechat = $wechat ? '<li class="wechat-code"><img src="'.$wechat.'"></li>' : '';
   ?>
-  <div class="single-reward">
-    <div class="reward-open"> <i class="fa fa-usd" aria-hidden="true"></i>
+    <div class="reward-open"> <i class="fa-solid fa-piggy-bank fa-sm"></i>
       <div class="reward-main">
         <ul class="reward-row">
           <?php echo $alipay.$wechat; ?>
         </ul>
       </div>
     </div>
-  </div>
   <?php
   }
 }

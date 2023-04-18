@@ -15,9 +15,6 @@ get_header(); ?>
 			get_template_part( 'tpl/content', 'single' );
 			get_template_part('layouts/sidebox');
 			get_template_part('layouts/post','nextprev');  
-            if(iro_opt('author_profile')){ 
-                get_template_part('layouts/authorprofile');
-            }
 		endwhile; // End of the loop.
 		?>
 		</main><!-- #main -->

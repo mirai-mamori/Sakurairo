@@ -11,7 +11,7 @@
  */
 
 $mashiro_logo = iro_opt('mashiro_logo');
-
+$vision_resource_basepath = iro_opt('vision_resource_basepath');
 ?>
 <?php header('X-Frame-Options: SAMEORIGIN'); ?>
 <!DOCTYPE html>
@@ -32,6 +32,7 @@ $mashiro_logo = iro_opt('mashiro_logo');
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/all.min.css" type="text/css" media="all"/>
 	<?php
 	if (iro_opt('iro_meta') == true) {
 		$keywords = '';
@@ -73,7 +74,7 @@ $mashiro_logo = iro_opt('mashiro_logo');
 	}
 	?>
 	<?php wp_head(); ?>
-	<link rel="stylesheet" href="https://<?php echo iro_opt('gfonts_api', 'fonts.loli.net'); ?>/css?family=Merriweather+Sans|Noto+Serif|Noto+Serif+SC|Noto+Sans+SC|Ubuntu:400,700<?php echo iro_opt('gfonts_add_name'); ?>&display=swap" media="all">
+	<link rel="stylesheet" href="https://<?php echo iro_opt('gfonts_api', 'fonts.loli.net'); ?>/css?family=Noto+Serif|Noto+Serif+SC|Noto+Sans+SC|Dela+Gothic+One|Fira+Code<?php echo iro_opt('gfonts_add_name'); ?>&display=swap" media="all">
 	<script type="text/javascript">
 		if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
 			alert('朋友，IE浏览器未适配哦~\n如果是 360、QQ 等双核浏览器，请关闭 IE 模式！');
@@ -128,7 +129,7 @@ $mashiro_logo = iro_opt('mashiro_logo');
 			</div><!-- .site-branding -->
 			<?php header_user_menu();
 			if (iro_opt('nav_menu_search') == '1') { ?>
-				<div class="searchbox"><i class="iconfont js-toggle-search iconsearch icon-search"></i></div>
+				<div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
 			<?php } ?>
 			<div class="lower"><?php if (iro_opt('nav_menu_display') == 'fold') { ?>
 					<div id="show-nav" class="showNav">

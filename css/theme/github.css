@@ -629,7 +629,7 @@
     position: relative;
     background: #21252b;
     border-radius: 5px;
-    font: 15px/22px "Microsoft YaHei", Arial, Sans-Serif;
+    font: 15px/22px 'Fira Code','Noto Sans SC';
     line-height: 1.6;
     margin-bottom: 1.6em;
     max-width: 100%;
@@ -719,7 +719,7 @@
     background: #1d1f21;
     color: #fff;
     word-break: break-word;
-    font-family: 'Noto Sans SC', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+    font-family: 'Fira Code','Noto Sans SC';
     padding: 2px;
     text-shadow: none;
     border-radius: 0 0 5px 5px;
@@ -736,7 +736,7 @@
     margin-top: -30px;
     left: 0;
     width: 100%;
-    font-family: Ubuntu, sans-serif;
+    font-family: 'Fira Code','Noto Sans SC';
     font-weight: 700;
     padding: 0 80px;
     text-indent: 15px;
@@ -843,7 +843,7 @@
     text-align: center;
     color: #888f96;
     background: #1d1f21;
-    font-family: 'Noto Sans SC', monospace, Helvetica, Tahoma, Arial, STXihei, "STHeiti Light", "Microsoft YaHei", sans-serif;
+    font-family: 'Fira Code','Noto Sans SC';
     vertical-align: top;
     position: absolute;
     left: 0;

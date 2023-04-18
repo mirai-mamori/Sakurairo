@@ -1,6 +1,6 @@
 [简体中文](README.md) | [繁體中文](README_tw.md) | [English](README_en.md) | **日本語**
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/banner-ver2.6.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -12,7 +12,7 @@
 
 ## バージョン紹介：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/versions_jp.png)](https://fuukei.org//)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/jp-ver2.6.png)](https://fuukei.org/)
 
 ## 活用方法：
 
@@ -52,7 +52,7 @@
 
 - 本テーマのSNSアイコンは、MUH2 icons部分は缄默（ジェンモー）さんの[MUH2 Icon Pack](https://www.coolapk.com/apk/com.muh2.icon)を参考にしています。
 
-- 本テーマの白ネコロゴは、オリジナルテーマの開発者Mashiroさんのデザインを参考にしています。ソリューションは [Hyacm](https://hyacm.com/acai/ui/143/sakura-logo/) さんが提供しています。
+- 本テーマの白ネコロゴは、オリジナルテーマの開発者Mashiroさんのデザインを参考にしています。ソリューションは Hyacm さんが提供しています。
 
 ### 依存関係：
 
@@ -60,7 +60,11 @@
 
 - 本テーマでは、YahnisElstsさんの[Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) を使って、テーマのアップデートを提供しています。
 
+- 本テーマでは、HaoZi-Teamさんの[ChatGPT PHP](https://github.com/HaoZi-Team/ChatGPT-PHP) を使って、テーマの ChatGPT 関連機能を提供しています。
+
 ## 楽しんでいただけたら幸いです。
+
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/jp-ver2.6info.png)](https://fuukei.org/)
 
 -  Starトレンド  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 

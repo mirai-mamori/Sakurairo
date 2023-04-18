@@ -49,8 +49,7 @@ get_header();
 
 	.author_info .author-center .description {
 		font-size: 14px;
-		color: rgba(0, 0, 0, .4);
-		line-height: 1.6;
+		line-height: 2;
 		font-weight: var(--global-font-weight);
 	}
 </style>
@@ -81,7 +80,7 @@ get_header();
 		<div id="add_post"><span id="add_post_time" style="visibility: hidden;" title="<?php echo iro_opt('page_auto_load', ''); ?>"></span></div>
 	<?php } else { ?>
 		<nav class="navigator">
-			<?php previous_posts_link('<i class="iconfont icon-back"></i>') ?><?php next_posts_link('<i class="iconfont icon-right"></i>') ?>
+			<?php previous_posts_link('<i class="fa-solid fa-angle-left"></i>') ?><?php next_posts_link('<i class="fa-solid fa-angle-right"></i>') ?>
 		</nav>
 	<?php } ?>
 </div><!-- #primary -->

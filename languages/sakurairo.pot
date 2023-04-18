@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2022-12-12 14:05+0800\n"
+"POT-Creation-Date: 2023-04-13 21:23+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,23 +21,23 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: 404.php:54
+#: 404.php:53
 msgid "return to previous page"
 msgstr ""
 
-#: 404.php:55
+#: 404.php:54
 msgid "return to home page"
 msgstr ""
 
-#: 404.php:58
+#: 404.php:57
 msgid "Don't worry, search in site?"
 msgstr ""
 
-#: 404.php:61 footer.php:63 search.php:40
+#: 404.php:59 footer.php:60 search.php:39
 msgid "Search..."
 msgstr ""
 
-#: archive.php:58 author.php:80 index.php:74
+#: archive.php:58 author.php:79 index.php:74
 msgid " Previous"
 msgstr ""
 
@@ -129,95 +129,95 @@ msgstr ""
 msgid "Site"
 msgstr ""
 
-#: footer.php:38
+#: footer.php:35
 #, php-format
 msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr ""
 
-#: footer.php:68
+#: footer.php:65
 msgid "Go to top"
 msgstr ""
 
-#: footer.php:76 footer.php:84
+#: footer.php:72 footer.php:80
 msgid "Want to find something?"
 msgstr ""
 
-#: footer.php:86
+#: footer.php:81
 msgid "Search"
 msgstr ""
 
-#: footer.php:138
+#: footer.php:133
 msgid "Widgets"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:89
 msgid "Nav Menus"
 msgstr ""
 
-#: functions.php:192 functions.php:203
+#: functions.php:205 functions.php:216
 msgid "Ideas"
 msgstr ""
 
-#: functions.php:193
+#: functions.php:206
 msgid "Idea"
 msgstr ""
 
-#: functions.php:194 functions.php:195
+#: functions.php:207 functions.php:208
 msgid "Publish New Idea"
 msgstr ""
 
-#: functions.php:196
+#: functions.php:209
 msgid "Edit Idea"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:210
 msgid "New Idea"
 msgstr ""
 
-#: functions.php:198
+#: functions.php:211
 msgid "View Idea"
 msgstr ""
 
-#: functions.php:199
+#: functions.php:212
 msgid "Search Idea"
 msgstr ""
 
-#: functions.php:200
+#: functions.php:213
 msgid "Not Found Idea"
 msgstr ""
 
-#: functions.php:201
+#: functions.php:214
 msgid "No Idea in the Trash"
 msgstr ""
 
-#: functions.php:274
+#: functions.php:287
 msgid "Copied!"
 msgstr ""
 
-#: functions.php:275
+#: functions.php:288
 msgid "Copy Code"
 msgstr ""
 
-#: functions.php:276
+#: functions.php:289
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, "
 "Cover Cache won't take effect."
 msgstr ""
 
-#: functions.php:277
+#: functions.php:290
 msgid "Commiting...."
 msgstr ""
 
-#: functions.php:278
+#: functions.php:291
 msgid "Succeed"
 msgstr ""
 
-#: functions.php:279
+#: functions.php:292
 msgid "10 files max per request"
 msgstr ""
 
-#: functions.php:280
+#: functions.php:293
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -226,15 +226,15 @@ msgid ""
 "This image is too large~Please reupload!"
 msgstr ""
 
-#: functions.php:281
+#: functions.php:294
 msgid "Uploading..."
 msgstr ""
 
-#: functions.php:282
+#: functions.php:295
 msgid "Uploaded successfully~"
 msgstr ""
 
-#: functions.php:283
+#: functions.php:296
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -242,133 +242,127 @@ msgid ""
 "{2}"
 msgstr ""
 
-#: functions.php:284
+#: functions.php:297
 msgid "Upload failed, please retry."
 msgstr ""
 
-#: functions.php:285
+#: functions.php:298
 msgid "Page Load failed. HTTP {0}"
 msgstr ""
 
-#: functions.php:286
+#: functions.php:299
 msgid "Glad you come, but we've got nothing left."
 msgstr ""
 
-#: functions.php:287
+#: functions.php:300
 msgid "Post"
 msgstr ""
 
-#: functions.php:288
+#: functions.php:301
 msgid "Tag"
 msgstr ""
 
-#: functions.php:289
+#: functions.php:302
 msgid "Category"
 msgstr ""
 
-#: functions.php:290
+#: functions.php:303
 msgid "Page"
 msgstr ""
 
-#: functions.php:291
+#: functions.php:304
 msgid "Comment"
 msgstr ""
 
-#: functions.php:292
+#: functions.php:305
 msgid "Paused..."
 msgstr ""
 
-#: functions.php:293
+#: functions.php:306
 msgid "Loading Video..."
 msgstr ""
 
-#: functions.php:294
+#: functions.php:307
 msgid "Downloading fonts, be aware of your data usage."
 msgstr ""
 
-#: functions.php:295
+#: functions.php:308
 msgid "Are you sure you want set it private?"
 msgstr ""
 
-#: functions.php:296
+#: functions.php:309
 msgid "You had set private comment before"
 msgstr ""
 
-#: functions.php:366 inc/theme_plus.php:194 layouts/authorprofile.php:12
+#: functions.php:379 inc/theme_plus.php:194
 msgid "Author"
 msgstr ""
 
-#: functions.php:366
+#: functions.php:379
 msgid "Blogger"
 msgstr ""
 
-#: functions.php:372
+#: functions.php:385
 msgid "Location"
 msgstr ""
 
-#: functions.php:378
+#: functions.php:391
 msgid "Private"
 msgstr ""
 
-#: functions.php:380
+#: functions.php:393
 msgid "Yes"
 msgstr ""
 
-#: functions.php:382
+#: functions.php:395
 msgid "No"
 msgstr ""
 
-#: functions.php:385
+#: functions.php:398
 msgid "Edit"
 msgstr ""
 
-#: functions.php:463
-msgid ""
-"Please install pulgin <a href=\"https://wordpress.org/plugins/wp-statistics/"
-"\" target=\"_blank\">WP-Statistics</a>"
-msgstr ""
-
-#: functions.php:487
+#: functions.php:505
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:684
+#: functions.php:710
 msgid "Download Link"
 msgstr ""
 
-#: functions.php:756
+#: functions.php:782
 msgid "Remember me"
 msgstr ""
 
-#: functions.php:1152
+#: functions.php:1200
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1173
+#: functions.php:1225
 msgid " "
 msgstr ""
 
-#: functions.php:1177
+#: functions.php:1229
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1200 functions.php:1203 inc/theme_plus.php:425
+#: functions.php:1252 functions.php:1255 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1423
+#: functions.php:1560
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1548
+#: functions.php:1685
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1636
+#: functions.php:1769
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:1765
+#: functions.php:1898
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -593,8 +587,8 @@ msgstr ""
 msgid "Sign out? "
 msgstr ""
 
-#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:20
-#: tpl/single-image.php:18
+#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:31
+#: tpl/single-image.php:24
 msgid "View"
 msgid_plural "Views"
 msgstr[0] ""
@@ -609,24 +603,28 @@ msgstr ""
 msgid "Your browser does not support HTML5 video."
 msgstr ""
 
-#: inc/theme_plus.php:420
+#: inc/theme_plus.php:422
 msgid "Signed in as"
 msgstr ""
 
-#: inc/theme_plus.php:426
+#: inc/theme_plus.php:428
 msgid "New post"
 msgstr ""
 
-#: inc/theme_plus.php:428
+#: inc/theme_plus.php:430
 msgid "Profile"
 msgstr ""
 
-#: inc/theme_plus.php:429
+#: inc/theme_plus.php:431
 msgid "Sign out"
 msgstr ""
 
-#: inc/theme_plus.php:447
+#: inc/theme_plus.php:449
 msgid "Log in"
+msgstr ""
+
+#: index.php:26
+msgid "Notice"
 msgstr ""
 
 #: layouts/imgbox.php:7
@@ -645,33 +643,41 @@ msgstr ""
 msgid "Next Post"
 msgstr ""
 
+#: page-word.php:34
+msgid "You have not posted a comment yet"
+msgstr ""
+
+#: page-word.php:35
+msgid "Go and post your first comment now"
+msgstr ""
+
 #: search.php:20
 #, php-format
 msgid "search result: %s"
 msgstr ""
 
-#: tpl/content-category.php:31 tpl/content-image.php:36
-#: tpl/content-status.php:32 tpl/content-thumb.php:93 tpl/content.php:36
+#: tpl/content-category.php:31 tpl/content-image.php:33
+#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
 msgid "NOTHING"
 msgstr ""
 
-#: tpl/content-category.php:31 tpl/content-image.php:36
-#: tpl/content-status.php:32 tpl/content-thumb.php:93 tpl/content.php:36
+#: tpl/content-category.php:31 tpl/content-image.php:33
+#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
 msgid "1 Comment"
 msgstr ""
 
-#: tpl/content-category.php:31 tpl/content-image.php:36
-#: tpl/content-status.php:32 tpl/content-thumb.php:93 tpl/content.php:36
+#: tpl/content-category.php:31 tpl/content-image.php:33
+#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
 msgid "Comments"
 msgstr ""
 
-#: tpl/content-category.php:31 tpl/content-image.php:36
-#: tpl/content-status.php:32 tpl/content-thumb.php:93 tpl/content.php:36
+#: tpl/content-category.php:31 tpl/content-image.php:33
+#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
 msgid "Comment Closed"
 msgstr ""
 
-#: tpl/content-image.php:40 tpl/content-status.php:36 tpl/content-thumb.php:90
-#: tpl/content.php:40
+#: tpl/content-image.php:37 tpl/content-status.php:36 tpl/content-thumb.php:91
+#: tpl/content.php:37
 msgid "Hit"
 msgid_plural "Hits"
 msgstr[0] ""
@@ -695,8 +701,20 @@ msgstr ""
 msgid "We didn't seem to find what you want. Maybe you can search for it."
 msgstr ""
 
-#: tpl/content-page.php:25 tpl/content-single.php:29 tpl/single-image.php:28
+#: tpl/content-page.php:25 tpl/content-single.php:45 tpl/single-image.php:34
 msgid "Pages:"
+msgstr ""
+
+#: tpl/content-single.php:38 tpl/content-thumb.php:116
+msgid "AI Excerpt"
+msgstr ""
+
+#: tpl/content-single.php:80 tpl/single-image.php:67
+msgid "Last updated on "
+msgstr ""
+
+#: tpl/content-single.php:88 tpl/single-image.php:75
+msgid "Nothing~"
 msgstr ""
 
 #: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30

@@ -1,0 +1,24 @@
+{
+    "name": "fuukei/sakurairo",
+    "description": "About",
+    "type": "project",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Fuukei",
+            "homepage": "https://github.com/Fuukei",
+            "role": "organization"
+        }
+    ],
+    "require": {
+        "haozi-team/chatgpt-php": "^2.0.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "platform": {
+            "php": "7.4"
+        }
+    }
+}

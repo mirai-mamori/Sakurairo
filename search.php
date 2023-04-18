@@ -36,7 +36,6 @@ get_header(); ?>
 			<div class="search-box">
 				<!-- search start -->
 				<form class="s-search">
-					<i class="iconfont icon-search"></i>
 					<input class="text-input" type="search" name="s" placeholder="<?php _e('Search...', 'sakurairo') ?>" required>
 				</form>
 				<!-- search end -->
@@ -54,7 +53,7 @@ get_header(); ?>
 				text-align: center;
 				margin: 40px 0 80px;
 				display: inline-block;
-				font-family: miranafont, "Hiragino Sans GB", "Microsoft YaHei", STXihei, SimSun, sans-serif;
+				font-family: 'Fira Code','Noto Sans SC';
 			}
 
 			.nav-previous,

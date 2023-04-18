@@ -1,0 +1,49 @@
+{
+  "name": "haozi-team/chatgpt-php",
+  "description": "Real ChatGPT PHP SDK (Not GPT-3)",
+  "keywords": [
+    "chatgpt",
+    "openai"
+  ],
+  "homepage": "https://github.com/HaoZi-Team/ChatGPT-PHP",
+  "type": "library",
+  "require": {
+    "php": ">=7.4",
+    "guzzlehttp/guzzle": "^7.2",
+    "ramsey/uuid": "^4.2"
+  },
+  "require-dev": {
+    "pestphp/pest": "^1.22"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "HaoZiTeam\\ChatGPT\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "HaoZiTeam\\ChatGPT\\Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "耗子",
+      "email": "i@haozi.net"
+    }
+  ],
+  "scripts": {
+    "test": "vendor/bin/pest",
+    "test-coverage": "vendor/bin/pest --coverage",
+    "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    },
+    "platform": {
+      "php": "7.4"
+    }
+  },
+  "prefer-stable": true
+}

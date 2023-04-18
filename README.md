@@ -1,6 +1,6 @@
 **简体中文** | [繁體中文](README_tw.md) | [English](README_en.md) | [日本語](README_ja.md)
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/banner-ver2.6.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -12,7 +12,7 @@
 
 ## 版本简介：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/versions_cn.png)](https://fuukei.org//)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/cn-ver2.6.png)](https://fuukei.org//)
 
 ## 下载及使用相关：
 
@@ -29,11 +29,11 @@
 
 ## 赞助商：
 
-<a href="https://www.upyun.com/"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.5/options/upyun_logo.webp" alt="UPYUN" width="200"></a>
+<a href="https://www.upyun.com/"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.6/options/upyun_logo.webp" alt="UPYUN" width="200"></a>
 
 ## 支持我们：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.5/readme/starandsponsor.png)](https://afdian.net/@mamori)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/cn-ver2.6info.png)](https://afdian.net/@mamori)
 
 ## 主题贡献：
 
@@ -63,13 +63,15 @@
 
 - 本主题社交网络图标中，沐氢图标引用于由缄默设计的 [沐氢图标包](https://www.coolapk.com/apk/com.muh2.icon)
 
-- 本主题白猫样式Logo参考原主题作者白猫，由 [Hyacm](https://hyacm.com/acai/ui/143/sakura-logo/) 提供方案
+- 本主题白猫样式Logo参考原主题作者白猫，由 Hyacm 提供方案
 
 ### 依赖相关：
 
 - 本主题使用 Codestar [Codestar Framework](https://github.com/Codestar/codestar-framework) 作为设置框架
 
 - 本主题使用 YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) 以提供主题更新功能
+
+- 本主题使用 HaoZi-Team [ChatGPT PHP](https://github.com/HaoZi-Team/ChatGPT-PHP) 以提供 ChatGPT 相关能力
 
 ## 希望你喜欢！
 
