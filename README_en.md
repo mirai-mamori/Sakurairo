@@ -1,6 +1,6 @@
 [简体中文](README.md) | [繁體中文](README_tw.md) | **English** | [日本語](README_ja.md)
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/banner.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/banner-ver2.6.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -12,7 +12,7 @@
 
 ## What's new：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/versions_en.png)](https://fuukei.org//)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/en-ver2.6.png)](https://fuukei.org//)
 
 ## How to use:
 
@@ -64,6 +64,8 @@ Please fill in with the issue template. Thanks for your cooperation.
 - The theme uses HaoZi-Team [ChatGPT PHP](https://github.com/HaoZi-Team/ChatGPT-PHP) to provide ChatGPT-related Capabilities.
 
 ## Hope you can enjoy it!
+
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/en-ver2.6info.png)](https://fuukei.org/)
 
 - Star Trends  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 
