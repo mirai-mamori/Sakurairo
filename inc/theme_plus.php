@@ -459,7 +459,12 @@ function header_user_menu()
  */
 // 上一篇
 function get_prev_thumbnail_url() { 
-  $prev_post = get_previous_post(); 
+  if (iro_opt('classify_display')) {
+    $classify_display_id = iro_opt('classify_display');
+  } else {
+    $classify_display_id = null;
+  }
+  $prev_post = get_previous_post($in_same_term = false, $excluded_terms = $classify_display_id, $taxonomy = 'category'); 
   if (!$prev_post) {
     return get_random_bg_url(); // 首页图
   } else if ( has_post_thumbnail($prev_post->ID) ) { 
@@ -480,7 +485,12 @@ function get_prev_thumbnail_url() {
 
 // 下一篇
 function get_next_thumbnail_url() { 
-  $next_post = get_next_post(); 
+  if (iro_opt('classify_display')) {
+    $classify_display_id = iro_opt('classify_display');
+  } else {
+    $classify_display_id = null;
+  }
+  $next_post = get_next_post($in_same_term = false, $excluded_terms = $classify_display_id, $taxonomy = 'category'); 
   if( $next_post instanceof WP_Post){
      if ( has_post_thumbnail($next_post->ID) ) { 
     $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $next_post->ID ), 'large'); 
