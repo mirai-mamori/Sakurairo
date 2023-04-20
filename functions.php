@@ -482,6 +482,8 @@ function get_post_views($post_id) {
     } else {
         // 使用文章自定义字段获取浏览量
         $views = get_post_meta($post_id, 'views', true);
+        // 格式化浏览量
+        $views = restyle_text($views);
         return empty($views) ? 0 : $views;
     }
 }
