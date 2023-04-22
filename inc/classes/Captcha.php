@@ -80,7 +80,7 @@ class Captcha
         }
 
         //添加干扰线
-        for ($i = ; $i < 8; $i++) {
+        for ($i = 0; $i < 8; $i++) {
             $linecolor = imagecolorallocate($img, mt_rand(0, 150), mt_rand(0, 250), mt_rand(0, 255));
             imageline($img, mt_rand(0, 179), mt_rand(0, 39), mt_rand(0, 179), mt_rand(0, 39), $linecolor);
         }

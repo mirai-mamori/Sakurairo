@@ -2599,6 +2599,22 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'inline_code_background_color',
+        'type' => 'color',
+        'title' => __('Inline Code Background Color','sakurairo_csf'),        
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
+        'default' => '#F2F1F1'
+      ),    
+
+      array(
+        'id' => 'inline_code_background_color_in_dark_mode',
+        'type' => 'color',
+        'title' => __('Inline Code Background Color In Dark Mode','sakurairo_csf'),        
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color,this color is only displayed in dark mode','sakurairo_csf'),
+        'default' => '#505050'
+      ),    
+
+      array(
         'type' => 'subheading',
         'content' => __('Article Expansion Area','sakurairo_csf'),
       ),
