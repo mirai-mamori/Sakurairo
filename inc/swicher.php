@@ -20,7 +20,11 @@ function font_end_js_control() {
     )
     : 'close';
     $auto_height = !iro_opt('cover_full_screen') ? 'fixed' : 'auto';
-    $gravatar_url = iro_opt('gravatar_proxy') ?: 'secure.gravatar.com/avatar';
+    if (iro_opt('gravatar_proxy') == 'custom_proxy_address_of_gravatar') {
+        $gravatar_url = iro_opt('custom_proxy_address_of_gravatar') ?: 'secure.gravatar.com/avatar';
+    } else {
+        $gravatar_url = iro_opt('gravatar_proxy') ?: 'secure.gravatar.com/avatar';
+    } 
     $iro_opt = [
         // Poi
         'pjax' => check(iro_opt('poi_pjax')),

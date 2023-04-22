@@ -3377,8 +3377,18 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'gravatar.loli.net/avatar'  => __('Loli Net','sakurairo_csf'),
           'gravatar.com/avatar'  => __('Official','sakurairo_csf'),
           'cn.gravatar.com/avatar'  => __('Official CN','sakurairo_csf'),
+          'custom_proxy_address_of_gravatar' => __('Custom Proxy Address','sakurairo_csf'),
         ),
         'default'     => 'sdn.geekzu.org/avatar'
+      ),
+
+      array(
+        'id' => 'custom_proxy_address_of_gravatar',
+        'type' => 'text',
+        'title' => __('Custom Proxy Address','sakurairo_csf'),
+        'desc' => __('Enter your Gravatar proxy address without starting with "http(s)://" and ending with "/". Example: gravatar.com/avatar.','sakurairo_csf'),
+        'dependency' => array( 'gravatar_proxy', '==', 'custom_proxy_address_of_gravatar' ),
+        'default'     => 'gravatar.com/avatar'
       ),
 
       array(
