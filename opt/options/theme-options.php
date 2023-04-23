@@ -2599,6 +2599,22 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'inline_code_background_color',
+        'type' => 'color',
+        'title' => __('Inline Code Background Color','sakurairo_csf'),        
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
+        'default' => '#F2F1F1'
+      ),    
+
+      array(
+        'id' => 'inline_code_background_color_in_dark_mode',
+        'type' => 'color',
+        'title' => __('Inline Code Background Color In Dark Mode','sakurairo_csf'),        
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color,this color is only displayed in dark mode','sakurairo_csf'),
+        'default' => '#505050'
+      ),    
+
+      array(
         'type' => 'subheading',
         'content' => __('Article Expansion Area','sakurairo_csf'),
       ),
@@ -3361,8 +3377,18 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'gravatar.loli.net/avatar'  => __('Loli Net','sakurairo_csf'),
           'gravatar.com/avatar'  => __('Official','sakurairo_csf'),
           'cn.gravatar.com/avatar'  => __('Official CN','sakurairo_csf'),
+          'custom_proxy_address_of_gravatar' => __('Custom Proxy Address','sakurairo_csf'),
         ),
         'default'     => 'sdn.geekzu.org/avatar'
+      ),
+
+      array(
+        'id' => 'custom_proxy_address_of_gravatar',
+        'type' => 'text',
+        'title' => __('Custom Proxy Address','sakurairo_csf'),
+        'desc' => __('Enter your Gravatar proxy address without starting with "http(s)://" and ending with "/". Example: gravatar.com/avatar.','sakurairo_csf'),
+        'dependency' => array( 'gravatar_proxy', '==', 'custom_proxy_address_of_gravatar' ),
+        'default'     => 'gravatar.com/avatar'
       ),
 
       array(

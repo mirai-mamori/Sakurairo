@@ -9857,13 +9857,15 @@ body.dark .post-list-thumb:hover {
 }
 
 .entry-content code {
-  background: #505050;
+  background: var(--inline_code_background_color, #F2F1F1);
   color: var(--theme-skin-matching, #F9D938);
   word-break: break-word;
   font-family: 'Noto Sans SC';
-  padding: 3px;
+  padding: 0px 3px 0px 3px;
   text-shadow: none;
-  border-radius: 5px
+  border-radius: 5px;
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
 body.dark #main-container,
@@ -10629,6 +10631,12 @@ body.dark .searchbox.js-toggle-search:hover {
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   animation: searchbox 1s;
+}
+
+body.dark .entry-content code {
+  background: var(--inline_code_background_color_in_dark_mode, #505050);
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
 .aplayer {
