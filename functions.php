@@ -562,7 +562,9 @@ function visual_resource_updates($specified_version, $option_name, $new_value) {
     $current_version = $theme->get('Version');
     if (version_compare($current_version, $specified_version, '>')) {
         $option_value = iro_opt($option_name);
-        if (strpos($option_value, '@') === false || substr($option_value, strpos($option_value, '@') + 1) !== $new_value) {
+        if (empty($option_value)) {
+            $option_value = "https://s.nmxc.ltd/sakurairo_vision/@2.6/";
+        } else if (strpos($option_value, '@') === false || substr($option_value, strpos($option_value, '@') + 1) !== $new_value) {
             $option_value = preg_replace('/@.*/', '@' . $new_value, $option_value);
         }
         iro_opt_update($option_name, $option_value);
