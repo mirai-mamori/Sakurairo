@@ -920,6 +920,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'footer_sakura',
+        'type' => 'switcher',
+        'title' => __('Footer Sakura Icon','sakurairo_csf'),
+        'label' => __('Enabled by default, sakura icon will appear on the footer','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
         'id' => 'footer_info',
         'type' => 'textarea',
         'title' => __('Footer Info','sakurairo_csf'),
@@ -3370,8 +3378,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'gravatar_proxy',
         'type' => 'select',
         'title' => __('Gravatar Service Proxy','sakurairo_csf'),
-        'desc' => __('You can select multiple proxy as the Gravatar Service Proxy. By default, Geekzu is used as the Gravatar Service Proxy.','sakurairo_csf'),
+        'desc' => __('You can select multiple proxy as the Gravatar Service Proxy. By default, Tianli is used as the Gravatar Service Proxy.','sakurairo_csf'),
         'options'     => array(
+          'cdn2.tianli0.top/avatar'  => __('Tianli','sakurairo_csf'),
           'sdn.geekzu.org/avatar'  => __('Geekzu','sakurairo_csf'),
           'cravatar.cn/avatar'  => __('Cravatar Service','sakurairo_csf'),
           'gravatar.loli.net/avatar'  => __('Loli Net','sakurairo_csf'),
@@ -3379,7 +3388,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
           'cn.gravatar.com/avatar'  => __('Official CN','sakurairo_csf'),
           'custom_proxy_address_of_gravatar' => __('Custom Proxy Address','sakurairo_csf'),
         ),
-        'default'     => 'sdn.geekzu.org/avatar'
+        'default'     => 'cdn2.tianli0.top/avatar'
       ),
 
       array(

@@ -374,8 +374,8 @@ body.dark input[type=submit]
 {background-color:rgba(38,38,38,<?=iro_opt('theme_darkmode_widget_transparency'); ?>) !important;}
 
 /*深色模式自定义颜色*/
-body.dark .headertop-down i 
-{color: <?=iro_opt('drop_down_arrow_dark_color'); ?> !important;}
+body.dark .headertop-down svg path 
+{fill: <?=iro_opt('drop_down_arrow_dark_color'); ?> !important;transition: all 0.8s ease !important;}
 
 /*深色模式图像亮度*/
 body.dark img,
@@ -478,7 +478,7 @@ body{
 cursor: url(<?=iro_opt('cursor_nor'); ?>), auto;
 }
 
-.headertop-down i,
+.headertop-down,
 #waifu #live2d,
 .aplayer svg,
 .aplayer.aplayer-narrow .aplayer-body,
@@ -831,6 +831,12 @@ display:none;
 
 <?php if (!iro_opt('nav_menu_user_avatar', 'true')): ?>
 .header-user-avatar{
+display:none;
+}
+<?php endif; ?>
+
+<?php if (!iro_opt('footer_sakura', 'true')): ?>
+.sakura-icon{
 display:none;
 }
 <?php endif; ?>

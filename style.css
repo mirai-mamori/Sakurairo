@@ -4807,18 +4807,27 @@ h5::before {
 .headertop-down {
   position: absolute;
   bottom: 50px;
-  left: calc(50% - 20px);
-  z-index: 5;
+  left: calc(50% - 42px);
+  z-index: 5; 
+  animation-name: float-down;  
+  animation-duration: 5s;  
+  animation-iteration-count: infinite;
 }
 
-.headertop-down i {
-  font-size: 40px;
-  color: #fff;
-  cursor: pointer;
-  -webkit-transform: scale(1.5, 1);
-  transform: scale(1.5, 1);
-  -webkit-animation: pulsate-bck 3s ease-in-out infinite both;
-  animation: pulsate-bck 3s ease-in-out infinite both;
+.headertop-down svg path {
+  transition: all 0.8s ease !important;
+}
+
+@keyframes float-down {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .bangumi .column {
@@ -9128,35 +9137,6 @@ body.dark .post-list-thumb:hover {
   }
 }
 
-@-webkit-keyframes pulsate-bck {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@keyframes pulsate-bck {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(0.9);
-            transform: scale(0.9);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
 @keyframes shake {
   2% {
     transform: translate(.5px, -1.5px) rotate(-.5deg);
@@ -9751,6 +9731,19 @@ body.dark .post-list-thumb:hover {
     -webkit-transform: scale(1.0);
   }
 }
+
+@keyframes slow-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sakura-svg {
+animation: slow-rotate 10s linear infinite;
+} 
 
 @media screen and (min-width: 400px) {
   .bangumi .column {
