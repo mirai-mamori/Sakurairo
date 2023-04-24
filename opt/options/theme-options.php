@@ -3207,7 +3207,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Others/#ChatGPT%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Others/#chatgpt%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
