@@ -170,6 +170,5 @@ echo bgvideo(); //BGVideo
 ?>
 <!-- 首页下拉箭头 -->
 <?php if (iro_opt('drop_down_arrow', 'true')) : ?>
-<div class="headertop-down" onclick="headertop_down()"><span><i class="fa-solid fa-circle-dot fa-2xl"
-            aria-hidden="true" style="color:<?php echo iro_opt('drop_down_arrow_color'); ?>"></i></span></div>
+<div class="headertop-down" onclick="headertop_down()"><span><svg t="1682342753354" class="homepage-downicon" viewBox="0 0 1843 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="21355" width="80px" height="80px"><path d="M1221.06136021 284.43250057a100.69380037 100.69380037 0 0 1 130.90169466 153.0543795l-352.4275638 302.08090944a100.69380037 100.69380037 0 0 1-130.90169467 0L516.20574044 437.48688007A100.69380037 100.69380037 0 0 1 647.10792676 284.43250057L934.08439763 530.52766665l286.97696258-246.09516608z" fill="<?php echo iro_opt('drop_down_arrow_color'); ?>" p-id="21356"></path></svg></span></div>
 <?php endif; ?>
