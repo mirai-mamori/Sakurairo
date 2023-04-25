@@ -165,6 +165,7 @@ a {
   -webkit-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
   -moz-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
   transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+  word-break:break-word;
 }
 
 h1 {
