@@ -16,7 +16,7 @@ get_header();
 <span class="linkss-title"><?php the_title();?></span>
 <?php } ?>
 	<article <?php post_class("post-item"); ?>>
-		<?php the_content(); ?>
+		<?php the_content( '', true ); ?>
 			<section class="bangumi">
             <?php if (iro_opt('bilibili_id') ):?>
                 <div class="row">

@@ -28,7 +28,7 @@ if (iro_opt('author_profile_quote') == '1') {
 	<?php } ?>
 	<!-- .entry-header -->
 	<div class="entry-content">
-		<?php the_content(); ?>
+		<?php the_content( '', true ); ?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'ondemand' ),
