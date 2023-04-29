@@ -19,8 +19,7 @@
     <?php get_template_part('layouts/sidebox'); ?>
 	<div class="entry-content">
 		<?php
-			the_content();
-
+			the_content( '', true );
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'sakurairo' ),
 				'after'  => '</div>',
