@@ -12,7 +12,7 @@ get_header();
 	<span class="linkss-title"><?php the_title();?></span>
 	<?php } ?>
 		<article <?php post_class("post-item"); ?>>
-			<?php the_content(); ?>
+			<?php the_content( '', true ); ?>
 			<div class="links">
 				<?php echo get_link_items(); ?>
 			</div>
