@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-04-13 21:24+0800\n"
-"PO-Revision-Date: 2023-04-13 21:24+0800\n"
+"POT-Creation-Date: 2023-04-29 16:54+0800\n"
+"PO-Revision-Date: 2023-04-29 16:54+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -33,7 +33,7 @@ msgstr "返回首页"
 msgid "Don't worry, search in site?"
 msgstr "别着急，试试搜索？"
 
-#: 404.php:59 footer.php:60 search.php:39
+#: 404.php:59 footer.php:63 search.php:39
 msgid "Search..."
 msgstr "搜索..."
 
@@ -129,25 +129,25 @@ msgstr "禁止小广告😀"
 msgid "Site"
 msgstr "网站"
 
-#: footer.php:35
+#: footer.php:38
 #, php-format
 msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr "加载耗时 %.3f 秒 | 查询 %d 次 | 内存使用 %.2f MB "
 
-#: footer.php:65
+#: footer.php:68
 msgid "Go to top"
 msgstr "回到顶部"
 
-#: footer.php:72 footer.php:80
+#: footer.php:75 footer.php:83
 msgid "Want to find something?"
 msgstr "想要找点什么呢？"
 
-#: footer.php:81
+#: footer.php:84
 msgid "Search"
 msgstr "搜索"
 
-#: footer.php:133
+#: footer.php:136
 msgid "Widgets"
 msgstr "小工具"
 
@@ -322,47 +322,47 @@ msgstr "否"
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:505
+#: functions.php:507
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:710
+#: functions.php:752
 msgid "Download Link"
 msgstr "下载地址"
 
-#: functions.php:782
+#: functions.php:825
 msgid "Remember me"
 msgstr "记住我"
 
-#: functions.php:1200
+#: functions.php:1244
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1225
+#: functions.php:1277
 msgid " "
 msgstr " "
 
-#: functions.php:1229
+#: functions.php:1281
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1252 functions.php:1255 inc/theme_plus.php:427
+#: functions.php:1309 functions.php:1312 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1560
+#: functions.php:1617
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:1685
+#: functions.php:1742
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1769
+#: functions.php:1826
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1898
+#: functions.php:1955
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -372,6 +372,10 @@ msgstr ""
 "<b> 为了更好的使用体验，请不要将<a href=\"/wp-admin/options-permalink.php\">"
 "固定链接</a>设置为朴素。为此，您可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">伪静态</a></b>"
+
+#: functions.php:2085
+msgid "Expand / Collapse"
+msgstr "展开 / 收起"
 
 #: inc/categories-images.php:44 inc/categories-images.php:65
 msgid "category/tag image"
@@ -394,7 +398,8 @@ msgstr "图像"
 msgid "no image"
 msgstr "暂无"
 
-#: inc/classes/Bilibili.php:48 inc/classes/BilibiliFavList.php:54
+#: inc/classes/Bilibili.php:48 inc/classes/BilibiliFavList.php:57
+#: inc/classes/BilibiliFavList.php:62 inc/classes/BilibiliFavList.php:74
 #: inc/classes/MyAnimeList.php:57
 msgid "Backend error"
 msgstr "后端发生了错误 QwQ"
@@ -411,23 +416,23 @@ msgstr " 番剧。"
 msgid "The author seems to have hidden their bangumi list."
 msgstr "博主似乎隐藏了追番列表。"
 
-#: inc/classes/BilibiliFavList.php:72
+#: inc/classes/BilibiliFavList.php:90
 msgid "Item count: "
 msgstr "内容数量: "
 
-#: inc/classes/BilibiliFavList.php:73
+#: inc/classes/BilibiliFavList.php:91
 msgid "Expand"
 msgstr "展开"
 
-#: inc/classes/BilibiliFavList.php:90
+#: inc/classes/BilibiliFavList.php:108
 msgid "All item has been loaded."
 msgstr "已加载所有内容。"
 
-#: inc/classes/BilibiliFavList.php:112
+#: inc/classes/BilibiliFavList.php:130
 msgid "Load More"
 msgstr "加载更多"
 
-#: inc/classes/Cache.php:70 inc/theme_plus.php:669
+#: inc/classes/Cache.php:70 inc/theme_plus.php:679
 msgid "The comment is private"
 msgstr "这是一条私密评论"
 
@@ -637,11 +642,11 @@ msgstr "上一篇"
 msgid "Next"
 msgstr "下一篇"
 
-#: layouts/post-nextprev.php:11
+#: layouts/post-nextprev.php:12
 msgid "Previous Post"
 msgstr "上一篇文章"
 
-#: layouts/post-nextprev.php:14
+#: layouts/post-nextprev.php:15
 msgid "Next Post"
 msgstr "下一篇文章"
 
@@ -718,7 +723,7 @@ msgstr "最后更新于 "
 msgid "Nothing~"
 msgstr "啥也没有呀"
 
-#: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30
+#: user/page-bangumi.php:31 user/page-bilibiliFavList.php:32
 #: user/page-followVideos.php:29
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr "请在后台设置填写 Bilibili UID 后继续。"

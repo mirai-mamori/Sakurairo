@@ -2072,17 +2072,27 @@ add_filter('file_is_displayable_image', 'mimvp_file_is_displayable_image', 10, 2
 //code end
 
 //展开收缩功能
-function xcollapse($atts, $content = null)
-{
-    extract(shortcode_atts(array("title" => ""), $atts));
-    return '<div style="margin: 0.5em 0;">
-    <div class="xControl">
-    <i class="fa-solid fa-angle-down" style="color: #16AF90;"></i> &nbsp;&nbsp;
-    <span class="xTitle">' . $title . '</span>&nbsp;&nbsp;==>&nbsp;&nbsp;<a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02">展开 / 收缩</span></a>
-    <div style="clear: both;"></div>
+function xcollapse($atts, $content = null) {
+    $atts = shortcode_atts(array("title" => ""), $atts);
+    
+    ob_start(); // 开启输出缓存
+    
+    // HTML 结构
+    ?>
+    <div style="margin: 0.5em 0;">
+        <div class="xControl">
+            <i class="fa-solid fa-angle-down" style="color: #16AF90;"></i> &nbsp;&nbsp;
+            <span class="xTitle"><?= $atts['title'] ?></span>&nbsp;&nbsp;==>&nbsp;&nbsp;<a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02"><?php _e('Expand / Collapse', 'sakurairo'); ?></span></a>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="xContent" style="display: none;"><?= do_shortcode($content) ?></div>
     </div>
-    <div class="xContent" style="display: none;">' . $content . '</div>
-    </div>';
+    <?php
+    
+    $output = ob_get_contents(); // 获取输出缓存
+    ob_end_clean(); // 清空输出缓存
+    
+    return $output; // 返回 HTML 结构
 }
 add_shortcode('collapse', 'xcollapse');
 
