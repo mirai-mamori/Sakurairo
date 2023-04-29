@@ -3231,6 +3231,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'upload',
         'title' => __('Login Screen Background Image','sakurairo_csf'),
         'desc' => __('Set your login screen background image, leave this option blank to show the default','sakurairo_csf'),
+        'dependency' => array( 'custom_login_switch', '==', 'true', '', 'true' ),
         'library'      => 'image',
         'default'     => 'https://s.nmxc.ltd/sakurairo_vision/@2.6/series/login_background.webp'
       ),
@@ -3240,6 +3241,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'switcher',
         'title' => __('Login Screen Background Blur','sakurairo_csf'),
         'label' => __('Login screen background image will be blurred when enabled','sakurairo_csf'),
+        'dependency' => array( 'custom_login_switch', '==', 'true', '', 'true' ),
         'default' => false
       ),
 
@@ -3248,6 +3250,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'upload',
         'title' => __('Login Screen Logo','sakurairo_csf'),
         'desc' => __('Set your login screen Logo','sakurairo_csf'),
+        'dependency' => array( 'custom_login_switch', '==', 'true', '', 'true' ),
         'library' => 'image',
         'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.6/series/login_logo.webp'
       ),
