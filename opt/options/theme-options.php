@@ -3381,6 +3381,15 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'chatgpt_exclude_ids',
+        'type' => 'text',
+        'title' => __('Article IDs that do not Require ChatGPT Summarize','sakurairo_csf'),
+        'desc' => __('Enter the article IDs that do not need to generate ChatGPT Summarize, and split multiple article IDs with ","','sakurairo_csf'),
+        'dependency' => array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
+        'default'     => ''
+      ),
+
+      array(
         'id' => 'chatgpt_init_prompt',
         'type' => 'textarea',
         'title' => __('ChatGPT Article Summarize Init Prompt','sakurairo_csf'),
