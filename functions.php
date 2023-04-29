@@ -736,74 +736,77 @@ function bolo_after_wp_tiny_mce($mce_settings)
  * @M.J
  */
 //Login Page style
-function custom_login()
-{
-    require get_template_directory() . '/inc/login_addcss.php';
-    //echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css" />'."\n";
-    echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/inc/login.css?' . IRO_VERSION . '" />' . "\n";
-    //echo '<script type="text/javascript" src="'.get_bloginfo('template_directory').'/js/jquery.min.js"></script>'."\n";
-}
+$custom_login_switch = iro_opt('custom_login_switch');
 
-add_action('login_head', 'custom_login');
-
-//Login Page Title
-function custom_headertitle($title)
-{
-    return get_bloginfo('name');
-}
-add_filter('login_headertext', 'custom_headertitle');
-
-//Login Page Link
-function custom_loginlogo_url($url)
-{
-    return esc_url(home_url('/'));
-}
-add_filter('login_headerurl', 'custom_loginlogo_url');
-
-//Login Page Footer
-function custom_html()
-{
-    $loginbg = iro_opt('login_background') ?: iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.6/').'series/login_background.webp'; ?>
-        <script type="text/javascript">
-            document.body.insertAdjacentHTML("afterbegin", "<div class=\"loading\"><img src=\"<?=iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/login_loading.gif\" width=\"58\" height=\"10\"></div>");
-            document.head.insertAdjacentHTML("afterbegin", "<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
-            const loading = document.querySelector(".loading"),
-             src = "<?= $loginbg ?>",
-                afterLoaded = () => {
-                    document.body.style.backgroundImage = `url(${src})`
-                    loading.classList.add("hide");
-                    loading.classList.remove("show");
-                    loading.addEventListener("transitionend", () => {
-                        loading.remove()
+if ($custom_login_switch) {
+    function custom_login() {
+        require get_template_directory() . '/inc/login_addcss.php';
+        //echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css" />'."\n";
+        echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/inc/login.css?' . IRO_VERSION . '" />' . "\n";
+        //echo '<script type="text/javascript" src="'.get_bloginfo('template_directory').'/js/jquery.min.js"></script>'."\n";
+    }
+    
+    add_action('login_head', 'custom_login');
+    
+    //Login Page Title
+    function custom_headertitle($title) {
+        return get_bloginfo('name');
+    }
+    add_filter('login_headertext', 'custom_headertitle');
+    
+    //Login Page Link
+    function custom_loginlogo_url($url) {
+        return esc_url(home_url('/'));
+    }
+    add_filter('login_headerurl', 'custom_loginlogo_url');
+    
+    //Login Page Footer
+    function custom_html() {
+        $loginbg = iro_opt('login_background') ?: iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.6/').'series/login_background.webp';
+        ?>
+            <script type="text/javascript">
+                document.body.insertAdjacentHTML("afterbegin", "<div class=\"loading\"><img src=\"<?=iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.6/')
+                ?>basic/login_loading.gif\" width=\"58\" height=\"10\"></div>");
+                document.head.insertAdjacentHTML("afterbegin", "<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
+                const loading = document.querySelector(".loading"),
+                 src = "<?= $loginbg ?>",
+                    afterLoaded = () => {
+                        document.body.style.backgroundImage = `url(${src})`
+                        loading.classList.add("hide");
+                        loading.classList.remove("show");
+                        loading.addEventListener("transitionend", () => {
+                            loading.remove()
+                        });
+                    },
+                    img = document.createElement('img')
+                img.src = src
+                img.addEventListener('load',afterLoaded,{once:true})
+                <?php //3秒钟内加载不到图片也移除加载中提示
+                ?>
+                setTimeout(afterLoaded, 3000)
+                document.addEventListener("DOMContentLoaded", ()=>{
+                document.querySelector("h1 a").style.backgroundImage = "url('<?= iro_opt('login_logo_img')?>')";
+                forgetmenot = document.querySelector(".forgetmenot");
+                if (forgetmenot){
+                    forgetmenot.outerHTML = '<p class="forgetmenot"><?=__("Remember me","sakurairo")?><input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>';
+                }
+                const captchaimg = document.getElementById("captchaimg");
+                captchaimg && captchaimg.addEventListener("click",(e)=>{
+                    fetch("<?= rest_url('sakura/v1/captcha/create')?>")
+                    .then(resp=>resp.json())
+                    .then(json=>{
+                        e.target.src = json["data"];
+                        document.querySelector("input[name=\'timestamp\']").value = json["time"];
+                        document.querySelector("input[name=\'id\']").value = json["id"];
                     });
-                },
-                img = document.createElement('img')
-            img.src = src
-            img.addEventListener('load',afterLoaded,{once:true})
-            <?php //3秒钟内加载不到图片也移除加载中提示
-            ?>
-            setTimeout(afterLoaded, 3000)
-            document.addEventListener("DOMContentLoaded", ()=>{
-        document.querySelector("h1 a").style.backgroundImage = "url('<?= iro_opt('login_logo_img')?>')";
-        forgetmenot = document.querySelector(".forgetmenot");
-        if (forgetmenot){
-            forgetmenot.outerHTML = '<p class="forgetmenot"><?=__("Remember me","sakurairo")?><input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>';
-        }
-        const captchaimg = document.getElementById("captchaimg");
-        captchaimg && captchaimg.addEventListener("click",(e)=>{
-            fetch("<?= rest_url('sakura/v1/captcha/create')?>")
-            .then(resp=>resp.json())
-            .then(json=>{
-                e.target.src = json["data"];
-                document.querySelector("input[name=\'timestamp\']").value = json["time"];
-                document.querySelector("input[name=\'id\']").value = json["id"];
-            });
-        })
-    }, false);
-        </script>
-    <?php
+                })
+            }, false);
+            </script>
+        <?php
+    }
+    
+    add_action('login_footer', 'custom_html');
 }
-add_action('login_footer', 'custom_html');
 
 //Login message
 //* Add custom message to WordPress login page

@@ -3219,6 +3219,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'custom_login_switch',
+        'type' => 'switcher',
+        'title' => __('Custom Login Screen','sakurairo_csf'),
+        'label' => __('Default on, custom login screen will replace the default login screen','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
         'id' => 'login_background',
         'type' => 'upload',
         'title' => __('Login Screen Background Image','sakurairo_csf'),
