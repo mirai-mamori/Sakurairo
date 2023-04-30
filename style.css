@@ -74,7 +74,7 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   max-width: 860px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2%;
+  margin-top: 1.5%;
   transition: background 0.8s;
 }
 
@@ -2374,6 +2374,7 @@ nav#comments-navi {
   box-shadow: 0 1px 30px -4px var(--comment_area_shadow);
   margin-bottom: 50px;
   margin-left: 3%;
+  margin-top: 2%;
   -webkit-transition: all .8s;
   transition: all .8s;
   border: 1px solid #FFFFFF;
