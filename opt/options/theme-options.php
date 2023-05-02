@@ -2760,6 +2760,22 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
         'default' => 'Noto Serif SC'
       ),
+	  
+	  array(
+        'id' => 'shuoshuo_comments',
+        'type' => 'switcher',
+        'title' => __('Ideas Enable comments','sakurairo_csf'),
+        'desc' => __('Enable comments on Ideas.','sakurairo_csf'),
+        'default' => false
+      ),
+	  
+	  array(
+        'id' => 'shuoshuo_thumbnail',
+        'type' => 'switcher',
+        'title' => __('Ideas Enable thumbnail','sakurairo_csf'),
+        'desc' => __('Enable thumbnail on Ideas.','sakurairo_csf'),
+        'default' => false
+      ),
 
 	  array(
 		'id' => 'bangumi_source',
