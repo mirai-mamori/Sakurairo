@@ -199,8 +199,7 @@ if (!function_exists('akina_setup'))
 add_action('after_setup_theme', 'akina_setup');
 
 //说说页面
-function shuoshuo_custom_init()
-{
+function shuoshuo_custom_init() {
     $labels = array(
         'name' => __("Ideas", "sakurairo"),
         'singular_name' => __("Idea", "sakurairo"),
@@ -215,6 +214,7 @@ function shuoshuo_custom_init()
         'parent_item_colon' => '',
         'menu_name' => __("Ideas", "sakurairo")
     );
+
     $args = array(
         'labels' => $labels,
         'public' => true,
@@ -233,8 +233,19 @@ function shuoshuo_custom_init()
             'author'
         )
     );
+
+    if (iro_opt('shuoshuo_comments')) {
+        $args['supports'][] = 'comments';
+    }
+
+    if (iro_opt('shuoshuo_thumbnail')) {
+        $args['supports'][] = 'thumbnail';
+    }
+
     register_post_type('shuoshuo', $args);
 }
+add_action('init', 'shuoshuo_custom_init');
+
 add_action('init', 'shuoshuo_custom_init');
 
 function admin_lettering()
