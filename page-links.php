@@ -12,12 +12,18 @@ get_header();
 	<span class="linkss-title"><?php the_title();?></span>
 	<?php } ?>
 		<article <?php post_class("post-item"); ?>>
-			<?php the_content( '', true ); ?>
+			<div class="entry-content">
+				<?php the_content( '', true ); ?>
+			</div>
 			<div class="links">
 				<?php echo get_link_items(); ?>
 			</div>
 		</article>
-        <div class="have-toc"></div><div class="toc-container"><div class="toc"></div></div>
+	<?php
+		$post = get_post();
+		if (iro_opt('article_auto_toc', 'true') && (check_title_tags($post->post_content))) echo '<div class="has-toc have-toc"></div>';
+	?>
+	<?php get_template_part('layouts/sidebox'); //加载目录容器?> 
 	<?php endwhile; ?>
 <?php
 get_footer();
