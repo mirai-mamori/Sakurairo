@@ -13,14 +13,14 @@ define('IRO_VERSION', wp_get_theme()->get('Version'));
 define('INT_VERSION', '18.0.0');
 define('BUILD_VERSION', '2');
 
+function check_php_version($preset_version) {
+    $current_version = phpversion();
+    return version_compare($current_version, $preset_version, '>=') ? true : false;
+}
+
 //Option-Framework
 
 require get_template_directory() . '/opt/option-framework.php';
-
-/**
- * composer autoload
- */
-require_once 'vendor/autoload.php';
 
 if (!function_exists('iro_opt')) {
     $GLOBALS['iro_options'] = get_option('iro_options');
@@ -39,6 +39,14 @@ if (!function_exists('iro_opt_update')) {
 }
 $shared_lib_basepath = iro_opt('shared_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path','https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@'). IRO_VERSION);
 $core_lib_basepath =  iro_opt('core_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path','https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@'). IRO_VERSION);
+
+/**
+ * composer autoload
+ */
+if ((check_php_version('7.4.0')) && iro_opt('composer_load')) {
+    require_once 'vendor/autoload.php';
+}
+
 //Update-Checker
 
 require 'update-checker/update-checker.php';

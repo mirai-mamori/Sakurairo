@@ -3352,10 +3352,19 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'composer_load',
+        'type' => 'switcher',
+        'title' => __('ChatGPT Function','sakurairo_csf'),
+        'label' => __('After turning on ChatGPT Function will be available','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
         'id' => 'chatgpt_base_url',
         'type' => 'text',
         'title' => __('ChatGPT Base URL','sakurairo_csf'),
         'desc' => __('Fill in the ChatGPT Base URL, The default is http://sxy.gay/','sakurairo_csf'),
+        'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
         'default' => 'http://sxy.gay/'
       ),
 
@@ -3364,6 +3373,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('ChatGPT API keys','sakurairo_csf'),
         'desc' => __('Fill in Your ChatGPT API keys, You can go to <a href="https://platform.openai.com/account/api-keys">OpenAI Website</a> to get your API Keys','sakurairo_csf'),
+        'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
       ),
 
       array(
@@ -3371,13 +3381,17 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'switcher',
         'title' => __('ChatGPT Article Summarize','sakurairo_csf'),
         'label' => __('After turning on ChatGPT will automatically generate article abstracts','sakurairo_csf'),
+        'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
         'default' => false
       ),
 
       array(
         'type'    => 'content',
         'content'=> __('Each update of your post will trigger a request to generate a summary. Due to current API limitations, if your article exceeds 4097 Token, the system will only send the unexceeded portion to generate a summary','sakurairo_csf'),
-        'dependency' => array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
+        'dependency' => array(
+          array( 'composer_load', '==', 'true'),
+          array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
+    ),
       ),
 
       array(
@@ -3385,7 +3399,10 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Article IDs that do not Require ChatGPT Summarize','sakurairo_csf'),
         'desc' => __('Enter the article IDs that do not need to generate ChatGPT Summarize, and split multiple article IDs with ","','sakurairo_csf'),
-        'dependency' => array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
+        'dependency' => array(
+          array( 'composer_load', '==', 'true'),
+          array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
+    ),
         'default'     => ''
       ),
 
@@ -3393,7 +3410,10 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'chatgpt_init_prompt',
         'type' => 'textarea',
         'title' => __('ChatGPT Article Summarize Init Prompt','sakurairo_csf'),
-        'dependency' => array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
+        'dependency' => array(
+          array( 'composer_load', '==', 'true'),
+          array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
+    ),
         'desc' => __('Fill in the Init Prompt, Please make changes if you know how to configure it correctly. Init Prompt will be passed to ChatGPT as "system" role','sakurairo_csf'),
         'default' => '
 "You are a excerpt generator. " .
@@ -3406,7 +3426,10 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'chatgpt_ask_prompt',
         'type' => 'text',
         'title' => __('ChatGPT Article Summarize Ask Prompt','sakurairo_csf'),
-        'dependency' => array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
+        'dependency' => array(
+          array( 'composer_load', '==', 'true'),
+          array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
+    ),
         'desc' => __('Fill in the Ask Prompt, Use preset value when option is empty, Please make changes if you know how to configure it correctly','sakurairo_csf'),
       ),
 
