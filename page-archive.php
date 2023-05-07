@@ -11,7 +11,7 @@ get_header();
 	<?php while(have_posts()) : the_post(); ?>
 	
 	<article <?php post_class("post-item"); ?>>
-		<?php the_content(); ?>
+		<?php the_content( '', true ); ?>
 		<div id="archives-temp">  
 		<?php if(!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID())) { ?>
         <h2><i class="fa-solid fa-calendar-day"></i><?php the_title();?></h2>

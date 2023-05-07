@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-04-13 21:23+0800\n"
+"POT-Creation-Date: 2023-04-29 16:53+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Don't worry, search in site?"
 msgstr ""
 
-#: 404.php:59 footer.php:60 search.php:39
+#: 404.php:59 footer.php:63 search.php:39
 msgid "Search..."
 msgstr ""
 
@@ -129,25 +129,25 @@ msgstr ""
 msgid "Site"
 msgstr ""
 
-#: footer.php:35
+#: footer.php:38
 #, php-format
 msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr ""
 
-#: footer.php:65
+#: footer.php:68
 msgid "Go to top"
 msgstr ""
 
-#: footer.php:72 footer.php:80
+#: footer.php:75 footer.php:83
 msgid "Want to find something?"
 msgstr ""
 
-#: footer.php:81
+#: footer.php:84
 msgid "Search"
 msgstr ""
 
-#: footer.php:133
+#: footer.php:136
 msgid "Widgets"
 msgstr ""
 
@@ -322,52 +322,56 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: functions.php:505
+#: functions.php:507
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:710
+#: functions.php:752
 msgid "Download Link"
 msgstr ""
 
-#: functions.php:782
+#: functions.php:825
 msgid "Remember me"
 msgstr ""
 
-#: functions.php:1200
+#: functions.php:1244
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1225
+#: functions.php:1277
 msgid " "
 msgstr ""
 
-#: functions.php:1229
+#: functions.php:1281
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1252 functions.php:1255 inc/theme_plus.php:427
+#: functions.php:1309 functions.php:1312 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1560
+#: functions.php:1617
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1685
+#: functions.php:1742
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1769
+#: functions.php:1826
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:1898
+#: functions.php:1955
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
 "configure <a href=\"https://www.wpdaxue.com/wordpress-rewriterule.html\" "
 "target=\"_blank\"> pseudo-static </a>. </ b>"
+msgstr ""
+
+#: functions.php:2085
+msgid "Expand / Collapse"
 msgstr ""
 
 #: inc/categories-images.php:44 inc/categories-images.php:65
@@ -391,7 +395,8 @@ msgstr ""
 msgid "no image"
 msgstr ""
 
-#: inc/classes/Bilibili.php:48 inc/classes/BilibiliFavList.php:54
+#: inc/classes/Bilibili.php:48 inc/classes/BilibiliFavList.php:57
+#: inc/classes/BilibiliFavList.php:62 inc/classes/BilibiliFavList.php:74
 #: inc/classes/MyAnimeList.php:57
 msgid "Backend error"
 msgstr ""
@@ -408,23 +413,23 @@ msgstr ""
 msgid "The author seems to have hidden their bangumi list."
 msgstr ""
 
-#: inc/classes/BilibiliFavList.php:72
+#: inc/classes/BilibiliFavList.php:90
 msgid "Item count: "
 msgstr ""
 
-#: inc/classes/BilibiliFavList.php:73
+#: inc/classes/BilibiliFavList.php:91
 msgid "Expand"
 msgstr ""
 
-#: inc/classes/BilibiliFavList.php:90
+#: inc/classes/BilibiliFavList.php:108
 msgid "All item has been loaded."
 msgstr ""
 
-#: inc/classes/BilibiliFavList.php:112
+#: inc/classes/BilibiliFavList.php:130
 msgid "Load More"
 msgstr ""
 
-#: inc/classes/Cache.php:70 inc/theme_plus.php:669
+#: inc/classes/Cache.php:70 inc/theme_plus.php:679
 msgid "The comment is private"
 msgstr ""
 
@@ -635,11 +640,11 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: layouts/post-nextprev.php:11
+#: layouts/post-nextprev.php:12
 msgid "Previous Post"
 msgstr ""
 
-#: layouts/post-nextprev.php:14
+#: layouts/post-nextprev.php:15
 msgid "Next Post"
 msgstr ""
 
@@ -717,7 +722,7 @@ msgstr ""
 msgid "Nothing~"
 msgstr ""
 
-#: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30
+#: user/page-bangumi.php:31 user/page-bilibiliFavList.php:32
 #: user/page-followVideos.php:29
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr ""

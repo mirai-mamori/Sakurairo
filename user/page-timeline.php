@@ -16,7 +16,7 @@ get_header();
             <article class="art">
                 <div class="art-main">
                     <div class="art-content">
-                        <?php the_content(); memory_archives_list(); ?>
+                        <?php the_content( '', true ); memory_archives_list(); ?>
 					</div>
 				</div>
 			</article>

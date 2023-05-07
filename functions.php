@@ -13,14 +13,14 @@ define('IRO_VERSION', wp_get_theme()->get('Version'));
 define('INT_VERSION', '18.0.0');
 define('BUILD_VERSION', '2');
 
+function check_php_version($preset_version) {
+    $current_version = phpversion();
+    return version_compare($current_version, $preset_version, '>=') ? true : false;
+}
+
 //Option-Framework
 
 require get_template_directory() . '/opt/option-framework.php';
-
-/**
- * composer autoload
- */
-require_once 'vendor/autoload.php';
 
 if (!function_exists('iro_opt')) {
     $GLOBALS['iro_options'] = get_option('iro_options');
@@ -39,6 +39,14 @@ if (!function_exists('iro_opt_update')) {
 }
 $shared_lib_basepath = iro_opt('shared_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path','https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@'). IRO_VERSION);
 $core_lib_basepath =  iro_opt('core_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path','https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@'). IRO_VERSION);
+
+/**
+ * composer autoload
+ */
+if ((check_php_version('7.4.0')) && iro_opt('composer_load')) {
+    require_once 'vendor/autoload.php';
+}
+
 //Update-Checker
 
 require 'update-checker/update-checker.php';
@@ -560,6 +568,13 @@ if (iro_opt('gravatar_proxy')) {
 function visual_resource_updates($specified_version, $option_name, $new_value) {
     $theme = wp_get_theme();
     $current_version = $theme->get('Version');
+
+    // Check if the function has already been triggered
+    $function_triggered = get_transient('visual_resource_updates_triggered18');
+    if ($function_triggered) {
+        return; // Function has already been triggered, do nothing
+    }
+
     if (version_compare($current_version, $specified_version, '>')) {
         $option_value = iro_opt($option_name);
         if (empty($option_value)) {
@@ -568,10 +583,37 @@ function visual_resource_updates($specified_version, $option_name, $new_value) {
             $option_value = preg_replace('/@.*/', '@' . $new_value, $option_value);
         }
         iro_opt_update($option_name, $option_value);
+        
+        // Set transient to indicate that the function has been triggered
+        set_transient('visual_resource_updates_triggered18', true);
     }
 }
 
 visual_resource_updates('2.5.6', 'vision_resource_basepath', '2.6/');
+
+function gravater_updates($specified_version, $option_name) {
+    $theme = wp_get_theme();
+    $current_version = $theme->get('Version');
+
+    // Check if the function has already been triggered
+    $function_triggered = get_transient('gravater_updates_triggered18');
+    if ($function_triggered) {
+        return; // Function has already been triggered, do nothing
+    }
+
+    if (version_compare($current_version, $specified_version, '>')) {
+        $option_value = iro_opt($option_name);
+        if (empty($option_value) || $option_value !== 'cdn2.tianli0.top/avatar') {
+            $option_value = 'cdn2.tianli0.top/avatar';
+            iro_opt_update($option_name, $option_value);
+        }
+        
+        // Set transient to indicate that the function has been triggered
+        set_transient('gravater_updates_triggered18', true);
+    }
+}
+
+gravater_updates('2.5.6', 'gravatar_proxy');
 
 /*
  * 阻止站内文章互相Pingback
@@ -736,74 +778,77 @@ function bolo_after_wp_tiny_mce($mce_settings)
  * @M.J
  */
 //Login Page style
-function custom_login()
-{
-    require get_template_directory() . '/inc/login_addcss.php';
-    //echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css" />'."\n";
-    echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/inc/login.css?' . IRO_VERSION . '" />' . "\n";
-    //echo '<script type="text/javascript" src="'.get_bloginfo('template_directory').'/js/jquery.min.js"></script>'."\n";
-}
+$custom_login_switch = iro_opt('custom_login_switch');
 
-add_action('login_head', 'custom_login');
-
-//Login Page Title
-function custom_headertitle($title)
-{
-    return get_bloginfo('name');
-}
-add_filter('login_headertext', 'custom_headertitle');
-
-//Login Page Link
-function custom_loginlogo_url($url)
-{
-    return esc_url(home_url('/'));
-}
-add_filter('login_headerurl', 'custom_loginlogo_url');
-
-//Login Page Footer
-function custom_html()
-{
-    $loginbg = iro_opt('login_background') ?: iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.6/').'series/login_background.webp'; ?>
-        <script type="text/javascript">
-            document.body.insertAdjacentHTML("afterbegin", "<div class=\"loading\"><img src=\"<?=iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/login_loading.gif\" width=\"58\" height=\"10\"></div>");
-            document.head.insertAdjacentHTML("afterbegin", "<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
-            const loading = document.querySelector(".loading"),
-             src = "<?= $loginbg ?>",
-                afterLoaded = () => {
-                    document.body.style.backgroundImage = `url(${src})`
-                    loading.classList.add("hide");
-                    loading.classList.remove("show");
-                    loading.addEventListener("transitionend", () => {
-                        loading.remove()
+if ($custom_login_switch) {
+    function custom_login() {
+        require get_template_directory() . '/inc/login_addcss.php';
+        //echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css" />'."\n";
+        echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/inc/login.css?' . IRO_VERSION . '" />' . "\n";
+        //echo '<script type="text/javascript" src="'.get_bloginfo('template_directory').'/js/jquery.min.js"></script>'."\n";
+    }
+    
+    add_action('login_head', 'custom_login');
+    
+    //Login Page Title
+    function custom_headertitle($title) {
+        return get_bloginfo('name');
+    }
+    add_filter('login_headertext', 'custom_headertitle');
+    
+    //Login Page Link
+    function custom_loginlogo_url($url) {
+        return esc_url(home_url('/'));
+    }
+    add_filter('login_headerurl', 'custom_loginlogo_url');
+    
+    //Login Page Footer
+    function custom_html() {
+        $loginbg = iro_opt('login_background') ?: iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.6/').'series/login_background.webp';
+        ?>
+            <script type="text/javascript">
+                document.body.insertAdjacentHTML("afterbegin", "<div class=\"loading\"><img src=\"<?=iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.6/')
+                ?>basic/login_loading.gif\" width=\"58\" height=\"10\"></div>");
+                document.head.insertAdjacentHTML("afterbegin", "<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
+                const loading = document.querySelector(".loading"),
+                 src = "<?= $loginbg ?>",
+                    afterLoaded = () => {
+                        document.body.style.backgroundImage = `url(${src})`
+                        loading.classList.add("hide");
+                        loading.classList.remove("show");
+                        loading.addEventListener("transitionend", () => {
+                            loading.remove()
+                        });
+                    },
+                    img = document.createElement('img')
+                img.src = src
+                img.addEventListener('load',afterLoaded,{once:true})
+                <?php //3秒钟内加载不到图片也移除加载中提示
+                ?>
+                setTimeout(afterLoaded, 3000)
+                document.addEventListener("DOMContentLoaded", ()=>{
+                document.querySelector("h1 a").style.backgroundImage = "url('<?= iro_opt('login_logo_img')?>')";
+                forgetmenot = document.querySelector(".forgetmenot");
+                if (forgetmenot){
+                    forgetmenot.outerHTML = '<p class="forgetmenot"><?=__("Remember me","sakurairo")?><input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>';
+                }
+                const captchaimg = document.getElementById("captchaimg");
+                captchaimg && captchaimg.addEventListener("click",(e)=>{
+                    fetch("<?= rest_url('sakura/v1/captcha/create')?>")
+                    .then(resp=>resp.json())
+                    .then(json=>{
+                        e.target.src = json["data"];
+                        document.querySelector("input[name=\'timestamp\']").value = json["time"];
+                        document.querySelector("input[name=\'id\']").value = json["id"];
                     });
-                },
-                img = document.createElement('img')
-            img.src = src
-            img.addEventListener('load',afterLoaded,{once:true})
-            <?php //3秒钟内加载不到图片也移除加载中提示
-            ?>
-            setTimeout(afterLoaded, 3000)
-            document.addEventListener("DOMContentLoaded", ()=>{
-        document.querySelector("h1 a").style.backgroundImage = "url('<?= iro_opt('login_logo_img')?>')";
-        forgetmenot = document.querySelector(".forgetmenot");
-        if (forgetmenot){
-            forgetmenot.outerHTML = '<p class="forgetmenot"><?=__("Remember me","sakurairo")?><input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>';
-        }
-        const captchaimg = document.getElementById("captchaimg");
-        captchaimg && captchaimg.addEventListener("click",(e)=>{
-            fetch("<?= rest_url('sakura/v1/captcha/create')?>")
-            .then(resp=>resp.json())
-            .then(json=>{
-                e.target.src = json["data"];
-                document.querySelector("input[name=\'timestamp\']").value = json["time"];
-                document.querySelector("input[name=\'id\']").value = json["id"];
-            });
-        })
-    }, false);
-        </script>
-    <?php
+                })
+            }, false);
+            </script>
+        <?php
+    }
+    
+    add_action('login_footer', 'custom_html');
 }
-add_action('login_footer', 'custom_html');
 
 //Login message
 //* Add custom message to WordPress login page
@@ -2035,17 +2080,27 @@ add_filter('file_is_displayable_image', 'mimvp_file_is_displayable_image', 10, 2
 //code end
 
 //展开收缩功能
-function xcollapse($atts, $content = null)
-{
-    extract(shortcode_atts(array("title" => ""), $atts));
-    return '<div style="margin: 0.5em 0;">
-    <div class="xControl">
-    <i class="fa-solid fa-angle-down" style="color: #16AF90;"></i> &nbsp;&nbsp;
-    <span class="xTitle">' . $title . '</span>&nbsp;&nbsp;==>&nbsp;&nbsp;<a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02">展开 / 收缩</span></a>
-    <div style="clear: both;"></div>
+function xcollapse($atts, $content = null) {
+    $atts = shortcode_atts(array("title" => ""), $atts);
+    
+    ob_start(); // 开启输出缓存
+    
+    // HTML 结构
+    ?>
+    <div style="margin: 0.5em 0;">
+        <div class="xControl">
+            <i class="fa-solid fa-angle-down" style="color: #16AF90;"></i> &nbsp;&nbsp;
+            <span class="xTitle"><?= $atts['title'] ?></span>&nbsp;&nbsp;==>&nbsp;&nbsp;<a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02"><?php _e('Expand / Collapse', 'sakurairo'); ?></span></a>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="xContent" style="display: none;"><?= do_shortcode($content) ?></div>
     </div>
-    <div class="xContent" style="display: none;">' . $content . '</div>
-    </div>';
+    <?php
+    
+    $output = ob_get_contents(); // 获取输出缓存
+    ob_end_clean(); // 清空输出缓存
+    
+    return $output; // 返回 HTML 结构
 }
 add_shortcode('collapse', 'xcollapse');
 
