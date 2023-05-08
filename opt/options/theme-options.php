@@ -3530,11 +3530,11 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'desc' => __('You can select multiple proxy as the Gravatar Service Proxy. By default, Tianli is used as the Gravatar Service Proxy.','sakurairo_csf'),
         'options'     => array(
           'cdn2.tianli0.top/avatar'  => __('Tianli','sakurairo_csf'),
-          'sdn.geekzu.org/avatar'  => __('Geekzu','sakurairo_csf'),
+          'weavatar.com/avatar'  => __('Weavatar Service','sakurairo_csf'),
           'cravatar.cn/avatar'  => __('Cravatar Service','sakurairo_csf'),
+          'sdn.geekzu.org/avatar'  => __('Geekzu','sakurairo_csf'),
           'gravatar.loli.net/avatar'  => __('Loli Net','sakurairo_csf'),
           'gravatar.com/avatar'  => __('Official','sakurairo_csf'),
-          'cn.gravatar.com/avatar'  => __('Official CN','sakurairo_csf'),
           'custom_proxy_address_of_gravatar' => __('Custom Proxy Address','sakurairo_csf'),
         ),
         'default'     => 'cdn2.tianli0.top/avatar'
