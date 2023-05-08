@@ -25,7 +25,7 @@ get_header();
                  <a href="<?php the_permalink(); ?>">
                      <span class="shuoshuo_author_img"><img src="<?php echo get_avatar_profile_url(get_the_author_meta('ID')); ?>" class="avatar avatar-48" width="48" height="48"></span>
                      <div class="cbp_tmlabel">
-                         <p><?php the_content(); ?></p>
+                        <p><?php the_content( '', true ); ?></p>
                          <p class="shuoshuo_time"><i class="fa-regular fa-clock"></i> <?php the_time('Y/n/j G:i'); ?></p>
                      </div>
                   </a>
