@@ -43,7 +43,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Preliminary/">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Preliminary/">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -175,7 +175,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E5%A4%96%E8%A7%82%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Global/#%E5%A4%96%E8%A7%82%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -305,7 +305,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Global/#%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -410,7 +410,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Global/#%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -593,7 +593,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E6%A0%B7%E5%BC%8F%E8%8F%9C%E5%8D%95%E5%92%8C%E5%89%8D%E5%8F%B0%E8%83%8C%E6%99%AF%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Global/#%E6%A0%B7%E5%BC%8F%E8%8F%9C%E5%8D%95%E5%92%8C%E5%89%8D%E5%8F%B0%E8%83%8C%E6%99%AF%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -822,7 +822,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E9%A1%B5%E5%B0%BE%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Global/#%E9%A1%B5%E5%B0%BE%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -987,8 +987,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'dependency' => array( 'footer_yiyan', '==', 'true', '', 'true' ),
         'content' => __('<h4>Hitokoto API Setup Instructions</h4>'
         .' <p>Fill in as the example:<code> ["https://api.nmxc.ltd/yiyan/", "https://v1.hitokoto.cn/"]</code>, where the first API will be used first and the next ones will be the backup. </p>'
-        .' <p><strong>Official API:</strong> See the <a href="https://developer.hitokoto.cn/sentence/"> documentation</a> for how to use it, and the parameter "return code" should not be anything except JSON. <a href="https://v1.hitokoto.cn/">https://v1.hitokoto.cn/</a></p>'
-        .' <p><strong>Maho API:</strong> An reverse proxy mirror of the official API. <a href="https://api.nmxc.ltd/yiyan/">https://api.nmxc.ltd/yiyan/</a></p>','sakurairo_csf'),
+        .' <p><strong>Official API:</strong> See the <a target="_blank" href="https://developer.hitokoto.cn/sentence/"> documentation</a> for how to use it, and the parameter "return code" should not be anything except JSON. <a target="_blank" href="https://v1.hitokoto.cn/">https://v1.hitokoto.cn/</a></p>'
+        .' <p><strong>Maho API:</strong> An reverse proxy mirror of the official API. <a target="_blank" href="https://api.nmxc.ltd/yiyan/">https://api.nmxc.ltd/yiyan/</a></p>','sakurairo_csf'),
       ),
 
       array(
@@ -1012,7 +1012,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E5%85%89%E6%A0%87%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Global/#%E5%85%89%E6%A0%87%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -1067,7 +1067,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E9%A2%9D%E5%A4%96%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Global/#%E9%A2%9D%E5%A4%96%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -1141,7 +1141,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'sanitize' => false,
         'title' => __('Particles JSON','sakurairo_csf'),
         'dependency' => array( 'particles_effects', '==', 'true', '', 'true' ),
-        'desc' => __('You can go to the <a href="https://vincentgarreau.com/particles.js/">Project Address</a> to generate your unique Particles Effects','sakurairo_csf'),
+        'desc' => __('You can go to the <a target="_blank" href="https://vincentgarreau.com/particles.js/">Project Address</a> to generate your unique Particles Effects','sakurairo_csf'),
         'default' => '
         {
           "particles": {
@@ -1394,7 +1394,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%B0%81%E9%9D%A2%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%B0%81%E9%9D%A2%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -1827,7 +1827,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%B0%81%E9%9D%A2%E7%A4%BE%E4%BA%A4%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%B0%81%E9%9D%A2%E7%A4%BE%E4%BA%A4%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -2106,7 +2106,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%85%AC%E5%91%8A%E6%A0%8F%E5%92%8C%E5%8C%BA%E5%9F%9F%E6%A0%87%E9%A2%98%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%85%AC%E5%91%8A%E6%A0%8F%E5%92%8C%E5%8C%BA%E5%9F%9F%E6%A0%87%E9%A2%98%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -2207,7 +2207,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'exhibition_area_icon',
         'type' => 'text',
         'title' => __('Display Area Icon','sakurairo_csf'),
-        'desc' => __('Default is "fa-solid fa-laptop", You can check the <a href="https://fontawesome.com/search?o=r&m=free">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
+        'desc' => __('Default is "fa-solid fa-laptop", You can check the <a target="_blank" href="https://fontawesome.com/search?o=r&m=free">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
         'default' => 'fa-solid fa-laptop'
       ),
 
@@ -2223,7 +2223,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'post_area_icon',
         'type' => 'text',
         'title' => __('Post Area Icon','sakurairo_csf'),
-        'desc' => __('Default is "fa-regular fa-bookmark", You can check the <a href="https://fontawesome.com/search?o=r&m=free">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
+        'desc' => __('Default is "fa-regular fa-bookmark", You can check the <a target="_blank" href="https://fontawesome.com/search?o=r&m=free">FontAwesome Website</a> to see the icons that can be filled in' ,'sakurairo_csf'),
         'default' => 'fa-regular fa-bookmark'
       ),
 
@@ -2267,7 +2267,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%B1%95%E7%A4%BA%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%B1%95%E7%A4%BA%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -2450,7 +2450,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Homepage/#%E6%96%87%E7%AB%A0%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Homepage/#%E6%96%87%E7%AB%A0%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -2582,7 +2582,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Pages/#%E7%BB%BC%E5%90%88%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Pages/#%E7%BB%BC%E5%90%88%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -2680,7 +2680,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Pages/#%E6%96%87%E7%AB%A0%E9%A1%B5%E9%9D%A2%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Pages/#%E6%96%87%E7%AB%A0%E9%A1%B5%E9%9D%A2%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -2843,7 +2843,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Pages/#%E6%A8%A1%E6%9D%BF%E9%A1%B5%E9%9D%A2%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Pages/#%E6%A8%A1%E6%9D%BF%E9%A1%B5%E9%9D%A2%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -2988,7 +2988,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Pages/#%E8%AF%84%E8%AE%BA%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Pages/#%E8%AF%84%E8%AE%BA%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -3049,6 +3049,33 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Page Comment Area Location Information','sakurairo_csf'),
         'label' => __('When enabled, the page comment area will show the user’s location information','sakurairo_csf'),
         'default' => false
+      ),
+
+      array(
+        'id' => 'location_information_providers',
+        'type' => 'select',
+        'title' => __('Location Information Providers','sakurairo_csf'),
+        'desc' => __('Choose your IP address resolution service and use Sakurairo\'s official resolution address by default. IP-API is a reliable IP address resolution service that is free for non-commercial use, you can go to <a target="_blank" href="https://ip-api.com/">IP-API Website</a> for more information.','sakurairo_csf'),
+        'dependency' => array( 'comment_location', '==', 'true', '', 'true' ),
+        'options'     => array(
+          'sakurairo'  => __('Sakurairo','sakurairo_csf'),
+          'ip-api'  => __('IP-API','sakurairo_csf'),
+        ),
+        'default'     => 'Sakurairo'
+      ),
+
+      array(
+        'id' => 'location_information_accuracy',
+        'type' => 'select',
+        'title' => __('Location Information Accuracy','sakurairo_csf'),
+        'desc' => __('Select The Display Accuracy Of The Geographic Location.','sakurairo_csf'),
+        'dependency' => array( 'comment_location', '==', 'true', '', 'true' ),                           
+        'options'     => array(
+          'country'  => __('Country','sakurairo_csf'),
+          'regionName'  => __('RegionName','sakurairo_csf'),
+          'city'  => __('City','sakurairo_csf'),
+        ),
+        'default'     => 'city'
       ),
 
       array(
@@ -3210,7 +3237,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Others/#%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2%E5%92%8C%E4%BB%AA%E8%A1%A8%E7%9B%98%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Others/#%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2%E5%92%8C%E4%BB%AA%E8%A1%A8%E7%9B%98%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -3348,7 +3375,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Others/#ChatGPT%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Others/#ChatGPT%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -3372,7 +3399,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'chatgpt_access_token',
         'type' => 'text',
         'title' => __('ChatGPT API keys','sakurairo_csf'),
-        'desc' => __('Fill in Your ChatGPT API keys, You can go to <a href="https://platform.openai.com/account/api-keys">OpenAI Website</a> to get your API Keys','sakurairo_csf'),
+        'desc' => __('Fill in Your ChatGPT API keys, You can go to <a target="_blank" href="https://platform.openai.com/account/api-keys">OpenAI Website</a> to get your API Keys','sakurairo_csf'),
         'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
       ),
 
@@ -3445,7 +3472,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Others/#%E4%BD%8E%E4%BD%BF%E7%94%A8%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a target="_blank" href="https://docs.fuukei.org/Sakurairo/Others/#%E4%BD%8E%E4%BD%BF%E7%94%A8%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
@@ -3594,8 +3621,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ), 
       array(
         'type'    => 'content',
-        'content'=>__('<strong>Attension: Please read <a href="https://github.com/sachinchoolur/lightGallery#license">License Instruction</a> before use.</strong>'
-        .'<br/><strong><a href="https://www.lightgalleryjs.com/demos/thumbnails/">Demos</a></strong> | <strong><a href="https://www.lightgalleryjs.com/docs/settings/">Reference</a></strong> | <strong><a href="https://fastly.jsdelivr.net/npm/lightgallery@latest/plugins/">Plugin List</a></strong> '
+        'content'=>__('<strong>Attension: Please read <a target="_blank" href="https://github.com/sachinchoolur/lightGallery#license">License Instruction</a> before use.</strong>'
+        .'<br/><strong><a target="_blank" href="https://www.lightgalleryjs.com/demos/thumbnails/">Demos</a></strong> | <strong><a target="_blank" href="https://www.lightgalleryjs.com/docs/settings/">Reference</a></strong> | <strong><a target="_blank" href="https://fastly.jsdelivr.net/npm/lightgallery@latest/plugins/">Plugin List</a></strong> '
         .'<br/> Please write settings in JavaScript. An example has been provided as default setting.'
         .'<br/> It should be captiable for Most User using WordPress Guttenberg Editor.'
         .'<br/>Submit new discussion on Github for assistance. https://github.com/mirai-mamori/Sakurairo/discussions','sakurairo_csf')       ,
@@ -3630,7 +3657,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type'    => 'content',
         'content' => __('<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </p>'
-        .' <p><strong>Prism.js:</strong> Requires a language to be specified, see <a href="https://prismjs.com/#basic-usage">basic usage</a> and <a href="https://prismjs.com/ plugins/file-highlight/">How to code highlight dynamically loaded files</a>. </p>'
+        .' <p><strong>Prism.js:</strong> Requires a language to be specified, see <a target="_blank" href="https://prismjs.com/#basic-usage">basic usage</a> and <a target="_blank" href="https://prismjs.com/ plugins/file-highlight/">How to code highlight dynamically loaded files</a>. </p>'
         .' <p><strong>Custom:</strong> For cases where another configuration is available. </p>','sakurairo_csf'),
       ),
 
@@ -3653,7 +3680,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'dependency' => array(
           array( 'code_highlight_method', '==', 'prism', '', 'true' ),
         ),
-        'desc' => __('See the <a href="https://prismjs.com/plugins/line-numbers/">plugin description documentation</a>','sakurairo_csf'),
+        'desc' => __('See the <a target="_blank" href="https://prismjs.com/plugins/line-numbers/">plugin description documentation</a>','sakurairo_csf'),
       ),
 
       array(
@@ -3771,7 +3798,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       array(
         'type'    => 'submessage',
         'style'   => 'normal',
-        'content' => sprintf(__('Theme Sakurairo Version %s | Internal Version %s | <a href="https://github.com/mirai-mamori/Sakurairo">Project Address</a>','sakurairo_csf'), IRO_VERSION, INT_VERSION), 
+        'content' => sprintf(__('Theme Sakurairo Version %s | Internal Version %s | <a target="_blank" href="https://github.com/mirai-mamori/Sakurairo">Project Address</a>','sakurairo_csf'), IRO_VERSION, INT_VERSION), 
       ),
 
       array(
@@ -3868,7 +3895,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'vision_resource_basepath',
         'type' => 'text',
         'title' => __('Vision Resource Basepath','sakurairo_csf'),
-        'desc' => __('This link directory structure needs to be consistent with the <a href="https://github.com/Fuukei/Sakurairo_Vision">Sakurairo Vision</a> repositories officially provided by fuukei, otherwise some resources 404 may appear. The image source officially provided by <a href="https://www.upyun.com/">Upyun</a> is adopted by default.','sakurairo_csf'),
+        'desc' => __('This link directory structure needs to be consistent with the <a target="_blank" href="https://github.com/Fuukei/Sakurairo_Vision">Sakurairo Vision</a> repositories officially provided by fuukei, otherwise some resources 404 may appear. The image source officially provided by <a target="_blank" href="https://www.upyun.com/">Upyun</a> is adopted by default.','sakurairo_csf'),
         'default' => "https://s.nmxc.ltd/sakurairo_vision/@2.6/"
       ),
 
@@ -3919,8 +3946,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<p>Fluent Design Icon Referenced by Paradox <a href="https://wwi.lanzous.com/ikyq5kgx0wb">Fluent Icon Pack</a></p>
-        <p>MUH2 Design Icon Referenced by 缄默 <a href="https://www.coolapk.com/apk/com.muh2.icon">MUH2 Icon Pack</a></p>
+        'content' => __('<p>Fluent Design Icon Referenced by Paradox <a target="_blank" href="https://wwi.lanzous.com/ikyq5kgx0wb">Fluent Icon Pack</a></p>
+        <p>MUH2 Design Icon Referenced by 缄默 <a target="_blank" href="https://www.coolapk.com/apk/com.muh2.icon">MUH2 Icon Pack</a></p>
         <p>Mashiro Style Logo References the Original Theme Author Mashiro, As Provided and Referenced by Hyacm</p>','sakurairo_csf'),
       ),
 
@@ -3931,9 +3958,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'type'    => 'content',
-        'content' => __('<p>Options Framework Relies on the Codestar Open Source <a href="https://github.com/Codestar/codestar-framework">Codestar Framework</a> Project</p>
-        <p>Update Function Relies on YahnisElsts Open Source <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin Update Checker</a> Project</p>
-        <p>ChatGPT-related Capabilities Relies on HaoZi-Team Open Source <a href="https://github.com/HaoZi-Team/ChatGPT-PHP">ChatGPT PHP</a> Project</p>','sakurairo_csf'),
+        'content' => __('<p>Options Framework Relies on the Codestar Open Source <a target="_blank" href="https://github.com/Codestar/codestar-framework">Codestar Framework</a> Project</p>
+        <p>Update Function Relies on YahnisElsts Open Source <a target="_blank" href="https://github.com/YahnisElsts/plugin-update-checker">Plugin Update Checker</a> Project</p>
+        <p>ChatGPT-related Capabilities Relies on HaoZi-Team Open Source <a target="_blank" href="https://github.com/HaoZi-Team/ChatGPT-PHP">ChatGPT PHP</a> Project</p>','sakurairo_csf'),
       ),
 
       array(

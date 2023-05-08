@@ -345,15 +345,35 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/theme_plus.php';
 require get_template_directory() . '/inc/categories-images.php';
 
-//Comment Location Start
-function convertip($ip)
-{
+/**
+ * 该函数用于解析ip地址位置信息
+ * @Param: string $ip 评论者的ip地址
+ * @Param: string $sakurairo_url 主题官方IP解析地址
+ * @Param: string $fields IP-API可选的返回数据项目，详见：https://ip-api.com/docs/api:serialized_php
+ * @Param: string $ip_api_url IP-API解析地址，免费版暂不支持https，45次/分钟请求数限制
+ * @Param: string $ip_api_lang WordPress的用户语言，用于IP-API返回数据的国际化支持
+ * @Param: string $url 完整的请求地址
+ */
+function convertip($ip) {
+    
     if (empty($ip)) $ip = get_comment_author_IP();
+    if (empty($ip)) return(__('Unknown', 'sakurairo')); //IP地址为空直接返回“未知”
+
+    switch(iro_opt('location_information_providers')) {
+        case "sakurairo" :
+            $url = 'https://api.nmxc.ltd/ip/' . $ip;
+            break;
+        case "ip-api" :
+            $fields = '50905';
+            $ip_api_lang = get_bloginfo('language');
+            $ip_api_url = 'http://ip-api.com/json/';
+            $url = $ip_api_url . $ip . '?lang=' . $ip_api_lang . '&fields=' . $fields;
+            break;
+    }
+
     $ch = curl_init();
-    $url = 'https://api.nmxc.ltd/ip/' . $ip;
     $timeout = 5;
     curl_setopt($ch, CURLOPT_URL, $url);
-    // curl_setopt ($ch, CURLOPT_URL, 'http://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip='.$ip);  
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -361,15 +381,43 @@ function convertip($ip)
     curl_close($ch);
     $result = null;
     $result = json_decode($file_contents, true);
-    if ($result && $result['code'] != 0) {
-        return "未知";
+
+    if (iro_opt('location_information_providers') == "sakurairo") {
+        if ($result && $result['code'] == 0) {
+            switch(iro_opt('location_information_accuracy')) {
+                case "country" :
+                    return $result['data']['country'];
+                    break;
+                case "regionName" :
+                    return $result['data']['country'] . '&nbsp;·&nbsp;' . $result['data']['region'];
+                    break;
+                case "city" :
+                    return $result['data']['country'] . '&nbsp;·&nbsp;' . $result['data']['region'] . '&nbsp;·&nbsp;' . $result['data']['city'];
+                    break;
+            }
+        }
+        if ($result && $result['code'] != 0) return(__('Unknown', 'sakurairo'));
+    
     }
-    if ($result['data']['country'] != '中国') {
-        return $result['data']['country'];
-    }
-    return $result['data']['country'] . '&nbsp;·&nbsp;' . $result['data']['region'] . '&nbsp;·&nbsp;' . $result['data']['city'];
+
+    if (iro_opt('location_information_providers') == "ip-api") {
+        if ($result && $result['status'] == 'success') {
+            switch(iro_opt('location_information_accuracy')) {
+                case "country" :
+                    return $result['country'];
+                    break;
+                case "regionName" :
+                    return $result['country'] . '&nbsp;·&nbsp;' . $result['regionName'];
+                    break;
+                case "city" :
+                    return $result['country'] . '&nbsp;·&nbsp;' . $result['regionName'] . '&nbsp;·&nbsp;' . $result['city'];
+                    break;
+            }
+        }
+        if ($result && $result['status'] != 'success') return(__('Unknown', 'sakurairo'));
+    }  
 }
-//Comment Location End
+
 
 if (!function_exists('akina_comment_format')) {
     function akina_comment_format($comment, $args, $depth)
