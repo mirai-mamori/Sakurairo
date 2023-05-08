@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-05-05 17:12+0800\n"
-"PO-Revision-Date: 2023-05-05 17:12+0800\n"
+"POT-Creation-Date: 2023-05-08 16:04+0800\n"
+"PO-Revision-Date: 2023-05-08 16:04+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -3741,24 +3741,24 @@ msgid "Tianli"
 msgstr ""
 
 #: options/theme-options.php:3533
-msgid "Geekzu"
-msgstr "ゲクズ"
+msgid "Weavatar Service"
+msgstr "ウィアバターサービス"
 
 #: options/theme-options.php:3534
 msgid "Cravatar Service"
-msgstr "グラバタープロキシ"
+msgstr "クラバターサービス"
 
 #: options/theme-options.php:3535
+msgid "Geekzu"
+msgstr "ゲクズ"
+
+#: options/theme-options.php:3536
 msgid "Loli Net"
 msgstr "ロリネット"
 
-#: options/theme-options.php:3536
+#: options/theme-options.php:3537
 msgid "Official"
 msgstr "公式"
-
-#: options/theme-options.php:3537
-msgid "Official CN"
-msgstr "公式の中国ミラー"
 
 #: options/theme-options.php:3538 options/theme-options.php:3546
 msgid "Custom Proxy Address"
@@ -4252,6 +4252,3 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
-
-#~ msgid "Cover Signature Bar Rounded"
-#~ msgstr "カバーの署名欄の角が丸い"

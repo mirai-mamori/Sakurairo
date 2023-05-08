@@ -7673,9 +7673,17 @@ body.theme-dark .cbp_tmtimeline::before {
   top: 15px;
 }
 
-p.shuoshuo_time {
-  margin: 0 10px 10px 0;
+.shuoshuo_meta {
+  clear: both;
   font-size: 14px;
+}
+
+.shuoshuo_meta i {
+  margin-right: 5px;
+}
+
+.comments-number {
+  margin-left: 8px;
 }
 
 p.header_shuoshuo_time {
