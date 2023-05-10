@@ -630,6 +630,14 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'sakura_widget',
+        'type' => 'switcher',
+        'title' => __('Widgets Panel WP Widget Area','sakurairo_csf'),
+        'label' => __('When turned on, the WP Widget Area will be displayed in Widgets Panel','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
         'id' => 'widget_shuo',
         'type' => 'switcher',
         'title' => __('Widgets Panel Shuoshuo','sakurairo_csf'),
@@ -895,23 +903,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'title' => __('Netease Cloud Music Cookies','sakurairo_csf'),
         'dependency' => array( 'aplayer_server', '==', 'netease', '', 'true' ),
         'desc' => __('If you want to play VIP music on Netease Cloud Music Platform, please fill in your account cookies in this option.','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'sakura_widget',
-        'type' => 'switcher',
-        'title' => __('Footer Widget Area','sakurairo_csf'),
-        'label' => __('After turning it on, a button will appear in the bottom of the left corner of the footer, when you click the button the footer widget area will be displayed, if you have the footer online player turned on it will be displayed together','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
-        'id' => 'sakura_widget_background',
-        'type' => 'upload',
-        'title' => __('Footer Widget Area Background','sakurairo_csf'),
-        'dependency' => array( 'sakura_widget', '==', 'true', '', 'true' ),
-        'desc' => __('The best picture size is 400px × 460px','sakurairo_csf'),
-        'library' => 'image',
       ),
 
       array(

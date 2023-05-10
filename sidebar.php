@@ -11,6 +11,6 @@
 return;
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary">
+<aside id="iro-widget" class="widget-area" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

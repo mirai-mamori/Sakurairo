@@ -368,7 +368,6 @@ body.dark .the-feature.from_left_and_right .info
 {background-color: rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);}
 
 body.dark .yya,
-body.dark .widget-area,
 body.dark input[type=submit] 
 {background-color:rgba(38,38,38,<?=iro_opt('theme_darkmode_widget_transparency'); ?>) !important;}
 
@@ -783,10 +782,6 @@ h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,
 <?php endif; ?>
 
 /*其他*/
-
-.widget-area .sakura_widget{
-    background-image: url(<?=iro_opt('sakura_widget_background', ''); ?>);
-}
 
 .headertop{
     border-radius: 0 0 <?=iro_opt('cover_radius', ''); ?>px <?=iro_opt('cover_radius', ''); ?>px;
