@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
 "POT-Creation-Date: 2023-05-10 15:26+0800\n"
-"PO-Revision-Date: 2023-05-10 15:26+0800\n"
+"PO-Revision-Date: 2023-05-10 18:57+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -1206,11 +1206,11 @@ msgstr "小部件面板字體"
 
 #: options/theme-options.php:635
 msgid "Widgets Panel WP Widget Area"
-msgstr "小部件面板 WP 小部件區域"
+msgstr "小部件面板 WP 小工具區域"
 
 #: options/theme-options.php:636
 msgid "When turned on, the WP Widget Area will be displayed in Widgets Panel"
-msgstr "開啟之後WP小部件區域將顯示在小部件面板中"
+msgstr "開啟之後WP小工具區域將顯示在小部件面板中"
 
 #: options/theme-options.php:643
 msgid "Widgets Panel Shuoshuo"

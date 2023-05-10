@@ -433,7 +433,7 @@ font-family: '<?php echo $mashiro_logo['font_name']; ?>';
 font-family:<?=iro_opt('footer_text_font'); ?> !important;
 }
 
-.skin-menu {
+.skin-menu p{
 font-family:<?=iro_opt('style_menu_font'); ?> !important;
 }
 
