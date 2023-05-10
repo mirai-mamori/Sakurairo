@@ -586,7 +586,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title' => __('Widgets Panel and Frontend Background Related Options','sakurairo_csf'),
+    'title' => __('Widgets Panel and Frontend Related Options','sakurairo_csf'),
     'icon' => 'fa fa-th-large',
     'fields' => array(
 
@@ -785,7 +785,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'type' => 'subheading',
-        'content' => __('Font Area','sakurairo_csf'),
+        'content' => __('Frontend Font','sakurairo_csf'),
       ),
 
       array(

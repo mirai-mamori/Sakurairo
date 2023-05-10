@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-05-10 12:13+0800\n"
+"POT-Creation-Date: 2023-05-10 12:34+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1148,7 +1148,7 @@ msgid "Font Name"
 msgstr ""
 
 #: options/theme-options.php:589
-msgid "Widgets Panel and Frontend Background Related Options"
+msgid "Widgets Panel and Frontend Related Options"
 msgstr ""
 
 #: options/theme-options.php:596
@@ -1265,7 +1265,7 @@ msgid "Slide to adjust, the recommended sliding value range is 0.6-0.8"
 msgstr ""
 
 #: options/theme-options.php:788
-msgid "Font Area"
+msgid "Frontend Font"
 msgstr ""
 
 #: options/theme-options.php:794
