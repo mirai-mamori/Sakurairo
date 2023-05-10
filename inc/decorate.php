@@ -369,7 +369,6 @@ body.dark .the-feature.from_left_and_right .info
 
 body.dark .yya,
 body.dark .widget-area,
-body.dark .skin-menu,
 body.dark input[type=submit] 
 {background-color:rgba(38,38,38,<?=iro_opt('theme_darkmode_widget_transparency'); ?>) !important;}
 
