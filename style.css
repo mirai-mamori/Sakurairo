@@ -10696,7 +10696,7 @@ body.dark .searchbox.js-toggle-search:hover {
   animation: searchbox 1s;
 }
 
-body.dark .entry-content code {
+body.dark .entry-content p code {
   background: var(--inline_code_background_color_in_dark_mode, #505050);
   -webkit-transition: all .8s;
   transition: all .8s;
