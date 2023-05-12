@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-04-13 21:24+0800\n"
-"PO-Revision-Date: 2023-04-13 21:24+0800\n"
+"POT-Creation-Date: 2023-05-10 18:08+0800\n"
+"PO-Revision-Date: 2023-05-10 18:09+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -33,7 +33,7 @@ msgstr "返回首頁"
 msgid "Don't worry, search in site?"
 msgstr "別著急，試試站內檢索？"
 
-#: 404.php:59 footer.php:60 search.php:39
+#: 404.php:59 footer.php:63 search.php:39
 msgid "Search..."
 msgstr "搜尋..."
 
@@ -129,95 +129,91 @@ msgstr "禁止小廣告😀"
 msgid "Site"
 msgstr "網站"
 
-#: footer.php:35
+#: footer.php:38
 #, php-format
 msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr "載入時間 %.3f 秒 | 查詢 %d 次 | 記憶體使用 %.2f MB "
 
-#: footer.php:65
+#: footer.php:68
 msgid "Go to top"
 msgstr "回到頂端"
 
-#: footer.php:72 footer.php:80
+#: footer.php:75 footer.php:83
 msgid "Want to find something?"
 msgstr "想要找點什麼呢？"
 
-#: footer.php:81
+#: footer.php:84
 msgid "Search"
 msgstr "搜尋"
 
-#: footer.php:133
-msgid "Widgets"
-msgstr "小工具"
-
-#: functions.php:89
+#: functions.php:97
 msgid "Nav Menus"
 msgstr "導航菜單"
 
-#: functions.php:205 functions.php:216
+#: functions.php:213 functions.php:224
 msgid "Ideas"
 msgstr "推文"
 
-#: functions.php:206
+#: functions.php:214
 msgid "Idea"
 msgstr "推文"
 
-#: functions.php:207 functions.php:208
+#: functions.php:215 functions.php:216
 msgid "Publish New Idea"
 msgstr "發佈新推文"
 
-#: functions.php:209
+#: functions.php:217
 msgid "Edit Idea"
 msgstr "編輯推文"
 
-#: functions.php:210
+#: functions.php:218
 msgid "New Idea"
 msgstr "新推文"
 
-#: functions.php:211
+#: functions.php:219
 msgid "View Idea"
 msgstr "查看推文"
 
-#: functions.php:212
+#: functions.php:220
 msgid "Search Idea"
 msgstr "搜尋推文"
 
-#: functions.php:213
+#: functions.php:221
 msgid "Not Found Idea"
 msgstr "未找到推文"
 
-#: functions.php:214
+#: functions.php:222
 msgid "No Idea in the Trash"
 msgstr "垃圾桶里沒有推文"
 
-#: functions.php:287
+#: functions.php:297
 msgid "Copied!"
 msgstr "已複製!"
 
-#: functions.php:288
+#: functions.php:298
 msgid "Copy Code"
 msgstr "拷貝程式碼"
 
-#: functions.php:289
+#: functions.php:299
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
 msgstr "您的封面API似乎不支援跨來源請求。這種情況下暫存是不會生效的哦。"
 
-#: functions.php:290
+#: functions.php:300
 msgid "Commiting...."
 msgstr "提交中。。。"
 
-#: functions.php:291
+#: functions.php:301
 msgid "Succeed"
 msgstr "成功"
 
-#: functions.php:292
+#: functions.php:302
 msgid "10 files max per request"
 msgstr "每次上傳上限為10張"
 
-#: functions.php:293
+#: functions.php:303
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -231,15 +227,15 @@ msgstr ""
 "\n"
 "這張圖太大啦~請重新上傳噢！"
 
-#: functions.php:294
+#: functions.php:304
 msgid "Uploading..."
 msgstr "上傳中..."
 
-#: functions.php:295
+#: functions.php:305
 msgid "Uploaded successfully~"
 msgstr "上傳成功～"
 
-#: functions.php:296
+#: functions.php:306
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -251,127 +247,127 @@ msgstr ""
 "錯誤碼=> {1}\n"
 "{2}"
 
-#: functions.php:297
+#: functions.php:307
 msgid "Upload failed, please retry."
 msgstr "上傳失敗，請重試。"
 
-#: functions.php:298
+#: functions.php:308
 msgid "Page Load failed. HTTP {0}"
 msgstr "頁面載入出錯了。HTTP{0}"
 
-#: functions.php:299
+#: functions.php:309
 msgid "Glad you come, but we've got nothing left."
 msgstr "很高興你翻到這裡，但是真的沒有了..."
 
-#: functions.php:300
+#: functions.php:310
 msgid "Post"
 msgstr "文章"
 
-#: functions.php:301
+#: functions.php:311
 msgid "Tag"
 msgstr "標籤"
 
-#: functions.php:302
+#: functions.php:312
 msgid "Category"
 msgstr "類別"
 
-#: functions.php:303
+#: functions.php:313
 msgid "Page"
 msgstr "頁面"
 
-#: functions.php:304
+#: functions.php:314
 msgid "Comment"
 msgstr "評論"
 
-#: functions.php:305
+#: functions.php:315
 msgid "Paused..."
 msgstr "暫停。。。"
 
-#: functions.php:306
+#: functions.php:316
 msgid "Loading Video..."
 msgstr "載入影片..."
 
-#: functions.php:307
+#: functions.php:317
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "下載字體時，請注意您的數據使用方式。"
 
-#: functions.php:308
+#: functions.php:318
 msgid "Are you sure you want set it private?"
 msgstr "是否確實要將其設置為專用？"
 
-#: functions.php:309
+#: functions.php:319
 msgid "You had set private comment before"
 msgstr "您之前設置了私人評論"
 
-#: functions.php:379 inc/theme_plus.php:194
+#: functions.php:389 inc/theme_plus.php:194
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:379
+#: functions.php:389
 msgid "Blogger"
 msgstr "部落客"
 
-#: functions.php:385
+#: functions.php:395
 msgid "Location"
 msgstr "來自"
 
-#: functions.php:391
+#: functions.php:401
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:393
+#: functions.php:403
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:395
+#: functions.php:405
 msgid "No"
 msgstr "否"
 
-#: functions.php:398
+#: functions.php:408
 msgid "Edit"
 msgstr "編輯"
 
-#: functions.php:505
+#: functions.php:517
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "這傢伙好懶╮(╯▽╰)╭"
 
-#: functions.php:710
+#: functions.php:762
 msgid "Download Link"
 msgstr "下載連結"
 
-#: functions.php:782
+#: functions.php:835
 msgid "Remember me"
 msgstr "保持登入"
 
-#: functions.php:1200
+#: functions.php:1254
 msgid "All expand/collapse"
 msgstr "全部展開/收縮"
 
-#: functions.php:1225
+#: functions.php:1287
 msgid " "
 msgstr " "
 
-#: functions.php:1229
+#: functions.php:1291
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1252 functions.php:1255 inc/theme_plus.php:427
+#: functions.php:1319 functions.php:1322 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:1560
+#: functions.php:1627
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>錯誤</b>: 電子郵箱格式出錯 (<b>@"
 
-#: functions.php:1685
+#: functions.php:1752
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1769
+#: functions.php:1836
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:1898
+#: functions.php:1965
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -381,6 +377,10 @@ msgstr ""
 "<b> 為了更好的使用體驗，請不要將<a href=\"/wp-admin/options-permalink.php\">"
 "固定連結</a>設置為樸素。為此，您可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">偽靜態</a></b>"
+
+#: functions.php:2095
+msgid "Expand / Collapse"
+msgstr "展開 / 摺疊"
 
 #: inc/categories-images.php:44 inc/categories-images.php:65
 msgid "category/tag image"
@@ -403,7 +403,8 @@ msgstr "圖像"
 msgid "no image"
 msgstr "暫無"
 
-#: inc/classes/Bilibili.php:48 inc/classes/BilibiliFavList.php:54
+#: inc/classes/Bilibili.php:48 inc/classes/BilibiliFavList.php:57
+#: inc/classes/BilibiliFavList.php:62 inc/classes/BilibiliFavList.php:74
 #: inc/classes/MyAnimeList.php:57
 msgid "Backend error"
 msgstr "後端發生了錯誤 QwQ"
@@ -420,23 +421,23 @@ msgstr " 動漫。"
 msgid "The author seems to have hidden their bangumi list."
 msgstr "部落客似乎隱藏了新番追蹤列表。"
 
-#: inc/classes/BilibiliFavList.php:72
+#: inc/classes/BilibiliFavList.php:90
 msgid "Item count: "
 msgstr "項目計數： "
 
-#: inc/classes/BilibiliFavList.php:73
+#: inc/classes/BilibiliFavList.php:91
 msgid "Expand"
 msgstr "展開"
 
-#: inc/classes/BilibiliFavList.php:90
+#: inc/classes/BilibiliFavList.php:108
 msgid "All item has been loaded."
 msgstr "所有專案均已載入。"
 
-#: inc/classes/BilibiliFavList.php:112
+#: inc/classes/BilibiliFavList.php:130
 msgid "Load More"
 msgstr "載入更多"
 
-#: inc/classes/Cache.php:70 inc/theme_plus.php:669
+#: inc/classes/Cache.php:70 inc/theme_plus.php:679
 msgid "The comment is private"
 msgstr "這是一條私密留言"
 
@@ -526,7 +527,7 @@ msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "<span class=\"screen-reader-text\"> 在 %s</span>中留言"
 
 #. translators: %s: Name of current post
-#: inc/template-tags.php:72 tpl/content-page.php:36
+#: inc/template-tags.php:72 tpl/content-page.php:35
 #, php-format
 msgid "Edit %s"
 msgstr "編輯 %s"
@@ -646,19 +647,19 @@ msgstr "上一篇"
 msgid "Next"
 msgstr "下一篇"
 
-#: layouts/post-nextprev.php:11
+#: layouts/post-nextprev.php:12
 msgid "Previous Post"
 msgstr "上一篇文章"
 
-#: layouts/post-nextprev.php:14
+#: layouts/post-nextprev.php:15
 msgid "Next Post"
 msgstr "下一篇文章"
 
-#: page-word.php:34
+#: page-word.php:39
 msgid "You have not posted a comment yet"
 msgstr "您尚未發表说说"
 
-#: page-word.php:35
+#: page-word.php:40
 msgid "Go and post your first comment now"
 msgstr "現在就去發表你的第一條说说吧"
 
@@ -711,7 +712,7 @@ msgstr "沒有找到你想要的，看看其他的吧。"
 msgid "We didn't seem to find what you want. Maybe you can search for it."
 msgstr "似乎沒有找到你想要的東西，或許你可以搜尋一下試式試。"
 
-#: tpl/content-page.php:25 tpl/content-single.php:45 tpl/single-image.php:34
+#: tpl/content-page.php:24 tpl/content-single.php:45 tpl/single-image.php:34
 msgid "Pages:"
 msgstr "頁面:"
 
@@ -727,7 +728,7 @@ msgstr "最後更新於 "
 msgid "Nothing~"
 msgstr "無~"
 
-#: user/page-bangumi.php:31 user/page-bilibiliFavList.php:30
+#: user/page-bangumi.php:31 user/page-bilibiliFavList.php:32
 #: user/page-followVideos.php:29
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr "請在後台設置填寫 Bilibili UID 後繼續。"

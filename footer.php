@@ -22,6 +22,9 @@ $reception_background = iro_opt('reception_background');
 				<div class="img-preload">
 					<img src="<?php echo iro_opt('load_nextpage_svg'); ?>"><!-- 加载下一部分圈圈 -->
 				</div>
+				<div class="sakura-icon" style="width:max-content;height:max-content;margin: auto;">
+				<svg width="30px" height="30px" t="1682340134496" class="sakura-svg" viewBox="0 0 1049 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5240"><path d="M525.58396628 573.34694353s268.83106938-2.62915481 309.36387092 193.24287089l-76.46458293 21.90962291 12.92667757 84.13295086a214.05701289 214.05701289 0 0 1-96.84053193-4.82011663A224.79272784 224.79272784 0 0 1 525.58396628 578.38615666z" fill="#EE9ca7" p-id="5241"></path><path d="M552.75189802 512.4381922s131.45773592-233.7756732 321.63325979-170.89505575L854.2283053 418.66500728l79.31283344 30.89256828a215.59068679 215.59068679 0 0 1-52.58309388 81.50379604 224.57363215 224.57363215 0 0 1-325.35789552-14.67944718z" fill="#EE9ca7" p-id="5242"></path><path d="M508.49446078 494.0341093S317.00435871 306.48774025 426.77156822 139.31731943l69.4535037 38.78003191L547.4935884 109.30113636a214.05701289 214.05701289 0 0 1 65.72886796 71.86356201 225.01182435 225.01182435 0 0 1-98.37420505 310.67844912z" fill="#EE9ca7" p-id="5243"></path><path d="M473.21996809 525.58396628S242.2925454 661.64272234 109.30113636 512.4381922l55.43134521-57.18411482-53.45947909-65.72886795a213.61882069 213.61882069 0 0 1 86.32391269-43.81924506 224.79272784 224.79272784 0 0 1 274.527572 175.27698099z" fill="#EE9ca7" p-id="5244"></path><path d="M481.76472043 566.55496s72.0826585 258.31445093-106.4807652 348.14390364l-40.31370582-68.13892627-78.21735252 34.17901099a212.30424328 212.30424328 0 0 1-20.15685331-94.64956933 224.57363215 224.57363215 0 0 1 241.00584894-219.09622602z" fill="#EE9ca7" p-id="5245"></path></svg>
+				</div>
 				<p style="color: #666666;"><?php echo iro_opt('footer_info', ''); ?></p>
 			</div>
 			<div class="footer-device function_area">
@@ -63,7 +66,7 @@ $reception_background = iro_opt('reception_background');
 		<?php wp_nav_menu( array( 'depth' => 2, 'theme_location' => 'primary', 'container' => false ) ); ?>
 	</div><!-- m-nav-center end -->
 	<button id="moblieGoTop" title="<?=__('Go to top','sakurairo');?>"><i class="fa-solid fa-caret-up fa-lg"></i></button>
-    <button id="changskin"><i class="fa-solid fa-gear fa-spin fa-lg" ></i></button>
+  <button id="changskin"><i class="fa-solid fa-compass-drafting fa-lg fa-flip" style="--fa-animation-duration: 3s;"></i></button>
 	<!-- search start -->
 	<form class="js-search search-form search-form--modal" method="get" action="<?php echo home_url(); ?>" role="search">
 		<div class="search-form__inner">
@@ -87,56 +90,73 @@ $reception_background = iro_opt('reception_background');
 	<!-- search end -->
 <?php wp_footer(); ?>
 <div class="skin-menu no-select">
-<?php if(iro_opt('style_menu_display') == 'full'): ?>
-	<p style="margin-bottom: 0.5em;"><?php echo iro_opt('style_menu_reception_text', ''); ?></p>
-<?php endif; ?>
-    <div class="theme-controls row-container">
-        <ul class="menu-list">
-            <li id="white-bg">
-			<i class="fa-solid fa-display fa-sm"></i>
-			</li><!--Default-->
-			<?php if($reception_background['heart_shaped'] == '1'): ?>
-            <li id="diy1-bg">
-			<i class="fa-regular fa-heart"></i>
-			</li><!--Diy1-->
-			<?php endif; ?>
-			<?php if($reception_background['star_shaped'] == '1'): ?>
-            <li id="diy2-bg">
-			<i class="fa-regular fa-star"></i>
-			</li><!--Diy2-->
-			<?php endif; ?>
-			<?php if($reception_background['square_shaped'] == '1'): ?>
-            <li id="diy3-bg">
-			<i class="fa-brands fa-delicious"></i>
-			</li><!--Diy3-->
-			<?php endif; ?>
-			<?php if($reception_background['lemon_shaped'] == '1'): ?>
-            <li id="diy4-bg">
-			<i class="fa-regular fa-lemon"></i>
-			</li><!--Diy4-->
-			<?php endif; ?>
-            <li id="dark-bg">
-			<i class="fa-regular fa-moon"></i>
-            </li><!--Night-->
-        </ul>
-	</div>
-	<?php if(iro_opt('style_menu_display') == 'full'): ?>
-	<p style="margin-bottom: 0.1em;"><?php echo iro_opt('style_menu_font_area_text', ''); ?></p>
-    <div class="font-family-controls row-container">
-        <button type="button" class="control-btn-serif selected" data-name="serif" ><i class="fa-solid fa-font"></i></button>
-        <button type="button" class="control-btn-sans-serif" data-name="sans-serif"><i class="fa-solid fa-bold"></i></button>
-	</div>
-	<?php endif; ?>
-</div>
 <?php if (iro_opt('sakura_widget')) : ?>
-	<aside id="secondary" class="widget-area" role="complementary" style="left: -400px;">
-    <div class="heading"><?php _e('Widgets','sakurairo') /*小工具*/ ?></div>
+	<aside id="iro-widget" class="widget-area" role="complementary">
     <div class="sakura_widget">
 	<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('sakura_widget')) : endif; ?>
 	</div>
-	<div class="show-hide-wrap"><button class="show-hide"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z"></path></svg></button></div>
-    </aside>
+  </aside>
 <?php endif; ?>
+        <?php if (iro_opt('widget_shuo', 'true')) : ?>    
+        <?php
+            $args = array(
+                    'post_type' => 'shuoshuo',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 1
+                    );
+            $shuoshuo_query = new WP_Query($args);
+        ?>
+        <?php while ($shuoshuo_query->have_posts()) : $shuoshuo_query->the_post(); ?>
+            <div class="footer-shuo">
+            <p><?php echo strip_tags(get_the_content()); ?></p>
+			<p class="footer-shuotime"><i class="fa-regular fa-clock"></i> <?php the_time('Y/n/j G:i'); ?></p>
+            </div>
+        <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+        <?php endif; ?>  
+  <div class="theme-controls row-container">
+  <?php if (iro_opt('widget_daynight', 'true')): ?>
+    <ul class="menu-list">
+      <li id="white-bg">
+        <i class="fa-solid fa-display fa-sm"></i>
+      </li><!--Default-->
+      <li id="dark-bg">
+        <i class="fa-regular fa-moon"></i>
+      </li><!--Night-->
+    </ul>
+  <?php endif; ?>
+  <?php if(array_search(1, $reception_background) !== false): ?>
+	<ul class="menu-list">
+	  <?php
+      $bgIcons = [
+        ['heart_shaped', 'fa-regular fa-heart', 'diy1-bg'],
+        ['star_shaped', 'fa-regular fa-star', 'diy2-bg'],
+        ['square_shaped', 'fa-brands fa-delicious', 'diy3-bg'],
+        ['lemon_shaped', 'fa-regular fa-lemon', 'diy4-bg']
+      ];
+      
+      foreach ($bgIcons as $bgIcon) {
+        if ($reception_background[$bgIcon[0]] == '1') {
+          echo '<li id="' . $bgIcon[2] . '">';
+          echo '<i class="' . $bgIcon[1] . '"></i>';
+          echo '</li>';
+        }
+      }
+      ?>
+  </ul>
+  <?php endif; ?>
+  <?php if (iro_opt('widget_font', 'true')): ?>  
+	<div class="font-family-controls row-container">
+    <button type="button" class="control-btn-serif selected" data-name="serif">
+      <i class="fa-solid fa-font fa-lg"></i>
+    </button>
+    <button type="button" class="control-btn-sans-serif" data-name="sans-serif">
+      <i class="fa-solid fa-bold fa-lg"></i>
+    </button>
+  </div>
+  <?php endif; ?>
+  </div>
+</div>
 <?php if (iro_opt('aplayer_server') != 'off'): ?>
     <div id="aplayer-float" style="z-index: 100;"
 	    class="aplayer"

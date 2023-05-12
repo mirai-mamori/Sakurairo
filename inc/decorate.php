@@ -26,11 +26,13 @@ if (iro_opt('theme_skin')) { ?>
     --comment_area_shadow: <?=iro_opt('comment_area_shadow_color'); ?>;
     --shuoshuo_background_color1:<?=iro_opt('shuoshuo_background_color1');?>;
     --shuoshuo_background_color2:<?=iro_opt('shuoshuo_background_color2');?>;
+    --inline_code_background_color:<?=iro_opt('inline_code_background_color');?>;
     <?php //深色模式主题色 ?>
     --theme-skin-dark:  <?=iro_opt('theme_skin_dark'); ?>;
     --global-font-weight:<?=iro_opt('global_font_weight');?>;
     --theme-dm-background_transparency:<?=iro_opt('theme_darkmode_background_transparency')?>;
     --exhibition_area_matching_color:<?=iro_opt('exhibition_area_matching_color');?>;
+    --inline_code_background_color_in_dark_mode:<?=iro_opt('inline_code_background_color_in_dark_mode');?>;
 }
 <?php if (iro_opt('theme_commemorate_mode')) {?>
     html{
@@ -127,9 +129,9 @@ if (iro_opt('theme_skin')) { ?>
 }
  
 .logolink ruby rt {
-    font-size: 12px;
+    font-size: 10px;
     letter-spacing:2px;
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     opacity: 0;
     transiton-property: opacity;
     transition-duration: 0.5s, 0.5s;
@@ -366,14 +368,12 @@ body.dark .the-feature.from_left_and_right .info
 {background-color: rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);}
 
 body.dark .yya,
-body.dark .widget-area,
-body.dark .skin-menu,
 body.dark input[type=submit] 
 {background-color:rgba(38,38,38,<?=iro_opt('theme_darkmode_widget_transparency'); ?>) !important;}
 
 /*深色模式自定义颜色*/
-body.dark .headertop-down i 
-{color: <?=iro_opt('drop_down_arrow_dark_color'); ?> !important;}
+body.dark .headertop-down svg path 
+{fill: <?=iro_opt('drop_down_arrow_dark_color'); ?> !important;transition: all 0.8s ease !important;}
 
 /*深色模式图像亮度*/
 body.dark img,
@@ -433,7 +433,7 @@ font-family: '<?php echo $mashiro_logo['font_name']; ?>';
 font-family:<?=iro_opt('footer_text_font'); ?> !important;
 }
 
-.skin-menu {
+.skin-menu p{
 font-family:<?=iro_opt('style_menu_font'); ?> !important;
 }
 
@@ -476,7 +476,7 @@ body{
 cursor: url(<?=iro_opt('cursor_nor'); ?>), auto;
 }
 
-.headertop-down i,
+.headertop-down,
 #waifu #live2d,
 .aplayer svg,
 .aplayer.aplayer-narrow .aplayer-body,
@@ -783,10 +783,6 @@ h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,
 
 /*其他*/
 
-.widget-area .sakura_widget{
-    background-image: url(<?=iro_opt('sakura_widget_background', ''); ?>);
-}
-
 .headertop{
     border-radius: 0 0 <?=iro_opt('cover_radius', ''); ?>px <?=iro_opt('cover_radius', ''); ?>px;
 }
@@ -829,6 +825,12 @@ display:none;
 
 <?php if (!iro_opt('nav_menu_user_avatar', 'true')): ?>
 .header-user-avatar{
+display:none;
+}
+<?php endif; ?>
+
+<?php if (!iro_opt('footer_sakura', 'true')): ?>
+.sakura-icon{
 display:none;
 }
 <?php endif; ?>

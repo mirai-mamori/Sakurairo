@@ -65,7 +65,7 @@ $vision_resource_basepath = iro_opt('vision_resource_basepath');
 	<?php
 	if (is_home()) {
 		//预载资源
-		//id需要一致，使pjax可以完成自动替换
+		//id 需要一致，使 pjax 可以完成自动替换
 		global $core_lib_basepath;
 	?>
 		<link id="entry-content-css" rel="prefetch" as="style" href="<?= $core_lib_basepath . '/css/theme/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css?ver=' . IRO_VERSION ?>" />
@@ -142,7 +142,7 @@ $vision_resource_basepath = iro_opt('vision_resource_basepath');
 		</div>
 	</header><!-- #masthead -->
 	<div class="openNav no-select">
-		<div class="iconflat no-select">
+		<div class="iconflat no-select" style="padding: 30px;">
 			<div class="icon"></div>
 		</div>
 	</div><!-- m-nav-bar -->

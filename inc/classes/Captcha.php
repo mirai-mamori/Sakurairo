@@ -24,10 +24,10 @@ class Captcha
     private function create_captcha(): void
     {
         $dict = str_split('abcdefhjkmnpqrstuvwxy12345678');
-        $rand_keys = array_rand($dict,5);
-        foreach($rand_keys as $value){
-            $this-> captchCode .= $dict[$value];
-        }
+        $randKeys = array_rand($dict, 5);
+        $this->captchCode = implode('', array_map(function ($value) use ($dict) {
+            return $dict[$value];
+        }, $randKeys));
     }
 
     /**
@@ -73,20 +73,20 @@ class Captcha
         //创建验证码
         $this->create_captcha();
         //绘制文字
-        for ($i = 1; $i <= 5; $i++) {
-            $span = 20;
+        for ($i = 0; $i < 5; $i++) {
+            // $span = 20;
             $stringcolor = imagecolorallocate($img, mt_rand(0, 255), mt_rand(0, 100), mt_rand(0, 80));
-            imagefttext($img, 25, 2, $i * $span, 30, $stringcolor, $file, $this->captchCode[$i - 1]);
+            imagefttext($img, 25, 2, $i * 20, 30, $stringcolor, $file, $this->captchCode[$i]);
         }
 
         //添加干扰线
-        for ($i = 1; $i <= 8; $i++) {
+        for ($i = 0; $i < 8; $i++) {
             $linecolor = imagecolorallocate($img, mt_rand(0, 150), mt_rand(0, 250), mt_rand(0, 255));
             imageline($img, mt_rand(0, 179), mt_rand(0, 39), mt_rand(0, 179), mt_rand(0, 39), $linecolor);
         }
 
         //添加干扰点
-        for ($i = 1; $i <= 144; $i++) {
+        for ($i = 0; $i < 144; $i++) {
             $pixelcolor = imagecolorallocate($img, mt_rand(100, 150), mt_rand(0, 120), mt_rand(0, 255));
             imagesetpixel($img, mt_rand(0, 179), mt_rand(0, 39), $pixelcolor);
         }
@@ -121,19 +121,19 @@ class Captcha
      */
     public function check_captcha(string $captcha, int $timestamp, string $id): array
     {
-        $temp = time();
-        $temp1 = $temp - 60;
-        if (!isset($timestamp) || !isset($id) || !preg_match('/^[\w$.\/]+$/', $id) || !ctype_digit($timestamp)) {
+        $currentTime = time();
+        $timeThreshold = $currentTime - 60;
+        if (!isset($timestamp) || !isset($id) || !preg_match('/^[\w$.\/]+$/', $id) || !ctype_digit((string)$timestamp)) {
             $code = 3;
             $msg = __('Bad Request.',"sakurairo");//非法请求
-        } elseif (!$captcha || isset($captcha[5]) || !isset($captcha[4])) {
+        } elseif (empty($captcha) || strlen($captcha) !== 5) {
             $code = 3;
             $msg = __("Look like you forgot to enter the captcha.","sakurairo");//请输入正确的验证码!
-        } elseif ($timestamp < $temp1) {
+        } elseif ($timestamp < $timeThreshold) {
             $code = 2;
             $msg =  __("Captcha timeout.","sakurairo");//超时!
-        } elseif ($timestamp >= $temp1 && $timestamp <= $temp) {
-            if ($this->verify_captcha($captcha.$timestamp, $id) == true) {
+        } elseif ($timestamp >= $timeThreshold && $timestamp <= $currentTime) {
+            if ($this->verify_captcha($captcha . $timestamp, $id)) {
                 $code = 5;
                 $msg = __("Captcha check passed.","sakurairo");//'验证码正确!'
             } else {
