@@ -503,12 +503,21 @@ function is_webp(): bool
     return (isset($_COOKIE['su_webp']) || (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'image/webp')));
 }
 
-/*
- * 友情链接
+/**
+ * 获取友情链接列表
+ * @Param: string $sorting_mode 友情链接列表排序模式，name、updated、rating、rand四种模式
+ * @Param: string $link_order 友情链接列表排序方法，ASC、DESC（升序或降序）
+ * @Param: mixed $id 友情链接ID
+ * @Param: string $output HTML格式化输出
  */
 function get_the_link_items($id = null)
-{
-    $bookmarks = get_bookmarks('orderby=date&category=' . $id);
+{   $sorting_mode = iro_opt('friend_link_sorting_mode');
+    $link_order = iro_opt('friend_link_order');
+    $bookmarks = get_bookmarks(array(
+        'orderby'  => $sorting_mode,
+        'order'    => $link_order,
+        'category' => $id
+    ));
     $output = '';
     if (!empty($bookmarks)) {
         $output .= '<ul class="link-items fontSmooth">';
@@ -532,7 +541,7 @@ function get_link_items()
 {
     $linkcats = get_terms('link_category');
     $result = null;
-    if (empty($linkcats)) return get_the_link_items();    
+    if (empty($linkcats)) return get_the_link_items();  // 友链无分类，直接返回全部列表  
     $link_category_need_display = get_post_meta(get_queried_object_id(), 'link_category_need_display', false);
     foreach ($linkcats as $linkcat) {
         if (!empty($link_category_need_display) && !in_array($linkcat->name, $link_category_need_display, true)) {
