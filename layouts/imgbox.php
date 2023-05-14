@@ -87,25 +87,7 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
                             <?php $print_social_zone(); ?>
                         </div>
                     <?php endif; ?>
-                </div>
-                    <!-- 首页说说 -->
-                    <?php if (iro_opt('homepage_shuoshuo', 'true')) : ?>    
-                    <?php
-                    $args = array(
-                    'post_type' => 'shuoshuo',
-                    'post_status' => 'publish',
-                    'posts_per_page' => 1
-                    );
-                    $shuoshuo_query = new WP_Query($args);
-                    ?>
-                    <?php while ($shuoshuo_query->have_posts()) : $shuoshuo_query->the_post(); ?>
-                    <div class="header-shuo">
-                    <p><?php echo strip_tags(get_the_content()); ?></p>
-                    <p class="header_shuoshuo_time"><i class="fa-regular fa-clock"></i> <?php the_time('Y/n/j G:i'); ?></p>
-                    </div>
-                    <?php endwhile; ?>
-                    <?php wp_reset_postdata(); ?>
-                    <?php endif; ?>                    
+                </div>               
             </div>
 
             <?php if (iro_opt('infor_bar_style') === 'v1') : ?>
@@ -116,55 +98,6 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
         </div>
     <?php } ?>
 </figure>
-<?php if (iro_opt('homepage_shuoshuo', 'true')) : ?> 
-    <script type="text/javascript">
-        (function() {
-            const container = document.querySelector(".header-container");
-            const dom1 = document.querySelector(".header-info");
-            const dom2 = document.querySelector(".header-shuo");
-            dom2.remove();
-            const duration = 1500; // 持续时间，例如：1000毫秒
-            let index = 0;
-
-            function fadeInOut(dom1, dom2, duration) {
-                let start = null;
-                const step = (timestamp) => {
-                    if (!start) start = timestamp;
-                    const progress = timestamp - start;
-                    const opacity = Math.abs(Math.sin(progress / duration * (Math.PI / 2)));
-                    // dom1.style.opacity = 1 - opacity;
-                    dom2.style.opacity = opacity;
-                    if (dom1.style.opacity <=0.1){
-                        dom1.remove();
-                    }else{
-                        dom1.style.opacity = 1 - opacity;
-                    }
-
-
-                    if (progress < duration) {
-                    requestAnimationFrame(step);
-                    }
-                };
-
-                requestAnimationFrame(step);
-            }
-
-            setInterval(() => {
-                if (index === 0) {
-                    container.append(dom2);
-                    fadeInOut(dom1, dom2, duration);
-                    index++;
-                } else if (index === 1) {
-                    container.append(dom1);
-                    fadeInOut(dom2, dom1, duration);
-                    index--;
-                }
-            }, 10000);
-        })();
-    </script>
-<?php endif; ?>
-
-
 <?php
 echo bgvideo(); //BGVideo 
 ?>

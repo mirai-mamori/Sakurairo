@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-04-29 16:53+0800\n"
-"PO-Revision-Date: 2023-04-29 16:54+0800\n"
+"POT-Creation-Date: 2023-05-10 18:08+0800\n"
+"PO-Revision-Date: 2023-05-10 18:08+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -147,59 +147,55 @@ msgstr "何かを見つけたいですか?"
 msgid "Search"
 msgstr "検索"
 
-#: footer.php:136
-msgid "Widgets"
-msgstr "ウィジェット"
-
-#: functions.php:89
+#: functions.php:97
 msgid "Nav Menus"
 msgstr "メニュー"
 
-#: functions.php:205 functions.php:216
+#: functions.php:213 functions.php:224
 msgid "Ideas"
 msgstr "アイデア"
 
-#: functions.php:206
+#: functions.php:214
 msgid "Idea"
 msgstr "アイデア"
 
-#: functions.php:207 functions.php:208
+#: functions.php:215 functions.php:216
 msgid "Publish New Idea"
 msgstr "新規追加"
 
-#: functions.php:209
+#: functions.php:217
 msgid "Edit Idea"
 msgstr "%sを編集"
 
-#: functions.php:210
+#: functions.php:218
 msgid "New Idea"
 msgstr "新しいアイデア"
 
-#: functions.php:211
+#: functions.php:219
 msgid "View Idea"
 msgstr "表示"
 
-#: functions.php:212
+#: functions.php:220
 msgid "Search Idea"
 msgstr "検索"
 
-#: functions.php:213
+#: functions.php:221
 msgid "Not Found Idea"
 msgstr "アイデアが見つかりません"
 
-#: functions.php:214
+#: functions.php:222
 msgid "No Idea in the Trash"
 msgstr "ゴミ箱の中には何もない"
 
-#: functions.php:287
+#: functions.php:297
 msgid "Copied!"
 msgstr "コピーしました!"
 
-#: functions.php:288
+#: functions.php:298
 msgid "Copy Code"
 msgstr "コードをコピー"
 
-#: functions.php:289
+#: functions.php:299
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
@@ -207,19 +203,19 @@ msgstr ""
 "あなたのカバー API はクロスオリジンアクセスをサポートしていないようです。この"
 "場合、Cover Cacheは有効になりません。"
 
-#: functions.php:290
+#: functions.php:300
 msgid "Commiting...."
 msgstr "提出中…."
 
-#: functions.php:291
+#: functions.php:301
 msgid "Succeed"
 msgstr "継ぐ"
 
-#: functions.php:292
+#: functions.php:302
 msgid "10 files max per request"
 msgstr "1回のリクエストで送信できるファイル数の上限は10個です"
 
-#: functions.php:293
+#: functions.php:303
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -233,15 +229,15 @@ msgstr ""
 "\n"
 "この画像が大きすぎる~再アップロードしてください!"
 
-#: functions.php:294
+#: functions.php:304
 msgid "Uploading..."
 msgstr "アップロード中..."
 
-#: functions.php:295
+#: functions.php:305
 msgid "Uploaded successfully~"
 msgstr "アップロードに成功しました~"
 
-#: functions.php:296
+#: functions.php:306
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -253,127 +249,127 @@ msgstr ""
 "コード=> {1}\n"
 "{2}"
 
-#: functions.php:297
+#: functions.php:307
 msgid "Upload failed, please retry."
 msgstr "アップロードに失敗しました、もう一度やり直してください。"
 
-#: functions.php:298
+#: functions.php:308
 msgid "Page Load failed. HTTP {0}"
 msgstr "ページの読み込みに失敗しました。HTTP {0}"
 
-#: functions.php:299
+#: functions.php:309
 msgid "Glad you come, but we've got nothing left."
 msgstr "あなたが来てうれしいですが、私たちは何も残っていません。"
 
-#: functions.php:300
+#: functions.php:310
 msgid "Post"
 msgstr "投稿"
 
-#: functions.php:301
+#: functions.php:311
 msgid "Tag"
 msgstr "タグ"
 
-#: functions.php:302
+#: functions.php:312
 msgid "Category"
 msgstr "カテゴリー"
 
-#: functions.php:303
+#: functions.php:313
 msgid "Page"
 msgstr "ページ"
 
-#: functions.php:304
+#: functions.php:314
 msgid "Comment"
 msgstr "コメント"
 
-#: functions.php:305
+#: functions.php:315
 msgid "Paused..."
 msgstr "一時 停止。。。"
 
-#: functions.php:306
+#: functions.php:316
 msgid "Loading Video..."
 msgstr "ビデオを読み込んでいます..."
 
-#: functions.php:307
+#: functions.php:317
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "フォントをダウンロードするには、データ使用量に注意してください。"
 
-#: functions.php:308
+#: functions.php:318
 msgid "Are you sure you want set it private?"
 msgstr "プライベートに設定してもよろしいですか?"
 
-#: functions.php:309
+#: functions.php:319
 msgid "You had set private comment before"
 msgstr "以前にプライベートコメントを設定していた"
 
-#: functions.php:379 inc/theme_plus.php:194
+#: functions.php:389 inc/theme_plus.php:194
 msgid "Author"
 msgstr "投稿者"
 
-#: functions.php:379
+#: functions.php:389
 msgid "Blogger"
 msgstr "Blogger"
 
-#: functions.php:385
+#: functions.php:395
 msgid "Location"
 msgstr "場所"
 
-#: functions.php:391
+#: functions.php:401
 msgid "Private"
 msgstr "プライベート"
 
-#: functions.php:393
+#: functions.php:403
 msgid "Yes"
 msgstr "はい"
 
-#: functions.php:395
+#: functions.php:405
 msgid "No"
 msgstr "いいえ"
 
-#: functions.php:398
+#: functions.php:408
 msgid "Edit"
 msgstr "編集"
 
-#: functions.php:507
+#: functions.php:517
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "こやつはとても怠惰な╮(╯▽╰)╭"
 
-#: functions.php:752
+#: functions.php:762
 msgid "Download Link"
 msgstr "ダウンロードリンク"
 
-#: functions.php:825
+#: functions.php:835
 msgid "Remember me"
 msgstr "ログイン状態を保存する"
 
-#: functions.php:1244
+#: functions.php:1254
 msgid "All expand/collapse"
 msgstr "すべての展開/折りたたみ"
 
-#: functions.php:1277
+#: functions.php:1287
 msgid " "
 msgstr " "
 
-#: functions.php:1281
+#: functions.php:1291
 msgid " post(s)"
 msgstr " 記事"
 
-#: functions.php:1309 functions.php:1312 inc/theme_plus.php:427
+#: functions.php:1319 functions.php:1322 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: functions.php:1617
+#: functions.php:1627
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>エラー</b>: このメールドメイン (<b>@"
 
-#: functions.php:1742
+#: functions.php:1752
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1826
+#: functions.php:1836
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:1955
+#: functions.php:1965
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -385,7 +381,7 @@ msgstr ""
 "href=\"https://qiita.com/cyborg__ninja/items/8a191a00d402e78d8823\" "
 "target=\"_blank\"> 擬似静的化 </a>を構成する必要があります。 </b>"
 
-#: functions.php:2085
+#: functions.php:2095
 msgid "Expand / Collapse"
 msgstr "展開/折りたたみ"
 
@@ -534,7 +530,7 @@ msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "コメントを残す<span class=\"screen-reader-text\"> に %s</span>"
 
 #. translators: %s: Name of current post
-#: inc/template-tags.php:72 tpl/content-page.php:36
+#: inc/template-tags.php:72 tpl/content-page.php:35
 #, php-format
 msgid "Edit %s"
 msgstr "%sを編集"
@@ -662,11 +658,11 @@ msgstr "前の投稿"
 msgid "Next Post"
 msgstr "次の投稿"
 
-#: page-word.php:34
+#: page-word.php:39
 msgid "You have not posted a comment yet"
 msgstr "あなたはまだコメントを投稿していません"
 
-#: page-word.php:35
+#: page-word.php:40
 msgid "Go and post your first comment now"
 msgstr "今すぐ最初のコメントを投稿してください"
 
@@ -723,7 +719,7 @@ msgstr ""
 "私たちはあなたが望むものを見つけられなかったようです。たぶん、あなたはそれを"
 "検索することができます。"
 
-#: tpl/content-page.php:25 tpl/content-single.php:45 tpl/single-image.php:34
+#: tpl/content-page.php:24 tpl/content-single.php:45 tpl/single-image.php:34
 msgid "Pages:"
 msgstr "ページ:"
 

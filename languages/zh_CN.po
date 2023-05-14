@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-04-29 16:54+0800\n"
-"PO-Revision-Date: 2023-04-29 16:54+0800\n"
+"POT-Creation-Date: 2023-05-10 18:08+0800\n"
+"PO-Revision-Date: 2023-05-10 18:08+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -147,77 +147,73 @@ msgstr "想要找点什么呢？"
 msgid "Search"
 msgstr "搜索"
 
-#: footer.php:136
-msgid "Widgets"
-msgstr "小工具"
-
-#: functions.php:89
+#: functions.php:97
 msgid "Nav Menus"
 msgstr "导航菜单"
 
-#: functions.php:205 functions.php:216
+#: functions.php:213 functions.php:224
 msgid "Ideas"
 msgstr "说说"
 
-#: functions.php:206
+#: functions.php:214
 msgid "Idea"
 msgstr "说说"
 
-#: functions.php:207 functions.php:208
+#: functions.php:215 functions.php:216
 msgid "Publish New Idea"
 msgstr "发布新说说"
 
-#: functions.php:209
+#: functions.php:217
 msgid "Edit Idea"
 msgstr "编辑说说"
 
-#: functions.php:210
+#: functions.php:218
 msgid "New Idea"
 msgstr "新说说"
 
-#: functions.php:211
+#: functions.php:219
 msgid "View Idea"
 msgstr "查看说说"
 
-#: functions.php:212
+#: functions.php:220
 msgid "Search Idea"
 msgstr "搜索说说"
 
-#: functions.php:213
+#: functions.php:221
 msgid "Not Found Idea"
 msgstr "没有找到说说"
 
-#: functions.php:214
+#: functions.php:222
 msgid "No Idea in the Trash"
 msgstr "没有在垃圾桶的说说"
 
-#: functions.php:287
+#: functions.php:297
 msgid "Copied!"
 msgstr "复制成功！"
 
-#: functions.php:288
+#: functions.php:298
 msgid "Copy Code"
 msgstr "拷贝代码"
 
-#: functions.php:289
+#: functions.php:299
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
 msgstr "你的封面API好像不支持跨域调用,这种情况下缓存是不会生效的哦。"
 
-#: functions.php:290
+#: functions.php:300
 msgid "Commiting...."
 msgstr "提交中...."
 
-#: functions.php:291
+#: functions.php:301
 msgid "Succeed"
 msgstr "成功"
 
-#: functions.php:292
+#: functions.php:302
 msgid "10 files max per request"
 msgstr "每次上传上限为10张"
 
-#: functions.php:293
+#: functions.php:303
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -226,15 +222,15 @@ msgid ""
 "This image is too large~Please reupload!"
 msgstr "图片上传大小限制为5 MB\\n\\n「{0}」\\n\\n这张图太大啦~请重新上传噢！"
 
-#: functions.php:294
+#: functions.php:304
 msgid "Uploading..."
 msgstr "上传中..."
 
-#: functions.php:295
+#: functions.php:305
 msgid "Uploaded successfully~"
 msgstr "上传成功~"
 
-#: functions.php:296
+#: functions.php:306
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -242,127 +238,127 @@ msgid ""
 "{2}"
 msgstr "上传失败！\\n文件名=> {0}\\ncode=> {1}\\n{2}"
 
-#: functions.php:297
+#: functions.php:307
 msgid "Upload failed, please retry."
 msgstr "上传失败，请重试."
 
-#: functions.php:298
+#: functions.php:308
 msgid "Page Load failed. HTTP {0}"
 msgstr "页面加载出错了 HTTP {0}"
 
-#: functions.php:299
+#: functions.php:309
 msgid "Glad you come, but we've got nothing left."
 msgstr "很高兴你翻到这里，但是真的没有了..."
 
-#: functions.php:300
+#: functions.php:310
 msgid "Post"
 msgstr "文章"
 
-#: functions.php:301
+#: functions.php:311
 msgid "Tag"
 msgstr "标签"
 
-#: functions.php:302
+#: functions.php:312
 msgid "Category"
 msgstr "分类"
 
-#: functions.php:303
+#: functions.php:313
 msgid "Page"
 msgstr "页面"
 
-#: functions.php:304
+#: functions.php:314
 msgid "Comment"
 msgstr "评论"
 
-#: functions.php:305
+#: functions.php:315
 msgid "Paused..."
 msgstr "暂停中..."
 
-#: functions.php:306
+#: functions.php:316
 msgid "Loading Video..."
 msgstr "正在加载视频..."
 
-#: functions.php:307
+#: functions.php:317
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "下载字体时，请注意您的数据使用情况。"
 
-#: functions.php:308
+#: functions.php:318
 msgid "Are you sure you want set it private?"
 msgstr "是否要将其设置为私密？"
 
-#: functions.php:309
+#: functions.php:319
 msgid "You had set private comment before"
 msgstr "您之前设置了私人评论"
 
-#: functions.php:379 inc/theme_plus.php:194
+#: functions.php:389 inc/theme_plus.php:194
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:379
+#: functions.php:389
 msgid "Blogger"
 msgstr "博主"
 
-#: functions.php:385
+#: functions.php:395
 msgid "Location"
 msgstr "来自"
 
-#: functions.php:391
+#: functions.php:401
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:393
+#: functions.php:403
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:395
+#: functions.php:405
 msgid "No"
 msgstr "否"
 
-#: functions.php:398
+#: functions.php:408
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:507
+#: functions.php:517
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:752
+#: functions.php:762
 msgid "Download Link"
 msgstr "下载地址"
 
-#: functions.php:825
+#: functions.php:835
 msgid "Remember me"
 msgstr "记住我"
 
-#: functions.php:1244
+#: functions.php:1254
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1277
+#: functions.php:1287
 msgid " "
 msgstr " "
 
-#: functions.php:1281
+#: functions.php:1291
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1309 functions.php:1312 inc/theme_plus.php:427
+#: functions.php:1319 functions.php:1322 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1617
+#: functions.php:1627
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:1742
+#: functions.php:1752
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1826
+#: functions.php:1836
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1955
+#: functions.php:1965
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -373,7 +369,7 @@ msgstr ""
 "固定链接</a>设置为朴素。为此，您可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">伪静态</a></b>"
 
-#: functions.php:2085
+#: functions.php:2095
 msgid "Expand / Collapse"
 msgstr "展开 / 收起"
 
@@ -522,7 +518,7 @@ msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "<span class=\"screen-reader-text\"> 在 %s</span>中留言"
 
 #. translators: %s: Name of current post
-#: inc/template-tags.php:72 tpl/content-page.php:36
+#: inc/template-tags.php:72 tpl/content-page.php:35
 #, php-format
 msgid "Edit %s"
 msgstr "编辑 %s"
@@ -650,11 +646,11 @@ msgstr "上一篇文章"
 msgid "Next Post"
 msgstr "下一篇文章"
 
-#: page-word.php:34
+#: page-word.php:39
 msgid "You have not posted a comment yet"
 msgstr "您尚未发表说说"
 
-#: page-word.php:35
+#: page-word.php:40
 msgid "Go and post your first comment now"
 msgstr "现在就去发表你的第一条说说吧"
 
@@ -707,7 +703,7 @@ msgstr "没有找到你想要的，看看其他的吧。"
 msgid "We didn't seem to find what you want. Maybe you can search for it."
 msgstr "我们似乎没有找到你想要的东西. 或许你可以搜索一下试试."
 
-#: tpl/content-page.php:25 tpl/content-single.php:45 tpl/single-image.php:34
+#: tpl/content-page.php:24 tpl/content-single.php:45 tpl/single-image.php:34
 msgid "Pages:"
 msgstr "页面："
 

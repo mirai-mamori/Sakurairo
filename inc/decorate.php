@@ -129,9 +129,9 @@ if (iro_opt('theme_skin')) { ?>
 }
  
 .logolink ruby rt {
-    font-size: 12px;
+    font-size: 10px;
     letter-spacing:2px;
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     opacity: 0;
     transiton-property: opacity;
     transition-duration: 0.5s, 0.5s;
@@ -368,8 +368,6 @@ body.dark .the-feature.from_left_and_right .info
 {background-color: rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);}
 
 body.dark .yya,
-body.dark .widget-area,
-body.dark .skin-menu,
 body.dark input[type=submit] 
 {background-color:rgba(38,38,38,<?=iro_opt('theme_darkmode_widget_transparency'); ?>) !important;}
 
@@ -435,7 +433,7 @@ font-family: '<?php echo $mashiro_logo['font_name']; ?>';
 font-family:<?=iro_opt('footer_text_font'); ?> !important;
 }
 
-.skin-menu {
+.skin-menu p{
 font-family:<?=iro_opt('style_menu_font'); ?> !important;
 }
 
@@ -784,10 +782,6 @@ h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,
 <?php endif; ?>
 
 /*其他*/
-
-.widget-area .sakura_widget{
-    background-image: url(<?=iro_opt('sakura_widget_background', ''); ?>);
-}
 
 .headertop{
     border-radius: 0 0 <?=iro_opt('cover_radius', ''); ?>px <?=iro_opt('cover_radius', ''); ?>px;
