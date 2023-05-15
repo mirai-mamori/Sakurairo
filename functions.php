@@ -10,7 +10,7 @@
 
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '18.0.0');
+define('INT_VERSION', '18.1.1');
 define('BUILD_VERSION', '2');
 
 function check_php_version($preset_version) {
