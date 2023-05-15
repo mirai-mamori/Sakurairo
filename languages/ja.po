@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-05-10 18:08+0800\n"
-"PO-Revision-Date: 2023-05-10 18:08+0800\n"
+"POT-Creation-Date: 2023-05-15 10:36+0800\n"
+"PO-Revision-Date: 2023-05-15 10:37+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -139,6 +139,10 @@ msgstr "ロード時間 %.3f 秒 | %d クエリ | RAM 使用量  %.2f MB "
 msgid "Go to top"
 msgstr "このページのトップへ"
 
+#: footer.php:69
+msgid "Control Panel"
+msgstr "コントロールパネル"
+
 #: footer.php:75 footer.php:83
 msgid "Want to find something?"
 msgstr "何かを見つけたいですか?"
@@ -146,6 +150,26 @@ msgstr "何かを見つけたいですか?"
 #: footer.php:84
 msgid "Search"
 msgstr "検索"
+
+#: footer.php:120
+msgid "Light Mode"
+msgstr "ライトフィルター"
+
+#: footer.php:123
+msgid "Dark Mode"
+msgstr "ダークモード"
+
+#: footer.php:129
+msgid "Toggle Page Background Image"
+msgstr "検索エリア背景画像"
+
+#: footer.php:150
+msgid "Switch To Font A"
+msgstr "フォントAに切り替え"
+
+#: footer.php:153
+msgid "Switch To Font B"
+msgstr "フォントBに切り替え"
 
 #: functions.php:97
 msgid "Nav Menus"
@@ -329,47 +353,47 @@ msgstr "いいえ"
 msgid "Edit"
 msgstr "編集"
 
-#: functions.php:517
+#: functions.php:526
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "こやつはとても怠惰な╮(╯▽╰)╭"
 
-#: functions.php:762
+#: functions.php:771
 msgid "Download Link"
 msgstr "ダウンロードリンク"
 
-#: functions.php:835
+#: functions.php:844
 msgid "Remember me"
 msgstr "ログイン状態を保存する"
 
-#: functions.php:1254
+#: functions.php:1265
 msgid "All expand/collapse"
 msgstr "すべての展開/折りたたみ"
 
-#: functions.php:1287
+#: functions.php:1298
 msgid " "
 msgstr " "
 
-#: functions.php:1291
+#: functions.php:1302
 msgid " post(s)"
 msgstr " 記事"
 
-#: functions.php:1319 functions.php:1322 inc/theme_plus.php:427
+#: functions.php:1330 functions.php:1333 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: functions.php:1627
+#: functions.php:1638
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>エラー</b>: このメールドメイン (<b>@"
 
-#: functions.php:1752
+#: functions.php:1763
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:1836
+#: functions.php:1847
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:1965
+#: functions.php:1976
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -381,7 +405,7 @@ msgstr ""
 "href=\"https://qiita.com/cyborg__ninja/items/8a191a00d402e78d8823\" "
 "target=\"_blank\"> 擬似静的化 </a>を構成する必要があります。 </b>"
 
-#: functions.php:2095
+#: functions.php:2106
 msgid "Expand / Collapse"
 msgstr "展開/折りたたみ"
 
@@ -658,11 +682,11 @@ msgstr "前の投稿"
 msgid "Next Post"
 msgstr "次の投稿"
 
-#: page-word.php:39
+#: page-word.php:41
 msgid "You have not posted a comment yet"
 msgstr "あなたはまだコメントを投稿していません"
 
-#: page-word.php:40
+#: page-word.php:42
 msgid "Go and post your first comment now"
 msgstr "今すぐ最初のコメントを投稿してください"
 

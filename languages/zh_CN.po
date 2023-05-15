@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-05-10 18:08+0800\n"
-"PO-Revision-Date: 2023-05-10 18:08+0800\n"
+"POT-Creation-Date: 2023-05-15 10:37+0800\n"
+"PO-Revision-Date: 2023-05-15 10:41+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -139,6 +139,10 @@ msgstr "加载耗时 %.3f 秒 | 查询 %d 次 | 内存使用 %.2f MB "
 msgid "Go to top"
 msgstr "回到顶部"
 
+#: footer.php:69
+msgid "Control Panel"
+msgstr "控制面板"
+
 #: footer.php:75 footer.php:83
 msgid "Want to find something?"
 msgstr "想要找点什么呢？"
@@ -146,6 +150,26 @@ msgstr "想要找点什么呢？"
 #: footer.php:84
 msgid "Search"
 msgstr "搜索"
+
+#: footer.php:120
+msgid "Light Mode"
+msgstr "浅色模式"
+
+#: footer.php:123
+msgid "Dark Mode"
+msgstr "深色模式"
+
+#: footer.php:129
+msgid "Toggle Page Background Image"
+msgstr "切换页面背景图像"
+
+#: footer.php:150
+msgid "Switch To Font A"
+msgstr "切换到字体 A"
+
+#: footer.php:153
+msgid "Switch To Font B"
+msgstr "切换到字体 B"
 
 #: functions.php:97
 msgid "Nav Menus"
@@ -318,47 +342,47 @@ msgstr "否"
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:517
+#: functions.php:526
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:762
+#: functions.php:771
 msgid "Download Link"
 msgstr "下载地址"
 
-#: functions.php:835
+#: functions.php:844
 msgid "Remember me"
 msgstr "记住我"
 
-#: functions.php:1254
+#: functions.php:1265
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1287
+#: functions.php:1298
 msgid " "
 msgstr " "
 
-#: functions.php:1291
+#: functions.php:1302
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1319 functions.php:1322 inc/theme_plus.php:427
+#: functions.php:1330 functions.php:1333 inc/theme_plus.php:427
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1627
+#: functions.php:1638
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:1752
+#: functions.php:1763
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1836
+#: functions.php:1847
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1965
+#: functions.php:1976
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -369,7 +393,7 @@ msgstr ""
 "固定链接</a>设置为朴素。为此，您可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">伪静态</a></b>"
 
-#: functions.php:2095
+#: functions.php:2106
 msgid "Expand / Collapse"
 msgstr "展开 / 收起"
 
@@ -646,11 +670,11 @@ msgstr "上一篇文章"
 msgid "Next Post"
 msgstr "下一篇文章"
 
-#: page-word.php:39
+#: page-word.php:41
 msgid "You have not posted a comment yet"
 msgstr "您尚未发表说说"
 
-#: page-word.php:40
+#: page-word.php:42
 msgid "Go and post your first comment now"
 msgstr "现在就去发表你的第一条说说吧"
 

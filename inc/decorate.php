@@ -713,6 +713,7 @@ h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,
 	-moz-animation: fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
     -webkit-animation:fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
 	animation: fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
+    max-width: 76vw;
 }
 @-moz-keyframes fadeInLeft {
 	0% {
