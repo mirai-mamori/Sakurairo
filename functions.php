@@ -1181,14 +1181,16 @@ add_filter('the_excerpt_rss', 'toc_support');
 add_filter('the_content_feed', 'toc_support');
 
 function check_title_tags($content) {
-    $dom = new DOMDocument();
-    @$dom->loadHTML($content);
-    $headings = $dom->getElementsByTagName('h1');
-    for ($i = 1; $i <= 6; $i++) {
-        $headings = $dom->getElementsByTagName('h' . $i);
-        foreach ($headings as $heading) {
-            if (trim($heading->nodeValue) != '') {
-                return true;
+    if (!empty($content)) {
+        $dom = new DOMDocument();
+        @$dom->loadHTML($content);
+        $headings = $dom->getElementsByTagName('h1');
+        for ($i = 1; $i <= 6; $i++) {
+            $headings = $dom->getElementsByTagName('h' . $i);
+            foreach ($headings as $heading) {
+                if (trim($heading->nodeValue) != '') {
+                    return true;
+                }
             }
         }
     }
