@@ -10788,3 +10788,18 @@ body.dark .entry-content code {
 .aplayer-lrc {
   pointer-events: none
 }
+
+@media (max-width:860px) {
+  .pattern-center header.pattern-header {
+    top: 60px;
+    display: table;
+    margin: 0 10%;
+    height: 200px;
+  }
+  .pattern-center header.pattern-header span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 80vw;
+  }
+}
