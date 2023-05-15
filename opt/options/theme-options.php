@@ -2941,6 +2941,33 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'friend_link_sorting_mode',
+        'type' => 'select',
+        'title' => __('Friend Link Sorting Mode','sakurairo_csf'),
+        'desc' => __('Select the friend link sorting mode, "Name" is used by Default.','sakurairo_csf'),
+        'options' => array(
+          'name' => __('Name','sakurairo_csf'),
+          'rating'  => __('Rating','sakurairo_csf'),
+          'updated'  => __('Updated','sakurairo_csf'),
+          'rand'  => __('Rand','sakurairo_csf'),
+        ),
+        'default'     => 'name'
+      ),
+
+      array(
+        'id' => 'friend_link_order',
+        'type' => 'select',
+        'title' => __('Ascending OR Descending','sakurairo_csf'),
+        'desc' => __('Order friend link in ascending or descending.','sakurairo_csf'),
+        'dependency' => array( 'friend_link_sorting_mode', '!=', 'rand', '', 'true' ),
+        'options' => array(
+          'ASC' => __('Ascending','sakurairo_csf'),
+          'DESC'  => __('Descending','sakurairo_csf'),
+        ),
+        'default'     => 'ASC'
+      ),
+
+      array(
         'id' => 'ex_register_open',
         'type' => 'switcher',
         'title' => __('Login Template Registration Function','sakurairo_csf'),

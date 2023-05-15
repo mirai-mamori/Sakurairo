@@ -66,7 +66,7 @@ $reception_background = iro_opt('reception_background');
 		<?php wp_nav_menu( array( 'depth' => 2, 'theme_location' => 'primary', 'container' => false ) ); ?>
 	</div><!-- m-nav-center end -->
 	<button id="moblieGoTop" title="<?=__('Go to top','sakurairo');?>"><i class="fa-solid fa-caret-up fa-lg"></i></button>
-  <button id="changskin"><i class="fa-solid fa-compass-drafting fa-lg fa-flip" style="--fa-animation-duration: 3s;"></i></button>
+  <button id="changskin" title="<?=__('Control Panel','sakurairo');?>" ><i class="fa-solid fa-compass-drafting fa-lg fa-flip" style="--fa-animation-duration: 3s;"></i></button>
 	<!-- search start -->
 	<form class="js-search search-form search-form--modal" method="get" action="<?php echo home_url(); ?>" role="search">
 		<div class="search-form__inner">
@@ -117,16 +117,16 @@ $reception_background = iro_opt('reception_background');
   <div class="theme-controls row-container">
   <?php if (iro_opt('widget_daynight', 'true')): ?>
     <ul class="menu-list">
-      <li id="white-bg">
+      <li id="white-bg" title="<?=__('Light Mode','sakurairo');?>" >
         <i class="fa-solid fa-display fa-sm"></i>
       </li><!--Default-->
-      <li id="dark-bg">
+      <li id="dark-bg" title="<?=__('Dark Mode','sakurairo');?>" >
         <i class="fa-regular fa-moon"></i>
       </li><!--Night-->
     </ul>
   <?php endif; ?>
   <?php if(array_search(1, $reception_background) !== false): ?>
-	<ul class="menu-list">
+	<ul class="menu-list" title="<?=__('Toggle Page Background Image','sakurairo');?>">
 	  <?php
       $bgIcons = [
         ['heart_shaped', 'fa-regular fa-heart', 'diy1-bg'],
@@ -147,10 +147,10 @@ $reception_background = iro_opt('reception_background');
   <?php endif; ?>
   <?php if (iro_opt('widget_font', 'true')): ?>  
 	<div class="font-family-controls row-container">
-    <button type="button" class="control-btn-serif selected" data-name="serif">
+    <button type="button" class="control-btn-serif selected" title="<?=__('Switch To Font A','sakurairo');?>" data-name="serif">
       <i class="fa-solid fa-font fa-lg"></i>
     </button>
-    <button type="button" class="control-btn-sans-serif" data-name="sans-serif">
+    <button type="button" class="control-btn-sans-serif" title="<?=__('Switch To Font B','sakurairo');?>" data-name="sans-serif">
       <i class="fa-solid fa-bold fa-lg"></i>
     </button>
   </div>
