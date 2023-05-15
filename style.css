@@ -165,6 +165,7 @@ a {
   -webkit-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
   -moz-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
   transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+  word-break:break-word;
 }
 
 h1 {
@@ -5196,7 +5197,7 @@ summary,
 
 figure {
   display: block;
-  margin: 1em 40px;
+  margin: 1em;
 }
 
 audio,
@@ -8131,7 +8132,7 @@ body.dark .post-list-thumb:hover {
 @media (max-width:580px) {
   .comment .body p {
     margin: 0;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 24px;
     padding-bottom: 13px;
   }
@@ -8465,7 +8466,7 @@ body.dark .post-list-thumb:hover {
   }
 
   .entry-content p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .site-footer {
