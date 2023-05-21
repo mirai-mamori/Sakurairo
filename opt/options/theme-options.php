@@ -388,7 +388,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id'     => 'gfonts_api',
         'type'   => 'text',
         'title'  => __('Google Fonts Api Link','sakurairo_csf'),
-        'default' => 'fonts.geekzu.org'
+        'default' => 'fonts.googleapis.com'
       ),
 
       array(
