@@ -47,13 +47,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id'    => 'author_name',
-        'type'  => 'text',
-        'title' => __('Author Name','sakurairo_csf'),
-        'desc'   => __('For example: Fuukei','sakurairo_csf'),
-      ),
-
-      array(
         'id'    => 'personal_avatar',
         'type'  => 'upload',
         'title' => __('Personal Avatar','sakurairo_csf'),
