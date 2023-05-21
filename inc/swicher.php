@@ -48,7 +48,7 @@ function font_end_js_control() {
         'ext_shared_lib'=>iro_opt('external_vendor_lib'),
         'cookie_version_control' => iro_opt('cookie_version', ''),
         'qzone_autocomplete' => false,
-        'site_name' => iro_opt('site_name', ''),
+        'site_name' => get_bloginfo('name'),
         'author_name' => iro_opt('author_name', ''),
         'template_url' => get_template_directory_uri(),
         'site_url' => site_url(),

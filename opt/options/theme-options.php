@@ -47,13 +47,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id'    => 'site_name',
-        'type'  => 'text',
-        'title' => __('Site Name','sakurairo_csf'),
-        'desc'   => __('For example: Sakurairo Blog','sakurairo_csf'),
-      ),
-
-      array(
         'id'    => 'author_name',
         'type'  => 'text',
         'title' => __('Author Name','sakurairo_csf'),
