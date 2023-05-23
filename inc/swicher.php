@@ -10,6 +10,19 @@ function font_end_js_control() {
         global $core_lib_basepath;
         return $core_lib_basepath.'/css/theme/'.$a.'.css?'.IRO_VERSION.iro_opt('cookie_version', '');
     };
+    /**
+     * 通过ID获取作者公开显示的昵称
+     * 在head中无法通过get_the_author()函数获取作者信息，改用通过作者ID获取
+     */
+    function iro_get_the_author_name() {
+        global $post;
+        if ($post) {
+            $author_id = $post->post_author;
+            $author_name = get_the_author_meta('display_name', $author_id);
+            return $author_name;
+        }
+        return get_the_author_meta( 'display_name', 1 );
+    };
     $vision_resource_basepath = iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.6/');
     $movies = iro_opt('cover_video') ?
     array(
@@ -48,8 +61,8 @@ function font_end_js_control() {
         'ext_shared_lib'=>iro_opt('external_vendor_lib'),
         'cookie_version_control' => iro_opt('cookie_version', ''),
         'qzone_autocomplete' => false,
-        'site_name' => iro_opt('site_name', ''),
-        'author_name' => iro_opt('author_name', ''),
+        'site_name' => get_bloginfo('name'),
+        'author_name' => iro_get_the_author_name(),
         'template_url' => get_template_directory_uri(),
         'site_url' => site_url(),
         'qq_api_url' => rest_url('sakura/v1/qqinfo/json'),

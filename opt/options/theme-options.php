@@ -47,20 +47,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id'    => 'site_name',
-        'type'  => 'text',
-        'title' => __('Site Name','sakurairo_csf'),
-        'desc'   => __('For example: Sakurairo Blog','sakurairo_csf'),
-      ),
-
-      array(
-        'id'    => 'author_name',
-        'type'  => 'text',
-        'title' => __('Author Name','sakurairo_csf'),
-        'desc'   => __('For example: Fuukei','sakurairo_csf'),
-      ),
-
-      array(
         'id'    => 'personal_avatar',
         'type'  => 'upload',
         'title' => __('Personal Avatar','sakurairo_csf'),
@@ -388,7 +374,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id'     => 'gfonts_api',
         'type'   => 'text',
         'title'  => __('Google Fonts Api Link','sakurairo_csf'),
-        'default' => 'fonts.geekzu.org'
+        'default' => 'fonts.googleapis.com'
       ),
 
       array(
