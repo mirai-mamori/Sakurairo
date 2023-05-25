@@ -346,11 +346,11 @@ require get_template_directory() . '/inc/theme_plus.php';
 require get_template_directory() . '/inc/categories-images.php';
 
 //Comment Location Start
+// 获取用户真实IP地址
 function GetUserIP()
 {
     return isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0] : $_SERVER['REMOTE_ADDR'];
 }
-
 function convertip($ip = null)
 {
     if (empty($ip)) {
@@ -369,19 +369,20 @@ function convertip($ip = null)
     ]);
     $file_contents = curl_exec($ch);
     curl_close($ch);
-
     $result = json_decode($file_contents, true);
-    if ($result && $result['code'] != 0) {
-        return "未知";
+    if ($result && isset($result['code']) && isset($result['data']) && isset($result['data']['country'])) {
+        if ($result['code'] != 0 || empty($result['data']['country'])) {
+            return "未知地区";
+        }
+        if ($result['data']['country'] != '中国') {
+            return $result['data']['country'];
+        }
+        return $result['data']['country'] . '&nbsp;·&nbsp;' . $result['data']['region'] . '&nbsp;·&nbsp;' . $result['data']['city'];
     }
 
-    if ($result['data']['country'] != '中国') {
-        return $result['data']['country'];
-    }
-
-    return $result['data']['country'] . '&nbsp;·&nbsp;' . $result['data']['region'] . '&nbsp;·&nbsp;' . $result['data']['city'];
+    return "未知地区";
 }
-// Comment Location End
+//Comment Location End
 
 if (!function_exists('akina_comment_format')) {
     function akina_comment_format($comment, $args, $depth)
