@@ -346,30 +346,42 @@ require get_template_directory() . '/inc/theme_plus.php';
 require get_template_directory() . '/inc/categories-images.php';
 
 //Comment Location Start
-function convertip($ip)
+function GetUserIP()
 {
-    if (empty($ip)) $ip = get_comment_author_IP();
-    $ch = curl_init();
+    return isset($_SERVER['HTTP_X_FORWARDED_FOR']) ? explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0] : $_SERVER['REMOTE_ADDR'];
+}
+
+function convertip($ip = null)
+{
+    if (empty($ip)) {
+        $ip = GetUserIP();
+    }
+
     $url = 'https://api.nmxc.ltd/ip/' . $ip;
     $timeout = 5;
-    curl_setopt($ch, CURLOPT_URL, $url);
-    // curl_setopt ($ch, CURLOPT_URL, 'http://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip='.$ip);  
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+    $ch = curl_init();
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_CONNECTTIMEOUT => $timeout,
+        CURLOPT_SSL_VERIFYPEER => false,
+    ]);
     $file_contents = curl_exec($ch);
     curl_close($ch);
-    $result = null;
+
     $result = json_decode($file_contents, true);
     if ($result && $result['code'] != 0) {
         return "未知";
     }
+
     if ($result['data']['country'] != '中国') {
         return $result['data']['country'];
     }
+
     return $result['data']['country'] . '&nbsp;·&nbsp;' . $result['data']['region'] . '&nbsp;·&nbsp;' . $result['data']['city'];
 }
-//Comment Location End
+// Comment Location End
 
 if (!function_exists('akina_comment_format')) {
     function akina_comment_format($comment, $args, $depth)
