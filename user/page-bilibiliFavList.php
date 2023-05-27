@@ -12,84 +12,7 @@ get_header();
   .site-content {
     max-width: 1280px;
   }
-</style>
-</head>
-
-<?php while(have_posts()) : the_post(); ?>
-	<?php $bgm = (iro_opt('bilibili_id')) ? new \Sakura\API\BilibiliFavList() : null; ?>
-	<?php if (!empty($bgm) && (!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID()))) : ?>
-		<span class="linkss-title"><?php the_title();?></span>
-	<?php endif; ?>
-	<article <?php post_class("post-item"); ?>>
-		<?php the_content( '', true ); ?>
-
-		<?php if (!empty($bgm)) : ?>
-			<section class="fav-list">
-				<?php echo $bgm->get_folders(); ?>
-			</section>
-		<?php else: ?>
-			<div class="row">
-				<p> <?php _e("Please fill in the Bilibili UID in Sakura Options.", "sakurairo"); ?></p>
-			</div>
-		<?php endif; ?>
-
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				let expandButton = document.querySelectorAll('.expand-button');
-				if (expandButton.length) {
-					expandButton.forEach(function(elem) {
-						elem.addEventListener('click', function() {
-							let folder = elem.closest('.folder');
-							let folderStyle = getComputedStyle(folder);
-							if (folderStyle.maxHeight === '200px'){
-								let folderContent = folder.querySelector(".folder-content");
-								folder.style.maxHeight = parseInt(folderStyle.maxHeight) + folderContent.scrollHeight + 'px';
-							} else {
-								folder.style.maxHeight = '200px';
-							}
-						}, true);
-					});
-				}
-
-				window.addEventListener('resize', function() {
-					expandButton.forEach(function(elem) {
-						let folder = elem.closest('.folder');
-						let folderStyle = getComputedStyle(folder);
-						if (folderStyle.maxHeight !== '200px'){
-							let folderContent = folder.querySelector(".folder-content");
-							folder.style.maxHeight = parseInt(folderStyle.maxHeight) + folderContent.scrollHeight + 'px';
-						}
-					});
-				}, true);
-
-				document.addEventListener('click',function(e){
-					if(e.target && e.target.classList.contains('load-more')){
-						let elem = e.target;
-						let href = elem.getAttribute('data-href') + "&_wpnonce=" + _iro.nonce;
-						fetch(href, {method: 'POST'})
-							.then((response) => {
-								return response.json();
-							})
-							.then((html) => {
-								var htmlObject = document.createElement('div');
-								htmlObject.innerHTML = html;
-								while (htmlObject.childNodes.length > 0) {
-									elem.parentNode.appendChild(htmlObject.childNodes[0]);
-								}
-								let folder = elem.closest('.folder');
-								let folderContent = folder.querySelector(".folder-content");
-								folder.style.maxHeight = parseInt(folderStyle.maxHeight) + folderContent.scrollHeight + 'px';
-								elem.remove();
-							});
-					}
-				});
-			});
-		</script>
-	</article>
-<?php endwhile; ?>
-
-<style>
-.fav-list{
+  .fav-list{
     margin: 0 -10px -20px;
     flex-wrap: wrap;
     padding: 1rem 3%;
@@ -256,8 +179,30 @@ body.dark .expand-button {
     background-color: rgba(38, 38, 38, 0.6);
     color: var(--theme-skin-dark);
 }
-
 </style>
+</head>
+
+<?php while(have_posts()) : the_post(); ?>
+	<?php $bgm = (iro_opt('bilibili_id')) ? new \Sakura\API\BilibiliFavList() : null; ?>
+	<?php if (!empty($bgm) && (!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID()))) : ?>
+		<span class="linkss-title"><?php the_title();?></span>
+	<?php endif; ?>
+	<article <?php post_class("post-item"); ?>>
+		<?php the_content( '', true ); ?>
+
+		<?php if (!empty($bgm)) : ?>
+			<section class="fav-list">
+				<?php echo $bgm->get_folders(); ?>
+			</section>
+		<?php else: ?>
+			<div class="row">
+				<p> <?php _e("Please fill in the Bilibili UID in Sakura Options.", "sakurairo"); ?></p>
+			</div>
+		<?php endif; ?>
+	</article>
+<?php endwhile; ?>
+
+<script src="<?php global $shared_lib_basepath;echo $shared_lib_basepath?>/js/page-bilibilifav.js" type="text/javascript"></script>
 <?php
 get_footer();
 
