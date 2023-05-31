@@ -2311,3 +2311,20 @@ function should_show_title():bool{
     || !get_post_thumbnail_id($id) 
     && $use_as_thumb != 'true' && !get_post_meta($id, 'video_cover', true);
 }
+
+/**
+ * 修复 WordPress 搜索结果为空，返回为 200 的问题。
+ * @author ivampiresp <im@ivampiresp.com>
+ */
+function search_404_fix_template_redirect()
+{
+    if (is_search()) {
+        global $wp_query;
+
+        if ($wp_query->found_posts == 0) {
+            status_header(404);
+        }
+    }
+}
+
+add_action('template_redirect', 'search_404_fix_template_redirect');
