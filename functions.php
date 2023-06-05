@@ -602,6 +602,30 @@ function visual_resource_updates($specified_version, $option_name, $new_value) {
 
 visual_resource_updates('2.5.6', 'vision_resource_basepath', '2.6/');
 
+function gfonts_updates($specified_version, $option_name) {
+    $theme = wp_get_theme();
+    $current_version = $theme->get('Version');
+
+    // Check if the function has already been triggered
+    $function_triggered = get_transient('gfonts_updates_triggered18');
+    if ($function_triggered) {
+        return; // Function has already been triggered, do nothing
+    }
+
+    if (version_compare($current_version, $specified_version, '>')) {
+        $option_value = iro_opt($option_name);
+        if (empty($option_value) || $option_value !== 'cdn2.tianli0.top/fonts') {
+            $option_value = 'cdn2.tianli0.top/fonts';
+            iro_opt_update($option_name, $option_value);
+        }
+        
+        // Set transient to indicate that the function has been triggered
+        set_transient('gfonts_updates_triggered18', true);
+    }
+}
+
+gravater_updates('2.5.6', 'gfonts_api');
+
 function gravater_updates($specified_version, $option_name) {
     $theme = wp_get_theme();
     $current_version = $theme->get('Version');
