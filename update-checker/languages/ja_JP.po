@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: plugin-update-checker\n"
-"POT-Creation-Date: 2022-04-29 18:06-0700\n"
-"PO-Revision-Date: 2022-12-01 22:17+0800\n"
+"POT-Creation-Date: 2023-06-05 14:11+0800\n"
+"PO-Revision-Date: 2023-06-05 14:11+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -10,48 +10,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_x\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Puc/v4p11/Plugin/Ui.php:54
+#: Puc/v5p1/Plugin/Ui.php:56
 msgid "View details"
 msgstr "詳細を見る"
 
-#: Puc/v4p11/Plugin/Ui.php:77
+#: Puc/v5p1/Plugin/Ui.php:79
 #, php-format
 msgid "More information about %s"
 msgstr "%s の詳細については、こちらをご覧ください"
 
-#: Puc/v4p11/Plugin/Ui.php:128
+#: Puc/v5p1/Plugin/Ui.php:130
 msgid "Check for updates"
 msgstr "アップデートを確認する"
 
-#: Puc/v4p11/Plugin/Ui.php:214
+#: Puc/v5p1/Plugin/Ui.php:217
 #, php-format
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
 msgstr "プラグイン %s は最新です。"
 
-#: Puc/v4p11/Plugin/Ui.php:216
+#: Puc/v5p1/Plugin/Ui.php:219
 #, php-format
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
 msgstr "プラグイン %s の新しいバージョンが利用可能です。"
 
-#: Puc/v4p11/Plugin/Ui.php:218
+#: Puc/v5p1/Plugin/Ui.php:221
 #, php-format
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
 msgstr "%s 用のアップデートが利用可能かどうかを確認できませんでした。"
 
-#: Puc/v4p11/Plugin/Ui.php:224
+#: Puc/v5p1/Plugin/Ui.php:227
 #, php-format
 msgid "Unknown update checker status \"%s\""
 msgstr "不明なアップデートチェッカー状態 \"%s\""
 
-#: Puc/v4p11/Vcs/PluginUpdateChecker.php:98
+#: Puc/v5p1/Vcs/PluginUpdateChecker.php:98
 msgid "There is no changelog available."
 msgstr "ChangeLogはありません。"
