@@ -631,20 +631,20 @@ function gravater_updates($specified_version, $option_name) {
     $current_version = $theme->get('Version');
 
     // Check if the function has already been triggered
-    $function_triggered = get_transient('gravater_updates_triggered18');
+    $function_triggered = get_transient('gravater_updates_triggered181');
     if ($function_triggered) {
         return; // Function has already been triggered, do nothing
     }
 
     if (version_compare($current_version, $specified_version, '>')) {
         $option_value = iro_opt($option_name);
-        if (empty($option_value) || $option_value !== 'cdn2.tianli0.top/avatar') {
-            $option_value = 'cdn2.tianli0.top/avatar';
+        if (empty($option_value) || $option_value !== 'weavatar.com/avatar') {
+            $option_value = 'weavatar.com/avatar';
             iro_opt_update($option_name, $option_value);
         }
         
         // Set transient to indicate that the function has been triggered
-        set_transient('gravater_updates_triggered18', true);
+        set_transient('gravater_updates_triggered181', true);
     }
 }
 
