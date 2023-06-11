@@ -34,7 +34,7 @@ class BilibiliFavList
 		return false;
 	}
 
-	function fetch_folder_item_api(int $folder_id, int $page): mixed
+	function fetch_folder_item_api(int $folder_id, int $page)
 	{
 		$url = "https://api.bilibili.com/x/v3/fav/resource/list?media_id=$folder_id&pn=$page&ps=9&platform=web&jsonp=jsonp";
 		$args = array(

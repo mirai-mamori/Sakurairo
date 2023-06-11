@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-05-15 10:40+0800\n"
-"PO-Revision-Date: 2023-05-15 10:41+0800\n"
+"POT-Creation-Date: 2023-06-05 13:20+0800\n"
+"PO-Revision-Date: 2023-06-05 13:20+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -457,7 +457,7 @@ msgstr "展開"
 msgid "All item has been loaded."
 msgstr "所有專案均已載入。"
 
-#: inc/classes/BilibiliFavList.php:130
+#: inc/classes/BilibiliFavList.php:130 page-word.php:59
 msgid "Load More"
 msgstr "載入更多"
 
@@ -679,11 +679,11 @@ msgstr "上一篇文章"
 msgid "Next Post"
 msgstr "下一篇文章"
 
-#: page-word.php:41
+#: page-word.php:49
 msgid "You have not posted a comment yet"
 msgstr "您尚未發表说说"
 
-#: page-word.php:42
+#: page-word.php:52
 msgid "Go and post your first comment now"
 msgstr "現在就去發表你的第一條说说吧"
 
@@ -752,7 +752,7 @@ msgstr "最後更新於 "
 msgid "Nothing~"
 msgstr "無~"
 
-#: user/page-bangumi.php:31 user/page-bilibiliFavList.php:32
+#: user/page-bangumi.php:31 user/page-bilibiliFavList.php:207
 #: user/page-followVideos.php:29
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr "請在後台設置填寫 Bilibili UID 後繼續。"
