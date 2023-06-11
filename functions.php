@@ -624,7 +624,7 @@ function gfonts_updates($specified_version, $option_name) {
     }
 }
 
-gravater_updates('2.5.6', 'gfonts_api');
+gfonts_updates('2.5.6', 'gfonts_api');
 
 function gravater_updates($specified_version, $option_name) {
     $theme = wp_get_theme();
