@@ -241,7 +241,11 @@ class PucReadmeParser {
 	}
 
 	function sanitize_text( $text ) { // not fancy
-		$text = strip_tags($text);
+		$text = function_exists('wp_strip_all_tags')
+			? wp_strip_all_tags($text)
+			//phpcs:ignore WordPressVIPMinimum.Functions.StripTags.StripTagsOneParameter -- Using wp_strip_all_tags() if available
+			: strip_tags($text);
+
 		$text = esc_html($text);
 		$text = trim($text);
 		return $text;

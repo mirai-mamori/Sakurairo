@@ -60,5 +60,5 @@ if (!no_report) httpGet(report_url);
             </form>
         </div>
     </section>
-    <script src="<?php global $shared_lib_basepath;echo $shared_lib_basepath?>/js/anf.js?>" type="text/javascript"></script>
+    <script src="<?php global $shared_lib_basepath;echo $shared_lib_basepath?>/js/anf.js" type="text/javascript"></script>
 </body>

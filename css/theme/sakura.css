@@ -29,7 +29,7 @@
 .entry-content ul {
     list-style: disc;
     border: 1px solid #E4E4E4;
-    padding: 15px 10px 15px 50px;
+    padding: 15px 10px 30px 50px;
     color: #616161;
     margin-left: 0;
     border-radius: 10px
@@ -40,10 +40,16 @@
     padding: 15px 10px 15px 30px;
 }
 
+.entry-content li>ul, .entry-content li>ol {
+    border: none;
+    padding: 0 0 0 18px;
+    margin: 0;
+}
+
 .entry-content ol {
     list-style: decimal;
     border: 1px solid #E4E4E4;
-    padding: 15px 10px 15px 50px;
+    padding: 15px 10px 30px 50px;
     color: #616161;
     margin-left: 0;
     border-radius: 10px
@@ -51,7 +57,7 @@
 
 .entry-content ol li,
 .entry-content ul li {
-    padding: 8px 0
+    padding: 15px 0 0 0;
 }
 
 .entry-content {

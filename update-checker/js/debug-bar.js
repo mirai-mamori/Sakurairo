@@ -14,6 +14,8 @@ jQuery(function($) {
 				_wpnonce: panel.data('nonce')
 			},
 			function(data) {
+				//The response contains HTML that should already be escaped in server-side code.
+				//phpcs:ignore WordPressVIPMinimum.JS.HTMLExecutingFunctions.html
 				responseBox.html(data);
 			},
 			'html'

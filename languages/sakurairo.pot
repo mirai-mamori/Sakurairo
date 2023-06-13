@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-05-15 10:36+0800\n"
+"POT-Creation-Date: 2023-06-05 13:20+0800\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -445,7 +445,7 @@ msgstr ""
 msgid "All item has been loaded."
 msgstr ""
 
-#: inc/classes/BilibiliFavList.php:130
+#: inc/classes/BilibiliFavList.php:130 page-word.php:59
 msgid "Load More"
 msgstr ""
 
@@ -668,11 +668,11 @@ msgstr ""
 msgid "Next Post"
 msgstr ""
 
-#: page-word.php:41
+#: page-word.php:49
 msgid "You have not posted a comment yet"
 msgstr ""
 
-#: page-word.php:42
+#: page-word.php:52
 msgid "Go and post your first comment now"
 msgstr ""
 
@@ -742,7 +742,7 @@ msgstr ""
 msgid "Nothing~"
 msgstr ""
 
-#: user/page-bangumi.php:31 user/page-bilibiliFavList.php:32
+#: user/page-bangumi.php:31 user/page-bilibiliFavList.php:207
 #: user/page-followVideos.php:29
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr ""

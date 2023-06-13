@@ -10,7 +10,7 @@
 
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '18.1.1');
+define('INT_VERSION', '18.2.0');
 define('BUILD_VERSION', '2');
 
 function check_php_version($preset_version) {
@@ -602,25 +602,49 @@ function visual_resource_updates($specified_version, $option_name, $new_value) {
 
 visual_resource_updates('2.5.6', 'vision_resource_basepath', '2.6/');
 
-function gravater_updates($specified_version, $option_name) {
+function gfonts_updates($specified_version, $option_name) {
     $theme = wp_get_theme();
     $current_version = $theme->get('Version');
 
     // Check if the function has already been triggered
-    $function_triggered = get_transient('gravater_updates_triggered18');
+    $function_triggered = get_transient('gfonts_updates_triggered18');
     if ($function_triggered) {
         return; // Function has already been triggered, do nothing
     }
 
     if (version_compare($current_version, $specified_version, '>')) {
         $option_value = iro_opt($option_name);
-        if (empty($option_value) || $option_value !== 'cdn2.tianli0.top/avatar') {
-            $option_value = 'cdn2.tianli0.top/avatar';
+        if (empty($option_value) || $option_value !== 'cdn2.tianli0.top/fonts') {
+            $option_value = 'cdn2.tianli0.top/fonts';
             iro_opt_update($option_name, $option_value);
         }
         
         // Set transient to indicate that the function has been triggered
-        set_transient('gravater_updates_triggered18', true);
+        set_transient('gfonts_updates_triggered18', true);
+    }
+}
+
+gfonts_updates('2.5.6', 'gfonts_api');
+
+function gravater_updates($specified_version, $option_name) {
+    $theme = wp_get_theme();
+    $current_version = $theme->get('Version');
+
+    // Check if the function has already been triggered
+    $function_triggered = get_transient('gravater_updates_triggered181');
+    if ($function_triggered) {
+        return; // Function has already been triggered, do nothing
+    }
+
+    if (version_compare($current_version, $specified_version, '>')) {
+        $option_value = iro_opt($option_name);
+        if (empty($option_value) || $option_value !== 'weavatar.com/avatar') {
+            $option_value = 'weavatar.com/avatar';
+            iro_opt_update($option_name, $option_value);
+        }
+        
+        // Set transient to indicate that the function has been triggered
+        set_transient('gravater_updates_triggered181', true);
     }
 }
 
@@ -2311,3 +2335,20 @@ function should_show_title():bool{
     || !get_post_thumbnail_id($id) 
     && $use_as_thumb != 'true' && !get_post_meta($id, 'video_cover', true);
 }
+
+/**
+ * 修复 WordPress 搜索结果为空，返回为 200 的问题。
+ * @author ivampiresp <im@ivampiresp.com>
+ */
+function search_404_fix_template_redirect()
+{
+    if (is_search()) {
+        global $wp_query;
+
+        if ($wp_query->found_posts == 0) {
+            status_header(404);
+        }
+    }
+}
+
+add_action('template_redirect', 'search_404_fix_template_redirect');
