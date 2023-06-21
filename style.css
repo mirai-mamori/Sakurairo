@@ -5052,6 +5052,13 @@ input#wp-comment-cookies-consent {
   display: none;
 }
 
+.cbp_tmlabel .entry-content blockquote {
+  margin: 28px 0 0 0;
+  padding: 30px 60px;
+  position: relative;
+  quotes: "" "";
+}
+
 .cbp_tmtimeline:before {
   content: '';
   position: absolute;
