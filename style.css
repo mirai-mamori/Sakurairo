@@ -5043,6 +5043,15 @@ input#wp-comment-cookies-consent {
   position: relative;
 }
 
+.cbp_tmlabel .entry-content h1::before,
+.cbp_tmlabel .entry-content h2::before,
+.cbp_tmlabel .entry-content h3::before,
+.cbp_tmlabel .entry-content h4::before,
+.cbp_tmlabel .entry-content h5::before,
+.cbp_tmlabel .entry-content h6::before {
+  display: none;
+}
+
 .cbp_tmtimeline:before {
   content: '';
   position: absolute;
