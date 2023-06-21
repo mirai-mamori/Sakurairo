@@ -10614,6 +10614,10 @@ body.dark li .cbp_tmlabel {
   border: 1px solid #949494;
 }
 
+body.dark li .cbp_tmlabel:after {
+  display: none;
+}
+
 body.dark .header-info,
 body.dark .header-shuo {
   color: #CCCCCC !important;
