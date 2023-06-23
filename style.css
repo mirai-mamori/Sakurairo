@@ -5043,6 +5043,22 @@ input#wp-comment-cookies-consent {
   position: relative;
 }
 
+.cbp_tmlabel .entry-content h1::before,
+.cbp_tmlabel .entry-content h2::before,
+.cbp_tmlabel .entry-content h3::before,
+.cbp_tmlabel .entry-content h4::before,
+.cbp_tmlabel .entry-content h5::before,
+.cbp_tmlabel .entry-content h6::before {
+  display: none;
+}
+
+.cbp_tmlabel .entry-content blockquote {
+  margin: 28px 0 0 0;
+  padding: 30px 60px;
+  position: relative;
+  quotes: "" "";
+}
+
 .cbp_tmtimeline:before {
   content: '';
   position: absolute;
@@ -10596,6 +10612,10 @@ body.dark li .cbp_tmlabel {
   background: #505050 !important;
   color: #bbb !important;
   border: 1px solid #949494;
+}
+
+body.dark li .cbp_tmlabel:after {
+  display: none;
 }
 
 body.dark .header-info,

@@ -34,7 +34,6 @@ get_header();
                             </span>
                             <div class="cbp_tmlabel">
                                 <object class="entry-content">
-                                    <p></p>
                                     <?php the_content( '', true ); ?>
                                 </object>
                                 <p class="shuoshuo_meta">
