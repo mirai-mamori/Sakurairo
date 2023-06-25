@@ -855,9 +855,9 @@ if ($custom_login_switch) {
                         document.body.style.backgroundImage = `url(${src})`
                         loading.classList.add("hide");
                         loading.classList.remove("show");
-                        loading.addEventListener("transitionend", () => {
+                        setTimeout(function() {
                             loading.remove()
-                        });
+                        }, 400);
                     },
                     img = document.createElement('img')
                 img.src = src
