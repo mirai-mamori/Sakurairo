@@ -2664,7 +2664,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'article_auto_toc',
         'type' => 'switcher',
         'title' => __('Article Page Auto Show Menu','sakurairo_csf'),
-        'label' => __('Enabled by default, the article page will automatically show the menu','sakurairo_csf'),
+        'label' => __('Enabled by default, the article page will automatically show the menu. PHP extension "DOM" is required for this feature.','sakurairo_csf'),
         'default' => true
       ),
 
