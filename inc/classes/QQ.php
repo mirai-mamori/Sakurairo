@@ -8,13 +8,15 @@ class QQ
         $get_info = file_get_contents('https://api.qjqq.cn/api/qqinfo?qq=' . $qq);
         $name = json_decode($get_info, true);
         if ($name) {
-            $output = array(
-                'status' => 200,
-                'success' => true,
-                'message' => 'success',
-                'avatar' => 'https://q.qlogo.cn/headimg_dl?dst_uin=' . $qq . '&spec=100',
-                'name' => $name['name'],
-            );
+            if ($name['code'] == 200){
+                $output = array(
+                    'status' => 200,
+                    'success' => true,
+                    'message' => 'success',
+                    'avatar' => 'https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq . '&spec=100',
+                    'name' => $name['name'],
+                );
+            }
         } else {
             $output = array(
                 'status' => 404,
