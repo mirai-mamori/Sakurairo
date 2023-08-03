@@ -32,8 +32,12 @@ if (!function_exists('iro_opt')) {
 if (!function_exists('iro_opt_update')) {
     function iro_opt_update($option = '', $value = null)
     {
-        $options = get_option('iro_options');
-        $options[$option] = $value;
+        $options = get_option('iro_options'); // 当数据库没有指定项时，WordPress会返回false
+        if($options){
+            $options[$option] = $value;
+        }else{
+            $options = array($option => $value);
+        }
         update_option('iro_options', $options);
     }
 }
