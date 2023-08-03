@@ -1520,11 +1520,19 @@ function update_theme_admin_notice_meta() {
 //dashboard scheme
 function dash_scheme($key, $name, $col1, $col2, $col3, $col4, $base, $focus, $current, $rules = "")
 {
-    $hash = "color_1=" . str_replace("#", "", $col1) .
-        "&color_2=" . str_replace("#", "", $col2) .
-        "&color_3=" . str_replace("#", "", $col3) .
-        "&color_4=" . str_replace("#", "", $col4) .
-        "&rules=" . urlencode($rules);
+    $hash = 'rules='. urlencode($rules);
+    if($col1){
+        $hash .= '&color_1=' . str_replace("#", "", $col1);
+    }
+    if($col2){
+        $hash .= '&color_2=' . str_replace("#", "", $col2);
+    }
+    if($col3){
+        $hash .= '&color_3=' . str_replace("#", "", $col3);
+    }
+    if($col4){
+        $hash .= '&color_4=' . str_replace("#", "", $col4);
+    }
 
     wp_admin_css_color(
         $key,
