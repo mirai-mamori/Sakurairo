@@ -420,7 +420,21 @@ input[type=checkbox]:checked:before {
 	vertical-align: middle;
 }
 
-.vp-basic-btn
-{
+.vp-basic-btn {
 	border-radius: 12px !important;
+}
+
+.aiowps-captcha-equation hide-when-displaying-tfa-input {
+	padding: 0 35px;
+}
+
+.aiowps-captcha-answer {
+    	font-size: 16px;
+    	font-family: "Microsoft Yahei";
+    	height: 46px;
+    	border-radius: 12px;
+    	margin-top: 5px;
+    	min-height: 40px;
+    	max-height: none;
+    	text-indent: 8px;
 }
