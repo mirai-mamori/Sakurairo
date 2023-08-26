@@ -424,8 +424,8 @@ input[type=checkbox]:checked:before {
 	border-radius: 12px !important;
 }
 
-.aiowps-captcha-equation hide-when-displaying-tfa-input {
-	padding: 0 35px;
+.aiowps-captcha-equation.hide-when-displaying-tfa-input {
+    	padding: 0 35px;
 }
 
 .aiowps-captcha-answer {
