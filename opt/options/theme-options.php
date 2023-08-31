@@ -502,7 +502,6 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type'  => 'switcher',
         'title' => __('Secondary Menu Prompt Arrow','sakurairo_csf'),
         'label'   => __('After turning on, the menu prompt arrow will appear in the secondary menu of the navigation menu','sakurairo_csf'),
-        'dependency' => array( 'nav_menu_style', '==', 'sakura', '', 'true' ),
         'default' => false
       ),
 
@@ -550,7 +549,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
             'id'    => 'text_secondary',
             'type'  => 'text',
             'title' => __('Secondary Text','sakurairo_csf'),
-            'dependency' => array( 'text_b', '!=', '' ),
+            'dependency' => array( 'text_b', '!=', '', '', 'true'  ),
           ),
           array(
             'id'    => 'font_name',
@@ -1610,7 +1609,10 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Webp Optimization/External API Desktop Side Random Graphics Address','sakurairo_csf'),
         'desc' => __('Fill in an URL','sakurairo_csf'),
-        'dependency' => array( 'cover_switch', '==', 'true', '', 'true' ),
+        'dependency' => array( 
+                              array( 'cover_switch', '==', 'true', '', 'true' ),
+                              array( 'random_graphs_options', '!=', 'local', '', 'true' ),
+                        ),
         'default' => 'https://api.maho.cc/random-img/pc.php',
         'sanitize' => false,
         'validate' => 'csf_validate_url',
@@ -1623,6 +1625,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'dependency' => array( 
                               array( 'random_graphs_mts', '==', 'true' ),
                               array( 'cover_switch', '==', 'true', '', 'true' ),
+                              array( 'random_graphs_options', '!=', 'local', '', 'true' ),
                         ),
         'desc' => __('Fill in an URL','sakurairo_csf'),
         'default' => 'https://api.maho.cc/random-img/mobile.php',
