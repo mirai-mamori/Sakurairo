@@ -2219,9 +2219,9 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
             if ($check['code'] != 5) {
                 return $errors->add('invalid_department ', '<strong>错误</strong>：' . $check['msg']);
             }
-        }
-        return $errors->add('invalid_department', '<strong>错误</strong>：验证码为空！');
-        
+        } else {
+            return $errors->add('invalid_department', '<strong>错误</strong>：验证码为空！');
+        }  
     }
 
     add_action('lostpassword_post', 'lostpassword_CHECK');
