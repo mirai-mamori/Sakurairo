@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-06-10 19:55+0800\n"
+"POT-Creation-Date: 2023-08-31 11:42+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -2641,7 +2641,9 @@ msgid "Article Page Auto Show Menu"
 msgstr ""
 
 #: options/theme-options.php:2667
-msgid "Enabled by default, the article page will automatically show the menu"
+msgid ""
+"Enabled by default, the article page will automatically show the menu. PHP "
+"extension \"DOM\" is required for this feature."
 msgstr ""
 
 #: options/theme-options.php:2674

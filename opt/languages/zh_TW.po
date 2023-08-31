@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-06-10 19:55+0800\n"
-"PO-Revision-Date: 2023-06-10 19:55+0800\n"
+"POT-Creation-Date: 2023-08-31 11:46+0800\n"
+"PO-Revision-Date: 2023-08-31 11:47+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -2732,8 +2732,10 @@ msgid "Article Page Auto Show Menu"
 msgstr "文章頁面自動顯示菜單"
 
 #: options/theme-options.php:2667
-msgid "Enabled by default, the article page will automatically show the menu"
-msgstr "默認開啟，文章頁面會自動顯示菜單"
+msgid ""
+"Enabled by default, the article page will automatically show the menu. PHP "
+"extension \"DOM\" is required for this feature."
+msgstr "默認開啟，文章頁面會自動顯示菜單，此功能需要PHP擴展“DOM”。"
 
 #: options/theme-options.php:2674
 msgid "Inline Code Background Color"
