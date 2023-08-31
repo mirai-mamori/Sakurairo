@@ -85,6 +85,21 @@ if ( !class_exists(PluginUpdateChecker::class, false) ):
 				$this->setInfoFromHeader($remoteHeader, $info);
 			}
 
+			//Sanity check: Reject updates that don't have a version number.
+			//This can happen when we're using a branch, and we either fail to retrieve the main plugin
+			//file or the file doesn't have a "Version" header.
+			if ( empty($info->version) ) {
+				do_action(
+					'puc_api_error',
+					new \WP_Error(
+						'puc-no-plugin-version',
+						'Could not find the version number in the repository.'
+					),
+					null, null, $this->slug
+				);
+				return null;
+			}
+
 			//Try parsing readme.txt. If it's formatted according to WordPress.org standards, it will contain
 			//a lot of useful information like the required/tested WP version, changelog, and so on.
 			if ( $this->readmeTxtExistsLocally() ) {
