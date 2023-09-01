@@ -2,6 +2,27 @@
 
 All notable changes to `chatgpt-php` will be documented in this file.
 
+## 2.1.1 - 2023-07-17
+
+1. fix name undefined.
+
+## 2.1.0 - 2023-07-06
+
+1. **Deprecated: `paid` parameter in `addAccount` method.**
+2. Add arkose_token and fix GPT-4.
+3. `addAccount` method add arkose_token parameter.
+4. `ask` method adds more return values to support continue writing.
+5. Add some new method.
+
+## 2.0.4 - 2023-04-25
+
+1. Update V1 API
+
+## 2.0.3 - 2023-03-31
+
+1. Sync V1 V2 return.
+2. Update tests.
+
 ## 2.0.2 - 2023-03-31
 
 1. Bug Fix

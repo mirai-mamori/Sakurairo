@@ -13,20 +13,19 @@ Reconstruct from @acheong08's [ChatGPT](https://github.com/acheong08/ChatGPT)
 `composer require haozi-team/chatgpt-php`
 
 # V1 Web ChatGPT
-## Notice: As of 2023/03/15 - OpenAI has deactivated some accounts using V1. We recommend using V2 to avoid getting banned.
 
 > Uses `chat.openai.com`
 > - Free
 > - Rate limited
 > - Needs Bypassing Cloudflare
 
-> Default api endpoint is `https://bypass.churchless.tech/`
-> 
-> Rate limit at 5 requests / 10 seconds due to small server
+> Default api endpoint is `https://ai.fakeopen.com/api/` by @pengzhile
 > 
 > OpenAI rate limit: 50 requests per hour on free accounts. You can get around it with multi-account cycling
->
+> 
 > Plus accounts has around 150 requests per hour rate limit
+> 
+> GPT-4: If you use GPT-4, you must provide arkose_token, usually the SDK can get it automatically through @pengzhile's API.
 
 ## Configuration
 

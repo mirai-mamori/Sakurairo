@@ -89,7 +89,7 @@ final class Header
             $v = '';
             $isQuoted = false;
             $isEscaped = false;
-            for ($i = 0, $max = \strlen($value); $i < $max; $i++) {
+            for ($i = 0, $max = \strlen($value); $i < $max; ++$i) {
                 if ($isEscaped) {
                     $v .= $value[$i];
                     $isEscaped = false;
