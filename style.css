@@ -294,7 +294,7 @@ textarea {
   font-size: 15px;
   line-height: 1.5;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding-left: 3px;
   width: 100%;
   font-weight: var(--global-font-weight);
@@ -394,105 +394,105 @@ input[type=button] {
 input[type=color] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 input[type=date] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 input[type=datetime-local] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 input[type=datetime] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 input[type=email] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 input[type=month] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 input[type=number] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 input[type=password] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 input[type=range] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 input[type=search] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 input[type=tel] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 input[type=text] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 input[type=time] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 input[type=url] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
 input[type=week] {
   color: #666;
   border: 1px solid var(--theme-skin, #505050);
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3px;
 }
 
@@ -2223,7 +2223,8 @@ nav#comments-navi {
   -webkit-transition: all .8s;
   transition: all .8s;
   border-radius: 15px;
-  padding: 25px;
+  display: flex;
+  padding: 15px 25px;
   box-shadow: 0 1px 30px -4px var(--comment_area_shadow);
   margin-bottom: 8%;
   border: 1.5px solid #FFFFFF;
@@ -2238,9 +2239,7 @@ nav#comments-navi {
 
 .comment-respond .logged-in-as {
   margin-bottom: 0;
-  padding: 0px 5px 17px
-    /*!covered19px 32px 17px*/
-  ;
+  padding: 10px 0;
   border-radius: 3px;
   background: 0 0
     /*!covered#FFF*/
@@ -2277,7 +2276,7 @@ nav#comments-navi {
     /*!covered31.3%*/
   ;
   margin: 0;
-  padding: 21px 21px 20px;
+  padding: 15px;
   color: #535a63;
   border: 1px solid #ddd
     /*!covered0*/
@@ -2296,9 +2295,7 @@ nav#comments-navi {
   margin: 0;
   padding: 21px 21px 20px;
   color: #535a63;
-  border: 1px solid #ddd
-    /*!covered0*/
-  ;
+  border: 1px solid #ddd;
   background: #FFF;
   display: block;
   float: none;
@@ -2310,7 +2307,6 @@ nav#comments-navi {
   background-position: right;
   resize: vertical;
   font-weight: var(--global-font-weight);
-
 }
 
 .input-label {
@@ -2359,7 +2355,7 @@ nav#comments-navi {
   transition: all .1s ease-out;
   box-shadow: none;
   border: 1px solid #ccc;
-  border-radius: 15px;
+  border-radius: 10px;
   text-shadow: none;
 }
 
@@ -4180,8 +4176,8 @@ input[type=radio]:checked:before {
 .comment-user-avatar {
   position: absolute;
   display: inline-block;
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 52px;
   margin-top: 10px;
   pointer-events: none;
 }
@@ -4209,7 +4205,7 @@ input[type=radio]:checked:before {
 }
 
 .cmt-popup {
-  margin: 0 0 40px 1%;
+  margin: 0 0 30px 1%;
   --widthA: 97%;
   --widthB: calc(var(--widthA) - 71px);
   --widthC: calc(var(--widthB) / 3);
@@ -9619,9 +9615,9 @@ body.dark .post-list-thumb:hover {
   }
 
   .comment-user-avatar {
-    padding-top: 10px;
-    width: 45px;
-    height: 55px;
+    padding-top: 8px;
+    width: 36px;
+    height: 44px;
     right: 2%;
   }
 
