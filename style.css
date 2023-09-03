@@ -4821,8 +4821,6 @@ h5::before {
 
 .widget-area {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   text-align: center;
   padding: 5px;
   margin: 5px;
@@ -4833,8 +4831,6 @@ h5::before {
   max-width: 385px;
   transition: all .8s;
   border: 1px solid #ffffff;
-  align-items: flex-end;
-  flex-direction: column;
   overflow: hidden;
   max-height: 700px;
 }
@@ -7632,6 +7628,7 @@ a.toc-link {
   color: #505050;
   max-width: 80%;
   width: fit-content;
+  font-size: 15px;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background: rgba(255, 255, 255, 0.5);
   border-radius: 10px !important;
