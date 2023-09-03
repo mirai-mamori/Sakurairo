@@ -2299,7 +2299,7 @@ nav#comments-navi {
   margin: 0;
   padding: 21px 21px 20px;
   color: #535a63;
-  border: 1px solid #ddd;
+  border: 1px solid var(--comment_area_matching);
   background: #FFF;
   display: block;
   float: none;
@@ -2311,6 +2311,12 @@ nav#comments-navi {
   background-position: right;
   resize: vertical;
   font-weight: var(--global-font-weight);
+}
+
+.graybar a{
+  color: var(--comment_area_matching);
+  -webkit-transition: all .8s;
+  transition: all .8s;
 }
 
 .input-label {
@@ -5080,18 +5086,21 @@ input#wp-comment-cookies-consent {
 
 .cbp_tmtimeline>li .cbp_tmlabel {
   margin: 0 0 45px 65px;
-  background: var(--shuoshuo_background_color2, #EE9CA7);
+  background: var(--shuoshuo_background_color2);
   color: #505050;
-  padding: .1em 1.2em .4em 1.2em;
+  padding: .4em 1.2em .4em 1.2em;
   font-size: 18px;
   font-weight: 300;
-  line-height: 1.4;
   position: relative;
   border-radius: 15px;
   transition: all 0.3s ease 0s;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   display: block;
+}
+
+.cbp_tmtimeline>li .cbp_tmlabel p{
+  line-height: 10px !important;
 }
 
 .cbp_tmlabel:hover {
@@ -5110,7 +5119,7 @@ input#wp-comment-cookies-consent {
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-right-color: var(--shuoshuo_background_color2, #EE9CA7);
+  border-right-color: var(--shuoshuo_background_color2);
   border-width: 10px;
   top: 15px;
 }
@@ -7710,11 +7719,11 @@ body.theme-dark .cbp_tmtimeline::before {
 }
 
 .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel {
-  background: var(--shuoshuo_background_color1, #EE9999);
+  background: var(--shuoshuo_background_color1);
 }
 
 .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after {
-  border-right-color: var(--shuoshuo_background_color1, #EE9999);
+  border-right-color: var(--shuoshuo_background_color1);
   top: 15px;
 }
 
@@ -10264,6 +10273,11 @@ body.dark .entry-content h6 {
   color: #CCCCCC;
 }
 
+body.dark .cbp_tmtimeline>li .cbp_tmlabel p{
+  color: #cccccc!important;
+  transition: all 0.8s ease !important;
+}
+
 body.dark .site-header.yya {
   border: 1.5px solid #7d7d7d30;
   transition: all 0.8s ease;
@@ -10602,9 +10616,7 @@ body.dark #changskin:hover {
 }
 
 body.dark li .cbp_tmlabel {
-  background: #505050 !important;
-  color: #bbb !important;
-  border: 1px solid #949494;
+  color: #CCCCCC !important;
 }
 
 body.dark li .cbp_tmlabel:after {

@@ -2833,7 +2833,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Ideas Template Background ColorⅠ','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#F9D938'
+        'default' => 'rgba(255,224,102,0.2)'
       ),    
 
       array(
@@ -2841,7 +2841,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'color',
         'title' => __('Ideas Template Background Color II','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#FCCD00'
+        'default' => 'rgba(255,204,0,0.2)'
       ),    
 
       array(
