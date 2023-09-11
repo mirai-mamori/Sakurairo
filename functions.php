@@ -2323,3 +2323,9 @@ function search_404_fix_template_redirect()
 }
 
 add_action('template_redirect', 'search_404_fix_template_redirect');
+
+// 给上传图片增加时间戳
+add_filter('wp_handle_upload_prefilter', function($file){
+	$file['name'] = time().'-'.$file['name']; 
+	return $file; 
+});
