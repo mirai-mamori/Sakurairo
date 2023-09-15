@@ -6218,6 +6218,7 @@ form#commentform,
 .comment-respond textarea:active,
 .comment-respond textarea:focus {
   outline: 0;
+  width: 100%;
 }
 
 span.page-numbers.current {
@@ -6361,6 +6362,7 @@ div.cbp_tmlabel>p {
 .micro,
 .bangumi-status p {
   position: relative;
+  width: 100%;
 }
 
 .commentbody:placeholder-shown::placeholder {

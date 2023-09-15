@@ -57,9 +57,73 @@
 					if(iro_opt('not_robot')) $robot_comments = '<label class="siren-checkbox-label"><input class="siren-checkbox-radio" type="checkbox" name="no-robot"><span class="siren-no-robot-checkbox siren-checkbox-radioInput"></span>'.__('I\'m not a robot', 'sakurairo').'</label>';
 					$private_ms = iro_opt('comment_private_message') ? '<label class="siren-checkbox-label"><input class="siren-checkbox-radio" type="checkbox" name="is-private"><span class="siren-is-private-checkbox siren-checkbox-radioInput"></span>'.__('Comment in private', 'sakurairo').'</label>' : '';
 					$mail_notify = iro_opt('mail_notify') ? '<label class="siren-checkbox-label"><input class="siren-checkbox-radio" type="checkbox" name="mail-notify"><span class="siren-mail-notify-checkbox siren-checkbox-radioInput"></span>'.__('Comment reply notify', 'sakurairo').'</label>' : '';
-					$bilibili_smile = !iro_opt('comment_smile_bilibili') ? '' : '<th onclick="motionSwitch(\'.bili\')" 
-					class="bili-bar on-hover">bilibili~</th>';
-					$bilibili_push_smile = !iro_opt('comment_smile_bilibili') ? '<div class="menhera-container motion-container">' :'<div class="bili-container motion-container">' . push_bili_smilies() . '</div><div class="menhera-container motion-container" style="display:none;">';
+					$smilies_panel = '';
+					$bilibili_smilies = '';
+					$tieba_smilies = '';
+					$menhera_smilies = '';
+					$custom_smilies = '';
+					$bilibili_push_smilies = '';
+					$tieba_push_smilies = '';
+					$menhera_push_smilies = '';
+					$custom_push_smilies = '';
+					$smilies_list = iro_opt('smilies_list');
+					if ($smilies_list) {
+						if (in_array('bilibili', $smilies_list)) {
+							$bilibili_smilies = '<th onclick="motionSwitch(\'.bili\')" class="bili-bar">bilibili~</th>';
+							$bilibili_push_smilies = '<div class="bili-container motion-container"  style="display:none;">' . push_bili_smilies() . '</div>';
+						}
+						if (in_array('tieba', $smilies_list)) {
+							$tieba_smilies = '<th onclick="motionSwitch(\'.tieba\')" class="tieba-bar">Tieba</th>';
+							$tieba_push_smilies = '<div class="tieba-container motion-container" style="display:none;">' . push_tieba_smilies() . '</div>';
+						}
+						if (in_array('yanwenzi', $smilies_list)) {
+							$menhera_smilies = '<th onclick="motionSwitch(\'.menhera\')" class="menhera-bar">(=・ω・=)</th>';
+							$menhera_push_smilies = '<div class="menhera-container motion-container" style="display:none;">' . push_emoji_panel() . '</div>';
+						}
+						if (in_array('custom', $smilies_list)) {
+							$custom_smilies = '<th onclick="motionSwitch(\'.custom\')" class="custom-bar"> '. iro_opt('smilies_name') .'</th>';
+							$custom_push_smilies = '<div class="custom-container motion-container" style="display:none;">' . push_custom_smilies() . '</div>';
+						}
+						switch ($smilies_list[0]) {
+							case "bilibili" :
+								$bilibili_smilies = '<th onclick="motionSwitch(\'.bili\')" class="bili-bar on-hover">bilibili~</th>';
+								$bilibili_push_smilies = '<div class="bili-container motion-container"  style="display:block;">' . push_bili_smilies() . '</div>';
+								break;
+							case "tieba" :
+								$tieba_smilies = '<th onclick="motionSwitch(\'.tieba\')" class="tieba-bar on-hover">Tieba</th>';
+								$tieba_push_smilies = '<div class="tieba-container motion-container" style="display:block;">' . push_tieba_smilies() . '</div>';
+								break;
+							case "yanwenzi" :
+								$menhera_smilies = '<th onclick="motionSwitch(\'.menhera\')" class="menhera-bar on-hover">(=・ω・=)</th>';
+								$menhera_push_smilies = '<div class="menhera-container motion-container" style="display:block;">' . push_emoji_panel() . '</div>';
+								break;
+							case "custom" :
+								$custom_smilies = '<th onclick="motionSwitch(\'.custom\')" class="custom-bar on-hover"> '. iro_opt('smilies_name') .'</th>';
+								$custom_push_smilies = '<div class="custom-container motion-container" style="display:block;">' . push_custom_smilies() . '</div>';
+								break;
+						}
+
+						$smilies_panel = '<p id="emotion-toggle" class="no-select">
+												<span class="emotion-toggle-off">' . __("Click me OωO", "sakurairo")/*戳我试试 OωO*/ . '</span>
+												<span class="emotion-toggle-on">' . __("Woooooow ヾ(≧∇≦*)ゝ", "sakurairo")/*嘿嘿嘿 ヾ(≧∇≦*)ゝ*/ . '</span>
+											</p>
+											<div class="emotion-box no-select">
+												<table class="motion-switcher-table">
+													<tr>
+													'. $bilibili_smilies .'
+													'. $tieba_smilies .'
+													'. $menhera_smilies .'
+													'. $custom_smilies .'
+													</tr>
+												</table>
+												' . $bilibili_push_smilies . '
+												' . $tieba_push_smilies . '
+												' . $menhera_push_smilies . '
+												' . $custom_push_smilies . '			  
+											</div>';
+
+					};
+
 					$args = array(
 						'id_form' => 'commentform',
 						'id_submit' => 'submit',
@@ -70,23 +134,7 @@
 						'comment_field' => '<p style="font-style:italic"><a href="https://segmentfault.com/markdown" target="_blank"><i class="fa-brands fa-markdown" style="color:var(--comment_area_matching);"></i></a> Markdown Supported while <i class="fa-solid fa-code"></i> Forbidden</p><div class="comment-textarea"><textarea placeholder="' . __("You are a surprise that I will only meet once in my life", "sakurairo") . ' ..." name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea><label class="input-label">' . __("You are a surprise that I will only meet once in my life", "sakurairo") . ' ...</label></div>
                         <div id="upload-img-show"></div>
                         <!--插入表情面版-->
-                        <p id="emotion-toggle" class="no-select">
-                            <span class="emotion-toggle-off">' . __("Click me OωO", "sakurairo")/*戳我试试 OωO*/ . '</span>
-                            <span class="emotion-toggle-on">' . __("Woooooow ヾ(≧∇≦*)ゝ", "sakurairo")/*嘿嘿嘿 ヾ(≧∇≦*)ゝ*/ . '</span>
-                        </p>
-                        <div class="emotion-box no-select">
-                            <table class="motion-switcher-table">
-                                <tr>'.$bilibili_smile.'
-                                    <th onclick="motionSwitch(\'.menhera\')"
-                                        class="menhera-bar">(=・ω・=)</th>
-                                    <th onclick="motionSwitch(\'.tieba\')"
-                                        class="tieba-bar">Tieba</th>
-                                </tr>
-                            </table>
-                            '.$bilibili_push_smile.push_emoji_panel().'
-                            </div>
-                            <div class="tieba-container motion-container" style="display:none;">' . push_tieba_smilies() . '</div>
-                        </div>
+                        ' . $smilies_panel . '
                         <!--表情面版完-->',
 						'comment_notes_after' => '',
 						'comment_notes_before' => '',

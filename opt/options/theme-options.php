@@ -3013,6 +3013,11 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'type' => 'subheading',
+        'content' => __('Comment Area Style','sakurairo_csf'),
+      ),
+
+      array(
         'id' => 'comment_area',
         'type' => 'radio',
         'title' => __('Page Comment Area Display','sakurairo_csf'),
@@ -3041,19 +3046,59 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
-        'id' => 'comment_smile_bilibili',
-        'type' => 'switcher',
-        'title' => __('Page Comment Area Bilibili Emoji Pack','sakurairo_csf'),
-        'label' => __('Default on, bilibili emotions are displayed below the comment box','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
         'id' => 'comment_area_image',
         'type' => 'upload',
         'title' => __('Page Comment Area Bottom Right Background Image','sakurairo_csf'),
         'desc' => __('If this option is blank, there will be no image, no best recommendation here','sakurairo_csf'),
         'library' => 'image',
+      ),
+
+      array(
+        'type' => 'subheading',
+        'content' => __('Comment Area Function','sakurairo_csf'),
+      ),
+
+      array(
+        'id'       => 'smilies_list',
+        'type'     => 'button_set',
+        'title' => __('Comment Area Emoticon','sakurairo_csf'),
+        'desc' => __('Select the emoticons to be displayed in the comment area input box. Uncheck all to turn off the comment input box emoticon function.','sakurairo_csf'),
+        'multiple' => true,
+        'options'  => array(
+          'bilibili'   => 'BILIBILI表情',
+          'tieba'   => '贴吧表情',
+          'yanwenzi' => '颜文字',
+          'custom' => '自定义表情',
+        ),
+        'default'  => array( 'bilibili', 'tieba', 'yanwenzi' )
+      ),
+
+      array(
+        'id'         => 'smilies_name',
+        'type'       => 'text',
+        'title' => __('Customized Emoticon Column Name','sakurairo_csf'),
+        'desc' => __('It is recommended to enter less than 4 Chinese characters in length to avoid causing compatibility issues on mobile terminals.','sakurairo_csf'),
+        'dependency' => array( 'smilies_list', 'any', 'custom', '', 'true' ),
+        'default' => 'custom'
+      ),
+    
+      array(
+        'id'         => 'smilies_dir',
+        'type'       => 'text',
+        'title' => __('Path To Custom Expression','sakurairo_csf'),
+        'desc' => __('Click <a href="./admin.php?update_custom_smilies=true" target="_blank">here</a> updating emoticon list. Specific usage reference: <a href="https://docs.fuukei.org/Sakurairo/Pages/#%E8%AF%84%E8%AE%BA%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE" target="_blank">Comment related settings</a>','sakurairo_csf'),
+        'dependency' => array( 'smilies_list', 'any', 'custom', '', 'true' ),
+      ),
+
+      array(
+        'id'         => 'smilies_proxy',
+        'type'       => 'text',
+        'title' => __('Custom Emoticon Proxy Address','sakurairo_csf'),
+        'desc' => __('Fill in the CDN address of the emoticon image. If left blank, the CDN proxy function will not be enabled.','sakurairo_csf'),
+        'dependency' => array( 
+                              array('smilies_list', 'any', 'custom', '', 'true' ),
+                              array('smilies_dir', '!=', '', '', 'true'),
+                            ),
       ),
 
       array(
@@ -3177,7 +3222,13 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'text',
         'title' => __('Comment Image Proxy','sakurairo_csf'),
         'desc' => __('Proxy for the image displayed on the frontend','sakurairo_csf'),
+        'dependency' => array( 'img_upload_api', '!=', 'off', '', 'true' ),
         'default' => 'https://images.weserv.nl/?url='
+      ),
+
+      array(
+        'type' => 'subheading',
+        'content' => __('Comment Email Notification','sakurairo_csf'),
       ),
 
       array(
