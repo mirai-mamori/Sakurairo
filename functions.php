@@ -1062,6 +1062,142 @@ add_filter('comment_text', 'comment_picture_support');
 // 还有一个思路是根据表情调用路径来判定<-- 此法最好！
 // 贴吧
 
+/**
+ * 通过文件夹获取自定义表情列表，使用Transients来存储获得的列表，除非手动清除，数据永不过期。
+ * 数据格式如下：
+ * Array
+ * (
+ *     [0] => Array
+ *         (
+ *             [path] => C:\xampp\htdocs\wordpress/wp-content/uploads/sakurairo_vision/@2.4/smilies\bilipng\emoji_2233_chijing.png
+ *             [little_path] => /sakurairo_vision/@2.4/smilies\bilipng\emoji_2233_chijing.png
+ *             [file_url] => http://192.168.233.174/wordpress/wp-content/uploads/sakurairo_vision/@2.4/smilies\bilipng\emoji_2233_chijing.png
+ *             [name] => emoji_2233_chijing.png
+ *             [base_name] => emoji_2233_chijing
+ *             [extension] => png
+ *         )
+ *     ...
+ * ）    
+ *
+ * @return array
+ */
+function get_custom_smilies_list() {
+
+    $custom_smilies_list = get_transient("custom_smilies_list");
+
+    if ($custom_smilies_list !== false) {
+        return $custom_smilies_list;
+    }
+
+    $custom_smilies_list = array();
+    $custom_smilies_dir = iro_opt('smilies_dir');
+
+    if (!$custom_smilies_dir) {
+        return $custom_smilies_list;
+    }
+
+    $custom_smilies_extension = ['jpg', 'jpeg', 'png', 'gif', 'svg', 'avif','webp'];
+    $custom_smilies_path = wp_get_upload_dir()['basedir'] . $custom_smilies_dir;
+
+    if (!is_dir($custom_smilies_path)) {
+        return $custom_smilies_list;
+    }
+
+    $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($custom_smilies_path), RecursiveIteratorIterator::LEAVES_ONLY);
+        foreach ($files as $file) {
+            if ($file->isFile()) {
+                $file_name = $file->getFilename();
+                $file_base_name = pathinfo($file_name, PATHINFO_FILENAME);
+                $file_extension = pathinfo($file_name, PATHINFO_EXTENSION);
+                $file_path = $file->getPathname();
+                $file_little_path = str_replace(wp_get_upload_dir()['basedir'], '' , $file_path);
+                $file_url = wp_get_upload_dir()['baseurl'] . $file_little_path;
+                if (in_array($file_extension, $custom_smilies_extension)) {
+                    $custom_smilies_list[] = array(
+                        'path' => $file_path,
+                        'little_path' => $file_little_path,
+                        'file_url' => $file_url,
+                        'name' => $file_name,
+                        'base_name' => $file_base_name,
+                        'extension' => $file_extension
+                    );
+                }            
+            }
+        }
+    set_transient("custom_smilies_list", $custom_smilies_list);
+
+    return $custom_smilies_list;
+}
+
+/**
+ * 通过 GET 方法更新自定义表情包列表
+ */
+function update_custom_smilies_list() {
+
+    if (!is_admin() || !current_user_can('manage_options')) {
+        return;
+    }
+
+    if (!isset($_GET['update_custom_smilies'])) {
+        return;
+    }
+
+    $transient_name = sanitize_key($_GET['update_custom_smilies']);
+
+    if ($transient_name === 'true') {
+        delete_transient("custom_smilies_list");
+        $custom_smilies_list = get_custom_smilies_list();
+        $much = count($custom_smilies_list);
+        echo '自定义表情列表更新完成！总共有' . $much . '个表情。';
+    }
+}
+update_custom_smilies_list();
+
+
+$custom_smiliestrans = array();
+/**
+ * 输出表情列表
+ *
+ */
+function push_custom_smilies() {
+
+    global $custom_smiliestrans;
+    $custom_smilies_panel = '';
+    $custom_smilies_list = get_custom_smilies_list();
+
+    if (!$custom_smilies_list) {
+        $custom_smilies_panel = '<div style="font-size: 20px;text-align: center;width: 300px;height: 100px;line-height: 100px;">File does not exist!</div>';
+        return $custom_smilies_panel;
+    }
+
+    $custom_smilies_cdn = iro_opt('smilies_proxy');
+    foreach ($custom_smilies_list as $smiley) {
+
+        if ($custom_smilies_cdn) {
+            $smiley_url = $custom_smilies_cdn . $smiley['little_path'];
+        } else {
+            $smiley_url = $smiley['file_url'];
+        }
+        $custom_smilies_panel = $custom_smilies_panel . '<span title="' . $smiley['base_name'] . '" onclick="grin(' . "'" . $smiley['base_name'] . "'" . ',type = \'Math\')"><img loading="lazy" style="height: 60px;" src="' . $smiley_url . '" /></span>';
+        $custom_smiliestrans['{{' . $smiley['base_name'] . '}}'] = '<span title="' . $smiley['base_name'] . '" ><img loading="lazy" style="height: 60px;" src="' . $smiley_url . '" /></span>';
+    }
+
+    return $custom_smilies_panel;
+}
+
+/**
+ * 替换评论、文章中的表情符号
+ *
+ */
+function custom_smilies_filter($content) {
+    push_custom_smilies();
+    global $custom_smiliestrans;
+    $content =  str_replace(array_keys($custom_smiliestrans), $custom_smiliestrans, $content);
+    return $content;
+}
+add_filter('the_content', 'custom_smilies_filter'); 
+add_filter('comment_text', 'custom_smilies_filter'); 
+
 
 $wpsmiliestrans = array();
 function push_tieba_smilies()
