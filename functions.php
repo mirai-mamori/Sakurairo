@@ -2384,7 +2384,7 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
         
     }
     add_filter('registration_errors', 'registration_CAPTCHA_CHECK', 2, 3);
-} elseif (iro_opt('captcha_select') === 'vaptcha') {
+} elseif ((iro_opt('captcha_select') === 'vaptcha') && (!empty(iro_opt("vaptcha_vid")) && !empty(iro_opt("vaptcha_key"))) {
     function vaptchaInit()
     {
         include_once('inc/classes/Vaptcha.php');
