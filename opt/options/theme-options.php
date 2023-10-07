@@ -3065,10 +3065,10 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'desc' => __('Select the emoticons to be displayed in the comment area input box. Uncheck all to turn off the comment input box emoticon function.','sakurairo_csf'),
         'multiple' => true,
         'options'  => array(
-          'bilibili'   => 'BILIBILI表情',
-          'tieba'   => '贴吧表情',
-          'yanwenzi' => '颜文字',
-          'custom' => '自定义表情',
+          'bilibili'   => __('BiliBili Emoticon Pack','sakurairo_csf'),
+          'tieba'   => __('Baidu Tieba Emoticon Pack','sakurairo_csf'),
+          'yanwenzi' => __('Emoji','sakurairo_csf'),
+          'custom' => __('Customized Emoticon Pack','sakurairo_csf'),
         ),
         'default'  => array( 'bilibili', 'tieba', 'yanwenzi' )
       ),
