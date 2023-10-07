@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-10-07 12:36+0800\n"
-"PO-Revision-Date: 2023-10-07 12:51+0800\n"
+"POT-Creation-Date: 2023-10-07 14:06+0800\n"
+"PO-Revision-Date: 2023-10-07 14:09+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -3229,6 +3229,22 @@ msgid ""
 msgstr ""
 "コメントエリアの入力ボックスに表示する顔文字を選択します。すべてのチェックを"
 "外すと、コメント入力ボックスの顔文字機能がオフになります。"
+
+#: options/theme-options.php:3068
+msgid "BiliBili Emoticon Pack"
+msgstr "BiliBili 顔文字パック"
+
+#: options/theme-options.php:3069
+msgid "Baidu Tieba Emoticon Pack"
+msgstr "百度貼吧顔文字パック"
+
+#: options/theme-options.php:3070
+msgid "Emoji"
+msgstr ""
+
+#: options/theme-options.php:3071
+msgid "Customized Emoticon Pack"
+msgstr "カスタム顔文字パック"
 
 #: options/theme-options.php:3079
 msgid "Customized Emoticon Column Name"

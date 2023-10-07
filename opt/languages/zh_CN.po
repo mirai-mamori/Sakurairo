@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-10-07 12:52+0800\n"
-"PO-Revision-Date: 2023-10-07 13:11+0800\n"
+"POT-Creation-Date: 2023-10-07 14:09+0800\n"
+"PO-Revision-Date: 2023-10-07 14:10+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -3101,6 +3101,22 @@ msgid ""
 msgstr ""
 "选择要在评论区域输入框中显示的表情。全部取消选中可关闭评论区域输入框表情功"
 "能。"
+
+#: options/theme-options.php:3068
+msgid "BiliBili Emoticon Pack"
+msgstr "哔哩哔哩表情包"
+
+#: options/theme-options.php:3069
+msgid "Baidu Tieba Emoticon Pack"
+msgstr "百度贴吧表情包"
+
+#: options/theme-options.php:3070
+msgid "Emoji"
+msgstr "颜文字"
+
+#: options/theme-options.php:3071
+msgid "Customized Emoticon Pack"
+msgstr "自定义表情包"
 
 #: options/theme-options.php:3079
 msgid "Customized Emoticon Column Name"
