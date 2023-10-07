@@ -1373,9 +1373,9 @@ h1.page-title {
   overflow: hidden;
   margin: 10px 0 0 0;
   background: #000;
-  width: 96%;
+  width: 97%;
   left: 50%;
-  margin-left: -48%;
+  margin-left: -48.5%;
   position: relative;
   border-radius: 15px;
 }
