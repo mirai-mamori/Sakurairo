@@ -12,7 +12,7 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
 
     // Default constants
     public static $debug  = false;
-    public static $version  = '2.2.9';
+    public static $version  = '2.3.0e';
     public static $dir      = '';
     public static $url      = '';
     public static $css      = '';

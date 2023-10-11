@@ -8,16 +8,24 @@ functionality like query string parsing.
 ![Static analysis](https://github.com/guzzle/psr7/workflows/Static%20analysis/badge.svg)
 
 
-# Installation
+## Features
+
+This package comes with a number of stream implementations and stream
+decorators.
+
+
+## Installation
 
 ```shell
 composer require guzzlehttp/psr7
 ```
 
-# Stream implementation
+## Version Guidance
 
-This package comes with a number of stream implementations and stream
-decorators.
+| Version | Status              | PHP Version  |
+|---------|---------------------|--------------|
+| 1.x     | Security fixes only | >=5.4,<8.1   |
+| 2.x     | Latest              | >=7.2.5,<8.4 |
 
 
 ## AppendStream
@@ -853,14 +861,6 @@ Whether two URIs can be considered equivalent. Both URIs are normalized automati
 `$normalizations` bitmask. The method also accepts relative URI references and returns true when they are equivalent.
 This of course assumes they will be resolved against the same base URI. If this is not the case, determination of
 equivalence or difference of relative references does not mean anything.
-
-
-## Version Guidance
-
-| Version | Status         | PHP Version      |
-|---------|----------------|------------------|
-| 1.x     | Security fixes | >=5.4,<8.1       |
-| 2.x     | Latest         | ^7.2.5 \|\| ^8.0 |
 
 
 ## Security

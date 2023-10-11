@@ -303,7 +303,7 @@ function the_headPattern(){
     endwhile; endif;
   }elseif(is_page()){
     $full_image_url = !empty($full_image_url) ? $full_image_url[0] : null;
-    $t .= the_title( '<h1 class="entry-title">', '</h1>', false);
+    $t .= the_title( '<span><h1 class="entry-title">', '</h1></span>', false);
   }elseif(is_archive()){
     $full_image_url = z_taxonomy_image_url();
     $des = category_description() ? category_description() : ''; // 描述
