@@ -20,6 +20,9 @@ get_header();
         );
         $shuoshuo_query = new WP_Query($args);
     ?>
+	<div class="entry-content">
+		<?php the_content( '', true ); ?>
+	</div>			
     <div class="cbp_shuoshuo">
         <?php if ($shuoshuo_query->have_posts()) : ?>
             <ul id="main" class="cbp_tmtimeline">
@@ -31,7 +34,6 @@ get_header();
                             </span>
                             <div class="cbp_tmlabel">
                                 <object class="entry-content">
-                                    <p></p>
                                     <?php the_content( '', true ); ?>
                                 </object>
                                 <p class="shuoshuo_meta">

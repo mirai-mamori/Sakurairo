@@ -10,7 +10,7 @@
 
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '18.2.0');
+define('INT_VERSION', '18.3.0');
 define('BUILD_VERSION', '2');
 
 function check_php_version($preset_version) {
@@ -32,8 +32,12 @@ if (!function_exists('iro_opt')) {
 if (!function_exists('iro_opt_update')) {
     function iro_opt_update($option = '', $value = null)
     {
-        $options = get_option('iro_options');
-        $options[$option] = $value;
+        $options = get_option('iro_options'); // 当数据库没有指定项时，WordPress会返回false
+        if($options){
+            $options[$option] = $value;
+        }else{
+            $options = array($option => $value);
+        }
         update_option('iro_options', $options);
     }
 }
@@ -851,9 +855,9 @@ if ($custom_login_switch) {
                         document.body.style.backgroundImage = `url(${src})`
                         loading.classList.add("hide");
                         loading.classList.remove("show");
-                        loading.addEventListener("transitionend", () => {
+                        setTimeout(function() {
                             loading.remove()
-                        });
+                        }, 400);
                     },
                     img = document.createElement('img')
                 img.src = src
@@ -1058,6 +1062,142 @@ add_filter('comment_text', 'comment_picture_support');
 // 还有一个思路是根据表情调用路径来判定<-- 此法最好！
 // 贴吧
 
+/**
+ * 通过文件夹获取自定义表情列表，使用Transients来存储获得的列表，除非手动清除，数据永不过期。
+ * 数据格式如下：
+ * Array
+ * (
+ *     [0] => Array
+ *         (
+ *             [path] => C:\xampp\htdocs\wordpress/wp-content/uploads/sakurairo_vision/@2.4/smilies\bilipng\emoji_2233_chijing.png
+ *             [little_path] => /sakurairo_vision/@2.4/smilies\bilipng\emoji_2233_chijing.png
+ *             [file_url] => http://192.168.233.174/wordpress/wp-content/uploads/sakurairo_vision/@2.4/smilies\bilipng\emoji_2233_chijing.png
+ *             [name] => emoji_2233_chijing.png
+ *             [base_name] => emoji_2233_chijing
+ *             [extension] => png
+ *         )
+ *     ...
+ * ）    
+ *
+ * @return array
+ */
+function get_custom_smilies_list() {
+
+    $custom_smilies_list = get_transient("custom_smilies_list");
+
+    if ($custom_smilies_list !== false) {
+        return $custom_smilies_list;
+    }
+
+    $custom_smilies_list = array();
+    $custom_smilies_dir = iro_opt('smilies_dir');
+
+    if (!$custom_smilies_dir) {
+        return $custom_smilies_list;
+    }
+
+    $custom_smilies_extension = ['jpg', 'jpeg', 'png', 'gif', 'svg', 'avif','webp'];
+    $custom_smilies_path = wp_get_upload_dir()['basedir'] . $custom_smilies_dir;
+
+    if (!is_dir($custom_smilies_path)) {
+        return $custom_smilies_list;
+    }
+
+    $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($custom_smilies_path), RecursiveIteratorIterator::LEAVES_ONLY);
+        foreach ($files as $file) {
+            if ($file->isFile()) {
+                $file_name = $file->getFilename();
+                $file_base_name = pathinfo($file_name, PATHINFO_FILENAME);
+                $file_extension = pathinfo($file_name, PATHINFO_EXTENSION);
+                $file_path = $file->getPathname();
+                $file_little_path = str_replace(wp_get_upload_dir()['basedir'], '' , $file_path);
+                $file_url = wp_get_upload_dir()['baseurl'] . $file_little_path;
+                if (in_array($file_extension, $custom_smilies_extension)) {
+                    $custom_smilies_list[] = array(
+                        'path' => $file_path,
+                        'little_path' => $file_little_path,
+                        'file_url' => $file_url,
+                        'name' => $file_name,
+                        'base_name' => $file_base_name,
+                        'extension' => $file_extension
+                    );
+                }            
+            }
+        }
+    set_transient("custom_smilies_list", $custom_smilies_list);
+
+    return $custom_smilies_list;
+}
+
+/**
+ * 通过 GET 方法更新自定义表情包列表
+ */
+function update_custom_smilies_list() {
+
+    if (!is_admin() || !current_user_can('manage_options')) {
+        return;
+    }
+
+    if (!isset($_GET['update_custom_smilies'])) {
+        return;
+    }
+
+    $transient_name = sanitize_key($_GET['update_custom_smilies']);
+
+    if ($transient_name === 'true') {
+        delete_transient("custom_smilies_list");
+        $custom_smilies_list = get_custom_smilies_list();
+        $much = count($custom_smilies_list);
+        echo '自定义表情列表更新完成！总共有' . $much . '个表情。';
+    }
+}
+update_custom_smilies_list();
+
+
+$custom_smiliestrans = array();
+/**
+ * 输出表情列表
+ *
+ */
+function push_custom_smilies() {
+
+    global $custom_smiliestrans;
+    $custom_smilies_panel = '';
+    $custom_smilies_list = get_custom_smilies_list();
+
+    if (!$custom_smilies_list) {
+        $custom_smilies_panel = '<div style="font-size: 20px;text-align: center;width: 300px;height: 100px;line-height: 100px;">File does not exist!</div>';
+        return $custom_smilies_panel;
+    }
+
+    $custom_smilies_cdn = iro_opt('smilies_proxy');
+    foreach ($custom_smilies_list as $smiley) {
+
+        if ($custom_smilies_cdn) {
+            $smiley_url = $custom_smilies_cdn . $smiley['little_path'];
+        } else {
+            $smiley_url = $smiley['file_url'];
+        }
+        $custom_smilies_panel = $custom_smilies_panel . '<span title="' . $smiley['base_name'] . '" onclick="grin(' . "'" . $smiley['base_name'] . "'" . ',type = \'Math\')"><img loading="lazy" style="height: 60px;" src="' . $smiley_url . '" /></span>';
+        $custom_smiliestrans['{{' . $smiley['base_name'] . '}}'] = '<span title="' . $smiley['base_name'] . '" ><img loading="lazy" style="height: 60px;" src="' . $smiley_url . '" /></span>';
+    }
+
+    return $custom_smilies_panel;
+}
+
+/**
+ * 替换评论、文章中的表情符号
+ *
+ */
+function custom_smilies_filter($content) {
+    push_custom_smilies();
+    global $custom_smiliestrans;
+    $content =  str_replace(array_keys($custom_smiliestrans), $custom_smiliestrans, $content);
+    return $content;
+}
+add_filter('the_content', 'custom_smilies_filter'); 
+add_filter('comment_text', 'custom_smilies_filter'); 
+
 
 $wpsmiliestrans = array();
 function push_tieba_smilies()
@@ -1092,51 +1232,10 @@ add_filter('comment_text', 'tieba_smile_filter'); //替换评论关键词
 
 function push_emoji_panel()
 {
-    return '
-        <a class="emoji-item">(⌒▽⌒)</a>
-        <a class="emoji-item">（￣▽￣）</a>
-        <a class="emoji-item">(=・ω・=)</a>
-        <a class="emoji-item">(｀・ω・´)</a>
-        <a class="emoji-item">(〜￣△￣)〜</a>
-        <a class="emoji-item">(･∀･)</a>
-        <a class="emoji-item">(°∀°)ﾉ</a>
-        <a class="emoji-item">(￣3￣)</a>
-        <a class="emoji-item">╮(￣▽￣)╭</a>
-        <a class="emoji-item">(´_ゝ｀)</a>
-        <a class="emoji-item">←_←</a>
-        <a class="emoji-item">→_→</a>
-        <a class="emoji-item">(&lt;_&lt;)</a>
-        <a class="emoji-item">(&gt;_&gt;)</a>
-        <a class="emoji-item">(;¬_¬)</a>
-        <a class="emoji-item">("▔□▔)/</a>
-        <a class="emoji-item">(ﾟДﾟ≡ﾟдﾟ)!?</a>
-        <a class="emoji-item">Σ(ﾟдﾟ;)</a>
-        <a class="emoji-item">Σ(￣□￣||)</a>
-        <a class="emoji-item">(’；ω；‘)</a>
-        <a class="emoji-item">（/TДT)/</a>
-        <a class="emoji-item">(^・ω・^ )</a>
-        <a class="emoji-item">(｡･ω･｡)</a>
-        <a class="emoji-item">(●￣(ｴ)￣●)</a>
-        <a class="emoji-item">ε=ε=(ノ≧∇≦)ノ</a>
-        <a class="emoji-item">(’･_･‘)</a>
-        <a class="emoji-item">(-_-#)</a>
-        <a class="emoji-item">（￣へ￣）</a>
-        <a class="emoji-item">(￣ε(#￣)Σ</a>
-        <a class="emoji-item">ヽ(‘Д’)ﾉ</a>
-        <a class="emoji-item">（#-_-)┯━┯</a>
-        <a class="emoji-item">(╯°口°)╯(┴—┴</a>
-        <a class="emoji-item">←◡←</a>
-        <a class="emoji-item">( ♥д♥)</a>
-        <a class="emoji-item">_(:3」∠)_</a>
-        <a class="emoji-item">Σ&gt;―(〃°ω°〃)♡→</a>
-        <a class="emoji-item">⁄(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄</a>
-        <a class="emoji-item">(╬ﾟдﾟ)▄︻┻┳═一</a>
-        <a class="emoji-item">･*･:≡(　ε:)</a>
-        <a class="emoji-item">(笑)</a>
-        <a class="emoji-item">(汗)</a>
-        <a class="emoji-item">(泣)</a>
-        <a class="emoji-item">(苦笑)</a>
-    ';
+    $emojis = ['(⌒▽⌒)', '（￣▽￣）', '(=・ω・=)', '(｀・ω・´)', '(〜￣△￣)〜', '(･∀･)', '(°∀°)ﾉ', '(￣3￣)', '╮(￣▽￣)╭', '(´_ゝ｀)', '←_←', '→_→', '(&lt;_&lt;)', '(&gt;_&gt;)', '(;¬_¬)', '("▔□▔)/', '(ﾟДﾟ≡ﾟдﾟ)!?', 'Σ(ﾟдﾟ;)', 'Σ(￣□￣||)', '(’；ω；‘)', '（/TДT)/', '(^・ω・^ )', '(｡･ω･｡)', '(●￣(ｴ)￣●)', 'ε=ε=(ノ≧∇≦)ノ', '(’･_･‘)', '(-_-#)', '（￣へ￣）', '(￣ε(#￣)Σ', 'ヽ(‘Д’)ﾉ', '（#-_-)┯━┯', '(╯°口°)╯(┴—┴', '←◡←', '( ♥д♥)', '_(:3」∠)_', 'Σ&gt;―(〃°ω°〃)♡→', '⁄(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄', '(╬ﾟдﾟ)▄︻┻┳═一', '･*･:≡(　ε:)', '(笑)', '(汗)', '(泣)', '(苦笑)'];
+    return join('', array_map(function ($emoji) {
+        return '<a class="emoji-item">' . $emoji . '</a>';
+    }, $emojis));
 }
 
 // bilibili smiles
@@ -1561,11 +1660,19 @@ function update_theme_admin_notice_meta() {
 //dashboard scheme
 function dash_scheme($key, $name, $col1, $col2, $col3, $col4, $base, $focus, $current, $rules = "")
 {
-    $hash = "color_1=" . str_replace("#", "", $col1) .
-        "&color_2=" . str_replace("#", "", $col2) .
-        "&color_3=" . str_replace("#", "", $col3) .
-        "&color_4=" . str_replace("#", "", $col4) .
-        "&rules=" . urlencode($rules);
+    $hash = 'rules='. urlencode($rules);
+    if($col1){
+        $hash .= '&color_1=' . str_replace("#", "", $col1);
+    }
+    if($col2){
+        $hash .= '&color_2=' . str_replace("#", "", $col2);
+    }
+    if($col3){
+        $hash .= '&color_3=' . str_replace("#", "", $col3);
+    }
+    if($col4){
+        $hash .= '&color_4=' . str_replace("#", "", $col4);
+    }
 
     wp_admin_css_color(
         $key,
@@ -2060,7 +2167,7 @@ add_shortcode('ghcard', 'gh_card');
 function gh_card($attr, $content = '')
 {
     extract(shortcode_atts(array("path" => ""), $attr));
-    return '<div class="ghcard"><a href="https://github.com/'. $path .'"><img src="https://github-readme-stats.maho.cc/api'. $content .'" alt="Github-Card"></a></div>';
+    return '<div class="ghcard"><a href="https://github.com/'. $path .'"><img src="http://github-profile-summary-cards.vercel.app/api'. $content .'" alt="Github-Card"></a></div>';
 }
 
 add_shortcode('showcard', 'show_card');
@@ -2248,9 +2355,9 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
             if ($check['code'] != 5) {
                 return $errors->add('invalid_department ', '<strong>错误</strong>：' . $check['msg']);
             }
-        }
-        return $errors->add('invalid_department', '<strong>错误</strong>：验证码为空！');
-        
+        } else {
+            return $errors->add('invalid_department', '<strong>错误</strong>：验证码为空！');
+        }  
     }
 
     add_action('lostpassword_post', 'lostpassword_CHECK');
@@ -2277,7 +2384,7 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
         
     }
     add_filter('registration_errors', 'registration_CAPTCHA_CHECK', 2, 3);
-} elseif (iro_opt('captcha_select') === 'vaptcha') {
+} elseif ((iro_opt('captcha_select') === 'vaptcha') && (!empty(iro_opt("vaptcha_vid")) && !empty(iro_opt("vaptcha_key")))) {
     function vaptchaInit()
     {
         include_once('inc/classes/Vaptcha.php');
@@ -2352,3 +2459,9 @@ function search_404_fix_template_redirect()
 }
 
 add_action('template_redirect', 'search_404_fix_template_redirect');
+
+// 给上传图片增加时间戳
+add_filter('wp_handle_upload_prefilter', function($file){
+	$file['name'] = time().'-'.$file['name']; 
+	return $file; 
+});

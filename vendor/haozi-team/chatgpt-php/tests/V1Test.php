@@ -4,7 +4,7 @@ use HaoZiTeam\ChatGPT\V1;
 
 $accessToken = getenv('OPENAI_ACCESS_TOKEN');
 $chatGPT = new V1();
-$chatGPT->addAccount($accessToken);
+$chatGPT->addAccount($accessToken, 0, 'gpt-4');
 $test = $chatGPT->ask('Hello');
 foreach ($test as $answer) {
     $conversationId = $answer['conversation_id'];
@@ -45,5 +45,15 @@ it('should delete conversation', function () use ($chatGPT, $conversationId, $pa
 
 it('should delete conversations', function () use ($chatGPT) {
     $return = $chatGPT->clearConversations();
+    $this->assertTrue($return);
+})->group('working');
+
+it('should return plugins list', function () use ($chatGPT) {
+    $return = $chatGPT->getPlugins();
+    $this->assertIsArray($return);
+})->group('working');
+
+it('should change history and training status', function () use ($chatGPT) {
+    $return = $chatGPT->setChatHistoryAndTraining(true);
     $this->assertTrue($return);
 })->group('working');
