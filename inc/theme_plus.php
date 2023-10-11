@@ -815,7 +815,7 @@ function siren_get_useragent(string $ua):string{
     $imgurl = iro_opt('vision_resource_basepath').'ua/';
     $browser = siren_get_browsers($ua);
     $os = siren_get_os($ua);
-    return '&nbsp;&nbsp;<span class="useragent-info">( <img src="'. $imgurl.$browser['icon'] .'.svg">&nbsp;'. $browser['title'] .'&nbsp;&nbsp;<img src="'. $imgurl.$os['icon'] .'.svg">&nbsp;'. $os['title'] .' )</span>';
+    return '&nbsp;&nbsp;<span class="useragent-info">( <img alt="" src="browser_icon'. $imgurl.$browser['icon'] .'.svg">&nbsp;'. $browser['title'] .'&nbsp;&nbsp;<img alt="os_icon" src="'. $imgurl.$os['icon'] .'.svg">&nbsp;'. $os['title'] .' )</span>';
   }
   return '';
 }
@@ -838,8 +838,8 @@ function mobile_get_useragent_icon(string $ua):string{
   $alipay = iro_opt('alipay_code');
   $wechat = iro_opt('wechat_code');
   if($alipay || $wechat){
-  $alipay =  $alipay ? '<li class="alipay-code"><img src="'.$alipay.'"></li>' : '';
-  $wechat = $wechat ? '<li class="wechat-code"><img src="'.$wechat.'"></li>' : '';
+  $alipay =  $alipay ? '<li class="alipay-code"><img alt="alipay_img" src="'.$alipay.'"></li>' : '';
+  $wechat = $wechat ? '<li class="wechat-code"><img alt="wechat_img" src="'.$wechat.'"></li>' : '';
   ?>
     <div class="reward-open"> <i class="fa-solid fa-piggy-bank fa-sm"></i>
       <div class="reward-main">

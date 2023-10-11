@@ -445,7 +445,7 @@ function get_author_class($comment_author_email, $user_id)
     }
 
     // $Lv = $author_count < 5 ? 0 : ($author_count < 10 ? 1 : ($author_count < 20 ? 2 : ($author_count < 40 ? 3 : ($author_count < 80 ? 4 : ($author_count < 160 ? 5 : 6)))));
-    echo "<span class=\"showGrade{$Lv}\" title=\"Lv{$Lv}\"><img src=\"".iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.6/')."comment_level/level_{$Lv}.svg\" style=\"height: 1.5em; max-height: 1.5em; display: inline-block;\"></span>";
+    echo "<span class=\"showGrade{$Lv}\" title=\"Lv{$Lv}\"><img alt=\"level_img\" src=\"".iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.6/')."comment_level/level_{$Lv}.svg\" style=\"height: 1.5em; max-height: 1.5em; display: inline-block;\"></span>";
 }
 
 /**
@@ -534,7 +534,7 @@ function get_the_link_items($id = null)
                 $bookmark->link_image = 'https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/friendlink.jpg';
             }
 
-            $output .= '<li class="link-item"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" rel="friend"><img class="lazyload" onerror="imgError(this,1)" data-src="' . $bookmark->link_image . '" src="' . iro_opt('load_in_svg') . '"></br><span class="sitename" style="'. $bookmark->link_notes .'">' . $bookmark->link_name . '</span><div class="linkdes">' . $bookmark->link_description . '</div></a></li>';
+            $output .= '<li class="link-item"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" rel="friend"><img alt="friend_avator" class="lazyload" onerror="imgError(this,1)" data-src="' . $bookmark->link_image . '" src="' . iro_opt('load_in_svg') . '"></br><span class="sitename" style="'. $bookmark->link_notes .'">' . $bookmark->link_name . '</span><div class="linkdes">' . $bookmark->link_description . '</div></a></li>';
         }
         $output .= '</ul>';
     }
