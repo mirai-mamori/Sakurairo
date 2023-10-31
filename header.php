@@ -10,7 +10,7 @@
  * @package Akina
  */
 
-$mashiro_logo = iro_opt('mashiro_logo');
+$mashiro_logo = iro_opt('mashiro_logo', []);
 $vision_resource_basepath = iro_opt('vision_resource_basepath');
 ?>
 <?php header('X-Frame-Options: SAMEORIGIN'); ?>
