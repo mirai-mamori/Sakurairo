@@ -52,7 +52,7 @@ while (have_posts()) : the_post();
 			} else {
 				$post_img = DEFAULT_FEATURE_IMAGE('th');
 			}
-			$cover_html = '<img class="lazyload" src="' . iro_opt('load_out_svg') . '#lazyload-blur" data-src="' . $post_img . '"/>';
+			$cover_html = '<img alt="post_img" class="lazyload" src="' . iro_opt('load_out_svg') . '#lazyload-blur" data-src="' . $post_img . '"/>';
 			break;
 	}
 

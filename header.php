@@ -114,11 +114,11 @@ $vision_resource_basepath = iro_opt('vision_resource_basepath');
 						<span class="logolink moe-mashiro">
 							<a href="<?php bloginfo('url'); ?>">
 								<ruby>
-									<span class="sakuraso"><?php echo $mashiro_logo['text_a']; ?></span>
-									<span class="no"><?php echo $mashiro_logo['text_b']; ?></span>
-									<span class="shironeko"><?php echo $mashiro_logo['text_c']; ?></span>
+									<span class="sakuraso"><?= $mashiro_logo['text_a'] ?? ""; ?></span>
+									<span class="no"><?= $mashiro_logo['text_b'] ?? ""; ?></span>
+									<span class="shironeko"><?= $mashiro_logo['text_c'] ?? ""; ?></span>
 									<rp></rp>
-									<rt class="chinese-font"><?php echo $mashiro_logo['text_secondary']; ?></rt>
+									<rt class="chinese-font"><?= $mashiro_logo['text_secondary'] ?? ""; ?></rt>
 									<rp></rp>
 								</ruby>
 							</a>
