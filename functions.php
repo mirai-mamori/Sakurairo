@@ -2167,7 +2167,7 @@ add_shortcode('ghcard', 'gh_card');
 function gh_card($attr, $content = '')
 {
     extract(shortcode_atts(array("path" => ""), $attr));
-    return '<div class="ghcard"><a href="https://github.com/'. $path .'"><img src="http://github-profile-summary-cards.vercel.app/api'. $content .'" alt="Github-Card"></a></div>';
+    return '<div class="ghcard"><a href="https://github.com/'. $path .'"><img src="https://github-readme-stats.vercel.app/api'. $content .'" alt="Github-Card"></a></div>';
 }
 
 add_shortcode('showcard', 'show_card');
