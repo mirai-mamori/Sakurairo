@@ -2044,6 +2044,22 @@ function allow_more_tag_in_comment()
 }
 add_action('pre_comment_on_post', 'allow_more_tag_in_comment');
 
+/**
+ * 检查数据库是否支持MyISAM引擎
+ */
+function check_myisam_support()
+{
+    global $wpdb;
+    $results = $wpdb->get_results("SHOW ENGINES");
+    if (!$results) return false;
+    foreach ($results as $result) {
+        if ($result->Engine == "MyISAM") {
+            return $result->Support == "YES";
+        }
+    }
+    return false;
+}
+
 /*
  * 随机图
  */
@@ -2060,7 +2076,7 @@ function create_sakura_table()
         `mate_key` varchar(50) COLLATE utf8_bin NOT NULL,
         `mate_value` text COLLATE utf8_bin NOT NULL,
         PRIMARY KEY (`mate_key`)
-        ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;");
+        ) ".(check_myisam_support()?"ENGINE=MyISAM ":"")."DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;");
     //default data
     if (!$wpdb->get_var("SELECT COUNT(*) FROM $sakura_table_name WHERE mate_key = 'manifest_json'")) {
         $manifest = array(
