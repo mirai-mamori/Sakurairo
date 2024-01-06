@@ -1285,7 +1285,7 @@ function bili_smile_filter_rss($content)
     $biliimgdir = 'bili' . $type . '/';
     $smiliesgs = '.' . $type;
     $content = str_replace('{{', '<img src="'.iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.6/').'smilies/' . $biliimgdir, $content);
-    $content = str_replace('}}', $smilesgs . '" alt="emoji" style="height: 2em; max-height: 2em;">', $content);
+    $content = str_replace('}}', $smiliesgs . '" alt="emoji" style="height: 2em; max-height: 2em;">', $content);
     $content =  str_replace('[img]', '<img src="', $content);
     $content =  str_replace('[/img]', '" style="display: block;margin-left: auto;margin-right: auto;">', $content);
     return $content;
@@ -1369,7 +1369,7 @@ function siren_private()
     $action = $_POST["p_action"];
     if ($action == 'set_private') {
         update_comment_meta($comment_id, '_private', 'true');
-        $i_private = get_comment_meta($comment_ID, '_private', true);
+        $i_private = get_comment_meta($comment_id, '_private', true);
         echo empty($i_private) ? '是' : '否';
     }
     die;
