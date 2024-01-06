@@ -6,8 +6,8 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://fuukei.org/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.6.3.1
-Tested up to: 6.2
+Version: 2.6.4
+Tested up to: 6.4
 Requires at least: 5.8
 Requires PHP: 7.2
 License: GNU General Public License v2 or later
@@ -504,6 +504,7 @@ input[type=week] {
 }
 
 .wrapper {
+  border-top: 1.5px solid #FFFFFF;
   animation: blur .8s;
   animation-duration: .8s;
   -webkit-animation: blur .8s;
@@ -2662,6 +2663,7 @@ h1.main-title {
   letter-spacing: 0;
   line-height: 30px;
   border-radius: 15px;
+  border: 1px solid var(--infor_bar_bgcolor, rgba(255, 255, 255, 0.8));
   box-sizing: initial;
   white-space: nowrap;
   font-weight: var(--global-font-weight);
@@ -2679,26 +2681,30 @@ h1.main-title {
 }
 
 .top-social {
-  height: 32px;
-  margin-top: 30px;
-  margin-left: 10px;
+  height: 30px;
+  margin-top: 28px;
   list-style: none;
   display: inline-block;
 }
 
 .top-social img {
-  height: 40px;
+  height: 36px;
   width: 40px;
-  padding: 9px;
-  background: var(--infor_bar_bgcolor, rgba(255, 250, 250, 0.92));
+  padding: 8px 10px;
+  border: 0.5px solid var(--infor_bar_bgcolor, rgba(255, 255, 255, 0.8));
+  background: var(--infor_bar_bgcolor, rgba(255, 255, 255, 0.9));
   transition: all 0.8s ease !important;
-  backdrop-filter: blur(10px);
+}
+
+.top-social img:hover {
+  box-shadow: 0 1px 6px 3px #e8e8e8;
+  background: rgba(255, 255, 255, 0.95);
+  transition: all 0.8s ease !important;
 }
 
 .top-social_v2 {
   height: 32px;
   margin-bottom: -15px;
-  margin-left: 10px;
   list-style: none;
   display: inline-block;
 }
@@ -6497,12 +6503,12 @@ li.feature-2 {
 
 .top-social li {
   float: left;
-  margin-right: 10px;
+  margin: 0px 5px;
 }
 
 .top-social_v2 li {
   float: left;
-  margin-right: 13px;
+  margin: 0px 6px;
 }
 
 .wechat {
@@ -9921,6 +9927,11 @@ body.dark .lower li ul,
 body.dark .header-user-menu,
 body.dark .headertop-bar::after {
   background: rgba(51, 51, 51, var(--theme-dm-background_transparency, 1)) !important;
+  transition: all 0.8s ease;
+}
+
+body.dark .wrapper {
+  border: 1.5px solid #7d7d7d30;
 }
 
 body.dark .comments {
@@ -10282,6 +10293,13 @@ body.dark .site-header.yya {
   transition: all 0.8s ease;
 }
 
+body.dark .top-social img:hover {
+    box-shadow: 0 1px 30px 2px var(--theme-skin-dark) !important;
+    background: rgba(51, 51, 51, 0.95);
+    -webkit-transition: all .8s;
+    transition: all .8s;
+}
+
 body.dark .brick a {
   color: #7D7D7D;
   box-shadow: 0 1px 20px 2px rgba(26, 26, 26, 0.8);
@@ -10625,6 +10643,14 @@ body.dark li .cbp_tmlabel:after {
 body.dark .header-info,
 body.dark .header-shuo {
   color: #CCCCCC !important;
+}
+
+body.dark .header-info{
+  border: 1px solid rgba(51,51,51,0.7);
+}
+
+body.dark .top-social img{
+  border: 0.5px solid rgba(51,51,51,0.7);
 }
 
 body.dark .pattern-center h1.entry-title {
