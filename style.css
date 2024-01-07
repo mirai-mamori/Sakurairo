@@ -9707,13 +9707,13 @@ body.dark .post-list-thumb:hover {
   }
 
   .top-social {
-    margin-top: 20px;
+    margin-top: 22px;
   }
 
   .top-social img {
-    height: 35px;
+    height: 31.5px;
     width: 35px;
-    padding: 7px;
+    padding: 5.25px 7px;
   }
 
   .post-content {
