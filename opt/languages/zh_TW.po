@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2023-10-07 14:10+0800\n"
-"PO-Revision-Date: 2023-10-07 14:11+0800\n"
+"POT-Creation-Date: 2024-01-09 21:44+0800\n"
+"PO-Revision-Date: 2024-01-09 21:44+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: option-framework.php\n"
@@ -262,7 +262,7 @@ msgid "Background Blend Mode"
 msgstr "背景混合模式"
 
 #: fields/background/background.php:270 fields/link_color/link_color.php:36
-#: fields/typography/typography.php:186
+#: fields/typography/typography.php:190
 msgid "Normal"
 msgstr "正常"
 
@@ -330,19 +330,19 @@ msgstr "左邊"
 msgid "all"
 msgstr "所有"
 
-#: fields/border/border.php:51 fields/typography/typography.php:214
+#: fields/border/border.php:51 fields/typography/typography.php:218
 msgid "Solid"
 msgstr "實線"
 
-#: fields/border/border.php:52 fields/typography/typography.php:217
+#: fields/border/border.php:52 fields/typography/typography.php:221
 msgid "Dashed"
 msgstr "虛線"
 
-#: fields/border/border.php:53 fields/typography/typography.php:216
+#: fields/border/border.php:53 fields/typography/typography.php:220
 msgid "Dotted"
 msgstr "點線"
 
-#: fields/border/border.php:54 fields/typography/typography.php:215
+#: fields/border/border.php:54 fields/typography/typography.php:219
 msgid "Double"
 msgstr "雙線"
 
@@ -362,8 +362,8 @@ msgstr "凹陷"
 msgid "ridge"
 msgstr "凸出"
 
-#: fields/border/border.php:59 fields/typography/typography.php:199
-#: fields/typography/typography.php:213
+#: fields/border/border.php:59 fields/typography/typography.php:203
+#: fields/typography/typography.php:217
 msgid "None"
 msgstr "無"
 
@@ -483,143 +483,143 @@ msgstr "開"
 msgid "Off"
 msgstr "關"
 
-#: fields/typography/typography.php:96
+#: fields/typography/typography.php:101
 msgid "Font Family"
 msgstr "字體"
 
-#: fields/typography/typography.php:97
+#: fields/typography/typography.php:102
 msgid "Select a font"
 msgstr "選擇樣式"
 
-#: fields/typography/typography.php:105
+#: fields/typography/typography.php:110
 msgid "Backup Font Family"
 msgstr "匯出設定"
 
-#: fields/typography/typography.php:119 fields/typography/typography.php:132
-#: fields/typography/typography.php:145 fields/typography/typography.php:160
-#: fields/typography/typography.php:176 fields/typography/typography.php:189
-#: fields/typography/typography.php:203 fields/typography/typography.php:221
+#: fields/typography/typography.php:124 fields/typography/typography.php:137
+#: fields/typography/typography.php:150 fields/typography/typography.php:164
+#: fields/typography/typography.php:180 fields/typography/typography.php:193
+#: fields/typography/typography.php:207 fields/typography/typography.php:225
 #: options/theme-options.php:681
 msgid "Default"
 msgstr "默認"
 
-#: fields/typography/typography.php:130
+#: fields/typography/typography.php:135
 msgid "Font Style"
 msgstr "樣式"
 
-#: fields/typography/typography.php:144 fields/typography/typography.php:145
+#: fields/typography/typography.php:149 fields/typography/typography.php:150
 msgid "Load Extra Styles"
 msgstr "載入額外樣式"
 
-#: fields/typography/typography.php:158
+#: fields/typography/typography.php:162
 msgid "Subset"
 msgstr "子集"
 
-#: fields/typography/typography.php:168
+#: fields/typography/typography.php:172
 msgid "Text Align"
 msgstr "文字對齊"
 
-#: fields/typography/typography.php:170
+#: fields/typography/typography.php:174
 msgid "Inherit"
 msgstr "繼承"
 
-#: fields/typography/typography.php:171
+#: fields/typography/typography.php:175
 msgid "Left"
 msgstr "左"
 
-#: fields/typography/typography.php:172
+#: fields/typography/typography.php:176
 msgid "Center"
 msgstr "置中"
 
-#: fields/typography/typography.php:173
+#: fields/typography/typography.php:177
 msgid "Right"
 msgstr "右"
 
-#: fields/typography/typography.php:174
+#: fields/typography/typography.php:178
 msgid "Justify"
 msgstr "左右對齊"
 
-#: fields/typography/typography.php:175
+#: fields/typography/typography.php:179
 msgid "Initial"
 msgstr "初始"
 
-#: fields/typography/typography.php:184
+#: fields/typography/typography.php:188
 msgid "Font Variant"
 msgstr "樣式"
 
-#: fields/typography/typography.php:187
+#: fields/typography/typography.php:191
 msgid "Small Caps"
 msgstr "小寫"
 
-#: fields/typography/typography.php:188
+#: fields/typography/typography.php:192
 msgid "All Small Caps"
 msgstr "全部小寫"
 
-#: fields/typography/typography.php:197
+#: fields/typography/typography.php:201
 msgid "Text Transform"
 msgstr "文字轉換"
 
-#: fields/typography/typography.php:200
+#: fields/typography/typography.php:204
 msgid "Capitalize"
 msgstr "大寫"
 
-#: fields/typography/typography.php:201
+#: fields/typography/typography.php:205
 msgid "Uppercase"
 msgstr "大寫"
 
-#: fields/typography/typography.php:202
+#: fields/typography/typography.php:206
 msgid "Lowercase"
 msgstr "小寫"
 
-#: fields/typography/typography.php:211
+#: fields/typography/typography.php:215
 msgid "Text Decoration"
 msgstr "文字裝飾"
 
-#: fields/typography/typography.php:218
+#: fields/typography/typography.php:222
 msgid "Wavy"
 msgstr "波浪"
 
-#: fields/typography/typography.php:219
+#: fields/typography/typography.php:223
 msgid "Overline"
 msgstr "上橫線"
 
-#: fields/typography/typography.php:220
+#: fields/typography/typography.php:224
 msgid "Line-through"
 msgstr "刪除線"
 
-#: fields/typography/typography.php:233
+#: fields/typography/typography.php:237
 msgid "Font Size"
 msgstr "字體大小"
 
-#: fields/typography/typography.php:245
+#: fields/typography/typography.php:249
 msgid "Line Height"
 msgstr "縱向行距"
 
-#: fields/typography/typography.php:257
+#: fields/typography/typography.php:261
 msgid "Letter Spacing"
 msgstr "橫向字距"
 
-#: fields/typography/typography.php:269
+#: fields/typography/typography.php:273
 msgid "Word Spacing"
 msgstr "文字間距"
 
-#: fields/typography/typography.php:284
+#: fields/typography/typography.php:288
 msgid "Font Color"
 msgstr "連結顏色"
 
-#: fields/typography/typography.php:295
+#: fields/typography/typography.php:299
 msgid "Custom Style"
 msgstr "自訂樣式"
 
-#: fields/typography/typography.php:362
+#: fields/typography/typography.php:366
 msgid "Custom Web Fonts"
 msgstr "自定義 Web 字體"
 
-#: fields/typography/typography.php:368
+#: fields/typography/typography.php:372
 msgid "Safe Web Fonts"
 msgstr "Web 安全字體"
 
-#: fields/typography/typography.php:388
+#: fields/typography/typography.php:395
 msgid "Google Web Fonts"
 msgstr "Google網頁字體"
 
@@ -3476,8 +3476,8 @@ msgid "ChatGPT Base URL"
 msgstr "ChatGPT基本網址"
 
 #: options/theme-options.php:3438
-msgid "Fill in the ChatGPT Base URL, The default is http://sxy.gay/"
-msgstr "填寫聊天GPT基本網址，預設為 http://sxy.gay/"
+msgid "Fill in the ChatGPT Base URL, The default is https://openai.fuukei.org/"
+msgstr "填寫ChatGPT基本網址，預設為 https://openai.fuukei.org/"
 
 #: options/theme-options.php:3446
 msgid "ChatGPT API keys"

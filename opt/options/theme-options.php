@@ -3435,9 +3435,9 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'id' => 'chatgpt_base_url',
         'type' => 'text',
         'title' => __('ChatGPT Base URL','sakurairo_csf'),
-        'desc' => __('Fill in the ChatGPT Base URL, The default is http://sxy.gay/','sakurairo_csf'),
+        'desc' => __('Fill in the ChatGPT Base URL, The default is https://openai.fuukei.org/','sakurairo_csf'),
         'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
-        'default' => 'http://sxy.gay/'
+        'default' => 'https://openai.fuukei.org/'
       ),
 
       array(
