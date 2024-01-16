@@ -1131,6 +1131,13 @@ add_filter('comment_text', 'comment_picture_support');
 // 还有一个思路是根据表情调用路径来判定<-- 此法最好！
 // 贴吧
 
+function make_onclick_grin($name,$type,$before='',$after=''){
+    $extra_params = "";
+    if($before || $after){
+        $extra_params = ",'$before','$after'";
+    }
+    return "onclick=\"grin('$name','$type'$extra_params)\"";
+}
 /**
  * 通过文件夹获取自定义表情列表，使用Transients来存储获得的列表，除非手动清除，数据永不过期。
  * 数据格式如下：
@@ -1250,7 +1257,7 @@ function push_custom_smilies()
         } else {
             $smiley_url = $smiley['file_url'];
         }
-        $custom_smilies_panel = $custom_smilies_panel . '<span title="' . $smiley['base_name'] . '" onclick="grin(' . "'" . $smiley['base_name'] . "'" . ',type = \'Math\')"><img alt="custom_smilies" loading="lazy" style="height: 60px;" src="' . $smiley_url . '" /></span>';
+        $custom_smilies_panel = $custom_smilies_panel . '<span title="' . $smiley['base_name'].'" ' . make_onclick_grin($smiley['base_name'],'Math').'><img alt="custom_smilies" loading="lazy" style="height: 60px;" src="' . $smiley_url . '" /></span>';
         $custom_smiliestrans['{{' . $smiley['base_name'] . '}}'] = '<span title="' . $smiley['base_name'] . '" ><img alt="custom_smilies" loading="lazy" style="height: 60px;" src="' . $smiley_url . '" /></span>';
     }
 
@@ -1285,10 +1292,11 @@ function push_tieba_smilies()
     $tiebaimgdir = 'tieba' . $type . '/';
     $smiliesgs = '.' . $type;
     foreach ($tiebaname as $tieba_Name) {
+        $grin = make_onclick_grin($tieba_Name,'tieba');
         // 选择面版
-        $return_smiles = $return_smiles . '<span title="' . $tieba_Name . '" onclick="grin(' . "'" . $tieba_Name . "'" . ',type = \'tieba\')"><img alt="tieba_smilie" loading="lazy" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/') . 'smilies/' . $tiebaimgdir . 'icon_' . $tieba_Name . $smiliesgs . '" /></span>';
+        $return_smiles = $return_smiles . '<span title="' . $tieba_Name . '" '.$grin.'><img alt="tieba_smilie" loading="lazy" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/') . 'smilies/' . $tiebaimgdir . 'icon_' . $tieba_Name . $smiliesgs . '" /></span>';
         // 正文转换
-        $wpsmiliestrans['::' . $tieba_Name . '::'] = '<span title="' . $tieba_Name . '" onclick="grin(' . "'" . $tieba_Name . "'" . ',type = \'tieba\')"><img alt="tieba_smilie" loading="lazy" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/') . 'smilies/' . $tiebaimgdir . 'icon_' . $tieba_Name . $smiliesgs . '" /></span>';
+        $wpsmiliestrans['::' . $tieba_Name . '::'] = '<span title="' . $tieba_Name . '" '.$grin.'><img alt="tieba_smilie" loading="lazy" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/') . 'smilies/' . $tiebaimgdir . 'icon_' . $tieba_Name . $smiliesgs . '" /></span>';
     }
     return $return_smiles;
 }
@@ -1322,10 +1330,11 @@ function push_bili_smilies()
     $biliimgdir = 'bili' . $type . '/';
     $smiliesgs = '.' . $type;
     foreach ($name as $smilies_Name) {
+        $grin = make_onclick_grin($smilies_Name,'Math');
         // 选择面版
-        $return_smiles = $return_smiles . '<span title="' . $smilies_Name . '" onclick="grin(' . "'" . $smilies_Name . "'" . ',type = \'Math\')"><img alt="bili_smilies" loading="lazy" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/') . 'smilies/' . $biliimgdir . 'emoji_' . $smilies_Name . $smiliesgs . '" /></span>';
+        $return_smiles = $return_smiles . '<span title="' . $smilies_Name . '" '.$grin.'><img alt="bili_smilies" loading="lazy" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/') . 'smilies/' . $biliimgdir . 'emoji_' . $smilies_Name . $smiliesgs . '" /></span>';
         // 正文转换
-        $bilismiliestrans['{{' . $smilies_Name . '}}'] = '<span title="' . $smilies_Name . '" onclick="grin(' . "'" . $smilies_Name . "'" . ',type = \'Math\')"><img alt="bili_smilies" loading="lazy" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/') . 'smilies/' . $biliimgdir . 'emoji_' . $smilies_Name . $smiliesgs . '" /></span>';
+        $bilismiliestrans['{{' . $smilies_Name . '}}'] = '<span title="' . $smilies_Name . '" '.$grin.'><img alt="bili_smilies" loading="lazy" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/') . 'smilies/' . $biliimgdir . 'emoji_' . $smilies_Name . $smiliesgs . '" /></span>';
     }
     return $return_smiles;
 }
