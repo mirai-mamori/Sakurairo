@@ -87,7 +87,7 @@
 						switch ($smilies_list[0]) {
 							case "bilibili" :
 								$bilibili_smilies = '<th onclick="motionSwitch(\'.bili\')" class="bili-bar on-hover">bilibili~</th>';
-								$bilibili_push_smilies = '<div class="bili-container motion-container"  style="display:block;">' . push_bili_smilies() . '</div>';
+								$bilibili_push_smilies = '<div class="bili-container motion-container" style="display:block;">' . push_bili_smilies() . '</div>';
 								break;
 							case "tieba" :
 								$tieba_smilies = '<th onclick="motionSwitch(\'.tieba\')" class="tieba-bar on-hover">Tieba</th>';
