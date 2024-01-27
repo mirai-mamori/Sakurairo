@@ -3725,7 +3725,7 @@ h1.main-title {
 }
 
 .forgetmenot input[type=checkbox]:checked:before {
-  content: "✔";
+  content: "�&#65533;";
   margin: -3px 0 0 -4px;
   color: #1e8cbe;
   display: inline-block;
@@ -5193,7 +5193,10 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px #fff inset;
   box-shadow: 0 0 0 1000px #fff inset;
 }
-
+::selection {
+	background: #887c80;
+	color:white;
+}
 ::selection,
 ::-moz-selection {
   background: #444;
@@ -6870,7 +6873,7 @@ body.dark::-webkit-scrollbar-track {
 }
 
 .alipay-code:after {
-  content: "支付宝";
+  content: "支付�&#65533;";
 }
 
 .wechat-code:after {
@@ -6991,13 +6994,13 @@ body.dark::-webkit-scrollbar-track {
   mix-blend-mode: lighten;
 }
 
-.glitch:hover:before {
-  text-shadow: 4px 0 #ff3f1a;
+.glitch:before {
+  text-shadow: 4px 0 #f57fa2;
   animation: glitch-loop-1 .8s infinite ease-in-out alternate-reverse;
 }
 
-.glitch:hover:after {
-  text-shadow: -5px 0 #00a7e0;
+.glitch:after {
+  text-shadow: -5px 0 #7adaff;
   animation: glitch-loop-2 .8s infinite ease-in-out alternate-reverse;
 }
 
@@ -8510,11 +8513,11 @@ body.dark .post-list-thumb:hover {
 
   .searchbox.js-toggle-search {
     display: none;
-    /*移动端搜索关闭*/
+    /*移动端搜索关�&#65533;*/
   }
 
   .site-header {
-    /*移动端logo后背板高度*/
+    /*移动端logo后背板高�&#65533;*/
     height: 8%;
   }
 
@@ -9678,7 +9681,7 @@ body.dark .post-list-thumb:hover {
   }
 
   .header-info {
-    /*打字效果防溢出*/
+    /*打字效果防溢�&#65533;*/
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
