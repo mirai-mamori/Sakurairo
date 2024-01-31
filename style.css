@@ -10814,3 +10814,62 @@ body.dark .entry-content code:not(pre code) {
 .aplayer-lrc {
   pointer-events: none
 }
+
+.site-top .lower a {
+  transition: all 0.3s cubic-bezier(0.82, 0, 0.58, 1);
+  color: #FFFFFF;
+}
+
+.site-header i {
+  transition: all 0.3s cubic-bezier(0.82, 0, 0.58, 1);
+  color: #FFFFFF;
+}
+
+.yya .lower a {
+  transition: all 0.3s cubic-bezier(0.82, 0, 0.58, 1);
+  color: #000000;
+}
+
+.yya i {
+  transition: all 0.3s cubic-bezier(0.82, 0, 0.58, 1);
+  color: #000000;
+}
+
+.site-header img {
+  transition: all 0.3s cubic-bezier(0.82, 0, 0.58, 1);
+}
+
+.site-header.yya img {
+  filter: invert(1);
+  transition: all 0.3s cubic-bezier(0.82, 0, 0.58, 1);
+}
+
+.no-select .icon {
+  transition: all 0.3s cubic-bezier(0.82, 0, 0.58, 1);
+  background-color: #FFFFFF;
+}
+
+.no-select .icon:before {
+  transition: all 0.3s cubic-bezier(0.82, 0, 0.58, 1);
+  background-color: #FFFFFF;
+}
+
+.no-select .icon:after {
+  transition: all 0.3s cubic-bezier(0.82, 0, 0.58, 1);
+  background-color: #FFFFFF;
+}
+
+.make-it-black .no-select .icon {
+  transition: all 0.3s cubic-bezier(0.82, 0, 0.58, 1);
+  background-color: #000000;
+}
+
+.make-it-black .no-select .icon:before {
+  transition: all 0.3s cubic-bezier(0.82, 0, 0.58, 1);
+  background-color: #000000;
+}
+
+.make-it-black .no-select .icon:after {
+  transition: all 0.3s cubic-bezier(0.82, 0, 0.58, 1);
+  background-color: #000000;
+}
