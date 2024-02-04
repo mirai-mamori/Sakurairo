@@ -69,36 +69,36 @@
 					$smilies_list = iro_opt('smilies_list');
 					if ($smilies_list) {
 						if (in_array('bilibili', $smilies_list)) {
-							$bilibili_smilies = '<th onclick="motionSwitch(\'.bili\')" class="bili-bar">bilibili~</th>';
+							$bilibili_smilies = '<th class="bili-bar">bilibili~</th>';
 							$bilibili_push_smilies = '<div class="bili-container motion-container"  style="display:none;">' . push_bili_smilies() . '</div>';
 						}
 						if (in_array('tieba', $smilies_list)) {
-							$tieba_smilies = '<th onclick="motionSwitch(\'.tieba\')" class="tieba-bar">Tieba</th>';
+							$tieba_smilies = '<th class="tieba-bar">Tieba</th>';
 							$tieba_push_smilies = '<div class="tieba-container motion-container" style="display:none;">' . push_tieba_smilies() . '</div>';
 						}
 						if (in_array('yanwenzi', $smilies_list)) {
-							$menhera_smilies = '<th onclick="motionSwitch(\'.menhera\')" class="menhera-bar">(=・ω・=)</th>';
+							$menhera_smilies = '<th class="menhera-bar">(=・ω・=)</th>';
 							$menhera_push_smilies = '<div class="menhera-container motion-container" style="display:none;">' . push_emoji_panel() . '</div>';
 						}
 						if (in_array('custom', $smilies_list)) {
-							$custom_smilies = '<th onclick="motionSwitch(\'.custom\')" class="custom-bar"> '. iro_opt('smilies_name') .'</th>';
+							$custom_smilies = '<th class="custom-bar"> '. iro_opt('smilies_name') .'</th>';
 							$custom_push_smilies = '<div class="custom-container motion-container" style="display:none;">' . push_custom_smilies() . '</div>';
 						}
 						switch ($smilies_list[0]) {
 							case "bilibili" :
-								$bilibili_smilies = '<th onclick="motionSwitch(\'.bili\')" class="bili-bar on-hover">bilibili~</th>';
-								$bilibili_push_smilies = '<div class="bili-container motion-container" style="display:block;">' . push_bili_smilies() . '</div>';
+								$bilibili_smilies = '<th class="bili-bar on-hover">bilibili~</th>';
+								$bilibili_push_smilies = '<div class="bili-container motion-container"  style="display:block;">' . push_bili_smilies() . '</div>';
 								break;
 							case "tieba" :
-								$tieba_smilies = '<th onclick="motionSwitch(\'.tieba\')" class="tieba-bar on-hover">Tieba</th>';
+								$tieba_smilies = '<th class="tieba-bar on-hover">Tieba</th>';
 								$tieba_push_smilies = '<div class="tieba-container motion-container" style="display:block;">' . push_tieba_smilies() . '</div>';
 								break;
 							case "yanwenzi" :
-								$menhera_smilies = '<th onclick="motionSwitch(\'.menhera\')" class="menhera-bar on-hover">(=・ω・=)</th>';
+								$menhera_smilies = '<th class="menhera-bar on-hover">(=・ω・=)</th>';
 								$menhera_push_smilies = '<div class="menhera-container motion-container" style="display:block;">' . push_emoji_panel() . '</div>';
 								break;
 							case "custom" :
-								$custom_smilies = '<th onclick="motionSwitch(\'.custom\')" class="custom-bar on-hover"> '. iro_opt('smilies_name') .'</th>';
+								$custom_smilies = '<th class="custom-bar on-hover"> '. iro_opt('smilies_name') .'</th>';
 								$custom_push_smilies = '<div class="custom-container motion-container" style="display:block;">' . push_custom_smilies() . '</div>';
 								break;
 						}
