@@ -2581,7 +2581,16 @@ h1.main-title {
   border-radius: 100%;
 }
 
+.focusinfo .header-tou {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  margin: 0;
+  max-height: 130px;
+}
+
 .focusinfo .header-tou img {
+  position: relative;
   padding: 5px;
   opacity: 1;
   transform: rotate(0);
@@ -2601,6 +2610,22 @@ h1.main-title {
   -moz-transform: rotate(360deg);
   -o-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
+}
+
+.focusinfo .header-tou .signature {
+  position: relative;
+  right: -35px;
+  bottom: 50px;
+  display: block;
+  margin: 0;
+  width: fit-content;
+  font-size: 30px;
+  font-weight: 900;
+  font-style: italic;
+  transform: skew(20deg, -25deg);
+  opacity: 0; 
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .bio-text {

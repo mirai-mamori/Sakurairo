@@ -532,13 +532,19 @@ background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparen
 <?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: blur(10px); <?php endif; ?>
 }
 
+<?php $signature = iro_opt('personal_signature');?>
+
+.focusinfo .header-tou .signature {
+    font-family: '<?php echo $signature['font']; ?>';
+    <?php echo $signature['customization']; ?>
+}
+
 /*首页圆角设置*/
 .header-info,.header-shuo{
 border-radius: <?=iro_opt('signature_radius'); ?>px;
 grid-row: 1;
 grid-column: 1;
 }
-
 
 .focusinfo img{
 border-radius: <?=iro_opt('social_area_radius'); ?>px;

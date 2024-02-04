@@ -55,6 +55,40 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id'        => 'personal_signature',
+        'type'      => 'fieldset',
+        'title'     => __('Personal Signature Options','sakurairo_csf'),
+        'fields'    => array(
+          array(
+            'id'     => 'text',
+            'type'   => 'text',
+            'title'  => __('Text','sakurairo_csf'),
+            'desc'   => __('The text content should not be too long, and the recommended length is 16 bytes.','sakurairo_csf'),
+          ),
+          array(
+            'id'     => 'font',
+            'type'   => 'text',
+            'title'  => __('Font','sakurairo_csf'),
+            'desc'   => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
+          ),
+          array(
+            'id'      => 'customization',
+            'type'    => 'code_editor',
+            'title'   => __('Customization','sakurairo_csf'),
+            'desc'    => __('Customize the signature style','sakurairo_csf'),
+          ),      
+        ),
+        'default'        => array(
+          'text'    => 'furina',
+          'customizationr'    => '
+          background: linear-gradient(to right, #C0C0C0, #FFFFFF, #C0C0C0);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;',
+        ),
+      ),
+
+      array(
         'id'    => 'text_logo_options',
         'type'  => 'switcher',
         'title' => __('Mashiro Special Effects Text','sakurairo_csf'),
@@ -3572,7 +3606,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'id' => 'site_custom_style',
-        'type' => 'textarea',
+        'type' => 'code_editor',
         'title' => __('Custom CSS Styles','sakurairo_csf'),
         'desc' => __('Fill in the CSS code without writing style tag','sakurairo_csf'),
       ),
