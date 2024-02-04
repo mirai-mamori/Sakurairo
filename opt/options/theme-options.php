@@ -63,7 +63,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
             'id'     => 'text',
             'type'   => 'text',
             'title'  => __('Text','sakurairo_csf'),
-            'desc'   => __('The text content should not be too long, and the recommended length is 16 bytes.','sakurairo_csf'),
+            'desc'   => __('The text content should not be too long, and the recommended length is 8 bytes.','sakurairo_csf'),
           ),
           array(
             'id'     => 'font',
