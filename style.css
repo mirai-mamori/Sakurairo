@@ -9809,19 +9809,6 @@ body.dark .post-list-thumb:hover {
   }
 }
 
-@keyframes slow-rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.sakura-svg {
-animation: slow-rotate 10s linear infinite;
-} 
-
 @media screen and (min-width: 400px) {
   .bangumi .column {
     max-width: 50%;
