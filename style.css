@@ -112,6 +112,8 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   background-color: rgba(255, 255, 255, 0);
   box-shadow: 0 1px 30px -4px var(--post-list-thumb);
   opacity: 0;
+  content-visibility: auto;
+  contain-intrinsic-size: auto none;
 }
 
 .top-feature {
