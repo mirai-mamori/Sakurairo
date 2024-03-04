@@ -67,7 +67,7 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   clear: both;
   overflow: hidden;
   width: 100%;
-  padding: 0 10px
+  padding: 15px 10px
     /*!covered60px 0 80px*/
   ;
   list-style: none;
@@ -8168,7 +8168,7 @@ body.dark .post-list-thumb:hover {
 
 @media (max-width:860px) {
   .comments {
-    padding: 4% 0 0;
+    padding: 15% 0 0;
     max-width: 100%;
     max-width: 800px;
     margin-left: auto;
