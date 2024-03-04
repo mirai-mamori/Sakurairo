@@ -9,8 +9,9 @@ get_header();
 	</div>
 	<div class="author-center">
 		<h3><?php the_author() ?></h3>
-		<div class="description"><?php echo get_the_author_meta('description') ? get_the_author_meta('description') : __("No personal profile set yet","sakurairo"); ?></div>
-	</div>
+		<div class="description">  
+   		 <?php echo nl2br(get_the_author_meta('description')) ? nl2br(get_the_author_meta('description')) : __("No personal profile set yet","sakurairo"); ?>  
+		</div>
 </div>
 <style>
 	.author_info {

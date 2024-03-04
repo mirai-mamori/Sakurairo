@@ -29,7 +29,9 @@
 
 ## 赞助商：
 
-<a href="https://www.upyun.com/"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.6/options/upyun_logo.webp" alt="UPYUN" width="200"></a>
+<a href="https://www.upyun.com/"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/upyun2024.webp" alt="UPYUN" width="400"></a>  
+
+<a href="https://www.houdeyun.cn/"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/houdeyun2024.webp" alt="HOUDEYUN" width="400"></a>
 
 ## 支持我们：
 
