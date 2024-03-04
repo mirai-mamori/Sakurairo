@@ -1708,6 +1708,11 @@ h3#comments-list-title {
   margin-right: auto;
 }
 
+/*Fix [#836](https://github.com/mirai-mamori/Sakurairo/issues/836)*/
+.wp-block-image .aligncenter>figcaption{
+  text-align: center; 
+}
+
 #baguetteBox-overlay .full-image {
   cursor: -webkit-zoom-out;
   display: inline-block;
