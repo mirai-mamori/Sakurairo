@@ -52,7 +52,7 @@ $vision_resource_basepath = iro_opt('vision_resource_basepath');
 				foreach ($categories as $category) {
 					$keywords .= $category->name . ',';
 				};
-			}
+			};
 			$description = mb_strimwidth(str_replace("\r\n", '', strip_tags(category_description())), 0, 240, '…');
 		} else {
 			$keywords = iro_opt('iro_meta_keywords');
