@@ -40,19 +40,21 @@ $vision_resource_basepath = iro_opt('vision_resource_basepath');
 		if (is_singular()) {
 			$keywords = '';
 			$tags = get_the_tags();
-			$categories = get_the_category();
 			if ($tags) {
 				foreach ($tags as $tag) {
 					$keywords .= $tag->name . ',';
 				};
 			};
+			$description = mb_strimwidth(str_replace("\r\n", '', strip_tags($post->post_content)), 0, 240, '…');
+		} else if(is_category()) {
+		        $categories = get_the_category();
 			if ($categories) {
 				foreach ($categories as $category) {
 					$keywords .= $category->name . ',';
 				};
-			};
-			$description = mb_strimwidth(str_replace("\r\n", '', strip_tags($post->post_content)), 0, 240, '…');
-		} else {
+			}
+			$description = mb_strimwidth(str_replace("\r\n", '', strip_tags(category_description())), 0, 240, '…');
+		}  else {
 			$keywords = iro_opt('iro_meta_keywords');
 			$description = iro_opt('iro_meta_description');
 		};
