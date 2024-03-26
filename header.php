@@ -35,29 +35,24 @@ $vision_resource_basepath = iro_opt('vision_resource_basepath');
     <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/all.min.css" type="text/css" media="all"/>
 	<?php
 	if (iro_opt('iro_meta') == true) {
-		$keywords = '';
-		$description = '';
+		$keywords = iro_opt('iro_meta_keywords');
+        $description = iro_opt('iro_meta_description');
 		if (is_singular()) {
-			$keywords = '';
 			$tags = get_the_tags();
-			if ($tags) {
-				foreach ($tags as $tag) {
-					$keywords .= $tag->name . ',';
-				};
-			};
-			$description = mb_strimwidth(str_replace("\r\n", '', strip_tags($post->post_content)), 0, 240, '…');
-		} else if(is_category()) {
+            if ($tags) {
+                $keywords = implode(',', array_column($tags, 'name'));
+            }     
+            if (!empty($post->post_content)) {
+                $description = trim(mb_strimwidth(preg_replace('/\s+/', ' ', strip_tags($post->post_content)), 0, 240, '…'));
+            }
+		}
+		if (is_category()) {
 		    $categories = get_the_category();
 			if ($categories) {
-				foreach ($categories as $category) {
-					$keywords .= $category->name . ',';
-				};
-			};
-			$description = mb_strimwidth(str_replace("\r\n", '', strip_tags(category_description())), 0, 240, '…');
-		} else {
-			$keywords = iro_opt('iro_meta_keywords');
-			$description = iro_opt('iro_meta_description');
-		};
+                $keywords = implode(',', array_column($categories, 'name'));
+            }
+            $description = trim(category_description()) ?: $description;
+		}
 	?>
 		<meta name="description" content="<?php echo $description; ?>" />
 		<meta name="keywords" content="<?php echo $keywords; ?>" />
