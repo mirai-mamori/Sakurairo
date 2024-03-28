@@ -2088,10 +2088,10 @@ function markdown_parser($incoming_comment)
         return ($incoming_comment);
     }
     $column_names = $wpdb->get_row("SELECT * FROM information_schema.columns where 
-    table_name='wp_comments' and column_name = 'comment_markdown' LIMIT 1");
+    table_name='$wpdb->comments' and column_name = 'comment_markdown' LIMIT 1");
     //Add column if not present.
     if (!isset($column_names)) {
-        $wpdb->query("ALTER TABLE wp_comments ADD comment_markdown text");
+        $wpdb->query("ALTER TABLE $wpdb->comments ADD comment_markdown text");
     }
     $comment_markdown_content = $incoming_comment['comment_content'];
     include 'inc/Parsedown.php';
@@ -2109,7 +2109,7 @@ function save_markdown_comment($comment_ID, $comment_approved)
     $comment = get_comment($comment_ID);
     $comment_content = $comment_markdown_content;
     //store markdow content
-    $wpdb->query("UPDATE wp_comments SET comment_markdown='" . $comment_content . "' WHERE comment_ID='" . $comment_ID . "';");
+    $wpdb->query("UPDATE $wpdb->comments SET comment_markdown='" . $comment_content . "' WHERE comment_ID='" . $comment_ID . "';");
 }
 add_action('comment_post', 'save_markdown_comment', 10, 2);
 
