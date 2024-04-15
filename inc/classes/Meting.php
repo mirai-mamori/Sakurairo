@@ -1001,7 +1001,7 @@ class Meting
         }
 
         if (extension_loaded('bcmath')) {
-            $skey = strrev(utf8_encode($skey));
+            $skey = strrev(/* utf8_encode($skey) */$skey); // FIX: utf8_encode() deprecated (PHP 8.2). 根据上下文$skey不包含ISO-8859-1字符，因此不需要转换编码 
             $skey = $this->bchexdec($this->str2hex($skey));
             $skey = bcpowmod($skey, $pubkey, $modulus);
             $skey = $this->bcdechex($skey);
