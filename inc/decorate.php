@@ -836,10 +836,21 @@ display:none;
 }
 <?php endif; ?>
 
-<?php if (!iro_opt('footer_sakura', 'true')): ?>
-.sakura-icon{
-display:none;
+<?php if (iro_opt('footer_sakura', 'true')): ?>
+@keyframes slow-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
+.sakura-icon{
+    width:max-content;height:max-content;margin: auto;
+}
+.sakura-svg {
+animation: slow-rotate 10s linear infinite;
+} 
 <?php endif; ?>
 
 <?php if (!iro_opt('drop_down_arrow_mobile', 'true')): ?>
