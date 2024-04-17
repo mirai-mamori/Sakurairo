@@ -618,8 +618,8 @@ function gfonts_updates($specified_version, $option_name) {
 
     if (version_compare($current_version, $specified_version, '>')) {
         $option_value = iro_opt($option_name);
-        if (empty($option_value) || $option_value !== 'cdn2.tianli0.top/fonts') {
-            $option_value = 'cdn2.tianli0.top/fonts';
+        if (empty($option_value)) {
+            $option_value = 'fonts.googleapis.com';
             iro_opt_update($option_name, $option_value);
         }
         
