@@ -249,6 +249,7 @@ function shuoshuo_custom_init()
         'publicly_queryable' => true,
         'show_ui' => true,
         'show_in_menu' => true,
+        'show_in_rest' => true,
         'query_var' => true,
         'rewrite' => true,
         'capability_type' => 'post',
