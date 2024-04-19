@@ -2347,7 +2347,6 @@ nav#comments-navi {
 .comment-respond .form-submit {
   clear: both;
   display: block;
-  overflow: hidden;
   padding-top: 15px;
   width: 50%;
   margin: 0 auto;
@@ -4291,18 +4290,19 @@ input[type=radio]:checked:before {
   position: absolute;
   z-index: 1;
   bottom: 9%;
-  left: 10%;
-  margin-left: -80px;
+  right: -180%;
+  margin-right: 0;
 }
 
 .popup .insert-img-popuptext::after {
   content: "";
   position: absolute;
   top: 33%;
-  left: 109%;
+  left: -9%;
   margin-left: -7px;
   border-width: 7px;
   border-style: solid;
+  transform: scaleX(-1);
   border-color: transparent transparent transparent #555;
 }
 
@@ -4323,7 +4323,7 @@ input[type=radio]:checked:before {
   text-shadow: none;
   font-size: 14px;
   height: 46px;
-  border-radius: 3px;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: var(--global-font-weight);
 
@@ -4336,7 +4336,7 @@ input[type=radio]:checked:before {
   margin: 0 !important;
   padding: 0 !important;
   float: right;
-  transform: translateY(-46px);
+  transform: translateY(-46px)translateX(45px);
   border-radius: 15px !important;
   cursor: pointer;
 }
