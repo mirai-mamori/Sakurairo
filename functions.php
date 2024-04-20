@@ -8,6 +8,8 @@
  * @package iro
  */
 
+include_once('inc/classes/IpLocation.php');
+
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
 define('INT_VERSION', '18.4.0');
@@ -421,7 +423,7 @@ if (!function_exists('akina_comment_format')) {
                                                                                         <div class="right">
                                                                                             <div class="info"><time datetime="<?php comment_date('Y-m-d'); ?>"><?php echo poi_time_since(strtotime($comment->comment_date), true); //comment_date(get_option('date_format'));  
                                                                                                       ?></time><?= siren_get_useragent($comment->comment_agent); ?><?php echo mobile_get_useragent_icon($comment->comment_agent); ?>&nbsp;<?php if (iro_opt('comment_location')) {
-                                                                                                               _e('Location', 'sakurairo'); /*来自*/?>: <?php echo convertip(get_comment_author_ip());
+                                                                                                               _e('Location', 'sakurairo'); /*来自*/?>: <?php echo \Sakura\API\IpLocationParse::getIpLocationByCommentId($comment->comment_ID);
                                                                                                            } ?>
                                                                                             <?php if (current_user_can('manage_options') and (wp_is_mobile() == false)) {
                                                                                                 $comment_ID = $comment->comment_ID;
@@ -980,7 +982,7 @@ add_filter('retrieve_password_message', 'resetpassword_message_fix');
 //Fix register email bug </>
 function new_user_message_fix($message)
 {
-    $show_register_ip = '注册IP | Registration IP: ' . get_the_user_ip() . ' (' . convertip(get_the_user_ip()) . ")\r\n\r\n如非本人操作请忽略此邮件 | Please ignore this email if this was not your operation.\r\n\r\n";
+    $show_register_ip = '注册IP | Registration IP: ' . get_the_user_ip() . ' (' . \Sakura\API\IpLocationParse::getIpLocationByIp(get_the_user_ip()) . ")\r\n\r\n如非本人操作请忽略此邮件 | Please ignore this email if this was not your operation.\r\n\r\n";
     $message = str_replace('To set your password, visit the following address:', $show_register_ip . '在此设置密码 | To set your password, visit the following address:', $message);
     $message = str_replace('<', '', $message);
     $message = str_replace('>', "\r\n\r\n设置密码后在此登录 | Login here after setting password: ", $message);
@@ -2582,3 +2584,54 @@ add_filter('wp_handle_upload_prefilter', function ($file) {
     $file['name'] = time() . '-' . $file['name'];
     return $file;
 });
+
+/**
+ * 将IP地址地理位置信息作为元数据记录（数据格式：array('country' => '国家','region' => '地区（省份）','city' => '城市')）
+ *
+ * @param int $comment_ID 评论ID
+ * @return void
+ */
+function iro_add_ip_location_meta($comment_ID)
+{
+    if (isset($_SERVER['REMOTE_ADDR'])) {
+        // 获取评论者的 IP 地址
+        $comment_ip = $_SERVER['REMOTE_ADDR'];
+        $ip_location = new Sakura\API\IPLocation($comment_ip);
+        $location = $ip_location->getLocation();
+        // 记录IP地理位置信息
+        if ($location) {
+            add_comment_meta($comment_ID, 'iro_ip_location', $location);
+        }
+    }
+}
+add_action('wp_insert_comment', 'iro_add_ip_location_meta', 10, 2);
+
+/**
+ * 在后台评论列表中添加IP地理位置信息列
+ *
+ * @param string[] $columns 列表标题的标签
+ * @return void
+ */
+function iro_add_location_to_comments_columns($columns)
+{
+    $columns['iro_ip_location'] = __('Location', 'sakurairo');
+    return $columns;
+}
+add_filter('manage_edit-comments_columns', 'iro_add_location_to_comments_columns');
+
+/**
+ * 将IP地理位置信息输出到评论列表中
+ *
+ * @param string $column_name 列表标题的标签
+ * @param int $comment_id 评论ID
+ * @return void
+ */
+function iro_output_ip_location_columns($column_name, $comment_id)
+{
+    switch ($column_name) {
+        case "iro_ip_location":
+            echo \Sakura\API\IpLocationParse::getIpLocationByCommentId($comment_id);
+            break;
+    }
+}
+add_action('manage_comments_custom_column', 'iro_output_ip_location_columns', 10, 2);
