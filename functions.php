@@ -2564,27 +2564,6 @@ add_filter('wp_handle_upload_prefilter', function ($file) {
 });
 
 /**
- * 将IP地址地理位置信息作为元数据记录（数据格式：array('country' => '国家','region' => '地区（省份）','city' => '城市')）
- *
- * @param int $comment_ID 评论ID
- * @return void
- */
-function iro_add_ip_location_meta($comment_ID)
-{
-    if (isset($_SERVER['REMOTE_ADDR'])) {
-        // 获取评论者的 IP 地址
-        $comment_ip = $_SERVER['REMOTE_ADDR'];
-        $ip_location = new Sakura\API\IPLocation($comment_ip);
-        $location = $ip_location->getLocation();
-        // 记录IP地理位置信息
-        if ($location) {
-            add_comment_meta($comment_ID, 'iro_ip_location', $location);
-        }
-    }
-}
-if (iro_opt('save_location')) add_action('wp_insert_comment', 'iro_add_ip_location_meta', 10, 2);
-
-/**
  * 在后台评论列表中添加IP地理位置信息列
  *
  * @param string[] $columns 列表标题的标签
