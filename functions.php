@@ -2582,7 +2582,7 @@ function iro_add_ip_location_meta($comment_ID)
         }
     }
 }
-add_action('wp_insert_comment', 'iro_add_ip_location_meta', 10, 2);
+if (iro_opt('save_location')) add_action('wp_insert_comment', 'iro_add_ip_location_meta', 10, 2);
 
 /**
  * 在后台评论列表中添加IP地理位置信息列
@@ -2595,7 +2595,6 @@ function iro_add_location_to_comments_columns($columns)
     $columns['iro_ip_location'] = __('Location', 'sakurairo');
     return $columns;
 }
-add_filter('manage_edit-comments_columns', 'iro_add_location_to_comments_columns');
 
 /**
  * 将IP地理位置信息输出到评论列表中
@@ -2612,4 +2611,7 @@ function iro_output_ip_location_columns($column_name, $comment_id)
             break;
     }
 }
-add_action('manage_comments_custom_column', 'iro_output_ip_location_columns', 10, 2);
+if (iro_opt('show_location_in_manage')) {
+    add_filter('manage_edit-comments_columns', 'iro_add_location_to_comments_columns');
+    add_action('manage_comments_custom_column', 'iro_output_ip_location_columns', 10, 2);
+}

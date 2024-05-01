@@ -3152,6 +3152,35 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
 
       array(
+        'id' => 'show_location_in_manage',
+        'type' => 'switcher',
+        'title' => __('Management Page Displays Location Information', 'sakurairo_csf'),
+        'label' => __('When enabled, the commenter\'s IP geographical location information will be displayed on the comment management page', 'sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'save_location',
+        'type' => 'switcher',
+        'title' => __('Location Information Persistence','sakurairo_csf'),
+        'label' => __('When enabled, the commenter\'s IP geographical location information will be stored in the database','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'location_server',
+        'type' => 'select',
+        'title' => __('API To Parse Geographical Location','sakurairo_csf'),
+        'options' => array(
+          'sakurairo' => __('Sakurairo','sakurairo_csf'),
+          'ip-api' => __('IP—API','sakurairo_csf'),
+          'all' => __('ALL','sakurairo_csf'),
+        ),
+        'desc' => __('Sakurairo: official API of the theme; IP-API: provided by <a target="_blank" href="https://ip-api.com/">ip-api.com</a>; ALL: priority is given to Sakurairo, IP—API for fallback','sakurairo_csf'),
+        'default' => 'all'
+      ),
+
+      array(
         'id' => 'comment_private_message',
         'type' => 'switcher',
         'title' => __('Private Comment Function','sakurairo_csf'),

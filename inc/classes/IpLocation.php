@@ -203,20 +203,29 @@ class IpLocation
             return false;
         }
 
-        // 两个接口暂时定为主备形式，后续有需要可让用户选择
-        $isSakurairo = $this->getIpLocationBySakurairo();
+        $server = iro_opt('location_server');
+        switch ($server) {
+            case 'sakurairo':
+                $this->getIpLocationBySakurairo();
+                break;
+            case 'ip-api':
+                $this->getIpLocationByIpApi();
+                break;
+            case 'all':
+                $isSakurairo = $this->getIpLocationBySakurairo();
+                if (!$isSakurairo || !$this->checkCompleteness($this->outputLocation())) {
+                    $this->getIpLocationByIpApi();
+                }
+                break;
+            default:
+                break;
+        }
         $data = $this->outputLocation();
-        if ($isSakurairo && $this->checkCompleteness($data)) {
-            return $this->outputLocation();
+        if ($this->checkCompleteness($data)) {
+            return $data;
         } else {
-            $isIpApi = $this->getIpLocationByIpApi();
-            $data = $this->outputLocation();
-            if ($isIpApi && $this->checkCompleteness($data)) {
-                return $this->outputLocation();
-            } else {
-                trigger_error('获取IP地理位置失败', E_USER_WARNING);
-                return false;
-            }
+            trigger_error('获取IP地理位置失败', E_USER_WARNING);
+            return false;
         }
     }
 }
@@ -287,7 +296,7 @@ class IpLocationParse
                     $location = $ip_location->getLocation();
                     // 记录IP地理位置信息
                     if ($location) {
-                        add_comment_meta($comment_id, 'iro_ip_location', $location);
+                        if (iro_opt('save_location')) add_comment_meta($comment_id, 'iro_ip_location', $location);
                         $location_parse = new IpLocationParse($location);
                         return $location_parse->getLocationConcision();
                     } else {
