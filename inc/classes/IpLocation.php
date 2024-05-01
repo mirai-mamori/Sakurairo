@@ -36,8 +36,8 @@ class IpLocation
         $response = wp_remote_get($url);
         // 检查响应
         if (is_wp_error($response)) {
-            $error_message = $response->get_error_message();
-            trigger_error('通过Sakurairo获取IP地理位置失败：' . $error_message, E_USER_WARNING);
+            $errorMessage = $response->get_error_message();
+            trigger_error('通过Sakurairo获取IP地理位置失败：' . $errorMessage, E_USER_WARNING);
             return false;
         } else {
             // 处理响应数据
@@ -101,8 +101,8 @@ class IpLocation
         $response = wp_remote_get($url);
         // 检查响应
         if (is_wp_error($response)) {
-            $error_message = $response->get_error_message();
-            trigger_error('通过IP-API获取IP地理位置失败：' . $error_message, E_USER_WARNING);
+            $errorMessage = $response->get_error_message();
+            trigger_error('通过IP-API获取IP地理位置失败：' . $errorMessage, E_USER_WARNING);
             return false;
         } else {
             $headers = wp_remote_retrieve_headers($response);
@@ -127,7 +127,6 @@ class IpLocation
                     trigger_error("通过IP-API获取IP地理位置失败：$message", E_USER_WARNING);
                     return false;
                 }
-                
             } else {
                 trigger_error('通过IP-API获取IP地理位置失败：返回的数据不是json格式', E_USER_WARNING);
                 return false;
@@ -158,8 +157,8 @@ class IpLocation
      */
     private function checkCompleteness(array $data)
     {
-        $non_empty_values = array_filter($data);
-        if (count($non_empty_values) === count($data)) {
+        $dataFilter = array_filter($data);
+        if (count($dataFilter) === count($data)) {
             return true;
         } else {
             return false;
@@ -281,24 +280,24 @@ class IpLocationParse
      * @param int $comment_id 评论ID
      * @return string 成功时返回IP地理位置信息：“国家 地区（省份） 城市”；失败时返回“Unknown”或“Reserved Address”或“Empty Address”
      */
-    public static function getIpLocationByCommentId(int $comment_id)
+    public static function getIpLocationByCommentId(int $commentId)
     {
-        $ip_location = get_comment_meta($comment_id, 'iro_ip_location', true);
-        if ($ip_location) {
-            $location = new IpLocationParse($ip_location);
+        $ipLocation = get_comment_meta($commentId, 'iro_ip_location', true);
+        if ($ipLocation) {
+            $location = new IpLocationParse($ipLocation);
             return $location->getLocationConcision();
         } else {
             // 解析IP地址地理位置
-            $comment_ip = get_comment_author_IP($comment_id);
-            if (!empty($comment_ip)) {
-                if (IPLocation::checkIpValid($comment_ip)) {
-                    $ip_location = new IPLocation($comment_ip);
-                    $location = $ip_location->getLocation();
+            $commentIp = get_comment_author_IP($commentId);
+            if (!empty($commentIp)) {
+                if (IPLocation::checkIpValid($commentIp)) {
+                    $ipLocation = new IPLocation($commentIp);
+                    $location = $ipLocation->getLocation();
                     // 记录IP地理位置信息
                     if ($location) {
-                        if (iro_opt('save_location')) add_comment_meta($comment_id, 'iro_ip_location', $location);
-                        $location_parse = new IpLocationParse($location);
-                        return $location_parse->getLocationConcision();
+                        if (iro_opt('save_location')) add_comment_meta($commentId, 'iro_ip_location', $location);
+                        $locationParse = new IpLocationParse($location);
+                        return $locationParse->getLocationConcision();
                     } else {
                         return __('Unknown');
                     }
@@ -323,11 +322,11 @@ class IpLocationParse
             return __('Empty Address');
         }
         if (IPLocation::checkIpValid($ip)) {
-            $ip_location = new IPLocation($ip);
-            $location = $ip_location->getLocation();
+            $ipLocation = new IPLocation($ip);
+            $location = $ipLocation->getLocation();
             if ($location) {
-                $location_parse = new IpLocationParse($location);
-                return $location_parse->getLocationConcision();
+                $locationParse = new IpLocationParse($location);
+                return $locationParse->getLocationConcision();
             } else {
                 return __('Unknown');
             }
