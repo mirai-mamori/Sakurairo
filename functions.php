@@ -8,6 +8,8 @@
  * @package iro
  */
 
+include_once('inc/classes/IpLocation.php');
+
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
 define('INT_VERSION', '18.4.0');
@@ -373,82 +375,60 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/theme_plus.php';
 require get_template_directory() . '/inc/categories-images.php';
 
-//Comment Location Start
-function convertip($ip)
-{
-    if (empty($ip))
-        $ip = get_comment_author_IP();
-    $ch = curl_init();
-    $url = 'https://api.nmxc.ltd/ip/' . $ip;
-    $timeout = 5;
-    curl_setopt($ch, CURLOPT_URL, $url);
-    // curl_setopt ($ch, CURLOPT_URL, 'http://ip.taobao.com/outGetIpInfo?accessKey=alibaba-inc&ip='.$ip);  
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    $file_contents = curl_exec($ch);
-    curl_close($ch);
-    $result = null;
-    $result = json_decode($file_contents, true);
-    if ($result && $result['code'] != 0) {
-        return "未知";
-    }
-    if ($result['data']['country'] != '中国') {
-        return $result['data']['country'];
-    }
-    return $result['data']['country'] . '&nbsp;·&nbsp;' . $result['data']['region'] . '&nbsp;·&nbsp;' . $result['data']['city'];
-}
-//Comment Location End
-
 if (!function_exists('akina_comment_format')) {
     function akina_comment_format($comment, $args, $depth)
     {
         $GLOBALS['comment'] = $comment;
         ?>
-                                                                <li <?php comment_class(); ?> id="comment-<?php echo esc_attr(comment_ID()); ?>">
-                                                                    <div class="contents">
-                                                                        <div class="comment-arrow">
-                                                                            <div class="main shadow">
-                                                                                <div class="profile">
-                                                                                    <a href="<?php comment_author_url(); ?>" target="_blank" rel="nofollow"><?php echo str_replace('src=', 'src="' . iro_opt('load_in_svg') . '" onerror="imgError(this,1)" data-src=', get_avatar($comment->comment_author_email, '80', '', get_comment_author(), array('class' => array('lazyload')))); ?></a>
-                                                                                </div>
-                                                                                <div class="commentinfo">
-                                                                                    <section class="commeta">
-                                                                                        <div class="left">
-                                                                                            <h4 class="author"><a href="<?php comment_author_url(); ?>" target="_blank" rel="nofollow"><?php echo get_avatar($comment->comment_author_email, '24', '', get_comment_author()); ?><span class="bb-comment isauthor" title="<?php _e('Author', 'sakurairo'); ?>"><?php _e('Blogger', 'sakurairo'); /*博主*/?></span> <?php comment_author(); ?>                                                         <?php echo get_author_class($comment->comment_author_email, $comment->user_id); ?></a></h4>
-                                                                                        </div>
-                                                                                        <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
-                                                                                        <div class="right">
-                                                                                            <div class="info"><time datetime="<?php comment_date('Y-m-d'); ?>"><?php echo poi_time_since(strtotime($comment->comment_date), true); //comment_date(get_option('date_format'));  
-                                                                                                      ?></time><?= siren_get_useragent($comment->comment_agent); ?><?php echo mobile_get_useragent_icon($comment->comment_agent); ?>&nbsp;<?php if (iro_opt('comment_location')) {
-                                                                                                               _e('Location', 'sakurairo'); /*来自*/?>: <?php echo convertip(get_comment_author_ip());
-                                                                                                           } ?>
-                                                                                            <?php if (current_user_can('manage_options') and (wp_is_mobile() == false)) {
-                                                                                                $comment_ID = $comment->comment_ID;
-                                                                                                $i_private = get_comment_meta($comment_ID, '_private', true);
-                                                                                                $flag = null;
-                                                                                                $flag .= ' <i class="fa-regular fa-snowflake"></i> <a href="javascript:;" data-actionp="set_private" data-idp="' . get_comment_id() . '" id="sp" class="sm">' . __("Private", "sakurairo") . ': <span class="has_set_private">';
-                                                                                                if (!empty($i_private)) {
-                                                                                                    $flag .= __("Yes", "sakurairo") . ' <i class="fa-solid fa-lock"></i>';
-                                                                                                } else {
-                                                                                                    $flag .= __("No", "sakurairo") . ' <i class="fa-solid fa-lock-open"></i>';
-                                                                                                }
-                                                                                                $flag .= '</span></a>';
-                                                                                                $flag .= edit_comment_link('<i class="fa-solid fa-pen-to-square"></i> ' . __("Edit", "mashiro"), ' <span style="color:rgba(0,0,0,.35)">', '</span>');
-                                                                                                echo $flag;
-                                                                                            } ?></div>
-                                                                                        </div>
-                                                                                    </section>
-                                                                                </div>
-                                                                                <div class="body">
-                                                                                    <?php comment_text(); ?>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="arrow-left"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr>
-                                                                <?php
+        <li <?php comment_class(); ?> id="comment-<?php echo esc_attr(comment_ID()); ?>">
+            <div class="contents">
+                <div class="comment-arrow">
+                    <div class="main shadow">
+                        <div class="profile">
+                            <a href="<?php comment_author_url(); ?>" target="_blank" rel="nofollow"><?php echo str_replace('src=', 'src="' . iro_opt('load_in_svg') . '" onerror="imgError(this,1)" data-src=', get_avatar($comment->comment_author_email, '80', '', get_comment_author(), array('class' => array('lazyload')))); ?></a>
+                        </div>
+                        <div class="commentinfo">
+                            <section class="commeta">
+                                <div class="left">
+                                    <h4 class="author">
+                                        <a href="<?php comment_author_url(); ?>" target="_blank" rel="nofollow"><?php echo get_avatar($comment->comment_author_email, '24', '', get_comment_author()); ?>
+                                            <span class="bb-comment isauthor" title="<?php _e('Author', 'sakurairo'); ?>"><?php _e('Blogger', 'sakurairo'); /*博主*/?></span>
+                                            <?php comment_author(); ?><?php echo get_author_class($comment->comment_author_email, $comment->user_id); ?>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+                                <div class="right">
+                                    <div class="info"><time datetime="<?php comment_date('Y-m-d'); ?>"><?php echo poi_time_since(strtotime($comment->comment_date), true); //comment_date(get_option('date_format'));  
+                                                ?></time><?= siren_get_useragent($comment->comment_agent); ?><?php echo mobile_get_useragent_icon($comment->comment_agent); ?>&nbsp;<?php if (iro_opt('comment_location')) {
+                                                        _e('Location', 'sakurairo'); /*来自*/?>: <?php echo \Sakura\API\IpLocationParse::getIpLocationByCommentId($comment->comment_ID);
+                                                    } ?>
+                                    <?php if (current_user_can('manage_options') and (wp_is_mobile() == false)) {
+                                        $comment_ID = $comment->comment_ID;
+                                        $i_private = get_comment_meta($comment_ID, '_private', true);
+                                        $flag = null;
+                                        $flag .= ' <i class="fa-regular fa-snowflake"></i> <a href="javascript:;" data-actionp="set_private" data-idp="' . get_comment_id() . '" id="sp" class="sm">' . __("Private", "sakurairo") . ': <span class="has_set_private">';
+                                        if (!empty($i_private)) {
+                                            $flag .= __("Yes", "sakurairo") . ' <i class="fa-solid fa-lock"></i>';
+                                        } else {
+                                            $flag .= __("No", "sakurairo") . ' <i class="fa-solid fa-lock-open"></i>';
+                                        }
+                                        $flag .= '</span></a>';
+                                        $flag .= edit_comment_link('<i class="fa-solid fa-pen-to-square"></i> ' . __("Edit", "mashiro"), ' <span style="color:rgba(0,0,0,.35)">', '</span>');
+                                        echo $flag;
+                                    } ?></div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="body">
+                            <?php comment_text(); ?>
+                        </div>
+                    </div>
+                    <div class="arrow-left"></div>
+                </div>
+            </div>
+            <hr>
+        <?php
     }
 }
 
@@ -980,7 +960,7 @@ add_filter('retrieve_password_message', 'resetpassword_message_fix');
 //Fix register email bug </>
 function new_user_message_fix($message)
 {
-    $show_register_ip = '注册IP | Registration IP: ' . get_the_user_ip() . ' (' . convertip(get_the_user_ip()) . ")\r\n\r\n如非本人操作请忽略此邮件 | Please ignore this email if this was not your operation.\r\n\r\n";
+    $show_register_ip = '注册IP | Registration IP: ' . get_the_user_ip() . ' (' . \Sakura\API\IpLocationParse::getIpLocationByIp(get_the_user_ip()) . ")\r\n\r\n如非本人操作请忽略此邮件 | Please ignore this email if this was not your operation.\r\n\r\n";
     $message = str_replace('To set your password, visit the following address:', $show_register_ip . '在此设置密码 | To set your password, visit the following address:', $message);
     $message = str_replace('<', '', $message);
     $message = str_replace('>', "\r\n\r\n设置密码后在此登录 | Login here after setting password: ", $message);
@@ -2582,3 +2562,35 @@ add_filter('wp_handle_upload_prefilter', function ($file) {
     $file['name'] = time() . '-' . $file['name'];
     return $file;
 });
+
+/**
+ * 在后台评论列表中添加IP地理位置信息列
+ *
+ * @param string[] $columns 列表标题的标签
+ * @return void
+ */
+function iro_add_location_to_comments_columns($columns)
+{
+    $columns['iro_ip_location'] = __('Location', 'sakurairo');
+    return $columns;
+}
+
+/**
+ * 将IP地理位置信息输出到评论列表中
+ *
+ * @param string $column_name 列表标题的标签
+ * @param int $comment_id 评论ID
+ * @return void
+ */
+function iro_output_ip_location_columns($column_name, $comment_id)
+{
+    switch ($column_name) {
+        case "iro_ip_location":
+            echo \Sakura\API\IpLocationParse::getIpLocationByCommentId($comment_id);
+            break;
+    }
+}
+if (iro_opt('show_location_in_manage')) {
+    add_filter('manage_edit-comments_columns', 'iro_add_location_to_comments_columns');
+    add_action('manage_comments_custom_column', 'iro_output_ip_location_columns', 10, 2);
+}
