@@ -2992,7 +2992,7 @@ h1.main-title {
 
 .err-button.back a {
   padding: 10px 30px;
-  margin: 0 10px;
+  margin: 10px 10px;
   border: 1px solid var(--theme-skin, #505050);
   color: var(--theme-skin, #505050);
   -webkit-border-radius: 50px;

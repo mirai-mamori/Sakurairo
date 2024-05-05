@@ -10,12 +10,12 @@
 
 ?>
 <html <?php language_attributes();
-add_action('wp_head',function(){
-        wp_dequeue_style('wp-block-library');
-        wp_dequeue_style('wp-block-library-theme');
-        wp_dequeue_style('entry-content');
-},5);
-?>>
+        add_action('wp_head',function(){
+            wp_dequeue_style('wp-block-library');
+            wp_dequeue_style('wp-block-library-theme');
+            wp_dequeue_style('entry-content');
+        },5);
+        ?>>
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
@@ -49,7 +49,7 @@ if (!no_report) httpGet(report_url);
         <div class="error-img">
             <div class="anim-icon" id="404" style="height: 66%;"></div>
         </div>
-        <div class="err-button back">
+        <div class="err-button back" style="display: flex; flex-direction: row; flex-wrap: wrap; align-content: center; justify-content: center; ">
             <a id="golast" href=javascript:history.go(-1);><?php _e('return to previous page', 'sakurairo');/*返回上一页*/ ?></a>
             <a id="gohome" href="<?php bloginfo('url'); ?>"><?php _e('return to home page', 'sakurairo');/*返回主页*/ ?></a>
         </div>
