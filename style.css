@@ -8761,6 +8761,44 @@ body.dark .post-list-thumb:hover {
     border-radius: 100%;
   }
 
+  #mo-nav .m-user-menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 10px;
+  }
+
+  #mo-nav .m-user-menu .m-user-name {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+  }
+
+  #mo-nav .m-user-menu .m-user-name span {
+    margin: 5px 10px;
+  }
+
+  #mo-nav .m-user-menu .m-user-menu-option {
+    display: none;
+  }
+
+  #mo-nav .m-user-menu:hover .m-user-menu-option {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+
+  #mo-nav .m-user-menu .m-user-menu-option a {
+    margin: 12px;
+    color: var(--theme-skin, #505050);
+    text-decoration: underline wavy var(--post_list_matching_color, #ffeeeB);
+  }
+
   #mo-nav .m-search form {
     position: relative;
     width: 250px;
