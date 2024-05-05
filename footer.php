@@ -62,6 +62,7 @@ $reception_background = iro_opt('reception_background');
 			$ava = iro_opt('personal_avatar') ? $personal_avatar: ($iro_logo ?: iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.6/').'series/avatar.webp'); ?>
 			<img alt="m-avatar" src="<?php echo $ava ?>">
 		</div>
+    <?php if (wp_is_mobile()) m_user_menu()?>
 		<div class="m-search">
 			<form class="m-search-form" method="get" action="<?php echo home_url(); ?>" role="search">
 				<input class="m-search-input" type="search" name="s" placeholder="<?php _e('Search...', 'sakurairo') /*搜索...*/?>" required>
