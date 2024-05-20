@@ -2594,3 +2594,24 @@ if (iro_opt('show_location_in_manage')) {
     add_filter('manage_edit-comments_columns', 'iro_add_location_to_comments_columns');
     add_action('manage_comments_custom_column', 'iro_output_ip_location_columns', 10, 2);
 }
+
+// Modify search query to exclude pages and categories(修改搜索查询以排除'页面'和'类别')
+function exclude_pages_and_categories_from_search($query) {
+    if (!is_admin() && $query->is_search) {
+        // Exclude pages
+        $query->set('post_type', array('post', 'idea', 'link')); // Include other post types but exclude 'page'
+
+        // Exclude categories
+        $tax_query = array(
+            array(
+                'taxonomy' => 'category',
+                'field' => 'name',
+                'terms' => get_search_query(),
+                'operator' => 'NOT IN'
+            )
+        );
+        $query->set('tax_query', $tax_query);
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'exclude_pages_and_categories_from_search');
