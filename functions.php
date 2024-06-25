@@ -2285,10 +2285,16 @@ function show_card($attr, $content = '')
 add_shortcode('conversations', 'conversations');
 function conversations($attr, $content = '')
 {
-    extract(shortcode_atts(array("avatar" => "", "direction" => ""), $attr));
-
+    $size = 40;
+    extract(shortcode_atts(array("avatar" => "", "direction" => "", "username" => ""), $attr));
+    if ($avatar == "" && $username != "") {
+        $user_id = get_user_by('login', $username)->ID;
+        if ($user_id) {
+            $avatar = get_avatar_url($user_id, 40);
+        }
+    }
     $output = '<div class="conversations-code" style="display: flex; flex-direction: ' . $direction . '; padding: 10px;">';
-    $output .= '<img src="' . $avatar . '" style="width: 40px; height: 40px; border-radius: 50%;">';
+    $output .= "<img src=\"$avatar\" style=\"width: {$size}px; height: {$size}px; border-radius: 50%;\">";
     $output .= '<div class="conversations-code-text">' . $content . '</div>';
     $output .= '</div>';
 
