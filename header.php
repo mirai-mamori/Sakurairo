@@ -104,7 +104,7 @@ $vision_resource_basepath = iro_opt('vision_resource_basepath');
 			<div class="site-branding">
 				<?php if (iro_opt('iro_logo') && !iro_opt('mashiro_logo_option', false)) { ?>
 					<div class="site-title">
-						<a href="<?php bloginfo('url'); ?>"><img src="<?php echo iro_opt('iro_logo'); ?>"></a>
+					<a href="<?php bloginfo('url'); ?>"><img alt="<?=get_option( 'blogname' )?>" src="<?=iro_opt('iro_logo')?>"></a>
 					</div>
 				<?php } else { ?>
 					<span class="site-title">
