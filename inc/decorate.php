@@ -1148,7 +1148,7 @@ body{
 ?>;
 }
 #video-add{
-    background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/add.png);
+    background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/add.svg);
 }
 @media (max-width:860px) {
   .headertop.filter-dot::before {
@@ -1163,11 +1163,11 @@ body{
   background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/dot.gif);
 }
 .loadvideo,.video-play {
-  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/play.png);
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/play.svg);
 }
 
 .video-pause {
-  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/stop.png);
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/pause.svg);
 }
 #loading-comments {
 background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>load_svg/ball.svg);
