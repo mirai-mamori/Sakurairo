@@ -1089,7 +1089,9 @@ input[type=week] {
   text-overflow: ellipsis;
   white-space: nowrap;
   font-weight: var(--global-font-weight);
-
+  display:inline-flex;
+  gap:4px 8px;
+  flex-wrap: wrap;
 }
 
 .post-meta a {
@@ -1099,7 +1101,10 @@ input[type=week] {
   text-overflow: ellipsis;
   white-space: nowrap;
   font-weight: var(--global-font-weight);
+}
 
+.post-meta .meta-author,.entry-census .meta-author{
+  margin:0;
 }
 
 .post-thumb a {
@@ -1261,7 +1266,9 @@ input[type=week] {
   margin: 0;
   color: #888;
   font-weight: var(--global-font-weight);
-
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap:2px 8px;
 }
 
 .entry-header hr {
@@ -5744,7 +5751,7 @@ object {
 }
 
 .meta-author {
-  margin: 0 10px 0 0;
+  margin-right:10px;
 }
 
 .meta-author img {
@@ -5753,10 +5760,6 @@ object {
     */
   max-height: 18px;
   margin: 0 5px -4px;
-}
-
-.comments-number {
-  margin: 0 10px;
 }
 
 .post-thumb {
@@ -7763,10 +7766,6 @@ body.theme-dark .cbp_tmtimeline::before {
 
 .shuoshuo_meta i {
   margin-right: 5px;
-}
-
-.comments-number {
-  margin-left: 8px;
 }
 
 .zhuan {

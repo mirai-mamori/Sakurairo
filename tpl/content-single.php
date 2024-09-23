@@ -25,13 +25,9 @@ if (iro_opt('author_profile_quote') == '1') {
 } ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if(should_show_title()) { ?>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-		<p class="entry-census"><?php echo poi_time_since(strtotime($post->post_date)); ?>&nbsp;&nbsp;<?php echo get_post_views(get_the_ID()).' '. _n('View','Views',get_post_views(get_the_ID()),'sakurairo')/*次阅读*/?> </p>
-		<hr>
-	</header><!-- .entry-header -->
-	<?php } ?>
+	<?php if(should_show_title()) { 
+	    require get_template_directory() . '/tpl/single-entry-header.php';
+	 } ?>
 	<!--<div class="toc-entry-content">--><!-- 套嵌目录使用（主要为了支援评论）-->
 	<?php if(!empty($ai_excerpt) && empty($excerpt)) { ?>
 	<div class="ai-excerpt">

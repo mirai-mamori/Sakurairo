@@ -4,7 +4,7 @@
  * @author KotoriK<https://github.com/KotoriK>
  */
  
- function get_author_meta_spans($user_id=false){
+ function render_author_meta($user_id=false){
     global $post;
     if (get_the_author()) {
         if (function_exists('get_multiple_authors')) {

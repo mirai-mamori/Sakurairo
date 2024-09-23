@@ -934,6 +934,9 @@ li.link-item {
 .post-list-thumb:nth-child(2n) .post-thumb a {
     border-radius: 10px 0 0 10px
 }
+.post-list-thumb:nth-child(2n) .post-meta{
+    justify-content:flex-end;
+}
 <?php } ?>
 
 <?php if(iro_opt('page_style') == 'sakurairo'){ ?>
