@@ -794,18 +794,6 @@ h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,
     border-radius: 0 0 <?=iro_opt('cover_radius', ''); ?>px <?=iro_opt('cover_radius', ''); ?>px;
 }
 
-<?php if (!iro_opt('article_function', 'true')): ?>
-.post-footer {
-display:none;
-}
-<?php endif; ?>
-
-<?php if (!iro_opt('article_lincenses', 'true')): ?>
-.post-license {
-display:none;
-}
-<?php endif; ?>
-
 <?php if (!iro_opt('author_profile_avatar', 'true')): ?>
 .author-profile .info {
 display:none;

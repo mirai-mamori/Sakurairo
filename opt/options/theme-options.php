@@ -2736,12 +2736,52 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 
       array(
         'id' => 'article_lincenses',
-        'type' => 'switcher',
-        'title' => __('Article Lincenses','sakurairo_csf'),
+        'type' => 'select',
+        'title' => __('Article License','sakurairo_csf'),
         'dependency' => array( 'article_function', '==', 'true', '', 'true' ),
-        'label' => __('Enabled by default, Article license will appear on the function bar','sakurairo_csf'),
+        'label' => __('Enabled by default, Article license will appear on the function bar. License can also be selected by custom metadata "license".','sakurairo_csf'),
+        'desc'=> __('"BY" means reusers should give credit to the creator, "NC" means no commercial use, "ND" means no redistribution, "SA" means must be shared under the same terms. For details and legal advice please refer to creativecommons.org','sakurairo_csf'),
+        'options' => array(
+          "cc0" => "CC0 1.0",
+          "cc-by" => "CC BY 4.0",
+          "cc-by-nc" => "CC BY-NC 4.0",
+          "cc-by-nc-nd" => "CC BY-NC-ND 4.0",
+          true => "CC BY-NC-SA 4.0",
+          "cc-by-nd" => "CC BY-ND 4.0",
+          "cc-by-sa" => "CC BY-SA 4.0",
+          false => __("Not Display","sakurairo_csf"),
+/*           "custom" => __("Custom License","sakurairo_csf"),
+ */        ),
         'default' => true
       ),
+
+/*       array(
+        'id' => 'article_license_custom',
+        'type' => 'fieldset',
+        'title' => __('Custom License','sakurairo_csf'),
+        "dependency" => array( 'article_license', '==', 'custom', '', 'true' ),
+        'fields' => array(
+          array(
+            'id' => 'article_license_custom_name',
+            'type' => 'text',
+            'title' => __('Name','sakurairo_csf'),
+            'default' => 'CC BY-NC-SA 4.0'
+          ),
+          array(
+            'id' => 'article_license_custom_link',
+            'type' => 'text',
+            'title' => __('Link','sakurairo_csf'),
+            'default' => 'https://creativecommons.org/licenses/by-nc-sa/4.0/'
+          ),
+          array(
+            'id' => 'article_license_custom_icon',
+            'type' => 'upload',
+            'title' => __('Icon','sakurairo_csf'),
+            'desc' => __('Upload the license icon image','sakurairo_csf'),
+            'library' => 'image',
+          ),
+          )
+        ), */
 
       array(
         'id' => 'alipay_code',

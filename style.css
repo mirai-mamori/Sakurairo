@@ -1298,22 +1298,21 @@ h1.page-title {
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background: rgba(255, 255, 255, 0.5);
   color: #7D7D7D;
-  padding: 6px 12.5px;
+  padding: 12px;
   font-size: 24px;
   position: inherit;
-  text-transform: uppercase;
   border-radius: 10px;
   -webkit-transition: all .8s;
   transition: all .8s;
   margin: 5px;
   border: 1px solid #FFFFFF;
+  display:flex;
+  gap:3px;
 }
 
 .post-license:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.8);
-  -webkit-transition: all .8s;
-  transition: all .8s;
 }
 
 .post-tags {
@@ -10404,16 +10403,12 @@ body.dark .toc:hover {
 body.dark .post-license {
   box-shadow: 0 1px 20px 2px rgba(26, 26, 26, 0.8);
   background: rgba(26, 26, 26, 0.6);
-  -webkit-transition: all .8s;
-  transition: all .8s;
   border: 1px solid #7d7d7d30;
 }
 
 body.dark .post-license:hover {
   box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
   background: rgba(26, 26, 26, 0.8);
-  -webkit-transition: all .8s;
-  transition: all .8s;
 }
 
 body.dark .post-tags {
