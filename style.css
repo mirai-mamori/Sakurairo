@@ -1293,7 +1293,7 @@ h1.page-title {
   margin-top: 50px;
 }
 
-.post-lincenses {
+.post-license {
   float: left;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background: rgba(255, 255, 255, 0.5);
@@ -1309,7 +1309,7 @@ h1.page-title {
   border: 1px solid #FFFFFF;
 }
 
-.post-lincenses:hover {
+.post-license:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.8);
   -webkit-transition: all .8s;
@@ -5615,7 +5615,7 @@ a:focus {
 .site-top ul li a:hover,
 .entry-title a:hover,
 .site-info a:hover,
-.post-lincenses a:hover,
+.post-license a:hover,
 .post-tags a:hover,
 .ins-section .ins-search-item:hover .ins-slug,
 .ins-section .ins-search-item:hover .ins-search-preview,
@@ -5816,7 +5816,7 @@ h1.page-title.mb- {
   margin-top: 100px;
 }
 
-.post-lincenses a {
+.post-license a {
   color: #7D7D7D;
 }
 
@@ -10401,7 +10401,7 @@ body.dark .toc:hover {
   transition: all .8s;
 }
 
-body.dark .post-lincenses {
+body.dark .post-license {
   box-shadow: 0 1px 20px 2px rgba(26, 26, 26, 0.8);
   background: rgba(26, 26, 26, 0.6);
   -webkit-transition: all .8s;
@@ -10409,7 +10409,7 @@ body.dark .post-lincenses {
   border: 1px solid #7d7d7d30;
 }
 
-body.dark .post-lincenses:hover {
+body.dark .post-license:hover {
   box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
   background: rgba(26, 26, 26, 0.8);
   -webkit-transition: all .8s;

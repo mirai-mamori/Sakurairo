@@ -801,7 +801,7 @@ display:none;
 <?php endif; ?>
 
 <?php if (!iro_opt('article_lincenses', 'true')): ?>
-.post-lincenses {
+.post-license {
 display:none;
 }
 <?php endif; ?>

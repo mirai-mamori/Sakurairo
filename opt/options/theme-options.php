@@ -2739,7 +2739,7 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'type' => 'switcher',
         'title' => __('Article Lincenses','sakurairo_csf'),
         'dependency' => array( 'article_function', '==', 'true', '', 'true' ),
-        'label' => __('Enabled by default, Article lincenses will appear on the function bar','sakurairo_csf'),
+        'label' => __('Enabled by default, Article license will appear on the function bar','sakurairo_csf'),
         'default' => true
       ),
 

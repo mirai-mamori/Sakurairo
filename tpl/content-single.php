@@ -50,7 +50,7 @@ if (iro_opt('author_profile_quote') == '1') {
 		<!--<h2 style="opacity:0;max-height:0;margin:0">Comments</h2>--><!-- 评论跳转标记 -->
 	</div><!-- .entry-content -->
 	<footer class="post-footer">
-    <div class="post-lincenses">
+    <div class="post-license">
         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow">
             <i class="fa-brands fa-creative-commons"></i>
         </a>
