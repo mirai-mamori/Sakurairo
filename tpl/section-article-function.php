@@ -14,12 +14,12 @@ if (iro_opt("article_function")) {
             }
             if ($license === "cc0") {
                 $license_link = "https://creativecommons.org/publicdomain/zero/1.0/";
-                $license_desc = __("This article is licensed under ", "sakurairo") + "CC0 1.0";
+                $license_desc = sprintf(__("This article is licensed under %s", "sakurairo"),"CC0 1.0");
                 $license_icon = array("fa-creative-commons-zero");
             } else {
                 $variant = substr($license, 3);
                 $license_link = "https://creativecommons.org/licenses/$variant/4.0/";
-                $license_desc = __("This article is licensed under ", "sakurairo") + "CC " . strtoupper($variant) . " 4.0";
+                $license_desc = sprintf(__("This article is licensed under %s", "sakurairo"),"CC " . strtoupper($variant) . " 4.0");
                 $license_icon = array_map(function ($v) {
                     return "fa-creative-commons-$v";
                 }, explode("-", $variant));
