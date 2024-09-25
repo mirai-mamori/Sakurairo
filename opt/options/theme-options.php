@@ -3252,9 +3252,9 @@ $prefix = 'iro_options';
         'type' => 'select',
         'title' => __('API To Parse Geographical Location','sakurairo_csf'),
         'options' => array(
-          'sakurairo' => __('Sakurairo','sakurairo_csf'),
+          'sakurairo' => __('Theme Official','sakurairo_csf'),
           'ip-api' => __('IP—API','sakurairo_csf'),
-          'all' => __('ALL','sakurairo_csf'),
+          'all' => __('All','sakurairo_csf'),
         ),
         'default' => 'all'
       ),
@@ -3264,7 +3264,7 @@ $prefix = 'iro_options';
         'content' => __(
          '<p><strong>Theme Official:</strong>Official API of the theme</p>'
         .'<p><strong>IP-API:</strong>Provided by <a target="_blank" href="https://ip-api.com/">ip-api.com</a></p>'
-        .'<p><strong>All:</strong>Priority is given to Sakurairo, IP—API for fallback</p>','sakurairo_csf'),
+        .'<p><strong>All:</strong>Priority is given to Theme Official, IP—API for fallback</p>','sakurairo_csf'),
       ),
 
       array(
