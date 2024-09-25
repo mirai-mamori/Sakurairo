@@ -30,8 +30,11 @@
                     require_once get_stylesheet_directory() . '/tpl/meta-ert.php';
                     $content = __("Estimate Reading Time", "sakurairo") . ": " . get_meta_estimate_reading_time();
                     break;
-                case "last_edit_time_relative":
+                case "publish_time_relative":
                     $content = poi_time_since(strtotime($post->post_date));
+                    break;
+                case "last_edit_time_relative":
+                    $content = poi_time_since(strtotime($post->post_modified),false,__('Last updated on ', 'sakurairo'));
                     break;
             }
             if ($content) { ?>

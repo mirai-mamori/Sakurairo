@@ -14,7 +14,8 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
 $AVAIL_METADATA_POST_HEADER = array_merge(
   $AVAIL_METADATA_ARTICLE_AREA,
 array(
-  "last_edit_time_relative" => __("Last Edit Time (Relatively)","sakurairo_csf"),
+  "publish_time_relative" => __("Publish Time (Relatively)","sakurairo_csf"), // WP_Post::post_date
+  "last_edit_time_relative" => __("Last Edit Time (Relatively)","sakurairo_csf"), // WP_Post::post_modified
 ));
 $prefix = 'iro_options';
 
@@ -2851,7 +2852,7 @@ $prefix = 'iro_options';
         "multiple" => true,
         "sortable" => true,
         "options"=> $AVAIL_METADATA_POST_HEADER,
-        "default" => array("last_edit_time_relative","post_views")
+        "default" => array("publish_time_relative","post_views")
       )
     )
   ) );
