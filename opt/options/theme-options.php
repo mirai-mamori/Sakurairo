@@ -2760,7 +2760,6 @@ $prefix = 'iro_options';
         'title' => __('Article License','sakurairo_csf'),
         'dependency' => array( 'article_function', '==', 'true', '', 'true' ),
         'label' => __('Enabled by default, Article license will appear on the function bar. License can also be selected by custom metadata "license".','sakurairo_csf'),
-        'desc'=> __('"BY" means reusers should give credit to the creator, "NC" means no commercial use, "ND" means no redistribution, "SA" means must be shared under the same terms. For details and legal advice please refer to creativecommons.org','sakurairo_csf'),
         'options' => array(
           "cc0" => "CC0 1.0",
           "cc-by" => "CC BY 4.0",
@@ -2773,6 +2772,17 @@ $prefix = 'iro_options';
 /*           "custom" => __("Custom License","sakurairo_csf"),
  */        ),
         'default' => true
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => __(
+         '<p><strong>"BY"</strong> means reusers should give credit to the creator</p>'
+        .'<p><strong>"NC"</strong> means no commercial use</p>'
+        .'<p><strong>"ND"</strong> means no redistribution</p>'
+        .'<p><strong>"SA"</strong> means must be shared under the same terms</p>'
+        .'<p>For details and legal advice, You can visit <a href="https://creativecommons.org/">the official website</a></p>','sakurairo_csf'),
+        'dependency' => array( 'article_lincenses', '!=', 'false', '', 'true' ),
       ),
 
 /*       array(
@@ -3246,8 +3256,15 @@ $prefix = 'iro_options';
           'ip-api' => __('IP—API','sakurairo_csf'),
           'all' => __('ALL','sakurairo_csf'),
         ),
-        'desc' => __('Sakurairo: official API of the theme; IP-API: provided by <a target="_blank" href="https://ip-api.com/">ip-api.com</a>; ALL: priority is given to Sakurairo, IP—API for fallback','sakurairo_csf'),
         'default' => 'all'
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => __(
+         '<p><strong>Theme Official:</strong>Official API of the theme</p>'
+        .'<p><strong>IP-API:</strong>Provided by <a target="_blank" href="https://ip-api.com/">ip-api.com</a></p>'
+        .'<p><strong>All:</strong>Priority is given to Sakurairo, IP—API for fallback</p>','sakurairo_csf'),
       ),
 
       array(

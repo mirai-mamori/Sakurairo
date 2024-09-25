@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2024-09-25 13:01+0900\n"
+"POT-Creation-Date: 2024-09-25 16:25+0900\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -314,7 +314,7 @@ msgstr ""
 msgid "You had set private comment before"
 msgstr ""
 
-#: functions.php:395 inc/theme_plus.php:194
+#: functions.php:395 inc/theme_plus.php:186
 msgid "Author"
 msgstr ""
 
@@ -322,7 +322,7 @@ msgstr ""
 msgid "Blogger"
 msgstr ""
 
-#: functions.php:404 functions.php:2580
+#: functions.php:404 functions.php:2599
 msgid "Location"
 msgstr ""
 
@@ -366,24 +366,24 @@ msgstr ""
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1521 functions.php:1524 inc/theme_plus.php:427
-#: inc/theme_plus.php:473
+#: functions.php:1540 functions.php:1543 inc/theme_plus.php:412
+#: inc/theme_plus.php:458
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1840
+#: functions.php:1859
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1966
+#: functions.php:1985
 msgid "QQ"
 msgstr ""
 
-#: functions.php:2051
+#: functions.php:2070
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:2200
+#: functions.php:2219
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -391,7 +391,7 @@ msgid ""
 "target=\"_blank\"> pseudo-static </a>. </ b>"
 msgstr ""
 
-#: functions.php:2338
+#: functions.php:2357
 msgid "Expand / Collapse"
 msgstr ""
 
@@ -450,7 +450,7 @@ msgstr ""
 msgid "Load More"
 msgstr ""
 
-#: inc/classes/Cache.php:70 inc/theme_plus.php:722
+#: inc/classes/Cache.php:70 inc/theme_plus.php:707
 msgid "The comment is private"
 msgstr ""
 
@@ -557,111 +557,100 @@ msgstr ""
 msgid "Edit %s"
 msgstr ""
 
-#: inc/theme_plus.php:16
-msgid "EDIT"
-msgstr ""
-
-#: inc/theme_plus.php:65
+#: inc/theme_plus.php:57
 msgid " days ago"
 msgstr ""
 
-#: inc/theme_plus.php:66
+#: inc/theme_plus.php:58
 msgid " hours ago"
 msgstr ""
 
-#: inc/theme_plus.php:67
+#: inc/theme_plus.php:59
 msgid " minutes ago"
 msgstr ""
 
-#: inc/theme_plus.php:68
+#: inc/theme_plus.php:60
 msgid " seconds ago"
 msgstr ""
 
-#: inc/theme_plus.php:75
+#: inc/theme_plus.php:67
 msgid "Posted on "
 msgstr ""
 
-#: inc/theme_plus.php:134
+#: inc/theme_plus.php:126
 msgid "Please upgrade wordpress to version 4.4+"
 msgstr ""
 
-#: inc/theme_plus.php:241
+#: inc/theme_plus.php:233
 msgid "Login successful, "
 msgstr ""
 
-#: inc/theme_plus.php:242
+#: inc/theme_plus.php:234
 msgid "seconds later automatically transfer to"
 msgstr ""
 
-#: inc/theme_plus.php:253
+#: inc/theme_plus.php:245
 msgid "dashboard"
 msgstr ""
 
-#: inc/theme_plus.php:261
+#: inc/theme_plus.php:253
 msgid "home"
 msgstr ""
 
-#: inc/theme_plus.php:273
+#: inc/theme_plus.php:265
 msgid "Change avatar"
 msgstr ""
 
-#: inc/theme_plus.php:274
+#: inc/theme_plus.php:266
 msgid "Hello, "
 msgstr ""
 
-#: inc/theme_plus.php:278
+#: inc/theme_plus.php:270
 msgid "Home"
 msgstr ""
 
-#: inc/theme_plus.php:280
+#: inc/theme_plus.php:272
 msgid "Manage"
 msgstr ""
 
-#: inc/theme_plus.php:282
+#: inc/theme_plus.php:274
 msgid "Logout"
 msgstr ""
 
-#: inc/theme_plus.php:282
+#: inc/theme_plus.php:274
 msgid "Sign out? "
 msgstr ""
 
-#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:31
-#: tpl/single-image.php:24
-msgid "View"
-msgid_plural "Views"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/theme_plus.php:314 inc/theme_plus.php:374
+#: inc/theme_plus.php:306 inc/theme_plus.php:359
 #, php-format
 msgid "Search results for \" %s \""
 msgstr ""
 
-#: inc/theme_plus.php:391 tpl/content-thumb.php:28 tpl/content-thumb.php:34
+#: inc/theme_plus.php:376 tpl/content-thumb.php:72 tpl/content-thumb.php:78
 msgid "Your browser does not support HTML5 video."
 msgstr ""
 
-#: inc/theme_plus.php:422
+#: inc/theme_plus.php:407
 msgid "Signed in as"
 msgstr ""
 
-#: inc/theme_plus.php:428 inc/theme_plus.php:474
+#: inc/theme_plus.php:413 inc/theme_plus.php:459
 msgid "New post"
 msgstr ""
 
-#: inc/theme_plus.php:430 inc/theme_plus.php:476
+#: inc/theme_plus.php:415 inc/theme_plus.php:461
 msgid "Profile"
 msgstr ""
 
-#: inc/theme_plus.php:431 inc/theme_plus.php:477
+#: inc/theme_plus.php:416 inc/theme_plus.php:462
 msgid "Sign out"
 msgstr ""
 
-#: inc/theme_plus.php:449 inc/theme_plus.php:488
+#: inc/theme_plus.php:434 inc/theme_plus.php:473
 msgid "Log in"
 msgstr ""
 
-#: inc/theme_plus.php:490
+#: inc/theme_plus.php:475
 msgid "Register"
 msgstr ""
 
@@ -699,26 +688,26 @@ msgid "search result: %s"
 msgstr ""
 
 #: tpl/content-category.php:31 tpl/content-image.php:33
-#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
+#: tpl/content-status.php:32 tpl/content.php:33 tpl/meta-comments.php:4
 msgid "NOTHING"
 msgstr ""
 
 #: tpl/content-category.php:31 tpl/content-image.php:33
-#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
+#: tpl/content-status.php:32 tpl/content.php:33 tpl/meta-comments.php:4
 msgid "1 Comment"
 msgstr ""
 
 #: tpl/content-category.php:31 tpl/content-image.php:33
-#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
+#: tpl/content-status.php:32 tpl/content.php:33 tpl/meta-comments.php:4
 msgid "Comments"
 msgstr ""
 
 #: tpl/content-category.php:31 tpl/content-image.php:33
-#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
+#: tpl/content-status.php:32 tpl/content.php:33 tpl/meta-comments.php:4
 msgid "Comment Closed"
 msgstr ""
 
-#: tpl/content-image.php:37 tpl/content-status.php:36 tpl/content-thumb.php:91
+#: tpl/content-image.php:37 tpl/content-status.php:36 tpl/content-thumb.php:16
 #: tpl/content.php:37
 msgid "Hit"
 msgid_plural "Hits"
@@ -743,20 +732,60 @@ msgstr ""
 msgid "We didn't seem to find what you want. Maybe you can search for it."
 msgstr ""
 
-#: tpl/content-page.php:24 tpl/content-single.php:45 tpl/single-image.php:34
+#: tpl/content-page.php:24 tpl/content-single.php:41 tpl/single-image.php:31
 msgid "Pages:"
 msgstr ""
 
-#: tpl/content-single.php:38 tpl/content-thumb.php:116
+#: tpl/content-single.php:34 tpl/content-thumb.php:130
 msgid "AI Excerpt"
 msgstr ""
 
-#: tpl/section-article-function.php:17 tpl/section-article-function.php:22
-msgid "This article is licensed under "
+#: tpl/content-thumb.php:51 tpl/entry-census.php:54
+msgid "Estimate Reading Time"
 msgstr ""
 
-#: tpl/section-article-function.php:65
+#: tpl/entry-census.php:6
+msgid "EDIT"
+msgstr ""
+
+#: tpl/entry-census.php:40
+msgid "View"
+msgid_plural "Views"
+msgstr[0] ""
+msgstr[1] ""
+
+#: tpl/entry-census.php:66 tpl/section-article-function.php:65
 msgid "Last updated on "
+msgstr ""
+
+#: tpl/meta-ert.php:8
+msgid "Less than 1 minute"
+msgstr ""
+
+#: tpl/meta-ert.php:11
+#, php-format
+msgid "%s Hour"
+msgid_plural "%s Hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: tpl/meta-ert.php:13
+#, php-format
+msgid "%s Minute"
+msgid_plural "%s Minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: tpl/meta-words-count.php:9
+#, php-format
+msgid "%s Word"
+msgid_plural "%s Words"
+msgstr[0] ""
+msgstr[1] ""
+
+#: tpl/section-article-function.php:17 tpl/section-article-function.php:22
+#, php-format
+msgid "This article is licensed under %s"
 msgstr ""
 
 #: tpl/section-article-function.php:74
