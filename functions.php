@@ -1520,6 +1520,7 @@ function count_post_words($post_ID)
     $content = strip_tags($content);
     $count = word_stat($content);
     update_post_meta($post_ID, 'post_words_count', $count);
+    return $count;
 }
 
 add_action('save_post', 'count_post_words');
