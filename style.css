@@ -1274,7 +1274,7 @@ input[type=week] {
 .entry-census.has-splitter{
   gap:2px 5px;
 }
-.entry-census.has-splitter span:not(:last-child)::after{
+.entry-census.has-splitter>:where(a,span):not(:last-child)::after{
 content: "·";
 margin-left:5px;
 margin-inline-start: 5px;
