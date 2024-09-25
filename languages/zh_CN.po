@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-06-05 13:20+0800\n"
-"PO-Revision-Date: 2023-06-05 13:20+0800\n"
+"POT-Creation-Date: 2024-09-25 13:11+0900\n"
+"PO-Revision-Date: 2024-09-25 13:15+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -33,15 +33,15 @@ msgstr "返回首页"
 msgid "Don't worry, search in site?"
 msgstr "别着急，试试搜索？"
 
-#: 404.php:59 footer.php:63 search.php:39
+#: 404.php:59 footer.php:68 search.php:39
 msgid "Search..."
 msgstr "搜索..."
 
-#: archive.php:58 author.php:79 index.php:74
+#: archive.php:58 author.php:80 index.php:74
 msgid " Previous"
 msgstr " 更早的文章"
 
-#: author.php:12
+#: author.php:13
 msgid "No personal profile set yet"
 msgstr "尚未设置个人简介"
 
@@ -73,188 +73,188 @@ msgstr "私密评论"
 msgid "Comment reply notify"
 msgstr "邮件通知"
 
-#: comments.php:67
-msgid "Leave a Reply to"
-msgstr "回复给"
-
-#: comments.php:68
-msgid "Cancel Reply"
-msgstr "取消回复"
-
-#: comments.php:69
-msgid "BiuBiuBiu~"
-msgstr "BiuBiuBiu~"
-
-#: comments.php:70
-msgid "You are a surprise that I will only meet once in my life"
-msgstr "你是我一生只会遇见一次的惊喜"
-
-#: comments.php:74
+#: comments.php:107
 msgid "Click me OωO"
 msgstr "戳我呀 OωO"
 
-#: comments.php:75
+#: comments.php:108
 msgid "Woooooow ヾ(≧∇≦*)ゝ"
 msgstr "嘿嘿嘿 ヾ(≧∇≦*)ゝ"
 
-#: comments.php:96
+#: comments.php:131
+msgid "Leave a Reply to"
+msgstr "回复给"
+
+#: comments.php:132
+msgid "Cancel Reply"
+msgstr "取消回复"
+
+#: comments.php:133
+msgid "BiuBiuBiu~"
+msgstr "Biu Biu Biu~"
+
+#: comments.php:134
+msgid "You are a surprise that I will only meet once in my life"
+msgstr "你是我一生只会遇见一次的惊喜"
+
+#: comments.php:144
 msgid "Auto pull nickname and avatar with a QQ num. entered"
 msgstr "输入QQ号将自动拉取昵称和头像"
 
-#: comments.php:96
+#: comments.php:144
 msgid "Nickname or QQ number"
 msgstr "昵称或QQ号"
 
-#: comments.php:96
+#: comments.php:144
 msgid "Name* "
 msgstr "昵称 "
 
-#: comments.php:98
+#: comments.php:146
 msgid "You will receive notification by email"
 msgstr "你将收到回复通知"
 
-#: comments.php:98
+#: comments.php:146
 msgid "email"
 msgstr "邮箱"
 
-#: comments.php:98
+#: comments.php:146
 msgid "Must* "
 msgstr "必须* "
 
-#: comments.php:100
+#: comments.php:148
 msgid "Advertisement is forbidden 😀"
 msgstr "禁止小广告😀"
 
-#: comments.php:100
+#: comments.php:148
 msgid "Site"
 msgstr "网站"
 
-#: footer.php:38
+#: footer.php:42
 #, php-format
 msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr "加载耗时 %.3f 秒 | 查询 %d 次 | 内存使用 %.2f MB "
 
-#: footer.php:68
+#: footer.php:73
 msgid "Go to top"
 msgstr "回到顶部"
 
-#: footer.php:69
+#: footer.php:74
 msgid "Control Panel"
 msgstr "控制面板"
 
-#: footer.php:75 footer.php:83
+#: footer.php:80 footer.php:88
 msgid "Want to find something?"
 msgstr "想要找点什么呢？"
 
-#: footer.php:84
+#: footer.php:89
 msgid "Search"
 msgstr "搜索"
 
-#: footer.php:120
+#: footer.php:125
 msgid "Light Mode"
 msgstr "浅色模式"
 
-#: footer.php:123
+#: footer.php:128
 msgid "Dark Mode"
 msgstr "深色模式"
 
-#: footer.php:129
+#: footer.php:134
 msgid "Toggle Page Background Image"
 msgstr "切换页面背景图像"
 
-#: footer.php:150
+#: footer.php:155
 msgid "Switch To Font A"
 msgstr "切换到字体 A"
 
-#: footer.php:153
+#: footer.php:158
 msgid "Switch To Font B"
 msgstr "切换到字体 B"
 
-#: functions.php:97
+#: functions.php:106
 msgid "Nav Menus"
 msgstr "导航菜单"
 
-#: functions.php:213 functions.php:224
+#: functions.php:235 functions.php:246
 msgid "Ideas"
 msgstr "说说"
 
-#: functions.php:214
+#: functions.php:236
 msgid "Idea"
 msgstr "说说"
 
-#: functions.php:215 functions.php:216
+#: functions.php:237 functions.php:238
 msgid "Publish New Idea"
 msgstr "发布新说说"
 
-#: functions.php:217
+#: functions.php:239
 msgid "Edit Idea"
 msgstr "编辑说说"
 
-#: functions.php:218
+#: functions.php:240
 msgid "New Idea"
 msgstr "新说说"
 
-#: functions.php:219
+#: functions.php:241
 msgid "View Idea"
 msgstr "查看说说"
 
-#: functions.php:220
+#: functions.php:242
 msgid "Search Idea"
 msgstr "搜索说说"
 
-#: functions.php:221
+#: functions.php:243
 msgid "Not Found Idea"
 msgstr "没有找到说说"
 
-#: functions.php:222
+#: functions.php:244
 msgid "No Idea in the Trash"
 msgstr "没有在垃圾桶的说说"
 
-#: functions.php:297
+#: functions.php:326
 msgid "Copied!"
 msgstr "复制成功！"
 
-#: functions.php:298
+#: functions.php:327
 msgid "Copy Code"
 msgstr "拷贝代码"
 
-#: functions.php:299
+#: functions.php:328
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
-msgstr "你的封面API好像不支持跨域调用,这种情况下缓存是不会生效的哦。"
+msgstr "你的封面 API 好像不支持跨域调用,这种情况下缓存是不会生效的哦。"
 
-#: functions.php:300
+#: functions.php:329
 msgid "Commiting...."
 msgstr "提交中...."
 
-#: functions.php:301
+#: functions.php:330
 msgid "Succeed"
 msgstr "成功"
 
-#: functions.php:302
+#: functions.php:331
 msgid "10 files max per request"
-msgstr "每次上传上限为10张"
+msgstr "每次上传上限为 10 张"
 
-#: functions.php:303
+#: functions.php:332
 msgid ""
 "5 MB max per file.\n"
 "\n"
 "「{0}」\n"
 "\n"
 "This image is too large~Please reupload!"
-msgstr "图片上传大小限制为5 MB\\n\\n「{0}」\\n\\n这张图太大啦~请重新上传噢！"
+msgstr "图片上传大小限制为 5 MB\\n\\n「{0}」\\n\\n这张图太大啦~请重新上传噢！"
 
-#: functions.php:304
+#: functions.php:333
 msgid "Uploading..."
 msgstr "上传中..."
 
-#: functions.php:305
+#: functions.php:334
 msgid "Uploaded successfully~"
 msgstr "上传成功~"
 
-#: functions.php:306
+#: functions.php:335
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -262,127 +262,128 @@ msgid ""
 "{2}"
 msgstr "上传失败！\\n文件名=> {0}\\ncode=> {1}\\n{2}"
 
-#: functions.php:307
+#: functions.php:336
 msgid "Upload failed, please retry."
 msgstr "上传失败，请重试."
 
-#: functions.php:308
+#: functions.php:337
 msgid "Page Load failed. HTTP {0}"
 msgstr "页面加载出错了 HTTP {0}"
 
-#: functions.php:309
+#: functions.php:338
 msgid "Glad you come, but we've got nothing left."
 msgstr "很高兴你翻到这里，但是真的没有了..."
 
-#: functions.php:310
+#: functions.php:339
 msgid "Post"
 msgstr "文章"
 
-#: functions.php:311
+#: functions.php:340
 msgid "Tag"
 msgstr "标签"
 
-#: functions.php:312
+#: functions.php:341
 msgid "Category"
 msgstr "分类"
 
-#: functions.php:313
+#: functions.php:342
 msgid "Page"
 msgstr "页面"
 
-#: functions.php:314
+#: functions.php:343
 msgid "Comment"
 msgstr "评论"
 
-#: functions.php:315
+#: functions.php:344
 msgid "Paused..."
 msgstr "暂停中..."
 
-#: functions.php:316
+#: functions.php:345
 msgid "Loading Video..."
 msgstr "正在加载视频..."
 
-#: functions.php:317
+#: functions.php:346
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "下载字体时，请注意您的数据使用情况。"
 
-#: functions.php:318
+#: functions.php:347
 msgid "Are you sure you want set it private?"
 msgstr "是否要将其设置为私密？"
 
-#: functions.php:319
+#: functions.php:348
 msgid "You had set private comment before"
 msgstr "您之前设置了私人评论"
 
-#: functions.php:389 inc/theme_plus.php:194
+#: functions.php:395 inc/theme_plus.php:194
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:389
+#: functions.php:395
 msgid "Blogger"
 msgstr "博主"
 
-#: functions.php:395
+#: functions.php:404 functions.php:2580
 msgid "Location"
 msgstr "来自"
 
-#: functions.php:401
+#: functions.php:410
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:403
+#: functions.php:412
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:405
+#: functions.php:414
 msgid "No"
 msgstr "否"
 
-#: functions.php:408
+#: functions.php:417
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:526
+#: functions.php:544
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:771
+#: functions.php:845
 msgid "Download Link"
 msgstr "下载地址"
 
-#: functions.php:844
+#: functions.php:922
 msgid "Remember me"
 msgstr "记住我"
 
-#: functions.php:1265
+#: functions.php:1453
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1298
-msgid " "
-msgstr " "
+#: functions.php:1488
+msgid " year"
+msgstr " 年"
 
-#: functions.php:1302
+#: functions.php:1492
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1330 functions.php:1333 inc/theme_plus.php:427
+#: functions.php:1521 functions.php:1524 inc/theme_plus.php:427
+#: inc/theme_plus.php:473
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1638
+#: functions.php:1840
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:1763
+#: functions.php:1966
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1847
+#: functions.php:2051
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:1976
+#: functions.php:2200
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -393,7 +394,7 @@ msgstr ""
 "固定链接</a>设置为朴素。为此，您可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">伪静态</a></b>"
 
-#: functions.php:2106
+#: functions.php:2338
 msgid "Expand / Collapse"
 msgstr "展开 / 收起"
 
@@ -424,11 +425,11 @@ msgstr "暂无"
 msgid "Backend error"
 msgstr "后端发生了错误 QwQ"
 
-#: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:69
+#: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:70
 msgid "Following "
 msgstr "已追番 "
 
-#: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:69
+#: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:70
 msgid " anime."
 msgstr " 番剧。"
 
@@ -448,11 +449,11 @@ msgstr "展开"
 msgid "All item has been loaded."
 msgstr "已加载所有内容。"
 
-#: inc/classes/BilibiliFavList.php:130 page-word.php:59
+#: inc/classes/BilibiliFavList.php:130 page-word.php:61
 msgid "Load More"
 msgstr "加载更多"
 
-#: inc/classes/Cache.php:70 inc/theme_plus.php:679
+#: inc/classes/Cache.php:70 inc/theme_plus.php:722
 msgid "The comment is private"
 msgstr "这是一条私密评论"
 
@@ -480,31 +481,43 @@ msgstr "验证码不正确。"
 msgid "An error has occurred."
 msgstr "出现了一个错误。"
 
-#: inc/classes/MyAnimeList.php:70
+#: inc/classes/IpLocation.php:302 inc/classes/IpLocation.php:331
+msgid "Unknown"
+msgstr "未知"
+
+#: inc/classes/IpLocation.php:305 inc/classes/IpLocation.php:334
+msgid "Reserved Address"
+msgstr "保留地址"
+
+#: inc/classes/IpLocation.php:308 inc/classes/IpLocation.php:322
+msgid "Empty Address"
+msgstr "空地址"
+
+#: inc/classes/MyAnimeList.php:71
 msgid " Watched "
 msgstr " 已观看 "
 
-#: inc/classes/MyAnimeList.php:70
+#: inc/classes/MyAnimeList.php:71
 msgid " episodes."
 msgstr " 集。"
 
-#: inc/classes/MyAnimeList.php:108
+#: inc/classes/MyAnimeList.php:109
 msgid "Finished "
 msgstr "已看完 "
 
-#: inc/classes/MyAnimeList.php:117
+#: inc/classes/MyAnimeList.php:118
 msgid "Watching "
 msgstr "追番中 "
 
-#: inc/classes/MyAnimeList.php:124
+#: inc/classes/MyAnimeList.php:125
 msgid "Planning to Watch "
 msgstr "打算看 "
 
-#: inc/classes/MyAnimeList.php:133
+#: inc/classes/MyAnimeList.php:134
 msgid "Dropped "
 msgstr "弃坑 "
 
-#: inc/classes/MyAnimeList.php:142
+#: inc/classes/MyAnimeList.php:143
 msgid "Paused "
 msgstr "暂停 "
 
@@ -573,7 +586,7 @@ msgstr "发布于 "
 
 #: inc/theme_plus.php:134
 msgid "Please upgrade wordpress to version 4.4+"
-msgstr "请升级到4.4以上版本"
+msgstr "请升级到 4.4 以上版本"
 
 #: inc/theme_plus.php:241
 msgid "Login successful, "
@@ -628,53 +641,57 @@ msgstr "关于“ %s ”的搜索结果"
 
 #: inc/theme_plus.php:391 tpl/content-thumb.php:28 tpl/content-thumb.php:34
 msgid "Your browser does not support HTML5 video."
-msgstr ""
+msgstr "您的浏览器不支持 HTML5 视频。"
 
 #: inc/theme_plus.php:422
 msgid "Signed in as"
 msgstr "当前已登录"
 
-#: inc/theme_plus.php:428
+#: inc/theme_plus.php:428 inc/theme_plus.php:474
 msgid "New post"
 msgstr "撰写文章"
 
-#: inc/theme_plus.php:430
+#: inc/theme_plus.php:430 inc/theme_plus.php:476
 msgid "Profile"
 msgstr "个人资料"
 
-#: inc/theme_plus.php:431
+#: inc/theme_plus.php:431 inc/theme_plus.php:477
 msgid "Sign out"
 msgstr "退出登录"
 
-#: inc/theme_plus.php:449
+#: inc/theme_plus.php:449 inc/theme_plus.php:488
 msgid "Log in"
 msgstr "登录"
+
+#: inc/theme_plus.php:490
+msgid "Register"
+msgstr "注册"
 
 #: index.php:26
 msgid "Notice"
 msgstr "公告"
 
-#: layouts/imgbox.php:7
+#: layouts/imgbox.php:8
 msgid "Previous"
 msgstr "上一篇"
 
-#: layouts/imgbox.php:39
+#: layouts/imgbox.php:40
 msgid "Next"
 msgstr "下一篇"
 
-#: layouts/post-nextprev.php:12
+#: layouts/post-nextprev.php:17
 msgid "Previous Post"
 msgstr "上一篇文章"
 
-#: layouts/post-nextprev.php:15
+#: layouts/post-nextprev.php:26
 msgid "Next Post"
 msgstr "下一篇文章"
 
-#: page-word.php:49
+#: page-word.php:51
 msgid "You have not posted a comment yet"
 msgstr "您尚未发表说说"
 
-#: page-word.php:52
+#: page-word.php:54
 msgid "Go and post your first comment now"
 msgstr "现在就去发表你的第一条说说吧"
 
@@ -735,11 +752,15 @@ msgstr "页面："
 msgid "AI Excerpt"
 msgstr "AI 摘要"
 
-#: tpl/content-single.php:80 tpl/single-image.php:67
+#: tpl/section-article-function.php:17 tpl/section-article-function.php:22
+msgid "This article is licensed under "
+msgstr "此文章遵守以下协议"
+
+#: tpl/section-article-function.php:65
 msgid "Last updated on "
 msgstr "最后更新于 "
 
-#: tpl/content-single.php:88 tpl/single-image.php:75
+#: tpl/section-article-function.php:74
 msgid "Nothing~"
 msgstr "啥也没有呀"
 
@@ -748,7 +769,7 @@ msgstr "啥也没有呀"
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr "请在后台设置填写 Bilibili UID 后继续。"
 
-#: user/page-bangumi.php:43
+#: user/page-bangumi.php:44
 msgid "Please fill in the My Anime List Username in Sakura Options."
 msgstr "请在后台设置填写 My Anime List Username 后继续。"
 
@@ -790,7 +811,7 @@ msgstr "该电子邮件地址已经被注册。"
 
 #: user/page-register.php:34
 msgid "Password length is at least 6 digits."
-msgstr "密码长度至少6位。"
+msgstr "密码长度至少 6 位。"
 
 #: user/page-register.php:36
 msgid "Inconsistent password entered twice."
@@ -838,7 +859,7 @@ msgstr "桜いろ"
 
 #. Theme URI of the plugin/theme
 msgid "https://github.com/mirai-mamori/Sakurairo"
-msgstr "https://github.com/mirai-mamori/Sakurairo"
+msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
@@ -867,3 +888,6 @@ msgstr "友情链接模版"
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr "说说模版"
+
+#~ msgid " "
+#~ msgstr " "
