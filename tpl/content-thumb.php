@@ -41,14 +41,14 @@ function render_article_meta()
 				require_once get_stylesheet_directory() . '/tpl/meta-words-count.php';
 				$str = get_meta_words_count();
 				if($str){
-					?><span><?=$str?></span><?php
+					?><span><i class="fa-regular fa-pen-to-square"></i> <?=$str?></span><?php
 				}
 				break;
 			case "reading_time":
 				require_once get_stylesheet_directory() . '/tpl/meta-ert.php';
 				$str = get_meta_estimate_reading_time();
 				if ($str) {
-					?><span title="<?=__("Estimate Reading Time","sakurairo")?>"><i class="fa-regular fa-clock"></i><?=$str?></span><?php
+					?><span title="<?=__("Estimate Reading Time","sakurairo")?>"><i class="fa-solid fa-hourglass"></i> <?=$str?></span><?php
 				}
 			default:
 		}

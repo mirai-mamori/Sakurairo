@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
 "POT-Creation-Date: 2024-09-25 16:35+0900\n"
-"PO-Revision-Date: 2024-09-25 16:37+0900\n"
+"PO-Revision-Date: 2024-09-25 20:04+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -773,7 +773,7 @@ msgstr[0] "%s 小时"
 #, php-format
 msgid "%s Minute"
 msgid_plural "%s Minutes"
-msgstr[0] "%s 分"
+msgstr[0] "%s 分钟"
 
 #: tpl/meta-words-count.php:9
 #, php-format
