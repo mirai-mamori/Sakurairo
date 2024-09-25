@@ -28,11 +28,11 @@ function render_article_meta()
 				break;
 			case "category":
 				require_once get_stylesheet_directory() . '/tpl/meta-category.php';
-				render_meta_category();
+				echo get_meta_category_html();
 				break;
 			case "comment_count":
 				require_once get_stylesheet_directory() . '/tpl/meta-comments.php';
-				render_meta_comments();
+				 render_meta_comments();
 				break;
 			case "post_views":
 				render_meta_views();

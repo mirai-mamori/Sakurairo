@@ -16,7 +16,9 @@ $AVAIL_METADATA_POST_HEADER = array_merge(
 array(
   "publish_time_relative" => __("Publish Time (Relatively)","sakurairo_csf"), // WP_Post::post_date
   "last_edit_time_relative" => __("Last Edit Time (Relatively)","sakurairo_csf"), // WP_Post::post_modified
+  "EDIT" => __("Action Edit (only displays while user has sufficient permissions)","sakurairo_csf"),
 ));
+
 $prefix = 'iro_options';
 
   if ( ! function_exists( 'iro_validate_optional_url' ) ) {
@@ -2852,7 +2854,7 @@ $prefix = 'iro_options';
         "multiple" => true,
         "sortable" => true,
         "options"=> $AVAIL_METADATA_POST_HEADER,
-        "default" => array("publish_time_relative","post_views")
+        "default" => array("author","publish_time_relative","post_views","EDIT")
       )
     )
   ) );

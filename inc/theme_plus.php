@@ -10,14 +10,6 @@ remove_filter('term_description', 'wp_kses_data');
 // 去除顶部工具栏
 show_admin_bar(false);
 
-function get_edit_html():string{
-  global $user_ID;
-  if ($user_ID && current_user_can('administrator')) {
-    return '<span class="bull">·</span><a href="' . get_edit_post_link() . '">'.__("EDIT","sakurairo").'</a>';
-}
-  return '';
-}
-
 /*
  * 视频
  */
@@ -284,7 +276,6 @@ function login_ok(){
 <?php 
 }
 
-
 /*
  * 文章，页面头部背景图
  */
@@ -292,14 +283,15 @@ function the_headPattern(){
   $t = ''; // 标题
   $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
   if(is_single()){
+    require_once get_stylesheet_directory() . '/tpl/entry-census.php';
     $full_image_url = !empty($full_image_url) ? $full_image_url[0] : null;
     if (have_posts()) : while (have_posts()) : the_post();
     $center = 'single-center';
     $header = 'single-header';
     //$ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
-        $edit_this_post_link = get_edit_html();
     $t .= the_title( '<h1 class="entry-title">', '</h1>', false);
-    $t .= '<span class="toppic-line"></span><p class="entry-census"><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'.get_avatar(get_the_author_meta('ID'),64) .'</a></span><span><a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'),get_the_author_meta( 'user_nicename' ))) .'">'. get_the_author() .'</a></span><span class="bull">·</span>'. poi_time_since(get_post_time('U', false),false,true) .'<span class="bull">·</span>'. get_post_views(get_the_ID()) .' '._n("View","Views",get_post_views(get_the_ID()),"sakurairo")/*次阅读*/.$edit_this_post_link.'</p>';
+    $t .= '<span class="toppic-line"></span>';
+    $t .= get_entry_census_html(true);
     endwhile; endif;
   }elseif(is_page()){
     $full_image_url = !empty($full_image_url) ? $full_image_url[0] : null;
@@ -344,23 +336,16 @@ function the_video_headPattern(bool $isHls = false)
     }
     $thubm_image_url = !empty($thubm_image_urls) ? $thubm_image_urls[0] : null;
     if (is_single()) {
+      require_once get_stylesheet_directory() . '/tpl/entry-census.php';
         while (have_posts()) {
             the_post();
             $center = 'single-center';
             $header = 'single-header';
             //$ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
-            $edit_this_post_link = get_edit_html();
             $btn_playControl = '<button id="cv-pc" class="coverVideo-btn" onclick="coverVideo()"><i class="fa-solid fa-pause"></i></button>';
-/*             $btn_volumeControl = '<button id="cv-vc" class="coverVideo-btn" onclick="coverVideoMute()"><i class="fa-solid fa-volume-xmark"></i></button>';
- */            $t .= the_title('<h1 class="entry-title">', $btn_playControl./* $btn_volumeControl. */'</h1>', false);
-            $t .= '<p class="entry-census"><span><a href="' 
-            . esc_url(get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename'))) . '">' 
-            . get_avatar(get_the_author_meta('ID'), 64) . '</a></span><span><a href="' 
-            . esc_url(get_author_posts_url(get_the_author_meta('ID'), get_the_author_meta('user_nicename'))) . '">' 
-            . get_the_author() . '</a></span><span class="bull">·</span>' 
-            . poi_time_since(get_post_time('U', false), false, true) . '<span class="bull">·</span>' /*时间前*/
-            . get_post_views(get_the_ID()) . ' ' 
-            . _n("View", "Views", get_post_views(get_the_ID()), "sakurairo")/*次阅读*/ . $edit_this_post_link . '</p>';
+//            $btn_volumeControl = '<button id="cv-vc" class="coverVideo-btn" onclick="coverVideoMute()"><i class="fa-solid fa-volume-xmark"></i></button>';
+            $t .= the_title('<h1 class="entry-title">', $btn_playControl./* $btn_volumeControl. */'</h1>', false);
+            $t .= get_entry_census_html(true);
         }
     } elseif (is_page()) {
         $t .= the_title('<h1 class="entry-title">', '</h1>', false);

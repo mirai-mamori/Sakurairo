@@ -2640,3 +2640,12 @@ function exclude_pages_and_categories_from_search($query) {
     return $query;
 }
 add_filter('pre_get_posts', 'exclude_pages_and_categories_from_search');
+
+function iterator_to_string(Iterator $iterator): string
+{
+    $content = '';
+    foreach ($iterator as $item) {
+        $content .= $item;
+    }
+    return $content;
+}

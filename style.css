@@ -674,6 +674,7 @@ input[type=week] {
   border-radius: 100%;
   float: left;
   margin-right: 12px;
+  max-height: unset;
 }
 
 #moblieGoTop {
@@ -1269,6 +1270,14 @@ input[type=week] {
   display: inline-flex;
   flex-wrap: wrap;
   gap:2px 8px;
+}
+.entry-census.has-splitter{
+  gap:2px 5px;
+}
+.entry-census.has-splitter span:not(:last-child)::after{
+content: "·";
+margin-left:5px;
+margin-inline-start: 5px;
 }
 
 .entry-header hr {
@@ -5572,10 +5581,6 @@ a:focus {
   display: block;
   font-weight: var(--global-font-weight);
 
-}
-
-.single-center .entry-census .bull {
-  margin: 0 5px;
 }
 
 .single-center .entry-census a,
