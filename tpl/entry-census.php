@@ -1,9 +1,9 @@
 <?php
 function get_edit_html(): string
 {
-    global $user_ID;
-    if ($user_ID && current_user_can('administrator')) {
-        return '<a href="' . get_edit_post_link() . '">' . __("EDIT", "sakurairo") . '</a>';
+    $url = get_edit_post_link();
+    if ($url) {
+        return '<a href="' . $url . '">' . __("EDIT", "sakurairo") . '</a>';
     }
     return '';
 }
@@ -38,21 +38,21 @@ function get_entry_census_meta_html($has_splitter)
                 break;
             case "post_views":
                 $content = get_post_views(get_the_ID()) . ' ' . _n('View', 'Views', get_post_views(get_the_ID()), 'sakurairo');/*次阅读*/
-                if($has_splitter){
+                if ($has_splitter) {
                     $content = __wrap_with_span($content);
                 }
                 break;
             case "post_words_count":
                 require_once get_stylesheet_directory() . '/tpl/meta-words-count.php';
                 $content = get_meta_words_count();
-                if($has_splitter){
+                if ($has_splitter) {
                     $content = __wrap_with_span($content);
                 }
                 break;
             case "reading_time":
                 require_once get_stylesheet_directory() . '/tpl/meta-ert.php';
                 $content = __("Estimate Reading Time", "sakurairo") . ": " . get_meta_estimate_reading_time();
-                if($has_splitter){
+                if ($has_splitter) {
                     $content = __wrap_with_span($content);
                 }
                 break;
