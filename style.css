@@ -674,6 +674,7 @@ input[type=week] {
   border-radius: 100%;
   float: left;
   margin-right: 12px;
+  max-height: unset;
 }
 
 #moblieGoTop {
@@ -1089,7 +1090,9 @@ input[type=week] {
   text-overflow: ellipsis;
   white-space: nowrap;
   font-weight: var(--global-font-weight);
-
+  display:inline-flex;
+  gap:4px 8px;
+  flex-wrap: wrap;
 }
 
 .post-meta a {
@@ -1099,7 +1102,10 @@ input[type=week] {
   text-overflow: ellipsis;
   white-space: nowrap;
   font-weight: var(--global-font-weight);
+}
 
+.post-meta .meta-author,.entry-census .meta-author{
+  margin:0;
 }
 
 .post-thumb a {
@@ -1261,7 +1267,17 @@ input[type=week] {
   margin: 0;
   color: #888;
   font-weight: var(--global-font-weight);
-
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap:2px 8px;
+}
+.entry-census.has-splitter{
+  gap:2px 5px;
+}
+.entry-census.has-splitter span:not(:last-child)::after{
+content: "·";
+margin-left:5px;
+margin-inline-start: 5px;
 }
 
 .entry-header hr {
@@ -5566,10 +5582,6 @@ a:focus {
 
 }
 
-.single-center .entry-census .bull {
-  margin: 0 5px;
-}
-
 .single-center .entry-census a,
 .download:hover,
 .bangumi-item:hover {
@@ -5743,7 +5755,7 @@ object {
 }
 
 .meta-author {
-  margin: 0 10px 0 0;
+  margin-right:10px;
 }
 
 .meta-author img {
@@ -5752,10 +5764,6 @@ object {
     */
   max-height: 18px;
   margin: 0 5px -4px;
-}
-
-.comments-number {
-  margin: 0 10px;
 }
 
 .post-thumb {
@@ -7762,10 +7770,6 @@ body.theme-dark .cbp_tmtimeline::before {
 
 .shuoshuo_meta i {
   margin-right: 5px;
-}
-
-.comments-number {
-  margin-left: 8px;
 }
 
 .zhuan {

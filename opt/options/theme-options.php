@@ -1,7 +1,25 @@
 <?php
 if( class_exists( 'Sakurairo_CSF' ) ) {
+  $AVAIL_METADATA_ARTICLE_AREA = array(
+    "author" => __("Author","sakurairo_csf"),
+    "category" => __("Category","sakurairo_csf"),
+    "comment_count" => __("Number of Comments","sakurairo_csf"),
+    "post_views" => __("Number of Views","sakurairo_csf"),
+    "post_words_count" => __("Number of Words","sakurairo_csf"),
+    "reading_time" => __("Estimate Reading Time","sakurairo_csf"),
+  );
+/**
+ * 可显示的文章元数据及其对应的友好文本。
+ */
+$AVAIL_METADATA_POST_HEADER = array_merge(
+  $AVAIL_METADATA_ARTICLE_AREA,
+array(
+  "publish_time_relative" => __("Publish Time (Relatively)","sakurairo_csf"), // WP_Post::post_date
+  "last_edit_time_relative" => __("Last Edit Time (Relatively)","sakurairo_csf"), // WP_Post::post_modified
+  "EDIT" => __("Action Edit (only displays while user has sufficient permissions)","sakurairo_csf"),
+));
 
-  $prefix = 'iro_options';
+$prefix = 'iro_options';
 
   if ( ! function_exists( 'iro_validate_optional_url' ) ) {
     function iro_validate_optional_url( $value ) {
@@ -2552,13 +2570,15 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
       ),
       
       array(
-        'id' => 'is_author_meta_show',
-        'type' => 'switcher',
-        'title' => __('Article Area Author Info','sakurairo_csf'),
-        'label' => __('When turned on, author information will be added to the article metadata section.' ,'sakurairo_csf'),
-        'default' => false
-      ),
-
+        'id' => 'article_meta_displays',
+        "type" => "select",
+        "title" => __("Article Area Meta Displays","sakurairo_csf"),
+        "chosen" => true,
+        "multiple" => true,
+        "sortable" => true,
+        "options"=> $AVAIL_METADATA_ARTICLE_AREA,
+        "default" => array("post_views","comment_count","category"),
+      )
     )
   ) );
 
@@ -2866,6 +2886,16 @@ if( class_exists( 'Sakurairo_CSF' ) ) {
         'default' => true
       ),
 
+      array(
+        'id' => 'article_meta_show_in_head',
+        "type" => "select",
+        "title" => __("Display Article Meta before the Contents","sakurairo_csf"),
+        "chosen" => true,
+        "multiple" => true,
+        "sortable" => true,
+        "options"=> $AVAIL_METADATA_POST_HEADER,
+        "default" => array("author","publish_time_relative","post_views","EDIT")
+      )
     )
   ) );
 

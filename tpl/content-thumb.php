@@ -11,6 +11,50 @@
 //}
 //add_filter('the_excerpt', 'custom_short_excerpt');
 $i = 0;
+
+function render_meta_views(){
+	?><span><i class="fa-regular fa-eye"></i><?= get_post_views(get_the_ID()) . ' ' . _n('Hit', 'Hits', get_post_views(get_the_ID()), 'sakurairo')/*热度*/ ?></span><?php
+}
+
+// @related inc/post-metadata.php
+function render_article_meta()
+{
+	$article_meta_display_options = iro_opt("article_meta_displays", array("post_views", "comment_count", "category"));
+	foreach ($article_meta_display_options as $key) {
+		switch ($key) {
+			case "author":
+				require_once get_stylesheet_directory() . '/tpl/meta-author.php';
+				render_author_meta();
+				break;
+			case "category":
+				require_once get_stylesheet_directory() . '/tpl/meta-category.php';
+				echo get_meta_category_html();
+				break;
+			case "comment_count":
+				require_once get_stylesheet_directory() . '/tpl/meta-comments.php';
+				 render_meta_comments();
+				break;
+			case "post_views":
+				render_meta_views();
+				break;
+			case "post_words_count":
+				require_once get_stylesheet_directory() . '/tpl/meta-words-count.php';
+				$str = get_meta_words_count();
+				if($str){
+					?><span><?=$str?></span><?php
+				}
+				break;
+			case "reading_time":
+				require_once get_stylesheet_directory() . '/tpl/meta-ert.php';
+				$str = get_meta_estimate_reading_time();
+				if ($str) {
+					?><span title="<?=__("Estimate Reading Time","sakurairo")?>"><i class="fa-regular fa-clock"></i><?=$str?></span><?php
+				}
+			default:
+		}
+	}
+}
+
 while (have_posts()) : the_post();
 	$i++;
 	if ($i == 1) {
@@ -56,7 +100,6 @@ while (have_posts()) : the_post();
 			break;
 	}
 
-	$the_cat = get_the_category();
 	// 摘要字数限制
 	$ai_excerpt = get_post_meta($post->ID, POST_METADATA_KEY, true); 
 	$excerpt = has_excerpt(); 
@@ -71,7 +114,7 @@ while (have_posts()) : the_post();
 		<div class="post-content-wrap">
 			<div class="post-content">
 				<div class="post-date">
-					<i class="fa-regular fa-clock"></i><?php echo poi_time_since(strtotime($post->post_date)); ?>
+					<i class="fa-regular fa-clock"></i><?= poi_time_since(strtotime($post->post_date)) ?>
 					<?php if (is_sticky()) : ?>
 						&nbsp;<i class="fa-regular fa-gem"></i>
 					<?php endif ?>
@@ -80,36 +123,7 @@ while (have_posts()) : the_post();
 					<h3><?php the_title(); ?></h3>
 				</a>
 				<div class="post-meta">
-					<?php
-					if (iro_opt("is_author_meta_show")) {
-						if (!function_exists('get_author_meta_spans')) {
-							require get_stylesheet_directory() . '/tpl/meta-author.php';
-						}
-						get_author_meta_spans();
-					}
-					?>
-					<span><i class="fa-regular fa-eye"></i><?php echo get_post_views(get_the_ID()) . ' ' . _n('Hit', 'Hits', get_post_views(get_the_ID()), 'sakurairo')/*热度*/ ?></span>
-					<span class="comments-number">
-						<i class="fa-regular fa-comment"></i>
-						<?php comments_popup_link(__("NOTHING", "sakurairo"), __("1 Comment", "sakurairo")/*条评论*/, '% ' . __("Comments", "sakurairo")/*条评论*/, '', __("Comment Closed", "sakurairo")
-							/**评论关闭 */
-						); ?>
-					</span>
-					<span><i class="fa-regular fa-folder"></i>
-					<a href="<?php
-						if (isset($the_cat[0])) {
-							echo $cat_id = esc_url(get_category_link($the_cat[0]->cat_ID  ?? ''));
-						}
-					?>">
-					<?php
-						if (isset($the_cat[0])) {
-							echo $the_cat[0]->cat_name ?? '未分类';
-						} else {
-							echo '未分类';
-						}
-					?>
-					</a>
-					</span>
+					<?php render_article_meta()?>			
 				</div>
 				<div class="float-content">
 				<?php if(!empty($ai_excerpt) && empty($excerpt)) { ?>
