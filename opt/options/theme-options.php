@@ -2478,15 +2478,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'post_list_matching_color',
-        'type' => 'color',
-        'title' => __('Article Area Matching Color','sakurairo_csf'),
-        'dependency' => array( 'post_list_style', '==', 'imageflow', '', 'true' ),
-        'desc' => __('Customize the colors, This option only supports filling in hexadecimal colors, suggest the same as the matching color','sakurairo_csf'),
-        'default' => '#FCCD00'
-      ),    
-
-      array(
         'id' => 'post_border_shadow_color',
         'type' => 'color',
         'title' => __('Article Area Border Shadow Color','sakurairo_csf'),
@@ -2506,20 +2497,6 @@ $prefix = 'iro_options';
           'square' => 'https://s.nmxc.ltd/sakurairo_vision/@2.6/options/post_list_style_akina2.webp',
         ),
         'default'    => 'round'
-      ),
-
-      array(
-        'id' => 'post_list_image_align',
-        'type' => 'image_select',
-        'title' => __('Article Area Featured Image Alignment','sakurairo_csf'),
-        'dependency' => array( 'post_list_style', '==', 'imageflow', '', 'true' ),
-        'desc' => __('You can choose different directions to display the featured images','sakurairo_csf'),
-        'options' => array(
-          'alternate' => 'https://s.nmxc.ltd/sakurairo_vision/@2.6/options/post_list_style_sakura1.webp',
-          'left' => 'https://s.nmxc.ltd/sakurairo_vision/@2.6/options/post_list_style_sakura2.webp',
-          'right' => 'https://s.nmxc.ltd/sakurairo_vision/@2.6/options/post_list_style_sakura3.webp',
-        ),
-        'default' => 'alternate'
       ),
 
       array(
@@ -2544,6 +2521,58 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'article_meta_displays',
+        "type" => "select",
+        "title" => __("Article Area Meta Displays","sakurairo_csf"),
+        "chosen" => true,
+        "multiple" => true,
+        "sortable" => true,
+        "options"=> $AVAIL_METADATA_ARTICLE_AREA,
+        "default" => array("post_views","comment_count","category"),
+      ),
+
+      array(
+        'id' => 'article_meta_background_compatible',
+        'type' => 'switcher',
+        'title' => __('Article Area Card Information Meta Background Compatible','sakurairo_csf'),
+        'label' => __('When enabled, information Meta will be standardized to white on black for compatibility with the background, increasing readability.','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'post_list_card_radius',
+        'type' => 'slider',
+        'title' => __('Article Area Card Rounded Corners','sakurairo_csf'),
+        'desc' => __('Slide to adjust, the recommended value range is 5-15','sakurairo_csf'),
+        'dependency' => array( 'post_list_style', '==', 'imageflow', '', 'true' ),
+        'unit' => 'px',
+        'max' => '30',
+        'default' => '10'
+      ),
+
+      array(
+        'id' => 'post_meta_radius',
+        'type' => 'slider',
+        'title' => __('Article Area Card Information Meta Rounded Corners','sakurairo_csf'),
+        'desc' => __('Slide to adjust, the recommended value range is 3-10','sakurairo_csf'),
+        'dependency' => array( 'post_list_style', '==', 'imageflow', '', 'true' ),
+        'unit' => 'px',
+        'max' => '30',
+        'default' => '5'
+      ),
+
+      array(
+        'id' => 'post_list_title_radius',
+        'type' => 'slider',
+        'title' => __('Article Area Card Title Meta Rounded Corners','sakurairo_csf'),
+        'desc' => __('Slide to adjust, the recommended value range is 0-20','sakurairo_csf'),
+        'dependency' => array( 'post_list_style', '==', 'imageflow', '', 'true' ),
+        'unit' => 'px',
+        'max' => '30',
+        'default' => '0'
+      ),
+
+      array(
         'id' => 'post_title_font_size',
         'type' => 'slider',
         'title' => __('Article Area Title Font Size','sakurairo_csf'),
@@ -2556,29 +2585,6 @@ $prefix = 'iro_options';
         'default' => '18'
       ),
 
-      array(
-        'id' => 'post_date_font_size',
-        'type' => 'slider',
-        'title' => __('Article Area Time Display Area Font Size','sakurairo_csf'),
-        'dependency' => array( 'post_list_style', '==', 'imageflow', '', 'true' ),
-        'desc' => __('Slide to adjust, the recommended values range is 10-14','sakurairo_csf'),
-        'unit' => 'px',
-        'step' => '1',
-        'min' => '6',
-        'max' => '20',
-        'default' => '12'
-      ),
-      
-      array(
-        'id' => 'article_meta_displays',
-        "type" => "select",
-        "title" => __("Article Area Meta Displays","sakurairo_csf"),
-        "chosen" => true,
-        "multiple" => true,
-        "sortable" => true,
-        "options"=> $AVAIL_METADATA_ARTICLE_AREA,
-        "default" => array("post_views","comment_count","category"),
-      )
     )
   ) );
 

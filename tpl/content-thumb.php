@@ -32,7 +32,7 @@ function render_article_meta()
 				break;
 			case "comment_count":
 				require_once get_stylesheet_directory() . '/tpl/meta-comments.php';
-				 render_meta_comments();
+				render_meta_comments();
 				break;
 			case "post_views":
 				render_meta_views();
@@ -41,14 +41,14 @@ function render_article_meta()
 				require_once get_stylesheet_directory() . '/tpl/meta-words-count.php';
 				$str = get_meta_words_count();
 				if($str){
-					?><span><i class="fa-regular fa-pen-to-square"></i> <?=$str?></span><?php
+					?><span><i class="fa-regular fa-pen-to-square"></i><?=$str?></span><?php
 				}
 				break;
 			case "reading_time":
 				require_once get_stylesheet_directory() . '/tpl/meta-ert.php';
 				$str = get_meta_estimate_reading_time();
 				if ($str) {
-					?><span title="<?=__("Estimate Reading Time","sakurairo")?>"><i class="fa-solid fa-hourglass"></i> <?=$str?></span><?php
+					?><span title="<?=__("Estimate Reading Time","sakurairo")?>"><i class="fa-solid fa-hourglass"></i><?=$str?></span><?php
 				}
 			default:
 		}
@@ -111,27 +111,25 @@ while (have_posts()) : the_post();
 				<?php echo $cover_html; ?>
 			</a>
 		</div><!-- thumbnail-->
-		<div class="post-content-wrap">
-			<div class="post-content">
-				<div class="post-date">
+		<div class="post-date">
 					<i class="fa-regular fa-clock"></i><?= poi_time_since(strtotime($post->post_date)) ?>
 					<?php if (is_sticky()) : ?>
 						&nbsp;<i class="fa-regular fa-gem"></i>
 					<?php endif ?>
 				</div>
-				<a href="<?php the_permalink(); ?>" class="post-title">
-					<h3><?php the_title(); ?></h3>
-				</a>
-				<div class="post-meta">
+			<div class="post-meta">
 					<?php render_article_meta()?>			
 				</div>
-				<div class="float-content">
+		<div class="post-title">
+				<a href="<?php the_permalink(); ?>">
+					<h3><?php the_title(); ?></h3>
+				</a>
+		</div>
+		<div class="post-excerpt">
 				<?php if(!empty($ai_excerpt) && empty($excerpt)) { ?>
-				<div class="ai-excerpt-tip"><i class="fa-regular fa-lightbulb"></i><?php _e("AI Excerpt", "sakurairo") ?></div>
+				<div class="ai-excerpt-tip"><i class="fa-solid fa-atom"></i><?php _e("AI Excerpt", "sakurairo") ?></div>
 				<?php } ?>
 				<?php the_excerpt() ?>
-				</div>
-			</div>
 		</div>
 	</article>
 <?php
