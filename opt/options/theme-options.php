@@ -3636,25 +3636,19 @@ $prefix = 'iro_options';
           array( 'composer_load', '==', 'true'),
           array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
     ),
-        'desc' => __('Fill in the Init Prompt, Please make changes if you know how to configure it correctly. Init Prompt will be passed to ChatGPT as "system" role','sakurairo_csf'),
-        'default' => '
-"You are a excerpt generator. " .
-"You can summarize articles given their title and full text. " .
-"You should use the same language as the article for your excerpt. " .
-"You do not need to write in third person."'
+        'desc' => __('Init Prompt instructs AI how to generate summaries for your articles. Init Prompt will be passed to ChatGPT as "system" role','sakurairo_csf'),
+        'default' => '请以作者的身份，以激发好奇吸引阅读为目的，结合文章核心观点来提取的文章中最吸引人的内容，为以下文章编写一个用词精炼简短，70字以内的引言。'
       ),
 
       array(
-        'id' => 'chatgpt_ask_prompt',
+        'id' => 'chatgpt_model',
         'type' => 'text',
-        'title' => __('ChatGPT Article Summarize Ask Prompt','sakurairo_csf'),
+        'title' => __('ChatGPT Model','sakurairo_csf'),
+        'descr' => __('Only models support Chat Completion API can be used. The default is "gpt-3.5-turbo". View https://platform.openai.com/docs/models/overview for more info.','sakurairo_csf'),
         'dependency' => array(
           array( 'composer_load', '==', 'true'),
           array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
-    ),
-        'desc' => __('Fill in the Ask Prompt, Use preset value when option is empty, Please make changes if you know how to configure it correctly','sakurairo_csf'),
-      ),
-
+      ))
       )
     ) );
 
