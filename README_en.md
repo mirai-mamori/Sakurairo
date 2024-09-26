@@ -61,7 +61,7 @@ Please fill in with the issue template. Thanks for your cooperation.
 
 - The theme uses YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) to provide updates.
 
-- The theme uses HaoZi-Team [ChatGPT PHP](https://github.com/HaoZi-Team/ChatGPT-PHP) to provide ChatGPT-related Capabilities.
+- The theme uses orhanerday [open-ai](https://github.com/orhanerday/open-ai) to provide ChatGPT-related Capabilities.
 
 ## Hope you can enjoy it!
 

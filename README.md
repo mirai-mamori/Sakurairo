@@ -73,7 +73,7 @@
 
 - 本主题使用 YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) 以提供主题更新功能
 
-- 本主题使用 HaoZi-Team [ChatGPT PHP](https://github.com/HaoZi-Team/ChatGPT-PHP) 以提供 ChatGPT 相关能力
+- 本主题使用 orhanerday [open-ai](https://github.com/orhanerday/open-ai) 以提供 ChatGPT 相关能力
 
 ## 希望你喜欢！
 
