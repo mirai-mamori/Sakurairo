@@ -303,6 +303,7 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
       // We need this path-finder code for set URL of framework
       $dirname        = str_replace( '//', '/', wp_normalize_path( dirname( dirname( self::$file ) ) ) );
       $theme_dir      = str_replace( '//', '/', wp_normalize_path( get_parent_theme_file_path() ) );
+      $theme_dir      = str_replace( '/opt/bitnami', '/bitnami', $theme_dir );
       $plugin_dir     = str_replace( '//', '/', wp_normalize_path( WP_PLUGIN_DIR ) );
       $plugin_dir     = str_replace( '/opt/bitnami', '/bitnami', $plugin_dir );
       $located_plugin = ( preg_match( '#'. self::sanitize_dirname( $plugin_dir ) .'#', self::sanitize_dirname( $dirname ) ) ) ? true : false;
