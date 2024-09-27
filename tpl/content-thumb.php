@@ -120,7 +120,8 @@ while (have_posts()) : the_post();
 			<div class="post-meta">
 					<?php render_article_meta()?>			
 				</div>
-		<div class="post-title">
+		<?php $title_style = get_post_meta(get_the_ID(), 'title_style', true); ?>
+		<div class="post-title" style="<?php echo esc_attr($title_style); ?>">
 				<a href="<?php the_permalink(); ?>">
 					<h3><?php the_title(); ?></h3>
 				</a>
