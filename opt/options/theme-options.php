@@ -3654,7 +3654,56 @@ $prefix = 'iro_options';
         'dependency' => array(
           array( 'composer_load', '==', 'true'),
           array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
-      ))
+        )
+      ),
+
+      array(
+        'type'     => 'callback',
+        'function' =>   function (){
+          ?>
+          <div>
+           <h5><?=__("ChatGPT API self test","sakurairo_csf")?></h5>
+           <label for="chatgpt_post_id">post_id: </label>
+           <input type="text" id="chatgpt_post_id" value="" required pattern="\d+"/>
+           <button>
+           <?=__("TEST","sakurairo_csf")?>
+           </button>
+           <br>
+           <label><?=__("Results: ","sakurairo_csf")?></label>
+           <p id="chatgpt_result"></p>
+           <script>
+             /**@type {HTMLInputElement} */
+             const input = document.querySelector("#chatgpt_post_id");
+             input.nextElementSibling.addEventListener('click',async (e)=>{
+               e.stopPropagation()
+               e.preventDefault()
+               const btn = e.currentTarget
+               try{
+                 btn.disabled = true
+                 if(input.checkValidity()){
+                 chatgpt_result.innerHTML = "<?=__("Waiting for response...","sakurairo_csf")?>"
+                 const resp = await fetch(`/wp-json/sakura/v1/chatgpt?post_id=${input.value}`,{
+                   headers:{'X-WP-Nonce':"<?=wp_create_nonce( 'wp_rest' )?>"}
+                 })
+                 const data = await resp.text()
+               try{
+                 chatgpt_result.textContent = JSON.stringify(JSON.parse(data),null,2)
+               }catch{
+                 chatgpt_result.innerHTML = data.replaceAll(/\\u[\da-f]{4}/gi,(m)=>String.fromCharCode(parseInt(m.slice(2),16)))
+               }
+               }else{
+                 chatgpt_result.textContent = "<?=__("Malformed post_id: ","sakurairo_csf")?>"+input.validationMessage
+               }
+               }finally{
+                 btn.disabled = false
+               }
+             })
+           </script> 
+         </div>
+          <?php
+         },
+      ),
+      
       )
     ) );
 

@@ -92,15 +92,18 @@ add_action('rest_api_init', function () {
         'permission_callback' => '__return_true'
     )
     ); 
-    // DEV ONLY!
     // ChatGPT test route
-/*     register_rest_route('sakura/v1', '/chatgpt', array(
+    register_rest_route('sakura/v1', '/chatgpt', array(
         'methods' => 'GET',
         'callback' => 'chatgpt_summarize',
-        'permission_callback' => '__return_true'
-    )); */
+        'permission_callback' =>function ()
+        {
+         return current_user_can( 'administrator' ) ;
+        }
+    ));
 });
-/* require_once ('chatgpt/hooks.php');
+
+require_once ('chatgpt/hooks.php');
 
 function chatgpt_summarize(WP_REST_Request $request)
 {
@@ -111,7 +114,8 @@ function chatgpt_summarize(WP_REST_Request $request)
     }
     $excerpt = IROChatGPT\summon_article_excerpt($post);
     return new WP_REST_Response($excerpt, 200);
-} */
+}
+
 /**
  * Image uploader response
  */
