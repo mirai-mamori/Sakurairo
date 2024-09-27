@@ -44,6 +44,10 @@ namespace IROChatGPT {
         $chatGPT_model = iro_opt('chatgpt_model', DEFAULT_MODEL);
 
         $open_ai = new OpenAi($chatGPT_access_token);
+
+        if(str_ends_with($chatGPT_base_url, '/')){
+            $chatGPT_base_url = substr($chatGPT_base_url, 0, -1);
+        }
         $open_ai->setBaseURL($chatGPT_base_url);
 
         $chat = $open_ai->chat(
