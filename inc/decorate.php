@@ -178,11 +178,7 @@ if ( iro_opt('site_custom_style') ) {
   echo iro_opt('site_custom_style');
 } 
 // Custom style end ?>
-<?php // liststyle
-if ( iro_opt('post_list_akina_type') == 'square') { ?>
-.feature img{ border-radius: 0px !important; }
-.feature i { border-radius: 0px !important; }
-<?php } // liststyle ?>
+
 <?php 
 //$image_api = 'background-image: url("'.rest_url('sakura/v1/image/cover').'");';
 $bg_style = iro_opt('cover_full_screen') ?'': 'background-position: center center;background-attachment: inherit;';
@@ -896,6 +892,93 @@ li.link-item {
     overflow: hidden;
 }
 <?php } ?>
+
+<?php if(iro_opt('post_list_iro_type') == 'ticket'){ ?>
+@media (min-width:768px) {
+.post-thumb {
+    height: 100%;
+    width: 80%;
+}
+
+.post-excerpt {
+    top: 3%;
+    width: 18.5%;
+    left: 81%;
+    max-height: 90%;
+    letter-spacing: 1px;
+}
+
+.post-title {
+    bottom: 6%;
+}
+
+.ai-excerpt-tip{
+    margin-right: 40%;
+}
+
+.post-list-thumb:nth-child(2n) .post-thumb{
+    right: 0;
+}
+
+.post-list-thumb:nth-child(2n) .post-excerpt{
+    left: 1%;
+}
+
+.post-list-thumb:nth-child(2n) .post-title{
+    left: 22%;
+}
+
+.post-list-thumb:nth-child(2n) .post-date{
+    left: 21.3%;
+}
+
+.post-list-thumb:nth-child(2n) .post-meta{
+    right: 1.3%;
+    max-width: 59.5%;
+}
+
+}
+
+@media (min-width:860px) {
+.post-meta{
+    right: 21.5%;
+    max-width: 59.5%;
+}
+
+}
+
+@media (max-width:860px) {
+.post-meta{
+    right: 10px;
+    height: fit-content;
+    width: fit-content;
+    max-height: 32%;
+    max-width: 32%;
+    top: 10px;
+    flex-direction: column;
+    transition: all 0.8s ease !important;
+    -webkit-transition: all 0.8s ease !important;
+}
+
+}
+
+@media (min-width: 768px) and (max-width: 860px) {
+.post-meta{
+    right: 21.5%;
+    height: fit-content;
+    width: fit-content;
+    max-height: 32%;
+    max-width: 32%;
+    top: 10px;
+    flex-direction: column;
+    transition: all 0.8s ease !important;
+    -webkit-transition: all 0.8s ease !important;
+}
+
+}
+
+<?php } ?>
+
 <?php if(iro_opt('nav_menu_style') == 'sakurairo'){ ?>
 .yya {
     position: fixed;

@@ -38,6 +38,5 @@
 			 </div>   
 	    </div>		
 		</footer><!-- .entry-footer -->
-		</div>	
-	<hr>
+	</div>	
 	</article><!-- #post-## -->

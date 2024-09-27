@@ -6,7 +6,7 @@ namespace IROChatGPT {
     use Orhanerday\OpenAi\OpenAi;
     use WP_Post;
 
-    define("DEFAULT_INIT_PROMPT", "请以作者的身份，以激发好奇吸引阅读为目的，结合文章核心观点来提取的文章中最吸引人的内容，为以下文章编写一个用词精炼简短，70字以内的引言。");
+    define("DEFAULT_INIT_PROMPT", "请以作者的身份，以激发好奇吸引阅读为目的，结合文章核心观点来提取的文章中最吸引人的内容，为以下文章编写一个用词精炼简短、110字以内、与文章语言一致的引言。");
     define("DEFAULT_MODEL", "gpt-3.5-turbo");
     define('POST_METADATA_KEY', "ai_summon_excerpt");
 

@@ -1599,12 +1599,12 @@ IROChatGPT\apply_chatgpt_hook();
 function excerpt_length($exp)
 {
     if (!function_exists('mb_substr')) {
-        $exp = GBsubstr($exp, 0, 80);
+        $exp = GBsubstr($exp, 0, 110);
     } else {
         /*
          * To use mb_substr() function, you should uncomment "extension=php_mbstring.dll" in php.ini
          */
-        $exp = mb_substr($exp, 0, 80);
+        $exp = mb_substr($exp, 0, 110);
     }
     return $exp;
 }

@@ -129,6 +129,9 @@ while (have_posts()) : the_post();
 				<?php if(!empty($ai_excerpt) && empty($excerpt)) { ?>
 				<div class="ai-excerpt-tip"><i class="fa-solid fa-atom"></i><?php _e("AI Excerpt", "sakurairo") ?></div>
 				<?php } ?>
+				<?php if (empty($ai_excerpt)) { ?>
+				<div class="ai-excerpt-tip"><i class="fa-solid fa-bars-staggered"></i><?php _e("Excerpt", "sakurairo") ?></div>
+				<?php } ?>
 				<?php the_excerpt() ?>
 		</div>
 	</article>

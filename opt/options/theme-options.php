@@ -2487,16 +2487,16 @@ $prefix = 'iro_options';
       ),    
 
       array(
-        'id'         => 'post_list_akina_type',
+        'id'         => 'post_list_iro_type',
         'type'       => 'image_select',
-        'title' => __('Article Area Featured Image Display Shapes','sakurairo_csf'),
-        'dependency' => array( 'post_list_style', '==', 'akinastyle', '', 'true' ),
+        'title' => __('Article Area Card Design','sakurairo_csf'),
+        'dependency' => array( 'post_list_style', '==', 'imageflow', '', 'true' ),
         'desc' => __('You can choose a circular or a rectangular display of the featured image','sakurairo_csf'),
         'options'    => array(
-          'round' => 'https://s.nmxc.ltd/sakurairo_vision/@2.6/options/post_list_style_akina.webp',
-          'square' => 'https://s.nmxc.ltd/sakurairo_vision/@2.6/options/post_list_style_akina2.webp',
+          'letter' => 'https://s.nmxc.ltd/sakurairo_vision/@2.6/options/post_list_style_akina.webp',
+          'ticket' => 'https://s.nmxc.ltd/sakurairo_vision/@2.6/options/post_list_style_akina2.webp',
         ),
-        'default'    => 'round'
+        'default'    => 'letter'
       ),
 
       array(
@@ -3643,7 +3643,7 @@ $prefix = 'iro_options';
           array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
     ),
         'desc' => __('Init Prompt instructs AI how to generate summaries for your articles. Init Prompt will be passed to ChatGPT as "system" role','sakurairo_csf'),
-        'default' => '请以作者的身份，以激发好奇吸引阅读为目的，结合文章核心观点来提取的文章中最吸引人的内容，为以下文章编写一个用词精炼简短，70字以内的引言。'
+        'default' => '请以作者的身份，以激发好奇吸引阅读为目的，结合文章核心观点来提取的文章中最吸引人的内容，为以下文章编写一个用词精炼简短、110字以内、与文章语言一致的引言。'
       ),
 
       array(
