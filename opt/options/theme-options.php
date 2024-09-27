@@ -2467,21 +2467,9 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'         => 'post_list_style',
-        'type'       => 'image_select',
-        'title' => __('Article Area Display Style','sakurairo_csf'),
-        'options'    => array(
-          'imageflow' => 'https://s.nmxc.ltd/sakurairo_vision/@2.6/options/post_list_style_sakura_left.webp',
-          'akinastyle' => 'https://s.nmxc.ltd/sakurairo_vision/@2.6/options/post_list_style_akina.webp',
-        ),
-        'default'    => 'imageflow'
-      ),
-
-      array(
         'id' => 'post_border_shadow_color',
         'type' => 'color',
         'title' => __('Article Area Border Shadow Color','sakurairo_csf'),
-        'dependency' => array( 'post_list_style', '==', 'imageflow', '', 'true' ),
         'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
         'default' => '#e8e8e8'
       ),    
@@ -2490,7 +2478,6 @@ $prefix = 'iro_options';
         'id'         => 'post_list_iro_type',
         'type'       => 'image_select',
         'title' => __('Article Area Card Design','sakurairo_csf'),
-        'dependency' => array( 'post_list_style', '==', 'imageflow', '', 'true' ),
         'desc' => __('You can choose a circular or a rectangular display of the featured image','sakurairo_csf'),
         'options'    => array(
           'letter' => 'https://s.nmxc.ltd/sakurairo_vision/@2.6/options/post_list_style_akina.webp',

@@ -1011,37 +1011,6 @@ input[type=week] {
   transition: all 0.8s ease !important;
 }
 
-.info-meta {
-  margin-top: 10px;
-  position: absolute;
-  top: 20px;
-  opacity: 0;
-  padding-top: 8px;
-  -webkit-transform: translate3d(-250px, 0, 0);
-  transform: translate3d(-250px, 0, 0);
-  visibility: hidden;
-  transition: .7s all ease;
-  -webkit-transition: .6s all ease;
-  -moz-transition: .6s all linear;
-  -o-transition: .6s all ease;
-  -ms-transition: .6s all ease;
-}
-
-.info-meta span {
-  color: #000;
-  font-size: 12px;
-  vertical-align: bottom;
-  font-weight: var(--global-font-weight);
-
-}
-
-.post-list:hover .info-meta {
-  -webkit-transform: translate3d(-230px, 0, 0);
-  transform: translate3d(-230px, 0, 0);
-  opacity: 1;
-  visibility: visible;
-}
-
 .post-list-thumb i {
   margin-right: 5px;
   color: rgba(255, 255, 255, 0.8);
@@ -1144,7 +1113,7 @@ input[type=week] {
   border: 1px solid rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: none;
-  position: fixed;
+  position: absolute;
   display: inline-flex;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   transition: all 0.8s ease !important;
@@ -1180,7 +1149,7 @@ input[type=week] {
 }
 
 .post-excerpt {
-  position: fixed;
+  position: absolute;
   bottom: 5%;
   width: 98%;
   left: 2%;
@@ -1220,35 +1189,6 @@ input[type=week] {
   background-color: rgba(255, 255, 255, .90);
   transition: all 0.8s ease !important;
   -webkit-transition: all 0.8s ease !important;
-}
-
-.postava img {
-  border-radius: 50%;
-  padding: 2px;
-  border: 1px solid #E8E8E8;
-  margin-top: 25px;
-}
-
-.s-time {
-  position: relative;
-  top: 16px;
-  font-size: 12px;
-  color: #989898;
-  letter-spacing: 1px;
-  text-align: right;
-  margin-bottom: 10px;
-  margin-top: -15px;
-  font-weight: var(--global-font-weight);
-
-}
-
-.s-content {
-  min-height: 60px;
-  margin: 0 14% 0 2%;
-  padding: 15px 30px;
-  line-height: 30px;
-  border: 1px solid #E0E0E0;
-  background: #FBFBFB;
 }
 
 .navigator a {
@@ -5658,8 +5598,7 @@ a:focus {
   z-index: 9999;
 }
 
-.site-title,
-.post-status p {
+.site-title {
   margin: 0;
 }
 
@@ -5692,8 +5631,7 @@ a:focus {
   color: var(--comment_area_matching, #505050);
 }
 
-.site-description,
-.postava {
+.site-description {
   float: right;
 }
 
@@ -5787,20 +5725,6 @@ object {
   transition: all 0.8s ease !important;
 }
 
-.info-meta i {
-  margin-top: 3px;
-  margin-right: 10px;
-  float: left;
-}
-
-.comnum {
-  float: left;
-}
-
-.info-meta a {
-  color: #000;
-}
-
 .meta-author {
   margin-right:10px;
 }
@@ -5832,14 +5756,6 @@ object {
   transform: scale(1.1);
 }
 
-.s-time i {
-  font-size: 13px;
-  margin-right: 5px;
-  font-weight: var(--global-font-weight);
-
-}
-
-.post-status,
 .links {
   margin-bottom: 80px;
 }
@@ -8469,28 +8385,7 @@ body.dark .post-list-thumb:hover {
     overflow: hidden;
   }
 
-  .s-content {
-    padding: 10px 15px;
-    margin-right: 65px;
-  }
-
-  .s-content p {
-    margin-left: 0;
-    margin-top: 0;
-    height: 30px;
-    overflow: hidden;
-  }
-
-  .postava img {
-    width: 52px;
-    height: 52px;
-  }
-
   .overlay {
-    display: none;
-  }
-
-  .info-meta {
     display: none;
   }
 
@@ -8576,9 +8471,6 @@ body.dark .post-list-thumb:hover {
 }
 
 @media (max-width:1080px) {
-  .info-meta {
-    display: none;
-  }
 
   .site-footer {
     padding: 30px;
@@ -10139,8 +10031,6 @@ body.dark,
 body.dark input,
 body.dark select,
 body.dark textarea,
-body.dark .info-meta a,
-body.dark .info-meta span,
 body.dark .skin-menu,
 body.dark .comment .info,
 body.dark .comment-respond .logged-in-as,
@@ -10234,6 +10124,20 @@ body.dark .author-profile p {
   color: #CCCCCC;
 }
 
+body.dark .author_info {
+  box-shadow: 0 1px 20px 2px rgba(26, 26, 26, 0.8);
+  background: rgba(26, 26, 26, 0.6);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+  border: 1.5px solid #7d7d7d30;
+}
+
+body.dark .author_info .author-center{
+  color: #CCCCCC;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
 body.dark h1.page-title {
   border: 1px solid #3B3B3B;
   color: #CCCCCC;
@@ -10276,10 +10180,6 @@ body.dark .menu-list li {
   -webkit-transition: all .8s;
   transition: all .8s;
   border: 1px solid #7d7d7d30;
-}
-
-body.dark .s-content {
-  background-color: #808080;
 }
 
 body.dark .font-family-controls button.selected {

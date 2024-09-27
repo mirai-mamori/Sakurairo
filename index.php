@@ -59,13 +59,7 @@ if (iro_opt('exhibition_area') == '1') {
 			<?php
 			endif;
 			/* Start the Loop */
-			if (iro_opt('post_list_style') == 'akinastyle') {
-				while (have_posts()) : the_post();
-					get_template_part('tpl/content', get_post_format());
-				endwhile;
-			} else {
 				get_template_part('tpl/content', 'thumb');
-			}
 			?>
 		<?php else : get_template_part('tpl/content', 'none');
 		endif; ?>

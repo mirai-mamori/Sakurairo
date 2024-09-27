@@ -36,13 +36,7 @@ get_header(); ?>
 					get_template_part('tpl/content', 'category');
 				endwhile;
 			} else {
-				if (iro_opt('post_list_style') == 'akinastyle') {
-					while (have_posts()) : the_post();
-						get_template_part('tpl/content', get_post_format());
-					endwhile;
-				} else {
 					get_template_part('tpl/content', 'thumb');
-				}
 			}
 			?>
 			<div class="clearer"></div>

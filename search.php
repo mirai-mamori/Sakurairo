@@ -22,14 +22,7 @@ get_header(); ?>
 			<?php } ?>
 			<?php
 			/* Start the Loop */
-			if (iro_opt('post_list_style') == 'akinastyle') {
-				while (have_posts()) : the_post();
-					get_template_part('tpl/content', get_post_format());
-				endwhile;
-			} else {
-				get_template_part('tpl/content', 'thumb');
-			}
-
+			get_template_part('tpl/content', 'thumb');
 			the_posts_navigation();
 
 		else : ?>
