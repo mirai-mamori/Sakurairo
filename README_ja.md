@@ -1,6 +1,6 @@
 [简体中文](README.md) | [繁體中文](README_tw.md) | [English](README_en.md) | **日本語**
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/banner-ver2.6.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/banner-ver2.6.png)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -12,7 +12,7 @@
 
 ## バージョン紹介：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/jp-ver2.6.png)](https://fuukei.org/)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/jp-ver2.6.png)](https://fuukei.org/)
 
 ## 活用方法：
 
@@ -64,7 +64,7 @@
 
 ## 楽しんでいただけたら幸いです。
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/jp-ver2.6info.png)](https://fuukei.org/)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/jp-ver2.6info.png)](https://fuukei.org/)
 
 -  Starトレンド  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 

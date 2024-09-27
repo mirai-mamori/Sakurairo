@@ -906,6 +906,8 @@ li.link-item {
     left: 81%;
     max-height: 90%;
     letter-spacing: 1px;
+    flex-direction: column;
+    display: flex;
 }
 
 .post-title {
@@ -914,6 +916,10 @@ li.link-item {
 
 .ai-excerpt-tip{
     margin-right: 40%;
+}
+
+.post-excerpt p{
+    max-height: 90%;
 }
 
 .post-list-thumb:nth-child(2n) .post-thumb{
@@ -1121,12 +1127,45 @@ li.link-item {
 
 <?php if (iro_opt('article_meta_background_compatible', 'true')): ?>
 .post-date, .post-meta {
-  color: #b3b3b3 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
   background-color: #33333360 !important;
   border: 1px solid #7d7d7d30 !important;
-  -webkit-transition: all .8s;
-  transition: all .8s;
+  transition: all 0.6s ease !important;
+  -webkit-transition: all 0.6s ease !important;
 }
+.post-meta a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.6s ease !important;
+  -webkit-transition: all 0.6s ease !important;
+}
+.post-list-thumb i{
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.6s ease !important;
+  -webkit-transition: all 0.6s ease !important;
+}
+
+
+body.dark .post-date,
+body.dark .post-meta {
+  color: rgba(255, 255, 255, 0.8) !important;
+  background-color: #33333360 !important;
+  border: 1px solid #7d7d7d30 !important;
+  transition: all 0.6s ease !important;
+  -webkit-transition: all 0.6s ease !important;
+}
+
+body.dark .post-meta a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.6s ease !important;
+  -webkit-transition: all 0.6s ease !important;
+}
+
+body.dark .post-list-thumb i{
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.6s ease !important;
+  -webkit-transition: all 0.6s ease !important;
+}
+
 <?php endif; ?>
 
 <?php if(iro_opt('bulletin_board_text_align') == 'center'){ ?>
@@ -1202,37 +1241,37 @@ body{
 ?>;
 }
 #video-add{
-    background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/add.svg);
+    background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/')?>basic/add.svg);
 }
 @media (max-width:860px) {
   .headertop.filter-dot::before {
-    background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/grid.png);
+    background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/')?>basic/grid.png);
   }
 }
 .headertop.filter-grid::before {
-  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/grid.png);
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/')?>basic/grid.png);
 }
 
 .headertop.filter-dot::before {
-  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/dot.gif);
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/')?>basic/dot.gif);
 }
 .loadvideo,.video-play {
-  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/play.svg);
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/')?>basic/play.svg);
 }
 
 .video-pause {
-  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/pause.svg);
+  background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/')?>basic/pause.svg);
 }
 #loading-comments {
-background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>load_svg/ball.svg);
+background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/')?>load_svg/ball.svg);
 }
 
 <?php if (iro_opt('wave_effects', 'true')): ?>
 #banner_wave_1 {
-    background: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/wave1.png) repeat-x;
+    background: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/')?>basic/wave1.png) repeat-x;
 }
 #banner_wave_2 {
-    background: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/')?>basic/wave2.png) repeat-x;
+    background: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/')?>basic/wave2.png) repeat-x;
 }
 .headertop{
     border-radius:0 !important;

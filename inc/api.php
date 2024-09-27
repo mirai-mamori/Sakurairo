@@ -136,8 +136,8 @@ function upload_image(WP_REST_Request $request)
             'status' => 403,
             'success' => false,
             'message' => 'Unauthorized client.',
-            'link' => "https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/step04.md.png",
-            'proxy' => iro_opt('comment_image_proxy') . "https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/step04.md.png",
+            'link' => "https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/step04.md.png",
+            'proxy' => iro_opt('comment_image_proxy') . "https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/step04.md.png",
         );
         $result = new WP_REST_Response($output, 403);
         $result->set_headers(array('Content-Type' => 'application/json'));

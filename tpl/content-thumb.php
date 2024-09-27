@@ -114,7 +114,7 @@ while (have_posts()) : the_post();
 		<div class="post-date">
 					<i class="fa-regular fa-clock"></i><?= poi_time_since(strtotime($post->post_date)) ?>
 					<?php if (is_sticky()) : ?>
-						&nbsp;<i class="fa-regular fa-gem"></i>
+						&nbsp;<div class="post-top"><i class="fa-solid fa-chess-queen"></i><?php _e("Sticky", "sakurairo") ?></div>
 					<?php endif ?>
 				</div>
 			<div class="post-meta">

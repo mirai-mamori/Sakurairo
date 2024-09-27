@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2024-09-25 16:25+0900\n"
-"PO-Revision-Date: 2024-09-25 16:34+0900\n"
+"POT-Creation-Date: 2024-09-27 20:25+0900\n"
+"PO-Revision-Date: 2024-09-27 20:26+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -21,27 +21,27 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: 404.php:53
-msgid "return to previous page"
+#: 404.php:32
+msgid "Return to previous page"
 msgstr "前のページに戻る"
 
-#: 404.php:54
-msgid "return to home page"
+#: 404.php:33
+msgid "Return to home page"
 msgstr "ホームページに戻る"
 
-#: 404.php:57
+#: 404.php:36
 msgid "Don't worry, search in site?"
 msgstr "心配しないで、サイト内検索はどうでしょうか?"
 
-#: 404.php:59 footer.php:68 search.php:39
+#: 404.php:38 footer.php:69 search.php:30
 msgid "Search..."
 msgstr "検索…"
 
-#: archive.php:58 author.php:80 index.php:74
+#: archive.php:52 author.php:103 index.php:49
 msgid " Previous"
 msgstr " 前へ"
 
-#: author.php:13
+#: author.php:15
 msgid "No personal profile set yet"
 msgstr "個人プロファイルはまだ設定されていません"
 
@@ -129,45 +129,44 @@ msgstr "AD は禁止されています"
 msgid "Site"
 msgstr "サイト"
 
-#: footer.php:42
+#: footer.php:43
 #, php-format
-msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr "ロード時間 %.3f 秒 | %d クエリ | RAM 使用量  %.2f MB "
 
-#: footer.php:73
+#: footer.php:74
 msgid "Go to top"
 msgstr "このページのトップへ"
 
-#: footer.php:74
+#: footer.php:75
 msgid "Control Panel"
 msgstr "コントロールパネル"
 
-#: footer.php:80 footer.php:88
+#: footer.php:81 footer.php:89
 msgid "Want to find something?"
 msgstr "何かを見つけたいですか?"
 
-#: footer.php:89
+#: footer.php:90
 msgid "Search"
 msgstr "検索"
 
-#: footer.php:125
+#: footer.php:126
 msgid "Light Mode"
 msgstr "ライトフィルター"
 
-#: footer.php:128
+#: footer.php:129
 msgid "Dark Mode"
 msgstr "ダークモード"
 
-#: footer.php:134
+#: footer.php:135
 msgid "Toggle Page Background Image"
 msgstr "検索エリア背景画像"
 
-#: footer.php:155
+#: footer.php:156
 msgid "Switch To Font A"
 msgstr "フォント A に切り替え"
 
-#: footer.php:158
+#: footer.php:159
 msgid "Switch To Font B"
 msgstr "フォント B に切り替え"
 
@@ -669,7 +668,7 @@ msgstr "ログイン"
 msgid "Register"
 msgstr "新規登録"
 
-#: index.php:26
+#: index.php:9
 msgid "Notice"
 msgstr "お知らせ"
 
@@ -697,36 +696,26 @@ msgstr "あなたはまだコメントを投稿していません"
 msgid "Go and post your first comment now"
 msgstr "今すぐ最初のコメントを投稿してください"
 
-#: search.php:20
+#: search.php:19
 #, php-format
-msgid "search result: %s"
+msgid "Search result: %s"
 msgstr "検索結果: %s"
 
-#: tpl/content-category.php:31 tpl/content-image.php:33
-#: tpl/content-status.php:32 tpl/content.php:33 tpl/meta-comments.php:4
+#: tpl/content-category.php:32 tpl/meta-comments.php:4
 msgid "NOTHING"
 msgstr "何もない"
 
-#: tpl/content-category.php:31 tpl/content-image.php:33
-#: tpl/content-status.php:32 tpl/content.php:33 tpl/meta-comments.php:4
+#: tpl/content-category.php:33 tpl/meta-comments.php:4
 msgid "1 Comment"
 msgstr "1件のコメント"
 
-#: tpl/content-category.php:31 tpl/content-image.php:33
-#: tpl/content-status.php:32 tpl/content.php:33 tpl/meta-comments.php:4
+#: tpl/content-category.php:34 tpl/meta-comments.php:4
 msgid "Comments"
 msgstr "コメント"
 
-#: tpl/content-category.php:31 tpl/content-image.php:33
-#: tpl/content-status.php:32 tpl/content.php:33 tpl/meta-comments.php:4
+#: tpl/content-category.php:36 tpl/meta-comments.php:4
 msgid "Comment Closed"
 msgstr "コメント募集は終了しました"
-
-#: tpl/content-image.php:37 tpl/content-status.php:36 tpl/content-thumb.php:16
-#: tpl/content.php:37
-msgid "Hit"
-msgid_plural "Hits"
-msgstr[0] "ヒット"
 
 #: tpl/content-none.php:14
 msgid "There is nothing here！"
@@ -750,17 +739,30 @@ msgstr ""
 "私たちはあなたが望むものを見つけられなかったようです。たぶん、あなたはそれを"
 "検索することができます。"
 
-#: tpl/content-page.php:24 tpl/content-single.php:41 tpl/single-image.php:31
+#: tpl/content-page.php:24 tpl/content-single.php:43 tpl/single-image.php:31
 msgid "Pages:"
 msgstr "ページ:"
 
-#: tpl/content-single.php:34 tpl/content-thumb.php:130
+#: tpl/content-single.php:36 tpl/content-thumb.php:131
 msgid "AI Excerpt"
 msgstr "AI 概要"
+
+#: tpl/content-thumb.php:16
+msgid "Hit"
+msgid_plural "Hits"
+msgstr[0] "ヒット"
 
 #: tpl/content-thumb.php:51 tpl/entry-census.php:54
 msgid "Estimate Reading Time"
 msgstr "読み時間の推定"
+
+#: tpl/content-thumb.php:117
+msgid "Sticky"
+msgstr "粘着"
+
+#: tpl/content-thumb.php:134
+msgid "Excerpt"
+msgstr "概要"
 
 #: tpl/entry-census.php:6
 msgid "EDIT"
@@ -930,6 +932,3 @@ msgstr "友情链接模版"
 #. Template Name of the plugin/theme
 msgid "说说模版"
 msgstr "说说模版"
-
-#~ msgid " "
-#~ msgstr " "

@@ -86,6 +86,7 @@ get_header();
 		overflow: hidden;
 		max-height: 20px;
 		height: fit-content;
+		margin: 0 10px;
 	}
 </style>
 <div id="primary" class="content-area">

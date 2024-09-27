@@ -1007,7 +1007,6 @@ input[type=week] {
   letter-spacing: 0;
   line-height: 30px;
   font-weight: var(--global-font-weight);
-
   transition: all 0.8s ease !important;
 }
 
@@ -1015,6 +1014,8 @@ input[type=week] {
   margin-right: 5px;
   color: rgba(255, 255, 255, 0.8);
   font-size: 12px;
+  transition: all 0.6s ease !important;
+  -webkit-transition: all 0.6s ease !important;
 }
 
 .post-list-thumb .post-title h3 {
@@ -1112,7 +1113,7 @@ input[type=week] {
   left: 2%;
   border: 1px solid rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: none;
+  -webkit-backdrop-filter: blur(5px);
   position: absolute;
   display: inline-flex;
   box-shadow: 0 1px 30px -4px #e8e8e8;
@@ -1122,6 +1123,8 @@ input[type=week] {
   height: fit-content;
   max-height: 34%;
   overflow: hidden;
+  max-width: 80%;
+  width: fit-content;
 }
 
 .post-title:hover{
@@ -1152,6 +1155,8 @@ input[type=week] {
   position: absolute;
   bottom: 5%;
   width: 98%;
+  max-height: 15%;
+  height: fit-content;
   left: 2%;
   margin: 0;
   margin-top: 5px;
@@ -1171,6 +1176,18 @@ input[type=week] {
   padding-bottom: 2px;
   margin-bottom: 0;
   margin-right: 10px;
+  transition: all 0.8s ease !important;
+  -webkit-transition: all 0.8s ease !important;
+}
+
+.post-top {
+  color:gold !important;
+  transition: all 0.8s ease !important;
+  -webkit-transition: all 0.8s ease !important;
+}
+
+.post-top i {
+  color:gold !important;
   transition: all 0.8s ease !important;
   -webkit-transition: all 0.8s ease !important;
 }
@@ -5720,7 +5737,7 @@ object {
 }
 
 .post-excerpt i {
-  color: #CCCCCC;
+  color: #CCCCCC !important;
   font-size: 13px;
   transition: all 0.8s ease !important;
 }
@@ -9980,7 +9997,7 @@ body.dark #mo-nav .m-search input:hover {
   transition: all .8s;
 }
 
-body.dark .post-date ,body.dark .post-meta{
+body.dark .post-date, body.dark .post-meta {
   color: #b3b3b3 !important;
   background-color: #33333360;
   border: 1px solid #7d7d7d30;
@@ -10094,6 +10111,8 @@ body.dark blockquote:after {
 
 body.dark .post-list-thumb i{
   color: #b3b3b3;
+  transition: all 0.6s ease !important;
+  -webkit-transition: all 0.6s ease !important;
 }
 
 body.dark .post-list-thumb {
