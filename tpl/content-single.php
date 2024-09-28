@@ -18,14 +18,6 @@ if (iro_opt('article_auto_toc', 'true') && check_title_tags($post->post_content)
 }
 ?>
 
-<?php 
-$author_description = '';
-if (iro_opt('author_profile_quote') == '1') {
-	$author_meta = get_the_author_meta('description', get_the_author_meta('ID'));
-	$author_description = !empty($author_meta) ? $author_meta : iro_opt('author_profile_quote_text', 'Carpe Diem and Do what I like');
-}
-?>
-
 <article id="post-<?php echo esc_attr($post_id); ?>" <?php post_class(); ?>>
 	<?php if (should_show_title()) { 
 		get_template_part('tpl/single-entry-header');

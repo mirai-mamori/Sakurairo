@@ -2819,18 +2819,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'author_profile_quote_text',
-        'type' => 'text',
-        'title' => __('Article Page Author Info Signature Text','sakurairo_csf'),
-        'dependency' => array(
-          array( 'article_function', '==', 'true', '', 'true' ),
-          array( 'author_profile_quote', '==', 'true' ),
-        ),
-        'desc' => __('A self-descriptive quote','sakurairo_csf'),
-        'default' => '届ける言葉を今は育ててる'
-      ),
-
-      array(
         'id' => 'article_modified_time',
         'type' => 'switcher',
         'title' => __('Article Last Update Time','sakurairo_csf'),

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2024-09-27 20:25+0900\n"
+"POT-Creation-Date: 2024-09-28 21:48+0900\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
-#: archive.php:52 author.php:103 index.php:49
+#: archive.php:52 author.php:104 index.php:49
 msgid " Previous"
 msgstr ""
 
@@ -720,11 +720,11 @@ msgstr ""
 msgid "We didn't seem to find what you want. Maybe you can search for it."
 msgstr ""
 
-#: tpl/content-page.php:24 tpl/content-single.php:43 tpl/single-image.php:31
+#: tpl/content-page.php:24 tpl/content-single.php:35 tpl/single-image.php:25
 msgid "Pages:"
 msgstr ""
 
-#: tpl/content-single.php:36 tpl/content-thumb.php:131
+#: tpl/content-single.php:28 tpl/content-thumb.php:131
 msgid "AI Excerpt"
 msgstr ""
 
@@ -756,7 +756,7 @@ msgid_plural "Views"
 msgstr[0] ""
 msgstr[1] ""
 
-#: tpl/entry-census.php:66 tpl/section-article-function.php:65
+#: tpl/entry-census.php:66 tpl/section-article-function.php:71
 msgid "Last updated on "
 msgstr ""
 
@@ -790,7 +790,11 @@ msgstr[1] ""
 msgid "This article is licensed under %s"
 msgstr ""
 
-#: tpl/section-article-function.php:74
+#: tpl/section-article-function.php:62
+msgid "This author has not provided a description."
+msgstr ""
+
+#: tpl/section-article-function.php:80
 msgid "Nothing~"
 msgstr ""
 

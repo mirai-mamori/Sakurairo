@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2024-09-27 20:25+0900\n"
-"PO-Revision-Date: 2024-09-27 20:26+0900\n"
+"POT-Creation-Date: 2024-09-28 21:48+0900\n"
+"PO-Revision-Date: 2024-09-28 21:50+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -37,7 +37,7 @@ msgstr "心配しないで、サイト内検索はどうでしょうか?"
 msgid "Search..."
 msgstr "検索…"
 
-#: archive.php:52 author.php:103 index.php:49
+#: archive.php:52 author.php:104 index.php:49
 msgid " Previous"
 msgstr " 前へ"
 
@@ -739,11 +739,11 @@ msgstr ""
 "私たちはあなたが望むものを見つけられなかったようです。たぶん、あなたはそれを"
 "検索することができます。"
 
-#: tpl/content-page.php:24 tpl/content-single.php:43 tpl/single-image.php:31
+#: tpl/content-page.php:24 tpl/content-single.php:35 tpl/single-image.php:25
 msgid "Pages:"
 msgstr "ページ:"
 
-#: tpl/content-single.php:36 tpl/content-thumb.php:131
+#: tpl/content-single.php:28 tpl/content-thumb.php:131
 msgid "AI Excerpt"
 msgstr "AI 概要"
 
@@ -773,7 +773,7 @@ msgid "View"
 msgid_plural "Views"
 msgstr[0] "表示"
 
-#: tpl/entry-census.php:66 tpl/section-article-function.php:65
+#: tpl/entry-census.php:66 tpl/section-article-function.php:71
 msgid "Last updated on "
 msgstr "最終更新日 "
 
@@ -804,7 +804,11 @@ msgstr[0] "%s 文字数"
 msgid "This article is licensed under %s"
 msgstr "この投稿は %s クリエイティブ・コモンズ・ライセンスの下で利用可能です。"
 
-#: tpl/section-article-function.php:74
+#: tpl/section-article-function.php:62
+msgid "This author has not provided a description."
+msgstr "この作者はプロフィールを設定していません"
+
+#: tpl/section-article-function.php:80
 msgid "Nothing~"
 msgstr "何もない~"
 

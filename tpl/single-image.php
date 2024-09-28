@@ -8,16 +8,6 @@
  */
 
 ?>
-<?php 
-
-$author_description = '';
-if (iro_opt('author_profile_quote') == '1') {
-	$author_description = get_the_author_meta('description');
-	if (!$author_description) {
-		$author_description = iro_opt('author_profile_quote_text', 'Carpe Diem and Do what I like');
-	}
-}
-?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if(should_show_title()) { ?>

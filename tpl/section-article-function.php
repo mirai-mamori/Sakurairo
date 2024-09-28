@@ -55,10 +55,16 @@ if (iro_opt("article_function")) {
             <div class="meta">
                 <a href="<?= $author_url; ?>" itemprop="url" rel="author"><?= $author_name; ?></a>
             </div>
-            <?php if ($author_description) { ?>
-                <div class="desc">
-                    <i class="fa-solid fa-feather" aria-hidden="true"></i><?= $author_description ?>
-                </div>
+            <?php 
+            if (iro_opt('author_profile_quote') == '1') { 
+                $author_description = get_the_author_meta('description');
+                if (empty($author_description)) {
+                    $author_description = __('This author has not provided a description.', 'sakurairo');
+                }
+            ?>
+            <div class="desc">
+                <i class="fa-solid fa-feather" aria-hidden="true"></i><?= $author_description; ?>
+            </div>
             <?php } ?>
         </section>
         <div class="post-modified-time">
