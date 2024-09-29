@@ -1551,6 +1551,76 @@ h1.page-title {
   transition: all .8s;
 }
 
+.author_info {
+  min-width: 200px;
+  max-width: 70%;
+  width: fit-content;
+  position: relative;
+  height: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 10% 0;
+  float: left;
+  display: flex;
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 12px 12px;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+  border-radius: 10px;
+  border: 1.5px solid #FFFFFF;
+  flex-direction: column;
+  font-weight: var(--global-font-weight);
+}
+
+.author_info .avatar {
+  float: left;
+  height: 75px;
+  width: 75px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -24%;
+  display: flex;
+  box-shadow: none;
+}
+
+.author_info .avatar img {
+  border-radius: 100%;
+  vertical-align: middle;
+}
+
+.author_info .author-center {
+  position: relative;
+  margin-top: 10px;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+  color: #505050;
+}
+
+.author_info .author-center h3 {
+  font-weight: 700;
+  font-size: 24px;
+  margin: 0;
+  display: inline-flex;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  max-height: 36px;
+  height: fit-content;
+}
+
+.author_info .author-center .description {
+  font-size: 14px;
+  font-weight: var(--global-font-weight);
+  text-align: center;
+  overflow: hidden;
+  max-height: 20px;
+  height: fit-content;
+  margin: 0 10px;
+}
+
 .mashiro-profile {
   color: #7a7b7c;
   text-align: left;
@@ -10223,6 +10293,14 @@ body.dark .author_info {
   -webkit-transition: all .8s;
   transition: all .8s;
   border: 1.5px solid #7d7d7d30;
+}
+
+body.dark .author_info .avatar::after{
+  box-shadow: 0 1px 20px 2px rgba(26, 26, 26, 0.8);
+  background: rgba(26, 26, 26, 0.8);
+  -webkit-transition: all .8s;
+  transition: all .8s;
+  border: 1px solid #7d7d7d30;
 }
 
 body.dark .author_info .author-center{

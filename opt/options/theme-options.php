@@ -2720,6 +2720,18 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'article_meta_show_in_head',
+        "type" => "select",
+        "title" => __("Display Article Meta before the Contents","sakurairo_csf"),
+        'desc' => __('You can freely select the information Meta to be displayed, this option cannot be set on mobile','sakurairo_csf'),
+        "chosen" => true,
+        "multiple" => true,
+        "sortable" => true,
+        "options"=> $AVAIL_METADATA_POST_HEADER,
+        "default" => array("author","publish_time_relative","post_views","EDIT")
+      ),
+
+      array(
         'id' => 'article_auto_toc',
         'type' => 'switcher',
         'title' => __('Article Page Auto Show Menu','sakurairo_csf'),
@@ -2857,17 +2869,6 @@ $prefix = 'iro_options';
         'default' => true
       ),
 
-      array(
-        'id' => 'article_meta_show_in_head',
-        "type" => "select",
-        "title" => __("Display Article Meta before the Contents","sakurairo_csf"),
-        'desc' => __('You can freely select the information Meta to be displayed, this option cannot be set on mobile','sakurairo_csf'),
-        "chosen" => true,
-        "multiple" => true,
-        "sortable" => true,
-        "options"=> $AVAIL_METADATA_POST_HEADER,
-        "default" => array("author","publish_time_relative","post_views","EDIT")
-      )
     )
   ) );
 
