@@ -282,6 +282,7 @@ function login_ok(){
 function the_headPattern(){
   $t = ''; // 标题
   $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
+  $title_style = get_post_meta(get_the_ID(), 'title_style', true); // 获取自定义字段的值
   if(is_single()){
     require_once get_stylesheet_directory() . '/tpl/entry-census.php';
     $full_image_url = !empty($full_image_url) ? $full_image_url[0] : null;
@@ -289,13 +290,13 @@ function the_headPattern(){
     $center = 'single-center';
     $header = 'single-header';
     //$ava = iro_opt('personal_avatar', '') ? iro_opt('personal_avatar', '') : get_avatar_url(get_the_author_meta('user_email'));
-    $t .= the_title( '<h1 class="entry-title">', '</h1>', false);
+    $t .= the_title( '<h1 class="entry-title" style="' . esc_attr($title_style) . '">', '</h1>', false);
     $t .= '<span class="toppic-line"></span>';
     $t .= get_entry_census_html(true);
     endwhile; endif;
   }elseif(is_page()){
     $full_image_url = !empty($full_image_url) ? $full_image_url[0] : null;
-    $t .= the_title( '<span><h1 class="entry-title">', '</h1></span>', false);
+    $t .= the_title( '<span><h1 class="entry-title" style="' . esc_attr($title_style) . '">', '</h1></span>', false);
   }elseif(is_archive()){
     $full_image_url = z_taxonomy_image_url();
     $des = category_description() ? category_description() : ''; // 描述

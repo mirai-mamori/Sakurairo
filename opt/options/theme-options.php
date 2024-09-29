@@ -2479,7 +2479,7 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'         => 'post_list_iro_type',
+        'id'         => 'post_list_design',
         'type'       => 'image_select',
         'title' => __('Article Area Card Design','sakurairo_csf'),
         'desc' => __('You can choose between letter design or ticket design','sakurairo_csf'),
@@ -2488,6 +2488,19 @@ $prefix = 'iro_options';
           'ticket' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/post_list_design_ticket.webp',
         ),
         'default'    => 'letter'
+      ),
+
+      array(
+        'id'         => 'post_list_ticket_type',
+        'type'       => 'image_select',
+        'title' => __('Article Area Card Ticket Design Title Style','sakurairo_csf'),
+        'desc' => __('You can choose between card style or Non-card style','sakurairo_csf'),
+        'dependency' => array( 'post_list_design', '==', 'ticket', '', 'true' ),
+        'options'    => array(
+          'card' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/post_list_design_ticket.webp',
+          'non-card' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/post_list_design_ticket_2.webp',
+        ),
+        'default'    => 'card'
       ),
 
       array(

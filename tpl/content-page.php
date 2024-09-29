@@ -13,7 +13,10 @@
 	<?php 
 	if (should_show_title()) { ?>
 	<header class="entry-header">
-		<?php echo '<h1 class="entry-title">' . esc_html(get_the_title()) . '</h1>'; ?>
+		<?php 
+		$title_style = get_post_meta(get_the_ID(), 'title_style', true);
+		echo '<h1 class="entry-title" style="' . esc_attr($title_style) . '">' . esc_html(get_the_title()) . '</h1>'; 
+		?>
 	</header><!-- .entry-header -->
 	<?php } ?>
 	<?php get_template_part('layouts/sidebox'); ?>

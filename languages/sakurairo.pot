@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2024-09-28 21:48+0900\n"
+"POT-Creation-Date: 2024-09-29 13:21+0900\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -365,8 +365,8 @@ msgstr ""
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1540 functions.php:1543 inc/theme_plus.php:412
-#: inc/theme_plus.php:458
+#: functions.php:1540 functions.php:1543 inc/theme_plus.php:413
+#: inc/theme_plus.php:459
 msgid "Dashboard"
 msgstr ""
 
@@ -449,7 +449,7 @@ msgstr ""
 msgid "Load More"
 msgstr ""
 
-#: inc/classes/Cache.php:70 inc/theme_plus.php:707
+#: inc/classes/Cache.php:70 inc/theme_plus.php:708
 msgid "The comment is private"
 msgstr ""
 
@@ -551,7 +551,7 @@ msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post
-#: inc/template-tags.php:72 tpl/content-page.php:35
+#: inc/template-tags.php:72 tpl/content-page.php:38
 #, php-format
 msgid "Edit %s"
 msgstr ""
@@ -620,36 +620,36 @@ msgstr ""
 msgid "Sign out? "
 msgstr ""
 
-#: inc/theme_plus.php:306 inc/theme_plus.php:359
+#: inc/theme_plus.php:307 inc/theme_plus.php:360
 #, php-format
 msgid "Search results for \" %s \""
 msgstr ""
 
-#: inc/theme_plus.php:376 tpl/content-thumb.php:72 tpl/content-thumb.php:78
+#: inc/theme_plus.php:377 tpl/content-thumb.php:72 tpl/content-thumb.php:78
 msgid "Your browser does not support HTML5 video."
 msgstr ""
 
-#: inc/theme_plus.php:407
+#: inc/theme_plus.php:408
 msgid "Signed in as"
 msgstr ""
 
-#: inc/theme_plus.php:413 inc/theme_plus.php:459
+#: inc/theme_plus.php:414 inc/theme_plus.php:460
 msgid "New post"
 msgstr ""
 
-#: inc/theme_plus.php:415 inc/theme_plus.php:461
+#: inc/theme_plus.php:416 inc/theme_plus.php:462
 msgid "Profile"
 msgstr ""
 
-#: inc/theme_plus.php:416 inc/theme_plus.php:462
+#: inc/theme_plus.php:417 inc/theme_plus.php:463
 msgid "Sign out"
 msgstr ""
 
-#: inc/theme_plus.php:434 inc/theme_plus.php:473
+#: inc/theme_plus.php:435 inc/theme_plus.php:474
 msgid "Log in"
 msgstr ""
 
-#: inc/theme_plus.php:475
+#: inc/theme_plus.php:476
 msgid "Register"
 msgstr ""
 
@@ -720,7 +720,7 @@ msgstr ""
 msgid "We didn't seem to find what you want. Maybe you can search for it."
 msgstr ""
 
-#: tpl/content-page.php:24 tpl/content-single.php:35 tpl/single-image.php:25
+#: tpl/content-page.php:27 tpl/content-single.php:35 tpl/single-image.php:25
 msgid "Pages:"
 msgstr ""
 
@@ -758,6 +758,10 @@ msgstr[1] ""
 
 #: tpl/entry-census.php:66 tpl/section-article-function.php:71
 msgid "Last updated on "
+msgstr ""
+
+#: tpl/entry-census.php:68
+msgid "Last updated on"
 msgstr ""
 
 #: tpl/meta-ert.php:8

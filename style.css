@@ -597,7 +597,11 @@ input[type=week] {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, .3);
+  background:linear-gradient( 
+    #fff0, 
+    #00000080
+  );
+  backdrop-filter: blur(1px);
 }
 
 .pattern-center::after {
@@ -660,26 +664,34 @@ input[type=week] {
 
 .single-center .single-header h1.entry-title {
   margin: 0;
+  margin-left: 5px;
   font-size: 32px;
   width: 100%;
   font-weight: var(--global-font-weight);
-
 }
 
 .single-center .entry-census {
   color: #fff;
-  font-size: 14px;
+  font-size: 13px;
   padding: 12px 0 0;
   line-height: 30px;
   font-weight: var(--global-font-weight);
 }
 
+.single-center .entry-census i{
+  display: none;
+}
+
+.single-center .entry-census a:hover{
+  color:var(--theme-skin-matching);
+}
+
 .single-center .entry-census span img {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 100%;
   float: left;
-  margin-right: 12px;
+  margin: 4.5px 8px;
   max-height: unset;
 }
 
@@ -1286,10 +1298,19 @@ input[type=week] {
   display: inline-flex;
   flex-wrap: wrap;
   gap:2px 8px;
+  max-width: 98%;
+  overflow: hidden;
+  max-height: 40px;
 }
+
+.entry-census i {
+  display: none;
+}
+
 .entry-census.has-splitter{
   gap:2px 5px;
 }
+
 .entry-census.has-splitter>:where(a,span):not(:last-child)::after{
 content: "·";
 margin-left:5px;
@@ -5773,7 +5794,12 @@ object {
 }
 
 .entry-census a {
+  color: #888;
   cursor: pointer;
+}
+
+.entry-census a:hover {
+  color: var(--theme-skin-matching);
 }
 
 .meta-author img {
