@@ -1,15 +1,12 @@
 <?php
 /**
- * Template part for displaying posts.
+ * Template part for displaying posts and shuoshuo.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Akina
  */
-//function custom_short_excerpt($excerpt){
-//	return substr($excerpt, 0, 120);
-//}
-//add_filter('the_excerpt', 'custom_short_excerpt');
+
 $i = 0;
 
 function render_meta_views(){
@@ -55,13 +52,7 @@ function render_article_meta()
 	}
 }
 
-while (have_posts()) : the_post();
-	$i++;
-	if ($i == 1) {
-		$class = ' post-list-show';
-	}
-	//封面视频
-	//@seealso https://github.com/mashirozx/Sakura/wiki/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2%E8%A7%86%E9%A2%91
+function get_post_cover_html() {
 	$use_as_thumb = get_post_meta(get_the_ID(), 'use_as_thumb', true); //'true','only',(default)
 	$cover_type = ($use_as_thumb == 'true' || $use_as_thumb == 'only') ? get_post_meta(get_the_ID(), 'cover_type', true) : '';
 	$cover_html = "";
@@ -99,42 +90,92 @@ while (have_posts()) : the_post();
 			$cover_html = '<img alt="post_img" class="lazyload" src="' . iro_opt('load_out_svg') . '#lazyload-blur" data-src="' . $post_img . '"/>';
 			break;
 	}
+	return $cover_html;
+}
 
-	// 摘要字数限制
-	$ai_excerpt = get_post_meta($post->ID, POST_METADATA_KEY, true); 
-	$excerpt = has_excerpt(); 
-	//add_filter( 'excerpt_length', 'custom_excerpt_length', 120 );
-?>
-	<article class="post post-list-thumb <?php echo $class; ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
-		<div class="post-thumb">
-			<a href="<?php the_permalink(); ?>">
-				<?php echo $cover_html; ?>
-			</a>
-		</div><!-- thumbnail-->
-		<div class="post-date">
-					<i class="fa-regular fa-clock"></i><?= poi_time_since(strtotime($post->post_date)) ?>
-					<?php if (is_sticky()) : ?>
-						&nbsp;<div class="post-top"><i class="fa-solid fa-chess-queen"></i><?php _e("Sticky", "sakurairo") ?></div>
-					<?php endif ?>
+// Combine posts and shuoshuo
+$args = array(
+	'post_type' => array('post', 'shuoshuo'),
+	'post_status' => 'publish',
+	'posts_per_page' => -1, // No limit on the number of posts per page
+	'orderby' => 'post_date',
+	'order' => 'DESC'
+);
+
+$combined_query = new WP_Query($args);
+
+if ($combined_query->have_posts()) :
+	while ($combined_query->have_posts()) : $combined_query->the_post();
+		$i++;
+		if ($i == 1) {
+			$class = ' post-list-show';
+		}
+
+		// Determine post type
+		$post_type = get_post_type();
+		if ($post_type == 'shuoshuo') {
+			// shuoshuo 样式
+			?>
+	<article class="shuoshuo-item">
+		<a href="<?php the_permalink(); ?>">
+			<div class="shuoshuo-avatar">
+				<img src="<?php echo get_avatar_profile_url(get_the_author_meta('ID')); ?>" class="avatar avatar-48" width="48" height="48">
+			</div>
+			<div class="shuoshuo-wrapper">
+				<div class="shuoshuo-meta">
+					<span class="shuoshuo-author-name"><?php the_author(); ?> </span>
+					<span class="shuoshuo-title"><h3><?php the_title(); ?> </h3></span>
+					<span class="shuoshuo-comments"><i class="fa-regular fa-comment"></i> <?php comments_number('0', '1', '%'); ?> </span>
+					<span class="shuoshuo-date"><i class="fa-regular fa-clock"> </i> <?php the_time('Y-n-j G:i'); ?> </span>
 				</div>
-			<div class="post-meta">
-					<?php render_article_meta()?>			
+				<div class="shuoshuo-content">
+					<?php the_content(); ?>
 				</div>
-		<?php $title_style = get_post_meta(get_the_ID(), 'title_style', true); ?>
-		<div class="post-title" style="<?php echo esc_attr($title_style); ?>">
-				<a href="<?php the_permalink(); ?>">
-					<h3><?php the_title(); ?></h3>
-				</a>
-		</div>
-		<div class="post-excerpt">
-				<?php if(!empty($ai_excerpt) && empty($excerpt)) { ?>
-				<div class="ai-excerpt-tip"><i class="fa-solid fa-atom"></i><?php _e("AI Excerpt", "sakurairo") ?></div>
-				<?php } ?>
-				<?php if (empty($ai_excerpt)) { ?>
-				<div class="ai-excerpt-tip"><i class="fa-solid fa-bars-staggered"></i><?php _e("Excerpt", "sakurairo") ?></div>
-				<?php } ?>
-				<?php the_excerpt() ?>
-		</div>
+			</div>
+		</a>
 	</article>
-<?php
-endwhile;
+			<?php
+		} else {
+			// 原文章样式
+			$cover_html = get_post_cover_html();
+
+			// 摘要字数限制
+			$ai_excerpt = get_post_meta($post->ID, POST_METADATA_KEY, true); 
+			$excerpt = has_excerpt(); 
+			?>
+			<article class="post post-list-thumb <?php echo $class; ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
+				<div class="post-thumb">
+					<a href="<?php the_permalink(); ?>">
+						<?php echo $cover_html; ?>
+					</a>
+				</div><!-- thumbnail-->
+				<div class="post-date">
+							<i class="fa-regular fa-clock"></i><?= poi_time_since(strtotime($post->post_date)) ?>
+							<?php if (is_sticky()) : ?>
+								&nbsp;<div class="post-top"><i class="fa-solid fa-chess-queen"></i><?php _e("Sticky", "sakurairo") ?></div>
+							<?php endif ?>
+						</div>
+					<div class="post-meta">
+							<?php render_article_meta()?>            
+						</div>
+				<?php $title_style = get_post_meta(get_the_ID(), 'title_style', true); ?>
+				<div class="post-title" style="<?php echo esc_attr($title_style); ?>">
+						<a href="<?php the_permalink(); ?>">
+							<h3><?php the_title(); ?></h3>
+						</a>
+				</div>
+				<div class="post-excerpt">
+						<?php if(!empty($ai_excerpt) && empty($excerpt)) { ?>
+						<div class="ai-excerpt-tip"><i class="fa-solid fa-atom"></i><?php _e("AI Excerpt", "sakurairo") ?></div>
+						<?php } ?>
+						<?php if (empty($ai_excerpt)) { ?>
+						<div class="ai-excerpt-tip"><i class="fa-solid fa-bars-staggered"></i><?php _e("Excerpt", "sakurairo") ?></div>
+						<?php } ?>
+						<?php the_excerpt() ?>
+				</div>
+			</article>
+			<?php
+		}
+	endwhile;
+endif;
+?>
