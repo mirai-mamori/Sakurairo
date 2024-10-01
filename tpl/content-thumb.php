@@ -132,10 +132,12 @@ if ($combined_query->have_posts()) :
                     </a>
                 </span>
                 <span class="shuoshuo-title"><h3><?php the_title(); ?> </h3></span>
+                <div class="shuoshuo-info">
                 <?php if (get_comments_number() > 0) : ?>
                     <span class="shuoshuo-comments"><i class="fa-regular fa-comment"></i> <?php comments_number('0', '1', '%'); ?> </span>
                 <?php endif; ?>
                 <span class="shuoshuo-date"><i class="fa-regular fa-clock"> </i> <?php the_time('Y-n-j G:i'); ?> </span>
+                </div>
             </div>
             <a href="<?php the_permalink(); ?>" class="shuoshuo-content-link">
                 <div class="shuoshuo-content">

@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://fuukei.org/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.6.11
+Version: 2.6.12
 Tested up to: 6.6
 Requires at least: 5.8
 Requires PHP: 7.3
@@ -5916,10 +5916,11 @@ object {
   float: left;
   transition: all 0.8s ease;
   -webkit-transition: all 0.8s ease;
+  position: relative;
 }
 
 .shuoshuo-item:hover{
-  box-shadow: 0 1px 20px 10px rgba(232,232,232,0.3);
+  box-shadow: 0 1px 20px 10px #e8e8e8;
   background-color: rgba(255, 255, 255, 0.9);
   transition: all 0.8s ease;
   -webkit-transition: all 0.8s ease;
@@ -5939,7 +5940,7 @@ object {
 
 .shuoshuo-content-wrapper{
   border-radius: 10px;
-  padding: 10px;
+  padding: 1%;
   width: 100%;
   float: left;
   transition: all 0.8s ease;
@@ -5961,11 +5962,18 @@ object {
   -webkit-transition: all 0.8s ease;
 }
 
-.shuoshuo-wrapper {
-  overflow: hidden;
-  margin-top: 12px;
+.shuoshuo-avatar img:hover {
+  transform: rotate(360deg);
   transition: all 0.8s ease;
   -webkit-transition: all 0.8s ease;
+}
+
+.shuoshuo-wrapper {
+  overflow: hidden;
+  margin-top: 1.5%;
+  transition: all 0.8s ease;
+  -webkit-transition: all 0.8s ease;
+  position: relative;
 }
 
 .shuoshuo-meta {
@@ -5976,6 +5984,7 @@ object {
   overflow: hidden;
   transition: all 0.8s ease;
   -webkit-transition: all 0.8s ease;
+  align-items: center;
 }
 
 .shuoshuo-author-name {
@@ -6009,13 +6018,19 @@ object {
 .shuoshuo-comments, .shuoshuo-date {
   color: #ababab;
   font-size: 0.9em;
-  margin-top: 3px;
+  transition: all 0.8s ease;
+  -webkit-transition: all 0.8s ease;
+}
+
+.shuoshuo-info {
+  right: 3.5%;
+  position: absolute;
   transition: all 0.8s ease;
   -webkit-transition: all 0.8s ease;
 }
 
 .shuoshuo-comments i, .shuoshuo-date i{
-  font-size: 1em;
+  font-size: 0.9em;
   margin-right: 2px;
   transition: all 0.8s ease;
   -webkit-transition: all 0.8s ease;
@@ -11046,7 +11061,7 @@ body.dark .entry-content code:not(pre code) {
 }
 
 body.dark .shuoshuo-item {
-  box-shadow: 0 1px 20px 10px rgba(26, 26, 26, 0.7);
+  box-shadow: 0 1px 35px -8px rgba(26, 26, 26, 0.6);
   background: rgba(51, 51, 51, 0.7);
   border: 1px solid #7d7d7d30;
   transition: all 0.8s ease;
@@ -11105,39 +11120,32 @@ body.dark .shuoshuo-comments,body.dark  .shuoshuo-date {
 
 .aplayer {
   background: rgba(255, 255, 255, .3);
-  font-family: 'Noto Serif CJK SC', 'Noto Serif CJK', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc', 'PT Serif', 'SongTi SC', 'MicroSoft Yahei', Georgia, serif
-}
-
-.aplayer .aplayer-lrc::before {
-  background: rgba(255, 255, 255, 0);
-  filter: none
-}
-
-.aplayer .aplayer-lrc::after {
-  background: rgba(255, 255, 255, 0);
-  filter: none
-}
-
-.aplayer {
+  font-family: 'Noto Serif CJK SC', 'Noto Serif CJK', 'Source Han Serif SC', 'Source Han Serif', 'source-han-serif-sc', 'PT Serif', 'SongTi SC', 'MicroSoft Yahei', Georgia, serif;
   box-shadow: 0 0 0 1px #eee;
   border-radius: 3px;
-  margin: 15px 0
+  margin: 15px 0;
+}
+
+.aplayer .aplayer-lrc::before,
+.aplayer .aplayer-lrc::after {
+  background: rgba(255, 255, 255, 0);
+  filter: none;
 }
 
 .aplayer .aplayer-info {
-  padding: 9px 7px 0 10px
+  padding: 9px 7px 0 10px;
 }
 
 .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap {
   margin-left: 1px;
-  padding-right: 3px
+  padding-right: 3px;
 }
 
 .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar,
 .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded,
 .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played {
   height: 6px;
-  border-radius: 10px
+  border-radius: 10px;
 }
 
 .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb {
@@ -11145,46 +11153,46 @@ body.dark .shuoshuo-comments,body.dark  .shuoshuo-date {
   width: 12px;
   right: 3px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .18);
-  transition: all .35s
+  transition: all .35s;
 }
 
 .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar,
 .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar .aplayer-volume {
   border-radius: 10px;
-  width: 6px
+  width: 6px;
 }
 
 .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar {
-  right: 10.5px
+  right: 10.5px;
 }
 
 .aplayer .aplayer-list ol li {
-  border-top: 0
+  border-top: 0;
 }
 
 .aplayer .aplayer-list ol li.aplayer-list-light {
-  background: #f8f8f8
+  background: #f8f8f8;
 }
 
 #aplayer-float {
   background: rgba(255, 255, 255, 1);
-  margin: 0
+  margin: 0;
 }
 
 .ap-hover {
-  left: -66px !important
+  left: -66px !important;
 }
 
 .ap-hover:hover {
-  left: 0 !important
+  left: 0 !important;
 }
 
 #aplayer-float .aplayer-lrc-current {
   color: orange;
   font-size: 15px;
-  font-weight: bold
+  font-weight: bold;
 }
 
 .aplayer-lrc {
-  pointer-events: none
+  pointer-events: none;
 }
