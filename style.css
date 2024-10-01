@@ -6014,6 +6014,9 @@ object {
 .shuoshuo-comments,.shuoshuo-title h3 {
   display: none;
   }
+  .shuoshuo-wrapper {
+  margin-top: 2.5%;
+  }
 }
 
 .shuoshuo-comments, .shuoshuo-date {
