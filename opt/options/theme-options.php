@@ -2534,14 +2534,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'post_border_shadow_color',
-        'type' => 'color',
-        'title' => __('Article Area Card Border Shadow Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#e8e8e8'
-      ),    
-
-      array(
         'id' => 'article_meta_background_compatible',
         'type' => 'switcher',
         'title' => __('Article Area Card Information Meta Background Compatible','sakurairo_csf'),

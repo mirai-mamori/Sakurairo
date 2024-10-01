@@ -118,9 +118,6 @@ if ($combined_query->have_posts()) :
             $cover_html = get_post_cover_html();
             ?>
 <article class="shuoshuo-item">
-    <div class="shuoshuo-background">
-        <?php echo $cover_html; ?>
-    </div>
     <div class="shuoshuo-content-wrapper">
         <div class="shuoshuo-avatar">
             <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">

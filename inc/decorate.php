@@ -18,7 +18,6 @@ if (iro_opt('theme_skin')) { ?>
     --style_menu_selection_radius:<?=iro_opt('style_menu_selection_radius', ''); ?>px;
     --load_nextpage_svg:url("<?=iro_opt('load_nextpage_svg'); ?>");
     --style_menu_radius:<?=iro_opt('style_menu_radius', ''); ?>px;
-    --post-list-thumb: <?=iro_opt('post_border_shadow_color'); ?>;
     --friend-link-shadow: <?=iro_opt('friend_link_shadow_color'); ?>;
     --friend-link-title: <?=iro_opt('friend_link_title_matching_color'); ?>;
     --comment_area_matching: <?=iro_opt('comment_area_matching_color'); ?>;
@@ -362,7 +361,7 @@ body.dark input[type=submit]
 
 /*深色模式自定义颜色*/
 body.dark .headertop-down svg path 
-{fill: <?=iro_opt('drop_down_arrow_dark_color'); ?> !important;transition: all 0.8s ease !important;}
+{fill: <?=iro_opt('drop_down_arrow_dark_color'); ?> !important;transition: all 0.8s ease;}
 
 /*深色模式图像亮度*/
 body.dark img,
@@ -984,8 +983,8 @@ li.link-item {
     max-width: 32%;
     top: 10px;
     flex-direction: column;
-    transition: all 0.8s ease !important;
-    -webkit-transition: all 0.8s ease !important;
+    transition: all 0.8s ease;
+    -webkit-transition: all 0.8s ease;
 }
 
 }
@@ -999,8 +998,8 @@ li.link-item {
     max-width: 32%;
     top: 10px;
     flex-direction: column;
-    transition: all 0.8s ease !important;
-    -webkit-transition: all 0.8s ease !important;
+    transition: all 0.8s ease;
+    -webkit-transition: all 0.8s ease;
 }
 
 }
