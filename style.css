@@ -5901,13 +5901,12 @@ object {
 
 .shuoshuo-item {
   border-radius: 10px;
-  padding: 10px;
   margin: 20px 0 20px;
   box-shadow: 0 1px 30px -4px var(--post-list-thumb);
   content-visibility: auto;
   contain-intrinsic-size: auto none;
   will-change: transform;
-  border: 1px solid var(--theme-skin-matching);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   width: 100%;
   float: left;
 }
@@ -5920,16 +5919,28 @@ object {
   color: var(--theme-skin-matching);
 }
 
+.shuoshuo-background{
+  float: inherit;
+  position: absolute;
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
 .shuoshuo-content-wrapper{
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 1px 30px -4px var(--post-list-thumb);
+  background-color: #ffffffcc;
   content-visibility: auto;
   contain-intrinsic-size: auto none;
   will-change: transform;
-  border: 1px solid var(--theme-skin-matching);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   width: 100%;
   float: left;
+  backdrop-filter: blur(10px);
 }
 
 .shuoshuo-avatar {
