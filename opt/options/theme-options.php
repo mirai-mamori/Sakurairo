@@ -2892,55 +2892,10 @@ $prefix = 'iro_options';
         'default' => '40'
       ),
 
-      array(
-        'type' => 'subheading',
-        'content' => __('ShuoShuo Template Settings','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'shuoshuo_background_color1',
-        'type' => 'color',
-        'title' => __('Ideas Template Background ColorⅠ','sakurairo_csf'),
-        'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => 'rgba(255,224,102,0.2)'
-      ),    
-
-      array(
-        'id' => 'shuoshuo_background_color2',
-        'type' => 'color',
-        'title' => __('Ideas Template Background Color II','sakurairo_csf'),
-        'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => 'rgba(255,204,0,0.2)'
-      ),    
-
-      array(
-        'id' => 'shuoshuo_arrow',
-        'type' => 'switcher',
-        'title' => __('Ideas Template Tip Arrow','sakurairo_csf'),
-        'label' => __('After turning on the alert arrow will appear on the left side of the comment','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
-        'id' => 'shuoshuo_font',
-        'type' => 'text',
-        'title' => __('Ideas Template Font','sakurairo_csf'),
-        'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
-        'default' => 'Noto Serif SC'
-      ),
-
-      array(
-        'id' => 'shuoshuo_per_page',
-        'type' => 'text',
-        'title' => __('Number Of ShuoShuo','sakurairo_csf'),
-        'desc' => __('Enter a positive integer or "-1" to control the number of ShuoShuo displayed on each page. Enter "-1" to display all messages.','sakurairo_csf'),
-        'default'     => '5'
-      ),
-
-      array(
-        'type' => 'subheading',
-        'content' => __('Bangumi Template Settings','sakurairo_csf'),
-      ),
+    array(
+      'type' => 'subheading',
+      'content' => __('Bangumi Template Settings','sakurairo_csf'),
+    ),
 
 	  array(
 		'id' => 'bangumi_source',
