@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Akina
+ * @package Sakurairo
  */
 
 $mashiro_logo = iro_opt('mashiro_logo');
