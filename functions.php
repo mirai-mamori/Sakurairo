@@ -263,7 +263,8 @@ function shuoshuo_custom_init()
             'editor',
             'comments',
             'thumbnail',
-            'author'
+            'author',
+            'custom-fields' // Added support for custom fields
         )
     );
     register_post_type('shuoshuo', $args);

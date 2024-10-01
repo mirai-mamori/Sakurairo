@@ -116,24 +116,35 @@ if ($combined_query->have_posts()) :
 		if ($post_type == 'shuoshuo') {
 			// shuoshuo 样式
 			?>
-	<article class="shuoshuo-item">
-		<a href="<?php the_permalink(); ?>">
-			<div class="shuoshuo-avatar">
+<article class="shuoshuo-item">
+	<div class="shuoshuo-content-wrapper">
+		<div class="shuoshuo-avatar">
+			<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
 				<img src="<?php echo get_avatar_profile_url(get_the_author_meta('ID')); ?>" class="avatar avatar-48" width="48" height="48">
-			</div>
-			<div class="shuoshuo-wrapper">
-				<div class="shuoshuo-meta">
-					<span class="shuoshuo-author-name"><?php the_author(); ?> </span>
-					<span class="shuoshuo-title"><h3><?php the_title(); ?> </h3></span>
+			</a>
+		</div>
+		<div class="shuoshuo-wrapper">
+			<div class="shuoshuo-meta">
+				<span class="shuoshuo-author-name">
+					<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+						<?php the_author(); ?>
+					</a>
+				</span>
+				<span class="shuoshuo-title"><h3><?php the_title(); ?> </h3></span>
+				<?php if (get_comments_number() > 0) : ?>
 					<span class="shuoshuo-comments"><i class="fa-regular fa-comment"></i> <?php comments_number('0', '1', '%'); ?> </span>
-					<span class="shuoshuo-date"><i class="fa-regular fa-clock"> </i> <?php the_time('Y-n-j G:i'); ?> </span>
-				</div>
+				<?php endif; ?>
+				<span class="shuoshuo-date"><i class="fa-regular fa-clock"> </i> <?php the_time('Y-n-j G:i'); ?> </span>
+			</div>
+			<a href="<?php the_permalink(); ?>" class="shuoshuo-content-link">
 				<div class="shuoshuo-content">
 					<?php the_content(); ?>
 				</div>
-			</div>
-		</a>
-	</article>
+			</a>
+		</div>
+	</div>
+</article>
+
 			<?php
 		} else {
 			// 原文章样式

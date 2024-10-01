@@ -5906,9 +5906,30 @@ object {
   box-shadow: 0 1px 30px -4px var(--post-list-thumb);
   content-visibility: auto;
   contain-intrinsic-size: auto none;
-  background-color: rgba(255, 255, 255, 0.6);
   will-change: transform;
   border: 1px solid var(--theme-skin-matching);
+  width: 100%;
+  float: left;
+}
+
+.shuoshuo-item a{
+  color: rgba(0, 0, 0, .66);
+}
+
+.shuoshuo-item a:hover{
+  color: var(--theme-skin-matching);
+}
+
+.shuoshuo-content-wrapper{
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 1px 30px -4px var(--post-list-thumb);
+  content-visibility: auto;
+  contain-intrinsic-size: auto none;
+  will-change: transform;
+  border: 1px solid var(--theme-skin-matching);
+  width: 100%;
+  float: left;
 }
 
 .shuoshuo-avatar {
@@ -5918,8 +5939,8 @@ object {
 
 .shuoshuo-avatar img {
   border-radius: 50%;
-  border: 1.5px solid #ffffff50;
-  box-shadow: 0 1px 30px -4px #e8e8e8;
+  border: 2px solid #ffffff30;
+  box-shadow: 0 1px 30px -4px #dadada;
 }
 
 .shuoshuo-wrapper {
@@ -5953,9 +5974,14 @@ object {
 }
 
 .shuoshuo-comments, .shuoshuo-date {
-  color: rgba(0, 0, 0, .66);
+  color: #ababab;
   font-size: 0.9em;
   margin-top: 3px;
+}
+
+.shuoshuo-comments i, .shuoshuo-date i{
+  font-size: 1em;
+  margin-right: 2px;
 }
 
 .shuoshuo-content {
