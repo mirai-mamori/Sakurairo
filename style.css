@@ -108,7 +108,7 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   height: 300px;
   position: relative;
   display: flex;
-  margin: 20px 0 20px;
+  margin: 15px 0 15px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0);
   box-shadow: 0 1px 30px -4px #e8e8e8;
@@ -1231,7 +1231,13 @@ input[type=week] {
   animation: post-list-show .5s;
   -webkit-animation: post-list-show .5s;
   opacity: 1;
-  background-color: rgba(255, 255, 255, .90);
+  background-color: rgba(255, 255, 255, .80);
+  transition: all 0.8s ease;
+  -webkit-transition: all 0.8s ease;
+}
+
+.post-list-show:hover{
+  background: rgba(255, 255, 255, 1);
   transition: all 0.8s ease;
   -webkit-transition: all 0.8s ease;
 }
@@ -5905,7 +5911,7 @@ object {
 
 .shuoshuo-item {
   border-radius: 10px;
-  margin: 20px 0 20px;
+  margin: 15px 0 15px;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background-color: rgba(255, 255, 255, 0.7);
   content-visibility: auto;
@@ -5939,7 +5945,6 @@ object {
 }
 
 .shuoshuo-content-wrapper{
-  border-radius: 10px;
   padding: 1%;
   width: 100%;
   float: left;
@@ -10925,7 +10930,13 @@ body.dark .post-excerpt i{
 }
 
 body.dark .post-list-show {
-  background: rgb(26 26 26 / 50%) !important;
+  background: rgb(26 26 26 / 70%) !important;
+  transition: all 0.8s ease;
+  -webkit-transition: all 0.8s ease;
+}
+
+body.dark .post-list-show:hover{
+  background: rgb(26 26 26 / 90%) !important;
   transition: all 0.8s ease;
   -webkit-transition: all 0.8s ease;
 }
@@ -11066,14 +11077,14 @@ body.dark .entry-content code:not(pre code) {
 
 body.dark .shuoshuo-item {
   box-shadow: 0 1px 35px -8px rgba(26, 26, 26, 0.6);
-  background: rgba(51, 51, 51, 0.7);
+  background: rgb(26 26 26 / 60%);
   border: 1px solid #7d7d7d30;
   transition: all 0.8s ease;
   -webkit-transition: all 0.8s ease;
 }
 
 body.dark .shuoshuo-item:hover {
-  background: rgba(51, 51, 51, 0.9);
+  background: rgb(26 26 26 / 80%);
   box-shadow: 0 1px 20px 0px var(--theme-skin-matching);
   transition: all 0.8s ease;
   -webkit-transition: all 0.8s ease;

@@ -1179,6 +1179,7 @@ body.dark .post-title:hover{
 }
 <?php endif; ?>
 
+.shuoshuo-item,
 .post-list-thumb {
     border-radius: <?=iro_opt('post_list_card_radius'); ?>px !important;
 }
