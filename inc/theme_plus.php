@@ -591,11 +591,19 @@ function siren_auto_link_nofollow( $content ) {
 // 图片自动加标题
 add_filter('the_content', 'siren_auto_images_alt');
 function siren_auto_images_alt($content) {
-  global $post;
-  $pattern ="/<a(.*?)href=('|\")(.*?).(bmp|gif|jpeg|jpg|png)('|\")(.*?)>/i";
-  $replacement = '<a$1href=$2$3.$4$5 alt="'.$post->post_title.'" title="'.$post->post_title.'"$6>';
-  $content = preg_replace($pattern, $replacement, $content);
-  return $content;
+    global $post;
+    $post_title = $post ? $post->post_title : '默认标题'; // 检查 $post 是否为空
+
+    // 优化正则表达式
+    $pattern = '/<a([^>]*?)href=(["\'])([^"\']*?\.(?:bmp|gif|jpeg|jpg|png))\2([^>]*?)>/i';
+    $replacement = '<a$1href=$2$3$2 alt="' . esc_attr($post_title) . '" title="' . esc_attr($post_title) . '"$4>';
+
+    // 使用 preg_replace_callback 以提高性能
+    $content = preg_replace_callback($pattern, function($matches) use ($post_title) {
+        return '<a' . $matches[1] . 'href=' . $matches[2] . $matches[3] . $matches[2] . ' alt="' . esc_attr($post_title) . '" title="' . esc_attr($post_title) . '"' . $matches[4] . '>';
+    }, $content);
+
+    return $content;
 }
 
 // 分类页面全部添加斜杠，利于SEO
