@@ -52,6 +52,7 @@ function render_article_meta() {
 }
 
 function get_post_cover_html() {
+    global $post;
     $use_as_thumb = get_post_meta(get_the_ID(), 'use_as_thumb', true); //'true','only',(default)
     $cover_type = ($use_as_thumb == 'true' || $use_as_thumb == 'only') ? get_post_meta(get_the_ID(), 'cover_type', true) : '';
     $cover_html = "";

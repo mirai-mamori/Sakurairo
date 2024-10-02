@@ -15,6 +15,9 @@ function get_entry_census_meta_html($has_splitter)
 {
     $post = get_post();
     $meta_display = iro_opt("article_meta_show_in_head", array("last_edit_time_relative", "post_views"));
+    if (!is_array($meta_display) && !is_object($meta_display)) {
+        $meta_display = array("last_edit_time_relative", "post_views");
+    }
     foreach ($meta_display as $meta_key) {
         $content = false;
         switch ($meta_key) {
