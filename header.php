@@ -112,7 +112,7 @@ header('X-XSS-Protection: 1; mode=block');
 				<?php } else { ?>
 					<span class="site-title">
 						<span class="logolink moe-mashiro">
-							<a href="<?= esc_url(bloginfo('url')); ?>">
+						    <a href="<?= bloginfo('url'); ?>">
 								<ruby>
 									<span class="sakuraso"><?= esc_html($mashiro_logo['text_a'] ?? ""); ?></span>
 									<span class="no"><?= esc_html($mashiro_logo['text_b'] ?? ""); ?></span>
