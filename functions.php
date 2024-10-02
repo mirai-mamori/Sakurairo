@@ -2012,12 +2012,18 @@ function change_avatar($avatar)
             preg_match('/:\"([^\"]*)\"/i', $qqavatar, $matches);
             return '<img src="' . $matches[1] . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
         }
-        $iv = str_repeat($sakura_privkey, 2);
+        
+        // 生成一个合适长度的初始化向量
+        $iv_length = openssl_cipher_iv_length('aes-128-cbc');
+        $iv = openssl_random_pseudo_bytes($iv_length);
+        
+        // 加密数据
         $encrypted = openssl_encrypt($qq_number, 'aes-128-cbc', $sakura_privkey, 0, $iv);
-
-        $encrypted = urlencode(base64_encode($encrypted));
+        
+        // 将初始化向量和加密数据一起编码
+        $encrypted = urlencode(base64_encode($iv . $encrypted));
+        
         return '<img src="' . rest_url("sakura/v1/qqinfo/avatar") . '?qq=' . $encrypted . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
-
     }
     return $avatar;
 }

@@ -146,7 +146,7 @@ color: <?=$text_logo['color']; ?> ;
 font-size: <?=$text_logo['size']; ?>px;
 }
 .Ubuntu-font,.center-text{
-font-family: <?=$text_logo['font']; ?> ;
+font-family: <?= isset($text_logo['font']) ? $text_logo['font'] : 'Noto Serif SC'; ?> ;
 }
 
 .notice i ,
