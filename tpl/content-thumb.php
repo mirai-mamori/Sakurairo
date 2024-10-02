@@ -10,7 +10,7 @@
 $i = 0;
 
 function render_meta_views() {
-    ?><span><i class="fa-regular fa-eye"></i><?= get_post_views(get_the_ID()) . ' ' . _n('Hit', 'Hits', get_post_views(get_the_ID()), 'sakurairo')/*热度*/ ?></span><?php
+    ?><span><i class="fa-regular fa-eye"></i><?= esc_html(get_post_views(get_the_ID()) . ' ' . _n('Hit', 'Hits', get_post_views(get_the_ID()), 'sakurairo'))/*热度*/ ?></span><?php
 }
 
 // @related inc/post-metadata.php
@@ -37,14 +37,14 @@ function render_article_meta() {
                 require_once get_stylesheet_directory() . '/tpl/meta-words-count.php';
                 $str = get_meta_words_count();
                 if ($str) {
-                    ?><span><i class="fa-regular fa-pen-to-square"></i><?= $str ?></span><?php
+                    ?><span><i class="fa-regular fa-pen-to-square"></i><?= esc_html($str) ?></span><?php
                 }
                 break;
             case "reading_time":
                 require_once get_stylesheet_directory() . '/tpl/meta-ert.php';
                 $str = get_meta_estimate_reading_time();
                 if ($str) {
-                    ?><span title="<?= __("Estimate Reading Time", "sakurairo") ?>"><i class="fa-solid fa-hourglass"></i><?= $str ?></span><?php
+                    ?><span title="<?= esc_attr(__("Estimate Reading Time", "sakurairo")) ?>"><i class="fa-solid fa-hourglass"></i><?= esc_html($str) ?></span><?php
                 }
             default:
         }
@@ -58,13 +58,13 @@ function get_post_cover_html() {
     switch ($cover_type) {
         case 'hls':
             $video_cover = get_post_meta(get_the_ID(), 'video_cover', true);
-            $cover_html = '<video class="hls" poster="' . iro_opt('load_out_svg') . '#lazyload-blur" src="' . $video_cover . '" loop muted="true" disablePictureInPicture disableRemotePlayback playsinline>'
+            $cover_html = '<video class="hls" poster="' . esc_url(iro_opt('load_out_svg')) . '#lazyload-blur" src="' . esc_url($video_cover) . '" loop muted="true" disablePictureInPicture disableRemotePlayback playsinline>'
                 . __('Your browser does not support HTML5 video.', 'sakurairo')
                 . '</video>';
             break;
         case 'normal':
             $video_cover = get_post_meta(get_the_ID(), 'video_cover', true);
-            $cover_html = '<video class="lazyload" poster="' . iro_opt('load_out_svg') . '#lazyload-blur" data-src="' . $video_cover . '" autoplay loop muted="true" disablePictureInPicture disableRemotePlayback playsinline>'
+            $cover_html = '<video class="lazyload" poster="' . esc_url(iro_opt('load_out_svg')) . '#lazyload-blur" data-src="' . esc_url($video_cover) . '" autoplay loop muted="true" disablePictureInPicture disableRemotePlayback playsinline>'
                 . __('Your browser does not support HTML5 video.', 'sakurairo')
                 . '</video>';
             break;
@@ -86,7 +86,7 @@ function get_post_cover_html() {
             } else {
                 $post_img = DEFAULT_FEATURE_IMAGE('th');
             }
-            $cover_html = '<img alt="post_img" class="lazyload" src="' . iro_opt('load_out_svg') . '#lazyload-blur" data-src="' . $post_img . '"/>';
+            $cover_html = '<img alt="post_img" class="lazyload" src="' . esc_url(iro_opt('load_out_svg')) . '#lazyload-blur" data-src="' . esc_url($post_img) . '"/>';
             break;
     }
     return $cover_html;
@@ -123,15 +123,16 @@ if ($combined_query->have_posts()) :
             if (empty($emotion_color)) {
                 $emotion_color = iro_opt('theme_skin_matching'); 
             }
+            $unique_id = 'shuoshuo-' . get_the_ID();
             ?>
-            <article class="shuoshuo-item">
+            <article class="shuoshuo-item" id="<?php echo esc_attr($unique_id); ?>">
                 <div class="shuoshuo-content-wrapper">
                     <div class="shuoshuo-avatar">
-                        <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
-                            <img src="<?php echo get_avatar_profile_url(get_the_author_meta('ID')); ?>" class="avatar avatar-48" width="48" height="48">
+                        <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>">
+                            <img src="<?php echo esc_url(get_avatar_profile_url(get_the_author_meta('ID'))); ?>" class="avatar avatar-48" width="48" height="48">
                         </a>
                         <style>
-                            .shuoshuo-avatar::after {
+                            #<?php echo esc_attr($unique_id); ?> .shuoshuo-avatar::after {
                                 content: "<?php echo esc_attr($emotion); ?>";
                                 font-family:'FontAwesome';
                                 position: absolute;
@@ -148,7 +149,7 @@ if ($combined_query->have_posts()) :
                     <div class="shuoshuo-wrapper">
                         <div class="shuoshuo-meta">
                             <span class="shuoshuo-author-name">
-                                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+                                <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>">
                                     <?php the_author(); ?>
                                 </a>
                             </span>
@@ -177,14 +178,14 @@ if ($combined_query->have_posts()) :
             $ai_excerpt = get_post_meta($post->ID, POST_METADATA_KEY, true);
             $excerpt = has_excerpt();
             ?>
-            <article class="post post-list-thumb <?php echo $class; ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
+            <article class="post post-list-thumb <?php echo esc_attr($class); ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
                 <div class="post-thumb">
                     <a href="<?php the_permalink(); ?>">
                         <?php echo $cover_html; ?>
                     </a>
                 </div><!-- thumbnail-->
                 <div class="post-date">
-                    <i class="fa-regular fa-clock"></i><?= poi_time_since(strtotime($post->post_date)) ?>
+                    <i class="fa-regular fa-clock"></i><?= esc_html(poi_time_since(strtotime($post->post_date))) ?>
                     <?php if (is_sticky()) : ?>
                         &nbsp;<div class="post-top"><i class="fa-solid fa-chess-queen"></i><?php _e("Sticky", "sakurairo") ?></div>
                     <?php endif ?>
