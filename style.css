@@ -2750,22 +2750,6 @@ h1.main-title {
   -ms-transform: rotate(360deg);
 }
 
-.focusinfo .header-tou .signature {
-  position: relative;
-  right: -35px;
-  bottom: 50px;
-  display: block;
-  margin: 0;
-  width: fit-content;
-  font-size: 30px;
-  font-weight: 900;
-  font-style: italic;
-  transform: skew(20deg, -25deg);
-  opacity: 0; 
-  overflow: hidden;
-  white-space: nowrap;
-}
-
 .bio-text {
   position: relative;
   width: auto;
@@ -4824,64 +4808,6 @@ td.hljs-ln-numbers {
   background: rgba(255, 255, 255, 0.8);
   transition: all 0.8s ease;
   -webkit-transition: all 0.8s ease;
-}
-
-.footer-shuo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  text-align: center;
-  padding: 5px;
-  margin: 5px;
-  position: relative;
-  flex-grow: 1;
-  background-color: rgb(255 255 255 / 80%);
-  box-shadow: 0 1px 30px -4px #e8e8e8;
-  border-radius: var(--style_menu_selection_radius, 20%);
-  min-width: 255px;
-  max-width: 385px;
-  transition: all 0.8s ease;
-  border: 1px solid #ffffff;
-  align-items: flex-end;
-  flex-direction: column;
-}
-
-.footer-shuo:hover {
-  box-shadow: 0 1px 20px 10px #e8e8e8;
-  background: rgba(255, 255, 255, 0.8);
-  transition: all 0.8s ease;
-  -webkit-transition: all 0.8s ease;
-}
-
-.footer-shuo::before {
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: var(--theme-skin-matching);
-  border-radius: 50%;
-  left: 20px;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.footer-shuo p{
-  font-size: 18px;
-  font-weight: 300;
-  margin: 10px 0px;
-  line-height: 1.4;
-  word-wrap: normal;
-  word-break: break-all;
-  font-family: 'Noto Serif SC';
-  font-style: italic;
-  padding: 0.1em 0.7em 0.4em 2.1em;
-  flex: 1;
-}
-
-.footer-shuotime {
-  padding: .1em 0.7em .4em 0.7em !important;
-  font-size: 14px !important;
-  margin: 2px 0px !important;
 }
 
 .footer-device a{
@@ -10231,8 +10157,7 @@ body.dark span.sitename {
 }
 
 body.dark .skin-menu .row-container .menu-list,
-body.dark .skin-menu .row-container.font-family-controls,
-body.dark .footer-shuo {
+body.dark .skin-menu .row-container.font-family-controls {
   box-shadow: 0 1px 20px 2px rgba(26, 26, 26, 0.8);
   background: rgba(26, 26, 26, 0.6);
   transition: all 0.8s ease;
@@ -10241,8 +10166,7 @@ body.dark .footer-shuo {
 }
 
 body.dark .skin-menu .row-container .menu-list:hover,
-body.dark .skin-menu .row-container.font-family-controls:hover,
-body.dark .footer-shuo:hover {
+body.dark .skin-menu .row-container.font-family-controls:hover {
   box-shadow: 0 1px 30px -2px rgba(26, 26, 26, 0.95);
   background: rgba(26, 26, 26, 0.8);
   transition: all 0.8s ease;
@@ -10262,10 +10186,6 @@ body.dark .widget-area:hover {
   background: rgba(26, 26, 26, 0.8);
   transition: all 0.8s ease;
   -webkit-transition: all 0.8s ease;
-}
-
-body.dark .footer-shuo::before {
-  background-color: var(--theme-skin-dark);
 }
 
 body.dark button {

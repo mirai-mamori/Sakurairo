@@ -1,7 +1,6 @@
 <?php
 include(get_stylesheet_directory().'/layouts/all_opt.php');
 $text_logo = iro_opt('text_logo');
-$signature = iro_opt('personal_signature');
 $print_social_zone = function() use ($all_opt,$social_display_icon):void{
     // 左箭头
     if (iro_opt('cover_random_graphs_switch', 'true')):?>
@@ -60,7 +59,6 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
                     <?php echo $text_logo['text']; ?></h1>
             <?php else : ?>
                 <div class="header-tou"><a href="<?php bloginfo('url'); ?>"><img alt="avatar" loading="lazy" src="<?=iro_opt('personal_avatar', '') ?: iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.7/').'series/avatar.webp'?>"></a>
-                <span class="signature"><?php echo $signature['text']; ?></span>
             </div>
             <?php endif; ?>
             <div class="header-container">

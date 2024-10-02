@@ -73,40 +73,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'        => 'personal_signature',
-        'type'      => 'fieldset',
-        'title'     => __('Personal Signature Options','sakurairo_csf'),
-        'fields'    => array(
-          array(
-            'id'     => 'text',
-            'type'   => 'text',
-            'title'  => __('Text','sakurairo_csf'),
-            'desc'   => __('The text content should not be too long, and the recommended length is 8 bytes.','sakurairo_csf'),
-          ),
-          array(
-            'id'     => 'font',
-            'type'   => 'text',
-            'title'  => __('Font','sakurairo_csf'),
-            'desc'   => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
-          ),
-          array(
-            'id'      => 'customization',
-            'type'    => 'code_editor',
-            'title'   => __('Customization','sakurairo_csf'),
-            'desc'    => __('Customize the signature style','sakurairo_csf'),
-          ),      
-        ),
-        'default'        => array(
-          'text'    => 'furina',
-          'customizationr'    => '
-          background: linear-gradient(to right, #C0C0C0, #FFFFFF, #C0C0C0);
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;',
-        ),
-      ),
-
-      array(
         'id'    => 'text_logo_options',
         'type'  => 'switcher',
         'title' => __('Mashiro Special Effects Text','sakurairo_csf'),
@@ -671,14 +637,6 @@ $prefix = 'iro_options';
         'type' => 'switcher',
         'title' => __('Widgets Panel WP Widget Area','sakurairo_csf'),
         'label' => __('When turned on, the WP Widget Area will be displayed in Widgets Panel','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
-        'id' => 'widget_shuo',
-        'type' => 'switcher',
-        'title' => __('Widgets Panel Shuoshuo','sakurairo_csf'),
-        'label' => __('When turned on, the Latest Shuoshuo text will be displayed in Widgets Panel','sakurairo_csf'),
         'default' => false
       ),
 

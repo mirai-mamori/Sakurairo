@@ -103,23 +103,6 @@ $reception_background = iro_opt('reception_background');
       </div>
     </aside>
   <?php endif; ?>
-  <?php if (iro_opt('widget_shuo', 'true')): ?>    
-    <?php
-    $args = [
-      'post_type' => 'shuoshuo',
-      'post_status' => 'publish',
-      'posts_per_page' => 1
-    ];
-    $shuoshuo_query = new WP_Query($args);
-    ?>
-    <?php while ($shuoshuo_query->have_posts()): $shuoshuo_query->the_post(); ?>
-      <div class="footer-shuo">
-        <p><?php echo esc_html(strip_tags(get_the_content())); ?></p>
-        <p class="footer-shuotime"><i class="fa-regular fa-clock"></i> <?php the_time('Y/n/j G:i'); ?></p>
-      </div>
-    <?php endwhile; ?>
-    <?php wp_reset_postdata(); ?>
-  <?php endif; ?>  
   <div class="theme-controls row-container">
     <?php if (iro_opt('widget_daynight', 'true')): ?>
       <ul class="menu-list">
