@@ -540,7 +540,7 @@ border-radius: <?=iro_opt('avatar_radius'); ?>px;
     width: 20%;
     height: 10px;
     z-index: 1;
-    background-color: <?=iro_opt('theme_skin_matching'); ?>52;
+    background-color: <?=iro_opt('theme_skin_matching'); ?>70;
     animation: lineWidth 2s <?=iro_opt('page_title_animation_time'); ?>s forwards;
     opacity: 0;
 }

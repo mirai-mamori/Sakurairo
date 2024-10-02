@@ -99,7 +99,8 @@ $args = array(
     'post_status' => 'publish',
     'posts_per_page' => -1, // No limit on the number of posts per page
     'orderby' => 'post_date',
-    'order' => 'DESC'
+    'order' => 'DESC',
+    'author' => get_the_author_meta('ID') // 只获取当前作者的文章
 );
 
 $combined_query = new WP_Query($args);

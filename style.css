@@ -5876,6 +5876,10 @@ object {
   -webkit-transition: all 0.8s ease;
 }
 
+.shuoshuo-comments {
+  margin-right: 6px;
+}
+
 .shuoshuo-info {
   right: 3.5%;
   position: absolute;
