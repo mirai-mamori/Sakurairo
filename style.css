@@ -5213,88 +5213,6 @@ input#wp-comment-cookies-consent {
   margin-top: -20px;
 }
 
-.cbp_tmtimeline {
-  margin: 30px 0 0 0;
-  padding: 0;
-  list-style: none;
-  position: relative;
-}
-
-.cbp_tmlabel .entry-content h1::before,
-.cbp_tmlabel .entry-content h2::before,
-.cbp_tmlabel .entry-content h3::before,
-.cbp_tmlabel .entry-content h4::before,
-.cbp_tmlabel .entry-content h5::before,
-.cbp_tmlabel .entry-content h6::before {
-  display: none;
-}
-
-.cbp_tmlabel .entry-content blockquote {
-  margin: 28px 0 0 0;
-  padding: 30px 60px;
-  position: relative;
-  quotes: "" "";
-}
-
-.cbp_tmtimeline:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: RGBA(0, 0, 0, 0.02);
-  left: 80px;
-  margin-left: 10px;
-}
-
-.cbp_tmtimeline>li .cbp_tmtime {
-  /* width:29%;*/
-  /* padding-right:110px;*/
-  display: block;
-  max-width: 70px;
-  position: absolute;
-}
-
-.cbp_tmtimeline>li .cbp_tmlabel {
-  margin: 0 0 45px 65px;
-  background: var(--shuoshuo_background_color2);
-  color: #505050;
-  padding: .4em 1.2em .4em 1.2em;
-  font-size: 18px;
-  font-weight: 300;
-  position: relative;
-  border-radius: 15px;
-  transition: all 0.3s ease 0s;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  display: block;
-}
-
-.cbp_tmtimeline>li .cbp_tmlabel p{
-  line-height: 25px !important;
-}
-
-.cbp_tmlabel:hover {
-  /* transform:scale(1.05);*/
-  transform: translateY(-3px);
-  z-index: 1;
-  -webkit-box-shadow: 0 15px 32px rgba(0, 0, 0, 0.15) !important;
-  box-shadow: 0 15px 32px rgba(0, 0, 0, 0.15) !important;
-}
-
-.cbp_tmtimeline>li .cbp_tmlabel:after {
-  right: 100%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-right-color: var(--shuoshuo_background_color2);
-  border-width: 10px;
-  top: 15px;
-}
-
 .shuoshuo_author_img img {
   border: 1px solid #ddd;
   float: left;
@@ -5547,8 +5465,7 @@ fieldset {
 }
 
 td,
-th,
-ul.cbp_tmtimeline {
+th{
   padding: 0;
 }
 
@@ -5923,6 +5840,8 @@ object {
   transition: all 0.8s ease;
   -webkit-transition: all 0.8s ease;
   position: relative;
+  animation: post-list-show .5s;
+  -webkit-animation: post-list-show .5s;
 }
 
 .shuoshuo-item:hover{
@@ -6584,12 +6503,6 @@ a.page-numbers {
 .comment .body .comment-at {
   color: var(--theme-skin, #505050);
   text-decoration: none;
-}
-
-.comment .body>:last-child,
-div class.cdp_tmlabel>li .cbp_tmlabel,
-div.cbp_tmlabel>p {
-  margin-bottom: 0;
 }
 
 .comment .profile {
@@ -8021,38 +7934,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
 
 .comment-form-cookies-consent label {
   vertical-align: middle;
-}
-
-body.theme-dark .cbp_tmtimeline::before {
-  background: RGBA(255, 255, 255, 0.06);
-}
-
-.cbp_tmtimeline>li .cbp_tmtime span {
-  display: block;
-  text-align: right;
-}
-
-.cbp_tmtimeline>li .cbp_tmtime span:first-child {
-  font-size: 0.9em;
-  color: #bdd0db;
-}
-
-.cbp_tmtimeline>li .cbp_tmtime span:last-child {
-  font-size: 1.2em;
-  color: #9BCD9B;
-}
-
-.cbp_tmtimeline>li:nth-child(odd) .cbp_tmtime span:last-child {
-  color: RGBA(255, 125, 73, 0.75);
-}
-
-.cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel {
-  background: var(--shuoshuo_background_color1);
-}
-
-.cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after {
-  border-right-color: var(--shuoshuo_background_color1);
-  top: 15px;
 }
 
 .shuoshuo_meta {
@@ -10144,12 +10025,6 @@ body.theme-dark .cbp_tmtimeline::before {
   }
 }
 
-@media screen and (max-width:65.375em) {
-  .cbp_tmtimeline>li .cbp_tmtime span:last-child {
-    font-size: 1.2em;
-  }
-}
-
 .entry-content h3:after,
 .entry-content h4:after,
 .entry-content h5:after {
@@ -10538,11 +10413,6 @@ body.dark .entry-content h4,
 body.dark .entry-content h5,
 body.dark .entry-content h6 {
   color: #CCCCCC;
-}
-
-body.dark .cbp_tmtimeline>li .cbp_tmlabel p{
-  color: #cccccc!important;
-  transition: all 0.8s ease;
 }
 
 body.dark .site-header.yya {
@@ -10950,14 +10820,6 @@ body.dark #changskin:hover {
   box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
   background: rgba(26, 26, 26, 0.8);
   color: var(--theme-skin-dark);
-}
-
-body.dark li .cbp_tmlabel {
-  color: #CCCCCC !important;
-}
-
-body.dark li .cbp_tmlabel:after {
-  display: none;
 }
 
 body.dark .header-info,
