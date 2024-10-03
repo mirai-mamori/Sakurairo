@@ -361,7 +361,7 @@ body.dark input[type=submit]
 
 /*深色模式自定义颜色*/
 body.dark .headertop-down svg path 
-{fill: <?=iro_opt('drop_down_arrow_dark_color'); ?> !important;transition: all 0.8s ease;}
+{fill: <?=iro_opt('drop_down_arrow_dark_color'); ?> !important;transition: all 0.6s ease-in-out;}
 
 /*深色模式图像亮度*/
 body.dark img,
@@ -972,8 +972,8 @@ li.link-item {
     max-width: 32%;
     top: 10px;
     flex-direction: column;
-    transition: all 0.8s ease;
-    -webkit-transition: all 0.8s ease;
+    transition: all 0.6s ease-in-out;
+    -webkit-transition: all 0.6s ease-in-out;
 }
 
 }
@@ -987,8 +987,8 @@ li.link-item {
     max-width: 32%;
     top: 10px;
     flex-direction: column;
-    transition: all 0.8s ease;
-    -webkit-transition: all 0.8s ease;
+    transition: all 0.6s ease-in-out;
+    -webkit-transition: all 0.6s ease-in-out;
 }
 
 }
