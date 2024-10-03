@@ -457,7 +457,6 @@ cursor: url(<?=iro_opt('cursor_nor'); ?>), auto;
 }
 
 .headertop-down,
-#waifu #live2d,
 .aplayer svg,
 .aplayer.aplayer-narrow .aplayer-body,
 .aplayer.aplayer-narrow .aplayer-pic,
