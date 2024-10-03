@@ -1228,15 +1228,15 @@ input[type=week] {
 
 .post-list-show {
   display: flex;
-  animation: post-list-show .5s;
-  -webkit-animation: post-list-show .5s;
+  animation: homepage-load-animation .5s;
+  -webkit-animation: homepage-load-animation .5s;
   opacity: 1;
   background-color: rgba(255, 255, 255, .80);
   transition: all 0.6s ease-in-out;
   -webkit-transition: all 0.6s ease-in-out;
 }
 
-.post-list-show:hover{
+.homepage-load-animation:hover{
   background: rgba(255, 255, 255, 1);
   transition: all 0.6s ease-in-out;
   -webkit-transition: all 0.6s ease-in-out;
@@ -5719,8 +5719,8 @@ object {
   transition: all 0.6s ease-in-out;
   -webkit-transition: all 0.6s ease-in-out;
   position: relative;
-  animation: post-list-show .5s;
-  -webkit-animation: post-list-show .5s;
+  animation: homepage-load-animation .5s;
+  -webkit-animation: homepage-load-animation .5s;
 }
 
 .shuoshuo-item:hover{
@@ -7942,7 +7942,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   }
 }
 
-@keyframes post-list-show {
+@keyframes homepage-load-animation {
   0% {
     opacity: 0;
     -webkit-transform: translateY(80px);
