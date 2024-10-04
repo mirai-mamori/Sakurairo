@@ -1198,7 +1198,7 @@ input[type=week] {
   animation: post-list-show .5s;
   -webkit-animation: post-list-show .5s;
   opacity: 1;
-  background-color: rgba(255, 255, 255, .90);
+  background: var(--article-theme,rgb(26 26 26 / 50%)) !important;
   transition: all 0.8s ease !important;
   -webkit-transition: all 0.8s ease !important;
 }
