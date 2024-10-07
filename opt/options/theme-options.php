@@ -188,6 +188,14 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'extract_theme_skin_from_cover',
+        'type' => 'switcher',
+        'title' => __('Extract Theme Color from Cover Image','sakurairo_csf'),
+        'label' => __('Following options will be used as fallback (while cover image cannot be read by scripts)','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
         'id'      => 'theme_skin',
         'type'    => 'color',
         'title'   => __('Theme Color','sakurairo_csf'),

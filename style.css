@@ -10493,7 +10493,7 @@ body.dark .the-feature.from_left_and_right .info {
 }
 
 body.dark .post-list-thumb:hover {
-  box-shadow: 0 1px 20px 0px var(--theme-skin-matching);
+  box-shadow: 0 1px 20px 0px var(--article-theme-highlight,var(--theme-skin-matching));
 }
 
 body.dark .post-list-thumb i{
