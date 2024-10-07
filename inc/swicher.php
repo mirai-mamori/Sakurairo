@@ -67,7 +67,6 @@ function font_end_js_control()
         'qzone_autocomplete' => false,
         'site_name' => get_bloginfo('name'),
         'author_name' => iro_get_the_author_name(),
-        'template_url' => get_template_directory_uri(),
         'site_url' => site_url(),
         'qq_api_url' => rest_url('sakura/v1/qqinfo/json'),
         'land_at_home' => check(is_home()),
