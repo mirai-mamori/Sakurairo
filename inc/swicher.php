@@ -62,6 +62,7 @@ function font_end_js_control()
         'darkmode' => check(iro_opt('theme_darkmode_auto')),
         'email_domain' => iro_opt('email_domain', ''),
         'email_name' => iro_opt('email_name', ''),
+        'extract_theme_skin' => iro_opt('extract_theme_skin_from_cover', false)?true:false,
         'ext_shared_lib' => iro_opt('external_vendor_lib'),
         'cookie_version_control' => iro_opt('cookie_version', ''),
         'qzone_autocomplete' => false,
