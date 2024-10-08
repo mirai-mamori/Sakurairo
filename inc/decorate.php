@@ -20,10 +20,6 @@ if (iro_opt('theme_skin')) { ?>
     --style_menu_radius:<?=iro_opt('style_menu_radius', ''); ?>px;
     --friend-link-shadow: <?=iro_opt('friend_link_shadow_color'); ?>;
     --friend-link-title: <?=iro_opt('friend_link_title_matching_color'); ?>;
-    --comment_area_matching: <?=iro_opt('comment_area_matching_color'); ?>;
-    --comment_area_shadow: <?=iro_opt('comment_area_shadow_color'); ?>;
-    --shuoshuo_background_color1:<?=iro_opt('shuoshuo_background_color1');?>;
-    --shuoshuo_background_color2:<?=iro_opt('shuoshuo_background_color2');?>;
     --inline_code_background_color:<?=iro_opt('inline_code_background_color');?>;
     <?php //深色模式主题色 ?>
     --theme-skin-dark:  <?=iro_opt('theme_skin_dark'); ?>;
@@ -539,7 +535,7 @@ border-radius: <?=iro_opt('avatar_radius'); ?>px;
     width: 20%;
     height: 10px;
     z-index: 1;
-    background-color: <?=iro_opt('theme_skin_matching'); ?>70;
+    background-color: var(--article-theme-highlight,var(--theme-skin-matching));
     animation: lineWidth 2s <?=iro_opt('page_title_animation_time'); ?>s forwards;
     opacity: 0;
 }

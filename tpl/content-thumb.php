@@ -9,88 +9,94 @@
 
 $i = 0;
 
-function render_meta_views() {
-    ?><span><i class="fa-regular fa-eye"></i><?= esc_html(get_post_views(get_the_ID()) . ' ' . _n('Hit', 'Hits', get_post_views(get_the_ID()), 'sakurairo'))/*热度*/ ?></span><?php
+if (!function_exists('render_meta_views')) {
+    function render_meta_views() {
+        ?><span><i class="fa-regular fa-eye"></i><?= esc_html(get_post_views(get_the_ID()) . ' ' . _n('Hit', 'Hits', get_post_views(get_the_ID()), 'sakurairo'))/*热度*/ ?></span><?php
+    }
 }
 
 // @related inc/post-metadata.php
-function render_article_meta() {
-    $article_meta_display_options = iro_opt("article_meta_displays", array("post_views", "comment_count", "category"));
-    foreach ($article_meta_display_options as $key) {
-        switch ($key) {
-            case "author":
-                require_once get_stylesheet_directory() . '/tpl/meta-author.php';
-                render_author_meta();
-                break;
-            case "category":
-                require_once get_stylesheet_directory() . '/tpl/meta-category.php';
-                echo get_meta_category_html();
-                break;
-            case "comment_count":
-                require_once get_stylesheet_directory() . '/tpl/meta-comments.php';
-                render_meta_comments();
-                break;
-            case "post_views":
-                render_meta_views();
-                break;
-            case "post_words_count":
-                require_once get_stylesheet_directory() . '/tpl/meta-words-count.php';
-                $str = get_meta_words_count();
-                if ($str) {
-                    ?><span><i class="fa-regular fa-pen-to-square"></i><?= esc_html($str) ?></span><?php
-                }
-                break;
-            case "reading_time":
-                require_once get_stylesheet_directory() . '/tpl/meta-ert.php';
-                $str = get_meta_estimate_reading_time();
-                if ($str) {
-                    ?><span title="<?= esc_attr(__("Estimate Reading Time", "sakurairo")) ?>"><i class="fa-solid fa-hourglass"></i><?= esc_html($str) ?></span><?php
-                }
-            default:
+if (!function_exists('render_article_meta')) {
+    function render_article_meta() {
+        $article_meta_display_options = iro_opt("article_meta_displays", array("post_views", "comment_count", "category"));
+        foreach ($article_meta_display_options as $key) {
+            switch ($key) {
+                case "author":
+                    require_once get_stylesheet_directory() . '/tpl/meta-author.php';
+                    render_author_meta();
+                    break;
+                case "category":
+                    require_once get_stylesheet_directory() . '/tpl/meta-category.php';
+                    echo get_meta_category_html();
+                    break;
+                case "comment_count":
+                    require_once get_stylesheet_directory() . '/tpl/meta-comments.php';
+                    render_meta_comments();
+                    break;
+                case "post_views":
+                    render_meta_views();
+                    break;
+                case "post_words_count":
+                    require_once get_stylesheet_directory() . '/tpl/meta-words-count.php';
+                    $str = get_meta_words_count();
+                    if ($str) {
+                        ?><span><i class="fa-regular fa-pen-to-square"></i><?= esc_html($str) ?></span><?php
+                    }
+                    break;
+                case "reading_time":
+                    require_once get_stylesheet_directory() . '/tpl/meta-ert.php';
+                    $str = get_meta_estimate_reading_time();
+                    if ($str) {
+                        ?><span title="<?= esc_attr(__("Estimate Reading Time", "sakurairo")) ?>"><i class="fa-solid fa-hourglass"></i><?= esc_html($str) ?></span><?php
+                    }
+                default:
+            }
         }
     }
 }
 
-function get_post_cover_html() {
-    global $post;
-    $use_as_thumb = get_post_meta(get_the_ID(), 'use_as_thumb', true); //'true','only',(default)
-    $cover_type = ($use_as_thumb == 'true' || $use_as_thumb == 'only') ? get_post_meta(get_the_ID(), 'cover_type', true) : '';
-    $cover_html = "";
-    switch ($cover_type) {
-        case 'hls':
-            $video_cover = get_post_meta(get_the_ID(), 'video_cover', true);
-            $cover_html = '<video class="hls" poster="' . esc_url(iro_opt('load_out_svg')) . '#lazyload-blur" src="' . esc_url($video_cover) . '" loop muted="true" disablePictureInPicture disableRemotePlayback playsinline>'
-                . __('Your browser does not support HTML5 video.', 'sakurairo')
-                . '</video>';
-            break;
-        case 'normal':
-            $video_cover = get_post_meta(get_the_ID(), 'video_cover', true);
-            $cover_html = '<video class="lazyload" poster="' . esc_url(iro_opt('load_out_svg')) . '#lazyload-blur" data-src="' . esc_url($video_cover) . '" autoplay loop muted="true" disablePictureInPicture disableRemotePlayback playsinline>'
-                . __('Your browser does not support HTML5 video.', 'sakurairo')
-                . '</video>';
-            break;
-        default:
-            $post_img = '';
-            if (has_post_thumbnail()) {
-                $post_thumbnail_id = get_post_thumbnail_id($post->ID);
-                $large_image_url = wp_get_attachment_image_src($post_thumbnail_id, 'large');
-                if ($large_image_url == false) {
-                    $large_image_url = wp_get_attachment_image_src($post_thumbnail_id, 'medium');
+if (!function_exists('get_post_cover_html')) {
+    function get_post_cover_html() {
+        global $post;
+        $use_as_thumb = get_post_meta(get_the_ID(), 'use_as_thumb', true); //'true','only',(default)
+        $cover_type = ($use_as_thumb == 'true' || $use_as_thumb == 'only') ? get_post_meta(get_the_ID(), 'cover_type', true) : '';
+        $cover_html = "";
+        switch ($cover_type) {
+            case 'hls':
+                $video_cover = get_post_meta(get_the_ID(), 'video_cover', true);
+                $cover_html = '<video class="hls" poster="' . esc_url(iro_opt('load_out_svg')) . '#lazyload-blur" src="' . esc_url($video_cover) . '" loop muted="true" disablePictureInPicture disableRemotePlayback playsinline>'
+                    . __('Your browser does not support HTML5 video.', 'sakurairo')
+                    . '</video>';
+                break;
+            case 'normal':
+                $video_cover = get_post_meta(get_the_ID(), 'video_cover', true);
+                $cover_html = '<video class="lazyload" poster="' . esc_url(iro_opt('load_out_svg')) . '#lazyload-blur" data-src="' . esc_url($video_cover) . '" autoplay loop muted="true" disablePictureInPicture disableRemotePlayback playsinline>'
+                    . __('Your browser does not support HTML5 video.', 'sakurairo')
+                    . '</video>';
+                break;
+            default:
+                $post_img = '';
+                if (has_post_thumbnail()) {
+                    $post_thumbnail_id = get_post_thumbnail_id($post->ID);
+                    $large_image_url = wp_get_attachment_image_src($post_thumbnail_id, 'large');
                     if ($large_image_url == false) {
-                        $large_image_url = wp_get_attachment_image_src($post_thumbnail_id);
+                        $large_image_url = wp_get_attachment_image_src($post_thumbnail_id, 'medium');
                         if ($large_image_url == false) {
-                            $post_img = DEFAULT_FEATURE_IMAGE();
+                            $large_image_url = wp_get_attachment_image_src($post_thumbnail_id);
+                            if ($large_image_url == false) {
+                                $post_img = DEFAULT_FEATURE_IMAGE();
+                            }
                         }
                     }
+                    $post_img = $large_image_url[0] ?? DEFAULT_FEATURE_IMAGE('th');
+                } else {
+                    $post_img = DEFAULT_FEATURE_IMAGE('th');
                 }
-                $post_img = $large_image_url[0] ?? DEFAULT_FEATURE_IMAGE('th');
-            } else {
-                $post_img = DEFAULT_FEATURE_IMAGE('th');
-            }
-            $cover_html = '<img alt="post_img" class="lazyload" src="' . esc_url(iro_opt('load_out_svg')) . '#lazyload-blur" data-src="' . esc_url($post_img) . '"/>';
-            break;
+                $cover_html = '<img alt="post_img" class="lazyload" src="' . esc_url(iro_opt('load_out_svg')) . '#lazyload-blur" data-src="' . esc_url($post_img) . '"/>';
+                break;
+        }
+        return $cover_html;
     }
-    return $cover_html;
 }
 
 // Combine posts and shuoshuo

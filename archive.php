@@ -30,22 +30,24 @@ get_header(); ?>
 			<?php } // page-header 
 			?>
 
-			<?php
-			if (iro_opt('image_category') && is_category(explode(',', iro_opt('image_category')))) {
-				while (have_posts()) : the_post();
-					get_template_part('tpl/content', 'category');
-				endwhile;
+        <?php
+            if (iro_opt('image_category') && is_category(explode(',', iro_opt('image_category')))) {
+                while (have_posts()) : the_post();
+                    get_template_part('tpl/content', 'thumb');
+                endwhile;
 			} else {
+				while (have_posts()) : the_post();
 					get_template_part('tpl/content', 'thumb');
+				endwhile;
 			}
-			?>
-			<div class="clearer"></div>
+            ?>
+            <div class="clearer"></div>
 
-		<?php else :
+        <?php else :
 
-			get_template_part('tpl/content', 'none');
+            get_template_part('tpl/content', 'none');
 
-		endif; ?>
+        endif; ?>
 
 	</main><!-- #main -->
 	<?php if (iro_opt('pagenav_style') == 'ajax') { ?>

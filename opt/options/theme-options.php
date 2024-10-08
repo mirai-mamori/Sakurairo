@@ -3020,14 +3020,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'comment_area_matching_color',
-        'type' => 'color',
-        'title' => __('Page Comment Area Matching Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#6667ab'
-      ),  
-
-      array(
         'id' => 'comment_area_shadow_color',
         'type' => 'color',
         'title' => __('Page Comment Area Shadow Color','sakurairo_csf'),
