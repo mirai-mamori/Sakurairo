@@ -191,8 +191,8 @@ $prefix = 'iro_options';
         'id' => 'extract_theme_skin_from_cover',
         'type' => 'switcher',
         'title' => __('Extract Theme Color from Cover Image','sakurairo_csf'),
-        'label' => __('Following options will be used as fallback (while cover image cannot be read by scripts)','sakurairo_csf'),
-        'default' => false
+        'label' => __('Default on, Following options will be used as fallback (while cover image cannot be read by scripts)','sakurairo_csf'),
+        'default' => true
       ),
 
       array(
@@ -3017,14 +3017,6 @@ $prefix = 'iro_options';
           'fold' => __('Shrink','sakurairo_csf'),
         ),
         'default' => 'unfold'
-      ),
-
-      array(
-        'id' => 'comment_area_shadow_color',
-        'type' => 'color',
-        'title' => __('Page Comment Area Shadow Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#e8e8e8'
       ),
 
       array(
