@@ -2763,14 +2763,22 @@ h1.main-title {
   margin-bottom: -15px;
   list-style: none;
   display: inline-block;
+  transition: all 0.6s ease-in-out;
 }
 
 .top-social_v2 img,
-.top-social_v2 img {
+.top-social_v2 i {
   height: 35px;
   width: 35px;
   padding: 6px;
   background: 0 0;
+  transition: all 0.6s ease-in-out;
+}
+
+.top-social_v2 i {
+  font-size: 22px;
+  color: var(--theme-skin-matching);
+  transition: all 0.6s ease-in-out;
 }
 
 .wechatInner img {
@@ -10479,7 +10487,7 @@ body.dark .top-social img{
   border: 0.5px solid rgba(51,51,51,0.7);
 }
 
-body.dark .top-social i,
+body.dark .top-social i:hover,
 body.dark .top-social img:hover {
   box-shadow: 0 1px 30px 2px var(--theme-skin-dark) !important;
   background: rgba(51, 51, 51, 0.95);

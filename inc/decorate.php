@@ -345,16 +345,21 @@ html {
 /*深色模式控件透明度*/
 body.dark .header-info,
 body.dark .header-shuo,
-body.dark .top-social img,
+body.dark .top-social img
+{color:#fff;background:rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);transition: all 0.6s ease-in-out;}
+
+body.dark .top-social_v2 i
+{color:#ababab;transition: all 0.6s ease-in-out;}
+
 body.dark .top-social i
-{color:#fff;background:rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);}
+{color:#ababab;background:rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);transition: all 0.6s ease-in-out;}
 
 body.dark .the-feature.from_left_and_right .info
-{background-color: rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);}
+{background-color: rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);transition: all 0.6s ease-in-out;}
 
 body.dark .yya,
 body.dark input[type=submit] 
-{background-color:rgba(38,38,38,<?=iro_opt('theme_darkmode_widget_transparency'); ?>) !important;}
+{background-color:rgba(38,38,38,<?=iro_opt('theme_darkmode_widget_transparency'); ?>) !important;transition: all 0.6s ease-in-out;}
 
 /*深色模式自定义颜色*/
 body.dark .headertop-down svg path 

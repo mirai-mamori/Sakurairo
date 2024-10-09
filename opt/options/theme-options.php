@@ -838,7 +838,6 @@ $prefix = 'iro_options';
           'off' => __('Off','sakurairo_csf'),
           'netease' => __('Netease Cloud Music','sakurairo_csf'),
           'kugou' => __('Kugou Music(may not be available)','sakurairo_csf'),
-          'baidu' => __('Baidu Music(not available on servers overseas)','sakurairo_csf'),
           'tencent' => __('QQ Music(may not be available)','sakurairo_csf'),
         ),
         'default' => 'off'
@@ -1833,14 +1832,6 @@ $prefix = 'iro_options';
           'display_icon/muh2'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_h2.gif',
           'display_icon/flat_colorful'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_fc.gif',
           'display_icon/sakura'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_sa.gif',
-          'display_icon/macaronblue'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_mb.webp',
-          'display_icon/macarongreen'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_mg.webp',
-          'display_icon/macaronpurple'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_mp.webp',
-          'display_icon/pink'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_sp.webp',
-          'display_icon/orange'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_so.webp',
-          'display_icon/sangosyu'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_sg.webp',
-          'display_icon/sora'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_ts.webp',
-          'display_icon/nae'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_nn.webp',
         ),
         'default'     => 'display_icon/fluent_design'
       ),
