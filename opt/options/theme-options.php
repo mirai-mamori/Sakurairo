@@ -3433,12 +3433,70 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'type'     => 'callback',
+        'function' =>   function (){
+          ?>
+          <div>
+           <h5><?=__("Reset to API providers' default options","sakurairo_csf")?></h5>
+           <div class="chatgpt_config_defaults"><button data-name="leaflow">
+           <?=__("Leaflow","sakurairo_csf")?>
+           </button>
+           <button data-name="postchat">
+           <?=__("PostChat","sakurairo_csf")?>
+           </button>
+           <button data-name="openai">
+           <?=__("OpenAI","sakurairo_csf")?>
+           </button>
+          </div>
+           <script>
+ 
+            const defaults = {
+                  leaflow:{
+                    chatgpt_base_url:"https://amber-api.leaflow.cn/api/openai-compatible/v1",
+                    chatgpt_model:"auto"
+                  },
+                  postchat:{
+                    chatgpt_base_url:"https://ai.tianli0.top",
+                    chatgpt_model:"tianli"
+                  },
+                  openai:{
+                    chatgpt_base_url:"https://api.openai.org",
+                    chatgpt_model:"gpt-4o-mini",
+                  }
+                }
+            document.querySelector(".chatgpt_config_defaults").addEventListener('click',(e)=>{
+              if(e.target.tagName === "BUTTON"){
+                const name = e.target.dataset.name
+
+                const def = defaults[name]
+                if(!def)return
+                e.preventDefault()
+                e.stopPropagation()
+                try {
+                for(const key in def){
+                    document.querySelector(`input[name="iro_options[${key}]"]`).value = def[key]
+                }
+                alert('<?=__("Reset successfully","sakurairo_csf")?>')
+
+                } catch (error) {
+                  alert("<?=__("Failed to reset","sakurairo_csf")?>" )
+                  console.error(error)
+                }
+              }
+            })
+           </script> 
+         </div>
+          <?php
+         },
+      ),
+
+      array(
         'id' => 'chatgpt_base_url',
         'type' => 'text',
         'title' => __('ChatGPT Base URL','sakurairo_csf'),
-        'desc' => __('Fill in the ChatGPT Base URL, The default is https://openai.fuukei.org/','sakurairo_csf'),
+        'desc' => __('Fill in the ChatGPT Base URL, The default is https://api.openai.org','sakurairo_csf'),
         'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
-        'default' => 'https://openai.fuukei.org/'
+        'default' => 'https://api.openai.org'
       ),
 
       array(
@@ -3550,63 +3608,6 @@ $prefix = 'iro_options';
          },
       ),
       
-      array(
-        'type'     => 'callback',
-        'function' =>   function (){
-          ?>
-          <div>
-           <h5><?=__("Reset to API providers' default options","sakurairo_csf")?></h5>
-           <div class="chatgpt_config_defaults"><button data-name="leaflow">
-           <?=__("Leaflow","sakurairo_csf")?>
-           </button>
-           <button data-name="postchat">
-           <?=__("PostChat","sakurairo_csf")?>
-           </button>
-           <button data-name="openai">
-           <?=__("OpenAI","sakurairo_csf")?>
-           </button>
-          </div>
-           <script>
- 
-            const defaults = {
-                  leaflow:{
-                    chatgpt_base_url:"https://amber-api.leaflow.cn/api/openai-compatibl",
-                    chatgpt_model:"auto"
-                  },
-                  postchat:{
-                    chatgpt_base_url:"https://ai.tianli0.top",
-                    chatgpt_model:"tianli"
-                  },
-                  openai:{
-                    chatgpt_base_url:"https://api.openai.org",
-                    chatgpt_model:"gpt-4o-mini",
-                  }
-                }
-            document.querySelector(".chatgpt_config_defaults").addEventListener('click',(e)=>{
-              if(e.target.tagName === "BUTTON"){
-                const name = e.target.dataset.name
-
-                const def = defaults[name]
-                if(!def)return
-                e.preventDefault()
-                e.stopPropagation()
-                try {
-                for(const key in def){
-                    document.querySelector(`input[name="iro_options[${key}]"]`).value = def[key]
-                }
-                alert('<?=__("Reset successfully","sakurairo_csf")?>')
-
-                } catch (error) {
-                  alert("<?=__("Failed to reset","sakurairo_csf")?>" )
-                  console.error(error)
-                }
-              }
-            })
-           </script> 
-         </div>
-          <?php
-         },
-      ),
       )
     ) );
 
