@@ -28,26 +28,31 @@ get_header(); ?>
 					</span>
 				</header><!-- .page-header -->
 			<?php } // page-header 
-			?>
-
-        <?php
-            if (iro_opt('image_category') && is_category(explode(',', iro_opt('image_category')))) {
+			/*      if (iro_opt('image_category') && is_category(explode(',', iro_opt('image_category')))) {
                 while (have_posts()) : the_post();
                     get_template_part('tpl/content', 'thumb');
                 endwhile;
-			} else {
+			} else {				
+
 				while (have_posts()) : the_post();
-					get_template_part('tpl/content', 'thumb');
-				endwhile;
-			}
-            ?>
-            <div class="clearer"></div>
-
-        <?php else :
-
-            get_template_part('tpl/content', 'none');
-
-        endif; ?>
+				get_template_part('tpl/content', 'thumbcard');
+			endwhile;
+			} */
+			// TODO： 'image_category'功能待实现
+			$i = 0;
+			while (have_posts()) : the_post();
+				$article_class = '';
+				if ($i == 1) {
+					$article_class = ' post-list-show';
+				} else {
+					$i++;
+				}
+				get_template_part('tpl/content', 'thumbcard');
+			endwhile; ?>
+			<div class="clearer"></div>
+		<?php else :
+			get_template_part('tpl/content', 'none');
+		endif; ?>
 
 	</main><!-- #main -->
 	<?php if (iro_opt('pagenav_style') == 'ajax') { ?>
