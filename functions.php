@@ -2318,9 +2318,10 @@ function conversations($attr, $content = '')
             $avatar = get_avatar_url($user_id, 40);
         }
     }
-    $output .= '<div class="conversations-code-text">' . $content . '</div>';
+    $speaker_alt = $username?'<span class="screen-reader-text">'.sprintf(__("%s says: ","sakurairo"),$username).'</span>':"";
     $output = '<div class="conversations-code" style="flex-direction: ' . $direction . ';">';
     $output .= "<img src=\"$avatar\">";
+    $output .= '<div class="conversations-code-text">'. $speaker_alt . $content . '</div>';
     $output .= '</div>';
 
     return $output;
