@@ -126,7 +126,7 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   transition: all 0.6s ease-in-out;
   -webkit-transition: all 0.6s ease-in-out;
   will-change: auto;
-  content-visibility: visible;
+  content-visibility: auto;
 }
 
 .post-list-thumb a {
