@@ -9,7 +9,7 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
     endif;
     // 微信
     if (iro_opt('wechat')):?>
-        <li class="wechat"><a href="#" title="WeChat"><img loading="lazy" src="<?=$social_display_icon?>wechat.png" /></a>
+        <li class="wechat"><a href="#" title="WeChat"><img loading="lazy" src="<?=$social_display_icon?>wechat.webp" /></a>
             <div class="wechatInner">
                 <img class="wechat-img" style="height: max-content;width: max-content;" loading="lazy" src="<?=iro_opt('wechat', '')?>" alt="WeChat">
             </div>
@@ -20,7 +20,7 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
     foreach ($all_opt as $key => $value):
         if (!empty($value['link'])):
             // 显然 这里的逻辑可以看看all_opt的结构（
-            $img_url = $value['img'] ?? ($social_display_icon . ($value['icon'] ?? $key) . '.png');
+            $img_url = $value['img'] ?? ($social_display_icon . ($value['icon'] ?? $key) . '.webp');
             $title = $value['title'] ?? $key;
             ?>
             <li><a href="<?=$value['link'];?>" target="_blank" class="social-<?=$value['class'] ?? $key?>" title="<?=$title?>"><img alt="<?=$title?>" loading="lazy" src="<?=$img_url?>" /></a></li>
@@ -31,7 +31,7 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
     if (iro_opt('email_name') && iro_opt('email_domain')):?>
         <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img loading="lazy"
         alt="E-mail"
-                    src="<?=iro_opt('vision_resource_basepath')?><?=iro_opt('social_display_icon')?>/mail.png" /></a></li>
+                    src="<?=iro_opt('vision_resource_basepath')?><?=iro_opt('social_display_icon')?>/mail.webp" /></a></li>
     <?php
     endif;
     // 右箭头
