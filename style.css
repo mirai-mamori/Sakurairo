@@ -114,8 +114,19 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   box-shadow: 0 1px 30px -4px #e8e8e8;
   opacity: 0;
   flex-direction: column;
-  content-visibility: auto;
+  content-visibility: hidden;
   contain-intrinsic-size: auto none;
+}
+
+.post-list-show,.shuoshuo-item.post-list-show {
+  animation: homepage-load-animation .5s;
+  -webkit-animation: homepage-load-animation .5s;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, .80);
+  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  will-change: auto;
+  content-visibility: auto;
 }
 
 .post-list-thumb a {
@@ -1232,16 +1243,6 @@ input[type=week] {
   margin: 0;
   height: fit-content;
   max-height: 48px;
-}
-
-.post-list-show {
-  display: flex;
-  animation: homepage-load-animation .5s;
-  -webkit-animation: homepage-load-animation .5s;
-  opacity: 1;
-  background-color: rgba(255, 255, 255, .80);
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
 }
 
 .homepage-load-animation:hover{
@@ -5668,17 +5669,13 @@ object {
   margin: 15px 0 15px;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background-color: rgba(255, 255, 255, 0.7);
-  content-visibility: auto;
+  content-visibility: hidden;
   contain-intrinsic-size: auto none;
-  will-change: transform;
   border: 1px solid rgba(255, 255, 255, 0.8);
   width: 100%;
   float: left;
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
   position: relative;
-  animation: homepage-load-animation .5s;
-  -webkit-animation: homepage-load-animation .5s;
+  opacity: 0;
 }
 
 .shuoshuo-item:hover{
