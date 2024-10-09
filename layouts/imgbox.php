@@ -4,7 +4,7 @@ $text_logo = iro_opt('text_logo');
 $print_social_zone = function() use ($all_opt,$social_display_icon):void{
     // 左箭头
     if (iro_opt('cover_random_graphs_switch', 'true')):?>
-        <li id="bg-pre"><img src="<?=$social_display_icon?>pre.png" loading="lazy" alt="<?=__('Previous','sakurairo')?>"/></li>
+        <li id="bg-pre"><i class="fa-solid fa-angle-left" aria-label="<?=__('Previous','sakurairo')?>"></i></li>
     <?php
     endif;
     // 微信
@@ -36,7 +36,7 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
     endif;
     // 右箭头
     if (iro_opt('cover_random_graphs_switch', 'true')):?>
-        <li id="bg-next"><img loading="lazy" src="<?=$social_display_icon?>next.png" alt="<?=__('Next','sakurairo')?>"/></li>
+        <li id="bg-next"><i class="fa-solid fa-angle-right" aria-label="<?=__('Next','sakurairo')?>"></i></li>
     <?php endif;
 }
 ?>

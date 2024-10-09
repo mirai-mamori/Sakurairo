@@ -345,7 +345,8 @@ html {
 /*深色模式控件透明度*/
 body.dark .header-info,
 body.dark .header-shuo,
-body.dark .top-social img
+body.dark .top-social img,
+body.dark .top-social i
 {color:#fff;background:rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);}
 
 body.dark .the-feature.from_left_and_right .info
@@ -548,7 +549,7 @@ border-radius: <?=iro_opt('avatar_radius'); ?>px;
     }
     100% {
         width: 20%;
-        opacity: 1;
+        opacity: 0.5;
     }
 }
 <?php endif; ?>
@@ -632,7 +633,7 @@ border-radius: <?=iro_opt('avatar_radius'); ?>px;
 <?php if (iro_opt('cover_animation', 'true')): ?>
 h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,
 .header-info p,.header-info,.header-shuo,.header-shuo p,
-.focusinfo .header-tou img,.top-social img,.center-text{
+.focusinfo .header-tou img,.top-social img,.top-social i,.center-text{
 	-moz-animation: homepage-load-animation  <?=iro_opt('cover_animation_time'); ?>s;
     -webkit-animation:homepage-load-animation  <?=iro_opt('cover_animation_time'); ?>s;
 	animation: homepage-load-animation  <?=iro_opt('cover_animation_time'); ?>s;

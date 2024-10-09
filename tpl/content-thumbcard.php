@@ -138,7 +138,7 @@ global $article_class;
                                 <?php if (get_comments_number() > 0) : ?>
                                     <span class="shuoshuo-comments"><i class="fa-regular fa-comment"></i> <?php comments_number('0', '1', '%'); ?> </span>
                                 <?php endif; ?>
-                                <span class="shuoshuo-date"><i class="fa-regular fa-clock"> </i> <?php the_time('Y-n-j G:i'); ?> </span>
+                                <span class="shuoshuo-date"><i class="fa-regular fa-clock"> </i> <?php the_time('Y-m-d H:i'); ?> </span>
                             </div>
                         </div>
                         <a href="<?php the_permalink(); ?>" class="shuoshuo-content-link">
