@@ -2311,7 +2311,6 @@ function show_card($attr, $content = '')
 add_shortcode('conversations', 'conversations');
 function conversations($attr, $content = '')
 {
-    $size = 40;
     extract(shortcode_atts(array("avatar" => "", "direction" => "", "username" => ""), $attr));
     if ($avatar == "" && $username != "") {
         $user_id = get_user_by('login', $username)->ID;
@@ -2319,9 +2318,9 @@ function conversations($attr, $content = '')
             $avatar = get_avatar_url($user_id, 40);
         }
     }
-    $output = '<div class="conversations-code" style="display: flex; flex-direction: ' . $direction . '; padding: 10px;">';
-    $output .= "<img src=\"$avatar\" style=\"width: {$size}px; height: {$size}px; border-radius: 50%;\">";
     $output .= '<div class="conversations-code-text">' . $content . '</div>';
+    $output = '<div class="conversations-code" style="flex-direction: ' . $direction . ';">';
+    $output .= "<img src=\"$avatar\">";
     $output .= '</div>';
 
     return $output;

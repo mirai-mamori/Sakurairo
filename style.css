@@ -7602,7 +7602,15 @@ a.toc-link {
   transition: all 0.6s ease-in-out;
   -webkit-transition: all 0.6s ease-in-out;
 }
-
+.conversations-code{
+  display: flex; 
+  padding: 10px;
+}
+.conversations-code img{
+  border-radius: 50%;
+  width:40px;
+  height: 40px;
+}
 .conversations-code-text {
   margin: auto 10px;
   padding: 8px 14px;
