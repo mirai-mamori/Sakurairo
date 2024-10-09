@@ -3495,11 +3495,12 @@ $prefix = 'iro_options';
         'id' => 'chatgpt_model',
         'type' => 'text',
         'title' => __('ChatGPT Model','sakurairo_csf'),
-        'descr' => __('Only models support Chat Completion API can be used. The default is "gpt-3.5-turbo". View https://platform.openai.com/docs/models/overview for more info.','sakurairo_csf'),
+        'descr' => __('Only models support Chat Completion API can be used. The default is "gpt-4o-mini. View https://platform.openai.com/docs/models/overview for more info.','sakurairo_csf'),
         'dependency' => array(
           array( 'composer_load', '==', 'true'),
           array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
-        )
+        ),
+        "default" => "gpt-4o-mini"
       ),
 
       array(
