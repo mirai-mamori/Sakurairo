@@ -1831,7 +1831,7 @@ $prefix = 'iro_options';
           'display_icon/fluent_design'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_fd.gif',
           'display_icon/muh2'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_h2.gif',
           'display_icon/flat_colorful'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_fc.gif',
-          'display_icon/sakura'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_sa.gif',
+          'display_icon/svg'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_svg.webp',
         ),
         'default'     => 'display_icon/fluent_design'
       ),
@@ -1927,33 +1927,49 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id'     => 'youtube',
+        'type'   => 'text',
+        'title' => __('Youtube','sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'desc' => __('add URL','sakurairo_csf'),
+      ),
+
+      array(
+        'id'     => 'instagram',
+        'type'   => 'text',
+        'title' => __('Instagram','sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'desc' => __('add URL','sakurairo_csf'),
+      ),
+
+      array(
+        'id'     => 'douyin',
+        'type'   => 'text',
+        'title' => __('Tiktok','sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'desc' => __('add URL','sakurairo_csf'),
+      ),
+
+      array(
+        'id'     => 'xiaohongshu',
+        'type'   => 'text',
+        'title' => __('YELLOWnote','sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'desc' => __('add URL','sakurairo_csf'),
+      ),
+
+      array(
+        'id'     => 'discord',
+        'type'   => 'text',
+        'title' => __('Discord','sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'desc' => __('add URL','sakurairo_csf'),
+      ),
+
+      array(
         'id'     => 'zhihu',
         'type'   => 'text',
         'title' => __('ZhiHu','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('add URL','sakurairo_csf'),
-      ),
-
-      array(
-        'id'     => 'qzone',
-        'type'   => 'text',
-        'title' => __('QZone','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('add URL','sakurairo_csf'),
-      ),
-
-      array(
-        'id'     => 'lofter',
-        'type'   => 'text',
-        'title' => __('Lofter','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('add URL','sakurairo_csf'),
-      ),
-
-      array(
-        'id'     => 'youku',
-        'type'   => 'text',
-        'title' => __('Youku','sakurairo_csf'),
         'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
         'desc' => __('add URL','sakurairo_csf'),
       ),
@@ -1978,22 +1994,6 @@ $prefix = 'iro_options';
         'id'     => 'facebook',
         'type'   => 'text',
         'title' => __('Facebook','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('add URL','sakurairo_csf'),
-      ),
-
-      array(
-        'id'     => 'csdn',
-        'type'   => 'text',
-        'title' => __('CSDN','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('add URL','sakurairo_csf'),
-      ),
-
-      array(
-        'id'     => 'jianshu',
-        'type'   => 'text',
-        'title' => __('JianShu','sakurairo_csf'),
         'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
         'desc' => __('add URL','sakurairo_csf'),
       ),

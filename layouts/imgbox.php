@@ -1,42 +1,48 @@
 <?php
 include(get_stylesheet_directory().'/layouts/all_opt.php');
 $text_logo = iro_opt('text_logo');
-$print_social_zone = function() use ($all_opt,$social_display_icon):void{
+$print_social_zone = function() use ($all_opt, $social_display_icon): void {
+    $use_svg = iro_opt('social_display_icon') === 'display_icon/svg';
+    $svg_color = 'var(--theme-skin-matching)'; // 获取填充颜色
+
     // 左箭头
-    if (iro_opt('cover_random_graphs_switch', 'true')):?>
-        <li id="bg-pre"><i class="fa-solid fa-angle-left" aria-label="<?=__('Previous','sakurairo')?>"></i></li>
+    if (iro_opt('cover_random_graphs_switch', 'true')): ?>
+        <li id="bg-pre"><i class="fa-solid fa-angle-left" aria-label="<?= __('Previous', 'sakurairo') ?>"></i></li>
     <?php
     endif;
+
     // 微信
-    if (iro_opt('wechat')):?>
-        <li class="wechat"><a href="#" title="WeChat"><img loading="lazy" src="<?=$social_display_icon?>wechat.webp" /></a>
+    if (iro_opt('wechat')): ?>
+        <li class="wechat"><a href="#" title="WeChat"><img loading="lazy" src="<?= $use_svg ? $social_display_icon . 'wechat.svg' : $social_display_icon . 'wechat.webp' ?>" style="<?= $use_svg ? 'fill: ' . $svg_color . ';' : '' ?>" /></a>
             <div class="wechatInner">
-                <img class="wechat-img" style="height: max-content;width: max-content;" loading="lazy" src="<?=iro_opt('wechat', '')?>" alt="WeChat">
+                <img class="wechat-img" style="height: max-content;width: max-content;" loading="lazy" src="<?= iro_opt('wechat', '') ?>" alt="WeChat">
             </div>
         </li>
     <?php
     endif;
+
     // 大体(all_opt.php)
     foreach ($all_opt as $key => $value):
         if (!empty($value['link'])):
-            // 显然 这里的逻辑可以看看all_opt的结构（
-            $img_url = $value['img'] ?? ($social_display_icon . ($value['icon'] ?? $key) . '.webp');
+            $img_url = $value['img'] ?? ($social_display_icon . ($value['icon'] ?? $key) . ($use_svg ? '.svg' : '.webp'));
             $title = $value['title'] ?? $key;
             ?>
-            <li><a href="<?=$value['link'];?>" target="_blank" class="social-<?=$value['class'] ?? $key?>" title="<?=$title?>"><img alt="<?=$title?>" loading="lazy" src="<?=$img_url?>" /></a></li>
+            <li><a href="<?= $value['link']; ?>" target="_blank" class="social-<?= $value['class'] ?? $key ?>" title="<?= $title ?>"><img alt="<?= $title ?>" loading="lazy" src="<?= $img_url ?>" style="<?= $use_svg ? 'fill: ' . $svg_color . ';' : '' ?>" /></a></li>
         <?php
         endif;
     endforeach;
+
     // 邮箱
-    if (iro_opt('email_name') && iro_opt('email_domain')):?>
+    if (iro_opt('email_name') && iro_opt('email_domain')): ?>
         <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img loading="lazy"
         alt="E-mail"
-                    src="<?=iro_opt('vision_resource_basepath')?><?=iro_opt('social_display_icon')?>/mail.webp" /></a></li>
+                    src="<?= iro_opt('vision_resource_basepath') . ($use_svg ? 'mail.svg' : 'mail.webp') ?>" style="<?= $use_svg ? 'fill: ' . $svg_color . ';' : '' ?>" /></a></li>
     <?php
     endif;
+
     // 右箭头
-    if (iro_opt('cover_random_graphs_switch', 'true')):?>
-        <li id="bg-next"><i class="fa-solid fa-angle-right" aria-label="<?=__('Next','sakurairo')?>"></i></li>
+    if (iro_opt('cover_random_graphs_switch', 'true')): ?>
+        <li id="bg-next"><i class="fa-solid fa-angle-right" aria-label="<?= __('Next', 'sakurairo') ?>"></i></li>
     <?php endif;
 }
 ?>
