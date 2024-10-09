@@ -66,7 +66,7 @@ namespace IROChatGPT {
                 ],
                 [
                     "role" => "user",
-                    "content" => "Context: " . mb_substr(wp_strip_all_tags(apply_filters('the_content', $post->post_content)), 0, 4050)
+                    "content" => "Context: " . mb_substr(preg_replace("/(\\s)\\s{2,}/", "$1",wp_strip_all_tags(apply_filters('the_content', $post->post_content))), 0, 4050)
                 ],
             ]
         ]);
