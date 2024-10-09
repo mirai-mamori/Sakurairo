@@ -42,43 +42,40 @@ namespace IROChatGPT {
         $chatGPT_access_token = iro_opt('chatgpt_access_token');
         $chatGPT_prompt_init = iro_opt('chatgpt_init_prompt', DEFAULT_INIT_PROMPT);
         $chatGPT_model = iro_opt('chatgpt_model', DEFAULT_MODEL);
-    
+
         if (empty($chatGPT_base_url) || empty($chatGPT_access_token) || empty($chatGPT_prompt_init) || empty($chatGPT_model)) {
             throw new Exception("Missing required ChatGPT configuration.");
         }
-    
+
         $open_ai = new OpenAi($chatGPT_access_token);
-    
         if (str_ends_with($chatGPT_base_url, '/')) {
             $chatGPT_base_url = substr($chatGPT_base_url, 0, -1);
         }
         $open_ai->setBaseURL($chatGPT_base_url);
-    
-        $chat = $open_ai->chat(
-            [
-                "model" => $chatGPT_model,
-                "messages" => [
-                    [
-                        "role" => "system",
-                        "content" => $chatGPT_prompt_init
-                    ],
-                    [
-                        "role" => "user",
-                        "content" => "Title: " . $post->post_title
-                    ],
-                    [
-                        "role" => "user",
-                        "content" => "Context: " . substr(wp_strip_all_tags(apply_filters('the_content', $post->post_content)), 0, 4050)
-                    ],
-                ]
+
+        $chat = $open_ai->chat([
+            "model" => $chatGPT_model,
+            "messages" => [
+                [
+                    "role" => "system",
+                    "content" => $chatGPT_prompt_init
+                ],
+                [
+                    "role" => "user",
+                    "content" => "Title: " . $post->post_title
+                ],
+                [
+                    "role" => "user",
+                    "content" => "Context: " . mb_substr(wp_strip_all_tags(apply_filters('the_content', $post->post_content)), 0, 4050)
+                ],
             ]
-        );
-    
+        ]);
+
         $decoded_chat = json_decode($chat);
         if (is_null($decoded_chat) || isset($decoded_chat->error)) {
             throw new Exception("ChatGPT error: " . json_encode($decoded_chat));
         }
-    
+
         return $decoded_chat->choices[0]->message->content;
     }
 }
