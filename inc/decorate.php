@@ -495,6 +495,9 @@ cursor: url(<?=iro_opt('cursor_work'); ?>), alias;
 /*背景类*/
 .comment-respond textarea {
 background-image: url(<?=iro_opt('comment_area_image'); ?>); 
+background-size: contain;
+background-repeat: no-repeat;
+background-position: right;
 }
 
 .search-form.is-visible{
