@@ -1522,7 +1522,7 @@ h1.page-title {
   font-weight: var(--global-font-weight);
 }
 
-.post-squares.nextprev a {
+.nextprev a {
   height: 150px;
   padding: 55px 40px;
   text-align: left;
@@ -5917,68 +5917,66 @@ h1.page-title.mb- {
   color: #7d7d7d;
 }
 
-.post-squares .half {
-  width: 50%;
-  float: left;
-}
-
-.post-squares .third {
+/* .post-squares .third {
   width: 33.333%;
+} */
+
+.nextprev>:not(:only-child) {
+  width: 50%;
 }
 
-.post-squares.nextprev article {
+.nextprev article {
   height: 150px;
   padding: 55px 40px;
   text-align: left;
 }
 
-.post-squares.nextprev .label {
+.nextprev .label {
   position: absolute;
   z-index: 100;
   top: 0;
 }
 
-.post-squares.nextprev .info {
+.nextprev .info {
   position: absolute;
   width: 70%;
 }
 
-.post-squares.nextprev .next h3,
-.post-squares.nextprev .previous h3 {
+.nextprev a h3 {
   font-size: 14px;
 }
 
-.post-squares.nextprev .previous {
+.nextprev a[rel=prev] {
   text-align: left;
 }
 
-.post-squares.nextprev .previous .info {
+.nextprev a[rel=prev] .info {
   bottom: 40px;
   left: 40px;
 }
 
-.post-squares.nextprev .previous .label {
+.nextprev a[rel=prev] .label {
   top: 40px;
   left: 40px;
 }
 
-.post-squares.nextprev .previous hr {
+.nextprev a[rel=prev] hr {
   float: left;
   margin: 0;
 }
 
-.post-squares.nextprev .next .info {
+.nextprev a[rel=next] .info {
   text-align: right;
   right: 40px;
   bottom: 40px;
 }
 
-.post-squares.nextprev .next .label {
+.nextprev a[rel=next] .label {
   top: 40px;
   right: 40px;
 }
 
-.post-squares.nextprev .next hr {
+.nextprev a[rel=next] hr {
   float: right;
   margin: 0;
 }
@@ -7913,7 +7911,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
 }
 
 @media (max-width:760px) {
-  .post-squares.nextprev article {
+  .nextprev article {
     height: 150px;
     width: 100%;
   }
