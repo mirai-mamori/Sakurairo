@@ -8580,6 +8580,10 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     justify-content: center;
   }
 
+  body.dark #mo-nav .m-user-menu .m-user-menu-option a {
+    color: var(--theme-skin-dark);
+  }
+  
   #mo-nav .m-user-menu .m-user-menu-option a {
     margin: 12px;
     color: var(--theme-skin, #505050);
