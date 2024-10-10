@@ -36,7 +36,7 @@ $print_social_zone = function() use ($all_opt, $social_display_icon): void {
     if (iro_opt('email_name') && iro_opt('email_domain')): ?>
         <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img loading="lazy"
         alt="E-mail"
-                    src="<?= iro_opt('vision_resource_basepath') . ($use_svg ? 'mail.svg' : 'mail.webp') ?>" style="<?= $use_svg ? 'fill: ' . $svg_color . ';' : '' ?>" /></a></li>
+                    src="<?php echo $social_display_icon . ($use_svg ? 'mail.svg' : 'mail.webp'); ?>" style="<?php echo $use_svg ? 'fill: ' . $svg_color . ';' : ''; ?>" /></a></li>
     <?php
     endif;
 
