@@ -602,7 +602,7 @@ function visual_resource_updates($specified_version, $option_name, $new_value)
     $current_version = $theme->get('Version');
 
     // Check if the function has already been triggered
-    $function_triggered = get_transient('visual_resource_updates_triggered18');
+    $function_triggered = get_transient('visual_resource_updates_triggered19');
     if ($function_triggered) {
         return; // Function has already been triggered, do nothing
     }
@@ -617,11 +617,11 @@ function visual_resource_updates($specified_version, $option_name, $new_value)
         iro_opt_update($option_name, $option_value);
 
         // Set transient to indicate that the function has been triggered
-        set_transient('visual_resource_updates_triggered18', true);
+        set_transient('visual_resource_updates_triggered19', true);
     }
 }
 
-visual_resource_updates('2.5.6', 'vision_resource_basepath', '2.6/');
+visual_resource_updates('2.5.6', 'vision_resource_basepath', '2.7/');
 
 function gfonts_updates($specified_version, $option_name)
 {
@@ -629,7 +629,7 @@ function gfonts_updates($specified_version, $option_name)
     $current_version = $theme->get('Version');
 
     // Check if the function has already been triggered
-    $function_triggered = get_transient('gfonts_updates_triggered18');
+    $function_triggered = get_transient('gfonts_updates_triggered19');
     if ($function_triggered) {
         return; // Function has already been triggered, do nothing
     }
@@ -642,7 +642,7 @@ function gfonts_updates($specified_version, $option_name)
         }
 
         // Set transient to indicate that the function has been triggered
-        set_transient('gfonts_updates_triggered18', true);
+        set_transient('gfonts_updates_triggered19', true);
     }
 }
 
@@ -654,7 +654,7 @@ function gravater_updates($specified_version, $option_name)
     $current_version = $theme->get('Version');
 
     // Check if the function has already been triggered
-    $function_triggered = get_transient('gravater_updates_triggered181');
+    $function_triggered = get_transient('gravater_updates_triggered19');
     if ($function_triggered) {
         return; // Function has already been triggered, do nothing
     }
@@ -667,36 +667,11 @@ function gravater_updates($specified_version, $option_name)
         }
 
         // Set transient to indicate that the function has been triggered
-        set_transient('gravater_updates_triggered181', true);
+        set_transient('gravater_updates_triggered19', true);
     }
 }
 
 gravater_updates('2.5.6', 'gravatar_proxy');
-
-function chatgpt_updates($specified_version, $option_name)
-{
-    $theme = wp_get_theme();
-    $current_version = $theme->get('Version');
-
-    // Check if the function has already been triggered
-    $function_triggered = get_transient('chatgpt_updates_triggered18');
-    if ($function_triggered) {
-        return; // Function has already been triggered, do nothing
-    }
-
-    if (version_compare($current_version, $specified_version, '>')) {
-        $option_value = iro_opt($option_name);
-        if (empty($option_value) || $option_value !== 'https://openai.fuukei.org/') {
-            $option_value = 'https://openai.fuukei.org/';
-            iro_opt_update($option_name, $option_value);
-        }
-
-        // Set transient to indicate that the function has been triggered
-        set_transient('chatgpt_updates_triggered18', true);
-    }
-}
-
-chatgpt_updates('2.6.3.1', 'chatgpt_base_url');
 
 /*
  * 阻止站内文章互相Pingback
