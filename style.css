@@ -4051,7 +4051,7 @@ input[type=radio]:checked:before {
   height: auto;
   background-color: rgba(255, 255, 255, 0);
   right: calc((100% - 1250px)/ 2);
-  top: 470px;
+  top: 540px;
   position: absolute;
   padding-top: 10px;
   padding-bottom: 10px;
