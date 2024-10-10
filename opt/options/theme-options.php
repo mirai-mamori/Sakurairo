@@ -3452,7 +3452,7 @@ $prefix = 'iro_options';
  
             const defaults = {
                   leaflow:{
-                    chatgpt_base_url:"https://amber-api.leaflow.cn/api/openai-compatible/v1",
+                    chatgpt_base_url:"https://amber-api.leaflow.cn/api/openai-compatible",
                     chatgpt_model:"auto"
                   },
                   postchat:{
@@ -3460,7 +3460,7 @@ $prefix = 'iro_options';
                     chatgpt_model:"tianli"
                   },
                   openai:{
-                    chatgpt_base_url:"https://api.openai.org",
+                    chatgpt_base_url:"https://api.openai.com",
                     chatgpt_model:"gpt-4o-mini",
                   }
                 }
@@ -3494,16 +3494,16 @@ $prefix = 'iro_options';
         'id' => 'chatgpt_base_url',
         'type' => 'text',
         'title' => __('ChatGPT Base URL','sakurairo_csf'),
-        'desc' => __('Fill in the ChatGPT Base URL, The default is https://api.openai.org','sakurairo_csf'),
+        'desc' => __('Fill in the ChatGPT Base URL','sakurairo_csf'),
         'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
-        'default' => 'https://api.openai.org'
+        'default' => 'https://api.openai.com'
       ),
 
       array(
         'id' => 'chatgpt_access_token',
         'type' => 'text',
         'title' => __('ChatGPT API keys','sakurairo_csf'),
-        'desc' => __('Fill in Your ChatGPT API keys, You can go to <a href="https://platform.openai.com/account/api-keys">OpenAI Website</a> to get your API Keys','sakurairo_csf'),
+        'desc' => __('Fill in Your ChatGPT API keys, please refer to <a href="https://platform.openai.com/account/api-keys">OpenAI Website</a> for further information.','sakurairo_csf'),
         'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
       ),
 
@@ -3511,7 +3511,7 @@ $prefix = 'iro_options';
         'id' => 'chatgpt_article_summarize',
         'type' => 'switcher',
         'title' => __('ChatGPT Article Summarize','sakurairo_csf'),
-        'label' => __('After turning on ChatGPT will automatically generate article abstracts','sakurairo_csf'),
+        'label' => __('After turning on, title and context of your articles will be automatically sent to ChatGPT to generate excerpts.','sakurairo_csf'),
         'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
         'default' => false
       ),
@@ -3529,7 +3529,7 @@ $prefix = 'iro_options';
         'id' => 'chatgpt_exclude_ids',
         'type' => 'text',
         'title' => __('Article IDs that do not Require ChatGPT Summarize','sakurairo_csf'),
-        'desc' => __('Enter the article IDs that do not need to generate ChatGPT Summarize, and split multiple article IDs with ","','sakurairo_csf'),
+        'desc' => __('Those articles will never be sent to ChatGPT for excerpt generation. Split each id with a ",".','sakurairo_csf'),
         'dependency' => array(
           array( 'composer_load', '==', 'true'),
           array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
@@ -3553,7 +3553,7 @@ $prefix = 'iro_options';
         'id' => 'chatgpt_model',
         'type' => 'text',
         'title' => __('ChatGPT Model','sakurairo_csf'),
-        'descr' => __('Only models support Chat Completion API can be used. The default is "gpt-4o-mini. View https://platform.openai.com/docs/models/overview for more info.','sakurairo_csf'),
+        'descr' => __('Only models support Chat Completion API can be used. The default is "gpt-4o-mini. View https://platform.openai.com/docs/models/overview for further info.','sakurairo_csf'),
         'dependency' => array(
           array( 'composer_load', '==', 'true'),
           array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
