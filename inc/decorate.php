@@ -344,9 +344,11 @@ html {
 
 /*深色模式控件透明度*/
 body.dark .header-info,
-body.dark .header-shuo,
-body.dark .top-social img
+body.dark .header-shuo
 {color:#fff;background:rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);transition: all 0.6s ease-in-out;}
+
+body.dark .top-social img
+{background:rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);transition: all 0.6s ease-in-out;}
 
 body.dark .top-social_v2 i
 {color:#ababab;transition: all 0.6s ease-in-out;}
