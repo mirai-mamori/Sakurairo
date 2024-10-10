@@ -3602,7 +3602,10 @@ h1.main-title {
   padding: 0 5px;
   text-decoration: underline;
   font-weight: var(--global-font-weight);
+}
 
+body.dark .no-logged a {
+  color: var(--theme-skin-dark, #505050);
 }
 
 .oshimai {
