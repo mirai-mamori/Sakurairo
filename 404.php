@@ -25,8 +25,8 @@ add_action('wp_head', function() {
 
 <body <?php body_class(); ?>>
     <section class="error-404 not-found">
-        <div class="error-img">
-            <div class="anim-icon" id="404" style="height: 66%;"></div>
+        <div class="error-img" style="height: 66%;">
+            <div class="anim-icon" id="404" style="height: 100%;"></div>
         </div>
         <div class="err-button back" style="display: flex; flex-direction: row; flex-wrap: wrap; align-content: center; justify-content: center;">
             <a id="golast" href="javascript:history.go(-1);"><?php _e('Return to previous page', 'sakurairo'); ?></a>
