@@ -2,7 +2,7 @@
 include(get_stylesheet_directory().'/layouts/all_opt.php');
 $text_logo = iro_opt('text_logo');
 if (iro_opt('social_display_icon', '') === 'display_icon/remix_iconfont'): ?>
-    <link rel="stylesheet" href="https://s.nmxc.ltd/sakurairo_vision/@2.7/display_icon/remix_iconfont/remix_social.css">
+    <link rel="stylesheet" href="<?=iro_opt('vision_resource_basepath'); ?>display_icon/remix_iconfont/remix_social.css">
 <?php endif;
 $print_social_zone = function() use ($all_opt): void {
 
@@ -18,7 +18,7 @@ $print_social_zone = function() use ($all_opt): void {
             <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont'): ?>
                 <i class="remix_social icon-wechat"></i>
             <?php else: ?>
-                <img loading="lazy" src="<?= $social_display_icon . 'wechat.webp' ?>" />
+                <img loading="lazy" src="<?= iro_opt('vision_resource_basepath').iro_opt('social_display_icon').'/' . 'wechat.webp' ?>" />
             <?php endif; ?>
         </a>
             <div class="wechatInner">
@@ -31,7 +31,7 @@ $print_social_zone = function() use ($all_opt): void {
     // 大体(all_opt.php)
     foreach ($all_opt as $key => $value):
         if (!empty($value['link'])):
-            $img_url = $value['img'] ?? ($social_display_icon . ($value['icon'] ?? $key) . '.webp');
+            $img_url = $value['img'] ?? (iro_opt('vision_resource_basepath').iro_opt('social_display_icon').'/' . ($value['icon'] ?? $key) . '.webp');
             $title = $value['title'] ?? $key;
             ?>
             <li><a href="<?= $value['link']; ?>" target="_blank" class="social-<?= $value['class'] ?? $key ?>" title="<?= $title ?>">
@@ -51,7 +51,7 @@ $print_social_zone = function() use ($all_opt): void {
             <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont'): ?>
                 <i class="remix_social icon-mail"></i>
             <?php else: ?>
-                <img loading="lazy" alt="E-mail" src="<?php echo $social_display_icon . 'mail.webp'; ?>" />
+                <img loading="lazy" alt="E-mail" src="<?php echo iro_opt('vision_resource_basepath').iro_opt('social_display_icon').'/' . 'mail.webp'; ?>" />
             <?php endif; ?>
         </a></li>
     <?php
