@@ -298,11 +298,10 @@ function sakura_scripts()
     global $core_lib_basepath;
     global $shared_lib_basepath;
 
-    if (iro_opt('smoothscroll_option')) {
-        wp_enqueue_script('SmoothScroll', $shared_lib_basepath . '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
-    }
-
     wp_enqueue_style('saukra-css', $core_lib_basepath . '/style.css', array(), IRO_VERSION);
+
+    if(!is_404()){
+    wp_enqueue_script('app', $core_lib_basepath . '/js/app.js', array('polyfills'), IRO_VERSION, true);
     if (!is_home()) {
         //非主页的资源
         wp_enqueue_style(
@@ -313,7 +312,7 @@ function sakura_scripts()
         );
         wp_enqueue_script('app-page', $core_lib_basepath . '/js/page.js', array('app', 'polyfills'), IRO_VERSION, true);
     }
-    wp_enqueue_script('app', $core_lib_basepath . '/js/app.js', array('polyfills'), IRO_VERSION, true);
+    }
     wp_enqueue_script('polyfills', $core_lib_basepath . '/js/polyfill.js', array(), IRO_VERSION, true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -349,6 +348,9 @@ function sakura_scripts()
                 "您之前已设过私密评论" => __("You had set private comment before", 'sakurairo')
             )
         );
+    }
+    if (iro_opt('smoothscroll_option')) {
+        wp_enqueue_script('SmoothScroll', $shared_lib_basepath . '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
     }
 }
 add_action('wp_enqueue_scripts', 'sakura_scripts');
