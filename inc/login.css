@@ -429,12 +429,12 @@ input[type=checkbox]:checked:before {
 }
 
 .aiowps-captcha-answer {
-    	font-size: 16px;
-    	font-family: "Microsoft Yahei";
-    	height: 46px;
-    	border-radius: 12px;
-    	margin-top: 5px;
-    	min-height: 40px;
-    	max-height: none;
-    	text-indent: 8px;
+    font-size: 16px;
+    font-family: system-ui;
+    height: 46px;
+    border-radius: 12px;
+    margin-top: 5px;
+    min-height: 40px;
+    max-height: none;
+    text-indent: 8px;
 }

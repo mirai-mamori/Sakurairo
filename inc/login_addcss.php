@@ -38,4 +38,7 @@ body::before{
 }
 <?php endif; ?>
 
+.cf-turnstile-wrap {
+    text-align: center;
+}
 </style>

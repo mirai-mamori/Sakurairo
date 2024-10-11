@@ -57,11 +57,14 @@ $reception_background = iro_opt('reception_background');
   <!-- m-nav-center -->
   <div id="mo-nav">
     <div class="m-avatar">
-      <?php 
-      $personal_avatar = iro_opt('personal_avatar');
-      $iro_logo = iro_opt('iro_logo');
-      $ava = $personal_avatar ? $personal_avatar : ($iro_logo ?: iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/') . 'series/avatar.webp'); ?>
-      <img alt="m-avatar" src="<?php echo esc_url($ava); ?>">
+      <?php
+        global $current_user;
+        wp_get_current_user();
+        if (is_user_logged_in()) { ?>
+            <img alt="m-avatar" src="<?php echo get_avatar_url($current_user->ID,  [64]); ?>">
+        <?php } else { ?>
+            <img alt="m-avatar" src="<?php echo iro_opt('unlisted_avatar');?>">
+        <?php } ?>
     </div>
     <?php if (wp_is_mobile()) m_user_menu(); ?>
     <div class="m-search">

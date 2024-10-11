@@ -3602,7 +3602,10 @@ h1.main-title {
   padding: 0 5px;
   text-decoration: underline;
   font-weight: var(--global-font-weight);
+}
 
+body.dark .no-logged a {
+  color: var(--theme-skin-dark, #505050);
 }
 
 .oshimai {
@@ -8588,6 +8591,10 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     justify-content: center;
   }
 
+  body.dark #mo-nav .m-user-menu .m-user-menu-option a {
+    color: var(--theme-skin-dark);
+  }
+  
   #mo-nav .m-user-menu .m-user-menu-option a {
     margin: 12px;
     color: var(--theme-skin, #505050);
