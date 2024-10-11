@@ -1,9 +1,10 @@
 <?php
 include(get_stylesheet_directory().'/layouts/all_opt.php');
 $text_logo = iro_opt('text_logo');
-$print_social_zone = function() use ($all_opt, $social_display_icon): void {
-    $use_svg = iro_opt('social_display_icon') === 'display_icon/svg';
-    $svg_color = 'var(--theme-skin-matching)'; // 获取填充颜色
+if (iro_opt('social_display_icon', '') === 'display_icon/remix_iconfont'): ?>
+    <link rel="stylesheet" href="https://s.nmxc.ltd/sakurairo_vision/@2.7/display_icon/remix_iconfont/remix_social.css">
+<?php endif;
+$print_social_zone = function() use ($all_opt): void {
 
     // 左箭头
     if (iro_opt('cover_random_graphs_switch', 'true')): ?>
@@ -13,7 +14,13 @@ $print_social_zone = function() use ($all_opt, $social_display_icon): void {
 
     // 微信
     if (iro_opt('wechat')): ?>
-        <li class="wechat"><a href="#" title="WeChat"><img loading="lazy" src="<?= $use_svg ? $social_display_icon . 'wechat.svg' : $social_display_icon . 'wechat.webp' ?>" style="<?= $use_svg ? 'fill: ' . $svg_color . ';' : '' ?>" /></a>
+        <li class="wechat"><a href="#" title="WeChat">
+            <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont'): ?>
+                <i class="remix_social icon-wechat"></i>
+            <?php else: ?>
+                <img loading="lazy" src="<?= $social_display_icon . 'wechat.webp' ?>" />
+            <?php endif; ?>
+        </a>
             <div class="wechatInner">
                 <img class="wechat-img" style="height: max-content;width: max-content;" loading="lazy" src="<?= iro_opt('wechat', '') ?>" alt="WeChat">
             </div>
@@ -24,19 +31,29 @@ $print_social_zone = function() use ($all_opt, $social_display_icon): void {
     // 大体(all_opt.php)
     foreach ($all_opt as $key => $value):
         if (!empty($value['link'])):
-            $img_url = $value['img'] ?? ($social_display_icon . ($value['icon'] ?? $key) . ($use_svg ? '.svg' : '.webp'));
+            $img_url = $value['img'] ?? ($social_display_icon . ($value['icon'] ?? $key) . '.webp');
             $title = $value['title'] ?? $key;
             ?>
-            <li><a href="<?= $value['link']; ?>" target="_blank" class="social-<?= $value['class'] ?? $key ?>" title="<?= $title ?>"><img alt="<?= $title ?>" loading="lazy" src="<?= $img_url ?>" style="<?= $use_svg ? 'fill: ' . $svg_color . ';' : '' ?>" /></a></li>
+            <li><a href="<?= $value['link']; ?>" target="_blank" class="social-<?= $value['class'] ?? $key ?>" title="<?= $title ?>">
+                <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont'): ?>
+                    <i class="remix_social icon-<?= $key ?>"></i>
+                <?php else: ?>
+                    <img alt="<?= $title ?>" loading="lazy" src="<?= $img_url ?>" />
+                <?php endif; ?>
+            </a></li>
         <?php
         endif;
     endforeach;
 
     // 邮箱
     if (iro_opt('email_name') && iro_opt('email_domain')): ?>
-        <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img loading="lazy"
-        alt="E-mail"
-                    src="<?php echo $social_display_icon . ($use_svg ? 'mail.svg' : 'mail.webp'); ?>" style="<?php echo $use_svg ? 'fill: ' . $svg_color . ';' : ''; ?>" /></a></li>
+        <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail">
+            <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont'): ?>
+                <i class="remix_social icon-mail"></i>
+            <?php else: ?>
+                <img loading="lazy" alt="E-mail" src="<?php echo $social_display_icon . 'mail.webp'; ?>" />
+            <?php endif; ?>
+        </a></li>
     <?php
     endif;
 
@@ -46,15 +63,7 @@ $print_social_zone = function() use ($all_opt, $social_display_icon): void {
     <?php endif;
 }
 ?>
-<?php
-/*未定义的伪类 */
-/* <style>
-.header-info::before {
-    display: none !important;
-    opacity: 0 !important;
-}
-</style> */
-?>
+
 <div id="banner_wave_1"></div>
 <div id="banner_wave_2"></div>
 <figure id="centerbg" class="centerbg">

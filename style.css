@@ -2730,6 +2730,9 @@ h1.main-title {
   background: var(--infor_bar_bgcolor, rgba(255, 255, 255, 0.9));
   transition: all 0.6s ease-in-out;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .top-social i {
