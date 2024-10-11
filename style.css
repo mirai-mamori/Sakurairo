@@ -2638,6 +2638,9 @@ h1.main-title {
   -webkit-transform: translate(-50%, -50%);
   text-align: center;
   z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   -webkit-transition: .4s ease-in-out all;
   -moz-transition: .4s ease-in-out all;
   -o-transition: .4s ease-in-out all;
@@ -2688,6 +2691,7 @@ h1.main-title {
 
 .header-info {
   width: 65%;
+  min-width: 450px;
   margin: auto;
   font-size: 16px;
   color: var(--theme-skin, #505050);
@@ -2749,19 +2753,20 @@ h1.main-title {
 }
 
 .top-social_v2 {
-  height: 32px;
-  margin-bottom: -15px;
+  height: fit-content;
   list-style: none;
-  display: inline-block;
+  display: flex;
   transition: all 0.6s ease-in-out;
+  overflow: hidden;
 }
 
 .top-social_v2 img,
 .top-social_v2 i {
   height: 35px;
   width: 35px;
-  padding: 6px;
+  min-width: 35px;
   background: 0 0;
+  display: flex;
   transition: all 0.6s ease-in-out;
 }
 
@@ -9520,6 +9525,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
 
   .header-info {
     width: 60%;
+    min-width: 50%;
     font-size: 15px;
     line-height: 20px;
   }

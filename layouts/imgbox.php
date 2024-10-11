@@ -35,7 +35,7 @@ $print_social_zone = function() use ($all_opt): void {
             $title = $value['title'] ?? $key;
             ?>
             <li><a href="<?= $value['link']; ?>" target="_blank" class="social-<?= $value['class'] ?? $key ?>" title="<?= $title ?>">
-                <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont'): ?>
+                <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont' && $key !== 'socialdiy1' && $key !== 'socialdiy2'): ?>
                     <i class="remix_social icon-<?= $key ?>"></i>
                 <?php else: ?>
                     <img alt="<?= $title ?>" loading="lazy" src="<?= $img_url ?>" />
