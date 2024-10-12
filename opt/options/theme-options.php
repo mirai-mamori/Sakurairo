@@ -3433,6 +3433,11 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'type'    => 'content',
+        'content' => __('<img src="https://s.nmxc.ltd/sakurairo_vision/@2.7/options/leaflow.webp" width="25%" height="25%"/><img src="https://s.nmxc.ltd/sakurairo_vision/@2.7/options/postchat.webp" width="25%" height="25%"/>','sakurairo_csf'),
+      ),
+
+      array(
         'type'     => 'callback',
         'function' =>   function (){
           ?>
