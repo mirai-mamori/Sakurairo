@@ -6,12 +6,6 @@ if (iro_opt('social_display_icon', '') === 'display_icon/remix_iconfont'): ?>
 <?php endif;
 $print_social_zone = function() use ($all_opt): void {
 
-    // 左箭头
-    if (iro_opt('cover_random_graphs_switch', 'true')): ?>
-        <li id="bg-pre"><i class="fa-solid fa-angle-left" aria-label="<?= __('Previous', 'sakurairo') ?>"></i></li>
-    <?php
-    endif;
-
     // 微信
     if (iro_opt('wechat')): ?>
         <li class="wechat"><a href="#" title="WeChat">
@@ -57,10 +51,6 @@ $print_social_zone = function() use ($all_opt): void {
     <?php
     endif;
 
-    // 右箭头
-    if (iro_opt('cover_random_graphs_switch', 'true')): ?>
-        <li id="bg-next"><i class="fa-solid fa-angle-right" aria-label="<?= __('Next', 'sakurairo') ?>"></i></li>
-    <?php endif;
 }
 ?>
 
@@ -110,6 +100,13 @@ $print_social_zone = function() use ($all_opt): void {
                     <?php $print_social_zone(); ?>
                 </div>
             <?php endif; ?>
+
+            <?php if (iro_opt('cover_random_graphs_switch', 'true')): ?>
+            <div class="bg-switch">
+            <li id="bg-next" style="display: flex; gap: 6px; align-items: center; letter-spacing: 1px;"><i class="fa-solid fa-dice"></i><?= __('Change', 'sakurairo') ?></li>
+            </div>
+            <?php endif; ?>
+
         </div>
     <?php } ?>
 </figure>
