@@ -14,7 +14,7 @@ if (iro_opt('theme_skin')) { ?>
 :root{
     --theme-skin: <?=iro_opt('theme_skin'); ?>;
     --theme-skin-matching:<?=iro_opt('theme_skin_matching'); ?>;
-    --infor_bar_bgcolor:<?=iro_opt('infor_bar_bgcolor'); ?>;
+    --homepage_widget_transparency:<?=iro_opt('homepage_widget_transparency'); ?>;
     --style_menu_selection_radius:<?=iro_opt('style_menu_selection_radius', ''); ?>px;
     --load_nextpage_svg:url("<?=iro_opt('load_nextpage_svg'); ?>");
     --style_menu_radius:<?=iro_opt('style_menu_radius', ''); ?>px;
@@ -343,8 +343,7 @@ html {
 /*可变项目*/
 
 /*深色模式控件透明度*/
-body.dark .header-info,
-body.dark .header-shuo
+body.dark .header-info
 {color:#fff;background:rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);transition: all 0.6s ease-in-out;}
 
 body.dark .top-social img
@@ -433,7 +432,7 @@ h1.main-title,h1.fes-title{
 font-family:<?=iro_opt('area_title_font'); ?>;
 }
 
-.header-info p, .header-shuo p{
+.header-info p{
 font-family:<?=iro_opt('signature_font'); ?> !important;
 font-size: <?=iro_opt('signature_font_size'); ?>px;
 }
@@ -519,7 +518,7 @@ background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparen
 }
 
 /*首页圆角设置*/
-.header-info,.header-shuo{
+.header-info{
 border-radius: <?=iro_opt('signature_radius'); ?>px;
 }
 
@@ -640,8 +639,7 @@ border-radius: <?=iro_opt('avatar_radius'); ?>px;
 /*首页封面动画*/
 <?php if (iro_opt('cover_animation', 'true')): ?>
 h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,
-.header-info p,.header-info,.header-shuo,.header-shuo p,
-.focusinfo .header-tou img,.top-social img,.top-social i,.bg-switch,.center-text{
+.header-info p,.header-info,.focusinfo .header-tou img,.top-social img,.top-social i,.bg-switch,.center-text{
 	-moz-animation: homepage-load-animation  <?=iro_opt('cover_animation_time'); ?>s;
     -webkit-animation:homepage-load-animation  <?=iro_opt('cover_animation_time'); ?>s;
 	animation: homepage-load-animation  <?=iro_opt('cover_animation_time'); ?>s;

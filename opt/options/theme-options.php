@@ -273,6 +273,7 @@ $prefix = 'iro_options';
         'max'   => '1',
         'default' => '0.8'
       ),
+
       array(
         'id'     => 'theme_darkmode_background_transparency',
         'type'   => 'slider',
@@ -1469,19 +1470,18 @@ $prefix = 'iro_options';
                               array( 'infor_bar', '==', 'true' ),
                         ),
         'default' => 'v1'
-      ),
+      ), 
 
       array(
-        'id' => 'infor_bar_bgcolor',
-        'type' => 'color',
-        'title' => __('Cover Info Bar Background Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, light colors are recommended','sakurairo_csf'),
-        'dependency' => array( 
-                              array( 'cover_switch', '==', 'true', '', 'true' ),
-                              array( 'infor_bar', '==', 'true' ),
-                        ),
-        'default' => 'rgba(255,255,255,0.6)'
-      ),     
+        'id'     => 'homepage_widget_transparency',
+        'type'   => 'slider',
+        'title'  => __('HomePage Widget Transparency','sakurairo_csf'),
+        'desc'   => __('Slide to adjust, the recommended value range is 0.6-0.8','sakurairo_csf'),
+        'step'   => '0.01',
+        'min'   => '0.2',
+        'max'   => '1',
+        'default' => '0.7'
+      ),
 
       array(
         'id' => 'avatar_radius',

@@ -2474,7 +2474,6 @@ nav#comments-navi {
   color: #555;
   font-size: 14px;
   font-weight: var(--global-font-weight);
-
 }
 
 .siren-checkbox-label input {
@@ -2669,12 +2668,12 @@ h1.main-title {
   margin: auto;
   font-size: 16px;
   color: var(--theme-skin, #505050);
-  background: var(--infor_bar_bgcolor, rgba(255, 255, 255, 0.8));
+  background: rgba(255,255,255,var(--homepage_widget_transparency, 1));
   padding: 15px;
   margin-top: 22px;
   line-height: 30px;
   border-radius: 15px;
-  border: 1px solid var(--infor_bar_bgcolor, rgba(255, 255, 255, 0.8));
+  border: 1px solid rgba(255,255,255,var(--homepage_widget_transparency, 1));
   box-sizing: initial;
   white-space: nowrap;
   font-weight: var(--global-font-weight);
@@ -2707,8 +2706,8 @@ h1.main-title {
   height: 36px;
   width: 40px;
   padding: 8px 10px;
-  border: 0.5px solid var(--infor_bar_bgcolor, rgba(255, 255, 255, 0.8));
-  background: var(--infor_bar_bgcolor, rgba(255, 255, 255, 0.9));
+  border: 0.5px solid rgba(255,255,255,var(--homepage_widget_transparency, 1));
+  background: rgba(255,255,255,var(--homepage_widget_transparency, 1));
   transition: all 0.6s ease-in-out;
   border-radius: 15px;
   display: flex;
@@ -2725,8 +2724,8 @@ h1.main-title {
 .bg-switch {
   list-style: none;
   padding: 4px 8px;
-  border: 0.5px solid rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.7);
+  border: 0.5px solid rgba(255,255,255,var(--homepage_widget_transparency, 1));
+  background: rgba(255,255,255,var(--homepage_widget_transparency, 1));
   transition: all 0.6s ease-in-out;
   border-radius: 15px;
   font-size: 10px;
@@ -2780,11 +2779,9 @@ h1.main-title {
   margin: 5px;
 }
 
-.top-social li a {
-  cursor: pointer;
-}
-
-.top-social_v2 li a {
+.top-social li a,
+.top-social_v2 li a, 
+.bg-switch {
   cursor: pointer;
 }
 
@@ -9476,11 +9473,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-
-  .header-shuo {
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 }
 
 @media (max-width:860px) {
@@ -9497,16 +9489,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   }
 
   .header-info p {
-    font-size: 15px !important;
-  }
-
-  .header-shuo {
-    width: 60%;
-    font-size: 15px;
-    line-height: 20px;
-  }
-
-  .header-shuo p {
     font-size: 15px !important;
   }
 
@@ -10363,8 +10345,7 @@ body.dark #changskin:hover {
   color: var(--theme-skin-dark);
 }
 
-body.dark .header-info,
-body.dark .header-shuo {
+body.dark .header-info{
   color: #CCCCCC !important;
 }
 
