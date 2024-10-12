@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2024-10-01 22:07+0900\n"
-"PO-Revision-Date: 2024-10-01 22:07+0900\n"
+"POT-Creation-Date: 2024-10-12 15:25+0900\n"
+"PO-Revision-Date: 2024-10-12 15:27+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -33,11 +33,11 @@ msgstr "返回首页"
 msgid "Don't worry, search in site?"
 msgstr "别着急，试试搜索？"
 
-#: 404.php:38 footer.php:69 search.php:30
+#: 404.php:38 footer.php:72 search.php:30
 msgid "Search..."
 msgstr "搜索..."
 
-#: archive.php:52 author.php:55 index.php:49
+#: archive.php:59 author.php:55 index.php:49
 msgid " Previous"
 msgstr " 更早的文章"
 
@@ -98,10 +98,6 @@ msgid "You are a surprise that I will only meet once in my life"
 msgstr "你是我一生只会遇见一次的惊喜"
 
 #: comments.php:144
-msgid "Auto pull nickname and avatar with a QQ num. entered"
-msgstr "输入QQ号将自动拉取昵称和头像"
-
-#: comments.php:144
 msgid "Nickname or QQ number"
 msgstr "昵称或QQ号"
 
@@ -109,9 +105,9 @@ msgstr "昵称或QQ号"
 msgid "Name* "
 msgstr "昵称 "
 
-#: comments.php:146
-msgid "You will receive notification by email"
-msgstr "你将收到回复通知"
+#: comments.php:144
+msgid "Auto pull nickname and avatar with a QQ num. entered"
+msgstr "输入QQ号将自动拉取昵称和头像"
 
 #: comments.php:146
 msgid "email"
@@ -121,52 +117,56 @@ msgstr "邮箱"
 msgid "Must* "
 msgstr "必须* "
 
-#: comments.php:148
-msgid "Advertisement is forbidden 😀"
-msgstr "禁止小广告😀"
+#: comments.php:146
+msgid "You will receive notification by email"
+msgstr "你将收到回复通知"
 
 #: comments.php:148
 msgid "Site"
 msgstr "网站"
+
+#: comments.php:148
+msgid "Advertisement is forbidden 😀"
+msgstr "禁止小广告😀"
 
 #: footer.php:43
 #, php-format
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr "加载耗时 %.3f 秒 | 查询 %d 次 | 内存使用 %.2f MB "
 
-#: footer.php:74
+#: footer.php:77
 msgid "Go to top"
 msgstr "回到顶部"
 
-#: footer.php:75
+#: footer.php:78
 msgid "Control Panel"
 msgstr "控制面板"
 
-#: footer.php:81 footer.php:89
+#: footer.php:84 footer.php:92
 msgid "Want to find something?"
 msgstr "想要找点什么呢？"
 
-#: footer.php:90
+#: footer.php:93
 msgid "Search"
 msgstr "搜索"
 
-#: footer.php:126
+#: footer.php:112
 msgid "Light Mode"
 msgstr "浅色模式"
 
-#: footer.php:129
+#: footer.php:115
 msgid "Dark Mode"
 msgstr "深色模式"
 
-#: footer.php:135
+#: footer.php:121
 msgid "Toggle Page Background Image"
 msgstr "切换页面背景图像"
 
-#: footer.php:156
+#: footer.php:142
 msgid "Switch To Font A"
 msgstr "切换到字体 A"
 
-#: footer.php:159
+#: footer.php:145
 msgid "Switch To Font B"
 msgstr "切换到字体 B"
 
@@ -210,33 +210,33 @@ msgstr "没有找到说说"
 msgid "No Idea in the Trash"
 msgstr "没有在垃圾桶的说说"
 
-#: functions.php:327
+#: functions.php:326
 msgid "Copied!"
 msgstr "复制成功！"
 
-#: functions.php:328
+#: functions.php:327
 msgid "Copy Code"
 msgstr "拷贝代码"
 
-#: functions.php:329
+#: functions.php:328
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
 msgstr "你的封面 API 好像不支持跨域调用,这种情况下缓存是不会生效的哦。"
 
-#: functions.php:330
+#: functions.php:329
 msgid "Commiting...."
 msgstr "提交中...."
 
-#: functions.php:331
+#: functions.php:330
 msgid "Succeed"
 msgstr "成功"
 
-#: functions.php:332
+#: functions.php:331
 msgid "10 files max per request"
 msgstr "每次上传上限为 10 张"
 
-#: functions.php:333
+#: functions.php:332
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -245,15 +245,15 @@ msgid ""
 "This image is too large~Please reupload!"
 msgstr "图片上传大小限制为 5 MB\\n\\n「{0}」\\n\\n这张图太大啦~请重新上传噢！"
 
-#: functions.php:334
+#: functions.php:333
 msgid "Uploading..."
 msgstr "上传中..."
 
-#: functions.php:335
+#: functions.php:334
 msgid "Uploaded successfully~"
 msgstr "上传成功~"
 
-#: functions.php:336
+#: functions.php:335
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -261,128 +261,128 @@ msgid ""
 "{2}"
 msgstr "上传失败！\\n文件名=> {0}\\ncode=> {1}\\n{2}"
 
-#: functions.php:337
+#: functions.php:336
 msgid "Upload failed, please retry."
 msgstr "上传失败，请重试."
 
-#: functions.php:338
+#: functions.php:337
 msgid "Page Load failed. HTTP {0}"
 msgstr "页面加载出错了 HTTP {0}"
 
-#: functions.php:339
+#: functions.php:338
 msgid "Glad you come, but we've got nothing left."
 msgstr "很高兴你翻到这里，但是真的没有了..."
 
-#: functions.php:340
+#: functions.php:339
 msgid "Post"
 msgstr "文章"
 
-#: functions.php:341
+#: functions.php:340
 msgid "Tag"
 msgstr "标签"
 
-#: functions.php:342
+#: functions.php:341
 msgid "Category"
 msgstr "分类"
 
-#: functions.php:343
+#: functions.php:342
 msgid "Page"
 msgstr "页面"
 
-#: functions.php:344
+#: functions.php:343
 msgid "Comment"
 msgstr "评论"
 
-#: functions.php:345
+#: functions.php:344
 msgid "Paused..."
 msgstr "暂停中..."
 
-#: functions.php:346
+#: functions.php:345
 msgid "Loading Video..."
 msgstr "正在加载视频..."
 
-#: functions.php:347
+#: functions.php:346
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "下载字体时，请注意您的数据使用情况。"
 
-#: functions.php:348
+#: functions.php:347
 msgid "Are you sure you want set it private?"
 msgstr "是否要将其设置为私密？"
 
-#: functions.php:349
+#: functions.php:348
 msgid "You had set private comment before"
 msgstr "您之前设置了私人评论"
 
-#: functions.php:396 inc/theme_plus.php:186
+#: functions.php:398 inc/theme_plus.php:186
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:396
+#: functions.php:398
 msgid "Blogger"
 msgstr "博主"
 
-#: functions.php:405 functions.php:2600
+#: functions.php:407 functions.php:2583
 msgid "Location"
 msgstr "来自"
 
-#: functions.php:411
+#: functions.php:413
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:413
+#: functions.php:415
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:415
+#: functions.php:417
 msgid "No"
 msgstr "否"
 
-#: functions.php:418
+#: functions.php:420
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:545
+#: functions.php:547
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:846
+#: functions.php:823
 msgid "Download Link"
 msgstr "下载地址"
 
-#: functions.php:923
+#: functions.php:900
 msgid "Remember me"
 msgstr "记住我"
 
-#: functions.php:1454
+#: functions.php:1431
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1489
+#: functions.php:1466
 msgid " year"
 msgstr " 年"
 
-#: functions.php:1493
+#: functions.php:1470
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1541 functions.php:1544 inc/theme_plus.php:413
+#: functions.php:1518 functions.php:1521 inc/theme_plus.php:413
 #: inc/theme_plus.php:459
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1860
+#: functions.php:1837
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:1986
+#: functions.php:1963
 msgid "QQ"
 msgstr ""
 
-#: functions.php:2071
+#: functions.php:2054
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:2220
+#: functions.php:2203
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -393,7 +393,12 @@ msgstr ""
 "固定链接</a>设置为朴素。为此，您可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">伪静态</a></b>"
 
-#: functions.php:2358
+#: functions.php:2298
+#, php-format
+msgid "%s says: "
+msgstr "%s 说： "
+
+#: functions.php:2341
 msgid "Expand / Collapse"
 msgstr "展开 / 收起"
 
@@ -452,7 +457,7 @@ msgstr "已加载所有内容。"
 msgid "Load More"
 msgstr "加载更多"
 
-#: inc/classes/Cache.php:70 inc/theme_plus.php:708
+#: inc/classes/Cache.php:70 inc/theme_plus.php:716
 msgid "The comment is private"
 msgstr "这是一条私密评论"
 
@@ -628,7 +633,8 @@ msgstr "退出登录？ "
 msgid "Search results for \" %s \""
 msgstr "关于“ %s ”的搜索结果"
 
-#: inc/theme_plus.php:377 tpl/content-thumb.php:62 tpl/content-thumb.php:68
+#: inc/theme_plus.php:377 tpl/content-thumbcard.php:58
+#: tpl/content-thumbcard.php:64
 msgid "Your browser does not support HTML5 video."
 msgstr "您的浏览器不支持 HTML5 视频。"
 
@@ -660,19 +666,15 @@ msgstr "注册"
 msgid "Notice"
 msgstr "公告"
 
-#: layouts/imgbox.php:8
-msgid "Previous"
-msgstr "上一篇"
+#: layouts/imgbox.php:104
+msgid "Change"
+msgstr "更换"
 
-#: layouts/imgbox.php:40
-msgid "Next"
-msgstr "下一篇"
-
-#: layouts/post-nextprev.php:17
+#: layouts/post-nextprev.php:15
 msgid "Previous Post"
 msgstr "上一篇文章"
 
-#: layouts/post-nextprev.php:26
+#: layouts/post-nextprev.php:24
 msgid "Next Post"
 msgstr "下一篇文章"
 
@@ -680,22 +682,6 @@ msgstr "下一篇文章"
 #, php-format
 msgid "Search result: %s"
 msgstr "搜索结果：%s"
-
-#: tpl/content-category.php:32 tpl/meta-comments.php:4
-msgid "NOTHING"
-msgstr "无~"
-
-#: tpl/content-category.php:33 tpl/meta-comments.php:4
-msgid "1 Comment"
-msgstr "1 评论"
-
-#: tpl/content-category.php:34 tpl/meta-comments.php:4
-msgid "Comments"
-msgstr "条评论"
-
-#: tpl/content-category.php:36 tpl/meta-comments.php:4
-msgid "Comment Closed"
-msgstr "评论关闭"
 
 #: tpl/content-none.php:14
 msgid "There is nothing here！"
@@ -719,24 +705,24 @@ msgstr "我们似乎没有找到你想要的东西. 或许你可以搜索一下�
 msgid "Pages:"
 msgstr "页面："
 
-#: tpl/content-single.php:28 tpl/content-thumb.php:203
+#: tpl/content-single.php:28 tpl/content-thumbcard.php:184
 msgid "AI Excerpt"
 msgstr "AI 摘要"
 
-#: tpl/content-thumb.php:13
+#: tpl/content-thumbcard.php:4
 msgid "Hit"
 msgid_plural "Hits"
 msgstr[0] "热度"
 
-#: tpl/content-thumb.php:47 tpl/entry-census.php:58
+#: tpl/content-thumbcard.php:40 tpl/entry-census.php:61
 msgid "Estimate Reading Time"
 msgstr "预计阅读时间"
 
-#: tpl/content-thumb.php:189
+#: tpl/content-thumbcard.php:170
 msgid "Sticky"
 msgstr "置顶"
 
-#: tpl/content-thumb.php:206
+#: tpl/content-thumbcard.php:187
 msgid "Excerpt"
 msgstr "摘要"
 
@@ -744,18 +730,34 @@ msgstr "摘要"
 msgid "EDIT"
 msgstr "编辑"
 
-#: tpl/entry-census.php:40
+#: tpl/entry-census.php:43
 msgid "View"
 msgid_plural "Views"
 msgstr[0] "次阅读"
 
-#: tpl/entry-census.php:74 tpl/section-article-function.php:71
+#: tpl/entry-census.php:77 tpl/section-article-function.php:71
 msgid "Last updated on "
 msgstr "最后更新于 "
 
-#: tpl/entry-census.php:76 tpl/entry-census.php:78
+#: tpl/entry-census.php:79 tpl/entry-census.php:81
 msgid "Last updated on"
 msgstr "最后更新于 "
+
+#: tpl/meta-comments.php:4
+msgid "NOTHING"
+msgstr "无~"
+
+#: tpl/meta-comments.php:4
+msgid "1 Comment"
+msgstr "1 评论"
+
+#: tpl/meta-comments.php:4
+msgid "Comments"
+msgstr "条评论"
+
+#: tpl/meta-comments.php:4
+msgid "Comment Closed"
+msgstr "评论关闭"
 
 #: tpl/meta-ert.php:8
 msgid "Less than 1 minute"

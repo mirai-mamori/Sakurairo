@@ -2632,7 +2632,7 @@ h1.main-title {
   position: relative;
   max-width: 800px;
   padding: 0 10px;
-  top: 49.3%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -2643,27 +2643,21 @@ h1.main-title {
   transition: .4s ease-in-out all;
 }
 
-.focusinfo img {
-  width: 130px;
-  height: 130px;
-  padding: 2px;
-  border-radius: 100%;
-}
-
 .focusinfo .header-tou {
   display: grid;
   justify-items: center;
   justify-content: center;
   margin: 0;
-  max-height: 130px;
 }
 
 .focusinfo .header-tou img {
   position: relative;
-  padding: 5px;
   opacity: 1;
   transform: rotate(0);
   transition: all 0.6s ease-in-out;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
 }
 
 .focusinfo .header-tou img:hover {
@@ -2704,7 +2698,7 @@ h1.main-title {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  max-width: 480px;
+  max-width: 65%;
   flex-wrap: wrap;
 }
 
@@ -9492,28 +9486,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
 
   .focusinfo {
     top: 45%;
-  }
-
-  .focusinfo img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .top-social_v2 i,
-  .top-social_v2 img {
-    width: 35px;
-    height: 35px;
-  }
-
-  .top-social {
-    margin-top: 22px;
-  }
-
-  .top-social i,
-  .top-social img {
-    height: 31.5px;
-    width: 35px;
-    padding: 5.25px 7px;
   }
 
   .header-info {

@@ -521,8 +521,6 @@ background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparen
 /*首页圆角设置*/
 .header-info,.header-shuo{
 border-radius: <?=iro_opt('signature_radius'); ?>px;
-grid-row: 1;
-grid-column: 1;
 }
 
 .focusinfo img{
