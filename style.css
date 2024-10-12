@@ -2765,10 +2765,11 @@ h1.main-title {
   background: 0 0;
   display: flex;
   transition: all 0.6s ease-in-out;
+  justify-content: center;
 }
 
 .top-social_v2 i {
-  font-size: 22px;
+  font-size: 28px;
   color: var(--theme-skin-matching);
   transition: all 0.6s ease-in-out;
 }
