@@ -66,7 +66,6 @@ $print_social_zone = function() use ($all_opt): void {
                 <div class="header-tou"><a href="<?php bloginfo('url'); ?>"><img alt="avatar" loading="lazy" src="<?=iro_opt('personal_avatar', '') ?: iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.7/').'series/avatar.webp'?>"></a>
             </div>
             <?php endif; ?>
-            <div class="header-container">
                 <div class="header-info">
                     <!-- 首页一言打字效果 -->
                     <?php if (iro_opt('signature_typing', 'true')) : ?>
@@ -93,7 +92,6 @@ $print_social_zone = function() use ($all_opt): void {
                         </div>
                     <?php endif; ?>
                 </div>               
-            </div>
 
             <?php if (iro_opt('infor_bar_style') === 'v1') : ?>
                 <div class="top-social">

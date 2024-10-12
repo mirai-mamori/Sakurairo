@@ -2670,13 +2670,8 @@ h1.main-title {
   transform: rotate(360deg);
 }
 
-.header-container {
-  display: grid;
-}
-
 .header-info {
   width: 65%;
-  min-width: 450px;
   margin: auto;
   font-size: 16px;
   color: var(--theme-skin, #505050);
@@ -2703,10 +2698,14 @@ h1.main-title {
 }
 
 .top-social {
-  height: 30px;
-  margin-top: 28px;
+  margin-top: 20px;
   list-style: none;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 480px;
+  flex-wrap: wrap;
 }
 
 .top-social img,
@@ -2738,7 +2737,7 @@ h1.main-title {
   border-radius: 15px;
   font-size: 10px;
   position: relative;
-  top: 30px;
+  margin-top: 20px;
   color: var(--theme-skin-matching);
 }
 
@@ -2753,9 +2752,15 @@ h1.main-title {
 .top-social_v2 {
   height: fit-content;
   list-style: none;
-  display: flex;
+  display: inline-flex;
   transition: all 0.6s ease-in-out;
-  overflow: hidden;
+  top: 8px;
+  position: relative;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .top-social_v2 img,
@@ -2772,6 +2777,26 @@ h1.main-title {
   font-size: 22px;
   color: var(--theme-skin-matching);
   transition: all 0.6s ease-in-out;
+}
+
+.top-social li,
+.top-social_v2 li{
+  float: left;
+  margin: 5px;
+}
+
+.top-social li a {
+  cursor: pointer;
+}
+
+.top-social_v2 li a {
+  cursor: pointer;
+}
+
+.wechat {
+  width: 40px;
+  height: 40px;
+  position: relative;
 }
 
 .wechatInner img {
@@ -6493,30 +6518,6 @@ li.feature-2 {
   padding-top: 80px;
   background-color: rgba(0, 0, 0, 0);
   transition: background 0.8s;
-}
-
-.top-social li {
-  float: left;
-  margin: 0px 5px;
-}
-
-.top-social_v2 li {
-  float: left;
-  margin: 0px 6px;
-}
-
-.top-social li a {
-  cursor: pointer;
-}
-
-.top-social_v2 li a {
-  cursor: pointer;
-}
-
-.wechat {
-  width: 40px;
-  height: 40px;
-  position: relative;
 }
 
 .site-header.iconsearch:hover {
