@@ -12,7 +12,7 @@
 
 ## 版本简介：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/cn-ver2.7.png)](https://fuukei.org//)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/cn.png)](https://docs.fuukei.org//)
 
 ## 下载及使用相关：
 
@@ -35,7 +35,7 @@
 
 ## 支持我们：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/cn-ver2.7info.png)](https://afdian.net/@mamori)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/cn-ver2.7info.png)](https://ifdian.net/@mamori)
 
 ## 主题贡献：
 

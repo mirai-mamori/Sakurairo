@@ -12,7 +12,7 @@
 
 ## What's new：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/en-ver2.7.png)](https://fuukei.org//)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/en.png)](https://docs.fuukei.org//)
 
 ## How to use:
 
@@ -65,7 +65,7 @@ Please fill in with the issue template. Thanks for your cooperation.
 
 ## Hope you can enjoy it!
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/en-ver2.7info.png)](https://fuukei.org/)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/en-ver2.7info.png)](https://docs.fuukei.org/)
 
 - Star Trends  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 

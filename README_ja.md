@@ -12,7 +12,7 @@
 
 ## バージョン紹介：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/jp-ver2.7.png)](https://fuukei.org/)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/jp.png)](https://docs.fuukei.org/)
 
 ## 活用方法：
 
@@ -64,7 +64,7 @@
 
 ## 楽しんでいただけたら幸いです。
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/jp-ver2.7info.png)](https://fuukei.org/)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/jp-ver2.7info.png)](https://docs.fuukei.org/)
 
 -  Starトレンド  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 

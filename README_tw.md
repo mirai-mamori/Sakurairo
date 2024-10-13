@@ -12,7 +12,7 @@
 
 ## 版本宣傳：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/tw-ver2.7.png)](https://fuukei.org//)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/tw.png)](https://docs.fuukei.org//)
 
 ## 使用相關：
 
@@ -69,7 +69,7 @@
 
 ## 希望你喜歡！
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/tw-ver2.7info.png)](https://fuukei.org/)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/tw-ver2.7info.png)](https://docs.fuukei.org/)
 
 - Star 趨勢  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 

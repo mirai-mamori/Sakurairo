@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2024-10-12 15:27+0900\n"
-"PO-Revision-Date: 2024-10-12 15:28+0900\n"
+"POT-Creation-Date: 2024-10-13 15:50+0900\n"
+"PO-Revision-Date: 2024-10-13 15:50+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -913,7 +913,7 @@ msgid "Created by Fuukei"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://fuukei.org/"
+msgid "https://docs.fuukei.org/"
 msgstr ""
 
 #. Template Name of the plugin/theme
