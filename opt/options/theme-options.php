@@ -208,7 +208,7 @@ $prefix = 'iro_options';
         'type'    => 'color',
         'title'   => __('Matching Color','sakurairo_csf'),
         'desc'    => __('Customize the colors','sakurairo_csf'),
-        'default' => '#F9D938'
+        'default' => '#a4cdf6'
       ),  
 
       array(
@@ -221,7 +221,7 @@ $prefix = 'iro_options';
         'type'    => 'color',
         'title'   => __('Dark Mode Theme Color','sakurairo_csf'),
         'desc'    => __('Customize the colors','sakurairo_csf'),
-        'default' => '#FCCD00'
+        'default' => '#294aa4'
       ),  
       array(
         'id'    => 'theme_darkmode_auto',
@@ -3374,7 +3374,7 @@ $prefix = 'iro_options';
         'type' => 'color',
         'title' => __('Dashboard Primary Menu Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#272151'
+        'default' => '#3c5571'
       ),  
 
       array(
@@ -3382,7 +3382,7 @@ $prefix = 'iro_options';
         'type' => 'color',
         'title' => __('Dashboard Secondary Menu Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#36307f'
+        'default' => '#4e739d'
       ),  
 
       array(
@@ -3390,7 +3390,7 @@ $prefix = 'iro_options';
         'type' => 'color',
         'title' => __('Dashboard Emphasis Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#7b2a52'
+        'default' => '#cfc3af'
       ),  
 
       array(
@@ -3398,7 +3398,7 @@ $prefix = 'iro_options';
         'type' => 'color',
         'title' => __('Dashboard Button Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#7a003d'
+        'default' => '#ac9c91'
       ),  
 
       array(
