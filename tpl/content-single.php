@@ -8,7 +8,6 @@
  */
 $post_id = get_the_ID();
 $ai_excerpt = get_post_meta($post_id, POST_METADATA_KEY, true); 
-$excerpt = get_the_excerpt();
 ?>
 
 <?php
@@ -23,7 +22,7 @@ if (iro_opt('article_auto_toc', 'true') && check_title_tags($post->post_content)
 		get_template_part('tpl/single-entry-header');
 	} ?>
 	<!--<div class="toc-entry-content">--><!-- 套嵌目录使用（主要为了支援评论）-->
-	<?php if (!empty($ai_excerpt) && empty($excerpt)) { ?>
+	<?php if ($ai_excerpt) { ?>
 	<div class="ai-excerpt">
 		<h4><i class="fa-solid fa-atom"></i><?php esc_html_e("AI Excerpt", "sakurairo"); ?></h4><?php echo esc_html($ai_excerpt); ?>
 	</div>
