@@ -1,54 +1,59 @@
 <?php
 include(get_stylesheet_directory().'/layouts/all_opt.php');
 $text_logo = iro_opt('text_logo');
-$print_social_zone = function() use ($all_opt,$social_display_icon):void{
-    // 左箭头
-    if (iro_opt('cover_random_graphs_switch', 'true')):?>
-        <li id="bg-pre"><img src="<?=$social_display_icon?>pre.png" loading="lazy" alt="<?=__('Previous','sakurairo')?>"/></li>
-    <?php
-    endif;
+if (iro_opt('social_display_icon', '') === 'display_icon/remix_iconfont'): ?>
+    <link rel="stylesheet" href="<?=iro_opt('vision_resource_basepath'); ?>display_icon/remix_iconfont/remix_social.css">
+<?php endif;
+$print_social_zone = function() use ($all_opt): void {
+
     // 微信
-    if (iro_opt('wechat')):?>
-        <li class="wechat"><a href="#" title="WeChat"><img loading="lazy" src="<?=$social_display_icon?>wechat.png" /></a>
+    if (iro_opt('wechat')): ?>
+        <li class="wechat"><a href="#" title="WeChat">
+            <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont'): ?>
+                <i class="remix_social icon-wechat"></i>
+            <?php else: ?>
+                <img loading="lazy" src="<?= iro_opt('vision_resource_basepath').iro_opt('social_display_icon').'/' . 'wechat.webp' ?>" />
+            <?php endif; ?>
+        </a>
             <div class="wechatInner">
-                <img class="wechat-img" style="height: max-content;width: max-content;" loading="lazy" src="<?=iro_opt('wechat', '')?>" alt="WeChat">
+                <img class="wechat-img" style="height: max-content;width: max-content;" loading="lazy" src="<?= iro_opt('wechat', '') ?>" alt="WeChat">
             </div>
         </li>
     <?php
     endif;
+
     // 大体(all_opt.php)
     foreach ($all_opt as $key => $value):
         if (!empty($value['link'])):
-            // 显然 这里的逻辑可以看看all_opt的结构（
-            $img_url = $value['img'] ?? ($social_display_icon . ($value['icon'] ?? $key) . '.png');
+            $img_url = $value['img'] ?? (iro_opt('vision_resource_basepath').iro_opt('social_display_icon').'/' . ($value['icon'] ?? $key) . '.webp');
             $title = $value['title'] ?? $key;
             ?>
-            <li><a href="<?=$value['link'];?>" target="_blank" class="social-<?=$value['class'] ?? $key?>" title="<?=$title?>"><img alt="<?=$title?>" loading="lazy" src="<?=$img_url?>" /></a></li>
+            <li><a href="<?= $value['link']; ?>" target="_blank" class="social-<?= $value['class'] ?? $key ?>" title="<?= $title ?>">
+                <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont' && $key !== 'socialdiy1' && $key !== 'socialdiy2'): ?>
+                    <i class="remix_social icon-<?= $key ?>"></i>
+                <?php else: ?>
+                    <img alt="<?= $title ?>" loading="lazy" src="<?= $img_url ?>" />
+                <?php endif; ?>
+            </a></li>
         <?php
         endif;
     endforeach;
+
     // 邮箱
-    if (iro_opt('email_name') && iro_opt('email_domain')):?>
-        <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img loading="lazy"
-        alt="E-mail"
-                    src="<?=iro_opt('vision_resource_basepath')?><?=iro_opt('social_display_icon')?>/mail.png" /></a></li>
+    if (iro_opt('email_name') && iro_opt('email_domain')): ?>
+        <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail">
+            <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont'): ?>
+                <i class="remix_social icon-mail"></i>
+            <?php else: ?>
+                <img loading="lazy" alt="E-mail" src="<?php echo iro_opt('vision_resource_basepath').iro_opt('social_display_icon').'/' . 'mail.webp'; ?>" />
+            <?php endif; ?>
+        </a></li>
     <?php
     endif;
-    // 右箭头
-    if (iro_opt('cover_random_graphs_switch', 'true')):?>
-        <li id="bg-next"><img loading="lazy" src="<?=$social_display_icon?>next.png" alt="<?=__('Next','sakurairo')?>"/></li>
-    <?php endif;
+
 }
 ?>
-<?php
-/*未定义的伪类 */
-/* <style>
-.header-info::before {
-    display: none !important;
-    opacity: 0 !important;
-}
-</style> */
-?>
+
 <div id="banner_wave_1"></div>
 <div id="banner_wave_2"></div>
 <figure id="centerbg" class="centerbg">
@@ -58,10 +63,9 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
                 <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="<?=$text_logo['text']; ?>">
                     <?php echo $text_logo['text']; ?></h1>
             <?php else : ?>
-                <div class="header-tou"><a href="<?php bloginfo('url'); ?>"><img alt="avatar" loading="lazy" src="<?=iro_opt('personal_avatar', '') ?: iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.6/').'series/avatar.webp'?>"></a>
-                </div>
+                <div class="header-tou"><a href="<?php bloginfo('url'); ?>"><img alt="avatar" loading="lazy" src="<?=iro_opt('personal_avatar', '') ?: iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.7/').'series/avatar.webp'?>"></a>
+            </div>
             <?php endif; ?>
-            <div class="header-container">
                 <div class="header-info">
                     <!-- 首页一言打字效果 -->
                     <?php if (iro_opt('signature_typing', 'true')) : ?>
@@ -88,13 +92,19 @@ $print_social_zone = function() use ($all_opt,$social_display_icon):void{
                         </div>
                     <?php endif; ?>
                 </div>               
-            </div>
 
             <?php if (iro_opt('infor_bar_style') === 'v1') : ?>
                 <div class="top-social">
                     <?php $print_social_zone(); ?>
                 </div>
             <?php endif; ?>
+
+            <?php if (iro_opt('cover_random_graphs_switch', 'true')): ?>
+            <div class="bg-switch">
+            <li id="bg-next" style="display: flex; gap: 6px; align-items: center; letter-spacing: 1px;"><i class="fa-solid fa-dice"></i><?= __('Change', 'sakurairo') ?></li>
+            </div>
+            <?php endif; ?>
+
         </div>
     <?php } ?>
 </figure>

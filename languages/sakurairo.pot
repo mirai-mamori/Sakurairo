@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2023-06-05 13:20+0800\n"
+"POT-Creation-Date: 2024-10-13 15:49+0900\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -21,27 +21,27 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: 404.php:53
-msgid "return to previous page"
+#: 404.php:32
+msgid "Return to previous page"
 msgstr ""
 
-#: 404.php:54
-msgid "return to home page"
+#: 404.php:33
+msgid "Return to home page"
 msgstr ""
 
-#: 404.php:57
+#: 404.php:36
 msgid "Don't worry, search in site?"
 msgstr ""
 
-#: 404.php:59 footer.php:63 search.php:39
+#: 404.php:38 footer.php:72 search.php:30
 msgid "Search..."
 msgstr ""
 
-#: archive.php:58 author.php:79 index.php:74
+#: archive.php:59 author.php:55 index.php:49
 msgid " Previous"
 msgstr ""
 
-#: author.php:12
+#: author.php:15
 msgid "No personal profile set yet"
 msgstr ""
 
@@ -73,171 +73,170 @@ msgstr ""
 msgid "Comment reply notify"
 msgstr ""
 
-#: comments.php:67
-msgid "Leave a Reply to"
-msgstr ""
-
-#: comments.php:68
-msgid "Cancel Reply"
-msgstr ""
-
-#: comments.php:69
-msgid "BiuBiuBiu~"
-msgstr ""
-
-#: comments.php:70
-msgid "You are a surprise that I will only meet once in my life"
-msgstr ""
-
-#: comments.php:74
+#: comments.php:107
 msgid "Click me OωO"
 msgstr ""
 
-#: comments.php:75
+#: comments.php:108
 msgid "Woooooow ヾ(≧∇≦*)ゝ"
 msgstr ""
 
-#: comments.php:96
-msgid "Auto pull nickname and avatar with a QQ num. entered"
+#: comments.php:131
+msgid "Leave a Reply to"
 msgstr ""
 
-#: comments.php:96
+#: comments.php:132
+msgid "Cancel Reply"
+msgstr ""
+
+#: comments.php:133
+msgid "BiuBiuBiu~"
+msgstr ""
+
+#: comments.php:134
+msgid "You are a surprise that I will only meet once in my life"
+msgstr ""
+
+#: comments.php:144
 msgid "Nickname or QQ number"
 msgstr ""
 
-#: comments.php:96
+#: comments.php:144
 msgid "Name* "
 msgstr ""
 
-#: comments.php:98
-msgid "You will receive notification by email"
+#: comments.php:144
+msgid "Auto pull nickname and avatar with a QQ num. entered"
 msgstr ""
 
-#: comments.php:98
+#: comments.php:146
 msgid "email"
 msgstr ""
 
-#: comments.php:98
+#: comments.php:146
 msgid "Must* "
 msgstr ""
 
-#: comments.php:100
-msgid "Advertisement is forbidden 😀"
+#: comments.php:146
+msgid "You will receive notification by email"
 msgstr ""
 
-#: comments.php:100
+#: comments.php:148
 msgid "Site"
 msgstr ""
 
-#: footer.php:38
+#: comments.php:148
+msgid "Advertisement is forbidden 😀"
+msgstr ""
+
+#: footer.php:43
 #, php-format
-msgctxt "footer load occupancy"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr ""
 
-#: footer.php:68
+#: footer.php:77
 msgid "Go to top"
 msgstr ""
 
-#: footer.php:69
+#: footer.php:78
 msgid "Control Panel"
 msgstr ""
 
-#: footer.php:75 footer.php:83
+#: footer.php:84 footer.php:92
 msgid "Want to find something?"
 msgstr ""
 
-#: footer.php:84
+#: footer.php:93
 msgid "Search"
 msgstr ""
 
-#: footer.php:120
+#: footer.php:112
 msgid "Light Mode"
 msgstr ""
 
-#: footer.php:123
+#: footer.php:115
 msgid "Dark Mode"
 msgstr ""
 
-#: footer.php:129
+#: footer.php:121
 msgid "Toggle Page Background Image"
 msgstr ""
 
-#: footer.php:150
+#: footer.php:142
 msgid "Switch To Font A"
 msgstr ""
 
-#: footer.php:153
+#: footer.php:145
 msgid "Switch To Font B"
 msgstr ""
 
-#: functions.php:97
+#: functions.php:106
 msgid "Nav Menus"
 msgstr ""
 
-#: functions.php:213 functions.php:224
+#: functions.php:235 functions.php:246
 msgid "Ideas"
 msgstr ""
 
-#: functions.php:214
+#: functions.php:236
 msgid "Idea"
 msgstr ""
 
-#: functions.php:215 functions.php:216
+#: functions.php:237 functions.php:238
 msgid "Publish New Idea"
 msgstr ""
 
-#: functions.php:217
+#: functions.php:239
 msgid "Edit Idea"
 msgstr ""
 
-#: functions.php:218
+#: functions.php:240
 msgid "New Idea"
 msgstr ""
 
-#: functions.php:219
+#: functions.php:241
 msgid "View Idea"
 msgstr ""
 
-#: functions.php:220
+#: functions.php:242
 msgid "Search Idea"
 msgstr ""
 
-#: functions.php:221
+#: functions.php:243
 msgid "Not Found Idea"
 msgstr ""
 
-#: functions.php:222
+#: functions.php:244
 msgid "No Idea in the Trash"
 msgstr ""
 
-#: functions.php:297
+#: functions.php:326
 msgid "Copied!"
 msgstr ""
 
-#: functions.php:298
+#: functions.php:327
 msgid "Copy Code"
 msgstr ""
 
-#: functions.php:299
+#: functions.php:328
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, "
 "Cover Cache won't take effect."
 msgstr ""
 
-#: functions.php:300
+#: functions.php:329
 msgid "Commiting...."
 msgstr ""
 
-#: functions.php:301
+#: functions.php:330
 msgid "Succeed"
 msgstr ""
 
-#: functions.php:302
+#: functions.php:331
 msgid "10 files max per request"
 msgstr ""
 
-#: functions.php:303
+#: functions.php:332
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -246,15 +245,15 @@ msgid ""
 "This image is too large~Please reupload!"
 msgstr ""
 
-#: functions.php:304
+#: functions.php:333
 msgid "Uploading..."
 msgstr ""
 
-#: functions.php:305
+#: functions.php:334
 msgid "Uploaded successfully~"
 msgstr ""
 
-#: functions.php:306
+#: functions.php:335
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -262,127 +261,128 @@ msgid ""
 "{2}"
 msgstr ""
 
-#: functions.php:307
+#: functions.php:336
 msgid "Upload failed, please retry."
 msgstr ""
 
-#: functions.php:308
+#: functions.php:337
 msgid "Page Load failed. HTTP {0}"
 msgstr ""
 
-#: functions.php:309
+#: functions.php:338
 msgid "Glad you come, but we've got nothing left."
 msgstr ""
 
-#: functions.php:310
+#: functions.php:339
 msgid "Post"
 msgstr ""
 
-#: functions.php:311
+#: functions.php:340
 msgid "Tag"
 msgstr ""
 
-#: functions.php:312
+#: functions.php:341
 msgid "Category"
 msgstr ""
 
-#: functions.php:313
+#: functions.php:342
 msgid "Page"
 msgstr ""
 
-#: functions.php:314
+#: functions.php:343
 msgid "Comment"
 msgstr ""
 
-#: functions.php:315
+#: functions.php:344
 msgid "Paused..."
 msgstr ""
 
-#: functions.php:316
+#: functions.php:345
 msgid "Loading Video..."
 msgstr ""
 
-#: functions.php:317
+#: functions.php:346
 msgid "Downloading fonts, be aware of your data usage."
 msgstr ""
 
-#: functions.php:318
+#: functions.php:347
 msgid "Are you sure you want set it private?"
 msgstr ""
 
-#: functions.php:319
+#: functions.php:348
 msgid "You had set private comment before"
 msgstr ""
 
-#: functions.php:389 inc/theme_plus.php:194
+#: functions.php:398 inc/theme_plus.php:186
 msgid "Author"
 msgstr ""
 
-#: functions.php:389
+#: functions.php:398
 msgid "Blogger"
 msgstr ""
 
-#: functions.php:395
+#: functions.php:407 functions.php:2583
 msgid "Location"
 msgstr ""
 
-#: functions.php:401
+#: functions.php:413
 msgid "Private"
 msgstr ""
 
-#: functions.php:403
+#: functions.php:415
 msgid "Yes"
 msgstr ""
 
-#: functions.php:405
+#: functions.php:417
 msgid "No"
 msgstr ""
 
-#: functions.php:408
+#: functions.php:420
 msgid "Edit"
 msgstr ""
 
-#: functions.php:526
+#: functions.php:547
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:771
+#: functions.php:823
 msgid "Download Link"
 msgstr ""
 
-#: functions.php:844
+#: functions.php:900
 msgid "Remember me"
 msgstr ""
 
-#: functions.php:1265
+#: functions.php:1431
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1298
-msgid " "
+#: functions.php:1466
+msgid " year"
 msgstr ""
 
-#: functions.php:1302
+#: functions.php:1470
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1330 functions.php:1333 inc/theme_plus.php:427
+#: functions.php:1518 functions.php:1521 inc/theme_plus.php:413
+#: inc/theme_plus.php:459
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1638
+#: functions.php:1837
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:1763
+#: functions.php:1963
 msgid "QQ"
 msgstr ""
 
-#: functions.php:1847
+#: functions.php:2054
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:1976
+#: functions.php:2203
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -390,7 +390,12 @@ msgid ""
 "target=\"_blank\"> pseudo-static </a>. </ b>"
 msgstr ""
 
-#: functions.php:2106
+#: functions.php:2298
+#, php-format
+msgid "%s says: "
+msgstr ""
+
+#: functions.php:2341
 msgid "Expand / Collapse"
 msgstr ""
 
@@ -421,11 +426,11 @@ msgstr ""
 msgid "Backend error"
 msgstr ""
 
-#: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:69
+#: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:70
 msgid "Following "
 msgstr ""
 
-#: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:69
+#: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:70
 msgid " anime."
 msgstr ""
 
@@ -445,11 +450,11 @@ msgstr ""
 msgid "All item has been loaded."
 msgstr ""
 
-#: inc/classes/BilibiliFavList.php:130 page-word.php:59
+#: inc/classes/BilibiliFavList.php:130
 msgid "Load More"
 msgstr ""
 
-#: inc/classes/Cache.php:70 inc/theme_plus.php:679
+#: inc/classes/Cache.php:70 inc/theme_plus.php:716
 msgid "The comment is private"
 msgstr ""
 
@@ -477,31 +482,43 @@ msgstr ""
 msgid "An error has occurred."
 msgstr ""
 
-#: inc/classes/MyAnimeList.php:70
+#: inc/classes/IpLocation.php:302 inc/classes/IpLocation.php:331
+msgid "Unknown"
+msgstr ""
+
+#: inc/classes/IpLocation.php:305 inc/classes/IpLocation.php:334
+msgid "Reserved Address"
+msgstr ""
+
+#: inc/classes/IpLocation.php:308 inc/classes/IpLocation.php:322
+msgid "Empty Address"
+msgstr ""
+
+#: inc/classes/MyAnimeList.php:71
 msgid " Watched "
 msgstr ""
 
-#: inc/classes/MyAnimeList.php:70
+#: inc/classes/MyAnimeList.php:71
 msgid " episodes."
 msgstr ""
 
-#: inc/classes/MyAnimeList.php:108
+#: inc/classes/MyAnimeList.php:109
 msgid "Finished "
 msgstr ""
 
-#: inc/classes/MyAnimeList.php:117
+#: inc/classes/MyAnimeList.php:118
 msgid "Watching "
 msgstr ""
 
-#: inc/classes/MyAnimeList.php:124
+#: inc/classes/MyAnimeList.php:125
 msgid "Planning to Watch "
 msgstr ""
 
-#: inc/classes/MyAnimeList.php:133
+#: inc/classes/MyAnimeList.php:134
 msgid "Dropped "
 msgstr ""
 
-#: inc/classes/MyAnimeList.php:142
+#: inc/classes/MyAnimeList.php:143
 msgid "Paused "
 msgstr ""
 
@@ -539,174 +556,129 @@ msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post
-#: inc/template-tags.php:72 tpl/content-page.php:35
+#: inc/template-tags.php:72 tpl/content-page.php:38
 #, php-format
 msgid "Edit %s"
 msgstr ""
 
-#: inc/theme_plus.php:16
-msgid "EDIT"
-msgstr ""
-
-#: inc/theme_plus.php:65
+#: inc/theme_plus.php:57
 msgid " days ago"
 msgstr ""
 
-#: inc/theme_plus.php:66
+#: inc/theme_plus.php:58
 msgid " hours ago"
 msgstr ""
 
-#: inc/theme_plus.php:67
+#: inc/theme_plus.php:59
 msgid " minutes ago"
 msgstr ""
 
-#: inc/theme_plus.php:68
+#: inc/theme_plus.php:60
 msgid " seconds ago"
 msgstr ""
 
-#: inc/theme_plus.php:75
+#: inc/theme_plus.php:67
 msgid "Posted on "
 msgstr ""
 
-#: inc/theme_plus.php:134
+#: inc/theme_plus.php:126
 msgid "Please upgrade wordpress to version 4.4+"
 msgstr ""
 
-#: inc/theme_plus.php:241
+#: inc/theme_plus.php:233
 msgid "Login successful, "
 msgstr ""
 
-#: inc/theme_plus.php:242
+#: inc/theme_plus.php:234
 msgid "seconds later automatically transfer to"
 msgstr ""
 
-#: inc/theme_plus.php:253
+#: inc/theme_plus.php:245
 msgid "dashboard"
 msgstr ""
 
-#: inc/theme_plus.php:261
+#: inc/theme_plus.php:253
 msgid "home"
 msgstr ""
 
-#: inc/theme_plus.php:273
+#: inc/theme_plus.php:265
 msgid "Change avatar"
 msgstr ""
 
-#: inc/theme_plus.php:274
+#: inc/theme_plus.php:266
 msgid "Hello, "
 msgstr ""
 
-#: inc/theme_plus.php:278
+#: inc/theme_plus.php:270
 msgid "Home"
 msgstr ""
 
-#: inc/theme_plus.php:280
+#: inc/theme_plus.php:272
 msgid "Manage"
 msgstr ""
 
-#: inc/theme_plus.php:282
+#: inc/theme_plus.php:274
 msgid "Logout"
 msgstr ""
 
-#: inc/theme_plus.php:282
+#: inc/theme_plus.php:274
 msgid "Sign out? "
 msgstr ""
 
-#: inc/theme_plus.php:302 inc/theme_plus.php:363 tpl/content-single.php:31
-#: tpl/single-image.php:24
-msgid "View"
-msgid_plural "Views"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/theme_plus.php:314 inc/theme_plus.php:374
+#: inc/theme_plus.php:307 inc/theme_plus.php:360
 #, php-format
 msgid "Search results for \" %s \""
 msgstr ""
 
-#: inc/theme_plus.php:391 tpl/content-thumb.php:28 tpl/content-thumb.php:34
+#: inc/theme_plus.php:377 tpl/content-thumbcard.php:58
+#: tpl/content-thumbcard.php:64
 msgid "Your browser does not support HTML5 video."
 msgstr ""
 
-#: inc/theme_plus.php:422
+#: inc/theme_plus.php:408
 msgid "Signed in as"
 msgstr ""
 
-#: inc/theme_plus.php:428
+#: inc/theme_plus.php:414 inc/theme_plus.php:460
 msgid "New post"
 msgstr ""
 
-#: inc/theme_plus.php:430
+#: inc/theme_plus.php:416 inc/theme_plus.php:462
 msgid "Profile"
 msgstr ""
 
-#: inc/theme_plus.php:431
+#: inc/theme_plus.php:417 inc/theme_plus.php:463
 msgid "Sign out"
 msgstr ""
 
-#: inc/theme_plus.php:449
+#: inc/theme_plus.php:435 inc/theme_plus.php:474
 msgid "Log in"
 msgstr ""
 
-#: index.php:26
+#: inc/theme_plus.php:476
+msgid "Register"
+msgstr ""
+
+#: index.php:9
 msgid "Notice"
 msgstr ""
 
-#: layouts/imgbox.php:7
-msgid "Previous"
-msgstr ""
-
-#: layouts/imgbox.php:39
-msgid "Next"
-msgstr ""
-
-#: layouts/post-nextprev.php:12
-msgid "Previous Post"
+#: layouts/imgbox.php:104
+msgid "Change"
 msgstr ""
 
 #: layouts/post-nextprev.php:15
+msgid "Previous Post"
+msgstr ""
+
+#: layouts/post-nextprev.php:24
 msgid "Next Post"
 msgstr ""
 
-#: page-word.php:49
-msgid "You have not posted a comment yet"
-msgstr ""
-
-#: page-word.php:52
-msgid "Go and post your first comment now"
-msgstr ""
-
-#: search.php:20
+#: search.php:19
 #, php-format
-msgid "search result: %s"
+msgid "Search result: %s"
 msgstr ""
-
-#: tpl/content-category.php:31 tpl/content-image.php:33
-#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
-msgid "NOTHING"
-msgstr ""
-
-#: tpl/content-category.php:31 tpl/content-image.php:33
-#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
-msgid "1 Comment"
-msgstr ""
-
-#: tpl/content-category.php:31 tpl/content-image.php:33
-#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
-msgid "Comments"
-msgstr ""
-
-#: tpl/content-category.php:31 tpl/content-image.php:33
-#: tpl/content-status.php:32 tpl/content-thumb.php:94 tpl/content.php:33
-msgid "Comment Closed"
-msgstr ""
-
-#: tpl/content-image.php:37 tpl/content-status.php:36 tpl/content-thumb.php:91
-#: tpl/content.php:37
-msgid "Hit"
-msgid_plural "Hits"
-msgstr[0] ""
-msgstr[1] ""
 
 #: tpl/content-none.php:14
 msgid "There is nothing here！"
@@ -726,19 +698,101 @@ msgstr ""
 msgid "We didn't seem to find what you want. Maybe you can search for it."
 msgstr ""
 
-#: tpl/content-page.php:24 tpl/content-single.php:45 tpl/single-image.php:34
+#: tpl/content-page.php:27 tpl/content-single.php:35 tpl/single-image.php:25
 msgid "Pages:"
 msgstr ""
 
-#: tpl/content-single.php:38 tpl/content-thumb.php:116
+#: tpl/content-single.php:28 tpl/content-thumbcard.php:184
 msgid "AI Excerpt"
 msgstr ""
 
-#: tpl/content-single.php:80 tpl/single-image.php:67
+#: tpl/content-thumbcard.php:4
+msgid "Hit"
+msgid_plural "Hits"
+msgstr[0] ""
+msgstr[1] ""
+
+#: tpl/content-thumbcard.php:40 tpl/entry-census.php:61
+msgid "Estimate Reading Time"
+msgstr ""
+
+#: tpl/content-thumbcard.php:170
+msgid "Sticky"
+msgstr ""
+
+#: tpl/content-thumbcard.php:187
+msgid "Excerpt"
+msgstr ""
+
+#: tpl/entry-census.php:6
+msgid "EDIT"
+msgstr ""
+
+#: tpl/entry-census.php:43
+msgid "View"
+msgid_plural "Views"
+msgstr[0] ""
+msgstr[1] ""
+
+#: tpl/entry-census.php:77 tpl/section-article-function.php:71
 msgid "Last updated on "
 msgstr ""
 
-#: tpl/content-single.php:88 tpl/single-image.php:75
+#: tpl/entry-census.php:79 tpl/entry-census.php:81
+msgid "Last updated on"
+msgstr ""
+
+#: tpl/meta-comments.php:4
+msgid "NOTHING"
+msgstr ""
+
+#: tpl/meta-comments.php:4
+msgid "1 Comment"
+msgstr ""
+
+#: tpl/meta-comments.php:4
+msgid "Comments"
+msgstr ""
+
+#: tpl/meta-comments.php:4
+msgid "Comment Closed"
+msgstr ""
+
+#: tpl/meta-ert.php:8
+msgid "Less than 1 minute"
+msgstr ""
+
+#: tpl/meta-ert.php:11
+#, php-format
+msgid "%s Hour"
+msgid_plural "%s Hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: tpl/meta-ert.php:13
+#, php-format
+msgid "%s Minute"
+msgid_plural "%s Minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: tpl/meta-words-count.php:9
+#, php-format
+msgid "%s Word"
+msgid_plural "%s Words"
+msgstr[0] ""
+msgstr[1] ""
+
+#: tpl/section-article-function.php:17 tpl/section-article-function.php:22
+#, php-format
+msgid "This article is licensed under %s"
+msgstr ""
+
+#: tpl/section-article-function.php:62
+msgid "This author has not provided a description."
+msgstr ""
+
+#: tpl/section-article-function.php:80
 msgid "Nothing~"
 msgstr ""
 
@@ -747,7 +801,7 @@ msgstr ""
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr ""
 
-#: user/page-bangumi.php:43
+#: user/page-bangumi.php:44
 msgid "Please fill in the My Anime List Username in Sakura Options."
 msgstr ""
 
@@ -850,7 +904,7 @@ msgid "Created by Fuukei"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://fuukei.org/"
+msgid "https://docs.fuukei.org/"
 msgstr ""
 
 #. Template Name of the plugin/theme
@@ -859,8 +913,4 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "友情链接模版"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "说说模版"
 msgstr ""

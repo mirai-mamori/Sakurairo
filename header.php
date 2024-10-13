@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The header for our theme.
  *
@@ -7,22 +6,28 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Akina
+ * @package Sakurairo
  */
+
+// Prevent direct access to the file
+if (!defined('ABSPATH')) {
+	exit; // Exit if accessed directly
+}
 
 $mashiro_logo = iro_opt('mashiro_logo');
 $vision_resource_basepath = iro_opt('vision_resource_basepath');
+header('X-Frame-Options: SAMEORIGIN');
+header('X-XSS-Protection: 1; mode=block');
 ?>
-<?php header('X-Frame-Options: SAMEORIGIN'); ?>
 <!DOCTYPE html>
 <!-- 
-            ◢＼　 ☆　　 ／◣
-    　  　∕　　﹨　╰╮∕　　﹨
-    　  　▏　　～～′′～～ 　｜
-    　　  ﹨／　　　　　　 　＼∕
-    　 　 ∕ 　　●　　　 ●　＼
-      ＝＝　○　∴·╰╯　∴　○　＝＝
-    　    ╭──╮　　　　　╭──╮
+		◢＼　 ☆　　 ／◣
+	　  　∕　　﹨　╰╮∕　　﹨
+	　  　▏　　～～′′～～ 　｜
+	　　  ﹨／　　　　　　 　＼∕
+	　 　 ∕ 　　●　　　 ●　＼
+	  ＝＝　○　∴·╰╯　∴　○　＝＝
+	　    ╭──╮　　　　　╭──╮
   ╔═ ∪∪∪═Mashiro&Hitomi═∪∪∪═╗
 -->
 <html <?php language_attributes(); ?>>
@@ -30,67 +35,61 @@ $vision_resource_basepath = iro_opt('vision_resource_basepath');
 <head>
 	<meta name="theme-color">
 	<meta charset="<?php bloginfo('charset'); ?>">
-	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <link rel="stylesheet" href="<?= $vision_resource_basepath ?>fontawesome/css/all.min.css" type="text/css" media="all"/>
+	<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css" media="all"/>
 	<?php
-	if (iro_opt('iro_meta') == true) {
-		$keywords = '';
-		$description = '';
+	if (iro_opt('iro_meta')) {
+		$keywords = iro_opt('iro_meta_keywords');
+		$description = iro_opt('iro_meta_description');
 		if (is_singular()) {
-			$keywords = '';
 			$tags = get_the_tags();
-			$categories = get_the_category();
 			if ($tags) {
-				foreach ($tags as $tag) {
-					$keywords .= $tag->name . ',';
-				};
-			};
+				$keywords = implode(',', array_column($tags, 'name'));
+			}     
+			if (!empty($post->post_content)) {
+				$description = trim(mb_strimwidth(preg_replace('/\s+/', ' ', strip_tags($post->post_content)), 0, 240, '…'));
+			}
+		}
+		if (is_category()) {
+			$categories = get_the_category();
 			if ($categories) {
-				foreach ($categories as $category) {
-					$keywords .= $category->name . ',';
-				};
-			};
-			$description = mb_strimwidth(str_replace("\r\n", '', strip_tags($post->post_content)), 0, 240, '…');
-		} else {
-			$keywords = iro_opt('iro_meta_keywords');
-			$description = iro_opt('iro_meta_description');
-		};
+				$keywords = implode(',', array_column($categories, 'name'));
+			}
+			$description = trim(category_description()) ?: $description;
+		}
 	?>
-		<meta name="description" content="<?php echo $description; ?>" />
-		<meta name="keywords" content="<?php echo $keywords; ?>" />
+		<meta name="description" content="<?= esc_attr($description); ?>" />
+		<meta name="keywords" content="<?= esc_attr($keywords); ?>" />
 	<?php } ?>
-	<link rel="shortcut icon" href="<?php echo iro_opt('favicon_link', ''); ?>" />
+	<link rel="shortcut icon" href="<?= esc_url(iro_opt('favicon_link', '')); ?>" />
 	<meta http-equiv="x-dns-prefetch-control" content="on">
 	<?php
 	if (is_home()) {
-		//预载资源
-		//id 需要一致，使 pjax 可以完成自动替换
 		global $core_lib_basepath;
 	?>
-		<link id="entry-content-css" rel="prefetch" as="style" href="<?= $core_lib_basepath . '/css/theme/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css?ver=' . IRO_VERSION ?>" />
-		<link rel="prefetch" as="script" href="<?= $core_lib_basepath . '/js/page.js?ver=' . IRO_VERSION ?>" />
+		<link id="entry-content-css" rel="prefetch" as="style" href="<?= esc_url($core_lib_basepath . '/css/theme/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css?ver=' . IRO_VERSION) ?>" />
+		<link rel="prefetch" as="script" href="<?= esc_url($core_lib_basepath . '/js/page.js?ver=' . IRO_VERSION) ?>" />
 	<?php
 	}
 	?>
 	<?php wp_head(); ?>
-	<link rel="stylesheet" href="https://<?php echo iro_opt('gfonts_api', 'fonts.loli.net'); ?>/css?family=Noto+Serif|Noto+Serif+SC|Noto+Sans+SC|Dela+Gothic+One|Fira+Code<?php echo iro_opt('gfonts_add_name'); ?>&display=swap" media="all">
+	<link rel="stylesheet" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css?family=Noto+Serif|Noto+Serif+SC|Noto+Sans+SC|Dela+Gothic+One|Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap" media="all">
 	<script type="text/javascript">
 		if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
-			alert('朋友，IE浏览器未适配哦~\n如果是 360、QQ 等双核浏览器，请关闭 IE 模式！');
+			alert('朋友，IE浏览器未适配哦~\n如果是 360、QQ 等双核浏览器，请关闭 IE 模式！(Are you using IE? Some of the web elements might be broken, please use the latest browser to access！)');
 		}
 	</script>
-	<?php if (iro_opt('google_analytics_id', '')) : ?>
+	<?php if (iro_opt('google_analytics_id')) : ?>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo iro_opt('google_analytics_id', ''); ?>"></script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=<?= esc_attr(iro_opt('google_analytics_id')); ?>"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {dataLayer.push(arguments)}
 			gtag('js', new Date());
-			gtag('config', '<?php echo iro_opt('google_analytics_id', ''); ?>');
+			gtag('config', '<?= esc_attr(iro_opt('google_analytics_id')); ?>');
 		</script>
 	<?php endif; ?>
-	<?php echo iro_opt("site_header_insert"); ?>
+	<?= iro_opt("site_header_insert"); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -107,18 +106,18 @@ $vision_resource_basepath = iro_opt('vision_resource_basepath');
 			<div class="site-branding">
 				<?php if (iro_opt('iro_logo') && !iro_opt('mashiro_logo_option', false)) { ?>
 					<div class="site-title">
-						<a href="<?php bloginfo('url'); ?>"><img src="<?php echo iro_opt('iro_logo'); ?>"></a>
+					<a href="<?php echo bloginfo('url'); ?>"><img alt="<?= esc_attr(get_option('blogname')); ?>" src="<?= esc_url(iro_opt('iro_logo')); ?>"></a>
 					</div>
 				<?php } else { ?>
 					<span class="site-title">
 						<span class="logolink moe-mashiro">
-							<a href="<?php bloginfo('url'); ?>">
+						    <a href="<?= bloginfo('url'); ?>">
 								<ruby>
-									<span class="sakuraso"><?= $mashiro_logo['text_a'] ?? ""; ?></span>
-									<span class="no"><?= $mashiro_logo['text_b'] ?? ""; ?></span>
-									<span class="shironeko"><?= $mashiro_logo['text_c'] ?? ""; ?></span>
+									<span class="sakuraso"><?= esc_html($mashiro_logo['text_a'] ?? ""); ?></span>
+									<span class="no"><?= esc_html($mashiro_logo['text_b'] ?? ""); ?></span>
+									<span class="shironeko"><?= esc_html($mashiro_logo['text_c'] ?? ""); ?></span>
 									<rp></rp>
-									<rt class="chinese-font"><?= $mashiro_logo['text_secondary'] ?? ""; ?></rt>
+									<rt class="chinese-font"><?= esc_html($mashiro_logo['text_secondary'] ?? ""); ?></rt>
 									<rp></rp>
 								</ruby>
 							</a>
@@ -137,7 +136,7 @@ $vision_resource_basepath = iro_opt('vision_resource_basepath');
 						<div class="line line2"></div>
 						<div class="line line3"></div>
 					</div><?php } ?>
-				<nav><?php wp_nav_menu(array('depth' => 2, 'theme_location' => 'primary', 'container' => false)); ?></nav><!-- #site-navigation -->
+				<nav><?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => false]); ?></nav><!-- #site-navigation -->
 			</div>
 		</div>
 	</header><!-- #masthead -->
@@ -151,7 +150,7 @@ $vision_resource_basepath = iro_opt('vision_resource_basepath');
 		if (iro_opt('cover_switch')) {
 			$filter = iro_opt('random_graphs_filter');
 		?>
-			<div class="headertop <?php echo $filter; ?>">
+			<div class="headertop <?= esc_attr($filter); ?>">
 				<?php get_template_part('layouts/imgbox'); ?>
 			</div>
 		<?php } ?>

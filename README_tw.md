@@ -1,6 +1,6 @@
 [简体中文](README.md) | **繁體中文** | [English](README_en.md) | [日本語](README_ja.md)
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/banner-ver2.6.png)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/banner-ver2.7.webp)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -12,7 +12,7 @@
 
 ## 版本宣傳：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/tw-ver2.6.png)](https://fuukei.org//)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/tw.png)](https://docs.fuukei.org//)
 
 ## 使用相關：
 
@@ -27,7 +27,7 @@
 
 ## 贊助商：
 
-<a href="https://www.upyun.com/"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.6/options/upyun_logo.webp" alt="UPYUN" width="200"></a>
+<a href="https://www.upyun.com/"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.7/options/upyun_logo.webp" alt="UPYUN" width="200"></a>
 
 ## 主題貢獻：
 
@@ -65,11 +65,11 @@
 
 - 本主題使用 YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) 以提供主題更新功能
 
-- 本主題使用 HaoZi-Team [ChatGPT PHP](https://github.com/HaoZi-Team/ChatGPT-PHP) 以提供 ChatGPT 相關能力
+- 本主題使用 orhanerday [open-ai](https://github.com/orhanerday/open-ai) 以提供 ChatGPT 相關能力
 
 ## 希望你喜歡！
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.6/readme/tw-ver2.6info.png)](https://fuukei.org/)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/tw-ver2.7info.png)](https://docs.fuukei.org/)
 
 - Star 趨勢  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 

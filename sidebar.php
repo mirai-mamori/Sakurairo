@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Akina
+ * @package Sakurairo
  */
 
 //disable get_sidebar()

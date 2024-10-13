@@ -10,23 +10,27 @@ class Aplayer
     public $api_url;
     public $proxy;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->server = iro_opt('aplayer_server');
         $this->playlist_id = iro_opt('aplayer_playlistid');
         $this->cookies = iro_opt('aplayer_cookie');
         $this->api_url = rest_url('sakura/v1/meting/aplayer');
-        $this->proxy = iro_opt('aplayer_server_proxy','');
+        $this->proxy = iro_opt('aplayer_server_proxy', '');
         require('Meting.php');
     }
 
-    public function get_data($type, $id) {
+    public function get_data($type, $id)
+    {
         $server = $this->server;
         $cookies = $this->cookies;
         $playlist_id = $this->playlist_id;
         $proxy = $this->proxy;
         $api = new \Sakura\API\Meting($server);
-        if (!empty($cookies) && $server === "netease") $api->cookie($cookies);
-        if ($proxy != '') $api->proxy($proxy);
+        if (!empty($cookies) && $server === "netease")
+            $api->cookie($cookies);
+        if ($proxy != '')
+            $api->proxy($proxy);
         switch ($type) {
             case 'song':
                 $data = $api->format(true)->song($id);
@@ -62,18 +66,19 @@ class Aplayer
         return $data;
     }
 
-    private function format_playlist($data) {
+    private function format_playlist($data)
+    {
         $server = $this->server;
         $_api_url = $this->api_url;
-        $api_url = $_api_url.(preg_match('/index.php\?/i',$_api_url)?'&':'?');
+        $api_url = $_api_url . (preg_match('/index.php\?/i', $_api_url) ? '&' : '?');
         $data = json_decode($data);
         $playlist = array();
-        foreach ((array)$data as $value) {
+        foreach ((array) $data as $value) {
             $name = $value->name;
-            $artists = implode(" / ", (array)$value->artist);
-            $mp3_url = $api_url."server=$server&type=url&id=" . $value->url_id . '&meting_nonce=' . wp_create_nonce('url#:' . $value->url_id);
-            $cover = $api_url."server=$server&type=pic&id=" . $value->pic_id . '&meting_nonce=' . wp_create_nonce('pic#:' . $value->url_id);
-            $lyric = $api_url."server=$server&type=lyric&id=" . $value->lyric_id . '&meting_nonce=' . wp_create_nonce('lyric#:' . $value->url_id);
+            $artists = implode(" / ", (array) $value->artist);
+            $mp3_url = $api_url . "server=$server&type=url&id=" . $value->url_id . '&meting_nonce=' . wp_create_nonce('url#:' . $value->url_id);
+            $cover = $api_url . "server=$server&type=pic&id=" . $value->pic_id . '&meting_nonce=' . wp_create_nonce('pic#:' . $value->url_id);
+            $lyric = $api_url . "server=$server&type=lyric&id=" . $value->lyric_id . '&meting_nonce=' . wp_create_nonce('lyric#:' . $value->url_id);
             $playlist[] = array(
                 "name" => $name,
                 "artist" => $artists,
@@ -85,7 +90,8 @@ class Aplayer
         return $playlist;
     }
 
-    private function song_url($url){
+    private function song_url($url)
+    {
         $server = $this->server;
         if ($server == 'netease') {
             $url = str_replace('://m7c.', '://m7.', $url);
@@ -93,17 +99,16 @@ class Aplayer
             $url = str_replace('http://m8.', 'https://m9.', $url);
             $url = str_replace('http://m7.', 'https://m9.', $url);
             $url = str_replace('http://m10.', 'https://m10.', $url);
-        }elseif ($server == 'xiami') {
+        } elseif ($server == 'xiami') {
             $url = str_replace('http://', 'https://', $url);
-        }elseif ($server == 'baidu') {
+        } elseif ($server == 'baidu') {
             $url = str_replace('http://zhangmenshiting.qianqian.com', 'https://gss3.baidu.com/y0s1hSulBw92lNKgpU_Z2jR7b2w6buu', $url);
-        }else{
-            $url = $url;
         }
         return $url;
     }
 
-    private function format_lyric($data) {
+    private function format_lyric($data)
+    {
         $server = $this->server;
         $data = json_decode($data, true);
         $data = $this->lrctran($data['lyric'], $data['tlyric']);
@@ -116,7 +121,8 @@ class Aplayer
         return $data;
     }
 
-    private function lrctran($lyric, $tlyric) {
+    private function lrctran($lyric, $tlyric)
+    {
         $lyric = $this->lrctrim($lyric);
         $tlyric = $this->lrctrim($tlyric);
         $len1 = count($lyric);
@@ -141,7 +147,8 @@ class Aplayer
         return $result;
     }
 
-    private function lrctrim($lyrics) {
+    private function lrctrim($lyrics)
+    {
         $lyrics = explode("\n", $lyrics);
         $data = array();
         foreach ($lyrics as $key => $lyric) {

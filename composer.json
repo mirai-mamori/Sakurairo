@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "haozi-team/chatgpt-php": "^2.0.2"
+        "orhanerday/open-ai": "^5.2"
     },
     "config": {
         "allow-plugins": {

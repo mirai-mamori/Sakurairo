@@ -1,13 +1,13 @@
 <?php
 $social_display_icon = iro_opt('vision_resource_basepath').iro_opt('social_display_icon').'/';
 $all_opt = [
+    'qq' => [
+        'link' => iro_opt('qq', '')
+    ],
     'bili' => [
         'link' => iro_opt('bili', ''),
         'icon' => 'bilibili',
         'title' => 'bilibili',
-    ],
-    'qq' => [
-        'link' => iro_opt('qq', '')
     ],
     'wangyiyun' => [
         'link' => iro_opt('wangyiyun', ''),
@@ -31,20 +31,33 @@ $all_opt = [
         'link' => iro_opt('steam', ''),
         'class' => 'wangyiyun',
         'icon' => 'st'
+    ], 
+    'youtube' => [
+        'link' => iro_opt('youtube', ''),
+        'icon' => 'youtube',
+        'class' => 'wangyiyun'
+    ],
+    'instagram' => [
+        'link' => iro_opt('instagram', ''),
+        'icon' => 'ig',
+        'class' => 'wangyiyun'
+    ],
+    'douyin' => [
+        'link' => iro_opt('douyin', ''),
+        'icon' => 'dy',
+        'class' => 'wangyiyun'
+    ],
+    'xiaohongshu' => [
+        'link' => iro_opt('xiaohongshu', ''),
+        'class' => 'wangyiyun'
+    ],
+    'discord' => [
+        'link' => iro_opt('discord', ''),
+        'class' => 'wangyiyun'
     ],
     'zhihu' => [
         'link' => iro_opt('zhihu', ''),
         'class' => 'wangyiyun'
-    ],
-    'qzone' => [
-        'link' => iro_opt('qzone', ''),
-        'icon' => 'qz'
-    ],
-    'lofter' => [
-        'link' => iro_opt('lofter', '')
-    ],
-    'youku' => [
-        'link' => iro_opt('youku', '')
     ],
     'linkedin' => [
         'link' => iro_opt('linkedin', ''),
@@ -59,16 +72,6 @@ $all_opt = [
     'facebook' => [
         'link' => iro_opt('facebook', ''),
         'icon' => 'fb',
-        'class' => 'wangyiyun'
-    ],
-    'csdn' => [
-        'link' => iro_opt('csdn', ''),
-        'icon' => 'csdn',
-        'class' => 'wangyiyun'
-    ],
-    'jianshu' => [
-        'link' => iro_opt('jianshu', ''),
-        'icon' => 'book',
         'class' => 'wangyiyun'
     ],
     'socialdiy1' => [

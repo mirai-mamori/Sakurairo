@@ -22,6 +22,7 @@ use Sakura\API\Images;
 use Sakura\API\QQ;
 use Sakura\API\Cache;
 use Sakura\API\Captcha;
+
 /**
  * Router
  */
@@ -29,23 +30,27 @@ add_action('rest_api_init', function () {
     register_rest_route('sakura/v1', '/image/upload', array(
         'methods' => 'POST',
         'callback' => 'upload_image',
-        'permission_callback'=>'__return_true'
-    ));
+        'permission_callback' => '__return_true'
+    )
+    );
     register_rest_route('sakura/v1', '/cache_search/json', array(
         'methods' => 'GET',
         'callback' => 'cache_search_json',
-        'permission_callback'=>'__return_true'
-    ));
+        'permission_callback' => '__return_true'
+    )
+    );
     register_rest_route('sakura/v1', '/image/cover', array(
         'methods' => 'GET',
         'callback' => 'cover_gallery',
-        'permission_callback'=>'__return_true'
-    ));
+        'permission_callback' => '__return_true'
+    )
+    );
     register_rest_route('sakura/v1', '/image/feature', array(
         'methods' => 'GET',
         'callback' => 'feature_gallery',
-        'permission_callback'=>'__return_true'
-    ));
+        'permission_callback' => '__return_true'
+    )
+    );
     // register_rest_route('sakura/v1', '/database/update', array(
     //     'methods' => 'GET',
     //     'callback' => 'update_database',
@@ -54,39 +59,68 @@ add_action('rest_api_init', function () {
     register_rest_route('sakura/v1', '/qqinfo/json', array(
         'methods' => 'GET',
         'callback' => 'get_qq_info',
-        'permission_callback'=>'__return_true'
-    ));
+        'permission_callback' => '__return_true'
+    )
+    );
     register_rest_route('sakura/v1', '/qqinfo/avatar', array(
         'methods' => 'GET',
         'callback' => 'get_qq_avatar',
-        'permission_callback'=>'__return_true'
-    ));
+        'permission_callback' => '__return_true'
+    )
+    );
     register_rest_route('sakura/v1', '/bangumi/bilibili', array(
         'methods' => 'POST',
         'callback' => 'bgm_bilibili',
-        'permission_callback'=>'__return_true'
-    ));
-	register_rest_route('sakura/v1', '/favlist/bilibili', array(
-		'methods' => 'POST',
-		'callback' => 'favlist_bilibili',
-        'permission_callback'=>'__return_true'
-	));
+        'permission_callback' => '__return_true'
+    )
+    );
+    register_rest_route('sakura/v1', '/favlist/bilibili', array(
+        'methods' => 'POST',
+        'callback' => 'favlist_bilibili',
+        'permission_callback' => '__return_true'
+    )
+    );
     register_rest_route('sakura/v1', '/meting/aplayer', array(
         'methods' => 'GET',
         'callback' => 'meting_aplayer',
-        'permission_callback'=>'__return_true'
-    ));
+        'permission_callback' => '__return_true'
+    )
+    );
     register_rest_route('sakura/v1', '/captcha/create', array(
         'methods' => 'GET',
         'callback' => 'create_CAPTCHA',
-        'permission_callback'=>'__return_true'
+        'permission_callback' => '__return_true'
+    )
+    ); 
+    // ChatGPT test route
+    register_rest_route('sakura/v1', '/chatgpt', array(
+        'methods' => 'GET',
+        'callback' => 'chatgpt_summarize',
+        'permission_callback' =>function ()
+        {
+         return current_user_can( 'administrator' ) ;
+        }
     ));
 });
+
+require_once ('chatgpt/hooks.php');
+
+function chatgpt_summarize(WP_REST_Request $request)
+{
+    $post_id = $request->get_param('post_id');
+    $post = get_post($post_id);
+    if(!$post) {
+        return new WP_REST_Response("Invalid post ID", 400);
+    }
+    $excerpt = IROChatGPT\summon_article_excerpt($post);
+    return new WP_REST_Response($excerpt, 200);
+}
 
 /**
  * Image uploader response
  */
-function upload_image(WP_REST_Request $request) {
+function upload_image(WP_REST_Request $request)
+{
     // see: https://developer.wordpress.org/rest-api/requests/
 
     // handle file params $file === $_FILES
@@ -98,11 +132,12 @@ function upload_image(WP_REST_Request $request) {
      */
     // $file = $request->get_file_params();
     if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
-        $output = array('status' => 403,
+        $output = array(
+            'status' => 403,
             'success' => false,
             'message' => 'Unauthorized client.',
-            'link' => "https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/step04.md.png",
-            'proxy' => iro_opt('comment_image_proxy') . "https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/step04.md.png",
+            'link' => "https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/step04.md.png",
+            'proxy' => iro_opt('comment_image_proxy') . "https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/step04.md.png",
         );
         $result = new WP_REST_Response($output, 403);
         $result->set_headers(array('Content-Type' => 'application/json'));
@@ -138,15 +173,16 @@ function upload_image(WP_REST_Request $request) {
  * 随机封面图 rest api
  * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/image/cover
  */
-function cover_gallery() {
+function cover_gallery()
+{
     $type = $_GET['type'] ?? '';
     // $type = in_array('type',$_GET) ? $_GET['type']:'';
-    if ($type === 'mobile' && iro_opt('random_graphs_mts')){
+    if ($type === 'mobile' && iro_opt('random_graphs_mts')) {
         $imgurl = Images::mobile_cover_gallery();
-    }else{
+    } else {
         $imgurl = Images::cover_gallery();
     }
-    if (!$imgurl['status']){
+    if (!$imgurl['status']) {
         return new WP_REST_Response(
             array(
                 'status' => 500,
@@ -167,10 +203,11 @@ function cover_gallery() {
  * 随机文章特色图 rest api
  * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/image/feature
  */
-function feature_gallery() {
-    $size = isset($_GET['size']) ? (in_array($_GET['size'], ['source','th']) ? $_GET['size'] : 'source') : 'source';
+function feature_gallery()
+{
+    $size = isset($_GET['size']) ? (in_array($_GET['size'], ['source', 'th']) ? $_GET['size'] : 'source') : 'source';
     $imgurl = Images::feature_gallery($size);
-    if (!$imgurl['status']){
+    if (!$imgurl['status']) {
         return new WP_REST_Response(
             array(
                 'status' => 500,
@@ -206,7 +243,8 @@ function feature_gallery() {
  * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/cache_search/json
  * @可在cache_search_json()函数末尾通过设置 HTTP header 控制 json 缓存时间
  */
-function cache_search_json() {
+function cache_search_json()
+{
     if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
         $output = array(
             'status' => 403,
@@ -231,7 +269,8 @@ function cache_search_json() {
  * QQ info
  * https://sakura.2heng.xin/wp-json/sakura/v1/qqinfo/json
  */
-function get_qq_info(WP_REST_Request $request) {
+function get_qq_info(WP_REST_Request $request)
+{
     if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
         $output = array(
             'status' => 403,
@@ -258,16 +297,19 @@ function get_qq_info(WP_REST_Request $request) {
  * QQ头像链接解密
  * https://sakura.2heng.xin/wp-json/sakura/v1/qqinfo/avatar
  */
-function get_qq_avatar() {
+function get_qq_avatar()
+{
     $encrypted = $_GET["qq"];
     $imgurl = QQ::get_qq_avatar($encrypted);
     if (iro_opt('qq_avatar_link') == 'type_2') {
         $imgdata = file_get_contents($imgurl);
         $response = new WP_REST_Response();
-        $response->set_headers(array(
-            'Content-Type' => 'image/jpeg',
-            'Cache-Control' => 'max-age=86400'
-        ));
+        $response->set_headers(
+            array(
+                'Content-Type' => 'image/jpeg',
+                'Cache-Control' => 'max-age=86400'
+            )
+        );
         echo $imgdata;
     } else {
         $response = new WP_REST_Response();
@@ -277,7 +319,8 @@ function get_qq_avatar() {
     return $response;
 }
 
-function bgm_bilibili() {
+function bgm_bilibili()
+{
     if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
         $output = array(
             'status' => 403,
@@ -291,36 +334,40 @@ function bgm_bilibili() {
         $html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->get_bgm_items($page));
         $response = new WP_REST_Response($html, 200);
     }
-	$page = $_GET["page"] ?: 2;
-	$bgm = new \Sakura\API\Bilibili();
-	$html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->get_bgm_items($page));
-	$response = new WP_REST_Response($html, 200);
+    $page = $_GET["page"] ?: 2;
+    $bgm = new \Sakura\API\Bilibili();
+    $html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->get_bgm_items($page));
+    $response = new WP_REST_Response($html, 200);
     return $response;
 }
 
-function favlist_bilibili() {
-	if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
-		$output = array(
-			'status' => 403,
-			'success' => false,
-			'message' => 'Unauthorized client.'
-		);
-		$response = new WP_REST_Response($output, 403);
-	} else {
-		$page = $_GET["page"] ?: 2;
-		$folder_id = $_GET["folder_id"];
-		$bgm = new \Sakura\API\BilibiliFavList();
-		$html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->load_folder_items($folder_id, $page));
-		$response = new WP_REST_Response($html, 200);
-	}
-	return $response;
+function favlist_bilibili()
+{
+    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+        $output = array(
+            'status' => 403,
+            'success' => false,
+            'message' => 'Unauthorized client.'
+        );
+        $response = new WP_REST_Response($output, 403);
+    } else {
+        $page = $_GET["page"] ?: 2;
+        $folder_id = $_GET["folder_id"];
+        $bgm = new \Sakura\API\BilibiliFavList();
+        $html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->load_folder_items($folder_id, $page));
+        $response = new WP_REST_Response($html, 200);
+    }
+    return $response;
 }
 
-function meting_aplayer() {
+function meting_aplayer()
+{
     $type = $_GET['type'];
     $id = $_GET['id'];
-    if(in_array('_wpnonce',$_GET))    $wpnonce = $_GET['_wpnonce'];
-    if(in_array('meting_nonce',$_GET)) $meting_nonce = $_GET['meting_nonce'];
+    if (in_array('_wpnonce', $_GET))
+        $wpnonce = $_GET['_wpnonce'];
+    if (in_array('meting_nonce', $_GET))
+        $meting_nonce = $_GET['meting_nonce'];
     if ((isset($wpnonce) && !check_ajax_referer('wp_rest', $wpnonce, false)) || (isset($meting_nonce) && !wp_verify_nonce($meting_nonce, $type . '#:' . $id))) {
         $output = array(
             'status' => 403,
@@ -348,7 +395,8 @@ function meting_aplayer() {
     return $response;
 }
 
-function create_CAPTCHA(){
+function create_CAPTCHA()
+{
     $CAPTCHA = new Captcha();
     $response = new WP_REST_Response($CAPTCHA->create_captcha_img());
     $response->set_status(200);

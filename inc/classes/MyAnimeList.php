@@ -58,6 +58,7 @@ class MyAnimeList
 		}
 		else
 		{
+			$html = '';
 			$item_count = count($resp);
 			$total_episodes = 0;
 			foreach ((array)$resp as $item)
@@ -69,7 +70,7 @@ class MyAnimeList
 			            __('Following ', 'sakurairo') . $item_count . __(' anime.', 'sakurairo') .
 			            __(' Watched ', 'sakurairo') . $total_episodes . __(' episodes.', 'sakurairo') .
 			            '</span></div>';
-			$html = $top_info . $html . '</div>';
+			$html = $top_info . $html;
 			return $html;
 		}
 	}

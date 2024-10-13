@@ -67,7 +67,7 @@ get_header();
         padding: 15px;
         border-radius: var(--style_menu_radius, 12px);
         box-shadow: 0 0 2px 0 rgb(0 0 0 / 12%), 0 2px 2px 0 rgb(0 0 0 / 24%);
-        transition: all 0.8s ease !important;
+        transition: all 0.6s ease-in-out;
     }
 
     .folder hr {

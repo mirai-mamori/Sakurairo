@@ -4,86 +4,63 @@ get_header();
 
 ?>
 <div class="author_info">
-	<div class="avatar" style="height: 75px;width: 75px;">
-	    <?php echo get_avatar($author) ?>
-	</div>
-	<div class="author-center">
-		<h3><?php the_author() ?></h3>
-		<div class="description"><?php echo get_the_author_meta('description') ? get_the_author_meta('description') : __("No personal profile set yet","sakurairo"); ?></div>
-	</div>
+    <div class="avatar" data-post-count="<?php echo get_the_author_posts(); ?>">
+        <?php echo get_avatar(get_the_author_meta('ID')); ?>
+    </div>
+    <div class="author-center">
+        <h3><?php the_author(); ?></h3>
+        <div class="description">
+            <?php 
+            $description = get_the_author_meta('description');
+            echo $description ? nl2br($description) : __("No personal profile set yet", "sakurairo"); 
+            ?>
+        </div>
+    </div>
 </div>
 <style>
-	.author_info {
-		margin-top: 50px;
-		overflow: hidden;
-		padding: 40px 0;
-		position: relative;
-		font-weight: var(--global-font-weight);
-	}
-
-	.author_info .avatar {
-		float: left;
-		margin-right: 30px;
-		margin-left: 0px;
-	}
-
-	.author_info .avatar img {
-		border-radius: 100%;
-		border: 2px solid #fff;
-		background: #fff;
-		vertical-align: middle;
-	}
-
-	.author_info .author-center {
-		line-height: 27px;
-		padding-top: 10px;
-	}
-
-	.author_info .author-center h3 {
-		font-weight: 700;
-		font-size: 30px;
-		line-height: 1;
-		margin-bottom: 5px;
-		display: inline;
-	}
-
-	.author_info .author-center .description {
-		font-size: 14px;
-		line-height: 2;
-		font-weight: var(--global-font-weight);
-	}
+	.author_info .avatar::after {
+        content: attr(data-post-count) " \f044"; /* 添加字体图标 */
+        font-family: 'FontAwesome'; /* 确保使用FontAwesome字体 */
+        position: absolute;
+        right: -8px;
+        bottom: 16px;
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 12px;
+        color: var(--theme-skin-matching, #505050);
+        box-shadow: 0 1px 30px -4px #e8e8e8;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 2px 8px;
+        -webkit-transition: all 0.6s ease-in-out;
+        transition: all 0.6s ease-in-out;
+        border-radius: 16px;
+        border: 1px solid #FFFFFF;
+		backdrop-filter: blur(10px);
+		webkit-backdrop-filter: blur(10px);
+    }
 </style>
 <div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+    <main id="main" class="site-main" role="main">
 
-		<?php
-		if (have_posts()) :
-			/* Start the Loop */
-			if (iro_opt('post_list_style') == 'akinastyle') {
-				while (have_posts()) : the_post();
-					get_template_part('tpl/content', get_post_format());
-				endwhile;
-			} else {
-				get_template_part('tpl/content', 'thumb');
-			}
-		?>
-			<div class="clearer"></div>
-		<?php else :
+        <?php if (have_posts()) : ?>
+            <?php get_template_part('tpl/content', 'thumb'); ?>
+            <div class="clearer"></div>
+        <?php else : ?>
+            <?php get_template_part('tpl/content', 'none'); ?>
+        <?php endif; ?>
 
-			get_template_part('tpl/content', 'none');
-
-		endif; ?>
-
-	</main><!-- #main -->
-	<?php if (iro_opt('pagenav_style') == 'ajax') { ?>
-		<div id="pagination"><?php next_posts_link(__(' Previous', 'sakurairo')); ?></div>
-		<div id="add_post"><span id="add_post_time" style="visibility: hidden;" title="<?php echo iro_opt('page_auto_load', ''); ?>"></span></div>
-	<?php } else { ?>
-		<nav class="navigator">
-			<?php previous_posts_link('<i class="fa-solid fa-angle-left"></i>') ?><?php next_posts_link('<i class="fa-solid fa-angle-right"></i>') ?>
-		</nav>
-	<?php } ?>
+    </main><!-- #main -->
+    <?php if (iro_opt('pagenav_style') == 'ajax') : ?>
+        <div id="pagination"><?php next_posts_link(__(' Previous', 'sakurairo')); ?></div>
+        <div id="add_post"><span id="add_post_time" style="visibility: hidden;" title="<?php echo iro_opt('page_auto_load', ''); ?>"></span></div>
+    <?php else : ?>
+        <nav class="navigator">
+            <?php previous_posts_link('<i class="fa-solid fa-angle-left"></i>'); ?><?php next_posts_link('<i class="fa-solid fa-angle-right"></i>'); ?>
+        </nav>
+    <?php endif; ?>
 </div><!-- #primary -->
 
 <?php
 get_footer();
+?>

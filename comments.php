@@ -69,36 +69,36 @@
 					$smilies_list = iro_opt('smilies_list');
 					if ($smilies_list) {
 						if (in_array('bilibili', $smilies_list)) {
-							$bilibili_smilies = '<th onclick="motionSwitch(\'.bili\')" class="bili-bar">bilibili~</th>';
+							$bilibili_smilies = '<th class="bili-bar">bilibili~</th>';
 							$bilibili_push_smilies = '<div class="bili-container motion-container"  style="display:none;">' . push_bili_smilies() . '</div>';
 						}
 						if (in_array('tieba', $smilies_list)) {
-							$tieba_smilies = '<th onclick="motionSwitch(\'.tieba\')" class="tieba-bar">Tieba</th>';
+							$tieba_smilies = '<th class="tieba-bar">Tieba</th>';
 							$tieba_push_smilies = '<div class="tieba-container motion-container" style="display:none;">' . push_tieba_smilies() . '</div>';
 						}
 						if (in_array('yanwenzi', $smilies_list)) {
-							$menhera_smilies = '<th onclick="motionSwitch(\'.menhera\')" class="menhera-bar">(=・ω・=)</th>';
+							$menhera_smilies = '<th class="menhera-bar">(=・ω・=)</th>';
 							$menhera_push_smilies = '<div class="menhera-container motion-container" style="display:none;">' . push_emoji_panel() . '</div>';
 						}
 						if (in_array('custom', $smilies_list)) {
-							$custom_smilies = '<th onclick="motionSwitch(\'.custom\')" class="custom-bar"> '. iro_opt('smilies_name') .'</th>';
+							$custom_smilies = '<th class="custom-bar"> '. iro_opt('smilies_name') .'</th>';
 							$custom_push_smilies = '<div class="custom-container motion-container" style="display:none;">' . push_custom_smilies() . '</div>';
 						}
 						switch ($smilies_list[0]) {
 							case "bilibili" :
-								$bilibili_smilies = '<th onclick="motionSwitch(\'.bili\')" class="bili-bar on-hover">bilibili~</th>';
+								$bilibili_smilies = '<th class="bili-bar on-hover">bilibili~</th>';
 								$bilibili_push_smilies = '<div class="bili-container motion-container"  style="display:block;">' . push_bili_smilies() . '</div>';
 								break;
 							case "tieba" :
-								$tieba_smilies = '<th onclick="motionSwitch(\'.tieba\')" class="tieba-bar on-hover">Tieba</th>';
+								$tieba_smilies = '<th class="tieba-bar on-hover">Tieba</th>';
 								$tieba_push_smilies = '<div class="tieba-container motion-container" style="display:block;">' . push_tieba_smilies() . '</div>';
 								break;
 							case "yanwenzi" :
-								$menhera_smilies = '<th onclick="motionSwitch(\'.menhera\')" class="menhera-bar on-hover">(=・ω・=)</th>';
+								$menhera_smilies = '<th class="menhera-bar on-hover">(=・ω・=)</th>';
 								$menhera_push_smilies = '<div class="menhera-container motion-container" style="display:block;">' . push_emoji_panel() . '</div>';
 								break;
 							case "custom" :
-								$custom_smilies = '<th onclick="motionSwitch(\'.custom\')" class="custom-bar on-hover"> '. iro_opt('smilies_name') .'</th>';
+								$custom_smilies = '<th class="custom-bar on-hover"> '. iro_opt('smilies_name') .'</th>';
 								$custom_push_smilies = '<div class="custom-container motion-container" style="display:block;">' . push_custom_smilies() . '</div>';
 								break;
 						}
@@ -131,7 +131,7 @@
 						'title_reply_to' => '<div class="graybar"><i class="fa-regular fa-comment"></i>' . __('Leave a Reply to', 'sakurairo') . ' %s' . '</div>',
 						'cancel_reply_link' => __('Cancel Reply', 'sakurairo'),
 						'label_submit' => __('BiuBiuBiu~', 'sakurairo'),
-						'comment_field' => '<p style="font-style:italic"><a href="https://segmentfault.com/markdown" target="_blank"><i class="fa-brands fa-markdown" style="color:var(--comment_area_matching);"></i></a> Markdown Supported while <i class="fa-solid fa-code"></i> Forbidden</p><div class="comment-textarea"><textarea placeholder="' . __("You are a surprise that I will only meet once in my life", "sakurairo") . ' ..." name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea><label class="input-label">' . __("You are a surprise that I will only meet once in my life", "sakurairo") . ' ...</label></div>
+						'comment_field' => '<p style="font-style:italic"><a href="https://segmentfault.com/markdown" target="_blank"><i class="fa-brands fa-markdown" style="color:var(--article-theme-highlight,var(--theme-skin-matching));"></i></a> Markdown Supported while <i class="fa-solid fa-code"></i> Forbidden</p><div class="comment-textarea"><textarea placeholder="' . __("You are a surprise that I will only meet once in my life", "sakurairo") . ' ..." name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea><label class="input-label">' . __("You are a surprise that I will only meet once in my life", "sakurairo") . ' ...</label></div>
                         <div id="upload-img-show"></div>
                         <!--插入表情面版-->
                         ' . $smilies_panel . '
@@ -139,13 +139,13 @@
 						'comment_notes_after' => '',
 						'comment_notes_before' => '',
 						'fields' => apply_filters( 'comment_form_default_fields', array(
-							'avatar' => '<div class="cmt-info-container"><div class="comment-user-avatar"><img alt="comment_user_avatar" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.6/') . 'basic/avatar.jpeg"><div class="socila-check qq-check"><i class="fa-brands fa-qq"></i></div><div class="socila-check gravatar-check"><i class="fa-solid fa-face-kiss-wink-heart"></i></div></div>',
+							'avatar' => '<div class="cmt-info-container"><div class="comment-user-avatar"><img alt="comment_user_avatar" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/') . 'basic/avatar.jpeg"><div class="socila-check qq-check"><i class="fa-brands fa-qq"></i></div><div class="socila-check gravatar-check"><i class="fa-solid fa-face-kiss-wink-heart"></i></div></div>',
 							'author' =>
-								'<div class="popup cmt-popup cmt-author" onclick="cmt_showPopup(this)"><span class="popuptext" id="thePopup" style="margin-left: -115px;width: 230px;">' . __("Auto pull nickname and avatar with a QQ num. entered", "sakurairo")/*输入QQ号将自动拉取昵称和头像*/ . '</span><input type="text" placeholder="' . __("Nickname or QQ number", "sakurairo") /*昵称或QQ号*/. ' ' . ( $req ?  '(' . __("Name* ", "sakurairo") . ')' : '') . '" name="author" id="author" value="' . esc_attr($comment_author) . '" size="22" autocomplete="off" tabindex="1" ' . ($req ? "aria-required='true'" : '' ). ' /></div>',
+								'<div class="popup cmt-popup cmt-author"><input type="text" placeholder="' . __("Nickname or QQ number", "sakurairo") /*昵称或QQ号*/. ' ' . ( $req ?  '(' . __("Name* ", "sakurairo") . ')' : '') . '" name="author" id="author" value="' . esc_attr($comment_author) . '" size="22" autocomplete="off" tabindex="1" ' . ($req ? "aria-required='true'" : '' ). ' /><span class="popuptext" style="margin-left: -115px;width: 230px;">' . __("Auto pull nickname and avatar with a QQ num. entered", "sakurairo")/*输入QQ号将自动拉取昵称和头像*/ . '</span></div>',
 							'email' =>
-								'<div class="popup cmt-popup" onclick="cmt_showPopup(this)"><span class="popuptext" id="thePopup" style="margin-left: -65px;width: 130px;">' . __("You will receive notification by email", "sakurairo")/*你将收到回复通知*/ . '</span><input type="text" placeholder="' . __("email", "sakurairo") . ' ' . ( $req ? '(' . __("Must* ", "sakurairo") . ')' : '') . '" name="email" id="email" value="' . esc_attr($comment_author_email) . '" size="22" tabindex="1" autocomplete="off" ' . ($req ? "aria-required='true'" : '' ). ' /></div>',
+								'<div class="popup cmt-popup"><input type="text" placeholder="' . __("email", "sakurairo") . ' ' . ( $req ? '(' . __("Must* ", "sakurairo") . ')' : '') . '" name="email" id="email" value="' . esc_attr($comment_author_email) . '" size="22" tabindex="1" autocomplete="off" ' . ($req ? "aria-required='true'" : '' ). ' /><span class="popuptext" style="margin-left: -65px;width: 130px;">' . __("You will receive notification by email", "sakurairo")/*你将收到回复通知*/ . '</span></div>',
 							'url' =>
-								'<div class="popup cmt-popup" onclick="cmt_showPopup(this)"><span class="popuptext" id="thePopup" style="margin-left: -55px;width: 110px;">' . __("Advertisement is forbidden 😀", "sakurairo")/*禁止小广告😀*/ . '</span><input type="text" placeholder="' . __("Site", "sakurairo") . '" name="url" id="url" value="' . esc_attr($comment_author_url) . '" size="22" autocomplete="off" tabindex="1" /></div></div>' . $robot_comments . $private_ms . $mail_notify ,
+								'<div class="popup cmt-popup"><input type="text" placeholder="' . __("Site", "sakurairo") . '" name="url" id="url" value="' . esc_attr($comment_author_url) . '" size="22" autocomplete="off" tabindex="1" /><span class="popuptext" style="margin-left: -55px;width: 110px;">' . __("Advertisement is forbidden 😀", "sakurairo")/*禁止小广告😀*/ . '</span></div></div>' . $robot_comments . $private_ms . $mail_notify ,
                             'qq' =>
 								'<input type="text" placeholder="QQ" name="new_field_qq" id="qq" value="' . esc_attr($comment_author_url) . '" style="display:none" autocomplete="off"/><!--此栏不可见-->'
 							)

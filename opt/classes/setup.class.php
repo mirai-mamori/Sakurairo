@@ -303,6 +303,7 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
       // We need this path-finder code for set URL of framework
       $dirname        = str_replace( '//', '/', wp_normalize_path( dirname( dirname( self::$file ) ) ) );
       $theme_dir      = str_replace( '//', '/', wp_normalize_path( get_parent_theme_file_path() ) );
+      $theme_dir      = str_replace( '/opt/bitnami', '/bitnami', $theme_dir );
       $plugin_dir     = str_replace( '//', '/', wp_normalize_path( WP_PLUGIN_DIR ) );
       $plugin_dir     = str_replace( '/opt/bitnami', '/bitnami', $plugin_dir );
       $located_plugin = ( preg_match( '#'. self::sanitize_dirname( $plugin_dir ) .'#', self::sanitize_dirname( $dirname ) ) ) ? true : false;
@@ -563,10 +564,10 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
 
       // Font awesome 4 and 5 loader
       if ( apply_filters( 'csf_fa4', false ) ) {
-        wp_enqueue_style( 'csf-fa', 'https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome'. $min .'.css', array(), '4.7.0', 'all' );
+        wp_enqueue_style( 'csf-fa', 'https://s4.zstatic.net/ajax/libs/font-awesome/4.7.0/css/font-awesome'. $min .'.css', array(), '4.7.0', 'all' );
       } else {
-        wp_enqueue_style( 'csf-fa5', 'https://cdn.staticfile.org/font-awesome/5.15.4/css/all'. $min .'.css', array(), '5.15.5', 'all' );
-        wp_enqueue_style( 'csf-fa5-v4-shims', 'https://cdn.staticfile.org/font-awesome/5.15.4/css/v4-shims'. $min .'.css', array(), '5.15.5', 'all' );
+        wp_enqueue_style( 'csf-fa5', 'https://s4.zstatic.net/ajax/libs/font-awesome/5.15.4/css/all'. $min .'.css', array(), '5.15.5', 'all' );
+        wp_enqueue_style( 'csf-fa5-v4-shims', 'https://s4.zstatic.net/ajax/libs/font-awesome/5.15.4/css/v4-shims'. $min .'.css', array(), '5.15.5', 'all' );
       }
 
       // Main style
