@@ -39,14 +39,7 @@ get_header(); ?>
 			endwhile;
 			} */
 			// TODO： 'image_category'功能待实现
-			$i = 0;
 			while (have_posts()) : the_post();
-				$article_class = '';
-				if ($i == 1) {
-					$article_class = ' post-list-show';
-				} else {
-					$i++;
-				}
 				get_template_part('tpl/content', 'thumbcard');
 			endwhile; ?>
 			<div class="clearer"></div>

@@ -8,8 +8,6 @@
  * @package Sakurairo
  */
 
-$i = 0;
-
 // Combine posts and shuoshuo
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
@@ -26,12 +24,6 @@ $combined_query = new WP_Query($args);
 
 if ($combined_query->have_posts()) :
     while ($combined_query->have_posts()) : $combined_query->the_post();
-        $article_class = '';
-        if ($i == 1) {
-            $article_class = ' post-list-show';
-        } else {
-            $i++;
-        }
         get_template_part('tpl/content', 'thumbcard');
     endwhile;
 endif;
