@@ -528,9 +528,7 @@ input[type=week] {
 }
 
 .wrapper {
-  border-top: 1.5px solid #FFFFFF;
   animation: blur .8s;
-  animation-duration: .8s;
   -webkit-animation: blur .8s;
   background-color: rgba(255, 255, 255, .8);
   transition: all 0.6s ease-in-out;
