@@ -164,7 +164,10 @@ $reception_background = iro_opt('reception_background');
 
 <!-- 首页波浪特效 -->
 <?php if (iro_opt('wave_effects', 'true')): ?>
-  <link rel="stylesheet" href="<?php echo esc_url($shared_lib_basepath); ?>/css/wave.css">
+  <?php if (!isset($shared_lib_basepath)) {
+    $shared_lib_basepath = iro_opt('shared_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path', 'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@') . IRO_VERSION);
+  } ?>
+  <link rel="stylesheet" href="<?php echo $shared_lib_basepath . '/css/wave.css'; ?>">
 <?php endif; ?>
 
 <?php echo iro_opt('footer_addition', ''); ?>
