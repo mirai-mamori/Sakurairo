@@ -228,48 +228,50 @@ if (!function_exists('akina_setup')) {
 ;
 add_action('after_setup_theme', 'akina_setup');
 
-//说说页面
-function shuoshuo_custom_init()
-{
+function register_shuoshuo_post_type() {
     $labels = array(
-        'name' => __("Ideas", "sakurairo"),
-        'singular_name' => __("Idea", "sakurairo"),
-        'add_new' => __("Publish New Idea", "sakurairo"),
-        'add_new_item' => __("Publish New Idea", "sakurairo"),
-        'edit_item' => __("Edit Idea", "sakurairo"),
-        'new_item' => __("New Idea", "sakurairo"),
-        'view_item' => __("View Idea", "sakurairo"),
-        'search_items' => __("Search Idea", "sakurairo"),
-        'not_found' => __("Not Found Idea", "sakurairo"),
-        'not_found_in_trash' => __("No Idea in the Trash", "sakurairo"),
-        'parent_item_colon' => '',
-        'menu_name' => __("Ideas", "sakurairo")
+        'name'               => _x('Shuoshuo', 'post type general name', 'Sakurairo'),
+        'singular_name'      => _x('Shuoshuo', 'post type singular name', 'Sakurairo'),
+        'menu_name'          => _x('Shuoshuo', 'admin menu', 'Sakurairo'),
+        'name_admin_bar'     => _x('Shuoshuo', 'add new on admin bar', 'Sakurairo'),
+        'add_new'            => _x('Add New', 'shuoshuo', 'Sakurairo'),
+        'add_new_item'       => __('Add New Shuoshuo', 'Sakurairo'),
+        'new_item'           => __('New Shuoshuo', 'Sakurairo'),
+        'edit_item'          => __('Edit Shuoshuo', 'Sakurairo'),
+        'view_item'          => __('View Shuoshuo', 'Sakurairo'),
+        'all_items'          => __('All Shuoshuo', 'Sakurairo'),
+        'search_items'       => __('Search Shuoshuo', 'Sakurairo'),
+        'parent_item_colon'  => __('Parent Shuoshuo:', 'Sakurairo'),
+        'not_found'          => __('No shuoshuo found.', 'Sakurairo'),
+        'not_found_in_trash' => __('No shuoshuo found in Trash.', 'Sakurairo')
     );
+
     $args = array(
-        'labels' => $labels,
-        'public' => true,
+        'labels'             => $labels,
+        'public'             => true,
         'publicly_queryable' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'show_in_rest' => true,
-        'query_var' => true,
-        'rewrite' => true,
-        'capability_type' => 'post',
-        'has_archive' => true,
-        'hierarchical' => false,
-        'menu_position' => null,
-        'supports' => array(
-            'title',
-            'editor',
-            'comments',
-            'thumbnail',
-            'author',
-            'custom-fields' // Added support for custom fields
-        )
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array('slug' => 'shuoshuo'),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title', 'editor', 'author', 'thumbnail', 'custom-fields', 'comments'),
     );
+
     register_post_type('shuoshuo', $args);
 }
-add_action('init', 'shuoshuo_custom_init');
+add_action('init', 'register_shuoshuo_post_type');
+
+// Modify the main query to include 'shuoshuo' post type in next_posts_link() and previous_posts_link()
+function include_shuoshuo_in_main_query($query) {
+    if ($query->is_main_query() && !is_admin() && (is_home() || is_archive())) {
+        $query->set('post_type', array('post', 'shuoshuo'));
+    }
+}
+add_action('pre_get_posts', 'include_shuoshuo_in_main_query');
 
 function admin_lettering()
 {
