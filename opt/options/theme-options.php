@@ -2724,6 +2724,7 @@ $prefix = 'iro_options';
         'dependency' => array( 'article_function', '==', 'true', '', 'true' ),
         'label' => __('Enabled by default, Article license will appear on the function bar. License can also be selected by custom metadata "license".','sakurairo_csf'),
         'options' => array(
+          false => __("Not Display","sakurairo_csf"),
           "cc0" => "CC0 1.0",
           "cc-by" => "CC BY 4.0",
           "cc-by-nc" => "CC BY-NC 4.0",
@@ -2731,7 +2732,6 @@ $prefix = 'iro_options';
           true => "CC BY-NC-SA 4.0",
           "cc-by-nd" => "CC BY-ND 4.0",
           "cc-by-sa" => "CC BY-SA 4.0",
-          false => __("Not Display","sakurairo_csf"),
          ),
         'default' => true
       ),
