@@ -1340,7 +1340,6 @@ $prefix = 'iro_options';
         'title' => __('Next Page Auto Load','sakurairo_csf'),
         'dependency' => array( 'pagenav_style', '==', 'ajax', '', 'true' ),
         'options' => array(
-          '233' => __('do not autoload','sakurairo_csf'),
           '0' => __('0 Sec','sakurairo_csf'),
           '1' => __('1 Sec','sakurairo_csf'),
           '2' => __('2 Sec','sakurairo_csf'),
@@ -1352,6 +1351,7 @@ $prefix = 'iro_options';
           '8' => __('8 Sec','sakurairo_csf'),
           '9' => __('9 Sec','sakurairo_csf'),
           '10' => __('10 Sec','sakurairo_csf'),
+          '233' => __('do not autoload','sakurairo_csf'),
         ),
         'default' => '233'
       ),
