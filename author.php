@@ -4,7 +4,7 @@ get_header();
 
 ?>
 <div class="author_info">
-    <div class="avatar" data-post-count="<?php echo get_the_author_posts(); ?>">
+    <div class="avatar" data-post-count="<?php echo count_user_posts(get_the_author_meta('ID'), 'post'); ?>">
         <?php echo get_avatar(get_the_author_meta('ID')); ?>
     </div>
     <div class="author-center">
