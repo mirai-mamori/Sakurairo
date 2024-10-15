@@ -308,6 +308,8 @@ function render_emotion_meta_box($post) {
     echo '<br><br>';
     echo '<label for="emotion_color">' . __('Emotion Color', 'sakurairo') . '</label>';
     echo '<input type="text" id="emotion_color" name="emotion_color" value="' . esc_attr($emotion_color_value) . '" />';
+    echo '<br><br>';
+    echo '<p>' . __('For the Emotion, please fill in the Unicode value of the Fontawesome icon, and for the Emotion Color, please fill in the RGBA or hexadecimal color.', 'sakurairo') . '</p>';
 }
 
 function save_emotion_meta_box($post_id) {
