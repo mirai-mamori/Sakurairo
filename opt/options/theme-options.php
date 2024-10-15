@@ -2743,6 +2743,7 @@ $prefix = 'iro_options';
         .'<p><strong>"NC"</strong> means no commercial use</p>'
         .'<p><strong>"ND"</strong> means no redistribution</p>'
         .'<p><strong>"SA"</strong> means must be shared under the same terms</p>'
+        ,'<p><strong>"CC0"</strong> is a public dedication tool, which enables creators to give up their copyright and put their works into the worldwide public domain.</p>'
         .'<p>For details and legal advice, You can visit <a href="https://creativecommons.org/">the official website</a></p>','sakurairo_csf'),
         'dependency' => array( 'article_lincenses', '!=', 'false', '', 'true' ),
       ),
