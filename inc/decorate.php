@@ -860,6 +860,7 @@ li.link-item {
 
 .post-title {
     bottom: 6%;
+    max-width: 70%;
 }
 
 .ai-excerpt-tip{

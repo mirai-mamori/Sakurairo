@@ -230,20 +230,20 @@ add_action('after_setup_theme', 'akina_setup');
 
 function register_shuoshuo_post_type() {
     $labels = array(
-        'name'               => _x('Shuoshuo', 'post type general name', 'Sakurairo'),
-        'singular_name'      => _x('Shuoshuo', 'post type singular name', 'Sakurairo'),
-        'menu_name'          => _x('Shuoshuo', 'admin menu', 'Sakurairo'),
-        'name_admin_bar'     => _x('Shuoshuo', 'add new on admin bar', 'Sakurairo'),
-        'add_new'            => _x('Add New', 'shuoshuo', 'Sakurairo'),
-        'add_new_item'       => __('Add New Shuoshuo', 'Sakurairo'),
-        'new_item'           => __('New Shuoshuo', 'Sakurairo'),
-        'edit_item'          => __('Edit Shuoshuo', 'Sakurairo'),
-        'view_item'          => __('View Shuoshuo', 'Sakurairo'),
-        'all_items'          => __('All Shuoshuo', 'Sakurairo'),
-        'search_items'       => __('Search Shuoshuo', 'Sakurairo'),
-        'parent_item_colon'  => __('Parent Shuoshuo:', 'Sakurairo'),
-        'not_found'          => __('No shuoshuo found.', 'Sakurairo'),
-        'not_found_in_trash' => __('No shuoshuo found in Trash.', 'Sakurairo')
+        'name'               => _x('Shuoshuo', 'post type general name', 'sakurairo'),
+        'singular_name'      => _x('Shuoshuo', 'post type singular name', 'sakurairo'),
+        'menu_name'          => _x('Shuoshuo', 'admin menu', 'sakurairo'),
+        'name_admin_bar'     => _x('Shuoshuo', 'add new on admin bar', 'sakurairo'),
+        'add_new'            => _x('Add New', 'shuoshuo', 'sakurairo'),
+        'add_new_item'       => __('Add New Shuoshuo', 'sakurairo'),
+        'new_item'           => __('New Shuoshuo', 'sakurairo'),
+        'edit_item'          => __('Edit Shuoshuo', 'sakurairo'),
+        'view_item'          => __('View Shuoshuo', 'sakurairo'),
+        'all_items'          => __('All Shuoshuo', 'sakurairo'),
+        'search_items'       => __('Search Shuoshuo', 'sakurairo'),
+        'parent_item_colon'  => __('Parent Shuoshuo:', 'sakurairo'),
+        'not_found'          => __('No shuoshuo found.', 'sakurairo'),
+        'not_found_in_trash' => __('No shuoshuo found in Trash.', 'sakurairo')
     );
 
     $args = array(
@@ -252,6 +252,7 @@ function register_shuoshuo_post_type() {
         'publicly_queryable' => true,
         'show_ui'            => true,
         'show_in_menu'       => true,
+        'show_in_rest'       => true,
         'query_var'          => true,
         'rewrite'            => array('slug' => 'shuoshuo'),
         'capability_type'    => 'post',
@@ -259,13 +260,75 @@ function register_shuoshuo_post_type() {
         'hierarchical'       => false,
         'menu_position'      => null,
         'supports'           => array('title', 'editor', 'author', 'thumbnail', 'custom-fields', 'comments'),
+        'taxonomies'         => array('category') 
     );
 
     register_post_type('shuoshuo', $args);
 }
 add_action('init', 'register_shuoshuo_post_type');
 
-// Modify the main query to include 'shuoshuo' post type in next_posts_link() and previous_posts_link()
+function register_emotion_meta_boxes() {
+    register_meta('post', 'emotion', array(
+        'show_in_rest' => true,
+        'single' => true,
+        'type' => 'string',
+        'auth_callback' => function() {
+            return current_user_can('edit_posts');
+        }
+    ));
+    register_meta('post', 'emotion_color', array(
+        'show_in_rest' => true,
+        'single' => true,
+        'type' => 'string',
+        'auth_callback' => function() {
+            return current_user_can('edit_posts');
+        }
+    ));
+}
+add_action('init', 'register_emotion_meta_boxes');
+
+function add_emotion_meta_box() {
+    add_meta_box(
+        'emotion_meta_box_id',
+        __('Emotion Meta Box', 'sakurairo'),
+        'render_emotion_meta_box',
+        'shuoshuo', // 仅在shuoshuo内容类型中显示
+        'side',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'add_emotion_meta_box');
+
+function render_emotion_meta_box($post) {
+    $emotion_value = get_post_meta($post->ID, 'emotion', true);
+    $emotion_color_value = get_post_meta($post->ID, 'emotion_color', true);
+    wp_nonce_field('emotion_meta_box_nonce', 'emotion_meta_box_nonce_field');
+    echo '<label for="emotion">' . __('Emotion', 'sakurairo') . '</label>';
+    echo '<input type="text" id="emotion" name="emotion" value="' . esc_attr($emotion_value) . '" />';
+    echo '<br><br>';
+    echo '<label for="emotion_color">' . __('Emotion Color', 'sakurairo') . '</label>';
+    echo '<input type="text" id="emotion_color" name="emotion_color" value="' . esc_attr($emotion_color_value) . '" />';
+}
+
+function save_emotion_meta_box($post_id) {
+    if (!isset($_POST['emotion_meta_box_nonce_field']) || !wp_verify_nonce($_POST['emotion_meta_box_nonce_field'], 'emotion_meta_box_nonce')) {
+        return;
+    }
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+    if (isset($_POST['emotion'])) {
+        update_post_meta($post_id, 'emotion', sanitize_text_field($_POST['emotion']));
+    }
+    if (isset($_POST['emotion_color'])) {
+        update_post_meta($post_id, 'emotion_color', sanitize_text_field($_POST['emotion_color']));
+    }
+}
+add_action('save_post', 'save_emotion_meta_box');
+
 function include_shuoshuo_in_main_query($query) {
     if ($query->is_main_query() && !is_admin() && (is_home() || is_archive())) {
         $query->set('post_type', array('post', 'shuoshuo'));
