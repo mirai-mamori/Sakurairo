@@ -2681,7 +2681,7 @@ if (iro_opt('show_location_in_manage')) {
 function exclude_pages_and_categories_from_search($query) {
     if (!is_admin() && $query->is_search) {
         // Exclude pages
-        $query->set('post_type', array('post', 'idea', 'link')); // Include other post types but exclude 'page'
+        $query->set('post_type', array('post', 'shuoshuo', 'link')); // Include other post types but exclude 'page'
 
         // Exclude categories
         $tax_query = array(
