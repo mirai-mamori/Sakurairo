@@ -87,11 +87,28 @@ if ( !class_exists(Scheduler::class, false) ):
 					add_action($hook, array($this, 'maybeCheckForUpdates'));
 				}
 				//This hook fires after a bulk update is complete.
+				add_action('upgrader_process_complete', array($this, 'removeHooksIfLibraryGone'), 1, 0);
 				add_action('upgrader_process_complete', array($this, 'upgraderProcessComplete'), 11, 2);
 
 			} else {
 				//Periodic checks are disabled.
 				wp_clear_scheduled_hook($this->cronHook);
+			}
+		}
+
+		/**
+		 * Remove all hooks if this version of PUC has been deleted or overwritten.
+		 *
+		 * Callback for the "upgrader_process_complete" action.
+		 */
+		public function removeHooksIfLibraryGone() {
+			//Cancel all further actions if the current version of PUC has been deleted or overwritten
+			//by a different version during the upgrade. If we try to do anything more in that situation,
+			//we could trigger a fatal error by trying to autoload a deleted class.
+			clearstatcache();
+			if ( !file_exists(__FILE__) ) {
+				$this->removeHooks();
+				$this->updateChecker->removeHooks();
 			}
 		}
 
@@ -108,16 +125,6 @@ if ( !class_exists(Scheduler::class, false) ):
 			/** @noinspection PhpUnusedParameterInspection */
 			$upgrader, $upgradeInfo
 		) {
-			//Cancel all further actions if the current version of PUC has been deleted or overwritten
-			//by a different version during the upgrade. If we try to do anything more in that situation,
-			//we could trigger a fatal error by trying to autoload a deleted class.
-			clearstatcache();
-			if ( !file_exists(__FILE__) ) {
-				$this->removeHooks();
-				$this->updateChecker->removeHooks();
-				return;
-			}
-
 			//Sanity check and limitation to relevant types.
 			if (
 				!is_array($upgradeInfo) || !isset($upgradeInfo['type'], $upgradeInfo['action'])
@@ -180,6 +187,21 @@ if ( !class_exists(Scheduler::class, false) ):
 			$state = $this->updateChecker->getUpdateState();
 			$shouldCheck = ($state->timeSinceLastCheck() >= $this->getEffectiveCheckPeriod());
 
+			if ( $shouldCheck ) {
+				//Sanity check: Do not proceed if one of the critical classes is missing.
+				//That can happen - theoretically and extremely rarely - if maybeCheckForUpdates()
+				//is called before the old version of our plugin has been fully deleted, or
+				//called from an independent AJAX request during deletion.
+				if ( !(
+					class_exists(Utils::class)
+					&& class_exists(Metadata::class)
+					&& class_exists(Plugin\Update::class)
+					&& class_exists(Theme\Update::class)
+				) ) {
+					return;
+				}
+			}
+			
 			//Let plugin authors substitute their own algorithm.
 			$shouldCheck = apply_filters(
 				$this->updateChecker->getUniqueName('check_now'),

@@ -17,14 +17,20 @@ if ( !class_exists(PluginPanel::class, false) ):
 		}
 
 		protected function getMetadataButton() {
-			$requestInfoButton = '';
+			$buttonId = $this->updateChecker->getUniqueName('request-info-button');
 			if ( function_exists('get_submit_button') ) {
 				$requestInfoButton = get_submit_button(
 					'Request Info',
 					'secondary',
 					'puc-request-info-button',
 					false,
-					array('id' => $this->updateChecker->getUniqueName('request-info-button'))
+					array('id' => $buttonId)
+				);
+			} else {
+				$requestInfoButton = sprintf(
+					'<input type="button" name="puc-request-info-button" id="%1$s" value="%2$s" class="button button-secondary" />',
+					esc_attr($buttonId),
+					esc_attr('Request Info')
 				);
 			}
 			return $requestInfoButton;

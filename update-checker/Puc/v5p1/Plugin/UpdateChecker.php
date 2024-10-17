@@ -17,7 +17,7 @@ if ( !class_exists(UpdateChecker::class, false) ):
 	 */
 	class UpdateChecker extends BaseUpdateChecker {
 		protected $updateTransient = 'update_plugins';
-		protected $translationType = 'plugin';
+		protected $componentType = 'plugin';
 
 		public $pluginAbsolutePath = ''; //Full path of the main plugin file.
 		public $pluginFile = '';  //Plugin filename relative to the plugins directory. Many WP APIs use this to identify plugins.

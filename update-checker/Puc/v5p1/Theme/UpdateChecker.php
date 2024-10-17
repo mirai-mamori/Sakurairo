@@ -12,7 +12,7 @@ if ( !class_exists(UpdateChecker::class, false) ):
 	class UpdateChecker extends BaseUpdateChecker {
 		protected $filterSuffix = 'theme';
 		protected $updateTransient = 'update_themes';
-		protected $translationType = 'theme';
+		protected $componentType = 'theme';
 
 		/**
 		 * @var string Theme directory name.

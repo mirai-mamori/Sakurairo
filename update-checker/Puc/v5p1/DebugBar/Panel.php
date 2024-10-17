@@ -86,14 +86,22 @@ if ( !class_exists(Panel::class, false) && class_exists('Debug_Bar_Panel', false
 			echo '<h3>Status</h3>';
 			echo '<table class="puc-debug-data">';
 			$state = $this->updateChecker->getUpdateState();
-			$checkNowButton = '';
+			$checkButtonId = $this->updateChecker->getUniqueName('check-now-button');
 			if ( function_exists('get_submit_button')  ) {
 				$checkNowButton = get_submit_button(
 					'Check Now',
 					'secondary',
 					'puc-check-now-button',
 					false,
-					array('id' => $this->updateChecker->getUniqueName('check-now-button'))
+					array('id' => $checkButtonId)
+				);
+			} else {
+				//get_submit_button() is not available in the frontend. Make a button directly.
+				//It won't look the same without admin styles, but it should still work.
+				$checkNowButton = sprintf(
+					'<input type="button" id="%1$s" name="puc-check-now-button" value="%2$s" class="button button-secondary" />',
+					esc_attr($checkButtonId),
+					esc_attr('Check Now')
 				);
 			}
 
