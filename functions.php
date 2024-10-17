@@ -12,7 +12,7 @@ include_once('inc/classes/IpLocation.php');
 
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '19.0.0');
+define('INT_VERSION', '19.1.0');
 define('BUILD_VERSION', '2');
 
 function check_php_version($preset_version)
@@ -162,15 +162,7 @@ if (!function_exists('akina_setup')) {
         remove_action('wp_head', 'index_rel_link');
         remove_action('wp_head', 'start_post_rel_link', 10);
         remove_action('wp_head', 'wp_generator');
-        remove_action('wp_head', 'wp_generator'); //隐藏wordpress版本
-        remove_filter('the_content', 'wptexturize'); //取消标点符号转义
-
-        //remove_action('rest_api_init', 'wp_oembed_register_route');
-        //remove_filter('rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10, 4);
-        //remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
-        //remove_filter('oembed_response_data', 'get_oembed_response_data_rich', 10, 4);
-        //remove_action('wp_head', 'wp_oembed_add_discovery_links');
-        //remove_action('wp_head', 'wp_oembed_add_host_js');
+        remove_filter('the_content', 'wptexturize'); 
         remove_action('template_redirect', 'rest_output_link_header', 11);
 
         function coolwp_remove_open_sans_from_wp_core()
@@ -2211,64 +2203,6 @@ function check_myisam_support()
     return false;
 }
 
-/*
- * 随机图
- * 暂移除, 在20个月前功能已被移除，该表应该不存在了。
- */
-// function create_sakura_table()
-// {
-//     if (iro_opt('random_graphs_mts')) {
-//         global $wpdb, $sakura_image_array, $sakura_mobile_image_array, $sakura_privkey;
-//     } else {
-//         global $wpdb, $sakura_image_array, $sakura_privkey;
-//     }
-//     $sakura_table_name = $wpdb->base_prefix . 'sakurairo';
-//     require_once ABSPATH . "wp-admin/includes/upgrade.php";
-//     /// TODO: 移除?
-//     dbDelta("CREATE TABLE IF NOT EXISTS `" . $sakura_table_name . "` (
-//         `mate_key` varchar(50) COLLATE utf8_bin NOT NULL,
-//         `mate_value` text COLLATE utf8_bin NOT NULL,
-//         PRIMARY KEY (`mate_key`)
-//         ) " . (check_myisam_support() ? "ENGINE=MyISAM " : "") . "DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;");
-//     //default data
-//     if (!$wpdb->get_var("SELECT COUNT(*) FROM $sakura_table_name WHERE mate_key = 'manifest_json'")) {
-//         $manifest = array(
-//             "mate_key" => "manifest_json",
-//             "mate_value" => file_get_contents(get_template_directory() . "/manifest/manifest.json"),
-//         );
-//         $wpdb->insert($sakura_table_name, $manifest);
-//     }
-//     if (iro_opt('random_graphs_mts') && !$wpdb->get_var("SELECT COUNT(*) FROM $sakura_table_name WHERE mate_key = 'mobile_manifest_json'")) {
-//         $mobile_manifest = array(
-//             "mate_key" => "mobile_manifest_json",
-//             "mate_value" => file_get_contents(get_template_directory() . "/manifest/manifest_mobile.json"),
-//         );
-//         $wpdb->insert($sakura_table_name, $mobile_manifest);
-
-//     }
-//     if (!$wpdb->get_var("SELECT COUNT(*) FROM $sakura_table_name WHERE mate_key = 'json_time'")) {
-//         $time = array(
-//             "mate_key" => "json_time",
-//             "mate_value" => date("Y-m-d H:i:s", time()),
-//         );
-//         $wpdb->insert($sakura_table_name, $time);
-//     }
-//     if (!$wpdb->get_var("SELECT COUNT(*) FROM $sakura_table_name WHERE mate_key = 'privkey'")) {
-//         $privkey = array(
-//             "mate_key" => "privkey",
-//             "mate_value" => wp_generate_password(8),
-//         );
-//         $wpdb->insert($sakura_table_name, $privkey);
-//     }
-//     //reduce sql query
-//     $sakura_image_array = $wpdb->get_var("SELECT `mate_value` FROM  $sakura_table_name WHERE `mate_key`='manifest_json'");
-//     if (iro_opt('random_graphs_mts')) {
-//         $sakura_mobile_image_array = $wpdb->get_var("SELECT `mate_value` FROM  $sakura_table_name WHERE `mate_key`='mobile_manifest_json'");
-//     }
-//     $sakura_privkey = $wpdb->get_var("SELECT `mate_value` FROM  $sakura_table_name WHERE `mate_key`='privkey'");
-// }
-// add_action('after_setup_theme', 'create_sakura_table');
-
 //rest api支持
 function permalink_tip()
 {
@@ -2400,7 +2334,7 @@ add_filter('file_is_displayable_image', 'mimvp_file_is_displayable_image', 10, 2
 //code end
 
 //展开收缩功能
-function xcollapse($atts, $content = null)
+function collapse($atts, $content = null)
 {
     $atts = shortcode_atts(array("title" => ""), $atts);
 
@@ -2423,53 +2357,9 @@ function xcollapse($atts, $content = null)
                             
                                 return $output; // 返回 HTML 结构
 }
-add_shortcode('collapse', 'xcollapse');
+add_shortcode('collapse', 'collapse');
 
 //code end
-
-
-// add_action("wp_ajax_nopriv_getPhoto", "get_photo");
-// add_action("wp_ajax_getPhoto", "get_photo");
-// /**
-//  * 相册模板
-//  * @author siroi <mrgaopw@hotmail.com>
-//  * @return Json
-//  */
-// function get_photo()
-// {
-//     $postId = $_GET['post'];
-//     $page = get_post($postId);
-//     if ($page->post_type != "page") {
-//         $back['code'] = 201;
-//     } else {
-//         $back['code'] = 200;
-//         $back['imgs'] = array();
-//         $dom = new DOMDocument('1.0', 'utf-8');
-//         $meta = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
-//         $dom->loadHTML($meta . $page->post_content);
-//         $imgS = $dom->getElementsByTagName('img');
-//         //<img src="..." data-header="标题" data-info="信息" vertical=false>
-//         foreach ($imgS as $key => $value) {
-//             $attr = $value->attributes;
-//             $header = $attr->getNamedItem('header');
-//             $info = $attr->getNamedItem('data-info');
-//             $vertical = $attr->getNamedItem('vertical');
-
-//             //图片资源地址
-//             $temp['img'] = $value->attributes->getNamedItem('src')->nodeValue;
-//             //图片上的标题
-//             $temp['header'] = $header->nodeValue ?? null;
-//             //图片上的信息
-//             $temp['info'] = $info->nodeValue ?? null;
-//             //是否竖向展示 默认false
-//             $temp['vertical'] = $vertical->nodeValue ?? null;
-//             array_push($back['imgs'], $temp);
-//         }
-//     }
-//     header('Content-Type:application/json;charset=utf-8');
-//     echo json_encode($back);
-//     exit();
-// }
 
 if (!iro_opt('login_language_opt') == '1') {
     add_filter('login_display_language_dropdown', '__return_false');

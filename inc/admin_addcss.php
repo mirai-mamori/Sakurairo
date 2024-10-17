@@ -106,12 +106,12 @@
 <?php if (iro_opt('admin_left_style') == "v2") : ?>
 /* 侧边栏颜色2 */
 .csf-theme-light .csf-nav ul li a:hover {
-	color: <?php echo iro_opt('admin_text_color'); ?>;
+	color: <?php echo iro_opt('admin_emphasize_color'); ?>;
     border-left: <?php echo iro_opt('admin_first_class_color'); ?> 4px solid;
 }
 
 .csf-theme-light .csf-nav ul li .csf-active {
-	color: <?php echo iro_opt('admin_text_color'); ?>;
+	color: <?php echo iro_opt('admin_emphasize_color'); ?>;
     border-left: <?php echo iro_opt('admin_first_class_color'); ?> 4px solid;
 }
 .csf-theme-light .csf-nav-normal>ul li a {
