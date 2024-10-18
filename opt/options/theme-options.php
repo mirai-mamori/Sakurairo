@@ -2604,10 +2604,10 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'clipboard_copyright',
+        'id' => 'clipboard_ref',
         'type' => 'switcher',
-        'title' => __('Page Clipboard Copyright Notice','sakurairo_csf'),
-        'label' => __('Enabled by default, users will have copyright notice text when copying text content over 30 bytes','sakurairo_csf'),
+        'title' => __('Add Reference while copying on Pages','sakurairo_csf'),
+        'label' => __('Enabled by default. When copying text content over 30 bytes, a reference in APA-style will be appended to the copying text.','sakurairo_csf'),
         'default' => true
       ),
 

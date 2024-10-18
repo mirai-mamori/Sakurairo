@@ -73,7 +73,7 @@ function font_end_js_control()
         'land_at_home' => check(is_home()),
         'live_search' => check(iro_opt('live_search')),
         'loading_ph' => iro_opt('load_in_svg'),
-        'clipboardCopyright' => iro_opt('clipboard_copyright') == '0' ? false : true,
+        'clipboardRef' => iro_opt('clipboard_ref') == '0' ? false : true,
         'entry_content_style' => iro_opt('entry_content_style'),
         'random_graphs_mts' => check(iro_opt('random_graphs_mts')),
         'code_highlight' => iro_opt('code_highlight_method', 'hljs'),
