@@ -2311,10 +2311,9 @@ function register_shortcodes() {
         $atts = shortcode_atts(array("title" => ""), $atts);
         ob_start();
         ?>
-                <div class="xControl shortcodestyle">
-                    <i class="fa-solid fa-angle-down" style="color: #16AF90;"></i> &nbsp;&nbsp;
-                    <span class="xTitle"><?= esc_html($atts['title']) ?><a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02"><?php _e('Expand / Collapse', 'sakurairo'); ?></span></a>
-                    <div style="clear: both;"></div>
+                <div class="collapse shortcodestyle">
+                    <i class="fa-solid fa-angle-down" style="color: #16AF90;"></i>
+                    <span class="title"><?= $atts['title'] ?></span><a href="javascript:void(0)" class="collapseButton"><span class="ecbutton"><?php _e('Expand / Collapse', 'sakurairo'); ?></span></a>
                 </div>
                 <div class="xContent" style="display: none;"><?= do_shortcode($content) ?></div>
         <?php
