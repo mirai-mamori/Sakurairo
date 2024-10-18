@@ -3817,12 +3817,16 @@ input[type=radio]:checked:before {
   height: 100%;
 }
 
+iframe {
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  width: 100%;
+}
+
 .video-container iframe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .video-container object {
@@ -8324,10 +8328,19 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   .m-nav {
     display: block;
   }
-
+  
   .header-user-avatar img {
-    display: none;
+    display: block;
   }
+  
+  .header-user-avatar {
+    margin-top: 15px !important;
+  }
+  
+ .site-top {
+    display: flex;
+    justify-content: space-between;
+ }
 
   .searchbox.js-toggle-search {
     display: none;
@@ -10517,25 +10530,4 @@ body.dark .shuoshuo-comments,body.dark .shuoshuo-date {
   color: #abababab;
   transition: all 0.6s ease-in-out;
   -webkit-transition: all 0.6s ease-in-out;
-}
-
-
-/* 移动端右上角头像 */
-@media (max-width: 860px) {
-  .header-user-avatar img {
-    display: block;
-  }
-  .header-user-avatar {
-    margin-top: 15px !important;
-  }
- .site-top {
-    display: flex;
-    justify-content: space-between;
- }
-}
-/* 兼容B站嵌入视频 */
-iframe {
-  aspect-ratio: 16 / 9;
-  height: 100%;
-  width: 100%;
 }
