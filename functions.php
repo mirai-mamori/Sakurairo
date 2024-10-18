@@ -2245,7 +2245,7 @@ if (iro_opt('send_theme_version') == '1') {
 //解析短代码  
 function register_shortcodes() {
     add_shortcode('task', function($attr, $content = '') {
-        return '<div class="task shortcodestyle"><i class="fa-solid fa-bars"></i>' . $content . '</div>';
+        return '<div class="task shortcodestyle"><i class="fa-solid fa-clipboard-list"></i>' . $content . '</div>';
     });
 
     add_shortcode('warning', function($attr, $content = '') {
@@ -2253,11 +2253,11 @@ function register_shortcodes() {
     });
 
     add_shortcode('noway', function($attr, $content = '') {
-        return '<div class="noway shortcodestyle"><i class="fa-solid fa-rectangle-xmark"></i>' . $content . '</div>';
+        return '<div class="noway shortcodestyle"><i class="fa-solid fa-square-xmark"></i>' . $content . '</div>';
     });
 
     add_shortcode('buy', function($attr, $content = '') {
-        return '<div class="buy shortcodestyle"><i class="fa-solid fa-check-to-slot"></i>' . $content . '</div>';
+        return '<div class="buy shortcodestyle"><i class="fa-solid fa-square-check"></i>' . $content . '</div>';
     });
 
     add_shortcode('ghcard', function($attr, $content = '') {
@@ -2311,11 +2311,14 @@ function register_shortcodes() {
         $atts = shortcode_atts(array("title" => ""), $atts);
         ob_start();
         ?>
-                <div class="collapse shortcodestyle">
-                    <i class="fa-solid fa-angle-down" style="color: #16AF90;"></i>
-                    <span class="title"><?= $atts['title'] ?></span><a href="javascript:void(0)" class="collapseButton"><span class="ecbutton"><?php _e('Expand / Collapse', 'sakurairo'); ?></span></a>
-                </div>
-                <div class="xContent" style="display: none;"><?= do_shortcode($content) ?></div>
+        <a href="javascript:void(0)" class="collapseButton">
+            <div class="collapse shortcodestyle">
+                <i class="fa-solid fa-angle-down"></i>
+                <span class="title"><?= $atts['title'] ?></span>
+                <span class="ecbutton"><?php _e('Expand / Collapse', 'sakurairo'); ?></span>
+            </div>
+        </a>
+        <div class="xContent" style="display: none;"><?= do_shortcode($content) ?></div>
         <?php
         return ob_get_clean();
     });

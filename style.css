@@ -5005,7 +5005,7 @@ h5::before {
 
 .shortcodestyle{
   margin: 20px 8px !important;
-  padding: 15px 15px 15px 40px !important;
+  padding: 15px 15px 15px 30px !important;
   position: relative !important;
   color: #505050;
   box-shadow: 0 1px 30px -4px #e8e8e8;
@@ -5026,9 +5026,8 @@ h5::before {
 }
 
 .shortcodestyle i {
-  padding-right: 20px !important;
-  margin-right: 5px;
-  font-size: medium;
+  margin-right: 25px;
+  font-size: 20px;
 }
 
 .shortcodestyle a {
@@ -5048,7 +5047,7 @@ h5::before {
 }
 
 .noway i {
-  color: #7D2027 !important;
+  color: #DC143C !important;
   text-indent: 0 !important;
 }
 
@@ -5058,7 +5057,12 @@ h5::before {
 }
 
 .buy i {
-  color: #6E81BE !important;
+  color: #32CD32 !important;
+  text-indent: 0 !important;
+}
+
+.collapse i{
+  color: #1E90FF !important;
   text-indent: 0 !important;
 }
 
@@ -5231,10 +5235,8 @@ h5::before {
   position: relative;
 }
 
-.ecbutton:hover {
-  color: var(--theme-skin-matching) !important;
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
+.collapseButton:hover {
+  text-decoration: none !important;
 }
 
 input#wp-comment-cookies-consent {
