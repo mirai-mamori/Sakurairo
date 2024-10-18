@@ -5145,7 +5145,7 @@ h5::before {
   width: fit-content;
   gap: 10px;
   align-items: center;
-  font-weight: bold;
+  font-size: 16px;
 }
 
 .showcard .icon-title i{

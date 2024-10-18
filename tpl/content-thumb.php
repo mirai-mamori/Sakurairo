@@ -11,6 +11,9 @@
 // Combine posts and shuoshuo
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
+// Determine if we are on an author page
+$is_author_page = is_author();
+
 // Query for sticky posts (only on the first page)
 if ($paged == 1) {
     $sticky_args = array(
@@ -20,8 +23,11 @@ if ($paged == 1) {
         'post__in' => get_option('sticky_posts'),
         'orderby' => 'post_date',
         'order' => 'DESC',
-        'author' => get_the_author_meta('ID')
     );
+
+    if ($is_author_page) {
+        $sticky_args['author'] = get_the_author_meta('ID');
+    }
 
     $sticky_query = new WP_Query($sticky_args);
 
@@ -40,11 +46,14 @@ $non_sticky_args = array(
     'posts_per_page' => 10, // 每页显示10篇文章
     'orderby' => 'post_date',
     'order' => 'DESC',
-    'author' => get_the_author_meta('ID'), // 只获取当前作者的文章
     'paged' => $paged,
     'post__not_in' => get_option('sticky_posts'),
     'ignore_sticky_posts' => 1
 );
+
+if ($is_author_page) {
+    $non_sticky_args['author'] = get_the_author_meta('ID'); // 只获取当前作者的文章
+}
 
 $non_sticky_query = new WP_Query($non_sticky_args);
 
