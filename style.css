@@ -5003,13 +5003,7 @@ h5::before {
   z-index: -1;
 }
 
-.shortcodestyle-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px; /* 调整间距 */
-}
-
-.shortcodestyle {
+.shortcodestyle{
   margin: 20px 8px !important;
   padding: 15px 15px 15px 40px !important;
   position: relative !important;
@@ -5025,7 +5019,7 @@ h5::before {
   box-sizing: border-box;
 }
 
-.shortcodestyle:hover {
+.shortcodestyle:hover{
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.8);
   transition: all 0.6s ease-in-out;
@@ -5042,26 +5036,187 @@ h5::before {
   padding: 5px !important;
 }
 
-.xControl {
-  margin: 20px 8px !important;
-  padding: 15px 15px 15px 40px !important;
-  position: relative !important;
-  color: #505050;
-  border-radius: 10px !important;
+.warning,
+.noway,
+.task,
+.buy {
+  text-indent: 0 !important;
+}
+
+.warning i {
+  color: #F1C700 !important;
+  text-indent: 0 !important;
+}
+
+.noway i {
+  color: #7D2027 !important;
+  text-indent: 0 !important;
+}
+
+.task i {
+  color: #7d7d7d !important;
+  text-indent: 0 !important;
+}
+
+.buy i {
+  color: #6E81BE !important;
+  text-indent: 0 !important;
+}
+
+.task p {
+  text-indent: 0 !important;
+}
+
+.ghcard {
+  position: relative;
+}
+
+.ghcard img {
+  border-radius: 5px;
+}
+
+.showcard {
+  position: relative;
+  width: 240px;
+  height: auto;
+  left: 0;
+  top: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background: rgba(255, 255, 255, 0.5);
-  border-radius: 10px !important;
   transition: all 0.6s ease-in-out;
   -webkit-transition: all 0.6s ease-in-out;
   border: 1.5px solid #FFFFFF;
 }
 
-.xControl:hover {
+.showcard:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.8);
   transition: all 0.6s ease-in-out;
   -webkit-transition: all 0.6s ease-in-out;
 }
+
+.showcard .img {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 4%;
+  margin-bottom: 0%;
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  opacity: 1;
+}
+
+.showcard .img:hover {
+  box-shadow: 0 1px 20px 10px #e8e8e8;
+  height: 180px;
+  margin-top: 8%;
+  margin-bottom: 5.1%;
+  width: 180px;
+  opacity: 0.9;
+  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+}
+
+.showcard .icon-title{
+  background-color: #ffffffbd;
+  margin: 5px;
+  padding: 10px 15px;
+  bottom: 5%;
+  left: 10%;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: absolute;
+  display: inline-flex;
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  height: fit-content;
+  max-height: 45%;
+  overflow: hidden;
+  max-width: 70%;
+  width: fit-content;
+  gap: 10px;
+  align-items: center;
+  font-weight: bold;
+}
+
+.showcard .icon-title i{
+  font-size: 13px;
+}
+
+.showcard-button {
+  position: absolute;
+  float: right;
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 5px;
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 100%;
+  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
+
+.showcard-button.hover {
+  font-size: 32px;
+  width: 55px;
+  height: 55px;
+  top: 7.5%;
+  right: 7.5%;
+  box-shadow: 0 1px 20px 8px #e8e8e8;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+}
+
+.conversations-code{
+  display: flex; 
+  padding: 10px;
+}
+
+.conversations-code img{
+  border-radius: 50%;
+  width:40px;
+  height: 40px;
+}
+
+.conversations-code-text {
+  margin: auto 10px;
+  padding: 8px 14px;
+  color: #505050;
+  max-width: 80%;
+  width: fit-content;
+  font-size: 15px;
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px !important;
+  text-indent: 0 !important;
+  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  border: 1.5px solid #FFFFFF;
+}
+
+.conversations-code-text:hover {
+  box-shadow: 0 1px 20px 10px #e8e8e8;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+}
+
 
 .xbtn02 {
   color: #7D7D7D !important;
@@ -7457,178 +7612,6 @@ a.toc-link {
 
 .bangumi-next i {
   color: #505050;
-}
-
-.warning,
-.noway,
-.task,
-.buy {
-  text-indent: 0 !important;
-}
-
-.warning i {
-  color: #F1C700 !important;
-  text-indent: 0 !important;
-}
-
-.noway i {
-  color: #7D2027 !important;
-  text-indent: 0 !important;
-}
-
-.task i {
-  color: #7d7d7d !important;
-  text-indent: 0 !important;
-}
-
-.buy i {
-  color: #6E81BE !important;
-  text-indent: 0 !important;
-}
-
-.task p {
-  text-indent: 0 !important;
-}
-
-.ghcard {
-  position: relative;
-}
-
-.ghcard img {
-  border-radius: 5px;
-}
-
-.showcard {
-  position: relative;
-  float: left;
-  width: 240px;
-  height: auto;
-  left: 0;
-  top: 0;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 1px 30px -4px #e8e8e8;
-  background: rgba(255, 255, 255, 0.5);
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
-  border: 1.5px solid #FFFFFF;
-}
-
-.showcard:hover {
-  box-shadow: 0 1px 20px 10px #e8e8e8;
-  background: rgba(255, 255, 255, 0.8);
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
-}
-
-.showcard .img {
-  position: relative;
-  height: 200px;
-  width: 200px;
-  border-radius: 10px;
-  margin: auto;
-  margin-top: 4%;
-  margin-bottom: 0%;
-  box-shadow: 0 1px 30px -4px #e8e8e8;
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
-  opacity: 1;
-}
-
-.showcard .img:hover {
-  box-shadow: 0 1px 20px 10px #e8e8e8;
-  height: 180px;
-  margin-top: 8%;
-  margin-bottom: 5.1%;
-  width: 180px;
-  opacity: 0.9;
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
-}
-
-.showcard .icon {
-  position: relative;
-  float: left;
-  font-size: 16px;
-  margin-left: 14px;
-  margin-top: 2px;
-  margin-bottom: 16px;
-}
-
-.showcard .title {
-  position: relative;
-  float: left;
-  width: 75%;
-  color: #505050;
-  font-size: 17px;
-  margin-left: 8px;
-  margin-top: 2px;
-  margin-bottom: 12px;
-  overflow: hidden;
-}
-
-.showcard-button {
-  position: absolute;
-  float: right;
-  box-shadow: 0 1px 30px -4px #e8e8e8;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  padding: 5px;
-  font-size: 16px;
-  width: 30px;
-  height: 30px;
-  border: none;
-  border-radius: 100%;
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
-  bottom: 0;
-  right: 0;
-  margin: 10px;
-}
-
-.showcard-button.hover {
-  font-size: 32px;
-  width: 60px;
-  height: 60px;
-  bottom: 27.5%;
-  right: 27.5%;
-  box-shadow: 0 1px 20px 8px #e8e8e8;
-  background: rgba(255, 255, 255, 0.8);
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
-}
-.conversations-code{
-  display: flex; 
-  padding: 10px;
-}
-.conversations-code img{
-  border-radius: 50%;
-  width:40px;
-  height: 40px;
-}
-.conversations-code-text {
-  margin: auto 10px;
-  padding: 8px 14px;
-  color: #505050;
-  max-width: 80%;
-  width: fit-content;
-  font-size: 15px;
-  box-shadow: 0 1px 30px -4px #e8e8e8;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 10px !important;
-  text-indent: 0 !important;
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
-  border: 1.5px solid #FFFFFF;
-}
-
-.conversations-code-text:hover {
-  box-shadow: 0 1px 20px 10px #e8e8e8;
-  background: rgba(255, 255, 255, 0.8);
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
 }
 
 .contents span img,
@@ -10209,8 +10192,13 @@ body.dark .showcard .img:hover {
   -webkit-transition: all 0.6s ease-in-out;
 }
 
-body.dark .showcard .title {
-  color: #CCCCCC !important;
+body.dark .showcard .icon-title {
+  background: rgba(51, 51, 51, 0.7);
+  border: 1px solid #7d7d7d30;
+  transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  box-shadow: 0 1px 30px -4px #1a1a1a;
+  color:#BBB
 }
 
 body.dark .showcard-button {

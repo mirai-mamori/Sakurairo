@@ -2245,39 +2245,41 @@ if (iro_opt('send_theme_version') == '1') {
 //解析短代码  
 function register_shortcodes() {
     add_shortcode('task', function($attr, $content = '') {
-        return '<div class="shortcodestyle-container"><div class="task shortcodestyle"><i class="fa-solid fa-bars"></i>' . esc_html($content) . '</div></div>';
+        return '<div class="task shortcodestyle"><i class="fa-solid fa-bars"></i>' . $content . '</div>';
     });
 
     add_shortcode('warning', function($attr, $content = '') {
-        return '<div class="shortcodestyle-container"><div class="warning shortcodestyle"><i class="fa-solid fa-triangle-exclamation"></i>' . esc_html($content) . '</div></div>';
+        return '<div class="warning shortcodestyle"><i class="fa-solid fa-triangle-exclamation"></i>' . $content . '</div>';
     });
 
     add_shortcode('noway', function($attr, $content = '') {
-        return '<div class="shortcodestyle-container"><div class="noway shortcodestyle"><i class="fa-solid fa-rectangle-xmark"></i>' . esc_html($content) . '</div></div>';
+        return '<div class="noway shortcodestyle"><i class="fa-solid fa-rectangle-xmark"></i>' . $content . '</div>';
     });
 
     add_shortcode('buy', function($attr, $content = '') {
-        return '<div class="shortcodestyle-container"><div class="buy shortcodestyle"><i class="fa-solid fa-check-to-slot"></i>' . esc_html($content) . '</div></div>';
+        return '<div class="buy shortcodestyle"><i class="fa-solid fa-check-to-slot"></i>' . $content . '</div>';
     });
 
     add_shortcode('ghcard', function($attr, $content = '') {
         $atts = shortcode_atts(array("path" => ""), $attr);
-        return '<div class="shortcodestyle-container"><div class="ghcard"><a href="https://github.com/' . esc_attr($atts['path']) . '"><img src="https://github-readme-stats.vercel.app/api' . esc_html($content) . '" alt="Github-Card"></a></div></div>';
+        return '<div class="ghcard"><a href="https://github.com/' . esc_attr($atts['path']) . '"><img src="https://github-readme-stats.vercel.app/api' . esc_html($content) . '" alt="Github-Card"></a></div>';
     });
 
     add_shortcode('showcard', function($attr, $content = '') {
         $atts = shortcode_atts(array("icon" => "", "title" => "", "img" => "", "color" => ""), $attr);
         return sprintf(
-            '<div class="shortcodestyle-container"><section class="showcard">
+            '<div class="showcard">
                 <div class="img" alt="Show-Card" style="background:url(%s);background-size:cover;background-position: center;">
                     <a href="%s"><button class="showcard-button" style="color:%s !important;"><i class="fa-solid fa-angle-right"></i></button></a>
                 </div>
                 <br>
-                <div class="icon"><i class="%s"></i></div>
-                <div class="title">%s</div>
-            </section></div>',
-            esc_url($atts['img']),
-            esc_url($content),
+                <div class="icon-title">
+                    <i class="%s"></i>
+                    <span class="title">%s</span>
+                </div>
+            </div>',
+            $atts['img'],
+            $content,
             esc_attr($atts['color']),
             esc_attr($atts['icon']),
             esc_html($atts['title'])
@@ -2294,12 +2296,12 @@ function register_shortcodes() {
         }
         $speaker_alt = $atts['username'] ? '<span class="screen-reader-text">' . sprintf(__("%s says: ", "sakurairo"), esc_html($atts['username'])) . '</span>' : "";
         return sprintf(
-            '<div class="shortcodestyle-container"><div class="conversations-code" style="flex-direction: %s;">
+            '<div class="conversations-code" style="flex-direction: %s;">
                 <img src="%s">
                 <div class="conversations-code-text">%s%s</div>
-            </div></div>',
+            </div>',
             esc_attr($atts['direction']),
-            esc_url($atts['avatar']),
+            $atts['avatar'],
             $speaker_alt,
             esc_html($content)
         );
@@ -2309,16 +2311,12 @@ function register_shortcodes() {
         $atts = shortcode_atts(array("title" => ""), $atts);
         ob_start();
         ?>
-        <div class="shortcodestyle-container">
-            <div style="margin: 0.5em 0;">
-                <div class="xControl">
+                <div class="xControl shortcodestyle">
                     <i class="fa-solid fa-angle-down" style="color: #16AF90;"></i> &nbsp;&nbsp;
-                    <span class="xTitle"><?= esc_html($atts['title']) ?></span>&nbsp;&nbsp;==>&nbsp;&nbsp;<a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02"><?php _e('Expand / Collapse', 'sakurairo'); ?></span></a>
+                    <span class="xTitle"><?= esc_html($atts['title']) ?><a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02"><?php _e('Expand / Collapse', 'sakurairo'); ?></span></a>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="xContent" style="display: none;"><?= do_shortcode($content) ?></div>
-            </div>
-        </div>
         <?php
         return ob_get_clean();
     });
