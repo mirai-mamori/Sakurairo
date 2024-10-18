@@ -57,7 +57,7 @@
 
 - 本主题**基于 [Sakura V3 Series](https://github.com/mashirozx/sakura/tree/3.x) 主题进行重构开发**，使用 [GPL V2.0](https://github.com/mirai-mamori/Sakurairo/blob/master/LICENSE) 协议开源。
 
-- 本主题使用了部分来自互联网的特效。由于版权及开源协议不明，无法具体说明相关信息。如果本主题使用到您制作的特效，烦请您通过邮件（me#okaeri.org）来取得联系。
+- 本主题使用了部分来自互联网的特效。由于版权及开源协议不明，无法具体说明相关信息。如果本主题使用到您制作的特效，烦请您通过邮件（me#hareru.org）来取得联系。
 
 ### 引用相关：
 

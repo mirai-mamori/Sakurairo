@@ -2243,74 +2243,87 @@ if (iro_opt('send_theme_version') == '1') {
 }
 
 //解析短代码  
-add_shortcode('task', 'task_shortcode');
-function task_shortcode($attr, $content = '')
-{
-    $out = '<div class="task shortcodestyle"><i class="fa-solid fa-bars"></i>' . $content . '</div>';
-    return $out;
-}
-add_shortcode('warning', 'warning_shortcode');
-function warning_shortcode($attr, $content = '')
-{
-    $out = '<div class="warning shortcodestyle"><i class="fa-solid fa-triangle-exclamation"></i>' . $content . '</div>';
-    return $out;
-}
-add_shortcode('noway', 'noway_shortcode');
-function noway_shortcode($attr, $content = '')
-{
-    $out = '<div class="noway shortcodestyle"><i class="fa-solid fa-rectangle-xmark"></i>' . $content . '</div>';
-    return $out;
-}
-add_shortcode('buy', 'buy_shortcode');
-function buy_shortcode($attr, $content = '')
-{
-    $out = '<div class="buy shortcodestyle"><i class="fa-solid fa-check-to-slot"></i>' . $content . '</div>';
-    return $out;
-}
-add_shortcode('ghcard', 'gh_card');
-function gh_card($attr, $content = '')
-{
-    extract(shortcode_atts(array("path" => ""), $attr));
-    return '<div class="ghcard"><a href="https://github.com/' . $path . '"><img src="https://github-readme-stats.vercel.app/api' . $content . '" alt="Github-Card"></a></div>';
-}
+function register_shortcodes() {
+    add_shortcode('task', function($attr, $content = '') {
+        return '<div class="shortcodestyle-container"><div class="task shortcodestyle"><i class="fa-solid fa-bars"></i>' . esc_html($content) . '</div></div>';
+    });
 
-add_shortcode('showcard', 'show_card');
-function show_card($attr, $content = '')
-{
-    extract(shortcode_atts(array("icon" => "", "title" => "", "img" => "", "color" => ""), $attr));
-    return '<section class="showcard">
-    <div class="img" alt="Show-Card" style="background:url(' . $img . ');background-size:cover;background-position: center;">
-    <a href="' . $content . '"><button class="showcard-button" style="color:' . $color . ' !important;"><i class="fa-solid fa-angle-right"></i></button> </a>
-    </div>
-    <br>
-    <div class="icon">
-    <i class="' . $icon . '"></i>
-    </div>
-    <div class="title">
-    ' . $title . '		
-    </div>
-</section>';
-}
+    add_shortcode('warning', function($attr, $content = '') {
+        return '<div class="shortcodestyle-container"><div class="warning shortcodestyle"><i class="fa-solid fa-triangle-exclamation"></i>' . esc_html($content) . '</div></div>';
+    });
 
-add_shortcode('conversations', 'conversations');
-function conversations($attr, $content = '')
-{
-    extract(shortcode_atts(array("avatar" => "", "direction" => "", "username" => ""), $attr));
-    if ($avatar == "" && $username != "") {
-        $user_id = get_user_by('login', $username)->ID;
-        if ($user_id) {
-            $avatar = get_avatar_url($user_id, 40);
+    add_shortcode('noway', function($attr, $content = '') {
+        return '<div class="shortcodestyle-container"><div class="noway shortcodestyle"><i class="fa-solid fa-rectangle-xmark"></i>' . esc_html($content) . '</div></div>';
+    });
+
+    add_shortcode('buy', function($attr, $content = '') {
+        return '<div class="shortcodestyle-container"><div class="buy shortcodestyle"><i class="fa-solid fa-check-to-slot"></i>' . esc_html($content) . '</div></div>';
+    });
+
+    add_shortcode('ghcard', function($attr, $content = '') {
+        $atts = shortcode_atts(array("path" => ""), $attr);
+        return '<div class="shortcodestyle-container"><div class="ghcard"><a href="https://github.com/' . esc_attr($atts['path']) . '"><img src="https://github-readme-stats.vercel.app/api' . esc_html($content) . '" alt="Github-Card"></a></div></div>';
+    });
+
+    add_shortcode('showcard', function($attr, $content = '') {
+        $atts = shortcode_atts(array("icon" => "", "title" => "", "img" => "", "color" => ""), $attr);
+        return sprintf(
+            '<div class="shortcodestyle-container"><section class="showcard">
+                <div class="img" alt="Show-Card" style="background:url(%s);background-size:cover;background-position: center;">
+                    <a href="%s"><button class="showcard-button" style="color:%s !important;"><i class="fa-solid fa-angle-right"></i></button></a>
+                </div>
+                <br>
+                <div class="icon"><i class="%s"></i></div>
+                <div class="title">%s</div>
+            </section></div>',
+            esc_url($atts['img']),
+            esc_url($content),
+            esc_attr($atts['color']),
+            esc_attr($atts['icon']),
+            esc_html($atts['title'])
+        );
+    });
+
+    add_shortcode('conversations', function($attr, $content = '') {
+        $atts = shortcode_atts(array("avatar" => "", "direction" => "", "username" => ""), $attr);
+        if (empty($atts['avatar']) && !empty($atts['username'])) {
+            $user = get_user_by('login', $atts['username']);
+            if ($user) {
+                $atts['avatar'] = get_avatar_url($user->ID, 40);
+            }
         }
-    }
-    $speaker_alt = $username?'<span class="screen-reader-text">'.sprintf(__("%s says: ","sakurairo"),$username).'</span>':"";
-    $output = '<div class="conversations-code" style="flex-direction: ' . $direction . ';">';
-    $output .= "<img src=\"$avatar\">";
-    $output .= '<div class="conversations-code-text">'. $speaker_alt . $content . '</div>';
-    $output .= '</div>';
+        $speaker_alt = $atts['username'] ? '<span class="screen-reader-text">' . sprintf(__("%s says: ", "sakurairo"), esc_html($atts['username'])) . '</span>' : "";
+        return sprintf(
+            '<div class="shortcodestyle-container"><div class="conversations-code" style="flex-direction: %s;">
+                <img src="%s">
+                <div class="conversations-code-text">%s%s</div>
+            </div></div>',
+            esc_attr($atts['direction']),
+            esc_url($atts['avatar']),
+            $speaker_alt,
+            esc_html($content)
+        );
+    });
 
-    return $output;
+    add_shortcode('collapse', function($atts, $content = null) {
+        $atts = shortcode_atts(array("title" => ""), $atts);
+        ob_start();
+        ?>
+        <div class="shortcodestyle-container">
+            <div style="margin: 0.5em 0;">
+                <div class="xControl">
+                    <i class="fa-solid fa-angle-down" style="color: #16AF90;"></i> &nbsp;&nbsp;
+                    <span class="xTitle"><?= esc_html($atts['title']) ?></span>&nbsp;&nbsp;==>&nbsp;&nbsp;<a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02"><?php _e('Expand / Collapse', 'sakurairo'); ?></span></a>
+                    <div style="clear: both;"></div>
+                </div>
+                <div class="xContent" style="display: none;"><?= do_shortcode($content) ?></div>
+            </div>
+        </div>
+        <?php
+        return ob_get_clean();
+    });
 }
-
+add_action('init', 'register_shortcodes');
 //code end
 
 //WEBP支持
@@ -2330,34 +2343,6 @@ function mimvp_file_is_displayable_image($result, $path)
     return (bool) ($info); // 根据文档这里需要返回一个bool
 }
 add_filter('file_is_displayable_image', 'mimvp_file_is_displayable_image', 10, 2);
-
-//code end
-
-//展开收缩功能
-function collapse($atts, $content = null)
-{
-    $atts = shortcode_atts(array("title" => ""), $atts);
-
-    ob_start(); // 开启输出缓存
-
-    // HTML 结构
-    ?>
-                                <div style="margin: 0.5em 0;">
-                                    <div class="xControl">
-                                        <i class="fa-solid fa-angle-down" style="color: #16AF90;"></i> &nbsp;&nbsp;
-                                        <span class="xTitle"><?= $atts['title'] ?></span>&nbsp;&nbsp;==>&nbsp;&nbsp;<a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02"><?php _e('Expand / Collapse', 'sakurairo'); ?></span></a>
-                                        <div style="clear: both;"></div>
-                                    </div>
-                                    <div class="xContent" style="display: none;"><?= do_shortcode($content) ?></div>
-                                </div>
-                                <?php
-
-                                $output = ob_get_contents(); // 获取输出缓存
-                                ob_end_clean(); // 清空输出缓存
-                            
-                                return $output; // 返回 HTML 结构
-}
-add_shortcode('collapse', 'collapse');
 
 //code end
 

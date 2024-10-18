@@ -5003,6 +5003,12 @@ h5::before {
   z-index: -1;
 }
 
+.shortcodestyle-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* 调整间距 */
+}
+
 .shortcodestyle {
   margin: 20px 8px !important;
   padding: 15px 15px 15px 40px !important;
@@ -5015,6 +5021,8 @@ h5::before {
   transition: all 0.6s ease-in-out;
   -webkit-transition: all 0.6s ease-in-out;
   border: 1.5px solid #FFFFFF;
+  flex: 1 1 calc(25% - 10px); 
+  box-sizing: border-box;
 }
 
 .shortcodestyle:hover {
@@ -5022,6 +5030,16 @@ h5::before {
   background: rgba(255, 255, 255, 0.8);
   transition: all 0.6s ease-in-out;
   -webkit-transition: all 0.6s ease-in-out;
+}
+
+.shortcodestyle i {
+  padding-right: 20px !important;
+  margin-right: 5px;
+  font-size: medium;
+}
+
+.shortcodestyle a {
+  padding: 5px !important;
 }
 
 .xControl {
@@ -7439,15 +7457,6 @@ a.toc-link {
 
 .bangumi-next i {
   color: #505050;
-}
-
-.shortcodestyle i {
-  padding-right: 20px !important;
-  font-size: medium;
-}
-
-.shortcodestyle a {
-  padding: 5px !important;
 }
 
 .warning,
