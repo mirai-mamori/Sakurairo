@@ -849,10 +849,14 @@ input[type=week] {
 .site-title img {
   height: 40px;
   margin-top: 10px;
-  opacity: .75;
+  opacity: 1;
   -webkit-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
   -moz-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
   transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+}
+
+body.dark .site-title img {
+  filter: brightness(1.1);
 }
 
 .site-top .lower nav {
@@ -10513,4 +10517,25 @@ body.dark .shuoshuo-comments,body.dark .shuoshuo-date {
   color: #abababab;
   transition: all 0.6s ease-in-out;
   -webkit-transition: all 0.6s ease-in-out;
+}
+
+
+/* 移动端右上角头像 */
+@media (max-width: 860px) {
+  .header-user-avatar img {
+    display: block;
+  }
+  .header-user-avatar {
+    margin-top: 15px !important;
+  }
+ .site-top {
+    display: flex;
+    justify-content: space-between;
+ }
+}
+/* 兼容B站嵌入视频 */
+iframe {
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  width: 100%;
 }
