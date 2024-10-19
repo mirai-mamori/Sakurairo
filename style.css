@@ -849,10 +849,14 @@ input[type=week] {
 .site-title img {
   height: 40px;
   margin-top: 10px;
-  opacity: .75;
+  opacity: 1;
   -webkit-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
   -moz-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
   transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+}
+
+body.dark .site-title img {
+  filter: brightness(1.1);
 }
 
 .site-top .lower nav {
@@ -3813,12 +3817,16 @@ input[type=radio]:checked:before {
   height: 100%;
 }
 
+iframe {
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  width: 100%;
+}
+
 .video-container iframe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .video-container object {
@@ -8320,10 +8328,19 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   .m-nav {
     display: block;
   }
-
+  
   .header-user-avatar img {
-    display: none;
+    display: block;
   }
+  
+  .header-user-avatar {
+    margin-top: 15px !important;
+  }
+  
+ .site-top {
+    display: flex;
+    justify-content: space-between;
+ }
 
   .searchbox.js-toggle-search {
     display: none;
