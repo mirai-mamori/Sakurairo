@@ -3703,6 +3703,14 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id'=>'site_footer_insert',
+        'type'     => 'code_editor',
+        'sanitize' => false,
+        'title' => __('Code inserted in the footer','sakurairo_csf'),
+        'desc' => __('Insert HTML code right before </html>.','sakurairo_csf'),
+      ),
+
+      array(
         'id' => 'time_zone_fix',
         'type' => 'slider',
         'title' => __('Timezone Fix','sakurairo_csf'),
