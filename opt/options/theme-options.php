@@ -555,7 +555,6 @@ $prefix = 'iro_options';
         'id'     => 'mashiro_logo',
         'type'   => 'fieldset',
         'title'  => __('Nav Menu Text Logo Options','sakurairo_csf'),
-        'dependency' => array( 'mashiro_logo_option', '==', 'true', '', 'true' ),
         'fields' => array(
           array(
             'id'    => 'text_a',
@@ -576,7 +575,10 @@ $prefix = 'iro_options';
             'id'    => 'text_secondary',
             'type'  => 'text',
             'title' => __('Secondary Text','sakurairo_csf'),
-            'dependency' => array( 'text_b', '!=', '', '', 'true'  ),
+            'dependency' => array(
+              array('text_b', '!=', '', '', 'true'),
+              array('mashiro_logo_option', '==', 'true', '', 'true')
+            ),
           ),
           array(
             'id'    => 'font_name',
