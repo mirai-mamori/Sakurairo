@@ -189,4 +189,5 @@ $reception_background = iro_opt('reception_background');
   <div id="particles-js"></div>
   <script type="application/json" id="particles-js-cfg"><?php echo esc_html(iro_opt('particles_json', '')); ?></script>
 <?php endif; ?>
+<?= iro_opt("site_footer_insert"); ?>
 </html>
