@@ -323,6 +323,70 @@ function save_emotion_meta_box($post_id) {
 }
 add_action('save_post', 'save_emotion_meta_box');
 
+function register_custom_meta_boxes() {
+    register_meta('post', 'title_style', array(
+        'show_in_rest' => true,
+        'single' => true,
+        'type' => 'string',
+        'auth_callback' => function() {
+            return current_user_can('edit_posts');
+        }
+    ));
+    register_meta('post', 'license', array(
+        'show_in_rest' => true,
+        'single' => true,
+        'type' => 'string',
+        'auth_callback' => function() {
+            return current_user_can('edit_posts');
+        }
+    ));
+}
+add_action('init', 'register_custom_meta_boxes');
+
+function add_custom_meta_box() {
+    add_meta_box(
+        'custom_meta_box_id',
+        __('Custom Meta Box', 'sakurairo'),
+        'render_custom_meta_box',
+        'post', // 仅在post内容类型中显示
+        'side',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'add_custom_meta_box');
+
+function render_custom_meta_box($post) {
+    $title_style_value = get_post_meta($post->ID, 'title_style', true);
+    $license_value = get_post_meta($post->ID, 'license', true);
+    wp_nonce_field('custom_meta_box_nonce', 'custom_meta_box_nonce_field');
+    echo '<label for="title_style">' . __('Title Style', 'sakurairo') . '</label>';
+    echo '<input type="text" id="title_style" name="title_style" value="' . esc_attr($title_style_value) . '" />';
+    echo '<br><br>';
+    echo '<label for="license">' . __('License', 'sakurairo') . '</label>';
+    echo '<input type="text" id="license" name="license" value="' . esc_attr($license_value) . '" />';
+    echo '<br><br>';
+    echo '<p>' . __('For the Title Style, Please fill in the css style, part of the style need to add !important effective, and for the License, please go to Theme Options to learn how to set it up.', 'sakurairo') . '</p>';
+}
+
+function save_custom_meta_box($post_id) {
+    if (!isset($_POST['custom_meta_box_nonce_field']) || !wp_verify_nonce($_POST['custom_meta_box_nonce_field'], 'custom_meta_box_nonce')) {
+        return;
+    }
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+    if (isset($_POST['title_style'])) {
+        update_post_meta($post_id, 'title_style', sanitize_text_field($_POST['title_style']));
+    }
+    if (isset($_POST['license'])) {
+        update_post_meta($post_id, 'license', sanitize_text_field($_POST['license']));
+    }
+}
+add_action('save_post', 'save_custom_meta_box');
+
 function include_shuoshuo_in_main_query($query) {
     if ($query->is_main_query() && !is_admin() && (is_home() || is_archive())) {
         $query->set('post_type', array('post', 'shuoshuo'));
