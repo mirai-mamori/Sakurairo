@@ -2336,9 +2336,8 @@ function register_shortcodes() {
                 <div class="img" alt="Show-Card" style="background:url(%s);background-size:cover;background-position: center;">
                     <a href="%s"><button class="showcard-button" style="color:%s !important;"><i class="fa-solid fa-angle-right"></i></button></a>
                 </div>
-                <br>
                 <div class="icon-title">
-                    <i class="%s"></i>
+                    <i class="%s" style="color:%s !important;"></i>
                     <span class="title">%s</span>
                 </div>
             </div>',
@@ -2346,7 +2345,8 @@ function register_shortcodes() {
             $content,
             esc_attr($atts['color']),
             esc_attr($atts['icon']),
-            esc_html($atts['title'])
+            esc_attr($atts['color']),
+            $atts['title'],
         );
     });
 
