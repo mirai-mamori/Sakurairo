@@ -371,18 +371,18 @@ table {
 }
 
 blockquote {
-  margin: 0;
-  padding: 30px 60px;
+  margin: 10px 0;
+  padding: 0;
   position: relative;
   quotes: "" "";
 }
 
 blockquote:before {
   content: "\f10d" !important;
-  font-size: 3rem;
+  font-size: 1rem;
   position: absolute;
-  top: -25px;
-  left: 12px;
+  top: -15px;
+  left: 0;
   color: var(--theme-skin, #505050);
   font-family: FontAwesome;
   font-weight: var(--global-font-weight);
@@ -390,10 +390,10 @@ blockquote:before {
 
 blockquote:after {
   content: '\f10e' !important;
-  font-size: 3rem;
+  font-size: 1rem;
   position: absolute;
-  bottom: -25px;
-  right: -5px;
+  bottom: -15px;
+  right: 0;
   color: var(--theme-skin, #505050);
   font-family: FontAwesome;
   font-weight: var(--global-font-weight);
@@ -1200,13 +1200,11 @@ body.dark .site-title img {
 
 .post-excerpt {
   position: absolute;
-  bottom: 5%;
+  top: 80%;
   width: 98%;
-  max-height: 15%;
+  max-height: 14%;
   height: fit-content;
   left: 2%;
-  margin: 0;
-  margin-top: 5px;
   z-index: 50;
   padding: 0 10px;
   color: rgba(0, 0, 0, .66);
@@ -1217,7 +1215,6 @@ body.dark .site-title img {
 }
 
 .ai-excerpt-tip {
-  font-size: 12px;
   color:#cccccc;
   float: left;
   padding-bottom: 2px;
@@ -5138,6 +5135,7 @@ h5::before {
 .showcard .icon-title{
   left: 5%;
   margin-top: 4%;
+  -webkit-backdrop-filter: blur(5px);
   position: relative;
   display: inline-flex;
   transition: all 0.6s ease-in-out;
@@ -5837,7 +5835,7 @@ object {
 
 .post-thumb {
   float: inherit;
-  height: 68%;
+  height: 100%;
   position: absolute;
   width: 100%;
   display: inline-flex;
@@ -9521,7 +9519,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     -webkit-transition: all 0.6s ease-in-out;
   }
   .post-excerpt{
-    max-height: 13%;
+    max-height: 15%;
     bottom: 5.5%;
     font-size: 14px;
   }
