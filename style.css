@@ -48,7 +48,7 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   animation: searchbox 1s;
   position: relative;
   float: right;
-  margin-left: 10px;
+  margin: 0 10px;
   margin-top: 15px;
 }
 
@@ -875,7 +875,7 @@ body.dark .site-title img {
 
 .site-top ul li {
   float: left;
-  margin-left: 28px;
+  margin: 0 14px;
   position: relative;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
@@ -937,8 +937,8 @@ body.dark .site-title img {
   position: absolute;
   background: rgba(255, 255, 255, .95);
   padding: 10px;
-  top: 44px;
-  right: -16px;
+  top: 45px;
+  right: -20px;
   min-width: 80px;
   text-align: center;
   white-space: nowrap;
@@ -2854,10 +2854,9 @@ h1.main-title {
   height: auto;
   font-size: 18px;
   width: auto;
-  margin: 10px 0;
+  margin: 10px 5px;
   border-radius: 10px;
   padding: 5px 9px;
-  margin-left: 15px;
 }
 
 .searchbox.js-toggle-search:hover {
