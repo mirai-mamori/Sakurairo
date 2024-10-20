@@ -74,6 +74,12 @@ add_action('rest_api_init', function () {
         'permission_callback' => '__return_true'
     )
     );
+    register_rest_route('sakura/v1', '/movies/bilibili', array(
+        'methods' => 'POST',
+        'callback' => 'bfv_bilibili',
+        'permission_callback' => '__return_true'
+    )
+    );
     register_rest_route('sakura/v1', '/favlist/bilibili', array(
         'methods' => 'POST',
         'callback' => 'favlist_bilibili',
@@ -321,6 +327,7 @@ function get_qq_avatar()
 
 function bgm_bilibili()
 {
+    $response = null;
     if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
         $output = array(
             'status' => 403,
@@ -334,12 +341,29 @@ function bgm_bilibili()
         $html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->get_bgm_items($page));
         $response = new WP_REST_Response($html, 200);
     }
-    $page = $_GET["page"] ?: 2;
-    $bgm = new \Sakura\API\Bilibili();
-    $html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->get_bgm_items($page));
-    $response = new WP_REST_Response($html, 200);
     return $response;
 }
+
+function bfv_bilibili()
+{
+    $response = null;
+    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+        $output = array(
+            'status' => 403,
+            'success' => false,
+            'message' => 'Unauthorized client.'
+        );
+        $response = new WP_REST_Response($output, 403);
+    } else {
+        $page = $_GET["page"] ?: 2;
+        $bgm = new \Sakura\API\Bilibili();
+        $html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->get_bfv_items($page));
+        $response = new WP_REST_Response($html, 200);
+    }
+    return $response;
+}
+
+
 
 function favlist_bilibili()
 {
