@@ -39,7 +39,7 @@ add_action('wp_head', function() {
             </form>
         </div>
     </section>
-    <script src="<?php echo esc_url($shared_lib_basepath . '/js/anf.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo $shared_lib_basepath . '/js/anf.js'; ?>" type="text/javascript"></script>
     <?php wp_footer(); ?>
 </body>
 

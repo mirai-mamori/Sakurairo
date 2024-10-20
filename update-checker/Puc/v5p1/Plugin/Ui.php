@@ -1,7 +1,7 @@
 <?php
 namespace YahnisElsts\PluginUpdateChecker\v5p1\Plugin;
 
-if ( !class_exists('Ui', false) ):
+if ( !class_exists(Ui::class, false) ):
 	/**
 	 * Additional UI elements for plugins.
 	 */

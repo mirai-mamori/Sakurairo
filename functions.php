@@ -12,7 +12,7 @@ include_once('inc/classes/IpLocation.php');
 
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '19.0.0');
+define('INT_VERSION', '19.1.0');
 define('BUILD_VERSION', '2');
 
 function check_php_version($preset_version)
@@ -162,15 +162,7 @@ if (!function_exists('akina_setup')) {
         remove_action('wp_head', 'index_rel_link');
         remove_action('wp_head', 'start_post_rel_link', 10);
         remove_action('wp_head', 'wp_generator');
-        remove_action('wp_head', 'wp_generator'); //隐藏wordpress版本
-        remove_filter('the_content', 'wptexturize'); //取消标点符号转义
-
-        //remove_action('rest_api_init', 'wp_oembed_register_route');
-        //remove_filter('rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10, 4);
-        //remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
-        //remove_filter('oembed_response_data', 'get_oembed_response_data_rich', 10, 4);
-        //remove_action('wp_head', 'wp_oembed_add_discovery_links');
-        //remove_action('wp_head', 'wp_oembed_add_host_js');
+        remove_filter('the_content', 'wptexturize'); 
         remove_action('template_redirect', 'rest_output_link_header', 11);
 
         function coolwp_remove_open_sans_from_wp_core()
@@ -228,48 +220,179 @@ if (!function_exists('akina_setup')) {
 ;
 add_action('after_setup_theme', 'akina_setup');
 
-//说说页面
-function shuoshuo_custom_init()
-{
+function register_shuoshuo_post_type() {
     $labels = array(
-        'name' => __("Ideas", "sakurairo"),
-        'singular_name' => __("Idea", "sakurairo"),
-        'add_new' => __("Publish New Idea", "sakurairo"),
-        'add_new_item' => __("Publish New Idea", "sakurairo"),
-        'edit_item' => __("Edit Idea", "sakurairo"),
-        'new_item' => __("New Idea", "sakurairo"),
-        'view_item' => __("View Idea", "sakurairo"),
-        'search_items' => __("Search Idea", "sakurairo"),
-        'not_found' => __("Not Found Idea", "sakurairo"),
-        'not_found_in_trash' => __("No Idea in the Trash", "sakurairo"),
-        'parent_item_colon' => '',
-        'menu_name' => __("Ideas", "sakurairo")
+        'name'               => _x('Shuoshuo', 'post type general name', 'sakurairo'),
+        'singular_name'      => _x('Shuoshuo', 'post type singular name', 'sakurairo'),
+        'menu_name'          => _x('Shuoshuo', 'admin menu', 'sakurairo'),
+        'name_admin_bar'     => _x('Shuoshuo', 'add new on admin bar', 'sakurairo'),
+        'add_new'            => _x('Add New', 'shuoshuo', 'sakurairo'),
+        'add_new_item'       => __('Add New Shuoshuo', 'sakurairo'),
+        'new_item'           => __('New Shuoshuo', 'sakurairo'),
+        'edit_item'          => __('Edit Shuoshuo', 'sakurairo'),
+        'view_item'          => __('View Shuoshuo', 'sakurairo'),
+        'all_items'          => __('All Shuoshuo', 'sakurairo'),
+        'search_items'       => __('Search Shuoshuo', 'sakurairo'),
+        'parent_item_colon'  => __('Parent Shuoshuo:', 'sakurairo'),
+        'not_found'          => __('No shuoshuo found.', 'sakurairo'),
+        'not_found_in_trash' => __('No shuoshuo found in Trash.', 'sakurairo')
     );
+
     $args = array(
-        'labels' => $labels,
-        'public' => true,
+        'labels'             => $labels,
+        'public'             => true,
         'publicly_queryable' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'show_in_rest' => true,
-        'query_var' => true,
-        'rewrite' => true,
-        'capability_type' => 'post',
-        'has_archive' => true,
-        'hierarchical' => false,
-        'menu_position' => null,
-        'supports' => array(
-            'title',
-            'editor',
-            'comments',
-            'thumbnail',
-            'author',
-            'custom-fields' // Added support for custom fields
-        )
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_rest'       => true,
+        'query_var'          => true,
+        'rewrite'            => array('slug' => 'shuoshuo'),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title', 'editor', 'author', 'thumbnail', 'custom-fields', 'comments'),
+        'taxonomies'         => array('category') 
     );
+
     register_post_type('shuoshuo', $args);
 }
-add_action('init', 'shuoshuo_custom_init');
+add_action('init', 'register_shuoshuo_post_type');
+
+function register_emotion_meta_boxes() {
+    register_meta('post', 'emotion', array(
+        'show_in_rest' => true,
+        'single' => true,
+        'type' => 'string',
+        'auth_callback' => function() {
+            return current_user_can('edit_posts');
+        }
+    ));
+    register_meta('post', 'emotion_color', array(
+        'show_in_rest' => true,
+        'single' => true,
+        'type' => 'string',
+        'auth_callback' => function() {
+            return current_user_can('edit_posts');
+        }
+    ));
+}
+add_action('init', 'register_emotion_meta_boxes');
+
+function add_emotion_meta_box() {
+    add_meta_box(
+        'emotion_meta_box_id',
+        __('Emotion Meta Box', 'sakurairo'),
+        'render_emotion_meta_box',
+        'shuoshuo', // 仅在shuoshuo内容类型中显示
+        'side',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'add_emotion_meta_box');
+
+function render_emotion_meta_box($post) {
+    $emotion_value = get_post_meta($post->ID, 'emotion', true);
+    $emotion_color_value = get_post_meta($post->ID, 'emotion_color', true);
+    wp_nonce_field('emotion_meta_box_nonce', 'emotion_meta_box_nonce_field');
+    echo '<label for="emotion">' . __('Emotion', 'sakurairo') . '</label>';
+    echo '<input type="text" id="emotion" name="emotion" value="' . esc_attr($emotion_value) . '" />';
+    echo '<br><br>';
+    echo '<label for="emotion_color">' . __('Emotion Color', 'sakurairo') . '</label>';
+    echo '<input type="text" id="emotion_color" name="emotion_color" value="' . esc_attr($emotion_color_value) . '" />';
+    echo '<br><br>';
+    echo '<p>' . __('For the Emotion, please fill in the Unicode value of the Fontawesome icon, and for the Emotion Color, please fill in the RGBA or hexadecimal color.', 'sakurairo') . '</p>';
+}
+
+function save_emotion_meta_box($post_id) {
+    if (!isset($_POST['emotion_meta_box_nonce_field']) || !wp_verify_nonce($_POST['emotion_meta_box_nonce_field'], 'emotion_meta_box_nonce')) {
+        return;
+    }
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+    if (isset($_POST['emotion'])) {
+        update_post_meta($post_id, 'emotion', sanitize_text_field($_POST['emotion']));
+    }
+    if (isset($_POST['emotion_color'])) {
+        update_post_meta($post_id, 'emotion_color', sanitize_text_field($_POST['emotion_color']));
+    }
+}
+add_action('save_post', 'save_emotion_meta_box');
+
+function register_custom_meta_boxes() {
+    register_meta('post', 'title_style', array(
+        'show_in_rest' => true,
+        'single' => true,
+        'type' => 'string',
+        'auth_callback' => function() {
+            return current_user_can('edit_posts');
+        }
+    ));
+    register_meta('post', 'license', array(
+        'show_in_rest' => true,
+        'single' => true,
+        'type' => 'string',
+        'auth_callback' => function() {
+            return current_user_can('edit_posts');
+        }
+    ));
+}
+add_action('init', 'register_custom_meta_boxes');
+
+function add_custom_meta_box() {
+    add_meta_box(
+        'custom_meta_box_id',
+        __('Custom Meta Box', 'sakurairo'),
+        'render_custom_meta_box',
+        'post', // 仅在post内容类型中显示
+        'side',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'add_custom_meta_box');
+
+function render_custom_meta_box($post) {
+    $title_style_value = get_post_meta($post->ID, 'title_style', true);
+    $license_value = get_post_meta($post->ID, 'license', true);
+    wp_nonce_field('custom_meta_box_nonce', 'custom_meta_box_nonce_field');
+    echo '<label for="title_style">' . __('Title Style', 'sakurairo') . '</label>';
+    echo '<input type="text" id="title_style" name="title_style" value="' . esc_attr($title_style_value) . '" />';
+    echo '<br><br>';
+    echo '<label for="license">' . __('License', 'sakurairo') . '</label>';
+    echo '<input type="text" id="license" name="license" value="' . esc_attr($license_value) . '" />';
+    echo '<br><br>';
+    echo '<p>' . __('For the Title Style, Please fill in the css style, part of the style need to add !important effective, and for the License, please go to Theme Options to learn how to set it up.', 'sakurairo') . '</p>';
+}
+
+function save_custom_meta_box($post_id) {
+    if (!isset($_POST['custom_meta_box_nonce_field']) || !wp_verify_nonce($_POST['custom_meta_box_nonce_field'], 'custom_meta_box_nonce')) {
+        return;
+    }
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+    if (isset($_POST['title_style'])) {
+        update_post_meta($post_id, 'title_style', sanitize_text_field($_POST['title_style']));
+    }
+    if (isset($_POST['license'])) {
+        update_post_meta($post_id, 'license', sanitize_text_field($_POST['license']));
+    }
+}
+add_action('save_post', 'save_custom_meta_box');
+
+function include_shuoshuo_in_main_query($query) {
+    if ($query->is_main_query() && !is_admin() && (is_home() || is_archive())) {
+        $query->set('post_type', array('post', 'shuoshuo'));
+    }
+}
+add_action('pre_get_posts', 'include_shuoshuo_in_main_query');
 
 function admin_lettering()
 {
@@ -1990,17 +2113,23 @@ function change_avatar($avatar)
             return '<img src="' . $matches[1] . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
         }
         
-        // 生成一个合适长度的初始化向量
-        $iv_length = openssl_cipher_iv_length('aes-128-cbc');
-        $iv = openssl_random_pseudo_bytes($iv_length);
-        
-        // 加密数据
-        $encrypted = openssl_encrypt($qq_number, 'aes-128-cbc', $sakura_privkey, 0, $iv);
-        
-        // 将初始化向量和加密数据一起编码
-        $encrypted = urlencode(base64_encode($iv . $encrypted));
-        
-        return '<img src="' . rest_url("sakura/v1/qqinfo/avatar") . '?qq=' . $encrypted . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+        // Ensure $sakura_privkey is defined and not null
+        if (isset($sakura_privkey) && !is_null($sakura_privkey)) {
+            // 生成一个合适长度的初始化向量
+            $iv_length = openssl_cipher_iv_length('aes-128-cbc');
+            $iv = openssl_random_pseudo_bytes($iv_length);
+            
+            // 加密数据
+            $encrypted = openssl_encrypt($qq_number, 'aes-128-cbc', $sakura_privkey, 0, $iv);
+            
+            // 将初始化向量和加密数据一起编码
+            $encrypted = urlencode(base64_encode($iv . $encrypted));
+            
+            return '<img src="' . rest_url("sakura/v1/qqinfo/avatar") . '?qq=' . $encrypted . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+        } else {
+            // Handle the case where $sakura_privkey is not set or is null
+            return '<img src="default_avatar_url" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+        }
     }
     return $avatar;
 }
@@ -2138,64 +2267,6 @@ function check_myisam_support()
     return false;
 }
 
-/*
- * 随机图
- * 暂移除, 在20个月前功能已被移除，该表应该不存在了。
- */
-// function create_sakura_table()
-// {
-//     if (iro_opt('random_graphs_mts')) {
-//         global $wpdb, $sakura_image_array, $sakura_mobile_image_array, $sakura_privkey;
-//     } else {
-//         global $wpdb, $sakura_image_array, $sakura_privkey;
-//     }
-//     $sakura_table_name = $wpdb->base_prefix . 'sakurairo';
-//     require_once ABSPATH . "wp-admin/includes/upgrade.php";
-//     /// TODO: 移除?
-//     dbDelta("CREATE TABLE IF NOT EXISTS `" . $sakura_table_name . "` (
-//         `mate_key` varchar(50) COLLATE utf8_bin NOT NULL,
-//         `mate_value` text COLLATE utf8_bin NOT NULL,
-//         PRIMARY KEY (`mate_key`)
-//         ) " . (check_myisam_support() ? "ENGINE=MyISAM " : "") . "DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;");
-//     //default data
-//     if (!$wpdb->get_var("SELECT COUNT(*) FROM $sakura_table_name WHERE mate_key = 'manifest_json'")) {
-//         $manifest = array(
-//             "mate_key" => "manifest_json",
-//             "mate_value" => file_get_contents(get_template_directory() . "/manifest/manifest.json"),
-//         );
-//         $wpdb->insert($sakura_table_name, $manifest);
-//     }
-//     if (iro_opt('random_graphs_mts') && !$wpdb->get_var("SELECT COUNT(*) FROM $sakura_table_name WHERE mate_key = 'mobile_manifest_json'")) {
-//         $mobile_manifest = array(
-//             "mate_key" => "mobile_manifest_json",
-//             "mate_value" => file_get_contents(get_template_directory() . "/manifest/manifest_mobile.json"),
-//         );
-//         $wpdb->insert($sakura_table_name, $mobile_manifest);
-
-//     }
-//     if (!$wpdb->get_var("SELECT COUNT(*) FROM $sakura_table_name WHERE mate_key = 'json_time'")) {
-//         $time = array(
-//             "mate_key" => "json_time",
-//             "mate_value" => date("Y-m-d H:i:s", time()),
-//         );
-//         $wpdb->insert($sakura_table_name, $time);
-//     }
-//     if (!$wpdb->get_var("SELECT COUNT(*) FROM $sakura_table_name WHERE mate_key = 'privkey'")) {
-//         $privkey = array(
-//             "mate_key" => "privkey",
-//             "mate_value" => wp_generate_password(8),
-//         );
-//         $wpdb->insert($sakura_table_name, $privkey);
-//     }
-//     //reduce sql query
-//     $sakura_image_array = $wpdb->get_var("SELECT `mate_value` FROM  $sakura_table_name WHERE `mate_key`='manifest_json'");
-//     if (iro_opt('random_graphs_mts')) {
-//         $sakura_mobile_image_array = $wpdb->get_var("SELECT `mate_value` FROM  $sakura_table_name WHERE `mate_key`='mobile_manifest_json'");
-//     }
-//     $sakura_privkey = $wpdb->get_var("SELECT `mate_value` FROM  $sakura_table_name WHERE `mate_key`='privkey'");
-// }
-// add_action('after_setup_theme', 'create_sakura_table');
-
 //rest api支持
 function permalink_tip()
 {
@@ -2236,74 +2307,87 @@ if (iro_opt('send_theme_version') == '1') {
 }
 
 //解析短代码  
-add_shortcode('task', 'task_shortcode');
-function task_shortcode($attr, $content = '')
-{
-    $out = '<div class="task shortcodestyle"><i class="fa-solid fa-bars"></i>' . $content . '</div>';
-    return $out;
-}
-add_shortcode('warning', 'warning_shortcode');
-function warning_shortcode($attr, $content = '')
-{
-    $out = '<div class="warning shortcodestyle"><i class="fa-solid fa-triangle-exclamation"></i>' . $content . '</div>';
-    return $out;
-}
-add_shortcode('noway', 'noway_shortcode');
-function noway_shortcode($attr, $content = '')
-{
-    $out = '<div class="noway shortcodestyle"><i class="fa-solid fa-rectangle-xmark"></i>' . $content . '</div>';
-    return $out;
-}
-add_shortcode('buy', 'buy_shortcode');
-function buy_shortcode($attr, $content = '')
-{
-    $out = '<div class="buy shortcodestyle"><i class="fa-solid fa-check-to-slot"></i>' . $content . '</div>';
-    return $out;
-}
-add_shortcode('ghcard', 'gh_card');
-function gh_card($attr, $content = '')
-{
-    extract(shortcode_atts(array("path" => ""), $attr));
-    return '<div class="ghcard"><a href="https://github.com/' . $path . '"><img src="https://github-readme-stats.vercel.app/api' . $content . '" alt="Github-Card"></a></div>';
-}
+function register_shortcodes() {
+    add_shortcode('task', function($attr, $content = '') {
+        return '<div class="task shortcodestyle"><i class="fa-solid fa-clipboard-list"></i>' . $content . '</div>';
+    });
 
-add_shortcode('showcard', 'show_card');
-function show_card($attr, $content = '')
-{
-    extract(shortcode_atts(array("icon" => "", "title" => "", "img" => "", "color" => ""), $attr));
-    return '<section class="showcard">
-    <div class="img" alt="Show-Card" style="background:url(' . $img . ');background-size:cover;background-position: center;">
-    <a href="' . $content . '"><button class="showcard-button" style="color:' . $color . ' !important;"><i class="fa-solid fa-angle-right"></i></button> </a>
-    </div>
-    <br>
-    <div class="icon">
-    <i class="' . $icon . '"></i>
-    </div>
-    <div class="title">
-    ' . $title . '		
-    </div>
-</section>';
-}
+    add_shortcode('warning', function($attr, $content = '') {
+        return '<div class="warning shortcodestyle"><i class="fa-solid fa-triangle-exclamation"></i>' . $content . '</div>';
+    });
 
-add_shortcode('conversations', 'conversations');
-function conversations($attr, $content = '')
-{
-    extract(shortcode_atts(array("avatar" => "", "direction" => "", "username" => ""), $attr));
-    if ($avatar == "" && $username != "") {
-        $user_id = get_user_by('login', $username)->ID;
-        if ($user_id) {
-            $avatar = get_avatar_url($user_id, 40);
+    add_shortcode('noway', function($attr, $content = '') {
+        return '<div class="noway shortcodestyle"><i class="fa-solid fa-square-xmark"></i>' . $content . '</div>';
+    });
+
+    add_shortcode('buy', function($attr, $content = '') {
+        return '<div class="buy shortcodestyle"><i class="fa-solid fa-square-check"></i>' . $content . '</div>';
+    });
+
+    add_shortcode('ghcard', function($attr, $content = '') {
+        $atts = shortcode_atts(array("path" => ""), $attr);
+        return '<div class="ghcard"><a href="https://github.com/' . esc_attr($atts['path']) . '"><img src="https://github-readme-stats.vercel.app/api' . esc_html($content) . '" alt="Github-Card"></a></div>';
+    });
+
+    add_shortcode('showcard', function($attr, $content = '') {
+        $atts = shortcode_atts(array("icon" => "", "title" => "", "img" => "", "color" => ""), $attr);
+        return sprintf(
+            '<div class="showcard">
+                <div class="img" alt="Show-Card" style="background:url(%s);background-size:cover;background-position: center;">
+                    <a href="%s"><button class="showcard-button" style="color:%s !important;"><i class="fa-solid fa-angle-right"></i></button></a>
+                </div>
+                <div class="icon-title">
+                    <i class="%s" style="color:%s !important;"></i>
+                    <span class="title">%s</span>
+                </div>
+            </div>',
+            $atts['img'],
+            $content,
+            esc_attr($atts['color']),
+            esc_attr($atts['icon']),
+            esc_attr($atts['color']),
+            $atts['title'],
+        );
+    });
+
+    add_shortcode('conversations', function($attr, $content = '') {
+        $atts = shortcode_atts(array("avatar" => "", "direction" => "", "username" => ""), $attr);
+        if (empty($atts['avatar']) && !empty($atts['username'])) {
+            $user = get_user_by('login', $atts['username']);
+            if ($user) {
+                $atts['avatar'] = get_avatar_url($user->ID, 40);
+            }
         }
-    }
-    $speaker_alt = $username?'<span class="screen-reader-text">'.sprintf(__("%s says: ","sakurairo"),$username).'</span>':"";
-    $output = '<div class="conversations-code" style="flex-direction: ' . $direction . ';">';
-    $output .= "<img src=\"$avatar\">";
-    $output .= '<div class="conversations-code-text">'. $speaker_alt . $content . '</div>';
-    $output .= '</div>';
+        $speaker_alt = $atts['username'] ? '<span class="screen-reader-text">' . sprintf(__("%s says: ", "sakurairo"), esc_html($atts['username'])) . '</span>' : "";
+        return sprintf(
+            '<div class="conversations-code" style="flex-direction: %s;">
+                <img src="%s">
+                <div class="conversations-code-text">%s%s</div>
+            </div>',
+            esc_attr($atts['direction']),
+            $atts['avatar'],
+            $speaker_alt,
+            esc_html($content)
+        );
+    });
 
-    return $output;
+    add_shortcode('collapse', function($atts, $content = null) {
+        $atts = shortcode_atts(array("title" => ""), $atts);
+        ob_start();
+        ?>
+        <a href="javascript:void(0)" class="collapseButton">
+            <div class="collapse shortcodestyle">
+                <i class="fa-solid fa-angle-down"></i>
+                <span class="title"><?= $atts['title'] ?></span>
+                <span class="ecbutton"><?php _e('Expand / Collapse', 'sakurairo'); ?></span>
+            </div>
+        </a>
+        <div class="xContent" style="display: none;"><?= do_shortcode($content) ?></div>
+        <?php
+        return ob_get_clean();
+    });
 }
-
+add_action('init', 'register_shortcodes');
 //code end
 
 //WEBP支持
@@ -2325,78 +2409,6 @@ function mimvp_file_is_displayable_image($result, $path)
 add_filter('file_is_displayable_image', 'mimvp_file_is_displayable_image', 10, 2);
 
 //code end
-
-//展开收缩功能
-function xcollapse($atts, $content = null)
-{
-    $atts = shortcode_atts(array("title" => ""), $atts);
-
-    ob_start(); // 开启输出缓存
-
-    // HTML 结构
-    ?>
-                                <div style="margin: 0.5em 0;">
-                                    <div class="xControl">
-                                        <i class="fa-solid fa-angle-down" style="color: #16AF90;"></i> &nbsp;&nbsp;
-                                        <span class="xTitle"><?= $atts['title'] ?></span>&nbsp;&nbsp;==>&nbsp;&nbsp;<a href="javascript:void(0)" class="collapseButton xButton"><span class="xbtn02"><?php _e('Expand / Collapse', 'sakurairo'); ?></span></a>
-                                        <div style="clear: both;"></div>
-                                    </div>
-                                    <div class="xContent" style="display: none;"><?= do_shortcode($content) ?></div>
-                                </div>
-                                <?php
-
-                                $output = ob_get_contents(); // 获取输出缓存
-                                ob_end_clean(); // 清空输出缓存
-                            
-                                return $output; // 返回 HTML 结构
-}
-add_shortcode('collapse', 'xcollapse');
-
-//code end
-
-
-// add_action("wp_ajax_nopriv_getPhoto", "get_photo");
-// add_action("wp_ajax_getPhoto", "get_photo");
-// /**
-//  * 相册模板
-//  * @author siroi <mrgaopw@hotmail.com>
-//  * @return Json
-//  */
-// function get_photo()
-// {
-//     $postId = $_GET['post'];
-//     $page = get_post($postId);
-//     if ($page->post_type != "page") {
-//         $back['code'] = 201;
-//     } else {
-//         $back['code'] = 200;
-//         $back['imgs'] = array();
-//         $dom = new DOMDocument('1.0', 'utf-8');
-//         $meta = '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
-//         $dom->loadHTML($meta . $page->post_content);
-//         $imgS = $dom->getElementsByTagName('img');
-//         //<img src="..." data-header="标题" data-info="信息" vertical=false>
-//         foreach ($imgS as $key => $value) {
-//             $attr = $value->attributes;
-//             $header = $attr->getNamedItem('header');
-//             $info = $attr->getNamedItem('data-info');
-//             $vertical = $attr->getNamedItem('vertical');
-
-//             //图片资源地址
-//             $temp['img'] = $value->attributes->getNamedItem('src')->nodeValue;
-//             //图片上的标题
-//             $temp['header'] = $header->nodeValue ?? null;
-//             //图片上的信息
-//             $temp['info'] = $info->nodeValue ?? null;
-//             //是否竖向展示 默认false
-//             $temp['vertical'] = $vertical->nodeValue ?? null;
-//             array_push($back['imgs'], $temp);
-//         }
-//     }
-//     header('Content-Type:application/json;charset=utf-8');
-//     echo json_encode($back);
-//     exit();
-// }
 
 if (!iro_opt('login_language_opt') == '1') {
     add_filter('login_display_language_dropdown', '__return_false');
@@ -2608,7 +2620,7 @@ if (iro_opt('show_location_in_manage')) {
 function exclude_pages_and_categories_from_search($query) {
     if (!is_admin() && $query->is_search) {
         // Exclude pages
-        $query->set('post_type', array('post', 'idea', 'link')); // Include other post types but exclude 'page'
+        $query->set('post_type', array('post', 'shuoshuo', 'link')); // Include other post types but exclude 'page'
 
         // Exclude categories
         $tax_query = array(

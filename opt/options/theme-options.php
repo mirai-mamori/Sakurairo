@@ -555,7 +555,6 @@ $prefix = 'iro_options';
         'id'     => 'mashiro_logo',
         'type'   => 'fieldset',
         'title'  => __('Nav Menu Text Logo Options','sakurairo_csf'),
-        'dependency' => array( 'mashiro_logo_option', '==', 'true', '', 'true' ),
         'fields' => array(
           array(
             'id'    => 'text_a',
@@ -576,7 +575,10 @@ $prefix = 'iro_options';
             'id'    => 'text_secondary',
             'type'  => 'text',
             'title' => __('Secondary Text','sakurairo_csf'),
-            'dependency' => array( 'text_b', '!=', '', '', 'true'  ),
+            'dependency' => array(
+              array('text_b', '!=', '', '', 'true'),
+              array('mashiro_logo_option', '==', 'true', '', 'true')
+            ),
           ),
           array(
             'id'    => 'font_name',
@@ -805,6 +807,7 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('Global Default Font/Widgets Panel Font Switching A','sakurairo_csf'),
         'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
+        'default' => 'Noto Serif SC'
       ),
 
       array(
@@ -813,6 +816,7 @@ $prefix = 'iro_options';
         'title' => __('Widgets Panel Font Switching B','sakurairo_csf'),
         'dependency' => array( 'widget_font', '==', 'true', '', 'true' ),
         'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
+        'default' => 'Noto Sans SC'
       ),
 
     )
@@ -1340,7 +1344,6 @@ $prefix = 'iro_options';
         'title' => __('Next Page Auto Load','sakurairo_csf'),
         'dependency' => array( 'pagenav_style', '==', 'ajax', '', 'true' ),
         'options' => array(
-          '233' => __('do not autoload','sakurairo_csf'),
           '0' => __('0 Sec','sakurairo_csf'),
           '1' => __('1 Sec','sakurairo_csf'),
           '2' => __('2 Sec','sakurairo_csf'),
@@ -1352,6 +1355,7 @@ $prefix = 'iro_options';
           '8' => __('8 Sec','sakurairo_csf'),
           '9' => __('9 Sec','sakurairo_csf'),
           '10' => __('10 Sec','sakurairo_csf'),
+          '233' => __('do not autoload','sakurairo_csf'),
         ),
         'default' => '233'
       ),
@@ -2602,10 +2606,10 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'clipboard_copyright',
+        'id' => 'clipboard_ref',
         'type' => 'switcher',
-        'title' => __('Page Clipboard Copyright Notice','sakurairo_csf'),
-        'label' => __('Enabled by default, users will have copyright notice text when copying text content over 30 bytes','sakurairo_csf'),
+        'title' => __('Add Reference while copying on Pages','sakurairo_csf'),
+        'label' => __('Enabled by default. When copying text content over 30 bytes, a reference in APA-style will be appended to the copying text.','sakurairo_csf'),
         'default' => true
       ),
 
@@ -2724,6 +2728,7 @@ $prefix = 'iro_options';
         'dependency' => array( 'article_function', '==', 'true', '', 'true' ),
         'label' => __('Enabled by default, Article license will appear on the function bar. License can also be selected by custom metadata "license".','sakurairo_csf'),
         'options' => array(
+          false => __("Not Display","sakurairo_csf"),
           "cc0" => "CC0 1.0",
           "cc-by" => "CC BY 4.0",
           "cc-by-nc" => "CC BY-NC 4.0",
@@ -2731,7 +2736,6 @@ $prefix = 'iro_options';
           true => "CC BY-NC-SA 4.0",
           "cc-by-nd" => "CC BY-ND 4.0",
           "cc-by-sa" => "CC BY-SA 4.0",
-          false => __("Not Display","sakurairo_csf"),
          ),
         'default' => true
       ),
@@ -2743,7 +2747,12 @@ $prefix = 'iro_options';
         .'<p><strong>"NC"</strong> means no commercial use</p>'
         .'<p><strong>"ND"</strong> means no redistribution</p>'
         .'<p><strong>"SA"</strong> means must be shared under the same terms</p>'
-        .'<p>For details and legal advice, You can visit <a href="https://creativecommons.org/">the official website</a></p>','sakurairo_csf'),
+        .'<p><strong>"CC0"</strong> is a public dedication tool, which enables creators to give up their copyright and put their works into the worldwide public domain.</p>'
+        .'<p>For details and legal advice, You can visit <a href="https://creativecommons.org/">the official website</a></p>'
+        .'<p>If you want to change license <strong>per post</strong>, change (or add if not exist) the post meta "license" to the license name you want in specific format.</p>'
+        .'<p>For example:</p>'
+        .'<ul><li><code>cc0</code> for CC0 1.0</li><li><code>cc-by-nc-sa</code> for CC BY-NC-SA 4.0</li></ul>'
+        ,'sakurairo_csf'),
         'dependency' => array( 'article_lincenses', '!=', 'false', '', 'true' ),
       ),
 

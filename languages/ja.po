@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2024-10-13 15:49+0900\n"
-"PO-Revision-Date: 2024-10-13 15:50+0900\n"
+"POT-Creation-Date: 2024-10-19 15:09+0900\n"
+"PO-Revision-Date: 2024-10-19 15:12+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -37,7 +37,7 @@ msgstr "心配しないで、サイト内検索はどうでしょうか?"
 msgid "Search..."
 msgstr "検索…"
 
-#: archive.php:59 author.php:55 index.php:49
+#: archive.php:52 author.php:55 index.php:49
 msgid " Previous"
 msgstr " 前へ"
 
@@ -174,51 +174,118 @@ msgstr "フォント B に切り替え"
 msgid "Nav Menus"
 msgstr "メニュー"
 
-#: functions.php:235 functions.php:246
-msgid "Ideas"
-msgstr "アイデア"
+#: functions.php:225
+msgctxt "post type general name"
+msgid "Shuoshuo"
+msgstr "ツイート"
 
-#: functions.php:236
-msgid "Idea"
-msgstr "アイデア"
+#: functions.php:226
+msgctxt "post type singular name"
+msgid "Shuoshuo"
+msgstr "ツイート"
 
-#: functions.php:237 functions.php:238
-msgid "Publish New Idea"
+#: functions.php:227
+msgctxt "admin menu"
+msgid "Shuoshuo"
+msgstr "ツイート"
+
+#: functions.php:228
+msgctxt "add new on admin bar"
+msgid "Shuoshuo"
+msgstr "ツイート"
+
+#: functions.php:229
+msgctxt "shuoshuo"
+msgid "Add New"
 msgstr "新規追加"
 
-#: functions.php:239
-msgid "Edit Idea"
-msgstr "%sを編集"
+#: functions.php:230
+msgid "Add New Shuoshuo"
+msgstr "新しいツイートを追加"
 
-#: functions.php:240
-msgid "New Idea"
-msgstr "新しいアイデア"
+#: functions.php:231
+msgid "New Shuoshuo"
+msgstr "新しいツイート"
 
-#: functions.php:241
-msgid "View Idea"
-msgstr "表示"
+#: functions.php:232
+msgid "Edit Shuoshuo"
+msgstr "ツイートを編集"
 
-#: functions.php:242
-msgid "Search Idea"
-msgstr "検索"
+#: functions.php:233
+msgid "View Shuoshuo"
+msgstr "ツイートを見る"
 
-#: functions.php:243
-msgid "Not Found Idea"
-msgstr "アイデアが見つかりません"
+#: functions.php:234
+msgid "All Shuoshuo"
+msgstr "すべてのツイート"
 
-#: functions.php:244
-msgid "No Idea in the Trash"
-msgstr "ゴミ箱の中には何もない"
+#: functions.php:235
+msgid "Search Shuoshuo"
+msgstr "ツイートを検索"
 
-#: functions.php:326
+#: functions.php:236
+msgid "Parent Shuoshuo:"
+msgstr "ペアレントツイート"
+
+#: functions.php:237
+msgid "No shuoshuo found."
+msgstr "ツイートは見つからなかった。"
+
+#: functions.php:238
+msgid "No shuoshuo found in Trash."
+msgstr "ゴミ箱にツイートは見つからなかった。"
+
+#: functions.php:285
+msgid "Emotion Meta Box"
+msgstr "エモーションメタボックス"
+
+#: functions.php:298
+msgid "Emotion"
+msgstr "エモーション"
+
+#: functions.php:301
+msgid "Emotion Color"
+msgstr "エモーションカラー"
+
+#: functions.php:304
+msgid ""
+"For the Emotion, please fill in the Unicode value of the Fontawesome icon, "
+"and for the Emotion Color, please fill in the RGBA or hexadecimal color."
+msgstr ""
+"エモーションには、Fontawesome アイコンの Unicode 値を、エモーションカラーに"
+"は、RGBA または 16 進数の色を記入してください。"
+
+#: functions.php:349
+msgid "Custom Meta Box"
+msgstr "カスタム・メタ・ボックス"
+
+#: functions.php:362
+msgid "Title Style"
+msgstr "タイトル・スタイル"
+
+#: functions.php:365
+msgid "License"
+msgstr "ライセンス"
+
+#: functions.php:368
+msgid ""
+"For the Title Style, Please fill in the css style, part of the style need to "
+"add !important effective, and for the License, please go to Theme Options to "
+"learn how to set it up."
+msgstr ""
+"タイトルのスタイルについては、cssスタイルに記入してください。スタイルの一部に"
+"は、!important effectiveを追加する必要があります。ライセンスについては、テー"
+"マオプションで設定方法をご確認ください。"
+
+#: functions.php:449
 msgid "Copied!"
 msgstr "コピーしました!"
 
-#: functions.php:327
+#: functions.php:450
 msgid "Copy Code"
 msgstr "コードをコピー"
 
-#: functions.php:328
+#: functions.php:451
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
@@ -226,19 +293,19 @@ msgstr ""
 "あなたのカバー API はクロスオリジンアクセスをサポートしていないようです。この"
 "場合、Cover Cacheは有効になりません。"
 
-#: functions.php:329
+#: functions.php:452
 msgid "Commiting...."
 msgstr "提出中…."
 
-#: functions.php:330
+#: functions.php:453
 msgid "Succeed"
 msgstr "継ぐ"
 
-#: functions.php:331
+#: functions.php:454
 msgid "10 files max per request"
 msgstr "1 回のリクエストで送信できるファイル数の上限は 10 個です"
 
-#: functions.php:332
+#: functions.php:455
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -252,15 +319,15 @@ msgstr ""
 "\n"
 "この画像が大きすぎる~再アップロードしてください!"
 
-#: functions.php:333
+#: functions.php:456
 msgid "Uploading..."
 msgstr "アップロード中..."
 
-#: functions.php:334
+#: functions.php:457
 msgid "Uploaded successfully~"
 msgstr "アップロードに成功しました~"
 
-#: functions.php:335
+#: functions.php:458
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -272,128 +339,128 @@ msgstr ""
 "コード=> {1}\n"
 "{2}"
 
-#: functions.php:336
+#: functions.php:459
 msgid "Upload failed, please retry."
 msgstr "アップロードに失敗しました、もう一度やり直してください。"
 
-#: functions.php:337
+#: functions.php:460
 msgid "Page Load failed. HTTP {0}"
 msgstr "ページの読み込みに失敗しました。HTTP {0}"
 
-#: functions.php:338
+#: functions.php:461
 msgid "Glad you come, but we've got nothing left."
 msgstr "あなたが来てうれしいですが、私たちは何も残っていません。"
 
-#: functions.php:339
+#: functions.php:462
 msgid "Post"
 msgstr "投稿"
 
-#: functions.php:340
+#: functions.php:463
 msgid "Tag"
 msgstr "タグ"
 
-#: functions.php:341
+#: functions.php:464
 msgid "Category"
 msgstr "カテゴリー"
 
-#: functions.php:342
+#: functions.php:465
 msgid "Page"
 msgstr "ページ"
 
-#: functions.php:343
+#: functions.php:466
 msgid "Comment"
 msgstr "コメント"
 
-#: functions.php:344
+#: functions.php:467
 msgid "Paused..."
 msgstr "一時停止"
 
-#: functions.php:345
+#: functions.php:468
 msgid "Loading Video..."
 msgstr "ビデオを読み込んでいます..."
 
-#: functions.php:346
+#: functions.php:469
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "フォントをダウンロードするには、データ使用量に注意してください。"
 
-#: functions.php:347
+#: functions.php:470
 msgid "Are you sure you want set it private?"
 msgstr "プライベートに設定してもよろしいですか?"
 
-#: functions.php:348
+#: functions.php:471
 msgid "You had set private comment before"
 msgstr "以前にプライベートコメントを設定していた"
 
-#: functions.php:398 inc/theme_plus.php:186
+#: functions.php:521 inc/theme_plus.php:186
 msgid "Author"
 msgstr "投稿者"
 
-#: functions.php:398
+#: functions.php:521
 msgid "Blogger"
 msgstr "Blogger"
 
-#: functions.php:407 functions.php:2583
+#: functions.php:530 functions.php:2595
 msgid "Location"
 msgstr "場所"
 
-#: functions.php:413
+#: functions.php:536
 msgid "Private"
 msgstr "プライベート"
 
-#: functions.php:415
+#: functions.php:538
 msgid "Yes"
 msgstr "はい"
 
-#: functions.php:417
+#: functions.php:540
 msgid "No"
 msgstr "いいえ"
 
-#: functions.php:420
+#: functions.php:543
 msgid "Edit"
 msgstr "編集"
 
-#: functions.php:547
+#: functions.php:670
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "こやつはとても怠惰な╮(╯▽╰)╭"
 
-#: functions.php:823
+#: functions.php:946
 msgid "Download Link"
 msgstr "ダウンロードリンク"
 
-#: functions.php:900
+#: functions.php:1023
 msgid "Remember me"
 msgstr "ログイン状態を保存する"
 
-#: functions.php:1431
+#: functions.php:1554
 msgid "All expand/collapse"
 msgstr "すべての展開/折りたたみ"
 
-#: functions.php:1466
+#: functions.php:1589
 msgid " year"
 msgstr "年"
 
-#: functions.php:1470
+#: functions.php:1593
 msgid " post(s)"
 msgstr " 記事"
 
-#: functions.php:1518 functions.php:1521 inc/theme_plus.php:413
+#: functions.php:1641 functions.php:1644 inc/theme_plus.php:413
 #: inc/theme_plus.php:459
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: functions.php:1837
+#: functions.php:1960
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>エラー</b>: このメールドメイン (<b>@"
 
-#: functions.php:1963
+#: functions.php:2086
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:2054
+#: functions.php:2183
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:2203
+#: functions.php:2274
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -405,12 +472,12 @@ msgstr ""
 "href=\"https://qiita.com/cyborg__ninja/items/8a191a00d402e78d8823\" "
 "target=\"_blank\"> 擬似静的化 </a>を構成する必要があります。 </b>"
 
-#: functions.php:2298
+#: functions.php:2361
 #, php-format
 msgid "%s says: "
 msgstr "%s は言う： "
 
-#: functions.php:2341
+#: functions.php:2382
 msgid "Expand / Collapse"
 msgstr "展開/折りたたみ"
 
@@ -717,11 +784,11 @@ msgstr ""
 "私たちはあなたが望むものを見つけられなかったようです。たぶん、あなたはそれを"
 "検索することができます。"
 
-#: tpl/content-page.php:27 tpl/content-single.php:35 tpl/single-image.php:25
+#: tpl/content-page.php:27 tpl/content-single.php:34 tpl/single-image.php:25
 msgid "Pages:"
 msgstr "ページ:"
 
-#: tpl/content-single.php:28 tpl/content-thumbcard.php:184
+#: tpl/content-single.php:27 tpl/content-thumbcard.php:183
 msgid "AI Excerpt"
 msgstr "AI 概要"
 
@@ -734,11 +801,11 @@ msgstr[0] "ヒット"
 msgid "Estimate Reading Time"
 msgstr "読み時間の推定"
 
-#: tpl/content-thumbcard.php:170
+#: tpl/content-thumbcard.php:169
 msgid "Sticky"
 msgstr "粘着"
 
-#: tpl/content-thumbcard.php:187
+#: tpl/content-thumbcard.php:186
 msgid "Excerpt"
 msgstr "概要"
 
@@ -751,7 +818,7 @@ msgid "View"
 msgid_plural "Views"
 msgstr[0] "表示"
 
-#: tpl/entry-census.php:77 tpl/section-article-function.php:71
+#: tpl/entry-census.php:77 tpl/section-article-function.php:73
 msgid "Last updated on "
 msgstr "最終更新日 "
 
@@ -797,16 +864,16 @@ msgid "%s Word"
 msgid_plural "%s Words"
 msgstr[0] "%s 文字数"
 
-#: tpl/section-article-function.php:17 tpl/section-article-function.php:22
+#: tpl/section-article-function.php:19 tpl/section-article-function.php:24
 #, php-format
 msgid "This article is licensed under %s"
 msgstr "この投稿は %s クリエイティブ・コモンズ・ライセンスの下で利用可能です。"
 
-#: tpl/section-article-function.php:62
+#: tpl/section-article-function.php:64
 msgid "This author has not provided a description."
 msgstr "この作者はプロフィールを設定していません"
 
-#: tpl/section-article-function.php:80
+#: tpl/section-article-function.php:82
 msgid "Nothing~"
 msgstr "何もない~"
 

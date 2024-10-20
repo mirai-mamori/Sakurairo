@@ -89,7 +89,6 @@ if (!function_exists('get_post_cover_html')) {
     }
 }
 
-global $article_class;
         // Determine post type
         $post_type = get_post_type();
         if ($post_type == 'shuoshuo') {
@@ -158,7 +157,7 @@ global $article_class;
             $ai_excerpt = get_post_meta($post->ID, POST_METADATA_KEY, true);
             $excerpt = has_excerpt();
             ?>
-            <article class="post post-list-thumb <?= esc_attr($article_class); ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
+            <article class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
                 <div class="post-thumb">
                     <a href="<?php the_permalink(); ?>">
                         <?php echo $cover_html; ?>

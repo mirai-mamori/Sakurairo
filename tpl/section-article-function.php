@@ -3,7 +3,9 @@ if (iro_opt("article_function")) {
 ?>
     <footer class="post-footer">
         <?php
-        $license = iro_opt("article_lincenses");
+        global $post;
+        $post_meta_license = get_post_meta($post->ID, 'license', true);
+        $license = $post_meta_license ? $post_meta_license : iro_opt("article_lincenses");
         $license_link;
         $license_icon;
         $license_desc;
@@ -14,12 +16,12 @@ if (iro_opt("article_function")) {
             }
             if ($license === "cc0") {
                 $license_link = "https://creativecommons.org/publicdomain/zero/1.0/";
-                $license_desc = sprintf(__("This article is licensed under %s", "sakurairo"),"CC0 1.0");
+                $license_desc = sprintf(__("This article is licensed under %s", "sakurairo"), "CC0 1.0");
                 $license_icon = array("fa-creative-commons-zero");
             } else {
                 $variant = substr($license, 3);
                 $license_link = "https://creativecommons.org/licenses/$variant/4.0/";
-                $license_desc = sprintf(__("This article is licensed under %s", "sakurairo"),"CC " . strtoupper($variant) . " 4.0");
+                $license_desc = sprintf(__("This article is licensed under %s", "sakurairo"), "CC " . strtoupper($variant) . " 4.0");
                 $license_icon = array_map(function ($v) {
                     return "fa-creative-commons-$v";
                 }, explode("-", $variant));
@@ -55,16 +57,16 @@ if (iro_opt("article_function")) {
             <div class="meta">
                 <a href="<?= $author_url; ?>" itemprop="url" rel="author"><?= $author_name; ?></a>
             </div>
-            <?php 
-            if (iro_opt('author_profile_quote') == '1') { 
+            <?php
+            if (iro_opt('author_profile_quote') == '1') {
                 $author_description = get_the_author_meta('description');
                 if (empty($author_description)) {
                     $author_description = __('This author has not provided a description.', 'sakurairo');
                 }
             ?>
-            <div class="desc">
-                <i class="fa-solid fa-feather" aria-hidden="true"></i><?= $author_description; ?>
-            </div>
+                <div class="desc">
+                    <i class="fa-solid fa-feather" aria-hidden="true"></i><?= $author_description; ?>
+                </div>
             <?php } ?>
         </section>
         <div class="post-modified-time">

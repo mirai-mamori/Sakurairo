@@ -9,7 +9,16 @@ if ( !class_exists(UpdateChecker::class, false) ):
 	abstract class UpdateChecker {
 		protected $filterSuffix = '';
 		protected $updateTransient = '';
-		protected $translationType = ''; //This can be "plugin" or "theme".
+
+		/**
+		 * @var string This can be "plugin" or "theme".
+		 */
+		protected $componentType = '';
+		/**
+		 * @var string Currently the same as $componentType, but this is an implementation detail that
+		 *             depends on how WP works internally, and could therefore change.
+		 */
+		protected $translationType = '';
 
 		/**
 		 * Set to TRUE to enable error reporting. Errors are raised using trigger_error()
@@ -74,6 +83,11 @@ if ( !class_exists(UpdateChecker::class, false) ):
 		 */
 		protected $debugBarExtension = null;
 
+		/**
+		 * @var WpCliCheckTrigger|null
+		 */
+		protected $wpCliCheckTrigger = null;
+
 		public function __construct($metadataUrl, $directoryName, $slug = null, $checkPeriod = 12, $optionName = '') {
 			$this->debugMode = (bool)(constant('WP_DEBUG'));
 			$this->metadataUrl = $metadataUrl;
@@ -91,6 +105,10 @@ if ( !class_exists(UpdateChecker::class, false) ):
 				}
 			}
 
+			if ( empty($this->translationType) ) {
+				$this->translationType = $this->componentType;
+			}
+
 			$this->package = $this->createInstalledPackage();
 			$this->scheduler = $this->createScheduler($checkPeriod);
 			$this->upgraderStatus = new UpgraderStatus();
@@ -103,6 +121,10 @@ if ( !class_exists(UpdateChecker::class, false) ):
 			}
 
 			$this->installHooks();
+			
+			if ( ($this->wpCliCheckTrigger === null) && defined('WP_CLI') ) {
+				$this->wpCliCheckTrigger = new WpCliCheckTrigger($this->componentType, $this->scheduler);
+			}
 		}
 
 		/**
@@ -149,6 +171,10 @@ if ( !class_exists(UpdateChecker::class, false) ):
 			//Allow HTTP requests to the metadata URL even if it's on a local host.
 			add_filter('http_request_host_is_external', array($this, 'allowMetadataHost'), 10, 2);
 
+			//Potentially exclude information about this entity from core update check requests to api.wordpress.org.
+			//phpcs:ignore WordPressVIPMinimum.Hooks.RestrictedHooks.http_request_args -- Doesn't modify timeouts.
+			add_filter('http_request_args', array($this, 'excludeEntityFromWordPressAPI'), 10, 2);
+
 			//DebugBar integration.
 			if ( did_action('plugins_loaded') ) {
 				$this->maybeInitDebugBar();
@@ -170,6 +196,7 @@ if ( !class_exists(UpdateChecker::class, false) ):
 
 			remove_filter('upgrader_source_selection', array($this, 'fixDirectoryName'), 10);
 			remove_filter('http_request_host_is_external', array($this, 'allowMetadataHost'), 10);
+			remove_filter('http_request_args', array($this, 'excludeEntityFromWordPressAPI'));
 			remove_action('plugins_loaded', array($this, 'maybeInitDebugBar'));
 
 			remove_action('init', array($this, 'loadTextDomain'));
@@ -243,6 +270,76 @@ if ( !class_exists(UpdateChecker::class, false) ):
 		 * @return Scheduler
 		 */
 		abstract protected function createScheduler($checkPeriod);
+
+		/**
+		 * Remove information about this plugin or theme from the requests that WordPress core sends
+		 * to api.wordpress.org when checking for updates.
+		 *
+		 * @param array $args
+		 * @param string $url
+		 * @return array
+		 */
+		public function excludeEntityFromWordPressAPI($args, $url) {
+			//Is this an api.wordpress.org update check request?
+			$parsedUrl = wp_parse_url($url);
+			if ( !isset($parsedUrl['host']) || (strtolower($parsedUrl['host']) !== 'api.wordpress.org') ) {
+				return $args;
+			}
+
+			$typePluralised = $this->componentType . 's';
+			$expectedPathPrefix = '/' . $typePluralised . '/update-check/1.';  //e.g. "/plugins/update-check/1.1/"
+			if ( !isset($parsedUrl['path']) || !Utils::startsWith($parsedUrl['path'], $expectedPathPrefix) ) {
+				return $args;
+			}
+
+			//Plugins and themes can disable this feature by using the filter below.
+			if ( !apply_filters(
+				$this->getUniqueName('remove_from_default_update_checks'),
+				true, $this, $args, $url
+			) ) {
+				return $args;
+			}
+
+			if ( empty($args['body'][$typePluralised]) ) {
+				return $args;
+			}
+
+			$reportingItems = json_decode($args['body'][$typePluralised], true);
+			if ( $reportingItems === null ) {
+				return $args;
+			}
+
+			//The list of installed items uses different key formats for plugins and themes.
+			//Luckily, we can reuse the getUpdateListKey() method here.
+			$updateListKey = $this->getUpdateListKey();
+			if ( isset($reportingItems[$typePluralised][$updateListKey]) ) {
+				unset($reportingItems[$typePluralised][$updateListKey]);
+			}
+
+			if ( !empty($reportingItems['active']) ) {
+				if ( is_array($reportingItems['active']) ) {
+					foreach ($reportingItems['active'] as $index => $relativePath) {
+						if ( $relativePath === $updateListKey ) {
+							unset($reportingItems['active'][$index]);
+						}
+					}
+					//Re-index the array.
+					$reportingItems['active'] = array_values($reportingItems['active']);
+				} else if ( $reportingItems['active'] === $updateListKey ) {
+					//For themes, the "active" field is a string that contains the theme's directory name.
+					//Pretend that the default theme is active so that we don't reveal the actual theme.
+					if ( defined('WP_DEFAULT_THEME') ) {
+						$reportingItems['active'] = WP_DEFAULT_THEME;
+					}
+
+					//Unfortunately, it doesn't seem to be documented if we can safely remove the "active"
+					//key. So when we don't know the default theme, we'll just leave it as is.
+				}
+			}
+
+			$args['body'][$typePluralised] = wp_json_encode($reportingItems);
+			return $args;
+		}
 
 		/**
 		 * Check for updates. The results are stored in the DB option specified in $optionName.
@@ -676,7 +773,7 @@ if ( !class_exists(UpdateChecker::class, false) ):
 			$result = wp_remote_get($url, $options);
 
 			$result = apply_filters($this->getUniqueName('request_metadata_http_result'), $result, $url, $options);
-			
+
 			//Try to parse the response
 			$status = $this->validateApiResponse($result);
 			$metadata = null;
@@ -902,25 +999,62 @@ if ( !class_exists(UpdateChecker::class, false) ):
 				return $source;
 			}
 
+			//Fix the remote source structure if necessary.
+			//The update archive should contain a single directory that contains the rest of plugin/theme files.
+			//Otherwise, WordPress will try to copy the entire working directory ($source == $remoteSource).
+			//We can't rename $remoteSource because that would break WordPress code that cleans up temporary files
+			//after update.
+			if ( $this->isBadDirectoryStructure($remoteSource) ) {
+				//Create a new directory using the plugin slug.
+				$newDirectory = trailingslashit($remoteSource) . $this->slug . '/';
+
+				if ( !$wp_filesystem->is_dir($newDirectory) ) {
+					$wp_filesystem->mkdir($newDirectory);
+
+					//Move all files to the newly created directory.
+					$sourceFiles = $wp_filesystem->dirlist($remoteSource);
+					if ( is_array($sourceFiles) ) {
+						$sourceFiles = array_keys($sourceFiles);
+						$allMoved = true;
+						foreach ($sourceFiles as $filename) {
+							//Skip our newly created folder.
+							if ( $filename === $this->slug ) {
+								continue;
+							}
+
+							$previousSource = trailingslashit($remoteSource) . $filename;
+							$newSource = trailingslashit($newDirectory) . $filename;
+
+							if ( !$wp_filesystem->move($previousSource, $newSource, true) ) {
+								$allMoved = false;
+								break;
+							}
+						}
+
+						if ( $allMoved ) {
+							//Rename source.
+							$source = $newDirectory;
+						} else {
+							//Delete our newly created folder including all files in it.
+							$wp_filesystem->rmdir($newDirectory, true);
+
+							//And return a relevant error.
+							return new WP_Error(
+								'puc-incorrect-directory-structure',
+								sprintf(
+									'The directory structure of the update was incorrect. All files should be inside ' .
+									'a directory named <span class="code">%s</span>, not at the root of the ZIP archive. Plugin Update Checker tried to fix the directory structure, but failed.',
+									htmlentities($this->slug)
+								)
+							);
+						}
+					}
+				}
+			}
+
 			//Rename the source to match the existing directory.
 			$correctedSource = trailingslashit($remoteSource) . $this->directoryName . '/';
 			if ( $source !== $correctedSource ) {
-				//The update archive should contain a single directory that contains the rest of plugin/theme files.
-				//Otherwise, WordPress will try to copy the entire working directory ($source == $remoteSource).
-				//We can't rename $remoteSource because that would break WordPress code that cleans up temporary files
-				//after update.
-				if ( $this->isBadDirectoryStructure($remoteSource) ) {
-					return new WP_Error(
-						'puc-incorrect-directory-structure',
-						sprintf(
-							'The directory structure of the update is incorrect. All files should be inside ' .
-							'a directory named <span class="code">%s</span>, not at the root of the ZIP archive.',
-							htmlentities($this->slug)
-						)
-					);
-				}
-
-				/** @var \WP_Upgrader_Skin $upgrader ->skin */
 				$upgrader->skin->feedback(sprintf(
 					'Renaming %s to %s&#8230;',
 					'<span class="code">' . basename($source) . '</span>',
@@ -980,7 +1114,11 @@ if ( !class_exists(UpdateChecker::class, false) ):
 		 * Initialize the update checker Debug Bar plugin/add-on thingy.
 		 */
 		public function maybeInitDebugBar() {
-			if ( class_exists('Debug_Bar', false) && file_exists(dirname(__FILE__) . '/DebugBar') ) {
+			if (
+				class_exists('Debug_Bar', false)
+				&& class_exists('Debug_Bar_Panel', false)
+				&& file_exists(dirname(__FILE__) . '/DebugBar')
+			) {
 				$this->debugBarExtension = $this->createDebugBarExtension();
 			}
 		}

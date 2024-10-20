@@ -15,6 +15,12 @@ if ( !class_exists(Metadata::class, false) ):
 	 * @access public
 	 */
 	abstract class Metadata {
+		/**
+		 * Additional dynamic properties, usually copied from the API response.
+		 *
+		 * @var array<string,mixed>
+		 */
+		protected $extraProperties = array();
 
 		/**
 		 * Create an instance of this class from a JSON document.
@@ -134,6 +140,22 @@ if ( !class_exists(Metadata::class, false) ):
 		 */
 		protected function getPrefixedFilter($tag) {
 			return 'puc_' . $tag;
+		}
+		
+		public function __set($name, $value) {
+			$this->extraProperties[$name] = $value;
+		}
+
+		public function __get($name) {
+			return isset($this->extraProperties[$name]) ? $this->extraProperties[$name] : null;
+		}
+
+		public function __isset($name) {
+			return isset($this->extraProperties[$name]);
+		}
+
+		public function __unset($name) {
+			unset($this->extraProperties[$name]);
 		}
 	}
 

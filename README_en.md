@@ -45,7 +45,7 @@ Please fill in with the issue template. Thanks for your cooperation.
 
 - The theme is  **developed based on theme [Sakura](https://github.com/mashirozx/Sakura)**, licensed with [GPL V2.0](https://github.com/mirai-mamori/Sakurairo/blob/master/LICENSE).
 
-- The theme uses some special effects from the Internet. Due to the unclear copyright information and open source lincenses, the related information cannot be dispalyed here. If the theme have used the special effects provided by you, please contant **me#okaeri.org** via email.
+- The theme uses some special effects from the Internet. Due to the unclear copyright information and open source lincenses, the related information cannot be dispalyed here. If the theme have used the special effects provided by you, please contant **me#hareru.org** via email.
 
 ### References:
 

@@ -80,7 +80,7 @@ class Bilibili
                     if ($totalpage - $page < 0) {
                         $next = '<span>共追剧' . $bgm["total"] . '部，继续加油吧！٩(ˊᗜˋ*)و</span>';
                     } else {
-                        $next = Bilibili::anchor_pagination_next(rest_url('sakura/v1/bangumi/bilibili-ctp') . '?page=' . ++$page);
+                        $next = Bilibili::anchor_pagination_next(rest_url('sakura/v1/movies/bilibili') . '?page=' . ++$page);
                     }
                     $lists = $bgm["list"];
                     $html = "";
