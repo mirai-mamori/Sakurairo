@@ -1214,6 +1214,7 @@ body.dark .site-title img {
   -webkit-transition: all 0.6s ease-in-out;
   z-index: 1;
   overflow: hidden;
+  font-size: 15px;
 }
 
 .ai-excerpt-tip {

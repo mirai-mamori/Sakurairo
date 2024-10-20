@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
 "POT-Creation-Date: 2024-10-19 15:06+0900\n"
-"PO-Revision-Date: 2024-10-19 15:06+0900\n"
+"PO-Revision-Date: 2024-10-19 15:45+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -4198,10 +4198,10 @@ msgid ""
 "options for you to modify</p>"
 msgstr ""
 "<p>主题尊重你的隐私</p>\n"
-"<p>但是，当你使用主题预置的中国大陆服务商提供的服务时，服务商可能会收集有关你"
-"的访问者的数据并统计数据</p>\n"
-"<p>你可以通过本地化与主题相关的资源来减少发送给第三方的信息，主题提供相关选项"
-"配置</p>"
+"        <p>但是，当你使用主题预置的中国大陆服务商提供的服务时，服务商可能会收"
+"集有关你的访问者的数据并统计数据</p>\n"
+"        <p>你可以通过本地化与主题相关的资源来减少发送给第三方的信息，主题提供"
+"相关选项配置</p>"
 
 #: options/theme-options.php:4098
 msgid "Send Theme Version to Fuukei"
@@ -4275,7 +4275,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid "A Simple and Lightweight WordPress Option Framework for Sakurairo"
-msgstr "一个简单，轻量的WordPress设置框架，专为Sakurairo设计"
+msgstr "一个简单，轻量的WordPress设置框架，Sakurairo 定制"
 
 #. Author of the plugin/theme
 msgid "Codestar with Fuukei"
