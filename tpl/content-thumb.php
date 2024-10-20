@@ -12,15 +12,17 @@
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 // Determine if we are on an author page
-$is_author_page = is_author();
+$is_author_page = is_author() && !is_home() && !is_category() && !is_tag();
+
+$sticky_posts = get_option('sticky_posts');
 
 // Query for sticky posts (only on the first page)
-if ($paged == 1) {
+if ($paged == 1 && !empty($sticky_posts)) {
     $sticky_args = array(
         'post_type' => array('post', 'shuoshuo'),
         'post_status' => 'publish',
         'posts_per_page' => -1, // Get all sticky posts
-        'post__in' => get_option('sticky_posts'),
+        'post__in' => $sticky_posts,
         'orderby' => 'post_date',
         'order' => 'DESC',
     );
@@ -47,7 +49,7 @@ $non_sticky_args = array(
     'orderby' => 'post_date',
     'order' => 'DESC',
     'paged' => $paged,
-    'post__not_in' => get_option('sticky_posts'),
+    'post__not_in' => $sticky_posts,
     'ignore_sticky_posts' => 1
 );
 
