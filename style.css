@@ -863,7 +863,7 @@ body.dark .site-title img {
   position: relative;
   float: right;
   display: none;
-  animation: searchbox .2s;
+  animation: searchbox .4s;
 }
 
 .site-top ul {
@@ -7777,7 +7777,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
 @keyframes searchbox {
   0% {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(10px);
   }
 
   100% {
