@@ -2367,7 +2367,7 @@ function register_shortcodes() {
             esc_attr($atts['direction']),
             $atts['avatar'],
             $speaker_alt,
-            esc_html($content)
+            $content
         );
     });
 
