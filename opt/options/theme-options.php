@@ -513,6 +513,14 @@ $prefix = 'iro_options';
         'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
         'default' => true
       ),
+      
+      array(
+        'id'    => 'mobile_menu_user_avatar',
+        'type'  => 'switcher',
+        'title' => __('Nav Menu User Avatar in Mobile','sakurairo_csf'),
+        'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
+        'default' => true
+      ),
 
       array(
         'id'     => 'unlisted_avatar',
