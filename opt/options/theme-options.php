@@ -844,8 +844,17 @@ $prefix = 'iro_options';
           'netease' => __('Netease Cloud Music','sakurairo_csf'),
           'kugou' => __('Kugou Music(may not be available)','sakurairo_csf'),
           'tencent' => __('QQ Music(may not be available)','sakurairo_csf'),
+          'custom' => __('custom server','sakurairo_csf'),
         ),
         'default' => 'off'
+      ),
+
+      array(
+        'id' => 'custom_server',
+        'type' => 'text',
+        'title' => __('Custom_server','sakurairo_csf'),
+        'dependency' => array( 'aplayer_server', '==', 'custom', '', 'true' ),
+        'desc' => __('Custom Server','sakurairo_csf'),
       ),
 
       array(
