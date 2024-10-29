@@ -852,9 +852,9 @@ $prefix = 'iro_options';
       array(
         'id' => 'custom_server',
         'type' => 'text',
-        'title' => __('Custom_server','sakurairo_csf'),
+        'title' => __('Custom playlist','sakurairo_csf'),
         'dependency' => array( 'aplayer_server', '==', 'custom', '', 'true' ),
-        'desc' => __('Custom Server','sakurairo_csf'),
+        'desc' => __('Use custom playlist or meting-api','sakurairo_csf'),
       ),
 
       array(
