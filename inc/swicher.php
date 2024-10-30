@@ -136,11 +136,11 @@ function font_end_js_control()
     if (iro_opt('theme_darkmode_auto')) $iro_opt['dm_strategy'] = iro_opt('theme_darkmode_strategy', 'time');
     //wp_add_inline_script('app', 'var _iro = ' . json_encode($iro_opt, JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE), 'before');
     //自定义歌单
-    $iro_custom = json_encode($iro_opt, JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE);
+    $meting_api_def = json_encode($iro_opt, JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE);
     if (!empty(iro_opt('custom_music_api'))) {
-        $custom_url = iro_opt('custom_music_api');  // 获取 custom_music_api 的值
-        $iro_custom = preg_replace('/"meting_api_url":"[^"]*"/', '"meting_api_url":"' . $custom_url . '"', $iro_custom);  // 替换 meting_api_url 的内容
+        $custom_api_url = iro_opt('custom_music_api');  // 获取 custom_server 的值
+        $meting_api_def = preg_replace('/"meting_api_url":"[^"]*"/', '"meting_api_url":"' . $custom_api_url . '"', $meting_api_def);  // 替换 meting_api_url 的内容
     }
-    wp_add_inline_script('app', 'var _iro = ' . $iro_custom, 'before');
+    wp_add_inline_script('app', 'var _iro = ' . $meting_api_def, 'before');
 }
 add_action('wp_head', 'font_end_js_control');
