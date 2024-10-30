@@ -851,9 +851,9 @@ $prefix = 'iro_options';
       array(
         'id' => 'custom_music_api',
         'type' => 'text',
-        'title' => __('自定义歌单','sakurairo_csf'),
+        'title' => __('Use custom Meting API or playlist','sakurairo_csf'),
         'dependency' => array( 'aplayer_server', '!=', 'off', '', 'true' ),
-        'desc' => __('使用自定义meting-api，也可以指向歌单文件，但只有填了歌单id才生效','sakurairo_csf'),
+        'desc' => __('Enter a custom Meting-api, which can also point to a playlist file. However, the ID will only be effective if the playlist is specified','sakurairo_csf'),
       ),
 
       array(
