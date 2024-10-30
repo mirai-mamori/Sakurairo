@@ -137,8 +137,8 @@ function font_end_js_control()
     //wp_add_inline_script('app', 'var _iro = ' . json_encode($iro_opt, JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE), 'before');
     //自定义歌单
     $iro_custom = json_encode($iro_opt, JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE);
-    if (iro_opt('aplayer_server') == 'custom') {
-        $custom_url = iro_opt('custom_server');  // 获取 custom_server 的值
+    if (!empty(iro_opt('custom_music_api'))) {
+        $custom_url = iro_opt('custom_music_api');  // 获取 custom_music_api 的值
         $iro_custom = preg_replace('/"meting_api_url":"[^"]*"/', '"meting_api_url":"' . $custom_url . '"', $iro_custom);  // 替换 meting_api_url 的内容
     }
     wp_add_inline_script('app', 'var _iro = ' . $iro_custom, 'before');
