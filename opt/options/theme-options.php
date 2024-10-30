@@ -1266,6 +1266,14 @@ $prefix = 'iro_options';
         'label' => __('Enabled by default, clicking to a new page will not require reloading','sakurairo_csf'),
         'default' => true
       ),
+      
+      array(
+        'id' => 'pjax_keep_loading',
+        'type' => 'textarea',
+        'title' => __('启用pjax后footer处需要刷新的代码','sakurairo_csf'),
+        'dependency' => array( 'poi_pjax', '==', 'true', '', 'true' ),
+        'desc' => __('启用pjax后，footer处的自定义内容在页面跳转后将不会被刷新，可以在此处填写每页都要重新加载的Javascript和样式的资源的路径，一行一个，在pjax完成内容加载后这些资源将会被重新加载','sakurairo_csf'),
+      ),
 
       array(
         'id' => 'nprogress_on',
