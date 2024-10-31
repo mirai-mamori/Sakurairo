@@ -19,10 +19,12 @@ get_header(); ?>
 					<h1 class="page-title"><?php printf(esc_html__('Search result: %s', 'sakurairo'), '<span>' . esc_html(get_search_query()) . '</span>'); ?></h1>
 				</header><!-- .page-header -->
 			<?php endif; ?>
-			<?php
+			    <?php
 			/* Start the Loop */
-			get_template_part('tpl/content', 'thumb');
-			the_posts_navigation();
+			    while ( have_posts() ) :
+					the_post();
+				    get_template_part('tpl/content', 'thumbcard');
+			    endwhile;
 		else : ?>
 			<div class="search-box">
 				<!-- search start -->
