@@ -857,6 +857,14 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'custom_music_api',
+        'type' => 'text',
+        'title' => __('Use custom Meting API or playlist','sakurairo_csf'),
+        'dependency' => array( 'aplayer_server', '!=', 'off', '', 'true' ),
+        'desc' => __('Enter a custom Meting-api, which can also point to a playlist file. However, the ID will only be effective if the playlist is specified','sakurairo_csf'),
+      ),
+
+      array(
         'id' => 'aplayer_server_proxy',
         'type' => 'text',
         'title' => __('Footer Online Music Player Proxy','sakurairo_csf'),
