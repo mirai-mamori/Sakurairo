@@ -188,7 +188,20 @@ class Images
 
     public static function cover_gallery($size = 'source') {
         if (iro_opt('random_graphs_options') == 'local') {
-            $img_array = glob(STYLESHEETPATH . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
+            // $img_array = glob(STYLESHEETPATH . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
+            // Alpine不支持GLOB_BRACE常量，出于兼容性考虑，不使用glob函数
+            $folderPath = STYLESHEETPATH . '/manifest/gallary/';
+            $allowedExtensions = array('jpg', 'jpeg', 'png', 'gif');
+            $img_array = array();
+            $files = scandir($folderPath);
+            foreach ($files as $file) {
+                // 检查文件扩展名是否在允许的范围内
+                $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+                if (in_array($extension, $allowedExtensions)) {
+                    $img_array[] =  STYLESHEETPATH . '/manifest/gallary/' . $file;
+                }
+            }
+
             if (count($img_array) == 0){
                 return ['status'=>False,'msg'=>'ERROR：请联系管理员查看gallary目录中是否存在图片！'];
             }
@@ -220,7 +233,22 @@ class Images
 
     public static function mobile_cover_gallery() {
         if (iro_opt('random_graphs_options') == 'local') {
-            $img_array = glob(STYLESHEETPATH . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
+            // $img_array = glob(STYLESHEETPATH . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
+            
+            $folderPath = STYLESHEETPATH . '/manifest/gallary/';
+
+            $allowedExtensions = array('jpg', 'jpeg', 'png', 'gif', 'webp');
+            $img_array = array();
+
+            $files = scandir($folderPath);
+            foreach ($files as $file) {
+                // 检查文件扩展名是否在允许的范围内
+                $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+                if (in_array($extension, $allowedExtensions)) {
+                    $img_array[] =  STYLESHEETPATH . '/manifest/gallary/' . $file;
+                }
+            }
+
             if (count($img_array) == 0){
                 return ['status'=>False,'msg'=>'没有找到图片，请联系管理员检查gallary目录下是否存在图片'];
             }
