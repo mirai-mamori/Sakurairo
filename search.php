@@ -24,6 +24,7 @@ get_header(); ?>
 			/* Start the Loop */
 			    the_post();
 			    get_template_part('tpl/content', 'thumbcard');
+			    the_posts_navigation();
 			endwhile;
 		else : ?>
 			<div class="search-box">
