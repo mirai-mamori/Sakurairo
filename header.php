@@ -90,6 +90,32 @@ header('X-Frame-Options: SAMEORIGIN');
 		</script>
 	<?php endif; ?>
 	<?= iro_opt("site_header_insert"); ?>
+
+	<?php if (iro_opt('poi_pjax')): ?>
+    <script>
+        const srcs = `
+            <?php echo iro_opt("pjax_keep_loading"); ?>
+        `;
+        document.addEventListener("pjax:complete", () => {
+            srcs.split(/[\n,]+/).forEach(path => {
+                path = path.trim();
+                if (!path) return; 
+                if (path.endsWith('.js')) {
+                    const script = document.createElement('script');
+                    script.src = path;
+                    script.async = true;
+                    document.body.appendChild(script);
+                } else if (path.endsWith('.css')) {
+                    const style = document.createElement('link');
+                    style.rel = 'stylesheet';
+                    style.href = path;
+                    document.head.appendChild(style);
+                }
+            });
+        });
+    </script>
+    <?php endif; ?>
+
 </head>
 
 <body <?php body_class(); ?>>

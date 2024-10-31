@@ -1282,6 +1282,14 @@ $prefix = 'iro_options';
         'label' => __('Enabled by default, clicking to a new page will not require reloading','sakurairo_csf'),
         'default' => true
       ),
+      
+      array(
+        'id' => 'pjax_keep_loading',
+        'type' => 'textarea',
+        'title' => __('Resources that still need refreshing in the footer after enabling PJAX','sakurairo_csf'),
+        'dependency' => array( 'poi_pjax', '==', 'true', '', 'true' ),
+        'desc' => __('After enabling PJAX, custom content in the footer won’t be refreshed on page navigation. You can specify paths for JavaScript and stylesheet resources that need to be reloaded on each page in the footer here, one per line. These resources will be reloaded once PJAX completes content loading.','sakurairo_csf'),
+      ),
 
       array(
         'id' => 'nprogress_on',
