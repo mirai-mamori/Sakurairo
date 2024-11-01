@@ -18,8 +18,6 @@ get_header(); ?>
 	$search_query = get_search_query();
 	$sticky_posts = get_option('sticky_posts');
 
-	//$is_author_page = is_author() && !is_home() && !is_category() && !is_tag();
-
 	//搜索页标题
 	if (!iro_opt('patternimg') || !get_random_bg_url()) : ?>
 	    <header class="page-header">
@@ -37,9 +35,6 @@ get_header(); ?>
 		'order' => 'DESC',
 	);
 	
-	//if ($is_author_page) {
-	//	$all_results_args['author'] = get_the_author_meta('ID');// 只获取当前作者的文章
-	//}
 	$all_results_query = new WP_Query($all_results_args);
 	
 	//结果
