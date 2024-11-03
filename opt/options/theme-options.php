@@ -513,6 +513,14 @@ $prefix = 'iro_options';
         'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
         'default' => true
       ),
+      
+      array(
+        'id'    => 'mobile_menu_user_avatar',
+        'type'  => 'switcher',
+        'title' => __('Nav Menu User Avatar in Mobile','sakurairo_csf'),
+        'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
+        'default' => true
+      ),
 
       array(
         'id'     => 'unlisted_avatar',
@@ -846,6 +854,14 @@ $prefix = 'iro_options';
           'tencent' => __('QQ Music(may not be available)','sakurairo_csf'),
         ),
         'default' => 'off'
+      ),
+
+      array(
+        'id' => 'custom_music_api',
+        'type' => 'text',
+        'title' => __('Use custom Meting API or playlist','sakurairo_csf'),
+        'dependency' => array( 'aplayer_server', '!=', 'off', '', 'true' ),
+        'desc' => __('Enter a custom Meting-api, which can also point to a playlist file. However, the ID will only be effective if the playlist is specified','sakurairo_csf'),
       ),
 
       array(
@@ -1265,6 +1281,14 @@ $prefix = 'iro_options';
         'title' => __('PJAX Partial Refresh','sakurairo_csf'),
         'label' => __('Enabled by default, clicking to a new page will not require reloading','sakurairo_csf'),
         'default' => true
+      ),
+      
+      array(
+        'id' => 'pjax_keep_loading',
+        'type' => 'textarea',
+        'title' => __('Resources that still need refreshing in the footer after enabling PJAX','sakurairo_csf'),
+        'dependency' => array( 'poi_pjax', '==', 'true', '', 'true' ),
+        'desc' => __('After enabling PJAX, custom content in the footer will not be refreshed on page navigation. You can specify paths for JavaScript and stylesheet resources that need to be reloaded on each page in the footer here, one per line. These resources will be reloaded once PJAX completes content loading.','sakurairo_csf'),
       ),
 
       array(

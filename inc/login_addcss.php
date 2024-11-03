@@ -29,8 +29,8 @@
 
 <?php if (iro_opt('login_blur', 'true')): ?>
 body::before{
-	-webkit-backdrop-filter: blur(2px);
-	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: saturate(180%) blur(10px);
+	backdrop-filter: saturate(180%) blur(10px);
 	content:"";
 	width:100vw;
 	height:100vh;

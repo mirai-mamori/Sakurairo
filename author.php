@@ -36,8 +36,8 @@ get_header();
         transition: all 0.6s ease-in-out;
         border-radius: 16px;
         border: 1px solid #FFFFFF;
-		backdrop-filter: blur(10px);
-		webkit-backdrop-filter: blur(10px);
+		backdrop-filter: saturate(180%) blur(10px);
+		webkit-backdrop-filter: saturate(180%) blur(10px);
     }
 </style>
 <div id="primary" class="content-area">

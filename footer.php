@@ -56,17 +56,19 @@ $reception_background = iro_opt('reception_background');
   </section><!-- #section -->
   <!-- m-nav-center -->
   <div id="mo-nav">
-    <div class="m-avatar">
-      <?php
-        global $current_user;
-        wp_get_current_user();
-        if (is_user_logged_in()) { ?>
-            <img alt="m-avatar" src="<?php echo get_avatar_url($current_user->ID,  [64]); ?>">
-        <?php } else { ?>
-            <img alt="m-avatar" src="<?php echo iro_opt('unlisted_avatar');?>">
-        <?php } ?>
-    </div>
-    <?php if (wp_is_mobile()) m_user_menu(); ?>
+    <?php if (iro_opt('mobile_menu_user_avatar', 'true')): ?>
+      <div class="m-avatar">
+        <?php
+          global $current_user;
+          wp_get_current_user();
+          if (is_user_logged_in()) { ?>
+              <img alt="m-avatar" src="<?php echo get_avatar_url($current_user->ID,  [64]); ?>">
+          <?php } else { ?>
+              <img alt="m-avatar" src="<?php echo iro_opt('unlisted_avatar');?>">
+          <?php } ?>
+      </div>
+    <?php endif; ?>
+    <?php if (wp_is_mobile() && iro_opt('mobile_menu_user_avatar', 'true')) m_user_menu(); ?>
     <div class="m-search">
       <form class="m-search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
         <input class="m-search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
@@ -187,6 +189,6 @@ $reception_background = iro_opt('reception_background');
     }
   </style>
   <div id="particles-js"></div>
-  <script type="application/json" id="particles-js-cfg"><?php echo esc_html(iro_opt('particles_json', '')); ?></script>
+  <script type="application/json" id="particles-js-cfg"><?php echo iro_opt('particles_json', ''); ?></script>
 <?php endif; ?>
 </html>

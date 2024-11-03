@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://docs.fuukei.org/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.7.1.1
+Version: 2.7.2
 Tested up to: 6.6
 Requires at least: 5.8
 Requires PHP: 7.3
@@ -616,7 +616,8 @@ input[type=week] {
     #fff0, 
     #00000080
   );
-  backdrop-filter: blur(1px);
+  backdrop-filter: saturate(150%) blur(1px);
+  transition: all 0.6s ease-in-out;
 }
 
 .pattern-center::after {
@@ -863,7 +864,7 @@ body.dark .site-title img {
   position: relative;
   float: right;
   display: none;
-  animation: searchbox .2s;
+  animation: searchbox .4s;
 }
 
 .site-top ul {
@@ -1099,7 +1100,7 @@ body.dark .site-title img {
   color:rgba(255, 255, 255, 0.8);
   white-space: nowrap;
   font-weight: var(--global-font-weight);
-  backdrop-filter: blur(5px);
+  backdrop-filter: saturate(180%) blur(10px);
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 3;
@@ -1123,7 +1124,7 @@ body.dark .site-title img {
   max-width: 70%;
   top: 10px;
   right: 10px;
-  backdrop-filter: blur(5px);
+  backdrop-filter: saturate(180%) blur(10px);
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 3;
@@ -1159,8 +1160,8 @@ body.dark .site-title img {
   bottom: 22%;
   left: 2%;
   border: 1px solid rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
   position: absolute;
   display: inline-flex;
   box-shadow: 0 1px 30px -4px #e8e8e8;
@@ -2678,7 +2679,7 @@ h1.main-title {
   box-sizing: initial;
   white-space: nowrap;
   font-weight: var(--global-font-weight);
-  backdrop-filter: blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
   transition: all 0.6s ease-in-out;
 }
 
@@ -2881,8 +2882,8 @@ h1.main-title {
   bottom: 0;
   visibility: hidden;
   opacity: 0;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
 }
 
 .search-form--modal .search-form__inner {
@@ -4086,7 +4087,8 @@ iframe {
   top: 12%;
   box-shadow: 0 1px 30px -4px var(--friend-link-shadow);
   background: rgba(255, 255, 255, 0.5);
-  padding: 12px 12px;
+  padding: 10px 10px;
+  width: fit-content;
   overflow-y: auto;
   border-radius: 10px;
   border: 1.5px solid #FFFFFF;
@@ -4102,14 +4104,15 @@ iframe {
 }
 
 .toc-link::before {
-  background-color: rgba(255, 255, 255);
   content: ' ';
   display: inline-block;
   height: inherit;
-  left: 1%;
-  margin-top: -1px;
+  left: 2%;
+  margin-top: 2px;
   position: absolute;
-  width: 2px;
+  width: 3px;
+  height: 20px;
+  border-radius: 50px;
 }
 
 .flipx {
@@ -5159,7 +5162,7 @@ h5::before {
   float: right;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
   padding: 5px;
   font-size: 16px;
   width: 30px;
@@ -7191,6 +7194,8 @@ body.dark::-webkit-scrollbar-track {
 .toc>.toc-list li {
   list-style: none;
   cursor: pointer;
+  margin: 3px;
+  letter-spacing: 1px;
 }
 
 #archives li>ul {
@@ -7245,7 +7250,7 @@ a.toc-link {
 }
 
 .is-active-link::before {
-  background-color: var(--theme-skin, #505050);
+  background-color: var(--theme-skin-matching, #505050);
 }
 
 .bili-container,
@@ -7777,7 +7782,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
 @keyframes searchbox {
   0% {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(10px);
   }
 
   100% {
