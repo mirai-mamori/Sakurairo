@@ -12,7 +12,7 @@ include_once('inc/classes/IpLocation.php');
 
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '19.1.1');
+define('INT_VERSION', '19.2.0');
 define('BUILD_VERSION', '2');
 
 function check_php_version($preset_version)
@@ -386,6 +386,41 @@ function save_custom_meta_box($post_id) {
     }
 }
 add_action('save_post', 'save_custom_meta_box');
+
+//function include_shuoshuo_in_main_query($query) {
+//    if ($query->is_main_query() && !is_admin() && (is_home() || is_archive())) {
+//        $query->set('post_type', array('post', 'shuoshuo'));
+//    }
+//}
+//add_action('pre_get_posts', 'include_shuoshuo_in_main_query');
+//合并检索方法
+function customize_query_functions($query) {
+    //只影响前端
+    if ($query->is_main_query() && !is_admin()) {
+        // 在主页、存档页、分类页、作者页显示文章和说说
+        if (is_home() || is_archive() || is_category() || is_author()) {
+            $query->set('post_type', array('post', 'shuoshuo'));
+        }
+
+        // 在搜索页面中排除页面和特定类别
+        if ($query->is_search) {
+            $post_types = array('post', 'link');
+            //基础类型排除说说和页面，用户自行选择是否展示
+            $query->set('post_type', $post_types);
+            $tax_query = array(
+                array(
+                    'taxonomy' => 'category',
+                    'field'    => 'name',
+                    'terms'    => get_search_query(),
+                    'operator' => 'NOT IN'
+                )
+            );
+            $query->set('tax_query', $tax_query);
+        }
+    }
+}
+
+add_action('pre_get_posts', 'customize_query_functions');
 
 function admin_lettering()
 {

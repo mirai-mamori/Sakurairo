@@ -9,160 +9,151 @@
  */
 
 get_header(); ?>
-
 <section id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
+    
+        <?php
+        $paged = max(1, get_query_var('paged'));
+        $search_query = get_search_query();
+        $sticky_posts = get_option('sticky_posts');
 
-	<?php
-$paged = max(1, get_query_var('paged'));
-$search_query = get_search_query();
-$sticky_posts = get_option('sticky_posts');
+        // 默认勾选的选项
+        $default_checked = array('post');
+        if (iro_opt('search_for_shuoshuo')) $default_checked[] = 'shuoshuo';
+        if (iro_opt('search_for_pages')) $default_checked[] = 'page';
 
-// 默认勾选的选项
-$default_checked = array('post');
-if (iro_opt('search_for_shuoshuo')) $default_checked[] = 'shuoshuo';
-if (iro_opt('search_for_pages')) $default_checked[] = 'page';
+        // 获取当前查询参数中的content_type内容
+        $content_types = isset($_GET['content_type']) ? explode(',', $_GET['content_type']) : $default_checked;
 
-// 获取当前查询参数中的 content_type 值，按逗号拆分
-$content_types = isset($_GET['content_type']) ? explode(',', $_GET['content_type']) : $default_checked;
+        // 搜索页标题
+        if (!iro_opt('patternimg') || !get_random_bg_url()) : ?>
+            <header class="page-header">
+                <h1 class="page-title"><?php printf(esc_html__('Search result: %s', 'sakurairo'), '<span>' . esc_html($search_query) . '</span>'); ?></h1>
+            </header><!-- .page-header -->
+        <?php endif; ?>
 
-// 搜索页标题
-if (!iro_opt('patternimg') || !get_random_bg_url()) : ?>
-    <header class="page-header">
-        <h1 class="page-title"><?php printf(esc_html__('Search result: %s', 'sakurairo'), '<span>' . esc_html($search_query) . '</span>'); ?></h1>
-    </header><!-- .page-header -->
-<?php endif; ?>
+        <?php
+        $all_results_args = array(
+            'post_type' => $content_types,
+            'post_status' => 'publish',
+            's' => $search_query,
+            'posts_per_page' => -1,
+            'orderby' => 'relevance',
+            'order' => 'DESC',
+        );
 
-<?php if (iro_opt('enable_search_filter')) : ?>
-    <div id="filter-container" style="background-color: <?php echo esc_attr(iro_opt('theme_skin')); ?>; opacity: 0.75; border-radius: 8px; padding: 10px; margin-top: 10px;">
-        <form id="search-filter-form" action="" method="GET" style="color: #ffffff;">
-            <?php if ($search_query) : ?>
-                <input type="hidden" name="s" value="<?php echo esc_attr($search_query); ?>">
-            <?php endif; ?>
+        $all_results_query = new WP_Query($all_results_args);
 
-            <!-- 筛选选项 -->
-            <label style="margin-right: 10px; color: #ffffff;">
-                <input type="checkbox" name="content_type[]" value="post" <?php echo in_array('post', $content_types) ? 'checked' : ''; ?>> Post
-            </label>
+        if (iro_opt('enable_search_filter')) : ?>
+            <!-- 筛选器部分 -->
+            <div id="filter-container" style="background-color: <?php echo esc_attr(iro_opt('theme_skin')); ?>; opacity: 0.75; border-radius: 8px; padding: 15px; margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
 
-            <?php if (iro_opt('search_for_shuoshuo')) : ?>
-                <label style="margin-right: 10px; color: #ffffff;">
-                    <input type="checkbox" name="content_type[]" value="shuoshuo" <?php echo in_array('shuoshuo', $content_types) ? 'checked' : ''; ?>> Shuoshuo
-                </label>
-            <?php endif; ?>
+                <div style="background-color: #FFFFFF; color: #000000; padding: 5px 15px; border-radius: 20px; font-weight: bold;">
+                    <?php echo $all_results_query->found_posts; ?> results found
+                </div>
 
-            <?php if (iro_opt('search_for_pages')) : ?>
-                <label style="margin-right: 10px; color: #ffffff;">
-                    <input type="checkbox" name="content_type[]" value="page" <?php echo in_array('page', $content_types) ? 'checked' : ''; ?>> Page
-                </label>
-            <?php endif; ?>
-        </form>
-    </div>
-<?php endif; ?>
+                <form id="search-filter-form" action="" method="GET" style="display: flex; align-items: center; color: #FFFFFF;">
+                    <?php if ($search_query) : ?>
+                        <input type="hidden" name="s" value="<?php echo esc_attr($search_query); ?>">
+                    <?php endif; ?>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    // 监听筛选器变动
-    var filterForm = document.getElementById('search-filter-form');
-    var pjaxEnabled = <?php echo json_encode(iro_opt('poi_pjax')); ?>;
+                    <label style="margin-right: 15px;">
+                        <input type="checkbox" name="content_type[]" value="post" <?php echo in_array('post', $content_types) ? 'checked' : ''; ?>> Post
+                    </label>
 
-    filterForm.addEventListener('change', function () {
-        var checkboxes = filterForm.querySelectorAll('input[name="content_type[]"]');
-        var selected = [];
-        checkboxes.forEach(function (checkbox) {
-            if (checkbox.checked) selected.push(checkbox.value);
-        });
+                    <?php if (iro_opt('search_for_shuoshuo')) : ?>
+                        <label style="margin-right: 15px;">
+                            <input type="checkbox" name="content_type[]" value="shuoshuo" <?php echo in_array('shuoshuo', $content_types) ? 'checked' : ''; ?>> Shuoshuo
+                        </label>
+                    <?php endif; ?>
 
-        // 更新 URL 查询参数
-        var searchParams = new URLSearchParams(window.location.search);
-        searchParams.set('content_type', selected.join(','));
-
-        // 生成更新后的 URL
-        var newUrl = window.location.pathname + '?' + searchParams.toString();
-
-        window.location.href = newUrl;
-        }
-    });
-
-    // PJAX 完成后刷新筛选器状态
-    if (pjaxEnabled && window.$) {
-        $(document).on('pjax:complete', function () {
-            // 重新设置筛选器的勾选状态
-            var contentTypes = new URLSearchParams(window.location.search).get('content_type') || '<?php echo implode(",", $default_checked); ?>';
-            contentTypes.split(',').forEach(function (type) {
-                var checkbox = filterForm.querySelector('input[value="' + type + '"]');
-                if (checkbox) checkbox.checked = true;
+                    <?php if (iro_opt('search_for_pages')) : ?>
+                        <label style="margin-right: 15px;">
+                            <input type="checkbox" name="content_type[]" value="page" <?php echo in_array('page', $content_types) ? 'checked' : ''; ?>> Page
+                        </label>
+                    <?php endif; ?>
+                </form>
+                
+                <div style="cursor: pointer; color: #FFFFFF; font-size: 1.2em; text-align: right;" title="If no option is selected, all results are retrieved by default" onclick="applyFilter()">
+                <i class="fas fa-filter"></i> Click to filter
+            </div>
+            </div>
+        <?php endif; ?>
+        <?php //使用点击事件掩盖pjax刷新失效的缺陷 =_= ?>
+        <script>
+        function applyFilter() {
+            var filterForm = document.getElementById('search-filter-form');
+            var checkboxes = filterForm.querySelectorAll('input[name="content_type[]"]');
+            var selected = [];
+            checkboxes.forEach(function (checkbox) {
+                if (checkbox.checked) selected.push(checkbox.value);
             });
-        });
-    }
-});
-</script>
 
-<?php
-// 使用解析后的 $content_types 进行查询
-$all_results_args = array(
-    'post_type' => $content_types,
-    'post_status' => 'publish',
-    's' => $search_query,
-    'posts_per_page' => -1,
-    'orderby' => 'relevance',
-    'order' => 'DESC',
-);
+            var searchParams = new URLSearchParams(window.location.search);
+            searchParams.set('content_type', selected.join(','));
+            var newUrl = window.location.pathname + '?' + searchParams.toString();
 
-$all_results_query = new WP_Query($all_results_args);
-
-// 结果处理和排序
-$all_results = [];
-$sticky_results = [];
-$non_sticky_results = [];
-
-if ($all_results_query->have_posts()) :
-    while ($all_results_query->have_posts()) : $all_results_query->the_post();
-        if (in_array(get_the_ID(), $sticky_posts)) {
-            $sticky_results[] = $post;
-        } else {
-            $non_sticky_results[] = $post;
+            window.location.href = newUrl;
         }
-    endwhile;
-endif;
-wp_reset_postdata();
+        </script>
 
-// 合并结果，优先展示置顶文章
-$all_results = array_merge($sticky_results, $non_sticky_results);
+        <?php
+        // 结果处理，排序，展示
+        $all_results = [];
+        if ($all_results_query->have_posts()) :
+            if (iro_opt('pin_sticky_content')) {
+                //置顶文章是否在检索中也置顶
+                $sticky_results = [];
+                $non_sticky_results = [];
+                
+                while ($all_results_query->have_posts()) : $all_results_query->the_post();
+                    if (in_array(get_the_ID(), $sticky_posts)) {
+                        $sticky_results[] = $post;
+                    } else {
+                        $non_sticky_results[] = $post;
+                    }
+                endwhile;
+                
+                $all_results = array_merge($sticky_results, $non_sticky_results);
+            } else {
+                while ($all_results_query->have_posts()) : $all_results_query->the_post();
+                    $all_results[] = $post;
+                endwhile;
+            }
+        endif;
+        wp_reset_postdata();
 
-// 内容分页
-$total_results = count($all_results);
-$posts_per_page = 10;
-$total_pages = ceil($total_results / $posts_per_page);
-$current_page_results = array_slice($all_results, ($paged - 1) * $posts_per_page, $posts_per_page);
+        // 内容分页
+        $total_results = count($all_results);
+        $posts_per_page = 10;
+        $total_pages = ceil($total_results / $posts_per_page);
+        $current_page_results = array_slice($all_results, ($paged - 1) * $posts_per_page, $posts_per_page);
 
-// 输出当前页内容
-if (!empty($current_page_results)) :
-    foreach ($current_page_results as $post) :
-        setup_postdata($post);
-        get_template_part('tpl/content', 'thumbcard');
-    endforeach;
+        // 输出当前页内容
+        if (!empty($current_page_results)) :
+            foreach ($current_page_results as $post) :
+                setup_postdata($post);
+                get_template_part('tpl/content', 'thumbcard');
+            endforeach;
 
-    // 分页跳转
-    the_posts_pagination(array(
-        'total' => $total_pages,
-        'current' => $paged,
-    ));
-else :
-    // 未找到搜索结果
-    ?>
-    <div class="search-box">
-        <!-- search start -->
-        <form class="s-search">
-            <input class="text-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
-        </form>
-        <!-- search end -->
-    </div>
-    <?php get_template_part('tpl/content', 'none'); ?>
-<?php
-endif;
-wp_reset_postdata();
-?>
+            the_posts_pagination(array(
+                'total' => $total_pages,
+                'current' => $paged,
+            ));
+        else :
+            ?>
+            <div class="search-box">
+                <!-- search start -->
+                <form class="s-search">
+                    <input class="text-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
+                </form>
+                <!-- search end -->
+            </div>
+            <?php get_template_part('tpl/content', 'none'); ?>
+        <?php
+        endif;
+        wp_reset_postdata();
+        ?>
 
 		<style>
 			.nav-previous,
@@ -195,7 +186,6 @@ wp_reset_postdata();
 				color: #A0DAD0;
 			}
 		</style>
-
 	</main><!-- #main -->
 </section><!-- #primary -->
 
