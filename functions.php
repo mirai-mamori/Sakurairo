@@ -387,25 +387,24 @@ function save_custom_meta_box($post_id) {
 }
 add_action('save_post', 'save_custom_meta_box');
 
-//function include_shuoshuo_in_main_query($query) {
-//    if ($query->is_main_query() && !is_admin() && (is_home() || is_archive())) {
-//        $query->set('post_type', array('post', 'shuoshuo'));
-//    }
-//}
-//add_action('pre_get_posts', 'include_shuoshuo_in_main_query');
 //合并检索方法
 function customize_query_functions($query) {
     //只影响前端
     if ($query->is_main_query() && !is_admin()) {
         // 在主页、存档页、分类页、作者页显示文章和说说
-        if (is_home() || is_archive() || is_category() || is_author()) {
+        if (is_home()) {
+            $post_types = array('post');
+        //index引用content-thumb，其中根据设置项决定是否在主页显示说说
+            $query->set('post_type', $post_types);
+        } elseif (is_archive() || is_category() || is_author()) {
+            // 保持其他页面的原有逻辑
             $query->set('post_type', array('post', 'shuoshuo'));
         }
 
-        // 在搜索页面中排除分类页和其他类别
+        // 在搜索页面中排除页面和特定类别
         if ($query->is_search) {
             $post_types = array('post', 'link');
-            //基础仅搜索文章，说说和页面用户自行选择是否展示
+            //基础类型排除说说和页面，用户自行选择是否展示
             $query->set('post_type', $post_types);
             $tax_query = array(
                 array(
