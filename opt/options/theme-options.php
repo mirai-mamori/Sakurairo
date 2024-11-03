@@ -2598,6 +2598,13 @@ $prefix = 'iro_options';
         'default' => '18'
       ),
 
+      array(
+        'id' => 'show_shuoshuo_on_home_page',
+        'type' => 'switcher',
+        'title' => __('Show shuoshuo on home page','sakurairo_csf'),
+        'default' => true
+      ),
+
     )
   ) );
 
