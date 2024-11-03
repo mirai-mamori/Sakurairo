@@ -22,7 +22,7 @@ get_header(); ?>
         if (iro_opt('search_for_shuoshuo')) $default_checked[] = 'shuoshuo';
         if (iro_opt('search_for_pages')) $default_checked[] = 'page';
 
-        // 获取当前查询参数中的content_type内容
+        // 获取当前查询参数中的content_type内容，查询参数使用post_type在仅检索shuoshuo时由于未知原因会导致排版异常
         $content_types = isset($_GET['content_type']) ? explode(',', $_GET['content_type']) : $default_checked;
 
         // 搜索页标题
