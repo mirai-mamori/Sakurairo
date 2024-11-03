@@ -12,7 +12,7 @@ include_once('inc/classes/IpLocation.php');
 
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '19.2.0');
+define('INT_VERSION', '19.1.1');
 define('BUILD_VERSION', '2');
 
 function check_php_version($preset_version)
@@ -386,13 +386,6 @@ function save_custom_meta_box($post_id) {
     }
 }
 add_action('save_post', 'save_custom_meta_box');
-
-function include_shuoshuo_in_main_query($query) {
-    if ($query->is_main_query() && !is_admin() && (is_home() || is_archive())) {
-        $query->set('post_type', array('post', 'shuoshuo'));
-    }
-}
-add_action('pre_get_posts', 'include_shuoshuo_in_main_query');
 
 function admin_lettering()
 {
@@ -2615,27 +2608,6 @@ if (iro_opt('show_location_in_manage')) {
     add_filter('manage_edit-comments_columns', 'iro_add_location_to_comments_columns');
     add_action('manage_comments_custom_column', 'iro_output_ip_location_columns', 10, 2);
 }
-
-// Modify search query to exclude pages and categories(修改搜索查询以排除'页面'和'类别')
-function exclude_pages_and_categories_from_search($query) {
-    if (!is_admin() && $query->is_search) {
-        // Exclude pages
-        $query->set('post_type', array('post', 'shuoshuo', 'link')); // Include other post types but exclude 'page'
-
-        // Exclude categories
-        $tax_query = array(
-            array(
-                'taxonomy' => 'category',
-                'field' => 'name',
-                'terms' => get_search_query(),
-                'operator' => 'NOT IN'
-            )
-        );
-        $query->set('tax_query', $tax_query);
-    }
-    return $query;
-}
-add_filter('pre_get_posts', 'exclude_pages_and_categories_from_search');
 
 function iterator_to_string(Iterator $iterator): string
 {
