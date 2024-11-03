@@ -1288,7 +1288,7 @@ $prefix = 'iro_options';
         'type' => 'textarea',
         'title' => __('Resources that still need refreshing in the footer after enabling PJAX','sakurairo_csf'),
         'dependency' => array( 'poi_pjax', '==', 'true', '', 'true' ),
-        'desc' => __('After enabling PJAX, custom content in the footer will not be refreshed on page navigation. You can specify paths for JavaScript and stylesheet resources that need to be reloaded on each page in the footer here, one per line. These resources will be reloaded once PJAX completes content loading.','sakurairo_csf'),
+        'desc' => __('After enabling PJAX, custom content in the footer won’t be refreshed on page navigation. You can specify paths for JavaScript and stylesheet resources that need to be reloaded on each page in the footer here, one per line. These resources will be reloaded once PJAX completes content loading.','sakurairo_csf'),
       ),
 
       array(
@@ -1391,6 +1391,39 @@ $prefix = 'iro_options';
         'desc' => __('Fill in the address, this is the SVG that will be displayed as a placeholder when the next page is loading','sakurairo_csf'),
         'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/load_svg/ball.svg'
       ),
+
+      array(
+        'id' => 'enable_search_filter',
+        'type' => 'switcher',
+        'title' => __('Enable search filter','sakurairo_csf'),
+        'desc' => __('Enable search filter','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'search_for_shuoshuo',
+        'type' => 'switcher',
+        'title' => __('Show shuoshuo in search results','sakurairo_csf'),
+        'desc' => __('Display shuoshuo in search results','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'search_for_pages',
+        'type' => 'switcher',
+        'title' => __('Show pages in search results','sakurairo_csf'),
+        'desc' => __('Show pages in search results','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'pin_sticky_content',
+        'type' => 'switcher',
+        'title' => __('Pinned content is displayed first in search results','sakurairo_csf'),
+        'desc' => __('Pinned content is displayed first in search results','sakurairo_csf'),
+        'default' => true
+      ),
+
     )
   ) );
 
