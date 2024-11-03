@@ -867,8 +867,12 @@ li.link-item {
     margin-right: 40%;
 }
 
-.post-excerpt p{
+.post-excerpt p {
     max-height: 90%;
+    -webkit-line-clamp: 11;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .post-list-thumb:nth-child(2n) .post-thumb{

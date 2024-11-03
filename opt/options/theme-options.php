@@ -1288,7 +1288,7 @@ $prefix = 'iro_options';
         'type' => 'textarea',
         'title' => __('Resources that still need refreshing in the footer after enabling PJAX','sakurairo_csf'),
         'dependency' => array( 'poi_pjax', '==', 'true', '', 'true' ),
-        'desc' => __('After enabling PJAX, custom content in the footer won’t be refreshed on page navigation. You can specify paths for JavaScript and stylesheet resources that need to be reloaded on each page in the footer here, one per line. These resources will be reloaded once PJAX completes content loading.','sakurairo_csf'),
+        'desc' => __('After enabling PJAX, custom content in the footer will not be refreshed on page navigation. You can specify paths for JavaScript and stylesheet resources that need to be reloaded on each page in the footer here, one per line. These resources will be reloaded once PJAX completes content loading.','sakurairo_csf'),
       ),
 
       array(

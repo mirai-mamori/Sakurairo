@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2024-11-02 16:17+0800\n"
-"PO-Revision-Date: 2024-11-02 16:20+0800\n"
+"POT-Creation-Date: 2024-11-03 10:52+0900\n"
+"PO-Revision-Date: 2024-11-03 11:19+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: option-framework.php\n"
@@ -1380,8 +1380,7 @@ msgstr "使用自訂 Meting API 或歌單"
 msgid ""
 "Enter a custom Meting-api, which can also point to a playlist file. However, "
 "the ID will only be effective if the playlist is specified"
-msgstr ""
-"輸入自訂 Meting API，它也可以指向一個歌單檔案。但僅在指定歌單時 ID 才有效"
+msgstr "輸入自訂 Meting API（也可以指向一個歌單檔案）。僅在指定歌單時 ID 有效"
 
 #: options/theme-options.php:870
 msgid "Footer Online Music Player Proxy"
@@ -1484,7 +1483,7 @@ msgstr "開啟佔用資訊之後，該資訊將顯示在頁面末尾。不建議
 
 #: options/theme-options.php:966
 msgid "Footer Upyun League Logo"
-msgstr "頁尾Upyun League Logo"
+msgstr "頁尾 Upyun League Logo"
 
 #: options/theme-options.php:967
 msgid "Upyun Logo will appear at the end of the page after turning it on"
@@ -1703,18 +1702,18 @@ msgstr "默認開啟，點擊新內容將不需要重新載入"
 
 #: options/theme-options.php:1289
 msgid "Resources that still need refreshing in the footer after enabling PJAX"
-msgstr "啟用 PJAX 後，footer中仍需刷新的資源"
+msgstr "啟用 PJAX 後，頁尾中仍需刷新的資源"
 
 #: options/theme-options.php:1291
 msgid ""
-"After enabling PJAX, custom content in the footer won’t be refreshed on page "
-"navigation. You can specify paths for JavaScript and stylesheet resources "
-"that need to be reloaded on each page in the footer here, one per line. "
-"These resources will be reloaded once PJAX completes content loading."
+"After enabling PJAX, custom content in the footer will not be refreshed on "
+"page navigation. You can specify paths for JavaScript and stylesheet "
+"resources that need to be reloaded on each page in the footer here, one per "
+"line. These resources will be reloaded once PJAX completes content loading."
 msgstr ""
-"啟用 PJAX 後，footer中的自定內容不會在頁面導航時刷新。您可以在此指定需要在"
-"footer中每頁重新加載的 JavaScript 和樣式表資源路徑，每行一個。這些資源將在 "
-"PJAX 完成內容加載後重新加載。"
+"啟用 PJAX 後，頁尾中的自定內容不會在頁面導航時刷新。您可以在此指定需要在頁尾"
+"中每頁重新加載的 JavaScript 和樣式表資源路徑，每行一個。這些資源將在 PJAX 完"
+"成內容加載後重新加載。"
 
 #: options/theme-options.php:1297
 msgid "NProgress Loading Progress Bar"

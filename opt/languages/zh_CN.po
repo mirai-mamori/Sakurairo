@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2024-11-02 16:07+0800\n"
-"PO-Revision-Date: 2024-11-02 16:17+0800\n"
+"POT-Creation-Date: 2024-11-03 10:51+0900\n"
+"PO-Revision-Date: 2024-11-03 11:18+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: option-framework.php\n"
@@ -1374,14 +1374,13 @@ msgstr "QQ音乐（可能无法使用）"
 
 #: options/theme-options.php:862
 msgid "Use custom Meting API or playlist"
-msgstr "使用自定义MetingAPI或者歌单文件"
+msgstr "使用自定义 MetingAPI 或者歌单文件"
 
 #: options/theme-options.php:864
 msgid ""
 "Enter a custom Meting-api, which can also point to a playlist file. However, "
 "the ID will only be effective if the playlist is specified"
-msgstr ""
-"填入自定义的MetingAPI地址，也可以指向歌单文件，但是只有填了歌单ID后才会生效"
+msgstr "填写自定义 MetingAPI 地址（可以指向歌单文件），只在填写歌单 ID 后生效"
 
 #: options/theme-options.php:870
 msgid "Footer Online Music Player Proxy"
@@ -1709,14 +1708,14 @@ msgstr "启用PJAX后仍需要每页加载的资源"
 
 #: options/theme-options.php:1291
 msgid ""
-"After enabling PJAX, custom content in the footer won’t be refreshed on page "
-"navigation. You can specify paths for JavaScript and stylesheet resources "
-"that need to be reloaded on each page in the footer here, one per line. "
-"These resources will be reloaded once PJAX completes content loading."
+"After enabling PJAX, custom content in the footer will not be refreshed on "
+"page navigation. You can specify paths for JavaScript and stylesheet "
+"resources that need to be reloaded on each page in the footer here, one per "
+"line. These resources will be reloaded once PJAX completes content loading."
 msgstr ""
-"启用PJAX后，你在footer处的自定义代码在页面跳转后将不再被刷新。你可以在此处填"
-"写需要每页都加载的JavaScript和css资源的路径，这些资源将在pjax完成加载后被重新"
-"加载。"
+"启用PJAX后，你在页尾设置的自定义代码在页面跳转后将不再被刷新。你可以在此处填"
+"写需要每页都加载的 JavaScript 和 CSS 资源的路径，这些资源将在 PJAX 完成加载后"
+"被重新加载。"
 
 #: options/theme-options.php:1297
 msgid "NProgress Loading Progress Bar"

@@ -189,6 +189,6 @@ $reception_background = iro_opt('reception_background');
     }
   </style>
   <div id="particles-js"></div>
-  <script type="application/json" id="particles-js-cfg"><?php echo esc_html(iro_opt('particles_json', '')); ?></script>
+  <script type="application/json" id="particles-js-cfg"><?php echo iro_opt('particles_json', ''); ?></script>
 <?php endif; ?>
 </html>
