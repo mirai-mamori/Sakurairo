@@ -1067,6 +1067,45 @@ $prefix = 'iro_options';
 
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'global', 
+    'title' => __('Search Options','sakurairo_csf'),
+    'icon' => 'fa fa-search',
+    'fields' => array(
+
+      array(
+        'id' => 'enable_search_filter',
+        'type' => 'switcher',
+        'title' => __('Enable search filter','sakurairo_csf'),
+        'desc' => __('Allow users to use site search filters','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'search_for_shuoshuo',
+        'type' => 'switcher',
+        'title' => __('Show shuoshuo in search results','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'search_for_pages',
+        'type' => 'switcher',
+        'title' => __('Show pages in search results','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'pin_sticky_content',
+        'type' => 'switcher',
+        'title' => __('Pinned content is displayed first in search results','sakurairo_csf'),
+        'default' => true
+      ),
+
+    )
+  ) );
+
+
+  Sakurairo_CSF::createSection( $prefix, array(
+    'parent' => 'global', 
     'title' => __('Additional Options','sakurairo_csf'),
     'icon' => 'fa fa-gift',
     'fields' => array(
@@ -1390,38 +1429,6 @@ $prefix = 'iro_options';
         'title' => __('Placeholder SVG when loading the next page','sakurairo_csf'),
         'desc' => __('Fill in the address, this is the SVG that will be displayed as a placeholder when the next page is loading','sakurairo_csf'),
         'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/load_svg/ball.svg'
-      ),
-
-      array(
-        'id' => 'enable_search_filter',
-        'type' => 'switcher',
-        'title' => __('Enable search filter','sakurairo_csf'),
-        'desc' => __('Enable search filter','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
-        'id' => 'search_for_shuoshuo',
-        'type' => 'switcher',
-        'title' => __('Show shuoshuo in search results','sakurairo_csf'),
-        'desc' => __('Display shuoshuo in search results','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
-        'id' => 'search_for_pages',
-        'type' => 'switcher',
-        'title' => __('Show pages in search results','sakurairo_csf'),
-        'desc' => __('Show pages in search results','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
-        'id' => 'pin_sticky_content',
-        'type' => 'switcher',
-        'title' => __('Pinned content is displayed first in search results','sakurairo_csf'),
-        'desc' => __('Pinned content is displayed first in search results','sakurairo_csf'),
-        'default' => true
       ),
 
     )
