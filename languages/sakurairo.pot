@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2024-11-03 18:54+0800\n"
+"POT-Creation-Date: 2024-10-19 15:09+0900\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -20,7 +20,6 @@ msgstr ""
 "_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
-"X-Poedit-SearchPathExcluded-1: opt\n"
 
 #: 404.php:32
 msgid "Return to previous page"
@@ -34,7 +33,7 @@ msgstr ""
 msgid "Don't worry, search in site?"
 msgstr ""
 
-#: 404.php:38 footer.php:74 search.php:148
+#: 404.php:38 footer.php:72 search.php:30
 msgid "Search..."
 msgstr ""
 
@@ -135,39 +134,39 @@ msgstr ""
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr ""
 
-#: footer.php:79
+#: footer.php:77
 msgid "Go to top"
 msgstr ""
 
-#: footer.php:80
+#: footer.php:78
 msgid "Control Panel"
 msgstr ""
 
-#: footer.php:86 footer.php:94
+#: footer.php:84 footer.php:92
 msgid "Want to find something?"
 msgstr ""
 
-#: footer.php:95
+#: footer.php:93
 msgid "Search"
 msgstr ""
 
-#: footer.php:114
+#: footer.php:112
 msgid "Light Mode"
 msgstr ""
 
-#: footer.php:117
+#: footer.php:115
 msgid "Dark Mode"
 msgstr ""
 
-#: footer.php:123
+#: footer.php:121
 msgid "Toggle Page Background Image"
 msgstr ""
 
-#: footer.php:144
+#: footer.php:142
 msgid "Switch To Font A"
 msgstr ""
 
-#: footer.php:147
+#: footer.php:145
 msgid "Switch To Font B"
 msgstr ""
 
@@ -273,33 +272,33 @@ msgid ""
 "Options to learn how to set it up."
 msgstr ""
 
-#: functions.php:477
+#: functions.php:449
 msgid "Copied!"
 msgstr ""
 
-#: functions.php:478
+#: functions.php:450
 msgid "Copy Code"
 msgstr ""
 
-#: functions.php:479
+#: functions.php:451
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, "
 "Cover Cache won't take effect."
 msgstr ""
 
-#: functions.php:480
+#: functions.php:452
 msgid "Commiting...."
 msgstr ""
 
-#: functions.php:481
+#: functions.php:453
 msgid "Succeed"
 msgstr ""
 
-#: functions.php:482
+#: functions.php:454
 msgid "10 files max per request"
 msgstr ""
 
-#: functions.php:483
+#: functions.php:455
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -308,15 +307,15 @@ msgid ""
 "This image is too large~Please reupload!"
 msgstr ""
 
-#: functions.php:484
+#: functions.php:456
 msgid "Uploading..."
 msgstr ""
 
-#: functions.php:485
+#: functions.php:457
 msgid "Uploaded successfully~"
 msgstr ""
 
-#: functions.php:486
+#: functions.php:458
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -324,128 +323,128 @@ msgid ""
 "{2}"
 msgstr ""
 
-#: functions.php:487
+#: functions.php:459
 msgid "Upload failed, please retry."
 msgstr ""
 
-#: functions.php:488
+#: functions.php:460
 msgid "Page Load failed. HTTP {0}"
 msgstr ""
 
-#: functions.php:489
+#: functions.php:461
 msgid "Glad you come, but we've got nothing left."
 msgstr ""
 
-#: functions.php:490 search.php:61
+#: functions.php:462
 msgid "Post"
 msgstr ""
 
-#: functions.php:491
+#: functions.php:463
 msgid "Tag"
 msgstr ""
 
-#: functions.php:492
+#: functions.php:464
 msgid "Category"
 msgstr ""
 
-#: functions.php:493 search.php:72
+#: functions.php:465
 msgid "Page"
 msgstr ""
 
-#: functions.php:494
+#: functions.php:466
 msgid "Comment"
 msgstr ""
 
-#: functions.php:495
+#: functions.php:467
 msgid "Paused..."
 msgstr ""
 
-#: functions.php:496
+#: functions.php:468
 msgid "Loading Video..."
 msgstr ""
 
-#: functions.php:497
+#: functions.php:469
 msgid "Downloading fonts, be aware of your data usage."
 msgstr ""
 
-#: functions.php:498
+#: functions.php:470
 msgid "Are you sure you want set it private?"
 msgstr ""
 
-#: functions.php:499
+#: functions.php:471
 msgid "You had set private comment before"
 msgstr ""
 
-#: functions.php:549 inc/theme_plus.php:186
+#: functions.php:521 inc/theme_plus.php:186
 msgid "Author"
 msgstr ""
 
-#: functions.php:549
+#: functions.php:521
 msgid "Blogger"
 msgstr ""
 
-#: functions.php:558 functions.php:2623
+#: functions.php:530 functions.php:2595
 msgid "Location"
 msgstr ""
 
-#: functions.php:564
+#: functions.php:536
 msgid "Private"
 msgstr ""
 
-#: functions.php:566
+#: functions.php:538
 msgid "Yes"
 msgstr ""
 
-#: functions.php:568
+#: functions.php:540
 msgid "No"
 msgstr ""
 
-#: functions.php:571
+#: functions.php:543
 msgid "Edit"
 msgstr ""
 
-#: functions.php:698
+#: functions.php:670
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:974
+#: functions.php:946
 msgid "Download Link"
 msgstr ""
 
-#: functions.php:1051
+#: functions.php:1023
 msgid "Remember me"
 msgstr ""
 
-#: functions.php:1582
+#: functions.php:1554
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1617
+#: functions.php:1589
 msgid " year"
 msgstr ""
 
-#: functions.php:1621
+#: functions.php:1593
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1669 functions.php:1672 inc/theme_plus.php:413
+#: functions.php:1641 functions.php:1644 inc/theme_plus.php:413
 #: inc/theme_plus.php:459
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:1988
+#: functions.php:1960
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:2114
+#: functions.php:2086
 msgid "QQ"
 msgstr ""
 
-#: functions.php:2211
+#: functions.php:2183
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:2302
+#: functions.php:2274
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -453,12 +452,12 @@ msgid ""
 "target=\"_blank\"> pseudo-static </a>. </ b>"
 msgstr ""
 
-#: functions.php:2389
+#: functions.php:2361
 #, php-format
 msgid "%s says: "
 msgstr ""
 
-#: functions.php:2410
+#: functions.php:2382
 msgid "Expand / Collapse"
 msgstr ""
 
@@ -726,30 +725,6 @@ msgstr ""
 msgid "Notice"
 msgstr ""
 
-#: js/1869.js:1
-msgid "s|tr|y"
-msgstr ""
-
-#: js/6136.js:2
-msgid "baguetteBox-overlay"
-msgstr ""
-
-#: js/6136.js:2
-msgid "baguetteBox-slider"
-msgstr ""
-
-#: js/6136.js:2
-msgid "previous-button"
-msgstr ""
-
-#: js/6136.js:2
-msgid "next-button"
-msgstr ""
-
-#: js/6136.js:2
-msgid "close-button"
-msgstr ""
-
 #: layouts/imgbox.php:104
 msgid "Change"
 msgstr ""
@@ -762,25 +737,9 @@ msgstr ""
 msgid "Next Post"
 msgstr ""
 
-#: search.php:31
+#: search.php:19
 #, php-format
 msgid "Search result: %s"
-msgstr ""
-
-#: search.php:52
-msgid "results found"
-msgstr ""
-
-#: search.php:66
-msgid "shuoshuo"
-msgstr ""
-
-#: search.php:77
-msgid "If no option is selected, all results are retrieved by default"
-msgstr ""
-
-#: search.php:78
-msgid "Click to filter"
 msgstr ""
 
 #: tpl/content-none.php:14
@@ -897,46 +856,6 @@ msgstr ""
 
 #: tpl/section-article-function.php:82
 msgid "Nothing~"
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:56
-msgid "View details"
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:79
-#, php-format
-msgid "More information about %s"
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:130
-msgid "Check for updates"
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:217
-#, php-format
-msgctxt "the plugin title"
-msgid "The %s plugin is up to date."
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:219
-#, php-format
-msgctxt "the plugin title"
-msgid "A new version of the %s plugin is available."
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:221
-#, php-format
-msgctxt "the plugin title"
-msgid "Could not determine if updates are available for %s."
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:227
-#, php-format
-msgid "Unknown update checker status \"%s\""
-msgstr ""
-
-#: update-checker/Puc/v5p1/Vcs/PluginUpdateChecker.php:113
-msgid "There is no changelog available."
 msgstr ""
 
 #: user/page-bangumi.php:31 user/page-bilibiliFavList.php:207

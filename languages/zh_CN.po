@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2024-11-03 18:55+0800\n"
-"PO-Revision-Date: 2024-11-03 18:56+0800\n"
+"POT-Creation-Date: 2024-10-19 15:13+0900\n"
+"PO-Revision-Date: 2024-10-19 15:22+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -20,7 +20,6 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
-"X-Poedit-SearchPathExcluded-1: opt\n"
 
 #: 404.php:32
 msgid "Return to previous page"
@@ -34,7 +33,7 @@ msgstr "返回首页"
 msgid "Don't worry, search in site?"
 msgstr "别着急，试试搜索？"
 
-#: 404.php:38 footer.php:74 search.php:148
+#: 404.php:38 footer.php:72 search.php:30
 msgid "Search..."
 msgstr "搜索..."
 
@@ -135,39 +134,39 @@ msgstr "禁止小广告😀"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr "加载耗时 %.3f 秒 | 查询 %d 次 | 内存使用 %.2f MB "
 
-#: footer.php:79
+#: footer.php:77
 msgid "Go to top"
 msgstr "回到顶部"
 
-#: footer.php:80
+#: footer.php:78
 msgid "Control Panel"
 msgstr "控制面板"
 
-#: footer.php:86 footer.php:94
+#: footer.php:84 footer.php:92
 msgid "Want to find something?"
 msgstr "想要找点什么呢？"
 
-#: footer.php:95
+#: footer.php:93
 msgid "Search"
 msgstr "搜索"
 
-#: footer.php:114
+#: footer.php:112
 msgid "Light Mode"
 msgstr "浅色模式"
 
-#: footer.php:117
+#: footer.php:115
 msgid "Dark Mode"
 msgstr "深色模式"
 
-#: footer.php:123
+#: footer.php:121
 msgid "Toggle Page Background Image"
 msgstr "切换页面背景图像"
 
-#: footer.php:144
+#: footer.php:142
 msgid "Switch To Font A"
 msgstr "切换到字体 A"
 
-#: footer.php:147
+#: footer.php:145
 msgid "Switch To Font B"
 msgstr "切换到字体 B"
 
@@ -277,33 +276,33 @@ msgstr ""
 "标题样式请填写 CSS 样式，部分样式需要添加 !important 后生效；文章协议请查找主"
 "题相关选项以了解如何设置。"
 
-#: functions.php:477
+#: functions.php:449
 msgid "Copied!"
 msgstr "复制成功！"
 
-#: functions.php:478
+#: functions.php:450
 msgid "Copy Code"
 msgstr "拷贝代码"
 
-#: functions.php:479
+#: functions.php:451
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
 msgstr "你的封面 API 好像不支持跨域调用,这种情况下缓存是不会生效的哦。"
 
-#: functions.php:480
+#: functions.php:452
 msgid "Commiting...."
 msgstr "提交中...."
 
-#: functions.php:481
+#: functions.php:453
 msgid "Succeed"
 msgstr "成功"
 
-#: functions.php:482
+#: functions.php:454
 msgid "10 files max per request"
 msgstr "每次上传上限为 10 张"
 
-#: functions.php:483
+#: functions.php:455
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -312,15 +311,15 @@ msgid ""
 "This image is too large~Please reupload!"
 msgstr "图片上传大小限制为 5 MB\\n\\n「{0}」\\n\\n这张图太大啦~请重新上传噢！"
 
-#: functions.php:484
+#: functions.php:456
 msgid "Uploading..."
 msgstr "上传中..."
 
-#: functions.php:485
+#: functions.php:457
 msgid "Uploaded successfully~"
 msgstr "上传成功~"
 
-#: functions.php:486
+#: functions.php:458
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -328,128 +327,128 @@ msgid ""
 "{2}"
 msgstr "上传失败！\\n文件名=> {0}\\ncode=> {1}\\n{2}"
 
-#: functions.php:487
+#: functions.php:459
 msgid "Upload failed, please retry."
 msgstr "上传失败，请重试."
 
-#: functions.php:488
+#: functions.php:460
 msgid "Page Load failed. HTTP {0}"
 msgstr "页面加载出错了 HTTP {0}"
 
-#: functions.php:489
+#: functions.php:461
 msgid "Glad you come, but we've got nothing left."
 msgstr "很高兴你翻到这里，但是真的没有了..."
 
-#: functions.php:490 search.php:61
+#: functions.php:462
 msgid "Post"
 msgstr "文章"
 
-#: functions.php:491
+#: functions.php:463
 msgid "Tag"
 msgstr "标签"
 
-#: functions.php:492
+#: functions.php:464
 msgid "Category"
 msgstr "分类"
 
-#: functions.php:493 search.php:72
+#: functions.php:465
 msgid "Page"
 msgstr "页面"
 
-#: functions.php:494
+#: functions.php:466
 msgid "Comment"
 msgstr "评论"
 
-#: functions.php:495
+#: functions.php:467
 msgid "Paused..."
 msgstr "暂停中..."
 
-#: functions.php:496
+#: functions.php:468
 msgid "Loading Video..."
 msgstr "正在加载视频..."
 
-#: functions.php:497
+#: functions.php:469
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "下载字体时，请注意您的数据使用情况。"
 
-#: functions.php:498
+#: functions.php:470
 msgid "Are you sure you want set it private?"
 msgstr "是否要将其设置为私密？"
 
-#: functions.php:499
+#: functions.php:471
 msgid "You had set private comment before"
 msgstr "您之前设置了私人评论"
 
-#: functions.php:549 inc/theme_plus.php:186
+#: functions.php:521 inc/theme_plus.php:186
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:549
+#: functions.php:521
 msgid "Blogger"
 msgstr "博主"
 
-#: functions.php:558 functions.php:2623
+#: functions.php:530 functions.php:2595
 msgid "Location"
 msgstr "来自"
 
-#: functions.php:564
+#: functions.php:536
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:566
+#: functions.php:538
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:568
+#: functions.php:540
 msgid "No"
 msgstr "否"
 
-#: functions.php:571
+#: functions.php:543
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:698
+#: functions.php:670
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:974
+#: functions.php:946
 msgid "Download Link"
 msgstr "下载地址"
 
-#: functions.php:1051
+#: functions.php:1023
 msgid "Remember me"
 msgstr "记住我"
 
-#: functions.php:1582
+#: functions.php:1554
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1617
+#: functions.php:1589
 msgid " year"
 msgstr " 年"
 
-#: functions.php:1621
+#: functions.php:1593
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1669 functions.php:1672 inc/theme_plus.php:413
+#: functions.php:1641 functions.php:1644 inc/theme_plus.php:413
 #: inc/theme_plus.php:459
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:1988
+#: functions.php:1960
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr "<b>错误</b>: 邮箱格式出错 (<b>@"
 
-#: functions.php:2114
+#: functions.php:2086
 msgid "QQ"
 msgstr ""
 
-#: functions.php:2211
+#: functions.php:2183
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:2302
+#: functions.php:2274
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -460,12 +459,12 @@ msgstr ""
 "固定链接</a>设置为朴素。为此，您可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">伪静态</a></b>"
 
-#: functions.php:2389
+#: functions.php:2361
 #, php-format
 msgid "%s says: "
 msgstr "%s 说： "
 
-#: functions.php:2410
+#: functions.php:2382
 msgid "Expand / Collapse"
 msgstr "展开 / 收起"
 
@@ -733,30 +732,6 @@ msgstr "注册"
 msgid "Notice"
 msgstr "公告"
 
-#: js/1869.js:1
-msgid "s|tr|y"
-msgstr ""
-
-#: js/6136.js:2
-msgid "baguetteBox-overlay"
-msgstr ""
-
-#: js/6136.js:2
-msgid "baguetteBox-slider"
-msgstr ""
-
-#: js/6136.js:2
-msgid "previous-button"
-msgstr ""
-
-#: js/6136.js:2
-msgid "next-button"
-msgstr ""
-
-#: js/6136.js:2
-msgid "close-button"
-msgstr ""
-
 #: layouts/imgbox.php:104
 msgid "Change"
 msgstr "切换"
@@ -769,26 +744,10 @@ msgstr "上一篇文章"
 msgid "Next Post"
 msgstr "下一篇文章"
 
-#: search.php:31
+#: search.php:19
 #, php-format
 msgid "Search result: %s"
 msgstr "搜索结果：%s"
-
-#: search.php:52
-msgid "results found"
-msgstr "个结果"
-
-#: search.php:66
-msgid "shuoshuo"
-msgstr "说说"
-
-#: search.php:77
-msgid "If no option is selected, all results are retrieved by default"
-msgstr "如果没有选项被选中，将默认展示全部结果"
-
-#: search.php:78
-msgid "Click to filter"
-msgstr "点击筛选"
 
 #: tpl/content-none.php:14
 msgid "There is nothing here！"
@@ -900,46 +859,6 @@ msgstr "此作者没有提供个人介绍"
 #: tpl/section-article-function.php:82
 msgid "Nothing~"
 msgstr "啥也没有呀"
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:56
-msgid "View details"
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:79
-#, php-format
-msgid "More information about %s"
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:130
-msgid "Check for updates"
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:217
-#, php-format
-msgctxt "the plugin title"
-msgid "The %s plugin is up to date."
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:219
-#, php-format
-msgctxt "the plugin title"
-msgid "A new version of the %s plugin is available."
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:221
-#, php-format
-msgctxt "the plugin title"
-msgid "Could not determine if updates are available for %s."
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:227
-#, php-format
-msgid "Unknown update checker status \"%s\""
-msgstr ""
-
-#: update-checker/Puc/v5p1/Vcs/PluginUpdateChecker.php:113
-msgid "There is no changelog available."
-msgstr ""
 
 #: user/page-bangumi.php:31 user/page-bilibiliFavList.php:207
 #: user/page-followVideos.php:29
@@ -1061,364 +980,3 @@ msgstr "文章模版"
 #. Template Name of the plugin/theme
 msgid "友情链接模版"
 msgstr "友情链接模版"
-
-#, fuzzy
-#~| msgid "Uploading..."
-#~ msgid "Saving..."
-#~ msgstr "上传中..."
-
-#, fuzzy
-#~| msgid "Are you sure you want set it private?"
-#~ msgid "Are you sure to reset this section options?"
-#~ msgstr "是否要将其设置为私密？"
-
-#, fuzzy
-#~| msgid "Are you sure you want set it private?"
-#~ msgid "Are you sure you want to reset all settings to default values?"
-#~ msgstr "是否要将其设置为私密？"
-
-#, fuzzy, php-format
-#~| msgid "Please enter username."
-#~ msgid "Please enter %s or more characters"
-#~ msgstr "请输入用户名。"
-
-#, fuzzy
-#~| msgid "Search..."
-#~ msgid "Searching..."
-#~ msgstr "搜索..."
-
-#, fuzzy
-#~| msgid "No shuoshuo found."
-#~ msgid "No results found."
-#~ msgstr "这里没有说说"
-
-#, fuzzy
-#~| msgid "Light Mode"
-#~ msgid "Right Top"
-#~ msgstr "浅色模式"
-
-#, fuzzy
-#~| msgid "Control Panel"
-#~ msgid "Contain"
-#~ msgstr "控制面板"
-
-#, fuzzy
-#~| msgid "Custom Meta Box"
-#~ msgid "Content Box"
-#~ msgstr "自定义单元"
-
-#, fuzzy
-#~| msgid "Dark Mode"
-#~ msgid "Darken"
-#~ msgstr "深色模式"
-
-#, fuzzy
-#~| msgid "Light Mode"
-#~ msgid "Lighten"
-#~ msgstr "浅色模式"
-
-#, fuzzy
-#~| msgid "Dashboard"
-#~ msgid "Dashed"
-#~ msgstr "管理后台"
-
-#, fuzzy
-#~| msgctxt "shuoshuo"
-#~| msgid "Add New"
-#~ msgid "Add New"
-#~ msgstr "添加"
-
-#, fuzzy
-#~| msgid "Are you sure you want set it private?"
-#~ msgid "Are you sure to delete this item?"
-#~ msgstr "是否要将其设置为私密？"
-
-#, fuzzy
-#~| msgid "Edit %s"
-#~ msgid "Edit Link"
-#~ msgstr "编辑 %s"
-
-#, fuzzy
-#~| msgid "remove image"
-#~ msgid "Remove Link"
-#~ msgstr "删除图像"
-
-#, fuzzy
-#~| msgid "Uploading..."
-#~ msgid "Upload"
-#~ msgstr "上传中..."
-
-#, fuzzy
-#~| msgid "Title Style"
-#~ msgid "Font Style"
-#~ msgstr "标题样式"
-
-#, fuzzy
-#~| msgid "All expand/collapse"
-#~ msgid "All Small Caps"
-#~ msgstr "全部展开/收缩"
-
-#, fuzzy
-#~| msgid "Emotion Color"
-#~ msgid "Font Color"
-#~ msgstr "心情颜色"
-
-#, fuzzy
-#~| msgid "Title Style"
-#~ msgid "Custom Style"
-#~ msgstr "标题样式"
-
-#, fuzzy
-#~| msgid "Custom Meta Box"
-#~ msgid "Custom Web Fonts"
-#~ msgstr "自定义单元"
-
-#, fuzzy
-#~| msgid "Please enter email address."
-#~ msgid "Please enter a valid email address."
-#~ msgstr "请填写电子邮件地址。"
-
-#, fuzzy
-#~| msgid "Please enter email address."
-#~ msgid "Please enter a valid number."
-#~ msgstr "请填写电子邮件地址。"
-
-#, fuzzy
-#~| msgid "Please enter email address."
-#~ msgid "Please enter a valid URL."
-#~ msgstr "请填写电子邮件地址。"
-
-#, fuzzy
-#~| msgid "Comments"
-#~ msgid "Number of Comments"
-#~ msgstr "条评论"
-
-#, fuzzy
-#~| msgid "Hello, "
-#~ msgid "Hello!"
-#~ msgstr "欢迎 "
-
-#, fuzzy
-#~| msgid "Site"
-#~ msgid "Site Icon"
-#~ msgstr "网站"
-
-#, fuzzy
-#~| msgid "Watching "
-#~ msgid "Matching Color"
-#~ msgstr "追番中 "
-
-#, fuzzy
-#~| msgid "Dark Mode"
-#~ msgid "Dark Mode Theme Color"
-#~ msgstr "深色模式"
-
-#, fuzzy
-#~| msgid "Comment Closed"
-#~ msgid "Commemorate Mode"
-#~ msgstr "评论关闭"
-
-#, fuzzy
-#~| msgid "Nav Menus"
-#~ msgid "Nav Menu Style"
-#~ msgstr "导航菜单"
-
-#, fuzzy
-#~| msgid "Nav Menus"
-#~ msgid "Nav Menu Radius"
-#~ msgstr "导航菜单"
-
-#, fuzzy
-#~| msgid "Nav Menus"
-#~ msgid "Nav Menu Font"
-#~ msgstr "导航菜单"
-
-#, fuzzy
-#~| msgid "Nav Menus"
-#~ msgid "Nav Menu Search"
-#~ msgstr "导航菜单"
-
-#, fuzzy
-#~| msgid "Toggle Page Background Image"
-#~ msgid "Search Area Background Image"
-#~ msgstr "切换页面背景图像"
-
-#, fuzzy
-#~| msgid "Nav Menus"
-#~ msgid "Nav Menu User Avatar"
-#~ msgstr "导航菜单"
-
-#, fuzzy
-#~| msgid "image"
-#~ msgid "Image"
-#~ msgstr "图像"
-
-#, fuzzy
-#~| msgid "Your browser does not support HTML5 video."
-#~ msgid "Footer description text, supports HTML code"
-#~ msgstr "您的浏览器不支持 HTML5 视频。"
-
-#, fuzzy
-#~| msgid "Search Shuoshuo"
-#~ msgid "Search Options"
-#~ msgstr "查找说说"
-
-#, fuzzy
-#~| msgid "Search result: %s"
-#~ msgid "Show pages in search results"
-#~ msgstr "搜索结果：%s"
-
-#, fuzzy
-#~| msgid "Captcha timeout."
-#~ msgid "Captcha Selection"
-#~ msgstr "验证码超时。"
-
-#, fuzzy
-#~| msgid "Location"
-#~ msgid "Local"
-#~ msgstr "来自"
-
-#, fuzzy
-#~| msgid "Toggle Page Background Image"
-#~ msgid "Cover Random Background Image Cache"
-#~ msgstr "切换页面背景图像"
-
-#, fuzzy
-#~| msgid "Light Mode"
-#~ msgid "Light filter"
-#~ msgstr "浅色模式"
-
-#, fuzzy
-#~| msgid "User Name"
-#~ msgid "Email Username"
-#~ msgstr "用户名"
-
-#, fuzzy
-#~| msgid "Posted on "
-#~ msgid "Post Area Icon"
-#~ msgstr "发布于 "
-
-#, fuzzy
-#~| msgid "Title Style"
-#~ msgid "Display Area Style"
-#~ msgstr "标题样式"
-
-#, fuzzy
-#~| msgid "Comments"
-#~ msgid "Common Options"
-#~ msgstr "条评论"
-
-#, fuzzy
-#~| msgid "Title Style"
-#~ msgid "Page Style"
-#~ msgstr "标题样式"
-
-#, fuzzy
-#~| msgid "Title Style"
-#~ msgid "Github Style"
-#~ msgstr "标题样式"
-
-#, fuzzy
-#~| msgid "Toggle Page Background Image"
-#~ msgid "Page Decoration Image"
-#~ msgstr "切换页面背景图像"
-
-#, fuzzy
-#~| msgid "License"
-#~ msgid "Article License"
-#~ msgstr "文章协议"
-
-#, fuzzy
-#~| msgid "Last updated on"
-#~ msgid "Last Updated"
-#~ msgstr "最后更新于 "
-
-#, fuzzy
-#~| msgid "Name* "
-#~ msgid "Name"
-#~ msgstr "昵称 "
-
-#, fuzzy
-#~| msgid "Comment reply notify"
-#~ msgid "Comment-related Options"
-#~ msgstr "邮件通知"
-
-#, fuzzy
-#~| msgid "Comment reply notify"
-#~ msgid "Comment Area Style"
-#~ msgstr "邮件通知"
-
-#, fuzzy
-#~| msgid "Comment reply notify"
-#~ msgid "Comment Area Function"
-#~ msgstr "邮件通知"
-
-#, fuzzy
-#~| msgid "Comment reply notify"
-#~ msgid "Comment Area Emoticon"
-#~ msgstr "邮件通知"
-
-#, fuzzy
-#~| msgid "Reserved Address"
-#~ msgid "Chevereto Address"
-#~ msgstr "保留地址"
-
-#, fuzzy
-#~| msgid "Reserved Address"
-#~ msgid "Lsky Pro Address"
-#~ msgstr "保留地址"
-
-#, fuzzy
-#~| msgid "Comment reply notify"
-#~ msgid "Comment Image Proxy"
-#~ msgstr "邮件通知"
-
-#, fuzzy
-#~| msgid "Comment reply notify"
-#~ msgid "Comment Email Notification"
-#~ msgstr "邮件通知"
-
-#, fuzzy
-#~| msgid "Toggle Page Background Image"
-#~ msgid "Login Screen Background Image"
-#~ msgstr "切换页面背景图像"
-
-#, fuzzy
-#~| msgid "Toggle Page Background Image"
-#~ msgid "Dashboard Background Image"
-#~ msgstr "切换页面背景图像"
-
-#, fuzzy
-#~| msgid "Dashboard"
-#~ msgid "Dashboard Text Color"
-#~ msgstr "管理后台"
-
-#, fuzzy
-#~| msgid "Post"
-#~ msgid "PostChat"
-#~ msgstr "文章"
-
-#, fuzzy
-#~| msgid "Uploaded successfully~"
-#~ msgid "Reset successfully"
-#~ msgstr "上传成功~"
-
-#, fuzzy
-#~| msgid "Light Mode"
-#~ msgid "ChatGPT Model"
-#~ msgstr "浅色模式"
-
-#, fuzzy
-#~| msgid "Search"
-#~ msgid "Live Search"
-#~ msgstr "搜索"
-
-#, fuzzy
-#~| msgid "Empty Address"
-#~ msgid "Custom Proxy Address"
-#~ msgstr "空地址"
-
-#, fuzzy
-#~| msgid "Light Mode"
-#~ msgid "Lightbox"
-#~ msgstr "浅色模式"
