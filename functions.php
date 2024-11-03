@@ -402,10 +402,10 @@ function customize_query_functions($query) {
             $query->set('post_type', array('post', 'shuoshuo'));
         }
 
-        // 在搜索页面中排除页面和特定类别
+        // 在搜索页面中排除分类页和其他类别
         if ($query->is_search) {
             $post_types = array('post', 'link');
-            //基础类型排除说说和页面，用户自行选择是否展示
+            //基础仅搜索文章，说说和页面用户自行选择是否展示
             $query->set('post_type', $post_types);
             $tax_query = array(
                 array(
