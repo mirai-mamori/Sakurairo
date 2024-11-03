@@ -507,14 +507,14 @@ background-image: url(<?=iro_opt('search_area_background'); ?>);
 
 .site-footer {
 background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparency'); ?>);
-<?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: blur(10px); <?php endif; ?>
-<?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: blur(10px); <?php endif; ?>
+<?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
+<?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
 }
 
 .wrapper {
 background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparency'); ?>);
-<?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: blur(10px); <?php endif; ?>
-<?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: blur(10px); <?php endif; ?>
+<?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
+<?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
 }
 
 /*首页圆角设置*/
@@ -953,7 +953,7 @@ li.link-item {
     #fff0, 
     #000d 
   );
-  backdrop-filter: blur(1px);
+  backdrop-filter: saturate(180%) blur(10px);
 }
 .post-title {
   background-color: transparent;
@@ -1211,8 +1211,8 @@ if(iro_opt('cover_half_screen_curve',true)){
     width: 150%;
     height: 4.375rem;
     background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparency'); ?>);
-<?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: blur(10px); <?php endif; ?>
-<?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: blur(10px); <?php endif; ?>
+<?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
+<?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
     left: -25%;
     bottom: -2.875rem;
     border-radius: 100%;

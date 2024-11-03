@@ -52,8 +52,8 @@ input:-webkit-autofill {
 	padding:0px !important;
 	margin:-235px 0px 0px -175px !important; 
     background-position: center 48%;
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: saturate(180%) blur(10px);
+	-webkit-backdrop-filter: saturate(180%) blur(10px);
 }
 
 #login form { 

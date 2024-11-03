@@ -616,7 +616,8 @@ input[type=week] {
     #fff0, 
     #00000080
   );
-  backdrop-filter: blur(1px);
+  backdrop-filter: saturate(150%) blur(1px);
+  transition: all 0.6s ease-in-out;
 }
 
 .pattern-center::after {
@@ -1099,7 +1100,7 @@ body.dark .site-title img {
   color:rgba(255, 255, 255, 0.8);
   white-space: nowrap;
   font-weight: var(--global-font-weight);
-  backdrop-filter: blur(5px);
+  backdrop-filter: saturate(180%) blur(10px);
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 3;
@@ -1123,7 +1124,7 @@ body.dark .site-title img {
   max-width: 70%;
   top: 10px;
   right: 10px;
-  backdrop-filter: blur(5px);
+  backdrop-filter: saturate(180%) blur(10px);
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 3;
@@ -1159,8 +1160,8 @@ body.dark .site-title img {
   bottom: 22%;
   left: 2%;
   border: 1px solid rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
   position: absolute;
   display: inline-flex;
   box-shadow: 0 1px 30px -4px #e8e8e8;
@@ -2678,7 +2679,7 @@ h1.main-title {
   box-sizing: initial;
   white-space: nowrap;
   font-weight: var(--global-font-weight);
-  backdrop-filter: blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
   transition: all 0.6s ease-in-out;
 }
 
@@ -2881,8 +2882,8 @@ h1.main-title {
   bottom: 0;
   visibility: hidden;
   opacity: 0;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
 }
 
 .search-form--modal .search-form__inner {
@@ -5161,7 +5162,7 @@ h5::before {
   float: right;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
   padding: 5px;
   font-size: 16px;
   width: 30px;
