@@ -856,6 +856,7 @@ li.link-item {
     letter-spacing: 1px;
     flex-direction: column;
     display: flex;
+    position: relative;
 }
 
 .post-title {
@@ -873,6 +874,7 @@ li.link-item {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    position: relative;
 }
 
 .post-list-thumb:nth-child(2n) .post-thumb{
