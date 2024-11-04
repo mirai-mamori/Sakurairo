@@ -28,7 +28,7 @@ if ($paged == 1 && !empty($sticky_posts)) {
     );
 	if (is_home() && !iro_opt('show_shuoshuo_on_home_page')) {
 		//是否在主页显示说说
-		$all_results_args['post_type'] = array('post');
+		$sticky_args['post_type'] = array('post');
 	}
     if ($is_author_page) {
         $sticky_args['author'] = get_the_author_meta('ID');
@@ -57,7 +57,7 @@ $non_sticky_args = array(
 );
 if (is_home() && !iro_opt('show_shuoshuo_on_home_page')) {
 	//是否在主页显示说说
-	$all_results_args['post_type'] = array('post');
+	$non_sticky_args['post_type'] = array('post');
 }
 if ($is_author_page) {
     $non_sticky_args['author'] = get_the_author_meta('ID'); // 只获取当前作者的文章
