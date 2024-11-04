@@ -391,7 +391,7 @@ add_action('save_post', 'save_custom_meta_box');
 function customize_query_functions($query) {
     //只影响前端
     if ($query->is_main_query() && !is_admin()) {
-        // 在主页、存档页、分类页、作者页显示文章和说说
+        //主页显示文章
         if (is_home()) {
             $post_types = array('post');
         //index引用content-thumb，其中根据设置项决定是否在主页显示说说
@@ -401,10 +401,10 @@ function customize_query_functions($query) {
             $query->set('post_type', array('post', 'shuoshuo'));
         }
 
-        // 在搜索页面中排除页面和特定类别
+        // 在搜索页面中排除分类页和特定类别
         if ($query->is_search) {
             $post_types = array('post', 'link');
-            //基础类型排除说说和页面，用户自行选择是否展示
+            //基础类型排除说说和页面，用户自行选择是否展示，默认开启
             $query->set('post_type', $post_types);
             $tax_query = array(
                 array(
