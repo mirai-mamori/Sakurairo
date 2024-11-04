@@ -17,7 +17,6 @@ $sticky_posts = get_option('sticky_posts');
 $all_results_args = array(
     'post_type' => array('post', 'shuoshuo'),
     'post_status' => 'publish',
-    'posts_per_page' => -1,
 	'posts_per_page' => 10, // 每页显示10篇文章
 	'paged' => $paged,
     'orderby' => 'post_date',
