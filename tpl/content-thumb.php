@@ -8,57 +8,67 @@
  * @package Sakurairo
  */
 
+// Combine posts and shuoshuo
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
+// Determine if we are on an author page
 $is_author_page = is_author() && !is_home() && !is_category() && !is_tag();
 
 $sticky_posts = get_option('sticky_posts');
 
-$all_results_args = array(
+// Query for sticky posts (only on the first page)
+if ($paged == 1 && !empty($sticky_posts)) {
+    $sticky_args = array(
+        'post_type' => array('post', 'shuoshuo'),
+        'post_status' => 'publish',
+        'posts_per_page' => -1, // Get all sticky posts
+        'post__in' => $sticky_posts,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+    );
+	if (is_home() && !iro_opt('show_shuoshuo_on_home_page')) {
+		//是否在主页显示说说
+		$all_results_args['post_type'] = array('post');
+	}
+    if ($is_author_page) {
+        $sticky_args['author'] = get_the_author_meta('ID');
+    }
+
+    $sticky_query = new WP_Query($sticky_args);
+
+    // Display sticky posts
+    if ($sticky_query->have_posts()) :
+        while ($sticky_query->have_posts()) : $sticky_query->the_post();
+            get_template_part('tpl/content', 'thumbcard');
+        endwhile;
+    endif;
+}
+
+// Query for non-sticky posts
+$non_sticky_args = array(
     'post_type' => array('post', 'shuoshuo'),
     'post_status' => 'publish',
-	'posts_per_page' => 10, // 每页显示10篇文章
-	'paged' => $paged,
+    'posts_per_page' => 10, // 每页显示10篇文章
     'orderby' => 'post_date',
     'order' => 'DESC',
+    'paged' => $paged,
+    'post__not_in' => $sticky_posts,
+    'ignore_sticky_posts' => 1
 );
-
 if (is_home() && !iro_opt('show_shuoshuo_on_home_page')) {
-    //是否在主页显示说说
-    $all_results_args['post_type'] = array('post');
+	//是否在主页显示说说
+	$all_results_args['post_type'] = array('post');
 }
-
 if ($is_author_page) {
-    $all_results_args['author'] = get_the_author_meta('ID');
+    $non_sticky_args['author'] = get_the_author_meta('ID'); // 只获取当前作者的文章
 }
 
-$all_results_query = new WP_Query($all_results_args);
+$non_sticky_query = new WP_Query($non_sticky_args);
 
-	//结果
-	$all_results = [];
-	$sticky_results = [];
-	$non_sticky_results = [];
-	
-	//分类置顶内容和非置顶内容
-	if ($all_results_query->have_posts()) :
-		while ($all_results_query->have_posts()) : $all_results_query->the_post();
-		if (in_array(get_the_ID(), $sticky_posts)) {
-			$sticky_results[] = $post;
-		} else {
-			$non_sticky_results[] = $post;
-		}
-	    endwhile;
-	endif;
-	wp_reset_postdata();
-
-// 合并结果, 优先展示置顶文章
-$all_results = array_merge($sticky_results, $non_sticky_results);
-
-//输出所有内容
-if (!empty($all_results)) :
-    foreach ($all_results as $post) :
-        setup_postdata($post);
+// Display non-sticky posts
+if ($non_sticky_query->have_posts()) :
+    while ($non_sticky_query->have_posts()) : $non_sticky_query->the_post();
         get_template_part('tpl/content', 'thumbcard');
-    endforeach;
+    endwhile;
 endif;
 ?>
