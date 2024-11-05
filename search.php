@@ -43,7 +43,7 @@ get_header(); ?>
     if (!iro_opt('patternimg') || !get_random_bg_url()) : ?>
         <header class="page-header">
             <h1 class="page-title"><?php printf(esc_html__('Search result: %s', 'sakurairo'), '<span>' . esc_html($search_query) . '</span>'); ?></h1>
-        </header>
+        </header><!-- .page-header -->
     <?php endif; ?>
 
     <?php
