@@ -1104,7 +1104,6 @@ $prefix = 'iro_options';
         'id' => 'only_admin_can_search_pages',
         'type' => 'switcher',
         'title' => __('Only administrators can search pages','sakurairo_csf'),
-        'desc' => __('If you have too many sensitive pages to exclude them one by one','sakurairo_csf'),
         'dependency' => array( 'search_for_pages', '==', 'true', '', 'true' ),
         'default' => true
       ),
