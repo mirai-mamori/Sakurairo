@@ -101,7 +101,7 @@ get_header(); ?>
         // 结果处理，排序，展示
         $all_results = [];
         if ($all_results_query->have_posts()) :
-            if (iro_opt('pin_sticky_content')) {
+            if (iro_opt('sticky_pinned_content')) {
                 //置顶文章是否在检索中也置顶
                 $sticky_results = [];
                 $non_sticky_results = [];
