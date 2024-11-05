@@ -1113,7 +1113,7 @@ $prefix = 'iro_options';
         'id' => 'custom_exclude_search_results',
         'type' => 'text',
         'title' => __('Exclude some content in search results','sakurairo_csf'),
-        'desc' => __('Fill in the posts or pages IDs that need to be excluded, such as "12,34".Recommend to fill in the custom login page id','sakurairo_csf'),
+        'desc' => __('Fill in the posts or pages IDs that need to be excluded, such as "12,34".Recommend to fill in the custom login page id,and you can get them from the edit page of those content.','sakurairo_csf'),
       ),
 
     )
