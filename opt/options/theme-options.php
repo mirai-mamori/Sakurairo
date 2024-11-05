@@ -1080,6 +1080,13 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'sticky_pinned_content',
+        'type' => 'switcher',
+        'title' => __('Pinned contents will show at the top of the search results','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
         'id' => 'search_for_shuoshuo',
         'type' => 'switcher',
         'title' => __('Show shuoshuo in search results','sakurairo_csf'),
@@ -1094,10 +1101,19 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'sticky_pinned_content',
+        'id' => 'only_admin_can_search_pages',
         'type' => 'switcher',
-        'title' => __('Pinned contents will show at the top of the search results','sakurairo_csf'),
+        'title' => __('Only administrators can search pages','sakurairo_csf'),
+        'desc' => __('If you have too many sensitive pages to exclude them one by one','sakurairo_csf'),
+        'dependency' => array( 'search_for_pages', '==', 'true', '', 'true' ),
         'default' => true
+      ),
+
+      array(
+        'id' => 'custom_exclude_search_results',
+        'type' => 'text',
+        'title' => __('Exclude some content in search results','sakurairo_csf'),
+        'desc' => __('Fill in the posts or pages IDs that need to be excluded, such as "12,34".Recommend to fill in the custom login page id','sakurairo_csf'),
       ),
 
     )
