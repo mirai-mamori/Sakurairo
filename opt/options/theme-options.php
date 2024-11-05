@@ -1094,7 +1094,7 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'pin_sticky_content',
+        'id' => 'sticky_pinned_content',
         'type' => 'switcher',
         'title' => __('Pinned contents will show at the top of the search results','sakurairo_csf'),
         'default' => true
