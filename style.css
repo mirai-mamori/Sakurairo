@@ -1577,7 +1577,7 @@ h1.page-title {
   max-width: 70%;
   width: fit-content;
   position: relative;
-  height: 110px;
+  min-height: 110px;
   left: 50%;
   transform: translateX(-50%);
   margin: 10% 0;
@@ -1636,8 +1636,8 @@ h1.page-title {
   font-size: 14px;
   font-weight: var(--global-font-weight);
   text-align: center;
-  overflow: hidden;
-  max-height: 20px;
+  overflow: auto;
+  max-height: 400px;
   height: fit-content;
   margin: 0 10px;
 }
