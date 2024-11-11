@@ -52,6 +52,11 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   margin-top: 15px;
 }
 
+.menu-wrapper {
+  display: flex;
+  flex-grow: 1; /* 菜单容器 */
+}
+
 .site-top .lower {
   animation: searchbox 1s;
   position: relative;
@@ -8331,7 +8336,12 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   }
   
   .header-user-avatar {
-    margin-top: 15px !important;
+    position: absolute; 
+    right: 10px; 
+    top: 10px !important; 
+    margin: 0; 
+    transform: translateY(-50%);
+    animation: none; /* 禁用动画，因为使用该方法会异常导致页面刷新时头像位置闪烁影响观感 */
   }
   
  .site-top {

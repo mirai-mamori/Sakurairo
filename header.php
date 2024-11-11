@@ -156,14 +156,18 @@ header('X-Frame-Options: SAMEORIGIN');
 			if (iro_opt('nav_menu_search') == '1') { ?>
 				<div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
 			<?php } ?>
-			<div class="lower"><?php if (iro_opt('nav_menu_display') == 'fold') { ?>
+			<div class="menu-wrapper" style="justify-content: <?php echo iro_opt('nav_menu_distribution'); ?>;"> <!-- 菜单容器 -->
+			<div class="lower">
+				<?php if (iro_opt('nav_menu_display') == 'fold') { ?>
 					<div id="show-nav" class="showNav">
 						<div class="line line1"></div>
 						<div class="line line2"></div>
 						<div class="line line3"></div>
-					</div><?php } ?>
-				<nav><?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => false]); ?></nav><!-- #site-navigation -->
+					</div>
+				<?php } ?>
+				<nav><?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => false]); ?></nav>
 			</div>
+		</div><!-- .menu-wrapper -->
 		</div>
 	</header><!-- #masthead -->
 	<div class="openNav no-select">
