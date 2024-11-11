@@ -1017,6 +1017,9 @@ body.dark .post-title:hover{
     position: fixed;
     border-radius: 0 !important;
 }
+.header-user-avatar {
+    top: 30px !important; 
+}
 .yya {
     border-radius: 0 !important;
 }
