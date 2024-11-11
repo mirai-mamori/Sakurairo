@@ -438,6 +438,19 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id'         => 'nav_menu_distribution',
+        'type'       => 'select',
+        'title'      => __('Nav Menu Options Display Method','sakurairo_csf'),
+        'desc'    => __('Distribution method of menu options','sakurairo_csf'),
+        'options'    => array(
+          'left' => __('Keep to the left','sakurairo_csf'),
+          'right' => __('Keep to the right','sakurairo_csf'),
+          'center' => __('Always centered','sakurairo_csf'),
+        ),
+        'default'    => 'right'
+      ),
+
+      array(
         'id'    => 'nav_menu_radius',
         'type'  => 'slider',
         'title' => __('Nav Menu Radius','sakurairo_csf'),
