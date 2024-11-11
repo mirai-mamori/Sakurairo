@@ -8338,7 +8338,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   .header-user-avatar {
     position: absolute; 
     right: 10px; 
-    top: 10px !important; 
+    top: 10px; 
     margin: 0; 
     transform: translateY(-50%);
     animation: none; /* 禁用动画，因为使用该方法会异常导致页面刷新时头像位置闪烁影响观感 */
