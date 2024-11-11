@@ -130,8 +130,12 @@
 						'title_reply' => '',
 						'title_reply_to' => '<div class="graybar"><i class="fa-regular fa-comment"></i>' . __('Leave a Reply to', 'sakurairo') . ' %s' . '</div>',
 						'cancel_reply_link' => __('Cancel Reply', 'sakurairo'),
-						'label_submit' => __('BiuBiuBiu~', 'sakurairo'),
-						'comment_field' => '<p style="font-style:italic"><a href="https://segmentfault.com/markdown" target="_blank"><i class="fa-brands fa-markdown" style="color:var(--article-theme-highlight,var(--theme-skin-matching));"></i></a> Markdown Supported while <i class="fa-solid fa-code"></i> Forbidden</p><div class="comment-textarea"><textarea placeholder="' . __("You are a surprise that I will only meet once in my life", "sakurairo") . ' ..." name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea><label class="input-label">' . __("You are a surprise that I will only meet once in my life", "sakurairo") . ' ...</label></div>
+						'label_submit' => esc_attr(iro_opt('comment_submit_button_text')),
+						'comment_field' => '<p style="font-style:italic"><a href="https://segmentfault.com/markdown" target="_blank"><i class="fa-brands fa-markdown" style="color:var(--article-theme-highlight,var(--theme-skin-matching));"></i></a> Markdown Supported while <i class="fa-solid fa-code"></i> Forbidden</p>
+						                    <div class="comment-textarea">
+											    <textarea placeholder="' . esc_attr(iro_opt('comment_placeholder_text')) . '" name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea>
+												<label class="input-label">' . esc_html(iro_opt('comment_placeholder_text')) . '</label>
+											</div>
                         <div id="upload-img-show"></div>
                         <!--插入表情面版-->
                         ' . $smilies_panel . '
