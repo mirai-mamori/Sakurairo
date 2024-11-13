@@ -16,6 +16,8 @@ $is_author_page = is_author() && !is_home() && !is_category() && !is_tag();
 
 $sticky_posts = get_option('sticky_posts');
 
+$show_shuoshuo_on_home_page = iro_opt('show_shuoshuo_on_home_page');
+
 // Query for sticky posts (only on the first page)
 if ($paged == 1 && !empty($sticky_posts)) {
     $sticky_args = array(
@@ -27,6 +29,10 @@ if ($paged == 1 && !empty($sticky_posts)) {
         'order' => 'DESC',
     );
 
+    if (is_home() && !$show_shuoshuo_on_home_page) {
+        $all_results_args['post_type'] = array('post');
+    }
+	
     if ($is_author_page) {
         $sticky_args['author'] = get_the_author_meta('ID');
     }
@@ -52,6 +58,10 @@ $non_sticky_args = array(
     'post__not_in' => $sticky_posts,
     'ignore_sticky_posts' => 1
 );
+
+if (is_home() && !$show_shuoshuo_on_home_page) {
+    $all_results_args['post_type'] = array('post');
+}
 
 if ($is_author_page) {
     $non_sticky_args['author'] = get_the_author_meta('ID'); // 只获取当前作者的文章
