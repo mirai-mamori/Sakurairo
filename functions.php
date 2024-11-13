@@ -387,12 +387,39 @@ function save_custom_meta_box($post_id) {
 }
 add_action('save_post', 'save_custom_meta_box');
 
-function include_shuoshuo_in_main_query($query) {
-    if ($query->is_main_query() && !is_admin() && (is_home() || is_archive())) {
-        $query->set('post_type', array('post', 'shuoshuo'));
+//合并检索方法
+function customize_query_functions($query) {
+    //只影响前端
+    if ($query->is_main_query() && !is_admin()) {
+        //主页显示文章
+        if (is_home()) {
+            $post_types = array('post');
+        //index引用content-thumb，其中根据设置项决定是否在主页显示说说
+            $query->set('post_type', $post_types);
+        } elseif (is_archive() || is_category() || is_author()) {
+            // 保持其他页面的原有逻辑
+            $query->set('post_type', array('post', 'shuoshuo'));
+        }
+
+        // 在搜索页面中排除分类页和特定类别
+        if ($query->is_search) {
+            $post_types = array('post', 'link');
+            //基础类型排除说说和页面，用户自行选择是否展示，默认开启
+            $query->set('post_type', $post_types);
+            $tax_query = array(
+                array(
+                    'taxonomy' => 'category',
+                    'field'    => 'name',
+                    'terms'    => get_search_query(),
+                    'operator' => 'NOT IN'
+                )
+            );
+            $query->set('tax_query', $tax_query);
+        }
     }
 }
-add_action('pre_get_posts', 'include_shuoshuo_in_main_query');
+
+add_action('pre_get_posts', 'customize_query_functions');
 
 function admin_lettering()
 {
@@ -2615,27 +2642,6 @@ if (iro_opt('show_location_in_manage')) {
     add_filter('manage_edit-comments_columns', 'iro_add_location_to_comments_columns');
     add_action('manage_comments_custom_column', 'iro_output_ip_location_columns', 10, 2);
 }
-
-// Modify search query to exclude pages and categories(修改搜索查询以排除'页面'和'类别')
-function exclude_pages_and_categories_from_search($query) {
-    if (!is_admin() && $query->is_search) {
-        // Exclude pages
-        $query->set('post_type', array('post', 'shuoshuo', 'link')); // Include other post types but exclude 'page'
-
-        // Exclude categories
-        $tax_query = array(
-            array(
-                'taxonomy' => 'category',
-                'field' => 'name',
-                'terms' => get_search_query(),
-                'operator' => 'NOT IN'
-            )
-        );
-        $query->set('tax_query', $tax_query);
-    }
-    return $query;
-}
-add_filter('pre_get_posts', 'exclude_pages_and_categories_from_search');
 
 function iterator_to_string(Iterator $iterator): string
 {
