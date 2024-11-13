@@ -71,38 +71,37 @@ get_header(); ?>
 
     if (iro_opt('enable_search_filter')) : ?>
         <!-- 筛选器部分 -->
-        <div id="filter-container" style="background-color: <?php echo esc_attr(iro_opt('theme_skin')); ?>; opacity: 0.75; border-radius: 8px; padding: 15px; margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
-
-            <div style="background-color: #FFFFFF; color: #000000; padding: 5px 15px; border-radius: 20px; font-weight: bold;">
+        <div id="filter-container">
+            <div class="filter-count">
                 <?php echo $all_results_query->found_posts; ?> <?php echo __('results found', 'sakurairo'); ?>
             </div>
 
-            <form id="search-filter-form" action="" method="GET" style="display: flex; align-items: center; color: #FFFFFF;">
+            <form id="search-filter-form" action="" method="GET">
                 <?php if ($search_query) : ?>
                     <input type="hidden" name="s" value="<?php echo esc_attr($search_query); ?>">
                 <?php endif; ?>
 
-                <label style="margin-right: 15px;">
+                <label>
                     <input type="checkbox" name="content_type[]" value="post" <?php echo in_array('post', $content_types) ? 'checked' : ''; ?>> <?php echo __('Post', 'sakurairo'); ?>
                 </label>
 
                 <?php if (iro_opt('search_for_shuoshuo')) : ?>
-                    <label style="margin-right: 15px;">
+                    <label>
                         <input type="checkbox" name="content_type[]" value="shuoshuo" <?php echo in_array('shuoshuo', $content_types) ? 'checked' : ''; ?>> <?php echo __('shuoshuo', 'sakurairo'); ?>
                     </label>
                 <?php endif; ?>
 
                 <?php if ($show_pages_filter) : ?>
-                    <label style="margin-right: 15px;">
+                    <label>
                         <input type="checkbox" name="content_type[]" value="page" <?php echo in_array('page', $content_types) ? 'checked' : ''; ?>> <?php echo __('Page', 'sakurairo'); ?>
                     </label>
                 <?php endif; ?>
             </form>
-            
-            <div style="cursor: pointer; color: #FFFFFF; font-size: 1.2em; text-align: right;" title="<?php echo __('If no option is selected, all results are retrieved by default', 'sakurairo'); ?>" onclick="applyFilter()">
+
+            <div id="filter-toggle" title="<?php echo __('If no option is selected, all results are retrieved by default', 'sakurairo'); ?>" onclick="applyFilter()">
                 <i class="fas fa-filter"></i> <?php echo __('Click to filter', 'sakurairo'); ?>
-            </div>
         </div>
+    </div>
     <?php endif; ?>
 
     <script>
@@ -167,7 +166,7 @@ get_header(); ?>
         ));
     else :
         ?>
-        <div class="search-box">
+        <div class="search-box" style="margin-top: 15px;">
             <!-- search start -->
             <form class="s-search">
                 <input class="text-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
