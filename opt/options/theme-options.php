@@ -1072,6 +1072,12 @@ $prefix = 'iro_options';
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'id' => 'enable_search_filter',
         'type' => 'switcher',
         'title' => __('Enable search filter','sakurairo_csf'),
