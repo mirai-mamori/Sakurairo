@@ -3,7 +3,7 @@ function customizer_css() { ?>
 <style>
 <?php // Style Settings
 if(iro_opt('nav_menu_display') == 'unfold'){ ?>
-.site-top .lower nav {display: block !important;}
+.site-top .lower nav {display: flex !important;}
 <?php } // Style Settings ?>
 <?php 
 /**
@@ -652,7 +652,6 @@ h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,
 	-moz-animation: fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
     -webkit-animation:fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
 	animation: fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
-    max-width: 76vw;
 }
 @-moz-keyframes fadeInLeft {
 	0% {
