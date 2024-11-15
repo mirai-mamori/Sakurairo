@@ -156,9 +156,26 @@ header('X-Frame-Options: SAMEORIGIN');
 			if (iro_opt('nav_menu_search') == '1') { ?>
 				<div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
 			<?php } ?>
-			<div class="menu-wrapper" style="justify-content: <?php echo iro_opt('nav_menu_distribution'); ?>;"> <!-- 菜单容器 -->
+			<?php $nav_menu_display = iro_opt('nav_menu_display'); //菜单是否展开 ?>
+			<div class="menu-wrapper"> <!-- 菜单容器 -->
+				<style>
+					.site-top ul {
+						justify-content: <?php echo iro_opt('nav_menu_distribution'); ?>;
+					};
+
+					.site-top .lower nav {
+						<?php if ($nav_menu_display == 'fold') {
+							echo "width: 92%;";
+							}else{
+								echo "width: 100%;";
+							};?>
+					}
+					.site-top ul li {
+						margin: 0 <?php echo iro_opt('menu_option_spacing'); ?>px;
+					};
+				</style>
 			<div class="lower">
-				<?php if (iro_opt('nav_menu_display') == 'fold') { ?>
+				<?php if ($nav_menu_display == 'fold') { ?>
 					<div id="show-nav" class="showNav">
 						<div class="line line1"></div>
 						<div class="line line2"></div>
