@@ -161,18 +161,18 @@ header('X-Frame-Options: SAMEORIGIN');
 				<style>
 					.site-top ul {
 						justify-content: <?php echo iro_opt('nav_menu_distribution'); ?>;
-					};
+					}
 
 					.site-top .lower nav {
 						<?php if ($nav_menu_display == 'fold') {
-							echo "width: 92%;";
+							    echo "width: 92%;";
 							}else{
 								echo "width: 100%;";
 							};?>
 					}
 					.site-top ul li {
 						margin: 0 <?php echo iro_opt('menu_option_spacing'); ?>px;
-					};
+					}
 				</style>
 			<div class="lower">
 				<?php if ($nav_menu_display == 'fold') { ?>

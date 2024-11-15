@@ -870,7 +870,6 @@ body.dark .site-title img {
   position: relative;
   float: right;
   display: none;
-  width: 90%;
   animation: searchbox .4s;
 }
 
@@ -883,7 +882,6 @@ body.dark .site-title img {
 
 .site-top ul li {
   float: left;
-  margin: 0 14px;
   position: relative;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
