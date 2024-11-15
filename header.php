@@ -182,7 +182,7 @@ header('X-Frame-Options: SAMEORIGIN');
 						<div class="line line3"></div>
 					</div>
 				<?php } ?>
-				<nav><?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => false]); ?></nav>
+				<?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => 'nav']); ?>
 			</div>
 		</div><!-- .menu-wrapper -->
 		</div>
