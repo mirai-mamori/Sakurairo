@@ -3,7 +3,7 @@ function customizer_css() { ?>
 <style>
 <?php // Style Settings
 if(iro_opt('nav_menu_display') == 'unfold'){ ?>
-.site-top .lower nav {display: flex !important;}
+.site-top .lower nav {display: block !important;}
 <?php } // Style Settings ?>
 <?php 
 /**
