@@ -446,8 +446,21 @@ $prefix = 'iro_options';
           'left' => __('Keep to the left','sakurairo_csf'),
           'right' => __('Keep to the right','sakurairo_csf'),
           'center' => __('Always centered','sakurairo_csf'),
+          'space-between'  => __('Even distribution','sakurairo_csf'),
         ),
         'default'    => 'right'
+      ),
+
+      array(
+        'id' => 'menu_option_spacing',
+        'type' => 'slider',
+        'title' => __('Menu option left and right spacing','sakurairo_csf'),
+        'desc'    => __('You can manually adjust the option spacing to achieve more distribution effects, the default is 14','sakurairo_csf'),
+        'step' => '1',
+        'unit' => 'px',
+        'min' => '1',
+        'max' => '150',
+        'default' => '14'
       ),
 
       array(
