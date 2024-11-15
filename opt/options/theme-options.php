@@ -1072,6 +1072,12 @@ $prefix = 'iro_options';
     'fields' => array(
 
       array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
         'id' => 'enable_search_filter',
         'type' => 'switcher',
         'title' => __('Enable search filter','sakurairo_csf'),
@@ -1113,6 +1119,23 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('Exclude some content in search results','sakurairo_csf'),
         'desc' => __('Fill in the posts or pages IDs that need to be excluded, such as "12,34".Recommend to fill in the custom login page id,and you can get them from the edit page of those content.','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'live_search',
+        'type' => 'switcher',
+        'title' => __('Live Search','sakurairo_csf'),
+        'label' => __('After turning on the live search in the frontend, call Rest API to update the cache once an hour. You can set the cache time manually in api.php','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'live_search_comment',
+        'type' => 'switcher',
+        'title' => __('Live Search Comment Support','sakurairo_csf'),
+        'dependency' => array( 'live_search', '==', 'true', '', 'true' ),
+        'label' => __('Enable to search for comments in live search (not recommended if site has too many comments)','sakurairo_csf'),
+        'default' => false
       ),
 
     )
@@ -3747,23 +3770,6 @@ $prefix = 'iro_options';
           'type_4' => __('23K Visits','sakurairo_csf'),
         ),
         'default' => 'type_1'
-      ),
-
-      array(
-        'id' => 'live_search',
-        'type' => 'switcher',
-        'title' => __('Live Search','sakurairo_csf'),
-        'label' => __('After turning on the live search in the frontend, call Rest API to update the cache once an hour. You can set the cache time manually in api.php','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
-        'id' => 'live_search_comment',
-        'type' => 'switcher',
-        'title' => __('Live Search Comment Support','sakurairo_csf'),
-        'dependency' => array( 'live_search', '==', 'true', '', 'true' ),
-        'label' => __('Enable to search for comments in live search (not recommended if site has too many comments)','sakurairo_csf'),
-        'default' => false
       ),
 
       array(
