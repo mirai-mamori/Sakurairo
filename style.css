@@ -835,6 +835,7 @@ input[type=week] {
 
 .site-header.yya {
   background: rgba(255, 255, 255, .7);
+  backdrop-filter: blur(4px);
   border-bottom: 1.5px solid #FFFFFF;
   transition: all 0.6s ease-in-out;
   width: 100%;
