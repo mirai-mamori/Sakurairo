@@ -1,10 +1,6 @@
 <?php
 function customizer_css() { ?>
 <style>
-<?php // Style Settings
-if(iro_opt('nav_menu_display') == 'unfold'){ ?>
-.site-top .lower nav {display: block !important;}
-<?php } // Style Settings ?>
 <?php 
 /**
  * theme-skin
@@ -34,107 +30,6 @@ if (iro_opt('theme_skin')) { ?>
     }
 <?php } ?>
 .the-feature.from_left_and_right .info,.the-feature.from_left_and_right .info h3{background: <?=iro_opt('exhibition_background_color'); ?> ;}
-
-/*白猫样式Logo*/
-<?php if (iro_opt('mashiro_logo_option', 'true')) {
-     $mashiro_logo = iro_opt('mashiro_logo');
-    ?>
-    .logolink{
-        font-family: '<?= $mashiro_logo['font_name']; ?>','Noto Sans SC';
-    }
-
-.logolink .sakuraso {
-    background-color: rgba(255, 255, 255, .5);
-    border-radius: 5px;
-    color: <?=iro_opt('theme_skin'); ?>;
-    height: auto;
-    line-height: 25px;
-    margin-right: 0;
-    padding-bottom: 0px;
-    padding-top: 1px;
-    text-size-adjust: 100%;
-    width: auto
-}
- 
-.logolink a:hover .sakuraso {
-    background-color: <?=iro_opt('theme_skin_matching'); ?>;
-    color: #fff;
-}
- 
-.logolink a:hover .shironeko,
-.logolink a:hover .no,
-.logolink a:hover rt {
-    color: <?=iro_opt('theme_skin_matching'); ?>;
-}
- 
-.logolink.moe-mashiro a {
-    color: <?=iro_opt('theme_skin'); ?>;
-    float: left;
-    font-size: 25px;
-    font-weight: 800;
-    height: 50px;
-    line-height: 40px;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 8px;
-    text-decoration-line: none;
-}
-@media (max-width:860px) {
-.logolink.moe-mashiro a {
-    color: <?=iro_opt('theme_skin'); ?>;
-    float: left;
-    font-size: 25px;
-    font-weight: 800;
-    height: 56px;
-    line-height: 56px;
-    padding-left: 6px;
-    padding-right: 15px;
-    padding-top: 11px;
-}
-}
-.logolink.moe-mashiro .sakuraso {
-    font-size: 25px;
-    padding-bottom: 4px;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-top: 2px;
-}
- 
-.logolink.moe-mashiro .no {
-    font-size: 25px;
-    padding-bottom: 4px;
-    padding-top: 2px;
-}
-
-.logolink.moe-mashiro .no {
-    font-size: 20px;
-    display: inline-block;
-    margin-left: 5px;
-}
- 
-.logolink a:hover .no {
-    -webkit-animation: spin 1.5s linear infinite;
-    animation: spin 1.5s linear infinite;
-}
- 
-.logolink ruby {
-    ruby-position: under;
-    -webkit-ruby-position: after;
-}
- 
-.logolink ruby rt {
-    font-size: 10px;
-    letter-spacing:2px;
-    transform: translateY(-6px);
-    opacity: 0;
-    transiton-property: opacity;
-    transition-duration: 0.5s, 0.5s;
-}
- 
-.logolink a:hover ruby rt {
-    opacity: 1
-}
-<?php } ?>
 
 <?php $text_logo = iro_opt('text_logo'); ?>
 .center-text{
@@ -358,7 +253,6 @@ body.dark .top-social i,body.dark .bg-switch
 body.dark .the-feature.from_left_and_right .info
 {background-color: rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);transition: all 0.6s ease-in-out;}
 
-body.dark .yya,
 body.dark input[type=submit] 
 {background-color:rgba(38,38,38,<?=iro_opt('theme_darkmode_widget_transparency'); ?>) !important;transition: all 0.6s ease-in-out;}
 
@@ -373,10 +267,6 @@ body.dark iframe,
 body.dark .entry-content .aplayer,
 body.dark .post-thumb video
 {filter:brightness(<?=iro_opt('theme_darkmode_img_bright'); ?>);}
-@media (max-width: 1200px){
-body.dark .site-top .lower nav.navbar ul 
-{background: rgba(255,255,255,0);}
-}
 
 /*字体*/
 
@@ -406,16 +296,16 @@ font-family:<?=iro_opt('global_font_2'); ?> !important;
 font-size: <?=iro_opt('global_font_size'); ?>px;
 }
 
-.site-top ul li a,.header-user-name,.header-user-menu a {
+.site-header a,.header-user-name,.header-user-menu a {
 font-family:<?=iro_opt('nav_menu_font'); ?> !important;
 }
 
-<?php if (iro_opt('mashiro_logo')) {
-$mashiro_logo = iro_opt('mashiro_logo');
+<?php if (iro_opt('nav_text_logo')) {
+$nav_text_logo = iro_opt('nav_text_logo');
 ?>
 
 .site-title a{
-font-family: '<?php echo $mashiro_logo['font_name']; ?>';
+font-family: '<?php echo $nav_text_logo['font_name']; ?>';
 }
 
 <?php } ?>
@@ -643,81 +533,6 @@ h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,
 	-moz-animation: homepage-load-animation  <?=iro_opt('cover_animation_time'); ?>s;
     -webkit-animation:homepage-load-animation  <?=iro_opt('cover_animation_time'); ?>s;
 	animation: homepage-load-animation  <?=iro_opt('cover_animation_time'); ?>s;
-}
-<?php endif; ?>
-
-/*导航菜单动画*/
-<?php if (iro_opt('nav_menu_animation', 'true')): ?>
-.site-top ul {
-	-moz-animation: fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
-    -webkit-animation:fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
-	animation: fadeInLeft  <?=iro_opt('nav_menu_animation_time'); ?>s;
-    max-width: 76vw;
-}
-@-moz-keyframes fadeInLeft {
-	0% {
-		-moz-transform: translateX(100%);
-		transform: translateX(100%);
-		opacity: 0
-	}
- 
-	50% {
-		-moz-transform: translateX(100%);
-		transform: translateX(100%);
-		opacity: 0
-	}
- 
-	100% {
-		-moz-transform: translateX(0%);
-		transform: translateX(0%);
-		opacity: 1
-	}
-}
- 
-@-webkit-keyframes fadeInLeft {
-	0% {
-		-webkit-transform: translateX(100%);
-		transform: translateX(100%);
-		opacity: 0
-	}
- 
-	50% {
-		-webkit-transform: translateX(100%);
-		transform: translateX(100%);
-		opacity: 0
-	}
- 
-	100% {
-		-webkit-transform: translateX(0%);
-		transform: translateX(0%);
-		opacity: 1
-	}
-}
- 
-@keyframes fadeInLeft {
-	0% {
-		-moz-transform: translateX(100%);
-		-ms-transform: translateX(100%);
-		-webkit-transform: translateX(100%);
-		transform: translateX(100%);
-		opacity: 0
-	}
- 
-	50% {
-		-moz-transform: translateX(100%);
-		-ms-transform: translateX(100%);
-		-webkit-transform: translateX(100%);
-		transform: translateX(100%);
-		opacity: 0
-	}
- 
-	100% {
-		-moz-transform: translateX(0%);
-		-ms-transform: translateX(0%);
-		-webkit-transform: translateX(0%);
-		transform: translateX(0%);
-		opacity: 1
-	}
 }
 <?php endif; ?>
 
@@ -985,103 +800,21 @@ body.dark .post-title:hover{
 }
 <?php } ?>
 
-<?php if(iro_opt('nav_menu_style') == 'sakurairo'){ ?>
-.yya {
-    position: fixed;
-    -webkit-transition: all 1s ease !important;
-    transition: all 1s ease !important;
-    border-radius: <?=iro_opt('nav_menu_radius', ''); ?>px !important;
-}
-.site-title img {
-    margin-left: 10px;
-}
+<?php if(iro_opt('nav_menu_style') == 'center'){ ?>
 .site-header {
-    border-radius: <?=iro_opt('nav_menu_radius', ''); ?>px !important;
+  justify-content: center;
 }
 .header-user-menu {
-    border-radius: <?=iro_opt('nav_menu_secondary_radius', ''); ?>px !important;
+  right: -105%;
 }
-.lower li ul {
-    border-radius: <?=iro_opt('nav_menu_secondary_radius', ''); ?>px !important;
-}
-@media (max-width:860px) {
-.openNav .icon {
-        left: 5vw;
-    }
+<?php }if(iro_opt('nav_menu_style') == 'space-between'){ ?>
 .site-header {
-    width: 100%;
-    height: 60px;
-    top: 0;
-    left: 0;
-    background: 0 0;
-    position: fixed;
-    border-radius: 0 !important;
-}
-.yya {
-    border-radius: 0 !important;
-}
-}
-
-<?php }if(iro_opt('nav_menu_style') == 'sakura'){ ?>
-.site-header {
-    width: 100%;
-    height: 75px;
-    top: 0;
-    left: 0;
-    background: 0 0;
-    -webkit-transition: all .4s ease;
-    transition: all .4s ease;
-    position: fixed;
-    z-index: 999;
-    border-radius: 0px;
-}
-.header-user-avatar {
-  margin-top: 22px;
-}
-.site-branding {
-  height: 75px;
-  line-height: 75px;
-}
-.site-title img {
-  margin-top: 17px;
-}
-.site-top .lower {
-  margin: 15px 0 0 0;
-}
-.lower li ul {
-  top: 46px;
-  right: -24px;
+  justify-content: space-between;
 }
 .header-user-menu {
-  right: -11px;
-  top: 44px;
-}
-.logolink a {
-  height: 56px;
-  line-height: 56px;
-}
-.logolink.moe-mashiro a{
-  line-height: 56px !important;
-}
-.searchbox.js-toggle-search{
-  margin: 17px 0;
-  margin-left: 15px;
-}
-@media (max-width:860px) {
-.site-header {
-  height: 60px;
-}
+  right: -5%;
 }
 <?php } ?>
-
-<?php if (!iro_opt('nav_menu_secondary_arrow', 'true')): ?>
-.header-user-menu::before {
-    display: none;
-}
-.lower li ul::before {
-    display: none;
-}
-<?php endif; ?>
 
 <?php if (iro_opt('exhibition_area_compat', 'true')): ?>
 .the-feature.from_left_and_right {

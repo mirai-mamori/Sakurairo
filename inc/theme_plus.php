@@ -402,7 +402,7 @@ function header_user_menu()
     $ava = iro_opt('personal_avatar') ? iro_opt('personal_avatar') : get_avatar_url($current_user->user_email);
   ?>
     <div class="header-user-avatar">
-      <img alt="header_user_avatar" src="<?php echo get_avatar_url($current_user->ID,  [64]);/*$ava;*/ ?>" width="30" height="30">
+      <img alt="header_user_avatar" src="<?php echo get_avatar_url($current_user->ID,  [64]);/*$ava;*/ ?>" width="35" height="35">
       <div class="header-user-menu">
         <div class="header-user-name">
           <?php _e("Signed in as", "sakurairo") ?>
@@ -428,7 +428,7 @@ function header_user_menu()
   ?>
     <div class="header-user-avatar">
       <a href="<?= $login_url ?>">
-        <img alt="header_user_avatar" src="<?= $ava ?>" width="30" height="30">
+        <img alt="header_user_avatar" src="<?= $ava ?>" width="35" height="35">
       </a>
       <div class="header-user-menu">
         <div class="header-user-name no-logged">

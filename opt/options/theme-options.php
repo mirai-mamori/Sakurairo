@@ -431,53 +431,10 @@ $prefix = 'iro_options';
         'type'       => 'image_select',
         'title'      => __('Nav Menu Style','sakurairo_csf'),
         'options'    => array(
-          'sakurairo' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/nav_menu_style_iro.webp',
-          'sakura' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/nav_menu_style_sakura.webp',
+          'center' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/nav_menu_style_iro.webp',
+          'space-between' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/nav_menu_style_sakura.webp',
         ),
-        'default'    => 'sakurairo'
-      ),
-
-      array(
-        'id'    => 'nav_menu_radius',
-        'type'  => 'slider',
-        'title' => __('Nav Menu Radius','sakurairo_csf'),
-        'dependency' => array( 'nav_menu_style', '==', 'sakurairo', '', 'true' ),
-        'desc'   => __('Slide to adjust, the recommended value is 15','sakurairo_csf'),
-        'unit'    => 'px',
-        'max'   => '50',
-        'default' => '15'
-      ),
-
-      array(
-        'id'         => 'nav_menu_display',
-        'type'       => 'radio',
-        'title'      => __('Nav Menu Content Display Method','sakurairo_csf'),
-        'desc'    => __('You can choose to unfold or fold the nav menu contents','sakurairo_csf'),
-        'options'    => array(
-          'unfold' => __('Unfold','sakurairo_csf'),
-          'fold' => __('Fold','sakurairo_csf'),
-        ),
-        'default'    => 'unfold'
-      ),
-
-      array(
-        'id'    => 'nav_menu_animation',
-        'type'  => 'switcher',
-        'title' => __('Nav Menu Animation Effects','sakurairo_csf'),
-        'label'   => __('It is on by default. If it is off, the nav menu content will be displayed directly without effects','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
-        'id'     => 'nav_menu_animation_time',
-        'type'   => 'slider',
-        'title'  => __('Nav Menu Animation Time','sakurairo_csf'),
-        'dependency' => array( 'nav_menu_animation', '==', 'true', '', 'true' ),
-        'desc'   => __('Slide to adjust, the recommended value range is 1-2','sakurairo_csf'),
-        'step'   => '0.01',
-        'unit'    => 's',
-        'max'   => '5',
-        'default' => '2'
+        'default'    => 'center'
       ),
 
       array(
@@ -533,60 +490,14 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'    => 'nav_menu_secondary_arrow',
-        'type'  => 'switcher',
-        'title' => __('Secondary Menu Prompt Arrow','sakurairo_csf'),
-        'label'   => __('After turning on, the menu prompt arrow will appear in the secondary menu of the navigation menu','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
-        'id'    => 'nav_menu_secondary_radius',
-        'type'  => 'slider',
-        'title' => __('Secondary Menu Radius','sakurairo_csf'),
-        'dependency' => array( 'nav_menu_style', '==', 'sakurairo', '', 'true' ),
-        'desc'   => __('Slide to adjust, the recommended value is 15','sakurairo_csf'),
-        'unit'    => 'px',
-        'max'   => '30',
-        'default' => '15'
-      ),
-
-      array(
-        'id'    => 'mashiro_logo_option',
-        'type'  => 'switcher',
-        'title' => __('Mashiro Logo Style','sakurairo_csf'),
-        'label'   => __('After turning on, the Mashiro Logo will appear and replace the navigation menu logo position','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
-        'id'     => 'mashiro_logo',
+        'id'     => 'nav_text_logo',
         'type'   => 'fieldset',
         'title'  => __('Nav Menu Text Logo Options','sakurairo_csf'),
         'fields' => array(
           array(
-            'id'    => 'text_a',
+            'id'    => 'text',
             'type'  => 'text',
-            'title' => __('Text A','sakurairo_csf'),
-          ),
-          array(
-            'id'    => 'text_b',
-            'type'  => 'text',
-            'title' => __('Text B','sakurairo_csf'),
-          ),
-          array(
-            'id'    => 'text_c',
-            'type'  => 'text',
-            'title' => __('Text C','sakurairo_csf'),
-          ),
-          array(
-            'id'    => 'text_secondary',
-            'type'  => 'text',
-            'title' => __('Secondary Text','sakurairo_csf'),
-            'dependency' => array(
-              array('text_b', '!=', '', '', 'true'),
-              array('mashiro_logo_option', '==', 'true', '', 'true')
-            ),
+            'title' => __('Text','sakurairo_csf'),
           ),
           array(
             'id'    => 'font_name',
@@ -595,10 +506,7 @@ $prefix = 'iro_options';
           ),
         ),
         'default'        => array(
-          'text_a'     => '',
-          'text_b'     => '',
-          'text_c'     => '',
-          'text_secondary' => '',
+          'text'     => '',
           'font_name'    => 'Noto Serif SC',
         ),
       ),

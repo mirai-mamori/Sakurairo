@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
 
-$mashiro_logo = iro_opt('mashiro_logo');
+$nav_text_logo = iro_opt('nav_text_logo');
 $vision_resource_basepath = iro_opt('vision_resource_basepath');
 header('X-Frame-Options: SAMEORIGIN');
 ?>
@@ -140,43 +140,43 @@ header('X-Frame-Options: SAMEORIGIN');
 	<?php endif; ?>
 	<div class="scrollbar" id="bar"></div>
 	<header class="site-header no-select" role="banner">
-		<div class="site-top">
-			<div class="site-branding">
-				<?php if (iro_opt('iro_logo') && !iro_opt('mashiro_logo_option', false)) { ?>
-					<div class="site-title">
-					<a href="<?php echo bloginfo('url'); ?>"><img alt="<?= esc_attr(get_option('blogname')); ?>" src="<?= esc_url(iro_opt('iro_logo')); ?>"></a>
-					</div>
-				<?php } else { ?>
-					<span class="site-title">
-						<span class="logolink moe-mashiro">
-						    <a href="<?= bloginfo('url'); ?>">
-								<ruby>
-									<span class="sakuraso"><?= esc_html($mashiro_logo['text_a'] ?? ""); ?></span>
-									<span class="no"><?= esc_html($mashiro_logo['text_b'] ?? ""); ?></span>
-									<span class="shironeko"><?= esc_html($mashiro_logo['text_c'] ?? ""); ?></span>
-									<rp></rp>
-									<rt class="chinese-font"><?= esc_html($mashiro_logo['text_secondary'] ?? ""); ?></rt>
-									<rp></rp>
-								</ruby>
+			<!-- Logo Section -->
+			<?php if (iro_opt('iro_logo') || !empty($nav_text_logo['text'])): ?>
+				<div class="site-branding">
+					<?php if (iro_opt('iro_logo')): ?>
+						<div class="site-title-logo">
+							<a href="<?= esc_url(home_url('/')); ?>">
+								<img alt="<?= esc_attr(get_bloginfo('name')); ?>" 
+									 src="<?= esc_url(iro_opt('iro_logo')); ?>">
 							</a>
-						</span>
-					</span>
-				<?php } ?>
-				<!-- logo end -->
-			</div><!-- .site-branding -->
-			<?php header_user_menu();
-			if (iro_opt('nav_menu_search') == '1') { ?>
-				<div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
-			<?php } ?>
-			<div class="lower"><?php if (iro_opt('nav_menu_display') == 'fold') { ?>
-					<div id="show-nav" class="showNav">
-						<div class="line line1"></div>
-						<div class="line line2"></div>
-						<div class="line line3"></div>
-					</div><?php } ?>
-				<nav><?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => false]); ?></nav><!-- #site-navigation -->
+						</div>
+					<?php else: ?>
+						<div class="site-title">
+							<a href="<?= esc_url(home_url('/')); ?>">
+								<?= esc_html($nav_text_logo['text'] ?? ''); ?>
+							</a>
+						</div>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
+
+			<!-- Navigation and Search Section -->
+			<div class="nav-search-wrapper">
+				<nav>
+					<?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => false]); ?>
+				</nav>
+				<?php if (iro_opt('nav_menu_search')): ?>
+					<div class="nav-search-divider"></div>
+					<div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
+				<?php endif; ?>
 			</div>
-		</div>
+
+			<!-- User Menu Section -->
+			<?php if (iro_opt('nav_menu_user_avatar')): ?>
+				<div class="user-menu-wrapper">
+					<?php header_user_menu(); ?>
+				</div>
+			<?php endif; ?>
 	</header><!-- #masthead -->
 	<div class="openNav no-select">
 		<div class="iconflat no-select" style="padding: 30px;">
