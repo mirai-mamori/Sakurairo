@@ -91,42 +91,30 @@ header('X-Frame-Options: SAMEORIGIN');
 	<?php endif; ?>
 	<?= iro_opt("site_header_insert"); ?>
 
-	<?php if (iro_opt('poi_pjax')): ?>
-    <script>
-		function loadScript(url) {
-			fetch(url)
-				.then(response => {
-					if (!response.ok) {
-						throw new Error(`Failed to load script: ${url}`);
-					}
-					return response.text();
-				})
-				.then(scriptContent => {
-					new Function(scriptContent)();
-				})
-				.catch(error => {
-					console.error(error);
-				});
-		}
-        const srcs = `
-            <?php echo iro_opt("pjax_keep_loading"); ?>
-        `;
+	<?php if (iro_opt('poi_pjax')){
+		$script_leep_loading_list = iro_opt("pjax_keep_loading");
+		if(strlen($script_leep_loading_list) > 0) :
+		?>
+    <script defer>
+        const srcs = `<?php echo iro_opt("pjax_keep_loading"); ?>`;
         document.addEventListener("pjax:complete", () => {
             srcs.split(/[\n,]+/).forEach(path => {
                 path = path.trim();
                 if (!path) return; 
                 if (path.endsWith('.js')) {
-                    loadScript(path);
+                    const script = document.createElement('script');
+                    script.src = path;
+                    script.async = true;
+                    document.body.appendChild(script);
                 } else if (path.endsWith('.css')) {
                     const style = document.createElement('link');
                     style.rel = 'stylesheet';
                     style.href = path;
                     document.head.appendChild(style);
                 }
-            });
-        });
+		})});
     </script>
-    <?php endif; ?>
+    <?php endif;} ?>
 
 </head>
 
