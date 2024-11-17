@@ -95,7 +95,7 @@ header('X-Frame-Options: SAMEORIGIN');
 		$script_leep_loading_list = iro_opt("pjax_keep_loading");
 		if(strlen($script_leep_loading_list) > 0) :
 		?>
-    <script defer>
+    <script>
         const srcs = `<?php echo iro_opt("pjax_keep_loading"); ?>`;
         document.addEventListener("pjax:complete", () => {
             srcs.split(/[\n,]+/).forEach(path => {
