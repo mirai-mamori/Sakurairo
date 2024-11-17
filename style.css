@@ -1625,151 +1625,6 @@ h1.page-title {
   margin: 0 10px;
 }
 
-.mashiro-profile {
-  color: #7a7b7c;
-  text-align: left;
-  width: 330px;
-  height: 100px;
-  position: relative;
-  top: 70px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 5px;
-  background-color: #fafafa;
-  box-shadow: 0 0 2rem #babbbc;
-  animation: show-profile .5s forwards ease-in-out;
-}
-
-.mashiro-profile .content {
-  box-sizing: border-box;
-  padding: 10px;
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
-.mashiro-profile .photo {
-  box-sizing: border-box;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 5px solid #fafafa;
-  background-color: #fafafa;
-  margin-left: -50px;
-  box-shadow: 0 0 .5rem #babbbc;
-  animation: rotate-photo .5s forwards ease-in-out;
-}
-
-.mashiro-profile .content::before {
-  content: "";
-  position: absolute;
-  width: 230px;
-  height: 150px;
-  background-color: #fef1c7;
-  left: 0;
-  top: -20px;
-  z-index: -1;
-  transform: rotate(-8deg);
-}
-
-.mashiro-profile .content .text h3 {
-  font-weight: 400;
-  margin: 3px 0;
-  letter-spacing: .5px;
-  white-space: nowrap;
-}
-
-.mashiro-profile .content .text h6 {
-  font-weight: 400;
-  margin: 3px 0;
-  letter-spacing: .5px;
-  white-space: nowrap;
-}
-
-.mashiro-profile .content .btn {
-  background-color: #abc;
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  right: 25px;
-  top: 25px;
-  border-radius: 50%;
-  z-index: 1;
-  cursor: pointer;
-  transition-duration: .3s;
-  animation: pop-btn .3s both ease-in-out .5s;
-}
-
-.mashiro-profile .content .btn span {
-  width: 60%;
-  height: 2px;
-  position: absolute;
-  background-color: #fff;
-  top: 50%;
-  left: 20%;
-  transform: translateY(-50%);
-  animation: to-hamburger .3s forwards ease-in-out;
-}
-
-.mashiro-profile .content .btn span::after {
-  content: "";
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  background-color: #fff;
-  transition-duration: .3s;
-  transform: rotate(0);
-  right: 0;
-  margin-top: 7px;
-}
-
-.mashiro-profile .content .btn span::before {
-  content: "";
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  background-color: #fff;
-  transition-duration: .3s;
-  transform: rotate(0);
-  right: 0;
-  margin-top: -7px;
-}
-
-.mashiro-profile .box {
-  width: 150px;
-  height: 150px;
-  opacity: 0;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, .7);
-  position: absolute;
-  top: 50%;
-  right: -40%;
-  transform: translate(-50%, -50%);
-  transition-duration: .3s;
-}
-
-.mashiro-profile .box a {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #ececec;
-  font-size: 26px;
-  text-align: center;
-  line-height: 50px;
-  position: absolute;
-  left: 18px;
-  top: calc(75px - 50px/2);
-  box-shadow: 0 0 .5rem #babbbc;
-  transition-duration: .3s;
-  text-decoration: none;
-  font-weight: var(--global-font-weight);
-
-}
-
 #loading-comments {
   display: none;
   max-width: 860px;
@@ -5547,7 +5402,6 @@ a:focus {
 #video-add:hover,
 #video-btn:hover,
 .feature :hover .overlay i,
-.mashiro-profile .box.open,
 .comment .contents .comment-reply-link:hover,
 .top-feature li:hover .foverlay-bg,
 #baguetteBox-overlay.visible {
@@ -5954,7 +5808,6 @@ h1.page-title.mb- {
 }
 
 .post-squares .full,
-.mashiro-profile .photo img,
 .art .art-content .al_mon_list {
   width: 100%;
 }
@@ -6100,65 +5953,6 @@ h1.page-title.mb- {
   color: var(--theme-skin-matching);
   transition: all 0.6s ease-in-out;
   -webkit-transition: all 0.6s ease-in-out;
-}
-
-.mashiro-profile .content .text {
-  margin-top: 20px;
-  margin-left: 50px;
-}
-
-.mashiro-profile .content .btn:hover {
-  box-shadow: 0 0 0 5px rgba(170, 187, 204, .5);
-}
-
-.mashiro-profile .content .btn.active span {
-  animation: to-arrow .3s forwards ease-in-out;
-}
-
-.mashiro-profile .content .btn.active span::after {
-  width: 60%;
-  right: -1px;
-  transform: rotate(-45deg);
-}
-
-.mashiro-profile .content .btn.active span::before {
-  width: 60%;
-  right: -1px;
-  transform: rotate(45deg);
-}
-
-.mashiro-profile .box a:hover {
-  transition-delay: initial !important;
-  box-shadow: 0 0 0 5px #babbbc;
-}
-
-.mashiro-profile .box.open a {
-  left: 60px;
-}
-
-.mashiro-profile .box.open a:nth-of-type(1) {
-  transform: rotate(-90deg) translateX(120px) rotate(90deg);
-  transition-delay: 0s;
-}
-
-.mashiro-profile .box.open a:nth-of-type(2) {
-  transform: rotate(-45deg) translateX(120px) rotate(45deg);
-  transition-delay: .1s;
-}
-
-.mashiro-profile .box.open a:nth-of-type(3) {
-  transform: rotate(0) translateX(120px) rotate(0);
-  transition-delay: .2s;
-}
-
-.mashiro-profile .box.open a:nth-of-type(4) {
-  transform: rotate(45deg) translateX(120px) rotate(-45deg);
-  transition-delay: .3s;
-}
-
-.mashiro-profile .box.open a:nth-of-type(5) {
-  transform: rotate(90deg) translateX(120px) rotate(-90deg);
-  transition-delay: .4s;
 }
 
 #comments-list-title span {
@@ -7594,18 +7388,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   }
 }
 
-@keyframes sitetop {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 @keyframes blur {
   0% {
     -webkit-filter: blur(8px);
@@ -7712,48 +7494,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   .nextprev article {
     height: 150px;
     width: 100%;
-  }
-}
-
-@keyframes show-profile {
-  0% {
-    width: 0;
-  }
-}
-
-@keyframes rotate-photo {
-  100% {
-    transform: rotate(-360deg);
-  }
-}
-
-@keyframes pop-btn {
-  0% {
-    transform: scale(0);
-  }
-
-  80% {
-    transform: scale(1.2);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes to-hamburger {
-  from {
-    transform: translateY(-50%) rotate(-180deg);
-  }
-}
-
-@keyframes to-arrow {
-  from {
-    transform: translateY(-50%) rotate(0);
-  }
-
-  to {
-    transform: translateY(-50%) rotate(180deg);
   }
 }
 
@@ -7923,19 +7663,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     display: none;
   }
 }
-
-/*
-.header-info:before {
-    content: "";
-    position: absolute;
-    top: 127px;
-    left: 50%;
-    margin-left: -15px;
-    border-width: 15px;
-    border-style: solid;
-    border-color: transparent transparent rgba(0, 0, 0, .5) transparent
-}
-*/
 
 @-webkit-keyframes bounceFromRight {
   0% {
@@ -8518,73 +8245,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   }
 }
 
-@keyframes btn-pudding {
-
-  12%,
-  15% {
-    transform: scale(.93, 1.07);
-  }
-
-  16%,
-  17% {
-    transform: scale(.94, 1.06);
-  }
-
-  10%,
-  18% {
-    transform: scale(.95, 1.05);
-  }
-
-  19% {
-    transform: scale(.96, 1.04);
-  }
-
-  20% {
-    transform: scale(.98, 1.02);
-  }
-
-  21%,
-  40%,
-  48% {
-    transform: scale(.99, 1.01);
-  }
-
-  22%,
-  23%,
-  37%,
-  39%,
-  49% {
-    transform: scale(1, 1);
-  }
-
-  24%,
-  34%,
-  36%,
-  7% {
-    transform: scale(1.01, .99);
-  }
-
-  25%,
-  27%,
-  30%,
-  33% {
-    transform: scale(1.02, .98);
-  }
-
-  28%,
-  29% {
-    transform: scale(1.03, .97);
-  }
-
-  2% {
-    transform: scale(1.16, .84);
-  }
-
-  0% {
-    transform: scale(1.2, .8);
-  }
-}
-
 @keyframes poi-face {
 
   2%,
@@ -8756,209 +8416,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
 
   100% {
     transform: translate(0, 0);
-  }
-}
-
-@keyframes shake {
-  2% {
-    transform: translate(.5px, -1.5px) rotate(-.5deg);
-  }
-
-  4% {
-    transform: translate(.5px, 1.5px) rotate(1.5deg);
-  }
-
-  6% {
-    transform: translate(1.5px, 1.5px) rotate(1.5deg);
-  }
-
-  8% {
-    transform: translate(2.5px, 1.5px) rotate(.5deg);
-  }
-
-  10% {
-    transform: translate(.5px, 2.5px) rotate(.5deg);
-  }
-
-  12% {
-    transform: translate(1.5px, 1.5px) rotate(.5deg);
-  }
-
-  14% {
-    transform: translate(.5px, .5px) rotate(.5deg);
-  }
-
-  16% {
-    transform: translate(-1.5px, -.5px) rotate(1.5deg);
-  }
-
-  18% {
-    transform: translate(.5px, .5px) rotate(1.5deg);
-  }
-
-  20% {
-    transform: translate(2.5px, 2.5px) rotate(1.5deg);
-  }
-
-  22% {
-    transform: translate(.5px, -1.5px) rotate(1.5deg);
-  }
-
-  24% {
-    transform: translate(-1.5px, 1.5px) rotate(-.5deg);
-  }
-
-  26% {
-    transform: translate(1.5px, .5px) rotate(1.5deg);
-  }
-
-  28% {
-    transform: translate(-.5px, -.5px) rotate(-.5deg);
-  }
-
-  30% {
-    transform: translate(1.5px, -.5px) rotate(-.5deg);
-  }
-
-  32% {
-    transform: translate(2.5px, -1.5px) rotate(1.5deg);
-  }
-
-  34% {
-    transform: translate(2.5px, 2.5px) rotate(-.5deg);
-  }
-
-  36% {
-    transform: translate(.5px, -1.5px) rotate(.5deg);
-  }
-
-  38% {
-    transform: translate(2.5px, -.5px) rotate(-.5deg);
-  }
-
-  40% {
-    transform: translate(-.5px, 2.5px) rotate(.5deg);
-  }
-
-  42% {
-    transform: translate(-1.5px, 2.5px) rotate(.5deg);
-  }
-
-  44% {
-    transform: translate(-1.5px, 1.5px) rotate(.5deg);
-  }
-
-  46% {
-    transform: translate(1.5px, -.5px) rotate(-.5deg);
-  }
-
-  48% {
-    transform: translate(2.5px, -.5px) rotate(.5deg);
-  }
-
-  50% {
-    transform: translate(-1.5px, 1.5px) rotate(.5deg);
-  }
-
-  52% {
-    transform: translate(-.5px, 1.5px) rotate(.5deg);
-  }
-
-  54% {
-    transform: translate(-1.5px, 1.5px) rotate(.5deg);
-  }
-
-  56% {
-    transform: translate(.5px, 2.5px) rotate(1.5deg);
-  }
-
-  58% {
-    transform: translate(2.5px, 2.5px) rotate(.5deg);
-  }
-
-  60% {
-    transform: translate(2.5px, -1.5px) rotate(1.5deg);
-  }
-
-  62% {
-    transform: translate(-1.5px, .5px) rotate(1.5deg);
-  }
-
-  64% {
-    transform: translate(-1.5px, 1.5px) rotate(1.5deg);
-  }
-
-  66% {
-    transform: translate(.5px, 2.5px) rotate(1.5deg);
-  }
-
-  68% {
-    transform: translate(2.5px, -1.5px) rotate(1.5deg);
-  }
-
-  70% {
-    transform: translate(2.5px, 2.5px) rotate(.5deg);
-  }
-
-  72% {
-    transform: translate(-.5px, -1.5px) rotate(1.5deg);
-  }
-
-  74% {
-    transform: translate(-1.5px, 2.5px) rotate(1.5deg);
-  }
-
-  76% {
-    transform: translate(-1.5px, 2.5px) rotate(1.5deg);
-  }
-
-  78% {
-    transform: translate(-1.5px, 2.5px) rotate(.5deg);
-  }
-
-  80% {
-    transform: translate(-1.5px, .5px) rotate(-.5deg);
-  }
-
-  82% {
-    transform: translate(-1.5px, .5px) rotate(-.5deg);
-  }
-
-  84% {
-    transform: translate(-.5px, .5px) rotate(1.5deg);
-  }
-
-  86% {
-    transform: translate(2.5px, 1.5px) rotate(.5deg);
-  }
-
-  88% {
-    transform: translate(-1.5px, .5px) rotate(1.5deg);
-  }
-
-  90% {
-    transform: translate(-1.5px, -.5px) rotate(-.5deg);
-  }
-
-  92% {
-    transform: translate(-1.5px, -1.5px) rotate(1.5deg);
-  }
-
-  94% {
-    transform: translate(.5px, .5px) rotate(-.5deg);
-  }
-
-  96% {
-    transform: translate(2.5px, -.5px) rotate(-.5deg);
-  }
-
-  98% {
-    transform: translate(-1.5px, -1.5px) rotate(-.5deg);
-  }
-
-  0%,
-  100% {
-    transform: translate(0, 0) rotate(0);
   }
 }
 
