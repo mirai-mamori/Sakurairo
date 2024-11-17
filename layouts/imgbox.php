@@ -50,7 +50,6 @@ $print_social_zone = function() use ($all_opt): void {
         </a></li>
     <?php
     endif;
-
 }
 ?>
 
