@@ -16,6 +16,62 @@ Text Domain: sakurairo
 Tags: 多彩、轻松上手、体验完善、高自定义度
 */
 
+/* Base HTML Element Styles */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; 
+  overflow-x: hidden;
+  box-sizing: border-box;
+  transition: background 0.8s;
+}
+
+body {
+  margin: 0;
+  text-shadow: 0 0 1px rgba(0, 0, 0, .1);
+  color: var(--theme-skin, #505050);
+  font-size: 15px;
+  line-height: 1.5;
+  background-attachment: fixed;
+  background-position: center;
+  scrollbar-width: 6px;
+  font-weight: var(--global-font-weight);
+}
+
+/* Typography */
+h1 {
+  font-size: 2em;
+  margin: .67em 0;
+  clear: both;
+  font-weight: var(--global-font-weight);
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  font-weight: var(--global-font-weight);
+}
+
+sub { bottom: -.25em; }
+sup { top: -.5em; }
+
+/* Links */
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: var(--theme-skin, #505050);
+  outline: 0;
+  transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
+  word-break: break-word;
+}
+
+a:hover {
+  color: var(--theme-skin-matching, #505050);
+}
+
+/* Layout Components */
 .headertop {
   animation: blur .8s;
   position: relative;
@@ -28,13 +84,12 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
 .pattern-center {
   animation: blur .8s;
   position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
   overflow: hidden;
   transition: all 0.6s ease-in-out;
 }
 
+/* Comments Section */
 .comments {
   animation: main .6s;
   clear: both;
@@ -43,12 +98,11 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   padding: 0 10px;
   list-style: none;
   max-width: 860px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.5%;
+  margin: 1.5% auto 0;
   transition: background 0.8s;
 }
 
+/* Notice Component */
 .notice {
   animation: main .6s;
   padding: 20px;
@@ -71,6 +125,7 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   font-family: 'Dela Gothic One';
 }
 
+/* Post List Thumbnails */
 .post-list-thumb {
   animation: main .6s;
   will-change: transform;
@@ -79,9 +134,9 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   height: 300px;
   position: relative;
   display: flex;
-  margin: 15px 0 15px;
+  margin: 15px 0;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: transparent;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   opacity: 0;
   flex-direction: column;
@@ -89,19 +144,14 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   contain-intrinsic-size: auto none;
 }
 
-.post-list-show,.shuoshuo-item.post-list-show {
+.post-list-show,
+.shuoshuo-item.post-list-show {
   animation: homepage-load-animation .5s;
-  -webkit-animation: homepage-load-animation .5s;
   opacity: 1;
   background-color: rgba(255, 255, 255, .80);
   transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
   will-change: auto;
   content-visibility: auto;
-}
-
-.post-list-thumb a {
-  cursor: pointer;
 }
 
 .top-feature {
@@ -111,86 +161,65 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   margin-top: 55px;
 }
 
-html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  overflow-x: hidden;
-  box-sizing: border-box;
-  transition: background 0.8s;
-}
-
-body {
+/* Form Elements */
+input, select, textarea {
+  color: var(--theme-skin);
+  font: inherit;
   margin: 0;
-  text-shadow: 0 0 1px rgba(0, 0, 0, .1);
-  color: #505050;
-  font-size: 15px;
   line-height: 1.5;
-  background: #0000;
-  background-attachment: fixed;
-  background-position: center;
-  scrollbar-width: 6px;
+  font-size: 15px;
   font-weight: var(--global-font-weight);
 }
 
-progress {
-  display: inline-block;
-  vertical-align: baseline;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  background-size: auto;
-  height: 24px;
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"] {
+  color: #666;
+  border: 1px solid var(--theme-skin, #505050);
+  border-radius: 10px;
+  padding: 3px;
+}
+
+textarea {
+  color: #A5A5A5;
+  border: 1px solid var(--theme-skin, #505050);
+  border-radius: 10px;
+  padding-left: 3px;
   width: 100%;
 }
 
-a {
-  background-color: transparent;
-  text-decoration: none;
-  color: var(--theme-skin, #505050);
-  outline: 0;
-  -webkit-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
-  -moz-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
-  transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
-  word-break:break-word;
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  color: rgba(0, 0, 0, .8);
+  font-size: .75rem;
+  line-height: 1;
+  padding: .6em 1em .4em;
+  border: 1px solid;
+  border-color: #ccc #ccc #bbb;
+  border-radius: 3px;
+  background: #e6e6e6;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5),
+              inset 0 15px 17px rgba(255, 255, 255, .5),
+              inset 0 -5px 12px rgba(0, 0, 0, .05);
+  cursor: pointer;
 }
 
-a:hover{
-  color: var(--theme-skin-matching, #505050);
-  -webkit-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
-  -moz-transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
-  transition: color .2s ease-out, border .2s ease-out, opacity .2s ease-out;
-  word-break:break-word;
-}
-
-h1 {
-  font-size: 2em;
-  margin: .67em 0;
-  clear: both;
-  font-weight: var(--global-font-weight);
-}
-
-sub {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-  bottom: -.25em;
-  font-weight: var(--global-font-weight);
-}
-
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-  top: -.5em;
-  font-weight: var(--global-font-weight);
-}
-
+/* Misc Elements */
 hr {
-  box-sizing: content-box;
   height: 1px;
   background-color: #ccc;
   border: 0;
@@ -198,119 +227,13 @@ hr {
 }
 
 pre {
-  overflow: auto;
-  font-family: monospace, monospace;
-  font-size: 1em;
+  font: 15px/22px 'Fira Code', 'Noto Sans SC';
   background: rgba(255, 255, 255, .5);
   border-radius: 10px;
-  font: 15px/22px 'Fira Code', 'Noto Sans SC';
-  line-height: 1.6;
-  margin-bottom: 1.6em;
-  max-width: 100%;
-  text-shadow: none;
-  color: #000;
-  font-weight: var(--global-font-weight);
-}
-
-button {
-  color: rgba(0, 0, 0, .8);
-  font: inherit;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-  -webkit-appearance: button;
-  appearance: button;
-  cursor: pointer;
-  font-size: .75rem;
-  line-height: 1;
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 15px 17px rgba(255, 255, 255, .5), inset 0 -5px 12px rgba(0, 0, 0, .05);
-  padding: .6em 1em .4em;
-  font-weight: var(--global-font-weight);
-
-}
-
-input {
-  color: var(--theme-skin);
-  font: inherit;
-  margin: 0;
-  line-height: 1.5;
-  font-size: 15px;
-  font-weight: var(--global-font-weight);
-}
-
-optgroup {
-  color: inherit;
-  font: inherit;
-  margin: 0;
-  font-weight: 700;
-}
-
-select {
-  color: var(--theme-skin);
-  font: inherit;
-  margin: 0;
-  text-transform: none;
-  font-size: 15px;
-  line-height: 1.5;
-  border: 1px solid #ccc;
-  font-weight: var(--global-font-weight);
-}
-
-textarea {
-  color: #A5A5A5;
-  font: inherit;
-  margin: 0;
+  padding: 1em;
   overflow: auto;
-  font-size: 15px;
-  line-height: 1.5;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding-left: 3px;
-  width: 100%;
-  font-weight: var(--global-font-weight);
-}
-
-input[type=reset] {
-  -webkit-appearance: button;
-  appearance: button;
-  cursor: pointer;
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 15px 17px rgba(255, 255, 255, .5), inset 0 -5px 12px rgba(0, 0, 0, .05);
-  color: rgba(0, 0, 0, .8);
-  font-size: .75rem;
-  line-height: 1;
-  padding: .6em 1em .4em;
-  font-weight: var(--global-font-weight);
-}
-
-input[type=submit] {
-  -webkit-appearance: button;
-  appearance: button;
-  cursor: pointer;
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 15px 17px rgba(255, 255, 255, .5), inset 0 -5px 12px rgba(0, 0, 0, .05);
-  color: rgba(0, 0, 0, .8);
-  font-size: .75rem;
-  line-height: 1;
-  padding: .6em 1em .4em;
-  font-weight: var(--global-font-weight);
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  margin: 0 0 1.5em;
-  width: 100%;
+  max-width: 100%;
+  color: #000;
 }
 
 blockquote {
@@ -320,144 +243,24 @@ blockquote {
   quotes: "" "";
 }
 
+blockquote:before,
+blockquote:after {
+  font-family: FontAwesome;
+  font-size: 3rem;
+  color: var(--theme-skin, #505050);
+  position: absolute;
+}
+
 blockquote:before {
   content: "\f10d" !important;
-  font-size: 3rem;
-  position: absolute;
   top: -25px;
   left: 12px;
-  color: var(--theme-skin, #505050);
-  font-family: FontAwesome;
-  font-weight: var(--global-font-weight);
 }
 
 blockquote:after {
   content: '\f10e' !important;
-  font-size: 3rem;
-  position: absolute;
   bottom: -25px;
   right: -5px;
-  color: var(--theme-skin, #505050);
-  font-family: FontAwesome;
-  font-weight: var(--global-font-weight);
-}
-
-input[type=button] {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 15px 17px rgba(255, 255, 255, .5), inset 0 -5px 12px rgba(0, 0, 0, .05);
-  color: rgba(0, 0, 0, .8);
-  font-size: .75rem;
-  line-height: 1;
-  padding: .6em 1em .4em;
-  font-weight: var(--global-font-weight);
-}
-
-input[type=color] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-input[type=date] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-input[type=datetime-local] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-input[type=datetime] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-input[type=email] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-input[type=month] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-input[type=number] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-input[type=password] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-input[type=range] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-input[type=search] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-input[type=tel] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-input[type=text] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-input[type=time] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-input[type=url] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
-}
-
-input[type=week] {
-  color: #666;
-  border: 1px solid var(--theme-skin, #505050);
-  border-radius: 10px;
-  padding: 3px;
 }
 
 .wrapper {
@@ -8929,18 +8732,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   100% {
     -webkit-transform: translate(0, 0) rotate(0);
     transform: translate(0, 0) rotate(0);
-  }
-}
-
-@keyframes header-menu {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
