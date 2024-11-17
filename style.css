@@ -23,6 +23,11 @@ Tags: 多彩、轻松上手、体验完善、高自定义度
   -webkit-transition: all 0.6s ease-in-out;
 }
 
+i,i:hover{
+  transition: none;
+  -webkit-transition: none;
+}
+
 html {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -345,17 +350,6 @@ blockquote:after {
     #00000080
   );
   backdrop-filter: saturate(150%) blur(1px);
-}
-
-.pattern-center::after {
-  content: '';
-  width: 150%;
-  height: 4.375rem;
-  background: #fff;
-  left: -25%;
-  bottom: -2.875rem;
-  border-radius: 100%;
-  position: absolute;
 }
 
 .pattern-attachment.bg {
@@ -748,6 +742,7 @@ nav .menu > li .sub-menu a {
   padding: 0 10px;
   display: flex;
   align-items: center;
+  transition: all .4s ease-in-out;
 }
 
 .searchbox.js-toggle-search {
@@ -887,6 +882,7 @@ nav .menu > li .sub-menu a {
   -webkit-transition: all 0.4s ease-in-out;
 }
 
+/* 移动端菜单 */
 #show-nav {
   position: relative;
   float: right;
@@ -5074,12 +5070,6 @@ a:focus {
   color: #fff;
 }
 
-.pattern-center-blank {
-  padding-top: 75px;
-  background-color: rgba(0, 0, 0, 0);
-  transition: background 0.8s;
-}
-
 .site-info a:hover,
 .ins-section .ins-search-item:hover .ins-slug,
 .ins-section .ins-search-item:hover .ins-search-preview,
@@ -7090,9 +7080,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     width: 100%;
     overflow: hidden;
   }
-  .pattern-center-blank {
-    padding-top: 0;
-  }
 
   /* Post Squares */
   .post-squares .third {
@@ -8384,11 +8371,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }
-}
-
-body.dark * {
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
 }
 
 body.dark #main-container,

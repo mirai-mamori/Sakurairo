@@ -572,6 +572,12 @@ display:none;
 }
 <?php endif; ?>
 
+<?php if (!iro_opt('nav_menu_stowed', 'false')): ?>
+.site-header.yya {
+  top: 0;
+}
+<?php endif; ?>
+
 <?php if (iro_opt('footer_sakura', 'true')): ?>
 @keyframes slow-rotate {
   from {
@@ -636,24 +642,6 @@ li.link-item {
 	float:none;
 }
 
-<?php } ?>
-
-<?php if(iro_opt('page_style') == 'sakurairo'){ ?>
-.pattern-center::after {
-    display:none;
-}
-.pattern-center-blank {
-    display:none;
-}
-
-<?php }else if(iro_opt('page_style') == 'sakura'){ ?>
-.pattern-center {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-}
 <?php } ?>
 
 <?php if(iro_opt('post_list_design') == 'ticket'){ ?>

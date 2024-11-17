@@ -438,29 +438,19 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id'    => 'nav_menu_stowed',
+        'type'  => 'switcher',
+        'title' => __('Nav Menu Stowed Away','sakurairo_csf'),
+        'label'   => __('It is on by default. nav menu will be stowed at the top','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
         'id' => 'nav_menu_font',
         'type' => 'text',
         'title' => __('Nav Menu Font','sakurairo_csf'),
         'desc' => __('Fill in the font name. For example: Noto Serif SC','sakurairo_csf'),
         'default' => 'Noto Serif SC'
-      ),
-
-      array(
-        'id'    => 'nav_menu_search',
-        'type'  => 'switcher',
-        'title' => __('Nav Menu Search','sakurairo_csf'),
-        'label'   => __('It is on by default. Click to enter the search area','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
-        'id'    => 'search_area_background',
-        'type'  => 'upload',
-        'title' => __('Search Area Background Image','sakurairo_csf'),
-        'desc'   => __('Set the background image of your search area. Leave this option blank to display a white background','sakurairo_csf'),
-        'dependency' => array( 'nav_menu_search', '==', 'true', '', 'true' ),
-        'library'      => 'image',
-        'default'     => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/iloli.gif'
       ),
 
       array(
@@ -486,7 +476,7 @@ $prefix = 'iro_options';
         'dependency' => array( 'nav_menu_user_avatar', '==', 'true', '', 'true' ),
         'desc'   => __('The best length-width ratio of is 1:1','sakurairo_csf'),
         'library'      => 'image',
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/topavatar.png'
+        'default' => ''
       ),
 
       array(
@@ -983,6 +973,24 @@ $prefix = 'iro_options';
         'type' => 'submessage',
         'style' => 'info',
         'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
+        'id'    => 'nav_menu_search',
+        'type'  => 'switcher',
+        'title' => __('Nav Menu Search','sakurairo_csf'),
+        'label'   => __('It is on by default. Click to enter the search area','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id'    => 'search_area_background',
+        'type'  => 'upload',
+        'title' => __('Search Area Background Image','sakurairo_csf'),
+        'desc'   => __('Set the background image of your search area. Leave this option blank to display a white background','sakurairo_csf'),
+        'dependency' => array( 'nav_menu_search', '==', 'true', '', 'true' ),
+        'library'      => 'image',
+        'default'     => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/iloli.gif'
       ),
 
       array(
@@ -2573,17 +2581,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'page_style',
-        'type' => 'image_select',
-        'title' => __('Page Style','sakurairo_csf'),
-        'options' => array(
-          'sakurairo' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/page_style_iro.webp',
-          'sakura' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/page_style_sakura.webp',
-        ),
-        'default' => 'sakurairo'
-      ),
-
-      array(
         'id' => 'entry_content_style',
         'type' => 'radio',
         'title' => __('Page Layout Style','sakurairo_csf'),
@@ -3750,7 +3747,6 @@ $prefix = 'iro_options';
         'dependency' => array(
                               array( 'fancybox', '==', 'false', '', 'true' ),
                               array( 'lightgallery', '==', 'false' ),
-
                         ),
         'default' => false
       ),
