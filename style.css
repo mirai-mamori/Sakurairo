@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://docs.fuukei.org/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.7.3
+Version: 2.7.5
 Tested up to: 6.6
 Requires at least: 5.8
 Requires PHP: 7.3
@@ -220,10 +220,8 @@ input[type="submit"] {
 
 /* Misc Elements */
 hr {
-  height: 1px;
   background-color: #ccc;
   border: 0;
-  margin-bottom: 1.5em;
 }
 
 pre {
@@ -7342,9 +7340,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
 
 .post-share ul li a:hover,
 .entry-content a:hover,
-
-
-
 .comment-respond input[type='submit']:hover {
   color: var(--article-theme-highlight,var(--theme-skin-matching));
   border-color: var(--article-theme-highlight,var(--theme-skin-matching));
@@ -7856,26 +7851,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
 
   .m-nav {
     display: block;
-  }
-  
-  .header-user-avatar img {
-    display: block;
-  }
-  
-  .header-user-avatar {
-    margin-top: 15px !important;
-  }
-
-  .searchbox.js-toggle-search {
-    display: none;
-    /*移动端搜索关闭*/
-  }
-
-  .site-branding {
-    height: 50px;
-    line-height: 43px;
-    left: 55px;
-    margin-top: -10px;
   }
 
   .links ul li {
@@ -8718,10 +8693,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     -ms-transform: scale(.6, .6);
     -webkit-transform: scale(.6, .6);
     transform: scale(.6, .6);
-  }
-
-  .header-user-menu{
-    display: none;
   }
 }
 
