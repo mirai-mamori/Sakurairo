@@ -571,6 +571,7 @@ blockquote:after {
   backdrop-filter: saturate(180%) blur(10px)!important;
   will-change: backdrop-filter;
   z-index: 1000;
+  border: 1px solid #f7f7f7;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease-in-out;
 }
@@ -580,9 +581,6 @@ blockquote:after {
 .user-menu-wrapper:hover {
   background: rgba(255, 255, 255, 0.9);
   transition: all 0.4s ease-in-out;
-  -webkit-backdrop-filter: saturate(180%) blur(10px);
-  backdrop-filter: saturate(180%) blur(10px)!important;
-  will-change: backdrop-filter;
 }
 
 /* Logo区域 */
@@ -701,6 +699,7 @@ nav .menu > li .sub-menu {
   display: flex;
   flex-direction: column;
   padding: 5px 0;
+  border: 1px solid #f7f7f7;
 }
 
 nav .menu > li .sub-menu:hover {
@@ -803,6 +802,7 @@ nav .menu > li .sub-menu a {
   -webkit-transition: all 0.4s ease-in-out;
   opacity: 0;
   transform: translateY(-10px);
+  border: 1px solid #f7f7f7;
 }
 
 .header-user-menu::before {
@@ -8999,6 +8999,7 @@ body.dark .header-user-menu {
   box-shadow: 0 4px 12px rgba(33, 33, 33, 0.5);
   transition: all 0.4s ease-in-out;
   color: #cccccc;
+  border: 1px solid #222222;
 }
 
 body.dark .site-branding a,
