@@ -586,7 +586,7 @@ blockquote:after {
 /* Logo区域 */
 .site-branding {
   width: fit-content;
-  max-width: 210px;
+  max-width: 240px;
 }
 
 .site-branding a{
