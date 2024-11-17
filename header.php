@@ -74,11 +74,6 @@ header('X-Frame-Options: SAMEORIGIN');
 	<?php wp_head(); ?>
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>｜<?php bloginfo('description'); ?>" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="stylesheet" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css?family=Noto+Serif+SC|Noto+Sans+SC|Dela+Gothic+One|Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap" media="all">
-	<script type="text/javascript">
-		if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
-			alert('朋友，IE浏览器未适配哦~\n如果是 360、QQ 等双核浏览器，请关闭 IE 模式！(Are you using IE? Some of the web elements might be broken, please use the latest browser to access！)');
-		}
-	</script>
 	<?php if (iro_opt('google_analytics_id')) : ?>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=<?= esc_attr(iro_opt('google_analytics_id')); ?>"></script>
@@ -128,44 +123,55 @@ header('X-Frame-Options: SAMEORIGIN');
 	<?php endif; ?>
 	<div class="scrollbar" id="bar"></div>
 	<header class="site-header no-select" role="banner">
-			<!-- Logo Section -->
-			<?php if (iro_opt('iro_logo') || !empty($nav_text_logo['text'])): ?>
-				<div class="site-branding">
+		<?php
+		// Logo Section - Only process if logo or text is configured
+		if (iro_opt('iro_logo') || !empty($nav_text_logo['text'])): ?>
+			<div class="site-branding">
+				<a href="<?= home_url('/'); ?>">
 					<?php if (iro_opt('iro_logo')): ?>
 						<div class="site-title-logo">
-							<a href="<?= esc_url(home_url('/')); ?>">
-								<img alt="<?= esc_attr(get_bloginfo('name')); ?>" 
-									 src="<?= esc_url(iro_opt('iro_logo')); ?>">
-							</a>
+							<img alt="<?= esc_attr(get_bloginfo('name')); ?>" 
+								 src="<?php echo iro_opt('iro_logo'); ?>"
+								 loading="lazy">
 						</div>
 					<?php else: ?>
 						<div class="site-title">
-							<a href="<?= esc_url(home_url('/')); ?>">
-								<?= esc_html($nav_text_logo['text'] ?? ''); ?>
-							</a>
+							<?= esc_html($nav_text_logo['text'] ?? ''); ?>
 						</div>
 					<?php endif; ?>
-				</div>
-			<?php endif; ?>
-
-			<!-- Navigation and Search Section -->
-			<div class="nav-search-wrapper">
-				<nav>
-					<?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => false]); ?>
-				</nav>
-				<?php if (iro_opt('nav_menu_search')): ?>
-					<div class="nav-search-divider"></div>
-					<div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
-				<?php endif; ?>
+				</a>
 			</div>
+		<?php endif;
 
-			<!-- User Menu Section -->
-			<?php if (iro_opt('nav_menu_user_avatar')): ?>
-				<div class="user-menu-wrapper">
-					<?php header_user_menu(); ?>
+		// Cache commonly used options 
+		$show_search = iro_opt('nav_menu_search');
+		$show_user_avatar = iro_opt('nav_menu_user_avatar');
+		?>
+
+		<!-- Navigation and Search Section -->
+		<div class="nav-search-wrapper">
+			<nav>
+				<?php wp_nav_menu([
+					'depth' => 2,
+					'theme_location' => 'primary',
+					'container' => false
+				]); ?>
+			</nav>
+			<?php if ($show_search): ?>
+				<div class="nav-search-divider"></div>
+				<div class="searchbox js-toggle-search">
+					<i class="fa-solid fa-magnifying-glass"></i>
 				</div>
 			<?php endif; ?>
-	</header><!-- #masthead -->
+		</div>
+
+		<!-- User Menu Section -->
+		<?php if ($show_user_avatar): ?>
+			<div class="user-menu-wrapper">
+				<?php header_user_menu(); ?>
+			</div>
+		<?php endif; ?>
+	</header>
 	<div class="openNav no-select">
 		<div class="iconflat no-select" style="padding: 30px;">
 			<div class="icon"></div>

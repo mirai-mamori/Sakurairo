@@ -422,13 +422,15 @@ function header_user_menu()
   } else {
     $ava = iro_opt('unlisted_avatar');
     global $wp;
-    //https://wordpress.stackexchange.com/questions/274569/how-to-get-url-of-current-page-displayed
-    //可以测试一下对不同的固定链接的兼容性
     $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(iro_opt('login_urlskip') ? '' : add_query_arg($wp->query_vars, home_url($wp->request)));
   ?>
     <div class="header-user-avatar">
       <a href="<?= $login_url ?>">
-        <img alt="header_user_avatar" src="<?= $ava ?>" width="35" height="35">
+        <?php if ($ava): ?>
+          <img alt="header_user_avatar" src="<?= $ava ?>" width="35" height="35">
+        <?php else: ?>
+          <i class="fa-solid fa-circle-user"></i>
+        <?php endif; ?>
       </a>
       <div class="header-user-menu">
         <div class="header-user-name no-logged">
