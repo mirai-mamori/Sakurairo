@@ -586,7 +586,13 @@ blockquote:after {
 /* Logo区域 */
 .site-branding {
   width: fit-content;
-  max-width: 150px;
+  max-width: 210px;
+}
+
+.site-branding a{
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
 
 .site-branding img {
@@ -606,20 +612,16 @@ blockquote:after {
   white-space: nowrap;
   width: auto;
   transition: all 0.4s ease-in-out;
-}
-
-.site-title a {
   color: var(--theme-skin);
   font-weight: 400;
   white-space: nowrap;
   border-radius: 50px;
-  padding: 3px 9px;
+  padding: 5px 10px;
   letter-spacing: 1px;
-  font-size: 20px;
-  transition: all 0.4s ease-in-out;
+  font-size: 18px;
 }
 
-.site-title a:hover {
+.site-title:hover {
   background-color: var(--theme-skin-matching);
   border-radius: 50px;
   transition: all 0.4s ease-in-out;
@@ -773,6 +775,8 @@ nav .menu > li .sub-menu a {
   position: relative;
   max-width: 35px;
   max-height: 35px;
+  display: flex;
+  align-items: center;
 }
 
 .header-user-avatar img {
@@ -851,8 +855,8 @@ nav .menu > li .sub-menu a {
 }
 
 .header-user-avatar a i{
-  font-size: 25px; 
-  padding: 5.3px 5px; 
+  font-size: 26px; 
+  padding: 4.5px; 
   color: var(--theme-skin);
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
@@ -8536,7 +8540,9 @@ body.dark .author-profile p,
 body.dark .author_info .author-center,
 body.dark .post-squares h3,
 body.dark .shuoshuo-title h3,
-body.dark .ins-section .fa{
+body.dark .ins-section .fa,
+body.dark .site-title,
+body.dark .header-info{
   color: #CCCCCC;
 }
 
@@ -8873,10 +8879,6 @@ body.dark #changskin:hover {
   box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
   background: rgba(26, 26, 26, 0.8);
   color: var(--theme-skin-dark);
-}
-
-body.dark .header-info{
-  color: #CCCCCC !important;
 }
 
 body.dark .header-info{

@@ -134,9 +134,10 @@ header('X-Frame-Options: SAMEORIGIN');
 								 src="<?php echo iro_opt('iro_logo'); ?>"
 								 loading="lazy">
 						</div>
-					<?php else: ?>
+					<?php endif; ?>
+					<?php if (!empty($nav_text_logo['text'])): ?>
 						<div class="site-title">
-							<?= esc_html($nav_text_logo['text'] ?? ''); ?>
+							<?= esc_html($nav_text_logo['text']); ?>
 						</div>
 					<?php endif; ?>
 				</a>
