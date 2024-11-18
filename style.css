@@ -731,25 +731,23 @@ nav .menu > li .sub-menu a {
 
 .searchbox {
   flex: 0 0 auto;
-  padding: 0 10px;
   display: flex;
   align-items: center;
   transition: all .4s ease-in-out;
 }
 
-.searchbox.js-toggle-search {
+.searchbox.js-toggle-search i,.bg-switch i{
   color: var(--theme-skin, #505050);
   cursor: pointer;
   transition: all .4s ease-in-out;
-  font-weight: var(--global-font-weight);
   height: auto;
   font-size: 16px;
   width: auto;
   border-radius: 50px;
-  padding: 10px 12px;
+  padding: 11px 12px;
 }
 
-.searchbox.js-toggle-search:hover {
+.searchbox.js-toggle-search i:hover,.bg-switch i:hover {
   color: rgba(255, 255, 255, 0.8);
   transition: all .4s ease-in-out;
   background-color: var(--theme-skin-matching);
@@ -2376,21 +2374,8 @@ h1.main-title {
   color: var(--theme-skin-matching);
 }
 
-.bg-switch {
-  list-style: none;
-  padding: 4px 8px;
-  border: 0.5px solid rgba(255,255,255,var(--homepage_widget_transparency, 1));
-  background: rgba(255,255,255,var(--homepage_widget_transparency, 1));
-  border-radius: 15px;
-  font-size: 10px;
-  position: relative;
-  margin-top: 20px;
-  color: var(--theme-skin-matching);
-}
-
 .top-social img:hover,
-.top-social i:hover,
-.bg-switch:hover {
+.top-social i:hover{
   box-shadow: 0 1px 6px 3px #e8e8e8;
   background: rgba(255, 255, 255, 0.95);
 }
@@ -2430,8 +2415,7 @@ h1.main-title {
 }
 
 .top-social li a,
-.top-social_v2 li a, 
-.bg-switch {
+.top-social_v2 li a {
   cursor: pointer;
 }
 
@@ -8804,13 +8788,11 @@ body.dark .header-info{
   border: 1px solid rgba(51,51,51,0.7);
 }
 
-body.dark .bg-switch,
 body.dark .top-social i,
 body.dark .top-social img{
   border: 0.5px solid rgba(51,51,51,0.7);
 }
 
-body.dark .bg-switch:hover,
 body.dark .top-social i:hover,
 body.dark .top-social img:hover {
   box-shadow: 0 1px 30px 2px var(--theme-skin-dark) !important;
@@ -8925,7 +8907,7 @@ body.dark .header-user-menu {
 
 body.dark .site-branding a,
 body.dark .nav-search-wrapper a,
-body.dark .searchbox.js-toggle-search,
+body.dark .nav-search-wrapper i,
 body.dark .header-user-menu a,
 body.dark .header-user-menu .header-user-name,
 body.dark .header-user-avatar a i{

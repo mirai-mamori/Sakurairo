@@ -194,6 +194,11 @@ header('X-Frame-Options: SAMEORIGIN');
 					<i class="fa-solid fa-magnifying-glass"></i>
 				</div>
 			<?php endif; ?>
+			<?php if (iro_opt('cover_random_graphs_switch', 'true')): ?>
+                <div class="bg-switch" id="bg-next">
+                    <i class="fa-solid fa-dice"></i>
+                </div>
+            <?php endif; ?>
 		</div>
 
 		<!-- User Menu Section -->

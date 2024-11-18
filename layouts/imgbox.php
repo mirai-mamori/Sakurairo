@@ -98,12 +98,6 @@ $print_social_zone = function() use ($all_opt): void {
                 </div>
             <?php endif; ?>
 
-            <?php if (iro_opt('cover_random_graphs_switch', 'true')): ?>
-            <div class="bg-switch">
-            <li id="bg-next" style="display: flex; gap: 6px; align-items: center; letter-spacing: 1px;"><i class="fa-solid fa-dice"></i><?= __('Change', 'sakurairo') ?></li>
-            </div>
-            <?php endif; ?>
-
         </div>
     <?php } ?>
 </figure>

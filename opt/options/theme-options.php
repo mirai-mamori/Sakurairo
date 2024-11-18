@@ -454,32 +454,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'    => 'nav_menu_user_avatar',
-        'type'  => 'switcher',
-        'title' => __('Nav Menu User Avatar','sakurairo_csf'),
-        'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
-        'default' => true
-      ),
-      
-      array(
-        'id'    => 'mobile_menu_user_avatar',
-        'type'  => 'switcher',
-        'title' => __('Nav Menu User Avatar in Mobile','sakurairo_csf'),
-        'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
-        'id'     => 'unlisted_avatar',
-        'type'  => 'upload',
-        'title' => __('Nav Menu Unlisted User Avatar','sakurairo_csf'),
-        'dependency' => array( 'nav_menu_user_avatar', '==', 'true', '', 'true' ),
-        'desc'   => __('The best length-width ratio of is 1:1','sakurairo_csf'),
-        'library'      => 'image',
-        'default' => ''
-      ),
-
-      array(
         'id'     => 'nav_text_logo',
         'type'   => 'fieldset',
         'title'  => __('Nav Menu Text Logo Options','sakurairo_csf'),
@@ -499,6 +473,40 @@ $prefix = 'iro_options';
           'text'     => '',
           'font_name'    => 'Noto Serif SC',
         ),
+      ),
+
+      array(
+        'id' => 'cover_random_graphs_switch',
+        'type' => 'switcher',
+        'title' => __('Switch Button of Random Images','sakurairo_csf'),
+        'label' => __('Enabled by default, show cover random image toggle button','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id'    => 'nav_menu_user_avatar',
+        'type'  => 'switcher',
+        'title' => __('Nav Menu User Avatar','sakurairo_csf'),
+        'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
+        'default' => true
+      ),
+  
+      array(
+        'id'     => 'unlisted_avatar',
+        'type'  => 'upload',
+        'title' => __('Nav Menu Unlisted User Avatar','sakurairo_csf'),
+        'dependency' => array( 'nav_menu_user_avatar', '==', 'true', '', 'true' ),
+        'desc'   => __('The best length-width ratio of is 1:1','sakurairo_csf'),
+        'library'      => 'image',
+        'default' => ''
+      ),
+
+      array(
+        'id'    => 'mobile_menu_user_avatar',
+        'type'  => 'switcher',
+        'title' => __('Nav Menu User Avatar in Mobile','sakurairo_csf'),
+        'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
+        'default' => true
       ),
 
     )
@@ -1867,15 +1875,6 @@ $prefix = 'iro_options';
         'unit' => 'px',
         'max' => '30',
         'default' => '15'
-      ),
-
-      array(
-        'id' => 'cover_random_graphs_switch',
-        'type' => 'switcher',
-        'title' => __('Switch Button of Random Images','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'label' => __('Enabled by default, show cover random image toggle button','sakurairo_csf'),
-        'default' => true
       ),
 
       array(
