@@ -788,19 +788,26 @@ body.dark .post-title:hover{
 }
 <?php } ?>
 
-<?php if(iro_opt('nav_menu_style') == 'center'){ ?>
+<?php 
+// Menu style settings
+$nav_menu_style = iro_opt('nav_menu_style');
+$has_user_avatar = iro_opt('nav_menu_user_avatar');
+$has_logo = !empty(iro_opt('iro_logo')) || !empty($nav_text_logo['text']); 
+
+// Space between menu items when avatar and logo are enabled
+if($nav_menu_style == 'space-between' && ($has_user_avatar || $has_logo)){ ?> 
 .site-header {
-  justify-content: center;
+    justify-content: space-between; 
 }
 .header-user-menu {
-  right: -105%;
+    right: -5%;
 }
-<?php }if(iro_opt('nav_menu_style') == 'space-between'){ ?>
+<?php } else { ?>
 .site-header {
-  justify-content: space-between;
+    justify-content: center;
 }
 .header-user-menu {
-  right: -5%;
+    right: -105%;
 }
 <?php } ?>
 
