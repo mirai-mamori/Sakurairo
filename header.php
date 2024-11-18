@@ -207,73 +207,101 @@ header('X-Frame-Options: SAMEORIGIN');
 					<span class="screen-reader-text"><?php esc_html_e('Random Background', 'sakurairo'); ?></span>
 				</div>
 				<script>
-						// 初始化状态存储
-						if (!sessionStorage.getItem('bgNextState')) {
-							sessionStorage.setItem('bgNextState', JSON.stringify({
-								lastPageWasHome: window.location.pathname === '/' || 
-											   window.location.pathname === '/index.php',
-								isTransitioning: false
-							}));
-						}
+					// 初始化状态存储
+					if (!sessionStorage.getItem('bgNextState')) {
+						sessionStorage.setItem('bgNextState', JSON.stringify({
+							lastPageWasHome: window.location.pathname === '/' || 
+										   window.location.pathname === '/index.php',
+							isTransitioning: false
+						}));
+					}
 
-						const showBgNext = () => {
-							const bgNext = document.getElementById('bg-next');
-							const navSearchWrapper = document.querySelector('.nav-search-wrapper');
-							
-							const isHomePage = window.location.pathname === '/' || 
-											 window.location.pathname === '/index.php';
-							const state = JSON.parse(sessionStorage.getItem('bgNextState'));
+					const showBgNext = () => {
+						const bgNext = document.getElementById('bg-next');
+						const navSearchWrapper = document.querySelector('.nav-search-wrapper');
+						
+						const isHomePage = window.location.pathname === '/' || 
+										 window.location.pathname === '/index.php';
+						const state = JSON.parse(sessionStorage.getItem('bgNextState'));
 
-							if (state.isTransitioning) return;
-
-							// Reset transitions
-							navSearchWrapper.style.transition = 'none';
-							bgNext.style.transition = 'none';
-							
-							void navSearchWrapper.offsetWidth;
-							void bgNext.offsetWidth;
+						if (state.isTransitioning) return;
 
 							if (isHomePage) {
+							if (isHomePage) {
 								bgNext.style.display = 'block';
-								if (!state.lastPageWasHome) {
-									state.isTransitioning = true;
-									sessionStorage.setItem('bgNextState', JSON.stringify(state));
+						if (isHomePage) {
+								bgNext.style.display = 'block';
+							if (!state.lastPageWasHome) {
+								state.isTransitioning = true;
+								sessionStorage.setItem('bgNextState', JSON.stringify(state));
 
-									const initialWidth = navSearchWrapper.offsetWidth;
-									navSearchWrapper.style.width = initialWidth + 'px';
+								 // 克隆节点来计算最终宽度
+								const clone = bgNext.cloneNode(true);
+								clone.style.cssText = 'display:block;opacity:0;position:fixed;pointer-events:none;';
+								document.body.appendChild(clone);
+								const bgNextWidth = clone.offsetWidth;
+								document.body.removeChild(clone);
+
+								// 重置过渡��果
+								navSearchWrapper.style.transition = 'none';
+								bgNext.style.transition = 'none';
+								
+								// 设置初始状态
+								const initialWidth = navSearchWrapper.offsetWidth;
+								navSearchWrapper.style.width = initialWidth + 'px';
+								
+								bgNext.style.display = 'block';
+								bgNext.style.opacity = '0';
+								bgNext.style.transform = 'translateX(-20px)';
+
+								// 强制回流
+								void navSearchWrapper.offsetWidth;
+								void bgNext.offsetWidth;
+
+								// 开始动画
+								requestAnimationFrame(() => {
+									bgNext.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+									navSearchWrapper.style.transition = 'width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
 									
-									bgNext.style.opacity = '0';
-									bgNext.style.transform = 'translateX(-20px)';
+									bgNext.style.opacity = '1';
+									bgNext.style.transform = 'translateX(0)';
+									navSearchWrapper.style.width = (initialWidth + bgNextWidth) + 'px';
 
-									requestAnimationFrame(() => {
-										bgNext.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
-										navSearchWrapper.style.transition = 'width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
-										
-										const finalWidth = initialWidth + bgNext.offsetWidth;
-										bgNext.style.opacity = '1';
-										bgNext.style.transform = 'translateX(0)';
-										navSearchWrapper.style.width = finalWidth + 'px';
-
-										setTimeout(() => {
-											state.isTransitioning = false;
-											sessionStorage.setItem('bgNextState', JSON.stringify(state));
-										}, 600);
-									});
-								}
+									setTimeout(() => {
+										state.isTransitioning = false;
+										sessionStorage.setItem('bgNextState', JSON.stringify(state));
+									}, 600);
+								});
 							} else {
-								if (state.lastPageWasHome) {
-									state.isTransitioning = true;
-									sessionStorage.setItem('bgNextState', JSON.stringify(state));
+								bgNext.style.display = 'block';
+								bgNext.style.opacity = '1';
+								bgNext.style.transform = 'translateX(0)';
+							}
+						} else {
+							if (state.lastPageWasHome) {
+								state.isTransitioning = true;
+								sessionStorage.setItem('bgNextState', JSON.stringify(state));
 
-									const initialWidth = navSearchWrapper.offsetWidth;
-									const targetWidth = initialWidth - bgNext.offsetWidth;
-									
+								// 先重置过渡
+								navSearchWrapper.style.transition = 'none';
+								bgNext.style.transition = 'none';
+								
+								// 设置初始状态
+								bgNext.style.opacity = '1';
+								bgNext.style.transform = 'translateX(0)';
+								const initialWidth = navSearchWrapper.offsetWidth;
+								
+								// 强制回流
+								void navSearchWrapper.offsetWidth;
+								
+								// 开始动画
+								requestAnimationFrame(() => {
 									bgNext.style.transition = 'all 0.4s ease-out';
 									navSearchWrapper.style.transition = 'width 0.4s ease-out';
 									
 									bgNext.style.opacity = '0';
 									bgNext.style.transform = 'translateX(20px)';
-									navSearchWrapper.style.width = targetWidth + 'px';
+									navSearchWrapper.style.width = (initialWidth - bgNext.offsetWidth) + 'px';
 									
 									setTimeout(() => {
 										bgNext.style.display = 'none';
@@ -281,31 +309,32 @@ header('X-Frame-Options: SAMEORIGIN');
 										state.isTransitioning = false;
 										sessionStorage.setItem('bgNextState', JSON.stringify(state));
 									}, 400);
-								} else {
-									bgNext.style.display = 'none';
-									navSearchWrapper.style.width = 'auto';
-								}
+								});
+							} else {
+								bgNext.style.display = 'none';
+								navSearchWrapper.style.width = 'auto';
 							}
-							
-							state.lastPageWasHome = isHomePage;
-							sessionStorage.setItem('bgNextState', JSON.stringify(state));
-						};
+						}
+						
+						state.lastPageWasHome = isHomePage;
+						sessionStorage.setItem('bgNextState', JSON.stringify(state));
+					};
 
-						// PJAX事件监听
-						document.addEventListener('pjax:send', () => {
-							const state = JSON.parse(sessionStorage.getItem('bgNextState'));
-							state.lastPageWasHome = window.location.pathname === '/' || 
-												 window.location.pathname === '/index.php';
-							sessionStorage.setItem('bgNextState', JSON.stringify(state));
-						}, false);
+					// PJAX事件监听
+					document.addEventListener('pjax:send', () => {
+						const state = JSON.parse(sessionStorage.getItem('bgNextState'));
+						state.lastPageWasHome = window.location.pathname === '/' || 
+											 window.location.pathname === '/index.php';
+						sessionStorage.setItem('bgNextState', JSON.stringify(state));
+					}, false);
 
-						document.addEventListener('pjax:complete', () => {
-							setTimeout(showBgNext, 0);
-						}, false);
+					document.addEventListener('pjax:complete', () => {
+						setTimeout(showBgNext, 0);
+					}, false);
 
-						// 初始执行
-						showBgNext();
-					</script>
+					// 初始执行
+					showBgNext();
+				</script>
 			<?php endif; ?>
 		</div>
 
