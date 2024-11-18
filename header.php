@@ -20,7 +20,7 @@ header('X-Frame-Options: SAMEORIGIN');
 ?>
 <!DOCTYPE html>
 <!-- 
-		◢＼　 ☆　　 ／◣
+							◢＼　 ☆　　 ／◣
 	　  　∕　　﹨　╰╮∕　　﹨
 	　  　▏　　～～′′～～ 　｜
 	　　  ﹨／　　　　　　 　＼∕
@@ -127,12 +127,14 @@ header('X-Frame-Options: SAMEORIGIN');
 		// Logo Section - Only process if logo or text is configured
 		if (iro_opt('iro_logo') || !empty($nav_text_logo['text'])): ?>
 			<div class="site-branding">
-				<a href="<?= home_url('/'); ?>">
+				<a href="<?= esc_url(home_url('/')); ?>">
 					<?php if (iro_opt('iro_logo')): ?>
 						<div class="site-title-logo">
 							<img alt="<?= esc_attr(get_bloginfo('name')); ?>" 
-								 src="<?php echo iro_opt('iro_logo'); ?>"
-								 loading="lazy">
+								 src="<?= esc_url(iro_opt('iro_logo')); ?>"
+								 width="auto" height="auto"
+								 loading="lazy"
+								 decoding="async">
 						</div>
 					<?php endif; ?>
 					<?php if (!empty($nav_text_logo['text'])): ?>
@@ -144,61 +146,167 @@ header('X-Frame-Options: SAMEORIGIN');
 			</div>
 		<?php endif;
 
-		// Cache commonly used options 
-		$show_search = iro_opt('nav_menu_search');
-		$show_user_avatar = iro_opt('nav_menu_user_avatar');
+		// Cache commonly used options
+		$show_search = (bool)iro_opt('nav_menu_search');
+		$show_user_avatar = (bool)iro_opt('nav_menu_user_avatar');
+		$enable_random_graphs = (bool)iro_opt('cover_random_graphs_switch', 'true');
 		?>
 
 		<!-- Navigation and Search Section -->
 		<div class="nav-search-wrapper">
-		    <nav>
-                <?php
-                function limit_menu_by_bytes($items, $args) {
-                    $byte_count = 0;
-                    
-                    foreach($items as $key => $item) {
-                        if($item->menu_item_parent == 0) {
-                            // 移除HTML标签后计算字节
-                            $clean_title = strip_tags($item->title);
-                            $title_bytes = strlen($clean_title);
-                            
-                            // 超出70字节
-                            if($byte_count + $title_bytes > 70) {
-                                unset($items[$key]);
-                                continue;
-                            }
-                            
-                            // 刚好70字节
-                            if($byte_count + $title_bytes == 70) {
-                                unset($items[$key]);
-                                break;
-                            }
-                            
-                            $byte_count += $title_bytes;
-                        }
-                    }
-                    return $items;
-                }
-                
-                add_filter('wp_nav_menu_objects', 'limit_menu_by_bytes', 10, 2);
-                
-                wp_nav_menu([
-                    'depth' => 2,
-                    'theme_location' => 'primary',
-                    'container' => false
-                ]); ?>
-            </nav>
-			<?php if ($show_search): ?>
+			<nav>
+				<?php
+				/**
+				 * Limit menu items based on total byte count
+				 * @param array $items Menu items
+				 * @param array $args Menu arguments
+				 * @return array Filtered menu items
+				 */
+				function limit_menu_by_bytes($items, $args) {
+					$byte_count = 0;
+					$byte_limit = 70;
+					
+					foreach($items as $key => $item) {
+						if($item->menu_item_parent != 0) continue;
+						
+						$title_bytes = strlen(strip_tags($item->title));
+						if($byte_count + $title_bytes >= $byte_limit) {
+							unset($items[$key]);
+							if($byte_count + $title_bytes == $byte_limit) break;
+						} else {
+							$byte_count += $title_bytes;
+						}
+					}
+					return $items;
+				}
+				
+				add_filter('wp_nav_menu_objects', 'limit_menu_by_bytes', 10, 2);
+				
+				wp_nav_menu([
+					'depth' => 2,
+					'theme_location' => 'primary',
+					'container' => false,
+					'fallback_cb' => false
+				]); ?>
+			</nav>
+
+			<?php if ($enable_random_graphs || $show_search): ?>
 				<div class="nav-search-divider"></div>
+			<?php endif; ?>
+
+			<?php if ($show_search): ?>
 				<div class="searchbox js-toggle-search">
-					<i class="fa-solid fa-magnifying-glass"></i>
+					<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+					<span class="screen-reader-text"><?php esc_html_e('Search', 'sakurairo'); ?></span>
 				</div>
 			<?php endif; ?>
-			<?php if (iro_opt('cover_random_graphs_switch', 'true')): ?>
-                <div class="bg-switch" id="bg-next">
-                    <i class="fa-solid fa-dice"></i>
-                </div>
-            <?php endif; ?>
+
+			<?php if ($enable_random_graphs): ?>
+				<div class="bg-switch" id="bg-next" style="display:none">
+					<i class="fa-solid fa-dice" aria-hidden="true"></i>
+					<span class="screen-reader-text"><?php esc_html_e('Random Background', 'sakurairo'); ?></span>
+				</div>
+				<script>
+						// 初始化状态存储
+						if (!sessionStorage.getItem('bgNextState')) {
+							sessionStorage.setItem('bgNextState', JSON.stringify({
+								lastPageWasHome: window.location.pathname === '/' || 
+											   window.location.pathname === '/index.php',
+								isTransitioning: false
+							}));
+						}
+
+						const showBgNext = () => {
+							const bgNext = document.getElementById('bg-next');
+							const navSearchWrapper = document.querySelector('.nav-search-wrapper');
+							
+							const isHomePage = window.location.pathname === '/' || 
+											 window.location.pathname === '/index.php';
+							const state = JSON.parse(sessionStorage.getItem('bgNextState'));
+
+							if (state.isTransitioning) return;
+
+							// Reset transitions
+							navSearchWrapper.style.transition = 'none';
+							bgNext.style.transition = 'none';
+							
+							void navSearchWrapper.offsetWidth;
+							void bgNext.offsetWidth;
+
+							if (isHomePage) {
+								bgNext.style.display = 'block';
+								if (!state.lastPageWasHome) {
+									state.isTransitioning = true;
+									sessionStorage.setItem('bgNextState', JSON.stringify(state));
+
+									const initialWidth = navSearchWrapper.offsetWidth;
+									navSearchWrapper.style.width = initialWidth + 'px';
+									
+									bgNext.style.opacity = '0';
+									bgNext.style.transform = 'translateX(-20px)';
+
+									requestAnimationFrame(() => {
+										bgNext.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+										navSearchWrapper.style.transition = 'width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+										
+										const finalWidth = initialWidth + bgNext.offsetWidth;
+										bgNext.style.opacity = '1';
+										bgNext.style.transform = 'translateX(0)';
+										navSearchWrapper.style.width = finalWidth + 'px';
+
+										setTimeout(() => {
+											state.isTransitioning = false;
+											sessionStorage.setItem('bgNextState', JSON.stringify(state));
+										}, 600);
+									});
+								}
+							} else {
+								if (state.lastPageWasHome) {
+									state.isTransitioning = true;
+									sessionStorage.setItem('bgNextState', JSON.stringify(state));
+
+									const initialWidth = navSearchWrapper.offsetWidth;
+									const targetWidth = initialWidth - bgNext.offsetWidth;
+									
+									bgNext.style.transition = 'all 0.4s ease-out';
+									navSearchWrapper.style.transition = 'width 0.4s ease-out';
+									
+									bgNext.style.opacity = '0';
+									bgNext.style.transform = 'translateX(20px)';
+									navSearchWrapper.style.width = targetWidth + 'px';
+									
+									setTimeout(() => {
+										bgNext.style.display = 'none';
+										navSearchWrapper.style.width = 'auto';
+										state.isTransitioning = false;
+										sessionStorage.setItem('bgNextState', JSON.stringify(state));
+									}, 400);
+								} else {
+									bgNext.style.display = 'none';
+									navSearchWrapper.style.width = 'auto';
+								}
+							}
+							
+							state.lastPageWasHome = isHomePage;
+							sessionStorage.setItem('bgNextState', JSON.stringify(state));
+						};
+
+						// PJAX事件监听
+						document.addEventListener('pjax:send', () => {
+							const state = JSON.parse(sessionStorage.getItem('bgNextState'));
+							state.lastPageWasHome = window.location.pathname === '/' || 
+												 window.location.pathname === '/index.php';
+							sessionStorage.setItem('bgNextState', JSON.stringify(state));
+						}, false);
+
+						document.addEventListener('pjax:complete', () => {
+							setTimeout(showBgNext, 0);
+						}, false);
+
+						// 初始执行
+						showBgNext();
+					</script>
+			<?php endif; ?>
 		</div>
 
 		<!-- User Menu Section -->
