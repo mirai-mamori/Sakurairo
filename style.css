@@ -561,7 +561,7 @@ blockquote:after {
   display: flex;
   align-items: center;
   -webkit-backdrop-filter: saturate(180%) blur(10px);
-  backdrop-filter: saturate(180%) blur(10px)!important;
+  backdrop-filter: saturate(180%) blur(10px);
   will-change: backdrop-filter;
   z-index: 1000;
   border: 1px solid #f7f7f7;
@@ -1011,7 +1011,9 @@ nav .menu > li .sub-menu a {
   color:rgba(255, 255, 255, 0.8);
   white-space: nowrap;
   font-weight: var(--global-font-weight);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
   backdrop-filter: saturate(180%) blur(10px);
+  will-change: backdrop-filter;
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 3;
@@ -1033,7 +1035,9 @@ nav .menu > li .sub-menu a {
   max-width: 70%;
   top: 10px;
   right: 10px;
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
   backdrop-filter: saturate(180%) blur(10px);
+  will-change: backdrop-filter;
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 3;
@@ -1063,8 +1067,9 @@ nav .menu > li .sub-menu a {
   bottom: 22%;
   left: 2%;
   border: 1px solid rgba(255, 255, 255, 0.8);
-  backdrop-filter: saturate(180%) blur(10px);
   -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  will-change: backdrop-filter;
   position: absolute;
   display: inline-flex;
   box-shadow: 0 1px 30px -4px #e8e8e8;
@@ -2329,7 +2334,9 @@ h1.main-title {
   box-sizing: initial;
   white-space: nowrap;
   font-weight: var(--global-font-weight);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
   backdrop-filter: saturate(180%) blur(10px);
+  will-change: backdrop-filter;
 }
 
 .header-info p {
@@ -2486,8 +2493,9 @@ h1.main-title {
   bottom: 0;
   visibility: hidden;
   opacity: 0;
-  backdrop-filter: saturate(180%) blur(10px);
   -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  will-change: backdrop-filter;
 }
 
 .search-form--modal .search-form__inner {
@@ -4515,7 +4523,9 @@ h5::before {
   float: right;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
   backdrop-filter: saturate(180%) blur(10px);
+  will-change: backdrop-filter;
   padding: 5px;
   font-size: 16px;
   width: 30px;

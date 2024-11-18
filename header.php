@@ -151,13 +151,43 @@ header('X-Frame-Options: SAMEORIGIN');
 
 		<!-- Navigation and Search Section -->
 		<div class="nav-search-wrapper">
-			<nav>
-				<?php wp_nav_menu([
-					'depth' => 2,
-					'theme_location' => 'primary',
-					'container' => false
-				]); ?>
-			</nav>
+		    <nav>
+                <?php
+                function limit_menu_by_bytes($items, $args) {
+                    $byte_count = 0;
+                    
+                    foreach($items as $key => $item) {
+                        if($item->menu_item_parent == 0) {
+                            // 移除HTML标签后计算字节
+                            $clean_title = strip_tags($item->title);
+                            $title_bytes = strlen($clean_title);
+                            
+                            // 超出70字节
+                            if($byte_count + $title_bytes > 70) {
+                                unset($items[$key]);
+                                continue;
+                            }
+                            
+                            // 刚好70字节
+                            if($byte_count + $title_bytes == 70) {
+                                unset($items[$key]);
+                                break;
+                            }
+                            
+                            $byte_count += $title_bytes;
+                        }
+                    }
+                    return $items;
+                }
+                
+                add_filter('wp_nav_menu_objects', 'limit_menu_by_bytes', 10, 2);
+                
+                wp_nav_menu([
+                    'depth' => 2,
+                    'theme_location' => 'primary',
+                    'container' => false
+                ]); ?>
+            </nav>
 			<?php if ($show_search): ?>
 				<div class="nav-search-divider"></div>
 				<div class="searchbox js-toggle-search">
