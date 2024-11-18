@@ -20,7 +20,7 @@ header('X-Frame-Options: SAMEORIGIN');
 ?>
 <!DOCTYPE html>
 <!-- 
-													◢＼　 ☆　　 ／◣
+			◢＼　 ☆　　 ／◣
 	　  　∕　　﹨　╰╮∕　　﹨
 	　  　▏　　～～′′～～ 　｜
 	　　  ﹨／　　　　　　 　＼∕
@@ -257,7 +257,7 @@ header('X-Frame-Options: SAMEORIGIN');
 								// 开始动画
 								requestAnimationFrame(() => {
 									bgNext.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
-									navSearchWrapper.style.transition = 'width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+									navSearchWrapper.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
 									
 									bgNext.style.opacity = '1';
 									bgNext.style.transform = 'translateX(0)';
@@ -302,18 +302,19 @@ header('X-Frame-Options: SAMEORIGIN');
 								
 								// 开始动画
 								requestAnimationFrame(() => {
-									bgNext.style.transition = 'all 0.4s ease-out';
-									navSearchWrapper.style.transition = 'width 0.4s ease-out';
+									// 使用与进入动画相同的缓动函数
+									const easing = 'cubic-bezier(0.34, 1.56, 0.64, 1)';
+									bgNext.style.transition = 'all 0.6s ' + easing;
+									navSearchWrapper.style.transition = 'all 0.6s ' + easing;
 									
-									// 获取分隔符元素
 									const divider = document.querySelector('.nav-search-divider');
 									
 									if (searchbox) {
-										searchbox.style.transition = 'transform 0.4s ease-out';
+										searchbox.style.transition = 'transform 0.6s ' + easing;
 										searchbox.style.transform = 'translateX(' + (bgNext.offsetWidth + 2) + 'px)';
 									}
 									if (divider) {
-										divider.style.transition = 'transform 0.4s ease-out';
+										divider.style.transition = 'transform 0.6s ' + easing;
 										divider.style.transform = 'translateX(' + (bgNext.offsetWidth + 2) + 'px)';
 									}
 									
@@ -334,7 +335,7 @@ header('X-Frame-Options: SAMEORIGIN');
 										}
 										state.isTransitioning = false;
 										sessionStorage.setItem('bgNextState', JSON.stringify(state));
-									}, 400);
+									}, 600); // 调整为与动画时长相同的延迟
 								});
 							} else {
 								bgNext.style.display = 'none';
