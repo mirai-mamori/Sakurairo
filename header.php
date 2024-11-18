@@ -20,7 +20,7 @@ header('X-Frame-Options: SAMEORIGIN');
 ?>
 <!DOCTYPE html>
 <!-- 
-											◢＼　 ☆　　 ／◣
+													◢＼　 ☆　　 ／◣
 	　  　∕　　﹨　╰╮∕　　﹨
 	　  　▏　　～～′′～～ 　｜
 	　　  ﹨／　　　　　　 　＼∕
@@ -283,7 +283,7 @@ header('X-Frame-Options: SAMEORIGIN');
 								bgNext.style.transition = 'none';
 								
 								
-								// 获取搜索框元素
+								// ���取搜索框元素
 								const searchbox = document.querySelector('.searchbox.js-toggle-search');
 								if (searchbox) {
 									searchbox.style.transition = 'none';
@@ -304,9 +304,17 @@ header('X-Frame-Options: SAMEORIGIN');
 								requestAnimationFrame(() => {
 									bgNext.style.transition = 'all 0.4s ease-out';
 									navSearchWrapper.style.transition = 'width 0.4s ease-out';
+									
+									// 获取分隔符元素
+									const divider = document.querySelector('.nav-search-divider');
+									
 									if (searchbox) {
 										searchbox.style.transition = 'transform 0.4s ease-out';
-										searchbox.style.transform = 'translateX(' + bgNext.offsetWidth + 'px)'; // 改为正值，向右移动
+										searchbox.style.transform = 'translateX(' + (bgNext.offsetWidth + 2) + 'px)';
+									}
+									if (divider) {
+										divider.style.transition = 'transform 0.4s ease-out';
+										divider.style.transform = 'translateX(' + (bgNext.offsetWidth + 2) + 'px)';
 									}
 									
 									bgNext.style.opacity = '0';
@@ -319,6 +327,10 @@ header('X-Frame-Options: SAMEORIGIN');
 										if (searchbox) {
 											searchbox.style.transition = 'none';
 											searchbox.style.transform = '';
+										}
+										if (divider) {
+											divider.style.transition = 'none';
+											divider.style.transform = '';
 										}
 										state.isTransitioning = false;
 										sessionStorage.setItem('bgNextState', JSON.stringify(state));
