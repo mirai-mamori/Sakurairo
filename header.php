@@ -20,7 +20,7 @@ header('X-Frame-Options: SAMEORIGIN');
 ?>
 <!DOCTYPE html>
 <!-- 
-							◢＼　 ☆　　 ／◣
+											◢＼　 ☆　　 ／◣
 	　  　∕　　﹨　╰╮∕　　﹨
 	　  　▏　　～～′′～～ 　｜
 	　　  ﹨／　　　　　　 　＼∕
@@ -226,23 +226,19 @@ header('X-Frame-Options: SAMEORIGIN');
 
 						if (state.isTransitioning) return;
 
-							if (isHomePage) {
-							if (isHomePage) {
-								bgNext.style.display = 'block';
 						if (isHomePage) {
-								bgNext.style.display = 'block';
 							if (!state.lastPageWasHome) {
 								state.isTransitioning = true;
 								sessionStorage.setItem('bgNextState', JSON.stringify(state));
 
-								 // 克隆节点来计算最终宽度
+								// 克隆节点来计算最终宽度
 								const clone = bgNext.cloneNode(true);
 								clone.style.cssText = 'display:block;opacity:0;position:fixed;pointer-events:none;';
 								document.body.appendChild(clone);
 								const bgNextWidth = clone.offsetWidth;
 								document.body.removeChild(clone);
 
-								// 重置过渡��果
+								// 重置过渡效果
 								navSearchWrapper.style.transition = 'none';
 								bgNext.style.transition = 'none';
 								
@@ -282,9 +278,17 @@ header('X-Frame-Options: SAMEORIGIN');
 								state.isTransitioning = true;
 								sessionStorage.setItem('bgNextState', JSON.stringify(state));
 
-								// 先重置过渡
+								// 重置过渡效果
 								navSearchWrapper.style.transition = 'none';
 								bgNext.style.transition = 'none';
+								
+								
+								// 获取搜索框元素
+								const searchbox = document.querySelector('.searchbox.js-toggle-search');
+								if (searchbox) {
+									searchbox.style.transition = 'none';
+									searchbox.style.transform = 'translateX(0)';
+								}
 								
 								// 设置初始状态
 								bgNext.style.opacity = '1';
@@ -293,11 +297,17 @@ header('X-Frame-Options: SAMEORIGIN');
 								
 								// 强制回流
 								void navSearchWrapper.offsetWidth;
+								void bgNext.offsetWidth;
+								if (searchbox) void searchbox.offsetWidth;
 								
 								// 开始动画
 								requestAnimationFrame(() => {
 									bgNext.style.transition = 'all 0.4s ease-out';
 									navSearchWrapper.style.transition = 'width 0.4s ease-out';
+									if (searchbox) {
+										searchbox.style.transition = 'transform 0.4s ease-out';
+										searchbox.style.transform = 'translateX(' + bgNext.offsetWidth + 'px)'; // 改为正值，向右移动
+									}
 									
 									bgNext.style.opacity = '0';
 									bgNext.style.transform = 'translateX(20px)';
@@ -306,6 +316,10 @@ header('X-Frame-Options: SAMEORIGIN');
 									setTimeout(() => {
 										bgNext.style.display = 'none';
 										navSearchWrapper.style.width = 'auto';
+										if (searchbox) {
+											searchbox.style.transition = 'none';
+											searchbox.style.transform = '';
+										}
 										state.isTransitioning = false;
 										sessionStorage.setItem('bgNextState', JSON.stringify(state));
 									}, 400);
