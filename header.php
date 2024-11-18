@@ -20,7 +20,7 @@ header('X-Frame-Options: SAMEORIGIN');
 ?>
 <!DOCTYPE html>
 <!-- 
-							◢＼　 ☆　　 ／◣
+		   ◢＼　 ☆　　 ／◣
 	　  　∕　　﹨　╰╮∕　　﹨
 	　  　▏　　～～′′～～ 　｜
 	　　  ﹨／　　　　　　 　＼∕
@@ -249,8 +249,8 @@ header('X-Frame-Options: SAMEORIGIN');
 
 						// 设置搜索框和分隔符的初始位置
 						if(isEntering) {
-							if(searchbox) searchbox.style.transform = `translateX(${bgNextWidth}px)`; // 改为从右侧开始
-							if(divider) divider.style.transform = `translateX(${bgNextWidth}px)`; // 改为从右侧开始
+							if(searchbox) searchbox.style.transform = `translateX(${bgNextWidth + 6.5}px)`; // 增加补偿
+							if(divider) divider.style.transform = `translateX(${bgNextWidth + 6.5}px)`; // 增加补偿
 						}
 
 						// 强制回流
@@ -271,8 +271,8 @@ header('X-Frame-Options: SAMEORIGIN');
 							navSearchWrapper.style.width = `${initialWidth + (isEntering ? bgNextWidth : -bgNextWidth)}px`;
 
 							if(!isEntering) {
-								if(searchbox) searchbox.style.transform = `translateX(${bgNextWidth}px)`; // 改为向右移动
-								if(divider) divider.style.transform = `translateX(${bgNextWidth}px)`; // 改为向右移动
+								if(searchbox) searchbox.style.transform = `translateX(${bgNextWidth + 3.5}px)`; // 增加补偿
+								if(divider) divider.style.transform = `translateX(${bgNextWidth + 3.5}px)`; // 增加补偿
 							} else {
 								if(searchbox) searchbox.style.transform = 'translateX(0)'; // 向左移动到原位
 								if(divider) divider.style.transform = 'translateX(0)'; // 向左移动到原位
