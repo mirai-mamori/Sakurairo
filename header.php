@@ -320,7 +320,7 @@ header('X-Frame-Options: SAMEORIGIN');
 								if(divider) {
 									if (!searchbox) {
 										divider.style.opacity = '1';
-										divider.style.transform = 'translateX(0)'; // 重置为初始位置
+										divider.style.transform = 'translateX(4px)'; // 调整落点,补偿4px的偏移
 									} else {
 										divider.style.transform = 'translateX(0)'; // 向左移动到原位
 									}
