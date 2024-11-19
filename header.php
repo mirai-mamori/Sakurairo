@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The header for our theme.
  *
@@ -35,7 +36,7 @@ header('X-Frame-Options: SAMEORIGIN');
 	<meta name="theme-color">
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-	<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css" media="all"/>
+	<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css" media="all" />
 	<?php
 	if (iro_opt('iro_meta')) {
 		$keywords = iro_opt('iro_meta_keywords');
@@ -44,7 +45,7 @@ header('X-Frame-Options: SAMEORIGIN');
 			$tags = get_the_tags();
 			if ($tags) {
 				$keywords = implode(',', array_column($tags, 'name'));
-			}     
+			}
 			if (!empty($post->post_content)) {
 				$description = trim(mb_strimwidth(preg_replace('/\s+/', ' ', strip_tags($post->post_content)), 0, 240, '…'));
 			}
@@ -79,37 +80,42 @@ header('X-Frame-Options: SAMEORIGIN');
 		<script async src="https://www.googletagmanager.com/gtag/js?id=<?= esc_attr(iro_opt('google_analytics_id')); ?>"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
-			function gtag() {dataLayer.push(arguments)}
+
+			function gtag() {
+				dataLayer.push(arguments)
+			}
 			gtag('js', new Date());
 			gtag('config', '<?= esc_attr(iro_opt('google_analytics_id')); ?>');
 		</script>
 	<?php endif; ?>
 	<?= iro_opt("site_header_insert"); ?>
 
-	<?php if (iro_opt('poi_pjax')){
+	<?php if (iro_opt('poi_pjax')) {
 		$script_leep_loading_list = iro_opt("pjax_keep_loading");
-		if(strlen($script_leep_loading_list) > 0) :
-		?>
-    <script>
-        const srcs = `<?php echo iro_opt("pjax_keep_loading"); ?>`;
-        document.addEventListener("pjax:complete", () => {
-            srcs.split(/[\n,]+/).forEach(path => {
-                path = path.trim();
-                if (!path) return; 
-                if (path.endsWith('.js')) {
-                    const script = document.createElement('script');
-                    script.src = path;
-                    script.async = true;
-                    document.body.appendChild(script);
-                } else if (path.endsWith('.css')) {
-                    const style = document.createElement('link');
-                    style.rel = 'stylesheet';
-                    style.href = path;
-                    document.head.appendChild(style);
-                }
-		})});
-    </script>
-    <?php endif;} ?>
+		if (strlen($script_leep_loading_list) > 0) :
+	?>
+			<script>
+				const srcs = `<?php echo iro_opt("pjax_keep_loading"); ?>`;
+				document.addEventListener("pjax:complete", () => {
+					srcs.split(/[\n,]+/).forEach(path => {
+						path = path.trim();
+						if (!path) return;
+						if (path.endsWith('.js')) {
+							const script = document.createElement('script');
+							script.src = path;
+							script.async = true;
+							document.body.appendChild(script);
+						} else if (path.endsWith('.css')) {
+							const style = document.createElement('link');
+							style.rel = 'stylesheet';
+							style.href = path;
+							document.head.appendChild(style);
+						}
+					})
+				});
+			</script>
+	<?php endif;
+	} ?>
 
 </head>
 
@@ -130,11 +136,11 @@ header('X-Frame-Options: SAMEORIGIN');
 				<a href="<?= esc_url(home_url('/')); ?>">
 					<?php if (iro_opt('iro_logo')): ?>
 						<div class="site-title-logo">
-							<img alt="<?= esc_attr(get_bloginfo('name')); ?>" 
-								 src="<?= esc_url(iro_opt('iro_logo')); ?>"
-								 width="auto" height="auto"
-								 loading="lazy"
-								 decoding="async">
+							<img alt="<?= esc_attr(get_bloginfo('name')); ?>"
+								src="<?= esc_url(iro_opt('iro_logo')); ?>"
+								width="auto" height="auto"
+								loading="lazy"
+								decoding="async">
 						</div>
 					<?php endif; ?>
 					<?php if (!empty($nav_text_logo['text'])): ?>
@@ -162,39 +168,40 @@ header('X-Frame-Options: SAMEORIGIN');
 				 * @param array $args Menu arguments
 				 * @return array Filtered menu items
 				 */
-				function limit_menu_by_bytes($items, $args) {
+				function limit_menu_by_bytes($items, $args)
+				{
 					$byte_count = 0;
 					$byte_limit = 70;
 					$cut_index = -1;
 					$main_items = array();
-					
+
 					// 收集所有主菜单项
-					foreach($items as $key => $item) {
-						if($item->menu_item_parent == 0) {
+					foreach ($items as $key => $item) {
+						if ($item->menu_item_parent == 0) {
 							$bytes = strlen(strip_tags($item->title));
 							// 找出第一个导致总和超过70的位置
-							if($byte_count + $bytes > $byte_limit) {
+							if ($byte_count + $bytes > $byte_limit) {
 								$cut_index = $key;
 								break;
 							}
 							$byte_count += $bytes;
 						}
 					}
-					
+
 					// 移除截断位置及之后的主菜单项
-					if($cut_index >= 0) {
-						foreach($items as $key => $item) {
-							if($key >= $cut_index && $item->menu_item_parent == 0) {
+					if ($cut_index >= 0) {
+						foreach ($items as $key => $item) {
+							if ($key >= $cut_index && $item->menu_item_parent == 0) {
 								unset($items[$key]);
 							}
 						}
 					}
-					
+
 					return $items;
 				}
-				
+
 				add_filter('wp_nav_menu_objects', 'limit_menu_by_bytes', 10, 2);
-				
+
 				wp_nav_menu([
 					'depth' => 2,
 					'theme_location' => 'primary',
@@ -202,6 +209,11 @@ header('X-Frame-Options: SAMEORIGIN');
 					'fallback_cb' => false
 				]); ?>
 			</nav>
+			<?php if (!is_home()): ?>
+				<div class="nav-article-title">
+					<?= esc_html(get_the_title()) ?>
+				</div>
+			<?php endif; ?>
 
 			<?php if ($enable_random_graphs || $show_search): ?>
 				<div class="nav-search-divider"></div>
@@ -243,7 +255,7 @@ header('X-Frame-Options: SAMEORIGIN');
 					const StateManager = {
 						init() {
 							if (sessionStorage.getItem('bgNextState')) return this.getState();
-							
+
 							// 优化首次加载状态
 							const state = {
 								lastPageWasHome: false, // 重要：首次加载时设为false以触发进入动画
@@ -264,7 +276,10 @@ header('X-Frame-Options: SAMEORIGIN');
 						},
 
 						update(changes) {
-							this.setState({...this.getState(), ...changes});
+							this.setState({
+								...this.getState(),
+								...changes
+							});
 						}
 					};
 
@@ -272,15 +287,15 @@ header('X-Frame-Options: SAMEORIGIN');
 					const setTransitions = () => {
 						DOM.bgNext.style.transition = `all ${ANIMATION.duration} ${ANIMATION.easing}`;
 						DOM.navSearchWrapper.style.transition = `all ${ANIMATION.duration} ${ANIMATION.easing}`;
-						
-						if(DOM.searchbox) {
+
+						if (DOM.searchbox) {
 							DOM.searchbox.style.transition = `transform ${ANIMATION.duration} ${ANIMATION.easing}`;
 						}
-						
-						if(DOM.divider) {
-							DOM.divider.style.transition = !DOM.searchbox 
-								? `all ${ANIMATION.duration} ${ANIMATION.easing}`
-								: `transform ${ANIMATION.duration} ${ANIMATION.easing}`;
+
+						if (DOM.divider) {
+							DOM.divider.style.transition = !DOM.searchbox ?
+								`all ${ANIMATION.duration} ${ANIMATION.easing}` :
+								`transform ${ANIMATION.duration} ${ANIMATION.easing}`;
 						}
 					};
 
@@ -306,22 +321,24 @@ header('X-Frame-Options: SAMEORIGIN');
 								DOM.bgNext.style.transform = 'translateX(0)';
 							}
 						}
-						
+
 						state.lastPageWasHome = isHomePage;
 						StateManager.setState(state);
 					};
 
 					const animateTransition = (isEntering, state, bgNextWidth, initialWidth) => {
 						if (state.isTransitioning) return;
-						
-						StateManager.update({ isTransitioning: true });
+
+						StateManager.update({
+							isTransitioning: true
+						});
 
 						// 初始化元素状态
 						initElementStates(isEntering, bgNextWidth, initialWidth);
 
 						// 强制回流
 						[DOM.bgNext, DOM.navSearchWrapper, DOM.searchbox, DOM.divider].forEach(el => {
-							if(el) void el.offsetWidth;
+							if (el) void el.offsetWidth;
 						});
 
 						// 执行动画
@@ -330,20 +347,22 @@ header('X-Frame-Options: SAMEORIGIN');
 							animateElements(isEntering, bgNextWidth, initialWidth);
 
 							setTimeout(() => {
-								if(!isEntering) {
+								if (!isEntering) {
 									DOM.bgNext.style.display = 'none';
 									DOM.navSearchWrapper.style.width = 'auto';
 									if (!DOM.searchbox && DOM.divider) {
 										DOM.divider.style.display = 'none';
 									}
 									[DOM.searchbox, DOM.divider].forEach(el => {
-										if(el) {
+										if (el) {
 											el.style.transition = 'none';
 											el.style.transform = '';
 										}
 									});
 								}
-								StateManager.update({ isTransitioning: false });
+								StateManager.update({
+									isTransitioning: false
+								});
 							}, ANIMATION.durationMs);
 						});
 					};
@@ -452,7 +471,7 @@ header('X-Frame-Options: SAMEORIGIN');
 							if (!state.initialized) {
 								state.initialized = true;
 								StateManager.setState(state);
-								
+
 								// 如果是首页，立即准备进入动画
 								if (isHomePage) {
 									requestAnimationFrame(() => {
@@ -466,7 +485,7 @@ header('X-Frame-Options: SAMEORIGIN');
 
 										// 设置初始状态
 										initElementStates(true, bgNextWidth, initialWidth, true);
-										
+
 										// 延迟一帧执行动画
 										requestAnimationFrame(() => {
 											state.firstLoad = false;
@@ -477,11 +496,11 @@ header('X-Frame-Options: SAMEORIGIN');
 									return;
 								}
 							}
-							
+
 							// 非首页时的处理
 							state.firstLoad = false;
 							StateManager.setState(state);
-							
+
 							if (!isHomePage) {
 								DOM.bgNext.style.display = 'none';
 								if (!DOM.searchbox && DOM.divider) {
@@ -508,6 +527,43 @@ header('X-Frame-Options: SAMEORIGIN');
 					// 初始化
 					StateManager.init();
 					showBgNext();
+					const searchWrapperState = {
+						state:false,
+						show(){
+							if(this.state)return
+							const navSearchWrapper = DOM.navSearchWrapper;
+							navSearchWrapper.dataset.scrollswap = 'true';
+									const navTitle = navSearchWrapper.querySelector('.nav-article-title');
+									const width = navTitle.offsetWidth;
+									const navWidth = navSearchWrapper.querySelector('nav').offsetWidth;
+									const deltaWidth = width-navWidth;
+									navSearchWrapper.style.setProperty('--dw', deltaWidth + 'px');
+									this.state = true
+						},
+						hide(){
+							if(!this.state)return
+							const navSearchWrapper = DOM.navSearchWrapper;
+							delete navSearchWrapper.dataset.scrollswap
+										delete navSearchWrapper.dataset.width
+										navSearchWrapper.style.setProperty('--dw', '0')
+										this.state = false
+						}
+					}
+					window.addEventListener('load', () => {
+						const title = document.querySelector('.entry-title');
+						if (!_iro.land_at_home && title) {
+							const handleScroll = () => {
+								console.log(title.getBoundingClientRect().y)
+								if (title.getBoundingClientRect().y<0) {
+									searchWrapperState.show()
+								} else {
+									searchWrapperState.hide()
+								}
+							}
+							handleScroll() // init
+							window.addEventListener('scroll', handleScroll)
+						}
+					},{once:true});
 				</script>
 			<?php endif; ?>
 		</div>

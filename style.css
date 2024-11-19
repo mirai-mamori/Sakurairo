@@ -628,8 +628,17 @@ blockquote:after {
   gap: 3px;
   width: auto;
   max-width: calc(100% - 400px);
+  position: relative;
+  overflow: hidden;
+  --dw:0;
 }
-
+.nav-search-wrapper:not(:hover)[data-scrollswap] nav {
+transform:translateY(-100%);
+margin-right:var(--dw,0);
+}
+.nav-search-wrapper:not(:hover)[data-scrollswap] .nav-article-title {
+  transform:translateY(0);
+}
 .nav-search-wrapper nav {
   flex: 0 1 auto;
   min-width: 0;
@@ -722,6 +731,10 @@ nav .menu > li .sub-menu a {
 }
 
 /* 搜索分隔线和搜索框 */
+.nav-article-title{
+  position: absolute;
+  transform: translateY(150%);
+}
 .nav-search-divider {
   width: 1px;
   height: 24px;
