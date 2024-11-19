@@ -2399,17 +2399,19 @@ function register_shortcodes() {
     });
 
     add_shortcode('collapse', function($atts, $content = null) {
+        static $collapse_id = 0;
+        $collapse_id++;
         $atts = shortcode_atts(array("title" => ""), $atts);
         ob_start();
         ?>
-        <a href="javascript:void(0)" class="collapseButton">
+        <a href="javascript:void(0)" class="collapseButton" data-collapse="<?= $collapse_id ?>">
             <div class="collapse shortcodestyle">
                 <i class="fa-solid fa-angle-down"></i>
                 <span class="title"><?= $atts['title'] ?></span>
                 <span class="ecbutton"><?php _e('Expand / Collapse', 'sakurairo'); ?></span>
             </div>
         </a>
-        <div class="xContent" style="display: none;"><?= do_shortcode($content) ?></div>
+        <div class="xContent" data-collapse="<?= $collapse_id ?>" style="display: none;"><?= do_shortcode($content) ?></div>
         <?php
         return ob_get_clean();
     });

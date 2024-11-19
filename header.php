@@ -161,54 +161,33 @@ header('X-Frame-Options: SAMEORIGIN');
 		<!-- Navigation and Search Section -->
 		<div class="nav-search-wrapper">
 			<nav>
-				<?php
-				/**
-				 * Limit menu items based on total byte count
-				 * @param array $items Menu items
-				 * @param array $args Menu arguments
-				 * @return array Filtered menu items
-				 */
-				function limit_menu_by_bytes($items, $args)
-				{
-					$byte_count = 0;
-					$byte_limit = 70;
-					$cut_index = -1;
-					$main_items = array();
-
-					// 收集所有主菜单项
-					foreach ($items as $key => $item) {
-						if ($item->menu_item_parent == 0) {
-							$bytes = strlen(strip_tags($item->title));
-							// 找出第一个导致总和超过70的位置
-							if ($byte_count + $bytes > $byte_limit) {
-								$cut_index = $key;
-								break;
-							}
-							$byte_count += $bytes;
-						}
-					}
-
-					// 移除截断位置及之后的主菜单项
-					if ($cut_index >= 0) {
-						foreach ($items as $key => $item) {
-							if ($key >= $cut_index && $item->menu_item_parent == 0) {
-								unset($items[$key]);
-							}
-						}
-					}
-
-					return $items;
-				}
-
-				add_filter('wp_nav_menu_objects', 'limit_menu_by_bytes', 10, 2);
-
+				<?php 
 				wp_nav_menu([
 					'depth' => 2,
 					'theme_location' => 'primary',
-					'container' => false,
-					'fallback_cb' => false
+					'container' => false
 				]); ?>
 			</nav>
+			<script>
+            function initNavWidth() {
+                const nav = document.querySelector('nav');
+                const checkWidth = () => {
+                    if (nav.offsetWidth > 1200) {
+                        nav.style.overflow = 'hidden';
+                        nav.style.maxWidth = '1200px';
+                    } else {
+                        nav.style.overflow = '';
+                        nav.style.maxWidth = '';
+                    }
+                };
+                checkWidth();
+                window.addEventListener('resize', checkWidth);
+            }
+
+            document.addEventListener('DOMContentLoaded', initNavWidth);
+            document.addEventListener('pjax:complete', initNavWidth);
+            </script>
+
 			<?php if ($enable_random_graphs || $show_search): ?>
 				<div class="nav-search-divider"></div>
 			<?php endif; ?>
