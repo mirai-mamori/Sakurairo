@@ -209,12 +209,6 @@ header('X-Frame-Options: SAMEORIGIN');
 					'fallback_cb' => false
 				]); ?>
 			</nav>
-			<?php if (!is_home()): ?>
-				<div class="nav-article-title">
-					<?= esc_html(get_the_title()) ?>
-				</div>
-			<?php endif; ?>
-
 			<?php if ($enable_random_graphs || $show_search): ?>
 				<div class="nav-search-divider"></div>
 			<?php endif; ?>
@@ -527,43 +521,65 @@ header('X-Frame-Options: SAMEORIGIN');
 					// 初始化
 					StateManager.init();
 					showBgNext();
-					const searchWrapperState = {
-						state:false,
-						show(){
-							if(this.state)return
-							const navSearchWrapper = DOM.navSearchWrapper;
-							navSearchWrapper.dataset.scrollswap = 'true';
-									const navTitle = navSearchWrapper.querySelector('.nav-article-title');
-									const width = navTitle.offsetWidth;
-									const navWidth = navSearchWrapper.querySelector('nav').offsetWidth;
-									const deltaWidth = width-navWidth;
-									navSearchWrapper.style.setProperty('--dw', deltaWidth + 'px');
-									this.state = true
-						},
-						hide(){
-							if(!this.state)return
-							const navSearchWrapper = DOM.navSearchWrapper;
-							delete navSearchWrapper.dataset.scrollswap
-										delete navSearchWrapper.dataset.width
-										navSearchWrapper.style.setProperty('--dw', '0')
-										this.state = false
-						}
-					}
-					window.addEventListener('load', () => {
+					const handleLoaded = () => {
 						const title = document.querySelector('.entry-title');
 						if (!_iro.land_at_home && title) {
+							let navTitle = DOM.navSearchWrapper.querySelector('.nav-article-title');
+							const searchWrapperState = {
+								state: false,
+								updateTitle() {
+									if (!navTitle) {
+										DOM.navSearchWrapper.firstElementChild.insertAdjacentHTML('afterend', `
+									<div class="nav-article-title">
+										${title.textContent}
+									</div>
+								`)
+										navTitle = DOM.navSearchWrapper.querySelector('.nav-article-title');
+									} else {
+										navTitle.textContent = title.textContent
+									}
+								},
+								show() {
+									if (this.state) return
+									const navSearchWrapper = DOM.navSearchWrapper;
+									navSearchWrapper.dataset.scrollswap = 'true';
+									const width = navTitle.offsetWidth;
+									const navWidth = navSearchWrapper.querySelector('nav').offsetWidth;
+									const deltaWidth = width - navWidth;
+									navSearchWrapper.style.setProperty('--dw', deltaWidth + 'px');
+									this.state = true
+								},
+								hide() {
+									if (!this.state) return
+									const navSearchWrapper = DOM.navSearchWrapper;
+									delete navSearchWrapper.dataset.scrollswap
+									delete navSearchWrapper.dataset.width
+									navSearchWrapper.style.setProperty('--dw', '0')
+									this.state = false
+								}
+							}
+							searchWrapperState.updateTitle()
+
 							const handleScroll = () => {
-								console.log(title.getBoundingClientRect().y)
-								if (title.getBoundingClientRect().y<0) {
+								if (title.getBoundingClientRect().y < 0) {
 									searchWrapperState.show()
 								} else {
 									searchWrapperState.hide()
 								}
 							}
-							handleScroll() // init
+							window.addEventListener('load', handleScroll) // init
 							window.addEventListener('scroll', handleScroll)
+							document.addEventListener('pjax:complete', () => {
+								searchWrapperState.updateTitle()
+								handleScroll()
+							})
+
 						}
-					},{once:true});
+					}
+
+					document.addEventListener('DOMContentLoaded', handleLoaded, {
+						once: true
+					});
 				</script>
 			<?php endif; ?>
 		</div>

@@ -634,7 +634,7 @@ blockquote:after {
 }
 .nav-search-wrapper:not(:hover)[data-scrollswap] nav {
 transform:translateY(-100%);
-margin-right:var(--dw,0);
+margin-right:var(--dw,0px);
 }
 .nav-search-wrapper:not(:hover)[data-scrollswap] .nav-article-title {
   transform:translateY(0);
@@ -734,6 +734,7 @@ nav .menu > li .sub-menu a {
 .nav-article-title{
   position: absolute;
   transform: translateY(150%);
+  white-space: nowrap;
 }
 .nav-search-divider {
   width: 1px;
