@@ -255,6 +255,14 @@ header('X-Frame-Options: SAMEORIGIN');
 						const initialWidth = navSearchWrapper.offsetWidth;
 						navSearchWrapper.style.width = initialWidth + 'px';
 
+						 // 如果没有搜索框但有分隔符，控制分隔符的显示/隐藏
+						if (!searchbox && divider) {
+							if (isEntering) {
+								divider.style.display = 'block';
+								divider.style.opacity = '0';
+							}
+						}
+
 						// 设置初始状态
 						bgNext.style.display = 'block';
 						bgNext.style.opacity = isEntering ? '0' : '1';
@@ -263,7 +271,15 @@ header('X-Frame-Options: SAMEORIGIN');
 						// 设置搜索框和分隔符的初始位置
 						if(isEntering) {
 							if(searchbox) searchbox.style.transform = `translateX(${bgNextWidth + 6.5}px)`; // 增加补偿
-							if(divider) divider.style.transform = `translateX(${bgNextWidth + 6.5}px)`; // 增加补偿
+							if(divider) {
+								if (!searchbox) {
+									divider.style.display = 'block';
+									divider.style.opacity = '0';
+									divider.style.transform = `translateX(${bgNextWidth + 6.5}px)`; // 添加与搜索框一致的位移
+								} else {
+									divider.style.transform = `translateX(${bgNextWidth + 6.5}px)`; // 增加补偿
+								}
+							}
 						}
 
 						// 强制回流
@@ -277,7 +293,13 @@ header('X-Frame-Options: SAMEORIGIN');
 								el.style.transition = `all ${duration} ${easing}`;
 							});
 							if(searchbox) searchbox.style.transition = `transform ${duration} ${easing}`;
-							if(divider) divider.style.transition = `transform ${duration} ${easing}`;
+							if(divider) {
+								if (!searchbox) {
+									divider.style.transition = `all ${duration} ${easing}`; // 修改为all以同时处理opacity和transform
+								} else {
+									divider.style.transition = `transform ${duration} ${easing}`;
+								}
+							}
 
 							bgNext.style.opacity = isEntering ? '1' : '0';
 							bgNext.style.transform = `translateX(${isEntering ? '0' : '20px'})`; // 改为向右侧退出
@@ -285,16 +307,33 @@ header('X-Frame-Options: SAMEORIGIN');
 
 							if(!isEntering) {
 								if(searchbox) searchbox.style.transform = `translateX(${bgNextWidth + 3.5}px)`; // 增加补偿
-								if(divider) divider.style.transform = `translateX(${bgNextWidth + 3.5}px)`; // 增加补偿
+								if(divider) {
+									if (!searchbox) {
+										divider.style.opacity = '0';
+										divider.style.transform = `translateX(${bgNextWidth + 3.5}px)`; // 添加退出时的位移
+									} else {
+										divider.style.transform = `translateX(${bgNextWidth + 3.5}px)`; // 增加补偿
+									}
+								}
 							} else {
 								if(searchbox) searchbox.style.transform = 'translateX(0)'; // 向左移动到原位
-								if(divider) divider.style.transform = 'translateX(0)'; // 向左移动到原位
+								if(divider) {
+									if (!searchbox) {
+										divider.style.opacity = '1';
+										divider.style.transform = 'translateX(0)'; // 重置为初始位置
+									} else {
+										divider.style.transform = 'translateX(0)'; // 向左移动到原位
+									}
+								}
 							}
 
 							setTimeout(() => {
 								if(!isEntering) {
 									bgNext.style.display = 'none';
 									navSearchWrapper.style.width = 'auto';
+									if (!searchbox && divider) {
+										divider.style.display = 'none';
+									}
 									[searchbox, divider].forEach(el => {
 										if(el) {
 											el.style.transition = 'none';
@@ -312,29 +351,43 @@ header('X-Frame-Options: SAMEORIGIN');
 						const isHomePage = window.location.pathname === '/' || 
 										  window.location.pathname === '/index.php';
 						const state = JSON.parse(sessionStorage.getItem('bgNextState'));
+						const searchbox = document.querySelector('.searchbox.js-toggle-search');
+						const divider = document.querySelector('.nav-search-divider');
 
 						if (state.isTransitioning) return;
 
-						if (isHomePage && !state.lastPageWasHome) {
-							// 检查是否是首次加载
-							if (!state.hasOwnProperty('firstLoad')) {
-								state.firstLoad = true;
-								sessionStorage.setItem('bgNextState', JSON.stringify(state));
-								
-								// 首次加载时直接设置最终状态,跳过动画
-								const bgNext = document.getElementById('bg-next');
+						// 处理首次加载时的分隔符显示逻辑
+						if (!state.hasOwnProperty('firstLoad')) {
+							state.firstLoad = true;
+							sessionStorage.setItem('bgNextState', JSON.stringify(state));
+							
+							const bgNext = document.getElementById('bg-next');
+							if (isHomePage) {
 								bgNext.style.display = 'block';
 								bgNext.style.opacity = '1';
 								bgNext.style.transform = 'translateX(0)';
-								return;
+							} else {
+								bgNext.style.display = 'none';
+								// 如果不是主页且没有搜索框，隐藏分隔符
+								if (!searchbox && divider) {
+									divider.style.display = 'none';
+								}
 							}
+							return;
+						}
+
+						if (isHomePage && !state.lastPageWasHome) {
 							animateTransition(true, state);
 						} else if (!isHomePage && state.lastPageWasHome) {
 							animateTransition(false, state);
 						} else {
 							const bgNext = document.getElementById('bg-next');
 							bgNext.style.display = isHomePage ? 'block' : 'none';
-							if(isHomePage) {
+							// 非主页且无搜索框时隐藏分隔符
+							if (!isHomePage && !searchbox && divider) {
+								divider.style.display = 'none';
+							}
+							if (isHomePage) {
 								bgNext.style.opacity = '1';
 								bgNext.style.transform = 'translateX(0)';
 							}
