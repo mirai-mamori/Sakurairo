@@ -165,18 +165,31 @@ header('X-Frame-Options: SAMEORIGIN');
 				function limit_menu_by_bytes($items, $args) {
 					$byte_count = 0;
 					$byte_limit = 70;
+					$cut_index = -1;
+					$main_items = array();
 					
+					// 收集所有主菜单项
 					foreach($items as $key => $item) {
-						if($item->menu_item_parent != 0) continue;
-						
-						$title_bytes = strlen(strip_tags($item->title));
-						if($byte_count + $title_bytes >= $byte_limit) {
-							unset($items[$key]);
-							if($byte_count + $title_bytes == $byte_limit) break;
-						} else {
-							$byte_count += $title_bytes;
+						if($item->menu_item_parent == 0) {
+							$bytes = strlen(strip_tags($item->title));
+							// 找出第一个导致总和超过70的位置
+							if($byte_count + $bytes > $byte_limit) {
+								$cut_index = $key;
+								break;
+							}
+							$byte_count += $bytes;
 						}
 					}
+					
+					// 移除截断位置及之后的主菜单项
+					if($cut_index >= 0) {
+						foreach($items as $key => $item) {
+							if($key >= $cut_index && $item->menu_item_parent == 0) {
+								unset($items[$key]);
+							}
+						}
+					}
+					
 					return $items;
 				}
 				
@@ -303,6 +316,18 @@ header('X-Frame-Options: SAMEORIGIN');
 						if (state.isTransitioning) return;
 
 						if (isHomePage && !state.lastPageWasHome) {
+							// 检查是否是首次加载
+							if (!state.hasOwnProperty('firstLoad')) {
+								state.firstLoad = true;
+								sessionStorage.setItem('bgNextState', JSON.stringify(state));
+								
+								// 首次加载时直接设置最终状态,跳过动画
+								const bgNext = document.getElementById('bg-next');
+								bgNext.style.display = 'block';
+								bgNext.style.opacity = '1';
+								bgNext.style.transform = 'translateX(0)';
+								return;
+							}
 							animateTransition(true, state);
 						} else if (!isHomePage && state.lastPageWasHome) {
 							animateTransition(false, state);
