@@ -220,196 +220,293 @@ header('X-Frame-Options: SAMEORIGIN');
 					<span class="screen-reader-text"><?php esc_html_e('Random Background', 'sakurairo'); ?></span>
 				</div>
 				<script>
-					// 初始化状态存储
-					if (!sessionStorage.getItem('bgNextState')) {
-						sessionStorage.setItem('bgNextState', JSON.stringify({
-							lastPageWasHome: window.location.pathname === '/' || 
-										   window.location.pathname === '/index.php',
-							isTransitioning: false
-						}));
-					}
+					// 缓存DOM元素和常量值
+					const DOM = {
+						bgNext: document.getElementById('bg-next'),
+						navSearchWrapper: document.querySelector('.nav-search-wrapper'),
+						searchbox: document.querySelector('.searchbox.js-toggle-search'),
+						divider: document.querySelector('.nav-search-divider')
+					};
 
-					const animateTransition = (isEntering, state) => {
-						const bgNext = document.getElementById('bg-next');
-						const navSearchWrapper = document.querySelector('.nav-search-wrapper'); 
-						const searchbox = document.querySelector('.searchbox.js-toggle-search');
-						const divider = document.querySelector('.nav-search-divider');
-						const easing = 'cubic-bezier(0.34, 1.56, 0.64, 1)';
-						const duration = '0.6s';
+					const ANIMATION = {
+						easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+						duration: '0.6s',
+						durationMs: 600,
+						offset: {
+							entering: 6.5,
+							leaving: 3.5,
+							divider: 4
+						}
+					};
 
-						state.isTransitioning = true;
-						sessionStorage.setItem('bgNextState', JSON.stringify(state));
+					// 完整的状态管理实现
+					const StateManager = {
+						init() {
+							if (sessionStorage.getItem('bgNextState')) return this.getState();
+							
+							// 优化首次加载状态
+							const state = {
+								lastPageWasHome: false, // 重要：首次加载时设为false以触发进入动画
+								isTransitioning: false,
+								firstLoad: true,
+								initialized: false
+							};
+							this.setState(state);
+							return state;
+						},
 
-						// 初始化宽度计算
-						const clone = bgNext.cloneNode(true);
-						clone.style.cssText = 'display:block;opacity:0;position:fixed;pointer-events:none;';
-						document.body.appendChild(clone);
-						const bgNextWidth = clone.offsetWidth;
-						document.body.removeChild(clone);
+						getState() {
+							return JSON.parse(sessionStorage.getItem('bgNextState'));
+						},
+
+						setState(state) {
+							sessionStorage.setItem('bgNextState', JSON.stringify(state));
+						},
+
+						update(changes) {
+							this.setState({...this.getState(), ...changes});
+						}
+					};
+
+					// 添加过渡效果设置方法
+					const setTransitions = () => {
+						DOM.bgNext.style.transition = `all ${ANIMATION.duration} ${ANIMATION.easing}`;
+						DOM.navSearchWrapper.style.transition = `all ${ANIMATION.duration} ${ANIMATION.easing}`;
 						
-						// 重置过渡效果
-						[bgNext, navSearchWrapper, searchbox, divider].forEach(el => {
-							if(el) el.style.transition = 'none';
-						});
+						if(DOM.searchbox) {
+							DOM.searchbox.style.transition = `transform ${ANIMATION.duration} ${ANIMATION.easing}`;
+						}
+						
+						if(DOM.divider) {
+							DOM.divider.style.transition = !DOM.searchbox 
+								? `all ${ANIMATION.duration} ${ANIMATION.easing}`
+								: `transform ${ANIMATION.duration} ${ANIMATION.easing}`;
+						}
+					};
 
-						const initialWidth = navSearchWrapper.offsetWidth;
-						navSearchWrapper.style.width = initialWidth + 'px';
+					// 添加页面过渡处理方法
+					const handlePageTransition = (isHomePage, state) => {
+						if (isHomePage !== state.lastPageWasHome) {
+							const clone = DOM.bgNext.cloneNode(true);
+							clone.style.cssText = 'display:block;opacity:0;position:fixed;pointer-events:none;';
+							document.body.appendChild(clone);
+							const bgNextWidth = clone.offsetWidth;
+							document.body.removeChild(clone);
 
-						 // 如果没有搜索框但有分隔符，控制分隔符的显示/隐藏
-						if (!searchbox && divider) {
-							if (isEntering) {
-								divider.style.display = 'block';
-								divider.style.opacity = '0';
+							const initialWidth = DOM.navSearchWrapper.offsetWidth;
+							animateTransition(isHomePage, state, bgNextWidth, initialWidth);
+						} else {
+							// 处理直接状态
+							DOM.bgNext.style.display = isHomePage ? 'block' : 'none';
+							if (!isHomePage && !DOM.searchbox && DOM.divider) {
+								DOM.divider.style.display = 'none';
+							}
+							if (isHomePage) {
+								DOM.bgNext.style.opacity = '1';
+								DOM.bgNext.style.transform = 'translateX(0)';
 							}
 						}
+						
+						state.lastPageWasHome = isHomePage;
+						StateManager.setState(state);
+					};
 
-						// 设置初始状态
-						bgNext.style.display = 'block';
-						bgNext.style.opacity = isEntering ? '0' : '1';
-						bgNext.style.transform = `translateX(${isEntering ? '20px' : '0'})`; // 改为从右侧进入
+					const animateTransition = (isEntering, state, bgNextWidth, initialWidth) => {
+						if (state.isTransitioning) return;
+						
+						StateManager.update({ isTransitioning: true });
 
-						// 设置搜索框和分隔符的初始位置
-						if(isEntering) {
-							if(searchbox) searchbox.style.transform = `translateX(${bgNextWidth + 6.5}px)`; // 增加补偿
-							if(divider) {
-								if (!searchbox) {
-									divider.style.display = 'block';
-									divider.style.opacity = '0';
-									divider.style.transform = `translateX(${bgNextWidth + 6.5}px)`; // 添加与搜索框一致的位移
-								} else {
-									divider.style.transform = `translateX(${bgNextWidth + 6.5}px)`; // 增加补偿
-								}
-							}
-						}
+						// 初始化元素状态
+						initElementStates(isEntering, bgNextWidth, initialWidth);
 
 						// 强制回流
-						[bgNext, navSearchWrapper, searchbox, divider].forEach(el => {
+						[DOM.bgNext, DOM.navSearchWrapper, DOM.searchbox, DOM.divider].forEach(el => {
 							if(el) void el.offsetWidth;
 						});
 
-						// 开始动画
+						// 执行动画
 						requestAnimationFrame(() => {
-							[bgNext, navSearchWrapper].forEach(el => {
-								el.style.transition = `all ${duration} ${easing}`;
-							});
-							if(searchbox) searchbox.style.transition = `transform ${duration} ${easing}`;
-							if(divider) {
-								if (!searchbox) {
-									divider.style.transition = `all ${duration} ${easing}`; // 修改为all以同时处理opacity和transform
-								} else {
-									divider.style.transition = `transform ${duration} ${easing}`;
-								}
-							}
-
-							bgNext.style.opacity = isEntering ? '1' : '0';
-							bgNext.style.transform = `translateX(${isEntering ? '0' : '20px'})`; // 改为向右侧退出
-							navSearchWrapper.style.width = `${initialWidth + (isEntering ? bgNextWidth : -bgNextWidth)}px`;
-
-							if(!isEntering) {
-								if(searchbox) searchbox.style.transform = `translateX(${bgNextWidth + 3.5}px)`; // 增加补偿
-								if(divider) {
-									if (!searchbox) {
-										divider.style.opacity = '0';
-										divider.style.transform = `translateX(${bgNextWidth + 3.5}px)`; // 添加退出时的位移
-									} else {
-										divider.style.transform = `translateX(${bgNextWidth + 3.5}px)`; // 增加补偿
-									}
-								}
-							} else {
-								if(searchbox) searchbox.style.transform = 'translateX(0)'; // 向左移动到原位
-								if(divider) {
-									if (!searchbox) {
-										divider.style.opacity = '1';
-										divider.style.transform = 'translateX(4px)'; // 调整落点,补偿4px的偏移
-									} else {
-										divider.style.transform = 'translateX(0)'; // 向左移动到原位
-									}
-								}
-							}
+							setTransitions();
+							animateElements(isEntering, bgNextWidth, initialWidth);
 
 							setTimeout(() => {
 								if(!isEntering) {
-									bgNext.style.display = 'none';
-									navSearchWrapper.style.width = 'auto';
-									if (!searchbox && divider) {
-										divider.style.display = 'none';
+									DOM.bgNext.style.display = 'none';
+									DOM.navSearchWrapper.style.width = 'auto';
+									if (!DOM.searchbox && DOM.divider) {
+										DOM.divider.style.display = 'none';
 									}
-									[searchbox, divider].forEach(el => {
+									[DOM.searchbox, DOM.divider].forEach(el => {
 										if(el) {
 											el.style.transition = 'none';
 											el.style.transform = '';
 										}
 									});
 								}
-								state.isTransitioning = false;
-								sessionStorage.setItem('bgNextState', JSON.stringify(state));
-							}, parseFloat(duration) * 1000);
+								StateManager.update({ isTransitioning: false });
+							}, ANIMATION.durationMs);
+						});
+					};
+
+					const initElementStates = (isEntering, bgNextWidth, initialWidth, isFirstLoad = false) => {
+						// 确保元素样式重置
+						DOM.navSearchWrapper.style.width = initialWidth + 'px';
+						DOM.bgNext.style.cssText = `
+							display: block;
+							opacity: ${isEntering ? '0' : '1'};
+							transform: translateX(${isEntering ? '20px' : '0'});
+							transition: none;
+						`;
+
+						if (!DOM.searchbox && DOM.divider) {
+							if (isEntering && !isFirstLoad) {
+								DOM.divider.style.cssText = `
+									display: block;
+									opacity: 0;
+									transform: translateX(${bgNextWidth + ANIMATION.offset.entering}px);
+									transition: none;
+								`;
+							}
+						}
+
+						if (isEntering && !isFirstLoad) {
+							setInitialPositions(bgNextWidth);
+						}
+					};
+
+					const setInitialPositions = (bgNextWidth) => {
+						const offset = ANIMATION.offset.entering;
+						if (DOM.searchbox) {
+							DOM.searchbox.style.cssText = `
+								transform: translateX(${bgNextWidth + offset}px);
+								transition: none;
+							`;
+						}
+						if (DOM.divider) {
+							if (!DOM.searchbox) {
+								DOM.divider.style.cssText = `
+									display: block;
+									opacity: 0;
+									transform: translateX(${bgNextWidth + offset}px);
+									transition: none;
+								`;
+							} else {
+								DOM.divider.style.cssText = `
+									transform: translateX(${bgNextWidth + offset}px);
+									transition: none;
+								`;
+							}
+						}
+					};
+
+					const animateElements = (isEntering, bgNextWidth, initialWidth) => {
+						const enteringOffset = ANIMATION.offset.entering;
+						const leavingOffset = ANIMATION.offset.leaving;
+						const dividerOffset = ANIMATION.offset.divider;
+
+						requestAnimationFrame(() => {
+							// 设置过渡效果
+							setTransitions();
+
+							// 执行动画
+							DOM.bgNext.style.opacity = isEntering ? '1' : '0';
+							DOM.bgNext.style.transform = `translateX(${isEntering ? '0' : '20px'})`;
+							DOM.navSearchWrapper.style.width = `${initialWidth + (isEntering ? bgNextWidth : -bgNextWidth)}px`;
+
+							if (!isEntering) {
+								if (DOM.searchbox) {
+									DOM.searchbox.style.transform = `translateX(${bgNextWidth + leavingOffset}px)`;
+								}
+								if (DOM.divider) {
+									if (!DOM.searchbox) {
+										DOM.divider.style.opacity = '0';
+										DOM.divider.style.transform = `translateX(${bgNextWidth + leavingOffset}px)`;
+									} else {
+										DOM.divider.style.transform = `translateX(${bgNextWidth + leavingOffset}px)`;
+									}
+								}
+							} else {
+								if (DOM.searchbox) {
+									DOM.searchbox.style.transform = 'translateX(0)';
+								}
+								if (DOM.divider) {
+									if (!DOM.searchbox) {
+										DOM.divider.style.opacity = '1';
+										DOM.divider.style.transform = `translateX(${dividerOffset}px)`;
+									} else {
+										DOM.divider.style.transform = 'translateX(0)';
+									}
+								}
+							}
 						});
 					};
 
 					const showBgNext = () => {
-						const isHomePage = window.location.pathname === '/' || 
-										  window.location.pathname === '/index.php';
-						const state = JSON.parse(sessionStorage.getItem('bgNextState'));
-						const searchbox = document.querySelector('.searchbox.js-toggle-search');
-						const divider = document.querySelector('.nav-search-divider');
+						const isHomePage = location.pathname === '/' || location.pathname === '/index.php';
+						const state = StateManager.getState();
 
 						if (state.isTransitioning) return;
 
-						// 处理首次加载时的分隔符显示逻辑
-						if (!state.hasOwnProperty('firstLoad')) {
-							state.firstLoad = true;
-							sessionStorage.setItem('bgNextState', JSON.stringify(state));
+						// 处理首次加载
+						if (state.firstLoad) {
+							if (!state.initialized) {
+								state.initialized = true;
+								StateManager.setState(state);
+								
+								// 如果是首页，立即准备进入动画
+								if (isHomePage) {
+									requestAnimationFrame(() => {
+										const clone = DOM.bgNext.cloneNode(true);
+										clone.style.cssText = 'display:block;opacity:0;position:fixed;pointer-events:none;';
+										document.body.appendChild(clone);
+										const bgNextWidth = clone.offsetWidth;
+										document.body.removeChild(clone);
+
+										const initialWidth = DOM.navSearchWrapper.offsetWidth;
+
+										// 设置初始状态
+										initElementStates(true, bgNextWidth, initialWidth, true);
+										
+										// 延迟一帧执行动画
+										requestAnimationFrame(() => {
+											state.firstLoad = false;
+											StateManager.setState(state);
+											animateElements(true, bgNextWidth, initialWidth);
+										});
+									});
+									return;
+								}
+							}
 							
-							const bgNext = document.getElementById('bg-next');
-							if (isHomePage) {
-								bgNext.style.display = 'block';
-								bgNext.style.opacity = '1';
-								bgNext.style.transform = 'translateX(0)';
-							} else {
-								bgNext.style.display = 'none';
-								// 如果不是主页且没有搜索框，隐藏分隔符
-								if (!searchbox && divider) {
-									divider.style.display = 'none';
+							// 非首页时的处理
+							state.firstLoad = false;
+							StateManager.setState(state);
+							
+							if (!isHomePage) {
+								DOM.bgNext.style.display = 'none';
+								if (!DOM.searchbox && DOM.divider) {
+									DOM.divider.style.display = 'none';
 								}
 							}
 							return;
 						}
 
-						if (isHomePage && !state.lastPageWasHome) {
-							animateTransition(true, state);
-						} else if (!isHomePage && state.lastPageWasHome) {
-							animateTransition(false, state);
-						} else {
-							const bgNext = document.getElementById('bg-next');
-							bgNext.style.display = isHomePage ? 'block' : 'none';
-							// 非主页且无搜索框时隐藏分隔符
-							if (!isHomePage && !searchbox && divider) {
-								divider.style.display = 'none';
-							}
-							if (isHomePage) {
-								bgNext.style.opacity = '1';
-								bgNext.style.transform = 'translateX(0)';
-							}
-						}
-						
-						state.lastPageWasHome = isHomePage;
-						sessionStorage.setItem('bgNextState', JSON.stringify(state));
+						handlePageTransition(isHomePage, state);
 					};
 
 					// PJAX事件监听
 					document.addEventListener('pjax:send', () => {
-						const state = JSON.parse(sessionStorage.getItem('bgNextState'));
-						state.lastPageWasHome = window.location.pathname === '/' || 
-											 window.location.pathname === '/index.php';
-						sessionStorage.setItem('bgNextState', JSON.stringify(state));
-					}, false);
+						StateManager.update({
+							lastPageWasHome: location.pathname === '/' || location.pathname === '/index.php'
+						});
+					});
 
 					document.addEventListener('pjax:complete', () => {
-						setTimeout(showBgNext, 0);
-					}, false);
+						requestAnimationFrame(showBgNext);
+					});
 
-					// 初始执行
+					// 初始化
+					StateManager.init();
 					showBgNext();
 				</script>
 			<?php endif; ?>
