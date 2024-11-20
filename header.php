@@ -169,24 +169,24 @@ header('X-Frame-Options: SAMEORIGIN');
 				]); ?>
 			</nav>
 			<script>
-            function initNavWidth() {
-                const nav = document.querySelector('nav');
-                const checkWidth = () => {
-                    if (nav.offsetWidth > 1200) {
-                        nav.style.overflow = 'hidden';
-                        nav.style.maxWidth = '1200px';
-                    } else {
-                        nav.style.overflow = '';
-                        nav.style.maxWidth = '';
-                    }
-                };
-                checkWidth();
-                window.addEventListener('resize', checkWidth);
-            }
+			function initNavWidth() {
+				const nav = document.querySelector('nav');
+				const checkWidth = () => {
+					if (nav.offsetWidth > 1200) {
+						nav.style.overflowX = 'hidden';
+						nav.style.maxWidth = '1200px';
+					} else {
+						nav.style.overflowX = '';
+						nav.style.maxWidth = '';
+					}
+				};
+				checkWidth();
+				window.addEventListener('resize', checkWidth);
+			}
 
-            document.addEventListener('DOMContentLoaded', initNavWidth);
-            document.addEventListener('pjax:complete', initNavWidth);
-            </script>
+			document.addEventListener('DOMContentLoaded', initNavWidth);
+			document.addEventListener('pjax:complete', initNavWidth);
+			</script>
 
 			<?php if ($enable_random_graphs || $show_search): ?>
 				<div class="nav-search-divider"></div>
