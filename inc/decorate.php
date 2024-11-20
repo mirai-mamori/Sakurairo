@@ -572,12 +572,6 @@ display:none;
 }
 <?php endif; ?>
 
-<?php if (!iro_opt('nav_menu_stowed', 'false')): ?>
-.site-header.yya {
-  top: 0;
-}
-<?php endif; ?>
-
 <?php if (iro_opt('footer_sakura', 'true')): ?>
 @keyframes slow-rotate {
   from {
@@ -801,6 +795,13 @@ if($nav_menu_style == 'space-between' && ($has_user_avatar || $has_logo)){ ?>
 }
 .header-user-menu {
     right: -5%;
+}
+.site-branding{
+  background: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border: none;
+  box-shadow: none;
 }
 <?php } else { ?>
 .site-header {

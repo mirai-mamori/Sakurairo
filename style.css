@@ -547,6 +547,13 @@ blockquote:after {
   gap: 20px;
   z-index: 999;
   transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+
+.site-header:hover {
+  top: 0px;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
 }
 
 /* 共享的背景和过滤器样式 */
@@ -865,24 +872,6 @@ nav .menu > li .sub-menu a {
   padding: 5px 0;
   border-radius: 0 0 4px 4px;
   width: 130px;
-}
-
-/* yya动画类 */
-.site-header.yya {
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  top: -45px;
-}
-
-.yya {
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;  
-}
-
-.site-header:hover {
-  top: 0px;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
 }
 
 /* 移动端菜单 */

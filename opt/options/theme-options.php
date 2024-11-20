@@ -438,14 +438,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'    => 'nav_menu_stowed',
-        'type'  => 'switcher',
-        'title' => __('Nav Menu Stowed Away','sakurairo_csf'),
-        'label'   => __('It is on by default. nav menu will be stowed at the top','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
         'id' => 'nav_menu_font',
         'type' => 'text',
         'title' => __('Nav Menu Font','sakurairo_csf'),
