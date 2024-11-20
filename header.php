@@ -355,7 +355,7 @@ header('X-Frame-Options: SAMEORIGIN');
 								DOM.divider.style.cssText = `
 									display: block;
 									opacity: 0;
-									transform: translateX(${bgNextWidth + ANIMATION.offset.entering}px);
+									transform: translateX(${isEntering ? '20px' : '0'});
 									transition: none;
 								`;
 							}
@@ -501,64 +501,93 @@ header('X-Frame-Options: SAMEORIGIN');
 					StateManager.init();
 					showBgNext();
 					const handleLoaded = () => {
-						const title = document.querySelector('.entry-title');
-						if (!_iro.land_at_home && title) {
-							let navTitle = DOM.navSearchWrapper.querySelector('.nav-article-title');
+						// 仅在文章页面处理
+						if (!_iro.land_at_home) {
 							const searchWrapperState = {
 								state: false,
+								navTitle: null,
+								titlePadding: 20, // 定义左右padding总和
+								
+								init() {
+									this.navTitle = DOM.navSearchWrapper.querySelector('.nav-article-title');
+									if (!this.navTitle) {
+										// 创建时添加padding样式
+										DOM.navSearchWrapper.firstElementChild.insertAdjacentHTML('afterend', 
+											'<div class="nav-article-title" style="padding-left:10px;padding-right:10px;box-sizing:border-box;"></div>'
+										);
+										this.navTitle = DOM.navSearchWrapper.querySelector('.nav-article-title');
+									}
+									this.updateTitle();
+								},
+
 								updateTitle() {
-									if (!navTitle) {
-										DOM.navSearchWrapper.firstElementChild.insertAdjacentHTML('afterend', `
-									<div class="nav-article-title">
-										${title.textContent}
-									</div>
-								`)
-										navTitle = DOM.navSearchWrapper.querySelector('.nav-article-title');
+									const title = document.querySelector('.entry-title');
+									if (title) {
+										this.navTitle.textContent = title.textContent;
+										this.navTitle.style.display = 'block';
 									} else {
-										navTitle.textContent = title.textContent
+										// 没有标题时隐藏容器
+										this.navTitle.style.display = 'none';
 									}
 								},
+
 								show() {
-									if (this.state) return
+									if (this.state) return;
 									const navSearchWrapper = DOM.navSearchWrapper;
+									const title = document.querySelector('.entry-title');
+									
+									// 仅在有标题时显示
+									if (!title) return;
+
 									navSearchWrapper.dataset.scrollswap = 'true';
-									const width = navTitle.offsetWidth;
-									const navWidth = navSearchWrapper.querySelector('nav').offsetWidth;
-									const deltaWidth = width - navWidth;
-									navSearchWrapper.style.setProperty('--dw', deltaWidth + 'px');
-									this.state = true
+									// 重新计算宽度
+									requestAnimationFrame(() => {
+										// 计算宽度时加上padding
+										const contentWidth = this.navTitle.scrollWidth; // 获取内容实际宽度(包含padding)
+										const navWidth = navSearchWrapper.querySelector('nav').offsetWidth;
+										const deltaWidth = Math.max(0, contentWidth - navWidth);
+										navSearchWrapper.style.setProperty('--dw', `${deltaWidth}px`);
+									});
+									this.state = true;
 								},
+
 								hide() {
-									if (!this.state) return
+									if (!this.state) return;
 									const navSearchWrapper = DOM.navSearchWrapper;
-									delete navSearchWrapper.dataset.scrollswap
-									delete navSearchWrapper.dataset.width
-									navSearchWrapper.style.setProperty('--dw', '0')
-									this.state = false
+									delete navSearchWrapper.dataset.scrollswap;
+									navSearchWrapper.style.setProperty('--dw', '0');
+									this.state = false;
 								}
-							}
-							searchWrapperState.updateTitle()
+							};
 
+							// 初始化标题状态
+							searchWrapperState.init();
+
+							// 滚动处理
 							const handleScroll = () => {
-								if (title.getBoundingClientRect().y < 0) {
-									searchWrapperState.show()
+								const title = document.querySelector('.entry-title');
+								if (title && title.getBoundingClientRect().top < 0) {
+									searchWrapperState.show();
 								} else {
-									searchWrapperState.hide()
+									searchWrapperState.hide();
 								}
-							}
-							window.addEventListener('load', handleScroll) // init
-							window.addEventListener('scroll', handleScroll)
+							};
+
+							// 注册事件监听
+							window.addEventListener('scroll', handleScroll, { passive: true });
+							window.addEventListener('resize', () => searchWrapperState.show(), { passive: true });
+							
+							// PJAX 完成后更新
 							document.addEventListener('pjax:complete', () => {
-								searchWrapperState.updateTitle()
-								handleScroll()
-							})
-
+								setTimeout(() => {
+									searchWrapperState.init();
+									handleScroll();
+								}, 0);
+							});
 						}
-					}
+					};
 
-					document.addEventListener('DOMContentLoaded', handleLoaded, {
-						once: true
-					});
+					document.addEventListener('DOMContentLoaded', handleLoaded, { once: true });
 				</script>
 			<?php endif; ?>
 		</div>
