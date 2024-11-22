@@ -891,9 +891,8 @@ $prefix = 'iro_options';
         'type' => 'content',
         'dependency' => array( 'footer_yiyan', '==', 'true', '', 'true' ),
         'content' => __('<h4>Hitokoto API Setup Instructions</h4>'
-        .' <p>Fill in as the example:<code> ["https://api.nmxc.ltd/yiyan/", "https://v1.hitokoto.cn/"]</code>, where the first API will be used first and the next ones will be the backup. </p>'
+        .' <p>Fill in as the example:<code> ["https://v1.hitokoto.cn/", "https://v1.hitokoto.cn/"]</code>, where the first API will be used first and the next ones will be the backup. </p>'
         .' <p><strong>Official API:</strong> See the <a href="https://developer.hitokoto.cn/sentence/"> documentation</a> for how to use it, and the parameter "return code" should not be anything except JSON. <a href="https://v1.hitokoto.cn/">https://v1.hitokoto.cn/</a></p>'
-        .' <p><strong>Maho API:</strong> An reverse proxy mirror of the official API. <a href="https://api.nmxc.ltd/yiyan/">https://api.nmxc.ltd/yiyan/</a></p>','sakurairo_csf'),
       ),
 
       array(
@@ -902,7 +901,7 @@ $prefix = 'iro_options';
         'title' => __('Hitokoto API address','sakurairo_csf'),
         'dependency' => array( 'footer_yiyan', '==', 'true', '', 'true' ),
         'desc' => __('Fill in the address in JavaScript array format','sakurairo_csf'),
-        'default' => '["https://v1.hitokoto.cn/","https://api.nmxc.ltd/yiyan/"]'
+        'default' => '["https://v1.hitokoto.cn/","https://v1.hitokoto.cn/"]'
       ),
 
     )
@@ -3110,26 +3109,6 @@ $prefix = 'iro_options';
         'title' => __('Location Information Persistence','sakurairo_csf'),
         'label' => __('When enabled, the commenter\'s IP geographical location information will be stored in the database','sakurairo_csf'),
         'default' => true
-      ),
-
-      array(
-        'id' => 'location_server',
-        'type' => 'select',
-        'title' => __('API To Parse Geographical Location','sakurairo_csf'),
-        'options' => array(
-          'sakurairo' => __('Theme Official','sakurairo_csf'),
-          'ip-api' => __('IP—API','sakurairo_csf'),
-          'all' => __('All','sakurairo_csf'),
-        ),
-        'default' => 'all'
-      ),
-
-      array(
-        'type'    => 'content',
-        'content' => __(
-         '<p><strong>Theme Official:</strong>Official API of the theme</p>'
-        .'<p><strong>IP-API:</strong>Provided by <a target="_blank" href="https://ip-api.com/">ip-api.com</a></p>'
-        .'<p><strong>All:</strong>Priority is given to Theme Official, IP—API for fallback</p>','sakurairo_csf'),
       ),
 
       array(
