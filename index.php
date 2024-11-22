@@ -4,7 +4,7 @@ get_header();
 if (iro_opt('bulletin_board') == '1') {
     $text = iro_opt('bulletin_text');
     ?>
-    <div class="notice" style="margin-top:60px">
+    <div class="notice" style="margin-top:50px">
         <?php if (iro_opt('bulletin_board_icon', 'true')) : ?>
             <div class="notice-icon"><?php esc_html_e('Notice', 'sakurairo'); ?></div>
         <?php endif; ?>
