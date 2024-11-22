@@ -469,33 +469,64 @@ header('X-Frame-Options: SAMEORIGIN');
                                 state.initialized = true;
                                 StateManager.setState(state);
 
-                                // 如果是首页，立即准备进入动画
+                                // 首页处理
                                 if (isHomePage) {
-                                    requestAnimationFrame(() => {
-                                        const clone = DOM.bgNext.cloneNode(true);
-                                        clone.style.cssText =
-                                            "display:block;opacity:0;position:fixed;pointer-events:none;";
-                                        document.body.appendChild(clone);
-                                        const bgNextWidth = clone.offsetWidth;
-                                        document.body.removeChild(clone);
-
-                                        const initialWidth = DOM.navSearchWrapper.offsetWidth;
-
-                                        // 设置初始状态
-                                        initElementStates(true, bgNextWidth, initialWidth, true);
-
-                                        // 延迟一帧执行动画
+                                    // 延迟执行以确保DOM完全加载
+                                    setTimeout(() => {
                                         requestAnimationFrame(() => {
-                                            state.firstLoad = false;
-                                            StateManager.setState(state);
-                                            animateElements(true, bgNextWidth, initialWidth);
+                                            const clone = DOM.bgNext.cloneNode(true);
+                                            clone.style.cssText =
+                                                "display:block;opacity:0;position:fixed;pointer-events:none;";
+                                            document.body.appendChild(clone);
+                                            const bgNextWidth = clone.offsetWidth;
+                                            document.body.removeChild(clone);
+
+                                            const initialWidth = DOM.navSearchWrapper.offsetWidth;
+
+                                            // 首次加载时重置所有元素初始状态
+                                            DOM.bgNext.style.cssText = `
+                                                display: block;
+                                                opacity: 0;
+                                                transform: translateX(20px);
+                                                transition: none;
+                                            `;
+                                            
+                                            if (DOM.searchbox) {
+                                                DOM.searchbox.style.cssText = `
+                                                    transform: translateX(${bgNextWidth + ANIMATION.offset.entering}px);
+                                                    transition: none;
+                                                `;
+                                            }
+                                            
+                                            if (DOM.divider) {
+                                                DOM.divider.style.cssText = `
+                                                    transform: translateX(${bgNextWidth + ANIMATION.offset.entering}px);
+                                                    transition: none;
+                                                    ${!DOM.searchbox ? 'opacity: 0;' : ''}
+                                                `;
+                                            }
+
+                                            DOM.navSearchWrapper.style.width = initialWidth + "px";
+
+                                            // 强制回流
+                                            void DOM.bgNext.offsetWidth;
+                                            void DOM.navSearchWrapper.offsetWidth;
+                                            if (DOM.searchbox) void DOM.searchbox.offsetWidth;
+                                            if (DOM.divider) void DOM.divider.offsetWidth;
+
+                                            // 延迟一帧执行动画
+                                            requestAnimationFrame(() => {
+                                                state.firstLoad = false;
+                                                StateManager.setState(state);
+                                                animateElements(true, bgNextWidth, initialWidth);
+                                            });
                                         });
-                                    });
+                                    }, 100);
                                     return;
                                 }
                             }
 
-                            // 非首页时的处��
+                            // 非首页保持不变
                             state.firstLoad = false;
                             StateManager.setState(state);
 
