@@ -645,7 +645,7 @@ blockquote:after {
 
 .site-header:not(:hover) .nav-search-wrapper:not(:hover)[data-scrollswap] nav {
   transform:translateY(-100%);
-  margin-right:var(--dw,0px);
+  margin-inline:calc(var(--dw,0px) / 2);
   opacity:0;
 }
   
