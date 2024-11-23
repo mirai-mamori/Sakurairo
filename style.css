@@ -28,6 +28,11 @@ i,i:hover{
   -webkit-transition: none;
 }
 
+li,ul,ol {
+  list-style: none;
+  cursor: pointer;
+}
+
 html {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -73,6 +78,7 @@ a {
   text-decoration: none;
   color: var(--theme-skin, #505050);
   outline: 0;
+  cursor: pointer;
   transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   word-break: break-word;
@@ -664,7 +670,6 @@ blockquote:after {
 .nav-search-wrapper nav ul {
   display: flex;
   gap: 1.5px;
-  list-style: none;
   white-space: nowrap;
   width: auto;
   transition: all 0.4s ease-in-out;
@@ -683,7 +688,6 @@ blockquote:after {
   padding: 8px 12px;
   transition: all 0.4s ease-in-out;
   font-size: 15px;
-  cursor: pointer;
 }
 
 .nav-search-wrapper nav ul li a:hover {
@@ -803,7 +807,6 @@ nav .menu > li .sub-menu a {
 
 .header-user-avatar img {
   border-radius: 100%;
-  cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transform: rotate(0);
   -webkit-transform: rotate(0);
@@ -1270,10 +1273,6 @@ h1.page-title {
   margin-top: 50px;
 }
 
-.post-footer a {
-  cursor: pointer;
-}
-
 .post-license {
   float: left;
   box-shadow: 0 1px 30px -4px #e8e8e8;
@@ -1733,7 +1732,6 @@ header.timeline-header {
 .links ul {
   margin: 0;
   margin-top: 50px;
-  list-style: none;
   padding: 0;
   width: 100%;
   display: inline-block;
@@ -1750,10 +1748,6 @@ header.timeline-header {
   overflow: hidden;
   border-radius: 10px;
   border: 1.5px solid #FFFFFF;
-}
-
-.links ul li a {
-  cursor: pointer;
 }
 
 .links ul li:hover {
@@ -2363,7 +2357,6 @@ h1.main-title {
 
 .top-social {
   margin-top: 20px;
-  list-style: none;
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
@@ -2398,7 +2391,6 @@ h1.main-title {
 
 .top-social_v2 {
   height: fit-content;
-  list-style: none;
   display: inline-flex;
   top: 8px;
   position: relative;
@@ -2428,11 +2420,6 @@ h1.main-title {
 .top-social_v2 li{
   float: left;
   margin: 5px;
-}
-
-.top-social li a,
-.top-social_v2 li a {
-  cursor: pointer;
 }
 
 .wechat {
@@ -3169,7 +3156,6 @@ body.dark .no-logged a {
   background: rgba(255, 255, 255, 0.8);
   display: block;
   border-radius: 10px;
-  cursor: auto;
   margin-left: 3%;
   border: 1px solid #FFFFFF;
 }
@@ -3324,42 +3310,6 @@ iframe {
   z-index: 99999;
   background: rgba(125, 137, 95, 0);
   pointer-events: none;
-}
-
-.changeSkin {
-  position: fixed;
-  bottom: 0;
-  right: -600px;
-  width: auto;
-  height: auto;
-  z-index: 99;
-  font-family: 'Noto Sans SC';
-  padding: 10px 20px;
-  transition-property: right;
-  transition-duration: .3s, .3s;
-}
-
-.changeSkin-gear {
-  position: fixed;
-  bottom: 50px;
-  right: 10px;
-  z-index: 99;
-  border: 0;
-  outline: 0;
-  background-color: #fff;
-  color: var(--theme-skin, #505050);
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, .12), 0 2px 2px 0 rgba(0, 0, 0, .24);
-  transform: scale(0);
-  transition: transform .3s;
-}
-
-.style-menu-text{
-  margin: 0;
-  margin-left: 5px;
-  display: flex;
 }
 
 .rotating {
@@ -4089,10 +4039,6 @@ td.hljs-ln-numbers {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.footer-device a{
-  cursor: pointer;
-}
-
 .menu-list li {
   display: inline-block;
   margin: 2.5px;
@@ -4102,7 +4048,6 @@ td.hljs-ln-numbers {
   box-shadow: 0 1px 30px -4px #e8e8e8;
   border-radius: var(--style_menu_radius, 20%);
   border: 1px solid #FFFFFF;
-  cursor: pointer;
   flex-grow: 1;
   box-sizing: border-box;
 }
@@ -4113,7 +4058,6 @@ td.hljs-ln-numbers {
   box-shadow: none;
   background-color: rgb(255 255 255 / 80%);
   border: 1px solid #FFFFFF;
-  cursor: pointer;
   border-style: none;
   margin: 2.5px;
   min-height: 30px;
@@ -5113,7 +5057,6 @@ object {
 
 .entry-census a {
   color: #888;
-  cursor: pointer;
 }
 
 .entry-census a:hover {
@@ -5305,7 +5248,6 @@ h1.page-title.mb- {
 .post-tags a {
   color: #7D7D7D;
   margin-right: 5px;
-  cursor: pointer;
 }
 
 .post-tags i {
@@ -5644,7 +5586,6 @@ a.page-numbers {
 .widget-area .sakura_widget ul {
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
 .comment .body p a {
@@ -5864,8 +5805,7 @@ li.feature-2 {
   width: auto;
 }
 
-.ins-selectable,
-.changeSkin .keys span {
+.ins-selectable {
   cursor: pointer;
 }
 
@@ -6136,10 +6076,6 @@ body.dark::-webkit-scrollbar-track {
   font-weight: var(--global-font-weight);
 }
 
-.user-menu-option a {
-  cursor: pointer;
-}
-
 .user-menu-option a:hover {
   background-color: #f1f1f1;
 }
@@ -6200,11 +6136,6 @@ body.dark::-webkit-scrollbar-track {
   -webkit-transform: translate3d(0, 0, 30px);
 }
 
-.changeSkin .keys {
-  position: relative;
-  z-index: 99;
-}
-
 .ap-hover {
   border-radius: 0 6px 6px 0 !important;
   left: -66px !important;
@@ -6213,12 +6144,6 @@ body.dark::-webkit-scrollbar-track {
 .aplayer-icon,
 .aplayer-miniswitcher {
   border-radius: 0 6px 6px 0 !important;
-}
-
-.changeSkin .close-skinMenu {
-  position: relative;
-  z-index: 99;
-  cursor: pointer;
 }
 
 .keys-line-add {
@@ -6285,15 +6210,12 @@ body.dark::-webkit-scrollbar-track {
 }
 
 #archives ul {
-  list-style: none;
   margin-bottom: 0;
   left: -10px;
 }
 
 #archives li,
 .toc>.toc-list li {
-  list-style: none;
-  cursor: pointer;
   margin: 3px;
   letter-spacing: 1px;
 }
@@ -7719,7 +7641,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   }
 
   #mo-nav ul li a:hover {
-    cursor: pointer;
     color: var(--theme-skin-matching, #505050);
   }
 

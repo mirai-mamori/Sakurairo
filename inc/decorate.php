@@ -2,14 +2,11 @@
 function customizer_css() { ?>
 <style>
 <?php 
-/**
- * theme-skin
- *  */ 
-
+/* 主题皮肤与根变量 */
 if (iro_opt('theme_skin')) { ?>
-:root{
+:root {
     --theme-skin: <?=iro_opt('theme_skin'); ?>;
-    --theme-skin-matching:<?=iro_opt('theme_skin_matching'); ?>;
+    --theme-skin-matching: <?=iro_opt('theme_skin_matching'); ?>;
     --homepage_widget_transparency:<?=iro_opt('homepage_widget_transparency'); ?>;
     --style_menu_selection_radius:<?=iro_opt('style_menu_selection_radius', ''); ?>px;
     --load_nextpage_svg:url("<?=iro_opt('load_nextpage_svg'); ?>");
@@ -17,18 +14,20 @@ if (iro_opt('theme_skin')) { ?>
     --friend-link-shadow: <?=iro_opt('friend_link_shadow_color'); ?>;
     --friend-link-title: <?=iro_opt('friend_link_title_matching_color'); ?>;
     --inline_code_background_color:<?=iro_opt('inline_code_background_color');?>;
-    <?php //深色模式主题色 ?>
     --theme-skin-dark:  <?=iro_opt('theme_skin_dark'); ?>;
     --global-font-weight:<?=iro_opt('global_font_weight');?>;
     --theme-dm-background_transparency:<?=iro_opt('theme_darkmode_background_transparency')?>;
     --exhibition_area_matching_color:<?=iro_opt('exhibition_area_matching_color');?>;
     --inline_code_background_color_in_dark_mode:<?=iro_opt('inline_code_background_color_in_dark_mode');?>;
 }
-<?php if (iro_opt('theme_commemorate_mode')) {?>
-    html{
-        filter: grayscale(100%) !important;
-    }
+
+/* 纪念模式 */
+<?php if (iro_opt('theme_commemorate_mode')) { ?>
+html {
+    filter: grayscale(100%) !important;
+}
 <?php } ?>
+
 .the-feature.from_left_and_right .info,.the-feature.from_left_and_right .info h3{background: <?=iro_opt('exhibition_background_color'); ?> ;}
 
 <?php $text_logo = iro_opt('text_logo'); ?>
@@ -237,7 +236,6 @@ html {
 /*深色模式*/
 /*可变项目*/
 
-/*深色模式控件透明度*/
 body.dark .header-info
 {color:#fff;background:rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);transition: all 0.6s ease-in-out;}
 
@@ -256,11 +254,9 @@ body.dark .the-feature.from_left_and_right .info
 body.dark input[type=submit] 
 {background-color:rgba(38,38,38,<?=iro_opt('theme_darkmode_widget_transparency'); ?>) !important;transition: all 0.6s ease-in-out;}
 
-/*深色模式自定义颜色*/
 body.dark .headertop-down svg path 
 {fill: <?=iro_opt('drop_down_arrow_dark_color'); ?> !important;transition: all 0.6s ease-in-out;}
 
-/*深色模式图像亮度*/
 body.dark img,
 body.dark .highlight-wrap,
 body.dark iframe,
