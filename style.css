@@ -646,10 +646,12 @@ blockquote:after {
 .site-header:not(:hover) .nav-search-wrapper:not(:hover)[data-scrollswap] nav {
   transform:translateY(-100%);
   margin-right:var(--dw,0px);
-  }
+  opacity:0;
+}
   
 .site-header:not(:hover) .nav-search-wrapper:not(:hover)[data-scrollswap] .nav-article-title {
   transform:translateY(0);
+  opacity:1;
 }
 
 .nav-search-wrapper nav {
@@ -747,14 +749,17 @@ nav .menu > li .sub-menu a {
   position: absolute;
   transform: translateY(150%);
   white-space: nowrap;
-  padding-left: 10px;
-  padding-right: 10px;
-  box-sizing: border-box;
-  opacity: 0;
-  transition-property: transform, margin;
+  padding-inline:8px;
+  opacity:0;
 }
 
-/* 搜索分隔线和搜索框 */
+.nav-center-space {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
 .nav-search-divider {
   width: 1px;
   height: 24px;

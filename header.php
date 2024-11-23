@@ -161,6 +161,7 @@ header('X-Frame-Options: SAMEORIGIN');
         <!-- Navigation and Search Section -->
         <div class="nav-search-wrapper">
             <!-- Nav menu -->
+            <div class="nav-center-space">
             <nav>
                 <?php 
                 wp_nav_menu([
@@ -170,6 +171,7 @@ header('X-Frame-Options: SAMEORIGIN');
                     ]); 
                 ?>
             </nav>
+            </div>
 
             <!-- Nav width control -->
             <script>
@@ -571,59 +573,29 @@ header('X-Frame-Options: SAMEORIGIN');
                                 entryTitle: null,
                                 titlePadding: 20,
                                 scrollTimeout: null,
-                                headerElement: null,
-
+                                navSpace:null,
                                 init() {
-                                    this.navTitle = DOM.navSearchWrapper.querySelector(".nav-article-title");
+                                    this.navSpace = DOM.navSearchWrapper.querySelector('.nav-center-space')
+                                    this.navTitle =
+                                        DOM.navSearchWrapper.querySelector(".nav-article-title");
                                     this.entryTitle = document.querySelector(".entry-title");
                                     this.navElement = DOM.navSearchWrapper.querySelector("nav");
-                                    this.header = document.querySelector("header");
 
+                                    if(!this.entryTitle) return
                                     if (!this.navTitle) {
                                         this.navTitle = document.createElement("div");
                                         this.navTitle.classList.add("nav-article-title");
-                                        this.navTitle.style.opacity = "0";
                                         DOM.navSearchWrapper.firstElementChild.insertAdjacentElement(
-                                            "afterend",
+                                            "beforeend",
                                             this.navTitle
                                         );
 
-                                        this.navElement.addEventListener("transitionend", (event) => {
-                                            if (
-                                                event.target !== this.navElement &&
-                                                event.target !== this.header
-                                            )
-                                                return;
-                                            this.navTitle.style.opacity =
-                                                window.getComputedStyle(this.navElement).transform == "none"
-                                                    ? "0"
-                                                    : "1";
-                                            DOM.navSearchWrapper.style.overflow =
-                                                window.getComputedStyle(this.navElement).transform == "none"
-                                                    ? "unset"
-                                                    : "hidden";
-                                        });
-
-                                        this.navElement.addEventListener("transitionstart", (event) => {
-                                            if (
-                                                event.target !== this.navElement &&
-                                                event.target !== this.header
-                                            )
-                                                return;
-                                            DOM.navSearchWrapper.style.overflow = "hidden";
-                                            this.navTitle.style.opacity = "1";
-                                        });
                                     }
                                     this.updateTitle();
                                 },
 
                                 updateTitle() {
-                                    if (this.entryTitle) {
-                                        this.navTitle.textContent = this.entryTitle.textContent;
-                                        this.navTitle.style.display = "block";
-                                    } else {
-                                        this.navTitle.style.display = "none";
-                                    }
+                                    this.navTitle.textContent = this.entryTitle.textContent;
                                 },
 
                                 show() {
