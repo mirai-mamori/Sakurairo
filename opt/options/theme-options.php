@@ -438,6 +438,16 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'nav_menu_cover_radius',
+        'type' => 'slider',
+        'title' => __('Nav Menu Radius','sakurairo_csf'),
+        'desc' => __('Slide to adjust, the recommended value is 50','sakurairo_csf'),
+        'unit' => 'px',
+        'max' => '50',
+        'default' => '50'
+      ),
+
+      array(
         'id' => 'nav_menu_font',
         'type' => 'text',
         'title' => __('Nav Menu Font','sakurairo_csf'),
@@ -993,24 +1003,18 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'enable_search_filter',
+        'id' => 'search_filter',
         'type' => 'switcher',
-        'title' => __('Enable search filter','sakurairo_csf'),
+        'title' => __('Search Filter','sakurairo_csf'),
         'desc' => __('Allow users to use site search filters','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
-        'id' => 'sticky_pinned_content',
-        'type' => 'switcher',
-        'title' => __('Pinned contents will show at the top of the search results','sakurairo_csf'),
-        'default' => true
+        'default' => false
       ),
 
       array(
         'id' => 'search_for_shuoshuo',
         'type' => 'switcher',
         'title' => __('Show shuoshuo in search results','sakurairo_csf'),
+        'dependency' => array( 'search_filter', '==', 'true', '', 'true' ),
         'default' => true
       ),
 
@@ -1018,6 +1022,7 @@ $prefix = 'iro_options';
         'id' => 'search_for_pages',
         'type' => 'switcher',
         'title' => __('Show pages in search results','sakurairo_csf'),
+        'dependency' => array( 'search_filter', '==', 'true', '', 'true' ),
         'default' => true
       ),
 
@@ -1025,7 +1030,18 @@ $prefix = 'iro_options';
         'id' => 'only_admin_can_search_pages',
         'type' => 'switcher',
         'title' => __('Only administrators can search pages','sakurairo_csf'),
-        'dependency' => array( 'search_for_pages', '==', 'true', '', 'true' ),
+        'dependency' => array(
+          array( 'search_filter', '==', 'true', '', 'true' ),
+          array( 'search_for_pages', '==', 'true', '', 'true' ),
+        ),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'sticky_pinned_content',
+        'type' => 'switcher',
+        'title' => __('Pinned contents will show at the top of the search results','sakurairo_csf'),
+        'dependency' => array( 'search_filter', '==', 'true', '', 'true' ),
         'default' => true
       ),
 
@@ -1034,6 +1050,7 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('Exclude some content in search results','sakurairo_csf'),
         'desc' => __('Fill in the posts or pages IDs that need to be excluded, such as "12,34".Recommend to fill in the custom login page id,and you can get them from the edit page of those content.','sakurairo_csf'),
+        'dependency' => array( 'search_filter', '==', 'true', '', 'true' ),
       ),
 
       array(
@@ -1432,17 +1449,6 @@ $prefix = 'iro_options';
                               array( 'cover_full_screen', '==', 'false' ),
                         ),
         'default' => false
-      ),
-
-      array(
-        'id' => 'cover_radius',
-        'type' => 'slider',
-        'title' => __('Cover Radius','sakurairo_csf'),
-        'desc' => __('Slide to adjust, the recommended value range is 15-20','sakurairo_csf'),
-        'dependency' => array( 'cover_switch', '==', 'true', '', 'true' ),
-        'unit' => 'px',
-        'max' => '60',
-        'default' => '15'
       ),
 
       array(

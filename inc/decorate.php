@@ -538,8 +538,13 @@ h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,
 
 /*其他*/
 
-.headertop{
-    border-radius: 0 0 <?=iro_opt('cover_radius', ''); ?>px <?=iro_opt('cover_radius', ''); ?>px;
+.site-branding,
+.nav-search-wrapper,
+.user-menu-wrapper,
+.nav-search-wrapper nav ul li a,
+.searchbox.js-toggle-search i,
+ .bg-switch i {
+    border-radius: <?=iro_opt('nav_menu_cover_radius', ''); ?>px;
 }
 
 <?php if (!iro_opt('author_profile_avatar', 'true')): ?>

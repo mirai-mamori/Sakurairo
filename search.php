@@ -69,7 +69,7 @@ get_header(); ?>
 
     $all_results_query = new WP_Query($all_results_args);
 
-    if (iro_opt('enable_search_filter')) : ?>
+    if (iro_opt('search_filter')) : ?>
         <!-- 筛选器部分 -->
         <div id="filter-container">
             <div class="filter-count">

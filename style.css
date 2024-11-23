@@ -688,7 +688,6 @@ blockquote:after {
 
 .nav-search-wrapper nav ul li a:hover {
   background-color: var(--theme-skin-matching);
-  border-radius: 50px;
   transition: all 0.4s ease-in-out;
   color: rgba(255, 255, 255, 0.8);
 }
