@@ -481,7 +481,7 @@ $prefix = 'iro_options';
         'id' => 'cover_random_graphs_switch',
         'type' => 'switcher',
         'title' => __('Switch Button of Random Images','sakurairo_csf'),
-        'label' => __('Enabled by default, show cover random image toggle button','sakurairo_csf'),
+        'label' => __('Enabled by default, only show cover random image toggle button when cover is on','sakurairo_csf'),
         'default' => true
       ),
 
@@ -919,61 +919,6 @@ $prefix = 'iro_options';
 
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title' => __('Cursor Options','sakurairo_csf'),
-    'icon' => 'fa fa-i-cursor',
-    'fields' => array(
-
-      array(
-        'type' => 'submessage',
-        'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E5%85%89%E6%A0%87%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'cursor_nor',
-        'type' => 'text',
-        'title' => __('Standard Cursor Style','sakurairo_csf'),
-        'desc' => __('Apply to global, fill in ".cur" mouse file link','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/cursor/normal.cur'
-      ),
-
-      array(
-        'id' => 'cursor_no',
-        'type' => 'text',
-        'title' => __('Selected Cursor Style','sakurairo_csf'),
-        'desc' => __('Apply to multiple styles, fill in ".cur" file link','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/cursor/No_Disponible.cur'
-      ),
-
-      array(
-        'id' => 'cursor_ayu',
-        'type' => 'text',
-        'title' => __('Selected Control Unit Cursor Style','sakurairo_csf'),
-        'desc' => __('Apply to selected control unit, fill in ".cur" file link','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/cursor/ayuda.cur'
-      ),
-
-      array(
-        'id' => 'cursor_text',
-        'type' => 'text',
-        'title' => __('Selected Text Cursor Style','sakurairo_csf'),
-        'desc' => __('Apply to selected text, fill in ".cur" file link','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/cursor/texto.cur'
-      ),
-
-      array(
-        'id' => 'cursor_work',
-        'type' => 'text',
-        'title' => __('Work Status Cursor Style','sakurairo_csf'),
-        'desc' => __('Apply to load control unit, fill in ".cur" file link','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/cursor/work.cur'
-      ),
-
-    )
-  ) );
-
-  Sakurairo_CSF::createSection( $prefix, array(
-    'parent' => 'global', 
     'title' => __('Search Options','sakurairo_csf'),
     'icon' => 'fa fa-search',
     'fields' => array(
@@ -1006,7 +951,7 @@ $prefix = 'iro_options';
         'id' => 'search_filter',
         'type' => 'switcher',
         'title' => __('Search Filter','sakurairo_csf'),
-        'desc' => __('Allow users to use site search filters','sakurairo_csf'),
+        'desc' => __('When turned on, users can search using the search filter','sakurairo_csf'),
         'default' => false
       ),
 

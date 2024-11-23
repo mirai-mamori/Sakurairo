@@ -344,45 +344,6 @@ font-size: <?=iro_opt('page_temp_title_font_size'); ?>px !important;
 font-size: <?=iro_opt('article_title_font_size'); ?>px ;
 }
 
-/*鼠标*/
-body{
-cursor: url(<?=iro_opt('cursor_nor'); ?>), auto;
-}
-
-.headertop-down,
-.aplayer svg,
-.aplayer.aplayer-narrow .aplayer-body,
-.aplayer.aplayer-narrow .aplayer-pic,
-#emotion-toggle,
-.emoji-item,
-.emotion-box,
-.emotion-item,
-.on-hover,
-.tieba-container span,
-#moblieGoTop,
-#changskin{
-cursor: url(<?=iro_opt('cursor_no'); ?>), auto;
-}
-
-a,
-.ins-section .ins-section-header,
-.font-family-controls button,
-.menu-list li,.ins-section .ins-search-item,
-.ins-section .ins-search-item .ins-search-preview{
-cursor: url(<?=iro_opt('cursor_ayu'); ?>), auto;
-}
-
-p,
-.highlight-wrap code,
-.highlight-wrap,
-.hljs-ln-code .hljs-ln-line{
-cursor: url(<?=iro_opt('cursor_text'); ?>), auto;
-}
-
-a:active{
-cursor: url(<?=iro_opt('cursor_work'); ?>), alias;
-}
-
 /*背景类*/
 .comment-respond textarea {
 background-image: url(<?=iro_opt('comment_area_image'); ?>); 

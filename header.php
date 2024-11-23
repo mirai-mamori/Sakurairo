@@ -155,7 +155,7 @@ header('X-Frame-Options: SAMEORIGIN');
         // Cache commonly used options
         $show_search = (bool)iro_opt('nav_menu_search');
         $show_user_avatar = (bool)iro_opt('nav_menu_user_avatar');
-        $enable_random_graphs = (bool)iro_opt('cover_random_graphs_switch', 'true');
+        $enable_random_graphs = (bool)iro_opt('cover_switch', true) && (bool)iro_opt('cover_random_graphs_switch', true);
         ?>
 
         <!-- Navigation and Search Section -->
