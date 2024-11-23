@@ -582,13 +582,7 @@ header('X-Frame-Options: SAMEORIGIN');
                                     if (!this.navTitle) {
                                         this.navTitle = document.createElement("div");
                                         this.navTitle.classList.add("nav-article-title");
-                                        this.navTitle.style.cssText = `
-                                            padding-left: 10px;
-                                            padding-right: 10px;
-                                            box-sizing: border-box;
-                                            opacity: 0;
-                                            transition-property: transform, margin;
-                                        `;
+                                        this.navTitle.style.opacity = "0";
                                         DOM.navSearchWrapper.firstElementChild.insertAdjacentElement(
                                             "afterend",
                                             this.navTitle
