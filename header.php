@@ -603,12 +603,10 @@ header('X-Frame-Options: SAMEORIGIN');
                                     const navSearchWrapper = DOM.navSearchWrapper;
                                     navSearchWrapper.dataset.scrollswap = "true";
 
-                                    requestAnimationFrame(() => {
-                                        const contentWidth = this.navTitle.scrollWidth;
+                                    const contentWidth = this.navTitle.scrollWidth;
                                         const navWidth = navSearchWrapper.querySelector("nav").offsetWidth;
                                         const deltaWidth = Math.max(0, contentWidth - navWidth);
                                         navSearchWrapper.style.setProperty("--dw", `${deltaWidth}px`);
-                                    });
                                     this.state = true;
                                 },
 
@@ -620,36 +618,35 @@ header('X-Frame-Options: SAMEORIGIN');
                                     this.state = false;
                                 },
 
-                                handleScroll() {
-                                    /// 做节流
-                                    if (this.scrollTimeout) {
-                                        clearTimeout(this.scrollTimeout);
-                                    }
-                                    this.scrollTimeout = setTimeout(() => {
-                                        if (
-                                            this.entryTitle &&
-                                            this.entryTitle.getBoundingClientRect().top < 0
-                                        ) {
+                                handleRect(rect) {
+                                    if (rect.top < 0) {
                                             this.show();
                                         } else {
                                             this.hide();
                                         }
-                                    }, 20);
                                 },
+                                handleIntersection(entries){
+                                    if(entries[0].isIntersecting){
+                                        this.hide()
+                                    }else{
+                                        this.show()
+                                    }
+                                }
                             };
 
                             // Initialize state
                             searchWrapperState.init();
 
                             // Set up scroll handler
-                            const scrollHandler = () => searchWrapperState.handleScroll();
-                            window.addEventListener("scroll", scrollHandler, { passive: true });
+                            const obs = new IntersectionObserver(searchWrapperState.handleIntersection.bind(searchWrapperState))
+                            obs.observe(searchWrapperState.entryTitle)
                             window.addEventListener("resize", () => searchWrapperState.show(), {
                                 passive: true,
                             });
 
                             // Initial scroll check
-                            scrollHandler();
+                            const rect = searchWrapperState.entryTitle.getBoundingClientRect()
+                            rect&&searchWrapperState.handleRect(rect)
 
                             // Store state in window for PJAX access
                             window._searchWrapperState = searchWrapperState;
