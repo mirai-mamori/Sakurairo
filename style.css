@@ -31,6 +31,7 @@ i,i:hover{
 li,ul,ol {
   list-style: none;
   cursor: pointer;
+  padding-inline-start: unset;
 }
 
 img {
@@ -91,11 +92,13 @@ a {
 }
 
 a:hover,a:active,a:focus {
-  color: var(--theme-skin-matching, #505050);
   transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
 }
 
+a:hover {
+  color: var(--theme-skin-matching, #505050);
+}
 /* Layout Components */
 .headertop {
   animation: blur .8s;
@@ -1756,15 +1759,8 @@ header.timeline-header {
 }
 
 .links ul li:hover {
-  width: 22%;
-  float: left;
   box-shadow: 0 1px 20px 10px var(--friend-link-shadow);
   background: rgba(255, 255, 255, 0.8);
-  padding: 12px 12px;
-  margin: 12px 12px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
 }
 
 .links ul li img {
@@ -1777,6 +1773,7 @@ header.timeline-header {
   width: 90px;
   height: 90px;
   border-radius: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .links ul li:hover img {
@@ -8738,6 +8735,10 @@ body.dark .shuoshuo-avatar img {
 
 body.dark .shuoshuo-comments,body.dark .shuoshuo-date {
   color: #abababab;
+}
+
+body.dark .links ul li img{
+  box-shadow: 0 4px 12px rgba(33, 33, 33, 0.5);
 }
 
 /* Dark mode header styles */
