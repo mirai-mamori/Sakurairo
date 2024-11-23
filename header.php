@@ -561,7 +561,13 @@ header('X-Frame-Options: SAMEORIGIN');
                     // Initialize
                     StateManager.init();
                     showBgNext();
-
+                    const _space =  DOM.navSearchWrapper.querySelector('.nav-center-space')
+                    _space.addEventListener('transitionstart',(e)=>{
+                                       e.currentTarget.style.overflow = 'hidden'
+                                    })
+                    _space.addEventListener('transitionend',(e)=>{
+                                        e.currentTarget.style.overflow = ''
+                                    })
                     // Article title behavior 
                     const initArticleTitleBehavior = () => {
                         const searchWrapperState = {
@@ -578,7 +584,7 @@ header('X-Frame-Options: SAMEORIGIN');
                                         DOM.navSearchWrapper.querySelector(".nav-article-title");
                                     this.entryTitle = document.querySelector(".entry-title");
                                     this.navElement = DOM.navSearchWrapper.querySelector("nav");
-
+ 
                                     if(!this.entryTitle) return
                                     if (!this.navTitle) {
                                         this.navTitle = document.createElement("div");
