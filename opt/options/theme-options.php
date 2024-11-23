@@ -431,8 +431,8 @@ $prefix = 'iro_options';
         'type'       => 'image_select',
         'title'      => __('Nav Menu Style','sakurairo_csf'),
         'options'    => array(
-          'center' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/nav_menu_style_iro.webp',
-          'space-between' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/nav_menu_style_sakura.webp',
+          'center' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/nav_menu_style_center.webp',
+          'space-between' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/nav_menu_style_space.webp',
         ),
         'default'    => 'center'
       ),
