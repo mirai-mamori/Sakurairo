@@ -875,14 +875,6 @@ function wpjam_custom_upload_dir($uploads)
     /*     $upload_path = '';
      */$upload_url_path = iro_opt('image_cdn');
 
-    /*     if (empty($upload_path) || 'wp-content/uploads' == $upload_path) {
-            $uploads['basedir'] = WP_CONTENT_DIR . '/uploads';
-        } elseif (0 !== strpos($upload_path, ABSPATH)) {
-            $uploads['basedir'] = path_join(ABSPATH, $upload_path);
-        } else {
-            $uploads['basedir'] = $upload_path;
-        } */
-
     $uploads['path'] = $uploads['basedir'] . $uploads['subdir'];
 
     if ($upload_url_path) {
@@ -1073,15 +1065,11 @@ function smallenvelop_login_message($message)
 {
     return empty($message) ? '<p class="message"><strong>You may try 3 times for every 5 minutes!</strong></p>' : $message;
 }
-//add_filter( 'login_message', 'smallenvelop_login_message' );
 
 //Fix password reset bug </>
 function resetpassword_message_fix($message)
 {
     return str_replace(['>', '<'], '', $message);
-    // $message = str_replace('<', '', $message);
-    // $message = str_replace('>', '', $message);
-    // return $message;
 }
 add_filter('retrieve_password_message', 'resetpassword_message_fix');
 
@@ -1741,15 +1729,6 @@ add_filter('the_excerpt', 'excerpt_length', 11);
 /*
  * 后台路径
  */
-/*
-add_filter('site_url',  'wpadmin_filter', 10, 3);
-function wpadmin_filter( $url, $path, $orig_scheme ) {
-$old  = array( "/(wp-admin)/");
-$admin_dir = WP_ADMIN_DIR;
-$new  = array($admin_dir);
-return preg_replace( $old, $new, $url, 1);
-}
- */
 
 function admin_ini()
 {
@@ -2093,7 +2072,6 @@ function html_tag_parser($content)
     return $content;
 }
 add_filter('the_content', 'html_tag_parser'); //替换文章关键词
-//add_filter( 'comment_text', 'html_tag_parser' );//替换评论关键词
 
 /*
  * QQ 评论

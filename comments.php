@@ -4,9 +4,6 @@
 	 * COMMENTS TEMPLATE
 	 */
 
-	/*if('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die(__('Please do not load this page directly.', 'akina'));*/
-
 	if(post_password_required()){
 		return;
 	}

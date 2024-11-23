@@ -21,7 +21,6 @@ if (iro_opt('article_auto_toc', 'true') && check_title_tags($post->post_content)
 	<?php if (should_show_title()) { 
 		get_template_part('tpl/single-entry-header');
 	} ?>
-	<!--<div class="toc-entry-content">--><!-- 套嵌目录使用（主要为了支援评论）-->
 	<?php if ($ai_excerpt) { ?>
 	<div class="ai-excerpt">
 		<h4><i class="fa-solid fa-atom"></i><?php esc_html_e("AI Excerpt", "sakurairo"); ?></h4><?php echo esc_html($ai_excerpt); ?>
@@ -35,8 +34,6 @@ if (iro_opt('article_auto_toc', 'true') && check_title_tags($post->post_content)
 				'after'  => '</div>',
 			));
 		?>
-		<!--<div class="oshimai"></div>-->
-		<!--<h2 style="opacity:0;max-height:0;margin:0">Comments</h2>--><!-- 评论跳转标记 -->
 	</div><!-- .entry-content -->
 	<?php get_template_part('tpl/section-article-function'); ?>
 </article><!-- #post-## -->
