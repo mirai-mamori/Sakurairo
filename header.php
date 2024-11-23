@@ -200,7 +200,9 @@ header('X-Frame-Options: SAMEORIGIN');
             <?php if ($show_search): ?>
                 <div class="searchbox js-toggle-search">
                     <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                    <span class="screen-reader-text"><?php esc_html_e('Search', 'sakurairo'); ?></span>
+                    <span class="screen-reader-text">
+                        <?php esc_html_e('Search', 'sakurairo'); ?>
+                    </span>
                 </div>
             <?php endif; ?>
 
@@ -223,7 +225,7 @@ header('X-Frame-Options: SAMEORIGIN');
 
                     const ANIMATION = {
                         easing: "cubic-bezier(0.34, 1.56, 0.64, 1)",
-                        duration: "0.6s",
+                        duration: "0.6s", 
                         durationMs: 600,
                         offset: {
                             entering: 6.5,
@@ -490,19 +492,19 @@ header('X-Frame-Options: SAMEORIGIN');
                                                 transform: translateX(20px);
                                                 transition: none;
                                             `;
-                                            
+
                                             if (DOM.searchbox) {
                                                 DOM.searchbox.style.cssText = `
                                                     transform: translateX(${bgNextWidth + ANIMATION.offset.entering}px);
                                                     transition: none;
                                                 `;
                                             }
-                                            
+
                                             if (DOM.divider) {
                                                 DOM.divider.style.cssText = `
                                                     transform: translateX(${bgNextWidth + ANIMATION.offset.entering}px);
                                                     transition: none;
-                                                    ${!DOM.searchbox ? 'opacity: 0;' : ''}
+                                                    ${!DOM.searchbox ? "opacity: 0;" : ""}
                                                 `;
                                             }
 
@@ -558,7 +560,7 @@ header('X-Frame-Options: SAMEORIGIN');
                     StateManager.init();
                     showBgNext();
 
-                    // Article title behavior
+                    // Article title behavior 
                     const initArticleTitleBehavior = () => {
                         // Only proceed if not on home page
                         if (!_iro.land_at_home) {
@@ -569,12 +571,13 @@ header('X-Frame-Options: SAMEORIGIN');
                                 entryTitle: null,
                                 titlePadding: 20,
                                 scrollTimeout: null,
+                                headerElement: null,
 
                                 init() {
-                                    this.navTitle =
-                                        DOM.navSearchWrapper.querySelector(".nav-article-title");
+                                    this.navTitle = DOM.navSearchWrapper.querySelector(".nav-article-title");
                                     this.entryTitle = document.querySelector(".entry-title");
                                     this.navElement = DOM.navSearchWrapper.querySelector("nav");
+                                    this.header = document.querySelector("header");
 
                                     if (!this.navTitle) {
                                         this.navTitle = document.createElement("div");
@@ -592,7 +595,11 @@ header('X-Frame-Options: SAMEORIGIN');
                                         );
 
                                         this.navElement.addEventListener("transitionend", (event) => {
-                                            if (event.target !== this.navElement) return;
+                                            if (
+                                                event.target !== this.navElement &&
+                                                event.target !== this.header
+                                            )
+                                                return;
                                             this.navTitle.style.opacity =
                                                 window.getComputedStyle(this.navElement).transform == "none"
                                                     ? "0"
@@ -604,7 +611,11 @@ header('X-Frame-Options: SAMEORIGIN');
                                         });
 
                                         this.navElement.addEventListener("transitionstart", (event) => {
-                                            if (event.target !== this.navElement) return;
+                                            if (
+                                                event.target !== this.navElement &&
+                                                event.target !== this.header
+                                            )
+                                                return;
                                             DOM.navSearchWrapper.style.overflow = "hidden";
                                             this.navTitle.style.opacity = "1";
                                         });
