@@ -639,17 +639,16 @@ blockquote:after {
   width: auto;
   max-width: calc(100% - 400px);
   position: relative;
-  overflow: hidden;
   --dw:0;
 }
 
-.site-header:not(:hover) .nav-search-wrapper:not(:hover)[data-scrollswap] nav {
+.site-header:not(:hover) .nav-search-wrapper[data-scrollswap] nav {
   transform:translateY(-100%);
   margin-inline:calc(var(--dw,0px) / 2);
   opacity:0;
 }
   
-.site-header:not(:hover) .nav-search-wrapper:not(:hover)[data-scrollswap] .nav-article-title {
+.site-header:not(:hover) .nav-search-wrapper[data-scrollswap] .nav-article-title {
   transform:translateY(0);
   opacity:1;
 }
@@ -758,6 +757,10 @@ nav .menu > li .sub-menu a {
   overflow: hidden;
   display: flex;
   align-items: center;
+  transition-behavior: allow-discrete;
+}
+.nav-center-space:hover{
+  overflow: visible;
 }
 
 .nav-search-divider {
