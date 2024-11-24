@@ -578,11 +578,6 @@ header('X-Frame-Options: SAMEORIGIN');
                                 return path === '' || path === '/index.php';
                             },
                             init() {
-                                // Reset any previous states
-                                const navSearchWrapper = DOM.navSearchWrapper;
-                                delete navSearchWrapper.dataset.scrollswap;
-                                navSearchWrapper.style.setProperty('--dw', '0');
-
                                 this.navSpace = DOM.navSearchWrapper.querySelector('.nav-center-space');
                                 this.navTitle = DOM.navSearchWrapper.querySelector('.nav-article-title');
                                 this.entryTitle = document.querySelector('.entry-title');
@@ -590,7 +585,7 @@ header('X-Frame-Options: SAMEORIGIN');
 
                                 if (this.isHomePage() || !this.entryTitle) {
                                     this.cleanup();
-                                    return false;
+                                    return;
                                 }
 
                                 if (!this.navTitle) {
@@ -601,26 +596,19 @@ header('X-Frame-Options: SAMEORIGIN');
 
                                 this.updateTitle();
                                 this.setupObserver();
-                                return true;
                             },
                             updateTitle() {
-                                if (this.navTitle && this.entryTitle) {
-                                    this.navTitle.textContent = this.entryTitle.textContent;
-                                }
+                                this.navTitle.textContent = this.entryTitle.textContent;
                             },
                             show() {
-                                if (this.isHomePage()) return;
-                                
                                 const navSearchWrapper = DOM.navSearchWrapper;
                                 navSearchWrapper.dataset.scrollswap = 'true';
 
-                                if (this.navTitle && this.navElement) {
-                                    const contentWidth = this.navTitle.scrollWidth;
-                                    const navWidth = this.navElement.offsetWidth;
-                                    const deltaWidth = Math.max(0, contentWidth - navWidth);
-                                    navSearchWrapper.style.setProperty('--dw', `${deltaWidth}px`);
-                                    this.state = true;
-                                }
+                                const contentWidth = this.navTitle.scrollWidth;
+                                const navWidth = navSearchWrapper.querySelector('nav').offsetWidth;
+                                const deltaWidth = Math.max(0, contentWidth - navWidth);
+                                navSearchWrapper.style.setProperty('--dw', `${deltaWidth}px`);
+                                this.state = true;
                             },
                             hide() {
                                 const navSearchWrapper = DOM.navSearchWrapper;
@@ -629,10 +617,6 @@ header('X-Frame-Options: SAMEORIGIN');
                                 this.state = false;
                             },
                             updateState() {
-                                if (this.isHomePage()) {
-                                    this.hide();
-                                    return;
-                                }
                                 if (this.entryTitle && this.entryTitle.getBoundingClientRect().top < 0) {
                                     this.show();
                                 } else {
@@ -640,7 +624,6 @@ header('X-Frame-Options: SAMEORIGIN');
                                 }
                             },
                             handleIntersection(entries) {
-                                if (this.isHomePage()) return;
                                 if (entries[0].isIntersecting) {
                                     this.hide();
                                 } else {
@@ -648,14 +631,10 @@ header('X-Frame-Options: SAMEORIGIN');
                                 }
                             },
                             setupObserver() {
-                                if (this.observer) {
-                                    this.observer.disconnect();
-                                }
                                 this.observer = new IntersectionObserver(this.handleIntersection.bind(this));
-                                if (this.entryTitle) {
-                                    this.observer.observe(this.entryTitle);
-                                    this.updateState();
-                                }
+                                this.observer.observe(this.entryTitle);
+                                // Initial state check
+                                this.updateState();
                             },
                             cleanup() {
                                 if (this.navTitle) {
