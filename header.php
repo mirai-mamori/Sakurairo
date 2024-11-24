@@ -589,6 +589,30 @@ header('X-Frame-Options: SAMEORIGIN');
                                             this.navTitle
                                         );
 
+                                        // 将事件监听器从navElement改为header
+                                        this.header.addEventListener("mouseenter", () => {
+                                            if (this.hideTimeout) {
+                                                clearTimeout(this.hideTimeout);
+                                                this.hideTimeout = null;
+                                            }
+                                            if (this.entryTitle && this.entryTitle.getBoundingClientRect().top < 0) {
+                                                this.hide();
+                                            }
+                                        });
+
+                                        this.header.addEventListener("mouseleave", () => {
+                                            if (this.hideTimeout) {
+                                                clearTimeout(this.hideTimeout);
+                                            }
+                                            if (this.entryTitle && this.entryTitle.getBoundingClientRect().top < 0) {
+                                                this.hideTimeout = setTimeout(() => {
+                                                    this.show();
+                                                    this.hideTimeout = null;
+                                                }, 3000);
+                                            }
+                                        });
+
+                                        // 保留原有的transition事件
                                         this.navElement.addEventListener("transitionend", (event) => {
                                             if (event.target !== this.navElement && event.target !== this.header) return;
                                             this.navTitle.style.opacity = window.getComputedStyle(this.navElement).transform == "none" ? "0" : "1";
@@ -599,30 +623,6 @@ header('X-Frame-Options: SAMEORIGIN');
                                             if (event.target !== this.navElement && event.target !== this.header) return;
                                             DOM.navSearchWrapper.style.overflow = "hidden";
                                             this.navTitle.style.opacity = "1";
-                                        });
-
-                                        // 添加鼠标进入事件
-                                        this.navElement.addEventListener("mouseenter", () => {
-                                            if (this.hideTimeout) {
-                                                clearTimeout(this.hideTimeout);
-                                                this.hideTimeout = null;
-                                            }
-                                            if (this.entryTitle && this.entryTitle.getBoundingClientRect().top < 0) {
-                                                this.hide();
-                                            }
-                                        });
-
-                                        // 添加鼠标离开事件
-                                        this.navElement.addEventListener("mouseleave", () => {
-                                            if (this.hideTimeout) {
-                                                clearTimeout(this.hideTimeout);
-                                            }
-                                            if (this.entryTitle && this.entryTitle.getBoundingClientRect().top < 0) {
-                                                this.hideTimeout = setTimeout(() => {
-                                                    this.show();
-                                                    this.hideTimeout = null;
-                                                }, 5000);
-                                            }
                                         });
                                     }
                                     this.updateTitle();
