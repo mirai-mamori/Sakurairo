@@ -564,7 +564,9 @@ header('X-Frame-Options: SAMEORIGIN');
 
                     // Article title behavior 
                     const initArticleTitleBehavior = () => {
-                        const searchWrapperState = {
+                        // Only proceed if not on home page
+                        if (!_iro.land_at_home) {
+                            const searchWrapperState = {
                                 state: false,
                                 navElement: null,
                                 navTitle: null,
@@ -597,6 +599,7 @@ header('X-Frame-Options: SAMEORIGIN');
                                 },
 
                                 show() {
+                                    if (this.state || !this.entryTitle) return;
                                     const navSearchWrapper = DOM.navSearchWrapper;
                                     navSearchWrapper.dataset.scrollswap = "true";
 
@@ -608,15 +611,15 @@ header('X-Frame-Options: SAMEORIGIN');
                                 },
 
                                 hide() {
+                                    if (!this.state) return;
                                     const navSearchWrapper = DOM.navSearchWrapper;
                                     delete navSearchWrapper.dataset.scrollswap;
                                     navSearchWrapper.style.setProperty("--dw", "0");
                                     this.state = false;
                                 },
 
-                                updateState() {
-                                    if (this.entryTitle&&
-                                    this.entryTitle.getBoundingClientRect().top < 0) {
+                                handleRect(rect) {
+                                    if (rect.top < 0) {
                                             this.show();
                                         } else {
                                             this.hide();
@@ -629,26 +632,36 @@ header('X-Frame-Options: SAMEORIGIN');
                                         this.show()
                                     }
                                 }
-                            };  
-                                                      
+                            };
+
+                            // Initialize state
                             searchWrapperState.init();
-                        if (_iro.land_at_home) {
-                            searchWrapperState.hide();
-                        }else{
+
                             // Set up scroll handler
                             const obs = new IntersectionObserver(searchWrapperState.handleIntersection.bind(searchWrapperState))
                             obs.observe(searchWrapperState.entryTitle)
+                            window.addEventListener("resize", () => searchWrapperState.show(), {
+                                passive: true,
+                            });
 
                             // Initial scroll check
-                            searchWrapperState.updateState()
-                            return searchWrapperState
+                            const rect = searchWrapperState.entryTitle.getBoundingClientRect()
+                            rect&&searchWrapperState.handleRect(rect)
+
+                            // Store state in window for PJAX access
+                            window._searchWrapperState = searchWrapperState;
                         }
                     };
 
                     // Handle both first load and PJAX navigation
                     document.addEventListener("DOMContentLoaded", initArticleTitleBehavior);
                     document.addEventListener("pjax:complete", () => {
-                       const state = initArticleTitleBehavior();
+                        if (window._searchWrapperState) {
+                            window._searchWrapperState.init();
+                            window._searchWrapperState.handleScroll();
+                        } else {
+                            initArticleTitleBehavior();
+                        }
                     });
 
                 </script>
