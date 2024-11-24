@@ -571,6 +571,7 @@ header('X-Frame-Options: SAMEORIGIN');
                                 entryTitle: null,
                                 titlePadding: 20,
                                 scrollTimeout: null,
+                                hideTimeout: null,  // 新增: 用于存储hide延迟的timeout
                                 headerElement: null,
 
                                 init() {
@@ -589,29 +590,39 @@ header('X-Frame-Options: SAMEORIGIN');
                                         );
 
                                         this.navElement.addEventListener("transitionend", (event) => {
-                                            if (
-                                                event.target !== this.navElement &&
-                                                event.target !== this.header
-                                            )
-                                                return;
-                                            this.navTitle.style.opacity =
-                                                window.getComputedStyle(this.navElement).transform == "none"
-                                                    ? "0"
-                                                    : "1";
-                                            DOM.navSearchWrapper.style.overflow =
-                                                window.getComputedStyle(this.navElement).transform == "none"
-                                                    ? "unset"
-                                                    : "hidden";
+                                            if (event.target !== this.navElement && event.target !== this.header) return;
+                                            this.navTitle.style.opacity = window.getComputedStyle(this.navElement).transform == "none" ? "0" : "1";
+                                            DOM.navSearchWrapper.style.overflow = window.getComputedStyle(this.navElement).transform == "none" ? "unset" : "hidden";
                                         });
 
                                         this.navElement.addEventListener("transitionstart", (event) => {
-                                            if (
-                                                event.target !== this.navElement &&
-                                                event.target !== this.header
-                                            )
-                                                return;
+                                            if (event.target !== this.navElement && event.target !== this.header) return;
                                             DOM.navSearchWrapper.style.overflow = "hidden";
                                             this.navTitle.style.opacity = "1";
+                                        });
+
+                                        // 添加鼠标进入事件
+                                        this.navElement.addEventListener("mouseenter", () => {
+                                            if (this.hideTimeout) {
+                                                clearTimeout(this.hideTimeout);
+                                                this.hideTimeout = null;
+                                            }
+                                            if (this.entryTitle && this.entryTitle.getBoundingClientRect().top < 0) {
+                                                this.hide();
+                                            }
+                                        });
+
+                                        // 添加鼠标离开事件
+                                        this.navElement.addEventListener("mouseleave", () => {
+                                            if (this.hideTimeout) {
+                                                clearTimeout(this.hideTimeout);
+                                            }
+                                            if (this.entryTitle && this.entryTitle.getBoundingClientRect().top < 0) {
+                                                this.hideTimeout = setTimeout(() => {
+                                                    this.show();
+                                                    this.hideTimeout = null;
+                                                }, 5000);
+                                            }
                                         });
                                     }
                                     this.updateTitle();
