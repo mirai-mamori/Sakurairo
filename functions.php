@@ -775,6 +775,35 @@ function visual_resource_updates($specified_version, $option_name, $new_value)
 
 visual_resource_updates('2.5.6', 'vision_resource_basepath', '2.7/');
 
+function unlisted_avatar_updates() {
+    $theme = wp_get_theme();
+    $current_version = $theme->get('Version');
+
+    // Check if the function has already been triggered
+    $function_triggered = get_transient('unlisted_avatar_updates_triggered19');
+    if ($function_triggered) {
+        return; // Function has already been triggered, do nothing
+    }
+
+    if (version_compare($current_version, '2.5.6', '>')) {
+        $option_value = iro_opt('unlisted_avatar');
+        $old_values = array(
+            'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/topavatar.png',
+            'https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/topavatar.png',  
+            'https://s.nmxc.ltd/sakurairo_vision/@2.5/basic/topavatar.png'
+        );
+        
+        if (in_array($option_value, $old_values)) {
+            iro_opt_update('unlisted_avatar', '');
+        }
+
+        // Set transient to indicate that the function has been triggered
+        set_transient('unlisted_avatar_updates_triggered19', true);
+    }
+}
+
+unlisted_avatar_updates();
+
 function gfonts_updates($specified_version, $option_name)
 {
     $theme = wp_get_theme();
