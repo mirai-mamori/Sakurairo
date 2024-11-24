@@ -666,7 +666,6 @@ blockquote:after {
   
 .site-header:not(:hover) .nav-search-wrapper:not(:hover)[data-scrollswap] .nav-article-title {
   transform:translateY(0);
-  opacity:1;
 }
 
 .nav-search-wrapper nav {
@@ -762,17 +761,14 @@ nav .menu > li .sub-menu a {
   position: absolute;
   transform: translateY(150%);
   white-space: nowrap;
-  padding-inline:8px;
-  opacity:0;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition-property: transform, margin;
 }
 
-.nav-center-space {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
+/* 搜索分隔线和搜索框 */
 .nav-search-divider {
   width: 1px;
   height: 24px;
