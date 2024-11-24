@@ -562,7 +562,21 @@ header('X-Frame-Options: SAMEORIGIN');
 
                     // Article title behavior 
                     const initArticleTitleBehavior = () => {
-                        // Only proceed if not on home page
+                        // 确保在主页和状态切换时清除overflow属性
+                        DOM.navSearchWrapper.style.overflow = "unset";
+
+                        // 移除之前的状态
+                        if (window._searchWrapperState) {
+                            const navTitle = DOM.navSearchWrapper.querySelector(".nav-article-title");
+                            if (navTitle) {
+                                navTitle.remove();
+                            }
+                            delete DOM.navSearchWrapper.dataset.scrollswap;
+                            DOM.navSearchWrapper.style.setProperty("--dw", "0");
+                            window._searchWrapperState = null;
+                        }
+
+                        // 仅在非主页时初始化
                         if (!_iro.land_at_home) {
                             const searchWrapperState = {
                                 state: false,
@@ -616,12 +630,16 @@ header('X-Frame-Options: SAMEORIGIN');
                                         this.navElement.addEventListener("transitionend", (event) => {
                                             if (event.target !== this.navElement && event.target !== this.header) return;
                                             this.navTitle.style.opacity = window.getComputedStyle(this.navElement).transform == "none" ? "0" : "1";
-                                            DOM.navSearchWrapper.style.overflow = window.getComputedStyle(this.navElement).transform == "none" ? "unset" : "hidden";
+                                            if (document.querySelector(".entry-title")) {
+                                                DOM.navSearchWrapper.style.overflow = window.getComputedStyle(this.navElement).transform === "none" ? "unset" : "hidden";
+                                            }
                                         });
 
                                         this.navElement.addEventListener("transitionstart", (event) => {
                                             if (event.target !== this.navElement && event.target !== this.header) return;
-                                            DOM.navSearchWrapper.style.overflow = "hidden";
+                                            if (document.querySelector(".entry-title")) {
+                                                DOM.navSearchWrapper.style.overflow = "hidden";
+                                            }
                                             this.navTitle.style.opacity = "1";
                                         });
                                     }
@@ -656,6 +674,10 @@ header('X-Frame-Options: SAMEORIGIN');
                                     const navSearchWrapper = DOM.navSearchWrapper;
                                     delete navSearchWrapper.dataset.scrollswap;
                                     navSearchWrapper.style.setProperty("--dw", "0");
+                                    // 确保在隐藏时重置overflow
+                                    if (document.querySelector(".entry-title")) {
+                                        navSearchWrapper.style.overflow = "unset";
+                                    }
                                     this.state = false;
                                 },
 
@@ -692,6 +714,11 @@ header('X-Frame-Options: SAMEORIGIN');
 
                             // Store state in window for PJAX access
                             window._searchWrapperState = searchWrapperState;
+                        } else {
+                            // 确保在主页时移除所有相关状态和样式
+                            requestAnimationFrame(() => {
+                                DOM.navSearchWrapper.style.overflow = "unset";
+                            });
                         }
                     };
 
