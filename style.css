@@ -1431,7 +1431,8 @@ h1.page-title {
 }
 
 .author-profile .profile img {
-  max-width: 100%;
+  max-width: 30px;
+  max-height: 30px;
   border-radius: 100%;
   float: left;
 }
@@ -6827,8 +6828,12 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   .pattern-attachment {
     height: 280px;
   }
-  .site-header {
+  .user-menu-wrapper,.site-branding,.nav-search-wrapper nav{
     display: none;
+  }
+  .nav-search-wrapper {
+    border-radius: none;
+    max-width: calc(100% - 50px);
   }
   .shuoshuo-title h3::before {
     margin-top: 0px;

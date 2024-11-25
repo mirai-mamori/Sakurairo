@@ -59,13 +59,16 @@ $reception_background = iro_opt('reception_background');
     <?php if (iro_opt('mobile_menu_user_avatar', 'true')): ?>
       <div class="m-avatar">
         <?php
-          global $current_user;
+        global $current_user;
+        if (is_user_logged_in()) {
           wp_get_current_user();
-          if (is_user_logged_in()) { ?>
-              <img alt="m-avatar" src="<?php echo get_avatar_url($current_user->ID,  [64]); ?>">
-          <?php } else { ?>
-              <img alt="m-avatar" src="<?php echo iro_opt('unlisted_avatar');?>">
-          <?php } ?>
+          echo '<img alt="m-avatar" src="' . get_avatar_url($current_user->ID, 64) . '">';
+        } elseif (iro_opt('unlisted_avatar')) {
+          echo '<img alt="m-avatar" src="' . esc_url(iro_opt('unlisted_avatar')) . '">';
+        } else {
+            echo '<i class="fa-solid fa-circle-user" style="font-size: 40px;"></i>';
+        }
+        ?>
       </div>
     <?php endif; ?>
     <?php if (wp_is_mobile() && iro_opt('mobile_menu_user_avatar', 'true')) m_user_menu(); ?>

@@ -555,7 +555,18 @@ header('X-Frame-Options: SAMEORIGIN');
                     document.addEventListener("pjax:complete", () => {
                         requestAnimationFrame(showBgNext);
                     });
+                </script>
+            <?php endif; ?>
+        </div>
 
+        <!-- User Menu Section -->
+        <?php if ($show_user_avatar): ?>
+            <div class="user-menu-wrapper">
+                <?php header_user_menu(); ?>
+            </div>
+        <?php endif; ?>
+
+        <script>
                     // Initialize
                     StateManager.init();
                     showBgNext();
@@ -732,17 +743,7 @@ header('X-Frame-Options: SAMEORIGIN');
                             initArticleTitleBehavior();
                         }
                     });
-
-                </script>
-            <?php endif; ?>
-        </div>
-
-        <!-- User Menu Section -->
-        <?php if ($show_user_avatar): ?>
-            <div class="user-menu-wrapper">
-                <?php header_user_menu(); ?>
-            </div>
-        <?php endif; ?>
+            </script>
     </header>
     <div class="openNav no-select">
         <div class="iconflat no-select" style="padding: 30px;">

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2024-11-25 13:11+0900\n"
-"PO-Revision-Date: 2024-11-25 13:12+0900\n"
+"POT-Creation-Date: 2024-11-25 13:23+0900\n"
+"PO-Revision-Date: 2024-11-25 13:28+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -792,12 +792,8 @@ msgid "Navigation Menu Logo"
 msgstr "ナビゲーションメニューロゴ"
 
 #: options/theme-options.php:128
-msgid ""
-"The best size is 40px, and the nav menu text logo will not be displayed "
-"after filling in"
-msgstr ""
-"最適なサイズは 40 pxで、入力後にナビゲーションメニューのテキストロゴは表示さ"
-"れません"
+msgid "The best size is 40px"
+msgstr "最適なサイズは 40 px です"
 
 #: options/theme-options.php:135
 msgid "Site Icon"

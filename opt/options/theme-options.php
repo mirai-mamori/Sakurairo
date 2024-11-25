@@ -125,7 +125,7 @@ $prefix = 'iro_options';
         'id'    => 'iro_logo',
         'type'  => 'upload',
         'title' => __('Navigation Menu Logo','sakurairo_csf'),
-        'desc'   => __('The best size is 40px, and the nav menu text logo will not be displayed after filling in','sakurairo_csf'),
+        'desc'   => __('The best size is 40px','sakurairo_csf'),
         'library'      => 'image',
       ),
 
