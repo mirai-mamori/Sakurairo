@@ -657,13 +657,13 @@ blockquote:after {
   --dw:0;
 }
 
-.site-header:not(:hover) .nav-search-wrapper[data-scrollswap] nav {
+.site-header:not(:hover) .nav-search-wrapper[data-scrollswap=swap] nav {
   transform:translateY(-100%);
   margin-inline:calc(var(--dw,0px) / 2);
   opacity:0;
 }
   
-.site-header:not(:hover) .nav-search-wrapper[data-scrollswap] .nav-article-title {
+.site-header:not(:hover) .nav-search-wrapper[data-scrollswap=swap] .nav-article-title {
   transform:translateY(0);
   opacity:1;
 }

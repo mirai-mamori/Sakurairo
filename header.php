@@ -569,6 +569,7 @@ header('X-Frame-Options: SAMEORIGIN');
                                         e.currentTarget.style.overflow = ''
                                     })
                     // Article title behavior 
+
                     const initArticleTitleBehavior = () => {
                         const searchWrapperState = {
                                 state: false,
@@ -578,7 +579,11 @@ header('X-Frame-Options: SAMEORIGIN');
                                 titlePadding: 20,
                                 scrollTimeout: null,
                                 navSpace:null,
+                                obs:null,
                                 init() {
+                                    if(this.obs){
+                                        this.obs.disconnect()
+                                    }
                                     this.navSpace = DOM.navSearchWrapper.querySelector('.nav-center-space')
                                     this.navTitle =
                                         DOM.navSearchWrapper.querySelector(".nav-article-title");
@@ -595,27 +600,25 @@ header('X-Frame-Options: SAMEORIGIN');
                                         );
 
                                     }
-                                    this.updateTitle();
-                                },
-
-                                updateTitle() {
-                                    this.navTitle.textContent = this.entryTitle.textContent;
+                                    this.obs = new IntersectionObserver(searchWrapperState.handleIntersection.bind(searchWrapperState))
+                                    this.obs.observe(searchWrapperState.entryTitle)
                                 },
 
                                 show() {
                                     const navSearchWrapper = DOM.navSearchWrapper;
-                                    navSearchWrapper.dataset.scrollswap = "true";
 
                                     const contentWidth = this.navTitle.scrollWidth;
                                         const navWidth = navSearchWrapper.querySelector("nav").offsetWidth;
                                         const deltaWidth = Math.max(0, contentWidth - navWidth);
                                         navSearchWrapper.style.setProperty("--dw", `${deltaWidth}px`);
+                                        
+                                        navSearchWrapper.dataset.scrollswap = "swap";
                                     this.state = true;
                                 },
 
                                 hide() {
                                     const navSearchWrapper = DOM.navSearchWrapper;
-                                    delete navSearchWrapper.dataset.scrollswap;
+                                    navSearchWrapper.dataset.scrollswap = "";
                                     navSearchWrapper.style.setProperty("--dw", "0");
                                     this.state = false;
                                 },
@@ -636,27 +639,33 @@ header('X-Frame-Options: SAMEORIGIN');
                                     }
                                 }
                             };  
-                                                      
-                            searchWrapperState.init();
-                        if (_iro.land_at_home) {
-                            searchWrapperState.hide();
-                        }else{
-                            // Set up scroll handler
-                            const obs = new IntersectionObserver(searchWrapperState.handleIntersection.bind(searchWrapperState))
-                            obs.observe(searchWrapperState.entryTitle)
+                            searchWrapperState.init()
 
-                            // Initial scroll check
-                            searchWrapperState.updateState()
                             return searchWrapperState
-                        }
+
                     };
-
+                    /**
+                     * @type {ReturnType<typeof initArticleTitleBehavior>}
+                     */
+let state
                     // Handle both first load and PJAX navigation
-                    document.addEventListener("DOMContentLoaded", initArticleTitleBehavior);
+                    document.addEventListener("DOMContentLoaded", ()=>{
+                        if(!_iro.land_at_home) {
+                            state = initArticleTitleBehavior()
+                        }
+                    },{once:true});
                     document.addEventListener("pjax:complete", () => {
-                       const state = initArticleTitleBehavior();
-                    });
-
+                                    if(!_iro.land_at_home) {
+                                        if(state){
+                                            state.init()
+                                            state.updateState()
+                                        }else{
+                                            state = initArticleTitleBehavior()
+                                        }
+                                    }else{
+                                        state?.updateState()
+                                    }
+                            });
                 </script>
             <?php endif; ?>
         </div>
