@@ -1041,9 +1041,8 @@ nav .menu > li .sub-menu a {
   font-weight: var(--global-font-weight);
   -webkit-backdrop-filter: saturate(180%) blur(10px);
   backdrop-filter: saturate(180%) blur(10px);
-  will-change: backdrop-filter;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #2222;
+  border: 1px solid #fff2;
   z-index: 3;
 }
 
@@ -1065,9 +1064,8 @@ nav .menu > li .sub-menu a {
   right: 10px;
   -webkit-backdrop-filter: saturate(180%) blur(10px);
   backdrop-filter: saturate(180%) blur(10px);
-  will-change: backdrop-filter;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #2222;
+  border: 1px solid #fff2;
   z-index: 3;
 }
 
