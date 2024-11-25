@@ -598,10 +598,10 @@ header('X-Frame-Options: SAMEORIGIN');
                                             "beforeend",
                                             this.navTitle
                                         );
-
                                     }
-                                    this.obs = new IntersectionObserver(searchWrapperState.handleIntersection.bind(searchWrapperState))
-                                    this.obs.observe(searchWrapperState.entryTitle)
+                                    this.navTitle.textContent = this.entryTitle.textContent;
+                                    this.obs = new IntersectionObserver(this.handleIntersection.bind(searchWrapperState))
+                                    this.obs.observe(this.entryTitle)
                                 },
 
                                 show() {
@@ -647,7 +647,7 @@ header('X-Frame-Options: SAMEORIGIN');
                     /**
                      * @type {ReturnType<typeof initArticleTitleBehavior>}
                      */
-let state
+                    let state
                     // Handle both first load and PJAX navigation
                     document.addEventListener("DOMContentLoaded", ()=>{
                         if(!_iro.land_at_home) {
