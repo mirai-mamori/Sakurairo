@@ -428,14 +428,20 @@ header('X-Frame-Options: SAMEORIGIN');
 
                             if (!isEntering) {
                                 if (DOM.searchbox) {
-                                    DOM.searchbox.style.transform = `translateX(-${leavingOffset}px)`;
+                                    DOM.searchbox.style.transform = `translateX(${
+                                        bgNextWidth + leavingOffset
+                                    }px)`;
                                 }
                                 if (DOM.divider) {
                                     if (!DOM.searchbox) {
                                         DOM.divider.style.opacity = "0";
-                                        DOM.divider.style.transform = `translateX(-${leavingOffset}px)`;
+                                        DOM.divider.style.transform = `translateX(${
+                                            bgNextWidth + leavingOffset
+                                        }px)`;
                                     } else {
-                                        DOM.divider.style.transform = `translateX(-${leavingOffset}px)`;
+                                        DOM.divider.style.transform = `translateX(${
+                                            bgNextWidth + leavingOffset
+                                        }px)`;
                                     }
                                 }
                             } else {
@@ -555,107 +561,101 @@ header('X-Frame-Options: SAMEORIGIN');
                     // Initialize
                     StateManager.init();
                     showBgNext();
-                    const _space = DOM.navSearchWrapper.querySelector('.nav-center-space');
-                    _space.addEventListener('transitionstart', (e) => {
-                        e.currentTarget.style.overflow = 'hidden';
-                    });
-                    _space.addEventListener('transitionend', (e) => {
-                        e.currentTarget.style.overflow = '';
-                    });
-                    // Article title behavior
+                    const _space =  DOM.navSearchWrapper.querySelector('.nav-center-space')
+                    _space.addEventListener('transitionstart',(e)=>{
+                                       e.currentTarget.style.overflow = 'hidden'
+                                    })
+                    _space.addEventListener('transitionend',(e)=>{
+                                        e.currentTarget.style.overflow = ''
+                                    })
+                    // Article title behavior 
                     const initArticleTitleBehavior = () => {
                         const searchWrapperState = {
-                            state: false,
-                            navElement: null,
-                            navTitle: null,
-                            entryTitle: null,
-                            titlePadding: 20,
-                            scrollTimeout: null,
-                            navSpace: null,
-                            observer: null,
-                            isHomePage() {
-                                const path = window.location.pathname.replace(/\/+$/, '');
-                                return path === '' || path === '/index.php';
-                            },
-                            init() {
-                                this.navSpace = DOM.navSearchWrapper.querySelector('.nav-center-space');
-                                this.navTitle = DOM.navSearchWrapper.querySelector('.nav-article-title');
-                                this.entryTitle = document.querySelector('.entry-title');
-                                this.navElement = DOM.navSearchWrapper.querySelector('nav');
+                                state: false,
+                                navElement: null,
+                                navTitle: null,
+                                entryTitle: null,
+                                titlePadding: 20,
+                                scrollTimeout: null,
+                                navSpace:null,
+                                init() {
+                                    this.navSpace = DOM.navSearchWrapper.querySelector('.nav-center-space')
+                                    this.navTitle =
+                                        DOM.navSearchWrapper.querySelector(".nav-article-title");
+                                    this.entryTitle = document.querySelector(".entry-title");
+                                    this.navElement = DOM.navSearchWrapper.querySelector("nav");
+ 
+                                    if(!this.entryTitle) return
+                                    if (!this.navTitle) {
+                                        this.navTitle = document.createElement("div");
+                                        this.navTitle.classList.add("nav-article-title");
+                                        DOM.navSearchWrapper.firstElementChild.insertAdjacentElement(
+                                            "beforeend",
+                                            this.navTitle
+                                        );
 
-                                if (this.isHomePage() || !this.entryTitle) {
-                                    this.cleanup();
-                                    return;
-                                }
+                                    }
+                                    this.updateTitle();
+                                },
 
-                                if (!this.navTitle) {
-                                    this.navTitle = document.createElement('div');
-                                    this.navTitle.classList.add('nav-article-title');
-                                    DOM.navSearchWrapper.firstElementChild.insertAdjacentElement('beforeend', this.navTitle);
-                                }
+                                updateTitle() {
+                                    this.navTitle.textContent = this.entryTitle.textContent;
+                                },
 
-                                this.updateTitle();
-                                this.setupObserver();
-                            },
-                            updateTitle() {
-                                this.navTitle.textContent = this.entryTitle.textContent;
-                            },
-                            show() {
-                                const navSearchWrapper = DOM.navSearchWrapper;
-                                navSearchWrapper.dataset.scrollswap = 'true';
+                                show() {
+                                    const navSearchWrapper = DOM.navSearchWrapper;
+                                    navSearchWrapper.dataset.scrollswap = "true";
 
-                                const contentWidth = this.navTitle.scrollWidth;
-                                const navWidth = navSearchWrapper.querySelector('nav').offsetWidth;
-                                const deltaWidth = Math.max(0, contentWidth - navWidth);
-                                navSearchWrapper.style.setProperty('--dw', `${deltaWidth}px`);
-                                this.state = true;
-                            },
-                            hide() {
-                                const navSearchWrapper = DOM.navSearchWrapper;
-                                delete navSearchWrapper.dataset.scrollswap;
-                                navSearchWrapper.style.setProperty('--dw', '0');
-                                this.state = false;
-                            },
-                            updateState() {
-                                if (this.entryTitle && this.entryTitle.getBoundingClientRect().top < 0) {
-                                    this.show();
-                                } else {
-                                    this.hide();
-                                }
-                            },
-                            handleIntersection(entries) {
-                                if (entries[0].isIntersecting) {
-                                    this.hide();
-                                } else {
-                                    this.show();
-                                }
-                            },
-                            setupObserver() {
-                                this.observer = new IntersectionObserver(this.handleIntersection.bind(this));
-                                this.observer.observe(this.entryTitle);
-                                // Initial state check
-                                this.updateState();
-                            },
-                            cleanup() {
-                                if (this.navTitle) {
-                                    this.navTitle.remove();
-                                    this.navTitle = null;
-                                }
-                                if (this.observer) {
-                                    this.observer.disconnect();
-                                    this.observer = null;
-                                }
-                                this.hide();
-                            }
-                        };
+                                    const contentWidth = this.navTitle.scrollWidth;
+                                        const navWidth = navSearchWrapper.querySelector("nav").offsetWidth;
+                                        const deltaWidth = Math.max(0, contentWidth - navWidth);
+                                        navSearchWrapper.style.setProperty("--dw", `${deltaWidth}px`);
+                                    this.state = true;
+                                },
 
-                        searchWrapperState.init();
-                        return searchWrapperState;
+                                hide() {
+                                    const navSearchWrapper = DOM.navSearchWrapper;
+                                    delete navSearchWrapper.dataset.scrollswap;
+                                    navSearchWrapper.style.setProperty("--dw", "0");
+                                    this.state = false;
+                                },
+
+                                updateState() {
+                                    if (this.entryTitle&&
+                                    this.entryTitle.getBoundingClientRect().top < 0) {
+                                            this.show();
+                                        } else {
+                                            this.hide();
+                                        }
+                                },
+                                handleIntersection(entries){
+                                    if(entries[0].isIntersecting){
+                                        this.hide()
+                                    }else{
+                                        this.show()
+                                    }
+                                }
+                            };  
+                                                      
+                            searchWrapperState.init();
+                        if (_iro.land_at_home) {
+                            searchWrapperState.hide();
+                        }else{
+                            // Set up scroll handler
+                            const obs = new IntersectionObserver(searchWrapperState.handleIntersection.bind(searchWrapperState))
+                            obs.observe(searchWrapperState.entryTitle)
+
+                            // Initial scroll check
+                            searchWrapperState.updateState()
+                            return searchWrapperState
+                        }
                     };
 
                     // Handle both first load and PJAX navigation
-                    document.addEventListener('DOMContentLoaded', initArticleTitleBehavior);
-                    document.addEventListener('pjax:complete', initArticleTitleBehavior);
+                    document.addEventListener("DOMContentLoaded", initArticleTitleBehavior);
+                    document.addEventListener("pjax:complete", () => {
+                       const state = initArticleTitleBehavior();
+                    });
 
                 </script>
             <?php endif; ?>
