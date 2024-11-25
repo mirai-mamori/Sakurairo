@@ -746,8 +746,7 @@ header('X-Frame-Options: SAMEORIGIN');
             </script>
     </header>
     <div class="openNav no-select">
-        <div class="iconflat no-select" style="padding: 30px;">
-            <div class="icon"></div>
+        <div class="iconflat no-select">
         </div>
     </div><!-- m-nav-bar -->
     <section id="main-container">
