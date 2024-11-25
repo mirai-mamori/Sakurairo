@@ -53,11 +53,9 @@
 
 ### 引用相關：
 
-- 本主題社交網絡圖標中，流暢設計圖標引用於由Paradox設計的[Fluent圖標包](https://wwi.lanzous.com/ikyq5kgx0wb)
+- 本主題社交網絡圖標中，流暢設計圖標引用於由Paradox設計的 Fluent 圖標包
 
-- 本主題社交網絡圖標中，沐氫圖標引用於由緘默設計的[沐氫圖標包](https://www.coolapk.com/apk/com.muh2.icon)
-
-- 本主題白貓樣式徽標參考原主題作者白貓，由 Hyacm 提供方案
+- 本主題社交網絡圖標中，沐氫圖標引用於由緘默設計的沐氫圖標包
 
 ### 依賴相關：
 

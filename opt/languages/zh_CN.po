@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2024-11-23 14:22+0900\n"
-"PO-Revision-Date: 2024-11-23 14:26+0900\n"
+"POT-Creation-Date: 2024-11-25 13:12+0900\n"
+"PO-Revision-Date: 2024-11-25 13:12+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -4139,20 +4139,16 @@ msgstr "引用信息"
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox Fluent Icon Pack</p>\n"
 "        <p>MUH2 Design Icon Referenced by 缄默 <a href=\"https://www.coolapk."
-"com/apk/com.muh2.icon\">MUH2 Icon Pack</a></p>\n"
-"        <p>Mashiro Style Logo References the Original Theme Author Mashiro, "
-"As Provided and Referenced by Hyacm</p>"
+"com/apk/com.muh2.icon\">MUH2 Icon Pack</a></p>"
 msgstr ""
 "<p>流畅设计图标引用了由 Paradox 设计的 Fluent图标包</p>\n"
-"        <p>沐氢图标引用了由 缄默 设计的 <a href=\"https://www.coolapk.com/"
-"apk/com.muh2.icon\">沐氢图标包</a></p>\n"
-"        <p>白猫样式Logo参考原主题作者白猫，由 Hyacm 提供方案并引用</p>"
+"        <p>沐氢图标引用了由 缄默 设计的沐氢图标包</p>"
 
-#: options/theme-options.php:4032
+#: options/theme-options.php:4031
 msgid "Dependency Information"
 msgstr "依赖信息"
 
-#: options/theme-options.php:4037
+#: options/theme-options.php:4036
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
@@ -4169,7 +4165,7 @@ msgstr ""
 "        <p>ChatGPT 相关能力依赖于 orhanerday 开源的 <a href=\"https://github."
 "com/HaoZi-Team/ChatGPT-PHP\">open-ai</a> 项目</p>"
 
-#: options/theme-options.php:4044
+#: options/theme-options.php:4043
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "

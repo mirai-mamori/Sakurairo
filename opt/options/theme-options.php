@@ -951,7 +951,7 @@ $prefix = 'iro_options';
         'id' => 'search_filter',
         'type' => 'switcher',
         'title' => __('Search Filter','sakurairo_csf'),
-        'desc' => __('When turned on, users can search using the search filter','sakurairo_csf'),
+        'label' => __('When turned on, users can search using the search filter','sakurairo_csf'),
         'default' => false
       ),
 
@@ -4023,8 +4023,7 @@ $prefix = 'iro_options';
       array(
         'type'    => 'content',
         'content' => __('<p>Fluent Design Icon Referenced by Paradox Fluent Icon Pack</p>
-        <p>MUH2 Design Icon Referenced by 缄默 <a href="https://www.coolapk.com/apk/com.muh2.icon">MUH2 Icon Pack</a></p>
-        <p>Mashiro Style Logo References the Original Theme Author Mashiro, As Provided and Referenced by Hyacm</p>','sakurairo_csf'),
+        <p>MUH2 Design Icon Referenced by 缄默 <a href="https://www.coolapk.com/apk/com.muh2.icon">MUH2 Icon Pack</a></p>','sakurairo_csf'),
       ),
 
       array(

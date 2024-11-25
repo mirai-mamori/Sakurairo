@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2024-11-23 14:21+0900\n"
-"PO-Revision-Date: 2024-11-23 14:22+0900\n"
+"POT-Creation-Date: 2024-11-25 13:11+0900\n"
+"PO-Revision-Date: 2024-11-25 13:12+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -4327,22 +4327,17 @@ msgstr "参照情報"
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox Fluent Icon Pack</p>\n"
 "        <p>MUH2 Design Icon Referenced by 缄默 <a href=\"https://www.coolapk."
-"com/apk/com.muh2.icon\">MUH2 Icon Pack</a></p>\n"
-"        <p>Mashiro Style Logo References the Original Theme Author Mashiro, "
-"As Provided and Referenced by Hyacm</p>"
+"com/apk/com.muh2.icon\">MUH2 Icon Pack</a></p>"
 msgstr ""
 "<p>パラドックス流暢アイコンパックによって参照される流暢なデザインアイコン</"
 "p>\n"
-"        <p>MUH2 デザインアイコン 参照元 <a href=\"https://www.coolapk.com/"
-"apk/com.muh2.icon\">缄默 MUH2 アイコンパック</a></p>\n"
-"        <p>ましろスタイルのロゴは、Hyacmによって提供および参照されているよう"
-"に、元のテーマ作成者Mashiroを参照しています</p>"
+"        <p>MUH2 デザインアイコン 参照元 缄默 MUH2 アイコンパック</p>"
 
-#: options/theme-options.php:4032
+#: options/theme-options.php:4031
 msgid "Dependency Information"
 msgstr "依存情報"
 
-#: options/theme-options.php:4037
+#: options/theme-options.php:4036
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
@@ -4362,7 +4357,7 @@ msgstr ""
 "github.com/HaoZi-Team/ChatGPT-PHP\">open-ai</a> プロジェクトに依存している</"
 "p>"
 
-#: options/theme-options.php:4044
+#: options/theme-options.php:4043
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "

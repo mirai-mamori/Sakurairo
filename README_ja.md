@@ -48,11 +48,9 @@
 
 ### 参考資料：
 
-- 本テーマのSNSアイコンは、fluent-design icons部分はParadoxさんの[Fluent Icon Pack](https://wwi.lanzous.com/ikyq5kgx0wb)を参考にしています。
+- 本テーマのSNSアイコンは、fluent-design icons部分はParadoxさんの Fluent Icon Pack を参考にしています。
 
-- 本テーマのSNSアイコンは、MUH2 icons部分は缄默（ジェンモー）さんの[MUH2 Icon Pack](https://www.coolapk.com/apk/com.muh2.icon)を参考にしています。
-
-- 本テーマの白ネコロゴは、オリジナルテーマの開発者Mashiroさんのデザインを参考にしています。ソリューションは Hyacm さんが提供しています。
+- 本テーマのSNSアイコンは、MUH2 icons部分は缄默（ジェンモー）さんの MUH2 Icon Pack を参考にしています。
 
 ### 依存関係：
 
