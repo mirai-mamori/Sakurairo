@@ -1306,6 +1306,11 @@ function get_custom_smilies_list()
         return $custom_smilies_list;
     }
 
+    echo "<pre>调试信息：
+- 表情目录设置为: $custom_smilies_dir
+- 实际读取的路径为: $custom_smilies_path
+</pre>";
+
     $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($custom_smilies_path), RecursiveIteratorIterator::LEAVES_ONLY);
     foreach ($files as $file) {
         if ($file->isFile()) {
