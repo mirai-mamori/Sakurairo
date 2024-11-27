@@ -1375,7 +1375,7 @@ function update_custom_smilies_list()
             }
             echo '</ul>';
         } else {
-            echo '<p>没有任何图片被加入表情包中。</p>';
+            echo '<p>没有任何图片被加入表情包中（No emoticons found）。</p>';
         }
 }
 update_custom_smilies_list();
