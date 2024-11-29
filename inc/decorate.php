@@ -594,7 +594,7 @@ li.link-item {
 }
 
 .post-excerpt p {
-    max-height: 90%;
+    max-height: 100%;
     -webkit-line-clamp: 11;
     display: -webkit-box;
     -webkit-box-orient: vertical;
