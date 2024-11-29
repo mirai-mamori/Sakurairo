@@ -1634,6 +1634,43 @@ h3#comments-list-title {
   clear: both;
 }
 
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6,
+article strong {
+	font-weight: 600;
+}
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+	margin-top: 18px !important;
+	margin-bottom: 15px;
+}
+article h1 {
+	font-size: 30px;
+}
+article h2 {
+	font-size: 26px;
+}
+article h3 {
+	font-size: 22px;
+}
+article h4 {
+	font-size: 18px;
+}
+article h5 {
+	font-size: 15px;
+}
+article h6 {
+	font-size: 13px;
+}
+
 .comment-content:after {
   content: "";
   display: table;
