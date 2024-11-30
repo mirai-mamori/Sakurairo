@@ -117,6 +117,25 @@ header('X-Frame-Options: SAMEORIGIN');
     <?php endif;
     } ?>
 
+    <!--WordPress 脚注仅在本页内跳转-->
+    <script  type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        // Ensure all footnote links jump within the same page
+        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                // Prevent default behavior if unnecessary
+                event.preventDefault();
+                // Find the target element
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                // Scroll to the target element
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    });
+	</script>
 </head>
 
 <body <?php body_class(); ?>>
