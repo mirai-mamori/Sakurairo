@@ -1352,8 +1352,31 @@ function update_custom_smilies_list()
         delete_transient("custom_smilies_list");
         $custom_smilies_list = get_custom_smilies_list();
         $much = count($custom_smilies_list);
-        echo '自定义表情列表更新完成！总共有' . $much . '个表情。';
+        $custom_smilies_dir = iro_opt('smilies_dir');
+        $custom_smilies_path = wp_get_upload_dir()['basedir'] . $custom_smilies_dir;
+        echo '自定义表情列表更新完成！总共有' . $much . '个表情。<br>';
+        echo 'Custom smilies updated!Total' . $much . '.';
+        echo "<pre>调试信息：
+        - 表情目录设置为: $custom_smilies_dir
+        - 实际读取的路径为: $custom_smilies_path
+        Debug info:
+        - Smilies path set is: $custom_smilies_dir
+        - The directory actually read is: $custom_smilies_path
+        </pre>
+        <p>以下图片已被收录至自定义表情中（The following images have been included in the custom emoticons）：</p>";
     }
+    if (!empty($custom_smilies_list)) {
+            echo '<ul style="list-style: none; padding: 0; max-width: 600px;">';
+            foreach ($custom_smilies_list as $smiley) {
+                echo '<li style="margin-bottom: 10px; display: flex; align-items: center;">';
+                echo '<img src="' . esc_url($smiley['file_url']) . '" alt="' . esc_attr($smiley['base_name']) . '" style="height: 60px; margin-right: 10px;">';
+                echo '<span>' . esc_html($smiley['base_name']) . '</span>';
+                echo '</li>';
+            }
+            echo '</ul>';
+        } else {
+            echo '<p>没有任何图片被加入表情包中（No emoticons found）。</p>';
+        }
 }
 update_custom_smilies_list();
 
