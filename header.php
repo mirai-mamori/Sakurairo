@@ -691,10 +691,26 @@ header('X-Frame-Options: SAMEORIGIN');
                                     navSearchWrapper.dataset.scrollswap = "true";
 
                                     requestAnimationFrame(() => {
-                                        const contentWidth = this.navTitle.scrollWidth;
-                                        const navWidth = navSearchWrapper.querySelector("nav").offsetWidth;
-                                        const deltaWidth = Math.max(0, contentWidth - navWidth);
-                                        navSearchWrapper.style.setProperty("--dw", `${deltaWidth}px`);
+                                        // 1. 获取导航栏原始宽度
+                                        const originalNavWidth = this.navElement.scrollWidth;
+                                        
+                                        // 2. 获取原始导航内容和标题两者的宽度
+                                        const navItems = this.navElement.querySelectorAll('li');
+                                        let navItemsWidth = 0;
+                                        navItems.forEach(item => {
+                                            navItemsWidth += item.offsetWidth;
+                                        });
+                                        const titleWidth = this.navTitle.scrollWidth;
+                                        
+                                        // 3. 如果标题宽度大于导航内容宽度，计算需要扩展的宽度
+                                        if (titleWidth > navItemsWidth) {
+                                            const expandWidth = titleWidth - navItemsWidth;
+                                            navSearchWrapper.style.setProperty("--dw", `${expandWidth}px`);
+                                        } else {
+                                            // 4. 如果标题宽度小于导航内容宽度，计算需要收缩的宽度
+                                            const shrinkWidth = navItemsWidth - titleWidth;
+                                            navSearchWrapper.style.setProperty("--dw", `-${shrinkWidth}px`);
+                                        }
                                     });
                                     this.state = true;
                                 },
