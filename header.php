@@ -691,26 +691,55 @@ header('X-Frame-Options: SAMEORIGIN');
                                     navSearchWrapper.dataset.scrollswap = "true";
 
                                     requestAnimationFrame(() => {
-                                        // 1. 获取导航栏原始宽度
-                                        const originalNavWidth = this.navElement.scrollWidth;
-                                        
-                                        // 2. 获取原始导航内容和标题两者的宽度
-                                        const navItems = this.navElement.querySelectorAll('li');
-                                        let navItemsWidth = 0;
-                                        navItems.forEach(item => {
-                                            navItemsWidth += item.offsetWidth;
+                                        // 1. 创建一个临时容器来测量实际内容宽度
+                                        const tempNav = document.createElement('div');
+                                        tempNav.style.cssText = `
+                                            position: absolute;
+                                            visibility: hidden;
+                                            white-space: nowrap;
+                                            display: flex;
+                                            align-items: center;
+                                        `;
+                                        document.body.appendChild(tempNav);
+
+                                        // 2. 复制所有导航项到临时容器以获取真实宽度
+                                        const menuItems = Array.from(this.navElement.children);
+                                        menuItems.forEach(item => {
+                                            const clone = item.cloneNode(true);
+                                            // 保持原有样式
+                                            const computedStyle = window.getComputedStyle(item);
+                                            clone.style.cssText = Array.from(computedStyle).reduce((str, prop) => {
+                                                return `${str}${prop}:${computedStyle.getPropertyValue(prop)};`;
+                                            }, '');
+                                            tempNav.appendChild(clone);
                                         });
-                                        const titleWidth = this.navTitle.scrollWidth;
                                         
-                                        // 3. 如果标题宽度大于导航内容宽度，计算需要扩展的宽度
-                                        if (titleWidth > navItemsWidth) {
-                                            const expandWidth = titleWidth - navItemsWidth;
-                                            navSearchWrapper.style.setProperty("--dw", `${expandWidth}px`);
-                                        } else {
-                                            // 4. 如果标题宽度小于导航内容宽度，计算需要收缩的宽度
-                                            const shrinkWidth = navItemsWidth - titleWidth;
-                                            navSearchWrapper.style.setProperty("--dw", `-${shrinkWidth}px`);
-                                        }
+                                        // 3. 获取真实宽度
+                                        const actualNavWidth = tempNav.scrollWidth;
+                                        
+                                        // 4. 创建临时标题容器
+                                        const tempTitle = document.createElement('div');
+                                        tempTitle.style.cssText = `
+                                            position: absolute;
+                                            visibility: hidden;
+                                            white-space: nowrap;
+                                            font-size: ${window.getComputedStyle(this.navTitle).fontSize};
+                                            font-family: ${window.getComputedStyle(this.navTitle).fontFamily};
+                                            font-weight: ${window.getComputedStyle(this.navTitle).fontWeight};
+                                        `;
+                                        tempTitle.textContent = this.navTitle.textContent;
+                                        document.body.appendChild(tempTitle);
+                                        
+                                        // 5. 获取真实标题宽度
+                                        const actualTitleWidth = tempTitle.scrollWidth;
+
+                                        // 6. 计算宽度变化
+                                        const deltaWidth = actualTitleWidth - actualNavWidth;
+                                        navSearchWrapper.style.setProperty("--dw", `${deltaWidth}px`);
+
+                                        // 7. 清理临时元素
+                                        document.body.removeChild(tempNav);
+                                        document.body.removeChild(tempTitle);
                                     });
                                     this.state = true;
                                 },
