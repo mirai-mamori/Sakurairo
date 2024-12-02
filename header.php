@@ -733,8 +733,10 @@ header('X-Frame-Options: SAMEORIGIN');
                                         // 5. 获取真实标题宽度
                                         const actualTitleWidth = tempTitle.scrollWidth;
 
-                                        // 6. 计算宽度变化
-                                        const deltaWidth = actualTitleWidth - actualNavWidth;
+                                        // 6. 添加补偿距离
+                                        const compensationSpace = 18; // 补偿像素,可根据实际效果调整
+                                        const deltaWidth = actualTitleWidth - actualNavWidth + compensationSpace;
+                                        
                                         navSearchWrapper.style.setProperty("--dw", `${deltaWidth}px`);
 
                                         // 7. 清理临时元素
