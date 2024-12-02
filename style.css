@@ -6184,7 +6184,6 @@ a.toc-link {
 }
 
 .is-collapsible {
-  max-height: 1000px;
   overflow: hidden;
   transition: all .3s ease-in-out;
 }
