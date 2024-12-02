@@ -573,23 +573,18 @@ header('X-Frame-Options: SAMEORIGIN');
                     const initArticleTitleBehavior = () => {
                         const searchWrapperState = {
                                 state: false,
-                                navElement: null,
+                                navElement: DOM.navSearchWrapper.querySelector("nav"),
                                 navTitle: null,
-                                entryTitle: null,
+                                /** 
+                                 * @type {HTMLElement}
+                                 */
+                                entryTitle: DOM.navSearchWrapper.querySelector(".nav-article-title"),
                                 titlePadding: 20,
                                 scrollTimeout: null,
-                                navSpace:null,
+                                navSpace:DOM.navSearchWrapper.querySelector('.nav-center-space'),
                                 obs:null,
                                 init() {
-                                    if(this.obs){
-                                        this.obs.disconnect()
-                                    }
-                                    this.navSpace = DOM.navSearchWrapper.querySelector('.nav-center-space')
-                                    this.navTitle =
-                                        DOM.navSearchWrapper.querySelector(".nav-article-title");
-                                    this.entryTitle = document.querySelector(".entry-title");
-                                    this.navElement = DOM.navSearchWrapper.querySelector("nav");
- 
+                                    this.entryTitle = document.querySelector(".entry-title"); 
                                     if(!this.entryTitle) return
                                     if (!this.navTitle) {
                                         this.navTitle = document.createElement("div");
@@ -637,6 +632,12 @@ header('X-Frame-Options: SAMEORIGIN');
                                     }else{
                                         this.show()
                                     }
+                                },
+                                /**回到主页后，清理页面only的引用 */
+                                cleanRef(){
+                                    this.obs.disconnect()
+                                    this.obs = null
+                                    this.entryTitle = null
                                 }
                             };  
                             searchWrapperState.init()
@@ -662,8 +663,9 @@ header('X-Frame-Options: SAMEORIGIN');
                                         }else{
                                             state = initArticleTitleBehavior()
                                         }
-                                    }else{
-                                        state?.updateState()
+                                    }else if(state){
+                                            state.hide()
+                                            state.cleanRef()                                     
                                     }
                             });
                 </script>
