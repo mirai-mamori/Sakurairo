@@ -959,7 +959,6 @@ $prefix = 'iro_options';
         'id' => 'search_for_shuoshuo',
         'type' => 'switcher',
         'title' => __('Show shuoshuo in search results','sakurairo_csf'),
-        'dependency' => array( 'search_filter', '==', 'true', '', 'true' ),
         'default' => true
       ),
 
@@ -967,7 +966,6 @@ $prefix = 'iro_options';
         'id' => 'search_for_pages',
         'type' => 'switcher',
         'title' => __('Show pages in search results','sakurairo_csf'),
-        'dependency' => array( 'search_filter', '==', 'true', '', 'true' ),
         'default' => true
       ),
 
@@ -976,7 +974,6 @@ $prefix = 'iro_options';
         'type' => 'switcher',
         'title' => __('Only administrators can search pages','sakurairo_csf'),
         'dependency' => array(
-          array( 'search_filter', '==', 'true', '', 'true' ),
           array( 'search_for_pages', '==', 'true', '', 'true' ),
         ),
         'default' => true
@@ -986,7 +983,6 @@ $prefix = 'iro_options';
         'id' => 'sticky_pinned_content',
         'type' => 'switcher',
         'title' => __('Pinned contents will show at the top of the search results','sakurairo_csf'),
-        'dependency' => array( 'search_filter', '==', 'true', '', 'true' ),
         'default' => true
       ),
 
@@ -995,7 +991,6 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('Exclude some content in search results','sakurairo_csf'),
         'desc' => __('Fill in the posts or pages IDs that need to be excluded, such as "12,34".Recommend to fill in the custom login page id,and you can get them from the edit page of those content.','sakurairo_csf'),
-        'dependency' => array( 'search_filter', '==', 'true', '', 'true' ),
       ),
 
       array(
