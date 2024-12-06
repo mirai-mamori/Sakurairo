@@ -3471,7 +3471,7 @@ iframe {
 .toc-container {
   z-index: 98;
   width: 190px;
-  height: auto;
+  height: 100%;
   background-color: rgba(255, 255, 255, 0);
   right: calc((100% - 1250px)/ 2);
   top: 540px;
@@ -3483,11 +3483,12 @@ iframe {
 .toc {
   position: sticky;
   top: 12%;
+  max-height: 80vh;
+  overflow-y: scroll;
   box-shadow: 0 1px 30px -4px var(--friend-link-shadow);
   background: rgba(255, 255, 255, 0.5);
   padding: 10px 10px;
   width: fit-content;
-  overflow-y: auto;
   border-radius: 10px;
   border: 1.5px solid #FFFFFF;
 }
@@ -6169,17 +6170,20 @@ body.dark::-webkit-scrollbar-track {
 .toc-list {
   margin: 0;
   padding-left: 16px;
+  cursor: default;
 }
 
 a.toc-link {
   color: currentColor;
   height: 100%;
   font-size: 16px;
+}
+
+.toc-list-item > a > #text {
   cursor: pointer;
 }
 
 .is-collapsible {
-  max-height: 1000px;
   overflow: hidden;
   transition: all .3s ease-in-out;
 }
