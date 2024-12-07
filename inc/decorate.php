@@ -731,6 +731,13 @@ if($nav_menu_style == 'space-between' && ($has_user_avatar || $has_logo)){ ?>
   border: none;
   box-shadow: none;
 }
+body.dark .site-branding{
+  background: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+}
 <?php } else { ?>
 .site-header {
     justify-content: center;
