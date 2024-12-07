@@ -30,11 +30,6 @@ const ANIMATION = {
     easing: "cubic-bezier(0.34, 1.56, 0.64, 1)",
     duration: "0.6s",
     durationMs: 600,
-    offset: {
-        entering: 6.5,
-        leaving: 3.5,
-        divider: 4,
-    },
 };
 
 // 状态管理器
@@ -112,10 +107,9 @@ const initElementStates = (isEntering, bgNextWidth, initialWidth, isFirstLoad = 
 
 // 设置初始位置
 const setInitialPositions = (bgNextWidth) => {
-    const offset = ANIMATION.offset.entering;
     if (DOM.searchbox) {
         DOM.searchbox.style.cssText = `
-            transform: translateX(${bgNextWidth + offset}px);
+            transform: translateX(${bgNextWidth}px);
             transition: none;
         `;
     }
@@ -124,12 +118,12 @@ const setInitialPositions = (bgNextWidth) => {
             DOM.divider.style.cssText = `
                 display: block;
                 opacity: 0;
-                transform: translateX(${bgNextWidth + offset}px);
+                transform: translateX(${bgNextWidth}px);
                 transition: none;
             `;
         } else {
             DOM.divider.style.cssText = `
-                transform: translateX(${bgNextWidth + offset}px);
+                transform: translateX(${bgNextWidth}px);
                 transition: none;
             `;
         }
@@ -138,9 +132,7 @@ const setInitialPositions = (bgNextWidth) => {
 
 // 执行动画
 const animateElements = (isEntering, bgNextWidth, initialWidth) => {
-    const enteringOffset = ANIMATION.offset.entering;
-    const leavingOffset = ANIMATION.offset.leaving;
-    const dividerOffset = ANIMATION.offset.divider;
+    const gap = parseFloat(window.getComputedStyle(DOM.navSearchWrapper).gap) || 0;
 
     requestAnimationFrame(() => {
         setTransitions();
@@ -152,15 +144,16 @@ const animateElements = (isEntering, bgNextWidth, initialWidth) => {
         }px`;
 
         if (!isEntering) {
+            const totalOffset = bgNextWidth + gap;
             if (DOM.searchbox) {
-                DOM.searchbox.style.transform = `translateX(${bgNextWidth + leavingOffset}px)`;
+                DOM.searchbox.style.transform = `translateX(${totalOffset}px)`;
             }
             if (DOM.divider) {
                 if (!DOM.searchbox) {
                     DOM.divider.style.opacity = "0";
-                    DOM.divider.style.transform = `translateX(${bgNextWidth + leavingOffset}px)`;
+                    DOM.divider.style.transform = `translateX(${totalOffset}px)`;
                 } else {
-                    DOM.divider.style.transform = `translateX(${bgNextWidth + leavingOffset}px)`;
+                    DOM.divider.style.transform = `translateX(${totalOffset}px)`;
                 }
             }
         } else {
@@ -170,7 +163,7 @@ const animateElements = (isEntering, bgNextWidth, initialWidth) => {
             if (DOM.divider) {
                 if (!DOM.searchbox) {
                     DOM.divider.style.opacity = "1";
-                    DOM.divider.style.transform = `translateX(${dividerOffset}px)`;
+                    DOM.divider.style.transform = "translateX(0)";
                 } else {
                     DOM.divider.style.transform = "translateX(0)";
                 }
@@ -316,14 +309,14 @@ const showBgNext = () => {
 
                         if (DOM.searchbox) {
                             DOM.searchbox.style.cssText = `
-                                transform: translateX(${bgNextWidth + ANIMATION.offset.entering}px);
+                                transform: translateX(${bgNextWidth}px);
                                 transition: none;
                             `;
                         }
 
                         if (DOM.divider) {
                             DOM.divider.style.cssText = `
-                                transform: translateX(${bgNextWidth + ANIMATION.offset.entering}px);
+                                transform: translateX(${bgNextWidth}px);
                                 transition: none;
                                 ${!DOM.searchbox ? "opacity: 0;" : ""}
                             `;
@@ -458,6 +451,7 @@ const initArticleTitleBehavior = () => {
                 navSearchWrapper.dataset.scrollswap = "true";
 
                 requestAnimationFrame(() => {
+                    // 创建临时导航容器
                     const tempNav = document.createElement('div');
                     tempNav.style.cssText = `
                         position: absolute;
@@ -465,9 +459,13 @@ const initArticleTitleBehavior = () => {
                         white-space: nowrap;
                         display: flex;
                         align-items: center;
+                        padding: ${window.getComputedStyle(this.navElement).padding};
+                        margin: ${window.getComputedStyle(this.navElement).margin};
+                        gap: ${window.getComputedStyle(this.navElement).gap};
                     `;
                     document.body.appendChild(tempNav);
 
+                    // 克隆导航项并保持完整样式
                     const menuItems = Array.from(this.navElement.children);
                     menuItems.forEach(item => {
                         const clone = item.cloneNode(true);
@@ -478,27 +476,33 @@ const initArticleTitleBehavior = () => {
                         tempNav.appendChild(clone);
                     });
                     
-                    const actualNavWidth = tempNav.scrollWidth;
+                    const actualNavWidth = Math.ceil(tempNav.getBoundingClientRect().width);
                     
+                    // 创建临时标题容器
                     const tempTitle = document.createElement('div');
+                    const titleStyle = window.getComputedStyle(this.navTitle);
                     tempTitle.style.cssText = `
                         position: absolute;
                         visibility: hidden;
                         white-space: nowrap;
-                        font-size: ${window.getComputedStyle(this.navTitle).fontSize};
-                        font-family: ${window.getComputedStyle(this.navTitle).fontFamily};
-                        font-weight: ${window.getComputedStyle(this.navTitle).fontWeight};
+                        font-size: ${titleStyle.fontSize};
+                        font-family: ${titleStyle.fontFamily};
+                        font-weight: ${titleStyle.fontWeight};
+                        letter-spacing: ${titleStyle.letterSpacing};
+                        padding: ${titleStyle.padding};
+                        margin: ${titleStyle.margin};
                     `;
                     tempTitle.textContent = this.navTitle.textContent;
                     document.body.appendChild(tempTitle);
                     
-                    const actualTitleWidth = tempTitle.scrollWidth;
-
-                    const compensationSpace = 18;
-                    const deltaWidth = actualTitleWidth - actualNavWidth + compensationSpace;
+                    const actualTitleWidth = Math.ceil(tempTitle.getBoundingClientRect().width);
+                    
+                    // 直接使用宽度差值，不再添加补偿空间
+                    const deltaWidth = actualTitleWidth - actualNavWidth;
                     
                     navSearchWrapper.style.setProperty("--dw", `${deltaWidth}px`);
 
+                    // 清理临时元素
                     document.body.removeChild(tempNav);
                     document.body.removeChild(tempTitle);
                 });
