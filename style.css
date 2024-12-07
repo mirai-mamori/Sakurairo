@@ -5883,7 +5883,7 @@ body.dark::-webkit-scrollbar-track {
 }
 
 .ex-new-account a:hover {
-  color: #E67474;
+  color: var(--theme-skin, #505050);
 }
 
 .ex-logout {
@@ -6888,8 +6888,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
 
 /* 下一页按钮样式 */
 .bangumi-next {
-  font-family: sans-serif;
-  color: #e67474;
+  color: var(--theme-skin, #505050);
   position: relative;
   padding: 13px 35px;
   overflow: hidden;
@@ -6897,7 +6896,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
 
 .bangumi-next:before {
   content: ' ';
-  background-color: pink;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -6915,7 +6913,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
 }
 
 .bangumi-next i {
-  color: #505050;
+  color: var(--theme-skin, #505050);
 }
 
 /* 响应式布局 */
