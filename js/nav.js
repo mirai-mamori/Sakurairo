@@ -182,7 +182,6 @@ const animateElements = (isEntering, bgNextWidth, initialWidth) => {
 // 页面过渡处理
 const handlePageTransition = (isHomePage, state) => {
     if (isHomePage !== state.lastPageWasHome) {
-        // 创建一个测量容器
         const measureContainer = document.createElement('div');
         measureContainer.style.cssText = `
             position: fixed;
@@ -190,27 +189,42 @@ const handlePageTransition = (isHomePage, state) => {
             pointer-events: none;
             left: -9999px;
             top: 0;
+            display: flex;
+            gap: ${window.getComputedStyle(DOM.navSearchWrapper).gap};
+            padding: ${window.getComputedStyle(DOM.navSearchWrapper).padding};
+            box-sizing: border-box;
         `;
         document.body.appendChild(measureContainer);
 
-        // 克隆并准备bg-next元素用于测量
         const clone = DOM.bgNext.cloneNode(true);
+        // 获取完整的计算样式
+        const computedStyle = window.getComputedStyle(DOM.bgNext);
         clone.style.cssText = `
             display: block;
             opacity: 0;
             position: static;
-            margin: ${window.getComputedStyle(DOM.bgNext).margin};
-            padding: ${window.getComputedStyle(DOM.bgNext).padding};
-            border: ${window.getComputedStyle(DOM.bgNext).border};
-            box-sizing: border-box;
+            margin: ${computedStyle.margin};
+            padding: ${computedStyle.padding};
+            border: ${computedStyle.border};
+            gap: ${computedStyle.gap};
+            box-sizing: ${computedStyle.boxSizing};
+            min-width: ${computedStyle.minWidth};
+            max-width: ${computedStyle.maxWidth};
+            flex: ${computedStyle.flex};
+            flex-basis: ${computedStyle.flexBasis};
+            flex-grow: ${computedStyle.flexGrow};
+            flex-shrink: ${computedStyle.flexShrink};
         `;
         measureContainer.appendChild(clone);
 
-        // 使用 getBoundingClientRect 获取精确宽度
-        const bgNextWidth = Math.ceil(clone.getBoundingClientRect().width);
+        // 使用 getBoundingClientRect 获取精确宽度并向上取整
+        const bgNextWidth = Math.ceil(clone.getBoundingClientRect().width + 
+            (parseFloat(window.getComputedStyle(DOM.navSearchWrapper).gap) || 0));
+        
         document.body.removeChild(measureContainer);
 
-        // 获取初始宽度时也使用 getBoundingClientRect
+        // 获取初始宽度时包含所有可能的间距
+        const wrapperStyle = window.getComputedStyle(DOM.navSearchWrapper);
         const initialWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
         
         animateTransition(isHomePage, state, bgNextWidth, initialWidth);
