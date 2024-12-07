@@ -811,6 +811,11 @@ nav .menu > li .sub-menu a {
   max-width: 35px;
   max-height: 35px;
   display: flex;
+  align-items: center;
+}
+
+.header-user-avatar a{
+  display: flex;
 }
 
 .header-user-avatar img {
@@ -1247,9 +1252,9 @@ nav .menu > li .sub-menu a {
 }
 
 .entry-census.has-splitter>:where(a,span):not(:last-child)::after{
-content: "·";
-margin-left:5px;
-margin-inline-start: 5px;
+  content: "·";
+  margin-left:5px;
+  margin-inline-start: 5px;
 }
 
 .entry-header hr {
