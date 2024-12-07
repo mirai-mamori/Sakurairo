@@ -133,6 +133,7 @@ const setInitialPositions = (bgNextWidth) => {
 // 执行动画
 const animateElements = (isEntering, bgNextWidth, initialWidth) => {
     const gap = parseFloat(window.getComputedStyle(DOM.navSearchWrapper).gap) || 0;
+    const totalOffset = isEntering ? bgNextWidth + gap : bgNextWidth; // 退出时不需要加入gap
 
     requestAnimationFrame(() => {
         setTransitions();
@@ -144,16 +145,16 @@ const animateElements = (isEntering, bgNextWidth, initialWidth) => {
         }px`;
 
         if (!isEntering) {
-            const totalOffset = bgNextWidth + gap;
+            // 退出时只使用元素本身的宽度，不添加任何补偿
             if (DOM.searchbox) {
-                DOM.searchbox.style.transform = `translateX(${totalOffset}px)`;
+                DOM.searchbox.style.transform = `translateX(${bgNextWidth}px)`;
             }
             if (DOM.divider) {
                 if (!DOM.searchbox) {
                     DOM.divider.style.opacity = "0";
-                    DOM.divider.style.transform = `translateX(${totalOffset}px)`;
+                    DOM.divider.style.transform = `translateX(${bgNextWidth}px)`;
                 } else {
-                    DOM.divider.style.transform = `translateX(${totalOffset}px)`;
+                    DOM.divider.style.transform = `translateX(${bgNextWidth}px)`;
                 }
             }
         } else {
