@@ -259,29 +259,33 @@ pre {
 
 blockquote {
   margin: 0;
-  padding: 30px 60px;
+  /* padding: 30px 60px; */
   position: relative;
   quotes: "" "";
+}
+
+.comments blockquote{
+  padding: 30px 60px !important;
 }
 
 blockquote:before,
 blockquote:after {
   font-family: FontAwesome;
-  font-size: 3rem;
+  font-size: 1rem;
   color: var(--theme-skin, #505050);
   position: absolute;
 }
 
 blockquote:before {
   content: "\f10d" !important;
-  top: -25px;
-  left: 12px;
+  top: 20px;
+  left: 30px;
 }
 
 blockquote:after {
   content: '\f10e' !important;
-  bottom: -25px;
-  right: -5px;
+  bottom: 15px;
+  right: 20px;
 }
 
 .wrapper {
