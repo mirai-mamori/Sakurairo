@@ -182,14 +182,37 @@ const animateElements = (isEntering, bgNextWidth, initialWidth) => {
 // 页面过渡处理
 const handlePageTransition = (isHomePage, state) => {
     if (isHomePage !== state.lastPageWasHome) {
-        const clone = DOM.bgNext.cloneNode(true);
-        clone.style.cssText =
-            "display:block;opacity:0;position:fixed;pointer-events:none;";
-        document.body.appendChild(clone);
-        const bgNextWidth = clone.offsetWidth;
-        document.body.removeChild(clone);
+        // 创建一个测量容器
+        const measureContainer = document.createElement('div');
+        measureContainer.style.cssText = `
+            position: fixed;
+            visibility: hidden;
+            pointer-events: none;
+            left: -9999px;
+            top: 0;
+        `;
+        document.body.appendChild(measureContainer);
 
-        const initialWidth = DOM.navSearchWrapper.offsetWidth;
+        // 克隆并准备bg-next元素用于测量
+        const clone = DOM.bgNext.cloneNode(true);
+        clone.style.cssText = `
+            display: block;
+            opacity: 0;
+            position: static;
+            margin: ${window.getComputedStyle(DOM.bgNext).margin};
+            padding: ${window.getComputedStyle(DOM.bgNext).padding};
+            border: ${window.getComputedStyle(DOM.bgNext).border};
+            box-sizing: border-box;
+        `;
+        measureContainer.appendChild(clone);
+
+        // 使用 getBoundingClientRect 获取精确宽度
+        const bgNextWidth = Math.ceil(clone.getBoundingClientRect().width);
+        document.body.removeChild(measureContainer);
+
+        // 获取初始宽度时也使用 getBoundingClientRect
+        const initialWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
+        
         animateTransition(isHomePage, state, bgNextWidth, initialWidth);
     } else {
         DOM.bgNext.style.display = isHomePage ? "block" : "none";
