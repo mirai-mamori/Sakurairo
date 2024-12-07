@@ -32,19 +32,30 @@ const ANIMATION = {
     durationMs: 600,
 };
 
-// 状态管理器
+// 改进的状态管理器
 const StateManager = {
     init() {
-        if (sessionStorage.getItem("bgNextState")) return this.getState();
-
-        const state = {
-            lastPageWasHome: false,
-            isTransitioning: false,
-            firstLoad: true,
-            initialized: false,
-        };
-        this.setState(state);
-        return state;
+        try {
+            if (sessionStorage.getItem("bgNextState")) {
+                return this.getState();
+            }
+            const state = {
+                lastPageWasHome: false,
+                isTransitioning: false,
+                firstLoad: true,
+                initialized: false,
+            };
+            this.setState(state);
+            return state;
+        } catch (e) {
+            console.warn('StateManager initialization failed:', e);
+            return {
+                lastPageWasHome: false,
+                isTransitioning: false,
+                firstLoad: true,
+                initialized: false,
+            };
+        }
     },
 
     getState() {
@@ -130,47 +141,58 @@ const setInitialPositions = (bgNextWidth) => {
     }
 };
 
-// 执行动画
+// 优化的动画执行函数
 const animateElements = (isEntering, bgNextWidth, initialWidth) => {
     const gap = parseFloat(window.getComputedStyle(DOM.navSearchWrapper).gap) || 0;
-    const totalOffset = isEntering ? bgNextWidth + gap : bgNextWidth; // 退出时不需要加入gap
+    const totalOffset = isEntering ? bgNextWidth + gap : bgNextWidth;
 
-    requestAnimationFrame(() => {
+    // 使用 requestAnimationFrame 和 CSS transform 优化性能
+    const animate = () => {
         setTransitions();
-
-        DOM.bgNext.style.opacity = isEntering ? "1" : "0";
-        DOM.bgNext.style.transform = `translateX(${isEntering ? "0" : "20px"})`;
-        DOM.navSearchWrapper.style.width = `${
-            initialWidth + (isEntering ? bgNextWidth : -bgNextWidth)
-        }px`;
+        const elements = [
+            [DOM.bgNext, {
+                opacity: isEntering ? "1" : "0",
+                transform: `translateX(${isEntering ? "0" : "20px"})`
+            }],
+            [DOM.navSearchWrapper, {
+                width: `${initialWidth + (isEntering ? bgNextWidth : -bgNextWidth)}px`
+            }]
+        ];
 
         if (!isEntering) {
-            // 退出时只使用元素本身的宽度，不添加任何补偿
             if (DOM.searchbox) {
-                DOM.searchbox.style.transform = `translateX(${bgNextWidth}px)`;
+                elements.push([DOM.searchbox, {
+                    transform: `translateX(${bgNextWidth}px)`
+                }]);
             }
             if (DOM.divider) {
-                if (!DOM.searchbox) {
-                    DOM.divider.style.opacity = "0";
-                    DOM.divider.style.transform = `translateX(${bgNextWidth}px)`;
-                } else {
-                    DOM.divider.style.transform = `translateX(${bgNextWidth}px)`;
-                }
+                elements.push([DOM.divider, {
+                    opacity: DOM.searchbox ? "1" : "0",
+                    transform: `translateX(${bgNextWidth}px)`
+                }]);
             }
         } else {
             if (DOM.searchbox) {
-                DOM.searchbox.style.transform = "translateX(0)";
+                elements.push([DOM.searchbox, {
+                    transform: "translateX(0)"
+                }]);
             }
             if (DOM.divider) {
-                if (!DOM.searchbox) {
-                    DOM.divider.style.opacity = "1";
-                    DOM.divider.style.transform = "translateX(0)";
-                } else {
-                    DOM.divider.style.transform = "translateX(0)";
-                }
+                elements.push([DOM.divider, {
+                    opacity: "1",
+                    transform: "translateX(0)"
+                }]);
             }
         }
-    });
+
+        elements.forEach(([element, styles]) => {
+            if (element) {
+                Object.assign(element.style, styles);
+            }
+        });
+    };
+
+    requestAnimationFrame(animate);
 };
 
 // 页面过渡处理
@@ -563,25 +585,32 @@ const initAnimations = () => {
     initArticleTitleBehavior();
 };
 
-// 事件监听
-document.addEventListener("pjax:send", () => {
-    StateManager.update({
-        lastPageWasHome:
-            location.pathname === "/" || location.pathname === "/index.php",
-    });
-});
+// 优化的事件监听器
+const addEventListeners = () => {
+    const events = [
+        ["pjax:send", () => {
+            StateManager.update({
+                lastPageWasHome: location.pathname === "/" || location.pathname === "/index.php"
+            });
+        }],
+        ["pjax:complete", () => {
+            requestAnimationFrame(() => {
+                showBgNext();
+                if (window._searchWrapperState) {
+                    window._searchWrapperState.init();
+                    window._searchWrapperState.handleScroll();
+                } else {
+                    initArticleTitleBehavior();
+                }
+            });
+        }],
+        ["DOMContentLoaded", initAnimations]
+    ];
 
-document.addEventListener("pjax:complete", () => {
-    requestAnimationFrame(() => {
-        showBgNext();
-        if (window._searchWrapperState) {
-            window._searchWrapperState.init();
-            window._searchWrapperState.handleScroll();
-        } else {
-            initArticleTitleBehavior();
-        }
+    events.forEach(([event, handler]) => {
+        document.addEventListener(event, handler);
     });
-});
+};
 
-// DOM内容加载完成后初始化动画
-document.addEventListener("DOMContentLoaded", initAnimations);
+// 初始化时调用事件监听器设置
+addEventListeners();
