@@ -2558,9 +2558,8 @@ h1.main-title {
 #filter-container {
   background-color: var(--theme-skin);
   opacity: 0.75;
-  border-radius: 8px;
-  padding: 15px;
-  margin-top: 15px;
+  border-radius: 15px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2569,7 +2568,7 @@ h1.main-title {
 .filter-count {
   background-color: #FFFFFF;
   color: #000000;
-  padding: 5px 15px;
+  padding: 5px 10px;
   border-radius: 20px;
   font-weight: bold;
 }
@@ -2581,7 +2580,7 @@ h1.main-title {
 }
 
 #search-filter-form label {
-  margin-right: 15px;
+  margin: 0px 5px;
 }
 
 #filter-toggle {
@@ -2590,6 +2589,16 @@ h1.main-title {
   font-size: 1.2em;
   text-align: right;
 }
+
+@media (max-width: 860px) {
+#filter-container,
+.filter-count,
+#search-filter-form,
+#search-filter-form label,
+#filter-toggle{
+  white-space: nowrap;
+  font-size: 0.7rem;
+}}
 /*search filter style end*/
 .s-search input {
   font-size: 1rem;
