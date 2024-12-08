@@ -106,10 +106,9 @@ const initElementStates = (isEntering, bgNextWidth, initialWidth, isFirstLoad = 
         if (el) el.style.transition = 'none';
     });
 
-    // 初始化导航容器宽度
+    // 初始化导航容器宽度 - 移除overflow设置
     resetElement(DOM.navSearchWrapper, `
         width: ${initialWidth}px;
-        overflow: hidden;
     `);
 
     // 初始化 bg-next 元素
@@ -183,6 +182,11 @@ const animateElements = (isEntering, bgNextWidth, initialWidth) => {
         if (DOM.searchbox) DOM.searchbox.style.willChange = 'transform';
         if (DOM.divider) DOM.divider.style.willChange = 'transform, opacity';
 
+        // 确保在动画开始前overflow为hidden
+        if (!window._searchWrapperState || !window._searchWrapperState.state) {
+            DOM.navSearchWrapper.style.overflow = "hidden";
+        }
+
         const elements = [
             [DOM.bgNext, {
                 opacity: isEntering ? "1" : "0",
@@ -219,19 +223,26 @@ const animateElements = (isEntering, bgNextWidth, initialWidth) => {
             }
         }
 
-        elements.forEach(([element, styles]) => {
-            if (element) {
-                Object.assign(element.style, styles);
-            }
-        });
-
-        // 动画完成后清除 willChange
+        // 移除之前的transitionend事件，改为仅在动画完成后处理
         setTimeout(() => {
             DOM.navSearchWrapper.style.willChange = '';
             DOM.bgNext.style.willChange = '';
             if (DOM.searchbox) DOM.searchbox.style.willChange = '';
             if (DOM.divider) DOM.divider.style.willChange = '';
+            
+            // 仅在非文章标题切换状态时重置overflow
+            if (!window._searchWrapperState || !window._searchWrapperState.state) {
+                requestAnimationFrame(() => {
+                    DOM.navSearchWrapper.style.overflow = "unset";
+                });
+            }
         }, ANIMATION.durationMs);
+
+        elements.forEach(([element, styles]) => {
+            if (element) {
+                Object.assign(element.style, styles);
+            }
+        });
     };
 
     // 使用 RAF 确保动画流畅
@@ -322,10 +333,15 @@ const animateTransition = (isEntering, state, bgNextWidth, initialWidth) => {
         setTransitions();
         animateElements(isEntering, bgNextWidth, initialWidth);
 
+        // 修改动画完成后的处理
         setTimeout(() => {
             if (!isEntering) {
                 DOM.bgNext.style.display = "none";
                 DOM.navSearchWrapper.style.width = "auto";
+                // 确保在non-home页面时正确设置overflow
+                if (!window._searchWrapperState || !window._searchWrapperState.state) {
+                    DOM.navSearchWrapper.style.overflow = "unset";
+                }
                 if (!DOM.searchbox && DOM.divider) {
                     DOM.divider.style.display = "none";
                 }
