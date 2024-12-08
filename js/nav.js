@@ -72,6 +72,10 @@ const StateManager = {
             ...changes,
         });
     },
+    
+    clear() {
+        sessionStorage.removeItem("bgNextState");
+    },
 };
 
 // 设置动画过渡
@@ -251,7 +255,27 @@ const animateElements = (isEntering, bgNextWidth, initialWidth) => {
 
 // 页面过渡处理
 const handlePageTransition = (isHomePage, state) => {
+    // 添加清理逻辑
+    const cleanupAnimations = () => {
+        if (window._searchWrapperState) {
+            window._searchWrapperState.state = false;
+            if (window._searchWrapperState.hideTimeout) {
+                clearTimeout(window._searchWrapperState.hideTimeout);
+            }
+            if (window._searchWrapperState.scrollRAF) {
+                cancelAnimationFrame(window._searchWrapperState.scrollRAF);
+            }
+        }
+        
+        // 重置导航样式
+        DOM.navSearchWrapper.style.overflow = "unset";
+        DOM.navSearchWrapper.style.width = "auto";
+        delete DOM.navSearchWrapper.dataset.scrollswap;
+        DOM.navSearchWrapper.style.setProperty("--dw", "0");
+    };
+
     if (isHomePage === state.lastPageWasHome) {
+        cleanupAnimations();
         DOM.bgNext.style.display = isHomePage ? "block" : "none";
         return;
     }
@@ -648,12 +672,30 @@ const initAnimations = () => {
 const addEventListeners = () => {
     const events = [
         ["pjax:send", () => {
+            // 清理之前的动画状态
+            if (window._searchWrapperState) {
+                if (window._searchWrapperState.hideTimeout) {
+                    clearTimeout(window._searchWrapperState.hideTimeout);
+                }
+                if (window._searchWrapperState.scrollRAF) {
+                    cancelAnimationFrame(window._searchWrapperState.scrollRAF);
+                }
+                window._searchWrapperState.state = false;
+            }
+            
             StateManager.update({
-                lastPageWasHome: location.pathname === "/" || location.pathname === "/index.php"
+                lastPageWasHome: location.pathname === "/" || location.pathname === "/index.php",
+                isTransitioning: false // 强制重置过渡状态
             });
         }],
         ["pjax:complete", () => {
             requestAnimationFrame(() => {
+                // 确保所有状态重置
+                DOM.navSearchWrapper.style.overflow = "unset";
+                DOM.navSearchWrapper.style.width = "auto";
+                delete DOM.navSearchWrapper.dataset.scrollswap;
+                DOM.navSearchWrapper.style.setProperty("--dw", "0");
+                
                 showBgNext();
                 if (window._searchWrapperState) {
                     window._searchWrapperState.init();
