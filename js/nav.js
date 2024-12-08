@@ -120,8 +120,9 @@ const initElementStates = (isEntering, bgNextWidth, initialWidth, isFirstLoad = 
         display: block;
         opacity: ${isEntering ? "0" : "1"};
         transform: translateX(${isEntering ? "20px" : "0"});
-        pointer-events: ${isEntering ? "none" : "auto"};
+        pointer-events: auto;
         position: relative;
+        z-index: 1;
         transition: none;
     `);
 
@@ -182,6 +183,8 @@ const animateElements = (isEntering, bgNextWidth, initialWidth) => {
         // 优化动画性能
         DOM.navSearchWrapper.style.willChange = 'transform, width';
         DOM.bgNext.style.willChange = 'transform, opacity';
+        DOM.bgNext.style.pointerEvents = 'auto';
+        DOM.bgNext.style.zIndex = '1';
         
         if (DOM.searchbox) DOM.searchbox.style.willChange = 'transform';
         if (DOM.divider) DOM.divider.style.willChange = 'transform, opacity';
@@ -231,6 +234,7 @@ const animateElements = (isEntering, bgNextWidth, initialWidth) => {
         setTimeout(() => {
             DOM.navSearchWrapper.style.willChange = '';
             DOM.bgNext.style.willChange = '';
+            DOM.bgNext.style.pointerEvents = 'auto'; // 确保动画结束后仍可点击
             if (DOM.searchbox) DOM.searchbox.style.willChange = '';
             if (DOM.divider) DOM.divider.style.willChange = '';
             
@@ -272,6 +276,12 @@ const handlePageTransition = (isHomePage, state) => {
         DOM.navSearchWrapper.style.width = "auto";
         delete DOM.navSearchWrapper.dataset.scrollswap;
         DOM.navSearchWrapper.style.setProperty("--dw", "0");
+
+        if (isHomePage) {
+            // 确保在主页时 bg-next 可点击
+            DOM.bgNext.style.pointerEvents = 'auto';
+            DOM.bgNext.style.zIndex = '1';
+        }
     };
 
     if (isHomePage === state.lastPageWasHome) {
@@ -389,7 +399,14 @@ const showBgNext = () => {
         location.pathname === "/" || location.pathname === "/index.php";
     const state = StateManager.getState();
 
-    if (state.isTransitioning) return;
+    if (state.isTransitioning) {
+        // 即使在过渡状态，也要确保在主页时 bg-next 可点击
+        if (isHomePage) {
+            DOM.bgNext.style.pointerEvents = 'auto';
+            DOM.bgNext.style.zIndex = '1';
+        }
+        return;
+    }
 
     if (state.firstLoad) {
         if (!state.initialized) {
