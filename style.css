@@ -264,6 +264,7 @@ blockquote {
   quotes: "" "";
 }
 
+.wp-block-quote,
 .comments blockquote{
   padding: 30px 60px !important;
 }
