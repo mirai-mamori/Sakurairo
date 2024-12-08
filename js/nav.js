@@ -143,9 +143,17 @@ const setInitialPositions = (bgNextWidth) => {
 
 // 优化的动画执行函数
 const animateElements = (isEntering, bgNextWidth, initialWidth) => {
-    // 移除 totalWidth 相关的计算
+    // 使用 transform 代替 width 动画以提高性能
     const animate = () => {
         setTransitions();
+        
+        // 优化动画性能
+        DOM.navSearchWrapper.style.willChange = 'transform, width';
+        DOM.bgNext.style.willChange = 'transform, opacity';
+        
+        if (DOM.searchbox) DOM.searchbox.style.willChange = 'transform';
+        if (DOM.divider) DOM.divider.style.willChange = 'transform, opacity';
+
         const elements = [
             [DOM.bgNext, {
                 opacity: isEntering ? "1" : "0",
@@ -187,69 +195,84 @@ const animateElements = (isEntering, bgNextWidth, initialWidth) => {
                 Object.assign(element.style, styles);
             }
         });
+
+        // 动画完成后清除 willChange
+        setTimeout(() => {
+            DOM.navSearchWrapper.style.willChange = '';
+            DOM.bgNext.style.willChange = '';
+            if (DOM.searchbox) DOM.searchbox.style.willChange = '';
+            if (DOM.divider) DOM.divider.style.willChange = '';
+        }, ANIMATION.durationMs);
     };
 
+    // 使用 RAF 确保动画流畅
     requestAnimationFrame(animate);
 };
 
 // 页面过渡处理
 const handlePageTransition = (isHomePage, state) => {
-    if (isHomePage !== state.lastPageWasHome) {
-        const measureContainer = document.createElement('div');
-        measureContainer.style.cssText = `
-            position: fixed;
-            visibility: hidden;
-            pointer-events: none;
-            left: -9999px;
-            top: 0;
-            display: flex;
-            gap: ${window.getComputedStyle(DOM.navSearchWrapper).gap};
-            padding: ${window.getComputedStyle(DOM.navSearchWrapper).padding};
-            box-sizing: border-box;
-        `;
-        document.body.appendChild(measureContainer);
-
-        const clone = DOM.bgNext.cloneNode(true);
-        const computedStyle = window.getComputedStyle(DOM.bgNext);
-        clone.style.cssText = `
-            display: block;
-            opacity: 0;
-            position: static;
-            margin: ${computedStyle.margin};
-            padding: ${computedStyle.padding};
-            border: ${computedStyle.border};
-            gap: ${computedStyle.gap};
-            box-sizing: ${computedStyle.boxSizing};
-            min-width: ${computedStyle.minWidth};
-            max-width: ${computedStyle.maxWidth};
-            flex: ${computedStyle.flex};
-            flex-basis: ${computedStyle.flexBasis};
-            flex-grow: ${computedStyle.flexGrow};
-            flex-shrink: ${computedStyle.flexShrink};
-        `;
-        measureContainer.appendChild(clone);
-
-        const bgNextWidth = Math.ceil(clone.getBoundingClientRect().width + 
-            (parseFloat(window.getComputedStyle(DOM.navSearchWrapper).gap) || 0));
-        
-        document.body.removeChild(measureContainer);
-
-        const initialWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
-        
-        animateTransition(isHomePage, state, bgNextWidth, initialWidth);
-    } else {
+    if (isHomePage === state.lastPageWasHome) {
         DOM.bgNext.style.display = isHomePage ? "block" : "none";
-        if (!isHomePage && !DOM.searchbox && DOM.divider) {
-            DOM.divider.style.display = "none";
-        }
-        if (isHomePage) {
-            DOM.bgNext.style.opacity = "1";
-            DOM.bgNext.style.transform = "translateX(0)";
-        }
+        return;
     }
 
-    state.lastPageWasHome = isHomePage;
-    StateManager.setState(state);
+    // 使用 Performance API 优化动画时机
+    if (window.performance && window.performance.now) {
+        const startTime = performance.now();
+        
+        // 添加防抖，避免快速切换导致的动画问题
+        if (state.transitionTimer) {
+            cancelAnimationFrame(state.transitionTimer);
+        }
+
+        state.transitionTimer = requestAnimationFrame(() => {
+            const measureContainer = document.createElement('div');
+            measureContainer.style.cssText = `
+                position: fixed;
+                visibility: hidden;
+                pointer-events: none;
+                left: -9999px;
+                top: 0;
+                display: flex;
+                gap: ${window.getComputedStyle(DOM.navSearchWrapper).gap};
+                padding: ${window.getComputedStyle(DOM.navSearchWrapper).padding};
+                box-sizing: border-box;
+            `;
+            document.body.appendChild(measureContainer);
+
+            const clone = DOM.bgNext.cloneNode(true);
+            const computedStyle = window.getComputedStyle(DOM.bgNext);
+            clone.style.cssText = `
+                display: block;
+                opacity: 0;
+                position: static;
+                margin: ${computedStyle.margin};
+                padding: ${computedStyle.padding};
+                border: ${computedStyle.border};
+                gap: ${computedStyle.gap};
+                box-sizing: ${computedStyle.boxSizing};
+                min-width: ${computedStyle.minWidth};
+                max-width: ${computedStyle.maxWidth};
+                flex: ${computedStyle.flex};
+                flex-basis: ${computedStyle.flexBasis};
+                flex-grow: ${computedStyle.flexGrow};
+                flex-shrink: ${computedStyle.flexShrink};
+            `;
+            measureContainer.appendChild(clone);
+
+            const bgNextWidth = Math.ceil(clone.getBoundingClientRect().width + 
+                (parseFloat(window.getComputedStyle(DOM.navSearchWrapper).gap) || 0));
+            
+            document.body.removeChild(measureContainer);
+
+            const initialWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
+            
+            animateTransition(isHomePage, state, bgNextWidth, initialWidth);
+            
+            // 记录动画执行时间
+            console.debug('Transition time:', performance.now() - startTime);
+        });
+    }
 };
 
 // 执行过渡动画
@@ -543,19 +566,20 @@ const initArticleTitleBehavior = () => {
             },
 
             handleScroll() {
-                if (this.scrollTimeout) {
-                    clearTimeout(this.scrollTimeout);
+                // 使用 RAF 优化滚动性能
+                if (!this.scrollRAF) {
+                    this.scrollRAF = requestAnimationFrame(() => {
+                        if (this.entryTitle) {
+                            const rect = this.entryTitle.getBoundingClientRect();
+                            if (rect.top < 0) {
+                                this.show();
+                            } else {
+                                this.hide();
+                            }
+                        }
+                        this.scrollRAF = null;
+                    });
                 }
-                this.scrollTimeout = setTimeout(() => {
-                    if (
-                        this.entryTitle &&
-                        this.entryTitle.getBoundingClientRect().top < 0
-                    ) {
-                        this.show();
-                    } else {
-                        this.hide();
-                    }
-                }, 20);
             },
         };
 
