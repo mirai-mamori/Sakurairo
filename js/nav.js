@@ -299,52 +299,61 @@ const handlePageTransition = (isHomePage, state) => {
             cancelAnimationFrame(state.transitionTimer);
         }
 
-        state.transitionTimer = requestAnimationFrame(() => {
-            const measureContainer = document.createElement('div');
-            measureContainer.style.cssText = `
-                position: fixed;
-                visibility: hidden;
-                pointer-events: none;
-                left: -9999px;
-                top: 0;
-                display: flex;
-                gap: ${window.getComputedStyle(DOM.navSearchWrapper).gap};
-                padding: ${window.getComputedStyle(DOM.navSearchWrapper).padding};
-                box-sizing: border-box;
-            `;
-            document.body.appendChild(measureContainer);
-
-            const clone = DOM.bgNext.cloneNode(true);
-            const computedStyle = window.getComputedStyle(DOM.bgNext);
-            clone.style.cssText = `
-                display: block;
-                opacity: 0;
-                position: static;
-                margin: ${computedStyle.margin};
-                padding: ${computedStyle.padding};
-                border: ${computedStyle.border};
-                gap: ${computedStyle.gap};
-                box-sizing: ${computedStyle.boxSizing};
-                min-width: ${computedStyle.minWidth};
-                max-width: ${computedStyle.maxWidth};
-                flex: ${computedStyle.flex};
-                flex-basis: ${computedStyle.flexBasis};
-                flex-grow: ${computedStyle.flexGrow};
-                flex-shrink: ${computedStyle.flexShrink};
-            `;
-            measureContainer.appendChild(clone);
-
-            const bgNextWidth = Math.ceil(clone.getBoundingClientRect().width + 
-                (parseFloat(window.getComputedStyle(DOM.navSearchWrapper).gap) || 0));
+        state.transitionTimer = requestAnimationFrame(async () => {
+            if (!InitController.initialized) {
+                await InitController.init();
+            }
             
-            document.body.removeChild(measureContainer);
+            const getMeasuredWidth = (element) => {
+                return new Promise(resolve => {
+                    const clone = element.cloneNode(true);
+                    clone.style.cssText = `
+                        all: initial !important;
+                        position: fixed !important;
+                        visibility: hidden !important;
+                        display: block !important;
+                        max-width: none !important;
+                        width: auto !important;
+                        height: auto !important;
+                        margin: 0 !important;
+                        padding: ${getComputedStyle(element).padding} !important;
+                        font: ${getComputedStyle(element).font} !important;
+                    `;
+                    
+                    requestAnimationFrame(() => {
+                        document.body.appendChild(clone);
+                        requestAnimationFrame(() => {
+                            const width = clone.getBoundingClientRect().width;
+                            document.body.removeChild(clone);
+                            resolve(Math.ceil(width));
+                        });
+                    });
+                });
+            };
 
-            const initialWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
-            
-            animateTransition(isHomePage, state, bgNextWidth, initialWidth);
-            
-            // 记录动画执行时间
-            console.debug('Transition time:', performance.now() - startTime);
+            try {
+                // 临时隐藏bg-next来测量正确的wrapper宽度
+                const originalDisplay = DOM.bgNext.style.display;
+                DOM.bgNext.style.display = 'none';
+                
+                // 获取不包含bg-next的wrapper宽度
+                const wrapperWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
+                
+                // 恢复bg-next并测量其宽度
+                DOM.bgNext.style.display = originalDisplay;
+                const bgWidth = await WidthCalculator.measure(DOM.bgNext, {
+                    useCache: true,
+                    additionalStyles: 'margin: 0 !important; padding: inherit !important;'
+                });
+                
+                const gap = parseFloat(getComputedStyle(DOM.navSearchWrapper).gap) || 0;
+                const finalBgWidth = Math.ceil(bgWidth + gap);
+                
+                animateTransition(isHomePage, state, finalBgWidth, wrapperWidth);
+            } catch (error) {
+                console.error('过渡失败:', error);
+                cleanupAnimations();
+            }
         });
     }
 };
@@ -356,6 +365,16 @@ const animateTransition = (isEntering, state, bgNextWidth, initialWidth) => {
     StateManager.update({
         isTransitioning: true,
     });
+
+    // 使用存储的测量宽度进行验证
+    if (state.measuredWidths) {
+        const currentInitialWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
+        // 如果当前宽度与存储的宽度差异过大，重新计算
+        if (Math.abs(currentInitialWidth - state.measuredWidths.initial) > 5) {
+            console.debug('Width mismatch detected, recalculating...');
+            initialWidth = currentInitialWidth;
+        }
+    }
 
     initElementStates(isEntering, bgNextWidth, initialWidth);
 
@@ -394,7 +413,7 @@ const animateTransition = (isEntering, state, bgNextWidth, initialWidth) => {
 };
 
 // 显示或隐藏bgNext元素 - 优化后的版本
-const showBgNext = () => {
+const showBgNext = async () => {
     const isHomePage =
         location.pathname === "/" || location.pathname === "/index.php";
     const state = StateManager.getState();
@@ -408,68 +427,38 @@ const showBgNext = () => {
         return;
     }
 
-    if (state.firstLoad) {
-        if (!state.initialized) {
+    if (state.firstLoad && !state.initialized && isHomePage) {
+        try {
+            const widths = await InitController.init();
+            if (!widths) return;
+            
+            // 确保DOM已准备就绪
+            await new Promise(resolve => {
+                if (document.readyState === 'complete') {
+                    resolve();
+                } else {
+                    window.addEventListener('load', resolve, { once: true });
+                }
+            });
+            
             state.initialized = true;
+            state.measuredWidths = widths;
             StateManager.setState(state);
-
-            if (isHomePage) {
-                // 使用 Promise 确保元素准备就绪
-                const initializeElement = () => new Promise(resolve => {
-                    const checkElement = () => {
-                        if (DOM.bgNext && DOM.bgNext.offsetParent !== null) {
-                            resolve();
-                        } else {
-                            requestAnimationFrame(checkElement);
-                        }
-                    };
-                    checkElement();
+            
+            // 使用RAF链执行初始动画
+            requestAnimationFrame(() => {
+                initElementStates(true, widths.bgNextWidth, widths.wrapperWidth, true);
+                state.firstLoad = false;
+                StateManager.setState(state);
+                
+                requestAnimationFrame(() => {
+                    animateElements(true, widths.bgNextWidth, widths.wrapperWidth);
                 });
-
-                initializeElement().then(() => {
-                    // 使用独立函数测量元素尺寸
-                    const measureElement = (element) => {
-                        const clone = element.cloneNode(true);
-                        clone.style.cssText = `
-                            position: fixed;
-                            visibility: hidden;
-                            pointer-events: none;
-                            left: -9999px;
-                            display: block;
-                        `;
-                        document.body.appendChild(clone);
-                        const width = clone.getBoundingClientRect().width;
-                        document.body.removeChild(clone);
-                        return Math.ceil(width);
-                    };
-
-                    const bgNextWidth = measureElement(DOM.bgNext);
-                    const initialWidth = DOM.navSearchWrapper.offsetWidth;
-
-                    requestAnimationFrame(() => {
-                        initElementStates(true, bgNextWidth, initialWidth, true);
-                        
-                        // 确保状态更新在动画开始之前
-                        state.firstLoad = false;
-                        StateManager.setState(state);
-
-                        requestAnimationFrame(() => {
-                            animateElements(true, bgNextWidth, initialWidth);
-                        });
-                    });
-                });
-                return;
-            }
-        }
-
-        state.firstLoad = false;
-        StateManager.setState(state);
-
-        if (!isHomePage) {
-            DOM.bgNext.style.display = "none";
-            if (!DOM.searchbox && DOM.divider) {
-                DOM.divider.style.display = "none";
-            }
+            });
+        } catch (error) {
+            console.error('初始化失败:', error);
+            state.firstLoad = false;
+            StateManager.setState(state);
         }
         return;
     }
@@ -689,6 +678,7 @@ const initAnimations = () => {
 const addEventListeners = () => {
     const events = [
         ["pjax:send", () => {
+            WidthCalculator.clearCache();
             // 清理之前的动画状态
             if (window._searchWrapperState) {
                 if (window._searchWrapperState.hideTimeout) {
@@ -732,3 +722,118 @@ const addEventListeners = () => {
 
 // 初始化时调用事件监听器设置
 addEventListeners();
+
+// 新增宽度测量工具
+const WidthCalculator = {
+    cache: new Map(),
+    
+    async measure(element, options = {}) {
+        if (!element) return 0;
+        
+        const cacheKey = element.id || element.className;
+        if (options.useCache && this.cache.has(cacheKey)) {
+            return this.cache.get(cacheKey);
+        }
+
+        const clone = element.cloneNode(true);
+        clone.style.cssText = `
+            position: fixed !important;
+            visibility: hidden !important;
+            display: block !important;
+            transform: none !important;
+            transition: none !important;
+            animation: none !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            z-index: -9999 !important;
+            ${options.additionalStyles || ''}
+        `;
+        
+        document.body.appendChild(clone);
+        
+        // 等待几帧以确保样式应用完成
+        await new Promise(resolve => {
+            let frames = 3;
+            function waitFrames() {
+                if (--frames <= 0) {
+                    resolve();
+                } else {
+                    requestAnimationFrame(waitFrames);
+                }
+            }
+            requestAnimationFrame(waitFrames);
+        });
+
+        const rect = clone.getBoundingClientRect();
+        const width = Math.ceil(rect.width);
+        
+        document.body.removeChild(clone);
+        
+        if (options.useCache) {
+            this.cache.set(cacheKey, width);
+        }
+        
+        return width;
+    },
+
+    clearCache() {
+        this.cache.clear();
+    }
+};
+
+// 新增初始化控制器
+const InitController = {
+    initialized: false,
+    initializing: false,
+    queue: [],
+    
+    async init() {
+        if (this.initialized || this.initializing) return;
+        this.initializing = true;
+        
+        // 等待字体和样式完全加载
+        await document.fonts.ready;
+        await new Promise(resolve => setTimeout(resolve, 100));
+        
+        // 先隐藏bg-next元素以获取正确的wrapper宽度
+        const originalDisplay = DOM.bgNext.style.display;
+        DOM.bgNext.style.display = 'none';
+        
+        // 重置wrapper样式以获取准确宽度
+        DOM.navSearchWrapper.style.cssText = `
+            overflow: hidden;
+            width: auto;
+            transition: none;
+        `;
+        
+        // 强制布局重新计算
+        void DOM.navSearchWrapper.offsetWidth;
+        
+        // 测量wrapper的实际宽度（不包含bg-next）
+        const wrapperWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
+        
+        // 恢复bg-next显示并测量其宽度
+        DOM.bgNext.style.cssText = `
+            position: relative;
+            visibility: visible;
+            display: ${originalDisplay};
+            opacity: 0;
+            transform: none;
+            transition: none;
+        `;
+        
+        void DOM.bgNext.offsetWidth;
+        
+        // 获取精确的bg-next宽度
+        const bgWidth = Math.ceil(DOM.bgNext.getBoundingClientRect().width);
+        
+        this.initialized = true;
+        this.initializing = false;
+        
+        const gap = parseFloat(getComputedStyle(DOM.navSearchWrapper).gap) || 0;
+        return {
+            bgNextWidth: Math.ceil(bgWidth + gap),
+            wrapperWidth: wrapperWidth  // 这个宽度现在不包含bg-next
+        };
+    }
+};
