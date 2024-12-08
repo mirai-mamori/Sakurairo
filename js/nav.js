@@ -90,30 +90,59 @@ const setTransitions = () => {
     }
 };
 
-// 初始化元素状态
+// 初始化元素状态 - 优化后的版本
 const initElementStates = (isEntering, bgNextWidth, initialWidth, isFirstLoad = false) => {
-    DOM.navSearchWrapper.style.width = initialWidth + "px";
-    DOM.bgNext.style.cssText = `
+    // 确保元素可见性和位置重置
+    const resetElement = (element, styles) => {
+        if (element) {
+            element.style.cssText = styles;
+            // 强制重绘
+            void element.offsetWidth;
+        }
+    };
+
+    // 重置所有元素的过渡
+    [DOM.bgNext, DOM.navSearchWrapper, DOM.searchbox, DOM.divider].forEach(el => {
+        if (el) el.style.transition = 'none';
+    });
+
+    // 初始化导航容器宽度
+    resetElement(DOM.navSearchWrapper, `
+        width: ${initialWidth}px;
+        overflow: hidden;
+    `);
+
+    // 初始化 bg-next 元素
+    resetElement(DOM.bgNext, `
         display: block;
         opacity: ${isEntering ? "0" : "1"};
         transform: translateX(${isEntering ? "20px" : "0"});
+        pointer-events: ${isEntering ? "none" : "auto"};
+        position: relative;
         transition: none;
-    `;
+    `);
 
     if (!DOM.searchbox && DOM.divider) {
         if (isEntering && !isFirstLoad) {
-            DOM.divider.style.cssText = `
+            resetElement(DOM.divider, `
                 display: block;
                 opacity: 0;
                 transform: translateX(${isEntering ? "20px" : "0"});
                 transition: none;
-            `;
+            `);
         }
     }
 
     if (isEntering && !isFirstLoad) {
         setInitialPositions(bgNextWidth);
     }
+
+    // 强制重绘所有元素
+    requestAnimationFrame(() => {
+        [DOM.bgNext, DOM.navSearchWrapper, DOM.searchbox, DOM.divider].forEach(el => {
+            if (el) void el.offsetWidth;
+        });
+    });
 };
 
 // 设置初始位置
@@ -314,7 +343,7 @@ const animateTransition = (isEntering, state, bgNextWidth, initialWidth) => {
     });
 };
 
-// 显示或隐藏bgNext元素
+// 显示或隐藏bgNext元素 - 优化后的版本
 const showBgNext = () => {
     const isHomePage =
         location.pathname === "/" || location.pathname === "/index.php";
@@ -328,59 +357,50 @@ const showBgNext = () => {
             StateManager.setState(state);
 
             if (isHomePage) {
-                setTimeout(() => {
-                    requestAnimationFrame(() => {
-                        const clone = DOM.bgNext.cloneNode(true);
+                // 使用 Promise 确保元素准备就绪
+                const initializeElement = () => new Promise(resolve => {
+                    const checkElement = () => {
+                        if (DOM.bgNext && DOM.bgNext.offsetParent !== null) {
+                            resolve();
+                        } else {
+                            requestAnimationFrame(checkElement);
+                        }
+                    };
+                    checkElement();
+                });
+
+                initializeElement().then(() => {
+                    // 使用独立函数测量元素尺寸
+                    const measureElement = (element) => {
+                        const clone = element.cloneNode(true);
                         clone.style.cssText = `
-                            display: block;
-                            opacity: 0;
                             position: fixed;
+                            visibility: hidden;
                             pointer-events: none;
+                            left: -9999px;
+                            display: block;
                         `;
                         document.body.appendChild(clone);
-                        const bgNextWidth = Math.ceil(clone.getBoundingClientRect().width);
+                        const width = clone.getBoundingClientRect().width;
                         document.body.removeChild(clone);
+                        return Math.ceil(width);
+                    };
 
-                        const initialWidth = DOM.navSearchWrapper.offsetWidth;
+                    const bgNextWidth = measureElement(DOM.bgNext);
+                    const initialWidth = DOM.navSearchWrapper.offsetWidth;
 
-                        // 修改初始状态设置
-                        DOM.bgNext.style.cssText = `
-                            display: block;
-                            opacity: 0;
-                            transform: translateX(20px);
-                            transition: none;
-                        `;
-
-                        if (DOM.searchbox) {
-                            DOM.searchbox.style.cssText = `
-                                transform: translateX(${bgNextWidth}px);
-                                transition: none;
-                            `;
-                        }
-
-                        if (DOM.divider) {
-                            DOM.divider.style.cssText = `
-                                transform: translateX(${bgNextWidth}px);
-                                transition: none;
-                                ${!DOM.searchbox ? "opacity: 0;" : ""}
-                            `;
-                        }
-
-                        // 确保初始宽度设置正确
-                        DOM.navSearchWrapper.style.width = initialWidth + "px";
-
-                        void DOM.bgNext.offsetWidth;
-                        void DOM.navSearchWrapper.offsetWidth;
-                        if (DOM.searchbox) void DOM.searchbox.offsetWidth;
-                        if (DOM.divider) void DOM.divider.offsetWidth;
+                    requestAnimationFrame(() => {
+                        initElementStates(true, bgNextWidth, initialWidth, true);
+                        
+                        // 确保状态更新在动画开始之前
+                        state.firstLoad = false;
+                        StateManager.setState(state);
 
                         requestAnimationFrame(() => {
-                            state.firstLoad = false;
-                            StateManager.setState(state);
                             animateElements(true, bgNextWidth, initialWidth);
                         });
                     });
-                }, 100);
+                });
                 return;
             }
         }
