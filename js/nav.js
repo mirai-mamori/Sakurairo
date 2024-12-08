@@ -332,15 +332,21 @@ const handlePageTransition = (isHomePage, state) => {
             };
 
             try {
-                // 临时隐藏bg-next来测量正确的wrapper宽度
+                const isWebKit = BrowserDetect.isWebKit();
                 const originalDisplay = DOM.bgNext.style.display;
+                
+                // 临时隐藏所有可能影响宽度的元素
                 DOM.bgNext.style.display = 'none';
+                if (DOM.searchbox) DOM.searchbox.style.visibility = 'hidden';
+                if (DOM.divider) DOM.divider.style.visibility = 'hidden';
                 
-                // 获取不包含bg-next的wrapper宽度
-                const wrapperWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
+                let wrapperWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
                 
-                // 恢复bg-next并测量其宽度
+                // 恢复元素显示
                 DOM.bgNext.style.display = originalDisplay;
+                if (DOM.searchbox) DOM.searchbox.style.visibility = '';
+                if (DOM.divider) DOM.divider.style.visibility = '';
+                
                 const bgWidth = await WidthCalculator.measure(DOM.bgNext, {
                     useCache: true,
                     additionalStyles: 'margin: 0 !important; padding: inherit !important;'
@@ -348,6 +354,11 @@ const handlePageTransition = (isHomePage, state) => {
                 
                 const gap = parseFloat(getComputedStyle(DOM.navSearchWrapper).gap) || 0;
                 const finalBgWidth = Math.ceil(bgWidth + gap);
+                
+                // 只在非主页的WebKit环境下补充宽度
+                if (isWebKit && !isHomePage) {
+                    wrapperWidth = Math.ceil(wrapperWidth + finalBgWidth);
+                }
                 
                 animateTransition(isHomePage, state, finalBgWidth, wrapperWidth);
             } catch (error) {
@@ -791,28 +802,31 @@ const InitController = {
         if (this.initialized || this.initializing) return;
         this.initializing = true;
         
-        // 等待字体和样式完全加载
         await document.fonts.ready;
         await new Promise(resolve => setTimeout(resolve, 100));
         
-        // 先隐藏bg-next元素以获取正确的wrapper宽度
+        const isWebKit = BrowserDetect.isWebKit();
         const originalDisplay = DOM.bgNext.style.display;
-        DOM.bgNext.style.display = 'none';
         
-        // 重置wrapper样式以获取准确宽度
+        // 强制设置wrapper为auto以重置任何可能的宽度
         DOM.navSearchWrapper.style.cssText = `
             overflow: hidden;
-            width: auto;
+            width: auto !important;
             transition: none;
         `;
         
-        // 强制布局重新计算
+        // 隐藏所有可能影响宽度的元素
+        DOM.bgNext.style.display = 'none';
+        if (DOM.searchbox) DOM.searchbox.style.visibility = 'hidden';
+        if (DOM.divider) DOM.divider.style.visibility = 'hidden';
+        
+        // 强制重新计算布局
         void DOM.navSearchWrapper.offsetWidth;
         
-        // 测量wrapper的实际宽度（不包含bg-next）
-        const wrapperWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
+        // 获取基础宽度
+        let wrapperWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
         
-        // 恢复bg-next显示并测量其宽度
+        // 恢复元素显示
         DOM.bgNext.style.cssText = `
             position: relative;
             visibility: visible;
@@ -821,19 +835,34 @@ const InitController = {
             transform: none;
             transition: none;
         `;
+        if (DOM.searchbox) DOM.searchbox.style.visibility = '';
+        if (DOM.divider) DOM.divider.style.visibility = '';
         
         void DOM.bgNext.offsetWidth;
         
-        // 获取精确的bg-next宽度
         const bgWidth = Math.ceil(DOM.bgNext.getBoundingClientRect().width);
+        const gap = parseFloat(getComputedStyle(DOM.navSearchWrapper).gap) || 0;
+        const finalBgWidth = Math.ceil(bgWidth + gap);
+        
+        // 只在非主页的WebKit环境下补充宽度
+        const isHomePage = location.pathname === "/" || location.pathname === "/index.php";
+        if (isWebKit && !isHomePage) {
+            wrapperWidth = Math.ceil(wrapperWidth + finalBgWidth);
+        }
         
         this.initialized = true;
         this.initializing = false;
         
-        const gap = parseFloat(getComputedStyle(DOM.navSearchWrapper).gap) || 0;
         return {
-            bgNextWidth: Math.ceil(bgWidth + gap),
-            wrapperWidth: wrapperWidth  // 这个宽度现在不包含bg-next
+            bgNextWidth: finalBgWidth,
+            wrapperWidth: wrapperWidth
         };
+    }
+};
+
+// 添加浏览器检测工具
+const BrowserDetect = {
+    isWebKit: () => {
+        return 'WebkitAppearance' in document.documentElement.style;
     }
 };
