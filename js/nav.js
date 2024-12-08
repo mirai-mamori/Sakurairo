@@ -143,10 +143,7 @@ const setInitialPositions = (bgNextWidth) => {
 
 // 优化的动画执行函数
 const animateElements = (isEntering, bgNextWidth, initialWidth) => {
-    const gap = parseFloat(window.getComputedStyle(DOM.navSearchWrapper).gap) || 0;
-    const totalOffset = isEntering ? bgNextWidth + gap : bgNextWidth;
-
-    // 使用 requestAnimationFrame 和 CSS transform 优化性能
+    // 移除 totalWidth 相关的计算
     const animate = () => {
         setTransitions();
         const elements = [
@@ -162,13 +159,13 @@ const animateElements = (isEntering, bgNextWidth, initialWidth) => {
         if (!isEntering) {
             if (DOM.searchbox) {
                 elements.push([DOM.searchbox, {
-                    transform: `translateX(${bgNextWidth}px)`
+                    transform: `translateX(${bgNextWidth}px)` // 直接使用bgNextWidth
                 }]);
             }
             if (DOM.divider) {
                 elements.push([DOM.divider, {
                     opacity: DOM.searchbox ? "1" : "0",
-                    transform: `translateX(${bgNextWidth}px)`
+                    transform: `translateX(${bgNextWidth}px)` // 直接使用bgNextWidth
                 }]);
             }
         } else {
@@ -213,7 +210,6 @@ const handlePageTransition = (isHomePage, state) => {
         document.body.appendChild(measureContainer);
 
         const clone = DOM.bgNext.cloneNode(true);
-        // 获取完整的计算样式
         const computedStyle = window.getComputedStyle(DOM.bgNext);
         clone.style.cssText = `
             display: block;
@@ -233,14 +229,11 @@ const handlePageTransition = (isHomePage, state) => {
         `;
         measureContainer.appendChild(clone);
 
-        // 使用 getBoundingClientRect 获取精确宽度并向上取整
         const bgNextWidth = Math.ceil(clone.getBoundingClientRect().width + 
             (parseFloat(window.getComputedStyle(DOM.navSearchWrapper).gap) || 0));
         
         document.body.removeChild(measureContainer);
 
-        // 获取初始宽度时包含所有可能的间距
-        const wrapperStyle = window.getComputedStyle(DOM.navSearchWrapper);
         const initialWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
         
         animateTransition(isHomePage, state, bgNextWidth, initialWidth);
@@ -315,14 +308,19 @@ const showBgNext = () => {
                 setTimeout(() => {
                     requestAnimationFrame(() => {
                         const clone = DOM.bgNext.cloneNode(true);
-                        clone.style.cssText =
-                            "display:block;opacity:0;position:fixed;pointer-events:none;";
+                        clone.style.cssText = `
+                            display: block;
+                            opacity: 0;
+                            position: fixed;
+                            pointer-events: none;
+                        `;
                         document.body.appendChild(clone);
-                        const bgNextWidth = clone.offsetWidth;
+                        const bgNextWidth = Math.ceil(clone.getBoundingClientRect().width);
                         document.body.removeChild(clone);
 
                         const initialWidth = DOM.navSearchWrapper.offsetWidth;
 
+                        // 修改初始状态设置
                         DOM.bgNext.style.cssText = `
                             display: block;
                             opacity: 0;
@@ -345,6 +343,7 @@ const showBgNext = () => {
                             `;
                         }
 
+                        // 确保初始宽度设置正确
                         DOM.navSearchWrapper.style.width = initialWidth + "px";
 
                         void DOM.bgNext.offsetWidth;
