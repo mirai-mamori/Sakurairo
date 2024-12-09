@@ -12,7 +12,7 @@ include_once('inc/classes/IpLocation.php');
 
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '19.3.0');
+define('INT_VERSION', '19.4.0');
 define('BUILD_VERSION', '2');
 
 function check_php_version($preset_version)

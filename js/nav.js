@@ -44,6 +44,8 @@ const StateManager = {
                 isTransitioning: false,
                 firstLoad: true,
                 initialized: false,
+                firstHomeTransition: true, // 新增：追踪第一次主页过渡
+                initializedOutsideHome: false // 新增：追踪是否在非主页完成初始化
             };
             this.setState(state);
             return state;
@@ -54,6 +56,8 @@ const StateManager = {
                 isTransitioning: false,
                 firstLoad: true,
                 initialized: false,
+                firstHomeTransition: true,
+                initializedOutsideHome: false
             };
         }
     },
@@ -300,6 +304,11 @@ const handlePageTransition = (isHomePage, state) => {
         }
 
         state.transitionTimer = requestAnimationFrame(async () => {
+            // 确保在非主页初始化后首次进入主页时重新初始化
+            if (isHomePage && state.initializedOutsideHome && !InitController.initialized) {
+                await InitController.init();
+            }
+            
             if (!InitController.initialized) {
                 await InitController.init();
             }
@@ -377,10 +386,16 @@ const animateTransition = (isEntering, state, bgNextWidth, initialWidth) => {
         isTransitioning: true,
     });
 
-    // 使用存储的测量宽度进行验证
+    // 使用存储的测量宽度进行验证和修正
     if (state.measuredWidths) {
         const currentInitialWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
-        // 如果当前宽度与存储的宽度差异过大，重新计算
+        // 修复：如果是第一次执行退出动画且当前是主页，初始宽度需要减去一个 bgNextWidth
+        if (!state.firstExitDone && !isEntering && location.pathname === "/") {
+            initialWidth -= bgNextWidth;
+            state.firstExitDone = true;
+            StateManager.setState(state);
+        }
+        // 检查宽度差异
         if (Math.abs(currentInitialWidth - state.measuredWidths.initial) > 5) {
             console.debug('Width mismatch detected, recalculating...');
             initialWidth = currentInitialWidth;
@@ -438,6 +453,49 @@ const showBgNext = async () => {
         return;
     }
 
+    // 处理首次加载非主页的情况
+    if (!state.initialized && !isHomePage) {
+        state.initializedOutsideHome = true;
+        state.initialized = true;
+        StateManager.setState(state);
+        DOM.bgNext.style.display = 'none';
+        return;
+    }
+
+    // 处理从非主页首次回到主页的情况
+    if (isHomePage && state.initializedOutsideHome && state.firstHomeTransition) {
+        try {
+            const widths = await InitController.init();
+            if (!widths) return;
+
+            state.firstHomeTransition = false;
+            state.measuredWidths = widths;
+            StateManager.setState(state);
+
+            // 设置初始状态
+            initElementStates(true, widths.bgNextWidth, widths.wrapperWidth, false);
+            
+            // 使用 RAF 链确保动画正确执行
+            requestAnimationFrame(() => {
+                DOM.bgNext.style.opacity = '0';
+                DOM.bgNext.style.transform = 'translateX(20px)';
+                DOM.bgNext.style.display = 'block';
+                
+                requestAnimationFrame(() => {
+                    setTransitions();
+                    animateElements(true, widths.bgNextWidth, widths.wrapperWidth);
+                });
+            });
+            return;
+        } catch (error) {
+            console.error('主页初始化失败:', error);
+            state.firstHomeTransition = false;
+            StateManager.setState(state);
+            return;
+        }
+    }
+
+    // 处理常规的首页首次加载
     if (state.firstLoad && !state.initialized && isHomePage) {
         try {
             const widths = await InitController.init();
@@ -802,61 +860,92 @@ const InitController = {
         if (this.initialized || this.initializing) return;
         this.initializing = true;
         
+        // 确保字体加载完成
         await document.fonts.ready;
-        await new Promise(resolve => setTimeout(resolve, 100));
+        // 增加延迟确保布局稳定
+        await new Promise(resolve => setTimeout(resolve, 200));
         
-        const isWebKit = BrowserDetect.isWebKit();
-        const originalDisplay = DOM.bgNext.style.display;
+        // 强制重新布局并测量
+        const measure = async () => {
+            // 保存原始状态
+            const originalStyles = {
+                wrapper: DOM.navSearchWrapper.style.cssText,
+                bgNext: DOM.bgNext.style.cssText,
+                searchbox: DOM.searchbox ? DOM.searchbox.style.cssText : '',
+                divider: DOM.divider ? DOM.divider.style.cssText : ''
+            };
+            
+            // 重置所有样式以获取准确测量
+            DOM.navSearchWrapper.style.cssText = `
+                overflow: hidden !important;
+                width: auto !important;
+                transition: none !important;
+                transform: none !important;
+            `;
+            
+            DOM.bgNext.style.cssText = `
+                display: none !important;
+                transition: none !important;
+                transform: none !important;
+            `;
+            
+            if (DOM.searchbox) DOM.searchbox.style.visibility = 'hidden';
+            if (DOM.divider) DOM.divider.style.visibility = 'hidden';
+            
+            // 强制重排
+            void DOM.navSearchWrapper.offsetWidth;
+            
+            // 获取基础宽度
+            let wrapperWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
+            
+            // 测量 bg-next
+            DOM.bgNext.style.cssText = `
+                position: relative !important;
+                visibility: visible !important;
+                display: block !important;
+                opacity: 0 !important;
+                transform: none !important;
+                transition: none !important;
+            `;
+            
+            void DOM.bgNext.offsetWidth;
+            
+            const bgWidth = Math.ceil(DOM.bgNext.getBoundingClientRect().width);
+            const gap = parseFloat(getComputedStyle(DOM.navSearchWrapper).gap) || 0;
+            const finalBgWidth = Math.ceil(bgWidth + gap);
+            
+            // 恢复原始样式
+            DOM.navSearchWrapper.style.cssText = originalStyles.wrapper;
+            DOM.bgNext.style.cssText = originalStyles.bgNext;
+            if (DOM.searchbox) DOM.searchbox.style.cssText = originalStyles.searchbox;
+            if (DOM.divider) DOM.divider.style.cssText = originalStyles.divider;
+            
+            return {
+                bgNextWidth: finalBgWidth,
+                wrapperWidth: wrapperWidth
+            };
+        };
         
-        // 强制设置wrapper为auto以重置任何可能的宽度
-        DOM.navSearchWrapper.style.cssText = `
-            overflow: hidden;
-            width: auto !important;
-            transition: none;
-        `;
+        const measurements = await measure();
         
-        // 隐藏所有可能影响宽度的元素
-        DOM.bgNext.style.display = 'none';
-        if (DOM.searchbox) DOM.searchbox.style.visibility = 'hidden';
-        if (DOM.divider) DOM.divider.style.visibility = 'hidden';
+        // 二次确认测量
+        await new Promise(resolve => requestAnimationFrame(resolve));
+        const secondMeasure = await measure();
         
-        // 强制重新计算布局
-        void DOM.navSearchWrapper.offsetWidth;
-        
-        // 获取基础宽度
-        let wrapperWidth = Math.ceil(DOM.navSearchWrapper.getBoundingClientRect().width);
-        
-        // 恢复元素显示
-        DOM.bgNext.style.cssText = `
-            position: relative;
-            visibility: visible;
-            display: ${originalDisplay};
-            opacity: 0;
-            transform: none;
-            transition: none;
-        `;
-        if (DOM.searchbox) DOM.searchbox.style.visibility = '';
-        if (DOM.divider) DOM.divider.style.visibility = '';
-        
-        void DOM.bgNext.offsetWidth;
-        
-        const bgWidth = Math.ceil(DOM.bgNext.getBoundingClientRect().width);
-        const gap = parseFloat(getComputedStyle(DOM.navSearchWrapper).gap) || 0;
-        const finalBgWidth = Math.ceil(bgWidth + gap);
-        
-        // 只在非主页的WebKit环境下补充宽度
-        const isHomePage = location.pathname === "/" || location.pathname === "/index.php";
-        if (isWebKit && !isHomePage) {
-            wrapperWidth = Math.ceil(wrapperWidth + finalBgWidth);
-        }
+        // 如果两次测量差异过大，使用第二次的结果
+        const finalMeasurements = {
+            bgNextWidth: Math.abs(measurements.bgNextWidth - secondMeasure.bgNextWidth) > 2 
+                ? secondMeasure.bgNextWidth 
+                : measurements.bgNextWidth,
+            wrapperWidth: Math.abs(measurements.wrapperWidth - secondMeasure.wrapperWidth) > 2
+                ? secondMeasure.wrapperWidth
+                : measurements.wrapperWidth
+        };
         
         this.initialized = true;
         this.initializing = false;
         
-        return {
-            bgNextWidth: finalBgWidth,
-            wrapperWidth: wrapperWidth
-        };
+        return finalMeasurements;
     }
 };
 
