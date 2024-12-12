@@ -258,6 +258,7 @@ body.dark .headertop-down svg path
 {fill: <?=iro_opt('drop_down_arrow_dark_color'); ?> !important;transition: all 0.6s ease-in-out;}
 
 body.dark img,
+body.dark .centerbg,
 body.dark .highlight-wrap,
 body.dark iframe,
 body.dark .entry-content .aplayer,
