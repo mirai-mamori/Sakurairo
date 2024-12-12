@@ -11,7 +11,7 @@ get_header();
         <h3><?php the_author(); ?></h3>
         <div class="description">
             <?php 
-            $description = get_the_author_meta('description');
+            $description = htmlspecialchars(get_the_author_meta('description'), ENT_QUOTES, 'UTF-8');
             echo $description ? nl2br($description) : __("No personal profile set yet", "sakurairo"); 
             ?>
         </div>

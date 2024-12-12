@@ -63,9 +63,12 @@ if (iro_opt("article_function")) {
                 if (empty($author_description)) {
                     $author_description = __('This author has not provided a description.', 'sakurairo');
                 }
+                // 对描述内容进行转义，防止XSS攻击
+    			$safe_description = htmlspecialchars($author_description, ENT_QUOTES, 'UTF-8');
             ?>
                 <div class="desc">
-                    <i class="fa-solid fa-feather" aria-hidden="true"></i><?= $author_description; ?>
+                    <i class="fa-solid fa-feather" aria-hidden="true"></i>
+                    <?php echo nl2br($safe_description);?>
                 </div>
             <?php } ?>
         </section>
