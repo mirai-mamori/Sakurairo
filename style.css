@@ -1673,6 +1673,10 @@ h3#comments-list-title {
   clear: both;
 }
 
+#al_expand_collapse{
+  cursor: pointer !important;
+}
+
 #archives-temp h2 {
   font-weight: 400;
   color: var(--theme-skin, #505050);
