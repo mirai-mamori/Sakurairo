@@ -30,7 +30,6 @@ i,i:hover{
 
 li,ul,ol {
   list-style: none;
-  cursor: pointer;
   padding-inline-start: unset;
 }
 
@@ -1975,8 +1974,6 @@ nav#comments-navi {
 }
 
 .comment h4 {
-  font-size: 24px;
-  font-weight: var(--global-font-weight, 400);
   margin: 0;
   letter-spacing: 0;
   text-transform: none;
@@ -7790,6 +7787,11 @@ body.dark .search_close:before {
 body.dark .openNav .icon,
 body.dark .openNav .icon:before {
   background-color: var(--theme-skin-dark);
+}
+
+body.dark .centerbg {
+  background-blend-mode: hard-light;
+  background-color: #333333;
 }
 
 body.dark input[type=color]:focus,
