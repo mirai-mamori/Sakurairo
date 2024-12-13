@@ -4152,7 +4152,12 @@ td.hljs-ln-numbers {
   border-radius: 50%;
 }
 
-h1::before {
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
   display: block;
   content: " ";
   height: 80px;
@@ -4160,36 +4165,8 @@ h1::before {
   visibility: hidden;
 }
 
-h2::before {
-  display: block;
-  content: " ";
-  height: 80px;
-  margin-top: -80px;
-  visibility: hidden;
-}
-
-h3::before {
-  display: block;
-  content: " ";
-  height: 80px;
-  margin-top: -80px;
-  visibility: hidden;
-}
-
-h4::before {
-  display: block;
-  content: " ";
-  height: 80px;
-  margin-top: -80px;
-  visibility: hidden;
-}
-
-h5::before {
-  display: block;
-  content: " ";
-  height: 80px;
-  margin-top: -80px;
-  visibility: hidden;
+.main .body h1::before {
+  content: none;
 }
 
 .widget-area {
