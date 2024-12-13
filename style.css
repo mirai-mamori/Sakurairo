@@ -7789,11 +7789,6 @@ body.dark .openNav .icon:before {
   background-color: var(--theme-skin-dark);
 }
 
-body.dark .centerbg {
-  background-blend-mode: hard-light;
-  background-color: #333333;
-}
-
 body.dark input[type=color]:focus,
 body.dark input[type=date]:focus,
 body.dark input[type=datetime-local]:focus,
