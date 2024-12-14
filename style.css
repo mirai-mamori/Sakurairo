@@ -39,7 +39,7 @@ li.comment,
 ul.search-no-reasults,
 ul.search-no-reasults li,
 ul.menu-list{
-  cursor: unset !important;
+  cursor: unset;
 }
 
 img {
