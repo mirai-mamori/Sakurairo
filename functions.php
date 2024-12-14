@@ -603,6 +603,9 @@ function get_author_class($comment_author_email, $user_id)
         if ($value >= $author_count)
             break;
         $Lv = $key;
+        if (user_can($user_id, 'administrator')) {
+            $Lv = 6;
+        }
     }
 
     // $Lv = $author_count < 5 ? 0 : ($author_count < 10 ? 1 : ($author_count < 20 ? 2 : ($author_count < 40 ? 3 : ($author_count < 80 ? 4 : ($author_count < 160 ? 5 : 6)))));
