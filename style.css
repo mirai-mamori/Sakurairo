@@ -2263,6 +2263,11 @@ h1.main-title {
 .feature-title .foverlay {
   color: #fff;
   font-size: 32px;
+  text-shadow: 
+    1px -1px 0 rgba(0, 0, 0, 0.1), 
+    -1px -1px 0 rgba(0, 0, 0, 0.1), 
+    -1px 1px 0 rgba(0, 0, 0, 0.1), 
+    1px 1px 0 rgba(0, 0, 0, 0.1);
   margin-bottom: 55px;
   width: 100%;
   text-align: center;
