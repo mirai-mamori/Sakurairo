@@ -614,19 +614,6 @@ const initArticleTitleBehavior = () => {
                     });
                 }
                 this.updateTitle();
-
-                // 检测标题和导航宽度，调整父元素宽度
-                requestAnimationFrame(() => {
-                    if (this.entryTitle) {
-                        const navWidth = this.navElement.getBoundingClientRect().width;
-                        const titleWidth = this.navTitle.getBoundingClientRect().width;
-                        if (titleWidth > navWidth) {
-                            this.show();
-                        } else {
-                            this.hide();
-                        }
-                    }
-                });
             },
 
             updateTitle() {
@@ -751,13 +738,12 @@ const initArticleTitleBehavior = () => {
 
 // 初始化所有动画
 const initAnimations = () => {
-    StateManager.clear();   // 重置状态
-    StateManager.init();    // 初始化状态
-    showBgNext();           // 更新 bg-next 的显示状态
-    initArticleTitleBehavior(); // 初始化文章标题行为
+    StateManager.init();
+    showBgNext();
+    initArticleTitleBehavior();
 };
 
-// 修改事件监听器的添加方式
+// 优化的事件监听器
 const addEventListeners = () => {
     const events = [
         ["pjax:send", () => {
@@ -795,12 +781,11 @@ const addEventListeners = () => {
                 }
             });
         }],
-        ["DOMContentLoaded", initAnimations],
-        ["pageshow", initAnimations],  // 修改为直接调用 initAnimations，无需判断 event.persisted
+        ["DOMContentLoaded", initAnimations]
     ];
 
     events.forEach(([event, handler]) => {
-        window.addEventListener(event, handler);
+        document.addEventListener(event, handler);
     });
 };
 
