@@ -7129,8 +7129,12 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   .pattern-attachment {
     height: 280px;
   }
-  .site-header{
+  .user-menu-wrapper,.site-branding,.nav-search-wrapper nav{
     display: none;
+  }
+  .nav-search-wrapper {
+    border-radius: none;
+    max-width: calc(100% - 50px);
   }
   .shuoshuo-title h3::before {
     margin-top: 0px;
@@ -7479,26 +7483,62 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
 
   .openNav {
     transition-duration: .5s;
+    height: 50px;
     position: fixed;
+    top: 0;
     z-index: 9999;
     display: block;
     background: 0 0;
-    margin: 10px 0 10px;
-    bottom: 0;
-    left: -35px;
   }
-  
-  .iconflat{
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 1px 30px -4px #e8e8e8;
-    background: rgba(255, 255, 255, 0.65);
-    border-radius: var(--style_menu_radius, 10px);
-    border: 1px solid #FFFFFF;
-    width: 50px;
-    height: 50px;
+
+  .openNav .icon {
+    transition-duration: .2s;
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background-color: var(--theme-skin, #505050);
+    top: 28px;
+    left: 20px;
+  }
+
+  .openNav .icon:after,
+  .openNav .icon:before {
+    transition-duration: .5s;
+    background-color: var(--theme-skin, #505050);
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 3px;
+    left: 0;
+  }
+
+  .openNav .icon:before {
+    top: -8px;
+  }
+
+  .openNav .icon:after {
+    top: 8px;
+  }
+
+  .openNav.open .icon {
+    background-color: transparent !important;
+  }
+
+  .openNav.open .icon:after,
+  .openNav.open .icon:before {
+    top: 0;
+  }
+
+  .openNav.open .icon:before {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    background: #FFF;
+  }
+
+  .openNav.open .icon:after {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    background: #FFF;
   }
 
   #mo-nav {
