@@ -2266,12 +2266,12 @@ h1.main-title {
   height: 110px;
   text-align: center;
   border-radius: 10px;
-  z-index: -1;
+  z-index: 5;
   position: absolute;
   bottom: 0;
   width: 100%;
-  -webkit-transform: translateY(calc(70px + 1em));
-  transform: translateY(calc(70px + 1em));
+  -webkit-transform: translateY(0); 
+  transform: translateY(0);
   -webkit-transition: -webkit-transform .3s;
   transition: transform .3s, -webkit-transform .3s;
   font-weight: var(--global-font-weight);
@@ -5588,8 +5588,8 @@ li.feature-2 {
 
 .top-feature li:hover .feature-title .foverlay {
   z-index: 9;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
+  -webkit-transform: translateY(calc(70px + 1em)); 
+  transform: translateY(calc(70px + 1em));
 }
 
 .notice-content {
