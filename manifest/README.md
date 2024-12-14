@@ -25,7 +25,7 @@ pip install Pillow --user
 ```
 
 ### 运行
-把图片文件放到 `gallary` 目录，Windows 可直接双击 manifest.py，或者和其他操作系统一样，在 Terminal、Powershell、CMD 中运行：
+把图片文件放到 `gallery` 目录，Windows 可直接双击 manifest.py，或者和其他操作系统一样，在 Terminal、Powershell、CMD 中运行：
 
 ```bash
 # 切换到 manifest.py 所在目录：
