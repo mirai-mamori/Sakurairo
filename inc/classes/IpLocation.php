@@ -82,13 +82,13 @@ class IpLocation
 
         // IP-API支持的语言
         $languages = array(
-            'zh_CN' => 'zh-CN',
+            'fr' => 'fr',
             'en' => 'en',
+            'zh_CN' => 'zh-CN',
             'de' => 'de',
             'es' => 'es',
             'pt_BR' => 'pt-BR',
             'ja' => 'ja',
-            'fr' => 'fr',
             'ru' => 'ru'
         );
 
