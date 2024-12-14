@@ -5394,8 +5394,12 @@ body.dark .comment-respond :where(textarea,input):where(:focus,:active){
 }
 
 span.page-numbers.current {
-  color: var(--theme-skin, #505050);
+  color: var(--theme-skin-matching);
   padding: 0 5px;
+}
+
+body.dark span.page-numbers.current {
+  color: var(--theme-skin-dark);
 }
 
 a.page-numbers {
