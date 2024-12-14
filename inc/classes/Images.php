@@ -203,7 +203,7 @@ class Images
             }
 
             if (count($img_array) == 0){
-                return ['status'=>False,'msg'=>'ERROR：请联系管理员查看gallary目录中是否存在图片！'];
+                return ['status'=>False,'msg'=>__("ERROR: Please contact the administrator to check whether there are images in manifest.json!","sakurairo")];
             }
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
@@ -216,7 +216,7 @@ class Images
             // $img_array = json_decode($sakura_image_array, true);
             $img_array = json_decode($temp, true);
             if (!$img_array){
-                return ['status'=>False,'msg'=>'ERROR：请联系管理员查看manifest.json中是否存在图片！'];
+                return ['status'=>False,'msg'=>__("ERROR: Please contact the administrator to check whether there are images in manifest.json!","sakurairo")];
             }
             $array_keys = array_keys($img_array);
             $img = array_rand($array_keys);

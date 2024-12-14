@@ -748,3 +748,7 @@ msgstr "Sakurairo Template 文章模版"
 
 msgid "友情链接模版"
 msgstr "Sakurairo Template 友情链接模版"
+
+
+msgid "ERROR: Please contact the administrator to check whether there are images in manifest.json!"
+msgstr "ERREUR : veuillez contacter l'administrateur pour vérifier s'il y a des images dans manifest.json !"

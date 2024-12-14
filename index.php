@@ -30,7 +30,7 @@ if (iro_opt('exhibition_area') == '1') {
         <h1 class="main-title">
             <i class="<?php echo esc_attr(iro_opt('post_area_icon', 'fa-regular fa-bookmark')); ?>" aria-hidden="true"></i>
             <br>
-            <?php echo esc_html(iro_opt('post_area_title', '文章')); ?>
+            <?php echo esc_html(iro_opt('post_area_title', 'Posts')); ?>
         </h1>
         <?php
         if (have_posts()) :
