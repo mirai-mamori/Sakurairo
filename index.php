@@ -50,7 +50,16 @@ if (iro_opt('exhibition_area') == '1') {
         <div id="add_post"><span id="add_post_time" style="visibility: hidden;" title="<?php echo esc_attr(iro_opt('page_auto_load', '')); ?>"></span></div>
     <?php } else { ?>
         <nav class="navigator">
-            <?php previous_posts_link('<i class="fa-solid fa-angle-left"></i>'); ?><?php next_posts_link('<i class="fa-solid fa-angle-right"></i>'); ?>
+            <?php 
+            echo paginate_links(array(
+                'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))), // 设置分页的基础链接
+                'format' => '?paged=%#%', // 分页格式
+                'current' => max(1, get_query_var('paged')), // 当前页码
+                'total' => $wp_query->max_num_pages, // 总页数
+                'prev_text' => '<i class="fa-solid fa-angle-left"></i>', // 自定义上一页按钮
+                'next_text' => '<i class="fa-solid fa-angle-right"></i>' // 自定义下一页按钮
+            ));
+            ?>
         </nav>
     <?php } ?>
 </div>
