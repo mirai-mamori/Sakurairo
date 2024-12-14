@@ -7129,12 +7129,8 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   .pattern-attachment {
     height: 280px;
   }
-  .user-menu-wrapper,.site-branding,.nav-search-wrapper nav{
-    display: none;
-  }
-  .nav-search-wrapper {
-    border-radius: none;
-    max-width: calc(100% - 50px);
+  .site-header{
+    display: none !important;
   }
   .shuoshuo-title h3::before {
     margin-top: 0px;
