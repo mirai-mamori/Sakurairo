@@ -3594,6 +3594,10 @@ iframe {
   color: var(--theme-skin, #505050);
 }
 
+.emotion-box img:hover {
+  transform: scale(1.2);
+}
+
 .no-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
