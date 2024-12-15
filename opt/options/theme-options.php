@@ -3654,42 +3654,19 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'baguetteBox',
-        'type' => 'switcher',
-        'title' => __('BaguetteBox Lightbox Effect','sakurairo_csf'),
-        'label' => __('BaguetteBox will be used as the image lightbox effect when turned on','sakurairo_csf'),
-        'dependency' => array(
-                              array( 'fancybox', '==', 'false', '', 'true' ),
-                              array( 'lightgallery', '==', 'false' ),
-                        ),
-        'default' => false
+        'id' => 'lightbox',
+        'type' => 'select',
+        'title' => __('lightbox','sakurairo_csf'),
+        'desc' => __('Choose a image lightbox effect which you want to use,and additional JQ libraries will be loaded when using fancybox','sakurairo_csf'),
+        'options'     => array(
+          'off'  => __('off','sakurairo_csf'),
+          'baguetteBox'  => __('baguetteBox','sakurairo_csf'),
+          'fancybox'  => __('fancybox','sakurairo_csf'),
+          'lightgallery' => __('lightgallery','sakurairo_csf'),
+        ),
+        'default'     => 'off'
       ),
 
-      array(
-        'id' => 'fancybox',
-        'type' => 'switcher',
-        'title' => __('FancyBox Lightbox Effect','sakurairo_csf'),
-        'label' => __('FancyBox will be used as an image lightbox effect after turning on, additional JQ libraries will be loaded','sakurairo_csf'),
-        'dependency' => array(
-                              array( 'baguetteBox', '==', 'false', '', 'true' ),
-                              array( 'lightgallery', '==', 'false' ),
-
-                        ),
-        'default' => false
-      ), 
-
-      array(
-        'id' => 'lightgallery',
-        'type' => 'switcher',
-        'title' => __('LightGallery Lightbox Effect','sakurairo_csf'),
-        'label' => __('LightGallery will be used as an image lightbox effect after turning on.','sakurairo_csf'),
-        'dependency' => array(
-                              array( 'fancybox', '==', 'false', '', 'true' ),
-                              array( 'baguetteBox', '==', 'false' ),
-
-                        ),
-        'default' => false
-      ), 
       array(
         'type'    => 'content',
         'content'=>__('<strong>Attension: Please read <a href="https://github.com/sachinchoolur/lightGallery#license">License Instruction</a> before use.</strong>'
@@ -3697,14 +3674,14 @@ $prefix = 'iro_options';
         .'<br/> Please write settings in JavaScript. An example has been provided as default setting.'
         .'<br/> It should be captiable for Most User using WordPress Guttenberg Editor.'
         .'<br/>Submit new discussion on Github for assistance. https://github.com/mirai-mamori/Sakurairo/discussions','sakurairo_csf')       ,
-        'dependency' => array( 'lightgallery', '==', 'true', '', 'true' ),
+        'dependency' => array( 'lightbox', '==', 'lightgallery', '', 'true' ),
       ),
 
       array(
         'type'    => 'submessage',
         'style'   => 'warning',
         'content'=>__('Start from Sakurairo v2.4.0, plugins names in LightGallery option follow the form cite in official document (eg. lgHash instead of "hash")','sakurairo_csf')       ,
-        'dependency' => array( 'lightgallery', '==', 'true', '', 'true' ),
+        'dependency' => array( 'lightbox', '==', 'lightgallery', '', 'true' ),
       ),
 
       array(
@@ -3712,7 +3689,7 @@ $prefix = 'iro_options';
         'type' => 'code_editor',
         'sanitize' => false,
         'title' => __('LightGallery Lightbox Effect Options','sakurairo_csf'),
-        'dependency' => array( 'lightgallery', '==', 'true', '', 'true' ),
+        'dependency' => array( 'lightbox', '==', 'lightgallery', '', 'true' ),
         'default' => '{
           "plugins":["lgHash","lgZoom"],
           "supportLegacyBrowser":false,
