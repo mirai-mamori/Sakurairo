@@ -1239,7 +1239,6 @@ $prefix = 'iro_options';
         'desc' => __('Add HTML code at the end of the page. Useful for adding customize JavaScript.','sakurairo_csf'),
       ),
 
-
       array(
         'id' => 'poi_pjax',
         'type' => 'switcher',
