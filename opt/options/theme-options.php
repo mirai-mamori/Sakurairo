@@ -877,14 +877,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'=>'footer_addition',
-        'type'     => 'code_editor',
-        'sanitize' => false,
-        'title' => __('Footer Addition','sakurairo_csf'),
-        'desc' => __('Add HTML code at the end of the page. Useful for adding customize JavaScript.','sakurairo_csf'),
-      ),
-
-      array(
         'type' => 'subheading',
         'content' => __('Hitokoto','sakurairo_csf'),
       ),
@@ -1223,6 +1215,30 @@ $prefix = 'iro_options';
         'type' => 'subheading',
         'content' => __('Feature','sakurairo_csf'),
       ),
+
+      array(
+        'id' => 'site_custom_style',
+        'type' => 'code_editor',
+        'title' => __('Custom CSS Styles','sakurairo_csf'),
+        'desc' => __('Fill in the CSS code without writing style tag','sakurairo_csf'),
+      ),
+
+      array(
+        'id'=>'site_header_insert',
+        'type'     => 'code_editor',
+        'sanitize' => false,
+        'title' => __('Code inserted in the header','sakurairo_csf'),
+        'desc' => __('Insert HTML code right before </head>.','sakurairo_csf'),
+      ),
+
+      array(
+        'id'=>'footer_addition',
+        'type'     => 'code_editor',
+        'sanitize' => false,
+        'title' => __('Footer Addition','sakurairo_csf'),
+        'desc' => __('Add HTML code at the end of the page. Useful for adding customize JavaScript.','sakurairo_csf'),
+      ),
+
 
       array(
         'id' => 'poi_pjax',
@@ -3598,21 +3614,6 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('Google Analytics Id','sakurairo_csf'),
         'label' => __('If you already have a plugin to handle it, please keep here empty.','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'site_custom_style',
-        'type' => 'code_editor',
-        'title' => __('Custom CSS Styles','sakurairo_csf'),
-        'desc' => __('Fill in the CSS code without writing style tag','sakurairo_csf'),
-      ),
-
-      array(
-        'id'=>'site_header_insert',
-        'type'     => 'code_editor',
-        'sanitize' => false,
-        'title' => __('Code inserted in the header','sakurairo_csf'),
-        'desc' => __('Insert HTML code right before </head>.','sakurairo_csf'),
       ),
 
       array(
