@@ -30,7 +30,7 @@ if ($paged == 1 && !empty($sticky_posts)) {
     );
 
     if (is_home() && !$show_shuoshuo_on_home_page) {
-        $all_results_args['post_type'] = array('post');
+        $sticky_args['post_type'] = array('post');
     }
 	
     if ($is_author_page) {
@@ -60,7 +60,7 @@ $non_sticky_args = array(
 );
 
 if (is_home() && !$show_shuoshuo_on_home_page) {
-    $all_results_args['post_type'] = array('post');
+    $non_sticky_args['post_type'] = array('post');
 }
 
 if ($is_author_page) {
