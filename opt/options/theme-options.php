@@ -2281,105 +2281,55 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'exhibition',
-        'type' => 'tabbed',
-        'title' => __('Display Area Options','sakurairo_csf'),
-        'dependency' => array( 'exhibition_area', '==', 'true', '', 'true' ),
-        'tabs' => array(
-          array(
-            'title' => __('First Display Area','sakurairo_csf'),
-            'fields' => array(
-              array(
-                'id' => 'img1',
-                'type' => 'upload',
-                'title' => __('image','sakurairo_csf'),
-                'desc' => __('best width 260px, best height 160px','sakurairo_csf'),
-              ),
-              array(
-                'id' => 'title1',
-                'type' => 'text',
-                'title' => __('title','sakurairo_csf'),
-              ),
-              array(
-                'id' => 'description1',
-                'type' => 'text',
-                'title' => __('description','sakurairo_csf'),
-              ),
-              array(
-                'id' => 'link1',
-                'type' => 'text',
-                'title' => __('add URL','sakurairo_csf'),
-              ),
-            )
-          ),
-          array(
-            'title' => __('Second Display Area','sakurairo_csf'),
-            'fields' => array(
-              array(
-                'id' => 'img2',
-                'type' => 'upload',
-                'title' => __('image','sakurairo_csf'),
-                'desc' => __('best width 260px, best height 160px','sakurairo_csf'),
-              ),
-              array(
-                'id' => 'title2',
-                'type' => 'text',
-                'title' => __('title','sakurairo_csf'),
-              ),
-              array(
-                'id' => 'description2',
-                'type' => 'text',
-                'title' => __('description','sakurairo_csf'),
-              ),
-              array(
-                'id' => 'link2',
-                'type' => 'text',
-                'title' => __('add URL','sakurairo_csf'),
-              ),
-            )
-          ),
-          array(
-            'title' => __('Third Display Area','sakurairo_csf'),
-            'fields' => array(
-              array(
-                'id' => 'img3',
-                'type' => 'upload',
-                'title' => __('image','sakurairo_csf'),
-                'desc' => __('best width 260px, best height 160px','sakurairo_csf'),
-              ),
-              array(
-                'id'    => 'title3',
-                'type'  => 'text',
-                'title' => __('title','sakurairo_csf'),
-              ),
-              array(
-                'id'    => 'description3',
-                'type'  => 'text',
-                'title' => __('description','sakurairo_csf'),
-              ),
-              array(
-                'id'    => 'link3',
-                'type'  => 'text',
-                'title' => __('add URL','sakurairo_csf'),
-              ),
-            )
-          ),
+    'id'        => 'exhibition',
+    'type'      => 'repeater',
+    'title'     => 'Display Area Options',
+    'dependency' => array( 'exhibition_area', '==', 'true' ),
+    'fields'    => array(
+        array(
+            'id'   => 'img',
+            'type' => 'upload',
+            'title' => __('image', 'sakurairo_csf'),
+            'desc'  => __('best width 260px, best height 160px', 'sakurairo_csf'),
         ),
-        'default'       => array(
-          'link1' => '',
-          'link2' => '',
-          'link3' => '',
-          'img1'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/series/exhibition1.webp',
-          'img2'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/series/exhibition2.webp',
-          'img3' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/series/exhibition3.webp',
-          'title1' => 'アンコール',
-          'title2' => 'ハルジオン',
-          'title3' => 'かいぶつ',
-          'description1' => 'ここは夜のない世界',
-          'description2' => '過ぎてゆく時間の中',
-          'description3' => '素晴らしき世界に今日も乾杯',
-        )
-      ),
+        array(
+            'id'    => 'title',
+            'type'  => 'text',
+            'title' => __('title', 'sakurairo_csf'),
+        ),
+        array(
+            'id'    => 'description',
+            'type'  => 'text',
+            'title' => __('description', 'sakurairo_csf'),
+        ),
+        array(
+            'id'    => 'link',
+            'type'  => 'text',
+            'title' => __('add URL', 'sakurairo_csf'),
+        ),
+    ),
+    'default'   => array(
+        array(
+            'img' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/series/exhibition1.webp',
+            'title' => 'アンコール',
+            'description' => 'ここは夜のない世界',
+            'link' => '',
+        ),
+        array(
+            'img' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/series/exhibition2.webp',
+            'title' => 'ハルジオン',
+            'description' => '過ぎてゆく時間の中',
+            'link' => '',
+        ),
+        array(
+            'img' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/series/exhibition3.webp',
+            'title' => 'かいぶつ',
+            'description' => '素晴らしき世界に今日も乾杯',
+            'link' => '',
+        ),
+    )
+)
+
 
     )
   ) );
