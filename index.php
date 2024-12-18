@@ -20,8 +20,7 @@ if (iro_opt('bulletin_board') == '1') {
 }
 
 if (iro_opt('exhibition_area') == '1') {
-    $layout = iro_opt('exhibition_area_style') == 'left_and_right' ? 'feature_v2' : 'feature';
-    get_template_part('layouts/' . $layout);
+    get_template_part('layouts/' . 'feature');
 }
 ?>
 
