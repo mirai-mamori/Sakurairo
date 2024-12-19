@@ -978,7 +978,6 @@ nav .menu > li .sub-menu a {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  padding: 2px;
   border: 1px solid #DADADA;
   position: relative;
   object-fit: cover;
@@ -2258,6 +2257,7 @@ h1.main-title {
   border-radius: 10px;
   background: linear-gradient(to right, #02111D80, #02111D10, #02111D80);
   font-weight: var(--global-font-weight);
+  z-index: 10;
 }
 
 .feature-title .foverlay {
@@ -5575,8 +5575,11 @@ a.page-numbers {
 
 .feature-content {
   margin-top: 10px;
-  display: inline-block;
+  display: flex;
   position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .top-feature img {
@@ -5585,7 +5588,7 @@ a.page-numbers {
   border-radius: 10px;
 }
 
-li.feature-2 {
+li.feature {
   margin-left: 5px;
   margin-right: 5px;
 }
@@ -6212,7 +6215,8 @@ a.toc-link {
   width: 100%;
   height: auto;
   margin-top: 55px;
-  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
 }
 
 .the-feature * {
