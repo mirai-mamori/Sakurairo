@@ -2388,41 +2388,40 @@ function register_shortcodes() {
     });
        // 新增的 reply 短代码
     add_shortcode('reply', function($atts, $content = null) {
-        extract(shortcode_atts(array(
-            "notice" => '<p class="reply-to-read" style="text-align:center; border:2px solid #0000af; border-style:dashed; border-radius:4px; padding:5px; margin:10px;">
-                <strong style="color: #ff6033;">温馨提示：</strong>此处内容需要您<strong><a href="#respond" title="点击进行评论">评论</a></strong>或<strong><a href="'.wp_login_url(get_permalink()).'" title="点击登录">登录</a></strong>后才能查看, 评论后请 <strong><a href="javascript:location.reload()" title="点击刷新">点击刷新！</a></strong></p>'
-        ), $atts));
-
-        $user_ID = (int) wp_get_current_user()->ID;
-
-        // 如果用户已登录，直接显示内容
-        if ($user_ID > 0) {
-            return do_shortcode($content);
-        }
-
-        // 如果未登录，检查是否评论过
-        $email = isset($_COOKIE['comment_author_email_' . COOKIEHASH]) 
-                 ? str_replace('%40', '@', $_COOKIE['comment_author_email_' . COOKIEHASH]) 
-                 : null;
-
-        if (empty($email)) {
-            return $notice;
-        }
-
-        global $wpdb;
-        $post_id = get_the_ID();
-        $query = $wpdb->prepare(
-            "SELECT `comment_ID` FROM {$wpdb->comments} WHERE `comment_post_ID` = %d AND `comment_approved` = '1' AND `comment_author_email` = %s LIMIT 1",
-            $post_id,
-            $email
-        );
-
-        if ($wpdb->get_results($query)) {
-            return do_shortcode($content);
-        } else {
-            return $notice;
-        }
-    });
+    		extract(shortcode_atts(array(
+        "notice" => '<p class="reply-to-read" style="text-align:center; border:2px solid #0000af; border-style:dashed; border-radius:4px; padding:5px; margin:10px;">
+            <strong style="color: #ff6033;">温馨提示：</strong>此处内容需要您<strong><a href="#respond" title="点击进行评论">评论</a></strong>或<strong><a href="' . esc_url(wp_login_url(get_permalink())) . '" title="点击登录">登录</a></strong>后才能查看, 评论后请 <strong><a href="javascript:location.reload()" title="点击刷新">点击刷新！</a></strong></p>'
+    ), $atts));
+    $user_ID = (int) wp_get_current_user()->ID;
+    // 如果用户已登录，直接显示内容
+    if ($user_ID > 0) {
+        return esc_html(do_shortcode($content));
+    }
+    // 如果未登录，检查是否评论过
+    $email = isset($_COOKIE['comment_author_email_' . COOKIEHASH]) 
+             ? str_replace('%40', '@', $_COOKIE['comment_author_email_' . COOKIEHASH]) 
+             : null;
+    // 检查 email 格式是否有效
+    if (empty($email) || !is_email($email)) {
+        return $notice;
+    }
+    global $wpdb;
+    $post_id = get_the_ID();
+    // 使用 prepare() 进行转义
+    $email = esc_sql($email);
+    // 构建 SQL 查询
+    $query = $wpdb->prepare(
+        "SELECT `comment_ID` FROM {$wpdb->comments} WHERE `comment_post_ID` = %d AND `comment_approved` = '1' AND `comment_author_email` = %s LIMIT 1",
+        $post_id,
+        $email
+    );
+    // 执行查询
+    if ($wpdb->get_results($query)) {
+        return esc_html(do_shortcode($content));
+    } else {
+        return $notice;
+    }
+});
 }
 add_action('init', 'register_shortcodes');
 //code end
