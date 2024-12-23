@@ -18,6 +18,7 @@ include_once('classes/QQ.php');
 include_once('classes/Captcha.php');
 include_once('classes/MyAnimeList.php');
 include_once('classes/BilibiliFavList.php');
+include_once('classes/bangumi.php');
 use Sakura\API\Images;
 use Sakura\API\QQ;
 use Sakura\API\Cache;
