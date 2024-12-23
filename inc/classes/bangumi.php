@@ -79,51 +79,56 @@ class BangumiAPI
 
 class BangumiList
 {
-    public function get_bgm_items($userID)
+    public function get_bgm_items($userID, $page = 1)
     {
         if (empty($userID)) {
-            return '<p>未配置 Bangumi ID</p>';
+            return '<p>' . __('Bangumi ID not set.', 'sakurairo') . '</p>';
         }
 
         try {
             $bgmAPI = new BangumiAPI($userID);
-            $collections = $bgmAPI->getCollections();
+            $collections = $bgmAPI->getCollections(true, true);
 
             if (empty($collections)) {
-                return '<p>没有追番数据</p>';
+                return '<p>' . __('No data', 'sakurairo') . '</p>';
             }
 
+            $total = count($collections); // 总条目数
+            $perPage = 12; // 每页条目数
+            $totalPages = ceil($total / $perPage); // 总页数
+            $offset = ($page - 1) * $perPage;
+            $collections = array_slice($collections, $offset, $perPage); // 当前页数据
+
             $html = '';
-foreach ($collections as $item) {
-    //.column 
-    $html .= '<div class="column">';
-    $html .= '<a class="bangumi-item" href="' . esc_url($item['url']) . '" target="_blank" rel="nofollow">';
-    
-    // 图片
-    $html .= '<img class="lazyload bangumi-image" data-src="' . esc_url($item['images']) . '" alt="' . esc_attr($item['name']) . '" onerror="imgError(this)" src="' . esc_url($item['images']) . '">';
-    $html .= '<noscript><img class="bangumi-image" src="' . esc_url($item['images']) . '" alt="' . esc_attr($item['name']) . '"></noscript>';
-    
-    // 标题和信息
-    $html .= '<div class="bangumi-info">';
-    $html .= '<h3 class="bangumi-title" title="' . esc_attr($item['name_cn'] ?: $item['name']) . '">' . esc_html($item['name_cn'] ?: $item['name']) . '</h3>';
-    $html .= '<div class="bangumi-date">上映日期: ' . esc_html($item['date']) . '</div>';
-    $html .= '<div class="bangumi-status">';
-    $html .= '<div class="bangumi-status-bar" style="width: ' . esc_attr(($item['ep_status'] / $item['eps']) * 100) . '%"></div>';
-    $html .= '<p>已观看集数: ' . esc_html($item['ep_status'] . '/' . $item['eps']) . '</p>';
-    $html .= '<div class="bangumi-summary">';
-    $html .= '' . esc_html($item['summary'] ?: '暂无简介') . '</div>';
-    $html .= '</div>';
-    $html .= '</div>'; // .bangumi-info
-    $html .= '</a>'; // .bangumi-item
-    $html .= '</div>'; // .column
-}
+            foreach ($collections as $item) {
+                $html .= '<div class="column">';
+                $html .= '<a class="bangumi-item" href="' . esc_url($item['url']) . '" target="_blank" rel="nofollow">';
+                $html .= '<img class="lazyload bangumi-image" data-src="' . esc_url($item['images']) . '" alt="' . esc_attr($item['name']) . '" onerror="imgError(this)" src="' . esc_url($item['images']) . '">';
+                $html .= '<noscript><img class="bangumi-image" src="' . esc_url($item['images']) . '" alt="' . esc_attr($item['name']) . '"></noscript>';
+                $html .= '<div class="bangumi-info">';
+                $html .= '<h3 class="bangumi-title" title="' . esc_attr($item['name_cn'] ?: $item['name']) . '">' . esc_html($item['name_cn'] ?: $item['name']) . '</h3>';
+                $html .= '<div class="bangumi-date">' . __('上映日期: ', 'sakurairo') . esc_html($item['date']) . '</div>';
+                $html .= '<div class="bangumi-status">';
+                $html .= '<div class="bangumi-status-bar" style="width: ' . esc_attr(($item['ep_status'] / $item['eps']) * 100) . '%"></div>';
+                $html .= '<p>' . __('已观看集数: ', 'sakurairo') . esc_html($item['ep_status'] . '/' . $item['eps']) . '</p>';
+                $html .= '<div class="bangumi-summary">' . esc_html($item['summary'] ?: __('No introduction yet', 'sakurairo')) . '</div>';
+                $html .= '</div></div></a></div>';
+            }
 
-return $html;
-
+            // 分页
+            if ($page < $totalPages) {
+                $nextPageUrl = rest_url('sakura/v1/bangumi') . '?userID=' . urlencode($userID) . '&page=' . ($page + 1);
+                $html .= '<div id="bangumi-pagination">' . self::anchor_pagination_next($nextPageUrl) . '</div>';
+            }
 
             return $html;
         } catch (\Exception $e) {
-            return '<p>发生错误: ' . esc_html($e->getMessage()) . '</p>';
+            return '<p>' . __('An error occured: ', 'sakurairo') . esc_html($e->getMessage()) . '</p>';
         }
+    }
+
+    private static function anchor_pagination_next(string $href)
+    {
+        return '<a class="bangumi-next" data-href="' . esc_url($href) . '"><i class="fa-solid fa-bolt-lightning"></i> ' . __('Load more...', 'sakurairo') . '</a>';
     }
 }
