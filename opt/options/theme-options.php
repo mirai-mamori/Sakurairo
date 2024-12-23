@@ -2821,7 +2821,7 @@ $prefix = 'iro_options';
         'title' => __('Bangumi Account UID','sakurairo_csf'),
         'desc' => __('Fill in your Bangumi account ID, e.g. https://bangumi.tv/user/944883, just the number part "944883"','sakurairo_csf'),
         'dependency' => array( 'bangumi_source', '==', 'bangumi', '', 'true' ),
-        'default' => '13972644'
+        'default' => '944883'
       ),
 
       array(
