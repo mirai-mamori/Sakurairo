@@ -2770,6 +2770,7 @@ $prefix = 'iro_options';
 		'options' => array(
 			'bilibili' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/bangumi_tep_bili.webp',
 			'myanimelist' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/bangumi_tep_mal.webp',
+      'bangumi' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/bangumi_tep_bangumi.webp'
 		),
 		'default' => 'bilibili'
 	  ),
@@ -2812,6 +2813,15 @@ $prefix = 'iro_options';
         'desc' => __('Fill in your account cookies, F12 to open your browser web panel, go to your bilibili homepage to get cookies. If left empty, it will not show the progress of catching up bangumis','sakurairo_csf'),
         'dependency' => array( 'bangumi_source', '==', 'bilibili', '', 'true' ),
         'default' => 'LIVE_BUVID='
+      ),
+
+      array(
+        'id' => 'bangumi_id',
+        'type' => 'text',
+        'title' => __('Bangumi Account UID','sakurairo_csf'),
+        'desc' => __('Fill in your Bangumi account ID, e.g. https://bangumi.tv/user/944883, just the number part "944883"','sakurairo_csf'),
+        'dependency' => array( 'bangumi_source', '==', 'bangumi', '', 'true' ),
+        'default' => '13972644'
       ),
 
       array(
