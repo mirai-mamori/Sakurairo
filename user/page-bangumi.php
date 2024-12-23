@@ -13,9 +13,13 @@ get_header();
 </head>
 
 <?php while (have_posts()) : the_post(); ?>
-    <?php if (!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID())) : ?>
+    <?php 
+    if (!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID())) { 
+    ?>
         <span class="linkss-title"><?php the_title(); ?></span>
-    <?php endif; ?>
+    <?php 
+    } 
+    ?>
 
     <article <?php post_class("post-item"); ?>>
         <?php the_content('', true); ?>
@@ -28,32 +32,28 @@ get_header();
             ?>
 
             <div class="row">
-                <?php if ($bangumi_source === 'bilibili') : ?>
-                    <?php if ($bilibili_id) : ?>
-                        <?php
-                        $bgm = new \Sakura\API\Bilibili();
-                        echo $bgm->get_bgm_items();
-                        ?>
-                    <?php else : ?>
-                        <p><?php _e("Please fill in the Bilibili UID in Sakura Options.", "sakurairo"); ?></p>
-                    <?php endif; ?>
-                <?php elseif ($bangumi_source === 'bangumi') : ?>
-                    <?php if (!empty($bangumi_id)) : ?>
-                        <?php
-                        $bgmList = new \Sakura\API\BangumiList();
-                        echo $bgmList->get_bgm_items($bangumi_id);
-                        ?>
-                    <?php else : ?>
-                        <p><?php _e("Please fill in the Bangumi UID in Sakura Options.", "sakurairo"); ?></p>
-                    <?php endif; ?>
-                <?php elseif ($mal_username) : ?>
-                    <?php
-                    $bgm = new \Sakura\API\MyAnimeList();
-                    echo $bgm->get_all_items();
-                    ?>
-                <?php else : ?>
-                    <p><?php _e("Please fill in the My Anime List Username in Sakura Options.", "sakurairo"); ?></p>
-                <?php endif; ?>
+                <?php 
+                if ($bangumi_source === 'bilibili') { 
+                    if ($bilibili_id) { 
+                        $bgm = new \Sakura\API\Bilibili(); 
+                        echo $bgm->get_bgm_items(); 
+                    } else { 
+                        echo '<p>' . __("Please fill in the Bilibili UID in Sakura Options.", "sakurairo") . '</p>';
+                    } 
+                } elseif ($bangumi_source === 'bangumi') { 
+                    if (!empty($bangumi_id)) { 
+                        $bgmList = new \Sakura\API\BangumiList(); 
+                        echo $bgmList->get_bgm_items($bangumi_id); 
+                    } else { 
+                        echo '<p>' . __("Please fill in the Bangumi UID in Sakura Options.", "sakurairo") . '</p>';
+                    } 
+                } elseif ($mal_username) { 
+                    $bgm = new \Sakura\API\MyAnimeList(); 
+                    echo $bgm->get_all_items(); 
+                } else { 
+                    echo '<p>' . __("Please fill in the My Anime List Username in Sakura Options.", "sakurairo") . '</p>';
+                } 
+                ?>
             </div>
         </section>
     </article>
@@ -61,3 +61,4 @@ get_header();
 
 <?php
 get_footer();
+?>
