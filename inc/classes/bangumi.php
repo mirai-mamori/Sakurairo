@@ -2,8 +2,6 @@
 
 namespace Sakura\API;
 
-define('BGMLIST_VER', '1.1.4');
-
 class BangumiAPI
 {
     private $apiUrl = 'https://api.bgm.tv';
@@ -70,7 +68,7 @@ class BangumiAPI
 
     private function http_get_contents($url)
     {
-        $response = wp_remote_get($url, ['user-agent' => 'mirai-mamori/Sakurairo/' . BGMLIST_VER . ' (WordPressTheme)']);
+        $response = wp_remote_get($url, ['user-agent' => 'mirai-mamori/Sakurairo(https://github.com/mirai-mamori/Sakurairo):WordPressTheme']);
         if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
             return wp_remote_retrieve_body($response);
         }
