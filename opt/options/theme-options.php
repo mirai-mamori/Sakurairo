@@ -3600,6 +3600,14 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'ghcard_proxy',
+        'type' => 'switcher',
+        'title' => __('GitHub repository card proxy','sakurairo_csf'),
+        'label' => __('Use your server proxy to get the github repository card image so that Chinese users who cannot access vercel.app can see it','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
         'id' => 'custom_proxy_address_of_gravatar',
         'type' => 'text',
         'title' => __('Custom Proxy Address','sakurairo_csf'),
