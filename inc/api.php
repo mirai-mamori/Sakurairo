@@ -18,6 +18,7 @@ include_once('classes/QQ.php');
 include_once('classes/Captcha.php');
 include_once('classes/MyAnimeList.php');
 include_once('classes/BilibiliFavList.php');
+include_once('classes/bangumi.php');
 use Sakura\API\Images;
 use Sakura\API\QQ;
 use Sakura\API\Cache;
@@ -71,6 +72,18 @@ add_action('rest_api_init', function () {
     register_rest_route('sakura/v1', '/bangumi/bilibili', array(
         'methods' => 'POST',
         'callback' => 'bgm_bilibili',
+        'permission_callback' => '__return_true'
+    )
+    );
+    register_rest_route('sakura/v1', '/bangumi', array(
+        'methods' => 'POST',
+        'callback' => function ($request) {
+            $userID = $request->get_param('userID');
+            $page = $request->get_param('page') ?: 1;
+
+            $bgmList = new \Sakura\API\BangumiList();
+            return $bgmList->get_bgm_items($userID, (int)$page);
+        },
         'permission_callback' => '__return_true'
     )
     );
