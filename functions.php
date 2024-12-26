@@ -10,7 +10,6 @@
 
 include_once('inc/classes/IpLocation.php');
 
-
 define('IRO_VERSION', wp_get_theme()->get('Version'));
 define('INT_VERSION', '19.2.0');
 define('BUILD_VERSION', '2');
@@ -80,6 +79,14 @@ switch (iro_opt('iro_update_source')) {
 //ini_set('display_errors', true);
 //error_reporting(E_ALL);
 error_reporting(E_ALL & ~E_NOTICE);
+
+add_action('init', 'set_user_locale');
+function set_user_locale() {
+    if (is_user_logged_in()) {
+        $user_locale = get_user_locale();
+        switch_to_locale($user_locale);
+    }
+}
 
 if (!function_exists('akina_setup')) {
     function akina_setup()
@@ -441,7 +448,7 @@ function sakura_scripts()
         wp_enqueue_script('comment-reply');
     }
     //前端脚本本地化
-    if (get_locale() != 'zh_CN') {
+    if (get_user_locale() != 'zh_CN') {
         wp_localize_script(
             'app',
             '_sakurairoi18n',
@@ -1544,7 +1551,7 @@ function siren_private()
 function memory_archives_list()
 {
     // 尝试从缓存中获取结果
-    $cache_key = 'memory_archives_list_' . get_locale();
+    $cache_key = 'memory_archives_list_' . get_user_locale();
     $output = get_transient($cache_key);
 
     if ($output !== false) {
@@ -1603,7 +1610,7 @@ function memory_archives_list()
 // 在保存文章后清空缓存
 function clear_memory_archives_list_cache($post_id)
 {
-    delete_transient('memory_archives_list_' . get_locale());
+    delete_transient('memory_archives_list_' . get_user_locale());
 }
 add_action('save_post', 'clear_memory_archives_list_cache');
 
@@ -1755,7 +1762,7 @@ function theme_admin_notice_callback()
 
     // 显示通知
     $theme_name = 'Sakurairo';
-    switch (get_locale()) {
+    switch (get_user_locale()) {
         case 'zh_CN':
             $thankyou = '感谢你使用 ' . $theme_name . ' 主题！这里有一些需要你的许可的东西(*/ω＼*)';
             $dislike = '不，谢谢';
