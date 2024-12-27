@@ -20,6 +20,21 @@ class BangumiAPI
 
     public function getCollections($isWatching = true, $isWatched = true)
     {
+        $bangumi_cache = iro_opt('bangumi_cache', true);
+
+        if ($bangumi_cache) {
+            $cached_content = iro_opt('bangumi_cache_content');
+            if ($cached_content) {
+
+                $collArr = json_decode($cached_content, true);
+
+                if (is_array($collArr) && isset($collArr[0]['name'])) {
+                    return $collArr;
+                    //验证数据格式是否正确（用户自行获取的未清洗）
+                }
+            }
+        }
+
         $collDataArr = [];
 
         if ($isWatching) {
@@ -42,6 +57,10 @@ class BangumiAPI
                 'eps' => $value['subject']['eps'] ?? 0,
                 'ep_status' => $value['ep_status'] ?? 0,
             ];
+        }
+
+        if ($bangumi_cache) {
+            iro_opt_update('bangumi_cache_content', json_encode($collArr, JSON_PRETTY_PRINT));
         }
 
         return $collArr;
