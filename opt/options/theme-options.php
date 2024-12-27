@@ -2825,6 +2825,21 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'bangumi_cache',
+        'type' => 'switcher',
+        'title' => __('Use cached or pre-set responses','sakurairo_csf'),
+        'desc' => __('If the following content is empty, it will be automatically updated on first visit.','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'bangumi_cache_content',
+        'type' => 'code_editor',
+        'title' => __('Bangumi cache content','sakurairo_csf'),
+        'desc' => __('Please clear the content when changing the source.','sakurairo_csf'),
+      ),
+
+      array(
         'type' => 'subheading',
         'content' => __('Friend Link Template Settings','sakurairo_csf'),
       ),
