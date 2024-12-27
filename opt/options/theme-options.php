@@ -3609,6 +3609,14 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'ghcard_proxy',
+        'type' => 'switcher',
+        'title' => __('GitHub repository card proxy','sakurairo_csf'),
+        'desc' => __('Use your server proxy to get the github repository card image so that Chinese users who cannot access vercel.app can see it','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
         'type' => 'subheading',
         'content' => __('Lightbox','sakurairo_csf'),
       ),

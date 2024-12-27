@@ -2392,8 +2392,54 @@ function register_shortcodes() {
     });
 
     add_shortcode('ghcard', function($attr, $content = '') {
-        $atts = shortcode_atts(array("path" => ""), $attr);
-        return '<div class="ghcard"><a href="https://github.com/' . esc_attr($atts['path']) . '"><img src="https://github-readme-stats.vercel.app/api' . esc_html($content) . '" alt="Github-Card"></a></div>';
+        //获取内容
+        $atts = shortcode_atts(array("path" => "mirai-mamori/Sakurairo"), $attr);
+
+        $path = trim($atts['path']);
+
+        if (strpos($path, 'https://github.com/') === 0) {
+            $path = str_replace('https://github.com/', '', $path);
+        }
+
+        if (!preg_match('/^[a-zA-Z0-9_-]+\/[a-zA-Z0-9_.-]+$/', $path)) {
+            return '<p>Invalid GitHub repository path: ' . esc_html($path) . '</p>';
+        }
+    
+        list($username, $repo) = explode('/', $path, 2);
+    
+        //构造卡片内容
+        $card_content = '';
+    
+        if (iro_opt('ghcard_proxy')) {
+            
+            $svg_url = 'https://github-readme-stats.vercel.app/api/pin/?username=' . esc_attr($username) . '&repo=' . esc_attr($repo);
+            $response = wp_remote_get($svg_url);
+    
+            if (!is_wp_error($response)) {
+                $svg_content = wp_remote_retrieve_body($response);
+                if (!empty($svg_content)) {
+                    $card_content = $svg_content;
+                } else {
+                    $card_content = '';
+                }
+            } else {
+                $card_content = '';
+            }
+        }
+    
+        //获取失败或未启用代理
+        if (empty($card_content)) {
+            $card_content = '<img decoding="async" src="https://github-readme-stats.vercel.app/api/pin/?username=' . esc_attr($username) . '&repo=' . esc_attr($repo) . '" alt="Github-Card">';
+        }
+    
+        //输出内容
+        $ghcard = '<div class="ghcard">';
+        $ghcard .= '<a href="https://github.com/' . esc_attr($path) . '">';
+        $ghcard .= $card_content;
+        $ghcard .= '</a>';
+        $ghcard .= '</div>';
+    
+        return $ghcard;
     });
 
     add_shortcode('showcard', function($attr, $content = '') {
