@@ -749,7 +749,7 @@ if ( !class_exists(UpdateChecker::class, false) ):
 				array(
 					'installed_version' => strval($this->getInstalledVersion()),
 					'php' => phpversion(),
-					'locale' => get_locale(),
+					'locale' => get_user_locale(),
 				),
 				$queryArgs
 			);
