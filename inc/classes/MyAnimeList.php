@@ -56,7 +56,7 @@ class MyAnimeList
 		if(is_array($response)){
 			$response = json_decode($response["body"], true);
 			if ($bangumi_cache) {
-				iro_opt_update('bangumi_cache_content', json_encode($response, JSON_PRETTY_PRINT));
+				iro_opt_update('bangumi_cache_content', stripslashes(json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)));
 			}
 			return $response;
 		}else{

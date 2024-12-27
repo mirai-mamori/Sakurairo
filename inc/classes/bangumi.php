@@ -60,7 +60,7 @@ class BangumiAPI
         }
 
         if ($bangumi_cache) {
-            iro_opt_update('bangumi_cache_content', json_encode($collArr, JSON_PRETTY_PRINT));
+            iro_opt_update('bangumi_cache_content', stripslashes(json_encode($collArr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)));
         }
 
         return $collArr;

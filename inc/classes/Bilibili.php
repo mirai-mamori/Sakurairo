@@ -46,7 +46,7 @@ class Bilibili
             $response_body = json_decode($response["body"], true);
             if ($bangumi_cache) {
                 $cached_content["type_{$type}"]["page_{$page}"] = $response_body;
-                iro_opt_update('bangumi_cache_content', json_encode($cached_content, JSON_PRETTY_PRINT));
+                iro_opt_update('bangumi_cache_content', stripslashes(json_encode($cached_content, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)));
             }
             return $response_body;
         }else{
