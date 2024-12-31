@@ -2883,6 +2883,25 @@ $prefix = 'iro_options';
         ),
         'default'     => 'ASC'
       ),
+      
+      array(
+        'type' => 'subheading',
+        'content' => __('Steam库模板设置','sakurairo_csf'),
+      ),
+      
+      array(
+        'id' => 'steam_id',
+        'type' => 'text',
+        'title' => __('Steam 账号64ID','sakurairo_csf'),
+        'desc' => __('填写你的帐号ID，例如：https://steamcommunity.com/profiles/76561199029689067/, 只需填写数字 "76561199029689067" 部分','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'steam_key',
+        'type' => 'text',
+        'title' => __('Steam Api Key','sakurairo_csf'),
+        'desc' => __('申请链接 https://steamcommunity.com/dev/apikey','sakurairo_csf'),
+      ),
 
       array(
         'type' => 'subheading',
