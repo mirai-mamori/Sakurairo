@@ -29,7 +29,7 @@ if ( !class_exists(Package::class, false) ):
 
 		public function getAbsoluteDirectoryPath() {
 			if ( method_exists($this->theme, 'get_stylesheet_directory') ) {
-				return $this->theme->get_template_directory(); //Available since WP 3.4.
+				return $this->theme->get_stylesheet_directory(); //Available since WP 3.4.
 			}
 			return get_theme_root($this->stylesheet) . '/' . $this->stylesheet;
 		}
