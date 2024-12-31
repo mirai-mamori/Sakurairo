@@ -12,29 +12,29 @@ if (!function_exists('render_article_meta')) {
         foreach ($article_meta_display_options as $key) {
             switch ($key) {
                 case "author":
-                    require_once get_stylesheet_directory() . '/tpl/meta-author.php';
+                    require_once get_template_directory() . '/tpl/meta-author.php';
                     render_author_meta();
                     break;
                 case "category":
-                    require_once get_stylesheet_directory() . '/tpl/meta-category.php';
+                    require_once get_template_directory() . '/tpl/meta-category.php';
                     echo get_meta_category_html();
                     break;
                 case "comment_count":
-                    require_once get_stylesheet_directory() . '/tpl/meta-comments.php';
+                    require_once get_template_directory() . '/tpl/meta-comments.php';
                     render_meta_comments();
                     break;
                 case "post_views":
                     render_meta_views();
                     break;
                 case "post_words_count":
-                    require_once get_stylesheet_directory() . '/tpl/meta-words-count.php';
+                    require_once get_template_directory() . '/tpl/meta-words-count.php';
                     $str = get_meta_words_count();
                     if ($str) {
                         ?><span><i class="fa-regular fa-pen-to-square"></i><?= esc_html($str) ?></span><?php
                     }
                     break;
                 case "reading_time":
-                    require_once get_stylesheet_directory() . '/tpl/meta-ert.php';
+                    require_once get_template_directory() . '/tpl/meta-ert.php';
                     $str = get_meta_estimate_reading_time();
                     if ($str) {
                         ?><span title="<?= esc_attr(__("Estimate Reading Time", "sakurairo")) ?>"><i class="fa-solid fa-hourglass"></i><?= esc_html($str) ?></span><?php
