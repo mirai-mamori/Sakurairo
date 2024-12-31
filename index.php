@@ -27,32 +27,59 @@ if (iro_opt('exhibition_area') == '1') {
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
+
+
+<?php
+// 获取主页显示选项
+$show_on_front = get_option('show_on_front');
+
+    if ($show_on_front === 'posts') {
+        ?>
         <h1 class="main-title">
             <i class="<?php echo esc_attr(iro_opt('post_area_icon', 'fa-regular fa-bookmark')); ?>" aria-hidden="true"></i>
             <br>
             <?php echo esc_html(iro_opt('post_area_title', '文章')); ?>
-        </h1>
+            </h1>
+
         <?php
-        if (have_posts()) :
-            if (is_home() && !is_front_page()) : ?>
+        if (have_posts()) {
+            if (is_home() && !is_front_page()) { ?>
                 <header>
                     <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
                 </header>
-            <?php endif;
-            get_template_part('tpl/content', 'thumb');
-        else :
-            get_template_part('tpl/content', 'none');
-        endif;
-        ?>
-    </main>
-    <?php if (iro_opt('pagenav_style') == 'ajax') { ?>
-        <div id="pagination"><?php next_posts_link(__(' Previous', 'sakurairo')); ?></div>
-        <div id="add_post"><span id="add_post_time" style="visibility: hidden;" title="<?php echo esc_attr(iro_opt('page_auto_load', '')); ?>"></span></div>
-    <?php } else { ?>
-        <nav class="navigator">
-            <?php previous_posts_link('<i class="fa-solid fa-angle-left"></i>'); ?><?php next_posts_link('<i class="fa-solid fa-angle-right"></i>'); ?>
-        </nav>
-    <?php } ?>
+        <?php };
+        get_template_part('tpl/content', 'thumb');
+        } else {
+        get_template_part('tpl/content', 'none');
+        }?>
+        </main>
+        <?php if (iro_opt('pagenav_style') == 'ajax') { ?>
+            <div id="pagination"><?php next_posts_link(__(' Previous', 'sakurairo')); ?></div>
+            <div id="add_post"><span id="add_post_time" style="visibility: hidden;" title="<?php echo esc_attr(iro_opt('page_auto_load', '')); ?>"></span></div>
+        <?php } else { ?>
+            <nav class="navigator">
+                <?php previous_posts_link('<i class="fa-solid fa-angle-left"></i>'); ?><?php next_posts_link('<i class="fa-solid fa-angle-right"></i>'); ?>
+            </nav>
+        <?php } 
+
+
+    } elseif ($show_on_front === 'page') {
+        // 获取静态页面 
+        $posts_page_id = get_option('page_for_posts');
+        if ($posts_page_id) {?>
+            <h1 class="main-title">
+            <br>
+            <?php echo esc_html(get_the_title($posts_page_id)); ?>
+            </h1>
+            <?php 
+            $posts_page = get_post($posts_page_id);
+            echo apply_filters('the_content', $posts_page->post_content);?>
+            </main>
+        <?php }
+            
+    } ?>
+    
+
 </div>
 
 <?php
