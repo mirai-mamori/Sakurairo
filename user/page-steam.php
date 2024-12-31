@@ -113,7 +113,7 @@ get_header();
                                 </div>
                             </a>
                             <div class="anime-info">
-                                <div class="anime-title"><?php echo esc_html($game['name']); s?></div>
+                                <div class="anime-title"><?php echo esc_html($game['name']); ?></div>
                                 <?php
                                 $playtime = $game['playtime_forever'];
                                 if ($playtime > 120) {
@@ -122,19 +122,18 @@ get_header();
                                 } else {
                                     printf('<div class="anime-desc">%s</div>', esc_html(sprintf('游戏时长: %d 分钟', $playtime)));
                                 }
-                                
                                 $lastPlayed = wp_date('Y-m-d H:i:s', $game['rtime_last_played']);
-                                if ($rtime_last_played > 0) {
-                                    printf('<div class="anime-desc">%s</div>', esc_html(sprintf('上次启动: %s', $lastPlayed)));
-                                } else {
+                                if ($playtime == 0) {
                                     printf('<div class="anime-desc">%s</div>', esc_html(sprintf('尚未游玩')));
+                                } else {
+                                    printf('<div class="anime-desc">%s</div>', esc_html(sprintf('上次启动: %s', $lastPlayed)));
                                 }
                                 ?>
                             </div>
                         </div>
                     <?php endforeach;
                 } else {
-                    echo '<p>' . esc_html__('没有游戏数据', 'sakurairo') . '</p>';
+                    echo '<p>' . esc_html__('无游戏数据', 'sakurairo') . '</p>';
                 }
             } else {
                 echo '<p>' . esc_html__('无法连接到Steam API, 可能是信息填写错误', 'sakurairo') . '</p>';
