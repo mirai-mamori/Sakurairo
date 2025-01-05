@@ -81,7 +81,7 @@ function font_end_js_control()
         'comment_upload_img' => iro_opt('img_upload_api') == 'off' ? false : true,
         'cache_cover' => check(iro_opt('cache_cover')),
         'site_bg_as_cover' => check(iro_opt('site_bg_as_cover')),
-        'yiyan_api' => empty(iro_opt('yiyan')) ? ["https://v1.hitokoto.cn/", "https://api.nmxc.ltd/yiyan/"] : json_decode(iro_opt('yiyan_api')),
+        'yiyan_api' => empty(iro_opt('yiyan_api')) ? ["https://v1.hitokoto.cn/", "https://api.nmxc.ltd/yiyan/"] : json_decode(iro_opt('yiyan_api')),
         'skin_bg0' => '',
         'skin_bg1' => $vision_resource_basepath . 'background/foreground/bg1.png',
         'skin_bg2' => $vision_resource_basepath . 'background/foreground/bg2.png',
