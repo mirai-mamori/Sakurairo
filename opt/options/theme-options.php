@@ -1267,7 +1267,19 @@ $prefix = 'iro_options';
         ),
         'default' => 'off',
       ),
-
+      
+      array(
+        'id' => 'iro_captcha_level',
+        'type' => 'slider',
+        'title' => __('Captcha Level', 'sakurairo_csf'),
+        'desc' => __('The difficulty level of the Theme Captcha', 'sakurairo_csf'),
+        'dependency' => array( 'captcha_select', '==', 'iro_captcha', '', 'true' ),
+        'step' => '1',
+        'min' => '0',
+        'max' => '100',
+        'default' => '70'
+      ),
+      
       array(
         'id' => 'vaptcha_vid',
         'type' => 'text',

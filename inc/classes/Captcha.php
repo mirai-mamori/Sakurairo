@@ -6,14 +6,16 @@ namespace Sakura\API;
 
 class Captcha
 {
-    private $captchCode;
+    private $captchText;
+    private $captchResult;
 
     /**
      * CAPTCHA constructor.
      */
     public function __construct()
     {
-        $this->captchCode = '';
+        $this->captchText = '';
+        $this->captchResult = '';
     }
 
     /**
@@ -23,11 +25,22 @@ class Captcha
      */
     private function create_captcha(): void
     {
-        $dict = str_split('abcdefhjkmnpqrstuvwxy12345678');
-        $randKeys = array_rand($dict, 5);
-        $this->captchCode = implode('', array_map(function ($value) use ($dict) {
-            return $dict[$value];
-        }, $randKeys));
+        $n1 = rand(10, 99);
+        $n2 = rand(10, 99);
+        if (rand(0, 1)) {
+            //加法
+            $this->captchText = "{$n1}+{$n2}=?";
+            $this->captchResult = $n1 + $n2;
+        } else {
+            //减法(避免负数)
+            if ($n1 > $n2) {
+                $this->captchText = "{$n1}-{$n2}=?";
+                $this->captchResult = $n1 - $n2;
+            } else {
+                $this->captchText = "{$n2}-{$n1}=?";
+                $this->captchResult = $n2 - $n1;
+            }
+        }
     }
 
     /**
@@ -38,7 +51,7 @@ class Captcha
     private function crypt_captcha(): string
     {
         //return md5($this->captchCode);
-        return password_hash($this->captchCode, PASSWORD_DEFAULT);
+        return password_hash($this->captchResult, PASSWORD_DEFAULT);
         // return wp_hash_password($this->captchCode);
     }
 
@@ -63,44 +76,79 @@ class Captcha
      */
     public function create_captcha_img(): array
     {
-        //创建画布
-        $img = imagecreatetruecolor(120, 40);
-        $file = STYLESHEETPATH . '/inc/KumoFont.ttf';
-        //填充背景色
-        $backcolor = imagecolorallocate($img, mt_rand(200, 255), mt_rand(200, 255), mt_rand(0, 255));
-        imagefill($img, 0, 0, $backcolor);
-
+        //动态计算验证码难度
+        $level = iro_opt('iro_captcha_level') / 100;
+        $conf = array(
+          'noise' => (int)(500 + 1500 * $level),
+          'curves' => (int)(5 + 15 * $level),
+          'quality' => (int)(80 - 70 * $level)
+        );
+        
         //创建验证码
         $this->create_captcha();
+        $font = STYLESHEETPATH . '/inc/KumoFont.ttf';
+        
+        //创建画布
+        $image = imagecreatetruecolor(210, 60);
+        //填充背景色
+        $color = imagecolorallocate($image, rand(200, 255), rand(200, 255), rand(200, 255));
+        imagefill($image, 0, 0, $color);
+
         //绘制文字
-        for ($i = 0; $i < 5; $i++) {
-            // $span = 20;
-            $stringcolor = imagecolorallocate($img, mt_rand(0, 255), mt_rand(0, 100), mt_rand(0, 80));
-            imagefttext($img, 25, 2, $i * 20, 30, $stringcolor, $file, $this->captchCode[$i]);
+        $chars = str_split($this->captchText);
+        for ($i = 0; $i < 7; $i++) {
+            $char = $chars[$i];
+            $color = imagecolorallocate($image, rand(0, 150), rand(0, 150), rand(0, 150));
+            $x = 30 * $i + 10;
+            $y = 30 + rand(-5, 5);
+            //加减符号不倾斜 并加大字体
+            $size = ($i === 2) ? 30 : 20;
+            $angle = ($i === 2) ? 0 : rand(-25, 25);
+            imagettftext($image, $size, $angle, $x, $y, $color, $font, $char);
         }
-
-        //添加干扰线
-        for ($i = 0; $i < 8; $i++) {
-            $linecolor = imagecolorallocate($img, mt_rand(0, 150), mt_rand(0, 250), mt_rand(0, 255));
-            imageline($img, mt_rand(0, 179), mt_rand(0, 39), mt_rand(0, 179), mt_rand(0, 39), $linecolor);
+        
+        //添加噪点
+        for ($i = 0; $i < $conf['noise']; $i++) {
+            $color = imagecolorallocate($image, rand(0, 255), rand(0, 255), rand(0, 255));
+            imagesetpixel($image, rand(0, 210), rand(0, 60), $color);
         }
-
-        //添加干扰点
-        for ($i = 0; $i < 144; $i++) {
-            $pixelcolor = imagecolorallocate($img, mt_rand(100, 150), mt_rand(0, 120), mt_rand(0, 255));
-            imagesetpixel($img, mt_rand(0, 179), mt_rand(0, 39), $pixelcolor);
+        
+        // 添加贝塞尔曲线
+        for ($i = 0; $i < $conf['curves']; $i++) {
+            $color = imagecolorallocate($image, rand(50,150), rand(50, 150), rand(50, 150));
+            
+            // 贝塞尔曲线控制点
+            $x1 = rand(0, 210);
+            $x2 = rand(0, 210);
+            $cx1 = rand(0, 210);
+            $cx2 = rand(0, 210);
+            $y1 = rand(0, 60);
+            $y2 = rand(0, 60);
+            $cy1 = rand(0, 60);
+            $cy2 = rand(0, 60);
+            
+            // 绘制贝塞尔曲线
+            for ($t = 0; $t <= 1; $t += 0.01) {
+                $xt = (int)((1 - $t) * (1 - $t) * (1 - $t) * $x1 + 3 * (1 - $t) * (1 - $t) * $t * $cx1 + 3 * (1 - $t) * $t * $t * $cx2 + $t * $t * $t * $x2);
+                $yt = (int)((1 - $t) * (1 - $t) * (1 - $t) * $y1 + 3 * (1 - $t) * (1 - $t) * $t * $cy1 + 3 * (1 - $t) * $t * $t * $cy2 + $t * $t * $t * $y2);
+                imagesetpixel($image, $xt, $yt, $color);
+            }
         }
+        //启用高斯模糊，进一步降低清晰度
+        imagefilter($image, IMG_FILTER_GAUSSIAN_BLUR);
+        
         $timestamp = time();
-        $this->captchCode .= $timestamp;
+        $this->captchResult .= $timestamp;
         //打开缓存区
         ob_start();
-        imagepng($img);
+        //降低图片质量
+        imagejpeg($image, null, $conf['quality']);
         //输出图片
         $captchaimg =  ob_get_contents();
         //销毁缓存区
         ob_end_clean();
         //销毁图片(释放资源)
-        imagedestroy($img);
+        imagedestroy($image);
         // 以json格式输出
         $captchaimg = 'data:image/png;base64,' . base64_encode($captchaimg);
         return [
@@ -126,7 +174,8 @@ class Captcha
         if (!isset($timestamp) || !isset($id) || !preg_match('/^[\w$.\/]+$/', $id) || !ctype_digit((string)$timestamp)) {
             $code = 3;
             $msg = __('Bad Request.',"sakurairo");//非法请求
-        } elseif (empty($captcha) || strlen($captcha) !== 5) {
+        } elseif (!preg_match('/^(?:(?!199)(?:[1-9]\d?|1\d{2}|0))$/', $captcha)) {
+            //匹配非0 ~ 198
             $code = 3;
             $msg = __("Look like you forgot to enter the captcha.","sakurairo");//请输入正确的验证码!
         } elseif ($timestamp < $timeThreshold) {
