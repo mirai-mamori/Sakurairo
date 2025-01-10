@@ -773,6 +773,12 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'type'    => 'content',
+        'content' => __('Click <a href="./admin.php?redirect=playlist" target="_blank">here</a> to use the built-in meting-API to get the playlist info file template.Its content will be refreshed after saving relevant information.',
+        'sakurairo_csf'),
+    ),
+
+      array(
         'id' => 'aplayer_server_proxy',
         'type' => 'text',
         'title' => __('Footer Online Music Player Proxy','sakurairo_csf'),
@@ -2843,14 +2849,9 @@ $prefix = 'iro_options';
         'type'    => 'content',
         'content' => __('<strong>Attention: In case of poor network conditions, you can enable the caching feature.</strong>'
         .'<br/><strong>Visit the animelist page</strong> to allow the system to try fetching the content.'
-        .'<br/> Alternatively, you can manually construct the URL using the following format and replace the necessary parameters: '
-        .'<br/><strong>For example:</strong><br/> "https://myanimelist.net/animelist/$my_anime_list_username/load.json?$sort"'
-        .'<br/><strong>Sort options:</strong>'
-        .'<br/> Case 1: Status and Last Updated: order=16&order2=5&status=7'
-        .'<br/> Case 2: Last Updated: order=5&status=7'
-        .'<br/> Case 3: Status: order=16&status=7'
-        .'<br/><strong>For Bangumi, use the following API:</strong>'
-        .'<br/> "https://api.bgm.tv/v0/users/$bangumi_id/collections"'
+        .'<br/> Alternatively, you can click the following link to manually obtain the response information.'
+        .'<br/> The link will be refreshed after the relevant settings are saved.'
+        .'<br/> <a href="./admin.php?redirect=bangumi" target="_blank">Bangumi</a> | <a href="./admin.php?redirect=mal" target="_blank">MAL</a>'
         .'<br/> After obtaining the content, copy and paste it into the cache area, and then save.',
         'sakurairo_csf'),
     ),
