@@ -6,16 +6,16 @@ namespace Sakura\API;
 
 class Captcha
 {
-    private $captchText;
-    private $captchResult;
+    private $captchaText;
+    private $captchaResult;
 
     /**
      * CAPTCHA constructor.
      */
     public function __construct()
     {
-        $this->captchText = '';
-        $this->captchResult = '';
+        $this->captchaText = '';
+        $this->captchaResult = '';
     }
 
     /**
@@ -25,21 +25,18 @@ class Captcha
      */
     private function create_captcha(): void
     {
-        $n1 = rand(10, 99);
-        $n2 = rand(10, 99);
-        if (rand(0, 1)) {
+        $n1 = mt_rand(10, 99);
+        $n2 = mt_rand(10, 99);
+        if (mt_rand(0, 1)) {
             //加法
-            $this->captchText = "{$n1}+{$n2}=?";
-            $this->captchResult = $n1 + $n2;
+            $this->captchaText = "{$n1}+{$n2}=?";
+            $this->captchaResult = $n1 + $n2;
         } else {
             //减法(避免负数)
-            if ($n1 > $n2) {
-                $this->captchText = "{$n1}-{$n2}=?";
-                $this->captchResult = $n1 - $n2;
-            } else {
-                $this->captchText = "{$n2}-{$n1}=?";
-                $this->captchResult = $n2 - $n1;
-            }
+            $min = min($n1, $n2);
+            $max = max($n1, $n2);
+            $this->captchaText = "{$max}-{$min}=?";
+            $this->captchaResult = $max - $min;
         }
     }
 
@@ -51,7 +48,7 @@ class Captcha
     private function crypt_captcha(): string
     {
         //return md5($this->captchCode);
-        return password_hash($this->captchResult, PASSWORD_DEFAULT);
+        return password_hash($this->captchaResult, PASSWORD_DEFAULT);
         // return wp_hash_password($this->captchCode);
     }
 
@@ -91,41 +88,41 @@ class Captcha
         //创建画布
         $image = imagecreatetruecolor(210, 60);
         //填充背景色
-        $color = imagecolorallocate($image, rand(200, 255), rand(200, 255), rand(200, 255));
+        $color = imagecolorallocate($image, mt_rand(200, 255), mt_rand(200, 255), mt_rand(200, 255));
         imagefill($image, 0, 0, $color);
 
         //绘制文字
-        $chars = str_split($this->captchText);
-        for ($i = 0; $i < 7; $i++) {
+        $chars = str_split($this->captchaText);
+        for ($i = 0; $i < count($chars); $i++) {
             $char = $chars[$i];
-            $color = imagecolorallocate($image, rand(0, 150), rand(0, 150), rand(0, 150));
+            $color = imagecolorallocate($image, mt_rand(0, 150), mt_rand(0, 150), mt_rand(0, 150));
             $x = 30 * $i + 10;
-            $y = 30 + rand(-5, 5);
+            $y = 30 + mt_rand(-5, 5);
             //加减符号不倾斜 并加大字体
             $size = ($i === 2) ? 30 : 20;
-            $angle = ($i === 2) ? 0 : rand(-25, 25);
+            $angle = ($i === 2) ? 0 : mt_rand(-25, 25);
             imagettftext($image, $size, $angle, $x, $y, $color, $font, $char);
         }
         
         //添加噪点
         for ($i = 0; $i < $conf['noise']; $i++) {
-            $color = imagecolorallocate($image, rand(0, 255), rand(0, 255), rand(0, 255));
-            imagesetpixel($image, rand(0, 210), rand(0, 60), $color);
+            $color = imagecolorallocate($image, mt_rand(0, 255), mt_rand(0, 255), mt_rand(0, 255));
+            imagesetpixel($image, mt_rand(0, 210), mt_rand(0, 60), $color);
         }
         
         // 添加贝塞尔曲线
         for ($i = 0; $i < $conf['curves']; $i++) {
-            $color = imagecolorallocate($image, rand(50,150), rand(50, 150), rand(50, 150));
+            $color = imagecolorallocate($image, mt_rand(50,150), mt_rand(50, 150), mt_rand(50, 150));
             
             // 贝塞尔曲线控制点
-            $x1 = rand(0, 210);
-            $x2 = rand(0, 210);
-            $cx1 = rand(0, 210);
-            $cx2 = rand(0, 210);
-            $y1 = rand(0, 60);
-            $y2 = rand(0, 60);
-            $cy1 = rand(0, 60);
-            $cy2 = rand(0, 60);
+            $x1 = mt_rand(0, 210);
+            $x2 = mt_rand(0, 210);
+            $cx1 = mt_rand(0, 210);
+            $cx2 = mt_rand(0, 210);
+            $y1 = mt_rand(0, 60);
+            $y2 = mt_rand(0, 60);
+            $cy1 = mt_rand(0, 60);
+            $cy2 = mt_rand(0, 60);
             
             // 绘制贝塞尔曲线
             for ($t = 0; $t <= 1; $t += 0.01) {
@@ -138,7 +135,7 @@ class Captcha
         imagefilter($image, IMG_FILTER_GAUSSIAN_BLUR);
         
         $timestamp = time();
-        $this->captchResult .= $timestamp;
+        $this->captchaResult .= $timestamp;
         //打开缓存区
         ob_start();
         //降低图片质量
