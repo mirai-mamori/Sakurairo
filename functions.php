@@ -2753,7 +2753,7 @@ function redirect_to_response()
 
     switch($direct_info){
         case 'bangumi' :
-            $direct_url = 'https://api.bgm.tv/v0/users/' . iro_opt('bangumi_id') . '/collections';
+            $direct_url = 'https://api.bgm.tv/v0/users/' . (iro_opt('bangumi_id') ?: '944883') . '/collections';
             break;
 
         case 'mal' :
@@ -2768,11 +2768,11 @@ function redirect_to_response()
                     $sort = 'order=16&status=7';
                     break;
             }
-            $direct_url = 'https://myanimelist.net/animelist/' . iro_opt('my_anime_list_username') . '/load.json?' . $sort;
+            $direct_url = 'https://myanimelist.net/animelist/' . (iro_opt('my_anime_list_username') ?: 'username') . '/load.json?' . $sort;
             break;
 
         case 'playlist' :
-            $direct_url = rest_url('sakura/v1/meting/aplayer') . '?_wpnonce=' . wp_create_nonce('wp_rest') . '&server=' . iro_opt('aplayer_server') . '&type=playlist&id=' . iro_opt('aplayer_playlistid');
+            $direct_url = rest_url('sakura/v1/meting/aplayer') . '?_wpnonce=' . wp_create_nonce('wp_rest') . '&server=' . (iro_opt('aplayer_server') ?: 'netease') . '&type=playlist&id=' . (iro_opt('aplayer_playlistid') ?: '5380675133');
             break;
     }
     header("Location: $direct_url", true, 302);
