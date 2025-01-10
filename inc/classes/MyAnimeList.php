@@ -25,7 +25,7 @@ class MyAnimeList
 
 		if ($bangumi_cache) {
 
-            $cached_content = iro_opt('bangumi_cache_content');
+            $cached_content = json_decode(iro_opt('bangumi_cache_content'),true);
 
 			if ($cached_content) {
 				return $cached_content;
