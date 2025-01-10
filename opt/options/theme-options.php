@@ -774,7 +774,7 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'content',
-        'content' => __('Click <a href="./admin.php?redirect=playlist" target="_blank">here</a> to use the built-in meting-API to get the playlist info file template.Its content will be refreshed after saving relevant information.',
+        'content' => __('Click <a href="./admin.php?redirect=playlist" target="_blank">here</a> to use the built-in meting-API to get the playlist info file template.Its content will be refreshed after the relevant settings are saved.',
         'sakurairo_csf'),
     ),
 
