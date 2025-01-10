@@ -2737,3 +2737,45 @@ function iterator_to_string(Iterator $iterator): string
     }
     return $content;
 }
+
+/*自动构造相关链接*/
+function redirect_to_response()
+{
+    if (!isset($_GET['redirect']) || empty($_GET['redirect'])) {
+        return;
+    }
+
+    if (!is_admin() || !current_user_can('manage_options')) {
+        return;
+    }
+
+    $direct_info = sanitize_key($_GET['redirect']);
+
+    switch($direct_info){
+        case 'bangumi' :
+            $direct_url = 'https://api.bgm.tv/v0/users/' . iro_opt('bangumi_id') . '/collections';
+            break;
+
+        case 'mal' :
+            switch (iro_opt('my_anime_list_sort')) {
+                case 1: // Status and Last Updated
+                    $sort = 'order=16&order2=5&status=7';
+                    break;
+                case 2: // Last Updated
+                    $sort = 'order=5&status=7';
+                    break;
+                case 3: // Status
+                    $sort = 'order=16&status=7';
+                    break;
+            }
+            $direct_url = 'https://myanimelist.net/animelist/' . iro_opt('my_anime_list_username') . '/load.json?' . $sort;
+            break;
+
+        case 'playlist' :
+            $direct_url = rest_url('sakura/v1/meting/aplayer') . '?_wpnonce=' . wp_create_nonce('wp_rest') . '&server=' . iro_opt('aplayer_server') . '&type=playlist&id=' . iro_opt('aplayer_playlistid');
+            break;
+    }
+    header("Location: $direct_url", true, 302);
+    exit;
+}
+redirect_to_response();
