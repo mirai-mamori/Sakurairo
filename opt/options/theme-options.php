@@ -1277,7 +1277,7 @@ $prefix = 'iro_options';
         'step' => '1',
         'min' => '0',
         'max' => '100',
-        'default' => '70'
+        'default' => '60'
       ),
       
       array(

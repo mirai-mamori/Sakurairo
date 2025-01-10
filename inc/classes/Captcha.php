@@ -76,9 +76,9 @@ class Captcha
         //动态计算验证码难度
         $level = iro_opt('iro_captcha_level') / 100;
         $conf = array(
-          'noise' => (int)(500 + 1500 * $level),
-          'curves' => (int)(5 + 15 * $level),
-          'quality' => (int)(80 - 70 * $level)
+          'noise' => (int)(700 + 500 * $level),
+          'curves' => (int)(8 + 6 * $level),
+          'quality' => (int)(100 - 40 * $level)
         );
         
         //创建验证码
