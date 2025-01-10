@@ -955,3 +955,25 @@ const BrowserDetect = {
         return 'WebkitAppearance' in document.documentElement.style;
     }
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menuItems = document.querySelectorAll('.menu > li');
+    let activeSubMenu = null;
+    
+    menuItems.forEach(item => {
+      const subMenu = item.querySelector('.sub-menu');
+
+      //鼠标移入时激活子菜单
+      item.addEventListener('mouseenter', () => {
+        if (activeSubMenu && activeSubMenu !== subMenu) {
+          //有且仅有一个激活
+          activeSubMenu.classList.remove('active');
+        }
+
+        //激活当前子菜单
+        subMenu.classList.add('active');
+        activeSubMenu = subMenu; //更新当前激活子菜单
+      });
+
+    });
+  });
