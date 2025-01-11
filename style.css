@@ -746,6 +746,11 @@ nav .menu > li .sub-menu {
   flex-direction: column;
   padding: 5px 0;
   border: 1px solid #f7f7f7;
+  pointer-events: none;
+}
+
+.sub-menu.active {
+  pointer-events: auto !important;
 }
 
 nav .menu > li .sub-menu:hover {
