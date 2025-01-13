@@ -774,7 +774,7 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'content',
-        'content' => __('Click <a href="./admin.php?redirect=playlist" target="_blank">here</a> to use the built-in meting-API to get the playlist info file template.Its content will be refreshed after the relevant settings are saved.',
+        'content' => __('Click <a href="./admin.php?iro_act=playlist" target="_blank">here</a> to use the built-in meting-API to get the playlist info file template.Its content will be refreshed after the relevant settings are saved.',
         'sakurairo_csf'),
     ),
 
@@ -2851,7 +2851,7 @@ $prefix = 'iro_options';
         .'<br/><strong>Visit the animelist page</strong> to allow the system to try fetching the content.'
         .'<br/> Alternatively, you can click the following link to manually obtain the response information.'
         .'<br/> The link will be refreshed after the relevant settings are saved.'
-        .'<br/> <a href="./admin.php?redirect=bangumi" target="_blank">Bangumi</a> | <a href="./admin.php?redirect=mal" target="_blank">MAL</a>'
+        .'<br/> <a href="./admin.php?iro_act=bangumi" target="_blank">Bangumi</a> | <a href="./admin.php?iro_act=mal" target="_blank">MAL</a>'
         .'<br/> After obtaining the content, copy and paste it into the cache area, and then save.',
         'sakurairo_csf'),
     ),

@@ -2741,7 +2741,7 @@ function iterator_to_string(Iterator $iterator): string
 /*自动构造相关链接*/
 function redirect_to_response()
 {
-    if (!isset($_GET['redirect']) || empty($_GET['redirect'])) {
+    if (!isset($_GET['iro_act']) || empty($_GET['iro_act'])) {
         return;
     }
 
@@ -2749,7 +2749,7 @@ function redirect_to_response()
         return;
     }
 
-    $direct_info = sanitize_key($_GET['redirect']);
+    $direct_info = sanitize_key($_GET['iro_act']);
 
     switch($direct_info){
         case 'bangumi' :
