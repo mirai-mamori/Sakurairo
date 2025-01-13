@@ -1267,7 +1267,19 @@ $prefix = 'iro_options';
         ),
         'default' => 'off',
       ),
-
+      
+      array(
+        'id' => 'iro_captcha_level',
+        'type' => 'slider',
+        'title' => __('Captcha Level', 'sakurairo_csf'),
+        'desc' => __('The difficulty level of the Theme Captcha', 'sakurairo_csf'),
+        'dependency' => array( 'captcha_select', '==', 'iro_captcha', '', 'true' ),
+        'step' => '1',
+        'min' => '0',
+        'max' => '100',
+        'default' => '60'
+      ),
+      
       array(
         'id' => 'vaptcha_vid',
         'type' => 'text',
@@ -2823,6 +2835,37 @@ $prefix = 'iro_options';
         'dependency' => array( 'bangumi_source', '==', 'bangumi', '', 'true' ),
         'default' => '944883'
       ),
+
+      array(
+        'id' => 'bangumi_cache',
+        'type' => 'switcher',
+        'title' => __('Use cached or pre-set responses','sakurairo_csf'),
+        'desc' => __('If the following content is empty, it will be automatically updated on first visit.','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'bangumi_cache_content',
+        'type' => 'code_editor',
+        'title' => __('Bangumi cache content','sakurairo_csf'),
+        'desc' => __('Please clear the content when changing the source.','sakurairo_csf'),
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => __('<strong>Attention: In case of poor network conditions, you can enable the caching feature.</strong>'
+        .'<br/><strong>Visit the animelist page</strong> to allow the system to try fetching the content.'
+        .'<br/> Alternatively, you can manually construct the URL using the following format and replace the necessary parameters: '
+        .'<br/><strong>For example:</strong><br/> "https://myanimelist.net/animelist/$my_anime_list_username/load.json?$sort"'
+        .'<br/><strong>Sort options:</strong>'
+        .'<br/> Case 1: Status and Last Updated: order=16&order2=5&status=7'
+        .'<br/> Case 2: Last Updated: order=5&status=7'
+        .'<br/> Case 3: Status: order=16&status=7'
+        .'<br/><strong>For Bangumi, use the following API:</strong>'
+        .'<br/> "https://api.bgm.tv/v0/users/$bangumi_id/collections"'
+        .'<br/> After obtaining the content, copy and paste it into the cache area, and then save.',
+        'sakurairo_csf'),
+    ),
 
       array(
         'type' => 'subheading',
