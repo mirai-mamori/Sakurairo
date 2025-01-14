@@ -2224,7 +2224,7 @@ function DEFAULT_FEATURE_IMAGE(string $size = 'source'): string
     }
     //新的
     if (iro_opt('random_graphs_options') == 'gallery') {
-        return rest_url('sakura/v1/gallery') . '?img=w';
+        return get_random_url(rest_url('sakura/v1/gallery') . '?img=w');
     }
     //旧的
     if (iro_opt('random_graphs_options') == 'external_api') {
