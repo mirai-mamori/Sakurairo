@@ -210,6 +210,8 @@ class Images
             $imgurl = str_replace(STYLESHEETPATH, get_template_directory_uri(), $imgurl);
         } elseif (iro_opt('random_graphs_options') == 'external_api') {
             $imgurl = iro_opt('random_graphs_link');
+        } elseif (iro_opt('random_graphs_options') == 'gallery') {
+            $imgurl = rest_url('sakura/v1/gallery') . '?img=w';
         } else {
             // global $sakura_image_array;
             $temp = file_get_contents(STYLESHEETPATH . "/manifest/manifest.json");
@@ -258,6 +260,8 @@ class Images
         } elseif (iro_opt('random_graphs_options') == 'external_api') {
           //$imgurl = iro_opt('random_graphs_link');
            $imgurl = iro_opt('random_graphs_link_mobile');
+        } elseif (iro_opt('random_graphs_options') == 'gallery') {
+            $imgurl = rest_url('sakura/v1/gallery') . '?img=l';
         } else {
             // global $sakura_mobile_image_array;
             $temp = file_get_contents(STYLESHEETPATH . '/manifest/manifest_mobile.json');

@@ -96,8 +96,14 @@ function font_end_js_control()
         } else {
             $iro_opt['cover_api'] = iro_opt('random_graphs_link');
         }
+    } elseif (iro_opt('random_graphs_options') == 'gallery') {
+        if (wp_is_mobile()) {
+            $iro_opt['cover_api'] = rest_url('sakura/v1/gallery') . '?img=l';
+        } else {
+            $iro_opt['cover_api'] = rest_url('sakura/v1/gallery') . '?img=w';
+        }
     } else {
-        $iro_opt['cover_api'] =  rest_url('sakura/v1/image/cover');
+        $iro_opt['cover_api'] = rest_url('sakura/v1/image/cover');
     }
     !empty($reception_background['img1']) && $iro_opt['skin_bg0'] = $reception_background['img1'];
     !empty($reception_background['img2']) && $iro_opt['skin_bg1'] = $reception_background['img2'];

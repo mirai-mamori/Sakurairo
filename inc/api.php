@@ -55,7 +55,7 @@ add_action('rest_api_init', function () {
     );
     register_rest_route('sakura/v1', '/gallery', array(
         'methods' => 'GET',
-        'callback' => [new \Sakura\API\gallery(), 'handle_request'],
+        'callback' => [new \Sakura\API\gallery(), 'get_image'],
         'permission_callback' => '__return_true'
     )
     );

@@ -8,6 +8,7 @@ class gallery
     private $image_list;
     private $image_folder;
     private $backup_folder;
+    private $log = '';
 
     //初始化工作目录
     public function __construct() {
@@ -21,52 +22,41 @@ class gallery
     }
 
     private function init_dirs() {
-
         if (!is_dir($this->image_dir)) {
             if (!mkdir($this->image_dir, 0755, true)) {
-                die("无法创建目录：{$this->image_dir}。请检查权限。");
+                $this->log .= "无法创建目录：{$this->image_dir}。请检查权限。<br>";
+                $this->log .= "Unable to create directory: {$this->image_dir}. Please check permissions.<br>";
+                return $this->log;
             }
         }
 
         if (!is_dir($this->image_folder)) {
             if (!mkdir($this->image_folder, 0755, true)) {
-                die("无法创建目录：{$this->image_folder}。请检查权限。");
+                $this->log .= "无法创建目录：{$this->image_folder}。请检查权限。<br>";
+                $this->log .= "Unable to create directory: {$this->image_folder}. Please check permissions.<br>";
+                return $this->log;
             }
         }
 
         if (!is_dir($this->backup_folder)) {
             if (!mkdir($this->backup_folder, 0755, true)) {
-                die("无法创建目录：{$this->backup_folder}。请检查权限。");
+                $this->log .= "无法创建目录：{$this->backup_folder}。请检查权限。<br>";
+                $this->log .= "Unable to create directory: {$this->backup_folder}. Please check permissions.<br>";
+                return $this->log;
             }
         }
 
         if (!file_exists($this->image_list)) {
             if (!touch($this->image_list)) {
-                die("无法创建文件：{$this->image_list}。请检查权限。");
+                $this->log .= "无法创建文件：{$this->image_list}。请检查权限。<br>";
+                $this->log .= "Unable to create file: {$this->image_list}. Please check permissions.<br>";
+                return $this->log;
             }
         }
     }
 
-    //处理请求
-    public function handle_request($request) {
-        //获取参数
-        $param = $request->get_param('action');
-        $nonce = $request->get_param('_wpnonce');
-
-        if ($param && method_exists($this, $param)) {
-            if (wp_verify_nonce($nonce, 'gallery')) {
-                return $this->$param($request);
-            } else {
-                return 'Access denied.';
-            }
-        }
-
-        //默认动作
-        return $this->get_image();
-    }
-
-    // 生成索引并进行分拣
-    private function init($action) {
+    //生成索引并进行分拣
+    public function init($jump = false) {
         $allowedExtensions = ['jpg', 'jpeg', 'bmp', 'png', 'webp', 'gif'];
         $imageFiles = ['long' => [], 'wide' => []];
 
@@ -96,17 +86,23 @@ class gallery
         //保存索引
         file_put_contents($this->image_list, json_encode($imageFiles));
 
-        if(!$action){
-            return;
+        if (!$jump) {
+            $this->log .= "初始化索引成功<br>";
+            $this->log .= "Index initialization successful.<br>";
+            return $this->log;
         }
 
         return $this->get_image();  //初始化完成后开始工作
     }
 
     //webp优化步骤
-    public function webp($request) {
+    public function webp() {
+        $this->log = '';
         $files = scandir($this->image_folder);
         $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+
+        $this->log .= "开始转换<br>";
+        $this->log .= "Start to convert.<br>";
 
         foreach ($files as $file) {
             $filePath = $this->image_folder . '/' . $file;
@@ -115,21 +111,26 @@ class gallery
             if (in_array(strtolower($fileExtension), $allowedExtensions)) {
                 //备份原图
                 $backupPath = $this->backup_folder . '/' . $file;
-                rename($filePath, $backupPath);
+                if (!rename($filePath, $backupPath)) {
+                    $this->log .= "无法备份文件：$file<br>";
+                    $this->log .= "Unable to backup file: $file<br>";
+                }
 
                 //压缩图片为 WebP 格式
                 $this->convert_to_webp($backupPath, $file);
             }
         }
 
-        $this->init(false);
-        echo "所有图片已压缩为webp，原图在backup文件夹。";
-        exit;
+        $this->log .= "所有图片已压缩为webp，原图在backup文件夹。<br>";
+        $this->log .= "All images have been compressed to webp. The original images are in the backup folder.<br>";
+        $this->log .= "请确认无误后重新初始化索引。<br>";
+        $this->log .= "Please re-initlize the index after ensure the result.<br>";
+
+        return $this->log;
     }
 
     //webp优化方法
     private function convert_to_webp($source, $filename) {
-        $image = null;
         $extension = strtolower(pathinfo($source, PATHINFO_EXTENSION));
 
         switch ($extension) {
@@ -146,32 +147,46 @@ class gallery
             case 'webp':
                 $image = imagecreatefromwebp($source);
                 break;
-            }
-
+            default:
+                $this->log .= "不支持的文件类型：$filename<br>";
+                $this->log .= "Unsupported file type: $filename<br>";
+        }
 
         if ($image) {
             $webpPath = $this->image_folder . '/' . pathinfo($filename, PATHINFO_FILENAME) . '.webp';
             imagewebp($image, $webpPath, 80);
             imagedestroy($image);
+            $this->log .= "已成功转换为 WebP：$filename<br>";
+            $this->log .= "Successfully converted to WebP: $filename<br>";
+            return $this->log;
+        } else {
+            $this->log .= "无法转换文件：$filename<br>";
+            $this->log .= "Unable to convert file: $filename<br>";
+            return $this->log;
         }
     }
 
     //获取图片
-    private function get_image() {
-        $imgParam = isset($_GET['img']) ? $_GET['img'] : null;
+    public function get_image() {
+        $imgParam = isset($_GET['img']) ? sanitize_text_field($_GET['img']) : '';
         $imageList = json_decode(file_get_contents($this->image_list), true);
 
         if (!empty($imageList)) {
-            //img=l优先返回竖版图片
+            //img参数优先获取long或wide
             if ($imgParam == 'l' && !empty($imageList['long'])) {
                 $random_image = $imageList['long'][array_rand($imageList['long'])];
             } else {
-                $all_images = array_merge($imageList['long'] ?? [], $imageList['wide'] ?? []);
-                if (!empty($all_images)) {
-                    $random_image = $all_images[array_rand($all_images)];
+                if ($imgParam == 'w' && !empty($imageList['wide'])) {
+                    $random_image = $imageList['wide'][array_rand($imageList['wide'])];
                 } else {
-                    echo "没有图片。请确保文件夹中有图片。";
-                    exit;
+                    $all_images = array_merge($imageList['long'] ?? [], $imageList['wide'] ?? []);
+                    if (!empty($all_images)) {
+                        $random_image = $all_images[array_rand($all_images)];
+                    } else {
+                        $this->log .= "没有图片。请确保文件夹中有图片。<br>";
+                        $this->log .= "No images available. Please ensure there are images in the folder.<br>";
+                        return $this->log;
+                    }
                 }
             }
 
@@ -180,8 +195,10 @@ class gallery
             wp_redirect($random_image, 302);
             exit;
         } else {
-            echo "没有图片。请确保文件夹中有图片。";
-            exit;
+            $this->log .= "没有图片。请确保文件夹中有图片。<br>";
+            $this->log .= "No images available. Please ensure there are images in the folder.<br>";
+            return $this->log;
         }
     }
 }
+?>

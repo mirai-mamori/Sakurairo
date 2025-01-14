@@ -1589,7 +1589,7 @@ $prefix = 'iro_options';
       array(
         'type'    => 'content',
         'title' => __('Built-in Gallery controllers','sakurairo_csf'),
-        'content' => __('<a href="./admin.php?iro_act=gallery_init" target="_blank">Initlize/Rebuild index</a> | <a href="./admin.php?iro_act=webp" target="_blank">Refomart images to webp</a>'
+        'content' => __('<a href="./admin.php?iro_act=gallery_init" target="_blank">Initlize/Rebuild index</a> | <a href="./admin.php?iro_act=gallery_webp" target="_blank">Refomart images to webp</a>'
         . '<br><p>After initlized,put images in `wp-content/uploads/iro_gallery/img` and then click to build the index.</p>',
         'sakurairo_csf'),
         'dependency' => array( 'random_graphs_options', '==', 'gallery', '', 'true' ),
