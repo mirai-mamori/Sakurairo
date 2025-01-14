@@ -2795,7 +2795,6 @@ function iro_action_operator()
             include_once('inc/classes/gallery.php');
             $gallery = new Sakura\API\gallery();
             echo $gallery->webp();
-            echo $gallery->init();
             echo 'Done!';
             break;
     }
