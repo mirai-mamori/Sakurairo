@@ -1580,9 +1580,19 @@ $prefix = 'iro_options';
           'external_api' => __('External API','sakurairo_csf'),
           'webp_optimization' => __('Webp optimized','sakurairo_csf'),
           'local' => __('Local','sakurairo_csf'),
+          'gallery' => __('Built-in','sakurairo_csf'),
         ),
         'dependency' => array( 'cover_switch', '==', 'true', '', 'true' ),
         'default' => 'external_api'
+      ),
+
+      array(
+        'type'    => 'content',
+        'title' => __('Built-in Gallery controllers','sakurairo_csf'),
+        'content' => __('<a href="./admin.php?iro_act=gallery_init" target="_blank">Initlize/Rebuild index</a> | <a href="./admin.php?iro_act=webp" target="_blank">Refomart images to webp</a>'
+        . '<br><p>After initlized,put images in `wp-content/uploads/iro_gallery/img` and then click to build the index.</p>',
+        'sakurairo_csf'),
+        'dependency' => array( 'random_graphs_options', '==', 'gallery', '', 'true' ),
       ),
 
       array(
@@ -2854,7 +2864,7 @@ $prefix = 'iro_options';
         .'<br/> <a href="./admin.php?iro_act=bangumi" target="_blank">Bangumi</a> | <a href="./admin.php?iro_act=mal" target="_blank">MAL</a>'
         .'<br/> After obtaining the content, copy and paste it into the cache area, and then save.',
         'sakurairo_csf'),
-    ),
+      ),
 
       array(
         'type' => 'subheading',

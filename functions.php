@@ -2754,7 +2754,8 @@ function redirect_to_response()
     switch($direct_info){
         case 'bangumi' :
             $direct_url = 'https://api.bgm.tv/v0/users/' . (iro_opt('bangumi_id') ?: '944883') . '/collections';
-            break;
+            header("Location: $direct_url", true, 302);
+            exit;
 
         case 'mal' :
             switch (iro_opt('my_anime_list_sort')) {
@@ -2769,13 +2770,23 @@ function redirect_to_response()
                     break;
             }
             $direct_url = 'https://myanimelist.net/animelist/' . (iro_opt('my_anime_list_username') ?: 'username') . '/load.json?' . $sort;
-            break;
+            header("Location: $direct_url", true, 302);
+            exit;
 
         case 'playlist' :
             $direct_url = rest_url('sakura/v1/meting/aplayer') . '?_wpnonce=' . wp_create_nonce('wp_rest') . '&server=' . (iro_opt('aplayer_server') ?: 'netease') . '&type=playlist&id=' . (iro_opt('aplayer_playlistid') ?: '5380675133');
-            break;
+            header("Location: $direct_url", true, 302);
+            exit;
+
+        case 'gallery_init':
+            $direct_url = rest_url('sakura/v1/gallery') . '?_wpnonce=' . wp_create_nonce('gallery') . '&action=init';
+            header("Location: $direct_url", true, 302);
+            exit;
+
+        case 'gallery_webp':
+            $direct_url = rest_url('sakura/v1/gallery') . '?_wpnonce=' . wp_create_nonce('gallery') . '&action=webp';
+            header("Location: $direct_url", true, 302);
+            exit;
     }
-    header("Location: $direct_url", true, 302);
-    exit;
 }
 redirect_to_response();

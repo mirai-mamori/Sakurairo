@@ -14,6 +14,7 @@ include_once('classes/Aplayer.php');
 include_once('classes/Bilibili.php');
 include_once('classes/Cache.php');
 include_once('classes/Images.php');
+include_once('classes/gallery.php');
 include_once('classes/QQ.php');
 include_once('classes/Captcha.php');
 include_once('classes/MyAnimeList.php');
@@ -49,6 +50,12 @@ add_action('rest_api_init', function () {
     register_rest_route('sakura/v1', '/image/feature', array(
         'methods' => 'GET',
         'callback' => 'feature_gallery',
+        'permission_callback' => '__return_true'
+    )
+    );
+    register_rest_route('sakura/v1', '/gallery', array(
+        'methods' => 'GET',
+        'callback' => [new \Sakura\API\gallery(), 'handle_request'],
         'permission_callback' => '__return_true'
     )
     );
