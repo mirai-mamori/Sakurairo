@@ -2222,11 +2222,13 @@ function DEFAULT_FEATURE_IMAGE(string $size = 'source'): string
     if (iro_opt('post_cover_options') == 'type_2') {
         return get_random_url(iro_opt('post_cover'));
     }
+    //新的
     if (iro_opt('random_graphs_options') == 'gallery') {
-        return get_random_url(iro_opt('random_graphs_link'));
-    }
-    if (iro_opt('random_graphs_options') == 'external_api') {
         return rest_url('sakura/v1/gallery') . '?img=w';
+    }
+    //旧的
+    if (iro_opt('random_graphs_options') == 'external_api') {
+        return get_random_url(iro_opt('random_graphs_link'));
     }
     $_api_url = rest_url('sakura/v1/image/feature');
     $rand = rand(1, 100);
