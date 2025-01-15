@@ -2747,7 +2747,7 @@ function iro_action_operator()
     }
 
     if (!is_admin() || !current_user_can('manage_options')) {
-        echo 'Access denied';
+        echo __("Access denied.", "sakurairo");
         return;
     }
 

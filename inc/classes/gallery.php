@@ -27,28 +27,28 @@ class gallery
     private function init_dirs() {
         if (!is_dir($this->image_dir)) {
             if (!mkdir($this->image_dir, 0755, true)) {
-                $this->log .= "无法创建目录：{$this->image_dir}。请检查权限。<br>";
+                $this->log .= __("Unable to create directory: {$this->image_dir}. Please check permissions.", "sakurairo") . '<br>';
                 return $this->log;
             }
         }
 
         if (!is_dir($this->image_folder)) {
             if (!mkdir($this->image_folder, 0755, true)) {
-                $this->log .= "无法创建目录：{$this->image_folder}。请检查权限。<br>";
+                $this->log .= __("Unable to create directory: {$this->image_folder}. Please check permissions.", "sakurairo") . '<br>';
                 return $this->log;
             }
         }
 
         if (!is_dir($this->backup_folder)) {
             if (!mkdir($this->backup_folder, 0755, true)) {
-                $this->log .= "无法创建目录：{$this->backup_folder}。请检查权限。<br>";
+                $this->log .= __("Unable to create directory: {$this->backup_folder}. Please check permissions.", "sakurairo") . '<br>';
                 return $this->log;
             }
         }
 
         if (!file_exists($this->image_list)) {
             if (!touch($this->image_list)) {
-                $this->log .= "无法创建文件：{$this->image_list}。请检查权限。<br>";
+                $this->log .= __("Unable to create file: {$this->image_list}. Please check permissions.", "sakurairo") . '<br>';
                 return $this->log;
             }
         }
@@ -85,7 +85,7 @@ class gallery
         //保存索引
         file_put_contents($this->image_list, json_encode($imageFiles));
 
-        $this->log .= "初始化索引成功<br>";
+        $this->log .= __("Successfully initialized the index.", "sakurairo") . '<br>';
         return $this->log;
     }
 
@@ -97,16 +97,16 @@ class gallery
         if (!is_dir($this->backup_folder) || count(scandir($this->backup_folder)) <= 2) { //检查backup目录
             
             if (!rename($this->image_folder, $this->backup_folder)) {
-                $this->log .= "目标目录无法操作，请检查权限配置<br>";
+                $this->log .= __("The target directory is not accessible. Please check the permission settings.", "sakurairo") . '<br>';
                 return $this->log;
             }
             if (!mkdir($this->image_folder, 0755, true)) {
-                $this->log .= "目标目录无法操作，请检查权限配置<br>";
+                $this->log .= __("The target directory is not accessible. Please check the permission settings.", "sakurairo") . '<br>';
                 return $this->log;
             }
-            $this->log .= "成功将img内图片备份至backup<br>";
+            $this->log .= __("Successfully backed up images from the 'img' folder to the 'backup' folder.", "sakurairo") . '<br>';
         } else {
-            $this->log .= "检测到backup文件夹有内容，正在确认并尝试恢复转换操作<br>";
+            $this->log .= __("Detected content in the 'backup' folder. Verifying and attempting to restore conversion operations.", "sakurairo") . '<br>';
         }
 
         $files = scandir($this->backup_folder);
@@ -120,7 +120,7 @@ class gallery
             }
 
             if (file_exists($webpPath)) {
-                $this->log .= "跳过文件：{$file}，已有同名文件<br>"; //跳过同名以支持断点恢复
+                $this->log .= __("Skipped file: {$file}, a file with the same name already exists.", "sakurairo") . '<br>'; //跳过同名以支持断点恢复
                 continue;
             }
 
@@ -128,8 +128,7 @@ class gallery
 
         }
 
-        $this->log .= "所有图片已压缩为webp，原图在backup文件夹。<br>";
-        $this->log .= "请确认无误后重新初始化索引。<br>";
+        $this->log .= __("All images have been compressed to WebP format. The original files are stored in the 'backup' folder.<br> Please confirm correctness before reinitializing the index.<br>", "sakurairo") . '<br>';
 
         return $this->log;
     }
@@ -153,17 +152,17 @@ class gallery
                 $image = imagecreatefromwebp($source);
                 break;
             default:
-                $this->log .= "不支持的文件类型：$filename<br>";
+                $this->log .= __("Unsupported file type: $filename .", "sakurairo") . '<br>';
         }
 
         if ($image) {
             $webpPath = $this->image_folder . '/' . pathinfo($filename, PATHINFO_FILENAME) . '.webp';
             imagewebp($image, $webpPath, 80);
             imagedestroy($image);
-            $this->log .= "已成功转换为 WebP：$filename<br>";
+            $this->log .= __("Successfully converted to WebP: $filename .", "sakurairo") . '<br>';
             return $this->log;
         } else {
-            $this->log .= "无法转换文件：$filename<br>";
+            $this->log .= __("Failed to convert file: $filename .", "sakurairo") . '<br>';
             return $this->log;
         }
     }
@@ -180,7 +179,7 @@ class gallery
         $error_info = array(
             'status' => 500,
             "success" => false,
-            'message' => '没有找到图片，请联系管理员检查iro_gallary目录下是否存在图片且目录可读写'
+            'message' => __("No images found. Please contact the administrator to check if images exist in the 'iro_gallary' directory and ensure the directory is readable and writable.", "sakurairo") . '<br>',
         );
         $error = new \WP_REST_Response($error_info, 500);
         $error->set_status(500);
