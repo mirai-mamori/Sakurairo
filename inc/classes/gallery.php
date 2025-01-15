@@ -92,27 +92,40 @@ class gallery
     //webp优化步骤
     public function webp() {
         $this->log = '';
-        $files = scandir($this->image_folder);
         $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
 
-        $this->log .= "开始转换<br>";
-
-        foreach ($files as $file) {
-            $filePath = $this->image_folder . '/' . $file;
-            $fileExtension = pathinfo($file, PATHINFO_EXTENSION);
-
-            if (in_array(strtolower($fileExtension), $allowedExtensions)) {
-                //备份原图
-                $backupPath = $this->backup_folder . '/' . $file;
-                if (!rename($filePath, $backupPath)) {
-                    $this->log .= "无法备份文件：$file<br>";
-                    $this->log .= "文件权限配置有误，操作终止，请确保所有图片均可读写，部分图片可能已移动至backup目录<br>";
-                    return $this->log;
-                }
-
-                //压缩图片为 WebP 格式
-                $this->convert_to_webp($backupPath, $file);
+        if (!is_dir($this->backup_folder) || count(scandir($this->backup_folder)) <= 2) { //检查backup目录
+            
+            if (!rename($this->image_folder, $this->backup_folder)) {
+                $this->log .= "目标目录无法操作，请检查权限配置<br>";
+                return $this->log;
             }
+            if (!mkdir($this->image_folder, 0755, true)) {
+                $this->log .= "目标目录无法操作，请检查权限配置<br>";
+                return $this->log;
+            }
+            $this->log .= "成功将img内图片备份至backup<br>";
+        } else {
+            $this->log .= "检测到backup文件夹有内容，正在确认并尝试恢复转换操作<br>";
+        }
+
+        $files = scandir($this->backup_folder);
+        foreach ($files as $file) {
+            $backupPath = $this->backup_folder . '/' . $file;
+            $fileExtension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+            $webpPath = $this->image_folder . '/' . pathinfo($file, PATHINFO_FILENAME) . '.webp';
+
+            if (!in_array($fileExtension, $allowedExtensions)) {
+                continue;
+            }
+
+            if (file_exists($webpPath)) {
+                $this->log .= "跳过文件：{$file}，已有同名文件<br>"; //跳过同名以支持断点恢复
+                continue;
+            }
+
+            $this->convert_to_webp($backupPath, $file);
+
         }
 
         $this->log .= "所有图片已压缩为webp，原图在backup文件夹。<br>";
