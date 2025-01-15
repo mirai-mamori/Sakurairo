@@ -28,7 +28,6 @@ class gallery
         if (!is_dir($this->image_dir)) {
             if (!mkdir($this->image_dir, 0755, true)) {
                 $this->log .= "无法创建目录：{$this->image_dir}。请检查权限。<br>";
-                $this->log .= "Unable to create directory: {$this->image_dir}. Please check permissions.<br>";
                 return $this->log;
             }
         }
@@ -36,7 +35,6 @@ class gallery
         if (!is_dir($this->image_folder)) {
             if (!mkdir($this->image_folder, 0755, true)) {
                 $this->log .= "无法创建目录：{$this->image_folder}。请检查权限。<br>";
-                $this->log .= "Unable to create directory: {$this->image_folder}. Please check permissions.<br>";
                 return $this->log;
             }
         }
@@ -44,7 +42,6 @@ class gallery
         if (!is_dir($this->backup_folder)) {
             if (!mkdir($this->backup_folder, 0755, true)) {
                 $this->log .= "无法创建目录：{$this->backup_folder}。请检查权限。<br>";
-                $this->log .= "Unable to create directory: {$this->backup_folder}. Please check permissions.<br>";
                 return $this->log;
             }
         }
@@ -52,14 +49,13 @@ class gallery
         if (!file_exists($this->image_list)) {
             if (!touch($this->image_list)) {
                 $this->log .= "无法创建文件：{$this->image_list}。请检查权限。<br>";
-                $this->log .= "Unable to create file: {$this->image_list}. Please check permissions.<br>";
                 return $this->log;
             }
         }
     }
 
     //生成索引并进行分拣
-    public function init($jump = false) {
+    public function init() {
         $allowedExtensions = ['jpg', 'jpeg', 'bmp', 'png', 'webp', 'gif'];
         $imageFiles = ['long' => [], 'wide' => []];
 
@@ -89,13 +85,8 @@ class gallery
         //保存索引
         file_put_contents($this->image_list, json_encode($imageFiles));
 
-        if (!$jump) {
-            $this->log .= "初始化索引成功<br>";
-            $this->log .= "Index initialization successful.<br>";
-            return $this->log;
-        }
-
-        return $this->get_image();  //初始化完成后开始工作
+        $this->log .= "初始化索引成功<br>";
+        return $this->log;
     }
 
     //webp优化步骤
@@ -105,7 +96,6 @@ class gallery
         $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
 
         $this->log .= "开始转换<br>";
-        $this->log .= "Start to convert.<br>";
 
         foreach ($files as $file) {
             $filePath = $this->image_folder . '/' . $file;
@@ -116,7 +106,8 @@ class gallery
                 $backupPath = $this->backup_folder . '/' . $file;
                 if (!rename($filePath, $backupPath)) {
                     $this->log .= "无法备份文件：$file<br>";
-                    $this->log .= "Unable to backup file: $file<br>";
+                    $this->log .= "文件权限配置有误，操作终止，请确保所有图片均可读写，部分图片可能已移动至backup目录<br>";
+                    return $this->log;
                 }
 
                 //压缩图片为 WebP 格式
@@ -125,9 +116,7 @@ class gallery
         }
 
         $this->log .= "所有图片已压缩为webp，原图在backup文件夹。<br>";
-        $this->log .= "All images have been compressed to webp. The original images are in the backup folder.<br>";
         $this->log .= "请确认无误后重新初始化索引。<br>";
-        $this->log .= "Please re-initlize the index after ensure the result.<br>";
 
         return $this->log;
     }
@@ -152,7 +141,6 @@ class gallery
                 break;
             default:
                 $this->log .= "不支持的文件类型：$filename<br>";
-                $this->log .= "Unsupported file type: $filename<br>";
         }
 
         if ($image) {
@@ -160,11 +148,9 @@ class gallery
             imagewebp($image, $webpPath, 80);
             imagedestroy($image);
             $this->log .= "已成功转换为 WebP：$filename<br>";
-            $this->log .= "Successfully converted to WebP: $filename<br>";
             return $this->log;
         } else {
             $this->log .= "无法转换文件：$filename<br>";
-            $this->log .= "Unable to convert file: $filename<br>";
             return $this->log;
         }
     }
@@ -173,6 +159,10 @@ class gallery
     public function get_image() {
         $imgParam = isset($_GET['img']) ? sanitize_text_field($_GET['img']) : '';
         $imageList = json_decode(file_get_contents($this->image_list), true);
+
+        if (empty($imageList)) {
+            $this->init(true);
+        }
 
         $error_info = array(
             'status' => 500,
