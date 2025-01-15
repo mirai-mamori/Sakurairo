@@ -1590,8 +1590,6 @@ $prefix = 'iro_options';
         'title' => __('Cover Random Image Options','sakurairo_csf'),
         'options' => array(
           'external_api' => __('External API','sakurairo_csf'),
-          'webp_optimization' => __('Webp optimized','sakurairo_csf'),
-          'local' => __('Local','sakurairo_csf'),
           'gallery' => __('Built-in','sakurairo_csf'),
         ),
         'dependency' => array( 'cover_switch', '==', 'true', '', 'true' ),

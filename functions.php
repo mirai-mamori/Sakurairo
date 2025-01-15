@@ -2201,7 +2201,7 @@ function change_avatar($avatar)
     return $avatar;
 }
 
-
+//生成随机链接，防止浏览器缓存策略
 function get_random_url(string $url): string
 {
     $array = parse_url($url);
@@ -2215,27 +2215,23 @@ function get_random_url(string $url): string
     return $url . random_int(1, 100);
 }
 
-
 // default feature image
-function DEFAULT_FEATURE_IMAGE(string $size = 'source'): string
+function DEFAULT_FEATURE_IMAGE()
 {
+    //使用独立外部api
     if (iro_opt('post_cover_options') == 'type_2') {
         return get_random_url(iro_opt('post_cover'));
     }
-    //新的
+    //使用内建
     if (iro_opt('random_graphs_options') == 'gallery') {
         return get_random_url(rest_url('sakura/v1/gallery') . '?img=w');
     }
-    //旧的
+    //使用封面外部
     if (iro_opt('random_graphs_options') == 'external_api') {
         return get_random_url(iro_opt('random_graphs_link'));
     }
-    $_api_url = rest_url('sakura/v1/image/feature');
-    $rand = rand(1, 100);
-    # 拼接符
-    $splice = strpos($_api_url, 'index.php?') !== false ? '&' : '?';
-    $_api_url = "{$_api_url}{$splice}size={$size}&$rand";
-    return $_api_url;
+    //意外情况
+    return get_random_url(rest_url('sakura/v1/gallery') . '?img=w');
 }
 
 //评论回复
