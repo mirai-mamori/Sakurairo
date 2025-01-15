@@ -1,5 +1,8 @@
 <?php
 
+// 内建随机图api
+// 工作目录在wp-content/uploads/iro_gallery
+
 namespace Sakura\API;
 
 class gallery
@@ -183,9 +186,7 @@ class gallery
                     if (!empty($all_images)) {
                         $random_image = $all_images[array_rand($all_images)];
                     } else {
-                        $this->log .= "没有图片。请确保文件夹中有图片。<br>";
-                        $this->log .= "No images available. Please ensure there are images in the folder.<br>";
-                        return $this->log;
+                        return ['status'=>False,'msg'=>'没有找到图片，请联系管理员检查iro_gallary目录下是否存在图片且目录可读写'];
                     }
                 }
             }
@@ -195,9 +196,7 @@ class gallery
             wp_redirect($random_image, 302);
             exit;
         } else {
-            $this->log .= "没有图片。请确保文件夹中有图片。<br>";
-            $this->log .= "No images available. Please ensure there are images in the folder.<br>";
-            return $this->log;
+            return ['status'=>False,'msg'=>'没有找到图片，请联系管理员检查iro_gallary目录下是否存在图片且目录可读写'];
         }
     }
 }
