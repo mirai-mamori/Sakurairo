@@ -3716,7 +3716,7 @@ $prefix = 'iro_options';
       array(
         'type'    => 'content',
         'content' => __('<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </p>'
-        .' <p><strong>Prism.js:</strong> Requires a language to be specified, see <a href="https://prismjs.com/#basic-usage">basic usage</a> and <a href="https://prismjs.com/ plugins/file-highlight/">How to code highlight dynamically loaded files</a>. </p>'
+        .' <p><strong>Prism.js:</strong> Requires a language to be specified, see <a href="https://prismjs.com/#basic-usage">basic usage</a> and <a href="https://prismjs.com/plugins/file-highlight/">How to code highlight dynamically loaded files</a>. </p>'
         .' <p><strong>Custom:</strong> For cases where another configuration is available. </p>','sakurairo_csf'),
       ),
 
