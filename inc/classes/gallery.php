@@ -174,6 +174,14 @@ class gallery
         $imgParam = isset($_GET['img']) ? sanitize_text_field($_GET['img']) : '';
         $imageList = json_decode(file_get_contents($this->image_list), true);
 
+        $error_info = array(
+            'status' => 500,
+            "success" => false,
+            'message' => '没有找到图片，请联系管理员检查iro_gallary目录下是否存在图片且目录可读写'
+        );
+        $error = new \WP_REST_Response($error_info, 500);
+        $error->set_status(500);
+
         if (!empty($imageList)) {
             //img参数优先获取long或wide
             if ($imgParam == 'l' && !empty($imageList['long'])) {
@@ -186,7 +194,7 @@ class gallery
                     if (!empty($all_images)) {
                         $random_image = $all_images[array_rand($all_images)];
                     } else {
-                        return ['status'=>False,'msg'=>'没有找到图片，请联系管理员检查iro_gallary目录下是否存在图片且目录可读写'];
+                        return $error;
                     }
                 }
             }
@@ -196,7 +204,7 @@ class gallery
             wp_redirect($random_image, 302);
             exit;
         } else {
-            return ['status'=>False,'msg'=>'没有找到图片，请联系管理员检查iro_gallary目录下是否存在图片且目录可读写'];
+            return $error;
         }
     }
 }
