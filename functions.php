@@ -2231,7 +2231,7 @@ function DEFAULT_FEATURE_IMAGE()
         return get_random_url(iro_opt('random_graphs_link'));
     }
     //意外情况
-    return get_random_url(rest_url('sakura/v1/gallery') . '?img=w');
+    return get_random_url(iro_opt('random_graphs_link'));
 }
 
 //评论回复
