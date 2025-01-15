@@ -284,7 +284,7 @@ function the_headPattern(){
   $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
   $title_style = get_post_meta(get_the_ID(), 'title_style', true); // 获取自定义字段的值
   if(is_single()){
-    require_once get_stylesheet_directory() . '/tpl/entry-census.php';
+    require_once get_template_directory() . '/tpl/entry-census.php';
     $full_image_url = !empty($full_image_url) ? $full_image_url[0] : null;
     if (have_posts()) : while (have_posts()) : the_post();
     $center = 'single-center';
@@ -337,7 +337,7 @@ function the_video_headPattern(bool $isHls = false)
     }
     $thubm_image_url = !empty($thubm_image_urls) ? $thubm_image_urls[0] : null;
     if (is_single()) {
-      require_once get_stylesheet_directory() . '/tpl/entry-census.php';
+      require_once get_template_directory() . '/tpl/entry-census.php';
         while (have_posts()) {
             the_post();
             $center = 'single-center';

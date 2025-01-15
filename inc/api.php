@@ -84,13 +84,7 @@ add_action('rest_api_init', function () {
     );
     register_rest_route('sakura/v1', '/bangumi', array(
         'methods' => 'POST',
-        'callback' => function ($request) {
-            $userID = $request->get_param('userID');
-            $page = $request->get_param('page') ?: 1;
-
-            $bgmList = new \Sakura\API\BangumiList();
-            return $bgmList->get_bgm_items($userID, (int)$page);
-        },
+        'callback' => 'bgm_bangumi',
         'permission_callback' => '__return_true'
     )
     );
@@ -343,6 +337,23 @@ function get_qq_avatar()
         $response->header('Location', $imgurl);
     }
     return $response;
+}
+
+function bgm_bangumi($request)
+{
+    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+        $response = array(
+            'status' => 403,
+            'success' => false,
+            'message' => 'Unauthorized client.'
+        );
+        return new WP_REST_Response($response, 418);
+    } else {
+        $userID = $request->get_param('userID');
+        $page = $request->get_param('page') ?: 1;
+        $bgmList = new \Sakura\API\BangumiList();
+    }
+    return $bgmList->get_bgm_items($userID, (int)$page);
 }
 
 function bgm_bilibili()
