@@ -73,7 +73,7 @@ class gallery
                     $filePath = '/iro_gallery/img/' . $file;
 
                     //根据比例分拣图片
-                    if ($width / $height < 9 / 16) {
+                    if ($width / $height < 3 / 4) {
                         $imageFiles['long'][] = $filePath;
                     } else {
                         $imageFiles['wide'][] = $filePath;
