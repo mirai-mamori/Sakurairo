@@ -1576,7 +1576,7 @@ function memory_archives_list()
         $mon_tmp = get_post_time('m', false, $post);
         $post_id = $post->ID;
         $post_views = get_post_views($post_id);
-        if ($mon != $mon_tmp && $mon > 0) {
+        if (($year != $year_tmp && $year > 0) || ($mon != $mon_tmp && $mon > 0)) {
             $output .= '</ul></li>';
         }
 
@@ -1585,13 +1585,13 @@ function memory_archives_list()
         }
 
         if ($year != $year_tmp) {
-            $year = $year_tmp;
-            $output .= '<h3 class="al_year">' . $year . __(" year", "sakurairo") . /*年*/' </h3><ul class="al_mon_list">'; //输出年份
+            $output .= '<h3 class="al_year">' . $year_tmp . __(" year", "sakurairo") . /*年*/' </h3><ul class="al_mon_list">'; //输出年份
         }
-        if ($mon != $mon_tmp) {
-            $mon = $mon_tmp;
+        if ($year != $year_tmp || $mon != $mon_tmp) {
             $output .= '<li class="al_li"><span class="al_mon"><span style="color:' . iro_opt('theme_skin') . ';">' . get_post_time('M', false, $post) . '</span> (<span id="post-num"></span>' . __(" post(s)", "sakurairo") /*篇文章*/. ')</span><ul class="al_post_list">'; //输出月份
         }
+        $year = $year_tmp;
+        $mon = $mon_tmp;
         $output .= '<li>' . '<a href="' . get_permalink($post) . '"><span style="color:' . iro_opt('theme_skin') . ';">' /*get_post_time('d'.__(" ","sakurairo"), false, $post) 日*/. '</span>' . get_the_title($post) . ' <span>(' . $post_views . ' <span class="fa-solid fa-chess-queen" aria-hidden="true"></span> / ' . get_comments_number($post) . ' <span class="fa-regular fa-comment-dots" aria-hidden="true"></span>)</span></a></li>';
     }
     wp_reset_postdata();
