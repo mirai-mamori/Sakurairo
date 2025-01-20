@@ -190,8 +190,7 @@ class Images
         if (iro_opt('random_graphs_options') == 'local') {
             // $img_array = glob(STYLESHEETPATH . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
             // Alpine不支持GLOB_BRACE常量，出于兼容性考虑，不使用glob函数
-            // 自 wordpress 6.4.0 起，弃用了STYLESHEETPATH定义. 为确保子主题能正常使用，应当使用get_template_directory()接口
-            $folderPath = get_template_directory() . '/manifest/gallary/';
+            $folderPath = STYLESHEETPATH . '/manifest/gallary/';
             $allowedExtensions = array('jpg', 'jpeg', 'png', 'gif');
             $img_array = array();
             $files = scandir($folderPath);
@@ -199,7 +198,7 @@ class Images
                 // 检查文件扩展名是否在允许的范围内
                 $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
                 if (in_array($extension, $allowedExtensions)) {
-                    $img_array[] =  get_template_directory() . '/manifest/gallary/' . $file;
+                    $img_array[] =  STYLESHEETPATH . '/manifest/gallary/' . $file;
                 }
             }
 
@@ -208,12 +207,12 @@ class Images
             }
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
-            $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
+            $imgurl = str_replace(STYLESHEETPATH, get_template_directory_uri(), $imgurl);
         } elseif (iro_opt('random_graphs_options') == 'external_api') {
             $imgurl = iro_opt('random_graphs_link');
         } else {
             // global $sakura_image_array;
-            $temp = file_get_contents(get_template_directory() . "/manifest/manifest.json");
+            $temp = file_get_contents(STYLESHEETPATH . "/manifest/manifest.json");
             // $img_array = json_decode($sakura_image_array, true);
             $img_array = json_decode($temp, true);
             if (!$img_array){
@@ -234,9 +233,9 @@ class Images
 
     public static function mobile_cover_gallery() {
         if (iro_opt('random_graphs_options') == 'local') {
-            // $img_array = glob(get_template_directory() . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
+            // $img_array = glob(STYLESHEETPATH . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
             
-            $folderPath = get_template_directory() . '/manifest/gallary/';
+            $folderPath = STYLESHEETPATH . '/manifest/gallary/';
 
             $allowedExtensions = array('jpg', 'jpeg', 'png', 'gif', 'webp');
             $img_array = array();
@@ -246,7 +245,7 @@ class Images
                 // 检查文件扩展名是否在允许的范围内
                 $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
                 if (in_array($extension, $allowedExtensions)) {
-                    $img_array[] =  get_template_directory() . '/manifest/gallary/' . $file;
+                    $img_array[] =  STYLESHEETPATH . '/manifest/gallary/' . $file;
                 }
             }
 
@@ -255,13 +254,13 @@ class Images
             }
             $img = array_rand($img_array);
             $imgurl = trim($img_array[$img]);
-            $imgurl = str_replace(get_template_directory(), get_template_directory_uri(), $imgurl);
+            $imgurl = str_replace(STYLESHEETPATH, get_template_directory_uri(), $imgurl);
         } elseif (iro_opt('random_graphs_options') == 'external_api') {
           //$imgurl = iro_opt('random_graphs_link');
            $imgurl = iro_opt('random_graphs_link_mobile');
         } else {
             // global $sakura_mobile_image_array;
-            $temp = file_get_contents(get_template_directory() . '/manifest/manifest_mobile.json');
+            $temp = file_get_contents(STYLESHEETPATH . '/manifest/manifest_mobile.json');
             // $img_array = json_decode($sakura_mobile_image_array, true);
             $img_array = json_decode($temp, true);
             if (!$img_array){
