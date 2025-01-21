@@ -46,6 +46,14 @@ function set_homepage_controls($wp_customize) {
 	$wp_customize->remove_control('page_on_front');
     // 为静态页面选择器添加描述
     $wp_customize->get_control('page_for_posts')->description = '在文章列表上方显示一个静态页面';
+
+
+    // 从阅读设置中移除「主页显示」设置部分
+    remove_settings_section('default', 'reading');
+    remove_settings_field('show_on_front', 'reading');
+    remove_settings_field('page_on_front', 'reading');
+    remove_settings_field('page_for_posts', 'reading');
+
 }
 add_action('customize_register', 'set_homepage_controls');
 
