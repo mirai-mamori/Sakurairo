@@ -1,5 +1,5 @@
 <?php
-include(get_stylesheet_directory().'/layouts/all_opt.php');
+include(get_template_directory().'/layouts/all_opt.php');
 $text_logo = iro_opt('text_logo');
 if (iro_opt('social_display_icon', '') === 'display_icon/remix_iconfont'): ?>
     <link rel="stylesheet" href="<?=iro_opt('vision_resource_basepath'); ?>display_icon/remix_iconfont/remix_social.css">
@@ -50,7 +50,6 @@ $print_social_zone = function() use ($all_opt): void {
         </a></li>
     <?php
     endif;
-
 }
 ?>
 
@@ -97,12 +96,6 @@ $print_social_zone = function() use ($all_opt): void {
                 <div class="top-social">
                     <?php $print_social_zone(); ?>
                 </div>
-            <?php endif; ?>
-
-            <?php if (iro_opt('cover_random_graphs_switch', 'true')): ?>
-            <div class="bg-switch">
-            <li id="bg-next" style="display: flex; gap: 6px; align-items: center; letter-spacing: 1px;"><i class="fa-solid fa-dice"></i><?= __('Change', 'sakurairo') ?></li>
-            </div>
             <?php endif; ?>
 
         </div>

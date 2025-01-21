@@ -194,7 +194,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
         }
       }
 
-      if ( $this->args['save_defaults'] && empty( $tmp_options ) ) {
+      if ( $this->args['save_defaults'] && !empty(array_diff_key($this->options, $tmp_options))) {
         $this->save_options( $this->options );
       }
 

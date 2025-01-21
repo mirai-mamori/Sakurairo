@@ -42,6 +42,7 @@ function font_end_js_control()
     } else {
         $gravatar_url = iro_opt('gravatar_proxy') ?: 'secure.gravatar.com/avatar';
     }
+    $lightbox = iro_opt('lightbox');
     $iro_opt = [
         // Poi
         'pjax' => check(iro_opt('poi_pjax')),
@@ -57,8 +58,8 @@ function font_end_js_control()
         // options
         'NProgressON' => check(iro_opt('nprogress_on')),
         'audio' => check(iro_opt('note_effects')),
-        'baguetteBox' => check(iro_opt('baguetteBox')),
-        'fancybox' => check(iro_opt('fancybox')),
+        'baguetteBox' => check($lightbox === 'baguetteBox'),
+        'fancybox' => check($lightbox === 'fancybox'),
         'darkmode' => check(iro_opt('theme_darkmode_auto')),
         'email_domain' => iro_opt('email_domain', ''),
         'email_name' => iro_opt('email_name', ''),
@@ -80,7 +81,7 @@ function font_end_js_control()
         'comment_upload_img' => iro_opt('img_upload_api') == 'off' ? false : true,
         'cache_cover' => check(iro_opt('cache_cover')),
         'site_bg_as_cover' => check(iro_opt('site_bg_as_cover')),
-        'yiyan_api' => empty(iro_opt('yiyan')) ? ["https://v1.hitokoto.cn/", "https://api.nmxc.ltd/yiyan/"] : json_decode(iro_opt('yiyan_api')),
+        'yiyan_api' => empty(iro_opt('yiyan_api')) ? ["https://v1.hitokoto.cn/", "https://api.nmxc.ltd/yiyan/"] : json_decode(iro_opt('yiyan_api')),
         'skin_bg0' => '',
         'skin_bg1' => $vision_resource_basepath . 'background/foreground/bg1.png',
         'skin_bg2' => $vision_resource_basepath . 'background/foreground/bg2.png',
@@ -103,7 +104,7 @@ function font_end_js_control()
     !empty($reception_background['img3']) && $iro_opt['skin_bg2'] = $reception_background['img3'];
     !empty($reception_background['img4']) && $iro_opt['skin_bg3'] = $reception_background['img4'];
     !empty($reception_background['img5']) && $iro_opt['skin_bg4'] = $reception_background['img5'];
-    if (iro_opt('lightgallery')) {
+    if ($lightbox === 'lightgallery') {
         # 请务必使用正确标准的json格式
         $lightGallery = str_replace(PHP_EOL, '', iro_opt('lightgallery_option'));
         $iro_opt['lightGallery'] = json_decode($lightGallery, true);

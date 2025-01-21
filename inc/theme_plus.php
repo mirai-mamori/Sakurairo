@@ -284,7 +284,7 @@ function the_headPattern(){
   $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
   $title_style = get_post_meta(get_the_ID(), 'title_style', true); // 获取自定义字段的值
   if(is_single()){
-    require_once get_stylesheet_directory() . '/tpl/entry-census.php';
+    require_once get_template_directory() . '/tpl/entry-census.php';
     $full_image_url = !empty($full_image_url) ? $full_image_url[0] : null;
     if (have_posts()) : while (have_posts()) : the_post();
     $center = 'single-center';
@@ -337,7 +337,7 @@ function the_video_headPattern(bool $isHls = false)
     }
     $thubm_image_url = !empty($thubm_image_urls) ? $thubm_image_urls[0] : null;
     if (is_single()) {
-      require_once get_stylesheet_directory() . '/tpl/entry-census.php';
+      require_once get_template_directory() . '/tpl/entry-census.php';
         while (have_posts()) {
             the_post();
             $center = 'single-center';
@@ -402,7 +402,7 @@ function header_user_menu()
     $ava = iro_opt('personal_avatar') ? iro_opt('personal_avatar') : get_avatar_url($current_user->user_email);
   ?>
     <div class="header-user-avatar">
-      <img alt="header_user_avatar" src="<?php echo get_avatar_url($current_user->ID,  [64]);/*$ava;*/ ?>" width="30" height="30">
+      <img alt="header_user_avatar" src="<?php echo get_avatar_url($current_user->ID,  [64]);/*$ava;*/ ?>" width="35" height="35">
       <div class="header-user-menu">
         <div class="header-user-name">
           <?php _e("Signed in as", "sakurairo") ?>
@@ -422,13 +422,15 @@ function header_user_menu()
   } else {
     $ava = iro_opt('unlisted_avatar');
     global $wp;
-    //https://wordpress.stackexchange.com/questions/274569/how-to-get-url-of-current-page-displayed
-    //可以测试一下对不同的固定链接的兼容性
     $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(iro_opt('login_urlskip') ? '' : add_query_arg($wp->query_vars, home_url($wp->request)));
   ?>
     <div class="header-user-avatar">
       <a href="<?= $login_url ?>">
-        <img alt="header_user_avatar" src="<?= $ava ?>" width="30" height="30">
+        <?php if ($ava): ?>
+          <img alt="header_user_avatar" src="<?= $ava ?>" width="35" height="35">
+        <?php else: ?>
+          <i class="fa-solid fa-circle-user"></i>
+        <?php endif; ?>
       </a>
       <div class="header-user-menu">
         <div class="header-user-name no-logged">

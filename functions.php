@@ -10,9 +10,8 @@
 
 include_once('inc/classes/IpLocation.php');
 
-
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '19.2.0');
+define('INT_VERSION', '19.3.0');
 define('BUILD_VERSION', '2');
 
 function check_php_version($preset_version)
@@ -50,7 +49,7 @@ $core_lib_basepath = iro_opt('core_library_basepath') ? get_template_directory_u
 /**
  * composer autoload
  */
-if ((check_php_version('7.4.0')) && iro_opt('composer_load')) {
+if ((check_php_version('8.0.0')) && iro_opt('composer_load')) {
     require_once 'vendor/autoload.php';
 }
 
@@ -80,6 +79,14 @@ switch (iro_opt('iro_update_source')) {
 //ini_set('display_errors', true);
 //error_reporting(E_ALL);
 error_reporting(E_ALL & ~E_NOTICE);
+
+add_action('init', 'set_user_locale');
+function set_user_locale() {
+    if (is_user_logged_in()) {
+        $user_locale = get_user_locale();
+        switch_to_locale($user_locale);
+    }
+}
 
 if (!function_exists('akina_setup')) {
     function akina_setup()
@@ -387,12 +394,39 @@ function save_custom_meta_box($post_id) {
 }
 add_action('save_post', 'save_custom_meta_box');
 
-function include_shuoshuo_in_main_query($query) {
-    if ($query->is_main_query() && !is_admin() && (is_home() || is_archive())) {
-        $query->set('post_type', array('post', 'shuoshuo'));
+//合并检索方法
+function customize_query_functions($query) {
+    //只影响前端
+    if ($query->is_main_query() && !is_admin()) {
+        //主页显示文章
+        if (is_home()) {
+            $post_types = array('post');
+        //index引用content-thumb，其中根据设置项决定是否在主页显示说说
+            $query->set('post_type', $post_types);
+        } elseif (is_archive() || is_category() || is_author()) {
+            // 保持其他页面的原有逻辑
+            $query->set('post_type', array('post', 'shuoshuo'));
+        }
+
+        // 在搜索页面中排除分类页和特定类别
+        if ($query->is_search) {
+            $post_types = array('post', 'link');
+            //基础类型排除说说和页面，用户自行选择是否展示，默认开启
+            $query->set('post_type', $post_types);
+            $tax_query = array(
+                array(
+                    'taxonomy' => 'category',
+                    'field'    => 'name',
+                    'terms'    => get_search_query(),
+                    'operator' => 'NOT IN'
+                )
+            );
+            $query->set('tax_query', $tax_query);
+        }
     }
 }
-add_action('pre_get_posts', 'include_shuoshuo_in_main_query');
+
+add_action('pre_get_posts', 'customize_query_functions');
 
 function admin_lettering()
 {
@@ -441,7 +475,7 @@ function sakura_scripts()
         wp_enqueue_script('comment-reply');
     }
     //前端脚本本地化
-    if (get_locale() != 'zh_CN') {
+    if (get_user_locale() != 'zh_CN') {
         wp_localize_script(
             'app',
             '_sakurairoi18n',
@@ -576,6 +610,9 @@ function get_author_class($comment_author_email, $user_id)
         if ($value >= $author_count)
             break;
         $Lv = $key;
+        if (user_can($user_id, 'administrator')) {
+            $Lv = 6;
+        }
     }
 
     // $Lv = $author_count < 5 ? 0 : ($author_count < 10 ? 1 : ($author_count < 20 ? 2 : ($author_count < 40 ? 3 : ($author_count < 80 ? 4 : ($author_count < 160 ? 5 : 6)))));
@@ -748,6 +785,35 @@ function visual_resource_updates($specified_version, $option_name, $new_value)
 
 visual_resource_updates('2.5.6', 'vision_resource_basepath', '2.7/');
 
+function unlisted_avatar_updates() {
+    $theme = wp_get_theme();
+    $current_version = $theme->get('Version');
+
+    // Check if the function has already been triggered
+    $function_triggered = get_transient('unlisted_avatar_updates_triggered19');
+    if ($function_triggered) {
+        return; // Function has already been triggered, do nothing
+    }
+
+    if (version_compare($current_version, '2.5.6', '>')) {
+        $option_value = iro_opt('unlisted_avatar');
+        $old_values = array(
+            'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/topavatar.png',
+            'https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/topavatar.png',  
+            'https://s.nmxc.ltd/sakurairo_vision/@2.5/basic/topavatar.png'
+        );
+        
+        if (in_array($option_value, $old_values)) {
+            iro_opt_update('unlisted_avatar', '');
+        }
+
+        // Set transient to indicate that the function has been triggered
+        set_transient('unlisted_avatar_updates_triggered19', true);
+    }
+}
+
+unlisted_avatar_updates();
+
 function gfonts_updates($specified_version, $option_name)
 {
     $theme = wp_get_theme();
@@ -847,14 +913,6 @@ function wpjam_custom_upload_dir($uploads)
 {
     /*     $upload_path = '';
      */$upload_url_path = iro_opt('image_cdn');
-
-    /*     if (empty($upload_path) || 'wp-content/uploads' == $upload_path) {
-            $uploads['basedir'] = WP_CONTENT_DIR . '/uploads';
-        } elseif (0 !== strpos($upload_path, ABSPATH)) {
-            $uploads['basedir'] = path_join(ABSPATH, $upload_path);
-        } else {
-            $uploads['basedir'] = $upload_path;
-        } */
 
     $uploads['path'] = $uploads['basedir'] . $uploads['subdir'];
 
@@ -1046,15 +1104,11 @@ function smallenvelop_login_message($message)
 {
     return empty($message) ? '<p class="message"><strong>You may try 3 times for every 5 minutes!</strong></p>' : $message;
 }
-//add_filter( 'login_message', 'smallenvelop_login_message' );
 
 //Fix password reset bug </>
 function resetpassword_message_fix($message)
 {
     return str_replace(['>', '<'], '', $message);
-    // $message = str_replace('<', '', $message);
-    // $message = str_replace('>', '', $message);
-    // return $message;
 }
 add_filter('retrieve_password_message', 'resetpassword_message_fix');
 
@@ -1308,8 +1362,31 @@ function update_custom_smilies_list()
         delete_transient("custom_smilies_list");
         $custom_smilies_list = get_custom_smilies_list();
         $much = count($custom_smilies_list);
-        echo '自定义表情列表更新完成！总共有' . $much . '个表情。';
+        $custom_smilies_dir = iro_opt('smilies_dir');
+        $custom_smilies_path = wp_get_upload_dir()['basedir'] . $custom_smilies_dir;
+        echo '自定义表情列表更新完成！总共有' . $much . '个表情。<br>';
+        echo 'Custom smilies updated!Total' . $much . '.';
+        echo "<pre>调试信息：
+        - 表情目录设置为: $custom_smilies_dir
+        - 实际读取的路径为: $custom_smilies_path
+        Debug info:
+        - Smilies path set is: $custom_smilies_dir
+        - The directory actually read is: $custom_smilies_path
+        </pre>
+        <p>以下图片已被收录至自定义表情中（The following images have been included in the custom emoticons）：</p>";
     }
+    if (!empty($custom_smilies_list)) {
+            echo '<ul style="list-style: none; padding: 0; max-width: 600px;">';
+            foreach ($custom_smilies_list as $smiley) {
+                echo '<li style="margin-bottom: 10px; display: flex; align-items: center;">';
+                echo '<img src="' . esc_url($smiley['file_url']) . '" alt="' . esc_attr($smiley['base_name']) . '" style="height: 60px; margin-right: 10px;">';
+                echo '<span>' . esc_html($smiley['base_name']) . '</span>';
+                echo '</li>';
+            }
+            echo '</ul>';
+        } else {
+            echo '<p>没有任何图片被加入表情包中（No emoticons found）。</p>';
+        }
 }
 update_custom_smilies_list();
 
@@ -1544,7 +1621,7 @@ function siren_private()
 function memory_archives_list()
 {
     // 尝试从缓存中获取结果
-    $cache_key = 'memory_archives_list_' . get_locale();
+    $cache_key = 'memory_archives_list_' . get_user_locale();
     $output = get_transient($cache_key);
 
     if ($output !== false) {
@@ -1603,7 +1680,7 @@ function memory_archives_list()
 // 在保存文章后清空缓存
 function clear_memory_archives_list_cache($post_id)
 {
-    delete_transient('memory_archives_list_' . get_locale());
+    delete_transient('memory_archives_list_' . get_user_locale());
 }
 add_action('save_post', 'clear_memory_archives_list_cache');
 
@@ -1714,15 +1791,6 @@ add_filter('the_excerpt', 'excerpt_length', 11);
 /*
  * 后台路径
  */
-/*
-add_filter('site_url',  'wpadmin_filter', 10, 3);
-function wpadmin_filter( $url, $path, $orig_scheme ) {
-$old  = array( "/(wp-admin)/");
-$admin_dir = WP_ADMIN_DIR;
-$new  = array($admin_dir);
-return preg_replace( $old, $new, $url, 1);
-}
- */
 
 function admin_ini()
 {
@@ -1755,7 +1823,7 @@ function theme_admin_notice_callback()
 
     // 显示通知
     $theme_name = 'Sakurairo';
-    switch (get_locale()) {
+    switch (get_user_locale()) {
         case 'zh_CN':
             $thankyou = '感谢你使用 ' . $theme_name . ' 主题！这里有一些需要你的许可的东西(*/ω＼*)';
             $dislike = '不，谢谢';
@@ -2066,7 +2134,6 @@ function html_tag_parser($content)
     return $content;
 }
 add_filter('the_content', 'html_tag_parser'); //替换文章关键词
-//add_filter( 'comment_text', 'html_tag_parser' );//替换评论关键词
 
 /*
  * QQ 评论
@@ -2325,8 +2392,54 @@ function register_shortcodes() {
     });
 
     add_shortcode('ghcard', function($attr, $content = '') {
-        $atts = shortcode_atts(array("path" => ""), $attr);
-        return '<div class="ghcard"><a href="https://github.com/' . esc_attr($atts['path']) . '"><img src="https://github-readme-stats.vercel.app/api' . esc_html($content) . '" alt="Github-Card"></a></div>';
+        //获取内容
+        $atts = shortcode_atts(array("path" => "mirai-mamori/Sakurairo"), $attr);
+
+        $path = trim($atts['path']);
+
+        if (strpos($path, 'https://github.com/') === 0) {
+            $path = str_replace('https://github.com/', '', $path);
+        }
+
+        if (!preg_match('/^[a-zA-Z0-9_-]+\/[a-zA-Z0-9_.-]+$/', $path)) {
+            return '<p>Invalid GitHub repository path: ' . esc_html($path) . '</p>';
+        }
+    
+        list($username, $repo) = explode('/', $path, 2);
+    
+        //构造卡片内容
+        $card_content = '';
+    
+        if (iro_opt('ghcard_proxy')) {
+            
+            $svg_url = 'https://github-readme-stats.vercel.app/api/pin/?username=' . esc_attr($username) . '&repo=' . esc_attr($repo);
+            $response = wp_remote_get($svg_url);
+    
+            if (!is_wp_error($response)) {
+                $svg_content = wp_remote_retrieve_body($response);
+                if (!empty($svg_content)) {
+                    $card_content = $svg_content;
+                } else {
+                    $card_content = '';
+                }
+            } else {
+                $card_content = '';
+            }
+        }
+    
+        //获取失败或未启用代理
+        if (empty($card_content)) {
+            $card_content = '<img decoding="async" src="https://github-readme-stats.vercel.app/api/pin/?username=' . esc_attr($username) . '&repo=' . esc_attr($repo) . '" alt="Github-Card">';
+        }
+    
+        //输出内容
+        $ghcard = '<div class="ghcard">';
+        $ghcard .= '<a href="https://github.com/' . esc_attr($path) . '">';
+        $ghcard .= $card_content;
+        $ghcard .= '</a>';
+        $ghcard .= '</div>';
+    
+        return $ghcard;
     });
 
     add_shortcode('showcard', function($attr, $content = '') {
@@ -2378,7 +2491,7 @@ function register_shortcodes() {
         <a href="javascript:void(0)" class="collapseButton">
             <div class="collapse shortcodestyle">
                 <i class="fa-solid fa-angle-down"></i>
-                <span class="title"><?= $atts['title'] ?></span>
+                <span class="xTitle"><?= $atts['title'] ?></span>
                 <span class="ecbutton"><?php _e('Expand / Collapse', 'sakurairo'); ?></span>
             </div>
         </a>
@@ -2615,27 +2728,6 @@ if (iro_opt('show_location_in_manage')) {
     add_filter('manage_edit-comments_columns', 'iro_add_location_to_comments_columns');
     add_action('manage_comments_custom_column', 'iro_output_ip_location_columns', 10, 2);
 }
-
-// Modify search query to exclude pages and categories(修改搜索查询以排除'页面'和'类别')
-function exclude_pages_and_categories_from_search($query) {
-    if (!is_admin() && $query->is_search) {
-        // Exclude pages
-        $query->set('post_type', array('post', 'shuoshuo', 'link')); // Include other post types but exclude 'page'
-
-        // Exclude categories
-        $tax_query = array(
-            array(
-                'taxonomy' => 'category',
-                'field' => 'name',
-                'terms' => get_search_query(),
-                'operator' => 'NOT IN'
-            )
-        );
-        $query->set('tax_query', $tax_query);
-    }
-    return $query;
-}
-add_filter('pre_get_posts', 'exclude_pages_and_categories_from_search');
 
 function iterator_to_string(Iterator $iterator): string
 {
