@@ -1895,6 +1895,33 @@ function theme_admin_notice_callback()
 }
 add_action('admin_notices', 'theme_admin_notice_callback');
 
+/*
+ * 检查当前启用的主题文件夹名称是否为 "Sakurairo"
+ * 如果不是，且用户是管理员，则显示管理员警告信息
+ */
+
+// 在主题启用时执行检查
+function theme_installation_check() {
+    $theme_folder_name = get_template();
+
+    // 如果主题文件夹名称不是 "Sakurairo"，且是管理员用户，显示警告信息
+    if ($theme_folder_name !== 'Sakurairo' && current_user_can('administrator')) {
+        add_action('admin_notices', 'theme_installation_warning');
+    }
+}
+
+add_action('after_switch_theme', 'theme_installation_check');
+
+// 显示管理员警告信息
+function theme_installation_warning() {
+    $theme_folder_name = get_template();
+    ?>
+    <div class="notice notice-error">
+        <p><strong>警告：</strong> 当前启用的主题文件夹名称不是 "Sakurairo"。当前的目录名称为：<?php echo esc_html($theme_folder_name); ?>。请确认您已安装正确的主题。</p>
+    </div>
+    <?php
+}
+
 // AJAX 处理函数 - 更新主题选项
 add_action('wp_ajax_update_theme_option', 'update_theme_option');
 function update_theme_option()
