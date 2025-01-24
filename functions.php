@@ -1895,32 +1895,52 @@ function theme_admin_notice_callback()
 }
 add_action('admin_notices', 'theme_admin_notice_callback');
 
-/*
- * 检查当前启用的主题文件夹名称是否为 "Sakurairo"
- * 如果不是，且用户是管理员，则显示管理员警告信息
+/**
+ * 检查父主题文件夹名称是否正确
+ * 如果名称不正确，尝试重命名或显示管理员警告信息
  */
 
-// 在主题启用时执行检查
-function theme_installation_check() {
-    $theme_folder_name = get_template();
+function theme_folder_check_on_admin_init() {
+    // 获取当前父主题文件夹名称
+    $theme_folder_name = basename(get_template_directory());
+    $correct_theme_folder = 'Sakurairo';
 
-    // 如果主题文件夹名称不是 "Sakurairo"，且是管理员用户，显示警告信息
-    if ($theme_folder_name !== 'Sakurairo' && current_user_can('administrator')) {
-        add_action('admin_notices', 'theme_installation_warning');
+    // 如果主题文件夹名称不正确，且用户是管理员
+    if ($theme_folder_name !== $correct_theme_folder && current_user_can('administrator')) {
+        $current_theme_path = get_template_directory();
+        $correct_theme_path = trailingslashit(dirname($current_theme_path)) . $correct_theme_folder;
+
+        // 如果目标路径已存在，显示警告信息
+        if (file_exists($correct_theme_path)) {
+            add_action('admin_notices', function () use ($theme_folder_name, $correct_theme_folder) {
+                ?>
+                <div class="notice notice-error is-dismissible">
+                    <p><strong>警告：</strong> 当前父主题文件夹名称为 <code><?php echo esc_html($theme_folder_name); ?></code>，但目标名称 <code><?php echo esc_html($correct_theme_folder); ?></code> 已存在。请手动检查主题文件夹。</p>
+                </div>
+                <?php
+            });
+            return;
+        }
+
+        // 尝试重命名文件夹
+        if (rename($current_theme_path, $correct_theme_path)) {
+            // 如果重命名成功，切换到目标主题
+            switch_theme($correct_theme_folder);
+        } else {
+            // 如果重命名失败，显示警告信息
+            add_action('admin_notices', function () use ($theme_folder_name, $correct_theme_folder) {
+                ?>
+                <div class="notice notice-error is-dismissible">
+                    <p><strong>警告：</strong> 当前父主题文件夹名称为 <code><?php echo esc_html($theme_folder_name); ?></code>，无法重命名为 <code><?php echo esc_html($correct_theme_folder); ?></code>。请检查文件系统权限。</p>
+                </div>
+                <?php
+            });
+        }
     }
 }
 
-add_action('after_switch_theme', 'theme_installation_check');
-
-// 显示管理员警告信息
-function theme_installation_warning() {
-    $theme_folder_name = get_template();
-    ?>
-    <div class="notice notice-error">
-        <p><strong>警告：</strong> 当前启用的主题文件夹名称不是 "Sakurairo"。当前的目录名称为：<?php echo esc_html($theme_folder_name); ?>。请确认您已安装正确的主题。</p>
-    </div>
-    <?php
-}
+// 在后台初始化时执行检查
+add_action('admin_init', 'theme_folder_check_on_admin_init');
 
 // AJAX 处理函数 - 更新主题选项
 add_action('wp_ajax_update_theme_option', 'update_theme_option');
