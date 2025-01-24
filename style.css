@@ -3514,6 +3514,10 @@ iframe {
   border: 1.5px solid #FFFFFF;
 }
 
+.toc::-webkit-scrollbar-track {
+  margin: 2.5px !important;
+}
+
 .toc:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.8);
