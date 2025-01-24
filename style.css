@@ -3515,7 +3515,7 @@ iframe {
 }
 
 .toc::-webkit-scrollbar-track {
-  margin: 2.5px !important;
+  margin: 1px !important;
 }
 
 .toc:hover {
