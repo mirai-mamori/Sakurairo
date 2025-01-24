@@ -1906,7 +1906,7 @@ function theme_folder_check_on_admin_init() {
     $correct_theme_folder = 'Sakurairo';
 
     // 如果主题文件夹名称不正确，且用户是管理员
-    if ($theme_folder_name !== $correct_theme_folder && current_user_can('administrator')) {
+    if ($theme_folder_name !== $correct_theme_folder && current_user_can('manage_options')) {
         $current_theme_path = get_template_directory();
         $correct_theme_path = trailingslashit(dirname($current_theme_path)) . $correct_theme_folder;
 
