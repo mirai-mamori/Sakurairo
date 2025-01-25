@@ -3777,7 +3777,7 @@ iframe {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
   overflow: hidden;
   border-radius: 15px;
-  margin: 6px 6.5px 0 6.5px;
+  margin: 6px 3px 0 3px;
 }
 
 .the-feature.from_left_and_right .img {
