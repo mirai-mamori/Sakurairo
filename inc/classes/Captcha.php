@@ -83,7 +83,8 @@ class Captcha
         
         //创建验证码
         $this->create_captcha();
-        $font = STYLESHEETPATH . '/inc/KumoFont.ttf';
+        // 自 wordpress 6.4.0 起，弃用了STYLESHEETPATH定义. 为确保子主题能正常使用，应当使用get_template_directory()接口
+        $font = get_template_directory() . '/inc/KumoFont.ttf';
         
         //创建画布
         $image = imagecreatetruecolor(210, 60);
