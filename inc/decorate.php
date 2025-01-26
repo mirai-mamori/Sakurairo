@@ -759,11 +759,7 @@ body.dark .site-branding{
 
 <?php if (iro_opt('exhibition_area_compat', 'true')): ?>
 .the-feature.from_left_and_right {
-    position: relative;
     border-radius: <?=iro_opt('exhibition_radius', ''); ?>px;
-    height: 160px;
-    width: 258px;
-    margin: 6px 6px 0 6px;
 }
 
 .the-feature img {

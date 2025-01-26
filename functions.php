@@ -1653,7 +1653,7 @@ function memory_archives_list()
         $mon_tmp = get_post_time('m', false, $post);
         $post_id = $post->ID;
         $post_views = get_post_views($post_id);
-        if ($mon != $mon_tmp && $mon > 0) {
+        if (($year != $year_tmp && $year > 0) || ($mon != $mon_tmp && $mon > 0)) {
             $output .= '</ul></li>';
         }
 
@@ -1662,13 +1662,13 @@ function memory_archives_list()
         }
 
         if ($year != $year_tmp) {
-            $year = $year_tmp;
-            $output .= '<h3 class="al_year">' . $year . __(" year", "sakurairo") . /*年*/' </h3><ul class="al_mon_list">'; //输出年份
+            $output .= '<h3 class="al_year">' . $year_tmp . __(" year", "sakurairo") . /*年*/' </h3><ul class="al_mon_list">'; //输出年份
         }
-        if ($mon != $mon_tmp) {
-            $mon = $mon_tmp;
+        if ($year != $year_tmp || $mon != $mon_tmp) {
             $output .= '<li class="al_li"><span class="al_mon"><span style="color:' . iro_opt('theme_skin') . ';">' . get_post_time('M', false, $post) . '</span> (<span id="post-num"></span>' . __(" post(s)", "sakurairo") /*篇文章*/. ')</span><ul class="al_post_list">'; //输出月份
         }
+        $year = $year_tmp;
+        $mon = $mon_tmp;
         $output .= '<li>' . '<a href="' . get_permalink($post) . '"><span style="color:' . iro_opt('theme_skin') . ';">' /*get_post_time('d'.__(" ","sakurairo"), false, $post) 日*/. '</span>' . get_the_title($post) . ' <span>(' . $post_views . ' <span class="fa-solid fa-chess-queen" aria-hidden="true"></span> / ' . get_comments_number($post) . ' <span class="fa-regular fa-comment-dots" aria-hidden="true"></span>)</span></a></li>';
     }
     wp_reset_postdata();
@@ -1901,16 +1901,21 @@ add_action('admin_notices', 'theme_admin_notice_callback');
  */
 
 function theme_folder_check_on_admin_init() {
-    // 获取当前父主题文件夹名称
-    $theme_folder_name = basename(get_template_directory());
+    // 获取当前父主题文件夹名称及路径
+    $current_theme_path = get_template_directory();
+    $theme_folder_name = basename($current_theme_path);
     $correct_theme_folder = 'Sakurairo';
 
-    // 如果主题文件夹名称不正确，且用户是管理员
-    if ($theme_folder_name !== $correct_theme_folder && current_user_can('manage_options')) {
-        $current_theme_path = get_template_directory();
+    // 仅管理员用户处理
+    if (!current_user_can('manage_options')) {
+        return;
+    }
+
+    // 当主题文件夹名称不正确时
+    if ($theme_folder_name !== $correct_theme_folder) {
         $correct_theme_path = trailingslashit(dirname($current_theme_path)) . $correct_theme_folder;
 
-        // 如果目标路径已存在，显示警告信息
+        // 如果目标路径已存在
         if (file_exists($correct_theme_path)) {
             add_action('admin_notices', function () use ($theme_folder_name, $correct_theme_folder) {
                 ?>
@@ -1924,14 +1929,33 @@ function theme_folder_check_on_admin_init() {
 
         // 尝试重命名文件夹
         if (rename($current_theme_path, $correct_theme_path)) {
-            // 如果重命名成功，切换到目标主题
             switch_theme($correct_theme_folder);
         } else {
-            // 如果重命名失败，显示警告信息
             add_action('admin_notices', function () use ($theme_folder_name, $correct_theme_folder) {
                 ?>
                 <div class="notice notice-error is-dismissible">
                     <p><strong>警告：</strong> 当前父主题文件夹名称为 <code><?php echo esc_html($theme_folder_name); ?></code>，无法重命名为 <code><?php echo esc_html($correct_theme_folder); ?></code>。请检查文件系统权限。</p>
+                </div>
+                <?php
+            });
+        }
+    } 
+    // 当主题文件夹名称正确时，检查目录权限
+    else {
+        $is_readable = is_readable($current_theme_path);
+        $is_writable = is_writable($current_theme_path);
+
+        if (!$is_readable || !$is_writable) {
+            add_action('admin_notices', function () use ($current_theme_path, $is_readable, $is_writable) {
+                // 生成权限描述
+                $permission_issues = [];
+                if (!$is_readable) $permission_issues[] = '不可读';
+                if (!$is_writable) $permission_issues[] = '不可写';
+                $message = implode(' 且 ', $permission_issues);
+
+                ?>
+                <div class="notice notice-error is-dismissible">
+                    <p><strong>警告：</strong> 当前主题目录 <code><?php echo esc_html($current_theme_path); ?></code> <?php echo esc_html($message); ?>。请检查文件系统权限。</p>
                 </div>
                 <?php
             });
@@ -2248,7 +2272,7 @@ function change_avatar($avatar)
     return $avatar;
 }
 
-
+//生成随机链接，防止浏览器缓存策略
 function get_random_url(string $url): string
 {
     $array = parse_url($url);
@@ -2262,22 +2286,23 @@ function get_random_url(string $url): string
     return $url . random_int(1, 100);
 }
 
-
 // default feature image
-function DEFAULT_FEATURE_IMAGE(string $size = 'source'): string
+function DEFAULT_FEATURE_IMAGE()
 {
+    //使用独立外部api
     if (iro_opt('post_cover_options') == 'type_2') {
         return get_random_url(iro_opt('post_cover'));
     }
+    //使用内建
+    if (iro_opt('random_graphs_options') == 'gallery') {
+        return get_random_url(rest_url('sakura/v1/gallery') . '?img=w');
+    }
+    //使用封面外部
     if (iro_opt('random_graphs_options') == 'external_api') {
         return get_random_url(iro_opt('random_graphs_link'));
     }
-    $_api_url = rest_url('sakura/v1/image/feature');
-    $rand = rand(1, 100);
-    # 拼接符
-    $splice = strpos($_api_url, 'index.php?') !== false ? '&' : '?';
-    $_api_url = "{$_api_url}{$splice}size={$size}&$rand";
-    return $_api_url;
+    //意外情况
+    return get_random_url(iro_opt('random_graphs_link'));
 }
 
 //评论回复
@@ -2784,3 +2809,61 @@ function iterator_to_string(Iterator $iterator): string
     }
     return $content;
 }
+
+/*GET参数操作*/
+function iro_action_operator()
+{
+    if (!isset($_GET['iro_act']) || empty($_GET['iro_act'])) {
+        return;
+    }
+
+    if (!is_admin() || !current_user_can('manage_options')) {
+        echo __("Access denied.", "sakurairo");
+        return;
+    }
+
+    $direct_info = sanitize_key($_GET['iro_act']);
+
+    switch($direct_info){
+        case 'bangumi' :
+            $direct_url = 'https://api.bgm.tv/v0/users/' . (iro_opt('bangumi_id') ?: '944883') . '/collections';
+            header("Location: $direct_url", true, 302);
+            break;
+
+        case 'mal' :
+            switch (iro_opt('my_anime_list_sort')) {
+                case 1: // Status and Last Updated
+                    $sort = 'order=16&order2=5&status=7';
+                    break;
+                case 2: // Last Updated
+                    $sort = 'order=5&status=7';
+                    break;
+                case 3: // Status
+                    $sort = 'order=16&status=7';
+                    break;
+            }
+            $direct_url = 'https://myanimelist.net/animelist/' . (iro_opt('my_anime_list_username') ?: 'username') . '/load.json?' . $sort;
+            header("Location: $direct_url", true, 302);
+            break;
+
+        case 'playlist' :
+            $direct_url = rest_url('sakura/v1/meting/aplayer') . '?_wpnonce=' . wp_create_nonce('wp_rest') . '&server=' . (iro_opt('aplayer_server') ?: 'netease') . '&type=playlist&id=' . (iro_opt('aplayer_playlistid') ?: '5380675133');
+            header("Location: $direct_url", true, 302);
+            break;
+
+        case 'gallery_init':
+            include_once('inc/classes/gallery.php');
+            $gallery = new Sakura\API\gallery();
+            echo $gallery->init();
+            echo 'Done!';
+            break;
+
+        case 'gallery_webp':
+            include_once('inc/classes/gallery.php');
+            $gallery = new Sakura\API\gallery();
+            echo $gallery->webp();
+            echo 'Done!';
+            break;
+    }
+}
+iro_action_operator();

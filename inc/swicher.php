@@ -91,13 +91,18 @@ function font_end_js_control()
     $reception_background = iro_opt('reception_background');
     // 判空 empty 如果变量不存在也会返回true
     if (iro_opt('random_graphs_options') == 'external_api') {
+        //封面随机图api
         if (wp_is_mobile()) {
             $iro_opt['cover_api'] = iro_opt('random_graphs_mts') ? iro_opt('random_graphs_link_mobile') : iro_opt('random_graphs_link');
         } else {
             $iro_opt['cover_api'] = iro_opt('random_graphs_link');
         }
     } else {
-        $iro_opt['cover_api'] =  rest_url('sakura/v1/image/cover');
+        if (wp_is_mobile()) {
+            $iro_opt['cover_api'] = rest_url('sakura/v1/gallery') . '?img=l';
+        } else {
+            $iro_opt['cover_api'] = rest_url('sakura/v1/gallery') . '?img=w';
+        }
     }
     !empty($reception_background['img1']) && $iro_opt['skin_bg0'] = $reception_background['img1'];
     !empty($reception_background['img2']) && $iro_opt['skin_bg1'] = $reception_background['img2'];
