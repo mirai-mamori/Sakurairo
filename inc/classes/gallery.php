@@ -13,39 +13,28 @@ class gallery
     private $backup_folder;
     private $log = '';
 
-    //初始化工作目录
+    //定义工作目录
     public function __construct() {
         $upload_dir = wp_get_upload_dir()['basedir'];
         $this->image_dir = $upload_dir . '/iro_gallery';
         $this->image_list = $this->image_dir . '/imglist.json';
         $this->image_folder = $this->image_dir . '/img';
         $this->backup_folder = $this->image_dir . '/backup';
-        //创建目录
+        //创建目录和索引
         $this->init_dirs();
     }
 
     private function init_dirs() {
-        if (!is_dir($this->image_dir)) {
-            if (!mkdir($this->image_dir, 0755, true)) {
-                $this->log .= __("Unable to create directory: {$this->image_dir}. Please check permissions.", "sakurairo") . '<br>';
+        //初始化工作目录
+        $dirs = [$this->image_dir, $this->image_folder, $this->backup_folder];
+
+        foreach ($dirs as $dir) {
+            if (!is_dir($dir) && !mkdir($dir, 0755, true)) {
+                $this->log .= __("Unable to create directory: $dir. Please check permissions.", "sakurairo") . '<br>';
                 return $this->log;
             }
         }
-
-        if (!is_dir($this->image_folder)) {
-            if (!mkdir($this->image_folder, 0755, true)) {
-                $this->log .= __("Unable to create directory: {$this->image_folder}. Please check permissions.", "sakurairo") . '<br>';
-                return $this->log;
-            }
-        }
-
-        if (!is_dir($this->backup_folder)) {
-            if (!mkdir($this->backup_folder, 0755, true)) {
-                $this->log .= __("Unable to create directory: {$this->backup_folder}. Please check permissions.", "sakurairo") . '<br>';
-                return $this->log;
-            }
-        }
-
+        //初始化索引
         if (!file_exists($this->image_list)) {
             if (!touch($this->image_list)) {
                 $this->log .= __("Unable to create file: {$this->image_list}. Please check permissions.", "sakurairo") . '<br>';
@@ -59,25 +48,27 @@ class gallery
         $allowedExtensions = ['jpg', 'jpeg', 'bmp', 'png', 'webp', 'gif'];
         $imageFiles = ['long' => [], 'wide' => []];
 
-        if (is_dir($this->image_folder)) {
-            $files = scandir($this->image_folder);
-            foreach ($files as $file) {
-                $filePath = $this->image_folder . '/' . $file;
-                $fileExtension = pathinfo($file, PATHINFO_EXTENSION);
+        $allFiles = $this->get_all_files($this->image_folder);
 
-                if (in_array(strtolower($fileExtension), $allowedExtensions)) {
-                    $imageSize = getimagesize($filePath);
-                    $width = $imageSize[0];
-                    $height = $imageSize[1];
+        foreach ($allFiles as $filePath) {
+            if (in_array(strtolower(pathinfo($filePath, PATHINFO_EXTENSION)), $allowedExtensions)) {
+                //获取图片信息进行分拣
+                $imageSize = @getimagesize($filePath);
 
-                    $filePath = '/iro_gallery/img/' . $file;
+                if ($imageSize === false) {
+                    continue;
+                }
 
-                    //根据比例分拣图片
-                    if ($width / $height < 9 / 10) {
-                        $imageFiles['long'][] = $filePath;
-                    } else {
-                        $imageFiles['wide'][] = $filePath;
-                    }
+                $width = $imageSize[0];
+                $height = $imageSize[1];
+
+                $filePath = str_replace($this->image_folder, '/iro_gallery/img', $filePath);
+
+                //根据比例分拣图片
+                if ($width / $height < 9 / 10) {
+                    $imageFiles['long'][] = $filePath;
+                } else {
+                    $imageFiles['wide'][] = $filePath;
                 }
             }
         }
@@ -89,13 +80,35 @@ class gallery
         return $this->log;
     }
 
+    //遍历目录方法
+    private function get_all_files($directory) {
+        $result = [];
+        $files = scandir($directory);
+
+        foreach ($files as $file) {
+            if ($file === '.' || $file === '..') {
+                continue;
+            }
+
+            $filePath = $directory . '/' . $file;
+            if (is_dir($filePath)) {
+                $result = array_merge($result, $this->get_all_files($filePath));
+            } else {
+                $result[] = $filePath;
+            }
+        }
+
+        return $result;
+    }
+
     //webp优化步骤
     public function webp() {
         $this->log = '';
         $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
 
-        if (!is_dir($this->backup_folder) || count(scandir($this->backup_folder)) <= 2) { //检查backup目录
-            
+        //检查backup目录是否有内容
+        if (!is_dir($this->backup_folder) || count(scandir($this->backup_folder)) <= 2) {
+            //没有则执行备份步骤
             if (!rename($this->image_folder, $this->backup_folder)) {
                 $this->log .= __("The target directory is not accessible. Please check the permission settings.", "sakurairo") . '<br>';
                 return $this->log;
@@ -109,23 +122,32 @@ class gallery
             $this->log .= __("Detected content in the 'backup' folder. Verifying and attempting to restore conversion operations.", "sakurairo") . '<br>';
         }
 
-        $files = scandir($this->backup_folder);
-        foreach ($files as $file) {
-            $backupPath = $this->backup_folder . '/' . $file;
-            $fileExtension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-            $webpPath = $this->image_folder . '/' . pathinfo($file, PATHINFO_FILENAME) . '.webp';
+        $allFiles = $this->get_all_files($this->backup_folder);
 
-            if (!in_array($fileExtension, $allowedExtensions)) {
+        foreach ($allFiles as $backupPath) {
+            if (!in_array(strtolower(pathinfo($backupPath, PATHINFO_EXTENSION)), $allowedExtensions)) {
                 continue;
             }
 
+            //生成 WebP 文件的相对路径和目标路径
+            $relativePath = str_replace($this->backup_folder . '/', '', $backupPath);  //相对路径
+            $pathInfo = pathinfo($relativePath);
+            $webpPath = $this->image_folder . '/' . $pathInfo['dirname'] . '/' . $pathInfo['filename'] . '.webp';
+
+            //跳过已存在的WebP文件(从上个断点继续转换)
             if (file_exists($webpPath)) {
-                $this->log .= __("Skipped file: {$file}, a file with the same name already exists.", "sakurairo") . '<br>'; //跳过同名以支持断点恢复
+                $this->log .= __("Skipped file: {$relativePath}, a webp image with the same name already exists.", "sakurairo") . '<br>';
                 continue;
             }
 
-            $this->convert_to_webp($backupPath, $file);
+            //确保目标子目录存在
+            $targetDir = dirname($webpPath);
+            if (!is_dir($targetDir)) {
+                mkdir($targetDir, 0755, true);
+            }
 
+            //转换文件
+            $this->convert_to_webp($backupPath, $webpPath);
         }
 
         $this->log .= __("All images have been compressed to WebP format. The original files are stored in the 'backup' folder.<br> Please confirm correctness before reinitializing the index.<br>", "sakurairo") . '<br>';
@@ -134,7 +156,7 @@ class gallery
     }
 
     //webp优化方法
-    private function convert_to_webp($source, $filename) {
+    private function convert_to_webp($source, $webpPath) {
         $extension = strtolower(pathinfo($source, PATHINFO_EXTENSION));
 
         switch ($extension) {
@@ -152,17 +174,16 @@ class gallery
                 $image = imagecreatefromwebp($source);
                 break;
             default:
-                $this->log .= __("Unsupported file type: $filename .", "sakurairo") . '<br>';
+                $this->log .= __("Unsupported file type: $source .", "sakurairo") . '<br>';
         }
 
         if ($image) {
-            $webpPath = $this->image_folder . '/' . pathinfo($filename, PATHINFO_FILENAME) . '.webp';
             imagewebp($image, $webpPath, 80);
             imagedestroy($image);
-            $this->log .= __("Successfully converted to WebP: $filename .", "sakurairo") . '<br>';
+            $this->log .= __("Successfully converted to WebP: $source .", "sakurairo") . '<br>';
             return $this->log;
         } else {
-            $this->log .= __("Failed to convert file: $filename .", "sakurairo") . '<br>';
+            $this->log .= __("Failed to convert file: $source .", "sakurairo") . '<br>';
             return $this->log;
         }
     }
