@@ -2,8 +2,8 @@
 /**
  * @Author: fuukei
  * @Date:   2022-03-13 18:16:15
- * @Last Modified by: cocdeshijie
- * @Last Modified time: 2022-04-16 13:27:30
+ * @Last Modified by: nicocatxzc
+ * @Last Modified time: 2025-01-15 11:25:30
  */
 
 
@@ -14,12 +14,12 @@ include_once('classes/Aplayer.php');
 include_once('classes/Bilibili.php');
 include_once('classes/Cache.php');
 include_once('classes/Images.php');
+include_once('classes/gallery.php');
 include_once('classes/QQ.php');
 include_once('classes/Captcha.php');
 include_once('classes/MyAnimeList.php');
 include_once('classes/BilibiliFavList.php');
 include_once('classes/bangumi.php');
-use Sakura\API\Images;
 use Sakura\API\QQ;
 use Sakura\API\Cache;
 use Sakura\API\Captcha;
@@ -40,15 +40,9 @@ add_action('rest_api_init', function () {
         'permission_callback' => '__return_true'
     )
     );
-    register_rest_route('sakura/v1', '/image/cover', array(
+    register_rest_route('sakura/v1', '/gallery', array(
         'methods' => 'GET',
-        'callback' => 'cover_gallery',
-        'permission_callback' => '__return_true'
-    )
-    );
-    register_rest_route('sakura/v1', '/image/feature', array(
-        'methods' => 'GET',
-        'callback' => 'feature_gallery',
+        'callback' => [new \Sakura\API\gallery(), 'get_image'],
         'permission_callback' => '__return_true'
     )
     );
@@ -181,62 +175,6 @@ function upload_image(WP_REST_Request $request)
     return $result;
 }
 
-
-/*
- * 随机封面图 rest api
- * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/image/cover
- */
-function cover_gallery()
-{
-    $type = $_GET['type'] ?? '';
-    // $type = in_array('type',$_GET) ? $_GET['type']:'';
-    if ($type === 'mobile' && iro_opt('random_graphs_mts')) {
-        $imgurl = Images::mobile_cover_gallery();
-    } else {
-        $imgurl = Images::cover_gallery();
-    }
-    if (!$imgurl['status']) {
-        return new WP_REST_Response(
-            array(
-                'status' => 500,
-                'success' => false,
-                'message' => $imgurl['msg']
-            ),
-            500
-        );
-    }
-    $data = array('cover image');
-    $response = new WP_REST_Response($data);
-    $response->set_status(302);
-    $response->header('Location', $imgurl['url']);
-    return $response;
-}
-
-/*
- * 随机文章特色图 rest api
- * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/image/feature
- */
-function feature_gallery()
-{
-    $size = isset($_GET['size']) ? (in_array($_GET['size'], ['source', 'th']) ? $_GET['size'] : 'source') : 'source';
-    $imgurl = Images::feature_gallery($size);
-    if (!$imgurl['status']) {
-        return new WP_REST_Response(
-            array(
-                'status' => 500,
-                'success' => false,
-                'message' => $imgurl['msg']
-            ),
-            500
-        );
-    }
-    $data = array('feature image');
-    $response = new WP_REST_Response($data);
-    $response->set_status(302);
-    $response->header('Location', $imgurl['url']);
-    return $response;
-}
-
 /*
  * update database rest api
  * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/database/update
@@ -336,7 +274,7 @@ function bgm_bangumi($request)
 {
     if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
         $response = array(
-            'status' => 403,
+            'status' => 418,
             'success' => false,
             'message' => 'Unauthorized client.'
         );
