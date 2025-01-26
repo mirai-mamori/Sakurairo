@@ -3293,7 +3293,6 @@ input[type=radio]:checked:before {
 
 iframe {
   aspect-ratio: 16 / 9;
-  height: 100%;
   width: 100%;
 }
 
@@ -3494,7 +3493,7 @@ iframe {
   width: 190px;
   height: 100%;
   background-color: rgba(255, 255, 255, 0);
-  right: calc((100% - 1250px)/ 2);
+  right: calc((100% - 1220px) / 760 *210*1.6);
   top: 540px;
   position: absolute;
   padding-top: 10px;
@@ -3512,6 +3511,10 @@ iframe {
   width: fit-content;
   border-radius: 10px;
   border: 1.5px solid #FFFFFF;
+}
+
+.toc::-webkit-scrollbar-track {
+  margin: 1px !important;
 }
 
 .toc:hover {
@@ -3774,7 +3777,7 @@ iframe {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
   overflow: hidden;
   border-radius: 15px;
-  margin: 6px 6.5px 0 6.5px;
+  margin: 6px 3px 0 3px;
 }
 
 .the-feature.from_left_and_right .img {
