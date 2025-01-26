@@ -3493,7 +3493,7 @@ iframe {
   width: 190px;
   height: 100%;
   background-color: rgba(255, 255, 255, 0);
-  right: right: calc((100% - 1220px) / 760 *210*1.6);
+  right: calc((100% - 1220px) / 760 *210*1.6);
   top: 540px;
   position: absolute;
   padding-top: 10px;
