@@ -1895,6 +1895,77 @@ function theme_admin_notice_callback()
 }
 add_action('admin_notices', 'theme_admin_notice_callback');
 
+/**
+ * 检查父主题文件夹名称是否正确
+ * 如果名称不正确，尝试重命名或显示管理员警告信息
+ */
+
+function theme_folder_check_on_admin_init() {
+    // 获取当前父主题文件夹名称及路径
+    $current_theme_path = get_template_directory();
+    $theme_folder_name = basename($current_theme_path);
+    $correct_theme_folder = 'Sakurairo';
+
+    // 仅管理员用户处理
+    if (!current_user_can('manage_options')) {
+        return;
+    }
+
+    // 当主题文件夹名称不正确时
+    if ($theme_folder_name !== $correct_theme_folder) {
+        $correct_theme_path = trailingslashit(dirname($current_theme_path)) . $correct_theme_folder;
+
+        // 如果目标路径已存在
+        if (file_exists($correct_theme_path)) {
+            add_action('admin_notices', function () use ($theme_folder_name, $correct_theme_folder) {
+                ?>
+                <div class="notice notice-error is-dismissible">
+                    <p><strong>警告：</strong> 当前父主题文件夹名称为 <code><?php echo esc_html($theme_folder_name); ?></code>，但目标名称 <code><?php echo esc_html($correct_theme_folder); ?></code> 已存在。请手动检查主题文件夹。</p>
+                </div>
+                <?php
+            });
+            return;
+        }
+
+        // 尝试重命名文件夹
+        if (rename($current_theme_path, $correct_theme_path)) {
+            switch_theme($correct_theme_folder);
+        } else {
+            add_action('admin_notices', function () use ($theme_folder_name, $correct_theme_folder) {
+                ?>
+                <div class="notice notice-error is-dismissible">
+                    <p><strong>警告：</strong> 当前父主题文件夹名称为 <code><?php echo esc_html($theme_folder_name); ?></code>，无法重命名为 <code><?php echo esc_html($correct_theme_folder); ?></code>。请检查文件系统权限。</p>
+                </div>
+                <?php
+            });
+        }
+    } 
+    // 当主题文件夹名称正确时，检查目录权限
+    else {
+        $is_readable = is_readable($current_theme_path);
+        $is_writable = is_writable($current_theme_path);
+
+        if (!$is_readable || !$is_writable) {
+            add_action('admin_notices', function () use ($current_theme_path, $is_readable, $is_writable) {
+                // 生成权限描述
+                $permission_issues = [];
+                if (!$is_readable) $permission_issues[] = '不可读';
+                if (!$is_writable) $permission_issues[] = '不可写';
+                $message = implode(' 且 ', $permission_issues);
+
+                ?>
+                <div class="notice notice-error is-dismissible">
+                    <p><strong>警告：</strong> 当前主题目录 <code><?php echo esc_html($current_theme_path); ?></code> <?php echo esc_html($message); ?>。请检查文件系统权限。</p>
+                </div>
+                <?php
+            });
+        }
+    }
+}
+
+// 在后台初始化时执行检查
+add_action('admin_init', 'theme_folder_check_on_admin_init');
+
 // AJAX 处理函数 - 更新主题选项
 add_action('wp_ajax_update_theme_option', 'update_theme_option');
 function update_theme_option()
