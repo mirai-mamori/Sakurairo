@@ -2571,6 +2571,32 @@ function register_shortcodes() {
         <?php
         return ob_get_clean();
     });
+
+    add_shortcode('vbilibili', function ($atts, $content = null) {
+        preg_match_all('/av([0-9]+)/', $content, $av_matches);
+        preg_match_all('/BV([a-zA-Z0-9]+)/', $content, $bv_matches);
+        $iframes = '';
+        // av号
+        if (!empty($av_matches[1])) {
+            foreach ($av_matches[1] as $av) {
+                $av = intval($av);
+             
+                $iframe_url = 'https://player.bilibili.com/player.html?avid=' . $av . '&page=1&autoplay=0&danmaku=0';
+                $iframe = '<div style="position: relative; padding: 30% 45%;"><iframe src="' . $iframe_url . '" frameborder="no" scrolling="no" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts" allowfullscreen="allowfullscreen" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe></div><br>';
+                $iframes .= $iframe;
+            }
+        }
+        // bv号
+        if (!empty($bv_matches[1])) {
+            foreach ($bv_matches[1] as $bv) {
+                 
+                $iframe_url = 'https://player.bilibili.com/player.html?bvid=' . $bv . '&page=1&autoplay=0&danmaku=0';
+                $iframe = '<div style="position: relative; padding: 30% 45%;"><iframe src="' . $iframe_url . '" frameborder="no" scrolling="no" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts" allowfullscreen="allowfullscreen" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> </iframe></div><br>';
+                $iframes .= $iframe;
+            }
+        }
+        return $iframes;
+     });    
 }
 add_action('init', 'register_shortcodes');
 //code end
