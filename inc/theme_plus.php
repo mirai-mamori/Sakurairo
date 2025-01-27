@@ -522,8 +522,8 @@ function get_next_thumbnail_url() {
     $classify_display_id = null;
   }
   $next_post = get_next_post($in_same_term = false, $excluded_terms = $classify_display_id, $taxonomy = 'category'); 
-  if ($prev_post instanceof WP_Post && empty($prev_post->post_password)):{
-     if ( has_post_thumbnail($next_post->ID) ) { 
+  if ($next_post instanceof WP_Post && empty($prev_post->post_password)){
+    if ( has_post_thumbnail($next_post->ID) ) { 
     $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $next_post->ID ), 'large'); 
     return $img_src[0] ?? null; 
   } 
