@@ -2576,6 +2576,7 @@ function register_shortcodes() {
         preg_match_all('/av([0-9]+)/', $content, $av_matches);
         preg_match_all('/BV([a-zA-Z0-9]+)/', $content, $bv_matches);
         $iframes = '';
+
         // av号
         if (!empty($av_matches[1])) {
             foreach ($av_matches[1] as $av) {
@@ -2596,7 +2597,9 @@ function register_shortcodes() {
             }
         }
         return $iframes;
-     });    
+     });
+
+
 }
 add_action('init', 'register_shortcodes');
 //code end
