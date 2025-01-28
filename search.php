@@ -24,7 +24,7 @@ get_header(); ?>
     if (iro_opt('search_for_pages')) {
         if (iro_opt('only_admin_can_search_pages')) {
             //仅限管理员检索页面
-            if (current_user_can('administrator')) {
+            if (current_user_can('manage_options')) {
                 $default_checked[] = 'page';
             } else {
                 $show_pages_filter = false;
@@ -58,7 +58,7 @@ get_header(); ?>
 
     if (iro_opt('only_admin_can_search_pages')) {
         // 只允许管理员检索页面
-        if (!current_user_can('administrator')) {
+        if (!current_user_can('manage_options')) {
             // 不是管理员就移除page
             $all_results_args['post_type'] = array_diff($content_types, array('page'));
         }
