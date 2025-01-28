@@ -144,7 +144,7 @@ if(iro_opt('not_robot')) add_action('pre_comment_on_post', 'siren_robot_comment'
 function scp_comment_post( $incoming_comment ) {
   // 为什么要拦自己呢？
   global $user_ID; 
-  if( $user_ID && current_user_can('administrator') ) {
+  if( $user_ID && current_user_can('manage_options') ) {
     return( $incoming_comment );
   } elseif(!preg_match('/[一-龥]/u', $incoming_comment['comment_content'])){
     siren_ajax_comment_err('写点汉字吧。You should add some Chinese words.');
@@ -237,7 +237,7 @@ function gopage(url,descr) {
     window.setTimeout(() => { cb(5); }, 1000); //倒计时秒数在这捏
 }
   </script>  
-  <?php if(current_user_can('administrator')){ ?>
+  <?php if(current_user_can('manage_options')){ ?>
   <div class="admin-login-check">
     <?php 
     echo login_ok(); 
@@ -268,7 +268,7 @@ function login_ok(){
   <p id="login-showtime"></p>
   <p class="ex-logout">
     <a href="<?php bloginfo('url'); ?>" title="<?php _e('Home','sakurairo')/*首页*/?>"><?php _e('Home','sakurairo')/*首页*/?></a>
-    <?php if(current_user_can('administrator')){  ?>
+    <?php if(current_user_can('manage_options')){  ?>
     <a href="<?php bloginfo('url'); ?>/wp-admin/" title="<?php _e('Manage','sakurairo')/*后台*/?>" target="_top"><?php _e('Manage','sakurairo')/*后台*/?></a> 
     <?php } ?>
     <a href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" title="<?php _e('Logout','sakurairo')/*登出*/?>" target="_top"><?php _e('Sign out? ','sakurairo')/*登出？*/?></a>
@@ -409,7 +409,7 @@ function header_user_menu()
           <div class="header-user-name-u"><?php echo $current_user->display_name; ?></div>
         </div>
         <div class="user-menu-option">
-          <?php if (current_user_can('administrator')) { ?>
+          <?php if (current_user_can('manage_options')) { ?>
             <a href="<?php bloginfo('url'); ?>/wp-admin/" target="_blank"><?php _e('Dashboard', 'sakurairo')/*管理中心*/ ?></a>
             <a href="<?php bloginfo('url'); ?>/wp-admin/post-new.php" target="_blank"><?php _e('New post', 'sakurairo')/*撰写文章*/ ?></a>
           <?php } ?>
@@ -457,7 +457,7 @@ function m_user_menu()
         <span><?php echo $current_user->display_name; ?></span>
       </div>
       <div class="m-user-menu-option">
-        <?php if (current_user_can('administrator')) { ?>
+        <?php if (current_user_can('manage_options')) { ?>
           <a href="<?php bloginfo('url'); ?>/wp-admin/" target="_blank"><?php _e('Dashboard', 'sakurairo')/*管理中心*/ ?></a>
           <a href="<?php bloginfo('url'); ?>/wp-admin/post-new.php" target="_blank"><?php _e('New post', 'sakurairo')/*撰写文章*/ ?></a>
         <?php } ?>

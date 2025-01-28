@@ -43,7 +43,7 @@ if ($show_on_front === 'page') {
         echo apply_filters('the_content', $posts_page->post_content);
     }
 }
-
+//文章容器开始
 if ($show_on_front === 'posts' || !get_theme_mod('hide_homepage_post_list_control', false)) {
     ?>
     <h1 class="main-title">
@@ -60,6 +60,12 @@ if ($show_on_front === 'posts' || !get_theme_mod('hide_homepage_post_list_contro
             </header>
         <?php }
         get_template_part('tpl/content', 'thumb');
+    } else {
+        get_template_part('tpl/content', 'none');
+    }
+} ?>
+</main>
+<?php //文章容器结束
 
         // 处理分页逻辑
         if (iro_opt('pagenav_style') == 'ajax') { ?>
@@ -81,13 +87,7 @@ if ($show_on_front === 'posts' || !get_theme_mod('hide_homepage_post_list_contro
                 ?>
             </nav>
         <?php }
-    } else {
-        get_template_part('tpl/content', 'none');
-    }
-}
 ?>
-
-</main>
 </div>
 
 <?php

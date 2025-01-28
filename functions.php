@@ -2059,7 +2059,7 @@ add_action('admin_head', 'custom_admin_open_sans_font');
 // WordPress Custom Font @ Admin Frontend Toolbar
 function custom_admin_open_sans_font_frontend_toolbar()
 {
-    if (current_user_can('administrator') && is_admin_bar_showing()) {
+    if (current_user_can('manage_options') && is_admin_bar_showing()) {
         echo '<link href="https://' . iro_opt('gfonts_api', 'fonts.googleapis.com') . '/css?family=Noto+Serif+SC&display=swap" rel="stylesheet">' . PHP_EOL;
         echo '<style>#wpadminbar *:not([class="ab-icon"]){font-family: "Noto Serif SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;}</style>' . PHP_EOL;
     }
@@ -2573,13 +2573,10 @@ function register_shortcodes() {
     });
 
     add_shortcode('vbilibili', function ($atts, $content = null) {
-  
-        // 提取$content中的所有bv号和av号
         preg_match_all('/av([0-9]+)/', $content, $av_matches);
         preg_match_all('/BV([a-zA-Z0-9]+)/', $content, $bv_matches);
-        
         $iframes = '';
-     
+
         // av号
         if (!empty($av_matches[1])) {
             foreach ($av_matches[1] as $av) {
@@ -2590,7 +2587,6 @@ function register_shortcodes() {
                 $iframes .= $iframe;
             }
         }
-     
         // bv号
         if (!empty($bv_matches[1])) {
             foreach ($bv_matches[1] as $bv) {
@@ -2600,9 +2596,9 @@ function register_shortcodes() {
                 $iframes .= $iframe;
             }
         }
-     
         return $iframes;
      });
+
 
 }
 add_action('init', 'register_shortcodes');
