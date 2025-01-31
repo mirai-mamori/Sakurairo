@@ -2296,7 +2296,7 @@ $prefix = 'iro_options';
       array(
     'id'        => 'exhibition',
     'type'      => 'repeater',
-    'title'     => 'Display Area Options',
+    'title'     => __('Display Area Content','sakurairo_csf'),
     'dependency' => array( 'exhibition_area', '==', 'true' ),
     'fields'    => array(
         array(
@@ -4040,4 +4040,3 @@ $prefix = 'iro_options';
     )
   ) );
 }
-
