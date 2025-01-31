@@ -1600,9 +1600,9 @@ $prefix = 'iro_options';
         'type'    => 'content',
         'title' => __('Built-in Gallery controllers','sakurairo_csf'),
         'content' => __('<a href="./admin.php?iro_act=gallery_init" target="_blank">Initlize/Rebuild index</a> | <a href="./admin.php?iro_act=gallery_webp" target="_blank">Refomart images to webp</a>'
-        . '<br><p>After initlized,put images in `wp-content/uploads/iro_gallery/img` and then click to rebuild the index.</p>'
-        . '<br><p>You can use folders to categorize content, but please rebuild the index after the location of the relevant content changes.</p>'
-        . '<br><p>Please make sure that the working directory is readable and writable when using relevant functions.</p>',
+        . '<br>After initlized,put images in `wp-content/uploads/iro_gallery/img` and then click to rebuild the index.'
+        . '<br>You can use folders to categorize content, but please rebuild the index after the location of the relevant content changes.'
+        . '<br>Please make sure that the working directory is readable and writable when using relevant functions.',
         'sakurairo_csf'),
         'dependency' => array( 'random_graphs_options', '==', 'gallery', '', 'true' ),
       ),
