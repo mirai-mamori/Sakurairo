@@ -126,10 +126,10 @@ class BangumiList
                 $html .= '<noscript><img class="bangumi-image" src="' . esc_url($item['images']) . '" alt="' . esc_attr($item['name']) . '"></noscript>';
                 $html .= '<div class="bangumi-info">';
                 $html .= '<h3 class="bangumi-title" title="' . esc_attr($item['name_cn'] ?: $item['name']) . '">' . esc_html($item['name_cn'] ?: $item['name']) . '</h3>';
-                $html .= '<div class="bangumi-date">' . __('上映日期: ', 'sakurairo') . esc_html($item['date']) . '</div>';
+                $html .= '<div class="bangumi-date">' . __('Release date: ', 'sakurairo') . esc_html($item['date']) . '</div>';
                 $html .= '<div class="bangumi-status">';
                 $html .= '<div class="bangumi-status-bar" style="width: ' . esc_attr(($item['ep_status'] / $item['eps']) * 100) . '%"></div>';
-                $html .= '<p>' . __('已观看集数: ', 'sakurairo') . esc_html($item['ep_status'] . '/' . $item['eps']) . '</p>';
+                $html .= '<p>' . __('Watch progress: ', 'sakurairo') . esc_html($item['ep_status'] . '/' . $item['eps']) . '</p>';
                 $html .= '<div class="bangumi-summary">' . esc_html($item['summary'] ?: __('No introduction yet', 'sakurairo')) . '</div>';
                 $html .= '</div></div></a></div>';
             }
