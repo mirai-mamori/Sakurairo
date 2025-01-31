@@ -117,9 +117,9 @@ function font_end_js_control()
     if (iro_opt('aplayer_server') != 'off') {
         $iro_opt['float_player_on'] = true;
         if (!empty(iro_opt('custom_music_api'))) {
-            $iro_opt['meting_api_url'] = iro_opt('custom_music_api');
+            $iro_opt['meting_api_url'] = iro_opt('custom_music_api'); //使用外部api/歌单
         } else {
-            $iro_opt['meting_api_url'] = rest_url('sakura/v1/meting/aplayer');
+            $iro_opt['meting_api_url'] = rest_url('sakura/v1/meting/aplayer'); //使用内建
         }
     }
     if (iro_opt('code_highlight_method', 'hljs') == 'prism') {
