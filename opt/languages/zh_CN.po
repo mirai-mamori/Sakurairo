@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
 "POT-Creation-Date: 2025-01-31 19:46+0800\n"
-"PO-Revision-Date: 2025-01-31 19:47+0800\n"
+"PO-Revision-Date: 2025-01-31 20:00+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -3816,37 +3816,30 @@ msgstr ""
 
 #: options/theme-options.php:3668
 msgid "GitHub repository card proxy"
-msgstr ""
+msgstr "Github卡片仓库代理"
 
 #: options/theme-options.php:3669
 msgid ""
 "Use your server proxy to get the github repository card image so that "
 "Chinese users who cannot access vercel.app can see it"
 msgstr ""
+"使用你的服务器代理获取github仓库卡片，让无法访问vercel.app的中国用户能看见它"
 
 #: options/theme-options.php:3675
 msgid "Lightbox"
 msgstr "灯箱"
 
 #: options/theme-options.php:3681
-#, fuzzy
-#| msgid "Lightbox"
 msgid "lightbox"
-msgstr "灯箱"
+msgstr "灯箱效果"
 
 #: options/theme-options.php:3682
-#, fuzzy
-#| msgid ""
-#| "FancyBox will be used as an image lightbox effect after turning on, "
-#| "additional JQ libraries will be loaded"
 msgid ""
 "Choose a image lightbox effect which you want to use,and additional JQ "
 "libraries will be loaded when using fancybox"
-msgstr "开启之后将使用FancyBox作为图片灯箱效果，将会额外加载JQ库"
+msgstr "选择一个你想使用的灯箱效果，选择FancyBox将会额外加载JQ库"
 
 #: options/theme-options.php:3684
-#, fuzzy
-#| msgid "Off"
 msgid "off"
 msgstr "关"
 
