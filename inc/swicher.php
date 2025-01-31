@@ -116,7 +116,11 @@ function font_end_js_control()
     }
     if (iro_opt('aplayer_server') != 'off') {
         $iro_opt['float_player_on'] = true;
-        $iro_opt['meting_api_url'] = rest_url('sakura/v1/meting/aplayer');
+        if (!empty(iro_opt('custom_music_api'))) {
+            $iro_opt['meting_api_url'] = iro_opt('custom_music_api');
+        } else {
+            $iro_opt['meting_api_url'] = rest_url('sakura/v1/meting/aplayer');
+        }
     }
     if (iro_opt('code_highlight_method', 'hljs') == 'prism') {
         $iro_opt['code_highlight_prism'] = [
@@ -140,13 +144,6 @@ function font_end_js_control()
     $sakura_effect = iro_opt('sakura_falling_effects');
     if ($sakura_effect != 'off') $iro_opt['effect'] = array('amount' => $sakura_effect);
     if (iro_opt('theme_darkmode_auto')) $iro_opt['dm_strategy'] = iro_opt('theme_darkmode_strategy', 'time');
-    //wp_add_inline_script('app', 'var _iro = ' . json_encode($iro_opt, JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE), 'before');
-    //自定义歌单
-    $meting_api_def = json_encode($iro_opt, JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE);
-    if (!empty(iro_opt('custom_music_api'))) {
-        $custom_api_url = iro_opt('custom_music_api');  // 获取 custom_server 的值
-        $meting_api_def = preg_replace('/"meting_api_url":"[^"]*"/', '"meting_api_url":"' . $custom_api_url . '"', $meting_api_def);  // 替换 meting_api_url 的内容
-    }
-    wp_add_inline_script('app', 'var _iro = ' . $meting_api_def, 'before');
+    wp_add_inline_script('app', 'var _iro = ' . json_encode($iro_opt, JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE), 'before');
 }
 add_action('wp_head', 'font_end_js_control');
