@@ -4,7 +4,7 @@
  *
  * @package Sakurairo
  */
-use Sakura\Customizer\{Component_Order_Control};
+use Sakura\Customizer\{Homepage_Component_Order_Control};
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
@@ -65,7 +65,7 @@ function set_homepage_controls($wp_customize) {
 
 
 
-    $wp_customize->add_control(new Component_Order_Control($wp_customize, 'component_order', [
+    $wp_customize->add_control(new Homepage_Component_Order_Control($wp_customize, 'component_order', [
         'section' => 'static_front_page',
         'label'   => '页面组件顺序'
     ]));
