@@ -39,7 +39,7 @@ foreach ($component_order as $component) {
                 ?>
                 <section class="custom-static-section">
                     <h1 class="main-title static-page-title">
-                        <?php if (!strpos(get_the_title($static_page), "_")===0){
+                        <?php if (!(strpos(get_the_title($static_page), "_")===0)){
                             # '_'开头的静态页面不显示标题
                          echo esc_html(get_the_title($static_page));
                         }
