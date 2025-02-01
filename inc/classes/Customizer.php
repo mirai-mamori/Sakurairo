@@ -61,18 +61,19 @@ abstract class Generic_Sortable_Control extends \WP_Customize_Control {
 
 // 首页专用子类
 class Homepage_Component_Order_Control extends Generic_Sortable_Control {
+    public $component_order = array();
     protected function get_sortable_items() {
         $component_order = array();
         if (iro_opt('bulletin_board') == '1'){
-            $component_order['bulletin'] = '公告栏';
+            $component_order['bulletin'] = __('公告栏',"sakura");
         }
         if (iro_opt('exhibition_area') == '1'){
-            $component_order['exhibition'] = '展示区域';
+            $component_order['exhibition'] = __('展示区域',"sakura");
         }
         if (get_theme_mod("home_static_page", 0)){
-            $component_order['static_page'] = '静态页面';
+            $component_order['static_page'] = __('静态页面',"sakura");
         }
-        $component_order['primary'] = '文章列表';
+        $component_order['primary'] = __('文章列表',"sakura");
         return $component_order;
     }
 }

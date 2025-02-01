@@ -34,7 +34,7 @@ function set_homepage_controls($wp_customize) {
     $wp_customize->remove_control( 'page_for_posts' );
 	$section = $wp_customize->get_section( 'static_front_page' );
 	if ( $section ) {
-		$section->description = '部分首页设置项，如果您安装了缓存插件，请在设置后清除缓存。';
+		$section->description = __('部分首页设置项，如果您安装了缓存插件，请在设置后清除缓存。',"sakura");
 	}
 	$wp_customize->add_setting('home_static_page', array(
         'default'           => 0, 
@@ -56,8 +56,8 @@ function set_homepage_controls($wp_customize) {
 
     $wp_customize->add_control('mytheme_selected_page_control', array(
         'type'            => 'dropdown-pages',
-        'label'           => '页面',
-        'description'     => '显示一个静态页面',
+        'label'           => __('页面',"sakura"),
+        'description'     => __('显示一个静态页面',"sakura"),
         'section'         => 'static_front_page',
         'settings'        => 'home_static_page', 
         'allow_addition'  => true, 
@@ -67,7 +67,7 @@ function set_homepage_controls($wp_customize) {
 
     $wp_customize->add_control(new Homepage_Component_Order_Control($wp_customize, 'component_order', [
         'section' => 'static_front_page',
-        'label'   => '页面组件顺序'
+        'label'   => __('页面组件顺序',"sakura")
     ]));
 };
 add_action('customize_register', 'set_homepage_controls');
