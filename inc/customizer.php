@@ -44,7 +44,7 @@ function set_homepage_controls($wp_customize) {
 
 	$wp_customize->add_setting('component_order', array(
         'default'           => json_encode(['bulletin', 'static_page', 'exhibition', 'primary']),
-        'transport'         => 'postMessage',
+        'transport'         => 'refresh',
         'sanitize_callback' => function($input) {
             $valid = ['bulletin', 'static_page', 'exhibition', 'primary'];
             $data = json_decode($input, true);
