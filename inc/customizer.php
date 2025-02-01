@@ -34,7 +34,7 @@ function set_homepage_controls($wp_customize) {
     $wp_customize->remove_control( 'page_for_posts' );
 	$section = $wp_customize->get_section( 'static_front_page' );
 	if ( $section ) {
-		$section->description = '';
+		$section->description = '部分首页设置项，如果您安装了缓存插件，请在设置后清除缓存。';
 	}
 	$wp_customize->add_setting('home_static_page', array(
         'default'           => 0, 
