@@ -82,24 +82,24 @@ get_header(); ?>
                 <?php endif; ?>
 
                 <label>
-                    <input type="checkbox" name="content_type[]" value="post" <?php echo in_array('post', $content_types) ? 'checked' : ''; ?>> <?php echo __('Post', 'sakurairo'); ?>
+                    <input type="checkbox" name="content_type[]" value="post" onchange="applyFilter()" <?php echo in_array('post', $content_types) ? 'checked' : ''; ?>> <?php echo __('Post', 'sakurairo'); ?>
                 </label>
 
                 <?php if (iro_opt('search_for_shuoshuo')) : ?>
                     <label>
-                        <input type="checkbox" name="content_type[]" value="shuoshuo" <?php echo in_array('shuoshuo', $content_types) ? 'checked' : ''; ?>> <?php echo __('shuoshuo', 'sakurairo'); ?>
+                        <input type="checkbox" name="content_type[]" value="shuoshuo" onchange="applyFilter()" <?php echo in_array('shuoshuo', $content_types) ? 'checked' : ''; ?>> <?php echo __('shuoshuo', 'sakurairo'); ?>
                     </label>
                 <?php endif; ?>
 
                 <?php if ($show_pages_filter) : ?>
                     <label>
-                        <input type="checkbox" name="content_type[]" value="page" <?php echo in_array('page', $content_types) ? 'checked' : ''; ?>> <?php echo __('Page', 'sakurairo'); ?>
+                        <input type="checkbox" name="content_type[]" value="page" onchange="applyFilter()" <?php echo in_array('page', $content_types) ? 'checked' : ''; ?>> <?php echo __('Page', 'sakurairo'); ?>
                     </label>
                 <?php endif; ?>
             </form>
 
             <div id="filter-toggle" title="<?php echo __('If no option is selected, all results are retrieved by default', 'sakurairo'); ?>" onclick="applyFilter()">
-                <i class="fas fa-filter"></i> <?php echo __('Click to filter', 'sakurairo'); ?>
+            <a href="./" id="the_filter" style="color: white;"><i class="fas fa-filter"></i></a> <?php echo __('Click to filter', 'sakurairo'); ?></a>
         </div>
     </div>
     <?php endif; ?>
@@ -117,7 +117,10 @@ get_header(); ?>
         searchParams.set('content_type', selected.join(','));
         var newUrl = window.location.pathname + '?' + searchParams.toString();
 
-        window.location.href = newUrl;
+        var the_filter = document.getElementById('the_filter');
+        the_filter.href = newUrl;
+
+        the_filter.click();
     }
     </script>
 
