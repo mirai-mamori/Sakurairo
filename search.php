@@ -163,6 +163,7 @@ get_header(); ?>
         the_posts_pagination(array(
             'total' => $total_pages,
             'current' => $paged,
+            'format' => '?paged=%#%',
         ));
     else :
         ?>
