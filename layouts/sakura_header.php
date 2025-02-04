@@ -82,7 +82,7 @@
 
   .menu-wrapper .menu {
     display: flex;
-    justify-content: <?php echo iro_opt('nav_menu_distribution'); ?>;
+    justify-content: <?php echo iro_opt('nav_menu_distribution'); //菜单选项所处位置?>;
   }
 
   .menu-wrapper .nav_menu_hide {
@@ -110,7 +110,7 @@
   }
 
   nav ul li {
-    margin: 0 <?php echo iro_opt('menu_option_spacing'); ?>px;
+    margin: 0 <?php echo iro_opt('menu_option_spacing'); //选项间距，用于居中和分散时自定义确保美观?>px;
     padding: 10px 0;
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
@@ -263,8 +263,7 @@
   }
 </style>
 <header class="site-header no-select" role="banner">
-  <!-- Logo Start -->
-  <?php
+  <?php //logo开始
   $nav_text_logo = iro_opt('nav_text_logo');
   if (iro_opt('iro_logo') || !empty($nav_text_logo['text'])): ?>
     <div class="site-branding">
@@ -285,12 +284,10 @@
         <?php endif; ?>
       </a>
     </div>
-  <?php endif; ?>
-  <!-- LOGO部分 -->
-  <!-- 菜单开始 -->
+  <?php endif; //logo结束?>
   <div class="menu-wrapper">
-    <?php //容器展开折叠
-    $nav_menu_display = iro_opt('nav_menu_display');
+    <?php //菜单开始
+    $nav_menu_display = iro_opt('nav_menu_display'); //决定菜单是否展开
     $container_class = 'sakura_nav';
     if ($nav_menu_display == 'fold') {
       $container_class = 'sakura_nav nav_menu_hide';
@@ -304,8 +301,7 @@
       <div class="line line2"></div>
       <div class="line line3"></div>
     </div>
-  <?php } ?>
-  <!-- 菜单结束 -->
+  <?php } //菜单结束?>
   <?php
   if (iro_opt('nav_menu_search') == '1') { ?>
     <div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
