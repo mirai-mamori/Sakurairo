@@ -203,13 +203,29 @@
 
   body.dark .site-header.bg,body.dark .site-header:hover {
     background-color: rgba(38, 38, 38, 0.8) !important;
-    border: 1.5px solid #7d7d7d30;
+    border-bottom: 1.5px solid #7d7d7d30;
   }
 
   body.dark .site-branding {
     background: rgba(0, 0, 0, 0) !important;
     box-shadow: none;
     border: none;
+  }
+
+  body.dark .site-header #show-nav .line, body.dark .site-header.bg nav ul li a, 
+  body.dark .site-header:hover nav ul li a,
+  body.dark .site-header.bg .searchbox.js-toggle-search i, body.dark .site-header.bg .bg-switch i,
+  body.dark .site-header:hover .searchbox.js-toggle-search i, body.dark .site-header:hover .bg-switch i{
+    color: #CCCCCC !important;
+  }
+
+  body.dark .site-header.bg #show-nav .line,body.dark .site-header:hover #show-nav .line{
+    background: #CCCCCC;
+  }
+
+  body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
+    color: var(--theme-skin-dark);
+    border: 2px solid var(--theme-skin-dark);
   }
 
   @keyframes fadeInLeft {
