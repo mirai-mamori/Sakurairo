@@ -78,15 +78,30 @@
 	echo "width: 100%;";
 };?>
 }
-nav ul {
+nav ul,nav ul li {
 	cursor: default;
 }
 nav ul li {
 	margin: 0 <?php echo iro_opt('menu_option_spacing'); ?>px;
 	padding: 10px 0;
+	-webkit-transition: all 1s ease;
+  	transition: all 1s ease;
 }
-nav ul li a:hover:after {
+nav ul li>a:hover:after {
     max-width: 100%;
+}
+nav .menu {
+	animation: fadeInLeft 2s;
+}
+nav .menu > li .sub-menu{
+	white-space: nowrap;
+	top: 110%;
+}
+.sub-menu li a:hover:after{
+	max-width: 0%;
+}
+nav .menu > li .sub-menu li{
+	padding: 10px 0;
 }
 nav ul li a:after {
     content: "";
@@ -125,6 +140,8 @@ nav ul li a:after {
   margin: 17px 0;
   border-radius: 10px !important;
   border: 2px solid rgba(0, 0, 0, 0);
+  font-size: 18px;
+  font-weight: 900;
 }
 .searchbox.js-toggle-search i:hover,.bg-switch i:hover {
 	color: var(--theme-skin-matching);
@@ -133,11 +150,38 @@ nav ul li a:after {
     border: 2px solid var(--theme-skin-matching);
 	background-color: rgba(0, 0, 0, 0);
 }
+.header-user-avatar img{
+	max-width: none;
+}
+@keyframes fadeInLeft {
+	0% {
+		-moz-transform: translateX(100%);
+		-ms-transform: translateX(100%);
+		-webkit-transform: translateX(100%);
+		transform: translateX(100%);
+		opacity: 0
+	}
+ 
+	50% {
+		-moz-transform: translateX(100%);
+		-ms-transform: translateX(100%);
+		-webkit-transform: translateX(100%);
+		transform: translateX(100%);
+		opacity: 0
+	}
+ 
+	100% {
+		-moz-transform: translateX(0%);
+		-ms-transform: translateX(0%);
+		-webkit-transform: translateX(0%);
+		transform: translateX(0%);
+		opacity: 1
+	}
+}
 @media (max-width:860px) {
 .site-header {
   height: 60px;
-}
-}
+}}
 </style>
 <header class="site-header no-select" role="banner">
 	<!-- Logo Start -->
