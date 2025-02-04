@@ -1,7 +1,6 @@
 <?php
 //Sakura样式导航栏
 ?>
-<link rel="stylesheet" href="<?php echo $shared_lib_basepath . '/css/wave.css'; ?>">
 <style>
   .menu-wrapper .menu {
     display: flex;
