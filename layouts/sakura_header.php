@@ -34,6 +34,13 @@
 	background: rgba(0, 0, 0, 0);
 	border: 0px;
 }
+.site-branding img{
+	max-height: none;
+}
+.site-title-logo {
+    display: flex;
+	justify-content: center;
+}
 .menu-wrapper{
 	width: 100%;
 }
@@ -48,17 +55,17 @@
 }
 .site-title {
 	font-size: 2vw;
-  border-radius: 50px;
-  transition: all 0.4s ease-in-out;
+	border-radius: 50px;
+	transition: all 0.4s ease-in-out;
 }
 .site-title:hover {
-  border-radius: 50px;
-  transition: all 0.4s ease-in-out;
-  color: var(--theme-skin-matching);
-  background-color: rgba(0, 0, 0, 0);
+	border-radius: 50px;
+	transition: all 0.4s ease-in-out;
+	color: var(--theme-skin-matching);
+	background-color: rgba(0, 0, 0, 0);
 }
 .site-title img {
-  margin-top: 17px;
+  	margin-top: 17px;
 }
 .menu-wrapper .menu {
 	display: flex;
