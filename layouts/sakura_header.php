@@ -161,6 +161,10 @@
     margin-right: 8px;
   }
 
+  .header-user-avatar img{
+    box-shadow: none;
+  }
+
   .header-user-menu {
     right: -11px;
     top: 44px;
