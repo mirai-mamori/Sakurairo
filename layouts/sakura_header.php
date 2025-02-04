@@ -201,6 +201,17 @@
     max-width: none;
   }
 
+  body.dark .site-header.bg,body.dark .site-header:hover {
+    background-color: rgba(38, 38, 38, 0.8) !important;
+    border: 1.5px solid #7d7d7d30;
+  }
+
+  body.dark .site-branding {
+    background: rgba(0, 0, 0, 0) !important;
+    box-shadow: none;
+    border: none;
+  }
+
   @keyframes fadeInLeft {
     0% {
       -moz-transform: translateX(100%);
