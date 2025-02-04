@@ -92,7 +92,7 @@
     animation: fadeInLeft 2s;
   }
 
-  .site-top .lower nav {
+  .site-header .menu-wrapper nav .menu {
     <?php
     if ($nav_menu_display == 'fold') {
       echo "width: 92%;";
