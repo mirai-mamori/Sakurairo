@@ -43,12 +43,14 @@
   }
 
   .site-branding img {
-    max-height: none;
+    max-height: 90px;
+    border-radius: 0px;
   }
 
   .site-title-logo {
     display: flex;
     justify-content: center;
+    max-height: none;
   }
 
   .menu-wrapper {
@@ -62,7 +64,7 @@
   }
 
   .site-title {
-    font-size: 2vw;
+    font-size: 38px;
     border-radius: 50px;
     transition: all 0.4s ease-in-out;
   }
