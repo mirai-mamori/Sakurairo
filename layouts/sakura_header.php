@@ -73,7 +73,7 @@
           return;
         } else {
           if (window.location.pathname === '/' && !window.location.search){
-            bgImageSwitcher.style.display.remove;
+            bgImageSwitcher.style.display = '';
           } else {
             bgImageSwitcher.style.display = 'none';
           }
