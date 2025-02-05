@@ -66,6 +66,26 @@
         <?php esc_html_e('Random Background', 'sakurairo'); ?>
       </span>
     </div>
+    <script>
+      function bgImageSwitcher() {
+        const bgImageSwitcher = document.getElementById('bg-next');
+        if (!bgImageSwitcher) {
+          return;
+        } else {
+          if (window.location.pathname === '/' && !window.location.search){
+            bgImageSwitcher.style.display.remove;
+          } else {
+            bgImageSwitcher.style.display = 'none';
+          }
+        }
+      }
+    bgImageSwitcher()
+    <?php if (iro_opt('poi_pjax')){ ?>
+      document.addEventListener('pjax:complete', () => {
+      bgImageSwitcher();
+    });
+    <?php } ?>
+    </script>
   <?php endif; ?>
 
   <?php header_user_menu(); ?>
