@@ -73,9 +73,9 @@
           return;
         } else {
           if (window.location.pathname === '/' && !window.location.search){
-            bgImageSwitcher.style.display = '';
+            bgImageSwitcher.classList.remove('hide-state');
           } else {
-            bgImageSwitcher.style.display = 'none';
+            bgImageSwitcher.classList.add('hide-state');
           }
         }
       }

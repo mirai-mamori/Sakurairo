@@ -12,7 +12,6 @@ background: 0 0;
 transition: all 1s ease;
 position: fixed;
 z-index: 999;
-border-radius: 0px;
 border-bottom: 1.5px solid rgba(0, 0, 0, 0);
 }
 
@@ -22,8 +21,7 @@ background: rgba(255, 255, 255, 0.7);
 border-bottom: 1.5px solid #FFFFFF;
 width: 100%;
 -webkit-transition: all 1s ease;
-transition: border-bottom 0.3s ease;
-transition: all 1s ease;
+transition: border-bottom 0.3s ease,all 1s ease;
 }
 
 .site-branding {
@@ -168,6 +166,19 @@ color: var(--theme-skin-matching);
 transition: all 0.3s ease-in-out;
 border: 2px solid var(--theme-skin-matching);
 background-color: rgba(0, 0, 0, 0);
+}
+
+.bg-switch {
+width: 60px;
+opacity: 1;
+transition: width 0.4s ease-in-out, opacity 0.4s ease-in-out;
+overflow: hidden;
+}
+
+.bg-switch.hide-state {
+width: 0;
+opacity: 0;
+overflow: hidden;
 }
 
 .bg-switch i{
