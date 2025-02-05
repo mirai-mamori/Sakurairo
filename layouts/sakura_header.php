@@ -7,16 +7,6 @@
     justify-content: <?php echo iro_opt('nav_menu_distribution'); //菜单选项所处位置?>;
   }
 
-  .site-header .menu-wrapper nav .menu {
-    <?php
-    if ($nav_menu_display == 'fold') {
-      echo "width: 92%;";
-    } else {
-      echo "width: 100%;";
-    }
-    ?>
-  }
-
   nav ul li {
     margin: 0 <?php echo iro_opt('menu_option_spacing'); //选项间距，用于居中和分散时自定义确保美观?>px;
     padding: 10px 0;
