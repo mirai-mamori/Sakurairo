@@ -2,8 +2,7 @@
 //Sakura样式导航栏
 ?>
 <style>
-  .menu-wrapper .menu {
-    display: flex;
+  .menu-wrapper .sakura_nav {
     justify-content: <?php echo iro_opt('nav_menu_distribution'); //菜单选项所处位置?>;
   }
 
