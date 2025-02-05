@@ -4,6 +4,7 @@ width: 100%;
 height: 75px;
 display: flex;
 justify-content: left;
+border-radius: 0px !important;
 top: 0;
 left: 0;
 background: 0 0;
@@ -20,9 +21,6 @@ border-bottom: 1.5px solid rgba(0, 0, 0, 0);
 background: rgba(255, 255, 255, 0.7);
 border-bottom: 1.5px solid #FFFFFF;
 width: 100%;
-left: 0;
-top: 0;
-border-radius: 0px !important;
 -webkit-transition: all 1s ease;
 transition: border-bottom 0.3s ease;
 transition: all 1s ease;
@@ -82,7 +80,7 @@ display: none;
 
 .menu-wrapper .nav_menu_display {
 display: flex;
-animation: fadeInLeft 2s;
+animation: fadeInLeft .7s;
 }
 
 nav ul,
@@ -94,8 +92,8 @@ nav ul li>a:hover:after {
 max-width: 100%;
 }
 
-nav .menu {
-animation: fadeInLeft 2s;
+.site-header .menu-wrapper {
+animation: fadeInLeft 1s;
 }
 
 nav .menu>li .sub-menu {
