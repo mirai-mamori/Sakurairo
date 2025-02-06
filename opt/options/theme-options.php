@@ -19,7 +19,7 @@ array(
   "EDIT" => __("Action Edit (only displays while user has sufficient permissions)","sakurairo_csf"),
 ));
 
-$vision_resource_basepath = get_option('iro_options')[$option] ?? 'https://s.nmxc.ltd/sakurairo_vision/@2.7/';
+$vision_resource_basepath = get_option('iro_options')['vision_resource_basepath'] ?? 'https://s.nmxc.ltd/sakurairo_vision/@2.7/';
 
 $prefix = 'iro_options';
 
