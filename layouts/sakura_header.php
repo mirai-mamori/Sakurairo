@@ -3,15 +3,11 @@
 ?>
 <style>
   .menu-wrapper .sakura_nav .menu{
-    display: flex;
     justify-content: <?php echo iro_opt('nav_menu_distribution'); //菜单选项所处位置?>;
   }
 
   nav ul li {
     margin: 0 <?php echo iro_opt('menu_option_spacing'); //选项间距，用于居中和分散时自定义确保美观?>px;
-    padding: 10px 0;
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
   }
 </style>
 <header class="site-header no-select" role="banner">
@@ -53,6 +49,7 @@
       <div class="line line2"></div>
       <div class="line line3"></div>
     </div>
+  </div>
   <?php } //菜单结束?>
   <?php
   if (iro_opt('nav_menu_search') == '1') { ?>
