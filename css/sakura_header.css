@@ -45,7 +45,8 @@ justify-content: center;
 max-height: none;
 }
 
-.menu-wrapper {
+.menu-wrapper,
+.menu-wrapper nav.sakura_nav .menu {
 width: 100%;
 }
 
@@ -57,12 +58,10 @@ background-color: rgba(0, 0, 0, 0);
 
 .site-title {
 font-size: 38px;
-border-radius: 50px;
 transition: all 0.4s ease-in-out;
 }
 
 .site-title:hover {
-border-radius: 50px;
 transition: all 0.4s ease-in-out;
 color: var(--theme-skin-matching);
 background-color: rgba(0, 0, 0, 0);
