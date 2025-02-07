@@ -10,7 +10,9 @@
     margin: 0 <?php echo iro_opt('menu_option_spacing'); //选项间距，用于居中和分散时自定义确保美观?>px;
   }
 </style>
+
 <header class="site-header no-select" role="banner">
+
   <?php //logo开始
   $nav_text_logo = iro_opt('nav_text_logo');
   if (iro_opt('iro_logo') || !empty($nav_text_logo['text'])): ?>
@@ -33,6 +35,7 @@
       </a>
     </div>
   <?php endif; //logo结束?>
+
   <div class="menu-wrapper">
     <?php //菜单开始
     $nav_menu_display = iro_opt('nav_menu_display'); //决定菜单是否展开
@@ -51,12 +54,13 @@
     </div>
   </div>
   <?php } //菜单结束?>
+
   <?php
-  if (iro_opt('nav_menu_search') == '1') { ?>
+  if (iro_opt('nav_menu_search') == '1') { //是否开启搜索框?>
     <div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
   <?php } ?>
 
-  <?php $enable_random_graphs = (bool)iro_opt('cover_switch', true) && (bool)iro_opt('cover_random_graphs_switch', true);
+  <?php $enable_random_graphs = (bool)iro_opt('cover_switch', true) && (bool)iro_opt('cover_random_graphs_switch', true); //是否允许更换背景
   if ($enable_random_graphs): ?>
     <div class="bg-switch" id="bg-next">
       <i class="fa-solid fa-dice" aria-hidden="true"></i>
@@ -78,7 +82,7 @@
         }
       }
     bgImageSwitcher()
-    <?php if (iro_opt('poi_pjax')){ ?>
+    <?php if (iro_opt('poi_pjax')){ //pjax开启时添加开关?>
       document.addEventListener('pjax:complete', () => {
       bgImageSwitcher();
     });
@@ -86,9 +90,9 @@
     </script>
   <?php endif; ?>
 
-  <?php header_user_menu(); ?>
-  </div>
-  <script>
+  <?php header_user_menu(); //用户栏?>
+
+  <script><?php //置顶时添加底色 ?>
     window.addEventListener('scroll', function() {
       const header = document.querySelector('.site-header');
       // 检查位置
@@ -98,6 +102,7 @@
         header.classList.remove('bg');
       }
     });
+    <?php if ($nav_menu_display == 'fold') {  //菜单开关实现?>
     document.addEventListener('DOMContentLoaded', function() {
       // 监听#show-Nav的点击事件
       const showNavBtn = document.getElementById('show-nav');
@@ -114,5 +119,7 @@
         });
       }
     });
+    <?php } ?>
   </script>
+  
 </header>
