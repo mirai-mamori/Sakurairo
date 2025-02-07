@@ -8,7 +8,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
 <style>
   .site-header.bg,
   .site-header:hover {
-    <?php echo 'backdrop-filter: blur(' . ($nav_style['blurry']??'10px') . ');'; //模糊度?>
+    <?php echo 'backdrop-filter: blur(' . ($nav_style['blurry']??'10') . 'px);'; //模糊度?>
   }
 
   .menu-wrapper .sakura_nav .menu{
