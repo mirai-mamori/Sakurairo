@@ -8,11 +8,11 @@
     top: 0;
     left: 0;
     background: 0 0;
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
     position: fixed;
     z-index: 999;
     border-bottom: 1.5px solid rgba(0, 0, 0, 0);
+    -webkit-transition: all .6s ease;
+    transition: all .6s ease;
 }
 
 .site-header.bg,
@@ -20,8 +20,8 @@
     background: rgba(255, 255, 255, 0.7);
     border-bottom: 1.5px solid #FFFFFF;
     width: 100%;
-    -webkit-transition: all 1s ease;
-    transition: border-bottom 0.3s ease,all 1s ease;
+    -webkit-transition: all .6s ease;
+    transition: border-bottom 0.6s ease,all .6s ease;
 }
 
 .site-branding {
@@ -59,8 +59,6 @@
 .site-title:hover {
     color: var(--theme-skin-matching);
     background-color: rgba(0, 0, 0, 0);
-    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
 }
 
 .site-title img {
@@ -91,7 +89,7 @@ nav ul li {
     cursor: default;
 }
 
-nav ul li{
+nav ul li {
     padding: 10px 0;
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
@@ -108,6 +106,7 @@ nav ul li a:after {
     border-radius: 30px;
     max-width: 0;
     transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 nav ul li>a:hover:after {
@@ -144,8 +143,6 @@ nav .menu>li .sub-menu li {
 .searchbox.js-toggle-search i:hover,
 .bg-switch i:hover {
     color: var(--theme-skin-matching);
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
     border: 2px solid var(--theme-skin-matching);
     background-color: rgba(0, 0, 0, 0);
 }
