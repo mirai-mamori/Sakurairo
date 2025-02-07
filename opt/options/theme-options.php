@@ -463,7 +463,7 @@ $prefix = 'iro_options';
             'title' => __('Blur degree','sakurairo_csf'),
             'step' => '1',
             'unit' => 'px',
-            'min' => '1',
+            'min' => '0',
             'max' => '100',
           ),
           array(

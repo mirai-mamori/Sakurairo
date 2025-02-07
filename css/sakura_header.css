@@ -7,10 +7,10 @@
     border-radius: 0px !important;
     top: 0;
     left: 0;
-    background: 0 0;
+    background: transparent;
     position: fixed;
     z-index: 999;
-    border-bottom: 1.5px solid rgba(0, 0, 0, 0);
+    border-bottom: 1.5px solid transparent;
     -webkit-transition: all .6s ease;
     transition: all .6s ease;
 }
@@ -26,7 +26,7 @@
 
 .site-branding {
     border-radius: 0px;
-    background: rgba(0, 0, 0, 0);
+    background: transparent;
     border: 0px;
     height: 75px;
     line-height: 75px;
@@ -48,7 +48,7 @@
 .site-branding:hover,
 .site-title,
 .site-title:hover {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
 }
 
 .site-title {
@@ -58,7 +58,7 @@
 
 .site-title:hover {
     color: var(--theme-skin-matching);
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
 }
 
 .site-title img {
@@ -135,7 +135,7 @@ nav .menu>li .sub-menu li {
 .searchbox.js-toggle-search i {
     margin: 17px 0;
     border-radius: 10px !important;
-    border: 2px solid rgba(0, 0, 0, 0);
+    border: 2px solid transparent;
     font-size: 18px;
     font-weight: 900;
 }
@@ -144,7 +144,7 @@ nav .menu>li .sub-menu li {
 .bg-switch i:hover {
     color: var(--theme-skin-matching);
     border: 2px solid var(--theme-skin-matching);
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
 }
 
 .bg-switch {
@@ -155,7 +155,7 @@ nav .menu>li .sub-menu li {
 }
 
 .bg-switch i{
-    border: 2px solid rgba(0, 0, 0, 0);
+    border: 2px solid transparent;
     border-radius: 10px !important;
 }
 
@@ -175,10 +175,10 @@ nav .menu>li .sub-menu li {
     top: 44px;
     position: absolute;
     width: 110px;
-    background: 0 0;
+    background: transparent;
     visibility: hidden;
     overflow: hidden;
-    box-shadow: 0 1px 40px -8px rgba(0, 0, 0, 0.2);
+    box-shadow: none;
     border-radius: 15px;
     text-align: center;
     transition: all 0.5s 0.1s;
@@ -193,7 +193,7 @@ body.dark .site-header.bg,body.dark .site-header:hover {
 }
 
 body.dark .site-branding {
-    background: rgba(0, 0, 0, 0) !important;
+    background: transparent !important;
     box-shadow: none;
     border: none;
 }
@@ -215,33 +215,33 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
 }
 
 @keyframes fadeInLeft {
-0% {
-    -moz-transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-    opacity: 0;
-}
+    0% {
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        opacity: 0;
+    }
 
-50% {
-    -moz-transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-    opacity: 0;
-}
+    50% {
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        opacity: 0;
+    }
 
-100% {
-    -moz-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-    -webkit-transform: translateX(0%);
-    transform: translateX(0%);
-    opacity: 1;
-}
-}
+    100% {
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    }
 
-@media (max-width: 860px) {
-.site-header {
-    height: 60px;
-}
+    @media (max-width: 860px) {
+    .site-header {
+        height: 60px;
+    }
 }
