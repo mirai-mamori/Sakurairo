@@ -1,20 +1,28 @@
 <?php
 //Sakura样式导航栏
 ?>
+<?php 
+$nav_style = iro_opt('sakura_nav_style');
+$nav_text_logo = iro_opt('nav_text_logo');
+?>
 <style>
+  .site-header.bg,
+  .site-header:hover {
+    <?php echo 'backdrop-filter: blur(' . ($nav_style['blurry']??'10px') . ');'; //模糊度?>
+  }
+
   .menu-wrapper .sakura_nav .menu{
-    justify-content: <?php echo iro_opt('nav_menu_distribution'); //菜单选项所处位置?>;
+    justify-content: <?php echo ($nav_style['distribution']??'right'); //菜单选项所处位置?>;
   }
 
   nav ul li {
-    margin: 0 <?php echo iro_opt('menu_option_spacing'); //选项间距，用于居中和分散时自定义确保美观?>px;
+    margin: 0 <?php echo ($nav_style['option_spacing']??'14px'); //选项间距，用于居中和分散时自定义确保美观?>px;
   }
 </style>
 
 <header class="site-header no-select" role="banner">
 
   <?php //logo开始
-  $nav_text_logo = iro_opt('nav_text_logo');
   if (iro_opt('iro_logo') || !empty($nav_text_logo['text'])): ?>
     <div class="site-branding">
       <a href="<?= esc_url(home_url('/')); ?>">
@@ -38,22 +46,21 @@
 
   <div class="menu-wrapper">
     <?php //菜单开始
-    $nav_menu_display = iro_opt('nav_menu_display'); //决定菜单是否展开
+    $nav_menu_display = $nav_style['fold']; //决定菜单是否展开
     $container_class = 'sakura_nav';
     if ($nav_menu_display == 'fold') {
       $container_class = 'sakura_nav nav_menu_hide';
     }
     ?>
     <?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => 'nav', 'container_class' => $container_class]); ?>
+    <?php if ($nav_menu_display == 'fold') { ?>
+      <div id="show-nav" class="showNav">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+      </div>
+    <?php } //菜单结束?>
   </div>
-  <?php if ($nav_menu_display == 'fold') { ?>
-    <div id="show-nav" class="showNav">
-      <div class="line line1"></div>
-      <div class="line line2"></div>
-      <div class="line line3"></div>
-    </div>
-  </div>
-  <?php } //菜单结束?>
 
   <?php
   if (iro_opt('nav_menu_search') == '1') { //是否开启搜索框?>
@@ -68,6 +75,7 @@
         <?php esc_html_e('Random Background', 'sakurairo'); ?>
       </span>
     </div>
+    <?php //仅在主页展示背景切换功能 ?>
     <script>
       function bgImageSwitcher() {
         const bgImageSwitcher = document.getElementById('bg-next');
@@ -82,7 +90,7 @@
         }
       }
     bgImageSwitcher()
-    <?php if (iro_opt('poi_pjax')){ //pjax开启时添加开关?>
+    <?php if (iro_opt('poi_pjax')){ //pjax开启时，页面切换后重新加载?>
       document.addEventListener('pjax:complete', () => {
       bgImageSwitcher();
     });
@@ -102,7 +110,7 @@
         header.classList.remove('bg');
       }
     });
-    <?php if ($nav_menu_display == 'fold') {  //菜单开关实现?>
+    <?php if ($nav_style['fold'] == 'fold') {  //菜单开关实现?>
     document.addEventListener('DOMContentLoaded', function() {
       // 监听#show-Nav的点击事件
       const showNavBtn = document.getElementById('show-nav');

@@ -447,7 +447,64 @@ $prefix = 'iro_options';
         'desc' => __('Slide to adjust, the recommended value is 50','sakurairo_csf'),
         'unit' => 'px',
         'max' => '50',
-        'default' => '50'
+        'default' => '50',
+        'dependency' => array( 'nav_menu_style', '!=', 'sakura','','true')
+       ),
+
+       array(
+        'id' => 'sakura_nav_style',
+        'type' => 'fieldset',
+        'title' => __('Custom Sakura Nav Styles','sakurairo_csf'),
+        'dependency' => array( 'nav_menu_style', '==', 'sakura', '', 'true' ),
+        'fields' => array(
+          array(
+            'id' => 'blurry',
+            'type' => 'slider',
+            'title' => __('Blur degree','sakurairo_csf'),
+            'step' => '1',
+            'unit' => 'px',
+            'min' => '1',
+            'max' => '100',
+          ),
+          array(
+            'id' => 'distribution',
+            'type' => 'select',
+            'title' => __('Nav Menu Options Display Method','sakurairo_csf'),
+            'desc' => __('Distribution method of menu options','sakurairo_csf'),
+            'options'    => array(
+              'left' => __('Keep to the left','sakurairo_csf'),
+              'right' => __('Keep to the right','sakurairo_csf'),
+              'center' => __('Always centered','sakurairo_csf'),
+              'space-between'  => __('Even distribution','sakurairo_csf'),
+            ),
+          ),
+          array(
+            'id' => 'option_spacing',
+            'type' => 'slider',
+            'title' => __('Menu option left and right spacing','sakurairo_csf'),
+            'desc'    => __('You can manually adjust the option spacing to achieve more distribution effects, the default is 14','sakurairo_csf'),
+            'step' => '1',
+            'unit' => 'px',
+            'min' => '1',
+            'max' => '150',
+          ),
+          array(
+            'id'         => 'fold',
+            'type'       => 'radio',
+            'title'      => __('Nav Menu Content Display Method','sakurairo_csf'),
+            'desc'    => __('You can choose to unfold or fold the nav menu contents','sakurairo_csf'),
+            'options'    => array(
+              'unfold' => __('Unfold','sakurairo_csf'),
+              'fold' => __('Fold','sakurairo_csf'),
+            ),
+          ),
+        ),
+        'default' => array(
+          'blurry' => '10',
+          'distribution' => 'right',
+          'option_spacing' => '14',
+          'fold' => 'unfold',
+        ),
       ),
 
       array(
