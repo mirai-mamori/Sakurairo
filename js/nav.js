@@ -1,3 +1,8 @@
+const nav = document.querySelector('nav');
+if (!nav.classList.contains('sakura_nav')) {
+    init_iro_nav();
+}
+function init_iro_nav() {
 // 导航栏长度限制
     function initNavWidth() {
         const nav = document.querySelector('nav');
@@ -12,6 +17,7 @@
         };
         checkWidth();
         window.addEventListener('resize', checkWidth);
+        init_iro_nav()
     }
 
     document.addEventListener('DOMContentLoaded', initNavWidth);
@@ -954,7 +960,8 @@ const BrowserDetect = {
     isWebKit: () => {
         return 'WebkitAppearance' in document.documentElement.style;
     }
-};
+}
+};//iro_nav function
 
 //防止子菜单量子叠加
 document.addEventListener("DOMContentLoaded", () => {
