@@ -28,7 +28,7 @@ add_action( 'customize_register', 'akina_customize_register' );
 
 
 function set_homepage_controls($wp_customize) {
-	require_once get_theme_file_path('inc/classes/Customizer.php');
+	require_once get_theme_file_path('inc/classes/Custom.php');
 	$wp_customize->remove_control( 'show_on_front' );
     $wp_customize->remove_control( 'page_on_front' );
     $wp_customize->remove_control( 'page_for_posts' );
