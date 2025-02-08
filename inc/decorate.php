@@ -301,8 +301,8 @@ font-family:<?=iro_opt('nav_menu_font'); ?> !important;
 $nav_text_logo = iro_opt('nav_text_logo');
 ?>
 
-.site-title a{
-font-family: '<?php echo $nav_text_logo['font_name']; ?>';
+.site-branding a{
+font-family: <?php echo $nav_text_logo['font_name']; ?> !important;
 }
 
 <?php } ?>
