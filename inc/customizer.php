@@ -4,7 +4,7 @@
  *
  * @package Sakurairo
  */
-use Sakura\Customizer\{Homepage_Component_Order_Control};
+use Sakura\Custom\{Homepage_Component_Order_Control};
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
