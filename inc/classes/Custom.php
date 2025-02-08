@@ -1,5 +1,5 @@
 <?php
-namespace Sakura\Customizer;
+namespace Sakura\Custom;
 
 // 通用可排序控件父类
 abstract class Generic_Sortable_Control extends \WP_Customize_Control {
