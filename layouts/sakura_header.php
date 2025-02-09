@@ -46,21 +46,21 @@ $nav_text_logo = iro_opt('nav_text_logo');
 
   <div class="menu-wrapper">
     <?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => 'nav', 'container_class' => 'sakura_nav']); //菜单?>
+
+    <?php
+    if (iro_opt('nav_menu_search') == '1') { //是否开启搜索框?>
+      <div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
+    <?php } ?>
+
+    <?php $enable_random_graphs = (bool)iro_opt('cover_switch', true) && (bool)iro_opt('cover_random_graphs_switch', true); //是否允许更换背景
+    if ($enable_random_graphs): ?>
+      <div class="bg-switch" id="bg-next">
+        <i class="fa-solid fa-dice" aria-hidden="true"></i>
+        <span class="screen-reader-text">
+          <?php esc_html_e('Random Background', 'sakurairo'); ?>
+        </span>
+      </div>
   </div>
-
-  <?php
-  if (iro_opt('nav_menu_search') == '1') { //是否开启搜索框?>
-    <div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
-  <?php } ?>
-
-  <?php $enable_random_graphs = (bool)iro_opt('cover_switch', true) && (bool)iro_opt('cover_random_graphs_switch', true); //是否允许更换背景
-  if ($enable_random_graphs): ?>
-    <div class="bg-switch" id="bg-next">
-      <i class="fa-solid fa-dice" aria-hidden="true"></i>
-      <span class="screen-reader-text">
-        <?php esc_html_e('Random Background', 'sakurairo'); ?>
-      </span>
-    </div>
     <?php //仅在主页展示背景切换功能 ?>
     <script>
       function bgImageSwitcher() {
@@ -82,7 +82,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
     });
     <?php } ?>
     </script>
-  <?php endif; ?>
+  <?php endif; //选项全在menu-wrapper中，防止bg-switch隐藏宽度变化导致brand缩放?>
 
   <?php header_user_menu(); //用户栏?>
 

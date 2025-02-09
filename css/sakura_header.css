@@ -69,14 +69,16 @@
     margin-top: 17px;
 }
 
-.site-header .menu-wrapper{
+.site-header .menu-wrapper,
+.menu-wrapper nav.sakura_nav{
+    display:flex;
     width: 100%;
-    animation: fadeInLeft 1.5s;
 }
 
 .menu-wrapper nav.sakura_nav .menu {
     display: flex;
     width: 100%;
+    animation: fadeInLeft 1.5s;
 }
 
 nav ul,
@@ -143,14 +145,17 @@ nav .menu>li .sub-menu li {
 .bg-switch {
     width: 60px;
     opacity: 1;
-    transition: width 0.4s ease-in-out, opacity 0.4s ease-in-out;
     overflow: hidden;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
 }
 
 .bg-switch i{
     border: 2px solid transparent;
     border-radius: 10px !important;
-    padding: 11px 9px;
 }
 
 .bg-switch.hide-state {
