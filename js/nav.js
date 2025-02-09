@@ -1003,13 +1003,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // 设置初始样式
         subMenu.style.transform = `translateY(-10px) translateX(${offsetX}px)`;
 
-        // 鼠标进入和离开事件处理
+        // 鼠标移入时设置偏移量
         MainMenu.addEventListener("mouseenter", () => {
             subMenu.style.transform = `translateY(0) translateX(${offsetX}px)`;
-        });
-
-        MainMenu.addEventListener("mouseleave", () => {
-            subMenu.style.transform = `translateY(-10px) translateX(${offsetX}px)`;
         });
     });
 });
