@@ -39,6 +39,10 @@
     border-radius: 0px;
 }
 
+.site-title{
+    display: flex !important;
+}
+
 .site-title-logo {
     display: flex;
     justify-content: center;
