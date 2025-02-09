@@ -57,9 +57,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
   
   <?php if ($nav_menu_display == 'fold') { ?>
       <div id="show-nav" class="showNav">
-        <div class="line line1"></div>
-        <div class="line line2"></div>
-        <div class="line line3"></div>
+        <div class="line"></div>
       </div>
   <?php } //菜单结束?>
 

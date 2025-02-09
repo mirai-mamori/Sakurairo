@@ -127,9 +127,13 @@ nav .menu>li .sub-menu li {
 }
 
 .site-header #show-nav {
-    margin-bottom: 20px;
-    margin-left: 0px;
-    margin-right: 8px;
+    margin-bottom: 4px;
+    margin-left: 0px!important;
+    margin-right: 10px;
+}
+
+.searchbox.js-toggle-search i, .bg-switch i{
+    padding: 11px 10px;
 }
 
 .searchbox.js-toggle-search i {
@@ -157,6 +161,7 @@ nav .menu>li .sub-menu li {
 .bg-switch i{
     border: 2px solid transparent;
     border-radius: 10px !important;
+    padding: 11px 9px;
 }
 
 .bg-switch.hide-state {
