@@ -433,11 +433,24 @@ $prefix = 'iro_options';
         'type'       => 'image_select',
         'title'      => __('Nav Menu Style','sakurairo_csf'),
         'options'    => array(
-          'center' => $vision_resource_basepath . 'options/nav_menu_style_center.webp',
-          'space-between' => $vision_resource_basepath . 'options/nav_menu_style_space.webp',
+          'sakurairo' => $vision_resource_basepath . 'options/nav_menu_style_center.webp',
           'sakura' => $vision_resource_basepath . 'options/nav_menu_style_sakura.webp',
         ),
-        'default'    => 'center'
+        'default'    => 'sakurairo',
+      ),
+
+      array(
+        'id' => 'nav_option_distribution',
+        'type' => 'select',
+        'title' => __('Nav Menu Options Display Method','sakurairo_csf'),
+        'desc' => __('Distribution method of menu options,sakurairo style only support center or Evenly dispersed.','sakurairo_csf'),
+        'options'    => array(
+          'left' => __('Keep to the left','sakurairo_csf'),
+          'right' => __('Keep to the right','sakurairo_csf'),
+          'center' => __('Always centered','sakurairo_csf'),
+          'space-between'  => __('Evenly dispersed','sakurairo_csf'),
+        ),
+        'default'    => 'right',
       ),
 
       array(
@@ -467,18 +480,6 @@ $prefix = 'iro_options';
             'max' => '100',
           ),
           array(
-            'id' => 'distribution',
-            'type' => 'select',
-            'title' => __('Nav Menu Options Display Method','sakurairo_csf'),
-            'desc' => __('Distribution method of menu options','sakurairo_csf'),
-            'options'    => array(
-              'left' => __('Keep to the left','sakurairo_csf'),
-              'right' => __('Keep to the right','sakurairo_csf'),
-              'center' => __('Always centered','sakurairo_csf'),
-              'space-between'  => __('Even distribution','sakurairo_csf'),
-            ),
-          ),
-          array(
             'id' => 'option_spacing',
             'type' => 'slider',
             'title' => __('Menu option left and right spacing','sakurairo_csf'),
@@ -488,22 +489,10 @@ $prefix = 'iro_options';
             'min' => '1',
             'max' => '150',
           ),
-          array(
-            'id'         => 'fold',
-            'type'       => 'radio',
-            'title'      => __('Nav Menu Content Display Method','sakurairo_csf'),
-            'desc'    => __('You can choose to unfold or fold the nav menu contents','sakurairo_csf'),
-            'options'    => array(
-              'unfold' => __('Unfold','sakurairo_csf'),
-              'fold' => __('Fold','sakurairo_csf'),
-            ),
-          ),
         ),
         'default' => array(
           'blurry' => '10',
-          'distribution' => 'right',
           'option_spacing' => '14',
-          'fold' => 'unfold',
         ),
       ),
 

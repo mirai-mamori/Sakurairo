@@ -713,7 +713,7 @@ body.dark .post-title:hover{
 
 <?php 
 // Menu style settings
-$nav_menu_style = iro_opt('nav_menu_style');
+$nav_menu_style = iro_opt('nav_option_distribution');
 $has_user_avatar = iro_opt('nav_menu_user_avatar');
 $has_logo = !empty(iro_opt('iro_logo')) || !empty($nav_text_logo['text']); 
 

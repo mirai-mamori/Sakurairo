@@ -925,67 +925,6 @@ nav .menu > li .sub-menu a {
   width: 130px;
 }
 
-/* 菜单开关样式 */
-#show-nav {
-  position: relative;
-  float: right;
-  margin-left: 25px;
-  display: block;
-  width: 16px;
-  height: 20px;
-  margin-top: 6.5px;
-  cursor: pointer;
-  z-index: 999;
-}
-
-#show-nav .line {
-  position: absolute;
-  top: 7px;
-  left: 100%;
-  width: 16px;
-  margin-left: -12px;
-  height: 2px;
-  background: var(--theme-skin, #505050);
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
-}
-
-#show-nav .line:after,
-#show-nav .line:before {
-  transition-duration: .5s;
-  background-color: var(--theme-skin, #505050);
-  position: absolute;
-  content: "";
-  width: 16px;
-  height: 2px;
-  left: 0;
-}
-
-#show-nav.showNav .line:before {
-  top: -8px;
-}
-
-#show-nav.showNav .line:after {
-  top: 8px;
-}
-
-#show-nav.hideNav .line{
-  background-color: transparent !important;
-}
-
-#show-nav.hideNav .line:before {
-  top: 0;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-
-#show-nav.hideNav .line:after {
-  top: 0;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-}
-/* 菜单开关结束 */
-
 .site-content {
   max-width: 860px;
   padding: 0 20px;
@@ -7929,7 +7868,6 @@ body.dark h1.fes-title,
 body.dark h1.main-title,
 body.dark #archives-temp h3,
 body.dark #archives-temp h2,
-body.dark #show-nav .line,
 body.dark .linkdes,
 body.dark .entry-content h1,
 body.dark .entry-content h2,

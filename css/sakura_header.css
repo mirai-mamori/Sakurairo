@@ -67,21 +67,12 @@
 
 .site-header .menu-wrapper{
     width: 100%;
-    animation: fadeInLeft 1s;
+    animation: fadeInLeft 1.5s;
 }
 
 .menu-wrapper nav.sakura_nav .menu {
     display: flex;
     width: 100%;
-}
-
-.menu-wrapper .nav_menu_hide {
-    display: none;
-}
-
-.menu-wrapper .nav_menu_display {
-    display: flex;
-    animation: fadeInLeft .7s;
 }
 
 nav ul,
@@ -124,12 +115,6 @@ nav .menu>li .sub-menu {
 
 nav .menu>li .sub-menu li {
     padding: 10px 0;
-}
-
-.site-header #show-nav {
-    margin-bottom: 4px;
-    margin-left: 0px!important;
-    margin-right: 10px;
 }
 
 .searchbox.js-toggle-search i, .bg-switch i{
@@ -203,15 +188,11 @@ body.dark .site-branding {
     border: none;
 }
 
-body.dark .site-header #show-nav .line, body.dark .site-header.bg nav ul li a, 
+body.dark .site-header.bg nav ul li a, 
 body.dark .site-header:hover nav ul li a,
 body.dark .site-header.bg .searchbox.js-toggle-search i, body.dark .site-header.bg .bg-switch i,
 body.dark .site-header:hover .searchbox.js-toggle-search i, body.dark .site-header:hover .bg-switch i{
     color: #CCCCCC !important;
-}
-
-body.dark .site-header.bg #show-nav .line,body.dark .site-header:hover #show-nav .line{
-    background: #CCCCCC;
 }
 
 body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {

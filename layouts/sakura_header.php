@@ -12,7 +12,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
   }
 
   .menu-wrapper .sakura_nav .menu{
-    justify-content: <?php echo ($nav_style['distribution']??'right'); //菜单选项所处位置?>;
+    justify-content: <?php echo (iro_opt('nav_option_distribution')??'right'); //菜单选项所处位置?>;
   }
 
   nav ul li {
@@ -45,21 +45,8 @@ $nav_text_logo = iro_opt('nav_text_logo');
   <?php endif; //logo结束?>
 
   <div class="menu-wrapper">
-    <?php //菜单开始
-    $nav_menu_display = $nav_style['fold']; //决定菜单是否展开
-    $container_class = 'sakura_nav';
-    if ($nav_menu_display == 'fold') {
-      $container_class = 'sakura_nav nav_menu_hide';
-    }
-    ?>
-    <?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => 'nav', 'container_class' => $container_class]); ?>
+    <?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => 'nav', 'container_class' => 'sakura_nav']); //菜单?>
   </div>
-  
-  <?php if ($nav_menu_display == 'fold') { ?>
-      <div id="show-nav" class="showNav">
-        <div class="line"></div>
-      </div>
-  <?php } //菜单结束?>
 
   <?php
   if (iro_opt('nav_menu_search') == '1') { //是否开启搜索框?>
@@ -109,24 +96,6 @@ $nav_text_logo = iro_opt('nav_text_logo');
         header.classList.remove('bg');
       }
     });
-    <?php if ($nav_style['fold'] == 'fold') {  //菜单开关实现?>
-    document.addEventListener('DOMContentLoaded', function() {
-      // 监听#show-Nav的点击事件
-      const showNavBtn = document.getElementById('show-nav');
-      if (showNavBtn) {
-        showNavBtn.addEventListener('click', function() {
-          const menuElement = document.querySelector('.sakura_nav');
-          if (menuElement) {
-            if (menuElement.classList.contains('nav_menu_display')) {
-              menuElement.classList.replace('nav_menu_display', 'nav_menu_hide');
-            } else {
-              menuElement.classList.replace('nav_menu_hide', 'nav_menu_display');
-            }
-          }
-        });
-      }
-    });
-    <?php } ?>
   </script>
-  
+
 </header>
