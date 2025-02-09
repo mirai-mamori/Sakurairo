@@ -985,3 +985,31 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+//子菜单动态偏移对齐
+document.addEventListener("DOMContentLoaded", function () {
+    const subMenus = document.querySelectorAll("nav .menu > li .sub-menu");
+
+    subMenus.forEach(subMenu => {
+        const MainMenu = subMenu.parentElement;
+
+        // 获取渲染后的宽度
+        const MainMenuWidth = MainMenu.getBoundingClientRect().width;
+        const subMenuWidth = subMenu.getBoundingClientRect().width;
+
+        // 偏移计算，确保子菜单居中
+        const offsetX = (subMenuWidth - MainMenuWidth) / 2;
+
+        // 设置初始样式
+        subMenu.style.transform = `translateY(-10px) translateX(${offsetX}px)`;
+
+        // 鼠标进入和离开事件处理
+        MainMenu.addEventListener("mouseenter", () => {
+            subMenu.style.transform = `translateY(0) translateX(${offsetX}px)`;
+        });
+
+        MainMenu.addEventListener("mouseleave", () => {
+            subMenu.style.transform = `translateY(-10px) translateX(${offsetX}px)`;
+        });
+    });
+});
