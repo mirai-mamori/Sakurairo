@@ -545,7 +545,6 @@ $prefix = 'iro_options';
               'left' => __('Keep to the left','sakurairo_csf'),
               'right' => __('Keep to the right','sakurairo_csf'),
               'center' => __('Always centered','sakurairo_csf'),
-              'space-between'  => __('Evenly dispersed','sakurairo_csf'),
             ),
           ),
           array(
