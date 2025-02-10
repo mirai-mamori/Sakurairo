@@ -24,6 +24,31 @@ $nav_text_logo = iro_opt('nav_text_logo');
   nav ul li {
     margin: 0 <?php echo ($nav_style['option_spacing']??'14px'); //选项间距，用于居中和分散时自定义确保美观?>px;
   }
+
+  <?php 
+  if($nav_style['style'] == 'sakurairo') { ?>
+  .site-header{
+    position: fixed;
+    border-radius: 15px !important;
+    width: 95%;
+    height: 60px;
+    left: 2.5% ;
+    top: 2.5% ;
+    border: 1.5px solid transparent !important;
+  }
+
+  .site-header.bg{
+    top: 0!important;
+    left: 0!important;
+    width: 100% !important;
+    border-bottom: 1.5px solid #FFFFFF !important;
+    border-radius: 0 !important;
+  }
+
+  .site-header:hover{
+    top: 2.5%;
+  }
+  <?php } ?>
 </style>
 
 <header class="site-header no-select" role="banner">

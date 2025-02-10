@@ -5,21 +5,18 @@
     display: flex;
     justify-content: left;
     border-radius: 0px !important;
-    top: 0;
-    left: 0;
     background: transparent;
     position: fixed;
     z-index: 999;
     border-bottom: 1.5px solid transparent;
-    -webkit-transition: all .6s ease;
-    transition: all .6s ease;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
 }
 
 .site-header.bg,
 .site-header:hover {
     background: rgba(255, 255, 255, 0.7);
     border-bottom: 1.5px solid #FFFFFF;
-    width: 100%;
     -webkit-transition: all .6s ease;
     transition: border-bottom 0.6s ease,all .6s ease;
 }
