@@ -301,8 +301,8 @@ font-family:<?=iro_opt('nav_menu_font'); ?> !important;
 $nav_text_logo = iro_opt('nav_text_logo');
 ?>
 
-.site-branding a{
-font-family: <?php echo $nav_text_logo['font_name']; ?> !important;
+.site-title a{
+font-family: '<?php echo $nav_text_logo['font_name']; ?>';
 }
 
 <?php } ?>
@@ -713,7 +713,7 @@ body.dark .post-title:hover{
 
 <?php 
 // Menu style settings
-$nav_menu_style = iro_opt('nav_option_distribution');
+$nav_menu_style = iro_opt('nav_menu_style');
 $has_user_avatar = iro_opt('nav_menu_user_avatar');
 $has_logo = !empty(iro_opt('iro_logo')) || !empty($nav_text_logo['text']); 
 

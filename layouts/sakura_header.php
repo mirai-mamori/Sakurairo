@@ -11,8 +11,14 @@ $nav_text_logo = iro_opt('nav_text_logo');
     backdrop-filter: blur( <?php echo ($nav_style['blurry']??'10'); //模糊度 ?>px);
   }
 
+  <?php if (!empty($nav_text_logo['font_name'])){ ?>
+  .site-branding a{
+    font-family: <?php echo $nav_text_logo['font_name']; ?> !important;
+  }
+  <?php } ?>
+
   .menu-wrapper .sakura_nav .menu{
-    justify-content: <?php echo (iro_opt('nav_option_distribution')??'right'); //菜单选项所处位置?>;
+    justify-content: <?php echo ($nav_style['distribution']??'right'); //菜单选项所处位置?>;
   }
 
   nav ul li {
@@ -25,11 +31,11 @@ $nav_text_logo = iro_opt('nav_text_logo');
   <?php //logo开始
   if (iro_opt('iro_logo') || !empty($nav_text_logo['text'])): ?>
     <div class="site-branding">
-      <a href="<?= esc_url(home_url('/')); ?>">
+      <a href="<?php echo esc_url(home_url('/')); ?>">
         <?php if (iro_opt('iro_logo')): ?>
           <div class="site-title-logo">
-            <img alt="<?= esc_attr(get_bloginfo('name')); ?>"
-              src="<?= esc_url(iro_opt('iro_logo')); ?>"
+            <img alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
+              src="<?php echo esc_url(iro_opt('iro_logo')); ?>"
               width="auto" height="auto"
               loading="lazy"
               decoding="async">
@@ -37,7 +43,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
         <?php endif; ?>
         <?php if (!empty($nav_text_logo['text'])): ?>
           <div class="site-title">
-            <?= esc_html($nav_text_logo['text']); ?>
+          <?php echo esc_html($nav_text_logo['text']); ?>
           </div>
         <?php endif; ?>
       </a>
