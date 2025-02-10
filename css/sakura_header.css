@@ -13,10 +13,13 @@
     transition: all 1s ease;
 }
 
+.site-header.bg{
+    border-bottom: 1.5px solid #FFFFFF !important;
+}
+
 .site-header.bg,
 .site-header:hover {
     background: rgba(255, 255, 255, 0.7);
-    border-bottom: 1.5px solid #FFFFFF;
     -webkit-transition: all 1s ease;
     transition: border-bottom 1s ease,all 1s ease;
 }
@@ -182,8 +185,8 @@ nav .menu>li .sub-menu li {
     transform: translateY(-20px);
 }
 
-
-body.dark .site-header.bg,body.dark .site-header:hover {
+body.dark .site-header.bg,
+body.dark .site-header:hover {
     background-color: rgba(38, 38, 38, 0.8) !important;
     border-bottom: 1.5px solid #7d7d7d30;
 }

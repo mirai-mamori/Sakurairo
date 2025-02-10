@@ -25,7 +25,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
     margin: 0 <?php echo ($nav_style['option_spacing']??'14px'); //选项间距，用于居中和分散时自定义确保美观?>px;
   }
 
-  <?php 
+  <?php //sakurairo classic 基于 sakura样式再层叠
   if($nav_style['style'] == 'sakurairo') { ?>
   .site-header{
     position: fixed;
@@ -41,12 +41,19 @@ $nav_text_logo = iro_opt('nav_text_logo');
     top: 0!important;
     left: 0!important;
     width: 100% !important;
-    border-bottom: 1.5px solid #FFFFFF !important;
     border-radius: 0 !important;
   }
 
   .site-header:hover{
     top: 2.5%;
+  }
+
+  body.dark .site-header:hover {
+    border-bottom: solid transparent !important;
+  }
+
+  body.dark .site-header.bg{
+    border-bottom: 1.5px solid #7d7d7d30 !important;
   }
   <?php } ?>
 </style>
