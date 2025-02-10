@@ -531,8 +531,8 @@ $prefix = 'iro_options';
             'type'       => 'image_select',
             'title'      => __('Sakura Nav Style','sakurairo_csf'),
             'options'    => array(
-              'sakura' => $vision_resource_basepath . 'options/nav_menu_sakura.webp',
-              'sakurairo' => $vision_resource_basepath . '/options/nav_menu_sakurairo.webp',
+              'sakura' => $vision_resource_basepath . 'options/nav_menu_style_sakura.webp',
+              'sakurairo' => $vision_resource_basepath . '/options/nav_menu_style_sakurairo.webp',
             ),
             'default'    => 'sakura',
           ),
