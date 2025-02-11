@@ -2701,7 +2701,6 @@ h1.main-title {
   align-items: center;
   max-width: 65%;
   flex-wrap: wrap;
-  z-index: 9999;
 }
 
 .top-social img,
@@ -2788,13 +2787,13 @@ h1.main-title {
   cursor: pointer;
 }
 
-.socialIconWithInner {
+.wechat {
   width: 40px;
   height: 40px;
   position: relative;
 }
 
-.socialIconQRCodeInner img {
+.wechatInner img {
   border-radius: 0;
   width: 121px;
   height: auto;
@@ -2802,7 +2801,7 @@ h1.main-title {
   background: 0 0;
 }
 
-.socialIconQRCodeInner {
+.wechatInner {
   width: 121px;
   height: 121px;
   padding: 10px;
@@ -2817,31 +2816,7 @@ h1.main-title {
   transition: .7s all ease;
 }
 
-.socialIconTextInner span {
-  color: white;	
-  border-radius: 0;
-  padding: 0;
-  background: 0 0;
-  white-space: normal;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.socialIconTextInner {
-  width: 121px;
-  padding: 10px;
-  background: rgba(0, 0, 0, .4);
-  top: 40px;
-  left: -40px;
-  transform: translate3d(0, 50px, 0);
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  border-radius: 8px;
-  transition: .7s all ease;
-}
-
-.socialIconQRCodeInner:before {
+.wechatInner:before {
   display: none;
   content: "";
   position: absolute;
@@ -2853,25 +2828,7 @@ h1.main-title {
   border-color: transparent transparent rgba(0, 0, 0, .4) transparent;
 }
 
-.socialIconTextInner:before {
-  display: none;
-  content: "";
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  margin-left: -15px;
-  border-width: 15px;
-  border-style: solid;
-  border-color: transparent transparent rgba(0, 0, 0, .4) transparent;
-}
-
-.socialIconWithInner:hover .socialIconQRCodeInner {
-  transform: translate3d(0, 16px, 0);
-  opacity: 1;
-  visibility: visible;
-}
-
-.socialIconWithInner:hover .socialIconTextInner {
+.wechat:hover .wechatInner {
   transform: translate3d(0, 16px, 0);
   opacity: 1;
   visibility: visible;
@@ -4939,7 +4896,7 @@ h5::before {
   position: absolute;
   bottom: 50px;
   left: calc(50% - 42px);
-  z-index: 4; 
+  z-index: 5; 
   animation-name: float-down;  
   animation-duration: 5s;  
   animation-iteration-count: infinite;
@@ -9490,7 +9447,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    z-index: 9999;
   }
 
   .header-info p {
