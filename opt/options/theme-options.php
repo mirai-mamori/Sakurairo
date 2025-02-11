@@ -1525,9 +1525,9 @@ $prefix = 'iro_options';
         'type'   => 'slider',
         'title'  => __('HomePage Widget Transparency','sakurairo_csf'),
         'desc'   => __('Slide to adjust, the recommended value range is 0.6-0.8','sakurairo_csf'),
-		'dependency' => array( 
-			  array( 'cover_switch', '==', 'true', '', 'true' ),
-			  array( 'infor_bar', '==', 'true' ),
+        'dependency' => array( 
+                              array( 'cover_switch', '==', 'true', '', 'true' ),
+                              array( 'infor_bar', '==', 'true' ),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -1940,13 +1940,13 @@ $prefix = 'iro_options';
       ),
 		
       array(
-			'id' => 'wechat_copy_switch',
-			'type' => 'switcher',
-			'title' => __('Click to Copy WeChat ID', 'sakurairo_csf'),
-			'dependency' => array('social_area', '==', 'true', '', 'true'),
-			'label' => __('Enabled by default, clicking the WeChat icon will copy your WeChat ID instead of opening a link', 'sakurairo_csf'),
-			'default' => false,
-		),
+        'id' => 'wechat_copy_switch',
+        'type' => 'switcher',
+        'title' => __('Click to Copy WeChat ID', 'sakurairo_csf'),
+        'dependency' => array('social_area', '==', 'true', '', 'true'),
+        'label' => __('Enabled by default, clicking the WeChat icon will copy your WeChat ID instead of opening a link', 'sakurairo_csf'),
+        'default' => false,
+      ),
 		
       array(
         'id'     => 'wechat_url',
