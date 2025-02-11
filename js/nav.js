@@ -1001,11 +1001,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const offsetX = (subMenuWidth - MainMenuWidth) / 2;
 
         // 设置初始样式
-        subMenu.style.transform = `translateY(-10px) translateX(${offsetX}px)`;
+        const BasicSubMenuStyle = `translateY(-10px) translateX(${offsetX}px)`;
+        subMenu.style.transform = BasicSubMenuStyle;
 
-        // 鼠标移入时设置偏移量
+        // 设置偏移量
         MainMenu.addEventListener("mouseenter", () => {
             subMenu.style.transform = `translateY(0) translateX(${offsetX}px)`;
+        });
+        MainMenu.addEventListener("mouseleave", () => {
+            subMenu.style.transform = BasicSubMenuStyle;
         });
     });
 });
