@@ -925,31 +925,6 @@ nav .menu > li .sub-menu a {
   width: 130px;
 }
 
-/* 移动端菜单 */
-#show-nav {
-  position: relative;
-  float: right;
-  margin-left: 25px;
-  display: block;
-  width: 10px;
-  height: 20px;
-  margin-top: 6.5px;
-  cursor: pointer;
-  z-index: 999;
-}
-
-#show-nav .line {
-  position: absolute;
-  top: 7px;
-  left: 50%;
-  width: 16px;
-  margin-left: -12px;
-  height: 2.5px;
-  background: var(--theme-skin, #505050);
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
-}
-
 .site-content {
   max-width: 860px;
   padding: 0 20px;
@@ -4849,30 +4824,6 @@ object {
   max-width: 100%;
 }
 
-#show-nav.showNav .line1 {
-  top: 15px;
-}
-
-#show-nav.showNav .line3 {
-  top: 23px;
-}
-
-#show-nav.hideNav .line1 {
-  top: 16px;
-  -webkit-transform: rotateZ(45deg);
-  transform: rotateZ(45deg);
-}
-
-#show-nav.hideNav .line2 {
-  opacity: 0;
-}
-
-#show-nav.hideNav .line3 {
-  top: 16px;
-  -webkit-transform: rotateZ(-45deg);
-  transform: rotateZ(-45deg);
-}
-
 .site-main {
   padding: 7.5% 0 0;
 }
@@ -7917,7 +7868,6 @@ body.dark h1.fes-title,
 body.dark h1.main-title,
 body.dark #archives-temp h3,
 body.dark #archives-temp h2,
-body.dark #show-nav .line,
 body.dark .linkdes,
 body.dark .entry-content h1,
 body.dark .entry-content h2,
