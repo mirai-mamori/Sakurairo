@@ -1528,6 +1528,7 @@ $prefix = 'iro_options';
         'dependency' => array( 
                               array( 'cover_switch', '==', 'true', '', 'true' ),
                               array( 'infor_bar', '==', 'true' ),
+                            ),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
