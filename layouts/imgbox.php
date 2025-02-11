@@ -7,21 +7,132 @@ if (iro_opt('social_display_icon', '') === 'display_icon/remix_iconfont'): ?>
 $print_social_zone = function() use ($all_opt): void {
 
     // 微信
-    if (iro_opt('wechat')): ?>
-        <li class="wechat"><a href="#" title="WeChat">
-            <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont'): ?>
-                <i class="remix_social icon-wechat"></i>
-            <?php else: ?>
-                <img loading="lazy" src="<?= iro_opt('vision_resource_basepath').iro_opt('social_display_icon').'/' . 'wechat.webp' ?>" />
-            <?php endif; ?>
-        </a>
-            <div class="wechatInner">
-                <img class="wechat-img" style="height: max-content;width: max-content;" loading="lazy" src="<?= iro_opt('wechat', '') ?>" alt="WeChat">
-            </div>
-        </li>
-    <?php
-    endif;
+    $wechat_qrcode_switch = iro_opt('wechat_qrcode_switch');
+    $wechat_qrcode = iro_opt('wechat_qrcode');
+    $wechat_id = iro_opt('wechat_id');
+    $wechat_copy_switch = iro_opt('wechat_copy_switch');
+    $wechat_url = iro_opt('wechat_url');
 
+    // QQ
+    $qq_qrcode_switch = iro_opt('qq_qrcode_switch');
+    $qq_qrcode = iro_opt('qq_qrcode');
+    $qq_id = iro_opt('qq_id');
+    $qq_copy_switch = iro_opt('qq_copy_switch');
+    $qq_url = iro_opt('qq_url');
+
+    $social_icons = [];
+
+    // 处理微信
+    if ($wechat_qrcode_switch && $wechat_qrcode) {
+        $social_icons[] = [
+            'class' => 'socialIconQRCodeInner',
+            'icon' => 'wechat',
+            'inner' => '<img class="socialIconQRCodeInner-img" src="' . esc_url($wechat_qrcode) . '" alt="WeChat QR Code">',
+            'action' => $wechat_copy_switch && $wechat_id ? 'copyWeChatID(event, this)' : ($wechat_url ? "redirectToURL(event, '" . esc_url($wechat_url) . "')" : 'doNothing(event)'),
+        ];
+    } elseif (!$wechat_qrcode_switch && $wechat_id) {
+        $social_icons[] = [
+            'class' => 'socialIconTextInner',
+            'icon' => 'wechat',
+            'inner' => '<span class="socialIconTextInner-span">' . esc_html($wechat_id) . '</span>',
+            'action' => $wechat_copy_switch ? 'copyWeChatID(event, this)' : ($wechat_url ? "redirectToURL(event, '" . esc_url($wechat_url) . "')" : 'doNothing(event)'),
+        ];
+    }
+
+    // 处理QQ
+    if ($qq_qrcode_switch && $qq_qrcode) {
+        $social_icons[] = [
+            'class' => 'socialIconQRCodeInner',
+            'icon' => 'qq',
+            'inner' => '<img class="socialIconQRCodeInner-img" src="' . esc_url($qq_qrcode) . '" alt="QQ QR Code">',
+            'action' => $qq_copy_switch && $qq_id ? 'copyQQID(event, this)' : ($qq_url ? "redirectToURL(event, '" . esc_url($qq_url) . "')" : 'doNothing(event)'),
+        ];
+    } elseif (!$qq_qrcode_switch && $qq_id) {
+        $social_icons[] = [
+            'class' => 'socialIconTextInner',
+            'icon' => 'qq',
+            'inner' => '<span class="socialIconTextInner-span">' . esc_html($qq_id) . '</span>',
+            'action' => $qq_copy_switch ? 'copyQQID(event, this)' : ($qq_url ? "redirectToURL(event, '" . esc_url($qq_url) . "')" : 'doNothing(event)'),
+        ];
+    }
+
+    if (!empty($social_icons)):
+        foreach ($social_icons as $icon_data): ?>
+            <li class="socialIconWithInner">
+                <a href="javascript:void(0);" title="<?= ucfirst($icon_data['icon']) ?>" onclick="<?= $icon_data['action'] ?>">
+                    <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont'): ?>
+                        <i class="remix_social icon-<?= esc_attr($icon_data['icon']) ?>"></i>
+                    <?php else: ?>
+                        <img loading="lazy" src="<?= iro_opt('vision_resource_basepath') . iro_opt('social_display_icon') . '/' . esc_attr($icon_data['icon']) . '.webp' ?>" />
+                    <?php endif; ?>
+                </a>
+                <?php if (!empty($icon_data['class'])): ?>
+                    <div class="<?= esc_attr($icon_data['class']) ?>">
+                        <?= $icon_data['inner'] ?>
+                    </div>
+                <?php endif; ?>
+            </li>
+        <?php endforeach;
+    endif;
+?>
+
+	<script>
+		function copyWeChatID(event, element) {
+			copyID(event, element, "<?= esc_js($wechat_id) ?>", "WeChat ID");
+		}
+
+		function copyQQID(event, element) {
+			copyID(event, element, "<?= esc_js($qq_id) ?>", "QQ ID");
+		}
+
+		function copyID(event, element, id, label) {
+			event.preventDefault();
+			if (!id) {
+				alert(label + " is not set!");
+				return;
+			}
+
+			navigator.clipboard.writeText(id).then(function () {
+				var parentElement = element.closest('.socialIconWithInner');
+				var existingCopiedMessage = parentElement.querySelector('.copied-message');
+				if (existingCopiedMessage) {
+					existingCopiedMessage.remove();
+				}
+
+				var inner = parentElement.querySelector('.socialIconTextInner, .socialIconQRCodeInner');
+				if (inner) {
+					inner.style.display = 'none';
+				}
+
+				var copiedMessage = document.createElement("div");
+				copiedMessage.className = "socialIconTextInner copied-message";
+				copiedMessage.innerHTML = '<span class="socialIconTextInner-span">Copied!</span>';
+				parentElement.appendChild(copiedMessage);
+				setTimeout(function () {
+					copiedMessage.remove();
+					if (inner) {
+						inner.style.display = '';
+					}
+				}, 2000);
+			}).catch(function (err) {
+				console.error("Failed to copy: ", err);
+				alert("Failed to copy " + label + ".");
+			});
+		}
+
+		function redirectToURL(event, url) {
+			event.preventDefault();
+			if (url) {
+				window.open(url, '_blank');
+			}
+		}
+
+		function doNothing(event) {
+			event.preventDefault();
+		}
+	</script>
+
+	<?php
     // 大体(all_opt.php)
     foreach ($all_opt as $key => $value):
         if (!empty($value['link'])):

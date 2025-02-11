@@ -1525,6 +1525,9 @@ $prefix = 'iro_options';
         'type'   => 'slider',
         'title'  => __('HomePage Widget Transparency','sakurairo_csf'),
         'desc'   => __('Slide to adjust, the recommended value range is 0.6-0.8','sakurairo_csf'),
+		'dependency' => array( 
+			  array( 'cover_switch', '==', 'true', '', 'true' ),
+			  array( 'infor_bar', '==', 'true' ),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -1911,20 +1914,95 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'     => 'wechat',
+        'id' => 'wechat_qrcode_switch',
+        'type' => 'switcher',
+        'title' => __('Switch Button of WeChat QR Code', 'sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'label' => __('Enabled by default, the WeChat QR code is shown instead of the WeChat ID','sakurairo_csf'),
+        'default' => true
+      ),
+		
+      array(
+        'id'     => 'wechat_qrcode',
         'type'  => 'upload',
-        'title' => __('Wechat','sakurairo_csf'),
+        'title' => __('WeChat QR Code','sakurairo_csf'),
         'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
         'desc' => __('The best length-width ratio of is 1:1','sakurairo_csf'),
         'library'      => 'image',
       ),
-
+		
       array(
-        'id'     => 'qq',
+        'id'     => 'wechat_id',
         'type'   => 'text',
-        'title' => __('QQ','sakurairo_csf'),
+        'title' => __('WeChat ID','sakurairo_csf'),
         'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('Please note the format of filling out the form, e.g. tencent://message/?uin=123456','sakurairo_csf'),
+        'desc' => __('Enter your WeChat ID that others can search for','sakurairo_csf'),
+      ),
+		
+      array(
+			'id' => 'wechat_copy_switch',
+			'type' => 'switcher',
+			'title' => __('Click to Copy WeChat ID', 'sakurairo_csf'),
+			'dependency' => array('social_area', '==', 'true', '', 'true'),
+			'label' => __('Enabled by default, clicking the WeChat icon will copy your WeChat ID instead of opening a link', 'sakurairo_csf'),
+			'default' => false,
+		),
+		
+      array(
+        'id'     => 'wechat_url',
+        'type'   => 'text',
+        'title' => __('WeChat Icon Link','sakurairo_csf'),
+        'dependency' => array( 
+			  array( 'social_area', '==', 'true', '', 'true' ),
+			  array( 'wechat_copy_switch', '==', 'false', '', 'true' ),
+		  ),
+        'desc' => __('Specify the link to open when clicking the WeChat icon. Leave blank to disable redirection','sakurairo_csf'),
+      ),
+		
+      array(
+        'id' => 'qq_qrcode_switch',
+        'type' => 'switcher',
+        'title' => __('Switch Button of QQ QR Code', 'sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'label' => __('Enabled by default, the QQ QR code is shown instead of the QQ ID','sakurairo_csf'),
+        'default' => true
+      ),
+		
+      array(
+        'id'     => 'qq_qrcode',
+        'type'  => 'upload',
+        'title' => __('QQ QR Code','sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'desc' => __('The best length-width ratio of is 1:1','sakurairo_csf'),
+        'library'      => 'image',
+      ),
+		
+      array(
+        'id'     => 'qq_id',
+        'type'   => 'text',
+        'title' => __('QQ ID','sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'desc' => __('Enter your QQ ID that others can search for','sakurairo_csf'),
+      ),
+		
+      array(
+			'id' => 'qq_copy_switch',
+			'type' => 'switcher',
+			'title' => __('Click to Copy QQ ID', 'sakurairo_csf'),
+			'dependency' => array('social_area', '==', 'true', '', 'true'),
+			'label' => __('Enabled by default, clicking the QQ icon will copy your QQ ID instead of opening a link', 'sakurairo_csf'),
+			'default' => false,
+		),
+		
+      array(
+        'id'     => 'qq_url',
+        'type'   => 'text',
+        'title' => __('QQ Icon Link','sakurairo_csf'),
+        'dependency' => array( 
+			  array( 'social_area', '==', 'true', '', 'true' ),
+			  array( 'qq_copy_switch', '==', 'false', '', 'true' ),
+		  ),
+        'desc' => __('Specify the link to open when clicking the QQ icon. Leave blank to disable redirection','sakurairo_csf'),
       ),
 
       array(
