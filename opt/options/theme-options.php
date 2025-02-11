@@ -1986,13 +1986,13 @@ $prefix = 'iro_options';
       ),
 		
       array(
-			'id' => 'qq_copy_switch',
-			'type' => 'switcher',
-			'title' => __('Click to Copy QQ ID', 'sakurairo_csf'),
-			'dependency' => array('social_area', '==', 'true', '', 'true'),
-			'label' => __('Enabled by default, clicking the QQ icon will copy your QQ ID instead of opening a link', 'sakurairo_csf'),
-			'default' => false,
-		),
+        'id' => 'qq_copy_switch',
+        'type' => 'switcher',
+        'title' => __('Click to Copy QQ ID', 'sakurairo_csf'),
+        'dependency' => array('social_area', '==', 'true', '', 'true'),
+        'label' => __('Enabled by default, clicking the QQ icon will copy your QQ ID instead of opening a link', 'sakurairo_csf'),
+        'default' => false,
+      ),
 		
       array(
         'id'     => 'qq_url',
