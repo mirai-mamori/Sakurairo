@@ -77,7 +77,7 @@ if ( !class_exists(StateStore::class, false) ):
 		 * @param Update|null $update
 		 * @return $this
 		 */
-		public function setUpdate(Update $update = null) {
+		public function setUpdate(?Update $update = null) {
 			$this->lazyLoad();
 			$this->update = $update;
 			return $this;
