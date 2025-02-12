@@ -2904,6 +2904,33 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'steam_covercdn',
+        'type' => 'select',
+        'title' => __('游戏封面CDN','sakurairo_csf'),
+        'desc' => __('基于国内访问Steam可能加载不出来游戏封面,推荐使用Steam China, 其次akamai','sakurairo_csf'),
+        'options' => array(
+          'steamchina' => __('Steam China','sakurairo_csf'), // shared.cdn.steamchina.queniuam.com
+          'steamakamai'  => __('Steam akamai','sakurairo_csf'), // shared.akamai.steamstatic.com
+          'steamfastly'  => __('Steam fastly','sakurairo_csf'), // shared.fastly.steamstatic.com
+          'steamcloudflare'  => __('Steam cloudflare','sakurairo_csf'), // shared.cloudflare.steamstatic.com
+        ),
+        'default'     => 'steamchina'
+      ),
+
+      array(
+        'id' => 'steam_link',
+        'type' => 'select',
+        'title' => __('跳转链接','sakurairo_csf'),
+        'desc' => __('根据喜好选择跳转链接','sakurairo_csf'),
+        'options' => array(
+          'steam' => __('Steam','sakurairo_csf'),
+          'xiaoheihe'  => __('小黑盒','sakurairo_csf'),
+          'steamdb'  => __('SteamDB','sakurairo_csf'),
+        ),
+        'default'     => 'steam'
+      ),
+
+      array(
         'type' => 'subheading',
         'content' => __('Login Template Settings','sakurairo_csf'),
       ),
