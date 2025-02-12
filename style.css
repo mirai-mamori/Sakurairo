@@ -2448,7 +2448,7 @@ h1.main-title {
 }
 
 .socialIconTextInner span {
-  color: white;	
+  color: white;
   border-radius: 0;
   padding: 0;
   background: 0 0;
@@ -7705,7 +7705,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     line-height: 25px;
     text-overflow: ellipsis;
     white-space: normal;
-	z-index: 9999;
+    z-index: 9999;
   }
 
   .header-info p {
