@@ -100,7 +100,6 @@ $nav_text_logo = iro_opt('nav_text_logo');
           <?php esc_html_e('Random Background', 'sakurairo'); ?>
         </span>
       </div>
-  </div>
     <?php //仅在主页展示背景切换功能 ?>
     <script>
       function bgImageSwitcher() {
@@ -122,8 +121,9 @@ $nav_text_logo = iro_opt('nav_text_logo');
     });
     <?php } ?>
     </script>
-  <?php endif; //选项全在menu-wrapper中，防止bg-switch隐藏宽度变化导致brand缩放?>
-
+    <?php endif; //选项全在menu-wrapper中，防止bg-switch隐藏宽度变化导致brand缩放?>
+  </div>
+  
   <?php header_user_menu(); //用户栏?>
 
   <script><?php //置顶时添加底色 ?>
