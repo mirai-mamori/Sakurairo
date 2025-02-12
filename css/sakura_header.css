@@ -13,12 +13,9 @@
     transition: all 1s ease;
 }
 
-.site-header.bg{
-    border-bottom: 1.5px solid #FFFFFF !important;
-}
-
 .site-header.bg,
 .site-header:hover {
+    border-bottom: 1.5px solid #FFFFFF;
     background: rgba(255, 255, 255, 0.7);
     -webkit-transition: all 1s ease;
     transition: border-bottom 1s ease,all 1s ease;

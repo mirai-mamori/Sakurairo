@@ -35,6 +35,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
     left: 2.5% ;
     top: 2.5% ;
     border: 1.5px solid transparent !important;
+    border-bottom: 1.5px solid transparent !important;
   }
 
   .site-header.bg{
@@ -42,6 +43,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
     left: 0!important;
     width: 100% !important;
     border-radius: 0 !important;
+    border-bottom: 1.5px solid #FFFFFF !important;
   }
 
   .site-header:hover{
