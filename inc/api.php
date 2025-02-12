@@ -20,6 +20,7 @@ include_once('classes/Captcha.php');
 include_once('classes/MyAnimeList.php');
 include_once('classes/BilibiliFavList.php');
 include_once('classes/bangumi.php');
+include_once('classes/Steam.php');
 use Sakura\API\QQ;
 use Sakura\API\Cache;
 use Sakura\API\Captcha;
