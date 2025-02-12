@@ -746,6 +746,11 @@ nav .menu > li .sub-menu {
   flex-direction: column;
   padding: 5px 0;
   border: 1px solid #f7f7f7;
+  pointer-events: none;
+}
+
+.sub-menu.active {
+  pointer-events: auto !important;
 }
 
 nav .menu > li .sub-menu:hover {
@@ -918,31 +923,6 @@ nav .menu > li .sub-menu a {
   padding: 5px 0;
   border-radius: 0 0 4px 4px;
   width: 130px;
-}
-
-/* 移动端菜单 */
-#show-nav {
-  position: relative;
-  float: right;
-  margin-left: 25px;
-  display: block;
-  width: 10px;
-  height: 20px;
-  margin-top: 6.5px;
-  cursor: pointer;
-  z-index: 999;
-}
-
-#show-nav .line {
-  position: absolute;
-  top: 7px;
-  left: 50%;
-  width: 16px;
-  margin-left: -12px;
-  height: 2.5px;
-  background: var(--theme-skin, #505050);
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
 }
 
 .site-content {
@@ -2378,6 +2358,7 @@ h1.main-title {
   align-items: center;
   max-width: 65%;
   flex-wrap: wrap;
+  z-index: 9999;
 }
 
 .top-social img,
@@ -2437,13 +2418,13 @@ h1.main-title {
   margin: 5px;
 }
 
-.wechat {
+.socialIconWithInner {
   width: 40px;
   height: 40px;
   position: relative;
 }
 
-.wechatInner img {
+.socialIconQRCodeInner img {
   border-radius: 0;
   width: 121px;
   height: auto;
@@ -2451,7 +2432,7 @@ h1.main-title {
   background: 0 0;
 }
 
-.wechatInner {
+.socialIconQRCodeInner {
   width: 121px;
   height: 121px;
   padding: 10px;
@@ -2463,9 +2444,34 @@ h1.main-title {
   visibility: hidden;
   position: absolute;
   border-radius: 8px;
+  transition: .7s all ease;
 }
 
-.wechatInner:before {
+.socialIconTextInner span {
+  color: white;	
+  border-radius: 0;
+  padding: 0;
+  background: 0 0;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.socialIconTextInner {
+  width: 121px;
+  padding: 10px;
+  background: rgba(0, 0, 0, .4);
+  top: 40px;
+  left: -40px;
+  transform: translate3d(0, 50px, 0);
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  border-radius: 8px;
+  transition: .7s all ease;
+}
+
+.socialIconQRCodeInner:before {
   display: none;
   content: "";
   position: absolute;
@@ -2477,7 +2483,25 @@ h1.main-title {
   border-color: transparent transparent rgba(0, 0, 0, .4) transparent;
 }
 
-.wechat:hover .wechatInner {
+.socialIconTextInner:before {
+  display: none;
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  margin-left: -15px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent transparent rgba(0, 0, 0, .4) transparent;
+}
+
+.socialIconWithInner:hover .socialIconQRCodeInner {
+  transform: translate3d(0, 16px, 0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.socialIconWithInner:hover .socialIconTextInner {
   transform: translate3d(0, 16px, 0);
   opacity: 1;
   visibility: visible;
@@ -3288,7 +3312,6 @@ input[type=radio]:checked:before {
 
 iframe {
   aspect-ratio: 16 / 9;
-  height: 100%;
   width: 100%;
 }
 
@@ -3489,7 +3512,7 @@ iframe {
   width: 190px;
   height: 100%;
   background-color: rgba(255, 255, 255, 0);
-  right: calc((100% - 1250px)/ 2);
+  right: calc((100% - 1220px) / 760 *210*1.6);
   top: 540px;
   position: absolute;
   padding-top: 10px;
@@ -3507,6 +3530,10 @@ iframe {
   width: fit-content;
   border-radius: 10px;
   border: 1.5px solid #FFFFFF;
+}
+
+.toc::-webkit-scrollbar-track {
+  margin: 1px !important;
 }
 
 .toc:hover {
@@ -3769,7 +3796,7 @@ iframe {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
   overflow: hidden;
   border-radius: 15px;
-  margin: 6px 6.5px 0 6.5px;
+  margin: 6px 3px 0 3px;
 }
 
 .the-feature.from_left_and_right .img {
@@ -4214,7 +4241,7 @@ h6::before {
   position: absolute;
   bottom: 50px;
   left: calc(50% - 42px);
-  z-index: 5; 
+  z-index: 4; 
   animation-name: float-down;  
   animation-duration: 5s;  
   animation-iteration-count: infinite;
@@ -4839,30 +4866,6 @@ embed,
 iframe,
 object {
   max-width: 100%;
-}
-
-#show-nav.showNav .line1 {
-  top: 15px;
-}
-
-#show-nav.showNav .line3 {
-  top: 23px;
-}
-
-#show-nav.hideNav .line1 {
-  top: 16px;
-  -webkit-transform: rotateZ(45deg);
-  transform: rotateZ(45deg);
-}
-
-#show-nav.hideNav .line2 {
-  opacity: 0;
-}
-
-#show-nav.hideNav .line3 {
-  top: 16px;
-  -webkit-transform: rotateZ(-45deg);
-  transform: rotateZ(-45deg);
 }
 
 .site-main {
@@ -7703,6 +7706,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+	z-index: 9999;
   }
 
   .header-info p {
@@ -7909,7 +7913,6 @@ body.dark h1.fes-title,
 body.dark h1.main-title,
 body.dark #archives-temp h3,
 body.dark #archives-temp h2,
-body.dark #show-nav .line,
 body.dark .linkdes,
 body.dark .entry-content h1,
 body.dark .entry-content h2,

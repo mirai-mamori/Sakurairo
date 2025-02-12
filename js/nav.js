@@ -1,3 +1,8 @@
+const nav = document.querySelector('nav');
+if (!nav.classList.contains('sakura_nav')) {
+    init_iro_nav();
+}
+function init_iro_nav() {
 // 导航栏长度限制
     function initNavWidth() {
         const nav = document.querySelector('nav');
@@ -954,4 +959,53 @@ const BrowserDetect = {
     isWebKit: () => {
         return 'WebkitAppearance' in document.documentElement.style;
     }
-};
+}
+};//iro_nav function
+
+//防止子菜单量子叠加
+document.addEventListener("DOMContentLoaded", () => {
+    const menuItems = document.querySelectorAll('nav .menu > li');
+    let activeSubMenu = null;
+
+    menuItems.forEach(item => {
+        const subMenu = item.querySelector('.sub-menu');
+
+        if (!subMenu) return;
+
+        //鼠标移入时激活子菜单
+        item.addEventListener('mouseenter', () => {
+            if (activeSubMenu && activeSubMenu !== subMenu) {
+                //有且仅有一个激活
+                activeSubMenu.classList.remove('active');
+            }
+
+            //更新并激活当前子菜单
+            subMenu.classList.add('active');
+            activeSubMenu = subMenu;
+        });
+    });
+});
+
+//子菜单动态偏移对齐
+document.addEventListener("DOMContentLoaded", function () {
+    const subMenus = document.querySelectorAll("nav .menu > li .sub-menu");
+
+    subMenus.forEach(subMenu => {
+        const MainMenu = subMenu.parentElement;
+
+        // 获取渲染后的宽度
+        const MainMenuWidth = MainMenu.getBoundingClientRect().width;
+        const subMenuWidth = subMenu.getBoundingClientRect().width;
+
+        // 偏移计算，确保子菜单居中
+        const offsetX = (subMenuWidth - MainMenuWidth) / 2;
+
+        // 设置初始样式
+        subMenu.style.transform = `translateY(-10px) translateX(${offsetX}px)`;
+
+        // 鼠标移入时设置偏移量
+        MainMenu.addEventListener("mouseenter", () => {
+            subMenu.style.transform = `translateY(0) translateX(${offsetX}px)`;
+        });
+    });
+});

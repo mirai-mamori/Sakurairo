@@ -20,6 +20,21 @@ class BangumiAPI
 
     public function getCollections($isWatching = true, $isWatched = true)
     {
+        $bangumi_cache = iro_opt('bangumi_cache', true);
+
+        if ($bangumi_cache) {
+            $cached_content = iro_opt('bangumi_cache_content');
+            if ($cached_content) {
+
+                $collArr = json_decode($cached_content, true);
+
+                if (is_array($collArr) && isset($collArr[0]['name'])) {
+                    return $collArr;
+                    //验证数据格式是否正确（用户自行获取的未清洗）
+                }
+            }
+        }
+
         $collDataArr = [];
 
         if ($isWatching) {
@@ -42,6 +57,10 @@ class BangumiAPI
                 'eps' => $value['subject']['eps'] ?? 0,
                 'ep_status' => $value['ep_status'] ?? 0,
             ];
+        }
+
+        if ($bangumi_cache) {
+            iro_opt_update('bangumi_cache_content', stripslashes(json_encode($collArr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)));
         }
 
         return $collArr;
@@ -107,10 +126,10 @@ class BangumiList
                 $html .= '<noscript><img class="bangumi-image" src="' . esc_url($item['images']) . '" alt="' . esc_attr($item['name']) . '"></noscript>';
                 $html .= '<div class="bangumi-info">';
                 $html .= '<h3 class="bangumi-title" title="' . esc_attr($item['name_cn'] ?: $item['name']) . '">' . esc_html($item['name_cn'] ?: $item['name']) . '</h3>';
-                $html .= '<div class="bangumi-date">' . __('上映日期: ', 'sakurairo') . esc_html($item['date']) . '</div>';
+                $html .= '<div class="bangumi-date">' . __('Release date: ', 'sakurairo') . esc_html($item['date']) . '</div>';
                 $html .= '<div class="bangumi-status">';
                 $html .= '<div class="bangumi-status-bar" style="width: ' . esc_attr(($item['ep_status'] / $item['eps']) * 100) . '%"></div>';
-                $html .= '<p>' . __('已观看集数: ', 'sakurairo') . esc_html($item['ep_status'] . '/' . $item['eps']) . '</p>';
+                $html .= '<p>' . __('Watch progress: ', 'sakurairo') . esc_html($item['ep_status'] . '/' . $item['eps']) . '</p>';
                 $html .= '<div class="bangumi-summary">' . esc_html($item['summary'] ?: __('No introduction yet', 'sakurairo')) . '</div>';
                 $html .= '</div></div></a></div>';
             }

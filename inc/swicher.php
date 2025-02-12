@@ -81,7 +81,7 @@ function font_end_js_control()
         'comment_upload_img' => iro_opt('img_upload_api') == 'off' ? false : true,
         'cache_cover' => check(iro_opt('cache_cover')),
         'site_bg_as_cover' => check(iro_opt('site_bg_as_cover')),
-        'yiyan_api' => empty(iro_opt('yiyan')) ? ["https://v1.hitokoto.cn/", "https://api.nmxc.ltd/yiyan/"] : json_decode(iro_opt('yiyan_api')),
+        'yiyan_api' => empty(iro_opt('yiyan_api')) ? ["https://v1.hitokoto.cn/", "https://api.nmxc.ltd/yiyan/"] : json_decode(iro_opt('yiyan_api')),
         'skin_bg0' => '',
         'skin_bg1' => $vision_resource_basepath . 'background/foreground/bg1.png',
         'skin_bg2' => $vision_resource_basepath . 'background/foreground/bg2.png',
@@ -91,13 +91,18 @@ function font_end_js_control()
     $reception_background = iro_opt('reception_background');
     // 判空 empty 如果变量不存在也会返回true
     if (iro_opt('random_graphs_options') == 'external_api') {
+        //封面随机图api
         if (wp_is_mobile()) {
             $iro_opt['cover_api'] = iro_opt('random_graphs_mts') ? iro_opt('random_graphs_link_mobile') : iro_opt('random_graphs_link');
         } else {
             $iro_opt['cover_api'] = iro_opt('random_graphs_link');
         }
     } else {
-        $iro_opt['cover_api'] =  rest_url('sakura/v1/image/cover');
+        if (wp_is_mobile()) {
+            $iro_opt['cover_api'] = rest_url('sakura/v1/gallery') . '?img=l';
+        } else {
+            $iro_opt['cover_api'] = rest_url('sakura/v1/gallery') . '?img=w';
+        }
     }
     !empty($reception_background['img1']) && $iro_opt['skin_bg0'] = $reception_background['img1'];
     !empty($reception_background['img2']) && $iro_opt['skin_bg1'] = $reception_background['img2'];
@@ -111,7 +116,11 @@ function font_end_js_control()
     }
     if (iro_opt('aplayer_server') != 'off') {
         $iro_opt['float_player_on'] = true;
-        $iro_opt['meting_api_url'] = rest_url('sakura/v1/meting/aplayer');
+        if (!empty(iro_opt('custom_music_api'))) {
+            $iro_opt['meting_api_url'] = iro_opt('custom_music_api'); //使用外部api/歌单
+        } else {
+            $iro_opt['meting_api_url'] = rest_url('sakura/v1/meting/aplayer'); //使用内建
+        }
     }
     if (iro_opt('code_highlight_method', 'hljs') == 'prism') {
         $iro_opt['code_highlight_prism'] = [
@@ -135,13 +144,6 @@ function font_end_js_control()
     $sakura_effect = iro_opt('sakura_falling_effects');
     if ($sakura_effect != 'off') $iro_opt['effect'] = array('amount' => $sakura_effect);
     if (iro_opt('theme_darkmode_auto')) $iro_opt['dm_strategy'] = iro_opt('theme_darkmode_strategy', 'time');
-    //wp_add_inline_script('app', 'var _iro = ' . json_encode($iro_opt, JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE), 'before');
-    //自定义歌单
-    $meting_api_def = json_encode($iro_opt, JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE);
-    if (!empty(iro_opt('custom_music_api'))) {
-        $custom_api_url = iro_opt('custom_music_api');  // 获取 custom_server 的值
-        $meting_api_def = preg_replace('/"meting_api_url":"[^"]*"/', '"meting_api_url":"' . $custom_api_url . '"', $meting_api_def);  // 替换 meting_api_url 的内容
-    }
-    wp_add_inline_script('app', 'var _iro = ' . $meting_api_def, 'before');
+    wp_add_inline_script('app', 'var _iro = ' . json_encode($iro_opt, JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE), 'before');
 }
 add_action('wp_head', 'font_end_js_control');
