@@ -7703,9 +7703,8 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     min-width: 50%;
     font-size: 15px;
     line-height: 25px;
-    overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
 	z-index: 9999;
   }
 
