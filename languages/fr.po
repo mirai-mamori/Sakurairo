@@ -1,0 +1,754 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sakurairo\n"
+"POT-Creation-Date: 2024-10-19 15:09+0900\n"
+"PO-Revision-Date: 2024-12-14 15:12+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+msgid "Return to previous page"
+msgstr "Retour à la page précédente"
+
+msgid "Return to home page"
+msgstr "Retour à la page d'accueil"
+
+msgid "Don't worry, search in site?"
+msgstr "Ne vous inquiétez pas, recherchez sur le site ?"
+
+msgid "Search..."
+msgstr "Rechercher..."
+
+msgid " Previous"
+msgstr " Précédent"
+
+msgid "No personal profile set yet"
+msgstr "Aucun profil personnel défini pour l'instant"
+
+msgid "view comments"
+msgstr "voir les commentaires"
+
+msgid " comment"
+msgstr " commentaire"
+
+msgid " comments"
+msgstr " commentaires"
+
+msgid "no comment"
+msgstr "aucun commentaire"
+
+msgid "I'm not a robot"
+msgstr "Je ne suis pas un robot"
+
+msgid "Comment in private"
+msgstr "Commenter en privé"
+
+msgid "Comment reply notify"
+msgstr "Notification de réponse au commentaire"
+
+msgid "Click me OωO"
+msgstr "Cliquez sur moi OωO"
+
+msgid "Woooooow ヾ(≧∇≦*)ゝ"
+msgstr "Woooooow ヾ(≧∇≦*)ゝ"
+
+msgid "Leave a Reply to"
+msgstr "Répondre à"
+
+msgid "Cancel Reply"
+msgstr "Annuler la réponse"
+
+msgid "BiuBiuBiu~"
+msgstr "BiuBiuBiu~"
+
+msgid "You are a surprise that I will only meet once in my life"
+msgstr "Tu es une surprise que je ne rencontrerai qu'une fois dans ma vie"
+
+msgid "Nickname or QQ number"
+msgstr "Pseudo ou numéro QQ"
+
+msgid "Name* "
+msgstr "Nom* "
+
+msgid "Auto pull nickname and avatar with a QQ num. entered"
+msgstr "Récupération automatique du pseudo et de l'avatar avec un numéro QQ saisi"
+
+msgid "email"
+msgstr "email"
+
+msgid "Must* "
+msgstr "Obligatoire* "
+
+msgid "You will receive notification by email"
+msgstr "Vous recevrez une notification par email"
+
+msgid "Site"
+msgstr "Site"
+
+msgid "Advertisement is forbidden 😀"
+msgstr "La publicité est interdite 😀"
+
+msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
+msgstr "Temps de chargement %.3f secondes | %d requêtes | Utilisation de RAM %.2f MB"
+
+msgid "Go to top"
+msgstr "Aller en haut"
+
+msgid "Control Panel"
+msgstr "Panneau de contrôle"
+
+msgid "Want to find something?"
+msgstr "Vous cherchez quelque chose ?"
+
+msgid "Search"
+msgstr "Rechercher"
+
+msgid "Light Mode"
+msgstr "Mode clair"
+
+msgid "Dark Mode"
+msgstr "Mode sombre"
+
+msgid "Toggle Page Background Image"
+msgstr "Basculer l'image de fond de la page"
+
+msgid "Switch To Font A"
+msgstr "Passer à la police A"
+
+msgid "Switch To Font B"
+msgstr "Passer à la police B"
+
+msgid "Nav Menus"
+msgstr "Menus de navigation"
+
+msgctxt "post type general name"
+msgid "Shuoshuo"
+msgstr "Shuoshuo"
+
+msgctxt "post type singular name"
+msgid "Shuoshuo"
+msgstr "Shuoshuo"
+
+msgctxt "admin menu"
+msgid "Shuoshuo"
+msgstr "Shuoshuo"
+
+msgctxt "add new on admin bar"
+msgid "Shuoshuo"
+msgstr "Shuoshuo"
+
+msgctxt "shuoshuo"
+msgid "Add New"
+msgstr "Ajouter Nouveau"
+
+msgid "Add New Shuoshuo"
+msgstr "Ajouter Nouveau Shuoshuo"
+
+msgid "New Shuoshuo"
+msgstr "Nouveau Shuoshuo"
+
+msgid "Edit Shuoshuo"
+msgstr "Modifier Shuoshuo"
+
+msgid "View Shuoshuo"
+msgstr "Voir Shuoshuo"
+
+msgid "All Shuoshuo"
+msgstr "Tous les Shuoshuo"
+
+msgid "Search Shuoshuo"
+msgstr "Rechercher Shuoshuo"
+
+msgid "Parent Shuoshuo:"
+msgstr "Parent Shuoshuo :"
+
+msgid "No shuoshuo found."
+msgstr "Aucun shuoshuo trouvé."
+
+msgid "No shuoshuo found in Trash."
+msgstr "Aucun shuoshuo trouvé dans la corbeille."
+
+msgid "Emotion Meta Box"
+msgstr "Boîte Meta des Émotions"
+
+msgid "Emotion"
+msgstr "Émotion"
+
+msgid "Emotion Color"
+msgstr "Couleur de l'Émotion"
+
+msgid ""
+"For the Emotion, please fill in the Unicode value of the Fontawesome icon, "
+"and for the Emotion Color, please fill in the RGBA or hexadecimal color."
+msgstr ""
+"Pour l'Émotion, veuillez remplir la valeur Unicode de l'icône Fontawesome, "
+"et pour la Couleur de l'Émotion, veuillez remplir la couleur RGBA ou hexadécimale."
+
+msgid "Custom Meta Box"
+msgstr "Boîte Meta Personnalisée"
+
+msgid "Title Style"
+msgstr "Style du Titre"
+
+msgid "License"
+msgstr "Licence"
+
+msgid ""
+"For the Title Style, Please fill in the css style, part of the style need to "
+"add !important effective, and for the License, please go to Theme Options to "
+"learn how to set it up."
+msgstr ""
+"Pour le Style du Titre, veuillez remplir le style CSS, certaines parties "
+"doivent inclure !important pour être efficaces, et pour la Licence, veuillez "
+"consulter les Options du Thème pour apprendre comment la configurer."
+
+msgid "Copied!"
+msgstr "Copié !"
+
+msgid "Copy Code"
+msgstr "Copier le Code"
+
+msgid ""
+"Your cover API seems to not support Cross Origin Access. In this case, Cover "
+"Cache won't take effect."
+msgstr ""
+"Votre API de couverture semble ne pas prendre en charge l'accès Cross-Origin. "
+"Dans ce cas, le cache de couverture ne prendra pas effet."
+
+msgid "Commiting...."
+msgstr "Validation en cours...."
+
+msgid "Succeed"
+msgstr "Réussi"
+
+msgid "10 files max per request"
+msgstr "10 fichiers max par demande"
+
+msgid ""
+"5 MB max per file.\n"
+"\n"
+"「{0}」\n"
+"\n"
+"This image is too large~Please reupload!"
+msgstr ""
+"5 Mo max par fichier.\n"
+"\n"
+"「{0}」\n"
+"\n"
+"Cette image est trop grande~Veuillez la retéléverser !"
+
+msgid "Uploading..."
+msgstr "Téléversement..."
+
+msgid "Uploaded successfully~"
+msgstr "Téléversé avec succès~"
+
+msgid ""
+"Upload failed!\n"
+"File Name=> {0}\n"
+"code=> {1}\n"
+"{2}"
+msgstr ""
+"Échec du téléversement !\n"
+"Nom du fichier => {0}\n"
+"code => {1}\n"
+"{2}"
+
+msgid "Upload failed, please retry."
+msgstr "Échec du téléversement, veuillez réessayer."
+
+msgid "Page Load failed. HTTP {0}"
+msgstr "Échec du chargement de la page. HTTP {0}"
+
+msgid "Glad you come, but we've got nothing left."
+msgstr "Content que vous soyez là, mais il ne reste plus rien."
+
+msgid "Post"
+msgstr "Article"
+
+msgid "Tag"
+msgstr "Étiquette"
+
+msgid "Category"
+msgstr "Catégorie"
+
+msgid "Page"
+msgstr "Page"
+
+msgid "Comment"
+msgstr "Commentaire"
+
+msgid "Paused..."
+msgstr "En pause..."
+
+msgid "Loading Video..."
+msgstr "Chargement de la vidéo..."
+
+msgid "Downloading fonts, be aware of your data usage."
+msgstr "Téléchargement des polices, attention à votre consommation de données."
+
+msgid "Are you sure you want set it private?"
+msgstr "Êtes-vous sûr de vouloir le définir comme privé ?"
+
+msgid "You had set private comment before"
+msgstr "Vous avez déjà défini un commentaire privé."
+
+msgid "Author"
+msgstr "Auteur"
+
+msgid "Blogger"
+msgstr "Blogueur"
+
+msgid "Location"
+msgstr "Emplacement"
+
+msgid "Private"
+msgstr "Privé"
+
+msgid "Yes"
+msgstr "Oui"
+
+msgid "No"
+msgstr "Non"
+
+msgid "Edit"
+msgstr "Modifier"
+
+msgid "This guy is so lazy ╮(╯▽╰)╭"
+msgstr "Cette personne est tellement paresseuse ╮(╯▽╰)╭"
+
+msgid "Download Link"
+msgstr "Lien de téléchargement"
+
+msgid "Remember me"
+msgstr "Se souvenir de moi"
+
+msgid "All expand/collapse"
+msgstr "Tout déplier/replier"
+
+msgid " year"
+msgstr " an"
+
+msgid " post(s)"
+msgstr " article(s)"
+
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+msgid "<b>ERROR</b>: This email domain (<b>@"
+msgstr "<b>ERREUR</b>: Ce domaine email (<b>@"
+
+msgid "QQ"
+msgstr "QQ"
+
+msgid "Sidebar"
+msgstr "Barre latérale"
+
+msgid ""
+"<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
+"permalink.php\"> permalink </a> as plain. To do this, you may need to "
+"configure <a href=\"https://www.wpdaxue.com/wordpress-rewriterule.html\" "
+"target=\"_blank\"> pseudo-static </a>. </ b>"
+msgstr ""
+"<b> Pour une meilleure expérience, ne définissez pas le <a href=\"/wp-admin/options-"
+"permalink.php\"> permalien </a> en simple. Pour ce faire, vous devrez peut-être "
+"configurer <a href=\"https://www.wpdaxue.com/wordpress-rewriterule.html\" "
+"target=\"_blank\"> le pseudo-statique </a>. </ b>"
+
+msgid "%s says: "
+msgstr "%s dit : "
+
+msgid "Expand / Collapse"
+msgstr "Déplier/Replier"
+
+msgid "category/tag image"
+msgstr "image de catégorie/étiquette"
+
+msgid "add image"
+msgstr "ajouter une image"
+
+msgid "remove image"
+msgstr "supprimer une image"
+
+msgid "image"
+msgstr "image"
+
+msgid "no image"
+msgstr "aucune image"
+
+msgid "Backend error"
+msgstr "Erreur serveur"
+
+msgid "Following "
+msgstr "Suivant "
+
+msgid " anime."
+msgstr " anime."
+
+msgid "The author seems to have hidden their bangumi list."
+msgstr "L'auteur semble avoir caché sa liste bangumi."
+
+msgid "Item count: "
+msgstr "Nombre d'éléments : "
+
+msgid "Expand"
+msgstr "Déplier"
+
+msgid "All item has been loaded."
+msgstr "Tous les éléments ont été chargés."
+
+msgid "Load More"
+msgstr "Charger plus"
+
+msgid "The comment is private"
+msgstr "Le commentaire est privé"
+
+msgid "Bad Request."
+msgstr "Mauvaise requête."
+
+msgid "Look like you forgot to enter the captcha."
+msgstr "Il semble que vous avez oublié d'entrer le captcha."
+
+msgid "Captcha timeout."
+msgstr "Expiration du captcha."
+
+msgid "Captcha check passed."
+msgstr "Vérification du captcha réussie."
+
+msgid "Captcha incorrect."
+msgstr "Captcha incorrect."
+
+msgid "An error has occurred."
+msgstr "Une erreur s'est produite."
+
+msgid "Unknown"
+msgstr "Inconnu"
+
+msgid "Reserved Address"
+msgstr "Adresse réservée"
+
+msgid "Empty Address"
+msgstr "Adresse vide"
+
+msgid " Watched "
+msgstr " Regardé "
+
+msgid " episodes."
+msgstr " épisodes."
+
+msgid "Finished "
+msgstr "Terminé "
+
+msgid "Watching "
+msgstr "En train de regarder "
+
+msgid "Planning to Watch "
+msgstr "Prévoit de regarder "
+
+msgid "Dropped "
+msgstr "Abandonné "
+
+msgid "Paused "
+msgstr "En pause "
+
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Publié le %s"
+
+msgctxt "post author"
+msgid "by %s"
+msgstr "par %s"
+
+msgid ", "
+msgstr ", "
+
+msgid "Posted in %1$s"
+msgstr "Publié dans %1$s"
+
+msgid "Tagged %1$s"
+msgstr "Étiqueté %1$s"
+
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "Laisser un commentaire<span class=\"screen-reader-text\"> sur %s</span>"
+
+msgid "Edit %s"
+msgstr "Modifier %s"
+
+msgid " days ago"
+msgstr " jours auparavant"
+
+msgid " hours ago"
+msgstr " heures auparavant"
+
+msgid " minutes ago"
+msgstr " minutes auparavant"
+
+msgid " seconds ago"
+msgstr " secondes auparavant"
+
+msgid "Posted on "
+msgstr "Publié le "
+
+msgid "Please upgrade wordpress to version 4.4+"
+msgstr "Veuillez mettre à jour WordPress à la version 4.4+"
+
+msgid "Login successful, "
+msgstr "Connexion réussie, "
+
+msgid "seconds later automatically transfer to"
+msgstr "transfert automatique dans quelques secondes vers"
+
+msgid "dashboard"
+msgstr "tableau de bord"
+
+msgid "home"
+msgstr "accueil"
+
+msgid "Change avatar"
+msgstr "Changer d'avatar"
+
+msgid "Hello, "
+msgstr "Bonjour, "
+
+msgid "Home"
+msgstr "Accueil"
+
+msgid "Manage"
+msgstr "Gérer"
+
+msgid "Logout"
+msgstr "Déconnexion"
+
+msgid "Sign out? "
+msgstr "Se déconnecter ? "
+
+msgid "Search results for \" %s \""
+msgstr "Résultats de recherche pour « %s »"
+
+msgid "Your browser does not support HTML5 video."
+msgstr "Votre navigateur ne prend pas en charge les vidéos HTML5."
+
+msgid "Signed in as"
+msgstr "Connecté en tant que"
+
+msgid "New post"
+msgstr "Nouvelle publication"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Sign out"
+msgstr "Se déconnecter"
+
+msgid "Log in"
+msgstr "Se connecter"
+
+msgid "Register"
+msgstr "S'inscrire"
+
+msgid "Notice"
+msgstr "Avis"
+
+msgid "Change"
+msgstr "Changer"
+
+msgid "Previous Post"
+msgstr "Publication précédente"
+
+msgid "Next Post"
+msgstr "Publication suivante"
+
+msgid "Search result: %s"
+msgstr "Résultat de recherche : %s"
+
+msgid "There is nothing here！"
+msgstr "Il n'y a rien ici !"
+
+msgid ""
+"Ready to post your first article? <a href=\"%1$s\">Click here to start</a>."
+msgstr ""
+"Prêt à publier votre premier article ? <a href=\"%1$s\">Cliquez ici pour commencer</a>."
+
+msgid "Didn't find what you want, look at the other ones."
+msgstr "Vous n'avez pas trouvé ce que vous cherchez ? Regardez les autres."
+
+msgid "We didn't seem to find what you want. Maybe you can search for it."
+msgstr "Nous n'avons pas trouvé ce que vous cherchez. Peut-être pouvez-vous le rechercher."
+
+msgid "Pages:"
+msgstr "Pages :"
+
+msgid "AI Excerpt"
+msgstr "Résumé AI"
+
+msgid "Hit"
+msgid_plural "Hits"
+msgstr[0] "Clic"
+msgstr[1] "Clics"
+
+msgid "Estimate Reading Time"
+msgstr "Temps de lecture estimé"
+
+msgid "Sticky"
+msgstr "Épinglé"
+
+msgid "Excerpt"
+msgstr "Extrait"
+
+msgid "EDIT"
+msgstr "MODIFIER"
+
+msgid "View"
+msgid_plural "Views"
+msgstr[0] "Vue"
+msgstr[1] "Vues"
+
+msgid "Last updated on "
+msgstr "Dernière mise à jour le "
+
+msgid "Last updated on"
+msgstr "Dernière mise à jour le"
+
+msgid "NOTHING"
+msgstr "RIEN"
+
+msgid "1 Comment"
+msgstr "1 Commentaire"
+
+msgid "Comments"
+msgstr "Commentaires"
+
+msgid "Comment Closed"
+msgstr "Commentaires fermés"
+
+msgid "Less than 1 minute"
+msgstr "Moins d'une minute"
+
+msgid "%s Hour"
+msgid_plural "%s Hours"
+msgstr[0] "%s Heure"
+msgstr[1] "%s Heures"
+
+msgid "%s Minute"
+msgid_plural "%s Minutes"
+msgstr[0] "%s Minute"
+msgstr[1] "%s Minutes"
+
+msgid "%s Word"
+msgid_plural "%s Words"
+msgstr[0] "%s Mot"
+msgstr[1] "%s Mots"
+
+msgid "This article is licensed under %s"
+msgstr "Cet article est sous licence %s"
+
+msgid "This author has not provided a description."
+msgstr "Cet auteur n'a pas fourni de description."
+
+msgid "Nothing~"
+msgstr "Rien~"
+
+msgid "Please fill in the Bilibili UID in Sakura Options."
+msgstr "Veuillez remplir l'UID Bilibili dans les options Sakura."
+
+msgid "Please fill in the My Anime List Username in Sakura Options."
+msgstr "Veuillez remplir le nom d'utilisateur My Anime List dans les options Sakura."
+
+msgid "Remember_Me"
+msgstr "Se_souvenir_de_moi"
+
+msgid "Error"
+msgstr "Erreur"
+
+msgid "Please enter username."
+msgstr "Veuillez entrer un nom d'utilisateur."
+
+msgid "Invalid characters, please enter a valid username."
+msgstr "Caractères invalides, veuillez entrer un nom d'utilisateur valide."
+
+msgid "This username has been registered."
+msgstr "Ce nom d'utilisateur est déjà enregistré."
+
+msgid "Please enter email address."
+msgstr "Veuillez entrer une adresse email."
+
+msgid "Invalid email address."
+msgstr "Adresse email invalide."
+
+msgid "This email address has been registered."
+msgstr "Cette adresse email est déjà enregistrée."
+
+msgid "Password length is at least 6 digits."
+msgstr "Le mot de passe doit contenir au moins 6 caractères."
+
+msgid "Inconsistent password entered twice."
+msgstr "Les mots de passe saisis ne correspondent pas."
+
+msgid "Unable to complete registration request...Please contact"
+msgstr "Impossible de compléter la demande d'inscription...Veuillez contacter"
+
+msgid "administrator"
+msgstr "administrateur"
+
+msgid "User Name"
+msgstr "Nom d'utilisateur"
+
+msgid "Email Address"
+msgstr "Adresse email"
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Confirm your password"
+msgstr "Confirmez votre mot de passe"
+
+msgid "Sign up"
+msgstr "S'inscrire"
+
+msgid "Success! Redirecting......"
+msgstr "Succès ! Redirection......"
+
+msgid "Registration is not open yet."
+msgstr "Les inscriptions ne sont pas encore ouvertes."
+
+msgid "Sakurairo"
+msgstr "Sakurairo"
+
+msgid "https://github.com/mirai-mamori/Sakurairo"
+msgstr "https://github.com/mirai-mamori/Sakurairo"
+
+msgid ""
+"A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable "
+"WordPress Theme (Based on Theme Sakura)"
+msgstr ""
+"Un thème WordPress coloré, facile à utiliser, offrant une expérience parfaite et des options de personnalisation puissantes (basé sur le thème Sakura)."
+
+msgid "Created by Fuukei"
+msgstr "Créé par Fuukei"
+
+msgid "https://docs.fuukei.org/"
+msgstr "https://docs.fuukei.org/"
+
+msgid "文章模版"
+msgstr "Sakurairo Template 文章模版"
+
+msgid "友情链接模版"
+msgstr "Sakurairo Template 友情链接模版"
+
+
+msgid "ERROR: Please contact the administrator to check whether there are images in manifest.json!"
+msgstr "ERREUR : veuillez contacter l'administrateur pour vérifier s'il y a des images dans manifest.json !"

@@ -41,7 +41,7 @@ class ProcessImage():
 
     def process_image(self,file):
         try:
-            source = open('gallary/' + file,'rb')
+            source = open('gallery/' + file,'rb')
             _hash = md5(source.read()).hexdigest()
             if _hash in self.md5set:
                 source.close()
@@ -78,11 +78,11 @@ class ProcessImage():
         return {platform:{_hash:{'source':file}}}
     
     def try_process(self):
-        if not os.path.exists('./gallary'):
-            os.mkdir('./gallary')
-            print('gallary文件夹不存在,已自动创建,请在该文件夹下放图片,再运行此程序')
+        if not os.path.exists('./gallery'):
+            os.mkdir('./gallery')
+            print('gallery文件夹不存在,已自动创建,请在该文件夹下放图片,再运行此程序')
             return False
-        filenames = [file for file in os.listdir('gallary') if os.path.isfile(os.path.join('gallary', file))]
+        filenames = [file for file in os.listdir('gallery') if os.path.isfile(os.path.join('gallery', file))]
         if not self.flush:
             if os.path.exists('manifest.json'):
                 with open('manifest.json','r') as f:

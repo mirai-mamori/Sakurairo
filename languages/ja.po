@@ -997,3 +997,6 @@ msgstr "文章模版"
 #. Template Name of the plugin/theme
 msgid "友情链接模版"
 msgstr "友情链接模版"
+
+msgid "ERROR: Please contact the administrator to check whether there are images in manifest.json!"
+msgstr "エラー: 管理者に連絡して、manifest.json に画像があるかどうかを確認してください。"
