@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // 载入Kirki
 if ( ! class_exists( 'Kirki' ) ) {
-	require_once __DIR__ . '/Kirki/kirki.php';
+	require_once __DIR__ . '/kirki/kirki.php';
 	new \Kirki\Pro\Init();
 
 	define( 'KIRKI_NO_OUTPUT', true );
@@ -69,6 +69,7 @@ $panels = [
 
 // 所有可以传递的参数列表（按 Themeum/Kirki 官方文档）
 $allowed_params = [
+	'tab',              // 所属section中的选项卡，
 	'active_callback',  // 回调函数，决定该字段是否显示
 	'capability',       // 所需权限
 	'choices',          // 可选项，适用于下拉、单选、复选等类型
@@ -129,7 +130,7 @@ $sections = [
 				)
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'nav_menu_cover_radius',
 				'label'    => esc_html__( 'Nav Menu Radius', 'Sakurairo_C' ),
 				'iro_key'  => 'nav_menu_cover_radius',
@@ -265,7 +266,7 @@ $sections = [
 				)
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'sakura_nav_style_blurry',
 				'label'    => esc_html__( 'Blur degree', 'Sakurairo_C' ),
 				'iro_key'  => 'sakura_nav_style',
@@ -285,7 +286,7 @@ $sections = [
 				),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'sakura_nav_style_option_spacing',
 				'label'    => esc_html__( 'Menu option left and right spacing', 'Sakurairo_C' ),
 				'iro_key'  => 'sakura_nav_style',
@@ -320,12 +321,18 @@ $sections = [
 				'settings' => 'theme_skin',
 				'label'    => esc_html__( 'Theme Color', 'Sakurairo_C' ),
 				'iro_key'  => 'theme_skin',
+				'choices'     => [
+					'alpha' => true,
+				],
 			],
 			[
 				'type'     => 'color',
 				'settings' => 'theme_skin_matching',
 				'label'    => esc_html__( 'Matching Color', 'Sakurairo_C' ),
 				'iro_key'  => 'theme_skin_matching',
+				'choices'     => [
+					'alpha' => true,
+				],
 				'transport'   => 'auto',
 				'output'      => array(
 					array(
@@ -340,6 +347,9 @@ $sections = [
 				'settings' => 'theme_skin_dark',
 				'label'    => esc_html__( 'Dark Mode Theme Color', 'Sakurairo_C' ),
 				'iro_key'  => 'theme_skin_dark',
+				'choices'     => [
+					'alpha' => true,
+				],
 				'transport'   => 'auto',
 				'output'      => array(
 					array(
@@ -349,7 +359,7 @@ $sections = [
 				),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'theme_darkmode_img_bright',
 				'label'    => esc_html__( 'Dark Mode Image Brightness', 'Sakurairo_C' ),
 				'iro_key'  => 'theme_darkmode_img_bright',
@@ -360,7 +370,7 @@ $sections = [
 				],
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'theme_darkmode_widget_transparency',
 				'label'    => esc_html__( 'Dark Mode Component Transparency', 'Sakurairo_C' ),
 				'iro_key'  => 'theme_darkmode_widget_transparency',
@@ -405,6 +415,13 @@ $sections = [
 				'label'    => esc_html__( 'Mashiro Special Effects Text', 'Sakurairo_C' ),
 				'iro_key'  => 'text_logo',
 				'iro_subkey'  => 'text',
+				'active_callback' => [
+					[
+						'setting'  => 'text_logo_options',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 				'transport'   => 'postMessage',
 				'js_vars'     => array(
 					array(
@@ -419,7 +436,16 @@ $sections = [
 				'label'    => esc_html__( 'Mashiro Special Effects Text Color', 'Sakurairo_C' ),
 				'iro_key'  => 'text_logo',
 				'iro_subkey'  => 'color',
-				'default'  => '#ffffff',
+				'choices'     => [
+					'alpha' => true,
+				],
+				'active_callback' => [
+					[
+						'setting'  => 'text_logo_options',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 				'transport'   => 'auto',
 				'output'      => array(
 					array(
@@ -434,6 +460,13 @@ $sections = [
 				'label'    => esc_html__( 'Mashiro Special Effects Font', 'Sakurairo_C' ),
 				'iro_key'  => 'text_logo',
 				'iro_subkey'  => 'font',
+				'active_callback' => [
+					[
+						'setting'  => 'text_logo_options',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 				'transport'   => 'auto',
 				'output'      => array(
 					array(
@@ -443,11 +476,18 @@ $sections = [
 				),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'text_logo_size',
 				'label'    => esc_html__( 'Mashiro Special Effects Size', 'Sakurairo_C' ),
 				'iro_key'  => 'text_logo',
 				'iro_subkey'  => 'size',
+				'active_callback' => [
+					[
+						'setting'  => 'text_logo_options',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 				'transport'   => 'auto',
 				'choices'     => [
 					'min'  => 40 ,
@@ -483,12 +523,26 @@ $sections = [
 				'settings' => 'cover_full_screen',
 				'label'    => esc_html__( 'Cover Full Screen', 'Sakurairo_C' ),
 				'iro_key'  => 'cover_full_screen',
+				'active_callback' => [
+					[
+						'setting'  => 'cover_switch',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
 				'type'     => 'select',
 				'settings' => 'random_graphs_filter',
 				'iro_key'  => 'random_graphs_filter',
 				'label'    => esc_html__( 'Cover Random Images Filter', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'cover_switch',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 				'choices'     => [
 					'filter-nothing' => __('No filter','Sakurairo_C'),
 					'filter-undertint' => __('Light filter','Sakurairo_C'),
@@ -502,15 +556,29 @@ $sections = [
 				'settings' => 'cover_half_screen_curve',
 				'label'    => esc_html__( 'Cover Arc Occlusion (Below)', 'Sakurairo_C' ),
 				'iro_key'  => 'cover_half_screen_curve',
+				'active_callback' => [
+					[
+						'setting'  => 'cover_switch',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
 				'type'     => 'switch',
 				'settings' => 'cover_animation',
 				'label'    => esc_html__( 'Cover Animation', 'Sakurairo_C' ),
 				'iro_key'  => 'cover_animation',
+				'active_callback' => [
+					[
+						'setting'  => 'cover_switch',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'cover_animation_time',
 				'label'    => esc_html__( 'Cover Animation Time', 'Sakurairo_C' ),
 				'iro_key'  => 'cover_animation_time',
@@ -518,6 +586,13 @@ $sections = [
 					'min'  => 0,
 					'max'  => 5,
 					'step' => 0.01,
+				],
+				'active_callback' => [
+					[
+						'setting'  => 'cover_switch',
+						'operator' => '==',
+						'value'    => true,
+					]
 				],
 			],
 		],
@@ -546,9 +621,16 @@ $sections = [
 					'v1' => $vision_resource_basepath . 'options/infor_bar_style_v1.webp',
 					'v2' => $vision_resource_basepath . 'options/infor_bar_style_v2.webp',
 				],
+				'active_callback' => [
+					[
+						'setting'  => 'infor_bar',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'homepage_widget_transparency',
 				'iro_key'  => 'homepage_widget_transparency',
 				'label'    => esc_html__( 'Cover Animation Time', 'Sakurairo_C' ),
@@ -556,6 +638,13 @@ $sections = [
 					'min'  => 0.2,
 					'max'  => 1,
 					'step' => 0.01,
+				],
+				'active_callback' => [
+					[
+						'setting'  => 'infor_bar',
+						'operator' => '==',
+						'value'    => true,
+					]
 				],
 				'transport'   => 'auto',
 				'output' => array(
@@ -566,7 +655,7 @@ $sections = [
 				),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'avatar_radius',
 				'iro_key'  => 'avatar_radius',
 				'label'    => esc_html__( 'Cover Info Bar Avatar Radius', 'Sakurairo_C' ),
@@ -574,6 +663,13 @@ $sections = [
 					'min'  => 0,
 					'max'  => 100,
 					'step' => 1,
+				],
+				'active_callback' => [
+					[
+						'setting'  => 'infor_bar',
+						'operator' => '==',
+						'value'    => true,
+					]
 				],
 				'transport'   => 'auto',
 				'output' => array(
@@ -585,7 +681,7 @@ $sections = [
 				),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'signature_radius',
 				'iro_key'  => 'signature_radius',
 				'label'    => esc_html__( 'Cover Info Bar Rounded', 'Sakurairo_C' ),
@@ -593,6 +689,13 @@ $sections = [
 					'min'  => 0,
 					'max'  => 50,
 					'step' => 1,
+				],
+				'active_callback' => [
+					[
+						'setting'  => 'infor_bar',
+						'operator' => '==',
+						'value'    => true,
+					]
 				],
 				'transport'   => 'auto',
 				'output' => array(
@@ -608,6 +711,13 @@ $sections = [
 				'settings' => 'signature_text',
 				'iro_key'  => 'signature_text',
 				'label'    => esc_html__( 'Cover Signature Field Text', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'infor_bar',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 				'transport'   => 'postMessage',
 				'js_vars'     => array(
 					array(
@@ -621,6 +731,13 @@ $sections = [
 				'settings' => 'signature_font',
 				'iro_key'  => 'signature_font',
 				'label'    => esc_html__( 'Cover Signature Field Text Font', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'infor_bar',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 				'transport'   => 'auto',
 				'output' => array(
 					array(
@@ -630,10 +747,17 @@ $sections = [
 				),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'signature_font_size',
 				'iro_key'  => 'signature_font_size',
 				'label'    => esc_html__( 'Cover Signature Field Text Font Size', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'infor_bar',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 				'choices'     => [
 					'min'  => 5,
 					'max'  => 20,
@@ -653,18 +777,52 @@ $sections = [
 				'settings' => 'signature_typing',
 				'iro_key'  => 'signature_typing',
 				'label'    => esc_html__( 'Cover Signature Bar Typing Effects', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'infor_bar',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
 				'type'     => 'switch',
 				'settings' => 'signature_typing_marks',
 				'iro_key'  => 'signature_typing_marks',
 				'label'    => esc_html__( 'Cover Signature Field Typing Effects Double Quotes', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'infor_bar',
+						'operator' => '==',
+						'value'    => true,
+					],
+					[
+						'setting'  => 'signature_typing',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
-				'type'     => 'textarea',
+				'type'     => 'code',
 				'settings' => 'signature_typing_json',
 				'iro_key'  => 'signature_typing_json',
 				'label'    => esc_html__( 'Typed.js initial option', 'Sakurairo_C' ),
+				'choices'     => [
+					'language' => 'json',
+				],
+				'active_callback' => [
+					[
+						'setting'  => 'infor_bar',
+						'operator' => '==',
+						'value'    => true,
+					],
+					[
+						'setting'  => 'signature_typing',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
 				'type'     => 'switch',
@@ -712,6 +870,9 @@ $sections = [
 				'iro_key'  => 'bulletin_board_style',
 				'label'    => esc_html__( 'Bulletin Board Style', 'Sakurairo_C' ),
 				'choices'     => [
+					'alpha' => true,
+				],
+				'choices'     => [
 					'picture' => __('Picture Background','Sakurairo_C'),
           			'pure' => __('Color Background','Sakurairo_C'),
 				],
@@ -727,12 +888,29 @@ $sections = [
 				'settings' => 'bulletin_board_bg',
 				'iro_key'  => 'bulletin_board_bg',
 				'label'    => esc_html__( 'Bulletin Board Background', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'bulletin_board_style',
+						'operator' => '==',
+						'value'    => 'picture',
+					]
+				],
 			],
 			[
 				'type'     => 'color',
 				'settings' => 'bulletin_board_border_color',
 				'iro_key'  => 'bulletin_board_border_color',
 				'label'    => esc_html__( 'Bulletin Board Border Color', 'Sakurairo_C' ),
+				'choices'     => [
+					'alpha' => true,
+				],
+				'active_callback' => [
+					[
+						'setting'  => 'bulletin_board_style',
+						'operator' => '==',
+						'value'    => 'pure',
+					]
+				],
 			],
 			[
 				'type'     => 'text',
@@ -745,6 +923,9 @@ $sections = [
 				'settings' => 'bulletin_text_color',
 				'iro_key'  => 'bulletin_text_color',
 				'label'    => esc_html__( 'Bulletin Board Text Color', 'Sakurairo_C' ),
+				'choices'     => [
+					'alpha' => true,
+				],
 				'transport'   => 'auto',
 				'output' => array(
 					array(
@@ -769,6 +950,9 @@ $sections = [
 				'settings' => 'exhibition_area_matching_color',
 				'iro_key'  => 'exhibition_area_matching_color',
 				'label'    => esc_html__( 'Display Area Matching Color', 'Sakurairo_C' ),
+				'choices'     => [
+					'alpha' => true,
+				],
 				'transport'   => 'auto',
 				'output' => array(
 					array(
@@ -783,6 +967,9 @@ $sections = [
 				'settings' => 'exhibition_background_color',
 				'iro_key'  => 'exhibition_background_color',
 				'label'    => esc_html__( 'Display Area Background Color', 'Sakurairo_C' ),
+				'choices'     => [
+					'alpha' => true,
+				],
 				'transport'   => 'auto',
 				'output' => array(
 					array(
@@ -809,7 +996,7 @@ $sections = [
 				'label'    => esc_html__( 'Display Area Compatibility Mode', 'Sakurairo_C' ),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'exhibition_radius',
 				'iro_key'  => 'exhibition_radius',
 				'label'    => esc_html__( 'Display Area Rounded Corners', 'Sakurairo_C' ),
@@ -871,6 +1058,13 @@ $sections = [
 					'card' => $vision_resource_basepath . 'options/post_list_design_ticket.webp',
           			'non-card' => $vision_resource_basepath . 'options/post_list_design_ticket_2.webp',
 				],
+				'active_callback' => [
+					[
+						'setting'  => 'post_list_design',
+						'operator' => '==',
+						'value'    => 'ticket',
+					]
+				],
 			],
 			[
 				'type'     => 'switch',
@@ -885,7 +1079,7 @@ $sections = [
 				'label'    => esc_html__( 'Show shuoshuo on home page', 'Sakurairo_C' ),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'post_meta_radius', //信息
 				'iro_key'  => 'post_meta_radius',
 				'label'    => esc_html__( 'Article Area Card Information Meta Rounded Corners', 'Sakurairo_C' ),
@@ -904,7 +1098,7 @@ $sections = [
 				),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'post_list_title_radius', //标题
 				'iro_key'  => 'post_list_title_radius',
 				'label'    => esc_html__( 'Article Area Card Title Meta Rounded Corners', 'Sakurairo_C' ),
@@ -923,7 +1117,7 @@ $sections = [
 				),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'post_list_card_radius', //卡片
 				'iro_key'  => 'post_list_card_radius',
 				'label'    => esc_html__( 'Article Area Card Rounded Corners', 'Sakurairo_C' ),
@@ -942,7 +1136,7 @@ $sections = [
 				),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'post_title_font_size', //字体
 				'iro_key'  => 'post_title_font_size',
 				'label'    => esc_html__( 'Article Area Title Font Size', 'Sakurairo_C' ),
@@ -978,7 +1172,7 @@ $sections = [
 				'label'    => esc_html__( 'Default Frontend Background', 'Sakurairo_C' ),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'reception_background_transparency',
 				'iro_key'  => 'reception_background_transparency',
 				'label'    => esc_html__( 'Background Transparency in the Frontend', 'Sakurairo_C' ),
@@ -1029,7 +1223,7 @@ $sections = [
 				),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'global_font_weight',
 				'iro_key'  => 'global_font_weight',
 				'label'    => esc_html__( 'Widgets Panel Button Radius', 'Sakurairo_C' ),
@@ -1048,7 +1242,7 @@ $sections = [
 				),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'global_font_size',
 				'iro_key'  => 'global_font_size',
 				'label'    => esc_html__( 'Widgets Panel Button Radius', 'Sakurairo_C' ),
@@ -1077,7 +1271,7 @@ $sections = [
 
 		'fields'      =>[
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'style_menu_radius',
 				'iro_key'  => 'style_menu_radius',
 				'label'    => esc_html__( 'Widgets Panel Button Radius', 'Sakurairo_C' ),
@@ -1096,7 +1290,7 @@ $sections = [
 				),
 			],
 			[
-				'type'     => 'input_slider',
+				'type'     => 'slider',
 				'settings' => 'style_menu_selection_radius',
 				'iro_key'  => 'style_menu_selection_radius',
 				'label'    => esc_html__( 'Widgets Panel Widget Radius', 'Sakurairo_C' ),
@@ -1245,10 +1439,20 @@ $sections = [
 				'label'    => esc_html__( 'Particles Effects', 'Sakurairo_C' ),
 			],
 			[
-				'type'     => 'textarea',
+				'type'     => 'code',
 				'settings' => 'particles_json',
 				'iro_key'  => 'particles_json',
 				'label'    => esc_html__( 'Particles JSON', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'particles_effects',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
+				'choices'     => [
+					'language' => 'json',
+				],
 			],
 		],
     ],
@@ -1267,10 +1471,13 @@ $sections = [
 				'label'    => esc_html__( 'Footer Sakura Icon', 'Sakurairo_C' ),
 			],
 			[
-				'type'     => 'textarea',
+				'type'     => 'code',
 				'settings' => 'footer_info',
 				'iro_key'  => 'footer_info',
 				'label'    => esc_html__( 'Footer Info', 'Sakurairo_C' ),
+				'choices'     => [
+					'language' => 'html',
+				],
 				'transport'   => 'postMessage',
 				'js_vars' => array(
 					array(
@@ -1312,10 +1519,20 @@ $sections = [
 				'label'    => esc_html__( 'Footer Hitokoto', 'Sakurairo_C' ),
 			],
 			[
-				'type'     => 'textarea',
+				'type'     => 'code',
 				'settings' => 'yiyan_api',
 				'iro_key'  => 'yiyan_api',
 				'label'    => esc_html__( 'Hitokoto API address', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'footer_yiyan',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
+				'choices'     => [
+					'language' => 'json',
+				],
 			],
 		],
     ],
@@ -1494,6 +1711,7 @@ foreach ( $sections as $section ) {
 
 			// 根据字段类型选择对应的 Kirki 类注册组件
 			// 将类型字符串统一转换为小写，下划线格式
+			// 分类按需实例化
 			$field_type_key = str_replace( ' ', '_', strtolower( $field['type'] ) );
 			switch ( $field_type_key ) {
 				case 'checkbox':
@@ -1564,6 +1782,9 @@ foreach ( $sections as $section ) {
 					break;
 				case 'input_slider':
 					new \Kirki\Pro\Field\InputSlider( $args );
+					break;
+				case 'divider':
+					new \Kirki\Pro\Field\Divider( $args );
 					break;
 				default:
 					error_log( 'Unknown Kirki field type: ' . $field['type'] );
