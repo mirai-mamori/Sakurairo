@@ -1,0 +1,2 @@
+wp.customize.controlConstructor["kirki-editor"]=wp.customize.kirkiDynamicControl.extend({initKirkiControl:function(i){var t,e,n,o;t=(i=i||this).container.find("textarea"),n="kirki-editor-"+i.id.replace("[","").replace("]",""),o={tinymce:{wpautop:!0},quicktags:!0,mediaButtons:!0},wp.editor&&wp.editor.initialize&&wp.editor.initialize(n,jQuery.extend({},o,i.params.choices)),(e=tinyMCE.get(n))&&e.onChange.add((function(n){var o;n.save(),o=e.getContent(),t.val(o).trigger("change"),wp.customize.instance(i.id).set(o)}))}});
+//# sourceMappingURL=control.js.map
