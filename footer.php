@@ -31,7 +31,7 @@ $reception_background = iro_opt('reception_background');
             </svg>
           </div>
         <?php endif; ?>
-        <p style="color: #666666;"><?php echo iro_opt('footer_info', ''); ?></p>
+        <p class="footer_info"><?php echo iro_opt('footer_info', ''); ?></p>
       </div>
       <div class="footer-device function_area">
         <?php if (iro_opt('footer_yiyan')): ?>

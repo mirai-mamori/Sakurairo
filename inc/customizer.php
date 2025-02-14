@@ -1481,7 +1481,7 @@ $sections = [
 				'transport'   => 'postMessage',
 				'js_vars' => array(
 					array(
-						'element'  => '.site-info p',
+						'element'  => '.footer_info',
 						'function' => 'html',
 					),
 				),
