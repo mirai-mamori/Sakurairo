@@ -2197,104 +2197,54 @@ $prefix = 'iro_options';
 
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title' => __('Bulletin Board and Area Title Options','sakurairo_csf'),
-    'icon' => 'fa fa-bullhorn',
+    'title' => __('Homepage Components and Titles','sakurairo_csf'),
+    'icon' => 'fa fa-bars',
     'fields' => array(
 
       array(
-        'type' => 'submessage',
-        'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%85%AC%E5%91%8A%E6%A0%8F%E5%92%8C%E5%8C%BA%E5%9F%9F%E6%A0%87%E9%A2%98%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
-      ),
+        'id'        => 'homepage_components',
+        'type'      => 'sortable',
+        'title'     => __('Homepage Components Order','sakurairo_csf'),
+        'fields'    => array(
+      
+          array(
+            'id'    => 'bulletin',
+            'type'  => 'switcher',
+            'title' => __('Bulletin Board','sakurairo_csf'),
+            'default' => true,
+          ),
+      
+          array(
+            'id'    => 'exhibition',
+            'type'  => 'switcher',
+            'title' => __('Display Area','sakurairo_csf'),
+            'default' => true,
+          ),
 
-      array(
-        'type' => 'subheading',
-        'content' => __('Bulletin Board','sakurairo_csf'),
-      ),
+          array(
+            'id'    => 'primary',
+            'type'  => 'switcher',
+            'title' => __('Article Area','sakurairo_csf'),
+            'default' => true,
+          ),
 
-      array(
-        'id' => 'bulletin_board',
-        'type' => 'switcher',
-        'title' => __('Bulletin Board','sakurairo_csf'),
-        'label' => __('When enabled the bulletin board will be displayed below the front cover','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
-        'id' => 'bulletin_board_style',
-        'type' => 'radio',
-        'title' => __('Bulletin Board Style','sakurairo_csf'),
-        'dependency' => array( 'bulletin_board', '==', 'true', '', 'true' ),
-        'options' => array(
-          'picture' => __('Picture Background','sakurairo_csf'),
-          'pure' => __('Color Background','sakurairo_csf'),
+          array(
+            'id'    => 'static_page',
+            'type'  => 'switcher',
+            'title' => __('Static Page','sakurairo_csf'),
+            'default' => false,
+          ),
         ),
-        'default' => 'picture'
       ),
 
       array(
-        'id' => 'bulletin_board_icon',
-        'type' => 'switcher',
-        'title' => __('Bulletin Board "Notice" Icon','sakurairo_csf'),
-        'dependency' => array( 'bulletin_board', '==', 'true', '', 'true' ),
-        'label' => __('The "Notice" icon will be displayed on the left side of the announcement bar','sakurairo_csf'),
-        'default' => true
+        'id'          => 'static_page_id',
+        'type'        => 'select',
+        'title'       => __('Static Page','sakurairo_csf'),
+        'placeholder' => __('Select a page','sakurairo_csf'),
+        'chosen'      => true,
+        'options'     => 'pages',
       ),
-
-      array(
-        'id' => 'bulletin_board_bg',
-        'type' => 'upload',
-        'title' => __('Bulletin Board Background','sakurairo_csf'),
-        'dependency' => array(
-          array( 'bulletin_board', '==', 'true', '', 'true' ),
-          array( 'bulletin_board_style', '==', 'picture' ),
-        ),
-        'desc' => __('Best width 820px, best height 67px','sakurairo_csf'),
-        'library' => 'image',
-        'default' => $vision_resource_basepath . 'series/announcement_bg.webp'
-      ),
-
-      array(
-        'id' => 'bulletin_board_border_color',
-        'type' => 'color',
-        'title' => __('Bulletin Board Border Color','sakurairo_csf'),
-        'dependency' => array(
-          array( 'bulletin_board', '==', 'true', '', 'true' ),
-          array( 'bulletin_board_style', '==', 'pure' ),
-        ),
-        'desc' => __('Customize the colors, it is recommended to use a light color that corresponds with the theme color','sakurairo_csf'),
-        'default' => '#E6E6E6'
-      ),
-
-      array(
-        'id' => 'bulletin_text',
-        'type' => 'text',
-        'title' => __('Bulletin Board Text','sakurairo_csf'),
-        'dependency' => array( 'bulletin_board', '==', 'true', '', 'true' ),
-        'desc' => __('Fill in the announcement text, the text beyond 142 bytes will be hidden','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'bulletin_board_text_align',
-        'type' => 'image_select',
-        'title' => __('Bulletin Board Alignment','sakurairo_csf'),
-        'dependency' => array( 'bulletin_board', '==', 'true', '', 'true' ),
-        'options'     => array(
-          'left'  => $vision_resource_basepath . 'options/announce_text_left.webp',
-          'right'  => $vision_resource_basepath . 'options/announce_text_right.webp',
-          'center'  => $vision_resource_basepath . 'options/announce_text_center.webp',
-        ),
-        'default'     => 'left'
-      ),
-
-      array(
-        'id' => 'bulletin_text_color',
-        'type' => 'color',
-        'title' => __('Bulletin Board Text Color','sakurairo_csf'),
-        'dependency' => array( 'bulletin_board', '==', 'true', '', 'true' ),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#999'
-      ),    
 
       array(
         'type' => 'subheading',
@@ -2352,6 +2302,95 @@ $prefix = 'iro_options';
         ),
         'default' => 'left'
       ),
+  
+    )
+  ));
+
+  Sakurairo_CSF::createSection( $prefix, array(
+    'parent' => 'homepage', 
+    'title' => __('Bulletin Board','sakurairo_csf'),
+    'icon' => 'fa fa-bullhorn',
+    'fields' => array(
+
+      array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%85%AC%E5%91%8A%E6%A0%8F%E5%92%8C%E5%8C%BA%E5%9F%9F%E6%A0%87%E9%A2%98%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
+        'type' => 'subheading',
+        'content' => __('Bulletin Board','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'bulletin_board_style',
+        'type' => 'radio',
+        'title' => __('Bulletin Board Style','sakurairo_csf'),
+        'options' => array(
+          'picture' => __('Picture Background','sakurairo_csf'),
+          'pure' => __('Color Background','sakurairo_csf'),
+        ),
+        'default' => 'picture'
+      ),
+
+      array(
+        'id' => 'bulletin_board_icon',
+        'type' => 'switcher',
+        'title' => __('Bulletin Board "Notice" Icon','sakurairo_csf'),
+        'label' => __('The "Notice" icon will be displayed on the left side of the announcement bar','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'bulletin_board_bg',
+        'type' => 'upload',
+        'title' => __('Bulletin Board Background','sakurairo_csf'),
+        'dependency' => array(
+          array( 'bulletin_board_style', '==', 'picture' ),
+        ),
+        'desc' => __('Best width 820px, best height 67px','sakurairo_csf'),
+        'library' => 'image',
+        'default' => $vision_resource_basepath . 'series/announcement_bg.webp'
+      ),
+
+      array(
+        'id' => 'bulletin_board_border_color',
+        'type' => 'color',
+        'title' => __('Bulletin Board Border Color','sakurairo_csf'),
+        'dependency' => array(
+          array( 'bulletin_board_style', '==', 'pure' ),
+        ),
+        'desc' => __('Customize the colors, it is recommended to use a light color that corresponds with the theme color','sakurairo_csf'),
+        'default' => '#E6E6E6'
+      ),
+
+      array(
+        'id' => 'bulletin_text',
+        'type' => 'text',
+        'title' => __('Bulletin Board Text','sakurairo_csf'),
+        'desc' => __('Fill in the announcement text, the text beyond 142 bytes will be hidden','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'bulletin_board_text_align',
+        'type' => 'image_select',
+        'title' => __('Bulletin Board Alignment','sakurairo_csf'),
+        'options'     => array(
+          'left'  => $vision_resource_basepath . 'options/announce_text_left.webp',
+          'right'  => $vision_resource_basepath . 'options/announce_text_right.webp',
+          'center'  => $vision_resource_basepath . 'options/announce_text_center.webp',
+        ),
+        'default'     => 'left'
+      ),
+
+      array(
+        'id' => 'bulletin_text_color',
+        'type' => 'color',
+        'title' => __('Bulletin Board Text Color','sakurairo_csf'),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
+        'default' => '#999'
+      ),
 
     )
   ) );
@@ -2369,19 +2408,10 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'exhibition_area',
-        'type' => 'switcher',
-        'title' => __('Display Area','sakurairo_csf'),
-        'label' => __('Enabled by default, display area is above article area','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
         'id' => 'exhibition_area_matching_color',
         'type' => 'color',
         'title' => __('Display Area Matching Color','sakurairo_csf'),
         'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'dependency' => array( 'exhibition_area', '==', 'true', '', 'true' ),
         'default' => '#a0daa9'
       ),  
 
@@ -2389,7 +2419,6 @@ $prefix = 'iro_options';
         'id' => 'exhibition_area_style',
         'type' => 'image_select',
         'title' => __('Display Area Style','sakurairo_csf'),
-        'dependency' => array( 'exhibition_area', '==', 'true', '', 'true' ),
         'options' => array(
           'left_and_right' => $vision_resource_basepath . 'options/exhibition_area_style_lr.webp',
           'bottom_to_top' => $vision_resource_basepath . 'options/exhibition_area_style_ud.webp',
@@ -2403,7 +2432,6 @@ $prefix = 'iro_options';
         'title' => __('Display Area Compatibility Mode','sakurairo_csf'),
         'dependency' => array(
                               array( 'exhibition_area_style', '==', 'left_and_right', '', 'true' ),
-                              array( 'exhibition_area', '==', 'true' ),
                         ),
         'label' => __('Enabled by default, this option avoids the problem of misaligned display areas','sakurairo_csf'),
         'default' => true
@@ -2415,7 +2443,6 @@ $prefix = 'iro_options';
         'title' => __('Display Area Background Color','sakurairo_csf'),
         'dependency' => array(
                               array( 'exhibition_area_style', '==', 'left_and_right', '', 'true' ),
-                              array( 'exhibition_area', '==', 'true' ),
                         ),
         'desc' => __('Customize the colors, light colors are recommended','sakurairo_csf'),
         'default' => 'rgba(255,255,255,0.4)'
@@ -2428,7 +2455,6 @@ $prefix = 'iro_options';
         'dependency' => array(
           array( 'exhibition_area_style', '==', 'left_and_right', '', 'true' ),
           array( 'exhibition_area_compat', '==', 'true' ),
-          array( 'exhibition_area', '==', 'true' ),
         ),
         'desc' => __('Slide to adjust, the recommended value is 15','sakurairo_csf'),
         'unit' => 'px',
@@ -2439,7 +2465,6 @@ $prefix = 'iro_options';
     'id'        => 'exhibition',
     'type'      => 'repeater',
     'title'     => __('Display Area Content','sakurairo_csf'),
-    'dependency' => array( 'exhibition_area', '==', 'true' ),
     'fields'    => array(
         array(
             'id'   => 'img',
