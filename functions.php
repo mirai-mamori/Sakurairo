@@ -28,7 +28,16 @@ if (!function_exists('iro_opt')) {
     $GLOBALS['iro_options'] = get_option('iro_options');
     function iro_opt($option = '', $default = null)
     {
-        return $GLOBALS['iro_options'][$option] ?? $default;
+        if ( is_customize_preview() ) {
+            $theme_mod = get_theme_mod('iro_options',[]);
+            if (isset( $theme_mod[$option])) {
+                return $theme_mod[$option]; //预览模式优先使用预览值
+            } else {
+                return $GLOBALS['iro_options'][$option] ?? $default;
+            }
+        } else {
+            return $GLOBALS['iro_options'][$option] ?? $default;
+        }
     }
 }
 if (!function_exists('iro_opt_update')) {
@@ -43,6 +52,7 @@ if (!function_exists('iro_opt_update')) {
         update_option('iro_options', $options);
     }
 }
+
 $shared_lib_basepath = iro_opt('shared_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path', 'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@') . IRO_VERSION);
 $core_lib_basepath = iro_opt('core_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path', 'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@') . IRO_VERSION);
 
