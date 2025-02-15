@@ -1,0 +1,67 @@
+.rtl {
+  .customize-control-kirki-tab {
+    left: 0;
+    right: -24px;
+  }
+}
+
+.customize-control-kirki-tab {
+  position: relative;
+  left: -24px;
+  width: calc(100% + 48px);
+}
+
+.kirki-tab {
+  .kirki-tab-menu,
+  .kirki-tab-menu-item {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .kirki-tab-menu {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .kirki-tab-menu-item {
+    position: relative;
+    flex-grow: 1;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 15px;
+      padding-right: 15px;
+      height: 50px;
+      position: relative;
+      border-bottom: 2px solid transparent;
+      text-decoration: none;
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      &:active,
+      &:focus {
+        color: #2271b1;
+      }
+    }
+
+    &.is-active {
+      a {
+        border-color: #2271b1;
+      }
+    }
+  }
+}
+
+.kirki-tab-item-hidden {
+  display: none !important;
+}

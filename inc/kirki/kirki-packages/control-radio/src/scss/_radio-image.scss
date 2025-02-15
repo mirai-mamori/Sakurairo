@@ -1,0 +1,59 @@
+.customize-control-kirki-radio-image {
+  > .image {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  label {
+    position: relative;
+    display: inline-block;
+  }
+
+  label .image-label {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    font-weight: 700;
+  }
+
+  label .image-label .inner {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 0.5em;
+    vertical-align: middle;
+  }
+
+  label:hover .image-label {
+    display: block;
+  }
+
+  input {
+    display: none;
+  }
+
+  input img {
+    border: 1px solid transparent;
+  }
+
+  input:checked + label img {
+    -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
+    border: 1px solid #3498db;
+  }
+
+  input + label .image-clickable {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+

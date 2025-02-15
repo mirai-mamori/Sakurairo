@@ -1,0 +1,210 @@
+.customize-control-repeater {
+  position: relative;
+}
+
+.customize-control-repeater .repeater-fields .repeater-row {
+  border: 1px solid #e5e5e5;
+  margin-top: 0.5rem;
+  background: #eee;
+  position: relative;
+}
+
+.customize-control-repeater .repeater-fields .repeater-row.minimized {
+  border: 1px solid #dfdfdf;
+  padding: 0;
+}
+
+.customize-control-repeater .repeater-fields .repeater-row.minimized:hover {
+  border: 1px solid #e5e5e5;
+}
+
+.customize-control-repeater
+  .repeater-fields
+  .repeater-row.minimized
+  .repeater-row-content {
+  display: none;
+}
+
+.customize-control-repeater .repeater-fields .repeater-row label {
+  margin-bottom: 12px;
+  clear: both;
+}
+
+.customize-control-repeater
+  .repeater-fields
+  .repeater-row
+  .repeater-field.repeater-field- {
+  display: none;
+}
+
+.customize-control-repeater
+  .repeater-fields
+  .repeater-row
+  .repeater-field.repeater-field-radio-image
+  input {
+  display: none;
+}
+
+.customize-control-repeater
+  .repeater-fields
+  .repeater-row
+  .repeater-field.repeater-field-radio-image
+  input
+  img {
+  border: 1px solid transparent;
+}
+
+.customize-control-repeater
+  .repeater-fields
+  .repeater-row
+  .repeater-field.repeater-field-radio-image
+  input:checked
+  + label
+  img {
+  -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
+  border: 1px solid #3498db;
+}
+
+.customize-control-repeater
+  .repeater-fields
+  .repeater-row
+  .repeater-field:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.customize-control-repeater button.repeater-add {
+  margin-top: 1rem;
+}
+
+.customize-control-repeater .repeater-row-content {
+  padding: 10px 15px;
+  background: #fff;
+}
+
+.customize-control-repeater .repeater-field {
+  margin-bottom: 12px;
+  width: 100%;
+  clear: both;
+  padding-bottom: 12px;
+  border-bottom: 1px dotted #ccc;
+}
+
+.customize-control-repeater .repeater-field .customize-control-title {
+  font-size: 13px;
+  line-height: initial;
+}
+
+.customize-control-repeater .repeater-field .customize-control-description {
+  font-size: 13px;
+  line-height: initial;
+}
+
+.customize-control-repeater .repeater-field.repeater-field-hidden {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.customize-control-repeater .repeater-field-select select {
+  margin-left: 0;
+}
+
+.customize-control-repeater .repeater-field-checkbox label {
+  line-height: 28px;
+}
+
+.customize-control-repeater .repeater-field-checkbox input {
+  line-height: 28px;
+  margin-right: 5px;
+}
+
+.customize-control-repeater .repeater-field-textarea textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+.customize-control-repeater .repeater-row-header {
+  background: white;
+  border-bottom: 1px solid #dfdfdf;
+  position: relative;
+  padding: 10px 15px;
+  height: auto;
+  min-height: 20px;
+  line-height: 30px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.customize-control-repeater .repeater-row-header:hover {
+  cursor: move;
+}
+
+.customize-control-repeater .repeater-row-header .dashicons {
+  font-size: 18px;
+  position: absolute;
+  right: 12px;
+  top: 2px;
+  color: #a0a5aa;
+}
+
+.customize-control-repeater .repeater-row-label {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  display: block;
+  width: 90%;
+  overflow: hidden;
+  height: 18px;
+}
+
+.customize-control-repeater .repeater-row-remove {
+  color: #a00;
+}
+
+.customize-control-repeater .repeater-row-remove:hover {
+  color: #f00;
+}
+
+.customize-control-repeater .repeater-minimize {
+  line-height: 36px;
+}
+
+.customize-control-repeater .remove-button,
+.customize-control-repeater .upload-button {
+  width: 48%;
+}
+
+.kirki-image-attachment {
+  margin: 0;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.kirki-image-attachment img {
+  display: inline-block;
+}
+
+.kirki-file-attachment {
+  margin: 0;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.kirki-file-attachment .file {
+  display: block;
+  padding: 10px 5px;
+  border: 1px dotted #c3c3c3;
+  background: #f9f9f9;
+}
+
+.limit {
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.limit.highlight {
+  background: #d32f2f;
+  color: #fff;
+}
