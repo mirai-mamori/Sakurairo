@@ -19,10 +19,7 @@ if ( ! class_exists( 'Kirki' ) ) {
 	define( 'KIRKI_NO_GUTENBERG_OUTPUT', true );
 }
 
-// function load_customize_lang() {
-//     load_textdomain( 'Sakurairo_C', __DIR__ . '/customizer_lang/' . get_locale() . '.mo' );
-// }
-// add_action( 'customize_register', 'load_customize_lang' );
+load_textdomain( 'Sakurairo_C', __DIR__ . '/lang/' . get_locale() . '.mo' );
 
 // 面板部分
 // 面板：每个面板至少包含 id、title，可选description（可选priority 将自动分配，描述不填自动为空）
@@ -82,7 +79,7 @@ $sections = [
 	[
         'id'          => 'iro_nav',
         'title'       => esc_html__( 'Nav Menu', 'Sakurairo_C' ),
-        'description' => esc_html__( '', 'Sakurairo_C' ),
+        'description' => '',
         'panel'       => 'iro_global',
 
 		'fields'      =>[
@@ -198,7 +195,7 @@ $sections = [
 	[
         'id'          => 'iro_classic_nav',
         'title'       => esc_html__( 'Sakurairo Classic Nav', 'Sakurairo_C' ),
-        'description' => esc_html__( '', 'Sakurairo_C' ),
+        'description' => '',
         'panel'       => 'iro_global',
 
 		'fields'      =>[
@@ -285,7 +282,7 @@ $sections = [
 	[
         'id'          => 'iro_color',
         'title'       => esc_html__( 'Theme Colors', 'Sakurairo_C' ),
-        'description' => esc_html__( '', 'Sakurairo_C' ),
+        'description' => '',
         'panel'       => 'iro_global',
 
 		'fields'      =>[
@@ -360,7 +357,7 @@ $sections = [
     [
         'id'          => 'iro_cover_logo',
         'title'       => esc_html__( 'Cover Logo', 'Sakurairo_C' ),
-        'description' => esc_html__( '', 'Sakurairo_C' ),
+        'description' => '',
         'panel'       => 'iro_cover',
 
 		'fields'      =>[
@@ -482,7 +479,7 @@ $sections = [
 	[
         'id'          => 'iro_cover_display',
         'title'       => esc_html__( 'Cover Apperance', 'Sakurairo_C' ),
-        'description' => esc_html__( '', 'Sakurairo_C' ),
+        'description' => '',
         'panel'       => 'iro_cover',
 
 		'fields'      =>[
@@ -575,7 +572,7 @@ $sections = [
 	[
         'id'          => 'iro_cover_info',
         'title'       => esc_html__( 'Cover Infos', 'Sakurairo_C' ),
-        'description' => esc_html__( '', 'Sakurairo_C' ),
+        'description' => '',
         'panel'       => 'iro_cover',
 
 		'fields'      =>[
@@ -824,7 +821,7 @@ $sections = [
 	[
         'id'          => 'iro_homepages_sections',
         'title'       => esc_html__( 'Homepage Components ', 'Sakurairo_C' ),
-        'description' => esc_html__( '', 'Sakurairo_C' ),
+        'description' => '',
         'panel'       => 'iro_homepage',
 
 		'fields'      =>[
@@ -944,7 +941,7 @@ $sections = [
 	[
         'id'          => 'iro_bulletin_board',
         'title'       => esc_html__( 'Bulletin Board', 'Sakurairo_C' ),
-        'description' => esc_html__( '', 'Sakurairo_C' ),
+        'description' => '',
         'panel'       => 'iro_homepage',
 
 		'fields'      =>[
@@ -1022,7 +1019,7 @@ $sections = [
 	[
         'id'          => 'iro_display_aera',
         'title'       => esc_html__( 'Display Aera', 'Sakurairo_C' ),
-        'description' => esc_html__( '', 'Sakurairo_C' ),
+        'description' => '',
         'panel'       => 'iro_homepage',
 
 		'fields'      =>[
@@ -1101,7 +1098,7 @@ $sections = [
 	[
         'id'          => 'iro_article_aera',
         'title'       => esc_html__( 'Article Aera', 'Sakurairo_C' ),
-        'description' => esc_html__( '', 'Sakurairo_C' ),
+        'description' => '',
         'panel'       => 'iro_homepage',
 
 		'fields'      =>[
@@ -1241,7 +1238,7 @@ $sections = [
 	[
         'id'          => 'iro_front',
         'title'       => esc_html__( 'Frontend Background', 'Sakurairo_C' ),
-        'description' => esc_html__( '', 'Sakurairo_C' ),
+        'description' => '',
         'panel'       => 'iro_global',
 
 		'fields'      =>[
@@ -1347,7 +1344,7 @@ $sections = [
 	[
         'id'          => 'iro_widgets',
         'title'       => esc_html__( 'Widgets Panel', 'Sakurairo_C' ),
-        'description' => esc_html__( '', 'Sakurairo_C' ),
+        'description' => '',
         'panel'       => 'iro_global',
 
 		'fields'      =>[
@@ -1496,7 +1493,7 @@ $sections = [
 	[
         'id'          => 'iro_particles',
         'title'       => esc_html__( 'Particles', 'Sakurairo_C' ),
-        'description' => esc_html__( '', 'Sakurairo_C' ),
+        'description' => '',
         'panel'       => 'iro_global',
 
 		'fields'      =>[
@@ -1524,6 +1521,7 @@ $sections = [
 				'settings' => 'particles_json',
 				'iro_key'  => 'particles_json',
 				'label'    => esc_html__( 'Particles JSON', 'Sakurairo_C' ),
+				'description' => esc_html__( 'Vist "https://vincentgarreau.com/particles.js/" for more help', 'Sakurairo_C' ),
 				'active_callback' => [
 					[
 						'setting'  => 'particles_effects',
@@ -1541,7 +1539,7 @@ $sections = [
 	[
         'id'          => 'iro_footer',
         'title'       => esc_html__( 'Footer Info', 'Sakurairo_C' ),
-        'description' => esc_html__( '', 'Sakurairo_C' ),
+        'description' => '',
         'panel'       => 'iro_global',
 
 		'fields'      =>[
