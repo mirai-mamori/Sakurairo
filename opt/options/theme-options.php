@@ -627,6 +627,7 @@ $prefix = 'iro_options';
         'type' => 'switcher',
         'title' => __('Widgets Panel WP Widget Area','sakurairo_csf'),
         'label' => __('When turned on, the WP Widget Area will be displayed in Widgets Panel','sakurairo_csf'),
+        'desc' => __('You can edit it <a href="/wp-admin/widgets.php"> here </a>','sakurairo_csf'),
         'default' => false
       ),
 
