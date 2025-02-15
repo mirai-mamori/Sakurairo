@@ -182,8 +182,8 @@ $sections = [
 			[
 				'type'     => 'switch',
 				'settings' => 'cover_random_graphs_switch',
-				'label'    => esc_html__( 'Switch Button of Random Images', 'Sakurairo_C' ),
 				'iro_key'  => 'cover_random_graphs_switch',
+				'label'    => esc_html__( 'Switch Button of Random Images', 'Sakurairo_C' ),
 			],
 			[
 				'type'     => 'switch',
@@ -823,7 +823,7 @@ $sections = [
 	// ====================主页整体布局====================
 	[
         'id'          => 'iro_homepages_sections',
-        'title'       => esc_html__( 'Area ', 'Sakurairo_C' ),
+        'title'       => esc_html__( 'Homepage Components ', 'Sakurairo_C' ),
         'description' => esc_html__( '', 'Sakurairo_C' ),
         'panel'       => 'iro_homepage',
 
