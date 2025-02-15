@@ -425,7 +425,7 @@ $prefix = 'iro_options';
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page</br>Aou can edit your nav menu content <a href=/wp-admin/nav-menus.php>here</a>','sakurairo_csf'),
       ),
 
       array(
