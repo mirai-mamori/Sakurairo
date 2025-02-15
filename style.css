@@ -2361,6 +2361,14 @@ h1.main-title {
   z-index: 9999;
 }
 
+.top-social .inner {
+  background: unset!important;
+}
+
+.top-social .inner img:hover {
+  pointer-events: none;
+}
+
 .top-social img,
 .top-social i {
   height: 35px;
