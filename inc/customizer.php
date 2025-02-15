@@ -397,12 +397,12 @@ $sections = [
 					]
 				],
 				'transport'   => 'postMessage',
-				'js_vars'     => array(
-					array(
+				'js_vars'     => [
+					[
 						'element'  => '.center-text',
 						'function' => 'html',
-					),
-				),
+					],
+				],
 			],
 			[
 				'type'     => 'color',
@@ -693,12 +693,12 @@ $sections = [
 					]
 				],
 				'transport'   => 'postMessage',
-				'js_vars'     => array(
-					array(
+				'js_vars'     => [
+					[
 						'element'  => '.header-info p',
 						'function' => 'html',
-					),
-				),
+					],
+				],
 			],
 			[
 				'type'     => 'text',
@@ -717,6 +717,7 @@ $sections = [
 					array(
 						'element'  => '.header-info p',
 						'property' => 'font-family',
+						'value_pattern' => '$ !important',
 					),
 				),
 			],
@@ -822,12 +823,121 @@ $sections = [
 	// ====================主页整体布局====================
 	[
         'id'          => 'iro_homepages_sections',
-        'title'       => esc_html__( 'Aera ', 'Sakurairo_C' ),
+        'title'       => esc_html__( 'Area ', 'Sakurairo_C' ),
         'description' => esc_html__( '', 'Sakurairo_C' ),
         'panel'       => 'iro_homepage',
 
 		'fields'      =>[
-
+			[
+				'type'     => 'sortable',
+				'settings' => 'homepage_components',
+				'iro_key'  => 'homepage_components',
+				'label'    => esc_html__( 'Bulletin Board Style', 'Sakurairo_C' ),
+				'choices'     => [
+					'bulletin' => __('Bulletin Board','Sakurairo_C'),
+          			'exhibition' => __('Display Area','Sakurairo_C'),
+					'primary' => __('Article Area','Sakurairo_C'),
+					'static_page' => __('Static Page','Sakurairo_C'),
+				],
+			],
+			[
+				'type'     => 'dropdown_pages',
+				'settings' => 'static_page_id',
+				'iro_key'  => 'static_page_id',
+				'label'    => esc_html__( 'Select a page', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'homepage_components',
+						'operator' => 'contains',
+						'value'    => 'static_page',
+					],
+				],
+			],
+			[
+				'type'     => 'text',
+				'settings' => 'exhibition_area_icon',
+				'iro_key'  => 'exhibition_area_icon',
+				'label'    => esc_html__( 'Display Area Icon', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'homepage_components',
+						'operator' => 'contains',
+						'value'    => 'exhibition',
+					],
+				],
+			],
+			[
+				'type'     => 'text',
+				'settings' => 'exhibition_area_title',
+				'iro_key'  => 'exhibition_area_title',
+				'label'    => esc_html__( 'Display Area Title', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'homepage_components',
+						'operator' => 'contains',
+						'value'    => 'exhibition',
+					],
+				],
+			],
+			[
+				'type'     => 'text',
+				'settings' => 'post_area_icon',
+				'iro_key'  => 'post_area_icon',
+				'label'    => esc_html__( 'Post Area Icon', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'homepage_components',
+						'operator' => 'contains',
+						'value'    => 'primary',
+					],
+				],
+			],
+			[
+				'type'     => 'text',
+				'settings' => 'post_area_title',
+				'iro_key'  => 'post_area_title',
+				'label'    => esc_html__( 'Post Area Title', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'homepage_components',
+						'operator' => 'contains',
+						'value'    => 'primary',
+					],
+				],
+			],
+			[
+				'type'     => 'text',
+				'settings' => 'area_title_font',
+				'iro_key'  => 'area_title_font',
+				'label'    => esc_html__( 'Area Title Font', 'Sakurairo_C' ),
+				'transport'   => 'postMessage',
+				'output' => array(
+					array(
+						'element'  => array('h1.fes-title','h1.main-title'),
+						'property' => 'font-family',
+						'value_pattern' => '$ !important',
+					),
+				)
+			],
+			[
+				'type'     => 'radio_image',
+				'settings' => 'area_title_text_align',
+				'iro_key'  => 'area_title_text_align',
+				'label'    => esc_html__( 'Area Title Alignment', 'Sakurairo_C' ),
+				'transport'   => 'auto',
+				'choices'     => [
+					'left' => $vision_resource_basepath . 'options/area_title_text_left.webp',
+					'right' => $vision_resource_basepath . 'options/area_title_text_right.webp',
+					'center' => $vision_resource_basepath . 'options/area_title_text_center.webp',
+				],
+				'output' => array(
+					array(
+						'element'  => array('h1.fes-title','h1.main-title'),
+						'property' => 'text-align',
+						'value_pattern' => '$ !important',
+					),
+				)
+			],
 		],
     ],
 	// ====================公告栏====================
@@ -843,9 +953,6 @@ $sections = [
 				'settings' => 'bulletin_board_style',
 				'iro_key'  => 'bulletin_board_style',
 				'label'    => esc_html__( 'Bulletin Board Style', 'Sakurairo_C' ),
-				'choices'     => [
-					'alpha' => true,
-				],
 				'choices'     => [
 					'picture' => __('Picture Background','Sakurairo_C'),
           			'pure' => __('Color Background','Sakurairo_C'),
@@ -1453,12 +1560,12 @@ $sections = [
 					'language' => 'html',
 				],
 				'transport'   => 'postMessage',
-				'js_vars' => array(
-					array(
+				'js_vars' => [
+					[
 						'element'  => '.footer_info',
 						'function' => 'html',
-					),
-				),
+					],
+				],
 			],
 			[
 				'type'     => 'text',
@@ -1627,7 +1734,7 @@ foreach ( $sections as $section ) {
 			// 对必填项做检查与默认处理
 			// 必须字段：label、settings、section、priority，
 			if ( ! isset( $args['label'] ) ) {
-				$args['label'] = 'Unnamed Setting';
+				$args['label'] = '';
 			}
 			if ( ! isset( $args['settings'] ) ) {
 				// 如果没有设置 settings，则跳过此字段（或记录错误）
@@ -1696,6 +1803,9 @@ foreach ( $sections as $section ) {
 					break;
 				case 'color':
 					new \Kirki\Field\Color( $args );
+					break;
+				case 'custom':
+					new \Kirki\Field\Custom( $args );
 					break;
 				case 'dashicons':
 					new \Kirki\Field\Dashicons( $args );

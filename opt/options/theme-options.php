@@ -2202,39 +2202,20 @@ $prefix = 'iro_options';
     'fields' => array(
 
       array(
-        'id'        => 'homepage_components',
-        'type'      => 'sortable',
-        'title'     => __('Homepage Components Order','sakurairo_csf'),
-        'fields'    => array(
-      
-          array(
-            'id'    => 'bulletin',
-            'type'  => 'switcher',
-            'title' => __('Bulletin Board','sakurairo_csf'),
-            'default' => true,
-          ),
-      
-          array(
-            'id'    => 'exhibition',
-            'type'  => 'switcher',
-            'title' => __('Display Area','sakurairo_csf'),
-            'default' => true,
-          ),
-
-          array(
-            'id'    => 'primary',
-            'type'  => 'switcher',
-            'title' => __('Article Area','sakurairo_csf'),
-            'default' => true,
-          ),
-
-          array(
-            'id'    => 'static_page',
-            'type'  => 'switcher',
-            'title' => __('Static Page','sakurairo_csf'),
-            'default' => false,
-          ),
+        'id' => 'homepage_components',
+        "type" => "select",
+        "title" => __("Homepage Components","sakurairo_csf"),
+        'desc' => __('Select the homepage components you want to display. They will appear in the order above.','sakurairo_csf'),
+        "chosen" => true,
+        "multiple" => true,
+        "sortable" => true,
+        "options"=> array(
+            'bulletin'    => __('Bulletin Board','sakurairo_csf'),
+            'exhibition'  => __('Display Area','sakurairo_csf'),
+            'primary'     => __('Article Area','sakurairo_csf'),
+            'static_page' => __('Static Page','sakurairo_csf'),
         ),
+        "default" => array('bulletin','exhibition','primary','static_page'),
       ),
 
       array(
@@ -2244,6 +2225,7 @@ $prefix = 'iro_options';
         'placeholder' => __('Select a page','sakurairo_csf'),
         'chosen'      => true,
         'options'     => 'pages',
+        'dependency'  => array('homepage_components', 'any', 'static_page',true),
       ),
 
       array(

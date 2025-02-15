@@ -2,7 +2,7 @@
 get_header();
 
 // 获取组件顺序数据
-$component_order = json_decode(get_theme_mod('component_order', '[]'), true);
+$component_order = iro_opt('homepage_components');
 
 // 默认组件顺序
 $default_order = ['bulletin', 'static_page', 'exhibition', 'primary'];
@@ -13,7 +13,6 @@ foreach ($component_order as $component) {
     switch ($component) {
         // 公告栏模块
         case 'bulletin':
-            if (iro_opt('bulletin_board') == '1') {
                 $text = iro_opt('bulletin_text');
                 ?>
                 <div class="notice" style="margin-top:60px">
@@ -29,12 +28,11 @@ foreach ($component_order as $component) {
                     </div>
                 </div>
                 <?php
-            }
             break;
 
         // 静态页面
         case 'static_page':
-            $static_page_id = get_theme_mod("home_static_page", 0);
+            $static_page_id = iro_opt("static_page_id");
             if ($static_page_id && ($static_page = get_post($static_page_id))) :
                 ?>
                 <section class="custom-static-section">
@@ -55,9 +53,7 @@ foreach ($component_order as $component) {
 
         // 特色区域
         case 'exhibition':
-            if (iro_opt('exhibition_area') == '1') {
                 get_template_part('layouts/' . 'feature');
-            }
             break;
 
         // 文章列表
@@ -109,6 +105,15 @@ foreach ($component_order as $component) {
             break;
     }
 }
+
+if (!in_array('primary', $component_order)) : //是否需要提供虚假的首页标记，解决当文章不显示时封面丢失，兼容前端js
+    ?>
+        <main id="main" class="site-main">
+            <h1 class="main-title posts-area-title" style="display:none;">
+            </h1>
+        </main>
+<?php
+endif;
 
 get_footer();
 ?>
