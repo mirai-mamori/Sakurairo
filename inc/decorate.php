@@ -242,6 +242,9 @@ body.dark .header-info
 body.dark .top-social img
 {background:rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);transition: all 0.6s ease-in-out;}
 
+body.dark .top-social svg
+{background:rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);transition: all 0.6s ease-in-out;}
+
 body.dark .top-social_v2 i
 {color:#ababab;transition: all 0.6s ease-in-out;}
 

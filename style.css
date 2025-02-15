@@ -2362,6 +2362,7 @@ h1.main-title {
 }
 
 .top-social img,
+.top-social svg,
 .top-social i {
   height: 35px;
   width: 35px;
@@ -2382,6 +2383,7 @@ h1.main-title {
 }
 
 .top-social img:hover,
+.top-social svg:hover,
 .top-social i:hover{
   box-shadow: 0 1px 6px 3px #e8e8e8;
   background: rgba(255, 255, 255, 0.95);
@@ -8329,11 +8331,13 @@ body.dark .header-info{
 }
 
 body.dark .top-social i,
+body.dark .top-social svg,
 body.dark .top-social img{
   border: 0.5px solid rgba(51,51,51,0.7);
 }
 
 body.dark .top-social i:hover,
+body.dark .top-social svg:hover,
 body.dark .top-social img:hover {
   box-shadow: 0 1px 30px 2px var(--theme-skin-dark) !important;
   background: rgba(51, 51, 51, 0.95);
