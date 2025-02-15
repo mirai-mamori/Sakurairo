@@ -2368,7 +2368,6 @@ h1.main-title {
   padding: 6px;
   border: 0.5px solid rgba(255,255,255,var(--homepage_widget_transparency, 1));
   background: rgba(255,255,255,var(--homepage_widget_transparency, 1));
-  border-radius: 8px!important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2385,6 +2384,10 @@ h1.main-title {
 .top-social i:hover{
   box-shadow: 0 1px 6px 3px #e8e8e8;
   background: rgba(255, 255, 255, 0.95);
+}
+
+.top-social .socialIconWithInner {
+  position: relative;
 }
 
 .top-social_v2 {
@@ -2406,11 +2409,11 @@ h1.main-title {
   background: 0 0;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .top-social_v2 i {
   font-size: 28px;
-  color: var(--theme-skin-matching);
 }
 
 .top-social li,
@@ -2424,7 +2427,7 @@ h1.main-title {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: max-content;
+  min-width: 105px;
   width: 100%;
 }
 
@@ -2464,6 +2467,7 @@ h1.main-title {
   position: relative;
 }
 
+.top-social .inner,
 .slider li .inner {
   position: absolute;
   top: 100%;
@@ -2487,6 +2491,7 @@ h1.main-title {
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, max-height 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
+.top-social .inner span,
 .slider li .inner span {
   max-width: 300px;
   min-width: 110px;			
@@ -2496,12 +2501,14 @@ h1.main-title {
   overflow-wrap: break-word;
 }
 
+.top-social .inner img,
 .slider li .inner img {
   width: 110px;
   height: auto;
   padding: 10px;
 }
 
+.top-social li:hover .inner,
 .slider li:hover .inner {
   opacity: 1;
   visibility: visible;
@@ -2509,6 +2516,7 @@ h1.main-title {
   transform: translateX(-50%) translateY(0);
 }
 
+.top-social li:not(:hover) .inner,
 .slider li:not(:hover) .inner {
   opacity: 0;
   visibility: hidden;

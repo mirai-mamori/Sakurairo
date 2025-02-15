@@ -248,9 +248,6 @@ body.dark .top-social_v2 i
 body.dark .top-social i
 {color:#ababab;background:rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);transition: all 0.6s ease-in-out;}
 
-body.dark .top-social svg
-{color:#ababab;background:rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);transition: all 0.6s ease-in-out;}
-
 body.dark .the-feature.from_left_and_right .info
 {background-color: rgba(51,51,51,<?=iro_opt('theme_darkmode_widget_transparency'); ?>);transition: all 0.6s ease-in-out;}
 
