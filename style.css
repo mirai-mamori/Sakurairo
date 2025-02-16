@@ -2364,14 +2364,11 @@ h1.main-title {
 .top-social .inner img {
   background: unset!important;
   border: unset!important;
+  box-shadow: unset!important;
 }
 
-.top-social .inner:hover {
-	pointer-events: none;
-}
-
-.top-social .inner img:hover {
-  pointer-events: none;
+body.dark .top-social .inner img:hover {
+  box-shadow: none!important;
 }
 
 .top-social img,
