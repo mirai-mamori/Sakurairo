@@ -26,15 +26,18 @@ load_textdomain( 'Sakurairo_C', __DIR__ . '/lang/' . get_locale() . '.mo' );
 $panels = [
 	[
         'id'          => 'iro_global',
-        'title'       => esc_html__( 'Theme Global Options', 'Sakurairo_C' ),
+        'title'       => esc_html__( 'Global Options', 'Sakurairo_C' ),
+		'priority'    => 10,
     ],
 	[
         'id'          => 'iro_cover',
-        'title'       => esc_html__( 'Theme Cover', 'Sakurairo_C' ),
+        'title'       => esc_html__( 'Homepage Cover', 'Sakurairo_C' ),
+		'priority'    => 10,
     ],
     [
         'id'          => 'iro_homepage',
-        'title'       => esc_html__( 'Theme Homepage', 'Sakurairo_C' ),
+        'title'       => esc_html__( 'Homepage Components', 'Sakurairo_C' ),
+		'priority'    => 10,
     ],
 ];
 
@@ -84,14 +87,37 @@ $sections = [
 
 		'fields'      =>[
 			[
+				'type'     => 'custom',
+				'settings' => 'nav_menu_notice',
+				'default'  => __('<p>You can edit your nav menu options <a href="/wp-admin/nav-menus.php">here</a></p>','Sakurairo_C'),
+			],
+			[
 				'type'     => 'radio_image',
-				'settings' => 'nav_menu_style',
+				'settings' => 'choice_of_nav_style',
+				'iro_key'  => 'choice_of_nav_style',
 				'label'    => esc_html__( 'Nav Menu Style', 'Sakurairo_C' ),
+				'choices'     => [
+					'iro' => $vision_resource_basepath . 'options/nav_menu_style_center.webp',
+					'sakura' => $vision_resource_basepath . 'options/nav_menu_style_sakura.webp',
+					'sakurairo' => $vision_resource_basepath . '/options/nav_menu_style_sakurairo.webp',
+				],
+			],
+			[
+				'type'     => 'select',
+				'settings' => 'nav_menu_style',
 				'iro_key'  => 'nav_menu_style',
+				'label'    => esc_html__( 'Iro Nav Style', 'Sakurairo_C' ),
 				'transport'   => 'auto',
 				'choices'     => [
-					'center' => $vision_resource_basepath . 'options/nav_menu_style_center.webp',
-					  'space-between' => $vision_resource_basepath . '/options/nav_menu_style_space.webp',
+					'center' => __('Always centered','Sakurairo_C'),
+					'space-between' => __('Dispersed','Sakurairo_C'),
+				],
+				'active_callback' => [
+					[
+						'setting'  => 'choice_of_nav_style',
+						'operator' => '==',
+						'value'    => 'iro',
+					]
 				],
 				'output' => array(
 					array(
@@ -111,6 +137,13 @@ $sections = [
 					'max'  => 50,
 					'step' => 1,
 				],
+				'active_callback' => [
+					[
+						'setting'  => 'choice_of_nav_style',
+						'operator' => '==',
+						'value'    => 'iro',
+					]
+				],
 				'output' => array(
 					array(
 						'element'  => array('.site-branding',
@@ -122,6 +155,87 @@ $sections = [
 						'property' => 'border-radius',
 					),
 				)
+			],
+			[
+				'type'     => 'select',
+				'settings' => 'sakura_nav_style_distribution', //分布
+				'label'    => esc_html__( 'Nav Menu Options Display Method', 'Sakurairo_C' ),
+				'iro_key'  => 'sakura_nav_style',
+				'iro_subkey'  => 'distribution',
+				'choices'     => [
+					'left' => __('Keep to the left','Sakurairo_C'),
+					'right' => __('Keep to the right','Sakurairo_C'),
+					'center' => __('Always centered','Sakurairo_C'),
+				],
+				'active_callback' => [
+					[
+						'setting'  => 'choice_of_nav_style',
+						'operator' => '!=',
+						'value'    => 'iro',
+					]
+				],
+				'transport'   => 'postMessage',
+				'output' => array(
+					array(
+						'element'  => '.menu-wrapper .sakura_nav .menu',
+						'property' => 'justify-content',
+						'value_pattern' => '$ !important',
+					),
+				)
+			],
+			[
+				'type'     => 'slider',
+				'settings' => 'sakura_nav_style_blurry',
+				'label'    => esc_html__( 'Blur degree', 'Sakurairo_C' ),
+				'iro_key'  => 'sakura_nav_style',
+				'iro_subkey'  => 'blurry',
+				'transport'   => 'auto',
+				'active_callback' => [
+					[
+						'setting'  => 'choice_of_nav_style',
+						'operator' => '!=',
+						'value'    => 'iro',
+					]
+				],
+				'choices'     => [
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				],
+				'output' => array(
+					array(
+						'element'  => array ( '.site-header.bg', '.site-header:hover'),
+						'property' => 'backdrop-filter',
+						'value_pattern' => 'blur( $px) !important',
+					),
+				),
+			],
+			[
+				'type'     => 'slider',
+				'settings' => 'sakura_nav_style_option_spacing',
+				'label'    => esc_html__( 'Menu option left and right spacing', 'Sakurairo_C' ),
+				'iro_key'  => 'sakura_nav_style',
+				'iro_subkey'  => 'option_spacing',
+				'active_callback' => [
+					[
+						'setting'  => 'choice_of_nav_style',
+						'operator' => '!=',
+						'value'    => 'iro',
+					]
+				],
+				'transport'   => 'auto',
+				'choices'     => [
+					'min'  => 1,
+					'max'  => 150,
+					'step' => 1,
+				],
+				'output' => array(
+					array(
+						'element'  => 'nav ul li',
+						'property' => 'margin', 
+						'value_pattern' => '0 $px !important',
+					),
+				),
 			],
 			[
 				'type'     => 'text',
@@ -188,93 +302,6 @@ $sections = [
 				'label'    => esc_html__( 'Nav Menu User Avatar', 'Sakurairo_C' ),
 				'section'  => 'iro_nav',
 				'iro_key'  => 'nav_menu_user_avatar',
-			],
-		],
-    ],
-	// ====================经典导航栏====================
-	[
-        'id'          => 'iro_classic_nav',
-        'title'       => esc_html__( 'Sakurairo Classic Nav', 'Sakurairo_C' ),
-        'description' => '',
-        'panel'       => 'iro_global',
-
-		'fields'      =>[
-			[
-				'type'     => 'switch',
-				'settings' => 'classic_sakura_nav_style', // 经典样式开关
-				'label'    => esc_html__( 'Enable Classic Sakura Nav', 'Sakurairo_C' ),
-				'iro_key'  => 'classic_sakura_nav_style',
-			],
-			[
-				'type'     => 'radio_image',
-				'settings' => 'sakura_nav_style_style', //选择
-				'label'    => esc_html__( 'Sakura Nav Style', 'Sakurairo_C' ),
-				'iro_key'  => 'sakura_nav_style',
-				'iro_subkey'  => 'style',
-				'choices'     => [
-					'sakura' => $vision_resource_basepath . 'options/nav_menu_style_sakura.webp',
-					'sakurairo' => $vision_resource_basepath . '/options/nav_menu_style_sakurairo.webp',
-				],
-			],
-			[
-				'type'     => 'select',
-				'settings' => 'sakura_nav_style_distribution', //分布
-				'label'    => esc_html__( 'Nav Menu Options Display Method', 'Sakurairo_C' ),
-				'iro_key'  => 'sakura_nav_style',
-				'iro_subkey'  => 'distribution',
-				'choices'     => [
-					'left' => __('Keep to the left','Sakurairo_C'),
-					'right' => __('Keep to the right','Sakurairo_C'),
-					'center' => __('Always centered','Sakurairo_C'),
-				],
-				'transport'   => 'postMessage',
-				'output' => array(
-					array(
-						'element'  => '.menu-wrapper .sakura_nav .menu',
-						'property' => 'justify-content',
-						'value_pattern' => '$ !important',
-					),
-				)
-			],
-			[
-				'type'     => 'slider',
-				'settings' => 'sakura_nav_style_blurry',
-				'label'    => esc_html__( 'Blur degree', 'Sakurairo_C' ),
-				'iro_key'  => 'sakura_nav_style',
-				'iro_subkey'  => 'blurry',
-				'transport'   => 'auto',
-				'choices'     => [
-					'min'  => 0,
-					'max'  => 100,
-					'step' => 1,
-				],
-				'output' => array(
-					array(
-						'element'  => array ( '.site-header.bg', '.site-header:hover'),
-						'property' => 'backdrop-filter',
-						'value_pattern' => 'blur( $px) !important',
-					),
-				),
-			],
-			[
-				'type'     => 'slider',
-				'settings' => 'sakura_nav_style_option_spacing',
-				'label'    => esc_html__( 'Menu option left and right spacing', 'Sakurairo_C' ),
-				'iro_key'  => 'sakura_nav_style',
-				'iro_subkey'  => 'option_spacing',
-				'transport'   => 'auto',
-				'choices'     => [
-					'min'  => 1,
-					'max'  => 150,
-					'step' => 1,
-				],
-				'output' => array(
-					array(
-						'element'  => 'nav ul li',
-						'property' => 'margin', 
-						'value_pattern' => '0 $px !important',
-					),
-				),
 			],
 		],
     ],
