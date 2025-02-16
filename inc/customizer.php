@@ -845,7 +845,7 @@ $sections = [
 				'settings' => 'wave_effects',
 				'iro_key'  => 'wave_effects',
 				'label'    => esc_html__( 'Cover Wave Effects', 'Sakurairo_C' ),
-				'label' => __('It will be forced off in the dark mode','Sakurairo_C'),
+				'description' => __('It will be forced off in the dark mode','Sakurairo_C'),
 			],
 			[
 				'type'     => 'switch',
