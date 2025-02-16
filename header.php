@@ -15,6 +15,29 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
+function use_customize_data() { // 模版中加载，解决其他位置获取不到临时值的问题
+    $persistent_options = get_theme_mod( 'iro_options', [] );
+    $mapping = get_theme_mod( 'iro_options_map', [] );
+    
+    foreach ( $mapping as $setting_id => $map ) {
+        $preview_value = get_theme_mod( $setting_id, null );
+        if ( null !== $preview_value ) {
+            $iro_key = isset( $map['iro_key'] ) ? $map['iro_key'] : $setting_id;
+            $iro_subkey = isset( $map['iro_subkey'] ) ? $map['iro_subkey'] : '';
+            if ( $iro_subkey ) {
+                if ( ! isset( $persistent_options[ $iro_key ] ) || ! is_array( $persistent_options[ $iro_key ] ) ) {
+                    $persistent_options[ $iro_key ] = [];
+                }
+                $persistent_options[ $iro_key ][ $iro_subkey ] = $preview_value;
+            } else {
+                $persistent_options[ $iro_key ] = $preview_value;
+            }
+        }
+    }
+    set_theme_mod( 'iro_options', $persistent_options );
+}
+if ( is_customize_preview() ) { use_customize_data(); } //预览模式将临时值写入theme_mod中的iro_options
+
 $core_lib_basepath = iro_opt('core_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path', 'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@') . IRO_VERSION);
 $nav_text_logo = iro_opt('nav_text_logo');
 $vision_resource_basepath = iro_opt('vision_resource_basepath');

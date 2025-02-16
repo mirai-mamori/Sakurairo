@@ -1,0 +1,43 @@
+{
+  "name": "kirki-pro-margin-padding",
+  "version": "1.1",
+  "description": "Dev toolkit for kirki-pro-margin-padding",
+  "keywords": [
+    "kirki-pro-margin-padding"
+  ],
+  "author": "Kirki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://www.themeum.com/"
+  },
+  "homepage": "https://www.themeum.com/",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.16.7",
+    "@parcel/transformer-sass": "^2.2.1",
+    "parcel": "^2.2.1"
+  },
+  "alias": {
+    "jquery": {
+      "global": "jQuery"
+    },
+    "react": {
+      "global": "React"
+    },
+    "react-dom": {
+      "global": "ReactDOM"
+    }
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "source": [
+    "src/control.js",
+    "src/preview.js"
+  ],
+  "scripts": {
+    "build": "parcel build",
+    "dev": "parcel build --no-optimize"
+  }
+}

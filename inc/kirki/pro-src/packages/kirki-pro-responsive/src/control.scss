@@ -1,0 +1,118 @@
+.customize-control-kirki-responsive {
+  position: relative;
+  z-index: 1; // Make it above it's children control.
+
+  .customize-control-title {
+    display: flex;
+  }
+}
+
+.kirki-responsive {
+  .kirki-device-buttons,
+  .kirki-device-button {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .kirki-device-buttons {
+    display: flex;
+    top: 3px;
+    justify-content: flex-start;
+    position: relative;
+    margin-left: 12px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .kirki-device-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 3px;
+    width: 22px;
+    height: 22px;
+    background-color: #eee;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    i {
+      width: 11px;
+      height: 11px;
+      font-size: 11px;
+    }
+
+    &.is-active,
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+}
+
+[data-kirki-parent-responsive-id] {
+  &.customize-control-kirki-switch {
+    top: -5px;
+
+    .kirki-switch {
+      .kirki-toggle-switch-label {
+        padding-top: 0;
+      }
+
+      .toggle-on,
+      .toggle-off {
+        bottom: -5px;
+      }
+    }
+  }
+}
+
+.customize-control-kirki-responsive-horizontal[data-kirki-parent-responsive-id] {
+  margin-bottom: -35px;
+
+  &.customize-control-kirki-react-colorful {
+    margin-bottom: -30px;
+
+    .kirki-trigger-circle-wrapper {
+      z-index: 2; // Make it above the responsive devices.
+    }
+  }
+
+  &.customize-control-kirki-checkbox {
+    display: flex;
+    justify-content: flex-end;
+    top: 9px;
+
+    [data-customize-setting-link] {
+      z-index: 2;
+    }
+  }
+
+  &.customize-control-kirki-toggle {
+    top: 14px;
+
+    .kirki-toggle {
+      display: flex;
+      justify-content: flex-end;
+
+      .kirki-control-form {
+        display: inline-block;
+        display: inline-flex;
+      }
+    }
+
+    .kirki-control-form {
+      z-index: 2; // Make it above the responsive devices.
+    }
+  }
+
+  .customize-control-title,
+  .customize-control-description {
+    padding-right: 25px;
+  }
+}
+
+.kirki-responsive-item-hidden {
+  display: none !important;
+}

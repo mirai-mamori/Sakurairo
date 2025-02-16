@@ -1,0 +1,115 @@
+// Range slider control.
+.customize-control-kirki-margin,
+.customize-control-kirki-padding {
+  .kirki-control-label {
+    position: relative;
+    display: block;
+  }
+
+  .customize-control-description {
+    padding-right: 30px;
+  }
+
+  .kirki-control-form {
+    position: relative;
+    margin-bottom: 12px;
+
+    &:hover {
+      .kirki-control-reset {
+        opacity: 1;
+      }
+    }
+  }
+
+  .kirki-control-reset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 50px;
+    right: 0;
+    position: absolute;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    color: #50575e;
+    background-color: transparent;
+    border-radius: 50%;
+    border-width: 0;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 3;
+
+    // a11y: support tab focus.
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  .kirki-control-reset:hover i {
+    color: #f00;
+    transform: rotate(-45deg);
+  }
+
+  .kirki-control-reset i {
+    font-size: 12px;
+    width: auto;
+    height: auto;
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+  }
+
+  .kirki-control-cols {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .kirki-control-left-col {
+    width: 91%;
+  }
+
+  .kirki-control-right-col {
+    width: 9%;
+    text-align: right;
+  }
+
+  .kirki-control-fields {
+    display: flex;
+  }
+
+  .kirki-control-field {
+    padding-right: 5px;
+    width: 25%;
+  }
+
+  .kirki-control-input {
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #f7f7f7;
+    border-color: #bbb;
+    border-radius: 4px;
+    z-index: 2;
+    transition: box-shadow 0.15s;
+
+    &:focus {
+      background-color: #fff;
+    }
+  }
+
+  .kirki-control-unit {
+    position: relative;
+    top: -10px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .kirki-control-sublabel {
+    display: block;
+    font-size: 11px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+}

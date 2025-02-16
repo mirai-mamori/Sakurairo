@@ -92,8 +92,8 @@ $nav_text_logo = iro_opt('nav_text_logo');
       <div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
     <?php } ?>
 
-    <?php $enable_random_graphs = (bool)iro_opt('cover_switch', true) && (bool)iro_opt('cover_random_graphs_switch', true); //是否允许更换背景
-    if ($enable_random_graphs): ?>
+    <?php
+    if (iro_opt('cover_switch', true) == true && iro_opt('cover_random_graphs_switch', true) == true): ?>
       <div class="bg-switch" id="bg-next">
         <i class="fa-solid fa-dice" aria-hidden="true"></i>
         <span class="screen-reader-text">
@@ -107,7 +107,10 @@ $nav_text_logo = iro_opt('nav_text_logo');
         if (!bgImageSwitcher) {
           return;
         } else {
-          if (window.location.pathname === '/' && !window.location.search){
+          const isHomePage = window.location.pathname === '/';
+          const inCustomize = new URLSearchParams(window.location.search).has('customize_theme');
+        
+        if (isHomePage && (!window.location.search || inCustomize)) {
             bgImageSwitcher.classList.remove('hide-state');
           } else {
             bgImageSwitcher.classList.add('hide-state');

@@ -28,7 +28,16 @@ if (!function_exists('iro_opt')) {
     $GLOBALS['iro_options'] = get_option('iro_options');
     function iro_opt($option = '', $default = null)
     {
-        return $GLOBALS['iro_options'][$option] ?? $default;
+        if ( is_customize_preview() ) {
+            $theme_mod = get_theme_mod('iro_options',[]);
+            if (isset( $theme_mod[$option])) {
+                return $theme_mod[$option]; //预览模式优先使用预览值
+            } else {
+                return $GLOBALS['iro_options'][$option] ?? $default;
+            }
+        } else {
+            return $GLOBALS['iro_options'][$option] ?? $default;
+        }
     }
 }
 if (!function_exists('iro_opt_update')) {
@@ -43,6 +52,7 @@ if (!function_exists('iro_opt_update')) {
         update_option('iro_options', $options);
     }
 }
+
 $shared_lib_basepath = iro_opt('shared_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path', 'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@') . IRO_VERSION);
 $core_lib_basepath = iro_opt('core_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path', 'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@') . IRO_VERSION);
 
@@ -524,9 +534,39 @@ require get_template_directory() . '/inc/api.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Customizer additions.
+ * Customizer功能
+ * 仅在Customizer预览框架中和Customizer编辑器载入时加载
  */
-require get_template_directory() . '/inc/customizer.php';
+add_action( 'customize_register', function () {
+    require get_template_directory() . '/inc/customizer.php';
+} );
+if ( is_customize_preview() ) {
+    require get_template_directory() . '/inc/customizer.php';
+}
+function update_customize_to_iro_options() { //从key映射表中重组并保存设置项至iro_options中
+    $theme_mod_options = get_theme_mod( 'iro_options', [] );
+    $mapping = get_theme_mod( 'iro_options_map', [] );
+	$iro_options = get_option('iro_options');
+    
+    foreach ( $mapping as $setting_id => $map ) {
+        $preview_value = get_theme_mod( $setting_id, null );
+        if ( null !== $preview_value ) {
+            $iro_key = isset( $map['iro_key'] ) ? $map['iro_key'] : $setting_id;
+            $iro_subkey = isset( $map['iro_subkey'] ) ? $map['iro_subkey'] : '';
+            if ( $iro_subkey ) {
+                if ( ! isset( $theme_mod_options[ $iro_key ] ) || ! is_array( $theme_mod_options[ $iro_key ] ) ) {
+                    $theme_mod_options[ $iro_key ] = [];
+                }
+                $theme_mod_options[ $iro_key ][ $iro_subkey ] = $preview_value;
+            } else {
+                $theme_mod_options[ $iro_key ] = $preview_value;
+            }
+        }
+    }
+	$theme_mod_options = array_merge($iro_options,$theme_mod_options);
+    update_option( 'iro_options', $theme_mod_options );
+}
+add_action( 'customize_save_after', 'update_customize_to_iro_options' );
 
 /**
  * function update
