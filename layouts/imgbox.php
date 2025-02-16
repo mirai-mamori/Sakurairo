@@ -10,7 +10,7 @@ $print_social_zone = function() use ($all_opt): void {
     $social_icons_array = [];
 
     // 具有 Inner 的社交图标
-    $social_icons = [];
+    $social_icons_with_inner = [];
 
     // 微信
     $wechat_qrcode_switch = iro_opt('wechat_qrcode_switch');
@@ -28,13 +28,13 @@ $print_social_zone = function() use ($all_opt): void {
 
     // 处理微信
     if ($wechat_qrcode_switch && $wechat_qrcode) {
-        $social_icons[] = [
+        $social_icons_with_inner[] = [
             'icon' => 'wechat',
             'inner' => '<img src="' . esc_url($wechat_qrcode) . '" alt="WeChat QR Code">',
             'action' => $wechat_copy_switch && $wechat_id ? 'copyWeChatID(event, this)' : ($wechat_url ? "redirectToURL(event, '" . esc_url($wechat_url) . "')" : 'doNothing(event)'),
         ];
     } elseif (!$wechat_qrcode_switch && $wechat_id) {
-        $social_icons[] = [
+        $social_icons_with_inner[] = [
             'icon' => 'wechat',
             'inner' => '<span>' . esc_html($wechat_id) . '</span>',
             'action' => $wechat_copy_switch ? 'copyWeChatID(event, this)' : ($wechat_url ? "redirectToURL(event, '" . esc_url($wechat_url) . "')" : 'doNothing(event)'),
@@ -43,21 +43,21 @@ $print_social_zone = function() use ($all_opt): void {
 
     // 处理 QQ
     if ($qq_qrcode_switch && $qq_qrcode) {
-        $social_icons[] = [
+        $social_icons_with_inner[] = [
             'icon' => 'qq',
             'inner' => '<img src="' . esc_url($qq_qrcode) . '" alt="QQ QR Code">',
             'action' => $qq_copy_switch && $qq_id ? 'copyQQID(event, this)' : ($qq_url ? "redirectToURL(event, '" . esc_url($qq_url) . "')" : 'doNothing(event)'),
         ];
     } elseif (!$qq_qrcode_switch && $qq_id) {
-        $social_icons[] = [
+        $social_icons_with_inner[] = [
             'icon' => 'qq',
             'inner' => '<span>' . esc_html($qq_id) . '</span>',
             'action' => $qq_copy_switch ? 'copyQQID(event, this)' : ($qq_url ? "redirectToURL(event, '" . esc_url($qq_url) . "')" : 'doNothing(event)'),
         ];
     }
 
-    if (!empty($social_icons)):
-        foreach ($social_icons as $icon_data):
+    if (!empty($social_icons_with_inner)):
+        foreach ($social_icons_with_inner as $icon_data):
             ob_start(); ?>
             <li class="socialIconWithInner">
                 <a href="javascript:void(0);" title="<?= strtolower($icon_data['icon']) ?>" onclick="<?= $icon_data['action'] ?>">
@@ -76,7 +76,7 @@ $print_social_zone = function() use ($all_opt): void {
         endforeach;
     endif;
 
-    // 从 all_opt.php 引入其余设置
+    // 从 all_opt.php 引入其余设置并输出图标
     foreach ($all_opt as $key => $value):
         if (!empty($value['link'])):
             $img_url = $value['img'] ?? (iro_opt('vision_resource_basepath').iro_opt('social_display_icon').'/' . ($value['icon'] ?? $key) . '.webp');
@@ -94,7 +94,7 @@ $print_social_zone = function() use ($all_opt): void {
         endif;
     endforeach;
 
-    // 邮箱
+    // 输出邮箱图标
     if (iro_opt('email_name') && iro_opt('email_domain')):
     ob_start(); ?>
         <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail">
@@ -108,7 +108,7 @@ $print_social_zone = function() use ($all_opt): void {
     $social_icons_array[] = ob_get_clean();
     endif;
 
-    // 自定义社交网络
+    // 输出自定义社交网络图标
     $diysocialicons = iro_opt('diysocialicons');
     $diysocialicons = is_array($diysocialicons) ? $diysocialicons : [];
     foreach ($diysocialicons as $key => $item) { 
@@ -128,8 +128,9 @@ $print_social_zone = function() use ($all_opt): void {
     $social_icons_json = json_encode($social_icons_array, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); 
 
     if (iro_opt('infor_bar_style') === 'v1') {
+        // 如果是 v1 样式，则直接输出
         foreach ($social_icons_array as $icon) {
-            echo $icon . "\n"; // 直接输出
+            echo $icon . "\n";
         }
     } else { ?>
         <!-- 社交图标栏 -->
@@ -201,22 +202,30 @@ $print_social_zone = function() use ($all_opt): void {
                 nextBtn.addEventListener("click", () => {
                     if (currentIndex + a < items.length) {
                         currentIndex += a;
-                        direction = "right";
-                        updateSlider();
+                    } else {
+                        currentIndex = 0; // 如果已经在最后，则跳转到首个元素
                     }
+                    direction = "right";
+                    updateSlider();
                 });
 
                 // 绑定 prev 按钮
                 prevBtn.addEventListener("click", () => {
                     if (currentIndex - a >= 0) {
                         currentIndex -= a;
-                        direction = "left";
-                        updateSlider();
                     } else {
-                        currentIndex = 0;
-                        direction = "left";
-                        updateSlider();
+                        /**
+						 * 求最后一组首个元素的索引，计算方式为 起始索引=⌊(元素总量−1)/组容量⌋×组容量
+						 * 使用位运算取整更快，有下面三种方法：
+						 * 1、按位或，即 (((items.length - 1) / a) | 0) * a
+						 * 2、双按位非，即 (~~((items.length - 1) / a)) * a
+						 * 3、无符号右移，即 (((items.length - 1) / a) >> 0) * a
+						 * 但以上方法仅适用于非负数，虽然在此处需取整的数值符合条件，但 Math.floor 方法最安全，特此说明，请勿修改
+                         */
+                        currentIndex = Math.floor((items.length - 1) / a) * a; // 如果已经在首个，则跳转到最后一组的首个元素
                     }
+                    direction = "left";
+                    updateSlider();
                 });
 
                 // 窗口大小变化时，重新计算 a 并更新
@@ -239,14 +248,17 @@ $print_social_zone = function() use ($all_opt): void {
     }
 ?>
 	<script>
+        // 复制微信号，基于 copyID 的封装函数
 		function copyWeChatID(event, element) {
 			copyID(event, element, "<?= esc_js($wechat_id) ?>", "WeChat ID");
 		}
 
+        // 复制 QQ 号，基于 copyID 的封装函数
 		function copyQQID(event, element) {
 			copyID(event, element, "<?= esc_js($qq_id) ?>", "QQ ID");
 		}
 
+        // 复制通用函数
 		function copyID(event, element, id, label) {
 			event.preventDefault();
 			if (!id) {
@@ -258,12 +270,12 @@ $print_social_zone = function() use ($all_opt): void {
 				var parentElement = element.closest('.socialIconWithInner');
 				var existingCopiedMessage = parentElement.querySelector('.copied-message');
 				if (existingCopiedMessage) {
-					existingCopiedMessage.remove();
+					existingCopiedMessage.remove(); // 移除先前可能存在的复制消息
 				}
 
 				var inner = parentElement.querySelector('.inner');
 				if (inner) {
-					inner.style.display = 'none';
+					inner.style.display = 'none'; // 先隐藏原有 Inner
 				}
 
 				var copiedMessage = document.createElement("div");
@@ -275,13 +287,14 @@ $print_social_zone = function() use ($all_opt): void {
 					if (inner) {
 						inner.style.display = '';
 					}
-				}, 2000);
+				}, 2000); // 显示已复制的提示消息两秒，随后移除并显示原有 Inner
 			}).catch(function (err) {
 				console.error("Failed to copy: ", err);
 				alert("Failed to copy " + label + ".");
 			});
 		}
 
+        // 在新标签页打开链接
 		function redirectToURL(event, url) {
 			event.preventDefault();
 			if (url) {
@@ -289,6 +302,7 @@ $print_social_zone = function() use ($all_opt): void {
 			}
 		}
 
+        // 什么也不做
 		function doNothing(event) {
 			event.preventDefault();
 		}
