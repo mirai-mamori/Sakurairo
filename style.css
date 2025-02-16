@@ -2356,7 +2356,7 @@ h1.main-title {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 65%;
+  max-width: 65%;
   flex-wrap: wrap;
   z-index: 9999;
 }
@@ -2371,9 +2371,9 @@ h1.main-title {
 
 .top-social img,
 .top-social i {
-  height: 35px;
-  width: 35px;
-  padding: 6px;
+  height: 36px;
+  width: 40px;
+  padding: 8px 10px;
   border: 0.5px solid rgba(255,255,255,var(--homepage_widget_transparency, 1));
   background: rgba(255,255,255,var(--homepage_widget_transparency, 1));
   display: flex;
