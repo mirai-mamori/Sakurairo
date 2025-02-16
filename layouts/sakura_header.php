@@ -26,7 +26,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
   }
 
   <?php //sakurairo classic 基于 sakura样式再层叠
-  if($nav_style['style'] == 'sakurairo') { ?>
+  if(iro_opt('choice_of_nav_style') == 'sakurairo') { ?>
   .site-header{
     position: fixed;
     border-radius: 15px !important;

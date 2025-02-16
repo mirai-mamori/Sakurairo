@@ -25,25 +25,29 @@
     border-radius: 0px;
     background: transparent;
     border: 0px;
-    height: 75px;
+    height: 100%;
     line-height: 75px;
     backdrop-filter: none;
     box-shadow: none;
 }
 
+.site-branding a,
+.site-title-logo,
 .site-branding img {
-    max-height: 90px;
+    display: flex;
+    max-height: 100%;
     border-radius: 0px;
+    height: 100%;
+    justify-content: center;
+    object-fit: contain;
+}
+
+.site-branding img{
+    max-width: none;
 }
 
 .site-title{
     display: flex !important;
-}
-
-.site-title-logo {
-    display: flex;
-    justify-content: center;
-    max-height: none;
 }
 
 .site-branding:hover,
