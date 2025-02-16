@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-02-15 18:21+0800\n"
-"PO-Revision-Date: 2025-02-15 18:22+0800\n"
+"POT-Creation-Date: 2025-02-16 20:49+0800\n"
+"PO-Revision-Date: 2025-02-16 20:50+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: zh_CN\n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,560 +15,561 @@ msgstr ""
 "X-Poedit-SearchPath-0: customizer.php\n"
 
 #: customizer.php:29
-msgid "Theme Global Options"
-msgstr "テーマのグローバル設定"
+msgid "Global Options"
+msgstr "グローバル設定"
 
-#: customizer.php:33
-msgid "Theme Cover"
-msgstr "テーマカバー"
+#: customizer.php:34
+msgid "Homepage Cover"
+msgstr "ホームページカバー"
 
-#: customizer.php:37
-msgid "Theme Homepage"
-msgstr "テーマホームページ"
+#: customizer.php:39
+msgid "Homepage Components"
+msgstr "ホームページ構成要素"
 
-#: customizer.php:81
+#: customizer.php:84
 msgid "Nav Menu"
 msgstr "ナビゲーションメニュー"
 
-#: customizer.php:89
+#: customizer.php:92
+msgid ""
+"<p>You can edit your nav menu options <a href=\"/wp-admin/nav-menus."
+"php\">here</a></p>"
+msgstr ""
+"<p>ナビゲーションメニューの設定は<a href=\"/wp-admin/nav-menus.php\">こちら</"
+"a>で編集できます</p>"
+
+#: customizer.php:98
 msgid "Nav Menu Style"
 msgstr "ナビゲーションメニューのスタイル"
 
-#: customizer.php:106
+#: customizer.php:109
+msgid "Iro Nav Style"
+msgstr "メインナビゲーションスタイル"
+
+#: customizer.php:112 customizer.php:168
+msgid "Always centered"
+msgstr "常に中央揃え"
+
+#: customizer.php:113
+msgid "Dispersed"
+msgstr "等間隔配置"
+
+#: customizer.php:132
 msgid "Nav Menu Radius"
-msgstr "ナビゲーションメニューの角丸"
+msgstr "ナビゲーションメニューの角丸半径"
 
-#: customizer.php:129
-msgid "Nav Menu Font"
-msgstr "ナビゲーションメニューのフォント"
-
-#: customizer.php:142
-msgid "Navigation Menu Logo"
-msgstr "ナビゲーションメニューのロゴ画像"
-
-#: customizer.php:154
-msgid "Nav Menu Text Logo Text"
-msgstr "ナビゲーションメニューのロゴテキスト"
-
-#: customizer.php:168
-msgid "Nav Menu Text Logo Font"
-msgstr "ナビゲーションメニューのロゴフォント"
-
-#: customizer.php:183
-msgid "Switch Button of Random Images"
-msgstr "ランダム画像のスイッチボタン"
-
-#: customizer.php:188
-msgid "Nav Menu User Avatar"
-msgstr "ナビゲーションメニューのユーザーアバター"
-
-#: customizer.php:197
-msgid "Sakurairo Classic Nav"
-msgstr "クラシック桜色ナビゲーション"
-
-#: customizer.php:205
-msgid "Enable Classic Sakura Nav"
-msgstr "クラシック桜ナビゲーションを有効化"
-
-#: customizer.php:211
-msgid "Sakura Nav Style"
-msgstr "桜ナビゲーションのスタイル"
-
-#: customizer.php:222
+#: customizer.php:162
 msgid "Nav Menu Options Display Method"
-msgstr "ナビゲーションメニューのオプション表示方法"
+msgstr "ナビゲーションオプション表示方法"
 
-#: customizer.php:226
+#: customizer.php:166
 msgid "Keep to the left"
 msgstr "左寄せ"
 
-#: customizer.php:227
+#: customizer.php:167
 msgid "Keep to the right"
 msgstr "右寄せ"
 
-#: customizer.php:228
-msgid "Always centered"
-msgstr "常に中央"
-
-#: customizer.php:242
+#: customizer.php:189
 msgid "Blur degree"
-msgstr "ぼかし度"
+msgstr "ぼかし強度"
 
-#: customizer.php:262
+#: customizer.php:216
 msgid "Menu option left and right spacing"
-msgstr "メニューオプションの左右スペース"
+msgstr "メニューオプション左右余白"
 
-#: customizer.php:284
-msgid "Theme Colors"
-msgstr "テーマの色"
+#: customizer.php:243
+msgid "Nav Menu Font"
+msgstr "ナビゲーションフォント"
 
-#: customizer.php:293
-msgid "Theme Color"
-msgstr "テーマカラー"
+#: customizer.php:256
+msgid "Navigation Menu Logo"
+msgstr "ナビゲーションロゴ画像"
+
+#: customizer.php:268
+msgid "Nav Menu Text Logo Text"
+msgstr "テキストロゴの内容"
+
+#: customizer.php:282
+msgid "Nav Menu Text Logo Font"
+msgstr "テキストロゴのフォント"
+
+#: customizer.php:297
+msgid "Switch Button of Random Images"
+msgstr "ランダム画像切替ボタン"
 
 #: customizer.php:302
+msgid "Nav Menu User Avatar"
+msgstr "ユーザーアバター表示"
+
+#: customizer.php:311
+msgid "Theme Colors"
+msgstr "テーマ色彩設定"
+
+#: customizer.php:320
+msgid "Theme Color"
+msgstr "メインカラー"
+
+#: customizer.php:329
 msgid "Matching Color"
-msgstr "マッチングカラー"
-
-#: customizer.php:319
-msgid "Dark Mode Theme Color"
-msgstr "ダークモードのテーマカラー"
-
-#: customizer.php:335
-msgid "Dark Mode Image Brightness"
-msgstr "ダークモードの画像の明るさ"
+msgstr "アクセントカラー"
 
 #: customizer.php:346
+msgid "Dark Mode Theme Color"
+msgstr "ダークモードメインカラー"
+
+#: customizer.php:362
+msgid "Dark Mode Image Brightness"
+msgstr "ダークモード画像明度"
+
+#: customizer.php:373
 msgid "Dark Mode Component Transparency"
-msgstr "ダークモードのコンポーネント透明度"
-
-#: customizer.php:359
-msgid "Cover Logo"
-msgstr "カバーロゴ"
-
-#: customizer.php:367
-msgid "Cover Personal Avatar"
-msgstr "カバー個人アバター"
-
-#: customizer.php:380
-msgid "Enable Mashiro Special Effects Text Instead"
-msgstr "白猫の特殊効果テキストを代わりに使用"
+msgstr "ダークモード透過度"
 
 #: customizer.php:386
-msgid "Mashiro Special Effects Text"
-msgstr "白猫のテキスト内容"
+msgid "Cover Logo"
+msgstr "カバーロゴ画像"
+
+#: customizer.php:394
+msgid "Cover Personal Avatar"
+msgstr "個人アバター表示"
 
 #: customizer.php:407
+msgid "Enable Mashiro Special Effects Text Instead"
+msgstr "白猫風特殊文字を有効化"
+
+#: customizer.php:413
+msgid "Mashiro Special Effects Text"
+msgstr "白猫風文字内容"
+
+#: customizer.php:434
 msgid "Mashiro Special Effects Text Color"
-msgstr "白猫のテキストカラー"
+msgstr "白猫風文字カラー"
 
-#: customizer.php:431
+#: customizer.php:458
 msgid "Mashiro Special Effects Font"
-msgstr "白猫のテキストフォント"
+msgstr "白猫風フォント"
 
-#: customizer.php:452
+#: customizer.php:479
 msgid "Mashiro Special Effects Size"
-msgstr "白猫のテキストフォントサイズ"
+msgstr "白猫風文字サイズ"
 
-#: customizer.php:481
+#: customizer.php:508
 msgid "Cover Apperance"
-msgstr "カバーの外観"
+msgstr "カバー外観設定"
 
-#: customizer.php:489
+#: customizer.php:516
 msgid "Enable Cover"
 msgstr "カバーを有効化"
 
-#: customizer.php:495
+#: customizer.php:522
 msgid "Cover Full Screen"
-msgstr "カバー全画面表示"
+msgstr "全画面表示モード"
 
-#: customizer.php:509 customizer.php:1109
+#: customizer.php:536 customizer.php:1136
 msgid "Cover Random Images Filter"
 msgstr "カバー画像フィルター"
 
-#: customizer.php:518
+#: customizer.php:545
 msgid "No filter"
 msgstr "フィルターなし"
 
-#: customizer.php:519
+#: customizer.php:546
 msgid "Light filter"
 msgstr "ライトフィルター"
 
-#: customizer.php:520
+#: customizer.php:547
 msgid "Dimmed filter"
-msgstr "暗いフィルター"
+msgstr "ダークフィルター"
 
-#: customizer.php:521
+#: customizer.php:548
 msgid "Grid filter"
 msgstr "グリッドフィルター"
 
-#: customizer.php:522
+#: customizer.php:549
 msgid "Dot filter"
 msgstr "ドットフィルター"
 
-#: customizer.php:528
+#: customizer.php:555
 msgid "Cover Arc Occlusion (Below)"
-msgstr "カバーの下部アーク隠蔽"
+msgstr "下部アーチ型マスク"
 
-#: customizer.php:541
+#: customizer.php:568
 msgid "Cover Animation"
 msgstr "カバーアニメーション"
 
-#: customizer.php:554 customizer.php:607
+#: customizer.php:581 customizer.php:634
 msgid "Cover Animation Time"
-msgstr "カバーアニメーション時間"
+msgstr "アニメーション時間（秒）"
 
-#: customizer.php:574
+#: customizer.php:601
 msgid "Cover Infos"
-msgstr "カバー情報"
+msgstr "カバー情報設定"
 
-#: customizer.php:583
+#: customizer.php:610
 msgid "Cover Info Bar"
-msgstr "カバー情報バーのスイッチ"
+msgstr "情報バー表示"
 
-#: customizer.php:589
+#: customizer.php:616
 msgid "Cover Info Bar Style"
-msgstr "カバー情報バーのスタイル"
+msgstr "情報バースタイル"
 
-#: customizer.php:632
+#: customizer.php:659
 msgid "Cover Info Bar Avatar Radius"
-msgstr "カバー情報バーのアバター角丸"
+msgstr "アバター角丸半径"
 
-#: customizer.php:658
+#: customizer.php:685
 msgid "Cover Info Bar Rounded"
-msgstr "カバー情報バーの角丸"
+msgstr "情報バー角丸半径"
 
-#: customizer.php:684
+#: customizer.php:711
 msgid "Cover Signature Field Text"
-msgstr "カバー署名フィールドテキスト"
+msgstr "カバー署名テキスト"
 
-#: customizer.php:704
+#: customizer.php:731
 msgid "Cover Signature Field Text Font"
-msgstr "カバー署名フォント"
+msgstr "署名フォント"
 
-#: customizer.php:725
+#: customizer.php:752
 msgid "Cover Signature Field Text Font Size"
-msgstr "カバー署名フォントサイズ"
+msgstr "署名文字サイズ"
 
-#: customizer.php:751
+#: customizer.php:778
 msgid "Cover Signature Bar Typing Effects"
-msgstr "カバー署名タイピング効果"
+msgstr "タイピング風効果"
 
-#: customizer.php:764
+#: customizer.php:791
 msgid "Cover Signature Field Typing Effects Double Quotes"
-msgstr "カバー署名タイピング効果の二重引用符"
+msgstr "引用符を表示"
 
-#: customizer.php:782
+#: customizer.php:809
 msgid "Typed.js initial option"
-msgstr "Typed.js 初期設定"
+msgstr "Typed.js初期設定"
 
-#: customizer.php:803
+#: customizer.php:830
 msgid "Cover and Frontend Background Integration"
-msgstr "カバーとフロントエンド背景の統合"
+msgstr "カバーと背景統合"
 
-#: customizer.php:804
+#: customizer.php:831
 msgid ""
 "When enabled, the background of the cover will be set to transparent, while "
 "the frontend background will use the cover's random image API"
 msgstr ""
-"有効化すると、カバーの背景が透明になり、フロントエンド背景がカバーのランダム"
-"画像APIを使用します"
-
-#: customizer.php:810
-msgid "Cover Dropdown Arrow"
-msgstr "カバーのドロップダウン矢印"
-
-#: customizer.php:816
-msgid "Cover Dropdown Arrow Display on Mobile Devices"
-msgstr "モバイル端末でもカバーのドロップダウン矢印を表示"
-
-#: customizer.php:823
-msgid "Homepage Components "
-msgstr "ホームページコンポーネント"
-
-#: customizer.php:832 customizer.php:952
-msgid "Bulletin Board Style"
-msgstr "掲示板スタイル"
-
-#: customizer.php:834 customizer.php:943
-msgid "Bulletin Board"
-msgstr "掲示板"
-
-#: customizer.php:835
-msgid "Display Area"
-msgstr "表示エリア"
-
-#: customizer.php:836
-msgid "Article Area"
-msgstr "記事エリア"
+"有効化するとカバー背景を透明化し、サイト背景にカバー画像APIを使用します"
 
 #: customizer.php:837
-msgid "Static Page"
-msgstr "静的ページ"
+msgid "Cover Dropdown Arrow"
+msgstr "スクロール指示矢印"
 
-#: customizer.php:844
+#: customizer.php:843
+msgid "Cover Dropdown Arrow Display on Mobile Devices"
+msgstr "モバイル端末での矢印表示"
+
+#: customizer.php:850
+msgid "Homepage Components "
+msgstr "ホームページ構成"
+
+#: customizer.php:859 customizer.php:979
+msgid "Bulletin Board Style"
+msgstr "告知欄スタイル"
+
+#: customizer.php:861 customizer.php:970
+msgid "Bulletin Board"
+msgstr "告知欄設定"
+
+#: customizer.php:862
+msgid "Display Area"
+msgstr "展示エリア"
+
+#: customizer.php:863
+msgid "Article Area"
+msgstr "記事一覧"
+
+#: customizer.php:864
+msgid "Static Page"
+msgstr "固定ページ"
+
+#: customizer.php:871
 msgid "Select a page"
 msgstr "ページを選択"
 
-#: customizer.php:857
+#: customizer.php:884
 msgid "Display Area Icon"
-msgstr "表示エリアアイコン"
+msgstr "展示エリアアイコン"
 
-#: customizer.php:870
+#: customizer.php:897
 msgid "Display Area Title"
-msgstr "表示エリアタイトル"
+msgstr "展示エリアタイトル"
 
-#: customizer.php:883
+#: customizer.php:910
 msgid "Post Area Icon"
 msgstr "記事エリアアイコン"
 
-#: customizer.php:896
+#: customizer.php:923
 msgid "Post Area Title"
 msgstr "記事エリアタイトル"
 
-#: customizer.php:909
+#: customizer.php:936
 msgid "Area Title Font"
 msgstr "エリアタイトルフォント"
 
-#: customizer.php:923
+#: customizer.php:950
 msgid "Area Title Alignment"
-msgstr "エリアタイトル配置"
+msgstr "タイトル配置"
 
-#: customizer.php:954
+#: customizer.php:981
 msgid "Picture Background"
 msgstr "画像背景"
 
-#: customizer.php:955
+#: customizer.php:982
 msgid "Color Background"
-msgstr "カラー背景"
+msgstr "単色背景"
 
-#: customizer.php:962
+#: customizer.php:989
 msgid "Bulletin Board \"Notice\" Icon"
-msgstr "掲示板「お知らせ」アイコン"
+msgstr "「お知らせ」アイコン"
 
-#: customizer.php:968
+#: customizer.php:995
 msgid "Bulletin Board Background"
-msgstr "掲示板の背景"
+msgstr "告知欄背景"
 
-#: customizer.php:981
+#: customizer.php:1008
 msgid "Bulletin Board Border Color"
-msgstr "掲示板の境界線色"
+msgstr "境界線カラー"
 
-#: customizer.php:997
+#: customizer.php:1024
 msgid "Bulletin Board Content"
-msgstr "掲示板コンテンツ"
-
-#: customizer.php:1003
-msgid "Bulletin Board Text Color"
-msgstr "掲示板テキストカラー"
-
-#: customizer.php:1021
-msgid "Display Aera"
-msgstr "表示エリア"
+msgstr "告知内容"
 
 #: customizer.php:1030
+msgid "Bulletin Board Text Color"
+msgstr "テキストカラー"
+
+#: customizer.php:1048
+msgid "Display Aera"
+msgstr "展示エリア"
+
+#: customizer.php:1057
 msgid "Display Area Matching Color"
-msgstr "表示エリアのマッチングカラー"
-
-#: customizer.php:1047
-msgid "Display Area Background Color"
-msgstr "表示エリア背景色"
-
-#: customizer.php:1064
-msgid "Display Area Style"
-msgstr "表示エリアスタイル"
+msgstr "展示エリア配色"
 
 #: customizer.php:1074
+msgid "Display Area Background Color"
+msgstr "背景カラー"
+
+#: customizer.php:1091
+msgid "Display Area Style"
+msgstr "展示スタイル"
+
+#: customizer.php:1101
 msgid "Display Area Compatibility Mode"
-msgstr "表示エリアの互換モード"
+msgstr "互換モード"
 
-#: customizer.php:1080
+#: customizer.php:1107
 msgid "Display Area Rounded Corners"
-msgstr "表示エリア内容の角丸"
+msgstr "展示コンテンツ角丸"
 
-#: customizer.php:1100
+#: customizer.php:1127
 msgid "Article Aera"
-msgstr "記事エリア"
+msgstr "記事一覧"
 
-#: customizer.php:1112
+#: customizer.php:1139
 msgid "Author"
-msgstr "著者"
+msgstr "投稿者"
 
-#: customizer.php:1113
+#: customizer.php:1140
 msgid "Category"
 msgstr "カテゴリー"
 
-#: customizer.php:1114
+#: customizer.php:1141
 msgid "Number of Comments"
 msgstr "コメント数"
 
-#: customizer.php:1115
+#: customizer.php:1142
 msgid "Number of Views"
-msgstr "ビュー数"
+msgstr "閲覧数"
 
-#: customizer.php:1116
+#: customizer.php:1143
 msgid "Number of Words"
-msgstr "単語数"
+msgstr "文字数"
 
-#: customizer.php:1117
+#: customizer.php:1144
 msgid "Estimate Reading Time"
-msgstr "推定読書時間"
+msgstr "読了時間"
 
-#: customizer.php:1124 customizer.php:1134
+#: customizer.php:1151 customizer.php:1161
 msgid "Article Area Card Design"
 msgstr "記事カードデザイン"
 
-#: customizer.php:1151
+#: customizer.php:1178
 msgid "Article Area Card Information Meta Background Compatible"
-msgstr "記事カード情報の可読性向上"
+msgstr "メタ情報可読性向上"
 
-#: customizer.php:1157
+#: customizer.php:1184
 msgid "Show shuoshuo on home page"
-msgstr "ホームページに発言を表示"
+msgstr "つぶやきを表示"
 
-#: customizer.php:1163
+#: customizer.php:1190
 msgid "Article Area Card Information Meta Rounded Corners"
-msgstr "記事カード情報メタデータの角丸"
+msgstr "メタ情報角丸"
 
-#: customizer.php:1182
+#: customizer.php:1209
 msgid "Article Area Card Title Meta Rounded Corners"
-msgstr "記事カードタイトルメタデータの角丸"
+msgstr "タイトル角丸"
 
-#: customizer.php:1201
+#: customizer.php:1228
 msgid "Article Area Card Rounded Corners"
-msgstr "記事カードの角丸"
+msgstr "カード角丸"
 
-#: customizer.php:1220
+#: customizer.php:1247
 msgid "Article Area Title Font Size"
-msgstr "記事タイトルのフォントサイズ"
+msgstr "タイトル文字サイズ"
 
-#: customizer.php:1240
+#: customizer.php:1267
 msgid "Frontend Background"
-msgstr "フロントエンド背景"
+msgstr "サイト背景"
 
-#: customizer.php:1250 customizer.php:1446 customizer.php:1460
-#: customizer.php:1474 customizer.php:1488
+#: customizer.php:1277 customizer.php:1473 customizer.php:1487
+#: customizer.php:1501 customizer.php:1515
 msgid "Default Frontend Background"
 msgstr "デフォルト背景"
 
-#: customizer.php:1256
+#: customizer.php:1283
 msgid "Background Transparency in the Frontend"
-msgstr "フロントエンド背景の透明度"
+msgstr "背景透過度"
 
-#: customizer.php:1267
+#: customizer.php:1294
 msgid "Background Transparency Blur"
-msgstr "背景透明度のぼかし"
+msgstr "背景ぼかし"
 
-#: customizer.php:1273
+#: customizer.php:1300
 msgid "Frontend Background Scaling Method"
-msgstr "フロントエンド背景のスケーリング方法"
+msgstr "背景拡縮方法"
 
-#: customizer.php:1275
+#: customizer.php:1302
 msgid "Cover"
-msgstr "カバー"
+msgstr "全面表示"
 
-#: customizer.php:1276
+#: customizer.php:1303
 msgid "Contain"
-msgstr "包含"
+msgstr "縦横比維持"
 
-#: customizer.php:1277
+#: customizer.php:1304
 msgid "Auto"
-msgstr "自動"
+msgstr "自動調整"
 
-#: customizer.php:1292
+#: customizer.php:1319
 msgid "Global Default Font"
-msgstr "グローバルデフォルトフォント"
+msgstr "デフォルトフォント"
 
-#: customizer.php:1293
+#: customizer.php:1320
 msgid ""
 "Fill in the font name,and you can add your customize font in Font Options of "
 "Global Options in iro-Options."
 msgstr ""
-"フォント名を入力すると、iro-Optionsのグローバルオプション内のフォントオプショ"
-"ンにカスタムフォントを追加できます。"
+"フォント名を入力（iroオプションのフォント設定でカスタムフォントを追加可能）"
 
-#: customizer.php:1307 customizer.php:1326 customizer.php:1355
+#: customizer.php:1334 customizer.php:1353 customizer.php:1382
 msgid "Widgets Panel Button Radius"
-msgstr "ウィジェットパネルボタンの角丸"
+msgstr "小組件ボタン角丸"
 
-#: customizer.php:1346
+#: customizer.php:1373
 msgid "Widgets Panel"
-msgstr "ウィジェットパネル"
+msgstr "小組件パネル"
 
-#: customizer.php:1374
+#: customizer.php:1401
 msgid "Widgets Panel Widget Radius"
-msgstr "ウィジェットパネルの角丸"
+msgstr "小組件角丸"
 
-#: customizer.php:1393
+#: customizer.php:1420
 msgid "Widgets Panel Font"
-msgstr "ウィジェットパネルのフォント"
+msgstr "小組件フォント"
 
-#: customizer.php:1399
+#: customizer.php:1426
 msgid "Widgets Panel WP Widget Area"
-msgstr "ウィジェットパネルのWPウィジェットエリア"
+msgstr "WP標準小組件表示"
 
-#: customizer.php:1405
+#: customizer.php:1432
 msgid "Widgets Panel Day&Night Switching"
-msgstr "ウィジェットパネルの日夜切り替え"
+msgstr "昼夜モード切替"
 
-#: customizer.php:1411 customizer.php:1439 customizer.php:1453
-#: customizer.php:1467 customizer.php:1481
+#: customizer.php:1438 customizer.php:1466 customizer.php:1480
+#: customizer.php:1494 customizer.php:1508
 msgid "Widgets Panel Font Switching"
-msgstr "ウィジェットパネルのフォント切り替え"
+msgstr "フォント切替設定"
 
-#: customizer.php:1417
+#: customizer.php:1444
 msgid "Global Default Font&Widgets Panel Font Switching A"
-msgstr "グローバルデフォルトフォント＆ウィジェットパネルフォントA"
+msgstr "メインフォント/小組件フォントA"
 
-#: customizer.php:1431
+#: customizer.php:1458
 msgid "Widgets Panel Font Switching B"
-msgstr "ウィジェットパネルフォントB"
+msgstr "小組件フォントB"
 
-#: customizer.php:1495
+#: customizer.php:1522
 msgid "Particles"
-msgstr "パーティクルエフェクト"
+msgstr "パーティクル効果"
 
-#: customizer.php:1504
+#: customizer.php:1531
 msgid "Sakura Falling Effects"
-msgstr "桜の舞い落ちエフェクト"
+msgstr "桜吹雪エフェクト"
 
-#: customizer.php:1506
+#: customizer.php:1533
 msgid "Off"
-msgstr "オフ"
+msgstr "無効"
 
-#: customizer.php:1507
+#: customizer.php:1534
 msgid "Native Quantity"
-msgstr "全て"
+msgstr "通常量"
 
-#: customizer.php:1508
+#: customizer.php:1535
 msgid "Quarter Quantity"
 msgstr "75%"
 
-#: customizer.php:1509
+#: customizer.php:1536
 msgid "Half Quantity"
 msgstr "50%"
 
-#: customizer.php:1510
+#: customizer.php:1537
 msgid "Less Quantity"
 msgstr "25%"
 
-#: customizer.php:1517
+#: customizer.php:1544
 msgid "Particles Effects"
-msgstr "パーティクルエフェクト"
+msgstr "パーティクル効果"
 
-#: customizer.php:1523
+#: customizer.php:1550
 msgid "Particles JSON"
-msgstr "パーティクルエフェクト設定"
+msgstr "パーティクル設定"
 
-#: customizer.php:1524
+#: customizer.php:1551
 msgid "Vist \"https://vincentgarreau.com/particles.js/\" for more help"
-msgstr ""
-"詳細については「https://vincentgarreau.com/particles.js/」を訪れてください"
+msgstr "詳細設定は公式サイト（https://vincentgarreau.com/particles.js/）を参照"
 
-#: customizer.php:1541 customizer.php:1556
+#: customizer.php:1568 customizer.php:1583
 msgid "Footer Info"
 msgstr "フッター情報"
 
-#: customizer.php:1550
+#: customizer.php:1577
 msgid "Footer Sakura Icon"
-msgstr "フッター桜アイコン"
+msgstr "桜アイコン表示"
 
-#: customizer.php:1572
+#: customizer.php:1599
 msgid "Footer Text Font"
-msgstr "フッター情報フォント"
+msgstr "フッターフォント"
 
-#: customizer.php:1586
+#: customizer.php:1613
 msgid "Footer Load Occupancy Query"
-msgstr "フッター読み込み負荷情報"
+msgstr "サーバー負荷表示"
 
-#: customizer.php:1592
+#: customizer.php:1619
 msgid "Footer Upyun League Logo"
-msgstr "フッターのユーパンロゴ"
+msgstr "UPYUNロゴ表示"
 
-#: customizer.php:1598
+#: customizer.php:1625
 msgid "Footer Hitokoto"
-msgstr "フッターの一言"
+msgstr "一言表示"
 
-#: customizer.php:1604
+#: customizer.php:1631
 msgid "Hitokoto API address"
 msgstr "一言APIアドレス"

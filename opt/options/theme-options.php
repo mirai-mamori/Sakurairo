@@ -429,14 +429,27 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'         => 'nav_menu_style',
+        'id'         => 'choice_of_nav_style',
         'type'       => 'image_select',
         'title'      => __('Nav Menu Style','sakurairo_csf'),
         'options'    => array(
-          'center' => $vision_resource_basepath . 'options/nav_menu_style_center.webp',
-          'space-between' => $vision_resource_basepath . '/options/nav_menu_style_space.webp',
+          'iro' => $vision_resource_basepath . 'options/nav_menu_style_center.webp',
+          'sakura' => $vision_resource_basepath . 'options/nav_menu_style_sakura.webp',
+          'sakurairo' => $vision_resource_basepath . '/options/nav_menu_style_sakurairo.webp',
         ),
         'default'    => 'center',
+      ),
+
+      array(
+        'id'         => 'nav_menu_style',
+        'type'       => 'select',
+        'title'      => __('Iro Nav Style','sakurairo_csf'),
+        'options'    => array(
+          'center' => __('Always centered','sakurairo_csf'),
+          'space-between' => __('Dispersed','sakurairo_csf'),
+        ),
+        'default'    => 'center',
+        'dependency' => array( 'choice_of_nav_style', '==', 'iro', '', 'true' ),
       ),
 
       array(
@@ -447,7 +460,52 @@ $prefix = 'iro_options';
         'unit' => 'px',
         'max' => '50',
         'default' => '50',
+        'dependency' => array( 'choice_of_nav_style', '==', 'iro', '', 'true' ),
        ),
+
+       array(
+        'id' => 'sakura_nav_style',
+        'type' => 'fieldset',
+        'title' => __('Custom Sakura Nav Styles','sakurairo_csf'),
+        'dependency' => array( 'choice_of_nav_style', 'any', 'sakura,sakurairo', '', 'true' ),
+        'fields' => array(
+          array(
+            'id' => 'distribution',
+            'type' => 'select',
+            'title' => __('Nav Menu Options Display Method','sakurairo_csf'),
+            'desc' => __('Distribution method of menu options,sakurairo style only support center or Evenly dispersed.','sakurairo_csf'),
+            'options'    => array(
+              'left' => __('Keep to the left','sakurairo_csf'),
+              'right' => __('Keep to the right','sakurairo_csf'),
+              'center' => __('Always centered','sakurairo_csf'),
+            ),
+          ),
+          array(
+            'id' => 'blurry',
+            'type' => 'slider',
+            'title' => __('Blur degree','sakurairo_csf'),
+            'step' => '1',
+            'unit' => 'px',
+            'min' => '0',
+            'max' => '100',
+          ),
+          array(
+            'id' => 'option_spacing',
+            'type' => 'slider',
+            'title' => __('Menu option left and right spacing','sakurairo_csf'),
+            'desc'    => __('You can manually adjust the option spacing to achieve more distribution effects, the default is 14','sakurairo_csf'),
+            'step' => '1',
+            'unit' => 'px',
+            'min' => '1',
+            'max' => '150',
+          ),
+        ),
+        'default' => array(
+          'distribution'    => 'right',
+          'blurry' => '10',
+          'option_spacing' => '14',
+        ),
+      ),
 
       array(
         'id' => 'nav_menu_font',
@@ -511,67 +569,6 @@ $prefix = 'iro_options';
         'title' => __('Nav Menu User Avatar in Mobile','sakurairo_csf'),
         'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
         'default' => true
-      ),
-
-      array(
-        'id' => 'classic_sakura_nav_style',
-        'type' => 'switcher',
-        'title' => __('Enable Classic Sakura Nav','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
-        'id' => 'sakura_nav_style',
-        'type' => 'fieldset',
-        'title' => __('Custom Sakura Nav Styles','sakurairo_csf'),
-        'dependency' => array( 'classic_sakura_nav_style', '==', 'true', '', 'true' ),
-        'fields' => array(
-          array(
-            'id'         => 'style',
-            'type'       => 'image_select',
-            'title'      => __('Sakura Nav Style','sakurairo_csf'),
-            'options'    => array(
-              'sakura' => $vision_resource_basepath . 'options/nav_menu_style_sakura.webp',
-              'sakurairo' => $vision_resource_basepath . '/options/nav_menu_style_sakurairo.webp',
-            ),
-            'default'    => 'sakura',
-          ),
-          array(
-            'id' => 'distribution',
-            'type' => 'select',
-            'title' => __('Nav Menu Options Display Method','sakurairo_csf'),
-            'desc' => __('Distribution method of menu options,sakurairo style only support center or Evenly dispersed.','sakurairo_csf'),
-            'options'    => array(
-              'left' => __('Keep to the left','sakurairo_csf'),
-              'right' => __('Keep to the right','sakurairo_csf'),
-              'center' => __('Always centered','sakurairo_csf'),
-            ),
-          ),
-          array(
-            'id' => 'blurry',
-            'type' => 'slider',
-            'title' => __('Blur degree','sakurairo_csf'),
-            'step' => '1',
-            'unit' => 'px',
-            'min' => '0',
-            'max' => '100',
-          ),
-          array(
-            'id' => 'option_spacing',
-            'type' => 'slider',
-            'title' => __('Menu option left and right spacing','sakurairo_csf'),
-            'desc'    => __('You can manually adjust the option spacing to achieve more distribution effects, the default is 14','sakurairo_csf'),
-            'step' => '1',
-            'unit' => 'px',
-            'min' => '1',
-            'max' => '150',
-          ),
-        ),
-        'default' => array(
-          'distribution'    => 'right',
-          'blurry' => '10',
-          'option_spacing' => '14',
-        ),
       ),
 
     )
@@ -2191,7 +2188,7 @@ $prefix = 'iro_options';
             'primary'     => __('Article Area','sakurairo_csf'),
             'static_page' => __('Static Page','sakurairo_csf'),
         ),
-        "default" => array('bulletin','exhibition','primary','static_page'),
+        "default" => array('primary'),
       ),
 
       array(
@@ -2277,8 +2274,9 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'type' => 'subheading',
-        'content' => __('Bulletin Board','sakurairo_csf'),
+        'type'    => 'submessage',
+        'style'   => 'normal',
+        'content' => __('It will only be displayed when "Bulletin Board" is selected in the homepage component settings','sakurairo_csf'),
       ),
 
       array(
@@ -2363,6 +2361,12 @@ $prefix = 'iro_options';
         'type' => 'submessage',
         'style' => 'info',
         'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%B1%95%E7%A4%BA%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
+        'type'    => 'submessage',
+        'style'   => 'normal',
+        'content' => __('It will only be displayed when "Display Area" is selected in the homepage component settings','sakurairo_csf'),
       ),
 
       array(
@@ -2482,6 +2486,12 @@ $prefix = 'iro_options';
         'type' => 'submessage',
         'style' => 'info',
         'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Homepage/#%E6%96%87%E7%AB%A0%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
+        'type'    => 'submessage',
+        'style'   => 'normal',
+        'content' => __('It will only be displayed when "Article Area" is selected in the homepage component settings','sakurairo_csf'),
       ),
 
       array(
