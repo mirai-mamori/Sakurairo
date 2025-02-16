@@ -2384,8 +2384,6 @@ h1.main-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-animation: unset!important;
-  animation: unset!important;
 }
 
 .top-social i {
