@@ -2128,56 +2128,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'     => 'socialdiy1',
-        'type'   => 'text',
-        'title' => __('Customized Social Network Ⅰ','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('add URL','sakurairo_csf'),
-      ),
-      
-      array(
-        'id'     => 'socialdiy1_title',
-        'type'   => 'text',
-        'title' => __('Customized Social Network Ⅰ Title','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        "default" => "DIY1"
-      ),
-
-      array(
-        'id'     => 'socialdiyp1',
-        'type'  => 'upload',
-        'title' => __('Customized Social Network Ⅰ icon','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('The best length-width ratio of is 1:1','sakurairo_csf'),
-        'library'      => 'image',
-      ),
-
-      array(
-        'id'     => 'socialdiy2',
-        'type'   => 'text',
-        'title' => __('Customized Social Network Ⅱ','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('add URL','sakurairo_csf'),
-      ),
-
-      array(
-        'id'     => 'socialdiy2_title',
-        'type'   => 'text',
-        'title' => __('Customized Social Network Ⅱ Title','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        "default" => "DIY2"
-      ),
-      
-      array(
-        'id'     => 'socialdiyp2',
-        'type'  => 'upload',
-        'title' => __('Customized Social Network Ⅱ icon','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('The best length-width ratio of is 1:1','sakurairo_csf'),
-        'library'      => 'image',
-      ),
-
-      array(
         'id' => 'email_name',
         'type' => 'text',
         'title' => __('Email Username','sakurairo_csf'),
@@ -2193,6 +2143,31 @@ $prefix = 'iro_options';
         'desc' => __('name@domain.com fo domain.com','sakurairo_csf'),
       ),
 
+      array(
+        'id'        => 'diysocialicons',
+        'type'      => 'repeater',
+        'title'     => __('Customized Social Networks','sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'fields'    => array(
+                array(
+                        'id'   => 'img',
+                        'type' => 'upload',
+                        'title' => __('Icon', 'sakurairo_csf'),
+                        'desc'  => __('The best length-width ratio of is 1:1', 'sakurairo_csf'),
+                ),
+                array(
+                        'id'    => 'title',
+                        'type'  => 'text',
+                        'title' => __('Title', 'sakurairo_csf'),
+                ),
+                array(
+                        'id'    => 'link',
+                        'type'  => 'text',
+                        'title' => __('Link', 'sakurairo_csf'),
+                        'desc' => __('add URL', 'sakurairo_csf'),
+                ),
+        ),
+      ),
     )
   ) );
 
