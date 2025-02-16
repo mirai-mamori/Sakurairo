@@ -2361,8 +2361,13 @@ h1.main-title {
   z-index: 9999;
 }
 
-.top-social .inner {
+.top-social .inner img {
   background: unset!important;
+  border: unset!important;
+}
+
+.top-social .inner:hover {
+	pointer-events: none;
 }
 
 .top-social .inner img:hover {
@@ -2379,8 +2384,6 @@ h1.main-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-animation: unset!important;
-  animation: unset!important;
 }
 
 .top-social i {
@@ -2502,7 +2505,7 @@ h1.main-title {
 .top-social .inner span,
 .slider li .inner span {
   max-width: 300px;
-  min-width: 110px;			
+  min-width: 110px;
   padding: 10px;
   white-space: normal;
   word-wrap: break-word;
