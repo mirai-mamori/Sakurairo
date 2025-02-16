@@ -383,7 +383,7 @@ $sections = [
 	// ====================封面LOGO====================
     [
         'id'          => 'iro_cover_logo',
-        'title'       => esc_html__( 'Cover Logo', 'Sakurairo_C' ),
+        'title'       => esc_html__( 'Logo', 'Sakurairo_C' ),
         'description' => '',
         'panel'       => 'iro_cover',
 
@@ -505,7 +505,7 @@ $sections = [
 	// ====================封面外观====================
 	[
         'id'          => 'iro_cover_display',
-        'title'       => esc_html__( 'Cover Apperance', 'Sakurairo_C' ),
+        'title'       => esc_html__( 'Apperance', 'Sakurairo_C' ),
         'description' => '',
         'panel'       => 'iro_cover',
 
@@ -598,7 +598,7 @@ $sections = [
 	// ====================封面信息栏====================
 	[
         'id'          => 'iro_cover_info',
-        'title'       => esc_html__( 'Cover Infos', 'Sakurairo_C' ),
+        'title'       => esc_html__( 'Infos', 'Sakurairo_C' ),
         'description' => '',
         'panel'       => 'iro_cover',
 
@@ -631,7 +631,7 @@ $sections = [
 				'type'     => 'slider',
 				'settings' => 'homepage_widget_transparency',
 				'iro_key'  => 'homepage_widget_transparency',
-				'label'    => esc_html__( 'Cover Animation Time', 'Sakurairo_C' ),
+				'label'    => esc_html__( 'Cover Widget Transparency', 'Sakurairo_C' ),
 				'choices'     => [
 					'min'  => 0.2,
 					'max'  => 1,
@@ -823,12 +823,29 @@ $sections = [
 					]
 				],
 			],
+		],
+    ],
+	// ====================杂项====================
+	[
+        'id'          => 'iro_cover_other',
+        'title'       => esc_html__( 'Others', 'Sakurairo_C' ),
+        'description' => '',
+        'panel'       => 'iro_cover',
+
+		'fields'      =>[
 			[
 				'type'     => 'switch',
 				'settings' => 'site_bg_as_cover',
 				'iro_key'  => 'site_bg_as_cover',
 				'label'    => esc_html__( 'Cover and Frontend Background Integration', 'Sakurairo_C' ),
 				'description' => esc_html__( 'When enabled, the background of the cover will be set to transparent, while the frontend background will use the cover\'s random image API', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'wave_effects',
+				'iro_key'  => 'wave_effects',
+				'label'    => esc_html__( 'Cover Wave Effects', 'Sakurairo_C' ),
+				'description' => __('It will be forced off in the dark mode','Sakurairo_C'),
 			],
 			[
 				'type'     => 'switch',
@@ -843,11 +860,11 @@ $sections = [
 				'label'    => esc_html__( 'Cover Dropdown Arrow Display on Mobile Devices', 'Sakurairo_C' ),
 			],
 		],
-    ],
+	],
 	// ====================主页整体布局====================
 	[
         'id'          => 'iro_homepages_sections',
-        'title'       => esc_html__( 'Homepage Components ', 'Sakurairo_C' ),
+        'title'       => esc_html__( 'Overall layout', 'Sakurairo_C' ),
         'description' => '',
         'panel'       => 'iro_homepage',
 
@@ -856,7 +873,7 @@ $sections = [
 				'type'     => 'sortable',
 				'settings' => 'homepage_components',
 				'iro_key'  => 'homepage_components',
-				'label'    => esc_html__( 'Bulletin Board Style', 'Sakurairo_C' ),
+				'label'    => esc_html__( 'Homepage Components', 'Sakurairo_C' ),
 				'choices'     => [
 					'bulletin' => __('Bulletin Board','Sakurairo_C'),
           			'exhibition' => __('Display Area','Sakurairo_C'),
