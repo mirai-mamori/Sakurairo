@@ -174,7 +174,7 @@ header('X-Frame-Options: SAMEORIGIN');
     <div class="scrollbar" id="bar"></div>
 
     <!-- 导航菜单 -->
-     <?php if(iro_opt('classic_sakura_nav_style')){
+     <?php if(iro_opt('choice_of_nav_style') == 'sakura' || iro_opt('choice_of_nav_style') == 'sakurairo'){
         ?>
         <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/sakura_header.css'; ?>">
         <?php
