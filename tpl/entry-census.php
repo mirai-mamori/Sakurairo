@@ -22,18 +22,18 @@ function get_entry_census_meta_html($has_splitter)
         $content = false;
         switch ($meta_key) {
             case "author":
-                require_once get_stylesheet_directory() . '/tpl/meta-author.php';
+                require_once get_template_directory() . '/tpl/meta-author.php';
                 ob_start();
                 render_author_meta();
                 $content = ob_get_contents();
                 ob_end_clean();
                 break;
             case "category":
-                require_once get_stylesheet_directory() . '/tpl/meta-category.php';
+                require_once get_template_directory() . '/tpl/meta-category.php';
                 $content = get_meta_category_html();
                 break;
             case "comment_count":
-                require_once get_stylesheet_directory() . '/tpl/meta-comments.php';
+                require_once get_template_directory() . '/tpl/meta-comments.php';
                 ob_start();
                 render_meta_comments();
                 $content = ob_get_contents();
@@ -48,7 +48,7 @@ function get_entry_census_meta_html($has_splitter)
                 }
                 break;
             case "post_words_count":
-                require_once get_stylesheet_directory() . '/tpl/meta-words-count.php';
+                require_once get_template_directory() . '/tpl/meta-words-count.php';
                 $content = get_meta_words_count();
                 if ($has_splitter) {
                     $content = __wrap_with_span($content);
@@ -57,7 +57,7 @@ function get_entry_census_meta_html($has_splitter)
                 }
                 break;
             case "reading_time":
-                require_once get_stylesheet_directory() . '/tpl/meta-ert.php';
+                require_once get_template_directory() . '/tpl/meta-ert.php';
                 $content = __("Estimate Reading Time", "sakurairo") . ": " . get_meta_estimate_reading_time();
                 if ($has_splitter) {
                     $content = __wrap_with_span($content);

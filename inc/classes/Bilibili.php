@@ -20,7 +20,17 @@ class Bilibili
      * @author KotoriK
      */
     function fetch_api(int $type, int $page = 1)
-    {
+    {   
+        $bangumi_cache = iro_opt('bangumi_cache');
+        if ($bangumi_cache) {
+            $cached_content = iro_opt('bangumi_cache_content');
+            $cached_content = $cached_content ? json_decode($cached_content, true) : [];
+        }
+
+        if (isset($cached_content["type_{$type}"]["page_{$page}"])) {
+            return $cached_content["type_{$type}"]["page_{$page}"];
+        }
+
         $uid = $this->uid;
         $cookies = $this->cookies;
         $url = "https://api.bilibili.com/x/space/bangumi/follow/list?type=$type&pn=$page&ps=15&follow_status=0&vmid=$uid";
@@ -33,7 +43,12 @@ class Bilibili
         );
         $response = wp_remote_get($url, $args);
         if(is_array($response)){
-            return json_decode($response["body"], true);
+            $response_body = json_decode($response["body"], true);
+            if ($bangumi_cache) {
+                $cached_content["type_{$type}"]["page_{$page}"] = $response_body;
+                iro_opt_update('bangumi_cache_content', stripslashes(json_encode($cached_content, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)));
+            }
+            return $response_body;
         }else{
             return array('code'=>-1);
         }
@@ -95,7 +110,7 @@ class Bilibili
     }
     private static function anchor_pagination_next(string $href)
     {
-        return '<a class="bangumi-next" data-href="' . $href . '"><i class="fa-solid fa-bolt-lightning"></i></i> NEXT </a>';
+        return '<a class="bangumi-next" data-href="' . $href . '"><i class="fa-solid fa-bolt-lightning"></i>' . __('Load More', 'sakurairo') . '</a>';
     }
     private static function bangumi_item(array $item, $percent)
     {

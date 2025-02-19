@@ -33,7 +33,7 @@ Please fill in with the issue template. Thanks for your cooperation.
 
 ### Special Contributors:
 
-<a href="https://github.com/spirit1431007"><img src="https://avatars1.githubusercontent.com/u/29689177?s=400" alt="Spirit" width="100"></a>  <a href="https://jokerm.com/"><img src="https://cdn.jokerm.com/?/imgcdn/logo.png" alt="JokerM" width="100"></a>  <a href="https://github.com/cocdeshijie"><img src="https://avatars.githubusercontent.com/u/39603339?v=4" alt="cocdeshijie" width="100"></a>  <a href="https://github.com/FeiyuCode"><img src="https://avatars0.githubusercontent.com/u/46924793?s=400" alt="FeiyuCode" width="100"></a>  <a href="https://github.com/tumeneco"><img src="https://avatars0.githubusercontent.com/u/68286041?s=400" alt="Tumeneco" width="100"></a>  <a href="https://github.com/flurrychan "><img src="https://avatars.githubusercontent.com/u/63506003?v=4" alt="Flurrychan" width="100"></a>
+<a href="https://github.com/spirit1431007"><img src="https://avatars1.githubusercontent.com/u/29689177?s=400" alt="Spirit" width="100"></a>  <a href="https://jokerm.com/"><img src="https://jokerm.com/assets/logo-csdark/" alt="JokerM" width="100"></a>  <a href="https://github.com/cocdeshijie"><img src="https://avatars.githubusercontent.com/u/39603339?v=4" alt="cocdeshijie" width="100"></a>  <a href="https://github.com/FeiyuCode"><img src="https://avatars0.githubusercontent.com/u/46924793?s=400" alt="FeiyuCode" width="100"></a>  <a href="https://github.com/tumeneco"><img src="https://avatars0.githubusercontent.com/u/68286041?s=400" alt="Tumeneco" width="100"></a>  <a href="https://github.com/flurrychan "><img src="https://avatars.githubusercontent.com/u/63506003?v=4" alt="Flurrychan" width="100"></a>  <a href="https://www.yukicat.net"><img src="https://avatars.githubusercontent.com/u/54615306?v=4" alt="DazaiYuki" width="100"></a>
 
 ### Other Participated Contributors:
 
@@ -49,11 +49,9 @@ Please fill in with the issue template. Thanks for your cooperation.
 
 ### References:
 
-- For social network icons of the theme, fluent-design icons reference the [Fluent Icon Pack](https://wwi.lanzous.com/ikyq5kgx0wb) designed by Paradox.
+- For social network icons of the theme, fluent-design icons reference the Fluent Icon Pack designed by Paradox.
 
-- For social network icons of the theme, MUH2 icons reference the [MUH2 Icon Pack](https://www.coolapk.com/apk/com.muh2.icon) designed by 缄默.
-
-- The Mashiro Logo references the design by Mashiro, the developer of the original theme. Solutions provided by Hyacm.
+- For social network icons of the theme, MUH2 icons reference the MUH2 Icon Pack designed by 缄默.
 
 ### Dependencies:
 

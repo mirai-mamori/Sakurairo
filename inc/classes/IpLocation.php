@@ -20,47 +20,6 @@ class IpLocation
     {
         $this->ip = $ip;
     }
-
-    /**
-     * 通过Sakurario IP地址解析接口获取地理位置
-     *
-     * @return boolean 成功返回true，失败返回false
-     */
-    private function getIpLocationBySakurairo() 
-    {
-        if (empty($this->ip)) {
-            return false;
-        }
-
-        $url = "https://api.nmxc.ltd/ip/$this->ip";
-        $response = wp_remote_get($url);
-        // 检查响应
-        if (is_wp_error($response)) {
-            $errorMessage = $response->get_error_message();
-            trigger_error('通过Sakurairo获取IP地理位置失败：' . $errorMessage, E_USER_WARNING);
-            return false;
-        } else {
-            // 处理响应数据
-            $body = json_decode(wp_remote_retrieve_body($response), true);
-            if (!empty($body)) {
-                if (isset($body['status']) && $body['status'] == 500) {
-                    $message = isset($body['status'])? $body['status'] : '';
-                    trigger_error("通过Sakurairo获取IP地理位置失败：$message", E_USER_WARNING);
-                    return false;
-                } else {
-                    $data = $body['data'];
-                    $this->country = $data['country'] ? $data['country'] : '';
-                    $this->region = $data['region'] ? $data['region'] : '';
-                    $this->city = $data['city'] ? $data['city'] : '';
-                    return true;
-                }
-            } else {
-                trigger_error('通过Sakurairo获取IP地理位置失败：返回的数据不是json格式', E_USER_WARNING);
-                return false;
-            }
-        }
-    }
-
     /**
      * 通过IP-API接口获取IP地理位置
      * 接口文档：https://ip-api.com/docs/api:json
@@ -202,23 +161,8 @@ class IpLocation
             return false;
         }
 
-        $server = iro_opt('location_server');
-        switch ($server) {
-            case 'sakurairo':
-                $this->getIpLocationBySakurairo();
-                break;
-            case 'ip-api':
-                $this->getIpLocationByIpApi();
-                break;
-            case 'all':
-                $isSakurairo = $this->getIpLocationBySakurairo();
-                if (!$isSakurairo || !$this->checkCompleteness($this->outputLocation())) {
-                    $this->getIpLocationByIpApi();
-                }
-                break;
-            default:
-                break;
-        }
+        $this->getIpLocationByIpApi();
+        
         $data = $this->outputLocation();
         if ($this->checkCompleteness($data)) {
             return $data;

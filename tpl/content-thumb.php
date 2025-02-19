@@ -30,7 +30,7 @@ if ($paged == 1 && !empty($sticky_posts)) {
     );
 
     if (is_home() && !$show_shuoshuo_on_home_page) {
-        $all_results_args['post_type'] = array('post');
+        $sticky_args['post_type'] = array('post');
     }
 	
     if ($is_author_page) {
@@ -51,7 +51,7 @@ if ($paged == 1 && !empty($sticky_posts)) {
 $non_sticky_args = array(
     'post_type' => array('post', 'shuoshuo'),
     'post_status' => 'publish',
-    'posts_per_page' => 10, // 每页显示10篇文章
+    'posts_per_page' => get_option('posts_per_page'), // 每页显示文章数量由 WordPress 设置决定
     'orderby' => 'post_date',
     'order' => 'DESC',
     'paged' => $paged,
@@ -60,7 +60,7 @@ $non_sticky_args = array(
 );
 
 if (is_home() && !$show_shuoshuo_on_home_page) {
-    $all_results_args['post_type'] = array('post');
+    $non_sticky_args['post_type'] = array('post');
 }
 
 if ($is_author_page) {

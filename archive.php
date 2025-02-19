@@ -28,16 +28,6 @@ get_header(); ?>
 					</span>
 				</header><!-- .page-header -->
 			<?php } // page-header 
-			/*      if (iro_opt('image_category') && is_category(explode(',', iro_opt('image_category')))) {
-                while (have_posts()) : the_post();
-                    get_template_part('tpl/content', 'thumb');
-                endwhile;
-			} else {				
-
-				while (have_posts()) : the_post();
-				get_template_part('tpl/content', 'thumbcard');
-			endwhile;
-			} */
 			// TODO： 'image_category'功能待实现
 			while (have_posts()) : the_post();
 				get_template_part('tpl/content', 'thumbcard');
