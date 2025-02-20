@@ -100,11 +100,11 @@
 								break;
 						}
 
-						$smilies_panel = '<p id="emotion-toggle" class="no-select">
-												<span class="emotion-toggle-off">' . __("Click me OωO", "sakurairo")/*戳我试试 OωO*/ . '</span>
-												<span class="emotion-toggle-on">' . __("Woooooow ヾ(≧∇≦*)ゝ", "sakurairo")/*嘿嘿嘿 ヾ(≧∇≦*)ゝ*/ . '</span>
-											</p>
+						$smilies_panel = '<div id="emotion-toggle" class="no-select" onclick="openEmoji()">
+												<i class="fa-solid fa-face-smile"></i>
+											</div>
 											<div class="emotion-box no-select">
+												<div class="emotion-header no-select">' . __("Woooooow ヾ(≧∇≦*)ゝ", "sakurairo") . '</div>
 												<table class="motion-switcher-table">
 													<tr>
 													'. $bilibili_smilies .'
@@ -118,7 +118,6 @@
 												' . $menhera_push_smilies . '
 												' . $custom_push_smilies . '			  
 											</div>';
-
 					};
 
 					$args = array(
@@ -133,10 +132,8 @@
 											    <textarea placeholder="' . esc_attr(iro_opt('comment_placeholder_text')) . '" name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea>
 												<label class="input-label">' . esc_html(iro_opt('comment_placeholder_text')) . '</label>
 											</div>
-                        <div id="upload-img-show"></div>
-                        <!--插入表情面版-->
-                        ' . $smilies_panel . '
-                        <!--表情面版完-->',
+                        <div id="upload-img-show"></div>',
+						'submit_button' => '<div class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value=" ' . esc_attr(iro_opt('comment_submit_button_text')) . ' ">' . $smilies_panel . '</div>',//div容器为兼容前端选择器
 						'comment_notes_after' => '',
 						'comment_notes_before' => '',
 						'fields' => apply_filters( 'comment_form_default_fields', array(
@@ -158,7 +155,93 @@
 			?>
 
 		</div>
+		<script>
+		function openEmoji() {
+			const toggleBtn = document.getElementById('emotion-toggle');
+			const emojiPanel = document.querySelector('.emotion-box');
+			if (!emojiPanel) return;
 
+			// 判断是否已经拖动过
+			const dragged = emojiPanel.getAttribute('dragged');
 
+			if (!dragged) {
+			const btnRect = toggleBtn.getBoundingClientRect();
+			const panelWidth = emojiPanel.offsetWidth;
+			const panelHeight = emojiPanel.offsetHeight;
+			let leftPos = btnRect.left + window.scrollX + (btnRect.width / 2) - (panelWidth / 2);
+			let topPos = btnRect.bottom + window.scrollY;
+
+			// 若下方空间不足，则放在按钮上方
+			if (topPos + panelHeight > window.innerHeight + window.scrollY) {
+				topPos = btnRect.top - panelHeight + window.scrollY;
+			}
+
+			emojiPanel.style.left = `${leftPos}px`;
+			emojiPanel.style.top = `${topPos}px`;
+			}
+
+			// 立即呼出
+			emojiPanel.classList.toggle('open');
+
+			// 初始化拖拽监听器
+			if (!emojiPanel.hasAttribute('initialized')) {
+				initEmojiPanel();
+				emojiPanel.setAttribute('initialized', 'true'); // 标记已初始化
+			}
+		}
+
+		function initEmojiPanel() {
+			const emojiPanel = document.querySelector('.emotion-box');
+			const header = document.querySelector('.emotion-header');
+			if (!emojiPanel || !header) return;
+
+			let offsetX = 0, offsetY = 0, isDragging = false;
+
+			function startDrag(e) {
+				isDragging = true;
+				const event = e.touches ? e.touches[0] : e;
+				offsetX = event.clientX - emojiPanel.offsetLeft;
+				offsetY = event.clientY - emojiPanel.offsetTop;
+				emojiPanel.style.transition = "none"; // 拖拽时禁用动画
+
+				if (e.touches) e.preventDefault();
+			}
+
+			function moveDrag(e) {
+				if (!isDragging) return;
+				const event = e.touches ? e.touches[0] : e;
+				const left = event.clientX - offsetX;
+				const top = event.clientY - offsetY;
+				emojiPanel.style.left = `${left}px`;
+				emojiPanel.style.top = `${top}px`;
+				emojiPanel.setAttribute('dragged', 'true'); // 标记为已拖拽
+
+				if (e.touches) e.preventDefault();
+			}
+
+			function endDrag() {
+				isDragging = false;
+				emojiPanel.style.transition = "transform 0.3s ease-in-out";
+			}
+
+			// 监听鼠标事件
+			header.addEventListener('mousedown', startDrag);
+			document.addEventListener('mousemove', moveDrag);
+			document.addEventListener('mouseup', endDrag);
+
+			// 监听触摸事件
+			header.addEventListener('touchstart', startDrag, { passive: false });
+			document.addEventListener('touchmove', moveDrag, { passive: false });
+			document.addEventListener('touchend', endDrag);
+
+			// 点击外部关闭面板
+			document.addEventListener('click', function (e) {
+			const toggleBtn = document.getElementById('emotion-toggle');
+			if (!emojiPanel.contains(e.target) && !toggleBtn.contains(e.target)) {
+				emojiPanel.classList.remove('open');
+			}
+			});
+		}
+		</script>
 	</section>
 <?php endif; ?>
