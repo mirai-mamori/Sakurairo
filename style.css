@@ -6609,10 +6609,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   transition: opacity 500ms;
 }
 
-.emotion-box-show {
-  height: 153px !important;
-}
-
 .alignnone {
   margin: 5px 20px 20px 0;
 }
