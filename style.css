@@ -3672,11 +3672,12 @@ iframe {
   height: 300px;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 10px;
   transform: scale(0);
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
 }
 
 .emotion-box.open {
@@ -3688,7 +3689,6 @@ iframe {
   background: #f0f0f0;
   padding: 5px;
   text-align: center;
-  user-select: none;
   border-bottom: 1px solid #ccc;
 }
 
@@ -3700,11 +3700,20 @@ iframe {
 }
 
 .motion-container {
-  height: 230px;
+  height: 225px;
   overflow: scroll;
   margin-bottom: 5px;
   border-radius: 5px;
   background: transparent;
+}
+
+.motion-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.motion-container::-webkit-scrollbar {
+  background-color: transparent;
+  height: 0px;
 }
 /* 表情面板结束 */
 /* 表情选区 */
@@ -8353,14 +8362,19 @@ body.dark .the-feature.from_left_and_right .info h3 {
 }
 
 body.dark .comment-respond,
-body.dark .comment .main {
+body.dark .comment .main,
+body.dark .emotion-box{
   background: rgb(26 26 26 / 60%);
   box-shadow: 0 1px 20px 2px rgba(26, 26, 26, 0.8);
   border: 1.5px solid #7d7d7d30;
 }
 
+body.dark .emotion-header{
+  background: rgba(26, 26, 26, 0.8);
+}
+
 body.dark .comment-respond:hover,
-body.dark .comment .main:hover {
+body.dark .comment .main:hover{
   background: rgba(26, 26, 26, 0.8);
   box-shadow: 0 1px 10px -2px var(--article-theme-highlight,var(--theme-skin-matching)) !important;
 }
