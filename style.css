@@ -8436,7 +8436,7 @@ body.dark .links ul li img{
 }
 
 body.dark .comment-respond input[type=submit] {
-  color: #CCCCCC;
+  color: #f0f0f0;
   box-shadow: 0 1px 0 2px var(--theme-skin-dark) !important;
   background: var(--theme-skin-dark) !important;
   border: 1px solid var(--theme-skin-dark) !important;
