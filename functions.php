@@ -2376,43 +2376,43 @@ function markdown_parser($incoming_comment)
 
     $enable_markdown = isset($_POST['enable_markdown']) ? (bool) $_POST['enable_markdown'] : false;
 
-    $may_script = array(
-        '/<script.*?>.*?<\/script>/is', //<script>标签
-        '/onclick\s*=\s*["\'].*?["\']/is',//onlick属性
-    );
-
-    foreach ($may_script as $pattern) {
-        if (preg_match($pattern, $incoming_comment['comment_content'])) {
-            siren_ajax_comment_err(__('You should not do that!')); //恶意内容警告
-            return ($incoming_comment);
-        }
-    }
-
-    $re = '/<[^>]*>/';
-    $allowed_html_content = array(
-        'a' => array(
-            'href' => array(),
-            'title' => array(),
-            'target' => array('_blank'),
-        ),
-        'b' => array(),
-        'br' => array(),
-        'img' => array(
-            'src' => array(),
-            'alt' => array(),
-            'width' => array(),
-            'height' => array(),
-        ),
-        'code' => array(),
-        'blockquote' => array(),
-        'ul' => array(),
-        'ol' => array(),
-        'li' => array(),
-        'p' => array(),
-        'div' => array(),
-        'span' => array(),
-    );
     if ($enable_markdown) {
+        $may_script = array(
+            '/<script.*?>.*?<\/script>/is', //<script>标签
+            '/onclick\s*=\s*["\'].*?["\']/is',//onlick属性
+        );
+    
+        foreach ($may_script as $pattern) {
+            if (preg_match($pattern, $incoming_comment['comment_content'])) {
+                siren_ajax_comment_err(__('You should not do that!')); //恶意内容警告
+                return ($incoming_comment);
+            }
+        }
+    
+        $re = '/<[^>]*>/';
+        $allowed_html_content = array(
+            'a' => array(
+                'href' => array(),
+                'title' => array(),
+                'target' => array('_blank'),
+            ),
+            'b' => array(),
+            'br' => array(),
+            'img' => array(
+                'src' => array(),
+                'alt' => array(),
+                'width' => array(),
+                'height' => array(),
+            ),
+            'code' => array(),
+            'blockquote' => array(),
+            'ul' => array(),
+            'ol' => array(),
+            'li' => array(),
+            'p' => array(),
+            'div' => array(),
+            'span' => array(),
+        );
         if (preg_match($re, $incoming_comment['comment_content'])) {
             $incoming_comment['comment_content'] = wp_kses($incoming_comment['comment_content'], $allowed_html_content);//移除所有不允许的标签
         }
