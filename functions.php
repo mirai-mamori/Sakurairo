@@ -2406,6 +2406,9 @@ function markdown_parser($incoming_comment)
         'ul' => array(),
         'ol' => array(),
         'li' => array(),
+        'p' => array(),
+        'div' => array(),
+        'span' => array(),
     );
     if (preg_match($re, $incoming_comment['comment_content'])) {
         $incoming_comment['comment_content'] = wp_kses($incoming_comment['comment_content'], $allowed_html_content);//移除所有不允许的标签
