@@ -2053,8 +2053,8 @@ nav#comments-navi {
   background: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   border: 1px solid #FFFFFF;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out,height 0s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out,height 0s ease-in-out;
 }
 
 .comment-respond input {
