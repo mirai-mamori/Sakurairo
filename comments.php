@@ -171,6 +171,12 @@ function get_smilies_panel() {
             // 调用辅助函数生成表情面板
             $smilies_panel = get_smilies_panel();
 
+            function custom_comment_logged_in_as($defaults) { //移除表头以xx身份登录提示
+                $defaults['logged_in_as'] = '';
+                return $defaults;
+            }
+            add_filter('comment_form_defaults', 'custom_comment_logged_in_as');
+
             $args = array(
                 'id_form'           => 'commentform',
                 'id_submit'         => 'submit',
