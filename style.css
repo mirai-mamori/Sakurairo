@@ -2109,8 +2109,8 @@ nav#comments-navi {
 }
 
 .comment-respond input[type=submit] {
-  width: 20%;
-  max-width: 150px;
+  width: 18%;
+  max-width: 160px;
   height: 45px;
   margin: 0;
   padding: 10px 20px;
@@ -3648,7 +3648,8 @@ iframe {
 }
 
 /* 表情面板 */
-#emotion-toggle {
+#emotion-toggle,
+.insert-image-tips{
   text-align: center;
   width: 45px;
   height: 45px;
@@ -3666,7 +3667,8 @@ iframe {
   font-weight: var(--global-font-weight);
 }
 
-#emotion-toggle:hover{
+#emotion-toggle:hover,
+.insert-image-tips:hover {
   color: var(--article-theme-highlight,var(--theme-skin-matching));
   box-shadow: 0 1px 20px 10px #e8e8e8;
 }
@@ -3882,37 +3884,17 @@ iframe {
   border-color: transparent transparent transparent #555;
 }
 
-.insert-image-tips {
-  float: right;
-  text-align: center;
-  width: 46px;
-  margin: 0;
-  padding: 12px 16px;
-  text-transform: none;
-  color: #535a63;
-  background: 0 0;
-  box-shadow: none;
-  border: 1px solid #ccc;
-  text-shadow: none;
-  font-size: 14px;
-  height: 46px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: var(--global-font-weight);
-}
-
 input#upload-img-file {
   z-index: 100;
   opacity: 0;
 }
 
 .insert-image-button {
-  margin-left: -50px!important;
-  width: 46px !important;
-  height: 46px !important;
-  padding: 0 !important;
-  float: right;
-  border-radius: 15px !important;
+  margin-left: -55px !important;
+  width: 45px !important;
+  height: 45px !important;
+  left: 55px !important;
+  position: relative;
   cursor: pointer;
 }
 
@@ -5682,7 +5664,7 @@ a.page-numbers {
 }
 
 .comment-respond input[type=submit]:hover {
-  color: #fff;
+  background: #fff;
   box-shadow: 0 1px 20px 10px #e8e8e8;
 }
 
@@ -6295,12 +6277,6 @@ a.toc-link {
   visibility: visible;
   -webkit-animation: blur .4s;
   animation: blur .4s;
-}
-
-.insert-image-tips:hover,
-.insert-image-tips-hover {
-  color: var(--theme-skin-matching, #505050);
-  border: 1px solid var(--theme-skin-matching, #505050);
 }
 
 .top-feature-row {
@@ -7997,7 +7973,9 @@ body.dark .post-squares h3,
 body.dark .shuoshuo-title h3,
 body.dark .ins-section .fa,
 body.dark .site-title,
-body.dark .header-info{
+body.dark .header-info,
+body.dark #emotion-toggle,
+body.dark .insert-image-tips{
   color: #CCCCCC;
 }
 
@@ -8363,7 +8341,9 @@ body.dark .the-feature.from_left_and_right .info h3 {
 
 body.dark .comment-respond,
 body.dark .comment .main,
-body.dark .emotion-box{
+body.dark .emotion-box,
+body.dark #emotion-toggle,
+body.dark .insert-image-tips{
   background: rgb(26 26 26 / 60%);
   box-shadow: 0 1px 20px 2px rgba(26, 26, 26, 0.8);
   border: 1.5px solid #7d7d7d30;
@@ -8374,7 +8354,9 @@ body.dark .emotion-header{
 }
 
 body.dark .comment-respond:hover,
-body.dark .comment .main:hover{
+body.dark .comment .main:hover,
+body.dark #emotion-toggle:hover,
+body.dark .insert-image-tips:hover{
   background: rgba(26, 26, 26, 0.8);
   box-shadow: 0 1px 10px -2px var(--article-theme-highlight,var(--theme-skin-matching)) !important;
 }
@@ -8451,6 +8433,18 @@ body.dark .shuoshuo-comments,body.dark .shuoshuo-date {
 
 body.dark .links ul li img{
   box-shadow: 0 4px 12px rgba(33, 33, 33, 0.5);
+}
+
+body.dark .comment-respond input[type=submit] {
+  color: #CCCCCC;
+  box-shadow: 0 1px 0 2px var(--theme-skin-dark) !important;
+  background: var(--theme-skin-dark) !important;
+  border: 1px solid var(--theme-skin-dark) !important;
+}
+
+body.dark .comment-respond input[type=submit]:hover {
+  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
+  background: rgba(26, 26, 26, 0.8);
 }
 
 /* Dark mode header styles */
