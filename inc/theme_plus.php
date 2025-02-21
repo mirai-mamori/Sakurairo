@@ -138,11 +138,14 @@ function comment_captcha(){
   if (empty($_POST)) {
     return siren_ajax_comment_err(__('You may post nothing','sakurairo'));
   }
+  if (is_user_logged_in()) { //登录后不需要验证
+    return true;
+  }
   if (!(isset($_POST['captcha']) && !empty(trim($_POST['captcha'])))) {
       return siren_ajax_comment_err(__('Please fill in the captcha answer','sakurairo'));
   }
   if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])) {
-      return siren_ajax_comment_err(__('You should not do that','sakurairo'));
+      return siren_ajax_comment_err(__('You should not do that!','sakurairo'));
   }
   include_once('inc/classes/Captcha.php');
   $img = new Sakura\API\Captcha;
