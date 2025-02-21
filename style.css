@@ -8370,6 +8370,11 @@ body.dark .insert-image-tips:hover{
   box-shadow: 0 1px 10px -2px var(--article-theme-highlight,var(--theme-skin-matching)) !important;
 }
 
+body.dark #emotion-toggle:hover,
+body.dark .insert-image-tips:hover{
+  color: var(--article-theme-highlight,var(--theme-skin-matching));
+}
+
 body.dark .comment-respond #cancel-comment-reply-link {
   box-shadow: 0 1px 20px 2px rgba(26, 26, 26, 0.8);
   background: rgba(26, 26, 26, 0.8);
@@ -8446,7 +8451,7 @@ body.dark .links ul li img{
 
 body.dark .comment-respond input[type=submit] {
   color: #f0f0f0;
-  box-shadow: 0 1px 0 2px var(--theme-skin-dark) !important;
+  box-shadow: 0 1px -1px 2px var(--theme-skin-dark) !important;
   background: var(--theme-skin-dark) !important;
   border: 1px solid var(--theme-skin-dark) !important;
 }
