@@ -40,7 +40,7 @@ function get_avatar_profile_url():string{
  * 随机图
  */
 function get_random_bg_url():string{
-  return rest_url('sakura/v1/image/feature').'?'.rand(1,1000);
+  return DEFAULT_FEATURE_IMAGE();
 }
 
 
@@ -134,12 +134,26 @@ if(!function_exists('siren_ajax_comment_err')) {
     }
 }
 // 机器评论验证
-function siren_robot_comment(){
-  if ( !$_POST['no-robot'] && !is_user_logged_in()) {
-     siren_ajax_comment_err('上车请刷卡。<br>Please comfirm you are not a robot.');
+function comment_captcha(){
+  if (empty($_POST)) {
+    return siren_ajax_comment_err(__('You may post nothing','sakurairo'));
   }
+  if (!(isset($_POST['yzm']) && !empty(trim($_POST['yzm'])))) {
+      return siren_ajax_comment_err(__('Please fill in the captcha answer','sakurairo'));
+  }
+  if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])) {
+      return siren_ajax_comment_err(__('You should not do that','sakurairo'));
+  }
+  include_once('inc/classes/Captcha.php');
+  $img = new Sakura\API\Captcha;
+  $check = $img->check_captcha($_POST['yzm'], $_POST['timestamp'], $_POST['id']);
+  if ($check['code'] == 5) {
+      return true;
+  }
+  return siren_ajax_comment_err(__('Please fill in the correct captcha answer','sakurairo'));
 }
-if(iro_opt('not_robot')) add_action('pre_comment_on_post', 'siren_robot_comment');
+if(iro_opt('not_robot')) add_action('pre_comment_on_post', 'comment_captcha');
+
 // 纯英文评论拦截
 function scp_comment_post( $incoming_comment ) {
   // 为什么要拦自己呢？

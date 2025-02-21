@@ -3119,6 +3119,21 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'comment_placeholder_text',
+        'type' => 'text',
+        'title' => __('Customize the placeholder in the comment box','sakurairo_csf'),
+        'desc' => __('When the user does not type any text, they will appear in the comment box.','sakurairo_csf'),
+        'default' => __('You are a surprise that I will only meet once in my life...','sakurairo_csf')
+      ),
+
+      array(
+        'id' => 'comment_submit_button_text',
+        'type' => 'text',
+        'title' => __('Customize the text on the submit button','sakurairo_csf'),
+        'default' => __('Biu biu biu~','sakurairo_csf')
+      ),
+
+      array(
         'id' => 'comment_area_image',
         'type' => 'upload',
         'title' => __('Page Comment Area Bottom Right Background Image','sakurairo_csf'),
