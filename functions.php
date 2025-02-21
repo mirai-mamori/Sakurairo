@@ -2373,11 +2373,46 @@ if (iro_opt('sakura_widget')) {
 function markdown_parser($incoming_comment)
 {
     global $wpdb, $comment_markdown_content;
-    $re = '/```([\s\S]*?)```[\s]*|`{1,2}[^`](.*?)`{1,2}|\[.*?\]\([\s\S]*?\)/m';
-    if (preg_replace($re, 'temp', $incoming_comment['comment_content']) != strip_tags(preg_replace($re, 'temp', $incoming_comment['comment_content']))) {
-        siren_ajax_comment_err('评论只支持Markdown啦，见谅╮(￣▽￣)╭<br>Markdown Supported while <i class="fa-solid fa-code"></i> Forbidden');
-        return ($incoming_comment);
+
+    $may_script = array(
+        '/<script.*?>.*?<\/script>/is', //<script>标签
+        '/onclick\s*=\s*["\'].*?["\']/is',//onlick属性
+    );
+
+    foreach ($may_script as $pattern) {
+        if (preg_match($pattern, $incoming_comment['comment_content'])) {
+            siren_ajax_comment_err(__('You should not do that!')); //恶意内容警告
+            return ($incoming_comment);
+        }
     }
+
+    $re = '/<[^>]*>/';
+    $allowed_html_content = array(
+        'a' => array(
+            'href' => array(),
+            'title' => array(),
+            'target' => array('_blank'),
+        ),
+        'b' => array(),
+        'br' => array(),
+        'img' => array(
+            'src' => array(),
+            'alt' => array(),
+            'width' => array(),
+            'height' => array(),
+        ),
+        'code' => array(),
+        'blockquote' => array(),
+        'ul' => array(),
+        'ol' => array(),
+        'li' => array(),
+    );
+    if (preg_match($re, $incoming_comment['comment_content'])) {
+        $incoming_comment['comment_content'] = wp_kses($incoming_comment['comment_content'], $allowed_html_content);//移除所有不允许的标签
+    } else {
+        $incoming_comment['comment_content'] = htmlspecialchars($incoming_comment['comment_content']);//转义所有特殊字符
+    }
+
     $column_names = $wpdb->get_row("SELECT * FROM information_schema.columns where 
     table_name='$wpdb->comments' and column_name = 'comment_markdown' LIMIT 1");
     //Add column if not present.
