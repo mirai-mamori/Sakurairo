@@ -2167,6 +2167,10 @@ nav#comments-navi {
   max-width: 33%;
 }
 
+.comment-captcha img{
+  border-radius: 10px;
+}
+
 .siren-checkbox-label {
   position: relative;
   display: inline-block;
@@ -3827,14 +3831,12 @@ iframe {
   color: #fff;
   border-radius: 50%;
   position: absolute;
-  margin: -28px 0 0 42px;
+  margin: -25px 0 0 30px;
   font-weight: var(--global-font-weight);
 }
 
 .gravatar-check {
-  background-color: #1e8cbe;
-  -webkit-transform: rotate(270deg);
-  transform: rotate(270deg);
+  background-color: #FF6347;
 }
 
 .cmt-popup {
@@ -6275,7 +6277,7 @@ a.toc-link {
 }
 
 .qq-check {
-  background-color: #99ce00;
+  background-color: #6495ED;
 }
 
 .popup {

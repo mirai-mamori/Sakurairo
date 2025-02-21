@@ -175,8 +175,8 @@ function get_smilies_panel() {
                 'fields'            => apply_filters('comment_form_default_fields', array(
                     'avatar' => '<div class="cmt-info-container"><div class="comment-user-avatar">
                                     <img alt="comment_user_avatar" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/') . 'basic/avatar.jpeg">
-                                    <div class="socila-check qq-check"><i class="fa-brands fa-qq"></i></div>
-                                    <div class="socila-check gravatar-check"><i class="fa-regular fa-face-smile-wink"></i></div>
+                                    <div class="socila-check qq-check"><i class="fa-brands fa-qq fa-xs"></i></div>
+                                    <div class="socila-check gravatar-check"><i class="fa-solid fa-heart fa-xs"></i></div>
                                  </div>',
                     'author' => '<div class="popup cmt-popup cmt-author">
                                     <input type="text" placeholder="' . __("Nickname or QQ number", "sakurairo") . ' ' . ($req ? '(' . __("Name* ", "sakurairo") . ')' : '') . '" name="author" id="author" value="' . esc_attr($comment_author) . '" size="22" autocomplete="off" tabindex="1" ' . ($req ? "aria-required='true'" : '') . ' />
