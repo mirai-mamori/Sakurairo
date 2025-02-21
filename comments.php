@@ -111,9 +111,38 @@ function get_smilies_panel() {
 
         <?php
         if (comments_open()) {
-            $robot_comments = iro_opt('not_robot')
-                ? '<label class="siren-checkbox-label"><input class="siren-checkbox-radio" type="checkbox" name="no-robot"><span class="siren-no-robot-checkbox siren-checkbox-radioInput"></span>' . __('I\'m not a robot', 'sakurairo') . '</label>'
-                : null;
+			if (iro_opt('not_robot')) {
+				include_once('inc/classes/Captcha.php');
+				$img = new Sakura\API\Captcha;
+				$test = $img->create_captcha_img();
+
+				$captcha_url = rest_url('sakura/v1/captcha/create');
+			
+				$robot_comments = '
+					<label for="captcha" class="captcha">验证码
+						<img id="captchaimg" width="120" height="40" src="' . htmlspecialchars($test['data'], ENT_QUOTES, 'UTF-8') . '">
+						<input type="text" name="yzm" id="yzm" class="input" value="" size="20" tabindex="4" placeholder="请输入验证码">
+						<input type="hidden" name="timestamp" value="' . htmlspecialchars($test['time'], ENT_QUOTES, 'UTF-8') . '">
+						<input type="hidden" name="id" value="' . htmlspecialchars($test['id'], ENT_QUOTES, 'UTF-8') . '">
+					</label>
+				<script>
+					const captchaimg = document.getElementById("captchaimg");
+					if (captchaimg) {
+						captchaimg.addEventListener("click", function (e) {
+							fetch("' . addslashes($captcha_url) . '")
+								.then(resp => resp.json())
+								.then(json => {
+									e.target.src = json["data"];
+									document.querySelector("input[name=\'timestamp\']").value = json["time"];
+									document.querySelector("input[name=\'id\']").value = json["id"];
+								})
+								.catch(error => console.error("获取验证码失败:", error));
+						});
+					}
+				</script>';
+			} else {
+				$robot_comments = null;
+			}
             $private_ms = iro_opt('comment_private_message')
                 ? '<label class="siren-checkbox-label"><input class="siren-checkbox-radio" type="checkbox" name="is-private"><span class="siren-is-private-checkbox siren-checkbox-radioInput"></span>' . __('Comment in private', 'sakurairo') . '</label>'
                 : '';
@@ -160,10 +189,24 @@ function get_smilies_panel() {
                     'url'    => '<div class="popup cmt-popup">
                                     <input type="text" placeholder="' . __("Site", "sakurairo") . '" name="url" id="url" value="' . esc_attr($comment_author_url) . '" size="22" autocomplete="off" tabindex="1" />
                                     <span class="popuptext" style="margin-left: -55px;width: 110px;">' . __("Advertisement is forbidden 😀", "sakurairo") . '</span>
-                                 </div></div>' . $robot_comments . $private_ms . $mail_notify,
-                    'qq'     => '<input type="text" placeholder="QQ" name="new_field_qq" id="qq" value="' . esc_attr($comment_author_url) . '" style="display:none" autocomplete="off"/><!--此栏不可见-->'
+                                 </div></div>',
+                    'qq'     => '<input type="text" placeholder="QQ" name="new_field_qq" id="qq" value="' . esc_attr($comment_author_url) . '" style="display:none" autocomplete="off"/><!--此栏不可见-->',
+					'checks' => '<div class="comment_checks">' . $robot_comments . $private_ms . $mail_notify ,//此处不闭合，和保存信息在一层级一起闭合
                 ))
             );
+
+			function comment_cookies_check_lable($field) {
+				$field = '
+							<label class="siren-checkbox-label">
+								<input class="siren-checkbox-radio id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes">
+								<span class="siren-mail-notify-checkbox siren-checkbox-radioInput"></span>
+								' . __('Save your private info', 'sakurairo') . '
+							</label></div>
+						 ';
+				return $field;
+			}
+			add_filter('comment_form_field_cookies', 'comment_cookies_check_lable');
+
             comment_form($args);
         }
         ?>
