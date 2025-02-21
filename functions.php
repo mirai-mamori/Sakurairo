@@ -2409,8 +2409,6 @@ function markdown_parser($incoming_comment)
     );
     if (preg_match($re, $incoming_comment['comment_content'])) {
         $incoming_comment['comment_content'] = wp_kses($incoming_comment['comment_content'], $allowed_html_content);//移除所有不允许的标签
-    } else {
-        $incoming_comment['comment_content'] = htmlspecialchars($incoming_comment['comment_content']);//转义所有特殊字符
     }
 
     $column_names = $wpdb->get_row("SELECT * FROM information_schema.columns where 
