@@ -2374,6 +2374,8 @@ function markdown_parser($incoming_comment)
 {
     global $wpdb, $comment_markdown_content;
 
+    $enable_markdown = isset($_POST['enable_markdown']) ? (bool) $_POST['enable_markdown'] : false;
+
     $may_script = array(
         '/<script.*?>.*?<\/script>/is', //<script>标签
         '/onclick\s*=\s*["\'].*?["\']/is',//onlick属性
@@ -2410,8 +2412,12 @@ function markdown_parser($incoming_comment)
         'div' => array(),
         'span' => array(),
     );
-    if (preg_match($re, $incoming_comment['comment_content'])) {
-        $incoming_comment['comment_content'] = wp_kses($incoming_comment['comment_content'], $allowed_html_content);//移除所有不允许的标签
+    if ($enable_markdown) {
+        if (preg_match($re, $incoming_comment['comment_content'])) {
+            $incoming_comment['comment_content'] = wp_kses($incoming_comment['comment_content'], $allowed_html_content);//移除所有不允许的标签
+        }
+    } else {
+        $incoming_comment['comment_content'] = htmlspecialchars($incoming_comment['comment_content'], ENT_QUOTES, 'UTF-8'); //未启用markdown直接转义
     }
 
     $column_names = $wpdb->get_row("SELECT * FROM information_schema.columns where 
@@ -2421,9 +2427,12 @@ function markdown_parser($incoming_comment)
         $wpdb->query("ALTER TABLE $wpdb->comments ADD comment_markdown text");
     }
     $comment_markdown_content = $incoming_comment['comment_content'];
-    include 'inc/Parsedown.php';
-    $Parsedown = new Parsedown();
-    $incoming_comment['comment_content'] = $Parsedown->setUrlsLinked(false)->text($incoming_comment['comment_content']);
+
+    if ($enable_markdown) { //未启用markdown不做解析
+        include 'inc/Parsedown.php';
+        $Parsedown = new Parsedown();
+        $incoming_comment['comment_content'] = $Parsedown->setUrlsLinked(false)->text($incoming_comment['comment_content']);
+    }
     return $incoming_comment;
 }
 add_filter('preprocess_comment', 'markdown_parser');

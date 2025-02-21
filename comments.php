@@ -178,16 +178,17 @@ function get_smilies_panel() {
                 'title_reply_to'    => '<div class="graybar"><i class="fa-regular fa-comment"></i>' . __('Leave a Reply to', 'sakurairo') . ' %s</div>',
                 'cancel_reply_link' => __('Cancel Reply', 'sakurairo'),
                 'label_submit'      => esc_attr(iro_opt('comment_submit_button_text')),
-                'comment_field'     => '<p style="font-style:italic"><a href="https://segmentfault.com/markdown" target="_blank">
-                                            <i class="fa-brands fa-markdown" style="color:var(--article-theme-highlight,var(--theme-skin-matching));"></i>
-                                        </a> Markdown Supported while <i class="fa-solid fa-code"></i> Forbidden</p>
-                                        <div class="comment-textarea">
+                'comment_field'     => '<div class="comment-textarea">
                                             <textarea placeholder="' . esc_attr(iro_opt('comment_placeholder_text')) . '" name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea>
                                             <label class="input-label">' . esc_html(iro_opt('comment_placeholder_text')) . '</label>
                                         </div>
                                         <div id="upload-img-show"></div>',
                 'submit_button'     => '<div class="form-submit">
                                             <input name="submit" type="submit" id="submit" class="submit" value=" ' . esc_attr(iro_opt('comment_submit_button_text')) . ' ">' . $smilies_panel . '
+                                            <label class="markdown-toggle">
+                                                <input type="checkbox" id="enable_markdown" name="enable_markdown">
+                                                <i class="fa-brands fa-markdown"></i>
+                                            </label>
                                         </div>',
                 'comment_notes_after'  => '',
                 'comment_notes_before' => '',
