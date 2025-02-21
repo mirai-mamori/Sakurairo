@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://docs.fuukei.org/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.7.7
+Version: 2.7.8
 Tested up to: 6.7
 Requires at least: 5.8
 Requires PHP: 7.3
@@ -2047,15 +2047,18 @@ nav#comments-navi {
   font-size: 14px;
   width: 100%;
   margin: 0;
-  color: #535a63;
-  background: #FFF0;
   font-weight: var(--global-font-weight);
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  color: #505050;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  border: 1px solid #FFFFFF;
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
 }
 
 .comment-respond input {
-  padding: 15px;
+  padding: 12px;
 }
 
 .comment-respond textarea {
@@ -2064,7 +2067,6 @@ nav#comments-navi {
   float: none;
   height: 180px;
   margin-bottom: 10px;
-  background-color: transparent;
   resize: vertical;
 }
 
@@ -2150,10 +2152,23 @@ nav#comments-navi {
   box-shadow: 0 1px 20px 4px #e8e8e8;
 }
 
+.comment-checks{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.comment-captcha{
+  display: flex;
+  height: 40px;
+  gap: 10px;
+  max-width: 33%;
+}
+
 .siren-checkbox-label {
   position: relative;
-  top: -8px;
-  margin: 0 20px 0 0;
   display: inline-block;
   cursor: pointer;
   color: #555;
@@ -3796,8 +3811,8 @@ iframe {
 .comment-user-avatar {
   position: absolute;
   display: inline-block;
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   margin-top: 10px;
   pointer-events: none;
 }
@@ -6270,7 +6285,7 @@ a.toc-link {
 }
 
 .cmt-author {
-  margin-left: 70px;
+  margin-left: 65px;
 }
 
 .popup input:focus+.popuptext {
@@ -7302,29 +7317,27 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     height: 150px;
     width: 100%;
   }
-}
-
-@media (max-width: 625px) {
   .comment-respond input {
     width: 100%;
-    margin-bottom: 15px;
+    margin: 0;
   }
-  .siren-checkbox-label {
-    top: 8px;
-    margin-bottom: 10px;
-  }
-
   .cmt-info-container {
     position: relative;
   }
-
-  .comment-user-avatar {
-    padding-top: 8px;
-    width: 36px;
-    height: 44px;
-    right: 2%;
+  .comment-checks{
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
   }
-
+  .comment-captcha{
+    max-width: 100%;
+  }
+  .comment-user-avatar {
+    width: 36px;
+    height: 36px;
+    right: 0;
+    margin: 15px 5px;
+  }
   .comment-user-avatar .socila-check {
     width: 1.5em;
     height: 1.5em;
@@ -7332,20 +7345,30 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     line-height: 1.5em;
     margin: -40% 0 0 77%;
   }
-
   .cmt-popup {
     margin: 0;
     width: 100%;
     margin-top: 15px;
   }
-
   .cmt-author {
     margin-top: 10px;
     margin-left: 0;
   }
+  .comment .body p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 24px;
+    padding-bottom: 13px;
+  }
+  .comment .info .useragent-info {
+    display: none;
+  }
+  .comment .info .useragent-info-m {
+    display: inline;
+  }
 }
 
-@media (min-width: 625px) {
+@media (min-width: 768px) {
   .cmt-info-container {
     width: 100%;
     display: -webkit-flex;
@@ -7353,24 +7376,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: stretch;
-  }
-}
-
-@media (max-width: 580px) {
-  .comment .body p {
-    margin: 0;
-    font-size: 15px;
-    line-height: 24px;
-    padding-bottom: 13px;
-  }
-}
-
-@media (max-width: 480px) {
-  .comment .info .useragent-info {
-    display: none;
-  }
-  .comment .info .useragent-info-m {
-    display: inline;
   }
 }
 
@@ -8339,6 +8344,8 @@ body.dark .the-feature.from_left_and_right .info h3 {
   background: rgb(0 0 0 / 20%);
 }
 
+body.dark .comment-respond input,
+body.dark .comment-respond textarea,
 body.dark .comment-respond,
 body.dark .comment .main,
 body.dark .emotion-box,

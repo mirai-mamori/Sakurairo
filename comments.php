@@ -50,7 +50,7 @@ function get_smilies_panel() {
             break;
     }
     return '<div id="emotion-toggle" class="no-select" onclick="openEmoji()">
-                <i class="fa-solid fa-face-smile"></i>
+                <i class="fa-regular fa-face-kiss-wink-heart"></i>
             </div>
             <div class="emotion-box no-select">
                 <div class="emotion-header no-select">' . __("Woooooow ヾ(≧∇≦*)ゝ", "sakurairo") . '</div>
@@ -119,7 +119,7 @@ function get_smilies_panel() {
 				$captcha_url = rest_url('sakura/v1/captcha/create');
 			
 				$robot_comments = '
-					<label for="captcha" class="captcha">验证码
+					<label for="captcha" class="comment-captcha">
 						<img id="captchaimg" width="120" height="40" src="' . htmlspecialchars($test['data'], ENT_QUOTES, 'UTF-8') . '">
 						<input type="text" name="yzm" id="yzm" class="input" value="" size="20" tabindex="4" placeholder="请输入验证码">
 						<input type="hidden" name="timestamp" value="' . htmlspecialchars($test['time'], ENT_QUOTES, 'UTF-8') . '">
@@ -176,7 +176,7 @@ function get_smilies_panel() {
                     'avatar' => '<div class="cmt-info-container"><div class="comment-user-avatar">
                                     <img alt="comment_user_avatar" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/') . 'basic/avatar.jpeg">
                                     <div class="socila-check qq-check"><i class="fa-brands fa-qq"></i></div>
-                                    <div class="socila-check gravatar-check"><i class="fa-solid fa-face-kiss-wink-heart"></i></div>
+                                    <div class="socila-check gravatar-check"><i class="fa-regular fa-face-smile-wink"></i></div>
                                  </div>',
                     'author' => '<div class="popup cmt-popup cmt-author">
                                     <input type="text" placeholder="' . __("Nickname or QQ number", "sakurairo") . ' ' . ($req ? '(' . __("Name* ", "sakurairo") . ')' : '') . '" name="author" id="author" value="' . esc_attr($comment_author) . '" size="22" autocomplete="off" tabindex="1" ' . ($req ? "aria-required='true'" : '') . ' />
@@ -191,7 +191,7 @@ function get_smilies_panel() {
                                     <span class="popuptext" style="margin-left: -55px;width: 110px;">' . __("Advertisement is forbidden 😀", "sakurairo") . '</span>
                                  </div></div>',
                     'qq'     => '<input type="text" placeholder="QQ" name="new_field_qq" id="qq" value="' . esc_attr($comment_author_url) . '" style="display:none" autocomplete="off"/><!--此栏不可见-->',
-					'checks' => '<div class="comment_checks">' . $robot_comments . $private_ms . $mail_notify ,//此处不闭合，和保存信息在一层级一起闭合
+					'checks' => '<div class="comment-checks">' . $robot_comments . $private_ms . $mail_notify ,//此处不闭合，和保存信息在一层级一起闭合
                 ))
             );
 
