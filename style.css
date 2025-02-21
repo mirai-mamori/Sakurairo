@@ -8453,7 +8453,7 @@ body.dark .comment-respond input[type=submit] {
 
 body.dark .comment-respond input[type=submit]:hover {
   box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
-  background: rgba(26, 26, 26, 0.8);
+  background: rgba(26, 26, 26, 0.8) !important;
 }
 
 /* Dark mode header styles */
