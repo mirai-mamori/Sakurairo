@@ -186,6 +186,26 @@ nav .menu>li .sub-menu li {
     transform: translateY(-20px);
 }
 
+/* 移动端样式针对 */
+@media (max-width: 860px) {
+    .nav-search-wrapper,
+    .nav-search-divider,
+    .searchbox.js-toggle-search,
+    .user-menu-wrapper,
+    #bg-next.bg-switch,
+    .menu-wrapper{
+        display: none;
+    }
+
+    .site-branding{
+        display: flex;
+        width: 100%;
+        max-width: 100vw!important;
+        justify-content: center;
+    }
+}
+
+/* 下面是动画和深色模式 */
 body.dark .site-header.bg,
 body.dark .site-header:hover {
     background-color: rgba(38, 38, 38, 0.8) !important;
