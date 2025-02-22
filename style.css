@@ -3224,7 +3224,6 @@ body.dark .top-social .inner img:hover {
   font-weight: var(--global-font-weight);
 }
 
-
 .no-logged {
   font-size: 13px;
   padding: 15px 10px;
@@ -5234,8 +5233,7 @@ object {
 .entry-content .post-password-form,
 .post .entry-header,
 .error-img,
-.err-button.back,
-.wp-caption-text {
+.err-button.back {
   text-align: center;
 }
 
@@ -5934,42 +5932,6 @@ body.dark input[type=submit] {
   margin: .8075em 0;
 }
 
-.gallery {
-  margin-bottom: 1.5em;
-}
-
-.gallery-columns-2 .gallery-item {
-  max-width: 50%;
-}
-
-.gallery-columns-3 .gallery-item {
-  max-width: 33.33%;
-}
-
-.gallery-columns-4 .gallery-item {
-  max-width: 25%;
-}
-
-.gallery-columns-5 .gallery-item {
-  max-width: 20%;
-}
-
-.gallery-columns-6 .gallery-item {
-  max-width: 16.66%;
-}
-
-.gallery-columns-7 .gallery-item {
-  max-width: 14.28%;
-}
-
-.gallery-columns-8 .gallery-item {
-  max-width: 12.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-  max-width: 11.11%;
-}
-
 #nprogress {
   pointer-events: none;
   z-index: 99999;
@@ -6559,44 +6521,6 @@ a.toc-link {
 .contents span img,
 .entry-content span img {
   height: 30px;
-}
-
-span.heimu a.external,
-span.heimu a.external:visited,
-span.heimu a.extiw,
-span.heimu a.extiw:visited {
-  color: #252525;
-}
-
-.heimu,
-.heimu a,
-a .heimu,
-.heimu a.new {
-  background-color: #252525;
-  color: #252525;
-  text-shadow: none;
-}
-
-body:not(.heimu_toggle_on) .heimu:hover,
-body:not(.heimu_toggle_on) .heimu:active,
-body:not(.heimu_toggle_on) .heimu.off {
-  transition: color .13s linear;
-  color: white;
-}
-
-body:not(.heimu_toggle_on) .heimu:hover a,
-body:not(.heimu_toggle_on) a:hover .heimu,
-body:not(.heimu_toggle_on) .heimu.off a,
-body:not(.heimu_toggle_on) a:hover .heimu.off {
-  transition: color .13s linear;
-  color: lightblue;
-}
-
-body:not(.heimu_toggle_on) .heimu.off .new,
-body:not(.heimu_toggle_on) .heimu.off .new:hover,
-body:not(.heimu_toggle_on) .new:hover .heimu.off {
-  transition: color .13s linear;
-  color: #BA0000;
 }
 
 .comment-form-cookies-consent label {
