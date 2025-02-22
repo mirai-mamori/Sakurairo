@@ -260,11 +260,6 @@ header('X-Frame-Options: SAMEORIGIN');
      }
      ?>
      
-    <div class="openNav no-select">
-        <div class="iconflat no-select" style="padding: 30px;">
-            <div class="icon"></div>
-        </div>
-    </div><!-- m-nav-bar -->
     <section id="main-container">
         <?php
         if (iro_opt('cover_switch')) {

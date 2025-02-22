@@ -7544,6 +7544,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   }
 
   #mo-nav.open {
+    --menuY :0px;
     transform: translateX(250px) translateY(var(--menuY));
     -webkit-transform: translateX(250px) translateY(var(--menuY));
   }

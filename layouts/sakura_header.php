@@ -64,6 +64,12 @@ $nav_text_logo = iro_opt('nav_text_logo');
 
 <header class="site-header no-select" role="banner">
 
+  <div class="openNav no-select">
+      <div class="iconflat no-select" style="padding: 30px;">
+          <div class="icon"></div>
+      </div>
+  </div>
+
   <?php //logo开始
   if (iro_opt('iro_logo') || !empty($nav_text_logo['text'])): ?>
     <div class="site-branding">

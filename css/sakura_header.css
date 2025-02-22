@@ -221,10 +221,6 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
         display: flex!important;
     }
 
-    .site-header{
-        justify-content:right;
-    }
-
     .site-header.mo-hide{
         transform: translateY(-100%);
     }
