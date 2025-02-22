@@ -275,6 +275,11 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
         border: none;
         pointer-events: auto;
     }
+    
+    nav .menu > li .sub-menu:hover,
+    .nav-search-wrapper nav ul li a:hover{
+        background:unset;
+    }
 }
 
 @keyframes fadeInLeft {

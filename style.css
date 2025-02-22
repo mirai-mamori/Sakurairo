@@ -7547,6 +7547,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     --menuY :0px;
     transform: translateX(250px) translateY(var(--menuY));
     -webkit-transform: translateX(250px) translateY(var(--menuY));
+    transition: all .5s;
   }
 
   .wrapper section h1 {
