@@ -211,7 +211,8 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
 }
 
 .site-header .mo-user-avatar,
-.site-header .m-user-menu{
+.site-header .m-user-menu,
+.site-header .mo-search{
     display: none;
 }
 
@@ -241,9 +242,24 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
         height: 100vh;
     }
 
+    #mo-nav .m-avatar,
     .mo-user-avatar {
-        display: flex!important;
-        justify-content: center;
+    display: flex!important;
+    justify-content: center;
+    position: relative;
+    width: 250px;
+    max-width: 250px;
+    height: auto;
+    margin: 0 auto;
+    padding: 40px 0 0;
+    text-align: center;
+    }
+    
+    .mo-user-avatar img {
+    width: 80px;
+    height: 80px;
+    max-width: 80px;
+    border-radius: 100%;
     }
 
     nav ul li a:after{

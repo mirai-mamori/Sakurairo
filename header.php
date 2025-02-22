@@ -186,6 +186,11 @@ header('X-Frame-Options: SAMEORIGIN');
               media="(max-width: 860px)"
         >
         <style>
+            .site-header .mo-user-avatar,
+            .site-header .m-user-menu,
+            .site-header .mo-search{
+                display: none;
+            }
             @media (max-width: 860px) {
                 #mo-nav.open{
                     top: 0px;
