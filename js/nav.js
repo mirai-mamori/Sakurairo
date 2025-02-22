@@ -1004,6 +1004,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // 设置初始样式
         const BasicSubMenuStyle = `translateY(-10px) translateX(${offsetX}px)`;
         if (window.innerWidth < 860) {
+            subMenu.style.transform = 'none';
             return
         } else {
             subMenu.style.transform = BasicSubMenuStyle;
@@ -1012,12 +1013,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // 设置偏移量
         MainMenu.addEventListener("mouseenter", () => {
             if (window.innerWidth < 860) {
+                subMenu.style.transform = 'none';
                 return
             }
             subMenu.style.transform = `translateY(0) translateX(${offsetX}px)`;
         });
         MainMenu.addEventListener("mouseleave", () => {
             if (window.innerWidth < 860) {
+                subMenu.style.transform = 'none';
                 return
             }
             subMenu.style.transform = BasicSubMenuStyle;
@@ -1032,12 +1035,17 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", function () {
         if (window.innerWidth < 860) {
             let scrollTop = window.scrollY || document.documentElement.scrollTop;
+            let headerHeight = moHeader.getBoundingClientRect().height;//需要抵消的高度
+
+            const menuOptions = document.querySelector("#mo-nav");
             
             if (scrollTop > scrollProgress) {
                 if (scrollTop > lastScrollTop) {
                     moHeader.classList.add("mo-hide");
+                    menuOptions.style.setProperty('--menuY', `${headerHeight}px`);
                 } else {
                     moHeader.classList.remove("mo-hide");
+                    menuOptions.style.setProperty('--menuY', `0px`);
                 }
             }
             

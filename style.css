@@ -7531,11 +7531,20 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     position: relative;
   }
 
-  #mo-nav.open,
   .openNav.open {
     transform: translateX(250px) translateY(0);
-    -webkit-transform: translateX(250px);
+    -webkit-transform: translateX(250px) translateY(0);
     position: fixed;
+  }
+
+  #mo-nav{
+    transform: translateY(var(--menuY));
+    -webkit-transform: translateY(var(--menuY));
+  }
+
+  #mo-nav.open {
+    transform: translateX(250px) translateY(var(--menuY));
+    -webkit-transform: translateX(250px) translateY(var(--menuY));
   }
 
   .wrapper section h1 {
