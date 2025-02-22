@@ -180,8 +180,37 @@ header('X-Frame-Options: SAMEORIGIN');
         <?php
         get_template_part('layouts/' . 'sakura_header');
      } else {
+        ?>
+        <link rel="stylesheet" 
+              href="<?php echo get_template_directory_uri() . '/css/sakura_header.css'; ?>"
+              media="(max-width: 860px)"
+        >
+        <style>
+            @media (max-width: 860px) {
+                #mo-nav.open{
+                    top: 0px;
+                    left: 0px;
+                }
+
+                .nav-search-wrapper{
+                    border-radius: 0px;
+                }
+                .nav-search-wrapper nav{
+                    height: auto;
+                    
+                }
+            }
+        </style>
+        <?php
     ?>
     <header class="site-header no-select" role="banner">
+
+        <div class="openNav no-select">
+            <div class="iconflat no-select" style="padding: 30px;">
+                <div class="icon"></div>
+            </div>
+        </div>
+
         <?php
         // Logo Section - Only process if logo or text is configured
         if (iro_opt('iro_logo') || !empty($nav_text_logo['text'])): ?>
@@ -212,7 +241,20 @@ header('X-Frame-Options: SAMEORIGIN');
         ?>
 
         <!-- Navigation and Search Section -->
-        <div class="nav-search-wrapper">
+        <div class="nav-search-wrapper" id="mo-nav">
+        <div class="mo-user-avatar"><?php //移动端结构开始
+            global $current_user;
+                if (is_user_logged_in()) {
+                wp_get_current_user();
+                echo '<img alt="m-avatar" src="' . get_avatar_url($current_user->ID, 64) . '">';
+                } elseif (iro_opt('unlisted_avatar')) {
+                echo '<img alt="m-avatar" src="' . esc_url(iro_opt('unlisted_avatar')) . '">';
+                } else {
+                    echo '<i class="fa-solid fa-circle-user" style="font-size: 40px;"></i>';
+                }
+            ?>
+        </div>
+        <?php m_user_menu() //移动端结构结束?>
             <!-- Nav menu -->
             <nav>
                 <?php 

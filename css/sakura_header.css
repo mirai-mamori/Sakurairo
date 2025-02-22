@@ -1,7 +1,7 @@
 .site-header {
     gap: 3px;
     width: 100%;
-    height: 75px;
+    height: 60px;
     display: flex;
     justify-content: left;
     border-radius: 0px !important;
@@ -228,7 +228,7 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
     .site-header .header-user-avatar,
     .site-header .js-toggle-search,
     .bg-switch{
-        display:none;
+        display:none!important;
     }
 
     .site-branding{
@@ -246,8 +246,8 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
         justify-content: center;
     }
 
-    nav.sakura_nav {
-        height: 100%;
+    nav ul li a:after{
+        display:none;
     }
 
     nav .menu > li .sub-menu{
@@ -257,6 +257,7 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
         background-color: unset;
         box-shadow: none;
         border: none;
+        pointer-events: auto;
     }
 }
 

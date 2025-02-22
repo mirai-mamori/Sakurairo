@@ -94,8 +94,8 @@ $nav_text_logo = iro_opt('nav_text_logo');
 
   <div id="mo-nav" class="menu-wrapper"><?php //手机端导航栏复用，样式应动态调整 ?>
   
-  <div class="mo-user-avatar"><?php //移动端结构开始
-    global $current_user;
+    <div class="mo-user-avatar"><?php //移动端结构开始
+      global $current_user;
         if (is_user_logged_in()) {
           wp_get_current_user();
           echo '<img alt="m-avatar" src="' . get_avatar_url($current_user->ID, 64) . '">';

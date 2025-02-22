@@ -1005,7 +1005,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const BasicSubMenuStyle = `translateY(-10px) translateX(${offsetX}px)`;
         if (window.innerWidth < 860) {
             subMenu.style.transform = 'none';
-            return
         } else {
             subMenu.style.transform = BasicSubMenuStyle;
         }
@@ -1014,16 +1013,16 @@ document.addEventListener("DOMContentLoaded", () => {
         MainMenu.addEventListener("mouseenter", () => {
             if (window.innerWidth < 860) {
                 subMenu.style.transform = 'none';
-                return
+            } else {
+                subMenu.style.transform = `translateY(0) translateX(${offsetX}px)`;
             }
-            subMenu.style.transform = `translateY(0) translateX(${offsetX}px)`;
         });
         MainMenu.addEventListener("mouseleave", () => {
             if (window.innerWidth < 860) {
                 subMenu.style.transform = 'none';
-                return
+            } else {
+                subMenu.style.transform = BasicSubMenuStyle;
             }
-            subMenu.style.transform = BasicSubMenuStyle;
         });
     });
 

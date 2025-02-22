@@ -7637,7 +7637,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     display: block;
     overflow-x: hidden !important;
     overflow-y: auto;
-    transition: background, transform .5s !important;
+    transition: all .5s !important;
   }
 
   #mo-nav .m-avatar {
@@ -7648,6 +7648,10 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     margin: 0 auto;
     padding: 40px 0 0;
     text-align: center;
+  }
+
+  .user-menu-wrapper{
+    display: none;
   }
 
   #mo-nav .m-avatar img {
