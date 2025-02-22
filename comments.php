@@ -117,28 +117,49 @@ function get_smilies_panel() {
 				$test = $img->create_captcha_img();
 
 				$captcha_url = rest_url('sakura/v1/captcha/create');
+
+                $captcha_placeholder = __("Click here to show captcha", "sakurairo");
 			
-				$robot_comments = '
+				$comment_captcha = '
 					<label for="captcha" class="comment-captcha">
-						<img id="captchaimg" width="120" height="40" src="' . htmlspecialchars($test['data'], ENT_QUOTES, 'UTF-8') . '">
-						<input type="text" name="yzm" id="yzm" class="input" value="" size="20" tabindex="4" placeholder="请输入验证码">
+						<img id="captchaimg" onclick="refreshCaptcha()" width="120" height="40" style="width: 0px;margin-right: 0px;" src="' . htmlspecialchars($test['data'], ENT_QUOTES, 'UTF-8') . '">
+						<input type="text" onfocus="showCaptcha();" onblur="hideCaptcha()" name="captcha" id="captcha" class="input" value="" size="20" tabindex="4" placeholder="' . $captcha_placeholder . '">
 						<input type="hidden" name="timestamp" value="' . htmlspecialchars($test['time'], ENT_QUOTES, 'UTF-8') . '">
 						<input type="hidden" name="id" value="' . htmlspecialchars($test['id'], ENT_QUOTES, 'UTF-8') . '">
 					</label>
 				<script>
-					const captchaimg = document.getElementById("captchaimg");
-					if (captchaimg) {
-						captchaimg.addEventListener("click", function (e) {
-							fetch("' . addslashes($captcha_url) . '")
-								.then(resp => resp.json())
-								.then(json => {
-									e.target.src = json["data"];
-									document.querySelector("input[name=\'timestamp\']").value = json["time"];
-									document.querySelector("input[name=\'id\']").value = json["id"];
-								})
-								.catch(error => console.error("获取验证码失败:", error));
-						});
-					}
+                    var captchaHideTimeout = null;
+                    var captchaField = document.getElementById("captcha");
+                    var captchaImg = document.getElementById("captchaimg");
+
+                    function showCaptcha() {
+                        captchaField.setAttribute("placeholder", "");
+                        if (captchaHideTimeout) {
+                            clearTimeout(captchaHideTimeout);
+                            captchaHideTimeout = null;
+                        }
+                        captchaImg.style.width = "120px";
+                        captchaImg.style.marginRight = "10px";
+                    }
+
+                    function hideCaptcha() {
+                        captchaHideTimeout = setTimeout(function() {
+                            captchaImg.style.width = "0";
+                            captchaImg.style.marginRight = "0";
+                            captchaField.setAttribute("placeholder", "'. $captcha_placeholder .'");
+                        }, 5000);
+                    }
+                        
+	                function refreshCaptcha() {
+                        fetch("' . addslashes($captcha_url) . '")
+                            .then(resp => resp.json())
+                            .then(json => {
+                                captchaImg.src = json["data"];
+                                document.querySelector("input[name=\'timestamp\']").value = json["time"];
+                                document.querySelector("input[name=\'id\']").value = json["id"];
+                            })
+                            .catch(error => console.error("获取验证码失败:", error));
+                    };
 				</script>';
 			} else {
 				$robot_comments = null;
@@ -152,6 +173,12 @@ function get_smilies_panel() {
             // 调用辅助函数生成表情面板
             $smilies_panel = get_smilies_panel();
 
+            function custom_comment_logged_in_as($defaults) { //移除表头以xx身份登录提示
+                $defaults['logged_in_as'] = '';
+                return $defaults;
+            }
+            add_filter('comment_form_defaults', 'custom_comment_logged_in_as');
+
             $args = array(
                 'id_form'           => 'commentform',
                 'id_submit'         => 'submit',
@@ -159,16 +186,17 @@ function get_smilies_panel() {
                 'title_reply_to'    => '<div class="graybar"><i class="fa-regular fa-comment"></i>' . __('Leave a Reply to', 'sakurairo') . ' %s</div>',
                 'cancel_reply_link' => __('Cancel Reply', 'sakurairo'),
                 'label_submit'      => esc_attr(iro_opt('comment_submit_button_text')),
-                'comment_field'     => '<p style="font-style:italic"><a href="https://segmentfault.com/markdown" target="_blank">
-                                            <i class="fa-brands fa-markdown" style="color:var(--article-theme-highlight,var(--theme-skin-matching));"></i>
-                                        </a> Markdown Supported while <i class="fa-solid fa-code"></i> Forbidden</p>
-                                        <div class="comment-textarea">
+                'comment_field'     => '<div class="comment-textarea">
                                             <textarea placeholder="' . esc_attr(iro_opt('comment_placeholder_text')) . '" name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea>
                                             <label class="input-label">' . esc_html(iro_opt('comment_placeholder_text')) . '</label>
                                         </div>
                                         <div id="upload-img-show"></div>',
                 'submit_button'     => '<div class="form-submit">
                                             <input name="submit" type="submit" id="submit" class="submit" value=" ' . esc_attr(iro_opt('comment_submit_button_text')) . ' ">' . $smilies_panel . '
+                                            <label class="markdown-toggle">
+                                                <input type="checkbox" id="enable_markdown" name="enable_markdown">
+                                                <i class="fa-brands fa-markdown fa-sm"></i>
+                                            </label>
                                         </div>',
                 'comment_notes_after'  => '',
                 'comment_notes_before' => '',
@@ -191,7 +219,7 @@ function get_smilies_panel() {
                                     <span class="popuptext" style="margin-left: -55px;width: 110px;">' . __("Advertisement is forbidden 😀", "sakurairo") . '</span>
                                  </div></div>',
                     'qq'     => '<input type="text" placeholder="QQ" name="new_field_qq" id="qq" value="' . esc_attr($comment_author_url) . '" style="display:none" autocomplete="off"/><!--此栏不可见-->',
-					'checks' => '<div class="comment-checks">' . $robot_comments . $private_ms . $mail_notify ,//此处不闭合，和保存信息在一层级一起闭合
+					'checks' => '<div class="comment-checks">' . $comment_captcha . $private_ms . $mail_notify ,//此处不闭合，和保存信息在一层级一起闭合
                 ))
             );
 

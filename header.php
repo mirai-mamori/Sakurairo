@@ -60,7 +60,7 @@ header('X-Frame-Options: SAMEORIGIN');
     <meta name="theme-color">
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.7.1/css/all.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" type="text/css" media="all" />
     <?php
     if (iro_opt('iro_meta')) {
         $keywords = iro_opt('iro_meta_keywords');
