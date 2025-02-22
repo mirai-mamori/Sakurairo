@@ -210,6 +210,11 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
     border: 2px solid var(--theme-skin-dark);
 }
 
+.site-header .mo-user-avatar,
+.site-header .m-user-menu{
+    display: none;
+}
+
 @media (max-width: 860px) {
     .site-header,
     .mo-search{
@@ -239,7 +244,7 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
     }
 
     .mo-user-avatar {
-        display: flex;
+        display: flex!important;
         justify-content: center;
     }
 
