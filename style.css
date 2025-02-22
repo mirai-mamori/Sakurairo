@@ -7549,10 +7549,6 @@ body.dark #preload {
   background: #333333;
 }
 
-body.dark input.m-search-input {
-  background: rgba(26, 26, 26, 0.8);
-}
-
 body.dark .reward-row {
   background: rgba(26, 26, 26, 0.8);
   border: 1.5px solid #7d7d7d30;

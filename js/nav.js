@@ -962,8 +962,9 @@ const BrowserDetect = {
 }
 };//iro_nav function
 
-//防止子菜单量子叠加
 document.addEventListener("DOMContentLoaded", () => {
+
+    //防止子菜单量子叠加
     const menuItems = document.querySelectorAll('nav .menu > li');
     let activeSubMenu = null;
 
@@ -1012,14 +1013,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //移动端菜单开关
     document.querySelectorAll(".mo-nav-button").forEach(function (toggle) {
-        toggle.addEventListener("click", function () {
+        toggle.addEventListener("click", function (event) {
+            event.stopPropagation();
 
             let moNavMenu = document.querySelector(".sakura_mo_nav");
-
             moNavMenu.classList.toggle("open");
             this.classList.toggle("open");
         });
     });
+
     document.querySelectorAll(".open_submenu").forEach(function (toggle) {
         toggle.addEventListener("click", function (event) {
             event.stopPropagation();
@@ -1032,5 +1034,61 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.classList.toggle("open");
             }
         });
+    });
+
+    //点击空白处折叠菜单
+    document.addEventListener("click", function (event) {
+        let moNavMenu = document.querySelector(".sakura_mo_nav");
+        let navButton = document.querySelector(".mo-nav-button");
+        let openSubMenus = document.querySelectorAll(".sub-menu.open");
+
+        if (
+            moNavMenu.classList.contains("open") &&
+            !moNavMenu.contains(event.target) &&
+            !navButton.contains(event.target)
+        ) {
+            moNavMenu.classList.remove("open");
+            navButton.classList.remove("open");
+        }
+
+        openSubMenus.forEach(function (subMenu) {
+            if (!subMenu.contains(event.target)) {
+                subMenu.classList.remove("open");
+                let submenuToggle = subMenu.closest("li").querySelector(".open_submenu");
+                if (submenuToggle) submenuToggle.classList.remove("open");
+            }
+        });
+    });
+
+    let lastScrollTop = 0;
+    const moHeader = document.querySelector(".site-header");
+    const moNavMenu = document.querySelector(".sakura_mo_nav");
+    const navButton = document.querySelector(".mo-nav-button");
+    const scrollProgress = document.documentElement.scrollHeight * 0.05;
+
+    window.addEventListener("scroll", function () {
+        if (window.innerWidth < 860) {
+            let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollTop > scrollProgress) {
+                if (scrollTop > lastScrollTop) {
+                    moHeader.classList.add("mo-hide");
+
+                    moNavMenu.classList.remove("open");
+                    navButton.classList.remove("open");
+                    document.querySelectorAll(".sakura_mo_nav .sub-menu.open").forEach(function (subMenu) {
+                        subMenu.classList.remove("open");
+                    });
+                    document.querySelectorAll(".sakura_mo_nav .open_submenu.open").forEach(function (toggle) {
+                        toggle.classList.remove("open");
+                    });
+
+                } else {
+                    moHeader.classList.remove("mo-hide");
+                }
+            }
+
+            lastScrollTop = scrollTop;
+        }
     });
 });

@@ -265,6 +265,12 @@ header('X-Frame-Options: SAMEORIGIN');
             <?php endif; ?>
         </div>
 
+        <div class="mo-toc-menu">
+            <i class="fa-solid fa-bookmark"></i>
+        </div>
+
+        <?php get_template_part('layouts/mo_toc_menu');?> 
+
         <!-- User Menu Section -->
         <?php if ($show_user_avatar): ?>
             <div class="user-menu-wrapper">

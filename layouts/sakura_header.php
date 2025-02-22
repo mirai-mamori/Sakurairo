@@ -1,5 +1,8 @@
 <?php
 //Sakura样式导航栏
+if (!defined('ABSPATH')) {
+  exit;
+}
 ?>
 <?php 
 $nav_style = iro_opt('sakura_nav_style');
@@ -138,7 +141,13 @@ $nav_text_logo = iro_opt('nav_text_logo');
     </script>
     <?php endif; //选项全在menu-wrapper中，防止bg-switch隐藏宽度变化导致brand缩放?>
   </div>
-  
+
+  <div class="mo-toc-menu">
+      <i class="fa-solid fa-bookmark"></i>
+  </div>
+
+  <?php get_template_part('layouts/mo_toc_menu');?> 
+
   <?php header_user_menu(); //用户栏?>
 
   <script><?php //置顶时添加底色 ?>
