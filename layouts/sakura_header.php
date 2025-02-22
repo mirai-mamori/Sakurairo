@@ -84,7 +84,22 @@ $nav_text_logo = iro_opt('nav_text_logo');
     </div>
   <?php endif; //logo结束?>
 
-  <div class="menu-wrapper">
+  <div id="mo-nav" class="menu-wrapper"><?php //手机端导航栏复用，样式应动态调整 ?>
+  
+  <div class="mo-user-avatar"><?php //移动端结构开始
+    global $current_user;
+        if (is_user_logged_in()) {
+          wp_get_current_user();
+          echo '<img alt="m-avatar" src="' . get_avatar_url($current_user->ID, 64) . '">';
+        } elseif (iro_opt('unlisted_avatar')) {
+          echo '<img alt="m-avatar" src="' . esc_url(iro_opt('unlisted_avatar')) . '">';
+        } else {
+            echo '<i class="fa-solid fa-circle-user" style="font-size: 40px;"></i>';
+        }
+      ?>
+    </div>
+    <?php m_user_menu() //特殊移动端结构结束?>
+    
     <?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => 'nav', 'container_class' => 'sakura_nav']); //菜单?>
 
     <?php
