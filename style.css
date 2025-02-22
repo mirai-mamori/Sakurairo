@@ -2053,8 +2053,8 @@ nav#comments-navi {
   background: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   border: 1px solid #FFFFFF;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out,height 0s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out,height 0s ease-in-out;
 }
 
 .comment-respond input {
@@ -3668,7 +3668,8 @@ iframe {
 
 /* 表情面板 */
 #emotion-toggle,
-.insert-image-tips{
+.insert-image-tips,
+.markdown-toggle{
   text-align: center;
   width: 45px;
   height: 45px;
@@ -3795,7 +3796,24 @@ iframe {
   background-color: rgba(245, 245, 245, .8);
 }
 /* 表情选区结束 */
+/* markdown按钮 */
+.markdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
 
+.markdown-toggle input {
+  display: none;
+}
+
+.markdown-toggle input:checked + i {
+  color: var(--article-theme-highlight, var(--theme-skin-matching));
+}
+/* markdown按钮结束 */
 .no-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;

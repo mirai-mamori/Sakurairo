@@ -2373,11 +2373,53 @@ if (iro_opt('sakura_widget')) {
 function markdown_parser($incoming_comment)
 {
     global $wpdb, $comment_markdown_content;
-    $re = '/```([\s\S]*?)```[\s]*|`{1,2}[^`](.*?)`{1,2}|\[.*?\]\([\s\S]*?\)/m';
-    if (preg_replace($re, 'temp', $incoming_comment['comment_content']) != strip_tags(preg_replace($re, 'temp', $incoming_comment['comment_content']))) {
-        siren_ajax_comment_err('评论只支持Markdown啦，见谅╮(￣▽￣)╭<br>Markdown Supported while <i class="fa-solid fa-code"></i> Forbidden');
-        return ($incoming_comment);
+
+    $enable_markdown = isset($_POST['enable_markdown']) ? (bool) $_POST['enable_markdown'] : false;
+
+    if ($enable_markdown) {
+        $may_script = array(
+            '/<script.*?>.*?<\/script>/is', //<script>标签
+            '/onclick\s*=\s*["\'].*?["\']/is',//onlick属性
+        );
+    
+        foreach ($may_script as $pattern) {
+            if (preg_match($pattern, $incoming_comment['comment_content'])) {
+                siren_ajax_comment_err(__('You should not do that!')); //恶意内容警告
+                return ($incoming_comment);
+            }
+        }
+    
+        $re = '/<[^>]*>/';
+        $allowed_html_content = array(
+            'a' => array(
+                'href' => array(),
+                'title' => array(),
+                'target' => array('_blank'),
+            ),
+            'b' => array(),
+            'br' => array(),
+            'img' => array(
+                'src' => array(),
+                'alt' => array(),
+                'width' => array(),
+                'height' => array(),
+            ),
+            'code' => array(),
+            'blockquote' => array(),
+            'ul' => array(),
+            'ol' => array(),
+            'li' => array(),
+            'p' => array(),
+            'div' => array(),
+            'span' => array(),
+        );
+        if (preg_match($re, $incoming_comment['comment_content'])) {
+            $incoming_comment['comment_content'] = wp_kses($incoming_comment['comment_content'], $allowed_html_content);//移除所有不允许的标签
+        }
+    } else {
+        $incoming_comment['comment_content'] = htmlspecialchars($incoming_comment['comment_content'], ENT_QUOTES, 'UTF-8'); //未启用markdown直接转义
     }
+
     $column_names = $wpdb->get_row("SELECT * FROM information_schema.columns where 
     table_name='$wpdb->comments' and column_name = 'comment_markdown' LIMIT 1");
     //Add column if not present.
@@ -2385,9 +2427,12 @@ function markdown_parser($incoming_comment)
         $wpdb->query("ALTER TABLE $wpdb->comments ADD comment_markdown text");
     }
     $comment_markdown_content = $incoming_comment['comment_content'];
-    include 'inc/Parsedown.php';
-    $Parsedown = new Parsedown();
-    $incoming_comment['comment_content'] = $Parsedown->setUrlsLinked(false)->text($incoming_comment['comment_content']);
+
+    if ($enable_markdown) { //未启用markdown不做解析
+        include 'inc/Parsedown.php';
+        $Parsedown = new Parsedown();
+        $incoming_comment['comment_content'] = $Parsedown->setUrlsLinked(false)->text($incoming_comment['comment_content']);
+    }
     return $incoming_comment;
 }
 add_filter('preprocess_comment', 'markdown_parser');
