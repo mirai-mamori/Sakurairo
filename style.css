@@ -3846,7 +3846,7 @@ iframe {
   width: 1.5em;
   height: 1.5em;
   font-size: 1em;
-  line-height: 1.5em;
+  line-height: 1.4em;
   text-align: center;
   color: #fff;
   border-radius: 50%;
@@ -7272,6 +7272,7 @@ a.toc-link {
     flex-direction: column;
     align-items: flex-start;
     margin-top: 20px;
+    gap: 15px;
   }
   .comment-captcha{
     width: 100%;
@@ -7281,13 +7282,11 @@ a.toc-link {
     height: 36px;
     right: 0;
     margin: 15px 5px;
+    z-index: 2;
   }
   .comment-user-avatar .socila-check {
-    width: 1.5em;
-    height: 1.5em;
-    font-size: .5em;
-    line-height: 1.5em;
-    margin: -40% 0 0 77%;
+    font-size: .8em;
+    margin: -60% 0 0 50%
   }
   .cmt-popup {
     margin: 0;
