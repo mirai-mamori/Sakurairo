@@ -984,10 +984,7 @@ document.addEventListener("DOMContentLoaded", () => {
             activeSubMenu = subMenu;
         });
     });
-});
 
-//子菜单动态偏移对齐
-document.addEventListener("DOMContentLoaded", function () {
     const subMenus = document.querySelectorAll("nav .menu > li .sub-menu");
 
     subMenus.forEach(subMenu => {
@@ -1010,6 +1007,30 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         MainMenu.addEventListener("mouseleave", () => {
             subMenu.style.transform = BasicSubMenuStyle;
+        });
+    });
+
+    //移动端菜单开关
+    document.querySelectorAll(".mo-nav-button").forEach(function (toggle) {
+        toggle.addEventListener("click", function () {
+
+            let moNavMenu = document.querySelector(".sakura_mo_nav");
+
+            moNavMenu.classList.toggle("open");
+            this.classList.toggle("open");
+        });
+    });
+    document.querySelectorAll(".open_submenu").forEach(function (toggle) {
+        toggle.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            let parentLi = this.closest("li");
+            let subMenu = parentLi.querySelector(".sub-menu");
+
+            if (subMenu) {
+                subMenu.classList.toggle("open");
+                this.classList.toggle("open");
+            }
         });
     });
 });

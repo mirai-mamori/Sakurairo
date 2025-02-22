@@ -459,6 +459,29 @@ function header_user_menu()
   }
 }
 
+//移动端用户导航栏选项
+class Iro_mo_nav extends Walker_Nav_Menu {
+  function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+    $classes = empty($item->classes) ? [] : (array) $item->classes;
+
+    $allowed_classes = ['menu-item-has-children', 'current-menu-item', 'custom-class'];
+    $filtered_classes = array_intersect($classes, $allowed_classes);
+
+    $class_names = join(' ', array_filter($filtered_classes));
+    $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+
+    $output .= '<li' . $class_names . '>';
+
+    if (in_array('menu-item-has-children', $filtered_classes)) {
+        $output .= '<span class="open_submenu">▶</span>';
+    }
+
+    $output .= '<a href="' . esc_url($item->url) . '">' . apply_filters('the_title', $item->title, $item->ID) . '</a>';
+}
+
+}
+
+
 /*
  * 获取相邻文章缩略图
  * 特色图 -> 文章图 -> 首页图

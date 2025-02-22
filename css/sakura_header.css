@@ -186,15 +186,41 @@ nav .menu>li .sub-menu li {
     transform: translateY(-20px);
 }
 
-/* 移动端样式针对 */
+/* 移动端样式 */
+.mo-navbar,
+.mo-nav-button{
+    display: none;
+}
+
+.sakura_mo_nav{
+    display: flex;
+    max-height: 0px;
+    overflow: hidden;
+    position: fixed;
+    white-space: nowrap;
+    top: 60px;
+    right: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.sakura_mo_nav .sub-menu{
+    max-height: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+}
 @media (max-width: 860px) {
     .nav-search-wrapper,
     .nav-search-divider,
     .searchbox.js-toggle-search,
     .user-menu-wrapper,
     #bg-next.bg-switch,
-    .menu-wrapper{
+    .header-user-avatar{
         display: none;
+    }
+
+    .menu-wrapper{
+        display: none!important;
     }
 
     .site-branding{
@@ -202,6 +228,68 @@ nav .menu>li .sub-menu li {
         width: 100%;
         max-width: 100vw!important;
         justify-content: center;
+    }
+
+    .mo-nav-button {
+        display: block;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        margin: 0;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    .mo-nav-button span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.25s ease-in-out;
+        transition: 0.25s ease-in-out;
+        background: #fff;
+    }
+    .mo-nav-button span:nth-child(1) {
+        top: 0;
+    }
+    .mo-nav-button span:nth-child(2) {
+        top: 10px;
+    }
+    .mo-nav-button span:nth-child(3) {
+        top: 20px;
+    }
+    .mo-nav-button.open span:nth-child(1) {
+        top: 11px;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+    .mo-nav-button.open span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+    }
+    .mo-nav-button.open span:nth-child(3) {
+        top: 11px;
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+
+    .sakura_nav.sakura_mo_nav.open {
+        max-height: 100vh;
+    }
+
+    .open_submenu.open{
+        transform: rotate(90deg);
+    }
+
+    .sakura_mo_nav .sub-menu.open {
+        max-height: 50vh;
     }
 }
 
