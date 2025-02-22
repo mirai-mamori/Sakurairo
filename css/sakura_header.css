@@ -243,6 +243,10 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
         justify-content: center;
     }
 
+    nav.sakura_nav {
+        height: 100%;
+    }
+
     nav .menu > li .sub-menu{
         position:unset!important;
         opacity: 1;
