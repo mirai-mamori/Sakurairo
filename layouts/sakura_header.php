@@ -28,7 +28,6 @@ $nav_text_logo = iro_opt('nav_text_logo');
   <?php //sakurairo classic 基于 sakura样式再层叠
   if(iro_opt('choice_of_nav_style') == 'sakurairo') { ?>
   .site-header{
-    position: fixed;
     border-radius: 15px !important;
     width: 95%;
     height: 60px;
@@ -56,6 +55,9 @@ $nav_text_logo = iro_opt('nav_text_logo');
 
   body.dark .site-header.bg{
     border-bottom: 1.5px solid #7d7d7d30 !important;
+  }
+
+  @media (max-width: 860px) {
   }
   <?php } ?>
 </style>
@@ -98,7 +100,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
         }
       ?>
     </div>
-    <?php m_user_menu() //特殊移动端结构结束?>
+    <?php m_user_menu() //移动端结构结束?>
     
     <?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => 'nav', 'container_class' => 'sakura_nav']); //菜单?>
 
@@ -141,19 +143,31 @@ $nav_text_logo = iro_opt('nav_text_logo');
     </script>
     <?php endif; //选项全在menu-wrapper中，防止bg-switch隐藏宽度变化导致brand缩放?>
   </div>
+
+  <?php
+    if (iro_opt('nav_menu_search') == '1') { //搜索框，移动端专用?>
+      <div class="searchbox js-toggle-search mo-search"><i class="fa-solid fa-magnifying-glass"></i></div>
+  <?php } ?>
   
   <?php header_user_menu(); //用户栏?>
 
   <script><?php //置顶时添加底色 ?>
+    var header = document.querySelector('.site-header');
     window.addEventListener('scroll', function() {
-      const header = document.querySelector('.site-header');
       // 检查位置
       if (window.scrollY > 0) {
         header.classList.add('bg');
       } else {
-        header.classList.remove('bg');
+        if (window.innerWidth < 860) {
+          return
+        } else {
+          header.classList.remove('bg');
+        } 
       }
     });
+    if (window.innerWidth < 860) {
+      header.classList.add('bg');
+    }
   </script>
 
 </header>

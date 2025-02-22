@@ -7224,7 +7224,7 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     height: 280px;
   }
   .site-header{
-    display: none !important;
+    display: none;
   }
   .shuoshuo-title h3::before {
     margin-top: 0px;
@@ -7478,10 +7478,6 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
     padding: 30px;
   }
 
-  .m-nav {
-    display: block;
-  }
-
   .links ul li {
     width: 46%;
     margin: 2%;
@@ -7671,15 +7667,21 @@ body:not(.heimu_toggle_on) .new:hover .heimu.off {
   }
 
   #mo-nav .m-user-menu .m-user-menu-option {
-    display: none;
-  }
-
-  #mo-nav .m-user-menu:hover .m-user-menu-option {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+    max-height:0;
+    overflow: hidden;
+  }
+
+  #mo-nav .m-user-menu:hover .m-user-menu-option {
+    max-height:100px;
+  }
+
+  body.dark #mo-nav {
+    background: rgba(26, 26, 26, 0.85);
   }
 
   body.dark #mo-nav .m-user-menu .m-user-menu-option a {

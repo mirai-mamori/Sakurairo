@@ -962,8 +962,9 @@ const BrowserDetect = {
 }
 };//iro_nav function
 
-//防止子菜单量子叠加
 document.addEventListener("DOMContentLoaded", () => {
+
+    //防止子菜单量子叠加
     const menuItems = document.querySelectorAll('nav .menu > li');
     let activeSubMenu = null;
 
@@ -974,6 +975,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //鼠标移入时激活子菜单
         item.addEventListener('mouseenter', () => {
+            if (window.innerWidth < 860) { //移动端不需要，但是适应窗口变化
+                return
+            }
             if (activeSubMenu && activeSubMenu !== subMenu) {
                 //有且仅有一个激活
                 activeSubMenu.classList.remove('active');
@@ -984,12 +988,9 @@ document.addEventListener("DOMContentLoaded", () => {
             activeSubMenu = subMenu;
         });
     });
-});
 
-//子菜单动态偏移对齐
-document.addEventListener("DOMContentLoaded", function () {
+    //子菜单动态偏移对齐
     const subMenus = document.querySelectorAll("nav .menu > li .sub-menu");
-
     subMenus.forEach(subMenu => {
         const MainMenu = subMenu.parentElement;
 
@@ -1002,14 +1003,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // 设置初始样式
         const BasicSubMenuStyle = `translateY(-10px) translateX(${offsetX}px)`;
-        subMenu.style.transform = BasicSubMenuStyle;
+        if (window.innerWidth < 860) {
+            return
+        } else {
+            subMenu.style.transform = BasicSubMenuStyle;
+        }
 
         // 设置偏移量
         MainMenu.addEventListener("mouseenter", () => {
+            if (window.innerWidth < 860) {
+                return
+            }
             subMenu.style.transform = `translateY(0) translateX(${offsetX}px)`;
         });
         MainMenu.addEventListener("mouseleave", () => {
+            if (window.innerWidth < 860) {
+                return
+            }
             subMenu.style.transform = BasicSubMenuStyle;
         });
     });
-});
+
+    //移动端动态隐藏横幅导航栏
+    let lastScrollTop = 0;
+    const moHeader = document.querySelector(".site-header");
+    const scrollProgress = document.documentElement.scrollHeight * 0.05;
+
+    window.addEventListener("scroll", function () {
+        if (window.innerWidth < 860) {
+            let scrollTop = window.scrollY || document.documentElement.scrollTop;
+            
+            if (scrollTop > scrollProgress) {
+                if (scrollTop > lastScrollTop) {
+                    moHeader.classList.add("mo-hide");
+                } else {
+                    moHeader.classList.remove("mo-hide");
+                }
+            }
+            
+            lastScrollTop = scrollTop;
+        }
+    });
+}
+);
