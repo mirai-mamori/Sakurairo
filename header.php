@@ -181,6 +181,12 @@ header('X-Frame-Options: SAMEORIGIN');
         get_template_part('layouts/' . 'sakura_header');
      } else {
     ?>
+
+    <link rel="stylesheet" 
+            href="<?php echo get_template_directory_uri() . '/css/sakura_header.css'; ?>"
+            media="(max-width: 860px)"
+    >
+    
     <header class="site-header no-select" role="banner">
         <?php
         // Logo Section - Only process if logo or text is configured
