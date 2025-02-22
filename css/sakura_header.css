@@ -236,7 +236,9 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
     }
 
     .site-branding{
+        justify-content: center;
         width: 100%;
+        max-width: unset;
     }
 
     #mo-nav {
