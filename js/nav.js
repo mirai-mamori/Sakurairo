@@ -1062,14 +1062,19 @@ document.addEventListener("DOMContentLoaded", () => {
         if (
             moNavMenu.classList.contains("open") &&
             !moNavMenu.contains(event.target) &&
-            !navButton.contains(event.target) &&
-            !moTocMenu.contains(event.target) &&
-            !tocButton.contains(event.target)
+            !navButton.contains(event.target)
         ) {
             moNavMenu.classList.remove("open");
             navButton.classList.remove("open");
+        }
+
+        if (
+            moTocMenu.classList.contains("open") &&
+            !moTocMenu.contains(event.target) &&
+            !tocButton.contains(event.target)
+        ) {
             moTocMenu.classList.remove("open");
-            tocButton.classList.remove("open");
+            moTocButton.classList.remove("open");
         }
 
         // 关闭所有展开的二级菜单
