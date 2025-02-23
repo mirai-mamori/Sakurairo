@@ -989,3 +989,48 @@ msgstr "文章模版"
 #. Template Name of the plugin/theme
 msgid "友情链接模版"
 msgstr "友情連結模版"
+
+msgid "SteamLibrary Template Settings"
+msgstr "Steam庫模板設置"
+
+msgid "Steam Account 64ID"
+msgstr "Steam帳號64ID"
+
+msgid "Fill in your account 64ID, e.g. https://steamcommunity.com/profiles/76561199029689067/, just the number part \"76561199029689067\""
+msgstr "填寫你的帳號ID，例如：https://steamcommunity.com/profiles/76561199029689067/, 只需填寫數字 \"76561199029689067\" 部分"
+
+msgid "Steam API Key"
+msgstr "Steam API密鑰"
+
+msgid "Apply at https://steamcommunity.com/dev/apikey"
+msgstr "申請連結 https://steamcommunity.com/dev/apikey"
+
+msgid "Game Cover CDN"
+msgstr "遊戲封面CDN"
+
+msgid "Select based on your user region"
+msgstr "根據您的用戶地區選擇"
+
+msgid "Game Store Link"
+msgstr "遊戲商店連結"
+
+msgid "Select the game store link to jump to"
+msgstr "選擇要跳轉到的遊戲商店連結"
+
+msgid "XiaoHeiHe"
+msgstr "小黑盒"
+
+msgid "Playtime"
+msgstr "遊玩時長"
+
+msgid "Last Played"
+msgstr "上次啟動"
+
+msgid "Not Played Yet"
+msgstr "尚未遊玩"
+
+msgid "minute"
+msgstr "分鐘"
+
+msgid "hour"
+msgstr "小時"

@@ -54,16 +54,16 @@ class Steam
     
     private function game_items(array $game, $playtime, $last_played)
     {
-    return
-        '<a class="steam-card" href="' . esc_url($this->get_steam_store($game['appid'])) . '" target="_blank" rel="nofollow">' .
-        '<img src="' . esc_url($this->get_steam_covercdn() . '/store_item_assets/steam/apps/' . $game['appid'] . '/header.jpg') . 
-        '" alt="' . esc_attr($game['name']) . '" loading="lazy">' .
-        '<div class="steam-info">' .
-        '<div class="steam-title" title="' . esc_attr($game['name']) . '">' . esc_html($game['name']) . '</div>' .
-        '<div class="steam-desc">游玩时长: ' . $playtime . '</div>' .
-        ($last_played ? '<div class="steam-desc">上次启动: ' . $last_played . '</div>' : '') .
-        '</div>' .
-        '</a>';
+        return
+            '<a class="steam-card" href="' . esc_url($this->get_steam_store($game['appid'])) . '" target="_blank" rel="nofollow">' .
+            '<img src="' . esc_url($this->get_steam_covercdn() . '/store_item_assets/steam/apps/' . $game['appid'] . '/header.jpg') . 
+            '" alt="' . esc_attr($game['name']) . '" loading="lazy">' .
+            '<div class="steam-info">' .
+            '<div class="steam-title" title="' . esc_attr($game['name']) . '">' . esc_html($game['name']) . '</div>' .
+            '<div class="steam-desc">' . esc_html__('Playtime', 'sakurairo') . ': ' . $playtime . '</div>' .
+            ($last_played ? '<div class="steam-desc">' . esc_html__('Last Played', 'sakurairo') . ': ' . $last_played . '</div>' : '') .
+            '</div>' .
+            '</a>';
     }
     
     private function get_steam_covercdn(): string 
@@ -95,14 +95,14 @@ class Steam
     private function format_playtime($minutes)
     {
         if ($minutes == 0) {
-            return __('尚未游玩', 'sakurairo');
+            return __('Not Played Yet', 'sakurairo');
         }
         $hours = floor($minutes / 60);
         if ($hours < 1) {
-            return $minutes . __('分钟', 'sakurairo');
+            return $minutes . ' ' . __('minute', 'sakurairo');
         }
         $play_hours = rtrim(rtrim(number_format($minutes / 60, 1), '0'), '.');
-        return $play_hours . __('小时', 'sakurairo');
+        return $play_hours . ' ' . __('hour', 'sakurairo');
     }
 
     private function format_last_played($timestamp)
