@@ -138,15 +138,15 @@ nav .menu>li .sub-menu li {
 
 .searchbox.js-toggle-search i:hover,
 .bg-switch i:hover,
-.mo-toc-menu i:hover,
-.mo-toc-menu.open i{
+.mo-toc-button i:hover,
+.mo-toc-button.open i{
     color: var(--theme-skin-matching);
     border: 2px solid var(--theme-skin-matching);
     background-color: transparent;
 }
 
 .bg-switch,
-.mo-toc-menu {
+.mo-toc-button {
     font-size: 16px;
     width: 50px;
     opacity: 1;
@@ -159,7 +159,7 @@ nav .menu>li .sub-menu li {
 }
 
 .bg-switch i,
-.mo-toc-menu i{
+.mo-toc-button i{
     border: 2px solid transparent;
     border-radius: 10px !important;
 }
@@ -285,7 +285,7 @@ body.dark .sakura_mo_nav .sub-menu li {
     border-bottom: 1px solid rgba(51,51,51, 0.1);
 }
 
-.mo-toc-menu i{
+.mo-toc-button i{
     padding: 11px 13px;
 }
 
@@ -444,56 +444,6 @@ body.dark .mo_toc_panel .user-menu-option a:hover {
         justify-content: center;
     }
 
-    .mo-nav-button {
-        display: block;
-        width: 30px;
-        height: 20px;
-        position: relative;
-        margin: 0;
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-        -webkit-transition: 0.5s ease-in-out;
-        transition: 0.5s ease-in-out;
-        cursor: pointer;
-    }
-    .mo-nav-button span {
-        display: block;
-        position: absolute;
-        height: 3px;
-        width: 100%;
-        border-radius: 9px;
-        opacity: 1;
-        left: 0;
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-        -webkit-transition: 0.25s ease-in-out;
-        transition: 0.25s ease-in-out;
-        background: var(--theme-skin-matching);
-    }
-    .mo-nav-button span:nth-child(1) {
-        top: 0;
-    }
-    .mo-nav-button span:nth-child(2) {
-        top: 10px;
-    }
-    .mo-nav-button span:nth-child(3) {
-        top: 20px;
-    }
-    .mo-nav-button.open span:nth-child(1) {
-        top: 11px;
-        -webkit-transform: rotate(135deg);
-        transform: rotate(135deg);
-    }
-    .mo-nav-button.open span:nth-child(2) {
-        opacity: 0;
-        left: -60px;
-    }
-    .mo-nav-button.open span:nth-child(3) {
-        top: 11px;
-        -webkit-transform: rotate(-135deg);
-        transform: rotate(-135deg);
-    }
-
     .sakura_nav.sakura_mo_nav.open {
         max-height: 100vh;
     }
@@ -527,7 +477,7 @@ body.dark .site-header:hover .searchbox.js-toggle-search i, body.dark .site-head
     color: #CCCCCC !important;
 }
 
-body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover,body.dark .mo-toc-menu i:hover {
+body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover,body.dark .mo-toc-button i:hover {
     color: var(--theme-skin-dark);
     border: 2px solid var(--theme-skin-dark);
 }

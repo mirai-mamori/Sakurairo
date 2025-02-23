@@ -189,7 +189,9 @@ header('X-Frame-Options: SAMEORIGIN');
     
     <header class="site-header no-select" role="banner">
         <?php //移动端结构开始 ?>
-        <div class="mo-nav-button"><span></span><span></span><span></span></div>
+        <div class="mo-nav-button">
+            <i class="fa-solid fa-bars"></i>
+        </div>
         <?php wp_nav_menu([
             'depth' => 2, 
             'theme_location' => 'primary', 

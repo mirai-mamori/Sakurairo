@@ -1013,7 +1013,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //移动端菜单开关
     let moNavButton = document.querySelector(".mo-nav-button");
-    let moTocButton = document.querySelector(".mo-toc-menu");
+    let moTocButton = document.querySelector(".mo-toc-button");
     let moNavMenu   = document.querySelector(".sakura_mo_nav");
     let moTocMenu   = document.querySelector(".mo_toc_panel");
     let moHeader    = document.querySelector(".site-header");
@@ -1027,6 +1027,7 @@ document.addEventListener("DOMContentLoaded", () => {
             moTocButton.classList.remove("open");
         }
         moNavMenu.classList.toggle("open");
+        moHeader.classList.add("bg");
         this.classList.toggle("open");
     });
 
@@ -1038,6 +1039,7 @@ document.addEventListener("DOMContentLoaded", () => {
             moNavButton.classList.remove("open");
         }
         moTocMenu.classList.toggle("open");
+        moHeader.classList.add("bg");
         this.classList.toggle("open");
     });
 
@@ -1057,7 +1059,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 点击空白处关闭
     document.addEventListener("click", function (event) {
         let navButton = document.querySelector(".mo-nav-button");
-        let tocButton = document.querySelector(".mo-toc-menu");
+        let tocButton = document.querySelector(".mo-toc-button");
 
         if (
             moNavMenu.classList.contains("open") &&

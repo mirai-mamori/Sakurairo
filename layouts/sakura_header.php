@@ -67,7 +67,9 @@ $nav_text_logo = iro_opt('nav_text_logo');
 
 <header class="site-header no-select" role="banner">
   <?php //移动端结构 ?>
-  <div class="mo-nav-button"><span></span><span></span><span></span></div>
+  <div class="mo-nav-button">
+      <i class="fa-solid fa-bars"></i>
+  </div>
   <?php wp_nav_menu([
             'depth' => 2, 
             'theme_location' => 'primary', 
@@ -142,7 +144,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
     <?php endif; //选项全在menu-wrapper中，防止bg-switch隐藏宽度变化导致brand缩放?>
   </div>
 
-  <div class="mo-toc-menu">
+  <div class="mo-toc-button">
       <i class="fa-solid fa-bookmark"></i>
   </div>
 
