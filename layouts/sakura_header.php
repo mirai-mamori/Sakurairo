@@ -1,5 +1,8 @@
 <?php
 //Sakura样式导航栏
+if (!defined('ABSPATH')) {
+  exit;
+}
 ?>
 <?php 
 $nav_style = iro_opt('sakura_nav_style');
@@ -27,40 +30,52 @@ $nav_text_logo = iro_opt('nav_text_logo');
 
   <?php //sakurairo classic 基于 sakura样式再层叠
   if(iro_opt('choice_of_nav_style') == 'sakurairo') { ?>
-  .site-header{
-    position: fixed;
-    border-radius: 15px !important;
-    width: 95%;
-    height: 60px;
-    left: 2.5% ;
-    top: 2.5% ;
-    border: 1.5px solid transparent !important;
-    border-bottom: 1.5px solid transparent !important;
-  }
+  @media (min-width: 860px) {
+      .site-header{
+      position: fixed;
+      border-radius: 15px !important;
+      width: 95%;
+      height: 60px;
+      left: 2.5% ;
+      top: 2.5% ;
+      border: 1.5px solid transparent !important;
+      border-bottom: 1.5px solid transparent !important;
+    }
 
-  .site-header.bg{
-    top: 0!important;
-    left: 0!important;
-    width: 100% !important;
-    border-radius: 0 !important;
-    border-bottom: 1.5px solid #FFFFFF !important;
-  }
+    .site-header.bg{
+      top: 0!important;
+      left: 0!important;
+      width: 100% !important;
+      border-radius: 0 !important;
+      border-bottom: 1.5px solid #FFFFFF !important;
+    }
 
-  .site-header:hover{
-    top: 2.5%;
-  }
+    .site-header:hover{
+      top: 2.5%;
+    }
 
-  body.dark .site-header:hover {
-    border-bottom: solid transparent !important;
-  }
+    body.dark .site-header:hover {
+      border-bottom: solid transparent !important;
+    }
 
-  body.dark .site-header.bg{
-    border-bottom: 1.5px solid #7d7d7d30 !important;
+    body.dark .site-header.bg{
+      border-bottom: 1.5px solid #7d7d7d30 !important;
+    }
   }
   <?php } ?>
 </style>
 
 <header class="site-header no-select" role="banner">
+  <?php //移动端结构 ?>
+  <div class="mo-nav-button"><span></span><span></span><span></span></div>
+  <?php wp_nav_menu([
+            'depth' => 2, 
+            'theme_location' => 'primary', 
+            'container' => 'div', 
+            'container_class' => 'sakura_nav sakura_mo_nav',
+            'walker' => new Iro_mo_nav(),
+            ]); ?>
+  <?php //移动端结构结束 ?>
 
   <?php //logo开始
   if (iro_opt('iro_logo') || !empty($nav_text_logo['text'])): ?>
@@ -126,19 +141,33 @@ $nav_text_logo = iro_opt('nav_text_logo');
     </script>
     <?php endif; //选项全在menu-wrapper中，防止bg-switch隐藏宽度变化导致brand缩放?>
   </div>
-  
+
+  <div class="mo-toc-menu">
+      <i class="fa-solid fa-bookmark"></i>
+  </div>
+
+  <?php get_template_part('layouts/mo_toc_menu');?> 
+
   <?php header_user_menu(); //用户栏?>
 
   <script><?php //置顶时添加底色 ?>
+    var header = document.querySelector('.site-header');
     window.addEventListener('scroll', function() {
-      const header = document.querySelector('.site-header');
+      var header = document.querySelector('.site-header');
       // 检查位置
       if (window.scrollY > 0) {
         header.classList.add('bg');
       } else {
-        header.classList.remove('bg');
+        if (window.innerWidth < 860) {
+        //do nothing
+        } else {
+          header.classList.remove('bg');
+        } 
       }
     });
+    if (window.innerWidth < 860) {
+      header.classList.add('bg');
+    }
   </script>
 
 </header>

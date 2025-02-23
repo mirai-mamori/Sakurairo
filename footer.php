@@ -54,31 +54,7 @@ $reception_background = iro_opt('reception_background');
     </div><!-- .site-info -->
   </footer><!-- #colophon -->
   </section><!-- #section -->
-  <!-- m-nav-center -->
-  <div id="mo-nav">
-    <?php if (iro_opt('mobile_menu_user_avatar', 'true')): ?>
-      <div class="m-avatar">
-        <?php
-        global $current_user;
-        if (is_user_logged_in()) {
-          wp_get_current_user();
-          echo '<img alt="m-avatar" src="' . get_avatar_url($current_user->ID, 64) . '">';
-        } elseif (iro_opt('unlisted_avatar')) {
-          echo '<img alt="m-avatar" src="' . esc_url(iro_opt('unlisted_avatar')) . '">';
-        } else {
-            echo '<i class="fa-solid fa-circle-user" style="font-size: 40px;"></i>';
-        }
-        ?>
-      </div>
-    <?php endif; ?>
-    <?php if (wp_is_mobile() && iro_opt('mobile_menu_user_avatar', 'true')) m_user_menu(); ?>
-    <div class="m-search">
-      <form class="m-search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
-        <input class="m-search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
-      </form>
-    </div>
-    <?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => false]); ?>
-  </div><!-- m-nav-center end -->
+  
   <button id="moblieGoTop" title="<?php esc_attr_e('Go to top', 'sakurairo'); ?>"><i class="fa-solid fa-caret-up fa-lg"></i></button>
   <button id="changskin" title="<?php esc_attr_e('Control Panel', 'sakurairo'); ?>"><i class="fa-solid fa-compass-drafting fa-lg fa-flip"></i></button>
   <!-- search start -->

@@ -181,7 +181,24 @@ header('X-Frame-Options: SAMEORIGIN');
         get_template_part('layouts/' . 'sakura_header');
      } else {
     ?>
+
+    <link rel="stylesheet" 
+            href="<?php echo get_template_directory_uri() . '/css/sakura_header.css'; ?>"
+            media="(max-width: 860px)"
+    >
+    
     <header class="site-header no-select" role="banner">
+        <?php //移动端结构开始 ?>
+        <div class="mo-nav-button"><span></span><span></span><span></span></div>
+        <?php wp_nav_menu([
+            'depth' => 2, 
+            'theme_location' => 'primary', 
+            'container' => 'div', 
+            'container_class' => 'sakura_nav sakura_mo_nav',
+            'walker' => new Iro_mo_nav(),
+            ]); ?>
+        <?php //移动端结构结束 ?>
+
         <?php
         // Logo Section - Only process if logo or text is configured
         if (iro_opt('iro_logo') || !empty($nav_text_logo['text'])): ?>
@@ -248,6 +265,12 @@ header('X-Frame-Options: SAMEORIGIN');
             <?php endif; ?>
         </div>
 
+        <div class="mo-toc-menu">
+            <i class="fa-solid fa-bookmark"></i>
+        </div>
+
+        <?php get_template_part('layouts/mo_toc_menu');?> 
+
         <!-- User Menu Section -->
         <?php if ($show_user_avatar): ?>
             <div class="user-menu-wrapper">
@@ -260,11 +283,6 @@ header('X-Frame-Options: SAMEORIGIN');
      }
      ?>
      
-    <div class="openNav no-select">
-        <div class="iconflat no-select" style="padding: 30px;">
-            <div class="icon"></div>
-        </div>
-    </div><!-- m-nav-bar -->
     <section id="main-container">
         <?php
         if (iro_opt('cover_switch')) {

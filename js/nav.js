@@ -962,8 +962,9 @@ const BrowserDetect = {
 }
 };//iro_nav function
 
-//防止子菜单量子叠加
 document.addEventListener("DOMContentLoaded", () => {
+
+    //防止子菜单量子叠加
     const menuItems = document.querySelectorAll('nav .menu > li');
     let activeSubMenu = null;
 
@@ -984,10 +985,7 @@ document.addEventListener("DOMContentLoaded", () => {
             activeSubMenu = subMenu;
         });
     });
-});
 
-//子菜单动态偏移对齐
-document.addEventListener("DOMContentLoaded", function () {
     const subMenus = document.querySelectorAll("nav .menu > li .sub-menu");
 
     subMenus.forEach(subMenu => {
@@ -1011,5 +1009,122 @@ document.addEventListener("DOMContentLoaded", function () {
         MainMenu.addEventListener("mouseleave", () => {
             subMenu.style.transform = BasicSubMenuStyle;
         });
+    });
+
+    //移动端菜单开关
+    let moNavButton = document.querySelector(".mo-nav-button");
+    let moTocButton = document.querySelector(".mo-toc-menu");
+    let moNavMenu   = document.querySelector(".sakura_mo_nav");
+    let moTocMenu   = document.querySelector(".mo_toc_panel");
+    let moHeader    = document.querySelector(".site-header");
+
+    // 面板
+    moNavButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+
+        if (moTocMenu.classList.contains("open")) {
+            moTocMenu.classList.remove("open");
+            moTocButton.classList.remove("open");
+        }
+        moNavMenu.classList.toggle("open");
+        this.classList.toggle("open");
+    });
+
+    moTocButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+
+        if (moNavMenu.classList.contains("open")) {
+            moNavMenu.classList.remove("open");
+            moNavButton.classList.remove("open");
+        }
+        moTocMenu.classList.toggle("open");
+        this.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".open_submenu").forEach(function (toggle) {
+        toggle.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            let parentLi = this.closest("li");
+            let subMenu = parentLi.querySelector(".sub-menu");
+            if (subMenu) {
+                subMenu.classList.toggle("open");
+                this.classList.toggle("open");
+            }
+        });
+    });
+
+    // 点击空白处关闭
+    document.addEventListener("click", function (event) {
+        let navButton = document.querySelector(".mo-nav-button");
+        let tocButton = document.querySelector(".mo-toc-menu");
+
+        if (
+            moNavMenu.classList.contains("open") &&
+            !moNavMenu.contains(event.target) &&
+            !navButton.contains(event.target)
+        ) {
+            moNavMenu.classList.remove("open");
+            navButton.classList.remove("open");
+        }
+
+        if (
+            moTocMenu.classList.contains("open") &&
+            !moTocMenu.contains(event.target) &&
+            !tocButton.contains(event.target)
+        ) {
+            moTocMenu.classList.remove("open");
+            moTocButton.classList.remove("open");
+        }
+
+        // 关闭所有展开的二级菜单
+        document.querySelectorAll(".sub-menu.open").forEach(function (subMenu) {
+            if (!subMenu.contains(event.target)) {
+                subMenu.classList.remove("open");
+                let submenuToggle = subMenu.closest("li").querySelector(".open_submenu");
+                if (submenuToggle) {
+                    submenuToggle.classList.remove("open");
+                }
+            }
+        });
+    });
+
+    let lastScrollTop = 0;
+    // 阈值
+    const scrollThreshold = document.documentElement.scrollHeight * 0.05;
+
+    window.addEventListener("scroll", function () {
+        if (window.innerWidth < 860) {
+            let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollTop > scrollThreshold) {
+                if (scrollTop > lastScrollTop) {
+                    // 向下滚动
+                    moHeader.classList.add("mo-hide");
+                    moHeader.classList.remove("bg");
+                    moNavMenu.classList.remove("open");
+                    moNavButton.classList.remove("open");
+                    moTocMenu.classList.remove("open");
+                    moTocButton.classList.remove("open");
+
+                    // 同时关闭所有展开的二级菜单
+                    document.querySelectorAll(".sakura_mo_nav .sub-menu.open").forEach(function (subMenu) {
+                        subMenu.classList.remove("open");
+                    });
+                    document.querySelectorAll(".sakura_mo_nav .open_submenu.open").forEach(function (toggle) {
+                        toggle.classList.remove("open");
+                    });
+                } else {
+                    // 向上滚动
+                    moHeader.classList.remove("mo-hide");
+                    moHeader.classList.add("bg");
+                }
+            } else {
+                // 滚动距离小于阈值
+                moHeader.classList.remove("mo-hide");
+                moHeader.classList.remove("bg");
+            }
+            lastScrollTop = scrollTop;
+        }
     });
 });

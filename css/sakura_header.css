@@ -137,13 +137,17 @@ nav .menu>li .sub-menu li {
 }
 
 .searchbox.js-toggle-search i:hover,
-.bg-switch i:hover {
+.bg-switch i:hover,
+.mo-toc-menu i:hover,
+.mo-toc-menu.open i{
     color: var(--theme-skin-matching);
     border: 2px solid var(--theme-skin-matching);
     background-color: transparent;
 }
 
-.bg-switch {
+.bg-switch,
+.mo-toc-menu {
+    font-size: 16px;
     width: 50px;
     opacity: 1;
     overflow: hidden;
@@ -154,7 +158,8 @@ nav .menu>li .sub-menu li {
     -webkit-transition: all .4s ease-in-out;
 }
 
-.bg-switch i{
+.bg-switch i,
+.mo-toc-menu i{
     border: 2px solid transparent;
     border-radius: 10px !important;
 }
@@ -186,6 +191,323 @@ nav .menu>li .sub-menu li {
     transform: translateY(-20px);
 }
 
+/* 移动端样式,不显示部分需在style.css定义 */
+.sakura_mo_nav{
+    display: flex;
+    flex-direction: column;
+    max-height: 0px;
+    overflow: hidden;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.sakura_mo_nav,
+.sakura_mo_nav .sub-menu{
+    max-height: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.sakura_mo_nav .menu {
+    padding: 0;
+    margin: 0;
+}
+
+.sakura_mo_nav .menu > li {
+    align-items: center;
+    padding: 10px;
+    margin-right: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: default;
+}
+
+.sakura_mo_nav .menu > li:hover {
+    color: var(--theme-skin-matching);
+}
+
+.sakura_mo_nav a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+    margin-left: 10px;
+}
+
+.sakura_mo_nav .sub-menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    margin-left: 16px;
+    padding: 0;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.sakura_mo_nav .sub-menu li {
+    padding: 10px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sakura_mo_nav .sub-menu li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sakura_mo_nav .open_submenu.open {
+    display:inline-block;
+    transform: rotate(90deg);
+    color: var(--theme-skin-matching);
+}
+
+body.dark .sakura_mo_nav {
+    background: rgba(51,51,51, 0.7);
+}
+body.dark .sakura_mo_nav .menu > li:hover,
+body.dark .sakura_mo_nav .menu > li.hover {
+    color: var(--theme-skin-dark);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+body.dark .sakura_mo_nav .menu > li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark .sakura_mo_nav .sub-menu li:hover,
+body.dark .sakura_mo_nav .sub-menu li.hover {
+    background-color: rgba(51,51,51, 0.1);
+}
+body.dark .sakura_mo_nav .sub-menu li {
+    border-bottom: 1px solid rgba(51,51,51, 0.1);
+}
+
+.mo-toc-menu i{
+    padding: 11px 13px;
+}
+
+.sakura_mo_nav .menu>li{
+    padding: 10px;
+}
+
+.sakura_mo_nav a {
+    margin-left: 10px;
+}
+
+.sakura_mo_nav .sub-menu li{
+    margin-left: 20px;
+    padding: 10px;
+}
+/* 书签面板样式 */
+.mo_toc_panel{
+    display: block;
+    max-height: 0px;
+    position: fixed;
+    overflow: hidden;
+    top: 60px;
+    right: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(3px);
+}
+
+.mo_toc_panel .mo-avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.mo_toc_panel .mo-avatar img,
+.mo_toc_panel .mo-avatar i {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.mo_toc_panel .user-menu .user-name,
+.mo_toc_panel .mo-user-menu .user-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.mo_toc_panel .user-menu-option {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mo_toc_panel .user-menu-option a {
+    width: 48%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    position: relative;
+    transition: color 0.3s, text-shadow 0.3s;
+    white-space: nowrap; 
+}
+
+.mo_toc_panel .user-menu-option a {
+    position: relative;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px;
+    transition: text-shadow 0.3s, color 0.3s;
+    white-space: nowrap;
+}
+
+.mo_toc_panel .user-menu-option a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 0;
+    bottom: 2px;
+    height: 2px;
+    background-color: transparent;
+    border-radius: 1px;
+    transition: width 0.3s ease-out, background-color 0.3s;
+    transform: translateX(-50%);
+}
+
+.mo_toc_panel .user-menu-option a:hover::after {
+    width: 80%; 
+    background-color: var(--theme-skin-matching);
+}
+
+body.dark .mo_toc_panel .user-menu-option a:hover::after {
+    background-color: var(--theme-skin-dark);
+}
+
+.mo_toc_panel .user-menu-option a:hover {
+    text-shadow: 0 0 8px rgba(var(--theme-skin-matching-rgb), 0.8);
+    background-color: transparent;
+}
+
+body.dark .mo_toc_panel .user-menu-option a:hover {
+    text-shadow: 0 0 8px rgba(var(--theme-skin-dark-rgb), 0.8);
+}
+
+.mo_toc_panel .mo-menu-search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.mo_toc_panel .mo-menu-search .search-form {
+    width: 100%;
+    max-width: 400px;
+}
+.mo_toc_panel .mo-menu-search .search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+@media (max-width: 860px) {
+    .nav-search-wrapper,
+    .nav-search-divider,
+    .searchbox.js-toggle-search,
+    .user-menu-wrapper,
+    #bg-next.bg-switch,
+    .header-user-avatar{
+        display: none;
+    }
+
+    .site-header.mo-hide{
+        transform: translateY(-100%);
+    }
+
+    .menu-wrapper{
+        display: none!important;
+    }
+
+    .site-branding{
+        display: flex;
+        width: 100%;
+        max-width: 100vw!important;
+        justify-content: center;
+    }
+
+    .mo-nav-button {
+        display: block;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        margin: 0;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    .mo-nav-button span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.25s ease-in-out;
+        transition: 0.25s ease-in-out;
+        background: var(--theme-skin-matching);
+    }
+    .mo-nav-button span:nth-child(1) {
+        top: 0;
+    }
+    .mo-nav-button span:nth-child(2) {
+        top: 10px;
+    }
+    .mo-nav-button span:nth-child(3) {
+        top: 20px;
+    }
+    .mo-nav-button.open span:nth-child(1) {
+        top: 11px;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+    .mo-nav-button.open span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+    }
+    .mo-nav-button.open span:nth-child(3) {
+        top: 11px;
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+
+    .sakura_nav.sakura_mo_nav.open {
+        max-height: 100vh;
+    }
+
+    .sakura_mo_nav .sub-menu.open {
+        max-height: 50vh;
+    }
+
+    .mo_toc_panel.open{
+        max-height: 100vh;
+    }
+}
+
+/* 下面是动画和深色模式 */
 body.dark .site-header.bg,
 body.dark .site-header:hover {
     background-color: rgba(38, 38, 38, 0.8) !important;
@@ -205,7 +527,7 @@ body.dark .site-header:hover .searchbox.js-toggle-search i, body.dark .site-head
     color: #CCCCCC !important;
 }
 
-body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
+body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover,body.dark .mo-toc-menu i:hover {
     color: var(--theme-skin-dark);
     border: 2px solid var(--theme-skin-dark);
 }
