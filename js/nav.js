@@ -1087,15 +1087,40 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    //二级菜单
     document.querySelectorAll(".open_submenu").forEach(function (toggle) {
         toggle.addEventListener("click", function (event) {
             event.stopPropagation();
 
             let parentLi = this.closest("li");
-            let subMenu = parentLi.querySelector(".sub-menu");
-            if (subMenu) {
-                subMenu.classList.toggle("open");
+            let currentSubMenu = parentLi.querySelector(".sub-menu");
+
+            //互斥
+            document.querySelectorAll(".sub-menu.open").forEach(otherSubMenu => {
+                if (otherSubMenu !== currentSubMenu) {
+                    otherSubMenu.classList.remove("open");
+                    let otherToggle = otherSubMenu.closest("li").querySelector(".open_submenu");
+                    if (otherToggle) {
+                        otherToggle.classList.remove("open");
+                    }
+                }
+            });
+
+            if (currentSubMenu) {
+                currentSubMenu.classList.toggle("open");
                 this.classList.toggle("open");
+            }
+        });
+    });
+
+    // 点击选项关闭
+    document.querySelectorAll(".sakura_mo_nav a, .mo_toc_panel a").forEach(link => {
+        link.addEventListener("click", () => {
+            if (moNavMenu.classList.contains("open")) {
+                closeMenu(moNavMenu, moNavButton);
+            }
+            if (moTocMenu.classList.contains("open")) {
+                closeMenu(moTocMenu, moTocButton);
             }
         });
     });

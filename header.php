@@ -192,13 +192,20 @@ header('X-Frame-Options: SAMEORIGIN');
         <div class="mo-nav-button">
             <i class="fa-solid fa-bars"></i>
         </div>
+        <div class="sakura_nav sakura_mo_nav">
+        <div class="mo-menu-search">
+            <form class="search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
+                <input class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
+            </form>
+        </div>
         <?php wp_nav_menu([
             'depth' => 2, 
             'theme_location' => 'primary', 
             'container' => 'div', 
-            'container_class' => 'sakura_nav sakura_mo_nav',
+            'container_class' => 'mo_nav_item',
             'walker' => new Iro_mo_nav(),
             ]); ?>
+        </div>
         <?php //移动端结构结束 ?>
 
         <?php
@@ -266,11 +273,6 @@ header('X-Frame-Options: SAMEORIGIN');
                 </div>
             <?php endif; ?>
         </div>
-
-        <?php
-        if (iro_opt('nav_menu_search') == '1') { //是否开启搜索框?>
-        <div class="searchbox js-toggle-search mo-search"><i class="fa-solid fa-magnifying-glass"></i></div>
-        <?php } ?>
 
         <div class="mo-toc-menu">
             <i class="fa-solid fa-bookmark"></i>
