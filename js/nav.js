@@ -1068,6 +1068,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ) {
             moNavMenu.classList.remove("open");
             navButton.classList.remove("open");
+            moHeader.classList.remove("bg");
         }
 
         if (
@@ -1077,6 +1078,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ) {
             moTocMenu.classList.remove("open");
             moTocButton.classList.remove("open");
+            moHeader.classList.remove("bg");
         }
 
         // 关闭所有展开的二级菜单

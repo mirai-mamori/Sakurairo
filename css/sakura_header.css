@@ -128,6 +128,10 @@ nav .menu>li .sub-menu li {
     padding: 11px 10px;
 }
 
+.mo-nav-button i{
+    padding: 10px;
+}
+
 .searchbox.js-toggle-search i {
     margin: 17px 0;
     border-radius: 10px !important;
@@ -136,17 +140,7 @@ nav .menu>li .sub-menu li {
     font-weight: 900;
 }
 
-.searchbox.js-toggle-search i:hover,
-.bg-switch i:hover,
-.mo-toc-button i:hover,
-.mo-toc-button.open i{
-    color: var(--theme-skin-matching);
-    border: 2px solid var(--theme-skin-matching);
-    background-color: transparent;
-}
-
-.bg-switch,
-.mo-toc-button {
+.bg-switch {
     font-size: 16px;
     width: 50px;
     opacity: 1;
@@ -159,9 +153,21 @@ nav .menu>li .sub-menu li {
 }
 
 .bg-switch i,
-.mo-toc-button i{
+.mo-toc-button i,
+.mo-nav-button i{
     border: 2px solid transparent;
     border-radius: 10px !important;
+}
+
+.searchbox.js-toggle-search i:hover,
+.bg-switch i:hover,
+.mo-nav-button i:hover,
+.mo-nav-button.open i,
+.mo-toc-button i:hover,
+.mo-toc-button.open i{
+    color: var(--theme-skin-matching);
+    border: 2px solid var(--theme-skin-matching);
+    background-color: transparent;
 }
 
 .bg-switch.hide-state {
@@ -442,6 +448,19 @@ body.dark .mo_toc_panel .user-menu-option a:hover {
         width: 100%;
         max-width: 100vw!important;
         justify-content: center;
+    }
+
+    .mo-nav-button,
+    .mo-toc-button {
+        font-size: 16px;
+        width: 50px;
+        opacity: 1;
+        overflow: hidden;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
     }
 
     .sakura_nav.sakura_mo_nav.open {
