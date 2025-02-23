@@ -144,6 +144,11 @@ $nav_text_logo = iro_opt('nav_text_logo');
     <?php endif; //选项全在menu-wrapper中，防止bg-switch隐藏宽度变化导致brand缩放?>
   </div>
 
+  <?php
+    if (iro_opt('nav_menu_search') == '1') { //是否开启搜索框?>
+      <div class="searchbox js-toggle-search mo-search"><i class="fa-solid fa-magnifying-glass"></i></div>
+    <?php } ?>
+
   <div class="mo-toc-button">
       <i class="fa-solid fa-bookmark"></i>
   </div>

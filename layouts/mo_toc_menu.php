@@ -55,12 +55,6 @@ if (!defined('ABSPATH')) {
 
   <?php } ?>
 
-  <div class="mo-menu-search">
-    <form class="search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
-      <input class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
-    </form>
-  </div>
-
   <?php get_template_part('layouts/sidebox'); //加载目录容器 ?> 
 
 </div>

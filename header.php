@@ -267,6 +267,11 @@ header('X-Frame-Options: SAMEORIGIN');
             <?php endif; ?>
         </div>
 
+        <?php
+        if (iro_opt('nav_menu_search') == '1') { //是否开启搜索框?>
+        <div class="searchbox js-toggle-search mo-search"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <?php } ?>
+
         <div class="mo-toc-menu">
             <i class="fa-solid fa-bookmark"></i>
         </div>

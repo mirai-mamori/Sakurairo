@@ -9,16 +9,16 @@
     position: fixed;
     z-index: 999;
     border-bottom: 1.5px solid transparent;
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
+    -webkit-transition: all .6s ease;
+    transition: all .6s ease;
 }
 
 .site-header.bg,
 .site-header:hover {
     border-bottom: 1.5px solid #FFFFFF;
     background: rgba(255, 255, 255, 0.7);
-    -webkit-transition: all 1s ease;
-    transition: border-bottom 1s ease,all 1s ease;
+    -webkit-transition: all .5s ease;
+    transition: border-bottom .5s ease,all .5s ease;
 }
 
 .site-branding {
@@ -435,6 +435,11 @@ body.dark .mo_toc_panel .user-menu-option a:hover {
         display: none;
     }
 
+    .site-header {
+        -webkit-transition: all .1s ease;
+        transition: all .1s ease;
+    }
+
     .site-header.mo-hide{
         transform: translateY(-100%);
     }
@@ -448,6 +453,10 @@ body.dark .mo_toc_panel .user-menu-option a:hover {
         width: 100%;
         max-width: 100vw!important;
         justify-content: center;
+    }
+
+    .mo-search{
+        display: flex!important;
     }
 
     .mo-nav-button,
