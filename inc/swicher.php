@@ -11,7 +11,7 @@ function font_end_js_control()
     function ecs_src($a)
     {
         global $core_lib_basepath;
-        return $core_lib_basepath . '/css/theme/' . $a . '.css?' . IRO_VERSION . iro_opt('cookie_version', '');
+        return $core_lib_basepath . '/css/content-style/' . $a . '.css?' . IRO_VERSION . iro_opt('cookie_version', '');
     };
     /**
      * 通过ID获取作者公开显示的昵称
