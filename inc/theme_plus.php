@@ -475,7 +475,7 @@ class Iro_mo_nav extends Walker_Nav_Menu {
     $output .= '<a href="' . esc_url($item->url) . '">' . apply_filters('the_title', $item->title, $item->ID) . '</a>';
 
     if (in_array('menu-item-has-children', $filtered_classes)) {
-        $output .= '<span class="open_submenu">▶</span>';
+        $output .= '<span class="open_submenu" style="float: right;"><i class="fa-solid fa-play"></i></span>';
     }
 }
 

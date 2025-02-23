@@ -16,7 +16,9 @@
 .site-header.bg,
 .site-header:hover {
     border-bottom: 1.5px solid #FFFFFF;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    backdrop-filter: saturate(180%) blur(10px);
     -webkit-transition: all .5s ease;
     transition: border-bottom .5s ease,all .5s ease;
 }
@@ -204,11 +206,10 @@ nav .menu>li .sub-menu li {
     max-height: 0px;
     overflow: hidden;
     position: fixed;
-    top: 60px;
+    top: 50px;
     right: 0;
     left: 0;
     background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(5px);
 }
 
 .sakura_mo_nav,
@@ -228,12 +229,12 @@ nav .menu>li .sub-menu li {
     border-bottom: 1px solid #ccc;
     box-sizing: border-box;
     padding: 5px 0;
-    width: 98%;
+    width: 100%;
 }
 
 .sakura_mo_nav .mo-menu-search .search-input {
-    width: 75%;
-    padding: 10px;
+    width: 95%;
+    padding: 8px 16px;
     font-size: 1em;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -331,72 +332,72 @@ body.dark .sakura_mo_nav .sub-menu li {
 }
 /* 书签面板样式 */
 .mo_toc_panel{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-height: 0px;
     position: fixed;
     overflow: hidden;
-    top: 60px;
+    top: 50px;
     right: 0;
     left: 0;
     background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(5px);
+    gap: 20px;
+}
+
+.mo-user-menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0px;
 }
 
 .mo_toc_panel .mo-avatar {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
 }
 
 .mo_toc_panel .mo-avatar img,
 .mo_toc_panel .mo-avatar i {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     object-fit: cover;
     border-radius: 50%;
-    display: block;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mo_toc_panel .user-menu .user-name,
 .mo_toc_panel .mo-user-menu .user-name {
     display: flex;
     justify-content: center;
-    align-items: center;
     font-size: 1.2em;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 3px;
 }
 
 .mo_toc_panel .user-menu-option {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 20px;
     max-width: 200px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .mo_toc_panel .user-menu-option a {
+    position: relative;
     width: 48%;
     text-align: center;
     text-decoration: none;
     font-size: 1em;
-    padding: 10px;
+    padding: 8px 4px;
     box-sizing: border-box;
     border-radius: 4px;
     position: relative;
     transition: color 0.3s, text-shadow 0.3s;
     white-space: nowrap; 
-}
-
-.mo_toc_panel .user-menu-option a {
-    position: relative;
-    text-decoration: none;
-    font-size: 1em;
-    padding: 10px;
-    transition: text-shadow 0.3s, color 0.3s;
-    white-space: nowrap;
 }
 
 .mo_toc_panel .user-menu-option a::after {
@@ -541,6 +542,6 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover,body
 
     @media (max-width: 860px) {
     .site-header {
-        height: 60px;
+        height: 50px;
     }
 }

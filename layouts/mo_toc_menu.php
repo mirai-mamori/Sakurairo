@@ -24,7 +24,7 @@ if (!defined('ABSPATH')) {
   global $current_user;
   wp_get_current_user();
   if (is_user_logged_in()) {?>
-  <div class="user-menu">
+  <div class="mo-user-menu">
     <div class="user-name">
       <span><?php echo $current_user->display_name; ?></span>
     </div>
