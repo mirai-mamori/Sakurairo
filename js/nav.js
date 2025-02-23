@@ -1027,10 +1027,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // 先给导航栏添加背景
         if (!moHeader.classList.contains("bg")) {
             moHeader.classList.add("bg");
+            button.classList.add("open");
             let navTransitionHandler = function(e) {
                 if (e.propertyName === "background-color") {
                     panel.classList.add("open");
-                    button.classList.add("open");
                     moHeader.removeEventListener("transitionend", navTransitionHandler);
                 }
             };
