@@ -1018,29 +1018,73 @@ document.addEventListener("DOMContentLoaded", () => {
     let moTocMenu   = document.querySelector(".mo_toc_panel");
     let moHeader    = document.querySelector(".site-header");
 
+    //动画监听
+    function isAnyPanelOpen() {
+        return moNavMenu.classList.contains("open") || moTocMenu.classList.contains("open");
+    }
+
+    function openMenu(panel, button) {
+        // 先给导航栏添加背景
+        if (!moHeader.classList.contains("bg")) {
+            moHeader.classList.add("bg");
+            let navTransitionHandler = function(e) {
+                if (e.propertyName === "background-color") {
+                    panel.classList.add("open");
+                    button.classList.add("open");
+                    moHeader.removeEventListener("transitionend", navTransitionHandler);
+                }
+            };
+            moHeader.addEventListener("transitionend", navTransitionHandler);
+        } else {
+            // 已有背景
+            panel.classList.add("open");
+            button.classList.add("open");
+        }
+    }
+
+    function closeMenu(panel, button) {
+        // 先关闭菜单
+        panel.classList.remove("open");
+        button.classList.remove("open");
+    
+        let panelTransitionHandler = function(e) {
+            if (e.propertyName === "max-height") {
+                // 所有面板都关闭后才撤销导航栏背景
+                if (!isAnyPanelOpen()) {
+                    moHeader.classList.remove("bg");
+                }
+                panel.removeEventListener("transitionend", panelTransitionHandler);
+            }
+        };
+        panel.addEventListener("transitionend", panelTransitionHandler);
+    }
+
+
     // 面板
     moNavButton.addEventListener("click", function (event) {
         event.stopPropagation();
 
         if (moTocMenu.classList.contains("open")) {
-            moTocMenu.classList.remove("open");
-            moTocButton.classList.remove("open");
+            closeMenu(moTocMenu, moTocButton);
         }
-        moNavMenu.classList.toggle("open");
-        moHeader.classList.add("bg");
-        this.classList.toggle("open");
+        if (moNavMenu.classList.contains("open")) {
+            closeMenu(moNavMenu, moNavButton);
+        } else {
+            openMenu(moNavMenu, moNavButton);
+        }
     });
 
     moTocButton.addEventListener("click", function (event) {
         event.stopPropagation();
 
         if (moNavMenu.classList.contains("open")) {
-            moNavMenu.classList.remove("open");
-            moNavButton.classList.remove("open");
+            closeMenu(moNavMenu, moNavButton);
         }
-        moTocMenu.classList.toggle("open");
-        moHeader.classList.add("bg");
-        this.classList.toggle("open");
+        if (moTocMenu.classList.contains("open")) {
+            closeMenu(moTocMenu, moTocButton);
+        } else {
+            openMenu(moTocMenu, moTocButton);
+        }
     });
 
     document.querySelectorAll(".open_submenu").forEach(function (toggle) {
@@ -1066,9 +1110,7 @@ document.addEventListener("DOMContentLoaded", () => {
             !moNavMenu.contains(event.target) &&
             !navButton.contains(event.target)
         ) {
-            moNavMenu.classList.remove("open");
-            navButton.classList.remove("open");
-            moHeader.classList.remove("bg");
+            closeMenu(moNavMenu, navButton);
         }
 
         if (
@@ -1076,9 +1118,7 @@ document.addEventListener("DOMContentLoaded", () => {
             !moTocMenu.contains(event.target) &&
             !tocButton.contains(event.target)
         ) {
-            moTocMenu.classList.remove("open");
-            moTocButton.classList.remove("open");
-            moHeader.classList.remove("bg");
+            closeMenu(moTocMenu, tocButton);
         }
 
         // 关闭所有展开的二级菜单
@@ -1131,4 +1171,5 @@ document.addEventListener("DOMContentLoaded", () => {
             lastScrollTop = scrollTop;
         }
     });
+    moHeader.classList.remove("bg");
 });
