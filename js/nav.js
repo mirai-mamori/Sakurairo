@@ -1012,14 +1012,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     //移动端菜单开关
-    document.querySelectorAll(".mo-nav-button").forEach(function (toggle) {
-        toggle.addEventListener("click", function (event) {
-            event.stopPropagation();
+    let moNavButton = document.querySelector(".mo-nav-button");
+    let moTocButton = document.querySelector(".mo-toc-menu");
+    let moNavMenu = document.querySelector(".sakura_mo_nav");
+    let moTocMenu = document.querySelector(".mo_toc_panel");
+    moNavButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        
+        if (moTocMenu.classList.contains("open")) {
+            moTocMenu.classList.remove("open");
+            moTocButton.classList.remove("open");
+        }
 
-            let moNavMenu = document.querySelector(".sakura_mo_nav");
-            moNavMenu.classList.toggle("open");
-            this.classList.toggle("open");
-        });
+        moNavMenu.classList.toggle("open");
+        this.classList.toggle("open");
+    });
+
+    moTocButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        
+        if (moNavMenu.classList.contains("open")) {
+            moNavMenu.classList.remove("open");
+            moNavButton.classList.remove("open");
+        }
+
+        moTocMenu.classList.toggle("open");
+        this.classList.toggle("open");
     });
 
     document.querySelectorAll(".open_submenu").forEach(function (toggle) {
@@ -1041,14 +1059,20 @@ document.addEventListener("DOMContentLoaded", () => {
         let moNavMenu = document.querySelector(".sakura_mo_nav");
         let navButton = document.querySelector(".mo-nav-button");
         let openSubMenus = document.querySelectorAll(".sub-menu.open");
+        let moTocMenu = document.querySelector(".mo_toc_panel");
+        let moTocButton = document.querySelector(".mo_toc_menu");
 
         if (
             moNavMenu.classList.contains("open") &&
             !moNavMenu.contains(event.target) &&
-            !navButton.contains(event.target)
+            !navButton.contains(event.target) &&
+            !moTocMenu.contains(event.target) &&
+            !moTocButton.contains(event.target)
         ) {
             moNavMenu.classList.remove("open");
             navButton.classList.remove("open");
+            moTocMenu.classList.remove("open");
+            moTocButton.classList.remove("open");
         }
 
         openSubMenus.forEach(function (subMenu) {
@@ -1062,7 +1086,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let lastScrollTop = 0;
     const moHeader = document.querySelector(".site-header");
-    const moNavMenu = document.querySelector(".sakura_mo_nav");
     const navButton = document.querySelector(".mo-nav-button");
     const scrollProgress = document.documentElement.scrollHeight * 0.05;
 
@@ -1073,7 +1096,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (scrollTop > scrollProgress) {
                 if (scrollTop > lastScrollTop) {
                     moHeader.classList.add("mo-hide");
-
+                    moHeader.classList.add("bg");
                     moNavMenu.classList.remove("open");
                     navButton.classList.remove("open");
                     document.querySelectorAll(".sakura_mo_nav .sub-menu.open").forEach(function (subMenu) {
@@ -1085,6 +1108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 } else {
                     moHeader.classList.remove("mo-hide");
+                    moHeader.classList.remove("bg");
                 }
             }
 

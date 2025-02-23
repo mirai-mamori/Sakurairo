@@ -137,13 +137,16 @@ nav .menu>li .sub-menu li {
 }
 
 .searchbox.js-toggle-search i:hover,
-.bg-switch i:hover {
+.bg-switch i:hover,
+.mo-toc-menu i:hover{
     color: var(--theme-skin-matching);
     border: 2px solid var(--theme-skin-matching);
     background-color: transparent;
 }
 
-.bg-switch {
+.bg-switch,
+.mo-toc-menu {
+    font-size: 16px;
     width: 50px;
     opacity: 1;
     overflow: hidden;
@@ -154,7 +157,8 @@ nav .menu>li .sub-menu li {
     -webkit-transition: all .4s ease-in-out;
 }
 
-.bg-switch i{
+.bg-switch i,
+.mo-toc-menu i{
     border: 2px solid transparent;
     border-radius: 10px !important;
 }
@@ -186,28 +190,26 @@ nav .menu>li .sub-menu li {
     transform: translateY(-20px);
 }
 
-/* 移动端样式 */
-.mo-navbar,
-.mo-nav-button{
-    display: none;
-}
-
+/* 移动端样式,不显示部分需在style.css定义 */
 .sakura_mo_nav{
     display: flex;
     max-height: 0px;
-    overflow: hidden;
     position: fixed;
-    white-space: nowrap;
     top: 60px;
     right: 0;
     left: 0;
     background: rgba(255, 255, 255, 0.7);
 }
 
+.sakura_mo_nav,
 .sakura_mo_nav .sub-menu{
     max-height: 0px;
     overflow: hidden;
     white-space: nowrap;
+}
+
+.mo-toc-menu i{
+    padding: 11px 13px;
 }
 
 .sakura_mo_nav .menu>li{
@@ -222,6 +224,32 @@ nav .menu>li .sub-menu li {
     margin-left: 20px;
     padding: 10px;
 }
+
+.mo_toc_panel{
+    display: block;
+    max-height: 0px;
+    position: fixed;
+    overflow: hidden;
+    top: 60px;
+    right: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.mo_toc_panel .mo-avatar,
+.mo_toc_panel .user-menu,
+.mo_toc_panel .user-name{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.mo_toc_panel .user-menu{
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
 @media (max-width: 860px) {
     .nav-search-wrapper,
     .nav-search-divider,
@@ -309,6 +337,14 @@ nav .menu>li .sub-menu li {
     .sakura_mo_nav .sub-menu.open {
         max-height: 50vh;
     }
+
+    .mo-toc-menu{
+        display: flex;
+    }
+
+    .mo_toc_panel.open{
+        max-height: 100vh;
+    }
 }
 
 /* 下面是动画和深色模式 */
@@ -331,7 +367,7 @@ body.dark .site-header:hover .searchbox.js-toggle-search i, body.dark .site-head
     color: #CCCCCC !important;
 }
 
-body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover {
+body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover,body.dark .mo-toc-menu i:hover {
     color: var(--theme-skin-dark);
     border: 2px solid var(--theme-skin-dark);
 }
