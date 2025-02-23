@@ -1196,11 +1196,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let lastScrollTop = 0;
     // 阈值
-    const scrollThreshold = document.documentElement.scrollHeight * 0.05;
+    const scrollThreshold = document.documentElement.scrollHeight * 0.01;
+    
 
     window.addEventListener("scroll", function () {
         if (window.innerWidth < 860) {
             let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollTop <= 0) {
+                if (!isAnyPanelOpen()) {
+                    moHeader.classList.remove("bg");
+                }
+            }
 
             if (scrollTop > scrollThreshold) {
                 if (scrollTop > lastScrollTop) {

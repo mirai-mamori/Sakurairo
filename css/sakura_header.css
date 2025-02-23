@@ -441,12 +441,15 @@ body.dark .mo_toc_panel .user-menu-option a:hover {
     }
 
     .site-header.bg {
-        -webkit-transition: all .1s ease;
-        transition: all .1s ease;
+        -webkit-transition: all .2s ease,transform .6s ease;
+        transition: all .2s ease,transform .6s ease;
     }
 
-    .site-header.mo-hide{
+    .site-header.mo-hide,
+    .site-header.bg.mo-hide{
         transform: translateY(-100%);
+        -webkit-transition: all .6s ease,transform .5s ease;
+        transition: all .6s ease,transform .5s ease;
     }
 
     .menu-wrapper{
@@ -473,16 +476,15 @@ body.dark .mo_toc_panel .user-menu-option a:hover {
         -webkit-transition: all .4s ease-in-out;
     }
 
-    .sakura_nav.sakura_mo_nav.open {
+    .sakura_mo_nav.open,
+    .mo_toc_panel.open{
         max-height: 100vh;
+        -webkit-transition: all .7s ease;
+        transition: all .7s ease;
     }
 
     .sakura_mo_nav .sub-menu.open {
         max-height: 50vh;
-    }
-
-    .mo_toc_panel.open{
-        max-height: 100vh;
     }
 }
 
