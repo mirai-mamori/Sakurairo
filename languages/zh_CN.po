@@ -1137,36 +1137,6 @@ msgstr "友情链接模版"
 #~ msgid "Change"
 #~ msgstr "切换"
 
-msgid "SteamLibrary Template Settings"
-msgstr "Steam库模板设置"
-
-msgid "Steam Account 64ID"
-msgstr "Steam账号64ID"
-
-msgid "Fill in your account 64ID, e.g. https://steamcommunity.com/profiles/76561199029689067/, just the number part \"76561199029689067\""
-msgstr "填写你的帐号ID，例如：https://steamcommunity.com/profiles/76561199029689067/, 只需填写数字 \"76561199029689067\" 部分"
-
-msgid "Steam API Key"
-msgstr "Steam API密钥"
-
-msgid "Apply at https://steamcommunity.com/dev/apikey"
-msgstr "申请链接 https://steamcommunity.com/dev/apikey"
-
-msgid "Game Cover CDN"
-msgstr "游戏封面CDN"
-
-msgid "Select based on your user region"
-msgstr "基于国内访问Steam可能加载不出来游戏封面,推荐使用Steam China, 其次akamai"
-
-msgid "Game Store Link"
-msgstr "游戏商店链接"
-
-msgid "Select the game store link to jump to"
-msgstr "选择要跳转到的游戏商店链接"
-
-msgid "XiaoHeiHe"
-msgstr "小黑盒"
-
 msgid "Playtime"
 msgstr "游玩时长"
 
