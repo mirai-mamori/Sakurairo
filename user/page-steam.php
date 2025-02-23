@@ -7,14 +7,12 @@ get_header();
 ?>
 <meta name="referrer" content="same-origin">
 <style>
-    .comments {
-        display: none;
-    }
+
     .site-content {
-        max-width:1280px;
+        max-width: 1280px;
     }
 
-    .row {
+    .steam-row {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
@@ -22,34 +20,51 @@ get_header();
         margin: 0 auto;
     }
 
-    .anime-card {
+    .steam-card {
         display: block;
         width: 280px;
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         transition: all 0.3s ease;
     }
 
-    .anime-card:hover {
+    .steam-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 12px rgba(0, 0, 0);
     }
 
-    .anime-info {
+    .steam-info {
         padding: 10px;
     }
 
-    .anime-desc {
+    .steam-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 8px;
+        color: var(--theme-skin, #505050);
+    }
+
+    body.dark .steam-title {
+        color: #cbcbcb;
+    }
+
+    .steam-desc {
         font-size: 12px;
-        color: #666;
         line-height: 1.4;
         margin-bottom: 2px;
+        color: var(--theme-skin, #505050);
     }
+
+    body.dark .steam-desc {
+        color: #cbcbcb;
+    }
+
 </style>
 </head>
 
-<?php while(have_posts()) : the_post(); ?>
+<?php while (have_posts()) : the_post(); ?>
 <?php 
     if (!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID())) { 
     ?>
@@ -59,14 +74,12 @@ get_header();
     ?>
 
 <article <?php post_class("post-item"); ?>>
-    <?php the_content( '', true ); ?>
-    <section class="steamlibrary">
-        <div class="row">
-            <?php 
-            $steam = new \Sakura\API\Steam();
-            echo $steam->get_steam_items();
-            ?>
-        </div>
+    <?php the_content('', true); ?>
+    <section class="steam-row">
+        <?php 
+        $steam = new \Sakura\API\Steam();
+        echo $steam->get_steam_items();
+        ?>
     </section>
 </article>
 <?php endwhile; ?>

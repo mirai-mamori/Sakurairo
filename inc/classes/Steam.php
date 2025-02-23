@@ -7,13 +7,13 @@ class Steam
     private $key;
     private $id;
     private $covercdn;
-    private $link;
+    private $store;
     public function __construct()
     {
         $this->id = iro_opt('steam_id');
         $this->key = iro_opt('steam_key');
         $this->covercdn = iro_opt('steam_covercdn');
-        $this->link = iro_opt('steam_link');
+        $this->store = iro_opt('steam_store');
     }
 
     /**
@@ -24,17 +24,18 @@ class Steam
     {
         $id = $this->id;
         $key = $this->key;
-        $url = "https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=$key&steamid=$id&include_appinfo=1&include_played_free_games=1";
+        $url = "https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=$key&steamid=$id&include_appinfo=1&include_played_free_games=1&include_free_games=1";
 
         $response = wp_remote_get($url);
-            $data = json_decode($response["body"], true);
-            // 按最后游玩时间排序
-            if(isset($data['response']['games'])) {
-                usort($data['response']['games'], function($a, $b) {
-                    return ($b['rtime_last_played'] ?? 0) - ($a['rtime_last_played'] ?? 0);
-                });
-            }
-            return $data;
+        $data = json_decode($response["body"], true);
+        
+        // 按最后游玩时间排序
+        if (isset($data['response']['games'])) {
+            usort($data['response']['games'], function($a, $b) {
+                return ($b['rtime_last_played'] ?? 0) - ($a['rtime_last_played'] ?? 0);
+            });
+        }
+        return $data;
     }
 
     public function get_steam_items()
@@ -46,26 +47,23 @@ class Steam
             $playtime = $this->format_playtime($game['playtime_forever']);
             // 如果未游玩则不加载游戏时间
             $last_played = ($game['playtime_forever'] > 0) ? $this->format_last_played($game['rtime_last_played'] ?? 0) : '';
-            $html .= $this->game_item($game, $playtime, $last_played);
+            $html .= $this->game_items($game, $playtime, $last_played);
         }
         return $html;
     }
     
-    private function game_item(array $game, $playtime, $last_played)
+    private function game_items(array $game, $playtime, $last_played)
     {
-        return '<div class="column">' .
-            '<a class="anime-card" href="' . esc_url($this->get_steam_link($game['appid'])) . '" target="_blank" rel="nofollow">' .
-            '<div class="anime-image">' .
-            '<img src="' . esc_url($this->get_steam_covercdn() . '/store_item_assets/steam/apps/' . $game['appid'] . '/header.jpg') . 
-            '" alt="' . esc_attr($game['name']) . '" loading="lazy">' .
-            '</div>' .
-            '<div class="anime-info">' .
-            '<div class="anime-title">' . esc_html($game['name']) . '</div>' .
-            '<div class="anime-desc">游玩时长: ' . $playtime . '</div>' .
-            ($last_played ? '<div class="anime-desc">上次启动: ' . $last_played . '</div>' : '') .
-            '</div>' .
-            '</a>' .
-            '</div>';
+    return
+        '<a class="steam-card" href="' . esc_url($this->get_steam_store($game['appid'])) . '" target="_blank" rel="nofollow">' .
+        '<img src="' . esc_url($this->get_steam_covercdn() . '/store_item_assets/steam/apps/' . $game['appid'] . '/header.jpg') . 
+        '" alt="' . esc_attr($game['name']) . '" loading="lazy">' .
+        '<div class="steam-info">' .
+        '<div class="steam-title" title="' . esc_attr($game['name']) . '">' . esc_html($game['name']) . '</div>' .
+        '<div class="steam-desc">游玩时长: ' . $playtime . '</div>' .
+        ($last_played ? '<div class="steam-desc">上次启动: ' . $last_played . '</div>' : '') .
+        '</div>' .
+        '</a>';
     }
     
     private function get_steam_covercdn(): string 
@@ -82,9 +80,9 @@ class Steam
         }
     }
 
-    private function get_steam_link($appid)
+    private function get_steam_store($appid)
     {
-        switch($this->link) {
+        switch($this->store) {
             case 'steam':
                 return 'https://store.steampowered.com/app/' . $appid;
             case 'xiaoheihe':
