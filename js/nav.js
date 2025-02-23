@@ -1032,6 +1032,7 @@ document.addEventListener("DOMContentLoaded", () => {
             navTransitionHandler = null;
             panel.classList.add("open");
             button.classList.add("open");
+            moHeader.classList.add("bg");
             return;
         }
 
@@ -1162,6 +1163,23 @@ document.addEventListener("DOMContentLoaded", () => {
             !tocButton.contains(event.target)
         ) {
             closeMenu(moTocMenu, tocButton);
+        }
+
+        if (
+            !moNavMenu.contains(event.target) &&
+            !moTocMenu.contains(event.target) &&
+            !navButton.contains(event.target) &&
+            !tocButton.contains(event.target)
+        ) {
+            moNavMenu.classList.remove("open");
+            moTocMenu.classList.remove("open");
+            navButton.classList.remove("open");
+            tocButton.classList.remove("open");
+            moHeader.removeEventListener("transitionend", navTransitionHandler);
+            moNavMenu.removeEventListener("transitionend", panelTransitionHandler);
+            moTocMenu.removeEventListener("transitionend", panelTransitionHandler);
+            navTransitionHandler = null;
+            panelTransitionHandler = null;
         }
 
         // 关闭所有展开的二级菜单
