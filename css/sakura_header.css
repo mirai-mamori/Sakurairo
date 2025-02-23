@@ -193,12 +193,14 @@ nav .menu>li .sub-menu li {
 /* 移动端样式,不显示部分需在style.css定义 */
 .sakura_mo_nav{
     display: flex;
+    flex-direction: column;
     max-height: 0px;
+    overflow: hidden;
     position: fixed;
     top: 60px;
     right: 0;
     left: 0;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .sakura_mo_nav,
@@ -206,6 +208,80 @@ nav .menu>li .sub-menu li {
     max-height: 0px;
     overflow: hidden;
     white-space: nowrap;
+}
+
+.sakura_mo_nav .menu {
+    padding: 0;
+    margin: 0;
+}
+
+.sakura_mo_nav .menu > li {
+    align-items: center;
+    padding: 10px;
+    margin-right: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: default;
+}
+
+.sakura_mo_nav .menu > li:hover {
+    color: var(--theme-skin-matching);
+}
+
+.sakura_mo_nav a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+    margin-left: 10px;
+}
+
+.sakura_mo_nav .sub-menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    margin-left: 16px;
+    padding: 0;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.sakura_mo_nav .sub-menu li {
+    padding: 10px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sakura_mo_nav .sub-menu li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sakura_mo_nav .open_submenu.open {
+    display:inline-block;
+    transform: rotate(90deg);
+    color: var(--theme-skin-matching);
+}
+
+body.dark .sakura_mo_nav {
+    background: rgba(51,51,51, 0.7);
+}
+body.dark .sakura_mo_nav .menu > li:hover,
+body.dark .sakura_mo_nav .menu > li.hover {
+    color: var(--theme-skin-dark);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+body.dark .sakura_mo_nav .menu > li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark .sakura_mo_nav .sub-menu li:hover,
+body.dark .sakura_mo_nav .sub-menu li.hover {
+    background-color: rgba(51,51,51, 0.1);
+}
+body.dark .sakura_mo_nav .sub-menu li {
+    border-bottom: 1px solid rgba(51,51,51, 0.1);
 }
 
 .mo-toc-menu i{
@@ -329,17 +405,8 @@ nav .menu>li .sub-menu li {
         max-height: 100vh;
     }
 
-    .open_submenu.open{
-        display: inline-block;
-        transform: rotate(90deg);
-    }
-
     .sakura_mo_nav .sub-menu.open {
         max-height: 50vh;
-    }
-
-    .mo-toc-menu{
-        display: flex;
     }
 
     .mo_toc_panel.open{
