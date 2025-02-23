@@ -1014,28 +1014,29 @@ document.addEventListener("DOMContentLoaded", () => {
     //移动端菜单开关
     let moNavButton = document.querySelector(".mo-nav-button");
     let moTocButton = document.querySelector(".mo-toc-menu");
-    let moNavMenu = document.querySelector(".sakura_mo_nav");
-    let moTocMenu = document.querySelector(".mo_toc_panel");
+    let moNavMenu   = document.querySelector(".sakura_mo_nav");
+    let moTocMenu   = document.querySelector(".mo_toc_panel");
+    let moHeader    = document.querySelector(".site-header");
+
+    // 面板
     moNavButton.addEventListener("click", function (event) {
         event.stopPropagation();
-        
+
         if (moTocMenu.classList.contains("open")) {
             moTocMenu.classList.remove("open");
             moTocButton.classList.remove("open");
         }
-
         moNavMenu.classList.toggle("open");
         this.classList.toggle("open");
     });
 
     moTocButton.addEventListener("click", function (event) {
         event.stopPropagation();
-        
+
         if (moNavMenu.classList.contains("open")) {
             moNavMenu.classList.remove("open");
             moNavButton.classList.remove("open");
         }
-
         moTocMenu.classList.toggle("open");
         this.classList.toggle("open");
     });
@@ -1046,7 +1047,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let parentLi = this.closest("li");
             let subMenu = parentLi.querySelector(".sub-menu");
-
             if (subMenu) {
                 subMenu.classList.toggle("open");
                 this.classList.toggle("open");
@@ -1054,64 +1054,71 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    //点击空白处折叠菜单
+    // 点击空白处关闭
     document.addEventListener("click", function (event) {
-        let moNavMenu = document.querySelector(".sakura_mo_nav");
         let navButton = document.querySelector(".mo-nav-button");
-        let openSubMenus = document.querySelectorAll(".sub-menu.open");
-        let moTocMenu = document.querySelector(".mo_toc_panel");
-        let moTocButton = document.querySelector(".mo_toc_menu");
+        let tocButton = document.querySelector(".mo-toc-menu");
 
         if (
             moNavMenu.classList.contains("open") &&
             !moNavMenu.contains(event.target) &&
             !navButton.contains(event.target) &&
             !moTocMenu.contains(event.target) &&
-            !moTocButton.contains(event.target)
+            !tocButton.contains(event.target)
         ) {
             moNavMenu.classList.remove("open");
             navButton.classList.remove("open");
             moTocMenu.classList.remove("open");
-            moTocButton.classList.remove("open");
+            tocButton.classList.remove("open");
         }
 
-        openSubMenus.forEach(function (subMenu) {
+        // 关闭所有展开的二级菜单
+        document.querySelectorAll(".sub-menu.open").forEach(function (subMenu) {
             if (!subMenu.contains(event.target)) {
                 subMenu.classList.remove("open");
                 let submenuToggle = subMenu.closest("li").querySelector(".open_submenu");
-                if (submenuToggle) submenuToggle.classList.remove("open");
+                if (submenuToggle) {
+                    submenuToggle.classList.remove("open");
+                }
             }
         });
     });
 
     let lastScrollTop = 0;
-    const moHeader = document.querySelector(".site-header");
-    const navButton = document.querySelector(".mo-nav-button");
-    const scrollProgress = document.documentElement.scrollHeight * 0.05;
+    // 阈值
+    const scrollThreshold = document.documentElement.scrollHeight * 0.05;
 
     window.addEventListener("scroll", function () {
         if (window.innerWidth < 860) {
             let scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-            if (scrollTop > scrollProgress) {
+            if (scrollTop > scrollThreshold) {
                 if (scrollTop > lastScrollTop) {
+                    // 向下滚动
                     moHeader.classList.add("mo-hide");
-                    moHeader.classList.add("bg");
+                    moHeader.classList.remove("bg");
                     moNavMenu.classList.remove("open");
-                    navButton.classList.remove("open");
+                    moNavButton.classList.remove("open");
+                    moTocMenu.classList.remove("open");
+                    moTocButton.classList.remove("open");
+
+                    // 同时关闭所有展开的二级菜单
                     document.querySelectorAll(".sakura_mo_nav .sub-menu.open").forEach(function (subMenu) {
                         subMenu.classList.remove("open");
                     });
                     document.querySelectorAll(".sakura_mo_nav .open_submenu.open").forEach(function (toggle) {
                         toggle.classList.remove("open");
                     });
-
                 } else {
+                    // 向上滚动
                     moHeader.classList.remove("mo-hide");
-                    moHeader.classList.remove("bg");
+                    moHeader.classList.add("bg");
                 }
+            } else {
+                // 滚动距离小于阈值
+                moHeader.classList.remove("mo-hide");
+                moHeader.classList.remove("bg");
             }
-
             lastScrollTop = scrollTop;
         }
     });
