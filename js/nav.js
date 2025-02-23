@@ -1245,8 +1245,11 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 // 滚动距离小于阈值
                 moHeader.classList.remove("mo-hide");
+            }
+            if (scrollTop <= 0 && !isAnyPanelOpen()) {
                 moHeader.classList.remove("bg");
             }
+            
             lastScrollTop = scrollTop;
         }
     });

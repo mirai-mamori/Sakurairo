@@ -274,7 +274,7 @@ header('X-Frame-Options: SAMEORIGIN');
             <?php endif; ?>
         </div>
 
-        <div class="mo-toc-menu">
+        <div class="mo-toc-button">
             <i class="fa-solid fa-bookmark"></i>
         </div>
 
