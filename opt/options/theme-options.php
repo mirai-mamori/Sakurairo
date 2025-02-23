@@ -3072,6 +3072,52 @@ $prefix = 'iro_options';
         ),
         'default'     => 'ASC'
       ),
+      
+      array(
+        'type' => 'subheading',
+        'content' => __('Steam库模板设置','sakurairo_csf'),
+      ),
+      
+      array(
+        'id' => 'steam_id',
+        'type' => 'text',
+        'title' => __('Steam 账号64ID','sakurairo_csf'),
+        'desc' => __('填写你的帐号ID，例如：https://steamcommunity.com/profiles/76561199029689067/, 只需填写数字 "76561199029689067" 部分','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'steam_key',
+        'type' => 'text',
+        'title' => __('Steam Api Key','sakurairo_csf'),
+        'desc' => __('申请链接 https://steamcommunity.com/dev/apikey','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'steam_covercdn',
+        'type' => 'select',
+        'title' => __('游戏封面CDN','sakurairo_csf'),
+        'desc' => __('基于国内访问Steam可能加载不出来游戏封面,推荐使用Steam China, 其次akamai','sakurairo_csf'),
+        'options' => array(
+          'steamchina' => __('Steam China','sakurairo_csf'), // shared.cdn.steamchina.queniuam.com
+          'steamakamai'  => __('Steam akamai','sakurairo_csf'), // shared.akamai.steamstatic.com
+          'steamfastly'  => __('Steam fastly','sakurairo_csf'), // shared.fastly.steamstatic.com
+          'steamcloudflare'  => __('Steam cloudflare','sakurairo_csf'), // shared.cloudflare.steamstatic.com
+        ),
+        'default'     => 'steamchina'
+      ),
+
+      array(
+        'id' => 'steam_store',
+        'type' => 'select',
+        'title' => __('跳转链接','sakurairo_csf'),
+        'desc' => __('根据喜好选择跳转链接','sakurairo_csf'),
+        'options' => array(
+          'steam' => __('Steam','sakurairo_csf'),
+          'xiaoheihe'  => __('小黑盒','sakurairo_csf'),
+          'steamdb'  => __('SteamDB','sakurairo_csf'),
+        ),
+        'default'     => 'steam'
+      ),
 
       array(
         'type' => 'subheading',
