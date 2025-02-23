@@ -1017,6 +1017,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let moNavMenu   = document.querySelector(".sakura_mo_nav");
     let moTocMenu   = document.querySelector(".mo_toc_panel");
     let moHeader    = document.querySelector(".site-header");
+    let navTransitionHandler = null;
+    let panelTransitionHandler = null;
 
     //动画监听
     function isAnyPanelOpen() {
@@ -1024,14 +1026,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function openMenu(panel, button) {
+
+        if (navTransitionHandler) {
+            moHeader.removeEventListener("transitionend", navTransitionHandler);
+            navTransitionHandler = null;
+            panel.classList.add("open");
+            button.classList.add("open");
+            return;
+        }
+
         // 先给导航栏添加背景
         if (!moHeader.classList.contains("bg")) {
             moHeader.classList.add("bg");
             button.classList.add("open");
-            let navTransitionHandler = function(e) {
+            navTransitionHandler = function(e) {
                 if (e.propertyName === "background-color") {
                     panel.classList.add("open");
                     moHeader.removeEventListener("transitionend", navTransitionHandler);
+                    navTransitionHandler = null;
                 }
             };
             moHeader.addEventListener("transitionend", navTransitionHandler);
@@ -1043,17 +1055,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function closeMenu(panel, button) {
-        // 先关闭菜单
+
+        if (panelTransitionHandler) {
+            panel.removeEventListener("transitionend", panelTransitionHandler);
+            panelTransitionHandler = null;
+            if (!isAnyPanelOpen()) {
+                moHeader.classList.remove("bg");
+            }
+            return;
+        }
+
         panel.classList.remove("open");
         button.classList.remove("open");
     
-        let panelTransitionHandler = function(e) {
+        panelTransitionHandler = function(e) {
             if (e.propertyName === "max-height") {
                 // 所有面板都关闭后才撤销导航栏背景
                 if (!isAnyPanelOpen()) {
                     moHeader.classList.remove("bg");
                 }
                 panel.removeEventListener("transitionend", panelTransitionHandler);
+                panelTransitionHandler = null;
             }
         };
         panel.addEventListener("transitionend", panelTransitionHandler);
@@ -1116,12 +1138,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 点击选项关闭
     document.querySelectorAll(".sakura_mo_nav a, .mo_toc_panel a").forEach(link => {
         link.addEventListener("click", () => {
-            if (moNavMenu.classList.contains("open")) {
                 closeMenu(moNavMenu, moNavButton);
-            }
-            if (moTocMenu.classList.contains("open")) {
                 closeMenu(moTocMenu, moTocButton);
-            }
         });
     });
 
@@ -1169,6 +1187,17 @@ document.addEventListener("DOMContentLoaded", () => {
             if (scrollTop > scrollThreshold) {
                 if (scrollTop > lastScrollTop) {
                     // 向下滚动
+                    if (navTransitionHandler) {
+                        moHeader.removeEventListener("transitionend", navTransitionHandler);
+                        navTransitionHandler = null;
+                    }
+
+                    if (panelTransitionHandler) {
+                        moNavMenu.removeEventListener("transitionend", panelTransitionHandler);
+                        moTocMenu.removeEventListener("transitionend", panelTransitionHandler);
+                        panelTransitionHandler = null;
+                    }
+
                     moHeader.classList.add("mo-hide");
                     moHeader.classList.remove("bg");
                     moNavMenu.classList.remove("open");
