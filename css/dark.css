@@ -662,7 +662,7 @@ body.dark .nav-search-divider {
 body.dark .mobile-nav,
 body.dark .mo_toc_panel .open,
 body.dark .mo_toc_panel{
-  background: rgba(51,51,51, 0.7) !important;
+  background: rgba(51, 51, 51, 0.9) !important;
 }
 
 body.dark .mobile-nav .menu > li ,
@@ -709,10 +709,12 @@ body.dark .top-social .inner img:hover {
 body.dark .no-logged a {
   color: var(--theme-skin-dark, #505050);
 }
+
 body.dark #banner_wave_1,
 body.dark #banner_wave_2 {
   display: none;
 }
+
 body.dark .comment-respond :where(textarea,input):where(:focus,:active){
   border: 1px solid var(--article-theme-highlight,var(--theme-skin-matching)); 
 }
@@ -725,17 +727,21 @@ body.dark .sorry li a,
 body.dark .sorry {
   color: #CCC;
 }
+
 body.dark input[type=button],
 body.dark input[type=reset],
 body.dark input[type=submit] {
   box-shadow: none;
 }
+
 body.dark::-webkit-scrollbar-thumb {
   background-color: #eee;
 }
+
 body.dark::-webkit-scrollbar-track {
   background-color: var(--theme-skin);
 }
+
 @media screen and (min-width: 900px) {
   body.dark .bangumi-item:hover img {
     filter: brightness(0.8) blur(3px);

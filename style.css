@@ -2650,6 +2650,7 @@ h1.main-title {
   box-sizing: border-box;
   font-weight: var(--global-font-weight);
 }
+
 /*search filter style*/
 #filter-container {
   background-color: var(--theme-skin);
