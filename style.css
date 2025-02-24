@@ -7104,14 +7104,6 @@ a.toc-link {
   }
 }
 
-.mo-toc-button,
-.mo-navbar,
-.mo-nav-button,
-.sakura_mo_nav,
-.mo_toc_panel{
-    display: none;
-}
-
 @media (max-width: 860px) {
   .comments {
     max-width: 100% !important;
