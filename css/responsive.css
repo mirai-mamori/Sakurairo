@@ -39,6 +39,11 @@
     border-bottom: 1.5px solid transparent;
     -webkit-transition: all .6s ease;
     transition: all .6s ease;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    padding: 0 20px;
+    align-items: center;
   }
 
   .site-header.bg,
@@ -58,6 +63,11 @@
     line-height: 75px;
     backdrop-filter: none;
     box-shadow: none;
+    position: relative;
+    padding: 5px;
+    align-items: center;
+    will-change: backdrop-filter;
+    z-index: 1000;
   }
 
   .site-branding a,
@@ -73,10 +83,18 @@
 
   .site-branding img{
       max-width: none;
+      width: auto;
   }
 
   .site-title{
       display: flex !important;
+      color: var(--theme-skin);
+      font-weight: 400;
+      white-space: nowrap;
+      border-radius: 50px;
+      padding: 5px 10px;
+      letter-spacing: 1px;
+      width: auto;
   }
 
   .site-branding:hover,
@@ -97,6 +115,10 @@
 
   .site-title img {
       margin-top: 17px;
+  }
+
+  .site-title-logo {
+    max-height: 35px;
   }
 
   body.dark .site-branding {
