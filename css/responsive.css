@@ -24,6 +24,81 @@
     display: none!important;
   }
 }
+
+@media (max-width: 860px) {
+  /* 导航栏基础样式覆盖 */
+  .site-header {
+    gap: 3px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    border-radius: 0px !important;
+    background: transparent;
+    position: fixed;
+    z-index: 999;
+    border-bottom: 1.5px solid transparent;
+    -webkit-transition: all .6s ease;
+    transition: all .6s ease;
+}
+
+.site-header.bg,
+.site-header:hover {
+    border-bottom: 1.5px solid #FFFFFF;
+    background: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-transition: all .5s ease;
+    transition: border-bottom .5s ease,all .5s ease;
+}
+
+.site-branding {
+    background: transparent;
+    border: 0px;
+    height: 100%;
+    line-height: 75px;
+    backdrop-filter: none;
+    box-shadow: none;
+}
+
+.site-branding a,
+.site-title-logo,
+.site-branding img {
+    display: flex;
+    max-height: 100%;
+    border-radius: 0px;
+    height: 100%;
+    justify-content: center;
+    object-fit: contain;
+}
+
+.site-branding img{
+    max-width: none;
+}
+
+.site-title{
+    display: flex !important;
+}
+
+.site-branding:hover,
+.site-title,
+.site-title:hover {
+    background-color: transparent;
+}
+
+.site-title {
+    font-size: 38px;
+    transition: all 0.4s ease-in-out;
+}
+
+.site-title:hover {
+    color: var(--theme-skin-matching);
+    background-color: transparent;
+}
+
+.site-title img {
+    margin-top: 17px;
+}
+}
 /* 基础样式/位置，max height 0为开关动画 */
 /* 导航栏 */
 .mobile-nav,

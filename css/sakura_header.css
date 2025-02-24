@@ -238,10 +238,4 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover{
         transform: translateX(0%);
         opacity: 1;
     }
-    }
-
-    @media (max-width: 860px) {
-    .site-header {
-        height: 50px;
-    }
 }
