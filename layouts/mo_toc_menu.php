@@ -25,7 +25,7 @@ if (!defined('ABSPATH')) {
   wp_get_current_user();
   if (is_user_logged_in()) {?>
   <div class="mo-user-menu">
-    <div class="user-name">
+    <div class="mo-user-name">
       <span><?php echo $current_user->display_name; ?></span>
     </div>
     <div class="user-menu-option">
@@ -45,7 +45,7 @@ if (!defined('ABSPATH')) {
   ?>
 
     <div class="mo-user-menu">
-      <div class="user-name no-logged">
+      <div class="mo-user-name no-logged">
         <a id="login-link" href="<?= $login_url ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in', 'sakurairo')/*登录*/ ?></a>
         <?php if (get_option('users_can_register')) { ?>
           <a style="font-weight:bold;text-decoration:none" href="<?php echo wp_registration_url() ?>"><?php _e('Register') ?></a>

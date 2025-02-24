@@ -70,7 +70,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
   <div class="mo-nav-button">
       <i class="fa-solid fa-bars"></i>
   </div>
-  <div class="sakura_nav sakura_mo_nav">
+  <div class="sakura_nav mobile-nav">
     <div class="mo-menu-search">
       <form class="search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
           <input class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
