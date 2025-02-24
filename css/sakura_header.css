@@ -189,64 +189,6 @@ nav .menu>li .sub-menu li {
     transform: translateY(-20px);
 }
 
-@media (max-width: 860px) {
-    .nav-search-wrapper,
-    .nav-search-divider,
-    .searchbox.js-toggle-search,
-    .user-menu-wrapper,
-    #bg-next.bg-switch,
-    .header-user-avatar{
-        display: none;
-    }
-
-    .site-header.bg {
-        -webkit-transition: all .2s ease,transform .6s ease;
-        transition: all .2s ease,transform .6s ease;
-    }
-
-    .site-header.mo-hide,
-    .site-header.bg.mo-hide{
-        transform: translateY(-100%);
-        -webkit-transition: all .6s ease,transform .5s ease;
-        transition: all .6s ease,transform .5s ease;
-    }
-
-    .menu-wrapper{
-        display: none!important;
-    }
-
-    .site-branding{
-        display: flex;
-        width: 100%;
-        max-width: 100vw!important;
-        justify-content: center;
-    }
-
-    .mo-nav-button,
-    .mo-toc-button {
-        font-size: 16px;
-        width: 50px;
-        opacity: 1;
-        overflow: hidden;
-        flex: 0 0 auto;
-        display: flex;
-        align-items: center;
-        transition: all .4s ease-in-out;
-        -webkit-transition: all .4s ease-in-out;
-    }
-
-    .mobile-nav.open,
-    .mo_toc_panel.open{
-        max-height: 100vh;
-        -webkit-transition: all .7s ease;
-        transition: all .7s ease;
-    }
-
-    .mobile-nav .sub-menu.open {
-        max-height: 50vh;
-    }
-}
-
 /* 下面是动画和深色模式 */
 body.dark .site-header.bg,
 body.dark .site-header:hover {
