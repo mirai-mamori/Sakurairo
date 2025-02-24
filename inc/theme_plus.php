@@ -134,12 +134,29 @@ if(!function_exists('siren_ajax_comment_err')) {
     }
 }
 // 机器评论验证
-function siren_robot_comment(){
-  if ( !$_POST['no-robot'] && !is_user_logged_in()) {
-     siren_ajax_comment_err('上车请刷卡。<br>Please comfirm you are not a robot.');
+function comment_captcha(){
+  if (empty($_POST)) {
+    return siren_ajax_comment_err(__('You may post nothing','sakurairo'));
   }
+  if (is_user_logged_in()) { //登录后不需要验证
+    return true;
+  }
+  if (!(isset($_POST['captcha']) && !empty(trim($_POST['captcha'])))) {
+      return siren_ajax_comment_err(__('Please fill in the captcha answer','sakurairo'));
+  }
+  if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])) {
+      return siren_ajax_comment_err(__('You should not do that!','sakurairo'));
+  }
+  include_once('inc/classes/Captcha.php');
+  $img = new Sakura\API\Captcha;
+  $check = $img->check_captcha($_POST['captcha'], $_POST['timestamp'], $_POST['id']);
+  if ($check['code'] == 5) {
+      return true;
+  }
+  return siren_ajax_comment_err(__('Please fill in the correct captcha answer','sakurairo'));
 }
-if(iro_opt('not_robot')) add_action('pre_comment_on_post', 'siren_robot_comment');
+if(iro_opt('not_robot')) add_action('pre_comment_on_post', 'comment_captcha');
+
 // 纯英文评论拦截
 function scp_comment_post( $incoming_comment ) {
   // 为什么要拦自己呢？
@@ -442,47 +459,28 @@ function header_user_menu()
   }
 }
 
-/**
- * 移动端侧边栏用户菜单
- *
- * @return void
- */
-function m_user_menu()
-{
-  global $current_user;
-  wp_get_current_user();
-  if (is_user_logged_in()) {?>
-    <div class="m-user-menu">
-      <div class="m-user-name">
-        <span><?php echo $current_user->display_name; ?></span>
-      </div>
-      <div class="m-user-menu-option">
-        <?php if (current_user_can('manage_options')) { ?>
-          <a href="<?php bloginfo('url'); ?>/wp-admin/" target="_blank"><?php _e('Dashboard', 'sakurairo')/*管理中心*/ ?></a>
-          <a href="<?php bloginfo('url'); ?>/wp-admin/post-new.php" target="_blank"><?php _e('New post', 'sakurairo')/*撰写文章*/ ?></a>
-        <?php } ?>
-        <a href="<?php bloginfo('url'); ?>/wp-admin/profile.php" target="_blank"><?php _e('Profile', 'sakurairo')/*个人资料*/ ?></a>
-        <a href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" target="_top" data-no-pjax><?php _e('Sign out', 'sakurairo')/*退出登录*/ ?></a>
-      </div>
-    </div>
-  <?php
-  } else {
-    global $wp;
-    $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(iro_opt('login_urlskip') ? '' : add_query_arg($wp->query_vars, home_url($wp->request)));
-  ?>
-    <div class="m-user-avatar">
-      <div class="m-user-menu">
-        <div class="m-user-name no-logged">
-          <a id="login-link" href="<?= $login_url ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in', 'sakurairo')/*登录*/ ?></a>
-          <?php if (get_option('users_can_register')) { ?>
-            <a style="font-weight:bold;text-decoration:none" href="<?php echo wp_registration_url() ?>"><?php _e('Register') ?></a>
-          <?php } ?>
-        </div>
-      </div>
-    </div>
-  <?php
-  }
+//移动端用户导航栏选项
+class Iro_mo_nav extends Walker_Nav_Menu {
+  function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+    $classes = empty($item->classes) ? [] : (array) $item->classes;
+
+    $allowed_classes = ['menu-item-has-children', 'current-menu-item', 'custom-class'];
+    $filtered_classes = array_intersect($classes, $allowed_classes);
+
+    $class_names = join(' ', array_filter($filtered_classes));
+    $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+
+    $output .= '<li' . $class_names . '>';
+
+    $output .= '<a href="' . esc_url($item->url) . '">' . apply_filters('the_title', $item->title, $item->ID) . '</a>';
+
+    if (in_array('menu-item-has-children', $filtered_classes)) {
+        $output .= '<span class="open_submenu" style="float: right;"><i class="fa-solid fa-play"></i></span>';
+    }
 }
+
+}
+
 
 /*
  * 获取相邻文章缩略图

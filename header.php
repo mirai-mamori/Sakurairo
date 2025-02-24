@@ -60,7 +60,7 @@ header('X-Frame-Options: SAMEORIGIN');
     <meta name="theme-color">
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.7.1/css/all.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" type="text/css" media="all" />
     <?php
     if (iro_opt('iro_meta')) {
         $keywords = iro_opt('iro_meta_keywords');
@@ -91,7 +91,7 @@ header('X-Frame-Options: SAMEORIGIN');
     if (is_home()) {
         global $core_lib_basepath;
     ?>
-        <link id="entry-content-css" rel="prefetch" as="style" href="<?= esc_url($core_lib_basepath . '/css/theme/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css?ver=' . IRO_VERSION) ?>" />
+        <link id="entry-content-css" rel="prefetch" as="style" href="<?= esc_url($core_lib_basepath . '/css/content-style/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css?ver=' . IRO_VERSION) ?>" />
         <link rel="prefetch" as="script" href="<?= esc_url($core_lib_basepath . '/js/page.js?ver=' . IRO_VERSION) ?>" />
     <?php
     }
@@ -181,7 +181,33 @@ header('X-Frame-Options: SAMEORIGIN');
         get_template_part('layouts/' . 'sakura_header');
      } else {
     ?>
+
+    <link rel="stylesheet" 
+            href="<?php echo get_template_directory_uri() . '/css/sakura_header.css'; ?>"
+            media="(max-width: 860px)"
+    >
+    
     <header class="site-header no-select" role="banner">
+        <?php //移动端结构开始 ?>
+        <div class="mo-nav-button">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="sakura_nav sakura_mo_nav">
+        <div class="mo-menu-search">
+            <form class="search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
+                <input class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
+            </form>
+        </div>
+        <?php wp_nav_menu([
+            'depth' => 2, 
+            'theme_location' => 'primary', 
+            'container' => 'div', 
+            'container_class' => 'mo_nav_item',
+            'walker' => new Iro_mo_nav(),
+            ]); ?>
+        </div>
+        <?php //移动端结构结束 ?>
+
         <?php
         // Logo Section - Only process if logo or text is configured
         if (iro_opt('iro_logo') || !empty($nav_text_logo['text'])): ?>
@@ -248,6 +274,12 @@ header('X-Frame-Options: SAMEORIGIN');
             <?php endif; ?>
         </div>
 
+        <div class="mo-toc-button">
+            <i class="fa-solid fa-bookmark"></i>
+        </div>
+
+        <?php get_template_part('layouts/mo_toc_menu');?> 
+
         <!-- User Menu Section -->
         <?php if ($show_user_avatar): ?>
             <div class="user-menu-wrapper">
@@ -260,11 +292,6 @@ header('X-Frame-Options: SAMEORIGIN');
      }
      ?>
      
-    <div class="openNav no-select">
-        <div class="iconflat no-select" style="padding: 30px;">
-            <div class="icon"></div>
-        </div>
-    </div><!-- m-nav-bar -->
     <section id="main-container">
         <?php
         if (iro_opt('cover_switch')) {

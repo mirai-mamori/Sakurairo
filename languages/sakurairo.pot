@@ -1127,3 +1127,18 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "友情链接模版"
 msgstr ""
+
+msgid "Playtime"
+msgstr ""
+
+msgid "Last Played"
+msgstr ""
+
+msgid "Not Played Yet"
+msgstr ""
+
+msgid "minute"
+msgstr ""
+
+msgid "hour"
+msgstr ""

@@ -962,8 +962,9 @@ const BrowserDetect = {
 }
 };//iro_nav function
 
-//防止子菜单量子叠加
 document.addEventListener("DOMContentLoaded", () => {
+
+    //防止子菜单量子叠加
     const menuItems = document.querySelectorAll('nav .menu > li');
     let activeSubMenu = null;
 
@@ -984,10 +985,7 @@ document.addEventListener("DOMContentLoaded", () => {
             activeSubMenu = subMenu;
         });
     });
-});
 
-//子菜单动态偏移对齐
-document.addEventListener("DOMContentLoaded", function () {
     const subMenus = document.querySelectorAll("nav .menu > li .sub-menu");
 
     subMenus.forEach(subMenu => {
@@ -1012,4 +1010,248 @@ document.addEventListener("DOMContentLoaded", function () {
             subMenu.style.transform = BasicSubMenuStyle;
         });
     });
+
+    //移动端菜单开关
+    let moNavButton = document.querySelector(".mo-nav-button");
+    let moTocButton = document.querySelector(".mo-toc-button");
+    let moNavMenu   = document.querySelector(".sakura_mo_nav");
+    let moTocMenu   = document.querySelector(".mo_toc_panel");
+    let moHeader    = document.querySelector(".site-header");
+    let navTransitionHandler = null;
+    let panelTransitionHandler = null;
+
+    //动画监听
+    function isAnyPanelOpen() {
+        return moNavMenu.classList.contains("open") || moTocMenu.classList.contains("open");
+    }
+
+    function openMenu(panel, button) {
+
+        if (navTransitionHandler) {
+            moHeader.removeEventListener("transitionend", navTransitionHandler);
+            navTransitionHandler = null;
+            panel.classList.add("open");
+            button.classList.add("open");
+            moHeader.classList.add("bg");
+            return;
+        }
+
+        // 先给导航栏添加背景
+        if (!moHeader.classList.contains("bg")) {
+            moHeader.classList.add("bg");
+            button.classList.add("open");
+            navTransitionHandler = function(e) {
+                if (e.propertyName === "background-color") {
+                    panel.classList.add("open");
+                    moHeader.removeEventListener("transitionend", navTransitionHandler);
+                    navTransitionHandler = null;
+                }
+            };
+            moHeader.addEventListener("transitionend", navTransitionHandler);
+        } else {
+            // 已有背景
+            panel.classList.add("open");
+            button.classList.add("open");
+        }
+    }
+
+    function closeMenu(panel, button) {
+
+        if (panelTransitionHandler) {
+            panel.removeEventListener("transitionend", panelTransitionHandler);
+            panelTransitionHandler = null;
+            if (!isAnyPanelOpen()) {
+                moHeader.classList.remove("bg");
+            }
+            return;
+        }
+
+        panel.classList.remove("open");
+        button.classList.remove("open");
+    
+        panelTransitionHandler = function(e) {
+            if (e.propertyName === "max-height") {
+                // 所有面板都关闭后才撤销导航栏背景
+                if (!isAnyPanelOpen()) {
+                    moHeader.classList.remove("bg");
+                }
+                panel.removeEventListener("transitionend", panelTransitionHandler);
+                panelTransitionHandler = null;
+            }
+        };
+        panel.addEventListener("transitionend", panelTransitionHandler);
+    }
+
+
+    // 面板
+    moNavButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+
+        if (moTocMenu.classList.contains("open")) {
+            closeMenu(moTocMenu, moTocButton);
+        }
+        if (moNavMenu.classList.contains("open")) {
+            closeMenu(moNavMenu, moNavButton);
+        } else {
+            openMenu(moNavMenu, moNavButton);
+        }
+    });
+
+    moTocButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+
+        if (moNavMenu.classList.contains("open")) {
+            closeMenu(moNavMenu, moNavButton);
+        }
+        if (moTocMenu.classList.contains("open")) {
+            closeMenu(moTocMenu, moTocButton);
+        } else {
+            openMenu(moTocMenu, moTocButton);
+        }
+    });
+
+    //二级菜单
+    document.querySelectorAll(".open_submenu").forEach(function (toggle) {
+        toggle.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            let parentLi = this.closest("li");
+            let currentSubMenu = parentLi.querySelector(".sub-menu");
+
+            //互斥
+            document.querySelectorAll(".sub-menu.open").forEach(otherSubMenu => {
+                if (otherSubMenu !== currentSubMenu) {
+                    otherSubMenu.classList.remove("open");
+                    let otherToggle = otherSubMenu.closest("li").querySelector(".open_submenu");
+                    if (otherToggle) {
+                        otherToggle.classList.remove("open");
+                    }
+                }
+            });
+
+            if (currentSubMenu) {
+                currentSubMenu.classList.toggle("open");
+                this.classList.toggle("open");
+            }
+        });
+    });
+
+    // 点击选项关闭
+    document.querySelectorAll(".sakura_mo_nav a, .mo_toc_panel a").forEach(link => {
+        link.addEventListener("click", () => {
+                closeMenu(moNavMenu, moNavButton);
+                closeMenu(moTocMenu, moTocButton);
+        });
+    });
+
+    // 点击空白处关闭
+    document.addEventListener("click", function (event) {
+        let navButton = document.querySelector(".mo-nav-button");
+        let tocButton = document.querySelector(".mo-toc-button");
+
+        if (
+            moNavMenu.classList.contains("open") &&
+            !moNavMenu.contains(event.target) &&
+            !navButton.contains(event.target)
+        ) {
+            closeMenu(moNavMenu, navButton);
+        }
+
+        if (
+            moTocMenu.classList.contains("open") &&
+            !moTocMenu.contains(event.target) &&
+            !tocButton.contains(event.target)
+        ) {
+            closeMenu(moTocMenu, tocButton);
+        }
+
+        if (
+            !moNavMenu.contains(event.target) &&
+            !moTocMenu.contains(event.target) &&
+            !navButton.contains(event.target) &&
+            !tocButton.contains(event.target)
+        ) {
+            moNavMenu.classList.remove("open");
+            moTocMenu.classList.remove("open");
+            navButton.classList.remove("open");
+            tocButton.classList.remove("open");
+            moHeader.removeEventListener("transitionend", navTransitionHandler);
+            moNavMenu.removeEventListener("transitionend", panelTransitionHandler);
+            moTocMenu.removeEventListener("transitionend", panelTransitionHandler);
+            navTransitionHandler = null;
+            panelTransitionHandler = null;
+        }
+
+        // 关闭所有展开的二级菜单
+        document.querySelectorAll(".sub-menu.open").forEach(function (subMenu) {
+            if (!subMenu.contains(event.target)) {
+                subMenu.classList.remove("open");
+                let submenuToggle = subMenu.closest("li").querySelector(".open_submenu");
+                if (submenuToggle) {
+                    submenuToggle.classList.remove("open");
+                }
+            }
+        });
+    });
+
+    let lastScrollTop = 0;
+    // 阈值
+    const scrollThreshold = document.documentElement.scrollHeight * 0.01;
+    
+
+    window.addEventListener("scroll", function () {
+        if (window.innerWidth < 860) {
+            let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+            if (scrollTop <= 0) {
+                if (!isAnyPanelOpen()) {
+                    moHeader.classList.remove("bg");
+                }
+            }
+
+            if (scrollTop > scrollThreshold) {
+                if (scrollTop > lastScrollTop) {
+                    // 向下滚动
+                    if (navTransitionHandler) {
+                        moHeader.removeEventListener("transitionend", navTransitionHandler);
+                        navTransitionHandler = null;
+                    }
+
+                    if (panelTransitionHandler) {
+                        moNavMenu.removeEventListener("transitionend", panelTransitionHandler);
+                        moTocMenu.removeEventListener("transitionend", panelTransitionHandler);
+                        panelTransitionHandler = null;
+                    }
+
+                    moHeader.classList.add("mo-hide");
+                    moHeader.classList.remove("bg");
+                    moNavMenu.classList.remove("open");
+                    moNavButton.classList.remove("open");
+                    moTocMenu.classList.remove("open");
+                    moTocButton.classList.remove("open");
+
+                    // 同时关闭所有展开的二级菜单
+                    document.querySelectorAll(".sakura_mo_nav .sub-menu.open").forEach(function (subMenu) {
+                        subMenu.classList.remove("open");
+                    });
+                    document.querySelectorAll(".sakura_mo_nav .open_submenu.open").forEach(function (toggle) {
+                        toggle.classList.remove("open");
+                    });
+                } else {
+                    // 向上滚动
+                    moHeader.classList.remove("mo-hide");
+                    moHeader.classList.add("bg");
+                }
+            } else {
+                // 滚动距离小于阈值
+                moHeader.classList.remove("mo-hide");
+            }
+            if (scrollTop <= 0 && !isAnyPanelOpen()) {
+                moHeader.classList.remove("bg");
+            }
+            
+            lastScrollTop = scrollTop;
+        }
+    });
+    moHeader.classList.remove("bg");
 });

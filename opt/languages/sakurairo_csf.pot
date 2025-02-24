@@ -4039,3 +4039,33 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
+
+msgid "SteamLibrary Template Settings"
+msgstr ""
+
+msgid "Steam Account 64ID"
+msgstr ""
+
+msgid "Fill in your account 64ID, e.g. https://steamcommunity.com/profiles/76561199029689067/, just the number part \"76561199029689067\""
+msgstr ""
+
+msgid "Steam API Key"
+msgstr "Steam API Key"
+
+msgid "Apply at https://steamcommunity.com/dev/apikey"
+msgstr ""
+
+msgid "Game Cover CDN"
+msgstr ""
+
+msgid "Select based on your user region"
+msgstr ""
+
+msgid "Game Store Link"
+msgstr ""
+
+msgid "Select the game store link to jump to"
+msgstr ""
+
+msgid "XiaoHeiHe"
+msgstr ""
