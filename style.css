@@ -2686,15 +2686,6 @@ h1.main-title {
   text-align: right;
 }
 
-@media (max-width: 860px) {
-#filter-container,
-.filter-count,
-#search-filter-form,
-#search-filter-form label,
-#filter-toggle{
-  white-space: nowrap;
-  font-size: 0.7rem;
-}}
 /*search filter style end*/
 .s-search input {
   font-size: 1rem;

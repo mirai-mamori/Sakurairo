@@ -657,6 +657,15 @@
     display: none;
   }
 
+  #filter-container,
+  .filter-count,
+  #search-filter-form,
+  #search-filter-form label,
+  #filter-toggle{
+    white-space: nowrap;
+    font-size: 0.7rem;
+  }
+
   h1.entry-title {
     font-size: 18px;
   }
