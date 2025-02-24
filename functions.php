@@ -2599,7 +2599,7 @@ function register_shortcodes() {
     
         //输出内容
         $ghcard = '<div class="ghcard">';
-        $ghcard .= '<a href="https://github.com/' . esc_attr($path) . '">';
+        $ghcard .= '<a href="https://github.com/' . esc_attr($path) . '" target="_blank" rel="noopener noreferrer">';
         $ghcard .= $card_content;
         $ghcard .= '</a>';
         $ghcard .= '</div>';
