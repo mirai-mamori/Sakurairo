@@ -277,9 +277,11 @@ blockquote {
   quotes: "" "";
 }
 
-.wp-block-quote,
+.wp-block-quote blockquote{
+  padding: 15px 30px;
+}
 .comments blockquote{
-  padding: 15px 30px !important;
+  padding: 30px 60px;
 }
 
 .wp-block-quote li,
