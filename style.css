@@ -3570,6 +3570,11 @@ iframe {
   padding-bottom: 10px;
 }
 
+.toc-container li,
+.toc-container ol{
+  cursor: auto!important;
+}
+
 .toc {
   position: sticky;
   top: 12%;
