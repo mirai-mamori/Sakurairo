@@ -464,7 +464,16 @@ function sakura_scripts()
     global $core_lib_basepath;
     global $shared_lib_basepath;
 
-    wp_enqueue_style('saukra-css', $core_lib_basepath . '/style.css', array(), IRO_VERSION);
+    wp_enqueue_style('iro-css', $core_lib_basepath . '/style.css', array(), IRO_VERSION);
+
+    // Load dark mode stylesheet
+    wp_enqueue_style('iro-dark', $core_lib_basepath . '/css/dark.css', array('iro-css'), IRO_VERSION);
+
+    // Load responsive stylesheet
+    wp_enqueue_style('iro-responsive', $core_lib_basepath . '/css/responsive.css', array('iro-css'), IRO_VERSION);
+
+    // Load animation stylesheet
+    wp_enqueue_style('iro-animation', $core_lib_basepath . '/css/animation.css', array('iro-css'), IRO_VERSION);
 
     if(!is_404()){
     wp_enqueue_script('app', $core_lib_basepath . '/js/app.js', array('polyfills'), IRO_VERSION, true);
@@ -472,7 +481,7 @@ function sakura_scripts()
         //非主页的资源
         wp_enqueue_style(
             'entry-content',
-            $core_lib_basepath . '/css/theme/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css',
+            $core_lib_basepath . '/css/content-style/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css',
             array(),
             IRO_VERSION
         );
@@ -2590,7 +2599,7 @@ function register_shortcodes() {
     
         //输出内容
         $ghcard = '<div class="ghcard">';
-        $ghcard .= '<a href="https://github.com/' . esc_attr($path) . '">';
+        $ghcard .= '<a href="https://github.com/' . esc_attr($path) . '" target="_blank" rel="noopener noreferrer">';
         $ghcard .= $card_content;
         $ghcard .= '</a>';
         $ghcard .= '</div>';

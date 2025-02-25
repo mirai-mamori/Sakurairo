@@ -4592,6 +4592,36 @@ msgstr ""
 msgid "https://github.com/Fuukei"
 msgstr ""
 
+msgid "SteamLibrary Template Settings"
+msgstr "Steamライブラリテンプレート設定"
+
+msgid "Steam Account 64ID"
+msgstr "Steamアカウント64ID"
+
+msgid "Fill in your account 64ID, e.g. https://steamcommunity.com/profiles/76561199029689067/, just the number part \"76561199029689067\""
+msgstr "アカウントID を入力してください。例：https://steamcommunity.com/profiles/76561199029689067/、数字部分 \"76561199029689067\" のみを入力してください"
+
+msgid "Steam API Key"
+msgstr "Steam APIキー"
+
+msgid "Apply at https://steamcommunity.com/dev/apikey"
+msgstr "申請リンク https://steamcommunity.com/dev/apikey"
+
+msgid "Game Cover CDN"
+msgstr "ゲームカバーCDN"
+
+msgid "Select based on your user region"
+msgstr "ユーザーの地域に基づいて選択してください"
+
+msgid "Game Store Link"
+msgstr "ゲームストアリンク"
+
+msgid "Select the game store link to jump to"
+msgstr "移動するゲームストアリンクを選択してください"
+
+msgid "XiaoHeiHe"
+msgstr "小黑盒（シャオヘイヘー）"
+
 #~ msgid "Customized Social Network Ⅰ Title"
 #~ msgstr "カスタマイズされたソーシャルネットワークII."
 

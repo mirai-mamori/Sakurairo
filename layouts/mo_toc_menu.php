@@ -24,8 +24,8 @@ if (!defined('ABSPATH')) {
   global $current_user;
   wp_get_current_user();
   if (is_user_logged_in()) {?>
-  <div class="user-menu">
-    <div class="user-name">
+  <div class="mo-user-menu">
+    <div class="mo-user-name">
       <span><?php echo $current_user->display_name; ?></span>
     </div>
     <div class="user-menu-option">
@@ -45,7 +45,7 @@ if (!defined('ABSPATH')) {
   ?>
 
     <div class="mo-user-menu">
-      <div class="user-name no-logged">
+      <div class="mo-user-name no-logged">
         <a id="login-link" href="<?= $login_url ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in', 'sakurairo')/*登录*/ ?></a>
         <?php if (get_option('users_can_register')) { ?>
           <a style="font-weight:bold;text-decoration:none" href="<?php echo wp_registration_url() ?>"><?php _e('Register') ?></a>
@@ -54,12 +54,6 @@ if (!defined('ABSPATH')) {
     </div>
 
   <?php } ?>
-
-  <div class="mo-menu-search">
-    <form class="search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
-      <input class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
-    </form>
-  </div>
 
   <?php get_template_part('layouts/sidebox'); //加载目录容器 ?> 
 

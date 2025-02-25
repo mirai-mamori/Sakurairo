@@ -989,3 +989,18 @@ msgstr "文章模版"
 #. Template Name of the plugin/theme
 msgid "友情链接模版"
 msgstr "友情連結模版"
+
+msgid "Playtime"
+msgstr "遊玩時長"
+
+msgid "Last Played"
+msgstr "上次啟動"
+
+msgid "Not Played Yet"
+msgstr "尚未遊玩"
+
+msgid "minute"
+msgstr "分鐘"
+
+msgid "hour"
+msgstr "小時"

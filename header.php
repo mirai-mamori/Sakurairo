@@ -91,7 +91,7 @@ header('X-Frame-Options: SAMEORIGIN');
     if (is_home()) {
         global $core_lib_basepath;
     ?>
-        <link id="entry-content-css" rel="prefetch" as="style" href="<?= esc_url($core_lib_basepath . '/css/theme/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css?ver=' . IRO_VERSION) ?>" />
+        <link id="entry-content-css" rel="prefetch" as="style" href="<?= esc_url($core_lib_basepath . '/css/content-style/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css?ver=' . IRO_VERSION) ?>" />
         <link rel="prefetch" as="script" href="<?= esc_url($core_lib_basepath . '/js/page.js?ver=' . IRO_VERSION) ?>" />
     <?php
     }
@@ -181,22 +181,26 @@ header('X-Frame-Options: SAMEORIGIN');
         get_template_part('layouts/' . 'sakura_header');
      } else {
     ?>
-
-    <link rel="stylesheet" 
-            href="<?php echo get_template_directory_uri() . '/css/sakura_header.css'; ?>"
-            media="(max-width: 860px)"
-    >
     
     <header class="site-header no-select" role="banner">
         <?php //移动端结构开始 ?>
-        <div class="mo-nav-button"><span></span><span></span><span></span></div>
+        <div class="mo-nav-button">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="mobile-nav">
+        <div class="mo-menu-search">
+            <form class="search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
+                <input class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
+            </form>
+        </div>
         <?php wp_nav_menu([
             'depth' => 2, 
             'theme_location' => 'primary', 
             'container' => 'div', 
-            'container_class' => 'sakura_nav sakura_mo_nav',
+            'container_class' => 'mo_nav_item',
             'walker' => new Iro_mo_nav(),
             ]); ?>
+        </div>
         <?php //移动端结构结束 ?>
 
         <?php
@@ -265,7 +269,7 @@ header('X-Frame-Options: SAMEORIGIN');
             <?php endif; ?>
         </div>
 
-        <div class="mo-toc-menu">
+        <div class="mo-toc-button">
             <i class="fa-solid fa-bookmark"></i>
         </div>
 

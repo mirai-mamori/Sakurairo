@@ -3072,6 +3072,52 @@ $prefix = 'iro_options';
         ),
         'default'     => 'ASC'
       ),
+      
+      array(
+        'type' => 'subheading',
+        'content' => __('SteamLibrary Template Settings','sakurairo_csf'),
+      ),
+      
+      array(
+        'id' => 'steam_id',
+        'type' => 'text',
+        'title' => __('Steam Account 64ID','sakurairo_csf'),
+        'desc' => __('Fill in your account 64ID, e.g. https://steamcommunity.com/profiles/76561199029689067/, just the number part "76561199029689067"','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'steam_key',
+        'type' => 'text',
+        'title' => __('Steam API Key','sakurairo_csf'),
+        'desc' => __('Apply at https://steamcommunity.com/dev/apikey','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'steam_covercdn',
+        'type' => 'select',
+        'title' => __('Game Cover CDN','sakurairo_csf'),
+        'desc' => __('Select based on your user region','sakurairo_csf'),
+        'options' => array(
+          'steamchina' => __('Steam China','sakurairo_csf'),
+          'steamakamai'  => __('Steam akamai','sakurairo_csf'),
+          'steamfastly'  => __('Steam fastly','sakurairo_csf'),
+          'steamcloudflare'  => __('Steam cloudflare','sakurairo_csf'),
+        ),
+        'default'     => 'steamakamai'
+      ),
+
+      array(
+        'id' => 'steam_store',
+        'type' => 'select',
+        'title' => __('Game Store Link','sakurairo_csf'),
+        'desc' => __('Select the game store link to jump to','sakurairo_csf'),
+        'options' => array(
+          'steam' => __('Steam','sakurairo_csf'),
+          'xiaoheihe'  => __('XiaoHeiHe','sakurairo_csf'),
+          'steamdb'  => __('SteamDB','sakurairo_csf'),
+        ),
+        'default'     => 'steam'
+      ),
 
       array(
         'type' => 'subheading',

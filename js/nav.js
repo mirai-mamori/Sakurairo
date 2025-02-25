@@ -959,16 +959,169 @@ const BrowserDetect = {
     isWebKit: () => {
         return 'WebkitAppearance' in document.documentElement.style;
     }
-}
-};//iro_nav function
+};
+
+// 添加事件监听器管理器
+const EventManager = {
+    listeners: new Map(),
+    
+    add(element, event, handler, options = false) {
+        if (!element) return;
+        
+        if (!this.listeners.has(element)) {
+            this.listeners.set(element, new Map());
+        }
+        
+        const elementListeners = this.listeners.get(element);
+        if (!elementListeners.has(event)) {
+            elementListeners.set(event, new Set());
+        }
+        
+        elementListeners.get(event).add(handler);
+        element.addEventListener(event, handler, options);
+    },
+    
+    remove(element, event, handler) {
+        if (!element || !this.listeners.has(element)) return;
+        
+        const elementListeners = this.listeners.get(element);
+        if (!elementListeners.has(event)) return;
+        
+        if (handler) {
+            elementListeners.get(event).delete(handler);
+            element.removeEventListener(event, handler);
+        } else {
+            elementListeners.get(event).forEach(h => {
+                element.removeEventListener(event, h);
+            });
+            elementListeners.delete(event);
+        }
+        
+        if (elementListeners.size === 0) {
+            this.listeners.delete(element);
+        }
+    },
+    
+    removeAll() {
+        this.listeners.forEach((elementListeners, element) => {
+            elementListeners.forEach((handlers, event) => {
+                handlers.forEach(handler => {
+                    element.removeEventListener(event, handler);
+                });
+            });
+        });
+        this.listeners.clear();
+    }
+};
+
+// 添加节流函数
+const throttle = (func, limit) => {
+    let inThrottle;
+    return function(...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+};
+
+// 添加防抖函数
+const debounce = (func, wait) => {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
 
 document.addEventListener("DOMContentLoaded", () => {
+    // 缓存常用DOM元素
+    const cache = {
+        menuItems: document.querySelectorAll('nav .menu > li'),
+        subMenus: document.querySelectorAll("nav .menu > li .sub-menu"),
+        moNavButton: document.querySelector(".mo-nav-button"),
+        moTocButton: document.querySelector(".mo-toc-button"),
+        moNavMenu: document.querySelector(".mobile-nav"),
+        moTocMenu: document.querySelector(".mo_toc_panel"),
+        moHeader: document.querySelector(".site-header")
+    };
+
+    let activeSubMenu = null;
+    let navTransitionHandler = null;
+    let panelTransitionHandler = null;
+
+    // 优化的滚动处理函数
+    const throttledScrollHandler = throttle(() => {
+        if (window.innerWidth >= 860) return;
+
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollThreshold = document.documentElement.scrollHeight * 0.01;
+
+        requestAnimationFrame(() => {
+            if (scrollTop <= 0 && !isAnyPanelOpen()) {
+                cache.moHeader.classList.remove("bg");
+                return;
+            }
+
+            if (scrollTop > scrollThreshold) {
+                if (scrollTop > lastScrollTop) {
+                    // 向下滚动时清理事件监听器
+                    cleanupTransitionHandlers();
+                    closeAllMenus();
+                    cache.moHeader.classList.add("mo-hide");
+                    cache.moHeader.classList.remove("bg");
+                } else {
+                    // 向上滚动
+                    cache.moHeader.classList.remove("mo-hide");
+                    cache.moHeader.classList.add("bg");
+                }
+            } else {
+                cache.moHeader.classList.remove("mo-hide");
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    }, 100);
+
+    // 优化的清理函数
+    const cleanupTransitionHandlers = () => {
+        if (navTransitionHandler) {
+            cache.moHeader.removeEventListener("transitionend", navTransitionHandler);
+            navTransitionHandler = null;
+        }
+        if (panelTransitionHandler) {
+            cache.moNavMenu.removeEventListener("transitionend", panelTransitionHandler);
+            cache.moTocMenu.removeEventListener("transitionend", panelTransitionHandler);
+            panelTransitionHandler = null;
+        }
+    };
+
+    // 优化的关闭所有菜单函数
+    const closeAllMenus = () => {
+        cache.moNavMenu.classList.remove("open");
+        cache.moTocMenu.classList.remove("open");
+        cache.moNavButton.classList.remove("open");
+        cache.moTocButton.classList.remove("open");
+        document.querySelectorAll(".mobile-nav .sub-menu.open, .mobile-nav .open_submenu.open")
+            .forEach(el => el.classList.remove("open"));
+    };
+
+    // 事件监听器注册
+    EventManager.add(window, "scroll", throttledScrollHandler, { passive: true });
+    EventManager.add(window, "resize", debounce(() => {
+        if (window.innerWidth >= 860) {
+            cleanupTransitionHandlers();
+            closeAllMenus();
+        }
+    }, 150), { passive: true });
 
     //防止子菜单量子叠加
-    const menuItems = document.querySelectorAll('nav .menu > li');
-    let activeSubMenu = null;
-
-    menuItems.forEach(item => {
+    cache.menuItems.forEach(item => {
         const subMenu = item.querySelector('.sub-menu');
 
         if (!subMenu) return;
@@ -986,9 +1139,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    const subMenus = document.querySelectorAll("nav .menu > li .sub-menu");
-
-    subMenus.forEach(subMenu => {
+    cache.subMenus.forEach(subMenu => {
         const MainMenu = subMenu.parentElement;
 
         // 获取渲染后的宽度
@@ -1012,60 +1163,147 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     //移动端菜单开关
-    let moNavButton = document.querySelector(".mo-nav-button");
-    let moTocButton = document.querySelector(".mo-toc-menu");
-    let moNavMenu   = document.querySelector(".sakura_mo_nav");
-    let moTocMenu   = document.querySelector(".mo_toc_panel");
-    let moHeader    = document.querySelector(".site-header");
+    let moNavButton = cache.moNavButton;
+    let moTocButton = cache.moTocButton;
+    let moNavMenu   = cache.moNavMenu;
+    let moTocMenu   = cache.moTocMenu;
+    let moHeader    = cache.moHeader;
+
+    //动画监听
+    function isAnyPanelOpen() {
+        return moNavMenu.classList.contains("open") || moTocMenu.classList.contains("open");
+    }
+
+    function openMenu(panel, button) {
+
+        if (navTransitionHandler) {
+            moHeader.removeEventListener("transitionend", navTransitionHandler);
+            navTransitionHandler = null;
+            panel.classList.add("open");
+            button.classList.add("open");
+            moHeader.classList.add("bg");
+            return;
+        }
+
+        // 先给导航栏添加背景
+        if (!moHeader.classList.contains("bg")) {
+            moHeader.classList.add("bg");
+            button.classList.add("open");
+            navTransitionHandler = function(e) {
+                if (e.propertyName === "background-color") {
+                    panel.classList.add("open");
+                    moHeader.removeEventListener("transitionend", navTransitionHandler);
+                    navTransitionHandler = null;
+                }
+            };
+            moHeader.addEventListener("transitionend", navTransitionHandler);
+        } else {
+            // 已有背景
+            panel.classList.add("open");
+            button.classList.add("open");
+        }
+    }
+
+    function closeMenu(panel, button) {
+
+        if (panelTransitionHandler) {
+            panel.removeEventListener("transitionend", panelTransitionHandler);
+            panelTransitionHandler = null;
+            if (!isAnyPanelOpen()) {
+                moHeader.classList.remove("bg");
+            }
+            return;
+        }
+
+        panel.classList.remove("open");
+        button.classList.remove("open");
+    
+        panelTransitionHandler = function(e) {
+            if (e.propertyName === "max-height") {
+                // 所有面板都关闭后才撤销导航栏背景
+                if (!isAnyPanelOpen()) {
+                    moHeader.classList.remove("bg");
+                }
+                panel.removeEventListener("transitionend", panelTransitionHandler);
+                panelTransitionHandler = null;
+            }
+        };
+        panel.addEventListener("transitionend", panelTransitionHandler);
+    }
+
 
     // 面板
     moNavButton.addEventListener("click", function (event) {
         event.stopPropagation();
 
         if (moTocMenu.classList.contains("open")) {
-            moTocMenu.classList.remove("open");
-            moTocButton.classList.remove("open");
+            closeMenu(moTocMenu, moTocButton);
         }
-        moNavMenu.classList.toggle("open");
-        this.classList.toggle("open");
+        if (moNavMenu.classList.contains("open")) {
+            closeMenu(moNavMenu, moNavButton);
+        } else {
+            openMenu(moNavMenu, moNavButton);
+        }
     });
 
     moTocButton.addEventListener("click", function (event) {
         event.stopPropagation();
 
         if (moNavMenu.classList.contains("open")) {
-            moNavMenu.classList.remove("open");
-            moNavButton.classList.remove("open");
+            closeMenu(moNavMenu, moNavButton);
         }
-        moTocMenu.classList.toggle("open");
-        this.classList.toggle("open");
+        if (moTocMenu.classList.contains("open")) {
+            closeMenu(moTocMenu, moTocButton);
+        } else {
+            openMenu(moTocMenu, moTocButton);
+        }
     });
 
+    //二级菜单
     document.querySelectorAll(".open_submenu").forEach(function (toggle) {
         toggle.addEventListener("click", function (event) {
             event.stopPropagation();
 
             let parentLi = this.closest("li");
-            let subMenu = parentLi.querySelector(".sub-menu");
-            if (subMenu) {
-                subMenu.classList.toggle("open");
+            let currentSubMenu = parentLi.querySelector(".sub-menu");
+
+            //互斥
+            document.querySelectorAll(".sub-menu.open").forEach(otherSubMenu => {
+                if (otherSubMenu !== currentSubMenu) {
+                    otherSubMenu.classList.remove("open");
+                    let otherToggle = otherSubMenu.closest("li").querySelector(".open_submenu");
+                    if (otherToggle) {
+                        otherToggle.classList.remove("open");
+                    }
+                }
+            });
+
+            if (currentSubMenu) {
+                currentSubMenu.classList.toggle("open");
                 this.classList.toggle("open");
             }
+        });
+    });
+
+    // 点击选项关闭
+    document.querySelectorAll(".mobile-nav a, .mo_toc_panel a").forEach(link => {
+        link.addEventListener("click", () => {
+                closeMenu(moNavMenu, moNavButton);
+                closeMenu(moTocMenu, moTocButton);
         });
     });
 
     // 点击空白处关闭
     document.addEventListener("click", function (event) {
         let navButton = document.querySelector(".mo-nav-button");
-        let tocButton = document.querySelector(".mo-toc-menu");
+        let tocButton = document.querySelector(".mo-toc-button");
 
         if (
             moNavMenu.classList.contains("open") &&
             !moNavMenu.contains(event.target) &&
             !navButton.contains(event.target)
         ) {
-            moNavMenu.classList.remove("open");
-            navButton.classList.remove("open");
+            closeMenu(moNavMenu, navButton);
         }
 
         if (
@@ -1073,8 +1311,24 @@ document.addEventListener("DOMContentLoaded", () => {
             !moTocMenu.contains(event.target) &&
             !tocButton.contains(event.target)
         ) {
+            closeMenu(moTocMenu, tocButton);
+        }
+
+        if (
+            !moNavMenu.contains(event.target) &&
+            !moTocMenu.contains(event.target) &&
+            !navButton.contains(event.target) &&
+            !tocButton.contains(event.target)
+        ) {
+            moNavMenu.classList.remove("open");
             moTocMenu.classList.remove("open");
-            moTocButton.classList.remove("open");
+            navButton.classList.remove("open");
+            tocButton.classList.remove("open");
+            moHeader.removeEventListener("transitionend", navTransitionHandler);
+            moNavMenu.removeEventListener("transitionend", panelTransitionHandler);
+            moTocMenu.removeEventListener("transitionend", panelTransitionHandler);
+            navTransitionHandler = null;
+            panelTransitionHandler = null;
         }
 
         // 关闭所有展开的二级菜单
@@ -1091,15 +1345,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let lastScrollTop = 0;
     // 阈值
-    const scrollThreshold = document.documentElement.scrollHeight * 0.05;
+    const scrollThreshold = document.documentElement.scrollHeight * 0.01;
+    
 
     window.addEventListener("scroll", function () {
         if (window.innerWidth < 860) {
             let scrollTop = window.scrollY || document.documentElement.scrollTop;
 
+            if (scrollTop <= 0) {
+                if (!isAnyPanelOpen()) {
+                    moHeader.classList.remove("bg");
+                }
+            }
+
             if (scrollTop > scrollThreshold) {
                 if (scrollTop > lastScrollTop) {
                     // 向下滚动
+                    if (navTransitionHandler) {
+                        moHeader.removeEventListener("transitionend", navTransitionHandler);
+                        navTransitionHandler = null;
+                    }
+
+                    if (panelTransitionHandler) {
+                        moNavMenu.removeEventListener("transitionend", panelTransitionHandler);
+                        moTocMenu.removeEventListener("transitionend", panelTransitionHandler);
+                        panelTransitionHandler = null;
+                    }
+
                     moHeader.classList.add("mo-hide");
                     moHeader.classList.remove("bg");
                     moNavMenu.classList.remove("open");
@@ -1108,10 +1380,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     moTocButton.classList.remove("open");
 
                     // 同时关闭所有展开的二级菜单
-                    document.querySelectorAll(".sakura_mo_nav .sub-menu.open").forEach(function (subMenu) {
+                    document.querySelectorAll(".mobile-nav .sub-menu.open").forEach(function (subMenu) {
                         subMenu.classList.remove("open");
                     });
-                    document.querySelectorAll(".sakura_mo_nav .open_submenu.open").forEach(function (toggle) {
+                    document.querySelectorAll(".mobile-nav .open_submenu.open").forEach(function (toggle) {
                         toggle.classList.remove("open");
                     });
                 } else {
@@ -1122,9 +1394,364 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 // 滚动距离小于阈值
                 moHeader.classList.remove("mo-hide");
+            }
+            if (scrollTop <= 0 && !isAnyPanelOpen()) {
                 moHeader.classList.remove("bg");
             }
+            
             lastScrollTop = scrollTop;
         }
     });
+    moHeader.classList.remove("bg");
 });
+
+// 清理函数
+const cleanup = () => {
+    EventManager.removeAll();
+    cleanupTransitionHandlers();
+    // 清理其他可能的引用
+    activeSubMenu = null;
+    cache = null;
+};
+
+// 页面卸载时清理
+window.addEventListener("unload", cleanup);
+
+// 添加性能监控管理器
+const PerformanceManager = {
+    measurements: new Map(),
+    
+    start(label) {
+        this.measurements.set(label, performance.now());
+    },
+    
+    end(label) {
+        if (!this.measurements.has(label)) return;
+        const duration = performance.now() - this.measurements.get(label);
+        this.measurements.delete(label);
+        if (duration > 16.67) { // 检测是否超过60fps的帧时间
+            console.warn(`Performance warning: ${label} took ${duration.toFixed(2)}ms`);
+        }
+    }
+};
+
+// 优化的动画管理器
+const AnimationManager = {
+    animations: new Set(),
+    
+    add(element, properties, options = {}) {
+        if (!element || this.animations.has(element)) return;
+        
+        const animation = {
+            element,
+            properties,
+            options,
+            rafId: null
+        };
+        
+        this.animations.add(animation);
+        return animation;
+    },
+    
+    remove(animation) {
+        if (animation?.rafId) {
+            cancelAnimationFrame(animation.rafId);
+        }
+        this.animations.delete(animation);
+    },
+    
+    removeAll() {
+        this.animations.forEach(animation => {
+            if (animation.rafId) {
+                cancelAnimationFrame(animation.rafId);
+            }
+        });
+        this.animations.clear();
+    }
+};
+
+// 优化的资源管理器
+const ResourceManager = {
+    observers: new Map(),
+    
+    observeElement(element, options = {}) {
+        if (!element || this.observers.has(element)) return;
+        
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (options.onVisible) options.onVisible(element);
+                    if (options.once) this.unobserveElement(element);
+                }
+            });
+        }, options.observerOptions || {});
+        
+        this.observers.set(element, observer);
+        observer.observe(element);
+    },
+    
+    unobserveElement(element) {
+        const observer = this.observers.get(element);
+        if (observer) {
+            observer.disconnect();
+            this.observers.delete(element);
+        }
+    },
+    
+    unobserveAll() {
+        this.observers.forEach(observer => observer.disconnect());
+        this.observers.clear();
+    }
+};
+
+// 优化子菜单处理
+function initSubMenus(menuItems) {
+    const menuItemArray = Array.from(menuItems);
+    let activeSubMenu = null;
+    
+    menuItemArray.forEach(item => {
+        const subMenu = item.querySelector('.sub-menu');
+        if (!subMenu) return;
+        
+        // 使用ResizeObserver优化子菜单定位
+        const resizeObserver = new ResizeObserver(debounce(() => {
+            if (subMenu.classList.contains('active')) {
+                updateSubMenuPosition(item, subMenu);
+            }
+        }, 100));
+        
+        resizeObserver.observe(item);
+        resizeObserver.observe(subMenu);
+        
+        EventManager.add(item, 'mouseenter', () => {
+            PerformanceManager.start('submenuAnimation');
+            
+            if (activeSubMenu && activeSubMenu !== subMenu) {
+                activeSubMenu.classList.remove('active');
+            }
+            
+            requestAnimationFrame(() => {
+                subMenu.classList.add('active');
+                activeSubMenu = subMenu;
+                updateSubMenuPosition(item, subMenu);
+                PerformanceManager.end('submenuAnimation');
+            });
+        });
+    });
+}
+
+// 优化子菜单位置计算
+function updateSubMenuPosition(mainMenu, subMenu) {
+    if (!mainMenu || !subMenu) return;
+    
+    const mainMenuRect = mainMenu.getBoundingClientRect();
+    const subMenuRect = subMenu.getBoundingClientRect();
+    const offsetX = (subMenuRect.width - mainMenuRect.width) / 2;
+    
+    // 使用transform替代直接修改位置
+    requestAnimationFrame(() => {
+        subMenu.style.transform = `translateY(0) translateX(${offsetX}px)`;
+    });
+}
+
+// 优化的面板管理器
+const PanelManager = {
+    activePanel: null,
+    
+    open(panel, button) {
+        if (this.activePanel) {
+            this.close(this.activePanel.panel, this.activePanel.button);
+        }
+        
+        PerformanceManager.start('panelAnimation');
+        
+        requestAnimationFrame(() => {
+            panel.classList.add('open');
+            button.classList.add('open');
+            cache.moHeader.classList.add('bg');
+            
+            this.activePanel = { panel, button };
+            PerformanceManager.end('panelAnimation');
+        });
+    },
+    
+    close(panel, button) {
+        if (!panel || !button) return;
+        
+        PerformanceManager.start('panelAnimation');
+        
+        requestAnimationFrame(() => {
+            panel.classList.remove('open');
+            button.classList.remove('open');
+            
+            if (this.activePanel && this.activePanel.panel === panel) {
+                this.activePanel = null;
+            }
+            
+            if (!this.activePanel) {
+                cache.moHeader.classList.remove('bg');
+            }
+            
+            PerformanceManager.end('panelAnimation');
+        });
+    },
+    
+    closeAll() {
+        if (this.activePanel) {
+            this.close(this.activePanel.panel, this.activePanel.button);
+        }
+    }
+};
+
+// DOM操作优化器
+const DOMOptimizer = {
+    mutationBuffer: new Map(),
+    rafScheduled: false,
+    
+    batchUpdate(element, updates) {
+        if (!element) return;
+        
+        if (!this.mutationBuffer.has(element)) {
+            this.mutationBuffer.set(element, new Set());
+        }
+        
+        updates.forEach(update => this.mutationBuffer.get(element).add(update));
+        
+        if (!this.rafScheduled) {
+            this.rafScheduled = true;
+            requestAnimationFrame(() => this.flush());
+        }
+    },
+    
+    flush() {
+        this.mutationBuffer.forEach((updates, element) => {
+            updates.forEach(update => update(element));
+            updates.clear();
+        });
+        this.rafScheduled = false;
+    }
+};
+
+// 尺寸缓存优化器
+const DimensionCache = {
+    cache: new Map(),
+    timeouts: new Map(),
+    
+    get(element, measurement) {
+        if (!element) return null;
+        
+        const key = `${element.className}_${measurement}`;
+        const cached = this.cache.get(key);
+        
+        if (cached && Date.now() - cached.timestamp < 1000) {
+            return cached.value;
+        }
+        
+        const value = element.getBoundingClientRect()[measurement];
+        this.set(element, measurement, value);
+        return value;
+    },
+    
+    set(element, measurement, value) {
+        const key = `${element.className}_${measurement}`;
+        this.cache.set(key, {
+            value,
+            timestamp: Date.now()
+        });
+        
+        // 自动清理超时的缓存
+        if (this.timeouts.has(key)) {
+            clearTimeout(this.timeouts.get(key));
+        }
+        
+        this.timeouts.set(key, setTimeout(() => {
+            this.cache.delete(key);
+            this.timeouts.delete(key);
+        }, 1000));
+    },
+    
+    clear() {
+        this.cache.clear();
+        this.timeouts.forEach(timeout => clearTimeout(timeout));
+        this.timeouts.clear();
+    }
+};
+
+// 优化滚动性能
+function initScrollOptimization() {
+    let ticking = false;
+    let lastScrollY = window.scrollY;
+    const scrollThreshold = document.documentElement.scrollHeight * 0.01;
+    
+    function onScroll() {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const currentScrollY = window.scrollY;
+                const isScrollingDown = currentScrollY > lastScrollY;
+                
+                DOMOptimizer.batchUpdate(cache.moHeader, [
+                    element => {
+                        if (currentScrollY <= 0) {
+                            element.classList.remove("bg");
+                            element.classList.remove("mo-hide");
+                        } else if (currentScrollY > scrollThreshold) {
+                            if (isScrollingDown) {
+                                element.classList.add("mo-hide");
+                                element.classList.remove("bg");
+                            } else {
+                                element.classList.remove("mo-hide");
+                                element.classList.add("bg");
+                            }
+                        }
+                    }
+                ]);
+                
+                lastScrollY = currentScrollY;
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+    
+    EventManager.add(window, "scroll", onScroll, { passive: true });
+}
+
+// 优化的初始化函数
+function initOptimizedNav() {
+    // 初始化所有优化器
+    const cleanupFunctions = [
+        () => EventManager.removeAll(),
+        () => AnimationManager.removeAll(),
+        () => ResourceManager.unobserveAll(),
+        () => DimensionCache.clear(),
+        () => {
+            cleanupTransitionHandlers();
+            PanelManager.closeAll();
+        }
+    ];
+    
+    // 统一的清理函数
+    const cleanup = () => {
+        cleanupFunctions.forEach(fn => fn());
+        window.removeEventListener("unload", cleanup);
+    };
+    
+    // 注册清理函数
+    window.addEventListener("unload", cleanup);
+    
+    // 初始化各个功能模块
+    initScrollOptimization();
+    initSubMenus(cache.menuItems);
+    
+    // 监听窗口大小变化
+    EventManager.add(window, "resize", debounce(() => {
+        DimensionCache.clear();
+        if (window.innerWidth >= 860) {
+            PanelManager.closeAll();
+        }
+    }, 150), { passive: true });
+}
+
+// 在DOMContentLoaded时初始化
+document.addEventListener("DOMContentLoaded", initOptimizedNav);
+}

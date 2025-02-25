@@ -67,14 +67,23 @@ $nav_text_logo = iro_opt('nav_text_logo');
 
 <header class="site-header no-select" role="banner">
   <?php //移动端结构 ?>
-  <div class="mo-nav-button"><span></span><span></span><span></span></div>
+  <div class="mo-nav-button">
+      <i class="fa-solid fa-bars"></i>
+  </div>
+  <div class="sakura_nav mobile-nav">
+    <div class="mo-menu-search">
+      <form class="search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
+          <input class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
+      </form>
+    </div>
   <?php wp_nav_menu([
             'depth' => 2, 
             'theme_location' => 'primary', 
             'container' => 'div', 
-            'container_class' => 'sakura_nav sakura_mo_nav',
+            'container_class' => 'mo_nav_item',
             'walker' => new Iro_mo_nav(),
             ]); ?>
+  </div>
   <?php //移动端结构结束 ?>
 
   <?php //logo开始
@@ -142,7 +151,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
     <?php endif; //选项全在menu-wrapper中，防止bg-switch隐藏宽度变化导致brand缩放?>
   </div>
 
-  <div class="mo-toc-menu">
+  <div class="mo-toc-button">
       <i class="fa-solid fa-bookmark"></i>
   </div>
 

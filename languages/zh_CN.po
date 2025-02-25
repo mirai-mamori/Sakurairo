@@ -1136,3 +1136,18 @@ msgstr "友情链接模版"
 
 #~ msgid "Change"
 #~ msgstr "切换"
+
+msgid "Playtime"
+msgstr "游玩时长"
+
+msgid "Last Played"
+msgstr "上次启动"
+
+msgid "Not Played Yet"
+msgstr "尚未游玩"
+
+msgid "minute"
+msgstr "分钟"
+
+msgid "hour"
+msgstr "小时"
