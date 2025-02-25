@@ -740,8 +740,10 @@ body.dark .site-branding{
   box-shadow: none;
 }
 <?php } else { ?>
+@media (min-width: 860px) {
 .site-header {
     justify-content: center;
+}
 }
 .header-user-menu {
     right: -105%;
