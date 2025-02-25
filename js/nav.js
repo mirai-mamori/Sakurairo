@@ -962,6 +962,7 @@ const BrowserDetect = {
 }
 };//iro_nav function
 
+//以上仅新版导航栏，以下是通用部分
 document.addEventListener("DOMContentLoaded", () => {
 
     //防止子菜单量子叠加
@@ -985,7 +986,9 @@ document.addEventListener("DOMContentLoaded", () => {
             activeSubMenu = subMenu;
         });
     });
+    //放叠加结束
 
+    //子菜单对齐
     const subMenus = document.querySelectorAll("nav .menu > li .sub-menu");
 
     subMenus.forEach(subMenu => {
@@ -1010,11 +1013,14 @@ document.addEventListener("DOMContentLoaded", () => {
             subMenu.style.transform = BasicSubMenuStyle;
         });
     });
+    //子菜单对齐结束
 
+    //以下是窄屏/移动端通用部分
     //移动端菜单开关
+    //通用部分
     let moNavButton = document.querySelector(".mo-nav-button");
     let moTocButton = document.querySelector(".mo-toc-button");
-    let moNavMenu   = document.querySelector(".sakura_mo_nav");
+    let moNavMenu   = document.querySelector(".mobile-nav");
     let moTocMenu   = document.querySelector(".mo_toc_panel");
     let moHeader    = document.querySelector(".site-header");
     let navTransitionHandler = null;
@@ -1025,7 +1031,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return moNavMenu.classList.contains("open") || moTocMenu.classList.contains("open");
     }
 
+    function isHeaderHover() {
+        const bgColor = getComputedStyle(moHeader).backgroundColor;
+        return bgColor !== "transparent" && bgColor !== "rgba(0, 0, 0, 0)"; //不透明即视为Hover
+    }
+
     function openMenu(panel, button) {
+
+        if (isHeaderHover()) { //hover会产生背景动画，干扰相关功能，但是无需判断动画先后，直接呼出即可
+            panel.classList.add("open");
+            button.classList.add("open");
+            moHeader.classList.add("bg");
+            return;
+        }
 
         if (navTransitionHandler) {
             moHeader.removeEventListener("transitionend", navTransitionHandler);
@@ -1137,7 +1155,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // 点击选项关闭
-    document.querySelectorAll(".sakura_mo_nav a, .mo_toc_panel a").forEach(link => {
+    document.querySelectorAll(".mobile-nav a, .mo_toc_panel a").forEach(link => {
         link.addEventListener("click", () => {
                 closeMenu(moNavMenu, moNavButton);
                 closeMenu(moTocMenu, moTocButton);
@@ -1194,10 +1212,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    //自动收起搜索界面
+    var moSearcgInput = document.querySelector(".mo-menu-search .search-input");
+    function moSearchClose () {
+        moSearcgInput.blur();
+        closeMenu(moNavMenu, moNavButton);
+    }
+    moSearcgInput.addEventListener("focus", function() {
+        document.addEventListener('pjax:complete', moSearchClose);
+    });
+    moSearcgInput.addEventListener("blur", function() {
+        document.removeEventListener("pjax:complete", moSearchClose);
+    });
+
+
+    //下面是自动收起、展开导航栏部分
     let lastScrollTop = 0;
     // 阈值
     const scrollThreshold = document.documentElement.scrollHeight * 0.01;
-    
 
     window.addEventListener("scroll", function () {
         if (window.innerWidth < 860) {
@@ -1231,10 +1263,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     moTocButton.classList.remove("open");
 
                     // 同时关闭所有展开的二级菜单
-                    document.querySelectorAll(".sakura_mo_nav .sub-menu.open").forEach(function (subMenu) {
+                    document.querySelectorAll(".mobile-nav .sub-menu.open").forEach(function (subMenu) {
                         subMenu.classList.remove("open");
                     });
-                    document.querySelectorAll(".sakura_mo_nav .open_submenu.open").forEach(function (toggle) {
+                    document.querySelectorAll(".mobile-nav .open_submenu.open").forEach(function (toggle) {
                         toggle.classList.remove("open");
                     });
                 } else {
