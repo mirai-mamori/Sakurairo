@@ -1307,35 +1307,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 点击空白处关闭
     document.addEventListener("click", function (event) {
-        let navButton = document.querySelector(".mo-nav-button");
-        let tocButton = document.querySelector(".mo-toc-button");
 
         if (
             moNavMenu.classList.contains("open") &&
             !moNavMenu.contains(event.target) &&
-            !navButton.contains(event.target)
+            !moNavButton.contains(event.target)
         ) {
-            closeMenu(moNavMenu, navButton);
+            closeMenu(moNavMenu, moNavButton);
         }
 
         if (
             moTocMenu.classList.contains("open") &&
             !moTocMenu.contains(event.target) &&
-            !tocButton.contains(event.target)
+            !moTocButton.contains(event.target)
         ) {
-            closeMenu(moTocMenu, tocButton);
+            closeMenu(moTocMenu, moTocButton);
         }
 
         if (
             !moNavMenu.contains(event.target) &&
             !moTocMenu.contains(event.target) &&
-            !navButton.contains(event.target) &&
-            !tocButton.contains(event.target)
+            !moNavButton.contains(event.target) &&
+            !moTocButton.contains(event.target)
         ) {
             moNavMenu.classList.remove("open");
             moTocMenu.classList.remove("open");
-            navButton.classList.remove("open");
-            tocButton.classList.remove("open");
+            moNavButton.classList.remove("open");
+            moTocButton.classList.remove("open");
             moHeader.removeEventListener("transitionend", navTransitionHandler);
             moNavMenu.removeEventListener("transitionend", panelTransitionHandler);
             moTocMenu.removeEventListener("transitionend", panelTransitionHandler);
@@ -1353,6 +1351,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         });
+    });
+
+    //自动收起搜索界面
+    var moSearcgInput = document.querySelector(".mo-menu-search .search-input");
+    function moSearchClose () {
+        moSearcgInput.blur();
+        closeMenu(moNavMenu, moNavButton);
+    }
+    moSearcgInput.addEventListener("focus", function() {
+        document.addEventListener('pjax:complete', moSearchClose);
+    });
+    moSearcgInput.addEventListener("blur", function() {
+        document.removeEventListener("pjax:complete", moSearchClose);
     });
 
     let lastScrollTop = 0;

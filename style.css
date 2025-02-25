@@ -279,7 +279,12 @@ blockquote {
 
 .wp-block-quote,
 .comments blockquote{
-  padding: 30px 60px !important;
+  padding: 15px 30px !important;
+}
+
+.wp-block-quote li,
+.wp-block-quote ul {
+  cursor: auto !important;
 }
 
 blockquote:before,

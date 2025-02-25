@@ -521,6 +521,10 @@
     margin-left: 2% !important;
   }
 
+  .wp-block-quote{
+    padding: 5px 0px !important;
+  }
+
   /* Post Footer */
   .post-footer {
     max-width: 800px;
