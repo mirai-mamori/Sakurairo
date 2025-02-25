@@ -1240,9 +1240,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     window.addEventListener("scroll", function () {
 
-        let moScrollTop = window.scrollY || document.documentElement.scrollTop;
-        
         if (window.innerWidth < 860) {
+
+            let moScrollTop = window.scrollY || document.documentElement.scrollTop;
 
             if (moScrollTop > scrollThreshold) {
                 if (moScrollTop > lastScrollTop) {
