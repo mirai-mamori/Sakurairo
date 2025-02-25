@@ -680,6 +680,11 @@ blockquote:after {
   --dw:0;
 }
 
+.nav-search-wrapper li,
+.nav-search-wrapper ul {
+  cursor: auto;
+}
+
 .site-header:not(:hover) .nav-search-wrapper:not(:hover)[data-scrollswap] nav {
   transform:translateY(-100%);
   margin-inline:calc(var(--dw,0px) / 2);
@@ -3572,7 +3577,7 @@ iframe {
 
 .toc-container li,
 .toc-container ol{
-  cursor: auto!important;
+  cursor: auto;
 }
 
 .toc {
