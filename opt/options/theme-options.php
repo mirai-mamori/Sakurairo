@@ -460,6 +460,7 @@ $prefix = 'iro_options';
         'unit' => 'px',
         'max' => '50',
         'default' => '50',
+        'dependency' => array( 'choice_of_nav_style', '!=', 'sakura', '', 'true' ),
        ),
 
        array(
