@@ -1073,16 +1073,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function closeMenu(panel, button,isOutSide = false) {
+    function closeMenu(panel, button,CloseDirect = false) {
 
-        if (isHeaderHover()) {
-            if (!isOutSide){ //不是点击空白处关闭，空白处需要走动画过程
-                panel.classList.remove("open");
-                button.classList.remove("open");
-                moHeader.classList.remove("bg");
-                return;
-            } 
-        }
+        if (CloseDirect){ //直接关闭，hover不需要考虑背景动画顺序
+            panel.classList.remove("open");
+            button.classList.remove("open");
+            moHeader.classList.remove("bg");
+            return;
+        } 
 
         if (panelTransitionHandler) {
             panel.removeEventListener("transitionend", panelTransitionHandler);
@@ -1115,10 +1113,10 @@ document.addEventListener("DOMContentLoaded", () => {
         event.stopPropagation();
 
         if (moTocMenu.classList.contains("open")) {
-            closeMenu(moTocMenu, moTocButton);
+            closeMenu(moTocMenu, moTocButton,isHeaderHover());
         }
         if (moNavMenu.classList.contains("open")) {
-            closeMenu(moNavMenu, moNavButton);
+            closeMenu(moNavMenu, moNavButton,isHeaderHover());
         } else {
             openMenu(moNavMenu, moNavButton);
         }
@@ -1128,10 +1126,10 @@ document.addEventListener("DOMContentLoaded", () => {
         event.stopPropagation();
 
         if (moNavMenu.classList.contains("open")) {
-            closeMenu(moNavMenu, moNavButton);
+            closeMenu(moNavMenu, moNavButton,isHeaderHover());
         }
         if (moTocMenu.classList.contains("open")) {
-            closeMenu(moTocMenu, moTocButton);
+            closeMenu(moTocMenu, moTocButton,isHeaderHover());
         } else {
             openMenu(moTocMenu, moTocButton);
         }
@@ -1181,7 +1179,7 @@ document.addEventListener("DOMContentLoaded", () => {
             !moNavMenu.contains(event.target) &&
             !navButton.contains(event.target)
         ) {
-            closeMenu(moNavMenu, navButton,true);
+            closeMenu(moNavMenu, navButton,false);
         }
 
         if (
@@ -1189,7 +1187,7 @@ document.addEventListener("DOMContentLoaded", () => {
             !moTocMenu.contains(event.target) &&
             !tocButton.contains(event.target)
         ) {
-            closeMenu(moTocMenu, tocButton,true);
+            closeMenu(moTocMenu, tocButton,false);
         }
 
         if (
@@ -1239,19 +1237,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let lastScrollTop = 0;
     // 阈值
     const scrollThreshold = document.documentElement.scrollHeight * 0.01;
-
+    
     window.addEventListener("scroll", function () {
+
+        let moScrollTop = window.scrollY || document.documentElement.scrollTop;
+        
         if (window.innerWidth < 860) {
-            let scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-            if (scrollTop <= 0) {
-                if (!isAnyPanelOpen()) {
-                    moHeader.classList.remove("bg");
-                }
-            }
-
-            if (scrollTop > scrollThreshold) {
-                if (scrollTop > lastScrollTop) {
+            if (moScrollTop > scrollThreshold) {
+                if (moScrollTop > lastScrollTop) {
                     // 向下滚动
                     if (navTransitionHandler) {
                         moHeader.removeEventListener("transitionend", navTransitionHandler);
@@ -1287,11 +1281,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 // 滚动距离小于阈值
                 moHeader.classList.remove("mo-hide");
             }
-            if (scrollTop <= 0 && !isAnyPanelOpen()) {
+            if (moScrollTop <= 0 && !isAnyPanelOpen()) {
                 moHeader.classList.remove("bg");
             }
             
-            lastScrollTop = scrollTop;
+            lastScrollTop = moScrollTop;
         }
     });
     moHeader.classList.remove("bg");
