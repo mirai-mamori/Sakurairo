@@ -1073,7 +1073,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function closeMenu(panel, button) {
+    function closeMenu(panel, button,isOutSide = false) {
+
+        if (isHeaderHover()) {
+            if (!isOutSide){ //不是点击空白处关闭，空白处需要走动画过程
+                panel.classList.remove("open");
+                button.classList.remove("open");
+                moHeader.classList.remove("bg");
+                return;
+            } 
+        }
 
         if (panelTransitionHandler) {
             panel.removeEventListener("transitionend", panelTransitionHandler);
@@ -1172,7 +1181,7 @@ document.addEventListener("DOMContentLoaded", () => {
             !moNavMenu.contains(event.target) &&
             !navButton.contains(event.target)
         ) {
-            closeMenu(moNavMenu, navButton);
+            closeMenu(moNavMenu, navButton,true);
         }
 
         if (
@@ -1180,7 +1189,7 @@ document.addEventListener("DOMContentLoaded", () => {
             !moTocMenu.contains(event.target) &&
             !tocButton.contains(event.target)
         ) {
-            closeMenu(moTocMenu, tocButton);
+            closeMenu(moTocMenu, tocButton,true);
         }
 
         if (
