@@ -3772,6 +3772,10 @@ iframe {
   cursor: pointer;
 }
 
+.markdown-toggle:has(input:checked) {
+  outline: 2px solid var(--theme-skin-matching);
+}
+
 .markdown-toggle input {
   display: none;
 }

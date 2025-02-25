@@ -693,6 +693,7 @@ body.dark .mo_toc_panel .user-menu-option a:hover {
   text-shadow: 0 0 8px rgba(var(--theme-skin-dark-rgb), 0.8);
 }
 
+body.dark .mo-nav-button i:hover,
 body.dark .mo-toc-button i:hover {
   color: var(--theme-skin-dark);
   border: 2px solid var(--theme-skin-dark);
