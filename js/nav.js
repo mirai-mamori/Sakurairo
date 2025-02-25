@@ -1174,7 +1174,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return moNavMenu.classList.contains("open") || moTocMenu.classList.contains("open");
     }
 
+    function isHeaderHover() {
+        const bgColor = getComputedStyle(moHeader).backgroundColor;
+        return bgColor !== "transparent" && bgColor !== "rgba(0, 0, 0, 0)"; //不透明即视为Hover
+    }
+
     function openMenu(panel, button) {
+
+        if (isHeaderHover()) {
+            panel.classList.add("open");
+            button.classList.add("open");
+            moHeader.classList.add("bg");
+            return;
+        }
 
         if (navTransitionHandler) {
             moHeader.removeEventListener("transitionend", navTransitionHandler);
