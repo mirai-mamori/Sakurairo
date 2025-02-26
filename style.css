@@ -272,7 +272,7 @@ pre {
 
 blockquote {
   margin: 0;
-  /* padding: 30px 60px; */
+  padding: 30px 60px;
   position: relative;
   quotes: "" "";
 }
