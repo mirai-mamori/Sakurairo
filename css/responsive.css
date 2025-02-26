@@ -14,13 +14,13 @@
   }
 
   .site-branding {
-    border-radius: 0px;
-    background: transparent;
-    border: 0px;
+    border-radius: 0px!important;
+    background: transparent!important;
+    border: 0px!important;
     height: 100%;
     line-height: 75px;
     backdrop-filter: none;
-    box-shadow: none;
+    box-shadow: none!important;
     display: flex;
     width: 100%;
     max-width: 100vw !important;
@@ -60,6 +60,12 @@
       backdrop-filter: saturate(180%) blur(10px);
       -webkit-transition: all .5s ease;
       transition: border-bottom .5s ease,all .5s ease;
+  }
+
+  body.dark .site-header.bg,
+  body.dark .site-header:hover {
+    background: rgba(38, 38, 38, 0.8)!important;
+    border-bottom: 1.5px solid #7d7d7d30!important;
   }
 
   .site-header.mo-hide,
@@ -521,6 +527,10 @@
     margin-left: 2% !important;
   }
 
+  .wp-block-quote{
+    padding: 5px 0px !important;
+  }
+
   /* Post Footer */
   .post-footer {
     max-width: 800px;
@@ -733,6 +743,7 @@
   #filter-toggle{
     white-space: nowrap;
     font-size: 0.7rem;
+    display: flex;
   }
 
   h1.entry-title {
