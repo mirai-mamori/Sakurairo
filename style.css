@@ -3773,7 +3773,7 @@ iframe {
 }
 
 .markdown-toggle:has(input:checked) {
-  outline: 2px solid var(--theme-skin-matching);
+  outline: 1px solid var(--theme-skin-matching);
 }
 
 .markdown-toggle input {
