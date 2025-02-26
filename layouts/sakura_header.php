@@ -33,7 +33,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
   @media (min-width: 860px) {
       .site-header{
       position: fixed;
-      border-radius: 15px !important;
+      border-radius: <?php echo (iro_opt('nav_menu_cover_radius',14)??'14') ?>px !important;
       width: 95%;
       height: 60px;
       left: 2.5% ;
