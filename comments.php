@@ -49,8 +49,7 @@ function get_smilies_panel() {
             $custom_push_smilies = '<div class="custom-container motion-container" style="display:block;">' . push_custom_smilies() . '</div>';
             break;
     }
-    // onclick呼出，非必要不初始化，方法在Sakura_scripts
-    return '<div id="emotion-toggle" class="no-select" onclick="openEmoji()">
+    return '<div id="emotion-toggle" class="no-select">
                 <i class="fa-regular fa-face-kiss-wink-heart"></i>
             </div>
             <div class="emotion-box no-select">
