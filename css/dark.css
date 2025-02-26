@@ -704,6 +704,11 @@ body.dark .mo-toc-button i:hover {
   border: 2px solid var(--theme-skin-dark);
 }
 
+body.dark .mobile-nav .open_submenu:hover,
+body.dark .mobile-nav .open_submenu.open {
+  color: var(--theme-skin-dark);
+}
+
 body.dark .entry-content tr:nth-child(even) {
   background-color: unset
 }
