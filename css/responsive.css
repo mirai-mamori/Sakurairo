@@ -548,6 +548,10 @@
     margin-left: 2% !important;
   }
 
+  blockquote{
+    padding: 20px 30px !important;
+  }
+
   .wp-block-quote{
     padding: 10px 20px !important;
   }
