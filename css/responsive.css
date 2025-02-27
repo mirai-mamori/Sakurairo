@@ -476,7 +476,7 @@
 @media (max-width: 860px) {
   /* toc目录 */
   .toc-container{
-    position: relative;
+    position: unset;
     display: block;
   }
   /* Pattern Center 相关 */
