@@ -23,7 +23,6 @@ get_header();
 				<?php echo get_link_items(); ?>
 			</div>
 		</article>
-		<?php get_template_part('layouts/sidebox'); //加载目录容器 ?> 
 	<?php endwhile; ?>
 <?php
 get_footer();
