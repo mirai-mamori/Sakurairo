@@ -1135,12 +1135,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
             //复制菜单
             let mainToc = document.querySelector("#main-container .toc-container .toc");
-            let headToc = document.querySelector(".site-header .mo_toc_panel .toc");
+            let headToc = document.querySelector(".site-header .mo_toc_panel .mo_toc");
 
             if (mainToc && headToc) {
                 tocContent = mainToc.cloneNode(true);
+                tocContent.className = "mo-toc-content";
+                tocContent.removeAttribute("style");
                 headToc.innerHTML = "";
                 headToc.appendChild(tocContent);
+                let activeli = headToc.querySelector(".is-active-li") || headToc.querySelector("li");
+                if (activeli) {
+                    activeli.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
             }
         }
     });

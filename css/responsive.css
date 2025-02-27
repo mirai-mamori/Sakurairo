@@ -229,6 +229,7 @@
   background: rgb(255 255 255 / 0.9);
   gap: 20px;
   overflow: hidden;
+  flex-wrap: wrap;
 }
 
 .mo-user-menu {
@@ -237,6 +238,7 @@
   justify-content: center;
   gap: 20px;
   padding-block: 15px;
+  width: 90%;
 }
 
 .mo_toc_panel .mo-avatar {
@@ -296,6 +298,22 @@
 
 .mo_toc_panel .user-menu-option a:hover {
   text-shadow: 0 0 8px rgb(var(--theme-skin-matching-rgb) / 0.8);
+}
+
+.mo_toc_panel .mo-toc-content {
+  max-height: 70vh;
+  overflow: auto;
+}
+
+.mo_toc_panel .toc-link::before {
+  content: ' ';
+  display: inline-block;
+  left: -5%;
+  margin-top: 2px;
+  position: relative;
+  width: 3px;
+  height: 20px;
+  border-radius: 50px;
 }
 
 /* 400px及以上 */
@@ -528,7 +546,15 @@
   }
 
   .wp-block-quote{
-    padding: 5px 0px !important;
+    padding: 30px 60px !important;
+  }
+
+  .wp-block-quote .wp-block-quote{
+    padding: 0px 0px !important;
+  }
+
+  .wp-block-quote ol {
+    padding: 0px !important;
   }
 
   /* Post Footer */
