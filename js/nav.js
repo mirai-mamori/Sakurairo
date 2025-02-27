@@ -1132,6 +1132,16 @@ document.addEventListener("DOMContentLoaded", () => {
             closeMenu(moTocMenu, moTocButton,isHeaderHover());
         } else {
             openMenu(moTocMenu, moTocButton);
+
+            //复制菜单
+            let mainToc = document.querySelector("#main-container .toc-container .toc");
+            let headToc = document.querySelector(".site-header .mo_toc_panel .toc");
+
+            if (mainToc && headToc) {
+                tocContent = mainToc.cloneNode(true);
+                tocContent.querySelectorAll("a").forEach(a => a.removeAttribute("class"));
+                headToc.appendChild(tocContent);
+            }
         }
     });
 
