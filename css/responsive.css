@@ -303,12 +303,15 @@
 .mo_toc_panel .mo-toc-content {
   max-height: 70vh;
   overflow: auto;
+  min-width: 50vw;
+  background: transparent;
+  border: 1px solid #eee;
 }
 
 .mo_toc_panel .toc-link::before {
   content: ' ';
   display: inline-block;
-  left: -5%;
+  left: -5px;
   margin-top: 2px;
   position: relative;
   width: 3px;

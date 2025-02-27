@@ -1141,11 +1141,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 tocContent = mainToc.cloneNode(true);
                 tocContent.className = "mo-toc-content";
                 tocContent.removeAttribute("style");
+                tocContent.querySelectorAll(".is-collapsed").forEach(el => el.classList.remove("is-collapsed"));
                 headToc.innerHTML = "";
                 headToc.appendChild(tocContent);
                 let activeli = headToc.querySelector(".is-active-li") || headToc.querySelector("li");
                 if (activeli) {
                     activeli.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
+            } else {
+                if (headToc) {
+                    headToc
                 }
             }
         }
