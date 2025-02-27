@@ -546,15 +546,27 @@
   }
 
   .wp-block-quote{
-    padding: 30px 60px !important;
+    padding: 10px 20px !important;
   }
 
   .wp-block-quote .wp-block-quote{
-    padding: 0px 0px !important;
+    padding: 5px 10px !important;
   }
 
   .wp-block-quote ol {
-    padding: 0px !important;
+    padding: 5px 10px !important;
+  }
+
+  blockquote:before {
+    content: "\f10d" !important;
+    top: 10px;
+    left: 10px;
+  }
+  
+  blockquote:after {
+    content: '\f10e' !important;
+    bottom: 10px;
+    right: 10px;
   }
 
   /* Post Footer */
