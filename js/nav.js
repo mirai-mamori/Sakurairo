@@ -1138,6 +1138,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let headToc = document.querySelector(".site-header .mo_toc_panel .mo_toc");
 
             if (mainToc && headToc) {
+                headToc.style.display = "";
                 tocContent = mainToc.cloneNode(true);
                 tocContent.className = "mo-toc-content";
                 tocContent.removeAttribute("style");
@@ -1150,7 +1151,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             } else {
                 if (headToc) {
-                    headToc
+                    headToc.style.display = "none";
                 }
             }
         }
