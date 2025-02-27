@@ -479,14 +479,6 @@
 
 /* 860px 断点适配 */
 @media (max-width: 860px) {
-<<<<<<< HEAD
-  /* toc目录 */
-  .toc-container{
-    position: unset;
-    display: block;
-  }
-=======
->>>>>>> parent of 297e797a (目录)
   /* Pattern Center 相关 */
   .pattern-center {
     header.single-header {
