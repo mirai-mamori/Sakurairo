@@ -605,7 +605,7 @@
   .comment-checks{
     flex-direction: column;
     align-items: flex-start;
-    margin-block-start: 20px;
+    margin-block-start: 15px;
     gap: 15px;
   }
   .comment-captcha{
@@ -615,7 +615,7 @@
     inline-size: 36px;
     block-size: 36px;
     inset-inline-end: 0;
-    margin: 15px 5px;
+    margin: 11px 5px;
     z-index: 2;
   }
   .comment-user-avatar .socila-check {
@@ -623,12 +623,8 @@
     margin: -60% 0 0 50%
   }
   .cmt-popup {
-    margin-block-start: 15px;
+    margin: 5px 0;
     inline-size: 100%;
-  }
-  .cmt-author {
-    margin-block-start: 10px;
-    margin-inline-start: 0;
   }
   .comment .body p {
     margin: 0;
