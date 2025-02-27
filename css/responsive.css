@@ -552,6 +552,10 @@
     padding: 20px 30px !important;
   }
 
+  blockquote p{
+    padding-left: 10px;
+  }
+
   .wp-block-quote{
     padding: 10px 20px !important;
   }
