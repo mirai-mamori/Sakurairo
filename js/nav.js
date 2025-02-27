@@ -1147,7 +1147,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 headToc.appendChild(tocContent);
                 let activeli = headToc.querySelector(".is-active-li") || headToc.querySelector("li");
                 if (activeli) {
-                    activeli.scrollIntoView({ behavior: "smooth", block: "center" });
+                    activeli.scrollIntoView({ block: "center" });
                 }
             } else {
                 if (headToc) {
