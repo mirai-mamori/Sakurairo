@@ -1139,7 +1139,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (mainToc && headToc) {
                 tocContent = mainToc.cloneNode(true);
-                tocContent.querySelectorAll("a").forEach(a => a.removeAttribute("class"));
+                headToc.innerHTML = "";
                 headToc.appendChild(tocContent);
             }
         }
