@@ -219,16 +219,18 @@
 }
 
 /* 书签面板样式 */
-.mo_toc_panel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-height: 0;
-  position: fixed;
-  inset: 50px 0 auto;
-  background: rgb(255 255 255 / 0.9);
-  gap: 20px;
-  overflow: hidden;
+@media (max-width: 860px) {
+  .mo_toc_panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 0;
+    position: fixed;
+    inset: 50px 0 auto;
+    background: rgb(255 255 255 / 0.9);
+    gap: 20px;
+    overflow: hidden;
+  }
 }
 
 .mo-user-menu {
@@ -377,13 +379,6 @@
   }
 }
 
-/* 大屏幕适配 (1160px+) */
-@media (max-width: 1160px) {
-  .toc-container {
-    display: none;
-  }
-}
-
 /* 1080px 断点适配 */
 @media (max-width: 1080px) {
   .post-footer,
@@ -479,6 +474,11 @@
 
 /* 860px 断点适配 */
 @media (max-width: 860px) {
+  /* toc目录 */
+  .toc-container{
+    position: unset;
+    display: block;
+  }
   /* Pattern Center 相关 */
   .pattern-center {
     header.single-header {
@@ -655,13 +655,24 @@
 }
 
 @media (min-width: 860px) {
-.mo-toc-button,
-.mo-navbar,
-.mo-nav-button,
-.mobile-nav,
-.mo_toc_panel{
+  .mo-toc-button,
+  .mo-navbar,
+  .mo-nav-button,
+  .mobile-nav{
     display: none;
-}
+  }
+
+  .mo_toc_panel{
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+  }
+  /* 使用该方法，确保目录可以拿出来显示 */
+
+  .mo-user-menu {
+    height: 0!important;
+  }
+  /* 给目录腾空间 */
 }
 
 @media (max-width: 630px) {

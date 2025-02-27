@@ -272,7 +272,7 @@ pre {
 
 blockquote {
   margin: 0;
-  /* padding: 30px 60px; */
+  padding: 30px 60px;
   position: relative;
   quotes: "" "";
 }
@@ -3571,7 +3571,6 @@ iframe {
   height: 100%;
   background-color: rgba(255, 255, 255, 0);
   right: calc((100% - 1220px) / 760 *210*1.6);
-  top: 540px;
   position: absolute;
   padding-top: 10px;
   padding-bottom: 10px;
