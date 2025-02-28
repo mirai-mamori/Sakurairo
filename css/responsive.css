@@ -308,6 +308,11 @@
   border: 1px solid #eee;
 }
 
+.mo_toc_panel .mo-toc-content ol,
+.mo_toc_panel .mo-toc-content li {
+  cursor: auto;
+}
+
 .mo_toc_panel .toc-link::before {
   content: ' ';
   display: inline-block;
