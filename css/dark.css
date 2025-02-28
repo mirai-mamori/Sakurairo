@@ -606,7 +606,6 @@ body.dark .comment-respond input[type=submit]:hover {
 }
 
 /* Dark mode header styles */
-body.dark .site-branding,
 body.dark .nav-search-wrapper,
 body.dark .user-menu-wrapper,
 body.dark nav .menu > li .sub-menu,
@@ -616,6 +615,12 @@ body.dark .header-user-menu {
   transition: all 0.4s ease-in-out;
   color: var(--dark-text-primary);
   border: 1px solid #222222;
+}
+
+@media (min-width: 861px) {
+  body.dark .site-branding{
+    background: rgba(0, 0, 0, var(--theme-dm-background_transparency, 0.65)) !important;
+  }
 }
 
 body.dark .header-user-avatar img{
@@ -693,9 +698,15 @@ body.dark .mo_toc_panel .user-menu-option a:hover {
   text-shadow: 0 0 8px rgba(var(--theme-skin-dark-rgb), 0.8);
 }
 
+body.dark .mo-nav-button i:hover,
 body.dark .mo-toc-button i:hover {
   color: var(--theme-skin-dark);
   border: 2px solid var(--theme-skin-dark);
+}
+
+body.dark .mobile-nav .open_submenu:hover,
+body.dark .mobile-nav .open_submenu.open {
+  color: var(--theme-skin-dark);
 }
 
 body.dark .entry-content tr:nth-child(even) {

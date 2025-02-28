@@ -49,7 +49,7 @@ function get_smilies_panel() {
             $custom_push_smilies = '<div class="custom-container motion-container" style="display:block;">' . push_custom_smilies() . '</div>';
             break;
     }
-    return '<div id="emotion-toggle" class="no-select" onclick="openEmoji()">
+    return '<div id="emotion-toggle" class="no-select">
                 <i class="fa-regular fa-face-kiss-wink-heart"></i>
             </div>
             <div class="emotion-box no-select">
@@ -241,76 +241,5 @@ function get_smilies_panel() {
 
     </div>
     
-    <!-- 评论面板拖拽与呼出脚本 -->
-    <script>
-    function openEmoji() {
-        const toggleBtn = document.getElementById('emotion-toggle');
-        const emojiPanel = document.querySelector('.emotion-box');
-        if (!emojiPanel) return;
-
-        const dragged = emojiPanel.getAttribute('dragged');
-        if (!dragged) {
-            const btnRect = toggleBtn.getBoundingClientRect();
-            const panelWidth = emojiPanel.offsetWidth;
-            const panelHeight = emojiPanel.offsetHeight;
-            let leftPos = btnRect.left + window.scrollX + (btnRect.width / 2) - (panelWidth / 2);
-            let topPos = btnRect.bottom + window.scrollY;
-            if (topPos + panelHeight > window.innerHeight + window.scrollY) {
-                topPos = btnRect.top - panelHeight + window.scrollY;
-            }
-            emojiPanel.style.left = `${leftPos}px`;
-            emojiPanel.style.top = `${topPos}px`;
-        }
-        emojiPanel.classList.toggle('open');
-        if (!emojiPanel.hasAttribute('initialized')) {
-            initEmojiPanel();
-            emojiPanel.setAttribute('initialized', 'true');
-        }
-    }
-
-    function initEmojiPanel() {
-        const emojiPanel = document.querySelector('.emotion-box');
-        const header = document.querySelector('.emotion-header');
-        if (!emojiPanel || !header) return;
-
-        let offsetX = 0, offsetY = 0, isDragging = false;
-
-        function startDrag(e) {
-            isDragging = true;
-            const event = e.touches ? e.touches[0] : e;
-            offsetX = event.clientX - emojiPanel.offsetLeft;
-            offsetY = event.clientY - emojiPanel.offsetTop;
-            emojiPanel.style.transition = "none";
-            if (e.touches) e.preventDefault();
-        }
-        function moveDrag(e) {
-            if (!isDragging) return;
-            const event = e.touches ? e.touches[0] : e;
-            const left = event.clientX - offsetX;
-            const top = event.clientY - offsetY;
-            emojiPanel.style.left = `${left}px`;
-            emojiPanel.style.top = `${top}px`;
-            emojiPanel.setAttribute('dragged', 'true');
-            if (e.touches) e.preventDefault();
-        }
-        function endDrag() {
-            isDragging = false;
-            emojiPanel.style.transition = "transform 0.3s ease-in-out";
-        }
-
-        header.addEventListener('mousedown', startDrag);
-        document.addEventListener('mousemove', moveDrag);
-        document.addEventListener('mouseup', endDrag);
-        header.addEventListener('touchstart', startDrag, { passive: false });
-        document.addEventListener('touchmove', moveDrag, { passive: false });
-        document.addEventListener('touchend', endDrag);
-        document.addEventListener('click', function (e) {
-            const toggleBtn = document.getElementById('emotion-toggle');
-            if (!emojiPanel.contains(e.target) && !toggleBtn.contains(e.target)) {
-                emojiPanel.classList.remove('open');
-            }
-        });
-    }
-    </script>
 </section>
 <?php endif; ?>

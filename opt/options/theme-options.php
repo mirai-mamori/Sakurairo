@@ -460,7 +460,7 @@ $prefix = 'iro_options';
         'unit' => 'px',
         'max' => '50',
         'default' => '50',
-        'dependency' => array( 'choice_of_nav_style', '==', 'iro', '', 'true' ),
+        'dependency' => array( 'choice_of_nav_style', '!=', 'sakura', '', 'true' ),
        ),
 
        array(
@@ -4029,6 +4029,14 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('Version Control','sakurairo_csf'),
         'desc' => __('Used to update front-end cookies and browser cache, can use any string','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'fontawesome_source',
+        'type' => 'text',
+        'title' => __('Fontawesome Source','sakurairo_csf'),
+        'desc' => __('The source link of Fontawesome icons style','sakurairo_csf'),
+        'default' => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css",
       ),
     )
   ) );

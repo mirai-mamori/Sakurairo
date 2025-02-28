@@ -14,13 +14,13 @@
   }
 
   .site-branding {
-    border-radius: 0px;
-    background: transparent;
-    border: 0px;
+    border-radius: 0px!important;
+    background: transparent!important;
+    border: 0px!important;
     height: 100%;
     line-height: 75px;
     backdrop-filter: none;
-    box-shadow: none;
+    box-shadow: none!important;
     display: flex;
     width: 100%;
     max-width: 100vw !important;
@@ -60,6 +60,12 @@
       backdrop-filter: saturate(180%) blur(10px);
       -webkit-transition: all .5s ease;
       transition: border-bottom .5s ease,all .5s ease;
+  }
+
+  body.dark .site-header.bg,
+  body.dark .site-header:hover {
+    background: rgba(38, 38, 38, 0.8)!important;
+    border-bottom: 1.5px solid #7d7d7d30!important;
   }
 
   .site-header.mo-hide,
@@ -213,16 +219,18 @@
 }
 
 /* 书签面板样式 */
-.mo_toc_panel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-height: 0;
-  position: fixed;
-  inset: 50px 0 auto;
-  background: rgb(255 255 255 / 0.9);
-  gap: 20px;
-  overflow: hidden;
+@media (max-width: 860px) {
+  .mo_toc_panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 0;
+    position: fixed;
+    inset: 50px 0 auto;
+    background: rgb(255 255 255 / 0.9);
+    gap: 20px;
+    overflow: hidden;
+  }
 }
 
 .mo-user-menu {
@@ -371,13 +379,6 @@
   }
 }
 
-/* 大屏幕适配 (1160px+) */
-@media (max-width: 1160px) {
-  .toc-container {
-    display: none;
-  }
-}
-
 /* 1080px 断点适配 */
 @media (max-width: 1080px) {
   .post-footer,
@@ -473,6 +474,11 @@
 
 /* 860px 断点适配 */
 @media (max-width: 860px) {
+  /* toc目录 */
+  .toc-container{
+    position: unset;
+    display: block;
+  }
   /* Pattern Center 相关 */
   .pattern-center {
     header.single-header {
@@ -519,6 +525,10 @@
     left: 0;
     width: 96% !important;
     margin-left: 2% !important;
+  }
+
+  .wp-block-quote{
+    padding: 5px 0px !important;
   }
 
   /* Post Footer */
@@ -595,7 +605,7 @@
   .comment-checks{
     flex-direction: column;
     align-items: flex-start;
-    margin-block-start: 20px;
+    margin-block-start: 15px;
     gap: 15px;
   }
   .comment-captcha{
@@ -605,7 +615,7 @@
     inline-size: 36px;
     block-size: 36px;
     inset-inline-end: 0;
-    margin: 15px 5px;
+    margin: 11px 5px;
     z-index: 2;
   }
   .comment-user-avatar .socila-check {
@@ -613,12 +623,8 @@
     margin: -60% 0 0 50%
   }
   .cmt-popup {
-    margin-block-start: 15px;
+    margin: 5px 0;
     inline-size: 100%;
-  }
-  .cmt-author {
-    margin-block-start: 10px;
-    margin-inline-start: 0;
   }
   .comment .body p {
     margin: 0;
@@ -645,13 +651,24 @@
 }
 
 @media (min-width: 860px) {
-.mo-toc-button,
-.mo-navbar,
-.mo-nav-button,
-.mobile-nav,
-.mo_toc_panel{
+  .mo-toc-button,
+  .mo-navbar,
+  .mo-nav-button,
+  .mobile-nav{
     display: none;
-}
+  }
+
+  .mo_toc_panel{
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+  }
+  /* 使用该方法，确保目录可以拿出来显示 */
+
+  .mo-user-menu {
+    height: 0!important;
+  }
+  /* 给目录腾空间 */
 }
 
 @media (max-width: 630px) {
@@ -733,6 +750,7 @@
   #filter-toggle{
     white-space: nowrap;
     font-size: 0.7rem;
+    display: flex;
   }
 
   h1.entry-title {
