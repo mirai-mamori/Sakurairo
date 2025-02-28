@@ -5,4 +5,4 @@
 	 */
 
 ?>
-<div class="toc-container" style="display:none"><div class="toc"></div></div>
+<div class="toc-container"><div class="toc"></div></div>

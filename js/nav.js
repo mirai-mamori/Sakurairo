@@ -1026,6 +1026,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let navTransitionHandler = null;
     let panelTransitionHandler = null;
 
+    let panelOrderAnime = null;
+
     //动画监听
     function isAnyPanelOpen() {
         return moNavMenu.classList.contains("open") || moTocMenu.classList.contains("open");
@@ -1107,13 +1109,49 @@ document.addEventListener("DOMContentLoaded", () => {
         panel.addEventListener("transitionend", panelTransitionHandler);
     }
 
+    function closeThenOpen(oldPanel, newPanel) {
+        let oldButton, newButton;
+        // 根据面板判断对应按钮
+        if (oldPanel === moNavMenu) {
+            oldButton = moNavButton;
+        } else if (oldPanel === moTocMenu) {
+            oldButton = moTocButton;
+        }
+        
+        if (newPanel === moNavMenu) {
+            newButton = moNavButton;
+        } else if (newPanel === moTocMenu) {
+            newButton = moTocButton;
+        }
+
+        closeMenu(oldPanel,oldButton);
+        banAllButton(); //动画期间禁止交互
+        panelOrderAnime = function(e) {
+            if (e.propertyName === "max-height") {
+                oldPanel.removeEventListener("transitionend", panelOrderAnime);
+                openMenu(newPanel, newButton);
+                activeAllButton();
+            }
+        }
+        oldPanel.addEventListener("transitionend", panelOrderAnime);
+    }
+
+    function banAllButton () {
+        moNavButton.style.pointerEvents = "none";
+        moTocButton.style.pointerEvents = "none";
+    }
+    function activeAllButton() {
+        moNavButton.style.pointerEvents = "auto";
+        moTocButton.style.pointerEvents = "auto";
+    }
 
     // 面板
     moNavButton.addEventListener("click", function (event) {
         event.stopPropagation();
 
         if (moTocMenu.classList.contains("open")) {
-            closeMenu(moTocMenu, moTocButton,isHeaderHover());
+            closeThenOpen(moTocMenu,moNavMenu);
+            return;
         }
         if (moNavMenu.classList.contains("open")) {
             closeMenu(moNavMenu, moNavButton,isHeaderHover());
@@ -1126,14 +1164,62 @@ document.addEventListener("DOMContentLoaded", () => {
         event.stopPropagation();
 
         if (moNavMenu.classList.contains("open")) {
-            closeMenu(moNavMenu, moNavButton,isHeaderHover());
+            closeThenOpen(moNavMenu,moTocMenu);
+            generateMoToc();
+            return;
         }
         if (moTocMenu.classList.contains("open")) {
             closeMenu(moTocMenu, moTocButton,isHeaderHover());
         } else {
             openMenu(moTocMenu, moTocButton);
+            generateMoToc();
         }
     });
+
+    let moUserOption = document.querySelector(".mo_toc_panel .mo-user-options");
+    function generateMoToc() {
+        //复制菜单
+        let mainToc = document.querySelector("#main-container .toc-container .toc");
+        let headToc = document.querySelector(".site-header .mo_toc_panel .mo_toc");
+
+        if (mainToc && headToc) { //都存在
+            if (mainToc.hasChildNodes()) { //不为空
+                tocContent = mainToc.cloneNode(true); //复制
+                moUserOption.style.display = "none"; //隐藏用户栏并显示目录
+                headToc.style.display = ""; 
+
+                tocContent.querySelectorAll("li").forEach(li => { //遍历层级
+                    let subol = li.querySelector("ol")
+                    if (subol) {
+                        //含子目录
+                        li.classList.add("have-child");
+
+                        subol.classList.remove('is-collapsible');
+                        subol.classList.remove('is-collapsed');
+                    }
+                });
+
+                tocContent.className = "mo-toc-content"; 
+                tocContent.removeAttribute("style");
+                headToc.innerHTML = ""; //清空目标容器，防止重复
+                headToc.appendChild(tocContent);
+                let activeli = headToc.querySelector(".is-active-li") || headToc.querySelector("li"); //滚动至tocbot的高亮进度
+                if (activeli) {
+                    activeli.scrollIntoView({ block: "center" });
+                }
+            } else { //目录为空
+                if (headToc) {
+                    headToc.style.display = "none"; //隐藏目录
+                }
+                moUserOption.style.display = ""; //展示用户栏
+            }
+        } else { //没有目录
+            if (headToc) {
+                headToc.style.display = "none";
+            }
+            moUserOption.style.display = "";
+        }
+    }
 
     //二级菜单
     document.querySelectorAll(".open_submenu").forEach(function (toggle) {
@@ -1180,6 +1266,10 @@ document.addEventListener("DOMContentLoaded", () => {
             !navButton.contains(event.target)
         ) {
             closeMenu(moNavMenu, navButton,false);
+
+            moNavMenu.removeEventListener("transitionend", panelOrderAnime);
+            moTocMenu.removeEventListener("transitionend", panelOrderAnime);
+            activeAllButton();
         }
 
         if (
@@ -1188,6 +1278,10 @@ document.addEventListener("DOMContentLoaded", () => {
             !tocButton.contains(event.target)
         ) {
             closeMenu(moTocMenu, tocButton,false);
+
+            moNavMenu.removeEventListener("transitionend", panelOrderAnime);
+            moTocMenu.removeEventListener("transitionend", panelOrderAnime);
+            activeAllButton();
         }
 
         if (
@@ -1205,6 +1299,10 @@ document.addEventListener("DOMContentLoaded", () => {
             moTocMenu.removeEventListener("transitionend", panelTransitionHandler);
             navTransitionHandler = null;
             panelTransitionHandler = null;
+
+            moNavMenu.removeEventListener("transitionend", panelOrderAnime);
+            moTocMenu.removeEventListener("transitionend", panelOrderAnime);
+            activeAllButton();
         }
 
         // 关闭所有展开的二级菜单
@@ -1264,6 +1362,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     moNavButton.classList.remove("open");
                     moTocMenu.classList.remove("open");
                     moTocButton.classList.remove("open");
+
+                    moNavMenu.removeEventListener("transitionend", panelOrderAnime); //移除动画监听并重新激活按钮
+                    moTocMenu.removeEventListener("transitionend", panelOrderAnime);
+                    activeAllButton();
 
                     // 同时关闭所有展开的二级菜单
                     document.querySelectorAll(".mobile-nav .sub-menu.open").forEach(function (subMenu) {
