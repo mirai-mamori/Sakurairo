@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2025-02-25 00:49+0800\n"
-"PO-Revision-Date: 2025-02-25 00:54+0800\n"
+"POT-Creation-Date: 2025-02-28 19:29+0800\n"
+"PO-Revision-Date: 2025-02-28 19:30+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -4445,28 +4445,36 @@ msgstr ""
 "字列を使用できます"
 
 #: options/theme-options.php:4036
+msgid "Fontawesome Source"
+msgstr "Fontawesomeソース"
+
+#: options/theme-options.php:4037
+msgid "The source link of Fontawesome icons style"
+msgstr "Fontawesomeアイコンスタイルのソースリンク"
+
+#: options/theme-options.php:4044
 msgid "Backup&Recovery"
 msgstr "バックアップとリカバリ"
 
-#: options/theme-options.php:4038
+#: options/theme-options.php:4046
 msgid "Backup or Recovery your theme options"
 msgstr "テーマオプションのバックアップまたはリカバリ"
 
-#: options/theme-options.php:4049
+#: options/theme-options.php:4057
 msgid "About Theme"
 msgstr "テーマについて"
 
-#: options/theme-options.php:4055
+#: options/theme-options.php:4063
 msgid "Version Info"
 msgstr "バージョン情報"
 
-#: options/theme-options.php:4060
+#: options/theme-options.php:4068
 msgid ""
 "<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.7/series/headlogo.webp\"  "
 "alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:4066
+#: options/theme-options.php:4074
 #, php-format
 msgid ""
 "Theme Sakurairo Version %s | Internal Version %s | <a href=\"https://github."
@@ -4475,15 +4483,15 @@ msgstr ""
 "テーマ Sakurairo バージョン %s | 内部バージョン %s | <a href=\"https://"
 "github.com/mirai-mamori/Sakurairo\">プロジェクトアドレス</a>"
 
-#: options/theme-options.php:4071
+#: options/theme-options.php:4079
 msgid "Update Related"
 msgstr "関連する更新プログラム"
 
-#: options/theme-options.php:4077
+#: options/theme-options.php:4085
 msgid "Theme Update Source"
 msgstr "テーマの更新元"
 
-#: options/theme-options.php:4083
+#: options/theme-options.php:4091
 msgid ""
 "If you are using a server set up in mainland China, please use the Upyun "
 "source or the official theme source as your theme update source"
@@ -4491,11 +4499,11 @@ msgstr ""
 "中国本土で設定されたサーバーを使用している場合は、UPYUNソースまたは公式テーマ"
 "ソースをテーマアップデートソースとして使用してください。"
 
-#: options/theme-options.php:4090
+#: options/theme-options.php:4098
 msgid "Theme Update Test Channel Disclaimer"
 msgstr "テーマ更新テスト チャネルの免責事項"
 
-#: options/theme-options.php:4096
+#: options/theme-options.php:4104
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -4507,37 +4515,37 @@ msgstr ""
 "の可能性を含むがこれらに限定されない)すべての結果を自己責任で引き受ける意思が"
 "あることを確認した後、引用符でテキストをコピーしてください<strong>。</strong>"
 
-#: options/theme-options.php:4102
+#: options/theme-options.php:4110
 msgid "Theme Update Channel"
 msgstr "テーマ更新チャネル"
 
-#: options/theme-options.php:4109
+#: options/theme-options.php:4117
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr "更新チャネルを切り替えて、新しいバージョンのテストに参加できます。"
 
-#: options/theme-options.php:4111
+#: options/theme-options.php:4119
 msgid "Stable Channel"
 msgstr "安定したチャネル"
 
-#: options/theme-options.php:4112
+#: options/theme-options.php:4120
 msgid "Beta Channel"
 msgstr "ベータチャンネル"
 
-#: options/theme-options.php:4113
+#: options/theme-options.php:4121
 msgid "Preview Channel"
 msgstr "チャンネルのプレビュー"
 
-#: options/theme-options.php:4120
+#: options/theme-options.php:4128
 msgid "Resource Control"
 msgstr "資源制御"
 
-#: options/theme-options.php:4126
+#: options/theme-options.php:4134
 msgid "Provide Critical Frontend Resource locally"
 msgstr "重要なフロントエンド リソースをローカルに提供する"
 
-#: options/theme-options.php:4127
+#: options/theme-options.php:4135
 msgid ""
 "Enabeld by default. Critical resources are those resources whose loading "
 "performance will have a significant impact on the user experience."
@@ -4545,19 +4553,19 @@ msgstr ""
 "既定ではエナベルド。重要なリソースとは、読み込みパフォーマンスがユーザー エク"
 "スペリエンスに大きな影響を与えるリソースです。"
 
-#: options/theme-options.php:4134
+#: options/theme-options.php:4142
 msgid "Provide Other Frontend Resource locally"
 msgstr "他のフロントエンド リソースをローカルに提供する"
 
-#: options/theme-options.php:4135
+#: options/theme-options.php:4143
 msgid "Less important frontend resource in the theme's folder."
 msgstr "テーマのフォルダー内のあまり重要でないフロント エンド リソース。"
 
-#: options/theme-options.php:4142
+#: options/theme-options.php:4150
 msgid "Provide 3rd-party library from public CDN"
 msgstr "公共CDNからサードパーティのライブラリを提供する"
 
-#: options/theme-options.php:4143
+#: options/theme-options.php:4151
 msgid ""
 "When disabled, 3rd-party dependencies, which have been built to bundles "
 "along with themes's entry script, will be loaded from the exact same origin "
@@ -4567,15 +4575,15 @@ msgstr ""
 "ティの依存関係は、クリティカル フロントエンド リソースとまったく同じオリジン"
 "から読み込まれます。"
 
-#: options/theme-options.php:4150
+#: options/theme-options.php:4158
 msgid "Public CDN Basepath"
 msgstr "パブリック CDN ベースパス"
 
-#: options/theme-options.php:4162
+#: options/theme-options.php:4170
 msgid "Vision Resource Basepath"
 msgstr "ビジョン リソース ベースパス"
 
-#: options/theme-options.php:4163
+#: options/theme-options.php:4171
 msgid ""
 "This link directory structure needs to be consistent with the <a "
 "href=\"https://github.com/Fuukei/Sakurairo_Vision\">Sakurairo Vision</a> "
@@ -4589,31 +4597,31 @@ msgstr ""
 "ります。 <a href=\"https://www.upyun.com/\">UPYUN</a> によって正式に提供され"
 "るイメージソースはデフォルトで採用されています。"
 
-#: options/theme-options.php:4169
+#: options/theme-options.php:4177
 msgid "Theme Sponsors"
 msgstr "テーマスポンサー"
 
-#: options/theme-options.php:4174
+#: options/theme-options.php:4182
 msgid ""
 "<img src=\"https://news.maho.cc/sponsors.php\"  alt=\"sponsors\" width=\"65%"
 "\" height=\"65%\" />"
 msgstr ""
 
-#: options/theme-options.php:4179
+#: options/theme-options.php:4187
 msgid "Theme Contributors"
 msgstr "貢献者"
 
-#: options/theme-options.php:4184
+#: options/theme-options.php:4192
 msgid ""
 "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
 "Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:4189
+#: options/theme-options.php:4197
 msgid "Privacy information"
 msgstr "プライバシー情報"
 
-#: options/theme-options.php:4194
+#: options/theme-options.php:4202
 msgid ""
 "<p>The theme respects your privacy</p>\n"
 "        <p>However, when you use a service provider pre-populated by the "
@@ -4631,11 +4639,11 @@ msgstr ""
 "カライズすることで、サードパーティに送信される情報を減らすことができます。</"
 "p>"
 
-#: options/theme-options.php:4202
+#: options/theme-options.php:4210
 msgid "Send Theme Version to Fuukei"
 msgstr "テーマバージョンをFuukeiに送る"
 
-#: options/theme-options.php:4203
+#: options/theme-options.php:4211
 msgid ""
 "The theme will only send time and version information to Fuukei officials "
 "and the data will be cleaned regularly and used only to count version "
@@ -4644,11 +4652,11 @@ msgstr ""
 "テーマは時間とバージョンの情報をFuukei Officialにのみ送信し、データは定期的に"
 "クリーンアップされ、バージョンの更新をカウントするためにのみ使用されます。"
 
-#: options/theme-options.php:4209
+#: options/theme-options.php:4217
 msgid "Reference Information"
 msgstr "参照情報"
 
-#: options/theme-options.php:4214
+#: options/theme-options.php:4222
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox Fluent Icon Pack</p>\n"
 "        <p>MUH2 Design Icon Referenced by 缄默 <a href=\"https://www.coolapk."
@@ -4658,11 +4666,11 @@ msgstr ""
 "p>\n"
 "        <p>MUH2 デザインアイコン 参照元 缄默 MUH2 アイコンパック</p>"
 
-#: options/theme-options.php:4220
+#: options/theme-options.php:4228
 msgid "Dependency Information"
 msgstr "依存情報"
 
-#: options/theme-options.php:4225
+#: options/theme-options.php:4233
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
@@ -4682,7 +4690,7 @@ msgstr ""
 "github.com/HaoZi-Team/ChatGPT-PHP\">open-ai</a> プロジェクトに依存している</"
 "p>"
 
-#: options/theme-options.php:4232
+#: options/theme-options.php:4240
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2025-02-25 00:42+0800\n"
-"PO-Revision-Date: 2025-02-25 00:48+0800\n"
+"POT-Creation-Date: 2025-02-28 19:29+0800\n"
+"PO-Revision-Date: 2025-02-28 19:29+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -4236,28 +4236,36 @@ msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr "用於更新前端Cookie和瀏覽器快取，可使用任意字符串"
 
 #: options/theme-options.php:4036
+msgid "Fontawesome Source"
+msgstr "Fontawesome載入來源"
+
+#: options/theme-options.php:4037
+msgid "The source link of Fontawesome icons style"
+msgstr "Fontawesome圖示樣式的載入來源"
+
+#: options/theme-options.php:4044
 msgid "Backup&Recovery"
 msgstr "備份恢復"
 
-#: options/theme-options.php:4038
+#: options/theme-options.php:4046
 msgid "Backup or Recovery your theme options"
 msgstr "備份或恢復你的主題設定"
 
-#: options/theme-options.php:4049
+#: options/theme-options.php:4057
 msgid "About Theme"
 msgstr "關於主題"
 
-#: options/theme-options.php:4055
+#: options/theme-options.php:4063
 msgid "Version Info"
 msgstr "版本資訊"
 
-#: options/theme-options.php:4060
+#: options/theme-options.php:4068
 msgid ""
 "<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.7/series/headlogo.webp\"  "
 "alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:4066
+#: options/theme-options.php:4074
 #, php-format
 msgid ""
 "Theme Sakurairo Version %s | Internal Version %s | <a href=\"https://github."
@@ -4266,15 +4274,15 @@ msgstr ""
 "Sakurairo 主題版本 %s | 內部版本 %s | <a href=\"https://github.com/mirai-"
 "mamori/Sakurairo\">項目地址</a>"
 
-#: options/theme-options.php:4071
+#: options/theme-options.php:4079
 msgid "Update Related"
 msgstr "更新相關"
 
-#: options/theme-options.php:4077
+#: options/theme-options.php:4085
 msgid "Theme Update Source"
 msgstr "主題更新源"
 
-#: options/theme-options.php:4083
+#: options/theme-options.php:4091
 msgid ""
 "If you are using a server set up in mainland China, please use the Upyun "
 "source or the official theme source as your theme update source"
@@ -4282,11 +4290,11 @@ msgstr ""
 "如果你使用的是架設在中國的伺服器，請使用 UPYUN 源或主題官方源作為你的主題更新"
 "源"
 
-#: options/theme-options.php:4090
+#: options/theme-options.php:4098
 msgid "Theme Update Test Channel Disclaimer"
 msgstr "主題更新測試通道免責聲明"
 
-#: options/theme-options.php:4096
+#: options/theme-options.php:4104
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -4299,55 +4307,55 @@ msgstr ""
 "內 <strong> \"I agree and am willing to bear all unexpected consequences\" </"
 "strong>"
 
-#: options/theme-options.php:4102
+#: options/theme-options.php:4110
 msgid "Theme Update Channel"
 msgstr "主題更新頻道"
 
-#: options/theme-options.php:4109
+#: options/theme-options.php:4117
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr "你可以在此切換更新頻道以參與到新版本的測試中"
 
-#: options/theme-options.php:4111
+#: options/theme-options.php:4119
 msgid "Stable Channel"
 msgstr "正式通道"
 
-#: options/theme-options.php:4112
+#: options/theme-options.php:4120
 msgid "Beta Channel"
 msgstr "公共測試頻道"
 
-#: options/theme-options.php:4113
+#: options/theme-options.php:4121
 msgid "Preview Channel"
 msgstr "預覽測試頻道"
 
-#: options/theme-options.php:4120
+#: options/theme-options.php:4128
 msgid "Resource Control"
 msgstr "資源控制"
 
-#: options/theme-options.php:4126
+#: options/theme-options.php:4134
 msgid "Provide Critical Frontend Resource locally"
 msgstr "在本地提供關鍵前端資源"
 
-#: options/theme-options.php:4127
+#: options/theme-options.php:4135
 msgid ""
 "Enabeld by default. Critical resources are those resources whose loading "
 "performance will have a significant impact on the user experience."
 msgstr "預設為 Enabeld。關鍵資源是載入性能將對用戶體驗產生重大影響的資源。"
 
-#: options/theme-options.php:4134
+#: options/theme-options.php:4142
 msgid "Provide Other Frontend Resource locally"
 msgstr "在本地提供其他前端資源"
 
-#: options/theme-options.php:4135
+#: options/theme-options.php:4143
 msgid "Less important frontend resource in the theme's folder."
 msgstr "主題資料夾中不太重要的前端資源。"
 
-#: options/theme-options.php:4142
+#: options/theme-options.php:4150
 msgid "Provide 3rd-party library from public CDN"
 msgstr "從公共 CDN 提供第三方庫"
 
-#: options/theme-options.php:4143
+#: options/theme-options.php:4151
 msgid ""
 "When disabled, 3rd-party dependencies, which have been built to bundles "
 "along with themes's entry script, will be loaded from the exact same origin "
@@ -4356,15 +4364,15 @@ msgstr ""
 "禁用后，第三方依賴項（已構建為與主題入口腳本捆綁在一起）將從與關鍵前端資源完"
 "全相同的源載入。"
 
-#: options/theme-options.php:4150
+#: options/theme-options.php:4158
 msgid "Public CDN Basepath"
 msgstr "公共 CDN 基本路徑"
 
-#: options/theme-options.php:4162
+#: options/theme-options.php:4170
 msgid "Vision Resource Basepath"
 msgstr "視覺資源基本路徑"
 
-#: options/theme-options.php:4163
+#: options/theme-options.php:4171
 msgid ""
 "This link directory structure needs to be consistent with the <a "
 "href=\"https://github.com/Fuukei/Sakurairo_Vision\">Sakurairo Vision</a> "
@@ -4376,31 +4384,31 @@ msgstr ""
 "Sakurairo_Vision\">櫻井眼視覺</a> 存儲庫保持一致，否則可能會出現一些資源404。"
 "默認採用 <a href=\"https://www.upyun.com/\">UPYUN</a> 提供的镜像源。"
 
-#: options/theme-options.php:4169
+#: options/theme-options.php:4177
 msgid "Theme Sponsors"
 msgstr "贊助資訊"
 
-#: options/theme-options.php:4174
+#: options/theme-options.php:4182
 msgid ""
 "<img src=\"https://news.maho.cc/sponsors.php\"  alt=\"sponsors\" width=\"65%"
 "\" height=\"65%\" />"
 msgstr ""
 
-#: options/theme-options.php:4179
+#: options/theme-options.php:4187
 msgid "Theme Contributors"
 msgstr "貢獻者"
 
-#: options/theme-options.php:4184
+#: options/theme-options.php:4192
 msgid ""
 "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
 "Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:4189
+#: options/theme-options.php:4197
 msgid "Privacy information"
 msgstr "隱私資訊"
 
-#: options/theme-options.php:4194
+#: options/theme-options.php:4202
 msgid ""
 "<p>The theme respects your privacy</p>\n"
 "        <p>However, when you use a service provider pre-populated by the "
@@ -4416,11 +4424,11 @@ msgstr ""
 "        <p>您可以通過本地化與主題相關的資源來減少發送給第三方的資訊，這些資源"
 "預先配置了供您修改的選項</p>"
 
-#: options/theme-options.php:4202
+#: options/theme-options.php:4210
 msgid "Send Theme Version to Fuukei"
 msgstr "發送主題版到 Fuukei 官方"
 
-#: options/theme-options.php:4203
+#: options/theme-options.php:4211
 msgid ""
 "The theme will only send time and version information to Fuukei officials "
 "and the data will be cleaned regularly and used only to count version "
@@ -4429,11 +4437,11 @@ msgstr ""
 "該主題只會向 Fuukei 官方發送時間和版本資訊，數據將定期清理並僅用於計算版本更"
 "新。"
 
-#: options/theme-options.php:4209
+#: options/theme-options.php:4217
 msgid "Reference Information"
 msgstr "引用資訊"
 
-#: options/theme-options.php:4214
+#: options/theme-options.php:4222
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox Fluent Icon Pack</p>\n"
 "        <p>MUH2 Design Icon Referenced by 缄默 <a href=\"https://www.coolapk."
@@ -4442,11 +4450,11 @@ msgstr ""
 "<p>流暢設計圖標引用了由 Paradox 設計的 Fluent圖標包</p>\n"
 "        <p>沐氫圖標引用了由 缄默 設計的沐氫圖標包</p>"
 
-#: options/theme-options.php:4220
+#: options/theme-options.php:4228
 msgid "Dependency Information"
 msgstr "依賴資訊"
 
-#: options/theme-options.php:4225
+#: options/theme-options.php:4233
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
@@ -4463,7 +4471,7 @@ msgstr ""
 "        <p>ChatGPT 相關能力依賴 orhanerday 開源 <a href=\"https://github.com/"
 "HaoZi-Team/ChatGPT-PHP\">open-ai</a> 專案</p>"
 
-#: options/theme-options.php:4232
+#: options/theme-options.php:4240
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "
