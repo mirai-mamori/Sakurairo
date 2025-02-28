@@ -218,7 +218,7 @@
 
 .mobile-nav .open_submenu.open {
   display: inline-block;
-  transform: rotate(90deg);
+  transform: rotate(360deg);
   color: var(--theme-skin-matching);
 }
 
