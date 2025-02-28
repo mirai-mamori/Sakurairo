@@ -54,7 +54,5 @@ if (!defined('ABSPATH')) {
     </div>
 
   <?php } ?>
-
-  <?php get_template_part('layouts/sidebox'); //加载目录容器 ?> 
-
+  <div class="mo_toc"></div>
 </div>
