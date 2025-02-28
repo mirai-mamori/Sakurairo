@@ -1193,6 +1193,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (subol) {
                         //含子目录
                         li.classList.add("have-child");
+
+                        subol.classList.remove('is-collapsible');
+                        subol.classList.remove('is-collapsed');
                     }
                 });
 
