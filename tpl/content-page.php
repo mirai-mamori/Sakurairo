@@ -19,6 +19,7 @@
 		?>
 	</header><!-- .entry-header -->
 	<?php } ?>
+	<?php get_template_part('layouts/sidebox'); ?>
 	<div class="entry-content">
 		<?php
 			the_content('', true);
