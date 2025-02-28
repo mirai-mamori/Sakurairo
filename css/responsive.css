@@ -320,7 +320,7 @@
   overflow: auto;
   min-width: 50vw;
   background: transparent;
-  margin: 20px 0;
+  margin: 20px;
 }
 
 .mo_toc_panel .mo-toc-content ol{
