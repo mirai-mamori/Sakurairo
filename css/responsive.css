@@ -102,6 +102,15 @@
   .mobile-nav .sub-menu.open {
       max-height: 50vh;
   }
+
+  a.toc-link{
+    font-size: 20px;
+  }
+
+  .toc-list{
+    padding-left: 0;
+  }
+
 }
 
 .mo-nav-button i,
@@ -232,6 +241,12 @@
   flex-wrap: wrap;
 }
 
+.mo-user-options{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .mo-user-menu {
   display: flex;
   align-items: center;
@@ -305,12 +320,16 @@
   overflow: auto;
   min-width: 50vw;
   background: transparent;
-  border: 1px solid #eee;
+  margin: 20px 0;
 }
 
-.mo_toc_panel .mo-toc-content ol,
+.mo_toc_panel .mo-toc-content ol{
+  cursor: auto;
+}
+
 .mo_toc_panel .mo-toc-content li {
   cursor: auto;
+  margin: 5px 0;
 }
 
 .mo_toc_panel .toc-link::before {
