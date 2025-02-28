@@ -1,7 +1,7 @@
 .site-header {
     gap: 3px;
     width: 100%;
-    height: 75px;
+    height: 60px;
     display: flex;
     justify-content: left;
     border-radius: 0px !important;
@@ -170,7 +170,7 @@ nav .menu>li .sub-menu li {
 
 .header-user-avatar img {
     max-width: none;
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 .header-user-menu {

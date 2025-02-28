@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://docs.fuukei.org/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.7.8
+Version: 2.7.9
 Tested up to: 6.8
 Requires at least: 6.0
 Requires PHP: 7.4
@@ -272,14 +272,21 @@ pre {
 
 blockquote {
   margin: 0;
-  /* padding: 30px 60px; */
+  padding: 30px 60px;
   position: relative;
   quotes: "" "";
 }
 
-.wp-block-quote,
+.wp-block-quote blockquote{
+  padding: 15px 30px;
+}
 .comments blockquote{
-  padding: 30px 60px !important;
+  padding: 30px 60px;
+}
+
+.wp-block-quote li,
+.wp-block-quote ul {
+  cursor: auto !important;
 }
 
 blockquote:before,
@@ -673,6 +680,11 @@ blockquote:after {
   position: relative;
   overflow: hidden;
   --dw:0;
+}
+
+.nav-search-wrapper li,
+.nav-search-wrapper ul {
+  cursor: auto;
 }
 
 .site-header:not(:hover) .nav-search-wrapper:not(:hover)[data-scrollswap] nav {
@@ -3565,6 +3577,11 @@ iframe {
   padding-bottom: 10px;
 }
 
+.toc-container li,
+.toc-container ol{
+  cursor: auto;
+}
+
 .toc {
   position: sticky;
   top: 12%;
@@ -3753,6 +3770,10 @@ iframe {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.markdown-toggle:has(input:checked) {
+  outline: 1px solid var(--theme-skin-matching);
 }
 
 .markdown-toggle input {
