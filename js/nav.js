@@ -1183,23 +1183,69 @@ document.addEventListener("DOMContentLoaded", () => {
         let headToc = document.querySelector(".site-header .mo_toc_panel .mo_toc");
 
         if (mainToc && headToc) { //都存在
-            moUserOption.style.display = "none"; //隐藏用户栏并显示目录
-            headToc.style.display = ""; 
-            tocContent = mainToc.cloneNode(true); //复制
-            tocContent.className = "mo-toc-content"; 
-            tocContent.removeAttribute("style");
-            tocContent.querySelectorAll(".is-collapsed").forEach(el => el.classList.remove("is-collapsed"));
-            headToc.innerHTML = ""; //清空目标容器，防止重复
-            headToc.appendChild(tocContent);
-            let activeli = headToc.querySelector(".is-active-li") || headToc.querySelector("li"); //滚动至tocbot的高亮进度
-            if (activeli) {
-                activeli.scrollIntoView({ block: "center" });
+            if (mainToc.hasChildNodes()) { //不为空
+                tocContent = mainToc.cloneNode(true); //复制
+                moUserOption.style.display = "none"; //隐藏用户栏并显示目录
+                headToc.style.display = ""; 
+
+                tocContent.querySelectorAll("li").forEach(li => { //遍历层级
+                    let subol = li.querySelector("ol")
+                    if (subol) {
+                        //含子目录
+                        li.classList.add("have-child");
+
+                        let isOpened = subol.classList.contains("is-collapsible") && !subol.classList.contains("is-collapsed");
+    
+                        //追加展开
+                        let expandBtn = document.createElement("span");
+                        expandBtn.classList.add("open-subtoc");
+                        expandBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+
+                        if(isOpened){
+                            expandBtn.classList.add("open");
+                            subol.classList.add("open")
+                        }
+                        subol.classList.remove('is-collapsible');
+                        subol.classList.remove('is-collapsed');
+
+                        let position = li.querySelector("a");
+                        if (position) {
+                            li.insertBefore(expandBtn, position.nextSibling);
+                        } else {
+                            li.insertBefore(expandBtn, li.firstChild);
+                        }
+
+                        expandBtn.addEventListener('click',function(event) {
+                            event.stopPropagation();
+
+                            if (expandBtn.classList.contains('open')) {
+                                closeMenu(subol,expandBtn);
+                            } else {
+                                openMenu(subol,expandBtn);
+                            }
+                        })
+                    }
+                });
+
+                tocContent.className = "mo-toc-content"; 
+                tocContent.removeAttribute("style");
+                headToc.innerHTML = ""; //清空目标容器，防止重复
+                headToc.appendChild(tocContent);
+                let activeli = headToc.querySelector(".is-active-li") || headToc.querySelector("li"); //滚动至tocbot的高亮进度
+                if (activeli) {
+                    activeli.scrollIntoView({ block: "center" });
+                }
+            } else { //目录为空
+                if (headToc) {
+                    headToc.style.display = "none"; //隐藏目录
+                }
+                moUserOption.style.display = ""; //展示用户栏
             }
-        } else {
+        } else { //没有目录
             if (headToc) {
-                headToc.style.display = "none"; //没有目录的页面不显示
+                headToc.style.display = "none";
             }
-            moUserOption.style.display = ""; //恢复用户栏显示
+            moUserOption.style.display = "";
         }
     }
 
