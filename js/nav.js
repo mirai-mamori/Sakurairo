@@ -1193,37 +1193,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (subol) {
                         //含子目录
                         li.classList.add("have-child");
-
-                        let isOpened = subol.classList.contains("is-collapsible") && !subol.classList.contains("is-collapsed");
-    
-                        //追加展开
-                        let expandBtn = document.createElement("span");
-                        expandBtn.classList.add("open-subtoc");
-                        expandBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-
-                        if(isOpened){
-                            expandBtn.classList.add("open");
-                            subol.classList.add("open")
-                        }
-                        subol.classList.remove('is-collapsible');
-                        subol.classList.remove('is-collapsed');
-
-                        let position = li.querySelector("a");
-                        if (position) {
-                            li.insertBefore(expandBtn, position.nextSibling);
-                        } else {
-                            li.insertBefore(expandBtn, li.firstChild);
-                        }
-
-                        expandBtn.addEventListener('click',function(event) {
-                            event.stopPropagation();
-
-                            if (expandBtn.classList.contains('open')) {
-                                closeMenu(subol,expandBtn);
-                            } else {
-                                openMenu(subol,expandBtn);
-                            }
-                        })
                     }
                 });
 
