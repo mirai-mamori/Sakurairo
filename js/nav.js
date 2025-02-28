@@ -1176,14 +1176,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    let moUserOption = document.querySelector(".mo_toc_panel .mo-user-menu");
+    let moUserOption = document.querySelector(".mo_toc_panel .mo-user-options");
     function generateMoToc() {
         //复制菜单
         let mainToc = document.querySelector("#main-container .toc-container .toc");
         let headToc = document.querySelector(".site-header .mo_toc_panel .mo_toc");
 
         if (mainToc && headToc) { //都存在
-            moUserOption.style.display = "none"; 
+            moUserOption.style.display = "none"; //隐藏用户栏并显示目录
             headToc.style.display = ""; 
             tocContent = mainToc.cloneNode(true); //复制
             tocContent.className = "mo-toc-content"; 
@@ -1199,7 +1199,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (headToc) {
                 headToc.style.display = "none"; //没有目录的页面不显示
             }
-            moUserOption.style.display = ""; 
+            moUserOption.style.display = ""; //恢复用户栏显示
         }
     }
 
