@@ -1279,14 +1279,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'note_effects',
-        'type' => 'switcher',
-        'title' => __('Note Touch Effects','sakurairo_csf'),
-        'label' => __('After turning on, there will be a note sound alert when the back to top button and Mashiro style logo touch','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
         'type' => 'subheading',
         'content' => __('Feature','sakurairo_csf'),
       ),
