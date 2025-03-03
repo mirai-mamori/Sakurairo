@@ -51,25 +51,57 @@ namespace IROChatGPT {
         if (str_ends_with($chatGPT_base_url, '/')) {
             $chatGPT_base_url = substr($chatGPT_base_url, 0, -1);
         }
-        $open_ai->setBaseURL($chatGPT_base_url);
+        // 修改 base_url逻辑：确保以斜杠结尾并附加 "chat/completions"
+        if (!str_ends_with($chatGPT_base_url, '/')) {
+            $chatGPT_base_url .= '/';
+        }
+        if (strpos($chatGPT_base_url, 'chat/completions') === false) {
+            $chatGPT_base_url .= 'chat/completions';
+        }
 
-        $chat = $open_ai->chat([
-            "model" => $chatGPT_model,
+        // 构造请求 payload
+        $payload = [
+            "model"    => $chatGPT_model,
             "messages" => [
                 [
-                    "role" => "system",
-                    "content" => $chatGPT_prompt_init
+                    "role"    => "system",
+                    "content" => $chatGPT_prompt_init,
                 ],
                 [
-                    "role" => "user",
-                    "content" => "Title: " . $post->post_title
+                    "role"    => "user",
+                    "content" => "Title：" . $post->post_title . "\n\n" .
+                                 "Content：" . mb_substr(
+                                     preg_replace(
+                                         "/(\\s)\\s{2,}/",
+                                         "$1",
+                                         wp_strip_all_tags(apply_filters('the_content', $post->post_content))
+                                     ),
+                                     0,
+                                     4050
+                                 ),
                 ],
-                [
-                    "role" => "user",
-                    "content" => "Context: " . mb_substr(preg_replace("/(\\s)\\s{2,}/", "$1",wp_strip_all_tags(apply_filters('the_content', $post->post_content))), 0, 4050)
-                ],
-            ]
+            ],
+        ];
+
+        // === 替换开始：使用 cURL 发出请求 ===
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $chatGPT_base_url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            "Content-Type: application/json",
+            "Authorization: Bearer " . $chatGPT_access_token
         ]);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload, JSON_UNESCAPED_UNICODE));
+        $chat = curl_exec($ch);
+        if ($chat === false) {
+            throw new Exception("cURL error: " . curl_error($ch));
+        }
+        curl_close($ch);
+        // === 替换结束 ===
+
+        // 输出 API 原始响应调试信息
+        error_log("Google API raw response: " . $chat);
 
         $decoded_chat = json_decode($chat);
         if (is_null($decoded_chat) || isset($decoded_chat->error)) {
