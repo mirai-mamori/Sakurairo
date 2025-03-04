@@ -2393,7 +2393,7 @@ function markdown_parser($incoming_comment)
     
         foreach ($may_script as $pattern) {
             if (preg_match($pattern, $incoming_comment['comment_content'])) {
-                siren_ajax_comment_err(__('You should not do that!')); //恶意内容警告
+                siren_ajax_comment_err(__("Please do not try to use Javascript in your comments!")); //恶意内容警告
                 return ($incoming_comment);
             }
         }
