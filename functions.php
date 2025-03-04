@@ -2339,18 +2339,22 @@ function DEFAULT_FEATURE_IMAGE()
 {
     //使用独立外部api
     if (iro_opt('post_cover_options') == 'type_2') {
-        return get_random_url(iro_opt('post_cover'));
+        $url = iro_opt('post_cover');
+        return $url ? get_random_url($url) : '';
     }
     //使用内建
     if (iro_opt('random_graphs_options') == 'gallery') {
-        return get_random_url(rest_url('sakura/v1/gallery') . '?img=w');
+        $url = rest_url('sakura/v1/gallery') . '?img=w';
+        return get_random_url($url);
     }
     //使用封面外部
     if (iro_opt('random_graphs_options') == 'external_api') {
-        return get_random_url(iro_opt('random_graphs_link'));
+        $url = iro_opt('random_graphs_link');
+        return $url ? get_random_url($url) : '';
     }
     //意外情况
-    return get_random_url(iro_opt('random_graphs_link'));
+    $url = iro_opt('random_graphs_link');
+    return $url ? get_random_url($url) : '';
 }
 
 //评论回复
