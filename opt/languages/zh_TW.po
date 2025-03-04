@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2025-03-04 12:59+0800\n"
-"PO-Revision-Date: 2025-03-04 12:59+0800\n"
+"POT-Creation-Date: 2025-03-04 13:18+0800\n"
+"PO-Revision-Date: 2025-03-04 13:19+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -1076,15 +1076,15 @@ msgstr "導航菜單樣式"
 
 #: options/theme-options.php:446
 msgid "Iro Nav Style"
-msgstr "iro導航菜單樣式"
+msgstr "導航島樣式"
 
 #: options/theme-options.php:448 options/theme-options.php:479
 msgid "Always centered"
-msgstr "保持居中"
+msgstr "標準樣式"
 
 #: options/theme-options.php:449
 msgid "Dispersed"
-msgstr "均勻分散"
+msgstr "寬鬆"
 
 #: options/theme-options.php:458
 msgid "Nav Menu Radius"
