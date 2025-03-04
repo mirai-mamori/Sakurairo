@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
 "POT-Creation-Date: 2025-02-24 23:56+0800\n"
-"PO-Revision-Date: 2025-02-25 00:40+0800\n"
+"PO-Revision-Date: 2025-03-04 13:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -119,7 +119,7 @@ msgstr "禁止小广告😀"
 
 #: comments.php:231
 msgid "Save your private info"
-msgstr "保存你的个人信息"
+msgstr "保留个人信息"
 
 #: footer.php:43
 #, php-format
