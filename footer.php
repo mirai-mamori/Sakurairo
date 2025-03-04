@@ -166,6 +166,13 @@ $reception_background = iro_opt('reception_background');
       bottom: 0;
       z-index: -1;
     }
+    body.dark #particles-js {
+      z-index: 0;
+    }
+    body.dark #main-container {
+      position: relative;
+      z-index: 1;
+    }
   </style>
   <div id="particles-js"></div>
   <script type="application/json" id="particles-js-cfg"><?php echo iro_opt('particles_json', ''); ?></script>
