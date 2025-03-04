@@ -57,7 +57,6 @@ function font_end_js_control()
         'gravatar_url' => $gravatar_url,
         // options
         'NProgressON' => check(iro_opt('nprogress_on')),
-        'audio' => check(iro_opt('note_effects')),
         'baguetteBox' => check($lightbox === 'baguetteBox'),
         'fancybox' => check($lightbox === 'fancybox'),
         'darkmode' => check(iro_opt('theme_darkmode_auto')),

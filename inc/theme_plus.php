@@ -145,7 +145,7 @@ function comment_captcha(){
       return siren_ajax_comment_err(__('Please fill in the captcha answer','sakurairo'));
   }
   if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])) {
-      return siren_ajax_comment_err(__('You should not do that!','sakurairo'));
+      return siren_ajax_comment_err(__('Have you modified the captcha code data? Or refresh the captcha and try again?','sakurairo'));
   }
   include_once('inc/classes/Captcha.php');
   $img = new Sakura\API\Captcha;

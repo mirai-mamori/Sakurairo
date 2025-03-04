@@ -2339,18 +2339,22 @@ function DEFAULT_FEATURE_IMAGE()
 {
     //使用独立外部api
     if (iro_opt('post_cover_options') == 'type_2') {
-        return get_random_url(iro_opt('post_cover'));
+        $url = iro_opt('post_cover');
+        return $url ? get_random_url($url) : '';
     }
     //使用内建
     if (iro_opt('random_graphs_options') == 'gallery') {
-        return get_random_url(rest_url('sakura/v1/gallery') . '?img=w');
+        $url = rest_url('sakura/v1/gallery') . '?img=w';
+        return get_random_url($url);
     }
     //使用封面外部
     if (iro_opt('random_graphs_options') == 'external_api') {
-        return get_random_url(iro_opt('random_graphs_link'));
+        $url = iro_opt('random_graphs_link');
+        return $url ? get_random_url($url) : '';
     }
     //意外情况
-    return get_random_url(iro_opt('random_graphs_link'));
+    $url = iro_opt('random_graphs_link');
+    return $url ? get_random_url($url) : '';
 }
 
 //评论回复
@@ -2393,7 +2397,7 @@ function markdown_parser($incoming_comment)
     
         foreach ($may_script as $pattern) {
             if (preg_match($pattern, $incoming_comment['comment_content'])) {
-                siren_ajax_comment_err(__('You should not do that!')); //恶意内容警告
+                siren_ajax_comment_err(__("Please do not try to use Javascript in your comments!")); //恶意内容警告
                 return ($incoming_comment);
             }
         }

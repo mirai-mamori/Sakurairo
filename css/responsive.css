@@ -111,6 +111,10 @@
     padding-left: 0;
   }
 
+  .toc-list-item.have-child {
+    opacity: 0.85;
+  }
+
 }
 
 .mo-nav-button i,

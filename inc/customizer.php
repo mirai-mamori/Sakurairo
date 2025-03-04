@@ -404,7 +404,8 @@ $sections = [
 			[
 				'type'     => 'switch',
 				'settings' => 'text_logo_options',
-				'label'    => esc_html__( 'Enable Mashiro Special Effects Text Instead', 'Sakurairo_C' ),
+				'label'    => esc_html__( 'Enable Mashiro Special Effects Text', 'Sakurairo_C' ),
+				'description' => __('After turning it on, it will replace your avatar on the homepage','Sakurairo_C'),
 				'iro_key'  => 'text_logo_options',
 			],
 			[
