@@ -219,7 +219,7 @@ function get_smilies_panel() {
                                     <span class="popuptext" style="margin-left: -55px;width: 110px;">' . __("Advertisement is forbidden 😀", "sakurairo") . '</span>
                                  </div></div>',
                     'qq'     => '<input type="text" placeholder="QQ" name="new_field_qq" id="qq" value="' . esc_attr($comment_author_url) . '" style="display:none" autocomplete="off"/><!--此栏不可见-->',
-					'checks' => '<div class="comment-checks">' . $comment_captcha . $private_ms . $mail_notify ,//此处不闭合，和保存信息在一层级一起闭合
+					'checks' => '<div class="comment-checks">' . ($comment_captcha ?? '') . ($private_ms ?? '') . ($mail_notify ?? '') ,//此处不闭合，和保存信息在一层级一起闭合
                 ))
             );
 
