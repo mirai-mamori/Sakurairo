@@ -63,6 +63,19 @@ if ((check_php_version('8.0.0')) && iro_opt('composer_load')) {
     require_once 'vendor/autoload.php';
 }
 
+// 屏蔽php日志信息
+if (iro_opt('php_notice_filter') != 'inner') {
+
+    if (iro_opt('php_notice_filter','normal') != 'normal') { //仅显示严重错误
+        error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
+        ini_set('display_errors', '1');
+    }
+    if (iro_opt('php_notice_filter') == 'all') { //屏蔽大部分错误
+        error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE);
+        ini_set('display_errors', '0');
+    }
+}
+
 //Update-Checker
 
 require 'update-checker/update-checker.php';
@@ -86,9 +99,6 @@ switch (iro_opt('iro_update_source')) {
     case 'official_building':
         $iroThemeUpdateChecker = UpdateCheck('https://update.maho.cc/' . iro_opt('iro_update_channel') . '/check.json');
 }
-//ini_set('display_errors', true);
-//error_reporting(E_ALL);
-error_reporting(E_ALL & ~E_NOTICE);
 
 add_action('init', 'set_user_locale');
 function set_user_locale() {
