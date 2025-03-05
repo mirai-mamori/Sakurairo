@@ -296,6 +296,8 @@ const handlePageTransition = (isHomePage, state) => {
     if (isHomePage === state.lastPageWasHome) {
         cleanupAnimations();
         DOM.bgNext.style.display = isHomePage ? "block" : "none";
+        DOM.bgNext.style.transform = isHomePage ? "none" : "translateX(20px)";
+        DOM.bgNext.style.opacity = isHomePage ? "1" : "0";
         return;
     }
 
