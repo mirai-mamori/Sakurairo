@@ -1963,6 +1963,7 @@ function theme_folder_check_on_admin_init() {
     $current_theme_path = get_template_directory();
     $theme_folder_name = basename($current_theme_path);
     $correct_theme_folder = 'Sakurairo';
+    $user_locale = get_user_locale();
 
     // 仅管理员用户处理
     if (!current_user_can('manage_options')) {
@@ -1975,12 +1976,38 @@ function theme_folder_check_on_admin_init() {
 
         // 如果目标路径已存在
         if (file_exists($correct_theme_path)) {
-            add_action('admin_notices', function () use ($theme_folder_name, $correct_theme_folder) {
-                ?>
-                <div class="notice notice-error is-dismissible">
-                    <p><strong>警告：</strong> 当前父主题文件夹名称为 <code><?php echo esc_html($theme_folder_name); ?></code>，但目标名称 <code><?php echo esc_html($correct_theme_folder); ?></code> 已存在。请手动检查主题文件夹。</p>
-                </div>
-                <?php
+            add_action('admin_notices', function () use ($theme_folder_name, $correct_theme_folder, $user_locale) {
+                switch ( $user_locale ) {
+                    case 'zh_CN':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 当前父主题文件夹名称为 <code><?php echo esc_html( $theme_folder_name ); ?></code>，但目标名称 <code><?php echo esc_html( $correct_theme_folder ); ?></code> 已存在。请手动检查主题文件夹。</p>
+                        </div>
+                        <?php
+                        break;
+                    case 'zh_TW':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 目前父主題資料夾名稱為 <code><?php echo esc_html( $theme_folder_name ); ?></code>，但目標名稱 <code><?php echo esc_html( $correct_theme_folder ); ?></code> 已存在。請手動檢查主題資料夾。</p>
+                        </div>
+                        <?php
+                        break;
+                    case 'ja':
+                    case 'ja_JP':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 現在の親テーマフォルダ名は <code><?php echo esc_html( $theme_folder_name ); ?></code> ですが、対象の名前 <code><?php echo esc_html( $correct_theme_folder ); ?></code> は既に存在します。テーマフォルダを手動で確認してください。</p>
+                        </div>
+                        <?php
+                        break;
+                    default :
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>Warning:</strong> The current parent theme folder name is <code><?php echo esc_html( $theme_folder_name ); ?></code>, but the target name <code><?php echo esc_html( $correct_theme_folder ); ?></code> already exists. Please manually check the theme folder.</p>
+                        </div>
+                        <?php
+                        break;
+                }
             });
             return;
         }
@@ -1989,33 +2016,76 @@ function theme_folder_check_on_admin_init() {
         if (rename($current_theme_path, $correct_theme_path)) {
             switch_theme($correct_theme_folder);
         } else {
-            add_action('admin_notices', function () use ($theme_folder_name, $correct_theme_folder) {
-                ?>
-                <div class="notice notice-error is-dismissible">
-                    <p><strong>警告：</strong> 当前父主题文件夹名称为 <code><?php echo esc_html($theme_folder_name); ?></code>，无法重命名为 <code><?php echo esc_html($correct_theme_folder); ?></code>。请检查文件系统权限。</p>
-                </div>
-                <?php
+            add_action('admin_notices', function () use ($theme_folder_name, $correct_theme_folder, $user_locale) {
+                switch ( $user_locale ) {
+                    case 'zh_CN':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 当前父主题文件夹名称为 <code><?php echo esc_html( $theme_folder_name ); ?></code>，无法重命名为 <code><?php echo esc_html( $correct_theme_folder ); ?></code>。请检查文件系统权限。</p>
+                        </div>
+                        <?php
+                        break;
+                    case 'zh_TW':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 目前父主題資料夾名稱為 <code><?php echo esc_html( $theme_folder_name ); ?></code>，無法重新命名為 <code><?php echo esc_html( $correct_theme_folder ); ?></code>。請檢查檔案系統權限。</p>
+                        </div>
+                        <?php
+                        break;
+                    case 'ja':
+                    case 'ja_JP':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 現在の親テーマフォルダ名は <code><?php echo esc_html( $theme_folder_name ); ?></code> ですが、<code><?php echo esc_html( $correct_theme_folder ); ?></code> にリネームできませんでした。ファイルシステムの権限を確認してください。</p>
+                        </div>
+                        <?php
+                        break;
+                    default:
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>Warning:</strong> The current parent theme folder name is <code><?php echo esc_html( $theme_folder_name ); ?></code>, and it cannot be renamed to <code><?php echo esc_html( $correct_theme_folder ); ?></code>. Please check the file system permissions.</p>
+                        </div>
+                        <?php
+                        break;
+                }
             });
         }
     } 
     // 当主题文件夹名称正确时，检查目录权限
     else {
-        $is_readable = is_readable($current_theme_path);
-        $is_writable = is_writable($current_theme_path);
-
-        if (!$is_readable || !$is_writable) {
-            add_action('admin_notices', function () use ($current_theme_path, $is_readable, $is_writable) {
-                // 生成权限描述
-                $permission_issues = [];
-                if (!$is_readable) $permission_issues[] = '不可读';
-                if (!$is_writable) $permission_issues[] = '不可写';
-                $message = implode(' 且 ', $permission_issues);
-
-                ?>
-                <div class="notice notice-error is-dismissible">
-                    <p><strong>警告：</strong> 当前主题目录 <code><?php echo esc_html($current_theme_path); ?></code> <?php echo esc_html($message); ?>。请检查文件系统权限。</p>
-                </div>
-                <?php
+        if (!is_writable($current_theme_path)) {
+            add_action('admin_notices', function () use ($current_theme_path, $user_locale) {
+                switch ($user_locale) {
+                    case 'zh_CN':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 当前主题目录 <code><?php echo esc_html($current_theme_path); ?></code> 不可写。请检查文件系统权限。</p>
+                        </div>
+                        <?php
+                        break;
+                    case 'zh_TW':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 目前主題目錄 <code><?php echo esc_html($current_theme_path); ?></code> 不可寫。請檢查檔案系統權限。</p>
+                        </div>
+                        <?php
+                        break;
+                    case 'ja':
+                    case 'ja_JP':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 現在のテーマディレクトリ <code><?php echo esc_html($current_theme_path); ?></code> は書き込み不可です。ファイルシステムの権限を確認してください。</p>
+                        </div>
+                        <?php
+                        break;
+                    default:
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>Warning:</strong> The current theme directory <code><?php echo esc_html($current_theme_path); ?></code> is not writable. Please check the file system permissions.</p>
+                        </div>
+                        <?php
+                        break;
+                }
             });
         }
     }
