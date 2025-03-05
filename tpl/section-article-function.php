@@ -28,7 +28,7 @@ if (iro_opt("article_function")) {
             }
             // 根据WP设置的语言填充链接
             // 不存在该语言翻译时会默认显示英文
-            $locale = get_locale();
+            $locale = get_user_locale();
         ?>
             <a class="post-license" href="<?= $license_link . "deed." . $locale ?>" target="_blank" rel="nofollow" title="<?= $license_desc ?>">
                 <i class="fa-brands fa-creative-commons"></i>
@@ -73,15 +73,12 @@ if (iro_opt("article_function")) {
             <i class="fa-solid fa-calendar-day" aria-hidden="true"></i><?php _e('Last updated on ', 'sakurairo');
                                                                         echo get_the_modified_time('Y-m-d'); ?>
         </div>
+        <?php if (has_tag()) { ?>
         <div class="post-tags">
-            <?php if (has_tag()) {
-                echo '<i class="fa-solid fa-tag" aria-hidden="true"></i> ';
-                the_tags('', ' ', ' ');
-            } else {
-                echo '<i class="fa-solid fa-tag" aria-hidden="true"></i> ';
-                _e('Nothing~', 'sakurairo');
-            } ?>
+            <i class="fa-solid fa-tag" aria-hidden="true"></i> 
+            <?php the_tags('', ' ', ' '); ?>
         </div>
+        <?php } ?>
     </footer><!-- .entry-footer -->
 <?php
 }

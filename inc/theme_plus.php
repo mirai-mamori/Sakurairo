@@ -40,7 +40,7 @@ function get_avatar_profile_url():string{
  * 随机图
  */
 function get_random_bg_url():string{
-  return rest_url('sakura/v1/image/feature').'?'.rand(1,1000);
+  return DEFAULT_FEATURE_IMAGE();
 }
 
 
@@ -134,17 +134,34 @@ if(!function_exists('siren_ajax_comment_err')) {
     }
 }
 // 机器评论验证
-function siren_robot_comment(){
-  if ( !$_POST['no-robot'] && !is_user_logged_in()) {
-     siren_ajax_comment_err('上车请刷卡。<br>Please comfirm you are not a robot.');
+function comment_captcha(){
+  if (empty($_POST)) {
+    return siren_ajax_comment_err(__('You may post nothing','sakurairo'));
   }
+  if (is_user_logged_in()) { //登录后不需要验证
+    return true;
+  }
+  if (!(isset($_POST['captcha']) && !empty(trim($_POST['captcha'])))) {
+      return siren_ajax_comment_err(__('Please fill in the captcha answer','sakurairo'));
+  }
+  if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])) {
+      return siren_ajax_comment_err(__('Have you modified the captcha code data? Or refresh the captcha and try again?','sakurairo'));
+  }
+  include_once('inc/classes/Captcha.php');
+  $img = new Sakura\API\Captcha;
+  $check = $img->check_captcha($_POST['captcha'], $_POST['timestamp'], $_POST['id']);
+  if ($check['code'] == 5) {
+      return true;
+  }
+  return siren_ajax_comment_err(__('Please fill in the correct captcha answer','sakurairo'));
 }
-if(iro_opt('not_robot')) add_action('pre_comment_on_post', 'siren_robot_comment');
+if(iro_opt('not_robot')) add_action('pre_comment_on_post', 'comment_captcha');
+
 // 纯英文评论拦截
 function scp_comment_post( $incoming_comment ) {
   // 为什么要拦自己呢？
   global $user_ID; 
-  if( $user_ID && current_user_can('administrator') ) {
+  if( $user_ID && current_user_can('manage_options') ) {
     return( $incoming_comment );
   } elseif(!preg_match('/[一-龥]/u', $incoming_comment['comment_content'])){
     siren_ajax_comment_err('写点汉字吧。You should add some Chinese words.');
@@ -237,7 +254,7 @@ function gopage(url,descr) {
     window.setTimeout(() => { cb(5); }, 1000); //倒计时秒数在这捏
 }
   </script>  
-  <?php if(current_user_can('administrator')){ ?>
+  <?php if(current_user_can('manage_options')){ ?>
   <div class="admin-login-check">
     <?php 
     echo login_ok(); 
@@ -268,7 +285,7 @@ function login_ok(){
   <p id="login-showtime"></p>
   <p class="ex-logout">
     <a href="<?php bloginfo('url'); ?>" title="<?php _e('Home','sakurairo')/*首页*/?>"><?php _e('Home','sakurairo')/*首页*/?></a>
-    <?php if(current_user_can('administrator')){  ?>
+    <?php if(current_user_can('manage_options')){  ?>
     <a href="<?php bloginfo('url'); ?>/wp-admin/" title="<?php _e('Manage','sakurairo')/*后台*/?>" target="_top"><?php _e('Manage','sakurairo')/*后台*/?></a> 
     <?php } ?>
     <a href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" title="<?php _e('Logout','sakurairo')/*登出*/?>" target="_top"><?php _e('Sign out? ','sakurairo')/*登出？*/?></a>
@@ -284,7 +301,7 @@ function the_headPattern(){
   $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
   $title_style = get_post_meta(get_the_ID(), 'title_style', true); // 获取自定义字段的值
   if(is_single()){
-    require_once get_stylesheet_directory() . '/tpl/entry-census.php';
+    require_once get_template_directory() . '/tpl/entry-census.php';
     $full_image_url = !empty($full_image_url) ? $full_image_url[0] : null;
     if (have_posts()) : while (have_posts()) : the_post();
     $center = 'single-center';
@@ -337,7 +354,7 @@ function the_video_headPattern(bool $isHls = false)
     }
     $thubm_image_url = !empty($thubm_image_urls) ? $thubm_image_urls[0] : null;
     if (is_single()) {
-      require_once get_stylesheet_directory() . '/tpl/entry-census.php';
+      require_once get_template_directory() . '/tpl/entry-census.php';
         while (have_posts()) {
             the_post();
             $center = 'single-center';
@@ -402,14 +419,14 @@ function header_user_menu()
     $ava = iro_opt('personal_avatar') ? iro_opt('personal_avatar') : get_avatar_url($current_user->user_email);
   ?>
     <div class="header-user-avatar">
-      <img alt="header_user_avatar" src="<?php echo get_avatar_url($current_user->ID,  [64]);/*$ava;*/ ?>" width="30" height="30">
+      <img alt="header_user_avatar" src="<?php echo get_avatar_url($current_user->ID,  [64]);/*$ava;*/ ?>" width="35" height="35">
       <div class="header-user-menu">
         <div class="header-user-name">
           <?php _e("Signed in as", "sakurairo") ?>
           <div class="header-user-name-u"><?php echo $current_user->display_name; ?></div>
         </div>
         <div class="user-menu-option">
-          <?php if (current_user_can('administrator')) { ?>
+          <?php if (current_user_can('manage_options')) { ?>
             <a href="<?php bloginfo('url'); ?>/wp-admin/" target="_blank"><?php _e('Dashboard', 'sakurairo')/*管理中心*/ ?></a>
             <a href="<?php bloginfo('url'); ?>/wp-admin/post-new.php" target="_blank"><?php _e('New post', 'sakurairo')/*撰写文章*/ ?></a>
           <?php } ?>
@@ -422,13 +439,15 @@ function header_user_menu()
   } else {
     $ava = iro_opt('unlisted_avatar');
     global $wp;
-    //https://wordpress.stackexchange.com/questions/274569/how-to-get-url-of-current-page-displayed
-    //可以测试一下对不同的固定链接的兼容性
     $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(iro_opt('login_urlskip') ? '' : add_query_arg($wp->query_vars, home_url($wp->request)));
   ?>
     <div class="header-user-avatar">
       <a href="<?= $login_url ?>">
-        <img alt="header_user_avatar" src="<?= $ava ?>" width="30" height="30">
+        <?php if ($ava): ?>
+          <img alt="header_user_avatar" src="<?= $ava ?>" width="35" height="35">
+        <?php else: ?>
+          <i class="fa-solid fa-circle-user"></i>
+        <?php endif; ?>
       </a>
       <div class="header-user-menu">
         <div class="header-user-name no-logged">
@@ -440,47 +459,28 @@ function header_user_menu()
   }
 }
 
-/**
- * 移动端侧边栏用户菜单
- *
- * @return void
- */
-function m_user_menu()
-{
-  global $current_user;
-  wp_get_current_user();
-  if (is_user_logged_in()) {?>
-    <div class="m-user-menu">
-      <div class="m-user-name">
-        <span><?php echo $current_user->display_name; ?></span>
-      </div>
-      <div class="m-user-menu-option">
-        <?php if (current_user_can('administrator')) { ?>
-          <a href="<?php bloginfo('url'); ?>/wp-admin/" target="_blank"><?php _e('Dashboard', 'sakurairo')/*管理中心*/ ?></a>
-          <a href="<?php bloginfo('url'); ?>/wp-admin/post-new.php" target="_blank"><?php _e('New post', 'sakurairo')/*撰写文章*/ ?></a>
-        <?php } ?>
-        <a href="<?php bloginfo('url'); ?>/wp-admin/profile.php" target="_blank"><?php _e('Profile', 'sakurairo')/*个人资料*/ ?></a>
-        <a href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" target="_top" data-no-pjax><?php _e('Sign out', 'sakurairo')/*退出登录*/ ?></a>
-      </div>
-    </div>
-  <?php
-  } else {
-    global $wp;
-    $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(iro_opt('login_urlskip') ? '' : add_query_arg($wp->query_vars, home_url($wp->request)));
-  ?>
-    <div class="m-user-avatar">
-      <div class="m-user-menu">
-        <div class="m-user-name no-logged">
-          <a id="login-link" href="<?= $login_url ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in', 'sakurairo')/*登录*/ ?></a>
-          <?php if (get_option('users_can_register')) { ?>
-            <a style="font-weight:bold;text-decoration:none" href="<?php echo wp_registration_url() ?>"><?php _e('Register') ?></a>
-          <?php } ?>
-        </div>
-      </div>
-    </div>
-  <?php
-  }
+//移动端用户导航栏选项
+class Iro_mo_nav extends Walker_Nav_Menu {
+  function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+    $classes = empty($item->classes) ? [] : (array) $item->classes;
+
+    $allowed_classes = ['menu-item-has-children', 'current-menu-item', 'custom-class'];
+    $filtered_classes = array_intersect($classes, $allowed_classes);
+
+    $class_names = join(' ', array_filter($filtered_classes));
+    $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+
+    $output .= '<li' . $class_names . '>';
+
+    $output .= '<a href="' . esc_url($item->url) . '">' . apply_filters('the_title', $item->title, $item->ID) . '</a>';
+
+    if (in_array('menu-item-has-children', $filtered_classes)) {
+        $output .= '<span class="open_submenu" style="float: right;"><i class="fa-solid fa-play"></i></span>';
+    }
 }
+
+}
+
 
 /*
  * 获取相邻文章缩略图
@@ -494,7 +494,7 @@ function get_prev_thumbnail_url() {
     $classify_display_id = null;
   }
   $prev_post = get_previous_post($in_same_term = false, $excluded_terms = $classify_display_id, $taxonomy = 'category'); 
-  if (!$prev_post) {
+  if (!($prev_post instanceof WP_Post && empty($prev_post->post_password))) {
     return get_random_bg_url(); // 首页图
   } else if ( has_post_thumbnail($prev_post->ID) ) { 
     $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $prev_post->ID ), 'large'); 
@@ -520,7 +520,7 @@ function get_next_thumbnail_url() {
     $classify_display_id = null;
   }
   $next_post = get_next_post($in_same_term = false, $excluded_terms = $classify_display_id, $taxonomy = 'category'); 
-  if( $next_post instanceof WP_Post){
+  if ($next_post instanceof WP_Post && empty($prev_post->post_password)){
      if ( has_post_thumbnail($next_post->ID) ) { 
     $img_src = wp_get_attachment_image_src( get_post_thumbnail_id( $next_post->ID ), 'large'); 
     return $img_src[0] ?? null; 

@@ -119,7 +119,7 @@ if( !empty($_POST['register_reg']) ) {
 	background: #fff;
 	z-index: 3;
 	cursor: move;
-	color: #E67474;
+	color: var(--theme-skin, #505050);
 	font-size: 38px;
 	font-weight: 900;
 	border-radius: 3px;

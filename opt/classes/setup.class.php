@@ -446,7 +446,7 @@ if ( ! class_exists( 'Sakurairo_CSF' ) ) {
 
     // Setup textdomain
     public static function textdomain() {
-      load_textdomain( 'sakurairo_csf', self::$dir .'/languages/'. get_locale() .'.mo' );
+      load_textdomain( 'sakurairo_csf', self::$dir .'/languages/'. get_user_locale() .'.mo' );
     }
 
     // Set all of used fields
