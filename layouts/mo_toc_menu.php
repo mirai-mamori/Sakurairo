@@ -43,6 +43,7 @@ if (!defined('ABSPATH')) {
             </div>
         <?php
         } else {
+            if (!iro_opt('hide_login_portal',false)) {
             global $wp;
             $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(iro_opt('login_urlskip') ? '' : add_query_arg($wp->query_vars, home_url($wp->request)));
         ?>
@@ -58,7 +59,8 @@ if (!defined('ABSPATH')) {
                     <?php } ?>
                 </div>
             </div>
-        <?php } ?>
+        <?php } 
+        }?>
     </div>
     <?php // 目录区域 ?>
     <div class="mo_toc"></div>

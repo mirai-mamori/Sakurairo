@@ -4023,6 +4023,14 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id'    => 'hide_login_portal',
+        'type'  => 'switcher',
+        'title' => __('Hide Login Portal','sakurairo_csf'),
+        'label'   => __('Hide login address in theme as much as possible, if you used plugins to hide this.','sakurairo_csf'),
+        'default' => false,
+      ),
+
+      array(
         'id' => 'fontawesome_source',
         'type' => 'text',
         'title' => __('Fontawesome Source','sakurairo_csf'),
