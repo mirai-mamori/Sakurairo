@@ -425,7 +425,7 @@ $prefix = 'iro_options';
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page</br>Aou can edit your nav menu content <a href=/wp-admin/nav-menus.php>here</a>','sakurairo_csf'),
+        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page</br>Aou can edit your nav menu content <a href="/wp-admin/nav-menus.php">here</a>','sakurairo_csf'),
       ),
 
       array(
@@ -473,7 +473,6 @@ $prefix = 'iro_options';
             'id' => 'distribution',
             'type' => 'select',
             'title' => __('Nav Menu Options Display Method','sakurairo_csf'),
-            'desc' => __('Distribution method of menu options,sakurairo style only support center or Evenly dispersed.','sakurairo_csf'),
             'options'    => array(
               'left' => __('Keep to the left','sakurairo_csf'),
               'right' => __('Keep to the right','sakurairo_csf'),
@@ -1276,14 +1275,6 @@ $prefix = 'iro_options';
           },
           "retina_detect": true
         }'
-      ),
-
-      array(
-        'id' => 'note_effects',
-        'type' => 'switcher',
-        'title' => __('Note Touch Effects','sakurairo_csf'),
-        'label' => __('After turning on, there will be a note sound alert when the back to top button and Mashiro style logo touch','sakurairo_csf'),
-        'default' => false
       ),
 
       array(

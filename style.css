@@ -6513,6 +6513,10 @@ a.toc-link {
   -webkit-transition: all 0.4s ease-in-out;
 }
 
+.header-info {
+  white-space: normal;
+}
+
 .post-like a,
 .post-like i,
 .post-share ul li i,
