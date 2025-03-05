@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-02-25 00:04+0800\n"
-"PO-Revision-Date: 2025-03-04 13:27+0800\n"
+"POT-Creation-Date: 2025-03-05 18:08+0900\n"
+"PO-Revision-Date: 2025-03-05 18:10+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -33,7 +33,7 @@ msgstr "返回首頁"
 msgid "Don't worry, search in site?"
 msgstr "別著急，試試站內檢索？"
 
-#: 404.php:38 header.php:198 layouts/sakura_header.php:76 search.php:176
+#: 404.php:38 header.php:193 layouts/sakura_header.php:76 search.php:176
 msgid "Search..."
 msgstr "搜尋..."
 
@@ -87,11 +87,11 @@ msgstr "取消回復"
 
 #: comments.php:210
 msgid "Nickname or QQ number"
-msgstr "暱稱或QQ號"
+msgstr "暱稱 或 QQ號"
 
-#: comments.php:210
-msgid "Name* "
-msgstr "暱稱 "
+#: comments.php:210 comments.php:214
+msgid "Must* "
+msgstr "必須* "
 
 #: comments.php:211
 msgid "Auto pull nickname and avatar with a QQ num. entered"
@@ -100,10 +100,6 @@ msgstr "輸入QQ號碼將自動拉取暱稱和頭像"
 #: comments.php:214
 msgid "email"
 msgstr "電子郵箱"
-
-#: comments.php:214
-msgid "Must* "
-msgstr "必須* "
 
 #: comments.php:215
 msgid "You will receive notification by email"
@@ -138,7 +134,7 @@ msgstr "控制面板"
 msgid "Want to find something?"
 msgstr "想要找點什麼呢？"
 
-#: footer.php:74 header.php:262
+#: footer.php:74 header.php:257
 msgid "Search"
 msgstr "搜尋"
 
@@ -388,7 +384,7 @@ msgstr "作者"
 msgid "Blogger"
 msgstr "部落客"
 
-#: functions.php:612 functions.php:2902
+#: functions.php:612 functions.php:2906
 msgid "Location"
 msgstr "來自"
 
@@ -433,7 +429,7 @@ msgid " post(s)"
 msgstr " 篇文章"
 
 #: functions.php:1766 functions.php:1769 inc/theme_plus.php:430
-#: layouts/mo_toc_menu.php:33
+#: layouts/mo_toc_menu.php:37
 msgid "Dashboard"
 msgstr "管理後台"
 
@@ -445,15 +441,15 @@ msgstr "<b>錯誤</b>: 電子郵箱格式出錯 (<b>@"
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:2370
+#: functions.php:2374
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:2396
+#: functions.php:2400
 msgid "Please do not try to use Javascript in your comments!"
 msgstr "請不要嘗試在你的評論中使用Javascript！"
 
-#: functions.php:2506
+#: functions.php:2510
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -464,20 +460,20 @@ msgstr ""
 "固定連結</a>設置為樸素。為此，您可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">偽靜態</a></b>"
 
-#: functions.php:2639
+#: functions.php:2643
 #, php-format
 msgid "%s says: "
 msgstr "%s 說： "
 
-#: functions.php:2660
+#: functions.php:2664
 msgid "Expand / Collapse"
 msgstr "展開 / 摺疊"
 
-#: functions.php:2943
+#: functions.php:2947
 msgid "Access denied."
 msgstr "拒絕訪問。"
 
-#: header.php:271 layouts/sakura_header.php:124
+#: header.php:266 layouts/sakura_header.php:124
 msgid "Random Background"
 msgstr "隨機封面"
 
@@ -824,19 +820,19 @@ msgstr "您的瀏覽器不支援 HTML5 影片。"
 msgid "Signed in as"
 msgstr "當前已登入"
 
-#: inc/theme_plus.php:431 layouts/mo_toc_menu.php:34
+#: inc/theme_plus.php:431 layouts/mo_toc_menu.php:38
 msgid "New post"
 msgstr "撰寫文章"
 
-#: inc/theme_plus.php:433 layouts/mo_toc_menu.php:36
+#: inc/theme_plus.php:433 layouts/mo_toc_menu.php:40
 msgid "Profile"
 msgstr "個人資訊"
 
-#: inc/theme_plus.php:434 layouts/mo_toc_menu.php:37
+#: inc/theme_plus.php:434 layouts/mo_toc_menu.php:41
 msgid "Sign out"
 msgstr "登出"
 
-#: inc/theme_plus.php:454 layouts/mo_toc_menu.php:49
+#: inc/theme_plus.php:454 layouts/mo_toc_menu.php:52
 msgid "Log in"
 msgstr "登入"
 
@@ -844,7 +840,7 @@ msgstr "登入"
 msgid "Notice"
 msgstr "公告"
 
-#: layouts/mo_toc_menu.php:51
+#: layouts/mo_toc_menu.php:56
 msgid "Register"
 msgstr "註冊"
 
@@ -984,10 +980,6 @@ msgstr "本文採用 %s 创用CC授权"
 msgid "This author has not provided a description."
 msgstr "此作者沒有設定個人簡介"
 
-#: tpl/section-article-function.php:82
-msgid "Nothing~"
-msgstr "無~"
-
 #: user/page-bangumi.php:41 user/page-bilibiliFavList.php:207
 #: user/page-followVideos.php:29
 msgid "Please fill in the Bilibili UID in Sakura Options."
@@ -1112,18 +1104,3 @@ msgstr "文章模版"
 #. Template Name of the plugin/theme
 msgid "友情链接模版"
 msgstr "友情連結模版"
-
-#~ msgid "I'm not a robot"
-#~ msgstr "我可不是機器人呢"
-
-#~ msgid "Click me OωO"
-#~ msgstr "戳我呀 OωO"
-
-#~ msgid "BiuBiuBiu~"
-#~ msgstr "Biu Biu Biu~"
-
-#~ msgid "You are a surprise that I will only meet once in my life"
-#~ msgstr "你是我一生只會遇見一次的驚喜"
-
-#~ msgid "Change"
-#~ msgstr "變更"

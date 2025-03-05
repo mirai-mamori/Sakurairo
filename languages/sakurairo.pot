@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-01-31 20:03+0800\n"
+"POT-Creation-Date: 2025-03-05 18:08+0900\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -33,11 +33,11 @@ msgstr ""
 msgid "Don't worry, search in site?"
 msgstr ""
 
-#: 404.php:38 footer.php:77 search.php:172
+#: 404.php:38 header.php:193 layouts/sakura_header.php:76 search.php:176
 msgid "Search..."
 msgstr ""
 
-#: archive.php:42 author.php:55 index.php:72
+#: archive.php:42 author.php:55 index.php:85
 msgid " Previous"
 msgstr ""
 
@@ -45,88 +45,76 @@ msgstr ""
 msgid "No personal profile set yet"
 msgstr ""
 
-#: comments.php:17
-msgid "view comments"
-msgstr ""
-
-#: comments.php:18 comments.php:22
-msgid " comment"
-msgstr ""
-
-#: comments.php:18 comments.php:22
-msgid " comments"
-msgstr ""
-
-#: comments.php:43
-msgid "no comment"
-msgstr ""
-
-#: comments.php:54
-msgid "I'm not a robot"
-msgstr ""
-
-#: comments.php:55
-msgid "Comment in private"
-msgstr ""
-
 #: comments.php:56
-msgid "Comment reply notify"
-msgstr ""
-
-#: comments.php:104
-msgid "Click me OωO"
-msgstr ""
-
-#: comments.php:105
 msgid "Woooooow ヾ(≧∇≦*)ゝ"
 msgstr ""
 
-#: comments.php:128
+#: comments.php:79
+msgid "view comments"
+msgstr ""
+
+#: comments.php:80 comments.php:86
+msgid " comment"
+msgstr ""
+
+#: comments.php:80 comments.php:86
+msgid " comments"
+msgstr ""
+
+#: comments.php:106
+msgid "no comment"
+msgstr ""
+
+#: comments.php:121
+msgid "Click here to show captcha"
+msgstr ""
+
+#: comments.php:168
+msgid "Comment in private"
+msgstr ""
+
+#: comments.php:171
+msgid "Comment reply notify"
+msgstr ""
+
+#: comments.php:186
 msgid "Leave a Reply to"
 msgstr ""
 
-#: comments.php:129
+#: comments.php:187
 msgid "Cancel Reply"
 msgstr ""
 
-#: comments.php:130
-msgid "BiuBiuBiu~"
-msgstr ""
-
-#: comments.php:131
-msgid "You are a surprise that I will only meet once in my life"
-msgstr ""
-
-#: comments.php:141
+#: comments.php:210
 msgid "Nickname or QQ number"
 msgstr ""
 
-#: comments.php:141
-msgid "Name* "
-msgstr ""
-
-#: comments.php:141
-msgid "Auto pull nickname and avatar with a QQ num. entered"
-msgstr ""
-
-#: comments.php:143
-msgid "email"
-msgstr ""
-
-#: comments.php:143
+#: comments.php:210 comments.php:214
 msgid "Must* "
 msgstr ""
 
-#: comments.php:143
+#: comments.php:211
+msgid "Auto pull nickname and avatar with a QQ num. entered"
+msgstr ""
+
+#: comments.php:214
+msgid "email"
+msgstr ""
+
+#: comments.php:215
 msgid "You will receive notification by email"
 msgstr ""
 
-#: comments.php:145
+#: comments.php:218
 msgid "Site"
 msgstr ""
 
-#: comments.php:145
+#: comments.php:219
 msgid "Advertisement is forbidden 😀"
+msgstr ""
+
+#: comments.php:231
+msgid "Save your private info"
 msgstr ""
 
 #: footer.php:43
@@ -134,171 +122,171 @@ msgstr ""
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr ""
 
-#: footer.php:82
+#: footer.php:58
 msgid "Go to top"
 msgstr ""
 
-#: footer.php:83
+#: footer.php:59
 msgid "Control Panel"
 msgstr ""
 
-#: footer.php:89 footer.php:97
+#: footer.php:65 footer.php:73
 msgid "Want to find something?"
 msgstr ""
 
-#: footer.php:98 header.php:204
+#: footer.php:74 header.php:257
 msgid "Search"
 msgstr ""
 
-#: footer.php:117
+#: footer.php:93
 msgid "Light Mode"
 msgstr ""
 
-#: footer.php:120
+#: footer.php:96
 msgid "Dark Mode"
 msgstr ""
 
-#: footer.php:126
+#: footer.php:102
 msgid "Toggle Page Background Image"
 msgstr ""
 
-#: footer.php:147
+#: footer.php:123
 msgid "Switch To Font A"
 msgstr ""
 
-#: footer.php:150
+#: footer.php:126
 msgid "Switch To Font B"
 msgstr ""
 
-#: functions.php:113
+#: functions.php:123
 msgid "Nav Menus"
 msgstr ""
 
-#: functions.php:232
+#: functions.php:242
 msgctxt "post type general name"
 msgid "Shuoshuo"
 msgstr ""
 
-#: functions.php:233
+#: functions.php:243
 msgctxt "post type singular name"
 msgid "Shuoshuo"
 msgstr ""
 
-#: functions.php:234
+#: functions.php:244
 msgctxt "admin menu"
 msgid "Shuoshuo"
 msgstr ""
 
-#: functions.php:235
+#: functions.php:245
 msgctxt "add new on admin bar"
 msgid "Shuoshuo"
 msgstr ""
 
-#: functions.php:236
+#: functions.php:246
 msgctxt "shuoshuo"
 msgid "Add New"
 msgstr ""
 
-#: functions.php:237
+#: functions.php:247
 msgid "Add New Shuoshuo"
 msgstr ""
 
-#: functions.php:238
+#: functions.php:248
 msgid "New Shuoshuo"
 msgstr ""
 
-#: functions.php:239
+#: functions.php:249
 msgid "Edit Shuoshuo"
 msgstr ""
 
-#: functions.php:240
+#: functions.php:250
 msgid "View Shuoshuo"
 msgstr ""
 
-#: functions.php:241
+#: functions.php:251
 msgid "All Shuoshuo"
 msgstr ""
 
-#: functions.php:242
+#: functions.php:252
 msgid "Search Shuoshuo"
 msgstr ""
 
-#: functions.php:243
+#: functions.php:253
 msgid "Parent Shuoshuo:"
 msgstr ""
 
-#: functions.php:244
+#: functions.php:254
 msgid "No shuoshuo found."
 msgstr ""
 
-#: functions.php:245
+#: functions.php:255
 msgid "No shuoshuo found in Trash."
 msgstr ""
 
-#: functions.php:292
+#: functions.php:302
 msgid "Emotion Meta Box"
 msgstr ""
 
-#: functions.php:305
+#: functions.php:315
 msgid "Emotion"
 msgstr ""
 
-#: functions.php:308
+#: functions.php:318
 msgid "Emotion Color"
 msgstr ""
 
-#: functions.php:311
+#: functions.php:321
 msgid ""
 "For the Emotion, please fill in the Unicode value of the Fontawesome icon, "
 "and for the Emotion Color, please fill in the RGBA or hexadecimal color."
 msgstr ""
 
-#: functions.php:356
+#: functions.php:366
 msgid "Custom Meta Box"
 msgstr ""
 
-#: functions.php:369
+#: functions.php:379
 msgid "Title Style"
 msgstr ""
 
-#: functions.php:372
+#: functions.php:382
 msgid "License"
 msgstr ""
 
-#: functions.php:375
+#: functions.php:385
 msgid ""
 "For the Title Style, Please fill in the css style, part of the style need "
 "to add !important effective, and for the License, please go to Theme "
 "Options to learn how to set it up."
 msgstr ""
 
-#: functions.php:483
+#: functions.php:501
 msgid "Copied!"
 msgstr ""
 
-#: functions.php:484
+#: functions.php:502
 msgid "Copy Code"
 msgstr ""
 
-#: functions.php:485
+#: functions.php:503
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, "
 "Cover Cache won't take effect."
 msgstr ""
 
-#: functions.php:486
+#: functions.php:504
 msgid "Commiting...."
 msgstr ""
 
-#: functions.php:487
+#: functions.php:505
 msgid "Succeed"
 msgstr ""
 
-#: functions.php:488
+#: functions.php:506
 msgid "10 files max per request"
 msgstr ""
 
-#: functions.php:489
+#: functions.php:507
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -307,15 +295,15 @@ msgid ""
 "This image is too large~Please reupload!"
 msgstr ""
 
-#: functions.php:490
+#: functions.php:508
 msgid "Uploading..."
 msgstr ""
 
-#: functions.php:491
+#: functions.php:509
 msgid "Uploaded successfully~"
 msgstr ""
 
-#: functions.php:492
+#: functions.php:510
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -323,128 +311,132 @@ msgid ""
 "{2}"
 msgstr ""
 
-#: functions.php:493
+#: functions.php:511
 msgid "Upload failed, please retry."
 msgstr ""
 
-#: functions.php:494
+#: functions.php:512
 msgid "Page Load failed. HTTP {0}"
 msgstr ""
 
-#: functions.php:495
+#: functions.php:513
 msgid "Glad you come, but we've got nothing left."
 msgstr ""
 
-#: functions.php:496 search.php:85
+#: functions.php:514 search.php:85
 msgid "Post"
 msgstr ""
 
-#: functions.php:497
+#: functions.php:515
 msgid "Tag"
 msgstr ""
 
-#: functions.php:498
+#: functions.php:516
 msgid "Category"
 msgstr ""
 
-#: functions.php:499 search.php:96
+#: functions.php:517 search.php:96
 msgid "Page"
 msgstr ""
 
-#: functions.php:500
+#: functions.php:518
 msgid "Comment"
 msgstr ""
 
-#: functions.php:501
+#: functions.php:519
 msgid "Paused..."
 msgstr ""
 
-#: functions.php:502
+#: functions.php:520
 msgid "Loading Video..."
 msgstr ""
 
-#: functions.php:503
+#: functions.php:521
 msgid "Downloading fonts, be aware of your data usage."
 msgstr ""
 
-#: functions.php:504
+#: functions.php:522
 msgid "Are you sure you want set it private?"
 msgstr ""
 
-#: functions.php:505
+#: functions.php:523
 msgid "You had set private comment before"
 msgstr ""
 
-#: functions.php:555 inc/theme_plus.php:186
+#: functions.php:603 inc/theme_plus.php:203
 msgid "Author"
 msgstr ""
 
-#: functions.php:555
+#: functions.php:603
 msgid "Blogger"
 msgstr ""
 
-#: functions.php:564 functions.php:2809
+#: functions.php:612 functions.php:2906
 msgid "Location"
 msgstr ""
 
-#: functions.php:570
+#: functions.php:618
 msgid "Private"
 msgstr ""
 
-#: functions.php:572
+#: functions.php:620
 msgid "Yes"
 msgstr ""
 
-#: functions.php:574
+#: functions.php:622
 msgid "No"
 msgstr ""
 
-#: functions.php:577
+#: functions.php:625
 msgid "Edit"
 msgstr ""
 
-#: functions.php:707
+#: functions.php:755
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:1004
+#: functions.php:1052
 msgid "Download Link"
 msgstr ""
 
-#: functions.php:1081
+#: functions.php:1129
 msgid "Remember me"
 msgstr ""
 
-#: functions.php:1631
+#: functions.php:1679
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1665
+#: functions.php:1713
 msgid " year"
 msgstr ""
 
-#: functions.php:1668
+#: functions.php:1716
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1718 functions.php:1721 inc/theme_plus.php:413
-#: inc/theme_plus.php:461
+#: functions.php:1766 functions.php:1769 inc/theme_plus.php:430
+#: layouts/mo_toc_menu.php:37
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:2099
+#: functions.php:2147
 msgid "<b>ERROR</b>: This email domain (<b>@"
 msgstr ""
 
-#: functions.php:2224
+#: functions.php:2272
 msgid "QQ"
 msgstr ""
 
-#: functions.php:2322
+#: functions.php:2374
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:2413
+#: functions.php:2400
+msgid "Please do not try to use Javascript in your comments!"
+msgstr ""
+
+#: functions.php:2510
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -452,20 +444,20 @@ msgid ""
 "target=\"_blank\"> pseudo-static </a>. </ b>"
 msgstr ""
 
-#: functions.php:2546
+#: functions.php:2643
 #, php-format
 msgid "%s says: "
 msgstr ""
 
-#: functions.php:2567
+#: functions.php:2664
 msgid "Expand / Collapse"
 msgstr ""
 
-#: functions.php:2850
+#: functions.php:2947
 msgid "Access denied."
 msgstr ""
 
-#: header.php:213
+#: header.php:266 layouts/sakura_header.php:124
 msgid "Random Background"
 msgstr ""
 
@@ -524,7 +516,7 @@ msgstr ""
 msgid "All item has been loaded."
 msgstr ""
 
-#: inc/classes/Cache.php:70 inc/theme_plus.php:718
+#: inc/classes/Cache.php:70 inc/theme_plus.php:716
 msgid "The comment is private"
 msgstr ""
 
@@ -592,6 +584,26 @@ msgstr ""
 msgid "Paused "
 msgstr ""
 
+#: inc/classes/Steam.php:63
+msgid "Playtime"
+msgstr ""
+
+#: inc/classes/Steam.php:64
+msgid "Last Played"
+msgstr ""
+
+#: inc/classes/Steam.php:98
+msgid "Not Played Yet"
+msgstr ""
+
+#: inc/classes/Steam.php:102
+msgid "minute"
+msgstr ""
+
+#: inc/classes/Steam.php:105
+msgid "hour"
+msgstr ""
+
 #: inc/classes/bangumi.php:104
 msgid "Bangumi ID not set."
 msgstr ""
@@ -601,11 +613,11 @@ msgid "No data"
 msgstr ""
 
 #: inc/classes/bangumi.php:129
-msgid "上映日期: "
+msgid "Release date: "
 msgstr ""
 
 #: inc/classes/bangumi.php:132
-msgid "已观看集数: "
+msgid "Watch progress: "
 msgstr ""
 
 #: inc/classes/bangumi.php:133
@@ -718,106 +730,100 @@ msgstr ""
 msgid "Please upgrade wordpress to version 4.4+"
 msgstr ""
 
-#: inc/theme_plus.php:233
+#: inc/theme_plus.php:139
+msgid "You may post nothing"
+msgstr ""
+
+#: inc/theme_plus.php:145
+msgid "Please fill in the captcha answer"
+msgstr ""
+
+#: inc/theme_plus.php:148
+msgid ""
+"Have you modified the captcha code data? Or refresh the captcha and try "
+"again?"
+msgstr ""
+
+#: inc/theme_plus.php:156
+msgid "Please fill in the correct captcha answer"
+msgstr ""
+
+#: inc/theme_plus.php:250
 msgid "Login successful, "
 msgstr ""
 
-#: inc/theme_plus.php:234
+#: inc/theme_plus.php:251
 msgid "seconds later automatically transfer to"
 msgstr ""
 
-#: inc/theme_plus.php:245
+#: inc/theme_plus.php:262
 msgid "dashboard"
 msgstr ""
 
-#: inc/theme_plus.php:253
+#: inc/theme_plus.php:270
 msgid "home"
 msgstr ""
 
-#: inc/theme_plus.php:265
+#: inc/theme_plus.php:282
 msgid "Change avatar"
 msgstr ""
 
-#: inc/theme_plus.php:266
+#: inc/theme_plus.php:283
 msgid "Hello, "
 msgstr ""
 
-#: inc/theme_plus.php:270
+#: inc/theme_plus.php:287
 msgid "Home"
 msgstr ""
 
-#: inc/theme_plus.php:272
+#: inc/theme_plus.php:289
 msgid "Manage"
 msgstr ""
 
-#: inc/theme_plus.php:274
+#: inc/theme_plus.php:291
 msgid "Logout"
 msgstr ""
 
-#: inc/theme_plus.php:274
+#: inc/theme_plus.php:291
 msgid "Sign out? "
 msgstr ""
 
-#: inc/theme_plus.php:307 inc/theme_plus.php:360
+#: inc/theme_plus.php:324 inc/theme_plus.php:377
 #, php-format
 msgid "Search results for \" %s \""
 msgstr ""
 
-#: inc/theme_plus.php:377 tpl/content-thumbcard.php:60
+#: inc/theme_plus.php:394 tpl/content-thumbcard.php:60
 #: tpl/content-thumbcard.php:66
 msgid "Your browser does not support HTML5 video."
 msgstr ""
 
-#: inc/theme_plus.php:408
+#: inc/theme_plus.php:425
 msgid "Signed in as"
 msgstr ""
 
-#: inc/theme_plus.php:414 inc/theme_plus.php:462
+#: inc/theme_plus.php:431 layouts/mo_toc_menu.php:38
 msgid "New post"
 msgstr ""
 
-#: inc/theme_plus.php:416 inc/theme_plus.php:464
+#: inc/theme_plus.php:433 layouts/mo_toc_menu.php:40
 msgid "Profile"
 msgstr ""
 
-#: inc/theme_plus.php:417 inc/theme_plus.php:465
+#: inc/theme_plus.php:434 layouts/mo_toc_menu.php:41
 msgid "Sign out"
 msgstr ""
 
-#: inc/theme_plus.php:437 inc/theme_plus.php:476
+#: inc/theme_plus.php:454 layouts/mo_toc_menu.php:52
 msgid "Log in"
 msgstr ""
 
-#: inc/theme_plus.php:478
-msgid "Register"
-msgstr ""
-
-#: index.php:9
+#: index.php:20
 msgid "Notice"
 msgstr ""
 
-#: js/1869.js:1
-msgid "s|tr|y"
-msgstr ""
-
-#: js/6136.js:2
-msgid "baguetteBox-overlay"
-msgstr ""
-
-#: js/6136.js:2
-msgid "baguetteBox-slider"
-msgstr ""
-
-#: js/6136.js:2
-msgid "previous-button"
-msgstr ""
-
-#: js/6136.js:2
-msgid "next-button"
-msgstr ""
-
-#: js/6136.js:2
-msgid "close-button"
+#: layouts/mo_toc_menu.php:56
+msgid "Register"
 msgstr ""
 
 #: layouts/post-nextprev.php:15
@@ -961,50 +967,6 @@ msgstr ""
 msgid "This author has not provided a description."
 msgstr ""
 
-#: tpl/section-article-function.php:82
-msgid "Nothing~"
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:56
-msgid "View details"
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:79
-#, php-format
-msgid "More information about %s"
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:130
-msgid "Check for updates"
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:217
-#, php-format
-msgctxt "the plugin title"
-msgid "The %s plugin is up to date."
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:219
-#, php-format
-msgctxt "the plugin title"
-msgid "A new version of the %s plugin is available."
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:221
-#, php-format
-msgctxt "the plugin title"
-msgid "Could not determine if updates are available for %s."
-msgstr ""
-
-#: update-checker/Puc/v5p1/Plugin/Ui.php:227
-#, php-format
-msgid "Unknown update checker status \"%s\""
-msgstr ""
-
-#: update-checker/Puc/v5p1/Vcs/PluginUpdateChecker.php:113
-msgid "There is no changelog available."
-msgstr ""
-
 #: user/page-bangumi.php:41 user/page-bilibiliFavList.php:207
 #: user/page-followVideos.php:29
 msgid "Please fill in the Bilibili UID in Sakura Options."
@@ -1126,19 +1088,4 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "友情链接模版"
-msgstr ""
-
-msgid "Playtime"
-msgstr ""
-
-msgid "Last Played"
-msgstr ""
-
-msgid "Not Played Yet"
-msgstr ""
-
-msgid "minute"
-msgstr ""
-
-msgid "hour"
 msgstr ""
