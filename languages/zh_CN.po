@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-05 18:08+0900\n"
-"PO-Revision-Date: 2025-03-05 18:08+0900\n"
+"POT-Creation-Date: 2025-03-06 15:20+0900\n"
+"PO-Revision-Date: 2025-03-06 15:20+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -21,19 +21,17 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: 404.php:32
-msgid "Return to previous page"
-msgstr "返回上一页"
+#: 404.php:188
+msgid "Page Not Found"
+msgstr "未找到页面"
 
-#: 404.php:33
-msgid "Return to home page"
-msgstr "返回首页"
+#: 404.php:191
+msgid ""
+"The page you are looking for might have been removed, had its name changed, "
+"or is temporarily unavailable."
+msgstr "你要查找的页面可能已被删除、更名或暂时不可用。"
 
-#: 404.php:36
-msgid "Don't worry, search in site?"
-msgstr "别着急，试试搜索？"
-
-#: 404.php:38 header.php:193 layouts/sakura_header.php:76 search.php:176
+#: 404.php:202 header.php:193 layouts/sakura_header.php:76 search.php:176
 msgid "Search..."
 msgstr "搜索..."
 

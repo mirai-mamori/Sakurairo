@@ -117,7 +117,7 @@ $prefix = 'iro_options';
           ),      
         ),
         'default'        => array(
-          'text'    => 'ひょうりゅ',
+          'text'    => '花になって',
           'size'    => '80',
           'color'    => '#FFF',
         ),
@@ -1560,7 +1560,7 @@ $prefix = 'iro_options';
                               array( 'cover_switch', '==', 'true', '', 'true' ),
                               array( 'infor_bar', '==', 'true' ),
                         ),
-        'default' => '届ける言葉を今は育ててる'
+        'default' => '季節の変わり目の服は何着りゃいいんだろ'
       ),
 
       array(
@@ -1637,7 +1637,7 @@ $prefix = 'iro_options';
                               array( 'infor_bar', '==', 'true' ),
                               array( 'signature_typing', '==', 'true' ),
                         ),
-        'default' => '{"strings":["给时光以生命，给岁月以文明"],"typeSpeed":140,"backSpeed":50,"loop":false,"showCursor":true}'
+        'default' => '{"strings":["愿你保持不变 保持己见 充满热血"],"typeSpeed":140,"backSpeed":50,"loop":false,"showCursor":true}'
       ),
 
       array(
@@ -2444,20 +2444,20 @@ $prefix = 'iro_options';
     'default'   => array(
         array(
             'img' => $vision_resource_basepath . 'series/exhibition1.webp',
-            'title' => 'アンコール',
-            'description' => 'ここは夜のない世界',
+            'title' => 'アカネチル',
+            'description' => 'それでも怖いなら、せめて明日を想う心だけ持って僕の傍に居てくれればいい',
             'link' => '',
         ),
         array(
             'img' => $vision_resource_basepath . 'series/exhibition2.webp',
-            'title' => 'ハルジオン',
-            'description' => '過ぎてゆく時間の中',
+            'title' => '夏霞',
+            'description' => 'あの儚く散る花火の下で、馬鹿みたいに永遠を誓った',
             'link' => '',
         ),
         array(
             'img' => $vision_resource_basepath . 'series/exhibition3.webp',
-            'title' => 'かいぶつ',
-            'description' => '素晴らしき世界に今日も乾杯',
+            'title' => '雪冴ゆる',
+            'description' => '独りぽっちの冴えない僕を暗闇から連れ出してくれた',
             'link' => '',
         ),
     )
@@ -3160,14 +3160,14 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('Customize the placeholder in the comment box','sakurairo_csf'),
         'desc' => __('When the user does not type any text, they will appear in the comment box.','sakurairo_csf'),
-        'default' => __('You are a surprise that I will only meet once in my life...','sakurairo_csf')
+        'default' => __('To trace the bright moonlight','sakurairo_csf')
       ),
 
       array(
         'id' => 'comment_submit_button_text',
         'type' => 'text',
         'title' => __('Customize the text on the submit button','sakurairo_csf'),
-        'default' => __('Biu biu biu~','sakurairo_csf')
+        'default' => __('发送✈️','sakurairo_csf')
       ),
 
       array(
@@ -4035,7 +4035,7 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('Fontawesome Source','sakurairo_csf'),
         'desc' => __('The source link of Fontawesome icons style','sakurairo_csf'),
-        'default' => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css",
+        'default' => "https://s4.zstatic.net/ajax/libs/font-awesome/6.7.2/css/all.min.css",
       ),
 
       array(
