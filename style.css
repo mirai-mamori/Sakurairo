@@ -2977,57 +2977,6 @@ h1.main-title {
   animation: nprogress-spinner .4s linear infinite;
 }
 
-.download {
-  color: #fff !important;
-  transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  position: relative;
-  border: 1px solid var(--theme-skin, #505050);
-  overflow: hidden;
-  display: inline-block;
-  background: var(--theme-skin, #505050);
-}
-
-.download::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  opacity: 1;
-  -webkit-transform: translate(0, -105%);
-  transform: translate(0, -105%);
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgba(255, 255, 255, 1);
-  background-color: rgba(255, 255, 255, .25);
-  -webkit-transition-delay: .2s;
-  transition-delay: .2s;
-}
-
-.download::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  opacity: 1;
-  -webkit-transform: translate(0, -105%);
-  transform: translate(0, -105%);
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgba(255, 255, 255, 1);
-  background-color: rgba(255, 255, 255, .25);
-}
-
 #pagination {
   width: 100%;
   padding: 20px 0;
@@ -4941,8 +4890,7 @@ textarea:focus {
   font-weight: var(--global-font-weight);
 }
 
-.single-center .entry-census a,
-.download:hover {
+.single-center .entry-census a  {
   color: #fff;
 }
 
@@ -5860,18 +5808,6 @@ li.feature {
 .nprogress-custom-parent #nprogress .bar,
 .nprogress-custom-parent #nprogress .spinner {
   position: absolute;
-}
-
-.download:hover::after,
-.download:hover::before {
-  opacity: 0;
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-
-.download span {
-  padding: 10px 30px;
-  display: inline-block;
 }
 
 #pagination span {
