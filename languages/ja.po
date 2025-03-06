@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-02-25 00:30+0800\n"
-"PO-Revision-Date: 2025-03-04 13:21+0800\n"
+"POT-Creation-Date: 2025-03-05 18:08+0900\n"
+"PO-Revision-Date: 2025-03-05 18:08+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -33,7 +33,7 @@ msgstr "ホームページに戻る"
 msgid "Don't worry, search in site?"
 msgstr "心配しないで、サイト内検索はどうでしょうか?"
 
-#: 404.php:38 header.php:198 layouts/sakura_header.php:76 search.php:176
+#: 404.php:38 header.php:193 layouts/sakura_header.php:76 search.php:176
 msgid "Search..."
 msgstr "検索…"
 
@@ -87,11 +87,11 @@ msgstr "返信をキャンセル"
 
 #: comments.php:210
 msgid "Nickname or QQ number"
-msgstr "ニックネームまたは QQ 番号"
+msgstr "ニックネーム または QQ 番号"
 
-#: comments.php:210
-msgid "Name* "
-msgstr "サイト名 "
+#: comments.php:210 comments.php:214
+msgid "Must* "
+msgstr "必須* "
 
 #: comments.php:211
 msgid "Auto pull nickname and avatar with a QQ num. entered"
@@ -100,10 +100,6 @@ msgstr "QQ 番号が入力された自動プルニックネームとアバター
 #: comments.php:214
 msgid "email"
 msgstr "メールアドレス"
-
-#: comments.php:214
-msgid "Must* "
-msgstr "必須* "
 
 #: comments.php:215
 msgid "You will receive notification by email"
@@ -138,7 +134,7 @@ msgstr "コントロールパネル"
 msgid "Want to find something?"
 msgstr "何かを見つけたいですか?"
 
-#: footer.php:74 header.php:262
+#: footer.php:74 header.php:257
 msgid "Search"
 msgstr "検索"
 
@@ -391,7 +387,7 @@ msgstr "投稿者"
 msgid "Blogger"
 msgstr "Blogger"
 
-#: functions.php:612 functions.php:2902
+#: functions.php:612 functions.php:2906
 msgid "Location"
 msgstr "場所"
 
@@ -436,7 +432,7 @@ msgid " post(s)"
 msgstr " 記事"
 
 #: functions.php:1766 functions.php:1769 inc/theme_plus.php:430
-#: layouts/mo_toc_menu.php:33
+#: layouts/mo_toc_menu.php:37
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
@@ -448,15 +444,15 @@ msgstr "<b>エラー</b>: このメールドメイン (<b>@"
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:2370
+#: functions.php:2374
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:2396
+#: functions.php:2400
 msgid "Please do not try to use Javascript in your comments!"
 msgstr "コメントでJavascriptを使用しないでください！"
 
-#: functions.php:2506
+#: functions.php:2510
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -468,20 +464,20 @@ msgstr ""
 "href=\"https://qiita.com/cyborg__ninja/items/8a191a00d402e78d8823\" "
 "target=\"_blank\"> 擬似静的化 </a>を構成する必要があります。 </b>"
 
-#: functions.php:2639
+#: functions.php:2643
 #, php-format
 msgid "%s says: "
 msgstr "%s は言う： "
 
-#: functions.php:2660
+#: functions.php:2664
 msgid "Expand / Collapse"
 msgstr "展開/折りたたみ"
 
-#: functions.php:2943
+#: functions.php:2947
 msgid "Access denied."
 msgstr "アクセス拒否"
 
-#: header.php:271 layouts/sakura_header.php:124
+#: header.php:266 layouts/sakura_header.php:124
 msgid "Random Background"
 msgstr "ランダムカバー"
 
@@ -829,19 +825,19 @@ msgstr "お使いのブラウザはHTML5ビデオをサポートしていませ�
 msgid "Signed in as"
 msgstr "ようこそ"
 
-#: inc/theme_plus.php:431 layouts/mo_toc_menu.php:34
+#: inc/theme_plus.php:431 layouts/mo_toc_menu.php:38
 msgid "New post"
 msgstr "新しい記事"
 
-#: inc/theme_plus.php:433 layouts/mo_toc_menu.php:36
+#: inc/theme_plus.php:433 layouts/mo_toc_menu.php:40
 msgid "Profile"
 msgstr "プロフィール"
 
-#: inc/theme_plus.php:434 layouts/mo_toc_menu.php:37
+#: inc/theme_plus.php:434 layouts/mo_toc_menu.php:41
 msgid "Sign out"
 msgstr "ログアウト"
 
-#: inc/theme_plus.php:454 layouts/mo_toc_menu.php:49
+#: inc/theme_plus.php:454 layouts/mo_toc_menu.php:52
 msgid "Log in"
 msgstr "ログイン"
 
@@ -849,7 +845,7 @@ msgstr "ログイン"
 msgid "Notice"
 msgstr "お知らせ"
 
-#: layouts/mo_toc_menu.php:51
+#: layouts/mo_toc_menu.php:56
 msgid "Register"
 msgstr "新規登録"
 
@@ -993,10 +989,6 @@ msgstr "この投稿は %s クリエイティブ・コモンズ・ライセン�
 msgid "This author has not provided a description."
 msgstr "この作者はプロフィールを設定していません"
 
-#: tpl/section-article-function.php:82
-msgid "Nothing~"
-msgstr "何もない~"
-
 #: user/page-bangumi.php:41 user/page-bilibiliFavList.php:207
 #: user/page-followVideos.php:29
 msgid "Please fill in the Bilibili UID in Sakura Options."
@@ -1121,21 +1113,3 @@ msgstr "文章模版"
 #. Template Name of the plugin/theme
 msgid "友情链接模版"
 msgstr "友情链接模版"
-
-#~ msgid "You should not do that!"
-#~ msgstr "そんなことはできないよ！"
-
-#~ msgid "I'm not a robot"
-#~ msgstr "私はロボットではありません"
-
-#~ msgid "Click me OωO"
-#~ msgstr "Click me OωO"
-
-#~ msgid "BiuBiuBiu~"
-#~ msgstr "Biu Biu Biu~"
-
-#~ msgid "You are a surprise that I will only meet once in my life"
-#~ msgstr "あなたは私が私の人生で一度だけ会う驚きです"
-
-#~ msgid "Change"
-#~ msgstr "変更"
