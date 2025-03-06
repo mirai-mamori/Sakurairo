@@ -41,6 +41,13 @@ const ANIMATION = {
 const StateManager = {
     init() {
         try {
+            const currentIsHome = location.pathname === "/" || location.pathname === "/index.php";
+        
+            // 强制重置非主页状态
+            if(!currentIsHome && sessionStorage.getItem("bgNextState")){
+                sessionStorage.removeItem("bgNextState");
+            }
+
             if (sessionStorage.getItem("bgNextState")) {
                 return this.getState();
             }
@@ -296,6 +303,8 @@ const handlePageTransition = (isHomePage, state) => {
     if (isHomePage === state.lastPageWasHome) {
         cleanupAnimations();
         DOM.bgNext.style.display = isHomePage ? "block" : "none";
+        DOM.bgNext.style.transform = isHomePage ? "none" : "translateX(20px)";
+        DOM.bgNext.style.opacity = isHomePage ? "1" : "0";
         return;
     }
 
@@ -385,6 +394,14 @@ const handlePageTransition = (isHomePage, state) => {
 
 // 执行过渡动画
 const animateTransition = (isEntering, state, bgNextWidth, initialWidth) => {
+
+    // 增加容错检测
+    const currentWidth = DOM.navSearchWrapper.offsetWidth;
+    if(Math.abs(initialWidth - currentWidth) > 50){
+        console.warn('Width deviation detected, recalculating...');
+        initialWidth = currentWidth;
+    }
+
     if (state.isTransitioning) return;
 
     StateManager.update({
@@ -739,6 +756,15 @@ const initArticleTitleBehavior = () => {
             DOM.navSearchWrapper.style.overflow = "unset";
         });
     }
+
+    // 增加延迟检测
+    setTimeout(() => {
+        if(window._searchWrapperState){
+            window._searchWrapperState.handleScroll();
+            // 强制重算宽度
+            window._searchWrapperState.show(); 
+        }
+    }, 300); // 等待浏览器滚动恢复
 };
 
 // 初始化所有动画
@@ -1336,6 +1362,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // 阈值
     const scrollThreshold = document.documentElement.scrollHeight * 0.01;
     
+    // 滚动恢复检测
+    let isRestoringScroll = false;
+    window.addEventListener('scroll', function restoreScrollCheck() {
+        if (!isRestoringScroll && (window.pageYOffset > 0)) {
+            isRestoringScroll = true;
+            setTimeout(() => {
+                if (window._searchWrapperState) {
+                    window._searchWrapperState.handleScroll();
+                    window._searchWrapperState.show(); // 强制重算宽度
+                }
+            }, 100);
+            window.removeEventListener('scroll', restoreScrollCheck);
+        }
+    }, { passive: true });
+
     window.addEventListener("scroll", function () {
 
         if (window.innerWidth < 860) {
