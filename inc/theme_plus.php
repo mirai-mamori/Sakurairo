@@ -437,25 +437,27 @@ function header_user_menu()
     </div>
   <?php
   } else {
-    $ava = iro_opt('unlisted_avatar');
-    global $wp;
-    $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(iro_opt('login_urlskip') ? '' : add_query_arg($wp->query_vars, home_url($wp->request)));
-  ?>
-    <div class="header-user-avatar">
-      <a href="<?= $login_url ?>">
-        <?php if ($ava): ?>
-          <img alt="header_user_avatar" src="<?= $ava ?>" width="35" height="35">
-        <?php else: ?>
-          <i class="fa-solid fa-circle-user"></i>
-        <?php endif; ?>
-      </a>
-      <div class="header-user-menu">
-        <div class="header-user-name no-logged">
-          <a id="login-link" href="<?= $login_url ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in', 'sakurairo')/*登录*/ ?></a>
+    if (!iro_opt('hide_login_portal',false)) {
+      $ava = iro_opt('unlisted_avatar');
+      global $wp;
+      $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(iro_opt('login_urlskip') ? '' : add_query_arg($wp->query_vars, home_url($wp->request)));
+    ?>
+      <div class="header-user-avatar">
+        <a href="<?= $login_url ?>">
+          <?php if ($ava): ?>
+            <img alt="header_user_avatar" src="<?= $ava ?>" width="35" height="35">
+          <?php else: ?>
+            <i class="fa-solid fa-circle-user"></i>
+          <?php endif; ?>
+        </a>
+        <div class="header-user-menu">
+          <div class="header-user-name no-logged">
+            <a id="login-link" href="<?= $login_url ?>" data-no-pjax style="font-weight:bold;text-decoration:none"><?php _e('Log in', 'sakurairo')/*登录*/ ?></a>
+          </div>
         </div>
       </div>
-    </div>
-  <?php
+    <?php
+    }
   }
 }
 

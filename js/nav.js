@@ -1028,6 +1028,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let panelOrderAnime = null;
 
+    moUserMenu = document.querySelector(".mo-user-menu");
+    if (!moUserMenu) {
+        TocButtonStat ();
+
+        function TocButtonStat () {
+            let haveToc = document.querySelector("#main-container .toc-container .toc");
+            if (haveToc) {
+                moTocButton.style.transform = 'translateY(0)';
+            } else {
+                moTocButton.style.transform = 'translateY(-100%)';
+            }
+        }
+
+        document.addEventListener('pjax:complete', function() {
+            TocButtonStat ();
+        });
+    }
+
     //动画监听
     function isAnyPanelOpen() {
         return moNavMenu.classList.contains("open") || moTocMenu.classList.contains("open");

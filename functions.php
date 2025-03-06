@@ -63,6 +63,19 @@ if ((check_php_version('8.0.0')) && iro_opt('composer_load')) {
     require_once 'vendor/autoload.php';
 }
 
+// 屏蔽php日志信息
+if (iro_opt('php_notice_filter') != 'inner') {
+
+    if (iro_opt('php_notice_filter','normal') != 'normal') { //仅显示严重错误
+        error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
+        ini_set('display_errors', '1');
+    }
+    if (iro_opt('php_notice_filter') == 'all') { //屏蔽大部分错误
+        error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE);
+        ini_set('display_errors', '0');
+    }
+}
+
 //Update-Checker
 
 require 'update-checker/update-checker.php';
@@ -86,9 +99,6 @@ switch (iro_opt('iro_update_source')) {
     case 'official_building':
         $iroThemeUpdateChecker = UpdateCheck('https://update.maho.cc/' . iro_opt('iro_update_channel') . '/check.json');
 }
-//ini_set('display_errors', true);
-//error_reporting(E_ALL);
-error_reporting(E_ALL & ~E_NOTICE);
 
 add_action('init', 'set_user_locale');
 function set_user_locale() {
@@ -1045,26 +1055,6 @@ function enable_more_buttons($buttons)
     return $buttons;
 }
 add_filter("mce_buttons_3", "enable_more_buttons");
-// 下载按钮
-function download($atts, $content = null)
-{
-    return '<a class="download" href="' . $content . '" rel="external"
-target="_blank" title="' . __("Download Link", "sakurairo") . '">
-<span><i class="fa-solid fa-download"></i>Download</span></a>';
-}
-add_shortcode("download", "download");
-
-add_action('after_wp_tiny_mce', 'bolo_after_wp_tiny_mce');
-function bolo_after_wp_tiny_mce($mce_settings)
-{
-    ?>
-                                    <script type="text/javascript">
-                                        QTags.addButton('download', '下载按钮', "[download]下载地址[/download]");
-
-                                        function bolo_QTnextpage_arg1() {}
-                                    </script>
-    <?php }
-
 /*
  * 后台登录页
  * @M.J
@@ -1610,26 +1600,6 @@ function check_title_tags($content)
     return false;
 }
 
-// 显示访客当前 IP
-function get_the_user_ip()
-{
-    // if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-    //     //check ip from share internet
-    //     $ip = $_SERVER['HTTP_CLIENT_IP'];
-    // } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-    //     //to check ip is pass from proxy
-    //     $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    // } else {
-    //     $ip = $_SERVER['REMOTE_ADDR'];
-    // }
-    // 简略版
-    // $ip = $_SERVER['HTTP_CLIENT_IP'] ?: ($_SERVER['HTTP_X_FORWARDED_FOR'] ?: $_SERVER['REMOTE_ADDR']);
-    $ip = $_SERVER['HTTP_CLIENT_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
-    return apply_filters('wpb_get_ip', $ip);
-}
-
-add_shortcode('show_ip', 'get_the_user_ip');
-
 /*歌词*/
 function hero_get_lyric()
 {
@@ -1953,6 +1923,7 @@ function theme_folder_check_on_admin_init() {
     $current_theme_path = get_template_directory();
     $theme_folder_name = basename($current_theme_path);
     $correct_theme_folder = 'Sakurairo';
+    $user_locale = get_user_locale();
 
     // 仅管理员用户处理
     if (!current_user_can('manage_options')) {
@@ -1965,12 +1936,38 @@ function theme_folder_check_on_admin_init() {
 
         // 如果目标路径已存在
         if (file_exists($correct_theme_path)) {
-            add_action('admin_notices', function () use ($theme_folder_name, $correct_theme_folder) {
-                ?>
-                <div class="notice notice-error is-dismissible">
-                    <p><strong>警告：</strong> 当前父主题文件夹名称为 <code><?php echo esc_html($theme_folder_name); ?></code>，但目标名称 <code><?php echo esc_html($correct_theme_folder); ?></code> 已存在。请手动检查主题文件夹。</p>
-                </div>
-                <?php
+            add_action('admin_notices', function () use ($theme_folder_name, $correct_theme_folder, $user_locale) {
+                switch ( $user_locale ) {
+                    case 'zh_CN':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 当前父主题文件夹名称为 <code><?php echo esc_html( $theme_folder_name ); ?></code>，但目标名称 <code><?php echo esc_html( $correct_theme_folder ); ?></code> 已存在。请手动检查主题文件夹。</p>
+                        </div>
+                        <?php
+                        break;
+                    case 'zh_TW':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 目前父主題資料夾名稱為 <code><?php echo esc_html( $theme_folder_name ); ?></code>，但目標名稱 <code><?php echo esc_html( $correct_theme_folder ); ?></code> 已存在。請手動檢查主題資料夾。</p>
+                        </div>
+                        <?php
+                        break;
+                    case 'ja':
+                    case 'ja_JP':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 現在の親テーマフォルダ名は <code><?php echo esc_html( $theme_folder_name ); ?></code> ですが、対象の名前 <code><?php echo esc_html( $correct_theme_folder ); ?></code> は既に存在します。テーマフォルダを手動で確認してください。</p>
+                        </div>
+                        <?php
+                        break;
+                    default :
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>Warning:</strong> The current parent theme folder name is <code><?php echo esc_html( $theme_folder_name ); ?></code>, but the target name <code><?php echo esc_html( $correct_theme_folder ); ?></code> already exists. Please manually check the theme folder.</p>
+                        </div>
+                        <?php
+                        break;
+                }
             });
             return;
         }
@@ -1979,33 +1976,76 @@ function theme_folder_check_on_admin_init() {
         if (rename($current_theme_path, $correct_theme_path)) {
             switch_theme($correct_theme_folder);
         } else {
-            add_action('admin_notices', function () use ($theme_folder_name, $correct_theme_folder) {
-                ?>
-                <div class="notice notice-error is-dismissible">
-                    <p><strong>警告：</strong> 当前父主题文件夹名称为 <code><?php echo esc_html($theme_folder_name); ?></code>，无法重命名为 <code><?php echo esc_html($correct_theme_folder); ?></code>。请检查文件系统权限。</p>
-                </div>
-                <?php
+            add_action('admin_notices', function () use ($theme_folder_name, $correct_theme_folder, $user_locale) {
+                switch ( $user_locale ) {
+                    case 'zh_CN':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 当前父主题文件夹名称为 <code><?php echo esc_html( $theme_folder_name ); ?></code>，无法重命名为 <code><?php echo esc_html( $correct_theme_folder ); ?></code>。请检查文件系统权限。</p>
+                        </div>
+                        <?php
+                        break;
+                    case 'zh_TW':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 目前父主題資料夾名稱為 <code><?php echo esc_html( $theme_folder_name ); ?></code>，無法重新命名為 <code><?php echo esc_html( $correct_theme_folder ); ?></code>。請檢查檔案系統權限。</p>
+                        </div>
+                        <?php
+                        break;
+                    case 'ja':
+                    case 'ja_JP':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 現在の親テーマフォルダ名は <code><?php echo esc_html( $theme_folder_name ); ?></code> ですが、<code><?php echo esc_html( $correct_theme_folder ); ?></code> にリネームできませんでした。ファイルシステムの権限を確認してください。</p>
+                        </div>
+                        <?php
+                        break;
+                    default:
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>Warning:</strong> The current parent theme folder name is <code><?php echo esc_html( $theme_folder_name ); ?></code>, and it cannot be renamed to <code><?php echo esc_html( $correct_theme_folder ); ?></code>. Please check the file system permissions.</p>
+                        </div>
+                        <?php
+                        break;
+                }
             });
         }
     } 
     // 当主题文件夹名称正确时，检查目录权限
     else {
-        $is_readable = is_readable($current_theme_path);
-        $is_writable = is_writable($current_theme_path);
-
-        if (!$is_readable || !$is_writable) {
-            add_action('admin_notices', function () use ($current_theme_path, $is_readable, $is_writable) {
-                // 生成权限描述
-                $permission_issues = [];
-                if (!$is_readable) $permission_issues[] = '不可读';
-                if (!$is_writable) $permission_issues[] = '不可写';
-                $message = implode(' 且 ', $permission_issues);
-
-                ?>
-                <div class="notice notice-error is-dismissible">
-                    <p><strong>警告：</strong> 当前主题目录 <code><?php echo esc_html($current_theme_path); ?></code> <?php echo esc_html($message); ?>。请检查文件系统权限。</p>
-                </div>
-                <?php
+        if (!is_writable($current_theme_path)) {
+            add_action('admin_notices', function () use ($current_theme_path, $user_locale) {
+                switch ($user_locale) {
+                    case 'zh_CN':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 当前主题目录 <code><?php echo esc_html($current_theme_path); ?></code> 不可写。请检查文件系统权限。</p>
+                        </div>
+                        <?php
+                        break;
+                    case 'zh_TW':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 目前主題目錄 <code><?php echo esc_html($current_theme_path); ?></code> 不可寫。請檢查檔案系統權限。</p>
+                        </div>
+                        <?php
+                        break;
+                    case 'ja':
+                    case 'ja_JP':
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>警告：</strong> 現在のテーマディレクトリ <code><?php echo esc_html($current_theme_path); ?></code> は書き込み不可です。ファイルシステムの権限を確認してください。</p>
+                        </div>
+                        <?php
+                        break;
+                    default:
+                        ?>
+                        <div class="notice notice-error is-dismissible">
+                            <p><strong>Warning:</strong> The current theme directory <code><?php echo esc_html($current_theme_path); ?></code> is not writable. Please check the file system permissions.</p>
+                        </div>
+                        <?php
+                        break;
+                }
             });
         }
     }
