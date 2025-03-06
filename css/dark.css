@@ -606,6 +606,7 @@ body.dark .comment-respond input[type=submit]:hover {
 }
 
 /* Dark mode header styles */
+body.dark .site-branding,
 body.dark .nav-search-wrapper,
 body.dark .user-menu-wrapper,
 body.dark nav .menu > li .sub-menu,
