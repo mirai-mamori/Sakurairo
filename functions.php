@@ -1055,26 +1055,6 @@ function enable_more_buttons($buttons)
     return $buttons;
 }
 add_filter("mce_buttons_3", "enable_more_buttons");
-// 下载按钮
-function download($atts, $content = null)
-{
-    return '<a class="download" href="' . $content . '" rel="external"
-target="_blank" title="' . __("Download Link", "sakurairo") . '">
-<span><i class="fa-solid fa-download"></i>Download</span></a>';
-}
-add_shortcode("download", "download");
-
-add_action('after_wp_tiny_mce', 'bolo_after_wp_tiny_mce');
-function bolo_after_wp_tiny_mce($mce_settings)
-{
-    ?>
-                                    <script type="text/javascript">
-                                        QTags.addButton('download', '下载按钮', "[download]下载地址[/download]");
-
-                                        function bolo_QTnextpage_arg1() {}
-                                    </script>
-    <?php }
-
 /*
  * 后台登录页
  * @M.J
@@ -1619,26 +1599,6 @@ function check_title_tags($content)
     }
     return false;
 }
-
-// 显示访客当前 IP
-function get_the_user_ip()
-{
-    // if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-    //     //check ip from share internet
-    //     $ip = $_SERVER['HTTP_CLIENT_IP'];
-    // } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-    //     //to check ip is pass from proxy
-    //     $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    // } else {
-    //     $ip = $_SERVER['REMOTE_ADDR'];
-    // }
-    // 简略版
-    // $ip = $_SERVER['HTTP_CLIENT_IP'] ?: ($_SERVER['HTTP_X_FORWARDED_FOR'] ?: $_SERVER['REMOTE_ADDR']);
-    $ip = $_SERVER['HTTP_CLIENT_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
-    return apply_filters('wpb_get_ip', $ip);
-}
-
-add_shortcode('show_ip', 'get_the_user_ip');
 
 /*歌词*/
 function hero_get_lyric()
