@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-05 18:08+0900\n"
+"POT-Creation-Date: 2025-03-06 15:17+0900\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,19 +21,17 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: 404.php:32
-msgid "Return to previous page"
+#: 404.php:188
+msgid "Page Not Found"
 msgstr ""
 
-#: 404.php:33
-msgid "Return to home page"
+#: 404.php:191
+msgid ""
+"The page you are looking for might have been removed, had its name "
+"changed, or is temporarily unavailable."
 msgstr ""
 
-#: 404.php:36
-msgid "Don't worry, search in site?"
-msgstr ""
-
-#: 404.php:38 header.php:193 layouts/sakura_header.php:76 search.php:176
+#: 404.php:202 header.php:193 layouts/sakura_header.php:76 search.php:176
 msgid "Search..."
 msgstr ""
 
