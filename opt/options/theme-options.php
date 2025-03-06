@@ -4023,11 +4023,32 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id'    => 'hide_login_portal',
+        'type'  => 'switcher',
+        'title' => __('Hide Login Portal','sakurairo_csf'),
+        'label'   => __('Hide login address in theme as much as possible, if you used plugins to hide this.','sakurairo_csf'),
+        'default' => false,
+      ),
+
+      array(
         'id' => 'fontawesome_source',
         'type' => 'text',
         'title' => __('Fontawesome Source','sakurairo_csf'),
         'desc' => __('The source link of Fontawesome icons style','sakurairo_csf'),
         'default' => "https://s4.zstatic.net/ajax/libs/font-awesome/6.7.2/css/all.min.css",
+      ),
+
+      array(
+        'id' => 'php_notice_filter',
+        'type' => 'select',
+        'title' => __('PHP Notice Filter','sakurairo_csf'),
+        'options' => array(
+          'inner' => 'Use your php config',
+          'normal' => 'Only show critical errors',
+          'all' => __('Show nothing','sakurairo_csf'),
+        ),
+        "default" => "normal",
+        'desc' => __('It is recommended to set it to normal to block log information that does not affect usage.','sakurairo_csf'),
       ),
     )
   ) );
