@@ -2161,7 +2161,7 @@ $prefix = 'iro_options';
 
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title' => __('Homepage Components and Titles','sakurairo_csf'),
+    'title' => __('Homepage Components Options','sakurairo_csf'),
     'icon' => 'fa fa-bars',
     'fields' => array(
 
@@ -3158,7 +3158,7 @@ $prefix = 'iro_options';
       array(
         'id' => 'comment_placeholder_text',
         'type' => 'text',
-        'title' => __('Customize the placeholder in the comment box','sakurairo_csf'),
+        'title' => __('Custom CommentBox Placeholder','sakurairo_csf'),
         'desc' => __('When the user does not type any text, they will appear in the comment box.','sakurairo_csf'),
         'default' => __('To trace the bright moonlight','sakurairo_csf')
       ),
@@ -3166,7 +3166,7 @@ $prefix = 'iro_options';
       array(
         'id' => 'comment_submit_button_text',
         'type' => 'text',
-        'title' => __('Customize the text on the submit button','sakurairo_csf'),
+        'title' => __('Customize Submit Button Content','sakurairo_csf'),
         'default' => __('发送✈️','sakurairo_csf')
       ),
 
