@@ -99,7 +99,6 @@ $sections = [
 				'choices'     => [
 					'iro' => $vision_resource_basepath . 'options/nav_menu_style_center.webp',
 					'sakura' => $vision_resource_basepath . 'options/nav_menu_style_sakura.webp',
-					'sakurairo' => $vision_resource_basepath . '/options/nav_menu_style_sakurairo.webp',
 				],
 			],
 			[
@@ -136,13 +135,6 @@ $sections = [
 					'min'  => 0,
 					'max'  => 50,
 					'step' => 1,
-				],
-				'active_callback' => [
-					[
-						'setting'  => 'choice_of_nav_style',
-						'operator' => '==',
-						'value'    => 'iro',
-					]
 				],
 				'output' => array(
 					array(
