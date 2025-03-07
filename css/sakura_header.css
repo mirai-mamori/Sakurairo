@@ -4,7 +4,7 @@
     height: 60px;
     display: flex;
     justify-content: left;
-    border-radius: 0px !important;
+    border-radius: 0px;
     background: transparent;
     position: fixed;
     z-index: 999;

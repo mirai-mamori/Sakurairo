@@ -9,11 +9,6 @@ $nav_style = iro_opt('sakura_nav_style');
 $nav_text_logo = iro_opt('nav_text_logo');
 ?>
 <style>
-  .site-header.bg,
-  .site-header:hover {
-    backdrop-filter: blur( <?php echo ($nav_style['blurry']??'10'); //模糊度 ?>px);
-  }
-
   <?php if (!empty($nav_text_logo['font_name'])){ ?>
   .site-branding a{
     font-family: <?php echo $nav_text_logo['font_name']; ?> !important;
@@ -29,11 +24,11 @@ $nav_text_logo = iro_opt('nav_text_logo');
   }
 
   <?php //sakurairo classic 基于 sakura样式再层叠
-  if(iro_opt('choice_of_nav_style') == 'sakurairo') { ?>
+  if($nav_style['style'] == 'sakurairo') { ?>
   @media (min-width: 860px) {
       .site-header{
       position: fixed;
-      border-radius: <?php echo (iro_opt('nav_menu_cover_radius',14)??'14') ?>px !important;
+      border-radius: <?php echo (iro_opt('nav_menu_cover_radius',14)??'14') ?>px;
       width: 95%;
       height: 60px;
       left: 2.5% ;
