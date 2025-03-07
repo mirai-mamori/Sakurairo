@@ -105,8 +105,7 @@ $sections = [
 				'type'     => 'select',
 				'settings' => 'nav_menu_style',
 				'iro_key'  => 'nav_menu_style',
-				'label'    => esc_html__( 'Iro Nav Style', 'Sakurairo_C' ),
-				'transport'   => 'auto',
+				'label'    => esc_html__( 'Spirit Island Nav Style', 'Sakurairo_C' ),
 				'choices'     => [
 					'center' => __('Always centered','Sakurairo_C'),
 					'space-between' => __('Dispersed','Sakurairo_C'),
@@ -118,12 +117,6 @@ $sections = [
 						'value'    => 'iro',
 					]
 				],
-				'output' => array(
-					array(
-						'element'  => '.site-header',
-						'property' => 'justify-content',
-					),
-				)
 			],
 			[
 				'type'     => 'slider',
