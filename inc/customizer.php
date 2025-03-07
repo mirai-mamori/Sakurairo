@@ -145,6 +145,24 @@ $sections = [
 			],
 			[
 				'type'     => 'select',
+				'settings' => 'sakura_nav_style_style',
+				'label'    => esc_html__( 'Classic Nav Style', 'Sakurairo_C' ),
+				'iro_key'  => 'sakura_nav_style',
+				'iro_subkey'  => 'style',
+				'choices'     => [
+					'sakura' => __('Loose','Sakurairo_C'),
+					'sakurairo' => __('Standered','Sakurairo_C'),
+				],
+				'active_callback' => [
+					[
+						'setting'  => 'choice_of_nav_style',
+						'operator' => '!=',
+						'value'    => 'iro',
+					]
+				],
+			],
+			[
+				'type'     => 'select',
 				'settings' => 'sakura_nav_style_distribution', //分布
 				'label'    => esc_html__( 'Nav Menu Options Display Method', 'Sakurairo_C' ),
 				'iro_key'  => 'sakura_nav_style',
@@ -169,33 +187,6 @@ $sections = [
 						'value_pattern' => '$ !important',
 					),
 				)
-			],
-			[
-				'type'     => 'slider',
-				'settings' => 'sakura_nav_style_blurry',
-				'label'    => esc_html__( 'Blur degree', 'Sakurairo_C' ),
-				'iro_key'  => 'sakura_nav_style',
-				'iro_subkey'  => 'blurry',
-				'transport'   => 'auto',
-				'active_callback' => [
-					[
-						'setting'  => 'choice_of_nav_style',
-						'operator' => '!=',
-						'value'    => 'iro',
-					]
-				],
-				'choices'     => [
-					'min'  => 0,
-					'max'  => 100,
-					'step' => 1,
-				],
-				'output' => array(
-					array(
-						'element'  => array ( '.site-header.bg', '.site-header:hover'),
-						'property' => 'backdrop-filter',
-						'value_pattern' => 'blur( $px) !important',
-					),
-				),
 			],
 			[
 				'type'     => 'slider',
@@ -1468,56 +1459,56 @@ $sections = [
 				'settings' => 'reception_background_heart_shaped',
 				'iro_key'  => 'reception_background',
 				'iro_subkey'  => 'heart_shaped',
-				'label'    => esc_html__( 'Widgets Panel Font Switching', 'Sakurairo_C' ),
+				'label'    => esc_html__( '♡Option Switcher', 'Sakurairo_C' ),
 			],
 			[
 				'type'     => 'image',
 				'settings' => 'reception_background_img2',
 				'iro_key'  => 'reception_background',
 				'iro_subkey'  => 'img2',
-				'label'    => esc_html__( 'Default Frontend Background', 'Sakurairo_C' ),
+				'label'    => esc_html__( '♡Corresponding Background', 'Sakurairo_C' ),
 			],
 			[
 				'type'     => 'switch',
 				'settings' => 'reception_background_star_shaped',
 				'iro_key'  => 'reception_background',
 				'iro_subkey'  => 'star_shaped',
-				'label'    => esc_html__( 'Widgets Panel Font Switching', 'Sakurairo_C' ),
+				'label'    => esc_html__( '☆Option Switcher', 'Sakurairo_C' ),
 			],
 			[
 				'type'     => 'image',
 				'settings' => 'reception_background_img3',
 				'iro_key'  => 'reception_background',
 				'iro_subkey'  => 'img3',
-				'label'    => esc_html__( 'Default Frontend Background', 'Sakurairo_C' ),
+				'label'    => esc_html__( '☆Corresponding Background', 'Sakurairo_C' ),
 			],
 			[
 				'type'     => 'switch',
 				'settings' => 'reception_background_square_shaped',
 				'iro_key'  => 'reception_background',
 				'iro_subkey'  => 'square_shaped',
-				'label'    => esc_html__( 'Widgets Panel Font Switching', 'Sakurairo_C' ),
+				'label'    => esc_html__( '□Option Switcher', 'Sakurairo_C' ),
 			],
 			[
 				'type'     => 'image',
 				'settings' => 'reception_background_img4',
 				'iro_key'  => 'reception_background',
 				'iro_subkey'  => 'img4',
-				'label'    => esc_html__( 'Default Frontend Background', 'Sakurairo_C' ),
+				'label'    => esc_html__( '□Corresponding Background', 'Sakurairo_C' ),
 			],
 			[
 				'type'     => 'switch',
 				'settings' => 'reception_background_lemon_shaped',
 				'iro_key'  => 'reception_background',
 				'iro_subkey'  => 'lemon_shaped',
-				'label'    => esc_html__( 'Widgets Panel Font Switching', 'Sakurairo_C' ),
+				'label'    => esc_html__( '🍋Option Switcher', 'Sakurairo_C' ),
 			],
 			[
 				'type'     => 'image',
 				'settings' => 'reception_background_img5',
 				'iro_key'  => 'reception_background',
 				'iro_subkey'  => 'img5',
-				'label'    => esc_html__( 'Default Frontend Background', 'Sakurairo_C' ),
+				'label'    => esc_html__( '🍋Corresponding Background', 'Sakurairo_C' ),
 			],
 		],
     ],

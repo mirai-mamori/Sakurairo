@@ -435,7 +435,6 @@ $prefix = 'iro_options';
         'options'    => array(
           'iro' => $vision_resource_basepath . 'options/nav_menu_style_center.webp',
           'sakura' => $vision_resource_basepath . 'options/nav_menu_style_sakura.webp',
-          'sakurairo' => $vision_resource_basepath . '/options/nav_menu_style_sakurairo.webp',
         ),
         'default'    => 'center',
       ),
@@ -443,7 +442,7 @@ $prefix = 'iro_options';
       array(
         'id'         => 'nav_menu_style',
         'type'       => 'select',
-        'title'      => __('Iro Nav Style','sakurairo_csf'),
+        'title'      => __('Spirit Island Nav Style','sakurairo_csf'),
         'options'    => array(
           'center' => __('Always centered','sakurairo_csf'),
           'space-between' => __('Dispersed','sakurairo_csf'),
@@ -465,9 +464,18 @@ $prefix = 'iro_options';
        array(
         'id' => 'sakura_nav_style',
         'type' => 'fieldset',
-        'title' => __('Custom Sakura Nav Styles','sakurairo_csf'),
+        'title' => __('Classic Nav Style','sakurairo_csf'),
         'dependency' => array( 'choice_of_nav_style', 'any', 'sakura,sakurairo', '', 'true' ),
         'fields' => array(
+          array(
+            'id' => 'style',
+            'type' => 'select',
+            'title' => __('Apperance Style','sakurairo_csf'),
+            'options'    => array(
+              'sakura' => __('Loose','sakurairo_csf'),
+              'sakurairo' => __('Standered','sakurairo_csf'),
+            ),
+          ),
           array(
             'id' => 'distribution',
             'type' => 'select',
@@ -477,15 +485,6 @@ $prefix = 'iro_options';
               'right' => __('Keep to the right','sakurairo_csf'),
               'center' => __('Always centered','sakurairo_csf'),
             ),
-          ),
-          array(
-            'id' => 'blurry',
-            'type' => 'slider',
-            'title' => __('Blur degree','sakurairo_csf'),
-            'step' => '1',
-            'unit' => 'px',
-            'min' => '0',
-            'max' => '100',
           ),
           array(
             'id' => 'option_spacing',
@@ -499,8 +498,8 @@ $prefix = 'iro_options';
           ),
         ),
         'default' => array(
+          'style' => 'sakura',
           'distribution'    => 'right',
-          'blurry' => '10',
           'option_spacing' => '14',
         ),
       ),
@@ -2188,7 +2187,7 @@ $prefix = 'iro_options';
         'placeholder' => __('Select a page','sakurairo_csf'),
         'chosen'      => true,
         'options'     => 'pages',
-        'dependency'  => array('homepage_components', 'any', 'static_page',true),
+        'dependency'  => array('homepage_components', 'any', 'static_page', true),
       ),
 
       array(
@@ -4042,8 +4041,8 @@ $prefix = 'iro_options';
         'type' => 'select',
         'title' => __('PHP Notice Filter','sakurairo_csf'),
         'options' => array(
-          'inner' => 'Use your php config',
-          'normal' => 'Only show critical errors',
+          'inner' => __('Use your php config','sakurairo_csf'),
+          'normal' => __('Only show critical errors','sakurairo_csf'),
           'all' => __('Show nothing','sakurairo_csf'),
         ),
         "default" => "normal",
