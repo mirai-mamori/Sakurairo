@@ -1336,7 +1336,7 @@ $sections = [
 				'type'     => 'slider',
 				'settings' => 'global_font_weight',
 				'iro_key'  => 'global_font_weight',
-				'label'    => esc_html__( 'Widgets Panel Button Radius', 'Sakurairo_C' ),
+				'label'    => esc_html__( 'Non-Emphasis Text Weight', 'Sakurairo_C' ),
 				'choices'     => [
 					'min'  => 100,
 					'max'  => 700,
@@ -1355,7 +1355,7 @@ $sections = [
 				'type'     => 'slider',
 				'settings' => 'global_font_size',
 				'iro_key'  => 'global_font_size',
-				'label'    => esc_html__( 'Widgets Panel Button Radius', 'Sakurairo_C' ),
+				'label'    => esc_html__( 'Global Font Size', 'Sakurairo_C' ),
 				'choices'     => [
 					'min'  => 10,
 					'max'  => 20,
@@ -1372,7 +1372,7 @@ $sections = [
 			],
 		],
     ],
-	// ====================小部件====================
+	// ====================小组件====================
 	[
         'id'          => 'iro_widgets',
         'title'       => esc_html__( 'Widgets Panel', 'Sakurairo_C' ),
