@@ -279,7 +279,7 @@ $sections = [
 				'transport'   => 'auto',
 				'output' => array(
 					array(
-						'element'  => '.site-title a',
+						'element'  => '.site-title',
 						'property' => 'font-family',
 					),
 				)
