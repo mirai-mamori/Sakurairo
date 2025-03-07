@@ -143,8 +143,10 @@ $sections = [
 										'.user-menu-wrapper',
 										'.nav-search-wrapper nav ul li a',
 										'.searchbox.js-toggle-search i',
-										'.bg-switch i'),
+										'.bg-switch i',
+										'.site-header'),
 						'property' => 'border-radius',
+						'value_pattern' => '$px !important',
 					),
 				)
 			],
