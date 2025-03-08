@@ -3532,14 +3532,6 @@ $prefix = 'iro_options';
       ),  
 
       array(
-        'id' => 'admin_button_color',
-        'type' => 'color',
-        'title' => __('Dashboard Button Color','sakurairo_csf'),
-        'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#ac9c91'
-      ),  
-
-      array(
         'id' => 'admin_text_color',
         'type' => 'color',
         'title' => __('Dashboard Text Color','sakurairo_csf'),

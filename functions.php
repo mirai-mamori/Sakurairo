@@ -11,8 +11,8 @@
 include_once('inc/classes/IpLocation.php');
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '19.3.0');
-define('BUILD_VERSION', '2');
+define('INT_VERSION', '20.0.0');
+define('BUILD_VERSION', '3');
 
 function check_php_version($preset_version)
 {
@@ -446,12 +446,6 @@ function customize_query_functions($query) {
 }
 
 add_action('pre_get_posts', 'customize_query_functions');
-
-function admin_lettering()
-{
-    echo '<style>body{font-family: Microsoft YaHei;}</style>';
-}
-add_action('admin_head', 'admin_lettering');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -992,12 +986,8 @@ function unregister_default_widgets()
     unregister_widget('WP_Widget_Links');
     unregister_widget('WP_Widget_Meta');
     unregister_widget('WP_Widget_Search');
-    //unregister_widget('WP_Widget_Text');
     unregister_widget('WP_Widget_Categories');
     unregister_widget('WP_Widget_Recent_Posts');
-    //unregister_widget('WP_Widget_Recent_Comments');
-    //unregister_widget('WP_Widget_RSS');
-    //unregister_widget('WP_Widget_Tag_Cloud');
     unregister_widget('WP_Nav_Menu_Widget');
 }
 add_action("widgets_init", "unregister_default_widgets", 11);
@@ -1807,20 +1797,18 @@ function excerpt_length($exp)
 add_filter('the_excerpt', 'excerpt_length', 11);
 
 /*
- * 后台路径
+ * 评论表情修复
  */
 
 function admin_ini()
 {
-    wp_enqueue_style('admin-styles-fix-icon', get_site_url() . '/wp-includes/css/dashicons.css');
-    wp_enqueue_style('cus-styles-fit', get_template_directory_uri() . '/css/dashboard-fix.css');
+    wp_enqueue_style('cus-styles-fit', get_template_directory_uri() . '/css/dashboard-emoji-fix.css');
 }
 add_action('admin_enqueue_scripts', 'admin_ini');
 
 /*
  * 后台通知
  */
-
 /**
  * 在提供权限的情况下，为管理员用户显示通知并更新 meta 值
  */
@@ -2076,27 +2064,23 @@ function update_theme_admin_notice_meta()
 }
 
 //dashboard scheme
-function dash_scheme($key, $name, $col1, $col2, $col3, $col4, $base, $focus, $current, $rules = "")
-{
+function dash_scheme($key, $name, $col1, $col2, $col3, $base, $focus, $current, $rules = "") {
     $hash = 'rules=' . urlencode($rules);
     if ($col1) {
-        $hash .= '&color_1=' . str_replace("#", "", $col1);
+        $hash .= '&color_1=' . str_replace("#", "", $col1); 
     }
     if ($col2) {
         $hash .= '&color_2=' . str_replace("#", "", $col2);
     }
     if ($col3) {
-        $hash .= '&color_3=' . str_replace("#", "", $col3);
-    }
-    if ($col4) {
-        $hash .= '&color_4=' . str_replace("#", "", $col4);
+        $hash .= '&color_3=' . str_replace("#", "", $col3); 
     }
 
     wp_admin_css_color(
         $key,
         $name,
         get_template_directory_uri() . "/inc/dash-scheme.php?" . $hash,
-        array($col1, $col2, $col3, $col4),
+        array($col1, $col2, $col3),
         array('base' => $base, 'focus' => $focus, 'current' => $current)
     );
 }
@@ -2106,28 +2090,13 @@ dash_scheme(
     $key = "sakurairo",
     $name = "Sakurairo🌸",
     $col1 = iro_opt('admin_second_class_color'),
-    $col2 = iro_opt('admin_first_class_color'),
+    $col2 = iro_opt('admin_first_class_color'), 
     $col3 = iro_opt('admin_emphasize_color'),
-    $col4 = iro_opt('admin_emphasize_color'),
     $base = "#FFF",
     $focus = "#FFF",
     $current = "#FFF",
-    $rules = '#adminmenu .wp-has-current-submenu .wp-submenu a,#adminmenu .wp-has-current-submenu.opensub .wp-submenu a,#adminmenu .wp-submenu a,#adminmenu a.wp-has-current-submenu:focus+.wp-submenu a,#wpadminbar .ab-submenu .ab-item,#wpadminbar .quicklinks .menupop ul li a,#wpadminbar .quicklinks .menupop.hover ul li a,#wpadminbar.nojs .quicklinks .menupop:hover ul li a, .csf-field-button_set .csf--active, .csf-field-button_set .csf--active:hover, .folded #adminmenu .wp-has-current-submenu .wp-submenu a{color:' . iro_opt('admin_text_color') . '}body{background-image:url(' . iro_opt('admin_background') . ');background-attachment:fixed;background-size:cover;}#wpcontent{background:rgba(255,255,255,.0)}.wp-core-ui .button-primary{background:' . iro_opt('admin_button_color') . '!important;border-color:' . iro_opt('admin_button_color') . '!important;color:' . iro_opt('admin_text_color') . '!important;box-shadow:0 1px 0 ' . iro_opt('admin_button_color') . '!important;text-shadow:0 -1px 1px ' . iro_opt('admin_button_color') . ',1px 0 1px ' . iro_opt('admin_button_color') . ',0 1px 1px ' . iro_opt('admin_button_color') . ',-1px 0 1px ' . iro_opt('admin_button_color') . '!important}'
+    $rules = 'body{background-image:url(' . iro_opt('admin_background') . ');background-attachment:fixed;background-size:cover;}'
 );
-
-//Set Default Admin Color Scheme for New Users
-function set_default_admin_color($user_id)
-{
-    $args = array(
-        'ID' => $user_id,
-        'admin_color' => 'sunrise',
-    );
-    wp_update_user($args);
-}
-//add_action('user_register', 'set_default_admin_color');
-
-//Stop Users From Switching Admin Color Schemes
-//if ( !current_user_can('manage_options') ) remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
 
 // WordPress Custom style @ Admin
 function custom_admin_open_sans_style()
@@ -2164,29 +2133,6 @@ function custom_admin_open_sans_font_login_page()
 }
 add_action('login_head', 'custom_admin_open_sans_font_login_page');
 
-// 阻止垃圾注册
-add_action('register_post', 'codecheese_register_post', 10, 3);
-
-function codecheese_register_post($sanitized_user_login, $user_email, $errors)
-{
-
-    // Blocked domains
-    $domains = array(
-        'net.buzzcluby.com',
-        'buzzcluby.com',
-        'mail.ru',
-        'h.captchaeu.info',
-        'edge.codyting.com'
-    );
-
-    // Get visitor email domain
-    $email = explode('@', $user_email);
-
-    // Check and display error message for the registration form if exists
-    if (in_array($email[1], $domains)) {
-        $errors->add('invalid_email', __('<b>ERROR</b>: This email domain (<b>@' . $email[1] . '</b>) has been blocked. Please use another email.'));
-    }
-}
 function array_html_props(array $props)
 {
     $props_string = '';
