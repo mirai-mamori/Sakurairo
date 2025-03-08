@@ -5183,6 +5183,10 @@ h1.page-title.mb- {
   width: 94.5%;
 }
 
+.must-log-in {
+  margin-bottom: 2em;
+}
+
 .must-log-in a {
   color: var(--article-theme-highlight,var(--theme-skin-matching));
 }

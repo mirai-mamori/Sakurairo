@@ -1,6 +1,6 @@
 <?php
 /*
- * https://2heng.xin/wp-content/themes/Sakura/inc/dash-schame.php?color_1=&color_2=&color_3=&color_4=
+ *  iro-dash-schame
  */
 
 //ini_set('display_errors', true);
@@ -15,27 +15,21 @@ function _get($str){
 }
 
 if(_get('color_1')==NULL) {
-	$color_1="#85ABFC";
+	$color_1="#000";
 } else {
 	$color_1="#"._get('color_1');
 }
 
 if(_get('color_2')==NULL) {
-	$color_2="#99B8FC";
+	$color_2="#000";
 } else {
 	$color_2="#"._get('color_2');
 }
 
 if(_get('color_3')==NULL) {
-	$color_3="#F181A2";
+	$color_3="#ff6496";
 } else {
 	$color_3="#"._get('color_3');
-}
-
-if(_get('color_4')==NULL) {
-	$color_4="#F181A2";
-} else {
-	$color_4="#"._get('color_4');
 }
 
 // Convert hex to rgba with higher transparency values
@@ -75,19 +69,13 @@ function hex2rgba($color, $opacity = 1) {
     return $output;
 }
 
-// Create transparent versions of our colors with higher transparency
-$color_1_85 = hex2rgba($color_1, 0.40); // Increased transparency from 0.45 to 0.40
-$color_1_75 = hex2rgba($color_1, 0.30); // Increased transparency from 0.35 to 0.30
-$color_1_50 = hex2rgba($color_1, 0.20); // Increased transparency from 0.25 to 0.20
-$color_2_85 = hex2rgba($color_2, 0.40); // Increased transparency from 0.45 to 0.40
-$color_2_75 = hex2rgba($color_2, 0.30); // Increased transparency from 0.35 to 0.30
-$color_2_50 = hex2rgba($color_2, 0.20); // Increased transparency from 0.25 to 0.20
-$color_3_85 = hex2rgba($color_3, 0.40); // Increased transparency from 0.45 to 0.40
-$color_3_75 = hex2rgba($color_3, 0.30); // Increased transparency from 0.35 to 0.30
-$color_3_50 = hex2rgba($color_3, 0.20); // Increased transparency from 0.25 to 0.20
-$color_4_85 = hex2rgba($color_4, 0.40); // Increased transparency from 0.45 to 0.40
-$color_4_75 = hex2rgba($color_4, 0.30); // Increased transparency from 0.35 to 0.30
-$color_4_50 = hex2rgba($color_4, 0.20); // Increased transparency from 0.25 to 0.20
+// 创建各种透明度的颜色变量
+$color_1_80 = hex2rgba($color_1, 0.80);
+$color_1_40 = hex2rgba($color_1, 0.40);
+$color_2_80 = hex2rgba($color_2, 0.80);
+$color_2_40 = hex2rgba($color_2, 0.40);
+$color_3_80 = hex2rgba($color_3, 0.80);
+$color_3_40 = hex2rgba($color_3, 0.40);
 
 if(_get('rules')==NULL) {
 	$rules="";
@@ -97,16 +85,23 @@ if(_get('rules')==NULL) {
 
 ?>
 
-/*! This file is auto-generated with transparency and blur effects */
-body{background:#f1f1f1}
-
-a{color:#0073aa}
-a:active,a:focus,a:hover{color:#0096dd}
-
-#media-upload a.del-link:hover,.subsubsub a.current:hover,.subsubsub a:hover,div.dashboard-widget-submit input:hover{
-    color:#0096dd
+/* 链接样式 - 合并相似的链接状态规则 */
+a{
+    color:<?php echo $color_3; ?>;
+}
+a:active,
+a:focus,
+a:hover,
+#media-upload a.del-link:hover,
+.subsubsub a.current:hover,
+.subsubsub a:hover,
+div.dashboard-widget-submit input:hover,
+.wp-core-ui input[type=reset]:active,
+.wp-core-ui input[type=reset]:hover{
+    color:<?php echo $color_3; ?>;
 }
 
+/* 表单元素统一样式 */
 input[type=checkbox]:checked:before{
     color:<?php echo $color_2; ?>;
     width: 1.3125rem;
@@ -116,13 +111,9 @@ input[type=radio]:checked:before{
     background:<?php echo $color_2; ?>;
 }
 
-.wp-core-ui input[type=reset]:active,.wp-core-ui input[type=reset]:hover{
-    color:#0096dd
-}
-
-/* Button styling with transparency and improved padding */
+/* 按钮样式 - 组织相关规则 */
 .wp-core-ui .button-primary{
-    background:<?php echo $color_3_85; ?>;
+    background:<?php echo $color_3_40; ?>;
     border-color:transparent;
     color:#fff;
     box-shadow:0 1px 0 rgba(0,0,0,0.1);
@@ -133,8 +124,9 @@ input[type=radio]:checked:before{
     transition: all 0.3s ease;
 }
 
-.wp-core-ui .button-primary:focus,.wp-core-ui .button-primary:hover{
-    background:<?php echo $color_3_75; ?>;
+.wp-core-ui .button-primary:focus,
+.wp-core-ui .button-primary:hover{
+    background:<?php echo $color_3_40; ?>;
     border-color:transparent;
     color:#fff;
     box-shadow:0 1px 0 rgba(0,0,0,0.1);
@@ -144,15 +136,19 @@ input[type=radio]:checked:before{
     box-shadow:0 0 3px rgba(0,0,0,0.2);
 }
 
-.wp-core-ui .button-primary.active,.wp-core-ui .button-primary.active:focus,
-.wp-core-ui .button-primary.active:hover,.wp-core-ui .button-primary:active{
+.wp-core-ui .button-primary.active,
+.wp-core-ui .button-primary.active:focus,
+.wp-core-ui .button-primary.active:hover,
+.wp-core-ui .button-primary:active{
     background:<?php echo $color_3; ?>;
     border-color:transparent;
     box-shadow:inset 0 2px 0 rgba(0,0,0,0.1);
 }
 
-.wp-core-ui .button-primary.button-primary-disabled,.wp-core-ui .button-primary.disabled,
-.wp-core-ui .button-primary:disabled,.wp-core-ui .button-primary[disabled]{
+.wp-core-ui .button-primary.button-primary-disabled,
+.wp-core-ui .button-primary.disabled,
+.wp-core-ui .button-primary:disabled,
+.wp-core-ui .button-primary[disabled]{
     color:rgba(255,255,255,0.7) !important;
     background:<?php echo hex2rgba($color_3, 0.3); ?> !important;
     border-color:transparent !important;
@@ -167,9 +163,10 @@ input[type=radio]:checked:before{
     box-shadow:inset 0 3px 0 rgba(0,0,0,0.1) !important;
 }
 
+/* UI元素颜色统一 */
 .wp-core-ui .wp-ui-primary{
     color:#fff;
-    background-color:<?php echo $color_2_85; ?>;
+    background-color:<?php echo $color_2_40; ?>;
 }
 
 .wp-core-ui .wp-ui-text-primary{
@@ -178,7 +175,7 @@ input[type=radio]:checked:before{
 
 .wp-core-ui .wp-ui-highlight{
     color:#fff;
-    background-color:<?php echo $color_3_85; ?>;
+    background-color:<?php echo $color_3_40; ?>;
 }
 
 .wp-core-ui .wp-ui-text-highlight{
@@ -187,46 +184,68 @@ input[type=radio]:checked:before{
 
 .wp-core-ui .wp-ui-notification{
     color:#fff;
-    background-color:<?php echo $color_4_85; ?>;
+    background-color:<?php echo $color_3_40; ?>;
 }
 
 .wp-core-ui .wp-ui-text-notification{
-    color:<?php echo $color_4; ?>;
+    color:<?php echo $color_3; ?>;
 }
 
 .wp-core-ui .wp-ui-text-icon{
     color:#f3f2f1;
 }
 
-.wrap .add-new-h2:hover,.wrap .page-title-action:hover{
-    color:#fff;
-    background-color:<?php echo $color_2_85; ?>;
+.theme-overlay .theme-backdrop{
+    background:none;
+}
+
+/* 动作按钮样式 */
+.wrap .add-new-h2,
+ .wrap .page-title-action{
+    color:<?php echo $color_3_80; ?>;
     border-color:transparent;
     border-radius: 4px;
     transition: all 0.3s ease;
 }
 
+.wrap .add-new-h2:hover,
+.wrap .page-title-action:hover{
+    color:#fff;
+    background-color:<?php echo $color_3_80; ?>;
+    border-color:transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* 视图切换样式 */
 .view-switch a.current:before{
     color:<?php echo $color_2; ?>;
 }
 
 .view-switch a:hover:before{
-    color:<?php echo $color_4; ?>;
+    color:<?php echo $color_3; ?>;
 }
 
-/* Admin menu with transparency and blur - fixed stacking issue by applying background only to #adminmenuwrap */
-#adminmenu, #adminmenuback {
+/* 管理菜单样式 - 组织相关规则 */
+.wp-menu-arrow{
+    display:none;
+}
+
+#adminmenu, 
+#adminmenuback {
     background: transparent;
 }
 
 #adminmenuwrap {
-    background: <?php echo $color_2_85; ?>;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: <?php echo $color_2_40; ?>;
+    border-radius: 0px 0px 10px 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 #adminmenu a{
     color:#fff;
+    margin: 2.5px 5px !important;
     transition: all 0.3s ease;
 }
 
@@ -234,10 +253,22 @@ input[type=radio]:checked:before{
     color:rgba(255,255,255,0.8);
 }
 
-#adminmenu a:hover,#adminmenu li.menu-top:hover,
-#adminmenu li.opensub>a.menu-top,#adminmenu li>a.menu-top:focus{
+#adminmenu div.wp-menu-name{
+    margin: 0 5px;
+}
+
+/* 菜单悬停状态 */
+#adminmenu a:hover,
+#adminmenu li.opensub>a.menu-top,
+#adminmenu li>a.menu-top:focus{
     color:#fff;
-    background-color:<?php echo $color_3_75; ?>;
+    background-color:<?php echo $color_3_40; ?>;
+    border-radius: 4px;
+}
+
+#adminmenu li.menu-top:hover{
+    color:#fff;
+    background-color:unset;
     border-radius: 4px;
 }
 
@@ -246,34 +277,32 @@ input[type=radio]:checked:before{
     color:#fff;
 }
 
-.about-wrap .nav-tab-active,.nav-tab-active,.nav-tab-active:hover{
+/* 标签样式 */
+.about-wrap .nav-tab-active,
+.nav-tab-active,
+.nav-tab-active:hover{
     background-color:#f1f1f1;
     border-bottom-color:#f1f1f1;
 }
 
-#adminmenu .wp-has-current-submenu .wp-submenu,
-#adminmenu .wp-has-current-submenu.opensub .wp-submenu,
-#adminmenu .wp-submenu,
-#adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
-.folded #adminmenu .wp-has-current-submenu .wp-submenu{
-    background:<?php echo $color_1_75; ?>;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 0 4px 4px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+/* 子菜单样式 */
+#adminmenu .wp-submenu{
+    width: 150px;
+    margin: 5px !important;
 }
 
 #adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after{
-    border-right-color:<?php echo $color_1_75; ?>;
+    display:none;
 }
 
 #adminmenu .wp-submenu .wp-submenu-head{
     color:#FFF;
     border-radius: 4px;
-    backdrop-filter: blur(0);
-    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
+/* 子菜单链接样式 */
 #adminmenu .wp-has-current-submenu .wp-submenu a,
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu a,
 #adminmenu .wp-submenu a,
@@ -284,11 +313,13 @@ input[type=radio]:checked:before{
     transition: all 0.2s ease;
 }
 
+/* 子菜单悬停和聚焦状态 */
 #adminmenu .wp-has-current-submenu .wp-submenu a:focus,
 #adminmenu .wp-has-current-submenu .wp-submenu a:hover,
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu a:focus,
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu a:hover,
-#adminmenu .wp-submenu a:focus,#adminmenu .wp-submenu a:hover,
+#adminmenu .wp-submenu a:focus,
+#adminmenu .wp-submenu a:hover,
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu a:focus,
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu a:hover,
 .folded #adminmenu .wp-has-current-submenu .wp-submenu a:focus,
@@ -298,6 +329,7 @@ input[type=radio]:checked:before{
     box-shadow: none;
 }
 
+/* 当前子菜单样式 */
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu li.current a,
 #adminmenu .wp-submenu li.current a,
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a{
@@ -313,20 +345,39 @@ input[type=radio]:checked:before{
     color:<?php echo $color_3; ?>;
 }
 
+/* 移除多余箭头 */
 ul#adminmenu a.wp-has-current-submenu:after,
 ul#adminmenu>li.current>a.current:after{
-    border-right-color:#f1f1f1;
+    display:none;
 }
 
+/* 当前菜单项样式 */
 #adminmenu li.current a.menu-top,
 #adminmenu li.wp-has-current-submenu .wp-submenu .wp-submenu-head,
 #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
 .folded #adminmenu li.current.menu-top{
     color:#fff;
-    background:<?php echo $color_3_85; ?>;
+    background:<?php echo $color_3_40; ?>;
     border-radius: 4px;
 }
 
+.folded #adminmenu,.folded #adminmenuback,.folded #adminmenuwrap,.folded #adminmenu li.menu-top{
+    width: 46px;
+}
+
+.folded #adminmenu .opensub .wp-submenu,.folded #adminmenu .wp-has-current-submenu.opensub .wp-submenu{
+    left: 44px;
+}
+
+#collapse-button .collapse-button-icon{
+    width: 44px;
+}
+
+.folded #wpcontent, .folded #wpfooter {
+    margin-left: 46px;
+}
+
+/* 菜单图标样式 */
 #adminmenu a.current:hover div.wp-menu-image:before,
 #adminmenu li a:focus div.wp-menu-image:before,
 #adminmenu li.opensub div.wp-menu-image:before,
@@ -338,9 +389,11 @@ ul#adminmenu>li.current>a.current:after{
     color:#fff;
 }
 
-#adminmenu .awaiting-mod,#adminmenu .update-plugins{
+/* 通知标记样式 */
+#adminmenu .awaiting-mod,
+#adminmenu .update-plugins{
     color:#fff;
-    background:<?php echo $color_4_85; ?>;
+    background:<?php echo $color_3_40; ?>;
     border-radius: 10px;
 }
 
@@ -349,26 +402,27 @@ ul#adminmenu>li.current>a.current:after{
 #adminmenu li.menu-top:hover>a .update-plugins,
 #adminmenu li:hover a .awaiting-mod{
     color:#fff;
-    background:<?php echo $color_1_85; ?>;
+    background:0;
 }
 
+/* 折叠按钮样式 */
 #collapse-button{
     color:rgba(255,255,255,0.8);
-    border-radius: 50%;
     transition: all 0.3s ease;
 }
 
-#collapse-button:focus,#collapse-button:hover{
+#collapse-button:focus,
+#collapse-button:hover{
     color:<?php echo $color_3; ?>;
     background: rgba(255,255,255,0.07);
 }
 
-/* Admin bar with transparency and blur */
+/* 管理栏样式 - 组织相关规则 */
 #wpadminbar{
     color:#fff;
-    background:<?php echo $color_2_85; ?>;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background:<?php echo $color_2_40; ?>;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
@@ -386,13 +440,18 @@ ul#adminmenu>li.current>a.current:after{
     color:rgba(255,255,255,0.8);
 }
 
+#wpadminbar ul li{
+    margin: 0 5px;
+}
+
+/* 管理栏悬停状态 */
 #wpadminbar .ab-top-menu>li.menupop.hover>.ab-item,
 #wpadminbar.nojq .quicklinks .ab-top-menu>li>.ab-item:focus,
 #wpadminbar.nojs .ab-top-menu>li.menupop:hover>.ab-item,
 #wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item,
 #wpadminbar:not(.mobile) .ab-top-menu>li>.ab-item:focus{
     color:<?php echo $color_3; ?>;
-    background:<?php echo $color_1_75; ?>;
+    background:<?php echo $color_1_40; ?>;
     border-radius: 4px;
     box-shadow: none;
 }
@@ -410,22 +469,24 @@ ul#adminmenu>li.current>a.current:after{
     color:#fff;
 }
 
+/* 管理栏子菜单容器 */
 #wpadminbar .menupop .ab-sub-wrapper{
-    background:<?php echo $color_1_75; ?>;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background:<?php echo $color_1_80; ?>;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 #wpadminbar .quicklinks .menupop ul.ab-sub-secondary,
 #wpadminbar .quicklinks .menupop ul.ab-sub-secondary .ab-submenu{
-    background:rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background:rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 4px;
 }
 
+/* 管理栏子菜单项 */
 #wpadminbar .ab-submenu .ab-item,
 #wpadminbar .quicklinks .menupop ul li a,
 #wpadminbar .quicklinks .menupop.hover ul li a,
@@ -440,6 +501,7 @@ ul#adminmenu>li.current>a.current:after{
     color:rgba(255,255,255,0.8);
 }
 
+/* 管理栏子菜单项悬停和聚焦状态 - 合并相似规则 */
 #wpadminbar .quicklinks .ab-sub-wrapper .menupop.hover>a,
 #wpadminbar .quicklinks .menupop ul li a:focus,
 #wpadminbar .quicklinks .menupop ul li a:focus strong,
@@ -462,6 +524,7 @@ ul#adminmenu>li.current>a.current:after{
     background: rgba(255,255,255,0.07);
 }
 
+/* 管理栏图标悬停样式 */
 #wpadminbar .menupop .menupop>.ab-item:hover:before,
 #wpadminbar .quicklinks .ab-sub-wrapper .menupop.hover>a .blavatar,
 #wpadminbar .quicklinks li a:focus .blavatar,
@@ -476,6 +539,7 @@ ul#adminmenu>li.current>a.current:after{
     color:rgba(255,255,255,0.8);
 }
 
+/* 管理栏搜索样式 */
 #wpadminbar #adminbarsearch:before{
     color:rgba(255,255,255,0.8);
 }
@@ -483,15 +547,16 @@ ul#adminmenu>li.current>a.current:after{
 #wpadminbar>#wp-toolbar>#wp-admin-bar-top-secondary>#wp-admin-bar-search #adminbarsearch input.adminbar-input:focus{
     color:#fff;
     background:rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 4px;
     box-shadow: 0 0 2px rgba(0,0,0,0.2) inset;
 }
 
+/* 管理栏恢复模式样式 */
 #wpadminbar #wp-admin-bar-recovery-mode{
     color:#fff;
-    background-color:<?php echo $color_4_85; ?>;
+    background-color:<?php echo $color_3_40; ?>;
     border-radius: 4px;
 }
 
@@ -509,6 +574,7 @@ ul#adminmenu>li.current>a.current:after{
     border-radius: 4px;
 }
 
+/* 管理栏用户信息样式 */
 #wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar>a img{
     border-color:rgba(255, 255, 255, 0.1);
     background-color:rgba(255, 255, 255, 0.1);
@@ -527,10 +593,11 @@ ul#adminmenu>li.current>a.current:after{
     color:rgba(255, 255, 255, 0.7);
 }
 
+/* 指针样式 */
 .wp-pointer .wp-pointer-content h3{
-    background-color:<?php echo $color_3_85; ?>;
+    background-color:<?php echo $color_3_40; ?>;
     border:none;
-    border-radius: 8px 8px 0 0;
+    border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
@@ -545,8 +612,10 @@ ul#adminmenu>li.current>a.current:after{
     border-bottom-color:<?php echo $color_3; ?>;
 }
 
-.media-item .bar,.media-progress-bar div{
-    background-color:<?php echo $color_3_85; ?>;
+/* 媒体相关样式 */
+.media-item .bar,
+.media-progress-bar div{
+    background-color:<?php echo $color_3_40; ?>;
     border-radius: 4px;
 }
 
@@ -555,22 +624,41 @@ ul#adminmenu>li.current>a.current:after{
 }
 
 .attachment.details .check{
-    background-color:<?php echo $color_3_85; ?>;
+    background-color:<?php echo $color_3_40; ?>;
     box-shadow:0 0 0 1px #fff,0 0 0 2px <?php echo $color_3; ?>;
-    border-radius: 50%;
+    border-radius: 4px;
 }
 
 .media-selection .attachment.selection.details .thumbnail{
     box-shadow:0 0 0 1px #fff,0 0 0 3px <?php echo $color_3; ?>;
 }
 
+/* 主题浏览器样式 */
+.theme-browser .theme,
+.theme-browser .theme .theme-actions{
+    border:none;
+}
+
+.theme-browser .theme{
+    margin: 1%;
+    width: 22.5%;
+}
+
+.theme-browser .theme:nth-child(3n){
+    margin-right: 1%;
+}
+
+.theme-browser .theme:nth-child(4n){
+    margin-right: 0;
+}
+
 .theme-browser .theme.active .theme-name,
 .theme-browser .theme.add-new-theme a:focus:after,
 .theme-browser .theme.add-new-theme a:hover:after{
-    background:<?php echo $color_2_85; ?>;
+    background:<?php echo $color_2_40; ?>;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 0 0 4px 4px;
+    border-radius: 4px;
 }
 
 .theme-browser .theme.add-new-theme a:focus span:after,
@@ -578,13 +666,19 @@ ul#adminmenu>li.current>a.current:after{
     color:<?php echo $color_2; ?>;
 }
 
-.theme-filter.current,.theme-section.current{
+.theme-browser .theme.active .theme-actions{
+    background: 0 !important;
+}
+
+.theme-filter.current,
+.theme-section.current{
     border-bottom-color:<?php echo $color_2; ?>;
 }
 
+/* 过滤器样式 */
 body.more-filters-opened .more-filters{
     color:#fff;
-    background-color:<?php echo $color_2_85; ?>;
+    background-color:<?php echo $color_2_40; ?>;
     border-radius: 4px;
     border-color:transparent;
 }
@@ -595,7 +689,7 @@ body.more-filters-opened .more-filters:before{
 
 body.more-filters-opened .more-filters:focus,
 body.more-filters-opened .more-filters:hover{
-    background-color:<?php echo $color_3_85; ?>;
+    background-color:<?php echo $color_3_40; ?>;
     color:#fff;
     border-color:transparent;
 }
@@ -605,8 +699,9 @@ body.more-filters-opened .more-filters:hover:before{
     color:#fff;
 }
 
+/* 小部件选择器样式 */
 .widgets-chooser li.widgets-chooser-selected{
-    background-color:<?php echo $color_3_85; ?>;
+    background-color:<?php echo $color_3_40; ?>;
     color:#fff;
     border-radius: 4px;
     border:none;
@@ -617,18 +712,19 @@ body.more-filters-opened .more-filters:hover:before{
     color:#fff;
 }
 
+/* 响应式切换样式 */
 div#wp-responsive-toggle a:before{
     color:rgba(255,255,255,0.8);
 }
 
 .wp-responsive-open div#wp-responsive-toggle a{
     border-color:transparent;
-    background:<?php echo $color_3_85; ?>;
+    background:<?php echo $color_3_40; ?>;
     border-radius: 4px;
 }
 
 .wp-responsive-open #wpadminbar #wp-admin-bar-menu-toggle a{
-    background:<?php echo $color_1_85; ?>;
+    background:<?php echo $color_1_40; ?>;
     border-radius: 4px;
 }
 
@@ -636,22 +732,39 @@ div#wp-responsive-toggle a:before{
     color:rgba(255,255,255,0.8);
 }
 
+@media screen and (max-width: 782px){
+    .auto-fold .wp-responsive-open #adminmenuback, .auto-fold .wp-responsive-open #adminmenuwrap {
+        backdrop-filter: blur(10px);
+        background:<?php echo $color_1_40; ?>;
+    }
+    .theme-browser .theme{
+        width: 100%;
+    }
+    .folded #wpcontent, .folded #wpfooter {
+        margin-left: 0;
+    }
+    .folded #adminmenu, .folded #adminmenuback, .folded #adminmenuwrap, .folded #adminmenu li.menu-top {
+        width: 190px;
+    }
+}
+
+/* 编辑器菜单项样式 */
 .mce-container.mce-menu .mce-menu-item-normal.mce-active,
 .mce-container.mce-menu .mce-menu-item-preview.mce-active,
 .mce-container.mce-menu .mce-menu-item.mce-selected,
 .mce-container.mce-menu .mce-menu-item:focus,
 .mce-container.mce-menu .mce-menu-item:hover{
-    background:<?php echo $color_3_85; ?>;
+    background:<?php echo $color_3_40; ?>;
     border-radius: 4px;
 }
 
-/* Additional custom styles for better focus states */
+/* 聚焦状态样式 */
 :focus {
-    outline: 2px solid <?php echo $color_3_75; ?>;
+    outline: 2px solid <?php echo $color_3_40; ?>;
     outline-offset: 1px;
 }
 
-/* Custom scrollbars for a more integrated look */
+/* 自定义滚动条 */
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -663,41 +776,41 @@ div#wp-responsive-toggle a:before{
 }
 
 ::-webkit-scrollbar-thumb {
-    background: <?php echo $color_2_50; ?>;
+    background: <?php echo $color_2_40; ?>;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: <?php echo $color_2_75; ?>;
+    background: <?php echo $color_2_40; ?>;
 }
 
-/* 二级菜单样式优化 - 降低透明度，增强模糊效果 */
+/* 二级菜单容器样式 */
 #adminmenu .wp-submenu-wrap,
 #adminmenu .wp-submenu,
 #adminmenu .wp-has-current-submenu .wp-submenu,
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu,
 #adminmenu a.wp-has-current-submenu:focus+.wp-submenu,
 .folded #adminmenu .wp-has-current-submenu .wp-submenu {
-    background: <?php echo hex2rgba($color_1, 0.7); ?>;
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border-radius: 0 4px 4px 0;
+    background: <?php echo hex2rgba($color_1, 0.8); ?>;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
 #adminmenu .wp-submenu .wp-submenu-head {
     color: #FFF;
     background: <?php echo hex2rgba($color_1, 0.8); ?>;
-    border-radius: 4px 4px 0 0;
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    border-radius: 4px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 #adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
     border-right-color: <?php echo hex2rgba($color_1, 0.8); ?>;
 }
 
-/* 二级菜单项样式优化 */
+/* 二级菜单项样式 */
 #adminmenu .wp-submenu a,
 #adminmenu .wp-has-current-submenu .wp-submenu a,
 #adminmenu .wp-has-current-submenu.opensub .wp-submenu a,
@@ -722,14 +835,6 @@ div#wp-responsive-toggle a:before{
     color: <?php echo $color_3; ?>;
     background: <?php echo hex2rgba('#FFFFFF', 0.1); ?>;
     box-shadow: 0 0 3px rgba(0,0,0,0.05);
-}
-
-#adminmenu .wp-has-current-submenu.opensub .wp-submenu li.current a,
-#adminmenu .wp-submenu li.current a,
-#adminmenu a.wp-has-current-submenu:focus+.wp-submenu li.current a {
-    background: <?php echo hex2rgba($color_1, 0.8); ?>;
-    color: #fff;
-    font-weight: 500;
 }
 
 <?php echo $rules; ?>
