@@ -584,7 +584,7 @@ add_action( 'customize_save_after', 'update_customize_to_iro_options' );
 /**
  * function update
  */
-require get_template_directory() . '/inc/theme_plus.php';
+require get_template_directory() . '/inc/theme-plus.php';
 require get_template_directory() . '/inc/categories-images.php';
 
 if (!function_exists('akina_comment_format')) {
@@ -1055,10 +1055,8 @@ $custom_login_switch = iro_opt('custom_login_switch');
 if ($custom_login_switch) {
     function custom_login()
     {
-        require get_template_directory() . '/inc/login_addcss.php';
-        //echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('template_directory') . '/inc/login.css" />'."\n";
-        echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/inc/login.css?' . IRO_VERSION . '" />' . "\n";
-        //echo '<script type="text/javascript" src="'.get_bloginfo('template_directory').'/js/jquery.min.js"></script>'."\n";
+        require get_template_directory() . '/inc/login-scheme.php';
+        echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/css/login.css?' . IRO_VERSION . '" />' . "\n";
     }
 
     add_action('login_head', 'custom_login');
@@ -1082,45 +1080,39 @@ if ($custom_login_switch) {
     {
         $loginbg = iro_opt('login_background') ?: iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/') . 'series/login_background.webp';
         ?>
-                                                                    <script type="text/javascript">
-                                                                        document.body.insertAdjacentHTML("afterbegin", "<div class=\"loading\"><img src=\"<?= iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/')
-                                                                            ?>basic/login_loading.gif\" width=\"58\" height=\"10\"></div>");
-                                                                        document.head.insertAdjacentHTML("afterbegin", "<style>.show{opacity:1;}.hide{opacity:0;transition: opacity 400ms;}</style>");
-                                                                        const loading = document.querySelector(".loading"),
-                                                                         src = "<?= $loginbg ?>",
-                                                                            afterLoaded = () => {
-                                                                                document.body.style.backgroundImage = `url(${src})`
-                                                                                loading.classList.add("hide");
-                                                                                loading.classList.remove("show");
-                                                                                setTimeout(function() {
-                                                                                    loading.remove()
-                                                                                }, 400);
-                                                                            },
-                                                                            img = document.createElement('img')
-                                                                        img.src = src
-                                                                        img.addEventListener('load',afterLoaded,{once:true})
-                                                                        <?php //3秒钟内加载不到图片也移除加载中提示
-                                                                                ?>
-                                                                        setTimeout(afterLoaded, 3000)
-                                                                        document.addEventListener("DOMContentLoaded", ()=>{
-                                                                        document.querySelector("h1 a").style.backgroundImage = "url('<?= iro_opt('login_logo_img') ?>')";
-                                                                        forgetmenot = document.querySelector(".forgetmenot");
-                                                                        if (forgetmenot){
-                                                                            forgetmenot.outerHTML = '<p class="forgetmenot"><?= __("Remember me", "sakurairo") ?><input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>';
-                                                                        }
-                                                                        const captchaimg = document.getElementById("captchaimg");
-                                                                        captchaimg && captchaimg.addEventListener("click",(e)=>{
-                                                                            fetch("<?= rest_url('sakura/v1/captcha/create') ?>")
-                                                                            .then(resp=>resp.json())
-                                                                            .then(json=>{
-                                                                                e.target.src = json["data"];
-                                                                                document.querySelector("input[name=\'timestamp\']").value = json["time"];
-                                                                                document.querySelector("input[name=\'id\']").value = json["id"];
-                                                                            });
-                                                                        })
-                                                                    }, false);
-                                                                    </script>
-                                                                <?php
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                // 设置背景图
+                document.body.style.backgroundImage = `url("<?= $loginbg ?>")`;
+                
+                // 设置自定义logo
+                const logoElement = document.querySelector("h1 a");
+                if (logoElement) {
+                    logoElement.style.backgroundImage = "url('<?= iro_opt('login_logo_img') ?>')";
+                }
+                
+                // 修改记住我选项样式
+                const forgetmenot = document.querySelector(".forgetmenot");
+                if (forgetmenot) {
+                    forgetmenot.outerHTML = '<p class="forgetmenot"><?= __("Remember me", "sakurairo") ?><input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>';
+                }
+                
+                // 验证码刷新功能
+                const captchaimg = document.getElementById("captchaimg");
+                if (captchaimg) {
+                    captchaimg.addEventListener("click", (e) => {
+                        fetch("<?= rest_url('sakura/v1/captcha/create') ?>")
+                        .then(resp => resp.json())
+                        .then(json => {
+                            e.target.src = json["data"];
+                            document.querySelector("input[name='timestamp']").value = json["time"];
+                            document.querySelector("input[name='id']").value = json["id"];
+                        });
+                    });
+                }
+            });
+        </script>
+        <?php
     }
 
     add_action('login_footer', 'custom_html');
@@ -2101,7 +2093,7 @@ dash_scheme(
 // WordPress Custom style @ Admin
 function custom_admin_open_sans_style()
 {
-    require get_template_directory() . '/inc/admin_addcss.php';
+    require get_template_directory() . '/inc/option-scheme.php';
 }
 add_action('admin_head', 'custom_admin_open_sans_style');
 
