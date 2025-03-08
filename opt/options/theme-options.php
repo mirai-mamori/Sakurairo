@@ -545,8 +545,8 @@ $prefix = 'iro_options';
       array(
         'id'    => 'nav_user_menu',
         'type'  => 'switcher',
-        'title' => __('Nav Menu User Avatar','sakurairo_csf'),
-        'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
+        'title' => __('Nav User Menu','sakurairo_csf'),
+        'label'   => __('It is on by default. The user avatar and menu will be displayed.','sakurairo_csf'),
         'default' => true
       ),
   
