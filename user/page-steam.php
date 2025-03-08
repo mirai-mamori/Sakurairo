@@ -16,14 +16,14 @@ get_header();
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
-        padding: 20px;
         margin: 0 auto;
+        justify-content: center;
     }
 
     .steam-card {
         display: flex;
         flex-direction: column;
-        width: 280px;
+        width: 23%;
         background: rgba(255, 255, 255, 0.6);
         box-shadow: 0 1px 30px -4px #e8e8e8;
         overflow: hidden;
@@ -72,6 +72,12 @@ get_header();
     body.dark .steam-card:hover {
         box-shadow: 0 1px 30px -2px var(--dark-shadow-hover);
         background: var(--dark-bg-hover);
+    }
+
+    @media (max-width: 860px) {
+    .steam-card {
+        width: 100%;
+    }
     }
 
 </style>
