@@ -59,14 +59,10 @@ get_header();
         font-size: 18px;
     }
 
-    body.dark .steam-title {
+    body.dark .steam-title ,body.dark .steam-desc{
         color: #cbcbcb;
     }
-
-    body.dark .steam-desc {
-        color: #cbcbcb;
-    }
-
+    
     body.dark .steam-card {
         box-shadow: var(--dark-shadow-normal);
         background: var(--dark-bg-secondary);
