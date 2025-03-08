@@ -1305,62 +1305,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'captcha_select',
-        'type' => 'select',
-        'title' => __('Captcha Selection','sakurairo_csf'),
-        'options' => array(
-          'off' => __('Off','sakurairo_csf'),
-          'iro_captcha' => __('Theme Built in Captcha','sakurairo_csf'),
-          'vaptcha' => __('Vaptcha','sakurairo_csf')
-        ),
-        'default' => 'off',
-      ),
-      
-      array(
-        'id' => 'iro_captcha_level',
-        'type' => 'slider',
-        'title' => __('Captcha Level', 'sakurairo_csf'),
-        'desc' => __('The difficulty level of the Theme Captcha', 'sakurairo_csf'),
-        'dependency' => array( 'captcha_select', '==', 'iro_captcha', '', 'true' ),
-        'step' => '1',
-        'min' => '0',
-        'max' => '100',
-        'default' => '60'
-      ),
-      
-      array(
-        'id' => 'vaptcha_vid',
-        'type' => 'text',
-        'title' => __('Vaptcha VID','sakurairo_csf'),
-        'dependency' => array( 'captcha_select', '==', 'vaptcha', '', 'true' ),
-        'desc' => __('Fill in your Vaptcha VID','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'vaptcha_key',
-        'type' => 'text',
-        'title' => __('Vaptcha KEY','sakurairo_csf'),
-        'dependency' => array( 'captcha_select', '==', 'vaptcha', '', 'true' ),
-        'desc' => __('Fill in your Vaptcha KEY','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'vaptcha_scene',
-        'type' => 'select',
-        'title' => __('Vaptcha Scene','sakurairo_csf'),
-        'dependency' => array( 'captcha_select', '==', 'vaptcha', '', 'true' ),
-        'options' => array(
-          '1' => __(1,'sakurairo_csf'),
-          '2' => __(2,'sakurairo_csf'),
-          '3' => __(3,'sakurairo_csf'),
-          '4' => __(4,'sakurairo_csf'),
-          '5' => __(5,'sakurairo_csf'),
-          '6' => __(6,'sakurairo_csf'),
-        ),
-        'default' => 1,
-      ),
-
-      array(
         'id' => 'pagenav_style',
         'type' => 'radio',
         'title' => __('Pagination Mode','sakurairo_csf'),
@@ -3430,25 +3374,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'login_background',
-        'type' => 'upload',
-        'title' => __('Login Screen Background Image','sakurairo_csf'),
-        'desc' => __('Set your login screen background image, leave this option blank to show the default','sakurairo_csf'),
-        'dependency' => array( 'custom_login_switch', '==', 'true', '', 'true' ),
-        'library'      => 'image',
-        'default'     => $vision_resource_basepath . 'series/login_background.webp'
-      ),
-
-      array(
-        'id' => 'login_blur',
-        'type' => 'switcher',
-        'title' => __('Login Screen Background Blur','sakurairo_csf'),
-        'label' => __('Login screen background image will be blurred when enabled','sakurairo_csf'),
-        'dependency' => array( 'custom_login_switch', '==', 'true', '', 'true' ),
-        'default' => false
-      ),
-
-      array(
         'id' => 'login_logo_img',
         'type' => 'upload',
         'title' => __('Login Screen Logo','sakurairo_csf'),
@@ -3456,6 +3381,62 @@ $prefix = 'iro_options';
         'dependency' => array( 'custom_login_switch', '==', 'true', '', 'true' ),
         'library' => 'image',
         'default' => $vision_resource_basepath . 'series/login_logo.webp'
+      ),
+
+      array(
+        'id' => 'captcha_select',
+        'type' => 'select',
+        'title' => __('Captcha Selection','sakurairo_csf'),
+        'options' => array(
+          'off' => __('Off','sakurairo_csf'),
+          'iro_captcha' => __('Theme Built in Captcha','sakurairo_csf'),
+          'vaptcha' => __('Vaptcha','sakurairo_csf')
+        ),
+        'default' => 'off',
+      ),
+      
+      array(
+        'id' => 'iro_captcha_level',
+        'type' => 'slider',
+        'title' => __('Captcha Level', 'sakurairo_csf'),
+        'desc' => __('The difficulty level of the Theme Captcha', 'sakurairo_csf'),
+        'dependency' => array( 'captcha_select', '==', 'iro_captcha', '', 'true' ),
+        'step' => '1',
+        'min' => '0',
+        'max' => '100',
+        'default' => '60'
+      ),
+      
+      array(
+        'id' => 'vaptcha_vid',
+        'type' => 'text',
+        'title' => __('Vaptcha VID','sakurairo_csf'),
+        'dependency' => array( 'captcha_select', '==', 'vaptcha', '', 'true' ),
+        'desc' => __('Fill in your Vaptcha VID','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'vaptcha_key',
+        'type' => 'text',
+        'title' => __('Vaptcha KEY','sakurairo_csf'),
+        'dependency' => array( 'captcha_select', '==', 'vaptcha', '', 'true' ),
+        'desc' => __('Fill in your Vaptcha KEY','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'vaptcha_scene',
+        'type' => 'select',
+        'title' => __('Vaptcha Scene','sakurairo_csf'),
+        'dependency' => array( 'captcha_select', '==', 'vaptcha', '', 'true' ),
+        'options' => array(
+          '1' => __(1,'sakurairo_csf'),
+          '2' => __(2,'sakurairo_csf'),
+          '3' => __(3,'sakurairo_csf'),
+          '4' => __(4,'sakurairo_csf'),
+          '5' => __(5,'sakurairo_csf'),
+          '6' => __(6,'sakurairo_csf'),
+        ),
+        'default' => 1,
       ),
 
       array(

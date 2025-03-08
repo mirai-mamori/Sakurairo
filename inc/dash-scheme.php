@@ -199,6 +199,31 @@ input[type=radio]:checked:before{
     background:none;
 }
 
+.wp-core-ui .button, .wp-core-ui .button-secondary,.theme-browser .theme .theme-actions .button{
+    color:#fff;
+    background-color:<?php echo $color_3_40; ?>;
+    border-color:transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.wp-core-ui .button:hover, .wp-core-ui .button-secondary:hover,.theme-browser .theme .theme-actions .button:hover{
+    color:#fff;
+    background-color:<?php echo $color_3_80; ?>;
+    border-color:transparent;
+    transition: all 0.3s ease;
+}
+
+.upload-plugin .wp-upload-form, .upload-theme .wp-upload-form{
+    background: #ffffffe6;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.notice{
+    border-radius: 6px;
+}
+
 /* 动作按钮样式 */
 .wrap .add-new-h2,
  .wrap .page-title-action{
@@ -634,14 +659,15 @@ ul#adminmenu>li.current>a.current:after{
 }
 
 /* 主题浏览器样式 */
-.theme-browser .theme,
 .theme-browser .theme .theme-actions{
     border:none;
+    background:0;
 }
 
 .theme-browser .theme{
     margin: 1%;
     width: 22.5%;
+    border:none;
 }
 
 .theme-browser .theme:nth-child(3n){
@@ -658,7 +684,11 @@ ul#adminmenu>li.current>a.current:after{
     background:<?php echo $color_2_40; ?>;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 4px;
+    border-radius: 0 0 10px 10px;
+}
+
+.theme-browser .theme .theme-name{
+    border-radius: 0 0 10px 10px;
 }
 
 .theme-browser .theme.add-new-theme a:focus span:after,
@@ -670,9 +700,18 @@ ul#adminmenu>li.current>a.current:after{
     background: 0 !important;
 }
 
+.theme-browser .theme .theme-screenshot{
+    border-radius: 10px 10px 0 0;
+}
+
 .theme-filter.current,
 .theme-section.current{
     border-bottom-color:<?php echo $color_2; ?>;
+}
+
+.widefat{
+    border: none;
+    border-radius: 8px;
 }
 
 /* 过滤器样式 */
@@ -782,6 +821,18 @@ div#wp-responsive-toggle a:before{
 
 ::-webkit-scrollbar-thumb:hover {
     background: <?php echo $color_2_40; ?>;
+}
+
+/* 首页样式 */
+.postbox {
+    border: none;
+    border-radius: 6px;
+    background: #ffffffe6;
+    backdrop-filter: blur(10px);
+}
+
+.postbox-header{
+    border-bottom: none;
 }
 
 /* 二级菜单容器样式 */
