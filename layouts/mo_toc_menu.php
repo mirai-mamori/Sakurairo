@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             <?php
         } else {
-            if (!iro_opt( 'hide_login_portal', false ) && !iro_opt('nav_user_menu',true) ) { // 未登录，开启用户栏且未开启隐藏入口?>
+            if (!iro_opt( 'hide_login_portal', false ) && iro_opt('nav_user_menu',true) ) { // 未登录，开启用户栏且未开启隐藏入口?>
                 <div class="mo-avatar">
                     <?php if ( iro_opt( 'unlisted_avatar' ) ) { ?>
 

@@ -554,7 +554,7 @@ $prefix = 'iro_options';
         'id'     => 'unlisted_avatar',
         'type'  => 'upload',
         'title' => __('Nav Menu Unlisted User Avatar','sakurairo_csf'),
-        'dependency' => array( 'nav_menu_user_avatar', '==', 'true', '', 'true' ),
+        'dependency' => array( 'nav_user_menu', '==', 'true', '', 'true' ),
         'desc'   => __('The best length-width ratio of is 1:1','sakurairo_csf'),
         'library'      => 'image',
         'default' => ''
