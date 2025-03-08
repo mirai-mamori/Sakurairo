@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://docs.fuukei.org/
 Description: A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme (Based on Theme Sakura)
-Version: 2.8.65
+Version: 2.8.67
 Tested up to: 6.8
 Requires at least: 6.0
 Requires PHP: 7.4
@@ -2226,24 +2226,14 @@ h1.fes-title {
   color: var(--theme-skin, #505050);
   font-size: 20px;
   font-weight: var(--global-font-weight, 400);
-  padding-bottom: 10px;
-  padding-left: 3px;
-  padding-right: 3px;
-  margin-bottom: 30px;
-  text-underline-offset: 10px;
-  text-decoration: underline wavy var(--exhibition_area_matching_color, #ffeeeB);
+  padding: 0 3px 10px;
 }
 
 h1.main-title {
   color: var(--theme-skin, #505050);
   font-size: 20px;
   font-weight: var(--global-font-weight, 400);
-  padding-bottom: 10px;
-  padding-left: 3px;
-  padding-right: 3px;
-  margin-bottom: 30px;
-  text-underline-offset: 10px;
-  text-decoration: underline wavy var(--theme-skin-matching, #ffeeeB);
+  padding: 0 3px 10px;
 }
 
 .top-feature li {

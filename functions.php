@@ -1045,77 +1045,31 @@ function enable_more_buttons($buttons)
     return $buttons;
 }
 add_filter("mce_buttons_3", "enable_more_buttons");
+
 /*
  * 后台登录页
- * @M.J
  */
-//Login Page style
 $custom_login_switch = iro_opt('custom_login_switch');
-
 if ($custom_login_switch) {
-    function custom_login()
-    {
-        require get_template_directory() . '/inc/login-scheme.php';
-        echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/css/login.css?' . IRO_VERSION . '" />' . "\n";
+    // Add custom login styles
+    function custom_login() {
+        ?>
+        <style type="text/css">body.login{background-image:url('<?php echo DEFAULT_FEATURE_IMAGE(); ?>');background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;}.login h1 a{background-image:url('<?php echo iro_opt('login_logo_img') ?: get_site_icon_url(); ?>') !important;background-size:contain;width:100%;max-height:100px;}.login form{box-shadow:0 1px 30px -4px #e8e8e880;border:1px solid #FFFFFF;background:rgba(255,255,255,0.8);-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);border-radius:10px;}.login form input[type=checkbox],.login input[type=password],.login input[type=text]{background:rgba(255,255,255,0.7);box-shadow:0 1px 30px -4px #e8e8e880;border:1px solid #FFFFFF;-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);font-size:15px;padding:0.6rem;border-radius:8px;}.wp-core-ui .button-primary{background:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;border-color:transparent;border-radius:6px;padding:1px 18px !important;transition:all 0.3s ease;}.wp-core-ui .button-primary:hover{background:<?php echo iro_opt('theme_skin_matching') ?: '#FF69B4'; ?>;border-color:transparent;transition:all 0.3s ease;}.vaptchaContainer{margin:5px 0 20px;}.login form .forgetmenot{margin-top: 6px;}.login .button.wp-hide-pw .dashicons{color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;}#language-switcher{color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;backdrop-filter:none;-webkit-backdrop-filter:none;}.login #nav{font-size:12px;padding:8px 12px;background:rgba(255,255,255,0.7);box-shadow:0 1px 30px -4px #e8e8e8;border:1px solid #FFFFFF;-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);width:fit-content;border-radius:8px;margin:auto;margin-top:-18px;}.login #backtoblog{display:none;}.captcha{display:flex !important;align-items:center;margin-bottom:20px !important;margin-top:10px;gap:10px;}.login form input[name=yzm]{margin:0;}.login label{margin-bottom:5px;}</style>
+        <?php
     }
-
     add_action('login_head', 'custom_login');
 
-    //Login Page Title
-    function custom_headertitle($title)
-    {
+    // Login Page Title
+    function custom_headertitle($title) {
         return get_bloginfo('name');
     }
     add_filter('login_headertext', 'custom_headertitle');
 
-    //Login Page Link
-    function custom_loginlogo_url($url)
-    {
+    // Login Page Link
+    function custom_loginlogo_url($url) {
         return esc_url(home_url('/'));
     }
     add_filter('login_headerurl', 'custom_loginlogo_url');
-
-    //Login Page Footer
-    function custom_html()
-    {
-        $loginbg = iro_opt('login_background') ?: iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/') . 'series/login_background.webp';
-        ?>
-        <script type="text/javascript">
-            document.addEventListener("DOMContentLoaded", () => {
-                // 设置背景图
-                document.body.style.backgroundImage = `url("<?= $loginbg ?>")`;
-                
-                // 设置自定义logo
-                const logoElement = document.querySelector("h1 a");
-                if (logoElement) {
-                    logoElement.style.backgroundImage = "url('<?= iro_opt('login_logo_img') ?>')";
-                }
-                
-                // 修改记住我选项样式
-                const forgetmenot = document.querySelector(".forgetmenot");
-                if (forgetmenot) {
-                    forgetmenot.outerHTML = '<p class="forgetmenot"><?= __("Remember me", "sakurairo") ?><input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;"></label></p>';
-                }
-                
-                // 验证码刷新功能
-                const captchaimg = document.getElementById("captchaimg");
-                if (captchaimg) {
-                    captchaimg.addEventListener("click", (e) => {
-                        fetch("<?= rest_url('sakura/v1/captcha/create') ?>")
-                        .then(resp => resp.json())
-                        .then(json => {
-                            e.target.src = json["data"];
-                            document.querySelector("input[name='timestamp']").value = json["time"];
-                            document.querySelector("input[name='id']").value = json["id"];
-                        });
-                    });
-                }
-            });
-        </script>
-        <?php
-    }
-
-    add_action('login_footer', 'custom_html');
 }
 
 //Login message
@@ -1580,26 +1534,6 @@ function check_title_tags($content)
         }
     }
     return false;
-}
-
-/*歌词*/
-function hero_get_lyric()
-{
-    /** These are the lyrics to Hero */
-    $lyrics = "";
-
-    // Here we split it into lines
-    $lyrics = explode("\n", $lyrics);
-
-    // And then randomly choose a line
-    return wptexturize($lyrics[mt_rand(0, count($lyrics) - 1)]);
-}
-
-// This just echoes the chosen line, we'll position it later
-function hello_hero()
-{
-    $chosen = hero_get_lyric();
-    echo $chosen;
 }
 
 /*私密评论*/
@@ -2709,7 +2643,7 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
         include_once('inc/classes/Captcha.php');
         $img = new Sakura\API\Captcha;
         $test = $img->create_captcha_img();
-        echo '<p><label for="captcha" class="captcha">验证码<br><img id="captchaimg" width="120" height="40" src="', $test['data'], '"><input type="text" name="yzm" id="yzm" class="input" value="" size="20" tabindex="4" placeholder="请输入验证码"><input type="hidden" name="timestamp" value="', $test['time'], '"><input type="hidden" name="id" value="', $test['id'], '">'
+        echo '<p><label for="captcha" class="captcha"><img id="captchaimg" width="120" height="40" style="border-radius: 8px;" src="', $test['data'], '"><input type="text" name="yzm" id="yzm" class="input" value="" size="20" tabindex="4" placeholder="请输入验证码"><input type="hidden" name="timestamp" value="', $test['time'], '"><input type="hidden" name="id" value="', $test['id'], '">'
             . "</label></p>";
     }
     add_action('login_form', 'login_CAPTCHA');
