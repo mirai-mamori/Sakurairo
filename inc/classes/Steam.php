@@ -41,7 +41,8 @@ class Steam
     public function get_steam_items()
     {
         $resp = $this->fetch_api();
-        $games = $resp['response']['games'];
+        // 添加检查，确保 $resp['response']['games'] 存在且为数组
+        $games = isset($resp['response']['games']) && is_array($resp['response']['games']) ? $resp['response']['games'] : [];
         $html = "";
         foreach ($games as $game) {
             $playtime = $this->format_playtime($game['playtime_forever']);
