@@ -543,7 +543,7 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'    => 'nav_menu_user_avatar',
+        'id'    => 'nav_user_menu',
         'type'  => 'switcher',
         'title' => __('Nav Menu User Avatar','sakurairo_csf'),
         'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
@@ -558,14 +558,6 @@ $prefix = 'iro_options';
         'desc'   => __('The best length-width ratio of is 1:1','sakurairo_csf'),
         'library'      => 'image',
         'default' => ''
-      ),
-
-      array(
-        'id'    => 'mobile_menu_user_avatar',
-        'type'  => 'switcher',
-        'title' => __('Nav Menu User Avatar in Mobile','sakurairo_csf'),
-        'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
-        'default' => true
       ),
 
     )
