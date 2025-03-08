@@ -268,7 +268,7 @@
 .mo_toc_panel .mo-avatar img,
 .mo_toc_panel .mo-avatar i {
   width: 40px;
-  height: 40px;
+  height: fit-content;
   aspect-ratio: 1;
   border-radius: 50%;
   font-size: 40px;
