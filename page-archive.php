@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: 文章模版
+ * Template Name: Archive Template
  */
 
 get_header();

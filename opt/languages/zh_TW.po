@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2025-03-09 12:06+0900\n"
-"PO-Revision-Date: 2025-03-09 12:07+0900\n"
+"POT-Creation-Date: 2025-03-09 15:58+0800\n"
+"PO-Revision-Date: 2025-03-09 15:58+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: option-framework.php\n"
@@ -4177,101 +4177,76 @@ msgid "Image Display Category"
 msgstr "圖像展示分類"
 
 #: options/theme-options.php:3970
-msgid "Specify Login Address"
-msgstr "指定登入地址"
-
-#: options/theme-options.php:3971
-msgid ""
-"Force not to use the WordPress login page address to login, fill in the new "
-"login page address, such as: http://www.xxx.com/login. Note that before "
-"filling in the new page you can test the normal opening, so as not to cause "
-"the inability to enter the background, etc."
-msgstr ""
-"強制不使用WordPress登入頁面地址登入，填寫新建的登入頁面地址，比如：http://"
-"www.xxx.com/login。注意填寫前先測試下你新建的頁面是可以正常打開的，以免造成無"
-"法進入後台等情況。"
-
-#: options/theme-options.php:3977
-msgid "Specify Registration Address"
-msgstr "指定註冊地址"
-
-#: options/theme-options.php:3978
-msgid ""
-"This address is used as the registration entry on the login page, if you "
-"specify a login address, it is recommended to fill in"
-msgstr "該地址在登入頁面作為註冊入口，如果你指定了登入地址，則建議填寫"
-
-#: options/theme-options.php:3984
 msgid "Version Control"
 msgstr "版本控制"
 
-#: options/theme-options.php:3985
+#: options/theme-options.php:3971
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr "用於更新前端Cookie和瀏覽器快取，可使用任意字符串"
 
-#: options/theme-options.php:3991
+#: options/theme-options.php:3977
 msgid "Hide Login Portal"
 msgstr "隱藏登入入口"
 
-#: options/theme-options.php:3992
+#: options/theme-options.php:3978
 msgid ""
 "Hide login address in theme as much as possible, if you used plugins to hide "
 "this."
 msgstr "將盡可能地隱藏主題中的登入鏈接，如果你使用了相關插件"
 
-#: options/theme-options.php:3999
+#: options/theme-options.php:3985
 msgid "Fontawesome Source"
 msgstr "Fontawesome載入來源"
 
-#: options/theme-options.php:4000
+#: options/theme-options.php:3986
 msgid "The source link of Fontawesome icons style"
 msgstr "Fontawesome圖示樣式的載入來源"
 
-#: options/theme-options.php:4007
+#: options/theme-options.php:3993
 msgid "PHP Notice Filter"
 msgstr "PHP 通知過濾器"
 
-#: options/theme-options.php:4009
+#: options/theme-options.php:3995
 msgid "Use your php config"
 msgstr "使用PHP設定"
 
-#: options/theme-options.php:4010
+#: options/theme-options.php:3996
 msgid "Only show critical errors"
 msgstr "只顯示嚴重錯誤"
 
-#: options/theme-options.php:4011
+#: options/theme-options.php:3997
 msgid "Show nothing"
 msgstr "屏蔽所有錯誤"
 
-#: options/theme-options.php:4014
+#: options/theme-options.php:4000
 msgid ""
 "It is recommended to set it to normal to block log information that does not "
 "affect usage."
 msgstr "建議設定為正常來屏蔽不影響使用的日誌"
 
-#: options/theme-options.php:4020
+#: options/theme-options.php:4006
 msgid "Backup&Recovery"
 msgstr "備份恢復"
 
-#: options/theme-options.php:4022
+#: options/theme-options.php:4008
 msgid "Backup or Recovery your theme options"
 msgstr "備份或恢復你的主題設定"
 
-#: options/theme-options.php:4033
+#: options/theme-options.php:4019
 msgid "About Theme"
 msgstr "關於主題"
 
-#: options/theme-options.php:4039
+#: options/theme-options.php:4025
 msgid "Version Info"
 msgstr "版本資訊"
 
-#: options/theme-options.php:4044
+#: options/theme-options.php:4030
 msgid ""
 "<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.7/series/headlogo.webp\"  "
 "alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:4050
+#: options/theme-options.php:4036
 #, php-format
 msgid ""
 "Theme Sakurairo Version %s | Internal Version %s | <a href=\"https://github."
@@ -4280,15 +4255,15 @@ msgstr ""
 "Sakurairo 主題版本 %s | 內部版本 %s | <a href=\"https://github.com/mirai-"
 "mamori/Sakurairo\">項目地址</a>"
 
-#: options/theme-options.php:4055
+#: options/theme-options.php:4041
 msgid "Update Related"
 msgstr "更新相關"
 
-#: options/theme-options.php:4061
+#: options/theme-options.php:4047
 msgid "Theme Update Source"
 msgstr "主題更新源"
 
-#: options/theme-options.php:4067
+#: options/theme-options.php:4053
 msgid ""
 "If you are using a server set up in mainland China, please use the Upyun "
 "source or the official theme source as your theme update source"
@@ -4296,11 +4271,11 @@ msgstr ""
 "如果你使用的是架設在中國的伺服器，請使用 UPYUN 源或主題官方源作為你的主題更新"
 "源"
 
-#: options/theme-options.php:4074
+#: options/theme-options.php:4060
 msgid "Theme Update Test Channel Disclaimer"
 msgstr "主題更新測試通道免責聲明"
 
-#: options/theme-options.php:4080
+#: options/theme-options.php:4066
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -4313,55 +4288,55 @@ msgstr ""
 "內 <strong> \"I agree and am willing to bear all unexpected consequences\" </"
 "strong>"
 
-#: options/theme-options.php:4086
+#: options/theme-options.php:4072
 msgid "Theme Update Channel"
 msgstr "主題更新頻道"
 
-#: options/theme-options.php:4093
+#: options/theme-options.php:4079
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr "你可以在此切換更新頻道以參與到新版本的測試中"
 
-#: options/theme-options.php:4095
+#: options/theme-options.php:4081
 msgid "Stable Channel"
 msgstr "正式通道"
 
-#: options/theme-options.php:4096
+#: options/theme-options.php:4082
 msgid "Beta Channel"
 msgstr "公共測試頻道"
 
-#: options/theme-options.php:4097
+#: options/theme-options.php:4083
 msgid "Preview Channel"
 msgstr "預覽測試頻道"
 
-#: options/theme-options.php:4104
+#: options/theme-options.php:4090
 msgid "Resource Control"
 msgstr "資源控制"
 
-#: options/theme-options.php:4110
+#: options/theme-options.php:4096
 msgid "Provide Critical Frontend Resource locally"
 msgstr "在本地提供關鍵前端資源"
 
-#: options/theme-options.php:4111
+#: options/theme-options.php:4097
 msgid ""
 "Enabeld by default. Critical resources are those resources whose loading "
 "performance will have a significant impact on the user experience."
 msgstr "預設為 Enabeld。關鍵資源是載入性能將對用戶體驗產生重大影響的資源。"
 
-#: options/theme-options.php:4118
+#: options/theme-options.php:4104
 msgid "Provide Other Frontend Resource locally"
 msgstr "在本地提供其他前端資源"
 
-#: options/theme-options.php:4119
+#: options/theme-options.php:4105
 msgid "Less important frontend resource in the theme's folder."
 msgstr "主題資料夾中不太重要的前端資源。"
 
-#: options/theme-options.php:4126
+#: options/theme-options.php:4112
 msgid "Provide 3rd-party library from public CDN"
 msgstr "從公共 CDN 提供第三方庫"
 
-#: options/theme-options.php:4127
+#: options/theme-options.php:4113
 msgid ""
 "When disabled, 3rd-party dependencies, which have been built to bundles "
 "along with themes's entry script, will be loaded from the exact same origin "
@@ -4370,15 +4345,15 @@ msgstr ""
 "禁用后，第三方依賴項（已構建為與主題入口腳本捆綁在一起）將從與關鍵前端資源完"
 "全相同的源載入。"
 
-#: options/theme-options.php:4134
+#: options/theme-options.php:4120
 msgid "Public CDN Basepath"
 msgstr "公共 CDN 基本路徑"
 
-#: options/theme-options.php:4146
+#: options/theme-options.php:4132
 msgid "Vision Resource Basepath"
 msgstr "視覺資源基本路徑"
 
-#: options/theme-options.php:4147
+#: options/theme-options.php:4133
 msgid ""
 "This link directory structure needs to be consistent with the <a "
 "href=\"https://github.com/Fuukei/Sakurairo_Vision\">Sakurairo Vision</a> "
@@ -4390,31 +4365,31 @@ msgstr ""
 "Sakurairo_Vision\">櫻井眼視覺</a> 存儲庫保持一致，否則可能會出現一些資源404。"
 "默認採用 <a href=\"https://www.upyun.com/\">UPYUN</a> 提供的镜像源。"
 
-#: options/theme-options.php:4153
+#: options/theme-options.php:4139
 msgid "Theme Sponsors"
 msgstr "贊助資訊"
 
-#: options/theme-options.php:4158
+#: options/theme-options.php:4144
 msgid ""
 "<img src=\"https://news.maho.cc/sponsors.php\"  alt=\"sponsors\" width=\"65%"
 "\" height=\"65%\" />"
 msgstr ""
 
-#: options/theme-options.php:4163
+#: options/theme-options.php:4149
 msgid "Theme Contributors"
 msgstr "貢獻者"
 
-#: options/theme-options.php:4168
+#: options/theme-options.php:4154
 msgid ""
 "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
 "Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:4173
+#: options/theme-options.php:4159
 msgid "Privacy information"
 msgstr "隱私資訊"
 
-#: options/theme-options.php:4178
+#: options/theme-options.php:4164
 msgid ""
 "<p>The theme respects your privacy</p>\n"
 "        <p>However, when you use a service provider pre-populated by the "
@@ -4430,11 +4405,11 @@ msgstr ""
 "        <p>您可以通過本地化與主題相關的資源來減少發送給第三方的資訊，這些資源"
 "預先配置了供您修改的選項</p>"
 
-#: options/theme-options.php:4186
+#: options/theme-options.php:4172
 msgid "Send Theme Version to Fuukei"
 msgstr "發送主題版到 Fuukei 官方"
 
-#: options/theme-options.php:4187
+#: options/theme-options.php:4173
 msgid ""
 "The theme will only send time and version information to Fuukei officials "
 "and the data will be cleaned regularly and used only to count version "
@@ -4443,11 +4418,11 @@ msgstr ""
 "該主題只會向 Fuukei 官方發送時間和版本資訊，數據將定期清理並僅用於計算版本更"
 "新。"
 
-#: options/theme-options.php:4193
+#: options/theme-options.php:4179
 msgid "Reference Information"
 msgstr "引用資訊"
 
-#: options/theme-options.php:4198
+#: options/theme-options.php:4184
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox Fluent Icon Pack</p>\n"
 "        <p>MUH2 Design Icon Referenced by 缄默 <a href=\"https://www.coolapk."
@@ -4456,11 +4431,11 @@ msgstr ""
 "<p>流暢設計圖標引用了由 Paradox 設計的 Fluent圖標包</p>\n"
 "        <p>沐氫圖標引用了由 缄默 設計的沐氫圖標包</p>"
 
-#: options/theme-options.php:4204
+#: options/theme-options.php:4190
 msgid "Dependency Information"
 msgstr "依賴資訊"
 
-#: options/theme-options.php:4209
+#: options/theme-options.php:4195
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
@@ -4477,7 +4452,7 @@ msgstr ""
 "        <p>ChatGPT 相關能力依賴 orhanerday 開源 <a href=\"https://github.com/"
 "HaoZi-Team/ChatGPT-PHP\">open-ai</a> 專案</p>"
 
-#: options/theme-options.php:4216
+#: options/theme-options.php:4202
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "
@@ -4507,3 +4482,24 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
+
+#~ msgid "Specify Login Address"
+#~ msgstr "指定登入地址"
+
+#~ msgid ""
+#~ "Force not to use the WordPress login page address to login, fill in the "
+#~ "new login page address, such as: http://www.xxx.com/login. Note that "
+#~ "before filling in the new page you can test the normal opening, so as not "
+#~ "to cause the inability to enter the background, etc."
+#~ msgstr ""
+#~ "強制不使用WordPress登入頁面地址登入，填寫新建的登入頁面地址，比如：http://"
+#~ "www.xxx.com/login。注意填寫前先測試下你新建的頁面是可以正常打開的，以免造"
+#~ "成無法進入後台等情況。"
+
+#~ msgid "Specify Registration Address"
+#~ msgstr "指定註冊地址"
+
+#~ msgid ""
+#~ "This address is used as the registration entry on the login page, if you "
+#~ "specify a login address, it is recommended to fill in"
+#~ msgstr "該地址在登入頁面作為註冊入口，如果你指定了登入地址，則建議填寫"

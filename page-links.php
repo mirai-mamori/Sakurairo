@@ -1,7 +1,7 @@
 <?php 
 
 /*
- Template Name: 友情链接模版
+ Template Name: Friendly Links Template
  */
 
 get_header(); 
