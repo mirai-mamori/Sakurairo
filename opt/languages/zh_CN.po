@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2025-03-08 19:54+0800\n"
-"PO-Revision-Date: 2025-03-08 19:54+0800\n"
+"POT-Creation-Date: 2025-03-09 12:04+0900\n"
+"PO-Revision-Date: 2025-03-09 12:06+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: option-framework.php\n"
@@ -867,9 +867,9 @@ msgstr "主题色"
 
 #: options/theme-options.php:204 options/theme-options.php:212
 #: options/theme-options.php:225 options/theme-options.php:1103
-#: options/theme-options.php:1112 options/theme-options.php:3487
-#: options/theme-options.php:3495 options/theme-options.php:3503
-#: options/theme-options.php:3511
+#: options/theme-options.php:1112 options/theme-options.php:3475
+#: options/theme-options.php:3483 options/theme-options.php:3491
+#: options/theme-options.php:3499
 msgid "Customize the colors"
 msgstr "自定义颜色"
 
@@ -3451,12 +3451,14 @@ msgid ""
 msgstr "开启之后将允许用户设置自己的评论对其他人不可见"
 
 #: options/theme-options.php:3206
-msgid "Page Comment Area Bot Verification"
-msgstr "页面评论区域机器人验证"
+msgid "Page Comment Area Captcha"
+msgstr "页面评论区域验证码"
 
 #: options/theme-options.php:3207
-msgid "After turning on user comments need to be verified before posting"
-msgstr "开启之后用户评论前需要经过验证后才可发布"
+msgid ""
+"Enabled by default, comments posted without logging in need to be verified "
+"by CAPTCHA"
+msgstr "默认开启，在未登录的情况下发表评论需要通过验证码验证"
 
 #: options/theme-options.php:3214
 msgid "QQ Avatar Link Encryption"
@@ -3660,88 +3662,80 @@ msgid "Vaptcha"
 msgstr "Vaptcha验证码"
 
 #: options/theme-options.php:3401
-msgid "Captcha Level"
-msgstr "验证码难度"
-
-#: options/theme-options.php:3402
-msgid "The difficulty level of the Theme Captcha"
-msgstr "主题内建验证码的难度"
-
-#: options/theme-options.php:3413
 msgid "Vaptcha VID"
 msgstr ""
 
-#: options/theme-options.php:3415
+#: options/theme-options.php:3403
 msgid "Fill in your Vaptcha VID"
 msgstr "填写你的 Vaptcha VID"
 
-#: options/theme-options.php:3421
+#: options/theme-options.php:3409
 msgid "Vaptcha KEY"
 msgstr ""
 
-#: options/theme-options.php:3423
+#: options/theme-options.php:3411
 msgid "Fill in your Vaptcha KEY"
 msgstr "填写你的 Vaptcha KEY"
 
-#: options/theme-options.php:3429
+#: options/theme-options.php:3417
 msgid "Vaptcha Scene"
 msgstr "Vaptcha场景"
 
-#: options/theme-options.php:3445
+#: options/theme-options.php:3433
 msgid "Jump after login"
 msgstr "登录后跳转"
 
-#: options/theme-options.php:3446
+#: options/theme-options.php:3434
 msgid "Jump to backend for admins and home for users after turning on."
 msgstr "开启之后管理员跳转至后台，用户跳转至主页。"
 
-#: options/theme-options.php:3453
+#: options/theme-options.php:3441
 msgid "Login Screen Language Option"
 msgstr "登录界面语言选项"
 
-#: options/theme-options.php:3454
+#: options/theme-options.php:3442
 msgid "Login screen language option will be display when enabled"
 msgstr "开启之后登录界面将显示语言选项"
 
-#: options/theme-options.php:3460
+#: options/theme-options.php:3448
 msgid "Dashboard"
 msgstr "仪表盘"
 
-#: options/theme-options.php:3466
+#: options/theme-options.php:3454
 msgid "Dashboard Background Image"
 msgstr "仪表盘背景图片"
 
-#: options/theme-options.php:3467
+#: options/theme-options.php:3455
 msgid ""
 "Set your dashboard background image, leave this option blank to show white "
 "background"
 msgstr "设置你的仪表盘背景图片，此选项留空则显示白色背景"
 
-#: options/theme-options.php:3475
+#: options/theme-options.php:3463
 msgid "Dashboard Options Menu Style"
 msgstr "仪表板设置菜单样式"
 
-#: options/theme-options.php:3486
+#: options/theme-options.php:3474
 msgid "Dashboard Primary Menu Color"
 msgstr "仪表盘一级菜单颜色"
 
-#: options/theme-options.php:3494
+#: options/theme-options.php:3482
 msgid "Dashboard Secondary Menu Color"
 msgstr "仪表盘二级菜单颜色"
 
-#: options/theme-options.php:3502
+#: options/theme-options.php:3490
 msgid "Dashboard Emphasis Color"
 msgstr "仪表板强调颜色"
 
-#: options/theme-options.php:3510
+#: options/theme-options.php:3498
 msgid "Dashboard Text Color"
 msgstr "仪表盘文本颜色"
 
-#: options/theme-options.php:3520
+#: options/theme-options.php:3508
 msgid "ChatGPT Options"
 msgstr "ChatGPT 设置"
 
-#: options/theme-options.php:3527
+#: options/theme-options.php:3515
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Others/"
 "#ChatGPT%E8%AE%BE%E7%BD%AE\">here</a> to learn how to set the options on "
@@ -3750,58 +3744,58 @@ msgstr ""
 "您可以单击 <a href=\"https://docs.fuukei.org/Sakurairo/Others/"
 "#ChatGPT%E8%AE%BE%E7%BD%AE\">此处</a> 了解如何在此页面上设置选项"
 
-#: options/theme-options.php:3533
+#: options/theme-options.php:3521
 msgid "ChatGPT Function"
 msgstr "ChatGPT 功能"
 
-#: options/theme-options.php:3534
+#: options/theme-options.php:3522
 msgid "After turning on ChatGPT Function will be available"
 msgstr "开启之后 ChatGPT 功能将可以使用"
 
-#: options/theme-options.php:3540
+#: options/theme-options.php:3528
 msgid ""
 "<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.7/options/leaflow.webp\" "
 "width=\"25%\" height=\"25%\"/><img src=\"https://s.nmxc.ltd/sakurairo_vision/"
 "@2.7/options/postchat.webp\" width=\"25%\" height=\"25%\"/>"
 msgstr ""
 
-#: options/theme-options.php:3548
+#: options/theme-options.php:3536
 msgid "Reset to API providers' default options"
 msgstr "一键使用 API （第三方服务）"
 
-#: options/theme-options.php:3550
+#: options/theme-options.php:3538
 msgid "Leaflow"
 msgstr "利飞"
 
-#: options/theme-options.php:3553
+#: options/theme-options.php:3541
 msgid "PostChat"
 msgstr ""
 
-#: options/theme-options.php:3556
+#: options/theme-options.php:3544
 msgid "OpenAI"
 msgstr ""
 
-#: options/theme-options.php:3587
+#: options/theme-options.php:3575
 msgid "Reset successfully"
 msgstr "重置成功"
 
-#: options/theme-options.php:3590
+#: options/theme-options.php:3578
 msgid "Failed to reset"
 msgstr "重置失败"
 
-#: options/theme-options.php:3604
+#: options/theme-options.php:3592
 msgid "ChatGPT Base URL"
 msgstr "ChatGPT 访问地址"
 
-#: options/theme-options.php:3605
+#: options/theme-options.php:3593
 msgid "Fill in the ChatGPT Base URL"
 msgstr "填写你的 ChatGPT 访问地址"
 
-#: options/theme-options.php:3613
+#: options/theme-options.php:3601
 msgid "ChatGPT API keys"
 msgstr "ChatGPT API密钥"
 
-#: options/theme-options.php:3614
+#: options/theme-options.php:3602
 msgid ""
 "Fill in Your ChatGPT API keys, please refer to <a href=\"https://platform."
 "openai.com/account/api-keys\">OpenAI Website</a> for further information."
@@ -3809,17 +3803,17 @@ msgstr ""
 "填写您的 ChatGPT API 密钥，您可以访问 <a href=\"https://platform.openai.com/"
 "account/api-keys\">OpenAI 网站</a> 获取您的 API 密钥"
 
-#: options/theme-options.php:3621
+#: options/theme-options.php:3609
 msgid "ChatGPT Article Summarize"
 msgstr "ChatGPT 文章摘要"
 
-#: options/theme-options.php:3622
+#: options/theme-options.php:3610
 msgid ""
 "After turning on, title and context of your articles will be automatically "
 "sent to ChatGPT to generate excerpts."
 msgstr "开启之后，文章的标题和内容将自动发送到 ChatGPT 以生成摘要"
 
-#: options/theme-options.php:3629
+#: options/theme-options.php:3617
 msgid ""
 "Each update of your post will trigger a request to generate a summary. Due "
 "to current API limitations, if your article exceeds 4097 Token, the system "
@@ -3828,21 +3822,21 @@ msgstr ""
 "你的每次文章更新都会触发生成摘要请求。由于目前API限制，如果你的文章超过 4097 "
 "Token，系统将会只发送未超出部分以生成摘要"
 
-#: options/theme-options.php:3639
+#: options/theme-options.php:3627
 msgid "Article IDs that do not Require ChatGPT Summarize"
 msgstr "不需要 ChatGPT 生成摘要的文章ID"
 
-#: options/theme-options.php:3640
+#: options/theme-options.php:3628
 msgid ""
 "Those articles will never be sent to ChatGPT for excerpt generation. Split "
 "each id with a \",\"."
 msgstr "这些文章将不会发送到 ChatGPT 以生成摘要。用“, ”分割每个 ID"
 
-#: options/theme-options.php:3651
+#: options/theme-options.php:3639
 msgid "ChatGPT Article Summarize Init Prompt"
 msgstr "ChatGPT 文章摘要初始化提示"
 
-#: options/theme-options.php:3656
+#: options/theme-options.php:3644
 msgid ""
 "Init Prompt instructs AI how to generate summaries for your articles. Init "
 "Prompt will be passed to ChatGPT as \"system\" role"
@@ -3850,11 +3844,11 @@ msgstr ""
 "用于指示 AI 如何为你的文章生成摘要。初始化提示将作为 “系统 ”角色传递给 "
 "ChatGPT"
 
-#: options/theme-options.php:3663
+#: options/theme-options.php:3651
 msgid "ChatGPT Model"
 msgstr "ChatGPT 模型"
 
-#: options/theme-options.php:3664
+#: options/theme-options.php:3652
 msgid ""
 "Only models support Chat Completion API can be used. The default is \"gpt-4o-"
 "mini. View https://platform.openai.com/docs/models/overview for further info."
@@ -3862,31 +3856,31 @@ msgstr ""
 "只有兼容 ChatGPT API 的模型才能使用。默认为 “gpt-4o-mini”。更多信息请查看 "
 "https://platform.openai.com/docs/models/overview"
 
-#: options/theme-options.php:3677
+#: options/theme-options.php:3665
 msgid "ChatGPT API self test"
 msgstr "ChatGPT API 测试"
 
-#: options/theme-options.php:3681
+#: options/theme-options.php:3669
 msgid "TEST"
 msgstr "测试"
 
-#: options/theme-options.php:3684
+#: options/theme-options.php:3672
 msgid "Results: "
 msgstr "结果： "
 
-#: options/theme-options.php:3696
+#: options/theme-options.php:3684
 msgid "Waiting for response..."
 msgstr "等待响应"
 
-#: options/theme-options.php:3707
+#: options/theme-options.php:3695
 msgid "Malformed post_id: "
 msgstr "错误的文章 ID"
 
-#: options/theme-options.php:3724
+#: options/theme-options.php:3712
 msgid "Low Use Options"
 msgstr "低使用设置"
 
-#: options/theme-options.php:3731
+#: options/theme-options.php:3719
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Others/"
 "#%E4%BD%8E%E4%BD%BF%E7%94%A8%E8%AE%BE%E7%BD%AE\">here</a> to learn how to "
@@ -3896,55 +3890,63 @@ msgstr ""
 "#%E4%BD%8E%E4%BD%BF%E7%94%A8%E8%AE%BE%E7%BD%AE\">此处</a> 了解如何在此页面上"
 "设置选项"
 
-#: options/theme-options.php:3737
+#: options/theme-options.php:3725
 msgid "Statistics API"
 msgstr "统计接口"
 
-#: options/theme-options.php:3738
+#: options/theme-options.php:3726
 msgid ""
 "You can choose WP-Statistics plugin statistics or theme built-in statistics "
 "to display"
 msgstr "你可以选择WP-Statistics插件统计或者主题内建统计作为统计结果"
 
-#: options/theme-options.php:3740
+#: options/theme-options.php:3728
 msgid "Theme Built in Statistics"
 msgstr "主题内建统计"
 
-#: options/theme-options.php:3741
+#: options/theme-options.php:3729
 msgid "WP-Statistics Plugin Statistics"
 msgstr "WP-Statistics插件统计"
 
-#: options/theme-options.php:3749
+#: options/theme-options.php:3737
 msgid "Statistics display format"
 msgstr "统计数据显示格式"
 
-#: options/theme-options.php:3750
+#: options/theme-options.php:3738
 msgid "You can choose from four different data display formats"
 msgstr "你可以选择四种不同的数据显示格式"
 
-#: options/theme-options.php:3752
+#: options/theme-options.php:3740
 msgid "23333 Visits"
 msgstr "23333次访问"
 
-#: options/theme-options.php:3753
+#: options/theme-options.php:3741
 msgid "23,333 Visits"
 msgstr "23,333次访问"
 
-#: options/theme-options.php:3754
+#: options/theme-options.php:3742
 msgid "23 333 Visits"
 msgstr "23 333次访问"
 
-#: options/theme-options.php:3755
+#: options/theme-options.php:3743
 msgid "23K Visits"
 msgstr "23K次访问"
 
-#: options/theme-options.php:3763
+#: options/theme-options.php:3751
 msgid "Google Analytics Id"
 msgstr "谷歌统计ID"
 
-#: options/theme-options.php:3764
+#: options/theme-options.php:3752
 msgid "If you already have a plugin to handle it, please keep here empty."
 msgstr "如果已有类似功能插件，请将此处留空"
+
+#: options/theme-options.php:3758
+msgid "Captcha Level"
+msgstr "验证码难度"
+
+#: options/theme-options.php:3759
+msgid "The difficulty level of the Theme Captcha"
+msgstr "主题内建验证码的难度"
 
 #: options/theme-options.php:3770
 msgid "Custom CSS Styles"
@@ -4509,12 +4511,3 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
-
-#~ msgid "Nav Menu User Avatar"
-#~ msgstr "导航菜单用户头像"
-
-#~ msgid "It is on by default. Click to enter the login interface"
-#~ msgstr "默认开启，点击将进入登录界面"
-
-#~ msgid "Nav Menu User Avatar in Mobile"
-#~ msgstr "移动端导航菜单用户头像"

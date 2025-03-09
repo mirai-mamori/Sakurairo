@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2025-03-08 19:54+0800\n"
-"PO-Revision-Date: 2025-03-08 19:55+0800\n"
+"POT-Creation-Date: 2025-03-09 12:02+0900\n"
+"PO-Revision-Date: 2025-03-09 12:04+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: option-framework.php\n"
@@ -874,9 +874,9 @@ msgstr "テーマ色"
 
 #: options/theme-options.php:204 options/theme-options.php:212
 #: options/theme-options.php:225 options/theme-options.php:1103
-#: options/theme-options.php:1112 options/theme-options.php:3487
-#: options/theme-options.php:3495 options/theme-options.php:3503
-#: options/theme-options.php:3511
+#: options/theme-options.php:1112 options/theme-options.php:3475
+#: options/theme-options.php:3483 options/theme-options.php:3491
+#: options/theme-options.php:3499
 msgid "Customize the colors"
 msgstr "色をカスタマイズする"
 
@@ -3359,10 +3359,8 @@ msgid "Select based on your user region"
 msgstr "ユーザーの地域に基づいて選択してください"
 
 #: options/theme-options.php:3026
-#, fuzzy
-#| msgid "Steam"
 msgid "Steam China"
-msgstr "Steam"
+msgstr ""
 
 #: options/theme-options.php:3027
 msgid "Steam akamai"
@@ -3389,10 +3387,8 @@ msgid "XiaoHeiHe"
 msgstr "小黑盒（シャオヘイヘー）"
 
 #: options/theme-options.php:3042
-#, fuzzy
-#| msgid "Steam"
 msgid "SteamDB"
-msgstr "Steam"
+msgstr ""
 
 #: options/theme-options.php:3049
 msgid "Login Template Settings"
@@ -3603,12 +3599,15 @@ msgstr ""
 "す。"
 
 #: options/theme-options.php:3206
-msgid "Page Comment Area Bot Verification"
-msgstr "ページコメントエリアボットの検証"
+msgid "Page Comment Area Captcha"
+msgstr "ページコメントエリアのCaptcha"
 
 #: options/theme-options.php:3207
-msgid "After turning on user comments need to be verified before posting"
-msgstr "ユーザーコメントをオンにした後、投稿する前に確認する必要があります"
+msgid ""
+"Enabled by default, comments posted without logging in need to be verified "
+"by CAPTCHA"
+msgstr ""
+"デフォルトで有効、ログインせずに投稿されたコメントはCAPTCHAによる認証が必要"
 
 #: options/theme-options.php:3214
 msgid "QQ Avatar Link Encryption"
@@ -3828,60 +3827,52 @@ msgid "Vaptcha"
 msgstr "Vaptcha"
 
 #: options/theme-options.php:3401
-msgid "Captcha Level"
-msgstr "キャプチャレベル"
-
-#: options/theme-options.php:3402
-msgid "The difficulty level of the Theme Captcha"
-msgstr "テーマキャプチャの難易度"
-
-#: options/theme-options.php:3413
 msgid "Vaptcha VID"
 msgstr "Vaptcha VID"
 
-#: options/theme-options.php:3415
+#: options/theme-options.php:3403
 msgid "Fill in your Vaptcha VID"
 msgstr "あなたのVaptcha VIDを記入してください"
 
-#: options/theme-options.php:3421
+#: options/theme-options.php:3409
 msgid "Vaptcha KEY"
 msgstr "Vaptcha KEY"
 
-#: options/theme-options.php:3423
+#: options/theme-options.php:3411
 msgid "Fill in your Vaptcha KEY"
 msgstr "Vaptcha KEYを入力する"
 
-#: options/theme-options.php:3429
+#: options/theme-options.php:3417
 msgid "Vaptcha Scene"
 msgstr "Vaptchaシーン"
 
-#: options/theme-options.php:3445
+#: options/theme-options.php:3433
 msgid "Jump after login"
 msgstr "ログイン後にジャンプ"
 
-#: options/theme-options.php:3446
+#: options/theme-options.php:3434
 msgid "Jump to backend for admins and home for users after turning on."
 msgstr ""
 "電源を入れた後、管理者の場合はバックエンドに、ユーザーの場合はホームにジャン"
 "プします。"
 
-#: options/theme-options.php:3453
+#: options/theme-options.php:3441
 msgid "Login Screen Language Option"
 msgstr "ログイン画面の言語オプション"
 
-#: options/theme-options.php:3454
+#: options/theme-options.php:3442
 msgid "Login screen language option will be display when enabled"
 msgstr "ログイン画面の言語オプションを有効にすると表示されます"
 
-#: options/theme-options.php:3460
+#: options/theme-options.php:3448
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: options/theme-options.php:3466
+#: options/theme-options.php:3454
 msgid "Dashboard Background Image"
 msgstr "ダッシュボードの背景画像"
 
-#: options/theme-options.php:3467
+#: options/theme-options.php:3455
 msgid ""
 "Set your dashboard background image, leave this option blank to show white "
 "background"
@@ -3889,31 +3880,31 @@ msgstr ""
 "ダッシュボードの背景画像を設定し、このオプションを空白のままにして白い背景を"
 "表示します。"
 
-#: options/theme-options.php:3475
+#: options/theme-options.php:3463
 msgid "Dashboard Options Menu Style"
 msgstr "ダッシュボード オプション メニュー スタイル"
 
-#: options/theme-options.php:3486
+#: options/theme-options.php:3474
 msgid "Dashboard Primary Menu Color"
 msgstr "ダッシュボードのメインメニューの色"
 
-#: options/theme-options.php:3494
+#: options/theme-options.php:3482
 msgid "Dashboard Secondary Menu Color"
 msgstr "ダッシュボードのセカンダリ メニューの色"
 
-#: options/theme-options.php:3502
+#: options/theme-options.php:3490
 msgid "Dashboard Emphasis Color"
 msgstr "ダッシュボード強調色"
 
-#: options/theme-options.php:3510
+#: options/theme-options.php:3498
 msgid "Dashboard Text Color"
 msgstr "ダッシュボードテキストの色"
 
-#: options/theme-options.php:3520
+#: options/theme-options.php:3508
 msgid "ChatGPT Options"
 msgstr "ChatGPT オプション"
 
-#: options/theme-options.php:3527
+#: options/theme-options.php:3515
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Others/"
 "#ChatGPT%E8%AE%BE%E7%BD%AE\">here</a> to learn how to set the options on "
@@ -3923,58 +3914,58 @@ msgstr ""
 "fuukei.org/Sakurairo/Others/#ChatGPT%E8%AE%BE%E7%BD%AE\">ここ</a> をクリック"
 "してください"
 
-#: options/theme-options.php:3533
+#: options/theme-options.php:3521
 msgid "ChatGPT Function"
 msgstr "ChatGPT 機能"
 
-#: options/theme-options.php:3534
+#: options/theme-options.php:3522
 msgid "After turning on ChatGPT Function will be available"
 msgstr "ChatGPT 機能をオンにすると利用可能になります"
 
-#: options/theme-options.php:3540
+#: options/theme-options.php:3528
 msgid ""
 "<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.7/options/leaflow.webp\" "
 "width=\"25%\" height=\"25%\"/><img src=\"https://s.nmxc.ltd/sakurairo_vision/"
 "@2.7/options/postchat.webp\" width=\"25%\" height=\"25%\"/>"
 msgstr ""
 
-#: options/theme-options.php:3548
+#: options/theme-options.php:3536
 msgid "Reset to API providers' default options"
 msgstr "APIプロバイダーのデフォルト・オプション"
 
-#: options/theme-options.php:3550
+#: options/theme-options.php:3538
 msgid "Leaflow"
 msgstr ""
 
-#: options/theme-options.php:3553
+#: options/theme-options.php:3541
 msgid "PostChat"
 msgstr ""
 
-#: options/theme-options.php:3556
+#: options/theme-options.php:3544
 msgid "OpenAI"
 msgstr ""
 
-#: options/theme-options.php:3587
+#: options/theme-options.php:3575
 msgid "Reset successfully"
 msgstr "リセット成功"
 
-#: options/theme-options.php:3590
+#: options/theme-options.php:3578
 msgid "Failed to reset"
 msgstr "リセット失敗"
 
-#: options/theme-options.php:3604
+#: options/theme-options.php:3592
 msgid "ChatGPT Base URL"
 msgstr "ChatGPT Base URL"
 
-#: options/theme-options.php:3605
+#: options/theme-options.php:3593
 msgid "Fill in the ChatGPT Base URL"
 msgstr "ChatGPT Base URLを入力してください。"
 
-#: options/theme-options.php:3613
+#: options/theme-options.php:3601
 msgid "ChatGPT API keys"
 msgstr "ChatGPT API keys"
 
-#: options/theme-options.php:3614
+#: options/theme-options.php:3602
 msgid ""
 "Fill in Your ChatGPT API keys, please refer to <a href=\"https://platform."
 "openai.com/account/api-keys\">OpenAI Website</a> for further information."
@@ -3983,11 +3974,11 @@ msgstr ""
 "ために <a href=\"https://platform.openai.com/account/api-keys\">OpenAIのウェ"
 "ブサイト</a> に行くことができます"
 
-#: options/theme-options.php:3621
+#: options/theme-options.php:3609
 msgid "ChatGPT Article Summarize"
 msgstr "ChatGPTの記事の要約"
 
-#: options/theme-options.php:3622
+#: options/theme-options.php:3610
 msgid ""
 "After turning on, title and context of your articles will be automatically "
 "sent to ChatGPT to generate excerpts."
@@ -3995,7 +3986,7 @@ msgstr ""
 "オンにすると、記事のタイトルと文脈が自動的にChatGPTに送信され、抜粋が生成され"
 "ます。"
 
-#: options/theme-options.php:3629
+#: options/theme-options.php:3617
 msgid ""
 "Each update of your post will trigger a request to generate a summary. Due "
 "to current API limitations, if your article exceeds 4097 Token, the system "
@@ -4005,11 +3996,11 @@ msgstr ""
 "のAPIの制限により、記事が4097トークンを超える場合、システムは未超過部分のみを"
 "送信し、要約を生成します"
 
-#: options/theme-options.php:3639
+#: options/theme-options.php:3627
 msgid "Article IDs that do not Require ChatGPT Summarize"
 msgstr "ChatGPTサマリーを必要としない記事ID"
 
-#: options/theme-options.php:3640
+#: options/theme-options.php:3628
 msgid ""
 "Those articles will never be sent to ChatGPT for excerpt generation. Split "
 "each id with a \",\"."
@@ -4017,11 +4008,11 @@ msgstr ""
 "これらの記事は抜粋生成のためにChatGPTに送られることはありません。各IDを「, 」"
 "で分割してください。"
 
-#: options/theme-options.php:3651
+#: options/theme-options.php:3639
 msgid "ChatGPT Article Summarize Init Prompt"
 msgstr "ChatGPTの記事は初期化プロンプトを要約します"
 
-#: options/theme-options.php:3656
+#: options/theme-options.php:3644
 msgid ""
 "Init Prompt instructs AI how to generate summaries for your articles. Init "
 "Prompt will be passed to ChatGPT as \"system\" role"
@@ -4029,11 +4020,11 @@ msgstr ""
 "Init PromptはAIに記事の要約を生成する方法を指示します。イニシャルプロンプト"
 "は 「システム 」ロールとしてChatGPTに渡されます。"
 
-#: options/theme-options.php:3663
+#: options/theme-options.php:3651
 msgid "ChatGPT Model"
 msgstr "ChatGPTモデル"
 
-#: options/theme-options.php:3664
+#: options/theme-options.php:3652
 msgid ""
 "Only models support Chat Completion API can be used. The default is \"gpt-4o-"
 "mini. View https://platform.openai.com/docs/models/overview for further info."
@@ -4042,31 +4033,31 @@ msgstr ""
 "「gpt-4o-mini」 です。詳しくは https://platform.openai.com/docs/models/"
 "overview をご覧ください。"
 
-#: options/theme-options.php:3677
+#: options/theme-options.php:3665
 msgid "ChatGPT API self test"
 msgstr "ChatGPT APIセルフテスト"
 
-#: options/theme-options.php:3681
+#: options/theme-options.php:3669
 msgid "TEST"
 msgstr "テスト"
 
-#: options/theme-options.php:3684
+#: options/theme-options.php:3672
 msgid "Results: "
 msgstr "結果 "
 
-#: options/theme-options.php:3696
+#: options/theme-options.php:3684
 msgid "Waiting for response..."
 msgstr "返事を待っている"
 
-#: options/theme-options.php:3707
+#: options/theme-options.php:3695
 msgid "Malformed post_id: "
 msgstr "post_id が不正です： "
 
-#: options/theme-options.php:3724
+#: options/theme-options.php:3712
 msgid "Low Use Options"
 msgstr "低使用オプション"
 
-#: options/theme-options.php:3731
+#: options/theme-options.php:3719
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Others/"
 "#%E4%BD%8E%E4%BD%BF%E7%94%A8%E8%AE%BE%E7%BD%AE\">here</a> to learn how to "
@@ -4076,57 +4067,65 @@ msgstr ""
 "fuukei.org/Sakurairo/Others/#%E4%BD%8E%E4%BD%BF%E7%94%A8%E8%AE%BE%E7%BD%AE\">"
 "ここをクリックしてください</a> 。"
 
-#: options/theme-options.php:3737
+#: options/theme-options.php:3725
 msgid "Statistics API"
 msgstr "統計 API"
 
-#: options/theme-options.php:3738
+#: options/theme-options.php:3726
 msgid ""
 "You can choose WP-Statistics plugin statistics or theme built-in statistics "
 "to display"
 msgstr ""
 "WP-Statistics プラグイン統計またはテーマ組み込み統計を選択して表示できます。"
 
-#: options/theme-options.php:3740
+#: options/theme-options.php:3728
 msgid "Theme Built in Statistics"
 msgstr "統計に組み込まれたテーマ"
 
-#: options/theme-options.php:3741
+#: options/theme-options.php:3729
 msgid "WP-Statistics Plugin Statistics"
 msgstr "WP-統計プラグイン統計"
 
-#: options/theme-options.php:3749
+#: options/theme-options.php:3737
 msgid "Statistics display format"
 msgstr "統計表示形式"
 
-#: options/theme-options.php:3750
+#: options/theme-options.php:3738
 msgid "You can choose from four different data display formats"
 msgstr "4種類のデータ表示形式から選択できます。"
 
-#: options/theme-options.php:3752
+#: options/theme-options.php:3740
 msgid "23333 Visits"
 msgstr "23333訪問"
 
-#: options/theme-options.php:3753
+#: options/theme-options.php:3741
 msgid "23,333 Visits"
 msgstr "23,333訪問"
 
-#: options/theme-options.php:3754
+#: options/theme-options.php:3742
 msgid "23 333 Visits"
 msgstr "23 333訪問"
 
-#: options/theme-options.php:3755
+#: options/theme-options.php:3743
 msgid "23K Visits"
 msgstr "23K訪問"
 
-#: options/theme-options.php:3763
+#: options/theme-options.php:3751
 msgid "Google Analytics Id"
 msgstr "グーグルアナリティクスID"
 
-#: options/theme-options.php:3764
+#: options/theme-options.php:3752
 msgid "If you already have a plugin to handle it, please keep here empty."
 msgstr ""
 "すでにそれを処理するプラグインがある場合は、ここに空のままにしてください。"
+
+#: options/theme-options.php:3758
+msgid "Captcha Level"
+msgstr "キャプチャレベル"
+
+#: options/theme-options.php:3759
+msgid "The difficulty level of the Theme Captcha"
+msgstr "テーマキャプチャの難易度"
 
 #: options/theme-options.php:3770
 msgid "Custom CSS Styles"
@@ -4210,8 +4209,6 @@ msgid "Lightbox"
 msgstr "Lightbox"
 
 #: options/theme-options.php:3831
-#, fuzzy
-#| msgid "Lightbox"
 msgid "lightbox"
 msgstr "Lightbox"
 
@@ -4721,14 +4718,3 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
-
-#~ msgid "Nav Menu User Avatar"
-#~ msgstr "ナビメニューのユーザーアバター"
-
-#~ msgid "It is on by default. Click to enter the login interface"
-#~ msgstr ""
-#~ "デフォルトではオンになっています。クリックしてログインインターフェイスに入"
-#~ "ります"
-
-#~ msgid "Nav Menu User Avatar in Mobile"
-#~ msgstr "携帯端末ナビメニューのユーザーアバター"

@@ -155,7 +155,7 @@ function comment_captcha(){
   }
   return siren_ajax_comment_err(__('Please fill in the correct captcha answer','sakurairo'));
 }
-if(iro_opt('not_robot')) add_action('pre_comment_on_post', 'comment_captcha');
+if(iro_opt('pca_captcha')) add_action('pre_comment_on_post', 'comment_captcha');
 
 // 纯英文评论拦截
 function scp_comment_post( $incoming_comment ) {

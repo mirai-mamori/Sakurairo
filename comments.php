@@ -111,7 +111,7 @@ function get_smilies_panel() {
 
         <?php
         if (comments_open()) {
-			if (iro_opt('not_robot')) {
+			if (iro_opt('pca_captcha')) {
 				include_once('inc/classes/Captcha.php');
 				$img = new Sakura\API\Captcha;
 				$test = $img->create_captcha_img();

@@ -3201,11 +3201,11 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'not_robot',
+        'id' => 'pca_captcha',
         'type' => 'switcher',
-        'title' => __('Page Comment Area Bot Verification','sakurairo_csf'),
-        'label' => __('After turning on user comments need to be verified before posting','sakurairo_csf'),
-        'default' => false
+        'title' => __('Page Comment Area Captcha','sakurairo_csf'),
+        'label' => __('Enabled by default, comments posted without logging in need to be verified by CAPTCHA','sakurairo_csf'),
+        'default' => true
       ),
 
       array(
@@ -3393,18 +3393,6 @@ $prefix = 'iro_options';
           'vaptcha' => __('Vaptcha','sakurairo_csf')
         ),
         'default' => 'off',
-      ),
-      
-      array(
-        'id' => 'iro_captcha_level',
-        'type' => 'slider',
-        'title' => __('Captcha Level', 'sakurairo_csf'),
-        'desc' => __('The difficulty level of the Theme Captcha', 'sakurairo_csf'),
-        'dependency' => array( 'captcha_select', '==', 'iro_captcha', '', 'true' ),
-        'step' => '1',
-        'min' => '0',
-        'max' => '100',
-        'default' => '60'
       ),
       
       array(
@@ -3762,6 +3750,18 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('Google Analytics Id','sakurairo_csf'),
         'label' => __('If you already have a plugin to handle it, please keep here empty.','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'iro_captcha_level',
+        'type' => 'slider',
+        'title' => __('Captcha Level', 'sakurairo_csf'),
+        'desc' => __('The difficulty level of the Theme Captcha', 'sakurairo_csf'),
+        'dependency' => array( 'captcha_select', '==', 'iro_captcha', '', 'true' ),
+        'step' => '1',
+        'min' => '0',
+        'max' => '100',
+        'default' => '60'
       ),
 
       array(
