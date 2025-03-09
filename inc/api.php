@@ -330,7 +330,7 @@ function bfv_bilibili()
     return $response;
 }
 
-function steam_library ()
+function steam_library ($request)
 {
     if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
         $response = array(

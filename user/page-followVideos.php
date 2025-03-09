@@ -17,7 +17,7 @@ get_header();
 <?php } ?>
 	<article <?php post_class("post-item"); ?>>
 		<?php the_content( '', true ); ?>
-			<section class="bangumi">
+			<section class="bangumi have-columns">
             <?php if (iro_opt('bilibili_id') ):?>
                 <div class="row">
             <?php

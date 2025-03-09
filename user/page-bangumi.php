@@ -23,7 +23,7 @@ get_header();
 
     <article <?php post_class("post-item"); ?>>
         <?php the_content('', true); ?>
-        <section class="bangumi">
+        <section class="bangumi have-columns">
             <?php
             $bangumi_source = iro_opt('bangumi_source');
             $bilibili_id = iro_opt('bilibili_id');

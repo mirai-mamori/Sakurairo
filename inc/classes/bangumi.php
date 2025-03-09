@@ -137,7 +137,7 @@ class BangumiList
             // 分页
             if ($page < $totalPages) {
                 $nextPageUrl = rest_url('sakura/v1/bangumi') . '?userID=' . urlencode($userID) . '&page=' . ($page + 1);
-                $html .= '<div id="bangumi-pagination">' . self::anchor_pagination_next($nextPageUrl) . '</div>';
+                $html .= '<div id="template-pagination">' . self::anchor_pagination_next($nextPageUrl) . '</div>';
             }
 
             return $html;
