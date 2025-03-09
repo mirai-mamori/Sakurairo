@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2025-03-09 15:57+0800\n"
-"PO-Revision-Date: 2025-03-09 15:57+0800\n"
+"POT-Creation-Date: 2025-03-09 17:33+0900\n"
+"PO-Revision-Date: 2025-03-09 17:33+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: option-framework.php\n"
@@ -3948,27 +3948,27 @@ msgstr "验证码难度"
 msgid "The difficulty level of the Theme Captcha"
 msgstr "主题内建验证码的难度"
 
-#: options/theme-options.php:3770
+#: options/theme-options.php:3769
 msgid "Custom CSS Styles"
 msgstr "自定义CSS样式"
 
-#: options/theme-options.php:3771
+#: options/theme-options.php:3770
 msgid "Fill in the CSS code without writing style tag"
 msgstr "填写CSS代码，不需要写style标签"
 
-#: options/theme-options.php:3778
+#: options/theme-options.php:3777
 msgid "Code inserted in the header"
 msgstr "自定义插入 Header 代码"
 
-#: options/theme-options.php:3779
+#: options/theme-options.php:3778
 msgid "Insert HTML code right before </head>."
 msgstr "在</head>前插入HTML代码"
 
-#: options/theme-options.php:3785
+#: options/theme-options.php:3784
 msgid "Timezone Fix"
 msgstr "时区修正"
 
-#: options/theme-options.php:3786
+#: options/theme-options.php:3785
 msgid ""
 "Slide to adjust. If the comment has a time difference problem, adjust it "
 "here, fill in an integer. Calculation method: actual time = time of display "
@@ -3977,11 +3977,11 @@ msgstr ""
 "滑动滑块，如果评论出现时差问题在这里调整，填入一个整数，计算方法：实际时间=显"
 "示错误的时间-你输入的整数（单位：小时）"
 
-#: options/theme-options.php:3795
+#: options/theme-options.php:3794
 msgid "Gravatar Service Proxy"
 msgstr "Gravatar服务代理"
 
-#: options/theme-options.php:3796
+#: options/theme-options.php:3795
 msgid ""
 "You can select multiple proxy as the Gravatar Service Proxy. By default, "
 "Weavatar is used as the Gravatar Service Proxy."
@@ -3989,23 +3989,23 @@ msgstr ""
 "你可以选择多种代理作为 Gravatar 服务代理。默认使用 Weavatar 作为 Gravatar 服"
 "务代理。"
 
-#: options/theme-options.php:3798
+#: options/theme-options.php:3797
 msgid "Weavatar Service"
 msgstr "Weavatar服务"
 
-#: options/theme-options.php:3799
+#: options/theme-options.php:3798
 msgid "Loli Net"
 msgstr ""
 
-#: options/theme-options.php:3800
+#: options/theme-options.php:3799
 msgid "Official"
 msgstr "官方"
 
-#: options/theme-options.php:3801 options/theme-options.php:3809
+#: options/theme-options.php:3800 options/theme-options.php:3808
 msgid "Custom Proxy Address"
 msgstr "自定义代理地址"
 
-#: options/theme-options.php:3810
+#: options/theme-options.php:3809
 msgid ""
 "Enter your Gravatar proxy address without starting with \"http(s)://\" and "
 "ending with \"/\". Example: gravatar.com/avatar."
@@ -4013,48 +4013,48 @@ msgstr ""
 "输入你的头像代理地址，请勿以\"http(s)://\" 开头 “/” 结尾。示例：gravatar.com/"
 "avatar。"
 
-#: options/theme-options.php:3818
+#: options/theme-options.php:3817
 msgid "GitHub repository card proxy"
 msgstr "Github卡片仓库代理"
 
-#: options/theme-options.php:3819
+#: options/theme-options.php:3818
 msgid ""
 "Use your server proxy to get the github repository card image so that "
 "Chinese users who cannot access vercel.app can see it"
 msgstr ""
 "使用你的服务器代理获取github仓库卡片，让无法访问vercel.app的中国用户能看见它"
 
-#: options/theme-options.php:3825
+#: options/theme-options.php:3824
 msgid "Lightbox"
 msgstr "灯箱"
 
-#: options/theme-options.php:3831
+#: options/theme-options.php:3830
 msgid "lightbox"
 msgstr "灯箱效果"
 
-#: options/theme-options.php:3832
+#: options/theme-options.php:3831
 msgid ""
 "Choose a image lightbox effect which you want to use,and additional JQ "
 "libraries will be loaded when using fancybox"
 msgstr "选择一个你想使用的灯箱效果，选择FancyBox将会额外加载JQ库"
 
-#: options/theme-options.php:3834
+#: options/theme-options.php:3833
 msgid "off"
 msgstr "关"
 
-#: options/theme-options.php:3835
+#: options/theme-options.php:3834
 msgid "baguetteBox"
 msgstr ""
 
-#: options/theme-options.php:3836
+#: options/theme-options.php:3835
 msgid "fancybox"
 msgstr ""
 
-#: options/theme-options.php:3837
+#: options/theme-options.php:3836
 msgid "lightgallery"
 msgstr ""
 
-#: options/theme-options.php:3844
+#: options/theme-options.php:3843
 msgid ""
 "<strong>Attension: Please read <a href=\"https://github.com/sachinchoolur/"
 "lightGallery#license\">License Instruction</a> before use.</strong><br/"
@@ -4077,7 +4077,7 @@ msgstr ""
 "器用户来说应该是可被接受的。<br/>提交关于 Github 的新讨论以寻求帮助。https://"
 "github.com/mirai-mamori/Sakurairo/discussions"
 
-#: options/theme-options.php:3855
+#: options/theme-options.php:3854
 msgid ""
 "Start from Sakurairo v2.4.0, plugins names in LightGallery option follow the "
 "form cite in official document (eg. lgHash instead of \"hash\")"
@@ -4085,15 +4085,15 @@ msgstr ""
 "从Sakurairo v2.4.0开始，LightGallery中的插件名称会与官方文档中引用的表格保持"
 "一致（例如“hash”将被表示为IgHash）"
 
-#: options/theme-options.php:3863
+#: options/theme-options.php:3862
 msgid "LightGallery Lightbox Effect Options"
 msgstr "LightGallery灯箱效果"
 
-#: options/theme-options.php:3874
+#: options/theme-options.php:3873
 msgid "Code Highlighting"
 msgstr "代码高亮"
 
-#: options/theme-options.php:3879
+#: options/theme-options.php:3878
 msgid ""
 "<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </"
 "p> <p><strong>Prism.js:</strong> Requires a language to be specified, see <a "
@@ -4108,56 +4108,56 @@ msgstr ""
 "prismjs.com/plugins/file-highlight/\">如何代码高亮动态载入的文件</a>。 </"
 "p><p><strong>自定义：</strong> 适用于另有配置的情况。</p>"
 
-#: options/theme-options.php:3887
+#: options/theme-options.php:3886
 msgid "Code Highlight Method"
 msgstr "代码高亮程序"
 
-#: options/theme-options.php:3891
+#: options/theme-options.php:3890
 msgid "Custom Program"
 msgstr "自定义"
 
-#: options/theme-options.php:3899
+#: options/theme-options.php:3898
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
 msgstr "Prism.js：为所有代码块增加行数显示"
 
-#: options/theme-options.php:3903
+#: options/theme-options.php:3902
 msgid ""
 "See the <a href=\"https://prismjs.com/plugins/line-numbers/\">plugin "
 "description documentation</a>"
 msgstr ""
 "请参阅 <a href=\"https://prismjs.com/plugins/line-numbers/\">插件描述文档</a>"
 
-#: options/theme-options.php:3909
+#: options/theme-options.php:3908
 msgid "Prism.js: Autoload Address"
 msgstr "Prism.js：自动加载地址"
 
-#: options/theme-options.php:3913
+#: options/theme-options.php:3912
 msgid "Leave blank to use default values"
 msgstr "留空以使用默认值"
 
-#: options/theme-options.php:3920
+#: options/theme-options.php:3919
 msgid "Prism.js: Code Highlight Theme"
 msgstr "Prism.js：代码高亮主题"
 
-#: options/theme-options.php:3921 options/theme-options.php:3932
+#: options/theme-options.php:3920 options/theme-options.php:3931
 msgid "Relative to autoload address. Leave blank to use default values"
 msgstr "相对于自动加载地址。留空以使用默认值"
 
-#: options/theme-options.php:3931
+#: options/theme-options.php:3930
 msgid "Prism.js: Code Highlight Theme (Dark Mode)"
 msgstr "Prism.js：代码高亮主题（深色模式）"
 
-#: options/theme-options.php:3942
+#: options/theme-options.php:3941
 msgid ""
 "The following Options are not recommended to be modified blindly, please use "
 "them under the guidance of others"
 msgstr "以下设置不推荐盲目进行修改，请在他人的指导下使用"
 
-#: options/theme-options.php:3948
+#: options/theme-options.php:3947
 msgid "Image CDN"
 msgstr "图片 CDN"
 
-#: options/theme-options.php:3949
+#: options/theme-options.php:3948
 msgid ""
 "Note: fill in the format https://your CDN domain/. This means that images "
 "with original path http://your.domain/wp-content/uploads/2018/05/xx.png will "
@@ -4167,89 +4167,89 @@ msgstr ""
 "domain/wp-content/uploads/2018/05/xx.png 的图片将从 http://你的CDN域"
 "名/2018/05/xx.png 加载"
 
-#: options/theme-options.php:3956
+#: options/theme-options.php:3955
 msgid "Articles Categories (Do not display)"
 msgstr "文章分类（不显示）"
 
-#: options/theme-options.php:3957 options/theme-options.php:3964
+#: options/theme-options.php:3956 options/theme-options.php:3963
 msgid "Fill in category ID, seperate in English\" , \" when more than one"
 msgstr "填写分类ID，多个用英文“ , ”分开"
 
-#: options/theme-options.php:3963
+#: options/theme-options.php:3962
 msgid "Image Display Category"
 msgstr "图片展示分类"
 
-#: options/theme-options.php:3970
+#: options/theme-options.php:3969
 msgid "Version Control"
 msgstr "版本控制"
 
-#: options/theme-options.php:3971
+#: options/theme-options.php:3970
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr "用于更新前端Cookie和浏览器缓存，可使用任意字符串"
 
-#: options/theme-options.php:3977
+#: options/theme-options.php:3976
 msgid "Hide Login Portal"
 msgstr "隐藏登录入口"
 
-#: options/theme-options.php:3978
+#: options/theme-options.php:3977
 msgid ""
 "Hide login address in theme as much as possible, if you used plugins to hide "
 "this."
 msgstr "将尽可能隐藏主题中可能出现的登录入口，如果你使用了相关插件"
 
-#: options/theme-options.php:3985
+#: options/theme-options.php:3984
 msgid "Fontawesome Source"
 msgstr "Fontawesome加载源"
 
-#: options/theme-options.php:3986
+#: options/theme-options.php:3985
 msgid "The source link of Fontawesome icons style"
 msgstr "Fontawesome图标样式的加载源"
 
-#: options/theme-options.php:3993
+#: options/theme-options.php:3992
 msgid "PHP Notice Filter"
 msgstr "PHP日志过滤"
 
-#: options/theme-options.php:3995
+#: options/theme-options.php:3994
 msgid "Use your php config"
 msgstr "使用PHP配置"
 
-#: options/theme-options.php:3996
+#: options/theme-options.php:3995
 msgid "Only show critical errors"
 msgstr "只显示严重错误"
 
-#: options/theme-options.php:3997
+#: options/theme-options.php:3996
 msgid "Show nothing"
 msgstr "过滤大部分错误"
 
-#: options/theme-options.php:4000
+#: options/theme-options.php:3999
 msgid ""
 "It is recommended to set it to normal to block log information that does not "
 "affect usage."
 msgstr "建议设置为“只显示严重错误”来防止不影响使用的php日志渲染到前端"
 
-#: options/theme-options.php:4006
+#: options/theme-options.php:4005
 msgid "Backup&Recovery"
 msgstr "备份恢复"
 
-#: options/theme-options.php:4008
+#: options/theme-options.php:4007
 msgid "Backup or Recovery your theme options"
 msgstr "备份或恢复你的主题设置"
 
-#: options/theme-options.php:4019
+#: options/theme-options.php:4018
 msgid "About Theme"
 msgstr "关于主题"
 
-#: options/theme-options.php:4025
+#: options/theme-options.php:4024
 msgid "Version Info"
 msgstr "版本信息"
 
-#: options/theme-options.php:4030
+#: options/theme-options.php:4029
 msgid ""
 "<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.7/series/headlogo.webp\"  "
 "alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:4036
+#: options/theme-options.php:4035
 #, php-format
 msgid ""
 "Theme Sakurairo Version %s | Internal Version %s | <a href=\"https://github."
@@ -4258,15 +4258,15 @@ msgstr ""
 "Sakurairo 主题版本 %s | 内部版本 %s | <a href=\"https://github.com/mirai-"
 "mamori/Sakurairo\">项目地址</a>"
 
-#: options/theme-options.php:4041
+#: options/theme-options.php:4040
 msgid "Update Related"
 msgstr "更新相关"
 
-#: options/theme-options.php:4047
+#: options/theme-options.php:4046
 msgid "Theme Update Source"
 msgstr "主题更新源"
 
-#: options/theme-options.php:4053
+#: options/theme-options.php:4052
 msgid ""
 "If you are using a server set up in mainland China, please use the Upyun "
 "source or the official theme source as your theme update source"
@@ -4274,11 +4274,11 @@ msgstr ""
 "如果你使用的是架设在国内的服务器，请使用又拍云源或主题官方源作为你的主题更新"
 "源"
 
-#: options/theme-options.php:4060
+#: options/theme-options.php:4059
 msgid "Theme Update Test Channel Disclaimer"
 msgstr "主题更新测试通道免责声明"
 
-#: options/theme-options.php:4066
+#: options/theme-options.php:4065
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -4291,55 +4291,55 @@ msgstr ""
 "内 <strong> \"I agree and am willing to bear all unexpected consequences\" </"
 "strong>"
 
-#: options/theme-options.php:4072
+#: options/theme-options.php:4071
 msgid "Theme Update Channel"
 msgstr "主题更新频道"
 
-#: options/theme-options.php:4079
+#: options/theme-options.php:4078
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr "你可以在此切换更新频道以参与到新版本的测试中"
 
-#: options/theme-options.php:4081
+#: options/theme-options.php:4080
 msgid "Stable Channel"
 msgstr "正式通道"
 
-#: options/theme-options.php:4082
+#: options/theme-options.php:4081
 msgid "Beta Channel"
 msgstr "公共测试频道"
 
-#: options/theme-options.php:4083
+#: options/theme-options.php:4082
 msgid "Preview Channel"
 msgstr "预览测试频道"
 
-#: options/theme-options.php:4090
+#: options/theme-options.php:4089
 msgid "Resource Control"
 msgstr "资源控制"
 
-#: options/theme-options.php:4096
+#: options/theme-options.php:4095
 msgid "Provide Critical Frontend Resource locally"
 msgstr "本地提供关键前端资源"
 
-#: options/theme-options.php:4097
+#: options/theme-options.php:4096
 msgid ""
 "Enabeld by default. Critical resources are those resources whose loading "
 "performance will have a significant impact on the user experience."
 msgstr "默认开启。关键资源是指那些其加载性能将对用户体验产生重大影响的资源。"
 
-#: options/theme-options.php:4104
+#: options/theme-options.php:4103
 msgid "Provide Other Frontend Resource locally"
 msgstr "本地提供其他前端资源"
 
-#: options/theme-options.php:4105
+#: options/theme-options.php:4104
 msgid "Less important frontend resource in the theme's folder."
 msgstr "主题文件夹中不太重要的前端资源。"
 
-#: options/theme-options.php:4112
+#: options/theme-options.php:4111
 msgid "Provide 3rd-party library from public CDN"
 msgstr "从公共 CDN 提供第三方库"
 
-#: options/theme-options.php:4113
+#: options/theme-options.php:4112
 msgid ""
 "When disabled, 3rd-party dependencies, which have been built to bundles "
 "along with themes's entry script, will be loaded from the exact same origin "
@@ -4348,15 +4348,15 @@ msgstr ""
 "当禁用时，与主题脚本一起被构建打包的第三方依赖，将从与关键前端资源完全相同的"
 "来源加载。"
 
-#: options/theme-options.php:4120
+#: options/theme-options.php:4119
 msgid "Public CDN Basepath"
 msgstr "公共 CDN 路径"
 
-#: options/theme-options.php:4132
+#: options/theme-options.php:4131
 msgid "Vision Resource Basepath"
 msgstr "视觉资源路径"
 
-#: options/theme-options.php:4133
+#: options/theme-options.php:4132
 msgid ""
 "This link directory structure needs to be consistent with the <a "
 "href=\"https://github.com/Fuukei/Sakurairo_Vision\">Sakurairo Vision</a> "
@@ -4369,31 +4369,31 @@ msgstr ""
 "资源 404。默认采用 <a href=\"https://www.upyun.com/\">又拍云</a> 提供的镜像"
 "源。"
 
-#: options/theme-options.php:4139
+#: options/theme-options.php:4138
 msgid "Theme Sponsors"
 msgstr "赞助信息"
 
-#: options/theme-options.php:4144
+#: options/theme-options.php:4143
 msgid ""
 "<img src=\"https://news.maho.cc/sponsors.php\"  alt=\"sponsors\" width=\"65%"
 "\" height=\"65%\" />"
 msgstr ""
 
-#: options/theme-options.php:4149
+#: options/theme-options.php:4148
 msgid "Theme Contributors"
 msgstr "贡献者"
 
-#: options/theme-options.php:4154
+#: options/theme-options.php:4153
 msgid ""
 "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
 "Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:4159
+#: options/theme-options.php:4158
 msgid "Privacy information"
 msgstr "隐私信息"
 
-#: options/theme-options.php:4164
+#: options/theme-options.php:4163
 msgid ""
 "<p>The theme respects your privacy</p>\n"
 "        <p>However, when you use a service provider pre-populated by the "
@@ -4409,11 +4409,11 @@ msgstr ""
 "        <p>你可以通过本地化与主题相关的资源来减少发送给第三方的信息，主题提供"
 "相关选项配置</p>"
 
-#: options/theme-options.php:4172
+#: options/theme-options.php:4171
 msgid "Send Theme Version to Fuukei"
 msgstr "发送主题版本到 Fuukei 官方"
 
-#: options/theme-options.php:4173
+#: options/theme-options.php:4172
 msgid ""
 "The theme will only send time and version information to Fuukei officials "
 "and the data will be cleaned regularly and used only to count version "
@@ -4422,11 +4422,11 @@ msgstr ""
 "主题只会向 Fuukei 官方发送时间和版本信息，数据将定期清理并仅用于统计版本更"
 "新。"
 
-#: options/theme-options.php:4179
+#: options/theme-options.php:4178
 msgid "Reference Information"
 msgstr "引用信息"
 
-#: options/theme-options.php:4184
+#: options/theme-options.php:4183
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox Fluent Icon Pack</p>\n"
 "        <p>MUH2 Design Icon Referenced by 缄默 <a href=\"https://www.coolapk."
@@ -4435,11 +4435,11 @@ msgstr ""
 "<p>流畅设计图标引用了由 Paradox 设计的 Fluent图标包</p>\n"
 "        <p>沐氢图标引用了由 缄默 设计的沐氢图标包</p>"
 
-#: options/theme-options.php:4190
+#: options/theme-options.php:4189
 msgid "Dependency Information"
 msgstr "依赖信息"
 
-#: options/theme-options.php:4195
+#: options/theme-options.php:4194
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
@@ -4456,7 +4456,7 @@ msgstr ""
 "        <p>ChatGPT 相关能力依赖于 orhanerday 开源的 <a href=\"https://github."
 "com/HaoZi-Team/ChatGPT-PHP\">open-ai</a> 项目</p>"
 
-#: options/theme-options.php:4202
+#: options/theme-options.php:4201
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "
@@ -4486,24 +4486,3 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
-
-#~ msgid "Specify Login Address"
-#~ msgstr "指定登录地址"
-
-#~ msgid ""
-#~ "Force not to use the WordPress login page address to login, fill in the "
-#~ "new login page address, such as: http://www.xxx.com/login. Note that "
-#~ "before filling in the new page you can test the normal opening, so as not "
-#~ "to cause the inability to enter the background, etc."
-#~ msgstr ""
-#~ "强制不使用WordPress登录页面地址登录，填写新建的登陆页面地址，比如：http://"
-#~ "www.xxx.com/login。注意填写前先测试下你新建的页面是可以正常打开的，以免造"
-#~ "成无法进入后台等情况。"
-
-#~ msgid "Specify Registration Address"
-#~ msgstr "指定注册地址"
-
-#~ msgid ""
-#~ "This address is used as the registration entry on the login page, if you "
-#~ "specify a login address, it is recommended to fill in"
-#~ msgstr "该地址在登录页面作为注册入口，如果你指定了登录地址，则建议填写"

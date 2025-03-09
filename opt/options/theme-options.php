@@ -3757,7 +3757,6 @@ $prefix = 'iro_options';
         'type' => 'slider',
         'title' => __('Captcha Level', 'sakurairo_csf'),
         'desc' => __('The difficulty level of the Theme Captcha', 'sakurairo_csf'),
-        'dependency' => array( 'captcha_select', '==', 'iro_captcha', '', 'true' ),
         'step' => '1',
         'min' => '0',
         'max' => '100',
