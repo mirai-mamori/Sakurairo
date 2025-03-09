@@ -601,18 +601,11 @@ body.dark .comment-respond input[type=submit]:hover {
 }
 
 /* Dark mode header styles */
+body.dark .site-branding,
 body.dark .nav-search-wrapper,
 body.dark .user-menu-wrapper,
 body.dark nav .menu > li .sub-menu,
 body.dark .header-user-menu {
-  background: rgba(0, 0, 0, var(--theme-dm-background_transparency, 0.65)) !important;
-  box-shadow: var(--dark-header-shadow);
-  transition: all 0.4s ease-in-out;
-  color: var(--dark-text-primary);
-  border: 1px solid #222222;
-}
-
-body.dark .site-branding {
   box-shadow: var(--dark-header-shadow);
   transition: all 0.4s ease-in-out;
   color: var(--dark-text-primary);
@@ -620,7 +613,11 @@ body.dark .site-branding {
 }
 
 @media (min-width: 861px) {
-  body.dark .site-branding{
+  body.dark .site-branding,
+  body.dark .nav-search-wrapper,
+  body.dark .user-menu-wrapper,
+  body.dark nav .menu > li .sub-menu,
+  body.dark .header-user-menu {
     background: rgba(0, 0, 0, var(--theme-dm-background_transparency, 0.65)) !important;
   }
 }
