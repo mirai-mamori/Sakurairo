@@ -6343,7 +6343,7 @@ a.toc-link {
 }
 
 /* 分页样式 */
-#bangumi-pagination {
+#template-pagination {
   width: 100%;
   margin-top: 80px;
   padding: 20px 0;
@@ -6352,13 +6352,13 @@ a.toc-link {
   font-weight: var(--global-font-weight);
 }
 
-#bangumi-pagination span {
+#template-pagination span {
   color: #989898;
   font-size: 15px;
   font-weight: var(--global-font-weight);
 }
 
-#bangumi-pagination .loading {
+#template-pagination .loading {
   background: var(--load_nextpage_svg) center no-repeat;
   background-size: auto 100%;
   color: #555;
