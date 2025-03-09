@@ -37,6 +37,10 @@
     font-size: 18px !important;;
   }
 
+  .site-title:hover {
+    color: var(--theme-skin-matching);
+  }
+
   .header-user-avatar {
     display: none;
   }
