@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2025-03-09 12:02+0900\n"
+"POT-Creation-Date: 2025-03-09 15:58+0800\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: option-framework.php\n"
@@ -3724,204 +3724,186 @@ msgid "Image Display Category"
 msgstr ""
 
 #: options/theme-options.php:3970
-msgid "Specify Login Address"
-msgstr ""
-
-#: options/theme-options.php:3971
-msgid ""
-"Force not to use the WordPress login page address to login, fill in the new login page address, such as: http://www.xxx.com/login. Note "
-"that before filling in the new page you can test the normal opening, so as not to cause the inability to enter the background, etc."
-msgstr ""
-
-#: options/theme-options.php:3977
-msgid "Specify Registration Address"
-msgstr ""
-
-#: options/theme-options.php:3978
-msgid "This address is used as the registration entry on the login page, if you specify a login address, it is recommended to fill in"
-msgstr ""
-
-#: options/theme-options.php:3984
 msgid "Version Control"
 msgstr ""
 
-#: options/theme-options.php:3985
+#: options/theme-options.php:3971
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr ""
 
-#: options/theme-options.php:3991
+#: options/theme-options.php:3977
 msgid "Hide Login Portal"
 msgstr ""
 
-#: options/theme-options.php:3992
+#: options/theme-options.php:3978
 msgid "Hide login address in theme as much as possible, if you used plugins to hide this."
 msgstr ""
 
-#: options/theme-options.php:3999
+#: options/theme-options.php:3985
 msgid "Fontawesome Source"
 msgstr ""
 
-#: options/theme-options.php:4000
+#: options/theme-options.php:3986
 msgid "The source link of Fontawesome icons style"
 msgstr ""
 
-#: options/theme-options.php:4007
+#: options/theme-options.php:3993
 msgid "PHP Notice Filter"
 msgstr ""
 
-#: options/theme-options.php:4009
+#: options/theme-options.php:3995
 msgid "Use your php config"
 msgstr ""
 
-#: options/theme-options.php:4010
+#: options/theme-options.php:3996
 msgid "Only show critical errors"
 msgstr ""
 
-#: options/theme-options.php:4011
+#: options/theme-options.php:3997
 msgid "Show nothing"
 msgstr ""
 
-#: options/theme-options.php:4014
+#: options/theme-options.php:4000
 msgid "It is recommended to set it to normal to block log information that does not affect usage."
 msgstr ""
 
-#: options/theme-options.php:4020
+#: options/theme-options.php:4006
 msgid "Backup&Recovery"
 msgstr ""
 
-#: options/theme-options.php:4022
+#: options/theme-options.php:4008
 msgid "Backup or Recovery your theme options"
 msgstr ""
 
-#: options/theme-options.php:4033
+#: options/theme-options.php:4019
 msgid "About Theme"
 msgstr ""
 
-#: options/theme-options.php:4039
+#: options/theme-options.php:4025
 msgid "Version Info"
 msgstr ""
 
-#: options/theme-options.php:4044
+#: options/theme-options.php:4030
 msgid "<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.7/series/headlogo.webp\"  alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:4050
+#: options/theme-options.php:4036
 #, php-format
 msgid "Theme Sakurairo Version %s | Internal Version %s | <a href=\"https://github.com/mirai-mamori/Sakurairo\">Project Address</a>"
 msgstr ""
 
-#: options/theme-options.php:4055
+#: options/theme-options.php:4041
 msgid "Update Related"
 msgstr ""
 
-#: options/theme-options.php:4061
+#: options/theme-options.php:4047
 msgid "Theme Update Source"
 msgstr ""
 
-#: options/theme-options.php:4067
+#: options/theme-options.php:4053
 msgid ""
 "If you are using a server set up in mainland China, please use the Upyun source or the official theme source as your theme update source"
 msgstr ""
 
-#: options/theme-options.php:4074
+#: options/theme-options.php:4060
 msgid "Theme Update Test Channel Disclaimer"
 msgstr ""
 
-#: options/theme-options.php:4080
+#: options/theme-options.php:4066
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully understood the risks associated with participating in the "
 "test and are willing to assume all consequences at your own risk</strong> (including but not limited to possible data loss) into the "
 "options text box <strong> \"I agree and am willing to bear all unexpected consequences\"</strong>"
 msgstr ""
 
-#: options/theme-options.php:4086
+#: options/theme-options.php:4072
 msgid "Theme Update Channel"
 msgstr ""
 
-#: options/theme-options.php:4093
+#: options/theme-options.php:4079
 msgid "You can toggle the update channel here to participate in the testing of the new version"
 msgstr ""
 
-#: options/theme-options.php:4095
+#: options/theme-options.php:4081
 msgid "Stable Channel"
 msgstr ""
 
-#: options/theme-options.php:4096
+#: options/theme-options.php:4082
 msgid "Beta Channel"
 msgstr ""
 
-#: options/theme-options.php:4097
+#: options/theme-options.php:4083
 msgid "Preview Channel"
 msgstr ""
 
-#: options/theme-options.php:4104
+#: options/theme-options.php:4090
 msgid "Resource Control"
 msgstr ""
 
-#: options/theme-options.php:4110
+#: options/theme-options.php:4096
 msgid "Provide Critical Frontend Resource locally"
 msgstr ""
 
-#: options/theme-options.php:4111
+#: options/theme-options.php:4097
 msgid ""
 "Enabeld by default. Critical resources are those resources whose loading performance will have a significant impact on the user "
 "experience."
 msgstr ""
 
-#: options/theme-options.php:4118
+#: options/theme-options.php:4104
 msgid "Provide Other Frontend Resource locally"
 msgstr ""
 
-#: options/theme-options.php:4119
+#: options/theme-options.php:4105
 msgid "Less important frontend resource in the theme's folder."
 msgstr ""
 
-#: options/theme-options.php:4126
+#: options/theme-options.php:4112
 msgid "Provide 3rd-party library from public CDN"
 msgstr ""
 
-#: options/theme-options.php:4127
+#: options/theme-options.php:4113
 msgid ""
 "When disabled, 3rd-party dependencies, which have been built to bundles along with themes's entry script, will be loaded from the exact "
 "same origin with Critical Frontend Resource. "
 msgstr ""
 
-#: options/theme-options.php:4134
+#: options/theme-options.php:4120
 msgid "Public CDN Basepath"
 msgstr ""
 
-#: options/theme-options.php:4146
+#: options/theme-options.php:4132
 msgid "Vision Resource Basepath"
 msgstr ""
 
-#: options/theme-options.php:4147
+#: options/theme-options.php:4133
 msgid ""
 "This link directory structure needs to be consistent with the <a href=\"https://github.com/Fuukei/Sakurairo_Vision\">Sakurairo Vision</"
 "a> repositories officially provided by fuukei, otherwise some resources 404 may appear. The image source officially provided by <a "
 "href=\"https://www.upyun.com/\">Upyun</a> is adopted by default."
 msgstr ""
 
-#: options/theme-options.php:4153
+#: options/theme-options.php:4139
 msgid "Theme Sponsors"
 msgstr ""
 
-#: options/theme-options.php:4158
+#: options/theme-options.php:4144
 msgid "<img src=\"https://news.maho.cc/sponsors.php\"  alt=\"sponsors\" width=\"65%\" height=\"65%\" />"
 msgstr ""
 
-#: options/theme-options.php:4163
+#: options/theme-options.php:4149
 msgid "Theme Contributors"
 msgstr ""
 
-#: options/theme-options.php:4168
+#: options/theme-options.php:4154
 msgid "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:4173
+#: options/theme-options.php:4159
 msgid "Privacy information"
 msgstr ""
 
-#: options/theme-options.php:4178
+#: options/theme-options.php:4164
 msgid ""
 "<p>The theme respects your privacy</p>\n"
 "        <p>However, when you use a service provider pre-populated by the theme to provide relevant services in mainland China, the "
@@ -3930,31 +3912,31 @@ msgid ""
 "configured with options for you to modify</p>"
 msgstr ""
 
-#: options/theme-options.php:4186
+#: options/theme-options.php:4172
 msgid "Send Theme Version to Fuukei"
 msgstr ""
 
-#: options/theme-options.php:4187
+#: options/theme-options.php:4173
 msgid ""
 "The theme will only send time and version information to Fuukei officials and the data will be cleaned regularly and used only to count "
 "version updates."
 msgstr ""
 
-#: options/theme-options.php:4193
+#: options/theme-options.php:4179
 msgid "Reference Information"
 msgstr ""
 
-#: options/theme-options.php:4198
+#: options/theme-options.php:4184
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox Fluent Icon Pack</p>\n"
 "        <p>MUH2 Design Icon Referenced by 缄默 <a href=\"https://www.coolapk.com/apk/com.muh2.icon\">MUH2 Icon Pack</a></p>"
 msgstr ""
 
-#: options/theme-options.php:4204
+#: options/theme-options.php:4190
 msgid "Dependency Information"
 msgstr ""
 
-#: options/theme-options.php:4209
+#: options/theme-options.php:4195
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://github.com/Codestar/codestar-framework\">Codestar Framework</"
 "a> Project</p>\n"
@@ -3964,7 +3946,7 @@ msgid ""
 "Project</p>"
 msgstr ""
 
-#: options/theme-options.php:4216
+#: options/theme-options.php:4202
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square\"  alt=\"Theme latest version\" "
 "style=\"border-radius: 3px;\" />  <img src=\"https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square\"  "

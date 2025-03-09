@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Steam库模板
+ * Template Name: Steam Library Template
  */
 get_header(); 
 ?>

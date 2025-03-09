@@ -247,6 +247,56 @@ if (!function_exists('akina_setup')) {
 ;
 add_action('after_setup_theme', 'akina_setup');
 
+function i18n_templates_name ($translated_name, $original_name) {
+    $lang = get_user_locale();
+
+    $template_names = array(
+        'Archive Template' => array(
+            'zh_CN' => '归档页模板',
+            'zh_TW' => '歸檔頁模板',
+            'ja'    => 'アーカイブテンプレート',
+        ),
+        'Friendly Links Template' => array(
+            'zh_CN' => '友情链接模板',
+            'zh_TW' => '友情連結模板',
+            'ja'    => 'フレンドリーリンクテンプレート',
+        ),
+        'Bangumi Template' => array(
+            'zh_CN' => '追番模板',
+            'zh_TW' => '追番模板',
+            'ja'    => 'バンガミテンプレート',
+        ),
+        'Bilibili FavList Template' => array(
+            'zh_CN' => 'Bilibili 收藏模板',
+            'zh_TW' => 'Bilibili 收藏模板',
+            'ja'    => 'Bilibili お気に入りテンプレート',
+        ),
+        'Bilibili FollowVideos Template' => array(
+            'zh_CN' => 'Bilibili 追剧模板',
+            'zh_TW' => 'Bilibili 追劇模板',
+            'ja'    => 'Bilibili フォロービデオテンプレート',
+        ),
+        'Steam Library Template' => array(
+            'zh_CN' => 'Steam 库模板',
+            'zh_TW' => 'Steam 庫模板',
+            'ja'    => 'Steamライブラリテンプレート',
+        ),
+        'Timeline Template' => array(
+            'zh_CN' => '时光轴模板',
+            'zh_TW' => '時光軸模板',
+            'ja'    => 'タイムラインテンプレート',
+        ),
+    );
+    
+    if ( isset( $template_names[ $original_name ] ) && isset( $template_names[ $original_name ][ $lang ] ) ) {
+        return $template_names[ $original_name ][ $lang ];
+    }
+    // 英语/无翻译，返回gettext处理后的文本，防止原生翻译丢失
+    return $translated_name;
+}
+
+add_filter('gettext', 'i18n_templates_name', 10, 2);
+
 function register_shuoshuo_post_type() {
     $labels = array(
         'name'               => _x('Shuoshuo', 'post type general name', 'sakurairo'),
