@@ -3965,20 +3965,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'exlogin_url',
-        'type' => 'text',
-        'title' => __('Specify Login Address','sakurairo_csf'),
-        'desc' => __('Force not to use the WordPress login page address to login, fill in the new login page address, such as: http://www.xxx.com/login. Note that before filling in the new page you can test the normal opening, so as not to cause the inability to enter the background, etc.','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'exregister_url',
-        'type' => 'text',
-        'title' => __('Specify Registration Address','sakurairo_csf'),
-        'desc' => __('This address is used as the registration entry on the login page, if you specify a login address, it is recommended to fill in','sakurairo_csf'),
-      ),
-
-      array(
         'id' => 'cookie_version',
         'type' => 'text',
         'title' => __('Version Control','sakurairo_csf'),

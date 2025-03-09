@@ -59,9 +59,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
                         <?php
                         global $wp;
-                        $login_url = iro_opt( 'exlogin_url' )
-                            ? iro_opt( 'exlogin_url' )
-                            : wp_login_url( iro_opt( 'login_urlskip' ) ? '' : add_query_arg( $wp->query_vars, home_url( $wp->request ) ) );
+                        $login_url = wp_login_url( iro_opt( 'login_urlskip' ) ? '' : add_query_arg( $wp->query_vars, home_url( $wp->request ) ) );
                         ?>
 
                         <a id="login-link" href="<?php echo esc_url( $login_url ); ?>" data-no-pjax style="font-weight:bold;text-decoration:none">
