@@ -95,10 +95,12 @@ get_header();
 <article <?php post_class("post-item"); ?>>
     <?php the_content('', true); ?>
     <section class="steam-row">
-        <?php 
-        $steam = new \Sakura\API\Steam();
-        echo $steam->get_steam_items();
-        ?>
+        <div class='row'>
+            <?php 
+            $steam = new \Sakura\API\Steam();
+            echo $steam->get_steam_items();
+            ?>
+        </div>
     </section>
 </article>
 <?php endwhile; ?>

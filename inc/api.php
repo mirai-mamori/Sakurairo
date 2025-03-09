@@ -76,6 +76,12 @@ add_action('rest_api_init', function () {
         'permission_callback' => '__return_true'
     )
     );
+    register_rest_route('sakura/v1', '/steam', array(
+        'methods' => 'POST',
+        'callback' => 'steam_library',
+        'permission_callback' => '__return_true'
+    )
+    );
     register_rest_route('sakura/v1', '/movies/bilibili', array(
         'methods' => 'POST',
         'callback' => 'bfv_bilibili',
@@ -324,7 +330,21 @@ function bfv_bilibili()
     return $response;
 }
 
-
+function steam_library ()
+{
+    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+        $response = array(
+            'status' => 418,
+            'success' => false,
+            'message' => 'Unauthorized client.'
+        );
+        return new WP_REST_Response($response, 418);
+    } else {
+        $page = $request->get_param('page') ?: 1;
+        $SteamList = new \Sakura\API\Steam();
+    }
+    return $SteamList->get_steam_items((int)$page);
+}
 
 function favlist_bilibili()
 {
