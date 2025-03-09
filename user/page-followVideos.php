@@ -1,6 +1,6 @@
 <?php
 /**
- Template Name: 哔哩哔哩追剧模板
+ Template Name: Bilibili FollowVideos Template
  */
 get_header(); 
 ?>

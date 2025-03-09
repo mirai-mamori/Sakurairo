@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: 追番模板
+ * Template Name: Bangumi Template
  */
 get_header(); 
 ?>

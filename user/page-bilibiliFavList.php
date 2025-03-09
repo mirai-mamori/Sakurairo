@@ -1,7 +1,7 @@
 <?php
 
 /**
-  Template Name: 哔哩哔哩收藏模板
+  Template Name: Bilibili FavList Template
  */
 get_header();
 ?>

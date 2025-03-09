@@ -247,6 +247,56 @@ if (!function_exists('akina_setup')) {
 ;
 add_action('after_setup_theme', 'akina_setup');
 
+function i18n_templates_name ($translated_name, $original_name) {
+    $lang = get_user_locale();
+
+    $template_names = array(
+        'Archive Template' => array(
+            'zh_CN' => '归档页模板',
+            'zh_TW' => '歸檔頁模板',
+            'ja'    => 'アーカイブテンプレート',
+        ),
+        'Friendly Links Template' => array(
+            'zh_CN' => '友情链接模板',
+            'zh_TW' => '友情連結模板',
+            'ja'    => 'フレンドリーリンクテンプレート',
+        ),
+        'Bangumi Template' => array(
+            'zh_CN' => '追番模板',
+            'zh_TW' => '追番模板',
+            'ja'    => 'バンガミテンプレート',
+        ),
+        'Bilibili FavList Template' => array(
+            'zh_CN' => 'Bilibili 收藏模板',
+            'zh_TW' => 'Bilibili 收藏模板',
+            'ja'    => 'Bilibili お気に入りテンプレート',
+        ),
+        'Bilibili FollowVideos Template' => array(
+            'zh_CN' => 'Bilibili 追剧模板',
+            'zh_TW' => 'Bilibili 追劇模板',
+            'ja'    => 'Bilibili フォロービデオテンプレート',
+        ),
+        'Steam Library Template' => array(
+            'zh_CN' => 'Steam 库模板',
+            'zh_TW' => 'Steam 庫模板',
+            'ja'    => 'Steamライブラリテンプレート',
+        ),
+        'Timeline Template' => array(
+            'zh_CN' => '时光轴模板',
+            'zh_TW' => '時光軸模板',
+            'ja'    => 'タイムラインテンプレート',
+        ),
+    );
+    
+    if ( isset( $template_names[ $original_name ] ) && isset( $template_names[ $original_name ][ $lang ] ) ) {
+        return $template_names[ $original_name ][ $lang ];
+    }
+    // 英语/无翻译，返回gettext处理后的文本，防止原生翻译丢失
+    return $translated_name;
+}
+
+add_filter('gettext', 'i18n_templates_name', 10, 2);
+
 function register_shuoshuo_post_type() {
     $labels = array(
         'name'               => _x('Shuoshuo', 'post type general name', 'sakurairo'),
@@ -1054,7 +1104,7 @@ if ($custom_login_switch) {
     // Add custom login styles
     function custom_login() {
         ?>
-        <style type="text/css">body.login{background-image:url('<?php echo DEFAULT_FEATURE_IMAGE(); ?>');background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;}.login h1 a{background-image:url('<?php echo iro_opt('login_logo_img') ?: get_site_icon_url(); ?>') !important;background-size:contain;width:100%;max-height:100px;}.login form{box-shadow:0 1px 30px -4px #e8e8e880;border:1px solid #FFFFFF;background:rgba(255,255,255,0.8);-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);border-radius:10px;}.login form input[type=checkbox],.login input[type=password],.login input[type=text]{background:rgba(255,255,255,0.7);box-shadow:0 1px 30px -4px #e8e8e880;border:1px solid #FFFFFF;-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);font-size:15px;padding:0.6rem;border-radius:8px;}.wp-core-ui .button-primary{background:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;border-color:transparent;border-radius:6px;padding:1px 18px !important;transition:all 0.3s ease;}.wp-core-ui .button-primary:hover{background:<?php echo iro_opt('theme_skin_matching') ?: '#FF69B4'; ?>;border-color:transparent;transition:all 0.3s ease;}.vaptchaContainer{margin:5px 0 20px;}.login form .forgetmenot{margin-top: 6px;}.login .button.wp-hide-pw .dashicons{color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;}#language-switcher{color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;backdrop-filter:none;-webkit-backdrop-filter:none;}.login #nav{font-size:12px;padding:8px 12px;background:rgba(255,255,255,0.7);box-shadow:0 1px 30px -4px #e8e8e8;border:1px solid #FFFFFF;-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);width:fit-content;border-radius:8px;margin:auto;margin-top:-18px;}.login #backtoblog{display:none;}.captcha{display:flex !important;align-items:center;margin-bottom:20px !important;margin-top:10px;gap:10px;}.login form input[name=yzm]{margin:0;}.login label{margin-bottom:5px;}</style>
+        <style type="text/css">body.login{background-image:url('<?php echo DEFAULT_FEATURE_IMAGE(); ?>');background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;}.login h1 a{background-image:url('<?php echo iro_opt('login_logo_img') ?: get_site_icon_url(); ?>') !important;background-size:contain;width:100%;max-height:100px;}.login form{box-shadow:0 1px 30px -4px #e8e8e880;border:1px solid #FFFFFF;background:rgba(255,255,255,0.8);-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);border-radius:10px;}.login form input[type=checkbox],.login input[type=password],.login input[type=text],.login input[type=email]{background:rgba(255,255,255,0.7);box-shadow:0 1px 30px -4px #e8e8e880;border:1px solid #FFFFFF;-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);font-size:15px;padding:0.6rem;border-radius:8px;}.wp-core-ui .button-primary,#wp-webauthn{background:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;border-color:transparent;border-radius:6px;padding:1px 18px !important;transition:all 0.3s ease;}.wp-core-ui .button-primary:hover,#wp-webauthn:hover{background:<?php echo iro_opt('theme_skin_matching') ?: '#FF69B4'; ?>;border-color:transparent;transition:all 0.3s ease;}.vaptchaContainer{margin:5px 0 20px;}.login form .forgetmenot{margin-top: 6px;}.login .button.wp-hide-pw .dashicons{color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;}#language-switcher{color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;backdrop-filter:none;-webkit-backdrop-filter:none;}.login #nav{font-size:12px;padding:8px 12px;background:rgba(255,255,255,0.7);box-shadow:0 1px 30px -4px #e8e8e8;border:1px solid #FFFFFF;-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);width:fit-content;border-radius:8px;margin:auto;margin-top:-18px;}.login #backtoblog{display:none;}.captcha{display:flex !important;align-items:center;margin-bottom:20px !important;margin-top:10px;gap:10px;}.login form input[name=yzm]{margin:0;}.login label{margin-bottom:5px;}.wp-webauthn-notice{height: 40px !important;margin-bottom: 15px;}#wp-webauthn span{color:#fff;}</style>
         <?php
     }
     add_action('login_head', 'custom_login');
@@ -2655,6 +2705,11 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
      */
     function CAPTCHA_CHECK($user, $username, $password)
     {
+        // Skip captcha check if it's a passwordless login
+        if (isset($_POST['skip_captcha_check']) && $_POST['skip_captcha_check'] == '1') {
+            return $user;
+        }
+        
         if (empty($_POST)) {
             return new WP_Error();
         }
@@ -2671,11 +2726,88 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
             return $user;
         }
         return new WP_Error('prooffail', '<strong>错误</strong>：' . $check['msg']);
-        //return home_url('/wp-admin/');
-
-
     }
     add_filter('authenticate', 'CAPTCHA_CHECK', 20, 3);
+    
+    // Add JavaScript to check for password field and toggle captcha visibility
+    function add_captcha_check_script() {
+        ?>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var loginForm = document.getElementById('loginform');
+            if (!loginForm) return;
+            
+            // Add hidden field for skipping captcha check
+            var hiddenField = document.createElement('input');
+            hiddenField.type = 'hidden';
+            hiddenField.name = 'skip_captcha_check';
+            hiddenField.id = 'skip_captcha_check';
+            hiddenField.value = '0';
+            loginForm.appendChild(hiddenField);
+            
+            // Get elements once at initialization
+            var passwordField = document.getElementById('user_pass');
+            var captchaImg = document.getElementById('captchaimg');
+            var yzmField = document.getElementById('yzm');
+            
+            // Find the captcha container (the parent element that contains the captcha)
+            var captchaContainer = null;
+            if (yzmField) {
+                // Try to find the parent paragraph or label
+                captchaContainer = yzmField.closest('p') || yzmField.closest('label');
+                if (!captchaContainer && yzmField.parentNode) {
+                    captchaContainer = yzmField.parentNode;
+                }
+            }
+            
+            function checkPasswordField() {
+                // Check if password field is hidden or not present
+                var isPasswordVisible = passwordField && 
+                                        passwordField.style.display !== 'none' && 
+                                        passwordField.offsetParent !== null;
+                
+                if (!isPasswordVisible) {
+                    // Hide captcha elements
+                    if (captchaContainer) {
+                        captchaContainer.style.display = 'none';
+                    }
+                    
+                    hiddenField.value = '1';
+                } else {
+                    // Show captcha elements
+                    if (captchaContainer) {
+                        captchaContainer.style.display = '';
+                    }
+                    
+                    hiddenField.value = '0';
+                }
+            }
+            
+            // Initial check
+            checkPasswordField();
+            
+            // Set up a less frequent interval to reduce performance impact
+            var checkInterval = setInterval(checkPasswordField, 500);
+            
+            // Use MutationObserver for efficiency
+            if (typeof MutationObserver !== 'undefined') {
+                var observer = new MutationObserver(checkPasswordField);
+                
+                observer.observe(loginForm, {
+                    childList: true,
+                    subtree: true,
+                    attributes: true,
+                    attributeFilter: ['style', 'class', 'display']
+                });
+            }
+            
+            // Add event listener for form submission
+            loginForm.addEventListener('submit', checkPasswordField);
+        });
+        </script>
+        <?php
+    }
+    add_action('login_footer', 'add_captcha_check_script');
     /**
      * 忘记密码界面验证码验证
      */

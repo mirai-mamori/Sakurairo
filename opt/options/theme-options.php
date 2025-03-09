@@ -543,10 +543,10 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'    => 'nav_menu_user_avatar',
+        'id'    => 'nav_user_menu',
         'type'  => 'switcher',
-        'title' => __('Nav Menu User Avatar','sakurairo_csf'),
-        'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
+        'title' => __('Nav User Menu','sakurairo_csf'),
+        'label'   => __('It is on by default. The user avatar and menu will be displayed.','sakurairo_csf'),
         'default' => true
       ),
   
@@ -554,18 +554,10 @@ $prefix = 'iro_options';
         'id'     => 'unlisted_avatar',
         'type'  => 'upload',
         'title' => __('Nav Menu Unlisted User Avatar','sakurairo_csf'),
-        'dependency' => array( 'nav_menu_user_avatar', '==', 'true', '', 'true' ),
+        'dependency' => array( 'nav_user_menu', '==', 'true', '', 'true' ),
         'desc'   => __('The best length-width ratio of is 1:1','sakurairo_csf'),
         'library'      => 'image',
         'default' => ''
-      ),
-
-      array(
-        'id'    => 'mobile_menu_user_avatar',
-        'type'  => 'switcher',
-        'title' => __('Nav Menu User Avatar in Mobile','sakurairo_csf'),
-        'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
-        'default' => true
       ),
 
     )
@@ -3209,11 +3201,11 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'not_robot',
+        'id' => 'pca_captcha',
         'type' => 'switcher',
-        'title' => __('Page Comment Area Bot Verification','sakurairo_csf'),
-        'label' => __('After turning on user comments need to be verified before posting','sakurairo_csf'),
-        'default' => false
+        'title' => __('Page Comment Area Captcha','sakurairo_csf'),
+        'label' => __('Enabled by default, comments posted without logging in need to be verified by CAPTCHA','sakurairo_csf'),
+        'default' => true
       ),
 
       array(
@@ -3401,18 +3393,6 @@ $prefix = 'iro_options';
           'vaptcha' => __('Vaptcha','sakurairo_csf')
         ),
         'default' => 'off',
-      ),
-      
-      array(
-        'id' => 'iro_captcha_level',
-        'type' => 'slider',
-        'title' => __('Captcha Level', 'sakurairo_csf'),
-        'desc' => __('The difficulty level of the Theme Captcha', 'sakurairo_csf'),
-        'dependency' => array( 'captcha_select', '==', 'iro_captcha', '', 'true' ),
-        'step' => '1',
-        'min' => '0',
-        'max' => '100',
-        'default' => '60'
       ),
       
       array(
@@ -3773,6 +3753,17 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'iro_captcha_level',
+        'type' => 'slider',
+        'title' => __('Captcha Level', 'sakurairo_csf'),
+        'desc' => __('The difficulty level of the Theme Captcha', 'sakurairo_csf'),
+        'step' => '1',
+        'min' => '0',
+        'max' => '100',
+        'default' => '60'
+      ),
+
+      array(
         'id' => 'site_custom_style',
         'type' => 'code_editor',
         'title' => __('Custom CSS Styles','sakurairo_csf'),
@@ -3970,20 +3961,6 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('Image Display Category','sakurairo_csf'),
         'desc' => __('Fill in category ID, seperate in English" , " when more than one','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'exlogin_url',
-        'type' => 'text',
-        'title' => __('Specify Login Address','sakurairo_csf'),
-        'desc' => __('Force not to use the WordPress login page address to login, fill in the new login page address, such as: http://www.xxx.com/login. Note that before filling in the new page you can test the normal opening, so as not to cause the inability to enter the background, etc.','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'exregister_url',
-        'type' => 'text',
-        'title' => __('Specify Registration Address','sakurairo_csf'),
-        'desc' => __('This address is used as the registration entry on the login page, if you specify a login address, it is recommended to fill in','sakurairo_csf'),
       ),
 
       array(

@@ -148,12 +148,7 @@ body.dark .entry-title a,
 body.dark .art-content #archives .al_mon_list .al_mon,
 body.dark .art-content #archives .al_mon_list span,
 body.dark .art .art-content #archives a,
-body.dark .menhera-container .emoji-item,
-body.dark .ex-login-username,
-body.dark .admin-login-check p,
-body.dark .user-login-check p,
-body.dark .ex-logout a,
-body.dark .ex-new-account a {
+body.dark .menhera-container .emoji-item {
   color: var(--dark-text-secondary);
 }
 

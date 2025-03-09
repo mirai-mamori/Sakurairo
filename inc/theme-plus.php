@@ -155,7 +155,7 @@ function comment_captcha(){
   }
   return siren_ajax_comment_err(__('Please fill in the correct captcha answer','sakurairo'));
 }
-if(iro_opt('not_robot')) add_action('pre_comment_on_post', 'comment_captcha');
+if(iro_opt('pca_captcha')) add_action('pre_comment_on_post', 'comment_captcha');
 
 // 纯英文评论拦截
 function scp_comment_post( $incoming_comment ) {
@@ -220,78 +220,6 @@ if(!function_exists('siren_ajax_comment_callback')) {
 }
 add_action('wp_ajax_nopriv_ajax_comment', 'siren_ajax_comment_callback');
 add_action('wp_ajax_ajax_comment', 'siren_ajax_comment_callback');
-
-
-/*
- * 前台登录
- */
-// 指定登录页面
-if(iro_opt('exlogin_url')){
-  add_action('login_enqueue_scripts','login_protection');
-  function login_protection(){
-    if($_GET['word'] != 'press'){
-      $admin_url = iro_opt('exlogin_url');
-      wp_redirect( $admin_url );
-      exit;
-    }
-  }
-}
-
-//attention: 目前仅有登陆模板在用这个函数捏，登陆模板是一个要deprecate的状态
-// 登录跳转
-function Exuser_center(){ ?>
-  <script type='text/javascript'>
-    <?php
-/* var URL;
-var TYPE; */ //不要污染全局命名空间啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
-?>
-function gopage(url,descr) {
-    function cb(sec) {
-        document.getElementById('login-showtime').innerHTML = '<?= __("Login successful, ","sakurairo")/*空降成功*/?>'
-        + sec + '<?= __("seconds later automatically transfer to","sakurairo")/*秒后自动转到*/?>' + descr;
-        if (sec == 0) { window.location = url; } else { window.setTimeout(() => { cb(sec - 1); }, 1000); }
-    }
-    window.setTimeout(() => { cb(5); }, 1000); //倒计时秒数在这捏
-}
-  </script>  
-  <?php if(current_user_can('manage_options')){ ?>
-  <div class="admin-login-check">
-    <?php 
-    echo login_ok(); 
-     if(iro_opt('login_urlskip')){ ?>
-     <script>gopage("<?php bloginfo('url'); ?>/wp-admin/","<?=__('dashboard','sakurairo')/*管理后台*/?>");</script>
-     <?php } ?>
-  </div>
-  <?php }else{ ?>
-  <div class="user-login-check">
-    <?php 
-    echo login_ok(); 
-     if(iro_opt('login_urlskip')){?>
-     <script>gopage("<?php bloginfo('url'); ?>","<?=__('home','sakurairo')/*主页*/?>");</script>
-        <?php } ?>
-  </div>
-<?php 
-  }
-}
-
-// 登录成功
-function login_ok(){ 
-  global $current_user;
-  wp_get_current_user();
-?>
-  <p class="ex-login-avatar"><a href="http://cn.gravatar.com/" title="<?php _e('Change avatar','sakurairo')/*更换头像*/?>" target="_blank" rel="nofollow"><?php echo get_avatar( $current_user->user_email, 110 ); ?></a></p>
-  <p class="ex-login-username"><?php _e('Hello, ','sakurairo')/*你好，*/?><strong><?php echo $current_user->display_name; ?></strong></p>
-  <?php if($current_user->user_email){echo '<p>'.$current_user->user_email.'</p>';} ?>
-  <p id="login-showtime"></p>
-  <p class="ex-logout">
-    <a href="<?php bloginfo('url'); ?>" title="<?php _e('Home','sakurairo')/*首页*/?>"><?php _e('Home','sakurairo')/*首页*/?></a>
-    <?php if(current_user_can('manage_options')){  ?>
-    <a href="<?php bloginfo('url'); ?>/wp-admin/" title="<?php _e('Manage','sakurairo')/*后台*/?>" target="_top"><?php _e('Manage','sakurairo')/*后台*/?></a> 
-    <?php } ?>
-    <a href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" title="<?php _e('Logout','sakurairo')/*登出*/?>" target="_top"><?php _e('Sign out? ','sakurairo')/*登出？*/?></a>
-  </p>
-<?php 
-}
 
 /*
  * 文章，页面头部背景图
@@ -440,7 +368,7 @@ function header_user_menu()
     if (!iro_opt('hide_login_portal',false)) {
       $ava = iro_opt('unlisted_avatar');
       global $wp;
-      $login_url = iro_opt('exlogin_url') ? iro_opt('exlogin_url') : wp_login_url(iro_opt('login_urlskip') ? '' : add_query_arg($wp->query_vars, home_url($wp->request)));
+      $login_url = wp_login_url(iro_opt('login_urlskip') ? '' : add_query_arg($wp->query_vars, home_url($wp->request)));
     ?>
       <div class="header-user-avatar">
         <a href="<?= $login_url ?>">
