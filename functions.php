@@ -2705,6 +2705,11 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
      */
     function CAPTCHA_CHECK($user, $username, $password)
     {
+        // Skip captcha check if it's a passwordless login
+        if (isset($_POST['skip_captcha_check']) && $_POST['skip_captcha_check'] == '1') {
+            return $user;
+        }
+        
         if (empty($_POST)) {
             return new WP_Error();
         }
@@ -2721,11 +2726,88 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
             return $user;
         }
         return new WP_Error('prooffail', '<strong>错误</strong>：' . $check['msg']);
-        //return home_url('/wp-admin/');
-
-
     }
     add_filter('authenticate', 'CAPTCHA_CHECK', 20, 3);
+    
+    // Add JavaScript to check for password field and toggle captcha visibility
+    function add_captcha_check_script() {
+        ?>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var loginForm = document.getElementById('loginform');
+            if (!loginForm) return;
+            
+            // Add hidden field for skipping captcha check
+            var hiddenField = document.createElement('input');
+            hiddenField.type = 'hidden';
+            hiddenField.name = 'skip_captcha_check';
+            hiddenField.id = 'skip_captcha_check';
+            hiddenField.value = '0';
+            loginForm.appendChild(hiddenField);
+            
+            // Get elements once at initialization
+            var passwordField = document.getElementById('user_pass');
+            var captchaImg = document.getElementById('captchaimg');
+            var yzmField = document.getElementById('yzm');
+            
+            // Find the captcha container (the parent element that contains the captcha)
+            var captchaContainer = null;
+            if (yzmField) {
+                // Try to find the parent paragraph or label
+                captchaContainer = yzmField.closest('p') || yzmField.closest('label');
+                if (!captchaContainer && yzmField.parentNode) {
+                    captchaContainer = yzmField.parentNode;
+                }
+            }
+            
+            function checkPasswordField() {
+                // Check if password field is hidden or not present
+                var isPasswordVisible = passwordField && 
+                                        passwordField.style.display !== 'none' && 
+                                        passwordField.offsetParent !== null;
+                
+                if (!isPasswordVisible) {
+                    // Hide captcha elements
+                    if (captchaContainer) {
+                        captchaContainer.style.display = 'none';
+                    }
+                    
+                    hiddenField.value = '1';
+                } else {
+                    // Show captcha elements
+                    if (captchaContainer) {
+                        captchaContainer.style.display = '';
+                    }
+                    
+                    hiddenField.value = '0';
+                }
+            }
+            
+            // Initial check
+            checkPasswordField();
+            
+            // Set up a less frequent interval to reduce performance impact
+            var checkInterval = setInterval(checkPasswordField, 500);
+            
+            // Use MutationObserver for efficiency
+            if (typeof MutationObserver !== 'undefined') {
+                var observer = new MutationObserver(checkPasswordField);
+                
+                observer.observe(loginForm, {
+                    childList: true,
+                    subtree: true,
+                    attributes: true,
+                    attributeFilter: ['style', 'class', 'display']
+                });
+            }
+            
+            // Add event listener for form submission
+            loginForm.addEventListener('submit', checkPasswordField);
+        });
+        </script>
+        <?php
+    }
+    add_action('login_footer', 'add_captcha_check_script');
     /**
      * 忘记密码界面验证码验证
      */
