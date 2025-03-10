@@ -771,14 +771,12 @@
   }
 
   .links ul li {
-    width: 46%;
-    margin: 2%;
+    width: 44% !important;
     max-width: 860px;
   }
 
   .links ul li:hover {
-    width: 46%;
-    margin: 2%;
+    width: 44%;
   }
 
   .links ul li:before {
