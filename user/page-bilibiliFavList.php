@@ -11,6 +11,23 @@ wp_enqueue_style('iro-templates', $core_lib_basepath . '/css/templates.css', arr
 ?>
 <meta name="referrer" content="same-origin" />
 <style>
+    .site-content {
+        max-width: 1280px;
+    }
+
+    span.linkss-title {
+        font-size: 30px;
+        text-align: center;
+        display: block;
+        margin: 6.5% 0 7.5%;
+        letter-spacing: 2px;
+        font-weight: var(--global-font-weight);
+    }
+
+    .comments {
+        display: none;
+    }
+
     .fav-list {
         margin: 0 -10px -20px;
         flex-wrap: wrap;
@@ -24,7 +41,6 @@ wp_enqueue_style('iro-templates', $core_lib_basepath . '/css/templates.css', arr
         transition: max-height .5s ease-out;
         max-height: 200px;
         border-radius: 10px;
-
         color: #fff;
         box-shadow: 0 0 10px rgb(0 0 0 / 10%), 0 5px 20px rgb(0 0 0 / 20%);
     }

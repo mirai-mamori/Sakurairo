@@ -1,21 +1,3 @@
-/* 全局 */
-.site-content {
-    max-width: 1280px;
-}
-
-span.linkss-title {
-    font-size: 30px;
-    text-align: center;
-    display: block;
-    margin: 6.5% 0 7.5%;
-    letter-spacing: 2px;
-    font-weight: var(--global-font-weight);
-}
-
-.comments {
-    display: none
-}
-
 /* 分页样式 */
 #template-pagination {
     width: 100%;

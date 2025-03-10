@@ -11,6 +11,23 @@ wp_enqueue_style('iro-templates', $core_lib_basepath . '/css/templates.css', arr
 ?>
 <meta name="referrer" content="same-origin">
 <style>
+    .site-content {
+        max-width: 1280px;
+    }
+
+    span.linkss-title {
+        font-size: 30px;
+        text-align: center;
+        display: block;
+        margin: 6.5% 0 7.5%;
+        letter-spacing: 2px;
+        font-weight: var(--global-font-weight);
+    }
+
+    .comments {
+        display: none;
+    }
+
     .steam-row {
         display: flex;
         flex-wrap: wrap;
@@ -37,13 +54,6 @@ wp_enqueue_style('iro-templates', $core_lib_basepath . '/css/templates.css', arr
         background: rgba(255, 255, 255, 0.8);
     }
 
-    .steam-desc {
-        font-size: 12px;
-        line-height: 1.4;
-        margin-bottom: 2px;
-        color: var(--theme-skin, #505050);
-    }
-
     .steam-info {
         padding: 15px;
     }
@@ -58,7 +68,16 @@ wp_enqueue_style('iro-templates', $core_lib_basepath . '/css/templates.css', arr
         font-size: 18px;
     }
 
-    body.dark .steam-title ,body.dark .steam-desc{
+    .steam-desc {
+        font-size: 12px;
+        line-height: 1.4;
+        margin-bottom: 2px;
+        color: var(--theme-skin, #505050);
+    }
+
+    /* Dark mode styles */
+    body.dark .steam-title, 
+    body.dark .steam-desc {
         color: #cbcbcb;
     }
 
@@ -73,12 +92,12 @@ wp_enqueue_style('iro-templates', $core_lib_basepath . '/css/templates.css', arr
         background: var(--dark-bg-hover);
     }
 
+    /* Responsive styles */
     @media (max-width: 860px) {
-    .steam-card {
-        width: 100%;
+        .steam-card {
+            width: 100%;
+        }
     }
-    }
-    
 </style>
 </head>
 
