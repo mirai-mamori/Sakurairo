@@ -148,6 +148,6 @@ class BangumiList
 
     private static function anchor_pagination_next(string $href)
     {
-        return '<a class="pagination-next" data-href="' . esc_url($href) . '"><i class="fa-solid fa-bolt-lightning"></i> ' . __('Load more...', 'sakurairo') . '</a>';
+        return '<a class="pagination-next" data-href="' . esc_url($href) . '"><i class="fa-solid fa-guitar"></i> ' . __('Load more...', 'sakurairo') . '</a>';
     }
 }
