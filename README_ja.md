@@ -58,8 +58,6 @@
 
 - 本テーマでは、YahnisElstsさんの[Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) を使って、テーマのアップデートを提供しています。
 
-- 本テーマでは、orhanerdayさんの[open-ai](https://github.com/orhanerday/open-ai) を使って、テーマの ChatGPT 関連機能を提供しています。
-
 ## 楽しんでいただけたら幸いです。
 
 [![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/jp-ver2.7info.png)](https://docs.fuukei.org/)
