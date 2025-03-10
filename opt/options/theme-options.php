@@ -3548,15 +3548,15 @@ $prefix = 'iro_options';
  
             const defaults = {
                   leaflow:{
-                    chatgpt_base_url:"https://amber-api.leaflow.cn/api/openai-compatible",
+                    chatgpt_endpoint:"https://amber-api.leaflow.cn/api/openai-compatible/v1/chat/completions",
                     chatgpt_model:"auto"
                   },
                   postchat:{
-                    chatgpt_base_url:"https://ai.tianli0.top",
+                    chatgpt_endpoint:"https://ai.tianli0.top/v1/chat/completions",
                     chatgpt_model:"tianli"
                   },
                   openai:{
-                    chatgpt_base_url:"https://api.openai.com",
+                    chatgpt_endpoint:"https://api.openai.com/v1/chat/completions",
                     chatgpt_model:"gpt-4o-mini",
                   }
                 }
@@ -3587,12 +3587,12 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'chatgpt_base_url',
+        'id' => 'chatgpt_endpoint',
         'type' => 'text',
         'title' => __('ChatGPT Base URL','sakurairo_csf'),
         'desc' => __('Fill in the ChatGPT Base URL','sakurairo_csf'),
         'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
-        'default' => 'https://api.openai.com'
+        'default' => 'https://api.openai.com/v1/chat/completions'
       ),
 
       array(

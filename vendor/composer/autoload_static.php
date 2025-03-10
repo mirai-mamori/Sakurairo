@@ -4,22 +4,8 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit980e0f694e30477decfa439603e05796
+class ComposerStaticInit98983918c57c511cfd96335351d9f0e5
 {
-    public static $prefixLengthsPsr4 = array (
-        'O' => 
-        array (
-            'Orhanerday\\OpenAi\\' => 18,
-        ),
-    );
-
-    public static $prefixDirsPsr4 = array (
-        'Orhanerday\\OpenAi\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/orhanerday/open-ai/src',
-        ),
-    );
-
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -27,9 +13,7 @@ class ComposerStaticInit980e0f694e30477decfa439603e05796
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit980e0f694e30477decfa439603e05796::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit980e0f694e30477decfa439603e05796::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit980e0f694e30477decfa439603e05796::$classMap;
+            $loader->classMap = ComposerStaticInit98983918c57c511cfd96335351d9f0e5::$classMap;
 
         }, null, ClassLoader::class);
     }

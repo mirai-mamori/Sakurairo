@@ -59,9 +59,10 @@ $core_lib_basepath = iro_opt('core_library_basepath') ? get_template_directory_u
 /**
  * composer autoload
  */
-if ((check_php_version('8.0.0')) && iro_opt('composer_load')) {
+// 暂时没有需要使用的composer依赖，禁用
+/* if ((check_php_version('8.0.0')) && iro_opt('composer_load')) {
     require_once 'vendor/autoload.php';
-}
+} */
 
 // 屏蔽php日志信息
 if (iro_opt('php_notice_filter') != 'inner') {
