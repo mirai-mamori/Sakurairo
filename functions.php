@@ -520,6 +520,8 @@ function sakura_scripts()
 
     wp_enqueue_style('iro-css', $core_lib_basepath . '/style.css', array(), IRO_VERSION);
 
+    wp_enqueue_style('iro-templates', $core_lib_basepath . '/css/templates.css', array('iro-css'), IRO_VERSION);
+
     // Load dark mode stylesheet
     wp_enqueue_style('iro-dark', $core_lib_basepath . '/css/dark.css', array('iro-css'), IRO_VERSION);
 

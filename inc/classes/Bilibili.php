@@ -110,7 +110,7 @@ class Bilibili
     }
     private static function anchor_pagination_next(string $href)
     {
-        return '<a class="bangumi-next" data-href="' . $href . '"><i class="fa-solid fa-bolt-lightning"></i>' . __('Load More', 'sakurairo') . '</a>';
+        return '<a class="pagination-next" data-href="' . $href . '"><i class="fa-solid fa-bolt-lightning"></i>' . __('Load More', 'sakurairo') . '</a>';
     }
     private static function bangumi_item(array $item, $percent)
     {
