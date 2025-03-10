@@ -7,6 +7,99 @@
 get_header(); 
 
 ?>
+<style>
+	.links ul {
+		margin-top: 50px;
+		width: 100%;
+		display: inline-block;
+	}
+
+	.links ul li {
+		width: 22%;
+		float: left;
+		box-shadow: 0 1px 30px -4px var(--friend-link-shadow);
+		background: rgba(255, 255, 255, 0.5);
+		padding: 12px 12px;
+		margin: 12px 12px;
+		position: relative;
+		overflow: hidden;
+		border-radius: 10px;
+		border: 1.5px solid #FFFFFF;
+	}
+
+	.links ul li:hover {
+		box-shadow: 0 1px 20px 10px var(--friend-link-shadow);
+		background: rgba(255, 255, 255, 0.8);
+	}
+
+	.links ul li img {
+		float: left;
+		padding: 1px;
+		opacity: 1;
+		transform: rotate(0);
+		-webkit-transform: rotate(0);
+		margin: 3px 3px 0;
+		width: 90px;
+		height: 90px;
+		border-radius: 100%;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	}
+
+	.links ul li:hover img {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+	}
+
+	.links {
+		margin-bottom: 80px;
+	}
+
+	.links ul li:hover:before {
+		width: 180%;
+	}
+
+	.link-title {
+		font-weight: 600;
+		color: #6D6D6D;
+		padding-left: 10px;
+		border-left: none;
+		border-color: var(--theme-skin);
+		margin: 50px 0 10px;
+		text-underline-offset: 10px;
+		text-decoration: underline solid var(--friend-link-title, #ffeeeB);
+	}
+
+	span.sitename {
+		font-size: 20px;
+		margin-top: 84px;
+		margin-left: 8px;
+		margin-right: 8px;
+		color: #505050;
+		padding-bottom: 10px;
+		display: block;
+		transition: all 0.4s ease-in-out;
+		-webkit-transition: all 0.4s ease-in-out;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		font-weight: var(--global-font-weight);
+		text-underline-offset: 10px;
+		text-decoration: underline wavy var(--friend-link-title, #ffeeeB)
+	}
+
+	.linkdes {
+		font-size: 14px;
+		margin-left: 8px;
+		margin-right: 8px;
+		text-overflow: ellipsis;
+		color: #505050;
+		overflow: hidden;
+		white-space: nowrap;
+		line-height: 30px;
+		transition: all 0.4s ease-in-out;
+		-webkit-transition: all 0.4s ease-in-out;
+	}
+</style>
 	<?php while (have_posts()) : the_post(); ?>
 		<?php $post = get_post(); ?>
 		<?php if (!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID())) : ?>

@@ -4,7 +4,103 @@
  */
 
 get_header();
+?>
+<style>
+    #archives-temp h2 {
+        font-weight: 400;
+        color: var(--theme-skin, #505050);
+        text-align: center;
+    }
 
+    #archives-temp h3 {
+        letter-spacing: 10px;
+        font-style: italic;
+        font-size: 20px;
+        font-weight: var(--global-font-weight, 400);
+        color: var(--theme-skin, #505050);
+        margin-left: 35px;
+        margin-top: 50px;
+    }
+
+    #archives-temp h2 i {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    #archives-temp {
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
+
+    #archives-temp h3:hover {
+        color: var(--theme-skin-matching);
+        cursor: pointer;
+    }
+
+    #archives-content {
+        position: relative;
+        margin-top: 10%;
+    }
+
+    span.ar-circle {
+        height: 10px;
+        width: 10px;
+        background: var(--theme-skin, #505050);
+        display: inline-block;
+        position: absolute;
+        left: -5px;
+        margin-top: 3.2%;
+        border-radius: 100px;
+    }
+
+    .arrow-left-ar {
+        width: 0;
+        height: 0;
+        display: none;
+        float: left;
+        margin-top: 10px;
+        border-left: 20px solid transparent;
+        border-bottom: 20px solid #F5F5F5;
+        margin-left: 11px;
+    }
+
+    .brick a {
+        color: #7D7D7D;
+        padding: 20px 20px;
+        margin-bottom: 20px;
+        display: block;
+        letter-spacing: 0;
+        box-shadow: 0 1px 30px -4px #e8e8e8;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+    }
+
+    .brick a:hover {
+        color: var(--theme-skin-matching);
+        box-shadow: 0 1px 20px 10px #e8e8e8;
+        background: rgba(255, 255, 255, 0.8);
+    }
+
+    .brick {
+        margin-left: 30px;
+    }
+
+    .brick em {
+        font-style: normal;
+        margin-left: 5px;
+    }
+
+    span.time {
+        float: right;
+        color: #7d7d7d;
+    }
+
+    .time i {
+        margin: 3px;
+    }
+</style>
+
+<?php
 while (have_posts()) : the_post(); ?>
 
     <article <?php post_class("post-item"); ?>>
