@@ -11,6 +11,23 @@ echo '<link rel="stylesheet" href="' . $core_lib_basepath . '/css/templates.css?
 ?>
 <meta name="referrer" content="same-origin" />
 <style>
+    .site-content {
+        max-width: 1280px;
+    }
+
+    span.linkss-title {
+        font-size: 30px;
+        text-align: center;
+        display: block;
+        margin: 6.5% 0 7.5%;
+        letter-spacing: 2px;
+        font-weight: var(--global-font-weight);
+    }
+
+    .comments {
+        display: none;
+    }
+
     .fav-list {
         margin: 0 -10px -20px;
         flex-wrap: wrap;
