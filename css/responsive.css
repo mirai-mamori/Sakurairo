@@ -230,6 +230,10 @@
   color: var(--theme-skin-matching);
 }
 
+.menu-item-has-children {
+  padding: 10px 10px 2px 10px !important;
+}
+
 .mo-user-name{
   font-weight: bold;
   font-size: 16px;

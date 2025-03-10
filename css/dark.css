@@ -670,7 +670,7 @@ body.dark .top-social .inner img:hover {
 }
 
 body.dark .no-logged a {
-  color: var(--theme-skin-dark, #505050);
+  color: var(--dark-text-primary);
 }
 
 body.dark #banner_wave_1,
