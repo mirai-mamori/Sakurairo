@@ -6,5 +6,4 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Orhanerday\\OpenAi\\' => array($vendorDir . '/orhanerday/open-ai/src'),
 );

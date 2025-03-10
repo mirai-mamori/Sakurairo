@@ -59,8 +59,6 @@ Please fill in with the issue template. Thanks for your cooperation.
 
 - The theme uses YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) to provide updates.
 
-- The theme uses orhanerday [open-ai](https://github.com/orhanerday/open-ai) to provide ChatGPT-related Capabilities.
-
 ## Hope you can enjoy it!
 
 [![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/en-ver2.7info.png)](https://docs.fuukei.org/)

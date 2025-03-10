@@ -10,13 +10,9 @@
             "role": "organization"
         }
     ],
-    "require": {
-        "orhanerday/open-ai": "^5.2"
-    },
+    "require": {},
     "config": {
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        },
+        "allow-plugins": {},
         "platform": {
             "php": "7.4"
         }

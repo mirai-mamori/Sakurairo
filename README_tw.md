@@ -63,8 +63,6 @@
 
 - 本主題使用 YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) 以提供主題更新功能
 
-- 本主題使用 orhanerday [open-ai](https://github.com/orhanerday/open-ai) 以提供 ChatGPT 相關能力
-
 ## 希望你喜歡！
 
 [![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/tw-ver2.7info.png)](https://docs.fuukei.org/)
