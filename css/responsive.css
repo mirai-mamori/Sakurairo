@@ -37,6 +37,10 @@
     font-size: 18px !important;;
   }
 
+  .site-title:hover {
+    color: var(--theme-skin-matching);
+  }
+
   .header-user-avatar {
     display: none;
   }
@@ -226,6 +230,10 @@
   color: var(--theme-skin-matching);
 }
 
+.menu-item-has-children {
+  padding: 10px 10px 2px 10px !important;
+}
+
 .mo-user-name{
   font-weight: bold;
   font-size: 16px;
@@ -347,77 +355,6 @@
   border-radius: 50px;
 }
 
-/* 400px及以上 */
-@media screen and (min-width: 400px) {
-  .bangumi .column {
-    max-width: 50%;
-    flex: 0 0 50%;
-  }
-  .bangumi-info {
-    height: 50%;
-    transform: translateY(140%);
-  }
-  .bangumi-title {
-    height: 20%;
-  }
-}
-
-/* 600px及以上 */
-@media screen and (min-width: 600px) {
-  .bangumi .column {
-    max-width: 33.3333%;
-    flex: 0 0 33.3333%;
-  }
-  .bangumi-info {
-    height: 45%;
-    transform: translateY(140%);
-  }
-  .bangumi-title {
-    height: 30%;
-  }
-}
-
-/* 900px及以上 */
-@media screen and (min-width: 900px) {
-  .bangumi .column {
-    max-width: 25%;
-    flex: 0 0 25%;
-  }
-  .bangumi-info {
-    height: 100%;
-    transform: translateY(85%);
-  }
-  .bangumi-item:hover .bangumi-info {
-    transform: translateY(0);
-  }
-  .bangumi-item:hover img {
-    filter: blur(3px);
-  }
-  .bangumi-title {
-    height: 15%;
-  }
-  .bangumi-summary {
-    display: block;
-  }
-  .bangumi-status {
-    height: 10%;
-  }
-}
-
-/* 1200px及以上 */
-@media screen and (min-width: 1200px) {
-  .bangumi-info {
-    height: 75%;
-    transform: translateY(115%);
-  }
-  .bangumi-item:hover .bangumi-info {
-    transform: translateY(35%);
-  }
-  .bangumi-title {
-    height: 10%;
-  }
-}
-
 /* 自适应适配 */
 /* iOS Safari 特殊支持 */
 @supports (-webkit-touch-callout: none) {
@@ -438,8 +375,11 @@
   .post-footer,
   .post-squares {
     max-width: 800px;
-    margin-left: -43%;
     width: 86%;
+  }
+
+  .post-squares {
+    margin-left: -43%;
   }
 
   .comments {
@@ -611,7 +551,6 @@
   /* Post Footer */
   .post-footer {
     max-width: 800px;
-    margin-left: -49%;
   }
 
   /* Comments */
@@ -832,14 +771,12 @@
   }
 
   .links ul li {
-    width: 46%;
-    margin: 2%;
+    width: 44% !important;
     max-width: 860px;
   }
 
   .links ul li:hover {
-    width: 46%;
-    margin: 2%;
+    width: 44%;
   }
 
   .links ul li:before {

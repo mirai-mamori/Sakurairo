@@ -81,7 +81,7 @@ class MyAnimeList
 				$html .= MyAnimeList::get_item_details($item);
 				$total_episodes += $item['num_watched_episodes'];
 			}
-			$top_info = '<br><div id="bangumi-pagination"><span>' .
+			$top_info = '<br><div id="template-pagination"><span>' .
 			            __('Following ', 'sakurairo') . $item_count . __(' anime.', 'sakurairo') .
 			            __(' Watched ', 'sakurairo') . $total_episodes . __(' episodes.', 'sakurairo') .
 			            '</span></div>';

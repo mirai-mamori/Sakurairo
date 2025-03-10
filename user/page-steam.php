@@ -3,13 +3,29 @@
 /**
  * Template Name: Steam Library Template
  */
-get_header(); 
+get_header();
+
+global $core_lib_basepath;
+echo '<link rel="stylesheet" href="' . $core_lib_basepath . '/css/templates.css?ver=' . IRO_VERSION . '" type="text/css" media="all">';
+
 ?>
 <meta name="referrer" content="same-origin">
 <style>
-
     .site-content {
         max-width: 1280px;
+    }
+
+    span.linkss-title {
+        font-size: 30px;
+        text-align: center;
+        display: block;
+        margin: 6.5% 0 7.5%;
+        letter-spacing: 2px;
+        font-weight: var(--global-font-weight);
+    }
+
+    .comments {
+        display: none;
     }
 
     .steam-row {
@@ -38,13 +54,6 @@ get_header();
         background: rgba(255, 255, 255, 0.8);
     }
 
-    .steam-desc {
-        font-size: 12px;
-        line-height: 1.4;
-        margin-bottom: 2px;
-        color: var(--theme-skin, #505050);
-    }
-
     .steam-info {
         padding: 15px;
     }
@@ -59,10 +68,19 @@ get_header();
         font-size: 18px;
     }
 
-    body.dark .steam-title ,body.dark .steam-desc{
+    .steam-desc {
+        font-size: 12px;
+        line-height: 1.4;
+        margin-bottom: 2px;
+        color: var(--theme-skin, #505050);
+    }
+
+    /* Dark mode styles */
+    body.dark .steam-title, 
+    body.dark .steam-desc {
         color: #cbcbcb;
     }
-    
+
     body.dark .steam-card {
         box-shadow: var(--dark-shadow-normal);
         background: var(--dark-bg-secondary);
@@ -74,12 +92,12 @@ get_header();
         background: var(--dark-bg-hover);
     }
 
+    /* Responsive styles */
     @media (max-width: 860px) {
-    .steam-card {
-        width: 100%;
+        .steam-card {
+            width: 100%;
+        }
     }
-    }
-
 </style>
 </head>
 
@@ -94,7 +112,7 @@ get_header();
 
 <article <?php post_class("post-item"); ?>>
     <?php the_content('', true); ?>
-    <section class="steam-row">
+    <section class="steam-row have-columns row">
         <?php 
         $steam = new \Sakura\API\Steam();
         echo $steam->get_steam_items();

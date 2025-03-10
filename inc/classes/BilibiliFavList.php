@@ -127,6 +127,6 @@ class BilibiliFavList
 
 	private static function load_more($href)
 	{
-		return '<a class="load-more" data-href="' . $href . '"><i class="fa-solid fa-bolt-lightning"></i>' . __('Load More', 'sakurairo') . '</a>';
+		return '<a class="load-more" data-href="' . $href . '"><i class="fa-solid fa-guitar"></i>' . __('Load More', 'sakurairo') . '</a>';
 	}
 }

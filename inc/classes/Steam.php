@@ -38,11 +38,19 @@ class Steam
         return $data;
     }
 
-    public function get_steam_items()
+    public function get_steam_items($page = 1)
     {
         $resp = $this->fetch_api();
         // 添加检查，确保 $resp['response']['games'] 存在且为数组
         $games = isset($resp['response']['games']) && is_array($resp['response']['games']) ? $resp['response']['games'] : [];
+
+        $total = count($games); // 总条目数
+        $perPage = 20; // 每页条目数
+        $totalPages = ceil($total / $perPage); // 总页数
+        $offset = ($page - 1) * $perPage;
+        $games = array_slice($games, $offset, $perPage); // 当前页数据
+
+
         $html = "";
         foreach ($games as $game) {
             $playtime = $this->format_playtime($game['playtime_forever']);
@@ -50,6 +58,13 @@ class Steam
             $last_played = ($game['playtime_forever'] > 0) ? $this->format_last_played($game['rtime_last_played'] ?? 0) : '';
             $html .= $this->game_items($game, $playtime, $last_played);
         }
+
+        //分页
+        if ($page < $totalPages) {
+            $nextPageUrl = rest_url('sakura/v1/steam') . '?page=' . ($page + 1);
+            $html .= '<div id="template-pagination">' . '<a class="pagination-next" data-href="' . esc_url($nextPageUrl) . '"><i class="fa-solid fa-guitar"></i> ' . __('Load more...', 'sakurairo') . '</a>' . '</div>';
+        }
+
         return $html;
     }
     

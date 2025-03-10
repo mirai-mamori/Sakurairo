@@ -1,0 +1,67 @@
+/* 分页样式 */
+#template-pagination {
+    width: 100%;
+    margin-top: 40px;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: var(--global-font-weight);
+}
+
+#template-pagination .loading {
+    background: var(--load_nextpage_svg) center no-repeat;
+    background-size: auto 100%;
+    border: none;
+    height: 50px;
+}
+
+/* 下一页按钮样式 */
+.pagination-next {
+    position: relative;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 1px 30px -4px #e8e8e8;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1.5px solid #FFFFFF;
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination-next:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 1px 20px 10px #e8e8e8;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+body.dark .pagination-next {
+    color: #CCCCCC;
+    box-shadow: var(--dark-shadow-normal);
+    background: var(--dark-bg-secondary);
+    border: 1.5px solid var(--dark-border-color);
+}
+
+body.dark .pagination-next:hover {
+    box-shadow: 0 1px 30px -2px var(--dark-shadow-hover);
+    background: var(--dark-bg-hover);
+}
+
+.pagination-next:before {
+    content: ' ';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.pagination-next:hover:before {
+    height: 100%;
+}
+
+.pagination-next.loading:before {
+    display: none !important;
+}
