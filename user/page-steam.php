@@ -3,13 +3,27 @@
 /**
  * Template Name: Steam Library Template
  */
-get_header(); 
+get_header();
+
+global $core_lib_basepath;
+wp_enqueue_style('iro-templates', $core_lib_basepath . '/css/templates.css', array('iro-css'), IRO_VERSION);
+
 ?>
 <meta name="referrer" content="same-origin">
 <style>
 
     .site-content {
         max-width: 1280px;
+    }
+
+    /* 标题 */
+    span.linkss-title {
+        font-size: 30px;
+        text-align: center;
+        display: block;
+        margin: 6.5% 0 7.5%;
+        letter-spacing: 2px;
+        font-weight: var(--global-font-weight);
     }
 
     .steam-row {

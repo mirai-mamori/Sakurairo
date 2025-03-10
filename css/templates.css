@@ -50,14 +50,3 @@
 .pagination-next i {
     color: var(--theme-skin, #505050);
 }
-
-/* 模版标题 */
-
-span.linkss-title {
-    font-size: 30px;
-    text-align: center;
-    display: block;
-    margin: 6.5% 0 7.5%;
-    letter-spacing: 2px;
-    font-weight: var(--global-font-weight);
-}

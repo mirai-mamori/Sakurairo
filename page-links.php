@@ -8,6 +8,16 @@ get_header();
 
 ?>
 <style>
+
+	span.linkss-title {
+		font-size: 30px;
+		text-align: center;
+		display: block;
+		margin: 6.5% 0 7.5%;
+		letter-spacing: 2px;
+		font-weight: var(--global-font-weight);
+	}
+
 	.links ul {
 		margin-top: 50px;
 		width: 100%;
