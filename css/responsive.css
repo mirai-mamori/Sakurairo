@@ -375,8 +375,11 @@
   .post-footer,
   .post-squares {
     max-width: 800px;
-    margin-left: -43%;
     width: 86%;
+  }
+
+  .post-squares {
+    margin-left: -43%;
   }
 
   .comments {
@@ -548,7 +551,6 @@
   /* Post Footer */
   .post-footer {
     max-width: 800px;
-    margin-left: -49%;
   }
 
   /* Comments */
