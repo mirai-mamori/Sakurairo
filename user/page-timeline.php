@@ -138,6 +138,21 @@ get_header();
     .art .art-content .al_mon_list {
         width: 100%;
     }
+
+    body.dark .art-content #archives .al_mon_list .al_mon,
+    body.dark .art-content #archives .al_mon_list span,
+    body.dark .art .art-content #archives a {
+        color: var(--dark-text-secondary);
+    }
+
+    body.dark .art .art-content #archives .al_year {
+        color: var(--dark-text-primary);
+    }
+
+    body.dark .art .art-content #archives a:hover,
+    body.dark .art .art-content #archives a:hover {
+        color: var(--article-theme-highlight,var(--theme-skin-matching));
+    }
 </style>
 
    	<div id="main">

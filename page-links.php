@@ -99,6 +99,31 @@ get_header();
 		transition: all 0.4s ease-in-out;
 		-webkit-transition: all 0.4s ease-in-out;
 	}
+
+	body.dark .links ul li {
+		box-shadow: var(--dark-shadow-normal);
+		background: var(--dark-bg-secondary);
+		border: 1.5px solid var(--dark-border-color);
+	}
+
+	body.dark .links ul li:hover {
+		box-shadow: 0 1px 30px -2px var(--friend-link-title) !important;
+		background: var(--dark-bg-hover);
+	}
+
+	body.dark .links ul li img{
+		box-shadow: 0 4px 12px var(--dark-header-shadow);
+	}
+
+	body.dark .link-title {
+		color: var(--dark-text-secondary) !important;
+	}
+
+	body.dark .linkdes,
+	body.dark span.sitename {
+		color: var(--dark-text-primary);
+	}
+	
 </style>
 	<?php while (have_posts()) : the_post(); ?>
 		<?php $post = get_post(); ?>

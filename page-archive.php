@@ -98,6 +98,32 @@ get_header();
     .time i {
         margin: 3px;
     }
+
+    body.dark #archives-temp h3,
+    body.dark #archives-temp h2 {
+        color: var(--dark-text-primary);
+    }
+
+    body.dark #archives-temp h3:hover {
+        color: var(--theme-skin-dark);
+    }
+
+    body.dark span.ar-circle {
+        background-color: var(--theme-skin-dark);
+    }
+
+    body.dark .brick a {
+        color: var(--dark-text-tertiary);
+        box-shadow: var(--dark-shadow-normal);
+        background: var(--dark-bg-secondary);
+        border: 1.5px solid var(--dark-border-color);
+    }
+
+    body.dark .brick a:hover {
+        color: var(--theme-skin-dark);
+        box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
+        background: var(--dark-bg-hover);
+    }
 </style>
 
 <?php

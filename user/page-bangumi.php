@@ -10,7 +10,6 @@ get_header();
 .comments{display: none}
 .site-content{max-width:1280px}
 
-/* 番剧 */
 .bangumi {
     margin-top: 40px;
 }
@@ -168,6 +167,12 @@ get_header();
   }
   .bangumi-title {
     height: 10%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  body.dark .bangumi-item:hover img {
+    filter: brightness(0.8) blur(3px);
   }
 }
 
