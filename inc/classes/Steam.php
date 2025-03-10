@@ -27,6 +27,12 @@ class Steam
         $url = "https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=$key&steamid=$id&include_appinfo=1&include_played_free_games=1&include_free_games=1";
 
         $response = wp_remote_get($url);
+        
+        // 检查是否发生错误
+        if (is_wp_error($response)) {
+            return ['response' => ['games' => []]]; // 返回空游戏列表
+        }
+        
         $data = json_decode($response["body"], true);
         
         // 按最后游玩时间排序
