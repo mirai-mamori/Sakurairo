@@ -3,13 +3,27 @@
 /**
  * Template Name: Steam Library Template
  */
-get_header(); 
+get_header();
+
+global $core_lib_basepath;
+wp_enqueue_style('iro-templates', $core_lib_basepath . '/css/templates.css', array('iro-css'), IRO_VERSION);
+
 ?>
 <meta name="referrer" content="same-origin">
 <style>
 
     .site-content {
         max-width: 1280px;
+    }
+
+    /* 标题 */
+    span.linkss-title {
+        font-size: 30px;
+        text-align: center;
+        display: block;
+        margin: 6.5% 0 7.5%;
+        letter-spacing: 2px;
+        font-weight: var(--global-font-weight);
     }
 
     .steam-row {
@@ -62,7 +76,7 @@ get_header();
     body.dark .steam-title ,body.dark .steam-desc{
         color: #cbcbcb;
     }
-    
+
     body.dark .steam-card {
         box-shadow: var(--dark-shadow-normal);
         background: var(--dark-bg-secondary);
@@ -79,7 +93,7 @@ get_header();
         width: 100%;
     }
     }
-
+    
 </style>
 </head>
 
@@ -94,7 +108,7 @@ get_header();
 
 <article <?php post_class("post-item"); ?>>
     <?php the_content('', true); ?>
-    <section class="steam-row">
+    <section class="steam-row have-columns row">
         <?php 
         $steam = new \Sakura\API\Steam();
         echo $steam->get_steam_items();

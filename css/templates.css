@@ -1,0 +1,52 @@
+/* 分页样式 */
+#template-pagination {
+    width: 100%;
+    margin-top: 80px;
+    padding: 20px 0;
+    font-size: 36px;
+    text-align: center;
+    font-weight: var(--global-font-weight);
+}
+
+#template-pagination span {
+    color: #989898;
+    font-size: 15px;
+    font-weight: var(--global-font-weight);
+}
+
+#template-pagination .loading {
+    background: var(--load_nextpage_svg) center no-repeat;
+    background-size: auto 100%;
+    color: #555;
+    border: none;
+}
+
+/* 下一页按钮样式 */
+.pagination-next {
+    color: var(--theme-skin, #505050);
+    position: relative;
+    padding: 13px 35px;
+    overflow: hidden;
+}
+
+.pagination-next:before {
+    content: ' ';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.pagination-next:hover:before {
+    height: 100%;
+}
+
+.pagination-next.loading:before {
+    display: none !important;
+}
+
+.pagination-next i {
+    color: var(--theme-skin, #505050);
+}

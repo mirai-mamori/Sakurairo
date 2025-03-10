@@ -75,7 +75,7 @@ class Bilibili
                         $percent = Bilibili::get_percent($item);
                             $html .= Bilibili::bangumi_item($item, $percent);
                     }
-                    $html .= '</div><br><div id="bangumi-pagination">' . $next . '</div>';
+                    $html .= '</div><br><div id="template-pagination">' . $next . '</div>';
                     return $html;
                 }
             case 53013: //用户隐私设置未公开
@@ -103,14 +103,14 @@ class Bilibili
                         $percent = Bilibili::get_percent($item);
                         $html .= Bilibili::bangumi_item($item, $percent);
                     }
-                    $html .= '</div><br><div id="bangumi-pagination">' . $next . '</div>';
+                    $html .= '</div><br><div id="template-pagination">' . $next . '</div>';
                     return $html;
                 }
         }
     }
     private static function anchor_pagination_next(string $href)
     {
-        return '<a class="bangumi-next" data-href="' . $href . '"><i class="fa-solid fa-bolt-lightning"></i>' . __('Load More', 'sakurairo') . '</a>';
+        return '<a class="pagination-next" data-href="' . $href . '"><i class="fa-solid fa-bolt-lightning"></i>' . __('Load More', 'sakurairo') . '</a>';
     }
     private static function bangumi_item(array $item, $percent)
     {
