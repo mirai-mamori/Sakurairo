@@ -2672,10 +2672,26 @@ function register_shortcodes() {
 }
        //  reply 短代码
     add_shortcode('reply', function($atts, $content = null) {
-    		extract(shortcode_atts(array(
-        "notice" => '<p class="reply-to-read" style="text-align:center; border:2px solid #0000af; border-style:dashed; border-radius:4px; padding:5px; margin:10px;">
-            <strong style="color: #ff6033;">温馨提示：</strong>此处内容需要您<strong><a href="#respond" title="点击进行评论">评论</a></strong>或<strong><a href="' . esc_url(wp_login_url(get_permalink())) . '" title="点击登录">登录</a></strong>后才能查看, 评论后请 <strong><a href="javascript:location.reload()" title="点击刷新">点击刷新！</a></strong></p>'
-    ), $atts));
+        switch (get_user_locale()) {
+            case 'zh_CN' :
+                $notice = '<p class="reply-to-read" style="text-align:center; border:2px solid #0000af; border-style:dashed; border-radius:4px; padding:5px; margin:10px;">
+                            <strong style="color: #ff6033;">温馨提示：</strong>此处内容需要您<strong><a href="#respond" title="点击进行评论">评论</a></strong>或<strong><a href="' . esc_url(wp_login_url(get_permalink())) . '" title="点击登录">登录</a></strong>后才能查看, 评论后请 <strong><a href="javascript:location.reload()" title="点击刷新">点击刷新！</a></strong></p>';
+                break;
+            case 'zh_TW' :
+                $notice = '<p class="reply-to-read" style="text-align:center; border:2px solid #0000af; border-style:dashed; border-radius:4px; padding:5px; margin:10px;">
+                            <strong style="color: #ff6033;">溫馨提示：</strong>此處內容需要您<strong><a href="#respond" title="點擊進行評論">評論</a></strong>或<strong><a href="' . esc_url(wp_login_url(get_permalink())) . '" title="點擊登入">登入</a></strong>後才能查看, 評論後請 <strong><a href="javascript:location.reload()" title="點擊刷新">點擊刷新！</a></strong></p>';
+                break;
+            case 'Ja':
+            case 'Ja_jp':
+                $notice = '<p class="reply-to-read" style="text-align:center; border:2px solid #0000af; border-style:dashed; border-radius:4px; padding:5px; margin:10px;">
+                            <strong style="color: #ff6033;">ご案内：</strong>この内容を表示するには、<strong><a href="#respond" title="クリックしてコメント">コメント</a></strong>するか、<strong><a href="' . esc_url(wp_login_url(get_permalink())) . '" title="クリックしてログイン">ログイン</a></strong>してください。コメント後は、<strong><a href="javascript:location.reload()" title="クリックして更新">クリックして更新！</a></strong></p>';
+                break;
+            default:
+            $notice = '<p class="reply-to-read" style="text-align:center; border:2px solid #0000af; border-style:dashed; border-radius:4px; padding:5px; margin:10px;">
+                            <strong style="color: #ff6033;">Friendly Reminder:</strong> You need to <strong><a href="#respond" title="Click to comment">comment</a></strong> or <strong><a href="' . esc_url(wp_login_url(get_permalink())) . '" title="Click to log in">log in</a></strong> to view this content. After commenting, please <strong><a href="javascript:location.reload()" title="Click to refresh">click to refresh!</a></strong></p>';
+                break;
+        }
+    		extract(shortcode_atts(array("notice" => $notice), $atts));
     $user_ID = (int) wp_get_current_user()->ID;
     // 如果用户已登录，直接显示内容
     if ($user_ID > 0) {
