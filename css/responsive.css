@@ -770,19 +770,6 @@
     padding: 30px;
   }
 
-  .links ul li {
-    width: 44% !important;
-    max-width: 860px;
-  }
-
-  .links ul li:hover {
-    width: 44%;
-  }
-
-  .links ul li:before {
-    display: none;
-  }
-
   .author-box {
     display: none;
   }

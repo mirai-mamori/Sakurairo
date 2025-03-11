@@ -18,6 +18,10 @@ get_header();
 		font-weight: var(--global-font-weight);
 	}
 
+	.links {
+		margin-bottom: 80px;
+	}
+
 	.links ul {
 		margin-top: 50px;
 		width: 100%;
@@ -29,8 +33,8 @@ get_header();
 		float: left;
 		box-shadow: 0 1px 30px -4px var(--friend-link-shadow);
 		background: rgba(255, 255, 255, 0.5);
-		padding: 12px 12px;
-		margin: 12px 12px;
+		padding: 12px;
+		margin: 12px;
 		position: relative;
 		overflow: hidden;
 		border-radius: 10px;
@@ -40,6 +44,10 @@ get_header();
 	.links ul li:hover {
 		box-shadow: 0 1px 20px 10px var(--friend-link-shadow);
 		background: rgba(255, 255, 255, 0.8);
+	}
+
+	.links ul li:hover:before {
+		width: 180%;
 	}
 
 	.links ul li img {
@@ -58,14 +66,6 @@ get_header();
 	.links ul li:hover img {
 		transform: rotate(360deg);
 		-webkit-transform: rotate(360deg);
-	}
-
-	.links {
-		margin-bottom: 80px;
-	}
-
-	.links ul li:hover:before {
-		width: 180%;
 	}
 
 	.link-title {
@@ -94,7 +94,7 @@ get_header();
 		white-space: nowrap;
 		font-weight: var(--global-font-weight);
 		text-underline-offset: 10px;
-		text-decoration: underline wavy var(--friend-link-title, #ffeeeB)
+		text-decoration: underline wavy var(--friend-link-title, #ffeeeB);
 	}
 
 	.linkdes {
@@ -110,6 +110,7 @@ get_header();
 		-webkit-transition: all 0.4s ease-in-out;
 	}
 
+	/* Dark mode styles */
 	body.dark .links ul li {
 		box-shadow: var(--dark-shadow-normal);
 		background: var(--dark-bg-secondary);
@@ -121,7 +122,7 @@ get_header();
 		background: var(--dark-bg-hover);
 	}
 
-	body.dark .links ul li img{
+	body.dark .links ul li img {
 		box-shadow: 0 4px 12px var(--dark-header-shadow);
 	}
 
@@ -133,7 +134,23 @@ get_header();
 	body.dark span.sitename {
 		color: var(--dark-text-primary);
 	}
-	
+
+	/* Responsive styles */
+	@media (max-width: 860px) {
+		.links ul li {
+			width: 44%;
+			max-width: 860px;
+		}
+
+		.links ul li:hover {
+			width: 44%;
+		}
+
+		.links ul li:before {
+			display: none;
+		}
+	}
+
 </style>
 	<?php while (have_posts()) : the_post(); ?>
 		<?php $post = get_post(); ?>
