@@ -387,39 +387,18 @@ get_header();
 	</div>
 
 <script>
+<?php $captcha_url = rest_url('sakura/v1/captcha/create'); ?>
 document.addEventListener('DOMContentLoaded', function() {
+	let ajaxurl = '/wp-admin/admin-ajax.php'
 	// Modal functionality
-	const modal = document.getElementById('linkModal');
-	const openBtn = document.getElementById('openLinkModal');
-	const closeBtn = document.querySelector('.link-modal-close');
-	const form = document.getElementById('linkSubmissionForm');
-	const statusDiv = document.getElementById('formStatus');
-	const captchaImg = document.getElementById('captchaImg');
-	const timestampInput = document.getElementById('timestamp');
-	const captchaIdInput = document.getElementById('captchaId');
-	
-	// Function to generate and load captcha
-	function loadCaptcha() {
-		fetch(ajaxurl, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded',
-			},
-			body: 'action=get_iro_captcha'
-		})
-		.then(response => response.json())
-		.then(data => {
-			if (data.success) {
-				captchaImg.src = data.data.image;
-				timestampInput.value = data.data.time;
-				captchaIdInput.value = data.data.id;
-			}
-		})
-		.catch(error => console.error('Error loading captcha:', error));
-	}
-	
-	// Reload captcha on click
-	captchaImg.addEventListener('click', loadCaptcha);
+	let modal = document.getElementById('linkModal');
+	let openBtn = document.getElementById('openLinkModal');
+	let closeBtn = document.querySelector('.link-modal-close');
+	let form = document.getElementById('linkSubmissionForm');
+	let statusDiv = document.getElementById('formStatus');
+	let captchaImg = document.getElementById('captchaImg');
+	let timestampInput = document.getElementById('timestamp');
+	let captchaIdInput = document.getElementById('captchaId');
 	
 	// Open modal
 	openBtn.addEventListener('click', function() {
@@ -427,6 +406,19 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.body.style.overflow = 'hidden';
 		loadCaptcha();
 	});
+
+	captchaImg.addEventListener('click',loadCaptcha);
+
+	function loadCaptcha() {
+		fetch("<?php echo $captcha_url //验证码接口?>")
+			.then(resp => resp.json())
+			.then(json => {
+				captchaImg.src = json["data"];
+				timestampInput.value = json["time"];
+				captchaIdInput.value = json["id"];
+			})
+			.catch(error => console.error("获取验证码失败:", error));
+	};
 	
 	// Close modal
 	closeBtn.addEventListener('click', function() {
@@ -447,12 +439,12 @@ document.addEventListener('DOMContentLoaded', function() {
 		event.preventDefault();
 		
 		// Validate form
-		const siteName = document.getElementById('siteName').value.trim();
-		const siteUrl = document.getElementById('siteUrl').value.trim();
-		const siteDescription = document.getElementById('siteDescription').value.trim();
-		const siteImage = document.getElementById('siteImage').value.trim();
-		const contactEmail = document.getElementById('contactEmail').value.trim();
-		const captchaCode = document.getElementById('yzm').value.trim();
+		let siteName = document.getElementById('siteName').value.trim();
+		let siteUrl = document.getElementById('siteUrl').value.trim();
+		let siteDescription = document.getElementById('siteDescription').value.trim();
+		let siteImage = document.getElementById('siteImage').value.trim();
+		let contactEmail = document.getElementById('contactEmail').value.trim();
+		let captchaCode = document.getElementById('yzm').value.trim();
 		
 		// Basic validation
 		if (!siteName || !siteUrl || !siteDescription || !siteImage || !contactEmail || !captchaCode) {
@@ -461,21 +453,21 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 		
 		// URL validation
-		const urlPattern = /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
+		let urlPattern = /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
 		if (!urlPattern.test(siteUrl)) {
 			showStatus('error', '<?php _e('Please enter a valid URL', 'sakurairo'); ?>');
 			return;
 		}
 		
 		// Email validation
-		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		if (!emailPattern.test(contactEmail)) {
 			showStatus('error', '<?php _e('Please enter a valid email address', 'sakurairo'); ?>');
 			return;
 		}
 		
 		// Prepare form data for submission
-		const formData = new FormData();
+		let formData = new FormData();
 		formData.append('action', 'link_submission');
 		formData.append('siteName', siteName);
 		formData.append('siteUrl', siteUrl);
@@ -488,7 +480,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		formData.append('link_submission_nonce', document.getElementById('link_submission_nonce').value);
 		
 		// Disable submit button
-		const submitButton = form.querySelector('button[type="submit"]');
+		let submitButton = form.querySelector('button[type="submit"]');
 		submitButton.disabled = true;
 		submitButton.innerText = '<?php _e('Submitting...', 'sakurairo'); ?>';
 		
