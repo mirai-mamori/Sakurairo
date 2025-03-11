@@ -2913,6 +2913,171 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
     }
     add_filter('authenticate', 'checkVaptchaAction', 20, 3);
 }
+
+/**
+ * 友情链接验证码生成AJAX处理
+ */
+function get_iro_captcha_callback() {
+    include_once('inc/classes/Captcha.php');
+    $img = new Sakura\API\Captcha;
+    $captcha = $img->create_captcha_img();
+    
+    wp_send_json_success(array(
+        'image' => $captcha['data'],
+        'time' => $captcha['time'],
+        'id' => $captcha['id']
+    ));
+}
+add_action('wp_ajax_get_iro_captcha', 'get_iro_captcha_callback');
+add_action('wp_ajax_nopriv_get_iro_captcha', 'get_iro_captcha_callback');
+
+/*
+ * 友情链接提交功能
+ */
+function sakurairo_link_submission_handler() {
+    // Verify nonce
+    if (!isset($_POST['link_submission_nonce']) || !wp_verify_nonce($_POST['link_submission_nonce'], 'link_submission_nonce')) {
+        wp_send_json_error(array('message' => __('Security verification failed.', 'sakurairo')));
+    }
+
+    // Check required fields
+    $required_fields = array('siteName', 'siteUrl', 'siteDescription', 'siteImage', 'contactEmail', 'yzm', 'timestamp', 'id');
+    foreach ($required_fields as $field) {
+        if (!isset($_POST[$field]) || empty(trim($_POST[$field]))) {
+            wp_send_json_error(array('message' => __('Please fill in all required fields.', 'sakurairo')));
+        }
+    }
+
+    // Verify captcha
+    include_once('inc/classes/Captcha.php');
+    $img = new Sakura\API\Captcha;
+    $captcha_check = $img->check_captcha($_POST['yzm'], $_POST['timestamp'], $_POST['id']);
+    
+    if ($captcha_check['code'] != 5) {
+        wp_send_json_error(array('message' => $captcha_check['msg']));
+    }
+
+    // Sanitize input data
+    $site_name = sanitize_text_field($_POST['siteName']);
+    $site_url = esc_url_raw($_POST['siteUrl']);
+    $site_description = sanitize_textarea_field($_POST['siteDescription']);
+    $site_image = esc_url_raw($_POST['siteImage']);
+    $contact_email = sanitize_email($_POST['contactEmail']);
+
+    // Validate URL format
+    if (!filter_var($site_url, FILTER_VALIDATE_URL)) {
+        wp_send_json_error(array('message' => __('Please enter a valid URL.', 'sakurairo')));
+    }
+
+    // Validate email format
+    if (!filter_var($contact_email, FILTER_VALIDATE_EMAIL)) {
+        wp_send_json_error(array('message' => __('Please enter a valid email address.', 'sakurairo')));
+    }
+
+    // Check if site URL already exists in links
+    $existing_links = get_bookmarks();
+    foreach ($existing_links as $link) {
+        if (trailingslashit($link->link_url) === trailingslashit($site_url)) {
+            wp_send_json_error(array('message' => __('This website URL is already in our links list.', 'sakurairo')));
+        }
+    }
+
+    // Prepare link data
+    $link_data = array(
+        'link_name' => $site_name,
+        'link_url' => $site_url,
+        'link_description' => $site_description,
+        'link_image' => $site_image,
+        'link_target' => '_blank',
+        'link_owner' => $contact_email,
+        'link_rating' => 0,
+        'link_visible' => 'N', // Set as not visible by default (pending)
+        'link_rel' => 'friend', // Add nofollow for security
+        'link_notes' => '', // Optional CSS for the link
+        'link_rss' => '' // Optional RSS URL
+    );
+
+    // Save as a draft link for admin approval
+    if (function_exists('wp_insert_link')) {
+        // Direct insert (requires admin approval)
+        $link_id = wp_insert_link($link_data);
+        
+        if (is_wp_error($link_id)) {
+            wp_send_json_error(array('message' => __('Failed to submit link. Please try again later.', 'sakurairo')));
+        }
+        
+        // Send notification email to admin
+        $admin_email = get_option('admin_email');
+        $blog_name = get_bloginfo('name');
+        $subject = sprintf(__('[%s] New Friend Link Submission', 'sakurairo'), $blog_name);
+        
+        $message = sprintf(__("A new friend link has been submitted on your website %s:\n\n", 'sakurairo'), $blog_name);
+        $message .= sprintf(__("Site Name: %s\n", 'sakurairo'), $site_name);
+        $message .= sprintf(__("Site URL: %s\n", 'sakurairo'), $site_url);
+        $message .= sprintf(__("Site Description: %s\n", 'sakurairo'), $site_description);
+        $message .= sprintf(__("Site Image: %s\n", 'sakurairo'), $site_image);
+        $message .= sprintf(__("Contact Email: %s\n", 'sakurairo'), $contact_email);
+        $message .= sprintf(__("IP Address: %s\n\n", 'sakurairo'), get_the_user_ip());
+        $message .= __("Please review this submission in your WordPress admin panel.\n", 'sakurairo');
+        $message .= admin_url('link-manager.php');
+        
+        wp_mail($admin_email, $subject, $message);
+        
+        wp_send_json_success(array(
+            'message' => __('Thank you! Your link has been submitted for review.', 'sakurairo')
+        ));
+    } else {
+        // Alternative method: Create a post with link details
+        $post_content = sprintf(__('Site Name: %s', 'sakurairo'), $site_name) . "\n";
+        $post_content .= sprintf(__('Site URL: %s', 'sakurairo'), $site_url) . "\n";
+        $post_content .= sprintf(__('Site Description: %s', 'sakurairo'), $site_description) . "\n";
+        $post_content .= sprintf(__('Site Image: %s', 'sakurairo'), $site_image) . "\n";
+        $post_content .= sprintf(__('Contact Email: %s', 'sakurairo'), $contact_email) . "\n";
+        $post_content .= sprintf(__('IP Address: %s', 'sakurairo'), get_the_user_ip()) . "\n";
+
+        $post_data = array(
+            'post_title' => __('Friend Link Submission: ', 'sakurairo') . $site_name,
+            'post_content' => $post_content,
+            'post_status' => 'pending',
+            'post_type' => 'post',
+            'post_author' => 1, // Default admin user
+            'meta_input' => array(
+                'link_submission_data' => array(
+                    'site_name' => $site_name,
+                    'site_url' => $site_url,
+                    'site_description' => $site_description,
+                    'site_image' => $site_image,
+                    'contact_email' => $contact_email
+                )
+            )
+        );
+
+        $post_id = wp_insert_post($post_data);
+
+        if (is_wp_error($post_id)) {
+            wp_send_json_error(array('message' => __('Failed to submit link. Please try again later.', 'sakurairo')));
+        }
+
+        // Send notification email to admin
+        $admin_email = get_option('admin_email');
+        $blog_name = get_bloginfo('name');
+        $subject = sprintf(__('[%s] New Friend Link Submission', 'sakurairo'), $blog_name);
+        
+        $message = sprintf(__("A new friend link has been submitted on your website %s:\n\n", 'sakurairo'), $blog_name);
+        $message .= $post_content;
+        $message .= __("\nPlease review this submission in your WordPress admin panel.\n", 'sakurairo');
+        $message .= admin_url('edit.php?post_status=pending&post_type=post');
+        
+        wp_mail($admin_email, $subject, $message);
+        
+        wp_send_json_success(array(
+            'message' => __('Thank you! Your link has been submitted for review.', 'sakurairo')
+        ));
+    }
+}
+add_action('wp_ajax_link_submission', 'sakurairo_link_submission_handler');
+add_action('wp_ajax_nopriv_link_submission', 'sakurairo_link_submission_handler');
+
 /**
  * 返回是否应当显示文章标题。
  * 

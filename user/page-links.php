@@ -151,11 +151,178 @@ get_header();
 		}
 	}
 
+	/* Link submission modal styles */
+	.title-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		margin: 6.5% 0 7.5%;
+	}
+
+	.linkss-title {
+		margin: 0;
+	}
+
+	.submit-link-btn {
+		background-color: var(--theme-skin, #FE9600);
+		color: white;
+		border: none;
+		border-radius: 20px;
+		padding: 6px 15px;
+		margin-left: 15px;
+		font-size: 14px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	.submit-link-btn:hover {
+		background-color: var(--theme-skin-matching, #FE9600);
+		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+	}
+
+	.link-modal {
+		display: none;
+		position: fixed;
+		z-index: 9999;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+	}
+
+	.link-modal-content {
+		background-color: white;
+		margin: 5% auto;
+		padding: 25px;
+		border-radius: 10px;
+		max-width: 500px;
+		width: 80%;
+		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+		position: relative;
+		animation: modalFadeIn 0.3s ease;
+	}
+
+	body.dark .link-modal-content {
+		background-color: var(--dark-bg-secondary);
+		color: var(--dark-text-primary);
+	}
+
+	@keyframes modalFadeIn {
+		from {opacity: 0; transform: translateY(-20px);}
+		to {opacity: 1; transform: translateY(0);}
+	}
+
+	.link-modal-close {
+		position: absolute;
+		top: 15px;
+		right: 20px;
+		font-size: 24px;
+		cursor: pointer;
+		color: #888;
+		transition: all 0.2s ease;
+	}
+
+	.link-modal-close:hover {
+		color: var(--theme-skin, #FE9600);
+	}
+
+	.link-form-group {
+		margin-bottom: 20px;
+	}
+
+	.link-form-group label {
+		display: block;
+		margin-bottom: 8px;
+		font-weight: 500;
+	}
+
+	.link-form-group input,
+	.link-form-group textarea {
+		width: 100%;
+		padding: 10px 12px;
+		border: 1px solid #ddd;
+		border-radius: 6px;
+		font-size: 14px;
+		background-color: rgba(255, 255, 255, 0.9);
+		transition: all 0.3s ease;
+	}
+
+	body.dark .link-form-group input,
+	body.dark .link-form-group textarea {
+		background-color: var(--dark-bg-primary);
+		border-color: var(--dark-border-color);
+		color: var(--dark-text-primary);
+	}
+
+	.link-form-group input:focus,
+	.link-form-group textarea:focus {
+		border-color: var(--theme-skin, #FE9600);
+		box-shadow: 0 0 5px rgba(254, 150, 0, 0.3);
+		outline: none;
+	}
+
+	.link-form-submit {
+		background-color: var(--theme-skin, #FE9600);
+		color: white;
+		border: none;
+		border-radius: 6px;
+		padding: 10px 20px;
+		font-size: 16px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		display: block;
+		width: 100%;
+	}
+
+	.link-form-submit:hover {
+		background-color: var(--theme-skin-matching, #FE9600);
+	}
+
+	.form-status {
+		padding: 10px;
+		margin: 10px 0;
+		border-radius: 5px;
+		display: none;
+	}
+
+	.success-msg {
+		background-color: rgba(76, 175, 80, 0.2);
+		color: #4CAF50;
+	}
+
+	.error-msg {
+		background-color: rgba(244, 67, 54, 0.2);
+		color: #F44336;
+	}
+
+	.captcha-container {
+		margin-bottom: 20px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	
+	.captcha-container img {
+		border-radius: 6px;
+		height: 40px;
+	}
+	
+	.captcha-container input {
+		flex: 1;
+	}
 </style>
 	<?php while (have_posts()) : the_post(); ?>
 		<?php $post = get_post(); ?>
 		<?php if (!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID())) : ?>
-			<span class="linkss-title"><?php echo esc_html(get_the_title()); ?></span>
+			<div class="title-container">
+				<span class="linkss-title"><?php echo esc_html(get_the_title()); ?></span>
+				<button class="submit-link-btn" id="openLinkModal"><?php _e('Submit Link', 'sakurairo'); ?></button>
+			</div>
 		<?php endif; ?>
 		<article <?php post_class("post-item"); ?>>
 			<?php if (iro_opt('article_auto_toc', 'true') && check_title_tags($post->post_content)) : //加载目录 ?>
@@ -170,6 +337,207 @@ get_header();
 		</article>
 		<?php get_template_part('layouts/sidebox'); //加载目录容器 ?> 
 	<?php endwhile; ?>
+
+	<!-- Link Submission Modal -->
+	<div id="linkModal" class="link-modal">
+		<div class="link-modal-content">
+			<span class="link-modal-close">&times;</span>
+			<h2><?php _e('Submit Your Link', 'sakurairo'); ?></h2>
+			<p><?php _e('Please fill out the form below to submit your website link.', 'sakurairo'); ?></p>
+			
+			<div id="formStatus" class="form-status"></div>
+			
+			<form id="linkSubmissionForm">
+				<div class="link-form-group">
+					<label for="siteName"><?php _e('Site Name', 'sakurairo'); ?>*</label>
+					<input type="text" id="siteName" name="siteName" required>
+				</div>
+				
+				<div class="link-form-group">
+					<label for="siteUrl"><?php _e('Site URL', 'sakurairo'); ?>*</label>
+					<input type="url" id="siteUrl" name="siteUrl" placeholder="https://" required>
+				</div>
+				
+				<div class="link-form-group">
+					<label for="siteDescription"><?php _e('Site Description', 'sakurairo'); ?>*</label>
+					<textarea id="siteDescription" name="siteDescription" rows="2" required></textarea>
+				</div>
+				
+				<div class="link-form-group">
+					<label for="siteImage"><?php _e('Site Logo/Avatar URL', 'sakurairo'); ?>*</label>
+					<input type="url" id="siteImage" name="siteImage" placeholder="https://" required>
+				</div>
+				
+				<div class="link-form-group">
+					<label for="contactEmail"><?php _e('Your Email', 'sakurairo'); ?>*</label>
+					<input type="email" id="contactEmail" name="contactEmail" required>
+				</div>
+				
+				<div class="captcha-container">
+					<img id="captchaImg" src="">
+					<input type="text" id="yzm" name="yzm" placeholder="<?php _e('Verification Code', 'sakurairo'); ?>" required>
+					<input type="hidden" name="timestamp" id="timestamp">
+					<input type="hidden" name="id" id="captchaId">
+				</div>
+				
+				<?php wp_nonce_field('link_submission_nonce', 'link_submission_nonce'); ?>
+				<button type="submit" class="link-form-submit"><?php _e('Submit', 'sakurairo'); ?></button>
+			</form>
+		</div>
+	</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	// Modal functionality
+	const modal = document.getElementById('linkModal');
+	const openBtn = document.getElementById('openLinkModal');
+	const closeBtn = document.querySelector('.link-modal-close');
+	const form = document.getElementById('linkSubmissionForm');
+	const statusDiv = document.getElementById('formStatus');
+	const captchaImg = document.getElementById('captchaImg');
+	const timestampInput = document.getElementById('timestamp');
+	const captchaIdInput = document.getElementById('captchaId');
+	
+	// Function to generate and load captcha
+	function loadCaptcha() {
+		fetch(ajaxurl, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded',
+			},
+			body: 'action=get_iro_captcha'
+		})
+		.then(response => response.json())
+		.then(data => {
+			if (data.success) {
+				captchaImg.src = data.data.image;
+				timestampInput.value = data.data.time;
+				captchaIdInput.value = data.data.id;
+			}
+		})
+		.catch(error => console.error('Error loading captcha:', error));
+	}
+	
+	// Reload captcha on click
+	captchaImg.addEventListener('click', loadCaptcha);
+	
+	// Open modal
+	openBtn.addEventListener('click', function() {
+		modal.style.display = 'block';
+		document.body.style.overflow = 'hidden';
+		loadCaptcha();
+	});
+	
+	// Close modal
+	closeBtn.addEventListener('click', function() {
+		modal.style.display = 'none';
+		document.body.style.overflow = 'auto';
+	});
+	
+	// Close modal if clicked outside
+	window.addEventListener('click', function(event) {
+		if (event.target === modal) {
+			modal.style.display = 'none';
+			document.body.style.overflow = 'auto';
+		}
+	});
+	
+	// Form submission
+	form.addEventListener('submit', function(event) {
+		event.preventDefault();
+		
+		// Validate form
+		const siteName = document.getElementById('siteName').value.trim();
+		const siteUrl = document.getElementById('siteUrl').value.trim();
+		const siteDescription = document.getElementById('siteDescription').value.trim();
+		const siteImage = document.getElementById('siteImage').value.trim();
+		const contactEmail = document.getElementById('contactEmail').value.trim();
+		const captchaCode = document.getElementById('yzm').value.trim();
+		
+		// Basic validation
+		if (!siteName || !siteUrl || !siteDescription || !siteImage || !contactEmail || !captchaCode) {
+			showStatus('error', '<?php _e('Please fill in all required fields', 'sakurairo'); ?>');
+			return;
+		}
+		
+		// URL validation
+		const urlPattern = /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
+		if (!urlPattern.test(siteUrl)) {
+			showStatus('error', '<?php _e('Please enter a valid URL', 'sakurairo'); ?>');
+			return;
+		}
+		
+		// Email validation
+		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		if (!emailPattern.test(contactEmail)) {
+			showStatus('error', '<?php _e('Please enter a valid email address', 'sakurairo'); ?>');
+			return;
+		}
+		
+		// Prepare form data for submission
+		const formData = new FormData();
+		formData.append('action', 'link_submission');
+		formData.append('siteName', siteName);
+		formData.append('siteUrl', siteUrl);
+		formData.append('siteDescription', siteDescription);
+		formData.append('siteImage', siteImage);
+		formData.append('contactEmail', contactEmail);
+		formData.append('yzm', captchaCode);
+		formData.append('timestamp', timestampInput.value);
+		formData.append('id', captchaIdInput.value);
+		formData.append('link_submission_nonce', document.getElementById('link_submission_nonce').value);
+		
+		// Disable submit button
+		const submitButton = form.querySelector('button[type="submit"]');
+		submitButton.disabled = true;
+		submitButton.innerText = '<?php _e('Submitting...', 'sakurairo'); ?>';
+		
+		// Send form data via AJAX
+		fetch(ajaxurl, {
+			method: 'POST',
+			body: formData,
+			credentials: 'same-origin'
+		})
+		.then(response => response.json())
+		.then(data => {
+			if (data.success) {
+				showStatus('success', data.data.message);
+				form.reset();
+				loadCaptcha(); // Reload captcha after successful submission
+				setTimeout(() => {
+					modal.style.display = 'none';
+					document.body.style.overflow = 'auto';
+				}, 3000);
+			} else {
+				showStatus('error', data.data.message);
+				loadCaptcha(); // Reload captcha after failed submission
+			}
+		})
+		.catch(error => {
+			console.error('Error:', error);
+			showStatus('error', '<?php _e('An error occurred. Please try again later.', 'sakurairo'); ?>');
+			loadCaptcha();
+		})
+		.finally(() => {
+			submitButton.disabled = false;
+			submitButton.innerText = '<?php _e('Submit', 'sakurairo'); ?>';
+		});
+	});
+	
+	// Show status message
+	function showStatus(type, message) {
+		statusDiv.className = 'form-status ' + (type === 'success' ? 'success-msg' : 'error-msg');
+		statusDiv.textContent = message;
+		statusDiv.style.display = 'block';
+		
+		// Auto hide after 5 seconds
+		setTimeout(() => {
+			statusDiv.style.display = 'none';
+		}, 5000);
+	}
+});
+</script>
+
 <?php
 get_footer();
 ?>
