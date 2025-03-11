@@ -1,0 +1,12 @@
+{
+	"require": {
+		"php": ">=7.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Kirki\\Pro\\Control\\": "src/Control",
+			"Kirki\\Pro\\Field\\": "src/Field",
+			"Kirki\\Pro\\Responsive\\": "src"
+		}
+	}
+}

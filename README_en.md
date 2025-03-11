@@ -49,19 +49,15 @@ Please fill in with the issue template. Thanks for your cooperation.
 
 ### References:
 
-- For social network icons of the theme, fluent-design icons reference the [Fluent Icon Pack](https://wwi.lanzous.com/ikyq5kgx0wb) designed by Paradox.
+- For social network icons of the theme, fluent-design icons reference the Fluent Icon Pack designed by Paradox.
 
-- For social network icons of the theme, MUH2 icons reference the [MUH2 Icon Pack](https://www.coolapk.com/apk/com.muh2.icon) designed by 缄默.
-
-- The Mashiro Logo references the design by Mashiro, the developer of the original theme. Solutions provided by Hyacm.
+- For social network icons of the theme, MUH2 icons reference the MUH2 Icon Pack designed by 缄默.
 
 ### Dependencies:
 
 - The theme uses Codestar [Codestar Framework](https://github.com/Codestar/codestar-framework) as settings framework. 
 
 - The theme uses YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) to provide updates.
-
-- The theme uses orhanerday [open-ai](https://github.com/orhanerday/open-ai) to provide ChatGPT-related Capabilities.
 
 ## Hope you can enjoy it!
 

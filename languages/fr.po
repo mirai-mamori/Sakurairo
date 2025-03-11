@@ -1,0 +1,1139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sakurairo\n"
+"POT-Creation-Date: 2025-03-06 15:18+0900\n"
+"PO-Revision-Date: 2025-03-06 15:19+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: 404.php:188
+msgid "Page Not Found"
+msgstr "Page introuvable"
+
+#: 404.php:191
+msgid ""
+"The page you are looking for might have been removed, had its name changed, "
+"or is temporarily unavailable."
+msgstr ""
+"La page que vous recherchez peut avoir été supprimée, avoir changé de nom ou "
+"être temporairement indisponible."
+
+#: 404.php:202 header.php:193 layouts/sakura_header.php:76 search.php:176
+msgid "Search..."
+msgstr "Rechercher..."
+
+#: archive.php:42 author.php:55 index.php:85
+msgid " Previous"
+msgstr " Précédent"
+
+#: author.php:15
+msgid "No personal profile set yet"
+msgstr "Aucun profil personnel défini pour l'instant"
+
+#: comments.php:56
+msgid "Woooooow ヾ(≧∇≦*)ゝ"
+msgstr "Woooooow ヾ(≧∇≦*)ゝ"
+
+#: comments.php:79
+msgid "view comments"
+msgstr "voir les commentaires"
+
+#: comments.php:80 comments.php:86
+msgid " comment"
+msgstr " commentaire"
+
+#: comments.php:80 comments.php:86
+msgid " comments"
+msgstr " commentaires"
+
+#: comments.php:106
+msgid "no comment"
+msgstr "aucun commentaire"
+
+#: comments.php:121
+msgid "Click here to show captcha"
+msgstr "Cliquez ici pour afficher le captcha"
+
+#: comments.php:168
+msgid "Comment in private"
+msgstr "Commenter en privé"
+
+#: comments.php:171
+msgid "Comment reply notify"
+msgstr "Notification de réponse au commentaire"
+
+#: comments.php:186
+msgid "Leave a Reply to"
+msgstr "Répondre à"
+
+#: comments.php:187
+msgid "Cancel Reply"
+msgstr "Annuler la réponse"
+
+#: comments.php:210
+msgid "Nickname or QQ number"
+msgstr "Pseudo ou numéro QQ"
+
+#: comments.php:210 comments.php:214
+msgid "Must* "
+msgstr "Obligatoire* "
+
+#: comments.php:211
+msgid "Auto pull nickname and avatar with a QQ num. entered"
+msgstr ""
+"Récupération automatique du pseudo et de l'avatar avec un numéro QQ saisi"
+
+#: comments.php:214
+msgid "email"
+msgstr "email"
+
+#: comments.php:215
+msgid "You will receive notification by email"
+msgstr "Vous recevrez une notification par email"
+
+#: comments.php:218
+msgid "Site"
+msgstr "Site"
+
+#: comments.php:219
+msgid "Advertisement is forbidden 😀"
+msgstr "La publicité est interdite 😀"
+
+#: comments.php:231
+msgid "Save your private info"
+msgstr "Sauvegardez vos informations privées"
+
+#: footer.php:43
+#, php-format
+msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
+msgstr ""
+"Temps de chargement %.3f secondes | %d requêtes | Utilisation de RAM %.2f MB "
+
+#: footer.php:58
+msgid "Go to top"
+msgstr "Aller en haut"
+
+#: footer.php:59
+msgid "Control Panel"
+msgstr "Panneau de contrôle"
+
+#: footer.php:65 footer.php:73
+msgid "Want to find something?"
+msgstr "Vous cherchez quelque chose ?"
+
+#: footer.php:74 header.php:257
+msgid "Search"
+msgstr "Rechercher"
+
+#: footer.php:93
+msgid "Light Mode"
+msgstr "Mode clair"
+
+#: footer.php:96
+msgid "Dark Mode"
+msgstr "Mode sombre"
+
+#: footer.php:102
+msgid "Toggle Page Background Image"
+msgstr "Basculer l'image de fond de la page"
+
+#: footer.php:123
+msgid "Switch To Font A"
+msgstr "Passer à la police A"
+
+#: footer.php:126
+msgid "Switch To Font B"
+msgstr "Passer à la police B"
+
+#: functions.php:123
+msgid "Nav Menus"
+msgstr "Menus de navigation"
+
+#: functions.php:242
+msgctxt "post type general name"
+msgid "Shuoshuo"
+msgstr "Shuoshuo"
+
+#: functions.php:243
+msgctxt "post type singular name"
+msgid "Shuoshuo"
+msgstr "Shuoshuo"
+
+#: functions.php:244
+msgctxt "admin menu"
+msgid "Shuoshuo"
+msgstr "Shuoshuo"
+
+#: functions.php:245
+msgctxt "add new on admin bar"
+msgid "Shuoshuo"
+msgstr "Shuoshuo"
+
+#: functions.php:246
+msgctxt "shuoshuo"
+msgid "Add New"
+msgstr "Ajouter Nouveau"
+
+#: functions.php:247
+msgid "Add New Shuoshuo"
+msgstr "Ajouter Nouveau Shuoshuo"
+
+#: functions.php:248
+msgid "New Shuoshuo"
+msgstr "Nouveau Shuoshuo"
+
+#: functions.php:249
+msgid "Edit Shuoshuo"
+msgstr "Modifier Shuoshuo"
+
+#: functions.php:250
+msgid "View Shuoshuo"
+msgstr "Voir Shuoshuo"
+
+#: functions.php:251
+msgid "All Shuoshuo"
+msgstr "Tous les Shuoshuo"
+
+#: functions.php:252
+msgid "Search Shuoshuo"
+msgstr "Rechercher Shuoshuo"
+
+#: functions.php:253
+msgid "Parent Shuoshuo:"
+msgstr "Parent Shuoshuo :"
+
+#: functions.php:254
+msgid "No shuoshuo found."
+msgstr "Aucun shuoshuo trouvé."
+
+#: functions.php:255
+msgid "No shuoshuo found in Trash."
+msgstr "Aucun shuoshuo trouvé dans la corbeille."
+
+#: functions.php:302
+msgid "Emotion Meta Box"
+msgstr "Boîte Meta des Émotions"
+
+#: functions.php:315
+msgid "Emotion"
+msgstr "Émotion"
+
+#: functions.php:318
+msgid "Emotion Color"
+msgstr "Couleur de l'Émotion"
+
+#: functions.php:321
+msgid ""
+"For the Emotion, please fill in the Unicode value of the Fontawesome icon, "
+"and for the Emotion Color, please fill in the RGBA or hexadecimal color."
+msgstr ""
+"Pour l'Émotion, veuillez remplir la valeur Unicode de l'icône Fontawesome, "
+"et pour la Couleur de l'Émotion, veuillez remplir la couleur RGBA ou "
+"hexadécimale."
+
+#: functions.php:366
+msgid "Custom Meta Box"
+msgstr "Boîte Meta Personnalisée"
+
+#: functions.php:379
+msgid "Title Style"
+msgstr "Style du Titre"
+
+#: functions.php:382
+msgid "License"
+msgstr "Licence"
+
+#: functions.php:385
+msgid ""
+"For the Title Style, Please fill in the css style, part of the style need to "
+"add !important effective, and for the License, please go to Theme Options to "
+"learn how to set it up."
+msgstr ""
+"Pour le Style du Titre, veuillez remplir le style CSS, certaines parties "
+"doivent inclure !important pour être efficaces, et pour la Licence, veuillez "
+"consulter les Options du Thème pour apprendre comment la configurer."
+
+#: functions.php:501
+msgid "Copied!"
+msgstr "Copié !"
+
+#: functions.php:502
+msgid "Copy Code"
+msgstr "Copier le Code"
+
+#: functions.php:503
+msgid ""
+"Your cover API seems to not support Cross Origin Access. In this case, Cover "
+"Cache won't take effect."
+msgstr ""
+"Votre API de couverture semble ne pas prendre en charge l'accès Cross-"
+"Origin. Dans ce cas, le cache de couverture ne prendra pas effet."
+
+#: functions.php:504
+msgid "Commiting...."
+msgstr "Validation en cours...."
+
+#: functions.php:505
+msgid "Succeed"
+msgstr "Réussi"
+
+#: functions.php:506
+msgid "10 files max per request"
+msgstr "10 fichiers max par demande"
+
+#: functions.php:507
+msgid ""
+"5 MB max per file.\n"
+"\n"
+"「{0}」\n"
+"\n"
+"This image is too large~Please reupload!"
+msgstr ""
+"5 Mo max par fichier.\n"
+"\n"
+"「{0}」\n"
+"\n"
+"Cette image est trop grande~Veuillez la retéléverser !"
+
+#: functions.php:508
+msgid "Uploading..."
+msgstr "Téléversement..."
+
+#: functions.php:509
+msgid "Uploaded successfully~"
+msgstr "Téléversé avec succès~"
+
+#: functions.php:510
+msgid ""
+"Upload failed!\n"
+"File Name=> {0}\n"
+"code=> {1}\n"
+"{2}"
+msgstr ""
+"Échec du téléversement !\n"
+"Nom du fichier => {0}\n"
+"code => {1}\n"
+"{2}"
+
+#: functions.php:511
+msgid "Upload failed, please retry."
+msgstr "Échec du téléversement, veuillez réessayer."
+
+#: functions.php:512
+msgid "Page Load failed. HTTP {0}"
+msgstr "Échec du chargement de la page. HTTP {0}"
+
+#: functions.php:513
+msgid "Glad you come, but we've got nothing left."
+msgstr "Content que vous soyez là, mais il ne reste plus rien."
+
+#: functions.php:514 search.php:85
+msgid "Post"
+msgstr "Article"
+
+#: functions.php:515
+msgid "Tag"
+msgstr "Étiquette"
+
+#: functions.php:516
+msgid "Category"
+msgstr "Catégorie"
+
+#: functions.php:517 search.php:96
+msgid "Page"
+msgstr "Page"
+
+#: functions.php:518
+msgid "Comment"
+msgstr "Commentaire"
+
+#: functions.php:519
+msgid "Paused..."
+msgstr "En pause..."
+
+#: functions.php:520
+msgid "Loading Video..."
+msgstr "Chargement de la vidéo..."
+
+#: functions.php:521
+msgid "Downloading fonts, be aware of your data usage."
+msgstr "Téléchargement des polices, attention à votre consommation de données."
+
+#: functions.php:522
+msgid "Are you sure you want set it private?"
+msgstr "Êtes-vous sûr de vouloir le définir comme privé ?"
+
+#: functions.php:523
+msgid "You had set private comment before"
+msgstr "Vous avez déjà défini un commentaire privé"
+
+#: functions.php:603 inc/theme_plus.php:203
+msgid "Author"
+msgstr "Auteur"
+
+#: functions.php:603
+msgid "Blogger"
+msgstr "Blogueur"
+
+#: functions.php:612 functions.php:2906
+msgid "Location"
+msgstr "Emplacement"
+
+#: functions.php:618
+msgid "Private"
+msgstr "Privé"
+
+#: functions.php:620
+msgid "Yes"
+msgstr "Oui"
+
+#: functions.php:622
+msgid "No"
+msgstr "Non"
+
+#: functions.php:625
+msgid "Edit"
+msgstr "Modifier"
+
+#: functions.php:755
+msgid "This guy is so lazy ╮(╯▽╰)╭"
+msgstr "Cette personne est tellement paresseuse ╮(╯▽╰)╭"
+
+#: functions.php:1052
+msgid "Download Link"
+msgstr "Lien de téléchargement"
+
+#: functions.php:1129
+msgid "Remember me"
+msgstr "Se souvenir de moi"
+
+#: functions.php:1679
+msgid "All expand/collapse"
+msgstr "Tout déplier/replier"
+
+#: functions.php:1713
+msgid " year"
+msgstr " an"
+
+#: functions.php:1716
+msgid " post(s)"
+msgstr " article(s)"
+
+#: functions.php:1766 functions.php:1769 inc/theme_plus.php:430
+#: layouts/mo_toc_menu.php:37
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#: functions.php:2147
+msgid "<b>ERROR</b>: This email domain (<b>@"
+msgstr "<b>ERREUR</b>: Ce domaine email (<b>@"
+
+#: functions.php:2272
+msgid "QQ"
+msgstr "QQ"
+
+#: functions.php:2374
+msgid "Sidebar"
+msgstr "Barre latérale"
+
+#: functions.php:2400
+msgid "Please do not try to use Javascript in your comments!"
+msgstr ""
+"S'il vous plaît, n'essayez pas d'utiliser Javascript dans vos commentaires !"
+
+#: functions.php:2510
+msgid ""
+"<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
+"permalink.php\"> permalink </a> as plain. To do this, you may need to "
+"configure <a href=\"https://www.wpdaxue.com/wordpress-rewriterule.html\" "
+"target=\"_blank\"> pseudo-static </a>. </ b>"
+msgstr ""
+"<b> Pour une meilleure expérience, ne définissez pas le <a href=\"/wp-admin/"
+"options-permalink.php\"> permalien </a> en simple. Pour ce faire, vous "
+"devrez peut-être configurer <a href=\"https://www.wpdaxue.com/wordpress-"
+"rewriterule.html\" target=\"_blank\"> le pseudo-statique </a>. </ b>"
+
+#: functions.php:2643
+#, php-format
+msgid "%s says: "
+msgstr "%s dit : "
+
+#: functions.php:2664
+msgid "Expand / Collapse"
+msgstr "Déplier/Replier"
+
+#: functions.php:2947
+msgid "Access denied."
+msgstr "Accès refusé."
+
+#: header.php:266 layouts/sakura_header.php:124
+msgid "Random Background"
+msgstr "Contexte aléatoire"
+
+#: inc/categories-images.php:44 inc/categories-images.php:65
+msgid "category/tag image"
+msgstr "image de catégorie/étiquette"
+
+#: inc/categories-images.php:47 inc/categories-images.php:67
+#: inc/categories-images.php:196
+msgid "add image"
+msgstr "ajouter une image"
+
+#: inc/categories-images.php:68 inc/categories-images.php:197
+msgid "remove image"
+msgstr "supprimer une image"
+
+#: inc/categories-images.php:213
+msgid "image"
+msgstr "image"
+
+#: inc/categories-images.php:222
+msgid "no image"
+msgstr "aucune image"
+
+#: inc/classes/Bilibili.php:63 inc/classes/BilibiliFavList.php:57
+#: inc/classes/BilibiliFavList.php:62 inc/classes/BilibiliFavList.php:74
+#: inc/classes/MyAnimeList.php:72
+msgid "Backend error"
+msgstr "Erreur serveur"
+
+#: inc/classes/Bilibili.php:68 inc/classes/MyAnimeList.php:85
+msgid "Following "
+msgstr "Suivant "
+
+#: inc/classes/Bilibili.php:68 inc/classes/MyAnimeList.php:85
+msgid " anime."
+msgstr " anime."
+
+#: inc/classes/Bilibili.php:83
+msgid "The author seems to have hidden their bangumi list."
+msgstr "L'auteur semble avoir caché sa liste bangumi."
+
+#: inc/classes/Bilibili.php:113 inc/classes/BilibiliFavList.php:130
+msgid "Load More"
+msgstr "Charger plus"
+
+#: inc/classes/BilibiliFavList.php:90
+msgid "Item count: "
+msgstr "Nombre d'éléments : "
+
+#: inc/classes/BilibiliFavList.php:91
+msgid "Expand"
+msgstr "Déplier"
+
+#: inc/classes/BilibiliFavList.php:108
+msgid "All item has been loaded."
+msgstr "Tous les éléments ont été chargés."
+
+#: inc/classes/Cache.php:70 inc/theme_plus.php:716
+msgid "The comment is private"
+msgstr "Le commentaire est privé"
+
+#: inc/classes/Captcha.php:174
+msgid "Bad Request."
+msgstr "Mauvaise requête."
+
+#: inc/classes/Captcha.php:178
+msgid "Look like you forgot to enter the captcha."
+msgstr "Il semble que vous avez oublié d'entrer le captcha."
+
+#: inc/classes/Captcha.php:181
+msgid "Captcha timeout."
+msgstr "Expiration du captcha."
+
+#: inc/classes/Captcha.php:185
+msgid "Captcha check passed."
+msgstr "Vérification du captcha réussie."
+
+#: inc/classes/Captcha.php:188
+msgid "Captcha incorrect."
+msgstr "Captcha incorrect."
+
+#: inc/classes/Captcha.php:192
+msgid "An error has occurred."
+msgstr "Une erreur s'est produite."
+
+#: inc/classes/IpLocation.php:246 inc/classes/IpLocation.php:275
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: inc/classes/IpLocation.php:249 inc/classes/IpLocation.php:278
+msgid "Reserved Address"
+msgstr "Adresse réservée"
+
+#: inc/classes/IpLocation.php:252 inc/classes/IpLocation.php:266
+msgid "Empty Address"
+msgstr "Adresse vide"
+
+#: inc/classes/MyAnimeList.php:86
+msgid " Watched "
+msgstr " Regardé "
+
+#: inc/classes/MyAnimeList.php:86
+msgid " episodes."
+msgstr " épisodes."
+
+#: inc/classes/MyAnimeList.php:124
+msgid "Finished "
+msgstr "Terminé "
+
+#: inc/classes/MyAnimeList.php:133
+msgid "Watching "
+msgstr "En train de regarder "
+
+#: inc/classes/MyAnimeList.php:140
+msgid "Planning to Watch "
+msgstr "Prévoit de regarder "
+
+#: inc/classes/MyAnimeList.php:149
+msgid "Dropped "
+msgstr "Abandonné "
+
+#: inc/classes/MyAnimeList.php:158
+msgid "Paused "
+msgstr "En pause "
+
+#: inc/classes/Steam.php:63
+msgid "Playtime"
+msgstr "Récréation"
+
+#: inc/classes/Steam.php:64
+msgid "Last Played"
+msgstr "Dernière lecture"
+
+#: inc/classes/Steam.php:98
+msgid "Not Played Yet"
+msgstr "Pas encore joué"
+
+#: inc/classes/Steam.php:102
+msgid "minute"
+msgstr ""
+
+#: inc/classes/Steam.php:105
+msgid "hour"
+msgstr "heure"
+
+#: inc/classes/bangumi.php:104
+msgid "Bangumi ID not set."
+msgstr "Bangumi ID non défini."
+
+#: inc/classes/bangumi.php:112
+msgid "No data"
+msgstr "Aucune donnée"
+
+#: inc/classes/bangumi.php:129
+msgid "Release date: "
+msgstr "Date de sortie : "
+
+#: inc/classes/bangumi.php:132
+msgid "Watch progress: "
+msgstr "Suivez la progression : "
+
+#: inc/classes/bangumi.php:133
+msgid "No introduction yet"
+msgstr "Pas encore d'introduction"
+
+#: inc/classes/bangumi.php:145
+msgid "An error occured: "
+msgstr "Une erreur s'est produite : "
+
+#: inc/classes/bangumi.php:151
+msgid "Load more..."
+msgstr "Charger plus..."
+
+#: inc/classes/gallery.php:79
+msgid "Successfully initialized the index."
+msgstr "L'index a été initialisé avec succès."
+
+#: inc/classes/gallery.php:113 inc/classes/gallery.php:117
+msgid ""
+"The target directory is not accessible. Please check the permission settings."
+msgstr ""
+"Le répertoire cible n'est pas accessible. Veuillez vérifier les paramètres "
+"d'autorisation."
+
+#: inc/classes/gallery.php:120
+msgid ""
+"Successfully backed up images from the 'img' folder to the 'backup' folder."
+msgstr ""
+"Les images du dossier « img » vers le dossier « backup » ont été "
+"sauvegardées avec succès."
+
+#: inc/classes/gallery.php:122
+msgid ""
+"Detected content in the 'backup' folder. Verifying and attempting to restore "
+"conversion operations."
+msgstr ""
+"Contenu détecté dans le dossier « sauvegarde ». Vérification et tentative de "
+"restauration des opérations de conversion."
+
+#: inc/classes/gallery.php:153
+msgid ""
+"All images have been compressed to WebP format. The original files are "
+"stored in the 'backup' folder.<br> Please confirm correctness before "
+"reinitializing the index.<br>"
+msgstr ""
+"Toutes les images ont été compressées au format WebP. Les fichiers originaux "
+"sont stockés dans le dossier « backup ».<br> Veuillez confirmer l'exactitude "
+"avant de réinitialiser l'index.<br>"
+
+#: inc/classes/gallery.php:203
+msgid ""
+"No images found. Please contact the administrator to check if images exist "
+"in the 'iro_gallary' directory and ensure the directory is readable and "
+"writable."
+msgstr ""
+"Aucune image trouvée. Veuillez contacter l'administrateur pour vérifier si "
+"des images existent dans le répertoire 'iro_gallary' et vous assurer que le "
+"répertoire est accessible en lecture et en écriture."
+
+#: inc/template-tags.php:28
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Publié le %s"
+
+#: inc/template-tags.php:33
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr "par %s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:50 inc/template-tags.php:56
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:52
+#, php-format
+msgid "Posted in %1$s"
+msgstr "Publié dans %1$s"
+
+#: inc/template-tags.php:58
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Étiqueté %1$s"
+
+#. translators: %s: post title
+#: inc/template-tags.php:65
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+"Laisser un commentaire<span class=\"screen-reader-text\"> sur %s</span>"
+
+#. translators: %s: Name of current post
+#: inc/template-tags.php:72 tpl/content-page.php:38
+#, php-format
+msgid "Edit %s"
+msgstr "Modifier %s"
+
+#: inc/theme_plus.php:57
+msgid " days ago"
+msgstr " jours auparavant"
+
+#: inc/theme_plus.php:58
+msgid " hours ago"
+msgstr " heures auparavant"
+
+#: inc/theme_plus.php:59
+msgid " minutes ago"
+msgstr " minutes auparavant"
+
+#: inc/theme_plus.php:60
+msgid " seconds ago"
+msgstr " secondes auparavant"
+
+#: inc/theme_plus.php:67
+msgid "Posted on "
+msgstr "Publié le "
+
+#: inc/theme_plus.php:126
+msgid "Please upgrade wordpress to version 4.4+"
+msgstr "Veuillez mettre à jour WordPress à la version 4.4+"
+
+#: inc/theme_plus.php:139
+msgid "You may post nothing"
+msgstr "Vous ne pouvez rien publier"
+
+#: inc/theme_plus.php:145
+msgid "Please fill in the captcha answer"
+msgstr "Veuillez remplir la réponse captcha"
+
+#: inc/theme_plus.php:148
+msgid ""
+"Have you modified the captcha code data? Or refresh the captcha and try "
+"again?"
+msgstr ""
+"Avez-vous modifié les données du code captcha ? Ou actualisez-vous le "
+"captcha et réessayez ?"
+
+#: inc/theme_plus.php:156
+msgid "Please fill in the correct captcha answer"
+msgstr "Veuillez remplir la bonne réponse captcha"
+
+#: inc/theme_plus.php:250
+msgid "Login successful, "
+msgstr "Connexion réussie, "
+
+#: inc/theme_plus.php:251
+msgid "seconds later automatically transfer to"
+msgstr "transfert automatique dans quelques secondes vers"
+
+#: inc/theme_plus.php:262
+msgid "dashboard"
+msgstr "tableau de bord"
+
+#: inc/theme_plus.php:270
+msgid "home"
+msgstr "accueil"
+
+#: inc/theme_plus.php:282
+msgid "Change avatar"
+msgstr "Changer d'avatar"
+
+#: inc/theme_plus.php:283
+msgid "Hello, "
+msgstr "Bonjour, "
+
+#: inc/theme_plus.php:287
+msgid "Home"
+msgstr "Accueil"
+
+#: inc/theme_plus.php:289
+msgid "Manage"
+msgstr "Gérer"
+
+#: inc/theme_plus.php:291
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: inc/theme_plus.php:291
+msgid "Sign out? "
+msgstr "Se déconnecter ? "
+
+#: inc/theme_plus.php:324 inc/theme_plus.php:377
+#, php-format
+msgid "Search results for \" %s \""
+msgstr "Résultats de recherche pour « %s »"
+
+#: inc/theme_plus.php:394 tpl/content-thumbcard.php:60
+#: tpl/content-thumbcard.php:66
+msgid "Your browser does not support HTML5 video."
+msgstr "Votre navigateur ne prend pas en charge les vidéos HTML5."
+
+#: inc/theme_plus.php:425
+msgid "Signed in as"
+msgstr "Connecté en tant que"
+
+#: inc/theme_plus.php:431 layouts/mo_toc_menu.php:38
+msgid "New post"
+msgstr "Nouvelle publication"
+
+#: inc/theme_plus.php:433 layouts/mo_toc_menu.php:40
+msgid "Profile"
+msgstr "Profil"
+
+#: inc/theme_plus.php:434 layouts/mo_toc_menu.php:41
+msgid "Sign out"
+msgstr "Se déconnecter"
+
+#: inc/theme_plus.php:454 layouts/mo_toc_menu.php:52
+msgid "Log in"
+msgstr "Se connecter"
+
+#: index.php:20
+msgid "Notice"
+msgstr "Avis"
+
+#: layouts/mo_toc_menu.php:56
+msgid "Register"
+msgstr "S'inscrire"
+
+#: layouts/post-nextprev.php:15
+msgid "Previous Post"
+msgstr "Publication précédente"
+
+#: layouts/post-nextprev.php:24
+msgid "Next Post"
+msgstr "Publication suivante"
+
+#: search.php:45
+#, php-format
+msgid "Search result: %s"
+msgstr "Résultat de recherche : %s"
+
+#: search.php:76
+msgid "results found"
+msgstr "résultats trouvés"
+
+#: search.php:90
+msgid "shuoshuo"
+msgstr "Shuoshuo"
+
+#: search.php:101
+msgid "If no option is selected, all results are retrieved by default"
+msgstr ""
+"Si aucune option n'est sélectionnée, tous les résultats sont récupérés par "
+"défaut"
+
+#: search.php:102
+msgid "Click to filter"
+msgstr "Cliquez pour filtrer"
+
+#: tpl/content-none.php:14
+msgid "There is nothing here！"
+msgstr "Il n'y a rien ici !"
+
+#: tpl/content-none.php:21
+#, php-format
+msgid ""
+"Ready to post your first article? <a href=\"%1$s\">Click here to start</a>."
+msgstr ""
+"Prêt à publier votre premier article ? <a href=\"%1$s\">Cliquez ici pour "
+"commencer</a>."
+
+#: tpl/content-none.php:25
+msgid "Didn't find what you want, look at the other ones."
+msgstr "Vous n'avez pas trouvé ce que vous cherchez ? Regardez les autres."
+
+#: tpl/content-none.php:43
+msgid "We didn't seem to find what you want. Maybe you can search for it."
+msgstr ""
+"Nous n'avons pas trouvé ce que vous cherchez. Peut-être pouvez-vous le "
+"rechercher."
+
+#: tpl/content-page.php:27 tpl/content-single.php:33 tpl/single-image.php:25
+msgid "Pages:"
+msgstr "Pages :"
+
+#: tpl/content-single.php:26 tpl/content-thumbcard.php:185
+msgid "AI Excerpt"
+msgstr "Résumé AI"
+
+#: tpl/content-thumbcard.php:4
+msgid "Hit"
+msgid_plural "Hits"
+msgstr[0] "Clic"
+msgstr[1] ""
+
+#: tpl/content-thumbcard.php:41 tpl/entry-census.php:61
+msgid "Estimate Reading Time"
+msgstr "Temps de lecture estimé"
+
+#: tpl/content-thumbcard.php:171
+msgid "Sticky"
+msgstr "Épinglé"
+
+#: tpl/content-thumbcard.php:188
+msgid "Excerpt"
+msgstr "Extrait"
+
+#: tpl/entry-census.php:6
+msgid "EDIT"
+msgstr "MODIFIER"
+
+#: tpl/entry-census.php:43
+msgid "View"
+msgid_plural "Views"
+msgstr[0] "Vue"
+msgstr[1] ""
+
+#: tpl/entry-census.php:77 tpl/section-article-function.php:73
+msgid "Last updated on "
+msgstr "Dernière mise à jour le "
+
+#: tpl/entry-census.php:79 tpl/entry-census.php:81
+msgid "Last updated on"
+msgstr "Dernière mise à jour le"
+
+#: tpl/meta-comments.php:4
+msgid "NOTHING"
+msgstr "RIEN"
+
+#: tpl/meta-comments.php:4
+msgid "1 Comment"
+msgstr "1 Commentaire"
+
+#: tpl/meta-comments.php:4
+msgid "Comments"
+msgstr "Commentaires"
+
+#: tpl/meta-comments.php:4
+msgid "Comment Closed"
+msgstr "Commentaires fermés"
+
+#: tpl/meta-ert.php:8
+msgid "Less than 1 minute"
+msgstr "Moins d'une minute"
+
+#: tpl/meta-ert.php:11
+#, php-format
+msgid "%s Hour"
+msgid_plural "%s Hours"
+msgstr[0] "%s Heure"
+msgstr[1] "%s Heures"
+
+#: tpl/meta-ert.php:13
+#, php-format
+msgid "%s Minute"
+msgid_plural "%s Minutes"
+msgstr[0] "%s Minute"
+msgstr[1] "%s Minutes"
+
+#: tpl/meta-words-count.php:9
+#, php-format
+msgid "%s Word"
+msgid_plural "%s Words"
+msgstr[0] "%s Mot"
+msgstr[1] "%s Mots"
+
+#: tpl/section-article-function.php:19 tpl/section-article-function.php:24
+#, php-format
+msgid "This article is licensed under %s"
+msgstr "Cet article est sous licence %s"
+
+#: tpl/section-article-function.php:64
+msgid "This author has not provided a description."
+msgstr "Cet auteur n'a pas fourni de description."
+
+#: user/page-bangumi.php:41 user/page-bilibiliFavList.php:207
+#: user/page-followVideos.php:29
+msgid "Please fill in the Bilibili UID in Sakura Options."
+msgstr "Veuillez remplir l'UID Bilibili dans les options Sakura."
+
+#: user/page-bangumi.php:48
+msgid "Please fill in the Bangumi UID in Sakura Options."
+msgstr "Veuillez remplir l'UID Bangumi dans les options Sakura."
+
+#: user/page-bangumi.php:54
+msgid "Please fill in the My Anime List Username in Sakura Options."
+msgstr ""
+"Veuillez remplir le nom d'utilisateur My Anime List dans les options Sakura."
+
+#: user/page-login.php:18
+msgid "Remember_Me"
+msgstr "Se_souvenir_de_moi"
+
+#: user/page-register.php:14 user/page-register.php:16
+#: user/page-register.php:19 user/page-register.php:24
+#: user/page-register.php:26 user/page-register.php:29
+#: user/page-register.php:34 user/page-register.php:36
+#: user/page-register.php:43
+msgid "Error"
+msgstr "Erreur"
+
+#: user/page-register.php:14
+msgid "Please enter username."
+msgstr "Veuillez entrer un nom d'utilisateur."
+
+#: user/page-register.php:16
+msgid "Invalid characters, please enter a valid username."
+msgstr "Caractères invalides, veuillez entrer un nom d'utilisateur valide."
+
+#: user/page-register.php:19
+msgid "This username has been registered."
+msgstr "Ce nom d'utilisateur est déjà enregistré."
+
+#: user/page-register.php:24
+msgid "Please enter email address."
+msgstr "Veuillez entrer une adresse email."
+
+#: user/page-register.php:26
+msgid "Invalid email address."
+msgstr "Adresse email invalide."
+
+#: user/page-register.php:29
+msgid "This email address has been registered."
+msgstr "Cette adresse email est déjà enregistrée."
+
+#: user/page-register.php:34
+msgid "Password length is at least 6 digits."
+msgstr "Le mot de passe doit contenir au moins 6 caractères."
+
+#: user/page-register.php:36
+msgid "Inconsistent password entered twice."
+msgstr "Les mots de passe saisis ne correspondent pas."
+
+#: user/page-register.php:43
+msgid "Unable to complete registration request...Please contact"
+msgstr "Impossible de compléter la demande d'inscription...Veuillez contacter"
+
+#: user/page-register.php:43
+msgid "administrator"
+msgstr "administrateur"
+
+#: user/page-register.php:64
+msgid "User Name"
+msgstr "Nom d'utilisateur"
+
+#: user/page-register.php:65
+msgid "Email Address"
+msgstr "Adresse email"
+
+#: user/page-register.php:66
+msgid "Password"
+msgstr "Mot de passe"
+
+#: user/page-register.php:67
+msgid "Confirm your password"
+msgstr "Confirmez votre mot de passe"
+
+#: user/page-register.php:70
+msgid "Sign up"
+msgstr "S'inscrire"
+
+#: user/page-register.php:77
+msgid "Success! Redirecting......"
+msgstr "Succès ! Redirection......"
+
+#: user/page-register.php:82
+msgid "Registration is not open yet."
+msgstr "Les inscriptions ne sont pas encore ouvertes."
+
+#. Theme Name of the plugin/theme
+msgid "Sakurairo"
+msgstr "Sakurairo"
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/mirai-mamori/Sakurairo"
+msgstr "https://github.com/mirai-mamori/Sakurairo"
+
+#. Description of the plugin/theme
+msgid ""
+"A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable "
+"WordPress Theme (Based on Theme Sakura)"
+msgstr ""
+"Un thème WordPress coloré, facile à utiliser, offrant une expérience "
+"parfaite et des options de personnalisation puissantes (basé sur le thème "
+"Sakura)."
+
+#. Author of the plugin/theme
+msgid "Created by Fuukei"
+msgstr "Créé par Fuukei"
+
+#. Author URI of the plugin/theme
+msgid "https://docs.fuukei.org/"
+msgstr "https://docs.fuukei.org/"
+
+#. Template Name of the plugin/theme
+msgid "文章模版"
+msgstr "Sakurairo Template 文章模版"
+
+#. Template Name of the plugin/theme
+msgid "友情链接模版"
+msgstr "Sakurairo Template 友情链接模版"

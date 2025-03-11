@@ -31,7 +31,7 @@ $reception_background = iro_opt('reception_background');
             </svg>
           </div>
         <?php endif; ?>
-        <p style="color: #666666;"><?php echo iro_opt('footer_info', ''); ?></p>
+        <p class="footer_info"><?php echo iro_opt('footer_info', ''); ?></p>
       </div>
       <div class="footer-device function_area">
         <?php if (iro_opt('footer_yiyan')): ?>
@@ -54,28 +54,7 @@ $reception_background = iro_opt('reception_background');
     </div><!-- .site-info -->
   </footer><!-- #colophon -->
   </section><!-- #section -->
-  <!-- m-nav-center -->
-  <div id="mo-nav">
-    <?php if (iro_opt('mobile_menu_user_avatar', 'true')): ?>
-      <div class="m-avatar">
-        <?php
-          global $current_user;
-          wp_get_current_user();
-          if (is_user_logged_in()) { ?>
-              <img alt="m-avatar" src="<?php echo get_avatar_url($current_user->ID,  [64]); ?>">
-          <?php } else { ?>
-              <img alt="m-avatar" src="<?php echo iro_opt('unlisted_avatar');?>">
-          <?php } ?>
-      </div>
-    <?php endif; ?>
-    <?php if (wp_is_mobile() && iro_opt('mobile_menu_user_avatar', 'true')) m_user_menu(); ?>
-    <div class="m-search">
-      <form class="m-search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
-        <input class="m-search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
-      </form>
-    </div>
-    <?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => false]); ?>
-  </div><!-- m-nav-center end -->
+  
   <button id="moblieGoTop" title="<?php esc_attr_e('Go to top', 'sakurairo'); ?>"><i class="fa-solid fa-caret-up fa-lg"></i></button>
   <button id="changskin" title="<?php esc_attr_e('Control Panel', 'sakurairo'); ?>"><i class="fa-solid fa-compass-drafting fa-lg fa-flip"></i></button>
   <!-- search start -->
@@ -186,6 +165,13 @@ $reception_background = iro_opt('reception_background');
       top: 0;
       bottom: 0;
       z-index: -1;
+    }
+    body.dark #particles-js {
+      z-index: 0;
+    }
+    body.dark #main-container {
+      position: relative;
+      z-index: 1;
     }
   </style>
   <div id="particles-js"></div>

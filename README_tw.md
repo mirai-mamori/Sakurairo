@@ -53,19 +53,15 @@
 
 ### 引用相關：
 
-- 本主題社交網絡圖標中，流暢設計圖標引用於由Paradox設計的[Fluent圖標包](https://wwi.lanzous.com/ikyq5kgx0wb)
+- 本主題社交網絡圖標中，流暢設計圖標引用於由Paradox設計的 Fluent 圖標包
 
-- 本主題社交網絡圖標中，沐氫圖標引用於由緘默設計的[沐氫圖標包](https://www.coolapk.com/apk/com.muh2.icon)
-
-- 本主題白貓樣式徽標參考原主題作者白貓，由 Hyacm 提供方案
+- 本主題社交網絡圖標中，沐氫圖標引用於由緘默設計的沐氫圖標包
 
 ### 依賴相關：
 
 - 本主題使用 Codestar [Codestar Framework](https://github.com/Codestar/codestar-framework) 作為設置框架
 
 - 本主題使用 YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) 以提供主題更新功能
-
-- 本主題使用 orhanerday [open-ai](https://github.com/orhanerday/open-ai) 以提供 ChatGPT 相關能力
 
 ## 希望你喜歡！
 

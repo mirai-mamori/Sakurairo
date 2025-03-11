@@ -61,19 +61,15 @@
 
 ### 引用相关：
 
-- 本主题社交网络图标中，流畅设计图标引用于由Paradox设计的 [Fluent图标包](https://wwi.lanzous.com/ikyq5kgx0wb)
+- 本主题社交网络图标中，流畅设计图标引用于由Paradox设计的 Fluent 图标包
 
-- 本主题社交网络图标中，沐氢图标引用于由缄默设计的 [沐氢图标包](https://www.coolapk.com/apk/com.muh2.icon)
-
-- 本主题白猫样式Logo参考原主题作者白猫，由 Hyacm 提供方案
+- 本主题社交网络图标中，沐氢图标引用于由缄默设计的沐氢图标包
 
 ### 依赖相关：
 
 - 本主题使用 Codestar [Codestar Framework](https://github.com/Codestar/codestar-framework) 作为设置框架
 
 - 本主题使用 YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) 以提供主题更新功能
-
-- 本主题使用 orhanerday [open-ai](https://github.com/orhanerday/open-ai) 以提供 ChatGPT 相关能力
 
 ## 希望你喜欢！
 

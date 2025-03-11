@@ -1,0 +1,40 @@
+#customize-theme-controls .control-section-kirki-expanded .accordion-section-title {
+    display: none;
+  }
+  
+  #customize-theme-controls .control-section-kirki-expanded .customize-section-back {
+    display: none;
+  }
+  
+  #customize-theme-controls .customize-pane-child.control-section-kirki-expanded {
+    position: relative;
+    visibility: visible;
+    height: auto;
+    margin-left: -100%;
+  }
+  
+  #customize-theme-controls .customize-pane-child.control-section-kirki-expanded h3 .customize-action {
+    display: none;
+  }
+  
+  #customize-theme-controls .control-section-kirki-link .accordion-section-title {
+    padding-right: 10px !important
+  }
+  
+  #customize-theme-controls .control-section-kirki-link .button {
+    margin-top: -3px;
+  }
+  
+  #customize-theme-controls .customize-pane-child.current-section-parent,
+  .in-sub-panel #customize-theme-controls .customize-pane-child.current-panel-parent {
+    transform: translateX(-100%);
+  }
+  
+  .control-section-kirki-nested {
+    margin: 0 -12px;
+  }
+  
+  .control-section-kirki-outer {
+    display: list-item !important;
+  }
+  

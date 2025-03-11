@@ -1,9 +1,6 @@
 <?php
 $social_display_icon = iro_opt('vision_resource_basepath').iro_opt('social_display_icon').'/';
 $all_opt = [
-    'qq' => [
-        'link' => iro_opt('qq', '')
-    ],
     'bili' => [
         'link' => iro_opt('bili', ''),
         'icon' => 'bilibili',
@@ -73,17 +70,5 @@ $all_opt = [
         'link' => iro_opt('facebook', ''),
         'icon' => 'fb',
         'class' => 'wangyiyun'
-    ],
-    'socialdiy1' => [
-        'link' => iro_opt('socialdiy1', ''),
-        'title' => iro_opt('socialdiy1_title', 'DIY1'),
-        'img' => iro_opt('socialdiyp1'),
-        'class' => 'wangyiyun',
-    ],
-    'socialdiy2' => [
-        'link' => iro_opt('socialdiy2', ''),
-        'title' => iro_opt('socialdiy2_title', 'DIY2'),
-        'img' => iro_opt('socialdiyp2'),
-        'class' => 'wangyiyun',
     ],
 ];

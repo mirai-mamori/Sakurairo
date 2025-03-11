@@ -1,0 +1,158 @@
+// Range slider control.
+.customize-control-kirki-input-slider {
+  .kirki-control-label {
+    position: relative;
+    display: block;
+  }
+
+  .customize-control-description {
+    padding-right: 30px;
+  }
+
+  .kirki-control-form {
+    position: relative;
+    margin-bottom: 12px;
+
+    &:hover {
+      .kirki-control-reset {
+        opacity: 1;
+      }
+    }
+  }
+
+  .kirki-control-reset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 36px;
+    right: 0;
+    position: absolute;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    color: #50575e;
+    background-color: transparent;
+    border-radius: 50%;
+    border-width: 0;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 3;
+
+    // a11y: support tab focus.
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  .kirki-control-reset:hover i {
+    color: #f00;
+    transform: rotate(-45deg);
+  }
+
+  .kirki-control-reset i {
+    font-size: 12px;
+    width: auto;
+    height: auto;
+    transform: rotate(45deg);
+    transition: transform 0.3s;
+  }
+
+  .kirki-control-cols {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .kirki-control-left-col {
+    width: 75%;
+    padding-right: 13px;
+  }
+
+  .kirki-control-right-col {
+    width: 25%;
+    text-align: right;
+  }
+
+  .kirki-control-input:focus {
+    background-color: #fff;
+  }
+
+  .kirki-control-input {
+    font-size: 12px;
+    text-align: center;
+    background-color: #f7f7f7;
+    border-color: #bbb;
+    border-radius: 4px;
+    z-index: 2;
+    transition: box-shadow 0.15s;
+  }
+
+  .kirki-control-input-slider {
+    position: relative;
+    top: -1px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 5px;
+    border-radius: 2.5px;
+    background-color: #bdc3c7;
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  .kirki-control-input-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border: 1px solid #999;
+    box-shadow: none;
+    -webkit-transition: background-color 0.15s ease-in-out,
+      box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: background-color 0.15s ease-in-out,
+      box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+
+  .kirki-control-input-slider::-webkit-slider-thumb:hover,
+  .kirki-control-input-slider::-webkit-slider-thumb:focus {
+    background-color: #e7e7e7;
+  }
+
+  .kirki-control-input-slider:active::-webkit-slider-thumb {
+    background-color: #e7e7e7;
+  }
+
+  .kirki-control-input-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border: 1px solid #999;
+    box-shadow: none;
+    -moz-transition: background-color 0.15s ease-in-out,
+      box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: background-color 0.15s ease-in-out,
+      box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+
+  .kirki-control-input-slider::-moz-range-thumb:hover,
+  .kirki-control-input-slider::-moz-range-thumb:focus {
+    background-color: #e7e7e7;
+  }
+
+  ::-moz-range-track {
+    background-color: #bdc3c7;
+    border: 0;
+  }
+
+  input::-moz-focus-inner,
+  input::-moz-focus-outer {
+    border: 0;
+  }
+}

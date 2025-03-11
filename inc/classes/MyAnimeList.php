@@ -21,6 +21,17 @@ class MyAnimeList
 	 */
 	function get_data()
 	{
+		$bangumi_cache = iro_opt('bangumi_cache', true);
+
+		if ($bangumi_cache) {
+
+            $cached_content = json_decode(iro_opt('bangumi_cache_content'),true);
+
+			if ($cached_content) {
+				return $cached_content;
+			}
+		}
+
 		$username = $this->username;
 		$sort = $this->sort;
 		switch ($sort) {
@@ -43,7 +54,11 @@ class MyAnimeList
 		);
 		$response = wp_remote_get($url, $args);
 		if(is_array($response)){
-			return json_decode($response["body"], true);
+			$response = json_decode($response["body"], true);
+			if ($bangumi_cache) {
+				iro_opt_update('bangumi_cache_content', stripslashes(json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)));
+			}
+			return $response;
 		}else{
 			return false;
 		}
@@ -66,7 +81,7 @@ class MyAnimeList
 				$html .= MyAnimeList::get_item_details($item);
 				$total_episodes += $item['num_watched_episodes'];
 			}
-			$top_info = '<br><div id="bangumi-pagination"><span>' .
+			$top_info = '<br><div id="template-pagination"><span>' .
 			            __('Following ', 'sakurairo') . $item_count . __(' anime.', 'sakurairo') .
 			            __(' Watched ', 'sakurairo') . $total_episodes . __(' episodes.', 'sakurairo') .
 			            '</span></div>';
