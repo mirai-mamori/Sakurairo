@@ -67,7 +67,7 @@ $core_lib_basepath = iro_opt('core_library_basepath') ? get_template_directory_u
 // 屏蔽php日志信息
 if (iro_opt('php_notice_filter') != 'inner') {
 
-    if (iro_opt('php_notice_filter','normal') != 'normal') { //仅显示严重错误
+    if (iro_opt('php_notice_filter','normal') == 'normal') { //仅显示严重错误
         error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
         ini_set('display_errors', '1');
     }
