@@ -3214,6 +3214,9 @@ function iro_action_operator()
         case 'del_exist_theme':
             $current_theme_folder = basename(get_template_directory());
             if ($current_theme_folder != 'Sakurairo') {
+                if (!WP_Filesystem()) {
+                    require_once ABSPATH . 'wp-admin/includes/file.php';
+                }
                 WP_Filesystem();
                 global $wp_filesystem;
                 $wp_filesystem->delete(get_theme_root() . '/Sakurairo', true);
