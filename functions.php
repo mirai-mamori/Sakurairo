@@ -3045,10 +3045,16 @@ function iro_action_operator()
             echo 'Done!';
             break;
         case 'del_exist_theme':
-            WP_Filesystem();
-            global $wp_filesystem;
-            $wp_filesystem->delete(get_theme_root() . '/Sakurairo', true);
-            wp_redirect(admin_url(), 302); //重载theme_folder_check_on_admin_init流程
+            $current_theme_folder = basename(get_template_directory());
+            if ($current_theme_folder != 'Sakurairo') {
+                WP_Filesystem();
+                global $wp_filesystem;
+                $wp_filesystem->delete(get_theme_root() . '/Sakurairo', true);
+                wp_redirect(admin_url(), 302); //重载theme_folder_check_on_admin_init流程
+            } else {
+                wp_redirect(admin_url(), 302);
+                return;
+            }
     }
 }
 iro_action_operator();
