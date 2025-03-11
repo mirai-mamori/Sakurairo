@@ -37,15 +37,16 @@
 .site-title-logo,
 .site-branding img {
     display: flex;
-    max-height: 90%;
+    max-height: 100%;
     border-radius: 0px;
-    height: 90%;
+    height: 100%;
     justify-content: center;
     object-fit: contain;
 }
 
 .site-branding img{
-    max-width: none;
+    max-width: 20vw;
+    max-height: 50px;
 }
 
 .site-title{
