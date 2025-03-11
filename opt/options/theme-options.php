@@ -4105,24 +4105,24 @@ $prefix = 'iro_options';
         'default' => false
       ),
 
+      array(
+        'id' => 'lib_cdn_path',
+        'type' => 'image_select',
+        'title' => __('Public CDN Basepath','sakurairo_csf'),
+        'label' => __('Control the basepath of Frontend Resource.','sakurairo_csf'),
+        'options'     => array(
+          'https://s.nmxc.ltd/sakurairo/@'  => $vision_resource_basepath . 'options/update_source_upyun.webp',
+          'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => $vision_resource_basepath . 'options/update_source_jsd.webp',
+        ),
+        'default'     => 'https://s.nmxc.ltd/sakurairo/@'
+      ),
+
       array(        
       'id' => 'external_vendor_lib',
       'type' => 'switcher',
-      'title' => __('Provide 3rd-party library from public CDN','sakurairo_csf'),
+      'title' => __('Provide 3rd-party library from Public CDN','sakurairo_csf'),
       'label' => __('When disabled, 3rd-party dependencies, which have been built to bundles along with themes\'s entry script, will be loaded from the exact same origin with Critical Frontend Resource. ','sakurairo_csf'),
       'default' => false
-    ),
-
-    array(
-      'id' => 'lib_cdn_path',
-      'type' => 'image_select',
-      'title' => __('Public CDN Basepath','sakurairo_csf'),
-      'dependency' => array( 'external_vendor_lib', '==', 'true', '', 'true' ),
-      'options'     => array(
-        'https://s.nmxc.ltd/sakurairo/@'  => $vision_resource_basepath . 'options/update_source_upyun.webp',
-        'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => $vision_resource_basepath . 'options/update_source_jsd.webp',
-      ),
-      'default'     => 'https://s.nmxc.ltd/sakurairo/@'
     ),
 
       array(
