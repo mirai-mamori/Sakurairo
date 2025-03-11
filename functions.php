@@ -2049,6 +2049,16 @@ function update_theme_admin_notice_meta()
     wp_die();
 }
 
+// 主动resize触发wp_scripts后台排版修正，防止左侧导航栏飞出
+add_action('admin_footer',function() {
+    ?><script>
+        document.addEventListener('DOMContentLoaded',function() {
+            window.dispatchEvent(new Event("resize"));
+        })
+    </script>
+    <?php
+});
+
 //dashboard scheme
 function dash_scheme($key, $name, $col1, $col2, $col3, $base, $focus, $current, $rules = "") {
     $hash = 'rules=' . urlencode($rules);
