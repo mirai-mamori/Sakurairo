@@ -157,19 +157,6 @@ function comment_captcha(){
 }
 if(iro_opt('pca_captcha')) add_action('pre_comment_on_post', 'comment_captcha');
 
-// 纯英文评论拦截
-function scp_comment_post( $incoming_comment ) {
-  // 为什么要拦自己呢？
-  global $user_ID; 
-  if( $user_ID && current_user_can('manage_options') ) {
-    return( $incoming_comment );
-  } elseif(!preg_match('/[一-龥]/u', $incoming_comment['comment_content'])){
-    siren_ajax_comment_err('写点汉字吧。You should add some Chinese words.');
-  }
-  return( $incoming_comment );
-}
-// add_filter('preprocess_comment', 'scp_comment_post');
-// 国际化很重要
 // 评论提交
 if(!function_exists('siren_ajax_comment_callback')) {
     function siren_ajax_comment_callback(){
