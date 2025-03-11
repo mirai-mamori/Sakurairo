@@ -2914,22 +2914,23 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
     add_filter('authenticate', 'checkVaptchaAction', 20, 3);
 }
 
-/**
- * 友情链接验证码生成AJAX处理
- */
-function get_iro_captcha_callback() {
-    include_once('inc/classes/Captcha.php');
-    $img = new Sakura\API\Captcha;
-    $captcha = $img->create_captcha_img();
-    
-    wp_send_json_success(array(
-        'image' => $captcha['data'],
-        'time' => $captcha['time'],
-        'id' => $captcha['id']
-    ));
+// 获取访客 IP
+function get_the_user_ip()
+{
+    // if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    //     //check ip from share internet
+    //     $ip = $_SERVER['HTTP_CLIENT_IP'];
+    // } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    //     //to check ip is pass from proxy
+    //     $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    // } else {
+    //     $ip = $_SERVER['REMOTE_ADDR'];
+    // }
+    // 简略版
+    // $ip = $_SERVER['HTTP_CLIENT_IP'] ?: ($_SERVER['HTTP_X_FORWARDED_FOR'] ?: $_SERVER['REMOTE_ADDR']);
+    $ip = $_SERVER['HTTP_CLIENT_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
+    return apply_filters('wpb_get_ip', $ip);
 }
-add_action('wp_ajax_get_iro_captcha', 'get_iro_captcha_callback');
-add_action('wp_ajax_nopriv_get_iro_captcha', 'get_iro_captcha_callback');
 
 /*
  * 友情链接提交功能
@@ -2955,6 +2956,7 @@ function sakurairo_link_submission_handler() {
     
     if ($captcha_check['code'] != 5) {
         wp_send_json_error(array('message' => $captcha_check['msg']));
+        wp_die();
     }
 
     // Sanitize input data
