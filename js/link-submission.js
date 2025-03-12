@@ -5,8 +5,9 @@
  */
 
 // 多语言翻译
-if (typeof sakura_links === 'undefined') {
-    var sakura_links = {
+
+function i18n_form () {
+    let sakura_links = {
         // 简体中文
         'zh_CN': {
             // 按钮文本
@@ -94,46 +95,55 @@ if (typeof sakura_links === 'undefined') {
             refresh_captcha: '認証コードを更新'
         }
     };
-}
 
-// 获取页面语言，默认简体中文
-let currentLang = 'zh_CN';
-try {
-    // 优先从全局变量获取
-    if (_iro.language) {
-        currentLang = _iro.language;
-    } 
-    // 从HTML标签获取
-    else if (document.documentElement.lang) {
-        const htmlLang = document.documentElement.lang;
-        currentLang = htmlLang.replace(/-/g, '_');
+    // 获取页面语言，默认简体中文
+    let currentLang = 'zh_CN';
+    try {
+        // 优先从全局变量获取
+        if (_iro.language) {
+            currentLang = _iro.language;
+        } 
+        // 从HTML标签获取
+        else if (document.documentElement.lang) {
+            const htmlLang = document.documentElement.lang;
+            currentLang = htmlLang.replace(/-/g, '_');
+        }
+        
+        // 从URL参数获取
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('lang')) {
+            currentLang = urlParams.get('lang');
+        }
+    } catch (e) {
+        // 出错时使用默认语言
     }
-    
-    // 从URL参数获取
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has('lang')) {
-        currentLang = urlParams.get('lang');
-    }
-} catch (e) {
-    // 出错时使用默认语言
-}
 
-const validLangs = ['zh_CN', 'zh_TW', 'ja'];
-const lang = validLangs.includes(currentLang) ? currentLang : 'zh_CN';
-const i18n = sakura_links[lang] || sakura_links['zh_CN'];
+    const validLangs = ['zh_CN', 'zh_TW', 'ja'];
+    const lang = validLangs.includes(currentLang) ? currentLang : 'zh_CN';
+    const i18n = sakura_links[lang] || sakura_links['zh_CN'];
+
+    return i18n;
+}
 
 // 全局初始化函数，支持PJAX环境
 function initLinkSubmission() {
+    const i18n = i18n_form();
     const submitButton = document.getElementById('openLinkModal');
     const linkModal = document.getElementById('linkModal');
     const closeButton = document.querySelector('.link-modal-close');
     const linkForm = document.getElementById('linkSubmissionForm');
-    const statusElement = document.getElementById('formStatus');
     const captchaImg = document.getElementById('captchaImg');
     
     // 如果相关元素不存在，优雅退出
     if (!linkForm) {
         return;
+    }
+
+    let patternTitle = document.querySelector('.pattern-header span');
+    if (patternTitle) { // 移动按钮到标题后方
+        patternTitle.parentNode.insertBefore(submitButton, patternTitle.nextElementSibling);
+        submitButton.style.display = 'block';
+        submitButton.style.margin = '0 auto';
     }
 
     // 存储滚动状态
