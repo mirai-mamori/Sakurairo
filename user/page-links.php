@@ -412,10 +412,11 @@ get_header();
 				</div>
 				
 				<div class="captcha-container">
-					<img id="captchaImg" src="">
+					<img id="captchaImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDM4IDM4IiBzdHJva2U9IiM2NjYiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMSAxKSIgc3Ryb2tlLXdpZHRoPSIyIj48Y2lyY2xlIHN0cm9rZS1vcGFjaXR5PSIuMyIgY3g9IjE4IiBjeT0iMTgiIHI9IjE4Ii8+PHBhdGggZD0iTTM2IDE4YzAtOS45NC04LjA2LTE4LTE4LTE4Ij48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InJvdGF0ZSIgZnJvbT0iMCAxOCAxOCIgdG89IjM2MCAxOCAxOCIgZHVyPSIxcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L3BhdGg+PC9nPjwvZz48L3N2Zz4=" alt="验证码" title="点击刷新验证码">
 					<input type="text" id="yzm" name="yzm" placeholder="<?php _e('Verification Code', 'sakurairo'); ?>" required>
-					<input type="hidden" name="timestamp" id="timestamp">
-					<input type="hidden" name="id" id="captchaId">
+					<input type="hidden" name="timestamp" id="timestamp" value="">
+					<input type="hidden" name="id" id="captchaId" value="">
+					<input type="hidden" id="captcha-endpoint" value="<?php echo esc_url(rest_url('sakura/v1/captcha/create')); ?>">
 				</div>
 				
 				<?php wp_nonce_field('link_submission_nonce', 'link_submission_nonce'); ?>
@@ -424,153 +425,17 @@ get_header();
 		</div>
 	</div>
 
+<!-- 直接引入友情链接JavaScript -->
 <script>
-<?php $captcha_url = rest_url('sakura/v1/captcha/create'); ?>
-document.addEventListener('DOMContentLoaded', function() {
-	let ajaxurl = '/wp-admin/admin-ajax.php'
-	// Modal functionality
-	let modal = document.getElementById('linkModal');
-	let openBtn = document.getElementById('openLinkModal');
-	let closeBtn = document.querySelector('.link-modal-close');
-	let form = document.getElementById('linkSubmissionForm');
-	let statusDiv = document.getElementById('formStatus');
-	let captchaImg = document.getElementById('captchaImg');
-	let timestampInput = document.getElementById('timestamp');
-	let captchaIdInput = document.getElementById('captchaId');
-	
-	// 检查是否达到待审核链接上限
-	<?php if ($pending_links_limit_reached) : ?>
-	// 如果达到上限，禁用提交按钮和表单
-	if (openBtn) {
-		openBtn.disabled = true;
-		openBtn.addEventListener('click', function(e) {
-			e.preventDefault();
-			return false;
-		});
-	}
-	<?php else : ?>
-	// Open modal
-	openBtn.addEventListener('click', function() {
-		modal.style.display = 'block';
-		document.body.style.overflow = 'hidden';
-		loadCaptcha();
-	});
-	<?php endif; ?>
-
-	captchaImg.addEventListener('click',loadCaptcha);
-
-	function loadCaptcha() {
-		fetch("<?php echo $captcha_url //验证码接口?>")
-			.then(resp => resp.json())
-			.then(json => {
-				captchaImg.src = json["data"];
-				timestampInput.value = json["time"];
-				captchaIdInput.value = json["id"];
-			})
-			.catch(error => console.error("获取验证码失败:", error));
-	};
-	
-	// Close modal
-	closeBtn.addEventListener('click', function() {
-		modal.style.display = 'none';
-		document.body.style.overflow = 'auto';
-	});
-	
-	// Form submission
-	form.addEventListener('submit', function(event) {
-		event.preventDefault();
-		
-		// Validate form
-		let siteName = document.getElementById('siteName').value.trim();
-		let siteUrl = document.getElementById('siteUrl').value.trim();
-		let siteDescription = document.getElementById('siteDescription').value.trim();
-		let siteImage = document.getElementById('siteImage').value.trim();
-		let contactEmail = document.getElementById('contactEmail').value.trim();
-		let captchaCode = document.getElementById('yzm').value.trim();
-		
-		// Basic validation
-		if (!siteName || !siteUrl || !siteDescription || !siteImage || !contactEmail || !captchaCode) {
-			showStatus('error', '<?php _e('Please fill in all required fields', 'sakurairo'); ?>');
-			return;
-		}
-		
-		// URL validation
-		let urlPattern = /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
-		if (!urlPattern.test(siteUrl)) {
-			showStatus('error', '<?php _e('Please enter a valid URL', 'sakurairo'); ?>');
-			return;
-		}
-		
-		// Email validation
-		let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-		if (!emailPattern.test(contactEmail)) {
-			showStatus('error', '<?php _e('Please enter a valid email address', 'sakurairo'); ?>');
-			return;
-		}
-		
-		// Prepare form data for submission
-		let formData = new FormData();
-		formData.append('action', 'link_submission');
-		formData.append('siteName', siteName);
-		formData.append('siteUrl', siteUrl);
-		formData.append('siteDescription', siteDescription);
-		formData.append('siteImage', siteImage);
-		formData.append('contactEmail', contactEmail);
-		formData.append('yzm', captchaCode);
-		formData.append('timestamp', timestampInput.value);
-		formData.append('id', captchaIdInput.value);
-		formData.append('link_submission_nonce', document.getElementById('link_submission_nonce').value);
-		
-		// Disable submit button
-		let submitButton = form.querySelector('button[type="submit"]');
-		submitButton.disabled = true;
-		submitButton.innerText = '<?php _e('Submitting...', 'sakurairo'); ?>';
-		
-		// Send form data via AJAX
-		fetch(ajaxurl, {
-			method: 'POST',
-			body: formData,
-			credentials: 'same-origin'
-		})
-		.then(response => response.json())
-		.then(data => {
-			if (data.success) {
-				showStatus('success', data.data.message);
-				form.reset();
-				loadCaptcha(); // Reload captcha after successful submission
-				setTimeout(() => {
-					modal.style.display = 'none';
-					document.body.style.overflow = 'auto';
-				}, 3000);
-			} else {
-				showStatus('error', data.data.message);
-				loadCaptcha(); // Reload captcha after failed submission
-			}
-		})
-		.catch(error => {
-			console.error('Error:', error);
-			showStatus('error', '<?php _e('An error occurred. Please try again later.', 'sakurairo'); ?>');
-			loadCaptcha();
-		})
-		.finally(() => {
-			submitButton.disabled = false;
-			submitButton.innerText = '<?php _e('Submit', 'sakurairo'); ?>';
-		});
-	});
-	
-	// Show status message
-	function showStatus(type, message) {
-		statusDiv.className = 'form-status ' + (type === 'success' ? 'success-msg' : 'error-msg');
-		statusDiv.textContent = message;
-		statusDiv.style.display = 'block';
-		
-		// Auto hide after 5 seconds
-		setTimeout(() => {
-			statusDiv.style.display = 'none';
-		}, 5000);
-	}
-});
+    // 定义全局变量
+    window.ajaxurl = "<?php echo esc_url(admin_url('admin-ajax.php')); ?>";
+    // 设置语言（获取当前WordPress语言）
+    window.current_lang = "<?php echo esc_js(str_replace('-', '_', get_locale())); ?>";
+    // 验证码API地址 - 确保生成正确的绝对URL
+    window.captcha_endpoint = "<?php echo esc_url(home_url('/wp-json/sakura/v1/captcha/create')); ?>";
 </script>
+<!-- 添加缓存控制，确保加载最新版本的JS -->
+<script src="<?php echo esc_url(get_template_directory_uri() . '/js/link-submission.js?ver=' . time()); ?>"></script>
 
 <?php
 get_footer();

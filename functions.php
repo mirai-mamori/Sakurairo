@@ -2935,184 +2935,249 @@ function get_the_user_ip()
  * 友情链接提交功能
  */
 function sakurairo_link_submission_handler() {
-    // Verify nonce
-    if (!isset($_POST['link_submission_nonce']) || !wp_verify_nonce($_POST['link_submission_nonce'], 'link_submission_nonce')) {
-        wp_send_json_error(array('message' => __('Security verification failed.', 'sakurairo')));
-    }
-
-    // 检查是否达到草稿链接上限 (20个)
-    // 首先确保分类存在
-    $pending_cat_id = 0;
-    $pending_cat_name = '待审核链接';
-    $link_categories = get_terms('link_category', array('hide_empty' => false));
-    
-    foreach ($link_categories as $category) {
-        if ($category->name === $pending_cat_name) {
-            $pending_cat_id = $category->term_id;
-            break;
+    // 确保所有错误和输出都不会干扰JSON响应
+    try {
+        // 验证请求方法，只允许POST请求
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            wp_send_json_error(array('message' => __('Invalid request method.', 'sakurairo')));
+            return;
         }
-    }
-    
-    // 如果分类不存在，创建它
-    if ($pending_cat_id === 0) {
-        $new_cat = wp_insert_term($pending_cat_name, 'link_category');
-        if (!is_wp_error($new_cat)) {
-            $pending_cat_id = $new_cat['term_id'];
+
+        // 验证Referer，防止跨站请求
+        check_ajax_referer('link_submission_nonce', 'link_submission_nonce');
+
+        // 验证nonce
+        if (!isset($_POST['link_submission_nonce']) || !wp_verify_nonce($_POST['link_submission_nonce'], 'link_submission_nonce')) {
+            wp_send_json_error(array('message' => __('Security verification failed.', 'sakurairo')));
+            return; 
         }
-    }
-    
-    // 获取该分类下的链接数量
-    $pending_links_count = 0;
-    if ($pending_cat_id > 0) {
-        $pending_links = get_bookmarks(array('category' => $pending_cat_id));
-        $pending_links_count = count($pending_links);
-    }
-    
-    // 检查是否达到上限
-    if ($pending_links_count >= 20) {
-        wp_send_json_error(array('message' => __('Sorry, we are not accepting new link submissions at this time due to backlog. Please try again later.', 'sakurairo')));
-        wp_die();
-    }
 
-    // Check required fields
-    $required_fields = array('siteName', 'siteUrl', 'siteDescription', 'siteImage', 'contactEmail', 'yzm', 'timestamp', 'id');
-    foreach ($required_fields as $field) {
-        if (!isset($_POST[$field]) || empty(trim($_POST[$field]))) {
-            wp_send_json_error(array('message' => __('Please fill in all required fields.', 'sakurairo')));
-        }
-    }
-
-    // Verify captcha
-    include_once('inc/classes/Captcha.php');
-    $img = new Sakura\API\Captcha;
-    $captcha_check = $img->check_captcha($_POST['yzm'], $_POST['timestamp'], $_POST['id']);
-    
-    if ($captcha_check['code'] != 5) {
-        wp_send_json_error(array('message' => $captcha_check['msg']));
-        wp_die();
-    }
-
-    // Sanitize input data
-    $site_name = sanitize_text_field($_POST['siteName']);
-    $site_url = esc_url_raw($_POST['siteUrl']);
-    $site_description = sanitize_textarea_field($_POST['siteDescription']);
-    $site_image = esc_url_raw($_POST['siteImage']);
-    $contact_email = sanitize_email($_POST['contactEmail']);
-
-    // Validate URL format
-    if (!filter_var($site_url, FILTER_VALIDATE_URL)) {
-        wp_send_json_error(array('message' => __('Please enter a valid URL.', 'sakurairo')));
-    }
-
-    // Validate email format
-    if (!filter_var($contact_email, FILTER_VALIDATE_EMAIL)) {
-        wp_send_json_error(array('message' => __('Please enter a valid email address.', 'sakurairo')));
-    }
-
-    // Check if site URL already exists in links
-    $existing_links = get_bookmarks();
-    foreach ($existing_links as $link) {
-        if (trailingslashit($link->link_url) === trailingslashit($site_url)) {
-            wp_send_json_error(array('message' => __('This website URL is already in our links list.', 'sakurairo')));
-        }
-    }
-
-    // Prepare link data
-    $link_data = array(
-        'link_name' => $site_name,
-        'link_url' => $site_url,
-        'link_description' => $site_description,
-        'link_image' => $site_image,
-        'link_target' => '_blank',
-        'link_owner' => $contact_email,
-        'link_rating' => 0,
-        'link_visible' => 'N', // Set as not visible by default (pending)
-        'link_rel' => 'friend', // Add nofollow for security
-        'link_notes' => '', // Optional CSS for the link
-        'link_rss' => '' // Optional RSS URL
-    );
-
-    // Save as a draft link for admin approval
-    if (function_exists('wp_insert_link')) {
-        // Direct insert (requires admin approval)
-        $link_id = wp_insert_link($link_data);
-        
-        if (is_wp_error($link_id)) {
-            wp_send_json_error(array('message' => __('Failed to submit link. Please try again later.', 'sakurairo')));
+        // 限制提交频率，防止滥用
+        $ip = get_the_user_ip();
+        $transient_key = 'link_submit_' . md5($ip);
+        if (false !== get_transient($transient_key)) {
+            wp_send_json_error(array('message' => __('You are submitting too frequently. Please try again later.', 'sakurairo')));
+            return;
         }
         
-        // 将链接分配到待审核分类
+        // 设置提交频率限制（1分钟）
+        set_transient($transient_key, 1, 60);
+
+        // 检查是否达到草稿链接上限 (20个)
+        // 首先确保分类存在
+        $pending_cat_id = 0;
+        $pending_cat_name = '待审核链接';
+        $link_categories = get_terms('link_category', array('hide_empty' => false));
+        
+        foreach ($link_categories as $category) {
+            if ($category->name === $pending_cat_name) {
+                $pending_cat_id = $category->term_id;
+                break;
+            }
+        }
+        
+        // 如果分类不存在，创建它
+        if ($pending_cat_id === 0) {
+            $new_cat = wp_insert_term($pending_cat_name, 'link_category');
+            if (!is_wp_error($new_cat)) {
+                $pending_cat_id = $new_cat['term_id'];
+            }
+        }
+        
+        // 获取该分类下的链接数量
+        $pending_links_count = 0;
         if ($pending_cat_id > 0) {
-            wp_set_object_terms($link_id, array($pending_cat_id), 'link_category');
+            $pending_links = get_bookmarks(array('category' => $pending_cat_id));
+            $pending_links_count = count($pending_links);
         }
         
-        // Send notification email to admin
-        $admin_email = get_option('admin_email');
-        $blog_name = get_bloginfo('name');
-        $subject = sprintf(__('[%s] New Friend Link Submission', 'sakurairo'), $blog_name);
-        
-        $message = sprintf(__("A new friend link has been submitted on your website %s:\n\n", 'sakurairo'), $blog_name);
-        $message .= sprintf(__("Site Name: %s\n", 'sakurairo'), $site_name);
-        $message .= sprintf(__("Site URL: %s\n", 'sakurairo'), $site_url);
-        $message .= sprintf(__("Site Description: %s\n", 'sakurairo'), $site_description);
-        $message .= sprintf(__("Site Image: %s\n", 'sakurairo'), $site_image);
-        $message .= sprintf(__("Contact Email: %s\n", 'sakurairo'), $contact_email);
-        $message .= sprintf(__("IP Address: %s\n\n", 'sakurairo'), get_the_user_ip());
-        $message .= __("Please review this submission in your WordPress admin panel.\n", 'sakurairo');
-        $message .= admin_url('link-manager.php');
-        
-        wp_mail($admin_email, $subject, $message);
-        
-        wp_send_json_success(array(
-            'message' => __('Thank you! Your link has been submitted for review.', 'sakurairo')
-        ));
-    } else {
-        // Alternative method: Create a post with link details
-        $post_content = sprintf(__('Site Name: %s', 'sakurairo'), $site_name) . "\n";
-        $post_content .= sprintf(__('Site URL: %s', 'sakurairo'), $site_url) . "\n";
-        $post_content .= sprintf(__('Site Description: %s', 'sakurairo'), $site_description) . "\n";
-        $post_content .= sprintf(__('Site Image: %s', 'sakurairo'), $site_image) . "\n";
-        $post_content .= sprintf(__('Contact Email: %s', 'sakurairo'), $contact_email) . "\n";
-        $post_content .= sprintf(__('IP Address: %s', 'sakurairo'), get_the_user_ip()) . "\n";
+        // 检查是否达到上限
+        if ($pending_links_count >= 20) {
+            wp_send_json_error(array('message' => __('Sorry, we are not accepting new link submissions at this time due to backlog. Please try again later.', 'sakurairo')));
+            return;
+        }
 
-        $post_data = array(
-            'post_title' => __('Friend Link Submission: ', 'sakurairo') . $site_name,
-            'post_content' => $post_content,
-            'post_status' => 'pending',
-            'post_type' => 'post',
-            'post_author' => 1, // Default admin user
-            'meta_input' => array(
-                'link_submission_data' => array(
-                    'site_name' => $site_name,
-                    'site_url' => $site_url,
-                    'site_description' => $site_description,
-                    'site_image' => $site_image,
-                    'contact_email' => $contact_email
-                )
-            )
+        // 验证必填字段
+        $required_fields = array('siteName', 'siteUrl', 'siteDescription', 'siteImage', 'contactEmail', 'yzm', 'timestamp', 'id');
+        foreach ($required_fields as $field) {
+            if (!isset($_POST[$field]) || empty(trim($_POST[$field]))) {
+                wp_send_json_error(array('message' => __('Please fill in all required fields.', 'sakurairo')));
+                return;
+            }
+        }
+
+        // 验证验证码
+        include_once('inc/classes/Captcha.php');
+        $img = new Sakura\API\Captcha;
+        $captcha_check = $img->check_captcha(
+            sanitize_text_field($_POST['yzm']), 
+            sanitize_text_field($_POST['timestamp']), 
+            sanitize_text_field($_POST['id'])
+        );
+        
+        if ($captcha_check['code'] != 5) {
+            wp_send_json_error(array('message' => $captcha_check['msg']));
+            return;
+        }
+
+        // 清理和验证输入数据
+        $site_name = sanitize_text_field($_POST['siteName']);
+        $site_url = esc_url_raw($_POST['siteUrl']);
+        $site_description = sanitize_textarea_field($_POST['siteDescription']);
+        $site_image = esc_url_raw($_POST['siteImage']);
+        $contact_email = sanitize_email($_POST['contactEmail']);
+
+        // 验证数据长度，防止过长的输入
+        if (mb_strlen($site_name) > 100) {
+            wp_send_json_error(array('message' => __('Site name is too long.', 'sakurairo')));
+            return;
+        }
+        
+        if (mb_strlen($site_description) > 200) {
+            wp_send_json_error(array('message' => __('Site description is too long.', 'sakurairo')));
+            return;
+        }
+
+        // 验证URL格式
+        if (!filter_var($site_url, FILTER_VALIDATE_URL)) {
+            wp_send_json_error(array('message' => __('Please enter a valid URL.', 'sakurairo')));
+            return;
+        }
+        
+        // 验证图片URL格式
+        if (!filter_var($site_image, FILTER_VALIDATE_URL)) {
+            wp_send_json_error(array('message' => __('Please enter a valid image URL.', 'sakurairo')));
+            return;
+        }
+
+        // 验证邮箱格式
+        if (!filter_var($contact_email, FILTER_VALIDATE_EMAIL)) {
+            wp_send_json_error(array('message' => __('Please enter a valid email address.', 'sakurairo')));
+            return;
+        }
+
+        // 检查URL是否已存在
+        $existing_links = get_bookmarks();
+        foreach ($existing_links as $link) {
+            if (trailingslashit($link->link_url) === trailingslashit($site_url)) {
+                wp_send_json_error(array('message' => __('This website URL is already in our links list.', 'sakurairo')));
+                return;
+            }
+        }
+
+        // 准备链接数据
+        $link_data = array(
+            'link_name' => $site_name,
+            'link_url' => $site_url,
+            'link_description' => $site_description,
+            'link_image' => $site_image,
+            'link_target' => '_blank',
+            'link_owner' => $contact_email,
+            'link_rating' => 0,
+            'link_visible' => 'N', // 默认不可见（待审核）
+            'link_rel' => 'friend',
+            'link_notes' => '',
+            'link_rss' => ''
         );
 
-        $post_id = wp_insert_post($post_data);
+        // 保存链接
+        if (function_exists('wp_insert_link')) {
+            // 直接插入（需要管理员审核）
+            $link_id = wp_insert_link($link_data);
+            
+            if (is_wp_error($link_id)) {
+                wp_send_json_error(array('message' => __('Failed to submit link. Please try again later.', 'sakurairo')));
+                return;
+            }
+            
+            // 将链接分配到待审核分类
+            if ($pending_cat_id > 0) {
+                wp_set_object_terms($link_id, array($pending_cat_id), 'link_category');
+            }
+            
+            // 发送通知邮件给管理员
+            $admin_email = get_option('admin_email');
+            $blog_name = get_bloginfo('name');
+            $subject = sprintf(__('[%s] New Friend Link Submission', 'sakurairo'), $blog_name);
+            
+            $message = sprintf(__("A new friend link has been submitted on your website %s:\n\n", 'sakurairo'), $blog_name);
+            $message .= sprintf(__("Site Name: %s\n", 'sakurairo'), $site_name);
+            $message .= sprintf(__("Site URL: %s\n", 'sakurairo'), $site_url);
+            $message .= sprintf(__("Site Description: %s\n", 'sakurairo'), $site_description);
+            $message .= sprintf(__("Site Image: %s\n", 'sakurairo'), $site_image);
+            $message .= sprintf(__("Contact Email: %s\n", 'sakurairo'), $contact_email);
+            $message .= sprintf(__("IP Address: %s\n\n", 'sakurairo'), get_the_user_ip());
+            $message .= __("Please review this submission in your WordPress admin panel.\n", 'sakurairo');
+            $message .= admin_url('link-manager.php');
+            
+            wp_mail($admin_email, $subject, $message);
+            
+            // 记录IP和提交时间，用于后续分析
+            update_post_meta($link_id, '_link_submit_ip', get_the_user_ip());
+            update_post_meta($link_id, '_link_submit_time', current_time('mysql'));
+            
+            wp_send_json_success(array(
+                'message' => __('Thank you! Your link has been submitted for review.', 'sakurairo')
+            ));
+            return;
+        } else {
+            // 备用方法：创建一个含有链接详情的文章
+            $post_content = sprintf(__('Site Name: %s', 'sakurairo'), $site_name) . "\n";
+            $post_content .= sprintf(__('Site URL: %s', 'sakurairo'), $site_url) . "\n";
+            $post_content .= sprintf(__('Site Description: %s', 'sakurairo'), $site_description) . "\n";
+            $post_content .= sprintf(__('Site Image: %s', 'sakurairo'), $site_image) . "\n";
+            $post_content .= sprintf(__('Contact Email: %s', 'sakurairo'), $contact_email) . "\n";
+            $post_content .= sprintf(__('IP Address: %s', 'sakurairo'), get_the_user_ip()) . "\n";
 
-        if (is_wp_error($post_id)) {
-            wp_send_json_error(array('message' => __('Failed to submit link. Please try again later.', 'sakurairo')));
+            $post_data = array(
+                'post_title' => __('Friend Link Submission: ', 'sakurairo') . $site_name,
+                'post_content' => $post_content,
+                'post_status' => 'pending',
+                'post_type' => 'post',
+                'post_author' => 1, // 默认管理员用户
+                'meta_input' => array(
+                    'link_submission_data' => array(
+                        'site_name' => $site_name,
+                        'site_url' => $site_url,
+                        'site_description' => $site_description,
+                        'site_image' => $site_image,
+                        'contact_email' => $contact_email,
+                        'submit_ip' => get_the_user_ip(),
+                        'submit_time' => current_time('mysql')
+                    )
+                )
+            );
+
+            $post_id = wp_insert_post($post_data);
+
+            if (is_wp_error($post_id)) {
+                wp_send_json_error(array('message' => __('Failed to submit link. Please try again later.', 'sakurairo')));
+                return;
+            }
+
+            // 发送通知邮件给管理员
+            $admin_email = get_option('admin_email');
+            $blog_name = get_bloginfo('name');
+            $subject = sprintf(__('[%s] New Friend Link Submission', 'sakurairo'), $blog_name);
+            
+            $message = sprintf(__("A new friend link has been submitted on your website %s:\n\n", 'sakurairo'), $blog_name);
+            $message .= $post_content;
+            $message .= __("\nPlease review this submission in your WordPress admin panel.\n", 'sakurairo');
+            $message .= admin_url('edit.php?post_status=pending&post_type=post');
+            
+            wp_mail($admin_email, $subject, $message);
+            
+            wp_send_json_success(array(
+                'message' => __('Thank you! Your link has been submitted for review.', 'sakurairo')
+            ));
+            return;
         }
-
-        // Send notification email to admin
-        $admin_email = get_option('admin_email');
-        $blog_name = get_bloginfo('name');
-        $subject = sprintf(__('[%s] New Friend Link Submission', 'sakurairo'), $blog_name);
-        
-        $message = sprintf(__("A new friend link has been submitted on your website %s:\n\n", 'sakurairo'), $blog_name);
-        $message .= $post_content;
-        $message .= __("\nPlease review this submission in your WordPress admin panel.\n", 'sakurairo');
-        $message .= admin_url('edit.php?post_status=pending&post_type=post');
-        
-        wp_mail($admin_email, $subject, $message);
-        
-        wp_send_json_success(array(
-            'message' => __('Thank you! Your link has been submitted for review.', 'sakurairo')
+    } catch (Exception $e) {
+        // 捕获异常并返回友好的错误信息
+        wp_send_json_error(array(
+            'message' => __('An unexpected error occurred. Please try again later.', 'sakurairo')
         ));
+        return;
     }
 }
 add_action('wp_ajax_link_submission', 'sakurairo_link_submission_handler');
