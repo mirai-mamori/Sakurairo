@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-12 19:52+0900\n"
-"PO-Revision-Date: 2025-03-12 20:04+0900\n"
+"POT-Creation-Date: 2025-03-12 21:40+0900\n"
+"PO-Revision-Date: 2025-03-12 21:40+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -747,9 +747,9 @@ msgstr "棄坑 "
 msgid "Paused "
 msgstr "暫停 "
 
-#: inc/classes/Steam.php:71 inc/classes/bangumi.php:151
-msgid "Load more..."
-msgstr "載入更多..."
+#: inc/classes/Steam.php:71
+msgid "Load more"
+msgstr "載入更多"
 
 #: inc/classes/Steam.php:85
 msgid "Playtime"
@@ -794,6 +794,10 @@ msgstr "暫無介紹"
 #: inc/classes/bangumi.php:145
 msgid "An error occured: "
 msgstr "發生錯誤:"
+
+#: inc/classes/bangumi.php:151
+msgid "Load more..."
+msgstr "載入更多..."
 
 #: inc/classes/gallery.php:79
 msgid "Successfully initialized the index."

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-12 19:14+0900\n"
+"POT-Creation-Date: 2025-03-12 21:38+0900\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -725,8 +725,8 @@ msgstr ""
 msgid "Paused "
 msgstr ""
 
-#: inc/classes/Steam.php:71 inc/classes/bangumi.php:151
-msgid "Load more..."
+#: inc/classes/Steam.php:71
+msgid "Load more"
 msgstr ""
 
 #: inc/classes/Steam.php:85
@@ -771,6 +771,10 @@ msgstr ""
 
 #: inc/classes/bangumi.php:145
 msgid "An error occured: "
+msgstr ""
+
+#: inc/classes/bangumi.php:151
+msgid "Load more..."
 msgstr ""
 
 #: inc/classes/gallery.php:79

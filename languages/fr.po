@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-12 19:26+0900\n"
-"PO-Revision-Date: 2025-03-12 19:35+0900\n"
+"POT-Creation-Date: 2025-03-12 21:40+0900\n"
+"PO-Revision-Date: 2025-03-12 21:40+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -758,9 +758,9 @@ msgstr "Abandonné "
 msgid "Paused "
 msgstr "En pause "
 
-#: inc/classes/Steam.php:71 inc/classes/bangumi.php:151
-msgid "Load more..."
-msgstr "Charger plus..."
+#: inc/classes/Steam.php:71
+msgid "Load more"
+msgstr "Charger plus"
 
 #: inc/classes/Steam.php:85
 msgid "Playtime"
@@ -805,6 +805,10 @@ msgstr "Pas encore d'introduction"
 #: inc/classes/bangumi.php:145
 msgid "An error occured: "
 msgstr "Une erreur s'est produite : "
+
+#: inc/classes/bangumi.php:151
+msgid "Load more..."
+msgstr "Charger plus..."
 
 #: inc/classes/gallery.php:79
 msgid "Successfully initialized the index."

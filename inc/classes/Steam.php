@@ -68,7 +68,7 @@ class Steam
         //分页
         if ($page < $totalPages) {
             $nextPageUrl = rest_url('sakura/v1/steam') . '?page=' . ($page + 1);
-            $html .= '<div id="template-pagination">' . '<a class="pagination-next" data-href="' . esc_url($nextPageUrl) . '"><i class="fa-solid fa-guitar"></i> ' . __('Load more...', 'sakurairo') . '</a>' . '</div>';
+            $html .= '<div id="template-pagination">' . '<a class="pagination-next" data-href="' . esc_url($nextPageUrl) . '"><i class="fa-solid fa-guitar"></i> ' . __('Load more', 'sakurairo') . '</a>' . '</div>';
         }
 
         return $html;
