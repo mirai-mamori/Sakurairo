@@ -447,7 +447,8 @@ get_header();
     window.captcha_endpoint = "<?php echo esc_url(home_url('/wp-json/sakura/v1/captcha/create')); ?>";
 </script>
 <!-- 添加缓存控制，确保加载最新版本的JS -->
-<script src="<?php echo esc_url(get_template_directory_uri() . '/js/link-submission.js?ver=' . time()); ?>"></script>
+<?php global $core_lib_basepath; ?>
+<script src="<?php echo esc_url($core_lib_basepath . '/js/link-submission.js?ver=' . IRO_VERSION); ?>"></script>
 
 <?php
 get_footer();
