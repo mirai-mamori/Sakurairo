@@ -67,7 +67,7 @@ $core_lib_basepath = iro_opt('core_library_basepath') ? get_template_directory_u
 // 屏蔽php日志信息
 if (iro_opt('php_notice_filter') != 'inner') {
 
-    if (iro_opt('php_notice_filter','normal') != 'normal') { //仅显示严重错误
+    if (iro_opt('php_notice_filter','normal') == 'normal') { //仅显示严重错误
         error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
         ini_set('display_errors', '1');
     }
@@ -163,17 +163,6 @@ if (!function_exists('akina_setup')) {
             )
         );
 
-        // Set up the WordPress core custom background feature.
-        add_theme_support(
-            'custom-background',
-            apply_filters(
-                'akina_custom_background_args',
-                array(
-                    'default-color' => 'ffffff',
-                    'default-image' => '',
-                )
-            )
-        );
         /**
          * 废弃过时的wp_title
          * @seealso https://make.wordpress.org/core/2015/10/20/document-title-in-4-4/
@@ -2049,6 +2038,16 @@ function update_theme_admin_notice_meta()
     wp_die();
 }
 
+// 主动resize触发wp_scripts后台排版修正，防止左侧导航栏飞出
+add_action('admin_footer',function() {
+    ?><script>
+        document.addEventListener('DOMContentLoaded',function() {
+            window.dispatchEvent(new Event("resize"));
+        })
+    </script>
+    <?php
+});
+
 //dashboard scheme
 function dash_scheme($key, $name, $col1, $col2, $col3, $base, $focus, $current, $rules = "") {
     $hash = 'rules=' . urlencode($rules);
@@ -3214,6 +3213,9 @@ function iro_action_operator()
         case 'del_exist_theme':
             $current_theme_folder = basename(get_template_directory());
             if ($current_theme_folder != 'Sakurairo') {
+                if (!WP_Filesystem()) {
+                    require_once ABSPATH . 'wp-admin/includes/file.php';
+                }
                 WP_Filesystem();
                 global $wp_filesystem;
                 $wp_filesystem->delete(get_theme_root() . '/Sakurairo', true);
