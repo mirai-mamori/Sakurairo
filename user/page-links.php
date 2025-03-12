@@ -364,7 +364,9 @@ get_header();
 		$pending_links_limit_reached = function_exists('sakurairo_check_pending_links_limit') ? sakurairo_check_pending_links_limit() : false;
 
 			function submit_button_struct($pending_links_limit_reached) { // 按钮结构?>
-				<button class="submit-link-btn" id="openLinkModal" <?php echo $pending_links_limit_reached ? 'disabled' : ''; ?>>
+				<button class="submit-link-btn" id="openLinkModal" <?php echo $pending_links_limit_reached ? 'disabled' : ''; 
+				if (iro_opt('patternimg') || get_post_thumbnail_id(get_the_ID())) { // 有头图，准备样式和动画，将由js迁移
+				?> style="display:block; margin:0 auto; animation:homepage-load-animation 2s;" <?php } ?> >
 					<?php _e('Submit Link', 'sakurairo'); ?>
 				</button>
 			<?php }

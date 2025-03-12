@@ -142,8 +142,6 @@ function initLinkSubmission() {
     let patternTitle = document.querySelector('.pattern-header span');
     if (patternTitle) { // 移动按钮到标题后方
         patternTitle.parentNode.insertBefore(submitButton, patternTitle.nextElementSibling);
-        submitButton.style.display = 'block';
-        submitButton.style.margin = '0 auto';
     }
 
     // 存储滚动状态
