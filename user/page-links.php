@@ -192,7 +192,7 @@ get_header();
 	}
 
 	.submit-link-btn {
-		background-color: var(--theme-skin, #FE9600);
+		background-color: var(--theme-skin);
 		color: white;
 		border: none;
 		border-radius: 20px;
@@ -205,7 +205,7 @@ get_header();
 	}
 
 	.submit-link-btn:hover {
-		background-color: var(--theme-skin-matching, #FE9600);
+		background-color: var(--theme-skin-matching);
 		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 	}
 
@@ -255,7 +255,7 @@ get_header();
 	}
 
 	.link-modal-close:hover {
-		color: var(--theme-skin, #FE9600);
+		color: var(--theme-skin);
 	}
 
 	.link-form-group {
@@ -291,16 +291,15 @@ get_header();
 	.link-form-group input:focus,
 	.link-form-group textarea:focus {
 		border-color: var(--theme-skin);
-		box-shadow: 0 0 5px rgba(254, 150, 0, 0.3);
 		outline: none;
 	}
 
 	.link-form-submit {
-		background-color: var(--theme-skin);
-		color: white;
-		border: none;
+		background-color: var(--theme-skin-matching);
+		color: #fff;
+		border: 3px solid var(--theme-skin-matching);
 		border-radius: 30px;
-        padding: 15px 30px;
+        padding: 14px 29px;
         font-size: 20px;
 		cursor: pointer;
 		transition: all 0.3s ease;
@@ -310,7 +309,9 @@ get_header();
 	}
 
 	.link-form-submit:hover {
-		background-color: var(--theme-skin-matching);
+		background-color: #fff;
+		color: var(--theme-skin-matching);
+		border: 3px solid var(--theme-skin-matching);
 	}
 
 	.form-status {
@@ -384,7 +385,7 @@ get_header();
 		<div class="link-modal-content">
 			<span class="link-modal-close">&times;</span>
 			<h2 style="margin: 0;"><?php _e('Submit Your Link', 'sakurairo'); ?></h2>
-			<p><?php _e('Please fill out the form below to submit your website link.', 'sakurairo'); ?></p>
+			<p style="margin-top: 0.3em;"><?php _e('Please fill out the form below to submit your website link.', 'sakurairo'); ?></p>
 			
 			<div id="formStatus" class="form-status"></div>
 			

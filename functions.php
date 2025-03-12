@@ -2961,12 +2961,12 @@ function sakurairo_link_submission_handler() {
         }
         
         // 设置提交频率限制（1分钟）
-        set_transient($transient_key, 1, 60);
+        set_transient($transient_key, 1, 600);
 
         // 检查是否达到草稿链接上限 (20个)
         // 首先确保分类存在
         $pending_cat_id = 0;
-        $pending_cat_name = '待审核链接';
+        $pending_cat_name = __('Pending Links', 'sakurairo');
         $link_categories = get_terms('link_category', array('hide_empty' => false));
         
         foreach ($link_categories as $category) {
@@ -3189,7 +3189,7 @@ add_action('wp_ajax_nopriv_link_submission', 'sakurairo_link_submission_handler'
 function sakurairo_check_pending_links_limit() {
     // 获取待审核链接分类
     $pending_cat_id = 0;
-    $pending_cat_name = '待审核链接';
+    $pending_cat_name = __('Pending Links', 'sakurairo');
     $link_categories = get_terms('link_category', array('hide_empty' => false));
     
     foreach ($link_categories as $category) {

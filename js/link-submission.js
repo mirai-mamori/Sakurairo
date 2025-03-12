@@ -9,13 +9,15 @@ const sakura_links = {
     // 简体中文
     'zh_CN': {
         // 按钮文本
-        submit_button: '提交',
         submitting: '提交中...',
         
         // 常规错误提示
         server_error: '服务器错误：',
         connection_error: '连接错误，请稍后重试',
         timeout_error: '请求超时，请稍后重试',
+        
+        // 成功提示
+        submission_success: '友情链接提交成功，请等待审核！',
         
         // 验证错误提示
         name_required: '请输入网站名称',
@@ -36,13 +38,15 @@ const sakura_links = {
     // 繁体中文
     'zh_TW': {
         // 按钮文本
-        submit_button: '提交',
         submitting: '提交中...',
         
         // 常规错误提示
         server_error: '伺服器錯誤：',
         connection_error: '連接錯誤，請稍後重試',
         timeout_error: '請求超時，請稍後重試',
+        
+        // 成功提示
+        submission_success: '友情鏈接提交成功，請等待審核！',
         
         // 验证错误提示
         name_required: '請輸入網站名稱',
@@ -63,13 +67,15 @@ const sakura_links = {
     // 日语
     'ja': {
         // 按钮文本
-        submit_button: '送信',
         submitting: '送信中...',
         
         // 常规错误提示
         server_error: 'サーバーエラー：',
         connection_error: '接続エラー、後でもう一度お試しください',
         timeout_error: 'リクエストがタイムアウトしました、後でもう一度お試しください',
+        
+        // 成功提示
+        submission_success: 'リンク申請が成功しました。審査をお待ちください！',
         
         // 验证错误提示
         name_required: 'サイト名を入力してください',
@@ -128,30 +134,143 @@ function initLinkSubmission() {
         return;
     }
 
+    // 存储滚动状态
+    let isScrollDisabled = false;
+    let scrollPosition = 0;
+
+    // 禁用页面滚动
+    const disableScroll = () => {
+        if (isScrollDisabled) return;
+        scrollPosition = window.pageYOffset;
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+        document.body.style.top = `-${scrollPosition}px`;
+        isScrollDisabled = true;
+        // 存储状态到 sessionStorage，以便在页面重新加载时检查
+        try {
+            sessionStorage.setItem('scrollDisabled', 'true');
+            sessionStorage.setItem('scrollPosition', scrollPosition.toString());
+        } catch (e) {
+            console.warn('Failed to save scroll state to sessionStorage');
+        }
+    };
+
+    // 启用页面滚动
+    const enableScroll = () => {
+        if (!isScrollDisabled && !sessionStorage.getItem('scrollDisabled')) return;
+        
+        // 获取存储的滚动位置
+        const storedPosition = sessionStorage.getItem('scrollPosition');
+        if (storedPosition !== null) {
+            scrollPosition = parseInt(storedPosition, 10);
+        }
+        
+        document.body.style.removeProperty('overflow');
+        document.body.style.removeProperty('position');
+        document.body.style.removeProperty('width');
+        document.body.style.removeProperty('top');
+        window.scrollTo(0, scrollPosition);
+        isScrollDisabled = false;
+        
+        // 清除存储的状态
+        try {
+            sessionStorage.removeItem('scrollDisabled');
+            sessionStorage.removeItem('scrollPosition');
+        } catch (e) {
+            console.warn('Failed to clear scroll state from sessionStorage');
+        }
+    };
+
+    // 清理函数 - 用于页面卸载时
+    const cleanup = () => {
+        enableScroll();
+        // 移除所有事件监听器
+        if (submitButton) {
+            submitButton.removeEventListener('click', handleModalOpen);
+        }
+        if (closeButton) {
+            closeButton.removeEventListener('click', handleModalClose);
+        }
+        if (linkModal) {
+            window.removeEventListener('click', handleOutsideClick);
+        }
+        // 移除所有页面级事件监听器
+        window.removeEventListener('beforeunload', cleanup);
+        window.removeEventListener('pagehide', cleanup);
+        window.removeEventListener('unload', cleanup);
+        document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+
+    // 处理页面可见性变化
+    const handleVisibilityChange = () => {
+        if (document.visibilityState === 'hidden') {
+            enableScroll();
+        }
+    };
+
+    // 事件处理函数
+    const handleModalOpen = (e) => {
+        e.preventDefault();
+        linkModal.style.display = 'block';
+        disableScroll();
+        loadCaptcha();
+    };
+
+    const handleModalClose = () => {
+        linkModal.style.display = 'none';
+        enableScroll();
+    };
+
+    const handleOutsideClick = (e) => {
+        if (e.target === linkModal) {
+            linkModal.style.display = 'none';
+            enableScroll();
+        }
+    };
+
+    // 初始化时检查并恢复滚动状态
+    if (sessionStorage.getItem('scrollDisabled')) {
+        enableScroll();
+    }
+
     // 初始化模态框
     if (submitButton && linkModal) {
-        submitButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            linkModal.style.display = 'block';
-            loadCaptcha();
-        });
+        submitButton.addEventListener('click', handleModalOpen);
     }
 
     // 关闭模态框
     if (closeButton && linkModal) {
-        closeButton.addEventListener('click', () => {
-            linkModal.style.display = 'none';
-        });
+        closeButton.addEventListener('click', handleModalClose);
     }
 
     // 点击模态框外部关闭
     if (linkModal) {
-        window.addEventListener('click', (e) => {
-            if (e.target === linkModal) {
-                linkModal.style.display = 'none';
-            }
-        });
+        window.addEventListener('click', handleOutsideClick);
     }
+
+    // 添加多个页面卸载相关的事件监听
+    window.addEventListener('beforeunload', cleanup);
+    window.addEventListener('pagehide', cleanup);
+    window.addEventListener('unload', cleanup);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // 为PJAX环境添加清理
+    document.addEventListener('pjax:beforeReplace', cleanup);
+    document.addEventListener('akina:pjax:beforeReplace', cleanup);
+    
+    // 监听所有可能的链接点击
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (link && link.href && !link.target && !e.ctrlKey && !e.shiftKey && !e.metaKey && !e.altKey) {
+            enableScroll();
+        }
+    }, true);
+
+    // 监听表单提交
+    document.addEventListener('submit', () => {
+        enableScroll();
+    }, true);
 
     // 刷新验证码（点击验证码图片时）
     if (captchaImg) {
@@ -190,7 +309,6 @@ function initLinkSubmission() {
             const submitButton = linkForm.querySelector('.link-form-submit');
             if (submitButton) {
                 submitButton.disabled = true;
-                submitButton.textContent = i18n.submitting;
             }
             
             displayStatus('info', i18n.submitting);
@@ -205,7 +323,6 @@ function initLinkSubmission() {
                     isSubmitting = false;
                     if (submitButton) {
                         submitButton.disabled = false;
-                        submitButton.textContent = i18n.submit_button;
                     }
                     displayStatus('error', i18n.timeout_error);
                     loadCaptcha();
@@ -243,12 +360,11 @@ function initLinkSubmission() {
                 isSubmitting = false;
                 if (submitButton) {
                     submitButton.disabled = false;
-                    submitButton.textContent = i18n.submit_button;
                 }
                 
                 if (data.success) {
-                    // 成功提交
-                    displayStatus('success', data.data.message);
+                    // 成功提交 - 优先使用服务器返回的消息，如果没有则使用前端翻译
+                    displayStatus('success', data.data.message || i18n.submission_success);
                     linkForm.reset();
                 } else {
                     // 提交失败
@@ -262,7 +378,6 @@ function initLinkSubmission() {
                 
                 if (submitButton) {
                     submitButton.disabled = false;
-                    submitButton.textContent = i18n.submit_button;
                 }
                 
                 displayStatus('error', error.message || i18n.connection_error);
@@ -339,7 +454,7 @@ function validateForm() {
         siteUrl.value = siteUrlValue;
     }
     
-    const urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/i;
+    const urlPattern = /^https?:\/\/([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[^\s]*)?$/;
     if (!urlPattern.test(siteUrlValue)) {
         displayStatus('error', i18n.invalid_url);
         return false;
