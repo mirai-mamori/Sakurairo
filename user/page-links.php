@@ -355,25 +355,44 @@ get_header();
 		flex: 1;
 	}
 </style>
+
 	<?php while (have_posts()) : the_post(); ?>
 		<?php $post = get_post(); ?>
 		<?php 
+		$friend_link_form = (iro_opt('friend_link_form',true)) ?? true;
 		// 检查待审核链接数量是否达到上限
 		$pending_links_limit_reached = function_exists('sakurairo_check_pending_links_limit') ? sakurairo_check_pending_links_limit() : false;
-		?>
-		<?php if (!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID())) : ?>
-			<div class="title-container">
-				<span class="linkss-title"><?php echo esc_html(get_the_title()); ?></span>
+
+			function submit_button_struct($pending_links_limit_reached) { // 按钮结构?>
 				<button class="submit-link-btn" id="openLinkModal" <?php echo $pending_links_limit_reached ? 'disabled' : ''; ?>>
 					<?php _e('Submit Link', 'sakurairo'); ?>
 				</button>
+			<?php }
+
+			function too_many_pending_links_notice() { // 提示结构?>
+				<div class="link-limit-notice">
+					<?php _e('Sorry, we are not accepting new link submissions at this time due to backlog. Please try again later.', 'sakurairo'); ?>
+				</div>
+			<?php } ?>
+
+		<?php if (!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID())) { //没有头图?>
+
+			<div class="title-container">
+				<span class="linkss-title"><?php echo esc_html(get_the_title()); ?></span>
+				<?php if ($friend_link_form) {submit_button_struct($pending_links_limit_reached);?>
 			</div>
-			<?php if ($pending_links_limit_reached) : ?>
-			<div class="link-limit-notice">
-				<?php _e('Sorry, we are not accepting new link submissions at this time due to backlog. Please try again later.', 'sakurairo'); ?>
-			</div>
-			<?php endif; ?>
-		<?php endif; ?>
+				<?php if ($pending_links_limit_reached) { too_many_pending_links_notice(); } 
+					  }
+			
+		 	} else { // 有头图
+
+			if ($friend_link_form) {
+				submit_button_struct($pending_links_limit_reached);
+				if ($pending_links_limit_reached) { too_many_pending_links_notice(); }
+			}
+
+		} ?>
+		
 		<article <?php post_class("post-item"); ?>>
 			<?php if (iro_opt('article_auto_toc', 'true') && check_title_tags($post->post_content)) : //加载目录 ?>
 				<div class="has-toc have-toc"></div>
@@ -387,6 +406,8 @@ get_header();
 		</article>
 		<?php get_template_part('layouts/sidebox'); //加载目录容器 ?> 
 	<?php endwhile; ?>
+
+<?php if ($friend_link_form) : //表单开始?>
 
 	<!-- Link Submission Modal -->
 	<div id="linkModal" class="link-modal">
@@ -437,18 +458,19 @@ get_header();
 		</div>
 	</div>
 
-<!-- 直接引入友情链接JavaScript -->
-<script>
-    // 定义全局变量
-    window.ajaxurl = "<?php echo esc_url(admin_url('admin-ajax.php')); ?>";
-    // 设置语言（获取当前WordPress语言）
-    window.current_lang = "<?php echo esc_js(str_replace('-', '_', get_locale())); ?>";
-    // 验证码API地址 - 确保生成正确的绝对URL
-    window.captcha_endpoint = "<?php echo esc_url(home_url('/wp-json/sakura/v1/captcha/create')); ?>";
-</script>
-<!-- 添加缓存控制，确保加载最新版本的JS -->
-<?php global $core_lib_basepath; ?>
-<script src="<?php echo esc_url($core_lib_basepath . '/js/link-submission.js?ver=' . IRO_VERSION); ?>"></script>
+	<!-- 直接引入友情链接JavaScript -->
+	<script>
+		// 定义全局变量
+		window.ajaxurl = "<?php echo esc_url(admin_url('admin-ajax.php')); ?>";
+		// 设置语言（获取当前WordPress语言）
+		window.current_lang = "<?php echo esc_js(str_replace('-', '_', get_locale())); ?>";
+		// 验证码API地址 - 确保生成正确的绝对URL
+		window.captcha_endpoint = "<?php echo esc_url(home_url('/wp-json/sakura/v1/captcha/create')); ?>";
+	</script>
+	<!-- 添加缓存控制，确保加载最新版本的JS -->
+	<script src="<?php echo esc_url(get_template_directory_uri() . '/js/link-submission.js?ver=' . time()); ?>"></script>
+
+<?php endif; // 表单结束?>
 
 <?php
 get_footer();
