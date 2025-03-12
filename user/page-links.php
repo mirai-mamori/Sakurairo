@@ -259,19 +259,20 @@ get_header();
 	}
 
 	.link-form-group {
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 	}
 
 	.link-form-group label {
 		display: block;
-		margin-bottom: 8px;
+		margin-bottom: 5px;
 		font-weight: 500;
 	}
 
 	.link-form-group input,
-	.link-form-group textarea {
+	.link-form-group textarea,
+	.captcha-container input {
 		width: 100%;
-		padding: 10px 12px;
+		padding: 7px 12px;
 		border: 1px solid #ddd;
 		border-radius: 6px;
 		font-size: 14px;
@@ -280,7 +281,8 @@ get_header();
 	}
 
 	body.dark .link-form-group input,
-	body.dark .link-form-group textarea {
+	body.dark .link-form-group textarea,
+	body.dark .captcha-container input{
 		background-color: var(--dark-bg-primary);
 		border-color: var(--dark-border-color);
 		color: var(--dark-text-primary);
@@ -288,26 +290,27 @@ get_header();
 
 	.link-form-group input:focus,
 	.link-form-group textarea:focus {
-		border-color: var(--theme-skin, #FE9600);
+		border-color: var(--theme-skin);
 		box-shadow: 0 0 5px rgba(254, 150, 0, 0.3);
 		outline: none;
 	}
 
 	.link-form-submit {
-		background-color: var(--theme-skin, #FE9600);
+		background-color: var(--theme-skin);
 		color: white;
 		border: none;
-		border-radius: 6px;
-		padding: 10px 20px;
-		font-size: 16px;
+		border-radius: 30px;
+        padding: 15px 30px;
+        font-size: 20px;
 		cursor: pointer;
 		transition: all 0.3s ease;
 		display: block;
-		width: 100%;
+		box-shadow: none;
+		float: right;
 	}
 
 	.link-form-submit:hover {
-		background-color: var(--theme-skin-matching, #FE9600);
+		background-color: var(--theme-skin-matching);
 	}
 
 	.form-status {
@@ -380,7 +383,7 @@ get_header();
 	<div id="linkModal" class="link-modal">
 		<div class="link-modal-content">
 			<span class="link-modal-close">&times;</span>
-			<h2><?php _e('Submit Your Link', 'sakurairo'); ?></h2>
+			<h2 style="margin: 0;"><?php _e('Submit Your Link', 'sakurairo'); ?></h2>
 			<p><?php _e('Please fill out the form below to submit your website link.', 'sakurairo'); ?></p>
 			
 			<div id="formStatus" class="form-status"></div>
@@ -420,7 +423,7 @@ get_header();
 				</div>
 				
 				<?php wp_nonce_field('link_submission_nonce', 'link_submission_nonce'); ?>
-				<button type="submit" class="link-form-submit"><?php _e('Submit', 'sakurairo'); ?></button>
+				<button type="submit" class="link-form-submit"><i class="fa-solid fa-paper-plane"></i></button>
 			</form>
 		</div>
 	</div>
