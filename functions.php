@@ -2940,6 +2940,40 @@ function sakurairo_link_submission_handler() {
         wp_send_json_error(array('message' => __('Security verification failed.', 'sakurairo')));
     }
 
+    // 检查是否达到草稿链接上限 (20个)
+    // 首先确保分类存在
+    $pending_cat_id = 0;
+    $pending_cat_name = '待审核链接';
+    $link_categories = get_terms('link_category', array('hide_empty' => false));
+    
+    foreach ($link_categories as $category) {
+        if ($category->name === $pending_cat_name) {
+            $pending_cat_id = $category->term_id;
+            break;
+        }
+    }
+    
+    // 如果分类不存在，创建它
+    if ($pending_cat_id === 0) {
+        $new_cat = wp_insert_term($pending_cat_name, 'link_category');
+        if (!is_wp_error($new_cat)) {
+            $pending_cat_id = $new_cat['term_id'];
+        }
+    }
+    
+    // 获取该分类下的链接数量
+    $pending_links_count = 0;
+    if ($pending_cat_id > 0) {
+        $pending_links = get_bookmarks(array('category' => $pending_cat_id));
+        $pending_links_count = count($pending_links);
+    }
+    
+    // 检查是否达到上限
+    if ($pending_links_count >= 20) {
+        wp_send_json_error(array('message' => __('Sorry, we are not accepting new link submissions at this time due to backlog. Please try again later.', 'sakurairo')));
+        wp_die();
+    }
+
     // Check required fields
     $required_fields = array('siteName', 'siteUrl', 'siteDescription', 'siteImage', 'contactEmail', 'yzm', 'timestamp', 'id');
     foreach ($required_fields as $field) {
@@ -3005,6 +3039,11 @@ function sakurairo_link_submission_handler() {
         
         if (is_wp_error($link_id)) {
             wp_send_json_error(array('message' => __('Failed to submit link. Please try again later.', 'sakurairo')));
+        }
+        
+        // 将链接分配到待审核分类
+        if ($pending_cat_id > 0) {
+            wp_set_object_terms($link_id, array($pending_cat_id), 'link_category');
         }
         
         // Send notification email to admin
@@ -3078,6 +3117,35 @@ function sakurairo_link_submission_handler() {
 }
 add_action('wp_ajax_link_submission', 'sakurairo_link_submission_handler');
 add_action('wp_ajax_nopriv_link_submission', 'sakurairo_link_submission_handler');
+
+/**
+ * 检查友情链接待审核数量，返回是否达到上限
+ */
+function sakurairo_check_pending_links_limit() {
+    // 获取待审核链接分类
+    $pending_cat_id = 0;
+    $pending_cat_name = '待审核链接';
+    $link_categories = get_terms('link_category', array('hide_empty' => false));
+    
+    foreach ($link_categories as $category) {
+        if ($category->name === $pending_cat_name) {
+            $pending_cat_id = $category->term_id;
+            break;
+        }
+    }
+    
+    // 如果分类不存在，返回false（未达到上限）
+    if ($pending_cat_id === 0) {
+        return false;
+    }
+    
+    // 获取该分类下的链接数量
+    $pending_links = get_bookmarks(array('category' => $pending_cat_id));
+    $pending_links_count = count($pending_links);
+    
+    // 检查是否达到上限
+    return $pending_links_count >= 20;
+}
 
 /**
  * 返回是否应当显示文章标题。

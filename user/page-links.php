@@ -135,6 +135,33 @@ get_header();
 		color: var(--dark-text-primary);
 	}
 
+	/* 链接上限提示横幅样式 */
+	.link-limit-notice {
+		background-color: #fff3cd;
+		color: #856404;
+		padding: 12px 20px;
+		margin-bottom: 30px;
+		border-radius: 6px;
+		border-left: 4px solid #ffeeba;
+		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+		text-align: center;
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	body.dark .link-limit-notice {
+		background-color: rgba(255, 193, 7, 0.2);
+		color: #ffc107;
+		border-left-color: #ffc107;
+	}
+
+	.submit-link-btn:disabled {
+		background-color: #cccccc;
+		cursor: not-allowed;
+		opacity: 0.7;
+	}
+
 	/* Responsive styles */
 	@media (max-width: 860px) {
 		.links ul li {
@@ -318,11 +345,22 @@ get_header();
 </style>
 	<?php while (have_posts()) : the_post(); ?>
 		<?php $post = get_post(); ?>
+		<?php 
+		// 检查待审核链接数量是否达到上限
+		$pending_links_limit_reached = function_exists('sakurairo_check_pending_links_limit') ? sakurairo_check_pending_links_limit() : false;
+		?>
 		<?php if (!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID())) : ?>
 			<div class="title-container">
 				<span class="linkss-title"><?php echo esc_html(get_the_title()); ?></span>
-				<button class="submit-link-btn" id="openLinkModal"><?php _e('Submit Link', 'sakurairo'); ?></button>
+				<button class="submit-link-btn" id="openLinkModal" <?php echo $pending_links_limit_reached ? 'disabled' : ''; ?>>
+					<?php _e('Submit Link', 'sakurairo'); ?>
+				</button>
 			</div>
+			<?php if ($pending_links_limit_reached) : ?>
+			<div class="link-limit-notice">
+				<?php _e('Sorry, we are not accepting new link submissions at this time due to backlog. Please try again later.', 'sakurairo'); ?>
+			</div>
+			<?php endif; ?>
 		<?php endif; ?>
 		<article <?php post_class("post-item"); ?>>
 			<?php if (iro_opt('article_auto_toc', 'true') && check_title_tags($post->post_content)) : //加载目录 ?>
@@ -400,12 +438,24 @@ document.addEventListener('DOMContentLoaded', function() {
 	let timestampInput = document.getElementById('timestamp');
 	let captchaIdInput = document.getElementById('captchaId');
 	
+	// 检查是否达到待审核链接上限
+	<?php if ($pending_links_limit_reached) : ?>
+	// 如果达到上限，禁用提交按钮和表单
+	if (openBtn) {
+		openBtn.disabled = true;
+		openBtn.addEventListener('click', function(e) {
+			e.preventDefault();
+			return false;
+		});
+	}
+	<?php else : ?>
 	// Open modal
 	openBtn.addEventListener('click', function() {
 		modal.style.display = 'block';
 		document.body.style.overflow = 'hidden';
 		loadCaptcha();
 	});
+	<?php endif; ?>
 
 	captchaImg.addEventListener('click',loadCaptcha);
 
@@ -424,14 +474,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	closeBtn.addEventListener('click', function() {
 		modal.style.display = 'none';
 		document.body.style.overflow = 'auto';
-	});
-	
-	// Close modal if clicked outside
-	window.addEventListener('click', function(event) {
-		if (event.target === modal) {
-			modal.style.display = 'none';
-			document.body.style.overflow = 'auto';
-		}
 	});
 	
 	// Form submission
