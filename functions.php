@@ -163,6 +163,9 @@ if (!function_exists('akina_setup')) {
             )
         );
 
+        // 注册小工具支持
+        add_theme_support('widgets');
+
         /**
          * 废弃过时的wp_title
          * @seealso https://make.wordpress.org/core/2015/10/20/document-title-in-4-4/
