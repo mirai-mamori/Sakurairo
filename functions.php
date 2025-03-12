@@ -163,6 +163,9 @@ if (!function_exists('akina_setup')) {
             )
         );
 
+        // 注册小工具支持
+        add_theme_support('widgets');
+
         /**
          * 废弃过时的wp_title
          * @seealso https://make.wordpress.org/core/2015/10/20/document-title-in-4-4/
@@ -3356,7 +3359,7 @@ function iro_action_operator()
         case 'del_exist_theme':
             $current_theme_folder = basename(get_template_directory());
             if ($current_theme_folder != 'Sakurairo') {
-                if (!WP_Filesystem()) {
+                if (!function_exists('WP_Filesystem')) {
                     require_once ABSPATH . 'wp-admin/includes/file.php';
                 }
                 WP_Filesystem();
