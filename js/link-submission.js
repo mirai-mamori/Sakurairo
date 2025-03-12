@@ -5,94 +5,96 @@
  */
 
 // 多语言翻译
-const sakura_links = {
-    // 简体中文
-    'zh_CN': {
-        // 按钮文本
-        submitting: '提交中...',
+if (typeof sakura_links === 'undefined') {
+    var sakura_links = {
+        // 简体中文
+        'zh_CN': {
+            // 按钮文本
+            submitting: '提交中...',
+            
+            // 常规错误提示
+            server_error: '服务器错误：',
+            connection_error: '连接错误，请稍后重试',
+            timeout_error: '请求超时，请稍后重试',
+            
+            // 成功提示
+            submission_success: '友情链接提交成功，请等待审核！',
+            
+            // 验证错误提示
+            name_required: '请输入网站名称',
+            url_required: '请输入网站地址',
+            description_required: '请输入网站描述',
+            image_required: '请输入网站图片地址',
+            email_required: '请输入联系邮箱',
+            captcha_required: '请输入验证码',
+            invalid_url: '请输入有效的网站地址',
+            invalid_email: '请输入有效的邮箱地址',
+            security_error: '安全验证失败，请刷新页面后重试',
+            
+            // 验证码相关
+            captcha_load_error: '验证码加载失败，请刷新重试',
+            refresh_captcha: '刷新验证码'
+        },
         
-        // 常规错误提示
-        server_error: '服务器错误：',
-        connection_error: '连接错误，请稍后重试',
-        timeout_error: '请求超时，请稍后重试',
+        // 繁体中文
+        'zh_TW': {
+            // 按钮文本
+            submitting: '提交中...',
+            
+            // 常规错误提示
+            server_error: '伺服器錯誤：',
+            connection_error: '連接錯誤，請稍後重試',
+            timeout_error: '請求超時，請稍後重試',
+            
+            // 成功提示
+            submission_success: '友情鏈接提交成功，請等待審核！',
+            
+            // 验证错误提示
+            name_required: '請輸入網站名稱',
+            url_required: '請輸入網站地址',
+            description_required: '請輸入網站描述',
+            image_required: '請輸入網站圖片地址',
+            email_required: '請輸入聯繫郵箱',
+            captcha_required: '請輸入驗證碼',
+            invalid_url: '請輸入有效的網站地址',
+            invalid_email: '請輸入有效的郵箱地址',
+            security_error: '安全驗證失敗，請刷新頁面後重試',
+            
+            // 验证码相关
+            captcha_load_error: '驗證碼加載失敗，請刷新重試',
+            refresh_captcha: '刷新驗證碼'
+        },
         
-        // 成功提示
-        submission_success: '友情链接提交成功，请等待审核！',
-        
-        // 验证错误提示
-        name_required: '请输入网站名称',
-        url_required: '请输入网站地址',
-        description_required: '请输入网站描述',
-        image_required: '请输入网站图片地址',
-        email_required: '请输入联系邮箱',
-        captcha_required: '请输入验证码',
-        invalid_url: '请输入有效的网站地址',
-        invalid_email: '请输入有效的邮箱地址',
-        security_error: '安全验证失败，请刷新页面后重试',
-        
-        // 验证码相关
-        captcha_load_error: '验证码加载失败，请刷新重试',
-        refresh_captcha: '刷新验证码'
-    },
-    
-    // 繁体中文
-    'zh_TW': {
-        // 按钮文本
-        submitting: '提交中...',
-        
-        // 常规错误提示
-        server_error: '伺服器錯誤：',
-        connection_error: '連接錯誤，請稍後重試',
-        timeout_error: '請求超時，請稍後重試',
-        
-        // 成功提示
-        submission_success: '友情鏈接提交成功，請等待審核！',
-        
-        // 验证错误提示
-        name_required: '請輸入網站名稱',
-        url_required: '請輸入網站地址',
-        description_required: '請輸入網站描述',
-        image_required: '請輸入網站圖片地址',
-        email_required: '請輸入聯繫郵箱',
-        captcha_required: '請輸入驗證碼',
-        invalid_url: '請輸入有效的網站地址',
-        invalid_email: '請輸入有效的郵箱地址',
-        security_error: '安全驗證失敗，請刷新頁面後重試',
-        
-        // 验证码相关
-        captcha_load_error: '驗證碼加載失敗，請刷新重試',
-        refresh_captcha: '刷新驗證碼'
-    },
-    
-    // 日语
-    'ja': {
-        // 按钮文本
-        submitting: '送信中...',
-        
-        // 常规错误提示
-        server_error: 'サーバーエラー：',
-        connection_error: '接続エラー、後でもう一度お試しください',
-        timeout_error: 'リクエストがタイムアウトしました、後でもう一度お試しください',
-        
-        // 成功提示
-        submission_success: 'リンク申請が成功しました。審査をお待ちください！',
-        
-        // 验证错误提示
-        name_required: 'サイト名を入力してください',
-        url_required: 'サイトURLを入力してください',
-        description_required: 'サイトの説明を入力してください',
-        image_required: 'サイト画像URLを入力してください',
-        email_required: 'メールアドレスを入力してください',
-        captcha_required: '認証コードを入力してください',
-        invalid_url: '有効なURLを入力してください',
-        invalid_email: '有効なメールアドレスを入力してください',
-        security_error: 'セキュリティ検証に失敗しました、ページを更新して再試行してください',
-        
-        // 验证码相关
-        captcha_load_error: '認証コードの読み込みに失敗しました、更新して再試行してください',
-        refresh_captcha: '認証コードを更新'
-    }
-};
+        // 日语
+        'ja': {
+            // 按钮文本
+            submitting: '送信中...',
+            
+            // 常规错误提示
+            server_error: 'サーバーエラー：',
+            connection_error: '接続エラー、後でもう一度お試しください',
+            timeout_error: 'リクエストがタイムアウトしました、後でもう一度お試しください',
+            
+            // 成功提示
+            submission_success: 'リンク申請が成功しました。審査をお待ちください！',
+            
+            // 验证错误提示
+            name_required: 'サイト名を入力してください',
+            url_required: 'サイトURLを入力してください',
+            description_required: 'サイトの説明を入力してください',
+            image_required: 'サイト画像URLを入力してください',
+            email_required: 'メールアドレスを入力してください',
+            captcha_required: '認証コードを入力してください',
+            invalid_url: '有効なURLを入力してください',
+            invalid_email: '有効なメールアドレスを入力してください',
+            security_error: 'セキュリティ検証に失敗しました、ページを更新して再試行してください',
+            
+            // 验证码相关
+            captcha_load_error: '認証コードの読み込みに失敗しました、更新して再試行してください',
+            refresh_captcha: '認証コードを更新'
+        }
+    };
+}
 
 // 获取页面语言，默认简体中文
 let currentLang = 'zh_CN';

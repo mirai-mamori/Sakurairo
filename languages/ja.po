@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-09 15:25+0800\n"
-"PO-Revision-Date: 2025-03-09 15:25+0800\n"
+"POT-Creation-Date: 2025-03-12 19:14+0900\n"
+"PO-Revision-Date: 2025-03-12 19:25+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -163,84 +163,84 @@ msgstr "フォント A に切り替え"
 msgid "Switch To Font B"
 msgstr "フォント B に切り替え"
 
-#: functions.php:133
+#: functions.php:134
 msgid "Nav Menus"
 msgstr "メニュー"
 
-#: functions.php:252
+#: functions.php:292
 msgctxt "post type general name"
 msgid "Shuoshuo"
 msgstr "ツイート"
 
-#: functions.php:253
+#: functions.php:293
 msgctxt "post type singular name"
 msgid "Shuoshuo"
 msgstr "ツイート"
 
-#: functions.php:254
+#: functions.php:294
 msgctxt "admin menu"
 msgid "Shuoshuo"
 msgstr "ツイート"
 
-#: functions.php:255
+#: functions.php:295
 msgctxt "add new on admin bar"
 msgid "Shuoshuo"
 msgstr "ツイート"
 
-#: functions.php:256
+#: functions.php:296
 msgctxt "shuoshuo"
 msgid "Add New"
 msgstr "新規追加"
 
-#: functions.php:257
+#: functions.php:297
 msgid "Add New Shuoshuo"
 msgstr "新しいツイートを追加"
 
-#: functions.php:258
+#: functions.php:298
 msgid "New Shuoshuo"
 msgstr "新しいツイート"
 
-#: functions.php:259
+#: functions.php:299
 msgid "Edit Shuoshuo"
 msgstr "ツイートを編集"
 
-#: functions.php:260
+#: functions.php:300
 msgid "View Shuoshuo"
 msgstr "ツイートを見る"
 
-#: functions.php:261
+#: functions.php:301
 msgid "All Shuoshuo"
 msgstr "すべてのツイート"
 
-#: functions.php:262
+#: functions.php:302
 msgid "Search Shuoshuo"
 msgstr "ツイートを検索"
 
-#: functions.php:263
+#: functions.php:303
 msgid "Parent Shuoshuo:"
 msgstr "ペアレントツイート"
 
-#: functions.php:264
+#: functions.php:304
 msgid "No shuoshuo found."
 msgstr "ツイートは見つからなかった。"
 
-#: functions.php:265
+#: functions.php:305
 msgid "No shuoshuo found in Trash."
 msgstr "ゴミ箱にツイートは見つからなかった。"
 
-#: functions.php:312
+#: functions.php:352
 msgid "Emotion Meta Box"
 msgstr "エモーションメタボックス"
 
-#: functions.php:325
+#: functions.php:365
 msgid "Emotion"
 msgstr "エモーション"
 
-#: functions.php:328
+#: functions.php:368
 msgid "Emotion Color"
 msgstr "エモーションカラー"
 
-#: functions.php:331
+#: functions.php:371
 msgid ""
 "For the Emotion, please fill in the Unicode value of the Fontawesome icon, "
 "and for the Emotion Color, please fill in the RGBA or hexadecimal color."
@@ -248,19 +248,19 @@ msgstr ""
 "エモーションには、Fontawesome アイコンの Unicode 値を、エモーションカラーに"
 "は、RGBA または 16 進数の色を記入してください。"
 
-#: functions.php:376
+#: functions.php:416
 msgid "Custom Meta Box"
 msgstr "カスタム・メタ・ボックス"
 
-#: functions.php:389
+#: functions.php:429
 msgid "Title Style"
 msgstr "タイトル・スタイル"
 
-#: functions.php:392
+#: functions.php:432
 msgid "License"
 msgstr "ライセンス"
 
-#: functions.php:395
+#: functions.php:435
 msgid ""
 "For the Title Style, Please fill in the css style, part of the style need to "
 "add !important effective, and for the License, please go to Theme Options to "
@@ -270,15 +270,15 @@ msgstr ""
 "は、!important effectiveを追加する必要があります。ライセンスについては、テー"
 "マオプションで設定方法をご確認ください。"
 
-#: functions.php:505
+#: functions.php:545
 msgid "Copied!"
 msgstr "コピーしました!"
 
-#: functions.php:506
+#: functions.php:546
 msgid "Copy Code"
 msgstr "コードをコピー"
 
-#: functions.php:507
+#: functions.php:547
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
@@ -286,19 +286,19 @@ msgstr ""
 "あなたのカバー API はクロスオリジンアクセスをサポートしていないようです。この"
 "場合、Cover Cacheは有効になりません。"
 
-#: functions.php:508
+#: functions.php:548
 msgid "Commiting...."
 msgstr "提出中…."
 
-#: functions.php:509
+#: functions.php:549
 msgid "Succeed"
 msgstr "継ぐ"
 
-#: functions.php:510
+#: functions.php:550
 msgid "10 files max per request"
 msgstr "1 回のリクエストで送信できるファイル数の上限は 10 個です"
 
-#: functions.php:511
+#: functions.php:551
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -312,15 +312,15 @@ msgstr ""
 "\n"
 "この画像が大きすぎる~再アップロードしてください!"
 
-#: functions.php:512
+#: functions.php:552
 msgid "Uploading..."
 msgstr "アップロード中..."
 
-#: functions.php:513
+#: functions.php:553
 msgid "Uploaded successfully~"
 msgstr "アップロードに成功しました~"
 
-#: functions.php:514
+#: functions.php:554
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -332,120 +332,120 @@ msgstr ""
 "コード=> {1}\n"
 "{2}"
 
-#: functions.php:515
+#: functions.php:555
 msgid "Upload failed, please retry."
 msgstr "アップロードに失敗しました、もう一度やり直してください。"
 
-#: functions.php:516
+#: functions.php:556
 msgid "Page Load failed. HTTP {0}"
 msgstr "ページの読み込みに失敗しました。HTTP {0}"
 
-#: functions.php:517
+#: functions.php:557
 msgid "Glad you come, but we've got nothing left."
 msgstr "あなたが来てうれしいですが、私たちは何も残っていません。"
 
-#: functions.php:518 search.php:85
+#: functions.php:558 search.php:85
 msgid "Post"
 msgstr "投稿"
 
-#: functions.php:519
+#: functions.php:559
 msgid "Tag"
 msgstr "タグ"
 
-#: functions.php:520
+#: functions.php:560
 msgid "Category"
 msgstr "カテゴリー"
 
-#: functions.php:521 search.php:96
+#: functions.php:561 search.php:96
 msgid "Page"
 msgstr "ページ"
 
-#: functions.php:522
+#: functions.php:562
 msgid "Comment"
 msgstr "コメント"
 
-#: functions.php:523
+#: functions.php:563
 msgid "Paused..."
 msgstr "一時停止"
 
-#: functions.php:524
+#: functions.php:564
 msgid "Loading Video..."
 msgstr "ビデオを読み込んでいます..."
 
-#: functions.php:525
+#: functions.php:565
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "フォントをダウンロードするには、データ使用量に注意してください。"
 
-#: functions.php:526
+#: functions.php:566
 msgid "Are you sure you want set it private?"
 msgstr "プライベートに設定してもよろしいですか?"
 
-#: functions.php:527
+#: functions.php:567
 msgid "You had set private comment before"
 msgstr "以前にプライベートコメントを設定していた"
 
-#: functions.php:607 inc/theme-plus.php:203
+#: functions.php:647 inc/theme-plus.php:190
 msgid "Author"
 msgstr "投稿者"
 
-#: functions.php:607
+#: functions.php:647
 msgid "Blogger"
 msgstr "Blogger"
 
-#: functions.php:616 functions.php:2818
+#: functions.php:656 functions.php:3259
 msgid "Location"
 msgstr "場所"
 
-#: functions.php:622
+#: functions.php:662
 msgid "Private"
 msgstr "プライベート"
 
-#: functions.php:624
+#: functions.php:664
 msgid "Yes"
 msgstr "はい"
 
-#: functions.php:626
+#: functions.php:666
 msgid "No"
 msgstr "いいえ"
 
-#: functions.php:629
+#: functions.php:669
 msgid "Edit"
 msgstr "編集"
 
-#: functions.php:759
+#: functions.php:799
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "こやつはとても怠惰な╮(╯▽╰)╭"
 
-#: functions.php:1565
+#: functions.php:1605
 msgid "All expand/collapse"
 msgstr "すべての展開/折りたたみ"
 
-#: functions.php:1599
+#: functions.php:1639
 msgid " year"
 msgstr "年"
 
-#: functions.php:1602
+#: functions.php:1642
 msgid " post(s)"
 msgstr " 記事"
 
-#: functions.php:1652 functions.php:1655 inc/theme-plus.php:358
+#: functions.php:1692 functions.php:1695 inc/theme-plus.php:345
 #: layouts/mo_toc_menu.php:29
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: functions.php:2184
+#: functions.php:2243
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:2286
+#: functions.php:2345
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:2312
+#: functions.php:2371
 msgid "Please do not try to use Javascript in your comments!"
 msgstr "コメントでJavascriptを使用しないでください！"
 
-#: functions.php:2422
+#: functions.php:2481
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -457,16 +457,175 @@ msgstr ""
 "href=\"https://qiita.com/cyborg__ninja/items/8a191a00d402e78d8823\" "
 "target=\"_blank\"> 擬似静的化 </a>を構成する必要があります。 </b>"
 
-#: functions.php:2555
+#: functions.php:2614
 #, php-format
 msgid "%s says: "
 msgstr "%s は言う： "
 
-#: functions.php:2576
+#: functions.php:2635
 msgid "Expand / Collapse"
 msgstr "展開/折りたたみ"
 
-#: functions.php:2859
+#: functions.php:2942
+msgid "Invalid request method."
+msgstr "無効な要求メソッド。"
+
+#: functions.php:2951
+msgid "Security verification failed."
+msgstr "セキュリティ検証に失敗しました。"
+
+#: functions.php:2959
+msgid "You are submitting too frequently. Please try again later."
+msgstr "送信回数が多すぎます。後でもう一度お試しください。"
+
+#: functions.php:2969 functions.php:3192
+msgid "Pending Links"
+msgstr "未決リンク"
+
+#: functions.php:2996 user/page-links.php:365
+msgid ""
+"Sorry, we are not accepting new link submissions at this time due to "
+"backlog. Please try again later."
+msgstr ""
+"申し訳ございませんが、現在リンクの受付は行っておりません。後でもう一度お試し"
+"ください。"
+
+#: functions.php:3004
+msgid "Please fill in all required fields."
+msgstr "必須項目をすべてご記入ください。"
+
+#: functions.php:3032
+msgid "Site name is too long."
+msgstr "サイト名が長すぎる。"
+
+#: functions.php:3037
+msgid "Site description is too long."
+msgstr "サイトの説明が長すぎる。"
+
+#: functions.php:3043
+msgid "Please enter a valid URL."
+msgstr "有効なURLを入力してください。"
+
+#: functions.php:3049
+msgid "Please enter a valid image URL."
+msgstr "有効な画像URLを入力してください。"
+
+#: functions.php:3055
+msgid "Please enter a valid email address."
+msgstr "有効なEメールアドレスを入力してください。"
+
+#: functions.php:3063
+msgid "This website URL is already in our links list."
+msgstr "このウェブサイトのURLはすでにリンク集に登録されています。"
+
+#: functions.php:3089 functions.php:3154
+msgid "Failed to submit link. Please try again later."
+msgstr "リンクの送信に失敗しました。後でもう一度お試しください。"
+
+#: functions.php:3101 functions.php:3161
+#, php-format
+msgid "[%s] New Friend Link Submission"
+msgstr "[%s] 新しい友達リンク投稿"
+
+#: functions.php:3103 functions.php:3163
+#, php-format
+msgid ""
+"A new friend link has been submitted on your website %s:\n"
+"\n"
+msgstr ""
+"あなたのWebサイトに新しい友達リンクが送信されました： %s \n"
+"\n"
+"\n"
+
+#: functions.php:3104
+#, php-format
+msgid "Site Name: %s\n"
+msgstr "サイト名 %s\n"
+
+#: functions.php:3105
+#, php-format
+msgid "Site URL: %s\n"
+msgstr "サイトURL：%s\n"
+
+#: functions.php:3106
+#, php-format
+msgid "Site Description: %s\n"
+msgstr "サイトの説明：%s\n"
+
+#: functions.php:3107
+#, php-format
+msgid "Site Image: %s\n"
+msgstr "サイトイメージ：%s \n"
+
+#: functions.php:3108
+#, php-format
+msgid "Contact Email: %s\n"
+msgstr "連絡先メールアドレス：%s\n"
+
+#: functions.php:3109
+#, php-format
+msgid ""
+"IP Address: %s\n"
+"\n"
+msgstr ""
+"IPアドレス： %s\n"
+"\n"
+
+#: functions.php:3110
+msgid "Please review this submission in your WordPress admin panel.\n"
+msgstr "WordPressの管理画面でこの投稿を確認してください。\n"
+
+#: functions.php:3120 functions.php:3171
+msgid "Thank you! Your link has been submitted for review."
+msgstr "ありがとうございました！あなたのリンクは審査のために提出されました。"
+
+#: functions.php:3125
+#, php-format
+msgid "Site Name: %s"
+msgstr "サイト名: %s"
+
+#: functions.php:3126
+#, php-format
+msgid "Site URL: %s"
+msgstr "サイトURL: %s"
+
+#: functions.php:3127
+#, php-format
+msgid "Site Description: %s"
+msgstr "サイトの説明：%s"
+
+#: functions.php:3128
+#, php-format
+msgid "Site Image: %s"
+msgstr "サイトイメージ：%s"
+
+#: functions.php:3129
+#, php-format
+msgid "Contact Email: %s"
+msgstr "連絡先メールアドレス：%s"
+
+#: functions.php:3130
+#, php-format
+msgid "IP Address: %s"
+msgstr "IPアドレス： %s"
+
+#: functions.php:3133
+msgid "Friend Link Submission: "
+msgstr "フレンドリンクの投稿 ："
+
+#: functions.php:3165
+msgid ""
+"\n"
+"Please review this submission in your WordPress admin panel.\n"
+msgstr ""
+"\n"
+"WordPressの管理画面でこの投稿を確認してください。\n"
+
+#: functions.php:3178
+msgid "An unexpected error occurred. Please try again later."
+msgstr "予期せぬエラーが発生しました。後でもう一度お試しください。"
+
+#: functions.php:3300
 msgid "Access denied."
 msgstr "アクセス拒否"
 
@@ -529,7 +688,7 @@ msgstr "拡張"
 msgid "All item has been loaded."
 msgstr "すべてのアイテムが読み込まれました。"
 
-#: inc/classes/Cache.php:70 inc/theme-plus.php:646
+#: inc/classes/Cache.php:70 inc/theme-plus.php:633
 msgid "The comment is private"
 msgstr "このコメントは非公開です"
 
@@ -597,23 +756,27 @@ msgstr "削除 "
 msgid "Paused "
 msgstr "一時 停止 "
 
-#: inc/classes/Steam.php:64
+#: inc/classes/Steam.php:71 inc/classes/bangumi.php:151
+msgid "Load more..."
+msgstr "さらに読み込む"
+
+#: inc/classes/Steam.php:85
 msgid "Playtime"
 msgstr "プレイ時間"
 
-#: inc/classes/Steam.php:65
+#: inc/classes/Steam.php:86
 msgid "Last Played"
 msgstr "最終プレイ"
 
-#: inc/classes/Steam.php:99
+#: inc/classes/Steam.php:120
 msgid "Not Played Yet"
 msgstr "まだプレイしていません"
 
-#: inc/classes/Steam.php:103
+#: inc/classes/Steam.php:124
 msgid "minute"
 msgstr "分"
 
-#: inc/classes/Steam.php:106
+#: inc/classes/Steam.php:127
 msgid "hour"
 msgstr "時間"
 
@@ -640,10 +803,6 @@ msgstr "説明なし"
 #: inc/classes/bangumi.php:145
 msgid "An error occured: "
 msgstr "エラーが発生しました。"
-
-#: inc/classes/bangumi.php:151
-msgid "Load more..."
-msgstr "さらに読み込む"
 
 #: inc/classes/gallery.php:79
 msgid "Successfully initialized the index."
@@ -764,33 +923,33 @@ msgstr "認証コードを変更しましたか？または更新してみてく
 msgid "Please fill in the correct captcha answer"
 msgstr "正しく回答されていない可能性があります"
 
-#: inc/theme-plus.php:252 inc/theme-plus.php:305
+#: inc/theme-plus.php:239 inc/theme-plus.php:292
 #, php-format
 msgid "Search results for \" %s \""
 msgstr "\"%s\" の検索結果"
 
-#: inc/theme-plus.php:322 tpl/content-thumbcard.php:60
+#: inc/theme-plus.php:309 tpl/content-thumbcard.php:60
 #: tpl/content-thumbcard.php:66
 msgid "Your browser does not support HTML5 video."
 msgstr "お使いのブラウザはHTML5ビデオをサポートしていません."
 
-#: inc/theme-plus.php:353
+#: inc/theme-plus.php:340
 msgid "Signed in as"
 msgstr "ようこそ"
 
-#: inc/theme-plus.php:359 layouts/mo_toc_menu.php:30
+#: inc/theme-plus.php:346 layouts/mo_toc_menu.php:30
 msgid "New post"
 msgstr "新しい記事"
 
-#: inc/theme-plus.php:361 layouts/mo_toc_menu.php:34
+#: inc/theme-plus.php:348 layouts/mo_toc_menu.php:34
 msgid "Profile"
 msgstr "プロフィール"
 
-#: inc/theme-plus.php:362 layouts/mo_toc_menu.php:35
+#: inc/theme-plus.php:349 layouts/mo_toc_menu.php:35
 msgid "Sign out"
 msgstr "ログアウト"
 
-#: inc/theme-plus.php:383 layouts/mo_toc_menu.php:66
+#: inc/theme-plus.php:370 layouts/mo_toc_menu.php:66
 msgid "Log in"
 msgstr "ログイン"
 
@@ -942,18 +1101,56 @@ msgstr "この投稿は %s クリエイティブ・コモンズ・ライセン�
 msgid "This author has not provided a description."
 msgstr "この作者はプロフィールを設定していません"
 
-#: user/page-bangumi.php:41 user/page-bilibiliFavList.php:207
-#: user/page-followVideos.php:29
+#: user/page-bangumi.php:226 user/page-bilibiliFavList.php:217
+#: user/page-followVideos.php:213
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr "オプションにBilibili UIDを記入してください。"
 
-#: user/page-bangumi.php:48
+#: user/page-bangumi.php:233
 msgid "Please fill in the Bangumi UID in Sakura Options."
 msgstr "オプションにBangumi UIDを記入してください。"
 
-#: user/page-bangumi.php:54
+#: user/page-bangumi.php:239
 msgid "Please fill in the My Anime List Username in Sakura Options."
 msgstr "オプションにマイアニメリストユーザー名を入力してください。"
+
+#: user/page-links.php:360
+msgid "Submit Link"
+msgstr "リンクを送信する"
+
+#: user/page-links.php:387
+msgid "Submit Your Link"
+msgstr "リンクを送信する"
+
+#: user/page-links.php:388
+msgid "Please fill out the form below to submit your website link."
+msgstr ""
+"以下のフォームに必要事項をご記入の上、ウェブサイトへのリンクを送信してくださ"
+"い。"
+
+#: user/page-links.php:394
+msgid "Site Name"
+msgstr "サイト名"
+
+#: user/page-links.php:399
+msgid "Site URL"
+msgstr "サイト URL"
+
+#: user/page-links.php:404
+msgid "Site Description"
+msgstr "サイトの説明"
+
+#: user/page-links.php:409
+msgid "Site Logo/Avatar URL"
+msgstr "サイトロゴ/アバターURL"
+
+#: user/page-links.php:414
+msgid "Your Email"
+msgstr "メールアドレス"
+
+#: user/page-links.php:420
+msgid "Verification Code"
+msgstr "認証コード"
 
 #. Theme Name of the plugin/theme
 msgid "Sakurairo"
@@ -978,11 +1175,3 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://docs.fuukei.org/"
 msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "文章模版"
-msgstr "文章模版"
-
-#. Template Name of the plugin/theme
-msgid "友情链接模版"
-msgstr "友情链接模版"

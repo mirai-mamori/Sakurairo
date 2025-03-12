@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-06 15:18+0900\n"
-"PO-Revision-Date: 2025-03-06 15:19+0900\n"
+"POT-Creation-Date: 2025-03-12 19:26+0900\n"
+"PO-Revision-Date: 2025-03-12 19:35+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -33,11 +33,11 @@ msgstr ""
 "La page que vous recherchez peut avoir été supprimée, avoir changé de nom ou "
 "être temporairement indisponible."
 
-#: 404.php:202 header.php:193 layouts/sakura_header.php:76 search.php:176
+#: 404.php:202 header.php:193 layouts/sakura_header.php:71 search.php:176
 msgid "Search..."
 msgstr "Rechercher..."
 
-#: archive.php:42 author.php:55 index.php:85
+#: archive.php:42 author.php:55 index.php:81
 msgid " Previous"
 msgstr " Précédent"
 
@@ -160,84 +160,84 @@ msgstr "Passer à la police A"
 msgid "Switch To Font B"
 msgstr "Passer à la police B"
 
-#: functions.php:123
+#: functions.php:134
 msgid "Nav Menus"
 msgstr "Menus de navigation"
 
-#: functions.php:242
+#: functions.php:292
 msgctxt "post type general name"
 msgid "Shuoshuo"
 msgstr "Shuoshuo"
 
-#: functions.php:243
+#: functions.php:293
 msgctxt "post type singular name"
 msgid "Shuoshuo"
 msgstr "Shuoshuo"
 
-#: functions.php:244
+#: functions.php:294
 msgctxt "admin menu"
 msgid "Shuoshuo"
 msgstr "Shuoshuo"
 
-#: functions.php:245
+#: functions.php:295
 msgctxt "add new on admin bar"
 msgid "Shuoshuo"
 msgstr "Shuoshuo"
 
-#: functions.php:246
+#: functions.php:296
 msgctxt "shuoshuo"
 msgid "Add New"
 msgstr "Ajouter Nouveau"
 
-#: functions.php:247
+#: functions.php:297
 msgid "Add New Shuoshuo"
 msgstr "Ajouter Nouveau Shuoshuo"
 
-#: functions.php:248
+#: functions.php:298
 msgid "New Shuoshuo"
 msgstr "Nouveau Shuoshuo"
 
-#: functions.php:249
+#: functions.php:299
 msgid "Edit Shuoshuo"
 msgstr "Modifier Shuoshuo"
 
-#: functions.php:250
+#: functions.php:300
 msgid "View Shuoshuo"
 msgstr "Voir Shuoshuo"
 
-#: functions.php:251
+#: functions.php:301
 msgid "All Shuoshuo"
 msgstr "Tous les Shuoshuo"
 
-#: functions.php:252
+#: functions.php:302
 msgid "Search Shuoshuo"
 msgstr "Rechercher Shuoshuo"
 
-#: functions.php:253
+#: functions.php:303
 msgid "Parent Shuoshuo:"
 msgstr "Parent Shuoshuo :"
 
-#: functions.php:254
+#: functions.php:304
 msgid "No shuoshuo found."
 msgstr "Aucun shuoshuo trouvé."
 
-#: functions.php:255
+#: functions.php:305
 msgid "No shuoshuo found in Trash."
 msgstr "Aucun shuoshuo trouvé dans la corbeille."
 
-#: functions.php:302
+#: functions.php:352
 msgid "Emotion Meta Box"
 msgstr "Boîte Meta des Émotions"
 
-#: functions.php:315
+#: functions.php:365
 msgid "Emotion"
 msgstr "Émotion"
 
-#: functions.php:318
+#: functions.php:368
 msgid "Emotion Color"
 msgstr "Couleur de l'Émotion"
 
-#: functions.php:321
+#: functions.php:371
 msgid ""
 "For the Emotion, please fill in the Unicode value of the Fontawesome icon, "
 "and for the Emotion Color, please fill in the RGBA or hexadecimal color."
@@ -246,19 +246,19 @@ msgstr ""
 "et pour la Couleur de l'Émotion, veuillez remplir la couleur RGBA ou "
 "hexadécimale."
 
-#: functions.php:366
+#: functions.php:416
 msgid "Custom Meta Box"
 msgstr "Boîte Meta Personnalisée"
 
-#: functions.php:379
+#: functions.php:429
 msgid "Title Style"
 msgstr "Style du Titre"
 
-#: functions.php:382
+#: functions.php:432
 msgid "License"
 msgstr "Licence"
 
-#: functions.php:385
+#: functions.php:435
 msgid ""
 "For the Title Style, Please fill in the css style, part of the style need to "
 "add !important effective, and for the License, please go to Theme Options to "
@@ -268,15 +268,15 @@ msgstr ""
 "doivent inclure !important pour être efficaces, et pour la Licence, veuillez "
 "consulter les Options du Thème pour apprendre comment la configurer."
 
-#: functions.php:501
+#: functions.php:545
 msgid "Copied!"
 msgstr "Copié !"
 
-#: functions.php:502
+#: functions.php:546
 msgid "Copy Code"
 msgstr "Copier le Code"
 
-#: functions.php:503
+#: functions.php:547
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
@@ -284,19 +284,19 @@ msgstr ""
 "Votre API de couverture semble ne pas prendre en charge l'accès Cross-"
 "Origin. Dans ce cas, le cache de couverture ne prendra pas effet."
 
-#: functions.php:504
+#: functions.php:548
 msgid "Commiting...."
 msgstr "Validation en cours...."
 
-#: functions.php:505
+#: functions.php:549
 msgid "Succeed"
 msgstr "Réussi"
 
-#: functions.php:506
+#: functions.php:550
 msgid "10 files max per request"
 msgstr "10 fichiers max par demande"
 
-#: functions.php:507
+#: functions.php:551
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -310,15 +310,15 @@ msgstr ""
 "\n"
 "Cette image est trop grande~Veuillez la retéléverser !"
 
-#: functions.php:508
+#: functions.php:552
 msgid "Uploading..."
 msgstr "Téléversement..."
 
-#: functions.php:509
+#: functions.php:553
 msgid "Uploaded successfully~"
 msgstr "Téléversé avec succès~"
 
-#: functions.php:510
+#: functions.php:554
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -330,133 +330,121 @@ msgstr ""
 "code => {1}\n"
 "{2}"
 
-#: functions.php:511
+#: functions.php:555
 msgid "Upload failed, please retry."
 msgstr "Échec du téléversement, veuillez réessayer."
 
-#: functions.php:512
+#: functions.php:556
 msgid "Page Load failed. HTTP {0}"
 msgstr "Échec du chargement de la page. HTTP {0}"
 
-#: functions.php:513
+#: functions.php:557
 msgid "Glad you come, but we've got nothing left."
 msgstr "Content que vous soyez là, mais il ne reste plus rien."
 
-#: functions.php:514 search.php:85
+#: functions.php:558 search.php:85
 msgid "Post"
 msgstr "Article"
 
-#: functions.php:515
+#: functions.php:559
 msgid "Tag"
 msgstr "Étiquette"
 
-#: functions.php:516
+#: functions.php:560
 msgid "Category"
 msgstr "Catégorie"
 
-#: functions.php:517 search.php:96
+#: functions.php:561 search.php:96
 msgid "Page"
 msgstr "Page"
 
-#: functions.php:518
+#: functions.php:562
 msgid "Comment"
 msgstr "Commentaire"
 
-#: functions.php:519
+#: functions.php:563
 msgid "Paused..."
 msgstr "En pause..."
 
-#: functions.php:520
+#: functions.php:564
 msgid "Loading Video..."
 msgstr "Chargement de la vidéo..."
 
-#: functions.php:521
+#: functions.php:565
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "Téléchargement des polices, attention à votre consommation de données."
 
-#: functions.php:522
+#: functions.php:566
 msgid "Are you sure you want set it private?"
 msgstr "Êtes-vous sûr de vouloir le définir comme privé ?"
 
-#: functions.php:523
+#: functions.php:567
 msgid "You had set private comment before"
 msgstr "Vous avez déjà défini un commentaire privé"
 
-#: functions.php:603 inc/theme_plus.php:203
+#: functions.php:647 inc/theme-plus.php:190
 msgid "Author"
 msgstr "Auteur"
 
-#: functions.php:603
+#: functions.php:647
 msgid "Blogger"
 msgstr "Blogueur"
 
-#: functions.php:612 functions.php:2906
+#: functions.php:656 functions.php:3259
 msgid "Location"
 msgstr "Emplacement"
 
-#: functions.php:618
+#: functions.php:662
 msgid "Private"
 msgstr "Privé"
 
-#: functions.php:620
+#: functions.php:664
 msgid "Yes"
 msgstr "Oui"
 
-#: functions.php:622
+#: functions.php:666
 msgid "No"
 msgstr "Non"
 
-#: functions.php:625
+#: functions.php:669
 msgid "Edit"
 msgstr "Modifier"
 
-#: functions.php:755
+#: functions.php:799
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "Cette personne est tellement paresseuse ╮(╯▽╰)╭"
 
-#: functions.php:1052
-msgid "Download Link"
-msgstr "Lien de téléchargement"
-
-#: functions.php:1129
-msgid "Remember me"
-msgstr "Se souvenir de moi"
-
-#: functions.php:1679
+#: functions.php:1605
 msgid "All expand/collapse"
 msgstr "Tout déplier/replier"
 
-#: functions.php:1713
+#: functions.php:1639
 msgid " year"
 msgstr " an"
 
-#: functions.php:1716
+#: functions.php:1642
 msgid " post(s)"
 msgstr " article(s)"
 
-#: functions.php:1766 functions.php:1769 inc/theme_plus.php:430
-#: layouts/mo_toc_menu.php:37
+#: functions.php:1692 functions.php:1695 inc/theme-plus.php:345
+#: layouts/mo_toc_menu.php:29
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
-#: functions.php:2147
-msgid "<b>ERROR</b>: This email domain (<b>@"
-msgstr "<b>ERREUR</b>: Ce domaine email (<b>@"
-
-#: functions.php:2272
+#: functions.php:2243
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:2374
+#: functions.php:2345
 msgid "Sidebar"
 msgstr "Barre latérale"
 
-#: functions.php:2400
+#: functions.php:2371
 msgid "Please do not try to use Javascript in your comments!"
 msgstr ""
 "S'il vous plaît, n'essayez pas d'utiliser Javascript dans vos commentaires !"
 
-#: functions.php:2510
+#: functions.php:2481
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -468,20 +456,182 @@ msgstr ""
 "devrez peut-être configurer <a href=\"https://www.wpdaxue.com/wordpress-"
 "rewriterule.html\" target=\"_blank\"> le pseudo-statique </a>. </ b>"
 
-#: functions.php:2643
+#: functions.php:2614
 #, php-format
 msgid "%s says: "
 msgstr "%s dit : "
 
-#: functions.php:2664
+#: functions.php:2635
 msgid "Expand / Collapse"
 msgstr "Déplier/Replier"
 
-#: functions.php:2947
+#: functions.php:2942
+msgid "Invalid request method."
+msgstr "Méthode de requête non valide."
+
+#: functions.php:2951
+msgid "Security verification failed."
+msgstr "La vérification de sécurité a échoué."
+
+#: functions.php:2959
+msgid "You are submitting too frequently. Please try again later."
+msgstr "Vous soumettez trop fréquemment. Veuillez réessayer plus tard."
+
+#: functions.php:2969 functions.php:3192
+msgid "Pending Links"
+msgstr "Liens en attente"
+
+#: functions.php:2996 user/page-links.php:365
+msgid ""
+"Sorry, we are not accepting new link submissions at this time due to "
+"backlog. Please try again later."
+msgstr ""
+"Désolé, nous n'acceptons pas de nouvelles soumissions de liens pour le "
+"moment en raison du retard accumulé. Veuillez réessayer plus tard."
+
+#: functions.php:3004
+msgid "Please fill in all required fields."
+msgstr "Veuillez remplir tous les champs obligatoires."
+
+#: functions.php:3032
+msgid "Site name is too long."
+msgstr "Le nom du site est trop long."
+
+#: functions.php:3037
+msgid "Site description is too long."
+msgstr "La description du site est trop longue."
+
+#: functions.php:3043
+msgid "Please enter a valid URL."
+msgstr "Veuillez saisir une URL valide."
+
+#: functions.php:3049
+msgid "Please enter a valid image URL."
+msgstr "Veuillez saisir une URL d'image valide."
+
+#: functions.php:3055
+msgid "Please enter a valid email address."
+msgstr "Veuillez saisir une adresse électronique valide."
+
+#: functions.php:3063
+msgid "This website URL is already in our links list."
+msgstr "L'URL de ce site web figure déjà dans notre liste de liens."
+
+#: functions.php:3089 functions.php:3154
+msgid "Failed to submit link. Please try again later."
+msgstr "Le lien n'a pas été soumis. Veuillez réessayer plus tard."
+
+#: functions.php:3101 functions.php:3161
+#, php-format
+msgid "[%s] New Friend Link Submission"
+msgstr "[%s] Soumission d'un lien vers un nouvel ami"
+
+#: functions.php:3103 functions.php:3163
+#, php-format
+msgid ""
+"A new friend link has been submitted on your website %s:\n"
+"\n"
+msgstr ""
+"Un nouveau lien d'ami a été soumis sur votre site web %s :\n"
+"\n"
+
+#: functions.php:3104
+#, php-format
+msgid "Site Name: %s\n"
+msgstr "Nom du site : %s\n"
+
+#: functions.php:3105
+#, php-format
+msgid "Site URL: %s\n"
+msgstr "URL du site : %s\n"
+
+#: functions.php:3106
+#, php-format
+msgid "Site Description: %s\n"
+msgstr "Description du site : %s\n"
+
+#: functions.php:3107
+#, php-format
+msgid "Site Image: %s\n"
+msgstr "Image du site : %s\n"
+
+#: functions.php:3108
+#, php-format
+msgid "Contact Email: %s\n"
+msgstr "Courriel du contact : %s\n"
+
+#: functions.php:3109
+#, php-format
+msgid ""
+"IP Address: %s\n"
+"\n"
+msgstr ""
+"Adresse IP : %s\n"
+"\n"
+
+#: functions.php:3110
+msgid "Please review this submission in your WordPress admin panel.\n"
+msgstr ""
+"Veuillez vérifier cette soumission dans votre panneau d'administration "
+"WordPress.\n"
+
+#: functions.php:3120 functions.php:3171
+msgid "Thank you! Your link has been submitted for review."
+msgstr ""
+"Nous vous remercions de votre attention. Votre lien a été soumis pour examen."
+
+#: functions.php:3125
+#, php-format
+msgid "Site Name: %s"
+msgstr "Nom du site : %s"
+
+#: functions.php:3126
+#, php-format
+msgid "Site URL: %s"
+msgstr "URL du site : %s"
+
+#: functions.php:3127
+#, php-format
+msgid "Site Description: %s"
+msgstr "Description du site : %s"
+
+#: functions.php:3128
+#, php-format
+msgid "Site Image: %s"
+msgstr "Image du site : %s"
+
+#: functions.php:3129
+#, php-format
+msgid "Contact Email: %s"
+msgstr "Courriel du contact : %s"
+
+#: functions.php:3130
+#, php-format
+msgid "IP Address: %s"
+msgstr "Adresse IP : %s"
+
+#: functions.php:3133
+msgid "Friend Link Submission: "
+msgstr "Soumission d'un lien d'ami : "
+
+#: functions.php:3165
+msgid ""
+"\n"
+"Please review this submission in your WordPress admin panel.\n"
+msgstr ""
+"\n"
+"Veuillez vérifier cette soumission dans votre panneau d'administration "
+"WordPress.\n"
+
+#: functions.php:3178
+msgid "An unexpected error occurred. Please try again later."
+msgstr "Une erreur inattendue s'est produite. Veuillez réessayer plus tard."
+
+#: functions.php:3300
 msgid "Access denied."
 msgstr "Accès refusé."
 
-#: header.php:266 layouts/sakura_header.php:124
+#: header.php:266 layouts/sakura_header.php:119
 msgid "Random Background"
 msgstr "Contexte aléatoire"
 
@@ -540,7 +690,7 @@ msgstr "Déplier"
 msgid "All item has been loaded."
 msgstr "Tous les éléments ont été chargés."
 
-#: inc/classes/Cache.php:70 inc/theme_plus.php:716
+#: inc/classes/Cache.php:70 inc/theme-plus.php:633
 msgid "The comment is private"
 msgstr "Le commentaire est privé"
 
@@ -608,23 +758,27 @@ msgstr "Abandonné "
 msgid "Paused "
 msgstr "En pause "
 
-#: inc/classes/Steam.php:63
+#: inc/classes/Steam.php:71 inc/classes/bangumi.php:151
+msgid "Load more..."
+msgstr "Charger plus..."
+
+#: inc/classes/Steam.php:85
 msgid "Playtime"
 msgstr "Récréation"
 
-#: inc/classes/Steam.php:64
+#: inc/classes/Steam.php:86
 msgid "Last Played"
 msgstr "Dernière lecture"
 
-#: inc/classes/Steam.php:98
+#: inc/classes/Steam.php:120
 msgid "Not Played Yet"
 msgstr "Pas encore joué"
 
-#: inc/classes/Steam.php:102
+#: inc/classes/Steam.php:124
 msgid "minute"
 msgstr ""
 
-#: inc/classes/Steam.php:105
+#: inc/classes/Steam.php:127
 msgid "hour"
 msgstr "heure"
 
@@ -651,10 +805,6 @@ msgstr "Pas encore d'introduction"
 #: inc/classes/bangumi.php:145
 msgid "An error occured: "
 msgstr "Une erreur s'est produite : "
-
-#: inc/classes/bangumi.php:151
-msgid "Load more..."
-msgstr "Charger plus..."
 
 #: inc/classes/gallery.php:79
 msgid "Successfully initialized the index."
@@ -742,39 +892,39 @@ msgstr ""
 msgid "Edit %s"
 msgstr "Modifier %s"
 
-#: inc/theme_plus.php:57
+#: inc/theme-plus.php:57
 msgid " days ago"
 msgstr " jours auparavant"
 
-#: inc/theme_plus.php:58
+#: inc/theme-plus.php:58
 msgid " hours ago"
 msgstr " heures auparavant"
 
-#: inc/theme_plus.php:59
+#: inc/theme-plus.php:59
 msgid " minutes ago"
 msgstr " minutes auparavant"
 
-#: inc/theme_plus.php:60
+#: inc/theme-plus.php:60
 msgid " seconds ago"
 msgstr " secondes auparavant"
 
-#: inc/theme_plus.php:67
+#: inc/theme-plus.php:67
 msgid "Posted on "
 msgstr "Publié le "
 
-#: inc/theme_plus.php:126
+#: inc/theme-plus.php:126
 msgid "Please upgrade wordpress to version 4.4+"
 msgstr "Veuillez mettre à jour WordPress à la version 4.4+"
 
-#: inc/theme_plus.php:139
+#: inc/theme-plus.php:139
 msgid "You may post nothing"
 msgstr "Vous ne pouvez rien publier"
 
-#: inc/theme_plus.php:145
+#: inc/theme-plus.php:145
 msgid "Please fill in the captcha answer"
 msgstr "Veuillez remplir la réponse captcha"
 
-#: inc/theme_plus.php:148
+#: inc/theme-plus.php:148
 msgid ""
 "Have you modified the captcha code data? Or refresh the captcha and try "
 "again?"
@@ -782,85 +932,45 @@ msgstr ""
 "Avez-vous modifié les données du code captcha ? Ou actualisez-vous le "
 "captcha et réessayez ?"
 
-#: inc/theme_plus.php:156
+#: inc/theme-plus.php:156
 msgid "Please fill in the correct captcha answer"
 msgstr "Veuillez remplir la bonne réponse captcha"
 
-#: inc/theme_plus.php:250
-msgid "Login successful, "
-msgstr "Connexion réussie, "
-
-#: inc/theme_plus.php:251
-msgid "seconds later automatically transfer to"
-msgstr "transfert automatique dans quelques secondes vers"
-
-#: inc/theme_plus.php:262
-msgid "dashboard"
-msgstr "tableau de bord"
-
-#: inc/theme_plus.php:270
-msgid "home"
-msgstr "accueil"
-
-#: inc/theme_plus.php:282
-msgid "Change avatar"
-msgstr "Changer d'avatar"
-
-#: inc/theme_plus.php:283
-msgid "Hello, "
-msgstr "Bonjour, "
-
-#: inc/theme_plus.php:287
-msgid "Home"
-msgstr "Accueil"
-
-#: inc/theme_plus.php:289
-msgid "Manage"
-msgstr "Gérer"
-
-#: inc/theme_plus.php:291
-msgid "Logout"
-msgstr "Déconnexion"
-
-#: inc/theme_plus.php:291
-msgid "Sign out? "
-msgstr "Se déconnecter ? "
-
-#: inc/theme_plus.php:324 inc/theme_plus.php:377
+#: inc/theme-plus.php:239 inc/theme-plus.php:292
 #, php-format
 msgid "Search results for \" %s \""
 msgstr "Résultats de recherche pour « %s »"
 
-#: inc/theme_plus.php:394 tpl/content-thumbcard.php:60
+#: inc/theme-plus.php:309 tpl/content-thumbcard.php:60
 #: tpl/content-thumbcard.php:66
 msgid "Your browser does not support HTML5 video."
 msgstr "Votre navigateur ne prend pas en charge les vidéos HTML5."
 
-#: inc/theme_plus.php:425
+#: inc/theme-plus.php:340
 msgid "Signed in as"
 msgstr "Connecté en tant que"
 
-#: inc/theme_plus.php:431 layouts/mo_toc_menu.php:38
+#: inc/theme-plus.php:346 layouts/mo_toc_menu.php:30
 msgid "New post"
 msgstr "Nouvelle publication"
 
-#: inc/theme_plus.php:433 layouts/mo_toc_menu.php:40
+#: inc/theme-plus.php:348 layouts/mo_toc_menu.php:34
 msgid "Profile"
 msgstr "Profil"
 
-#: inc/theme_plus.php:434 layouts/mo_toc_menu.php:41
+#: inc/theme-plus.php:349 layouts/mo_toc_menu.php:35
 msgid "Sign out"
 msgstr "Se déconnecter"
 
-#: inc/theme_plus.php:454 layouts/mo_toc_menu.php:52
+#: inc/theme-plus.php:370 layouts/mo_toc_menu.php:66
 msgid "Log in"
 msgstr "Se connecter"
 
-#: index.php:20
+#: index.php:16
 msgid "Notice"
 msgstr "Avis"
 
-#: layouts/mo_toc_menu.php:56
+#: layouts/mo_toc_menu.php:71
 msgid "Register"
 msgstr "S'inscrire"
 
@@ -1011,99 +1121,57 @@ msgstr "Cet article est sous licence %s"
 msgid "This author has not provided a description."
 msgstr "Cet auteur n'a pas fourni de description."
 
-#: user/page-bangumi.php:41 user/page-bilibiliFavList.php:207
-#: user/page-followVideos.php:29
+#: user/page-bangumi.php:226 user/page-bilibiliFavList.php:217
+#: user/page-followVideos.php:213
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr "Veuillez remplir l'UID Bilibili dans les options Sakura."
 
-#: user/page-bangumi.php:48
+#: user/page-bangumi.php:233
 msgid "Please fill in the Bangumi UID in Sakura Options."
 msgstr "Veuillez remplir l'UID Bangumi dans les options Sakura."
 
-#: user/page-bangumi.php:54
+#: user/page-bangumi.php:239
 msgid "Please fill in the My Anime List Username in Sakura Options."
 msgstr ""
 "Veuillez remplir le nom d'utilisateur My Anime List dans les options Sakura."
 
-#: user/page-login.php:18
-msgid "Remember_Me"
-msgstr "Se_souvenir_de_moi"
+#: user/page-links.php:360
+msgid "Submit Link"
+msgstr "Soumettre un lien"
 
-#: user/page-register.php:14 user/page-register.php:16
-#: user/page-register.php:19 user/page-register.php:24
-#: user/page-register.php:26 user/page-register.php:29
-#: user/page-register.php:34 user/page-register.php:36
-#: user/page-register.php:43
-msgid "Error"
-msgstr "Erreur"
+#: user/page-links.php:387
+msgid "Submit Your Link"
+msgstr "Soumettre votre lien"
 
-#: user/page-register.php:14
-msgid "Please enter username."
-msgstr "Veuillez entrer un nom d'utilisateur."
+#: user/page-links.php:388
+msgid "Please fill out the form below to submit your website link."
+msgstr ""
+"Veuillez remplir le formulaire ci-dessous pour soumettre le lien de votre "
+"site web."
 
-#: user/page-register.php:16
-msgid "Invalid characters, please enter a valid username."
-msgstr "Caractères invalides, veuillez entrer un nom d'utilisateur valide."
+#: user/page-links.php:394
+msgid "Site Name"
+msgstr "Nom du site"
 
-#: user/page-register.php:19
-msgid "This username has been registered."
-msgstr "Ce nom d'utilisateur est déjà enregistré."
+#: user/page-links.php:399
+msgid "Site URL"
+msgstr "URL du site"
 
-#: user/page-register.php:24
-msgid "Please enter email address."
-msgstr "Veuillez entrer une adresse email."
+#: user/page-links.php:404
+msgid "Site Description"
+msgstr "Description du site"
 
-#: user/page-register.php:26
-msgid "Invalid email address."
-msgstr "Adresse email invalide."
+#: user/page-links.php:409
+msgid "Site Logo/Avatar URL"
+msgstr "Logo du site / URL de l'avatar"
 
-#: user/page-register.php:29
-msgid "This email address has been registered."
-msgstr "Cette adresse email est déjà enregistrée."
+#: user/page-links.php:414
+msgid "Your Email"
+msgstr "Votre Email"
 
-#: user/page-register.php:34
-msgid "Password length is at least 6 digits."
-msgstr "Le mot de passe doit contenir au moins 6 caractères."
-
-#: user/page-register.php:36
-msgid "Inconsistent password entered twice."
-msgstr "Les mots de passe saisis ne correspondent pas."
-
-#: user/page-register.php:43
-msgid "Unable to complete registration request...Please contact"
-msgstr "Impossible de compléter la demande d'inscription...Veuillez contacter"
-
-#: user/page-register.php:43
-msgid "administrator"
-msgstr "administrateur"
-
-#: user/page-register.php:64
-msgid "User Name"
-msgstr "Nom d'utilisateur"
-
-#: user/page-register.php:65
-msgid "Email Address"
-msgstr "Adresse email"
-
-#: user/page-register.php:66
-msgid "Password"
-msgstr "Mot de passe"
-
-#: user/page-register.php:67
-msgid "Confirm your password"
-msgstr "Confirmez votre mot de passe"
-
-#: user/page-register.php:70
-msgid "Sign up"
-msgstr "S'inscrire"
-
-#: user/page-register.php:77
-msgid "Success! Redirecting......"
-msgstr "Succès ! Redirection......"
-
-#: user/page-register.php:82
-msgid "Registration is not open yet."
-msgstr "Les inscriptions ne sont pas encore ouvertes."
+#: user/page-links.php:420
+msgid "Verification Code"
+msgstr "Code de vérification"
 
 #. Theme Name of the plugin/theme
 msgid "Sakurairo"
@@ -1129,11 +1197,3 @@ msgstr "Créé par Fuukei"
 #. Author URI of the plugin/theme
 msgid "https://docs.fuukei.org/"
 msgstr "https://docs.fuukei.org/"
-
-#. Template Name of the plugin/theme
-msgid "文章模版"
-msgstr "Sakurairo Template 文章模版"
-
-#. Template Name of the plugin/theme
-msgid "友情链接模版"
-msgstr "Sakurairo Template 友情链接模版"
