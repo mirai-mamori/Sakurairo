@@ -100,8 +100,8 @@ if (typeof sakura_links === 'undefined') {
 let currentLang = 'zh_CN';
 try {
     // 优先从全局变量获取
-    if (window.current_lang) {
-        currentLang = window.current_lang;
+    if (_iro.language) {
+        currentLang = _iro.language;
     } 
     // 从HTML标签获取
     else if (document.documentElement.lang) {
@@ -332,7 +332,7 @@ function initLinkSubmission() {
             }, 15000);
             
             // 获取ajaxurl，如果未定义则从当前页面构建
-            const ajaxUrl = window.ajaxurl || (window.location.origin + '/wp-admin/admin-ajax.php');
+            const ajaxUrl = _iro.ajaxurl || (window.location.origin + '/wp-admin/admin-ajax.php');
             
             // 发送AJAX请求
             fetch(ajaxUrl, {
@@ -514,7 +514,7 @@ function loadCaptcha() {
     captchaInput.value = '';
     
     // 获取验证码API地址
-    let endpointUrl = window.captcha_endpoint || '';
+    let endpointUrl = _iro.captcha_endpoint || '';
     if (!endpointUrl) {
         const endpointInput = document.getElementById('captcha-endpoint');
         if (endpointInput) {

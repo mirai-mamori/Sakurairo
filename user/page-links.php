@@ -459,14 +459,6 @@ get_header();
 	</div>
 
 	<!-- 直接引入友情链接JavaScript -->
-	<script>
-		// 定义全局变量
-		window.ajaxurl = "<?php echo esc_url(admin_url('admin-ajax.php')); ?>";
-		// 设置语言（获取当前WordPress语言）
-		window.current_lang = "<?php echo esc_js(str_replace('-', '_', get_locale())); ?>";
-		// 验证码API地址 - 确保生成正确的绝对URL
-		window.captcha_endpoint = "<?php echo esc_url(home_url('/wp-json/sakura/v1/captcha/create')); ?>";
-	</script>
 	<!-- 添加缓存控制，确保加载最新版本的JS -->
 	<script src="<?php echo esc_url(get_template_directory_uri() . '/js/link-submission.js?ver=' . time()); ?>"></script>
 

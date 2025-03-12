@@ -49,6 +49,8 @@ function font_end_js_control()
         'movies' => $movies,
         'windowheight' => $auto_height,
         'ajaxurl' => admin_url('admin-ajax.php'),
+        'language' => esc_js(str_replace('-', '_', get_locale())),
+        'captcha_endpoint' => rest_url('sakura/v1/captcha/create'),
         'order' => get_option('comment_order'), // ajax comments
         'formpostion' => 'bottom', // ajax comments 默认为bottom，如果你的表单在顶部则设置为top。
         'api' => esc_url_raw(rest_url()),
