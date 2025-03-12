@@ -816,11 +816,21 @@ function get_link_items()
     $result = null;
     if (empty($linkcats))
         return get_the_link_items();  // 友链无分类，直接返回全部列表  
+    
+    $pending_cat_name = __('Pending Links', 'sakurairo'); // 未审核链接分类名称
     $link_category_need_display = get_post_meta(get_queried_object_id(), 'link_category_need_display', false);
+    
     foreach ($linkcats as $linkcat) {
+        // 跳过未审核链接分类
+        if ($linkcat->name === $pending_cat_name) {
+            continue;
+        }
+        
+        // 检查是否需要显示该分类
         if (!empty($link_category_need_display) && !in_array($linkcat->name, $link_category_need_display, true)) {
             continue;
         }
+        
         $result .= '<h3 class="link-title"><span class="link-fix">' . $linkcat->name . '</span></h3>';
         if ($linkcat->description) {
             $result .= '<div class="link-description">' . $linkcat->description . '</div>';
