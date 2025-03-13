@@ -195,9 +195,6 @@ function initLinkSubmission() {
         document.documentElement.style.overflow = '';
     }
 
-    // 页面加载完成后立即加载验证码
-    setTimeout(loadCaptcha, 500);
-
     // 表单提交
     let isSubmitting = false;
     let submissionTimeout = null;
