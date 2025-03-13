@@ -128,9 +128,9 @@ function get_smilies_panel() {
 						<input type="hidden" name="id" value="' . htmlspecialchars($test['id'], ENT_QUOTES, 'UTF-8') . '">
 					</label>
 				<script>
-                    var captchaHideTimeout = null;
-                    var captchaField = document.getElementById("captcha");
-                    var captchaImg = document.getElementById("captchaimg");
+                    let captchaHideTimeout = null;
+                    let captchaField = document.getElementById("captcha");
+                    let captchaImg = document.getElementById("captchaimg");
 
                     function showCaptcha() {
                         captchaField.setAttribute("placeholder", "");
@@ -151,7 +151,7 @@ function get_smilies_panel() {
                     }
                         
 	                function refreshCaptcha() {
-                        fetch("' . addslashes($captcha_url) . '")
+                        fetch(_iro.captcha_endpoint)
                             .then(resp => resp.json())
                             .then(json => {
                                 captchaImg.src = json["data"];
