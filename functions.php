@@ -2695,13 +2695,13 @@ function register_shortcodes() {
             // 多语言支持
             $lang = get_user_locale();
             if ($lang == 'zh_TW') {
-                return '<div class="steam-error">需在Steam模板設置填寫SteamAPI</div>';
+                return '<div class="steam-error">需在Steam模板設置填寫Steam API KEY</div>';
             } elseif ($lang == 'ja') {
-                return '<div class="steam-error">SteamテンプレートでSteam APIを設定してください</div>';
+                return '<div class="steam-error">SteamテンプレートでSteam API KEYを設定してください</div>';
             } elseif ($lang == 'en_US') {
-                return '<div class="steam-error">Please fill in Steam API in Steam template settings</div>';
+                return '<div class="steam-error">Please fill in Steam API KEY in Steam template settings</div>';
             } else {
-                return '<div class="steam-error">需在Steam模板设置填写SteamAPI</div>';
+                return '<div class="steam-error">需在Steam模板设置填写Steam API KEY</div>';
             }
         }
         preg_match_all('/\b7656\d{13}\b/', $content, $matches);
