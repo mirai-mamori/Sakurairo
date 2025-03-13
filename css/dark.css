@@ -543,13 +543,13 @@ body.dark .shuoshuo-comments,body.dark .shuoshuo-date {
 
 body.dark .comment-respond input[type=submit] {
   color: #f0f0f0;
-  box-shadow: 0 1px -1px 2px var(--theme-skin-dark) !important;
-  background: var(--theme-skin-dark) !important;
-  border: 1px solid var(--theme-skin-dark) !important;
+  box-shadow: 0 1px -1px 2px var(--article-theme-highlight, var(--theme-skin-matching)) !important;
+  background: var(--article-theme-highlight, var(--theme-skin-matching)) !important;
+  border: 1px solid var(--article-theme-highlight, var(--theme-skin-matching)) !important;
 }
 
 body.dark .comment-respond input[type=submit]:hover {
-  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
+  box-shadow: 0 1px 30px -2px var(--article-theme-highlight, var(--theme-skin-matching)) !important;
   background: var(--dark-bg-hover) !important;
 }
 
