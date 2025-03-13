@@ -2708,7 +2708,11 @@ function register_shortcodes() {
         $output = '<div class="steam-user-card">';
         foreach ($matches[0] as $steamid) {
             $url = 'https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $key . '&steamids=' . $steamid;
-            $response = wp_remote_get($url);
+            $response = get_transient('steam_stat_'.$steamid);
+            if (!$response) {
+                $response = wp_remote_get($url);
+                set_transient('steam_stat_'.$steamid, $response, 180);
+            }
             $data = json_decode($response["body"], true);
             $player = $data['response']['players'][0] ?? [];
             
