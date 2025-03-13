@@ -22,12 +22,6 @@ function i18n_form () {
             submission_success: '友情链接提交成功，请等待审核！',
             
             // 验证错误提示
-            name_required: '请输入网站名称',
-            url_required: '请输入网站地址',
-            description_required: '请输入网站描述',
-            image_required: '请输入网站图片地址',
-            email_required: '请输入联系邮箱',
-            captcha_required: '请输入验证码',
             invalid_url: '请输入有效的网站地址',
             invalid_email: '请输入有效的邮箱地址',
             security_error: '安全验证失败，请刷新页面后重试',
@@ -51,12 +45,6 @@ function i18n_form () {
             submission_success: '友情鏈接提交成功，請等待審核！',
             
             // 验证错误提示
-            name_required: '請輸入網站名稱',
-            url_required: '請輸入網站地址',
-            description_required: '請輸入網站描述',
-            image_required: '請輸入網站圖片地址',
-            email_required: '請輸入聯繫郵箱',
-            captcha_required: '請輸入驗證碼',
             invalid_url: '請輸入有效的網站地址',
             invalid_email: '請輸入有效的郵箱地址',
             security_error: '安全驗證失敗，請刷新頁面後重試',
@@ -80,12 +68,6 @@ function i18n_form () {
             submission_success: 'リンク申請が成功しました。審査をお待ちください！',
             
             // 验证错误提示
-            name_required: 'サイト名を入力してください',
-            url_required: 'サイトURLを入力してください',
-            description_required: 'サイトの説明を入力してください',
-            image_required: 'サイト画像URLを入力してください',
-            email_required: 'メールアドレスを入力してください',
-            captcha_required: '認証コードを入力してください',
             invalid_url: '有効なURLを入力してください',
             invalid_email: '有効なメールアドレスを入力してください',
             security_error: 'セキュリティ検証に失敗しました、ページを更新して再試行してください',
@@ -338,37 +320,6 @@ function validateForm() {
     // 检查是否所有必要元素都存在
     if (!siteName || !siteUrl || !siteDescription || !siteImage || !contactEmail || !captcha || !timestampInput || !idInput || !nonceInput) {
         displayStatus('error', i18n.security_error);
-        return false;
-    }
-    
-    // 检查必填字段
-    if (!siteName.value.trim()) {
-        displayStatus('error', i18n.name_required);
-        return false;
-    }
-    
-    if (!siteUrl.value.trim()) {
-        displayStatus('error', i18n.url_required);
-        return false;
-    }
-    
-    if (!siteDescription.value.trim()) {
-        displayStatus('error', i18n.description_required);
-        return false;
-    }
-    
-    if (!siteImage.value.trim()) {
-        displayStatus('error', i18n.image_required);
-        return false;
-    }
-    
-    if (!contactEmail.value.trim()) {
-        displayStatus('error', i18n.email_required);
-        return false;
-    }
-    
-    if (!captcha.value.trim()) {
-        displayStatus('error', i18n.captcha_required);
         return false;
     }
     
