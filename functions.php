@@ -2799,6 +2799,70 @@ function register_shortcodes() {
         return $output;
     });
 
+    // 添加Steam个人资料响应式样式的JavaScript
+    add_action('wp_footer', function() {
+        ?>
+        <script>
+        (function() {
+            // 应用Steam个人资料样式的函数
+            function applySteamProfileStyles() {
+                const steamProfiles = document.querySelectorAll('.steam-profile');
+                
+                steamProfiles.forEach(profile => {
+                    // 检查是否正在玩游戏
+                    const gameInfo = profile.querySelector('.steam-game-info');
+                    const profileHeader = profile.querySelector('.steam-profile-header');
+                    const username = profile.querySelector('.steam-username');
+                    
+                    // 只有当宽度超过700px且正在玩游戏时才应用样式
+                    if (profile.offsetWidth > 700 && gameInfo) {
+                        profile.style.display = 'flex';
+                        
+                        if (profileHeader) {
+                            profileHeader.style.minWidth = '50%';
+                            profileHeader.style.margin = '0 auto';
+                            profileHeader.style.background = 'none';
+                            profileHeader.style.borderBottom = 'unset';
+                        }
+
+                        if (username) {
+                            username.style.fontSize = '30px';
+                        }
+                    } else {
+                        // 重置样式到默认状态
+                        profile.style.display = '';
+                        
+                        if (profileHeader) {
+                            profileHeader.style.minWidth = '';
+                            profileHeader.style.margin = '';
+                            profileHeader.style.background = '';
+                            profileHeader.style.borderBottom = '';
+                        }
+
+                        if (username) {
+                            username.style.fontSize = '';
+                        }
+                    }
+                });
+            }
+            
+            // 页面加载时应用样式
+            document.addEventListener('DOMContentLoaded', applySteamProfileStyles);
+            
+            // 监听pjax事件
+            document.addEventListener('pjax:complete', applySteamProfileStyles);
+            
+            // 监听窗口大小变化
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                // 使用防抖，避免频繁触发
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(applySteamProfileStyles, 250);
+            });
+        })();
+        </script>
+        <?php
+    });
 }
 add_action('init', 'register_shortcodes');
 //code end
