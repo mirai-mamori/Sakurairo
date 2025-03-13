@@ -2680,6 +2680,43 @@ function register_shortcodes() {
         return $iframes;
      });
 
+     add_shortcode('steamuser', function ($atts, $content = null) {
+        $key = iro_opt('steam_key');
+        if (empty($key)) return '<a>需在Steam模板设置填写SteamAPI</a>';
+        preg_match_all('/\b7656\d{13}\b/', $content, $matches);
+        $output = '';
+        foreach ($matches[0] as $steamid) {
+            $url = 'https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $key . '&steamids=' . $steamid;
+            $response = wp_remote_get($url);
+            $data = json_decode($response["body"], true);
+            $player = $data['response']['players'][0];
+            $status = match($player['personastate'] ?? 0) {
+                0 => '离线',
+                1 => '在线',
+                3 => '离开',
+                default => '未知状态，请提交issue'
+            };
+            if (empty($data['response']['players'][0])) {
+                $output .= "<a>ID填写错误，请检验</a>";
+            } else {
+                // 瞳宝ui售后区
+                $output .= '<img src="' . esc_attr($player['avatar']) . '"><br>';
+                $output .= '<a href="' . esc_attr($player['profileurl']) . '" target="_blank">' . esc_attr($player['personaname']) . '</a><br>';
+                $output .= '<a>当前状态: ' . $status . '</a><br>';
+
+                if(!empty($player['gameextrainfo'])) {
+                $output .= '<a href="https://store.steampowered.com/app/' . esc_attr($player['gameid']) . '/" target="_blank">正在玩: ' . esc_attr($player['gameextrainfo']) . '</a><br>';
+                $output .= '<img src="https://shared.cdn.steamchina.queniuam.com/store_item_assets/steam/apps/' . esc_attr($player['gameid']) . '/header.jpg"><br>';
+               }
+                if (($player['personastate'] ?? 0) === 0 && isset($player['lastlogoff'])) {
+                    $last_online = date('Y-m-d H:i', $player['lastlogoff']);
+                    $output .= '<a>上次在线：' . esc_attr($last_online) . '</a>';
+                }
+            }
+        }
+        return $output;
+    });
+
 
 }
 add_action('init', 'register_shortcodes');
