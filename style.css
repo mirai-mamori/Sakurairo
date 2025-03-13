@@ -460,6 +460,7 @@ blockquote:after {
   padding: 12px 0 0;
   line-height: 30px;
   font-weight: var(--global-font-weight);
+  width: 100%;
 }
 
 .single-center .entry-census i{

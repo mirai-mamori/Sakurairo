@@ -127,6 +127,12 @@ function i18n_form () {
 
 // 全局初始化函数，支持PJAX环境
 function initLinkSubmission() {
+    // 防止重复初始化
+    if (window._linkSubmissionInitialized) {
+        return;
+    }
+    window._linkSubmissionInitialized = true;
+    
     const i18n = i18n_form();
     const submitButton = document.getElementById('openLinkModal');
     const linkModal = document.getElementById('linkModal');
@@ -136,6 +142,7 @@ function initLinkSubmission() {
     
     // 如果相关元素不存在，优雅退出
     if (!linkForm) {
+        window._linkSubmissionInitialized = false;
         return;
     }
 
@@ -210,6 +217,9 @@ function initLinkSubmission() {
         window.removeEventListener('pagehide', cleanup);
         window.removeEventListener('unload', cleanup);
         document.removeEventListener('visibilitychange', handleVisibilityChange);
+        
+        // 重置初始化标志，允许重新初始化
+        window._linkSubmissionInitialized = false;
     };
 
     // 处理页面可见性变化
@@ -295,110 +305,138 @@ function initLinkSubmission() {
     // 表单提交
     let isSubmitting = false;
     let submissionTimeout = null;
+    let submissionLock = false; // 添加提交锁，防止重复提交
 
     if (linkForm) {
-        linkForm.addEventListener('submit', (e) => {
+        // 先移除可能存在的旧事件监听器
+        linkForm.removeEventListener('submit', handleFormSubmit);
+        
+        // 定义表单提交处理函数
+        function handleFormSubmit(e) {
             e.preventDefault();
             
-            // 防止重复提交
-            if (isSubmitting) {
+            // 防止重复提交 - 使用双重锁定机制
+            if (isSubmitting || submissionLock) {
+                console.log('防止重复提交');
                 return;
             }
             
-            // 重置状态
-            clearTimeout(submissionTimeout);
-            isSubmitting = true;
+            // 设置提交锁
+            submissionLock = true;
             
-            // 验证表单
-            if (!validateForm()) {
-                isSubmitting = false;
-                return;
-            }
-            
-            // 禁用提交按钮
-            const submitButton = linkForm.querySelector('.link-form-submit');
-            if (submitButton) {
-                submitButton.disabled = true;
-            }
-            
-            displayStatus('info', i18n.submitting);
-            
-            // 准备表单数据
-            const formData = new FormData(linkForm);
-            formData.append('action', 'link_submission');
-            
-            // 设置提交超时
-            submissionTimeout = setTimeout(() => {
-                if (isSubmitting) {
+            // 延迟执行，确保UI有时间响应
+            setTimeout(() => {
+                // 重置状态
+                clearTimeout(submissionTimeout);
+                isSubmitting = true;
+                
+                // 验证表单
+                if (!validateForm()) {
                     isSubmitting = false;
+                    submissionLock = false;
+                    return;
+                }
+                
+                // 禁用提交按钮
+                const submitButton = linkForm.querySelector('.link-form-submit');
+                if (submitButton) {
+                    submitButton.disabled = true;
+                }
+                
+                displayStatus('info', i18n.submitting);
+                
+                // 准备表单数据
+                const formData = new FormData(linkForm);
+                formData.append('action', 'link_submission');
+                
+                // 设置提交超时
+                submissionTimeout = setTimeout(() => {
+                    if (isSubmitting) {
+                        isSubmitting = false;
+                        submissionLock = false;
+                        if (submitButton) {
+                            submitButton.disabled = false;
+                        }
+                        displayStatus('error', i18n.timeout_error);
+                        loadCaptcha();
+                    }
+                }, 15000);
+                
+                // 获取ajaxurl，如果未定义则从当前页面构建
+                const ajaxUrl = _iro.ajaxurl || (window.location.origin + '/wp-admin/admin-ajax.php');
+                
+                // 发送AJAX请求
+                fetch(ajaxUrl, {
+                    method: 'POST',
+                    body: formData,
+                    credentials: 'same-origin'
+                })
+                .then(response => {
+                    clearTimeout(submissionTimeout);
+                    
+                    // 捕获响应文本以便调试
+                    return response.text().then(text => {
+                        // 检查响应状态
+                        if (!response.ok) {
+                            throw new Error(`${i18n.server_error} ${response.status}`);
+                        }
+                        
+                        // 尝试解析JSON
+                        try {
+                            return JSON.parse(text);
+                        } catch (e) {
+                            throw new Error('服务器返回了无效的JSON响应');
+                        }
+                    });
+                })
+                .then(data => {
+                    isSubmitting = false;
+                    // 延迟释放提交锁，防止快速连续点击
+                    setTimeout(() => {
+                        submissionLock = false;
+                    }, 1000);
+                    
                     if (submitButton) {
                         submitButton.disabled = false;
                     }
-                    displayStatus('error', i18n.timeout_error);
-                    loadCaptcha();
-                }
-            }, 15000);
-            
-            // 获取ajaxurl，如果未定义则从当前页面构建
-            const ajaxUrl = _iro.ajaxurl || (window.location.origin + '/wp-admin/admin-ajax.php');
-            
-            // 发送AJAX请求
-            fetch(ajaxUrl, {
-                method: 'POST',
-                body: formData,
-                credentials: 'same-origin'
-            })
-            .then(response => {
-                clearTimeout(submissionTimeout);
-                
-                // 捕获响应文本以便调试
-                return response.text().then(text => {
-                    // 检查响应状态
-                    if (!response.ok) {
-                        throw new Error(`${i18n.server_error} ${response.status}`);
+                    
+                    if (data.success) {
+                        // 成功提交 - 优先使用服务器返回的消息，如果没有则使用前端翻译
+                        displayStatus('success', data.data.message || i18n.submission_success);
+                        linkForm.reset();
+                    } else {
+                        // 提交失败
+                        displayStatus('error', data.data.message || i18n.server_error);
+                        loadCaptcha();
+                    }
+                })
+                .catch(error => {
+                    isSubmitting = false;
+                    // 延迟释放提交锁，防止快速连续点击
+                    setTimeout(() => {
+                        submissionLock = false;
+                    }, 1000);
+                    
+                    clearTimeout(submissionTimeout);
+                    
+                    if (submitButton) {
+                        submitButton.disabled = false;
                     }
                     
-                    // 尝试解析JSON
-                    try {
-                        return JSON.parse(text);
-                    } catch (e) {
-                        throw new Error('服务器返回了无效的JSON响应');
-                    }
-                });
-            })
-            .then(data => {
-                isSubmitting = false;
-                if (submitButton) {
-                    submitButton.disabled = false;
-                }
-                
-                if (data.success) {
-                    // 成功提交 - 优先使用服务器返回的消息，如果没有则使用前端翻译
-                    displayStatus('success', data.data.message || i18n.submission_success);
-                    linkForm.reset();
-                } else {
-                    // 提交失败
-                    displayStatus('error', data.data.message || i18n.server_error);
+                    displayStatus('error', error.message || i18n.connection_error);
                     loadCaptcha();
-                }
-            })
-            .catch(error => {
-                isSubmitting = false;
-                clearTimeout(submissionTimeout);
-                
-                if (submitButton) {
-                    submitButton.disabled = false;
-                }
-                
-                displayStatus('error', error.message || i18n.connection_error);
-                loadCaptcha();
-            });
-        });
+                });
+            }, 50);
+        }
+        
+        // 添加表单提交事件监听器
+        linkForm.addEventListener('submit', handleFormSubmit);
     }
 }
 
 // 验证表单
 function validateForm() {
+    const i18n = i18n_form(); // 确保获取正确的翻译
     const siteName = document.getElementById('siteName');
     const siteUrl = document.getElementById('siteUrl');
     const siteDescription = document.getElementById('siteDescription');
@@ -507,6 +545,7 @@ function validateForm() {
 
 // 加载验证码
 function loadCaptcha() {
+    const i18n = i18n_form(); // 确保获取正确的翻译
     const captchaImg = document.getElementById('captchaImg');
     const captchaInput = document.getElementById('yzm');
     const timestampInput = document.getElementById('timestamp');
@@ -595,30 +634,41 @@ function displayStatus(type, message) {
         return;
     }
     
-    // 清理消息内容，防止XSS
-    const sanitizedMessage = message.replace(/[<>"'&]/g, (c) => {
-        return {'<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;', '&': '&amp;'}[c];
-    });
-    
-    // 设置消息类型和内容
-    statusElement.className = 'form-status';
-    statusElement.classList.add(type === 'success' ? 'success-msg' : 'error-msg');
-    statusElement.textContent = sanitizedMessage;
-    statusElement.style.display = 'block';
-    
-    // 成功消息自动隐藏
-    if (type === 'success') {
-        setTimeout(() => {
-            if (statusElement) {
-                statusElement.style.display = 'none';
-            }
-        }, 5000);
+    // 防抖：如果已经有计划的状态更新，取消它
+    if (window._statusUpdateTimeout) {
+        clearTimeout(window._statusUpdateTimeout);
     }
+    
+    // 延迟执行状态更新，避免快速连续调用
+    window._statusUpdateTimeout = setTimeout(() => {
+        // 清理消息内容，防止XSS
+        const sanitizedMessage = message.replace(/[<>"'&]/g, (c) => {
+            return {'<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;', '&': '&amp;'}[c];
+        });
+        
+        // 设置消息类型和内容
+        statusElement.className = 'form-status';
+        statusElement.classList.add(type === 'success' ? 'success-msg' : 'error-msg');
+        statusElement.textContent = sanitizedMessage;
+        statusElement.style.display = 'block';
+        
+        // 成功消息自动隐藏
+        if (type === 'success') {
+            setTimeout(() => {
+                if (statusElement) {
+                    statusElement.style.display = 'none';
+                }
+            }, 5000);
+        }
+    }, 50); // 50ms的防抖延迟
 }
 
 // 页面加载完成时初始化链接提交功能
 document.addEventListener('DOMContentLoaded', initLinkSubmission);
 
-// PJAX环境下的初始化
+// PJAX环境下的初始化 - 确保不会重复绑定
+document.removeEventListener('pjax:complete', initLinkSubmission); // 先移除再添加
 document.addEventListener('pjax:complete', initLinkSubmission);
+
+document.removeEventListener('akina:pjax:end', initLinkSubmission); // 先移除再添加
 document.addEventListener('akina:pjax:end', initLinkSubmission);
