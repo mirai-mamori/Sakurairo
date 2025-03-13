@@ -105,194 +105,94 @@ function i18n_form () {
         } 
         // 从HTML标签获取
         else if (document.documentElement.lang) {
-            const htmlLang = document.documentElement.lang;
+            let htmlLang = document.documentElement.lang;
             currentLang = htmlLang.replace(/-/g, '_');
-        }
-        
-        // 从URL参数获取
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('lang')) {
-            currentLang = urlParams.get('lang');
         }
     } catch (e) {
         // 出错时使用默认语言
     }
 
-    const validLangs = ['zh_CN', 'zh_TW', 'ja'];
-    const lang = validLangs.includes(currentLang) ? currentLang : 'zh_CN';
-    const i18n = sakura_links[lang] || sakura_links['zh_CN'];
+    let validLangs = ['zh_CN', 'zh_TW', 'ja'];
+    let lang = validLangs.includes(currentLang) ? currentLang : 'zh_CN';
+    let i18n = sakura_links[lang] || sakura_links['zh_CN'];
 
     return i18n;
 }
 
 // 全局初始化函数，支持PJAX环境
 function initLinkSubmission() {
-    // 防止重复初始化
-    if (window._linkSubmissionInitialized) {
-        return;
-    }
-    window._linkSubmissionInitialized = true;
     
-    const i18n = i18n_form();
-    const submitButton = document.getElementById('openLinkModal');
-    const linkModal = document.getElementById('linkModal');
-    const closeButton = document.querySelector('.link-modal-close');
-    const linkForm = document.getElementById('linkSubmissionForm');
-    const captchaImg = document.getElementById('captchaImg');
+    let i18n = i18n_form();
+    let submitButton = document.getElementById('openLinkModal');
+    let linkModal = document.getElementById('linkModal');
+    let closeButton = document.querySelector('.link-modal-close');
+    let linkForm = document.getElementById('linkSubmissionForm');
+    let captchaImg = document.getElementById('captchaImg');
     
-    // 如果相关元素不存在，优雅退出
-    if (!linkForm) {
-        window._linkSubmissionInitialized = false;
+    // 如果相关元素不存在
+    if (!linkForm  || !submitButton || !linkModal || !closeButton || !captchaImg) {
+        if (form_inited = true) { // 检查是否曾初始化
+            document.removeEventListener('pjax:complete', initLinkSubmission);
+            cleanup();
+            form_inited = false;
+        }
         return;
     }
 
-    let patternTitle = document.querySelector('.pattern-header span');
+    let form_inited = true; // 标记初始化
+
+    let patternTitle = document.querySelector('.pattern-header span'); // 检查页面头图
     if (patternTitle) { // 移动按钮到标题后方
         patternTitle.parentNode.insertBefore(submitButton, patternTitle.nextElementSibling);
     }
 
-    // 存储滚动状态
-    let isScrollDisabled = false;
-    let scrollPosition = 0;
+    // 初始化行为
+    submitButton.addEventListener('click', handleModalOpen); // 呼出
+    closeButton.addEventListener('click', handleModalClose); // 关闭
+    document.addEventListener('mousedown', handleOutsideClick); // 点击外部关闭
+    captchaImg.addEventListener('click', loadCaptcha);
 
-    // 禁用页面滚动
-    const disableScroll = () => {
-        if (isScrollDisabled) return;
-        scrollPosition = window.pageYOffset;
-        document.body.style.overflow = 'hidden';
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
-        document.body.style.top = `-${scrollPosition}px`;
-        isScrollDisabled = true;
-        // 存储状态到 sessionStorage，以便在页面重新加载时检查
-        try {
-            sessionStorage.setItem('scrollDisabled', 'true');
-            sessionStorage.setItem('scrollPosition', scrollPosition.toString());
-        } catch (e) {
-            console.warn('Failed to save scroll state to sessionStorage');
-        }
-    };
-
-    // 启用页面滚动
-    const enableScroll = () => {
-        if (!isScrollDisabled && !sessionStorage.getItem('scrollDisabled')) return;
-        
-        // 获取存储的滚动位置
-        const storedPosition = sessionStorage.getItem('scrollPosition');
-        if (storedPosition !== null) {
-            scrollPosition = parseInt(storedPosition, 10);
-        }
-        
-        document.body.style.removeProperty('overflow');
-        document.body.style.removeProperty('position');
-        document.body.style.removeProperty('width');
-        document.body.style.removeProperty('top');
-        window.scrollTo(0, scrollPosition);
-        isScrollDisabled = false;
-        
-        // 清除存储的状态
-        try {
-            sessionStorage.removeItem('scrollDisabled');
-            sessionStorage.removeItem('scrollPosition');
-        } catch (e) {
-            console.warn('Failed to clear scroll state from sessionStorage');
-        }
-    };
-
-    // 清理函数 - 用于页面卸载时
-    const cleanup = () => {
-        enableScroll();
+    // 清理函数
+    document.addEventListener('pjax:complete', cleanup);
+    function cleanup() {
         // 移除所有事件监听器
-        if (submitButton) {
-            submitButton.removeEventListener('click', handleModalOpen);
-        }
-        if (closeButton) {
-            closeButton.removeEventListener('click', handleModalClose);
-        }
-        if (linkModal) {
-            window.removeEventListener('click', handleOutsideClick);
-        }
-        // 移除所有页面级事件监听器
-        window.removeEventListener('beforeunload', cleanup);
-        window.removeEventListener('pagehide', cleanup);
-        window.removeEventListener('unload', cleanup);
-        document.removeEventListener('visibilitychange', handleVisibilityChange);
-        
-        // 重置初始化标志，允许重新初始化
-        window._linkSubmissionInitialized = false;
-    };
+        submitButton.removeEventListener('click', handleModalOpen);
+        closeButton.removeEventListener('click', handleModalClose);
+        document.removeEventListener('mousedown', handleOutsideClick);
+        captchaImg.removeEventListener('click', loadCaptcha);
 
-    // 处理页面可见性变化
-    const handleVisibilityChange = () => {
-        if (document.visibilityState === 'hidden') {
-            enableScroll();
-        }
-    };
+        linkForm.removeEventListener('submit', handleFormSubmit);
 
-    // 事件处理函数
-    const handleModalOpen = (e) => {
-        e.preventDefault();
-        linkModal.style.display = 'block';
-        disableScroll();
-        loadCaptcha();
-    };
-
-    const handleModalClose = () => {
-        linkModal.style.display = 'none';
         enableScroll();
+        document.removeEventListener('pjax:complete', cleanup); // 清理自身
     };
 
-    const handleOutsideClick = (e) => {
+    function handleModalOpen(e) { // 点击展开
+        e.preventDefault();
+        disableScroll();
+        linkModal.style.display = 'block';
+        loadCaptcha();
+    }
+    
+    function handleModalClose() { // 点击关闭
+        enableScroll();
+        linkModal.style.display = 'none';
+    }
+    
+    function handleOutsideClick(e) { // 点击外部关闭
         if (e.target === linkModal) {
             linkModal.style.display = 'none';
             enableScroll();
         }
-    };
-
-    // 初始化时检查并恢复滚动状态
-    if (sessionStorage.getItem('scrollDisabled')) {
-        enableScroll();
     }
 
-    // 初始化模态框
-    if (submitButton && linkModal) {
-        submitButton.addEventListener('click', handleModalOpen);
+    // 滚动行为
+    function disableScroll() {
+        document.documentElement.style.overflow = 'hidden';
     }
-
-    // 关闭模态框
-    if (closeButton && linkModal) {
-        closeButton.addEventListener('click', handleModalClose);
-    }
-
-    // 点击模态框外部关闭
-    if (linkModal) {
-        window.addEventListener('click', handleOutsideClick);
-    }
-
-    // 添加多个页面卸载相关的事件监听
-    window.addEventListener('beforeunload', cleanup);
-    window.addEventListener('pagehide', cleanup);
-    window.addEventListener('unload', cleanup);
-    document.addEventListener('visibilitychange', handleVisibilityChange);
     
-    // 监听所有可能的链接点击
-    document.addEventListener('click', (e) => {
-        const link = e.target.closest('a');
-        if (link && link.href && !link.target && !e.ctrlKey && !e.shiftKey && !e.metaKey && !e.altKey) {
-            enableScroll();
-        }
-    }, true);
-
-    // 监听表单提交
-    document.addEventListener('submit', () => {
-        enableScroll();
-    }, true);
-
-    // 刷新验证码（点击验证码图片时）
-    if (captchaImg) {
-        captchaImg.addEventListener('click', () => {
-            loadCaptcha();
-        });
+    function enableScroll() {
+        document.documentElement.style.overflow = '';
     }
 
     // 页面加载完成后立即加载验证码
@@ -303,145 +203,140 @@ function initLinkSubmission() {
     let submissionTimeout = null;
     let submissionLock = false; // 添加提交锁，防止重复提交
 
-    if (linkForm) {
-        // 先移除可能存在的旧事件监听器
-        linkForm.removeEventListener('submit', handleFormSubmit);
+    // 添加表单提交事件监听器
+    linkForm.addEventListener('submit', handleFormSubmit);
+
+    // 定义表单提交处理函数
+    function handleFormSubmit(e) {
+        e.preventDefault();
         
-        // 定义表单提交处理函数
-        function handleFormSubmit(e) {
-            e.preventDefault();
+        // 防止重复提交 - 使用双重锁定机制
+        if (isSubmitting || submissionLock) {
+            console.log('防止重复提交');
+            return;
+        }
+        
+        // 设置提交锁
+        submissionLock = true;
+        
+        // 延迟执行，确保UI有时间响应
+        setTimeout(() => {
+            // 重置状态
+            clearTimeout(submissionTimeout);
+            isSubmitting = true;
             
-            // 防止重复提交 - 使用双重锁定机制
-            if (isSubmitting || submissionLock) {
-                console.log('防止重复提交');
+            // 验证表单
+            if (!validateForm()) {
+                isSubmitting = false;
+                submissionLock = false;
                 return;
             }
             
-            // 设置提交锁
-            submissionLock = true;
+            // 禁用提交按钮
+            let submitButton = linkForm.querySelector('.link-form-submit');
+            if (submitButton) {
+                submitButton.disabled = true;
+            }
             
-            // 延迟执行，确保UI有时间响应
-            setTimeout(() => {
-                // 重置状态
-                clearTimeout(submissionTimeout);
-                isSubmitting = true;
-                
-                // 验证表单
-                if (!validateForm()) {
+            displayStatus('info', i18n.submitting);
+            
+            // 准备表单数据
+            let formData = new FormData(linkForm);
+            formData.append('action', 'link_submission');
+            
+            // 设置提交超时
+            submissionTimeout = setTimeout(() => {
+                if (isSubmitting) {
                     isSubmitting = false;
                     submissionLock = false;
-                    return;
-                }
-                
-                // 禁用提交按钮
-                const submitButton = linkForm.querySelector('.link-form-submit');
-                if (submitButton) {
-                    submitButton.disabled = true;
-                }
-                
-                displayStatus('info', i18n.submitting);
-                
-                // 准备表单数据
-                const formData = new FormData(linkForm);
-                formData.append('action', 'link_submission');
-                
-                // 设置提交超时
-                submissionTimeout = setTimeout(() => {
-                    if (isSubmitting) {
-                        isSubmitting = false;
-                        submissionLock = false;
-                        if (submitButton) {
-                            submitButton.disabled = false;
-                        }
-                        displayStatus('error', i18n.timeout_error);
-                        loadCaptcha();
-                    }
-                }, 15000);
-                
-                // 获取ajaxurl，如果未定义则从当前页面构建
-                const ajaxUrl = _iro.ajaxurl || (window.location.origin + '/wp-admin/admin-ajax.php');
-                
-                // 发送AJAX请求
-                fetch(ajaxUrl, {
-                    method: 'POST',
-                    body: formData,
-                    credentials: 'same-origin'
-                })
-                .then(response => {
-                    clearTimeout(submissionTimeout);
-                    
-                    // 捕获响应文本以便调试
-                    return response.text().then(text => {
-                        // 检查响应状态
-                        if (!response.ok) {
-                            throw new Error(`${i18n.server_error} ${response.status}`);
-                        }
-                        
-                        // 尝试解析JSON
-                        try {
-                            return JSON.parse(text);
-                        } catch (e) {
-                            throw new Error('服务器返回了无效的JSON响应');
-                        }
-                    });
-                })
-                .then(data => {
-                    isSubmitting = false;
-                    // 延迟释放提交锁，防止快速连续点击
-                    setTimeout(() => {
-                        submissionLock = false;
-                    }, 1000);
-                    
                     if (submitButton) {
                         submitButton.disabled = false;
                     }
-                    
-                    if (data.success) {
-                        // 成功提交 - 优先使用服务器返回的消息，如果没有则使用前端翻译
-                        displayStatus('success', data.data.message || i18n.submission_success);
-                        linkForm.reset();
-                    } else {
-                        // 提交失败
-                        displayStatus('error', data.data.message || i18n.server_error);
-                        loadCaptcha();
-                    }
-                })
-                .catch(error => {
-                    isSubmitting = false;
-                    // 延迟释放提交锁，防止快速连续点击
-                    setTimeout(() => {
-                        submissionLock = false;
-                    }, 1000);
-                    
-                    clearTimeout(submissionTimeout);
-                    
-                    if (submitButton) {
-                        submitButton.disabled = false;
-                    }
-                    
-                    displayStatus('error', error.message || i18n.connection_error);
+                    displayStatus('error', i18n.timeout_error);
                     loadCaptcha();
+                }
+            }, 15000);
+            
+            // 获取ajaxurl，如果未定义则从当前页面构建
+            let ajaxUrl = _iro.ajaxurl || (window.location.origin + '/wp-admin/admin-ajax.php');
+            
+            // 发送AJAX请求
+            fetch(ajaxUrl, {
+                method: 'POST',
+                body: formData,
+                credentials: 'same-origin'
+            })
+            .then(response => {
+                clearTimeout(submissionTimeout);
+                
+                // 捕获响应文本以便调试
+                return response.text().then(text => {
+                    // 检查响应状态
+                    if (!response.ok) {
+                        throw new Error(`${i18n.server_error} ${response.status}`);
+                    }
+                    
+                    // 尝试解析JSON
+                    try {
+                        return JSON.parse(text);
+                    } catch (e) {
+                        throw new Error('服务器返回了无效的JSON响应');
+                    }
                 });
-            }, 50);
-        }
-        
-        // 添加表单提交事件监听器
-        linkForm.addEventListener('submit', handleFormSubmit);
+            })
+            .then(data => {
+                isSubmitting = false;
+                // 延迟释放提交锁，防止快速连续点击
+                setTimeout(() => {
+                    submissionLock = false;
+                }, 1000);
+                
+                if (submitButton) {
+                    submitButton.disabled = false;
+                }
+                
+                if (data.success) {
+                    // 成功提交 - 优先使用服务器返回的消息，如果没有则使用前端翻译
+                    displayStatus('success', data.data.message || i18n.submission_success);
+                    linkForm.reset();
+                } else {
+                    // 提交失败
+                    displayStatus('error', data.data.message || i18n.server_error);
+                    loadCaptcha();
+                }
+            })
+            .catch(error => {
+                isSubmitting = false;
+                // 延迟释放提交锁，防止快速连续点击
+                setTimeout(() => {
+                    submissionLock = false;
+                }, 1000);
+                
+                clearTimeout(submissionTimeout);
+                
+                if (submitButton) {
+                    submitButton.disabled = false;
+                }
+                
+                displayStatus('error', error.message || i18n.connection_error);
+                loadCaptcha();
+            });
+        }, 50);
     }
 }
 
 // 验证表单
 function validateForm() {
-    const i18n = i18n_form(); // 确保获取正确的翻译
-    const siteName = document.getElementById('siteName');
-    const siteUrl = document.getElementById('siteUrl');
-    const siteDescription = document.getElementById('siteDescription');
-    const siteImage = document.getElementById('siteImage');
-    const contactEmail = document.getElementById('contactEmail');
-    const captcha = document.getElementById('yzm');
-    const timestampInput = document.getElementById('timestamp');
-    const idInput = document.getElementById('captchaId');
-    const nonceInput = document.querySelector('input[name="link_submission_nonce"]');
+    let i18n = i18n_form(); // 确保获取正确的翻译
+    let siteName = document.getElementById('siteName');
+    let siteUrl = document.getElementById('siteUrl');
+    let siteDescription = document.getElementById('siteDescription');
+    let siteImage = document.getElementById('siteImage');
+    let contactEmail = document.getElementById('contactEmail');
+    let captcha = document.getElementById('yzm');
+    let timestampInput = document.getElementById('timestamp');
+    let idInput = document.getElementById('captchaId');
+    let nonceInput = document.querySelector('input[name="link_submission_nonce"]');
     
     // 检查是否所有必要元素都存在
     if (!siteName || !siteUrl || !siteDescription || !siteImage || !contactEmail || !captcha || !timestampInput || !idInput || !nonceInput) {
@@ -498,7 +393,7 @@ function validateForm() {
         siteUrl.value = siteUrlValue;
     }
     
-    const urlPattern = /^https?:\/\/([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[^\s]*)?$/;
+    let urlPattern = /^https?:\/\/([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[^\s]*)?$/;
     if (!urlPattern.test(siteUrlValue)) {
         displayStatus('error', i18n.invalid_url);
         return false;
@@ -517,14 +412,14 @@ function validateForm() {
     }
     
     // 检查邮箱格式
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(contactEmail.value.trim())) {
         displayStatus('error', i18n.invalid_email);
         return false;
     }
     
     // 防止XSS攻击 - 检查输入值是否包含可疑内容
-    const xssPattern = /<script[^>]*>[\s\S]*?<\/script>|<[^>]*on\w+\s*=|javascript:|data:/i;
+    let xssPattern = /<script[^>]*>[\s\S]*?<\/script>|<[^>]*on\w+\s*=|javascript:|data:/i;
     if (
         xssPattern.test(siteName.value) || 
         xssPattern.test(siteDescription.value) || 
@@ -541,11 +436,11 @@ function validateForm() {
 
 // 加载验证码
 function loadCaptcha() {
-    const i18n = i18n_form(); // 确保获取正确的翻译
-    const captchaImg = document.getElementById('captchaImg');
-    const captchaInput = document.getElementById('yzm');
-    const timestampInput = document.getElementById('timestamp');
-    const idInput = document.getElementById('captchaId');
+    let i18n = i18n_form(); // 确保获取正确的翻译
+    let captchaImg = document.getElementById('captchaImg');
+    let captchaInput = document.getElementById('yzm');
+    let timestampInput = document.getElementById('timestamp');
+    let idInput = document.getElementById('captchaId');
     
     // 元素检查
     if (!captchaImg || !captchaInput || !timestampInput || !idInput) {
@@ -559,7 +454,7 @@ function loadCaptcha() {
     // 获取验证码API地址
     let endpointUrl = _iro.captcha_endpoint || '';
     if (!endpointUrl) {
-        const endpointInput = document.getElementById('captcha-endpoint');
+        let endpointInput = document.getElementById('captcha-endpoint');
         if (endpointInput) {
             endpointUrl = endpointInput.value;
         } else {
@@ -569,8 +464,8 @@ function loadCaptcha() {
     }
     
     // 添加时间戳防止缓存
-    const timestamp = new Date().getTime();
-    const endpoint = endpointUrl + (endpointUrl.includes('?') ? '&' : '?') + 't=' + timestamp;
+    let timestamp = new Date().getTime();
+    let endpoint = endpointUrl + (endpointUrl.includes('?') ? '&' : '?') + 't=' + timestamp;
     
     fetch(endpoint, {
         method: 'GET',
@@ -588,7 +483,7 @@ function loadCaptcha() {
     })
     .then(responseText => {
         try {
-            const data = JSON.parse(responseText);
+            let data = JSON.parse(responseText);
             
             // 首先检查API返回的code，不为0表示API自身报错
             if (data.code !== undefined && data.code !== 0) {
@@ -601,7 +496,7 @@ function loadCaptcha() {
             }
             
             // 判断data是否为完整的data:image URL，如果是则直接使用，否则将其视为Base64数据
-            const imgSrc = data.data.startsWith('data:image') ? data.data : 'data:image/jpeg;base64,' + data.data;
+            let imgSrc = data.data.startsWith('data:image') ? data.data : 'data:image/jpeg;base64,' + data.data;
             
             // 设置验证码图片
             captchaImg.src = imgSrc;
@@ -624,7 +519,7 @@ function loadCaptcha() {
 
 // 显示状态消息
 function displayStatus(type, message) {
-    const statusElement = document.getElementById('formStatus');
+    let statusElement = document.getElementById('formStatus');
     
     if (!statusElement || !message) {
         return;
@@ -638,7 +533,7 @@ function displayStatus(type, message) {
     // 延迟执行状态更新，避免快速连续调用
     window._statusUpdateTimeout = setTimeout(() => {
         // 清理消息内容，防止XSS
-        const sanitizedMessage = message.replace(/[<>"'&]/g, (c) => {
+        let sanitizedMessage = message.replace(/[<>"'&]/g, (c) => {
             return {'<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;', '&': '&amp;'}[c];
         });
         
@@ -662,6 +557,5 @@ function displayStatus(type, message) {
 // 页面加载完成时初始化链接提交功能
 document.addEventListener('DOMContentLoaded', initLinkSubmission);
 
-// PJAX环境下的初始化 - 确保不会重复绑定
-document.removeEventListener('pjax:complete', initLinkSubmission); // 先移除再添加
+// PJAX环境下的初始化 - 确保不会重复绑定 // 先移除再添加
 document.addEventListener('pjax:complete', initLinkSubmission);
