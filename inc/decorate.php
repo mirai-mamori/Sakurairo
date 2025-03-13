@@ -539,34 +539,6 @@ animation: slow-rotate 10s linear infinite;
 }
 <?php endif; ?>
 
-<?php if(iro_opt('friend_link_align') == 'right'){ ?>
-
-span.sitename {
-   margin-bottom: 0px;
-   margin-top: 8px;
-}
-li.link-item {
-    text-align: right;
-}
-.links ul li img{
-	float:none;
-}
-
-<?php }else if(iro_opt('friend_link_align') == 'center'){ ?>
-
-span.sitename {
-   margin-bottom: 0px;
-   margin-top: 8px;
-}
-li.link-item {
-    text-align: center;
-}
-.links ul li img{
-	float:none;
-}
-
-<?php } ?>
-
 <?php if(iro_opt('post_list_design') == 'ticket'){ ?>
 @media (min-width:768px) {
 .post-thumb {

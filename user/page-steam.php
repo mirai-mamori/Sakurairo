@@ -34,6 +34,7 @@ echo '<link rel="stylesheet" href="' . $core_lib_basepath . '/css/templates.css?
         gap: 20px;
         margin: 0 auto;
         justify-content: center;
+        margin-top: 20px;
     }
 
     .steam-card {

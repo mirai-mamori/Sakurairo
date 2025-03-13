@@ -7,353 +7,439 @@
 get_header(); 
 
 ?>
+<div class="links-page">
 <style>
+/* 基础变量 - 使用类选择器作用域 */
+.links-page {
+    --link-card-bg: rgba(255, 255, 255, 0.5);
+    --link-card-bg-hover: rgba(255, 255, 255, 0.8);
+    --link-card-border: 1.5px solid #FFFFFF;
+    --link-card-border-radius: 10px;
+    --link-card-text: #505050;
+    --link-card-shadow: var(--friend-link-shadow);
+    --link-card-shadow-hover: var(--friend-link-shadow);
+    --link-title-underline: var(--friend-link-title, #ffeeeB);
+    --form-bg: #ffffffe6;
+    --form-input-border: #ddd;
+    --modal-bg: rgba(0, 0, 0, 0.1);
+}
 
-	span.linkss-title {
-		font-size: 30px;
-		text-align: center;
-		display: block;
-		margin: 6.5% 0 7.5%;
-		letter-spacing: 2px;
-		font-weight: var(--global-font-weight);
-	}
+/* 标题样式 */
+span.linkss-title {
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    margin: 6.5% 0 7.5%;
+    letter-spacing: 2px;
+    font-weight: var(--global-font-weight);
+}
 
-	.links {
-		margin-bottom: 80px;
-	}
+/* 布局样式 */
+.links {
+    margin-bottom: 80px;
+}
 
-	.links ul {
-		margin-top: 50px;
-		width: 100%;
-		display: inline-block;
-	}
+.links ul {
+    margin-top: 50px;
+    width: 100%;
+    display: inline-block;
+}
 
-	.links ul li {
-		width: 22%;
-		float: left;
-		box-shadow: 0 1px 30px -4px var(--friend-link-shadow);
-		background: rgba(255, 255, 255, 0.5);
-		padding: 12px;
-		margin: 12px;
-		position: relative;
-		overflow: hidden;
-		border-radius: 10px;
-		border: 1.5px solid #FFFFFF;
-	}
+/* 链接卡片基础样式 */
+.links ul li {
+    width: 22%;
+    float: left;
+    box-shadow: 0 1px 30px -4px var(--link-card-shadow);
+    background: var(--link-card-bg);
+    padding: 12px;
+    margin: 12px;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--link-card-border-radius);
+    border: var(--link-card-border);
+    transition: all 0.3s ease;
+}
 
-	.links ul li:hover {
-		box-shadow: 0 1px 20px 10px var(--friend-link-shadow);
-		background: rgba(255, 255, 255, 0.8);
-	}
+/* 链接卡片悬停效果 */
+.links ul li:hover {
+    box-shadow: 0 1px 20px 10px var(--link-card-shadow-hover);
+    background: var(--link-card-bg-hover);
+}
 
-	.links ul li:hover:before {
-		width: 180%;
-	}
+.links ul li:hover:before {
+    width: 180%;
+}
 
-	.links ul li img {
-		float: left;
-		padding: 1px;
-		opacity: 1;
-		transform: rotate(0);
-		-webkit-transform: rotate(0);
-		margin: 3px 3px 0;
-		width: 90px;
-		height: 90px;
-		border-radius: 100%;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-	}
+/* 卡片内部图片样式 */
+.links ul li img {
+    float: left;
+    padding: 1px;
+    opacity: 1;
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    margin: 3px 3px 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
 
-	.links ul li:hover img {
-		transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-	}
+.links ul li:hover img {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
 
-	.link-title {
-		font-weight: 600;
-		color: #6D6D6D;
-		padding-left: 10px;
-		border-left: none;
-		border-color: var(--theme-skin);
-		margin: 50px 0 10px;
-		text-underline-offset: 10px;
-		text-decoration: underline solid var(--friend-link-title, #ffeeeB);
-	}
+/* 标题栏样式 */
+.link-title {
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--theme-skin);
+	padding-left: 10px;
+	margin: 50px 0 10px;
+	position: relative;
+	display: inline-block;
+}
 
-	span.sitename {
-		font-size: 20px;
-		margin-top: 84px;
-		margin-left: 8px;
-		margin-right: 8px;
-		color: #505050;
-		padding-bottom: 10px;
-		display: block;
-		transition: all 0.4s ease-in-out;
-		-webkit-transition: all 0.4s ease-in-out;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		font-weight: var(--global-font-weight);
-		text-underline-offset: 10px;
-		text-decoration: underline wavy var(--friend-link-title, #ffeeeB);
-	}
+.link-title::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	right: 0;
+	width: 70%;
+	height: 0.7em;
+	background-color: var(--theme-skin-matching);
+	opacity: 0.4;
+	z-index: -1;
+	border-radius: 30px;
+	transition: all 0.3s ease;
+}
 
-	.linkdes {
-		font-size: 14px;
-		margin-left: 8px;
-		margin-right: 8px;
-		text-overflow: ellipsis;
-		color: #505050;
-		overflow: hidden;
-		white-space: nowrap;
-		line-height: 30px;
-		transition: all 0.4s ease-in-out;
-		-webkit-transition: all 0.4s ease-in-out;
-	}
+.link-title:hover::after {
+	width: 85%;
+	opacity: 0.7;
+}
 
-	/* Dark mode styles */
-	body.dark .links ul li {
-		box-shadow: var(--dark-shadow-normal);
-		background: var(--dark-bg-secondary);
-		border: 1.5px solid var(--dark-border-color);
-	}
+/* 站点名称样式 */
+span.sitename {
+    font-size: 20px;
+    margin-top: 84px;
+    margin-left: 8px;
+    margin-right: 8px;
+    color: var(--link-card-text);
+    display: block;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: var(--global-font-weight);
+}
 
-	body.dark .links ul li:hover {
-		box-shadow: 0 1px 30px -2px var(--friend-link-title) !important;
-		background: var(--dark-bg-hover);
-	}
+/* 链接描述样式 */
+.linkdes {
+    font-size: 14px;
+    margin-left: 8px;
+    margin-right: 8px;
+    text-overflow: ellipsis;
+    color: var(--link-card-text);
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 30px;
+    transition: all 0.4s ease-in-out;
+}
 
-	body.dark .links ul li img {
-		box-shadow: 0 4px 12px var(--dark-header-shadow);
-	}
+/* 链接上限提示横幅样式 */
+.link-limit-notice {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 12px 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    border-left: 4px solid #ffeeba;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-	body.dark .link-title {
-		color: var(--dark-text-secondary) !important;
-	}
+/* 提交按钮基础样式和禁用状态 */
+.submit-link-btn {
+    background-color: var(--theme-skin-matching);
+    color: #fff;
+    border: 2px solid var(--theme-skin-matching);
+    border-radius: 20px;
+    padding: 6px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    font-family: <?php echo esc_attr(iro_opt('global_default_font')); ?>;
+}
 
-	body.dark .linkdes,
-	body.dark span.sitename {
-		color: var(--dark-text-primary);
-	}
+.submit-link-btn:hover {
+    background-color: #fff;
+    color: var(--theme-skin-matching);
+    border: 2px solid var(--theme-skin-matching);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+}
 
-	/* 链接上限提示横幅样式 */
-	.link-limit-notice {
-		background-color: #fff3cd;
-		color: #856404;
-		padding: 12px 20px;
-		margin-bottom: 30px;
-		border-radius: 6px;
-		border-left: 4px solid #ffeeba;
-		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-		text-align: center;
-		max-width: 800px;
-		margin-left: auto;
-		margin-right: auto;
-	}
+.submit-link-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
 
-	body.dark .link-limit-notice {
-		background-color: rgba(255, 193, 7, 0.2);
-		color: #ffc107;
-		border-left-color: #ffc107;
-	}
+/* ============ 响应式设计 ============ */
+/* 平板设备 */
+@media (max-width: 1024px) and (min-width: 861px) {
+    .links ul li {
+        width: 30%;
+    }
+}
 
-	.submit-link-btn:disabled {
-		background-color: #cccccc;
-		cursor: not-allowed;
-		opacity: 0.7;
-	}
+/* 移动设备 */
+@media (max-width: 860px) {
+    .links ul li {
+        width: 44%;
+        max-width: 860px;
+    }
+    
+    .links ul li:hover {
+        width: 44%;
+    }
+    
+    .links ul li:before {
+        display: none;
+    }
+    
+    span.linkss-title {
+        font-size: 24px;
+        margin: 10% 0 8%;
+    }
+}
 
-	/* Responsive styles */
-	@media (max-width: 860px) {
-		.links ul li {
-			width: 44%;
-			max-width: 860px;
-		}
+/* 小型移动设备 */
+@media (max-width: 480px) {
+    .links ul li {
+        width: 100%;
+        margin: 12px 0;
+    }
+    
+    .submit-link-btn {
+        padding: 5px 12px;
+        font-size: 12px;
+    }
+    
+    .link-modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+}
 
-		.links ul li:hover {
-			width: 44%;
-		}
+/* ============ 深色模式 ============ */
+body.dark .links-page {
+    --link-card-bg: var(--dark-bg-secondary);
+    --link-card-bg-hover: var(--dark-bg-hover);
+    --link-card-border: 1.5px solid var(--dark-border-color);
+    --link-card-text: var(--dark-text-primary);
+    --form-bg: #1a1a1ae6;
+    --form-input-border: var(--dark-border-color);
+}
 
-		.links ul li:before {
-			display: none;
-		}
-	}
+body.dark .links ul li {
+    box-shadow: var(--dark-shadow-normal);
+}
 
-	/* Link submission modal styles */
-	.title-container {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: relative;
-		margin: 6.5% 0 7.5%;
-	}
+body.dark .links ul li:hover {
+    box-shadow: 0 1px 30px -2px var(--friend-link-title) !important;
+}
 
-	.linkss-title {
-		margin: 0;
-	}
+body.dark .links ul li img {
+    box-shadow: 0 4px 12px var(--dark-header-shadow);
+}
 
-	.submit-link-btn {
-		background-color: var(--theme-skin-matching);
-		color: #fff;
-		border: 2px solid var(--theme-skin-matching);
-		border-radius: 20px;
-		padding: 6px 15px;
-		margin-left: 15px;
-		font-size: 14px;
-		cursor: pointer;
-		transition: all 0.3s ease;
-		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-		font-family: <?php echo esc_attr(iro_opt('global_default_font')); ?>;
-	}
+body.dark .link-title {
+    color: var(--dark-text-secondary) !important;
+}
 
-	.submit-link-btn:hover {
-		background-color: #fff;
-		color: var(--theme-skin-matching);
-		border: 2px solid var(--theme-skin-matching);
-		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-	}
+body.dark .link-limit-notice {
+    background-color: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+    border-left-color: #ffc107;
+}
 
-	.link-modal {
-		display: none;
-		position: fixed;
-		z-index: 9999;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.1);
-		backdrop-filter: blur(10px);
-		-webkit-backdrop-filter: blur(10px);
-	}
+body.dark .submit-link-btn:hover,
+body.dark .link-form-submit:hover {
+    background-color: var(--dark-bg-primary);
+}
 
-	.link-modal-content {
-		background-color: #ffffffe6;
-		margin: 5% auto;
-		padding: 25px;
-		border-radius: 10px;
-		max-width: 500px;
-		width: 80%;
-		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-		position: relative;
-		animation: modalFadeIn 0.3s ease;
-	}
+/* ============ 表单样式 ============ */
+/* 标题容器 */
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 3% 0 1.5%;
+    gap: 15px;
+}
 
-	body.dark .link-modal-content {
-		background-color: #1a1a1ae6;
-		color: var(--dark-text-primary);
-	}
+.linkss-title {
+    margin: 0;
+}
 
-	@keyframes modalFadeIn {
-		from {opacity: 0; transform: translateY(-20px);}
-		to {opacity: 1; transform: translateY(0);}
-	}
+/* 模态框样式 */
+.link-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
 
-	.link-modal-close {
-		position: absolute;
-		top: 15px;
-		right: 20px;
-		font-size: 24px;
-		cursor: pointer;
-		color: #888;
-		transition: all 0.2s ease;
-	}
+.link-modal-content {
+    background-color: var(--form-bg);
+    margin: 5% auto;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 80%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+}
 
-	.link-modal-close:hover {
-		color: var(--theme-skin);
-	}
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
 
-	.link-form-group {
-		margin-bottom: 10px;
-	}
+.link-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    transition: all 0.2s ease;
+}
 
-	.link-form-group label {
-		display: block;
-		margin-bottom: 5px;
-		font-weight: 500;
-	}
+.link-modal-close:hover {
+    color: var(--theme-skin);
+}
 
-	.link-form-group input,
-	.link-form-group textarea,
-	.captcha-container input {
-		width: 100%;
-		padding: 7px 12px;
-		border: 1px solid #ddd;
-		border-radius: 6px;
-		font-size: 14px;
-		background-color: rgba(255, 255, 255, 0.9);
-		transition: all 0.3s ease;
-	}
+/* 表单元素样式 */
+.link-form-group {
+    margin-bottom: 10px;
+}
 
-	body.dark .link-form-group input,
-	body.dark .link-form-group textarea,
-	body.dark .captcha-container input{
-		background-color: var(--dark-bg-primary);
-		border-color: var(--dark-border-color);
-		color: var(--dark-text-primary);
-	}
+.link-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
 
-	body.dark .submit-link-btn:hover,
-	body.dark .link-form-submit:hover{
-		background-color: var(--dark-bg-primary);
-	}
+.link-form-group input,
+.link-form-group textarea,
+.captcha-container input {
+    width: 100%;
+    padding: 7px 12px;
+    border: 1px solid var(--form-input-border);
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
 
-	.link-form-group input:focus,
-	.link-form-group textarea:focus {
-		border-color: var(--theme-skin);
-		outline: none;
-	}
+body.dark .link-form-group input,
+body.dark .link-form-group textarea,
+body.dark .captcha-container input {
+    background-color: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+}
 
-	.link-form-submit {
-		background-color: var(--theme-skin-matching);
-		color: #fff;
-		border: 3px solid var(--theme-skin-matching);
-		border-radius: 30px;
-        padding: 14px 29px;
-        font-size: 20px;
-		cursor: pointer;
-		transition: all 0.3s ease;
-		display: block;
-		box-shadow: none;
-		float: right;
-	}
+.link-form-group input:focus,
+.link-form-group textarea:focus {
+    border-color: var(--theme-skin);
+    outline: none;
+}
 
-	.link-form-submit:hover {
-		background-color: #fff;
-		color: var(--theme-skin-matching);
-		border: 3px solid var(--theme-skin-matching);
-	}
+.link-form-submit {
+    background-color: var(--theme-skin-matching);
+    color: #fff;
+    border: 3px solid var(--theme-skin-matching);
+    border-radius: 30px;
+    padding: 14px 29px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    box-shadow: none;
+    float: right;
+}
 
-	.form-status {
-		padding: 10px;
-		margin: 10px 0;
-		border-radius: 5px;
-		display: none;
-	}
+.link-form-submit:hover {
+    background-color: #fff;
+    color: var(--theme-skin-matching);
+    border: 3px solid var(--theme-skin-matching);
+}
 
-	.success-msg {
-		background-color: rgba(76, 175, 80, 0.2);
-		color: #4CAF50;
-	}
+/* 表单状态提示 */
+.form-status {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: none;
+}
 
-	.error-msg {
-		background-color: rgba(244, 67, 54, 0.2);
-		color: #F44336;
-	}
+.success-msg {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
 
-	.captcha-container {
-		margin-bottom: 20px;
-		display: flex;
-		align-items: center;
-		gap: 10px;
-	}
-	
-	.captcha-container img {
-		border-radius: 6px;
-		height: 40px;
-	}
-	
-	.captcha-container input {
-		flex: 1;
-	}
+.error-msg {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #F44336;
+}
+
+/* 验证码容器 */
+.captcha-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.captcha-container img {
+    border-radius: 6px;
+    height: 40px;
+}
+
+.captcha-container input {
+    flex: 1;
+}
+
+<?php
+$link_align = iro_opt('friend_link_align', 'left');
+if ($link_align == 'right' || $link_align == 'center') {
+    echo "span.sitename {
+        margin-bottom: 0px;
+        margin-top: 8px;
+    }
+    li.link-item {
+        text-align: {$link_align};
+    }
+    .links ul li img {
+        float: none;
+    }";
+}
+?>
 </style>
 
 	<?php while (have_posts()) : the_post(); ?>
@@ -364,9 +450,10 @@ get_header();
 		$pending_links_limit_reached = function_exists('sakurairo_check_pending_links_limit') ? sakurairo_check_pending_links_limit() : false;
 
 			function submit_button_struct($pending_links_limit_reached) { // 按钮结构?>
-				<button class="submit-link-btn" id="openLinkModal" <?php echo $pending_links_limit_reached ? 'disabled' : ''; 
-				if (iro_opt('patternimg') || get_post_thumbnail_id(get_the_ID())) { // 有头图，准备样式和动画，将由js迁移
-				?> style="display:block; margin:0 auto; animation:homepage-load-animation 2s;" <?php } ?> >
+				<button class="submit-link-btn" id="openLinkModal" <?php echo $pending_links_limit_reached ? 'disabled' : ''; ?> 
+				<?php if (iro_opt('patternimg') && get_post_thumbnail_id(get_the_ID())) { // 只有当真正有头图时才应用动画效果 ?>
+					style="display:block;animation:homepage-load-animation 2s;"
+				<?php } ?>>
 					<?php _e('Submit Link', 'sakurairo'); ?>
 				</button>
 			<?php }
@@ -381,10 +468,14 @@ get_header();
 
 			<div class="title-container">
 				<span class="linkss-title"><?php echo esc_html(get_the_title()); ?></span>
-				<?php if ($friend_link_form) {submit_button_struct($pending_links_limit_reached);?>
+				<?php if ($friend_link_form) {
+                    submit_button_struct($pending_links_limit_reached);
+                } ?>
 			</div>
-				<?php if ($pending_links_limit_reached) { too_many_pending_links_notice(); } 
-					  }
+            
+			<?php if ($friend_link_form && $pending_links_limit_reached) { 
+                too_many_pending_links_notice(); 
+            }
 			
 		 	} else { // 有头图
 
@@ -459,13 +550,10 @@ get_header();
 			</form>
 		</div>
 	</div>
-
-	<!-- 直接引入友情链接JavaScript -->
-	<!-- 添加缓存控制，确保加载最新版本的JS -->
+	<!-- 引入友情链接JavaScript -->
 	<script src="<?php echo esc_url(get_template_directory_uri() . '/js/link-submission.js?ver=' . time()); ?>"></script>
-
 <?php endif; // 表单结束?>
-
+</div><!-- .links-page 结束 -->
 <?php
 get_footer();
 ?>
