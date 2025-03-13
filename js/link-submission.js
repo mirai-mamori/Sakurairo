@@ -131,7 +131,7 @@ function initLinkSubmission() {
     
     // 如果相关元素不存在
     if (!linkForm  || !submitButton || !linkModal || !closeButton || !captchaImg) {
-        if (form_inited = true) { // 检查是否曾初始化
+        if (form_inited == true) { // 检查是否曾初始化
             document.removeEventListener('pjax:complete', initLinkSubmission);
             cleanup();
             form_inited = false;
@@ -451,13 +451,8 @@ function loadCaptcha() {
     // 获取验证码API地址
     let endpointUrl = _iro.captcha_endpoint || '';
     if (!endpointUrl) {
-        let endpointInput = document.getElementById('captcha-endpoint');
-        if (endpointInput) {
-            endpointUrl = endpointInput.value;
-        } else {
-            displayStatus('error', i18n.captcha_load_error);
-            return;
-        }
+        displayStatus('error', i18n.captcha_load_error);
+        return;
     }
     
     // 添加时间戳防止缓存

@@ -580,7 +580,6 @@ if ($link_align == 'right' || $link_align == 'center') {
 					<input type="text" id="yzm" name="yzm" placeholder="<?php _e('Verification Code', 'sakurairo'); ?>" required>
 					<input type="hidden" name="timestamp" id="timestamp" value="">
 					<input type="hidden" name="id" id="captchaId" value="">
-					<input type="hidden" id="captcha-endpoint" value="<?php echo esc_url(rest_url('sakura/v1/captcha/create')); ?>">
 				</div>
 				
 				<?php wp_nonce_field('link_submission_nonce', 'link_submission_nonce'); ?>
