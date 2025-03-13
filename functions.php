@@ -2773,9 +2773,10 @@ function register_shortcodes() {
             if (empty($data['response']['players'][0])) {
                 $output .= '<div class="steam-error">' . ($status_text['error'][$lang] ?? $status_text['error']['zh_CN']) . '</div>';
             } else {
+                $avatar = esc_attr(substr($player['avatar'], 0, strrpos($player['avatar'], '.')) . '_full' . substr($player['avatar'], strrpos($player['avatar'], '.')));
                 $output .= '<div class="steam-profile">';
                 $output .= '<div class="steam-profile-header">';
-                $output .= '<img class="steam-avatar" src="' . esc_attr($player['avatar']) . '" alt="Steam Avatar">';
+                $output .= '<img class="steam-avatar" src="' . $avatar . '" alt="Steam Avatar">';
                 $output .= '<div class="steam-profile-info">';
                 $output .= '<a href="' . esc_attr($player['profileurl']) . '" target="_blank" class="steam-username"><i class="fa-brands fa-steam"></i> ' . esc_attr($player['personaname']) . '</a>';
                 $output .= '<div class="steam-status status-' . strtolower(str_replace(' ', '-', $status)) . '">' . $status . '</div>';
