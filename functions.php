@@ -2809,18 +2809,42 @@ function register_shortcodes() {
         ?>
         <script>
         (function() {
+            // 存储原始样式值
+            const defaultStyles = {
+                profile: {
+                    display: 'block'
+                },
+                header: {
+                    minWidth: '',
+                    margin: '',
+                    background: '',
+                    borderBottom: '1px solid rgba(232, 232, 232, 0.8)',
+                    padding: '16px'
+                },
+                username: {
+                    fontSize: '18px'
+                },
+                avatar: {
+                    width: '64px',
+                    height: '64px'
+                }
+            };
+
             // 应用Steam个人资料样式的函数
             function applySteamProfileStyles() {
                 const steamProfiles = document.querySelectorAll('.steam-profile');
                 
                 steamProfiles.forEach(profile => {
-                    // 检查是否正在玩游戏
+                    // 获取所有需要操作的元素
                     const gameInfo = profile.querySelector('.steam-game-info');
                     const profileHeader = profile.querySelector('.steam-profile-header');
                     const username = profile.querySelector('.steam-username');
                     
-                    // 只有当宽度超过700px且正在玩游戏时才应用样式
-                    if (profile.offsetWidth > 700 && gameInfo) {
+                    // 检查是否满足应用样式的条件
+                    const shouldApplyStyles = profile.offsetWidth > 700 && gameInfo;
+                    
+                    if (shouldApplyStyles) {
+                        // 应用增强样式
                         profile.style.display = 'flex';
                         
                         if (profileHeader) {
@@ -2828,25 +2852,28 @@ function register_shortcodes() {
                             profileHeader.style.margin = '0 auto';
                             profileHeader.style.background = 'none';
                             profileHeader.style.borderBottom = 'unset';
+                            profileHeader.style.padding = '24px';
                         }
 
                         if (username) {
                             username.style.fontSize = '30px';
                         }
                     } else {
-                        // 重置样式到默认状态
-                        profile.style.display = '';
+                        // 重置为默认样式
+                        profile.style.display = defaultStyles.profile.display;
                         
                         if (profileHeader) {
-                            profileHeader.style.minWidth = '';
-                            profileHeader.style.margin = '';
-                            profileHeader.style.background = '';
-                            profileHeader.style.borderBottom = '';
+                            profileHeader.style.minWidth = defaultStyles.header.minWidth;
+                            profileHeader.style.margin = defaultStyles.header.margin;
+                            profileHeader.style.background = defaultStyles.header.background;
+                            profileHeader.style.borderBottom = defaultStyles.header.borderBottom;
+                            profileHeader.style.padding = defaultStyles.header.padding;
                         }
 
                         if (username) {
-                            username.style.fontSize = '';
+                            username.style.fontSize = defaultStyles.username.fontSize;
                         }
+
                     }
                 });
             }
@@ -2857,13 +2884,15 @@ function register_shortcodes() {
             // 监听pjax事件
             document.addEventListener('pjax:complete', applySteamProfileStyles);
             
-            // 监听窗口大小变化
+            // 监听窗口大小变化，使用防抖
             let resizeTimer;
             window.addEventListener('resize', function() {
-                // 使用防抖，避免频繁触发
                 clearTimeout(resizeTimer);
                 resizeTimer = setTimeout(applySteamProfileStyles, 250);
             });
+
+            // 监听游戏状态变化（如果有相关事件）
+            document.addEventListener('steamStatusUpdate', applySteamProfileStyles);
         })();
         </script>
         <?php
