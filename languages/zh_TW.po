@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-12 21:40+0900\n"
-"PO-Revision-Date: 2025-03-12 21:40+0900\n"
+"POT-Creation-Date: 2025-03-13 18:05+0900\n"
+"PO-Revision-Date: 2025-03-13 18:15+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -165,80 +165,80 @@ msgstr "切換到字體 B"
 msgid "Nav Menus"
 msgstr "導航菜單"
 
-#: functions.php:292
+#: functions.php:295
 msgctxt "post type general name"
 msgid "Shuoshuo"
 msgstr "說說"
 
-#: functions.php:293
+#: functions.php:296
 msgctxt "post type singular name"
 msgid "Shuoshuo"
 msgstr "說說"
 
-#: functions.php:294
+#: functions.php:297
 msgctxt "admin menu"
 msgid "Shuoshuo"
 msgstr "說說"
 
-#: functions.php:295
+#: functions.php:298
 msgctxt "add new on admin bar"
 msgid "Shuoshuo"
 msgstr "說說"
 
-#: functions.php:296
+#: functions.php:299
 msgctxt "shuoshuo"
 msgid "Add New"
 msgstr "新增"
 
-#: functions.php:297
+#: functions.php:300
 msgid "Add New Shuoshuo"
 msgstr "新增說說"
 
-#: functions.php:298
+#: functions.php:301
 msgid "New Shuoshuo"
 msgstr "新說說"
 
-#: functions.php:299
+#: functions.php:302
 msgid "Edit Shuoshuo"
 msgstr "編輯說說"
 
-#: functions.php:300
+#: functions.php:303
 msgid "View Shuoshuo"
 msgstr "查看說說"
 
-#: functions.php:301
+#: functions.php:304
 msgid "All Shuoshuo"
 msgstr "所有說說"
 
-#: functions.php:302
+#: functions.php:305
 msgid "Search Shuoshuo"
 msgstr "搜尋說說"
 
-#: functions.php:303
+#: functions.php:306
 msgid "Parent Shuoshuo:"
 msgstr "父級說說："
 
-#: functions.php:304
+#: functions.php:307
 msgid "No shuoshuo found."
 msgstr "沒有找到說說。"
 
-#: functions.php:305
+#: functions.php:308
 msgid "No shuoshuo found in Trash."
 msgstr "垃圾桶里沒有找到說說。"
 
-#: functions.php:352
+#: functions.php:355
 msgid "Emotion Meta Box"
 msgstr "情緒数据"
 
-#: functions.php:365
+#: functions.php:368
 msgid "Emotion"
 msgstr "情緒"
 
-#: functions.php:368
+#: functions.php:371
 msgid "Emotion Color"
 msgstr "情緒顏色"
 
-#: functions.php:371
+#: functions.php:374
 msgid ""
 "For the Emotion, please fill in the Unicode value of the Fontawesome icon, "
 "and for the Emotion Color, please fill in the RGBA or hexadecimal color."
@@ -246,19 +246,19 @@ msgstr ""
 "情緒請填入 Fontawesome 圖示的 Unicode 值，情緒顏色請填入 RGBA 或十六進位顏"
 "色。"
 
-#: functions.php:416
+#: functions.php:419
 msgid "Custom Meta Box"
 msgstr "自訂單元"
 
-#: functions.php:429
+#: functions.php:432
 msgid "Title Style"
 msgstr "標題樣式"
 
-#: functions.php:432
+#: functions.php:435
 msgid "License"
 msgstr "文章知識共享協定"
 
-#: functions.php:435
+#: functions.php:438
 msgid ""
 "For the Title Style, Please fill in the css style, part of the style need to "
 "add !important effective, and for the License, please go to Theme Options to "
@@ -267,33 +267,33 @@ msgstr ""
 "标题样式请填写 CSS 样式，部分样式需要添加 !important 后生效；文章知識共享協定"
 "请查找主题相关选项以了解如何设置。"
 
-#: functions.php:545
+#: functions.php:548
 msgid "Copied!"
 msgstr "已複製!"
 
-#: functions.php:546
+#: functions.php:549
 msgid "Copy Code"
 msgstr "拷貝程式碼"
 
-#: functions.php:547
+#: functions.php:550
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
 msgstr "你的封面 API 似乎不支援跨來源請求。這種情況下暫存是不會生效的哦。"
 
-#: functions.php:548
+#: functions.php:551
 msgid "Commiting...."
 msgstr "提交中。。。"
 
-#: functions.php:549
+#: functions.php:552
 msgid "Succeed"
 msgstr "成功"
 
-#: functions.php:550
+#: functions.php:553
 msgid "10 files max per request"
 msgstr "每次上傳上限為 10 張"
 
-#: functions.php:551
+#: functions.php:554
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -307,15 +307,15 @@ msgstr ""
 "\n"
 "這張圖太大啦~請重新上傳噢！"
 
-#: functions.php:552
+#: functions.php:555
 msgid "Uploading..."
 msgstr "上傳中..."
 
-#: functions.php:553
+#: functions.php:556
 msgid "Uploaded successfully~"
 msgstr "上傳成功～"
 
-#: functions.php:554
+#: functions.php:557
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -327,120 +327,124 @@ msgstr ""
 "錯誤碼=> {1}\n"
 "{2}"
 
-#: functions.php:555
+#: functions.php:558
 msgid "Upload failed, please retry."
 msgstr "上傳失敗，請重試。"
 
-#: functions.php:556
+#: functions.php:559
 msgid "Page Load failed. HTTP {0}"
 msgstr "頁面載入出錯了。HTTP{0}"
 
-#: functions.php:557
+#: functions.php:560
 msgid "Glad you come, but we've got nothing left."
 msgstr "很高興你翻到這裡，但是真的沒有了..."
 
-#: functions.php:558 search.php:85
+#: functions.php:561 search.php:85
 msgid "Post"
 msgstr "文章"
 
-#: functions.php:559
+#: functions.php:562
 msgid "Tag"
 msgstr "標籤"
 
-#: functions.php:560
+#: functions.php:563
 msgid "Category"
 msgstr "類別"
 
-#: functions.php:561 search.php:96
+#: functions.php:564 search.php:96
 msgid "Page"
 msgstr "頁面"
 
-#: functions.php:562
+#: functions.php:565
 msgid "Comment"
 msgstr "評論"
 
-#: functions.php:563
+#: functions.php:566
 msgid "Paused..."
 msgstr "暫停。。。"
 
-#: functions.php:564
+#: functions.php:567
 msgid "Loading Video..."
 msgstr "載入影片..."
 
-#: functions.php:565
+#: functions.php:568
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "下載字體時，請注意你的數據使用方式。"
 
-#: functions.php:566
+#: functions.php:569
 msgid "Are you sure you want set it private?"
 msgstr "是否確實要將其設置為專用？"
 
-#: functions.php:567
+#: functions.php:570
 msgid "You had set private comment before"
 msgstr "你之前設置了私人評論"
 
-#: functions.php:647 inc/theme-plus.php:190
+#: functions.php:650 inc/theme-plus.php:190
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:647
+#: functions.php:650
 msgid "Blogger"
 msgstr "部落客"
 
-#: functions.php:656 functions.php:3259
+#: functions.php:659 functions.php:3500
 msgid "Location"
 msgstr "來自"
 
-#: functions.php:662
+#: functions.php:665
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:664
+#: functions.php:667
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:666
+#: functions.php:669
 msgid "No"
 msgstr "否"
 
-#: functions.php:669
+#: functions.php:672 inc/link-status.php:168
 msgid "Edit"
 msgstr "編輯"
 
-#: functions.php:799
+#: functions.php:802
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "這傢伙好懶 ╮(╯▽╰)╭"
 
-#: functions.php:1605
+#: functions.php:832 functions.php:3028 functions.php:3244
+msgid "Pending Links"
+msgstr "待處理連結"
+
+#: functions.php:1627
 msgid "All expand/collapse"
 msgstr "全部展開/收縮"
 
-#: functions.php:1639
+#: functions.php:1661
 msgid " year"
 msgstr " 年"
 
-#: functions.php:1642
+#: functions.php:1664
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1692 functions.php:1695 inc/theme-plus.php:345
+#: functions.php:1714 functions.php:1717 inc/theme-plus.php:345
 #: layouts/mo_toc_menu.php:29
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:2243
+#: functions.php:2265
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:2345
+#: functions.php:2367
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:2371
+#: functions.php:2393
 msgid "Please do not try to use Javascript in your comments!"
 msgstr "請不要嘗試在你的評論中使用Javascript！"
 
-#: functions.php:2481
+#: functions.php:2503
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -451,75 +455,71 @@ msgstr ""
 "固定連結</a>設置為樸素。為此，你可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">偽靜態</a></b>"
 
-#: functions.php:2614
+#: functions.php:2636
 #, php-format
 msgid "%s says: "
 msgstr "%s 說： "
 
-#: functions.php:2635
+#: functions.php:2657
 msgid "Expand / Collapse"
 msgstr "展開 / 摺疊"
 
-#: functions.php:2942
+#: functions.php:3001
 msgid "Invalid request method."
 msgstr "請求方法無效。"
 
-#: functions.php:2951
+#: functions.php:3010
 msgid "Security verification failed."
 msgstr "安全驗證失敗。"
 
-#: functions.php:2959
+#: functions.php:3018
 msgid "You are submitting too frequently. Please try again later."
 msgstr "你提交的頻率太高。請稍後再試。"
 
-#: functions.php:2969 functions.php:3192
-msgid "Pending Links"
-msgstr "待處理連結"
-
-#: functions.php:2996 user/page-links.php:365
+#: functions.php:3048 user/page-links.php:499
 msgid ""
 "Sorry, we are not accepting new link submissions at this time due to "
 "backlog. Please try again later."
 msgstr "很抱歉，由於待處理連結積壓，我們暫時不接受新的連結提交。請稍後再試。"
 
-#: functions.php:3004
+#: functions.php:3056
 msgid "Please fill in all required fields."
 msgstr "請填寫所有必填字段。"
 
-#: functions.php:3032
+#: functions.php:3084
 msgid "Site name is too long."
 msgstr "網站名稱過長。"
 
-#: functions.php:3037
+#: functions.php:3089
 msgid "Site description is too long."
 msgstr "網站描述過長。"
 
-#: functions.php:3043
+#: functions.php:3095
 msgid "Please enter a valid URL."
 msgstr "請輸入有效的 URL。"
 
-#: functions.php:3049
+#: functions.php:3101
 msgid "Please enter a valid image URL."
 msgstr "請輸入有效的圖片 URL。"
 
-#: functions.php:3055
+#: functions.php:3107
 msgid "Please enter a valid email address."
 msgstr "請輸入有效的電子郵件地址。"
 
-#: functions.php:3063
+#: functions.php:3115
 msgid "This website URL is already in our links list."
 msgstr "此網站 URL 已在我們的連結清單中。"
 
-#: functions.php:3089 functions.php:3154
+#: functions.php:3141 functions.php:3206
 msgid "Failed to submit link. Please try again later."
 msgstr "提交連結失敗。請稍後再試。"
 
-#: functions.php:3101 functions.php:3161
+#: functions.php:3153 functions.php:3213
 #, php-format
 msgid "[%s] New Friend Link Submission"
 msgstr "[%s] 提交新的朋友連結"
 
-#: functions.php:3103 functions.php:3163
+#: functions.php:3155 functions.php:3215
 #, php-format
 msgid ""
 "A new friend link has been submitted on your website %s:\n"
@@ -528,32 +528,32 @@ msgstr ""
 "你的網站 %s 已提交新的友情連結：\n"
 "\n"
 
-#: functions.php:3104
+#: functions.php:3156
 #, php-format
 msgid "Site Name: %s\n"
 msgstr "網站名稱：%s\n"
 
-#: functions.php:3105
+#: functions.php:3157
 #, php-format
 msgid "Site URL: %s\n"
 msgstr "網站 URL：%s\n"
 
-#: functions.php:3106
+#: functions.php:3158
 #, php-format
 msgid "Site Description: %s\n"
 msgstr "網站描述：%s\n"
 
-#: functions.php:3107
+#: functions.php:3159
 #, php-format
 msgid "Site Image: %s\n"
 msgstr "網站圖片：%s\n"
 
-#: functions.php:3108
+#: functions.php:3160
 #, php-format
 msgid "Contact Email: %s\n"
 msgstr "聯絡人電子郵件： %s\n"
 
-#: functions.php:3109
+#: functions.php:3161
 #, php-format
 msgid ""
 "IP Address: %s\n"
@@ -562,49 +562,49 @@ msgstr ""
 "IP 位址： %s\n"
 "\n"
 
-#: functions.php:3110
+#: functions.php:3162
 msgid "Please review this submission in your WordPress admin panel.\n"
 msgstr "請在你的 WordPress 管理面板中檢查此提交。\n"
 
-#: functions.php:3120 functions.php:3171
+#: functions.php:3172 functions.php:3223
 msgid "Thank you! Your link has been submitted for review."
 msgstr "謝謝！你的連結已提交審核。"
 
-#: functions.php:3125
+#: functions.php:3177
 #, php-format
 msgid "Site Name: %s"
 msgstr "網站名稱︰ %s"
 
-#: functions.php:3126
+#: functions.php:3178
 #, php-format
 msgid "Site URL: %s"
 msgstr "網站 URL：%s"
 
-#: functions.php:3127
+#: functions.php:3179
 #, php-format
 msgid "Site Description: %s"
 msgstr "網站描述：%s"
 
-#: functions.php:3128
+#: functions.php:3180
 #, php-format
 msgid "Site Image: %s"
 msgstr "網站圖片：%s"
 
-#: functions.php:3129
+#: functions.php:3181
 #, php-format
 msgid "Contact Email: %s"
 msgstr "聯絡人電子郵件： %s"
 
-#: functions.php:3130
+#: functions.php:3182
 #, php-format
 msgid "IP Address: %s"
 msgstr "IP 位址： %s"
 
-#: functions.php:3133
+#: functions.php:3185
 msgid "Friend Link Submission: "
 msgstr "友情連結提交："
 
-#: functions.php:3165
+#: functions.php:3217
 msgid ""
 "\n"
 "Please review this submission in your WordPress admin panel.\n"
@@ -612,11 +612,57 @@ msgstr ""
 "\n"
 "請在你的 WordPress 管理面板中檢查此提交。\n"
 
-#: functions.php:3178
+#: functions.php:3230
 msgid "An unexpected error occurred. Please try again later."
 msgstr "發生意外錯誤。請稍後再試。"
 
-#: functions.php:3300
+#: functions.php:3406
+#, php-format
+msgid "[%s] Friend Link Check Failure: %s"
+msgstr "[%s] 友站連結檢查失敗：%s"
+
+#: functions.php:3409
+#, php-format
+msgid ""
+"The friend link '%s' has failed our status check %d times.\n"
+"\n"
+msgstr ""
+"好友連結 '%s' 的狀態檢查 %d 次失敗。\n"
+"\n"
+
+#: functions.php:3410
+#, php-format
+msgid "Link URL: %s\n"
+msgstr "連結 URL：%s\n"
+
+#: functions.php:3413
+#, php-format
+msgid "HTTP Status Code: %s\n"
+msgstr "HTTP 狀態碼： %s\n"
+
+#: functions.php:3417
+#, php-format
+msgid "Error Message: %s\n"
+msgstr "錯誤訊息： %s\n"
+
+#: functions.php:3420
+#, php-format
+msgid ""
+"\n"
+"Last Check Time: %s\n"
+"\n"
+msgstr ""
+"\n"
+"最後檢查時間：%s\n"
+"\n"
+
+#: functions.php:3421
+msgid ""
+"You may want to check this link and consider removing it if it remains "
+"unavailable.\n"
+msgstr "你可能需要檢查此連結，如果仍然無法使用，請考慮將其移除。\n"
+
+#: functions.php:3541
 msgid "Access denied."
 msgstr "拒絕訪問。"
 
@@ -835,6 +881,129 @@ msgid ""
 "writable."
 msgstr ""
 "沒有找到任何圖片。請聯絡網站管理員確保'iro_gallery'資料夾內有圖片並可讀寫。"
+
+#: inc/link-status.php:19 inc/link-status.php:72
+msgid "Friend Links Status"
+msgstr "友情連結狀態"
+
+#: inc/link-status.php:20 inc/link-status.php:97
+msgid "Links Status"
+msgstr "連結狀態"
+
+#: inc/link-status.php:41
+msgid ""
+"All links check has been triggered. Please refresh this page in a few "
+"moments to see the results."
+msgstr "已觸發所有連結檢查。請稍後刷新此頁面以查看結果。"
+
+#: inc/link-status.php:48
+#, php-format
+msgid "Link \"%s\" has been checked. Refresh to see the results."
+msgstr "已檢查連結 「%s」。刷新以查看結果。"
+
+#: inc/link-status.php:58
+msgid "Link status has been reset."
+msgstr "連線狀態已重設。"
+
+#: inc/link-status.php:78
+#, php-format
+msgid "Last automatic check: %s"
+msgstr "最後一次自動檢查：%s"
+
+#: inc/link-status.php:80
+msgid "No automatic check has been performed yet."
+msgstr "尚未執行自動檢查。"
+
+#: inc/link-status.php:84
+msgid ""
+"The system automatically checks a batch of links (5 links) every week to "
+"avoid overloading the server."
+msgstr "系統每週自動檢查一批連結 (5 個連結)，以避免伺服器負荷過重。"
+
+#: inc/link-status.php:90
+msgid "Check All Links Now"
+msgstr "立即檢查所有連結"
+
+#: inc/link-status.php:90
+msgid "This will check all links and may take some time. Continue?"
+msgstr "這將檢查所有連結，可能需要一些時間。繼續嗎？"
+
+#: inc/link-status.php:91
+msgid ""
+"This will check all links in batches of 5 with a delay between batches to "
+"avoid overloading the server."
+msgstr ""
+"這會以 5 個為一批檢查所有連結，每批之間會有延遲，以避免伺服器負荷過重。"
+
+#: inc/link-status.php:102
+msgid "Link Name"
+msgstr "連結名稱"
+
+#: inc/link-status.php:103
+msgid "URL"
+msgstr ""
+
+#: inc/link-status.php:104
+msgid "Status"
+msgstr "狀態"
+
+#: inc/link-status.php:105
+msgid "Last Check"
+msgstr "最後檢查時間"
+
+#: inc/link-status.php:106
+msgid "Failures"
+msgstr "錯誤"
+
+#: inc/link-status.php:107
+msgid "Details"
+msgstr "詳情"
+
+#: inc/link-status.php:108
+msgid "Actions"
+msgstr "操作"
+
+#: inc/link-status.php:114
+msgid "No links found."
+msgstr "找不到符合條件的連結。"
+
+#: inc/link-status.php:127
+msgid "Not checked"
+msgstr "未檢查"
+
+#: inc/link-status.php:129
+msgid "Success"
+msgstr "成功 "
+
+#: inc/link-status.php:131
+msgid "Failure"
+msgstr "失敗"
+
+#: inc/link-status.php:137
+#, php-format
+msgid "Status Code: %s"
+msgstr "狀態碼： %s"
+
+#: inc/link-status.php:140
+#, php-format
+msgid "Error: %s"
+msgstr "錯誤：%s"
+
+#: inc/link-status.php:147
+msgid "Not visible"
+msgstr "不可见"
+
+#: inc/link-status.php:152
+msgid "Never"
+msgstr "從未"
+
+#: inc/link-status.php:159
+msgid "Check Now"
+msgstr "立即檢查"
+
+#: inc/link-status.php:165
+msgid "Reset Status"
+msgstr "重置狀態"
 
 #: inc/template-tags.php:28
 #, php-format
@@ -1104,39 +1273,39 @@ msgstr "請在後台設置填寫 Bangumi UID 後繼續。"
 msgid "Please fill in the My Anime List Username in Sakura Options."
 msgstr "請在後台設置填寫 My Anime List Username 後繼續。"
 
-#: user/page-links.php:360
+#: user/page-links.php:493
 msgid "Submit Link"
 msgstr "提交連結"
 
-#: user/page-links.php:387
+#: user/page-links.php:545
 msgid "Submit Your Link"
 msgstr "提交你的連結"
 
-#: user/page-links.php:388
+#: user/page-links.php:546
 msgid "Please fill out the form below to submit your website link."
 msgstr "請填寫以下表格，提交你的網站連結。"
 
-#: user/page-links.php:394
+#: user/page-links.php:552
 msgid "Site Name"
 msgstr "網站名稱"
 
-#: user/page-links.php:399
+#: user/page-links.php:557
 msgid "Site URL"
 msgstr "網站網址"
 
-#: user/page-links.php:404
+#: user/page-links.php:562
 msgid "Site Description"
 msgstr "網站描述"
 
-#: user/page-links.php:409
+#: user/page-links.php:567
 msgid "Site Logo/Avatar URL"
 msgstr "網站標誌/頭像 URL"
 
-#: user/page-links.php:414
+#: user/page-links.php:572
 msgid "Your Email"
 msgstr "電子信箱"
 
-#: user/page-links.php:420
+#: user/page-links.php:578
 msgid "Verification Code"
 msgstr "驗證碼"
 

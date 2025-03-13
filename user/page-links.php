@@ -16,9 +16,8 @@ get_header();
     --link-card-border: 1.5px solid #FFFFFF;
     --link-card-border-radius: 10px;
     --link-card-text: #505050;
-    --link-card-shadow: var(--friend-link-shadow);
-    --link-card-shadow-hover: var(--friend-link-shadow);
-    --link-title-underline: var(--friend-link-title, #ffeeeB);
+    --link-card-shadow: #e8e8e8;
+    --link-card-shadow-hover: #e8e8e8;
     --form-bg: #ffffffe6;
     --form-input-border: #ddd;
     --modal-bg: rgba(0, 0, 0, 0.1);
@@ -47,12 +46,12 @@ span.linkss-title {
 
 /* 链接卡片基础样式 */
 .links ul li {
-    width: 22%;
+    width: 22.5%;
     float: left;
     box-shadow: 0 1px 30px -4px var(--link-card-shadow);
     background: var(--link-card-bg);
     padding: 12px;
-    margin: 12px;
+    margin: 10px;
     position: relative;
     overflow: hidden;
     border-radius: var(--link-card-border-radius);
@@ -71,18 +70,46 @@ span.linkss-title {
 }
 
 /* 卡片内部图片样式 */
+.link-avatar-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 3px 3px 0;
+}
+
 .links ul li img {
     float: left;
-    padding: 1px;
     opacity: 1;
     transform: rotate(0);
     -webkit-transform: rotate(0);
-    margin: 3px 3px 0;
     width: 90px;
     height: 90px;
     border-radius: 100%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.5s ease;
+}
+
+/* 链接状态指示器 */
+.links ul li.link-status-success .link-avatar-wrapper::after,
+.links ul li.link-status-failure .link-avatar-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    z-index: 2;
+    border: 2px solid #fff;
+}
+
+.links ul li.link-status-success .link-avatar-wrapper::after {
+    background-color: #46b450;
+    box-shadow: 0 0 5px rgba(70, 180, 80, 0.7);
+}
+
+.links ul li.link-status-failure .link-avatar-wrapper::after {
+    background-color: #dc3232;
+    box-shadow: 0 0 5px rgba(220, 50, 50, 0.7);
 }
 
 .links ul li:hover img {
@@ -123,9 +150,7 @@ span.linkss-title {
 /* 站点名称样式 */
 span.sitename {
     font-size: 20px;
-    margin-top: 84px;
-    margin-left: 8px;
-    margin-right: 8px;
+	margin: 8px 8px 0 8px;
     color: var(--link-card-text);
     display: block;
     transition: all 0.4s ease-in-out;
@@ -194,19 +219,19 @@ span.sitename {
 /* 平板设备 */
 @media (max-width: 1024px) and (min-width: 861px) {
     .links ul li {
-        width: 30%;
+        width: 30.8%;
     }
 }
 
 /* 移动设备 */
 @media (max-width: 860px) {
     .links ul li {
-        width: 44%;
+        width: 45.5%;
         max-width: 860px;
     }
     
     .links ul li:hover {
-        width: 44%;
+        width: 45.5%;
     }
     
     .links ul li:before {
@@ -428,16 +453,27 @@ body.dark .captcha-container input {
 <?php
 $link_align = iro_opt('friend_link_align', 'left');
 if ($link_align == 'right' || $link_align == 'center') {
-    echo "span.sitename {
-        margin-bottom: 0px;
-        margin-top: 8px;
-    }
-    li.link-item {
-        text-align: {$link_align};
-    }
-    .links ul li img {
-        float: none;
-    }";
+	echo "span.sitename {
+		margin-bottom: 0px;
+		margin-top: 8px;
+	}
+	li.link-item {
+		text-align: {$link_align};
+	}
+	.links ul li img {
+		float: none;
+	}
+	.link-avatar-wrapper {
+		display: block;
+		text-align: {$link_align};
+		margin: 0 auto;
+	}";
+	
+	if ($link_align == 'center') {
+		echo ".link-avatar-wrapper {
+			width: fit-content;
+		}";
+	}
 }
 ?>
 </style>

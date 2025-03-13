@@ -805,8 +805,17 @@ function get_the_link_items($id = null)
             if (empty($bookmark->link_image)) {
                 $bookmark->link_image = 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/friendlink.jpg';
             }
+            
+            // 获取链接状态
+            $link_status = get_post_meta($bookmark->link_id, '_link_check_status', true);
+            $status_class = '';
+            if ($link_status === 'success') {
+                $status_class = 'link-status-success';
+            } elseif ($link_status === 'failure') {
+                $status_class = 'link-status-failure';
+            }
 
-            $output .= '<li class="link-item"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" rel="friend"><img alt="friend_avator" class="lazyload" onerror="imgError(this,1)" data-src="' . $bookmark->link_image . '" src="' . iro_opt('load_in_svg') . '"></br><span class="sitename" style="' . $bookmark->link_notes . '">' . $bookmark->link_name . '</span><div class="linkdes">' . $bookmark->link_description . '</div></a></li>';
+            $output .= '<li class="link-item ' . $status_class . '"><a class="link-item-inner effect-apollo" href="' . $bookmark->link_url . '" title="' . $bookmark->link_description . '" target="_blank" rel="friend"><div class="link-avatar-wrapper"><img alt="friend_avator" class="lazyload" onerror="imgError(this,1)" data-src="' . $bookmark->link_image . '" src="' . iro_opt('load_in_svg') . '"></div><span class="sitename" style="' . $bookmark->link_notes . '">' . $bookmark->link_name . '</span><div class="linkdes">' . $bookmark->link_description . '</div></a></li>';
         }
         $output .= '</ul>';
     }
@@ -3257,6 +3266,192 @@ function sakurairo_check_pending_links_limit() {
     // 检查是否达到上限
     return $pending_links_count >= 20;
 }
+
+/**
+ * 检测已审核通过的友情链接状态
+ * 使用稳健的方法，每周一次，分批进行检测
+ */
+function sakurairo_check_approved_links_status() {
+    // 获取上次检查的批次
+    $last_batch = get_option('sakurairo_link_check_last_batch', 0);
+    $batch_size = 5; // 每次检查5个链接
+    
+    // 获取所有可见的友情链接（已审核通过的）
+    $approved_links = get_bookmarks(array(
+        'hide_invisible' => true, // 只获取可见的链接
+    ));
+    
+    // 如果没有链接，直接返回
+    if (empty($approved_links)) {
+        return;
+    }
+    
+    // 计算总批次数
+    $total_batches = ceil(count($approved_links) / $batch_size);
+    
+    // 确定当前批次
+    $current_batch = ($last_batch + 1) % $total_batches;
+    
+    // 计算当前批次的起始和结束索引
+    $start_index = $current_batch * $batch_size;
+    $end_index = min($start_index + $batch_size, count($approved_links));
+    
+    // 获取当前批次的链接
+    $current_batch_links = array_slice($approved_links, $start_index, $end_index - $start_index);
+    
+    // 检查每个链接的状态
+    foreach ($current_batch_links as $link) {
+        sakurairo_check_single_link_status($link);
+    }
+    
+    // 更新最后检查的批次
+    update_option('sakurairo_link_check_last_batch', $current_batch);
+    
+    // 记录检查时间
+    update_option('sakurairo_link_check_last_time', current_time('mysql'));
+}
+
+/**
+ * 检查单个友情链接的状态
+ * 
+ * @param object $link 友情链接对象
+ */
+function sakurairo_check_single_link_status($link) {
+    // 如果链接不存在或URL为空，直接返回
+    if (!$link || empty($link->link_url)) {
+        return;
+    }
+    
+    $link_id = $link->link_id;
+    $link_url = $link->link_url;
+    
+    // 获取上次检查状态
+    $last_check_status = get_post_meta($link_id, '_link_check_status', true);
+    $last_check_time = get_post_meta($link_id, '_link_check_time', true);
+    $failure_count = intval(get_post_meta($link_id, '_link_failure_count', true));
+    
+    // 使用 wp_safe_remote_head 进行安全的HTTP请求检查
+    // 设置较短的超时时间和用户代理，避免长时间等待
+    $args = array(
+        'timeout' => 10, // 10秒超时
+        'redirection' => 5, // 最多允许5次重定向
+        'user-agent' => 'WordPress/' . get_bloginfo('version') . '; ' . get_bloginfo('url'),
+        'sslverify' => false, // 不验证SSL证书，提高兼容性
+    );
+    
+    $response = wp_safe_remote_head($link_url, $args);
+    
+    // 检查响应
+    $is_success = false;
+    $status_code = 0;
+    $error_message = '';
+    
+    if (is_wp_error($response)) {
+        // 请求出错
+        $is_success = false;
+        $error_message = $response->get_error_message();
+    } else {
+        // 获取HTTP状态码
+        $status_code = wp_remote_retrieve_response_code($response);
+        
+        // 2xx 和 3xx 状态码视为成功
+        $is_success = ($status_code >= 200 && $status_code < 400);
+    }
+    
+    // 更新检查状态
+    if ($is_success) {
+        // 链接正常
+        update_post_meta($link_id, '_link_check_status', 'success');
+        update_post_meta($link_id, '_link_failure_count', 0); // 重置失败计数
+    } else {
+        // 链接异常
+        update_post_meta($link_id, '_link_check_status', 'failure');
+        update_post_meta($link_id, '_link_status_code', $status_code);
+        update_post_meta($link_id, '_link_error_message', $error_message);
+        
+        // 增加失败计数
+        $failure_count++;
+        update_post_meta($link_id, '_link_failure_count', $failure_count);
+        
+        // 如果连续失败3次以上，发送通知邮件给管理员
+        if ($failure_count == 3) { // Only notify once when the failure count reaches 3
+            sakurairo_send_link_failure_notification($link);
+        }
+    }
+    
+    // 更新检查时间
+    update_post_meta($link_id, '_link_check_time', current_time('mysql'));
+}
+
+/**
+ * 发送友情链接失败通知
+ * 
+ * @param object $link 友情链接对象
+ */
+function sakurairo_send_link_failure_notification($link) {
+    // 获取管理员邮箱
+    $admin_email = get_option('admin_email');
+    if (empty($admin_email)) {
+        return;
+    }
+    
+    $blog_name = get_bloginfo('name');
+    $link_name = $link->link_name;
+    $link_url = $link->link_url;
+    $failure_count = intval(get_post_meta($link->link_id, '_link_failure_count', true));
+    $status_code = get_post_meta($link->link_id, '_link_status_code', true);
+    $error_message = get_post_meta($link->link_id, '_link_error_message', true);
+    
+    // 邮件主题
+    $subject = sprintf(__('[%s] Friend Link Check Failure: %s', 'sakurairo'), $blog_name, $link_name);
+    
+    // 邮件内容
+    $message = sprintf(__("The friend link '%s' has failed our status check %d times.\n\n", 'sakurairo'), $link_name, $failure_count);
+    $message .= sprintf(__("Link URL: %s\n", 'sakurairo'), $link_url);
+    
+    if ($status_code) {
+        $message .= sprintf(__("HTTP Status Code: %s\n", 'sakurairo'), $status_code);
+    }
+    
+    if ($error_message) {
+        $message .= sprintf(__("Error Message: %s\n", 'sakurairo'), $error_message);
+    }
+    
+    $message .= sprintf(__("\nLast Check Time: %s\n\n", 'sakurairo'), current_time('mysql'));
+    $message .= __("You may want to check this link and consider removing it if it remains unavailable.\n", 'sakurairo');
+    $message .= admin_url('link-manager.php');
+    
+    // 发送邮件
+    wp_mail($admin_email, $subject, $message);
+}
+
+/**
+ * 注册每周一次的友情链接检查计划任务
+ */
+function sakurairo_register_link_check_cron() {
+    if (!wp_next_scheduled('sakurairo_weekly_link_check')) {
+        wp_schedule_event(time(), 'weekly', 'sakurairo_weekly_link_check');
+    }
+}
+add_action('wp', 'sakurairo_register_link_check_cron');
+
+/**
+ * 执行友情链接检查的钩子
+ */
+add_action('sakurairo_weekly_link_check', 'sakurairo_check_approved_links_status');
+
+/**
+ * 在主题停用时清除计划任务
+ */
+function sakurairo_deactivate_link_check_cron() {
+    $timestamp = wp_next_scheduled('sakurairo_weekly_link_check');
+    if ($timestamp) {
+        wp_unschedule_event($timestamp, 'sakurairo_weekly_link_check');
+    }
+}
+register_deactivation_hook(__FILE__, 'sakurairo_deactivate_link_check_cron');
+
+require_once(get_theme_file_path() . '/inc/link-status.php'); // 友情链接状态检测
 
 /**
  * 返回是否应当显示文章标题。

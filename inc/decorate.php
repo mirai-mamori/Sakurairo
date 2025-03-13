@@ -11,8 +11,6 @@ if (iro_opt('theme_skin')) { ?>
     --style_menu_selection_radius:<?=iro_opt('style_menu_selection_radius', ''); ?>px;
     --load_nextpage_svg:url("<?=iro_opt('load_nextpage_svg'); ?>");
     --style_menu_radius:<?=iro_opt('style_menu_radius', ''); ?>px;
-    --friend-link-shadow: <?=iro_opt('friend_link_shadow_color'); ?>;
-    --friend-link-title: <?=iro_opt('friend_link_title_matching_color'); ?>;
     --inline_code_background_color:<?=iro_opt('inline_code_background_color');?>;
     --theme-skin-dark:  <?=iro_opt('theme_skin_dark'); ?>;
     --global-font-weight:<?=iro_opt('global_font_weight');?>;

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2025-03-09 17:33+0900\n"
-"PO-Revision-Date: 2025-03-09 17:33+0900\n"
+"POT-Creation-Date: 2025-03-13 18:22+0900\n"
+"PO-Revision-Date: 2025-03-13 18:25+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -478,8 +478,8 @@ msgstr "开"
 
 #: fields/switcher/switcher.php:21 options/theme-options.php:809
 #: options/theme-options.php:869 options/theme-options.php:1132
-#: options/theme-options.php:3216 options/theme-options.php:3229
-#: options/theme-options.php:3391
+#: options/theme-options.php:3195 options/theme-options.php:3208
+#: options/theme-options.php:3370
 msgid "Off"
 msgstr "关"
 
@@ -867,9 +867,9 @@ msgstr "主题色"
 
 #: options/theme-options.php:204 options/theme-options.php:212
 #: options/theme-options.php:225 options/theme-options.php:1103
-#: options/theme-options.php:1112 options/theme-options.php:3475
-#: options/theme-options.php:3483 options/theme-options.php:3491
-#: options/theme-options.php:3499
+#: options/theme-options.php:1112 options/theme-options.php:3454
+#: options/theme-options.php:3462 options/theme-options.php:3470
+#: options/theme-options.php:3478
 msgid "Customize the colors"
 msgstr "自定义颜色"
 
@@ -2292,7 +2292,7 @@ msgstr ""
 msgid "Telegram"
 msgstr ""
 
-#: options/theme-options.php:1975 options/theme-options.php:3040
+#: options/theme-options.php:1975 options/theme-options.php:3032
 msgid "Steam"
 msgstr ""
 
@@ -2533,8 +2533,7 @@ msgid "Bulletin Board Text Color"
 msgstr "公告板文本颜色"
 
 #: options/theme-options.php:2272 options/theme-options.php:2301
-#: options/theme-options.php:2687 options/theme-options.php:2962
-#: options/theme-options.php:2970
+#: options/theme-options.php:2687
 msgid ""
 "Customize the colors, suggest using a corresponding color with the "
 "background color"
@@ -3144,62 +3143,62 @@ msgid "Friend Link Template Unit Alignment"
 msgstr "友情链接模板单元对齐方向"
 
 #: options/theme-options.php:2961
-msgid "Friend Link Template Unit Matching Color"
-msgstr "友情链接模板单元搭配色"
+msgid "Friend Link Apply Form"
+msgstr "友情链接申请表格"
+
+#: options/theme-options.php:2962
+msgid "Add a apply form on the friend link page"
+msgstr "在友情链接页面添加申请表单"
 
 #: options/theme-options.php:2969
-msgid "Friend Link Template Unit Border Shadow Color"
-msgstr "友情链接模板单元边框阴影颜色"
-
-#: options/theme-options.php:2977
 msgid "Friend Link Sorting Mode"
 msgstr "友情链接列表排序模式"
 
-#: options/theme-options.php:2978
+#: options/theme-options.php:2970
 msgid "Select the friend link sorting mode, \"Name\" is used by Default."
 msgstr "选择友情链接列表排序模式，默认使用“名称”排序。"
 
-#: options/theme-options.php:2980
+#: options/theme-options.php:2972
 msgid "Name"
 msgstr "名称"
 
-#: options/theme-options.php:2981
+#: options/theme-options.php:2973
 msgid "Rating"
 msgstr "评级"
 
-#: options/theme-options.php:2982
+#: options/theme-options.php:2974
 msgid "Updated"
 msgstr "更新时间"
 
-#: options/theme-options.php:2983
+#: options/theme-options.php:2975
 msgid "Rand"
 msgstr "随机"
 
-#: options/theme-options.php:2991
+#: options/theme-options.php:2983
 msgid "Ascending OR Descending"
 msgstr "升序或降序"
 
-#: options/theme-options.php:2992
+#: options/theme-options.php:2984
 msgid "Order friend link in ascending or descending."
 msgstr "按升序或降序排序友情链接列表"
 
-#: options/theme-options.php:2995
+#: options/theme-options.php:2987
 msgid "Ascending"
 msgstr "升序"
 
-#: options/theme-options.php:2996
+#: options/theme-options.php:2988
 msgid "Descending"
 msgstr "降序"
 
-#: options/theme-options.php:3003
+#: options/theme-options.php:2995
 msgid "SteamLibrary Template Settings"
-msgstr "Steam库模板设置"
+msgstr "Steam 库模板设置"
 
-#: options/theme-options.php:3009
+#: options/theme-options.php:3001
 msgid "Steam Account 64ID"
-msgstr "Steam账号64ID"
+msgstr "Steam 账号 64ID"
 
-#: options/theme-options.php:3010
+#: options/theme-options.php:3002
 msgid ""
 "Fill in your account 64ID, e.g. https://steamcommunity.com/"
 "profiles/76561199029689067/, just the number part \"76561199029689067\""
@@ -3207,72 +3206,60 @@ msgstr ""
 "填写你的帐号ID，例如：https://steamcommunity.com/"
 "profiles/76561199029689067/, 只需填写数字 \"76561199029689067\" 部分"
 
-#: options/theme-options.php:3016
+#: options/theme-options.php:3008
 msgid "Steam API Key"
-msgstr "Steam API密钥"
+msgstr "Steam API 密钥"
 
-#: options/theme-options.php:3017
+#: options/theme-options.php:3009
 msgid "Apply at https://steamcommunity.com/dev/apikey"
 msgstr "申请链接 https://steamcommunity.com/dev/apikey"
 
-#: options/theme-options.php:3023
+#: options/theme-options.php:3015
 msgid "Game Cover CDN"
-msgstr "游戏封面CDN"
+msgstr "游戏封面 CDN"
 
-#: options/theme-options.php:3024
+#: options/theme-options.php:3016
 msgid "Select based on your user region"
 msgstr ""
 "基于国内访问Steam可能加载不出来游戏封面,推荐使用Steam China, 其次akamai"
 
-#: options/theme-options.php:3026
+#: options/theme-options.php:3018
 msgid "Steam China"
 msgstr ""
 
-#: options/theme-options.php:3027
+#: options/theme-options.php:3019
 msgid "Steam akamai"
 msgstr ""
 
-#: options/theme-options.php:3028
+#: options/theme-options.php:3020
 msgid "Steam fastly"
 msgstr ""
 
-#: options/theme-options.php:3029
+#: options/theme-options.php:3021
 msgid "Steam cloudflare"
 msgstr ""
 
-#: options/theme-options.php:3037
+#: options/theme-options.php:3029
 msgid "Game Store Link"
 msgstr "游戏商店链接"
 
-#: options/theme-options.php:3038
+#: options/theme-options.php:3030
 msgid "Select the game store link to jump to"
 msgstr "选择要跳转到的游戏商店链接"
 
-#: options/theme-options.php:3041
+#: options/theme-options.php:3033
 msgid "XiaoHeiHe"
 msgstr "小黑盒"
 
-#: options/theme-options.php:3042
+#: options/theme-options.php:3034
 msgid "SteamDB"
 msgstr ""
 
-#: options/theme-options.php:3049
-msgid "Login Template Settings"
-msgstr "登录模板设置"
-
-#: options/theme-options.php:3055
-msgid "Login Template Registration Function"
-msgstr "登录模板注册功能"
-
-#: options/theme-options.php:3056
-msgid "Login template will allow registration when enabled"
-msgstr "开启之后登录模板将允许注册"
-
-#: options/theme-options.php:3065
+#: options/theme-options.php:3044
 msgid "Comment-related Options"
 msgstr "评论相关设置"
 
-#: options/theme-options.php:3072
+#: options/theme-options.php:3051
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Pages/"
 "#%E8%AF%84%E8%AE%BA%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE\">here</a> to learn "
@@ -3282,65 +3269,65 @@ msgstr ""
 "#%E8%AF%84%E8%AE%BA%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE\">此处</a> 了解如何在"
 "此页面上设置选项"
 
-#: options/theme-options.php:3077
+#: options/theme-options.php:3056
 msgid "Comment Area Style"
 msgstr "评论区域样式"
 
-#: options/theme-options.php:3083
+#: options/theme-options.php:3062
 msgid "Page Comment Area Display"
 msgstr "页面评论区域显示"
 
-#: options/theme-options.php:3084
+#: options/theme-options.php:3063
 msgid "You can choose to expand or shirink the content of the comment area"
 msgstr "你可以选择展开显示或者收缩显示评论区域内容"
 
-#: options/theme-options.php:3086
+#: options/theme-options.php:3065
 msgid "Expand"
 msgstr "展开"
 
-#: options/theme-options.php:3087
+#: options/theme-options.php:3066
 msgid "Shrink"
 msgstr "收缩"
 
-#: options/theme-options.php:3095
+#: options/theme-options.php:3074
 msgid "Custom CommentBox Placeholder"
 msgstr "自定义评论区占位内容"
 
-#: options/theme-options.php:3096
+#: options/theme-options.php:3075
 msgid ""
 "When the user does not type any text, they will appear in the comment box."
 msgstr "评论框中没有任何内容时将显示以上内容"
 
-#: options/theme-options.php:3097
+#: options/theme-options.php:3076
 msgid "To trace the bright moonlight"
 msgstr ""
 
-#: options/theme-options.php:3103
+#: options/theme-options.php:3082
 msgid "Customize Submit Button Content"
 msgstr "自定义评论提交按钮文本"
 
-#: options/theme-options.php:3104
+#: options/theme-options.php:3083
 msgid "发送✈️"
 msgstr "Submit✈️"
 
-#: options/theme-options.php:3110
+#: options/theme-options.php:3089
 msgid "Page Comment Area Bottom Right Background Image"
 msgstr "页面评论区域右下背景图片"
 
-#: options/theme-options.php:3111
+#: options/theme-options.php:3090
 msgid ""
 "If this option is blank, there will be no image, no best recommendation here"
 msgstr "如果此选项为空白，则没有图像，无最佳推荐"
 
-#: options/theme-options.php:3117
+#: options/theme-options.php:3096
 msgid "Comment Area Function"
 msgstr "评论区域功能"
 
-#: options/theme-options.php:3123
+#: options/theme-options.php:3102
 msgid "Comment Area Emoticon"
 msgstr "评论区域表情"
 
-#: options/theme-options.php:3124
+#: options/theme-options.php:3103
 msgid ""
 "Select the emoticons to be displayed in the comment area input box. Uncheck "
 "all to turn off the comment input box emoticon function."
@@ -3348,37 +3335,37 @@ msgstr ""
 "选择要在评论区域输入框中显示的表情。全部取消选中可关闭评论区域输入框表情功"
 "能。"
 
-#: options/theme-options.php:3127
+#: options/theme-options.php:3106
 msgid "BiliBili Emoticon Pack"
 msgstr "哔哩哔哩表情包"
 
-#: options/theme-options.php:3128
+#: options/theme-options.php:3107
 msgid "Baidu Tieba Emoticon Pack"
 msgstr "百度贴吧表情包"
 
-#: options/theme-options.php:3129
+#: options/theme-options.php:3108
 msgid "Emoji"
 msgstr "颜文字"
 
-#: options/theme-options.php:3130
+#: options/theme-options.php:3109
 msgid "Customized Emoticon Pack"
 msgstr "自定义表情包"
 
-#: options/theme-options.php:3138
+#: options/theme-options.php:3117
 msgid "Customized Emoticon Column Name"
 msgstr "自定义表情包名称"
 
-#: options/theme-options.php:3139
+#: options/theme-options.php:3118
 msgid ""
 "It is recommended to enter less than 4 Chinese characters in length to avoid "
 "causing compatibility issues on mobile terminals."
 msgstr "建议输入少于4个汉字的内容，以免造成移动端的兼容性问题。"
 
-#: options/theme-options.php:3147
+#: options/theme-options.php:3126
 msgid "Path To Custom Expression"
 msgstr "自定义表情包路径"
 
-#: options/theme-options.php:3148
+#: options/theme-options.php:3127
 msgid ""
 "Click <a href=\"./admin.php?update_custom_smilies=true\" "
 "target=\"_blank\">here</a> updating emoticon list. Specific usage reference: "
@@ -3391,110 +3378,110 @@ msgstr ""
 "Sakurairo/Pages/#%E8%AF%84%E8%AE%BA%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE\" "
 "target=\"_blank\">评论相关设置</a>"
 
-#: options/theme-options.php:3155
+#: options/theme-options.php:3134
 msgid "Custom Emoticon Proxy Address"
 msgstr "自定义表情包代理地址"
 
-#: options/theme-options.php:3156
+#: options/theme-options.php:3135
 msgid ""
 "Fill in the CDN address of the emoticon image. If left blank, the CDN proxy "
 "function will not be enabled."
 msgstr "填写表情图片的 CDN 地址。如果留空，则不会启用 CDN 代理功能。"
 
-#: options/theme-options.php:3166
+#: options/theme-options.php:3145
 msgid "Page Comment Area UA Info"
 msgstr "页面评论区域 UA 信息"
 
-#: options/theme-options.php:3167
+#: options/theme-options.php:3146
 msgid ""
 "When enabled, the page comment area will display the user’s browser, "
 "operating system information"
 msgstr "开启之后页面评论区域将显示用户的浏览器，操作系统信息"
 
-#: options/theme-options.php:3174
+#: options/theme-options.php:3153
 msgid "Page Comment Area Location Information"
 msgstr "页面评论区域位置信息"
 
-#: options/theme-options.php:3175
+#: options/theme-options.php:3154
 msgid ""
 "When enabled, the page comment area will show the user’s location information"
 msgstr "开启之后页面评论区域将显示用户的位置信息"
 
-#: options/theme-options.php:3182
+#: options/theme-options.php:3161
 msgid "Management Page Displays Location Information"
 msgstr "评论管理页面评论位置信息"
 
-#: options/theme-options.php:3183
+#: options/theme-options.php:3162
 msgid ""
 "When enabled, the commenter's IP geographical location information will be "
 "displayed on the comment management page"
 msgstr "开启之后评论管理页面将显示评论位置信息"
 
-#: options/theme-options.php:3190
+#: options/theme-options.php:3169
 msgid "Location Information Persistence"
 msgstr "位置信息持久化"
 
-#: options/theme-options.php:3191
+#: options/theme-options.php:3170
 msgid ""
 "When enabled, the commenter's IP geographical location information will be "
 "stored in the database"
 msgstr "开启之后评论位置信息将存储在数据库中"
 
-#: options/theme-options.php:3198
+#: options/theme-options.php:3177
 msgid "Private Comment Function"
 msgstr "私人评论功能"
 
-#: options/theme-options.php:3199
+#: options/theme-options.php:3178
 msgid ""
 "When enabled, users are allowed to set their comments to be invisible to "
 "others"
 msgstr "开启之后将允许用户设置自己的评论对其他人不可见"
 
-#: options/theme-options.php:3206
+#: options/theme-options.php:3185
 msgid "Page Comment Area Captcha"
 msgstr "页面评论区域验证码"
 
-#: options/theme-options.php:3207
+#: options/theme-options.php:3186
 msgid ""
 "Enabled by default, comments posted without logging in need to be verified "
 "by CAPTCHA"
 msgstr "默认开启，在未登录的情况下发表评论需要通过验证码验证"
 
-#: options/theme-options.php:3214
+#: options/theme-options.php:3193
 msgid "QQ Avatar Link Encryption"
 msgstr "QQ头像链接加密"
 
-#: options/theme-options.php:3217
+#: options/theme-options.php:3196
 msgid "Redirect (low security)"
 msgstr "重定向（低安全性）"
 
-#: options/theme-options.php:3218
+#: options/theme-options.php:3197
 msgid "Get avatar data in the backend (medium security)"
 msgstr "后端获取头像数据（中安全性）"
 
-#: options/theme-options.php:3219
+#: options/theme-options.php:3198
 msgid "Parse avatar interface in the backend (high security, slow)"
 msgstr "后端解析头像接口（高安全性，慢速）"
 
-#: options/theme-options.php:3227
+#: options/theme-options.php:3206
 msgid "Page Comment Area Upload Image Interface"
 msgstr "页面评论区域上传图片接口"
 
-#: options/theme-options.php:3241
+#: options/theme-options.php:3220
 msgid "Imgur Client ID"
 msgstr "Imgur Client ID"
 
-#: options/theme-options.php:3243
+#: options/theme-options.php:3222
 msgid ""
 "Fill in Client ID here, to register please visit https://api.imgur.com/"
 "oauth2/addclient"
 msgstr "此处填写Client ID，注册请访问 https://api.imgur.com/oauth2/addclient"
 
-#: options/theme-options.php:3249
+#: options/theme-options.php:3228
 msgid "Imgur Upload Proxy"
 msgstr "Imgur上传代理"
 
-#: options/theme-options.php:3251
+#: options/theme-options.php:3230
 msgid ""
 "The proxy used by the backend when uploading images to Imgur. You can refer "
 "to the tutorial: https://2heng.xin/2018/06/06/javascript-upload-images-with-"
@@ -3503,41 +3490,41 @@ msgstr ""
 "后端上传图片到 Imgur 的时候使用的代理。你可以参考教程：https://2heng."
 "xin/2018/06/06/javascript-upload-images-with-imgur-api/"
 
-#: options/theme-options.php:3258
+#: options/theme-options.php:3237
 msgid "SM.MS Secret Token"
 msgstr "SM.MS Secret Token"
 
-#: options/theme-options.php:3260
+#: options/theme-options.php:3239
 msgid ""
 "Fill in your Key here, to get it please visit https://sm.ms/home/apitoken"
 msgstr "此处填写Key，获取请访问 https://sm.ms/home/apitoken"
 
-#: options/theme-options.php:3266
+#: options/theme-options.php:3245
 msgid "Chevereto API v1 Key"
 msgstr "Chevereto API v1 Key"
 
-#: options/theme-options.php:3268
+#: options/theme-options.php:3247
 msgid ""
 "Fill in the Key here, to get please visit your Chevereto home page address/"
 "dashboard/settings/api"
 msgstr "此处填写Key，获取请访问你的Chevereto首页地址/dashboard/settings/api"
 
-#: options/theme-options.php:3274
+#: options/theme-options.php:3253
 msgid "Chevereto Address"
 msgstr "Chevereto地址"
 
-#: options/theme-options.php:3276
+#: options/theme-options.php:3255
 msgid ""
 "Your Chevereto home page address. Please note that there is no \"/\" at the "
 "end, e.g. https://your.cherverto.com"
 msgstr ""
 "你的Chevereto首页地址, 注意结尾没有 /, 例如：https://your.cherverto.com"
 
-#: options/theme-options.php:3282
+#: options/theme-options.php:3261
 msgid "Lsky Pro v1 Token"
 msgstr "Lsky Pro v1 Token"
 
-#: options/theme-options.php:3284
+#: options/theme-options.php:3263
 msgid ""
 "Fill in the Token here, Please note that there is no \"Bearer \" at first, "
 "to get please visit your Lsky Pro home page address/api"
@@ -3545,41 +3532,41 @@ msgstr ""
 "在这里填写令牌，请注意，首先没有“Bearer”，要获得请访问您的Lsky Pro主页地址/ "
 "api"
 
-#: options/theme-options.php:3290
+#: options/theme-options.php:3269
 msgid "Lsky Pro Address"
 msgstr "Lsky Pro地址"
 
-#: options/theme-options.php:3292
+#: options/theme-options.php:3271
 msgid ""
 "Your Lsky Pro home page address. Please note that there is no \"/\" at the "
 "end, e.g. https://your.lskypro.com"
 msgstr "你的Lsky Pro首页地址, 注意结尾没有 /, 例如：https://your.lskypro.com"
 
-#: options/theme-options.php:3298
+#: options/theme-options.php:3277
 msgid "Comment Image Proxy"
 msgstr "评论图片代理"
 
-#: options/theme-options.php:3299
+#: options/theme-options.php:3278
 msgid "Proxy for the image displayed on the frontend"
 msgstr "前端显示的图片的代理"
 
-#: options/theme-options.php:3306
+#: options/theme-options.php:3285
 msgid "Comment Email Notification"
 msgstr "评论邮件通知"
 
-#: options/theme-options.php:3312
+#: options/theme-options.php:3291
 msgid "Mail Template Featured Image"
 msgstr "邮件模板特色图片"
 
-#: options/theme-options.php:3313
+#: options/theme-options.php:3292
 msgid "Set the background image of your reply email"
 msgstr "设置你的回复邮件上方背景图片"
 
-#: options/theme-options.php:3321
+#: options/theme-options.php:3300
 msgid "Mail Template Sending Address Prefix"
 msgstr "邮件模板发件地址前缀"
 
-#: options/theme-options.php:3322
+#: options/theme-options.php:3301
 msgid ""
 "Used to send system mail. The sender address will be displayed in the user's "
 "mailbox, don't use Non-English Characters. The default system mail address "
@@ -3588,11 +3575,11 @@ msgstr ""
 "用于发送系统邮件，在用户的邮箱中显示的发件人地址，不要使用中文，默认系统邮件"
 "地址为 bibi@你的域名"
 
-#: options/theme-options.php:3329
+#: options/theme-options.php:3308
 msgid "User Mail Reply Notification"
 msgstr "用户邮件回复通知"
 
-#: options/theme-options.php:3330
+#: options/theme-options.php:3309
 msgid ""
 "By default WordPress will use email notifications to notify users when their "
 "comments receive a reply. After turning it on users are allowed to set "
@@ -3601,25 +3588,25 @@ msgstr ""
 "WordPress默认会使用邮件通知用户评论收到回复，开启之后允许用户设置自己的评论收"
 "到回复时是否使用邮件通知"
 
-#: options/theme-options.php:3337
+#: options/theme-options.php:3316
 msgid "Admin Email Reply Notification"
 msgstr "管理员邮件回复通知"
 
-#: options/theme-options.php:3338
+#: options/theme-options.php:3317
 msgid ""
 "Use email notifications when admin comments receive a reply after turning it "
 "on"
 msgstr "开启之后当管理员评论收到回复时使用邮件通知"
 
-#: options/theme-options.php:3347
+#: options/theme-options.php:3326
 msgid "Other Options"
 msgstr "其他设置"
 
-#: options/theme-options.php:3353
+#: options/theme-options.php:3332
 msgid "Login Screen and Dashboard Related Options"
 msgstr "登录界面和仪表盘相关设置"
 
-#: options/theme-options.php:3360
+#: options/theme-options.php:3339
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Others/"
 "#%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2%E5%92%8C%E4%BB%AA%E8%A1%A8%E7%9B%98%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE\">here</"
@@ -3629,113 +3616,113 @@ msgstr ""
 "#%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2%E5%92%8C%E4%BB%AA%E8%A1%A8%E7%9B%98%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE\">"
 "此处</a> 了解如何在此页面上设置选项"
 
-#: options/theme-options.php:3365
+#: options/theme-options.php:3344
 msgid "Login Screen"
 msgstr "登录界面"
 
-#: options/theme-options.php:3371
+#: options/theme-options.php:3350
 msgid "Custom Login Screen"
 msgstr "定制登录界面"
 
-#: options/theme-options.php:3372
+#: options/theme-options.php:3351
 msgid "Default on, custom login screen will replace the default login screen"
 msgstr "默认开启，定制登录界面将取代默认登录界面"
 
-#: options/theme-options.php:3379
+#: options/theme-options.php:3358
 msgid "Login Screen Logo"
 msgstr "登录界面Logo"
 
-#: options/theme-options.php:3380
+#: options/theme-options.php:3359
 msgid "Set your login screen Logo"
 msgstr "设置你的登录界面Logo"
 
-#: options/theme-options.php:3389
+#: options/theme-options.php:3368
 msgid "Captcha Selection"
 msgstr "验证码选项"
 
-#: options/theme-options.php:3392
+#: options/theme-options.php:3371
 msgid "Theme Built in Captcha"
 msgstr "主题内建验证码"
 
-#: options/theme-options.php:3393
+#: options/theme-options.php:3372
 msgid "Vaptcha"
-msgstr "Vaptcha验证码"
+msgstr "Vaptcha 验证码"
 
-#: options/theme-options.php:3401
+#: options/theme-options.php:3380
 msgid "Vaptcha VID"
 msgstr ""
 
-#: options/theme-options.php:3403
+#: options/theme-options.php:3382
 msgid "Fill in your Vaptcha VID"
 msgstr "填写你的 Vaptcha VID"
 
-#: options/theme-options.php:3409
+#: options/theme-options.php:3388
 msgid "Vaptcha KEY"
 msgstr ""
 
-#: options/theme-options.php:3411
+#: options/theme-options.php:3390
 msgid "Fill in your Vaptcha KEY"
 msgstr "填写你的 Vaptcha KEY"
 
-#: options/theme-options.php:3417
+#: options/theme-options.php:3396
 msgid "Vaptcha Scene"
 msgstr "Vaptcha场景"
 
-#: options/theme-options.php:3433
+#: options/theme-options.php:3412
 msgid "Jump after login"
 msgstr "登录后跳转"
 
-#: options/theme-options.php:3434
+#: options/theme-options.php:3413
 msgid "Jump to backend for admins and home for users after turning on."
 msgstr "开启之后管理员跳转至后台，用户跳转至主页。"
 
-#: options/theme-options.php:3441
+#: options/theme-options.php:3420
 msgid "Login Screen Language Option"
 msgstr "登录界面语言选项"
 
-#: options/theme-options.php:3442
+#: options/theme-options.php:3421
 msgid "Login screen language option will be display when enabled"
 msgstr "开启之后登录界面将显示语言选项"
 
-#: options/theme-options.php:3448
+#: options/theme-options.php:3427
 msgid "Dashboard"
 msgstr "仪表盘"
 
-#: options/theme-options.php:3454
+#: options/theme-options.php:3433
 msgid "Dashboard Background Image"
 msgstr "仪表盘背景图片"
 
-#: options/theme-options.php:3455
+#: options/theme-options.php:3434
 msgid ""
 "Set your dashboard background image, leave this option blank to show white "
 "background"
 msgstr "设置你的仪表盘背景图片，此选项留空则显示白色背景"
 
-#: options/theme-options.php:3463
+#: options/theme-options.php:3442
 msgid "Dashboard Options Menu Style"
 msgstr "仪表板设置菜单样式"
 
-#: options/theme-options.php:3474
+#: options/theme-options.php:3453
 msgid "Dashboard Primary Menu Color"
 msgstr "仪表盘一级菜单颜色"
 
-#: options/theme-options.php:3482
+#: options/theme-options.php:3461
 msgid "Dashboard Secondary Menu Color"
 msgstr "仪表盘二级菜单颜色"
 
-#: options/theme-options.php:3490
+#: options/theme-options.php:3469
 msgid "Dashboard Emphasis Color"
 msgstr "仪表板强调颜色"
 
-#: options/theme-options.php:3498
+#: options/theme-options.php:3477
 msgid "Dashboard Text Color"
 msgstr "仪表盘文本颜色"
 
-#: options/theme-options.php:3508
+#: options/theme-options.php:3487
 msgid "ChatGPT Options"
 msgstr "ChatGPT 设置"
 
-#: options/theme-options.php:3515
+#: options/theme-options.php:3494
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Others/"
 "#ChatGPT%E8%AE%BE%E7%BD%AE\">here</a> to learn how to set the options on "
@@ -3744,58 +3731,58 @@ msgstr ""
 "您可以单击 <a href=\"https://docs.fuukei.org/Sakurairo/Others/"
 "#ChatGPT%E8%AE%BE%E7%BD%AE\">此处</a> 了解如何在此页面上设置选项"
 
-#: options/theme-options.php:3521
+#: options/theme-options.php:3500
 msgid "ChatGPT Function"
 msgstr "ChatGPT 功能"
 
-#: options/theme-options.php:3522
+#: options/theme-options.php:3501
 msgid "After turning on ChatGPT Function will be available"
 msgstr "开启之后 ChatGPT 功能将可以使用"
 
-#: options/theme-options.php:3528
+#: options/theme-options.php:3507
 msgid ""
 "<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.7/options/leaflow.webp\" "
 "width=\"25%\" height=\"25%\"/><img src=\"https://s.nmxc.ltd/sakurairo_vision/"
 "@2.7/options/postchat.webp\" width=\"25%\" height=\"25%\"/>"
 msgstr ""
 
-#: options/theme-options.php:3536
+#: options/theme-options.php:3515
 msgid "Reset to API providers' default options"
 msgstr "一键使用 API （第三方服务）"
 
-#: options/theme-options.php:3538
+#: options/theme-options.php:3517
 msgid "Leaflow"
 msgstr "利飞"
 
-#: options/theme-options.php:3541
+#: options/theme-options.php:3520
 msgid "PostChat"
 msgstr ""
 
-#: options/theme-options.php:3544
+#: options/theme-options.php:3523
 msgid "OpenAI"
 msgstr ""
 
-#: options/theme-options.php:3575
+#: options/theme-options.php:3554
 msgid "Reset successfully"
 msgstr "重置成功"
 
-#: options/theme-options.php:3578
+#: options/theme-options.php:3557
 msgid "Failed to reset"
 msgstr "重置失败"
 
-#: options/theme-options.php:3592
+#: options/theme-options.php:3571
 msgid "ChatGPT Base URL"
 msgstr "ChatGPT 访问地址"
 
-#: options/theme-options.php:3593
+#: options/theme-options.php:3572
 msgid "Fill in the ChatGPT Base URL"
 msgstr "填写你的 ChatGPT 访问地址"
 
-#: options/theme-options.php:3601
+#: options/theme-options.php:3580
 msgid "ChatGPT API keys"
 msgstr "ChatGPT API密钥"
 
-#: options/theme-options.php:3602
+#: options/theme-options.php:3581
 msgid ""
 "Fill in Your ChatGPT API keys, please refer to <a href=\"https://platform."
 "openai.com/account/api-keys\">OpenAI Website</a> for further information."
@@ -3803,17 +3790,17 @@ msgstr ""
 "填写您的 ChatGPT API 密钥，您可以访问 <a href=\"https://platform.openai.com/"
 "account/api-keys\">OpenAI 网站</a> 获取您的 API 密钥"
 
-#: options/theme-options.php:3609
+#: options/theme-options.php:3588
 msgid "ChatGPT Article Summarize"
 msgstr "ChatGPT 文章摘要"
 
-#: options/theme-options.php:3610
+#: options/theme-options.php:3589
 msgid ""
 "After turning on, title and context of your articles will be automatically "
 "sent to ChatGPT to generate excerpts."
 msgstr "开启之后，文章的标题和内容将自动发送到 ChatGPT 以生成摘要"
 
-#: options/theme-options.php:3617
+#: options/theme-options.php:3596
 msgid ""
 "Each update of your post will trigger a request to generate a summary. Due "
 "to current API limitations, if your article exceeds 4097 Token, the system "
@@ -3822,21 +3809,21 @@ msgstr ""
 "你的每次文章更新都会触发生成摘要请求。由于目前API限制，如果你的文章超过 4097 "
 "Token，系统将会只发送未超出部分以生成摘要"
 
-#: options/theme-options.php:3627
+#: options/theme-options.php:3606
 msgid "Article IDs that do not Require ChatGPT Summarize"
 msgstr "不需要 ChatGPT 生成摘要的文章ID"
 
-#: options/theme-options.php:3628
+#: options/theme-options.php:3607
 msgid ""
 "Those articles will never be sent to ChatGPT for excerpt generation. Split "
 "each id with a \",\"."
 msgstr "这些文章将不会发送到 ChatGPT 以生成摘要。用“, ”分割每个 ID"
 
-#: options/theme-options.php:3639
+#: options/theme-options.php:3618
 msgid "ChatGPT Article Summarize Init Prompt"
 msgstr "ChatGPT 文章摘要初始化提示"
 
-#: options/theme-options.php:3644
+#: options/theme-options.php:3623
 msgid ""
 "Init Prompt instructs AI how to generate summaries for your articles. Init "
 "Prompt will be passed to ChatGPT as \"system\" role"
@@ -3844,11 +3831,11 @@ msgstr ""
 "用于指示 AI 如何为你的文章生成摘要。初始化提示将作为 “系统 ”角色传递给 "
 "ChatGPT"
 
-#: options/theme-options.php:3651
+#: options/theme-options.php:3630
 msgid "ChatGPT Model"
 msgstr "ChatGPT 模型"
 
-#: options/theme-options.php:3652
+#: options/theme-options.php:3631
 msgid ""
 "Only models support Chat Completion API can be used. The default is \"gpt-4o-"
 "mini. View https://platform.openai.com/docs/models/overview for further info."
@@ -3856,31 +3843,31 @@ msgstr ""
 "只有兼容 ChatGPT API 的模型才能使用。默认为 “gpt-4o-mini”。更多信息请查看 "
 "https://platform.openai.com/docs/models/overview"
 
-#: options/theme-options.php:3665
+#: options/theme-options.php:3644
 msgid "ChatGPT API self test"
 msgstr "ChatGPT API 测试"
 
-#: options/theme-options.php:3669
+#: options/theme-options.php:3648
 msgid "TEST"
 msgstr "测试"
 
-#: options/theme-options.php:3672
+#: options/theme-options.php:3651
 msgid "Results: "
 msgstr "结果： "
 
-#: options/theme-options.php:3684
+#: options/theme-options.php:3663
 msgid "Waiting for response..."
 msgstr "等待响应"
 
-#: options/theme-options.php:3695
+#: options/theme-options.php:3674
 msgid "Malformed post_id: "
 msgstr "错误的文章 ID"
 
-#: options/theme-options.php:3712
+#: options/theme-options.php:3691
 msgid "Low Use Options"
 msgstr "低使用设置"
 
-#: options/theme-options.php:3719
+#: options/theme-options.php:3698
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Others/"
 "#%E4%BD%8E%E4%BD%BF%E7%94%A8%E8%AE%BE%E7%BD%AE\">here</a> to learn how to "
@@ -3890,85 +3877,85 @@ msgstr ""
 "#%E4%BD%8E%E4%BD%BF%E7%94%A8%E8%AE%BE%E7%BD%AE\">此处</a> 了解如何在此页面上"
 "设置选项"
 
-#: options/theme-options.php:3725
+#: options/theme-options.php:3704
 msgid "Statistics API"
 msgstr "统计接口"
 
-#: options/theme-options.php:3726
+#: options/theme-options.php:3705
 msgid ""
 "You can choose WP-Statistics plugin statistics or theme built-in statistics "
 "to display"
 msgstr "你可以选择WP-Statistics插件统计或者主题内建统计作为统计结果"
 
-#: options/theme-options.php:3728
+#: options/theme-options.php:3707
 msgid "Theme Built in Statistics"
 msgstr "主题内建统计"
 
-#: options/theme-options.php:3729
+#: options/theme-options.php:3708
 msgid "WP-Statistics Plugin Statistics"
-msgstr "WP-Statistics插件统计"
+msgstr "WP-Statistics 插件统计"
 
-#: options/theme-options.php:3737
+#: options/theme-options.php:3716
 msgid "Statistics display format"
 msgstr "统计数据显示格式"
 
-#: options/theme-options.php:3738
+#: options/theme-options.php:3717
 msgid "You can choose from four different data display formats"
 msgstr "你可以选择四种不同的数据显示格式"
 
-#: options/theme-options.php:3740
+#: options/theme-options.php:3719
 msgid "23333 Visits"
 msgstr "23333次访问"
 
-#: options/theme-options.php:3741
+#: options/theme-options.php:3720
 msgid "23,333 Visits"
 msgstr "23,333次访问"
 
-#: options/theme-options.php:3742
+#: options/theme-options.php:3721
 msgid "23 333 Visits"
 msgstr "23 333次访问"
 
-#: options/theme-options.php:3743
+#: options/theme-options.php:3722
 msgid "23K Visits"
 msgstr "23K次访问"
 
-#: options/theme-options.php:3751
+#: options/theme-options.php:3730
 msgid "Google Analytics Id"
 msgstr "谷歌统计ID"
 
-#: options/theme-options.php:3752
+#: options/theme-options.php:3731
 msgid "If you already have a plugin to handle it, please keep here empty."
 msgstr "如果已有类似功能插件，请将此处留空"
 
-#: options/theme-options.php:3758
+#: options/theme-options.php:3737
 msgid "Captcha Level"
 msgstr "验证码难度"
 
-#: options/theme-options.php:3759
+#: options/theme-options.php:3738
 msgid "The difficulty level of the Theme Captcha"
 msgstr "主题内建验证码的难度"
 
-#: options/theme-options.php:3769
+#: options/theme-options.php:3748
 msgid "Custom CSS Styles"
 msgstr "自定义CSS样式"
 
-#: options/theme-options.php:3770
+#: options/theme-options.php:3749
 msgid "Fill in the CSS code without writing style tag"
 msgstr "填写CSS代码，不需要写style标签"
 
-#: options/theme-options.php:3777
+#: options/theme-options.php:3756
 msgid "Code inserted in the header"
 msgstr "自定义插入 Header 代码"
 
-#: options/theme-options.php:3778
+#: options/theme-options.php:3757
 msgid "Insert HTML code right before </head>."
 msgstr "在</head>前插入HTML代码"
 
-#: options/theme-options.php:3784
+#: options/theme-options.php:3763
 msgid "Timezone Fix"
 msgstr "时区修正"
 
-#: options/theme-options.php:3785
+#: options/theme-options.php:3764
 msgid ""
 "Slide to adjust. If the comment has a time difference problem, adjust it "
 "here, fill in an integer. Calculation method: actual time = time of display "
@@ -3977,11 +3964,11 @@ msgstr ""
 "滑动滑块，如果评论出现时差问题在这里调整，填入一个整数，计算方法：实际时间=显"
 "示错误的时间-你输入的整数（单位：小时）"
 
-#: options/theme-options.php:3794
+#: options/theme-options.php:3773
 msgid "Gravatar Service Proxy"
 msgstr "Gravatar服务代理"
 
-#: options/theme-options.php:3795
+#: options/theme-options.php:3774
 msgid ""
 "You can select multiple proxy as the Gravatar Service Proxy. By default, "
 "Weavatar is used as the Gravatar Service Proxy."
@@ -3989,23 +3976,23 @@ msgstr ""
 "你可以选择多种代理作为 Gravatar 服务代理。默认使用 Weavatar 作为 Gravatar 服"
 "务代理。"
 
-#: options/theme-options.php:3797
+#: options/theme-options.php:3776
 msgid "Weavatar Service"
-msgstr "Weavatar服务"
+msgstr "Weavatar 服务"
 
-#: options/theme-options.php:3798
+#: options/theme-options.php:3777
 msgid "Loli Net"
 msgstr ""
 
-#: options/theme-options.php:3799
+#: options/theme-options.php:3778
 msgid "Official"
 msgstr "官方"
 
-#: options/theme-options.php:3800 options/theme-options.php:3808
+#: options/theme-options.php:3779 options/theme-options.php:3787
 msgid "Custom Proxy Address"
 msgstr "自定义代理地址"
 
-#: options/theme-options.php:3809
+#: options/theme-options.php:3788
 msgid ""
 "Enter your Gravatar proxy address without starting with \"http(s)://\" and "
 "ending with \"/\". Example: gravatar.com/avatar."
@@ -4013,48 +4000,48 @@ msgstr ""
 "输入你的头像代理地址，请勿以\"http(s)://\" 开头 “/” 结尾。示例：gravatar.com/"
 "avatar。"
 
-#: options/theme-options.php:3817
+#: options/theme-options.php:3796
 msgid "GitHub repository card proxy"
-msgstr "Github卡片仓库代理"
+msgstr "Github 卡片仓库代理"
 
-#: options/theme-options.php:3818
+#: options/theme-options.php:3797
 msgid ""
 "Use your server proxy to get the github repository card image so that "
 "Chinese users who cannot access vercel.app can see it"
 msgstr ""
 "使用你的服务器代理获取github仓库卡片，让无法访问vercel.app的中国用户能看见它"
 
-#: options/theme-options.php:3824
+#: options/theme-options.php:3803
 msgid "Lightbox"
 msgstr "灯箱"
 
-#: options/theme-options.php:3830
+#: options/theme-options.php:3809
 msgid "lightbox"
 msgstr "灯箱效果"
 
-#: options/theme-options.php:3831
+#: options/theme-options.php:3810
 msgid ""
 "Choose a image lightbox effect which you want to use,and additional JQ "
 "libraries will be loaded when using fancybox"
 msgstr "选择一个你想使用的灯箱效果，选择FancyBox将会额外加载JQ库"
 
-#: options/theme-options.php:3833
+#: options/theme-options.php:3812
 msgid "off"
 msgstr "关"
 
-#: options/theme-options.php:3834
+#: options/theme-options.php:3813
 msgid "baguetteBox"
 msgstr ""
 
-#: options/theme-options.php:3835
+#: options/theme-options.php:3814
 msgid "fancybox"
 msgstr ""
 
-#: options/theme-options.php:3836
+#: options/theme-options.php:3815
 msgid "lightgallery"
 msgstr ""
 
-#: options/theme-options.php:3843
+#: options/theme-options.php:3822
 msgid ""
 "<strong>Attension: Please read <a href=\"https://github.com/sachinchoolur/"
 "lightGallery#license\">License Instruction</a> before use.</strong><br/"
@@ -4077,7 +4064,7 @@ msgstr ""
 "器用户来说应该是可被接受的。<br/>提交关于 Github 的新讨论以寻求帮助。https://"
 "github.com/mirai-mamori/Sakurairo/discussions"
 
-#: options/theme-options.php:3854
+#: options/theme-options.php:3833
 msgid ""
 "Start from Sakurairo v2.4.0, plugins names in LightGallery option follow the "
 "form cite in official document (eg. lgHash instead of \"hash\")"
@@ -4085,15 +4072,15 @@ msgstr ""
 "从Sakurairo v2.4.0开始，LightGallery中的插件名称会与官方文档中引用的表格保持"
 "一致（例如“hash”将被表示为IgHash）"
 
-#: options/theme-options.php:3862
+#: options/theme-options.php:3841
 msgid "LightGallery Lightbox Effect Options"
 msgstr "LightGallery灯箱效果"
 
-#: options/theme-options.php:3873
+#: options/theme-options.php:3852
 msgid "Code Highlighting"
 msgstr "代码高亮"
 
-#: options/theme-options.php:3878
+#: options/theme-options.php:3857
 msgid ""
 "<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </"
 "p> <p><strong>Prism.js:</strong> Requires a language to be specified, see <a "
@@ -4108,56 +4095,56 @@ msgstr ""
 "prismjs.com/plugins/file-highlight/\">如何代码高亮动态载入的文件</a>。 </"
 "p><p><strong>自定义：</strong> 适用于另有配置的情况。</p>"
 
-#: options/theme-options.php:3886
+#: options/theme-options.php:3865
 msgid "Code Highlight Method"
 msgstr "代码高亮程序"
 
-#: options/theme-options.php:3890
+#: options/theme-options.php:3869
 msgid "Custom Program"
 msgstr "自定义"
 
-#: options/theme-options.php:3898
+#: options/theme-options.php:3877
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
 msgstr "Prism.js：为所有代码块增加行数显示"
 
-#: options/theme-options.php:3902
+#: options/theme-options.php:3881
 msgid ""
 "See the <a href=\"https://prismjs.com/plugins/line-numbers/\">plugin "
 "description documentation</a>"
 msgstr ""
 "请参阅 <a href=\"https://prismjs.com/plugins/line-numbers/\">插件描述文档</a>"
 
-#: options/theme-options.php:3908
+#: options/theme-options.php:3887
 msgid "Prism.js: Autoload Address"
 msgstr "Prism.js：自动加载地址"
 
-#: options/theme-options.php:3912
+#: options/theme-options.php:3891
 msgid "Leave blank to use default values"
 msgstr "留空以使用默认值"
 
-#: options/theme-options.php:3919
+#: options/theme-options.php:3898
 msgid "Prism.js: Code Highlight Theme"
 msgstr "Prism.js：代码高亮主题"
 
-#: options/theme-options.php:3920 options/theme-options.php:3931
+#: options/theme-options.php:3899 options/theme-options.php:3910
 msgid "Relative to autoload address. Leave blank to use default values"
 msgstr "相对于自动加载地址。留空以使用默认值"
 
-#: options/theme-options.php:3930
+#: options/theme-options.php:3909
 msgid "Prism.js: Code Highlight Theme (Dark Mode)"
 msgstr "Prism.js：代码高亮主题（深色模式）"
 
-#: options/theme-options.php:3941
+#: options/theme-options.php:3920
 msgid ""
 "The following Options are not recommended to be modified blindly, please use "
 "them under the guidance of others"
 msgstr "以下设置不推荐盲目进行修改，请在他人的指导下使用"
 
-#: options/theme-options.php:3947
+#: options/theme-options.php:3926
 msgid "Image CDN"
 msgstr "图片 CDN"
 
-#: options/theme-options.php:3948
+#: options/theme-options.php:3927
 msgid ""
 "Note: fill in the format https://your CDN domain/. This means that images "
 "with original path http://your.domain/wp-content/uploads/2018/05/xx.png will "
@@ -4167,89 +4154,89 @@ msgstr ""
 "domain/wp-content/uploads/2018/05/xx.png 的图片将从 http://你的CDN域"
 "名/2018/05/xx.png 加载"
 
-#: options/theme-options.php:3955
+#: options/theme-options.php:3934
 msgid "Articles Categories (Do not display)"
 msgstr "文章分类（不显示）"
 
-#: options/theme-options.php:3956 options/theme-options.php:3963
+#: options/theme-options.php:3935 options/theme-options.php:3942
 msgid "Fill in category ID, seperate in English\" , \" when more than one"
 msgstr "填写分类ID，多个用英文“ , ”分开"
 
-#: options/theme-options.php:3962
+#: options/theme-options.php:3941
 msgid "Image Display Category"
 msgstr "图片展示分类"
 
-#: options/theme-options.php:3969
+#: options/theme-options.php:3948
 msgid "Version Control"
 msgstr "版本控制"
 
-#: options/theme-options.php:3970
+#: options/theme-options.php:3949
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr "用于更新前端Cookie和浏览器缓存，可使用任意字符串"
 
-#: options/theme-options.php:3976
+#: options/theme-options.php:3955
 msgid "Hide Login Portal"
 msgstr "隐藏登录入口"
 
-#: options/theme-options.php:3977
+#: options/theme-options.php:3956
 msgid ""
 "Hide login address in theme as much as possible, if you used plugins to hide "
 "this."
 msgstr "将尽可能隐藏主题中可能出现的登录入口，如果你使用了相关插件"
 
-#: options/theme-options.php:3984
+#: options/theme-options.php:3963
 msgid "Fontawesome Source"
-msgstr "Fontawesome加载源"
+msgstr "Fontawesome 加载源"
 
-#: options/theme-options.php:3985
+#: options/theme-options.php:3964
 msgid "The source link of Fontawesome icons style"
-msgstr "Fontawesome图标样式的加载源"
+msgstr "Fontawesome 图标样式的加载源"
 
-#: options/theme-options.php:3992
+#: options/theme-options.php:3971
 msgid "PHP Notice Filter"
 msgstr "PHP日志过滤"
 
-#: options/theme-options.php:3994
+#: options/theme-options.php:3973
 msgid "Use your php config"
 msgstr "使用PHP配置"
 
-#: options/theme-options.php:3995
+#: options/theme-options.php:3974
 msgid "Only show critical errors"
 msgstr "只显示严重错误"
 
-#: options/theme-options.php:3996
+#: options/theme-options.php:3975
 msgid "Show nothing"
 msgstr "过滤大部分错误"
 
-#: options/theme-options.php:3999
+#: options/theme-options.php:3978
 msgid ""
 "It is recommended to set it to normal to block log information that does not "
 "affect usage."
 msgstr "建议设置为“只显示严重错误”来防止不影响使用的php日志渲染到前端"
 
-#: options/theme-options.php:4005
+#: options/theme-options.php:3984
 msgid "Backup&Recovery"
 msgstr "备份恢复"
 
-#: options/theme-options.php:4007
+#: options/theme-options.php:3986
 msgid "Backup or Recovery your theme options"
 msgstr "备份或恢复你的主题设置"
 
-#: options/theme-options.php:4018
+#: options/theme-options.php:3997
 msgid "About Theme"
 msgstr "关于主题"
 
-#: options/theme-options.php:4024
+#: options/theme-options.php:4003
 msgid "Version Info"
 msgstr "版本信息"
 
-#: options/theme-options.php:4029
+#: options/theme-options.php:4008
 msgid ""
 "<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.7/series/headlogo.webp\"  "
 "alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:4035
+#: options/theme-options.php:4014
 #, php-format
 msgid ""
 "Theme Sakurairo Version %s | Internal Version %s | <a href=\"https://github."
@@ -4258,15 +4245,15 @@ msgstr ""
 "Sakurairo 主题版本 %s | 内部版本 %s | <a href=\"https://github.com/mirai-"
 "mamori/Sakurairo\">项目地址</a>"
 
-#: options/theme-options.php:4040
+#: options/theme-options.php:4019
 msgid "Update Related"
 msgstr "更新相关"
 
-#: options/theme-options.php:4046
+#: options/theme-options.php:4025
 msgid "Theme Update Source"
 msgstr "主题更新源"
 
-#: options/theme-options.php:4052
+#: options/theme-options.php:4031
 msgid ""
 "If you are using a server set up in mainland China, please use the Upyun "
 "source or the official theme source as your theme update source"
@@ -4274,11 +4261,11 @@ msgstr ""
 "如果你使用的是架设在国内的服务器，请使用又拍云源或主题官方源作为你的主题更新"
 "源"
 
-#: options/theme-options.php:4059
+#: options/theme-options.php:4038
 msgid "Theme Update Test Channel Disclaimer"
 msgstr "主题更新测试通道免责声明"
 
-#: options/theme-options.php:4065
+#: options/theme-options.php:4044
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -4291,55 +4278,63 @@ msgstr ""
 "内 <strong> \"I agree and am willing to bear all unexpected consequences\" </"
 "strong>"
 
-#: options/theme-options.php:4071
+#: options/theme-options.php:4050
 msgid "Theme Update Channel"
 msgstr "主题更新频道"
 
-#: options/theme-options.php:4078
+#: options/theme-options.php:4057
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr "你可以在此切换更新频道以参与到新版本的测试中"
 
-#: options/theme-options.php:4080
+#: options/theme-options.php:4059
 msgid "Stable Channel"
 msgstr "正式通道"
 
-#: options/theme-options.php:4081
+#: options/theme-options.php:4060
 msgid "Beta Channel"
 msgstr "公共测试频道"
 
-#: options/theme-options.php:4082
+#: options/theme-options.php:4061
 msgid "Preview Channel"
 msgstr "预览测试频道"
 
-#: options/theme-options.php:4089
+#: options/theme-options.php:4068
 msgid "Resource Control"
 msgstr "资源控制"
 
-#: options/theme-options.php:4095
+#: options/theme-options.php:4074
 msgid "Provide Critical Frontend Resource locally"
 msgstr "本地提供关键前端资源"
 
-#: options/theme-options.php:4096
+#: options/theme-options.php:4075
 msgid ""
 "Enabeld by default. Critical resources are those resources whose loading "
 "performance will have a significant impact on the user experience."
 msgstr "默认开启。关键资源是指那些其加载性能将对用户体验产生重大影响的资源。"
 
-#: options/theme-options.php:4103
+#: options/theme-options.php:4082
 msgid "Provide Other Frontend Resource locally"
 msgstr "本地提供其他前端资源"
 
-#: options/theme-options.php:4104
+#: options/theme-options.php:4083
 msgid "Less important frontend resource in the theme's folder."
 msgstr "主题文件夹中不太重要的前端资源。"
 
-#: options/theme-options.php:4111
-msgid "Provide 3rd-party library from public CDN"
+#: options/theme-options.php:4090
+msgid "Public CDN Basepath"
+msgstr "公共 CDN 路径"
+
+#: options/theme-options.php:4091
+msgid "Control the basepath of Frontend Resource."
+msgstr "控制前端资源的基本路径。"
+
+#: options/theme-options.php:4102
+msgid "Provide 3rd-party library from Public CDN"
 msgstr "从公共 CDN 提供第三方库"
 
-#: options/theme-options.php:4112
+#: options/theme-options.php:4103
 msgid ""
 "When disabled, 3rd-party dependencies, which have been built to bundles "
 "along with themes's entry script, will be loaded from the exact same origin "
@@ -4348,15 +4343,11 @@ msgstr ""
 "当禁用时，与主题脚本一起被构建打包的第三方依赖，将从与关键前端资源完全相同的"
 "来源加载。"
 
-#: options/theme-options.php:4119
-msgid "Public CDN Basepath"
-msgstr "公共 CDN 路径"
-
-#: options/theme-options.php:4131
+#: options/theme-options.php:4110
 msgid "Vision Resource Basepath"
 msgstr "视觉资源路径"
 
-#: options/theme-options.php:4132
+#: options/theme-options.php:4111
 msgid ""
 "This link directory structure needs to be consistent with the <a "
 "href=\"https://github.com/Fuukei/Sakurairo_Vision\">Sakurairo Vision</a> "
@@ -4369,31 +4360,31 @@ msgstr ""
 "资源 404。默认采用 <a href=\"https://www.upyun.com/\">又拍云</a> 提供的镜像"
 "源。"
 
-#: options/theme-options.php:4138
+#: options/theme-options.php:4117
 msgid "Theme Sponsors"
 msgstr "赞助信息"
 
-#: options/theme-options.php:4143
+#: options/theme-options.php:4122
 msgid ""
 "<img src=\"https://news.maho.cc/sponsors.php\"  alt=\"sponsors\" width=\"65%"
 "\" height=\"65%\" />"
 msgstr ""
 
-#: options/theme-options.php:4148
+#: options/theme-options.php:4127
 msgid "Theme Contributors"
 msgstr "贡献者"
 
-#: options/theme-options.php:4153
+#: options/theme-options.php:4132
 msgid ""
 "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
 "Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:4158
+#: options/theme-options.php:4137
 msgid "Privacy information"
 msgstr "隐私信息"
 
-#: options/theme-options.php:4163
+#: options/theme-options.php:4142
 msgid ""
 "<p>The theme respects your privacy</p>\n"
 "        <p>However, when you use a service provider pre-populated by the "
@@ -4409,11 +4400,11 @@ msgstr ""
 "        <p>你可以通过本地化与主题相关的资源来减少发送给第三方的信息，主题提供"
 "相关选项配置</p>"
 
-#: options/theme-options.php:4171
+#: options/theme-options.php:4150
 msgid "Send Theme Version to Fuukei"
 msgstr "发送主题版本到 Fuukei 官方"
 
-#: options/theme-options.php:4172
+#: options/theme-options.php:4151
 msgid ""
 "The theme will only send time and version information to Fuukei officials "
 "and the data will be cleaned regularly and used only to count version "
@@ -4422,11 +4413,11 @@ msgstr ""
 "主题只会向 Fuukei 官方发送时间和版本信息，数据将定期清理并仅用于统计版本更"
 "新。"
 
-#: options/theme-options.php:4178
+#: options/theme-options.php:4157
 msgid "Reference Information"
 msgstr "引用信息"
 
-#: options/theme-options.php:4183
+#: options/theme-options.php:4162
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox Fluent Icon Pack</p>\n"
 "        <p>MUH2 Design Icon Referenced by 缄默 <a href=\"https://www.coolapk."
@@ -4435,28 +4426,24 @@ msgstr ""
 "<p>流畅设计图标引用了由 Paradox 设计的 Fluent图标包</p>\n"
 "        <p>沐氢图标引用了由 缄默 设计的沐氢图标包</p>"
 
-#: options/theme-options.php:4189
+#: options/theme-options.php:4168
 msgid "Dependency Information"
 msgstr "依赖信息"
 
-#: options/theme-options.php:4194
+#: options/theme-options.php:4173
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
 "        <p>Update Function Relies on YahnisElsts Open Source <a "
 "href=\"https://github.com/YahnisElsts/plugin-update-checker\">Plugin Update "
-"Checker</a> Project</p>\n"
-"        <p>ChatGPT-related Capabilities Relies on orhanerday Open Source <a "
-"href=\"https://github.com/orhanerday/open-ai\">open-ai</a> Project</p>"
+"Checker</a> Project</p>"
 msgstr ""
 "        <p>设置框架依赖于 Codestar 开源的 <a href=\"https://github.com/"
 "Codestar/codestar-framework\">Codestar Framework</a> 项目</p>\n"
 "        <p>更新功能依赖于 YahnisElsts 开源的 <a href=\"https://github.com/"
-"YahnisElsts/plugin-update-checker\">Plugin Update Checker</a> 项目</p>\n"
-"        <p>ChatGPT 相关能力依赖于 orhanerday 开源的 <a href=\"https://github."
-"com/HaoZi-Team/ChatGPT-PHP\">open-ai</a> 项目</p>"
+"YahnisElsts/plugin-update-checker\">Plugin Update Checker</a> 项目</p>"
 
-#: options/theme-options.php:4201
+#: options/theme-options.php:4179
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "

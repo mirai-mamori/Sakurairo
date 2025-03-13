@@ -2964,22 +2964,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'friend_link_title_matching_color',
-        'type' => 'color',
-        'title' => __('Friend Link Template Unit Matching Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#ac354b'
-      ),  
-
-      array(
-        'id' => 'friend_link_shadow_color',
-        'type' => 'color',
-        'title' => __('Friend Link Template Unit Border Shadow Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#e8e8e8'
-      ),
-
-      array(
         'id' => 'friend_link_sorting_mode',
         'type' => 'select',
         'title' => __('Friend Link Sorting Mode','sakurairo_csf'),
