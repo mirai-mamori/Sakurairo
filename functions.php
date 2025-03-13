@@ -3034,15 +3034,8 @@ function sakurairo_link_submission_handler() {
             }
         }
         
-        // 获取该分类下的链接数量
-        $pending_links_count = 0;
-        if ($pending_cat_id > 0) {
-            $pending_links = get_bookmarks(array('category' => $pending_cat_id));
-            $pending_links_count = count($pending_links);
-        }
-        
-        // 检查是否达到上限
-        if ($pending_links_count >= 20) {
+        // 检查是否达到待审核链接上限
+        if (sakurairo_check_pending_links_limit()) {
             wp_send_json_error(array('message' => __('Sorry, we are not accepting new link submissions at this time due to backlog. Please try again later.', 'sakurairo')));
             return;
         }
@@ -3255,7 +3248,10 @@ function sakurairo_check_pending_links_limit() {
     }
     
     // 获取该分类下的链接数量
-    $pending_links = get_bookmarks(array('category' => $pending_cat_id));
+    $pending_links = get_bookmarks(array(
+        'category' => $pending_cat_id,
+        'hide_invisible' => false // 确保获取所有链接，包括不可见的链接
+    ));
     $pending_links_count = count($pending_links);
     
     // 检查是否达到上限
