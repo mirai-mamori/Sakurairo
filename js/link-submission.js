@@ -274,10 +274,6 @@ function initLinkSubmission() {
     window.addEventListener('pagehide', cleanup);
     window.addEventListener('unload', cleanup);
     document.addEventListener('visibilitychange', handleVisibilityChange);
-
-    // 为PJAX环境添加清理
-    document.addEventListener('pjax:beforeReplace', cleanup);
-    document.addEventListener('akina:pjax:beforeReplace', cleanup);
     
     // 监听所有可能的链接点击
     document.addEventListener('click', (e) => {
@@ -669,6 +665,3 @@ document.addEventListener('DOMContentLoaded', initLinkSubmission);
 // PJAX环境下的初始化 - 确保不会重复绑定
 document.removeEventListener('pjax:complete', initLinkSubmission); // 先移除再添加
 document.addEventListener('pjax:complete', initLinkSubmission);
-
-document.removeEventListener('akina:pjax:end', initLinkSubmission); // 先移除再添加
-document.addEventListener('akina:pjax:end', initLinkSubmission);
