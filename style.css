@@ -5951,3 +5951,222 @@ a.toc-link {
   text-shadow: none;
   border-radius: 5px;
 }
+
+/* Steam User Card Styles */
+.steam-user-card {
+  margin: 1.5%;
+}
+
+.steam-profile {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(232, 232, 232, 0.8);
+}
+
+.steam-profile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.steam-profile-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: rgba(245, 245, 245, 0.6);
+    border-bottom: 1px solid rgba(232, 232, 232, 0.8);
+}
+
+.steam-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-right: 16px;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.steam-profile-info {
+    flex: 1;
+}
+
+.steam-username {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: var(--theme-skin, #505050);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.steam-username:hover {
+    color: var(--theme-skin-matching);
+}
+
+.steam-status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    background: #f0f0f0;
+    color: #666;
+}
+
+.steam-status.status-在线,
+.steam-status.status-online,
+.steam-status.status-在線,
+.steam-status.status-オンライン {
+    background: rgba(66, 186, 150, 0.2);
+    color: #42ba96;
+}
+
+.steam-status.status-离开,
+.steam-status.status-away,
+.steam-status.status-離開,
+.steam-status.status-退席中 {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+.steam-status.status-离线,
+.steam-status.status-offline,
+.steam-status.status-離線,
+.steam-status.status-オフライン {
+    background: rgba(108, 117, 125, 0.2);
+    color: #6c757d;
+}
+
+.steam-game-info {
+    padding: 16px;
+}
+
+.steam-game-name {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: var(--theme-skin, #505050);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.steam-game-name:hover {
+    color: var(--theme-skin-matching);
+}
+
+.steam-game-banner {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.steam-last-online {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #6c757d;
+    border-top: 1px solid rgba(232, 232, 232, 0.8);
+    background: rgba(245, 245, 245, 0.4);
+}
+
+.steam-error {
+    padding: 16px;
+    background: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+    color: #856404;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* Dark mode styles */
+body.dark .steam-profile {
+    background: var(--dark-bg-secondary);
+    border: 1px solid var(--dark-border-color);
+    box-shadow: var(--dark-shadow-normal);
+}
+
+body.dark .steam-profile:hover {
+    box-shadow: var(--dark-shadow-hover);
+}
+
+body.dark .steam-profile-header {
+    background: rgba(30, 30, 30, 0.6);
+    border-bottom: 1px solid var(--dark-border-color);
+}
+
+body.dark .steam-avatar {
+    border-color: var(--dark-border-color);
+}
+
+body.dark .steam-username {
+    color: #e0e0e0;
+}
+
+body.dark .steam-username:hover {
+    color: var(--dark-theme-skin-matching, var(--theme-skin-matching));
+}
+
+body.dark .steam-status {
+    background: rgba(50, 50, 50, 0.6);
+    color: #aaa;
+}
+
+body.dark .steam-status.status-在线,
+body.dark .steam-status.status-online,
+body.dark .steam-status.status-在線,
+body.dark .steam-status.status-オンライン {
+    background: rgba(66, 186, 150, 0.15);
+    color: #5ecfad;
+}
+
+body.dark .steam-status.status-离开,
+body.dark .steam-status.status-away,
+body.dark .steam-status.status-離開,
+body.dark .steam-status.status-退席中 {
+    background: rgba(255, 193, 7, 0.15);
+    color: #ffd54f;
+}
+
+body.dark .steam-game-name {
+    color: #e0e0e0;
+}
+
+body.dark .steam-game-name:hover {
+    color: var(--dark-theme-skin-matching, var(--theme-skin-matching));
+}
+
+body.dark .steam-last-online {
+    color: #aaa;
+    border-top: 1px solid var(--dark-border-color);
+    background: rgba(30, 30, 30, 0.4);
+}
+
+body.dark .steam-error {
+    background: rgba(255, 193, 7, 0.05);
+    color: #ffd54f;
+    border-left: 4px solid #ffc107;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .steam-profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .steam-avatar {
+        margin-right: 0;
+        margin-bottom: 12px;
+    }
+    
+    .steam-game-name {
+        text-align: center;
+    }
+}

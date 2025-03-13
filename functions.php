@@ -2691,41 +2691,113 @@ function register_shortcodes() {
 
      add_shortcode('steamuser', function ($atts, $content = null) {
         $key = iro_opt('steam_key');
-        if (empty($key)) return '<a>需在Steam模板设置填写SteamAPI</a>';
+        if (empty($key)) {
+            // 多语言支持
+            $lang = get_user_locale();
+            if ($lang == 'zh_TW') {
+                return '<div class="steam-error">需在Steam模板設置填寫SteamAPI</div>';
+            } elseif ($lang == 'ja') {
+                return '<div class="steam-error">SteamテンプレートでSteam APIを設定してください</div>';
+            } elseif ($lang == 'en_US') {
+                return '<div class="steam-error">Please fill in Steam API in Steam template settings</div>';
+            } else {
+                return '<div class="steam-error">需在Steam模板设置填写SteamAPI</div>';
+            }
+        }
         preg_match_all('/\b7656\d{13}\b/', $content, $matches);
-        $output = '';
+        $output = '<div class="steam-user-card">';
         foreach ($matches[0] as $steamid) {
             $url = 'https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $key . '&steamids=' . $steamid;
             $response = wp_remote_get($url);
             $data = json_decode($response["body"], true);
-            $player = $data['response']['players'][0];
+            $player = $data['response']['players'][0] ?? [];
+            
+            // 多语言支持
+            $lang = get_user_locale();
+            $status_text = [
+                'offline' => [
+                    'zh_CN' => '离线',
+                    'zh_TW' => '離線',
+                    'ja' => 'オフライン',
+                    'en_US' => 'Offline'
+                ],
+                'online' => [
+                    'zh_CN' => '在线',
+                    'zh_TW' => '在線',
+                    'ja' => 'オンライン',
+                    'en_US' => 'Online'
+                ],
+                'away' => [
+                    'zh_CN' => '离开',
+                    'zh_TW' => '離開',
+                    'ja' => '退席中',
+                    'en_US' => 'Away'
+                ],
+                'unknown' => [
+                    'zh_CN' => '未知状态，请提交issue',
+                    'zh_TW' => '未知狀態，請提交issue',
+                    'ja' => '不明なステータス、issueを提出してください',
+                    'en_US' => 'Unknown status, please submit an issue'
+                ],
+                'playing' => [
+                    'zh_CN' => '正在玩',
+                    'zh_TW' => '正在玩',
+                    'ja' => 'プレイ中',
+                    'en_US' => 'Playing'
+                ],
+                'last_online' => [
+                    'zh_CN' => '上次在线',
+                    'zh_TW' => '上次在線',
+                    'ja' => '最終オンライン',
+                    'en_US' => 'Last online'
+                ],
+                'error' => [
+                    'zh_CN' => 'ID填写错误，请检验',
+                    'zh_TW' => 'ID填寫錯誤，請檢驗',
+                    'ja' => 'IDが間違っています、確認してください',
+                    'en_US' => 'ID error, please check'
+                ]
+            ];
+            
             $status = match($player['personastate'] ?? 0) {
-                0 => '离线',
-                1 => '在线',
-                3 => '离开',
-                default => '未知状态，请提交issue'
+                0 => $status_text['offline'][$lang] ?? $status_text['offline']['zh_CN'],
+                1 => $status_text['online'][$lang] ?? $status_text['online']['zh_CN'],
+                3 => $status_text['away'][$lang] ?? $status_text['away']['zh_CN'],
+                default => $status_text['unknown'][$lang] ?? $status_text['unknown']['zh_CN']
             };
+            
             if (empty($data['response']['players'][0])) {
-                $output .= "<a>ID填写错误，请检验</a>";
+                $output .= '<div class="steam-error">' . ($status_text['error'][$lang] ?? $status_text['error']['zh_CN']) . '</div>';
             } else {
-                // 瞳宝ui售后区
-                $output .= '<img src="' . esc_attr($player['avatar']) . '"><br>';
-                $output .= '<a href="' . esc_attr($player['profileurl']) . '" target="_blank">' . esc_attr($player['personaname']) . '</a><br>';
-                $output .= '<a>当前状态: ' . $status . '</a><br>';
+                $output .= '<div class="steam-profile">';
+                $output .= '<div class="steam-profile-header">';
+                $output .= '<img class="steam-avatar" src="' . esc_attr($player['avatar']) . '" alt="Steam Avatar">';
+                $output .= '<div class="steam-profile-info">';
+                $output .= '<a href="' . esc_attr($player['profileurl']) . '" target="_blank" class="steam-username"><i class="fa-brands fa-steam"></i> ' . esc_attr($player['personaname']) . '</a>';
+                $output .= '<div class="steam-status status-' . strtolower(str_replace(' ', '-', $status)) . '">' . $status . '</div>';
+                $output .= '</div>'; // .steam-profile-info
+                $output .= '</div>'; // .steam-profile-header
 
                 if(!empty($player['gameextrainfo'])) {
-                $output .= '<a href="https://store.steampowered.com/app/' . esc_attr($player['gameid']) . '/" target="_blank">正在玩: ' . esc_attr($player['gameextrainfo']) . '</a><br>';
-                $output .= '<img src="https://shared.cdn.steamchina.queniuam.com/store_item_assets/steam/apps/' . esc_attr($player['gameid']) . '/header.jpg"><br>';
-               }
+                    $output .= '<div class="steam-game-info">';
+                    $output .= '<a href="https://store.steampowered.com/app/' . esc_attr($player['gameid']) . '/" target="_blank" class="steam-game-name"><i class="fa-solid fa-gamepad"></i> ' . 
+                        ($status_text['playing'][$lang] ?? $status_text['playing']['zh_CN']) . ': ' . esc_attr($player['gameextrainfo']) . '</a>';
+                    $output .= '<img class="steam-game-banner" src="https://shared.cdn.steamchina.queniuam.com/store_item_assets/steam/apps/' . esc_attr($player['gameid']) . '/header.jpg" alt="Game Banner">';
+                    $output .= '</div>'; // .steam-game-info
+                }
+                
                 if (($player['personastate'] ?? 0) === 0 && isset($player['lastlogoff'])) {
                     $last_online = date('Y-m-d H:i', $player['lastlogoff']);
-                    $output .= '<a>上次在线：' . esc_attr($last_online) . '</a>';
+                    $output .= '<div class="steam-last-online"><i class="fa-regular fa-clock"></i> ' . 
+                        ($status_text['last_online'][$lang] ?? $status_text['last_online']['zh_CN']) . '：' . esc_attr($last_online) . '</div>';
                 }
+                
+                $output .= '</div>'; // .steam-profile
             }
         }
+        $output .= '</div>'; // .steam-user-card
         return $output;
     });
-
 
 }
 add_action('init', 'register_shortcodes');
