@@ -170,7 +170,7 @@ function initLinkSubmission() {
     function handleModalOpen(e) { // 点击展开
         e.preventDefault();
         disableScroll();
-        linkModal.style.display = 'block';
+        linkModal.style.display = 'flex';
         loadCaptcha();
     }
     
