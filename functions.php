@@ -3181,11 +3181,34 @@ function sakurairo_link_submission_handler() {
             return; 
         }
 
+        // 验证必填字段
+        $required_fields = array('siteName', 'siteUrl', 'siteDescription', 'siteImage', 'contactEmail', 'yzm', 'timestamp', 'id');
+        foreach ($required_fields as $field) {
+            if (!isset($_POST[$field]) || empty(trim($_POST[$field]))) {
+                wp_send_json_error(array('message' => __('Please fill in all required fields.', 'sakurairo')));
+                return;
+            }
+        }
+
         // 限制提交频率，防止滥用
         $ip = get_the_user_ip();
         $transient_key = 'link_submit_' . md5($ip);
         if (false !== get_transient($transient_key)) {
             wp_send_json_error(array('message' => __('You are submitting too frequently. Please try again later.', 'sakurairo')));
+            return;
+        }
+
+        // 验证验证码
+        include_once('inc/classes/Captcha.php');
+        $img = new Sakura\API\Captcha;
+        $captcha_check = $img->check_captcha(
+            sanitize_text_field($_POST['yzm']), 
+            sanitize_text_field($_POST['timestamp']), 
+            sanitize_text_field($_POST['id'])
+        );
+        
+        if ($captcha_check['code'] != 5) {
+            wp_send_json_error(array('message' => $captcha_check['msg']));
             return;
         }
         
@@ -3216,29 +3239,6 @@ function sakurairo_link_submission_handler() {
         // 检查是否达到待审核链接上限
         if (sakurairo_check_pending_links_limit()) {
             wp_send_json_error(array('message' => __('Sorry, we are not accepting new link submissions at this time due to backlog. Please try again later.', 'sakurairo')));
-            return;
-        }
-
-        // 验证必填字段
-        $required_fields = array('siteName', 'siteUrl', 'siteDescription', 'siteImage', 'contactEmail', 'yzm', 'timestamp', 'id');
-        foreach ($required_fields as $field) {
-            if (!isset($_POST[$field]) || empty(trim($_POST[$field]))) {
-                wp_send_json_error(array('message' => __('Please fill in all required fields.', 'sakurairo')));
-                return;
-            }
-        }
-
-        // 验证验证码
-        include_once('inc/classes/Captcha.php');
-        $img = new Sakura\API\Captcha;
-        $captcha_check = $img->check_captcha(
-            sanitize_text_field($_POST['yzm']), 
-            sanitize_text_field($_POST['timestamp']), 
-            sanitize_text_field($_POST['id'])
-        );
-        
-        if ($captcha_check['code'] != 5) {
-            wp_send_json_error(array('message' => $captcha_check['msg']));
             return;
         }
 
