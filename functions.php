@@ -3175,6 +3175,14 @@ function sakurairo_link_submission_handler() {
         // 验证Referer，防止跨站请求
         check_ajax_referer('link_submission_nonce', 'link_submission_nonce');
 
+        // 限制提交频率，防止滥用
+        $ip = get_the_user_ip();
+        $transient_key = 'link_submit_' . md5($ip);
+        if (false !== get_transient($transient_key)) {
+            wp_send_json_error(array('message' => __('You are submitting too frequently. Please try again later.', 'sakurairo')));
+            return;
+        }
+
         // 验证nonce
         if (!isset($_POST['link_submission_nonce']) || !wp_verify_nonce($_POST['link_submission_nonce'], 'link_submission_nonce')) {
             wp_send_json_error(array('message' => __('Security verification failed.', 'sakurairo')));
@@ -3188,14 +3196,6 @@ function sakurairo_link_submission_handler() {
                 wp_send_json_error(array('message' => __('Please fill in all required fields.', 'sakurairo')));
                 return;
             }
-        }
-
-        // 限制提交频率，防止滥用
-        $ip = get_the_user_ip();
-        $transient_key = 'link_submit_' . md5($ip);
-        if (false !== get_transient($transient_key)) {
-            wp_send_json_error(array('message' => __('You are submitting too frequently. Please try again later.', 'sakurairo')));
-            return;
         }
 
         // 验证验证码
@@ -3212,7 +3212,7 @@ function sakurairo_link_submission_handler() {
             return;
         }
         
-        // 设置提交频率限制（1分钟）
+        // 设置提交频率限制（10分钟）
         set_transient($transient_key, 1, 600);
 
         // 检查是否达到草稿链接上限 (20个)

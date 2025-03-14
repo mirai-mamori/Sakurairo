@@ -388,7 +388,7 @@ function loadCaptcha() {
     }
     
     // 添加时间戳防止缓存
-    let timestamp = new Date().getTime();
+    let timestamp = Date.now();
     let endpoint = endpointUrl + (endpointUrl.includes('?') ? '&' : '?') + 't=' + timestamp;
     
     fetch(endpoint, {
