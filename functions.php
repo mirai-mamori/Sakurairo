@@ -3175,12 +3175,6 @@ function sakurairo_link_submission_handler() {
         // 验证Referer，防止跨站请求
         check_ajax_referer('link_submission_nonce', 'link_submission_nonce');
 
-        // 验证nonce
-        if (!isset($_POST['link_submission_nonce']) || !wp_verify_nonce($_POST['link_submission_nonce'], 'link_submission_nonce')) {
-            wp_send_json_error(array('message' => __('Security verification failed.', 'sakurairo')));
-            return; 
-        }
-
         // 限制提交频率，防止滥用
         $ip = get_the_user_ip();
         $transient_key = 'link_submit_' . md5($ip);
@@ -3188,8 +3182,37 @@ function sakurairo_link_submission_handler() {
             wp_send_json_error(array('message' => __('You are submitting too frequently. Please try again later.', 'sakurairo')));
             return;
         }
+
+        // 验证nonce
+        if (!isset($_POST['link_submission_nonce']) || !wp_verify_nonce($_POST['link_submission_nonce'], 'link_submission_nonce')) {
+            wp_send_json_error(array('message' => __('Security verification failed.', 'sakurairo')));
+            return; 
+        }
+
+        // 验证必填字段
+        $required_fields = array('siteName', 'siteUrl', 'siteDescription', 'siteImage', 'contactEmail', 'yzm', 'timestamp', 'id');
+        foreach ($required_fields as $field) {
+            if (!isset($_POST[$field]) || empty(trim($_POST[$field]))) {
+                wp_send_json_error(array('message' => __('Please fill in all required fields.', 'sakurairo')));
+                return;
+            }
+        }
+
+        // 验证验证码
+        include_once('inc/classes/Captcha.php');
+        $img = new Sakura\API\Captcha;
+        $captcha_check = $img->check_captcha(
+            sanitize_text_field($_POST['yzm']), 
+            sanitize_text_field($_POST['timestamp']), 
+            sanitize_text_field($_POST['id'])
+        );
         
-        // 设置提交频率限制（1分钟）
+        if ($captcha_check['code'] != 5) {
+            wp_send_json_error(array('message' => $captcha_check['msg']));
+            return;
+        }
+        
+        // 设置提交频率限制（10分钟）
         set_transient($transient_key, 1, 600);
 
         // 检查是否达到草稿链接上限 (20个)
@@ -3216,29 +3239,6 @@ function sakurairo_link_submission_handler() {
         // 检查是否达到待审核链接上限
         if (sakurairo_check_pending_links_limit()) {
             wp_send_json_error(array('message' => __('Sorry, we are not accepting new link submissions at this time due to backlog. Please try again later.', 'sakurairo')));
-            return;
-        }
-
-        // 验证必填字段
-        $required_fields = array('siteName', 'siteUrl', 'siteDescription', 'siteImage', 'contactEmail', 'yzm', 'timestamp', 'id');
-        foreach ($required_fields as $field) {
-            if (!isset($_POST[$field]) || empty(trim($_POST[$field]))) {
-                wp_send_json_error(array('message' => __('Please fill in all required fields.', 'sakurairo')));
-                return;
-            }
-        }
-
-        // 验证验证码
-        include_once('inc/classes/Captcha.php');
-        $img = new Sakura\API\Captcha;
-        $captcha_check = $img->check_captcha(
-            sanitize_text_field($_POST['yzm']), 
-            sanitize_text_field($_POST['timestamp']), 
-            sanitize_text_field($_POST['id'])
-        );
-        
-        if ($captcha_check['code'] != 5) {
-            wp_send_json_error(array('message' => $captcha_check['msg']));
             return;
         }
 

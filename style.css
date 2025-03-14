@@ -415,6 +415,7 @@ blockquote:after {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
+  text-align: center;
 }
 
 .pattern-center h1.cat-title {
@@ -4510,6 +4511,7 @@ textarea:focus {
   font-size: 16px;
   display: block;
   font-weight: var(--global-font-weight);
+  text-align: center;
 }
 
 .single-center .entry-census a  {
@@ -5013,7 +5015,6 @@ h1.page-title.mb- {
 
 .cat-des p {
   display: inline-block;
-  padding-left: 10px;
   font-size: 18px;
 }
 
