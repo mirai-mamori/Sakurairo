@@ -353,15 +353,26 @@ background-image: url(<?=iro_opt('search_area_background'); ?>);
 
 .site-footer {
 background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparency'); ?>);
-<?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
-<?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
 }
 
 .wrapper {
 background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparency'); ?>);
-<?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
-<?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
 }
+
+<?php if (iro_opt('reception_background_blur', 'false')): ?>
+.background_blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    pointer-events: none;
+    will-change: backdrop-filter;
+    z-index: -1;
+}
+<?php endif; ?>
 
 /*首页圆角设置*/
 .header-info{
