@@ -314,13 +314,7 @@ function validateForm() {
     let nonceInput = document.querySelector('input[name="link_submission_nonce"]');
     
     // 检查是否所有必要元素都存在
-    if (!siteName || !siteUrl || !siteDescription || !siteImage || !contactEmail || !captcha || !timestampInput || !idInput || !nonceInput) {
-        displayStatus('error', i18n.security_error);
-        return false;
-    }
-    
-    // 校验nonce和验证码字段
-    if (!nonceInput.value) {
+    if (!siteName || !siteUrl || !siteDescription || !siteImage || !contactEmail || !captcha || !timestampInput || !idInput || !nonceInput || !nonceInput.value) {
         displayStatus('error', i18n.security_error);
         return false;
     }
@@ -434,11 +428,8 @@ function loadCaptcha() {
                 throw new Error(i18n.captcha_load_error);
             }
             
-            // 判断data是否为完整的data:image URL，如果是则直接使用，否则将其视为Base64数据
-            let imgSrc = data.data.startsWith('data:image') ? data.data : 'data:image/jpeg;base64,' + data.data;
-            
             // 设置验证码图片
-            captchaImg.src = imgSrc;
+            captchaImg.src = data.data;
             captchaImg.classList.remove('error');
             
             // 设置ID和时间戳
@@ -495,6 +486,4 @@ function displayStatus(type, message) {
 
 // 页面加载完成时初始化链接提交功能
 document.addEventListener('DOMContentLoaded', initLinkSubmission);
-
-// PJAX环境下的初始化 - 确保不会重复绑定 // 先移除再添加
 document.addEventListener('pjax:complete', initLinkSubmission);
