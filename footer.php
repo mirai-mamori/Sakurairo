@@ -176,6 +176,49 @@ $reception_background = iro_opt('reception_background');
   </style>
   <div id="particles-js"></div>
   <script type="application/json" id="particles-js-cfg"><?php echo iro_opt('particles_json', ''); ?></script>
-<?php endif; ?>
-<?php if (iro_opt('reception_background_blur', 'false')): ?><div class="background_blur"></div><?php endif; //背景滤镜层?>
+  <?php endif; ?>
+  <?php if (iro_opt('reception_background_blur', 'false')): ?>
+    <div class="background_blur" style="
+      <?php if(is_home()){
+        echo "top: 100vh";
+      } else {
+        echo "top: 0vh";
+      } ?>
+      "></div><?php endif; //背景滤镜层?>
+  <?php if (iro_opt('site_bg_as_cover', 'false') && (iro_opt('reception_background_blur', 'false'))): ?>
+    <script>
+      document.addEventListener('DOMContentLoaded',function(){
+        let Background_blur = document.querySelector(".background_blur");
+        let wrapper = document.querySelector(".site.wrapper");
+        wrapper.style.transition='background 0 , all 0.6s ease-in-out';
+        function DymanticBlur(){
+          let scrollTop = window.scrollY || document.documentElement.scrollTop;
+          let windowHeight = window.innerHeight;
+          let progress = (scrollTop / windowHeight) * 100;
+          progress = Math.min(progress, 100);
+
+          height = 100 - progress;
+          transparency = <?php echo iro_opt("reception_background_transparency",0.8); //获取设置的最大透明度?> * progress /100;
+          Background_blur.style.top = `${height}vh`;
+          wrapper.style.transition = "all 0.6s ease-in-out,background 0s";
+          wrapper.style.setProperty('background', `rgba(255, 255, 255, ${transparency})`);
+          setTimeout(() => {
+              wrapper.style.transition = "";
+          }, 0);
+        }
+        function init () {
+          if (_iro.land_at_home) {
+            Background_blur.style.top = `100vh`;
+            document.addEventListener('scroll',DymanticBlur);
+            DymanticBlur();
+          } else {
+            Background_blur.style.top = `0`;
+            document.removeEventListener('scroll',DymanticBlur);
+          }
+        }
+        init();
+        document.addEventListener("pjax:complete",init);
+      });
+    </script>
+    <?php endif;?>
 </html>

@@ -368,8 +368,8 @@ background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparen
     height: 100vh;
     backdrop-filter: saturate(180%) blur(10px);
     -webkit-backdrop-filter: saturate(180%) blur(10px);
+    transition: none;
     pointer-events: none;
-    will-change: backdrop-filter;
     z-index: -2;
 }
 <?php endif; ?>
