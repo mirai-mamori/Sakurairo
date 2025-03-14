@@ -177,4 +177,5 @@ $reception_background = iro_opt('reception_background');
   <div id="particles-js"></div>
   <script type="application/json" id="particles-js-cfg"><?php echo iro_opt('particles_json', ''); ?></script>
 <?php endif; ?>
+<?php if (iro_opt('reception_background_blur', 'false')): ?><div class="background_blur"></div><?php endif; //背景滤镜层?>
 </html>
