@@ -318,6 +318,7 @@ body.dark .link-form-submit:hover {
 .link-modal {
     display: none;
     position: fixed;
+    align-items: center;
     z-index: 9999;
     left: 0;
     top: 0;
@@ -329,6 +330,7 @@ body.dark .link-form-submit:hover {
 }
 
 .link-modal-content {
+    display: block;
     background-color: var(--form-bg);
     margin: 5% auto;
     padding: 25px;
