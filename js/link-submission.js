@@ -160,7 +160,7 @@ function initLinkSubmission() {
     }
 
     function enableScroll() {
-        document.documentElement.style.overflow = '';
+        document.documentElement.style.overflowY = 'unset';
     }
 
     // 表单提交
