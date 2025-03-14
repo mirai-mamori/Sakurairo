@@ -322,8 +322,8 @@ body.dark .link-form-submit:hover {
     z-index: 9999;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: var(--modal-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
