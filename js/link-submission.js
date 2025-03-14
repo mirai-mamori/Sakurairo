@@ -5,7 +5,6 @@
  */
 
 // 多语言翻译
-
 function i18n_form() {
     let sakura_links = {
         // 简体中文
@@ -284,7 +283,7 @@ function validateForm() {
     let nonceInput = document.querySelector('input[name="link_submission_nonce"]');
 
     // 检查是否所有必要元素都存在
-    if (!siteName || !siteUrl || !siteDescription || !siteImage || !contactEmail || !captcha || !timestampInput || !idInput || !nonceInput || !nonceInput.value) {
+    if (!siteName || !siteUrl || !siteDescription || !siteImage || !contactEmail || !captcha || !timestampInput || !idInput || !nonceInput.value) {
         displayStatus('error', i18n.security_error);
         return false;
     }
