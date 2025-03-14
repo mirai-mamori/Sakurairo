@@ -113,15 +113,11 @@ function initLinkSubmission() {
     
     // 如果相关元素不存在
     if (!linkForm  || !submitButton || !linkModal || !closeButton || !captchaImg) {
-        if (form_inited == true) { // 检查是否曾初始化
+        if (!linkForm) { // 检查是否曾初始化
             document.removeEventListener('pjax:complete', initLinkSubmission);
-            cleanup();
-            form_inited = false;
         }
         return;
     }
-
-    let form_inited = true; // 标记初始化
 
     let patternTitle = document.querySelector('.pattern-header span'); // 检查页面头图
     if (patternTitle) { // 移动按钮到标题后方
