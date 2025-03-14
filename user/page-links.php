@@ -337,6 +337,7 @@ body.dark .link-form-submit:hover {
     border-radius: 10px;
     max-width: 500px;
     width: 80%;
+    height: 80%;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     position: relative;
     animation: modalFadeIn 0.3s ease;
