@@ -18,9 +18,6 @@ function i18n_form () {
             connection_error: '连接错误，请稍后重试',
             timeout_error: '请求超时，请稍后重试',
             
-            // 成功提示
-            submission_success: '友情链接提交成功，请等待审核！',
-            
             // 验证错误提示
             invalid_url: '请输入有效的网站地址',
             invalid_email: '请输入有效的邮箱地址',
@@ -41,9 +38,6 @@ function i18n_form () {
             connection_error: '連接錯誤，請稍後重試',
             timeout_error: '請求超時，請稍後重試',
             
-            // 成功提示
-            submission_success: '友情鏈接提交成功，請等待審核！',
-            
             // 验证错误提示
             invalid_url: '請輸入有效的網站地址',
             invalid_email: '請輸入有效的郵箱地址',
@@ -63,9 +57,6 @@ function i18n_form () {
             server_error: 'サーバーエラー：',
             connection_error: '接続エラー、後でもう一度お試しください',
             timeout_error: 'リクエストがタイムアウトしました、後でもう一度お試しください',
-            
-            // 成功提示
-            submission_success: 'リンク申請が成功しました。審査をお待ちください！',
             
             // 验证错误提示
             invalid_url: '有効なURLを入力してください',
@@ -272,11 +263,11 @@ function initLinkSubmission() {
                 
                 if (data.success) {
                     // 成功提交 - 优先使用服务器返回的消息，如果没有则使用前端翻译
-                    displayStatus('success', data.data.message || i18n.submission_success);
+                    displayStatus('success', data.data.message);
                     linkForm.reset();
                 } else {
                     // 提交失败
-                    displayStatus('error', data.data.message || i18n.server_error);
+                    displayStatus('error', data.data.message);
                     loadCaptcha();
                 }
             })
