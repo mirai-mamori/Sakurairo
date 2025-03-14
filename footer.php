@@ -190,18 +190,19 @@ $reception_background = iro_opt('reception_background');
       document.addEventListener('DOMContentLoaded',function(){
         let Background_blur = document.querySelector(".background_blur");
         let wrapper = document.querySelector(".site.wrapper");
-        wrapper.style.transition='background 0 , all 0.6s ease-in-out';
+        max_trans = <?php echo iro_opt("reception_background_transparency",0.8); //获取设置的最大透明度?>;
         function DymanticBlur(){
           let scrollTop = window.scrollY || document.documentElement.scrollTop;
           let windowHeight = window.innerHeight;
           let progress = (scrollTop / windowHeight) * 100;
           progress = Math.min(progress, 100);
-
           height = 100 - progress;
-          transparency = <?php echo iro_opt("reception_background_transparency",0.8); //获取设置的最大透明度?> * progress /100;
+          transparency = max_trans * progress /100;
+          blur_degree = (progress /100)*(progress /100)*10;
           Background_blur.style.top = `${height}vh`;
+          Background_blur.style.setProperty('backdrop-filter',`saturate(180%) blur(${blur_degree}px)`);
           wrapper.style.transition = "all 0.6s ease-in-out,background 0s";
-          wrapper.style.setProperty('background', `rgba(255, 255, 255, ${transparency})`);
+          wrapper.style.setProperty('--front_background-transparency', transparency);
           setTimeout(() => {
               wrapper.style.transition = "";
           }, 0);
@@ -213,11 +214,16 @@ $reception_background = iro_opt('reception_background');
             DymanticBlur();
           } else {
             Background_blur.style.top = `0`;
+            wrapper.style.setProperty('--front_background-transparency', max_trans);
             document.removeEventListener('scroll',DymanticBlur);
           }
         }
         init();
-        document.addEventListener("pjax:complete",init);
+        document.addEventListener("pjax:complete",function(){
+          init();
+          wrapper = document.querySelector(".site.wrapper");
+          console.log(wrapper);
+        });
       });
     </script>
     <?php endif;?>

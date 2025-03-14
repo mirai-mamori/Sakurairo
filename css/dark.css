@@ -23,6 +23,10 @@ body.dark .headertop-bar::after {
   background: var(--dark-bg-primary) !important;
 }
 
+body.dark .wrapper {
+  background: rgba(51,51,51,var(--front_background-transparency,0.8)) !important;
+}
+
 /* 基础边框和背景 */
 body.dark .wrapper {
   border-top: 1.5px solid var(--dark-border-color);

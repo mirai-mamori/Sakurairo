@@ -322,6 +322,11 @@ blockquote:after {
   background-color: rgba(255, 255, 255, .8);
 }
 
+.site.wrapper {
+  position: relative;
+  z-index: 3;
+}
+
 #bgvideo {
   position: absolute;
   top: 0;
@@ -1225,6 +1230,8 @@ nav .menu > li .sub-menu a {
 }
 
 .site-footer {
+  position: relative;
+  z-index: 2;
   padding: max(2%, 45px);
   background: rgba(255, 255, 255, .8);
   margin-left: auto;
