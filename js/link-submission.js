@@ -138,7 +138,7 @@ function initLinkSubmission() {
     function handleModalOpen(e) { // 点击展开
         e.preventDefault();
         disableScroll();
-        linkModal.style.display = 'flex';
+        linkModal.style.display = 'block';
         loadCaptcha();
     }
 
