@@ -137,7 +137,7 @@ span.linkss-title {
 	height: 0.7em;
 	background-color: var(--theme-skin-matching);
 	opacity: 0.4;
-	z-index: -1;
+	z-index: 0;
 	border-radius: 30px;
 	transition: all 0.3s ease;
 }

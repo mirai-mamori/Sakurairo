@@ -1185,7 +1185,7 @@ function comment_mail_notify($comment_id)
       -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.12);
       box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.18);">
         <header style="overflow: hidden;">
-            <img style="width:100%;z-index: 666;" src="' . iro_opt('mail_img') . '">
+            <img style="width:100%;z-index: 99;" src="' . iro_opt('mail_img') . '">
         </header>
         <div style="padding: 5px 20px;">
         <p style="position: relative;

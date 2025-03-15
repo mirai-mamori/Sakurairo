@@ -17,6 +17,7 @@ if (iro_opt('theme_skin')) { ?>
     --theme-dm-background_transparency:<?=iro_opt('theme_darkmode_background_transparency')?>;
     --exhibition_area_matching_color:<?=iro_opt('exhibition_area_matching_color');?>;
     --inline_code_background_color_in_dark_mode:<?=iro_opt('inline_code_background_color_in_dark_mode');?>;
+    --front_background-transparency:<?=iro_opt('reception_background_transparency'); ?>;
 }
 
 /* 纪念模式 */
@@ -85,7 +86,7 @@ echo iro_opt('site_bg_as_cover',false)? 'background:#0000;':'';
     top: 0;
     left: 0;
     background: #ffffff;
-    z-index: 99999;
+    z-index: 999;
 }
 
 #preload li.active {
@@ -352,28 +353,27 @@ background-image: url(<?=iro_opt('search_area_background'); ?>);
 }
 
 .site-footer {
-background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparency'); ?>);
+background-color: rgba(255, 255, 255,var(--front_background-transparency,<?=iro_opt('reception_background_transparency'); ?>));
 }
 
 .wrapper {
-background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparency'); ?>);
+background-color: rgba(255, 255, 255,var(--front_background-transparency,<?=iro_opt('reception_background_transparency'); ?>));
 }
 
 <?php if (iro_opt('reception_background_blur', 'false')): ?>
-.background_blur {
-    position: fixed;
+.wrapper::before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: saturate(180%) blur(10px);
-    -webkit-backdrop-filter: saturate(180%) blur(10px);
-    transition: none;
-    pointer-events: none;
-    z-index: -2;
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: saturate(120%) blur(8px);
+    backdrop-filter: saturate(120%) blur(8px);
+    transform: translateZ(0);
+    z-index: 0;
 }
-<?php endif; ?>
-
+<?php endif;?>
 /*首页圆角设置*/
 .header-info{
 border-radius: <?=iro_opt('signature_radius'); ?>px;
@@ -863,7 +863,7 @@ if(iro_opt('cover_half_screen_curve',true)){
     content: '';
     width: 150%;
     height: 4.375rem;
-    background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparency'); ?>);
+    background-color: rgba(255, 255, 255,var(--front_background-transparency,<?=iro_opt('reception_background_transparency'); ?>));
 <?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
 <?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
     left: -25%;
