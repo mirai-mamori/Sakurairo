@@ -123,7 +123,7 @@ a:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 3;
+  z-index: 1;
   background-attachment: fixed;
 }
 
@@ -324,7 +324,7 @@ blockquote:after {
 
 .site.wrapper {
   position: relative;
-  z-index: 3;
+  z-index: 1;
 }
 
 #bgvideo {
@@ -346,7 +346,7 @@ blockquote:after {
   right: 5px;
   width: 32px;
   height: 32px;
-  z-index: 100;
+  z-index: 99;
   background-position: center;
   background-size: cover;
   cursor: pointer;
@@ -362,7 +362,7 @@ blockquote:after {
   right: 5px;
   width: 32px;
   height: 32px;
-  z-index: 100;
+  z-index: 99;
   background-position: center;
   background-size: cover;
   cursor: pointer;
@@ -604,7 +604,7 @@ blockquote:after {
   display: flex;
   align-items: center;
   gap: 20px;
-  z-index: 999;
+  z-index: 3;
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
 }
@@ -629,7 +629,6 @@ blockquote:after {
   -webkit-backdrop-filter: saturate(180%) blur(10px);
   backdrop-filter: saturate(180%) blur(10px);
   will-change: backdrop-filter;
-  z-index: 1000;
   border: 1px solid #f7f7f7;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease-in-out;
@@ -769,7 +768,6 @@ nav .menu > li .sub-menu {
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.4s ease-in-out;
-  z-index: 1000;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -1165,7 +1163,6 @@ nav .menu > li .sub-menu a {
   left: 2%;
   margin: 0;
   margin-top: 5px;
-  z-index: 50;
   padding: 0 10px;
   color: rgba(0, 0, 0, .66);
   z-index: 1;
@@ -1231,7 +1228,7 @@ nav .menu > li .sub-menu a {
 
 .site-footer {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   padding: max(2%, 45px);
   background: rgba(255, 255, 255, .8);
   margin-left: auto;
@@ -1389,7 +1386,7 @@ h1.page-title {
 
 .post-squares .background {
   position: absolute;
-  z-index: 50;
+  z-index: 99;
   top: 0;
   left: 0;
   width: 100%;
@@ -1594,7 +1591,7 @@ h3#comments-list-title {
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 10000;
+  z-index: 999;
 }
 
 .butterBar-message {
@@ -1606,7 +1603,7 @@ h3#comments-list-title {
   font-size: 14px;
   margin-bottom: 0;
   padding: 12px 25px;
-  z-index: 10000;
+  z-index: 999;
   margin-top: -4px;
   font-weight: var(--global-font-weight);
 }
@@ -2189,7 +2186,7 @@ h1.main-title {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  z-index: 5;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2252,7 +2249,7 @@ h1.main-title {
   align-items: center;
   max-width: 65%;
   flex-wrap: wrap;
-  z-index: 9999;
+  z-index: 999;
 }
 
 .top-social .inner img {
@@ -2381,7 +2378,6 @@ h1.main-title {
   z-index: 10;
   margin-top: 15px;
   border-radius: 8px;
-
   opacity: 0;
   visibility: hidden;
   max-height: 0;
@@ -2439,7 +2435,7 @@ h1.main-title {
   -webkit-transition: opacity .25s ease;
   transition: opacity .25s ease;
   overflow: hidden;
-  z-index: 9999;
+  z-index: 999;
   position: fixed;
   top: 0;
   right: 0;
@@ -2638,7 +2634,7 @@ h1.main-title {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1000000;
+  z-index: 999;
   background-color: rgba(0, 0, 0, .8);
   transition: opacity .5s ease;
   animation: elastic .5s;
@@ -2796,7 +2792,7 @@ h1.main-title {
 #nprogress .bar {
   background: var(--theme-skin, #505050);
   position: fixed;
-  z-index: 1031;
+  z-index: 999;
   top: 0;
   left: 0;
   width: 100%;
@@ -2818,7 +2814,7 @@ h1.main-title {
 #nprogress .spinner {
   display: block;
   position: fixed;
-  z-index: 9999;
+  z-index: 999;
   top: 27px;
   right: 24px;
   left: inherit;
@@ -2919,7 +2915,7 @@ h1.main-title {
   width: 400px;
   background: 0 0;
   display: none;
-  z-index: 233;
+  z-index: 99;
   animation: main .4s;
 }
 
@@ -3043,7 +3039,7 @@ iframe {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 99999;
+  z-index: 999;
   background: rgba(125, 137, 95, 0);
   pointer-events: none;
 }
@@ -3131,7 +3127,7 @@ iframe {
 }
 
 .toc-container {
-  z-index: 98;
+  z-index: 99;
   width: 190px;
   height: 100%;
   background-color: rgba(255, 255, 255, 0);
@@ -3235,7 +3231,7 @@ iframe {
   border-radius: 10px;
   transform: scale(0);
   transition: transform 0.3s ease-in-out;
-  z-index: 1000;
+  z-index: 99;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   overflow: hidden;
 }
@@ -3363,7 +3359,7 @@ iframe {
   background: var(--theme-skin-matching, #505050);
   transition-property: width, background;
   transition-duration: 1s, 1s;
-  z-index: 99999;
+  z-index: 999;
 }
 
 .comment-user-avatar {
@@ -3456,7 +3452,7 @@ iframe {
 }
 
 input#upload-img-file {
-  z-index: 100;
+  z-index: 99;
   opacity: 0;
 }
 
@@ -3698,7 +3694,7 @@ td.hljs-ln-numbers {
   width: 100%;
   height: 100%;
   min-width: 100%;
-  z-index: 9999999;
+  z-index: 999;
   margin: 0;
   animation: elastic 1s;
 }
@@ -3949,7 +3945,7 @@ h6::before {
   position: absolute;
   bottom: 50px;
   left: calc(50% - 42px);
-  z-index: 4; 
+  z-index: 2; 
   animation-name: float-down;  
   animation-duration: 5s;  
   animation-iteration-count: infinite;
@@ -4220,7 +4216,7 @@ input#wp-comment-cookies-consent {
   text-decoration: none;
   top: 5px;
   width: auto;
-  z-index: 100000;
+  z-index: 999;
 }
 
 #content {
@@ -4789,7 +4785,7 @@ h1.page-title.mb- {
 
 .post-squares .info {
   position: relative;
-  z-index: 98;
+  z-index: 99;
 }
 
 .post-squares a:hover>.background,
@@ -4834,7 +4830,7 @@ h1.page-title.mb- {
 
 .nextprev .label {
   position: absolute;
-  z-index: 100;
+  z-index: 99;
   top: 0;
 }
 
@@ -5239,7 +5235,6 @@ li.feature {
 
 .headertop.filter-undertint::before {
   background-color: rgba(255, 255, 255, .3);
-  z-index: 1;
 }
 
 .headertop.filter-dim::before {
@@ -5382,7 +5377,7 @@ li.feature {
 
 #nprogress {
   pointer-events: none;
-  z-index: 99999;
+  z-index: 999;
   position: absolute;
 }
 

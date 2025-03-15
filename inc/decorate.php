@@ -86,7 +86,7 @@ echo iro_opt('site_bg_as_cover',false)? 'background:#0000;':'';
     top: 0;
     left: 0;
     background: #ffffff;
-    z-index: 99999;
+    z-index: 999;
 }
 
 #preload li.active {
@@ -357,7 +357,6 @@ background-color: rgba(255, 255, 255,var(--front_background-transparency,<?=iro_
 }
 
 .wrapper {
-
 background-color: rgba(255, 255, 255,var(--front_background-transparency,<?=iro_opt('reception_background_transparency'); ?>));
 }
 
@@ -372,7 +371,7 @@ background-color: rgba(255, 255, 255,var(--front_background-transparency,<?=iro_
     -webkit-backdrop-filter: saturate(180%) blur(10px);
     transition: none;
     pointer-events: none;
-    z-index: -2;
+    z-index: 0;
 }
 <?php endif; ?>
 
