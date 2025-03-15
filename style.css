@@ -138,7 +138,6 @@ a:hover {
 .comments {
   animation: main .6s;
   clear: both;
-  overflow: hidden;
   width: 100%;
   padding: 0 10px;
   list-style: none;
@@ -1808,7 +1807,6 @@ nav#comments-navi {
 }
 
 .comments .comments-main {
-  overflow: hidden;
   -webkit-transition: height 0s ease-out;
   transition: height 0s ease-out;
   padding-bottom: 20px;
