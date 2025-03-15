@@ -172,7 +172,14 @@ function get_smilies_panel() {
             $smilies_button = '<div id="emotion-toggle" class="no-select">
                                 <i class="fa-regular fa-face-kiss-wink-heart"></i>
                             </div>';
-
+            $img_upload = '';
+            if (iro_opt('img_upload_api',false) == 'off' ? false : true) {
+                $img_upload = '<div class="insert-image-tips popup">
+                                    <i class="fa-regular fa-image"></i>
+                                    <span class="insert-img-popuptext" id="uploadTipPopup">上传图片</span>
+                                </div>
+                                <input id="upload-img-file" type="file" accept="image/*" multiple="multiple" class="insert-image-button">';
+            }
             function custom_comment_logged_in_as($defaults) { //移除表头以xx身份登录提示
                 $defaults['logged_in_as'] = '';
                 return $defaults;
@@ -192,7 +199,7 @@ function get_smilies_panel() {
                                         </div>' . $smilies_box . 
                                         '<div id="upload-img-show"></div>',
                 'submit_button'     => '<div class="form-submit">
-                                            <input name="submit" type="submit" id="submit" class="submit" value=" ' . esc_attr(iro_opt('comment_submit_button_text')) . ' ">' . $smilies_button . '
+                                            <input name="submit" type="submit" id="submit" class="submit" value=" ' . esc_attr(iro_opt('comment_submit_button_text')) . ' ">' . $smilies_button . $img_upload .'
                                             <label class="markdown-toggle">
                                                 <input type="checkbox" id="enable_markdown" name="enable_markdown">
                                                 <i class="fa-brands fa-markdown fa-sm"></i>
