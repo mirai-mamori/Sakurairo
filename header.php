@@ -214,7 +214,8 @@ header('X-Frame-Options: SAMEORIGIN');
                                 src="<?= esc_url(iro_opt('iro_logo')); ?>"
                                 width="auto" height="auto"
                                 loading="lazy"
-                                decoding="async">
+                                decoding="async"
+                                style="object-fit: contain;">
                         </div>
                     <?php endif; ?>
                     <?php if (!empty($nav_text_logo['text'])): ?>

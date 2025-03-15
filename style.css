@@ -322,12 +322,18 @@ blockquote:after {
   animation: blur .8s;
   -webkit-animation: blur .8s;
   background-color: rgba(255, 255, 255, .8);
-  overflow: hidden;
+  transform: translateZ(0); 
+  will-change: transform; 
 }
 
 .site.wrapper {
   position: relative;
   z-index: 1;
+  min-height: 100vh; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  contain: layout; 
 }
 
 #bgvideo {
@@ -341,6 +347,8 @@ blockquote:after {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  aspect-ratio: 16/9; /* 添加默认宽高比 */
+  contain: content; /* 控制布局计算范围 */
 }
 
 #video-add {
@@ -598,18 +606,18 @@ blockquote:after {
 /* 主容器样式 */
 .site-header {
   position: fixed;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  height: 70px; 
   z-index: 3;
+  padding: 0 20px;
+  gap: 20px;
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
+  display: flex;
+  align-items: center;
+  contain: layout; /* 控制布局计算范围 */
 }
 
 .site-header:hover {
@@ -4286,6 +4294,11 @@ input#wp-comment-cookies-consent {
 
 #content {
   animation: main 1s;
+  /* 现有属性 */
+  flex: 1; /* 填充剩余空间 */
+  min-height: 500px; /* 设定最小高度 */
+  width: 100%;
+  contain: content; /* 优化布局计算 */
 }
 
 .post-list {
