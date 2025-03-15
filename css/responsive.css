@@ -402,8 +402,11 @@
 
   h3#comments-list-title,
   nav#comments-navi {
+    padding: 0 4%;
+  }
+
+  nav#comments-navi {
     width: 100%;
-    padding: 0 6.39%;
     max-width: 1245px;
   }
 }

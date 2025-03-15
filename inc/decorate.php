@@ -361,17 +361,11 @@ background-color: rgba(255, 255, 255,var(--front_background-transparency,<?=iro_
 }
 
 <?php if (iro_opt('reception_background_blur', 'false')): ?>
-.wrapper::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-backdrop-filter: saturate(120%) blur(8px);
+.wrapper {
     backdrop-filter: saturate(120%) blur(8px);
+    -webkit-backdrop-filter: saturate(120%) blur(8px);
     transform: translateZ(0);
-    z-index: 0;
+    backface-visibility: hidden;
 }
 <?php endif;?>
 /*首页圆角设置*/

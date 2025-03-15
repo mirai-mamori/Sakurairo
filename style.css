@@ -123,7 +123,7 @@ a:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 0;
   background-attachment: fixed;
 }
 
@@ -5058,9 +5058,29 @@ h1.page-title.mb- {
 .ai-excerpt h4 {
   margin: 0;
   width: max-content;
-  border-bottom: 2px solid var(--article-theme-highlight,var(--theme-skin-matching));
   padding-bottom: 2px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  position: relative;
+  font-size: 16px;
+}
+
+.ai-excerpt h4::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+  right: -5px;
+  width: 55%;
+	height: 0.6em;
+	background-color: var(--article-theme-highlight,var(--theme-skin-matching));
+	opacity: 0.4;
+	z-index: 0;
+	border-radius: 30px;
+	transition: all 0.3s ease;
+}
+
+.ai-excerpt h4:hover::after {
+	width: 75%;
+	opacity: 0.7;
 }
 
 .ai-excerpt i {
