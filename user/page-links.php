@@ -41,17 +41,18 @@ span.linkss-title {
 .links ul {
     margin-top: 50px;
     width: 100%;
-    display: inline-block;
+    display: inline-flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 /* 链接卡片基础样式 */
 .links ul li {
-    width: 22.5%;
+    width: 23.1%;
     float: left;
     box-shadow: 0 1px 30px -4px var(--link-card-shadow);
     background: var(--link-card-bg);
     padding: 12px;
-    margin: 10px;
     position: relative;
     overflow: hidden;
     border-radius: var(--link-card-border-radius);
@@ -122,7 +123,6 @@ span.linkss-title {
 	font-size: 20px;
 	font-weight: 600;
 	color: var(--theme-skin);
-	padding-left: 10px;
 	margin: 50px 0 10px;
 	position: relative;
 	display: inline-block;
@@ -219,19 +219,19 @@ span.sitename {
 /* 平板设备 */
 @media (max-width: 1024px) and (min-width: 861px) {
     .links ul li {
-        width: 30.8%;
+        width: 31.7%;
     }
 }
 
 /* 移动设备 */
 @media (max-width: 860px) {
     .links ul li {
-        width: 45.5%;
+        width: 47.7%;
         max-width: 860px;
     }
     
     .links ul li:hover {
-        width: 45.5%;
+        width: 47.7%;
     }
     
     .links ul li:before {
@@ -248,7 +248,6 @@ span.sitename {
 @media (max-width: 480px) {
     .links ul li {
         width: 100%;
-        margin: 12px 0;
     }
     
     .submit-link-btn {
