@@ -163,6 +163,42 @@ $reception_background = iro_opt('reception_background');
 
 <?php echo iro_opt('footer_addition', ''); ?>
 </body>
+<?php if (iro_opt("reception_background_blur",false)): // 使用独立遮罩，防止大面积子元素fixed等定位方式失效?>
+  <div class="background_blur current_blur"></div>
+  <style>
+    .background_blur {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      transition: none;
+      pointer-events: none;
+      z-index: -10;
+    }
+    .current_blur {
+      -webkit-backdrop-filter: saturate(120%) blur(8px);
+      backdrop-filter: saturate(120%) blur(8px);
+    }
+  </style>
+  <?php if (iro_opt("site_bg_as_cover",false)): //site wrapper会被pjax刷新导致目标丢失，所以放function?>
+    <script>
+      let blur_object_on_page = document.querySelector(".background_blur");
+      function switch_blur_object (){
+        let blur_object_at_home = document.querySelector(".site.wrapper");
+        if (_iro.land_at_home) {
+          blur_object_on_page.classList.remove("current_blur");
+          blur_object_at_home.classList.add("current_blur");
+        } else {
+          blur_object_on_page.classList.add("current_blur");
+          blur_object_at_home.classList.remove("current_blur");
+        }
+      }
+      switch_blur_object();
+      document.addEventListener("pjax:complete",switch_blur_object);
+    </script>
+  <?php endif; ?>
+<?php endif; ?>
 <!-- Particles动效 -->
 <?php if (iro_opt('particles_effects', 'true')): ?>
   <style>
