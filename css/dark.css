@@ -2,7 +2,7 @@
 :root {
   /* 基础颜色 */
   --dark-bg-primary: rgba(51, 51, 51, var(--theme-dm-background_transparency, 1));
-  --dark-bg-secondary: rgba(26, 26, 26, 0.6);
+  --dark-bg-secondary: rgba(26, 26, 26, var(--theme-dm-background_transparency, 1));
   --dark-bg-hover: rgba(26, 26, 26, 0.8);
   --dark-text-primary: #CCCCCC;
   --dark-text-secondary: #999999;
@@ -16,15 +16,13 @@
 }
 
 /* 基础背景色 */
-body.dark #main-container,
-body.dark .site-footer,
 body.dark .wrapper,
 body.dark .headertop-bar::after {
   background: var(--dark-bg-primary) !important;
 }
 
-body.dark .wrapper {
-  background: rgba(51,51,51,var(--front_background-transparency,0.8)) !important;
+body.dark .site-footer {
+  background: var(--dark-bg-secondary) !important;
 }
 
 /* 基础边框和背景 */
@@ -71,6 +69,18 @@ body.dark .post-date, body.dark .post-meta {
 
 body.dark .ai-excerpt h4 {
   border-bottom: 2px solid var(--theme-skin-dark);
+}
+
+body.dark .theme-info {
+  border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark .site-footer p {
+  color: #7d7d7d;
+}
+
+body.dark .theme-info a{
+  color: #7d7d7de6;
 }
 
 body.dark .showcard .img {
@@ -185,6 +195,7 @@ body.dark .shuoshuo-title h3,
 body.dark .ins-section .fa,
 body.dark .site-title,
 body.dark .header-info,
+body.dark .site-info,
 body.dark #emotion-toggle,
 body.dark .insert-image-tips,
 body.dark .markdown-toggle,
@@ -441,6 +452,10 @@ body.dark .the-feature.from_left_and_right .info,
 body.dark .the-feature.from_left_and_right .info h3 {
   color: var(--dark-text-primary);
   background: rgb(0 0 0 / 20%);
+}
+
+body.dark h3#comments-list-title{
+  color: var(--dark-text-primary);
 }
 
 body.dark .comment-respond input,

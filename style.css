@@ -145,6 +145,8 @@ a:hover {
   max-width: 860px;
   margin: 1.5% auto 0;
   transition: background 0.8s;
+  z-index: 1;
+  position: relative;
 }
 
 /* Notice Component */
@@ -320,6 +322,7 @@ blockquote:after {
   animation: blur .8s;
   -webkit-animation: blur .8s;
   background-color: rgba(255, 255, 255, .8);
+  overflow: hidden;
 }
 
 .site.wrapper {
@@ -1227,32 +1230,82 @@ nav .menu > li .sub-menu a {
 }
 
 .site-footer {
-  position: relative;
-  z-index: 1;
-  padding: max(2%, 45px);
-  background: rgba(255, 255, 255, .8);
-  margin-left: auto;
-  margin-right: auto;
-  animation: blur .8s;
+  position: fixed;
+  bottom: -100%;
+  width: 90%;
+  max-width: 820px;
+  border-radius: 10px;
+  margin: 15px auto;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  padding: 20px 0;
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  will-change: backdrop-filter; 
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 1s ease-in-out; 
+}
+
+body.dark .site-footer {
+  background: rgba(30, 30, 30, 0.9);
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.site-footer.show {
+  bottom: 0;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out, background 0.6s ease-in-out, box-shadow 0.6s ease-in-out, bottom 1s cubic-bezier(0.25, 1.1, 0.5, 1); 
 }
 
 .site-info {
-  text-align: center;
-  font-size: 13px;
-  color: #B9B9B9;
-  font-weight: var(--global-font-weight);
+  margin: 0 auto;
+  padding: 0 20px;
+  font-size: 14px;
 }
 
-.footertext .foo-logo {
-  width: 30px;
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.hitokoto {
+  font-style: italic;
+}
+
+.site-footer p {
+  margin: 0;
+  color: #00000080;
+}
+
+.cdn-provider {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cdn-provider img {
+  width: 60px;
   height: 30px;
-  opacity: .3;
-  margin: 0 auto;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  animation: poi-deg 12s infinite linear;
-  -webkit-animation: poi-deg 12s infinite linear;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.theme-info {
+  text-align: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.theme-info a{
+  color: #0000004d;
+}
+
+.theme-info a:hover{
+  color: var(--theme-skin-matching, #505050);
 }
 
 .entry-census {
@@ -1300,9 +1353,8 @@ h1.page-title {
 
 .post-footer {
   padding: 30px 0;
-  width: 98%;
+  width: 100%;
   height: auto;
-  left: 1%;
   margin: auto;
   position: relative;
   float: left;
@@ -1311,6 +1363,7 @@ h1.page-title {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .post-license {
@@ -1322,10 +1375,9 @@ h1.page-title {
   font-size: 24px;
   position: inherit;
   border-radius: 10px;
-  margin: 5px;
   border: 1px solid #FFFFFF;
   display:flex;
-  gap:3px;
+  gap: 3px;
 }
 
 .post-license:hover {
@@ -1344,7 +1396,6 @@ h1.page-title {
   position: inherit;
   border-radius: 10px;
   font-weight: var(--global-font-weight);
-  margin: 5px;
   border: 1px solid #FFFFFF;
 }
 
@@ -1364,7 +1415,6 @@ h1.page-title {
   position: inherit;
   border-radius: 10px;
   font-weight: var(--global-font-weight);
-  margin: 5px;
   border: 1px solid #FFFFFF;
 }
 
@@ -1375,11 +1425,9 @@ h1.page-title {
 
 .post-squares {
   overflow: hidden;
-  margin: 10px 0 0 0;
   background: #000;
-  width: 97%;
-  left: 50%;
-  margin-left: -48.5%;
+  width: 100%;
+  margin: 0 auto;
   position: relative;
   border-radius: 15px;
 }
@@ -1473,7 +1521,6 @@ h1.page-title {
   letter-spacing: 0;
   display: block;
   float: left;
-  margin: 5px;
   color: #7D7D7D;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background: rgba(255, 255, 255, 0.5);
@@ -1575,13 +1622,32 @@ h1.page-title {
 
 h3#comments-list-title {
   max-width: 860px;
-  width: 95%;
-  margin: 0 auto;
-  margin-bottom: 40px;
-  color: #7D7D7D;
+  width: fit-content;
+  margin: 30px auto;
+  color: var(--theme-skin);
   font-weight: 600;
-  text-underline-offset: 10px;
-  text-decoration: underline solid var(--article-theme-highlight,var(--theme-skin-matching), #ffeeeB);
+  font-size: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+h3#comments-list-title::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+  left: 15%;
+	width: 70%;
+	height: 0.7em;
+	background-color: var(--theme-skin-matching);
+	opacity: 0.4;
+	z-index: 0;
+	border-radius: 30px;
+	transition: all 0.3s ease;
+}
+
+h3#comments-list-title:hover::after {
+	width: 85%;
+	opacity: 0.7;
 }
 
 .butterBar {
@@ -1870,7 +1936,7 @@ nav#comments-navi {
 }
 
 .comment-respond {
-  width: 95%;
+  width: 97.5%;
   max-width: 860px;
   margin: 0 auto;
   background: rgb(255 255 255 / 50%);
@@ -2017,7 +2083,7 @@ nav#comments-navi {
   float: left;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   margin-bottom: 50px;
-  margin-left: 3%;
+  margin-left: 1%;
   margin-top: 2%;
   border: 1px solid #FFFFFF;
 }
@@ -2894,7 +2960,6 @@ h1.main-title {
   display: block;
   border-radius: 10px;
   color: #7d7d7d;
-  margin: 5px;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background: rgba(255, 255, 255, 0.5);
   font-weight: var(--global-font-weight);
@@ -4521,7 +4586,6 @@ textarea:focus {
   color: #fff;
 }
 
-.site-info a:hover,
 .ins-section .ins-search-item:hover .ins-slug,
 .ins-section .ins-search-item:hover .ins-search-preview,
 .ins-section .ins-search-item:hover header,
@@ -4738,14 +4802,6 @@ object {
   display: block;
 }
 
-.site-info a {
-  color: #B9B9B9;
-}
-
-.footertext p {
-  margin-bottom: 8px;
-}
-
 .entry-content .post-password-form,
 .post .entry-header {
   text-align: center;
@@ -4884,12 +4940,13 @@ h1.page-title.mb- {
 
 .author-profile {
   float: left;
+  display: flex;
+  gap: 10px;
 }
 
 .author-profile .info {
   overflow: hidden;
   float: left;
-  margin: 5px;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background: rgba(255, 255, 255, 0.5);
   padding: 9px 9.5px;
@@ -4910,7 +4967,6 @@ h1.page-title.mb- {
 .author-profile .meta {
   display: block;
   float: left;
-  margin: 5px;
   box-shadow: 0 1px 30px -4px #e8e8e8;
   background: rgba(255, 255, 255, 0.5);
   padding: 12px 16px;
@@ -4935,8 +4991,8 @@ h1.page-title.mb- {
 
 #comments-list-title span {
   font-size: 13px;
-  font-weight: var(--global-font-weight, 400);
   color: #909090;
+  margin-left: 10px;
 }
 
 .butterBar--center {
@@ -5081,7 +5137,7 @@ a.page-numbers {
 
 .comment .main {
   float: inherit;
-  width: 95%;
+  width: 97.5%;
   padding: 25px;
   margin: 0 auto;
   border-radius: 15px;

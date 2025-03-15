@@ -372,16 +372,6 @@
 
 /* 1080px 断点适配 */
 @media (max-width: 1080px) {
-  .post-footer,
-  .post-squares {
-    max-width: 800px;
-    width: 86%;
-  }
-
-  .post-squares {
-    margin-left: -43%;
-  }
-
   .comments {
     padding: 4% 0 0;
     padding-bottom: 80px;
@@ -398,11 +388,12 @@
   }
 
   .comment-respond {
-    width: 88% !important;
+    width: 91% !important;
   }
 
-  .site-footer {
-    padding: 30px;
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
   }
 
   .we-title:before {
@@ -507,14 +498,6 @@
   .post-squares.post-squares-featured {
     display: none;
   }
-  .post-squares {
-    overflow: hidden;
-    margin: auto;
-    background: #000;
-    left: 0;
-    width: 96% !important;
-    margin-left: 2% !important;
-  }
 
   blockquote{
     padding: 20px 30px !important;
@@ -561,7 +544,7 @@
     margin-right: auto;
   }
   .comments .commentwrap {
-    padding: 0 6%;
+    padding: 0 4.5%;
   }
 
   /* Notice */
@@ -764,10 +747,6 @@
 
   .entry-content p {
     font-size: 16px;
-  }
-
-  .site-footer {
-    padding: 30px;
   }
 
   .author-box {

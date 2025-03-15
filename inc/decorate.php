@@ -361,20 +361,19 @@ background-color: rgba(255, 255, 255,var(--front_background-transparency,<?=iro_
 }
 
 <?php if (iro_opt('reception_background_blur', 'false')): ?>
-.background_blur {
-    position: fixed;
+.wrapper::before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: saturate(180%) blur(10px);
-    -webkit-backdrop-filter: saturate(180%) blur(10px);
-    transition: none;
-    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: saturate(120%) blur(8px);
+    backdrop-filter: saturate(120%) blur(8px);
+    transform: translateZ(0);
     z-index: 0;
 }
-<?php endif; ?>
-
+<?php endif;?>
 /*首页圆角设置*/
 .header-info{
 border-radius: <?=iro_opt('signature_radius'); ?>px;

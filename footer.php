@@ -16,40 +16,50 @@ $reception_background = iro_opt('reception_background');
 </div><!-- #page Pjax container-->
   <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="site-info" theme-info="Sakurairo v<?php echo esc_html(IRO_VERSION); ?>">
-      <div class="footertext">
-        <div class="img-preload">
-          <img alt="loading_svg" src="<?php echo esc_url(iro_opt('load_nextpage_svg')); ?>"><!-- 加载下一部分圈圈 -->
-        </div>
-        <?php if (iro_opt('footer_sakura', 'true')): ?>
-          <div class="sakura-icon">
-            <svg width="30px" height="30px" t="1682340134496" class="sakura-svg" viewBox="0 0 1049 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5240">
-              <path d="M525.58396628 573.34694353s268.83106938-2.62915481 309.36387092 193.24287089l-76.46458293 21.90962291 12.92667757 84.13295086a214.05701289 214.05701289 0 0 1-96.84053193-4.82011663A224.79272784 224.79272784 0 0 1 525.58396628 578.38615666z" fill="#EE9ca7" p-id="5241"></path>
-              <path d="M552.75189802 512.4381922s131.45773592-233.7756732 321.63325979-170.89505575L854.2283053 418.66500728l79.31283344 30.89256828a215.59068679 215.59068679 0 0 1-52.58309388 81.50379604 224.57363215 224.57363215 0 0 1-325.35789552-14.67944718z" fill="#EE9ca7" p-id="5242"></path>
-              <path d="M508.49446078 494.0341093S317.00435871 306.48774025 426.77156822 139.31731943l69.4535037 38.78003191L547.4935884 109.30113636a214.05701289 214.05701289 0 0 1 65.72886796 71.86356201 225.01182435 225.01182435 0 0 1-98.37420505 310.67844912z" fill="#EE9ca7" p-id="5243"></path>
-              <path d="M473.21996809 525.58396628S242.2925454 661.64272234 109.30113636 512.4381922l55.43134521-57.18411482-53.45947909-65.72886795a213.61882069 213.61882069 0 0 1 86.32391269-43.81924506 224.79272784 224.79272784 0 0 1 274.527572 175.27698099z" fill="#EE9ca7" p-id="5244"></path>
-              <path d="M481.76472043 566.55496s72.0826585 258.31445093-106.4807652 348.14390364l-40.31370582-68.13892627-78.21735252 34.17901099a212.30424328 212.30424328 0 0 1-20.15685331-94.64956933 224.57363215 224.57363215 0 0 1 241.00584894-219.09622602z" fill="#EE9ca7" p-id="5245"></path>
-            </svg>
-          </div>
-        <?php endif; ?>
-        <p class="footer_info"><?php echo iro_opt('footer_info', ''); ?></p>
+      <div class="img-preload" style="display:none">
+        <img alt="loading_svg" src="<?php echo esc_url(iro_opt('load_nextpage_svg')); ?>">
       </div>
-      <div class="footer-device function_area">
-        <?php if (iro_opt('footer_yiyan')): ?>
-          <p id="footer_yiyan"></p>
-        <?php endif; ?>
-        <span style="color: #b9b9b9;">
-          <?php if (iro_opt('footer_load_occupancy', 'true')): ?>
-            <?php printf(
-              esc_html__('Load Time %.3f seconds | %d Query | RAM Usage %.2f MB ', 'sakurairo'),
-              timer_stop(0, 3), get_num_queries(), memory_get_peak_usage() / 1024 / 1024
-            ); ?>
+      <div class="footer-content">
+          <?php if (iro_opt('footer_yiyan')): ?>
+            <p id="footer_yiyan" class="hitokoto"></p>
           <?php endif; ?>
+          <?php if (!empty(iro_opt('footer_info', ''))): ?>
+            <p class="footer_info"><?php echo iro_opt('footer_info', ''); ?></p>
+          <?php endif; ?>
+            <?php if (iro_opt('footer_load_occupancy', 'true')): ?>
+              <p class="site-stats">
+                <?php printf(
+                  esc_html__('Load Time %.3f seconds | %d Query | RAM Usage %.2f MB ', 'sakurairo'),
+                  timer_stop(0, 3), get_num_queries(), memory_get_peak_usage() / 1024 / 1024
+                ); ?>
+              </p>
+          <?php endif; ?>
+          
           <?php if (iro_opt('footer_upyun', 'true')): ?>
-            本网站由 <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"> <img alt="upyun-logo" src="https://s.nmxc.ltd/sakurairo_vision/@2.7/options/upyun_logo.webp" style="display:inline-block;vertical-align:middle;width:60px;height:30px;"/> 提供 CDN 加速 / 云存储 服务
+            <p class="cdn-provider">
+              <span>本网站由</span>
+              <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank">
+                <img alt="upyun-logo" src="https://s.nmxc.ltd/sakurairo_vision/@2.7/options/upyun_logo.webp" />
+              </a>
+              <span>提供 CDN 加速 / 云存储 服务</span>
+            </p>
           <?php endif; ?>
-          <br>
-          <a href="https://github.com/mirai-mamori/Sakurairo" rel="noopener" target="_blank" id="site-info">Theme Sakurairo</a><a href="https://docs.fuukei.org/" rel="noopener" target="_blank" id="site-info"> by Fuukei</a>
-        </span>
+        </div>
+      
+      <div class="theme-info">
+          <?php if (iro_opt('footer_sakura', 'true')): ?>
+            <div class="sakura-icon">
+              <svg width="30px" height="30px" t="1682340134496" class="sakura-svg" viewBox="0 0 1049 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5240">
+                <path d="M525.58396628 573.34694353s268.83106938-2.62915481 309.36387092 193.24287089l-76.46458293 21.90962291 12.92667757 84.13295086a214.05701289 214.05701289 0 0 1-96.84053193-4.82011663A224.79272784 224.79272784 0 0 1 525.58396628 578.38615666z" fill="#EE9ca7" p-id="5241"></path>
+                <path d="M552.75189802 512.4381922s131.45773592-233.7756732 321.63325979-170.89505575L854.2283053 418.66500728l79.31283344 30.89256828a215.59068679 215.59068679 0 0 1-52.58309388 81.50379604 224.57363215 224.57363215 0 0 1-325.35789552-14.67944718z" fill="#EE9ca7" p-id="5242"></path>
+                <path d="M508.49446078 494.0341093S317.00435871 306.48774025 426.77156822 139.31731943l69.4535037 38.78003191L547.4935884 109.30113636a214.05701289 214.05701289 0 0 1 65.72886796 71.86356201 225.01182435 225.01182435 0 0 1-98.37420505 310.67844912z" fill="#EE9ca7" p-id="5243"></path>
+                <path d="M473.21996809 525.58396628S242.2925454 661.64272234 109.30113636 512.4381922l55.43134521-57.18411482-53.45947909-65.72886795a213.61882069 213.61882069 0 0 1 86.32391269-43.81924506 224.79272784 224.79272784 0 0 1 274.527572 175.27698099z" fill="#EE9ca7" p-id="5244"></path>
+                <path d="M481.76472043 566.55496s72.0826585 258.31445093-106.4807652 348.14390364l-40.31370582-68.13892627-78.21735252 34.17901099a212.30424328 212.30424328 0 0 1-20.15685331-94.64956933 224.57363215 224.57363215 0 0 1 241.00584894-219.09622602z" fill="#EE9ca7" p-id="5245"></path>
+              </svg>
+            </div>
+          <?php endif; ?>
+        <a href="https://github.com/mirai-mamori/Sakurairo" rel="noopener" target="_blank">Theme Sakurairo</a>
+        <a href="https://docs.fuukei.org/" rel="noopener" target="_blank">by Fuukei</a>
       </div>
     </div><!-- .site-info -->
   </footer><!-- #colophon -->
@@ -177,54 +187,80 @@ $reception_background = iro_opt('reception_background');
   <div id="particles-js"></div>
   <script type="application/json" id="particles-js-cfg"><?php echo iro_opt('particles_json', ''); ?></script>
   <?php endif; ?>
-  <?php if (iro_opt('reception_background_blur', 'false')): ?>
-    <div class="background_blur" style="
-      <?php if(is_home()){
-        echo "top: 100vh";
-      } else {
-        echo "top: 0vh";
-      } ?>
-      "></div><?php endif; //背景滤镜层?>
-  <?php if (iro_opt('site_bg_as_cover', 'false') && (iro_opt('reception_background_blur', 'false'))): ?>
-    <script>
-      document.addEventListener('DOMContentLoaded',function(){
-        let Background_blur = document.querySelector(".background_blur");
-        let wrapper = document.querySelector(".site.wrapper");
-        max_trans = <?php echo iro_opt("reception_background_transparency",0.8); //获取设置的最大透明度?>;
-        function DymanticBlur(){
-          let scrollTop = window.scrollY || document.documentElement.scrollTop;
-          let windowHeight = window.innerHeight;
-          let progress = (scrollTop / windowHeight) * 100;
-          progress = Math.min(progress, 100);
-          height = 100 - progress;
-          transparency = max_trans * progress /100;
-          blur_degree = (progress /100)*(progress /100)*10;
-          Background_blur.style.top = `${height}vh`;
-          Background_blur.style.setProperty('backdrop-filter',`saturate(180%) blur(${blur_degree}px)`);
-          wrapper.style.transition = "all 0.6s ease-in-out,background 0s";
-          wrapper.style.setProperty('--front_background-transparency', transparency);
-          setTimeout(() => {
-              wrapper.style.transition = "";
-          }, 0);
-        }
-        function init () {
-          if (_iro.land_at_home) {
-            Background_blur.style.top = `100vh`;
-            document.addEventListener('scroll',DymanticBlur);
-            DymanticBlur();
-          } else {
-            Background_blur.style.top = `0`;
-            wrapper.style.setProperty('--front_background-transparency', max_trans);
-            document.removeEventListener('scroll',DymanticBlur);
-          }
-        }
-        init();
-        document.addEventListener("pjax:complete",function(){
-          init();
-          wrapper = document.querySelector(".site.wrapper");
-          console.log(wrapper);
-        });
-      });
-    </script>
-    <?php endif;?>
 </html>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    initFooterVisibility();
+  });
+  
+  document.addEventListener('pjax:complete', function() {
+    initFooterVisibility();
+  });
+  
+  function initFooterVisibility() {
+    const footer = document.getElementById('colophon');
+    if (!footer) return;
+    
+    // 初始状态设置为隐藏
+    footer.classList.remove('show');
+    
+    // 计算footer高度并设置wrapper的padding-bottom
+    const footerHeight = footer.offsetHeight;
+    const paddingValue = footerHeight * 1.3;
+    const wrapper = document.querySelector('.site.wrapper');
+    if (wrapper) {
+      wrapper.style.paddingBottom = `${paddingValue}px`;
+    }
+    
+    function checkFooterVisibility() {
+      const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.body.scrollHeight;
+      const showThreshold = documentHeight - 100;
+      
+      // 当滚动到接近页面底部时显示footer，否则隐藏
+      if (scrollPosition + windowHeight >= showThreshold) {
+        if (footer && !footer.classList.contains('show')) {
+          // 添加show类来显示footer
+          requestAnimationFrame(() => {
+            footer.classList.add('show');
+          });
+        }
+      } else {
+        if (footer && footer.classList.contains('show')) {
+          // 移除show类来隐藏footer
+          requestAnimationFrame(() => {
+            footer.classList.remove('show');
+          });
+        }
+      }
+    }
+    
+    // 移除之前可能添加的事件监听器，避免重复
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('resize', checkFooterVisibility);
+    
+    // 初始检查 - 使用setTimeout确保在页面完全加载后再次检查，解决初始状态问题
+    checkFooterVisibility();
+    setTimeout(checkFooterVisibility, 100);
+    
+    // 滚动事件节流处理
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          checkFooterVisibility();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+    
+    // 滚动时检查
+    window.addEventListener('scroll', onScroll);
+    
+    // 窗口大小变化时检查
+    window.addEventListener('resize', checkFooterVisibility);
+  }
+</script>
