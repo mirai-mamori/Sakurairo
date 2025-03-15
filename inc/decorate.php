@@ -360,14 +360,6 @@ background-color: rgba(255, 255, 255,var(--front_background-transparency,<?=iro_
 background-color: rgba(255, 255, 255,var(--front_background-transparency,<?=iro_opt('reception_background_transparency'); ?>));
 }
 
-<?php if (iro_opt('reception_background_blur', 'false')): ?>
-.wrapper {
-    backdrop-filter: saturate(120%) blur(8px);
-    -webkit-backdrop-filter: saturate(120%) blur(8px);
-    transform: translateZ(0);
-    backface-visibility: hidden;
-}
-<?php endif;?>
 /*首页圆角设置*/
 .header-info{
 border-radius: <?=iro_opt('signature_radius'); ?>px;
