@@ -460,6 +460,24 @@
   }
 }
 
+@media (max-width: 860px) {
+  .emotion-box {
+    position: relative;
+    box-shadow: none;
+    max-height: 0px;
+    left: 0!important;
+    top: 0!important;
+    width: 100%;
+    transition: all 0.3s ease-in-out !important;
+  }
+  .emotion-box.open {
+    max-height: 200px;
+  }
+  .emotion-header {
+    display: none;
+  }
+}
+
 /* 860px 断点适配 */
 @media (max-width: 860px) {
   /* Pattern Center 相关 */
