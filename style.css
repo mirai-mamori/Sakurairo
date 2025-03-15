@@ -617,7 +617,7 @@ blockquote:after {
   -webkit-transition: all 0.4s ease-in-out;
   display: flex;
   align-items: center;
-  contain: layout; /* 控制布局计算范围 */
+  contain: layout;
 }
 
 .site-header:hover {
@@ -4294,11 +4294,9 @@ input#wp-comment-cookies-consent {
 
 #content {
   animation: main 1s;
-  /* 现有属性 */
-  flex: 1; /* 填充剩余空间 */
-  min-height: 500px; /* 设定最小高度 */
+  flex: 1; 
+  min-height: 500px; 
   width: 100%;
-  contain: content; /* 优化布局计算 */
 }
 
 .post-list {
