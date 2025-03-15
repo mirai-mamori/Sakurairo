@@ -7,7 +7,7 @@
     border-radius: 0px;
     background: transparent;
     position: fixed;
-    z-index: 2;
+    z-index: 99;
     border-bottom: 1.5px solid transparent;
     -webkit-transition: all .6s ease;
     transition: all .6s ease;
