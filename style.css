@@ -138,7 +138,6 @@ a:hover {
 .comments {
   animation: main .6s;
   clear: both;
-  overflow: hidden;
   width: 100%;
   padding: 0 10px;
   list-style: none;
@@ -1808,7 +1807,6 @@ nav#comments-navi {
 }
 
 .comments .comments-main {
-  overflow: hidden;
   -webkit-transition: height 0s ease-out;
   transition: height 0s ease-out;
   padding-bottom: 20px;
@@ -3296,7 +3294,10 @@ iframe {
 }
 
 .emotion-box {
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
   width: 300px;
   height: 300px;
   background: #fff;
@@ -3329,7 +3330,7 @@ iframe {
 }
 
 .motion-container {
-  height: 225px;
+  height: 100%;
   overflow: scroll;
   margin-bottom: 5px;
   border-radius: 5px;
