@@ -163,6 +163,42 @@ $reception_background = iro_opt('reception_background');
 
 <?php echo iro_opt('footer_addition', ''); ?>
 </body>
+<?php if (iro_opt("reception_background_blur",false)): // 使用独立遮罩，防止大面积子元素fixed等定位方式失效?>
+  <div class="background_blur current_blur"></div>
+  <style>
+    .background_blur {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      transition: none;
+      pointer-events: none;
+      z-index: -10;
+    }
+    .current_blur {
+      -webkit-backdrop-filter: saturate(120%) blur(8px);
+      backdrop-filter: saturate(120%) blur(8px);
+    }
+  </style>
+  <?php if (iro_opt("site_bg_as_cover",false)): //site wrapper会被pjax刷新导致目标丢失，所以放function?>
+    <script>
+      let blur_object_on_page = document.querySelector(".background_blur");
+      function switch_blur_object (){
+        let blur_object_at_home = document.querySelector(".site.wrapper");
+        if (_iro.land_at_home) {
+          blur_object_on_page.classList.remove("current_blur");
+          blur_object_at_home.classList.add("current_blur");
+        } else {
+          blur_object_on_page.classList.add("current_blur");
+          blur_object_at_home.classList.remove("current_blur");
+        }
+      }
+      switch_blur_object();
+      document.addEventListener("pjax:complete",switch_blur_object);
+    </script>
+  <?php endif; ?>
+<?php endif; ?>
 <!-- Particles动效 -->
 <?php if (iro_opt('particles_effects', 'true')): ?>
   <style>
@@ -188,79 +224,3 @@ $reception_background = iro_opt('reception_background');
   <script type="application/json" id="particles-js-cfg"><?php echo iro_opt('particles_json', ''); ?></script>
   <?php endif; ?>
 </html>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    initFooterVisibility();
-  });
-  
-  document.addEventListener('pjax:complete', function() {
-    initFooterVisibility();
-  });
-  
-  function initFooterVisibility() {
-    const footer = document.getElementById('colophon');
-    if (!footer) return;
-    
-    // 初始状态设置为隐藏
-    footer.classList.remove('show');
-    
-    // 计算footer高度并设置wrapper的padding-bottom
-    const footerHeight = footer.offsetHeight;
-    const paddingValue = footerHeight * 1.3;
-    const wrapper = document.querySelector('.site.wrapper');
-    if (wrapper) {
-      wrapper.style.paddingBottom = `${paddingValue}px`;
-    }
-    
-    function checkFooterVisibility() {
-      const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.body.scrollHeight;
-      const showThreshold = documentHeight - 100;
-      
-      // 当滚动到接近页面底部时显示footer，否则隐藏
-      if (scrollPosition + windowHeight >= showThreshold) {
-        if (footer && !footer.classList.contains('show')) {
-          // 添加show类来显示footer
-          requestAnimationFrame(() => {
-            footer.classList.add('show');
-          });
-        }
-      } else {
-        if (footer && footer.classList.contains('show')) {
-          // 移除show类来隐藏footer
-          requestAnimationFrame(() => {
-            footer.classList.remove('show');
-          });
-        }
-      }
-    }
-    
-    // 移除之前可能添加的事件监听器，避免重复
-    window.removeEventListener('scroll', onScroll);
-    window.removeEventListener('resize', checkFooterVisibility);
-    
-    // 初始检查 - 使用setTimeout确保在页面完全加载后再次检查，解决初始状态问题
-    checkFooterVisibility();
-    setTimeout(checkFooterVisibility, 100);
-    
-    // 滚动事件节流处理
-    let ticking = false;
-    function onScroll() {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          checkFooterVisibility();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-    
-    // 滚动时检查
-    window.addEventListener('scroll', onScroll);
-    
-    // 窗口大小变化时检查
-    window.addEventListener('resize', checkFooterVisibility);
-  }
-</script>
