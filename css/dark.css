@@ -603,7 +603,7 @@ body.dark .header-user-menu .header-user-name,
 body.dark .header-user-avatar a i,
 body.dark .no-logged a,
 body.dark .iro-annotation-popup .term {
-  color: var(--dark-text-primary);
+  color: var(--dark-text-primary) !important;
   transition: all 0.4s ease-in-out;
 }
 
@@ -611,6 +611,12 @@ body.dark .iro-annotation-popup .term {
 body.dark nav .menu > li .sub-menu:hover,
 body.dark .header-user-menu:hover {
   background: rgba(0, 0, 0, 0.9) !important;
+  transition: all 0.4s ease-in-out;
+}
+
+body.dark .mo_toc_panel .user-menu-option a:hover,
+body.dark .header-user-menu a:hover{
+  background: var(--dark-bg-hover) !important;
   transition: all 0.4s ease-in-out;
 }
 
@@ -735,17 +741,6 @@ body.dark .post-footer > section > :hover {
   background: var(--dark-bg-hover);
 }
 
-/* 合并链接样式 */
-body.dark .site-branding a,
-body.dark .nav-search-wrapper a,
-body.dark .nav-search-wrapper i,
-body.dark .header-user-menu a,
-body.dark .header-user-menu .header-user-name,
-body.dark .header-user-avatar a i {
-  color: #cccccc;
-  transition: all 0.4s ease-in-out;
-}
-
 /* 合并用户名样式 */
 body.dark .header-user-name-u,
 body.dark .header-user-name,
@@ -775,7 +770,7 @@ body.dark .steam-profile:hover {
 
 body.dark .steam-profile-header {
   background: rgba(30, 30, 30, 0.6);
-  border-bottom: 1px solid var(--dark-border-color);
+  border-bottom: 1px solid var(--dark-border-color) !important;
 }
 
 body.dark .steam-avatar {
@@ -821,7 +816,7 @@ body.dark .steam-game-name:hover {
 
 body.dark .steam-last-online {
   color: #aaa;
-  border-top: 1px solid var(--dark-border-color);
+  border-top: 1px solid var(--dark-border-color) !important;
   background: rgba(30, 30, 30, 0.4);
 }
 
