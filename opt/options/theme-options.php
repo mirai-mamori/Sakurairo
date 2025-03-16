@@ -3495,14 +3495,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'composer_load',
-        'type' => 'switcher',
-        'title' => __('ChatGPT Function','sakurairo_csf'),
-        'label' => __('After turning on ChatGPT Function will be available','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
         'type'    => 'content',
         'content' => __('<img src="https://s.nmxc.ltd/sakurairo_vision/@2.7/options/leaflow.webp" width="25%" height="25%"/><img src="https://s.nmxc.ltd/sakurairo_vision/@2.7/options/postchat.webp" width="25%" height="25%"/>','sakurairo_csf'),
       ),
@@ -3570,7 +3562,6 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('ChatGPT Base URL','sakurairo_csf'),
         'desc' => __('Fill in the ChatGPT Base URL','sakurairo_csf'),
-        'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
         'default' => 'https://api.openai.com/v1/chat/completions'
       ),
 
@@ -3579,7 +3570,6 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('ChatGPT API keys','sakurairo_csf'),
         'desc' => __('Fill in Your ChatGPT API keys, please refer to <a href="https://platform.openai.com/account/api-keys">OpenAI Website</a> for further information.','sakurairo_csf'),
-        'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
       ),
 
       array(
@@ -3587,7 +3577,6 @@ $prefix = 'iro_options';
         'type' => 'switcher',
         'title' => __('ChatGPT Article Summarize','sakurairo_csf'),
         'label' => __('After turning on, title and context of your articles will be automatically sent to ChatGPT to generate excerpts.','sakurairo_csf'),
-        'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
         'default' => false
       ),
 
@@ -3595,7 +3584,6 @@ $prefix = 'iro_options';
         'type'    => 'content',
         'content'=> __('Each update of your post will trigger a request to generate a summary. Due to current API limitations, if your article exceeds 4097 Token, the system will only send the unexceeded portion to generate a summary','sakurairo_csf'),
         'dependency' => array(
-          array( 'composer_load', '==', 'true'),
           array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
     ),
       ),
@@ -3606,7 +3594,6 @@ $prefix = 'iro_options';
         'title' => __('Article IDs that do not Require ChatGPT Summarize','sakurairo_csf'),
         'desc' => __('Those articles will never be sent to ChatGPT for excerpt generation. Split each id with a ",".','sakurairo_csf'),
         'dependency' => array(
-          array( 'composer_load', '==', 'true'),
           array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
     ),
         'default'     => ''
@@ -3617,7 +3604,6 @@ $prefix = 'iro_options';
         'type' => 'textarea',
         'title' => __('ChatGPT Article Summarize Init Prompt','sakurairo_csf'),
         'dependency' => array(
-          array( 'composer_load', '==', 'true'),
           array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
     ),
         'desc' => __('Init Prompt instructs AI how to generate summaries for your articles. Init Prompt will be passed to ChatGPT as "system" role','sakurairo_csf'),
@@ -3630,7 +3616,6 @@ $prefix = 'iro_options';
         'title' => __('ChatGPT Model','sakurairo_csf'),
         'descr' => __('Only models support Chat Completion API can be used. The default is "gpt-4o-mini. View https://platform.openai.com/docs/models/overview for further info.','sakurairo_csf'),
         'dependency' => array(
-          array( 'composer_load', '==', 'true'),
           array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
         ),
         "default" => "gpt-4o-mini"

@@ -56,14 +56,6 @@ if (!function_exists('iro_opt_update')) {
 $shared_lib_basepath = iro_opt('shared_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path', 'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@') . IRO_VERSION);
 $core_lib_basepath = iro_opt('core_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path', 'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@') . IRO_VERSION);
 
-/**
- * composer autoload
- */
-// 暂时没有需要使用的composer依赖，禁用
-/* if ((check_php_version('8.0.0')) && iro_opt('composer_load')) {
-    require_once 'vendor/autoload.php';
-} */
-
 // 屏蔽php日志信息
 if (iro_opt('php_notice_filter') != 'inner') {
 
@@ -3771,3 +3763,59 @@ function iro_action_operator()
     }
 }
 iro_action_operator();
+
+/**
+ * 手动更新文章复杂名词注释
+ */
+function iro_update_post_annotations($post_id) {
+    if (!function_exists('IROChatGPT\generate_post_annotations')) {
+        return false;
+    }
+    
+    $post = get_post($post_id);
+    if (!$post) {
+        return false;
+    }
+    
+    // 删除现有的注释，强制重新生成
+    delete_post_meta($post_id, 'iro_chatgpt_annotations');
+    
+    // 直接调用生成函数，不使用异步
+    return IROChatGPT\generate_post_annotations($post);
+}
+
+/**
+ * 查看文章的注释内容（调试用）
+ */
+function iro_get_post_annotations($post_id) {
+    $annotations = get_post_meta($post_id, 'iro_chatgpt_annotations', true);
+    if (empty($annotations)) {
+        return 'No annotations found';
+    }
+    return $annotations;
+}
+
+/**
+ * 确保注释功能在pjax环境下正常工作
+ */
+function iro_enqueue_pjax_annotation_support() {
+    if (is_singular() && get_option('iro_chatgpt_enabled', false)) {
+        $post_id = get_the_ID();
+        $annotations = get_post_meta($post_id, 'iro_chatgpt_annotations', true);
+        
+        if (!empty($annotations) && is_array($annotations)) {
+            // 添加注释数据
+            echo '<script>window.iroAnnotations = ' . json_encode($annotations) . ';</script>';
+            
+            // 初始化注释系统
+            echo '<script>
+            document.addEventListener("DOMContentLoaded", function() {
+                if (typeof window.iroInitAnnotations === "function") {
+                    window.iroInitAnnotations();
+                }
+            });
+            </script>';
+        }
+    }
+}
+add_action('wp_footer', 'iro_enqueue_pjax_annotation_support');

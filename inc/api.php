@@ -114,10 +114,21 @@ add_action('rest_api_init', function () {
         {
          return current_user_can( 'administrator' ) ;
         }
+     ));
+    
+    // 添加复杂名词注释API
+    register_rest_route('sakura/v1', '/chatgpt/annotate', array(
+        'methods' => 'GET',
+        'callback' => 'chatgpt_annotate_terms',
+        'permission_callback' =>function ()
+        {
+         return current_user_can( 'administrator' ) ;
+        }
     ));
 });
 
 require_once ('chatgpt/hooks.php');
+require_once ('chatgpt/chatgpt.php');
 
 function chatgpt_summarize(WP_REST_Request $request)
 {
@@ -128,6 +139,29 @@ function chatgpt_summarize(WP_REST_Request $request)
     }
     $excerpt = IROChatGPT\summon_article_excerpt($post);
     return new WP_REST_Response($excerpt, 200);
+}
+
+function chatgpt_annotate_terms(WP_REST_Request $request)
+{
+    $post_id = $request->get_param('post_id');
+    $post = get_post($post_id);
+    if(!$post) {
+        return new WP_REST_Response("Invalid post ID", 400);
+    }
+    
+    // 调用管理页面中的注释生成函数
+    $result = IROChatGPT\generate_annotations_for_post($post_id);
+    
+    // 查询结果以确认是否保存成功
+    $saved_data = get_post_meta($post_id, 'iro_chatgpt_annotations', true);
+    $success_message = "注释生成" . ($result ? "成功" : "失败") . 
+                      "。已保存数据: " . (is_array($saved_data) ? count($saved_data) . " 个注释" : "无");
+    
+    if ($result) {
+        return new WP_REST_Response($success_message, 200);
+    } else {
+        return new WP_REST_Response($success_message, 500);
+    }
 }
 
 /**
