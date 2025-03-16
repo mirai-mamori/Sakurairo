@@ -50,14 +50,14 @@ body.dark input.m-search-input {
 body.dark .ins-section .ins-search-item.active,
 body.dark .ins-section .ins-search-item.active .ins-slug,
 body.dark .ins-section .ins-search-item.active .ins-search-preview{
-  color: #fff;
-  background: #333333;
+  color: var(--dark-text-primary);
+  background: var(--dark-bg-primary);
 }
 
 body.dark .search-form--modal,
 body.dark .ins-section .ins-section-header {
   border-bottom: none;
-  background: rgba(51, 51, 51, 0.9) !important;
+  background: var(--dark-bg-primary) !important;
 }
 
 body.dark .search_close:after,
@@ -94,7 +94,7 @@ body.dark .showcard .img:hover {
 }
 
 body.dark .showcard .icon-title {
-  color:#BBB;
+  color: var(--dark-text-primary);
 }
 
 body.dark .showcard-button {
@@ -158,7 +158,9 @@ body.dark .post-list p {
 
 /* 合并标题和链接文字颜色 */
 body.dark .entry-title a,
-body.dark .menhera-container .emoji-item {
+body.dark .menhera-container .emoji-item,
+body.dark .shuoshuo-content p,
+body.dark .iro-annotation-popup .explanation{
   color: var(--dark-text-secondary);
 }
 
@@ -230,7 +232,7 @@ body.dark .notice {
 }
 
 body.dark .notification {
-  background: rgb(26 26 26 / 60%);
+  background: var(--dark-bg-secondary);
   box-shadow: var(--dark-shadow-normal);
   color: var(--dark-text-primary);
   border: 1px solid var(--dark-border-color);
@@ -257,7 +259,7 @@ body.dark .aplayer.aplayer-fixed .aplayer-body,
 body.dark .aplayer .aplayer-miniswitcher,
 body.dark .aplayer .aplayer-pic {
   color: var(--dark-text-primary);
-  background-color: #262626 !important;
+  background-color: var(--dark-bg-secondary) !important;
 }
 
 body.dark #aplayer-float .aplayer-lrc-current {
@@ -544,10 +546,6 @@ body.dark .shuoshuo-item a,body.dark .shuoshuo-author-name{
   color: #BBB;
 }
 
-body.dark .shuoshuo-content p{
-  color: var(--dark-text-secondary);
-}
-
 body.dark .shuoshuo-avatar img {
   border-radius: 50%;
   border: 2px solid rgba(51, 51, 51, 0.7);
@@ -602,7 +600,9 @@ body.dark .nav-search-wrapper a,
 body.dark .nav-search-wrapper i,
 body.dark .header-user-menu a,
 body.dark .header-user-menu .header-user-name,
-body.dark .header-user-avatar a i{
+body.dark .header-user-avatar a i,
+body.dark .no-logged a,
+body.dark .iro-annotation-popup .term {
   color: var(--dark-text-primary);
   transition: all 0.4s ease-in-out;
 }
@@ -686,10 +686,6 @@ body.dark .top-social .inner img:hover {
   box-shadow: none!important;
 }
 
-body.dark .no-logged a {
-  color: var(--dark-text-primary);
-}
-
 body.dark #banner_wave_1,
 body.dark #banner_wave_2 {
   display: none;
@@ -764,4 +760,77 @@ body.dark input[type=reset],
 body.dark input[type=submit],
 body.dark .top-social .inner img:hover {
   box-shadow: none;
+}
+
+/* Dark mode styles */
+body.dark .steam-profile {
+  background: var(--dark-bg-secondary);
+  border: 1px solid var(--dark-border-color);
+  box-shadow: var(--dark-shadow-normal);
+}
+
+body.dark .steam-profile:hover {
+  box-shadow: var(--dark-shadow-hover);
+}
+
+body.dark .steam-profile-header {
+  background: rgba(30, 30, 30, 0.6);
+  border-bottom: 1px solid var(--dark-border-color);
+}
+
+body.dark .steam-avatar {
+  border-color: var(--dark-border-color);
+}
+
+body.dark .steam-username {
+  color: #e0e0e0;
+}
+
+body.dark .steam-username:hover {
+  color: var(--theme-skin-dark, var(--theme-skin-matching));
+}
+
+body.dark .steam-status {
+  background: rgba(50, 50, 50, 0.6);
+  color: #aaa;
+}
+
+body.dark .steam-status.status-在线,
+body.dark .steam-status.status-online,
+body.dark .steam-status.status-在線,
+body.dark .steam-status.status-オンライン {
+  background: rgba(66, 186, 150, 0.15);
+  color: #5ecfad;
+}
+
+body.dark .steam-status.status-离开,
+body.dark .steam-status.status-away,
+body.dark .steam-status.status-離開,
+body.dark .steam-status.status-退席中 {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffd54f;
+}
+
+body.dark .steam-game-name {
+  color: #e0e0e0;
+}
+
+body.dark .steam-game-name:hover {
+  color: var(--theme-skin-dark, var(--theme-skin-matching));
+}
+
+body.dark .steam-last-online {
+  color: #aaa;
+  border-top: 1px solid var(--dark-border-color);
+  background: rgba(30, 30, 30, 0.4);
+}
+
+body.dark .steam-error {
+  background: rgba(255, 193, 7, 0.05);
+  color: #ffd54f;
+  border-left: 4px solid #ffc107;
+}
+
+body.dark .iro-annotation-popup{
+  background-color: var(--dark-bg-secondary);
 }
