@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
  */
 function register_annotations_admin_page() {
     add_submenu_page(
-        'tools.php',                 // 父菜单slug
+        'edit.php',                  // 父菜单slug
         '文章注释管理',               // 页面标题
         '文章注释管理',               // 菜单标题
         'manage_options',            // 所需权限

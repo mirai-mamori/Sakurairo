@@ -289,11 +289,11 @@ namespace IROChatGPT {
         $annotations = get_post_meta($post->ID, 'iro_chatgpt_annotations', true);
         
         if (empty($annotations) || !is_array($annotations)) {
-            error_log("IROChatGPT: 文章 {$post->ID} 没有注释数据或数据格式不正确");
+            // error_log("IROChatGPT: 文章 {$post->ID} 没有注释数据或数据格式不正确");
             return $content;
         }
         
-        error_log("IROChatGPT: 文章 {$post->ID} 具有 " . count($annotations) . " 个注释");
+        // error_log("IROChatGPT: 文章 {$post->ID} 具有 " . count($annotations) . " 个注释");
 
         // 短代码占位
         $shortcode_placeholders = [];
@@ -345,7 +345,7 @@ namespace IROChatGPT {
             ]');
             
             // 调试信息
-            error_log("IROChatGPT: 找到 " . $textNodes->length . " 个文本节点");
+            // error_log("IROChatGPT: 找到 " . $textNodes->length . " 个文本节点");
             
             $annotationIndex = 1;
             $annotationMap = [];
@@ -387,7 +387,7 @@ namespace IROChatGPT {
             }
             
             if (!$termsFound) {
-                error_log("IROChatGPT: 未在内容中找到任何匹配的术语");
+                // error_log("IROChatGPT: 未在内容中找到任何匹配的术语");
                 return $content;
             }
             
@@ -402,7 +402,7 @@ namespace IROChatGPT {
                 $newContent = str_replace($token, $shortcode, $newContent);
             }
             
-            error_log("IROChatGPT: 成功处理注释标记，找到术语: " . implode(", ", array_keys($annotationMap)));
+            // error_log("IROChatGPT: 成功处理注释标记，找到术语: " . implode(", ", array_keys($annotationMap)));
             
             return $newContent;
         } catch (\Exception $e) {
