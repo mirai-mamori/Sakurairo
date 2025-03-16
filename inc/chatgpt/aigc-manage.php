@@ -48,8 +48,7 @@ function render_annotations_admin_page() {
     } elseif (isset($_POST['test_save']) && isset($_POST['post_id']) && check_admin_referer('iro_generate_annotations')) {
         $post_id = intval($_POST['post_id']);
         $test_data = array(
-            __('Test Term 1', 'sakurairo') => __('This is a test explanation 1', 'sakurairo'),
-            __('Test Term 2', 'sakurairo') => __('This is a test explanation 2', 'sakurairo')
+            __('Example Term', 'sakurairo') => __('This is a example explanation', 'sakurairo')
         );
         
         echo '<div class="notice notice-info is-dismissible"><p>' . sprintf(__('Attempting to save test data to post %d...', 'sakurairo'), $post_id) . '</p>';
@@ -145,7 +144,7 @@ function render_annotations_admin_page() {
                 <p class="submit">
                     <input type="submit" name="generate_annotations" class="button button-primary" value="<?php _e('Generate Annotations', 'sakurairo'); ?>">
                     <input type="submit" name="delete_annotations" class="button" value="<?php _e('Delete Annotations', 'sakurairo'); ?>" onclick="return confirm('<?php _e('Are you sure you want to delete the annotation data for this post?', 'sakurairo'); ?>');">
-                    <input type="submit" name="test_save" class="button" value="<?php _e('Test Save Data', 'sakurairo'); ?>" title="<?php _e('Test saving some data directly to the post custom field', 'sakurairo'); ?>">
+                    <input type="submit" name="test_save" class="button" value="<?php _e('Create empty data', 'sakurairo'); ?>" title="<?php _e('Create empty terms for your custom article', 'sakurairo'); ?>">
                 </p>
             </form>
         </div>
@@ -245,20 +244,53 @@ function render_annotations_admin_page() {
         <div id="annotation-modal" style="display:none; position:fixed; z-index:100000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.4);">
             <div style="background-color:#fefefe; margin:10% auto; padding:20px; border:1px solid #888; width:60%; max-width:800px;">
                 <span style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;" id="close-modal">&times;</span>
-                <h2 id="modal-title"><?php _e('Post Annotations', 'sakurairo'); ?></h2>
-                <div id="modal-content"></div>
+                <h2 id="modal-title"><?php _e('Post Annotations: ', 'sakurairo'); ?></h2>
+                <form id="annotations-form">
+                    <input type="hidden" name="post_id" id="current-post-id" value="">
+                    <table id="annotations-table" class="wp-list-table widefat fixed striped">
+                        <thead>
+                            <tr>
+                                <th><?php _e('Term', 'sakurairo'); ?></th>
+                                <th><?php _e('Explanation', 'sakurairo'); ?></th>
+                                <th><?php _e('Actions', 'sakurairo'); ?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <p>
+                        <button type="button" id="add-annotation"><?php _e('Add Annotation', 'sakurairo'); ?></button>
+                        <button type="submit" id="save-annotations"><?php _e('Save Annotations', 'sakurairo'); ?></button>
+                    </p>
+                </form>
             </div>
         </div>
         
         <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 查看注释详情
+            // 用于展示编辑表单的函数
+            function displayAnnotations(title, annotations, postId) {
+                document.getElementById('modal-title').textContent = <?php echo json_encode(__('Post Annotations: ', 'sakurairo')); ?> + title;
+                document.getElementById('current-post-id').value = postId;
+                let tbody = document.querySelector('#annotations-table tbody');
+                tbody.innerHTML = ''; // 清空原有内容
+                
+                // 根据已有注释渲染行
+                for (const term in annotations) {
+                    let tr = document.createElement('tr');
+                    tr.innerHTML = `<td><input type="text" name="term[]" value="${term}" /></td>
+                                    <td><textarea name="explanation[]">${annotations[term]}</textarea></td>
+                                    <td><button type="button" class="delete-row"><?php echo __('Delete', 'sakurairo'); ?></button></td>`;
+                    tbody.appendChild(tr);
+                }
+                document.getElementById('annotation-modal').style.display = 'block';
+            }
+
+            // 查看注解
             document.querySelectorAll('.view-annotations').forEach(function(link) {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const postId = this.dataset.postId;
-                    
-                    // AJAX请求获取注释数据
                     const xhr = new XMLHttpRequest();
                     xhr.open('GET', ajaxurl + '?action=get_post_annotations&post_id=' + postId);
                     xhr.onload = function() {
@@ -266,7 +298,7 @@ function render_annotations_admin_page() {
                             try {
                                 const response = JSON.parse(xhr.responseText);
                                 if (response.success) {
-                                    displayAnnotations(response.data.title, response.data.annotations);
+                                    displayAnnotations(response.data.title, response.data.annotations, postId);
                                 }
                             } catch (e) {
                                 console.error('Parsing response failed', e);
@@ -276,23 +308,63 @@ function render_annotations_admin_page() {
                     xhr.send();
                 });
             });
-            
-            // 显示注释模态框
-            function displayAnnotations(title, annotations) {
-                document.getElementById('modal-title').textContent = <?php echo json_encode(__('Post Annotations: ', 'sakurairo')); ?> + title;
+
+            // 添加新行
+            document.getElementById('add-annotation').addEventListener('click', function() {
+                let tbody = document.querySelector('#annotations-table tbody');
+                let tr = document.createElement('tr');
+                tr.innerHTML = `<td><input type="text" name="term[]" value="" /></td>
+                                <td><textarea name="explanation[]"></textarea></td>
+                                <td><button type="button" class="delete-row"><?php echo __('Delete', 'sakurairo'); ?></button></td>`;
+                tbody.appendChild(tr);
+            });
+
+            // 删除
+            document.querySelector('#annotations-table tbody').addEventListener('click', function(e) {
+                if (e.target && e.target.classList.contains('delete-row')) {
+                    e.target.closest('tr').remove();
+                }
+            });
+
+            // 提交
+            document.getElementById('annotations-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const postId = document.getElementById('current-post-id').value;
+                const terms = Array.from(document.querySelectorAll('input[name="term[]"]')).map(input => input.value.trim());
+                const explanations = Array.from(document.querySelectorAll('textarea[name="explanation[]"]')).map(textarea => textarea.value.trim());
                 
-                let content = '<table class="wp-list-table widefat fixed striped">';
-                content += '<thead><tr><th><?php _e('Term', 'sakurairo'); ?></th><th><?php _e('Explanation', 'sakurairo'); ?></th></tr></thead><tbody>';
-                
-                for (const term in annotations) {
-                    content += `<tr><td><strong>${term}</strong></td><td>${annotations[term]}</td></tr>`;
+                // 组装数据
+                let annotations = {};
+                for (let i = 0; i < terms.length; i++) {
+                    if (terms[i] !== '') {  // 排除空内容
+                        annotations[terms[i]] = explanations[i];
+                    }
                 }
                 
-                content += '</tbody></table>';
-                document.getElementById('modal-content').innerHTML = content;
-                document.getElementById('annotation-modal').style.display = 'block';
-            }
-            
+                // 请求
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', ajaxurl + '?action=update_post_annotations');
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        try {
+                            const response = JSON.parse(xhr.responseText);
+                            if (response.success) {
+                                alert('<?php echo __('Annotations updated successfully.', 'sakurairo'); ?>');
+                                document.getElementById('annotation-modal').style.display = 'none';
+                            } else {
+                                alert(response.data || '<?php echo __('Update failed.', 'sakurairo'); ?>');
+                            }
+                        } catch (e) {
+                            console.error('Parsing response failed', e);
+                        }
+                    }
+                };
+                // 构造参数
+                const params = `post_id=${postId}&annotations=${encodeURIComponent(JSON.stringify(annotations))}&_wpnonce=<?php echo wp_create_nonce('update_post_annotations_nonce'); ?>`;
+                xhr.send(params);
+            });
+
             // 关闭模态框
             document.getElementById('close-modal').addEventListener('click', function() {
                 document.getElementById('annotation-modal').style.display = 'none';
@@ -420,6 +492,40 @@ function ajax_get_post_annotations() {
     ]);
 }
 add_action('wp_ajax_get_post_annotations', __NAMESPACE__ . '\ajax_get_post_annotations');
+
+/**
+ * AJAX处理函数：更新文章注释数据
+ */
+function ajax_update_post_annotations() {
+    // 权限和 nonce 检查
+    if (!current_user_can('manage_options')) {
+        wp_send_json_error(__('Access denied', 'sakurairo'));
+    }
+    if (!isset($_POST['_wpnonce']) || !wp_verify_nonce($_POST['_wpnonce'], 'update_post_annotations_nonce')) {
+        wp_send_json_error(__('Access denied', 'sakurairo'));
+    }
+
+    $post_id = isset($_POST['post_id']) ? intval($_POST['post_id']) : 0;
+    if (!$post_id) {
+        wp_send_json_error(__('Invalid post ID', 'sakurairo'));
+    }
+    
+    // 获取并解析注释数据
+    $annotations = isset($_POST['annotations']) ? json_decode(stripslashes($_POST['annotations']), true) : null;
+    if (!is_array($annotations)) {
+        wp_send_json_error(__('Invalid annotations data', 'sakurairo'));
+    }
+    
+    // 更新文章注释数据
+    $result = update_post_meta($post_id, 'iro_chatgpt_annotations', $annotations);
+    if ($result === false) {
+        wp_send_json_error(__('Failed to update annotations', 'sakurairo'));
+    }
+    
+    wp_send_json_success(__('Annotations updated successfully', 'sakurairo'));
+}
+add_action('wp_ajax_update_post_annotations', __NAMESPACE__ . '\ajax_update_post_annotations');
+
 
 /**
  * 在文章编辑页面添加元框，显示注释数据
