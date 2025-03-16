@@ -102,7 +102,8 @@ namespace IROChatGPT {
     // 添加文章保存钩子，用于生成注释
     // add_action('save_post', __NAMESPACE__ . '\maybe_generate_annotations', 10, 3);
     // 添加内容过滤器，显示注释
-    add_filter('the_content', __NAMESPACE__ . '\display_term_annotations', 20);
+    // 时机9，提前于短代码处理
+    add_filter('the_content', __NAMESPACE__ . '\display_term_annotations', 9);
 
     /**
      * 当文章保存时，检查是否需要生成注释
@@ -301,6 +302,14 @@ namespace IROChatGPT {
         add_action('wp_footer', function() use ($annotations) {
             echo '<script>window.iroAnnotations = ' . json_encode($annotations) . ';</script>';
         });
+
+        // 短代码占位
+        $shortcode_placeholders = [];
+        $content = preg_replace_callback('/(\[\/?[^\]]+\])/', function($matches) use (&$shortcode_placeholders) {
+            $token = '###SHORTCODE_' . count($shortcode_placeholders) . '###';
+            $shortcode_placeholders[$token] = $matches[1];
+            return $token;
+        }, $content);
         
         // 处理内容，标记复杂名词
         $terms = array_keys($annotations);
@@ -320,7 +329,7 @@ namespace IROChatGPT {
             libxml_use_internal_errors($prev);
             
             $xpath = new \DOMXPath($dom);
-            $textNodes = $xpath->query('//text()[not(ancestor::script) and not(ancestor::style)]');
+            $textNodes = $xpath->query('//text()[not(ancestor::script) and not(ancestor::style) and not(ancestor::code) and not(ancestor::h1) and not(ancestor::h2) and not(ancestor::h3) and not(ancestor::h4) and not(ancestor::h5) and not(ancestor::h6)]');
             
             // 调试信息
             error_log("IROChatGPT: 找到 " . $textNodes->length . " 个文本节点");
@@ -375,6 +384,10 @@ namespace IROChatGPT {
             $newContent = preg_replace('/<\/?div[^>]*>/', '', $newContent);
             // 移除XML声明
             $newContent = preg_replace('/<\?xml[^>]+>/', '', $newContent);
+
+            foreach ($shortcode_placeholders as $token => $shortcode) {
+                $newContent = str_replace($token, $shortcode, $newContent);
+            }
             
             error_log("IROChatGPT: 成功处理注释标记，找到术语: " . implode(", ", array_keys($annotationMap)));
             
