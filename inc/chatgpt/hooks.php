@@ -294,14 +294,6 @@ namespace IROChatGPT {
         }
         
         error_log("IROChatGPT: 文章 {$post->ID} 具有 " . count($annotations) . " 个注释");
-        
-        // 添加注释脚本和样式
-        add_action('wp_footer', __NAMESPACE__ . '\add_annotations_script');
-        
-        // 将注释数据添加为全局变量
-        add_action('wp_footer', function() use ($annotations) {
-            echo '<script>window.iroAnnotations = ' . json_encode($annotations) . ';</script>';
-        });
 
         // 短代码占位
         $shortcode_placeholders = [];
@@ -329,7 +321,28 @@ namespace IROChatGPT {
             libxml_use_internal_errors($prev);
             
             $xpath = new \DOMXPath($dom);
-            $textNodes = $xpath->query('//text()[not(ancestor::script) and not(ancestor::style) and not(ancestor::code) and not(ancestor::h1) and not(ancestor::h2) and not(ancestor::h3) and not(ancestor::h4) and not(ancestor::h5) and not(ancestor::h6)]');
+            $textNodes = $xpath->query('//text()[
+                not(ancestor::script) and 
+                not(ancestor::style) and 
+                not(ancestor::a) and 
+                not(ancestor::header) and 
+                not(ancestor::nav) and 
+                not(ancestor::meting) and 
+                not(ancestor::img) and 
+                not(ancestor::video) and 
+                not(ancestor::audio) and 
+                not(ancestor::input) and 
+                not(ancestor::option) and 
+                not(ancestor::select) and 
+                not(ancestor::button) and 
+                not(ancestor::code) and 
+                not(ancestor::h1) and 
+                not(ancestor::h2) and 
+                not(ancestor::h3) and 
+                not(ancestor::h4) and 
+                not(ancestor::h5) and 
+                not(ancestor::h6)
+            ]');
             
             // 调试信息
             error_log("IROChatGPT: 找到 " . $textNodes->length . " 个文本节点");
@@ -396,138 +409,5 @@ namespace IROChatGPT {
             error_log("IROChatGPT 错误: " . $e->getMessage());
             return $content; // 出错时返回原内容
         }
-    }
-
-    /**
-     * 添加前端注释脚本和样式
-     */
-    function add_annotations_script() {
-        // 添加内联样式
-        ?>
-        <style>
-        .iro-term-annotation {
-            color: #e74c3c;
-            cursor: pointer;
-            font-size: 0.8em;
-            margin-left: 2px;
-            vertical-align: super;
-        }
-        .iro-annotation-popup {
-            position: absolute;
-            background: #fff;
-            border: 1px solid #ddd;
-            padding: 10px 15px;
-            border-radius: 4px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 9999;
-            max-width: 300px;
-            display: none;
-        }
-        .iro-annotation-popup .close {
-            position: absolute;
-            top: 5px;
-            right: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            color: #999;
-        }
-        .iro-annotation-popup .term {
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #333;
-        }
-        .iro-annotation-popup .explanation {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-        </style>
-        
-        <!-- 直接添加内联脚本以确保执行 -->
-        <script>
-        (function() {
-            console.log("IROChatGPT 注释脚本已加载");
-            
-            // 创建注释弹出层
-            function createAnnotationPopup() {
-                let popup = document.getElementById('iro-annotation-popup');
-                if (popup) return popup;
-                
-                popup = document.createElement('div');
-                popup.id = 'iro-annotation-popup';
-                popup.className = 'iro-annotation-popup';
-                popup.innerHTML = '<span class="close">×</span><div class="term"></div><div class="explanation"></div>';
-                document.body.appendChild(popup);
-                
-                popup.querySelector('.close').addEventListener('click', function() {
-                    popup.style.display = 'none';
-                });
-                
-                return popup;
-            }
-            
-            // 初始化注释功能
-            function initAnnotations() {
-                console.log("初始化注释功能");
-                createAnnotationPopup();
-                
-                // 检查注释数据
-                if (window.iroAnnotations) {
-                    console.log("找到注释数据:", Object.keys(window.iroAnnotations).length, "个术语");
-                } else {
-                    console.log("未找到注释数据");
-                    return;
-                }
-                
-                // 查找注释标记
-                const annotationMarks = document.querySelectorAll('.iro-term-annotation');
-                console.log("找到注释标记:", annotationMarks.length, "个");
-                
-                // 为所有注释标记添加点击事件
-                annotationMarks.forEach(mark => {
-                    mark.addEventListener('click', function(event) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        
-                        const term = this.getAttribute('data-term');
-                        if (window.iroAnnotations && window.iroAnnotations[term]) {
-                            const explanation = window.iroAnnotations[term];
-                            const popup = document.getElementById('iro-annotation-popup');
-                            
-                            popup.querySelector('.term').textContent = term;
-                            popup.querySelector('.explanation').textContent = explanation;
-                            
-                            const rect = this.getBoundingClientRect();
-                            popup.style.top = (window.pageYOffset + rect.bottom + 10) + 'px';
-                            popup.style.left = (rect.left - 50) + 'px';
-                            popup.style.display = 'block';
-                        }
-                    });
-                });
-                
-                // 点击其他区域关闭弹窗
-                document.addEventListener('click', function(event) {
-                    const popup = document.getElementById('iro-annotation-popup');
-                    if (popup && !event.target.closest('.iro-term-annotation, .iro-annotation-popup')) {
-                        popup.style.display = 'none';
-                    }
-                });
-            }
-            
-            // 在DOM加载完成后初始化
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initAnnotations);
-            } else {
-                initAnnotations();
-            }
-            
-            // 适配pjax
-            document.addEventListener('pjax:complete', initAnnotations);
-            
-            // 暴露初始化函数给全局使用
-            window.iroInitAnnotations = initAnnotations;
-        })();
-        </script>
-        <?php
     }
 }

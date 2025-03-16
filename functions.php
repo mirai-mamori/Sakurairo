@@ -3794,28 +3794,3 @@ function iro_get_post_annotations($post_id) {
     }
     return $annotations;
 }
-
-/**
- * 确保注释功能在pjax环境下正常工作
- */
-function iro_enqueue_pjax_annotation_support() {
-    if (is_singular() && get_option('iro_chatgpt_enabled', false)) {
-        $post_id = get_the_ID();
-        $annotations = get_post_meta($post_id, 'iro_chatgpt_annotations', true);
-        
-        if (!empty($annotations) && is_array($annotations)) {
-            // 添加注释数据
-            echo '<script>window.iroAnnotations = ' . json_encode($annotations) . ';</script>';
-            
-            // 初始化注释系统
-            echo '<script>
-            document.addEventListener("DOMContentLoaded", function() {
-                if (typeof window.iroInitAnnotations === "function") {
-                    window.iroInitAnnotations();
-                }
-            });
-            </script>';
-        }
-    }
-}
-add_action('wp_footer', 'iro_enqueue_pjax_annotation_support');
