@@ -198,7 +198,7 @@ namespace IROChatGPT {
             return [];
         }
         
-        $max_length = 3000;
+        $max_length = 7000;
         
         // 截取内容
         if (strlen($content) > $max_length) {

@@ -775,7 +775,7 @@ body.dark .steam-profile:hover {
 
 body.dark .steam-profile-header {
   background: rgba(30, 30, 30, 0.6);
-  border-bottom: 1px solid var(--dark-border-color);
+  border-bottom: 1px solid var(--dark-border-color) !important;
 }
 
 body.dark .steam-avatar {
@@ -821,7 +821,7 @@ body.dark .steam-game-name:hover {
 
 body.dark .steam-last-online {
   color: #aaa;
-  border-top: 1px solid var(--dark-border-color);
+  border-top: 1px solid var(--dark-border-color) !important;
   background: rgba(30, 30, 30, 0.4);
 }
 
