@@ -603,7 +603,7 @@ body.dark .header-user-menu .header-user-name,
 body.dark .header-user-avatar a i,
 body.dark .no-logged a,
 body.dark .iro-annotation-popup .term {
-  color: var(--dark-text-primary);
+  color: var(--dark-text-primary) !important;
   transition: all 0.4s ease-in-out;
 }
 
@@ -611,6 +611,12 @@ body.dark .iro-annotation-popup .term {
 body.dark nav .menu > li .sub-menu:hover,
 body.dark .header-user-menu:hover {
   background: rgba(0, 0, 0, 0.9) !important;
+  transition: all 0.4s ease-in-out;
+}
+
+body.dark .mo_toc_panel .user-menu-option a:hover,
+body.dark .header-user-menu a:hover{
+  background: var(--dark-bg-hover) !important;
   transition: all 0.4s ease-in-out;
 }
 
@@ -733,17 +739,6 @@ body.dark .post-footer > :not(section):hover,
 body.dark .post-footer > section > :hover {
   box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
   background: var(--dark-bg-hover);
-}
-
-/* 合并链接样式 */
-body.dark .site-branding a,
-body.dark .nav-search-wrapper a,
-body.dark .nav-search-wrapper i,
-body.dark .header-user-menu a,
-body.dark .header-user-menu .header-user-name,
-body.dark .header-user-avatar a i {
-  color: #cccccc;
-  transition: all 0.4s ease-in-out;
 }
 
 /* 合并用户名样式 */
