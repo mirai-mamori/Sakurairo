@@ -294,14 +294,6 @@ namespace IROChatGPT {
         }
         
         error_log("IROChatGPT: 文章 {$post->ID} 具有 " . count($annotations) . " 个注释");
-        
-        // 添加注释脚本和样式
-        add_action('wp_footer', __NAMESPACE__ . '\add_annotations_script');
-        
-        // 将注释数据添加为全局变量
-        add_action('wp_footer', function() use ($annotations) {
-            echo '<script>window.iroAnnotations = ' . json_encode($annotations) . ';</script>';
-        });
 
         // 短代码占位
         $shortcode_placeholders = [];
