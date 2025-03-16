@@ -67,10 +67,6 @@ body.dark .post-date, body.dark .post-meta {
   border: 1px solid var(--dark-border-color);
 }
 
-body.dark .ai-excerpt h4 {
-  border-bottom: 2px solid var(--theme-skin-dark);
-}
-
 body.dark .theme-info {
   border-top-color: rgba(255, 255, 255, 0.05);
 }

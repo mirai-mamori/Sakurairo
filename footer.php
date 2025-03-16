@@ -174,7 +174,7 @@ $reception_background = iro_opt('reception_background');
       width: 100vw;
       transition: none;
       pointer-events: none;
-      z-index: -10;
+      z-index: 0;
     }
     .current_blur {
       -webkit-backdrop-filter: saturate(120%) blur(8px);
