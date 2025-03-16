@@ -132,6 +132,6 @@ class Steam
         if ($timestamp == 0) {
             return '';
         }
-        return date('Y-m-d H:i:s', $timestamp);
+        return wp_date('Y-m-d H:i:s', $timestamp);
     }
 }
