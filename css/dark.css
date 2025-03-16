@@ -34,6 +34,10 @@ body.dark .comments {
   background: none !important;
 }
 
+body.dark a:hover{
+  color: var(--theme-skin-dark) !important;;
+}
+
 /* 输入框相关样式 */
 body.dark .search-form input {
   background: rgba(51, 51, 51, 0.8);
@@ -328,7 +332,6 @@ body.dark .butterBar-message,
 body.dark .aplayer .aplayer-list ol li:hover,
 body.dark .pattern-center:after,
 body.dark .aplayer .aplayer-list ol li.aplayer-list-light .aplayer-list-cur,
-body.dark .user-menu-option a:hover,
 body.dark .menu-list li:hover,
 body.dark .font-family-controls button:hover {
   background: var(--theme-skin-dark) !important;
@@ -341,7 +344,7 @@ body.dark .ins-section .ins-search-item:hover .ins-slug,
 body.dark .ins-section .ins-search-item:hover .ins-search-preview,
 body.dark .menhera-container .emoji-item:hover,
 body.dark .comment-respond .logged-in-as a:hover {
-  color: var(--article-theme-highlight,var(--theme-skin-matching));
+  color: var(--article-theme-highlight,var(--theme-skin-matching)) !important;
 }
 
 body.dark .entry-title a:hover,
@@ -351,12 +354,12 @@ body.dark .ins-section .ins-search-item:hover .ins-search-preview,
 body.dark .menhera-container .emoji-item:hover,
 body.dark .comment-respond .logged-in-as a:hover,
 body.dark .comment-respond .logged-in-as a:hover {
-  color: var(--article-theme-highlight,var(--theme-skin-matching));
+  color: var(--article-theme-highlight,var(--theme-skin-matching)) !important;
 }
 
 body.dark .the-feature.from_left_and_right a:hover .info p,
 body.dark .the-feature.from_left_and_right .info {
-  color: var(--exhibition_area_matching_color);
+  color: var(--exhibition_area_matching_color) !important;
 }
 
 body.dark .post-list-thumb:hover {
@@ -500,7 +503,6 @@ body.dark .comment-respond #cancel-comment-reply-link:hover {
 body.dark #pagination a:hover {
   background: var(--dark-bg-hover);
   box-shadow: 0 1px 10px -2px var(--theme-skin-matching);
-  color: var(--theme-skin-matching);
 }
 
 body.dark #pagination a {
