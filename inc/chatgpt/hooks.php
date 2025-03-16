@@ -329,7 +329,28 @@ namespace IROChatGPT {
             libxml_use_internal_errors($prev);
             
             $xpath = new \DOMXPath($dom);
-            $textNodes = $xpath->query('//text()[not(ancestor::script) and not(ancestor::style) and not(ancestor::code) and not(ancestor::h1) and not(ancestor::h2) and not(ancestor::h3) and not(ancestor::h4) and not(ancestor::h5) and not(ancestor::h6)]');
+            $textNodes = $xpath->query('//text()[
+                not(ancestor::script) and 
+                not(ancestor::style) and 
+                not(ancestor::a) and 
+                not(ancestor::header) and 
+                not(ancestor::nav) and 
+                not(ancestor::meting) and 
+                not(ancestor::img) and 
+                not(ancestor::video) and 
+                not(ancestor::audio) and 
+                not(ancestor::input) and 
+                not(ancestor::option) and 
+                not(ancestor::select) and 
+                not(ancestor::button) and 
+                not(ancestor::code) and 
+                not(ancestor::h1) and 
+                not(ancestor::h2) and 
+                not(ancestor::h3) and 
+                not(ancestor::h4) and 
+                not(ancestor::h5) and 
+                not(ancestor::h6)
+            ]');
             
             // 调试信息
             error_log("IROChatGPT: 找到 " . $textNodes->length . " 个文本节点");
