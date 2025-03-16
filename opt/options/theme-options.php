@@ -1,4 +1,5 @@
 <?php
+
 if( class_exists( 'Sakurairo_CSF' ) ) {
   $AVAIL_METADATA_ARTICLE_AREA = array(
     "author" => __("Author","sakurairo_csf"),
@@ -3608,6 +3609,14 @@ $prefix = 'iro_options';
     ),
         'desc' => __('Init Prompt instructs AI how to generate summaries for your articles. Init Prompt will be passed to ChatGPT as "system" role','sakurairo_csf'),
         'default' => '请以作者的身份，以激发好奇吸引阅读为目的，结合文章核心观点来提取的文章中最吸引人的内容，为以下文章编写一个用词精炼简短、110字以内、与文章语言一致的引言。'
+      ),
+
+      array(
+        'id' => 'chatgpt_annotations_prompt',
+        'type' => 'textarea',
+        'title' => __('ChatGPT Article Annotations Init Prompt','sakurairo_csf'),
+        'desc' => __('Init Prompt instructs AI how to generate annotations for your articles. Init Prompt will be passed to ChatGPT as "system" role','sakurairo_csf'),
+        'default' => "分析以下文章正文内容(排除标题及引语类文本)，用较为严格的标准识别并挑选出专业术语、复杂概念、生僻、网络黑话烂梗、事件(最高优先级，重点识别，并结合上下文提到的时间进行判断)、社会热点、网络热词、晦涩难懂、与文章语言不同的名词，并根据文章主要语言提供对应语言的简短解释。名词选取时需要考虑到时效性，优先解释新名词，同时排除日常常用的名词、非著名人物的人名，仅返回JSON格式，格式为：{\"术语1\":\"解释1\", \"术语2\":\"解释2\", ...}。至少返回5个最重要的术语，在保证高质量的情况下生成的越多越好：\n\n",
       ),
 
       array(
