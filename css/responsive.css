@@ -372,16 +372,6 @@
 
 /* 1080px 断点适配 */
 @media (max-width: 1080px) {
-  .post-footer,
-  .post-squares {
-    max-width: 800px;
-    width: 86%;
-  }
-
-  .post-squares {
-    margin-left: -43%;
-  }
-
   .comments {
     padding: 4% 0 0;
     padding-bottom: 80px;
@@ -398,11 +388,12 @@
   }
 
   .comment-respond {
-    width: 88% !important;
+    width: 91% !important;
   }
 
-  .site-footer {
-    padding: 30px;
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
   }
 
   .we-title:before {
@@ -411,8 +402,11 @@
 
   h3#comments-list-title,
   nav#comments-navi {
+    padding: 0 4%;
+  }
+
+  nav#comments-navi {
     width: 100%;
-    padding: 0 6.39%;
     max-width: 1245px;
   }
 }
@@ -466,6 +460,24 @@
   }
 }
 
+@media (max-width: 860px) {
+  .emotion-box {
+    position: relative;
+    box-shadow: none;
+    max-height: 0px;
+    left: 0!important;
+    top: 0!important;
+    width: 100%;
+    transition: all 0.3s ease-in-out !important;
+  }
+  .emotion-box.open {
+    max-height: 200px;
+  }
+  .emotion-header {
+    display: none;
+  }
+}
+
 /* 860px 断点适配 */
 @media (max-width: 860px) {
   /* Pattern Center 相关 */
@@ -506,14 +518,6 @@
   }
   .post-squares.post-squares-featured {
     display: none;
-  }
-  .post-squares {
-    overflow: hidden;
-    margin: auto;
-    background: #000;
-    left: 0;
-    width: 96% !important;
-    margin-left: 2% !important;
   }
 
   blockquote{
@@ -561,7 +565,7 @@
     margin-right: auto;
   }
   .comments .commentwrap {
-    padding: 0 6%;
+    padding: 0 4.5%;
   }
 
   /* Notice */
@@ -764,10 +768,6 @@
 
   .entry-content p {
     font-size: 16px;
-  }
-
-  .site-footer {
-    padding: 30px;
   }
 
   .author-box {

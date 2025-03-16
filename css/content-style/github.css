@@ -888,7 +888,7 @@
     width: 100% !important;
     height: 100% !important;
     min-width: 100% !important;
-    z-index: 9999999 !important;
+    z-index: 999 !important;
     margin: 0 !important;
     animation: elastic 1s !important
 }

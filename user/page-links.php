@@ -41,17 +41,18 @@ span.linkss-title {
 .links ul {
     margin-top: 50px;
     width: 100%;
-    display: inline-block;
+    display: inline-flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 /* 链接卡片基础样式 */
 .links ul li {
-    width: 22.5%;
+    width: 23.1%;
     float: left;
     box-shadow: 0 1px 30px -4px var(--link-card-shadow);
     background: var(--link-card-bg);
     padding: 12px;
-    margin: 10px;
     position: relative;
     overflow: hidden;
     border-radius: var(--link-card-border-radius);
@@ -122,7 +123,6 @@ span.linkss-title {
 	font-size: 20px;
 	font-weight: 600;
 	color: var(--theme-skin);
-	padding-left: 10px;
 	margin: 50px 0 10px;
 	position: relative;
 	display: inline-block;
@@ -137,7 +137,7 @@ span.linkss-title {
 	height: 0.7em;
 	background-color: var(--theme-skin-matching);
 	opacity: 0.4;
-	z-index: -1;
+	z-index: 0;
 	border-radius: 30px;
 	transition: all 0.3s ease;
 }
@@ -219,19 +219,19 @@ span.sitename {
 /* 平板设备 */
 @media (max-width: 1024px) and (min-width: 861px) {
     .links ul li {
-        width: 30.8%;
+        width: 31.7%;
     }
 }
 
 /* 移动设备 */
 @media (max-width: 860px) {
     .links ul li {
-        width: 45.5%;
+        width: 47.7%;
         max-width: 860px;
     }
     
     .links ul li:hover {
-        width: 45.5%;
+        width: 47.7%;
     }
     
     .links ul li:before {
@@ -248,7 +248,6 @@ span.sitename {
 @media (max-width: 480px) {
     .links ul li {
         width: 100%;
-        margin: 12px 0;
     }
     
     .submit-link-btn {
@@ -318,23 +317,26 @@ body.dark .link-form-submit:hover {
 .link-modal {
     display: none;
     position: fixed;
+    align-items: center;
     z-index: 9999;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: var(--modal-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
 .link-modal-content {
+    display: block;
     background-color: var(--form-bg);
     margin: 5% auto;
     padding: 25px;
     border-radius: 10px;
     max-width: 500px;
     width: 80%;
+    height: 80%;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     position: relative;
     animation: modalFadeIn 0.3s ease;
@@ -574,11 +576,10 @@ if ($link_align == 'right' || $link_align == 'center') {
 				</div>
 				
 				<div class="captcha-container">
-					<img id="captchaImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDM4IDM4IiBzdHJva2U9IiM2NjYiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMSAxKSIgc3Ryb2tlLXdpZHRoPSIyIj48Y2lyY2xlIHN0cm9rZS1vcGFjaXR5PSIuMyIgY3g9IjE4IiBjeT0iMTgiIHI9IjE4Ii8+PHBhdGggZD0iTTM2IDE4YzAtOS45NC04LjA2LTE4LTE4LTE4Ij48YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InJvdGF0ZSIgZnJvbT0iMCAxOCAxOCIgdG89IjM2MCAxOCAxOCIgZHVyPSIxcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz48L3BhdGg+PC9nPjwvZz48L3N2Zz4=" alt="验证码" title="点击刷新验证码">
+					<img id="captchaImg" src="" alt="验证码" title="点击刷新验证码">
 					<input type="text" id="yzm" name="yzm" placeholder="<?php _e('Verification Code', 'sakurairo'); ?>" required>
 					<input type="hidden" name="timestamp" id="timestamp" value="">
 					<input type="hidden" name="id" id="captchaId" value="">
-					<input type="hidden" id="captcha-endpoint" value="<?php echo esc_url(rest_url('sakura/v1/captcha/create')); ?>">
 				</div>
 				
 				<?php wp_nonce_field('link_submission_nonce', 'link_submission_nonce'); ?>

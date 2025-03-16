@@ -49,10 +49,7 @@ function get_smilies_panel() {
             $custom_push_smilies = '<div class="custom-container motion-container" style="display:block;">' . push_custom_smilies() . '</div>';
             break;
     }
-    return '<div id="emotion-toggle" class="no-select">
-                <i class="fa-regular fa-face-kiss-wink-heart"></i>
-            </div>
-            <div class="emotion-box no-select">
+    return '<div class="emotion-box no-select">
                 <div class="emotion-header no-select">' . __("Woooooow ヾ(≧∇≦*)ゝ", "sakurairo") . '</div>
                 <table class="motion-switcher-table">
                     <tr>' .
@@ -171,8 +168,18 @@ function get_smilies_panel() {
                 ? '<label class="siren-checkbox-label"><input class="siren-checkbox-radio" type="checkbox" name="mail-notify"><span class="siren-mail-notify-checkbox siren-checkbox-radioInput"></span>' . __('Comment reply notify', 'sakurairo') . '</label>'
                 : '';
             // 调用辅助函数生成表情面板
-            $smilies_panel = get_smilies_panel();
-
+            $smilies_box = get_smilies_panel();
+            $smilies_button = '<div id="emotion-toggle" class="no-select">
+                                <i class="fa-regular fa-face-kiss-wink-heart"></i>
+                            </div>';
+            $img_upload = '';
+            if (iro_opt('img_upload_api',false) == 'off' ? false : true) {
+                $img_upload = '<div class="insert-image-tips popup">
+                                    <i class="fa-regular fa-image"></i>
+                                    <span class="insert-img-popuptext" id="uploadTipPopup">上传图片</span>
+                                </div>
+                                <input id="upload-img-file" type="file" accept="image/*" multiple="multiple" class="insert-image-button">';
+            }
             function custom_comment_logged_in_as($defaults) { //移除表头以xx身份登录提示
                 $defaults['logged_in_as'] = '';
                 return $defaults;
@@ -189,10 +196,10 @@ function get_smilies_panel() {
                 'comment_field'     => '<div class="comment-textarea">
                                             <textarea placeholder="' . esc_attr(iro_opt('comment_placeholder_text')) . '" name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea>
                                             <label class="input-label">' . esc_html(iro_opt('comment_placeholder_text')) . '</label>
-                                        </div>
-                                        <div id="upload-img-show"></div>',
+                                        </div>' . $smilies_box . 
+                                        '<div id="upload-img-show"></div>',
                 'submit_button'     => '<div class="form-submit">
-                                            <input name="submit" type="submit" id="submit" class="submit" value=" ' . esc_attr(iro_opt('comment_submit_button_text')) . ' ">' . $smilies_panel . '
+                                            <input name="submit" type="submit" id="submit" class="submit" value=" ' . esc_attr(iro_opt('comment_submit_button_text')) . ' ">' . $smilies_button . $img_upload .'
                                             <label class="markdown-toggle">
                                                 <input type="checkbox" id="enable_markdown" name="enable_markdown">
                                                 <i class="fa-brands fa-markdown fa-sm"></i>

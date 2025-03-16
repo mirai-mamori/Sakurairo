@@ -17,6 +17,7 @@ if (iro_opt('theme_skin')) { ?>
     --theme-dm-background_transparency:<?=iro_opt('theme_darkmode_background_transparency')?>;
     --exhibition_area_matching_color:<?=iro_opt('exhibition_area_matching_color');?>;
     --inline_code_background_color_in_dark_mode:<?=iro_opt('inline_code_background_color_in_dark_mode');?>;
+    --front_background-transparency:<?=iro_opt('reception_background_transparency'); ?>;
 }
 
 /* 纪念模式 */
@@ -85,7 +86,7 @@ echo iro_opt('site_bg_as_cover',false)? 'background:#0000;':'';
     top: 0;
     left: 0;
     background: #ffffff;
-    z-index: 99999;
+    z-index: 999;
 }
 
 #preload li.active {
@@ -256,12 +257,13 @@ body.dark .headertop-down svg path
 {fill: <?=iro_opt('drop_down_arrow_dark_color'); ?> !important;transition: all 0.6s ease-in-out;}
 
 body.dark img,
-body.dark .centerbg,
 body.dark .highlight-wrap,
 body.dark iframe,
 body.dark .entry-content .aplayer,
 body.dark .post-thumb video
 {filter:brightness(<?=iro_opt('theme_darkmode_img_bright'); ?>);}
+
+body.dark #centerbg{backdrop-filter:brightness(<?=iro_opt('theme_darkmode_img_bright'); ?>);}
 
 /*字体*/
 
@@ -352,15 +354,11 @@ background-image: url(<?=iro_opt('search_area_background'); ?>);
 }
 
 .site-footer {
-background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparency'); ?>);
-<?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
-<?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
+background-color: rgba(255, 255, 255,var(--front_background-transparency,<?=iro_opt('reception_background_transparency'); ?>));
 }
 
 .wrapper {
-background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparency'); ?>);
-<?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
-<?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
+background-color: rgba(255, 255, 255,var(--front_background-transparency,<?=iro_opt('reception_background_transparency'); ?>));
 }
 
 /*首页圆角设置*/
@@ -852,7 +850,7 @@ if(iro_opt('cover_half_screen_curve',true)){
     content: '';
     width: 150%;
     height: 4.375rem;
-    background-color: rgba(255, 255, 255,<?=iro_opt('reception_background_transparency'); ?>);
+    background-color: rgba(255, 255, 255,var(--front_background-transparency,<?=iro_opt('reception_background_transparency'); ?>));
 <?php if (iro_opt('reception_background_blur', 'false')): ?> backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
 <?php if (iro_opt('reception_background_blur', 'false')): ?> -webkit-backdrop-filter: saturate(180%) blur(10px); <?php endif; ?>
     left: -25%;
