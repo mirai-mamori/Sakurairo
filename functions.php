@@ -2792,7 +2792,7 @@ function register_shortcodes() {
                 }
                 
                 if (($player['personastate'] ?? 0) === 0 && isset($player['lastlogoff'])) {
-                    $last_online = date('Y-m-d H:i', $player['lastlogoff']);
+                    $last_online = wp_date('Y-m-d H:i', $player['lastlogoff']);
                     $output .= '<div class="steam-last-online"><i class="fa-regular fa-clock"></i> ' . 
                         ($status_text['last_online'][$lang] ?? $status_text['last_online']['zh_CN']) . '：' . esc_attr($last_online) . '</div>';
                 }
