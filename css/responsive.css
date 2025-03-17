@@ -584,6 +584,20 @@
   .loadvideo {
     display: none;
   }
+
+  /* Footer */
+  .site-footer{
+    padding: 15px 0;
+  }
+
+  .site-info {
+    padding: 0 15px;
+  }
+
+  .comment-respond input[type=submit] {
+    width: 40%;
+    max-width: 140px;
+  }
 }
 
 /* 较小屏幕适配 */
