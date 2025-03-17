@@ -3620,6 +3620,17 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'chatgpt_max_tokens',
+        'type' => 'slider',
+        'title' => __('ChatGPT max tokens', 'sakurairo_csf'),
+        'desc' => __('Maximum number of words to be sent per segment', 'sakurairo_csf'),
+        'step' => '100',
+        'min' => '1000',
+        'max' => '32700',
+        'default' => '7000'
+      ),
+
+      array(
         'id' => 'chatgpt_model',
         'type' => 'text',
         'title' => __('ChatGPT Model','sakurairo_csf'),
