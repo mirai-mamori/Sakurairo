@@ -5,8 +5,8 @@ namespace IROChatGPT {
     use Exception;
     use WP_Post;
 
-    define("DEFAULT_INIT_PROMPT", "请以作者的身份，以激发好奇吸引阅读为目的，结合文章核心观点来提取的文章中最吸引人的内容，为以下文章编写一个用词精炼简短、110字以内、与文章语言一致的引言。");
-    define("DEFAULT_MODEL", "gpt-3.5-turbo");
+    define("DEFAULT_INIT_PROMPT", "请以作者的身份，以激发好奇吸引阅读为目的，结合文章核心观点来提取的文章中最吸引人的内容，为以下文章编写一个用词精炼简短、90字以内、与文章语言一致的引言。");
+    define("DEFAULT_MODEL", "gpt-4o-mini");
     define('POST_METADATA_KEY', "ai_summon_excerpt");
 
     function apply_chatgpt_hook()
@@ -65,7 +65,7 @@ namespace IROChatGPT {
                                          wp_strip_all_tags(apply_filters('the_content', $post->post_content))
                                      ),
                                      0,
-                                     4050
+                                     7000
                                  ),
                 ],
             ],
@@ -99,57 +99,7 @@ namespace IROChatGPT {
         return $decoded_chat->choices[0]->message->content;
     }
 
-    // 添加文章保存钩子，用于生成注释
-    // add_action('save_post', __NAMESPACE__ . '\maybe_generate_annotations', 10, 3);
-    // 添加内容过滤器，显示注释
-    // 时机9，提前于短代码处理
     add_filter('the_content', __NAMESPACE__ . '\display_term_annotations', 9);
-
-    /**
-     * 当文章保存时，检查是否需要生成注释
-     */
-    function maybe_generate_annotations($post_id, $post, $update) {
-        // 避免自动保存和修订版本
-        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
-        if (wp_is_post_revision($post_id)) return;
-        if (wp_is_post_autosave($post_id)) return;
-        
-        // 只处理文章和页面
-        if (!in_array($post->post_type, ['post', 'page'])) {
-            return;
-        }
-        
-        // 检查ChatGPT功能是否启用
-        if (!get_option('iro_chatgpt_enabled', false)) {
-            return;
-        }
-        
-        // 添加调试日志
-        error_log('IRO ChatGPT: 开始为文章 ' . $post_id . ' 生成注释');
-        
-        // 强制重新生成注释 (可根据需要修改为仅在内容变更时生成)
-        delete_post_meta($post_id, 'iro_chatgpt_annotations');
-        
-        // 异步生成注释，避免拖慢保存过程
-        wp_schedule_single_event(time(), 'iro_generate_post_annotations', array($post_id));
-    }
-
-    // 注册异步事件钩子
-    add_action('iro_generate_post_annotations', __NAMESPACE__ . '\process_scheduled_annotations');
-
-    /**
-     * 异步处理文章注释生成
-     */
-    function process_scheduled_annotations($post_id) {
-        $post = get_post($post_id);
-        if (!$post) {
-            error_log('IRO ChatGPT: 找不到ID为 ' . $post_id . ' 的文章');
-            return;
-        }
-        
-        error_log('IRO ChatGPT: 处理文章 ' . $post_id . ' 的注释生成');
-        generate_post_annotations($post);
-    }
 
     /**
      * 生成文章的复杂名词注释
@@ -190,7 +140,7 @@ namespace IROChatGPT {
         // 使用正确的选项名获取API配置
         $api_endpoint = iro_opt('chatgpt_endpoint', 'https://api.openai.com/v1/chat/completions');
         $api_key = iro_opt('chatgpt_access_token', '');
-        $model = iro_opt('chatgpt_model', 'gpt-3.5-turbo');
+        $model = iro_opt('chatgpt_model', 'gpt-4o-mini');
         
         // 如果找不到API密钥，返回空数组
         if (empty($api_key)) {
