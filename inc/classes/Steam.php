@@ -26,14 +26,32 @@ class Steam
         $key = $this->key;
         $url = "https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=$key&steamid=$id&include_appinfo=1&include_played_free_games=1&include_free_games=1";
 
-        $response = wp_remote_get($url);
-        
-        // 检查是否发生错误
-        if (is_wp_error($response)) {
-            return ['response' => ['games' => []]]; // 返回空游戏列表
+        $steam_cache = iro_opt('steam_cache', true);
+
+        if ($steam_cache) {
+            // 检查缓存
+            $cached_content = get_transient('steam_cache');
+            if (!empty($cached_content)){
+                $response = json_decode($cached_content,true);
+            } else {
+                $response = wp_remote_get($url)['body'];
+                if (is_wp_error($response)) {
+                    return ['response' => ['games' => []]]; // 返回空游戏列表
+                }
+                auto_update_cache('steam_cache',wp_remote_retrieve_body($response),true);
+            }
+        } else {
+            $response = wp_remote_get($url);
+
+            // 检查是否发生错误
+            if (is_wp_error($response)) {
+                return ['response' => ['games' => []]]; // 返回空游戏列表
+            }
+
+            $response = json_decode(wp_remote_retrieve_body($response),true);
         }
-        
-        $data = json_decode($response["body"], true);
+
+        $data = $response;
         
         // 按最后游玩时间排序
         if (isset($data['response']['games'])) {
