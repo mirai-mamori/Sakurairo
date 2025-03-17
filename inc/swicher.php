@@ -66,7 +66,6 @@ function font_end_js_control()
         'email_domain' => iro_opt('email_domain', ''),
         'email_name' => iro_opt('email_name', ''),
         'extract_theme_skin' => iro_opt('extract_theme_skin_from_cover', false)?true:false,
-        'extract_article_highlight' => iro_opt('extract_article_highlight_from_feature', false)?true:false,
         'ext_shared_lib' => iro_opt('external_vendor_lib'),
         'cookie_version_control' => iro_opt('cookie_version', ''),
         'qzone_autocomplete' => false,
@@ -76,6 +75,7 @@ function font_end_js_control()
         'qq_api_url' => rest_url('sakura/v1/qqinfo/json'),
         'land_at_home' => check(is_home()),
         'have_annotation' => check(get_post_meta(get_the_ID(), 'iro_chatgpt_annotations', true)), // 检查是否有注释
+        'post_theme_color' => function_exists('get_post_theme_color') ? (get_post_theme_color(get_the_ID()) ?: false) : false, // 尝试取色，否则返回false
         'page_annotation' => json_encode($annotations) ?? [],
         'live_search' => check(iro_opt('live_search')),
         'loading_ph' => iro_opt('load_in_svg'),
