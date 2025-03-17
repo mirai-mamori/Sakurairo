@@ -581,6 +581,10 @@ require get_template_directory() . '/inc/api.php';
  */
 require get_template_directory() . '/inc/template-tags.php';
 
+// 加载缓存设置页
+
+require get_template_directory() . '/inc/cache_settings.php';
+
 /**
  * Customizer功能
  * 仅在Customizer预览框架中和Customizer编辑器载入时加载
@@ -3725,6 +3729,11 @@ function iro_action_operator()
                     break;
             }
             $direct_url = 'https://myanimelist.net/animelist/' . (iro_opt('my_anime_list_username') ?: 'username') . '/load.json?' . $sort;
+            header("Location: $direct_url", true, 302);
+            break;
+        
+        case 'steam_library' :
+            $direct_url = 'https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=' . iro_opt('steam_key') .'&steamid=' . iro_opt('steam_id') .'&include_appinfo=1&include_played_free_games=1&include_free_games=1';
             header("Location: $direct_url", true, 302);
             break;
 
