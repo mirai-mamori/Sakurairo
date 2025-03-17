@@ -307,6 +307,14 @@ font-family: '<?php echo $nav_text_logo['font_name']; ?>';
 
 <?php } ?>
 
+<?php if(iro_opt('footer_direction','columns') == 'center'): ?>
+.footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+<?php endif; ?>
+
 .site-info,.site-info a{
 font-family:<?=iro_opt('footer_text_font'); ?> !important;
 }

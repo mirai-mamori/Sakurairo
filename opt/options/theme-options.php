@@ -902,6 +902,17 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id'    => 'footer_direction',
+        'type'  => 'select',
+        'title' => __('Footer Content Distribution','sakurairo_csf'),
+        'options'     => array(
+          'center'  => __('Center','sakurairo_csf'),
+          'columns'  => __('Two Columns','sakurairo_csf'),
+        ),
+        "default"=> "columns",
+      ),
+
+      array(
         'id' => 'footer_info',
         'type' => 'textarea',
         'title' => __('Footer Info','sakurairo_csf'),
