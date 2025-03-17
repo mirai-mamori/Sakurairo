@@ -35,6 +35,11 @@ function sakurairo_cache_page() {
     $steam_remaining = ($steam_expire_time > time()) ? $steam_expire_time - time() : 0;
 
     ?>
+    <h2><?php echo __('Cache settings','sakurairo') ?></h2>
+    <p><?php echo __('If your server network environment is poor, you can click the link below to manually obtain the response content and fill it in','sakurairo') ?></p>
+    <p><?php echo __('If the content is empty or incorrect, the server will try to automatically pull it','sakurairo') ?></p>
+    <p><?php echo __('The link target will be automatically updated after the relevant settings are saved','sakurairo') ?></p>
+    <p><a href="./admin.php?iro_act=bangumi" target="_blank">Bangumi</a> | <a href="./admin.php?iro_act=mal" target="_blank">MAL</a> | <a href="./admin.php?iro_act=steam_library" target="_blank">SteamLibrary</a> </p>
     <div class="wrap">
         <h1><?php __('Cache Settings','sakurairo'); ?></h1>
         <?php if (isset($_GET['updated'])) : ?>
