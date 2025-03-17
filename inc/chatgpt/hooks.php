@@ -148,7 +148,7 @@ namespace IROChatGPT {
             return [];
         }
         
-        $max_length = 7000;
+        $max_length = iro_opt("chatgpt_max_tokens",7000);
         
         // 截取内容
         $paragraphs = preg_split('/\n\s*\n/', $content);

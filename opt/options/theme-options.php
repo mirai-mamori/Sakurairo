@@ -902,6 +902,17 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id'    => 'footer_direction',
+        'type'  => 'select',
+        'title' => __('Footer Content Distribution','sakurairo_csf'),
+        'options'     => array(
+          'center'  => __('Center','sakurairo_csf'),
+          'columns'  => __('Two Columns','sakurairo_csf'),
+        ),
+        "default"=> "columns",
+      ),
+
+      array(
         'id' => 'footer_info',
         'type' => 'textarea',
         'title' => __('Footer Info','sakurairo_csf'),
@@ -2322,7 +2333,7 @@ $prefix = 'iro_options';
                               array( 'exhibition_area_style', '==', 'left_and_right', '', 'true' ),
                         ),
         'label' => __('Enabled by default, this option avoids the problem of misaligned display areas','sakurairo_csf'),
-        'default' => true
+        'default' => true,
       ),
 
       array(
@@ -2350,54 +2361,53 @@ $prefix = 'iro_options';
       ),
 
       array(
-    'id'        => 'exhibition',
-    'type'      => 'repeater',
-    'title'     => __('Display Area Content','sakurairo_csf'),
-    'fields'    => array(
-        array(
-            'id'   => 'img',
-            'type' => 'upload',
-            'title' => __('image', 'sakurairo_csf'),
-            'desc'  => __('best width 260px, best height 160px', 'sakurairo_csf'),
+        'id'        => 'exhibition',
+        'type'      => 'repeater',
+        'title'     => __('Display Area Content','sakurairo_csf'),
+        'fields'    => array(
+            array(
+                'id'   => 'img',
+                'type' => 'upload',
+                'title' => __('image', 'sakurairo_csf'),
+                'desc'  => __('best width 260px, best height 160px', 'sakurairo_csf'),
+            ),
+            array(
+                'id'    => 'title',
+                'type'  => 'text',
+                'title' => __('title', 'sakurairo_csf'),
+            ),
+            array(
+                'id'    => 'description',
+                'type'  => 'text',
+                'title' => __('description', 'sakurairo_csf'),
+            ),
+            array(
+                'id'    => 'link',
+                'type'  => 'text',
+                'title' => __('add URL', 'sakurairo_csf'),
+            ),
         ),
-        array(
-            'id'    => 'title',
-            'type'  => 'text',
-            'title' => __('title', 'sakurairo_csf'),
-        ),
-        array(
-            'id'    => 'description',
-            'type'  => 'text',
-            'title' => __('description', 'sakurairo_csf'),
-        ),
-        array(
-            'id'    => 'link',
-            'type'  => 'text',
-            'title' => __('add URL', 'sakurairo_csf'),
-        ),
-    ),
-    'default'   => array(
-        array(
-            'img' => $vision_resource_basepath . 'series/exhibition1.webp',
-            'title' => 'アカネチル',
-            'description' => 'それでも怖いなら、せめて明日を想う心だけ持って僕の傍に居てくれればいい',
-            'link' => '',
-        ),
-        array(
-            'img' => $vision_resource_basepath . 'series/exhibition2.webp',
-            'title' => '夏霞',
-            'description' => 'あの儚く散る花火の下で、馬鹿みたいに永遠を誓った',
-            'link' => '',
-        ),
-        array(
-            'img' => $vision_resource_basepath . 'series/exhibition3.webp',
-            'title' => '雪冴ゆる',
-            'description' => '独りぽっちの冴えない僕を暗闇から連れ出してくれた',
-            'link' => '',
-        ),
+        'default'   => array(
+            array(
+                'img' => $vision_resource_basepath . 'series/exhibition1.webp',
+                'title' => 'アカネチル',
+                'description' => 'それでも怖いなら、せめて明日を想う心だけ持って僕の傍に居てくれればいい',
+                'link' => '',
+            ),
+            array(
+                'img' => $vision_resource_basepath . 'series/exhibition2.webp',
+                'title' => '夏霞',
+                'description' => 'あの儚く散る花火の下で、馬鹿みたいに永遠を誓った',
+                'link' => '',
+            ),
+            array(
+                'img' => $vision_resource_basepath . 'series/exhibition3.webp',
+                'title' => '雪冴ゆる',
+                'description' => '独りぽっちの冴えない僕を暗闇から連れ出してくれた',
+                'link' => '',
+            ),
+        )
     )
-)
-
 
     )
   ) );
@@ -2922,21 +2932,8 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'bangumi_cache_content',
-        'type' => 'code_editor',
-        'title' => __('Bangumi cache content','sakurairo_csf'),
-        'desc' => __('Please clear the content when changing the source.','sakurairo_csf'),
-      ),
-
-      array(
         'type'    => 'content',
-        'content' => __('<strong>Attention: In case of poor network conditions, you can enable the caching feature.</strong>'
-        .'<br/><strong>Visit the animelist page</strong> to allow the system to try fetching the content.'
-        .'<br/> Alternatively, you can click the following link to manually obtain the response information.'
-        .'<br/> The link will be refreshed after the relevant settings are saved.'
-        .'<br/> <a href="./admin.php?iro_act=bangumi" target="_blank">Bangumi</a> | <a href="./admin.php?iro_act=mal" target="_blank">MAL</a>'
-        .'<br/> After obtaining the content, copy and paste it into the cache area, and then save.',
-        'sakurairo_csf'),
+        'content' => __('<a href="/wp-admin/admin.php?page=sakurairo_cache_setting" target="_blank">Click here to set cache content</a>','sakurairo_csf'),
       ),
 
       array(
@@ -3035,6 +3032,14 @@ $prefix = 'iro_options';
           'steamdb'  => __('SteamDB','sakurairo_csf'),
         ),
         'default'     => 'steam'
+      ),
+
+      array(
+        'id' => 'steam_cache',
+        'type' => 'switcher',
+        'title' => __('Use cached or pre-set responses','sakurairo_csf'),
+        'desc' => __('If the following content is empty, it will be automatically updated on first visit.','sakurairo_csf'),
+        'default' => false,
       ),
 
     )
@@ -3617,6 +3622,17 @@ $prefix = 'iro_options';
         'title' => __('ChatGPT Article Annotations Init Prompt','sakurairo_csf'),
         'desc' => __('Init Prompt instructs AI how to generate annotations for your articles. Init Prompt will be passed to ChatGPT as "system" role','sakurairo_csf'),
         'default' => "分析以下文章正文内容(排除标题及引语类文本)，用最认真的态度和较为严格的识别标准筛选出专业术语、复杂概念、事件、社会热点、网络黑话烂梗热词、晦涩难懂、与文章语言不同的名词，并根据文章主要语言提供对应语言的简短解释。若文章出现与“事件”，“热点”，“介绍”等具有提示上下文功能的含义的名词时，请务必用最高优先级在前后查找符合要求的名词。名词选取时需要排除日常常用的名词、非著名人物的人名。仅返回JSON格式，格式为：{\"术语1\":\"解释1\", \"术语2\":\"解释2\", ...}。注意不要出现在原文中并没有出现的名词，生成的名词越多越好：\n\n",
+      ),
+
+      array(
+        'id' => 'chatgpt_max_tokens',
+        'type' => 'slider',
+        'title' => __('ChatGPT max tokens', 'sakurairo_csf'),
+        'desc' => __('Maximum number of words to be sent per segment', 'sakurairo_csf'),
+        'step' => '100',
+        'min' => '1000',
+        'max' => '32700',
+        'default' => '7000'
       ),
 
       array(

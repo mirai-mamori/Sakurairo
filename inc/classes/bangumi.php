@@ -16,35 +16,23 @@ class BangumiAPI
 
         $this->userID = $userID;
         $this->collectionApi = $this->apiUrl . '/v0/users/' . $this->userID . '/collections';
+        $this->cache_content = get_transient('bangumi_cache');
     }
 
-    public function getCollections($isWatching = true, $isWatched = true)
+    public function getCollections()
     {
-        $bangumi_cache = iro_opt('bangumi_cache', true);
-
-        if ($bangumi_cache) {
-            $cached_content = iro_opt('bangumi_cache_content');
-            if ($cached_content) {
-
-                $collArr = json_decode($cached_content, true);
-
-                if (is_array($collArr) && isset($collArr[0]['name'])) {
-                    return $collArr;
-                    //验证数据格式是否正确（用户自行获取的未清洗）
-                }
-            }
-        }
 
         $collDataArr = [];
 
-        if ($isWatching) {
-            $collDataArr = array_merge($collDataArr, $this->fetchCollections(3));
-        }
+        $collDataArr = $this->fetchCollections();
 
-        if ($isWatched) {
-            $collDataArr = array_merge($collDataArr, $this->fetchCollections(2));
-        }
+        $collArr = $this->get_data($collDataArr);
 
+        return $collArr;
+    }
+
+    private function get_data($collDataArr)
+    {
         $collArr = [];
         foreach ($collDataArr as $value) {
             $collArr[] = [
@@ -58,30 +46,42 @@ class BangumiAPI
                 'ep_status' => $value['ep_status'] ?? 0,
             ];
         }
-
-        if ($bangumi_cache) {
-            iro_opt_update('bangumi_cache_content', stripslashes(json_encode($collArr, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)));
-        }
-
         return $collArr;
     }
 
-    private function fetchCollections($type)
+    private function fetchCollections()
     {
-        $collOffset = 0;
+        $bangumi_cache = iro_opt('bangumi_cache', true);
+        $cache_key = 'bangumi_cache';
         $collDataArr = [];
 
-        do {
-            $response = $this->http_get_contents($this->collectionApi . '?subject_type=2&type=' . $type . '&limit=50&offset=' . $collOffset);
-            $collData = json_decode($response, true);
-
-            if (isset($collData['data'])) {
-                $collDataArr = array_merge($collDataArr, $collData['data']);
+        if ($bangumi_cache) {
+            $cachedData = get_transient($cache_key);
+            $collData = $cachedData ?json_decode($cachedData, true) : null;
+    
+            if (!isset($collData['data']) || !is_array($collData['data'])) {
+                $collData = null;
             }
-
-            $collOffset += 50;
-        } while (!empty($collData['data']) && $collOffset < ($collData['total'] ?? 0));
-
+        } else {
+            $collData = null;
+        }
+    
+        if ($collData === null) {
+            $response = $this->http_get_contents($this->collectionApi);
+            $collData = json_decode($response, true);
+    
+            if (isset($collData['data']) && is_array($collData['data']) && $bangumi_cache) {
+                auto_update_cache($cache_key, $response);
+            }
+        }
+    
+        // 过滤符合条件的数据
+        if (isset($collData['data']) && is_array($collData['data'])) {
+            $collDataArr = array_filter($collData['data'], function($item) {
+                return in_array($item['type'], [2, 3]) && $item['subject_type'] == 2;
+            });
+        }
+    
         return $collDataArr;
     }
 
