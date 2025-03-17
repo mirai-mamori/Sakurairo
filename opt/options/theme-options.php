@@ -199,6 +199,14 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'extract_article_highlight_from_feature',
+        'type' => 'switcher',
+        'title' => __('Extract Article Highlight from Featured Image','sakurairo_csf'),
+        'label' => __('Default on, The colors displayed on the article page will be taken from the article featured image','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
         'id'      => 'theme_skin',
         'type'    => 'color',
         'title'   => __('Theme Color','sakurairo_csf'),
