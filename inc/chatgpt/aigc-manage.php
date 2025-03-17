@@ -11,9 +11,9 @@ if (!defined('ABSPATH')) {
  */
 function register_annotations_admin_page() {
     add_submenu_page(
-        'tools.php',                 // 父菜单slug
-        '文章注释管理',               // 页面标题
-        '文章注释管理',               // 菜单标题
+        'edit.php',                  // 父菜单slug
+        __('Article Annotations Management', 'sakurairo'),               // 页面标题
+        __('Article Annotations Management', 'sakurairo'),               // 菜单标题
         'manage_options',            // 所需权限
         'iro-term-annotations',      // 菜单slug
         __NAMESPACE__ . '\render_annotations_admin_page' // 回调函数
@@ -34,43 +34,42 @@ function render_annotations_admin_page() {
         $result = generate_annotations_for_post($post_id);
         
         if ($result) {
-            $message = '成功为文章生成注释！';
+            $message = __('Successfully generated annotations for the post!', 'sakurairo');
             $message_type = 'success';
         } else {
-            $message = '生成注释失败，请检查API设置或查看错误日志。';
+            $message = __('Failed to generate annotations. Please check API settings or view error logs.', 'sakurairo');
             $message_type = 'error';
         }
     } elseif (isset($_POST['delete_annotations']) && isset($_POST['post_id']) && check_admin_referer('iro_generate_annotations')) {
         $post_id = intval($_POST['post_id']);
         delete_post_meta($post_id, 'iro_chatgpt_annotations');
-        $message = '已删除文章的注释数据。';
+        $message = __('Annotations for the post have been deleted.', 'sakurairo');
         $message_type = 'warning';
     } elseif (isset($_POST['test_save']) && isset($_POST['post_id']) && check_admin_referer('iro_generate_annotations')) {
         $post_id = intval($_POST['post_id']);
         $test_data = array(
-            '测试术语1' => '这是一个测试解释1',
-            '测试术语2' => '这是一个测试解释2'
+            __('Example Term', 'sakurairo') => __('This is a example explanation', 'sakurairo')
         );
         
-        echo '<div class="notice notice-info is-dismissible"><p>尝试保存测试数据到文章 ' . $post_id . '...</p>';
+        echo '<div class="notice notice-info is-dismissible"><p>' . sprintf(__('Attempting to save test data to post %d...', 'sakurairo'), $post_id) . '</p>';
         
         $save_result = update_post_meta($post_id, 'iro_chatgpt_annotations', $test_data);
         
         if ($save_result === false) {
-            echo '<p>保存失败!</p>';
+            echo '<p>' . __('Save failed!', 'sakurairo') . '</p>';
         } else {
-            echo '<p>保存成功! 更新ID: ' . $save_result . '</p>';
+            echo '<p>' . sprintf(__('Save successful! Update ID: %s', 'sakurairo'), $save_result) . '</p>';
             
             // 尝试读取
             $read_result = get_post_meta($post_id, 'iro_chatgpt_annotations', true);
-            echo '<p>读取结果: ' . (is_array($read_result) ? '成功 (数组，包含 ' . count($read_result) . ' 项)' : '失败') . '</p>';
+            echo '<p>' . sprintf(__('Read result: %s', 'sakurairo'), (is_array($read_result) ? __('Success (array, contains ', 'sakurairo') . count($read_result) . __(' items)', 'sakurairo') : __('Failed', 'sakurairo'))) . '</p>';
             
             // 查询数据库状态
             global $wpdb;
             $query = $wpdb->prepare("SELECT * FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key = %s", $post_id, 'iro_chatgpt_annotations');
             $result = $wpdb->get_results($query);
             
-            echo '<p>数据库查询结果: ' . (count($result) > 0 ? '找到 ' . count($result) . ' 条记录' : '未找到记录') . '</p>';
+            echo '<p>' . sprintf(__('Database query result: %s', 'sakurairo'), (count($result) > 0 ? __('Found ', 'sakurairo') . count($result) . __(' records', 'sakurairo') : __('No records found', 'sakurairo'))) . '</p>';
         }
         
         echo '</div>';
@@ -91,7 +90,7 @@ function render_annotations_admin_page() {
     // 渲染页面
     ?>
     <div class="wrap">
-        <h1>文章注释管理</h1>
+        <h1><?php _e('Article Annotations Management', 'sakurairo'); ?></h1>
         
         <?php if (!empty($message)): ?>
             <div class="notice notice-<?php echo $message_type; ?> is-dismissible">
@@ -101,40 +100,40 @@ function render_annotations_admin_page() {
         
         <!-- 调试信息 -->
         <div class="card" style="max-width:800px; margin-bottom:20px; padding:10px 20px; background-color:#f7f7f7;">
-            <h2>系统信息</h2>
-            <p><strong>ChatGPT API设置状态</strong></p>
+            <h2><?php _e('System Information', 'sakurairo'); ?></h2>
+            <p><strong><?php _e('ChatGPT API Settings Status', 'sakurairo'); ?></strong></p>
             <pre style="background:#eee; padding:10px; overflow:auto;">
-API端点: <?php echo iro_opt('chatgpt_endpoint', '未设置'); ?>
-API密钥: <?php echo empty(iro_opt('chatgpt_access_token')) ? '未设置' : '已设置 (长度: ' . strlen(iro_opt('chatgpt_access_token')) . ')'; ?>
-模型: <?php echo iro_opt('chatgpt_model', '未设置'); ?>
+<?php _e('API Endpoint: ', 'sakurairo'); ?><?php echo iro_opt('chatgpt_endpoint', __('Not set', 'sakurairo')); ?>
+<?php _e('API Key: ', 'sakurairo'); ?><?php echo empty(iro_opt('chatgpt_access_token')) ? __('Not set', 'sakurairo') : __('Set (Length: ', 'sakurairo') . strlen(iro_opt('chatgpt_access_token')) . ')'; ?>
+<?php _e('Model: ', 'sakurairo'); ?><?php echo iro_opt('chatgpt_model', __('Not set', 'sakurairo')); ?>
             </pre>
         </div>
         
         <div class="card" style="max-width:800px; margin-bottom:20px; padding:10px 20px;">
-            <h2>关于文章注释</h2>
-            <p>本功能使用ChatGPT分析文章内容，识别复杂或专业术语，并自动为其生成解释注释。注释将显示在文章中，访客可点击查看解释。</p>
-            <p><strong>注意：</strong>此功能需要有效的OpenAI API密钥。</p>
+            <h2><?php _e('About Article Annotations', 'sakurairo'); ?></h2>
+            <p><?php _e('This feature uses ChatGPT to analyze the content of the post, identify complex or specialized terms, and automatically generate explanatory annotations. The annotations will be displayed in the post, and visitors can click to view explanations.', 'sakurairo'); ?></p>
+            <p><strong><?php _e('Note:', 'sakurairo'); ?></strong> <?php _e('This feature requires a valid OpenAI API key.', 'sakurairo'); ?></p>
             <?php 
             // 检查API设置
             $api_key = iro_opt('chatgpt_access_token', '');
             
             if (empty($api_key)) {
-                echo '<p style="color:red;">未设置API密钥，请先在主题设置中配置ChatGPT API密钥。</p>';
+                echo '<p style="color:red;">' . __('API key not set, please configure the ChatGPT API key in the theme settings first.', 'sakurairo') . '</p>';
             }
             ?>
         </div>
         
         <!-- 为文章生成注释 -->
         <div class="postbox" style="max-width:800px; margin-bottom:20px; padding:10px 20px;">
-            <h2>为文章生成注释</h2>
+            <h2><?php _e('Generate Annotations for Post', 'sakurairo'); ?></h2>
             <form method="post">
                 <?php wp_nonce_field('iro_generate_annotations'); ?>
                 <table class="form-table">
                     <tr>
-                        <th><label for="post_id">选择文章</label></th>
+                        <th><label for="post_id"><?php _e('Select Post', 'sakurairo'); ?></label></th>
                         <td>
                             <select name="post_id" id="post_id" required>
-                                <option value="">-- 选择文章 --</option>
+                                <option value=""><?php _e('-- Select Post --', 'sakurairo'); ?></option>
                                 <?php foreach ($all_posts as $p): ?>
                                     <option value="<?php echo $p->ID; ?>"><?php echo $p->post_title; ?> (ID: <?php echo $p->ID; ?>)</option>
                                 <?php endforeach; ?>
@@ -143,25 +142,25 @@ API密钥: <?php echo empty(iro_opt('chatgpt_access_token')) ? '未设置' : '�
                     </tr>
                 </table>
                 <p class="submit">
-                    <input type="submit" name="generate_annotations" class="button button-primary" value="生成注释">
-                    <input type="submit" name="delete_annotations" class="button" value="删除注释" onclick="return confirm('确定要删除此文章的注释数据吗？');">
-                    <input type="submit" name="test_save" class="button" value="测试保存数据" title="测试直接保存一些数据到文章自定义字段">
+                    <input type="submit" name="generate_annotations" class="button button-primary" value="<?php _e('Generate Annotations', 'sakurairo'); ?>">
+                    <input type="submit" name="delete_annotations" class="button" value="<?php _e('Delete Annotations', 'sakurairo'); ?>" onclick="return confirm('<?php _e('Are you sure you want to delete the annotation data for this post?', 'sakurairo'); ?>');">
+                    <input type="submit" name="test_save" class="button" value="<?php _e('Create empty data', 'sakurairo'); ?>" title="<?php _e('Create empty terms for your custom article', 'sakurairo'); ?>">
                 </p>
             </form>
         </div>
         
         <!-- 已生成注释的文章列表 -->
         <div class="postbox" style="max-width:800px; padding:10px 20px;">
-            <h2>已生成注释的文章</h2>
+            <h2><?php _e('Posts with Generated Annotations', 'sakurairo'); ?></h2>
             <?php if (empty($annotated_posts)): ?>
-                <p>目前没有文章包含注释数据。</p>
+                <p><?php _e('Currently, no posts contain annotation data.', 'sakurairo'); ?></p>
             <?php else: ?>
                 <table class="wp-list-table widefat fixed striped">
                     <thead>
                         <tr>
-                            <th>文章标题</th>
-                            <th>注释数量</th>
-                            <th>操作</th>
+                            <th><?php _e('Post Title', 'sakurairo'); ?></th>
+                            <th><?php _e('Number of Annotations', 'sakurairo'); ?></th>
+                            <th><?php _e('Actions', 'sakurairo'); ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -178,13 +177,13 @@ API密钥: <?php echo empty(iro_opt('chatgpt_access_token')) ? '未设置' : '�
                                 </td>
                                 <td><?php echo $annotation_count; ?></td>
                                 <td>
-                                    <a href="#" class="view-annotations" data-post-id="<?php echo $post->ID; ?>">查看注释</a> | 
-                                    <a href="<?php echo get_edit_post_link($post->ID); ?>" target="_blank">编辑文章</a> | 
+                                    <a href="#" class="view-annotations" data-post-id="<?php echo $post->ID; ?>"><?php _e('View Annotations', 'sakurairo'); ?></a> | 
+                                    <a href="<?php echo get_edit_post_link($post->ID); ?>" target="_blank"><?php _e('Edit Post', 'sakurairo'); ?></a> | 
                                     <form method="post" style="display:inline;">
                                         <?php wp_nonce_field('iro_generate_annotations'); ?>
                                         <input type="hidden" name="post_id" value="<?php echo $post->ID; ?>">
                                         <input type="hidden" name="debug" value="1">
-                                        <button type="submit" name="debug_annotations" class="button-link">调试信息</button>
+                                        <button type="submit" name="debug_annotations" class="button-link"><?php _e('Debug Information', 'sakurairo'); ?></button>
                                     </form>
                                 </td>
                             </tr>
@@ -201,21 +200,21 @@ API密钥: <?php echo empty(iro_opt('chatgpt_access_token')) ? '未设置' : '�
             $post = get_post($post_id);
             
             echo '<div class="notice notice-info is-dismissible">';
-            echo '<h3>文章 "' . esc_html($post->post_title) . '" (ID: ' . $post_id . ') 的注释调试信息</h3>';
+            echo '<h3>' . sprintf(__('Annotations Debug Information for post "%s" (ID: %d)', 'sakurairo'), esc_html($post->post_title), $post_id) . '</h3>';
             
             // 获取注释数据
             $annotations = get_post_meta($post_id, 'iro_chatgpt_annotations', true);
             
-            echo '<p><strong>数据类型:</strong> ' . gettype($annotations) . '</p>';
+            echo '<p><strong>' . __('Data Type:', 'sakurairo') . '</strong> ' . gettype($annotations) . '</p>';
             
             if (is_array($annotations)) {
-                echo '<p><strong>注释数量:</strong> ' . count($annotations) . '</p>';
-                echo '<p><strong>注释数据:</strong></p>';
+                echo '<p><strong>' . __('Number of Annotations:', 'sakurairo') . '</strong> ' . count($annotations) . '</p>';
+                echo '<p><strong>' . __('Annotation Data:', 'sakurairo') . '</strong></p>';
                 echo '<pre style="background:#f5f5f5; padding:10px; max-height:300px; overflow:auto;">';
                 print_r($annotations);
                 echo '</pre>';
             } else {
-                echo '<p><strong>注释数据:</strong> ' . var_export($annotations, true) . '</p>';
+                echo '<p><strong>' . __('Annotation Data:', 'sakurairo') . '</strong> ' . var_export($annotations, true) . '</p>';
             }
             
             // 检查数据库记录
@@ -225,12 +224,12 @@ API密钥: <?php echo empty(iro_opt('chatgpt_access_token')) ? '未设置' : '�
                 $post_id
             ));
             
-            echo '<p><strong>数据库记录:</strong> ' . count($meta_records) . ' 条</p>';
+            echo '<p><strong>' . __('Database Records:', 'sakurairo') . '</strong> ' . count($meta_records) . ' ' . __('records', 'sakurairo') . '</p>';
             
             if (!empty($meta_records)) {
                 foreach ($meta_records as $record) {
-                    echo '<p><strong>记录ID:</strong> ' . $record->meta_id . '</p>';
-                    echo '<p><strong>原始值:</strong></p>';
+                    echo '<p><strong>' . __('Record ID:', 'sakurairo') . '</strong> ' . $record->meta_id . '</p>';
+                    echo '<p><strong>' . __('Original Value:', 'sakurairo') . '</strong></p>';
                     echo '<div style="background:#f5f5f5; padding:10px; max-height:150px; overflow:auto;">';
                     echo esc_html(substr($record->meta_value, 0, 1000)) . (strlen($record->meta_value) > 1000 ? '...' : '');
                     echo '</div>';
@@ -245,20 +244,53 @@ API密钥: <?php echo empty(iro_opt('chatgpt_access_token')) ? '未设置' : '�
         <div id="annotation-modal" style="display:none; position:fixed; z-index:100000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.4);">
             <div style="background-color:#fefefe; margin:10% auto; padding:20px; border:1px solid #888; width:60%; max-width:800px;">
                 <span style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;" id="close-modal">&times;</span>
-                <h2 id="modal-title">文章注释</h2>
-                <div id="modal-content"></div>
+                <h2 id="modal-title"><?php _e('Post Annotations: ', 'sakurairo'); ?></h2>
+                <form id="annotations-form">
+                    <input type="hidden" name="post_id" id="current-post-id" value="">
+                    <table id="annotations-table" class="wp-list-table widefat fixed striped">
+                        <thead>
+                            <tr>
+                                <th><?php _e('Term', 'sakurairo'); ?></th>
+                                <th><?php _e('Explanation', 'sakurairo'); ?></th>
+                                <th><?php _e('Actions', 'sakurairo'); ?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <p>
+                        <button type="button" id="add-annotation"><?php _e('Add Annotation', 'sakurairo'); ?></button>
+                        <button type="submit" id="save-annotations"><?php _e('Save Annotations', 'sakurairo'); ?></button>
+                    </p>
+                </form>
             </div>
         </div>
         
         <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 查看注释详情
+            // 用于展示编辑表单的函数
+            function displayAnnotations(title, annotations, postId) {
+                document.getElementById('modal-title').textContent = <?php echo json_encode(__('Post Annotations: ', 'sakurairo')); ?> + title;
+                document.getElementById('current-post-id').value = postId;
+                let tbody = document.querySelector('#annotations-table tbody');
+                tbody.innerHTML = ''; // 清空原有内容
+                
+                // 根据已有注释渲染行
+                for (const term in annotations) {
+                    let tr = document.createElement('tr');
+                    tr.innerHTML = `<td><input type="text" name="term[]" value="${term}" /></td>
+                                    <td><textarea name="explanation[]">${annotations[term]}</textarea></td>
+                                    <td><button type="button" class="delete-row"><?php echo __('Delete', 'sakurairo'); ?></button></td>`;
+                    tbody.appendChild(tr);
+                }
+                document.getElementById('annotation-modal').style.display = 'block';
+            }
+
+            // 查看注解
             document.querySelectorAll('.view-annotations').forEach(function(link) {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const postId = this.dataset.postId;
-                    
-                    // AJAX请求获取注释数据
                     const xhr = new XMLHttpRequest();
                     xhr.open('GET', ajaxurl + '?action=get_post_annotations&post_id=' + postId);
                     xhr.onload = function() {
@@ -266,33 +298,73 @@ API密钥: <?php echo empty(iro_opt('chatgpt_access_token')) ? '未设置' : '�
                             try {
                                 const response = JSON.parse(xhr.responseText);
                                 if (response.success) {
-                                    displayAnnotations(response.data.title, response.data.annotations);
+                                    displayAnnotations(response.data.title, response.data.annotations, postId);
                                 }
                             } catch (e) {
-                                console.error('解析响应失败', e);
+                                console.error('Parsing response failed', e);
                             }
                         }
                     };
                     xhr.send();
                 });
             });
-            
-            // 显示注释模态框
-            function displayAnnotations(title, annotations) {
-                document.getElementById('modal-title').textContent = '文章注释: ' + title;
+
+            // 添加新行
+            document.getElementById('add-annotation').addEventListener('click', function() {
+                let tbody = document.querySelector('#annotations-table tbody');
+                let tr = document.createElement('tr');
+                tr.innerHTML = `<td><input type="text" name="term[]" value="" /></td>
+                                <td><textarea name="explanation[]"></textarea></td>
+                                <td><button type="button" class="delete-row"><?php echo __('Delete', 'sakurairo'); ?></button></td>`;
+                tbody.appendChild(tr);
+            });
+
+            // 删除
+            document.querySelector('#annotations-table tbody').addEventListener('click', function(e) {
+                if (e.target && e.target.classList.contains('delete-row')) {
+                    e.target.closest('tr').remove();
+                }
+            });
+
+            // 提交
+            document.getElementById('annotations-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const postId = document.getElementById('current-post-id').value;
+                const terms = Array.from(document.querySelectorAll('input[name="term[]"]')).map(input => input.value.trim());
+                const explanations = Array.from(document.querySelectorAll('textarea[name="explanation[]"]')).map(textarea => textarea.value.trim());
                 
-                let content = '<table class="wp-list-table widefat fixed striped">';
-                content += '<thead><tr><th>术语</th><th>解释</th></tr></thead><tbody>';
-                
-                for (const term in annotations) {
-                    content += `<tr><td><strong>${term}</strong></td><td>${annotations[term]}</td></tr>`;
+                // 组装数据
+                let annotations = {};
+                for (let i = 0; i < terms.length; i++) {
+                    if (terms[i] !== '') {  // 排除空内容
+                        annotations[terms[i]] = explanations[i];
+                    }
                 }
                 
-                content += '</tbody></table>';
-                document.getElementById('modal-content').innerHTML = content;
-                document.getElementById('annotation-modal').style.display = 'block';
-            }
-            
+                // 请求
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', ajaxurl + '?action=update_post_annotations');
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        try {
+                            const response = JSON.parse(xhr.responseText);
+                            if (response.success) {
+                                alert('<?php echo __('Annotations updated successfully.', 'sakurairo'); ?>');
+                                document.getElementById('annotation-modal').style.display = 'none';
+                            } else {
+                                alert(response.data || '<?php echo __('Update failed.', 'sakurairo'); ?>');
+                            }
+                        } catch (e) {
+                            console.error('Parsing response failed', e);
+                        }
+                    }
+                };
+                // 构造参数
+                const params = `post_id=${postId}&annotations=${encodeURIComponent(JSON.stringify(annotations))}&_wpnonce=<?php echo wp_create_nonce('update_post_annotations_nonce'); ?>`;
+                xhr.send(params);
+            });
+
             // 关闭模态框
             document.getElementById('close-modal').addEventListener('click', function() {
                 document.getElementById('annotation-modal').style.display = 'none';
@@ -399,19 +471,19 @@ function ajax_get_post_annotations() {
     $post_id = isset($_GET['post_id']) ? intval($_GET['post_id']) : 0;
     
     if (!$post_id) {
-        wp_send_json_error('无效的文章ID');
+        wp_send_json_error(__('Invalid post ID', 'sakurairo'));
     }
     
     $post = get_post($post_id);
     if (!$post) {
-        wp_send_json_error('找不到文章');
+        wp_send_json_error(__('Post not found', 'sakurairo'));
     }
     
     $annotations = get_post_meta($post_id, 'iro_chatgpt_annotations', true);
     error_log("IROChatGPT: 从文章 {$post_id} 获取注释数据: " . print_r($annotations, true));
     
     if (empty($annotations)) {
-        wp_send_json_error('该文章没有注释数据');
+        wp_send_json_error(__('This post does not have any annotation data', 'sakurairo'));
     }
     
     wp_send_json_success([
@@ -422,12 +494,46 @@ function ajax_get_post_annotations() {
 add_action('wp_ajax_get_post_annotations', __NAMESPACE__ . '\ajax_get_post_annotations');
 
 /**
+ * AJAX处理函数：更新文章注释数据
+ */
+function ajax_update_post_annotations() {
+    // 权限和 nonce 检查
+    if (!current_user_can('manage_options')) {
+        wp_send_json_error(__('Access denied', 'sakurairo'));
+    }
+    if (!isset($_POST['_wpnonce']) || !wp_verify_nonce($_POST['_wpnonce'], 'update_post_annotations_nonce')) {
+        wp_send_json_error(__('Access denied', 'sakurairo'));
+    }
+
+    $post_id = isset($_POST['post_id']) ? intval($_POST['post_id']) : 0;
+    if (!$post_id) {
+        wp_send_json_error(__('Invalid post ID', 'sakurairo'));
+    }
+    
+    // 获取并解析注释数据
+    $annotations = isset($_POST['annotations']) ? json_decode(stripslashes($_POST['annotations']), true) : null;
+    if (!is_array($annotations)) {
+        wp_send_json_error(__('Invalid annotations data', 'sakurairo'));
+    }
+    
+    // 更新文章注释数据
+    $result = update_post_meta($post_id, 'iro_chatgpt_annotations', $annotations);
+    if ($result === false) {
+        wp_send_json_error(__('Failed to update annotations', 'sakurairo'));
+    }
+    
+    wp_send_json_success(__('Annotations updated successfully', 'sakurairo'));
+}
+add_action('wp_ajax_update_post_annotations', __NAMESPACE__ . '\ajax_update_post_annotations');
+
+
+/**
  * 在文章编辑页面添加元框，显示注释数据
  */
 function add_annotations_meta_box() {
     add_meta_box(
         'iro_annotations_meta_box',    // 元框ID
-        '文章注释数据',                // 标题
+        __('Post Annotation Data', 'sakurairo'),                // 标题
         __NAMESPACE__ . '\render_annotations_meta_box', // 回调函数
         ['post', 'page'],              // 显示在文章和页面类型
         'normal',                      // 显示位置
@@ -443,13 +549,13 @@ function render_annotations_meta_box($post) {
     $annotations = get_post_meta($post->ID, 'iro_chatgpt_annotations', true);
     
     if (empty($annotations) || !is_array($annotations)) {
-        echo '<p>该文章暂无注释数据。您可以在 <a href="' . admin_url('tools.php?page=iro-term-annotations') . '">文章注释管理</a> 页面生成注释。</p>';
+        echo '<p>' . sprintf(__('This post currently does not have any annotation data. You can generate annotations on the <a href="%s">Article Annotations Management</a> page.', 'sakurairo'), admin_url('tools.php?page=iro-term-annotations')) . '</p>';
         return;
     }
     
     echo '<div style="max-height: 300px; overflow-y: auto;">';
     echo '<table class="widefat fixed striped">';
-    echo '<thead><tr><th>术语</th><th>解释</th></tr></thead>';
+    echo '<thead><tr><th>' . __('Term', 'sakurairo') . '</th><th>' . __('Explanation', 'sakurairo') . '</th></tr></thead>';
     echo '<tbody>';
     foreach ($annotations as $term => $explanation) {
         echo '<tr>';
@@ -458,6 +564,6 @@ function render_annotations_meta_box($post) {
         echo '</tr>';
     }
     echo '</tbody></table>';
-    echo '<p><a href="' . admin_url('tools.php?page=iro-term-annotations') . '" class="button">在注释管理页面编辑</a></p>';
+    echo '<p><a href="' . admin_url('tools.php?page=iro-term-annotations') . '" class="button">' . __('Edit in Annotations Management Page', 'sakurairo') . '</a></p>';
     echo '</div>';
 }

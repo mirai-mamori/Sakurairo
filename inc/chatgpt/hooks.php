@@ -201,80 +201,113 @@ namespace IROChatGPT {
         $max_length = 7000;
         
         // 截取内容
-        if (strlen($content) > $max_length) {
-            $content = substr($content, 0, $max_length);
+        $paragraphs = preg_split('/\n\s*\n/', $content);
+        $segments = [];
+        $current_segment = '';
+
+        foreach ($paragraphs as $paragraph) {
+            if (strlen($current_segment . "\n" . $paragraph) > $max_length) {
+                if (!empty(trim($current_segment))) {
+                    $segments[] = $current_segment;
+                }
+                $current_segment = $paragraph;
+            } else {
+                $current_segment .= "\n" . $paragraph;
+            }
         }
-        
-        // 构建提示词
-        $prompt = "分析以下文章正文内容(排除标题及引语类文本)，用最认真的态度和较为严格的识别标准筛选出专业术语、复杂概念、事件、社会热点、网络黑话烂梗热词、晦涩难懂、与文章语言不同的名词，并根据文章主要语言提供对应语言的简短解释。若文章出现与“事件”，“热点”，“介绍”等具有提示上下文功能的含义的名词时，请务必用最高优先级在前后查找符合要求的名词。名词选取时需要排除日常常用的名词、非著名人物的人名。仅返回JSON格式，格式为：{\"术语1\":\"解释1\", \"术语2\":\"解释2\", ...}。注意不要出现在原文中并没有出现的名词，生成的名词越多越好：\n\n" . $content;
-        
-        // API请求参数
-        $headers = [
-            'Content-Type: application/json',
-            'Authorization: Bearer ' . $api_key  // 修复这里的引号问题
-        ];
-        
-        $data = [
-            'model' => $model,
-            'messages' => [
-                ['role' => 'system', 'content' => '你是一个专业的文章分析助手，擅长识别文章中专业术语、复杂概念、事件、社会热点、网络黑话烂梗热词、晦涩难懂等内容并提供简明解释。'],
-                ['role' => 'user', 'content' => $prompt]
-            ],
-            'temperature' => 0.3,
-            'max_tokens' => 800
-        ];
-        
-        error_log('IROChatGPT: 发送API请求到 ' . $api_endpoint);
-        
-        // 发送请求
-        $ch = curl_init($api_endpoint);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        
-        $response = curl_exec($ch);
-        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        $err = curl_error($ch);
-        curl_close($ch);
-        
-        if ($err) {
-            error_log('IROChatGPT API Error: ' . $err);
-            return [];
+        if (!empty(trim($current_segment))) {
+            $segments[] = $current_segment;
         }
-        
-        error_log('IROChatGPT: API返回状态码: ' . $http_code);
-        
-        // 解析响应
-        $result = json_decode($response, true);
-        if (isset($result['choices'][0]['message']['content'])) {
-            $content = $result['choices'][0]['message']['content'];
-            
-            // 记录原始响应
-            error_log('IROChatGPT: API返回内容: ' . substr($content, 0, 200) . '...');
-            
-            // 尝试提取JSON部分
-            preg_match('/\{.*\}/s', $content, $matches);
-            if (!empty($matches[0])) {
-                $json_str = $matches[0];
+
+        $mh = curl_multi_init();
+        $curl_handles = [];
+
+        // 为每个分段构建请求
+        foreach ($segments as $index => $segment) {
+            // 构建每个分段的提示词
+            $prompt = iro_opt("chatgpt_annotations_prompt");
+            if (empty($prompt)) {
+                $prompt = "分析以下文章正文内容(排除标题及引语类文本)，用最认真的态度和较为严格的识别标准筛选出专业术语、复杂概念、事件、社会热点、网络黑话烂梗热词、晦涩难懂、与文章语言不同的名词，并根据文章主要语言提供对应语言的简短解释。若文章出现与“事件”，“热点”，“介绍”等具有提示上下文功能的含义的名词时，请务必用最高优先级在前后查找符合要求的名词。名词选取时需要排除日常常用的名词、非著名人物的人名。仅返回JSON格式，格式为：{\"术语1\":\"解释1\", \"术语2\":\"解释2\", ...}。注意不要出现在原文中并没有出现的名词，生成的名词越多越好：\n\n";
+            }
+            // 拼接提示词和分段内容
+            $full_prompt = $prompt . $segment;
+
+            // 构建请求数据
+            $data = [
+                'model' => $model,
+                'messages' => [
+                    [
+                        'role' => 'system', 
+                        'content' => '你是一个专业的文章分析助手，擅长识别文章中专业术语、复杂概念、事件、社会热点、网络黑话烂梗热词、晦涩难懂等内容并提供简明解释。'
+                    ],
+                    [
+                        'role' => 'user',
+                        'content' => $full_prompt
+                    ]
+                ],
+                'temperature' => 0.3,
+                'max_tokens' => 800
+            ];
+
+            // 设置 HTTP 请求头
+            $headers = [
+                'Content-Type: application/json',
+                'Authorization: Bearer ' . $api_key
+            ];
+
+            // 初始化单个curl
+            $ch = curl_init($api_endpoint);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+
+            // 添加到multi
+            curl_multi_add_handle($mh, $ch);
+            $curl_handles[$index] = $ch;
+        }
+
+        // 并发所有请求
+        $running = null;
+        do {
+            $status = curl_multi_exec($mh, $running);
+            usleep(100000);
+        } while ($running > 0 && $status == CURLM_OK);
+
+        // 整合所有响应
+        $annotations = [];
+        foreach ($curl_handles as $ch) {
+            $response = curl_multi_getcontent($ch);
+            // 记录部分日志
+            error_log('IROChatGPT: API返回响应: ' . substr($response, 0, 200) . '...');
+
+            $result = json_decode($response, true);
+            if (isset($result['choices'][0]['message']['content'])) {
+                $json_str = $result['choices'][0]['message']['content'];
                 error_log('IROChatGPT: 提取的JSON: ' . $json_str);
-                
-                $annotations = json_decode($json_str, true);
-                if (is_array($annotations) && !empty($annotations)) {
-                    error_log('IROChatGPT: 成功解析JSON，获取到 ' . count($annotations) . ' 个注释');
-                    return $annotations;
+                if (preg_match('/\{.*\}/s', $json_str, $matches)) {
+                    $segment_annotations = json_decode($matches[0], true);
+                }
+                if (is_array($segment_annotations)) {
+                    // 合并注释结果
+                    error_log('IROChatGPT: 成功解析JSON，获取到 ' . count($segment_annotations) . ' 个注释');
+                    $annotations = array_merge($annotations, $segment_annotations);
                 } else {
                     error_log('IROChatGPT: JSON解析失败: ' . json_last_error_msg());
                 }
             } else {
-                error_log('IROChatGPT: 未能从响应中提取JSON，原始响应: ' . $content);
+                error_log('IROChatGPT: 未能从响应中提取目标内容，响应内容: ' . $response);
             }
-        } else {
-            error_log('IROChatGPT: API响应格式无效，无法获取内容。响应: ' . substr($response, 0, 200) . '...');
+
+            // 移除并关闭句柄
+            curl_multi_remove_handle($mh, $ch);
+            curl_close($ch);
         }
-        
-        return [];
+        curl_multi_close($mh);
+
+        return $annotations;
     }
 
     /**
@@ -289,11 +322,11 @@ namespace IROChatGPT {
         $annotations = get_post_meta($post->ID, 'iro_chatgpt_annotations', true);
         
         if (empty($annotations) || !is_array($annotations)) {
-            error_log("IROChatGPT: 文章 {$post->ID} 没有注释数据或数据格式不正确");
+            // error_log("IROChatGPT: 文章 {$post->ID} 没有注释数据或数据格式不正确");
             return $content;
         }
         
-        error_log("IROChatGPT: 文章 {$post->ID} 具有 " . count($annotations) . " 个注释");
+        // error_log("IROChatGPT: 文章 {$post->ID} 具有 " . count($annotations) . " 个注释");
 
         // 短代码占位
         $shortcode_placeholders = [];
@@ -345,7 +378,7 @@ namespace IROChatGPT {
             ]');
             
             // 调试信息
-            error_log("IROChatGPT: 找到 " . $textNodes->length . " 个文本节点");
+            // error_log("IROChatGPT: 找到 " . $textNodes->length . " 个文本节点");
             
             $annotationIndex = 1;
             $annotationMap = [];
@@ -387,7 +420,7 @@ namespace IROChatGPT {
             }
             
             if (!$termsFound) {
-                error_log("IROChatGPT: 未在内容中找到任何匹配的术语");
+                // error_log("IROChatGPT: 未在内容中找到任何匹配的术语");
                 return $content;
             }
             
@@ -402,7 +435,7 @@ namespace IROChatGPT {
                 $newContent = str_replace($token, $shortcode, $newContent);
             }
             
-            error_log("IROChatGPT: 成功处理注释标记，找到术语: " . implode(", ", array_keys($annotationMap)));
+            // error_log("IROChatGPT: 成功处理注释标记，找到术语: " . implode(", ", array_keys($annotationMap)));
             
             return $newContent;
         } catch (\Exception $e) {
