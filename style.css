@@ -1861,7 +1861,7 @@ nav#comments-navi {
 }
 
 .comment .comment-reply-link {
-  font-size: 12px;
+  font-size: 13px;
   display: block;
   margin-left: 10px;
   float: right;
@@ -1869,18 +1869,16 @@ nav#comments-navi {
   color: #FFF;
   background-color: var(--article-theme-highlight,var(--theme-skin-matching));
   line-height: 20px;
-  padding: 0 6px;
-  border-radius: 3px;
+  padding: 1px 7px;
+  border-radius: 6px;
   opacity: 0;
   font-weight: var(--global-font-weight);
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
+  border: 1px solid var(--article-theme-highlight);
 }
 
 .comment .comment-reply-link:hover {
-  background-color: #7D7D7D;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
+  background-color: #fff;
+  color: var(--article-theme-highlight,var(--theme-skin-matching));
 }
 
 .comment .info {

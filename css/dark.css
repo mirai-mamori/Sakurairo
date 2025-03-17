@@ -714,6 +714,11 @@ body.dark::-webkit-scrollbar-track {
   background-color: var(--theme-skin);
 }
 
+body.dark .comment .comment-reply-link:hover {
+  background-color: var(--dark-bg-primary);
+  color: var(--article-theme-highlight,var(--theme-skin-matching));
+}
+
 /* 合并页面布局控件样式 */
 body.dark .toc,
 body.dark .post-footer > :not(section),
