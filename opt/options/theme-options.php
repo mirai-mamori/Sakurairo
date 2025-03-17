@@ -2322,7 +2322,7 @@ $prefix = 'iro_options';
                               array( 'exhibition_area_style', '==', 'left_and_right', '', 'true' ),
                         ),
         'label' => __('Enabled by default, this option avoids the problem of misaligned display areas','sakurairo_csf'),
-        'default' => true
+        'default' => true,
       ),
 
       array(
@@ -2350,54 +2350,53 @@ $prefix = 'iro_options';
       ),
 
       array(
-    'id'        => 'exhibition',
-    'type'      => 'repeater',
-    'title'     => __('Display Area Content','sakurairo_csf'),
-    'fields'    => array(
-        array(
-            'id'   => 'img',
-            'type' => 'upload',
-            'title' => __('image', 'sakurairo_csf'),
-            'desc'  => __('best width 260px, best height 160px', 'sakurairo_csf'),
+        'id'        => 'exhibition',
+        'type'      => 'repeater',
+        'title'     => __('Display Area Content','sakurairo_csf'),
+        'fields'    => array(
+            array(
+                'id'   => 'img',
+                'type' => 'upload',
+                'title' => __('image', 'sakurairo_csf'),
+                'desc'  => __('best width 260px, best height 160px', 'sakurairo_csf'),
+            ),
+            array(
+                'id'    => 'title',
+                'type'  => 'text',
+                'title' => __('title', 'sakurairo_csf'),
+            ),
+            array(
+                'id'    => 'description',
+                'type'  => 'text',
+                'title' => __('description', 'sakurairo_csf'),
+            ),
+            array(
+                'id'    => 'link',
+                'type'  => 'text',
+                'title' => __('add URL', 'sakurairo_csf'),
+            ),
         ),
-        array(
-            'id'    => 'title',
-            'type'  => 'text',
-            'title' => __('title', 'sakurairo_csf'),
-        ),
-        array(
-            'id'    => 'description',
-            'type'  => 'text',
-            'title' => __('description', 'sakurairo_csf'),
-        ),
-        array(
-            'id'    => 'link',
-            'type'  => 'text',
-            'title' => __('add URL', 'sakurairo_csf'),
-        ),
-    ),
-    'default'   => array(
-        array(
-            'img' => $vision_resource_basepath . 'series/exhibition1.webp',
-            'title' => 'アカネチル',
-            'description' => 'それでも怖いなら、せめて明日を想う心だけ持って僕の傍に居てくれればいい',
-            'link' => '',
-        ),
-        array(
-            'img' => $vision_resource_basepath . 'series/exhibition2.webp',
-            'title' => '夏霞',
-            'description' => 'あの儚く散る花火の下で、馬鹿みたいに永遠を誓った',
-            'link' => '',
-        ),
-        array(
-            'img' => $vision_resource_basepath . 'series/exhibition3.webp',
-            'title' => '雪冴ゆる',
-            'description' => '独りぽっちの冴えない僕を暗闇から連れ出してくれた',
-            'link' => '',
-        ),
+        'default'   => array(
+            array(
+                'img' => $vision_resource_basepath . 'series/exhibition1.webp',
+                'title' => 'アカネチル',
+                'description' => 'それでも怖いなら、せめて明日を想う心だけ持って僕の傍に居てくれればいい',
+                'link' => '',
+            ),
+            array(
+                'img' => $vision_resource_basepath . 'series/exhibition2.webp',
+                'title' => '夏霞',
+                'description' => 'あの儚く散る花火の下で、馬鹿みたいに永遠を誓った',
+                'link' => '',
+            ),
+            array(
+                'img' => $vision_resource_basepath . 'series/exhibition3.webp',
+                'title' => '雪冴ゆる',
+                'description' => '独りぽっちの冴えない僕を暗闇から連れ出してくれた',
+                'link' => '',
+            ),
+        )
     )
-)
-
 
     )
   ) );
@@ -2922,21 +2921,8 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'bangumi_cache_content',
-        'type' => 'code_editor',
-        'title' => __('Bangumi cache content','sakurairo_csf'),
-        'desc' => __('Please clear the content when changing the source.','sakurairo_csf'),
-      ),
-
-      array(
         'type'    => 'content',
-        'content' => __('<strong>Attention: In case of poor network conditions, you can enable the caching feature.</strong>'
-        .'<br/><strong>Visit the animelist page</strong> to allow the system to try fetching the content.'
-        .'<br/> Alternatively, you can click the following link to manually obtain the response information.'
-        .'<br/> The link will be refreshed after the relevant settings are saved.'
-        .'<br/> <a href="./admin.php?iro_act=bangumi" target="_blank">Bangumi</a> | <a href="./admin.php?iro_act=mal" target="_blank">MAL</a>'
-        .'<br/> After obtaining the content, copy and paste it into the cache area, and then save.',
-        'sakurairo_csf'),
+        'content' => __('<a href="/wp-admin/admin.php?page=sakurairo_cache_setting" target="_blank">Click here to set cache content</a>','sakurairo_csf'),
       ),
 
       array(
@@ -3035,6 +3021,14 @@ $prefix = 'iro_options';
           'steamdb'  => __('SteamDB','sakurairo_csf'),
         ),
         'default'     => 'steam'
+      ),
+
+      array(
+        'id' => 'steam_cache',
+        'type' => 'switcher',
+        'title' => __('Use cached or pre-set responses','sakurairo_csf'),
+        'desc' => __('If the following content is empty, it will be automatically updated on first visit.','sakurairo_csf'),
+        'default' => false,
       ),
 
     )
