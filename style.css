@@ -1924,7 +1924,7 @@ nav#comments-navi {
 .comment h4 img {
   display: none;
   border-radius: 3px;
-  margin-right: 5px;
+  margin: 0 5px;
   vertical-align: -4px;
 }
 
@@ -3156,7 +3156,8 @@ iframe {
   text-align: center;
   font-size: 12px;
   color: var(--article-theme-highlight,var(--theme-skin-matching));
-  border-radius: 3px;
+  border-radius: 6px;
+  padding: 1px 3px;
   font-weight: var(--global-font-weight, 400);
 }
 
