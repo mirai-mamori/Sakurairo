@@ -104,6 +104,10 @@ if(iro_opt('classify_display')){
   add_filter( 'pre_get_posts', 'classify_display' ); 
 }
 
+// 载入取色内容
+if(iro_opt('extract_article_highlight_from_feature',false)) {
+  require_once('theme_color.php');
+}
 
 /*
  * 评论添加@

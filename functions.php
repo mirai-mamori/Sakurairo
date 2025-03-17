@@ -3772,34 +3772,3 @@ function iro_action_operator()
     }
 }
 iro_action_operator();
-
-/**
- * 手动更新文章复杂名词注释
- */
-function iro_update_post_annotations($post_id) {
-    if (!function_exists('IROChatGPT\generate_post_annotations')) {
-        return false;
-    }
-    
-    $post = get_post($post_id);
-    if (!$post) {
-        return false;
-    }
-    
-    // 删除现有的注释，强制重新生成
-    delete_post_meta($post_id, 'iro_chatgpt_annotations');
-    
-    // 直接调用生成函数，不使用异步
-    return IROChatGPT\generate_post_annotations($post);
-}
-
-/**
- * 查看文章的注释内容（调试用）
- */
-function iro_get_post_annotations($post_id) {
-    $annotations = get_post_meta($post_id, 'iro_chatgpt_annotations', true);
-    if (empty($annotations)) {
-        return 'No annotations found';
-    }
-    return $annotations;
-}
