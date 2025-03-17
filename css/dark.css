@@ -240,7 +240,7 @@ body.dark .notification {
 
 body.dark .notification:hover {
   background: var(--dark-bg-hover);
-  box-shadow: 0 1px 20px 2px var(--theme-skin-dark) !important;
+  box-shadow: 0 1px 20px 2px var(--article-theme-highlight,var(--theme-skin-dark)) !important;
 }
 
 body.dark .author_info .avatar::after{
@@ -308,7 +308,7 @@ body.dark .toc {
 }
 
 body.dark .toc:hover {
-  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
+  box-shadow: 0 1px 30px -2px  var(--article-theme-highlight,var(--theme-skin-dark)) !important;
   background: #1a1a1acc;
 }
 
@@ -319,7 +319,7 @@ body.dark .post-footer>:not(section),body.dark .post-footer >section > * {
 }
 
 body.dark .post-footer>:not(section):hover,body.dark .post-footer >section > :hover {
-  box-shadow: 0 1px 30px -2px var(--theme-skin-dark);
+  box-shadow: 0 1px 30px -2px var(--article-theme-highlight,var(--theme-skin-dark)); 
   background: #1a1a1acc;
 }
 
@@ -345,16 +345,6 @@ body.dark .ins-section .ins-search-item:hover,
 body.dark .ins-section .ins-search-item:hover .ins-slug,
 body.dark .ins-section .ins-search-item:hover .ins-search-preview,
 body.dark .menhera-container .emoji-item:hover,
-body.dark .comment-respond .logged-in-as a:hover {
-  color: var(--article-theme-highlight,var(--theme-skin-matching)) !important;
-}
-
-body.dark .entry-title a:hover,
-body.dark .ins-section .ins-search-item:hover,
-body.dark .ins-section .ins-search-item:hover .ins-slug,
-body.dark .ins-section .ins-search-item:hover .ins-search-preview,
-body.dark .menhera-container .emoji-item:hover,
-body.dark .comment-respond .logged-in-as a:hover,
 body.dark .comment-respond .logged-in-as a:hover {
   color: var(--article-theme-highlight,var(--theme-skin-matching)) !important;
 }
@@ -731,22 +721,6 @@ body.dark .post-footer > section > * {
   box-shadow: var(--dark-shadow-normal);
   background: var(--dark-bg-secondary);
   border: 1.5px solid var(--dark-border-color);
-}
-
-/* 合并页面布局控件悬停效果 */
-body.dark .toc:hover,
-body.dark .post-footer > :not(section):hover,
-body.dark .post-footer > section > :hover {
-  box-shadow: 0 1px 30px -2px var(--theme-skin-dark) !important;
-  background: var(--dark-bg-hover);
-}
-
-/* 合并用户名样式 */
-body.dark .header-user-name-u,
-body.dark .header-user-name,
-body.dark .header-user-name .no-logged {
-  color: #fff;
-  background: none;
 }
 
 /* 移除不必要的阴影 */

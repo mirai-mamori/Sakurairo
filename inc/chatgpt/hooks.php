@@ -65,7 +65,7 @@ namespace IROChatGPT {
                                          wp_strip_all_tags(apply_filters('the_content', $post->post_content))
                                      ),
                                      0,
-                                     7000
+                                     iro_opt("chatgpt_max_tokens",7000)
                                  ),
                 ],
             ],

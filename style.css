@@ -1643,7 +1643,7 @@ h3#comments-list-title::after {
   left: 15%;
 	width: 70%;
 	height: 0.7em;
-	background-color: var(--theme-skin-matching);
+	background-color: var(--article-theme-highlight,var(--theme-skin-matching)) !important;
 	opacity: 0.4;
 	z-index: 0;
 	border-radius: 30px;
@@ -5665,7 +5665,7 @@ a.toc-link {
 }
 
 .is-active-link::before {
-  background-color: var(--theme-skin-matching, #505050);
+  background-color: var(--article-theme-highlight,var(--theme-skin-matching));
 }
 
 #footer-sponsor {

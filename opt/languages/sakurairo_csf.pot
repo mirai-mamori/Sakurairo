@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2025-03-13 18:21+0900\n"
+"POT-Creation-Date: 2025-03-17 19:59+0900\n"
 "PO-Revision-Date: 2021-06-26 16:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -218,15 +218,15 @@ msgstr ""
 msgid "Background Size"
 msgstr ""
 
-#: fields/background/background.php:219 options/theme-options.php:645
+#: fields/background/background.php:219 options/theme-options.php:654
 msgid "Cover"
 msgstr ""
 
-#: fields/background/background.php:220 options/theme-options.php:646
+#: fields/background/background.php:220 options/theme-options.php:655
 msgid "Contain"
 msgstr ""
 
-#: fields/background/background.php:221 options/theme-options.php:647 options/theme-options.php:871
+#: fields/background/background.php:221 options/theme-options.php:656 options/theme-options.php:880
 msgid "Auto"
 msgstr ""
 
@@ -286,7 +286,7 @@ msgstr ""
 msgid "Saturation"
 msgstr ""
 
-#: fields/background/background.php:278 options/theme-options.php:115
+#: fields/background/background.php:278 options/theme-options.php:116
 msgid "Color"
 msgstr ""
 
@@ -466,8 +466,8 @@ msgstr ""
 msgid "On"
 msgstr ""
 
-#: fields/switcher/switcher.php:21 options/theme-options.php:809 options/theme-options.php:869 options/theme-options.php:1132
-#: options/theme-options.php:3195 options/theme-options.php:3208 options/theme-options.php:3370
+#: fields/switcher/switcher.php:21 options/theme-options.php:818 options/theme-options.php:878 options/theme-options.php:1152
+#: options/theme-options.php:3208 options/theme-options.php:3221 options/theme-options.php:3383
 msgid "Off"
 msgstr ""
 
@@ -485,7 +485,7 @@ msgstr ""
 
 #: fields/typography/typography.php:124 fields/typography/typography.php:137 fields/typography/typography.php:150
 #: fields/typography/typography.php:164 fields/typography/typography.php:180 fields/typography/typography.php:193
-#: fields/typography/typography.php:207 fields/typography/typography.php:225 options/theme-options.php:668
+#: fields/typography/typography.php:207 fields/typography/typography.php:225 options/theme-options.php:677
 msgid "Default"
 msgstr ""
 
@@ -513,7 +513,7 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
-#: fields/typography/typography.php:176
+#: fields/typography/typography.php:176 options/theme-options.php:917
 msgid "Center"
 msgstr ""
 
@@ -645,746 +645,762 @@ msgstr ""
 msgid "Please enter a valid URL."
 msgstr ""
 
-#: options/theme-options.php:4
+#: options/theme-options.php:5
 msgid "Author"
 msgstr ""
 
-#: options/theme-options.php:5
+#: options/theme-options.php:6
 msgid "Category"
 msgstr ""
 
-#: options/theme-options.php:6
+#: options/theme-options.php:7
 msgid "Number of Comments"
 msgstr ""
 
-#: options/theme-options.php:7
+#: options/theme-options.php:8
 msgid "Number of Views"
 msgstr ""
 
-#: options/theme-options.php:8
+#: options/theme-options.php:9
 msgid "Number of Words"
 msgstr ""
 
-#: options/theme-options.php:9
+#: options/theme-options.php:10
 msgid "Estimate Reading Time"
 msgstr ""
 
-#: options/theme-options.php:17
+#: options/theme-options.php:18
 msgid "Publish Time (Relatively)"
 msgstr ""
 
-#: options/theme-options.php:18
+#: options/theme-options.php:19
 msgid "Last Edit Time (Relatively)"
 msgstr ""
 
-#: options/theme-options.php:19
+#: options/theme-options.php:20
 msgid "Action Edit (only displays while user has sufficient permissions)"
 msgstr ""
 
-#: options/theme-options.php:35
+#: options/theme-options.php:36
 msgid "iro-Options"
 msgstr ""
 
-#: options/theme-options.php:40
+#: options/theme-options.php:41
 msgid "Hello!"
 msgstr ""
 
-#: options/theme-options.php:46
+#: options/theme-options.php:47
 msgid "News+"
 msgstr ""
 
-#: options/theme-options.php:51
+#: options/theme-options.php:52
 msgid "<img src=\"https://news.maho.cc/sakurairo.php\"  alt=\"News_Plus\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:59
+#: options/theme-options.php:60
 msgid "Preliminary Options"
 msgstr ""
 
-#: options/theme-options.php:66
+#: options/theme-options.php:67
 msgid "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Preliminary/\">here</a> to learn how to set the options on this page"
 msgstr ""
 
-#: options/theme-options.php:72
+#: options/theme-options.php:73
 msgid "Personal Avatar"
 msgstr ""
 
-#: options/theme-options.php:73 options/theme-options.php:558 options/theme-options.php:1854 options/theme-options.php:1900
-#: options/theme-options.php:2078
+#: options/theme-options.php:74 options/theme-options.php:567 options/theme-options.php:1874 options/theme-options.php:1920
+#: options/theme-options.php:2098
 msgid "The best length-width ratio of is 1:1"
 msgstr ""
 
-#: options/theme-options.php:80
+#: options/theme-options.php:81
 msgid "Mashiro Special Effects Text"
 msgstr ""
 
-#: options/theme-options.php:81
+#: options/theme-options.php:82
 msgid "After turned on, the personal avatar will be replaced by the text as the home page display content"
 msgstr ""
 
-#: options/theme-options.php:88
+#: options/theme-options.php:89
 msgid "Mashiro Special Effects Text Options"
 msgstr ""
 
-#: options/theme-options.php:94 options/theme-options.php:523
+#: options/theme-options.php:95 options/theme-options.php:532
 msgid "Text"
 msgstr ""
 
-#: options/theme-options.php:95
+#: options/theme-options.php:96
 msgid "The text content should not be too long, and the recommended length is 16 bytes."
 msgstr ""
 
-#: options/theme-options.php:100
+#: options/theme-options.php:101
 msgid "Font"
 msgstr ""
 
-#: options/theme-options.php:101 options/theme-options.php:511 options/theme-options.php:607 options/theme-options.php:775
-#: options/theme-options.php:784 options/theme-options.php:915 options/theme-options.php:1504 options/theme-options.php:2170
+#: options/theme-options.php:102 options/theme-options.php:520 options/theme-options.php:616 options/theme-options.php:784
+#: options/theme-options.php:793 options/theme-options.php:935 options/theme-options.php:1524 options/theme-options.php:2190
 msgid "Fill in the font name. For example: Noto Serif SC"
 msgstr ""
 
-#: options/theme-options.php:106
+#: options/theme-options.php:107
 msgid "Size"
 msgstr ""
 
-#: options/theme-options.php:107
+#: options/theme-options.php:108
 msgid "Slide to adjust, the recommended value range is 70-90"
 msgstr ""
 
-#: options/theme-options.php:116 options/theme-options.php:1709 options/theme-options.php:2334
+#: options/theme-options.php:117 options/theme-options.php:1729 options/theme-options.php:2354
 msgid "Customize the colors, light colors are recommended"
 msgstr ""
 
-#: options/theme-options.php:129
+#: options/theme-options.php:130
 msgid "Navigation Menu Logo"
 msgstr ""
 
-#: options/theme-options.php:130
+#: options/theme-options.php:131
 msgid "The best size is 40px"
 msgstr ""
 
-#: options/theme-options.php:137
+#: options/theme-options.php:138
 msgid "Site Icon"
 msgstr ""
 
-#: options/theme-options.php:138
+#: options/theme-options.php:139
 msgid "Fill in the address, which decides the icon next to the title above the browser"
 msgstr ""
 
-#: options/theme-options.php:145
+#: options/theme-options.php:146
 msgid "Custom Site Keywords and Descriptions"
 msgstr ""
 
-#: options/theme-options.php:146
+#: options/theme-options.php:147
 msgid "After turning on, you can customize the site keywords and descriptions"
 msgstr ""
 
-#: options/theme-options.php:153
+#: options/theme-options.php:154
 msgid "Site Keywords"
 msgstr ""
 
-#: options/theme-options.php:155
+#: options/theme-options.php:156
 msgid "The keywords should be separated with half width comma \",\" and it's better to set within 5 keywords"
 msgstr ""
 
-#: options/theme-options.php:161
+#: options/theme-options.php:162
 msgid "Site Descriptions"
 msgstr ""
 
-#: options/theme-options.php:163
+#: options/theme-options.php:164
 msgid "Use concise words to describe the site, it is recommended to write within 120 words"
 msgstr ""
 
-#: options/theme-options.php:171
+#: options/theme-options.php:172
 msgid "Global Options"
 msgstr ""
 
-#: options/theme-options.php:177
+#: options/theme-options.php:178
 msgid "Appearance Options"
 msgstr ""
 
-#: options/theme-options.php:184
+#: options/theme-options.php:185
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Global/#%E5%A4%96%E8%A7%82%E8%AE%BE%E7%BD%AE\">here</a> to learn how to set "
 "the options on this page"
 msgstr ""
 
-#: options/theme-options.php:189
+#: options/theme-options.php:190
 msgid "Color Schemes"
 msgstr ""
 
-#: options/theme-options.php:195
+#: options/theme-options.php:196
 msgid "Extract Theme Color from Cover Image"
 msgstr ""
 
-#: options/theme-options.php:196
+#: options/theme-options.php:197
 msgid "Default on, Following options will be used as fallback (while cover image cannot be read by scripts)"
 msgstr ""
 
-#: options/theme-options.php:203
+#: options/theme-options.php:204
+msgid "Extract Article Highlight from Featured Image"
+msgstr ""
+
+#: options/theme-options.php:205
+msgid "Default on, The colors displayed on the article page will be taken from the article featured image"
+msgstr ""
+
+#: options/theme-options.php:212
 msgid "Theme Color"
 msgstr ""
 
-#: options/theme-options.php:204 options/theme-options.php:212 options/theme-options.php:225 options/theme-options.php:1103
-#: options/theme-options.php:1112 options/theme-options.php:3454 options/theme-options.php:3462 options/theme-options.php:3470
-#: options/theme-options.php:3478
+#: options/theme-options.php:213 options/theme-options.php:221 options/theme-options.php:234 options/theme-options.php:1123
+#: options/theme-options.php:1132 options/theme-options.php:3467 options/theme-options.php:3475 options/theme-options.php:3483
+#: options/theme-options.php:3491
 msgid "Customize the colors"
 msgstr ""
 
-#: options/theme-options.php:211
+#: options/theme-options.php:220
 msgid "Matching Color"
 msgstr ""
 
-#: options/theme-options.php:218
+#: options/theme-options.php:227
 msgid "Dark Mode"
 msgstr ""
 
-#: options/theme-options.php:224
+#: options/theme-options.php:233
 msgid "Dark Mode Theme Color"
 msgstr ""
 
-#: options/theme-options.php:231
+#: options/theme-options.php:240
 msgid "Automatically Switch to Dark Mode"
 msgstr ""
 
-#: options/theme-options.php:232 options/theme-options.php:1381
+#: options/theme-options.php:241 options/theme-options.php:1401
 msgid "Default on"
 msgstr ""
 
-#: options/theme-options.php:238
+#: options/theme-options.php:247
 msgid ""
 "<p><strong>Client local time:</strong>Dark mode will switch on automatically from 22:00 to 7:00</p><p><strong>Follow client settings:</"
 "strong>Follow client browser settings</p><p><strong>Always on:</strong>Always on, except being configured by the client</p>"
 msgstr ""
 
-#: options/theme-options.php:247
+#: options/theme-options.php:256
 msgid "Automatic Switch Strategy of Dark Mode"
 msgstr ""
 
-#: options/theme-options.php:250
+#: options/theme-options.php:259
 msgid "Client local time"
 msgstr ""
 
-#: options/theme-options.php:251
+#: options/theme-options.php:260
 msgid "Follow client settings"
 msgstr ""
 
-#: options/theme-options.php:252
+#: options/theme-options.php:261
 msgid "Always on"
 msgstr ""
 
-#: options/theme-options.php:260
+#: options/theme-options.php:269
 msgid "Dark Mode Image Brightness"
 msgstr ""
 
-#: options/theme-options.php:261 options/theme-options.php:272 options/theme-options.php:1450
+#: options/theme-options.php:270 options/theme-options.php:281 options/theme-options.php:1470
 msgid "Slide to adjust, the recommended value range is 0.6-0.8"
 msgstr ""
 
-#: options/theme-options.php:271
+#: options/theme-options.php:280
 msgid "Dark Mode Component Transparency"
 msgstr ""
 
-#: options/theme-options.php:282
+#: options/theme-options.php:291
 msgid "Dark mode Background Transparency"
 msgstr ""
 
-#: options/theme-options.php:283
+#: options/theme-options.php:292
 msgid ""
 "Slide to adjust, the recommended value range is 0.6-0.8. In order to ensure the best appearance, please keep the display of the "
 "frontend background image"
 msgstr ""
 
-#: options/theme-options.php:292
+#: options/theme-options.php:301
 msgid "Other Appearance Related"
 msgstr ""
 
-#: options/theme-options.php:298
+#: options/theme-options.php:307
 msgid "Commemorate Mode"
 msgstr ""
 
-#: options/theme-options.php:299
+#: options/theme-options.php:308
 msgid "After turning on, a black and white filter will be added to the global theme"
 msgstr ""
 
-#: options/theme-options.php:306
+#: options/theme-options.php:315
 msgid "Occupying SVG while Loading Control Units"
 msgstr ""
 
-#: options/theme-options.php:307
+#: options/theme-options.php:316
 msgid "Fill in the address, which is the SVG displayed when loading control units"
 msgstr ""
 
-#: options/theme-options.php:316
+#: options/theme-options.php:325
 msgid "Font Options"
 msgstr ""
 
-#: options/theme-options.php:323
+#: options/theme-options.php:332
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Global/#%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE\">here</a> to learn how to set "
 "the options on this page"
 msgstr ""
 
-#: options/theme-options.php:328
+#: options/theme-options.php:337
 msgid "Global"
 msgstr ""
 
-#: options/theme-options.php:334
+#: options/theme-options.php:343
 msgid "Non-Emphasis Text Weight"
 msgstr ""
 
-#: options/theme-options.php:335
+#: options/theme-options.php:344
 msgid "Slide to adjust, the recommended value range is 300-500"
 msgstr ""
 
-#: options/theme-options.php:345
+#: options/theme-options.php:354
 msgid "Text Font Size"
 msgstr ""
 
-#: options/theme-options.php:346 options/theme-options.php:1516
+#: options/theme-options.php:355 options/theme-options.php:1536
 msgid "Slide to adjust, the recommended value range is 15-18"
 msgstr ""
 
-#: options/theme-options.php:356
+#: options/theme-options.php:365
 msgid "External Fonts"
 msgstr ""
 
-#: options/theme-options.php:362
+#: options/theme-options.php:371
 msgid "Reference External Fonts"
 msgstr ""
 
-#: options/theme-options.php:363
+#: options/theme-options.php:372
 msgid "After turning on, you can use external fonts as the default font or other component fonts, but it may affect performance"
 msgstr ""
 
-#: options/theme-options.php:370
+#: options/theme-options.php:379
 msgid "External Font Options"
 msgstr ""
 
-#: options/theme-options.php:376
+#: options/theme-options.php:385
 msgid "Font 1 Name"
 msgstr ""
 
-#: options/theme-options.php:381
+#: options/theme-options.php:390
 msgid "Font 1 Link"
 msgstr ""
 
-#: options/theme-options.php:386
+#: options/theme-options.php:395
 msgid "Font 2 Name"
 msgstr ""
 
-#: options/theme-options.php:391
+#: options/theme-options.php:400
 msgid "Font 2 Link"
 msgstr ""
 
-#: options/theme-options.php:405
+#: options/theme-options.php:414
 msgid "Google Fonts Api Link"
 msgstr ""
 
-#: options/theme-options.php:412
+#: options/theme-options.php:421
 msgid "Google Fonts Name"
 msgstr ""
 
-#: options/theme-options.php:413
+#: options/theme-options.php:422
 msgid ""
 "Please make sure that the added fonts can be referenced in Google Fonts library. Fill in the font names. The added fonts must be "
 "preceded by \"|\". If multiple fonts are referenced, use \"|\" as the separator. If the font name has spaces, use a plus sign instead. "
 "For example: | zcool + xiaowei| Ma + Shan + Zheng"
 msgstr ""
 
-#: options/theme-options.php:421
+#: options/theme-options.php:430
 msgid "Navigation Menu Options"
 msgstr ""
 
-#: options/theme-options.php:428
+#: options/theme-options.php:437
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Global/#%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95%E8%AE%BE%E7%BD%AE\">here</a> to "
 "learn how to set the options on this page</br>Aou can edit your nav menu content <a href=\"/wp-admin/nav-menus.php\">here</a>"
 msgstr ""
 
-#: options/theme-options.php:434
+#: options/theme-options.php:443
 msgid "Nav Menu Style"
 msgstr ""
 
-#: options/theme-options.php:445
+#: options/theme-options.php:454
 msgid "Spirit Island Nav Style"
 msgstr ""
 
-#: options/theme-options.php:447 options/theme-options.php:486
+#: options/theme-options.php:456 options/theme-options.php:495
 msgid "Always centered"
 msgstr ""
 
-#: options/theme-options.php:448
+#: options/theme-options.php:457
 msgid "Dispersed"
 msgstr ""
 
-#: options/theme-options.php:457
+#: options/theme-options.php:466
 msgid "Nav Menu Radius"
 msgstr ""
 
-#: options/theme-options.php:458
+#: options/theme-options.php:467
 msgid "Slide to adjust, the recommended value is 50"
 msgstr ""
 
-#: options/theme-options.php:467
+#: options/theme-options.php:476
 msgid "Classic Nav Style"
 msgstr ""
 
-#: options/theme-options.php:473
+#: options/theme-options.php:482
 msgid "Apperance Style"
 msgstr ""
 
-#: options/theme-options.php:475
+#: options/theme-options.php:484
 msgid "Loose"
 msgstr ""
 
-#: options/theme-options.php:476
+#: options/theme-options.php:485
 msgid "Standered"
 msgstr ""
 
-#: options/theme-options.php:482
+#: options/theme-options.php:491
 msgid "Nav Menu Options Display Method"
 msgstr ""
 
-#: options/theme-options.php:484
+#: options/theme-options.php:493
 msgid "Keep to the left"
 msgstr ""
 
-#: options/theme-options.php:485
+#: options/theme-options.php:494
 msgid "Keep to the right"
 msgstr ""
 
-#: options/theme-options.php:492
+#: options/theme-options.php:501
 msgid "Menu option left and right spacing"
 msgstr ""
 
-#: options/theme-options.php:493
+#: options/theme-options.php:502
 msgid "You can manually adjust the option spacing to achieve more distribution effects, the default is 14"
 msgstr ""
 
-#: options/theme-options.php:510
+#: options/theme-options.php:519
 msgid "Nav Menu Font"
 msgstr ""
 
-#: options/theme-options.php:518
+#: options/theme-options.php:527
 msgid "Nav Menu Text Logo Options"
 msgstr ""
 
-#: options/theme-options.php:528
+#: options/theme-options.php:537
 msgid "Font Name"
 msgstr ""
 
-#: options/theme-options.php:540
+#: options/theme-options.php:549
 msgid "Switch Button of Random Images"
 msgstr ""
 
-#: options/theme-options.php:541
+#: options/theme-options.php:550
 msgid "Enabled by default, only show cover random image toggle button when cover is on"
 msgstr ""
 
-#: options/theme-options.php:548
+#: options/theme-options.php:557
 msgid "Nav User Menu"
 msgstr ""
 
-#: options/theme-options.php:549
+#: options/theme-options.php:558
 msgid "It is on by default. The user avatar and menu will be displayed."
 msgstr ""
 
-#: options/theme-options.php:556
+#: options/theme-options.php:565
 msgid "Nav Menu Unlisted User Avatar"
 msgstr ""
 
-#: options/theme-options.php:568
+#: options/theme-options.php:577
 msgid "Widgets Panel and Frontend Related Options"
 msgstr ""
 
-#: options/theme-options.php:575
+#: options/theme-options.php:584
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Global/"
 "#%E6%A0%B7%E5%BC%8F%E8%8F%9C%E5%8D%95%E5%92%8C%E5%89%8D%E5%8F%B0%E8%83%8C%E6%99%AF%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE\">here</a> to "
 "learn how to set the options on this page"
 msgstr ""
 
-#: options/theme-options.php:580
+#: options/theme-options.php:589
 msgid "Widgets Panel"
 msgstr ""
 
-#: options/theme-options.php:586
+#: options/theme-options.php:595
 msgid "Widgets Panel Button Radius"
 msgstr ""
 
-#: options/theme-options.php:587 options/theme-options.php:597
+#: options/theme-options.php:596 options/theme-options.php:606
 msgid "Slide to adjust, the recommended value is 10"
 msgstr ""
 
-#: options/theme-options.php:596
+#: options/theme-options.php:605
 msgid "Widgets Panel Widget Radius"
 msgstr ""
 
-#: options/theme-options.php:606
+#: options/theme-options.php:615
 msgid "Widgets Panel Font"
 msgstr ""
 
-#: options/theme-options.php:614
+#: options/theme-options.php:623
 msgid "Widgets Panel WP Widget Area"
 msgstr ""
 
-#: options/theme-options.php:615
+#: options/theme-options.php:624
 msgid "When turned on, the WP Widget Area will be displayed in Widgets Panel"
 msgstr ""
 
-#: options/theme-options.php:616
+#: options/theme-options.php:625
 msgid "You can edit it <a href=\"/wp-admin/widgets.php\"> here </a>"
 msgstr ""
 
-#: options/theme-options.php:623
+#: options/theme-options.php:632
 msgid "Widgets Panel Day&Night Switching"
 msgstr ""
 
-#: options/theme-options.php:624
+#: options/theme-options.php:633
 msgid "Enabled by default, the Day&Night Switching will be displayed in Widgets Panel"
 msgstr ""
 
-#: options/theme-options.php:631
+#: options/theme-options.php:640
 msgid "Widgets Panel Font Switching"
 msgstr ""
 
-#: options/theme-options.php:632
+#: options/theme-options.php:641
 msgid "Enabled by default, the Font Switching will be displayed in Widgets Panel"
 msgstr ""
 
-#: options/theme-options.php:638
+#: options/theme-options.php:647
 msgid "Frontend Background"
 msgstr ""
 
-#: options/theme-options.php:649
+#: options/theme-options.php:658
 msgid "Frontend Background Scaling Method"
 msgstr ""
 
-#: options/theme-options.php:650
+#: options/theme-options.php:659
 msgid "You can choose two ways to scale the frontend background, the default is auto-scaling"
 msgstr ""
 
-#: options/theme-options.php:657
+#: options/theme-options.php:666
 msgid "Background Transparency Blur"
 msgstr ""
 
-#: options/theme-options.php:658
+#: options/theme-options.php:667
 msgid "After opening Background Transparency Blur"
 msgstr ""
 
-#: options/theme-options.php:665
+#: options/theme-options.php:674
 msgid "Widgets Panel Background Switching(Frontend Background)"
 msgstr ""
 
-#: options/theme-options.php:674 options/theme-options.php:690 options/theme-options.php:706 options/theme-options.php:722
-#: options/theme-options.php:738
+#: options/theme-options.php:683 options/theme-options.php:699 options/theme-options.php:715 options/theme-options.php:731
+#: options/theme-options.php:747
 msgid "Image"
 msgstr ""
 
-#: options/theme-options.php:679
+#: options/theme-options.php:688
 msgid "Heart Shaped"
 msgstr ""
 
-#: options/theme-options.php:685 options/theme-options.php:701 options/theme-options.php:717 options/theme-options.php:733
+#: options/theme-options.php:694 options/theme-options.php:710 options/theme-options.php:726 options/theme-options.php:742
 msgid "Switch"
 msgstr ""
 
-#: options/theme-options.php:695
+#: options/theme-options.php:704
 msgid "Star Shaped"
 msgstr ""
 
-#: options/theme-options.php:711
+#: options/theme-options.php:720
 msgid "Square Shaped"
 msgstr ""
 
-#: options/theme-options.php:727
+#: options/theme-options.php:736
 msgid "Lemon Shaped"
 msgstr ""
 
-#: options/theme-options.php:758
+#: options/theme-options.php:767
 msgid "Background Transparency in the Frontend"
 msgstr ""
 
-#: options/theme-options.php:759
+#: options/theme-options.php:768
 msgid "Slide to adjust, the recommended sliding value range is 0.6-0.8"
 msgstr ""
 
-#: options/theme-options.php:768
+#: options/theme-options.php:777
 msgid "Frontend Font"
 msgstr ""
 
-#: options/theme-options.php:774
+#: options/theme-options.php:783
 msgid "Global Default Font/Widgets Panel Font Switching A"
 msgstr ""
 
-#: options/theme-options.php:782
+#: options/theme-options.php:791
 msgid "Widgets Panel Font Switching B"
 msgstr ""
 
-#: options/theme-options.php:793
+#: options/theme-options.php:802
 msgid "Footer Options"
 msgstr ""
 
-#: options/theme-options.php:800
+#: options/theme-options.php:809
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Global/#%E9%A1%B5%E5%B0%BE%E8%AE%BE%E7%BD%AE\">here</a> to learn how to set "
 "the options on this page"
 msgstr ""
 
-#: options/theme-options.php:806
+#: options/theme-options.php:815
 msgid "Footer Online Music Player"
 msgstr ""
 
-#: options/theme-options.php:807
+#: options/theme-options.php:816
 msgid ""
 "A button will appear at the bottom left corner of the footer after turning on, click it and the footer online player will be displayed"
 msgstr ""
 
-#: options/theme-options.php:810
+#: options/theme-options.php:819
 msgid "Netease Cloud Music"
 msgstr ""
 
-#: options/theme-options.php:811
+#: options/theme-options.php:820
 msgid "Kugou Music(may not be available)"
 msgstr ""
 
-#: options/theme-options.php:812
+#: options/theme-options.php:821
 msgid "QQ Music(may not be available)"
 msgstr ""
 
-#: options/theme-options.php:820
+#: options/theme-options.php:829
 msgid "Use custom Meting API or playlist"
 msgstr ""
 
-#: options/theme-options.php:822
+#: options/theme-options.php:831
 msgid ""
 "Enter a custom Meting-api, which can also point to a playlist file. However, the ID will only be effective if the playlist is specified"
 msgstr ""
 
-#: options/theme-options.php:827
+#: options/theme-options.php:836
 msgid ""
 "Click <a href=\"./admin.php?iro_act=playlist\" target=\"_blank\">here</a> to use the built-in meting-API to get the playlist info file "
 "template.Its content will be refreshed after the relevant settings are saved."
 msgstr ""
 
-#: options/theme-options.php:834
+#: options/theme-options.php:843
 msgid "Footer Online Music Player Proxy"
 msgstr ""
 
-#: options/theme-options.php:836
+#: options/theme-options.php:845
 msgid "Ex. http://127.0.0.1:8080. Reference: https://curl.se/libcurl/c/CURLOPT_PROXY.html"
 msgstr ""
 
-#: options/theme-options.php:843
+#: options/theme-options.php:852
 msgid "Footer Online Music Player Songlist ID"
 msgstr ""
 
-#: options/theme-options.php:845
+#: options/theme-options.php:854
 msgid "Fill in the song ID, e.g. https://music.163.com/#/playlist?id=5380675133 SongID:5380675133"
 msgstr ""
 
-#: options/theme-options.php:852
+#: options/theme-options.php:861
 msgid "Footer Online Music Player Mode"
 msgstr ""
 
-#: options/theme-options.php:854
+#: options/theme-options.php:863
 msgid "Select music player mode"
 msgstr ""
 
-#: options/theme-options.php:856
+#: options/theme-options.php:865
 msgid "List"
 msgstr ""
 
-#: options/theme-options.php:857
+#: options/theme-options.php:866
 msgid "Random"
 msgstr ""
 
-#: options/theme-options.php:865
+#: options/theme-options.php:874
 msgid "Footer Online Music Player Preload"
 msgstr ""
 
-#: options/theme-options.php:867
+#: options/theme-options.php:876
 msgid "Whether to preload songs"
 msgstr ""
 
-#: options/theme-options.php:870
+#: options/theme-options.php:879
 msgid "Preload Metadata"
 msgstr ""
 
-#: options/theme-options.php:879
+#: options/theme-options.php:888
 msgid "Default Volume of Footer Online Music Player"
 msgstr ""
 
-#: options/theme-options.php:881
+#: options/theme-options.php:890
 msgid "Slide to adjust, the recommended sliding value range is 0.4-0.6"
 msgstr ""
 
-#: options/theme-options.php:890
+#: options/theme-options.php:899
 msgid "Netease Cloud Music Cookies"
 msgstr ""
 
-#: options/theme-options.php:892
+#: options/theme-options.php:901
 msgid "If you want to play VIP music on Netease Cloud Music Platform, please fill in your account cookies in this option."
 msgstr ""
 
-#: options/theme-options.php:898
+#: options/theme-options.php:907
 msgid "Footer Sakura Icon"
 msgstr ""
 
-#: options/theme-options.php:899
+#: options/theme-options.php:908
 msgid "Enabled by default, sakura icon will appear on the footer"
 msgstr ""
 
-#: options/theme-options.php:906
+#: options/theme-options.php:915
+msgid "Footer Content Distribution"
+msgstr ""
+
+#: options/theme-options.php:918
+msgid "Two Columns"
+msgstr ""
+
+#: options/theme-options.php:926
 msgid "Footer Info"
 msgstr ""
 
-#: options/theme-options.php:907
+#: options/theme-options.php:927
 msgid "Footer description text, supports HTML code"
 msgstr ""
 
-#: options/theme-options.php:914
+#: options/theme-options.php:934
 msgid "Footer Text Font"
 msgstr ""
 
-#: options/theme-options.php:922
+#: options/theme-options.php:942
 msgid "Footer Load Occupancy Query"
 msgstr ""
 
-#: options/theme-options.php:923
+#: options/theme-options.php:943
 msgid "Load occupancy information will appear at the end of the page after turning it on. Not recommended in production environment."
 msgstr ""
 
-#: options/theme-options.php:930
+#: options/theme-options.php:950
 msgid "Footer Upyun League Logo"
 msgstr ""
 
-#: options/theme-options.php:931
+#: options/theme-options.php:951
 msgid "Upyun Logo will appear at the end of the page after turning it on"
 msgstr ""
 
-#: options/theme-options.php:939
+#: options/theme-options.php:959
 msgid "Footer Addition"
 msgstr ""
 
-#: options/theme-options.php:940
+#: options/theme-options.php:960
 msgid "Add HTML code at the end of the page. Useful for adding customize JavaScript."
 msgstr ""
 
-#: options/theme-options.php:945
+#: options/theme-options.php:965
 msgid "Hitokoto"
 msgstr ""
 
-#: options/theme-options.php:951
+#: options/theme-options.php:971
 msgid "Footer Hitokoto"
 msgstr ""
 
-#: options/theme-options.php:952
+#: options/theme-options.php:972
 msgid "Hitokoto will appear at the end of the page after turning it on"
 msgstr ""
 
-#: options/theme-options.php:959
+#: options/theme-options.php:979
 msgid ""
 "<h4>Hitokoto API Setup Instructions</h4> <p>Fill in as the example:<code> [\"https://v1.hitokoto.cn/\", \"https://v1.hitokoto.cn/\"]</"
 "code>, where the first API will be used first and the next ones will be the backup. </p> <p><strong>Official API:</strong> See the <a "
@@ -1392,419 +1408,419 @@ msgid ""
 "anything except JSON. <a href=\"https://v1.hitokoto.cn/\">https://v1.hitokoto.cn/</a></p>"
 msgstr ""
 
-#: options/theme-options.php:967
+#: options/theme-options.php:987
 msgid "Hitokoto API address"
 msgstr ""
 
-#: options/theme-options.php:969
+#: options/theme-options.php:989
 msgid "Fill in the address in JavaScript array format"
 msgstr ""
 
-#: options/theme-options.php:978
+#: options/theme-options.php:998
 msgid "Search Options"
 msgstr ""
 
-#: options/theme-options.php:985
+#: options/theme-options.php:1005
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Global/#%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E8%AE%BE%E7%BD%AE\">here</a> to "
 "learn how to set the options on this page"
 msgstr ""
 
-#: options/theme-options.php:991
+#: options/theme-options.php:1011
 msgid "Nav Menu Search"
 msgstr ""
 
-#: options/theme-options.php:992
+#: options/theme-options.php:1012
 msgid "It is on by default. Click to enter the search area"
 msgstr ""
 
-#: options/theme-options.php:999
+#: options/theme-options.php:1019
 msgid "Search Area Background Image"
 msgstr ""
 
-#: options/theme-options.php:1000
+#: options/theme-options.php:1020
 msgid "Set the background image of your search area. Leave this option blank to display a white background"
 msgstr ""
 
-#: options/theme-options.php:1009
+#: options/theme-options.php:1029
 msgid "Search Filter"
 msgstr ""
 
-#: options/theme-options.php:1010
+#: options/theme-options.php:1030
 msgid "When turned on, users can search using the search filter"
 msgstr ""
 
-#: options/theme-options.php:1017
+#: options/theme-options.php:1037
 msgid "Show shuoshuo in search results"
 msgstr ""
 
-#: options/theme-options.php:1024
+#: options/theme-options.php:1044
 msgid "Show pages in search results"
 msgstr ""
 
-#: options/theme-options.php:1031
+#: options/theme-options.php:1051
 msgid "Only administrators can search pages"
 msgstr ""
 
-#: options/theme-options.php:1041
+#: options/theme-options.php:1061
 msgid "Pinned contents will show at the top of the search results"
 msgstr ""
 
-#: options/theme-options.php:1048
+#: options/theme-options.php:1068
 msgid "Exclude some content in search results"
 msgstr ""
 
-#: options/theme-options.php:1049
+#: options/theme-options.php:1069
 msgid ""
 "Fill in the posts or pages IDs that need to be excluded, such as \"12,34\".Recommend to fill in the custom login page id,and you can "
 "get them from the edit page of those content."
 msgstr ""
 
-#: options/theme-options.php:1055
+#: options/theme-options.php:1075
 msgid "Live Search"
 msgstr ""
 
-#: options/theme-options.php:1056
+#: options/theme-options.php:1076
 msgid ""
 "After turning on the live search in the frontend, call Rest API to update the cache once an hour. You can set the cache time manually "
 "in api.php"
 msgstr ""
 
-#: options/theme-options.php:1063
+#: options/theme-options.php:1083
 msgid "Live Search Comment Support"
 msgstr ""
 
-#: options/theme-options.php:1065
+#: options/theme-options.php:1085
 msgid "Enable to search for comments in live search (not recommended if site has too many comments)"
 msgstr ""
 
-#: options/theme-options.php:1075
+#: options/theme-options.php:1095
 msgid "Additional Options"
 msgstr ""
 
-#: options/theme-options.php:1082
+#: options/theme-options.php:1102
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Global/#%E9%A2%9D%E5%A4%96%E8%AE%BE%E7%BD%AE\">here</a> to learn how to set "
 "the options on this page"
 msgstr ""
 
-#: options/theme-options.php:1087
+#: options/theme-options.php:1107
 msgid "Effects&Animations"
 msgstr ""
 
-#: options/theme-options.php:1093
+#: options/theme-options.php:1113
 msgid "Preload Animation"
 msgstr ""
 
-#: options/theme-options.php:1094
+#: options/theme-options.php:1114
 msgid "Preload animation before new pages load; To enable this option, ensure your page resources can load properly."
 msgstr ""
 
-#: options/theme-options.php:1101
+#: options/theme-options.php:1121
 msgid "Preload Animation Color A"
 msgstr ""
 
-#: options/theme-options.php:1110
+#: options/theme-options.php:1130
 msgid "Preload Animation Color B"
 msgstr ""
 
-#: options/theme-options.php:1118
+#: options/theme-options.php:1138
 msgid "Preload Animation Blur Transition Effect"
 msgstr ""
 
-#: options/theme-options.php:1120
+#: options/theme-options.php:1140
 msgid "Blur transition duration in milliseconds ms, off when set to 0."
 msgstr ""
 
-#: options/theme-options.php:1130
+#: options/theme-options.php:1150
 msgid "Sakura Falling Effects"
 msgstr ""
 
-#: options/theme-options.php:1133
+#: options/theme-options.php:1153
 msgid "Native Quantity"
 msgstr ""
 
-#: options/theme-options.php:1134
+#: options/theme-options.php:1154
 msgid "Quarter Quantity"
 msgstr ""
 
-#: options/theme-options.php:1135
+#: options/theme-options.php:1155
 msgid "Half Quantity"
 msgstr ""
 
-#: options/theme-options.php:1136
+#: options/theme-options.php:1156
 msgid "Less Quantity"
 msgstr ""
 
-#: options/theme-options.php:1144
+#: options/theme-options.php:1164
 msgid "Particles Effects"
 msgstr ""
 
-#: options/theme-options.php:1146
+#: options/theme-options.php:1166
 msgid ""
 "Particles effects will appear in the global background. Please open the Cover-and-Frontend-Background-Integration Options to get the "
 "best experience"
 msgstr ""
 
-#: options/theme-options.php:1154
+#: options/theme-options.php:1174
 msgid "Particles JSON"
 msgstr ""
 
-#: options/theme-options.php:1156
+#: options/theme-options.php:1176
 msgid ""
 "You can go to the <a href=\"https://vincentgarreau.com/particles.js/\">Project Address</a> to generate your unique Particles Effects"
 msgstr ""
 
-#: options/theme-options.php:1272
+#: options/theme-options.php:1292
 msgid "Feature"
 msgstr ""
 
-#: options/theme-options.php:1278
+#: options/theme-options.php:1298
 msgid "PJAX Partial Refresh"
 msgstr ""
 
-#: options/theme-options.php:1279
+#: options/theme-options.php:1299
 msgid "Enabled by default, clicking to a new page will not require reloading"
 msgstr ""
 
-#: options/theme-options.php:1286
+#: options/theme-options.php:1306
 msgid "Resources that still need refreshing in the footer after enabling PJAX"
 msgstr ""
 
-#: options/theme-options.php:1288
+#: options/theme-options.php:1308
 msgid ""
 "After enabling PJAX, custom content in the footer will not be refreshed on page navigation. You can specify paths for JavaScript and "
 "stylesheet resources that need to be reloaded on each page in the footer here, one per line. These resources will be reloaded once PJAX "
 "completes content loading."
 msgstr ""
 
-#: options/theme-options.php:1294
+#: options/theme-options.php:1314
 msgid "NProgress Loading Progress Bar"
 msgstr ""
 
-#: options/theme-options.php:1295
+#: options/theme-options.php:1315
 msgid "Enabled by default, when loading page there will be a progress bar alert"
 msgstr ""
 
-#: options/theme-options.php:1302
+#: options/theme-options.php:1322
 msgid "Global Smooth Scroll"
 msgstr ""
 
-#: options/theme-options.php:1303
+#: options/theme-options.php:1323
 msgid "Enabled by default, page scrolling will be smoother"
 msgstr ""
 
-#: options/theme-options.php:1310
+#: options/theme-options.php:1330
 msgid "Pagination Mode"
 msgstr ""
 
-#: options/theme-options.php:1312
+#: options/theme-options.php:1332
 msgid "Ajax Load"
 msgstr ""
 
-#: options/theme-options.php:1313
+#: options/theme-options.php:1333
 msgid "Page Up/Down"
 msgstr ""
 
-#: options/theme-options.php:1321
+#: options/theme-options.php:1341
 msgid "Next Page Auto Load"
 msgstr ""
 
-#: options/theme-options.php:1324
+#: options/theme-options.php:1344
 msgid "0 Sec"
 msgstr ""
 
-#: options/theme-options.php:1325
+#: options/theme-options.php:1345
 msgid "1 Sec"
 msgstr ""
 
-#: options/theme-options.php:1326
+#: options/theme-options.php:1346
 msgid "2 Sec"
 msgstr ""
 
-#: options/theme-options.php:1327
+#: options/theme-options.php:1347
 msgid "3 Sec"
 msgstr ""
 
-#: options/theme-options.php:1328
+#: options/theme-options.php:1348
 msgid "4 Sec"
 msgstr ""
 
-#: options/theme-options.php:1329
+#: options/theme-options.php:1349
 msgid "5 Sec"
 msgstr ""
 
-#: options/theme-options.php:1330
+#: options/theme-options.php:1350
 msgid "6 Sec"
 msgstr ""
 
-#: options/theme-options.php:1331
+#: options/theme-options.php:1351
 msgid "7 Sec"
 msgstr ""
 
-#: options/theme-options.php:1332
+#: options/theme-options.php:1352
 msgid "8 Sec"
 msgstr ""
 
-#: options/theme-options.php:1333
+#: options/theme-options.php:1353
 msgid "9 Sec"
 msgstr ""
 
-#: options/theme-options.php:1334
+#: options/theme-options.php:1354
 msgid "10 Sec"
 msgstr ""
 
-#: options/theme-options.php:1335
+#: options/theme-options.php:1355
 msgid "do not autoload"
 msgstr ""
 
-#: options/theme-options.php:1343
+#: options/theme-options.php:1363
 msgid "Placeholder SVG when loading the next page"
 msgstr ""
 
-#: options/theme-options.php:1344
+#: options/theme-options.php:1364
 msgid "Fill in the address, this is the SVG that will be displayed as a placeholder when the next page is loading"
 msgstr ""
 
-#: options/theme-options.php:1353
+#: options/theme-options.php:1373
 msgid "HomePage Options"
 msgstr ""
 
-#: options/theme-options.php:1359
+#: options/theme-options.php:1379
 msgid "Cover Options"
 msgstr ""
 
-#: options/theme-options.php:1366
+#: options/theme-options.php:1386
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Homepage/#%E5%B0%81%E9%9D%A2%E8%AE%BE%E7%BD%AE\">here</a> to learn how to set "
 "the options on this page"
 msgstr ""
 
-#: options/theme-options.php:1372
+#: options/theme-options.php:1392
 msgid "Cover Switch"
 msgstr ""
 
-#: options/theme-options.php:1373
+#: options/theme-options.php:1393
 msgid "On by default, if off, all options below will be disabled"
 msgstr ""
 
-#: options/theme-options.php:1380
+#: options/theme-options.php:1400
 msgid "Cover Full Screen"
 msgstr ""
 
-#: options/theme-options.php:1389
+#: options/theme-options.php:1409
 msgid "Cover Arc Occlusion (Below)"
 msgstr ""
 
-#: options/theme-options.php:1390
+#: options/theme-options.php:1410
 msgid "An arc occlusion will appear below the cover when turned on"
 msgstr ""
 
-#: options/theme-options.php:1401
+#: options/theme-options.php:1421
 msgid "Cover Animation"
 msgstr ""
 
-#: options/theme-options.php:1402
+#: options/theme-options.php:1422
 msgid "On by default, if off, the cover will be displayed directly"
 msgstr ""
 
-#: options/theme-options.php:1410
+#: options/theme-options.php:1430
 msgid "Cover Animation Time"
 msgstr ""
 
-#: options/theme-options.php:1411
+#: options/theme-options.php:1431
 msgid "Slide to adjust, the recommended value range is 1-2"
 msgstr ""
 
-#: options/theme-options.php:1425
+#: options/theme-options.php:1445
 msgid "Cover Info Bar"
 msgstr ""
 
-#: options/theme-options.php:1426
+#: options/theme-options.php:1446
 msgid "Enabled by default, show avatar, Mashiro effects text, signature bar, shuoshuo bar, social area"
 msgstr ""
 
-#: options/theme-options.php:1434
+#: options/theme-options.php:1454
 msgid "Cover Info Bar Style"
 msgstr ""
 
-#: options/theme-options.php:1449
+#: options/theme-options.php:1469
 msgid "HomePage Widget Transparency"
 msgstr ""
 
-#: options/theme-options.php:1464
+#: options/theme-options.php:1484
 msgid "Cover Info Bar Avatar Radius"
 msgstr ""
 
-#: options/theme-options.php:1465
+#: options/theme-options.php:1485
 msgid "Slide to adjust, the recommended value is 100"
 msgstr ""
 
-#: options/theme-options.php:1477
+#: options/theme-options.php:1497
 msgid "Cover Info Bar Rounded"
 msgstr ""
 
-#: options/theme-options.php:1478
+#: options/theme-options.php:1498
 msgid "Slide to adjust, the recommended value range 10-20"
 msgstr ""
 
-#: options/theme-options.php:1491
+#: options/theme-options.php:1511
 msgid "Cover Signature Field Text"
 msgstr ""
 
-#: options/theme-options.php:1492
+#: options/theme-options.php:1512
 msgid "A self-descriptive quote"
 msgstr ""
 
-#: options/theme-options.php:1503
+#: options/theme-options.php:1523
 msgid "Cover Signature Field Text Font"
 msgstr ""
 
-#: options/theme-options.php:1515
+#: options/theme-options.php:1535
 msgid "Cover Signature Field Text Font Size"
 msgstr ""
 
-#: options/theme-options.php:1530
+#: options/theme-options.php:1550
 msgid "Cover Signature Bar Typing Effects"
 msgstr ""
 
-#: options/theme-options.php:1531
+#: options/theme-options.php:1551
 msgid "When turned on, the signature bar text will have an additional paragraph of text and will be rendered with typing effects"
 msgstr ""
 
-#: options/theme-options.php:1542
+#: options/theme-options.php:1562
 msgid "Cover Signature Field Typing Effects Double Quotes"
 msgstr ""
 
-#: options/theme-options.php:1548
+#: options/theme-options.php:1568
 msgid "Typing effects will be appended with double quotes when turned on"
 msgstr ""
 
-#: options/theme-options.php:1555
+#: options/theme-options.php:1575
 msgid "Cover Signature Field Typing Effects Placeholder"
 msgstr ""
 
-#: options/theme-options.php:1568
+#: options/theme-options.php:1588
 msgid "Typed.js initial option"
 msgstr ""
 
-#: options/theme-options.php:1580
+#: options/theme-options.php:1600
 msgid "Cover Random Image Options"
 msgstr ""
 
-#: options/theme-options.php:1582
+#: options/theme-options.php:1602
 msgid "External API"
 msgstr ""
 
-#: options/theme-options.php:1583
+#: options/theme-options.php:1603
 msgid "Built-in"
 msgstr ""
 
-#: options/theme-options.php:1591
+#: options/theme-options.php:1611
 msgid "Built-in Gallery controllers"
 msgstr ""
 
-#: options/theme-options.php:1592
+#: options/theme-options.php:1612
 msgid ""
 "<a href=\"./admin.php?iro_act=gallery_init\" target=\"_blank\">Initlize/Rebuild index</a> | <a href=\"./admin.php?"
 "iro_act=gallery_webp\" target=\"_blank\">Refomart images to webp</a><br>After initlized,put images in `wp-content/uploads/iro_gallery/"
@@ -1812,829 +1828,829 @@ msgid ""
 "of the relevant content changes.<br>Please make sure that the working directory is readable and writable when using relevant functions."
 msgstr ""
 
-#: options/theme-options.php:1603
+#: options/theme-options.php:1623
 msgid "Cover Random Image Multi-terminal Separation"
 msgstr ""
 
-#: options/theme-options.php:1604
+#: options/theme-options.php:1624
 msgid "Enabled by default, desktop and mobile devices will use separate random image addresses"
 msgstr ""
 
-#: options/theme-options.php:1612
+#: options/theme-options.php:1632
 msgid "Webp Optimization/External API Desktop Side Random Graphics Address"
 msgstr ""
 
-#: options/theme-options.php:1613 options/theme-options.php:1632
+#: options/theme-options.php:1633 options/theme-options.php:1652
 msgid "Fill in an URL"
 msgstr ""
 
-#: options/theme-options.php:1626
+#: options/theme-options.php:1646
 msgid "External API Mobile Devices Random Image Address"
 msgstr ""
 
-#: options/theme-options.php:1641
+#: options/theme-options.php:1661
 msgid "Cover Random Background Image Cache"
 msgstr ""
 
-#: options/theme-options.php:1642
+#: options/theme-options.php:1662
 msgid ""
 "Enabled by default, this feature will cache a cover image locally, which can improve the loading speed of the first cover after "
 "entering the homepage. Note: This feature needs the cover APIs that accept cross-domain requests."
 msgstr ""
 
-#: options/theme-options.php:1650
+#: options/theme-options.php:1670
 msgid "Cover and Frontend Background Integration"
 msgstr ""
 
-#: options/theme-options.php:1651
+#: options/theme-options.php:1671
 msgid ""
 "When enabled, the background of the cover will be set to transparent, while the frontend background will use the cover's random image "
 "API"
 msgstr ""
 
-#: options/theme-options.php:1659
+#: options/theme-options.php:1679
 msgid "Cover Random Images Filter"
 msgstr ""
 
-#: options/theme-options.php:1661
+#: options/theme-options.php:1681
 msgid "No filter"
 msgstr ""
 
-#: options/theme-options.php:1662
+#: options/theme-options.php:1682
 msgid "Light filter"
 msgstr ""
 
-#: options/theme-options.php:1663
+#: options/theme-options.php:1683
 msgid "Dimmed filter"
 msgstr ""
 
-#: options/theme-options.php:1664
+#: options/theme-options.php:1684
 msgid "Grid filter"
 msgstr ""
 
-#: options/theme-options.php:1665
+#: options/theme-options.php:1685
 msgid "Dot filter"
 msgstr ""
 
-#: options/theme-options.php:1674
+#: options/theme-options.php:1694
 msgid "Cover Wave Effects"
 msgstr ""
 
-#: options/theme-options.php:1675
+#: options/theme-options.php:1695
 msgid "Wave effect will appear at the bottom of the cover of the home page after turning on, and it will be forced off in the dark mode"
 msgstr ""
 
-#: options/theme-options.php:1683
+#: options/theme-options.php:1703
 msgid "Cover Dropdown Arrow"
 msgstr ""
 
-#: options/theme-options.php:1684
+#: options/theme-options.php:1704
 msgid "Enabled by default, show a dropdown arrow at bottom of home cover"
 msgstr ""
 
-#: options/theme-options.php:1692
+#: options/theme-options.php:1712
 msgid "Cover Dropdown Arrow Display on Mobile Devices"
 msgstr ""
 
-#: options/theme-options.php:1697
+#: options/theme-options.php:1717
 msgid "Drop down arrow will appear at the bottom of the mobile devices' home cover after turning it on"
 msgstr ""
 
-#: options/theme-options.php:1704
+#: options/theme-options.php:1724
 msgid "Cover Dropdown Arrow Color"
 msgstr ""
 
-#: options/theme-options.php:1716
+#: options/theme-options.php:1736
 msgid "Cover Dropdown Arrow Color (Dark Mode)"
 msgstr ""
 
-#: options/theme-options.php:1721
+#: options/theme-options.php:1741
 msgid "Customize the colors, dark colors are recommended"
 msgstr ""
 
-#: options/theme-options.php:1728
+#: options/theme-options.php:1748
 msgid "Cover Video"
 msgstr ""
 
-#: options/theme-options.php:1729
+#: options/theme-options.php:1749
 msgid "Use a video instead of the images as the cover"
 msgstr ""
 
-#: options/theme-options.php:1737
+#: options/theme-options.php:1757
 msgid "Cover Video Loop"
 msgstr ""
 
-#: options/theme-options.php:1742
+#: options/theme-options.php:1762
 msgid "Video will loop automatically when enabled."
 msgstr ""
 
-#: options/theme-options.php:1749
+#: options/theme-options.php:1769
 msgid "Cover Video Auto Resume"
 msgstr ""
 
-#: options/theme-options.php:1754
+#: options/theme-options.php:1774
 msgid "Cover Video will resume automatically when coming back to homepage while Pjax enabled."
 msgstr ""
 
-#: options/theme-options.php:1761
+#: options/theme-options.php:1781
 msgid "Cover Video URL Base Path"
 msgstr ""
 
-#: options/theme-options.php:1767
+#: options/theme-options.php:1787
 msgid ""
 "Fill in the base path your video located at. For example: https://localhost. Your site's URL is used as default. Please pay attention "
 "to the protocol name of the URL."
 msgstr ""
 
-#: options/theme-options.php:1773
+#: options/theme-options.php:1793
 msgid "Cover Video File Name"
 msgstr ""
 
-#: options/theme-options.php:1778
+#: options/theme-options.php:1798
 msgid ""
 "For example: abc.mp4. Multiple videos should be separated by English commas like \"abc.mp4,efg.mp4,\" Random play is on by default."
 msgstr ""
 
-#: options/theme-options.php:1786
+#: options/theme-options.php:1806
 msgid "Cover Social Area Options"
 msgstr ""
 
-#: options/theme-options.php:1793
+#: options/theme-options.php:1813
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Homepage/"
 "#%E5%B0%81%E9%9D%A2%E7%A4%BE%E4%BA%A4%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE\">here</a> to learn how to set the options on this page"
 msgstr ""
 
-#: options/theme-options.php:1798
+#: options/theme-options.php:1818
 msgid "Related Options"
 msgstr ""
 
-#: options/theme-options.php:1804
+#: options/theme-options.php:1824
 msgid "Cover Social Area"
 msgstr ""
 
-#: options/theme-options.php:1805
+#: options/theme-options.php:1825
 msgid "Enabled by default, show cover random image toggle button and social network icons"
 msgstr ""
 
-#: options/theme-options.php:1812
+#: options/theme-options.php:1832
 msgid "Social Icon"
 msgstr ""
 
-#: options/theme-options.php:1813
+#: options/theme-options.php:1833
 msgid "Select your favorite icon pack. Icon pack references are detailed in the \"About Theme\" section"
 msgstr ""
 
-#: options/theme-options.php:1827
+#: options/theme-options.php:1847
 msgid "Cover Social Area Rounded Corners"
 msgstr ""
 
-#: options/theme-options.php:1829
+#: options/theme-options.php:1849
 msgid "Slide to adjust, the recommended value range is 10-20"
 msgstr ""
 
-#: options/theme-options.php:1837
+#: options/theme-options.php:1857
 msgid "Social Network"
 msgstr ""
 
-#: options/theme-options.php:1843
+#: options/theme-options.php:1863
 msgid "Switch Button of WeChat QR Code"
 msgstr ""
 
-#: options/theme-options.php:1845
+#: options/theme-options.php:1865
 msgid "Enabled by default, the WeChat QR code is shown instead of the WeChat ID"
 msgstr ""
 
-#: options/theme-options.php:1852
+#: options/theme-options.php:1872
 msgid "WeChat QR Code"
 msgstr ""
 
-#: options/theme-options.php:1861
+#: options/theme-options.php:1881
 msgid "WeChat ID"
 msgstr ""
 
-#: options/theme-options.php:1863
+#: options/theme-options.php:1883
 msgid "Enter your WeChat ID that others can search for"
 msgstr ""
 
-#: options/theme-options.php:1869
+#: options/theme-options.php:1889
 msgid "Click to Copy WeChat ID"
 msgstr ""
 
-#: options/theme-options.php:1871
+#: options/theme-options.php:1891
 msgid "Enabled by default, clicking the WeChat icon will copy your WeChat ID instead of opening a link"
 msgstr ""
 
-#: options/theme-options.php:1878
+#: options/theme-options.php:1898
 msgid "WeChat Icon Link"
 msgstr ""
 
-#: options/theme-options.php:1883
+#: options/theme-options.php:1903
 msgid "Specify the link to open when clicking the WeChat icon. Leave blank to disable redirection"
 msgstr ""
 
-#: options/theme-options.php:1889
+#: options/theme-options.php:1909
 msgid "Switch Button of QQ QR Code"
 msgstr ""
 
-#: options/theme-options.php:1891
+#: options/theme-options.php:1911
 msgid "Enabled by default, the QQ QR code is shown instead of the QQ ID"
 msgstr ""
 
-#: options/theme-options.php:1898
+#: options/theme-options.php:1918
 msgid "QQ QR Code"
 msgstr ""
 
-#: options/theme-options.php:1907
+#: options/theme-options.php:1927
 msgid "QQ ID"
 msgstr ""
 
-#: options/theme-options.php:1909
+#: options/theme-options.php:1929
 msgid "Enter your QQ ID that others can search for"
 msgstr ""
 
-#: options/theme-options.php:1915
+#: options/theme-options.php:1935
 msgid "Click to Copy QQ ID"
 msgstr ""
 
-#: options/theme-options.php:1917
+#: options/theme-options.php:1937
 msgid "Enabled by default, clicking the QQ icon will copy your QQ ID instead of opening a link"
 msgstr ""
 
-#: options/theme-options.php:1924
+#: options/theme-options.php:1944
 msgid "QQ Icon Link"
 msgstr ""
 
-#: options/theme-options.php:1929
+#: options/theme-options.php:1949
 msgid "Specify the link to open when clicking the QQ icon. Leave blank to disable redirection"
 msgstr ""
 
-#: options/theme-options.php:1935
+#: options/theme-options.php:1955
 msgid "Bilibili"
 msgstr ""
 
-#: options/theme-options.php:1937 options/theme-options.php:1945 options/theme-options.php:1953 options/theme-options.php:1961
-#: options/theme-options.php:1969 options/theme-options.php:1977 options/theme-options.php:1985 options/theme-options.php:1993
-#: options/theme-options.php:2001 options/theme-options.php:2009 options/theme-options.php:2017 options/theme-options.php:2025
-#: options/theme-options.php:2033 options/theme-options.php:2041 options/theme-options.php:2049 options/theme-options.php:2089
-#: options/theme-options.php:2375 options/theme-options.php:2474
+#: options/theme-options.php:1957 options/theme-options.php:1965 options/theme-options.php:1973 options/theme-options.php:1981
+#: options/theme-options.php:1989 options/theme-options.php:1997 options/theme-options.php:2005 options/theme-options.php:2013
+#: options/theme-options.php:2021 options/theme-options.php:2029 options/theme-options.php:2037 options/theme-options.php:2045
+#: options/theme-options.php:2053 options/theme-options.php:2061 options/theme-options.php:2069 options/theme-options.php:2109
+#: options/theme-options.php:2395 options/theme-options.php:2493
 msgid "add URL"
 msgstr ""
 
-#: options/theme-options.php:1943
+#: options/theme-options.php:1963
 msgid "NetEase Music"
 msgstr ""
 
-#: options/theme-options.php:1951
+#: options/theme-options.php:1971
 msgid "Weibo"
 msgstr ""
 
-#: options/theme-options.php:1959
+#: options/theme-options.php:1979
 msgid "Github"
 msgstr ""
 
-#: options/theme-options.php:1967
+#: options/theme-options.php:1987
 msgid "Telegram"
 msgstr ""
 
-#: options/theme-options.php:1975 options/theme-options.php:3032
+#: options/theme-options.php:1995 options/theme-options.php:3038
 msgid "Steam"
 msgstr ""
 
-#: options/theme-options.php:1983
+#: options/theme-options.php:2003
 msgid "Youtube"
 msgstr ""
 
-#: options/theme-options.php:1991
+#: options/theme-options.php:2011
 msgid "Instagram"
 msgstr ""
 
-#: options/theme-options.php:1999
+#: options/theme-options.php:2019
 msgid "Tiktok"
 msgstr ""
 
-#: options/theme-options.php:2007
+#: options/theme-options.php:2027
 msgid "YELLOWnote"
 msgstr ""
 
-#: options/theme-options.php:2015
+#: options/theme-options.php:2035
 msgid "Discord"
 msgstr ""
 
-#: options/theme-options.php:2023
+#: options/theme-options.php:2043
 msgid "ZhiHu"
 msgstr ""
 
-#: options/theme-options.php:2031
+#: options/theme-options.php:2051
 msgid "Linkedin"
 msgstr ""
 
-#: options/theme-options.php:2039
+#: options/theme-options.php:2059
 msgid "Twitter"
 msgstr ""
 
-#: options/theme-options.php:2047
+#: options/theme-options.php:2067
 msgid "Facebook"
 msgstr ""
 
-#: options/theme-options.php:2055
+#: options/theme-options.php:2075
 msgid "Email Username"
 msgstr ""
 
-#: options/theme-options.php:2057
+#: options/theme-options.php:2077
 msgid ""
 "name@domain.com fo name, the full address can be known only when there is a js runtime in the frontend, you can fill in with confidence"
 msgstr ""
 
-#: options/theme-options.php:2063
+#: options/theme-options.php:2083
 msgid "Email Domain"
 msgstr ""
 
-#: options/theme-options.php:2065
+#: options/theme-options.php:2085
 msgid "name@domain.com fo domain.com"
 msgstr ""
 
-#: options/theme-options.php:2071
+#: options/theme-options.php:2091
 msgid "Customized Social Networks"
 msgstr ""
 
-#: options/theme-options.php:2077
+#: options/theme-options.php:2097
 msgid "Icon"
 msgstr ""
 
-#: options/theme-options.php:2083
+#: options/theme-options.php:2103
 msgid "Title"
 msgstr ""
 
-#: options/theme-options.php:2088
+#: options/theme-options.php:2108
 msgid "Link"
 msgstr ""
 
-#: options/theme-options.php:2098
+#: options/theme-options.php:2118
 msgid "Homepage Components Options"
 msgstr ""
 
-#: options/theme-options.php:2105
+#: options/theme-options.php:2125
 msgid "Homepage Components"
 msgstr ""
 
-#: options/theme-options.php:2106
+#: options/theme-options.php:2126
 msgid "Select the homepage components you want to display. They will appear in the order above."
 msgstr ""
 
-#: options/theme-options.php:2111 options/theme-options.php:2191
+#: options/theme-options.php:2131 options/theme-options.php:2211
 msgid "Bulletin Board"
 msgstr ""
 
-#: options/theme-options.php:2112
+#: options/theme-options.php:2132
 msgid "Display Area"
 msgstr ""
 
-#: options/theme-options.php:2113
+#: options/theme-options.php:2133
 msgid "Article Area"
 msgstr ""
 
-#: options/theme-options.php:2114 options/theme-options.php:2122
+#: options/theme-options.php:2134 options/theme-options.php:2142
 msgid "Static Page"
 msgstr ""
 
-#: options/theme-options.php:2123
+#: options/theme-options.php:2143
 msgid "Select a page"
 msgstr ""
 
-#: options/theme-options.php:2131
+#: options/theme-options.php:2151
 msgid "Area Title"
 msgstr ""
 
-#: options/theme-options.php:2137
+#: options/theme-options.php:2157
 msgid "Display Area Icon"
 msgstr ""
 
-#: options/theme-options.php:2138
+#: options/theme-options.php:2158
 msgid ""
 "Default is \"fa-solid fa-laptop\", You can check the <a href=\"https://fontawesome.com/search?o=r&m=free\">FontAwesome Website</a> to "
 "see the icons that can be filled in"
 msgstr ""
 
-#: options/theme-options.php:2145
+#: options/theme-options.php:2165
 msgid "Display Area Title"
 msgstr ""
 
-#: options/theme-options.php:2146
+#: options/theme-options.php:2166
 msgid "Default is \"Display\", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!"
 msgstr ""
 
-#: options/theme-options.php:2153
+#: options/theme-options.php:2173
 msgid "Post Area Icon"
 msgstr ""
 
-#: options/theme-options.php:2154
+#: options/theme-options.php:2174
 msgid ""
 "Default is \"fa-regular fa-bookmark\", You can check the <a href=\"https://fontawesome.com/search?o=r&m=free\">FontAwesome Website</a> "
 "to see the icons that can be filled in"
 msgstr ""
 
-#: options/theme-options.php:2161
+#: options/theme-options.php:2181
 msgid "Post Area Title"
 msgstr ""
 
-#: options/theme-options.php:2162
+#: options/theme-options.php:2182
 msgid "Default is \"Article\", you can change it to anything else, but of course it CANNOT be used as an ad! Not allowed!!!"
 msgstr ""
 
-#: options/theme-options.php:2169
+#: options/theme-options.php:2189
 msgid "Area Title Font"
 msgstr ""
 
-#: options/theme-options.php:2177
+#: options/theme-options.php:2197
 msgid "Area Title Alignment"
 msgstr ""
 
-#: options/theme-options.php:2198
+#: options/theme-options.php:2218
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Homepage/"
 "#%E5%85%AC%E5%91%8A%E6%A0%8F%E5%92%8C%E5%8C%BA%E5%9F%9F%E6%A0%87%E9%A2%98%E8%AE%BE%E7%BD%AE\">here</a> to learn how to set the options "
 "on this page"
 msgstr ""
 
-#: options/theme-options.php:2204
+#: options/theme-options.php:2224
 msgid "It will only be displayed when \"Bulletin Board\" is selected in the homepage component settings"
 msgstr ""
 
-#: options/theme-options.php:2210
+#: options/theme-options.php:2230
 msgid "Bulletin Board Style"
 msgstr ""
 
-#: options/theme-options.php:2212
+#: options/theme-options.php:2232
 msgid "Picture Background"
 msgstr ""
 
-#: options/theme-options.php:2213
+#: options/theme-options.php:2233
 msgid "Color Background"
 msgstr ""
 
-#: options/theme-options.php:2221
+#: options/theme-options.php:2241
 msgid "Bulletin Board \"Notice\" Icon"
 msgstr ""
 
-#: options/theme-options.php:2222
+#: options/theme-options.php:2242
 msgid "The \"Notice\" icon will be displayed on the left side of the announcement bar"
 msgstr ""
 
-#: options/theme-options.php:2229
+#: options/theme-options.php:2249
 msgid "Bulletin Board Background"
 msgstr ""
 
-#: options/theme-options.php:2233
+#: options/theme-options.php:2253
 msgid "Best width 820px, best height 67px"
 msgstr ""
 
-#: options/theme-options.php:2241
+#: options/theme-options.php:2261
 msgid "Bulletin Board Border Color"
 msgstr ""
 
-#: options/theme-options.php:2245
+#: options/theme-options.php:2265
 msgid "Customize the colors, it is recommended to use a light color that corresponds with the theme color"
 msgstr ""
 
-#: options/theme-options.php:2252
+#: options/theme-options.php:2272
 msgid "Bulletin Board Text"
 msgstr ""
 
-#: options/theme-options.php:2253
+#: options/theme-options.php:2273
 msgid "Fill in the announcement text, the text beyond 142 bytes will be hidden"
 msgstr ""
 
-#: options/theme-options.php:2259
+#: options/theme-options.php:2279
 msgid "Bulletin Board Alignment"
 msgstr ""
 
-#: options/theme-options.php:2271
+#: options/theme-options.php:2291
 msgid "Bulletin Board Text Color"
 msgstr ""
 
-#: options/theme-options.php:2272 options/theme-options.php:2301 options/theme-options.php:2687
+#: options/theme-options.php:2292 options/theme-options.php:2321 options/theme-options.php:2706
 msgid "Customize the colors, suggest using a corresponding color with the background color"
 msgstr ""
 
-#: options/theme-options.php:2281
+#: options/theme-options.php:2301
 msgid "Display Area Options"
 msgstr ""
 
-#: options/theme-options.php:2288
+#: options/theme-options.php:2308
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Homepage/#%E5%B1%95%E7%A4%BA%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE\">here</a> "
 "to learn how to set the options on this page"
 msgstr ""
 
-#: options/theme-options.php:2294
+#: options/theme-options.php:2314
 msgid "It will only be displayed when \"Display Area\" is selected in the homepage component settings"
 msgstr ""
 
-#: options/theme-options.php:2300
+#: options/theme-options.php:2320
 msgid "Display Area Matching Color"
 msgstr ""
 
-#: options/theme-options.php:2308
+#: options/theme-options.php:2328
 msgid "Display Area Style"
 msgstr ""
 
-#: options/theme-options.php:2319
+#: options/theme-options.php:2339
 msgid "Display Area Compatibility Mode"
 msgstr ""
 
-#: options/theme-options.php:2323
+#: options/theme-options.php:2343
 msgid "Enabled by default, this option avoids the problem of misaligned display areas"
 msgstr ""
 
-#: options/theme-options.php:2330
+#: options/theme-options.php:2350
 msgid "Display Area Background Color"
 msgstr ""
 
-#: options/theme-options.php:2341
+#: options/theme-options.php:2361
 msgid "Display Area Rounded Corners"
 msgstr ""
 
-#: options/theme-options.php:2346
+#: options/theme-options.php:2366
 msgid "Slide to adjust, the recommended value is 15"
 msgstr ""
 
-#: options/theme-options.php:2354
+#: options/theme-options.php:2374
 msgid "Display Area Content"
 msgstr ""
 
-#: options/theme-options.php:2359
+#: options/theme-options.php:2379
 msgid "image"
 msgstr ""
 
-#: options/theme-options.php:2360
+#: options/theme-options.php:2380
 msgid "best width 260px, best height 160px"
 msgstr ""
 
-#: options/theme-options.php:2365
+#: options/theme-options.php:2385
 msgid "title"
 msgstr ""
 
-#: options/theme-options.php:2370
+#: options/theme-options.php:2390
 msgid "description"
 msgstr ""
 
-#: options/theme-options.php:2406
+#: options/theme-options.php:2425
 msgid "Article Area Options"
 msgstr ""
 
-#: options/theme-options.php:2413
+#: options/theme-options.php:2432
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Homepage/#%E6%96%87%E7%AB%A0%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE\">here</a> "
 "to learn how to set the options on this page"
 msgstr ""
 
-#: options/theme-options.php:2419
+#: options/theme-options.php:2438
 msgid "It will only be displayed when \"Article Area\" is selected in the homepage component settings"
 msgstr ""
 
-#: options/theme-options.php:2425
+#: options/theme-options.php:2444
 msgid "Article Area Meta Displays"
 msgstr ""
 
-#: options/theme-options.php:2426 options/theme-options.php:2667
+#: options/theme-options.php:2445 options/theme-options.php:2686
 msgid "You can freely select the information Meta to be displayed, this option cannot be set on mobile"
 msgstr ""
 
-#: options/theme-options.php:2437
+#: options/theme-options.php:2456
 msgid "Article Area Card Design"
 msgstr ""
 
-#: options/theme-options.php:2438
+#: options/theme-options.php:2457
 msgid "You can choose between letter design or ticket design"
 msgstr ""
 
-#: options/theme-options.php:2449
+#: options/theme-options.php:2468
 msgid "Article Area Card Ticket Design Title Style"
 msgstr ""
 
-#: options/theme-options.php:2450
+#: options/theme-options.php:2469
 msgid "You can choose between card style or Non-card style"
 msgstr ""
 
-#: options/theme-options.php:2462
+#: options/theme-options.php:2481
 msgid "Article Area Featured Image Options"
 msgstr ""
 
-#: options/theme-options.php:2464
+#: options/theme-options.php:2483
 msgid "Cover Random Image"
 msgstr ""
 
-#: options/theme-options.php:2465
+#: options/theme-options.php:2484
 msgid "External API Random Image"
 msgstr ""
 
-#: options/theme-options.php:2473
+#: options/theme-options.php:2492
 msgid "Article Area Featured Image External API Random Image Address"
 msgstr ""
 
-#: options/theme-options.php:2482
+#: options/theme-options.php:2501
 msgid "Article Area Card Rounded Corners"
 msgstr ""
 
-#: options/theme-options.php:2483
+#: options/theme-options.php:2502
 msgid "Slide to adjust, the recommended value range is 5-15"
 msgstr ""
 
-#: options/theme-options.php:2492
+#: options/theme-options.php:2511
 msgid "Article Area Card Information Meta Background Compatible"
 msgstr ""
 
-#: options/theme-options.php:2493
+#: options/theme-options.php:2512
 msgid ""
 "When enabled, information Meta will be standardized to white on black for compatibility with the background, increasing readability."
 msgstr ""
 
-#: options/theme-options.php:2500
+#: options/theme-options.php:2519
 msgid "Article Area Card Information Meta Rounded Corners"
 msgstr ""
 
-#: options/theme-options.php:2501
+#: options/theme-options.php:2520
 msgid "Slide to adjust, the recommended value range is 3-10"
 msgstr ""
 
-#: options/theme-options.php:2510
+#: options/theme-options.php:2529
 msgid "Article Area Card Title Meta Rounded Corners"
 msgstr ""
 
-#: options/theme-options.php:2511
+#: options/theme-options.php:2530
 msgid "Slide to adjust, the recommended value range is 0-20"
 msgstr ""
 
-#: options/theme-options.php:2520
+#: options/theme-options.php:2539
 msgid "Article Area Title Font Size"
 msgstr ""
 
-#: options/theme-options.php:2521
+#: options/theme-options.php:2540
 msgid "Slide to adjust, the recommended value range is 16-20"
 msgstr ""
 
-#: options/theme-options.php:2532
+#: options/theme-options.php:2551
 msgid "Show shuoshuo on home page"
 msgstr ""
 
-#: options/theme-options.php:2541
+#: options/theme-options.php:2560
 msgid "Page Options"
 msgstr ""
 
-#: options/theme-options.php:2547
+#: options/theme-options.php:2566
 msgid "Common Options"
 msgstr ""
 
-#: options/theme-options.php:2554
+#: options/theme-options.php:2573
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Pages/#%E7%BB%BC%E5%90%88%E8%AE%BE%E7%BD%AE\">here</a> to learn how to set "
 "the options on this page"
 msgstr ""
 
-#: options/theme-options.php:2560
+#: options/theme-options.php:2579
 msgid "Page Layout Style"
 msgstr ""
 
-#: options/theme-options.php:2562
+#: options/theme-options.php:2581
 msgid "Default Style"
 msgstr ""
 
-#: options/theme-options.php:2563
+#: options/theme-options.php:2582
 msgid "Github Style"
 msgstr ""
 
-#: options/theme-options.php:2571
+#: options/theme-options.php:2590
 msgid "Page Decoration Image"
 msgstr ""
 
-#: options/theme-options.php:2572
+#: options/theme-options.php:2591
 msgid "Enabled by default, show on article pages, standalone pages and category pages"
 msgstr ""
 
-#: options/theme-options.php:2579
+#: options/theme-options.php:2598
 msgid "Page Title Animation"
 msgstr ""
 
-#: options/theme-options.php:2580
+#: options/theme-options.php:2599
 msgid "Page title will have float-in animation when turned on"
 msgstr ""
 
-#: options/theme-options.php:2587
+#: options/theme-options.php:2606
 msgid "Page Title Animation Time"
 msgstr ""
 
-#: options/theme-options.php:2589
+#: options/theme-options.php:2608
 msgid "Slide to adjust, recommended value range is 1-2"
 msgstr ""
 
-#: options/theme-options.php:2599
+#: options/theme-options.php:2618
 msgid "Add Reference while copying on Pages"
 msgstr ""
 
-#: options/theme-options.php:2600
+#: options/theme-options.php:2619
 msgid "Enabled by default. When copying text content over 30 bytes, a reference in APA-style will be appended to the copying text."
 msgstr ""
 
-#: options/theme-options.php:2607
+#: options/theme-options.php:2626
 msgid "Page LazyLoad"
 msgstr ""
 
-#: options/theme-options.php:2608
+#: options/theme-options.php:2627
 msgid "LazyLoad effect for page images, WordPress block editor already comes with similar effect, not recommended to turn on"
 msgstr ""
 
-#: options/theme-options.php:2615
+#: options/theme-options.php:2634
 msgid "Page LazyLoad Placeholder SVG"
 msgstr ""
 
-#: options/theme-options.php:2617
+#: options/theme-options.php:2636
 msgid "Fill in the address, this is the placeholder image that will be displayed when the page LazyLoad is being loaded"
 msgstr ""
 
-#: options/theme-options.php:2624
+#: options/theme-options.php:2643
 msgid "Page Image Placeholder SVG"
 msgstr ""
 
-#: options/theme-options.php:2625
+#: options/theme-options.php:2644
 msgid "Fill address, this is the SVG that will be displayed as a placeholder when the page image is being loaded"
 msgstr ""
 
-#: options/theme-options.php:2634
+#: options/theme-options.php:2653
 msgid "Article Page Options"
 msgstr ""
 
-#: options/theme-options.php:2641
+#: options/theme-options.php:2660
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Pages/#%E6%96%87%E7%AB%A0%E9%A1%B5%E9%9D%A2%E8%AE%BE%E7%BD%AE\">here</a> to "
 "learn how to set the options on this page"
 msgstr ""
 
-#: options/theme-options.php:2647
+#: options/theme-options.php:2666
 msgid "Article Page Title Font Size"
 msgstr ""
 
-#: options/theme-options.php:2648
+#: options/theme-options.php:2667
 msgid "Slide to adjust, recommended value range is 28-36. This option is only available for article pages that have a featured image set"
 msgstr ""
 
-#: options/theme-options.php:2658
+#: options/theme-options.php:2677
 msgid "Article Page Title Underline Animation"
 msgstr ""
 
-#: options/theme-options.php:2659
+#: options/theme-options.php:2678
 msgid "Article title will have underline animation when this is enabled and article has a featured image set"
 msgstr ""
 
-#: options/theme-options.php:2666
+#: options/theme-options.php:2685
 msgid "Display Article Meta before the Contents"
 msgstr ""
 
-#: options/theme-options.php:2678
+#: options/theme-options.php:2697
 msgid "Article Page Auto Show Menu"
 msgstr ""
 
-#: options/theme-options.php:2679
+#: options/theme-options.php:2698
 msgid "Enabled by default, the article page will automatically show the menu. PHP extension \"DOM\" is required for this feature."
 msgstr ""
 
-#: options/theme-options.php:2686
+#: options/theme-options.php:2705
 msgid "Inline Code Background Color"
 msgstr ""
 
-#: options/theme-options.php:2694
+#: options/theme-options.php:2713
 msgid "Inline Code Background Color In Dark Mode"
 msgstr ""
 
-#: options/theme-options.php:2695
+#: options/theme-options.php:2714
 msgid "Customize the colors, suggest using a corresponding color with the background color,this color is only displayed in dark mode"
 msgstr ""
 
-#: options/theme-options.php:2701
+#: options/theme-options.php:2720
 msgid "Article Expansion Area"
 msgstr ""
 
-#: options/theme-options.php:2707
+#: options/theme-options.php:2726
 msgid "Article Page Function Bar"
 msgstr ""
 
-#: options/theme-options.php:2708
+#: options/theme-options.php:2727
 msgid "Enabled by default, will be displayed on the article page with the features enabled below"
 msgstr ""
 
-#: options/theme-options.php:2715
+#: options/theme-options.php:2734
 msgid "Article License"
 msgstr ""
 
-#: options/theme-options.php:2717
+#: options/theme-options.php:2736
 msgid "Enabled by default, Article license will appear on the function bar. License can also be selected by custom metadata \"license\"."
 msgstr ""
 
-#: options/theme-options.php:2719
+#: options/theme-options.php:2738
 msgid "Not Display"
 msgstr ""
 
-#: options/theme-options.php:2734
+#: options/theme-options.php:2753
 msgid ""
 "<p><strong>\"BY\"</strong> means reusers should give credit to the creator</p><p><strong>\"NC\"</strong> means no commercial use</"
 "p><p><strong>\"ND\"</strong> means no redistribution</p><p><strong>\"SA\"</strong> means must be shared under the same terms</"
@@ -2645,978 +2661,969 @@ msgid ""
 "code> for CC BY-NC-SA 4.0</li></ul>"
 msgstr ""
 
-#: options/theme-options.php:2750
+#: options/theme-options.php:2769
 msgid "Article Page Appreciation Function (Alipay QR Code)"
 msgstr ""
 
-#: options/theme-options.php:2752
+#: options/theme-options.php:2771
 msgid "Upload Alipay Receipt QR Code Image"
 msgstr ""
 
-#: options/theme-options.php:2759
+#: options/theme-options.php:2778
 msgid "Article Page Appreciation Function (Wechat QR Code)"
 msgstr ""
 
-#: options/theme-options.php:2761
+#: options/theme-options.php:2780
 msgid "Upload WeChat Receipt QR Code Image"
 msgstr ""
 
-#: options/theme-options.php:2768
+#: options/theme-options.php:2787
 msgid "Article Page Author Avatar"
 msgstr ""
 
-#: options/theme-options.php:2770
+#: options/theme-options.php:2789
 msgid "Enabled by default, Author avatar will appear on the function bar"
 msgstr ""
 
-#: options/theme-options.php:2777
+#: options/theme-options.php:2796
 msgid "Article Page Author Name"
 msgstr ""
 
-#: options/theme-options.php:2779
+#: options/theme-options.php:2798
 msgid "Author name will appear on the function bar when enabled"
 msgstr ""
 
-#: options/theme-options.php:2786
+#: options/theme-options.php:2805
 msgid "Article Page Author Signature"
 msgstr ""
 
-#: options/theme-options.php:2788
+#: options/theme-options.php:2807
 msgid "Enabled by default, Author signature will appear on the function bar"
 msgstr ""
 
-#: options/theme-options.php:2795
+#: options/theme-options.php:2814
 msgid "Article Last Update Time"
 msgstr ""
 
-#: options/theme-options.php:2797
+#: options/theme-options.php:2816
 msgid "Article last update time will appear on the function bar when enabled"
 msgstr ""
 
-#: options/theme-options.php:2804
+#: options/theme-options.php:2823
 msgid "Article Tag"
 msgstr ""
 
-#: options/theme-options.php:2806
+#: options/theme-options.php:2825
 msgid "Enabled by default, Article tag will appear on the function bar"
 msgstr ""
 
-#: options/theme-options.php:2813
+#: options/theme-options.php:2832
 msgid "Article Page Prev/Next Article Switcher"
 msgstr ""
 
-#: options/theme-options.php:2814
+#: options/theme-options.php:2833
 msgid "Enabled by default, the previous and next article switch will appear on the article pages"
 msgstr ""
 
-#: options/theme-options.php:2823
+#: options/theme-options.php:2842
 msgid "Template Page Options"
 msgstr ""
 
-#: options/theme-options.php:2830
+#: options/theme-options.php:2849
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Pages/#%E6%A8%A1%E6%9D%BF%E9%A1%B5%E9%9D%A2%E8%AE%BE%E7%BD%AE\">here</a> to "
 "learn how to set the options on this page"
 msgstr ""
 
-#: options/theme-options.php:2835
+#: options/theme-options.php:2854
 msgid "Public Settings"
 msgstr ""
 
-#: options/theme-options.php:2841
+#: options/theme-options.php:2860
 msgid "Template Page Title Font Size"
 msgstr ""
 
-#: options/theme-options.php:2842
+#: options/theme-options.php:2861
 msgid ""
 "Slide to adjust, recommended value range is 36-48. This option is only available for template pages with featured images already set"
 msgstr ""
 
-#: options/theme-options.php:2851
+#: options/theme-options.php:2870
 msgid "Bangumi Template Settings"
 msgstr ""
 
-#: options/theme-options.php:2857
+#: options/theme-options.php:2876
 msgid "Bangumi Template Source"
 msgstr ""
 
-#: options/theme-options.php:2869
+#: options/theme-options.php:2888
 msgid "My Anime List Username"
 msgstr ""
 
-#: options/theme-options.php:2871
+#: options/theme-options.php:2890
 msgid "Username on https://myanimelist.net/"
 msgstr ""
 
-#: options/theme-options.php:2878
+#: options/theme-options.php:2897
 msgid "My Anime List Sort"
 msgstr ""
 
-#: options/theme-options.php:2881
+#: options/theme-options.php:2900
 msgid "Status and Last Updated"
 msgstr ""
 
-#: options/theme-options.php:2882
+#: options/theme-options.php:2901
 msgid "Last Updated"
 msgstr ""
 
-#: options/theme-options.php:2883
+#: options/theme-options.php:2902
 msgid "Status"
 msgstr ""
 
-#: options/theme-options.php:2891
+#: options/theme-options.php:2910
 msgid "Bilibili Account UID"
 msgstr ""
 
-#: options/theme-options.php:2892
+#: options/theme-options.php:2911
 msgid "Fill in your account ID, e.g. https://space.bilibili.com/13972644/, just the number part \"13972644\""
 msgstr ""
 
-#: options/theme-options.php:2900
+#: options/theme-options.php:2919
 msgid "Bilibili Account Cookies"
 msgstr ""
 
-#: options/theme-options.php:2901
+#: options/theme-options.php:2920
 msgid ""
 "Fill in your account cookies, F12 to open your browser web panel, go to your bilibili homepage to get cookies. If left empty, it will "
 "not show the progress of catching up bangumis"
 msgstr ""
 
-#: options/theme-options.php:2909
+#: options/theme-options.php:2928
 msgid "Bangumi Account UID"
 msgstr ""
 
-#: options/theme-options.php:2910
+#: options/theme-options.php:2929
 msgid "Fill in your Bangumi account ID, e.g. https://bangumi.tv/user/944883, just the number part \"944883\""
 msgstr ""
 
-#: options/theme-options.php:2918
+#: options/theme-options.php:2937 options/theme-options.php:3048
 msgid "Use cached or pre-set responses"
 msgstr ""
 
-#: options/theme-options.php:2919
+#: options/theme-options.php:2938 options/theme-options.php:3049
 msgid "If the following content is empty, it will be automatically updated on first visit."
 msgstr ""
 
-#: options/theme-options.php:2926
-msgid "Bangumi cache content"
-msgstr ""
-
-#: options/theme-options.php:2927
-msgid "Please clear the content when changing the source."
-msgstr ""
-
-#: options/theme-options.php:2932
-msgid ""
-"<strong>Attention: In case of poor network conditions, you can enable the caching feature.</strong><br/><strong>Visit the animelist "
-"page</strong> to allow the system to try fetching the content.<br/> Alternatively, you can click the following link to manually obtain "
-"the response information.<br/> The link will be refreshed after the relevant settings are saved.<br/> <a href=\"./admin.php?"
-"iro_act=bangumi\" target=\"_blank\">Bangumi</a> | <a href=\"./admin.php?iro_act=mal\" target=\"_blank\">MAL</a><br/> After obtaining "
-"the content, copy and paste it into the cache area, and then save."
-msgstr ""
-
-#: options/theme-options.php:2943
-msgid "Friend Link Template Settings"
+#: options/theme-options.php:2944
+msgid "<a href=\"/wp-admin/admin.php?page=sakurairo_cache_setting\" target=\"_blank\">Click here to set cache content</a>"
 msgstr ""
 
 #: options/theme-options.php:2949
+msgid "Friend Link Template Settings"
+msgstr ""
+
+#: options/theme-options.php:2955
 msgid "Friend Link Template Unit Alignment"
 msgstr ""
 
-#: options/theme-options.php:2961
+#: options/theme-options.php:2967
 msgid "Friend Link Apply Form"
 msgstr ""
 
-#: options/theme-options.php:2962
+#: options/theme-options.php:2968
 msgid "Add a apply form on the friend link page"
 msgstr ""
 
-#: options/theme-options.php:2969
+#: options/theme-options.php:2975
 msgid "Friend Link Sorting Mode"
 msgstr ""
 
-#: options/theme-options.php:2970
+#: options/theme-options.php:2976
 msgid "Select the friend link sorting mode, \"Name\" is used by Default."
 msgstr ""
 
-#: options/theme-options.php:2972
+#: options/theme-options.php:2978
 msgid "Name"
 msgstr ""
 
-#: options/theme-options.php:2973
+#: options/theme-options.php:2979
 msgid "Rating"
 msgstr ""
 
-#: options/theme-options.php:2974
+#: options/theme-options.php:2980
 msgid "Updated"
 msgstr ""
 
-#: options/theme-options.php:2975
+#: options/theme-options.php:2981
 msgid "Rand"
 msgstr ""
 
-#: options/theme-options.php:2983
+#: options/theme-options.php:2989
 msgid "Ascending OR Descending"
 msgstr ""
 
-#: options/theme-options.php:2984
+#: options/theme-options.php:2990
 msgid "Order friend link in ascending or descending."
 msgstr ""
 
-#: options/theme-options.php:2987
+#: options/theme-options.php:2993
 msgid "Ascending"
 msgstr ""
 
-#: options/theme-options.php:2988
+#: options/theme-options.php:2994
 msgid "Descending"
 msgstr ""
 
-#: options/theme-options.php:2995
+#: options/theme-options.php:3001
 msgid "SteamLibrary Template Settings"
 msgstr ""
 
-#: options/theme-options.php:3001
+#: options/theme-options.php:3007
 msgid "Steam Account 64ID"
 msgstr ""
 
-#: options/theme-options.php:3002
+#: options/theme-options.php:3008
 msgid "Fill in your account 64ID, e.g. https://steamcommunity.com/profiles/76561199029689067/, just the number part \"76561199029689067\""
 msgstr ""
 
-#: options/theme-options.php:3008
+#: options/theme-options.php:3014
 msgid "Steam API Key"
 msgstr ""
 
-#: options/theme-options.php:3009
+#: options/theme-options.php:3015
 msgid "Apply at https://steamcommunity.com/dev/apikey"
 msgstr ""
 
-#: options/theme-options.php:3015
+#: options/theme-options.php:3021
 msgid "Game Cover CDN"
 msgstr ""
 
-#: options/theme-options.php:3016
+#: options/theme-options.php:3022
 msgid "Select based on your user region"
 msgstr ""
 
-#: options/theme-options.php:3018
+#: options/theme-options.php:3024
 msgid "Steam China"
 msgstr ""
 
-#: options/theme-options.php:3019
+#: options/theme-options.php:3025
 msgid "Steam akamai"
 msgstr ""
 
-#: options/theme-options.php:3020
+#: options/theme-options.php:3026
 msgid "Steam fastly"
 msgstr ""
 
-#: options/theme-options.php:3021
+#: options/theme-options.php:3027
 msgid "Steam cloudflare"
 msgstr ""
 
-#: options/theme-options.php:3029
+#: options/theme-options.php:3035
 msgid "Game Store Link"
 msgstr ""
 
-#: options/theme-options.php:3030
+#: options/theme-options.php:3036
 msgid "Select the game store link to jump to"
 msgstr ""
 
-#: options/theme-options.php:3033
+#: options/theme-options.php:3039
 msgid "XiaoHeiHe"
 msgstr ""
 
-#: options/theme-options.php:3034
+#: options/theme-options.php:3040
 msgid "SteamDB"
 msgstr ""
 
-#: options/theme-options.php:3044
+#: options/theme-options.php:3058
 msgid "Comment-related Options"
 msgstr ""
 
-#: options/theme-options.php:3051
+#: options/theme-options.php:3065
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Pages/#%E8%AF%84%E8%AE%BA%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE\">here</a> to "
 "learn how to set the options on this page"
 msgstr ""
 
-#: options/theme-options.php:3056
+#: options/theme-options.php:3070
 msgid "Comment Area Style"
 msgstr ""
 
-#: options/theme-options.php:3062
+#: options/theme-options.php:3076
 msgid "Page Comment Area Display"
 msgstr ""
 
-#: options/theme-options.php:3063
+#: options/theme-options.php:3077
 msgid "You can choose to expand or shirink the content of the comment area"
 msgstr ""
 
-#: options/theme-options.php:3065
+#: options/theme-options.php:3079
 msgid "Expand"
 msgstr ""
 
-#: options/theme-options.php:3066
+#: options/theme-options.php:3080
 msgid "Shrink"
 msgstr ""
 
-#: options/theme-options.php:3074
+#: options/theme-options.php:3088
 msgid "Custom CommentBox Placeholder"
 msgstr ""
 
-#: options/theme-options.php:3075
+#: options/theme-options.php:3089
 msgid "When the user does not type any text, they will appear in the comment box."
 msgstr ""
 
-#: options/theme-options.php:3076
+#: options/theme-options.php:3090
 msgid "To trace the bright moonlight"
 msgstr ""
 
-#: options/theme-options.php:3082
-msgid "Customize Submit Button Content"
-msgstr ""
-
-#: options/theme-options.php:3083
-msgid "发送✈️"
-msgstr ""
-
-#: options/theme-options.php:3089
-msgid "Page Comment Area Bottom Right Background Image"
-msgstr ""
-
-#: options/theme-options.php:3090
-msgid "If this option is blank, there will be no image, no best recommendation here"
-msgstr ""
-
 #: options/theme-options.php:3096
-msgid "Comment Area Function"
+msgid "Submit✈️"
 msgstr ""
 
 #: options/theme-options.php:3102
-msgid "Comment Area Emoticon"
+msgid "Page Comment Area Bottom Right Background Image"
 msgstr ""
 
 #: options/theme-options.php:3103
+msgid "If this option is blank, there will be no image, no best recommendation here"
+msgstr ""
+
+#: options/theme-options.php:3109
+msgid "Comment Area Function"
+msgstr ""
+
+#: options/theme-options.php:3115
+msgid "Comment Area Emoticon"
+msgstr ""
+
+#: options/theme-options.php:3116
 msgid ""
 "Select the emoticons to be displayed in the comment area input box. Uncheck all to turn off the comment input box emoticon function."
 msgstr ""
 
-#: options/theme-options.php:3106
+#: options/theme-options.php:3119
 msgid "BiliBili Emoticon Pack"
 msgstr ""
 
-#: options/theme-options.php:3107
+#: options/theme-options.php:3120
 msgid "Baidu Tieba Emoticon Pack"
 msgstr ""
 
-#: options/theme-options.php:3108
+#: options/theme-options.php:3121
 msgid "Emoji"
 msgstr ""
 
-#: options/theme-options.php:3109
+#: options/theme-options.php:3122
 msgid "Customized Emoticon Pack"
 msgstr ""
 
-#: options/theme-options.php:3117
+#: options/theme-options.php:3130
 msgid "Customized Emoticon Column Name"
 msgstr ""
 
-#: options/theme-options.php:3118
+#: options/theme-options.php:3131
 msgid "It is recommended to enter less than 4 Chinese characters in length to avoid causing compatibility issues on mobile terminals."
 msgstr ""
 
-#: options/theme-options.php:3126
+#: options/theme-options.php:3139
 msgid "Path To Custom Expression"
 msgstr ""
 
-#: options/theme-options.php:3127
+#: options/theme-options.php:3140
 msgid ""
 "Click <a href=\"./admin.php?update_custom_smilies=true\" target=\"_blank\">here</a> updating emoticon list. Specific usage reference: "
 "<a href=\"https://docs.fuukei.org/Sakurairo/Pages/#%E8%AF%84%E8%AE%BA%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE\" target=\"_blank\">Comment "
 "related settings</a>"
 msgstr ""
 
-#: options/theme-options.php:3134
+#: options/theme-options.php:3147
 msgid "Custom Emoticon Proxy Address"
 msgstr ""
 
-#: options/theme-options.php:3135
+#: options/theme-options.php:3148
 msgid "Fill in the CDN address of the emoticon image. If left blank, the CDN proxy function will not be enabled."
 msgstr ""
 
-#: options/theme-options.php:3145
+#: options/theme-options.php:3158
 msgid "Page Comment Area UA Info"
 msgstr ""
 
-#: options/theme-options.php:3146
+#: options/theme-options.php:3159
 msgid "When enabled, the page comment area will display the user’s browser, operating system information"
 msgstr ""
 
-#: options/theme-options.php:3153
+#: options/theme-options.php:3166
 msgid "Page Comment Area Location Information"
 msgstr ""
 
-#: options/theme-options.php:3154
+#: options/theme-options.php:3167
 msgid "When enabled, the page comment area will show the user’s location information"
 msgstr ""
 
-#: options/theme-options.php:3161
+#: options/theme-options.php:3174
 msgid "Management Page Displays Location Information"
 msgstr ""
 
-#: options/theme-options.php:3162
+#: options/theme-options.php:3175
 msgid "When enabled, the commenter's IP geographical location information will be displayed on the comment management page"
 msgstr ""
 
-#: options/theme-options.php:3169
+#: options/theme-options.php:3182
 msgid "Location Information Persistence"
 msgstr ""
 
-#: options/theme-options.php:3170
+#: options/theme-options.php:3183
 msgid "When enabled, the commenter's IP geographical location information will be stored in the database"
 msgstr ""
 
-#: options/theme-options.php:3177
+#: options/theme-options.php:3190
 msgid "Private Comment Function"
 msgstr ""
 
-#: options/theme-options.php:3178
+#: options/theme-options.php:3191
 msgid "When enabled, users are allowed to set their comments to be invisible to others"
 msgstr ""
 
-#: options/theme-options.php:3185
+#: options/theme-options.php:3198
 msgid "Page Comment Area Captcha"
 msgstr ""
 
-#: options/theme-options.php:3186
+#: options/theme-options.php:3199
 msgid "Enabled by default, comments posted without logging in need to be verified by CAPTCHA"
 msgstr ""
 
-#: options/theme-options.php:3193
+#: options/theme-options.php:3206
 msgid "QQ Avatar Link Encryption"
 msgstr ""
 
-#: options/theme-options.php:3196
+#: options/theme-options.php:3209
 msgid "Redirect (low security)"
 msgstr ""
 
-#: options/theme-options.php:3197
+#: options/theme-options.php:3210
 msgid "Get avatar data in the backend (medium security)"
 msgstr ""
 
-#: options/theme-options.php:3198
+#: options/theme-options.php:3211
 msgid "Parse avatar interface in the backend (high security, slow)"
 msgstr ""
 
-#: options/theme-options.php:3206
+#: options/theme-options.php:3219
 msgid "Page Comment Area Upload Image Interface"
 msgstr ""
 
-#: options/theme-options.php:3220
+#: options/theme-options.php:3233
 msgid "Imgur Client ID"
 msgstr ""
 
-#: options/theme-options.php:3222
+#: options/theme-options.php:3235
 msgid "Fill in Client ID here, to register please visit https://api.imgur.com/oauth2/addclient"
 msgstr ""
 
-#: options/theme-options.php:3228
+#: options/theme-options.php:3241
 msgid "Imgur Upload Proxy"
 msgstr ""
 
-#: options/theme-options.php:3230
+#: options/theme-options.php:3243
 msgid ""
 "The proxy used by the backend when uploading images to Imgur. You can refer to the tutorial: https://2heng.xin/2018/06/06/javascript-"
 "upload-images-with-imgur-api/"
 msgstr ""
 
-#: options/theme-options.php:3237
+#: options/theme-options.php:3250
 msgid "SM.MS Secret Token"
 msgstr ""
 
-#: options/theme-options.php:3239
+#: options/theme-options.php:3252
 msgid "Fill in your Key here, to get it please visit https://sm.ms/home/apitoken"
 msgstr ""
 
-#: options/theme-options.php:3245
+#: options/theme-options.php:3258
 msgid "Chevereto API v1 Key"
 msgstr ""
 
-#: options/theme-options.php:3247
+#: options/theme-options.php:3260
 msgid "Fill in the Key here, to get please visit your Chevereto home page address/dashboard/settings/api"
 msgstr ""
 
-#: options/theme-options.php:3253
+#: options/theme-options.php:3266
 msgid "Chevereto Address"
 msgstr ""
 
-#: options/theme-options.php:3255
+#: options/theme-options.php:3268
 msgid "Your Chevereto home page address. Please note that there is no \"/\" at the end, e.g. https://your.cherverto.com"
 msgstr ""
 
-#: options/theme-options.php:3261
+#: options/theme-options.php:3274
 msgid "Lsky Pro v1 Token"
 msgstr ""
 
-#: options/theme-options.php:3263
+#: options/theme-options.php:3276
 msgid "Fill in the Token here, Please note that there is no \"Bearer \" at first, to get please visit your Lsky Pro home page address/api"
 msgstr ""
 
-#: options/theme-options.php:3269
+#: options/theme-options.php:3282
 msgid "Lsky Pro Address"
 msgstr ""
 
-#: options/theme-options.php:3271
+#: options/theme-options.php:3284
 msgid "Your Lsky Pro home page address. Please note that there is no \"/\" at the end, e.g. https://your.lskypro.com"
 msgstr ""
 
-#: options/theme-options.php:3277
+#: options/theme-options.php:3290
 msgid "Comment Image Proxy"
 msgstr ""
 
-#: options/theme-options.php:3278
+#: options/theme-options.php:3291
 msgid "Proxy for the image displayed on the frontend"
 msgstr ""
 
-#: options/theme-options.php:3285
+#: options/theme-options.php:3298
 msgid "Comment Email Notification"
 msgstr ""
 
-#: options/theme-options.php:3291
+#: options/theme-options.php:3304
 msgid "Mail Template Featured Image"
 msgstr ""
 
-#: options/theme-options.php:3292
+#: options/theme-options.php:3305
 msgid "Set the background image of your reply email"
 msgstr ""
 
-#: options/theme-options.php:3300
+#: options/theme-options.php:3313
 msgid "Mail Template Sending Address Prefix"
 msgstr ""
 
-#: options/theme-options.php:3301
+#: options/theme-options.php:3314
 msgid ""
 "Used to send system mail. The sender address will be displayed in the user's mailbox, don't use Non-English Characters. The default "
 "system mail address is bibi@your domain"
 msgstr ""
 
-#: options/theme-options.php:3308
+#: options/theme-options.php:3321
 msgid "User Mail Reply Notification"
 msgstr ""
 
-#: options/theme-options.php:3309
+#: options/theme-options.php:3322
 msgid ""
 "By default WordPress will use email notifications to notify users when their comments receive a reply. After turning it on users are "
 "allowed to set whether to use email notifications when their comments receive a reply"
 msgstr ""
 
-#: options/theme-options.php:3316
+#: options/theme-options.php:3329
 msgid "Admin Email Reply Notification"
 msgstr ""
 
-#: options/theme-options.php:3317
+#: options/theme-options.php:3330
 msgid "Use email notifications when admin comments receive a reply after turning it on"
 msgstr ""
 
-#: options/theme-options.php:3326
+#: options/theme-options.php:3339
 msgid "Other Options"
 msgstr ""
 
-#: options/theme-options.php:3332
+#: options/theme-options.php:3345
 msgid "Login Screen and Dashboard Related Options"
 msgstr ""
 
-#: options/theme-options.php:3339
+#: options/theme-options.php:3352
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Others/"
 "#%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2%E5%92%8C%E4%BB%AA%E8%A1%A8%E7%9B%98%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE\">here</a> to learn how "
 "to set the options on this page"
 msgstr ""
 
-#: options/theme-options.php:3344
+#: options/theme-options.php:3357
 msgid "Login Screen"
 msgstr ""
 
-#: options/theme-options.php:3350
+#: options/theme-options.php:3363
 msgid "Custom Login Screen"
 msgstr ""
 
-#: options/theme-options.php:3351
+#: options/theme-options.php:3364
 msgid "Default on, custom login screen will replace the default login screen"
 msgstr ""
 
-#: options/theme-options.php:3358
+#: options/theme-options.php:3371
 msgid "Login Screen Logo"
 msgstr ""
 
-#: options/theme-options.php:3359
+#: options/theme-options.php:3372
 msgid "Set your login screen Logo"
 msgstr ""
 
-#: options/theme-options.php:3368
+#: options/theme-options.php:3381
 msgid "Captcha Selection"
 msgstr ""
 
-#: options/theme-options.php:3371
+#: options/theme-options.php:3384
 msgid "Theme Built in Captcha"
 msgstr ""
 
-#: options/theme-options.php:3372
+#: options/theme-options.php:3385
 msgid "Vaptcha"
 msgstr ""
 
-#: options/theme-options.php:3380
+#: options/theme-options.php:3393
 msgid "Vaptcha VID"
 msgstr ""
 
-#: options/theme-options.php:3382
+#: options/theme-options.php:3395
 msgid "Fill in your Vaptcha VID"
 msgstr ""
 
-#: options/theme-options.php:3388
+#: options/theme-options.php:3401
 msgid "Vaptcha KEY"
 msgstr ""
 
-#: options/theme-options.php:3390
+#: options/theme-options.php:3403
 msgid "Fill in your Vaptcha KEY"
 msgstr ""
 
-#: options/theme-options.php:3396
+#: options/theme-options.php:3409
 msgid "Vaptcha Scene"
 msgstr ""
 
-#: options/theme-options.php:3412
+#: options/theme-options.php:3425
 msgid "Jump after login"
 msgstr ""
 
-#: options/theme-options.php:3413
+#: options/theme-options.php:3426
 msgid "Jump to backend for admins and home for users after turning on."
 msgstr ""
 
-#: options/theme-options.php:3420
+#: options/theme-options.php:3433
 msgid "Login Screen Language Option"
 msgstr ""
 
-#: options/theme-options.php:3421
+#: options/theme-options.php:3434
 msgid "Login screen language option will be display when enabled"
 msgstr ""
 
-#: options/theme-options.php:3427
+#: options/theme-options.php:3440
 msgid "Dashboard"
 msgstr ""
 
-#: options/theme-options.php:3433
+#: options/theme-options.php:3446
 msgid "Dashboard Background Image"
 msgstr ""
 
-#: options/theme-options.php:3434
+#: options/theme-options.php:3447
 msgid "Set your dashboard background image, leave this option blank to show white background"
 msgstr ""
 
-#: options/theme-options.php:3442
+#: options/theme-options.php:3455
 msgid "Dashboard Options Menu Style"
 msgstr ""
 
-#: options/theme-options.php:3453
+#: options/theme-options.php:3466
 msgid "Dashboard Primary Menu Color"
 msgstr ""
 
-#: options/theme-options.php:3461
+#: options/theme-options.php:3474
 msgid "Dashboard Secondary Menu Color"
 msgstr ""
 
-#: options/theme-options.php:3469
+#: options/theme-options.php:3482
 msgid "Dashboard Emphasis Color"
 msgstr ""
 
-#: options/theme-options.php:3477
+#: options/theme-options.php:3490
 msgid "Dashboard Text Color"
 msgstr ""
 
-#: options/theme-options.php:3487
+#: options/theme-options.php:3500
 msgid "ChatGPT Options"
 msgstr ""
 
-#: options/theme-options.php:3494
+#: options/theme-options.php:3507
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Others/#ChatGPT%E8%AE%BE%E7%BD%AE\">here</a> to learn how to set the options "
 "on this page"
 msgstr ""
 
-#: options/theme-options.php:3500
-msgid "ChatGPT Function"
-msgstr ""
-
-#: options/theme-options.php:3501
-msgid "After turning on ChatGPT Function will be available"
-msgstr ""
-
-#: options/theme-options.php:3507
+#: options/theme-options.php:3512
 msgid ""
 "<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.7/options/leaflow.webp\" width=\"25%\" height=\"25%\"/><img src=\"https://s.nmxc.ltd/"
 "sakurairo_vision/@2.7/options/postchat.webp\" width=\"25%\" height=\"25%\"/>"
 msgstr ""
 
-#: options/theme-options.php:3515
+#: options/theme-options.php:3520
 msgid "Reset to API providers' default options"
 msgstr ""
 
-#: options/theme-options.php:3517
+#: options/theme-options.php:3522
 msgid "Leaflow"
 msgstr ""
 
-#: options/theme-options.php:3520
+#: options/theme-options.php:3525
 msgid "PostChat"
 msgstr ""
 
-#: options/theme-options.php:3523
+#: options/theme-options.php:3528
 msgid "OpenAI"
 msgstr ""
 
-#: options/theme-options.php:3554
+#: options/theme-options.php:3559
 msgid "Reset successfully"
 msgstr ""
 
-#: options/theme-options.php:3557
+#: options/theme-options.php:3562
 msgid "Failed to reset"
 msgstr ""
 
-#: options/theme-options.php:3571
+#: options/theme-options.php:3576
 msgid "ChatGPT Base URL"
 msgstr ""
 
-#: options/theme-options.php:3572
+#: options/theme-options.php:3577
 msgid "Fill in the ChatGPT Base URL"
 msgstr ""
 
-#: options/theme-options.php:3580
+#: options/theme-options.php:3584
 msgid "ChatGPT API keys"
 msgstr ""
 
-#: options/theme-options.php:3581
+#: options/theme-options.php:3585
 msgid ""
 "Fill in Your ChatGPT API keys, please refer to <a href=\"https://platform.openai.com/account/api-keys\">OpenAI Website</a> for further "
 "information."
 msgstr ""
 
-#: options/theme-options.php:3588
-msgid "ChatGPT Article Summarize"
+#: options/theme-options.php:3591
+msgid "ChatGPT Max Tokens"
 msgstr ""
 
-#: options/theme-options.php:3589
-msgid "After turning on, title and context of your articles will be automatically sent to ChatGPT to generate excerpts."
+#: options/theme-options.php:3592
+msgid "Maximum number of words to be sent per segment"
 msgstr ""
 
-#: options/theme-options.php:3596
-msgid ""
-"Each update of your post will trigger a request to generate a summary. Due to current API limitations, if your article exceeds 4097 "
-"Token, the system will only send the unexceeded portion to generate a summary"
-msgstr ""
-
-#: options/theme-options.php:3606
-msgid "Article IDs that do not Require ChatGPT Summarize"
-msgstr ""
-
-#: options/theme-options.php:3607
-msgid "Those articles will never be sent to ChatGPT for excerpt generation. Split each id with a \",\"."
-msgstr ""
-
-#: options/theme-options.php:3618
-msgid "ChatGPT Article Summarize Init Prompt"
-msgstr ""
-
-#: options/theme-options.php:3623
-msgid "Init Prompt instructs AI how to generate summaries for your articles. Init Prompt will be passed to ChatGPT as \"system\" role"
-msgstr ""
-
-#: options/theme-options.php:3630
+#: options/theme-options.php:3602
 msgid "ChatGPT Model"
 msgstr ""
 
-#: options/theme-options.php:3631
+#: options/theme-options.php:3603
 msgid ""
 "Only models support Chat Completion API can be used. The default is \"gpt-4o-mini. View https://platform.openai.com/docs/models/"
 "overview for further info."
 msgstr ""
 
-#: options/theme-options.php:3644
-msgid "ChatGPT API self test"
+#: options/theme-options.php:3613
+msgid "ChatGPT Article Summarize"
 msgstr ""
 
-#: options/theme-options.php:3648
-msgid "TEST"
+#: options/theme-options.php:3614
+msgid "After turning on, title and context of your articles will be automatically sent to ChatGPT to generate excerpts."
+msgstr ""
+
+#: options/theme-options.php:3620
+msgid ""
+"Each update of your post will trigger a request to generate a summary. Due to current API limitations, if your article exceeds 4097 "
+"Token, the system will only send the unexceeded portion to generate a summary"
+msgstr ""
+
+#: options/theme-options.php:3629
+msgid "Article IDs that do not Require ChatGPT Summarize"
+msgstr ""
+
+#: options/theme-options.php:3630
+msgid "Those articles will never be sent to ChatGPT for excerpt generation. Split each id with a \",\"."
+msgstr ""
+
+#: options/theme-options.php:3640
+msgid "ChatGPT Article Summarize Init Prompt"
+msgstr ""
+
+#: options/theme-options.php:3644
+msgid "Init Prompt instructs AI how to generate summaries for your articles. Init Prompt will be passed to ChatGPT as \"system\" role"
 msgstr ""
 
 #: options/theme-options.php:3651
+msgid "ChatGPT Article Annotations Init Prompt"
+msgstr ""
+
+#: options/theme-options.php:3652
+msgid "Init Prompt instructs AI how to generate annotations for your articles. Init Prompt will be passed to ChatGPT as \"system\" role"
+msgstr ""
+
+#: options/theme-options.php:3661
+msgid "ChatGPT API self test"
+msgstr ""
+
+#: options/theme-options.php:3665
+msgid "TEST"
+msgstr ""
+
+#: options/theme-options.php:3668
 msgid "Results: "
 msgstr ""
 
-#: options/theme-options.php:3663
+#: options/theme-options.php:3680
 msgid "Waiting for response..."
 msgstr ""
 
-#: options/theme-options.php:3674
+#: options/theme-options.php:3691
 msgid "Malformed post_id: "
 msgstr ""
 
-#: options/theme-options.php:3691
+#: options/theme-options.php:3708
 msgid "Low Use Options"
 msgstr ""
 
-#: options/theme-options.php:3698
+#: options/theme-options.php:3715
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Others/#%E4%BD%8E%E4%BD%BF%E7%94%A8%E8%AE%BE%E7%BD%AE\">here</a> to learn how "
 "to set the options on this page"
 msgstr ""
 
-#: options/theme-options.php:3704
+#: options/theme-options.php:3721
 msgid "Statistics API"
 msgstr ""
 
-#: options/theme-options.php:3705
+#: options/theme-options.php:3722
 msgid "You can choose WP-Statistics plugin statistics or theme built-in statistics to display"
 msgstr ""
 
-#: options/theme-options.php:3707
+#: options/theme-options.php:3724
 msgid "Theme Built in Statistics"
 msgstr ""
 
-#: options/theme-options.php:3708
+#: options/theme-options.php:3725
 msgid "WP-Statistics Plugin Statistics"
 msgstr ""
 
-#: options/theme-options.php:3716
+#: options/theme-options.php:3733
 msgid "Statistics display format"
 msgstr ""
 
-#: options/theme-options.php:3717
+#: options/theme-options.php:3734
 msgid "You can choose from four different data display formats"
 msgstr ""
 
-#: options/theme-options.php:3719
+#: options/theme-options.php:3736
 msgid "23333 Visits"
 msgstr ""
 
-#: options/theme-options.php:3720
+#: options/theme-options.php:3737
 msgid "23,333 Visits"
 msgstr ""
 
-#: options/theme-options.php:3721
+#: options/theme-options.php:3738
 msgid "23 333 Visits"
 msgstr ""
 
-#: options/theme-options.php:3722
+#: options/theme-options.php:3739
 msgid "23K Visits"
 msgstr ""
 
-#: options/theme-options.php:3730
+#: options/theme-options.php:3747
 msgid "Google Analytics Id"
 msgstr ""
 
-#: options/theme-options.php:3731
+#: options/theme-options.php:3748
 msgid "If you already have a plugin to handle it, please keep here empty."
 msgstr ""
 
-#: options/theme-options.php:3737
+#: options/theme-options.php:3754
 msgid "Captcha Level"
 msgstr ""
 
-#: options/theme-options.php:3738
+#: options/theme-options.php:3755
 msgid "The difficulty level of the Theme Captcha"
 msgstr ""
 
-#: options/theme-options.php:3748
+#: options/theme-options.php:3765
 msgid "Custom CSS Styles"
 msgstr ""
 
-#: options/theme-options.php:3749
+#: options/theme-options.php:3766
 msgid "Fill in the CSS code without writing style tag"
 msgstr ""
 
-#: options/theme-options.php:3756
+#: options/theme-options.php:3773
 msgid "Code inserted in the header"
 msgstr ""
 
-#: options/theme-options.php:3757
+#: options/theme-options.php:3774
 msgid "Insert HTML code right before </head>."
 msgstr ""
 
-#: options/theme-options.php:3763
+#: options/theme-options.php:3780
 msgid "Timezone Fix"
 msgstr ""
 
-#: options/theme-options.php:3764
+#: options/theme-options.php:3781
 msgid ""
 "Slide to adjust. If the comment has a time difference problem, adjust it here, fill in an integer. Calculation method: actual time = "
 "time of display error - the integer you entered (in hours)"
 msgstr ""
 
-#: options/theme-options.php:3773
+#: options/theme-options.php:3790
 msgid "Gravatar Service Proxy"
 msgstr ""
 
-#: options/theme-options.php:3774
+#: options/theme-options.php:3791
 msgid "You can select multiple proxy as the Gravatar Service Proxy. By default, Weavatar is used as the Gravatar Service Proxy."
 msgstr ""
 
-#: options/theme-options.php:3776
+#: options/theme-options.php:3793
 msgid "Weavatar Service"
 msgstr ""
 
-#: options/theme-options.php:3777
+#: options/theme-options.php:3794
 msgid "Loli Net"
 msgstr ""
 
-#: options/theme-options.php:3778
+#: options/theme-options.php:3795
 msgid "Official"
 msgstr ""
 
-#: options/theme-options.php:3779 options/theme-options.php:3787
+#: options/theme-options.php:3796 options/theme-options.php:3804
 msgid "Custom Proxy Address"
 msgstr ""
 
-#: options/theme-options.php:3788
+#: options/theme-options.php:3805
 msgid "Enter your Gravatar proxy address without starting with \"http(s)://\" and ending with \"/\". Example: gravatar.com/avatar."
 msgstr ""
 
-#: options/theme-options.php:3796
+#: options/theme-options.php:3813
 msgid "GitHub repository card proxy"
 msgstr ""
 
-#: options/theme-options.php:3797
+#: options/theme-options.php:3814
 msgid "Use your server proxy to get the github repository card image so that Chinese users who cannot access vercel.app can see it"
 msgstr ""
 
-#: options/theme-options.php:3803
+#: options/theme-options.php:3820
 msgid "Lightbox"
 msgstr ""
 
-#: options/theme-options.php:3809
+#: options/theme-options.php:3826
 msgid "lightbox"
 msgstr ""
 
-#: options/theme-options.php:3810
+#: options/theme-options.php:3827
 msgid "Choose a image lightbox effect which you want to use,and additional JQ libraries will be loaded when using fancybox"
 msgstr ""
 
-#: options/theme-options.php:3812
+#: options/theme-options.php:3829
 msgid "off"
 msgstr ""
 
-#: options/theme-options.php:3813
+#: options/theme-options.php:3830
 msgid "baguetteBox"
 msgstr ""
 
-#: options/theme-options.php:3814
+#: options/theme-options.php:3831
 msgid "fancybox"
 msgstr ""
 
-#: options/theme-options.php:3815
+#: options/theme-options.php:3832
 msgid "lightgallery"
 msgstr ""
 
-#: options/theme-options.php:3822
+#: options/theme-options.php:3839
 msgid ""
 "<strong>Attension: Please read <a href=\"https://github.com/sachinchoolur/lightGallery#license\">License Instruction</a> before use.</"
 "strong><br/><strong><a href=\"https://www.lightgalleryjs.com/demos/thumbnails/\">Demos</a></strong> | <strong><a href=\"https://www."
@@ -3626,21 +3633,21 @@ msgid ""
 "com/mirai-mamori/Sakurairo/discussions"
 msgstr ""
 
-#: options/theme-options.php:3833
+#: options/theme-options.php:3850
 msgid ""
 "Start from Sakurairo v2.4.0, plugins names in LightGallery option follow the form cite in official document (eg. lgHash instead of "
 "\"hash\")"
 msgstr ""
 
-#: options/theme-options.php:3841
+#: options/theme-options.php:3858
 msgid "LightGallery Lightbox Effect Options"
 msgstr ""
 
-#: options/theme-options.php:3852
+#: options/theme-options.php:3869
 msgid "Code Highlighting"
 msgstr ""
 
-#: options/theme-options.php:3857
+#: options/theme-options.php:3874
 msgid ""
 "<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </p> <p><strong>Prism.js:</strong> Requires a language to be "
 "specified, see <a href=\"https://prismjs.com/#basic-usage\">basic usage</a> and <a href=\"https://prismjs.com/plugins/file-highlight/"
@@ -3648,253 +3655,253 @@ msgid ""
 "available. </p>"
 msgstr ""
 
-#: options/theme-options.php:3865
+#: options/theme-options.php:3882
 msgid "Code Highlight Method"
 msgstr ""
 
-#: options/theme-options.php:3869
+#: options/theme-options.php:3886
 msgid "Custom Program"
 msgstr ""
 
-#: options/theme-options.php:3877
+#: options/theme-options.php:3894
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
 msgstr ""
 
-#: options/theme-options.php:3881
+#: options/theme-options.php:3898
 msgid "See the <a href=\"https://prismjs.com/plugins/line-numbers/\">plugin description documentation</a>"
 msgstr ""
 
-#: options/theme-options.php:3887
+#: options/theme-options.php:3904
 msgid "Prism.js: Autoload Address"
 msgstr ""
 
-#: options/theme-options.php:3891
+#: options/theme-options.php:3908
 msgid "Leave blank to use default values"
 msgstr ""
 
-#: options/theme-options.php:3898
+#: options/theme-options.php:3915
 msgid "Prism.js: Code Highlight Theme"
 msgstr ""
 
-#: options/theme-options.php:3899 options/theme-options.php:3910
+#: options/theme-options.php:3916 options/theme-options.php:3927
 msgid "Relative to autoload address. Leave blank to use default values"
 msgstr ""
 
-#: options/theme-options.php:3909
+#: options/theme-options.php:3926
 msgid "Prism.js: Code Highlight Theme (Dark Mode)"
 msgstr ""
 
-#: options/theme-options.php:3920
+#: options/theme-options.php:3937
 msgid "The following Options are not recommended to be modified blindly, please use them under the guidance of others"
 msgstr ""
 
-#: options/theme-options.php:3926
+#: options/theme-options.php:3943
 msgid "Image CDN"
 msgstr ""
 
-#: options/theme-options.php:3927
+#: options/theme-options.php:3944
 msgid ""
 "Note: fill in the format https://your CDN domain/. This means that images with original path http://your.domain/wp-content/"
 "uploads/2018/05/xx.png will be loaded from http://your CDN domain/2018/05/xx.png"
 msgstr ""
 
-#: options/theme-options.php:3934
+#: options/theme-options.php:3951
 msgid "Articles Categories (Do not display)"
 msgstr ""
 
-#: options/theme-options.php:3935 options/theme-options.php:3942
+#: options/theme-options.php:3952 options/theme-options.php:3959
 msgid "Fill in category ID, seperate in English\" , \" when more than one"
 msgstr ""
 
-#: options/theme-options.php:3941
+#: options/theme-options.php:3958
 msgid "Image Display Category"
 msgstr ""
 
-#: options/theme-options.php:3948
+#: options/theme-options.php:3965
 msgid "Version Control"
 msgstr ""
 
-#: options/theme-options.php:3949
+#: options/theme-options.php:3966
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr ""
 
-#: options/theme-options.php:3955
+#: options/theme-options.php:3972
 msgid "Hide Login Portal"
 msgstr ""
 
-#: options/theme-options.php:3956
+#: options/theme-options.php:3973
 msgid "Hide login address in theme as much as possible, if you used plugins to hide this."
 msgstr ""
 
-#: options/theme-options.php:3963
+#: options/theme-options.php:3980
 msgid "Fontawesome Source"
 msgstr ""
 
-#: options/theme-options.php:3964
+#: options/theme-options.php:3981
 msgid "The source link of Fontawesome icons style"
 msgstr ""
 
-#: options/theme-options.php:3971
+#: options/theme-options.php:3988
 msgid "PHP Notice Filter"
 msgstr ""
 
-#: options/theme-options.php:3973
+#: options/theme-options.php:3990
 msgid "Use your php config"
 msgstr ""
 
-#: options/theme-options.php:3974
+#: options/theme-options.php:3991
 msgid "Only show critical errors"
 msgstr ""
 
-#: options/theme-options.php:3975
+#: options/theme-options.php:3992
 msgid "Show nothing"
 msgstr ""
 
-#: options/theme-options.php:3978
+#: options/theme-options.php:3995
 msgid "It is recommended to set it to normal to block log information that does not affect usage."
 msgstr ""
 
-#: options/theme-options.php:3984
+#: options/theme-options.php:4001
 msgid "Backup&Recovery"
 msgstr ""
 
-#: options/theme-options.php:3986
+#: options/theme-options.php:4003
 msgid "Backup or Recovery your theme options"
 msgstr ""
 
-#: options/theme-options.php:3997
+#: options/theme-options.php:4014
 msgid "About Theme"
 msgstr ""
 
-#: options/theme-options.php:4003
+#: options/theme-options.php:4020
 msgid "Version Info"
 msgstr ""
 
-#: options/theme-options.php:4008
+#: options/theme-options.php:4025
 msgid "<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.7/series/headlogo.webp\"  alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:4014
+#: options/theme-options.php:4031
 #, php-format
 msgid "Theme Sakurairo Version %s | Internal Version %s | <a href=\"https://github.com/mirai-mamori/Sakurairo\">Project Address</a>"
 msgstr ""
 
-#: options/theme-options.php:4019
+#: options/theme-options.php:4036
 msgid "Update Related"
 msgstr ""
 
-#: options/theme-options.php:4025
+#: options/theme-options.php:4042
 msgid "Theme Update Source"
 msgstr ""
 
-#: options/theme-options.php:4031
+#: options/theme-options.php:4048
 msgid ""
 "If you are using a server set up in mainland China, please use the Upyun source or the official theme source as your theme update source"
 msgstr ""
 
-#: options/theme-options.php:4038
+#: options/theme-options.php:4055
 msgid "Theme Update Test Channel Disclaimer"
 msgstr ""
 
-#: options/theme-options.php:4044
+#: options/theme-options.php:4061
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully understood the risks associated with participating in the "
 "test and are willing to assume all consequences at your own risk</strong> (including but not limited to possible data loss) into the "
 "options text box <strong> \"I agree and am willing to bear all unexpected consequences\"</strong>"
 msgstr ""
 
-#: options/theme-options.php:4050
+#: options/theme-options.php:4067
 msgid "Theme Update Channel"
 msgstr ""
 
-#: options/theme-options.php:4057
+#: options/theme-options.php:4074
 msgid "You can toggle the update channel here to participate in the testing of the new version"
 msgstr ""
 
-#: options/theme-options.php:4059
+#: options/theme-options.php:4076
 msgid "Stable Channel"
 msgstr ""
 
-#: options/theme-options.php:4060
+#: options/theme-options.php:4077
 msgid "Beta Channel"
 msgstr ""
 
-#: options/theme-options.php:4061
+#: options/theme-options.php:4078
 msgid "Preview Channel"
 msgstr ""
 
-#: options/theme-options.php:4068
+#: options/theme-options.php:4085
 msgid "Resource Control"
 msgstr ""
 
-#: options/theme-options.php:4074
+#: options/theme-options.php:4091
 msgid "Provide Critical Frontend Resource locally"
 msgstr ""
 
-#: options/theme-options.php:4075
+#: options/theme-options.php:4092
 msgid ""
 "Enabeld by default. Critical resources are those resources whose loading performance will have a significant impact on the user "
 "experience."
 msgstr ""
 
-#: options/theme-options.php:4082
+#: options/theme-options.php:4099
 msgid "Provide Other Frontend Resource locally"
 msgstr ""
 
-#: options/theme-options.php:4083
+#: options/theme-options.php:4100
 msgid "Less important frontend resource in the theme's folder."
 msgstr ""
 
-#: options/theme-options.php:4090
+#: options/theme-options.php:4107
 msgid "Public CDN Basepath"
 msgstr ""
 
-#: options/theme-options.php:4091
+#: options/theme-options.php:4108
 msgid "Control the basepath of Frontend Resource."
 msgstr ""
 
-#: options/theme-options.php:4102
+#: options/theme-options.php:4119
 msgid "Provide 3rd-party library from Public CDN"
 msgstr ""
 
-#: options/theme-options.php:4103
+#: options/theme-options.php:4120
 msgid ""
 "When disabled, 3rd-party dependencies, which have been built to bundles along with themes's entry script, will be loaded from the exact "
 "same origin with Critical Frontend Resource. "
 msgstr ""
 
-#: options/theme-options.php:4110
+#: options/theme-options.php:4127
 msgid "Vision Resource Basepath"
 msgstr ""
 
-#: options/theme-options.php:4111
+#: options/theme-options.php:4128
 msgid ""
 "This link directory structure needs to be consistent with the <a href=\"https://github.com/Fuukei/Sakurairo_Vision\">Sakurairo Vision</"
 "a> repositories officially provided by fuukei, otherwise some resources 404 may appear. The image source officially provided by <a "
 "href=\"https://www.upyun.com/\">Upyun</a> is adopted by default."
 msgstr ""
 
-#: options/theme-options.php:4117
+#: options/theme-options.php:4134
 msgid "Theme Sponsors"
 msgstr ""
 
-#: options/theme-options.php:4122
+#: options/theme-options.php:4139
 msgid "<img src=\"https://news.maho.cc/sponsors.php\"  alt=\"sponsors\" width=\"65%\" height=\"65%\" />"
 msgstr ""
 
-#: options/theme-options.php:4127
+#: options/theme-options.php:4144
 msgid "Theme Contributors"
 msgstr ""
 
-#: options/theme-options.php:4132
+#: options/theme-options.php:4149
 msgid "<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:4137
+#: options/theme-options.php:4154
 msgid "Privacy information"
 msgstr ""
 
-#: options/theme-options.php:4142
+#: options/theme-options.php:4159
 msgid ""
 "<p>The theme respects your privacy</p>\n"
 "        <p>However, when you use a service provider pre-populated by the theme to provide relevant services in mainland China, the "
@@ -3903,31 +3910,31 @@ msgid ""
 "configured with options for you to modify</p>"
 msgstr ""
 
-#: options/theme-options.php:4150
+#: options/theme-options.php:4167
 msgid "Send Theme Version to Fuukei"
 msgstr ""
 
-#: options/theme-options.php:4151
+#: options/theme-options.php:4168
 msgid ""
 "The theme will only send time and version information to Fuukei officials and the data will be cleaned regularly and used only to count "
 "version updates."
 msgstr ""
 
-#: options/theme-options.php:4157
+#: options/theme-options.php:4174
 msgid "Reference Information"
 msgstr ""
 
-#: options/theme-options.php:4162
+#: options/theme-options.php:4179
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox Fluent Icon Pack</p>\n"
 "        <p>MUH2 Design Icon Referenced by 缄默 <a href=\"https://www.coolapk.com/apk/com.muh2.icon\">MUH2 Icon Pack</a></p>"
 msgstr ""
 
-#: options/theme-options.php:4168
+#: options/theme-options.php:4185
 msgid "Dependency Information"
 msgstr ""
 
-#: options/theme-options.php:4173
+#: options/theme-options.php:4190
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://github.com/Codestar/codestar-framework\">Codestar Framework</"
 "a> Project</p>\n"
@@ -3935,7 +3942,7 @@ msgid ""
 "Update Checker</a> Project</p>"
 msgstr ""
 
-#: options/theme-options.php:4179
+#: options/theme-options.php:4196
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=flat-square\"  alt=\"Theme latest version\" "
 "style=\"border-radius: 3px;\" />  <img src=\"https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=flat-square\"  "

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-13 17:45+0900\n"
-"PO-Revision-Date: 2025-03-13 17:52+0900\n"
+"POT-Creation-Date: 2025-03-17 17:20+0900\n"
+"PO-Revision-Date: 2025-03-17 17:41+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -50,197 +50,197 @@ msgstr " 前へ"
 msgid "No personal profile set yet"
 msgstr "個人プロファイルはまだ設定されていません"
 
-#: comments.php:56
+#: comments.php:53
 msgid "Woooooow ヾ(≧∇≦*)ゝ"
 msgstr "うわーうわーヾ(≧∇≦*)ゝ"
 
-#: comments.php:79
+#: comments.php:76
 msgid "view comments"
 msgstr "コメントを表示する"
 
-#: comments.php:80 comments.php:86
+#: comments.php:77 comments.php:83
 msgid " comment"
 msgstr " コメント"
 
-#: comments.php:80 comments.php:86
+#: comments.php:77 comments.php:83
 msgid " comments"
 msgstr " コメント"
 
-#: comments.php:106
+#: comments.php:103
 msgid "no comment"
 msgstr "コメントはありません"
 
-#: comments.php:121
+#: comments.php:118
 msgid "Click here to show captcha"
 msgstr "ここをクリックして認証を開始"
 
-#: comments.php:168
+#: comments.php:165
 msgid "Comment in private"
 msgstr "プライベートでコメント"
 
-#: comments.php:171
+#: comments.php:168
 msgid "Comment reply notify"
 msgstr "コメント返信通知"
 
-#: comments.php:186
+#: comments.php:193
 msgid "Leave a Reply to"
 msgstr "返信を残す"
 
-#: comments.php:187
+#: comments.php:194
 msgid "Cancel Reply"
 msgstr "返信をキャンセル"
 
-#: comments.php:210
+#: comments.php:217
 msgid "Nickname or QQ number"
 msgstr "ニックネーム または QQ 番号"
 
-#: comments.php:210 comments.php:214
+#: comments.php:217 comments.php:221
 msgid "Must* "
 msgstr "必須* "
 
-#: comments.php:211
+#: comments.php:218
 msgid "Auto pull nickname and avatar with a QQ num. entered"
 msgstr "QQ 番号が入力された自動プルニックネームとアバター"
 
-#: comments.php:214
+#: comments.php:221
 msgid "email"
 msgstr "メールアドレス"
 
-#: comments.php:215
+#: comments.php:222
 msgid "You will receive notification by email"
 msgstr "メールで通知を受け取ります"
 
-#: comments.php:218
+#: comments.php:225
 msgid "Site"
 msgstr "サイト"
 
-#: comments.php:219
+#: comments.php:226
 msgid "Advertisement is forbidden 😀"
 msgstr "AD は禁止されています"
 
-#: comments.php:231
+#: comments.php:238
 msgid "Save your private info"
 msgstr "個人情報を保存"
 
-#: footer.php:43
+#: footer.php:32
 #, php-format
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr "ロード時間 %.3f 秒 | %d クエリ | RAM 使用量  %.2f MB "
 
-#: footer.php:58
+#: footer.php:68
 msgid "Go to top"
 msgstr "このページのトップへ"
 
-#: footer.php:59
+#: footer.php:69
 msgid "Control Panel"
 msgstr "コントロールパネル"
 
-#: footer.php:65 footer.php:73
+#: footer.php:75 footer.php:83
 msgid "Want to find something?"
 msgstr "何かを見つけたいですか?"
 
-#: footer.php:74 header.php:257
+#: footer.php:84 header.php:258
 msgid "Search"
 msgstr "検索"
 
-#: footer.php:93
+#: footer.php:103
 msgid "Light Mode"
 msgstr "ライトフィルター"
 
-#: footer.php:96
+#: footer.php:106
 msgid "Dark Mode"
 msgstr "ダークモード"
 
-#: footer.php:102
+#: footer.php:112
 msgid "Toggle Page Background Image"
 msgstr "検索エリア背景画像"
 
-#: footer.php:123
+#: footer.php:133
 msgid "Switch To Font A"
 msgstr "フォント A に切り替え"
 
-#: footer.php:126
+#: footer.php:136
 msgid "Switch To Font B"
 msgstr "フォント B に切り替え"
 
-#: functions.php:134
+#: functions.php:126
 msgid "Nav Menus"
 msgstr "メニュー"
 
-#: functions.php:295
+#: functions.php:287
 msgctxt "post type general name"
 msgid "Shuoshuo"
 msgstr "ツイート"
 
-#: functions.php:296
+#: functions.php:288
 msgctxt "post type singular name"
 msgid "Shuoshuo"
 msgstr "ツイート"
 
-#: functions.php:297
+#: functions.php:289
 msgctxt "admin menu"
 msgid "Shuoshuo"
 msgstr "ツイート"
 
-#: functions.php:298
+#: functions.php:290
 msgctxt "add new on admin bar"
 msgid "Shuoshuo"
 msgstr "ツイート"
 
-#: functions.php:299
+#: functions.php:291
 msgctxt "shuoshuo"
 msgid "Add New"
 msgstr "新規追加"
 
-#: functions.php:300
+#: functions.php:292
 msgid "Add New Shuoshuo"
 msgstr "新しいツイートを追加"
 
-#: functions.php:301
+#: functions.php:293
 msgid "New Shuoshuo"
 msgstr "新しいツイート"
 
-#: functions.php:302
+#: functions.php:294
 msgid "Edit Shuoshuo"
 msgstr "ツイートを編集"
 
-#: functions.php:303
+#: functions.php:295
 msgid "View Shuoshuo"
 msgstr "ツイートを見る"
 
-#: functions.php:304
+#: functions.php:296
 msgid "All Shuoshuo"
 msgstr "すべてのツイート"
 
-#: functions.php:305
+#: functions.php:297
 msgid "Search Shuoshuo"
 msgstr "ツイートを検索"
 
-#: functions.php:306
+#: functions.php:298
 msgid "Parent Shuoshuo:"
 msgstr "ペアレントツイート"
 
-#: functions.php:307
+#: functions.php:299
 msgid "No shuoshuo found."
 msgstr "ツイートは見つからなかった。"
 
-#: functions.php:308
+#: functions.php:300
 msgid "No shuoshuo found in Trash."
 msgstr "ゴミ箱にツイートは見つからなかった。"
 
-#: functions.php:355
+#: functions.php:347
 msgid "Emotion Meta Box"
 msgstr "エモーションメタボックス"
 
-#: functions.php:368
+#: functions.php:360
 msgid "Emotion"
 msgstr "エモーション"
 
-#: functions.php:371
+#: functions.php:363
 msgid "Emotion Color"
 msgstr "エモーションカラー"
 
-#: functions.php:374
+#: functions.php:366
 msgid ""
 "For the Emotion, please fill in the Unicode value of the Fontawesome icon, "
 "and for the Emotion Color, please fill in the RGBA or hexadecimal color."
@@ -248,19 +248,19 @@ msgstr ""
 "エモーションには、Fontawesome アイコンの Unicode 値を、エモーションカラーに"
 "は、RGBA または 16 進数の色を記入してください。"
 
-#: functions.php:419
+#: functions.php:411
 msgid "Custom Meta Box"
 msgstr "カスタム・メタ・ボックス"
 
-#: functions.php:432
+#: functions.php:424
 msgid "Title Style"
 msgstr "タイトル・スタイル"
 
-#: functions.php:435
+#: functions.php:427
 msgid "License"
 msgstr "ライセンス"
 
-#: functions.php:438
+#: functions.php:430
 msgid ""
 "For the Title Style, Please fill in the css style, part of the style need to "
 "add !important effective, and for the License, please go to Theme Options to "
@@ -270,15 +270,15 @@ msgstr ""
 "は、!important effectiveを追加する必要があります。ライセンスについては、テー"
 "マオプションで設定方法をご確認ください。"
 
-#: functions.php:548
+#: functions.php:540
 msgid "Copied!"
 msgstr "コピーしました!"
 
-#: functions.php:549
+#: functions.php:541
 msgid "Copy Code"
 msgstr "コードをコピー"
 
-#: functions.php:550
+#: functions.php:542
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
@@ -286,19 +286,19 @@ msgstr ""
 "あなたのカバー API はクロスオリジンアクセスをサポートしていないようです。この"
 "場合、Cover Cacheは有効になりません。"
 
-#: functions.php:551
+#: functions.php:543
 msgid "Commiting...."
 msgstr "提出中…."
 
-#: functions.php:552
+#: functions.php:544
 msgid "Succeed"
 msgstr "継ぐ"
 
-#: functions.php:553
+#: functions.php:545
 msgid "10 files max per request"
 msgstr "1 回のリクエストで送信できるファイル数の上限は 10 個です"
 
-#: functions.php:554
+#: functions.php:546
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -312,15 +312,15 @@ msgstr ""
 "\n"
 "この画像が大きすぎる~再アップロードしてください!"
 
-#: functions.php:555
+#: functions.php:547
 msgid "Uploading..."
 msgstr "アップロード中..."
 
-#: functions.php:556
+#: functions.php:548
 msgid "Uploaded successfully~"
 msgstr "アップロードに成功しました~"
 
-#: functions.php:557
+#: functions.php:549
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -332,124 +332,124 @@ msgstr ""
 "コード=> {1}\n"
 "{2}"
 
-#: functions.php:558
+#: functions.php:550
 msgid "Upload failed, please retry."
 msgstr "アップロードに失敗しました、もう一度やり直してください。"
 
-#: functions.php:559
+#: functions.php:551
 msgid "Page Load failed. HTTP {0}"
 msgstr "ページの読み込みに失敗しました。HTTP {0}"
 
-#: functions.php:560
+#: functions.php:552
 msgid "Glad you come, but we've got nothing left."
 msgstr "あなたが来てうれしいですが、私たちは何も残っていません。"
 
-#: functions.php:561 search.php:85
+#: functions.php:553 search.php:85
 msgid "Post"
 msgstr "投稿"
 
-#: functions.php:562
+#: functions.php:554
 msgid "Tag"
 msgstr "タグ"
 
-#: functions.php:563
+#: functions.php:555
 msgid "Category"
 msgstr "カテゴリー"
 
-#: functions.php:564 search.php:96
+#: functions.php:556 search.php:96
 msgid "Page"
 msgstr "ページ"
 
-#: functions.php:565
+#: functions.php:557
 msgid "Comment"
 msgstr "コメント"
 
-#: functions.php:566
+#: functions.php:558
 msgid "Paused..."
 msgstr "一時停止"
 
-#: functions.php:567
+#: functions.php:559
 msgid "Loading Video..."
 msgstr "ビデオを読み込んでいます..."
 
-#: functions.php:568
+#: functions.php:560
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "フォントをダウンロードするには、データ使用量に注意してください。"
 
-#: functions.php:569
+#: functions.php:561
 msgid "Are you sure you want set it private?"
 msgstr "プライベートに設定してもよろしいですか?"
 
-#: functions.php:570
+#: functions.php:562
 msgid "You had set private comment before"
 msgstr "以前にプライベートコメントを設定していた"
 
-#: functions.php:650 inc/theme-plus.php:190
+#: functions.php:646 inc/theme-plus.php:190
 msgid "Author"
 msgstr "投稿者"
 
-#: functions.php:650
+#: functions.php:646
 msgid "Blogger"
 msgstr "Blogger"
 
-#: functions.php:659 functions.php:3500
+#: functions.php:655 functions.php:3666
 msgid "Location"
 msgstr "場所"
 
-#: functions.php:665
+#: functions.php:661
 msgid "Private"
 msgstr "プライベート"
 
-#: functions.php:667
+#: functions.php:663
 msgid "Yes"
 msgstr "はい"
 
-#: functions.php:669
+#: functions.php:665
 msgid "No"
 msgstr "いいえ"
 
-#: functions.php:672 inc/link-status.php:168
+#: functions.php:668 inc/link-status.php:168
 msgid "Edit"
 msgstr "編集"
 
-#: functions.php:802
+#: functions.php:798
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "こやつはとても怠惰な╮(╯▽╰)╭"
 
-#: functions.php:832 functions.php:3028 functions.php:3244
+#: functions.php:828 functions.php:3217 functions.php:3410
 msgid "Pending Links"
 msgstr "未決リンク"
 
-#: functions.php:1627
+#: functions.php:1623
 msgid "All expand/collapse"
 msgstr "すべての展開/折りたたみ"
 
-#: functions.php:1661
+#: functions.php:1657
 msgid " year"
 msgstr "年"
 
-#: functions.php:1664
+#: functions.php:1660
 msgid " post(s)"
 msgstr " 記事"
 
-#: functions.php:1714 functions.php:1717 inc/theme-plus.php:345
+#: functions.php:1710 functions.php:1713 inc/theme-plus.php:345
 #: layouts/mo_toc_menu.php:29
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: functions.php:2265
+#: functions.php:2261
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:2367
+#: functions.php:2363
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:2393
+#: functions.php:2389
 msgid "Please do not try to use Javascript in your comments!"
 msgstr "コメントでJavascriptを使用しないでください！"
 
-#: functions.php:2503
+#: functions.php:2499
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -461,28 +461,32 @@ msgstr ""
 "href=\"https://qiita.com/cyborg__ninja/items/8a191a00d402e78d8823\" "
 "target=\"_blank\"> 擬似静的化 </a>を構成する必要があります。 </b>"
 
-#: functions.php:2636
+#: functions.php:2632
 #, php-format
 msgid "%s says: "
 msgstr "%s は言う： "
 
-#: functions.php:2657
+#: functions.php:2653
 msgid "Expand / Collapse"
 msgstr "展開/折りたたみ"
 
-#: functions.php:3001
+#: functions.php:3167
 msgid "Invalid request method."
 msgstr "無効な要求メソッド。"
 
-#: functions.php:3010
-msgid "Security verification failed."
-msgstr "セキュリティ検証に失敗しました。"
-
-#: functions.php:3018
+#: functions.php:3178
 msgid "You are submitting too frequently. Please try again later."
 msgstr "送信回数が多すぎます。後でもう一度お試しください。"
 
-#: functions.php:3048 user/page-links.php:499
+#: functions.php:3184
+msgid "Security verification failed."
+msgstr "セキュリティ検証に失敗しました。"
+
+#: functions.php:3192
+msgid "Please fill in all required fields."
+msgstr "必須項目をすべてご記入ください。"
+
+#: functions.php:3237 user/page-links.php:501
 msgid ""
 "Sorry, we are not accepting new link submissions at this time due to "
 "backlog. Please try again later."
@@ -490,44 +494,40 @@ msgstr ""
 "申し訳ございませんが、現在リンクの受付は行っておりません。後でもう一度お試し"
 "ください。"
 
-#: functions.php:3056
-msgid "Please fill in all required fields."
-msgstr "必須項目をすべてご記入ください。"
-
-#: functions.php:3084
+#: functions.php:3250
 msgid "Site name is too long."
 msgstr "サイト名が長すぎる。"
 
-#: functions.php:3089
+#: functions.php:3255
 msgid "Site description is too long."
 msgstr "サイトの説明が長すぎる。"
 
-#: functions.php:3095
+#: functions.php:3261
 msgid "Please enter a valid URL."
 msgstr "有効なURLを入力してください。"
 
-#: functions.php:3101
+#: functions.php:3267
 msgid "Please enter a valid image URL."
 msgstr "有効な画像URLを入力してください。"
 
-#: functions.php:3107
+#: functions.php:3273
 msgid "Please enter a valid email address."
 msgstr "有効なEメールアドレスを入力してください。"
 
-#: functions.php:3115
+#: functions.php:3281
 msgid "This website URL is already in our links list."
 msgstr "このウェブサイトのURLはすでにリンク集に登録されています。"
 
-#: functions.php:3141 functions.php:3206
+#: functions.php:3307 functions.php:3372
 msgid "Failed to submit link. Please try again later."
 msgstr "リンクの送信に失敗しました。後でもう一度お試しください。"
 
-#: functions.php:3153 functions.php:3213
+#: functions.php:3319 functions.php:3379
 #, php-format
 msgid "[%s] New Friend Link Submission"
 msgstr "[%s] 新しい友達リンク投稿"
 
-#: functions.php:3155 functions.php:3215
+#: functions.php:3321 functions.php:3381
 #, php-format
 msgid ""
 "A new friend link has been submitted on your website %s:\n"
@@ -537,32 +537,32 @@ msgstr ""
 "\n"
 "\n"
 
-#: functions.php:3156
+#: functions.php:3322
 #, php-format
 msgid "Site Name: %s\n"
 msgstr "サイト名 %s\n"
 
-#: functions.php:3157
+#: functions.php:3323
 #, php-format
 msgid "Site URL: %s\n"
 msgstr "サイトURL：%s\n"
 
-#: functions.php:3158
+#: functions.php:3324
 #, php-format
 msgid "Site Description: %s\n"
 msgstr "サイトの説明：%s\n"
 
-#: functions.php:3159
+#: functions.php:3325
 #, php-format
 msgid "Site Image: %s\n"
 msgstr "サイトイメージ：%s \n"
 
-#: functions.php:3160
+#: functions.php:3326
 #, php-format
 msgid "Contact Email: %s\n"
 msgstr "連絡先メールアドレス：%s\n"
 
-#: functions.php:3161
+#: functions.php:3327
 #, php-format
 msgid ""
 "IP Address: %s\n"
@@ -571,49 +571,49 @@ msgstr ""
 "IPアドレス： %s\n"
 "\n"
 
-#: functions.php:3162
+#: functions.php:3328
 msgid "Please review this submission in your WordPress admin panel.\n"
 msgstr "WordPressの管理画面でこの投稿を確認してください。\n"
 
-#: functions.php:3172 functions.php:3223
+#: functions.php:3338 functions.php:3389
 msgid "Thank you! Your link has been submitted for review."
 msgstr "ありがとうございました！あなたのリンクは審査のために提出されました。"
 
-#: functions.php:3177
+#: functions.php:3343
 #, php-format
 msgid "Site Name: %s"
 msgstr "サイト名: %s"
 
-#: functions.php:3178
+#: functions.php:3344
 #, php-format
 msgid "Site URL: %s"
 msgstr "サイトURL: %s"
 
-#: functions.php:3179
+#: functions.php:3345
 #, php-format
 msgid "Site Description: %s"
 msgstr "サイトの説明：%s"
 
-#: functions.php:3180
+#: functions.php:3346
 #, php-format
 msgid "Site Image: %s"
 msgstr "サイトイメージ：%s"
 
-#: functions.php:3181
+#: functions.php:3347
 #, php-format
 msgid "Contact Email: %s"
 msgstr "連絡先メールアドレス：%s"
 
-#: functions.php:3182
+#: functions.php:3348
 #, php-format
 msgid "IP Address: %s"
 msgstr "IPアドレス： %s"
 
-#: functions.php:3185
+#: functions.php:3351
 msgid "Friend Link Submission: "
 msgstr "フレンドリンクの投稿 ："
 
-#: functions.php:3217
+#: functions.php:3383
 msgid ""
 "\n"
 "Please review this submission in your WordPress admin panel.\n"
@@ -621,16 +621,16 @@ msgstr ""
 "\n"
 "WordPressの管理画面でこの投稿を確認してください。\n"
 
-#: functions.php:3230
+#: functions.php:3396
 msgid "An unexpected error occurred. Please try again later."
 msgstr "予期せぬエラーが発生しました。後でもう一度お試しください。"
 
-#: functions.php:3406
+#: functions.php:3572
 #, php-format
 msgid "[%s] Friend Link Check Failure: %s"
 msgstr "[%s] フレンド・リンク・チェックの失敗: %s"
 
-#: functions.php:3409
+#: functions.php:3575
 #, php-format
 msgid ""
 "The friend link '%s' has failed our status check %d times.\n"
@@ -639,22 +639,22 @@ msgstr ""
 "フレンド・リンク '%s' は %d 回ステータス・チェックに失敗しました。\n"
 "\n"
 
-#: functions.php:3410
+#: functions.php:3576
 #, php-format
 msgid "Link URL: %s\n"
 msgstr "リンクURL： %s\n"
 
-#: functions.php:3413
+#: functions.php:3579
 #, php-format
 msgid "HTTP Status Code: %s\n"
 msgstr "HTTP ステータス・コード： %s\n"
 
-#: functions.php:3417
+#: functions.php:3583
 #, php-format
 msgid "Error Message: %s\n"
 msgstr "エラー・メッセージ： %s\n"
 
-#: functions.php:3420
+#: functions.php:3586
 #, php-format
 msgid ""
 "\n"
@@ -665,7 +665,7 @@ msgstr ""
 "最終チェック時間: %s\n"
 "\n"
 
-#: functions.php:3421
+#: functions.php:3587
 msgid ""
 "You may want to check this link and consider removing it if it remains "
 "unavailable.\n"
@@ -673,13 +673,59 @@ msgstr ""
 "このリンクをチェックし、利用できないままであれば削除を検討するとよいだろ"
 "う。\n"
 
-#: functions.php:3541
+#: functions.php:3707
 msgid "Access denied."
 msgstr "アクセス拒否"
 
-#: header.php:266 layouts/sakura_header.php:119
+#: header.php:267 layouts/sakura_header.php:119
 msgid "Random Background"
 msgstr "ランダムカバー"
+
+#: inc/cache_settings.php:7 inc/cache_settings.php:8 inc/cache_settings.php:44
+msgid "Cache Settings"
+msgstr "キャッシュ設定"
+
+#: inc/cache_settings.php:38
+msgid "Cache settings"
+msgstr "キャッシュ設定"
+
+#: inc/cache_settings.php:39
+msgid ""
+"If your server network environment is poor, you can click the link below to "
+"manually obtain the response content and fill it in"
+msgstr ""
+"サーバーのネットワーク環境が悪い場合は、以下のリンクをクリックして手動で応答"
+"内容を取得し、記入してください。"
+
+#: inc/cache_settings.php:40
+msgid ""
+"If the content is empty or incorrect, the server will try to automatically "
+"pull it"
+msgstr ""
+"コンテンツが空であったり、不正確であったりした場合、サーバーはそれを自動的に"
+"引き出そうとします。"
+
+#: inc/cache_settings.php:41
+msgid ""
+"The link target will be automatically updated after the relevant settings "
+"are saved"
+msgstr "リンク先は、関連する設定が保存された後に自動的に更新されます。"
+
+#: inc/cache_settings.php:46
+msgid "Cache Updated!"
+msgstr "キャッシュが更新された！"
+
+#: inc/cache_settings.php:54 inc/cache_settings.php:66
+msgid "Cache expire time"
+msgstr "キャッシュの有効期限"
+
+#: inc/cache_settings.php:60
+msgid "Bangumi Cache"
+msgstr "バングミ・キャッシュ"
+
+#: inc/cache_settings.php:72
+msgid "Steam Cache"
+msgstr "Steam キャッシュ"
 
 #: inc/categories-images.php:44 inc/categories-images.php:65
 msgid "category/tag image"
@@ -702,25 +748,336 @@ msgstr "画像"
 msgid "no image"
 msgstr "画像なし"
 
-#: inc/classes/Bilibili.php:63 inc/classes/BilibiliFavList.php:57
+#: inc/chatgpt/aigc-manage.php:15 inc/chatgpt/aigc-manage.php:16
+#: inc/chatgpt/aigc-manage.php:93
+msgid "Article Annotations Management"
+msgstr "記事注釈管理"
+
+#: inc/chatgpt/aigc-manage.php:37
+msgid "Successfully generated annotations for the post!"
+msgstr "投稿の注釈生成に成功！"
+
+#: inc/chatgpt/aigc-manage.php:40
+msgid ""
+"Failed to generate annotations. Please check API settings or view error logs."
+msgstr ""
+"アノテーションの生成に失敗しました。API設定を確認するか、エラーログを表示して"
+"ください。"
+
+#: inc/chatgpt/aigc-manage.php:46
+msgid "Annotations for the post have been deleted."
+msgstr "この投稿の注釈は削除されました。"
+
+#: inc/chatgpt/aigc-manage.php:51
+msgid "Example Term"
+msgstr "タームの例"
+
+#: inc/chatgpt/aigc-manage.php:51
+msgid "This is a example explanation"
+msgstr "これは説明の一例である。"
+
+#: inc/chatgpt/aigc-manage.php:54
+#, php-format
+msgid "Attempting to save test data to post %d..."
+msgstr "テスト・データをポスト %d に保存しようとしています。"
+
+#: inc/chatgpt/aigc-manage.php:59
+msgid "Save failed!"
+msgstr "保存に失敗しました！"
+
+#: inc/chatgpt/aigc-manage.php:61
+#, php-format
+msgid "Save successful! Update ID: %s"
+msgstr "保存に成功しました！更新 ID: %s"
+
+#: inc/chatgpt/aigc-manage.php:65
+#, php-format
+msgid "Read result: %s"
+msgstr "読み取り結果: %s"
+
+#: inc/chatgpt/aigc-manage.php:65
+msgid "Success (array, contains "
+msgstr "成功（配列、以下を含む "
+
+#: inc/chatgpt/aigc-manage.php:65
+msgid " items)"
+msgstr " 項目)"
+
+#: inc/chatgpt/aigc-manage.php:65
+msgid "Failed"
+msgstr "失敗"
+
+#: inc/chatgpt/aigc-manage.php:72
+#, php-format
+msgid "Database query result: %s"
+msgstr "データベース・クエリの結果: %s"
+
+#: inc/chatgpt/aigc-manage.php:72
+msgid "Found "
+msgstr "見つかりました "
+
+#: inc/chatgpt/aigc-manage.php:72
+msgid " records"
+msgstr " 記録"
+
+#: inc/chatgpt/aigc-manage.php:72
+msgid "No records found"
+msgstr "記録なし"
+
+#: inc/chatgpt/aigc-manage.php:103
+msgid "System Information"
+msgstr "システム情報"
+
+#: inc/chatgpt/aigc-manage.php:104
+msgid "ChatGPT API Settings Status"
+msgstr "ChatGPT API 設定ステータス"
+
+#: inc/chatgpt/aigc-manage.php:106
+msgid "API Endpoint: "
+msgstr ""
+
+#: inc/chatgpt/aigc-manage.php:106 inc/chatgpt/aigc-manage.php:107
+#: inc/chatgpt/aigc-manage.php:108
+msgid "Not set"
+msgstr "未設定"
+
+#: inc/chatgpt/aigc-manage.php:107
+msgid "API Key: "
+msgstr ""
+
+#: inc/chatgpt/aigc-manage.php:107
+msgid "Set (Length: "
+msgstr "セット（長さ："
+
+#: inc/chatgpt/aigc-manage.php:108
+msgid "Model: "
+msgstr "モデル："
+
+#: inc/chatgpt/aigc-manage.php:113
+msgid "About Article Annotations"
+msgstr "記事注釈について"
+
+#: inc/chatgpt/aigc-manage.php:114
+msgid ""
+"This feature uses ChatGPT to analyze the content of the post, identify "
+"complex or specialized terms, and automatically generate explanatory "
+"annotations. The annotations will be displayed in the post, and visitors can "
+"click to view explanations."
+msgstr ""
+"この機能は、ChatGPTを使って投稿内容を分析し、複雑な用語や専門的な用語を特定"
+"し、説明用の注釈を自動的に生成します。注釈は投稿に表示され、訪問者はクリック"
+"して説明を見ることができます。"
+
+#: inc/chatgpt/aigc-manage.php:115
+msgid "Note:"
+msgstr "メモ："
+
+#: inc/chatgpt/aigc-manage.php:115
+msgid "This feature requires a valid OpenAI API key."
+msgstr "この機能には有効なOpenAI APIキーが必要です。"
+
+#: inc/chatgpt/aigc-manage.php:121
+msgid ""
+"API key not set, please configure the ChatGPT API key in the theme settings "
+"first."
+msgstr ""
+"APIキーが設定されていません。まずテーマ設定でChatGPT APIキーを設定してくださ"
+"い。"
+
+#: inc/chatgpt/aigc-manage.php:128
+msgid "Generate Annotations for Post"
+msgstr "投稿の注釈を生成する"
+
+#: inc/chatgpt/aigc-manage.php:133
+msgid "Select Post"
+msgstr "ポストを選択"
+
+#: inc/chatgpt/aigc-manage.php:136
+msgid "-- Select Post --"
+msgstr "-- セレクト・ポスト --"
+
+#: inc/chatgpt/aigc-manage.php:145
+msgid "Generate Annotations"
+msgstr "注釈の生成"
+
+#: inc/chatgpt/aigc-manage.php:146
+msgid "Delete Annotations"
+msgstr "注釈の削除"
+
+#: inc/chatgpt/aigc-manage.php:146
+msgid "Are you sure you want to delete the annotation data for this post?"
+msgstr "本当にこの記事の注釈データを削除しますか？"
+
+#: inc/chatgpt/aigc-manage.php:147
+msgid "Create empty data"
+msgstr "空のデータを作成する"
+
+#: inc/chatgpt/aigc-manage.php:147
+msgid "Create empty terms for your custom article"
+msgstr "カスタム・アーティクルに空の用語を作成する"
+
+#: inc/chatgpt/aigc-manage.php:154
+msgid "Posts with Generated Annotations"
+msgstr "生成された注釈付きの投稿"
+
+#: inc/chatgpt/aigc-manage.php:156
+msgid "Currently, no posts contain annotation data."
+msgstr "現在、注釈データを含む投稿はない。"
+
+#: inc/chatgpt/aigc-manage.php:161
+msgid "Post Title"
+msgstr "記事のタイトル"
+
+#: inc/chatgpt/aigc-manage.php:162
+msgid "Number of Annotations"
+msgstr "注釈数"
+
+#: inc/chatgpt/aigc-manage.php:163 inc/chatgpt/aigc-manage.php:255
+#: inc/link-status.php:108
+msgid "Actions"
+msgstr "操作"
+
+#: inc/chatgpt/aigc-manage.php:180
+msgid "View Annotations"
+msgstr "注釈を見る"
+
+#: inc/chatgpt/aigc-manage.php:181
+msgid "Edit Post"
+msgstr "投稿を編集する"
+
+#: inc/chatgpt/aigc-manage.php:186
+msgid "Debug Information"
+msgstr "デバッグ情報"
+
+#: inc/chatgpt/aigc-manage.php:203
+#, php-format
+msgid "Annotations Debug Information for post \"%s\" (ID: %d)"
+msgstr "投稿 「%s」 の注釈デバッグ情報 (ID: %d)"
+
+#: inc/chatgpt/aigc-manage.php:208
+msgid "Data Type:"
+msgstr "データタイプ："
+
+#: inc/chatgpt/aigc-manage.php:211
+msgid "Number of Annotations:"
+msgstr "注釈数："
+
+#: inc/chatgpt/aigc-manage.php:212 inc/chatgpt/aigc-manage.php:217
+msgid "Annotation Data:"
+msgstr "注釈データ："
+
+#: inc/chatgpt/aigc-manage.php:227
+msgid "Database Records:"
+msgstr "データベースの記録："
+
+#: inc/chatgpt/aigc-manage.php:227
+msgid "records"
+msgstr "記録"
+
+#: inc/chatgpt/aigc-manage.php:231
+msgid "Record ID:"
+msgstr "レコードID："
+
+#: inc/chatgpt/aigc-manage.php:232
+msgid "Original Value:"
+msgstr "元の数値："
+
+#: inc/chatgpt/aigc-manage.php:247 inc/chatgpt/aigc-manage.php:273
+msgid "Post Annotations: "
+msgstr "注釈："
+
+#: inc/chatgpt/aigc-manage.php:253 inc/chatgpt/aigc-manage.php:558
+msgid "Term"
+msgstr "用語"
+
+#: inc/chatgpt/aigc-manage.php:254 inc/chatgpt/aigc-manage.php:558
+msgid "Explanation"
+msgstr "解説"
+
+#: inc/chatgpt/aigc-manage.php:262
+msgid "Add Annotation"
+msgstr "注釈の追加"
+
+#: inc/chatgpt/aigc-manage.php:263
+msgid "Save Annotations"
+msgstr "注釈の保存"
+
+#: inc/chatgpt/aigc-manage.php:283 inc/chatgpt/aigc-manage.php:318
+msgid "Delete"
+msgstr "削除"
+
+#: inc/chatgpt/aigc-manage.php:353
+msgid "Annotations updated successfully."
+msgstr "アノテーションは正常に更新されました。"
+
+#: inc/chatgpt/aigc-manage.php:356
+msgid "Update failed."
+msgstr "アップデートに失敗した。"
+
+#: inc/chatgpt/aigc-manage.php:474 inc/chatgpt/aigc-manage.php:510
+msgid "Invalid post ID"
+msgstr "無効な投稿ID"
+
+#: inc/chatgpt/aigc-manage.php:479
+msgid "Post not found"
+msgstr "投稿が見つかりません"
+
+#: inc/chatgpt/aigc-manage.php:486
+msgid "This post does not have any annotation data"
+msgstr "この投稿には注釈データはありません"
+
+#: inc/chatgpt/aigc-manage.php:502 inc/chatgpt/aigc-manage.php:505
+msgid "Access denied"
+msgstr "アクセス拒否"
+
+#: inc/chatgpt/aigc-manage.php:516
+msgid "Invalid annotations data"
+msgstr "無効な注釈データ"
+
+#: inc/chatgpt/aigc-manage.php:522
+msgid "Failed to update annotations"
+msgstr "注釈の更新に失敗"
+
+#: inc/chatgpt/aigc-manage.php:525
+msgid "Annotations updated successfully"
+msgstr "注釈の更新に成功"
+
+#: inc/chatgpt/aigc-manage.php:536
+msgid "Post Annotation Data"
+msgstr "ポスト注釈データ"
+
+#: inc/chatgpt/aigc-manage.php:552
+#, php-format
+msgid ""
+"This post currently does not have any annotation data. You can generate "
+"annotations on the <a href=\"%s\">Article Annotations Management</a> page."
+msgstr ""
+"この投稿には現在、注釈データはありません。 <a href=\"%s\">記事の注釈管理 </"
+"a> ページで注釈を生成できます。"
+
+#: inc/chatgpt/aigc-manage.php:567
+msgid "Edit in Annotations Management Page"
+msgstr "注釈管理ページでの編集"
+
+#: inc/classes/Bilibili.php:49 inc/classes/BilibiliFavList.php:57
 #: inc/classes/BilibiliFavList.php:62 inc/classes/BilibiliFavList.php:74
-#: inc/classes/MyAnimeList.php:72
+#: inc/classes/MyAnimeList.php:76
 msgid "Backend error"
 msgstr "バックエンドエラー"
 
-#: inc/classes/Bilibili.php:68 inc/classes/MyAnimeList.php:85
+#: inc/classes/Bilibili.php:54 inc/classes/MyAnimeList.php:89
 msgid "Following "
 msgstr "次 "
 
-#: inc/classes/Bilibili.php:68 inc/classes/MyAnimeList.php:85
+#: inc/classes/Bilibili.php:54 inc/classes/MyAnimeList.php:89
 msgid " anime."
 msgstr " アニメ。"
 
-#: inc/classes/Bilibili.php:83
+#: inc/classes/Bilibili.php:69
 msgid "The author seems to have hidden their bangumi list."
 msgstr "著者は彼らのバングミリストを隠したようです。"
 
-#: inc/classes/Bilibili.php:113 inc/classes/BilibiliFavList.php:130
+#: inc/classes/Bilibili.php:99 inc/classes/BilibiliFavList.php:130
 msgid "Load More"
 msgstr "さらに読み込む"
 
@@ -776,55 +1133,55 @@ msgstr "リザーブド・アドレス"
 msgid "Empty Address"
 msgstr "空アドレス"
 
-#: inc/classes/MyAnimeList.php:86
+#: inc/classes/MyAnimeList.php:90
 msgid " Watched "
 msgstr " 見て "
 
-#: inc/classes/MyAnimeList.php:86
+#: inc/classes/MyAnimeList.php:90
 msgid " episodes."
 msgstr " エピソード。"
 
-#: inc/classes/MyAnimeList.php:124
+#: inc/classes/MyAnimeList.php:128
 msgid "Finished "
 msgstr "終えた "
 
-#: inc/classes/MyAnimeList.php:133
+#: inc/classes/MyAnimeList.php:137
 msgid "Watching "
 msgstr "ウォッチング "
 
-#: inc/classes/MyAnimeList.php:140
+#: inc/classes/MyAnimeList.php:144
 msgid "Planning to Watch "
 msgstr "視聴を計画する "
 
-#: inc/classes/MyAnimeList.php:149
+#: inc/classes/MyAnimeList.php:153
 msgid "Dropped "
 msgstr "削除 "
 
-#: inc/classes/MyAnimeList.php:158
+#: inc/classes/MyAnimeList.php:162
 msgid "Paused "
 msgstr "一時 停止 "
 
-#: inc/classes/Steam.php:71
+#: inc/classes/Steam.php:89
 msgid "Load more"
 msgstr "もっと読み込む"
 
-#: inc/classes/Steam.php:85
+#: inc/classes/Steam.php:103
 msgid "Playtime"
 msgstr "プレイ時間"
 
-#: inc/classes/Steam.php:86
+#: inc/classes/Steam.php:104
 msgid "Last Played"
 msgstr "最終プレイ"
 
-#: inc/classes/Steam.php:120
+#: inc/classes/Steam.php:138
 msgid "Not Played Yet"
 msgstr "まだプレイしていません"
 
-#: inc/classes/Steam.php:124
+#: inc/classes/Steam.php:142
 msgid "minute"
 msgstr "分"
 
-#: inc/classes/Steam.php:127
+#: inc/classes/Steam.php:145
 msgid "hour"
 msgstr "時間"
 
@@ -977,10 +1334,6 @@ msgstr "失敗"
 #: inc/link-status.php:107
 msgid "Details"
 msgstr "詳細"
-
-#: inc/link-status.php:108
-msgid "Actions"
-msgstr "操作"
 
 #: inc/link-status.php:114
 msgid "No links found."
@@ -1296,41 +1649,41 @@ msgstr "オプションにBangumi UIDを記入してください。"
 msgid "Please fill in the My Anime List Username in Sakura Options."
 msgstr "オプションにマイアニメリストユーザー名を入力してください。"
 
-#: user/page-links.php:493
+#: user/page-links.php:495
 msgid "Submit Link"
 msgstr "リンクを送信する"
 
-#: user/page-links.php:545
+#: user/page-links.php:547
 msgid "Submit Your Link"
 msgstr "リンクを送信する"
 
-#: user/page-links.php:546
+#: user/page-links.php:548
 msgid "Please fill out the form below to submit your website link."
 msgstr ""
 "以下のフォームに必要事項をご記入の上、ウェブサイトへのリンクを送信してくださ"
 "い。"
 
-#: user/page-links.php:552
+#: user/page-links.php:554
 msgid "Site Name"
 msgstr "サイト名"
 
-#: user/page-links.php:557
+#: user/page-links.php:559
 msgid "Site URL"
 msgstr "サイト URL"
 
-#: user/page-links.php:562
+#: user/page-links.php:564
 msgid "Site Description"
 msgstr "サイトの説明"
 
-#: user/page-links.php:567
+#: user/page-links.php:569
 msgid "Site Logo/Avatar URL"
 msgstr "サイトロゴ/アバターURL"
 
-#: user/page-links.php:572
+#: user/page-links.php:574
 msgid "Your Email"
 msgstr "メールアドレス"
 
-#: user/page-links.php:578
+#: user/page-links.php:580
 msgid "Verification Code"
 msgstr "認証コード"
 
