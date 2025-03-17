@@ -587,8 +587,6 @@ if ($link_align == 'right' || $link_align == 'center') {
 			</form>
 		</div>
 	</div>
-	<!-- 引入友情链接JavaScript -->
-	<script src="<?php echo esc_url(get_template_directory_uri() . '/js/link-submission.js?ver=' . time()); ?>"></script>
 <?php endif; // 表单结束?>
 </div><!-- .links-page 结束 -->
 <?php
