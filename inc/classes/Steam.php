@@ -34,11 +34,13 @@ class Steam
             if (!empty($cached_content)){
                 $response = json_decode($cached_content,true);
             } else {
-                $response = wp_remote_get($url)['body'];
+                $response = wp_remote_get($url);
+                // 检查是否发生错误
                 if (is_wp_error($response)) {
                     return ['response' => ['games' => []]]; // 返回空游戏列表
                 }
-                auto_update_cache('steam_cache',wp_remote_retrieve_body($response),true);
+                auto_update_cache('steam_cache', wp_remote_retrieve_body($response), true);
+                $response = json_decode(wp_remote_retrieve_body($response), true);
             }
         } else {
             $response = wp_remote_get($url);
@@ -48,7 +50,7 @@ class Steam
                 return ['response' => ['games' => []]]; // 返回空游戏列表
             }
 
-            $response = json_decode(wp_remote_retrieve_body($response),true);
+            $response = json_decode(wp_remote_retrieve_body($response), true);
         }
 
         $data = $response;
