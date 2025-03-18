@@ -174,11 +174,11 @@ function get_smilies_panel() {
                             </div>';
             $img_upload = '';
             if (iro_opt('img_upload_api',false) == 'off' ? false : true) {
-                $img_upload = '<div class="insert-image-tips popup">
+                $img_upload = '<label class="insert-image-tips popup">
                                     <i class="fa-regular fa-image"></i>
                                     <span class="insert-img-popuptext" id="uploadTipPopup">上传图片</span>
-                                </div>
-                                <input id="upload-img-file" type="file" accept="image/*" multiple="multiple" class="insert-image-button">';
+                                    <input id="upload-img-file" type="file" accept="image/*" multiple="multiple" class="insert-image-button">
+                                </label>';
             }
             function custom_comment_logged_in_as($defaults) { //移除表头以xx身份登录提示
                 $defaults['logged_in_as'] = '';
