@@ -210,76 +210,66 @@ function get_image_theme_color($input) {
     return ColorAnalyzer::getThemeColor($image_data);
 }
 
-// 记录页面主题色
-function update_post_theme_color($post_id) {
+// 监听文章保存
+add_action('save_post', function ($post_id) {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
         return;
     }
 
-    // 获取特色图片
+    // 获取文章特色图片
     $thumbnail_id = get_post_thumbnail_id($post_id);
-    
-    if ($thumbnail_id) {
-        // 获取图片 URL
-        $image_url = wp_get_attachment_url($thumbnail_id);
-        if ($image_url) {
-            // 计算主题色
-            $theme_color = get_image_theme_color($image_url);
-            if ($theme_color === false) {
-                $theme_color = 'false';
-            }
-        } else {
-            $theme_color = 'false';
-        }
-    } else {
-        // 没有特色图片
-        $theme_color = 'false';
+    $image_url = $thumbnail_id ? wp_get_attachment_url($thumbnail_id) : '';
+
+    // 获取已有的meta 数据
+    $current_meta = get_post_meta($post_id, 'post_theme_color_meta', true);
+    $current_meta = is_array($current_meta) ? $current_meta : [];
+
+    // 只在图片发生变化时重新计算主题色
+    if (isset($current_meta['image_url']) && $current_meta['image_url'] === $image_url) {
+        return; // 图片未更改，直接返回
     }
 
-    // 更新 Post Meta
-    update_post_meta($post_id, 'post_theme_color', $theme_color);
-}
+    $theme_color = ($image_url) ? get_image_theme_color($image_url) : 'false';
 
-// 当特色图片更新时计算主题色
-add_action('set_post_thumbnail', 'update_post_theme_color', 10, 2);
-
-// 文章删除特色图片时移除
-add_action('delete_post_thumbnail', function($post_id) {
-    update_post_meta($post_id, 'post_theme_color', 'false');
+    update_post_meta($post_id, 'post_theme_color_meta', [
+        'image_url'   => $image_url,
+        'theme_color' => $theme_color,
+    ]);
 });
 
 function get_post_theme_color($post_id) {
-    // 获取 post_meta 值
-    $theme_color = get_post_meta($post_id, 'post_theme_color', true);
+    // 读取已存储的 meta 数据
+    $meta = get_post_meta($post_id, 'post_theme_color_meta', true);
+    $meta = is_array($meta) ? $meta : [];
 
-    if ($theme_color !== '' && $theme_color !== null) {
-        return $theme_color;
+    // 已有
+    if (!empty($meta['theme_color'])) {
+        return $meta['theme_color'];
     }
 
-    //尚未设置meta
-
-    // 获取文章特色图片
+    // 没有则获取
     $thumbnail_id = get_post_thumbnail_id($post_id);
-    if (!$thumbnail_id) {
-        update_post_meta($post_id, 'post_theme_color', 'false');
-        return 'false'; //没有
-    }
+    $image_url = $thumbnail_id ? wp_get_attachment_url($thumbnail_id) : '';
 
-    // 获取图片 URL
-    $image_url = wp_get_attachment_url($thumbnail_id);
+    // 没有特色图片
     if (!$image_url) {
-        update_post_meta($post_id, 'post_theme_color', 'false');
+        update_post_meta($post_id, 'post_theme_color_meta', [
+            'image_url'   => '',
+            'theme_color' => 'false',
+        ]);
         return 'false';
     }
 
-    // 计算主题色
     $theme_color = get_image_theme_color($image_url);
     if ($theme_color === false) {
         $theme_color = 'false';
     }
 
-    // 记录meta
-    update_post_meta($post_id, 'post_theme_color', $theme_color);
+    // 更新结果
+    update_post_meta($post_id, 'post_theme_color_meta', [
+        'image_url'   => $image_url,
+        'theme_color' => $theme_color,
+    ]);
 
     return $theme_color;
 }
