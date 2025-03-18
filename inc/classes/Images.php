@@ -17,6 +17,15 @@ class Images
     }
 
     /**
+     * 返回默认的错误图片SVG（支持国际化）
+     */
+    private function getDefaultErrorImage() {
+        // 获取国际化文本
+        $error_text = __('Image Failed to Load', 'sakurairo');
+        return 'data:image/svg+xml;utf8,' . urlencode('<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"><rect x="5" y="5" width="290" height="190" rx="10" fill="#f8f9fa" stroke="#ddd"/><circle cx="150" cy="70" r="30" fill="#ff6b6b"/><text x="150" y="80" font-family="Arial" font-size="30" text-anchor="middle" fill="#fff">!</text><text x="150" y="130" font-family="Arial" font-size="16" text-anchor="middle" fill="#555">' . $error_text . '</text></svg>');
+    }
+
+    /**
      * LSky Pro upload interface
      */
     public function LSKY_API($image) {
@@ -47,7 +56,7 @@ class Images
             $status = 400;
             $success = false;
             $message = $reply->message;
-            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/default_d_h_large.gif';
+            $link = $this->getDefaultErrorImage();
             $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(
@@ -85,7 +94,7 @@ class Images
             $status = $reply->status_code;
             $success = false;
             $message = $reply->error->message;
-            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/default_d_h_large.gif';
+            $link = $this->getDefaultErrorImage();
             $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(
@@ -125,7 +134,7 @@ class Images
             $status = $reply->status;
             $success = false;
             $message = $reply->data->error;
-            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/default_d_h_large.gif';
+            $link = $this->getDefaultErrorImage();
             $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(
@@ -173,7 +182,7 @@ class Images
             $status = 400;
             $success = false;
             $message = $reply->message;
-            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/default_d_h_large.gif';
+            $link = $this->getDefaultErrorImage();
             $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(

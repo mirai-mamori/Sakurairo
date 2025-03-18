@@ -2720,6 +2720,13 @@ function register_shortcodes() {
                 $response = wp_remote_get($url);
                 set_transient('steam_stat_'.$steamid, $response, 180);
             }
+            
+            // 添加错误检查，防止WP_Error被当作数组使用
+            if (is_wp_error($response)) {
+                $output .= '<div class="steam-error">API错误: ' . $response->get_error_message() . '</div>';
+                continue;
+            }
+            
             $data = json_decode($response["body"], true);
             $player = $data['response']['players'][0] ?? [];
             

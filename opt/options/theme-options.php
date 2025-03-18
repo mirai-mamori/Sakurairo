@@ -1020,7 +1020,7 @@ $prefix = 'iro_options';
         'desc'   => __('Set the background image of your search area. Leave this option blank to display a white background','sakurairo_csf'),
         'dependency' => array( 'nav_menu_search', '==', 'true', '', 'true' ),
         'library'      => 'image',
-        'default'     => $vision_resource_basepath . 'basic/iloli.gif'
+        'default' => ''
       ),
 
       array(
