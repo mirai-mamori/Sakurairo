@@ -346,7 +346,7 @@ body.dark .ins-section .ins-search-item:hover .ins-slug,
 body.dark .ins-section .ins-search-item:hover .ins-search-preview,
 body.dark .menhera-container .emoji-item:hover,
 body.dark .comment-respond .logged-in-as a:hover {
-  color: var(--article-theme-highlight,var(--theme-skin-matching)) !important;
+  color: var(--article-theme-highlight,var(--theme-skin-dark)) !important;
 }
 
 body.dark .the-feature.from_left_and_right a:hover .info p,
@@ -355,7 +355,7 @@ body.dark .the-feature.from_left_and_right .info {
 }
 
 body.dark .post-list-thumb:hover {
-  box-shadow: 0 1px 20px 0px var(--article-theme-highlight,var(--theme-skin-matching));
+  box-shadow: 0 1px 20px 0px var(--article-theme-highlight,var(--theme-skin-dark));
 }
 
 body.dark .post-list-thumb i{
@@ -371,7 +371,7 @@ body.dark .post-list-thumb .post-title h3{
 }
 
 body.dark .post-list-thumb .post-title h3:hover {
-  color: var(--article-theme-highlight,var(--theme-skin-matching));
+  color: var(--article-theme-highlight,var(--theme-skin-dark));
 }
 
 body.dark .post-title {
@@ -390,7 +390,7 @@ body.dark .post-meta a {
 }
 
 body.dark .post-meta a:hover {
-  color: var(--article-theme-highlight,var(--theme-skin-matching)) !important;
+  color: var(--article-theme-highlight,var(--theme-skin-dark)) !important;
 }
 
 body.dark .ai-excerpt-tip {
@@ -472,13 +472,13 @@ body.dark #emotion-toggle:hover,
 body.dark .insert-image-tips:hover,
 body.dark .markdown-toggle:hover{
   background: var(--dark-bg-hover);
-  box-shadow: 0 1px 10px -2px var(--article-theme-highlight,var(--theme-skin-matching)) !important;
+  box-shadow: 0 1px 10px -2px var(--article-theme-highlight,var(--theme-skin-dark)) !important;
 }
 
 body.dark #emotion-toggle:hover,
 body.dark .insert-image-tips:hover,
 body.dark .markdown-toggle:hover{
-  color: var(--article-theme-highlight,var(--theme-skin-matching));
+  color: var(--article-theme-highlight,var(--theme-skin-dark));
 }
 
 body.dark .comment-respond #cancel-comment-reply-link {
@@ -489,12 +489,12 @@ body.dark .comment-respond #cancel-comment-reply-link {
 }
 
 body.dark .comment-respond #cancel-comment-reply-link:hover {
-  background: var(--article-theme-highlight,var(--theme-skin-matching));
+  background: var(--article-theme-highlight,var(--theme-skin-dark));
 }
 
 body.dark #pagination a:hover {
   background: var(--dark-bg-hover);
-  box-shadow: 0 1px 10px -2px var(--theme-skin-matching);
+  box-shadow: 0 1px 10px -2px var(--theme-skin-dark);
 }
 
 body.dark #pagination a {
@@ -529,7 +529,7 @@ body.dark .shuoshuo-item {
 
 body.dark .shuoshuo-item:hover {
   background: rgb(26 26 26 / 80%);
-  box-shadow: 0 1px 20px 0px var(--theme-skin-matching);
+  box-shadow: 0 1px 20px 0px var(--theme-skin-dark);
 }
 
 body.dark .shuoshuo-item a,body.dark .shuoshuo-author-name{
@@ -548,13 +548,13 @@ body.dark .shuoshuo-comments,body.dark .shuoshuo-date {
 
 body.dark .comment-respond input[type=submit] {
   color: #f0f0f0;
-  box-shadow: 0 1px -1px 2px var(--article-theme-highlight, var(--theme-skin-matching)) !important;
-  background: var(--article-theme-highlight, var(--theme-skin-matching)) !important;
-  border: 1px solid var(--article-theme-highlight, var(--theme-skin-matching)) !important;
+  box-shadow: 0 1px -1px 2px var(--article-theme-highlight, var(--theme-skin-dark)) !important;
+  background: var(--article-theme-highlight, var(--theme-skin-dark)) !important;
+  border: 1px solid var(--article-theme-highlight, var(--theme-skin-dark)) !important;
 }
 
 body.dark .comment-respond input[type=submit]:hover {
-  box-shadow: 0 1px 30px -2px var(--article-theme-highlight, var(--theme-skin-matching)) !important;
+  box-shadow: 0 1px 30px -2px var(--article-theme-highlight, var(--theme-skin-dark)) !important;
   background: var(--dark-bg-hover) !important;
 }
 
@@ -660,7 +660,7 @@ body.dark .mobile-nav .sub-menu li {
 }
 
 body.dark .mo_toc_panel .user-menu-option a:hover {
-  text-shadow: 0 0 8px rgba(var(--theme-skin-dark-rgb), 0.8);
+  text-shadow: 0 0 8px var(--theme-skin-dark);
 }
 
 body.dark .mo-nav-button i:hover,
@@ -688,7 +688,7 @@ body.dark #banner_wave_2 {
 }
 
 body.dark .comment-respond :where(textarea,input):where(:focus,:active){
-  border: 1px solid var(--article-theme-highlight,var(--theme-skin-matching)); 
+  border: 1px solid var(--article-theme-highlight,var(--theme-skin-dark)); 
 }
 
 body.dark span.page-numbers.current {
@@ -716,7 +716,7 @@ body.dark::-webkit-scrollbar-track {
 
 body.dark .comment .comment-reply-link:hover {
   background-color: var(--dark-bg-primary);
-  color: var(--article-theme-highlight,var(--theme-skin-matching));
+  color: var(--article-theme-highlight,var(--theme-skin-dark));
 }
 
 /* 合并页面布局控件样式 */
