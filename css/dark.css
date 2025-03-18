@@ -140,8 +140,12 @@ body.dark .showcard {
 body.dark .reward-row:hover,
 body.dark .ai-excerpt:hover,
 body.dark .shortcodestyle:hover,
-body.dark .conversations-code-text:hover,
-body.dark .showcard:hover {
+body.dark .conversations-code-text:hover {
+  box-shadow: 0 1px 30px -2px var(--article-theme-highlight,var(--theme-skin-dark)) !important;
+  background: var(--dark-bg-hover);
+}
+
+body.dark .showcard:hover{
   box-shadow: var(--dark-shadow-hover);
   background: var(--dark-bg-hover);
 }
@@ -312,6 +316,10 @@ body.dark .toc:hover {
   background: #1a1a1acc;
 }
 
+body.dark .toc>.toc-list li a:hover {
+  color: var(--article-theme-highlight,var(--theme-skin-dark)) !important;
+}
+
 body.dark .post-footer>:not(section),body.dark .post-footer >section > * {
   box-shadow: 0 1px 20px 2px #1a1a1acc;
   background: #1a1a1a99;
@@ -373,8 +381,9 @@ body.dark .post-list-thumb .post-title h3{
 body.dark .post-list-thumb .post-title h3:hover,
 body.dark .entry-title a:hover,
 body.dark .post-license a:hover,
+body.dark .post-license:hover,
 body.dark .post-tags a:hover {
-  color: var(--article-theme-highlight,var(--theme-skin-dark));
+  color: var(--article-theme-highlight,var(--theme-skin-dark)) !important;
 }
 
 body.dark .post-title {
