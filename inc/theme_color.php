@@ -242,25 +242,14 @@ add_action('save_post', function ($post_id) {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
         return;
     }
-
     // 获取文章特色图片
     $thumbnail_id = get_post_thumbnail_id($post_id);
     $image_url = $thumbnail_id ? wp_get_attachment_url($thumbnail_id) : '';
-
-    // 获取已有的meta 数据
-    $current_meta = get_post_meta($post_id, 'post_theme_color_meta', true);
-    $current_meta = is_array($current_meta) ? $current_meta : [];
-
-    // 只在图片发生变化时重新计算主题色
-    if (isset($current_meta['image_url']) && $current_meta['image_url'] === $image_url) {
-        return; // 图片未更改，直接返回
-    }
 
     $theme_color = ($image_url) ? get_image_theme_color($image_url) : 'false';
 
     error_log('计算结果为' . $theme_color);
     update_post_meta($post_id, 'post_theme_color_meta', [
-        'image_url'   => $image_url,
         'theme_color' => $theme_color,
     ]);
 });
@@ -282,7 +271,6 @@ function get_post_theme_color($post_id) {
     // 没有特色图片
     if (!$image_url) {
         update_post_meta($post_id, 'post_theme_color_meta', [
-            'image_url'   => '',
             'theme_color' => 'false',
         ]);
         return 'false';
