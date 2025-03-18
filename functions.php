@@ -1122,7 +1122,7 @@ function comment_mail_notify($comment_id)
         $to = trim(get_comment($parent_id)->comment_author_email);
         
         // 主题主色调
-        $theme_color = iro_opt('theme_skin') ?: '#FE9600';
+        $theme_color = iro_opt('theme_skin_matching') ?: '#FE9600';
         
         // 获取用户语言环境
         $comment_author_locale = get_comment_meta($parent_id, 'comment_author_locale', true);

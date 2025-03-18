@@ -166,6 +166,9 @@ class ColorAnalyzer {
         list($dom_r, $dom_g, $dom_b) = explode(',', $dominant_key);
         list($h, $s, $l) = self::rgbToHsl($dom_r, $dom_g, $dom_b);
 
+        // 保存原始亮度值，用于后续判断
+        $original_l = $l;
+
         if ($fallback) {
             // 回退时，将亮度设置为 65
             $l = 65;
@@ -173,8 +176,19 @@ class ColorAnalyzer {
             // 否则确保亮度在 20～80 之间
             $l = self::clamp($l, 20, 80);
         }
+        
+        // 新增：根据原始颜色调整亮度
+        // 趋近于黑色时增加亮度
+        if ($original_l < 30) {
+            $l = max($l, 50); // 确保亮度至少为40
+        }
+        // 趋近于白色时降低亮度
+        elseif ($original_l > 70) {
+            $l = min($l, 60); // 确保亮度最高为65
+        }
+        
         // 饱和度调整为 30～65 之间（取高值约束，即不足30则设为30，超过65则设为65）
-        $s = self::clamp($s, 30, 65);
+        $s = self::clamp($s, 40, 65);
 
         // 转换回 RGB
         list($final_r, $final_g, $final_b) = self::hslToRgb($h, $s, $l);
