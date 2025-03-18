@@ -159,7 +159,7 @@ if (!function_exists('get_post_cover_html')) {
             $ai_excerpt = get_post_meta($post->ID, POST_METADATA_KEY, true);
             $excerpt = has_excerpt();
             ?>
-            <article class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
+            <article class="post post-list-thumb" style ="<?php echo var_post_theme_color(get_the_ID()) != 'false' ? "--article-theme-highlight: " . var_post_theme_color(get_the_ID()) : ""; ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
                 <div class="post-thumb">
                     <a href="<?php the_permalink(); ?>">
                         <?php echo $cover_html; ?>
