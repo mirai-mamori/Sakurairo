@@ -1674,6 +1674,15 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'post_cover_as_bg',
+        'type' => 'switcher',
+        'title' => __('Post Cover As Background','sakurairo_csf'),
+        'label' => __('Use post feature image as background in post pages','sakurairo_csf'),
+        'dependency' => array( 'site_bg_as_cover', '==', 'true', '', 'true' ),
+        'default' => false
+      ),
+
+      array(
         'id' => 'random_graphs_filter',
         'type' => 'select',
         'title' => __('Cover Random Images Filter','sakurairo_csf'),

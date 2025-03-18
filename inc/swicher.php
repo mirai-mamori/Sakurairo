@@ -78,6 +78,8 @@ function font_end_js_control()
         'have_annotation' => check(get_post_meta(get_the_ID(), 'iro_chatgpt_annotations', true)), // 检查是否有注释
         'extract_article_highlight' => iro_opt('extract_article_highlight_from_feature', false)?true:false, // 首页卡片是否计算
         'post_theme_color' => var_post_theme_color(),
+        'post_cover_as_bg' => check(iro_opt('post_cover_as_bg',false)),
+        'post_feature_img' => ( !is_home() && get_post_thumbnail_id(get_the_ID()) ) ? wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())) : '',
         'page_annotation' => json_encode($annotations) ?? [],
         'live_search' => check(iro_opt('live_search')),
         'loading_ph' => iro_opt('load_in_svg'),
