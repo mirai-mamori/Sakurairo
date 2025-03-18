@@ -189,7 +189,34 @@ class ColorAnalyzer {
 
 function get_image_theme_color($input) {
     // 获取图片数据
-    if (filter_var($input, FILTER_VALIDATE_URL)) {
+    $parsed_url = parse_url($input);
+    if ($parsed_url && isset($parsed_url['scheme']) && isset($parsed_url['host'])) {
+
+        error_log('获取图片' . $input);
+
+        $parsed_url = parse_url($input);
+        if ($parsed_url && isset($parsed_url['path'])) {
+            // 将路径拆分成各个部分并编码
+            $segments = explode('/', $parsed_url['path']);
+            foreach ($segments as &$segment) {
+                // 仅对非空的部分编码
+                if ($segment !== '') {
+                    $segment = rawurlencode($segment);
+                }
+            }
+            $parsed_url['path'] = implode('/', $segments);
+        }
+        // 重新组装 URL
+        $input = (isset($parsed_url['scheme']) ? $parsed_url['scheme'] . '://' : '')
+                 . (isset($parsed_url['user']) ? $parsed_url['user'] 
+                 . (isset($parsed_url['pass']) ? ':' . $parsed_url['pass'] : '') . '@' : '')
+                 . (isset($parsed_url['host']) ? $parsed_url['host'] : '')
+                 . (isset($parsed_url['port']) ? ':' . $parsed_url['port'] : '')
+                 . (isset($parsed_url['path']) ? $parsed_url['path'] : '')
+                 . (isset($parsed_url['query']) ? '?' . $parsed_url['query'] : '')
+                 . (isset($parsed_url['fragment']) ? '#' . $parsed_url['fragment'] : '');
+
+        error_log('编码结果为' . $input);
         if (function_exists('wp_get_remote_content')) {
             $image_data = wp_get_remote_content($input);
         } else {
@@ -204,9 +231,9 @@ function get_image_theme_color($input) {
     }
 
     if (!$image_data) {
+        error_log('失败');
         return false; // 读取图片数据失败
     }
-
     return ColorAnalyzer::getThemeColor($image_data);
 }
 
@@ -231,6 +258,7 @@ add_action('save_post', function ($post_id) {
 
     $theme_color = ($image_url) ? get_image_theme_color($image_url) : 'false';
 
+    error_log('计算结果为' . $theme_color);
     update_post_meta($post_id, 'post_theme_color_meta', [
         'image_url'   => $image_url,
         'theme_color' => $theme_color,
