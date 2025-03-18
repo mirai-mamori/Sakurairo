@@ -109,6 +109,23 @@ if(iro_opt('extract_article_highlight_from_feature',false)) {
   require_once('article-highlight.php');
 }
 
+function var_post_theme_color($id = null) {
+    if (!function_exists('get_post_theme_color')) {
+        return 'false';
+    }
+  
+    if ($id !== null && get_post_status($id) !== false) {
+        return get_post_theme_color($id);
+    }
+  
+    if (!is_home()) {
+        $post_id = get_the_ID();
+        return ($post_id && get_post_status($post_id) !== false) ? get_post_theme_color($post_id) : 'false';
+    }
+  
+    return 'false';
+}
+
 /*
  * 评论添加@
  */

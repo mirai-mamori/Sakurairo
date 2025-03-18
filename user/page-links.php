@@ -44,6 +44,7 @@ span.linkss-title {
     display: inline-flex;
     gap: 20px;
     flex-wrap: wrap;
+    cursor: auto;
 }
 
 /* 链接卡片基础样式 */

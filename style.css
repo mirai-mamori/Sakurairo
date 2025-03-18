@@ -3516,8 +3516,7 @@ iframe {
 }
 
 input#upload-img-file {
-  z-index: 99;
-  opacity: 0;
+  display: none;
 }
 
 .insert-image-button {
