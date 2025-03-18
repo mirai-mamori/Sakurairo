@@ -3419,7 +3419,7 @@ iframe {
   position: fixed;
   top: 0;
   height: 3px;
-  background: var(--theme-skin-matching, #505050);
+  background: var(--article-theme-highlight, var(--theme-skin-matching)); 
   transition-property: width, background;
   transition-duration: 1s, 1s;
   z-index: 999;
@@ -5826,12 +5826,12 @@ a.toc-link {
 
 .menu-list li:hover,
 .font-family-controls button:hover {
-  background-color: var(--theme-skin-matching, #505050);
+  background-color: var(--article-theme-highlight, var(--theme-skin-matching));
   color: #fff;
 }
 
 .font-family-controls button.selected {
-  border: 3px solid var(--theme-skin-matching);
+  border: 3px solid var(--article-theme-highlight, var(--theme-skin-matching));
   transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   box-shadow: none;
