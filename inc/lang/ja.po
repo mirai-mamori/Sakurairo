@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-19 20:06+0800\n"
-"PO-Revision-Date: 2025-03-19 20:15+0800\n"
+"POT-Creation-Date: 2025-03-19 20:52+0800\n"
+"PO-Revision-Date: 2025-03-19 20:53+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -441,27 +441,27 @@ msgstr "展示コンテンツ角丸"
 msgid "Article Aera"
 msgstr "記事一覧"
 
-#: customizer.php:1242 customizer.php:1934
+#: customizer.php:1242 customizer.php:1935
 msgid "Author"
 msgstr "投稿者"
 
-#: customizer.php:1243 customizer.php:1935
+#: customizer.php:1243 customizer.php:1936
 msgid "Category"
 msgstr "カテゴリー"
 
-#: customizer.php:1244 customizer.php:1936
+#: customizer.php:1244 customizer.php:1937
 msgid "Number of Comments"
 msgstr "コメント数"
 
-#: customizer.php:1245 customizer.php:1937
+#: customizer.php:1245 customizer.php:1938
 msgid "Number of Views"
 msgstr "閲覧数"
 
-#: customizer.php:1246 customizer.php:1938
+#: customizer.php:1246 customizer.php:1939
 msgid "Number of Words"
 msgstr "文字数"
 
-#: customizer.php:1247 customizer.php:1939
+#: customizer.php:1247 customizer.php:1940
 msgid "Estimate Reading Time"
 msgstr "読了時間"
 
@@ -821,158 +821,163 @@ msgstr "投稿ページ"
 
 #: customizer.php:1906
 #, fuzzy
+msgid "This option is only valid for articles with cover"
+msgstr "このオプションは、表紙が設定されている記事に対してのみ有効です"
+
+#: customizer.php:1907
+#, fuzzy
 #| msgid "Article Area Title Font Size"
 msgid "Article Page Title Font Size"
 msgstr "記事ページタイトルのフォントサイズ"
 
-#: customizer.php:1925
+#: customizer.php:1926
 msgid "Article Page Title Underline Animation"
 msgstr "記事ページタイトル下線アニメーション"
 
-#: customizer.php:1931
+#: customizer.php:1932
 #, fuzzy
 #| msgid "Article Area Card Design"
 msgid "Article Area Meta Displays"
 msgstr "記事エリアのメタ情報表示"
 
-#: customizer.php:1940
+#: customizer.php:1941
 msgid "Publish Time (Relatively)"
 msgstr "公開時間（相対表示）"
 
-#: customizer.php:1941
+#: customizer.php:1942
 msgid "Last Edit Time (Relatively)"
 msgstr "最終編集時間（相対表示）"
 
-#: customizer.php:1942
+#: customizer.php:1943
 msgid "Action Edit (only displays while user has sufficient permissions)"
 msgstr "アクション編集（十分な権限がある場合のみ表示）"
 
-#: customizer.php:1949
+#: customizer.php:1950
 msgid "Article Page Auto Show Menu"
 msgstr "記事ページのメニュー自動表示"
 
-#: customizer.php:1955
+#: customizer.php:1956
 #, fuzzy
 #| msgid "Display Area Background Color"
 msgid "Inline Code Background Color"
 msgstr "インラインコードの背景色"
 
-#: customizer.php:1972
+#: customizer.php:1973
 msgid "Inline Code Background Color In Dark Mode"
 msgstr "ダークモード時のインラインコード背景色"
 
-#: customizer.php:1990
+#: customizer.php:1991
 msgid "Pages Extend Options"
 msgstr "ページ拡張オプション"
 
-#: customizer.php:1999
+#: customizer.php:2000
 msgid "Article Page Function Bar"
 msgstr "記事ページ機能バー"
 
-#: customizer.php:2005
+#: customizer.php:2006
 #, fuzzy
 #| msgid "Article Area"
 msgid "Article License"
 msgstr "記事ライセンス"
 
-#: customizer.php:2007
+#: customizer.php:2008
 #, fuzzy
 #| msgid "Display Area"
 msgid "Not Display"
 msgstr "非表示"
 
-#: customizer.php:2021
+#: customizer.php:2022
 msgid "Article Page Appreciation Function (Alipay QR Code)"
 msgstr "記事ページの応援機能（Alipay QRコード）"
 
-#: customizer.php:2035
+#: customizer.php:2036
 msgid "Article Page Appreciation Function (Wechat QR Code)"
 msgstr "記事ページの応援機能（WeChat QRコード）"
 
-#: customizer.php:2049
+#: customizer.php:2050
 msgid "Article Page Author Avatar"
 msgstr "記事ページの著者アバター"
 
-#: customizer.php:2055
+#: customizer.php:2056
 #, fuzzy
 #| msgid "Article Area"
 msgid "Article Page Author Name"
 msgstr "記事ページの著者名"
 
-#: customizer.php:2061
+#: customizer.php:2062
 msgid "Article Page Author Signature"
 msgstr "記事ページの著者署名"
 
-#: customizer.php:2067
+#: customizer.php:2068
 msgid "Article Last Update Time"
 msgstr "記事の最終更新時間"
 
-#: customizer.php:2073
+#: customizer.php:2074
 #, fuzzy
 #| msgid "Article Area"
 msgid "Article Tag"
 msgstr "記事タグ"
 
-#: customizer.php:2079
+#: customizer.php:2080
 msgid "Article Page Prev/Next Article Switcher"
 msgstr "記事ページの前後記事切り替え機能"
 
-#: customizer.php:2086
+#: customizer.php:2087
 #, fuzzy
 #| msgid "Global Options"
 msgid "Comment Options"
 msgstr "コメントオプション"
 
-#: customizer.php:2095
+#: customizer.php:2096
 msgid "Page Comment Area Display"
 msgstr "ページコメントエリアの表示"
 
-#: customizer.php:2097
+#: customizer.php:2098
 msgid "Expand"
 msgstr "展開する"
 
-#: customizer.php:2098
+#: customizer.php:2099
 msgid "Fold"
 msgstr "折りたたむ"
 
-#: customizer.php:2105
+#: customizer.php:2106
 msgid "Custom CommentBox Placeholder"
 msgstr "カスタムコメントボックスのプレースホルダー"
 
-#: customizer.php:2111
+#: customizer.php:2112
 msgid "Custom Submit Button Content"
 msgstr "カスタム送信ボタンの内容"
 
-#: customizer.php:2117
+#: customizer.php:2118
 msgid "Page Comment Area Bottom Right Background Image"
 msgstr "ページコメントエリア右下の背景画像"
 
-#: customizer.php:2131
+#: customizer.php:2132
 #, fuzzy
 msgid "Comment Area Emoticon"
 msgstr "コメントエリアのエモーティコン"
 
-#: customizer.php:2132
+#: customizer.php:2133
 msgid "Please go to the backend to configure your custom emoticon pack"
 msgstr "カスタムエモーティコンパックの設定はバックエンドで行ってください"
 
-#: customizer.php:2135
+#: customizer.php:2136
 msgid "BiliBili Emoticon Pack"
 msgstr "BiliBiliエモーティコンパック"
 
-#: customizer.php:2136
+#: customizer.php:2137
 msgid "Baidu Tieba Emoticon Pack"
 msgstr "Baidu Tiebaエモーティコンパック"
 
-#: customizer.php:2137
+#: customizer.php:2138
 msgid "Emoji"
 msgstr "絵文字"
 
-#: customizer.php:2138
+#: customizer.php:2139
 msgid "Customized Emoticon Pack"
 msgstr "カスタムエモーティコンパック"
 
-#: customizer.php:2144
+#: customizer.php:2145
 msgid ""
 "For more detailed configuration of the comment area, please go to the "
 "backend configuration"

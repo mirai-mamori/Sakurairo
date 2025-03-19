@@ -1903,6 +1903,7 @@ $sections = [
 				'type'     => 'slider',
 				'settings' => 'article_title_font_size',
 				'iro_key'  => 'article_title_font_size',
+				'description' => esc_html__( 'This option is only valid for articles with cover', 'Sakurairo_C' ),
 				'label'    => esc_html__( 'Article Page Title Font Size', 'Sakurairo_C' ),
 				'choices'     => [
 					'min'  => 16,

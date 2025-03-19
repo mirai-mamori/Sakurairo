@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-19 19:53+0800\n"
-"PO-Revision-Date: 2025-03-19 19:53+0800\n"
+"POT-Creation-Date: 2025-03-19 20:52+0800\n"
+"PO-Revision-Date: 2025-03-19 20:52+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -439,27 +439,27 @@ msgstr "展示区内容圆角"
 msgid "Article Aera"
 msgstr "文章区域"
 
-#: customizer.php:1242 customizer.php:1934
+#: customizer.php:1242 customizer.php:1935
 msgid "Author"
 msgstr "作者"
 
-#: customizer.php:1243 customizer.php:1935
+#: customizer.php:1243 customizer.php:1936
 msgid "Category"
 msgstr "分类"
 
-#: customizer.php:1244 customizer.php:1936
+#: customizer.php:1244 customizer.php:1937
 msgid "Number of Comments"
 msgstr "评论数量"
 
-#: customizer.php:1245 customizer.php:1937
+#: customizer.php:1245 customizer.php:1938
 msgid "Number of Views"
 msgstr "浏览量"
 
-#: customizer.php:1246 customizer.php:1938
+#: customizer.php:1246 customizer.php:1939
 msgid "Number of Words"
 msgstr "字数"
 
-#: customizer.php:1247 customizer.php:1939
+#: customizer.php:1247 customizer.php:1940
 msgid "Estimate Reading Time"
 msgstr "预估阅读时间"
 
@@ -812,142 +812,146 @@ msgid "Posts Pages"
 msgstr "文章页面"
 
 #: customizer.php:1906
+msgid "This option is only valid for articles with cover"
+msgstr "该选项仅对设置了特色图片的文章有效"
+
+#: customizer.php:1907
 msgid "Article Page Title Font Size"
 msgstr "文章页面标题大小"
 
-#: customizer.php:1925
+#: customizer.php:1926
 msgid "Article Page Title Underline Animation"
 msgstr "文章标题下划线动画"
 
-#: customizer.php:1931
+#: customizer.php:1932
 msgid "Article Area Meta Displays"
 msgstr "文章页面显示元素"
 
-#: customizer.php:1940
+#: customizer.php:1941
 msgid "Publish Time (Relatively)"
 msgstr "发布时间"
 
-#: customizer.php:1941
+#: customizer.php:1942
 msgid "Last Edit Time (Relatively)"
 msgstr "最后编辑时间"
 
-#: customizer.php:1942
+#: customizer.php:1943
 msgid "Action Edit (only displays while user has sufficient permissions)"
 msgstr "编辑按钮（只在拥有编辑权限时显示）"
 
-#: customizer.php:1949
+#: customizer.php:1950
 msgid "Article Page Auto Show Menu"
 msgstr "文章页自动加载目录"
 
-#: customizer.php:1955
+#: customizer.php:1956
 msgid "Inline Code Background Color"
 msgstr "内联代码背景色"
 
-#: customizer.php:1972
+#: customizer.php:1973
 msgid "Inline Code Background Color In Dark Mode"
 msgstr "深色模式内联代码背景色"
 
-#: customizer.php:1990
+#: customizer.php:1991
 msgid "Pages Extend Options"
 msgstr "页面拓展内容"
 
-#: customizer.php:1999
+#: customizer.php:2000
 msgid "Article Page Function Bar"
 msgstr "文章页面功能栏"
 
-#: customizer.php:2005
+#: customizer.php:2006
 msgid "Article License"
 msgstr "文章许可协议"
 
-#: customizer.php:2007
+#: customizer.php:2008
 msgid "Not Display"
 msgstr "不展示"
 
-#: customizer.php:2021
+#: customizer.php:2022
 msgid "Article Page Appreciation Function (Alipay QR Code)"
 msgstr "文章页面赞赏功能（支付宝二维码）"
 
-#: customizer.php:2035
+#: customizer.php:2036
 msgid "Article Page Appreciation Function (Wechat QR Code)"
 msgstr "文章页面赞赏功能（微信二维码）"
 
-#: customizer.php:2049
+#: customizer.php:2050
 msgid "Article Page Author Avatar"
 msgstr "文章作者头像"
 
-#: customizer.php:2055
+#: customizer.php:2056
 msgid "Article Page Author Name"
 msgstr "文章作者昵称"
 
-#: customizer.php:2061
+#: customizer.php:2062
 msgid "Article Page Author Signature"
 msgstr "文章作者签名"
 
-#: customizer.php:2067
+#: customizer.php:2068
 msgid "Article Last Update Time"
 msgstr "文章最后更新时间"
 
-#: customizer.php:2073
+#: customizer.php:2074
 msgid "Article Tag"
 msgstr "文章标签"
 
-#: customizer.php:2079
+#: customizer.php:2080
 msgid "Article Page Prev/Next Article Switcher"
 msgstr "文章页面上下文章切换"
 
-#: customizer.php:2086
+#: customizer.php:2087
 msgid "Comment Options"
 msgstr "评论区设置"
 
-#: customizer.php:2095
+#: customizer.php:2096
 msgid "Page Comment Area Display"
 msgstr "页面评论区显示方式"
 
-#: customizer.php:2097
+#: customizer.php:2098
 msgid "Expand"
 msgstr "展开"
 
-#: customizer.php:2098
+#: customizer.php:2099
 msgid "Fold"
 msgstr "折叠"
 
-#: customizer.php:2105
+#: customizer.php:2106
 msgid "Custom CommentBox Placeholder"
 msgstr "自定义评论区占位内容"
 
-#: customizer.php:2111
+#: customizer.php:2112
 msgid "Custom Submit Button Content"
 msgstr "自定义提交按钮内容"
 
-#: customizer.php:2117
+#: customizer.php:2118
 msgid "Page Comment Area Bottom Right Background Image"
 msgstr "页面评论区域右下背景图片"
 
-#: customizer.php:2131
+#: customizer.php:2132
 msgid "Comment Area Emoticon"
 msgstr "评论区域右下背景图片"
 
-#: customizer.php:2132
+#: customizer.php:2133
 msgid "Please go to the backend to configure your custom emoticon pack"
 msgstr "请前往后台配置自定义表情包"
 
-#: customizer.php:2135
+#: customizer.php:2136
 msgid "BiliBili Emoticon Pack"
 msgstr "哔哩哔哩表情包"
 
-#: customizer.php:2136
+#: customizer.php:2137
 msgid "Baidu Tieba Emoticon Pack"
 msgstr "贴吧表情包"
 
-#: customizer.php:2137
+#: customizer.php:2138
 msgid "Emoji"
 msgstr "颜文字"
 
-#: customizer.php:2138
+#: customizer.php:2139
 msgid "Customized Emoticon Pack"
 msgstr "自定义"
 
-#: customizer.php:2144
+#: customizer.php:2145
 msgid ""
 "For more detailed configuration of the comment area, please go to the "
 "backend configuration"
