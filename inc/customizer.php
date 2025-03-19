@@ -1756,6 +1756,73 @@ $sections = [
 			],
 		],
     ],
+	// ====================全局杂项====================
+	[
+        'id'          => 'iro_global_others',
+        'title'       => esc_html__( 'Others', 'Sakurairo_C' ),
+        'description' => '',
+        'panel'       => 'iro_global',
+
+		'fields'      =>[
+			[
+				'type'     => 'switch',
+				'settings' => 'nprogress_on',
+				'iro_key'  => 'nprogress_on',
+				'label'    => esc_html__( 'NProgress Loading Progress Bar', 'Sakurairo_C' ),
+				'description' => esc_html__('Enabled by default, when loading page there will be a progress bar alert','Sakurairo_C'),
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'smoothscroll_option',
+				'iro_key'  => 'smoothscroll_option',
+				'label'    => esc_html__( 'Global Smooth Scroll', 'Sakurairo_C' ),
+				'description' => esc_html__('Enabled by default, page scrolling will be smoother','Sakurairo_C'),
+			],
+			[
+				'type'     => 'select',
+				'settings' => 'pagenav_style',
+				'iro_key'  => 'pagenav_style',
+				'label'    => esc_html__( 'Pagination Mode', 'Sakurairo_C' ),
+				'choices'     => [
+					'ajax' => __('Ajax Load','Sakurairo_C'),
+					'np' => __('Page Up/Down','Sakurairo_C'),
+				],
+			],
+			[
+				'type'     => 'select',
+				'settings' => 'page_auto_load',
+				'iro_key'  => 'page_auto_load',
+				'label'    => esc_html__( 'Next Page Auto Load', 'Sakurairo_C' ),
+				'choices'     => [
+					'0' => __('0 Sec','Sakurairo_C'),
+					'1' => __('1 Sec','Sakurairo_C'),
+					'2' => __('2 Sec','Sakurairo_C'),
+					'3' => __('3 Sec','Sakurairo_C'),
+					'4' => __('4 Sec','Sakurairo_C'),
+					'5' => __('5 Sec','Sakurairo_C'),
+					'6' => __('6 Sec','Sakurairo_C'),
+					'7' => __('7 Sec','Sakurairo_C'),
+					'8' => __('8 Sec','Sakurairo_C'),
+					'9' => __('9 Sec','Sakurairo_C'),
+					'10' => __('10 Sec','Sakurairo_C'),
+					'233' => __('Do not autoload','Sakurairo_C'),
+				],
+			],
+			[
+				'type'     => 'image',
+				'settings' => 'load_nextpage_svg',
+				'iro_key'  => 'load_nextpage_svg',
+				'label'    => esc_html__( 'Placeholder SVG when loading the next page', 'Sakurairo_C' ),
+				'transport'   => 'auto',
+				'output' => array(
+					array(
+						'element'  => ':root',
+						'property' => '--load_nextpage_svg',
+					),
+				),
+			],
+		],
+    ],
 ];
 
 // ====================Panel注册====================
