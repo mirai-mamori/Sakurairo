@@ -3309,23 +3309,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'mail_img',
-        'type' => 'upload',
-        'title' => __('Mail Template Featured Image','sakurairo_csf'),
-        'desc' => __('Set the background image of your reply email','sakurairo_csf'),
-        'library' => 'image',
-        'default' => $vision_resource_basepath . 'series/mail_head.webp'
-      ),
-
-      array(
-        'id' => 'mail_user_name',
-        'type' => 'text',
-        'title' => __('Mail Template Sending Address Prefix','sakurairo_csf'),
-        'desc' => __('Used to send system mail. The sender address will be displayed in the user\'s mailbox, don\'t use Non-English Characters. The default system mail address is bibi@your domain','sakurairo_csf'),
-        'default' => 'bibi'
-      ),
-
-      array(
         'id' => 'mail_notify',
         'type' => 'switcher',
         'title' => __('User Mail Reply Notification','sakurairo_csf'),
