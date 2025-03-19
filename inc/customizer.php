@@ -39,6 +39,11 @@ $panels = [
         'title'       => esc_html__( 'Homepage Components', 'Sakurairo_C' ),
 		'priority'    => 10,
     ],
+	[
+        'id'          => 'iro_page',
+        'title'       => esc_html__( 'Pages Options', 'Sakurairo_C' ),
+		'priority'    => 10,
+    ],
 ];
 
 // 所有可以传递的参数列表（按 Themeum/Kirki 官方文档）
@@ -282,6 +287,25 @@ $sections = [
 				'section'  => 'iro_nav',
 				'iro_key'  => 'nav_user_menu',
 			],
+			[
+				'type'     => 'switch',
+				'settings' => 'nav_menu_search',
+				'iro_key'  => 'nav_menu_search',
+				'label'    => esc_html__( 'Nav Menu Search', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'image',
+				'settings' => 'search_area_background',
+				'iro_key'  => 'search_area_background',
+				'label'    => esc_html__( 'Search Area Background Image', 'Sakurairo_C' ),
+				'transport'   => 'auto',
+				'output'      => array(
+					array(
+						'element'  => '.search-form.is-visible',
+						'property' => 'background-image',
+					),
+				),
+			],
 		],
     ],
 	// ====================主题色部分====================
@@ -293,6 +317,20 @@ $sections = [
 
 		'fields'      =>[
 			// ====================主题色====================
+			[
+				'type'     => 'switch',
+				'settings' => 'extract_theme_skin_from_cover',
+				'iro_key'  => 'extract_theme_skin_from_cover',
+				'label'    => esc_html__( 'Extract Theme Color from Cover Image', 'Sakurairo_C' ),
+				'description' => 'After turning on,the colors displayed on the article page will be taken from the article featured image',
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'extract_article_highlight_from_feature',
+				'iro_key'  => 'extract_article_highlight_from_feature',
+				'label'    => esc_html__( 'Extract Article Highlight from Featured Image', 'Sakurairo_C' ),
+				'description' => 'After turning on,the colors displayed on the article page will be taken from the article featured image',
+			],
 			[
 				'type'     => 'color',
 				'settings' => 'theme_skin',
@@ -822,6 +860,20 @@ $sections = [
 			],
 			[
 				'type'     => 'switch',
+				'settings' => 'post_cover_as_bg',
+				'iro_key'  => 'post_cover_as_bg',
+				'label'    => esc_html__( 'Post Cover As Background', 'Sakurairo_C' ),
+				'description' => esc_html__( 'Use post feature image as background in post pages', 'Sakurairo_C' ),
+			    'active_callback' => [
+					[
+						'setting'  => 'site_bg_as_cover',
+						'operator' => '==',
+						'value'    => 'true',
+					],
+				],
+			],
+			[
+				'type'     => 'switch',
 				'settings' => 'wave_effects',
 				'iro_key'  => 'wave_effects',
 				'label'    => esc_html__( 'Cover Wave Effects', 'Sakurairo_C' ),
@@ -838,6 +890,61 @@ $sections = [
 				'settings' => 'drop_down_arrow_mobile',
 				'iro_key'  => 'drop_down_arrow_mobile',
 				'label'    => esc_html__( 'Cover Dropdown Arrow Display on Mobile Devices', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'drop_down_arrow',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
+			],
+			[
+				'type'     => 'color',
+				'settings' => 'drop_down_arrow_color',
+				'iro_key'  => 'drop_down_arrow_color',
+				'label'    => esc_html__( 'Cover Dropdown Arrow Color', 'Sakurairo_C' ),
+				'choices'     => [
+					'alpha' => true,
+				],
+				'active_callback' => [
+					[
+						'setting'  => 'drop_down_arrow',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
+				'transport'   => 'auto',
+				'output'      => array(
+					array(
+						'element'  => '.headertop-down svg path',
+						'property' => 'fill',
+						'value_pattern' => '$ !important',
+					),
+				),
+			],
+			[
+				'type'     => 'color',
+				'settings' => 'drop_down_arrow_dark_color',
+				'iro_key'  => 'drop_down_arrow_dark_color',
+				'label'    => esc_html__( 'Cover Dropdown Arrow Color (Dark Mode)', 'Sakurairo_C' ),
+				'choices'     => [
+					'alpha' => true,
+				],
+				'active_callback' => [
+					[
+						'setting'  => 'drop_down_arrow',
+						'operator' => '==',
+						'value'    => true,
+					],
+				],
+				'transport'   => 'auto',
+				'output'      => array(
+					array(
+						'element'  => 'body.dark .headertop-down svg path ',
+						'property' => 'color',
+						'value_pattern' => '$ !important',
+					),
+				),
 			],
 		],
 	],
@@ -1567,6 +1674,16 @@ $sections = [
         'panel'       => 'iro_global',
 
 		'fields'      =>[
+			[
+				'type'     => 'select',
+				'settings' => 'footer_direction',
+				'iro_key'  => 'footer_direction',
+				'label'    => esc_html__( 'Footer Content Distribution', 'Sakurairo_C' ),
+				'choices'     => [
+					'center' => __('Center','Sakurairo_C'),
+					'columns' => __('Two Coloumns','Sakurairo_C'),
+				],
+			],
 			[
 				'type'     => 'switch',
 				'settings' => 'footer_sakura',
