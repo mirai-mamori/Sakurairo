@@ -1380,6 +1380,7 @@ h1.page-title {
 .post-license:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.8);
+  color: var(--article-theme-highlight,var(--theme-skin-matching));
 }
 
 .post-tags {
