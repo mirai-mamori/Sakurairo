@@ -3541,7 +3541,7 @@ function sakurairo_deactivate_link_check_cron() {
 }
 register_deactivation_hook(__FILE__, 'sakurairo_deactivate_link_check_cron');
 
-require_once(get_theme_file_path() . '/inc/link-status.php'); // 友情链接状态检测
+require_once(get_template_directory() . '/inc/link-status.php'); // 友情链接状态检测
 
 /**
  * 返回是否应当显示文章标题。
