@@ -40,7 +40,7 @@ $panels = [
 		'priority'    => 10,
     ],
 	[
-        'id'          => 'iro_page',
+        'id'          => 'iro_pages',
         'title'       => esc_html__( 'Pages Options', 'Sakurairo_C' ),
 		'priority'    => 10,
     ],
@@ -64,7 +64,6 @@ $allowed_params = [
 	'partial_refresh',  // 部分刷新设置
 	'preset',           // 预设值（如预设色板）
 	'priority',         // 排序权重（必填，未填写将自动赋值）
-	'required',         // 必填条件数组
 	'sanitize_callback',// 数据过滤函数
 	'section',          // 所属区块 ID（必填）
 	'settings',         // 设置项 ID（必填）
@@ -1823,6 +1822,329 @@ $sections = [
 			],
 		],
     ],
+	// ====================页面通用设置====================
+	[
+        'id'          => 'iro_pages_common',
+        'title'       => esc_html__( 'Common Options', 'Sakurairo_C' ),
+        'description' => '',
+        'panel'       => 'iro_pages',
+
+		'fields'      =>[
+			[
+				'type'     => 'radio',
+				'settings' => 'entry_content_style',
+				'iro_key'  => 'entry_content_style',
+				'label'    => esc_html__( 'Page Layout Style', 'Sakurairo_C' ),
+				'choices'     => [
+					'sakurairo' => __('Default Style','Sakurairo_C'),
+          			'github' => __('Github Style','Sakurairo_C'),
+				],
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'patternimg',
+				'iro_key'  => 'patternimg',
+				'label'    => esc_html__( 'Page Decoration Image', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'page_title_animation',
+				'iro_key'  => 'page_title_animation',
+				'label'    => esc_html__( 'Page Title Animation', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'slider',
+				'settings' => 'page_title_animation_time',
+				'iro_key'  => 'page_title_animation_time',
+				'label'    => esc_html__( 'Page Title Animation Time', 'Sakurairo_C' ),
+				'choices'     => [
+					'min'  => 0,
+					'max'  => 5,
+					'step' => 0.01,
+				],
+				'active_callback' => [
+					[
+						'setting'  => 'page_title_animation',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
+				'transport'   => 'auto',
+				'output' => array(
+					array(
+						'element'  => '.entry-title,.single-center .entry-census,.entry-census,.p-time',
+						'property' => 'animation',
+						'value_pattern' => 'homepage-load-animation $s !important',
+					),
+					array(
+						'element'  => '.single-center .single-header h1.entry-title::after',
+						'property' => 'animation',
+						'value_pattern' => 'lineWidth 2s $s forwards !important',
+					),
+				),
+			],
+			[
+				'type'     => 'image',
+				'settings' => 'load_in_svg',
+				'iro_key'  => 'load_in_svg',
+				'label'    => esc_html__( 'Page Image Placeholder SVG', 'Sakurairo_C' ),
+			],
+		],
+    ],
+	// ====================文章页设置====================
+	[
+        'id'          => 'iro_pages_post',
+        'title'       => esc_html__( 'Posts Pages', 'Sakurairo_C' ),
+        'description' => '',
+        'panel'       => 'iro_pages',
+
+		'fields'      =>[
+			[
+				'type'     => 'slider',
+				'settings' => 'article_title_font_size',
+				'iro_key'  => 'article_title_font_size',
+				'label'    => esc_html__( 'Article Page Title Font Size', 'Sakurairo_C' ),
+				'choices'     => [
+					'min'  => 16,
+					'max'  => 48,
+					'step' => 1,
+				],
+				'transport'   => 'auto',
+				'output' => array(
+					array(
+						'element'  => '.single-center .single-header h1.entry-title',
+						'property' => 'font-size',
+						'value_pattern' => '$px !important',
+					),
+				),
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'article_title_line',
+				'iro_key'  => 'article_title_line',
+				'label'    => esc_html__( 'Article Page Title Underline Animation', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'select',
+				'settings' => 'article_meta_show_in_head',
+				'iro_key'  => 'article_meta_show_in_head',
+				'label'    => esc_html__( 'Article Area Meta Displays', 'Sakurairo_C' ),
+				'multiple'    => 0,
+				'choices'     => [
+					"author" => __("Author","Sakurairo_C"),
+					"category" => __("Category","Sakurairo_C"),
+					"comment_count" => __("Number of Comments","Sakurairo_C"),
+					"post_views" => __("Number of Views","Sakurairo_C"),
+					"post_words_count" => __("Number of Words","Sakurairo_C"),
+					"reading_time" => __("Estimate Reading Time","Sakurairo_C"),
+					"publish_time_relative" => __("Publish Time (Relatively)","Sakurairo_C"),
+  					"last_edit_time_relative" => __("Last Edit Time (Relatively)","Sakurairo_C"),
+  					"EDIT" => __("Action Edit (only displays while user has sufficient permissions)","Sakurairo_C"),
+				],
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'article_auto_toc',
+				'iro_key'  => 'article_auto_toc',
+				'label'    => esc_html__( 'Article Page Auto Show Menu', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'color',
+				'settings' => 'inline_code_background_color',
+				'iro_key'  => 'inline_code_background_color',
+				'label'    => esc_html__( 'Inline Code Background Color', 'Sakurairo_C' ),
+				'choices'     => [
+					'alpha' => true,
+				],
+				'transport'   => 'auto',
+				'output'      => array(
+					array(
+						'element'  => ':root',
+						'property' => '--inline_code_background_color',
+						'value_pattern' => '$ !important',
+					),
+				),
+			],
+			[
+				'type'     => 'color',
+				'settings' => 'inline_code_background_color_in_dark_mode',
+				'iro_key'  => 'inline_code_background_color_in_dark_mode',
+				'label'    => esc_html__( 'Inline Code Background Color In Dark Mode', 'Sakurairo_C' ),
+				'choices'     => [
+					'alpha' => true,
+				],
+				'transport'   => 'auto',
+				'output'      => array(
+					array(
+						'element'  => ':root',
+						'property' => '--inline_code_background_color_in_dark_mode',
+						'value_pattern' => '$ !important',
+					),
+				),
+			],
+		],
+    ],
+	// ====================文章扩展====================
+	[
+        'id'          => 'iro_pages_extra',
+        'title'       => esc_html__( 'Pages Extend Options', 'Sakurairo_C' ),
+        'description' => '',
+        'panel'       => 'iro_pages',
+
+		'fields'      =>[
+			[
+				'type'     => 'switch',
+				'settings' => 'article_function',
+				'iro_key'  => 'article_function',
+				'label'    => esc_html__( 'Article Page Function Bar', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'select',
+				'settings' => 'article_lincenses',
+				'iro_key'  => 'article_lincenses',
+				'label'    => esc_html__( 'Article License', 'Sakurairo_C' ),
+				'choices'     => [
+					false => __("Not Display","Sakurairo_C"),
+					"cc0" => "CC0 1.0",
+					"cc-by" => "CC BY 4.0",
+					"cc-by-nc" => "CC BY-NC 4.0",
+					"cc-by-nc-nd" => "CC BY-NC-ND 4.0",
+					true => "CC BY-NC-SA 4.0",
+					"cc-by-nd" => "CC BY-ND 4.0",
+					"cc-by-sa" => "CC BY-SA 4.0",
+				],
+			],
+			[
+				'type'     => 'image',
+				'settings' => 'alipay_code',
+				'iro_key'  => 'alipay_code',
+				'label'    => esc_html__( 'Article Page Appreciation Function (Alipay QR Code)', 'Sakurairo_C' ),
+				'transport'   => 'auto',
+				'output' => array(
+					array(
+						'element'  => ':root',
+						'property' => '--load_nextpage_svg',
+						'value_pattern' => '$ !important',
+					),
+				),
+			],
+			[
+				'type'     => 'image',
+				'settings' => 'wechat_code',
+				'iro_key'  => 'wechat_code',
+				'label'    => esc_html__( 'Article Page Appreciation Function (Wechat QR Code)', 'Sakurairo_C' ),
+				'transport'   => 'auto',
+				'output' => array(
+					array(
+						'element'  => ':root',
+						'property' => '--load_nextpage_svg',
+						'value_pattern' => '$ !important',
+					),
+				),
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'author_profile_avatar',
+				'iro_key'  => 'author_profile_avatar',
+				'label'    => esc_html__( 'Article Page Author Avatar', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'author_profile_name',
+				'iro_key'  => 'author_profile_name',
+				'label'    => esc_html__( 'Article Page Author Name', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'author_profile_quote',
+				'iro_key'  => 'author_profile_quote',
+				'label'    => esc_html__( 'Article Page Author Signature', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'article_modified_time',
+				'iro_key'  => 'article_modified_time',
+				'label'    => esc_html__( 'Article Last Update Time', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'article_tag',
+				'iro_key'  => 'article_tag',
+				'label'    => esc_html__( 'Article Tag', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'article_nextpre',
+				'iro_key'  => 'article_nextpre',
+				'label'    => esc_html__( 'Article Page Prev/Next Article Switcher', 'Sakurairo_C' ),
+			],
+		],
+	],
+	// ====================评论区====================
+	[
+        'id'          => 'iro_pages_comment',
+        'title'       => esc_html__( 'Comment Options', 'Sakurairo_C' ),
+        'description' => '',
+        'panel'       => 'iro_pages',
+
+		'fields'      =>[
+			[
+				'type'     => 'radio',
+				'settings' => 'comment_area',
+				'iro_key'  => 'comment_area',
+				'label'    => esc_html__( 'Page Comment Area Display', 'Sakurairo_C' ),
+				'choices'     => [
+					'unfold' => __('Expand','Sakurairo_C'),
+          			'fold' => __('Fold','Sakurairo_C'),
+				],
+			],
+			[
+				'type'     => 'text',
+				'settings' => 'comment_placeholder_text',
+				'iro_key'  => 'comment_placeholder_text',
+				'label'    => esc_html__( 'Custom CommentBox Placeholder', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'text',
+				'settings' => 'comment_submit_button_text',
+				'iro_key'  => 'comment_submit_button_text',
+				'label'    => esc_html__( 'Custom Submit Button Content', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'image',
+				'settings' => 'comment_area_image',
+				'iro_key'  => 'comment_area_image',
+				'label'    => esc_html__( 'Page Comment Area Bottom Right Background Image', 'Sakurairo_C' ),
+				'transport'   => 'auto',
+				'output' => array(
+					array(
+						'element'  => '.comment-respond textarea',
+						'property' => 'background-image',
+						'value_pattern' => '$ !important',
+					),
+				),
+			],
+			[
+				'type'     => 'select',
+				'settings' => 'smilies_list',
+				'iro_key'  => 'smilies_list',
+				'label'    => esc_html__( 'Comment Area Emoticon', 'Sakurairo_C' ),
+				'description' => esc_html__( 'Please go to the backend to configure your custom emoticon pack', 'Sakurairo_C' ),
+				'multiple'    => 0,
+				'choices'     => [
+					'bilibili'   => __('BiliBili Emoticon Pack','Sakurairo_C'),
+					'tieba'   => __('Baidu Tieba Emoticon Pack','Sakurairo_C'),
+					'yanwenzi' => __('Emoji','Sakurairo_C'),
+					'custom' => __('Customized Emoticon Pack','Sakurairo_C'),
+				],
+			],
+			[
+				'type'     => 'custom',
+				'settings' => 'nav_menu_notice',
+				'default'  => __('For more detailed configuration of the comment area, please go to the backend configuration','Sakurairo_C'),
+			],
+		],
+	],
 ];
 
 // ====================Panel注册====================

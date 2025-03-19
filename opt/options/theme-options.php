@@ -3102,6 +3102,7 @@ $prefix = 'iro_options';
       array(
         'id' => 'comment_submit_button_text',
         'type' => 'text',
+        'title' => __('Custom Submit Button Content','sakurairo_csf'),
         'title' => __('Submit✈️','sakurairo_csf')
       ),
 
