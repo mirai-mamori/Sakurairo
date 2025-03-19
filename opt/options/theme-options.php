@@ -1365,6 +1365,20 @@ $prefix = 'iro_options';
         'default' => $vision_resource_basepath . 'load_svg/ball.svg'
       ),
 
+      array(
+        'id' => 'missing_avatars_default',
+        'type' => 'upload',
+        'title' => __('Missing Avatars Placeholder','sakurairo_csf'),
+        'library' => 'image',
+      ),
+
+      array(
+        'id' => 'missing_images_default',
+        'type' => 'upload',
+        'title' => __('Missing Images Placeholder','sakurairo_csf'),
+        'library' => 'image',
+      ),
+
     )
   ) );
 
