@@ -613,6 +613,8 @@ function update_customize_to_iro_options() { //从key映射表中重组并保存
             } else {
                 $theme_mod_options[ $iro_key ] = $preview_value;
             }
+            // 移除已保存的值，确保下次还能同步
+            remove_theme_mod( $setting_id );
         }
     }
 	$theme_mod_options = array_merge($iro_options,$theme_mod_options);
