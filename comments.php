@@ -169,12 +169,11 @@ function get_smilies_panel() {
                 : '';
             // 调用辅助函数生成表情面板
             $smilies_box = get_smilies_panel();
+            $smilies_button = '';
             if (iro_opt('smilies_list')) {
                 $smilies_button = '<div id="emotion-toggle" class="no-select">
                                 <i class="fa-regular fa-face-kiss-wink-heart"></i>
                             </div>';
-            } else {
-                $smilies_button = '';
             }
             $img_upload = '';
             if (iro_opt('img_upload_api',false) == 'off' ? false : true) {
