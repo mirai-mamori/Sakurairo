@@ -35,17 +35,18 @@ function sakurairo_cache_page() {
     $steam_remaining = ($steam_expire_time > time()) ? $steam_expire_time - time() : 0;
 
     ?>
+    <?php if (isset($_GET['updated'])) : ?>
+        <div class="updated notice is-dismissible"><p><?php echo __('Cache Updated!','sakurairo'); ?></p></div>
+    <?php endif; ?>
+
+    <h1><?php __('Cache Settings','sakurairo'); ?></h1>
     <h2><?php echo __('Cache settings','sakurairo') ?></h2>
     <p><?php echo __('If your server network environment is poor, you can click the link below to manually obtain the response content and fill it in','sakurairo') ?></p>
     <p><?php echo __('If the content is empty or incorrect, the server will try to automatically pull it','sakurairo') ?></p>
     <p><?php echo __('The link target will be automatically updated after the relevant settings are saved','sakurairo') ?></p>
+    <p><?php echo __('The unit is seconds. And it will take effect permanently when it was set to 0.','sakurairo') ?></p>
     <p><a href="./admin.php?iro_act=bangumi" target="_blank">Bangumi</a> | <a href="./admin.php?iro_act=mal" target="_blank">MAL</a> | <a href="./admin.php?iro_act=steam_library" target="_blank">SteamLibrary</a> </p>
     <div class="wrap">
-        <h1><?php __('Cache Settings','sakurairo'); ?></h1>
-        <?php if (isset($_GET['updated'])) : ?>
-            <div class="updated notice is-dismissible"><p><?php echo __('Cache Updated!','sakurairo'); ?></p></div>
-        <?php endif; ?>
-
         <form method="post" action="<?php echo admin_url('admin-post.php'); ?>">
             <?php wp_nonce_field('sakurairo_cache_update', 'sakurairo_cache_update'); ?>
             <input type="hidden" name="action" value="sakurairo_cache_setting_update">

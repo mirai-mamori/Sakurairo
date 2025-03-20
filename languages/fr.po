@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-17 17:41+0900\n"
-"PO-Revision-Date: 2025-03-17 18:06+0900\n"
+"POT-Creation-Date: 2025-03-20 23:17+0800\n"
+"PO-Revision-Date: 2025-03-20 23:19+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -20,6 +20,11 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: inc/kirki\n"
+"X-Poedit-SearchPathExcluded-2: opt\n"
+"X-Poedit-SearchPathExcluded-3: inc/customizer.php\n"
+"X-Poedit-SearchPathExcluded-4: update-checker\n"
+"X-Poedit-SearchPathExcluded-5: js\n"
 
 #: 404.php:188
 msgid "Page Not Found"
@@ -77,44 +82,44 @@ msgstr "Commenter en privé"
 msgid "Comment reply notify"
 msgstr "Notification de réponse au commentaire"
 
-#: comments.php:193
+#: comments.php:196
 msgid "Leave a Reply to"
 msgstr "Répondre à"
 
-#: comments.php:194
+#: comments.php:197
 msgid "Cancel Reply"
 msgstr "Annuler la réponse"
 
-#: comments.php:217
+#: comments.php:220
 msgid "Nickname or QQ number"
 msgstr "Pseudo ou numéro QQ"
 
-#: comments.php:217 comments.php:221
+#: comments.php:220 comments.php:224
 msgid "Must* "
 msgstr "Obligatoire* "
 
-#: comments.php:218
+#: comments.php:221
 msgid "Auto pull nickname and avatar with a QQ num. entered"
 msgstr ""
 "Récupération automatique du pseudo et de l'avatar avec un numéro QQ saisi"
 
-#: comments.php:221
+#: comments.php:224
 msgid "email"
 msgstr "email"
 
-#: comments.php:222
+#: comments.php:225
 msgid "You will receive notification by email"
 msgstr "Vous recevrez une notification par email"
 
-#: comments.php:225
+#: comments.php:228
 msgid "Site"
 msgstr "Site"
 
-#: comments.php:226
+#: comments.php:229
 msgid "Advertisement is forbidden 😀"
 msgstr "La publicité est interdite 😀"
 
-#: comments.php:238
+#: comments.php:241
 msgid "Save your private info"
 msgstr "Sauvegardez vos informations privées"
 
@@ -382,73 +387,73 @@ msgstr "Êtes-vous sûr de vouloir le définir comme privé ?"
 msgid "You had set private comment before"
 msgstr "Vous avez déjà défini un commentaire privé"
 
-#: functions.php:646 inc/theme-plus.php:190
+#: functions.php:648 inc/theme-plus.php:211
 msgid "Author"
 msgstr "Auteur"
 
-#: functions.php:646
+#: functions.php:648
 msgid "Blogger"
 msgstr "Blogueur"
 
-#: functions.php:655 functions.php:3666
+#: functions.php:657 functions.php:3592
 msgid "Location"
 msgstr "Emplacement"
 
-#: functions.php:661
+#: functions.php:663
 msgid "Private"
 msgstr "Privé"
 
-#: functions.php:663
+#: functions.php:665
 msgid "Yes"
 msgstr "Oui"
 
-#: functions.php:665
+#: functions.php:667
 msgid "No"
 msgstr "Non"
 
-#: functions.php:668 inc/link-status.php:168
+#: functions.php:670 inc/link-status.php:168
 msgid "Edit"
 msgstr "Modifier"
 
-#: functions.php:798
+#: functions.php:800
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "Cette personne est tellement paresseuse ╮(╯▽╰)╭"
 
-#: functions.php:828 functions.php:3217 functions.php:3410
+#: functions.php:830 functions.php:3143 functions.php:3336
 msgid "Pending Links"
 msgstr "Liens en attente"
 
-#: functions.php:1623
+#: functions.php:1636
 msgid "All expand/collapse"
 msgstr "Tout déplier/replier"
 
-#: functions.php:1657
+#: functions.php:1670
 msgid " year"
 msgstr " an"
 
-#: functions.php:1660
+#: functions.php:1673
 msgid " post(s)"
 msgstr " article(s)"
 
-#: functions.php:1710 functions.php:1713 inc/theme-plus.php:345
+#: functions.php:1723 functions.php:1726 inc/theme-plus.php:366
 #: layouts/mo_toc_menu.php:29
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
-#: functions.php:2261
+#: functions.php:2274
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:2363
+#: functions.php:2376
 msgid "Sidebar"
 msgstr "Barre latérale"
 
-#: functions.php:2389
+#: functions.php:2402
 msgid "Please do not try to use Javascript in your comments!"
 msgstr ""
 "S'il vous plaît, n'essayez pas d'utiliser Javascript dans vos commentaires !"
 
-#: functions.php:2499
+#: functions.php:2512
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -460,32 +465,32 @@ msgstr ""
 "devrez peut-être configurer <a href=\"https://www.wpdaxue.com/wordpress-"
 "rewriterule.html\" target=\"_blank\"> le pseudo-statique </a>. </ b>"
 
-#: functions.php:2632
+#: functions.php:2645
 #, php-format
 msgid "%s says: "
 msgstr "%s dit : "
 
-#: functions.php:2653
+#: functions.php:2666
 msgid "Expand / Collapse"
 msgstr "Déplier/Replier"
 
-#: functions.php:3167
+#: functions.php:3093
 msgid "Invalid request method."
 msgstr "Méthode de requête non valide."
 
-#: functions.php:3178
+#: functions.php:3104
 msgid "You are submitting too frequently. Please try again later."
 msgstr "Vous soumettez trop fréquemment. Veuillez réessayer plus tard."
 
-#: functions.php:3184
+#: functions.php:3110
 msgid "Security verification failed."
 msgstr "La vérification de sécurité a échoué."
 
-#: functions.php:3192
+#: functions.php:3118
 msgid "Please fill in all required fields."
 msgstr "Veuillez remplir tous les champs obligatoires."
 
-#: functions.php:3237 user/page-links.php:501
+#: functions.php:3163 user/page-links.php:502
 msgid ""
 "Sorry, we are not accepting new link submissions at this time due to "
 "backlog. Please try again later."
@@ -493,40 +498,40 @@ msgstr ""
 "Désolé, nous n'acceptons pas de nouvelles soumissions de liens pour le "
 "moment en raison du retard accumulé. Veuillez réessayer plus tard."
 
-#: functions.php:3250
+#: functions.php:3176
 msgid "Site name is too long."
 msgstr "Le nom du site est trop long."
 
-#: functions.php:3255
+#: functions.php:3181
 msgid "Site description is too long."
 msgstr "La description du site est trop longue."
 
-#: functions.php:3261
+#: functions.php:3187
 msgid "Please enter a valid URL."
 msgstr "Veuillez saisir une URL valide."
 
-#: functions.php:3267
+#: functions.php:3193
 msgid "Please enter a valid image URL."
 msgstr "Veuillez saisir une URL d'image valide."
 
-#: functions.php:3273
+#: functions.php:3199
 msgid "Please enter a valid email address."
 msgstr "Veuillez saisir une adresse électronique valide."
 
-#: functions.php:3281
+#: functions.php:3207
 msgid "This website URL is already in our links list."
 msgstr "L'URL de ce site web figure déjà dans notre liste de liens."
 
-#: functions.php:3307 functions.php:3372
+#: functions.php:3233 functions.php:3298
 msgid "Failed to submit link. Please try again later."
 msgstr "Le lien n'a pas été soumis. Veuillez réessayer plus tard."
 
-#: functions.php:3319 functions.php:3379
+#: functions.php:3245 functions.php:3305
 #, php-format
 msgid "[%s] New Friend Link Submission"
 msgstr "[%s] Soumission d'un lien vers un nouvel ami"
 
-#: functions.php:3321 functions.php:3381
+#: functions.php:3247 functions.php:3307
 #, php-format
 msgid ""
 "A new friend link has been submitted on your website %s:\n"
@@ -535,32 +540,32 @@ msgstr ""
 "Un nouveau lien d'ami a été soumis sur votre site web %s :\n"
 "\n"
 
-#: functions.php:3322
+#: functions.php:3248
 #, php-format
 msgid "Site Name: %s\n"
 msgstr "Nom du site : %s\n"
 
-#: functions.php:3323
+#: functions.php:3249
 #, php-format
 msgid "Site URL: %s\n"
 msgstr "URL du site : %s\n"
 
-#: functions.php:3324
+#: functions.php:3250
 #, php-format
 msgid "Site Description: %s\n"
 msgstr "Description du site : %s\n"
 
-#: functions.php:3325
+#: functions.php:3251
 #, php-format
 msgid "Site Image: %s\n"
 msgstr "Image du site : %s\n"
 
-#: functions.php:3326
+#: functions.php:3252
 #, php-format
 msgid "Contact Email: %s\n"
 msgstr "Courriel du contact : %s\n"
 
-#: functions.php:3327
+#: functions.php:3253
 #, php-format
 msgid ""
 "IP Address: %s\n"
@@ -569,52 +574,52 @@ msgstr ""
 "Adresse IP : %s\n"
 "\n"
 
-#: functions.php:3328
+#: functions.php:3254
 msgid "Please review this submission in your WordPress admin panel.\n"
 msgstr ""
 "Veuillez vérifier cette soumission dans votre panneau d'administration "
 "WordPress.\n"
 
-#: functions.php:3338 functions.php:3389
+#: functions.php:3264 functions.php:3315
 msgid "Thank you! Your link has been submitted for review."
 msgstr ""
 "Nous vous remercions de votre attention. Votre lien a été soumis pour examen."
 
-#: functions.php:3343
+#: functions.php:3269
 #, php-format
 msgid "Site Name: %s"
 msgstr "Nom du site : %s"
 
-#: functions.php:3344
+#: functions.php:3270
 #, php-format
 msgid "Site URL: %s"
 msgstr "URL du site : %s"
 
-#: functions.php:3345
+#: functions.php:3271
 #, php-format
 msgid "Site Description: %s"
 msgstr "Description du site : %s"
 
-#: functions.php:3346
+#: functions.php:3272
 #, php-format
 msgid "Site Image: %s"
 msgstr "Image du site : %s"
 
-#: functions.php:3347
+#: functions.php:3273
 #, php-format
 msgid "Contact Email: %s"
 msgstr "Courriel du contact : %s"
 
-#: functions.php:3348
+#: functions.php:3274
 #, php-format
 msgid "IP Address: %s"
 msgstr "Adresse IP : %s"
 
-#: functions.php:3351
+#: functions.php:3277
 msgid "Friend Link Submission: "
 msgstr "Soumission d'un lien d'ami : "
 
-#: functions.php:3383
+#: functions.php:3309
 msgid ""
 "\n"
 "Please review this submission in your WordPress admin panel.\n"
@@ -623,16 +628,16 @@ msgstr ""
 "Veuillez vérifier cette soumission dans votre panneau d'administration "
 "WordPress.\n"
 
-#: functions.php:3396
+#: functions.php:3322
 msgid "An unexpected error occurred. Please try again later."
 msgstr "Une erreur inattendue s'est produite. Veuillez réessayer plus tard."
 
-#: functions.php:3572
+#: functions.php:3498
 #, php-format
 msgid "[%s] Friend Link Check Failure: %s"
 msgstr "[%s] Échec de la vérification du lien amical : %s"
 
-#: functions.php:3575
+#: functions.php:3501
 #, php-format
 msgid ""
 "The friend link '%s' has failed our status check %d times.\n"
@@ -641,22 +646,22 @@ msgstr ""
 "Le lien d'ami « %s » a échoué à notre vérification d'état %d fois.\n"
 "\n"
 
-#: functions.php:3576
+#: functions.php:3502
 #, php-format
 msgid "Link URL: %s\n"
 msgstr "Lien URL : %s\n"
 
-#: functions.php:3579
+#: functions.php:3505
 #, php-format
 msgid "HTTP Status Code: %s\n"
 msgstr "Code d'état HTTP : %s\n"
 
-#: functions.php:3583
+#: functions.php:3509
 #, php-format
 msgid "Error Message: %s\n"
 msgstr "Message d'erreur : %s\n"
 
-#: functions.php:3586
+#: functions.php:3512
 #, php-format
 msgid ""
 "\n"
@@ -667,7 +672,7 @@ msgstr ""
 "Dernière heure de vérification : %s\n"
 "\n"
 
-#: functions.php:3587
+#: functions.php:3513
 msgid ""
 "You may want to check this link and consider removing it if it remains "
 "unavailable.\n"
@@ -675,7 +680,7 @@ msgstr ""
 "Vous pouvez vérifier ce lien et envisager de le supprimer s'il reste "
 "indisponible.\n"
 
-#: functions.php:3707
+#: functions.php:3633
 msgid "Access denied."
 msgstr "Accès refusé."
 
@@ -683,15 +688,19 @@ msgstr "Accès refusé."
 msgid "Random Background"
 msgstr "Contexte aléatoire"
 
-#: inc/cache_settings.php:7 inc/cache_settings.php:8 inc/cache_settings.php:44
+#: inc/cache_settings.php:7 inc/cache_settings.php:8 inc/cache_settings.php:42
 msgid "Cache Settings"
 msgstr "Paramètres du cache de données"
 
-#: inc/cache_settings.php:38
+#: inc/cache_settings.php:39
+msgid "Cache Updated!"
+msgstr "Cache mis à jour !"
+
+#: inc/cache_settings.php:43
 msgid "Cache settings"
 msgstr "Paramètres du cache de données"
 
-#: inc/cache_settings.php:39
+#: inc/cache_settings.php:44
 msgid ""
 "If your server network environment is poor, you can click the link below to "
 "manually obtain the response content and fill it in"
@@ -700,7 +709,7 @@ msgstr ""
 "cliquer sur le lien ci-dessous pour obtenir manuellement le contenu de la "
 "réponse et le remplir."
 
-#: inc/cache_settings.php:40
+#: inc/cache_settings.php:45
 msgid ""
 "If the content is empty or incorrect, the server will try to automatically "
 "pull it"
@@ -708,7 +717,7 @@ msgstr ""
 "Si le contenu est vide ou incorrect, le serveur essaiera de l'extraire "
 "automatiquement."
 
-#: inc/cache_settings.php:41
+#: inc/cache_settings.php:46
 msgid ""
 "The link target will be automatically updated after the relevant settings "
 "are saved"
@@ -716,19 +725,23 @@ msgstr ""
 "La cible du lien sera automatiquement mise à jour après l'enregistrement des "
 "paramètres pertinents."
 
-#: inc/cache_settings.php:46
-msgid "Cache Updated!"
-msgstr "Cache mis à jour !"
+#: inc/cache_settings.php:47
+msgid ""
+"The unit is seconds. And it will take effect permanently when it was set to "
+"0."
+msgstr ""
+"L'unité est la seconde et sera en effet permanente lorsqu'elle est définie "
+"sur 0"
 
-#: inc/cache_settings.php:54 inc/cache_settings.php:66
+#: inc/cache_settings.php:55 inc/cache_settings.php:67
 msgid "Cache expire time"
 msgstr "Temps d'expiration du cache"
 
-#: inc/cache_settings.php:60
+#: inc/cache_settings.php:61
 msgid "Bangumi Cache"
 msgstr ""
 
-#: inc/cache_settings.php:72
+#: inc/cache_settings.php:73
 msgid "Steam Cache"
 msgstr ""
 
@@ -1100,7 +1113,7 @@ msgstr "Déplier"
 msgid "All item has been loaded."
 msgstr "Tous les éléments ont été chargés."
 
-#: inc/classes/Cache.php:70 inc/theme-plus.php:633
+#: inc/classes/Cache.php:70 inc/theme-plus.php:654
 msgid "The comment is private"
 msgstr "Le commentaire est privé"
 
@@ -1127,6 +1140,10 @@ msgstr "Captcha incorrect."
 #: inc/classes/Captcha.php:192
 msgid "An error has occurred."
 msgstr "Une erreur s'est produite."
+
+#: inc/classes/Images.php:24
+msgid "Image Failed to Load"
+msgstr "Le chargement de l'image a échoué"
 
 #: inc/classes/IpLocation.php:246 inc/classes/IpLocation.php:275
 msgid "Unknown"
@@ -1168,27 +1185,27 @@ msgstr "Abandonné "
 msgid "Paused "
 msgstr "En pause "
 
-#: inc/classes/Steam.php:89
+#: inc/classes/Steam.php:91
 msgid "Load more"
 msgstr "Charger plus"
 
-#: inc/classes/Steam.php:103
+#: inc/classes/Steam.php:105
 msgid "Playtime"
 msgstr "Récréation"
 
-#: inc/classes/Steam.php:104
+#: inc/classes/Steam.php:106
 msgid "Last Played"
 msgstr "Dernière lecture"
 
-#: inc/classes/Steam.php:138
+#: inc/classes/Steam.php:140
 msgid "Not Played Yet"
 msgstr "Pas encore joué"
 
-#: inc/classes/Steam.php:142
+#: inc/classes/Steam.php:144
 msgid "minute"
-msgstr ""
+msgstr "minute"
 
-#: inc/classes/Steam.php:145
+#: inc/classes/Steam.php:147
 msgid "hour"
 msgstr "heure"
 
@@ -1452,19 +1469,19 @@ msgstr " secondes auparavant"
 msgid "Posted on "
 msgstr "Publié le "
 
-#: inc/theme-plus.php:126
+#: inc/theme-plus.php:147
 msgid "Please upgrade wordpress to version 4.4+"
 msgstr "Veuillez mettre à jour WordPress à la version 4.4+"
 
-#: inc/theme-plus.php:139
+#: inc/theme-plus.php:160
 msgid "You may post nothing"
 msgstr "Vous ne pouvez rien publier"
 
-#: inc/theme-plus.php:145
+#: inc/theme-plus.php:166
 msgid "Please fill in the captcha answer"
 msgstr "Veuillez remplir la réponse captcha"
 
-#: inc/theme-plus.php:148
+#: inc/theme-plus.php:169
 msgid ""
 "Have you modified the captcha code data? Or refresh the captcha and try "
 "again?"
@@ -1472,37 +1489,37 @@ msgstr ""
 "Avez-vous modifié les données du code captcha ? Ou actualisez-vous le "
 "captcha et réessayez ?"
 
-#: inc/theme-plus.php:156
+#: inc/theme-plus.php:177
 msgid "Please fill in the correct captcha answer"
 msgstr "Veuillez remplir la bonne réponse captcha"
 
-#: inc/theme-plus.php:239 inc/theme-plus.php:292
+#: inc/theme-plus.php:260 inc/theme-plus.php:313
 #, php-format
 msgid "Search results for \" %s \""
 msgstr "Résultats de recherche pour « %s »"
 
-#: inc/theme-plus.php:309 tpl/content-thumbcard.php:60
+#: inc/theme-plus.php:330 tpl/content-thumbcard.php:60
 #: tpl/content-thumbcard.php:66
 msgid "Your browser does not support HTML5 video."
 msgstr "Votre navigateur ne prend pas en charge les vidéos HTML5."
 
-#: inc/theme-plus.php:340
+#: inc/theme-plus.php:361
 msgid "Signed in as"
 msgstr "Connecté en tant que"
 
-#: inc/theme-plus.php:346 layouts/mo_toc_menu.php:30
+#: inc/theme-plus.php:367 layouts/mo_toc_menu.php:30
 msgid "New post"
 msgstr "Nouvelle publication"
 
-#: inc/theme-plus.php:348 layouts/mo_toc_menu.php:34
+#: inc/theme-plus.php:369 layouts/mo_toc_menu.php:34
 msgid "Profile"
 msgstr "Profil"
 
-#: inc/theme-plus.php:349 layouts/mo_toc_menu.php:35
+#: inc/theme-plus.php:370 layouts/mo_toc_menu.php:35
 msgid "Sign out"
 msgstr "Se déconnecter"
 
-#: inc/theme-plus.php:370 layouts/mo_toc_menu.php:66
+#: inc/theme-plus.php:391 layouts/mo_toc_menu.php:66
 msgid "Log in"
 msgstr "Se connecter"
 
@@ -1675,41 +1692,41 @@ msgid "Please fill in the My Anime List Username in Sakura Options."
 msgstr ""
 "Veuillez remplir le nom d'utilisateur My Anime List dans les options Sakura."
 
-#: user/page-links.php:495
+#: user/page-links.php:496
 msgid "Submit Link"
 msgstr "Soumettre un lien"
 
-#: user/page-links.php:547
+#: user/page-links.php:548
 msgid "Submit Your Link"
 msgstr "Soumettre votre lien"
 
-#: user/page-links.php:548
+#: user/page-links.php:549
 msgid "Please fill out the form below to submit your website link."
 msgstr ""
 "Veuillez remplir le formulaire ci-dessous pour soumettre le lien de votre "
 "site web."
 
-#: user/page-links.php:554
+#: user/page-links.php:555
 msgid "Site Name"
 msgstr "Nom du site"
 
-#: user/page-links.php:559
+#: user/page-links.php:560
 msgid "Site URL"
 msgstr "URL du site"
 
-#: user/page-links.php:564
+#: user/page-links.php:565
 msgid "Site Description"
 msgstr "Description du site"
 
-#: user/page-links.php:569
+#: user/page-links.php:570
 msgid "Site Logo/Avatar URL"
 msgstr "Logo du site / URL de l'avatar"
 
-#: user/page-links.php:574
+#: user/page-links.php:575
 msgid "Your Email"
 msgstr "Votre Email"
 
-#: user/page-links.php:580
+#: user/page-links.php:581
 msgid "Verification Code"
 msgstr "Code de vérification"
 
