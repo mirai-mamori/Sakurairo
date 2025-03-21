@@ -91,11 +91,12 @@ function font_end_js_control()
         'cache_cover' => check(iro_opt('cache_cover')),
         'site_bg_as_cover' => check(iro_opt('site_bg_as_cover')),
         'yiyan_api' => empty(iro_opt('yiyan_api')) ? ["https://v1.hitokoto.cn/", "https://api.nmxc.ltd/yiyan/"] : json_decode(iro_opt('yiyan_api')),
-        'skin_bg0' => '',
         'skin_bg1' => $vision_resource_basepath . 'background/foreground/bg1.png',
         'skin_bg2' => $vision_resource_basepath . 'background/foreground/bg2.png',
         'skin_bg3' => $vision_resource_basepath . 'background/foreground/bg3.png',
         'skin_bg4' => $vision_resource_basepath . 'background/foreground/bg4.png',
+        'missing_avatars' => iro_opt("missing_avatars_default",""),
+        'missing_images' => iro_opt("missing_images_default",""),
     ];
     $reception_background = iro_opt('reception_background');
     // 判空 empty 如果变量不存在也会返回true

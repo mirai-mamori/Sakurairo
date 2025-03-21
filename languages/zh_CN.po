@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-17 18:06+0900\n"
-"PO-Revision-Date: 2025-03-17 20:37+0900\n"
+"POT-Creation-Date: 2025-03-20 23:16+0800\n"
+"PO-Revision-Date: 2025-03-20 23:16+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -80,43 +80,43 @@ msgstr "私密评论"
 msgid "Comment reply notify"
 msgstr "邮件通知"
 
-#: comments.php:193
+#: comments.php:196
 msgid "Leave a Reply to"
 msgstr "回复给"
 
-#: comments.php:194
+#: comments.php:197
 msgid "Cancel Reply"
 msgstr "取消回复"
 
-#: comments.php:217
+#: comments.php:220
 msgid "Nickname or QQ number"
 msgstr "昵称 或 QQ号"
 
-#: comments.php:217 comments.php:221
+#: comments.php:220 comments.php:224
 msgid "Must* "
 msgstr "必须* "
 
-#: comments.php:218
+#: comments.php:221
 msgid "Auto pull nickname and avatar with a QQ num. entered"
 msgstr "输入QQ号将自动拉取昵称和头像"
 
-#: comments.php:221
+#: comments.php:224
 msgid "email"
 msgstr "邮箱"
 
-#: comments.php:222
+#: comments.php:225
 msgid "You will receive notification by email"
 msgstr "你将收到回复通知"
 
-#: comments.php:225
+#: comments.php:228
 msgid "Site"
 msgstr "网站"
 
-#: comments.php:226
+#: comments.php:229
 msgid "Advertisement is forbidden 😀"
 msgstr "禁止小广告😀"
 
-#: comments.php:238
+#: comments.php:241
 msgid "Save your private info"
 msgstr "保留个人信息"
 
@@ -370,72 +370,72 @@ msgstr "是否要将其设置为私密？"
 msgid "You had set private comment before"
 msgstr "你之前设置了私人评论"
 
-#: functions.php:646 inc/theme-plus.php:190
+#: functions.php:648 inc/theme-plus.php:211
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:646
+#: functions.php:648
 msgid "Blogger"
 msgstr "博主"
 
-#: functions.php:655 functions.php:3666
+#: functions.php:657 functions.php:3592
 msgid "Location"
 msgstr "来自"
 
-#: functions.php:661
+#: functions.php:663
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:663
+#: functions.php:665
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:665
+#: functions.php:667
 msgid "No"
 msgstr "否"
 
-#: functions.php:668 inc/link-status.php:168
+#: functions.php:670 inc/link-status.php:168
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:798
+#: functions.php:800
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:828 functions.php:3217 functions.php:3410
+#: functions.php:830 functions.php:3143 functions.php:3336
 msgid "Pending Links"
 msgstr "待审核链接"
 
-#: functions.php:1623
+#: functions.php:1636
 msgid "All expand/collapse"
 msgstr "全部展开/收缩"
 
-#: functions.php:1657
+#: functions.php:1670
 msgid " year"
 msgstr " 年"
 
-#: functions.php:1660
+#: functions.php:1673
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1710 functions.php:1713 inc/theme-plus.php:345
+#: functions.php:1723 functions.php:1726 inc/theme-plus.php:366
 #: layouts/mo_toc_menu.php:29
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:2261
+#: functions.php:2274
 msgid "QQ"
 msgstr ""
 
-#: functions.php:2363
+#: functions.php:2376
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:2389
+#: functions.php:2402
 msgid "Please do not try to use Javascript in your comments!"
 msgstr "请不要尝试在你的评论中添加JavaScript!"
 
-#: functions.php:2499
+#: functions.php:2512
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -446,72 +446,72 @@ msgstr ""
 "固定链接</a>设置为朴素。为此，你可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">伪静态</a></b>"
 
-#: functions.php:2632
+#: functions.php:2645
 #, php-format
 msgid "%s says: "
 msgstr "%s 说： "
 
-#: functions.php:2653
+#: functions.php:2666
 msgid "Expand / Collapse"
 msgstr "展开 / 收起"
 
-#: functions.php:3167
+#: functions.php:3093
 msgid "Invalid request method."
 msgstr "无效的请求方式。"
 
-#: functions.php:3178
+#: functions.php:3104
 msgid "You are submitting too frequently. Please try again later."
 msgstr "你提交的频率过高。请稍后再试。"
 
-#: functions.php:3184
+#: functions.php:3110
 msgid "Security verification failed."
 msgstr "安全验证失败。"
 
-#: functions.php:3192
+#: functions.php:3118
 msgid "Please fill in all required fields."
 msgstr "请填写所有必填字段。"
 
-#: functions.php:3237 user/page-links.php:501
+#: functions.php:3163 user/page-links.php:502
 msgid ""
 "Sorry, we are not accepting new link submissions at this time due to "
 "backlog. Please try again later."
 msgstr ""
 "很抱歉，由于待审核的链接积压中，我们暂时不接受新链接的提交。请稍后再试。"
 
-#: functions.php:3250
+#: functions.php:3176
 msgid "Site name is too long."
 msgstr "站点名称太长。"
 
-#: functions.php:3255
+#: functions.php:3181
 msgid "Site description is too long."
 msgstr "站点介绍太长。"
 
-#: functions.php:3261
+#: functions.php:3187
 msgid "Please enter a valid URL."
 msgstr "请输入有效网址。"
 
-#: functions.php:3267
+#: functions.php:3193
 msgid "Please enter a valid image URL."
 msgstr "请输入有效图片地址。"
 
-#: functions.php:3273
+#: functions.php:3199
 msgid "Please enter a valid email address."
 msgstr "请输入有效的电子邮件地址。"
 
-#: functions.php:3281
+#: functions.php:3207
 msgid "This website URL is already in our links list."
 msgstr "该站点地址已在我们的链接列表中。"
 
-#: functions.php:3307 functions.php:3372
+#: functions.php:3233 functions.php:3298
 msgid "Failed to submit link. Please try again later."
 msgstr "提交链接失败。请稍后再试。"
 
-#: functions.php:3319 functions.php:3379
+#: functions.php:3245 functions.php:3305
 #, php-format
 msgid "[%s] New Friend Link Submission"
 msgstr "[%s] 提交新的友情链接"
 
-#: functions.php:3321 functions.php:3381
+#: functions.php:3247 functions.php:3307
 #, php-format
 msgid ""
 "A new friend link has been submitted on your website %s:\n"
@@ -520,81 +520,81 @@ msgstr ""
 "你的站点 %s 上提交了一个新的友情链接：\n"
 "\n"
 
-#: functions.php:3322
+#: functions.php:3248
 #, php-format
 msgid "Site Name: %s\n"
 msgstr "站点名称：%s\n"
 
-#: functions.php:3323
+#: functions.php:3249
 #, php-format
 msgid "Site URL: %s\n"
 msgstr "站点地址：%s\n"
 
-#: functions.php:3324
+#: functions.php:3250
 #, php-format
 msgid "Site Description: %s\n"
 msgstr "站点描述：%s\n"
 
-#: functions.php:3325
+#: functions.php:3251
 #, php-format
 msgid "Site Image: %s\n"
 msgstr "站点图像：%s\n"
 
-#: functions.php:3326
+#: functions.php:3252
 #, php-format
 msgid "Contact Email: %s\n"
 msgstr "联系邮箱：%s\n"
 
-#: functions.php:3327
+#: functions.php:3253
 #, php-format
 msgid ""
 "IP Address: %s\n"
 "\n"
 msgstr "IP 地址：%s\n"
 
-#: functions.php:3328
+#: functions.php:3254
 msgid "Please review this submission in your WordPress admin panel.\n"
 msgstr "请在 WordPress 仪表盘中查看此次提交。\n"
 
-#: functions.php:3338 functions.php:3389
+#: functions.php:3264 functions.php:3315
 msgid "Thank you! Your link has been submitted for review."
 msgstr "谢谢！你的链接已提交审核。"
 
-#: functions.php:3343
+#: functions.php:3269
 #, php-format
 msgid "Site Name: %s"
 msgstr "站点名称：%s"
 
-#: functions.php:3344
+#: functions.php:3270
 #, php-format
 msgid "Site URL: %s"
 msgstr "站点地址：%s"
 
-#: functions.php:3345
+#: functions.php:3271
 #, php-format
 msgid "Site Description: %s"
 msgstr "站点描述：%s"
 
-#: functions.php:3346
+#: functions.php:3272
 #, php-format
 msgid "Site Image: %s"
 msgstr "站点图像：%s"
 
-#: functions.php:3347
+#: functions.php:3273
 #, php-format
 msgid "Contact Email: %s"
 msgstr "联系邮箱：%s"
 
-#: functions.php:3348
+#: functions.php:3274
 #, php-format
 msgid "IP Address: %s"
 msgstr "IP 地址：%s"
 
-#: functions.php:3351
+#: functions.php:3277
 msgid "Friend Link Submission: "
 msgstr "提交友情链接： "
 
-#: functions.php:3383
+#: functions.php:3309
 msgid ""
 "\n"
 "Please review this submission in your WordPress admin panel.\n"
@@ -602,38 +602,38 @@ msgstr ""
 "\n"
 "请在 WordPress 仪表盘中查看此次提交。\n"
 
-#: functions.php:3396
+#: functions.php:3322
 msgid "An unexpected error occurred. Please try again later."
 msgstr "出现意外错误。请稍后再试。"
 
-#: functions.php:3572
+#: functions.php:3498
 #, php-format
 msgid "[%s] Friend Link Check Failure: %s"
 msgstr "[%s] 友情链接检查失败：%s"
 
-#: functions.php:3575
+#: functions.php:3501
 #, php-format
 msgid ""
 "The friend link '%s' has failed our status check %d times.\n"
 "\n"
 msgstr "友情链接'%s'的状态检查已失败 %d 次。\n"
 
-#: functions.php:3576
+#: functions.php:3502
 #, php-format
 msgid "Link URL: %s\n"
 msgstr "链接 URL： %s\n"
 
-#: functions.php:3579
+#: functions.php:3505
 #, php-format
 msgid "HTTP Status Code: %s\n"
 msgstr "HTTP 状态代码： %s\n"
 
-#: functions.php:3583
+#: functions.php:3509
 #, php-format
 msgid "Error Message: %s\n"
 msgstr "错误信息： %s\n"
 
-#: functions.php:3586
+#: functions.php:3512
 #, php-format
 msgid ""
 "\n"
@@ -644,13 +644,13 @@ msgstr ""
 "上次检查时间：%s\n"
 "\n"
 
-#: functions.php:3587
+#: functions.php:3513
 msgid ""
 "You may want to check this link and consider removing it if it remains "
 "unavailable.\n"
 msgstr "你可能需要检查该链接，如果仍然不可用，请考虑将其删除。\n"
 
-#: functions.php:3707
+#: functions.php:3633
 msgid "Access denied."
 msgstr "拒绝访问。"
 
@@ -658,46 +658,52 @@ msgstr "拒绝访问。"
 msgid "Random Background"
 msgstr "随机换张背景"
 
-#: inc/cache_settings.php:7 inc/cache_settings.php:8 inc/cache_settings.php:44
+#: inc/cache_settings.php:7 inc/cache_settings.php:8 inc/cache_settings.php:42
 msgid "Cache Settings"
 msgstr "缓存设置"
 
-#: inc/cache_settings.php:38
+#: inc/cache_settings.php:39
+msgid "Cache Updated!"
+msgstr "缓存已更新！"
+
+#: inc/cache_settings.php:43
 msgid "Cache settings"
 msgstr "缓存设置"
 
-#: inc/cache_settings.php:39
+#: inc/cache_settings.php:44
 msgid ""
 "If your server network environment is poor, you can click the link below to "
 "manually obtain the response content and fill it in"
 msgstr ""
 "如果你的服务器网络环境较差，您可以点击下面的链接，手动获取并填写响应内容"
 
-#: inc/cache_settings.php:40
+#: inc/cache_settings.php:45
 msgid ""
 "If the content is empty or incorrect, the server will try to automatically "
 "pull it"
 msgstr "如果内容为空或不正确，服务器将尝试自动提取"
 
-#: inc/cache_settings.php:41
+#: inc/cache_settings.php:46
 msgid ""
 "The link target will be automatically updated after the relevant settings "
 "are saved"
 msgstr "保存相关设置后，链接目标将自动更新"
 
-#: inc/cache_settings.php:46
-msgid "Cache Updated!"
-msgstr "缓存已更新！"
+#: inc/cache_settings.php:47
+msgid ""
+"The unit is seconds. And it will take effect permanently when it was set to "
+"0."
+msgstr "单位为秒，并且设置为 0 时将永久生效。"
 
-#: inc/cache_settings.php:54 inc/cache_settings.php:66
+#: inc/cache_settings.php:55 inc/cache_settings.php:67
 msgid "Cache expire time"
 msgstr "缓存过期时间"
 
-#: inc/cache_settings.php:60
+#: inc/cache_settings.php:61
 msgid "Bangumi Cache"
 msgstr "Bangumi 缓存"
 
-#: inc/cache_settings.php:72
+#: inc/cache_settings.php:73
 msgid "Steam Cache"
 msgstr "Steam 缓存"
 
@@ -1062,7 +1068,7 @@ msgstr "展开"
 msgid "All item has been loaded."
 msgstr "已加载所有内容。"
 
-#: inc/classes/Cache.php:70 inc/theme-plus.php:633
+#: inc/classes/Cache.php:70 inc/theme-plus.php:654
 msgid "The comment is private"
 msgstr "这是一条私密评论"
 
@@ -1089,6 +1095,10 @@ msgstr "验证码不正确。"
 #: inc/classes/Captcha.php:192
 msgid "An error has occurred."
 msgstr "出现了一个错误。"
+
+#: inc/classes/Images.php:24
+msgid "Image Failed to Load"
+msgstr ""
 
 #: inc/classes/IpLocation.php:246 inc/classes/IpLocation.php:275
 msgid "Unknown"
@@ -1130,27 +1140,27 @@ msgstr "弃坑 "
 msgid "Paused "
 msgstr "暂停 "
 
-#: inc/classes/Steam.php:89
+#: inc/classes/Steam.php:91
 msgid "Load more"
 msgstr "加载更多"
 
-#: inc/classes/Steam.php:103
+#: inc/classes/Steam.php:105
 msgid "Playtime"
 msgstr "游玩时长"
 
-#: inc/classes/Steam.php:104
+#: inc/classes/Steam.php:106
 msgid "Last Played"
 msgstr "上次启动"
 
-#: inc/classes/Steam.php:138
+#: inc/classes/Steam.php:140
 msgid "Not Played Yet"
 msgstr "尚未游玩"
 
-#: inc/classes/Steam.php:142
+#: inc/classes/Steam.php:144
 msgid "minute"
 msgstr "分钟"
 
-#: inc/classes/Steam.php:145
+#: inc/classes/Steam.php:147
 msgid "hour"
 msgstr "小时"
 
@@ -1396,55 +1406,55 @@ msgstr " 秒前"
 msgid "Posted on "
 msgstr "发布于 "
 
-#: inc/theme-plus.php:126
+#: inc/theme-plus.php:147
 msgid "Please upgrade wordpress to version 4.4+"
 msgstr "请升级到 4.4 以上版本"
 
-#: inc/theme-plus.php:139
+#: inc/theme-plus.php:160
 msgid "You may post nothing"
 msgstr "你貌似什么都没写"
 
-#: inc/theme-plus.php:145
+#: inc/theme-plus.php:166
 msgid "Please fill in the captcha answer"
 msgstr "请回答验证问题"
 
-#: inc/theme-plus.php:148
+#: inc/theme-plus.php:169
 msgid ""
 "Have you modified the captcha code data? Or refresh the captcha and try "
 "again?"
 msgstr "你修改了验证码数据吗？或者点击刷新验证码试试？"
 
-#: inc/theme-plus.php:156
+#: inc/theme-plus.php:177
 msgid "Please fill in the correct captcha answer"
 msgstr "验证答案貌似不正确呢"
 
-#: inc/theme-plus.php:239 inc/theme-plus.php:292
+#: inc/theme-plus.php:260 inc/theme-plus.php:313
 #, php-format
 msgid "Search results for \" %s \""
 msgstr "关于“ %s ”的搜索结果"
 
-#: inc/theme-plus.php:309 tpl/content-thumbcard.php:60
+#: inc/theme-plus.php:330 tpl/content-thumbcard.php:60
 #: tpl/content-thumbcard.php:66
 msgid "Your browser does not support HTML5 video."
 msgstr "你的浏览器不支持 HTML5 视频。"
 
-#: inc/theme-plus.php:340
+#: inc/theme-plus.php:361
 msgid "Signed in as"
 msgstr "当前已登录"
 
-#: inc/theme-plus.php:346 layouts/mo_toc_menu.php:30
+#: inc/theme-plus.php:367 layouts/mo_toc_menu.php:30
 msgid "New post"
 msgstr "撰写文章"
 
-#: inc/theme-plus.php:348 layouts/mo_toc_menu.php:34
+#: inc/theme-plus.php:369 layouts/mo_toc_menu.php:34
 msgid "Profile"
 msgstr "个人资料"
 
-#: inc/theme-plus.php:349 layouts/mo_toc_menu.php:35
+#: inc/theme-plus.php:370 layouts/mo_toc_menu.php:35
 msgid "Sign out"
 msgstr "退出登录"
 
-#: inc/theme-plus.php:370 layouts/mo_toc_menu.php:66
+#: inc/theme-plus.php:391 layouts/mo_toc_menu.php:66
 msgid "Log in"
 msgstr "登录"
 
@@ -1605,39 +1615,39 @@ msgstr "请在后台设置填写 Bangumi UID 后继续。"
 msgid "Please fill in the My Anime List Username in Sakura Options."
 msgstr "请在后台设置填写 My Anime List Username 后继续。"
 
-#: user/page-links.php:495
+#: user/page-links.php:496
 msgid "Submit Link"
 msgstr "提交链接"
 
-#: user/page-links.php:547
+#: user/page-links.php:548
 msgid "Submit Your Link"
 msgstr "提交你的链接"
 
-#: user/page-links.php:548
+#: user/page-links.php:549
 msgid "Please fill out the form below to submit your website link."
 msgstr "请填写表单，提交你的站点信息。"
 
-#: user/page-links.php:554
+#: user/page-links.php:555
 msgid "Site Name"
 msgstr "站点名称"
 
-#: user/page-links.php:559
+#: user/page-links.php:560
 msgid "Site URL"
 msgstr "站点地址"
 
-#: user/page-links.php:564
+#: user/page-links.php:565
 msgid "Site Description"
 msgstr "站点描述"
 
-#: user/page-links.php:569
+#: user/page-links.php:570
 msgid "Site Logo/Avatar URL"
 msgstr "站点 LOGO / 头像 地址"
 
-#: user/page-links.php:574
+#: user/page-links.php:575
 msgid "Your Email"
 msgstr "邮箱地址"
 
-#: user/page-links.php:580
+#: user/page-links.php:581
 msgid "Verification Code"
 msgstr "验证码"
 

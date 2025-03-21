@@ -2014,64 +2014,104 @@ $sections = [
 					"cc-by-nd" => "CC BY-ND 4.0",
 					"cc-by-sa" => "CC BY-SA 4.0",
 				],
+				'active_callback' => [
+					[
+						'setting'  => 'article_function',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
 				'type'     => 'image',
 				'settings' => 'alipay_code',
 				'iro_key'  => 'alipay_code',
 				'label'    => esc_html__( 'Article Page Appreciation Function (Alipay QR Code)', 'Sakurairo_C' ),
-				'transport'   => 'auto',
-				'output' => array(
-					array(
-						'element'  => ':root',
-						'property' => '--load_nextpage_svg',
-						'value_pattern' => '$ !important',
-					),
-				),
+				'active_callback' => [
+					[
+						'setting'  => 'article_function',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
 				'type'     => 'image',
 				'settings' => 'wechat_code',
 				'iro_key'  => 'wechat_code',
 				'label'    => esc_html__( 'Article Page Appreciation Function (Wechat QR Code)', 'Sakurairo_C' ),
-				'transport'   => 'auto',
-				'output' => array(
-					array(
-						'element'  => ':root',
-						'property' => '--load_nextpage_svg',
-						'value_pattern' => '$ !important',
-					),
-				),
+				'active_callback' => [
+					[
+						'setting'  => 'article_function',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
 				'type'     => 'switch',
 				'settings' => 'author_profile_avatar',
 				'iro_key'  => 'author_profile_avatar',
 				'label'    => esc_html__( 'Article Page Author Avatar', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'article_function',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
 				'type'     => 'switch',
 				'settings' => 'author_profile_name',
 				'iro_key'  => 'author_profile_name',
 				'label'    => esc_html__( 'Article Page Author Name', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'article_function',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
 				'type'     => 'switch',
 				'settings' => 'author_profile_quote',
 				'iro_key'  => 'author_profile_quote',
 				'label'    => esc_html__( 'Article Page Author Signature', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'article_function',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
 				'type'     => 'switch',
 				'settings' => 'article_modified_time',
 				'iro_key'  => 'article_modified_time',
 				'label'    => esc_html__( 'Article Last Update Time', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'article_function',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
 				'type'     => 'switch',
 				'settings' => 'article_tag',
 				'iro_key'  => 'article_tag',
 				'label'    => esc_html__( 'Article Tag', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'article_function',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
 			],
 			[
 				'type'     => 'switch',
