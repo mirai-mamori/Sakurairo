@@ -227,12 +227,12 @@ span.sitename {
 /* 移动设备 */
 @media (max-width: 860px) {
     .links ul li {
-        width: 47.7%;
+        width: 47%;
         max-width: 860px;
     }
     
     .links ul li:hover {
-        width: 47.7%;
+        width: 47%;
     }
     
     .links ul li:before {
@@ -247,10 +247,6 @@ span.sitename {
 
 /* 小型移动设备 */
 @media (max-width: 480px) {
-    .links ul li {
-        width: 100%;
-    }
-    
     .submit-link-btn {
         padding: 5px 12px;
         font-size: 12px;

@@ -503,34 +503,67 @@ function sakura_scripts()
     global $core_lib_basepath;
     global $shared_lib_basepath;
 
+    // 预加载主要样式文件
     wp_enqueue_style('iro-css', $core_lib_basepath . '/style.css', array(), IRO_VERSION);
 
-    // Load dark mode stylesheet
+    // 为CSS文件添加预加载标记
+    add_action('wp_head', function() use ($core_lib_basepath) {
+        echo '<link rel="preload" href="' . $core_lib_basepath . '/css/dark.css?ver=' . IRO_VERSION . '" as="style">'."\n";
+        echo '<link rel="preload" href="' . $core_lib_basepath . '/css/responsive.css?ver=' . IRO_VERSION . '" as="style">'."\n";
+    }, 1);
+    
+    // 延迟加载非关键CSS以避免CLS
     wp_enqueue_style('iro-dark', $core_lib_basepath . '/css/dark.css', array('iro-css'), IRO_VERSION);
-
-    // Load responsive stylesheet
     wp_enqueue_style('iro-responsive', $core_lib_basepath . '/css/responsive.css', array('iro-css'), IRO_VERSION);
-
-    // Load animation stylesheet
-    wp_enqueue_style('iro-animation', $core_lib_basepath . '/css/animation.css', array('iro-css'), IRO_VERSION);
-
+    wp_enqueue_style('iro-animation', $core_lib_basepath . '/css/animation.css', array('iro-css'), IRO_VERSION, 'all');
+    
+    // 添加内联CSS避免CLS
+    add_action('wp_head', function() {
+        echo '<style>
+        /* 减少CLS的关键布局样式 */
+        .headertop {min-height: 0;}
+        .site-content {min-height: 500px;}
+        .comments {contain: layout;}
+        </style>'."\n";
+    }, 2);
+    
+    // JS资源加载优化
     if(!is_404()){
-    wp_enqueue_script('app', $core_lib_basepath . '/js/app.js', array('polyfills'), IRO_VERSION, true);
-    if (!is_home()) {
-        //非主页的资源
-        wp_enqueue_style(
-            'entry-content',
-            $core_lib_basepath . '/css/content-style/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css',
-            array(),
-            IRO_VERSION
-        );
-        wp_enqueue_script('app-page', $core_lib_basepath . '/js/page.js', array('app', 'polyfills'), IRO_VERSION, true);
+        // 延迟加载JS
+        wp_enqueue_script('app', $core_lib_basepath . '/js/app.js', array('polyfills'), IRO_VERSION, true);
+        
+        if (!is_home()) {
+            // 非主页的资源 - 使用预加载提高内容样式的加载速度
+            $content_style = (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github');
+            add_action('wp_head', function() use ($core_lib_basepath, $content_style) {
+                echo '<link rel="preload" href="' . $core_lib_basepath . '/css/content-style/' . $content_style . '.css?ver=' . IRO_VERSION . '" as="style">'."\n";
+            }, 1);
+            
+            wp_enqueue_style(
+                'entry-content',
+                $core_lib_basepath . '/css/content-style/' . $content_style . '.css',
+                array(),
+                IRO_VERSION
+            );
+            wp_enqueue_script('app-page', $core_lib_basepath . '/js/page.js', array('app', 'polyfills'), IRO_VERSION, true);
+        }
     }
-    }
+    
+    // 使用defer加载polyfills以不阻塞关键渲染路径
     wp_enqueue_script('polyfills', $core_lib_basepath . '/js/polyfill.js', array(), IRO_VERSION, true);
+    
+    // 为script标签添加defer属性
+    add_filter('script_loader_tag', function($tag, $handle) {
+        if ('polyfills' === $handle || 'app' === $handle || 'app-page' === $handle) {
+            return str_replace(' src', ' defer src', $tag);
+        }
+        return $tag;
+    }, 10, 2);
+    
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
+    
     //前端脚本本地化
     if (get_user_locale() != 'zh_CN') {
         wp_localize_script(
@@ -563,6 +596,8 @@ function sakura_scripts()
             )
         );
     }
+    
+    // 平滑滚动脚本优化为延迟加载
     if (iro_opt('smoothscroll_option')) {
         wp_enqueue_script('SmoothScroll', $shared_lib_basepath . '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
     }

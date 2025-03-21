@@ -1,11 +1,35 @@
 /* 移动端导航栏样式 */
+/* 预定义关键高度，避免布局偏移 */
+:root {
+  --header-height-mobile: 50px;
+  --header-height-desktop: 70px;
+  --avatar-size: 40px;
+}
+
+/* 初始内容骨架样式，减少CLS */
+.content-skeleton {
+  position: relative;
+  min-height: 100px;
+  content-visibility: auto;
+  contain-intrinsic-size: auto none;
+}
+
+/* 为不同屏幕尺寸预设容器尺寸，减少CLS */
+.headertop {
+  contain: layout;
+  content-visibility: auto;
+  contain-intrinsic-size: auto none;
+}
+
 @media (max-width: 860px) {
   .site-header {
     gap: 3px;
-    height: 50px;
+    height: var(--header-height-mobile);
     border-radius: 0px !important;
     background: transparent;
     border-bottom: 1.5px solid transparent;
+    will-change: transform;
+    contain: layout;
   }
 
   .nav-search-wrapper,
@@ -34,7 +58,7 @@
   }
 
   .site-title {
-    font-size: 18px !important;;
+    font-size: 18px !important;
   }
 
   .site-title:hover {
@@ -48,22 +72,22 @@
   .site-branding a,
   .site-title-logo,
   .site-branding img {
-      display: flex;
-      max-height: 100%;
-      border-radius: 0px;
-      height: 100%;
-      justify-content: center;
-      object-fit: contain;
+    display: flex;
+    max-height: 100%;
+    border-radius: 0px;
+    height: 100%;
+    justify-content: center;
+    object-fit: contain;
   }
 
   .site-header.bg,
   .site-header:hover {
-      border-bottom: 1.5px solid #FFFFFF;
-      background: rgba(255, 255, 255, 0.8);
-      -webkit-backdrop-filter: saturate(180%) blur(10px);
-      backdrop-filter: saturate(180%) blur(10px);
-      -webkit-transition: all .5s ease;
-      transition: border-bottom .5s ease,all .5s ease;
+    border-bottom: 1.5px solid #FFFFFF;
+    background: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-transition: all .5s ease;
+    transition: border-bottom .5s ease,all .5s ease;
   }
 
   body.dark .site-header.bg,
@@ -74,9 +98,9 @@
 
   .site-header.mo-hide,
   .site-header.bg.mo-hide{
-      transform: translateY(-100%);
-      -webkit-transition: all .6s ease,transform .5s ease;
-      transition: all .6s ease,transform .5s ease;
+    transform: translateY(-100%);
+    -webkit-transition: all .6s ease,transform .5s ease;
+    transition: all .6s ease,transform .5s ease;
   }
 
   .menu-wrapper{
@@ -151,8 +175,10 @@
 
 .mobile-nav {
   position: fixed;
-  inset: 50px 0 auto;
+  inset: var(--header-height-mobile) 0 auto;
   background: rgba(255, 255, 255, 0.9);
+  z-index: 9;
+  contain: content;
 }
 
 .mo-menu-search {
@@ -246,11 +272,13 @@
   align-items: center;
   max-height: 0;
   position: fixed;
-  inset: 50px 0 auto;
+  inset: var(--header-height-mobile) 0 auto;
   background: rgb(255 255 255 / 0.9);
   gap: 20px;
   overflow: hidden;
   flex-wrap: wrap;
+  z-index: 9;
+  contain: content;
 }
 
 .mo-user-options{
@@ -275,11 +303,11 @@
 
 .mo_toc_panel .mo-avatar img,
 .mo_toc_panel .mo-avatar i {
-  width: 40px;
+  width: var(--avatar-size);
   height: fit-content;
   aspect-ratio: 1;
   border-radius: 50%;
-  font-size: 40px;
+  font-size: var(--avatar-size);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -378,6 +406,9 @@
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    contain: layout;
+    content-visibility: auto;
+    contain-intrinsic-size: auto none;
   }
 
   .comments .commentwrap {
@@ -458,6 +489,13 @@
   .arrow-left {
     display: none;
   }
+
+  /* 稳定布局优化 */
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
 }
 
 @media (max-width: 860px) {
@@ -510,6 +548,7 @@
     left: 0;
     width: 100%;
     overflow: hidden;
+    contain: layout size;
   }
 
   /* Post Squares */
@@ -579,6 +618,7 @@
   #centerbg {
     height: 300px;
     background-attachment: scroll;
+    contain: layout size;
   }
   #video-container,
   .loadvideo {
@@ -705,6 +745,10 @@
 .mo_toc_panel{
     display: none;
 }
+  .site-header {
+    height: var(--header-height-desktop);
+    contain: layout;
+  }
 }
 
 @media (max-width: 630px) {
@@ -810,6 +854,7 @@
     position: relative;
     overflow: hidden;
     z-index: 2;
+    contain: layout style;
   }
 
   .wrapper {
@@ -912,4 +957,21 @@
     transform: scale(0.6);
     margin-block-end: -10px;
   }
+}
+
+/* 性能优化CSS */
+@media screen and (max-width: 860px) {
+  /* 优化离屏内容 */
+  .off-screen {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+
+  /* 优化动画性能 */
+  .optimize-animation {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
 }
