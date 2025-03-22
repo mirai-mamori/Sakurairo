@@ -45,6 +45,7 @@ function font_end_js_control()
     }
     $lightbox = iro_opt('lightbox');
     $annotations = get_post_meta(get_the_ID(), 'iro_chatgpt_annotations', true);
+    $reception_background = iro_opt('reception_background');
     $iro_opt = [
         // Poi
         'pjax' => check(iro_opt('poi_pjax')),
@@ -91,14 +92,14 @@ function font_end_js_control()
         'cache_cover' => check(iro_opt('cache_cover')),
         'site_bg_as_cover' => check(iro_opt('site_bg_as_cover')),
         'yiyan_api' => empty(iro_opt('yiyan_api')) ? ["https://v1.hitokoto.cn/", "https://api.nmxc.ltd/yiyan/"] : json_decode(iro_opt('yiyan_api')),
-        'skin_bg1' => $vision_resource_basepath . 'background/foreground/bg1.png',
-        'skin_bg2' => $vision_resource_basepath . 'background/foreground/bg2.png',
-        'skin_bg3' => $vision_resource_basepath . 'background/foreground/bg3.png',
-        'skin_bg4' => $vision_resource_basepath . 'background/foreground/bg4.png',
+        'skin_bg0' => $reception_background['img1'] ?? '',
+        'skin_bg1' => $reception_background['img2'] ?? '',
+        'skin_bg2' => $reception_background['img3'] ?? '',
+        'skin_bg3' => $reception_background['img4'] ?? '',
+        'skin_bg4' => $reception_background['img5'] ?? '',
         'missing_avatars' => iro_opt("missing_avatars_default",""),
         'missing_images' => iro_opt("missing_images_default",""),
     ];
-    $reception_background = iro_opt('reception_background');
     // 判空 empty 如果变量不存在也会返回true
     if (iro_opt('random_graphs_options') == 'external_api') {
         //封面随机图api
@@ -114,11 +115,6 @@ function font_end_js_control()
             $iro_opt['cover_api'] = rest_url('sakura/v1/gallery') . '?img=w';
         }
     }
-    !empty($reception_background['img1']) && $iro_opt['skin_bg0'] = $reception_background['img1'];
-    !empty($reception_background['img2']) && $iro_opt['skin_bg1'] = $reception_background['img2'];
-    !empty($reception_background['img3']) && $iro_opt['skin_bg2'] = $reception_background['img3'];
-    !empty($reception_background['img4']) && $iro_opt['skin_bg3'] = $reception_background['img4'];
-    !empty($reception_background['img5']) && $iro_opt['skin_bg4'] = $reception_background['img5'];
     if ($lightbox === 'lightgallery') {
         # 请务必使用正确标准的json格式
         $lightGallery = str_replace(PHP_EOL, '', iro_opt('lightgallery_option'));
