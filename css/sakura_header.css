@@ -175,7 +175,7 @@ nav .menu>li .sub-menu li {
 }
 
 .header-user-menu {
-    right: -11px;
+    right: -11px!important;
     top: 44px;
     position: absolute;
     width: 110px;

@@ -494,23 +494,29 @@ function akina_content_width()
     $GLOBALS['content_width'] = apply_filters('akina_content_width', 640);
 }
 add_action('after_setup_theme', 'akina_content_width', 0);
+
 /**
  * Enqueue scripts and styles.
  */
-
 function sakura_scripts()
 {
     global $core_lib_basepath;
     global $shared_lib_basepath;
 
-    
-
     // 预加载主要样式文件
-    if(iro_opt('dev_mode',false) == false) {
+    if(iro_opt('dev_mode',false) == false) { // 压缩并缓存主题样式
         $sakura_header = (iro_opt('choice_of_nav_style') == 'sakura' ? 'sakura_header' : '');
         $wave = (iro_opt('wave_effects', 'false') == true ? 'wave' : '');
         $content_style = (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github');
         wp_enqueue_style('iro-css', $core_lib_basepath . '/css/?' . $sakura_header . '&' . $content_style . '&' . $wave . '&minify', array(), IRO_VERSION);
+
+        function add_cache_control_header() { // 添加缓存策略
+            if ( ! is_user_logged_in() ) {
+                header( 'Cache-Control: public, max-age=86400, s-maxage=86400' );
+            }
+        }
+        add_action( 'send_headers', 'add_cache_control_header' );
+
     } else {
         $content_style = (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github');
         wp_enqueue_style(
