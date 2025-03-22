@@ -466,6 +466,13 @@ const showBgNext = async () => {
         location.pathname === "/" || location.pathname === "/index.php";
     const state = StateManager.getState();
 
+    if (!state.initialized) {
+        const widths = await InitController.init();
+        state.initialized = true;
+        state.measuredWidths = widths;
+        StateManager.setState(state);
+    }
+
     if (state.isTransitioning) {
         // 即使在过渡状态，也要确保在主页时 bg-next 可点击
         if (isHomePage) {
@@ -812,7 +819,15 @@ const addEventListeners = () => {
                 }
             });
         }],
-        ["DOMContentLoaded", initAnimations]
+        ["DOMContentLoaded", initAnimations],
+        ['popstate', () => {
+            const isHomePage = location.pathname === "/" || location.pathname === "/index.php";
+            if (isHomePage) {
+                StateManager.clear();
+                StateManager.init();
+                showBgNext();
+            }
+        }]
     ];
 
     events.forEach(([event, handler]) => {
