@@ -119,63 +119,6 @@ header('X-Frame-Options: SAMEORIGIN');
         <link rel="stylesheet" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css?family=Noto+Serif+SC|Noto+Sans+SC|Dela+Gothic+One|Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap">
     </noscript>
     
-    <style>
-        /* 控制字体渲染方式减少CLS */
-        :root {
-            --header-height-mobile: 50px;
-            --header-height-desktop: 70px;
-        }
-        
-        /* 字体控制 */
-        html {
-            font-display: swap;
-        }
-                /* 为主要布局元素设置尺寸以减少CLS */
-        .site-header {
-            min-height: var(--header-height-desktop);
-            contain: layout;
-        }
-        
-        @media (max-width: 860px) {
-            .site-header {
-                min-height: var(--header-height-mobile);
-            }
-        }
-        
-        .headertop {
-            min-height: 300px;
-            contain: layout;
-        }
-        
-        .site-content {
-            min-height: 500px;
-        }
-        
-        #preload {
-            position: fixed;
-            z-index: 9999;
-            contain: strict;
-        }
-        
-        /* 预加载动画优化 */
-        @keyframes preloaderAnimate {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(0);
-            }
-        }
-        #preloader_3 {
-            position: relative;
-            width: 50px;
-            height: 50px;
-            border-radius: 50px;
-            animation: preloaderAnimate 2s infinite linear;
-            will-change: transform;
-        }
-    </style>
-    
         <?php if (iro_opt('google_analytics_id')) : ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=<?= esc_attr(iro_opt('google_analytics_id')); ?>"></script>
