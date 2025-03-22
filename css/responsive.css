@@ -6,21 +6,6 @@
   --avatar-size: 40px;
 }
 
-/* 初始内容骨架样式，减少CLS */
-.content-skeleton {
-  position: relative;
-  min-height: 100px;
-  content-visibility: auto;
-  contain-intrinsic-size: auto none;
-}
-
-/* 为不同屏幕尺寸预设容器尺寸，减少CLS */
-.headertop {
-  contain: layout;
-  content-visibility: auto;
-  contain-intrinsic-size: auto none;
-}
-
 @media (max-width: 860px) {
   .site-header {
     gap: 3px;
@@ -406,9 +391,6 @@
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    contain: layout;
-    content-visibility: auto;
-    contain-intrinsic-size: auto none;
   }
 
   .comments .commentwrap {
@@ -957,21 +939,4 @@
     transform: scale(0.6);
     margin-block-end: -10px;
   }
-}
-
-/* 性能优化CSS */
-@media screen and (max-width: 860px) {
-  /* 优化离屏内容 */
-  .off-screen {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 500px;
-  }
-
-  /* 优化动画性能 */
-  .optimize-animation {
-    will-change: transform;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-  }
-
 }
