@@ -529,7 +529,7 @@ blockquote:after {
 }
 
 #moblieGoTop:hover,#changskin:hover {
-  color: var(--theme-skin-matching);
+  color: var(--article-theme-highlight, var(--theme-skin-matching));
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.85);
 }
@@ -3398,7 +3398,7 @@ iframe {
 }
 
 .markdown-toggle:has(input:checked) {
-  outline: 1px solid var(--theme-skin-matching);
+  outline: 1px solid var(--article-theme-highlight, var(--theme-skin-matching));
 }
 
 .markdown-toggle input {

@@ -2900,7 +2900,7 @@ $prefix = 'iro_options';
 		'options' => array(
 			'bilibili' => $vision_resource_basepath . 'options/bangumi_tep_bili.webp',
 			'myanimelist' => $vision_resource_basepath . 'options/bangumi_tep_mal.webp',
-      'bangumi' => $vision_resource_basepath . 'options/bangumi_tep_bangumi.webp'
+      'bangumi' => $vision_resource_basepath . 'options/bangumi_tep_bgm.webp'
 		),
 		'default' => 'bilibili'
 	  ),
