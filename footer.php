@@ -173,7 +173,7 @@ $reception_background = iro_opt('reception_background');
       backdrop-filter: saturate(120%) blur(8px);
     }
   </style>
-  <?php if (iro_opt("site_bg_as_cover",false)): //site wrapper会被pjax刷新导致目标丢失，所以放function?>
+  <?php //site wrapper会被pjax刷新导致目标丢失，所以放function?>
     <script>
       let blur_object_on_page = document.querySelector(".background_blur");
       function switch_blur_object (){
@@ -189,7 +189,6 @@ $reception_background = iro_opt('reception_background');
       switch_blur_object();
       document.addEventListener("pjax:complete",switch_blur_object);
     </script>
-  <?php endif; ?>
 <?php endif; ?>
 <!-- Particles动效 -->
 <?php if (iro_opt('particles_effects', 'true')): ?>
