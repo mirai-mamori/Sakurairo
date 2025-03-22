@@ -510,6 +510,10 @@ function sakura_scripts()
         $content_style = (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github');
         wp_enqueue_style('iro-css', $core_lib_basepath . '/css/?' . $sakura_header . '&' . $content_style . '&' . $wave . '&minify', array(), IRO_VERSION);
     } else {
+        wp_enqueue_style('iro-css', $core_lib_basepath . '/style.css', array(), IRO_VERSION);
+        wp_enqueue_style('dark', $core_lib_basepath . '/css/dark.css', array(), IRO_VERSION);
+        wp_enqueue_style('responsive', $core_lib_basepath . '/css/responsive.css', array(), IRO_VERSION);
+
         $content_style = (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github');
         wp_enqueue_style(
             'entry-content',
@@ -518,10 +522,10 @@ function sakura_scripts()
             IRO_VERSION
         );
         if (iro_opt('wave_effects', 'false')){
-            wp_enqueue_style('iro-css', $core_lib_basepath . '/css/wave.css', array(), IRO_VERSION);
+            wp_enqueue_style('wave', $core_lib_basepath . '/css/wave.css', array(), IRO_VERSION);
         }
         if(iro_opt('choice_of_nav_style') == 'sakura'){
-            wp_enqueue_style('iro-css', $core_lib_basepath . '/css/sakura_header.css', array(), IRO_VERSION);
+            wp_enqueue_style('sakura_header', $core_lib_basepath . '/css/sakura_header.css', array(), IRO_VERSION);
         }
     }
 
