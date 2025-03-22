@@ -119,7 +119,6 @@ header('X-Frame-Options: SAMEORIGIN');
         <link rel="stylesheet" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css?family=Noto+Serif+SC|Noto+Sans+SC|Dela+Gothic+One|Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap">
     </noscript>
     
-    <!-- 添加字体渲染控制CSS -->
     <style>
         /* 控制字体渲染方式减少CLS */
         :root {
