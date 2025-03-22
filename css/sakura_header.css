@@ -39,7 +39,6 @@
     display: flex;
     max-height: 100%;
     border-radius: 0px;
-    height: 100%;
     justify-content: center;
     object-fit: contain;
 }
