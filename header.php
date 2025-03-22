@@ -62,6 +62,7 @@ header('X-Frame-Options: SAMEORIGIN');
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 
     <!-- 优化资源加载 -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
     <link rel="preconnect" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>">
     <link rel="preconnect" href="https://s4.zstatic.net" crossorigin>
 
@@ -93,7 +94,7 @@ header('X-Frame-Options: SAMEORIGIN');
         <meta name="keywords" content="<?= esc_attr($keywords); ?>" />
     <?php } ?>
     <link rel="shortcut icon" href="<?= esc_url(iro_opt('favicon_link', '')); ?>" />
-    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
     <?php
     if (is_home()) {
         global $core_lib_basepath;
