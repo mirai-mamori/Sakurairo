@@ -152,16 +152,6 @@ header('X-Frame-Options: SAMEORIGIN');
             min-height: 500px;
         }
         
-        .comments {
-            contain: layout;
-        }
-        
-        .site-branding img {
-            aspect-ratio: auto;
-            max-height: 60px;
-            width: auto;
-        }
-        
         #preload {
             position: fixed;
             z-index: 9999;

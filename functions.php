@@ -517,16 +517,6 @@ function sakura_scripts()
     wp_enqueue_style('iro-responsive', $core_lib_basepath . '/css/responsive.css', array('iro-css'), IRO_VERSION);
     wp_enqueue_style('iro-animation', $core_lib_basepath . '/css/animation.css', array('iro-css'), IRO_VERSION, 'all');
     
-    // 添加内联CSS避免CLS
-    add_action('wp_head', function() {
-        echo '<style>
-        /* 减少CLS的关键布局样式 */
-        .headertop {min-height: 0;}
-        .site-content {min-height: 500px;}
-        .comments {contain: layout;}
-        </style>'."\n";
-    }, 2);
-    
     // JS资源加载优化
     if(!is_404()){
         // 延迟加载JS
