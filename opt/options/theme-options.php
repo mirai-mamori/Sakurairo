@@ -3990,6 +3990,14 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id'    => 'dev_mode',
+        'type'  => 'switcher',
+        'title' => __('Dev Mode','sakurairo_csf'),
+        'label'   => __('Enable dev mode to diable css minify','sakurairo_csf'),
+        'default' => false,
+      ),
+
+      array(
         'id' => 'php_notice_filter',
         'type' => 'select',
         'title' => __('PHP Notice Filter','sakurairo_csf'),
