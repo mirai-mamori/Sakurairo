@@ -81,22 +81,27 @@ function sakurairo_cache_page() {
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-        let inputs = document.querySelectorAll("input.remaining");
+            let inputs = document.querySelectorAll("input.remaining");
+            
+            function updateCountdown() {
+                inputs.forEach(input => {
+                    if (document.activeElement === input) return;
 
-        function updateCountdown() {
-            inputs.forEach(input => {
-                if (document.activeElement === input) return; // 正在编辑
+                    let value = parseInt(input.value, 10);
 
-                let value = parseInt(input.value, 10);
-                if (isNaN(value) || value <= 0) {
-                    input.value = 0; // 空内容或归零
-                } else {
-                    input.value = value - 1;
-                }
-            });
-        }
-    setInterval(updateCountdown, 1000);
-});
+                    if (input.dataset.expired === "true") return;
+
+                    if (isNaN(value) || value <= 0) {
+                        input.value = 0;
+                        input.dataset.expired = "true";
+                    } else {
+                        input.value = value - 1;
+                    }
+                });
+            }
+
+            setInterval(updateCountdown, 1000);
+        });
     </script>
     <?php
 }
