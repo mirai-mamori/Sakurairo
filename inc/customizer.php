@@ -76,7 +76,7 @@ $allowed_params = [
 	'iro_subkey'        // key的子键
 ];
 
-$vision_resource_basepath = iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/');
+$vision_resource_basepath = iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@3.0/');
 
 // 分组和设置项部分
 // 分组：每个分组至少包含 id、title、description、所属面板 panel
@@ -101,8 +101,8 @@ $sections = [
 				'iro_key'  => 'choice_of_nav_style',
 				'label'    => esc_html__( 'Nav Menu Style', 'Sakurairo_C' ),
 				'choices'     => [
-					'iro' => $vision_resource_basepath . 'options/nav_menu_style_center.webp',
-					'sakura' => $vision_resource_basepath . 'options/nav_menu_style_sakura.webp',
+					'iro' => $vision_resource_basepath . 'options/nav_menu_style_Island.webp',
+					'sakura' => $vision_resource_basepath . 'options/nav_menu_style_bar.webp',
 				],
 			],
 			[
@@ -633,7 +633,7 @@ $sections = [
 				'label'    => esc_html__( 'Cover Info Bar Style', 'Sakurairo_C' ),
 				'transport'   => 'auto',
 				'choices'     => [
-					'v1' => $vision_resource_basepath . 'options/infor_bar_style_v1.webp',
+					'v1' => $vision_resource_basepath . 'options/nav_menu_style_Island.webp',
 					'v2' => $vision_resource_basepath . 'options/infor_bar_style_v2.webp',
 				],
 				'active_callback' => [
@@ -1193,8 +1193,8 @@ $sections = [
 				'iro_key'  => 'exhibition_area_style',
 				'label'    => esc_html__( 'Display Area Style', 'Sakurairo_C' ),
 				'choices'     => [
-					'v1' => $vision_resource_basepath . 'options/infor_bar_style_v1.webp',
-					'v2' => $vision_resource_basepath . 'options/infor_bar_style_v2.webp',
+					'v1' => $vision_resource_basepath . 'options/exhibition_area_style_lr.webp',
+					'v2' => $vision_resource_basepath . 'options/exhibition_area_style_ud.webp',
 				],
 			],
 			[

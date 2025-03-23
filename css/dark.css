@@ -316,7 +316,8 @@ body.dark .toc:hover {
   background: #1a1a1acc;
 }
 
-body.dark .toc>.toc-list li a:hover {
+body.dark .toc>.toc-list li a:hover,
+body.dark .comment h4 a:hover{
   color: var(--article-theme-highlight,var(--theme-skin-dark)) !important;
 }
 

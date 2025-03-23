@@ -39,7 +39,7 @@ $reception_background = iro_opt('reception_background');
             <p class="cdn-provider">
               <span>本网站由</span>
               <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank">
-                <img alt="upyun-logo" src="https://s.nmxc.ltd/sakurairo_vision/@2.7/options/upyun_logo.webp" />
+                <img alt="upyun-logo" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/options/upyun_logo.webp" />
               </a>
               <span>提供 CDN 加速 / 云存储 服务</span>
             </p>
