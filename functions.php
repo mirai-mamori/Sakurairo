@@ -516,7 +516,11 @@ function sakura_scripts()
         $sakura_header = (iro_opt('choice_of_nav_style') == 'sakura' ? 'sakura_header' : 'iro_header');
         $wave = (iro_opt('wave_effects', 'false') == true ? 'wave' : 'no_wave');
         $content_style = (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github');
-        $iro_css = $core_lib_basepath . '/css/?' . $sakura_header . '&' . $content_style . '&' . $wave . '&minify&' . IRO_VERSION;
+        $index = '';
+        if (strpos(get_option('permalink_structure'), 'index.php') !== false) {
+            $index = 'index.php';
+        }
+        $iro_css = $core_lib_basepath . '/css/' . $index . '?' . $sakura_header . '&' . $content_style . '&' . $wave . '&minify&' . IRO_VERSION;
         add_action('wp_head', function() use ($iro_css) {
             echo '<link rel="preload" href="' .$iro_css. '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">';
             echo '<link rel="stylesheet" href="' . $iro_css . '">';
