@@ -505,6 +505,14 @@ function sakura_scripts()
 
     // 预加载主要样式文件
     if(iro_opt('dev_mode',false) == false) { // 压缩并缓存主题样式
+        
+        function add_cache_control_header() { // 添加缓存策略
+            if ( ! is_user_logged_in() ) {
+                header( 'Cache-Control: public, max-age=86400, s-maxage=86400' );
+            }
+        }
+        add_action( 'send_headers', 'add_cache_control_header' );
+
         $sakura_header = (iro_opt('choice_of_nav_style') == 'sakura' ? 'sakura_header' : '');
         $wave = (iro_opt('wave_effects', 'false') == true ? 'wave' : '');
         $content_style = (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github');
