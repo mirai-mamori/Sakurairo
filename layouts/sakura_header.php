@@ -91,7 +91,8 @@ $nav_text_logo = iro_opt('nav_text_logo');
               src="<?php echo esc_url(iro_opt('iro_logo')); ?>"
               width="auto" height="auto"
               loading="lazy"
-              decoding="async">
+              decoding="async"
+              alt="<?= esc_attr(get_bloginfo('name')); ?>">
           </div>
         <?php endif; ?>
         <?php if (!empty($nav_text_logo['text'])): ?>
