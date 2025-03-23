@@ -8,11 +8,6 @@ function font_end_js_control()
         }
         return false;
     };
-    function ecs_src($a)
-    {
-        global $core_lib_basepath;
-        return $core_lib_basepath . '/css/content-style/' . $a . '.css?' . IRO_VERSION . iro_opt('cookie_version', '');
-    };
     /**
      * 通过ID获取作者公开显示的昵称
      * 在head中无法通过get_the_author()函数获取作者信息，改用通过作者ID获取
@@ -99,6 +94,7 @@ function font_end_js_control()
         'skin_bg4' => $reception_background['img5'] ?? '',
         'missing_avatars' => iro_opt("missing_avatars_default",""),
         'missing_images' => iro_opt("missing_images_default",""),
+        'dev_mode' => iro_opt('dev_mode',false) == true ? true : false ,
     ];
     // 判空 empty 如果变量不存在也会返回true
     if (iro_opt('random_graphs_options') == 'external_api') {
