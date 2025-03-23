@@ -320,7 +320,7 @@ $print_social_zone = function() use ($all_opt): void {
                 <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="<?=$text_logo['text']; ?>">
                     <?php echo $text_logo['text']; ?></h1>
             <?php else : ?>
-                <div class="header-tou"><a href="<?php bloginfo('url'); ?>"><img alt="avatar" src="<?=iro_opt('personal_avatar', '') ?: iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@2.7/').'series/avatar.webp'?>"></a>
+                <div class="header-tou"><a href="<?php bloginfo('url'); ?>"><img alt="avatar" src="<?=iro_opt('personal_avatar', '') ?: iro_opt('vision_resource_basepath','https://s.nmxc.ltd/sakurairo_vision/@3.0/').'series/avatar.webp'?>"></a>
             </div>
             <?php endif; ?>
                 <div class="header-info">

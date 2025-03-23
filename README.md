@@ -1,6 +1,6 @@
 **简体中文** | [繁體中文](README_tw.md) | [English](README_en.md) | [日本語](README_ja.md)
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/banner-ver2.7.webp)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/banner-ver2.7.webp)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
@@ -12,7 +12,7 @@
 
 ## 版本简介：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/cn.png)](https://docs.fuukei.org//)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/cn.png)](https://docs.fuukei.org//)
 
 ## 下载及使用相关：
 
@@ -29,13 +29,13 @@
 
 ## 赞助商：
 
-<a href="https://www.upyun.com/"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/upyun2024.webp" alt="UPYUN" width="400"></a>  
+<a href="https://www.upyun.com/"><img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/upyun2024.webp" alt="UPYUN" width="400"></a>  
 
-<a href="https://www.houdeyun.cn/"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/houdeyun2024.webp" alt="HOUDEYUN" width="400"></a>
+<a href="https://www.houdeyun.cn/"><img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/houdeyun2024.webp" alt="HOUDEYUN" width="400"></a>
 
 ## 支持我们：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/cn-ver2.7info.png)](https://ifdian.net/@mamori)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/cn-ver2.7info.png)](https://ifdian.net/@mamori)
 
 ## 主题贡献：
 
