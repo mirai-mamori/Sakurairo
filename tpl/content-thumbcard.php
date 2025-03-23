@@ -110,7 +110,7 @@ if (!function_exists('get_post_cover_html')) {
                 <div class="shuoshuo-content-wrapper">
                     <div class="shuoshuo-avatar">
                         <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>">
-                            <img src="<?php echo esc_url(get_avatar_profile_url(get_the_author_meta('ID'))); ?>" class="avatar avatar-48" width="48" height="48">
+                            <img src="<?php echo esc_url(get_avatar_profile_url(get_the_author_meta('ID'))); ?>" class="avatar avatar-48" width="48" height="48" alt="author_avatar">
                         </a>
                         <style>
                             #<?php echo esc_attr($unique_id); ?> .shuoshuo-avatar::after {

@@ -808,20 +808,42 @@ function mobile_get_useragent_icon(string $ua):string{
 /*
  * 打赏
  */
- function the_reward(){
-  $alipay = iro_opt('alipay_code');
-  $wechat = iro_opt('wechat_code');
-  if($alipay || $wechat){
-  $alipay =  $alipay ? '<li class="alipay-code"><img alt="alipay_img" src="'.$alipay.'"></li>' : '';
-  $wechat = $wechat ? '<li class="wechat-code"><img alt="wechat_img" src="'.$wechat.'"></li>' : '';
-  ?>
-    <div class="reward-open"> <i class="fa-solid fa-piggy-bank fa-sm"></i>
+function the_reward(){
+  $reward = iro_opt('reward_area');
+  $link   = $reward['link'] ?? '';
+  $image1 = $reward['image1'] ?? '';
+  $link1  = $reward['link1']  ?? '';
+  $image2 = $reward['image2'] ?? '';
+  $link2  = $reward['link2']  ?? '';
+
+  $button_html = $link ? '<div class="reward-open"><a href="'.$link.'" class="reward-button" target="_blank"><i class="fa-solid fa-piggy-bank fa-sm"></i></a>' : '';
+
+  $img_html1 = '';
+  if($image1){
+    $img_html1 = $link1 
+      ? '<li class="reward-image1"><a href="'.$link1.'" target="_blank"><img alt="reward_image1" src="'.$image1.'"></a></li>' 
+      : '<li class="reward-image1"><img alt="reward_image1" src="'.$image1.'"></li>';
+  }
+
+  $img_html2 = '';
+  if($image2){
+    $img_html2 = $link2 
+      ? '<li class="reward-image2"><a href="'.$link2.'" target="_blank"><img alt="reward_image2" src="'.$image2.'"></a></li>' 
+      : '<li class="reward-image2"><img alt="reward_image2" src="'.$image2.'"></li>';
+  }
+
+  // 只有当按钮或图片至少存在一个时，才显示打赏区域
+  if($button_html || $img_html1 || $img_html2){
+    ?>
+    <?php echo $button_html; ?>
+    <?php if($img_html1 || $img_html2): ?>
       <div class="reward-main">
         <ul class="reward-row">
-          <?php echo $alipay.$wechat; ?>
+          <?php echo $img_html1 . $img_html2; ?>
         </ul>
       </div>
+    <?php endif; ?>
     </div>
-  <?php
+    <?php
   }
 }

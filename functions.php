@@ -494,68 +494,70 @@ function akina_content_width()
     $GLOBALS['content_width'] = apply_filters('akina_content_width', 640);
 }
 add_action('after_setup_theme', 'akina_content_width', 0);
+
 /**
  * Enqueue scripts and styles.
  */
-
 function sakura_scripts()
 {
     global $core_lib_basepath;
     global $shared_lib_basepath;
 
     // 预加载主要样式文件
-    wp_enqueue_style('iro-css', $core_lib_basepath . '/style.css', array(), IRO_VERSION);
-
-    // 为CSS文件添加预加载标记
-    add_action('wp_head', function() use ($core_lib_basepath) {
-        echo '<link rel="preload" href="' . $core_lib_basepath . '/css/dark.css?ver=' . IRO_VERSION . '" as="style">'."\n";
-        echo '<link rel="preload" href="' . $core_lib_basepath . '/css/responsive.css?ver=' . IRO_VERSION . '" as="style">'."\n";
-    }, 1);
-    
-    // 延迟加载非关键CSS以避免CLS
-    wp_enqueue_style('iro-dark', $core_lib_basepath . '/css/dark.css', array('iro-css'), IRO_VERSION);
-    wp_enqueue_style('iro-responsive', $core_lib_basepath . '/css/responsive.css', array('iro-css'), IRO_VERSION);
-    wp_enqueue_style('iro-animation', $core_lib_basepath . '/css/animation.css', array('iro-css'), IRO_VERSION, 'all');
-    
-    // 添加内联CSS避免CLS
-    add_action('wp_head', function() {
-        echo '<style>
-        /* 减少CLS的关键布局样式 */
-        .headertop {min-height: 0;}
-        .site-content {min-height: 500px;}
-        .comments {contain: layout;}
-        </style>'."\n";
-    }, 2);
-    
-    // JS资源加载优化
-    if(!is_404()){
-        // 延迟加载JS
-        wp_enqueue_script('app', $core_lib_basepath . '/js/app.js', array('polyfills'), IRO_VERSION, true);
+    if(iro_opt('dev_mode',false) == false) { // 压缩并缓存主题样式
         
+        function add_cache_control_header() { // 添加缓存策略
+            if ( ! is_user_logged_in() ) {
+                header( 'Cache-Control: public, max-age=86400, s-maxage=86400' );
+            }
+        }
+        add_action( 'send_headers', 'add_cache_control_header' );
+
+        $sakura_header = (iro_opt('choice_of_nav_style') == 'sakura' ? 'sakura_header' : 'iro_header');
+        $wave = (iro_opt('wave_effects', 'false') == true ? 'wave' : 'no_wave');
+        $content_style = (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github');
+        $index = '';
+        if (strpos(get_option('permalink_structure'), 'index.php') !== false) {
+            $index = 'index.php';
+        }
+        $iro_css = $core_lib_basepath . '/css/' . $index . '?' . $sakura_header . '&' . $content_style . '&' . $wave . '&minify&' . IRO_VERSION;
+        add_action('wp_head', function() use ($iro_css) {
+            echo '<link rel="preload" href="' .$iro_css. '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">';
+            echo '<link rel="stylesheet" href="' . $iro_css . '">';
+        }, 9);
+    } else {
+        wp_enqueue_style('iro-css', $core_lib_basepath . '/style.css', array(), IRO_VERSION);
+        wp_enqueue_style('iro-dark', $core_lib_basepath . '/css/dark.css', array('iro-css'), IRO_VERSION);
+        wp_enqueue_style('iro-responsive', $core_lib_basepath . '/css/responsive.css', array('iro-css'), IRO_VERSION);
+        wp_enqueue_style('iro-animation', $core_lib_basepath . '/css/animation.css', array('iro-css'), IRO_VERSION);
+
+        $content_style = (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github');
+        wp_enqueue_style(
+            'entry-content',
+            $core_lib_basepath . '/css/content-style/' . $content_style . '.css',
+            array(),
+            IRO_VERSION
+        );
+        if (iro_opt('wave_effects', 'false')){
+            wp_enqueue_style('wave', $core_lib_basepath . '/css/wave.css', array(), IRO_VERSION);
+        }
+        if(iro_opt('choice_of_nav_style') == 'sakura'){
+            wp_enqueue_style('sakura_header', $core_lib_basepath . '/css/sakura_header.css', array(), IRO_VERSION);
+        }
+    }
+
+    if(!is_404()){
+        wp_enqueue_script('app', $core_lib_basepath . '/js/app.js', array('polyfills'), IRO_VERSION, true);
         if (!is_home()) {
-            // 非主页的资源 - 使用预加载提高内容样式的加载速度
-            $content_style = (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github');
-            add_action('wp_head', function() use ($core_lib_basepath, $content_style) {
-                echo '<link rel="preload" href="' . $core_lib_basepath . '/css/content-style/' . $content_style . '.css?ver=' . IRO_VERSION . '" as="style">'."\n";
-            }, 1);
-            
-            wp_enqueue_style(
-                'entry-content',
-                $core_lib_basepath . '/css/content-style/' . $content_style . '.css',
-                array(),
-                IRO_VERSION
-            );
+            //非主页的资源
             wp_enqueue_script('app-page', $core_lib_basepath . '/js/page.js', array('app', 'polyfills'), IRO_VERSION, true);
         }
     }
-    
-    // 使用defer加载polyfills以不阻塞关键渲染路径
     wp_enqueue_script('polyfills', $core_lib_basepath . '/js/polyfill.js', array(), IRO_VERSION, true);
-    
-    // 为script标签添加defer属性
+    // defer加载
     add_filter('script_loader_tag', function($tag, $handle) {
-        if ('polyfills' === $handle || 'app' === $handle || 'app-page' === $handle) {
-            return str_replace(' src', ' defer src', $tag);
+        if ('polyfills' === $handle) {
+            return str_replace('src', 'defer src', $tag);
         }
         return $tag;
     }, 10, 2);
@@ -1554,7 +1556,7 @@ function push_emoji_panel()
 {
     $emojis = ['(⌒▽⌒)', '（￣▽￣）', '(=・ω・=)', '(｀・ω・´)', '(〜￣△￣)〜', '(･∀･)', '(°∀°)ﾉ', '(￣3￣)', '╮(￣▽￣)╭', '(´_ゝ｀)', '←_←', '→_→', '(&lt;_&lt;)', '(&gt;_&gt;)', '(;¬_¬)', '("▔□▔)/', '(ﾟДﾟ≡ﾟдﾟ)!?', 'Σ(ﾟдﾟ;)', 'Σ(￣□￣||)', '(’；ω；‘)', '（/TДT)/', '(^・ω・^ )', '(｡･ω･｡)', '(●￣(ｴ)￣●)', 'ε=ε=(ノ≧∇≦)ノ', '(’･_･‘)', '(-_-#)', '（￣へ￣）', '(￣ε(#￣)Σ', 'ヽ(‘Д’)ﾉ', '（#-_-)┯━┯', '(╯°口°)╯(┴—┴', '←◡←', '( ♥д♥)', '_(:3」∠)_', 'Σ&gt;―(〃°ω°〃)♡→', '⁄(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄', '(╬ﾟдﾟ)▄︻┻┳═一', '･*･:≡(　ε:)', '(笑)', '(汗)', '(泣)', '(苦笑)'];
     return join('', array_map(function ($emoji) {
-        return '<a class="emoji-item">' . $emoji . '</a>';
+        return '<span class="emoji-item">' . $emoji . '</span>';
     }, $emojis));
 }
 

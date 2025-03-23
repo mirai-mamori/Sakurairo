@@ -4,10 +4,6 @@
   Template Name: Bilibili FavList Template
  */
 get_header();
-
-global $core_lib_basepath;
-echo '<link rel="stylesheet" href="' . $core_lib_basepath . '/css/templates.css?ver=' . IRO_VERSION . '" type="text/css" media="all">';
-
 ?>
 <meta name="referrer" content="same-origin" />
 <style>

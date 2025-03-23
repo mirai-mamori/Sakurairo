@@ -27,6 +27,11 @@ html {
 }
 <?php } ?>
 
+/* 字体优化 */
+html {
+    font-display: swap;
+}
+
 .the-feature.from_left_and_right .info,.the-feature.from_left_and_right .info h3{background: <?=iro_opt('exhibition_background_color'); ?> ;}
 
 <?php $text_logo = iro_opt('text_logo'); ?>
@@ -35,7 +40,7 @@ color: <?=$text_logo['color']; ?> ;
 font-size: <?=$text_logo['size']; ?>px;
 }
 .Ubuntu-font,.center-text{
-font-family: <?= isset($text_logo['font']) ? $text_logo['font'] : 'Noto Serif SC'; ?> ;
+font-family: <?= isset($text_logo['font']) ? $text_logo['font'] : 'Noto Serif SC'; ?> !important;
 }
 
 .notice i ,
@@ -921,4 +926,4 @@ background-image: url(<?=iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd
 
 </style>
 <?php }
-add_action('wp_head', 'customizer_css');
+add_action('wp_head', 'customizer_css', 10);

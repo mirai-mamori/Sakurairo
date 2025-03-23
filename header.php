@@ -57,20 +57,15 @@ header('X-Frame-Options: SAMEORIGIN');
 <html <?php language_attributes(); ?>>
 
 <head>
-    <meta name="theme-color" content="<?php echo iro_opt('theme_skin'); ?>">
+    <meta name="theme-color"  content="<?php echo iro_opt('theme_skin'); ?>">
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    
-    <!-- 优化资源加载顺序 -->
+
+    <!-- 优化资源加载 -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
     <link rel="preconnect" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>">
     <link rel="preconnect" href="https://s4.zstatic.net" crossorigin>
-    
-    <!-- 预加载关键资源，设置高优先级 -->
-    <?php if (iro_opt('iro_logo')): ?>
-    <link rel="preload" as="image" href="<?= esc_url(iro_opt('iro_logo')); ?>" fetchpriority="high">
-    <?php endif; ?>
-    
-    <!-- 预加载关键样式 -->
+
     <link rel="preload" href="<?php echo (iro_opt('fontawesome_source','https://s4.zstatic.net/ajax/libs/font-awesome/6.7.2/css/all.min.css') ?? 'https://s4.zstatic.net/ajax/libs/font-awesome/6.7.2/css/all.min.css')?>" as="style">
     <link rel="stylesheet" href="<?php echo (iro_opt('fontawesome_source','https://s4.zstatic.net/ajax/libs/font-awesome/6.7.2/css/all.min.css') ?? 'https://s4.zstatic.net/ajax/libs/font-awesome/6.7.2/css/all.min.css')?>" type="text/css" media="all" />
     
@@ -100,106 +95,27 @@ header('X-Frame-Options: SAMEORIGIN');
     <?php } ?>
     <link rel="shortcut icon" href="<?= esc_url(iro_opt('favicon_link', '')); ?>" />
     
-        <?php
-    if (is_home()) {
-        global $core_lib_basepath;
-    ?>
-        <link id="entry-content-css" rel="preload" as="style" href="<?= esc_url($core_lib_basepath . '/css/content-style/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css?ver=' . IRO_VERSION) ?>" onload="this.onload=null;this.rel='stylesheet'">
-        <link rel="preload" as="script" href="<?= esc_url($core_lib_basepath . '/js/page.js?ver=' . IRO_VERSION) ?>">
-    <?php
-    }
-    ?>
-        <?php wp_head(); ?>
-        <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>｜<?php bloginfo('description'); ?>" href="<?php bloginfo('rss2_url'); ?>" />
+    <?php wp_head(); ?>
+    <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>｜<?php bloginfo('description'); ?>" href="<?php bloginfo('rss2_url'); ?>" />
     
-    <!-- 优化字体加载 -->
     <link rel="preload" as="style" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css?family=Noto+Serif+SC|Noto+Sans+SC|Dela+Gothic+One|Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap">
-    <link rel="stylesheet" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css?family=Noto+Serif+SC|Noto+Sans+SC|Dela+Gothic+One|Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css?family=Noto+Serif+SC|Noto+Sans+SC|Dela+Gothic+One|Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap">
-    </noscript>
-    
-    <!-- 添加字体渲染控制CSS -->
-    <style>
-        /* 控制字体渲染方式减少CLS */
-        :root {
-            --header-height-mobile: 50px;
-            --header-height-desktop: 70px;
-        }
-        
-        /* 字体控制 */
-        html {
-            font-display: swap;
-        }
-                /* 为主要布局元素设置尺寸以减少CLS */
-        .site-header {
-            min-height: var(--header-height-desktop);
-            contain: layout;
-        }
-        
-        @media (max-width: 860px) {
-            .site-header {
-                min-height: var(--header-height-mobile);
-            }
-        }
-        
-        .headertop {
-            min-height: 300px;
-            contain: layout;
-        }
-        
-        .site-content {
-            min-height: 500px;
-        }
-        
-        .comments {
-            contain: layout;
-        }
-        
-        .site-branding img {
-            aspect-ratio: auto;
-            max-height: 60px;
-            width: auto;
-        }
-        
-        #preload {
-            position: fixed;
-            z-index: 9999;
-            contain: strict;
-        }
-        
-        /* 预加载动画优化 */
-        @keyframes preloaderAnimate {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(0);
-            }
-        }
-        #preloader_3 {
-            position: relative;
-            width: 50px;
-            height: 50px;
-            border-radius: 50px;
-            animation: preloaderAnimate 2s infinite linear;
-            will-change: transform;
-        }
-    </style>
-    
-        <?php if (iro_opt('google_analytics_id')) : ?>
+    <link rel="stylesheet" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css?family=Noto+Serif+SC|Noto+Sans+SC|Dela+Gothic+One|Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap" media="all">
+    <?php if (iro_opt('google_analytics_id')) : ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=<?= esc_attr(iro_opt('google_analytics_id')); ?>"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+
+            function gtag() {
+                dataLayer.push(arguments)
+            }
             gtag('js', new Date());
             gtag('config', '<?= esc_attr(iro_opt('google_analytics_id')); ?>');
         </script>
     <?php endif; ?>
-        <?= iro_opt("site_header_insert"); ?>
+    <?= iro_opt("site_header_insert"); ?>
 
-        <?php if (iro_opt('poi_pjax')) {
+    <?php if (iro_opt('poi_pjax')) {
         $script_leep_loading_list = iro_opt("pjax_keep_loading");
         if (strlen($script_leep_loading_list) > 0) :
     ?>
@@ -227,27 +143,24 @@ header('X-Frame-Options: SAMEORIGIN');
     } ?>
 
     <!--WordPress 脚注仅在本页内跳转-->
-    <script type="text/javascript" defer>
+    <script  type="text/javascript" defer>
     document.addEventListener('DOMContentLoaded', function () {
         // Ensure all footnote links jump within the same page
         document.querySelectorAll('a[href^="#"]').forEach(function (link) {
             link.addEventListener('click', function (event) {
-// Prevent default behavior if unnecessary
+                // Prevent default behavior if unnecessary
                 event.preventDefault();
-// Prevent default behavior if unnecessary
-// Find the target element
-// Prevent default behavior if unnecessary
+                // Find the target element
                 const targetId = this.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
-// Scroll to the target element
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                // Scroll to the target element
+                targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
     });
-    </script>
-        <!-- 延迟加载非关键JS -->
+	</script>
     <script src="<?= $core_lib_basepath . '/js/nav.js' ?>" defer></script>
 </head>
 
@@ -263,11 +176,6 @@ header('X-Frame-Options: SAMEORIGIN');
 
     <!-- 导航菜单 -->
      <?php if(iro_opt('choice_of_nav_style') == 'sakura'){
-        ?>
-        <!-- 预加载sakura导航样式提高速度 -->
-        <link rel="preload" href="<?php echo get_template_directory_uri() . '/css/sakura_header.css'; ?>" as="style">
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/sakura_header.css'; ?>">
-        <?php
         get_template_part('layouts/' . 'sakura_header');
      } else {
     ?>
@@ -302,7 +210,7 @@ header('X-Frame-Options: SAMEORIGIN');
                         <div class="site-title-logo">
                             <img alt="<?= esc_attr(get_bloginfo('name')); ?>"
                                 src="<?= esc_url(iro_opt('iro_logo')); ?>"
-                                width="auto" height="60"
+                                width="auto" height="auto"
                                 loading="eager"
                                 decoding="async"
                                 fetchpriority="high">

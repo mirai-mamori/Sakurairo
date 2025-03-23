@@ -26,7 +26,7 @@
 
                 ?>
                 <li class="feature">
-                    <a href="<?php echo $item['link']; ?>" target="_blank"><div class="feature-title"><span class="foverlay-bg"></span><span class="foverlay"><?php echo $item['title']; ?></span></div><img class="lazyload" src="<?php echo iro_opt('load_out_svg'); ?>" data-src="<?php echo $item['img']; ?>"></a>
+                    <a href="<?php echo $item['link']; ?>" target="_blank"><div class="feature-title"><span class="foverlay-bg"></span><span class="foverlay"><?php echo $item['title']; ?></span></div><img class="lazyload" src="<?php echo iro_opt('load_out_svg'); ?>" alt="<?php echo $item['title']; ?>" data-src="<?php echo $item['img']; ?>"></a>
                 </li>
             <?php } ?>
         </div>
@@ -50,7 +50,7 @@
                 <div class="the-feature square from_left_and_right">
                     <a href="<?php echo $item['link']; ?>" target="_blank">
                         <div class="img">
-                            <img src="<?php echo $item['img']; ?>">
+                            <img src="<?php echo $item['img']; ?> " alt="<?php echo $item['title']; ?>">
                         </div>
                         <div class="info">
                             <h3><?php echo $item['title']; ?></h3>

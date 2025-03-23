@@ -2,6 +2,7 @@
     gap: 3px;
     width: 100%;
     height: 60px;
+    min-height: 60px;
     display: flex;
     justify-content: left;
     border-radius: 0px;
@@ -39,7 +40,6 @@
     display: flex;
     max-height: 100%;
     border-radius: 0px;
-    height: 100%;
     justify-content: center;
     object-fit: contain;
 }
@@ -175,7 +175,7 @@ nav .menu>li .sub-menu li {
 }
 
 .header-user-menu {
-    right: -11px;
+    right: -11px!important;
     top: 44px;
     position: absolute;
     width: 110px;

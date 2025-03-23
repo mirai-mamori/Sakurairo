@@ -153,14 +153,6 @@ $reception_background = iro_opt('reception_background');
   </div>
 <?php endif; ?>
 
-<!-- 首页波浪特效 -->
-<?php if (iro_opt('wave_effects', 'true')): ?>
-  <?php if (!isset($shared_lib_basepath)) {
-    $shared_lib_basepath = iro_opt('shared_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path', 'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@') . IRO_VERSION);
-  } ?>
-  <link rel="stylesheet" href="<?php echo $shared_lib_basepath . '/css/wave.css'; ?>">
-<?php endif; ?>
-
 <?php echo iro_opt('footer_addition', ''); ?>
 </body>
 <?php if (iro_opt("reception_background_blur",false)): // 使用独立遮罩，防止大面积子元素fixed等定位方式失效?>
@@ -174,14 +166,14 @@ $reception_background = iro_opt('reception_background');
       width: 100vw;
       transition: none;
       pointer-events: none;
-      z-index: 0;
+      z-index: -1;
     }
     .current_blur {
       -webkit-backdrop-filter: saturate(120%) blur(8px);
       backdrop-filter: saturate(120%) blur(8px);
     }
   </style>
-  <?php if (iro_opt("site_bg_as_cover",false)): //site wrapper会被pjax刷新导致目标丢失，所以放function?>
+  <?php //site wrapper会被pjax刷新导致目标丢失，所以放function?>
     <script>
       let blur_object_on_page = document.querySelector(".background_blur");
       function switch_blur_object (){
@@ -197,7 +189,6 @@ $reception_background = iro_opt('reception_background');
       switch_blur_object();
       document.addEventListener("pjax:complete",switch_blur_object);
     </script>
-  <?php endif; ?>
 <?php endif; ?>
 <!-- Particles动效 -->
 <?php if (iro_opt('particles_effects', 'true')): ?>
