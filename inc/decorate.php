@@ -27,6 +27,11 @@ html {
 }
 <?php } ?>
 
+/* 字体优化 */
+html {
+    font-display: swap;
+}
+
 .the-feature.from_left_and_right .info,.the-feature.from_left_and_right .info h3{background: <?=iro_opt('exhibition_background_color'); ?> ;}
 
 <?php $text_logo = iro_opt('text_logo'); ?>

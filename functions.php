@@ -513,10 +513,14 @@ function sakura_scripts()
         }
         add_action( 'send_headers', 'add_cache_control_header' );
 
-        $sakura_header = (iro_opt('choice_of_nav_style') == 'sakura' ? 'sakura_header' : '');
-        $wave = (iro_opt('wave_effects', 'false') == true ? 'wave' : '');
+        $sakura_header = (iro_opt('choice_of_nav_style') == 'sakura' ? 'sakura_header' : 'iro_header');
+        $wave = (iro_opt('wave_effects', 'false') == true ? 'wave' : 'no_wave');
         $content_style = (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github');
-        wp_enqueue_style('iro-css', $core_lib_basepath . '/css/?' . $sakura_header . '&' . $content_style . '&' . $wave . '&minify', array(), IRO_VERSION);
+        $iro_css = $core_lib_basepath . '/css/?' . $sakura_header . '&' . $content_style . '&' . $wave . '&minify&' . IRO_VERSION;
+        add_action('wp_head', function() use ($iro_css) {
+            echo '<link rel="preload" href="' .$iro_css. '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">';
+            echo '<noscript><link rel="stylesheet" href="' .$iro_css. '"></noscript>';
+        });        
     } else {
         wp_enqueue_style('iro-css', $core_lib_basepath . '/style.css', array(), IRO_VERSION);
         wp_enqueue_style('iro-dark', $core_lib_basepath . '/css/dark.css', array('iro-css'), IRO_VERSION);
@@ -546,6 +550,13 @@ function sakura_scripts()
         }
     }
     wp_enqueue_script('polyfills', $core_lib_basepath . '/js/polyfill.js', array(), IRO_VERSION, true);
+    // defer加载
+    add_filter('script_loader_tag', function($tag, $handle) {
+        if ('polyfills' === $handle) {
+            return str_replace('src', 'defer src', $tag);
+        }
+        return $tag;
+    }, 10, 2);
     
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');

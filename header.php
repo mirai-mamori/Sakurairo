@@ -95,15 +95,6 @@ header('X-Frame-Options: SAMEORIGIN');
     <?php } ?>
     <link rel="shortcut icon" href="<?= esc_url(iro_opt('favicon_link', '')); ?>" />
     
-    <?php
-    if (is_home()) {
-        global $core_lib_basepath;
-    ?>
-        <link id="entry-content-css" rel="prefetch" as="style" href="<?= esc_url($core_lib_basepath . '/css/content-style/' . (iro_opt('entry_content_style') == 'sakurairo' ? 'sakura' : 'github') . '.css?ver=' . IRO_VERSION) ?>" />
-        <link rel="prefetch" as="script" href="<?= esc_url($core_lib_basepath . '/js/page.js?ver=' . IRO_VERSION) ?>" />
-    <?php
-    }
-    ?>
     <?php wp_head(); ?>
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>｜<?php bloginfo('description'); ?>" href="<?php bloginfo('rss2_url'); ?>" />
     
