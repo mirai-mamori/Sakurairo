@@ -816,7 +816,7 @@ function the_reward(){
   $image2 = $reward['image2'] ?? '';
   $link2  = $reward['link2']  ?? '';
 
-  $button_html = $link ? '<div class="reward-open"><a href="'.$link.'" class="reward-button" target="_blank"><i class="fa-solid fa-piggy-bank fa-sm"></i></a>' : '';
+  $button_html = '<div class="reward-open"><a href="'.$link.'" class="reward-button" target="_blank"><i class="fa-solid fa-piggy-bank fa-sm"></i></a>';
 
   $img_html1 = '';
   if($image1){
@@ -833,7 +833,7 @@ function the_reward(){
   }
 
   // 只有当按钮或图片至少存在一个时，才显示打赏区域
-  if($button_html || $img_html1 || $img_html2){
+  if($link !== '' || $img_html1 || $img_html2){
     ?>
     <?php echo $button_html; ?>
     <?php if($img_html1 || $img_html2): ?>

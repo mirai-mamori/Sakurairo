@@ -2023,10 +2023,12 @@ $sections = [
 				],
 			],
 			[
-				'type'     => 'image',
-				'settings' => 'alipay_code',
-				'iro_key'  => 'alipay_code',
-				'label'    => esc_html__( 'Article Page Appreciation Function (Alipay QR Code)', 'Sakurairo_C' ),
+				'type'     => 'text',
+				'settings' => 'reward_area_link',
+				'iro_key'  => 'reward_area',
+				'iro_subkey' => 'link',
+				'label'    => esc_html__( 'Reward Button Link', 'Sakurairo_C' ),
+				'description' => esc_html__( 'The link click the reward button will redirect to', 'Sakurairo_C' ),
 				'active_callback' => [
 					[
 						'setting'  => 'article_function',
@@ -2037,9 +2039,54 @@ $sections = [
 			],
 			[
 				'type'     => 'image',
-				'settings' => 'wechat_code',
-				'iro_key'  => 'wechat_code',
-				'label'    => esc_html__( 'Article Page Appreciation Function (Wechat QR Code)', 'Sakurairo_C' ),
+				'settings' => 'reward_area_image1',
+				'iro_key'  => 'reward_area',
+				'iro_subkey' => 'image1',
+				'label'    => esc_html__( 'Reward Image', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'article_function',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
+			],
+			[
+				'type'     => 'text',
+				'settings' => 'reward_area_link1',
+				'iro_key'  => 'reward_area',
+				'iro_subkey' => 'link1',
+				'label'    => esc_html__( 'Reward Image Link', 'Sakurairo_C' ),
+				'description' => esc_html__( 'The link click the image will redirect to', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'article_function',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
+			],
+			[
+				'type'     => 'image',
+				'settings' => 'reward_area_image2',
+				'iro_key'  => 'reward_area',
+				'iro_subkey' => 'image1',
+				'label'    => esc_html__( 'Reward Image', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'article_function',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
+			],
+			[
+				'type'     => 'text',
+				'settings' => 'reward_area_link2',
+				'iro_key'  => 'reward_area',
+				'iro_subkey' => 'link2',
+				'label'    => esc_html__( 'Reward Image Link', 'Sakurairo_C' ),
+				'description' => esc_html__( 'The link click the image will redirect to', 'Sakurairo_C' ),
 				'active_callback' => [
 					[
 						'setting'  => 'article_function',

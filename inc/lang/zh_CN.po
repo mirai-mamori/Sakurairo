@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-19 20:52+0800\n"
-"PO-Revision-Date: 2025-03-19 20:52+0800\n"
+"POT-Creation-Date: 2025-03-23 20:48+0800\n"
+"PO-Revision-Date: 2025-03-23 20:50+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -867,95 +867,113 @@ msgstr "文章许可协议"
 msgid "Not Display"
 msgstr "不展示"
 
-#: customizer.php:2022
-msgid "Article Page Appreciation Function (Alipay QR Code)"
-msgstr "文章页面赞赏功能（支付宝二维码）"
+#: customizer.php:2030
+msgid "Reward Button Link"
+msgstr "赞赏图标链接"
 
-#: customizer.php:2036
-msgid "Article Page Appreciation Function (Wechat QR Code)"
-msgstr "文章页面赞赏功能（微信二维码）"
+#: customizer.php:2031
+msgid "The link click the reward button will redirect to"
+msgstr "点击赞赏图标将跳转的链接"
 
-#: customizer.php:2050
+#: customizer.php:2045 customizer.php:2074
+msgid "Reward Image"
+msgstr "赞赏图片"
+
+#: customizer.php:2059 customizer.php:2088
+msgid "Reward Image Link"
+msgstr "图片链接"
+
+#: customizer.php:2060 customizer.php:2089
+msgid "The link click the image will redirect to"
+msgstr "点击对应图片将跳转的链接"
+
+#: customizer.php:2102
 msgid "Article Page Author Avatar"
 msgstr "文章作者头像"
 
-#: customizer.php:2056
+#: customizer.php:2115
 msgid "Article Page Author Name"
 msgstr "文章作者昵称"
 
-#: customizer.php:2062
+#: customizer.php:2128
 msgid "Article Page Author Signature"
 msgstr "文章作者签名"
 
-#: customizer.php:2068
+#: customizer.php:2141
 msgid "Article Last Update Time"
 msgstr "文章最后更新时间"
 
-#: customizer.php:2074
+#: customizer.php:2154
 msgid "Article Tag"
 msgstr "文章标签"
 
-#: customizer.php:2080
+#: customizer.php:2167
 msgid "Article Page Prev/Next Article Switcher"
 msgstr "文章页面上下文章切换"
 
-#: customizer.php:2087
+#: customizer.php:2174
 msgid "Comment Options"
 msgstr "评论区设置"
 
-#: customizer.php:2096
+#: customizer.php:2183
 msgid "Page Comment Area Display"
 msgstr "页面评论区显示方式"
 
-#: customizer.php:2098
+#: customizer.php:2185
 msgid "Expand"
 msgstr "展开"
 
-#: customizer.php:2099
+#: customizer.php:2186
 msgid "Fold"
 msgstr "折叠"
 
-#: customizer.php:2106
+#: customizer.php:2193
 msgid "Custom CommentBox Placeholder"
 msgstr "自定义评论区占位内容"
 
-#: customizer.php:2112
+#: customizer.php:2199
 msgid "Custom Submit Button Content"
 msgstr "自定义提交按钮内容"
 
-#: customizer.php:2118
+#: customizer.php:2205
 msgid "Page Comment Area Bottom Right Background Image"
 msgstr "页面评论区域右下背景图片"
 
-#: customizer.php:2132
+#: customizer.php:2219
 msgid "Comment Area Emoticon"
 msgstr "评论区域右下背景图片"
 
-#: customizer.php:2133
+#: customizer.php:2220
 msgid "Please go to the backend to configure your custom emoticon pack"
 msgstr "请前往后台配置自定义表情包"
 
-#: customizer.php:2136
+#: customizer.php:2223
 msgid "BiliBili Emoticon Pack"
 msgstr "哔哩哔哩表情包"
 
-#: customizer.php:2137
+#: customizer.php:2224
 msgid "Baidu Tieba Emoticon Pack"
 msgstr "贴吧表情包"
 
-#: customizer.php:2138
+#: customizer.php:2225
 msgid "Emoji"
 msgstr "颜文字"
 
-#: customizer.php:2139
+#: customizer.php:2226
 msgid "Customized Emoticon Pack"
 msgstr "自定义"
 
-#: customizer.php:2145
+#: customizer.php:2232
 msgid ""
 "For more detailed configuration of the comment area, please go to the "
 "backend configuration"
 msgstr "更多评论区详细配置请前往后台"
+
+#~ msgid "Article Page Appreciation Function (Alipay QR Code)"
+#~ msgstr "文章页面赞赏功能（支付宝二维码）"
+
+#~ msgid "Article Page Appreciation Function (Wechat QR Code)"
+#~ msgstr "文章页面赞赏功能（微信二维码）"
 
 #~ msgid "Nav Menu User Avatar"
 #~ msgstr "导航栏用户头像"

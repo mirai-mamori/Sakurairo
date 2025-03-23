@@ -2796,6 +2796,7 @@ $prefix = 'iro_options';
             'id' => 'link',
             'type' => 'text',
             'title' => __('Button Link','sakurairo_csf'),
+            'desc' => __('The link click the reward button will redirect to','sakurairo_csf'),
           ),
           array(
             'id' => 'image1',
@@ -2807,6 +2808,7 @@ $prefix = 'iro_options';
             'id' => 'link1',
             'type' => 'text',
             'title' => __('Link','sakurairo_csf'),
+            'desc' => __('The link click the image will redirect to','sakurairo_csf'),
           ),
           array(
             'id' => 'image2',
@@ -2818,6 +2820,7 @@ $prefix = 'iro_options';
             'id' => 'link2',
             'type' => 'text',
             'title' => __('Link','sakurairo_csf'),
+            'desc' => __('The link click the image will redirect to','sakurairo_csf'),
           ),
         ),
       ),
