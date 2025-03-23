@@ -2028,6 +2028,7 @@ $sections = [
 				'iro_key'  => 'reward_area',
 				'iro_subkey' => 'link',
 				'label'    => esc_html__( 'Reward Button Link', 'Sakurairo_C' ),
+				'description' => esc_html__( 'The link click the reward button will redirect to', 'Sakurairo_C' ),
 				'active_callback' => [
 					[
 						'setting'  => 'article_function',
@@ -2056,6 +2057,7 @@ $sections = [
 				'iro_key'  => 'reward_area',
 				'iro_subkey' => 'link1',
 				'label'    => esc_html__( 'Reward Image Link', 'Sakurairo_C' ),
+				'description' => esc_html__( 'The link click the image will redirect to', 'Sakurairo_C' ),
 				'active_callback' => [
 					[
 						'setting'  => 'article_function',
@@ -2084,6 +2086,7 @@ $sections = [
 				'iro_key'  => 'reward_area',
 				'iro_subkey' => 'link2',
 				'label'    => esc_html__( 'Reward Image Link', 'Sakurairo_C' ),
+				'description' => esc_html__( 'The link click the image will redirect to', 'Sakurairo_C' ),
 				'active_callback' => [
 					[
 						'setting'  => 'article_function',
