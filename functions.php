@@ -519,8 +519,8 @@ function sakura_scripts()
         $iro_css = $core_lib_basepath . '/css/?' . $sakura_header . '&' . $content_style . '&' . $wave . '&minify&' . IRO_VERSION;
         add_action('wp_head', function() use ($iro_css) {
             echo '<link rel="preload" href="' .$iro_css. '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">';
-            echo '<noscript><link rel="stylesheet" href="' .$iro_css. '"></noscript>';
-        });        
+            echo '<link rel="stylesheet" href="' . $iro_css . '">';
+        });
     } else {
         wp_enqueue_style('iro-css', $core_lib_basepath . '/style.css', array(), IRO_VERSION);
         wp_enqueue_style('iro-dark', $core_lib_basepath . '/css/dark.css', array('iro-css'), IRO_VERSION);
