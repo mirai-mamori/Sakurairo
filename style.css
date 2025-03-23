@@ -1428,6 +1428,7 @@ h1.page-title {
   margin: 0 auto;
   position: relative;
   border-radius: 15px;
+  z-index: 1;
 }
 
 .post-squares .background {
