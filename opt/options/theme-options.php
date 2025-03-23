@@ -470,7 +470,7 @@ $prefix = 'iro_options';
         'default' => '50',
        ),
 
-       array(
+      array(
         'id' => 'sakura_nav_style',
         'type' => 'fieldset',
         'title' => __('Classic Nav Style','sakurairo_csf'),
@@ -2787,21 +2787,39 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'alipay_code',
-        'type' => 'upload',
-        'title' => __('Article Page Appreciation Function (Alipay QR Code)','sakurairo_csf'),
+        'id' => 'reward_area',
+        'type' => 'fieldset',
+        'title' => __('Reward','sakurairo_csf'),
         'dependency' => array( 'article_function', '==', 'true', '', 'true' ),
-        'desc' => __('Upload Alipay Receipt QR Code Image','sakurairo_csf'),
-        'library' => 'image',
-      ),
-
-      array(
-        'id' => 'wechat_code',
-        'type' => 'upload',
-        'title' => __('Article Page Appreciation Function (Wechat QR Code)','sakurairo_csf'),
-        'dependency' => array( 'article_function', '==', 'true', '', 'true' ),
-        'desc' => __('Upload WeChat Receipt QR Code Image','sakurairo_csf'),
-        'library' => 'image',
+        'fields' => array(
+          array(
+            'id' => 'link',
+            'type' => 'text',
+            'title' => __('Button Link','sakurairo_csf'),
+          ),
+          array(
+            'id' => 'image1',
+            'type' => 'upload',
+            'title' => __('Image','sakurairo_csf'),
+            'library' => 'image',
+          ),
+          array(
+            'id' => 'link1',
+            'type' => 'text',
+            'title' => __('Link','sakurairo_csf'),
+          ),
+          array(
+            'id' => 'image2',
+            'type' => 'upload',
+            'title' => __('Image','sakurairo_csf'),
+            'library' => 'image',
+          ),
+          array(
+            'id' => 'link2',
+            'type' => 'text',
+            'title' => __('Link','sakurairo_csf'),
+          ),
+        ),
       ),
 
       array(
