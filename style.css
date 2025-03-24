@@ -3107,12 +3107,11 @@ h1.main-title {
 }
 
 .reward-row {
-  margin: 0 auto;
-  padding: 20px 15px 10px;
-  background: rgba(255, 255, 255, 0.8);
+  margin: 2% 0 0 2%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.9);
   display: block;
   border-radius: 10px;
-  margin-left: 3%;
   border: 1px solid #FFFFFF;
 }
 
