@@ -817,6 +817,9 @@ function the_reward(){
   $link2  = $reward['link2']  ?? '';
 
   $button_html = '<div class="reward-open"><a href="'.$link.'" class="reward-button" target="_blank"><i class="fa-solid fa-piggy-bank fa-sm"></i></a>';
+  if ($link == '') {
+    $button_html = '<div class="reward-open"><i class="fa-solid fa-piggy-bank fa-sm"></i>';
+  }
 
   $img_html1 = '';
   if($image1){

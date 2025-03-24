@@ -1363,6 +1363,10 @@ h1.page-title {
   gap: 10px;
 }
 
+.post-footer a:hover{
+  color: var(--article-theme-highlight,var(--theme-skin-matching)) !important;
+}
+
 .post-license {
   float: left;
   box-shadow: 0 1px 30px -4px #e8e8e8;
@@ -1380,7 +1384,6 @@ h1.page-title {
 .post-license:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.8);
-  color: var(--article-theme-highlight,var(--theme-skin-matching));
 }
 
 .post-tags {
@@ -1400,6 +1403,53 @@ h1.page-title {
 .post-tags:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.8);
+}
+
+.author-profile {
+  float: left;
+  display: flex;
+  gap: 10px;
+}
+
+.author-profile .info {
+  overflow: hidden;
+  float: left;
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 9px 9.5px;
+  border-radius: 10px;
+  border: 1px solid #FFFFFF;
+}
+
+.author-profile .info:hover {
+  box-shadow: 0 1px 20px 10px #e8e8e8;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.author-profile .profile {
+  display: block;
+  float: left;
+}
+
+.author-profile .meta {
+  display: block;
+  float: left;
+  box-shadow: 0 1px 30px -4px #e8e8e8;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #FFFFFF;
+}
+
+.author-profile .meta:hover {
+  box-shadow: 0 1px 20px 10px #e8e8e8;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.author-profile .meta a {
+  font-size: 16px;
+  float: left;
+  color: #7d7d7d;
 }
 
 .post-modified-time {
@@ -1438,22 +1488,13 @@ h1.page-title {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: .4;
+  opacity: 0.4;
   background-size: cover;
-  -webkit-transition: opacity .15s ease-out;
-  transition: opacity .15s ease-out;
+  -webkit-transition: opacity 0.15s ease-out;
+  transition: opacity 0.15s ease-out;
 }
 
-.post-squares a {
-  position: relative;
-  display: block;
-  float: left;
-  overflow: hidden;
-  height: 100%;
-  padding: 55px 25px;
-  text-align: center;
-}
-
+.post-squares a,
 .post-squares article {
   position: relative;
   display: block;
@@ -1490,22 +1531,102 @@ h1.page-title {
   width: 15%;
   height: 0;
   border: 0;
-  background: rgba(255, 255, 255, .6);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .post-squares .label {
   font-size: 13px;
   display: block;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, .7);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: var(--global-font-weight);
 }
 
+.post-squares .info {
+  position: relative;
+  z-index: 99;
+}
+
+.post-squares a:hover > .background,
+.post-squares article:hover > .background {
+  opacity: 0.6;
+}
+
+.post-squares h3 a {
+  display: block;
+  color: #fff;
+}
+
+.post-squares .full {
+  width: 100%;
+}
+
+.post-squares.post-squares-featured {
+  height: 250px;
+}
+
+/* nextprev 区域的样式 */
 .nextprev a {
   height: 150px;
   padding: 55px 40px;
   text-align: left;
   width: 100%;
+}
+
+.nextprev > :not(:only-child) {
+  width: 50%;
+}
+
+.nextprev article {
+  height: 150px;
+  padding: 55px 40px;
+  text-align: left;
+}
+
+.nextprev .label {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+}
+
+.nextprev .info {
+  position: absolute;
+  width: 70%;
+}
+
+.nextprev a[rel="prev"] {
+  text-align: left;
+}
+
+.nextprev a[rel="prev"] .info {
+  bottom: 40px;
+  left: 40px;
+}
+
+.nextprev a[rel="prev"] .label {
+  top: 40px;
+  left: 40px;
+}
+
+.nextprev a[rel="prev"] hr {
+  float: left;
+  margin: 0;
+}
+
+.nextprev a[rel="next"] .info {
+  text-align: right;
+  right: 40px;
+  bottom: 40px;
+}
+
+.nextprev a[rel="next"] .label {
+  top: 40px;
+  right: 40px;
+}
+
+.nextprev a[rel="next"] hr {
+  float: right;
+  margin: 0;
 }
 
 .author-profile .profile img {
@@ -4846,25 +4967,6 @@ h1.page-title.mb- {
   margin-right: 10px;
 }
 
-.post-squares .info {
-  position: relative;
-  z-index: 99;
-}
-
-.post-squares a:hover>.background,
-.post-squares article:hover>.background {
-  opacity: .6;
-}
-
-.post-squares h3 a {
-  display: block;
-  color: #fff;
-}
-
-.post-squares .full {
-  width: 100%;
-}
-
 .comment .children .main {
   width: 94.5%;
 }
@@ -4879,121 +4981,6 @@ h1.page-title.mb- {
 
 .must-log-in a:hover {
   color: #7d7d7d;
-}
-
-.nextprev>:not(:only-child) {
-  width: 50%;
-}
-
-.nextprev article {
-  height: 150px;
-  padding: 55px 40px;
-  text-align: left;
-}
-
-.nextprev .label {
-  position: absolute;
-  z-index: 99;
-  top: 0;
-}
-
-.nextprev .info {
-  position: absolute;
-  width: 70%;
-}
-
-.nextprev a h3 {
-  font-size: 14px;
-}
-
-.nextprev a[rel=prev] {
-  text-align: left;
-}
-
-.nextprev a[rel=prev] .info {
-  bottom: 40px;
-  left: 40px;
-}
-
-.nextprev a[rel=prev] .label {
-  top: 40px;
-  left: 40px;
-}
-
-.nextprev a[rel=prev] hr {
-  float: left;
-  margin: 0;
-}
-
-.nextprev a[rel=next] .info {
-  text-align: right;
-  right: 40px;
-  bottom: 40px;
-}
-
-.nextprev a[rel=next] .label {
-  top: 40px;
-  right: 40px;
-}
-
-.nextprev a[rel=next] hr {
-  float: right;
-  margin: 0;
-}
-
-.post-squares.post-squares-featured {
-  height: 250px;
-}
-
-.author-profile {
-  float: left;
-  display: flex;
-  gap: 10px;
-}
-
-.author-profile .info {
-  overflow: hidden;
-  float: left;
-  box-shadow: 0 1px 30px -4px #e8e8e8;
-  background: rgba(255, 255, 255, 0.5);
-  padding: 9px 9.5px;
-  border-radius: 10px;
-  border: 1px solid #FFFFFF;
-}
-
-.author-profile .info:hover {
-  box-shadow: 0 1px 20px 10px #e8e8e8;
-  background: rgba(255, 255, 255, 0.8);
-}
-
-.author-profile .profile {
-  display: block;
-  float: left;
-}
-
-.author-profile .meta {
-  display: block;
-  float: left;
-  box-shadow: 0 1px 30px -4px #e8e8e8;
-  background: rgba(255, 255, 255, 0.5);
-  padding: 12px 16px;
-  border-radius: 10px;
-  border: 1px solid #FFFFFF;
-}
-
-.author-profile .meta:hover {
-  box-shadow: 0 1px 20px 10px #e8e8e8;
-  background: rgba(255, 255, 255, 0.8);
-}
-
-.author-profile .meta a {
-  font-size: 16px;
-  float: left;
-  color: #7d7d7d;
-}
-
-.author-profile .meta a:hover {
-  color: var(--theme-skin-matching);
 }
 
 #comments-list-title span {
