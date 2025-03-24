@@ -201,12 +201,9 @@ $reception_background = iro_opt('reception_background');
       right: 0;
       top: 0;
       bottom: 0;
-      z-index: -1;
-    }
-    body.dark #particles-js {
       z-index: 0;
     }
-    body.dark #main-container {
+    #main-container {
       position: relative;
       z-index: 1;
     }
