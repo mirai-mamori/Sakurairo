@@ -321,14 +321,14 @@ $sections = [
 				'settings' => 'extract_theme_skin_from_cover',
 				'iro_key'  => 'extract_theme_skin_from_cover',
 				'label'    => esc_html__( 'Extract Theme Color from Cover Image', 'Sakurairo_C' ),
-				'description' => 'After turning on,the colors displayed on the article page will be taken from the article featured image',
+				'description' => esc_html__('After turning on,the theme color will be taken from the homepage cover', 'Sakurairo_C' ),
 			],
 			[
 				'type'     => 'switch',
 				'settings' => 'extract_article_highlight_from_feature',
 				'iro_key'  => 'extract_article_highlight_from_feature',
 				'label'    => esc_html__( 'Extract Article Highlight from Featured Image', 'Sakurairo_C' ),
-				'description' => 'After turning on,the colors displayed on the article page will be taken from the article featured image',
+				'description' => esc_html__('After turning on,the colors displayed on the article page will be taken from the article featured image', 'Sakurairo_C' ),
 			],
 			[
 				'type'     => 'color',
@@ -576,6 +576,11 @@ $sections = [
 						'setting'  => 'cover_switch',
 						'operator' => '==',
 						'value'    => true,
+					],
+					[
+						'setting'  => 'cover_full_screen',
+						'operator' => '==',
+						'value'    => false,
 					]
 				],
 			],
@@ -605,6 +610,11 @@ $sections = [
 				'active_callback' => [
 					[
 						'setting'  => 'cover_switch',
+						'operator' => '==',
+						'value'    => true,
+					],
+					[
+						'setting'  => 'cover_animation',
 						'operator' => '==',
 						'value'    => true,
 					]
@@ -867,7 +877,7 @@ $sections = [
 					[
 						'setting'  => 'site_bg_as_cover',
 						'operator' => '==',
-						'value'    => 'true',
+						'value'    => true,
 					],
 				],
 			],
@@ -1236,7 +1246,7 @@ $sections = [
 				'type'     => 'select',
 				'settings' => 'article_meta_displays',
 				'iro_key'  => 'article_meta_displays',
-				'label'    => esc_html__( 'Cover Random Images Filter', 'Sakurairo_C' ),
+				'label'    => esc_html__( 'Article Area Meta Displays', 'Sakurairo_C' ),
 				'multiple'    => 0, // 想选多少选多少
 				'choices'     => [
 					"author" => __("Author","Sakurairo_C"),
@@ -2070,7 +2080,7 @@ $sections = [
 				'type'     => 'image',
 				'settings' => 'reward_area_image2',
 				'iro_key'  => 'reward_area',
-				'iro_subkey' => 'image1',
+				'iro_subkey' => 'image2',
 				'label'    => esc_html__( 'Reward Image', 'Sakurairo_C' ),
 				'active_callback' => [
 					[
