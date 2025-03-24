@@ -156,23 +156,27 @@ $nav_text_logo = iro_opt('nav_text_logo');
   <?php header_user_menu(); //用户栏?>
 
   <script><?php //置顶时添加底色 ?>
-    var header = document.querySelector('.site-header');
-    window.addEventListener('scroll', function() {
-      var header = document.querySelector('.site-header');
-      // 检查位置
-      if (window.scrollY > 0) {
-        header.classList.add('bg');
-      } else {
-        if (window.innerWidth < 860) {
-        //do nothing
+    document.addEventListener('DOMContentLoaded', function(){
+      let header = document.querySelector('.site-header');
+      function sakuraScroll() {
+        if (window.scrollY > 0) {
+          header.classList.add('bg');
         } else {
-          header.classList.remove('bg');
-        } 
+          if (window.innerWidth < 860) {
+          //do nothing
+          } else {
+            header.classList.remove('bg');
+          } 
+        }
       }
-    });
-    if (window.innerWidth < 860) {
-      header.classList.add('bg');
-    }
+      window.addEventListener('scroll', sakuraScroll);
+      document.addEventListener('pjax:complete',function(){
+        header = document.querySelector('.site-header');
+      })
+      if (window.innerWidth < 860) {
+        header.classList.add('bg');
+      }
+    })
   </script>
 
 </header>
