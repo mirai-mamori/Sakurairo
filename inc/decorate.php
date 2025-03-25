@@ -379,6 +379,7 @@ background-color: rgba(255, 255, 255,var(--front_background-transparency,<?=iro_
 border-radius: <?=iro_opt('signature_radius'); ?>px;
 }
 
+.top-social i,
 .focusinfo img{
 border-radius: <?=iro_opt('social_area_radius'); ?>px;
 }
