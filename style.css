@@ -2492,6 +2492,7 @@ h1.main-title {
 
 .top-social_v2 i {
   font-size: 28px;
+  color: var(--theme-skin-matching);
 }
 
 .top-social li,
