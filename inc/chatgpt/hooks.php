@@ -299,8 +299,8 @@ namespace IROChatGPT {
             // 使用libxml错误控制
             $prev = libxml_use_internal_errors(true);
             // 添加UTF-8标头以确保正确处理中文
-            $html = '<?xml encoding="UTF-8"><div>' . $content . '</div>';
-            $dom->loadHTML($html, LIBXML_HTML_NODEFDTD);
+            $html = '<div id="iro-chatgpt-wrapper">' . $content . '</div>';
+            $dom->loadHTML('<?xml encoding="UTF-8">' . $html, LIBXML_HTML_NODEFDTD);
             libxml_clear_errors();
             libxml_use_internal_errors($prev);
             
@@ -374,13 +374,19 @@ namespace IROChatGPT {
                 // error_log("IROChatGPT: 未在内容中找到任何匹配的术语");
                 return $content;
             }
+
+            // 解析包装
+            $wrapper = $dom->getElementById('iro-chatgpt-wrapper');
             
             // 获取修改后的内容
-            $newContent = $dom->saveHTML($dom->documentElement);
-            // 移除添加的外层div
-            $newContent = preg_replace('/<\/?div[^>]*>/', '', $newContent);
-            // 移除XML声明
-            $newContent = preg_replace('/<\?xml[^>]+>/', '', $newContent);
+            if ($wrapper) {
+                $newContent = '';
+                foreach ($wrapper->childNodes as $child) {
+                    $newContent .= $dom->saveHTML($child);
+                }
+            } else {
+                $newContent = $dom->saveHTML($dom->documentElement);
+            }
 
             foreach ($shortcode_placeholders as $token => $shortcode) {
                 $newContent = str_replace($token, $shortcode, $newContent);
