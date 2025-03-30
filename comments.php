@@ -71,11 +71,25 @@ function get_smilies_panel() {
 <section id="comments" class="comments">
     <!-- 评论区域标题及折叠通知 -->
     <div class="commentwrap comments-hidden<?php echo iro_opt('comment_area') == 'fold' ? ' comments-fold' : ''; ?>">
-        <div class="notification">
-            <i class="fa-regular fa-comment"></i>
-            <?php _e('view comments', 'sakurairo'); /*查看评论*/ ?> -
-            <span class="noticom"><?php comments_number('NOTHING', '1' . __(" comment", "sakurairo"), '%' . __(" comments", "sakurairo")); ?></span>
-        </div>
+            <div class="notification">
+                <i class="fa-regular fa-comment"></i><?php _e('view comments', 'sakurairo'); /*查看评论*/?> -
+                <span class="noticom">
+                    <?php
+                    $approved_comments = get_comments(array(
+                        'post_id' => get_the_ID(),
+                        'status'  => 'approve',
+                        'count'   => true
+                    ));
+                    if ($approved_comments == 0) {
+                        _e('NOTHING', 'sakurairo');
+                    } elseif ($approved_comments == 1) {
+                        echo '1' . __(" comment", "sakurairo");
+                    } else {
+                        echo $approved_comments . __(" comments", "sakurairo");
+                    }
+                    ?>
+                </span>
+            </div>
     </div>
     
     <div class="comments-main">
