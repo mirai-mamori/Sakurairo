@@ -24,6 +24,13 @@
     transition: border-bottom .5s ease,all .5s ease;
 }
 
+@media (max-width: 860px) {
+    .site-header {
+        height: 50px;
+        min-height: 50px;
+    }
+}
+
 .site-branding {
     border-radius: 0px;
     background: transparent;
@@ -238,11 +245,5 @@ body.dark .searchbox.js-toggle-search i:hover, body.dark .bg-switch i:hover{
         -webkit-transform: translateX(0%);
         transform: translateX(0%);
         opacity: 1;
-    }
-    }
-
-    @media (max-width: 860px) {
-    .site-header {
-        height: 50px;
     }
 }

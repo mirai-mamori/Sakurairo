@@ -1075,7 +1075,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function TocButtonStat () {
             let haveToc = document.querySelector("#main-container .toc-container .toc");
-            if (haveToc) {
+            if (haveToc && haveToc.hasChildNodes()) { // 下方用户栏和目录二选一，此处是没有用户栏还没有目录的情况
                 moTocButton.style.transform = 'translateY(0)';
             } else {
                 moTocButton.style.transform = 'translateY(-100%)';
