@@ -3345,8 +3345,8 @@ msgstr ""
 
 #: options/theme-options.php:3512
 msgid ""
-"<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.7/options/leaflow.webp\" width=\"25%\" height=\"25%\"/><img src=\"https://s.nmxc.ltd/"
-"sakurairo_vision/@2.7/options/postchat.webp\" width=\"25%\" height=\"25%\"/>"
+"<img src=\"https://s.nmxc.ltd/sakurairo_vision/@3.0/options/leaflow.webp\" width=\"25%\" height=\"25%\"/><img src=\"https://s.nmxc.ltd/"
+"sakurairo_vision/@3.0/options/postchat.webp\" width=\"25%\" height=\"25%\"/>"
 msgstr ""
 
 #: options/theme-options.php:3520
@@ -3778,7 +3778,7 @@ msgid "Version Info"
 msgstr ""
 
 #: options/theme-options.php:4025
-msgid "<img src=\"https://s.nmxc.ltd/sakurairo_vision/@2.7/series/headlogo.webp\"  alt=\"Theme Information\" />"
+msgid "<img src=\"https://s.nmxc.ltd/sakurairo_vision/@3.0/series/headlogo.webp\"  alt=\"Theme Information\" />"
 msgstr ""
 
 #: options/theme-options.php:4031

@@ -3493,7 +3493,7 @@ $prefix = 'iro_options';
         'type' => 'color',
         'title' => __('Dashboard Primary Menu Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#3c5571'
+        'default' => '#081018'
       ),  
 
       array(
@@ -3501,7 +3501,7 @@ $prefix = 'iro_options';
         'type' => 'color',
         'title' => __('Dashboard Secondary Menu Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#4e739d'
+        'default' => '#111111'
       ),  
 
       array(
@@ -3509,7 +3509,7 @@ $prefix = 'iro_options';
         'type' => 'color',
         'title' => __('Dashboard Emphasis Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#cfc3af'
+        'default' => '#debd9c'
       ),  
 
       array(
@@ -4078,7 +4078,7 @@ $prefix = 'iro_options';
         'title' => __('Theme Update Source','sakurairo_csf'),
         'options'     => array(
           'github'  => $vision_resource_basepath . 'options/update_source_github.webp',
-          'upyun'  => $vision_resource_basepath . 'options/update_source_upyun.webp',
+          'upyun'  => $vision_resource_basepath . 'options/update_source_wafpro.webp',
           'official_building'  => $vision_resource_basepath . 'options/update_source_iro.webp',
         ),
         'desc' => __('If you are using a server set up in mainland China, please use the Upyun source or the official theme source as your theme update source','sakurairo_csf'),
@@ -4143,7 +4143,7 @@ $prefix = 'iro_options';
         'title' => __('Public CDN Basepath','sakurairo_csf'),
         'label' => __('Control the basepath of Frontend Resource.','sakurairo_csf'),
         'options'     => array(
-          'https://s.nmxc.ltd/sakurairo/@'  => $vision_resource_basepath . 'options/update_source_upyun.webp',
+          'https://s.nmxc.ltd/sakurairo/@'  => $vision_resource_basepath . 'options/update_source_wafpro.webp',
           'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => $vision_resource_basepath . 'options/update_source_jsd.webp',
         ),
         'default'     => 'https://s.nmxc.ltd/sakurairo/@'

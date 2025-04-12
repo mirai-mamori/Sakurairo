@@ -11,7 +11,7 @@
 include_once('inc/classes/IpLocation.php');
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '20.0.0');
+define('INT_VERSION', '20.0.1');
 define('BUILD_VERSION', '3');
 
 function check_php_version($preset_version)
@@ -839,7 +839,7 @@ function get_the_link_items($id = null)
             }
 
             if (empty($bookmark->link_image)) {
-                $bookmark->link_image = 'https://s.nmxc.ltd/sakurairo_vision/@3.0/basic/friendlink.jpg';
+                $bookmark->link_image = 'https://weavatar.com/avatar/?s=80&d=mm&r=g';
             }
             
             // 获取链接状态
@@ -914,7 +914,7 @@ function visual_resource_updates($specified_version, $option_name, $new_value)
     $current_version = $theme->get('Version');
 
     // Check if the function has already been triggered
-    $function_triggered = get_transient('visual_resource_updates_triggered19');
+    $function_triggered = get_transient('visual_resource_updates_triggered20');
     if ($function_triggered) {
         return; // Function has already been triggered, do nothing
     }
@@ -929,18 +929,18 @@ function visual_resource_updates($specified_version, $option_name, $new_value)
         iro_opt_update($option_name, $option_value);
 
         // Set transient to indicate that the function has been triggered
-        set_transient('visual_resource_updates_triggered19', true);
+        set_transient('visual_resource_updates_triggered20', true);
     }
 }
 
-visual_resource_updates('2.5.6', 'vision_resource_basepath', '2.7/');
+visual_resource_updates('2.5.6', 'vision_resource_basepath', '3.0/');
 
 function unlisted_avatar_updates() {
     $theme = wp_get_theme();
     $current_version = $theme->get('Version');
 
     // Check if the function has already been triggered
-    $function_triggered = get_transient('unlisted_avatar_updates_triggered19');
+    $function_triggered = get_transient('unlisted_avatar_updates_triggered20');
     if ($function_triggered) {
         return; // Function has already been triggered, do nothing
     }
@@ -948,7 +948,7 @@ function unlisted_avatar_updates() {
     if (version_compare($current_version, '2.5.6', '>')) {
         $option_value = iro_opt('unlisted_avatar');
         $old_values = array(
-            'https://s.nmxc.ltd/sakurairo_vision/@3.0/basic/topavatar.png',
+            'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/topavatar.png',
             'https://s.nmxc.ltd/sakurairo_vision/@2.6/basic/topavatar.png',  
             'https://s.nmxc.ltd/sakurairo_vision/@2.5/basic/topavatar.png'
         );
@@ -958,7 +958,7 @@ function unlisted_avatar_updates() {
         }
 
         // Set transient to indicate that the function has been triggered
-        set_transient('unlisted_avatar_updates_triggered19', true);
+        set_transient('unlisted_avatar_updates_triggered20', true);
     }
 }
 
