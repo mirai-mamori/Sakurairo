@@ -35,7 +35,7 @@
 
 ## 支持我们：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/cn-ver2.7info.png)](https://ifdian.net/@mamori)
+[![image](https://kiseki.blog/info/sponsor.php?action=view)](https://afdian.com/a/mamori)
 
 ## 主题贡献：
 

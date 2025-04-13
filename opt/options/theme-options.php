@@ -44,12 +44,12 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'heading',
-        'content' => __('News+','sakurairo_csf'),
+        'content' => __('Thank you to everyone who supports us!','sakurairo_csf'),
       ),
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://news.maho.cc/sakurairo.php"  alt="News_Plus" width="100%" height="100%" />','sakurairo_csf'),
+        'content' => __('<img src="https://kiseki.blog/info/sponsor.php?action=view"  alt="Sponsor" width="100%" height="100%" />','sakurairo_csf'),
       ),
 
     )
@@ -4163,16 +4163,6 @@ $prefix = 'iro_options';
         'title' => __('Vision Resource Basepath','sakurairo_csf'),
         'desc' => __('This link directory structure needs to be consistent with the <a href="https://github.com/Fuukei/Sakurairo_Vision">Sakurairo Vision</a> repositories officially provided by fuukei, otherwise some resources 404 may appear. The image source officially provided by <a href="https://www.upyun.com/">Upyun</a> is adopted by default.','sakurairo_csf'),
         'default' => "https://s.nmxc.ltd/sakurairo_vision/@3.0/"
-      ),
-
-      array(
-        'type' => 'subheading',
-        'content' => __('Theme Sponsors','sakurairo_csf'),
-      ),
-
-      array(
-        'type'    => 'content',
-        'content' => __('<img src="https://news.maho.cc/sponsors.php"  alt="sponsors" width="65%" height="65%" />','sakurairo_csf'),
       ),
 
       array(
