@@ -49,7 +49,7 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://kiseki.blog/info/sponsor.php?action=view"  alt="Sponsor" width="100%" height="100%" />','sakurairo_csf'),
+        'content' => __('<img src="https://api.fuukei.org/info/sponsor.php?action=view"  alt="Sponsor" width="100%" height="100%" />','sakurairo_csf'),
       ),
 
     )
@@ -1649,7 +1649,7 @@ $prefix = 'iro_options';
                               array( 'cover_switch', '==', 'true', '', 'true' ),
                               array( 'random_graphs_options', '!=', 'local', '', 'true' ),
                         ),
-        'default' => 'https://api.maho.cc/random-img/pc.php',
+        'default' => 'https://api.fuukei.org/random-img/default/pc.php',
         'sanitize' => false,
         'validate' => 'csf_validate_url',
       ),
@@ -1664,7 +1664,7 @@ $prefix = 'iro_options';
                               array( 'random_graphs_options', '!=', 'local', '', 'true' ),
                         ),
         'desc' => __('Fill in an URL','sakurairo_csf'),
-        'default' => 'https://api.maho.cc/random-img/mobile.php',
+        'default' => 'https://api.fuukei.org/random-img/default/mobile.php',
         'sanitize' => false,
         'validate' => 'csf_validate_url',
       ),
@@ -4172,7 +4172,7 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://kiseki.blog/info/contributors.php?action=view" alt="Theme Contributors" width="100%" height="100%" />','sakurairo_csf'),
+        'content' => __('<img src="https://api.fuukei.org/info/contributors.php?action=view" alt="Theme Contributors" width="100%" height="100%" />','sakurairo_csf'),
       ),
 
       array(

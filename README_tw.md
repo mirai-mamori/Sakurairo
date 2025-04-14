@@ -31,7 +31,7 @@
 
 ## 主題貢獻：
 
-<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://kiseki.blog/info/contributors.svg" alt="contributors" height="100%" width="100%"></a>
+<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://api.fuukei.org/info/contributors.svg" alt="contributors" height="100%" width="100%"></a>
 
 ## 主題說明：
 

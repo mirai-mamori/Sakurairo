@@ -87,10 +87,10 @@ switch (iro_opt('iro_update_source')) {
         $iroThemeUpdateChecker = UpdateCheck('https://github.com/mirai-mamori/Sakurairo', 'Sakurairo');
         break;
     case 'upyun':
-        $iroThemeUpdateChecker = UpdateCheck('https://update.maho.cc/jsdelivr.json');
+        $iroThemeUpdateChecker = UpdateCheck('https://api.fuukei.org/update/jsdelivr.json');
         break;
     case 'official_building':
-        $iroThemeUpdateChecker = UpdateCheck('https://update.maho.cc/' . iro_opt('iro_update_channel') . '/check.json');
+        $iroThemeUpdateChecker = UpdateCheck('https://api.fuukei.org/update/' . iro_opt('iro_update_channel') . '/check.json');
 }
 
 add_action('init', 'set_user_locale');
@@ -2572,7 +2572,7 @@ function send_theme_version()
         'headers' => array(),
         'cookies' => array()
     );
-    wp_remote_post('https://api.maho.cc/ver-stat/index.php', $args);
+    wp_remote_post('https://api.fuukei.org/version-stat/index.php', $args);
 }
 
 if (iro_opt('send_theme_version') == '1') {

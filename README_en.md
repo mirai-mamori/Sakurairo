@@ -27,7 +27,7 @@ Please fill in with the issue template. Thanks for your cooperation.
 
 ## Contributors:
 
-<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://kiseki.blog/info/contributors.svg" alt="contributors" height="100%" width="100%"></a>
+<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://api.fuukei.org/info/contributors.svg" alt="contributors" height="100%" width="100%"></a>
 
 ## About Sakurairo：
 
