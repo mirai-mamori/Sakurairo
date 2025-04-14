@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2025-03-23 20:57+0800\n"
-"PO-Revision-Date: 2025-03-23 20:57+0800\n"
+"POT-Creation-Date: 2025-04-14 15:33+0900\n"
+"PO-Revision-Date: 2025-04-14 15:34+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: option-framework.php\n"
@@ -705,13 +705,13 @@ msgid "Hello!"
 msgstr "哩後！"
 
 #: options/theme-options.php:47
-msgid "News+"
-msgstr "資訊+"
+msgid "Thank you to everyone who supports us!"
+msgstr "感謝所有支持我們的人！"
 
 #: options/theme-options.php:52
 msgid ""
-"<img src=\"https://news.maho.cc/sakurairo.php\"  alt=\"News_Plus\" "
-"width=\"100%\" height=\"100%\" />"
+"<img src=\"https://api.fuukei.org/info/sponsor.php?action=view\"  "
+"alt=\"Sponsor\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
 #: options/theme-options.php:60
@@ -4374,30 +4374,20 @@ msgstr ""
 "默認採用 <a href=\"https://www.upyun.com/\">UPYUN</a> 提供的镜像源。"
 
 #: options/theme-options.php:4170
-msgid "Theme Sponsors"
-msgstr "贊助資訊"
-
-#: options/theme-options.php:4175
-msgid ""
-"<img src=\"https://news.maho.cc/sponsors.php\"  alt=\"sponsors\" width=\"65%"
-"\" height=\"65%\" />"
-msgstr ""
-
-#: options/theme-options.php:4180
 msgid "Theme Contributors"
 msgstr "貢獻者"
 
-#: options/theme-options.php:4185
+#: options/theme-options.php:4175
 msgid ""
-"<img src=\"https://opencollective.com/fuukei/contributors.svg\" alt=\"Theme "
-"Contributors\" width=\"100%\" height=\"100%\" />"
+"<img src=\"https://api.fuukei.org/info/contributors.php?action=view\" "
+"alt=\"Theme Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:4190
+#: options/theme-options.php:4180
 msgid "Privacy information"
 msgstr "隱私資訊"
 
-#: options/theme-options.php:4195
+#: options/theme-options.php:4185
 msgid ""
 "<p>The theme respects your privacy</p>\n"
 "        <p>However, when you use a service provider pre-populated by the "
@@ -4413,11 +4403,11 @@ msgstr ""
 "        <p>您可以通過本地化與主題相關的資源來減少發送給第三方的資訊，這些資源"
 "預先配置了供您修改的選項</p>"
 
-#: options/theme-options.php:4203
+#: options/theme-options.php:4193
 msgid "Send Theme Version to Fuukei"
 msgstr "發送主題版到 Fuukei 官方"
 
-#: options/theme-options.php:4204
+#: options/theme-options.php:4194
 msgid ""
 "The theme will only send time and version information to Fuukei officials "
 "and the data will be cleaned regularly and used only to count version "
@@ -4426,11 +4416,11 @@ msgstr ""
 "該主題只會向 Fuukei 官方發送時間和版本資訊，數據將定期清理並僅用於計算版本更"
 "新。"
 
-#: options/theme-options.php:4210
+#: options/theme-options.php:4200
 msgid "Reference Information"
 msgstr "引用資訊"
 
-#: options/theme-options.php:4215
+#: options/theme-options.php:4205
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox Fluent Icon Pack</p>\n"
 "        <p>MUH2 Design Icon Referenced by 缄默 <a href=\"https://www.coolapk."
@@ -4439,11 +4429,11 @@ msgstr ""
 "<p>流暢設計圖標引用了由 Paradox 設計的 Fluent圖標包</p>\n"
 "        <p>沐氫圖標引用了由 缄默 設計的沐氫圖標包</p>"
 
-#: options/theme-options.php:4221
+#: options/theme-options.php:4211
 msgid "Dependency Information"
 msgstr "依賴資訊"
 
-#: options/theme-options.php:4226
+#: options/theme-options.php:4216
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
@@ -4456,7 +4446,7 @@ msgstr ""
 "        <p>更新功能依賴於 YahnisElsts 開源 <a href=\"https://github.com/"
 "YahnisElsts/plugin-update-checker\">Plugin Update Checker</a> 專案</p>"
 
-#: options/theme-options.php:4232
+#: options/theme-options.php:4222
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "
@@ -4486,32 +4476,3 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
-
-#~ msgid "Article Page Appreciation Function (Alipay QR Code)"
-#~ msgstr "文章頁面讚賞功能（支付寶二維碼）"
-
-#~ msgid "Upload Alipay Receipt QR Code Image"
-#~ msgstr "上傳支付寶收款碼圖像"
-
-#~ msgid "Article Page Appreciation Function (Wechat QR Code)"
-#~ msgstr "文章頁面讚賞功能（微信QR碼）"
-
-#~ msgid "Upload WeChat Receipt QR Code Image"
-#~ msgstr "上傳微信收款碼圖像"
-
-#~ msgid "Mail Template Featured Image"
-#~ msgstr "郵件模板特色圖像"
-
-#~ msgid "Set the background image of your reply email"
-#~ msgstr "設定你的回復郵件上方背景圖像"
-
-#~ msgid "Mail Template Sending Address Prefix"
-#~ msgstr "郵件模板發件地址前綴"
-
-#~ msgid ""
-#~ "Used to send system mail. The sender address will be displayed in the "
-#~ "user's mailbox, don't use Non-English Characters. The default system mail "
-#~ "address is bibi@your domain"
-#~ msgstr ""
-#~ "用於發送系統郵件，在用戶的郵箱中顯示的發件人地址，不要使用中文，默認系統郵"
-#~ "件地址為 bibi@你的域名"

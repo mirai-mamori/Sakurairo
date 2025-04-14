@@ -4,7 +4,7 @@
 
 <h1 align="left">Theme Sakurairo </h1>
 
-> 一个多彩，轻松上手，体验完善，具有强大自定义功能的WordPress主题
+> 一款具有 AI 辅助阅读功能的 WordPress 主题，多彩、友好、功能全面、体验完善。
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)[![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/Fuukei/Public_Repository?color=red&logo=jsdelivr&logoColor=red&style=for-the-badge)](https://www.jsdelivr.com/package/gh/mirai-mamori/sakurairo)
 
@@ -35,6 +35,8 @@
 
 ## 感谢每一位支持我们的你：
 
+<a href="https://afdian.com/a/mamori"><img alt="afdian" height="100%" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/afdian.webp"></a>
+
 [![image](https://api.fuukei.org/info/afdian_sponsors.svg)](https://afdian.com/a/mamori)
 
 ## 主题贡献：
@@ -51,7 +53,7 @@
 
 ### 引用相关：
 
-- 本主题社交网络图标中，流畅设计图标引用于由Paradox设计的 Fluent 图标包
+- 本主题社交网络图标中，流畅设计图标引用于由 Paradox 设计的 Fluent 图标包
 
 - 本主题社交网络图标中，沐氢图标引用于由缄默设计的沐氢图标包
 

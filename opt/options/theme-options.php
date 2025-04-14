@@ -49,7 +49,7 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://api.fuukei.org/info/sponsor.php?action=view"  alt="Sponsor" width="100%" height="100%" />','sakurairo_csf'),
+        'content' => __('<img src="https://api.fuukei.org/info/afdian_sponsors.svg"  alt="Sponsor" width="100%" height="100%" />','sakurairo_csf'),
       ),
 
     )
@@ -4172,7 +4172,7 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://api.fuukei.org/info/contributors.php?action=view" alt="Theme Contributors" width="100%" height="100%" />','sakurairo_csf'),
+        'content' => __('<img src="https://api.fuukei.org/info/contributors.svg" alt="Theme Contributors" width="100%" height="100%" />','sakurairo_csf'),
       ),
 
       array(

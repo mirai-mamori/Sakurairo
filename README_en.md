@@ -4,7 +4,7 @@
 
 <h1 align="left">Theme Sakurairo </h1>
 
-> A Colorful, Easy-to-use, Perfect Experience, and Powerful Customizable WordPress Theme
+> A WordPress theme that is built with AI-assisted reading features, colorful, user-friendly, well-rounded, and rich in functionalities. 
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)[![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/Fuukei/Public_Repository?color=red&logo=jsdelivr&logoColor=red&style=for-the-badge)](https://www.jsdelivr.com/package/gh/mirai-mamori/sakurairo)
 
@@ -24,6 +24,12 @@
 
 - When you are sure that you are faced with a bug, please [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) the bug, and make a description as detailed as possible.
 Please fill in with the issue template. Thanks for your cooperation.
+
+## Thank you to everyone who supports us!
+
+<a href="https://liberapay.com/furina/donate"><img alt="liberapay" height="100%" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/liberapay.webp"></a><a href="https://app.unifans.io/c/somekawahitomi"><img alt="unifans" height="100%" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/unifans.webp"></a>
+
+[![image](https://api.fuukei.org/info/afdian_sponsors.svg)](https://afdian.com/a/mamori)
 
 ## Contributors:
 

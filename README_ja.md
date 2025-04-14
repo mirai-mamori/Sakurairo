@@ -4,7 +4,7 @@
 
 <h1 align="left">Theme Sakurairo </h1>
 
-> デザインが多彩、操作が簡単、体験が完璧、カスタマイズ性が高いのWordPressテーマです
+> AIが読み上げをアシストするWordPressテーマ。カラフルで親しみやすく、機能が充実しています。
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)[![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/Fuukei/Public_Repository?color=red&logo=jsdelivr&logoColor=red&style=for-the-badge)](https://www.jsdelivr.com/package/gh/mirai-mamori/sakurairo)
 
@@ -23,6 +23,12 @@
 - このテーマの使い方についてご不明な点がございましたら、[サポートドキュメント](https://docs.fuukei.org)を**ご覧ください**。 
 
 - 自分が体験している現象が本当にBugであることを確認した上で、 [issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) で質問をお寄せください。テンプレートに沿って、出来るだけ詳しく説明してください。ご協力ありがとうございました。
+
+## 応援してくださる皆さん、ありがとうございます！
+
+<a href="https://liberapay.com/furina/donate"><img alt="liberapay" height="100%" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/liberapay.webp"></a><a href="https://app.unifans.io/c/somekawahitomi"><img alt="unifans" height="100%" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/unifans.webp"></a>
+
+[![image](https://api.fuukei.org/info/afdian_sponsors.svg)](https://afdian.com/a/mamori)
 
 ## テーマの開発者たち：
 

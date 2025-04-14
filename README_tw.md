@@ -4,7 +4,7 @@
 
 <h1 align="left">Theme Sakurairo </h1>
 
-> 一個多彩，輕鬆上手，體驗完善，具有強大的自定義功能的WordPress主題
+> 一款具有 AI 輔助閱讀功能的 WordPress 主題，多彩、友善、功能全面、體驗完善。
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)[![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/Fuukei/Public_Repository?color=red&logo=jsdelivr&logoColor=red&style=for-the-badge)](https://www.jsdelivr.com/package/gh/mirai-mamori/sakurairo)
 
@@ -24,6 +24,12 @@
 
 - 在確認你遇到的現象確實是一個Bug後，請在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交問題，並為該問題可以的描述清楚，
 按照提供的問題模板進行填寫，謝謝配合。
+
+## 感謝所有支持我們的你：
+
+<a href="https://liberapay.com/furina/donate"><img alt="liberapay" height="100%" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/liberapay.webp"></a><a href="https://app.unifans.io/c/somekawahitomi"><img alt="unifans" height="100%" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/unifans.webp"></a>
+
+[![image](https://api.fuukei.org/info/afdian_sponsors.svg)](https://afdian.com/a/mamori)
 
 ## 贊助商：
 
