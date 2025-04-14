@@ -31,7 +31,7 @@
 
 ## 主題貢獻：
 
-<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://kiseki.blog/info/contributors.php?action=view" alt="contributors" height="100%"></a>
+<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://kiseki.blog/info/contributors.svg" alt="contributors" height="100%" width="100%"></a>
 
 ## 主題說明：
 
@@ -54,8 +54,6 @@
 - 本主題使用 YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) 以提供主題更新功能
 
 ## 希望你喜歡！
-
-[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/tw-ver2.7info.png)](https://docs.fuukei.org/)
 
 - Star 趨勢  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 

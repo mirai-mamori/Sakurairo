@@ -26,7 +26,7 @@
 
 ## テーマの開発者たち：
 
-<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://kiseki.blog/info/contributors.php?action=view" alt="contributors" height="100%"></a>
+<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://kiseki.blog/info/contributors.svg" alt="contributors" height="100%" width="100%"></a>
 
 ## 関連記事：
 
@@ -49,8 +49,6 @@
 - 本テーマでは、YahnisElstsさんの[Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) を使って、テーマのアップデートを提供しています。
 
 ## 楽しんでいただけたら幸いです。
-
-[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/jp-ver2.7info.png)](https://docs.fuukei.org/)
 
 -  Starトレンド  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 

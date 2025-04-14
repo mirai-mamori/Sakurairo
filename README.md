@@ -33,13 +33,13 @@
 
 <a href="https://www.houdeyun.cn/"><img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/houdeyun2024.webp" alt="HOUDEYUN" width="400"></a>
 
-## 支持我们：
+## 感谢每一位支持我们的你：
 
-[![image](https://kiseki.blog/info/sponsor.php?action=view)](https://afdian.com/a/mamori)
+[![image](https://kiseki.blog/info/afdian_sponsors.svg)](https://afdian.com/a/mamori)
 
 ## 主题贡献：
 
-<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://kiseki.blog/info/contributors.php?action=view" alt="contributors" height="100%"></a>
+<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://kiseki.blog/info/contributors.svg" alt="contributors" height="100%" width="100%"></a>
 
 ## 主题说明：
 

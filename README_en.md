@@ -27,7 +27,7 @@ Please fill in with the issue template. Thanks for your cooperation.
 
 ## Contributors:
 
-<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://kiseki.blog/info/contributors.php?action=view" alt="contributors" height="100%"></a>
+<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://kiseki.blog/info/contributors.svg" alt="contributors" height="100%" width="100%"></a>
 
 ## About Sakurairo：
 
@@ -50,8 +50,6 @@ Please fill in with the issue template. Thanks for your cooperation.
 - The theme uses YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) to provide updates.
 
 ## Hope you can enjoy it!
-
-[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/en-ver2.7info.png)](https://docs.fuukei.org/)
 
 - Star Trends  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 
