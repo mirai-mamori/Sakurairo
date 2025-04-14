@@ -35,7 +35,7 @@
 
 ## 感谢每一位支持我们的你：
 
-<a href="https://afdian.com/a/mamori"><img alt="afdian" height="100%" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/afdian.webp"></a>
+<a href="https://afdian.com/a/mamori"><img alt="afdian" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/afdian.webp"></a>
 
 [![image](https://api.fuukei.org/info/afdian_sponsors.svg)](https://afdian.com/a/mamori)
 
