@@ -29,9 +29,7 @@
 
 ## 赞助商：
 
-<a href="https://www.upyun.com/"><img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/upyun2024.webp" alt="UPYUN" width="400"></a>  
-
-<a href="https://www.houdeyun.cn/"><img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/houdeyun2024.webp" alt="HOUDEYUN" width="400"></a>
+<a href="https://www2.waf.pro/"><img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/wafpro.webp" alt="warpro" width="200"></a>  
 
 ## 感谢每一位支持我们的你：
 

@@ -31,10 +31,6 @@
 
 [![image](https://api.fuukei.org/info/afdian_sponsors.svg)](https://afdian.com/a/mamori)
 
-## 贊助商：
-
-<a href="https://www.upyun.com/"><img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/options/upyun_logo.webp" alt="UPYUN" width="200"></a>
-
 ## 主題貢獻：
 
 <a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://api.fuukei.org/info/contributors.svg" alt="contributors" height="100%" width="100%"></a>

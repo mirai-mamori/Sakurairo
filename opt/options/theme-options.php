@@ -49,6 +49,11 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'content',
+        'content' => __('<a href="https://afdian.com/a/mamori"><img alt="afdian" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/afdian.webp"></a><a href="https://liberapay.com/furina/donate"><img alt="liberapay" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/liberapay.webp"></a><a href="https://app.unifans.io/c/somekawahitomi"><img alt="unifans" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/unifans.webp"></a>','sakurairo_csf'),
+      ),
+
+      array(
+        'type'    => 'content',
         'content' => __('<img src="https://api.fuukei.org/info/afdian_sponsors.svg"  alt="Sponsor" width="100%" height="100%" />','sakurairo_csf'),
       ),
 
