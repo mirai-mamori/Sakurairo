@@ -29,11 +29,11 @@ Please fill in with the issue template. Thanks for your cooperation.
 
 <a href="https://liberapay.com/furina/donate"><img alt="liberapay" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/liberapay.webp"></a><a href="https://app.unifans.io/c/somekawahitomi"><img alt="unifans" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/unifans.webp"></a>
 
-[![image](https://api.fuukei.org/info/afdian_sponsors.svg)](https://afdian.com/a/mamori)
+[![image](https://fuukei-api.nyat.icu/api/sponsors)](https://afdian.com/a/mamori)
 
 ## Contributors:
 
-<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://api.fuukei.org/info/contributors.svg" alt="contributors" height="100%" width="100%"></a>
+<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://fuukei-api.nyat.icu/api/contributors" alt="contributors" height="100%" width="100%"></a>
 
 ## About Sakurairo：
 
@@ -54,6 +54,8 @@ Please fill in with the issue template. Thanks for your cooperation.
 - The theme uses Codestar [Codestar Framework](https://github.com/Codestar/codestar-framework) as settings framework. 
 
 - The theme uses YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) to provide updates.
+
+- The theme uses Themeum [Kirki](https://github.com/themeum/kirki) to provide visual editor related functions.
 
 ## Hope you can enjoy it!
 

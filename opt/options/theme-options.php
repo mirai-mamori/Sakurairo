@@ -54,7 +54,7 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://api.fuukei.org/info/afdian_sponsors.svg"  alt="Sponsor" width="100%" height="100%" />','sakurairo_csf'),
+        'content' => __('<img src="https://fuukei-api.nyat.icu/api/sponsors"  alt="Sponsor" width="100%" height="100%" />','sakurairo_csf'),
       ),
 
     )
@@ -4177,7 +4177,7 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://api.fuukei.org/info/contributors.svg" alt="Theme Contributors" width="100%" height="100%" />','sakurairo_csf'),
+        'content' => __('<img src="https://fuukei-api.nyat.icu/api/contributors" alt="Theme Contributors" width="100%" height="100%" />','sakurairo_csf'),
       ),
 
       array(
@@ -4219,7 +4219,8 @@ $prefix = 'iro_options';
       array(
         'type'    => 'content',
         'content' => __('<p>Options Framework Relies on the Codestar Open Source <a href="https://github.com/Codestar/codestar-framework">Codestar Framework</a> Project</p>
-        <p>Update Function Relies on YahnisElsts Open Source <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin Update Checker</a> Project</p>','sakurairo_csf'),
+        <p>Update Function Relies on YahnisElsts Open Source <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin Update Checker</a> Project</p>
+        <p>Visual Editor Related Functions Relies on Themeum Open Source <a href="https://github.com/themeum/kirki">Kirki</a> Project</p>','sakurairo_csf'),
       ),
 
       array(

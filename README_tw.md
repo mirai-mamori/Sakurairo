@@ -29,11 +29,11 @@
 
 <a href="https://liberapay.com/furina/donate"><img alt="liberapay" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/liberapay.webp"></a><a href="https://app.unifans.io/c/somekawahitomi"><img alt="unifans" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/unifans.webp"></a>
 
-[![image](https://api.fuukei.org/info/afdian_sponsors.svg)](https://afdian.com/a/mamori)
+[![image](https://fuukei-api.nyat.icu/api/sponsors)](https://afdian.com/a/mamori)
 
 ## 主題貢獻：
 
-<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://api.fuukei.org/info/contributors.svg" alt="contributors" height="100%" width="100%"></a>
+<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://fuukei-api.nyat.icu/api/contributors" alt="contributors" height="100%" width="100%"></a>
 
 ## 主題說明：
 
@@ -54,6 +54,8 @@
 - 本主題使用 Codestar [Codestar Framework](https://github.com/Codestar/codestar-framework) 作為設置框架
 
 - 本主題使用 YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) 以提供主題更新功能
+
+- 本主题使用 Themeum [Kirki](https://github.com/themeum/kirki) 以提供可視化編輯器相關功能
 
 ## 希望你喜歡！
 

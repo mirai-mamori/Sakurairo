@@ -35,11 +35,11 @@
 
 <a href="https://afdian.com/a/mamori"><img alt="afdian" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/afdian.webp"></a>
 
-[![image](https://api.fuukei.org/info/afdian_sponsors.svg)](https://afdian.com/a/mamori)
+[![image](https://fuukei-api.nyat.icu/api/sponsors)](https://afdian.com/a/mamori)
 
 ## 主题贡献：
 
-<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://api.fuukei.org/info/contributors.svg" alt="contributors" height="100%" width="100%"></a>
+<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://fuukei-api.nyat.icu/api/contributors" alt="contributors" height="100%" width="100%"></a>
 
 ## 主题说明：
 
@@ -60,6 +60,8 @@
 - 本主题使用 Codestar [Codestar Framework](https://github.com/Codestar/codestar-framework) 作为设置框架
 
 - 本主题使用 YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) 以提供主题更新功能
+
+- 本主题使用 Themeum [Kirki](https://github.com/themeum/kirki) 以提供可视化编辑器相关功能
 
 ## 希望你喜欢！
 
