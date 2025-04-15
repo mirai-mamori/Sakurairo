@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-17 17:20+0900\n"
+"POT-Creation-Date: 2025-04-14 21:42+0900\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -36,7 +36,7 @@ msgid ""
 "changed, or is temporarily unavailable."
 msgstr ""
 
-#: 404.php:202 header.php:193 layouts/sakura_header.php:71 search.php:176
+#: 404.php:202 header.php:191 layouts/sakura_header.php:71 search.php:176
 msgid "Search..."
 msgstr ""
 
@@ -52,71 +52,75 @@ msgstr ""
 msgid "Woooooow ヾ(≧∇≦*)ゝ"
 msgstr ""
 
-#: comments.php:76
+#: comments.php:75
 msgid "view comments"
 msgstr ""
 
-#: comments.php:77 comments.php:83
+#: comments.php:84 tpl/meta-comments.php:4
+msgid "NOTHING"
+msgstr ""
+
+#: comments.php:86 comments.php:97
 msgid " comment"
 msgstr ""
 
-#: comments.php:77 comments.php:83
+#: comments.php:88 comments.php:97
 msgid " comments"
 msgstr ""
 
-#: comments.php:103
+#: comments.php:117
 msgid "no comment"
 msgstr ""
 
-#: comments.php:118
+#: comments.php:132
 msgid "Click here to show captcha"
 msgstr ""
 
-#: comments.php:165
+#: comments.php:179
 msgid "Comment in private"
 msgstr ""
 
-#: comments.php:168
+#: comments.php:182
 msgid "Comment reply notify"
 msgstr ""
 
-#: comments.php:193
+#: comments.php:210
 msgid "Leave a Reply to"
 msgstr ""
 
-#: comments.php:194
+#: comments.php:211
 msgid "Cancel Reply"
 msgstr ""
 
-#: comments.php:217
+#: comments.php:234
 msgid "Nickname or QQ number"
 msgstr ""
 
-#: comments.php:217 comments.php:221
+#: comments.php:234 comments.php:238
 msgid "Must* "
 msgstr ""
 
-#: comments.php:218
+#: comments.php:235
 msgid "Auto pull nickname and avatar with a QQ num. entered"
 msgstr ""
 
-#: comments.php:221
+#: comments.php:238
 msgid "email"
 msgstr ""
 
-#: comments.php:222
+#: comments.php:239
 msgid "You will receive notification by email"
 msgstr ""
 
-#: comments.php:225
+#: comments.php:242
 msgid "Site"
 msgstr ""
 
-#: comments.php:226
+#: comments.php:243
 msgid "Advertisement is forbidden 😀"
 msgstr ""
 
-#: comments.php:238
+#: comments.php:255
 msgid "Save your private info"
 msgstr ""
 
@@ -137,7 +141,7 @@ msgstr ""
 msgid "Want to find something?"
 msgstr ""
 
-#: footer.php:84 header.php:258
+#: footer.php:84 header.php:256
 msgid "Search"
 msgstr ""
 
@@ -263,33 +267,33 @@ msgid ""
 "Options to learn how to set it up."
 msgstr ""
 
-#: functions.php:540
+#: functions.php:576
 msgid "Copied!"
 msgstr ""
 
-#: functions.php:541
+#: functions.php:577
 msgid "Copy Code"
 msgstr ""
 
-#: functions.php:542
+#: functions.php:578
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, "
 "Cover Cache won't take effect."
 msgstr ""
 
-#: functions.php:543
+#: functions.php:579
 msgid "Commiting...."
 msgstr ""
 
-#: functions.php:544
+#: functions.php:580
 msgid "Succeed"
 msgstr ""
 
-#: functions.php:545
+#: functions.php:581
 msgid "10 files max per request"
 msgstr ""
 
-#: functions.php:546
+#: functions.php:582
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -298,15 +302,15 @@ msgid ""
 "This image is too large~Please reupload!"
 msgstr ""
 
-#: functions.php:547
+#: functions.php:583
 msgid "Uploading..."
 msgstr ""
 
-#: functions.php:548
+#: functions.php:584
 msgid "Uploaded successfully~"
 msgstr ""
 
-#: functions.php:549
+#: functions.php:585
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -314,124 +318,124 @@ msgid ""
 "{2}"
 msgstr ""
 
-#: functions.php:550
+#: functions.php:586
 msgid "Upload failed, please retry."
 msgstr ""
 
-#: functions.php:551
+#: functions.php:587
 msgid "Page Load failed. HTTP {0}"
 msgstr ""
 
-#: functions.php:552
+#: functions.php:588
 msgid "Glad you come, but we've got nothing left."
 msgstr ""
 
-#: functions.php:553 search.php:85
+#: functions.php:589 search.php:85
 msgid "Post"
 msgstr ""
 
-#: functions.php:554
+#: functions.php:590
 msgid "Tag"
 msgstr ""
 
-#: functions.php:555
+#: functions.php:591
 msgid "Category"
 msgstr ""
 
-#: functions.php:556 search.php:96
+#: functions.php:592 search.php:96
 msgid "Page"
 msgstr ""
 
-#: functions.php:557
+#: functions.php:593
 msgid "Comment"
 msgstr ""
 
-#: functions.php:558
+#: functions.php:594
 msgid "Paused..."
 msgstr ""
 
-#: functions.php:559
+#: functions.php:595
 msgid "Loading Video..."
 msgstr ""
 
-#: functions.php:560
+#: functions.php:596
 msgid "Downloading fonts, be aware of your data usage."
 msgstr ""
 
-#: functions.php:561
+#: functions.php:597
 msgid "Are you sure you want set it private?"
 msgstr ""
 
-#: functions.php:562
+#: functions.php:598
 msgid "You had set private comment before"
 msgstr ""
 
-#: functions.php:646 inc/theme-plus.php:190
+#: functions.php:686 inc/theme-plus.php:211
 msgid "Author"
 msgstr ""
 
-#: functions.php:646
+#: functions.php:686
 msgid "Blogger"
 msgstr ""
 
-#: functions.php:655 functions.php:3666
+#: functions.php:695 functions.php:3630
 msgid "Location"
 msgstr ""
 
-#: functions.php:661
+#: functions.php:701
 msgid "Private"
 msgstr ""
 
-#: functions.php:663
+#: functions.php:703
 msgid "Yes"
 msgstr ""
 
-#: functions.php:665
+#: functions.php:705
 msgid "No"
 msgstr ""
 
-#: functions.php:668 inc/link-status.php:168
+#: functions.php:708 inc/link-status.php:168
 msgid "Edit"
 msgstr ""
 
-#: functions.php:798
+#: functions.php:838
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:828 functions.php:3217 functions.php:3410
+#: functions.php:868 functions.php:3181 functions.php:3374
 msgid "Pending Links"
 msgstr ""
 
-#: functions.php:1623
+#: functions.php:1674
 msgid "All expand/collapse"
 msgstr ""
 
-#: functions.php:1657
+#: functions.php:1708
 msgid " year"
 msgstr ""
 
-#: functions.php:1660
+#: functions.php:1711
 msgid " post(s)"
 msgstr ""
 
-#: functions.php:1710 functions.php:1713 inc/theme-plus.php:345
+#: functions.php:1761 functions.php:1764 inc/theme-plus.php:366
 #: layouts/mo_toc_menu.php:29
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:2261
+#: functions.php:2312
 msgid "QQ"
 msgstr ""
 
-#: functions.php:2363
+#: functions.php:2414
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:2389
+#: functions.php:2440
 msgid "Please do not try to use Javascript in your comments!"
 msgstr ""
 
-#: functions.php:2499
+#: functions.php:2550
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -439,189 +443,189 @@ msgid ""
 "target=\"_blank\"> pseudo-static </a>. </ b>"
 msgstr ""
 
-#: functions.php:2632
+#: functions.php:2683
 #, php-format
 msgid "%s says: "
 msgstr ""
 
-#: functions.php:2653
+#: functions.php:2704
 msgid "Expand / Collapse"
 msgstr ""
 
-#: functions.php:3167
+#: functions.php:3131
 msgid "Invalid request method."
 msgstr ""
 
-#: functions.php:3178
+#: functions.php:3142
 msgid "You are submitting too frequently. Please try again later."
 msgstr ""
 
-#: functions.php:3184
+#: functions.php:3148
 msgid "Security verification failed."
 msgstr ""
 
-#: functions.php:3192
+#: functions.php:3156
 msgid "Please fill in all required fields."
 msgstr ""
 
-#: functions.php:3237 user/page-links.php:501
+#: functions.php:3201 user/page-links.php:498
 msgid ""
 "Sorry, we are not accepting new link submissions at this time due to "
 "backlog. Please try again later."
 msgstr ""
 
-#: functions.php:3250
+#: functions.php:3214
 msgid "Site name is too long."
 msgstr ""
 
-#: functions.php:3255
+#: functions.php:3219
 msgid "Site description is too long."
 msgstr ""
 
-#: functions.php:3261
+#: functions.php:3225
 msgid "Please enter a valid URL."
 msgstr ""
 
-#: functions.php:3267
+#: functions.php:3231
 msgid "Please enter a valid image URL."
 msgstr ""
 
-#: functions.php:3273
+#: functions.php:3237
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: functions.php:3281
+#: functions.php:3245
 msgid "This website URL is already in our links list."
 msgstr ""
 
-#: functions.php:3307 functions.php:3372
+#: functions.php:3271 functions.php:3336
 msgid "Failed to submit link. Please try again later."
 msgstr ""
 
-#: functions.php:3319 functions.php:3379
+#: functions.php:3283 functions.php:3343
 #, php-format
 msgid "[%s] New Friend Link Submission"
 msgstr ""
 
-#: functions.php:3321 functions.php:3381
+#: functions.php:3285 functions.php:3345
 #, php-format
 msgid ""
 "A new friend link has been submitted on your website %s:\n"
 "\n"
 msgstr ""
 
-#: functions.php:3322
+#: functions.php:3286
 #, php-format
 msgid "Site Name: %s\n"
 msgstr ""
 
-#: functions.php:3323
+#: functions.php:3287
 #, php-format
 msgid "Site URL: %s\n"
 msgstr ""
 
-#: functions.php:3324
+#: functions.php:3288
 #, php-format
 msgid "Site Description: %s\n"
 msgstr ""
 
-#: functions.php:3325
+#: functions.php:3289
 #, php-format
 msgid "Site Image: %s\n"
 msgstr ""
 
-#: functions.php:3326
+#: functions.php:3290
 #, php-format
 msgid "Contact Email: %s\n"
 msgstr ""
 
-#: functions.php:3327
+#: functions.php:3291
 #, php-format
 msgid ""
 "IP Address: %s\n"
 "\n"
 msgstr ""
 
-#: functions.php:3328
+#: functions.php:3292
 msgid "Please review this submission in your WordPress admin panel.\n"
 msgstr ""
 
-#: functions.php:3338 functions.php:3389
+#: functions.php:3302 functions.php:3353
 msgid "Thank you! Your link has been submitted for review."
 msgstr ""
 
-#: functions.php:3343
+#: functions.php:3307
 #, php-format
 msgid "Site Name: %s"
 msgstr ""
 
-#: functions.php:3344
+#: functions.php:3308
 #, php-format
 msgid "Site URL: %s"
 msgstr ""
 
-#: functions.php:3345
+#: functions.php:3309
 #, php-format
 msgid "Site Description: %s"
 msgstr ""
 
-#: functions.php:3346
+#: functions.php:3310
 #, php-format
 msgid "Site Image: %s"
 msgstr ""
 
-#: functions.php:3347
+#: functions.php:3311
 #, php-format
 msgid "Contact Email: %s"
 msgstr ""
 
-#: functions.php:3348
+#: functions.php:3312
 #, php-format
 msgid "IP Address: %s"
 msgstr ""
 
-#: functions.php:3351
+#: functions.php:3315
 msgid "Friend Link Submission: "
 msgstr ""
 
-#: functions.php:3383
+#: functions.php:3347
 msgid ""
 "\n"
 "Please review this submission in your WordPress admin panel.\n"
 msgstr ""
 
-#: functions.php:3396
+#: functions.php:3360
 msgid "An unexpected error occurred. Please try again later."
 msgstr ""
 
-#: functions.php:3572
+#: functions.php:3536
 #, php-format
 msgid "[%s] Friend Link Check Failure: %s"
 msgstr ""
 
-#: functions.php:3575
+#: functions.php:3539
 #, php-format
 msgid ""
 "The friend link '%s' has failed our status check %d times.\n"
 "\n"
 msgstr ""
 
-#: functions.php:3576
+#: functions.php:3540
 #, php-format
 msgid "Link URL: %s\n"
 msgstr ""
 
-#: functions.php:3579
+#: functions.php:3543
 #, php-format
 msgid "HTTP Status Code: %s\n"
 msgstr ""
 
-#: functions.php:3583
+#: functions.php:3547
 #, php-format
 msgid "Error Message: %s\n"
 msgstr ""
 
-#: functions.php:3586
+#: functions.php:3550
 #, php-format
 msgid ""
 "\n"
@@ -629,60 +633,66 @@ msgid ""
 "\n"
 msgstr ""
 
-#: functions.php:3587
+#: functions.php:3551
 msgid ""
 "You may want to check this link and consider removing it if it remains "
 "unavailable.\n"
 msgstr ""
 
-#: functions.php:3707
+#: functions.php:3671
 msgid "Access denied."
 msgstr ""
 
-#: header.php:267 layouts/sakura_header.php:119
+#: header.php:265 layouts/sakura_header.php:120
 msgid "Random Background"
 msgstr ""
 
 #: inc/cache_settings.php:7 inc/cache_settings.php:8
-#: inc/cache_settings.php:44
+#: inc/cache_settings.php:42
 msgid "Cache Settings"
 msgstr ""
 
-#: inc/cache_settings.php:38
+#: inc/cache_settings.php:39
+msgid "Cache Updated!"
+msgstr ""
+
+#: inc/cache_settings.php:43
 msgid "Cache settings"
 msgstr ""
 
-#: inc/cache_settings.php:39
+#: inc/cache_settings.php:44
 msgid ""
 "If your server network environment is poor, you can click the link below "
 "to manually obtain the response content and fill it in"
 msgstr ""
 
-#: inc/cache_settings.php:40
+#: inc/cache_settings.php:45
 msgid ""
 "If the content is empty or incorrect, the server will try to automatically "
 "pull it"
 msgstr ""
 
-#: inc/cache_settings.php:41
+#: inc/cache_settings.php:46
 msgid ""
 "The link target will be automatically updated after the relevant settings "
 "are saved"
 msgstr ""
 
-#: inc/cache_settings.php:46
-msgid "Cache Updated!"
+#: inc/cache_settings.php:47
+msgid ""
+"The unit is seconds. And it will take effect permanently when it was set "
+"to 0."
 msgstr ""
 
-#: inc/cache_settings.php:54 inc/cache_settings.php:66
+#: inc/cache_settings.php:55 inc/cache_settings.php:67
 msgid "Cache expire time"
 msgstr ""
 
-#: inc/cache_settings.php:60
+#: inc/cache_settings.php:61
 msgid "Bangumi Cache"
 msgstr ""
 
-#: inc/cache_settings.php:72
+#: inc/cache_settings.php:73
 msgid "Steam Cache"
 msgstr ""
 
@@ -1044,7 +1054,7 @@ msgstr ""
 msgid "All item has been loaded."
 msgstr ""
 
-#: inc/classes/Cache.php:70 inc/theme-plus.php:633
+#: inc/classes/Cache.php:70 inc/theme-plus.php:654
 msgid "The comment is private"
 msgstr ""
 
@@ -1070,6 +1080,10 @@ msgstr ""
 
 #: inc/classes/Captcha.php:192
 msgid "An error has occurred."
+msgstr ""
+
+#: inc/classes/Images.php:24
+msgid "Image Failed to Load"
 msgstr ""
 
 #: inc/classes/IpLocation.php:246 inc/classes/IpLocation.php:275
@@ -1112,27 +1126,27 @@ msgstr ""
 msgid "Paused "
 msgstr ""
 
-#: inc/classes/Steam.php:89
+#: inc/classes/Steam.php:91
 msgid "Load more"
 msgstr ""
 
-#: inc/classes/Steam.php:103
+#: inc/classes/Steam.php:105
 msgid "Playtime"
 msgstr ""
 
-#: inc/classes/Steam.php:104
+#: inc/classes/Steam.php:106
 msgid "Last Played"
 msgstr ""
 
-#: inc/classes/Steam.php:138
+#: inc/classes/Steam.php:140
 msgid "Not Played Yet"
 msgstr ""
 
-#: inc/classes/Steam.php:142
+#: inc/classes/Steam.php:144
 msgid "minute"
 msgstr ""
 
-#: inc/classes/Steam.php:145
+#: inc/classes/Steam.php:147
 msgid "hour"
 msgstr ""
 
@@ -1148,19 +1162,19 @@ msgstr ""
 msgid "Release date: "
 msgstr ""
 
-#: inc/classes/bangumi.php:132
+#: inc/classes/bangumi.php:135
 msgid "Watch progress: "
 msgstr ""
 
-#: inc/classes/bangumi.php:133
+#: inc/classes/bangumi.php:136
 msgid "No introduction yet"
 msgstr ""
 
-#: inc/classes/bangumi.php:145
+#: inc/classes/bangumi.php:148
 msgid "An error occured: "
 msgstr ""
 
-#: inc/classes/bangumi.php:151
+#: inc/classes/bangumi.php:154
 msgid "Load more..."
 msgstr ""
 
@@ -1376,55 +1390,55 @@ msgstr ""
 msgid "Posted on "
 msgstr ""
 
-#: inc/theme-plus.php:126
+#: inc/theme-plus.php:147
 msgid "Please upgrade wordpress to version 4.4+"
 msgstr ""
 
-#: inc/theme-plus.php:139
+#: inc/theme-plus.php:160
 msgid "You may post nothing"
 msgstr ""
 
-#: inc/theme-plus.php:145
+#: inc/theme-plus.php:166
 msgid "Please fill in the captcha answer"
 msgstr ""
 
-#: inc/theme-plus.php:148
+#: inc/theme-plus.php:169
 msgid ""
 "Have you modified the captcha code data? Or refresh the captcha and try "
 "again?"
 msgstr ""
 
-#: inc/theme-plus.php:156
+#: inc/theme-plus.php:177
 msgid "Please fill in the correct captcha answer"
 msgstr ""
 
-#: inc/theme-plus.php:239 inc/theme-plus.php:292
+#: inc/theme-plus.php:260 inc/theme-plus.php:313
 #, php-format
 msgid "Search results for \" %s \""
 msgstr ""
 
-#: inc/theme-plus.php:309 tpl/content-thumbcard.php:60
+#: inc/theme-plus.php:330 tpl/content-thumbcard.php:60
 #: tpl/content-thumbcard.php:66
 msgid "Your browser does not support HTML5 video."
 msgstr ""
 
-#: inc/theme-plus.php:340
+#: inc/theme-plus.php:361
 msgid "Signed in as"
 msgstr ""
 
-#: inc/theme-plus.php:346 layouts/mo_toc_menu.php:30
+#: inc/theme-plus.php:367 layouts/mo_toc_menu.php:30
 msgid "New post"
 msgstr ""
 
-#: inc/theme-plus.php:348 layouts/mo_toc_menu.php:34
+#: inc/theme-plus.php:369 layouts/mo_toc_menu.php:34
 msgid "Profile"
 msgstr ""
 
-#: inc/theme-plus.php:349 layouts/mo_toc_menu.php:35
+#: inc/theme-plus.php:370 layouts/mo_toc_menu.php:35
 msgid "Sign out"
 msgstr ""
 
-#: inc/theme-plus.php:370 layouts/mo_toc_menu.php:66
+#: inc/theme-plus.php:391 layouts/mo_toc_menu.php:66
 msgid "Log in"
 msgstr ""
 
@@ -1528,10 +1542,6 @@ msgid "Last updated on"
 msgstr ""
 
 #: tpl/meta-comments.php:4
-msgid "NOTHING"
-msgstr ""
-
-#: tpl/meta-comments.php:4
 msgid "1 Comment"
 msgstr ""
 
@@ -1577,52 +1587,52 @@ msgstr ""
 msgid "This author has not provided a description."
 msgstr ""
 
-#: user/page-bangumi.php:226 user/page-bilibiliFavList.php:217
-#: user/page-followVideos.php:213
+#: user/page-bangumi.php:223 user/page-bilibiliFavList.php:213
+#: user/page-followVideos.php:211
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr ""
 
-#: user/page-bangumi.php:233
+#: user/page-bangumi.php:230
 msgid "Please fill in the Bangumi UID in Sakura Options."
 msgstr ""
 
-#: user/page-bangumi.php:239
+#: user/page-bangumi.php:236
 msgid "Please fill in the My Anime List Username in Sakura Options."
 msgstr ""
 
-#: user/page-links.php:495
+#: user/page-links.php:492
 msgid "Submit Link"
 msgstr ""
 
-#: user/page-links.php:547
+#: user/page-links.php:544
 msgid "Submit Your Link"
 msgstr ""
 
-#: user/page-links.php:548
+#: user/page-links.php:545
 msgid "Please fill out the form below to submit your website link."
 msgstr ""
 
-#: user/page-links.php:554
+#: user/page-links.php:551
 msgid "Site Name"
 msgstr ""
 
-#: user/page-links.php:559
+#: user/page-links.php:556
 msgid "Site URL"
 msgstr ""
 
-#: user/page-links.php:564
+#: user/page-links.php:561
 msgid "Site Description"
 msgstr ""
 
-#: user/page-links.php:569
+#: user/page-links.php:566
 msgid "Site Logo/Avatar URL"
 msgstr ""
 
-#: user/page-links.php:574
+#: user/page-links.php:571
 msgid "Your Email"
 msgstr ""
 
-#: user/page-links.php:580
+#: user/page-links.php:577
 msgid "Verification Code"
 msgstr ""
 
@@ -1636,8 +1646,9 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable "
-"WordPress Theme (Based on Theme Sakura)"
+"A WordPress theme that is built with AI-assisted reading features, "
+"colorful, user-friendly, well-rounded, and rich in functionalities. (Based "
+"on Theme Sakura)"
 msgstr ""
 
 #. Author of the plugin/theme

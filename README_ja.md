@@ -12,7 +12,7 @@
 
 ## バージョン紹介：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/jp.png)](https://docs.fuukei.org/)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/jp.webp)](https://docs.fuukei.org/)
 
 ## 活用方法：
 

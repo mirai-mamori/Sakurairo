@@ -12,7 +12,7 @@
 
 ## What's new：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/en.png)](https://docs.fuukei.org//)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/en.webp)](https://docs.fuukei.org//)
 
 ## How to use:
 
