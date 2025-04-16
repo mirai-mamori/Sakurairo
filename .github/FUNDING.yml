@@ -1,3 +1,4 @@
-afdian: ['https://afdian.com/a/mamori']
-liberapay: ['https://liberapay.com/furina/donate']
-unifans: ['https://app.unifans.io/c/somekawahitomi']
+custom: 
+  - 'https://afdian.com/a/mamori' 
+  - 'https://app.unifans.io/c/somekawahitomi'
+liberapay: ['https://liberapay.com/furina/donate'] 
