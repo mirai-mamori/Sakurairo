@@ -9,7 +9,7 @@
     left: -236px;
     z-index: 4;
     opacity: 1;
-    transiton-property: opacity,bottom;
+    transition-property: opacity,bottom;
     transition-duration: .4s,.4s;
     animation-name: move2;
     animation-duration: 240s;
@@ -27,7 +27,7 @@
     left: 0;
     z-index: 3;
     opacity: 1;
-    transiton-property: opacity,bottom;
+    transition-property: opacity,bottom;
     transition-duration: .4s,.4s;
     animation-name: move2;
     animation-duration: 160s;

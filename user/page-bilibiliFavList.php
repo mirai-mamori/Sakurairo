@@ -1,18 +1,27 @@
 <?php
 
 /**
-  Template Name: 哔哩哔哩收藏模板
+  Template Name: Bilibili FavList Template
  */
 get_header();
 ?>
 <meta name="referrer" content="same-origin" />
 <style>
-    .comments {
-        display: none;
-    }
-
     .site-content {
         max-width: 1280px;
+    }
+
+    span.linkss-title {
+        font-size: 30px;
+        text-align: center;
+        display: block;
+        margin: 6.5% 0 7.5%;
+        letter-spacing: 2px;
+        font-weight: var(--global-font-weight);
+    }
+
+    .comments {
+        display: none;
     }
 
     .fav-list {
@@ -28,7 +37,6 @@ get_header();
         transition: max-height .5s ease-out;
         max-height: 200px;
         border-radius: 10px;
-
         color: #fff;
         box-shadow: 0 0 10px rgb(0 0 0 / 10%), 0 5px 20px rgb(0 0 0 / 20%);
     }
@@ -141,8 +149,6 @@ get_header();
         padding-top: 5px;
         padding-bottom: 5px;
     }
-
-
 
     @media screen and (min-width: 600px) {
         .folder-img {

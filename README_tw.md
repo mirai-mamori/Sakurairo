@@ -1,10 +1,10 @@
 [简体中文](README.md) | **繁體中文** | [English](README_en.md) | [日本語](README_ja.md)
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/banner-ver2.7.webp)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/banner-cn.webp)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
-> 一個多彩，輕鬆上手，體驗完善，具有強大的自定義功能的WordPress主題
+> 一款具有 AI 輔助閱讀功能的 WordPress 主題，多彩、友善、功能全面、體驗完善。
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)[![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/Fuukei/Public_Repository?color=red&logo=jsdelivr&logoColor=red&style=for-the-badge)](https://www.jsdelivr.com/package/gh/mirai-mamori/sakurairo)
 
@@ -12,7 +12,7 @@
 
 ## 版本宣傳：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/tw.png)](https://docs.fuukei.org//)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/tw.webp)](https://docs.fuukei.org/)
 
 ## 使用相關：
 
@@ -25,23 +25,15 @@
 - 在確認你遇到的現象確實是一個Bug後，請在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交問題，並為該問題可以的描述清楚，
 按照提供的問題模板進行填寫，謝謝配合。
 
-## 贊助商：
+## 感謝所有支持我們的你：
 
-<a href="https://www.upyun.com/"><img src="https://s.nmxc.ltd/sakurairo_vision/@2.7/options/upyun_logo.webp" alt="UPYUN" width="200"></a>
+<a href="https://liberapay.com/furina/donate"><img alt="liberapay" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/liberapay.webp"></a><a href="https://app.unifans.io/c/somekawahitomi"><img alt="unifans" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/unifans.webp"></a>
+
+[![image](https://fuukei-api.nyat.icu/api/sponsors)](https://afdian.com/a/mamori)
 
 ## 主題貢獻：
 
-### 主要貢獻：
-
-<a href="https://github.com/mirai-mamori"><img src="https://avatars3.githubusercontent.com/u/61381142?s=400" alt="mirai-mamori" width="100"></a>  <a href="https://github.com/Ukenn2112"><img src="https://avatars3.githubusercontent.com/u/60847880?s=400" alt="Ukenn" width="100"></a>  <a href="https://github.com/bymoye"><img src="https://avatars2.githubusercontent.com/u/27877470?s=400" alt="bymoye" width="100"></a> <a href="https://github.com/KotoriK"><img src="https://avatars.githubusercontent.com/u/52659125?s=400" alt="KotoriK" width="100"></a>  <a href="https://github.com/QL-A103"><img src="https://avatars.githubusercontent.com/u/57120572?v=4" alt="QL-A103" width="100"></a>  <a href="https://github.com/robert1chi"><img src="https://avatars.githubusercontent.com/u/40431036?v=4" alt="robert1chi" width="100"></a>  
-
-### 特別貢獻：
-
-<a href="https://github.com/spirit1431007"><img src="https://avatars1.githubusercontent.com/u/29689177?s=400" alt="Spirit" width="100"></a>  <a href="https://jokerm.com/"><img src="https://jokerm.com/assets/logo-csdark/" alt="JokerM" width="100"></a>  <a href="https://github.com/cocdeshijie"><img src="https://avatars.githubusercontent.com/u/39603339?v=4" alt="cocdeshijie" width="100"></a>  <a href="https://github.com/FeiyuCode"><img src="https://avatars0.githubusercontent.com/u/46924793?s=400" alt="FeiyuCode" width="100"></a>  <a href="https://github.com/tumeneco"><img src="https://avatars0.githubusercontent.com/u/68286041?s=400" alt="Tumeneco" width="100"></a>  <a href="https://github.com/flurrychan "><img src="https://avatars.githubusercontent.com/u/63506003?v=4" alt="Flurrychan" width="100"></a>  <a href="https://www.yukicat.net"><img src="https://avatars.githubusercontent.com/u/54615306?v=4" alt="DazaiYuki" width="100"></a>
-
-### 參與貢獻：
-
-<a href="https://github.com/laoxong"><img src="https://avatars.githubusercontent.com/u/31268830?v=4" alt="laoxong" width="100"></a>  <a href="https://github.com/Gao-pw"><img src="https://avatars.githubusercontent.com/u/48815350?v=4" alt="Gao-pw" width="100"></a>  <a href="https://github.com/AriharaShirone"><img src="https://avatars.githubusercontent.com/u/30365341?v=4" alt="AriharaShirone" width="100"></a>  <a href="https://github.com/NyaDoo"><img src="https://avatars.githubusercontent.com/u/65238336?v=4" alt="NyaDoo" width="100"></a>  <a href="https://github.com/Sakurakouji-Runa"><img src="https://avatars2.githubusercontent.com/u/46081776?s=400" alt="Sakurakouji-Runa" width="100"></a>  <a href="https://github.com/givenhyh"><img src="https://avatars3.githubusercontent.com/u/37971883?s=400" alt="givenhyh" width="100"></a>
+<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://fuukei-api.nyat.icu/api/contributors" alt="contributors" height="100%" width="100%"></a>
 
 ## 主題說明：
 
@@ -53,11 +45,9 @@
 
 ### 引用相關：
 
-- 本主題社交網絡圖標中，流暢設計圖標引用於由Paradox設計的[Fluent圖標包](https://wwi.lanzous.com/ikyq5kgx0wb)
+- 本主題社交網絡圖標中，流暢設計圖標引用於由Paradox設計的 Fluent 圖標包
 
-- 本主題社交網絡圖標中，沐氫圖標引用於由緘默設計的[沐氫圖標包](https://www.coolapk.com/apk/com.muh2.icon)
-
-- 本主題白貓樣式徽標參考原主題作者白貓，由 Hyacm 提供方案
+- 本主題社交網絡圖標中，沐氫圖標引用於由緘默設計的沐氫圖標包
 
 ### 依賴相關：
 
@@ -65,11 +55,9 @@
 
 - 本主題使用 YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) 以提供主題更新功能
 
-- 本主題使用 orhanerday [open-ai](https://github.com/orhanerday/open-ai) 以提供 ChatGPT 相關能力
+- 本主题使用 Themeum [Kirki](https://github.com/themeum/kirki) 以提供可視化編輯器相關功能
 
 ## 希望你喜歡！
-
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/tw-ver2.7info.png)](https://docs.fuukei.org/)
 
 - Star 趨勢  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 

@@ -21,6 +21,16 @@ class MyAnimeList
 	 */
 	function get_data()
 	{
+		$bangumi_cache = iro_opt('bangumi_cache', true);
+		$cache_key = 'bangumi_cache';
+
+		if ($bangumi_cache) {
+			$cached_content = json_decode(get_transient($cache_key),true);
+			if ($cached_content && isset($cached_content[0]['anime_url']) && !empty($cached_content[0]['anime_url'])) {
+				return $cached_content;
+			}
+		}
+
 		$username = $this->username;
 		$sort = $this->sort;
 		switch ($sort) {
@@ -34,17 +44,26 @@ class MyAnimeList
 				$sort = 'order=16&status=7';
 				break;
 		}
+		
 		$url = "https://myanimelist.net/animelist/$username/load.json?$sort";
-		$args = array(
-			'headers' => array(
+		$args = [
+			'headers' => [
 				'Host' => 'myanimelist.net',
 				'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97'
-			)
-		);
+			]
+		];
+		
 		$response = wp_remote_get($url, $args);
-		if(is_array($response)){
-			return json_decode($response["body"], true);
-		}else{
+		
+		if (is_array($response) && isset($response["body"])) {
+			$body = $response["body"];
+
+			if ($bangumi_cache && !empty($body)) {
+				auto_update_cache($cache_key, json_encode($response['body'],true));
+			}
+
+			return json_decode($body, true);
+		} else {
 			return false;
 		}
 	}
@@ -66,7 +85,7 @@ class MyAnimeList
 				$html .= MyAnimeList::get_item_details($item);
 				$total_episodes += $item['num_watched_episodes'];
 			}
-			$top_info = '<br><div id="bangumi-pagination"><span>' .
+			$top_info = '<br><div id="template-pagination"><span>' .
 			            __('Following ', 'sakurairo') . $item_count . __(' anime.', 'sakurairo') .
 			            __(' Watched ', 'sakurairo') . $total_episodes . __(' episodes.', 'sakurairo') .
 			            '</span></div>';

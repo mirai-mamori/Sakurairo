@@ -29,9 +29,6 @@ class Vaptcha
   public function html()
   {
     return <<<HTML
-      <p>
-        <label for="user_login">验证码</label>
-      </p>
       <div id="vaptchaContainer" class="vaptchaContainer">
         <div class="vaptcha-init-main">
             <div class="vaptcha-init-loading">

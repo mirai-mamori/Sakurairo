@@ -1,0 +1,1011 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sakurairo\n"
+"POT-Creation-Date: 2025-03-24 21:22+0800\n"
+"PO-Revision-Date: 2025-03-24 21:22+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: Sakurairo_C;__;esc_html__\n"
+"X-Poedit-SearchPath-0: customizer.php\n"
+
+#: customizer.php:29
+msgid "Global Options"
+msgstr "グローバル設定"
+
+#: customizer.php:34
+msgid "Homepage Cover"
+msgstr "ホームページカバー"
+
+#: customizer.php:39 customizer.php:972
+msgid "Homepage Components"
+msgstr "ホームページ構成要素"
+
+#: customizer.php:44
+msgid "Pages Options"
+msgstr "ページオプション"
+
+#: customizer.php:88
+msgid "Nav Menu"
+msgstr "ナビゲーションメニュー"
+
+#: customizer.php:96
+msgid ""
+"<p>You can edit your nav menu options <a href=\"/wp-admin/nav-menus."
+"php\">here</a></p>"
+msgstr ""
+"<p>ナビゲーションメニューの設定は<a href=\"/wp-admin/nav-menus.php\">こちら</"
+"a>で編集できます</p>"
+
+#: customizer.php:102
+msgid "Nav Menu Style"
+msgstr "ナビゲーションメニューのスタイル"
+
+#: customizer.php:112
+msgid "Spirit Island Nav Style"
+msgstr "スマートアイランドスタイル"
+
+#: customizer.php:114 customizer.php:177
+msgid "Always centered"
+msgstr "中心"
+
+#: customizer.php:115
+msgid "Dispersed"
+msgstr "ゆるい"
+
+#: customizer.php:128
+msgid "Nav Menu Radius"
+msgstr "ナビゲーションメニューの角丸半径"
+
+#: customizer.php:153
+msgid "Classic Nav Style"
+msgstr "ナビゲーションタグ"
+
+#: customizer.php:157
+msgid "Loose"
+msgstr "ゆるい"
+
+#: customizer.php:158
+msgid "Standered"
+msgstr "標準"
+
+#: customizer.php:171
+msgid "Nav Menu Options Display Method"
+msgstr "ナビゲーションオプション表示方法"
+
+#: customizer.php:175
+msgid "Keep to the left"
+msgstr "左寄せ"
+
+#: customizer.php:176
+msgid "Keep to the right"
+msgstr "右寄せ"
+
+#: customizer.php:198
+msgid "Menu option left and right spacing"
+msgstr "メニューオプション左右余白"
+
+#: customizer.php:225
+msgid "Nav Menu Font"
+msgstr "ナビゲーションフォント"
+
+#: customizer.php:238
+msgid "Navigation Menu Logo"
+msgstr "ナビゲーションロゴ画像"
+
+#: customizer.php:250
+msgid "Nav Menu Text Logo Text"
+msgstr "テキストロゴの内容"
+
+#: customizer.php:264
+msgid "Nav Menu Text Logo Font"
+msgstr "テキストロゴのフォント"
+
+#: customizer.php:279
+msgid "Switch Button of Random Images"
+msgstr "ランダム画像切替ボタン"
+
+#: customizer.php:284
+msgid "Nav User Menu"
+msgstr "ナビゲーションバーのユーザーメニュー"
+
+#: customizer.php:285
+msgid "It is on by default. The user avatar and menu will be displayed."
+msgstr "デフォルトで有効になっており、ユーザーアバターとメニューが表示されます"
+
+#: customizer.php:293
+msgid "Nav Menu Search"
+msgstr "ナビメニュー検索"
+
+#: customizer.php:299
+msgid "Search Area Background Image"
+msgstr "検索エリアの背景画像"
+
+#: customizer.php:313
+msgid "Theme Colors"
+msgstr "テーマ色彩設定"
+
+#: customizer.php:323
+msgid "Extract Theme Color from Cover Image"
+msgstr "カバー画像からテーマカラーを抽出する"
+
+#: customizer.php:324
+msgid "After turning on,the theme color will be taken from the homepage cover"
+msgstr "オンにした後、テーマカラーはホームページの表紙から取得されます。"
+
+#: customizer.php:330
+msgid "Extract Article Highlight from Featured Image"
+msgstr "注目画像から記事のハイライトを抽出"
+
+#: customizer.php:331
+msgid ""
+"After turning on,the colors displayed on the article page will be taken from "
+"the article featured image"
+msgstr ""
+"オンにすると、記事ページに表示される色は、記事の特集画像から取得されます。"
+
+#: customizer.php:336
+msgid "Theme Color"
+msgstr "メインカラー"
+
+#: customizer.php:345
+msgid "Matching Color"
+msgstr "アクセントカラー"
+
+#: customizer.php:362
+msgid "Dark Mode Theme Color"
+msgstr "ダークモードメインカラー"
+
+#: customizer.php:378
+msgid "Dark Mode Image Brightness"
+msgstr "ダークモード画像明度"
+
+#: customizer.php:389
+msgid "Dark Mode Component Transparency"
+msgstr "ダークモード透過度"
+
+#: customizer.php:402
+msgid "Logo"
+msgstr "Logo"
+
+#: customizer.php:410
+msgid "Cover Personal Avatar"
+msgstr "個人アバター表示"
+
+#: customizer.php:423
+msgid "Enable Mashiro Special Effects Text"
+msgstr "白猫風特殊文字"
+
+#: customizer.php:424
+msgid "After turning it on, it will replace your avatar on the homepage"
+msgstr "有効にすると、カバー上のアバターが置き換えられます"
+
+#: customizer.php:430
+msgid "Mashiro Special Effects Text"
+msgstr "白猫風文字内容"
+
+#: customizer.php:451
+msgid "Mashiro Special Effects Text Color"
+msgstr "白猫風文字カラー"
+
+#: customizer.php:475
+msgid "Mashiro Special Effects Font"
+msgstr "白猫風フォント"
+
+#: customizer.php:496
+msgid "Mashiro Special Effects Size"
+msgstr "白猫風文字サイズ"
+
+#: customizer.php:525
+msgid "Apperance"
+msgstr "外観設定"
+
+#: customizer.php:533
+msgid "Enable Cover"
+msgstr "カバーを有効化"
+
+#: customizer.php:539
+msgid "Cover Full Screen"
+msgstr "全画面表示モード"
+
+#: customizer.php:553
+msgid "Cover Random Images Filter"
+msgstr "カバー画像フィルター"
+
+#: customizer.php:562
+msgid "No filter"
+msgstr "フィルターなし"
+
+#: customizer.php:563
+msgid "Light filter"
+msgstr "ライトフィルター"
+
+#: customizer.php:564
+msgid "Dimmed filter"
+msgstr "ダークフィルター"
+
+#: customizer.php:565
+msgid "Grid filter"
+msgstr "グリッドフィルター"
+
+#: customizer.php:566
+msgid "Dot filter"
+msgstr "ドットフィルター"
+
+#: customizer.php:572
+msgid "Cover Arc Occlusion (Below)"
+msgstr "下部アーチ型マスク"
+
+#: customizer.php:590
+msgid "Cover Animation"
+msgstr "カバーアニメーション"
+
+#: customizer.php:603
+msgid "Cover Animation Time"
+msgstr "アニメーション時間（秒）"
+
+#: customizer.php:628
+msgid "Infos"
+msgstr "情報設定"
+
+#: customizer.php:637
+msgid "Cover Info Bar"
+msgstr "情報バー表示"
+
+#: customizer.php:643
+msgid "Cover Info Bar Style"
+msgstr "情報バースタイル"
+
+#: customizer.php:661
+msgid "Cover Widget Transparency"
+msgstr "ダークモード透過度"
+
+#: customizer.php:686
+msgid "Cover Info Bar Avatar Radius"
+msgstr "アバター角丸半径"
+
+#: customizer.php:712
+msgid "Cover Info Bar Rounded"
+msgstr "情報バー角丸半径"
+
+#: customizer.php:738
+msgid "Cover Signature Field Text"
+msgstr "カバー署名テキスト"
+
+#: customizer.php:758
+msgid "Cover Signature Field Text Font"
+msgstr "署名フォント"
+
+#: customizer.php:779
+msgid "Cover Signature Field Text Font Size"
+msgstr "署名文字サイズ"
+
+#: customizer.php:805
+msgid "Cover Signature Bar Typing Effects"
+msgstr "タイピング風効果"
+
+#: customizer.php:818
+msgid "Cover Signature Field Typing Effects Double Quotes"
+msgstr "引用符を表示"
+
+#: customizer.php:836
+msgid "Typed.js initial option"
+msgstr "Typed.js初期設定"
+
+#: customizer.php:858 customizer.php:1771
+msgid "Others"
+msgstr "その他"
+
+#: customizer.php:867
+msgid "Cover and Frontend Background Integration"
+msgstr "カバーと背景統合"
+
+#: customizer.php:868
+msgid ""
+"When enabled, the background of the cover will be set to transparent, while "
+"the frontend background will use the cover's random image API"
+msgstr ""
+"有効化するとカバー背景を透明化し、サイト背景にカバー画像APIを使用します"
+
+#: customizer.php:874
+msgid "Post Cover As Background"
+msgstr "背景として投稿カバー"
+
+#: customizer.php:875
+msgid "Use post feature image as background in post pages"
+msgstr "投稿ページの背景として投稿フィーチャー画像を使用する"
+
+#: customizer.php:888
+msgid "Cover Wave Effects"
+msgstr "カバー波効果"
+
+#: customizer.php:889
+msgid "It will be forced off in the dark mode"
+msgstr "このオプションはダークモードでは無効になります"
+
+#: customizer.php:895
+msgid "Cover Dropdown Arrow"
+msgstr "スクロール指示矢印"
+
+#: customizer.php:901
+msgid "Cover Dropdown Arrow Display on Mobile Devices"
+msgstr "モバイル端末での矢印表示"
+
+#: customizer.php:914
+msgid "Cover Dropdown Arrow Color"
+msgstr "カバードロップダウン矢印の色"
+
+#: customizer.php:938
+msgid "Cover Dropdown Arrow Color (Dark Mode)"
+msgstr "カバードロップダウン矢印の色（ダークモード）"
+
+#: customizer.php:963
+msgid "Overall layout"
+msgstr "全体的なレイアウト"
+
+#: customizer.php:974 customizer.php:1083
+msgid "Bulletin Board"
+msgstr "告知欄設定"
+
+#: customizer.php:975
+msgid "Display Area"
+msgstr "展示エリア"
+
+#: customizer.php:976
+msgid "Article Area"
+msgstr "記事一覧"
+
+#: customizer.php:977
+msgid "Static Page"
+msgstr "固定ページ"
+
+#: customizer.php:984
+msgid "Select a page"
+msgstr "ページを選択"
+
+#: customizer.php:997
+msgid "Display Area Icon"
+msgstr "展示エリアアイコン"
+
+#: customizer.php:1010
+msgid "Display Area Title"
+msgstr "展示エリアタイトル"
+
+#: customizer.php:1023
+msgid "Post Area Icon"
+msgstr "記事エリアアイコン"
+
+#: customizer.php:1036
+msgid "Post Area Title"
+msgstr "記事エリアタイトル"
+
+#: customizer.php:1049
+msgid "Area Title Font"
+msgstr "エリアタイトルフォント"
+
+#: customizer.php:1063
+msgid "Area Title Alignment"
+msgstr "タイトル配置"
+
+#: customizer.php:1092
+msgid "Bulletin Board Style"
+msgstr "告知欄スタイル"
+
+#: customizer.php:1094
+msgid "Picture Background"
+msgstr "画像背景"
+
+#: customizer.php:1095
+msgid "Color Background"
+msgstr "単色背景"
+
+#: customizer.php:1102
+msgid "Bulletin Board \"Notice\" Icon"
+msgstr "「お知らせ」アイコン"
+
+#: customizer.php:1108
+msgid "Bulletin Board Background"
+msgstr "告知欄背景"
+
+#: customizer.php:1121
+msgid "Bulletin Board Border Color"
+msgstr "境界線カラー"
+
+#: customizer.php:1137
+msgid "Bulletin Board Content"
+msgstr "告知内容"
+
+#: customizer.php:1143
+msgid "Bulletin Board Text Color"
+msgstr "テキストカラー"
+
+#: customizer.php:1161
+msgid "Display Aera"
+msgstr "展示エリア"
+
+#: customizer.php:1170
+msgid "Display Area Matching Color"
+msgstr "展示エリア配色"
+
+#: customizer.php:1187
+msgid "Display Area Background Color"
+msgstr "背景カラー"
+
+#: customizer.php:1204
+msgid "Display Area Style"
+msgstr "展示スタイル"
+
+#: customizer.php:1214
+msgid "Display Area Compatibility Mode"
+msgstr "互換モード"
+
+#: customizer.php:1220
+msgid "Display Area Rounded Corners"
+msgstr "展示コンテンツ角丸"
+
+#: customizer.php:1240
+msgid "Article Aera"
+msgstr "記事一覧"
+
+#: customizer.php:1249 customizer.php:1942
+msgid "Article Area Meta Displays"
+msgstr "記事エリアのメタ表示"
+
+#: customizer.php:1252 customizer.php:1945
+msgid "Author"
+msgstr "投稿者"
+
+#: customizer.php:1253 customizer.php:1946
+msgid "Category"
+msgstr "カテゴリー"
+
+#: customizer.php:1254 customizer.php:1947
+msgid "Number of Comments"
+msgstr "コメント数"
+
+#: customizer.php:1255 customizer.php:1948
+msgid "Number of Views"
+msgstr "閲覧数"
+
+#: customizer.php:1256 customizer.php:1949
+msgid "Number of Words"
+msgstr "文字数"
+
+#: customizer.php:1257 customizer.php:1950
+msgid "Estimate Reading Time"
+msgstr "読了時間"
+
+#: customizer.php:1264 customizer.php:1274
+msgid "Article Area Card Design"
+msgstr "記事カードデザイン"
+
+#: customizer.php:1291
+msgid "Article Area Card Information Meta Background Compatible"
+msgstr "メタ情報可読性向上"
+
+#: customizer.php:1297
+msgid "Show shuoshuo on home page"
+msgstr "つぶやきを表示"
+
+#: customizer.php:1303
+msgid "Article Area Card Information Meta Rounded Corners"
+msgstr "メタ情報角丸"
+
+#: customizer.php:1322
+msgid "Article Area Card Title Meta Rounded Corners"
+msgstr "タイトル角丸"
+
+#: customizer.php:1341
+msgid "Article Area Card Rounded Corners"
+msgstr "カード角丸"
+
+#: customizer.php:1360
+msgid "Article Area Title Font Size"
+msgstr "タイトル文字サイズ"
+
+#: customizer.php:1380
+msgid "Frontend Background"
+msgstr "サイト背景"
+
+#: customizer.php:1390
+msgid "Default Frontend Background"
+msgstr "デフォルト背景"
+
+#: customizer.php:1396
+msgid "Background Transparency in the Frontend"
+msgstr "背景透過度"
+
+#: customizer.php:1407
+msgid "Background Transparency Blur"
+msgstr "背景ぼかし"
+
+#: customizer.php:1413
+msgid "Frontend Background Scaling Method"
+msgstr "背景拡縮方法"
+
+#: customizer.php:1415
+msgid "Cover"
+msgstr "全面表示"
+
+#: customizer.php:1416
+msgid "Contain"
+msgstr "縦横比維持"
+
+#: customizer.php:1417
+msgid "Auto"
+msgstr "自動調整"
+
+#: customizer.php:1432
+msgid "Global Default Font"
+msgstr "デフォルトフォント"
+
+#: customizer.php:1433
+msgid ""
+"Fill in the font name,and you can add your customize font in Font Options of "
+"Global Options in iro-Options."
+msgstr ""
+"フォント名を入力（iroオプションのフォント設定でカスタムフォントを追加可能）"
+
+#: customizer.php:1447
+msgid "Non-Emphasis Text Weight"
+msgstr "強調されていないテキストの太さ"
+
+#: customizer.php:1466
+msgid "Global Font Size"
+msgstr "テキストフォントサイズ"
+
+#: customizer.php:1486
+msgid "Widgets Panel"
+msgstr "小組件パネル"
+
+#: customizer.php:1495
+msgid "Widgets Panel Button Radius"
+msgstr "小組件ボタン角丸"
+
+#: customizer.php:1514
+msgid "Widgets Panel Widget Radius"
+msgstr "小組件角丸"
+
+#: customizer.php:1533
+msgid "Widgets Panel Font"
+msgstr "小組件フォント"
+
+#: customizer.php:1539
+msgid "Widgets Panel WP Widget Area"
+msgstr "WP標準小組件表示"
+
+#: customizer.php:1545
+msgid "Widgets Panel Day&Night Switching"
+msgstr "昼夜モード切替"
+
+#: customizer.php:1551
+msgid "Widgets Panel Font Switching"
+msgstr "フォント切替設定"
+
+#: customizer.php:1557
+msgid "Global Default Font&Widgets Panel Font Switching A"
+msgstr "メインフォント/小組件フォントA"
+
+#: customizer.php:1571
+msgid "Widgets Panel Font Switching B"
+msgstr "小組件フォントB"
+
+#: customizer.php:1579
+msgid "♡Option Switcher"
+msgstr "♡オプションスイッチ"
+
+#: customizer.php:1586
+msgid "♡Corresponding Background"
+msgstr "♡オプションの背景"
+
+#: customizer.php:1593
+msgid "☆Option Switcher"
+msgstr "☆オプションスイッチ"
+
+#: customizer.php:1600
+msgid "☆Corresponding Background"
+msgstr "☆オプションの背景"
+
+#: customizer.php:1607
+msgid "□Option Switcher"
+msgstr "□オプションスイッチ"
+
+#: customizer.php:1614
+msgid "□Corresponding Background"
+msgstr "□オプションの背景"
+
+#: customizer.php:1621
+msgid "🍋Option Switcher"
+msgstr "🍋オプションスイッチ"
+
+#: customizer.php:1628
+msgid "🍋Corresponding Background"
+msgstr "🍋オプションの背景"
+
+#: customizer.php:1635
+msgid "Particles"
+msgstr "パーティクル効果"
+
+#: customizer.php:1644
+msgid "Sakura Falling Effects"
+msgstr "桜吹雪エフェクト"
+
+#: customizer.php:1646
+msgid "Off"
+msgstr "無効"
+
+#: customizer.php:1647
+msgid "Native Quantity"
+msgstr "通常量"
+
+#: customizer.php:1648
+msgid "Quarter Quantity"
+msgstr "75%"
+
+#: customizer.php:1649
+msgid "Half Quantity"
+msgstr "50%"
+
+#: customizer.php:1650
+msgid "Less Quantity"
+msgstr "25%"
+
+#: customizer.php:1657
+msgid "Particles Effects"
+msgstr "パーティクル効果"
+
+#: customizer.php:1663
+msgid "Particles JSON"
+msgstr "パーティクル設定"
+
+#: customizer.php:1664
+msgid "Vist \"https://vincentgarreau.com/particles.js/\" for more help"
+msgstr "詳細設定は公式サイト（https://vincentgarreau.com/particles.js/）を参照"
+
+#: customizer.php:1681 customizer.php:1706
+msgid "Footer Info"
+msgstr "フッター情報"
+
+#: customizer.php:1690
+msgid "Footer Content Distribution"
+msgstr "フッターコンテンツの配信"
+
+#: customizer.php:1692
+msgid "Center"
+msgstr "中心"
+
+#: customizer.php:1693
+msgid "Two Coloumns"
+msgstr "二列"
+
+#: customizer.php:1700
+msgid "Footer Sakura Icon"
+msgstr "桜アイコン表示"
+
+#: customizer.php:1722
+msgid "Footer Text Font"
+msgstr "フッターフォント"
+
+#: customizer.php:1736
+msgid "Footer Load Occupancy Query"
+msgstr "サーバー負荷表示"
+
+#: customizer.php:1742
+msgid "Footer Upyun League Logo"
+msgstr "UPYUNロゴ表示"
+
+#: customizer.php:1748
+msgid "Footer Hitokoto"
+msgstr "一言表示"
+
+#: customizer.php:1754
+msgid "Hitokoto API address"
+msgstr "一言APIアドレス"
+
+#: customizer.php:1780
+msgid "NProgress Loading Progress Bar"
+msgstr "NProgress 読み込み進捗バー"
+
+#: customizer.php:1781
+msgid ""
+"Enabled by default, when loading page there will be a progress bar alert"
+msgstr "既定で有効、ページ読み込み時に進捗バーが表示されます"
+
+#: customizer.php:1787
+msgid "Global Smooth Scroll"
+msgstr "グローバルスムーズスクロール"
+
+#: customizer.php:1788
+msgid "Enabled by default, page scrolling will be smoother"
+msgstr "既定で有効になっており、ページスクロールがより滑らかになります"
+
+#: customizer.php:1794
+msgid "Pagination Mode"
+msgstr "ページネーションモード"
+
+#: customizer.php:1796
+msgid "Ajax Load"
+msgstr "Ajaxロード"
+
+#: customizer.php:1797
+msgid "Page Up/Down"
+msgstr "ページアップ／ダウン"
+
+#: customizer.php:1804
+msgid "Next Page Auto Load"
+msgstr "次ページ自動読み込み"
+
+#: customizer.php:1806
+msgid "0 Sec"
+msgstr "0秒"
+
+#: customizer.php:1807
+msgid "1 Sec"
+msgstr "1秒"
+
+#: customizer.php:1808
+msgid "2 Sec"
+msgstr "2秒"
+
+#: customizer.php:1809
+msgid "3 Sec"
+msgstr "3秒"
+
+#: customizer.php:1810
+msgid "4 Sec"
+msgstr "4秒"
+
+#: customizer.php:1811
+msgid "5 Sec"
+msgstr "5秒"
+
+#: customizer.php:1812
+msgid "6 Sec"
+msgstr "6秒"
+
+#: customizer.php:1813
+msgid "7 Sec"
+msgstr "7秒"
+
+#: customizer.php:1814
+msgid "8 Sec"
+msgstr "8秒"
+
+#: customizer.php:1815
+msgid "9 Sec"
+msgstr "9秒"
+
+#: customizer.php:1816
+msgid "10 Sec"
+msgstr "10秒"
+
+#: customizer.php:1817
+msgid "Do not autoload"
+msgstr "自動読み込みしない"
+
+#: customizer.php:1824
+msgid "Placeholder SVG when loading the next page"
+msgstr "次ページ読み込み時のプレースホルダーSVG"
+
+#: customizer.php:1838
+#, fuzzy
+#| msgid "Global Options"
+msgid "Common Options"
+msgstr "共通オプション"
+
+#: customizer.php:1847
+msgid "Page Layout Style"
+msgstr "ページレイアウトスタイル"
+
+#: customizer.php:1849
+msgid "Default Style"
+msgstr "デフォルトスタイル"
+
+#: customizer.php:1850
+msgid "Github Style"
+msgstr "Githubスタイル"
+
+#: customizer.php:1857
+msgid "Page Decoration Image"
+msgstr "ページ装飾画像"
+
+#: customizer.php:1863
+#, fuzzy
+#| msgid "Cover Animation"
+msgid "Page Title Animation"
+msgstr "ページタイトルアニメーション"
+
+#: customizer.php:1869
+#, fuzzy
+#| msgid "Cover Animation Time"
+msgid "Page Title Animation Time"
+msgstr "ページタイトルアニメーションの時間"
+
+#: customizer.php:1900
+msgid "Page Image Placeholder SVG"
+msgstr "ページ画像のプレースホルダーSVG"
+
+#: customizer.php:1907
+msgid "Posts Pages"
+msgstr "投稿ページ"
+
+#: customizer.php:1916
+#, fuzzy
+msgid "This option is only valid for articles with cover"
+msgstr "このオプションは、表紙が設定されている記事に対してのみ有効です"
+
+#: customizer.php:1917
+#, fuzzy
+#| msgid "Article Area Title Font Size"
+msgid "Article Page Title Font Size"
+msgstr "記事ページタイトルのフォントサイズ"
+
+#: customizer.php:1936
+msgid "Article Page Title Underline Animation"
+msgstr "記事ページタイトル下線アニメーション"
+
+#: customizer.php:1951
+msgid "Publish Time (Relatively)"
+msgstr "公開時間（相対表示）"
+
+#: customizer.php:1952
+msgid "Last Edit Time (Relatively)"
+msgstr "最終編集時間（相対表示）"
+
+#: customizer.php:1953
+msgid "Action Edit (only displays while user has sufficient permissions)"
+msgstr "アクション編集（十分な権限がある場合のみ表示）"
+
+#: customizer.php:1960
+msgid "Article Page Auto Show Menu"
+msgstr "記事ページのメニュー自動表示"
+
+#: customizer.php:1966
+#, fuzzy
+#| msgid "Display Area Background Color"
+msgid "Inline Code Background Color"
+msgstr "インラインコードの背景色"
+
+#: customizer.php:1983
+msgid "Inline Code Background Color In Dark Mode"
+msgstr "ダークモード時のインラインコード背景色"
+
+#: customizer.php:2001
+msgid "Pages Extend Options"
+msgstr "ページ拡張オプション"
+
+#: customizer.php:2010
+msgid "Article Page Function Bar"
+msgstr "記事ページ機能バー"
+
+#: customizer.php:2016
+#, fuzzy
+#| msgid "Article Area"
+msgid "Article License"
+msgstr "記事ライセンス"
+
+#: customizer.php:2018
+#, fuzzy
+#| msgid "Display Area"
+msgid "Not Display"
+msgstr "非表示"
+
+#: customizer.php:2040
+msgid "Reward Button Link"
+msgstr "投げ銭ボタンのリンク"
+
+#: customizer.php:2041
+msgid "The link click the reward button will redirect to"
+msgstr "投げ銭ボタンをクリックすると、次のリンクにリダイレクトされます"
+
+#: customizer.php:2055 customizer.php:2084
+msgid "Reward Image"
+msgstr "投げ銭画像"
+
+#: customizer.php:2069 customizer.php:2098
+msgid "Reward Image Link"
+msgstr "投げ銭画像のリンク"
+
+#: customizer.php:2070 customizer.php:2099
+msgid "The link click the image will redirect to"
+msgstr "画像をクリックすると、次のリンクにリダイレクトされます"
+
+#: customizer.php:2112
+msgid "Article Page Author Avatar"
+msgstr "記事ページの著者アバター"
+
+#: customizer.php:2125
+#, fuzzy
+#| msgid "Article Area"
+msgid "Article Page Author Name"
+msgstr "記事ページの著者名"
+
+#: customizer.php:2138
+msgid "Article Page Author Signature"
+msgstr "記事ページの著者署名"
+
+#: customizer.php:2151
+msgid "Article Last Update Time"
+msgstr "記事の最終更新時間"
+
+#: customizer.php:2164
+#, fuzzy
+#| msgid "Article Area"
+msgid "Article Tag"
+msgstr "記事タグ"
+
+#: customizer.php:2177
+msgid "Article Page Prev/Next Article Switcher"
+msgstr "記事ページの前後記事切り替え機能"
+
+#: customizer.php:2184
+#, fuzzy
+#| msgid "Global Options"
+msgid "Comment Options"
+msgstr "コメントオプション"
+
+#: customizer.php:2193
+msgid "Page Comment Area Display"
+msgstr "ページコメントエリアの表示"
+
+#: customizer.php:2195
+msgid "Expand"
+msgstr "展開する"
+
+#: customizer.php:2196
+msgid "Fold"
+msgstr "折りたたむ"
+
+#: customizer.php:2203
+msgid "Custom CommentBox Placeholder"
+msgstr "カスタムコメントボックスのプレースホルダー"
+
+#: customizer.php:2209
+msgid "Custom Submit Button Content"
+msgstr "カスタム送信ボタンの内容"
+
+#: customizer.php:2215
+msgid "Page Comment Area Bottom Right Background Image"
+msgstr "ページコメントエリア右下の背景画像"
+
+#: customizer.php:2229
+#, fuzzy
+msgid "Comment Area Emoticon"
+msgstr "コメントエリアのエモーティコン"
+
+#: customizer.php:2230
+msgid "Please go to the backend to configure your custom emoticon pack"
+msgstr "カスタムエモーティコンパックの設定はバックエンドで行ってください"
+
+#: customizer.php:2233
+msgid "BiliBili Emoticon Pack"
+msgstr "BiliBiliエモーティコンパック"
+
+#: customizer.php:2234
+msgid "Baidu Tieba Emoticon Pack"
+msgstr "Baidu Tiebaエモーティコンパック"
+
+#: customizer.php:2235
+msgid "Emoji"
+msgstr "絵文字"
+
+#: customizer.php:2236
+msgid "Customized Emoticon Pack"
+msgstr "カスタムエモーティコンパック"
+
+#: customizer.php:2242
+msgid ""
+"For more detailed configuration of the comment area, please go to the "
+"backend configuration"
+msgstr "コメントエリアの詳細な設定は、バックエンドの設定で行ってください"
+
+#~ msgid "Article Page Appreciation Function (Alipay QR Code)"
+#~ msgstr "記事ページの応援機能（Alipay QRコード）"
+
+#~ msgid "Article Page Appreciation Function (Wechat QR Code)"
+#~ msgstr "記事ページの応援機能（WeChat QRコード）"

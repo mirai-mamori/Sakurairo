@@ -1,7 +1,7 @@
 <?php
 
 /**
- * NEXT / PREVIOUS POSTS (精华版)
+ * NEXT / PREVIOUS POSTS
  */
 
 if (iro_opt('article_nextpre') == '1') {
@@ -9,7 +9,7 @@ if (iro_opt('article_nextpre') == '1') {
 	<section class="post-squares nextprev">
 		<?php
 		$classify_display_id = iro_opt('classify_display');
-		$load_svg_url = iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@2.7/') . 'load_svg/outload.svg';
+		$load_svg_url = iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@3.0/') . 'basic/puff-load.svg';
 		$prev_link_html = '<div class="background lazyload" style="background-image:url(' . $load_svg_url . ');" data-src="' . get_prev_thumbnail_url() . '"></div>' .
 			'<span class="label">' .
 			__("Previous Post", 'sakurairo') .

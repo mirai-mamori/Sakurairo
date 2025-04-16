@@ -9,37 +9,39 @@ if (!function_exists('render_meta_views')) {
 if (!function_exists('render_article_meta')) {
     function render_article_meta() {
         $article_meta_display_options = iro_opt("article_meta_displays", array("post_views", "comment_count", "category"));
-        foreach ($article_meta_display_options as $key) {
-            switch ($key) {
-                case "author":
-                    require_once get_stylesheet_directory() . '/tpl/meta-author.php';
-                    render_author_meta();
-                    break;
-                case "category":
-                    require_once get_stylesheet_directory() . '/tpl/meta-category.php';
-                    echo get_meta_category_html();
-                    break;
-                case "comment_count":
-                    require_once get_stylesheet_directory() . '/tpl/meta-comments.php';
-                    render_meta_comments();
-                    break;
-                case "post_views":
-                    render_meta_views();
-                    break;
-                case "post_words_count":
-                    require_once get_stylesheet_directory() . '/tpl/meta-words-count.php';
-                    $str = get_meta_words_count();
-                    if ($str) {
-                        ?><span><i class="fa-regular fa-pen-to-square"></i><?= esc_html($str) ?></span><?php
-                    }
-                    break;
-                case "reading_time":
-                    require_once get_stylesheet_directory() . '/tpl/meta-ert.php';
-                    $str = get_meta_estimate_reading_time();
-                    if ($str) {
-                        ?><span title="<?= esc_attr(__("Estimate Reading Time", "sakurairo")) ?>"><i class="fa-solid fa-hourglass"></i><?= esc_html($str) ?></span><?php
-                    }
-                default:
+        if (is_array($article_meta_display_options)) {
+            foreach ($article_meta_display_options as $key) {
+                switch ($key) {
+                    case "author":
+                        require_once get_template_directory() . '/tpl/meta-author.php';
+                        render_author_meta();
+                        break;
+                    case "category":
+                        require_once get_template_directory() . '/tpl/meta-category.php';
+                        echo get_meta_category_html();
+                        break;
+                    case "comment_count":
+                        require_once get_template_directory() . '/tpl/meta-comments.php';
+                        render_meta_comments();
+                        break;
+                    case "post_views":
+                        render_meta_views();
+                        break;
+                    case "post_words_count":
+                        require_once get_template_directory() . '/tpl/meta-words-count.php';
+                        $str = get_meta_words_count();
+                        if ($str) {
+                            ?><span><i class="fa-regular fa-pen-to-square"></i><?= esc_html($str) ?></span><?php
+                        }
+                        break;
+                    case "reading_time":
+                        require_once get_template_directory() . '/tpl/meta-ert.php';
+                        $str = get_meta_estimate_reading_time();
+                        if ($str) {
+                            ?><span title="<?= esc_attr(__("Estimate Reading Time", "sakurairo")) ?>"><i class="fa-solid fa-hourglass"></i><?= esc_html($str) ?></span><?php
+                        }
+                    default:
+                }
             }
         }
     }
@@ -108,7 +110,7 @@ if (!function_exists('get_post_cover_html')) {
                 <div class="shuoshuo-content-wrapper">
                     <div class="shuoshuo-avatar">
                         <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>">
-                            <img src="<?php echo esc_url(get_avatar_profile_url(get_the_author_meta('ID'))); ?>" class="avatar avatar-48" width="48" height="48">
+                            <img src="<?php echo esc_url(get_avatar_profile_url(get_the_author_meta('ID'))); ?>" class="avatar avatar-48" width="48" height="48" alt="author_avatar">
                         </a>
                         <style>
                             #<?php echo esc_attr($unique_id); ?> .shuoshuo-avatar::after {
@@ -157,7 +159,7 @@ if (!function_exists('get_post_cover_html')) {
             $ai_excerpt = get_post_meta($post->ID, POST_METADATA_KEY, true);
             $excerpt = has_excerpt();
             ?>
-            <article class="post post-list-thumb" itemscope="" itemtype="http://schema.org/BlogPosting">
+            <article class="post post-list-thumb" style ="<?php echo var_post_theme_color(get_the_ID()) != 'false' ? "--article-theme-highlight: " . var_post_theme_color(get_the_ID()) : ""; ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
                 <div class="post-thumb">
                     <a href="<?php the_permalink(); ?>">
                         <?php echo $cover_html; ?>

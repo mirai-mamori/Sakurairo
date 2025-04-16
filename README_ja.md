@@ -1,10 +1,10 @@
 [简体中文](README.md) | [繁體中文](README_tw.md) | [English](README_en.md) | **日本語**
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/banner-ver2.7.webp)](https://github.com/mirai-mamori/Sakurairo)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/banner-en-jp.webp)](https://github.com/mirai-mamori/Sakurairo)
 
 <h1 align="left">Theme Sakurairo </h1>
 
-> デザインが多彩、操作が簡単、体験が完璧、カスタマイズ性が高いのWordPressテーマです
+> AIが読み上げをアシストするWordPressテーマ。カラフルで親しみやすく、機能が充実しています。
 
 [![GitHub release](https://img.shields.io/github/v/release/mirai-mamori/Sakurairo.svg?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases/latest)[![GitHub Release Date](https://img.shields.io/github/release-date/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)](https://github.com/mirai-mamori/Sakurairo/releases)![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/mirai-mamori/Sakurairo?style=for-the-badge&logo=appveyor)[![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/Fuukei/Public_Repository?color=red&logo=jsdelivr&logoColor=red&style=for-the-badge)](https://www.jsdelivr.com/package/gh/mirai-mamori/sakurairo)
 
@@ -12,7 +12,7 @@
 
 ## バージョン紹介：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/jp.png)](https://docs.fuukei.org/)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/jp.webp)](https://docs.fuukei.org/)
 
 ## 活用方法：
 
@@ -24,19 +24,15 @@
 
 - 自分が体験している現象が本当にBugであることを確認した上で、 [issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) で質問をお寄せください。テンプレートに沿って、出来るだけ詳しく説明してください。ご協力ありがとうございました。
 
+## 応援してくださる皆さん、ありがとうございます！
+
+<a href="https://liberapay.com/furina/donate"><img alt="liberapay" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/liberapay.webp"></a><a href="https://app.unifans.io/c/somekawahitomi"><img alt="unifans" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/unifans.webp"></a>
+
+[![image](https://fuukei-api.nyat.icu/api/sponsors)](https://afdian.com/a/mamori)
+
 ## テーマの開発者たち：
 
-### 重要な貢献者：
-
-<a href="https://github.com/mirai-mamori"><img src="https://avatars3.githubusercontent.com/u/61381142?s=400" alt="mirai-mamori" width="100"></a>  <a href="https://github.com/Ukenn2112"><img src="https://avatars3.githubusercontent.com/u/60847880?s=400" alt="Ukenn" width="100"></a>  <a href="https://github.com/bymoye"><img src="https://avatars2.githubusercontent.com/u/27877470?s=400" alt="bymoye" width="100"></a> <a href="https://github.com/KotoriK"><img src="https://avatars.githubusercontent.com/u/52659125?s=400" alt="KotoriK" width="100"></a>  <a href="https://github.com/QL-A103"><img src="https://avatars.githubusercontent.com/u/57120572?v=4" alt="QL-A103" width="100"></a>  <a href="https://github.com/robert1chi"><img src="https://avatars.githubusercontent.com/u/40431036?v=4" alt="robert1chi" width="100"></a>  
-
-### 特別な貢献者：
-
-<a href="https://github.com/spirit1431007"><img src="https://avatars1.githubusercontent.com/u/29689177?s=400" alt="Spirit" width="100"></a>  <a href="https://jokerm.com/"><img src="https://jokerm.com/assets/logo-csdark/" alt="JokerM" width="100"></a>  <a href="https://github.com/cocdeshijie"><img src="https://avatars.githubusercontent.com/u/39603339?v=4" alt="cocdeshijie" width="100"></a>  <a href="https://github.com/FeiyuCode"><img src="https://avatars0.githubusercontent.com/u/46924793?s=400" alt="FeiyuCode" width="100"></a>  <a href="https://github.com/tumeneco"><img src="https://avatars0.githubusercontent.com/u/68286041?s=400" alt="Tumeneco" width="100"></a>  <a href="https://github.com/flurrychan "><img src="https://avatars.githubusercontent.com/u/63506003?v=4" alt="Flurrychan" width="100"></a>  <a href="https://www.yukicat.net"><img src="https://avatars.githubusercontent.com/u/54615306?v=4" alt="DazaiYuki" width="100"></a>
-
-### 参加した貢献者：
-
-<a href="https://github.com/laoxong"><img src="https://avatars.githubusercontent.com/u/31268830?v=4" alt="laoxong" width="100"></a>  <a href="https://github.com/Gao-pw"><img src="https://avatars.githubusercontent.com/u/48815350?v=4" alt="Gao-pw" width="100"></a>  <a href="https://github.com/AriharaShirone"><img src="https://avatars.githubusercontent.com/u/30365341?v=4" alt="AriharaShirone" width="100"></a>  <a href="https://github.com/NyaDoo"><img src="https://avatars.githubusercontent.com/u/65238336?v=4" alt="NyaDoo" width="100"></a>  <a href="https://github.com/Sakurakouji-Runa"><img src="https://avatars2.githubusercontent.com/u/46081776?s=400" alt="Sakurakouji-Runa" width="100"></a>  <a href="https://github.com/givenhyh"><img src="https://avatars3.githubusercontent.com/u/37971883?s=400" alt="givenhyh" width="100"></a>
+<a href="https://github.com/mirai-mamori/Sakurairo/graphs/contributors"><img src="https://fuukei-api.nyat.icu/api/contributors" alt="contributors" height="100%" width="100%"></a>
 
 ## 関連記事：
 
@@ -48,11 +44,9 @@
 
 ### 参考資料：
 
-- 本テーマのSNSアイコンは、fluent-design icons部分はParadoxさんの[Fluent Icon Pack](https://wwi.lanzous.com/ikyq5kgx0wb)を参考にしています。
+- 本テーマのSNSアイコンは、fluent-design icons部分はParadoxさんの Fluent Icon Pack を参考にしています。
 
-- 本テーマのSNSアイコンは、MUH2 icons部分は缄默（ジェンモー）さんの[MUH2 Icon Pack](https://www.coolapk.com/apk/com.muh2.icon)を参考にしています。
-
-- 本テーマの白ネコロゴは、オリジナルテーマの開発者Mashiroさんのデザインを参考にしています。ソリューションは Hyacm さんが提供しています。
+- 本テーマのSNSアイコンは、MUH2 icons部分は缄默（ジェンモー）さんの MUH2 Icon Pack を参考にしています。
 
 ### 依存関係：
 
@@ -60,11 +54,9 @@
 
 - 本テーマでは、YahnisElstsさんの[Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) を使って、テーマのアップデートを提供しています。
 
-- 本テーマでは、orhanerdayさんの[open-ai](https://github.com/orhanerday/open-ai) を使って、テーマの ChatGPT 関連機能を提供しています。
+- 本テーマでは、Themeumさんの[Kirki](https://github.com/themeum/kirki) を使って、ビジュアルエディタ関連の機能を提供しています。
 
 ## 楽しんでいただけたら幸いです。
-
-[![image](https://s.nmxc.ltd/sakurairo_vision/@2.7/readme/jp-ver2.7info.png)](https://docs.fuukei.org/)
 
 -  Starトレンド  [![GitHub stars](https://img.shields.io/github/stars/mirai-mamori/Sakurairo?logo=github&style=social)](https://github.com/mirai-mamori/Sakurairo/stargazers)
 

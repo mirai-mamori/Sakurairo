@@ -1,0 +1,1757 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sakurairo\n"
+"POT-Creation-Date: 2025-04-14 21:42+0900\n"
+"PO-Revision-Date: 2025-04-14 21:45+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: inc/kirki\n"
+"X-Poedit-SearchPathExcluded-2: opt\n"
+"X-Poedit-SearchPathExcluded-3: inc/customizer.php\n"
+"X-Poedit-SearchPathExcluded-4: update-checker\n"
+"X-Poedit-SearchPathExcluded-5: js\n"
+
+#: 404.php:188
+msgid "Page Not Found"
+msgstr "Page introuvable"
+
+#: 404.php:191
+msgid ""
+"The page you are looking for might have been removed, had its name changed, "
+"or is temporarily unavailable."
+msgstr ""
+"La page que vous recherchez peut avoir été supprimée, avoir changé de nom ou "
+"être temporairement indisponible."
+
+#: 404.php:202 header.php:191 layouts/sakura_header.php:71 search.php:176
+msgid "Search..."
+msgstr "Rechercher..."
+
+#: archive.php:42 author.php:55 index.php:81
+msgid " Previous"
+msgstr " Précédent"
+
+#: author.php:15
+msgid "No personal profile set yet"
+msgstr "Aucun profil personnel défini pour l'instant"
+
+#: comments.php:53
+msgid "Woooooow ヾ(≧∇≦*)ゝ"
+msgstr "Woooooow ヾ(≧∇≦*)ゝ"
+
+#: comments.php:75
+msgid "view comments"
+msgstr "voir les commentaires"
+
+#: comments.php:84 tpl/meta-comments.php:4
+msgid "NOTHING"
+msgstr "RIEN"
+
+#: comments.php:86 comments.php:97
+msgid " comment"
+msgstr " commentaire"
+
+#: comments.php:88 comments.php:97
+msgid " comments"
+msgstr " commentaires"
+
+#: comments.php:117
+msgid "no comment"
+msgstr "aucun commentaire"
+
+#: comments.php:132
+msgid "Click here to show captcha"
+msgstr "Cliquez ici pour afficher le captcha"
+
+#: comments.php:179
+msgid "Comment in private"
+msgstr "Commenter en privé"
+
+#: comments.php:182
+msgid "Comment reply notify"
+msgstr "Notification de réponse au commentaire"
+
+#: comments.php:210
+msgid "Leave a Reply to"
+msgstr "Répondre à"
+
+#: comments.php:211
+msgid "Cancel Reply"
+msgstr "Annuler la réponse"
+
+#: comments.php:234
+msgid "Nickname or QQ number"
+msgstr "Pseudo ou numéro QQ"
+
+#: comments.php:234 comments.php:238
+msgid "Must* "
+msgstr "Obligatoire* "
+
+#: comments.php:235
+msgid "Auto pull nickname and avatar with a QQ num. entered"
+msgstr ""
+"Récupération automatique du pseudo et de l'avatar avec un numéro QQ saisi"
+
+#: comments.php:238
+msgid "email"
+msgstr "email"
+
+#: comments.php:239
+msgid "You will receive notification by email"
+msgstr "Vous recevrez une notification par email"
+
+#: comments.php:242
+msgid "Site"
+msgstr "Site"
+
+#: comments.php:243
+msgid "Advertisement is forbidden 😀"
+msgstr "La publicité est interdite 😀"
+
+#: comments.php:255
+msgid "Save your private info"
+msgstr "Sauvegardez vos informations privées"
+
+#: footer.php:32
+#, php-format
+msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
+msgstr ""
+"Temps de chargement %.3f secondes | %d requêtes | Utilisation de RAM %.2f MB "
+
+#: footer.php:68
+msgid "Go to top"
+msgstr "Aller en haut"
+
+#: footer.php:69
+msgid "Control Panel"
+msgstr "Panneau de contrôle"
+
+#: footer.php:75 footer.php:83
+msgid "Want to find something?"
+msgstr "Vous cherchez quelque chose ?"
+
+#: footer.php:84 header.php:256
+msgid "Search"
+msgstr "Rechercher"
+
+#: footer.php:103
+msgid "Light Mode"
+msgstr "Mode clair"
+
+#: footer.php:106
+msgid "Dark Mode"
+msgstr "Mode sombre"
+
+#: footer.php:112
+msgid "Toggle Page Background Image"
+msgstr "Basculer l'image de fond de la page"
+
+#: footer.php:133
+msgid "Switch To Font A"
+msgstr "Passer à la police A"
+
+#: footer.php:136
+msgid "Switch To Font B"
+msgstr "Passer à la police B"
+
+#: functions.php:126
+msgid "Nav Menus"
+msgstr "Menus de navigation"
+
+#: functions.php:287
+msgctxt "post type general name"
+msgid "Shuoshuo"
+msgstr "Shuoshuo"
+
+#: functions.php:288
+msgctxt "post type singular name"
+msgid "Shuoshuo"
+msgstr "Shuoshuo"
+
+#: functions.php:289
+msgctxt "admin menu"
+msgid "Shuoshuo"
+msgstr "Shuoshuo"
+
+#: functions.php:290
+msgctxt "add new on admin bar"
+msgid "Shuoshuo"
+msgstr "Shuoshuo"
+
+#: functions.php:291
+msgctxt "shuoshuo"
+msgid "Add New"
+msgstr "Ajouter Nouveau"
+
+#: functions.php:292
+msgid "Add New Shuoshuo"
+msgstr "Ajouter Nouveau Shuoshuo"
+
+#: functions.php:293
+msgid "New Shuoshuo"
+msgstr "Nouveau Shuoshuo"
+
+#: functions.php:294
+msgid "Edit Shuoshuo"
+msgstr "Modifier Shuoshuo"
+
+#: functions.php:295
+msgid "View Shuoshuo"
+msgstr "Voir Shuoshuo"
+
+#: functions.php:296
+msgid "All Shuoshuo"
+msgstr "Tous les Shuoshuo"
+
+#: functions.php:297
+msgid "Search Shuoshuo"
+msgstr "Rechercher Shuoshuo"
+
+#: functions.php:298
+msgid "Parent Shuoshuo:"
+msgstr "Parent Shuoshuo :"
+
+#: functions.php:299
+msgid "No shuoshuo found."
+msgstr "Aucun shuoshuo trouvé."
+
+#: functions.php:300
+msgid "No shuoshuo found in Trash."
+msgstr "Aucun shuoshuo trouvé dans la corbeille."
+
+#: functions.php:347
+msgid "Emotion Meta Box"
+msgstr "Boîte Meta des Émotions"
+
+#: functions.php:360
+msgid "Emotion"
+msgstr "Émotion"
+
+#: functions.php:363
+msgid "Emotion Color"
+msgstr "Couleur de l'Émotion"
+
+#: functions.php:366
+msgid ""
+"For the Emotion, please fill in the Unicode value of the Fontawesome icon, "
+"and for the Emotion Color, please fill in the RGBA or hexadecimal color."
+msgstr ""
+"Pour l'Émotion, veuillez remplir la valeur Unicode de l'icône Fontawesome, "
+"et pour la Couleur de l'Émotion, veuillez remplir la couleur RGBA ou "
+"hexadécimale."
+
+#: functions.php:411
+msgid "Custom Meta Box"
+msgstr "Boîte Meta Personnalisée"
+
+#: functions.php:424
+msgid "Title Style"
+msgstr "Style du Titre"
+
+#: functions.php:427
+msgid "License"
+msgstr "Licence"
+
+#: functions.php:430
+msgid ""
+"For the Title Style, Please fill in the css style, part of the style need to "
+"add !important effective, and for the License, please go to Theme Options to "
+"learn how to set it up."
+msgstr ""
+"Pour le Style du Titre, veuillez remplir le style CSS, certaines parties "
+"doivent inclure !important pour être efficaces, et pour la Licence, veuillez "
+"consulter les Options du Thème pour apprendre comment la configurer."
+
+#: functions.php:576
+msgid "Copied!"
+msgstr "Copié !"
+
+#: functions.php:577
+msgid "Copy Code"
+msgstr "Copier le Code"
+
+#: functions.php:578
+msgid ""
+"Your cover API seems to not support Cross Origin Access. In this case, Cover "
+"Cache won't take effect."
+msgstr ""
+"Votre API de couverture semble ne pas prendre en charge l'accès Cross-"
+"Origin. Dans ce cas, le cache de couverture ne prendra pas effet."
+
+#: functions.php:579
+msgid "Commiting...."
+msgstr "Validation en cours...."
+
+#: functions.php:580
+msgid "Succeed"
+msgstr "Réussi"
+
+#: functions.php:581
+msgid "10 files max per request"
+msgstr "10 fichiers max par demande"
+
+#: functions.php:582
+msgid ""
+"5 MB max per file.\n"
+"\n"
+"「{0}」\n"
+"\n"
+"This image is too large~Please reupload!"
+msgstr ""
+"5 Mo max par fichier.\n"
+"\n"
+"「{0}」\n"
+"\n"
+"Cette image est trop grande~Veuillez la retéléverser !"
+
+#: functions.php:583
+msgid "Uploading..."
+msgstr "Téléversement..."
+
+#: functions.php:584
+msgid "Uploaded successfully~"
+msgstr "Téléversé avec succès~"
+
+#: functions.php:585
+msgid ""
+"Upload failed!\n"
+"File Name=> {0}\n"
+"code=> {1}\n"
+"{2}"
+msgstr ""
+"Échec du téléversement !\n"
+"Nom du fichier => {0}\n"
+"code => {1}\n"
+"{2}"
+
+#: functions.php:586
+msgid "Upload failed, please retry."
+msgstr "Échec du téléversement, veuillez réessayer."
+
+#: functions.php:587
+msgid "Page Load failed. HTTP {0}"
+msgstr "Échec du chargement de la page. HTTP {0}"
+
+#: functions.php:588
+msgid "Glad you come, but we've got nothing left."
+msgstr "Content que vous soyez là, mais il ne reste plus rien."
+
+#: functions.php:589 search.php:85
+msgid "Post"
+msgstr "Article"
+
+#: functions.php:590
+msgid "Tag"
+msgstr "Étiquette"
+
+#: functions.php:591
+msgid "Category"
+msgstr "Catégorie"
+
+#: functions.php:592 search.php:96
+msgid "Page"
+msgstr "Page"
+
+#: functions.php:593
+msgid "Comment"
+msgstr "Commentaire"
+
+#: functions.php:594
+msgid "Paused..."
+msgstr "En pause..."
+
+#: functions.php:595
+msgid "Loading Video..."
+msgstr "Chargement de la vidéo..."
+
+#: functions.php:596
+msgid "Downloading fonts, be aware of your data usage."
+msgstr "Téléchargement des polices, attention à votre consommation de données."
+
+#: functions.php:597
+msgid "Are you sure you want set it private?"
+msgstr "Êtes-vous sûr de vouloir le définir comme privé ?"
+
+#: functions.php:598
+msgid "You had set private comment before"
+msgstr "Vous avez déjà défini un commentaire privé"
+
+#: functions.php:686 inc/theme-plus.php:211
+msgid "Author"
+msgstr "Auteur"
+
+#: functions.php:686
+msgid "Blogger"
+msgstr "Blogueur"
+
+#: functions.php:695 functions.php:3630
+msgid "Location"
+msgstr "Emplacement"
+
+#: functions.php:701
+msgid "Private"
+msgstr "Privé"
+
+#: functions.php:703
+msgid "Yes"
+msgstr "Oui"
+
+#: functions.php:705
+msgid "No"
+msgstr "Non"
+
+#: functions.php:708 inc/link-status.php:168
+msgid "Edit"
+msgstr "Modifier"
+
+#: functions.php:838
+msgid "This guy is so lazy ╮(╯▽╰)╭"
+msgstr "Cette personne est tellement paresseuse ╮(╯▽╰)╭"
+
+#: functions.php:868 functions.php:3181 functions.php:3374
+msgid "Pending Links"
+msgstr "Liens en attente"
+
+#: functions.php:1674
+msgid "All expand/collapse"
+msgstr "Tout déplier/replier"
+
+#: functions.php:1708
+msgid " year"
+msgstr " an"
+
+#: functions.php:1711
+msgid " post(s)"
+msgstr " article(s)"
+
+#: functions.php:1761 functions.php:1764 inc/theme-plus.php:366
+#: layouts/mo_toc_menu.php:29
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#: functions.php:2312
+msgid "QQ"
+msgstr "QQ"
+
+#: functions.php:2414
+msgid "Sidebar"
+msgstr "Barre latérale"
+
+#: functions.php:2440
+msgid "Please do not try to use Javascript in your comments!"
+msgstr ""
+"S'il vous plaît, n'essayez pas d'utiliser Javascript dans vos commentaires !"
+
+#: functions.php:2550
+msgid ""
+"<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
+"permalink.php\"> permalink </a> as plain. To do this, you may need to "
+"configure <a href=\"https://www.wpdaxue.com/wordpress-rewriterule.html\" "
+"target=\"_blank\"> pseudo-static </a>. </ b>"
+msgstr ""
+"<b> Pour une meilleure expérience, ne définissez pas le <a href=\"/wp-admin/"
+"options-permalink.php\"> permalien </a> en simple. Pour ce faire, vous "
+"devrez peut-être configurer <a href=\"https://www.wpdaxue.com/wordpress-"
+"rewriterule.html\" target=\"_blank\"> le pseudo-statique </a>. </ b>"
+
+#: functions.php:2683
+#, php-format
+msgid "%s says: "
+msgstr "%s dit : "
+
+#: functions.php:2704
+msgid "Expand / Collapse"
+msgstr "Déplier/Replier"
+
+#: functions.php:3131
+msgid "Invalid request method."
+msgstr "Méthode de requête non valide."
+
+#: functions.php:3142
+msgid "You are submitting too frequently. Please try again later."
+msgstr "Vous soumettez trop fréquemment. Veuillez réessayer plus tard."
+
+#: functions.php:3148
+msgid "Security verification failed."
+msgstr "La vérification de sécurité a échoué."
+
+#: functions.php:3156
+msgid "Please fill in all required fields."
+msgstr "Veuillez remplir tous les champs obligatoires."
+
+#: functions.php:3201 user/page-links.php:498
+msgid ""
+"Sorry, we are not accepting new link submissions at this time due to "
+"backlog. Please try again later."
+msgstr ""
+"Désolé, nous n'acceptons pas de nouvelles soumissions de liens pour le "
+"moment en raison du retard accumulé. Veuillez réessayer plus tard."
+
+#: functions.php:3214
+msgid "Site name is too long."
+msgstr "Le nom du site est trop long."
+
+#: functions.php:3219
+msgid "Site description is too long."
+msgstr "La description du site est trop longue."
+
+#: functions.php:3225
+msgid "Please enter a valid URL."
+msgstr "Veuillez saisir une URL valide."
+
+#: functions.php:3231
+msgid "Please enter a valid image URL."
+msgstr "Veuillez saisir une URL d'image valide."
+
+#: functions.php:3237
+msgid "Please enter a valid email address."
+msgstr "Veuillez saisir une adresse électronique valide."
+
+#: functions.php:3245
+msgid "This website URL is already in our links list."
+msgstr "L'URL de ce site web figure déjà dans notre liste de liens."
+
+#: functions.php:3271 functions.php:3336
+msgid "Failed to submit link. Please try again later."
+msgstr "Le lien n'a pas été soumis. Veuillez réessayer plus tard."
+
+#: functions.php:3283 functions.php:3343
+#, php-format
+msgid "[%s] New Friend Link Submission"
+msgstr "[%s] Soumission d'un lien vers un nouvel ami"
+
+#: functions.php:3285 functions.php:3345
+#, php-format
+msgid ""
+"A new friend link has been submitted on your website %s:\n"
+"\n"
+msgstr ""
+"Un nouveau lien d'ami a été soumis sur votre site web %s :\n"
+"\n"
+
+#: functions.php:3286
+#, php-format
+msgid "Site Name: %s\n"
+msgstr "Nom du site : %s\n"
+
+#: functions.php:3287
+#, php-format
+msgid "Site URL: %s\n"
+msgstr "URL du site : %s\n"
+
+#: functions.php:3288
+#, php-format
+msgid "Site Description: %s\n"
+msgstr "Description du site : %s\n"
+
+#: functions.php:3289
+#, php-format
+msgid "Site Image: %s\n"
+msgstr "Image du site : %s\n"
+
+#: functions.php:3290
+#, php-format
+msgid "Contact Email: %s\n"
+msgstr "Courriel du contact : %s\n"
+
+#: functions.php:3291
+#, php-format
+msgid ""
+"IP Address: %s\n"
+"\n"
+msgstr ""
+"Adresse IP : %s\n"
+"\n"
+
+#: functions.php:3292
+msgid "Please review this submission in your WordPress admin panel.\n"
+msgstr ""
+"Veuillez vérifier cette soumission dans votre panneau d'administration "
+"WordPress.\n"
+
+#: functions.php:3302 functions.php:3353
+msgid "Thank you! Your link has been submitted for review."
+msgstr ""
+"Nous vous remercions de votre attention. Votre lien a été soumis pour examen."
+
+#: functions.php:3307
+#, php-format
+msgid "Site Name: %s"
+msgstr "Nom du site : %s"
+
+#: functions.php:3308
+#, php-format
+msgid "Site URL: %s"
+msgstr "URL du site : %s"
+
+#: functions.php:3309
+#, php-format
+msgid "Site Description: %s"
+msgstr "Description du site : %s"
+
+#: functions.php:3310
+#, php-format
+msgid "Site Image: %s"
+msgstr "Image du site : %s"
+
+#: functions.php:3311
+#, php-format
+msgid "Contact Email: %s"
+msgstr "Courriel du contact : %s"
+
+#: functions.php:3312
+#, php-format
+msgid "IP Address: %s"
+msgstr "Adresse IP : %s"
+
+#: functions.php:3315
+msgid "Friend Link Submission: "
+msgstr "Soumission d'un lien d'ami : "
+
+#: functions.php:3347
+msgid ""
+"\n"
+"Please review this submission in your WordPress admin panel.\n"
+msgstr ""
+"\n"
+"Veuillez vérifier cette soumission dans votre panneau d'administration "
+"WordPress.\n"
+
+#: functions.php:3360
+msgid "An unexpected error occurred. Please try again later."
+msgstr "Une erreur inattendue s'est produite. Veuillez réessayer plus tard."
+
+#: functions.php:3536
+#, php-format
+msgid "[%s] Friend Link Check Failure: %s"
+msgstr "[%s] Échec de la vérification du lien amical : %s"
+
+#: functions.php:3539
+#, php-format
+msgid ""
+"The friend link '%s' has failed our status check %d times.\n"
+"\n"
+msgstr ""
+"Le lien d'ami « %s » a échoué à notre vérification d'état %d fois.\n"
+"\n"
+
+#: functions.php:3540
+#, php-format
+msgid "Link URL: %s\n"
+msgstr "Lien URL : %s\n"
+
+#: functions.php:3543
+#, php-format
+msgid "HTTP Status Code: %s\n"
+msgstr "Code d'état HTTP : %s\n"
+
+#: functions.php:3547
+#, php-format
+msgid "Error Message: %s\n"
+msgstr "Message d'erreur : %s\n"
+
+#: functions.php:3550
+#, php-format
+msgid ""
+"\n"
+"Last Check Time: %s\n"
+"\n"
+msgstr ""
+"\n"
+"Dernière heure de vérification : %s\n"
+"\n"
+
+#: functions.php:3551
+msgid ""
+"You may want to check this link and consider removing it if it remains "
+"unavailable.\n"
+msgstr ""
+"Vous pouvez vérifier ce lien et envisager de le supprimer s'il reste "
+"indisponible.\n"
+
+#: functions.php:3671
+msgid "Access denied."
+msgstr "Accès refusé."
+
+#: header.php:265 layouts/sakura_header.php:120
+msgid "Random Background"
+msgstr "Contexte aléatoire"
+
+#: inc/cache_settings.php:7 inc/cache_settings.php:8 inc/cache_settings.php:42
+msgid "Cache Settings"
+msgstr "Paramètres du cache de données"
+
+#: inc/cache_settings.php:39
+msgid "Cache Updated!"
+msgstr "Cache mis à jour !"
+
+#: inc/cache_settings.php:43
+msgid "Cache settings"
+msgstr "Paramètres du cache de données"
+
+#: inc/cache_settings.php:44
+msgid ""
+"If your server network environment is poor, you can click the link below to "
+"manually obtain the response content and fill it in"
+msgstr ""
+"Si l'environnement du réseau de votre serveur est médiocre, vous pouvez "
+"cliquer sur le lien ci-dessous pour obtenir manuellement le contenu de la "
+"réponse et le remplir."
+
+#: inc/cache_settings.php:45
+msgid ""
+"If the content is empty or incorrect, the server will try to automatically "
+"pull it"
+msgstr ""
+"Si le contenu est vide ou incorrect, le serveur essaiera de l'extraire "
+"automatiquement."
+
+#: inc/cache_settings.php:46
+msgid ""
+"The link target will be automatically updated after the relevant settings "
+"are saved"
+msgstr ""
+"La cible du lien sera automatiquement mise à jour après l'enregistrement des "
+"paramètres pertinents."
+
+#: inc/cache_settings.php:47
+msgid ""
+"The unit is seconds. And it will take effect permanently when it was set to "
+"0."
+msgstr ""
+"L'unité est la seconde et sera en effet permanente lorsqu'elle est définie "
+"sur 0"
+
+#: inc/cache_settings.php:55 inc/cache_settings.php:67
+msgid "Cache expire time"
+msgstr "Temps d'expiration du cache"
+
+#: inc/cache_settings.php:61
+msgid "Bangumi Cache"
+msgstr ""
+
+#: inc/cache_settings.php:73
+msgid "Steam Cache"
+msgstr ""
+
+#: inc/categories-images.php:44 inc/categories-images.php:65
+msgid "category/tag image"
+msgstr "image de catégorie/étiquette"
+
+#: inc/categories-images.php:47 inc/categories-images.php:67
+#: inc/categories-images.php:196
+msgid "add image"
+msgstr "ajouter une image"
+
+#: inc/categories-images.php:68 inc/categories-images.php:197
+msgid "remove image"
+msgstr "supprimer une image"
+
+#: inc/categories-images.php:213
+msgid "image"
+msgstr "image"
+
+#: inc/categories-images.php:222
+msgid "no image"
+msgstr "aucune image"
+
+#: inc/chatgpt/aigc-manage.php:15 inc/chatgpt/aigc-manage.php:16
+#: inc/chatgpt/aigc-manage.php:93
+msgid "Article Annotations Management"
+msgstr "Gestion des annotations d'articles"
+
+#: inc/chatgpt/aigc-manage.php:37
+msgid "Successfully generated annotations for the post!"
+msgstr "Les annotations ont été générées avec succès pour le billet !"
+
+#: inc/chatgpt/aigc-manage.php:40
+msgid ""
+"Failed to generate annotations. Please check API settings or view error logs."
+msgstr ""
+"Échec de la génération d'annotations. Veuillez vérifier les paramètres de "
+"l'API ou consulter les journaux d'erreurs."
+
+#: inc/chatgpt/aigc-manage.php:46
+msgid "Annotations for the post have been deleted."
+msgstr "Les annotations relatives à ce message ont été supprimées."
+
+#: inc/chatgpt/aigc-manage.php:51
+msgid "Example Term"
+msgstr "Exemple de terme"
+
+#: inc/chatgpt/aigc-manage.php:51
+msgid "This is a example explanation"
+msgstr "Voici un exemple d'explication"
+
+#: inc/chatgpt/aigc-manage.php:54
+#, php-format
+msgid "Attempting to save test data to post %d..."
+msgstr "Tentative d'enregistrement des données de test dans le poste %d..."
+
+#: inc/chatgpt/aigc-manage.php:59
+msgid "Save failed!"
+msgstr "Enregistrer échoué!"
+
+#: inc/chatgpt/aigc-manage.php:61
+#, php-format
+msgid "Save successful! Update ID: %s"
+msgstr "Sauvegarde réussie ! ID de mise à jour : %s"
+
+#: inc/chatgpt/aigc-manage.php:65
+#, php-format
+msgid "Read result: %s"
+msgstr "Résultat de la lecture : %s"
+
+#: inc/chatgpt/aigc-manage.php:65
+msgid "Success (array, contains "
+msgstr "Succès (tableau, contient "
+
+#: inc/chatgpt/aigc-manage.php:65
+msgid " items)"
+msgstr " articles)"
+
+#: inc/chatgpt/aigc-manage.php:65
+msgid "Failed"
+msgstr "Echec"
+
+#: inc/chatgpt/aigc-manage.php:72
+#, php-format
+msgid "Database query result: %s"
+msgstr "Résultat de l'interrogation de la base de données : %s"
+
+#: inc/chatgpt/aigc-manage.php:72
+msgid "Found "
+msgstr "Trouvé "
+
+#: inc/chatgpt/aigc-manage.php:72
+msgid " records"
+msgstr " dossiers"
+
+#: inc/chatgpt/aigc-manage.php:72
+msgid "No records found"
+msgstr "Aucun enregistrement n'a été trouvé"
+
+#: inc/chatgpt/aigc-manage.php:103
+msgid "System Information"
+msgstr "Informations système"
+
+#: inc/chatgpt/aigc-manage.php:104
+msgid "ChatGPT API Settings Status"
+msgstr "Statut des paramètres de l'API ChatGPT"
+
+#: inc/chatgpt/aigc-manage.php:106
+msgid "API Endpoint: "
+msgstr "Point final de l'API : "
+
+#: inc/chatgpt/aigc-manage.php:106 inc/chatgpt/aigc-manage.php:107
+#: inc/chatgpt/aigc-manage.php:108
+msgid "Not set"
+msgstr "Non défini"
+
+#: inc/chatgpt/aigc-manage.php:107
+msgid "API Key: "
+msgstr "Clé API : "
+
+#: inc/chatgpt/aigc-manage.php:107
+msgid "Set (Length: "
+msgstr "Ensemble (Longueur : "
+
+#: inc/chatgpt/aigc-manage.php:108
+msgid "Model: "
+msgstr "Modèle : "
+
+#: inc/chatgpt/aigc-manage.php:113
+msgid "About Article Annotations"
+msgstr "À propos des annotations d'articles"
+
+#: inc/chatgpt/aigc-manage.php:114
+msgid ""
+"This feature uses ChatGPT to analyze the content of the post, identify "
+"complex or specialized terms, and automatically generate explanatory "
+"annotations. The annotations will be displayed in the post, and visitors can "
+"click to view explanations."
+msgstr ""
+"Cette fonction utilise ChatGPT pour analyser le contenu du message, "
+"identifier les termes complexes ou spécialisés et générer automatiquement "
+"des annotations explicatives. Les annotations seront affichées dans le "
+"message et les visiteurs pourront cliquer pour voir les explications."
+
+#: inc/chatgpt/aigc-manage.php:115
+msgid "Note:"
+msgstr ""
+
+#: inc/chatgpt/aigc-manage.php:115
+msgid "This feature requires a valid OpenAI API key."
+msgstr "Cette fonctionnalité nécessite une clé API OpenAI valide."
+
+#: inc/chatgpt/aigc-manage.php:121
+msgid ""
+"API key not set, please configure the ChatGPT API key in the theme settings "
+"first."
+msgstr ""
+"La clé API n'est pas définie, veuillez d'abord configurer la clé API de "
+"ChatGPT dans les paramètres du thème."
+
+#: inc/chatgpt/aigc-manage.php:128
+msgid "Generate Annotations for Post"
+msgstr "Générer des annotations pour le poste"
+
+#: inc/chatgpt/aigc-manage.php:133
+msgid "Select Post"
+msgstr "Sélectionner un poste"
+
+#: inc/chatgpt/aigc-manage.php:136
+msgid "-- Select Post --"
+msgstr "-- Sélectionner le poste --"
+
+#: inc/chatgpt/aigc-manage.php:145
+msgid "Generate Annotations"
+msgstr "Générer des annotations"
+
+#: inc/chatgpt/aigc-manage.php:146
+msgid "Delete Annotations"
+msgstr "Supprimer des annotations"
+
+#: inc/chatgpt/aigc-manage.php:146
+msgid "Are you sure you want to delete the annotation data for this post?"
+msgstr ""
+"Êtes-vous sûr de vouloir supprimer les données d'annotation de ce message ?"
+
+#: inc/chatgpt/aigc-manage.php:147
+msgid "Create empty data"
+msgstr "Créer des données vides"
+
+#: inc/chatgpt/aigc-manage.php:147
+msgid "Create empty terms for your custom article"
+msgstr "Créer des termes vides pour votre article personnalisé"
+
+#: inc/chatgpt/aigc-manage.php:154
+msgid "Posts with Generated Annotations"
+msgstr "Messages avec annotations générées"
+
+#: inc/chatgpt/aigc-manage.php:156
+msgid "Currently, no posts contain annotation data."
+msgstr "Actuellement, aucun billet ne contient de données d'annotation."
+
+#: inc/chatgpt/aigc-manage.php:161
+msgid "Post Title"
+msgstr "Titre de l'article"
+
+#: inc/chatgpt/aigc-manage.php:162
+msgid "Number of Annotations"
+msgstr "Nombre d'annotations"
+
+#: inc/chatgpt/aigc-manage.php:163 inc/chatgpt/aigc-manage.php:255
+#: inc/link-status.php:108
+msgid "Actions"
+msgstr "Actions"
+
+#: inc/chatgpt/aigc-manage.php:180
+msgid "View Annotations"
+msgstr "Voir les annotations"
+
+#: inc/chatgpt/aigc-manage.php:181
+msgid "Edit Post"
+msgstr "Modifier le poste"
+
+#: inc/chatgpt/aigc-manage.php:186
+msgid "Debug Information"
+msgstr "Information de déboguage"
+
+#: inc/chatgpt/aigc-manage.php:203
+#, php-format
+msgid "Annotations Debug Information for post \"%s\" (ID: %d)"
+msgstr "Annotations Debug Information pour l'article « %s » (ID : %d)"
+
+#: inc/chatgpt/aigc-manage.php:208
+msgid "Data Type:"
+msgstr "Type de données :"
+
+#: inc/chatgpt/aigc-manage.php:211
+msgid "Number of Annotations:"
+msgstr "Nombre d'annotations :"
+
+#: inc/chatgpt/aigc-manage.php:212 inc/chatgpt/aigc-manage.php:217
+msgid "Annotation Data:"
+msgstr "Données d'annotation :"
+
+#: inc/chatgpt/aigc-manage.php:227
+msgid "Database Records:"
+msgstr "Enregistrements de la base de données :"
+
+#: inc/chatgpt/aigc-manage.php:227
+msgid "records"
+msgstr "dossiers"
+
+#: inc/chatgpt/aigc-manage.php:231
+msgid "Record ID:"
+msgstr "ID d'enregistrement :"
+
+#: inc/chatgpt/aigc-manage.php:232
+msgid "Original Value:"
+msgstr "Valeur originale :"
+
+#: inc/chatgpt/aigc-manage.php:247 inc/chatgpt/aigc-manage.php:273
+msgid "Post Annotations: "
+msgstr "Annotations de poste : "
+
+#: inc/chatgpt/aigc-manage.php:253 inc/chatgpt/aigc-manage.php:558
+msgid "Term"
+msgstr "Terme"
+
+#: inc/chatgpt/aigc-manage.php:254 inc/chatgpt/aigc-manage.php:558
+msgid "Explanation"
+msgstr "Explication"
+
+#: inc/chatgpt/aigc-manage.php:262
+msgid "Add Annotation"
+msgstr "Ajouter une annotation"
+
+#: inc/chatgpt/aigc-manage.php:263
+msgid "Save Annotations"
+msgstr "Enregistrer les annotations"
+
+#: inc/chatgpt/aigc-manage.php:283 inc/chatgpt/aigc-manage.php:318
+msgid "Delete"
+msgstr "Supprimer"
+
+#: inc/chatgpt/aigc-manage.php:353
+msgid "Annotations updated successfully."
+msgstr "Les annotations ont été mises à jour avec succès."
+
+#: inc/chatgpt/aigc-manage.php:356
+msgid "Update failed."
+msgstr "La mise à jour a échoué."
+
+#: inc/chatgpt/aigc-manage.php:474 inc/chatgpt/aigc-manage.php:510
+msgid "Invalid post ID"
+msgstr "ID du message invalide"
+
+#: inc/chatgpt/aigc-manage.php:479
+msgid "Post not found"
+msgstr "Article non trouvé"
+
+#: inc/chatgpt/aigc-manage.php:486
+msgid "This post does not have any annotation data"
+msgstr "Ce poste ne contient pas de données d'annotation"
+
+#: inc/chatgpt/aigc-manage.php:502 inc/chatgpt/aigc-manage.php:505
+msgid "Access denied"
+msgstr "Accès refusé"
+
+#: inc/chatgpt/aigc-manage.php:516
+msgid "Invalid annotations data"
+msgstr "Données d'annotations non valides"
+
+#: inc/chatgpt/aigc-manage.php:522
+msgid "Failed to update annotations"
+msgstr "Échec de la mise à jour des annotations"
+
+#: inc/chatgpt/aigc-manage.php:525
+msgid "Annotations updated successfully"
+msgstr "Annotations mises à jour avec succès"
+
+#: inc/chatgpt/aigc-manage.php:536
+msgid "Post Annotation Data"
+msgstr "Données d'annotation"
+
+#: inc/chatgpt/aigc-manage.php:552
+#, php-format
+msgid ""
+"This post currently does not have any annotation data. You can generate "
+"annotations on the <a href=\"%s\">Article Annotations Management</a> page."
+msgstr ""
+"This post currently does not have any annotation data. You can generate "
+"annotations on the <a href=\"%s\">Article Annotations Management</a> page."
+
+#: inc/chatgpt/aigc-manage.php:567
+msgid "Edit in Annotations Management Page"
+msgstr "Modifier dans la page de gestion des annotations"
+
+#: inc/classes/Bilibili.php:49 inc/classes/BilibiliFavList.php:57
+#: inc/classes/BilibiliFavList.php:62 inc/classes/BilibiliFavList.php:74
+#: inc/classes/MyAnimeList.php:76
+msgid "Backend error"
+msgstr "Erreur serveur"
+
+#: inc/classes/Bilibili.php:54 inc/classes/MyAnimeList.php:89
+msgid "Following "
+msgstr "Suivant "
+
+#: inc/classes/Bilibili.php:54 inc/classes/MyAnimeList.php:89
+msgid " anime."
+msgstr " anime."
+
+#: inc/classes/Bilibili.php:69
+msgid "The author seems to have hidden their bangumi list."
+msgstr "L'auteur semble avoir caché sa liste bangumi."
+
+#: inc/classes/Bilibili.php:99 inc/classes/BilibiliFavList.php:130
+msgid "Load More"
+msgstr "Charger plus"
+
+#: inc/classes/BilibiliFavList.php:90
+msgid "Item count: "
+msgstr "Nombre d'éléments : "
+
+#: inc/classes/BilibiliFavList.php:91
+msgid "Expand"
+msgstr "Déplier"
+
+#: inc/classes/BilibiliFavList.php:108
+msgid "All item has been loaded."
+msgstr "Tous les éléments ont été chargés."
+
+#: inc/classes/Cache.php:70 inc/theme-plus.php:654
+msgid "The comment is private"
+msgstr "Le commentaire est privé"
+
+#: inc/classes/Captcha.php:174
+msgid "Bad Request."
+msgstr "Mauvaise requête."
+
+#: inc/classes/Captcha.php:178
+msgid "Look like you forgot to enter the captcha."
+msgstr "Il semble que vous avez oublié d'entrer le captcha."
+
+#: inc/classes/Captcha.php:181
+msgid "Captcha timeout."
+msgstr "Expiration du captcha."
+
+#: inc/classes/Captcha.php:185
+msgid "Captcha check passed."
+msgstr "Vérification du captcha réussie."
+
+#: inc/classes/Captcha.php:188
+msgid "Captcha incorrect."
+msgstr "Captcha incorrect."
+
+#: inc/classes/Captcha.php:192
+msgid "An error has occurred."
+msgstr "Une erreur s'est produite."
+
+#: inc/classes/Images.php:24
+msgid "Image Failed to Load"
+msgstr "Le chargement de l'image a échoué"
+
+#: inc/classes/IpLocation.php:246 inc/classes/IpLocation.php:275
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: inc/classes/IpLocation.php:249 inc/classes/IpLocation.php:278
+msgid "Reserved Address"
+msgstr "Adresse réservée"
+
+#: inc/classes/IpLocation.php:252 inc/classes/IpLocation.php:266
+msgid "Empty Address"
+msgstr "Adresse vide"
+
+#: inc/classes/MyAnimeList.php:90
+msgid " Watched "
+msgstr " Regardé "
+
+#: inc/classes/MyAnimeList.php:90
+msgid " episodes."
+msgstr " épisodes."
+
+#: inc/classes/MyAnimeList.php:128
+msgid "Finished "
+msgstr "Terminé "
+
+#: inc/classes/MyAnimeList.php:137
+msgid "Watching "
+msgstr "En train de regarder "
+
+#: inc/classes/MyAnimeList.php:144
+msgid "Planning to Watch "
+msgstr "Prévoit de regarder "
+
+#: inc/classes/MyAnimeList.php:153
+msgid "Dropped "
+msgstr "Abandonné "
+
+#: inc/classes/MyAnimeList.php:162
+msgid "Paused "
+msgstr "En pause "
+
+#: inc/classes/Steam.php:91
+msgid "Load more"
+msgstr "Charger plus"
+
+#: inc/classes/Steam.php:105
+msgid "Playtime"
+msgstr "Récréation"
+
+#: inc/classes/Steam.php:106
+msgid "Last Played"
+msgstr "Dernière lecture"
+
+#: inc/classes/Steam.php:140
+msgid "Not Played Yet"
+msgstr "Pas encore joué"
+
+#: inc/classes/Steam.php:144
+msgid "minute"
+msgstr "minute"
+
+#: inc/classes/Steam.php:147
+msgid "hour"
+msgstr "heure"
+
+#: inc/classes/bangumi.php:104
+msgid "Bangumi ID not set."
+msgstr "Bangumi ID non défini."
+
+#: inc/classes/bangumi.php:112
+msgid "No data"
+msgstr "Aucune donnée"
+
+#: inc/classes/bangumi.php:129
+msgid "Release date: "
+msgstr "Date de sortie : "
+
+#: inc/classes/bangumi.php:135
+msgid "Watch progress: "
+msgstr "Suivez la progression : "
+
+#: inc/classes/bangumi.php:136
+msgid "No introduction yet"
+msgstr "Pas encore d'introduction"
+
+#: inc/classes/bangumi.php:148
+msgid "An error occured: "
+msgstr "Une erreur s'est produite : "
+
+#: inc/classes/bangumi.php:154
+msgid "Load more..."
+msgstr "Charger plus..."
+
+#: inc/classes/gallery.php:79
+msgid "Successfully initialized the index."
+msgstr "L'index a été initialisé avec succès."
+
+#: inc/classes/gallery.php:113 inc/classes/gallery.php:117
+msgid ""
+"The target directory is not accessible. Please check the permission settings."
+msgstr ""
+"Le répertoire cible n'est pas accessible. Veuillez vérifier les paramètres "
+"d'autorisation."
+
+#: inc/classes/gallery.php:120
+msgid ""
+"Successfully backed up images from the 'img' folder to the 'backup' folder."
+msgstr ""
+"Les images du dossier « img » vers le dossier « backup » ont été "
+"sauvegardées avec succès."
+
+#: inc/classes/gallery.php:122
+msgid ""
+"Detected content in the 'backup' folder. Verifying and attempting to restore "
+"conversion operations."
+msgstr ""
+"Contenu détecté dans le dossier « sauvegarde ». Vérification et tentative de "
+"restauration des opérations de conversion."
+
+#: inc/classes/gallery.php:153
+msgid ""
+"All images have been compressed to WebP format. The original files are "
+"stored in the 'backup' folder.<br> Please confirm correctness before "
+"reinitializing the index.<br>"
+msgstr ""
+"Toutes les images ont été compressées au format WebP. Les fichiers originaux "
+"sont stockés dans le dossier « backup ».<br> Veuillez confirmer l'exactitude "
+"avant de réinitialiser l'index.<br>"
+
+#: inc/classes/gallery.php:203
+msgid ""
+"No images found. Please contact the administrator to check if images exist "
+"in the 'iro_gallary' directory and ensure the directory is readable and "
+"writable."
+msgstr ""
+"Aucune image trouvée. Veuillez contacter l'administrateur pour vérifier si "
+"des images existent dans le répertoire 'iro_gallary' et vous assurer que le "
+"répertoire est accessible en lecture et en écriture."
+
+#: inc/link-status.php:19 inc/link-status.php:72
+msgid "Friend Links Status"
+msgstr "Statut des liens d'amitié"
+
+#: inc/link-status.php:20 inc/link-status.php:97
+msgid "Links Status"
+msgstr "Statut des liens"
+
+#: inc/link-status.php:41
+msgid ""
+"All links check has been triggered. Please refresh this page in a few "
+"moments to see the results."
+msgstr ""
+"La vérification de tous les liens a été déclenchée. Veuillez rafraîchir "
+"cette page dans quelques instants pour voir les résultats."
+
+#: inc/link-status.php:48
+#, php-format
+msgid "Link \"%s\" has been checked. Refresh to see the results."
+msgstr "Le lien « %s » a été vérifié. Rafraîchir pour voir les résultats."
+
+#: inc/link-status.php:58
+msgid "Link status has been reset."
+msgstr "L'état de la liaison a été réinitialisé."
+
+#: inc/link-status.php:78
+#, php-format
+msgid "Last automatic check: %s"
+msgstr "Dernier contrôle automatique : %s"
+
+#: inc/link-status.php:80
+msgid "No automatic check has been performed yet."
+msgstr "Aucun contrôle automatique n'a encore été effectué."
+
+#: inc/link-status.php:84
+msgid ""
+"The system automatically checks a batch of links (5 links) every week to "
+"avoid overloading the server."
+msgstr ""
+"Le système vérifie automatiquement un lot de liens (5 liens) chaque semaine "
+"pour éviter de surcharger le serveur."
+
+#: inc/link-status.php:90
+msgid "Check All Links Now"
+msgstr "Vérifier tous les liens maintenant"
+
+#: inc/link-status.php:90
+msgid "This will check all links and may take some time. Continue?"
+msgstr ""
+"Cette opération vérifie tous les liens et peut prendre un certain temps. "
+"Poursuivre ?"
+
+#: inc/link-status.php:91
+msgid ""
+"This will check all links in batches of 5 with a delay between batches to "
+"avoid overloading the server."
+msgstr ""
+"Il vérifiera tous les liens par lots de 5, avec un délai entre les lots pour "
+"éviter de surcharger le serveur."
+
+#: inc/link-status.php:102
+msgid "Link Name"
+msgstr "Nom du lien"
+
+#: inc/link-status.php:103
+msgid "URL"
+msgstr ""
+
+#: inc/link-status.php:104
+msgid "Status"
+msgstr "Statut"
+
+#: inc/link-status.php:105
+msgid "Last Check"
+msgstr "Vérification système"
+
+#: inc/link-status.php:106
+msgid "Failures"
+msgstr "Défaillances"
+
+#: inc/link-status.php:107
+msgid "Details"
+msgstr "En savoir plus"
+
+#: inc/link-status.php:114
+msgid "No links found."
+msgstr "Aucun lien trouvé."
+
+#: inc/link-status.php:127
+msgid "Not checked"
+msgstr "Non vérifié"
+
+#: inc/link-status.php:129
+msgid "Success"
+msgstr "Succès"
+
+#: inc/link-status.php:131
+msgid "Failure"
+msgstr "Échec"
+
+#: inc/link-status.php:137
+#, php-format
+msgid "Status Code: %s"
+msgstr "Code d’état : %s"
+
+#: inc/link-status.php:140
+#, php-format
+msgid "Error: %s"
+msgstr "Erreur: %s"
+
+#: inc/link-status.php:147
+msgid "Not visible"
+msgstr "Non visible"
+
+#: inc/link-status.php:152
+msgid "Never"
+msgstr "Jamais"
+
+#: inc/link-status.php:159
+msgid "Check Now"
+msgstr "Vérifier maintenant"
+
+#: inc/link-status.php:165
+msgid "Reset Status"
+msgstr "Réinitialiser l'État"
+
+#: inc/template-tags.php:28
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Publié le %s"
+
+#: inc/template-tags.php:33
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr "par %s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:50 inc/template-tags.php:56
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:52
+#, php-format
+msgid "Posted in %1$s"
+msgstr "Publié dans %1$s"
+
+#: inc/template-tags.php:58
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Étiqueté %1$s"
+
+#. translators: %s: post title
+#: inc/template-tags.php:65
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+"Laisser un commentaire<span class=\"screen-reader-text\"> sur %s</span>"
+
+#. translators: %s: Name of current post
+#: inc/template-tags.php:72 tpl/content-page.php:38
+#, php-format
+msgid "Edit %s"
+msgstr "Modifier %s"
+
+#: inc/theme-plus.php:57
+msgid " days ago"
+msgstr " jours auparavant"
+
+#: inc/theme-plus.php:58
+msgid " hours ago"
+msgstr " heures auparavant"
+
+#: inc/theme-plus.php:59
+msgid " minutes ago"
+msgstr " minutes auparavant"
+
+#: inc/theme-plus.php:60
+msgid " seconds ago"
+msgstr " secondes auparavant"
+
+#: inc/theme-plus.php:67
+msgid "Posted on "
+msgstr "Publié le "
+
+#: inc/theme-plus.php:147
+msgid "Please upgrade wordpress to version 4.4+"
+msgstr "Veuillez mettre à jour WordPress à la version 4.4+"
+
+#: inc/theme-plus.php:160
+msgid "You may post nothing"
+msgstr "Vous ne pouvez rien publier"
+
+#: inc/theme-plus.php:166
+msgid "Please fill in the captcha answer"
+msgstr "Veuillez remplir la réponse captcha"
+
+#: inc/theme-plus.php:169
+msgid ""
+"Have you modified the captcha code data? Or refresh the captcha and try "
+"again?"
+msgstr ""
+"Avez-vous modifié les données du code captcha ? Ou actualisez-vous le "
+"captcha et réessayez ?"
+
+#: inc/theme-plus.php:177
+msgid "Please fill in the correct captcha answer"
+msgstr "Veuillez remplir la bonne réponse captcha"
+
+#: inc/theme-plus.php:260 inc/theme-plus.php:313
+#, php-format
+msgid "Search results for \" %s \""
+msgstr "Résultats de recherche pour « %s »"
+
+#: inc/theme-plus.php:330 tpl/content-thumbcard.php:60
+#: tpl/content-thumbcard.php:66
+msgid "Your browser does not support HTML5 video."
+msgstr "Votre navigateur ne prend pas en charge les vidéos HTML5."
+
+#: inc/theme-plus.php:361
+msgid "Signed in as"
+msgstr "Connecté en tant que"
+
+#: inc/theme-plus.php:367 layouts/mo_toc_menu.php:30
+msgid "New post"
+msgstr "Nouvelle publication"
+
+#: inc/theme-plus.php:369 layouts/mo_toc_menu.php:34
+msgid "Profile"
+msgstr "Profil"
+
+#: inc/theme-plus.php:370 layouts/mo_toc_menu.php:35
+msgid "Sign out"
+msgstr "Se déconnecter"
+
+#: inc/theme-plus.php:391 layouts/mo_toc_menu.php:66
+msgid "Log in"
+msgstr "Se connecter"
+
+#: index.php:16
+msgid "Notice"
+msgstr "Avis"
+
+#: layouts/mo_toc_menu.php:71
+msgid "Register"
+msgstr "S'inscrire"
+
+#: layouts/post-nextprev.php:15
+msgid "Previous Post"
+msgstr "Publication précédente"
+
+#: layouts/post-nextprev.php:24
+msgid "Next Post"
+msgstr "Publication suivante"
+
+#: search.php:45
+#, php-format
+msgid "Search result: %s"
+msgstr "Résultat de recherche : %s"
+
+#: search.php:76
+msgid "results found"
+msgstr "résultats trouvés"
+
+#: search.php:90
+msgid "shuoshuo"
+msgstr "Shuoshuo"
+
+#: search.php:101
+msgid "If no option is selected, all results are retrieved by default"
+msgstr ""
+"Si aucune option n'est sélectionnée, tous les résultats sont récupérés par "
+"défaut"
+
+#: search.php:102
+msgid "Click to filter"
+msgstr "Cliquez pour filtrer"
+
+#: tpl/content-none.php:14
+msgid "There is nothing here！"
+msgstr "Il n'y a rien ici !"
+
+#: tpl/content-none.php:21
+#, php-format
+msgid ""
+"Ready to post your first article? <a href=\"%1$s\">Click here to start</a>."
+msgstr ""
+"Prêt à publier votre premier article ? <a href=\"%1$s\">Cliquez ici pour "
+"commencer</a>."
+
+#: tpl/content-none.php:25
+msgid "Didn't find what you want, look at the other ones."
+msgstr "Vous n'avez pas trouvé ce que vous cherchez ? Regardez les autres."
+
+#: tpl/content-none.php:43
+msgid "We didn't seem to find what you want. Maybe you can search for it."
+msgstr ""
+"Nous n'avons pas trouvé ce que vous cherchez. Peut-être pouvez-vous le "
+"rechercher."
+
+#: tpl/content-page.php:27 tpl/content-single.php:33 tpl/single-image.php:25
+msgid "Pages:"
+msgstr "Pages :"
+
+#: tpl/content-single.php:26 tpl/content-thumbcard.php:185
+msgid "AI Excerpt"
+msgstr "Résumé AI"
+
+#: tpl/content-thumbcard.php:4
+msgid "Hit"
+msgid_plural "Hits"
+msgstr[0] "Clic"
+msgstr[1] ""
+
+#: tpl/content-thumbcard.php:41 tpl/entry-census.php:61
+msgid "Estimate Reading Time"
+msgstr "Temps de lecture estimé"
+
+#: tpl/content-thumbcard.php:171
+msgid "Sticky"
+msgstr "Épinglé"
+
+#: tpl/content-thumbcard.php:188
+msgid "Excerpt"
+msgstr "Extrait"
+
+#: tpl/entry-census.php:6
+msgid "EDIT"
+msgstr "MODIFIER"
+
+#: tpl/entry-census.php:43
+msgid "View"
+msgid_plural "Views"
+msgstr[0] "Vue"
+msgstr[1] ""
+
+#: tpl/entry-census.php:77 tpl/section-article-function.php:73
+msgid "Last updated on "
+msgstr "Dernière mise à jour le "
+
+#: tpl/entry-census.php:79 tpl/entry-census.php:81
+msgid "Last updated on"
+msgstr "Dernière mise à jour le"
+
+#: tpl/meta-comments.php:4
+msgid "1 Comment"
+msgstr "1 Commentaire"
+
+#: tpl/meta-comments.php:4
+msgid "Comments"
+msgstr "Commentaires"
+
+#: tpl/meta-comments.php:4
+msgid "Comment Closed"
+msgstr "Commentaires fermés"
+
+#: tpl/meta-ert.php:8
+msgid "Less than 1 minute"
+msgstr "Moins d'une minute"
+
+#: tpl/meta-ert.php:11
+#, php-format
+msgid "%s Hour"
+msgid_plural "%s Hours"
+msgstr[0] "%s Heure"
+msgstr[1] "%s Heures"
+
+#: tpl/meta-ert.php:13
+#, php-format
+msgid "%s Minute"
+msgid_plural "%s Minutes"
+msgstr[0] "%s Minute"
+msgstr[1] "%s Minutes"
+
+#: tpl/meta-words-count.php:9
+#, php-format
+msgid "%s Word"
+msgid_plural "%s Words"
+msgstr[0] "%s Mot"
+msgstr[1] "%s Mots"
+
+#: tpl/section-article-function.php:19 tpl/section-article-function.php:24
+#, php-format
+msgid "This article is licensed under %s"
+msgstr "Cet article est sous licence %s"
+
+#: tpl/section-article-function.php:64
+msgid "This author has not provided a description."
+msgstr "Cet auteur n'a pas fourni de description."
+
+#: user/page-bangumi.php:223 user/page-bilibiliFavList.php:213
+#: user/page-followVideos.php:211
+msgid "Please fill in the Bilibili UID in Sakura Options."
+msgstr "Veuillez remplir l'UID Bilibili dans les options Sakura."
+
+#: user/page-bangumi.php:230
+msgid "Please fill in the Bangumi UID in Sakura Options."
+msgstr "Veuillez remplir l'UID Bangumi dans les options Sakura."
+
+#: user/page-bangumi.php:236
+msgid "Please fill in the My Anime List Username in Sakura Options."
+msgstr ""
+"Veuillez remplir le nom d'utilisateur My Anime List dans les options Sakura."
+
+#: user/page-links.php:492
+msgid "Submit Link"
+msgstr "Soumettre un lien"
+
+#: user/page-links.php:544
+msgid "Submit Your Link"
+msgstr "Soumettre votre lien"
+
+#: user/page-links.php:545
+msgid "Please fill out the form below to submit your website link."
+msgstr ""
+"Veuillez remplir le formulaire ci-dessous pour soumettre le lien de votre "
+"site web."
+
+#: user/page-links.php:551
+msgid "Site Name"
+msgstr "Nom du site"
+
+#: user/page-links.php:556
+msgid "Site URL"
+msgstr "URL du site"
+
+#: user/page-links.php:561
+msgid "Site Description"
+msgstr "Description du site"
+
+#: user/page-links.php:566
+msgid "Site Logo/Avatar URL"
+msgstr "Logo du site / URL de l'avatar"
+
+#: user/page-links.php:571
+msgid "Your Email"
+msgstr "Votre Email"
+
+#: user/page-links.php:577
+msgid "Verification Code"
+msgstr "Code de vérification"
+
+#. Theme Name of the plugin/theme
+msgid "Sakurairo"
+msgstr "Sakurairo"
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/mirai-mamori/Sakurairo"
+msgstr "https://github.com/mirai-mamori/Sakurairo"
+
+#. Description of the plugin/theme
+msgid ""
+"A WordPress theme that is built with AI-assisted reading features, colorful, "
+"user-friendly, well-rounded, and rich in functionalities. (Based on Theme "
+"Sakura)"
+msgstr ""
+"Un thème WordPress construit avec des fonctions de lecture assistée par "
+"l'IA, coloré, convivial, bien équilibré et riche en fonctionnalités. (Basé "
+"sur le thème Sakura)"
+
+#. Author of the plugin/theme
+msgid "Created by Fuukei"
+msgstr "Créé par Fuukei"
+
+#. Author URI of the plugin/theme
+msgid "https://docs.fuukei.org/"
+msgstr "https://docs.fuukei.org/"

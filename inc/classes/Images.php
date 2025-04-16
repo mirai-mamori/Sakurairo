@@ -17,6 +17,15 @@ class Images
     }
 
     /**
+     * 返回默认的错误图片SVG（支持国际化）
+     */
+    private function getDefaultErrorImage() {
+        // 获取国际化文本
+        $error_text = __('Image Failed to Load', 'sakurairo');
+        return 'data:image/svg+xml;utf8,' . urlencode('<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"><rect x="5" y="5" width="290" height="190" rx="10" fill="#f8f9fa" stroke="#ddd"/><circle cx="150" cy="70" r="30" fill="#ff6b6b"/><text x="150" y="80" font-family="Arial" font-size="30" text-anchor="middle" fill="#fff">!</text><text x="150" y="130" font-family="Arial" font-size="16" text-anchor="middle" fill="#555">' . $error_text . '</text></svg>');
+    }
+
+    /**
      * LSky Pro upload interface
      */
     public function LSKY_API($image) {
@@ -47,7 +56,7 @@ class Images
             $status = 400;
             $success = false;
             $message = $reply->message;
-            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/default_d_h_large.gif';
+            $link = $this->getDefaultErrorImage();
             $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(
@@ -85,7 +94,7 @@ class Images
             $status = $reply->status_code;
             $success = false;
             $message = $reply->error->message;
-            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/default_d_h_large.gif';
+            $link = $this->getDefaultErrorImage();
             $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(
@@ -125,7 +134,7 @@ class Images
             $status = $reply->status;
             $success = false;
             $message = $reply->data->error;
-            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/default_d_h_large.gif';
+            $link = $this->getDefaultErrorImage();
             $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(
@@ -173,7 +182,7 @@ class Images
             $status = 400;
             $success = false;
             $message = $reply->message;
-            $link = 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/default_d_h_large.gif';
+            $link = $this->getDefaultErrorImage();
             $proxy = iro_opt('comment_image_proxy') . $link;
         }
         $output = array(
@@ -185,108 +194,4 @@ class Images
         );
         return $output;
     }
-
-    public static function cover_gallery($size = 'source') {
-        if (iro_opt('random_graphs_options') == 'local') {
-            // $img_array = glob(STYLESHEETPATH . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
-            // Alpine不支持GLOB_BRACE常量，出于兼容性考虑，不使用glob函数
-            $folderPath = STYLESHEETPATH . '/manifest/gallary/';
-            $allowedExtensions = array('jpg', 'jpeg', 'png', 'gif');
-            $img_array = array();
-            $files = scandir($folderPath);
-            foreach ($files as $file) {
-                // 检查文件扩展名是否在允许的范围内
-                $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-                if (in_array($extension, $allowedExtensions)) {
-                    $img_array[] =  STYLESHEETPATH . '/manifest/gallary/' . $file;
-                }
-            }
-
-            if (count($img_array) == 0){
-                return ['status'=>False,'msg'=>'ERROR：请联系管理员查看gallary目录中是否存在图片！'];
-            }
-            $img = array_rand($img_array);
-            $imgurl = trim($img_array[$img]);
-            $imgurl = str_replace(STYLESHEETPATH, get_template_directory_uri(), $imgurl);
-        } elseif (iro_opt('random_graphs_options') == 'external_api') {
-            $imgurl = iro_opt('random_graphs_link');
-        } else {
-            // global $sakura_image_array;
-            $temp = file_get_contents(STYLESHEETPATH . "/manifest/manifest.json");
-            // $img_array = json_decode($sakura_image_array, true);
-            $img_array = json_decode($temp, true);
-            if (!$img_array){
-                return ['status'=>False,'msg'=>'ERROR：请联系管理员查看manifest.json中是否存在图片！'];
-            }
-            $array_keys = array_keys($img_array);
-            $img = array_rand($array_keys);
-            if (iro_opt('random_graphs_link',NULL) && iro_opt('random_graphs_link') != home_url( '/')) {
-                $img_domain = iro_opt('random_graphs_link');
-            } else {
-                $img_domain = get_template_directory_uri();
-            }
-            $format = strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') ? 'webp' : 'jpeg';
-            $imgurl = "{$img_domain}/manifest/{$format}/{$array_keys[$img]}.{$size}.{$format}";
-        }
-        return ['status'=>True,'url'=>$imgurl];
-    }
-
-    public static function mobile_cover_gallery() {
-        if (iro_opt('random_graphs_options') == 'local') {
-            // $img_array = glob(STYLESHEETPATH . '/manifest/gallary/*.{gif,jpg,jpeg,png}', GLOB_BRACE);
-            
-            $folderPath = STYLESHEETPATH . '/manifest/gallary/';
-
-            $allowedExtensions = array('jpg', 'jpeg', 'png', 'gif', 'webp');
-            $img_array = array();
-
-            $files = scandir($folderPath);
-            foreach ($files as $file) {
-                // 检查文件扩展名是否在允许的范围内
-                $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-                if (in_array($extension, $allowedExtensions)) {
-                    $img_array[] =  STYLESHEETPATH . '/manifest/gallary/' . $file;
-                }
-            }
-
-            if (count($img_array) == 0){
-                return ['status'=>False,'msg'=>'没有找到图片，请联系管理员检查gallary目录下是否存在图片'];
-            }
-            $img = array_rand($img_array);
-            $imgurl = trim($img_array[$img]);
-            $imgurl = str_replace(STYLESHEETPATH, get_template_directory_uri(), $imgurl);
-        } elseif (iro_opt('random_graphs_options') == 'external_api') {
-          //$imgurl = iro_opt('random_graphs_link');
-           $imgurl = iro_opt('random_graphs_link_mobile');
-        } else {
-            // global $sakura_mobile_image_array;
-            $temp = file_get_contents(STYLESHEETPATH . '/manifest/manifest_mobile.json');
-            // $img_array = json_decode($sakura_mobile_image_array, true);
-            $img_array = json_decode($temp, true);
-            if (!$img_array){
-                return ['status'=>False,'msg'=>'没有找到图片，请联系管理员检查manifest_mobile.json下是否存在图片'];
-            }
-            $array_keys = array_keys($img_array);
-            $img = array_rand($array_keys);
-            // $img_domain = iro_opt('random_graphs_link_mobile') ?: get_template_directory_uri();
-            if (iro_opt('random_graphs_link_mobile',NULL) && iro_opt('random_graphs_link_mobile') != home_url( '/')) {
-                $img_domain = iro_opt('random_graphs_link_mobile');
-            } else {
-                $img_domain = get_template_directory_uri();
-            }
-            $format = strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') ? 'webp' : 'jpeg';
-            $imgurl = "{$img_domain}/manifest/{$format}/{$array_keys[$img]}.source.{$format}";
-        }
-        return ['status'=>True,'url'=>$imgurl];
-    }
-
-    public static function feature_gallery($size = 'source') {
-        if (iro_opt('post_cover_options') == 'type_2') {
-            return ['status'=>True,'url'=>iro_opt('post_cover')];
-        } else {
-            $imgurl = self::cover_gallery($size);
-        }
-        return $imgurl;
-    }
-    
 }

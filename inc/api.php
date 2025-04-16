@@ -2,8 +2,8 @@
 /**
  * @Author: fuukei
  * @Date:   2022-03-13 18:16:15
- * @Last Modified by: cocdeshijie
- * @Last Modified time: 2022-04-16 13:27:30
+ * @Last Modified by: nicocatxzc
+ * @Last Modified time: 2025-01-15 11:25:30
  */
 
 
@@ -14,11 +14,13 @@ include_once('classes/Aplayer.php');
 include_once('classes/Bilibili.php');
 include_once('classes/Cache.php');
 include_once('classes/Images.php');
+include_once('classes/gallery.php');
 include_once('classes/QQ.php');
 include_once('classes/Captcha.php');
 include_once('classes/MyAnimeList.php');
 include_once('classes/BilibiliFavList.php');
-use Sakura\API\Images;
+include_once('classes/bangumi.php');
+include_once('classes/Steam.php');
 use Sakura\API\QQ;
 use Sakura\API\Cache;
 use Sakura\API\Captcha;
@@ -39,15 +41,9 @@ add_action('rest_api_init', function () {
         'permission_callback' => '__return_true'
     )
     );
-    register_rest_route('sakura/v1', '/image/cover', array(
+    register_rest_route('sakura/v1', '/gallery', array(
         'methods' => 'GET',
-        'callback' => 'cover_gallery',
-        'permission_callback' => '__return_true'
-    )
-    );
-    register_rest_route('sakura/v1', '/image/feature', array(
-        'methods' => 'GET',
-        'callback' => 'feature_gallery',
+        'callback' => [new \Sakura\API\gallery(), 'get_image'],
         'permission_callback' => '__return_true'
     )
     );
@@ -71,6 +67,18 @@ add_action('rest_api_init', function () {
     register_rest_route('sakura/v1', '/bangumi/bilibili', array(
         'methods' => 'POST',
         'callback' => 'bgm_bilibili',
+        'permission_callback' => '__return_true'
+    )
+    );
+    register_rest_route('sakura/v1', '/bangumi', array(
+        'methods' => 'POST',
+        'callback' => 'bgm_bangumi',
+        'permission_callback' => '__return_true'
+    )
+    );
+    register_rest_route('sakura/v1', '/steam', array(
+        'methods' => 'POST',
+        'callback' => 'steam_library',
         'permission_callback' => '__return_true'
     )
     );
@@ -106,10 +114,21 @@ add_action('rest_api_init', function () {
         {
          return current_user_can( 'administrator' ) ;
         }
+     ));
+    
+    // 添加复杂名词注释API
+    register_rest_route('sakura/v1', '/chatgpt/annotate', array(
+        'methods' => 'GET',
+        'callback' => 'chatgpt_annotate_terms',
+        'permission_callback' =>function ()
+        {
+         return current_user_can( 'administrator' ) ;
+        }
     ));
 });
 
 require_once ('chatgpt/hooks.php');
+require_once ('chatgpt/chatgpt.php');
 
 function chatgpt_summarize(WP_REST_Request $request)
 {
@@ -120,6 +139,29 @@ function chatgpt_summarize(WP_REST_Request $request)
     }
     $excerpt = IROChatGPT\summon_article_excerpt($post);
     return new WP_REST_Response($excerpt, 200);
+}
+
+function chatgpt_annotate_terms(WP_REST_Request $request)
+{
+    $post_id = $request->get_param('post_id');
+    $post = get_post($post_id);
+    if(!$post) {
+        return new WP_REST_Response("Invalid post ID", 400);
+    }
+    
+    // 调用管理页面中的注释生成函数
+    $result = IROChatGPT\generate_annotations_for_post($post_id);
+    
+    // 查询结果以确认是否保存成功
+    $saved_data = get_post_meta($post_id, 'iro_chatgpt_annotations', true);
+    $success_message = "注释生成" . ($result ? "成功" : "失败") . 
+                      "。已保存数据: " . (is_array($saved_data) ? count($saved_data) . " 个注释" : "无");
+    
+    if ($result) {
+        return new WP_REST_Response($success_message, 200);
+    } else {
+        return new WP_REST_Response($success_message, 500);
+    }
 }
 
 /**
@@ -141,9 +183,7 @@ function upload_image(WP_REST_Request $request)
         $output = array(
             'status' => 403,
             'success' => false,
-            'message' => 'Unauthorized client.',
-            'link' => "https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/step04.md.png",
-            'proxy' => iro_opt('comment_image_proxy') . "https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/step04.md.png",
+            'message' => 'Unauthorized client.'
         );
         $result = new WP_REST_Response($output, 403);
         $result->set_headers(array('Content-Type' => 'application/json'));
@@ -172,62 +212,6 @@ function upload_image(WP_REST_Request $request)
     $result = new WP_REST_Response($API_Request, $API_Request['status']);
     $result->set_headers(array('Content-Type' => 'application/json'));
     return $result;
-}
-
-
-/*
- * 随机封面图 rest api
- * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/image/cover
- */
-function cover_gallery()
-{
-    $type = $_GET['type'] ?? '';
-    // $type = in_array('type',$_GET) ? $_GET['type']:'';
-    if ($type === 'mobile' && iro_opt('random_graphs_mts')) {
-        $imgurl = Images::mobile_cover_gallery();
-    } else {
-        $imgurl = Images::cover_gallery();
-    }
-    if (!$imgurl['status']) {
-        return new WP_REST_Response(
-            array(
-                'status' => 500,
-                'success' => false,
-                'message' => $imgurl['msg']
-            ),
-            500
-        );
-    }
-    $data = array('cover image');
-    $response = new WP_REST_Response($data);
-    $response->set_status(302);
-    $response->header('Location', $imgurl['url']);
-    return $response;
-}
-
-/*
- * 随机文章特色图 rest api
- * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/image/feature
- */
-function feature_gallery()
-{
-    $size = isset($_GET['size']) ? (in_array($_GET['size'], ['source', 'th']) ? $_GET['size'] : 'source') : 'source';
-    $imgurl = Images::feature_gallery($size);
-    if (!$imgurl['status']) {
-        return new WP_REST_Response(
-            array(
-                'status' => 500,
-                'success' => false,
-                'message' => $imgurl['msg']
-            ),
-            500
-        );
-    }
-    $data = array('feature image');
-    $response = new WP_REST_Response($data);
-    $response->set_status(302);
-    $response->header('Location', $imgurl['url']);
-    return $response;
 }
 
 /*
@@ -325,6 +309,23 @@ function get_qq_avatar()
     return $response;
 }
 
+function bgm_bangumi($request)
+{
+    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+        $response = array(
+            'status' => 418,
+            'success' => false,
+            'message' => 'Unauthorized client.'
+        );
+        return new WP_REST_Response($response, 418);
+    } else {
+        $userID = $request->get_param('userID');
+        $page = $request->get_param('page') ?: 1;
+        $bgmList = new \Sakura\API\BangumiList();
+    }
+    return $bgmList->get_bgm_items($userID, (int)$page);
+}
+
 function bgm_bilibili()
 {
     $response = null;
@@ -363,7 +364,21 @@ function bfv_bilibili()
     return $response;
 }
 
-
+function steam_library ($request)
+{
+    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+        $response = array(
+            'status' => 418,
+            'success' => false,
+            'message' => 'Unauthorized client.'
+        );
+        return new WP_REST_Response($response, 418);
+    } else {
+        $page = $request->get_param('page') ?: 1;
+        $SteamList = new \Sakura\API\Steam();
+    }
+    return $SteamList->get_steam_items((int)$page);
+}
 
 function favlist_bilibili()
 {

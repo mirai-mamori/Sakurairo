@@ -1,4 +1,5 @@
 <?php
+
 if( class_exists( 'Sakurairo_CSF' ) ) {
   $AVAIL_METADATA_ARTICLE_AREA = array(
     "author" => __("Author","sakurairo_csf"),
@@ -18,6 +19,8 @@ array(
   "last_edit_time_relative" => __("Last Edit Time (Relatively)","sakurairo_csf"), // WP_Post::post_modified
   "EDIT" => __("Action Edit (only displays while user has sufficient permissions)","sakurairo_csf"),
 ));
+
+$vision_resource_basepath = get_option('iro_options')['vision_resource_basepath'] ?? 'https://s.nmxc.ltd/sakurairo_vision/@3.0/';
 
 $prefix = 'iro_options';
 
@@ -41,12 +44,17 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'heading',
-        'content' => __('News+','sakurairo_csf'),
+        'content' => __('Thank you to everyone who supports us!','sakurairo_csf'),
       ),
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://news.maho.cc/sakurairo.php"  alt="News_Plus" width="100%" height="100%" />','sakurairo_csf'),
+        'content' => __('<a href="https://afdian.com/a/mamori"><img alt="afdian" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/afdian.webp"></a><a href="https://liberapay.com/furina/donate"><img alt="liberapay" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/liberapay.webp"></a><a href="https://app.unifans.io/c/somekawahitomi"><img alt="unifans" height="50" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/unifans.webp"></a>','sakurairo_csf'),
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => __('<img src="https://fuukei-api.nyat.icu/api/sponsors"  alt="Sponsor" width="100%" height="100%" />','sakurairo_csf'),
       ),
 
     )
@@ -115,7 +123,7 @@ $prefix = 'iro_options';
           ),      
         ),
         'default'        => array(
-          'text'    => 'ひょうりゅ',
+          'text'    => '花になって',
           'size'    => '80',
           'color'    => '#FFF',
         ),
@@ -125,7 +133,7 @@ $prefix = 'iro_options';
         'id'    => 'iro_logo',
         'type'  => 'upload',
         'title' => __('Navigation Menu Logo','sakurairo_csf'),
-        'desc'   => __('The best size is 40px, and the nav menu text logo will not be displayed after filling in','sakurairo_csf'),
+        'desc'   => __('The best size is 40px','sakurairo_csf'),
         'library'      => 'image',
       ),
 
@@ -134,7 +142,7 @@ $prefix = 'iro_options';
         'type'  => 'text',
         'title' => __('Site Icon','sakurairo_csf'),
         'desc'   => __('Fill in the address, which decides the icon next to the title above the browser','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/favicon.ico'
+        'default' => $vision_resource_basepath . 'basic/favicon.ico'
       ),
 
       array(
@@ -192,6 +200,14 @@ $prefix = 'iro_options';
         'type' => 'switcher',
         'title' => __('Extract Theme Color from Cover Image','sakurairo_csf'),
         'label' => __('Default on, Following options will be used as fallback (while cover image cannot be read by scripts)','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'extract_article_highlight_from_feature',
+        'type' => 'switcher',
+        'title' => __('Extract Article Highlight from Featured Image','sakurairo_csf'),
+        'label' => __('Default on, The colors displayed on the article page will be taken from the article featured image','sakurairo_csf'),
         'default' => true
       ),
 
@@ -303,7 +319,7 @@ $prefix = 'iro_options';
         'type'   => 'text',
         'title'  => __('Occupying SVG while Loading Control Units','sakurairo_csf'),
         'desc'   => __('Fill in the address, which is the SVG displayed when loading control units','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/load_svg/outload.svg'
+        'default' => $vision_resource_basepath . 'basic/puff-load.svg'
       ),
 
     )
@@ -423,61 +439,83 @@ $prefix = 'iro_options';
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%95%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page</br>Aou can edit your nav menu content <a href="/wp-admin/nav-menus.php">here</a>','sakurairo_csf'),
+      ),
+
+      array(
+        'id'         => 'choice_of_nav_style',
+        'type'       => 'image_select',
+        'title'      => __('Nav Menu Style','sakurairo_csf'),
+        'options'    => array(
+          'iro' => $vision_resource_basepath . 'options/nav_menu_style_Island.webp',
+          'sakura' => $vision_resource_basepath . 'options/nav_menu_style_bar.webp',
+        ),
+        'default'    => 'center',
       ),
 
       array(
         'id'         => 'nav_menu_style',
-        'type'       => 'image_select',
-        'title'      => __('Nav Menu Style','sakurairo_csf'),
+        'type'       => 'select',
+        'title'      => __('Spirit Island Nav Style','sakurairo_csf'),
         'options'    => array(
-          'sakurairo' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/nav_menu_style_iro.webp',
-          'sakura' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/nav_menu_style_sakura.webp',
+          'center' => __('Always centered','sakurairo_csf'),
+          'space-between' => __('Dispersed','sakurairo_csf'),
         ),
-        'default'    => 'sakurairo'
+        'default'    => 'center',
+        'dependency' => array( 'choice_of_nav_style', '==', 'iro', '', 'true' ),
       ),
 
       array(
-        'id'    => 'nav_menu_radius',
-        'type'  => 'slider',
+        'id' => 'nav_menu_cover_radius',
+        'type' => 'slider',
         'title' => __('Nav Menu Radius','sakurairo_csf'),
-        'dependency' => array( 'nav_menu_style', '==', 'sakurairo', '', 'true' ),
-        'desc'   => __('Slide to adjust, the recommended value is 15','sakurairo_csf'),
-        'unit'    => 'px',
-        'max'   => '50',
-        'default' => '15'
-      ),
+        'desc' => __('Slide to adjust, the recommended value is 50','sakurairo_csf'),
+        'unit' => 'px',
+        'max' => '50',
+        'default' => '50',
+       ),
 
       array(
-        'id'         => 'nav_menu_display',
-        'type'       => 'radio',
-        'title'      => __('Nav Menu Content Display Method','sakurairo_csf'),
-        'desc'    => __('You can choose to unfold or fold the nav menu contents','sakurairo_csf'),
-        'options'    => array(
-          'unfold' => __('Unfold','sakurairo_csf'),
-          'fold' => __('Fold','sakurairo_csf'),
+        'id' => 'sakura_nav_style',
+        'type' => 'fieldset',
+        'title' => __('Classic Nav Style','sakurairo_csf'),
+        'dependency' => array( 'choice_of_nav_style', 'any', 'sakura,sakurairo', '', 'true' ),
+        'fields' => array(
+          array(
+            'id' => 'style',
+            'type' => 'select',
+            'title' => __('Apperance Style','sakurairo_csf'),
+            'options'    => array(
+              'sakura' => __('Loose','sakurairo_csf'),
+              'sakurairo' => __('Standered','sakurairo_csf'),
+            ),
+          ),
+          array(
+            'id' => 'distribution',
+            'type' => 'select',
+            'title' => __('Nav Menu Options Display Method','sakurairo_csf'),
+            'options'    => array(
+              'left' => __('Keep to the left','sakurairo_csf'),
+              'right' => __('Keep to the right','sakurairo_csf'),
+              'center' => __('Always centered','sakurairo_csf'),
+            ),
+          ),
+          array(
+            'id' => 'option_spacing',
+            'type' => 'slider',
+            'title' => __('Menu option left and right spacing','sakurairo_csf'),
+            'desc'    => __('You can manually adjust the option spacing to achieve more distribution effects, the default is 14','sakurairo_csf'),
+            'step' => '1',
+            'unit' => 'px',
+            'min' => '1',
+            'max' => '150',
+          ),
         ),
-        'default'    => 'unfold'
-      ),
-
-      array(
-        'id'    => 'nav_menu_animation',
-        'type'  => 'switcher',
-        'title' => __('Nav Menu Animation Effects','sakurairo_csf'),
-        'label'   => __('It is on by default. If it is off, the nav menu content will be displayed directly without effects','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
-        'id'     => 'nav_menu_animation_time',
-        'type'   => 'slider',
-        'title'  => __('Nav Menu Animation Time','sakurairo_csf'),
-        'dependency' => array( 'nav_menu_animation', '==', 'true', '', 'true' ),
-        'desc'   => __('Slide to adjust, the recommended value range is 1-2','sakurairo_csf'),
-        'step'   => '0.01',
-        'unit'    => 's',
-        'max'   => '5',
-        'default' => '2'
+        'default' => array(
+          'style' => 'sakura',
+          'distribution'    => 'right',
+          'option_spacing' => '14',
+        ),
       ),
 
       array(
@@ -489,104 +527,14 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'    => 'nav_menu_search',
-        'type'  => 'switcher',
-        'title' => __('Nav Menu Search','sakurairo_csf'),
-        'label'   => __('It is on by default. Click to enter the search area','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
-        'id'    => 'search_area_background',
-        'type'  => 'upload',
-        'title' => __('Search Area Background Image','sakurairo_csf'),
-        'desc'   => __('Set the background image of your search area. Leave this option blank to display a white background','sakurairo_csf'),
-        'dependency' => array( 'nav_menu_search', '==', 'true', '', 'true' ),
-        'library'      => 'image',
-        'default'     => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/iloli.gif'
-      ),
-
-      array(
-        'id'    => 'nav_menu_user_avatar',
-        'type'  => 'switcher',
-        'title' => __('Nav Menu User Avatar','sakurairo_csf'),
-        'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
-        'default' => true
-      ),
-      
-      array(
-        'id'    => 'mobile_menu_user_avatar',
-        'type'  => 'switcher',
-        'title' => __('Nav Menu User Avatar in Mobile','sakurairo_csf'),
-        'label'   => __('It is on by default. Click to enter the login interface','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
-        'id'     => 'unlisted_avatar',
-        'type'  => 'upload',
-        'title' => __('Nav Menu Unlisted User Avatar','sakurairo_csf'),
-        'dependency' => array( 'nav_menu_user_avatar', '==', 'true', '', 'true' ),
-        'desc'   => __('The best length-width ratio of is 1:1','sakurairo_csf'),
-        'library'      => 'image',
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/basic/topavatar.png'
-      ),
-
-      array(
-        'id'    => 'nav_menu_secondary_arrow',
-        'type'  => 'switcher',
-        'title' => __('Secondary Menu Prompt Arrow','sakurairo_csf'),
-        'label'   => __('After turning on, the menu prompt arrow will appear in the secondary menu of the navigation menu','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
-        'id'    => 'nav_menu_secondary_radius',
-        'type'  => 'slider',
-        'title' => __('Secondary Menu Radius','sakurairo_csf'),
-        'dependency' => array( 'nav_menu_style', '==', 'sakurairo', '', 'true' ),
-        'desc'   => __('Slide to adjust, the recommended value is 15','sakurairo_csf'),
-        'unit'    => 'px',
-        'max'   => '30',
-        'default' => '15'
-      ),
-
-      array(
-        'id'    => 'mashiro_logo_option',
-        'type'  => 'switcher',
-        'title' => __('Mashiro Logo Style','sakurairo_csf'),
-        'label'   => __('After turning on, the Mashiro Logo will appear and replace the navigation menu logo position','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
-        'id'     => 'mashiro_logo',
+        'id'     => 'nav_text_logo',
         'type'   => 'fieldset',
         'title'  => __('Nav Menu Text Logo Options','sakurairo_csf'),
         'fields' => array(
           array(
-            'id'    => 'text_a',
+            'id'    => 'text',
             'type'  => 'text',
-            'title' => __('Text A','sakurairo_csf'),
-          ),
-          array(
-            'id'    => 'text_b',
-            'type'  => 'text',
-            'title' => __('Text B','sakurairo_csf'),
-          ),
-          array(
-            'id'    => 'text_c',
-            'type'  => 'text',
-            'title' => __('Text C','sakurairo_csf'),
-          ),
-          array(
-            'id'    => 'text_secondary',
-            'type'  => 'text',
-            'title' => __('Secondary Text','sakurairo_csf'),
-            'dependency' => array(
-              array('text_b', '!=', '', '', 'true'),
-              array('mashiro_logo_option', '==', 'true', '', 'true')
-            ),
+            'title' => __('Text','sakurairo_csf'),
           ),
           array(
             'id'    => 'font_name',
@@ -595,12 +543,35 @@ $prefix = 'iro_options';
           ),
         ),
         'default'        => array(
-          'text_a'     => '',
-          'text_b'     => '',
-          'text_c'     => '',
-          'text_secondary' => '',
+          'text'     => '',
           'font_name'    => 'Noto Serif SC',
         ),
+      ),
+
+      array(
+        'id' => 'cover_random_graphs_switch',
+        'type' => 'switcher',
+        'title' => __('Switch Button of Random Images','sakurairo_csf'),
+        'label' => __('Enabled by default, only show cover random image toggle button when cover is on','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id'    => 'nav_user_menu',
+        'type'  => 'switcher',
+        'title' => __('Nav User Menu','sakurairo_csf'),
+        'label'   => __('It is on by default. The user avatar and menu will be displayed.','sakurairo_csf'),
+        'default' => true
+      ),
+  
+      array(
+        'id'     => 'unlisted_avatar',
+        'type'  => 'upload',
+        'title' => __('Nav Menu Unlisted User Avatar','sakurairo_csf'),
+        'dependency' => array( 'nav_user_menu', '==', 'true', '', 'true' ),
+        'desc'   => __('The best length-width ratio of is 1:1','sakurairo_csf'),
+        'library'      => 'image',
+        'default' => ''
       ),
 
     )
@@ -656,6 +627,7 @@ $prefix = 'iro_options';
         'type' => 'switcher',
         'title' => __('Widgets Panel WP Widget Area','sakurairo_csf'),
         'label' => __('When turned on, the WP Widget Area will be displayed in Widgets Panel','sakurairo_csf'),
+        'desc' => __('You can edit it <a href="/wp-admin/widgets.php"> here </a>','sakurairo_csf'),
         'default' => false
       ),
 
@@ -787,10 +759,10 @@ $prefix = 'iro_options';
           'star_shaped'  => true,
           'square_shaped'  => true,
           'lemon_shaped'  => true,
-          'img2'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/background/bg1.png',
-          'img3'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/background/bg2.png',
-          'img4' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/background/bg3.png',
-          'img5' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/background/bg4.png',
+          'img2'  => $vision_resource_basepath . 'background/bg1.png',
+          'img3'  => $vision_resource_basepath . 'background/bg2.png',
+          'img4' => $vision_resource_basepath . 'background/bg3.png',
+          'img5' => $vision_resource_basepath . 'background/bg4.png',
         )
       ),
 
@@ -865,6 +837,12 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'type'    => 'content',
+        'content' => __('Click <a href="./admin.php?iro_act=playlist" target="_blank">here</a> to use the built-in meting-API to get the playlist info file template.Its content will be refreshed after the relevant settings are saved.',
+        'sakurairo_csf'),
+    ),
+
+      array(
         'id' => 'aplayer_server_proxy',
         'type' => 'text',
         'title' => __('Footer Online Music Player Proxy','sakurairo_csf'),
@@ -937,6 +915,17 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id'    => 'footer_direction',
+        'type'  => 'select',
+        'title' => __('Footer Content Distribution','sakurairo_csf'),
+        'options'     => array(
+          'center'  => __('Center','sakurairo_csf'),
+          'columns'  => __('Two Columns','sakurairo_csf'),
+        ),
+        "default"=> "columns",
+      ),
+
+      array(
         'id' => 'footer_info',
         'type' => 'textarea',
         'title' => __('Footer Info','sakurairo_csf'),
@@ -993,9 +982,8 @@ $prefix = 'iro_options';
         'type' => 'content',
         'dependency' => array( 'footer_yiyan', '==', 'true', '', 'true' ),
         'content' => __('<h4>Hitokoto API Setup Instructions</h4>'
-        .' <p>Fill in as the example:<code> ["https://api.nmxc.ltd/yiyan/", "https://v1.hitokoto.cn/"]</code>, where the first API will be used first and the next ones will be the backup. </p>'
-        .' <p><strong>Official API:</strong> See the <a href="https://developer.hitokoto.cn/sentence/"> documentation</a> for how to use it, and the parameter "return code" should not be anything except JSON. <a href="https://v1.hitokoto.cn/">https://v1.hitokoto.cn/</a></p>'
-        .' <p><strong>Maho API:</strong> An reverse proxy mirror of the official API. <a href="https://api.nmxc.ltd/yiyan/">https://api.nmxc.ltd/yiyan/</a></p>','sakurairo_csf'),
+        .' <p>Fill in as the example:<code> ["https://v1.hitokoto.cn/", "https://v1.hitokoto.cn/"]</code>, where the first API will be used first and the next ones will be the backup. </p>'
+        .' <p><strong>Official API:</strong> See the <a href="https://developer.hitokoto.cn/sentence/"> documentation</a> for how to use it, and the parameter "return code" should not be anything except JSON. <a href="https://v1.hitokoto.cn/">https://v1.hitokoto.cn/</a></p>','sakurairo_csf'),
       ),
 
       array(
@@ -1004,7 +992,7 @@ $prefix = 'iro_options';
         'title' => __('Hitokoto API address','sakurairo_csf'),
         'dependency' => array( 'footer_yiyan', '==', 'true', '', 'true' ),
         'desc' => __('Fill in the address in JavaScript array format','sakurairo_csf'),
-        'default' => '["https://v1.hitokoto.cn/","https://api.nmxc.ltd/yiyan/"]'
+        'default' => '["https://v1.hitokoto.cn/","https://v1.hitokoto.cn/"]'
       ),
 
     )
@@ -1012,58 +1000,100 @@ $prefix = 'iro_options';
 
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'global', 
-    'title' => __('Cursor Options','sakurairo_csf'),
-    'icon' => 'fa fa-i-cursor',
+    'title' => __('Search Options','sakurairo_csf'),
+    'icon' => 'fa fa-search',
     'fields' => array(
 
       array(
         'type' => 'submessage',
         'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E5%85%89%E6%A0%87%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Global/#%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
       ),
 
       array(
-        'id' => 'cursor_nor',
-        'type' => 'text',
-        'title' => __('Standard Cursor Style','sakurairo_csf'),
-        'desc' => __('Apply to global, fill in ".cur" mouse file link','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/cursor/normal.cur'
+        'id'    => 'nav_menu_search',
+        'type'  => 'switcher',
+        'title' => __('Nav Menu Search','sakurairo_csf'),
+        'label'   => __('It is on by default. Click to enter the search area','sakurairo_csf'),
+        'default' => true
       ),
 
       array(
-        'id' => 'cursor_no',
-        'type' => 'text',
-        'title' => __('Selected Cursor Style','sakurairo_csf'),
-        'desc' => __('Apply to multiple styles, fill in ".cur" file link','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/cursor/No_Disponible.cur'
+        'id'    => 'search_area_background',
+        'type'  => 'upload',
+        'title' => __('Search Area Background Image','sakurairo_csf'),
+        'desc'   => __('Set the background image of your search area. Leave this option blank to display a white background','sakurairo_csf'),
+        'dependency' => array( 'nav_menu_search', '==', 'true', '', 'true' ),
+        'library'      => 'image',
+        'default' => ''
       ),
 
       array(
-        'id' => 'cursor_ayu',
-        'type' => 'text',
-        'title' => __('Selected Control Unit Cursor Style','sakurairo_csf'),
-        'desc' => __('Apply to selected control unit, fill in ".cur" file link','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/cursor/ayuda.cur'
+        'id' => 'search_filter',
+        'type' => 'switcher',
+        'title' => __('Search Filter','sakurairo_csf'),
+        'label' => __('When turned on, users can search using the search filter','sakurairo_csf'),
+        'default' => false
       ),
 
       array(
-        'id' => 'cursor_text',
-        'type' => 'text',
-        'title' => __('Selected Text Cursor Style','sakurairo_csf'),
-        'desc' => __('Apply to selected text, fill in ".cur" file link','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/cursor/texto.cur'
+        'id' => 'search_for_shuoshuo',
+        'type' => 'switcher',
+        'title' => __('Show shuoshuo in search results','sakurairo_csf'),
+        'default' => true
       ),
 
       array(
-        'id' => 'cursor_work',
+        'id' => 'search_for_pages',
+        'type' => 'switcher',
+        'title' => __('Show pages in search results','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'only_admin_can_search_pages',
+        'type' => 'switcher',
+        'title' => __('Only administrators can search pages','sakurairo_csf'),
+        'dependency' => array(
+          array( 'search_for_pages', '==', 'true', '', 'true' ),
+        ),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'sticky_pinned_content',
+        'type' => 'switcher',
+        'title' => __('Pinned contents will show at the top of the search results','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'custom_exclude_search_results',
         'type' => 'text',
-        'title' => __('Work Status Cursor Style','sakurairo_csf'),
-        'desc' => __('Apply to load control unit, fill in ".cur" file link','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/cursor/work.cur'
+        'title' => __('Exclude some content in search results','sakurairo_csf'),
+        'desc' => __('Fill in the posts or pages IDs that need to be excluded, such as "12,34".Recommend to fill in the custom login page id,and you can get them from the edit page of those content.','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'live_search',
+        'type' => 'switcher',
+        'title' => __('Live Search','sakurairo_csf'),
+        'label' => __('After turning on the live search in the frontend, call Rest API to update the cache once an hour. You can set the cache time manually in api.php','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'live_search_comment',
+        'type' => 'switcher',
+        'title' => __('Live Search Comment Support','sakurairo_csf'),
+        'dependency' => array( 'live_search', '==', 'true', '', 'true' ),
+        'label' => __('Enable to search for comments in live search (not recommended if site has too many comments)','sakurairo_csf'),
+        'default' => false
       ),
 
     )
   ) );
+
 
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'global', 
@@ -1263,14 +1293,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'note_effects',
-        'type' => 'switcher',
-        'title' => __('Note Touch Effects','sakurairo_csf'),
-        'label' => __('After turning on, there will be a note sound alert when the back to top button and Mashiro style logo touch','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
         'type' => 'subheading',
         'content' => __('Feature','sakurairo_csf'),
       ),
@@ -1305,50 +1327,6 @@ $prefix = 'iro_options';
         'title' => __('Global Smooth Scroll','sakurairo_csf'),
         'label' => __('Enabled by default, page scrolling will be smoother','sakurairo_csf'),
         'default' => true
-      ),
-
-      array(
-        'id' => 'captcha_select',
-        'type' => 'select',
-        'title' => __('Captcha Selection','sakurairo_csf'),
-        'options' => array(
-          'off' => __('Off','sakurairo_csf'),
-          'iro_captcha' => __('Theme Built in Captcha','sakurairo_csf'),
-          'vaptcha' => __('Vaptcha','sakurairo_csf')
-        ),
-        'default' => 'off',
-      ),
-
-      array(
-        'id' => 'vaptcha_vid',
-        'type' => 'text',
-        'title' => __('Vaptcha VID','sakurairo_csf'),
-        'dependency' => array( 'captcha_select', '==', 'vaptcha', '', 'true' ),
-        'desc' => __('Fill in your Vaptcha VID','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'vaptcha_key',
-        'type' => 'text',
-        'title' => __('Vaptcha KEY','sakurairo_csf'),
-        'dependency' => array( 'captcha_select', '==', 'vaptcha', '', 'true' ),
-        'desc' => __('Fill in your Vaptcha KEY','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'vaptcha_scene',
-        'type' => 'select',
-        'title' => __('Vaptcha Scene','sakurairo_csf'),
-        'dependency' => array( 'captcha_select', '==', 'vaptcha', '', 'true' ),
-        'options' => array(
-          '1' => __(1,'sakurairo_csf'),
-          '2' => __(2,'sakurairo_csf'),
-          '3' => __(3,'sakurairo_csf'),
-          '4' => __(4,'sakurairo_csf'),
-          '5' => __(5,'sakurairo_csf'),
-          '6' => __(6,'sakurairo_csf'),
-        ),
-        'default' => 1,
       ),
 
       array(
@@ -1389,8 +1367,23 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('Placeholder SVG when loading the next page','sakurairo_csf'),
         'desc' => __('Fill in the address, this is the SVG that will be displayed as a placeholder when the next page is loading','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/load_svg/ball.svg'
+        'default' => $vision_resource_basepath . 'basic/puff-load.svg'
       ),
+
+      array(
+        'id' => 'missing_avatars_default',
+        'type' => 'upload',
+        'title' => __('Missing Avatars Placeholder','sakurairo_csf'),
+        'library' => 'image',
+      ),
+
+      array(
+        'id' => 'missing_images_default',
+        'type' => 'upload',
+        'title' => __('Missing Images Placeholder','sakurairo_csf'),
+        'library' => 'image',
+      ),
+
     )
   ) );
 
@@ -1442,17 +1435,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'cover_radius',
-        'type' => 'slider',
-        'title' => __('Cover Radius','sakurairo_csf'),
-        'desc' => __('Slide to adjust, the recommended value range is 15-20','sakurairo_csf'),
-        'dependency' => array( 'cover_switch', '==', 'true', '', 'true' ),
-        'unit' => 'px',
-        'max' => '60',
-        'default' => '15'
-      ),
-
-      array(
         'id' => 'cover_animation',
         'type' => 'switcher',
         'title' => __('Cover Animation','sakurairo_csf'),
@@ -1490,8 +1472,8 @@ $prefix = 'iro_options';
         'type' => 'image_select',
         'title' => __('Cover Info Bar Style','sakurairo_csf'),
         'options' => array(
-          'v1' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/infor_bar_style_v1.webp',
-          'v2' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/infor_bar_style_v2.webp',
+          'v1' => $vision_resource_basepath . 'options/nav_menu_style_Island.webp',
+          'v2' => $vision_resource_basepath . 'options/infor_bar_style_v2.webp',
         ),
         'dependency' => array( 
                               array( 'cover_switch', '==', 'true', '', 'true' ),
@@ -1505,6 +1487,10 @@ $prefix = 'iro_options';
         'type'   => 'slider',
         'title'  => __('HomePage Widget Transparency','sakurairo_csf'),
         'desc'   => __('Slide to adjust, the recommended value range is 0.6-0.8','sakurairo_csf'),
+        'dependency' => array( 
+                              array( 'cover_switch', '==', 'true', '', 'true' ),
+                              array( 'infor_bar', '==', 'true' ),
+                            ),
         'step'   => '0.01',
         'min'   => '0.2',
         'max'   => '1',
@@ -1547,7 +1533,7 @@ $prefix = 'iro_options';
                               array( 'cover_switch', '==', 'true', '', 'true' ),
                               array( 'infor_bar', '==', 'true' ),
                         ),
-        'default' => '届ける言葉を今は育ててる'
+        'default' => '季節の変わり目の服は何着りゃいいんだろ'
       ),
 
       array(
@@ -1624,7 +1610,7 @@ $prefix = 'iro_options';
                               array( 'infor_bar', '==', 'true' ),
                               array( 'signature_typing', '==', 'true' ),
                         ),
-        'default' => '{"strings":["给时光以生命，给岁月以文明"],"typeSpeed":140,"backSpeed":50,"loop":false,"showCursor":true}'
+        'default' => '{"strings":["愿你保持不变 保持己见 充满热血"],"typeSpeed":140,"backSpeed":50,"loop":false,"showCursor":true}'
       ),
 
       array(
@@ -1633,11 +1619,21 @@ $prefix = 'iro_options';
         'title' => __('Cover Random Image Options','sakurairo_csf'),
         'options' => array(
           'external_api' => __('External API','sakurairo_csf'),
-          'webp_optimization' => __('Webp optimized','sakurairo_csf'),
-          'local' => __('Local','sakurairo_csf'),
+          'gallery' => __('Built-in','sakurairo_csf'),
         ),
         'dependency' => array( 'cover_switch', '==', 'true', '', 'true' ),
         'default' => 'external_api'
+      ),
+
+      array(
+        'type'    => 'content',
+        'title' => __('Built-in Gallery controllers','sakurairo_csf'),
+        'content' => __('<a href="./admin.php?iro_act=gallery_init" target="_blank">Initlize/Rebuild index</a> | <a href="./admin.php?iro_act=gallery_webp" target="_blank">Refomart images to webp</a>'
+        . '<br>After initlized,put images in `wp-content/uploads/iro_gallery/img` and then click to rebuild the index.'
+        . '<br>You can use folders to categorize content, but please rebuild the index after the location of the relevant content changes.'
+        . '<br>Please make sure that the working directory is readable and writable when using relevant functions.',
+        'sakurairo_csf'),
+        'dependency' => array( 'random_graphs_options', '==', 'gallery', '', 'true' ),
       ),
 
       array(
@@ -1658,7 +1654,7 @@ $prefix = 'iro_options';
                               array( 'cover_switch', '==', 'true', '', 'true' ),
                               array( 'random_graphs_options', '!=', 'local', '', 'true' ),
                         ),
-        'default' => 'https://api.maho.cc/random-img/pc.php',
+        'default' => 'https://api.fuukei.org/random-img/default/pc.php',
         'sanitize' => false,
         'validate' => 'csf_validate_url',
       ),
@@ -1673,7 +1669,7 @@ $prefix = 'iro_options';
                               array( 'random_graphs_options', '!=', 'local', '', 'true' ),
                         ),
         'desc' => __('Fill in an URL','sakurairo_csf'),
-        'default' => 'https://api.maho.cc/random-img/mobile.php',
+        'default' => 'https://api.fuukei.org/random-img/default/mobile.php',
         'sanitize' => false,
         'validate' => 'csf_validate_url',
       ),
@@ -1693,6 +1689,15 @@ $prefix = 'iro_options';
         'title' => __('Cover and Frontend Background Integration','sakurairo_csf'),
         'label' => __('When enabled, the background of the cover will be set to transparent, while the frontend background will use the cover\'s random image API','sakurairo_csf'),
         'dependency' => array( 'cover_switch', '==', 'true', '', 'true' ),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'post_cover_as_bg',
+        'type' => 'switcher',
+        'title' => __('Post Cover As Background','sakurairo_csf'),
+        'label' => __('Use post feature image as background in post pages','sakurairo_csf'),
+        'dependency' => array( 'site_bg_as_cover', '==', 'true', '', 'true' ),
         'default' => false
       ),
 
@@ -1856,10 +1861,10 @@ $prefix = 'iro_options';
         'desc' => __('Select your favorite icon pack. Icon pack references are detailed in the "About Theme" section','sakurairo_csf'),
         'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
         'options'     => array(
-          'display_icon/fluent_design'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_fd.gif',
-          'display_icon/muh2'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_h2.gif',
-          'display_icon/flat_colorful'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_fc.gif',
-          'display_icon/remix_iconfont'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/display_icon_svg.webp',
+          'display_icon/fluent_design'  => $vision_resource_basepath . 'options/display_icon_fd.gif',
+          'display_icon/muh2'  => $vision_resource_basepath . 'options/display_icon_h2.gif',
+          'display_icon/flat_colorful'  => $vision_resource_basepath . 'options/display_icon_fc.gif',
+          'display_icon/remix_iconfont'  => $vision_resource_basepath . 'options/display_icon_svg.webp',
         ),
         'default'     => 'display_icon/fluent_design'
       ),
@@ -1876,34 +1881,100 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'cover_random_graphs_switch',
-        'type' => 'switcher',
-        'title' => __('Switch Button of Random Images','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'label' => __('Enabled by default, show cover random image toggle button','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
         'type' => 'subheading',
         'content' => __('Social Network','sakurairo_csf'),
       ),
 
       array(
-        'id'     => 'wechat',
+        'id' => 'wechat_qrcode_switch',
+        'type' => 'switcher',
+        'title' => __('Switch Button of WeChat QR Code', 'sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'label' => __('Enabled by default, the WeChat QR code is shown instead of the WeChat ID','sakurairo_csf'),
+        'default' => true
+      ),
+		
+      array(
+        'id'     => 'wechat_qrcode',
         'type'  => 'upload',
-        'title' => __('Wechat','sakurairo_csf'),
+        'title' => __('WeChat QR Code','sakurairo_csf'),
         'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
         'desc' => __('The best length-width ratio of is 1:1','sakurairo_csf'),
         'library'      => 'image',
       ),
-
+		
       array(
-        'id'     => 'qq',
+        'id'     => 'wechat_id',
         'type'   => 'text',
-        'title' => __('QQ','sakurairo_csf'),
+        'title' => __('WeChat ID','sakurairo_csf'),
         'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('Please note the format of filling out the form, e.g. tencent://message/?uin=123456','sakurairo_csf'),
+        'desc' => __('Enter your WeChat ID that others can search for','sakurairo_csf'),
+      ),
+		
+      array(
+        'id' => 'wechat_copy_switch',
+        'type' => 'switcher',
+        'title' => __('Click to Copy WeChat ID', 'sakurairo_csf'),
+        'dependency' => array('social_area', '==', 'true', '', 'true'),
+        'label' => __('Enabled by default, clicking the WeChat icon will copy your WeChat ID instead of opening a link', 'sakurairo_csf'),
+        'default' => true,
+      ),
+		
+      array(
+        'id'     => 'wechat_url',
+        'type'   => 'text',
+        'title' => __('WeChat Icon Link','sakurairo_csf'),
+        'dependency' => array( 
+			  array( 'social_area', '==', 'true', '', 'true' ),
+			  array( 'wechat_copy_switch', '==', 'false', '', 'true' ),
+		  ),
+        'desc' => __('Specify the link to open when clicking the WeChat icon. Leave blank to disable redirection','sakurairo_csf'),
+      ),
+		
+      array(
+        'id' => 'qq_qrcode_switch',
+        'type' => 'switcher',
+        'title' => __('Switch Button of QQ QR Code', 'sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'label' => __('Enabled by default, the QQ QR code is shown instead of the QQ ID','sakurairo_csf'),
+        'default' => true
+      ),
+		
+      array(
+        'id'     => 'qq_qrcode',
+        'type'  => 'upload',
+        'title' => __('QQ QR Code','sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'desc' => __('The best length-width ratio of is 1:1','sakurairo_csf'),
+        'library'      => 'image',
+      ),
+		
+      array(
+        'id'     => 'qq_id',
+        'type'   => 'text',
+        'title' => __('QQ ID','sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'desc' => __('Enter your QQ ID that others can search for','sakurairo_csf'),
+      ),
+		
+      array(
+        'id' => 'qq_copy_switch',
+        'type' => 'switcher',
+        'title' => __('Click to Copy QQ ID', 'sakurairo_csf'),
+        'dependency' => array('social_area', '==', 'true', '', 'true'),
+        'label' => __('Enabled by default, clicking the QQ icon will copy your QQ ID instead of opening a link', 'sakurairo_csf'),
+        'default' => true,
+      ),
+		
+      array(
+        'id'     => 'qq_url',
+        'type'   => 'text',
+        'title' => __('QQ Icon Link','sakurairo_csf'),
+        'dependency' => array( 
+			  array( 'social_area', '==', 'true', '', 'true' ),
+			  array( 'qq_copy_switch', '==', 'false', '', 'true' ),
+		  ),
+        'desc' => __('Specify the link to open when clicking the QQ icon. Leave blank to disable redirection','sakurairo_csf'),
       ),
 
       array(
@@ -2027,56 +2098,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'     => 'socialdiy1',
-        'type'   => 'text',
-        'title' => __('Customized Social Network Ⅰ','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('add URL','sakurairo_csf'),
-      ),
-      
-      array(
-        'id'     => 'socialdiy1_title',
-        'type'   => 'text',
-        'title' => __('Customized Social Network Ⅰ Title','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        "default" => "DIY1"
-      ),
-
-      array(
-        'id'     => 'socialdiyp1',
-        'type'  => 'upload',
-        'title' => __('Customized Social Network Ⅰ icon','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('The best length-width ratio of is 1:1','sakurairo_csf'),
-        'library'      => 'image',
-      ),
-
-      array(
-        'id'     => 'socialdiy2',
-        'type'   => 'text',
-        'title' => __('Customized Social Network Ⅱ','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('add URL','sakurairo_csf'),
-      ),
-
-      array(
-        'id'     => 'socialdiy2_title',
-        'type'   => 'text',
-        'title' => __('Customized Social Network Ⅱ Title','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        "default" => "DIY2"
-      ),
-      
-      array(
-        'id'     => 'socialdiyp2',
-        'type'  => 'upload',
-        'title' => __('Customized Social Network Ⅱ icon','sakurairo_csf'),
-        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
-        'desc' => __('The best length-width ratio of is 1:1','sakurairo_csf'),
-        'library'      => 'image',
-      ),
-
-      array(
         'id' => 'email_name',
         'type' => 'text',
         'title' => __('Email Username','sakurairo_csf'),
@@ -2092,109 +2113,66 @@ $prefix = 'iro_options';
         'desc' => __('name@domain.com fo domain.com','sakurairo_csf'),
       ),
 
+      array(
+        'id'        => 'diysocialicons',
+        'type'      => 'repeater',
+        'title'     => __('Customized Social Networks','sakurairo_csf'),
+        'dependency' => array( 'social_area', '==', 'true', '', 'true' ),
+        'fields'    => array(
+                array(
+                        'id'   => 'img',
+                        'type' => 'upload',
+                        'title' => __('Icon', 'sakurairo_csf'),
+                        'desc'  => __('The best length-width ratio of is 1:1', 'sakurairo_csf'),
+                ),
+                array(
+                        'id'    => 'title',
+                        'type'  => 'text',
+                        'title' => __('Title', 'sakurairo_csf'),
+                ),
+                array(
+                        'id'    => 'link',
+                        'type'  => 'text',
+                        'title' => __('Link', 'sakurairo_csf'),
+                        'desc' => __('add URL', 'sakurairo_csf'),
+                ),
+        ),
+      ),
     )
   ) );
 
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title' => __('Bulletin Board and Area Title Options','sakurairo_csf'),
-    'icon' => 'fa fa-bullhorn',
+    'title' => __('Homepage Components Options','sakurairo_csf'),
+    'icon' => 'fa fa-bars',
     'fields' => array(
 
       array(
-        'type' => 'submessage',
-        'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%85%AC%E5%91%8A%E6%A0%8F%E5%92%8C%E5%8C%BA%E5%9F%9F%E6%A0%87%E9%A2%98%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
-      ),
-
-      array(
-        'type' => 'subheading',
-        'content' => __('Bulletin Board','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'bulletin_board',
-        'type' => 'switcher',
-        'title' => __('Bulletin Board','sakurairo_csf'),
-        'label' => __('When enabled the bulletin board will be displayed below the front cover','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
-        'id' => 'bulletin_board_style',
-        'type' => 'radio',
-        'title' => __('Bulletin Board Style','sakurairo_csf'),
-        'dependency' => array( 'bulletin_board', '==', 'true', '', 'true' ),
-        'options' => array(
-          'picture' => __('Picture Background','sakurairo_csf'),
-          'pure' => __('Color Background','sakurairo_csf'),
+        'id' => 'homepage_components',
+        "type" => "select",
+        "title" => __("Homepage Components","sakurairo_csf"),
+        'desc' => __('Select the homepage components you want to display. They will appear in the order above.','sakurairo_csf'),
+        "chosen" => true,
+        "multiple" => true,
+        "sortable" => true,
+        "options"=> array(
+            'bulletin'    => __('Bulletin Board','sakurairo_csf'),
+            'exhibition'  => __('Display Area','sakurairo_csf'),
+            'primary'     => __('Article Area','sakurairo_csf'),
+            'static_page' => __('Static Page','sakurairo_csf'),
         ),
-        'default' => 'picture'
+        "default" => array('primary'),
       ),
 
       array(
-        'id' => 'bulletin_board_icon',
-        'type' => 'switcher',
-        'title' => __('Bulletin Board "Notice" Icon','sakurairo_csf'),
-        'dependency' => array( 'bulletin_board', '==', 'true', '', 'true' ),
-        'label' => __('The "Notice" icon will be displayed on the left side of the announcement bar','sakurairo_csf'),
-        'default' => true
+        'id'          => 'static_page_id',
+        'type'        => 'select',
+        'title'       => __('Static Page','sakurairo_csf'),
+        'placeholder' => __('Select a page','sakurairo_csf'),
+        'chosen'      => true,
+        'options'     => 'pages',
+        'dependency'  => array('homepage_components', 'any', 'static_page', true),
       ),
-
-      array(
-        'id' => 'bulletin_board_bg',
-        'type' => 'upload',
-        'title' => __('Bulletin Board Background','sakurairo_csf'),
-        'dependency' => array(
-          array( 'bulletin_board', '==', 'true', '', 'true' ),
-          array( 'bulletin_board_style', '==', 'picture' ),
-        ),
-        'desc' => __('Best width 820px, best height 67px','sakurairo_csf'),
-        'library' => 'image',
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/series/announcement_bg.webp'
-      ),
-
-      array(
-        'id' => 'bulletin_board_border_color',
-        'type' => 'color',
-        'title' => __('Bulletin Board Border Color','sakurairo_csf'),
-        'dependency' => array(
-          array( 'bulletin_board', '==', 'true', '', 'true' ),
-          array( 'bulletin_board_style', '==', 'pure' ),
-        ),
-        'desc' => __('Customize the colors, it is recommended to use a light color that corresponds with the theme color','sakurairo_csf'),
-        'default' => '#E6E6E6'
-      ),
-
-      array(
-        'id' => 'bulletin_text',
-        'type' => 'text',
-        'title' => __('Bulletin Board Text','sakurairo_csf'),
-        'dependency' => array( 'bulletin_board', '==', 'true', '', 'true' ),
-        'desc' => __('Fill in the announcement text, the text beyond 142 bytes will be hidden','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'bulletin_board_text_align',
-        'type' => 'image_select',
-        'title' => __('Bulletin Board Alignment','sakurairo_csf'),
-        'dependency' => array( 'bulletin_board', '==', 'true', '', 'true' ),
-        'options'     => array(
-          'left'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/announce_text_left.webp',
-          'right'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/announce_text_right.webp',
-          'center'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/announce_text_center.webp',
-        ),
-        'default'     => 'left'
-      ),
-
-      array(
-        'id' => 'bulletin_text_color',
-        'type' => 'color',
-        'title' => __('Bulletin Board Text Color','sakurairo_csf'),
-        'dependency' => array( 'bulletin_board', '==', 'true', '', 'true' ),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#999'
-      ),    
 
       array(
         'type' => 'subheading',
@@ -2246,11 +2224,101 @@ $prefix = 'iro_options';
         'type' => 'image_select',
         'title' => __('Area Title Alignment','sakurairo_csf'),
         'options' => array(
-          'left' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/area_title_text_left.webp',
-          'right' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/area_title_text_right.webp',
-          'center' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/area_title_text_center.webp',
+          'left' => $vision_resource_basepath . 'options/area_title_text_left.webp',
+          'right' => $vision_resource_basepath . 'options/area_title_text_right.webp',
+          'center' => $vision_resource_basepath . 'options/area_title_text_center.webp',
         ),
         'default' => 'left'
+      ),
+  
+    )
+  ));
+
+  Sakurairo_CSF::createSection( $prefix, array(
+    'parent' => 'homepage', 
+    'title' => __('Bulletin Board','sakurairo_csf'),
+    'icon' => 'fa fa-bullhorn',
+    'fields' => array(
+
+      array(
+        'type' => 'submessage',
+        'style' => 'info',
+        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%85%AC%E5%91%8A%E6%A0%8F%E5%92%8C%E5%8C%BA%E5%9F%9F%E6%A0%87%E9%A2%98%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
+        'type'    => 'submessage',
+        'style'   => 'normal',
+        'content' => __('It will only be displayed when "Bulletin Board" is selected in the homepage component settings','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'bulletin_board_style',
+        'type' => 'radio',
+        'title' => __('Bulletin Board Style','sakurairo_csf'),
+        'options' => array(
+          'picture' => __('Picture Background','sakurairo_csf'),
+          'pure' => __('Color Background','sakurairo_csf'),
+        ),
+        'default' => 'picture'
+      ),
+
+      array(
+        'id' => 'bulletin_board_icon',
+        'type' => 'switcher',
+        'title' => __('Bulletin Board "Notice" Icon','sakurairo_csf'),
+        'label' => __('The "Notice" icon will be displayed on the left side of the announcement bar','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
+        'id' => 'bulletin_board_bg',
+        'type' => 'upload',
+        'title' => __('Bulletin Board Background','sakurairo_csf'),
+        'dependency' => array(
+          array( 'bulletin_board_style', '==', 'picture' ),
+        ),
+        'desc' => __('Best width 820px, best height 67px','sakurairo_csf'),
+        'library' => 'image',
+        'default' => $vision_resource_basepath . 'series/announcement_bg.webp'
+      ),
+
+      array(
+        'id' => 'bulletin_board_border_color',
+        'type' => 'color',
+        'title' => __('Bulletin Board Border Color','sakurairo_csf'),
+        'dependency' => array(
+          array( 'bulletin_board_style', '==', 'pure' ),
+        ),
+        'desc' => __('Customize the colors, it is recommended to use a light color that corresponds with the theme color','sakurairo_csf'),
+        'default' => '#E6E6E6'
+      ),
+
+      array(
+        'id' => 'bulletin_text',
+        'type' => 'text',
+        'title' => __('Bulletin Board Text','sakurairo_csf'),
+        'desc' => __('Fill in the announcement text, the text beyond 142 bytes will be hidden','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'bulletin_board_text_align',
+        'type' => 'image_select',
+        'title' => __('Bulletin Board Alignment','sakurairo_csf'),
+        'options'     => array(
+          'left'  => $vision_resource_basepath . 'options/announce_text_left.webp',
+          'right'  => $vision_resource_basepath . 'options/announce_text_right.webp',
+          'center'  => $vision_resource_basepath . 'options/announce_text_center.webp',
+        ),
+        'default'     => 'left'
+      ),
+
+      array(
+        'id' => 'bulletin_text_color',
+        'type' => 'color',
+        'title' => __('Bulletin Board Text Color','sakurairo_csf'),
+        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
+        'default' => '#999'
       ),
 
     )
@@ -2269,11 +2337,9 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'exhibition_area',
-        'type' => 'switcher',
-        'title' => __('Display Area','sakurairo_csf'),
-        'label' => __('Enabled by default, display area is above article area','sakurairo_csf'),
-        'default' => true
+        'type'    => 'submessage',
+        'style'   => 'normal',
+        'content' => __('It will only be displayed when "Display Area" is selected in the homepage component settings','sakurairo_csf'),
       ),
 
       array(
@@ -2281,7 +2347,6 @@ $prefix = 'iro_options';
         'type' => 'color',
         'title' => __('Display Area Matching Color','sakurairo_csf'),
         'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'dependency' => array( 'exhibition_area', '==', 'true', '', 'true' ),
         'default' => '#a0daa9'
       ),  
 
@@ -2289,10 +2354,9 @@ $prefix = 'iro_options';
         'id' => 'exhibition_area_style',
         'type' => 'image_select',
         'title' => __('Display Area Style','sakurairo_csf'),
-        'dependency' => array( 'exhibition_area', '==', 'true', '', 'true' ),
         'options' => array(
-          'left_and_right' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/exhibition_area_style_lr.webp',
-          'bottom_to_top' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/exhibition_area_style_ud.webp',
+          'left_and_right' => $vision_resource_basepath . 'options/exhibition_area_style_lr.webp',
+          'bottom_to_top' => $vision_resource_basepath . 'options/exhibition_area_style_ud.webp',
         ),
         'default' => 'left_and_right'
       ),
@@ -2303,10 +2367,9 @@ $prefix = 'iro_options';
         'title' => __('Display Area Compatibility Mode','sakurairo_csf'),
         'dependency' => array(
                               array( 'exhibition_area_style', '==', 'left_and_right', '', 'true' ),
-                              array( 'exhibition_area', '==', 'true' ),
                         ),
         'label' => __('Enabled by default, this option avoids the problem of misaligned display areas','sakurairo_csf'),
-        'default' => true
+        'default' => true,
       ),
 
       array(
@@ -2315,7 +2378,6 @@ $prefix = 'iro_options';
         'title' => __('Display Area Background Color','sakurairo_csf'),
         'dependency' => array(
                               array( 'exhibition_area_style', '==', 'left_and_right', '', 'true' ),
-                              array( 'exhibition_area', '==', 'true' ),
                         ),
         'desc' => __('Customize the colors, light colors are recommended','sakurairo_csf'),
         'default' => 'rgba(255,255,255,0.4)'
@@ -2328,7 +2390,6 @@ $prefix = 'iro_options';
         'dependency' => array(
           array( 'exhibition_area_style', '==', 'left_and_right', '', 'true' ),
           array( 'exhibition_area_compat', '==', 'true' ),
-          array( 'exhibition_area', '==', 'true' ),
         ),
         'desc' => __('Slide to adjust, the recommended value is 15','sakurairo_csf'),
         'unit' => 'px',
@@ -2336,105 +2397,53 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'exhibition',
-        'type' => 'tabbed',
-        'title' => __('Display Area Options','sakurairo_csf'),
-        'dependency' => array( 'exhibition_area', '==', 'true', '', 'true' ),
-        'tabs' => array(
-          array(
-            'title' => __('First Display Area','sakurairo_csf'),
-            'fields' => array(
-              array(
-                'id' => 'img1',
+        'id'        => 'exhibition',
+        'type'      => 'repeater',
+        'title'     => __('Display Area Content','sakurairo_csf'),
+        'fields'    => array(
+            array(
+                'id'   => 'img',
                 'type' => 'upload',
-                'title' => __('image','sakurairo_csf'),
-                'desc' => __('best width 260px, best height 160px','sakurairo_csf'),
-              ),
-              array(
-                'id' => 'title1',
-                'type' => 'text',
-                'title' => __('title','sakurairo_csf'),
-              ),
-              array(
-                'id' => 'description1',
-                'type' => 'text',
-                'title' => __('description','sakurairo_csf'),
-              ),
-              array(
-                'id' => 'link1',
-                'type' => 'text',
-                'title' => __('add URL','sakurairo_csf'),
-              ),
-            )
-          ),
-          array(
-            'title' => __('Second Display Area','sakurairo_csf'),
-            'fields' => array(
-              array(
-                'id' => 'img2',
-                'type' => 'upload',
-                'title' => __('image','sakurairo_csf'),
-                'desc' => __('best width 260px, best height 160px','sakurairo_csf'),
-              ),
-              array(
-                'id' => 'title2',
-                'type' => 'text',
-                'title' => __('title','sakurairo_csf'),
-              ),
-              array(
-                'id' => 'description2',
-                'type' => 'text',
-                'title' => __('description','sakurairo_csf'),
-              ),
-              array(
-                'id' => 'link2',
-                'type' => 'text',
-                'title' => __('add URL','sakurairo_csf'),
-              ),
-            )
-          ),
-          array(
-            'title' => __('Third Display Area','sakurairo_csf'),
-            'fields' => array(
-              array(
-                'id' => 'img3',
-                'type' => 'upload',
-                'title' => __('image','sakurairo_csf'),
-                'desc' => __('best width 260px, best height 160px','sakurairo_csf'),
-              ),
-              array(
-                'id'    => 'title3',
+                'title' => __('image', 'sakurairo_csf'),
+                'desc'  => __('best width 260px, best height 160px', 'sakurairo_csf'),
+            ),
+            array(
+                'id'    => 'title',
                 'type'  => 'text',
-                'title' => __('title','sakurairo_csf'),
-              ),
-              array(
-                'id'    => 'description3',
+                'title' => __('title', 'sakurairo_csf'),
+            ),
+            array(
+                'id'    => 'description',
                 'type'  => 'text',
-                'title' => __('description','sakurairo_csf'),
-              ),
-              array(
-                'id'    => 'link3',
+                'title' => __('description', 'sakurairo_csf'),
+            ),
+            array(
+                'id'    => 'link',
                 'type'  => 'text',
-                'title' => __('add URL','sakurairo_csf'),
-              ),
-            )
-          ),
+                'title' => __('add URL', 'sakurairo_csf'),
+            ),
         ),
-        'default'       => array(
-          'link1' => '',
-          'link2' => '',
-          'link3' => '',
-          'img1'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/series/exhibition1.webp',
-          'img2'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/series/exhibition2.webp',
-          'img3' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/series/exhibition3.webp',
-          'title1' => 'アンコール',
-          'title2' => 'ハルジオン',
-          'title3' => 'かいぶつ',
-          'description1' => 'ここは夜のない世界',
-          'description2' => '過ぎてゆく時間の中',
-          'description3' => '素晴らしき世界に今日も乾杯',
+        'default'   => array(
+            array(
+                'img' => $vision_resource_basepath . 'series/exhibition1.webp',
+                'title' => 'アカネチル',
+                'description' => 'それでも怖いなら、せめて明日を想う心だけ持って僕の傍に居てくれればいい',
+                'link' => '',
+            ),
+            array(
+                'img' => $vision_resource_basepath . 'series/exhibition2.webp',
+                'title' => '夏霞',
+                'description' => 'あの儚く散る花火の下で、馬鹿みたいに永遠を誓った',
+                'link' => '',
+            ),
+            array(
+                'img' => $vision_resource_basepath . 'series/exhibition3.webp',
+                'title' => '雪冴ゆる',
+                'description' => '独りぽっちの冴えない僕を暗闇から連れ出してくれた',
+                'link' => '',
+            ),
         )
-      ),
+    )
 
     )
   ) );
@@ -2449,6 +2458,12 @@ $prefix = 'iro_options';
         'type' => 'submessage',
         'style' => 'info',
         'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Homepage/#%E6%96%87%E7%AB%A0%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
+      ),
+
+      array(
+        'type'    => 'submessage',
+        'style'   => 'normal',
+        'content' => __('It will only be displayed when "Article Area" is selected in the homepage component settings','sakurairo_csf'),
       ),
 
       array(
@@ -2469,8 +2484,8 @@ $prefix = 'iro_options';
         'title' => __('Article Area Card Design','sakurairo_csf'),
         'desc' => __('You can choose between letter design or ticket design','sakurairo_csf'),
         'options'    => array(
-          'letter' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/post_list_design_letter.webp',
-          'ticket' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/post_list_design_ticket.webp',
+          'letter' => $vision_resource_basepath . 'options/post_list_design_letter.webp',
+          'ticket' => $vision_resource_basepath . 'options/post_list_design_ticket.webp',
         ),
         'default'    => 'letter'
       ),
@@ -2482,8 +2497,8 @@ $prefix = 'iro_options';
         'desc' => __('You can choose between card style or Non-card style','sakurairo_csf'),
         'dependency' => array( 'post_list_design', '==', 'ticket', '', 'true' ),
         'options'    => array(
-          'card' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/post_list_design_ticket.webp',
-          'non-card' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/post_list_design_ticket_2.webp',
+          'card' => $vision_resource_basepath . 'options/post_list_design_ticket.webp',
+          'non-card' => $vision_resource_basepath . 'options/post_list_design_ticket_2.webp',
         ),
         'default'    => 'card'
       ),
@@ -2558,6 +2573,13 @@ $prefix = 'iro_options';
         'default' => '18'
       ),
 
+      array(
+        'id' => 'show_shuoshuo_on_home_page',
+        'type' => 'switcher',
+        'title' => __('Show shuoshuo on home page','sakurairo_csf'),
+        'default' => true
+      ),
+
     )
   ) );
 
@@ -2577,17 +2599,6 @@ $prefix = 'iro_options';
         'type' => 'submessage',
         'style' => 'info',
         'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Pages/#%E7%BB%BC%E5%90%88%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'page_style',
-        'type' => 'image_select',
-        'title' => __('Page Style','sakurairo_csf'),
-        'options' => array(
-          'sakurairo' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/page_style_iro.webp',
-          'sakura' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/page_style_sakura.webp',
-        ),
-        'default' => 'sakurairo'
       ),
 
       array(
@@ -2651,7 +2662,7 @@ $prefix = 'iro_options';
         'title' => __('Page LazyLoad Placeholder SVG','sakurairo_csf'),
         'dependency' => array( 'page_lazyload', '==', 'true', '', 'true' ),
         'desc' => __('Fill in the address, this is the placeholder image that will be displayed when the page LazyLoad is being loaded','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/load_svg/inload.svg'
+        'default' => $vision_resource_basepath . 'basic/puff-load.svg'
       ),
 
       array(
@@ -2659,7 +2670,7 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('Page Image Placeholder SVG','sakurairo_csf'),
         'desc' => __('Fill address, this is the SVG that will be displayed as a placeholder when the page image is being loaded','sakurairo_csf'),
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/load_svg/inload.svg'
+        'default' => $vision_resource_basepath . 'basic/puff-load.svg'
       ),
 
     )
@@ -2781,21 +2792,42 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'alipay_code',
-        'type' => 'upload',
-        'title' => __('Article Page Appreciation Function (Alipay QR Code)','sakurairo_csf'),
+        'id' => 'reward_area',
+        'type' => 'fieldset',
+        'title' => __('Reward','sakurairo_csf'),
         'dependency' => array( 'article_function', '==', 'true', '', 'true' ),
-        'desc' => __('Upload Alipay Receipt QR Code Image','sakurairo_csf'),
-        'library' => 'image',
-      ),
-
-      array(
-        'id' => 'wechat_code',
-        'type' => 'upload',
-        'title' => __('Article Page Appreciation Function (Wechat QR Code)','sakurairo_csf'),
-        'dependency' => array( 'article_function', '==', 'true', '', 'true' ),
-        'desc' => __('Upload WeChat Receipt QR Code Image','sakurairo_csf'),
-        'library' => 'image',
+        'fields' => array(
+          array(
+            'id' => 'link',
+            'type' => 'text',
+            'title' => __('Button Link','sakurairo_csf'),
+            'desc' => __('The link click the reward button will redirect to','sakurairo_csf'),
+          ),
+          array(
+            'id' => 'image1',
+            'type' => 'upload',
+            'title' => __('Image','sakurairo_csf'),
+            'library' => 'image',
+          ),
+          array(
+            'id' => 'link1',
+            'type' => 'text',
+            'title' => __('Link','sakurairo_csf'),
+            'desc' => __('The link click the image will redirect to','sakurairo_csf'),
+          ),
+          array(
+            'id' => 'image2',
+            'type' => 'upload',
+            'title' => __('Image','sakurairo_csf'),
+            'library' => 'image',
+          ),
+          array(
+            'id' => 'link2',
+            'type' => 'text',
+            'title' => __('Link','sakurairo_csf'),
+            'desc' => __('The link click the image will redirect to','sakurairo_csf'),
+          ),
+        ),
       ),
 
       array(
@@ -2892,8 +2924,9 @@ $prefix = 'iro_options';
 		'type' => 'image_select',
 		'title' => __('Bangumi Template Source', 'sakurairo_csf'),
 		'options' => array(
-			'bilibili' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/bangumi_tep_bili.webp',
-			'myanimelist' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/bangumi_tep_mal.webp',
+			'bilibili' => $vision_resource_basepath . 'options/bangumi_tep_bili.webp',
+			'myanimelist' => $vision_resource_basepath . 'options/bangumi_tep_mal.webp',
+      'bangumi' => $vision_resource_basepath . 'options/bangumi_tep_bgm.webp'
 		),
 		'default' => 'bilibili'
 	  ),
@@ -2939,6 +2972,28 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'bangumi_id',
+        'type' => 'text',
+        'title' => __('Bangumi Account UID','sakurairo_csf'),
+        'desc' => __('Fill in your Bangumi account ID, e.g. https://bangumi.tv/user/944883, just the number part "944883"','sakurairo_csf'),
+        'dependency' => array( 'bangumi_source', '==', 'bangumi', '', 'true' ),
+        'default' => '944883'
+      ),
+
+      array(
+        'id' => 'bangumi_cache',
+        'type' => 'switcher',
+        'title' => __('Use cached or pre-set responses','sakurairo_csf'),
+        'desc' => __('If the following content is empty, it will be automatically updated on first visit.','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'type'    => 'content',
+        'content' => __('<a href="/wp-admin/admin.php?page=sakurairo_cache_setting" target="_blank">Click here to set cache content</a>','sakurairo_csf'),
+      ),
+
+      array(
         'type' => 'subheading',
         'content' => __('Friend Link Template Settings','sakurairo_csf'),
       ),
@@ -2948,27 +3003,19 @@ $prefix = 'iro_options';
         'type' => 'image_select',
         'title' => __('Friend Link Template Unit Alignment','sakurairo_csf'),
         'options'     => array(
-          'left'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/friend_link_left.webp',
-          'right'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/friend_link_right.webp',
-          'center'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/friend_link_center.webp',
+          'left'  => $vision_resource_basepath . 'options/friend_link_left.webp',
+          'right'  => $vision_resource_basepath . 'options/friend_link_right.webp',
+          'center'  => $vision_resource_basepath . 'options/friend_link_center.webp',
         ),
         'default'     => 'left'
       ),
 
       array(
-        'id' => 'friend_link_title_matching_color',
-        'type' => 'color',
-        'title' => __('Friend Link Template Unit Matching Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#ac354b'
-      ),  
-
-      array(
-        'id' => 'friend_link_shadow_color',
-        'type' => 'color',
-        'title' => __('Friend Link Template Unit Border Shadow Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#e8e8e8'
+        'id' => 'friend_link_form',
+        'type' => 'switcher',
+        'title' => __('Friend Link Apply Form','sakurairo_csf'),
+        'label' => __('Add a apply form on the friend link page','sakurairo_csf'),
+        'default' => true,
       ),
 
       array(
@@ -2997,18 +3044,59 @@ $prefix = 'iro_options';
         ),
         'default'     => 'ASC'
       ),
-
+      
       array(
         'type' => 'subheading',
-        'content' => __('Login Template Settings','sakurairo_csf'),
+        'content' => __('SteamLibrary Template Settings','sakurairo_csf'),
+      ),
+      
+      array(
+        'id' => 'steam_id',
+        'type' => 'text',
+        'title' => __('Steam Account 64ID','sakurairo_csf'),
+        'desc' => __('Fill in your account 64ID, e.g. https://steamcommunity.com/profiles/76561199029689067/, just the number part "76561199029689067"','sakurairo_csf'),
       ),
 
       array(
-        'id' => 'ex_register_open',
+        'id' => 'steam_key',
+        'type' => 'text',
+        'title' => __('Steam API Key','sakurairo_csf'),
+        'desc' => __('Apply at https://steamcommunity.com/dev/apikey','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'steam_covercdn',
+        'type' => 'select',
+        'title' => __('Game Cover CDN','sakurairo_csf'),
+        'desc' => __('Select based on your user region','sakurairo_csf'),
+        'options' => array(
+          'steamchina' => __('Steam China','sakurairo_csf'),
+          'steamakamai'  => __('Steam akamai','sakurairo_csf'),
+          'steamfastly'  => __('Steam fastly','sakurairo_csf'),
+          'steamcloudflare'  => __('Steam cloudflare','sakurairo_csf'),
+        ),
+        'default'     => 'steamakamai'
+      ),
+
+      array(
+        'id' => 'steam_store',
+        'type' => 'select',
+        'title' => __('Game Store Link','sakurairo_csf'),
+        'desc' => __('Select the game store link to jump to','sakurairo_csf'),
+        'options' => array(
+          'steam' => __('Steam','sakurairo_csf'),
+          'xiaoheihe'  => __('XiaoHeiHe','sakurairo_csf'),
+          'steamdb'  => __('SteamDB','sakurairo_csf'),
+        ),
+        'default'     => 'steam'
+      ),
+
+      array(
+        'id' => 'steam_cache',
         'type' => 'switcher',
-        'title' => __('Login Template Registration Function','sakurairo_csf'),
-        'label' => __('Login template will allow registration when enabled','sakurairo_csf'),
-        'default' => false
+        'title' => __('Use cached or pre-set responses','sakurairo_csf'),
+        'desc' => __('If the following content is empty, it will be automatically updated on first visit.','sakurairo_csf'),
+        'default' => false,
       ),
 
     )
@@ -3041,6 +3129,21 @@ $prefix = 'iro_options';
           'fold' => __('Shrink','sakurairo_csf'),
         ),
         'default' => 'unfold'
+      ),
+
+      array(
+        'id' => 'comment_placeholder_text',
+        'type' => 'text',
+        'title' => __('Custom CommentBox Placeholder','sakurairo_csf'),
+        'desc' => __('When the user does not type any text, they will appear in the comment box.','sakurairo_csf'),
+        'default' => __('To trace the bright moonlight','sakurairo_csf')
+      ),
+
+      array(
+        'id' => 'comment_submit_button_text',
+        'type' => 'text',
+        'title' => __('Custom Submit Button Content','sakurairo_csf'),
+        'default' => __('Submit✈️','sakurairo_csf')
       ),
 
       array(
@@ -3132,26 +3235,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'location_server',
-        'type' => 'select',
-        'title' => __('API To Parse Geographical Location','sakurairo_csf'),
-        'options' => array(
-          'sakurairo' => __('Theme Official','sakurairo_csf'),
-          'ip-api' => __('IP—API','sakurairo_csf'),
-          'all' => __('All','sakurairo_csf'),
-        ),
-        'default' => 'all'
-      ),
-
-      array(
-        'type'    => 'content',
-        'content' => __(
-         '<p><strong>Theme Official:</strong>Official API of the theme</p>'
-        .'<p><strong>IP-API:</strong>Provided by <a target="_blank" href="https://ip-api.com/">ip-api.com</a></p>'
-        .'<p><strong>All:</strong>Priority is given to Theme Official, IP—API for fallback</p>','sakurairo_csf'),
-      ),
-
-      array(
         'id' => 'comment_private_message',
         'type' => 'switcher',
         'title' => __('Private Comment Function','sakurairo_csf'),
@@ -3160,11 +3243,11 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'not_robot',
+        'id' => 'pca_captcha',
         'type' => 'switcher',
-        'title' => __('Page Comment Area Bot Verification','sakurairo_csf'),
-        'label' => __('After turning on user comments need to be verified before posting','sakurairo_csf'),
-        'default' => false
+        'title' => __('Page Comment Area Captcha','sakurairo_csf'),
+        'label' => __('Enabled by default, comments posted without logging in need to be verified by CAPTCHA','sakurairo_csf'),
+        'default' => true
       ),
 
       array(
@@ -3266,23 +3349,6 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'mail_img',
-        'type' => 'upload',
-        'title' => __('Mail Template Featured Image','sakurairo_csf'),
-        'desc' => __('Set the background image of your reply email','sakurairo_csf'),
-        'library' => 'image',
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/series/mail_head.webp'
-      ),
-
-      array(
-        'id' => 'mail_user_name',
-        'type' => 'text',
-        'title' => __('Mail Template Sending Address Prefix','sakurairo_csf'),
-        'desc' => __('Used to send system mail. The sender address will be displayed in the user\'s mailbox, don\'t use Non-English Characters. The default system mail address is bibi@your domain','sakurairo_csf'),
-        'default' => 'bibi'
-      ),
-
-      array(
         'id' => 'mail_notify',
         'type' => 'switcher',
         'title' => __('User Mail Reply Notification','sakurairo_csf'),
@@ -3333,32 +3399,57 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'login_background',
-        'type' => 'upload',
-        'title' => __('Login Screen Background Image','sakurairo_csf'),
-        'desc' => __('Set your login screen background image, leave this option blank to show the default','sakurairo_csf'),
-        'dependency' => array( 'custom_login_switch', '==', 'true', '', 'true' ),
-        'library'      => 'image',
-        'default'     => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/series/login_background.webp'
-      ),
-
-      array(
-        'id' => 'login_blur',
-        'type' => 'switcher',
-        'title' => __('Login Screen Background Blur','sakurairo_csf'),
-        'label' => __('Login screen background image will be blurred when enabled','sakurairo_csf'),
-        'dependency' => array( 'custom_login_switch', '==', 'true', '', 'true' ),
-        'default' => false
-      ),
-
-      array(
         'id' => 'login_logo_img',
         'type' => 'upload',
         'title' => __('Login Screen Logo','sakurairo_csf'),
         'desc' => __('Set your login screen Logo','sakurairo_csf'),
         'dependency' => array( 'custom_login_switch', '==', 'true', '', 'true' ),
         'library' => 'image',
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/series/login_logo.webp'
+        'default' => $vision_resource_basepath . 'series/login_logo.webp'
+      ),
+
+      array(
+        'id' => 'captcha_select',
+        'type' => 'select',
+        'title' => __('Captcha Selection','sakurairo_csf'),
+        'options' => array(
+          'off' => __('Off','sakurairo_csf'),
+          'iro_captcha' => __('Theme Built in Captcha','sakurairo_csf'),
+          'vaptcha' => __('Vaptcha','sakurairo_csf')
+        ),
+        'default' => 'off',
+      ),
+      
+      array(
+        'id' => 'vaptcha_vid',
+        'type' => 'text',
+        'title' => __('Vaptcha VID','sakurairo_csf'),
+        'dependency' => array( 'captcha_select', '==', 'vaptcha', '', 'true' ),
+        'desc' => __('Fill in your Vaptcha VID','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'vaptcha_key',
+        'type' => 'text',
+        'title' => __('Vaptcha KEY','sakurairo_csf'),
+        'dependency' => array( 'captcha_select', '==', 'vaptcha', '', 'true' ),
+        'desc' => __('Fill in your Vaptcha KEY','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'vaptcha_scene',
+        'type' => 'select',
+        'title' => __('Vaptcha Scene','sakurairo_csf'),
+        'dependency' => array( 'captcha_select', '==', 'vaptcha', '', 'true' ),
+        'options' => array(
+          '1' => __(1,'sakurairo_csf'),
+          '2' => __(2,'sakurairo_csf'),
+          '3' => __(3,'sakurairo_csf'),
+          '4' => __(4,'sakurairo_csf'),
+          '5' => __(5,'sakurairo_csf'),
+          '6' => __(6,'sakurairo_csf'),
+        ),
+        'default' => 1,
       ),
 
       array(
@@ -3388,7 +3479,7 @@ $prefix = 'iro_options';
         'title' => __('Dashboard Background Image','sakurairo_csf'),
         'desc' => __('Set your dashboard background image, leave this option blank to show white background','sakurairo_csf'),
         'library' => 'image',
-        'default' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/series/admin_background.webp'
+        'default' => $vision_resource_basepath . 'series/admin_background.webp'
       ),
 
       array(
@@ -3396,8 +3487,8 @@ $prefix = 'iro_options';
         'type' => 'image_select',
         'title' => __('Dashboard Options Menu Style','sakurairo_csf'),
         'options' => array(
-          'v1' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/admin_left_style_v1.webp',
-          'v2' => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/admin_left_style_v2.webp',
+          'v1' => $vision_resource_basepath . 'options/admin_left_style_v1.webp',
+          'v2' => $vision_resource_basepath . 'options/admin_left_style_v2.webp',
         ),
         'default' => 'v1'
       ),  
@@ -3407,7 +3498,7 @@ $prefix = 'iro_options';
         'type' => 'color',
         'title' => __('Dashboard Primary Menu Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#3c5571'
+        'default' => '#081018'
       ),  
 
       array(
@@ -3415,7 +3506,7 @@ $prefix = 'iro_options';
         'type' => 'color',
         'title' => __('Dashboard Secondary Menu Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#4e739d'
+        'default' => '#111111'
       ),  
 
       array(
@@ -3423,15 +3514,7 @@ $prefix = 'iro_options';
         'type' => 'color',
         'title' => __('Dashboard Emphasis Color','sakurairo_csf'),
         'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#cfc3af'
-      ),  
-
-      array(
-        'id' => 'admin_button_color',
-        'type' => 'color',
-        'title' => __('Dashboard Button Color','sakurairo_csf'),
-        'desc' => __('Customize the colors','sakurairo_csf'),
-        'default' => '#ac9c91'
+        'default' => '#debd9c'
       ),  
 
       array(
@@ -3458,16 +3541,8 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'composer_load',
-        'type' => 'switcher',
-        'title' => __('ChatGPT Function','sakurairo_csf'),
-        'label' => __('After turning on ChatGPT Function will be available','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
         'type'    => 'content',
-        'content' => __('<img src="https://s.nmxc.ltd/sakurairo_vision/@2.7/options/leaflow.webp" width="25%" height="25%"/><img src="https://s.nmxc.ltd/sakurairo_vision/@2.7/options/postchat.webp" width="25%" height="25%"/>','sakurairo_csf'),
+        'content' => __('<img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/options/leaflow.webp" width="25%" height="25%"/><img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/options/postchat.webp" width="25%" height="25%"/>','sakurairo_csf'),
       ),
 
       array(
@@ -3490,15 +3565,15 @@ $prefix = 'iro_options';
  
             const defaults = {
                   leaflow:{
-                    chatgpt_base_url:"https://amber-api.leaflow.cn/api/openai-compatible",
+                    chatgpt_endpoint:"https://amber-api.leaflow.cn/api/openai-compatible/v1/chat/completions",
                     chatgpt_model:"auto"
                   },
                   postchat:{
-                    chatgpt_base_url:"https://ai.tianli0.top",
+                    chatgpt_endpoint:"https://ai.tianli0.top/v1/chat/completions",
                     chatgpt_model:"tianli"
                   },
                   openai:{
-                    chatgpt_base_url:"https://api.openai.com",
+                    chatgpt_endpoint:"https://api.openai.com/v1/chat/completions",
                     chatgpt_model:"gpt-4o-mini",
                   }
                 }
@@ -3529,12 +3604,11 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'chatgpt_base_url',
+        'id' => 'chatgpt_endpoint',
         'type' => 'text',
         'title' => __('ChatGPT Base URL','sakurairo_csf'),
         'desc' => __('Fill in the ChatGPT Base URL','sakurairo_csf'),
-        'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
-        'default' => 'https://api.openai.com'
+        'default' => 'https://api.openai.com/v1/chat/completions'
       ),
 
       array(
@@ -3542,7 +3616,28 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('ChatGPT API keys','sakurairo_csf'),
         'desc' => __('Fill in Your ChatGPT API keys, please refer to <a href="https://platform.openai.com/account/api-keys">OpenAI Website</a> for further information.','sakurairo_csf'),
-        'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
+      ),
+
+      array(
+        'id' => 'chatgpt_max_tokens',
+        'type' => 'slider',
+        'title' => __('ChatGPT Max Tokens', 'sakurairo_csf'),
+        'desc' => __('Maximum number of words to be sent per segment', 'sakurairo_csf'),
+        'step' => '100',
+        'min' => '1000',
+        'max' => '32700',
+        'default' => '7000'
+      ),
+
+      array(
+        'id' => 'chatgpt_model',
+        'type' => 'text',
+        'title' => __('ChatGPT Model','sakurairo_csf'),
+        'descr' => __('Only models support Chat Completion API can be used. The default is "gpt-4o-mini. View https://platform.openai.com/docs/models/overview for further info.','sakurairo_csf'),
+        'dependency' => array(
+          array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
+        ),
+        "default" => "gpt-4o-mini"
       ),
 
       array(
@@ -3550,7 +3645,6 @@ $prefix = 'iro_options';
         'type' => 'switcher',
         'title' => __('ChatGPT Article Summarize','sakurairo_csf'),
         'label' => __('After turning on, title and context of your articles will be automatically sent to ChatGPT to generate excerpts.','sakurairo_csf'),
-        'dependency' => array( 'composer_load', '==', 'true', '', 'true' ),
         'default' => false
       ),
 
@@ -3558,7 +3652,6 @@ $prefix = 'iro_options';
         'type'    => 'content',
         'content'=> __('Each update of your post will trigger a request to generate a summary. Due to current API limitations, if your article exceeds 4097 Token, the system will only send the unexceeded portion to generate a summary','sakurairo_csf'),
         'dependency' => array(
-          array( 'composer_load', '==', 'true'),
           array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
     ),
       ),
@@ -3569,7 +3662,6 @@ $prefix = 'iro_options';
         'title' => __('Article IDs that do not Require ChatGPT Summarize','sakurairo_csf'),
         'desc' => __('Those articles will never be sent to ChatGPT for excerpt generation. Split each id with a ",".','sakurairo_csf'),
         'dependency' => array(
-          array( 'composer_load', '==', 'true'),
           array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
     ),
         'default'     => ''
@@ -3580,7 +3672,6 @@ $prefix = 'iro_options';
         'type' => 'textarea',
         'title' => __('ChatGPT Article Summarize Init Prompt','sakurairo_csf'),
         'dependency' => array(
-          array( 'composer_load', '==', 'true'),
           array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
     ),
         'desc' => __('Init Prompt instructs AI how to generate summaries for your articles. Init Prompt will be passed to ChatGPT as "system" role','sakurairo_csf'),
@@ -3588,15 +3679,11 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'chatgpt_model',
-        'type' => 'text',
-        'title' => __('ChatGPT Model','sakurairo_csf'),
-        'descr' => __('Only models support Chat Completion API can be used. The default is "gpt-4o-mini. View https://platform.openai.com/docs/models/overview for further info.','sakurairo_csf'),
-        'dependency' => array(
-          array( 'composer_load', '==', 'true'),
-          array( 'chatgpt_article_summarize', '==', 'true', '', 'true' ),
-        ),
-        "default" => "gpt-4o-mini"
+        'id' => 'chatgpt_annotations_prompt',
+        'type' => 'textarea',
+        'title' => __('ChatGPT Article Annotations Init Prompt','sakurairo_csf'),
+        'desc' => __('Init Prompt instructs AI how to generate annotations for your articles. Init Prompt will be passed to ChatGPT as "system" role','sakurairo_csf'),
+        'default' => "分析以下文章正文内容(排除标题及引语类文本)，用最认真的态度和较为严格的识别标准筛选出专业术语、复杂概念、事件、社会热点、网络黑话烂梗热词、晦涩难懂、与文章语言不同的名词，并根据文章主要语言提供对应语言的简短解释。若文章出现与“事件”，“热点”，“介绍”等具有提示上下文功能的含义的名词时，请务必用最高优先级在前后查找符合要求的名词。名词选取时需要排除日常常用的名词、非著名人物的人名。仅返回JSON格式，格式为：{\"术语1\":\"解释1\", \"术语2\":\"解释2\", ...}。注意不要出现在原文中并没有出现的名词，生成的名词越多越好：\n\n",
       ),
 
       array(
@@ -3688,27 +3775,21 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'live_search',
-        'type' => 'switcher',
-        'title' => __('Live Search','sakurairo_csf'),
-        'label' => __('After turning on the live search in the frontend, call Rest API to update the cache once an hour. You can set the cache time manually in api.php','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
-        'id' => 'live_search_comment',
-        'type' => 'switcher',
-        'title' => __('Live Search Comment Support','sakurairo_csf'),
-        'dependency' => array( 'live_search', '==', 'true', '', 'true' ),
-        'label' => __('Enable to search for comments in live search (not recommended if site has too many comments)','sakurairo_csf'),
-        'default' => false
-      ),
-
-      array(
         'id' => 'google_analytics_id',
         'type' => 'text',
         'title' => __('Google Analytics Id','sakurairo_csf'),
         'label' => __('If you already have a plugin to handle it, please keep here empty.','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'iro_captcha_level',
+        'type' => 'slider',
+        'title' => __('Captcha Level', 'sakurairo_csf'),
+        'desc' => __('The difficulty level of the Theme Captcha', 'sakurairo_csf'),
+        'step' => '1',
+        'min' => '0',
+        'max' => '100',
+        'default' => '60'
       ),
 
       array(
@@ -3740,11 +3821,9 @@ $prefix = 'iro_options';
         'id' => 'gravatar_proxy',
         'type' => 'select',
         'title' => __('Gravatar Service Proxy','sakurairo_csf'),
-        'desc' => __('You can select multiple proxy as the Gravatar Service Proxy. By default, Tianli is used as the Gravatar Service Proxy.','sakurairo_csf'),
+        'desc' => __('You can select multiple proxy as the Gravatar Service Proxy. By default, Weavatar is used as the Gravatar Service Proxy.','sakurairo_csf'),
         'options'     => array(
           'weavatar.com/avatar'  => __('Weavatar Service','sakurairo_csf'),
-          'cravatar.cn/avatar'  => __('Cravatar Service','sakurairo_csf'),
-          'sdn.geekzu.org/avatar'  => __('Geekzu','sakurairo_csf'),
           'gravatar.loli.net/avatar'  => __('Loli Net','sakurairo_csf'),
           'gravatar.com/avatar'  => __('Official','sakurairo_csf'),
           'custom_proxy_address_of_gravatar' => __('Custom Proxy Address','sakurairo_csf'),
@@ -3762,48 +3841,32 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'ghcard_proxy',
+        'type' => 'switcher',
+        'title' => __('GitHub repository card proxy','sakurairo_csf'),
+        'desc' => __('Use your server proxy to get the github repository card image so that Chinese users who cannot access vercel.app can see it','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
         'type' => 'subheading',
         'content' => __('Lightbox','sakurairo_csf'),
       ),
 
       array(
-        'id' => 'baguetteBox',
-        'type' => 'switcher',
-        'title' => __('BaguetteBox Lightbox Effect','sakurairo_csf'),
-        'label' => __('BaguetteBox will be used as the image lightbox effect when turned on','sakurairo_csf'),
-        'dependency' => array(
-                              array( 'fancybox', '==', 'false', '', 'true' ),
-                              array( 'lightgallery', '==', 'false' ),
-
-                        ),
-        'default' => false
+        'id' => 'lightbox',
+        'type' => 'select',
+        'title' => __('lightbox','sakurairo_csf'),
+        'desc' => __('Choose a image lightbox effect which you want to use,and additional JQ libraries will be loaded when using fancybox','sakurairo_csf'),
+        'options'     => array(
+          'off'  => __('off','sakurairo_csf'),
+          'baguetteBox'  => __('baguetteBox','sakurairo_csf'),
+          'fancybox'  => __('fancybox','sakurairo_csf'),
+          'lightgallery' => __('lightgallery','sakurairo_csf'),
+        ),
+        'default'     => 'off'
       ),
 
-      array(
-        'id' => 'fancybox',
-        'type' => 'switcher',
-        'title' => __('FancyBox Lightbox Effect','sakurairo_csf'),
-        'label' => __('FancyBox will be used as an image lightbox effect after turning on, additional JQ libraries will be loaded','sakurairo_csf'),
-        'dependency' => array(
-                              array( 'baguetteBox', '==', 'false', '', 'true' ),
-                              array( 'lightgallery', '==', 'false' ),
-
-                        ),
-        'default' => false
-      ), 
-
-      array(
-        'id' => 'lightgallery',
-        'type' => 'switcher',
-        'title' => __('LightGallery Lightbox Effect','sakurairo_csf'),
-        'label' => __('LightGallery will be used as an image lightbox effect after turning on.','sakurairo_csf'),
-        'dependency' => array(
-                              array( 'fancybox', '==', 'false', '', 'true' ),
-                              array( 'baguetteBox', '==', 'false' ),
-
-                        ),
-        'default' => false
-      ), 
       array(
         'type'    => 'content',
         'content'=>__('<strong>Attension: Please read <a href="https://github.com/sachinchoolur/lightGallery#license">License Instruction</a> before use.</strong>'
@@ -3811,14 +3874,14 @@ $prefix = 'iro_options';
         .'<br/> Please write settings in JavaScript. An example has been provided as default setting.'
         .'<br/> It should be captiable for Most User using WordPress Guttenberg Editor.'
         .'<br/>Submit new discussion on Github for assistance. https://github.com/mirai-mamori/Sakurairo/discussions','sakurairo_csf')       ,
-        'dependency' => array( 'lightgallery', '==', 'true', '', 'true' ),
+        'dependency' => array( 'lightbox', '==', 'lightgallery', '', 'true' ),
       ),
 
       array(
         'type'    => 'submessage',
         'style'   => 'warning',
         'content'=>__('Start from Sakurairo v2.4.0, plugins names in LightGallery option follow the form cite in official document (eg. lgHash instead of "hash")','sakurairo_csf')       ,
-        'dependency' => array( 'lightgallery', '==', 'true', '', 'true' ),
+        'dependency' => array( 'lightbox', '==', 'lightgallery', '', 'true' ),
       ),
 
       array(
@@ -3826,7 +3889,7 @@ $prefix = 'iro_options';
         'type' => 'code_editor',
         'sanitize' => false,
         'title' => __('LightGallery Lightbox Effect Options','sakurairo_csf'),
-        'dependency' => array( 'lightgallery', '==', 'true', '', 'true' ),
+        'dependency' => array( 'lightbox', '==', 'lightgallery', '', 'true' ),
         'default' => '{
           "plugins":["lgHash","lgZoom"],
           "supportLegacyBrowser":false,
@@ -3842,7 +3905,7 @@ $prefix = 'iro_options';
       array(
         'type'    => 'content',
         'content' => __('<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </p>'
-        .' <p><strong>Prism.js:</strong> Requires a language to be specified, see <a href="https://prismjs.com/#basic-usage">basic usage</a> and <a href="https://prismjs.com/ plugins/file-highlight/">How to code highlight dynamically loaded files</a>. </p>'
+        .' <p><strong>Prism.js:</strong> Requires a language to be specified, see <a href="https://prismjs.com/#basic-usage">basic usage</a> and <a href="https://prismjs.com/plugins/file-highlight/">How to code highlight dynamically loaded files</a>. </p>'
         .' <p><strong>Custom:</strong> For cases where another configuration is available. </p>','sakurairo_csf'),
       ),
 
@@ -3930,24 +3993,47 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'exlogin_url',
-        'type' => 'text',
-        'title' => __('Specify Login Address','sakurairo_csf'),
-        'desc' => __('Force not to use the WordPress login page address to login, fill in the new login page address, such as: http://www.xxx.com/login. Note that before filling in the new page you can test the normal opening, so as not to cause the inability to enter the background, etc.','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'exregister_url',
-        'type' => 'text',
-        'title' => __('Specify Registration Address','sakurairo_csf'),
-        'desc' => __('This address is used as the registration entry on the login page, if you specify a login address, it is recommended to fill in','sakurairo_csf'),
-      ),
-
-      array(
         'id' => 'cookie_version',
         'type' => 'text',
         'title' => __('Version Control','sakurairo_csf'),
         'desc' => __('Used to update front-end cookies and browser cache, can use any string','sakurairo_csf'),
+      ),
+
+      array(
+        'id'    => 'hide_login_portal',
+        'type'  => 'switcher',
+        'title' => __('Hide Login Portal','sakurairo_csf'),
+        'label'   => __('Hide login address in theme as much as possible, if you used plugins to hide this.','sakurairo_csf'),
+        'default' => false,
+      ),
+
+      array(
+        'id' => 'fontawesome_source',
+        'type' => 'text',
+        'title' => __('Fontawesome Source','sakurairo_csf'),
+        'desc' => __('The source link of Fontawesome icons style','sakurairo_csf'),
+        'default' => "https://s4.zstatic.net/ajax/libs/font-awesome/6.7.2/css/all.min.css",
+      ),
+
+      array(
+        'id'    => 'dev_mode',
+        'type'  => 'switcher',
+        'title' => __('Dev Mode','sakurairo_csf'),
+        'label'   => __('Enable dev mode to diable css minify','sakurairo_csf'),
+        'default' => false,
+      ),
+
+      array(
+        'id' => 'php_notice_filter',
+        'type' => 'select',
+        'title' => __('PHP Notice Filter','sakurairo_csf'),
+        'options' => array(
+          'inner' => __('Use your php config','sakurairo_csf'),
+          'normal' => __('Only show critical errors','sakurairo_csf'),
+          'all' => __('Show nothing','sakurairo_csf'),
+        ),
+        "default" => "normal",
+        'desc' => __('It is recommended to set it to normal to block log information that does not affect usage.','sakurairo_csf'),
       ),
     )
   ) );
@@ -3977,7 +4063,7 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://s.nmxc.ltd/sakurairo_vision/@2.7/series/headlogo.webp"  alt="Theme Information" />','sakurairo_csf'),
+        'content' => __('<img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/series/headlogo.webp"  alt="Theme Information" />','sakurairo_csf'),
       ),
 
       array(
@@ -3996,9 +4082,9 @@ $prefix = 'iro_options';
         'type'        => 'image_select',
         'title' => __('Theme Update Source','sakurairo_csf'),
         'options'     => array(
-          'github'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/update_source_github.webp',
-          'upyun'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/update_source_upyun.webp',
-          'official_building'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/update_source_iro.webp',
+          'github'  => $vision_resource_basepath . 'options/update_source_github.webp',
+          'upyun'  => $vision_resource_basepath . 'options/update_source_wafpro.webp',
+          'official_building'  => $vision_resource_basepath . 'options/update_source_iro.webp',
         ),
         'desc' => __('If you are using a server set up in mainland China, please use the Upyun source or the official theme source as your theme update source','sakurairo_csf'),
         'default'     => 'github'
@@ -4056,24 +4142,24 @@ $prefix = 'iro_options';
         'default' => false
       ),
 
+      array(
+        'id' => 'lib_cdn_path',
+        'type' => 'image_select',
+        'title' => __('Public CDN Basepath','sakurairo_csf'),
+        'label' => __('Control the basepath of Frontend Resource.','sakurairo_csf'),
+        'options'     => array(
+          'https://s.nmxc.ltd/sakurairo/@'  => $vision_resource_basepath . 'options/update_source_wafpro.webp',
+          'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => $vision_resource_basepath . 'options/update_source_jsd.webp',
+        ),
+        'default'     => 'https://s.nmxc.ltd/sakurairo/@'
+      ),
+
       array(        
       'id' => 'external_vendor_lib',
       'type' => 'switcher',
-      'title' => __('Provide 3rd-party library from public CDN','sakurairo_csf'),
+      'title' => __('Provide 3rd-party library from Public CDN','sakurairo_csf'),
       'label' => __('When disabled, 3rd-party dependencies, which have been built to bundles along with themes\'s entry script, will be loaded from the exact same origin with Critical Frontend Resource. ','sakurairo_csf'),
       'default' => false
-    ),
-
-    array(
-      'id' => 'lib_cdn_path',
-      'type' => 'image_select',
-      'title' => __('Public CDN Basepath','sakurairo_csf'),
-      'dependency' => array( 'external_vendor_lib', '==', 'true', '', 'true' ),
-      'options'     => array(
-        'https://s.nmxc.ltd/sakurairo/@'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/update_source_upyun.webp',
-        'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@'  => 'https://s.nmxc.ltd/sakurairo_vision/@2.7/options/update_source_jsd.webp',
-      ),
-      'default'     => 'https://s.nmxc.ltd/sakurairo/@'
     ),
 
       array(
@@ -4081,17 +4167,7 @@ $prefix = 'iro_options';
         'type' => 'text',
         'title' => __('Vision Resource Basepath','sakurairo_csf'),
         'desc' => __('This link directory structure needs to be consistent with the <a href="https://github.com/Fuukei/Sakurairo_Vision">Sakurairo Vision</a> repositories officially provided by fuukei, otherwise some resources 404 may appear. The image source officially provided by <a href="https://www.upyun.com/">Upyun</a> is adopted by default.','sakurairo_csf'),
-        'default' => "https://s.nmxc.ltd/sakurairo_vision/@2.7/"
-      ),
-
-      array(
-        'type' => 'subheading',
-        'content' => __('Theme Sponsors','sakurairo_csf'),
-      ),
-
-      array(
-        'type'    => 'content',
-        'content' => __('<img src="https://news.maho.cc/sponsors.php"  alt="sponsors" width="65%" height="65%" />','sakurairo_csf'),
+        'default' => "https://s.nmxc.ltd/sakurairo_vision/@3.0/"
       ),
 
       array(
@@ -4101,7 +4177,7 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://opencollective.com/fuukei/contributors.svg" alt="Theme Contributors" width="100%" height="100%" />','sakurairo_csf'),
+        'content' => __('<img src="https://fuukei-api.nyat.icu/api/contributors" alt="Theme Contributors" width="100%" height="100%" />','sakurairo_csf'),
       ),
 
       array(
@@ -4132,8 +4208,7 @@ $prefix = 'iro_options';
       array(
         'type'    => 'content',
         'content' => __('<p>Fluent Design Icon Referenced by Paradox Fluent Icon Pack</p>
-        <p>MUH2 Design Icon Referenced by 缄默 <a href="https://www.coolapk.com/apk/com.muh2.icon">MUH2 Icon Pack</a></p>
-        <p>Mashiro Style Logo References the Original Theme Author Mashiro, As Provided and Referenced by Hyacm</p>','sakurairo_csf'),
+        <p>MUH2 Design Icon Referenced by 缄默 <a href="https://www.coolapk.com/apk/com.muh2.icon">MUH2 Icon Pack</a></p>','sakurairo_csf'),
       ),
 
       array(
@@ -4145,7 +4220,7 @@ $prefix = 'iro_options';
         'type'    => 'content',
         'content' => __('<p>Options Framework Relies on the Codestar Open Source <a href="https://github.com/Codestar/codestar-framework">Codestar Framework</a> Project</p>
         <p>Update Function Relies on YahnisElsts Open Source <a href="https://github.com/YahnisElsts/plugin-update-checker">Plugin Update Checker</a> Project</p>
-        <p>ChatGPT-related Capabilities Relies on orhanerday Open Source <a href="https://github.com/orhanerday/open-ai">open-ai</a> Project</p>','sakurairo_csf'),
+        <p>Visual Editor Related Functions Relies on Themeum Open Source <a href="https://github.com/themeum/kirki">Kirki</a> Project</p>','sakurairo_csf'),
       ),
 
       array(
@@ -4155,6 +4230,4 @@ $prefix = 'iro_options';
 
     )
   ) );
-
 }
-

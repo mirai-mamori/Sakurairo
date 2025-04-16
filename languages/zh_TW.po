@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2024-10-19 15:26+0900\n"
-"PO-Revision-Date: 2024-10-19 15:33+0900\n"
+"POT-Creation-Date: 2025-04-14 21:42+0900\n"
+"PO-Revision-Date: 2025-04-14 21:48+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -20,24 +20,27 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: inc/kirki\n"
+"X-Poedit-SearchPathExcluded-2: opt\n"
+"X-Poedit-SearchPathExcluded-3: inc/customizer.php\n"
+"X-Poedit-SearchPathExcluded-4: update-checker\n"
+"X-Poedit-SearchPathExcluded-5: js\n"
 
-#: 404.php:32
-msgid "Return to previous page"
-msgstr "返回上一頁"
+#: 404.php:188
+msgid "Page Not Found"
+msgstr "找不到網頁"
 
-#: 404.php:33
-msgid "Return to home page"
-msgstr "返回首頁"
+#: 404.php:191
+msgid ""
+"The page you are looking for might have been removed, had its name changed, "
+"or is temporarily unavailable."
+msgstr "你要尋找的頁面可能已被移除、改名或暫時無法使用。"
 
-#: 404.php:36
-msgid "Don't worry, search in site?"
-msgstr "別著急，試試站內檢索？"
-
-#: 404.php:38 footer.php:72 search.php:30
+#: 404.php:202 header.php:191 layouts/sakura_header.php:71 search.php:176
 msgid "Search..."
 msgstr "搜尋..."
 
-#: archive.php:52 author.php:55 index.php:49
+#: archive.php:42 author.php:55 index.php:81
 msgid " Previous"
 msgstr " 更早的文章"
 
@@ -45,209 +48,201 @@ msgstr " 更早的文章"
 msgid "No personal profile set yet"
 msgstr "尚未設置個人資料"
 
-#: comments.php:20
-msgid "view comments"
-msgstr "查看留言"
-
-#: comments.php:21 comments.php:25
-msgid " comment"
-msgstr " 條留言"
-
-#: comments.php:21 comments.php:25
-msgid " comments"
-msgstr " 條留言"
-
-#: comments.php:46
-msgid "no comment"
-msgstr "暫無留言"
-
-#: comments.php:57
-msgid "I'm not a robot"
-msgstr "我可不是機器人呢"
-
-#: comments.php:58
-msgid "Comment in private"
-msgstr "私密留言"
-
-#: comments.php:59
-msgid "Comment reply notify"
-msgstr "郵件通知"
-
-#: comments.php:107
-msgid "Click me OωO"
-msgstr "戳我呀 OωO"
-
-#: comments.php:108
+#: comments.php:53
 msgid "Woooooow ヾ(≧∇≦*)ゝ"
 msgstr "嘿嘿嘿 ヾ(≧∇≦*)ゝ"
 
-#: comments.php:131
+#: comments.php:75
+msgid "view comments"
+msgstr "查看留言"
+
+#: comments.php:84 tpl/meta-comments.php:4
+msgid "NOTHING"
+msgstr "什麼也沒有呀"
+
+#: comments.php:86 comments.php:97
+msgid " comment"
+msgstr " 條留言"
+
+#: comments.php:88 comments.php:97
+msgid " comments"
+msgstr " 條留言"
+
+#: comments.php:117
+msgid "no comment"
+msgstr "暫無留言"
+
+#: comments.php:132
+msgid "Click here to show captcha"
+msgstr "點此開始驗證"
+
+#: comments.php:179
+msgid "Comment in private"
+msgstr "私密留言"
+
+#: comments.php:182
+msgid "Comment reply notify"
+msgstr "郵件通知"
+
+#: comments.php:210
 msgid "Leave a Reply to"
 msgstr "回復給"
 
-#: comments.php:132
+#: comments.php:211
 msgid "Cancel Reply"
 msgstr "取消回復"
 
-#: comments.php:133
-msgid "BiuBiuBiu~"
-msgstr "Biu Biu Biu~"
-
-#: comments.php:134
-msgid "You are a surprise that I will only meet once in my life"
-msgstr "你是我一生只會遇見一次的驚喜"
-
-#: comments.php:144
+#: comments.php:234
 msgid "Nickname or QQ number"
-msgstr "暱稱或QQ號"
+msgstr "暱稱 或 QQ號"
 
-#: comments.php:144
-msgid "Name* "
-msgstr "暱稱 "
-
-#: comments.php:144
-msgid "Auto pull nickname and avatar with a QQ num. entered"
-msgstr "輸入QQ號碼將自動拉取暱稱和頭像"
-
-#: comments.php:146
-msgid "email"
-msgstr "電子郵箱"
-
-#: comments.php:146
+#: comments.php:234 comments.php:238
 msgid "Must* "
 msgstr "必須* "
 
-#: comments.php:146
+#: comments.php:235
+msgid "Auto pull nickname and avatar with a QQ num. entered"
+msgstr "輸入QQ號碼將自動拉取暱稱和頭像"
+
+#: comments.php:238
+msgid "email"
+msgstr "電子郵箱"
+
+#: comments.php:239
 msgid "You will receive notification by email"
 msgstr "你將收到回復通知"
 
-#: comments.php:148
+#: comments.php:242
 msgid "Site"
 msgstr "網站"
 
-#: comments.php:148
+#: comments.php:243
 msgid "Advertisement is forbidden 😀"
 msgstr "禁止小廣告😀"
 
-#: footer.php:43
+#: comments.php:255
+msgid "Save your private info"
+msgstr "保留個人資訊"
+
+#: footer.php:32
 #, php-format
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr "載入時間 %.3f 秒 | 查詢 %d 次 | 記憶體使用 %.2f MB "
 
-#: footer.php:77
+#: footer.php:68
 msgid "Go to top"
 msgstr "回到頂端"
 
-#: footer.php:78
+#: footer.php:69
 msgid "Control Panel"
 msgstr "控制面板"
 
-#: footer.php:84 footer.php:92
+#: footer.php:75 footer.php:83
 msgid "Want to find something?"
 msgstr "想要找點什麼呢？"
 
-#: footer.php:93
+#: footer.php:84 header.php:256
 msgid "Search"
 msgstr "搜尋"
 
-#: footer.php:112
+#: footer.php:103
 msgid "Light Mode"
 msgstr "淺色模式"
 
-#: footer.php:115
+#: footer.php:106
 msgid "Dark Mode"
 msgstr "深色模式"
 
-#: footer.php:121
+#: footer.php:112
 msgid "Toggle Page Background Image"
 msgstr "切換頁面背景圖像"
 
-#: footer.php:142
+#: footer.php:133
 msgid "Switch To Font A"
 msgstr "切換到字體 A"
 
-#: footer.php:145
+#: footer.php:136
 msgid "Switch To Font B"
 msgstr "切換到字體 B"
 
-#: functions.php:106
+#: functions.php:126
 msgid "Nav Menus"
 msgstr "導航菜單"
 
-#: functions.php:225
+#: functions.php:287
 msgctxt "post type general name"
 msgid "Shuoshuo"
 msgstr "說說"
 
-#: functions.php:226
+#: functions.php:288
 msgctxt "post type singular name"
 msgid "Shuoshuo"
 msgstr "說說"
 
-#: functions.php:227
+#: functions.php:289
 msgctxt "admin menu"
 msgid "Shuoshuo"
 msgstr "說說"
 
-#: functions.php:228
+#: functions.php:290
 msgctxt "add new on admin bar"
 msgid "Shuoshuo"
 msgstr "說說"
 
-#: functions.php:229
+#: functions.php:291
 msgctxt "shuoshuo"
 msgid "Add New"
 msgstr "新增"
 
-#: functions.php:230
+#: functions.php:292
 msgid "Add New Shuoshuo"
 msgstr "新增說說"
 
-#: functions.php:231
+#: functions.php:293
 msgid "New Shuoshuo"
 msgstr "新說說"
 
-#: functions.php:232
+#: functions.php:294
 msgid "Edit Shuoshuo"
 msgstr "編輯說說"
 
-#: functions.php:233
+#: functions.php:295
 msgid "View Shuoshuo"
 msgstr "查看說說"
 
-#: functions.php:234
+#: functions.php:296
 msgid "All Shuoshuo"
 msgstr "所有說說"
 
-#: functions.php:235
+#: functions.php:297
 msgid "Search Shuoshuo"
 msgstr "搜尋說說"
 
-#: functions.php:236
+#: functions.php:298
 msgid "Parent Shuoshuo:"
-msgstr "父級說說"
+msgstr "父級說說："
 
-#: functions.php:237
+#: functions.php:299
 msgid "No shuoshuo found."
-msgstr "沒有找到說說"
+msgstr "沒有找到說說。"
 
-#: functions.php:238
+#: functions.php:300
 msgid "No shuoshuo found in Trash."
-msgstr "垃圾桶里沒有找到說說"
+msgstr "垃圾桶里沒有找到說說。"
 
-#: functions.php:285
+#: functions.php:347
 msgid "Emotion Meta Box"
 msgstr "情緒数据"
 
-#: functions.php:298
+#: functions.php:360
 msgid "Emotion"
 msgstr "情緒"
 
-#: functions.php:301
+#: functions.php:363
 msgid "Emotion Color"
 msgstr "情緒顏色"
 
-#: functions.php:304
+#: functions.php:366
 msgid ""
 "For the Emotion, please fill in the Unicode value of the Fontawesome icon, "
 "and for the Emotion Color, please fill in the RGBA or hexadecimal color."
@@ -255,19 +250,19 @@ msgstr ""
 "情緒請填入 Fontawesome 圖示的 Unicode 值，情緒顏色請填入 RGBA 或十六進位顏"
 "色。"
 
-#: functions.php:349
+#: functions.php:411
 msgid "Custom Meta Box"
 msgstr "自訂單元"
 
-#: functions.php:362
+#: functions.php:424
 msgid "Title Style"
 msgstr "標題樣式"
 
-#: functions.php:365
+#: functions.php:427
 msgid "License"
 msgstr "文章知識共享協定"
 
-#: functions.php:368
+#: functions.php:430
 msgid ""
 "For the Title Style, Please fill in the css style, part of the style need to "
 "add !important effective, and for the License, please go to Theme Options to "
@@ -276,33 +271,33 @@ msgstr ""
 "标题样式请填写 CSS 样式，部分样式需要添加 !important 后生效；文章知識共享協定"
 "请查找主题相关选项以了解如何设置。"
 
-#: functions.php:449
+#: functions.php:576
 msgid "Copied!"
 msgstr "已複製!"
 
-#: functions.php:450
+#: functions.php:577
 msgid "Copy Code"
 msgstr "拷貝程式碼"
 
-#: functions.php:451
+#: functions.php:578
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
-msgstr "您的封面 API 似乎不支援跨來源請求。這種情況下暫存是不會生效的哦。"
+msgstr "你的封面 API 似乎不支援跨來源請求。這種情況下暫存是不會生效的哦。"
 
-#: functions.php:452
+#: functions.php:579
 msgid "Commiting...."
 msgstr "提交中。。。"
 
-#: functions.php:453
+#: functions.php:580
 msgid "Succeed"
 msgstr "成功"
 
-#: functions.php:454
+#: functions.php:581
 msgid "10 files max per request"
 msgstr "每次上傳上限為 10 張"
 
-#: functions.php:455
+#: functions.php:582
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -316,15 +311,15 @@ msgstr ""
 "\n"
 "這張圖太大啦~請重新上傳噢！"
 
-#: functions.php:456
+#: functions.php:583
 msgid "Uploading..."
 msgstr "上傳中..."
 
-#: functions.php:457
+#: functions.php:584
 msgid "Uploaded successfully~"
 msgstr "上傳成功～"
 
-#: functions.php:458
+#: functions.php:585
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -336,128 +331,124 @@ msgstr ""
 "錯誤碼=> {1}\n"
 "{2}"
 
-#: functions.php:459
+#: functions.php:586
 msgid "Upload failed, please retry."
 msgstr "上傳失敗，請重試。"
 
-#: functions.php:460
+#: functions.php:587
 msgid "Page Load failed. HTTP {0}"
 msgstr "頁面載入出錯了。HTTP{0}"
 
-#: functions.php:461
+#: functions.php:588
 msgid "Glad you come, but we've got nothing left."
 msgstr "很高興你翻到這裡，但是真的沒有了..."
 
-#: functions.php:462
+#: functions.php:589 search.php:85
 msgid "Post"
 msgstr "文章"
 
-#: functions.php:463
+#: functions.php:590
 msgid "Tag"
 msgstr "標籤"
 
-#: functions.php:464
+#: functions.php:591
 msgid "Category"
 msgstr "類別"
 
-#: functions.php:465
+#: functions.php:592 search.php:96
 msgid "Page"
 msgstr "頁面"
 
-#: functions.php:466
+#: functions.php:593
 msgid "Comment"
 msgstr "評論"
 
-#: functions.php:467
+#: functions.php:594
 msgid "Paused..."
 msgstr "暫停。。。"
 
-#: functions.php:468
+#: functions.php:595
 msgid "Loading Video..."
 msgstr "載入影片..."
 
-#: functions.php:469
+#: functions.php:596
 msgid "Downloading fonts, be aware of your data usage."
-msgstr "下載字體時，請注意您的數據使用方式。"
+msgstr "下載字體時，請注意你的數據使用方式。"
 
-#: functions.php:470
+#: functions.php:597
 msgid "Are you sure you want set it private?"
 msgstr "是否確實要將其設置為專用？"
 
-#: functions.php:471
+#: functions.php:598
 msgid "You had set private comment before"
-msgstr "您之前設置了私人評論"
+msgstr "你之前設置了私人評論"
 
-#: functions.php:521 inc/theme_plus.php:186
+#: functions.php:686 inc/theme-plus.php:211
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:521
+#: functions.php:686
 msgid "Blogger"
 msgstr "部落客"
 
-#: functions.php:530 functions.php:2595
+#: functions.php:695 functions.php:3630
 msgid "Location"
 msgstr "來自"
 
-#: functions.php:536
+#: functions.php:701
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:538
+#: functions.php:703
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:540
+#: functions.php:705
 msgid "No"
 msgstr "否"
 
-#: functions.php:543
+#: functions.php:708 inc/link-status.php:168
 msgid "Edit"
 msgstr "編輯"
 
-#: functions.php:670
+#: functions.php:838
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "這傢伙好懶 ╮(╯▽╰)╭"
 
-#: functions.php:946
-msgid "Download Link"
-msgstr "下載連結"
+#: functions.php:868 functions.php:3181 functions.php:3374
+msgid "Pending Links"
+msgstr "待處理連結"
 
-#: functions.php:1023
-msgid "Remember me"
-msgstr "保持登入"
-
-#: functions.php:1554
+#: functions.php:1674
 msgid "All expand/collapse"
 msgstr "全部展開/收縮"
 
-#: functions.php:1589
+#: functions.php:1708
 msgid " year"
 msgstr " 年"
 
-#: functions.php:1593
+#: functions.php:1711
 msgid " post(s)"
 msgstr " 篇文章"
 
-#: functions.php:1641 functions.php:1644 inc/theme_plus.php:413
-#: inc/theme_plus.php:459
+#: functions.php:1761 functions.php:1764 inc/theme-plus.php:366
+#: layouts/mo_toc_menu.php:29
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:1960
-msgid "<b>ERROR</b>: This email domain (<b>@"
-msgstr "<b>錯誤</b>: 電子郵箱格式出錯 (<b>@"
-
-#: functions.php:2086
+#: functions.php:2312
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:2183
+#: functions.php:2414
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:2274
+#: functions.php:2440
+msgid "Please do not try to use Javascript in your comments!"
+msgstr "請不要嘗試在你的評論中使用Javascript！"
+
+#: functions.php:2550
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -465,17 +456,271 @@ msgid ""
 "target=\"_blank\"> pseudo-static </a>. </ b>"
 msgstr ""
 "<b> 為了更好的使用體驗，請不要將<a href=\"/wp-admin/options-permalink.php\">"
-"固定連結</a>設置為樸素。為此，您可能需要配置<a href=\"https://www.wpdaxue."
+"固定連結</a>設置為樸素。為此，你可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">偽靜態</a></b>"
 
-#: functions.php:2361
+#: functions.php:2683
 #, php-format
 msgid "%s says: "
 msgstr "%s 說： "
 
-#: functions.php:2382
+#: functions.php:2704
 msgid "Expand / Collapse"
 msgstr "展開 / 摺疊"
+
+#: functions.php:3131
+msgid "Invalid request method."
+msgstr "請求方法無效。"
+
+#: functions.php:3142
+msgid "You are submitting too frequently. Please try again later."
+msgstr "你提交的頻率太高。請稍後再試。"
+
+#: functions.php:3148
+msgid "Security verification failed."
+msgstr "安全驗證失敗。"
+
+#: functions.php:3156
+msgid "Please fill in all required fields."
+msgstr "請填寫所有必填字段。"
+
+#: functions.php:3201 user/page-links.php:498
+msgid ""
+"Sorry, we are not accepting new link submissions at this time due to "
+"backlog. Please try again later."
+msgstr "很抱歉，由於待處理連結積壓，我們暫時不接受新的連結提交。請稍後再試。"
+
+#: functions.php:3214
+msgid "Site name is too long."
+msgstr "網站名稱過長。"
+
+#: functions.php:3219
+msgid "Site description is too long."
+msgstr "網站描述過長。"
+
+#: functions.php:3225
+msgid "Please enter a valid URL."
+msgstr "請輸入有效的 URL。"
+
+#: functions.php:3231
+msgid "Please enter a valid image URL."
+msgstr "請輸入有效的圖片 URL。"
+
+#: functions.php:3237
+msgid "Please enter a valid email address."
+msgstr "請輸入有效的電子郵件地址。"
+
+#: functions.php:3245
+msgid "This website URL is already in our links list."
+msgstr "此網站 URL 已在我們的連結清單中。"
+
+#: functions.php:3271 functions.php:3336
+msgid "Failed to submit link. Please try again later."
+msgstr "提交連結失敗。請稍後再試。"
+
+#: functions.php:3283 functions.php:3343
+#, php-format
+msgid "[%s] New Friend Link Submission"
+msgstr "[%s] 提交新的朋友連結"
+
+#: functions.php:3285 functions.php:3345
+#, php-format
+msgid ""
+"A new friend link has been submitted on your website %s:\n"
+"\n"
+msgstr ""
+"你的網站 %s 已提交新的友情連結：\n"
+"\n"
+
+#: functions.php:3286
+#, php-format
+msgid "Site Name: %s\n"
+msgstr "網站名稱：%s\n"
+
+#: functions.php:3287
+#, php-format
+msgid "Site URL: %s\n"
+msgstr "網站 URL：%s\n"
+
+#: functions.php:3288
+#, php-format
+msgid "Site Description: %s\n"
+msgstr "網站描述：%s\n"
+
+#: functions.php:3289
+#, php-format
+msgid "Site Image: %s\n"
+msgstr "網站圖片：%s\n"
+
+#: functions.php:3290
+#, php-format
+msgid "Contact Email: %s\n"
+msgstr "聯絡人電子郵件： %s\n"
+
+#: functions.php:3291
+#, php-format
+msgid ""
+"IP Address: %s\n"
+"\n"
+msgstr ""
+"IP 位址： %s\n"
+"\n"
+
+#: functions.php:3292
+msgid "Please review this submission in your WordPress admin panel.\n"
+msgstr "請在你的 WordPress 管理面板中檢查此提交。\n"
+
+#: functions.php:3302 functions.php:3353
+msgid "Thank you! Your link has been submitted for review."
+msgstr "謝謝！你的連結已提交審核。"
+
+#: functions.php:3307
+#, php-format
+msgid "Site Name: %s"
+msgstr "網站名稱︰ %s"
+
+#: functions.php:3308
+#, php-format
+msgid "Site URL: %s"
+msgstr "網站 URL：%s"
+
+#: functions.php:3309
+#, php-format
+msgid "Site Description: %s"
+msgstr "網站描述：%s"
+
+#: functions.php:3310
+#, php-format
+msgid "Site Image: %s"
+msgstr "網站圖片：%s"
+
+#: functions.php:3311
+#, php-format
+msgid "Contact Email: %s"
+msgstr "聯絡人電子郵件： %s"
+
+#: functions.php:3312
+#, php-format
+msgid "IP Address: %s"
+msgstr "IP 位址： %s"
+
+#: functions.php:3315
+msgid "Friend Link Submission: "
+msgstr "友情連結提交："
+
+#: functions.php:3347
+msgid ""
+"\n"
+"Please review this submission in your WordPress admin panel.\n"
+msgstr ""
+"\n"
+"請在你的 WordPress 管理面板中檢查此提交。\n"
+
+#: functions.php:3360
+msgid "An unexpected error occurred. Please try again later."
+msgstr "發生意外錯誤。請稍後再試。"
+
+#: functions.php:3536
+#, php-format
+msgid "[%s] Friend Link Check Failure: %s"
+msgstr "[%s] 友站連結檢查失敗：%s"
+
+#: functions.php:3539
+#, php-format
+msgid ""
+"The friend link '%s' has failed our status check %d times.\n"
+"\n"
+msgstr ""
+"好友連結 '%s' 的狀態檢查 %d 次失敗。\n"
+"\n"
+
+#: functions.php:3540
+#, php-format
+msgid "Link URL: %s\n"
+msgstr "連結 URL：%s\n"
+
+#: functions.php:3543
+#, php-format
+msgid "HTTP Status Code: %s\n"
+msgstr "HTTP 狀態碼： %s\n"
+
+#: functions.php:3547
+#, php-format
+msgid "Error Message: %s\n"
+msgstr "錯誤訊息： %s\n"
+
+#: functions.php:3550
+#, php-format
+msgid ""
+"\n"
+"Last Check Time: %s\n"
+"\n"
+msgstr ""
+"\n"
+"最後檢查時間：%s\n"
+"\n"
+
+#: functions.php:3551
+msgid ""
+"You may want to check this link and consider removing it if it remains "
+"unavailable.\n"
+msgstr "你可能需要檢查此連結，如果仍然無法使用，請考慮將其移除。\n"
+
+#: functions.php:3671
+msgid "Access denied."
+msgstr "拒絕訪問。"
+
+#: header.php:265 layouts/sakura_header.php:120
+msgid "Random Background"
+msgstr "隨機封面"
+
+#: inc/cache_settings.php:7 inc/cache_settings.php:8 inc/cache_settings.php:42
+msgid "Cache Settings"
+msgstr "快取設定"
+
+#: inc/cache_settings.php:39
+msgid "Cache Updated!"
+msgstr "快取已更新！"
+
+#: inc/cache_settings.php:43
+msgid "Cache settings"
+msgstr "快取設定"
+
+#: inc/cache_settings.php:44
+msgid ""
+"If your server network environment is poor, you can click the link below to "
+"manually obtain the response content and fill it in"
+msgstr "如果你的伺服器網路環境較差，你可以點選下列連結，手動取得並填寫回應內容"
+
+#: inc/cache_settings.php:45
+msgid ""
+"If the content is empty or incorrect, the server will try to automatically "
+"pull it"
+msgstr "如果內容為空或不正確，伺服器會嘗試自動將其拉出"
+
+#: inc/cache_settings.php:46
+msgid ""
+"The link target will be automatically updated after the relevant settings "
+"are saved"
+msgstr "儲存相關設定後，連結目標會自動更新"
+
+#: inc/cache_settings.php:47
+msgid ""
+"The unit is seconds. And it will take effect permanently when it was set to "
+"0."
+msgstr "單位為秒。當設定為 0 時，它將永久生效。"
+
+#: inc/cache_settings.php:55 inc/cache_settings.php:67
+msgid "Cache expire time"
+msgstr "快取記憶體過期時間"
+
+#: inc/cache_settings.php:61
+msgid "Bangumi Cache"
+msgstr "Bangumi 快取"
+
+#: inc/cache_settings.php:73
+msgid "Steam Cache"
+msgstr "Steam 快取"
 
 #: inc/categories-images.php:44 inc/categories-images.php:65
 msgid "category/tag image"
@@ -498,23 +743,333 @@ msgstr "圖像"
 msgid "no image"
 msgstr "暫無"
 
-#: inc/classes/Bilibili.php:48 inc/classes/BilibiliFavList.php:57
+#: inc/chatgpt/aigc-manage.php:15 inc/chatgpt/aigc-manage.php:16
+#: inc/chatgpt/aigc-manage.php:93
+msgid "Article Annotations Management"
+msgstr "文章註解管理"
+
+#: inc/chatgpt/aigc-manage.php:37
+msgid "Successfully generated annotations for the post!"
+msgstr "成功為文章產生註解！"
+
+#: inc/chatgpt/aigc-manage.php:40
+msgid ""
+"Failed to generate annotations. Please check API settings or view error logs."
+msgstr "產生註解失敗。請檢查 API 設定或檢視錯誤記錄。"
+
+#: inc/chatgpt/aigc-manage.php:46
+msgid "Annotations for the post have been deleted."
+msgstr "該文章的註解已被刪除。"
+
+#: inc/chatgpt/aigc-manage.php:51
+msgid "Example Term"
+msgstr "示例術語"
+
+#: inc/chatgpt/aigc-manage.php:51
+msgid "This is a example explanation"
+msgstr "這是一個範例說明"
+
+#: inc/chatgpt/aigc-manage.php:54
+#, php-format
+msgid "Attempting to save test data to post %d..."
+msgstr "嘗試儲存測試資料到 %d..."
+
+#: inc/chatgpt/aigc-manage.php:59
+msgid "Save failed!"
+msgstr "儲存失敗！"
+
+#: inc/chatgpt/aigc-manage.php:61
+#, php-format
+msgid "Save successful! Update ID: %s"
+msgstr "儲存成功！更新 ID: %s"
+
+#: inc/chatgpt/aigc-manage.php:65
+#, php-format
+msgid "Read result: %s"
+msgstr "讀取結果：%s"
+
+#: inc/chatgpt/aigc-manage.php:65
+msgid "Success (array, contains "
+msgstr "成功 (陣列，包含 "
+
+#: inc/chatgpt/aigc-manage.php:65
+msgid " items)"
+msgstr " 項目)"
+
+#: inc/chatgpt/aigc-manage.php:65
+msgid "Failed"
+msgstr "失敗"
+
+#: inc/chatgpt/aigc-manage.php:72
+#, php-format
+msgid "Database query result: %s"
+msgstr "資料庫查詢結果: %s"
+
+#: inc/chatgpt/aigc-manage.php:72
+msgid "Found "
+msgstr "發現"
+
+#: inc/chatgpt/aigc-manage.php:72
+msgid " records"
+msgstr " 記錄"
+
+#: inc/chatgpt/aigc-manage.php:72
+msgid "No records found"
+msgstr "未找到記錄"
+
+#: inc/chatgpt/aigc-manage.php:103
+msgid "System Information"
+msgstr "系統資訊"
+
+#: inc/chatgpt/aigc-manage.php:104
+msgid "ChatGPT API Settings Status"
+msgstr "ChatGPT API 設定狀態"
+
+#: inc/chatgpt/aigc-manage.php:106
+msgid "API Endpoint: "
+msgstr "API 端點： "
+
+#: inc/chatgpt/aigc-manage.php:106 inc/chatgpt/aigc-manage.php:107
+#: inc/chatgpt/aigc-manage.php:108
+msgid "Not set"
+msgstr "未設定"
+
+#: inc/chatgpt/aigc-manage.php:107
+msgid "API Key: "
+msgstr ""
+
+#: inc/chatgpt/aigc-manage.php:107
+msgid "Set (Length: "
+msgstr "已设置 (長度："
+
+#: inc/chatgpt/aigc-manage.php:108
+msgid "Model: "
+msgstr "模型："
+
+#: inc/chatgpt/aigc-manage.php:113
+msgid "About Article Annotations"
+msgstr "關於文章註釋"
+
+#: inc/chatgpt/aigc-manage.php:114
+msgid ""
+"This feature uses ChatGPT to analyze the content of the post, identify "
+"complex or specialized terms, and automatically generate explanatory "
+"annotations. The annotations will be displayed in the post, and visitors can "
+"click to view explanations."
+msgstr ""
+"此功能使用 ChatGPT 分析文章的內容、辨識複雜或專門的詞彙，並自動產生解釋性的註"
+"解。這些註解會顯示在文章中，訪客可以點選查看解釋。"
+
+#: inc/chatgpt/aigc-manage.php:115
+msgid "Note:"
+msgstr "備註："
+
+#: inc/chatgpt/aigc-manage.php:115
+msgid "This feature requires a valid OpenAI API key."
+msgstr "此功能需要有效的 OpenAI API Key。"
+
+#: inc/chatgpt/aigc-manage.php:121
+msgid ""
+"API key not set, please configure the ChatGPT API key in the theme settings "
+"first."
+msgstr "API Key未設定，請先在主題設定中設定 ChatGPT API Key。"
+
+#: inc/chatgpt/aigc-manage.php:128
+msgid "Generate Annotations for Post"
+msgstr "產生文章註解"
+
+#: inc/chatgpt/aigc-manage.php:133
+msgid "Select Post"
+msgstr "選取文章"
+
+#: inc/chatgpt/aigc-manage.php:136
+msgid "-- Select Post --"
+msgstr "-- 選取文章 --"
+
+#: inc/chatgpt/aigc-manage.php:145
+msgid "Generate Annotations"
+msgstr "產生註解"
+
+#: inc/chatgpt/aigc-manage.php:146
+msgid "Delete Annotations"
+msgstr "刪除註解"
+
+#: inc/chatgpt/aigc-manage.php:146
+msgid "Are you sure you want to delete the annotation data for this post?"
+msgstr "你確定要刪除這篇文章的註解資料嗎？"
+
+#: inc/chatgpt/aigc-manage.php:147
+msgid "Create empty data"
+msgstr "建立空資料"
+
+#: inc/chatgpt/aigc-manage.php:147
+msgid "Create empty terms for your custom article"
+msgstr "為自訂文章建立空條款"
+
+#: inc/chatgpt/aigc-manage.php:154
+msgid "Posts with Generated Annotations"
+msgstr "生成註解的文章"
+
+#: inc/chatgpt/aigc-manage.php:156
+msgid "Currently, no posts contain annotation data."
+msgstr "目前沒有文章包含註解。"
+
+#: inc/chatgpt/aigc-manage.php:161
+msgid "Post Title"
+msgstr "文章標題"
+
+#: inc/chatgpt/aigc-manage.php:162
+msgid "Number of Annotations"
+msgstr "註解數量"
+
+#: inc/chatgpt/aigc-manage.php:163 inc/chatgpt/aigc-manage.php:255
+#: inc/link-status.php:108
+msgid "Actions"
+msgstr "操作"
+
+#: inc/chatgpt/aigc-manage.php:180
+msgid "View Annotations"
+msgstr "檢視註解"
+
+#: inc/chatgpt/aigc-manage.php:181
+msgid "Edit Post"
+msgstr "編輯文章"
+
+#: inc/chatgpt/aigc-manage.php:186
+msgid "Debug Information"
+msgstr "除錯資訊"
+
+#: inc/chatgpt/aigc-manage.php:203
+#, php-format
+msgid "Annotations Debug Information for post \"%s\" (ID: %d)"
+msgstr "文章 「%s」 的註解偵錯資訊 (ID: %d)"
+
+#: inc/chatgpt/aigc-manage.php:208
+msgid "Data Type:"
+msgstr "數據類型："
+
+#: inc/chatgpt/aigc-manage.php:211
+msgid "Number of Annotations:"
+msgstr "註解數量："
+
+#: inc/chatgpt/aigc-manage.php:212 inc/chatgpt/aigc-manage.php:217
+msgid "Annotation Data:"
+msgstr "註解數據："
+
+#: inc/chatgpt/aigc-manage.php:227
+msgid "Database Records:"
+msgstr "資料庫記錄："
+
+#: inc/chatgpt/aigc-manage.php:227
+msgid "records"
+msgstr "紀錄"
+
+#: inc/chatgpt/aigc-manage.php:231
+msgid "Record ID:"
+msgstr "記錄 ID："
+
+#: inc/chatgpt/aigc-manage.php:232
+msgid "Original Value:"
+msgstr "原始值："
+
+#: inc/chatgpt/aigc-manage.php:247 inc/chatgpt/aigc-manage.php:273
+msgid "Post Annotations: "
+msgstr "文章註釋： "
+
+#: inc/chatgpt/aigc-manage.php:253 inc/chatgpt/aigc-manage.php:558
+msgid "Term"
+msgstr "條款"
+
+#: inc/chatgpt/aigc-manage.php:254 inc/chatgpt/aigc-manage.php:558
+msgid "Explanation"
+msgstr "說明"
+
+#: inc/chatgpt/aigc-manage.php:262
+msgid "Add Annotation"
+msgstr "新增註解"
+
+#: inc/chatgpt/aigc-manage.php:263
+msgid "Save Annotations"
+msgstr "儲存註解"
+
+#: inc/chatgpt/aigc-manage.php:283 inc/chatgpt/aigc-manage.php:318
+msgid "Delete"
+msgstr "刪除"
+
+#: inc/chatgpt/aigc-manage.php:353
+msgid "Annotations updated successfully."
+msgstr "註解更新成功。"
+
+#: inc/chatgpt/aigc-manage.php:356
+msgid "Update failed."
+msgstr "更新失敗。"
+
+#: inc/chatgpt/aigc-manage.php:474 inc/chatgpt/aigc-manage.php:510
+msgid "Invalid post ID"
+msgstr "無效的文章ID"
+
+#: inc/chatgpt/aigc-manage.php:479
+msgid "Post not found"
+msgstr "沒有文章"
+
+#: inc/chatgpt/aigc-manage.php:486
+msgid "This post does not have any annotation data"
+msgstr "此文章沒有任何註釋資料"
+
+#: inc/chatgpt/aigc-manage.php:502 inc/chatgpt/aigc-manage.php:505
+msgid "Access denied"
+msgstr "訪問被拒絕"
+
+#: inc/chatgpt/aigc-manage.php:516
+msgid "Invalid annotations data"
+msgstr "無效註解數據"
+
+#: inc/chatgpt/aigc-manage.php:522
+msgid "Failed to update annotations"
+msgstr "更新註解失敗"
+
+#: inc/chatgpt/aigc-manage.php:525
+msgid "Annotations updated successfully"
+msgstr "註釋更新成功"
+
+#: inc/chatgpt/aigc-manage.php:536
+msgid "Post Annotation Data"
+msgstr "文章註解資料"
+
+#: inc/chatgpt/aigc-manage.php:552
+#, php-format
+msgid ""
+"This post currently does not have any annotation data. You can generate "
+"annotations on the <a href=\"%s\">Article Annotations Management</a> page."
+msgstr ""
+"此文章目前沒有任何註釋資料。你可以在 <a href=\"%s\"> 文章註解管理</a>頁面產生"
+"註解。"
+
+#: inc/chatgpt/aigc-manage.php:567
+msgid "Edit in Annotations Management Page"
+msgstr "在註解管理頁面編輯"
+
+#: inc/classes/Bilibili.php:49 inc/classes/BilibiliFavList.php:57
 #: inc/classes/BilibiliFavList.php:62 inc/classes/BilibiliFavList.php:74
-#: inc/classes/MyAnimeList.php:57
+#: inc/classes/MyAnimeList.php:76
 msgid "Backend error"
 msgstr "後端發生了錯誤 QwQ"
 
-#: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:70
+#: inc/classes/Bilibili.php:54 inc/classes/MyAnimeList.php:89
 msgid "Following "
 msgstr "已追蹤的新番 "
 
-#: inc/classes/Bilibili.php:53 inc/classes/MyAnimeList.php:70
+#: inc/classes/Bilibili.php:54 inc/classes/MyAnimeList.php:89
 msgid " anime."
 msgstr " 動漫。"
 
-#: inc/classes/Bilibili.php:68
+#: inc/classes/Bilibili.php:69
 msgid "The author seems to have hidden their bangumi list."
 msgstr "部落客似乎隱藏了新番追蹤列表。"
+
+#: inc/classes/Bilibili.php:99 inc/classes/BilibiliFavList.php:130
+msgid "Load More"
+msgstr "載入更多"
 
 #: inc/classes/BilibiliFavList.php:90
 msgid "Item count: "
@@ -528,77 +1083,285 @@ msgstr "展開"
 msgid "All item has been loaded."
 msgstr "所有專案均已載入。"
 
-#: inc/classes/BilibiliFavList.php:130
-msgid "Load More"
-msgstr "載入更多"
-
-#: inc/classes/Cache.php:70 inc/theme_plus.php:716
+#: inc/classes/Cache.php:70 inc/theme-plus.php:654
 msgid "The comment is private"
 msgstr "這是一條私密留言"
 
-#: inc/classes/Captcha.php:128
+#: inc/classes/Captcha.php:174
 msgid "Bad Request."
 msgstr "錯誤的請求。"
 
-#: inc/classes/Captcha.php:131
+#: inc/classes/Captcha.php:178
 msgid "Look like you forgot to enter the captcha."
-msgstr "看起來您忘記輸入驗證碼。"
+msgstr "看起來你忘記輸入驗證碼。"
 
-#: inc/classes/Captcha.php:134
+#: inc/classes/Captcha.php:181
 msgid "Captcha timeout."
 msgstr "驗證碼超時。"
 
-#: inc/classes/Captcha.php:138
+#: inc/classes/Captcha.php:185
 msgid "Captcha check passed."
 msgstr "驗證碼檢查已通過。"
 
-#: inc/classes/Captcha.php:141
+#: inc/classes/Captcha.php:188
 msgid "Captcha incorrect."
 msgstr "驗證碼不正確。"
 
-#: inc/classes/Captcha.php:145
+#: inc/classes/Captcha.php:192
 msgid "An error has occurred."
 msgstr "發生錯誤。"
 
-#: inc/classes/IpLocation.php:302 inc/classes/IpLocation.php:331
+#: inc/classes/Images.php:24
+msgid "Image Failed to Load"
+msgstr "圖像加載失敗"
+
+#: inc/classes/IpLocation.php:246 inc/classes/IpLocation.php:275
 msgid "Unknown"
 msgstr "未知"
 
-#: inc/classes/IpLocation.php:305 inc/classes/IpLocation.php:334
+#: inc/classes/IpLocation.php:249 inc/classes/IpLocation.php:278
 msgid "Reserved Address"
 msgstr "預留地址"
 
-#: inc/classes/IpLocation.php:308 inc/classes/IpLocation.php:322
+#: inc/classes/IpLocation.php:252 inc/classes/IpLocation.php:266
 msgid "Empty Address"
 msgstr "空地址"
 
-#: inc/classes/MyAnimeList.php:71
+#: inc/classes/MyAnimeList.php:90
 msgid " Watched "
 msgstr " 已觀看 "
 
-#: inc/classes/MyAnimeList.php:71
+#: inc/classes/MyAnimeList.php:90
 msgid " episodes."
 msgstr " 話。"
 
-#: inc/classes/MyAnimeList.php:109
+#: inc/classes/MyAnimeList.php:128
 msgid "Finished "
 msgstr "已看完 "
 
-#: inc/classes/MyAnimeList.php:118
+#: inc/classes/MyAnimeList.php:137
 msgid "Watching "
 msgstr "追番中 "
 
-#: inc/classes/MyAnimeList.php:125
+#: inc/classes/MyAnimeList.php:144
 msgid "Planning to Watch "
 msgstr "打算看 "
 
-#: inc/classes/MyAnimeList.php:134
+#: inc/classes/MyAnimeList.php:153
 msgid "Dropped "
 msgstr "棄坑 "
 
-#: inc/classes/MyAnimeList.php:143
+#: inc/classes/MyAnimeList.php:162
 msgid "Paused "
 msgstr "暫停 "
+
+#: inc/classes/Steam.php:91
+msgid "Load more"
+msgstr "載入更多"
+
+#: inc/classes/Steam.php:105
+msgid "Playtime"
+msgstr "遊玩時長"
+
+#: inc/classes/Steam.php:106
+msgid "Last Played"
+msgstr "上次啟動"
+
+#: inc/classes/Steam.php:140
+msgid "Not Played Yet"
+msgstr "尚未遊玩"
+
+#: inc/classes/Steam.php:144
+msgid "minute"
+msgstr "分鐘"
+
+#: inc/classes/Steam.php:147
+msgid "hour"
+msgstr "小時"
+
+#: inc/classes/bangumi.php:104
+msgid "Bangumi ID not set."
+msgstr "還未設定Bangumi帳戶ID。"
+
+#: inc/classes/bangumi.php:112
+msgid "No data"
+msgstr "沒有數據"
+
+#: inc/classes/bangumi.php:129
+msgid "Release date: "
+msgstr "上映日期："
+
+#: inc/classes/bangumi.php:135
+msgid "Watch progress: "
+msgstr "觀看進度： "
+
+#: inc/classes/bangumi.php:136
+msgid "No introduction yet"
+msgstr "暫無介紹"
+
+#: inc/classes/bangumi.php:148
+msgid "An error occured: "
+msgstr "發生錯誤:"
+
+#: inc/classes/bangumi.php:154
+msgid "Load more..."
+msgstr "載入更多..."
+
+#: inc/classes/gallery.php:79
+msgid "Successfully initialized the index."
+msgstr "重建索引成功."
+
+#: inc/classes/gallery.php:113 inc/classes/gallery.php:117
+msgid ""
+"The target directory is not accessible. Please check the permission settings."
+msgstr "目標目錄無法訪問，請檢查目錄權限。"
+
+#: inc/classes/gallery.php:120
+msgid ""
+"Successfully backed up images from the 'img' folder to the 'backup' folder."
+msgstr "成功將img資料夾內容備份至backup資料夾。"
+
+#: inc/classes/gallery.php:122
+msgid ""
+"Detected content in the 'backup' folder. Verifying and attempting to restore "
+"conversion operations."
+msgstr "偵測到backup資料夾中有內容，正在嘗試從斷點恢復進度。"
+
+#: inc/classes/gallery.php:153
+msgid ""
+"All images have been compressed to WebP format. The original files are "
+"stored in the 'backup' folder.<br> Please confirm correctness before "
+"reinitializing the index.<br>"
+msgstr ""
+"所有圖片已轉換為Webp格式，原始檔案已備份至backup資料夾。 <br>請在確認無誤後重"
+"建索引。 <br>"
+
+#: inc/classes/gallery.php:203
+msgid ""
+"No images found. Please contact the administrator to check if images exist "
+"in the 'iro_gallary' directory and ensure the directory is readable and "
+"writable."
+msgstr ""
+"沒有找到任何圖片。請聯絡網站管理員確保'iro_gallery'資料夾內有圖片並可讀寫。"
+
+#: inc/link-status.php:19 inc/link-status.php:72
+msgid "Friend Links Status"
+msgstr "友情連結狀態"
+
+#: inc/link-status.php:20 inc/link-status.php:97
+msgid "Links Status"
+msgstr "連結狀態"
+
+#: inc/link-status.php:41
+msgid ""
+"All links check has been triggered. Please refresh this page in a few "
+"moments to see the results."
+msgstr "已觸發所有連結檢查。請稍後刷新此頁面以查看結果。"
+
+#: inc/link-status.php:48
+#, php-format
+msgid "Link \"%s\" has been checked. Refresh to see the results."
+msgstr "已檢查連結 「%s」。刷新以查看結果。"
+
+#: inc/link-status.php:58
+msgid "Link status has been reset."
+msgstr "連線狀態已重設。"
+
+#: inc/link-status.php:78
+#, php-format
+msgid "Last automatic check: %s"
+msgstr "最後一次自動檢查：%s"
+
+#: inc/link-status.php:80
+msgid "No automatic check has been performed yet."
+msgstr "尚未執行自動檢查。"
+
+#: inc/link-status.php:84
+msgid ""
+"The system automatically checks a batch of links (5 links) every week to "
+"avoid overloading the server."
+msgstr "系統每週自動檢查一批連結 (5 個連結)，以避免伺服器負荷過重。"
+
+#: inc/link-status.php:90
+msgid "Check All Links Now"
+msgstr "立即檢查所有連結"
+
+#: inc/link-status.php:90
+msgid "This will check all links and may take some time. Continue?"
+msgstr "這將檢查所有連結，可能需要一些時間。繼續嗎？"
+
+#: inc/link-status.php:91
+msgid ""
+"This will check all links in batches of 5 with a delay between batches to "
+"avoid overloading the server."
+msgstr ""
+"這會以 5 個為一批檢查所有連結，每批之間會有延遲，以避免伺服器負荷過重。"
+
+#: inc/link-status.php:102
+msgid "Link Name"
+msgstr "連結名稱"
+
+#: inc/link-status.php:103
+msgid "URL"
+msgstr ""
+
+#: inc/link-status.php:104
+msgid "Status"
+msgstr "狀態"
+
+#: inc/link-status.php:105
+msgid "Last Check"
+msgstr "最後檢查時間"
+
+#: inc/link-status.php:106
+msgid "Failures"
+msgstr "錯誤"
+
+#: inc/link-status.php:107
+msgid "Details"
+msgstr "詳情"
+
+#: inc/link-status.php:114
+msgid "No links found."
+msgstr "找不到符合條件的連結。"
+
+#: inc/link-status.php:127
+msgid "Not checked"
+msgstr "未檢查"
+
+#: inc/link-status.php:129
+msgid "Success"
+msgstr "成功 "
+
+#: inc/link-status.php:131
+msgid "Failure"
+msgstr "失敗"
+
+#: inc/link-status.php:137
+#, php-format
+msgid "Status Code: %s"
+msgstr "狀態碼： %s"
+
+#: inc/link-status.php:140
+#, php-format
+msgid "Error: %s"
+msgstr "錯誤：%s"
+
+#: inc/link-status.php:147
+msgid "Not visible"
+msgstr "不可见"
+
+#: inc/link-status.php:152
+msgid "Never"
+msgstr "從未"
+
+#: inc/link-status.php:159
+msgid "Check Now"
+msgstr "立即檢查"
+
+#: inc/link-status.php:165
+msgid "Reset Status"
+msgstr "重置狀態"
 
 #: inc/template-tags.php:28
 #, php-format
@@ -639,111 +1402,85 @@ msgstr "<span class=\"screen-reader-text\"> 在 %s</span>中留言"
 msgid "Edit %s"
 msgstr "編輯 %s"
 
-#: inc/theme_plus.php:57
+#: inc/theme-plus.php:57
 msgid " days ago"
 msgstr " 天前"
 
-#: inc/theme_plus.php:58
+#: inc/theme-plus.php:58
 msgid " hours ago"
 msgstr " 小時前"
 
-#: inc/theme_plus.php:59
+#: inc/theme-plus.php:59
 msgid " minutes ago"
 msgstr " 分鐘前"
 
-#: inc/theme_plus.php:60
+#: inc/theme-plus.php:60
 msgid " seconds ago"
 msgstr " 秒前"
 
-#: inc/theme_plus.php:67
+#: inc/theme-plus.php:67
 msgid "Posted on "
 msgstr "發布於 "
 
-#: inc/theme_plus.php:126
+#: inc/theme-plus.php:147
 msgid "Please upgrade wordpress to version 4.4+"
 msgstr "請更新到 4.4 以上版本"
 
-#: inc/theme_plus.php:233
-msgid "Login successful, "
-msgstr "登入成功， "
+#: inc/theme-plus.php:160
+msgid "You may post nothing"
+msgstr "你可能沒有發送任何訊息"
 
-#: inc/theme_plus.php:234
-msgid "seconds later automatically transfer to"
-msgstr "秒後自動轉到"
+#: inc/theme-plus.php:166
+msgid "Please fill in the captcha answer"
+msgstr "請填寫驗證問題內容"
 
-#: inc/theme_plus.php:245
-msgid "dashboard"
-msgstr "管理後台"
+#: inc/theme-plus.php:169
+msgid ""
+"Have you modified the captcha code data? Or refresh the captcha and try "
+"again?"
+msgstr "你修改了驗證碼資料嗎？或是刷新驗證碼試試？"
 
-#: inc/theme_plus.php:253
-msgid "home"
-msgstr "首頁"
+#: inc/theme-plus.php:177
+msgid "Please fill in the correct captcha answer"
+msgstr "你可能沒有回答正確"
 
-#: inc/theme_plus.php:265
-msgid "Change avatar"
-msgstr "更換頭貼"
-
-#: inc/theme_plus.php:266
-msgid "Hello, "
-msgstr "歡迎 "
-
-#: inc/theme_plus.php:270
-msgid "Home"
-msgstr "首頁"
-
-#: inc/theme_plus.php:272
-msgid "Manage"
-msgstr "管理"
-
-#: inc/theme_plus.php:274
-msgid "Logout"
-msgstr "登出"
-
-#: inc/theme_plus.php:274
-msgid "Sign out? "
-msgstr "登出？ "
-
-#: inc/theme_plus.php:307 inc/theme_plus.php:360
+#: inc/theme-plus.php:260 inc/theme-plus.php:313
 #, php-format
 msgid "Search results for \" %s \""
 msgstr "關於“ %s ”的搜尋結果"
 
-#: inc/theme_plus.php:377 tpl/content-thumbcard.php:58
-#: tpl/content-thumbcard.php:64
+#: inc/theme-plus.php:330 tpl/content-thumbcard.php:60
+#: tpl/content-thumbcard.php:66
 msgid "Your browser does not support HTML5 video."
-msgstr "您的瀏覽器不支援 HTML5 影片。"
+msgstr "你的瀏覽器不支援 HTML5 影片。"
 
-#: inc/theme_plus.php:408
+#: inc/theme-plus.php:361
 msgid "Signed in as"
 msgstr "當前已登入"
 
-#: inc/theme_plus.php:414 inc/theme_plus.php:460
+#: inc/theme-plus.php:367 layouts/mo_toc_menu.php:30
 msgid "New post"
 msgstr "撰寫文章"
 
-#: inc/theme_plus.php:416 inc/theme_plus.php:462
+#: inc/theme-plus.php:369 layouts/mo_toc_menu.php:34
 msgid "Profile"
 msgstr "個人資訊"
 
-#: inc/theme_plus.php:417 inc/theme_plus.php:463
+#: inc/theme-plus.php:370 layouts/mo_toc_menu.php:35
 msgid "Sign out"
 msgstr "登出"
 
-#: inc/theme_plus.php:435 inc/theme_plus.php:474
+#: inc/theme-plus.php:391 layouts/mo_toc_menu.php:66
 msgid "Log in"
 msgstr "登入"
 
-#: inc/theme_plus.php:476
-msgid "Register"
-msgstr "註冊"
-
-#: index.php:9
+#: index.php:16
 msgid "Notice"
 msgstr "公告"
 
-#: layouts/imgbox.php:104
-msgid "Change"
-msgstr "變更"
+#: layouts/mo_toc_menu.php:71
+msgid "Register"
+msgstr "註冊"
 
 #: layouts/post-nextprev.php:15
 msgid "Previous Post"
@@ -753,10 +1490,26 @@ msgstr "上一篇文章"
 msgid "Next Post"
 msgstr "下一篇文章"
 
-#: search.php:19
+#: search.php:45
 #, php-format
 msgid "Search result: %s"
 msgstr "搜尋結果：%s"
+
+#: search.php:76
+msgid "results found"
+msgstr "個結果"
+
+#: search.php:90
+msgid "shuoshuo"
+msgstr "說說"
+
+#: search.php:101
+msgid "If no option is selected, all results are retrieved by default"
+msgstr "如果你沒選取任何類別，預設會尋找所有結果"
+
+#: search.php:102
+msgid "Click to filter"
+msgstr "點擊篩選"
 
 #: tpl/content-none.php:14
 msgid "There is nothing here！"
@@ -766,7 +1519,7 @@ msgstr "沒有找到任何東西！"
 #, php-format
 msgid ""
 "Ready to post your first article? <a href=\"%1$s\">Click here to start</a>."
-msgstr "準備好發佈您的第一篇文章了嗎？ <a href=\"%1$s\">請點擊此處開始</a>。"
+msgstr "準備好發佈你的第一篇文章了嗎？ <a href=\"%1$s\">請點擊此處開始</a>。"
 
 #: tpl/content-none.php:25
 msgid "Didn't find what you want, look at the other ones."
@@ -776,11 +1529,11 @@ msgstr "沒有找到你想要的，看看其他的吧。"
 msgid "We didn't seem to find what you want. Maybe you can search for it."
 msgstr "似乎沒有找到你想要的東西，或許你可以搜尋一下試式試。"
 
-#: tpl/content-page.php:27 tpl/content-single.php:34 tpl/single-image.php:25
+#: tpl/content-page.php:27 tpl/content-single.php:33 tpl/single-image.php:25
 msgid "Pages:"
 msgstr "頁面:"
 
-#: tpl/content-single.php:27 tpl/content-thumbcard.php:183
+#: tpl/content-single.php:26 tpl/content-thumbcard.php:185
 msgid "AI Excerpt"
 msgstr "AI 摘錄"
 
@@ -789,15 +1542,15 @@ msgid "Hit"
 msgid_plural "Hits"
 msgstr[0] "熱度"
 
-#: tpl/content-thumbcard.php:40 tpl/entry-census.php:61
+#: tpl/content-thumbcard.php:41 tpl/entry-census.php:61
 msgid "Estimate Reading Time"
 msgstr "預期閱讀時間"
 
-#: tpl/content-thumbcard.php:169
+#: tpl/content-thumbcard.php:171
 msgid "Sticky"
 msgstr "置頂"
 
-#: tpl/content-thumbcard.php:186
+#: tpl/content-thumbcard.php:188
 msgid "Excerpt"
 msgstr "摘錄"
 
@@ -816,11 +1569,7 @@ msgstr "最後更新於 "
 
 #: tpl/entry-census.php:79 tpl/entry-census.php:81
 msgid "Last updated on"
-msgstr "最後更新於 "
-
-#: tpl/meta-comments.php:4
-msgid "NOTHING"
-msgstr "什麼也沒有呀"
+msgstr "最後更新於"
 
 #: tpl/meta-comments.php:4
 msgid "1 Comment"
@@ -863,100 +1612,56 @@ msgstr "本文採用 %s 创用CC授权"
 
 #: tpl/section-article-function.php:64
 msgid "This author has not provided a description."
-msgstr "此作者沒有設定個人簡介"
+msgstr "此作者沒有設定個人簡介。"
 
-#: tpl/section-article-function.php:82
-msgid "Nothing~"
-msgstr "無~"
-
-#: user/page-bangumi.php:31 user/page-bilibiliFavList.php:207
-#: user/page-followVideos.php:29
+#: user/page-bangumi.php:223 user/page-bilibiliFavList.php:213
+#: user/page-followVideos.php:211
 msgid "Please fill in the Bilibili UID in Sakura Options."
 msgstr "請在後台設置填寫 Bilibili UID 後繼續。"
 
-#: user/page-bangumi.php:44
+#: user/page-bangumi.php:230
+msgid "Please fill in the Bangumi UID in Sakura Options."
+msgstr "請在後台設置填寫 Bangumi UID 後繼續。"
+
+#: user/page-bangumi.php:236
 msgid "Please fill in the My Anime List Username in Sakura Options."
 msgstr "請在後台設置填寫 My Anime List Username 後繼續。"
 
-#: user/page-login.php:18
-msgid "Remember_Me"
-msgstr "記住我"
+#: user/page-links.php:492
+msgid "Submit Link"
+msgstr "提交連結"
 
-#: user/page-register.php:14 user/page-register.php:16
-#: user/page-register.php:19 user/page-register.php:24
-#: user/page-register.php:26 user/page-register.php:29
-#: user/page-register.php:34 user/page-register.php:36
-#: user/page-register.php:43
-msgid "Error"
-msgstr "錯誤"
+#: user/page-links.php:544
+msgid "Submit Your Link"
+msgstr "提交你的連結"
 
-#: user/page-register.php:14
-msgid "Please enter username."
-msgstr "請輸入使用者名稱。"
+#: user/page-links.php:545
+msgid "Please fill out the form below to submit your website link."
+msgstr "請填寫以下表格，提交你的網站連結。"
 
-#: user/page-register.php:16
-msgid "Invalid characters, please enter a valid username."
-msgstr "此使用者名稱包含無效字元，請輸入有效的使用者名稱。"
+#: user/page-links.php:551
+msgid "Site Name"
+msgstr "網站名稱"
 
-#: user/page-register.php:19
-msgid "This username has been registered."
-msgstr "該使用者名稱已被註冊。"
+#: user/page-links.php:556
+msgid "Site URL"
+msgstr "網站網址"
 
-#: user/page-register.php:24
-msgid "Please enter email address."
-msgstr "請填寫電子郵箱地址。"
+#: user/page-links.php:561
+msgid "Site Description"
+msgstr "網站描述"
 
-#: user/page-register.php:26
-msgid "Invalid email address."
-msgstr "電子郵箱地址不正確。"
+#: user/page-links.php:566
+msgid "Site Logo/Avatar URL"
+msgstr "網站標誌/頭像 URL"
 
-#: user/page-register.php:29
-msgid "This email address has been registered."
-msgstr "該電子郵箱地址已經被註冊。"
-
-#: user/page-register.php:34
-msgid "Password length is at least 6 digits."
-msgstr "密碼長度至少為 6 位。"
-
-#: user/page-register.php:36
-msgid "Inconsistent password entered twice."
-msgstr "兩次輸入的密碼不一致。"
-
-#: user/page-register.php:43
-msgid "Unable to complete registration request...Please contact"
-msgstr "無法完成註冊請求... 請聯絡"
-
-#: user/page-register.php:43
-msgid "administrator"
-msgstr "管理員"
-
-#: user/page-register.php:64
-msgid "User Name"
-msgstr "用戶名"
-
-#: user/page-register.php:65
-msgid "Email Address"
+#: user/page-links.php:571
+msgid "Your Email"
 msgstr "電子信箱"
 
-#: user/page-register.php:66
-msgid "Password"
-msgstr "密碼"
-
-#: user/page-register.php:67
-msgid "Confirm your password"
-msgstr "確認密碼"
-
-#: user/page-register.php:70
-msgid "Sign up"
-msgstr "註冊"
-
-#: user/page-register.php:77
-msgid "Success! Redirecting......"
-msgstr "註冊成功！正在跳轉......"
-
-#: user/page-register.php:82
-msgid "Registration is not open yet."
-msgstr "暫未開放註冊。"
+#: user/page-links.php:577
+msgid "Verification Code"
+msgstr "驗證碼"
 
 #. Theme Name of the plugin/theme
 msgid "Sakurairo"
@@ -968,11 +1673,12 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"A colorful, Easy-to-use, Perfect Experience, and Powerful Customizable "
-"WordPress Theme (Based on Theme Sakura)"
+"A WordPress theme that is built with AI-assisted reading features, colorful, "
+"user-friendly, well-rounded, and rich in functionalities. (Based on Theme "
+"Sakura)"
 msgstr ""
-"一個多彩，輕鬆上手，體驗完善，具有強大自訂功能的WordPress主題（基於Sakura主"
-"題）"
+"一款具有 AI 輔助閱讀功能的 WordPress 主題，多彩、友善、功能全面、體驗完善。"
+"(基於主題 Sakura)"
 
 #. Author of the plugin/theme
 msgid "Created by Fuukei"
@@ -981,11 +1687,3 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://docs.fuukei.org/"
 msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "文章模版"
-msgstr "文章模版"
-
-#. Template Name of the plugin/theme
-msgid "友情链接模版"
-msgstr "友情連結模版"
