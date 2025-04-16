@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2025-04-15 22:58+0900\n"
-"PO-Revision-Date: 2025-04-15 22:58+0900\n"
+"POT-Creation-Date: 2025-04-16 13:31+0900\n"
+"PO-Revision-Date: 2025-04-16 13:31+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -721,8 +721,8 @@ msgstr ""
 
 #: options/theme-options.php:57
 msgid ""
-"<img src=\"https://fuukei-api.nyat.icu/api/sponsors\"  "
-"alt=\"Sponsor\" width=\"100%\" height=\"100%\" />"
+"<img src=\"https://fuukei-api.nyat.icu/api/sponsors\"  alt=\"Sponsor\" "
+"width=\"100%\" height=\"100%\" />"
 msgstr ""
 
 #: options/theme-options.php:65

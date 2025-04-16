@@ -12,7 +12,7 @@
 
 ## 版本简介：
 
-[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/cn.webp)](https://docs.fuukei.org//)
+[![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/cn.webp)](https://docs.fuukei.org/)
 
 ## 下载及使用相关：
 
