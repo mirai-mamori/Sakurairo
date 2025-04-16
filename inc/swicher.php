@@ -75,7 +75,7 @@ function font_end_js_control()
         'extract_article_highlight' => iro_opt('extract_article_highlight_from_feature', false)?true:false, // 首页卡片是否计算
         'post_theme_color' => var_post_theme_color(),
         'post_cover_as_bg' => check(iro_opt('post_cover_as_bg',false)),
-        'post_feature_img' => ( is_singular() && has_post_thumbnail() ) ? get_the_post_thumbnail_url(get_the_ID()) : '',
+        'post_feature_img' => ( is_singular() && get_post_thumbnail_id(get_the_ID()) ) ? get_the_post_thumbnail_url(get_the_ID(), 'full') : '',
         'page_annotation' => json_encode($annotations) ?? [],
         'live_search' => check(iro_opt('live_search')),
         'loading_ph' => iro_opt('load_in_svg'),
