@@ -30,6 +30,10 @@ const DOM = {
     divider: document.querySelector(".nav-search-divider"),
 };
 
+if (!DOM.bgNext) {
+    DOM.bgNext = document.createElement('div'); // 给一个虚拟的元素，后面不再一个个判断元素是否存在
+}
+
 // 定义动画参数
 const ANIMATION = {
     easing: "cubic-bezier(0.34, 1.56, 0.64, 1)",
