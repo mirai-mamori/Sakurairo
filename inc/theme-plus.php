@@ -773,7 +773,15 @@ function siren_get_os(string $ua):array{
     ];
     $key_full  = "{$major}.{$minor}";
     $key_major = (string)$major;
-    $code_name = $list[$key_full] ?? $list[$key_major] ?? '';
+    if (isset($list[$key_full])) {
+        $code_name = $list[$key_full];
+    } elseif (isset($list[$key_major])) {
+        $code_name = $list[$key_major];
+    } elseif ($major > 15) {
+        $code_name = 'or higher';
+    } else {
+        $code_name = '';
+    }
     $display   = $code_name ? "{$code_name} {$ver_raw}" : $ver_raw;
     $title     = 'macOS ' . ($major===10?'X ':'') . $display;
     $icon      = 'apple';
