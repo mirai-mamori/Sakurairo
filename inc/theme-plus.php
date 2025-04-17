@@ -760,20 +760,26 @@ function siren_get_os(string $ua):array{
     elseif(count(explode(8,$matches[1]))>1) $matches[1] = 'Mountain Lion '.$matches[1];
     $title= $matches[0];
     $icon = "android";
-  }elseif (strpos($ua, 'Mac OS') && preg_match('/Mac OS X.([\d. _]+)/i', $ua, $matches)) {
-    $mac_ver =  intval(explode('_',$matches[1])[1]);
-    $mac_code_name = '';
-    $has_x = $mac_ver <12;
-    $mac_code_list = ['Cheetah','Puma','Jaguar','Panther','Tiger','Leopard','Snow Leopard','Lion','Mountain Lion','Mavericks','Yosemite','El Capitan','Sierra','High Sierra','Mojave','Catalina or Higher'];    // 总16个,后续请在最后添加并且修改该条注释.
-    if (isset($mac_code_list[$mac_ver])) {
-      $mac_code_name = $mac_code_list[$mac_ver];
-    }
-    $matches[1] = $mac_code_name.' '.$matches[1];
-    $title = 'macOS '.($has_x?'X':''.' ').str_replace('_','.',$matches[1]);
-    $icon = "apple";
-  }elseif (strpos($ua, 'Macintosh')) {
-    $title = "macOS";
-    $icon = "apple";
+  }elseif (strpos($ua, 'Mac OS') !== false && preg_match('/Mac OS X[ _]?([\d]+(?:[._]\d+)?(?:[._]\d+)?)/i', $ua, $matches)) {
+    $ver_raw    = str_replace('_','.', $matches[1]);
+    if (preg_match('/^(\d+)\.(\d+)/', $ver_raw, $m2)) { $major = intval($m2[1]); $minor = intval($m2[2]); }
+    else { $major = intval($ver_raw); $minor = 0; }
+    $list = [
+      '10.0'=>'Cheetah','10.1'=>'Puma','10.2'=>'Jaguar','10.3'=>'Panther','10.4'=>'Tiger',
+      '10.5'=>'Leopard','10.6'=>'Snow Leopard','10.7'=>'Lion','10.8'=>'Mountain Lion',
+      '10.9'=>'Mavericks','10.10'=>'Yosemite','10.11'=>'El Capitan','10.12'=>'Sierra',
+      '10.13'=>'High Sierra','10.14'=>'Mojave','10.15'=>'Catalina','11'=>'Big Sur',
+      '12'=>'Monterey','13'=>'Ventura','14'=>'Sonoma','15'=>'Sequoia'
+    ];
+    $key_full  = "{$major}.{$minor}";
+    $key_major = (string)$major;
+    $code_name = $list[$key_full] ?? $list[$key_major] ?? '';
+    $display   = $code_name ? "{$code_name} {$ver_raw}" : $ver_raw;
+    $title     = 'macOS ' . ($major===10?'X ':'') . $display;
+    $icon      = 'apple';
+  }elseif (strpos($ua, 'Macintosh') !== false) {
+    $title = 'macOS';
+    $icon  = 'apple';
   }elseif (strpos($ua, 'Linux')) {
     $title = 'Linux';
     $icon = 'linux';
