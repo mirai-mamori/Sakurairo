@@ -29,7 +29,7 @@
 
 ## 赞助商：
 
-<a href="https://www2.waf.pro/"><img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/wafpro.webp" alt="warpro" width="200"></a>  
+<a href="https://waf.pro/"><img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/wafpro.webp" alt="warpro" width="200"></a>  
 
 ## 感谢每一位支持我们的你：
 

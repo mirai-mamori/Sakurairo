@@ -264,47 +264,42 @@ namespace IROChatGPT {
     /**
      * 在前端显示文章中的复杂名词注释
      */
-    function display_term_annotations($content) {
-        if (!is_singular()) {
-            return $content;
-        }
-        
+    function display_term_annotations($original_content) { // Rename param for clarity
         global $post;
         $annotations = get_post_meta($post->ID, 'iro_chatgpt_annotations', true);
-        
-        if (empty($annotations) || !is_array($annotations)) {
-            // error_log("IROChatGPT: 文章 {$post->ID} 没有注释数据或数据格式不正确");
-            return $content;
-        }
-        
-        // error_log("IROChatGPT: 文章 {$post->ID} 具有 " . count($annotations) . " 个注释");
 
-        // 短代码占位
+        if (empty($annotations) || !is_array($annotations)) {
+            return $original_content; // Return original if no data
+        }
+
+        // Store original content in case we need to return it
+        // $original_content is already the input parameter
+
+        // Shortcode handling: Replace shortcodes with placeholders
         $shortcode_placeholders = [];
-        $content = preg_replace_callback('/(\[\/?[^\]]+\])/', function($matches) use (&$shortcode_placeholders) {
+        $content_with_placeholders = preg_replace_callback('/(\\[\\/?[^\\]]+\\])/', function($matches) use (&$shortcode_placeholders) {
             $token = '###SHORTCODE_' . count($shortcode_placeholders) . '###';
             $shortcode_placeholders[$token] = $matches[1];
             return $token;
-        }, $content);
-        
-        // 处理内容，标记复杂名词
+        }, $original_content);
+
         $terms = array_keys($annotations);
-        // 按长度降序排序，确保先替换长词汇
+        // Sort terms by length descending *for replacement ordering later*
         usort($terms, function($a, $b) {
             return mb_strlen($b) - mb_strlen($a);
         });
-        
+
         try {
-            $dom = new \DOMDocument();
-            // 使用libxml错误控制
+            $dom = new \DOMDocument(); // Add leading \
             $prev = libxml_use_internal_errors(true);
-            // 添加UTF-8标头以确保正确处理中文
-            $html = '<div id="iro-chatgpt-wrapper">' . $content . '</div>';
-            $dom->loadHTML('<?xml encoding="UTF-8">' . $html, LIBXML_HTML_NODEFDTD);
+            $html = '<div id="iro-chatgpt-wrapper">' . $content_with_placeholders . '</div>';
+            // Ensure UTF-8 processing
+            $dom->loadHTML('<?xml encoding="UTF-8">' . $html, LIBXML_HTML_NODEFDTD | LIBXML_HTML_NOIMPLIED);
             libxml_clear_errors();
             libxml_use_internal_errors($prev);
-            
-            $xpath = new \DOMXPath($dom);
+
+            $xpath = new \DOMXPath($dom); // Add leading \
+            // Keep the original XPath query to select relevant text nodes
             $textNodes = $xpath->query('//text()[
                 not(ancestor::script) and 
                 not(ancestor::style) and 
@@ -327,77 +322,189 @@ namespace IROChatGPT {
                 not(ancestor::h5) and 
                 not(ancestor::h6)
             ]');
-            
-            // 调试信息
-            // error_log("IROChatGPT: 找到 " . $textNodes->length . " 个文本节点");
-            
-            $annotationIndex = 1;
-            $annotationMap = [];
-            $termsFound = false;
-            
+
+            // === Pass 1: Find first appearance order ===
+            $firstAppearanceOrder = []; // Stores terms in the order they first appear
+            $annotatedTermsLookup = []; // Tracks terms found at least once globally (term => true)
+
             foreach ($textNodes as $textNode) {
                 $text = $textNode->nodeValue;
-                $modified = false;
-                
-                foreach ($terms as $term) {
+                // Find all term occurrences within this node, sorted by position
+                $matchesInNode = [];
+                foreach ($terms as $term) { // Use the length-sorted terms here too
                     if (empty($term) || mb_strlen($term) < 2) continue;
-                    
-                    if (mb_stripos($text, $term) !== false) {
-                        // 创建注释索引
-                        if (!isset($annotationMap[$term])) {
-                            $annotationMap[$term] = $annotationIndex++;
-                        }
-                        
-                        // 给术语添加标记
-                        $pattern = '/' . preg_quote($term, '/') . '/ui';
-                        $replacement = '$0<sup class="iro-term-annotation" data-term="' . htmlspecialchars($term, ENT_QUOTES) . '" data-id="' . $annotationMap[$term] . '">【' . $annotationMap[$term] . '】</sup>';
-                        $newText = preg_replace($pattern, $replacement, $text, 1);
-                        
-                        if ($newText !== $text) {
-                            $text = $newText;
-                            $modified = true;
-                            $termsFound = true;
+                    $offset = 0;
+                    while (($pos = mb_stripos($text, $term, $offset)) !== false) {
+                        $matchesInNode[] = ['term' => $term, 'pos' => $pos];
+                        // Move offset past this found term to avoid re-matching overlapping parts immediately
+                        $offset = $pos + mb_strlen($term);
+                    }
+                }
+
+                // Sort matches found in this node purely by position
+                usort($matchesInNode, function($a, $b) {
+                    return $a['pos'] <=> $b['pos'];
+                });
+
+                // Check sorted matches to find the first global appearance
+                foreach ($matchesInNode as $match) {
+                    $term = $match['term'];
+                    if (!isset($annotatedTermsLookup[$term])) {
+                        $firstAppearanceOrder[] = $term;
+                        $annotatedTermsLookup[$term] = true; // Mark as seen globally
+                    }
+                }
+            }
+
+            // === Assign Indices based on first appearance order ===
+            $annotationMap = []; // term => index
+            foreach ($firstAppearanceOrder as $index => $term) {
+                $annotationMap[$term] = $index + 1;
+            }
+
+            // === Handle No Annotations Found ===
+            if (empty($annotationMap)) {
+                // No terms were found and assigned an index, return original content
+                return $original_content;
+            }
+
+            // === Determine brackets based on locale ===
+            $locale = get_locale();
+            $opening_bracket = '('; // Default opening bracket
+            $closing_bracket = ')'; // Default closing bracket
+            if (strpos($locale, 'zh') === 0) { // Chinese locales (zh_CN, zh_TW, zh_HK)
+                $opening_bracket = '【';
+                $closing_bracket = '】';
+            } elseif ($locale === 'ja') { // Japanese
+                $opening_bracket = '※'; // Use ※ for Japanese
+                $closing_bracket = '';  // No closing bracket needed after index for ※ style
+            }
+
+            // === Pass 2: Apply annotations ===
+            $appliedTerms = []; // Tracks terms whose *first* annotation has been added globally
+
+            foreach ($textNodes as $nodeIndex => $textNode) {
+                if (!$textNode->parentNode) continue; // Node might have been replaced already
+
+                $originalNodeText = $textNode->nodeValue;
+                $modified = false;
+                // Store replacements as [position => [length, html_to_insert]]
+                $nodeReplacements = [];
+
+                // Iterate through terms sorted by length desc to find potential replacements
+                foreach ($terms as $term) {
+                    if (isset($annotationMap[$term]) && !in_array($term, $appliedTerms)) {
+                        // This term needs annotation and hasn't been applied yet.
+                        // Find its first occurrence in the *original* text of this node.
+                        $pos = mb_stripos($originalNodeText, $term);
+                        if ($pos !== false) {
+                            // Check for overlap with already planned replacements (longer terms take precedence)
+                            $isOverlapped = false;
+                            $termLen = mb_strlen($term);
+                            foreach ($nodeReplacements as $rPos => $rData) {
+                                if (max($pos, $rPos) < min($pos + $termLen, $rPos + $rData['len'])) {
+                                    $isOverlapped = true;
+                                    break;
+                                }
+                            }
+
+                            if (!$isOverlapped) {
+                                // Found the first non-overlapping occurrence in this node
+                                $annotationIndex = $annotationMap[$term];
+                                $termEscaped = htmlspecialchars($term, ENT_QUOTES);
+                                // Use locale-specific brackets
+                                $supHtml = '<sup class="iro-term-annotation" data-term="' . $termEscaped . '" data-id="' . $annotationIndex . '">' . $opening_bracket . $annotationIndex . $closing_bracket . '</sup>';
+                                
+                                // Store replacement info, keyed by position
+                                $nodeReplacements[$pos] = [
+                                    'len' => $termLen,
+                                    'html' => $termEscaped . $supHtml, // Store the term + sup tag
+                                    'term' => $term // Keep track of the term being replaced
+                                ];
+                                // Mark the term as globally applied *only after* processing this node's replacements
+                            }
                         }
                     }
                 }
-                
-                if ($modified) {
-                    // 创建文档片段
-                    $fragment = $dom->createDocumentFragment();
-                    // 确保正确处理HTML实体
-                    @$fragment->appendXML($text);
-                    $textNode->parentNode->replaceChild($fragment, $textNode);
-                }
-            }
-            
-            if (!$termsFound) {
-                // error_log("IROChatGPT: 未在内容中找到任何匹配的术语");
-                return $content;
-            }
 
-            // 解析包装
+                // Apply replacements for this node, sorted by position descending
+                if (!empty($nodeReplacements)) {
+                    krsort($nodeReplacements); // Sort by position (key) descending
+                    $currentText = $originalNodeText;
+                    $appliedHtmlPlaceholders = [];
+
+                    foreach ($nodeReplacements as $pos => $rData) {
+                        $term = $rData['term'];
+                        // Ensure this term wasn't globally applied by an earlier node or replacement
+                        if (!in_array($term, $appliedTerms)) {
+                            $placeholder = '{#HTML_REPLACEMENT_' . count($appliedHtmlPlaceholders) . '#}';
+                            $appliedHtmlPlaceholders[$placeholder] = $rData['html'];
+
+                            $currentText = mb_substr($currentText, 0, $pos) .
+                                           $placeholder .
+                                           mb_substr($currentText, $pos + $rData['len']);
+
+                            $appliedTerms[] = $term; // Mark as globally applied now
+                            $modified = true;
+                        }
+                    }
+
+                    if ($modified) {
+                        // Replace placeholders with actual HTML using DOM fragment
+                        $fragment = $dom->createDocumentFragment();
+                        $parts = preg_split('/({#HTML_REPLACEMENT_\\d+#})/u', $currentText, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+                        
+                        foreach ($parts as $part) {
+                            if (isset($appliedHtmlPlaceholders[$part])) {
+                                // It's a placeholder, append the corresponding HTML fragment
+                                @$fragment->appendXML($appliedHtmlPlaceholders[$part]);
+                            } else {
+                                // It's a regular text part, append as text node
+                                $fragment->appendChild($dom->createTextNode($part));
+                            }
+                        }
+                        // Replace the original text node with the fragment
+                        $textNode->parentNode->replaceChild($fragment, $textNode);
+                    }
+                }
+            } // End foreach textNodes Pass 2
+
+            // === Extract final HTML and restore shortcodes ===
             $wrapper = $dom->getElementById('iro-chatgpt-wrapper');
-            
-            // 获取修改后的内容
+            $newContent = '';
             if ($wrapper) {
-                $newContent = '';
+                // Get inner HTML of the wrapper
                 foreach ($wrapper->childNodes as $child) {
                     $newContent .= $dom->saveHTML($child);
                 }
             } else {
-                $newContent = $dom->saveHTML($dom->documentElement);
+                // Fallback: try to get content from body if wrapper is missing
+                $body = $dom->getElementsByTagName('body')->item(0);
+                if ($body) {
+                     foreach ($body->childNodes as $child) {
+                        $newContent .= $dom->saveHTML($child);
+                     }
+                } else {
+                     // Absolute fallback: save entire document (might include unwanted tags)
+                     $newContent = $dom->saveHTML();
+                     // Attempt cleanup
+                     $newContent = preg_replace('/^<!DOCTYPE.*?<html>.*?<body>/is', '', $newContent);
+                     $newContent = preg_replace('/<\/body><\\/html>$/is', '', $newContent);
+                     $newContent = preg_replace('/^<div id="iro-chatgpt-wrapper">/i', '', $newContent);
+                     $newContent = preg_replace('/<\/div>$/i', '', $newContent);
+                }
             }
 
+            // Restore shortcodes
             foreach ($shortcode_placeholders as $token => $shortcode) {
                 $newContent = str_replace($token, $shortcode, $newContent);
             }
-            
-            // error_log("IROChatGPT: 成功处理注释标记，找到术语: " . implode(", ", array_keys($annotationMap)));
-            
+
             return $newContent;
-        } catch (\Exception $e) {
-            error_log("IROChatGPT 错误: " . $e->getMessage());
-            return $content; // 出错时返回原内容
+
+        } catch (Exception $e) { // Removed leading \
+            error_log("IROChatGPT 错误: " . $e->getMessage() . " in file " . $e->getFile() . " on line " . $e->getLine());
+            return $original_content; // Return original on error
         }
     }
 }
