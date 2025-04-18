@@ -1898,7 +1898,7 @@ header.page-header {
 }
 
 nav#comments-navi {
-  margin: 0 auto;
+  margin: 30px auto;
   max-width: 860px;
   width: 100%;
   color: #9A9A9A;
@@ -2514,9 +2514,6 @@ h1.main-title {
 .next {
   width: 35px;
   height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   user-select: none;
 }
@@ -5100,11 +5097,13 @@ form#commentform,.comment-respond textarea:active,
 span.page-numbers.current {
   color: var(--theme-skin-matching);
   padding: 0 5px;
+  margin: 30px 10px;
 }
 
 a.page-numbers {
   color: #ABABAB;
   padding: 0 5px;
+  margin: 30px 10px;
 }
 
 .comments .comments-hidden {
