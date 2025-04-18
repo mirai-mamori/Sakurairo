@@ -530,8 +530,13 @@ body.dark .navigator i:hover {
   color: var(--theme-skin-dark);
 }
 
-body.dark .entry-content code:not(pre code) {
+body.dark .entry-content code:not(pre code),
+body.dark .entry-content code {
   background: var(--inline_code_background_color_in_dark_mode, #505050);
+}
+
+body.dark pre.wp-block-code {
+  background: rgba(50,50,50,0.5);
 }
 
 body.dark .shuoshuo-item {
