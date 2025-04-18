@@ -2621,7 +2621,7 @@ function register_shortcodes() {
     
         if (iro_opt('ghcard_proxy')) {
             
-            $svg_url = 'https://github-readme-stats.vercel.app/api/pin/?username=' . esc_attr($username) . '&repo=' . esc_attr($repo);
+            $svg_url = 'https://github-readme-stats.vercel.app/api/pin/?hide_border=true&username=' . esc_attr($username) . '&repo=' . esc_attr($repo);
             $response = wp_remote_get($svg_url);
     
             if (!is_wp_error($response)) {
@@ -2638,7 +2638,7 @@ function register_shortcodes() {
     
         //获取失败或未启用代理
         if (empty($card_content)) {
-            $card_content = '<img decoding="async" src="https://github-readme-stats.vercel.app/api/pin/?username=' . esc_attr($username) . '&repo=' . esc_attr($repo) . '" alt="Github-Card">';
+            $card_content = '<img decoding="async" src="https://github-readme-stats.vercel.app/api/pin/?hide_border=true&username=' . esc_attr($username) . '&repo=' . esc_attr($repo) . '" alt="Github-Card">';
         }
     
         //输出内容
