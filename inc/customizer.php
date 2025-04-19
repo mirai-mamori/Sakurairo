@@ -2392,7 +2392,7 @@ foreach ( $sections as $section ) {
 				$setting_id    = $args['settings'];
 				$iro_key       = $args['iro_key'];
 				$type_default  = $args['default'];
-				$iro_default   = iro_opt($iro_key);
+				$iro_default   = $GLOBALS['iro_options'][$iro_key];
 				$iro_subkey    = isset( $args['iro_subkey'] ) ? $args['iro_subkey'] : '';
 
 				if ( ! isset( $args['transport'] ) ) { // 没设置预览方式的默认请求php渲染
@@ -2414,6 +2414,8 @@ foreach ( $sections as $section ) {
 				$args['default'] = isset($args['iro_subkey']) 
 								? (is_array($iro_default) && isset($iro_default[$args['iro_subkey']]) ? $iro_default[$args['iro_subkey']] : $type_default) 
 								: ($iro_default !== null ? $iro_default : $type_default); //从iro_opt中获取默认值，或使用种类默认值
+				
+				// set_theme_mod($setting_id, $args['default']);
 			}
 
 			// 根据字段类型选择对应的 Kirki 类注册组件

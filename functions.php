@@ -629,10 +629,10 @@ require get_template_directory() . '/inc/cache_settings.php';
  * 仅在Customizer预览框架中和Customizer编辑器载入时加载
  */
 add_action( 'customize_register', function () {
-    require get_template_directory() . '/inc/customizer.php';
+    require_once get_template_directory() . '/inc/customizer.php';
 } );
 if ( is_customize_preview() ) {
-    require get_template_directory() . '/inc/customizer.php';
+    require_once get_template_directory() . '/inc/customizer.php';
 }
 function update_customize_to_iro_options() { //从key映射表中重组并保存设置项至iro_options中
     $theme_mod_options = get_theme_mod( 'iro_options', [] );
