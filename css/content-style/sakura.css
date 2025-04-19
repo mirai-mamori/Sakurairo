@@ -64,6 +64,34 @@
     position: relative
 }
 
+.entry-content h2 {
+    padding-left: 0px;
+    padding-bottom: 0px;
+    position: relative;
+    display: inline-block;
+}
+
+.entry-content h2:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 30%;
+    right: 0;
+    width: 70%;
+    height: 0.7em;
+    background-color: var(--article-theme-highlight,var(--theme-skin-matching));
+    opacity: 0.4;
+    z-index: 0;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.entry-content h2:hover:after {
+	width: 85%;
+  	left: 15%;
+	opacity: 0.7;
+}
+
 .entry-content h3,
 .entry-content h4,
 .entry-content h5 {
