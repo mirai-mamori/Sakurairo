@@ -1078,12 +1078,18 @@ document.addEventListener("DOMContentLoaded", () => {
         TocButtonStat ();
 
         function TocButtonStat () {
-            let haveToc = document.querySelector("#main-container .toc-container .toc");
-            if (haveToc && haveToc.hasChildNodes()) { // 下方用户栏和目录二选一，此处是没有用户栏还没有目录的情况
-                moTocButton.style.transform = 'translateY(0)';
-            } else {
-                moTocButton.style.transform = 'translateY(-100%)';
-            }
+            document.addEventListener("tocEvent",function(event){ // page/index.js 目录生成事件
+                
+                let haveToc = document.querySelector("#main-container .toc-container .toc");
+                let haveContent = event.detail;
+
+                if (haveToc && haveContent) { // 下方用户栏和目录二选一，此处是没有用户栏还没有目录的情况
+                    moTocButton.style.transform = 'translateY(0)';
+                } else {
+                    moTocButton.style.transform = 'translateY(-100%)';
+                }
+
+            })
         }
 
         document.addEventListener('pjax:complete', function() {
