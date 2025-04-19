@@ -11,8 +11,9 @@
 include_once('inc/classes/IpLocation.php');
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '20.0.2');
 define('BUILD_VERSION', '3');
+define('INT_VERSION', '20.0.2');
+define('SSU_URL', 'https://api.fuukei.org/update/ssu.json');
 
 function check_php_version($preset_version)
 {
