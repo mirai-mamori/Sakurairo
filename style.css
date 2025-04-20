@@ -2516,6 +2516,7 @@ h1.main-title {
   height: 35px;
   cursor: pointer;
   user-select: none;
+  text-align: center;
 }
 
 .slider-wrapper {
