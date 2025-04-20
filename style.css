@@ -29,7 +29,6 @@ i,i:hover{
 }
 
 li,ul,ol {
-  list-style: none;
   cursor: pointer;
   padding-inline-start: unset;
 }
