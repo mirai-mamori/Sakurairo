@@ -33,6 +33,15 @@ li,ul,ol {
   padding-inline-start: unset;
 }
 
+ol.toc-list {
+  list-style-type: none; 
+  counter-reset: none;
+}
+
+ol.toc-list li {
+  counter-increment: none;
+}
+
 ul.commentwrap,
 li.comment,
 ul.search-no-reasults,
