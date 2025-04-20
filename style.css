@@ -39,6 +39,7 @@ ul.search-no-reasults,
 ul.search-no-reasults li,
 ul.menu-list{
   cursor: unset;
+  list-style-type: none; 
 }
 
 img {
