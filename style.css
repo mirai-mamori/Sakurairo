@@ -34,6 +34,9 @@ li,ul,ol {
   padding-inline-start: unset;
 }
 
+.entry-content li,
+.entry-content ul,
+.entry-content ol,
 ul.commentwrap,
 li.comment,
 ul.search-no-reasults,
