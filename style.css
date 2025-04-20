@@ -29,9 +29,17 @@ i,i:hover{
 }
 
 li,ul,ol {
-  list-style: none;
   cursor: pointer;
   padding-inline-start: unset;
+}
+
+ol.toc-list {
+  list-style-type: none; 
+  counter-reset: none;
+}
+
+ol.toc-list li {
+  counter-increment: none;
 }
 
 ul.commentwrap,
@@ -40,6 +48,7 @@ ul.search-no-reasults,
 ul.search-no-reasults li,
 ul.menu-list{
   cursor: unset;
+  list-style-type: none; 
 }
 
 img {
@@ -2516,6 +2525,7 @@ h1.main-title {
   height: 35px;
   cursor: pointer;
   user-select: none;
+  text-align: center;
 }
 
 .slider-wrapper {
@@ -5100,7 +5110,7 @@ span.page-numbers.current {
   margin: 30px 10px;
 }
 
-a.page-numbers {
+span.page-numbers.dots, a.page-numbers {
   color: #ABABAB;
   padding: 0 5px;
   margin: 30px 10px;
