@@ -5100,7 +5100,7 @@ span.page-numbers.current {
   margin: 30px 10px;
 }
 
-a.page-numbers {
+span.page-numbers.dots, a.page-numbers {
   color: #ABABAB;
   padding: 0 5px;
   margin: 30px 10px;
