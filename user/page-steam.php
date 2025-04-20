@@ -21,10 +21,6 @@ get_header();
         font-weight: var(--global-font-weight);
     }
 
-    .comments {
-        display: none;
-    }
-
     .steam-row {
         display: flex;
         flex-wrap: wrap;
