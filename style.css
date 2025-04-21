@@ -44,7 +44,10 @@ ol.toc-list li {
 
 .entry-content li,
 .entry-content ul,
-.entry-content ol,
+.entry-content ol {
+  cursor: unset;
+}
+
 ul.commentwrap,
 li.comment,
 ul.search-no-reasults,
