@@ -1417,12 +1417,6 @@ h1.page-title {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.post-footer {
-  float: left;
-  display: flex;
-  gap: 10px;
-}
-
 .post-footer .info {
   overflow: hidden;
   float: left;
