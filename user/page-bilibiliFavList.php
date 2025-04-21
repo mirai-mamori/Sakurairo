@@ -20,10 +20,6 @@ get_header();
         font-weight: var(--global-font-weight);
     }
 
-    .comments {
-        display: none;
-    }
-
     .fav-list {
         margin: 0 -10px -20px;
         flex-wrap: wrap;

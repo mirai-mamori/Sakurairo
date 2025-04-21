@@ -20,10 +20,6 @@ span.linkss-title {
     font-weight: var(--global-font-weight);
 }
 
-.comments {
-    display: none
-}
-
 .bangumi {
     margin-top: 40px;
 }

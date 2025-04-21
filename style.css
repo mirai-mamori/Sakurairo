@@ -42,6 +42,9 @@ ol.toc-list li {
   counter-increment: none;
 }
 
+.entry-content li,
+.entry-content ul,
+.entry-content ol,
 ul.commentwrap,
 li.comment,
 ul.search-no-reasults,
