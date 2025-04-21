@@ -266,6 +266,10 @@ namespace IROChatGPT {
      */
     function display_term_annotations($original_content) { // Rename param for clarity
         global $post;
+        // === 修复：防止 $post 为 null ===
+        if (empty($post) || !isset($post->ID)) {
+            return $original_content;
+        }
         $annotations = get_post_meta($post->ID, 'iro_chatgpt_annotations', true);
 
         if (empty($annotations) || !is_array($annotations)) {
