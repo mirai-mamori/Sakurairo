@@ -43,32 +43,32 @@ if (iro_opt("article_function")) {
         ?>
 
         <?php the_reward(); ?>
-        <section class="author-profile">
-            <?php
-            $author_id = get_the_author_meta('ID');
-            $author_url = esc_url(get_author_posts_url($author_id));
-            $author_name = get_the_author();
-            ?>
-            <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-                <a href="<?= $author_url; ?>" class="profile gravatar">
-                    <img class="fa-spin" style="--fa-animation-duration: 15s;" src="<?php echo get_avatar_profile_url(); ?>" itemprop="image" alt="<?= $author_name; ?>" height="30" width="30">
-                </a>
+
+        <?php
+        $author_id = get_the_author_meta('ID');
+        $author_url = esc_url(get_author_posts_url($author_id));
+        $author_name = get_the_author();
+        ?>
+        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            <a href="<?= $author_url; ?>" class="profile gravatar">
+                <img class="fa-spin" style="--fa-animation-duration: 15s;" src="<?php echo get_avatar_profile_url(); ?>" itemprop="image" alt="<?= $author_name; ?>" height="30" width="30">
+            </a>
+        </div>
+        <div class="meta">
+            <a href="<?= $author_url; ?>" itemprop="url" rel="author"><?= $author_name; ?></a>
+        </div>
+        <?php
+        if (iro_opt('author_profile_quote') == '1') {
+            $author_description = get_the_author_meta('description');
+            if (empty($author_description)) {
+                $author_description = __('This author has not provided a description.', 'sakurairo');
+            }
+        ?>
+            <div class="desc">
+                <i class="fa-solid fa-feather" aria-hidden="true"></i><?= $author_description; ?>
             </div>
-            <div class="meta">
-                <a href="<?= $author_url; ?>" itemprop="url" rel="author"><?= $author_name; ?></a>
-            </div>
-            <?php
-            if (iro_opt('author_profile_quote') == '1') {
-                $author_description = get_the_author_meta('description');
-                if (empty($author_description)) {
-                    $author_description = __('This author has not provided a description.', 'sakurairo');
-                }
-            ?>
-                <div class="desc">
-                    <i class="fa-solid fa-feather" aria-hidden="true"></i><?= $author_description; ?>
-                </div>
-            <?php } ?>
-        </section>
+        <?php } ?>
+        
         <div class="post-modified-time">
             <i class="fa-solid fa-calendar-day" aria-hidden="true"></i><?php _e('Last updated on ', 'sakurairo');
                                                                         echo get_the_modified_time('Y-m-d'); ?>
