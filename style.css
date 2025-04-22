@@ -54,6 +54,11 @@ ul.menu-list{
   list-style-type: none; 
 }
 
+ul.al_post_list,
+ul.al_mon_list{
+  list-style-type: none; 
+}
+
 img {
   border: 0;
   height: auto;
