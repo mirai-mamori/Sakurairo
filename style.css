@@ -2516,6 +2516,7 @@ h1.main-title {
 .top-social_v2 li{
   float: left;
   margin: 5px;
+  list-style-type: none; 
 }
 
 .slider-container {
