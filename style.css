@@ -44,7 +44,10 @@ ol.toc-list li {
 
 .entry-content li,
 .entry-content ul,
-.entry-content ol,
+.entry-content ol {
+  cursor: unset;
+}
+
 ul.commentwrap,
 li.comment,
 ul.search-no-reasults,
@@ -1417,13 +1420,7 @@ h1.page-title {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.author-profile {
-  float: left;
-  display: flex;
-  gap: 10px;
-}
-
-.author-profile .info {
+.post-footer .info {
   overflow: hidden;
   float: left;
   box-shadow: 0 1px 30px -4px #e8e8e8;
@@ -1433,17 +1430,17 @@ h1.page-title {
   border: 1px solid #FFFFFF;
 }
 
-.author-profile .info:hover {
+.post-footer .info:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.8);
 }
 
-.author-profile .profile {
+.post-footer .profile {
   display: block;
   float: left;
 }
 
-.author-profile .meta {
+.post-footer .meta {
   display: block;
   float: left;
   box-shadow: 0 1px 30px -4px #e8e8e8;
@@ -1453,12 +1450,12 @@ h1.page-title {
   border: 1px solid #FFFFFF;
 }
 
-.author-profile .meta:hover {
+.post-footer .meta:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.8);
 }
 
-.author-profile .meta a {
+.post-footer .meta a {
   font-size: 16px;
   float: left;
   color: #7d7d7d;
@@ -1641,14 +1638,14 @@ h1.page-title {
   margin: 0;
 }
 
-.author-profile .profile img {
+.post-footer .profile img {
   max-width: 30px;
   max-height: 30px;
   border-radius: 100%;
   float: left;
 }
 
-.author-profile .desc {
+.post-footer .desc {
   font-size: 13px;
   letter-spacing: 0;
   display: block;
@@ -1662,12 +1659,12 @@ h1.page-title {
   border: 1px solid #FFFFFF;
 }
 
-.author-profile .desc:hover {
+.post-footer .desc:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.8);
 }
 
-.author-profile .desc i {
+.post-footer .desc i {
   color: #7D7D7D;
   float: none;
   margin-right: 10px;

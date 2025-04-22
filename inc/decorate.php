@@ -482,13 +482,13 @@ h1.main-title, h1.fes-title,.the-feature.from_left_and_right .info,
 }
 
 <?php if (!iro_opt('author_profile_avatar', 'true')): ?>
-.author-profile .info {
+.post-footer .info {
 display:none;
 }
 <?php endif; ?>
 
 <?php if (!iro_opt('author_profile_name', 'true')): ?>
-.author-profile .meta {
+.post-footer .meta {
 display:none;
 }
 <?php endif; ?>
