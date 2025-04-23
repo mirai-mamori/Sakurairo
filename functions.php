@@ -3049,6 +3049,79 @@ function get_the_user_ip()
     return apply_filters('wpb_get_ip', $ip);
 }
 
+//归档页信息缓存
+function get_archive_info() {
+    if (have_posts()) :
+        the_post();    update_post_caches($posts);    
+        // 获取所有文章和说说
+        $posts = get_posts([
+            'posts_per_page' => -1,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'post_type' => array('post', 'shuoshuo'), // 同时获取文章和说说
+        ]);
+        $years = [];
+        $stats = [
+            'total' => [
+                'posts' => 0,
+                'views' => 0,
+                'words' => 0,
+                'comments' => 0
+            ],
+            'shuoshuo' => [
+                'posts' => 0,
+                'views' => 0,
+                'words' => 0,
+                'comments' => 0
+            ],
+            'article' => [
+                'posts' => 0,
+                'views' => 0,
+                'words' => 0,
+                'comments' => 0
+            ]
+        ];
+          foreach ($posts as $post) {
+            $views = get_post_meta($post->ID, 'views', true);
+            $words = get_post_meta($post->ID, 'post_words_count', true);
+            $comments = get_comments_number($post->ID);
+            
+            // 判断文章类型（使用post_type而不是post_format）
+            $post_type = $post->post_type === 'shuoshuo' ? 'shuoshuo' : 'article';
+            
+            // 更新统计数据
+            $stats[$post_type]['posts']++;
+            $stats[$post_type]['views'] += intval($views);
+            $stats[$post_type]['words'] += intval($words);
+            $stats[$post_type]['comments'] += intval($comments);
+            
+            $stats['total']['posts']++;
+            $stats['total']['views'] += intval($views);
+            $stats['total']['words'] += intval($words);
+            $stats['total']['comments'] += intval($comments);
+            
+            $post->meta = [
+                'views' => $views,
+                'words' => $words,
+                'type' => $post_type
+            ];
+            
+            $year = date('Y', strtotime($post->post_date));
+            $month = date('n', strtotime($post->post_date));
+            if (!isset($years[$year])) $years[$year] = [];
+            if (!isset($years[$year][$month])) $years[$year][$month] = [];
+            $years[$year][$month][] = $post;
+
+            set_transient('time_archive',$years,2592000);
+        }
+    endif;
+}
+
+//更新文章后更新缓存
+add_action('save_post', function(){
+    get_archive_info();
+});
+
 /*
  * 友情链接提交功能
  */

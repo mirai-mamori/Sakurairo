@@ -106,9 +106,27 @@ class Timeline {
         this.modalContent = document.getElementById('timeline-modal-content');
         this.modalClose = document.getElementById('timeline-modal-close');
 
+        this.contentAPI = this.modalContent.dataset.archiveAPI;
+        this.contents = '';
+
         if (!this.timelineRoot || !this.modalMask || !this.modalContent || !this.modalClose) return;
 
         this.bindEvents();
+    }
+
+    async FetchContents() {
+        try {
+            const response = await fetch(this.contentAPI);
+            this.contents = JSON.parse(response);
+        } catch (error) {
+            console.warn("获取内容失败，重试中...", error);
+            try {
+                const response = await fetch(this.contentAPI);
+                this.contents = JSON.parse(response);
+            } catch (retryError) {
+                console.error("获取内容失败:", retryError);
+            }
+        }
     }
 
     destroy() {
@@ -134,7 +152,7 @@ class Timeline {
         if (!card) return;
 
         const year = card.dataset.year;
-        const months = JSON.parse(card.dataset.months);
+        const months = this.contents[card.dataset.months];
         
         this.showYearModal(year, months);
     }
@@ -265,6 +283,7 @@ function initTimeline() {
     }
     timelineInstance = new Timeline();
     timelineInstance.init();
+    async () => await timelineInstance.FetchContents();
 }
 
 // 初始化事件监听
