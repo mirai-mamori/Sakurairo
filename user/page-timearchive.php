@@ -157,6 +157,11 @@ get_header();
 
     /* 弹窗遮罩和内容 */    /* 模态框遮罩层 */
     .timeline-modal-mask {
+        height: 100vh;
+        width: 100vw;
+        max-height: none;
+        max-width: none;
+        border: none;
         position: fixed;
         z-index: 9999;
         left: 0; 
@@ -572,6 +577,10 @@ get_header();
         }
     }
 
+    .timeline-modal::-webkit-scrollbar-track {
+        margin: 5px;
+    }
+
 </style>
 <?php 
     if (!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID())) { 
@@ -582,90 +591,32 @@ get_header();
     ?>
 <div class="timeline-root" id="timeline-root">
 <?php
-if (have_posts()) :
-    the_post();    update_post_caches($posts);    
-    // 获取所有文章和说说
-    $posts = get_posts([
-        'posts_per_page' => -1,
-        'orderby' => 'date',
-        'order' => 'DESC',
-        'post_type' => array('post', 'shuoshuo'), // 同时获取文章和说说
-    ]);
-    $years = [];
-    $stats = [
-        'total' => [
-            'posts' => 0,
-            'views' => 0,
-            'words' => 0,
-            'comments' => 0
-        ],
-        'shuoshuo' => [
-            'posts' => 0,
-            'views' => 0,
-            'words' => 0,
-            'comments' => 0
-        ],
-        'article' => [
-            'posts' => 0,
-            'views' => 0,
-            'words' => 0,
-            'comments' => 0
-        ]
-    ];
-      foreach ($posts as $post) {
-        $views = get_post_meta($post->ID, 'views', true);
-        $words = get_post_meta($post->ID, 'post_words_count', true);
-        $comments = get_comments_number($post->ID);
-        
-        // 判断文章类型（使用post_type而不是post_format）
-        $post_type = $post->post_type === 'shuoshuo' ? 'shuoshuo' : 'article';
-        
-        // 更新统计数据
-        $stats[$post_type]['posts']++;
-        $stats[$post_type]['views'] += intval($views);
-        $stats[$post_type]['words'] += intval($words);
-        $stats[$post_type]['comments'] += intval($comments);
-        
-        $stats['total']['posts']++;
-        $stats['total']['views'] += intval($views);
-        $stats['total']['words'] += intval($words);
-        $stats['total']['comments'] += intval($comments);
-        
-        $post->meta = [
-            'views' => $views,
-            'words' => $words,
-            'type' => $post_type
-        ];
-        
-        $year = date('Y', strtotime($post->post_date));
-        $month = date('n', strtotime($post->post_date));
-        if (!isset($years[$year])) $years[$year] = [];
-        if (!isset($years[$year][$month])) $years[$year][$month] = [];
-        $years[$year][$month][] = $post;
+$years = get_transient('time_archive');
+if (!$years) {
+    $years = get_archive_info();
+}
+foreach ($years as $year => $months) {
+    $postCount = array_sum(array_map('count', $months));
+    $activeMonths = array_fill(1, 12, false);
+    foreach ($months as $m => $arr) {
+        $activeMonths[(int)$m] = count($arr) > 0;
     }
-    foreach ($years as $year => $months) {
-        $postCount = array_sum(array_map('count', $months));
-        $activeMonths = array_fill(1, 12, false);
-        foreach ($months as $m => $arr) {
-            $activeMonths[(int)$m] = count($arr) > 0;
-        }
-        // 年份卡片
-        echo '<section class="timeline-year-card" tabindex="0" data-year="' . $year . '" data-months="' . htmlspecialchars(json_encode($months), ENT_QUOTES, 'UTF-8') . '">';
-        echo '<div class="timeline-year-header">';
-        echo '<span class="timeline-year-number">' . $year . '</span>';
-        echo '<span class="timeline-year-count">' . $postCount . ' ' . __('Posts', 'sakurairo') . '</span>';
-        echo '</div>';
-        // 月份日历
-        echo '<div class="timeline-year-calendar">';
-        for ($i = 1; $i <= 12; $i++) {
-            $active = $activeMonths[$i] ? 'active' : '';
-            echo '<span class="timeline-year-calendar-month ' . $active . '">' . $i . '</span>';
-        }
-        echo '</div>';
-        echo '</section>';
+    // 年份卡片
+    echo '<section class="timeline-year-card" tabindex="0" data-year="' . $year . '" data-months="'. $year .'">';
+    echo '<div class="timeline-year-header">';
+    echo '<span class="timeline-year-number">' . $year . '</span>';
+    echo '<span class="timeline-year-count">' . $postCount . ' ' . __('Posts', 'sakurairo') . '</span>';
+    echo '</div>';
+    // 月份日历
+    echo '<div class="timeline-year-calendar">';
+    for ($i = 1; $i <= 12; $i++) {
+        $active = $activeMonths[$i] ? 'active' : '';
+        echo '<span class="timeline-year-calendar-month ' . $active . '">' . $i . '</span>';
     }
-endif;
+    echo '</div>';
+    echo '</section>';
+}
 ?>
-<div id="timeline-modal-mask" class="timeline-modal-mask"><div class="timeline-modal"><span class="timeline-modal-close" id="timeline-modal-close">×</span><div id="timeline-modal-content"></div></div></div>
+<dialog id="timeline-modal-mask" class="timeline-modal-mask"><div class="timeline-modal"><span class="timeline-modal-close" id="timeline-modal-close">×</span><div id="timeline-modal-content" data-archiveapi=<?php echo rest_url('sakura/v1/archive_info');?>></div></div></dialog>
 <script src="<?php echo get_template_directory_uri(); ?>/js/timeline.js"></script>
 <?php get_footer(); ?>

@@ -1,71 +1,3 @@
-// 多语言翻译对象
-const timelineTranslations = {
-    'zh-CN': {
-        yearOverview: '年度总览',
-        articleCount: '投稿数',
-        articles: '文章',
-        shuoshuo: '说说',
-        readCount: '阅读量',
-        times: '次',
-        wordCount: '字数',
-        characters: '字',
-        commentCount: '评论数',
-        comments: '条',
-        month: '月'
-    },
-    'zh-TW': {
-        yearOverview: '年度總覽',
-        articleCount: '投稿數',
-        articles: '文章',
-        shuoshuo: '說說',
-        readCount: '閱讀量',
-        times: '次',
-        wordCount: '字數',
-        characters: '字',
-        commentCount: '評論數',
-        comments: '條',
-        month: '月'
-    },
-    'en': {
-        yearOverview: 'Year Overview',
-        articleCount: 'Posts',
-        articles: 'Articles',
-        shuoshuo: 'Shuoshuo',
-        readCount: 'Views',
-        times: 'times',
-        wordCount: 'Words',
-        characters: 'chars',
-        commentCount: 'Comments',
-        comments: '',
-        month: ''
-    },
-    'ja': {
-        yearOverview: '年間概要',
-        articleCount: '投稿数',
-        articles: '記事',
-        shuoshuo: 'つぶやき',
-        readCount: '閲覧数',
-        times: '回',
-        wordCount: '文字数',
-        characters: '字',
-        commentCount: 'コメント数',
-        comments: '件',
-        month: '月'
-    },    'fr': {
-        yearOverview: 'Aperçu annuel',
-        articleCount: 'Articles',
-        articles: 'Articles',
-        shuoshuo: 'Shuoshuo',
-        readCount: 'Vues',
-        times: 'fois',
-        wordCount: 'Mots',
-        characters: 'caractères',
-        commentCount: 'Commentaires',
-        comments: '',
-        month: ''
-    }
-};
-
 class Timeline {
     constructor() {
         this.timelineRoot = null;
@@ -78,7 +10,7 @@ class Timeline {
 
         // 改进语言检测逻辑
         const htmlLang = (document.documentElement.lang || '').toLowerCase();
-        console.log('Detected HTML lang:', htmlLang);
+        // console.log('Detected HTML lang:', htmlLang);
         
         // 支持更多中文变体
         const zhVariants = ['zh-hans', 'zh-cn', 'zh', 'zh-hans-cn'];
@@ -97,7 +29,7 @@ class Timeline {
             this.currentLang = 'en';
         }
             
-        console.log('Selected language:', this.currentLang);
+        // console.log('Selected language:', this.currentLang);
     }
 
     init() {
@@ -106,9 +38,33 @@ class Timeline {
         this.modalContent = document.getElementById('timeline-modal-content');
         this.modalClose = document.getElementById('timeline-modal-close');
 
-        if (!this.timelineRoot || !this.modalMask || !this.modalContent || !this.modalClose) return;
+        this.modalMain = document.querySelector("#timeline-modal-mask")
+
+        if (!this.timelineRoot || !this.modalMask || !this.modalContent || !this.modalClose) {
+            document.documentElement.style.overflowY = 'auto';
+            return;
+        }
+
+        this.contentAPI = this.modalContent.dataset.archiveapi;
+        this.contents = '';
+        (async function(){await timelineInstance.FetchContents()}()) ;
 
         this.bindEvents();
+    }
+
+    async FetchContents() {
+        try {
+            const response = await fetch(this.contentAPI);
+            this.contents = await response.json();
+        } catch (error) {
+            console.warn("获取内容失败，重试中...", error);
+            try {
+                const response = await fetch(this.contentAPI);
+                this.contents = await response.json();
+            } catch (retryError) {
+                console.error("获取内容失败:", retryError);
+            }
+        }
     }
 
     destroy() {
@@ -121,6 +77,7 @@ class Timeline {
         if (this.modalMask) {
             this.modalMask.removeEventListener('click', this.boundHandleMaskClick);
         }
+        document.body.style.overflow = "auto";
     }
 
     bindEvents() {
@@ -134,18 +91,24 @@ class Timeline {
         if (!card) return;
 
         const year = card.dataset.year;
-        const months = JSON.parse(card.dataset.months);
+        const months = this.contents[card.dataset.months];
         
         this.showYearModal(year, months);
+        this.modalMain.showModal();
+        document.documentElement.style.overflow = 'hidden';
     }
 
     handleModalClose() {
         this.modalMask.classList.remove('active');
+        this.modalMain.close();
+        document.documentElement.style.overflowY = 'auto';
     }
 
     handleMaskClick(e) {
         if (e.target === this.modalMask) {
             this.modalMask.classList.remove('active');
+            this.modalMain.close();
+            document.documentElement.style.overflowY = 'auto';
         }
     }
 
@@ -190,7 +153,76 @@ class Timeline {
                 typeStats[type].words += words;
                 typeStats[type].comments += comments;
             });
-        });        const t = timelineTranslations[this.currentLang];
+        });
+        // 多语言翻译对象
+        let timelineTranslations = {
+            'zh-CN': {
+                yearOverview: '年度总览',
+                articleCount: '投稿数',
+                articles: '文章',
+                shuoshuo: '说说',
+                readCount: '阅读量',
+                times: '次',
+                wordCount: '字数',
+                characters: '字',
+                commentCount: '评论数',
+                comments: '条',
+                month: '月'
+            },
+            'zh-TW': {
+                yearOverview: '年度總覽',
+                articleCount: '投稿數',
+                articles: '文章',
+                shuoshuo: '說說',
+                readCount: '閱讀量',
+                times: '次',
+                wordCount: '字數',
+                characters: '字',
+                commentCount: '評論數',
+                comments: '條',
+                month: '月'
+            },
+            'en': {
+                yearOverview: 'Year Overview',
+                articleCount: 'Posts',
+                articles: 'Articles',
+                shuoshuo: 'Shuoshuo',
+                readCount: 'Views',
+                times: 'times',
+                wordCount: 'Words',
+                characters: 'chars',
+                commentCount: 'Comments',
+                comments: '',
+                month: ''
+            },
+            'ja': {
+                yearOverview: '年間概要',
+                articleCount: '投稿数',
+                articles: '記事',
+                shuoshuo: 'つぶやき',
+                readCount: '閲覧数',
+                times: '回',
+                wordCount: '文字数',
+                characters: '字',
+                commentCount: 'コメント数',
+                comments: '件',
+                month: '月'
+            },    'fr': {
+                yearOverview: 'Aperçu annuel',
+                articleCount: 'Articles',
+                articles: 'Articles',
+                shuoshuo: 'Shuoshuo',
+                readCount: 'Vues',
+                times: 'fois',
+                wordCount: 'Mots',
+                characters: 'caractères',
+                commentCount: 'Commentaires',
+                comments: '',
+                month: ''
+            }
+        };
+
+        let t = timelineTranslations[this.currentLang];
         let html = `
             <h2 class="timeline-modal-title">${year} ${t.yearOverview}</h2>
             <div class="timeline-modal-stats-grid">
