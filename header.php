@@ -178,6 +178,7 @@ header('X-Frame-Options: SAMEORIGIN');
      <?php if(iro_opt('choice_of_nav_style') == 'sakura'){
         get_template_part('layouts/' . 'sakura_header');
      } else {
+        $show_search = (bool)iro_opt('nav_menu_search');
     ?>
     
     <header class="site-header no-select" role="banner">
@@ -186,11 +187,15 @@ header('X-Frame-Options: SAMEORIGIN');
             <i class="fa-solid fa-bars"></i>
         </div>
         <div class="mobile-nav">
+
+        <?php if($show_search) : ?>
         <div class="mo-menu-search">
             <form class="search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
                 <input class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
             </form>
         </div>
+        <?php endif; ?>
+
         <?php wp_nav_menu([
             'depth' => 2, 
             'theme_location' => 'primary', 
@@ -226,7 +231,6 @@ header('X-Frame-Options: SAMEORIGIN');
         <?php endif;
 
         // Cache commonly used options
-        $show_search = (bool)iro_opt('nav_menu_search');
         $show_user_avatar = (bool)iro_opt('nav_user_menu',true);
         $enable_random_graphs = (bool)iro_opt('cover_switch', true) && (bool)iro_opt('cover_random_graphs_switch', true);
         ?>
