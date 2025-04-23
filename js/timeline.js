@@ -109,7 +109,10 @@ class Timeline {
         this.contentAPI = this.modalContent.dataset.archiveapi;
         this.contents = '';
 
-        if (!this.timelineRoot || !this.modalMask || !this.modalContent || !this.modalClose) return;
+        if (!this.timelineRoot || !this.modalMask || !this.modalContent || !this.modalClose) {
+            document.documentElement.style.overflowY = 'auto';
+            return;
+        }
 
         this.bindEvents();
     }
@@ -139,6 +142,7 @@ class Timeline {
         if (this.modalMask) {
             this.modalMask.removeEventListener('click', this.boundHandleMaskClick);
         }
+        document.body.style.overflow = "auto";
     }
 
     bindEvents() {
@@ -155,15 +159,18 @@ class Timeline {
         const months = this.contents[card.dataset.months];
         
         this.showYearModal(year, months);
+        document.documentElement.style.overflow = 'hidden';
     }
 
     handleModalClose() {
         this.modalMask.classList.remove('active');
+        document.documentElement.style.overflowY = 'auto';
     }
 
     handleMaskClick(e) {
         if (e.target === this.modalMask) {
             this.modalMask.classList.remove('active');
+            document.documentElement.style.overflowY = 'auto';
         }
     }
 
