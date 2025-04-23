@@ -129,7 +129,7 @@ add_action('rest_api_init', function () {
     register_rest_route('sakura/v1', '/archive_info', array(
         'methods' => 'GET',
         'callback' => function (){
-            get_transient('time_archive');
+            return get_transient('time_archive');
         },
         'permission_callback' => '__return_true'
     )

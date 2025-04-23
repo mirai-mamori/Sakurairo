@@ -3115,6 +3115,7 @@ function get_archive_info() {
             set_transient('time_archive',$years,2592000);
         }
     endif;
+    return $years;
 }
 
 //更新文章后更新缓存

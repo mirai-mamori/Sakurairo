@@ -584,7 +584,7 @@ get_header();
 <?php
 $years = get_transient('time_archive');
 if (!$years) {
-    get_archive_info();
+    $years = get_archive_info();
 }
 foreach ($years as $year => $months) {
     $postCount = array_sum(array_map('count', $months));
@@ -593,7 +593,7 @@ foreach ($years as $year => $months) {
         $activeMonths[(int)$m] = count($arr) > 0;
     }
     // 年份卡片
-    echo '<section class="timeline-year-card" tabindex="0" data-year="' . $year . '" data-months="'. $months .'">';
+    echo '<section class="timeline-year-card" tabindex="0" data-year="' . $year . '" data-months="'. $year .'">';
     echo '<div class="timeline-year-header">';
     echo '<span class="timeline-year-number">' . $year . '</span>';
     echo '<span class="timeline-year-count">' . $postCount . ' ' . __('Posts', 'sakurairo') . '</span>';
@@ -608,6 +608,6 @@ foreach ($years as $year => $months) {
     echo '</section>';
 }
 ?>
-<div id="timeline-modal-mask" class="timeline-modal-mask"><div class="timeline-modal"><span class="timeline-modal-close" id="timeline-modal-close">×</span><div id="timeline-modal-content" data-archiveAPI=<?php echo rest_url('sakura/v1/archive_info');?>></div></div></div>
+<div id="timeline-modal-mask" class="timeline-modal-mask"><div class="timeline-modal"><span class="timeline-modal-close" id="timeline-modal-close">×</span><div id="timeline-modal-content" data-archiveapi=<?php echo rest_url('sakura/v1/archive_info');?>></div></div></div>
 <script src="<?php echo get_template_directory_uri(); ?>/js/timeline.js"></script>
 <?php get_footer(); ?>

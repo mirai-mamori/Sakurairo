@@ -106,7 +106,7 @@ class Timeline {
         this.modalContent = document.getElementById('timeline-modal-content');
         this.modalClose = document.getElementById('timeline-modal-close');
 
-        this.contentAPI = this.modalContent.dataset.archiveAPI;
+        this.contentAPI = this.modalContent.dataset.archiveapi;
         this.contents = '';
 
         if (!this.timelineRoot || !this.modalMask || !this.modalContent || !this.modalClose) return;
@@ -117,12 +117,12 @@ class Timeline {
     async FetchContents() {
         try {
             const response = await fetch(this.contentAPI);
-            this.contents = JSON.parse(response);
+            this.contents = await response.json();
         } catch (error) {
             console.warn("获取内容失败，重试中...", error);
             try {
                 const response = await fetch(this.contentAPI);
-                this.contents = JSON.parse(response);
+                this.contents = await response.json();
             } catch (retryError) {
                 console.error("获取内容失败:", retryError);
             }
@@ -283,7 +283,7 @@ function initTimeline() {
     }
     timelineInstance = new Timeline();
     timelineInstance.init();
-    async () => await timelineInstance.FetchContents();
+    (async function(){await timelineInstance.FetchContents()}()) ;
 }
 
 // 初始化事件监听
