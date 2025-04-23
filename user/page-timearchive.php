@@ -572,6 +572,10 @@ get_header();
         }
     }
 
+    .timeline-modal::-webkit-scrollbar-track {
+        margin: 5px;
+    }
+
 </style>
 <?php 
     if (!iro_opt('patternimg') || !get_post_thumbnail_id(get_the_ID())) { 

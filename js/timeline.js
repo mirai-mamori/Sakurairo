@@ -78,7 +78,7 @@ class Timeline {
 
         // 改进语言检测逻辑
         const htmlLang = (document.documentElement.lang || '').toLowerCase();
-        console.log('Detected HTML lang:', htmlLang);
+        // console.log('Detected HTML lang:', htmlLang);
         
         // 支持更多中文变体
         const zhVariants = ['zh-hans', 'zh-cn', 'zh', 'zh-hans-cn'];
@@ -97,7 +97,7 @@ class Timeline {
             this.currentLang = 'en';
         }
             
-        console.log('Selected language:', this.currentLang);
+        // console.log('Selected language:', this.currentLang);
     }
 
     init() {
