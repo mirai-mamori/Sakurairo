@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: Timeline Template
+ * Template Name: Timearchive Template
  */
 get_header();
 ?>
@@ -246,7 +246,7 @@ get_header();
     
     /* 统计数据卡片 */    
     .timeline-modal-statbox {
-        background: rgba(var(--theme-skin-matching-R, 80),var(--theme-skin-matching-G, 80),var(--theme-skin-matching-B, 80),0.04);
+        background: rgba(0,0,0,0.04);
         border-radius: 1.1rem;
         padding: 1.1rem 1rem;
         min-width: 110px;
@@ -255,8 +255,9 @@ get_header();
         flex-direction: column;
         align-items: center;
         transition: transform 0.2s, box-shadow 0.2s;
-        border: 1.5px solid rgba(var(--theme-skin-matching-R, 80),var(--theme-skin-matching-G, 80),var(--theme-skin-matching-B, 80),0.08);
+        border: 1.5px solid rgba(0,0,0,0.08);
         position: relative;
+        z-index: 3;
     }
     
     .timeline-modal-statbox .stat-tooltip {
@@ -275,7 +276,7 @@ get_header();
         visibility: hidden;
         transition: all 0.25s cubic-bezier(.4,2,.6,1);
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        z-index: 1000;
+        z-index: 999;
     }
     
     .timeline-modal-statbox .stat-tooltip::after {
@@ -295,7 +296,7 @@ get_header();
     }
     .timeline-modal-statbox:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 16px rgba(var(--theme-skin-matching-R, 80),var(--theme-skin-matching-G, 80),var(--theme-skin-matching-B, 80),0.12);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
     }
     .timeline-modal-statbox .stat-icon {
         font-size: 1.15rem;
@@ -373,7 +374,7 @@ get_header();
     .timeline-modal-post-date {
         font-size: 0.85rem;
         color: #888;
-        background: rgba(var(--theme-skin-matching-R, 80),var(--theme-skin-matching-G, 80),var(--theme-skin-matching-B, 80),0.08);
+        background: rgba(0,0,0,0.03);
         padding: 0.3rem 0.6rem;
         border-radius: 0.5rem;
         letter-spacing: 0.05em;
@@ -652,7 +653,7 @@ if (have_posts()) :
         echo '<section class="timeline-year-card" tabindex="0" data-year="' . $year . '" data-months="' . htmlspecialchars(json_encode($months), ENT_QUOTES, 'UTF-8') . '">';
         echo '<div class="timeline-year-header">';
         echo '<span class="timeline-year-number">' . $year . '</span>';
-        echo '<span class="timeline-year-count">' . $postCount . ' 篇</span>';
+        echo '<span class="timeline-year-count">' . $postCount . ' ' . __('Posts', 'sakurairo') . '</span>';
         echo '</div>';
         // 月份日历
         echo '<div class="timeline-year-calendar">';

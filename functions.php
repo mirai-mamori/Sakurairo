@@ -237,11 +237,6 @@ function i18n_templates_name ($translated_name, $original_name) {
     $lang = get_user_locale();
 
     $template_names = array(
-        'Archive Template' => array(
-            'zh_CN' => '归档页模板',
-            'zh_TW' => '歸檔頁模板',
-            'ja'    => 'アーカイブテンプレート',
-        ),
         'Friendly Links Template' => array(
             'zh_CN' => '友情链接模板',
             'zh_TW' => '友情連結模板',
@@ -267,10 +262,10 @@ function i18n_templates_name ($translated_name, $original_name) {
             'zh_TW' => 'Steam 庫模板',
             'ja'    => 'Steamライブラリテンプレート',
         ),
-        'Timeline Template' => array(
-            'zh_CN' => '时光轴模板',
-            'zh_TW' => '時光軸模板',
-            'ja'    => 'タイムラインテンプレート',
+        'Timearchive Template' => array(
+            'zh_CN' => '时光归档模板',
+            'zh_TW' => '時光歸檔模板',
+            'ja'    => 'タイムアーカイブテンプレート',
         ),
     );
     
