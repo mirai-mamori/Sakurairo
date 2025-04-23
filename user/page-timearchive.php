@@ -157,6 +157,11 @@ get_header();
 
     /* 弹窗遮罩和内容 */    /* 模态框遮罩层 */
     .timeline-modal-mask {
+        height: 100vh;
+        width: 100vw;
+        max-height: none;
+        max-width: none;
+        border: none;
         position: fixed;
         z-index: 9999;
         left: 0; 
@@ -181,7 +186,6 @@ get_header();
     .timeline-modal {
         background: #fff;
         border-radius: 1.2rem;
-        border: none;
         box-shadow: 0 8px 48px 0 rgba(0,0,0,0.18);
         max-width: 520px;
         width: 92vw;
@@ -613,6 +617,6 @@ foreach ($years as $year => $months) {
     echo '</section>';
 }
 ?>
-<div id="timeline-modal-mask" class="timeline-modal-mask"><dialog class="timeline-modal"><span class="timeline-modal-close" id="timeline-modal-close">×</span><div id="timeline-modal-content" data-archiveapi=<?php echo rest_url('sakura/v1/archive_info');?>></div></dialog></div>
+<dialog id="timeline-modal-mask" class="timeline-modal-mask"><div class="timeline-modal"><span class="timeline-modal-close" id="timeline-modal-close">×</span><div id="timeline-modal-content" data-archiveapi=<?php echo rest_url('sakura/v1/archive_info');?>></div></div></dialog>
 <script src="<?php echo get_template_directory_uri(); ?>/js/timeline.js"></script>
 <?php get_footer(); ?>

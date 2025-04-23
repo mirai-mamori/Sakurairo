@@ -38,7 +38,7 @@ class Timeline {
         this.modalContent = document.getElementById('timeline-modal-content');
         this.modalClose = document.getElementById('timeline-modal-close');
 
-        this.modalMain = document.querySelector(".timeline-modal")
+        this.modalMain = document.querySelector("#timeline-modal-mask")
 
         if (!this.timelineRoot || !this.modalMask || !this.modalContent || !this.modalClose) {
             document.documentElement.style.overflowY = 'auto';
