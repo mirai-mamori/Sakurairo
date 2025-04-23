@@ -1,5 +1,5 @@
 // 多语言翻译对象
-const timelineTranslations = {
+let timelineTranslations = {
     'zh-CN': {
         yearOverview: '年度总览',
         articleCount: '投稿数',
@@ -106,13 +106,14 @@ class Timeline {
         this.modalContent = document.getElementById('timeline-modal-content');
         this.modalClose = document.getElementById('timeline-modal-close');
 
-        this.contentAPI = this.modalContent.dataset.archiveapi;
-        this.contents = '';
-
         if (!this.timelineRoot || !this.modalMask || !this.modalContent || !this.modalClose) {
             document.documentElement.style.overflowY = 'auto';
             return;
         }
+
+        this.contentAPI = this.modalContent.dataset.archiveapi;
+        this.contents = '';
+        (async function(){await timelineInstance.FetchContents()}()) ;
 
         this.bindEvents();
     }
@@ -290,7 +291,6 @@ function initTimeline() {
     }
     timelineInstance = new Timeline();
     timelineInstance.init();
-    (async function(){await timelineInstance.FetchContents()}()) ;
 }
 
 // 初始化事件监听
