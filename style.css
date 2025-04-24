@@ -188,7 +188,6 @@ a:hover {
 .notice-icon {
   float: left;
   margin: 2px 10px;
-  font-family: 'Dela Gothic One';
 }
 
 /* Post List Thumbnails */
@@ -3852,7 +3851,6 @@ input#upload-img-file {
   margin-top: -30px;
   left: 0;
   width: 100%;
-  font-family: 'Dela Gothic One';
   font-weight: 700;
   padding: 0 80px;
   text-indent: 15px;
