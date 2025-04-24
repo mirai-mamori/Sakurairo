@@ -4166,7 +4166,7 @@ $prefix = 'iro_options';
         'id' => 'vision_resource_basepath',
         'type' => 'text',
         'title' => __('Vision Resource Basepath','sakurairo_csf'),
-        'desc' => __('This link directory structure needs to be consistent with the <a href="https://github.com/Fuukei/Sakurairo_Vision">Sakurairo Vision</a> repositories officially provided by fuukei, otherwise some resources 404 may appear. The image source officially provided by <a href="https://www.upyun.com/">Upyun</a> is adopted by default.','sakurairo_csf'),
+        'desc' => __('This link directory structure needs to be consistent with the <a href="https://github.com/Fuukei/Sakurairo_Vision">Sakurairo Vision</a> repositories officially provided by fuukei, otherwise some resources 404 may appear. The image source officially provided by <a href="https://waf.pro/">WAFPRO</a> is adopted by default.','sakurairo_csf'),
         'default' => "https://s.nmxc.ltd/sakurairo_vision/@3.0/"
       ),
 

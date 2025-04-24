@@ -11,8 +11,9 @@
 include_once('inc/classes/IpLocation.php');
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
-define('INT_VERSION', '20.0.1');
 define('BUILD_VERSION', '3');
+define('INT_VERSION', '20.0.2');
+define('SSU_URL', 'https://api.fuukei.org/update/ssu.json');
 
 function check_php_version($preset_version)
 {
@@ -236,11 +237,6 @@ function i18n_templates_name ($translated_name, $original_name) {
     $lang = get_user_locale();
 
     $template_names = array(
-        'Archive Template' => array(
-            'zh_CN' => '归档页模板',
-            'zh_TW' => '歸檔頁模板',
-            'ja'    => 'アーカイブテンプレート',
-        ),
         'Friendly Links Template' => array(
             'zh_CN' => '友情链接模板',
             'zh_TW' => '友情連結模板',
@@ -266,10 +262,10 @@ function i18n_templates_name ($translated_name, $original_name) {
             'zh_TW' => 'Steam 庫模板',
             'ja'    => 'Steamライブラリテンプレート',
         ),
-        'Timeline Template' => array(
-            'zh_CN' => '时光轴模板',
-            'zh_TW' => '時光軸模板',
-            'ja'    => 'タイムラインテンプレート',
+        'Timearchive Template' => array(
+            'zh_CN' => '时光归档模板',
+            'zh_TW' => '時光歸檔模板',
+            'ja'    => 'タイムアーカイブテンプレート',
         ),
     );
     
@@ -628,10 +624,10 @@ require get_template_directory() . '/inc/cache_settings.php';
  * 仅在Customizer预览框架中和Customizer编辑器载入时加载
  */
 add_action( 'customize_register', function () {
-    require get_template_directory() . '/inc/customizer.php';
+    require_once get_template_directory() . '/inc/customizer.php';
 } );
 if ( is_customize_preview() ) {
-    require get_template_directory() . '/inc/customizer.php';
+    require_once get_template_directory() . '/inc/customizer.php';
 }
 function update_customize_to_iro_options() { //从key映射表中重组并保存设置项至iro_options中
     $theme_mod_options = get_theme_mod( 'iro_options', [] );
@@ -806,6 +802,9 @@ function get_post_views($post_id)
         return empty($views) ? 0 : $views;
     }
 }
+
+// 引入post_metas方法
+require_once get_template_directory() . "/inc/post_metas.php";
 
 function is_webp(): bool
 {
@@ -1660,73 +1659,6 @@ function siren_private()
     die;
 }
 
-//时间序列
-function memory_archives_list()
-{
-    // 尝试从缓存中获取结果
-    $cache_key = 'memory_archives_list_' . get_user_locale();
-    $output = get_transient($cache_key);
-
-    if ($output !== false) {
-        echo $output;
-        return;
-    }
-    $output = '<div id="archives"><p style="text-align:right;">[<span id="al_expand_collapse">' . __("All expand/collapse", "sakurairo") /*全部展开/收缩*/. '</span>]<!-- (注: 点击月份可以展开)--></p>';
-    $posts = get_posts(
-        array(
-            'posts_per_page' => -1,
-            'ignore_sticky_posts' => true,
-            'post_type' => 'post'
-        )
-    );
-
-    $posts_sorted_by_time = [];
-    foreach ($posts as $post) {
-        $post_id = $post->ID;
-        $post_time = get_post_time('U', false, $post_id);
-        $posts_sorted_by_time[$post_time] = $post;
-    }
-    krsort($posts_sorted_by_time); // 按时间倒序排列
-
-    $year = 0;
-    $mon = 0;
-    foreach ($posts_sorted_by_time as $post) {
-        setup_postdata($post);
-        $year_tmp = get_post_time('Y', false, $post);
-        $mon_tmp = get_post_time('m', false, $post);
-        $post_id = $post->ID;
-        $post_views = get_post_views($post_id);
-        if (($year != $year_tmp && $year > 0) || ($mon != $mon_tmp && $mon > 0)) {
-            $output .= '</ul></li>';
-        }
-
-        if ($year != $year_tmp && $year > 0) {
-            $output .= '</ul>';
-        }
-
-        if ($year != $year_tmp) {
-            $output .= '<h3 class="al_year">' . $year_tmp . __(" year", "sakurairo") . /*年*/' </h3><ul class="al_mon_list">'; //输出年份
-        }
-        if ($year != $year_tmp || $mon != $mon_tmp) {
-            $output .= '<li class="al_li"><span class="al_mon"><span style="color:' . iro_opt('theme_skin') . ';">' . get_post_time('M', false, $post) . '</span> (<span id="post-num"></span>' . __(" post(s)", "sakurairo") /*篇文章*/. ')</span><ul class="al_post_list">'; //输出月份
-        }
-        $year = $year_tmp;
-        $mon = $mon_tmp;
-        $output .= '<li>' . '<a href="' . get_permalink($post) . '"><span style="color:' . iro_opt('theme_skin') . ';">' /*get_post_time('d'.__(" ","sakurairo"), false, $post) 日*/. '</span>' . get_the_title($post) . ' <span>(' . $post_views . ' <span class="fa-solid fa-chess-queen" aria-hidden="true"></span> / ' . get_comments_number($post) . ' <span class="fa-regular fa-comment-dots" aria-hidden="true"></span>)</span></a></li>';
-    }
-    wp_reset_postdata();
-    $output .= '</ul></li></ul> <!--<ul class="al_mon_list"><li><ul class="al_post_list" style="display: block;"><li>博客已经萌萌哒运行了<span id="monitorday"></span>天</li></ul></li></ul>--></div>';
-    set_transient($cache_key, $output, 3600);
-    echo $output;
-}
-
-// 在保存文章后清空缓存
-function clear_memory_archives_list_cache($post_id)
-{
-    delete_transient('memory_archives_list_' . get_user_locale());
-}
-add_action('save_post', 'clear_memory_archives_list_cache');
-
 require_once __DIR__ . '/inc/word-stat.php';
 /**
  * 字数、词数统计
@@ -1734,7 +1666,7 @@ require_once __DIR__ . '/inc/word-stat.php';
 function count_post_words($post_ID)
 {
     $post = get_post($post_ID);
-    if ($post->post_type !== "post") {
+    if (!in_array($post->post_type, ['post', 'shuoshuo'])) {
         return;
     }
     $content = $post->post_content;
@@ -2621,7 +2553,7 @@ function register_shortcodes() {
     
         if (iro_opt('ghcard_proxy')) {
             
-            $svg_url = 'https://github-readme-stats.vercel.app/api/pin/?username=' . esc_attr($username) . '&repo=' . esc_attr($repo);
+            $svg_url = 'https://github-readme-stats.vercel.app/api/pin/?hide_border=true&username=' . esc_attr($username) . '&repo=' . esc_attr($repo);
             $response = wp_remote_get($svg_url);
     
             if (!is_wp_error($response)) {
@@ -2638,7 +2570,7 @@ function register_shortcodes() {
     
         //获取失败或未启用代理
         if (empty($card_content)) {
-            $card_content = '<img decoding="async" src="https://github-readme-stats.vercel.app/api/pin/?username=' . esc_attr($username) . '&repo=' . esc_attr($repo) . '" alt="Github-Card">';
+            $card_content = '<img decoding="async" src="https://github-readme-stats.vercel.app/api/pin/?hide_border=true&username=' . esc_attr($username) . '&repo=' . esc_attr($repo) . '" alt="Github-Card">';
         }
     
         //输出内容
@@ -3119,6 +3051,79 @@ function get_the_user_ip()
     $ip = $_SERVER['HTTP_CLIENT_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
     return apply_filters('wpb_get_ip', $ip);
 }
+
+//归档页信息缓存
+function get_archive_info() {
+    // 获取所有文章和说说
+    $posts = get_posts([
+        'posts_per_page' => -1,
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_type' => array('post', 'shuoshuo'),
+        'post_status'    => 'publish',
+        'suppress_filters' => false // 同时获取文章和说说
+    ]);
+    $years = [];
+    $stats = [
+        'total' => [
+            'posts' => 0,
+            'views' => 0,
+            'words' => 0,
+            'comments' => 0
+        ],
+        'shuoshuo' => [
+            'posts' => 0,
+            'views' => 0,
+            'words' => 0,
+            'comments' => 0
+        ],
+        'article' => [
+            'posts' => 0,
+            'views' => 0,
+            'words' => 0,
+            'comments' => 0
+        ]
+    ];
+        foreach ($posts as $post) {
+        $views = get_post_views($post->ID);
+        $words = get_meta_words_count($post->ID);
+        $comments = get_comments_number($post->ID);
+        
+        // 判断文章类型（使用post_type而不是post_format）
+        $post_type = $post->post_type === 'shuoshuo' ? 'shuoshuo' : 'article';
+        
+        // 更新统计数据
+        $stats[$post_type]['posts']++;
+        $stats[$post_type]['views'] += intval($views);
+        $stats[$post_type]['words'] += intval($words);
+        $stats[$post_type]['comments'] += intval($comments);
+        
+        $stats['total']['posts']++;
+        $stats['total']['views'] += intval($views);
+        $stats['total']['words'] += intval($words);
+        $stats['total']['comments'] += intval($comments);
+        
+        $post->meta = [
+            'views' => $views,
+            'words' => $words,
+            'type' => $post_type
+        ];
+        
+        $year = date('Y', strtotime($post->post_date));
+        $month = date('n', strtotime($post->post_date));
+        if (!isset($years[$year])) $years[$year] = [];
+        if (!isset($years[$year][$month])) $years[$year][$month] = [];
+        $years[$year][$month][] = $post;
+
+        set_transient('time_archive',$years,2592000);
+    }
+    return $years;
+}
+
+//更新文章后更新缓存
+add_action('save_post', function(){
+    get_archive_info();
+});
 
 /*
  * 友情链接提交功能

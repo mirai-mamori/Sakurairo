@@ -7,6 +7,7 @@ if (!defined('ABSPATH')) {
 <?php 
 $nav_style = iro_opt('sakura_nav_style');
 $nav_text_logo = iro_opt('nav_text_logo');
+$show_search = (bool)iro_opt('nav_menu_search');
 ?>
 <style>
   <?php if (!empty($nav_text_logo['font_name'])){ ?>
@@ -66,11 +67,15 @@ $nav_text_logo = iro_opt('nav_text_logo');
       <i class="fa-solid fa-bars"></i>
   </div>
   <div class="sakura_nav mobile-nav">
+
+    <?php if($show_search): // 移动端搜索?>
     <div class="mo-menu-search">
       <form class="search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
           <input class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
       </form>
     </div>
+    <?php endif; ?>
+
   <?php wp_nav_menu([
             'depth' => 2, 
             'theme_location' => 'primary', 
@@ -107,8 +112,7 @@ $nav_text_logo = iro_opt('nav_text_logo');
   <div class="menu-wrapper">
     <?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => 'nav', 'container_class' => 'sakura_nav']); //菜单?>
 
-    <?php
-    if (iro_opt('nav_menu_search') == '1') { //是否开启搜索框?>
+    <?php if ($show_search) { //是否开启搜索框?>
       <div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
     <?php } ?>
 

@@ -2,7 +2,7 @@
 get_header();
 
 // 获取组件顺序数据
-$component_order = iro_opt('homepage_components',[]);
+$component_order = iro_opt('homepage_components',[]) ? iro_opt('homepage_components',[]) : array();
 
 // 按顺序动态渲染组件
 foreach ($component_order as $component) {

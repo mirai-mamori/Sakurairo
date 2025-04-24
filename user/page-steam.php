@@ -6,7 +6,6 @@
 get_header();
 
 ?>
-<meta name="referrer" content="same-origin">
 <style>
     .site-content {
         max-width: 1280px;
@@ -19,10 +18,6 @@ get_header();
         margin: 6.5% 0 7.5%;
         letter-spacing: 2px;
         font-weight: var(--global-font-weight);
-    }
-
-    .comments {
-        display: none;
     }
 
     .steam-row {

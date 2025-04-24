@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://docs.fuukei.org/
 Description: A WordPress theme that is built with AI-assisted reading features, colorful, user-friendly, well-rounded, and rich in functionalities. (Based on Theme Sakura)
-Version: 3.0.1
+Version: 3.0.2
 Tested up to: 6.8
 Requires at least: 6.0
 Requires PHP: 8.0
@@ -29,9 +29,23 @@ i,i:hover{
 }
 
 li,ul,ol {
-  list-style: none;
   cursor: pointer;
   padding-inline-start: unset;
+}
+
+ol.toc-list {
+  list-style-type: none; 
+  counter-reset: none;
+}
+
+ol.toc-list li {
+  counter-increment: none;
+}
+
+.entry-content li,
+.entry-content ul,
+.entry-content ol {
+  cursor: unset;
 }
 
 ul.commentwrap,
@@ -40,6 +54,12 @@ ul.search-no-reasults,
 ul.search-no-reasults li,
 ul.menu-list{
   cursor: unset;
+  list-style-type: none; 
+}
+
+ul.al_post_list,
+ul.al_mon_list{
+  list-style-type: none; 
 }
 
 img {
@@ -168,7 +188,6 @@ a:hover {
 .notice-icon {
   float: left;
   margin: 2px 10px;
-  font-family: 'Dela Gothic One';
 }
 
 /* Post List Thumbnails */
@@ -1405,13 +1424,7 @@ h1.page-title {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.author-profile {
-  float: left;
-  display: flex;
-  gap: 10px;
-}
-
-.author-profile .info {
+.post-footer .info {
   overflow: hidden;
   float: left;
   box-shadow: 0 1px 30px -4px #e8e8e8;
@@ -1421,17 +1434,17 @@ h1.page-title {
   border: 1px solid #FFFFFF;
 }
 
-.author-profile .info:hover {
+.post-footer .info:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.8);
 }
 
-.author-profile .profile {
+.post-footer .profile {
   display: block;
   float: left;
 }
 
-.author-profile .meta {
+.post-footer .meta {
   display: block;
   float: left;
   box-shadow: 0 1px 30px -4px #e8e8e8;
@@ -1441,12 +1454,12 @@ h1.page-title {
   border: 1px solid #FFFFFF;
 }
 
-.author-profile .meta:hover {
+.post-footer .meta:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.8);
 }
 
-.author-profile .meta a {
+.post-footer .meta a {
   font-size: 16px;
   float: left;
   color: #7d7d7d;
@@ -1629,14 +1642,14 @@ h1.page-title {
   margin: 0;
 }
 
-.author-profile .profile img {
+.post-footer .profile img {
   max-width: 30px;
   max-height: 30px;
   border-radius: 100%;
   float: left;
 }
 
-.author-profile .desc {
+.post-footer .desc {
   font-size: 13px;
   letter-spacing: 0;
   display: block;
@@ -1650,12 +1663,12 @@ h1.page-title {
   border: 1px solid #FFFFFF;
 }
 
-.author-profile .desc:hover {
+.post-footer .desc:hover {
   box-shadow: 0 1px 20px 10px #e8e8e8;
   background: rgba(255, 255, 255, 0.8);
 }
 
-.author-profile .desc i {
+.post-footer .desc i {
   color: #7D7D7D;
   float: none;
   margin-right: 10px;
@@ -1898,7 +1911,7 @@ header.page-header {
 }
 
 nav#comments-navi {
-  margin: 0 auto;
+  margin: 30px auto;
   max-width: 860px;
   width: 100%;
   color: #9A9A9A;
@@ -2499,6 +2512,7 @@ h1.main-title {
 .top-social_v2 li{
   float: left;
   margin: 5px;
+  list-style-type: none; 
 }
 
 .slider-container {
@@ -2514,11 +2528,9 @@ h1.main-title {
 .next {
   width: 35px;
   height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   user-select: none;
+  text-align: center;
 }
 
 .slider-wrapper {
@@ -3839,7 +3851,6 @@ input#upload-img-file {
   margin-top: -30px;
   left: 0;
   width: 100%;
-  font-family: 'Dela Gothic One';
   font-weight: 700;
   padding: 0 80px;
   text-indent: 15px;
@@ -5100,11 +5111,13 @@ form#commentform,.comment-respond textarea:active,
 span.page-numbers.current {
   color: var(--theme-skin-matching);
   padding: 0 5px;
+  margin: 30px 10px;
 }
 
-a.page-numbers {
+span.page-numbers.dots, a.page-numbers {
   color: #ABABAB;
   padding: 0 5px;
+  margin: 30px 10px;
 }
 
 .comments .comments-hidden {

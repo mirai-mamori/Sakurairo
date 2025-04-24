@@ -98,8 +98,8 @@ header('X-Frame-Options: SAMEORIGIN');
     <?php wp_head(); ?>
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>｜<?php bloginfo('description'); ?>" href="<?php bloginfo('rss2_url'); ?>" />
     
-    <link rel="preload" as="style" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css?family=Noto+Serif+SC|Noto+Sans+SC|Dela+Gothic+One|Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap">
-    <link rel="stylesheet" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css?family=Noto+Serif+SC|Noto+Sans+SC|Dela+Gothic+One|Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap" media="all">
+    <link rel="preload" as="style" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css?family=Noto+Serif+SC|Noto+Sans+SC|Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap">
+    <link rel="stylesheet" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css?family=Noto+Serif+SC|Noto+Sans+SC|Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap" media="all">
     <?php if (iro_opt('google_analytics_id')) : ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=<?= esc_attr(iro_opt('google_analytics_id')); ?>"></script>
@@ -178,6 +178,7 @@ header('X-Frame-Options: SAMEORIGIN');
      <?php if(iro_opt('choice_of_nav_style') == 'sakura'){
         get_template_part('layouts/' . 'sakura_header');
      } else {
+        $show_search = (bool)iro_opt('nav_menu_search');
     ?>
     
     <header class="site-header no-select" role="banner">
@@ -186,11 +187,15 @@ header('X-Frame-Options: SAMEORIGIN');
             <i class="fa-solid fa-bars"></i>
         </div>
         <div class="mobile-nav">
+
+        <?php if($show_search) : ?>
         <div class="mo-menu-search">
             <form class="search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
                 <input class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
             </form>
         </div>
+        <?php endif; ?>
+
         <?php wp_nav_menu([
             'depth' => 2, 
             'theme_location' => 'primary', 
@@ -226,7 +231,6 @@ header('X-Frame-Options: SAMEORIGIN');
         <?php endif;
 
         // Cache commonly used options
-        $show_search = (bool)iro_opt('nav_menu_search');
         $show_user_avatar = (bool)iro_opt('nav_user_menu',true);
         $enable_random_graphs = (bool)iro_opt('cover_switch', true) && (bool)iro_opt('cover_random_graphs_switch', true);
         ?>

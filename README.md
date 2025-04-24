@@ -18,6 +18,8 @@
 
 - 你可以前往 [Github Release](https://github.com/mirai-mamori/Sakurairo/releases/latest) 或 [Gitee 镜像](https://gitee.com/mirai-mamori/Sakurairo) 下载
 
+- 使用 [无缝更新插件](https://github.com/mirai-mamori/wp-seamless-update/releases/latest) 第一时间获取最新更新
+
 - 使用本主题的博客：https://docs.fuukei.org/demo/
 
 - 主题交流：[QQ群:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)  ＆  [Telegram群:fksakurairo](https://t.me/fksakurairo)
@@ -29,7 +31,7 @@
 
 ## 赞助商：
 
-<a href="https://www2.waf.pro/"><img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/wafpro.webp" alt="warpro" width="200"></a>  
+<a href="https://waf.pro/"><img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/wafpro.webp" alt="warpro" width="200"></a>  
 
 ## 感谢每一位支持我们的你：
 

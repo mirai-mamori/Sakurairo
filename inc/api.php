@@ -125,6 +125,20 @@ add_action('rest_api_init', function () {
          return current_user_can( 'administrator' ) ;
         }
     ));
+    // 归档页信息
+    register_rest_route('sakura/v1', '/archive_info', array(
+        'methods' => 'GET',
+        'callback' => function (){
+            $time_archive = get_transient('time_archive');
+            if (!$time_archive) {
+                get_archive_info();
+                $time_archive = get_transient('time_archive');
+            }
+            return $time_archive;
+        },
+        'permission_callback' => '__return_true'
+    )
+    ); 
 });
 
 require_once ('chatgpt/hooks.php');

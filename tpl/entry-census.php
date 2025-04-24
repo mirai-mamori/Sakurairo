@@ -14,6 +14,7 @@ function __wrap_with_span($content): string
 function get_entry_census_meta_html($has_splitter)
 {
     $post = get_post();
+    $post_id = get_the_ID();
     $meta_display = iro_opt("article_meta_show_in_head", array("last_edit_time_relative", "post_views"));
     if (!is_array($meta_display) && !is_object($meta_display)) {
         $meta_display = array("last_edit_time_relative", "post_views");
@@ -22,25 +23,22 @@ function get_entry_census_meta_html($has_splitter)
         $content = false;
         switch ($meta_key) {
             case "author":
-                require_once get_template_directory() . '/tpl/meta-author.php';
                 ob_start();
                 render_author_meta();
                 $content = ob_get_contents();
                 ob_end_clean();
                 break;
             case "category":
-                require_once get_template_directory() . '/tpl/meta-category.php';
-                $content = get_meta_category_html();
+                $content = get_meta_category_html($post_id);
                 break;
             case "comment_count":
-                require_once get_template_directory() . '/tpl/meta-comments.php';
                 ob_start();
                 render_meta_comments();
                 $content = ob_get_contents();
                 ob_end_clean();
                 break;
             case "post_views":
-                $content = get_post_views(get_the_ID()) . ' ' . _n('View', 'Views', get_post_views(get_the_ID()), 'sakurairo');/*次阅读*/
+                $content = get_post_views($post_id) . ' ' . _n('View', 'Views', get_post_views($post_id), 'sakurairo');/*次阅读*/
                 if ($has_splitter) {
                     $content = __wrap_with_span($content);
                 } else {
@@ -48,8 +46,7 @@ function get_entry_census_meta_html($has_splitter)
                 }
                 break;
             case "post_words_count":
-                require_once get_template_directory() . '/tpl/meta-words-count.php';
-                $content = get_meta_words_count();
+                $content = get_meta_words_count($post_id);
                 if ($has_splitter) {
                     $content = __wrap_with_span($content);
                 } else {
@@ -57,8 +54,7 @@ function get_entry_census_meta_html($has_splitter)
                 }
                 break;
             case "reading_time":
-                require_once get_template_directory() . '/tpl/meta-ert.php';
-                $content = __("Estimate Reading Time", "sakurairo") . ": " . get_meta_estimate_reading_time();
+                $content = __("Estimate Reading Time", "sakurairo") . ": " . get_meta_estimate_reading_time($post_id);
                 if ($has_splitter) {
                     $content = __wrap_with_span($content);
                 } else {
