@@ -3542,7 +3542,7 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/options/leaflow.webp" width="25%" height="25%"/><img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/options/postchat.webp" width="25%" height="25%"/>','sakurairo_csf'),
+        'content' => __('<img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/options/postchat.webp" width="25%" height="25%"/>','sakurairo_csf'),
       ),
 
       array(
@@ -3551,9 +3551,7 @@ $prefix = 'iro_options';
           ?>
           <div>
            <h5><?=__("Reset to API providers' default options","sakurairo_csf")?></h5>
-           <div class="chatgpt_config_defaults"><button data-name="leaflow">
-           <?=__("Leaflow","sakurairo_csf")?>
-           </button>
+           <div class="chatgpt_config_defaults">
            <button data-name="postchat">
            <?=__("PostChat","sakurairo_csf")?>
            </button>
@@ -3562,41 +3560,36 @@ $prefix = 'iro_options';
            </button>
           </div>
            <script>
- 
-            const defaults = {
-                  leaflow:{
-                    chatgpt_endpoint:"https://amber-api.leaflow.cn/api/openai-compatible/v1/chat/completions",
-                    chatgpt_model:"auto"
-                  },
-                  postchat:{
-                    chatgpt_endpoint:"https://ai.tianli0.top/v1/chat/completions",
-                    chatgpt_model:"tianli"
-                  },
-                  openai:{
-                    chatgpt_endpoint:"https://api.openai.com/v1/chat/completions",
-                    chatgpt_model:"gpt-4o-mini",
-                  }
-                }
-            document.querySelector(".chatgpt_config_defaults").addEventListener('click',(e)=>{
-              if(e.target.tagName === "BUTTON"){
-                const name = e.target.dataset.name
+        const defaults = {
+          postchat:{
+            chatgpt_endpoint:"https://ai.tianli0.top/v1/chat/completions",
+            chatgpt_model:"tianli"
+          },
+          openai:{
+            chatgpt_endpoint:"https://api.openai.com/v1/chat/completions",
+            chatgpt_model:"gpt-4o-mini",
+          }
+            }
+        document.querySelector(".chatgpt_config_defaults").addEventListener('click',(e)=>{
+          if(e.target.tagName === "BUTTON"){
+            const name = e.target.dataset.name
 
-                const def = defaults[name]
-                if(!def)return
-                e.preventDefault()
-                e.stopPropagation()
-                try {
-                for(const key in def){
-                    document.querySelector(`input[name="iro_options[${key}]"]`).value = def[key]
-                }
-                alert('<?=__("Reset successfully","sakurairo_csf")?>')
+            const def = defaults[name]
+            if(!def)return
+            e.preventDefault()
+            e.stopPropagation()
+            try {
+            for(const key in def){
+            document.querySelector(`input[name="iro_options[${key}]"]`).value = def[key]
+            }
+            alert('<?=__("Reset successfully","sakurairo_csf")?>')
 
-                } catch (error) {
-                  alert("<?=__("Failed to reset","sakurairo_csf")?>" )
-                  console.error(error)
-                }
-              }
-            })
+            } catch (error) {
+          alert("<?=__("Failed to reset","sakurairo_csf")?>" )
+          console.error(error)
+            }
+          }
+        })
            </script> 
          </div>
           <?php

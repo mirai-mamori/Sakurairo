@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
-"POT-Creation-Date: 2025-04-17 14:49+0900\n"
-"PO-Revision-Date: 2025-04-17 14:50+0900\n"
+"POT-Creation-Date: 2025-04-24 20:27+0900\n"
+"PO-Revision-Date: 2025-04-24 20:27+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -3908,48 +3908,43 @@ msgstr ""
 
 #: options/theme-options.php:3545
 msgid ""
-"<img src=\"https://s.nmxc.ltd/sakurairo_vision/@3.0/options/leaflow.webp\" "
-"width=\"25%\" height=\"25%\"/><img src=\"https://s.nmxc.ltd/sakurairo_vision/"
-"@3.0/options/postchat.webp\" width=\"25%\" height=\"25%\"/>"
+"<img src=\"https://s.nmxc.ltd/sakurairo_vision/@3.0/options/postchat.webp\" "
+"width=\"25%\" height=\"25%\"/>"
 msgstr ""
 
 #: options/theme-options.php:3553
 msgid "Reset to API providers' default options"
 msgstr "APIプロバイダーのデフォルト・オプション"
 
-#: options/theme-options.php:3555
-msgid "Leaflow"
-msgstr ""
-
-#: options/theme-options.php:3558
+#: options/theme-options.php:3556
 msgid "PostChat"
 msgstr ""
 
-#: options/theme-options.php:3561
+#: options/theme-options.php:3559
 msgid "OpenAI"
 msgstr ""
 
-#: options/theme-options.php:3592
+#: options/theme-options.php:3585
 msgid "Reset successfully"
 msgstr "リセット成功"
 
-#: options/theme-options.php:3595
+#: options/theme-options.php:3588
 msgid "Failed to reset"
 msgstr "リセット失敗"
 
-#: options/theme-options.php:3609
+#: options/theme-options.php:3602
 msgid "ChatGPT Base URL"
 msgstr "ChatGPT Base URL"
 
-#: options/theme-options.php:3610
+#: options/theme-options.php:3603
 msgid "Fill in the ChatGPT Base URL"
 msgstr "ChatGPT Base URLを入力してください。"
 
-#: options/theme-options.php:3617
+#: options/theme-options.php:3610
 msgid "ChatGPT API keys"
 msgstr "ChatGPT API keys"
 
-#: options/theme-options.php:3618
+#: options/theme-options.php:3611
 msgid ""
 "Fill in Your ChatGPT API keys, please refer to <a href=\"https://platform."
 "openai.com/account/api-keys\">OpenAI Website</a> for further information."
@@ -3958,19 +3953,19 @@ msgstr ""
 "ために <a href=\"https://platform.openai.com/account/api-keys\">OpenAIのウェ"
 "ブサイト</a> に行くことができます"
 
-#: options/theme-options.php:3624
+#: options/theme-options.php:3617
 msgid "ChatGPT Max Tokens"
 msgstr "ChatGPT 最大トークン"
 
-#: options/theme-options.php:3625
+#: options/theme-options.php:3618
 msgid "Maximum number of words to be sent per segment"
 msgstr "セグメントごとに送信される最大ワード数"
 
-#: options/theme-options.php:3635
+#: options/theme-options.php:3628
 msgid "ChatGPT Model"
 msgstr "ChatGPTモデル"
 
-#: options/theme-options.php:3636
+#: options/theme-options.php:3629
 msgid ""
 "Only models support Chat Completion API can be used. The default is \"gpt-4o-"
 "mini. View https://platform.openai.com/docs/models/overview for further info."
@@ -3979,11 +3974,11 @@ msgstr ""
 "「gpt-4o-mini」 です。詳しくは https://platform.openai.com/docs/models/"
 "overview をご覧ください。"
 
-#: options/theme-options.php:3646
+#: options/theme-options.php:3639
 msgid "ChatGPT Article Summarize"
 msgstr "ChatGPTの記事の要約"
 
-#: options/theme-options.php:3647
+#: options/theme-options.php:3640
 msgid ""
 "After turning on, title and context of your articles will be automatically "
 "sent to ChatGPT to generate excerpts."
@@ -3991,7 +3986,7 @@ msgstr ""
 "オンにすると、記事のタイトルと文脈が自動的にChatGPTに送信され、抜粋が生成され"
 "ます。"
 
-#: options/theme-options.php:3653
+#: options/theme-options.php:3646
 msgid ""
 "Each update of your post will trigger a request to generate a summary. Due "
 "to current API limitations, if your article exceeds 4097 Token, the system "
@@ -4001,11 +3996,11 @@ msgstr ""
 "のAPIの制限により、記事が4097トークンを超える場合、システムは未超過部分のみを"
 "送信し、要約を生成します"
 
-#: options/theme-options.php:3662
+#: options/theme-options.php:3655
 msgid "Article IDs that do not Require ChatGPT Summarize"
 msgstr "ChatGPTサマリーを必要としない記事ID"
 
-#: options/theme-options.php:3663
+#: options/theme-options.php:3656
 msgid ""
 "Those articles will never be sent to ChatGPT for excerpt generation. Split "
 "each id with a \",\"."
@@ -4013,11 +4008,11 @@ msgstr ""
 "これらの記事は抜粋生成のためにChatGPTに送られることはありません。各IDを「, 」"
 "で分割してください。"
 
-#: options/theme-options.php:3673
+#: options/theme-options.php:3666
 msgid "ChatGPT Article Summarize Init Prompt"
 msgstr "ChatGPT 記事要約 初期プロンプト"
 
-#: options/theme-options.php:3677
+#: options/theme-options.php:3670
 msgid ""
 "Init Prompt instructs AI how to generate summaries for your articles. Init "
 "Prompt will be passed to ChatGPT as \"system\" role"
@@ -4025,11 +4020,11 @@ msgstr ""
 "Init PromptはAIに記事の要約を生成する方法を指示します。イニシャルプロンプト"
 "は 「システム 」ロールとしてChatGPTに渡されます。"
 
-#: options/theme-options.php:3684
+#: options/theme-options.php:3677
 msgid "ChatGPT Article Annotations Init Prompt"
 msgstr "ChatGPT 記事注釈 初期プロンプト"
 
-#: options/theme-options.php:3685
+#: options/theme-options.php:3678
 msgid ""
 "Init Prompt instructs AI how to generate annotations for your articles. Init "
 "Prompt will be passed to ChatGPT as \"system\" role"
@@ -4037,31 +4032,31 @@ msgstr ""
 "Init PromptはAIに記事の注釈を生成する方法を指示します。イニシャルプロンプト"
 "は 「システム 」ロールとしてChatGPTに渡されます。"
 
-#: options/theme-options.php:3694
+#: options/theme-options.php:3687
 msgid "ChatGPT API self test"
 msgstr "ChatGPT APIセルフテスト"
 
-#: options/theme-options.php:3698
+#: options/theme-options.php:3691
 msgid "TEST"
 msgstr "テスト"
 
-#: options/theme-options.php:3701
+#: options/theme-options.php:3694
 msgid "Results: "
 msgstr "結果 "
 
-#: options/theme-options.php:3713
+#: options/theme-options.php:3706
 msgid "Waiting for response..."
 msgstr "返事を待っている"
 
-#: options/theme-options.php:3724
+#: options/theme-options.php:3717
 msgid "Malformed post_id: "
 msgstr "post_id が不正です： "
 
-#: options/theme-options.php:3741
+#: options/theme-options.php:3734
 msgid "Low Use Options"
 msgstr "低使用オプション"
 
-#: options/theme-options.php:3748
+#: options/theme-options.php:3741
 msgid ""
 "You can click <a href=\"https://docs.fuukei.org/Sakurairo/Others/"
 "#%E4%BD%8E%E4%BD%BF%E7%94%A8%E8%AE%BE%E7%BD%AE\">here</a> to learn how to "
@@ -4071,87 +4066,87 @@ msgstr ""
 "fuukei.org/Sakurairo/Others/#%E4%BD%8E%E4%BD%BF%E7%94%A8%E8%AE%BE%E7%BD%AE\">"
 "ここをクリックしてください</a> 。"
 
-#: options/theme-options.php:3754
+#: options/theme-options.php:3747
 msgid "Statistics API"
 msgstr "統計 API"
 
-#: options/theme-options.php:3755
+#: options/theme-options.php:3748
 msgid ""
 "You can choose WP-Statistics plugin statistics or theme built-in statistics "
 "to display"
 msgstr ""
 "WP-Statistics プラグイン統計またはテーマ組み込み統計を選択して表示できます。"
 
-#: options/theme-options.php:3757
+#: options/theme-options.php:3750
 msgid "Theme Built in Statistics"
 msgstr "統計に組み込まれたテーマ"
 
-#: options/theme-options.php:3758
+#: options/theme-options.php:3751
 msgid "WP-Statistics Plugin Statistics"
 msgstr "WP-統計プラグイン統計"
 
-#: options/theme-options.php:3766
+#: options/theme-options.php:3759
 msgid "Statistics display format"
 msgstr "統計表示形式"
 
-#: options/theme-options.php:3767
+#: options/theme-options.php:3760
 msgid "You can choose from four different data display formats"
 msgstr "4種類のデータ表示形式から選択できます。"
 
-#: options/theme-options.php:3769
+#: options/theme-options.php:3762
 msgid "23333 Visits"
 msgstr "23333訪問"
 
-#: options/theme-options.php:3770
+#: options/theme-options.php:3763
 msgid "23,333 Visits"
 msgstr "23,333訪問"
 
-#: options/theme-options.php:3771
+#: options/theme-options.php:3764
 msgid "23 333 Visits"
 msgstr "23 333訪問"
 
-#: options/theme-options.php:3772
+#: options/theme-options.php:3765
 msgid "23K Visits"
 msgstr "23K訪問"
 
-#: options/theme-options.php:3780
+#: options/theme-options.php:3773
 msgid "Google Analytics Id"
 msgstr "グーグルアナリティクスID"
 
-#: options/theme-options.php:3781
+#: options/theme-options.php:3774
 msgid "If you already have a plugin to handle it, please keep here empty."
 msgstr ""
 "すでにそれを処理するプラグインがある場合は、ここに空のままにしてください。"
 
-#: options/theme-options.php:3787
+#: options/theme-options.php:3780
 msgid "Captcha Level"
 msgstr "キャプチャレベル"
 
-#: options/theme-options.php:3788
+#: options/theme-options.php:3781
 msgid "The difficulty level of the Theme Captcha"
 msgstr "テーマキャプチャの難易度"
 
-#: options/theme-options.php:3798
+#: options/theme-options.php:3791
 msgid "Custom CSS Styles"
 msgstr "カスタム CSS スタイル"
 
-#: options/theme-options.php:3799
+#: options/theme-options.php:3792
 msgid "Fill in the CSS code without writing style tag"
 msgstr "スタイルタグを書かずにCSSコードを入力する"
 
-#: options/theme-options.php:3806
+#: options/theme-options.php:3799
 msgid "Code inserted in the header"
 msgstr "ヘッダーに挿入されたコード"
 
-#: options/theme-options.php:3807
+#: options/theme-options.php:3800
 msgid "Insert HTML code right before </head>."
 msgstr "HTML コードを の直前に挿入します。"
 
-#: options/theme-options.php:3813
+#: options/theme-options.php:3806
 msgid "Timezone Fix"
 msgstr "タイムゾーン修正"
 
-#: options/theme-options.php:3814
+#: options/theme-options.php:3807
 msgid ""
 "Slide to adjust. If the comment has a time difference problem, adjust it "
 "here, fill in an integer. Calculation method: actual time = time of display "
@@ -4160,11 +4155,11 @@ msgstr ""
 "スライドして調整します。コメントに時間差の問題がある場合は、ここで調整し、整"
 "数を入力します。計算方法: 実際の時間 = 表示エラーの時間 - 入力した整数 (時間)"
 
-#: options/theme-options.php:3823
+#: options/theme-options.php:3816
 msgid "Gravatar Service Proxy"
 msgstr "グラバタープロキシ"
 
-#: options/theme-options.php:3824
+#: options/theme-options.php:3817
 msgid ""
 "You can select multiple proxy as the Gravatar Service Proxy. By default, "
 "Weavatar is used as the Gravatar Service Proxy."
@@ -4172,23 +4167,23 @@ msgstr ""
 "複数のプロキシを Gravatar サービスプロキシとして選択できます。デフォルトで"
 "は、WeavatarはGravatarサービスプロキシとして使用されます。"
 
-#: options/theme-options.php:3826
+#: options/theme-options.php:3819
 msgid "Weavatar Service"
 msgstr "ウィアバターサービス"
 
-#: options/theme-options.php:3827
+#: options/theme-options.php:3820
 msgid "Loli Net"
 msgstr "ロリネット"
 
-#: options/theme-options.php:3828
+#: options/theme-options.php:3821
 msgid "Official"
 msgstr "公式"
 
-#: options/theme-options.php:3829 options/theme-options.php:3837
+#: options/theme-options.php:3822 options/theme-options.php:3830
 msgid "Custom Proxy Address"
 msgstr "カスタム プロキシ アドレス"
 
-#: options/theme-options.php:3838
+#: options/theme-options.php:3831
 msgid ""
 "Enter your Gravatar proxy address without starting with \"http(s)://\" and "
 "ending with \"/\". Example: gravatar.com/avatar."
@@ -4196,11 +4191,11 @@ msgstr ""
 "グラバタープロキシアドレスは、\"http(s)://\"で始まり\"/\"で終わることなく入力"
 "してください。例: gravatar.com/avatar。"
 
-#: options/theme-options.php:3846
+#: options/theme-options.php:3839
 msgid "GitHub repository card proxy"
 msgstr "GitHub リポジトリ カード プロキシ"
 
-#: options/theme-options.php:3847
+#: options/theme-options.php:3840
 msgid ""
 "Use your server proxy to get the github repository card image so that "
 "Chinese users who cannot access vercel.app can see it"
@@ -4208,15 +4203,15 @@ msgstr ""
 "サーバープロキシを使用してgithubリポジトリカードイメージを取得し、vercel.app"
 "にアクセスできないユーザーがそれを見ることができるようにします"
 
-#: options/theme-options.php:3853
+#: options/theme-options.php:3846
 msgid "Lightbox"
 msgstr "Lightbox"
 
-#: options/theme-options.php:3859
+#: options/theme-options.php:3852
 msgid "lightbox"
 msgstr "Lightbox"
 
-#: options/theme-options.php:3860
+#: options/theme-options.php:3853
 msgid ""
 "Choose a image lightbox effect which you want to use,and additional JQ "
 "libraries will be loaded when using fancybox"
@@ -4224,23 +4219,23 @@ msgstr ""
 "使用したい画像ライトボックス効果を選択すると、Fancyboxを使用するときに追加の"
 "JQライブラリが読み込まれます"
 
-#: options/theme-options.php:3862
+#: options/theme-options.php:3855
 msgid "off"
 msgstr "閉鎖"
 
-#: options/theme-options.php:3863
+#: options/theme-options.php:3856
 msgid "baguetteBox"
 msgstr ""
 
-#: options/theme-options.php:3864
+#: options/theme-options.php:3857
 msgid "fancybox"
 msgstr ""
 
-#: options/theme-options.php:3865
+#: options/theme-options.php:3858
 msgid "lightgallery"
 msgstr ""
 
-#: options/theme-options.php:3872
+#: options/theme-options.php:3865
 msgid ""
 "<strong>Attension: Please read <a href=\"https://github.com/sachinchoolur/"
 "lightGallery#license\">License Instruction</a> before use.</strong><br/"
@@ -4265,7 +4260,7 @@ msgstr ""
 "提出して支援を受けてください。https://github.com/mirai-mamori/Sakurairo/"
 "discussions"
 
-#: options/theme-options.php:3883
+#: options/theme-options.php:3876
 msgid ""
 "Start from Sakurairo v2.4.0, plugins names in LightGallery option follow the "
 "form cite in official document (eg. lgHash instead of \"hash\")"
@@ -4273,15 +4268,15 @@ msgstr ""
 "v2.4.0から始めると、LightGalleryオプションのプラグイン名は公式文書の形式に従"
 "います(例えば「ハッシュ」の代わりにlgHash)"
 
-#: options/theme-options.php:3891
+#: options/theme-options.php:3884
 msgid "LightGallery Lightbox Effect Options"
 msgstr "LightGalleryライトボックス効果のオプション"
 
-#: options/theme-options.php:3902
+#: options/theme-options.php:3895
 msgid "Code Highlighting"
 msgstr "コードの強調表示"
 
-#: options/theme-options.php:3907
+#: options/theme-options.php:3900
 msgid ""
 "<p><strong>Highlight.js:</strong> Default. Automatic language recognition. </"
 "p> <p><strong>Prism.js:</strong> Requires a language to be specified, see <a "
@@ -4297,19 +4292,19 @@ msgstr ""
 "るコードの方法</a>を参照してください。 </p><p><strong>カスタム:</strong> 別の"
 "構成が使用可能な場合。 </p>"
 
-#: options/theme-options.php:3915
+#: options/theme-options.php:3908
 msgid "Code Highlight Method"
 msgstr "コードの強調表示方法"
 
-#: options/theme-options.php:3919
+#: options/theme-options.php:3912
 msgid "Custom Program"
 msgstr "カスタムプログラム"
 
-#: options/theme-options.php:3927
+#: options/theme-options.php:3920
 msgid "Prism.js: Add Line Number Display for All Code Blocks"
 msgstr "プリズム.js: すべてのコードブロックに行番号表示を追加"
 
-#: options/theme-options.php:3931
+#: options/theme-options.php:3924
 msgid ""
 "See the <a href=\"https://prismjs.com/plugins/line-numbers/\">plugin "
 "description documentation</a>"
@@ -4317,28 +4312,28 @@ msgstr ""
 "<a href=\"https://prismjs.com/plugins/line-numbers/\">プラグインの説明のド"
 "キュメント</a>を参照してください。"
 
-#: options/theme-options.php:3937
+#: options/theme-options.php:3930
 msgid "Prism.js: Autoload Address"
 msgstr "プリズム.js: 自動ロードアドレス"
 
-#: options/theme-options.php:3941
+#: options/theme-options.php:3934
 msgid "Leave blank to use default values"
 msgstr "既定値を使用するには空白のままにします。"
 
-#: options/theme-options.php:3948
+#: options/theme-options.php:3941
 msgid "Prism.js: Code Highlight Theme"
 msgstr "プリズム.js: コードハイライトテーマ"
 
-#: options/theme-options.php:3949 options/theme-options.php:3960
+#: options/theme-options.php:3942 options/theme-options.php:3953
 msgid "Relative to autoload address. Leave blank to use default values"
 msgstr ""
 "自動ロード アドレスに対する相対値。既定値を使用するには空白のままにします。"
 
-#: options/theme-options.php:3959
+#: options/theme-options.php:3952
 msgid "Prism.js: Code Highlight Theme (Dark Mode)"
 msgstr "プリズム.js: コードハイライトテーマ(ダークモード)"
 
-#: options/theme-options.php:3970
+#: options/theme-options.php:3963
 msgid ""
 "The following Options are not recommended to be modified blindly, please use "
 "them under the guidance of others"
@@ -4346,11 +4341,11 @@ msgstr ""
 "以下のオプションは、盲目的に変更することは推奨されません、他の人の指導の下で"
 "それらを使用してください"
 
-#: options/theme-options.php:3976
+#: options/theme-options.php:3969
 msgid "Image CDN"
 msgstr "イメージ CDN"
 
-#: options/theme-options.php:3977
+#: options/theme-options.php:3970
 msgid ""
 "Note: fill in the format https://your CDN domain/. This means that images "
 "with original path http://your.domain/wp-content/uploads/2018/05/xx.png will "
@@ -4360,33 +4355,33 @@ msgstr ""
 "http://your.domain/wp-content/uploads/2018/05/xx.png を持つイメージは CDN ド"
 "メイン/2018/05/xx http://your ロードされます.png"
 
-#: options/theme-options.php:3984
+#: options/theme-options.php:3977
 msgid "Articles Categories (Do not display)"
 msgstr "記事のカテゴリ (表示しない)"
 
-#: options/theme-options.php:3985 options/theme-options.php:3992
+#: options/theme-options.php:3978 options/theme-options.php:3985
 msgid "Fill in category ID, seperate in English\" , \" when more than one"
 msgstr "カテゴリ ID を英語で区切って入力する\" と、複数の場合"
 
-#: options/theme-options.php:3991
+#: options/theme-options.php:3984
 msgid "Image Display Category"
 msgstr "画像表示カテゴリ"
 
-#: options/theme-options.php:3998
+#: options/theme-options.php:3991
 msgid "Version Control"
 msgstr "バージョン管理システム"
 
-#: options/theme-options.php:3999
+#: options/theme-options.php:3992
 msgid "Used to update front-end cookies and browser cache, can use any string"
 msgstr ""
 "フロントエンドクッキーとブラウザキャッシュを更新するために使用され、任意の文"
 "字列を使用できます"
 
-#: options/theme-options.php:4005
+#: options/theme-options.php:3998
 msgid "Hide Login Portal"
 msgstr "ログインエントリを非表示"
 
-#: options/theme-options.php:4006
+#: options/theme-options.php:3999
 msgid ""
 "Hide login address in theme as much as possible, if you used plugins to hide "
 "this."
@@ -4394,39 +4389,39 @@ msgstr ""
 "関連するプラグインを使用する場合は、テーマ内のログインリンクを可能な限り隠す"
 "ようにします"
 
-#: options/theme-options.php:4013
+#: options/theme-options.php:4006
 msgid "Fontawesome Source"
 msgstr "Fontawesomeソース"
 
-#: options/theme-options.php:4014
+#: options/theme-options.php:4007
 msgid "The source link of Fontawesome icons style"
 msgstr "Fontawesomeアイコンスタイルのソースリンク"
 
-#: options/theme-options.php:4021
+#: options/theme-options.php:4014
 msgid "Dev Mode"
 msgstr "開発者モード"
 
-#: options/theme-options.php:4022
+#: options/theme-options.php:4015
 msgid "Enable dev mode to diable css minify"
 msgstr "有効にすると、最適化は無効になります。"
 
-#: options/theme-options.php:4029
+#: options/theme-options.php:4022
 msgid "PHP Notice Filter"
 msgstr "PHP ログフィルタリング"
 
-#: options/theme-options.php:4031
+#: options/theme-options.php:4024
 msgid "Use your php config"
 msgstr "PHP設定の使用"
 
-#: options/theme-options.php:4032
+#: options/theme-options.php:4025
 msgid "Only show critical errors"
 msgstr "重大なエラーのみ表示"
 
-#: options/theme-options.php:4033
+#: options/theme-options.php:4026
 msgid "Show nothing"
 msgstr "すべてのエラーをマスクする"
 
-#: options/theme-options.php:4036
+#: options/theme-options.php:4029
 msgid ""
 "It is recommended to set it to normal to block log information that does not "
 "affect usage."
@@ -4434,29 +4429,29 @@ msgstr ""
 "使用に影響しないログ情報をブロックするため、ノーマルに設定することをお勧めし"
 "ます。"
 
-#: options/theme-options.php:4042
+#: options/theme-options.php:4035
 msgid "Backup&Recovery"
 msgstr "バックアップとリカバリ"
 
-#: options/theme-options.php:4044
+#: options/theme-options.php:4037
 msgid "Backup or Recovery your theme options"
 msgstr "テーマオプションのバックアップまたはリカバリ"
 
-#: options/theme-options.php:4055
+#: options/theme-options.php:4048
 msgid "About Theme"
 msgstr "テーマについて"
 
-#: options/theme-options.php:4061
+#: options/theme-options.php:4054
 msgid "Version Info"
 msgstr "バージョン情報"
 
-#: options/theme-options.php:4066
+#: options/theme-options.php:4059
 msgid ""
 "<img src=\"https://s.nmxc.ltd/sakurairo_vision/@3.0/series/headlogo.webp\"  "
 "alt=\"Theme Information\" />"
 msgstr ""
 
-#: options/theme-options.php:4072
+#: options/theme-options.php:4065
 #, php-format
 msgid ""
 "Theme Sakurairo Version %s | Internal Version %s | <a href=\"https://github."
@@ -4465,15 +4460,15 @@ msgstr ""
 "テーマ Sakurairo バージョン %s | 内部バージョン %s | <a href=\"https://"
 "github.com/mirai-mamori/Sakurairo\">プロジェクトアドレス</a>"
 
-#: options/theme-options.php:4077
+#: options/theme-options.php:4070
 msgid "Update Related"
 msgstr "関連する更新プログラム"
 
-#: options/theme-options.php:4083
+#: options/theme-options.php:4076
 msgid "Theme Update Source"
 msgstr "テーマの更新元"
 
-#: options/theme-options.php:4089
+#: options/theme-options.php:4082
 msgid ""
 "If you are using a server set up in mainland China, please use the Upyun "
 "source or the official theme source as your theme update source"
@@ -4481,11 +4476,11 @@ msgstr ""
 "中国本土で設定されたサーバーを使用している場合は、UPYUNソースまたは公式テーマ"
 "ソースをテーマアップデートソースとして使用してください。"
 
-#: options/theme-options.php:4096
+#: options/theme-options.php:4089
 msgid "Theme Update Test Channel Disclaimer"
 msgstr "テーマ更新テスト チャネルの免責事項"
 
-#: options/theme-options.php:4102
+#: options/theme-options.php:4095
 msgid ""
 "Please copy the text in quotes after <strong>ensure that you have carefully "
 "understood the risks associated with participating in the test and are "
@@ -4497,37 +4492,37 @@ msgstr ""
 "の可能性を含むがこれらに限定されない)すべての結果を自己責任で引き受ける意思が"
 "あることを確認した後、引用符でテキストをコピーしてください<strong>。</strong>"
 
-#: options/theme-options.php:4108
+#: options/theme-options.php:4101
 msgid "Theme Update Channel"
 msgstr "テーマ更新チャネル"
 
-#: options/theme-options.php:4115
+#: options/theme-options.php:4108
 msgid ""
 "You can toggle the update channel here to participate in the testing of the "
 "new version"
 msgstr "更新チャネルを切り替えて、新しいバージョンのテストに参加できます。"
 
-#: options/theme-options.php:4117
+#: options/theme-options.php:4110
 msgid "Stable Channel"
 msgstr "安定したチャネル"
 
-#: options/theme-options.php:4118
+#: options/theme-options.php:4111
 msgid "Beta Channel"
 msgstr "ベータチャンネル"
 
-#: options/theme-options.php:4119
+#: options/theme-options.php:4112
 msgid "Preview Channel"
 msgstr "チャンネルのプレビュー"
 
-#: options/theme-options.php:4126
+#: options/theme-options.php:4119
 msgid "Resource Control"
 msgstr "資源制御"
 
-#: options/theme-options.php:4132
+#: options/theme-options.php:4125
 msgid "Provide Critical Frontend Resource locally"
 msgstr "重要なフロントエンド リソースをローカルに提供する"
 
-#: options/theme-options.php:4133
+#: options/theme-options.php:4126
 msgid ""
 "Enabeld by default. Critical resources are those resources whose loading "
 "performance will have a significant impact on the user experience."
@@ -4535,27 +4530,27 @@ msgstr ""
 "既定ではエナベルド。重要なリソースとは、読み込みパフォーマンスがユーザー エク"
 "スペリエンスに大きな影響を与えるリソースです。"
 
-#: options/theme-options.php:4140
+#: options/theme-options.php:4133
 msgid "Provide Other Frontend Resource locally"
 msgstr "他のフロントエンド リソースをローカルに提供する"
 
-#: options/theme-options.php:4141
+#: options/theme-options.php:4134
 msgid "Less important frontend resource in the theme's folder."
 msgstr "テーマのフォルダー内のあまり重要でないフロント エンド リソース。"
 
-#: options/theme-options.php:4148
+#: options/theme-options.php:4141
 msgid "Public CDN Basepath"
 msgstr "パブリック CDN ベースパス"
 
-#: options/theme-options.php:4149
+#: options/theme-options.php:4142
 msgid "Control the basepath of Frontend Resource."
 msgstr "フロントエンドリソースのベースパスを制御します。"
 
-#: options/theme-options.php:4160
+#: options/theme-options.php:4153
 msgid "Provide 3rd-party library from Public CDN"
 msgstr "パブリックCDNからサードパーティライブラリを提供する"
 
-#: options/theme-options.php:4161
+#: options/theme-options.php:4154
 msgid ""
 "When disabled, 3rd-party dependencies, which have been built to bundles "
 "along with themes's entry script, will be loaded from the exact same origin "
@@ -4565,11 +4560,11 @@ msgstr ""
 "ティの依存関係は、クリティカル フロントエンド リソースとまったく同じオリジン"
 "から読み込まれます。"
 
-#: options/theme-options.php:4168
+#: options/theme-options.php:4161
 msgid "Vision Resource Basepath"
 msgstr "ビジョン リソース ベースパス"
 
-#: options/theme-options.php:4169
+#: options/theme-options.php:4162
 msgid ""
 "This link directory structure needs to be consistent with the <a "
 "href=\"https://github.com/Fuukei/Sakurairo_Vision\">Sakurairo Vision</a> "
@@ -4583,21 +4578,21 @@ msgstr ""
 "ります。<a href=\"https://waf.pro/\">WAFPRO</a> によって正式に提供されるイ"
 "メージソースはデフォルトで採用されています。"
 
-#: options/theme-options.php:4175
+#: options/theme-options.php:4168
 msgid "Theme Contributors"
 msgstr "貢献者"
 
-#: options/theme-options.php:4180
+#: options/theme-options.php:4173
 msgid ""
 "<img src=\"https://fuukei-api.nyat.icu/api/contributors\" alt=\"Theme "
 "Contributors\" width=\"100%\" height=\"100%\" />"
 msgstr ""
 
-#: options/theme-options.php:4185
+#: options/theme-options.php:4178
 msgid "Privacy information"
 msgstr "プライバシー情報"
 
-#: options/theme-options.php:4190
+#: options/theme-options.php:4183
 msgid ""
 "<p>The theme respects your privacy</p>\n"
 "        <p>However, when you use a service provider pre-populated by the "
@@ -4615,11 +4610,11 @@ msgstr ""
 "カライズすることで、サードパーティに送信される情報を減らすことができます。</"
 "p>"
 
-#: options/theme-options.php:4198
+#: options/theme-options.php:4191
 msgid "Send Theme Version to Fuukei"
 msgstr "テーマバージョンをFuukeiに送る"
 
-#: options/theme-options.php:4199
+#: options/theme-options.php:4192
 msgid ""
 "The theme will only send time and version information to Fuukei officials "
 "and the data will be cleaned regularly and used only to count version "
@@ -4628,22 +4623,22 @@ msgstr ""
 "テーマは時間とバージョンの情報をFuukei Officialにのみ送信し、データは定期的に"
 "クリーンアップされ、バージョンの更新をカウントするためにのみ使用されます。"
 
-#: options/theme-options.php:4205
+#: options/theme-options.php:4198
 msgid "Reference Information"
 msgstr "参照情報"
 
-#: options/theme-options.php:4210
+#: options/theme-options.php:4203
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox Fluent Icon Pack</p>\n"
 "        <p>MUH2 Design Icon Referenced by 缄默 <a href=\"https://www.coolapk."
 "com/apk/com.muh2.icon\">MUH2 Icon Pack</a></p>"
 msgstr ""
 
-#: options/theme-options.php:4216
+#: options/theme-options.php:4209
 msgid "Dependency Information"
 msgstr "依存情報"
 
-#: options/theme-options.php:4221
+#: options/theme-options.php:4214
 msgid ""
 "<p>Options Framework Relies on the Codestar Open Source <a href=\"https://"
 "github.com/Codestar/codestar-framework\">Codestar Framework</a> Project</p>\n"
@@ -4654,7 +4649,7 @@ msgid ""
 "href=\"https://github.com/themeum/kirki\">Kirki</a> Project</p>"
 msgstr ""
 
-#: options/theme-options.php:4228
+#: options/theme-options.php:4221
 msgid ""
 "<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
 "svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "
