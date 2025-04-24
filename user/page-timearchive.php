@@ -4,6 +4,7 @@
  */
 get_header();
 ?>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap" rel="stylesheet">
 <style>
     /* 基础布局 */
     .site-content {
@@ -89,8 +90,9 @@ get_header();
     }
     .timeline-year-number {
         font-size: 1.5rem;
-        font-family: serif;
-        font-weight: 900;
+        font-family: 'Noto Serif SC';
+        font-weight: 900; 
+        font-variation-settings: 'wght' 900; /* 添加变量字体控制 */
         color: var(--theme-skin, #222);
         line-height: 1;
         flex-shrink: 0;
@@ -230,9 +232,10 @@ get_header();
         color: #222;
     }
     .timeline-modal-title {
+        font-family: 'Noto Serif SC';
         font-size: 1.6rem;
         font-weight: 900;
-        font-family: serif;
+        font-variation-settings: 'wght' 900; /* 添加变量字体控制 */
         letter-spacing: 0.04em;
         color: var(--theme-skin, #222);
         border-radius: 1.1rem 1.1rem 0 0;
@@ -620,4 +623,5 @@ foreach ($years as $year => $months) {
 ?>
 <dialog id="timeline-modal-mask" class="timeline-modal-mask"><div class="timeline-modal"><span class="timeline-modal-close" id="timeline-modal-close">×</span><div id="timeline-modal-content" data-archiveapi=<?php echo rest_url('sakura/v1/archive_info');?>></div></div></dialog>
 <script src="<?php echo get_template_directory_uri(); ?>/js/timeline.js"></script>
+</div>
 <?php get_footer(); ?>
