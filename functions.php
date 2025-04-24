@@ -1666,7 +1666,7 @@ require_once __DIR__ . '/inc/word-stat.php';
 function count_post_words($post_ID)
 {
     $post = get_post($post_ID);
-    if ($post->post_type !== "post") {
+    if (!in_array($post->post_type, ['post', 'shuoshuo'])) {
         return;
     }
     $content = $post->post_content;

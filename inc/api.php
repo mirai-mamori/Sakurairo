@@ -132,6 +132,7 @@ add_action('rest_api_init', function () {
             $time_archive = get_transient('time_archive');
             if (!$time_archive) {
                 get_archive_info();
+                $time_archive = get_transient('time_archive');
             }
             return $time_archive;
         },
