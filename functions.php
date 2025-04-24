@@ -3082,7 +3082,7 @@ function get_archive_info() {
             ]
         ];
           foreach ($posts as $post) {
-            $views = get_post_meta($post->ID, 'views', true);
+            $views = get_post_views($post->ID);
             $words = get_post_meta($post->ID, 'post_words_count', true);
             $comments = get_comments_number($post->ID);
             
