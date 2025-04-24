@@ -5,7 +5,7 @@
 get_header();
 
 ?>
-<meta name="referrer" content="same-origin">
+<meta name="referrer" content="">
 <style>
 .site-content {
     max-width: 1280px;
