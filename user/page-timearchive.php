@@ -161,6 +161,7 @@ get_header();
         width: 100vw;
         max-height: none;
         max-width: none;
+        margin: 0;
         border: none;
         position: fixed;
         z-index: 9999;
