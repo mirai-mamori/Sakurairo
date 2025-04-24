@@ -803,6 +803,9 @@ function get_post_views($post_id)
     }
 }
 
+// 引入post_metas方法
+require_once get_template_directory() . "/inc/post_metas.php";
+
 function is_webp(): bool
 {
     return (isset($_COOKIE['su_webp']) || (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'image/webp')));
@@ -3083,7 +3086,7 @@ function get_archive_info() {
         ];
           foreach ($posts as $post) {
             $views = get_post_views($post->ID);
-            $words = get_post_meta($post->ID, 'post_words_count', true);
+            $words = get_meta_words_count($post->ID);
             $comments = get_comments_number($post->ID);
             
             // 判断文章类型（使用post_type而不是post_format）
