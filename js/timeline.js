@@ -288,17 +288,98 @@ class Timeline {
     }
 }
 
-// 创建单例实例
+// 完全重写pjax兼容和观察者逻辑
 let timelineInstance = null;
+let timelineObserver = null;
 
-function initTimeline() {
-    if (timelineInstance) {
-        timelineInstance.destroy();
-    }
-    timelineInstance = new Timeline();
-    timelineInstance.init();
+/**
+ * 检查时间线元素是否存在
+ * @returns {boolean}
+ */
+function isTimelinePresent() {
+    return !!document.getElementById('timeline-root');
 }
 
-// 初始化事件监听
-document.addEventListener('DOMContentLoaded', initTimeline);
-document.addEventListener('pjax:complete', initTimeline);
+/**
+ * 安全初始化时间线组件
+ */
+function initTimeline() {
+    try {
+        // 检查并销毁现有实例
+        if (timelineInstance) {
+            timelineInstance.destroy();
+            timelineInstance = null;
+        }
+        
+        // 只在元素存在时创建实例
+        if (isTimelinePresent()) {
+            timelineInstance = new Timeline();
+            timelineInstance.init();
+        }
+    } catch (error) {
+        console.error("Timeline初始化失败:", error);
+    }
+}
+
+/**
+ * 安全销毁时间线组件
+ */
+function destroyTimeline() {
+    try {
+        if (timelineInstance) {
+            timelineInstance.destroy();
+            timelineInstance = null;
+        }
+    } catch (error) {
+        console.error("Timeline销毁失败:", error);
+        timelineInstance = null;
+    }
+}
+
+/**
+ * 停止DOM观察
+ */
+function stopObserver() {
+    try {
+        if (timelineObserver) {
+            timelineObserver.disconnect();
+            timelineObserver = null;
+        }
+    } catch (error) {
+        console.error("Observer停止失败:", error);
+        timelineObserver = null;
+    }
+}
+
+/**
+ * 处理页面初始加载或pjax完成后的逻辑
+ */
+function handlePageReady() {
+    // 立即停止之前的观察者
+    stopObserver();
+    
+    // 检查元素是否存在并初始化
+    if (isTimelinePresent()) {
+        initTimeline();
+    } else {
+        // 如果元素不存在，当前无需初始化时间线
+        destroyTimeline();
+    }
+}
+
+// 页面首次加载
+document.addEventListener('DOMContentLoaded', () => {
+    handlePageReady();
+});
+
+// Pjax兼容
+document.addEventListener('pjax:complete', () => {
+    // 使用短延迟确保DOM已更新
+    setTimeout(handlePageReady, 50);
+});
+
+// 安全清理
+window.addEventListener('beforeunload', () => {
+    destroyTimeline();
+    stopObserver();
+});
