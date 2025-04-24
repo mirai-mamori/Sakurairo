@@ -550,7 +550,7 @@ get_header();
     body.dark .timeline-year-calendar-month.active {
         background: var(--theme-skin-matching, #fff);
         color: #222;
-        box-shadow: 0 2px 8px 0 rgba(255,255,255,0.10);
+        box-shadow: 0 2px 20px -10px var(--theme-skin-matching, #fff);
         opacity: 1;
         filter: brightness(1.12) drop-shadow(0 2px 6px rgba(255,255,255,0.05));
         border: 1.5px solid var(--theme-skin-matching, #fff);
@@ -573,11 +573,18 @@ get_header();
         .timeline-root {
             grid-template-columns: 1fr;
         }
-        .timeline-modal-stats-grid{
+        .timeline-modal-stats-grid {
             grid-template-columns: repeat(2, 1fr);
         }
         .timeline-modal {
-            max-height: 85vh !important;
+            max-height: 82.5vh !important;
+        }
+        .timeline-year-calendar{
+           grid-template-columns: repeat(6, 1fr);
+           grid-template-rows: repeat(2, 1fr);
+        }
+        .timeline-year-number{
+           font-size: 1.6rem;
         }
     }
 
