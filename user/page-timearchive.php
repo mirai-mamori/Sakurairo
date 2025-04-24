@@ -629,6 +629,5 @@ foreach ($years as $year => $months) {
 }
 ?>
 <dialog id="timeline-modal-mask" class="timeline-modal-mask"><div class="timeline-modal"><span class="timeline-modal-close" id="timeline-modal-close">×</span><div id="timeline-modal-content" data-archiveapi=<?php echo rest_url('sakura/v1/archive_info');?>></div></div></dialog>
-<script src="<?php echo get_template_directory_uri(); ?>/js/timeline.js"></script>
 </div>
 <?php get_footer(); ?>
