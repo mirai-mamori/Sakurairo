@@ -18,6 +18,8 @@
 
 - 本テーマを利用しているサイト：https://docs.fuukei.org/demo/
 
+- [シームレスアップデートプラグイン](https://github.com/mirai-mamori/wp-seamless-update/releases/latest) を利用して、最新の更新をいち早く入手できます
+
 - 公式通信情報：[QQグループ:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)  ＆  [Telegramグループ:fksakurairo](https://t.me/fksakurairo)
 
 - このテーマの使い方についてご不明な点がございましたら、[サポートドキュメント](https://docs.fuukei.org)を**ご覧ください**。 

@@ -18,6 +18,8 @@
 
 - Blogs based on iro：https://docs.fuukei.org/demo/
 
+- Use the [Seamless Update Plugin](https://github.com/mirai-mamori/wp-seamless-update/releases/latest) to get the latest updates as soon as possible.
+
 - Communication channels：[QQ Group:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)  ＆  [Telegram Group:fksakurairo](https://t.me/fksakurairo)
 
 - If you have any question using this theme, please **visit**  [Support Documentation](https://docs.fuukei.org) 

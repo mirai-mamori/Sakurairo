@@ -18,6 +18,8 @@
 
 - 使用本主題的站點：https://docs.fuukei.org/demo/
 
+- 使用 [無縫更新插件](https://github.com/mirai-mamori/wp-seamless-update/releases/latest) 第一時間獲取最新更新
+
 - 主題交流：[QQ群:784229925](https://jq.qq.com/?_wv=1027&k=U5UJjRik)  ＆  [Telegram群:fksakurairo](https://t.me/fksakurairo)
 
 - 如果在使用過程中遇到了任何問題，請**訪問**本主題的 [支持文檔](https://docs.fuukei.org) 
