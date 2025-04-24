@@ -3054,70 +3054,69 @@ function get_the_user_ip()
 
 //归档页信息缓存
 function get_archive_info() {
-    if (have_posts()) :
-        the_post();    update_post_caches($posts);    
-        // 获取所有文章和说说
-        $posts = get_posts([
-            'posts_per_page' => -1,
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'post_type' => array('post', 'shuoshuo'), // 同时获取文章和说说
-        ]);
-        $years = [];
-        $stats = [
-            'total' => [
-                'posts' => 0,
-                'views' => 0,
-                'words' => 0,
-                'comments' => 0
-            ],
-            'shuoshuo' => [
-                'posts' => 0,
-                'views' => 0,
-                'words' => 0,
-                'comments' => 0
-            ],
-            'article' => [
-                'posts' => 0,
-                'views' => 0,
-                'words' => 0,
-                'comments' => 0
-            ]
+    // 获取所有文章和说说
+    $posts = get_posts([
+        'posts_per_page' => -1,
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_type' => array('post', 'shuoshuo'),
+        'post_status'    => 'publish',
+        'suppress_filters' => false // 同时获取文章和说说
+    ]);
+    $years = [];
+    $stats = [
+        'total' => [
+            'posts' => 0,
+            'views' => 0,
+            'words' => 0,
+            'comments' => 0
+        ],
+        'shuoshuo' => [
+            'posts' => 0,
+            'views' => 0,
+            'words' => 0,
+            'comments' => 0
+        ],
+        'article' => [
+            'posts' => 0,
+            'views' => 0,
+            'words' => 0,
+            'comments' => 0
+        ]
+    ];
+        foreach ($posts as $post) {
+        $views = get_post_views($post->ID);
+        $words = get_meta_words_count($post->ID);
+        $comments = get_comments_number($post->ID);
+        
+        // 判断文章类型（使用post_type而不是post_format）
+        $post_type = $post->post_type === 'shuoshuo' ? 'shuoshuo' : 'article';
+        
+        // 更新统计数据
+        $stats[$post_type]['posts']++;
+        $stats[$post_type]['views'] += intval($views);
+        $stats[$post_type]['words'] += intval($words);
+        $stats[$post_type]['comments'] += intval($comments);
+        
+        $stats['total']['posts']++;
+        $stats['total']['views'] += intval($views);
+        $stats['total']['words'] += intval($words);
+        $stats['total']['comments'] += intval($comments);
+        
+        $post->meta = [
+            'views' => $views,
+            'words' => $words,
+            'type' => $post_type
         ];
-          foreach ($posts as $post) {
-            $views = get_post_views($post->ID);
-            $words = get_meta_words_count($post->ID);
-            $comments = get_comments_number($post->ID);
-            
-            // 判断文章类型（使用post_type而不是post_format）
-            $post_type = $post->post_type === 'shuoshuo' ? 'shuoshuo' : 'article';
-            
-            // 更新统计数据
-            $stats[$post_type]['posts']++;
-            $stats[$post_type]['views'] += intval($views);
-            $stats[$post_type]['words'] += intval($words);
-            $stats[$post_type]['comments'] += intval($comments);
-            
-            $stats['total']['posts']++;
-            $stats['total']['views'] += intval($views);
-            $stats['total']['words'] += intval($words);
-            $stats['total']['comments'] += intval($comments);
-            
-            $post->meta = [
-                'views' => $views,
-                'words' => $words,
-                'type' => $post_type
-            ];
-            
-            $year = date('Y', strtotime($post->post_date));
-            $month = date('n', strtotime($post->post_date));
-            if (!isset($years[$year])) $years[$year] = [];
-            if (!isset($years[$year][$month])) $years[$year][$month] = [];
-            $years[$year][$month][] = $post;
+        
+        $year = date('Y', strtotime($post->post_date));
+        $month = date('n', strtotime($post->post_date));
+        if (!isset($years[$year])) $years[$year] = [];
+        if (!isset($years[$year][$month])) $years[$year][$month] = [];
+        $years[$year][$month][] = $post;
 
-            set_transient('time_archive',$years,2592000);
-        }
-    endif;
+        set_transient('time_archive',$years,2592000);
+    }
     return $years;
 }
 
