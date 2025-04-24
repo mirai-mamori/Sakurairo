@@ -69,6 +69,9 @@ function get_meta_words_count($post_id)
     if(!$words_count) {
         $words_count = count_post_words($id);
     }
+    if (!is_numeric($words_count) || $words_count < 0) {
+        $words_count = count_post_words($post_id);
+    }
     return sprintf(_n("%s Word", "%s Words", $words_count, "sakurairo"), $words_count);
 }
 
