@@ -3112,7 +3112,8 @@ function get_archive_info() {
             'comment_count' => $comments,
             'meta' => [
                 'views' => $views,
-                'words' => $words
+                'words' => $words,
+                'type' => $post_type
             ]
         ];
         
