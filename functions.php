@@ -3110,6 +3110,7 @@ function get_archive_info() {
             'post_title'    => $post->post_title,
             'post_date'     => $post->post_date,
             'comment_count' => $comments,
+            'guid'          => $post["guid"],
             'meta' => [
                 'views' => $views,
                 'words' => $words,
