@@ -3103,20 +3103,25 @@ function get_archive_info() {
         $stats['total']['words'] += intval($words);
         $stats['total']['comments'] += intval($comments);
         
-        $post->meta = [
-            'views' => $views,
-            'words' => $words,
-            'type' => $post_type
-        ];
-        
         $year = date('Y', strtotime($post->post_date));
         $month = date('n', strtotime($post->post_date));
+        
+        $post = [ //仅保存需要的数据
+            'post_title'    => $post->post_title,
+            'post_date'     => $post->post_date,
+            'comment_count' => $comments,
+            'meta' => [
+                'views' => $views,
+                'words' => $words
+            ]
+        ];
+        
         if (!isset($years[$year])) $years[$year] = [];
         if (!isset($years[$year][$month])) $years[$year][$month] = [];
         $years[$year][$month][] = $post;
-
-        set_transient('time_archive',$years,2592000);
     }
+    set_transient('time_archive',$years,2592000);
+
     return $years;
 }
 
