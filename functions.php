@@ -3122,7 +3122,7 @@ function get_archive_info() {
         if (!isset($years[$year][$month])) $years[$year][$month] = [];
         $years[$year][$month][] = $post;
     }
-    set_transient('time_archive',$years,2592000);
+    set_transient('time_archive',$years,86400);
 
     return $years;
 }
