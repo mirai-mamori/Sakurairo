@@ -3110,6 +3110,7 @@ function get_archive_info() {
             'post_title'    => $post->post_title,
             'post_date'     => $post->post_date,
             'comment_count' => $comments,
+            'guid'          => $post["guid"],
             'meta' => [
                 'views' => $views,
                 'words' => $words,
@@ -3121,7 +3122,7 @@ function get_archive_info() {
         if (!isset($years[$year][$month])) $years[$year][$month] = [];
         $years[$year][$month][] = $post;
     }
-    set_transient('time_archive',$years,2592000);
+    set_transient('time_archive',$years,86400);
 
     return $years;
 }
