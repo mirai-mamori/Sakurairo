@@ -12,7 +12,7 @@ include_once('inc/classes/IpLocation.php');
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
 define('BUILD_VERSION', '3');
-define('INT_VERSION', '20.0.2');
+define('INT_VERSION', '20.0.3');
 define('SSU_URL', 'https://api.fuukei.org/update/ssu.json');
 
 function check_php_version($preset_version)
@@ -2380,6 +2380,7 @@ function markdown_parser($incoming_comment)
                 'href' => array(),
                 'title' => array(),
                 'target' => array('_blank'),
+                'rel' => array(), // 添加rel属性支持
             ),
             'b' => array(),
             'br' => array(),
@@ -2411,12 +2412,10 @@ function markdown_parser($incoming_comment)
     if (!isset($column_names)) {
         $wpdb->query("ALTER TABLE $wpdb->comments ADD comment_markdown text");
     }
-    $comment_markdown_content = $incoming_comment['comment_content'];
-
-    if ($enable_markdown) { //未启用markdown不做解析
+    $comment_markdown_content = $incoming_comment['comment_content'];    if ($enable_markdown) { //未启用markdown不做解析
         include 'inc/Parsedown.php';
         $Parsedown = new Parsedown();
-        $incoming_comment['comment_content'] = $Parsedown->setUrlsLinked(false)->text($incoming_comment['comment_content']);
+        $incoming_comment['comment_content'] = $Parsedown->setUrlsLinked(true)->text($incoming_comment['comment_content']);
     }
     return $incoming_comment;
 }
@@ -3105,12 +3104,11 @@ function get_archive_info() {
         
         $year = date('Y', strtotime($post->post_date));
         $month = date('n', strtotime($post->post_date));
-        
-        $post = [ //仅保存需要的数据
+          $post = [ //仅保存需要的数据
             'post_title'    => $post->post_title,
             'post_date'     => $post->post_date,
             'comment_count' => $comments,
-            'guid'          => $post["guid"],
+            'guid'          => $post->guid,
             'meta' => [
                 'views' => $views,
                 'words' => $words,

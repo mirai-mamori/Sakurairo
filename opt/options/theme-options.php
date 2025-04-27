@@ -362,7 +362,7 @@ $prefix = 'iro_options';
         'unit'    => 'px',
         'min'   => '10',
         'max'   => '20',
-        'default' => '15'
+        'default' => '16'
       ),
 
       array(
