@@ -2358,13 +2358,15 @@ if (iro_opt('sakura_widget')) {
 function markdown_parser($incoming_comment)
 {
     global $wpdb, $comment_markdown_content;
+    global $allowedtags;
 
     $enable_markdown = isset($_POST['enable_markdown']) ? (bool) $_POST['enable_markdown'] : false;
 
     if ($enable_markdown) {
         $may_script = array(
             '/<script.*?>.*?<\/script>/is', //<script>标签
-            '/onclick\s*=\s*["\'].*?["\']/is',//onlick属性
+            '/on\w+\s*=\s*(["\']).*?\1/is',
+            '/on\w+\s*=\s*[^\s>]+/is'//on属性
         );
     
         foreach ($may_script as $pattern) {
@@ -2373,70 +2375,62 @@ function markdown_parser($incoming_comment)
                 return ($incoming_comment);
             }
         }
-    
-        $re = '/<[^>]*>/';
-        $allowed_html_content = array(
-            'a' => array(
-                'href' => array(),
-                'title' => array(),
-                'target' => array('_blank'),
-                'rel' => array(), // 添加rel属性支持
-            ),
-            'b' => array(),
-            'br' => array(),
-            'img' => array(
-                'src' => array(),
-                'alt' => array(),
-                'width' => array(),
-                'height' => array(),
-            ),
-            'code' => array(),
-            'blockquote' => array(),
-            'ul' => array(),
-            'ol' => array(),
-            'li' => array(),
-            'p' => array(),
-            'div' => array(),
-            'span' => array(),
-        );
-        if (preg_match($re, $incoming_comment['comment_content'])) {
-            $incoming_comment['comment_content'] = wp_kses($incoming_comment['comment_content'], $allowed_html_content);//移除所有不允许的标签
-        }
+        $incoming_comment['comment_content'] = wp_kses($incoming_comment['comment_content'], $allowedtags); // 自行调用kses
     } else {
         $incoming_comment['comment_content'] = htmlspecialchars($incoming_comment['comment_content'], ENT_QUOTES, 'UTF-8'); //未启用markdown直接转义
     }
 
-    $column_names = $wpdb->get_row("SELECT * FROM information_schema.columns where 
-    table_name='$wpdb->comments' and column_name = 'comment_markdown' LIMIT 1");
-    //Add column if not present.
-    if (!isset($column_names)) {
-        $wpdb->query("ALTER TABLE $wpdb->comments ADD comment_markdown text");
-    }
-    $comment_markdown_content = $incoming_comment['comment_content'];    if ($enable_markdown) { //未启用markdown不做解析
+    // $column_names = $wpdb->get_row("SELECT * FROM information_schema.columns where 
+    // table_name='$wpdb->comments' and column_name = 'comment_markdown' LIMIT 1");
+    // //Add column if not present.
+    // if (!isset($column_names)) {
+    //     $wpdb->query("ALTER TABLE $wpdb->comments ADD comment_markdown text");
+    // }
+    $comment_markdown_content = $incoming_comment['comment_content'];
+
+    if ($enable_markdown) { //未启用markdown不做解析
         include 'inc/Parsedown.php';
         $Parsedown = new Parsedown();
-        $incoming_comment['comment_content'] = $Parsedown->setUrlsLinked(true)->text($incoming_comment['comment_content']);
+        $Parsedown->setSafeMode(false);
+        $incoming_comment['comment_content'] = $Parsedown->setUrlsLinked(false)->text($incoming_comment['comment_content']);
     }
     return $incoming_comment;
 }
 add_filter('preprocess_comment', 'markdown_parser');
 remove_filter('comment_text', 'make_clickable', 9);
 
-//保存Markdown评论
-function save_markdown_comment($comment_ID, $comment_approved)
-{
-    global $wpdb, $comment_markdown_content;
-    $comment = get_comment($comment_ID);
-    $comment_content = $comment_markdown_content;
-    //store markdow content
-    $wpdb->query("UPDATE $wpdb->comments SET comment_markdown='" . $comment_content . "' WHERE comment_ID='" . $comment_ID . "';");
-}
-add_action('comment_post', 'save_markdown_comment', 10, 2);
+// //保存Markdown评论
+// function save_markdown_comment($comment_ID, $comment_approved)
+// {
+//     global $wpdb, $comment_markdown_content;
+//     $comment = get_comment($comment_ID);
+//     $comment_content = $comment_markdown_content;
+//     //store markdow content
+//     $wpdb->query("UPDATE $wpdb->comments SET comment_markdown='" . $comment_content . "' WHERE comment_ID='" . $comment_ID . "';");
+// }
+// add_action('comment_post', 'save_markdown_comment', 10, 2);
 
 //打开评论HTML标签限制
 function allow_more_tag_in_comment()
 {
     global $allowedtags;
+    $allowedtags['img'] = [
+        'src' => [],
+        'alt' => [],
+        'width' => [],
+        'height' => [],
+        'title' => [],
+    ];
+    $allowedtags['a'] = [
+        'href' => [],
+        'title' => [],
+        'target' => [],
+        'rel' => [],
+    ];
+    $allowedtags['b'] = array('class' => array());
+    $allowedtags['br'] = array('class' => array());
+    $allowedtags['blockquote'] = array('class' => array());
+    $allowedtags['p'] = array('class' => array());
     $allowedtags['pre'] = array('class' => array());
     $allowedtags['code'] = array('class' => array());
     $allowedtags['h1'] = array('class' => array());
@@ -2455,7 +2449,10 @@ function allow_more_tag_in_comment()
     $allowedtags['tbody'] = array('class' => array());
     $allowedtags['span'] = array('class' => array());
 }
-add_action('pre_comment_on_post', 'allow_more_tag_in_comment');
+add_action('init', 'allow_more_tag_in_comment');
+// 移除wp核心内置的两阶段评论过滤
+remove_filter('pre_comment_content', 'wp_filter_kses');
+remove_filter('comment_save_pre', 'wp_filter_kses');
 
 /**
  * 检查数据库是否支持MyISAM引擎
