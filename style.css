@@ -2287,18 +2287,17 @@ nav#comments-navi {
   width: 12px;
 }
 
-h1.fes-title {
-  color: var(--theme-skin, #505050);
-  font-size: 20px;
-  font-weight: var(--global-font-weight, 400);
-  padding: 0 3px 10px;
-}
-
+h1.fes-title,
 h1.main-title {
   color: var(--theme-skin, #505050);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: var(--global-font-weight, 400);
-  padding: 0 3px 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
 }
 
 .top-feature li {
@@ -4764,7 +4763,7 @@ object {
 }
 
 .site-main {
-  padding: 7.5% 0 0;
+  padding: 4% 0 0;
   position: relative;
 }
 

@@ -1070,7 +1070,7 @@ $sections = [
 				'output' => array(
 					array(
 						'element'  => array('h1.fes-title','h1.main-title'),
-						'property' => 'text-align',
+						'property' => 'justify-content',
 						'value_pattern' => '$ !important',
 					),
 				)

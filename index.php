@@ -59,7 +59,6 @@ foreach ($component_order as $component) {
                 <main id="main" class="site-main" role="main">
                     <h1 class="main-title posts-area-title">
                         <i class="<?php echo esc_attr(iro_opt('post_area_icon', 'fa-regular fa-bookmark')); ?>" aria-hidden="true"></i>
-                        <br>
                         <?php echo esc_html(iro_opt('post_area_title', '文章列表')); ?>
                     </h1>
 

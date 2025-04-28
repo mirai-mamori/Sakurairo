@@ -12,7 +12,7 @@
 	if (iro_opt('exhibition_area_style') === 'bottom_to_top') {
 ?>
     <div class="top-feature">
-        <h1 class="fes-title"> <i class="<?php echo iro_opt('exhibition_area_icon', 'fa-solid fa-laptop'); ?>" aria-hidden="true"></i> <br> <?php echo iro_opt('exhibition_area_title', '展示'); ?> </h1>
+        <h1 class="fes-title"> <i class="<?php echo iro_opt('exhibition_area_icon', 'fa-solid fa-laptop'); ?>" aria-hidden="true"></i> <?php echo iro_opt('exhibition_area_title', '展示'); ?> </h1>
         <div class="feature-content">
             <?php foreach ($exhibition as $key => $item) { 
 
@@ -33,7 +33,7 @@
     </div>
 <?php } else { ?>
     <div class="top-feature-row">
-        <h1 class="fes-title"> <i class="<?php echo iro_opt('exhibition_area_icon', 'fa-solid fa-laptop'); ?>" aria-hidden="true"></i> <br> <?php echo iro_opt('exhibition_area_title', '展示'); ?> </h1>
+        <h1 class="fes-title"> <i class="<?php echo iro_opt('exhibition_area_icon', 'fa-solid fa-laptop'); ?>" aria-hidden="true"></i> <?php echo iro_opt('exhibition_area_title', '展示'); ?> </h1>
         <?php foreach ($exhibition as $key => $item) { 
 
             if (!is_array($item)) {

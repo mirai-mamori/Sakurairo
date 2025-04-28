@@ -829,13 +829,13 @@ body.dark .post-list-thumb i{
 <?php if(iro_opt('area_title_text_align') == 'center'){ ?>
 h1.fes-title,
 h1.main-title {
-    text-align: center;
+    justify-content: center;
 }
 
 <?php }else if(iro_opt('area_title_text_align') == 'right'){ ?>
 h1.fes-title,
 h1.main-title {
-    text-align: right;
+    justify-content: right;
 }
 
 <?php } ?>
