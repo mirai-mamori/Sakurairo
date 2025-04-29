@@ -124,6 +124,8 @@ if ($show_medal_capsules) {
       <!-- Bento布局容器 -->
        <div class="bento-grid">
         <!-- 胶囊 -->
+         
+        <?php if($components): ?>
         <div class="stat-capsules-container">
             <?php foreach($components as $component) :
                 switch ($component):
@@ -216,7 +218,8 @@ if ($show_medal_capsules) {
                 endswitch; ?>
             <?php endforeach; ?>
         </div>
-          
+        <?php endif; ?>
+
         <!-- 展示卡片 -->
         <?php 
         if (!empty($exhibition)) : 
@@ -234,23 +237,24 @@ if ($show_medal_capsules) {
                 if (empty($img)) {
                     $img = iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@3.0/') . 'basic/default_display_img.jpg';
                 }
-        ?>
-        <div class="bento-item bento-medium">
-            <div class="card-title-wrapper">
-                <h3 class="bento-card-title"><?php echo esc_html($title); ?></h3>
-            </div>
-            <a href="<?php echo esc_url($link); ?>" target="_blank" rel="external nofollow" class="card-link">
-                <div class="card-image">
-                    <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy">
+                ?>
+                <div class="bento-item bento-medium">
+                    <div class="card-title-wrapper">
+                        <h3 class="bento-card-title"><?php echo esc_html($title); ?></h3>
+                    </div>
+                    <a href="<?php echo esc_url($link); ?>" target="_blank" rel="external nofollow" class="card-link">
+                        <div class="card-image">
+                            <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                            <?php if (!empty($description)) : ?>
+                            <p class="card-description"><?php echo esc_html($description); ?></p>
+                            <?php endif; ?>
+                        </div>
+                    </a>
                 </div>
-                <div class="card-info">
-                    <?php if (!empty($description)) : ?>
-                    <p class="card-description"><?php echo esc_html($description); ?></p>
-                    <?php endif; ?>
-                </div>
-            </a>
-        </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
         <?php endif; ?>
+
     </div>
 </div>
