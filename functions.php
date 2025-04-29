@@ -3079,6 +3079,12 @@ function get_archive_info($get_page = false) {
             'views' => 0,
             'words' => 0,
             'comments' => 0
+        ],
+        'page' => [
+            'posts' => 0,
+            'views' => 0,
+            'words' => 0,
+            'comments' => 0
         ]
     ];
         foreach ($posts as $post) {
@@ -3087,9 +3093,15 @@ function get_archive_info($get_page = false) {
         $comments = get_comments_number($post->ID);
         
         // 判断页面类型
-        if ($post->post_type == 'post') $post_type = 'article';
-        if ($post->post_type == 'shuoshuo') $post_type = 'shuoshuo';
-        if ($post->post_type == 'page') $post_type = 'page';
+        if ($post->post_type == 'post') {
+            $post_type = 'article';
+        }
+        if ($post->post_type == 'shuoshuo') {
+            $post_type = 'shuoshuo';
+        }
+        if ($post->post_type == 'page') {
+            $post_type = 'page';
+        }
         
         // 更新统计数据
         $stats[$post_type]['posts']++;
@@ -3669,12 +3681,14 @@ function get_site_stats() {
     foreach ($posts_stat as $year => $months) {
         foreach ($months as $month => $posts) {
             foreach ($posts as $post) {
-                $total_posts++;
+                if ($post['meta']['type'] != "page"){
+                    $total_posts++;
     
-                // 字数
-                if (isset($post['meta']['words'])) {
-                    preg_match('/\d+/', $post['meta']['words'], $matches);
-                    $total_words += isset($matches[0]) ? intval($matches[0]) : 0;
+                    // 字数
+                    if (isset($post['meta']['words'])) {
+                        preg_match('/\d+/', $post['meta']['words'], $matches);
+                        $total_words += isset($matches[0]) ? intval($matches[0]) : 0;
+                    }
                 }
     
                 // 作者
