@@ -240,8 +240,10 @@ $square_cards = [
         'icon'         => 'fa-solid fa-bullhorn',
         'label'        => iro_opt('stat_announcement_text', __('Latest Announcement', 'sakurairo')),
         'value'        => '',
+        'enabled'      => in_array('announcement', $components)
+    ],
+    'random_link'=> [
         'enabled'      => in_array('random_link', $components),
-        'is_multiline' => true
     ]
 ];
 
@@ -304,13 +306,12 @@ if ($show_medal_capsules) {
         <!-- 胶囊 -->
         <div class="stat-capsules-container">
             <?php foreach($components as $component) :
-            error_log($component . '显示为' . $square_cards[$component]['enabled']);
                 switch ($component):
                     case 'post_count':
                     case 'comment_count':
                     case 'author_count':
                     case 'admin_online':
-                        if ($square_cards[$component]['enabled']): ?>
+                        if ($square_cards[$component]['enabled']): // 理论上选项中不添加相关组件后就不会case到，因为没有?>
                             <div class="stat-capsule">
                               <i class="<?php echo $square_cards[$component]['icon']; ?>"></i>
                               <div class="capsule-content">
@@ -354,7 +355,7 @@ if ($show_medal_capsules) {
                         break;
 
                     case 'random_link':
-                        if ($show_random_link && !empty($site_stats['random_link'])):
+                        if ($square_cards[$component]['enabled'] && !empty($site_stats['random_link'])):
                             $rl = $site_stats['random_link'];
                             $img = $rl->link_image ?: 
                                     iro_opt('vision_resource_basepath').'/basic/default_avatar.jpg'; ?>
