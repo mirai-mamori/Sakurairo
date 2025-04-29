@@ -9,67 +9,51 @@ function get_site_stats() {
     if ($cached_stats !== false) {
         return $cached_stats;
     }
-    
+
     global $wpdb;
-    // 文章总数（包括常规文章和说说）
-    $post_count = wp_count_posts('post')->publish;
-    // 如果存在shuoshuo类型文章，加入统计
-    if (post_type_exists('shuoshuo')) {
-        $shuoshuo_count = wp_count_posts('shuoshuo')->publish;
-        $post_count += $shuoshuo_count;
+
+    $posts_stat = get_transient('time_archive');
+    
+    $total_posts = 0;
+    $total_words = 0;
+    $total_authors = 0;
+    $total_comments =0;
+    $total_views = 0;
+    $first_post_date = null;
+
+    foreach ($posts_stat as $year => $months) {
+        foreach ($months as $month => $posts) {
+            foreach ($posts as $post) {
+                $total_posts++;
+    
+                // 字数
+                if (isset($post['meta']['words'])) {
+                    preg_match('/\d+/', $post['meta']['words'], $matches);
+                    $total_words += isset($matches[0]) ? intval($matches[0]) : 0;
+                }
+    
+                // 作者
+                $authors[$post['post_author']] = true;
+    
+                // 评论数
+                $total_comments += intval($post['comment_count']);
+    
+                // 浏览数
+                if (isset($post['meta']['views'])) {
+                    $total_views += intval($post['meta']['views']);
+                }
+    
+                // 最早发表时间
+                $post_time = strtotime($post['post_date']);
+                if ($first_post_date === null || $post_time < $first_post_date) {
+                    $first_post_date = $post_time;
+                }
+            }
+        }
     }
-    
-    // 统计文章总字数（包括常规文章和说说）
-    $words_count_query = "
-        SELECT SUM(meta_value) 
-        FROM $wpdb->postmeta 
-        WHERE meta_key = 'post_words_count' 
-        AND post_id IN (
-            SELECT ID 
-            FROM $wpdb->posts 
-            WHERE post_status = 'publish' 
-            AND (post_type = 'post'";
-    
-    // 如果存在说说类型，也包括在内
-    if (post_type_exists('shuoshuo')) {
-        $words_count_query .= " OR post_type = 'shuoshuo'";
-    }
-    
-    $words_count_query .= "))";
-    $total_words = (int)$wpdb->get_var($words_count_query);
-    
-    // 统计发布过至少1篇文章的作者数量
-    $author_count_query = "
-        SELECT COUNT(DISTINCT post_author) 
-        FROM $wpdb->posts 
-        WHERE post_status = 'publish' 
-        AND (post_type = 'post'";
-    
-    // 如果存在说说类型，也包括在内
-    if (post_type_exists('shuoshuo')) {
-        $author_count_query .= " OR post_type = 'shuoshuo'";
-    }
-    
-    $author_count_query .= ")";
-    $author_count = $wpdb->get_var($author_count_query);
-    
-    // 评论总数
-    $comment_count = $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->comments WHERE comment_approved = '1'");
-    
-    // 访客总数 (基于浏览量总和)
-    $visitor_count = 0;
-    if (function_exists('wp_statistics_pages') && (iro_opt('statistics_api') == 'wp_statistics')) {
-        // 如果安装了WP-Statistics插件，使用其API获取总浏览量
-        $visitor_count = wp_statistics_pages('total');
-    } else {
-        // 否则使用文章元数据汇总
-        $visitor_query = $wpdb->get_var("
-            SELECT SUM(meta_value) 
-            FROM $wpdb->postmeta 
-            WHERE meta_key = 'views'
-        ");
-        $visitor_count = $visitor_query ? (int)$visitor_query : 0;
-    }
+
+    $total_authors = count($authors);
+    $first_post_date = date('Y-m-d H:i:s', $first_post_date);
     
     // 友情链接数量
     $link_count = count(get_bookmarks(['hide_invisible' => true]));
@@ -156,17 +140,17 @@ function get_site_stats() {
     }
     
     $stats = [
-        'post_count' => $post_count,
-        'comment_count' => $comment_count,
-        'visitor_count' => $visitor_count,
+        'post_count' => $total_posts,
+        'comment_count' => $total_comments,
+        'visitor_count' => $total_views,
         'link_count' => $link_count,
         'random_link' => $random_link_data,
         'first_post_date' => $first_post_date,
         'blog_days' => $blog_days,
         'admin_last_online' => $admin_last_online,
         'admin_last_online_diff' => $admin_last_online_diff,
-        'author_count' => $author_count,
-        'total_words' => $total_words // 添加总字数到统计数据中
+        'author_count' => $total_authors,
+        'total_words' => $total_words,
     ];
     
     // 缓存数据1小时
@@ -177,7 +161,7 @@ function get_site_stats() {
 
 // 获取站点统计信息
 $site_stats = get_site_stats();
-
+$components = iro_opt("display_components");
 // 准备显示信息
 $square_cards = [
     [
@@ -185,63 +169,63 @@ $square_cards = [
         'icon' => 'fa-regular fa-file-lines',
         'label' => __('Content Count', 'sakurairo'),
         'value' => number_format($site_stats['post_count']) . ' ' . __('posts', 'sakurairo'),
-        'enabled' => iro_opt('show_stat_posts', true)
+        'enabled' => in_array('post_count',$components)
     ],
     [
         'id' => 'comments',
         'icon' => 'fa-regular fa-comment',
         'label' => __('Comment Count', 'sakurairo'),
         'value' => number_format($site_stats['comment_count']) . ' ' . __('comments', 'sakurairo'),
-        'enabled' => iro_opt('show_stat_comments', true)
+        'enabled' => in_array('comment_count',$components)
     ],
     [
         'id' => 'visitors',
         'icon' => 'fa-regular fa-eye',
         'label' => __('Visitor Count', 'sakurairo'),
         'value' => number_format($site_stats['visitor_count']) . ' ' . __('visits', 'sakurairo'),
-        'enabled' => iro_opt('show_stat_visitors', true)
+        'enabled' => in_array('view_count',$components)
     ],
     [
         'id' => 'links',
         'icon' => 'fa-solid fa-link',
         'label' => __('Link Count', 'sakurairo'),
         'value' => number_format($site_stats['link_count']) . ' ' . __('links', 'sakurairo'),
-        'enabled' => iro_opt('show_stat_links', true)
+        'enabled' => in_array('link_count',$components)
     ],
     [
         'id' => 'authors',
         'icon' => 'fa-solid fa-users',
         'label' => __('Author Count', 'sakurairo'),
         'value' => number_format($site_stats['author_count']) . ' ' . __('authors', 'sakurairo'),
-        'enabled' => iro_opt('show_stat_authors', true)
+        'enabled' => in_array('author_count',$components)
     ],
     [
         'id' => 'total_words',
         'icon' => 'fa-solid fa-font',
         'label' => __('Total Words', 'sakurairo'),
         'value' => number_format($site_stats['total_words']) . ' ' . __('words', 'sakurairo'),
-        'enabled' => iro_opt('show_stat_total_words', true)
+        'enabled' => in_array('total_words',$components)
     ],
     [
         'id' => 'blog_days',
         'icon' => 'fa-solid fa-calendar-days',
         'label' => __('Blog Running', 'sakurairo'),
         'value' => number_format($site_stats['blog_days']) . ' ' . __('days', 'sakurairo'),
-        'enabled' => iro_opt('show_stat_blog_days', true)
+        'enabled' => in_array('blog_days',$components)
     ],
     [
         'id' => 'admin_online',
         'icon' => 'fa-solid fa-user-clock',
         'label' => __('Last Online', 'sakurairo'),
         'value' => format_time_diff($site_stats['admin_last_online_diff']),
-        'enabled' => iro_opt('show_stat_admin_online', true)
+        'enabled' => in_array('admin_online',$components)
     ],
     [
         'id' => 'announcement',
         'icon' => 'fa-solid fa-bullhorn',
-        'label' => iro_opt('stat_announcement_text', __('Latest Announcement', 'sakurairo')),
+        'label' => in_array('stat_announcement_text', __('Latest Announcement', 'sakurairo')),
         'value' => '',
-        'enabled' => iro_opt('show_stat_announcement', true),
+        'enabled' => in_array('random_link',$components),
         'is_multiline' => true
     ]
 ];

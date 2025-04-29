@@ -3100,6 +3100,7 @@ function get_archive_info() {
           $post = [ //仅保存需要的数据
             'post_title'    => $post->post_title,
             'post_date'     => $post->post_date,
+            'post_modified'     => $post->post_modified,
             'comment_count' => $comments,
             'guid'          => $post->guid,
             'meta' => [
