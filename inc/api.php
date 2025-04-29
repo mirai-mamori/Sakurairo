@@ -131,8 +131,8 @@ add_action('rest_api_init', function () {
         'callback' => function (){
             $time_archive = get_transient('time_archive');
             if (!$time_archive) {
-                get_archive_info();
-                $time_archive = get_transient('time_archive');
+                $time_archive = get_archive_info();
+                set_transient('time_archive',$time_archive,86400);
             }
             return $time_archive;
         },

@@ -3045,16 +3045,21 @@ function get_the_user_ip()
 }
 
 //归档页信息缓存
-function get_archive_info() {
+function get_archive_info($get_page = false) {
     // 获取所有文章和说说
-    $posts = get_posts([
+    $args = [
         'posts_per_page' => -1,
         'orderby' => 'date',
         'order' => 'DESC',
         'post_type' => array('post', 'shuoshuo'),
         'post_status'    => 'publish',
         'suppress_filters' => false // 同时获取文章和说说
-    ]);
+    ];
+    if ($get_page){
+        $args['post_type'] = array('post', 'shuoshuo', 'page');
+    }
+    $posts = get_posts($args);
+    // 统计
     $years = [];
     $stats = [
         'total' => [
@@ -3081,8 +3086,10 @@ function get_archive_info() {
         $words = get_meta_words_count($post->ID);
         $comments = get_comments_number($post->ID);
         
-        // 判断文章类型（使用post_type而不是post_format）
-        $post_type = $post->post_type === 'shuoshuo' ? 'shuoshuo' : 'article';
+        // 判断页面类型
+        if ($post->post_type == 'post') $post_type = 'article';
+        if ($post->post_type == 'shuoshuo') $post_type = 'shuoshuo';
+        if ($post->post_type == 'page') $post_type = 'page';
         
         // 更新统计数据
         $stats[$post_type]['posts']++;
@@ -3115,7 +3122,6 @@ function get_archive_info() {
         if (!isset($years[$year][$month])) $years[$year][$month] = [];
         $years[$year][$month][] = $post;
     }
-    set_transient('time_archive',$years,86400);
 
     return $years;
 }
@@ -3651,30 +3657,7 @@ function get_site_stats() {
         return $cached_stats;
     }
 
-    $posts_stat = get_transient('time_archive');
-
-    function archive_data_check($data) {
-        if (!is_array($data) || empty($data)) {
-            return false;
-        }
-        foreach ($data as $year => $months) {
-            if (!is_array($months) || empty($months)) {
-                continue;
-            }
-            foreach ($months as $month => $posts) {
-                if (!is_array($posts) || empty($posts)) {
-                    continue;
-                }
-                if (isset($posts[0]['ID'], $posts[0]['meta']['words'], $posts[0]['post_author'])) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    if (!archive_data_check($posts_stat)) {
-        $posts_stat = get_archive_info();
-    }    
+    $posts_stat = get_archive_info(true);
     
     $total_posts = 0;
     $total_words = 0;

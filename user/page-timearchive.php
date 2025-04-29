@@ -605,6 +605,7 @@ get_header();
 $years = get_transient('time_archive');
 if (!$years) {
     $years = get_archive_info();
+    set_transient('time_archive',$time_archive,86400);
 }
 foreach ($years as $year => $months) {
     $postCount = array_sum(array_map('count', $months));
