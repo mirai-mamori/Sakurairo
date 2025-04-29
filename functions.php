@@ -3628,7 +3628,7 @@ function sakurairo_record_admin_login() {
         }
     }
 }
-add_action('wp_login', 'sakurairo_record_admin_login');
+add_action('wp_loaded', 'sakurairo_record_admin_login');
 
 // 添加钩子，在发布/更新文章或者评论时刷新缓存
 function sakurairo_refresh_stats_on_action() {
