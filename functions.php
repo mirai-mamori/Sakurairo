@@ -3045,16 +3045,21 @@ function get_the_user_ip()
 }
 
 //归档页信息缓存
-function get_archive_info() {
+function get_archive_info($get_page = false) {
     // 获取所有文章和说说
-    $posts = get_posts([
+    $args = [
         'posts_per_page' => -1,
         'orderby' => 'date',
         'order' => 'DESC',
         'post_type' => array('post', 'shuoshuo'),
         'post_status'    => 'publish',
         'suppress_filters' => false // 同时获取文章和说说
-    ]);
+    ];
+    if ($get_page){
+        $args['post_type'] = array('post', 'shuoshuo', 'page');
+    }
+    $posts = get_posts($args);
+    // 统计
     $years = [];
     $stats = [
         'total' => [
@@ -3074,6 +3079,12 @@ function get_archive_info() {
             'views' => 0,
             'words' => 0,
             'comments' => 0
+        ],
+        'page' => [
+            'posts' => 0,
+            'views' => 0,
+            'words' => 0,
+            'comments' => 0
         ]
     ];
         foreach ($posts as $post) {
@@ -3081,8 +3092,16 @@ function get_archive_info() {
         $words = get_meta_words_count($post->ID);
         $comments = get_comments_number($post->ID);
         
-        // 判断文章类型（使用post_type而不是post_format）
-        $post_type = $post->post_type === 'shuoshuo' ? 'shuoshuo' : 'article';
+        // 判断页面类型
+        if ($post->post_type == 'post') {
+            $post_type = 'article';
+        }
+        if ($post->post_type == 'shuoshuo') {
+            $post_type = 'shuoshuo';
+        }
+        if ($post->post_type == 'page') {
+            $post_type = 'page';
+        }
         
         // 更新统计数据
         $stats[$post_type]['posts']++;
@@ -3115,7 +3134,6 @@ function get_archive_info() {
         if (!isset($years[$year][$month])) $years[$year][$month] = [];
         $years[$year][$month][] = $post;
     }
-    set_transient('time_archive',$years,86400);
 
     return $years;
 }
@@ -3610,7 +3628,7 @@ function sakurairo_record_admin_login() {
         }
     }
 }
-add_action('wp_login', 'sakurairo_record_admin_login');
+add_action('wp_loaded', 'sakurairo_record_admin_login');
 
 // 添加钩子，在发布/更新文章或者评论时刷新缓存
 function sakurairo_refresh_stats_on_action() {
@@ -3641,6 +3659,137 @@ function format_time_diff($minutes) {
         $months = floor($minutes / 43200);
         return sprintf(_n('%d month ago', '%d months ago', $months, 'sakurairo'), $months);
     }
+}
+
+// 获取站点统计信息
+function get_site_stats() {
+    // 尝试从缓存获取数据
+    $cached_stats = get_transient('sakurairo_site_stats');
+    if ($cached_stats !== false) {
+        return $cached_stats;
+    }
+
+    $posts_stat = get_archive_info(true);
+    
+    $total_posts = 0;
+    $total_words = 0;
+    $total_authors = 0;
+    $total_comments =0;
+    $total_views = 0;
+    $first_post_date = null;
+
+    foreach ($posts_stat as $year => $months) {
+        foreach ($months as $month => $posts) {
+            foreach ($posts as $post) {
+                if ($post['meta']['type'] != "page"){
+                    $total_posts++;
+    
+                    // 字数
+                    if (isset($post['meta']['words'])) {
+                        preg_match('/\d+/', $post['meta']['words'], $matches);
+                        $total_words += isset($matches[0]) ? intval($matches[0]) : 0;
+                    }
+                }
+    
+                // 作者
+                $authors[$post['post_author']] = true;
+    
+                // 评论数
+                $total_comments += intval($post['comment_count']);
+    
+                // 浏览数
+                if (isset($post['meta']['views'])) {
+                    $total_views += intval($post['meta']['views']);
+                }
+    
+                // 最早发表时间
+                $post_time = strtotime($post['post_date']);
+                if ($first_post_date === null || $post_time < $first_post_date) {
+                    $first_post_date = $post_time;
+                }
+            }
+        }
+    }
+
+    $total_authors = count($authors);
+    // 第一篇文章的发布日期
+    $first_post_date = date('Y-m-d H:i:s', $first_post_date);
+    
+    // 友情链接数量
+    $link_count = count(get_bookmarks(['hide_invisible' => true]));
+    
+    // 随机友情链接
+    $random_link = get_bookmarks([
+        'hide_invisible' => true,
+        'orderby' => 'rand',
+        'limit' => 1
+    ]);
+    $random_link_data = !empty($random_link) ? $random_link[0] : null;
+    
+    // 计算从第一篇文章发布到现在的天数
+    $blog_days = 0;
+    if ($first_post_date) {
+        $first_post_datetime = new DateTime($first_post_date);
+        $now = new DateTime();
+        $interval = $now->diff($first_post_datetime);
+        $blog_days = $interval->days;
+    }
+
+    function get_latest_admin_online_time() {
+        $admins = get_users(['role' => 'administrator']);
+        $latest_time = 0;
+        $latest_admin = null;
+    
+        foreach ($admins as $admin) {
+            $last_online = get_user_meta($admin->ID, 'last_online', true);
+            if ($last_online) {
+                $timestamp = strtotime($last_online);
+                if ($timestamp > $latest_time) {
+                    $latest_time = $timestamp;
+                    $latest_admin = [
+                        'user' => $admin,
+                        'time' => $last_online
+                    ];
+                }
+            }
+        }
+    
+        return $latest_admin;
+    }
+    
+    $latest_admin_info = get_latest_admin_online_time();
+    
+    if (!empty($latest_admin_info)) {
+        $admin_last_online = $latest_admin_info['time'];
+        $last_online_timestamp = strtotime($admin_last_online);
+        $current_timestamp = current_time('timestamp');
+    
+        // 计算以分钟为单位的时间差
+        $admin_last_online_diff = max(0, floor(($current_timestamp - $last_online_timestamp) / 60));
+    } else {
+        // 没有记录，使用当前时间
+        $admin_last_online = current_time('mysql');
+        $admin_last_online_diff = 0;
+    }
+    
+    $stats = [
+        'post_count' => $total_posts,
+        'comment_count' => $total_comments,
+        'visitor_count' => $total_views,
+        'link_count' => $link_count,
+        'random_link' => $random_link_data,
+        'first_post_date' => $first_post_date,
+        'blog_days' => $blog_days,
+        'admin_last_online' => $admin_last_online,
+        'admin_last_online_diff' => $admin_last_online_diff,
+        'author_count' => $total_authors,
+        'total_words' => $total_words,
+    ];
+    
+    // 缓存数据1小时
+    set_transient('sakurairo_site_stats', $stats, 3600);
+    
+    return $stats;
 }
 
 /**

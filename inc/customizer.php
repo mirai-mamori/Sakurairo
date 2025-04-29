@@ -1098,7 +1098,13 @@ $sections = [
 				'label'    => esc_html__( 'Announcement Text', 'Sakurairo_C' ),
 				'description' => esc_html__( 'First line: main message. Second line: details. Both lines will be displayed.', 'Sakurairo_C' ),
 				'default'  => esc_html__( "Latest Announcement\nWelcome to my site!", 'Sakurairo_C' ),
-				'active_callback' => function() { return get_theme_mod('show_stat_announcement', true); },
+				'active_callback' => [
+					[
+						'setting'  => 'display_components',
+						'operator' => 'contains',
+						'value'    => 'announcement',
+					],
+				],
 			],
 			[
 				'type'     => 'sortable',
