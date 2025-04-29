@@ -2266,7 +2266,6 @@ $prefix = 'iro_options';
         'desc'   => __('Set the text for announcement capsule. Use the first line for the main announcement and the second line for details. Both lines will always be displayed.', 'sakurairo_csf'),
         'default' => __("Latest Announcement\nWelcome to my site!", 'sakurairo_csf'),
         'sanitize' => false,
-        'dependency' => array('show_stat_announcement', '==', 'true'),
       ),
 
       array(
