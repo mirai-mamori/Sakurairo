@@ -2258,14 +2258,6 @@ $prefix = 'iro_options';
         'desc'   => __('Display your medal in display area', 'sakurairo_csf'),
         'default' => true,
       ),
-
-      array(
-        'id'     => 'show_stat_announcement',
-        'type'   => 'switcher',
-        'title'  => __('Show Announcement Capsule', 'sakurairo_csf'),
-        'desc'   => __('Display announcement in display area', 'sakurairo_csf'),
-        'default' => true,
-      ),
       
       array(
         'id'     => 'stat_announcement_text',
@@ -2295,6 +2287,7 @@ $prefix = 'iro_options';
             'blog_days'     => __('Blog Running Capsule','sakurairo_csf'),
             'admin_online'     => __('Last Online Capsule','sakurairo_csf'),
             'random_link'     => __('Random Link Capsule','sakurairo_csf'),
+            'announcement'     => __('Announcement Capsule','sakurairo_csf'),
         ),
         "default" => array('primary'),
       ),
