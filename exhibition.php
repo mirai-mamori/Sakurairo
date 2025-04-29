@@ -10,8 +10,6 @@ function get_site_stats() {
         return $cached_stats;
     }
 
-    global $wpdb;
-
     $posts_stat = get_transient('time_archive');
 
     function archive_data_check($data) {
@@ -76,6 +74,7 @@ function get_site_stats() {
     }
 
     $total_authors = count($authors);
+    // 第一篇文章的发布日期
     $first_post_date = date('Y-m-d H:i:s', $first_post_date);
     
     // 友情链接数量
@@ -89,15 +88,6 @@ function get_site_stats() {
     ]);
     $random_link_data = !empty($random_link) ? $random_link[0] : null;
     
-    // 获取第一篇文章的发布日期
-    $first_post_date = $wpdb->get_var("
-        SELECT post_date 
-        FROM $wpdb->posts 
-        WHERE post_status = 'publish' AND post_type = 'post' 
-        ORDER BY post_date ASC 
-        LIMIT 1
-    ");
-    
     // 计算从第一篇文章发布到现在的天数
     $blog_days = 0;
     if ($first_post_date) {
@@ -106,58 +96,40 @@ function get_site_stats() {
         $interval = $now->diff($first_post_datetime);
         $blog_days = $interval->days;
     }
-      // 获取管理员上次上线时间
-    $admin_last_online = 0;
-    $admin_last_online_diff = 0;
+
+    function get_latest_admin_online_time() {
+        $admins = get_users(['role' => 'administrator']);
+        $latest_time = 0;
+        $latest_admin = null;
     
-    // 查询最近的管理员文章修改或评论时间
-    // 先检查最近的文章修改
-    $recent_post_time = $wpdb->get_var("
-        SELECT post_modified 
-        FROM $wpdb->posts 
-        WHERE post_status = 'publish' 
-        AND post_type IN ('post', 'page') 
-        ORDER BY post_modified DESC 
-        LIMIT 1
-    ");
+        foreach ($admins as $admin) {
+            $last_online = get_user_meta($admin->ID, 'last_online', true);
+            if ($last_online) {
+                $timestamp = strtotime($last_online);
+                if ($timestamp > $latest_time) {
+                    $latest_time = $timestamp;
+                    $latest_admin = [
+                        'user' => $admin,
+                        'time' => $last_online
+                    ];
+                }
+            }
+        }
     
-    // 检查最近的评论
-    $recent_comment_time = $wpdb->get_var("
-        SELECT comment_date 
-        FROM $wpdb->comments 
-        WHERE user_id IN (
-            SELECT ID FROM $wpdb->users AS u 
-            INNER JOIN $wpdb->usermeta AS um 
-            ON u.ID = um.user_id 
-            WHERE um.meta_key = '{$wpdb->prefix}capabilities' 
-            AND um.meta_value LIKE '%administrator%'
-        )
-        AND comment_approved = '1' 
-        ORDER BY comment_date DESC 
-        LIMIT 1
-    ");
-    
-    // 获取元数据中存储的最后登录时间
-    $admin_users = get_users(['role' => 'administrator', 'number' => 1]);
-    $meta_last_online = '';
-    if (!empty($admin_users)) {
-        $meta_last_online = get_user_meta($admin_users[0]->ID, 'last_online', true);
+        return $latest_admin;
     }
     
-    // 比较所有时间，取最近的一个
-    $times = array_filter([$recent_post_time, $recent_comment_time, $meta_last_online]);
+    $latest_admin_info = get_latest_admin_online_time();
     
-    if (!empty($times)) {
-        $admin_last_online = max($times);
-        
-        // 计算时间差
+    if (!empty($latest_admin_info)) {
+        $admin_last_online = $latest_admin_info['time'];
         $last_online_timestamp = strtotime($admin_last_online);
         $current_timestamp = current_time('timestamp');
-        
+    
         // 计算以分钟为单位的时间差
         $admin_last_online_diff = max(0, floor(($current_timestamp - $last_online_timestamp) / 60));
     } else {
-        // 如果没有找到任何活动记录，使用当前时间
+        // 没有记录，使用当前时间
         $admin_last_online = current_time('mysql');
         $admin_last_online_diff = 0;
     }
