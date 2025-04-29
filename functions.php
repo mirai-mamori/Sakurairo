@@ -3097,8 +3097,9 @@ function get_archive_info() {
         
         $year = date('Y', strtotime($post->post_date));
         $month = date('n', strtotime($post->post_date));
-          $post = [ //仅保存需要的数据
+          $post = [ //仅保存需要的数据（归档、展示区）
             'post_title'    => $post->post_title,
+            'post_author'     => $post->post_author,
             'post_date'     => $post->post_date,
             'post_modified'     => $post->post_modified,
             'comment_count' => $comments,

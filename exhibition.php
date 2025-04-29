@@ -13,6 +13,29 @@ function get_site_stats() {
     global $wpdb;
 
     $posts_stat = get_transient('time_archive');
+
+    function archive_data_check($data) {
+        if (!is_array($data) || empty($data)) {
+            return false;
+        }
+        foreach ($data as $year => $months) {
+            if (!is_array($months) || empty($months)) {
+                continue;
+            }
+            foreach ($months as $month => $posts) {
+                if (!is_array($posts) || empty($posts)) {
+                    continue;
+                }
+                if (isset($posts[0]['ID'], $posts[0]['meta']['words'], $posts[0]['post_author'])) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    if (!archive_data_check($posts_stat)) {
+        $posts_stat = get_archive_info();
+    }    
     
     $total_posts = 0;
     $total_words = 0;
@@ -161,7 +184,7 @@ function get_site_stats() {
 
 // 获取站点统计信息
 $site_stats = get_site_stats();
-$components = iro_opt("display_components");
+$components = iro_opt("display_components",[]);
 // 准备显示信息
 $square_cards = [
     [
@@ -223,7 +246,7 @@ $square_cards = [
     [
         'id' => 'announcement',
         'icon' => 'fa-solid fa-bullhorn',
-        'label' => in_array('stat_announcement_text', __('Latest Announcement', 'sakurairo')),
+        'label' => iro_opt('stat_announcement_text', __('Latest Announcement', 'sakurairo')),
         'value' => '',
         'enabled' => in_array('random_link',$components),
         'is_multiline' => true
