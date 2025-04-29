@@ -2156,7 +2156,6 @@ $prefix = 'iro_options';
         "multiple" => true,
         "sortable" => true,
         "options"=> array(
-            'bulletin'    => __('Bulletin Board','sakurairo_csf'),
             'exhibition'  => __('Display Area','sakurairo_csf'),
             'primary'     => __('Article Area','sakurairo_csf'),
             'static_page' => __('Static Page','sakurairo_csf'),
@@ -2236,96 +2235,6 @@ $prefix = 'iro_options';
 
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title' => __('Bulletin Board','sakurairo_csf'),
-    'icon' => 'fa fa-bullhorn',
-    'fields' => array(
-
-      array(
-        'type' => 'submessage',
-        'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%85%AC%E5%91%8A%E6%A0%8F%E5%92%8C%E5%8C%BA%E5%9F%9F%E6%A0%87%E9%A2%98%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
-      ),
-
-      array(
-        'type'    => 'submessage',
-        'style'   => 'normal',
-        'content' => __('It will only be displayed when "Bulletin Board" is selected in the homepage component settings','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'bulletin_board_style',
-        'type' => 'radio',
-        'title' => __('Bulletin Board Style','sakurairo_csf'),
-        'options' => array(
-          'picture' => __('Picture Background','sakurairo_csf'),
-          'pure' => __('Color Background','sakurairo_csf'),
-        ),
-        'default' => 'picture'
-      ),
-
-      array(
-        'id' => 'bulletin_board_icon',
-        'type' => 'switcher',
-        'title' => __('Bulletin Board "Notice" Icon','sakurairo_csf'),
-        'label' => __('The "Notice" icon will be displayed on the left side of the announcement bar','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
-        'id' => 'bulletin_board_bg',
-        'type' => 'upload',
-        'title' => __('Bulletin Board Background','sakurairo_csf'),
-        'dependency' => array(
-          array( 'bulletin_board_style', '==', 'picture' ),
-        ),
-        'desc' => __('Best width 820px, best height 67px','sakurairo_csf'),
-        'library' => 'image',
-        'default' => $vision_resource_basepath . 'series/announcement_bg.webp'
-      ),
-
-      array(
-        'id' => 'bulletin_board_border_color',
-        'type' => 'color',
-        'title' => __('Bulletin Board Border Color','sakurairo_csf'),
-        'dependency' => array(
-          array( 'bulletin_board_style', '==', 'pure' ),
-        ),
-        'desc' => __('Customize the colors, it is recommended to use a light color that corresponds with the theme color','sakurairo_csf'),
-        'default' => '#E6E6E6'
-      ),
-
-      array(
-        'id' => 'bulletin_text',
-        'type' => 'text',
-        'title' => __('Bulletin Board Text','sakurairo_csf'),
-        'desc' => __('Fill in the announcement text, the text beyond 142 bytes will be hidden','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'bulletin_board_text_align',
-        'type' => 'image_select',
-        'title' => __('Bulletin Board Alignment','sakurairo_csf'),
-        'options'     => array(
-          'left'  => $vision_resource_basepath . 'options/announce_text_left.webp',
-          'right'  => $vision_resource_basepath . 'options/announce_text_right.webp',
-          'center'  => $vision_resource_basepath . 'options/announce_text_center.webp',
-        ),
-        'default'     => 'left'
-      ),
-
-      array(
-        'id' => 'bulletin_text_color',
-        'type' => 'color',
-        'title' => __('Bulletin Board Text Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#999'
-      ),
-
-    )
-  ) );
-
-  Sakurairo_CSF::createSection( $prefix, array(
-    'parent' => 'homepage', 
     'title' => __('Display Area Options','sakurairo_csf'),
     'icon' => 'fa fa-bookmark',
     'fields' => array(
@@ -2343,59 +2252,103 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'exhibition_area_matching_color',
-        'type' => 'color',
-        'title' => __('Display Area Matching Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#a0daa9'
-      ),  
-
-      array(
-        'id' => 'exhibition_area_style',
-        'type' => 'image_select',
-        'title' => __('Display Area Style','sakurairo_csf'),
-        'options' => array(
-          'left_and_right' => $vision_resource_basepath . 'options/exhibition_area_style_lr.webp',
-          'bottom_to_top' => $vision_resource_basepath . 'options/exhibition_area_style_ud.webp',
-        ),
-        'default' => 'left_and_right'
-      ),
-
-      array(
-        'id' => 'exhibition_area_compat',
-        'type' => 'switcher',
-        'title' => __('Display Area Compatibility Mode','sakurairo_csf'),
-        'dependency' => array(
-                              array( 'exhibition_area_style', '==', 'left_and_right', '', 'true' ),
-                        ),
-        'label' => __('Enabled by default, this option avoids the problem of misaligned display areas','sakurairo_csf'),
+        'id'     => 'show_medal_capsules',
+        'type'   => 'switcher',
+        'title'  => __('Show Medal', 'sakurairo_csf'),
+        'desc'   => __('Display your medal in display area', 'sakurairo_csf'),
         'default' => true,
       ),
 
       array(
-        'id' => 'exhibition_background_color',
-        'type' => 'color',
-        'title' => __('Display Area Background Color','sakurairo_csf'),
-        'dependency' => array(
-                              array( 'exhibition_area_style', '==', 'left_and_right', '', 'true' ),
-                        ),
-        'desc' => __('Customize the colors, light colors are recommended','sakurairo_csf'),
-        'default' => 'rgba(255,255,255,0.4)'
+        'id'     => 'show_stat_announcement',
+        'type'   => 'switcher',
+        'title'  => __('Show Announcement Capsule', 'sakurairo_csf'),
+        'desc'   => __('Display announcement in display area', 'sakurairo_csf'),
+        'default' => true,
       ),
       
       array(
-        'id' => 'exhibition_radius',
-        'type' => 'slider',
-        'title' => __('Display Area Rounded Corners','sakurairo_csf'),
-        'dependency' => array(
-          array( 'exhibition_area_style', '==', 'left_and_right', '', 'true' ),
-          array( 'exhibition_area_compat', '==', 'true' ),
-        ),
-        'desc' => __('Slide to adjust, the recommended value is 15','sakurairo_csf'),
-        'unit' => 'px',
-        'default' => '15'
+        'id'     => 'stat_announcement_text',
+        'type'   => 'textarea',
+        'title'  => __('Announcement Text', 'sakurairo_csf'),
+        'desc'   => __('Set the text for announcement capsule. Use the first line for the main announcement and the second line for details. Both lines will always be displayed.', 'sakurairo_csf'),
+        'default' => __("Latest Announcement\nWelcome to my site!", 'sakurairo_csf'),
+        'sanitize' => false,
+        'dependency' => array('show_stat_announcement', '==', 'true'),
       ),
 
+      array(
+        'id'     => 'show_stat_posts',
+        'type'   => 'switcher',
+        'title'  => __('Show Posts Capsule', 'sakurairo_csf'),
+        'desc'   => __('Display post count statistics in display area', 'sakurairo_csf'),
+        'default' => true,
+      ),
+
+      array(
+        'id'     => 'show_stat_comments',
+        'type'   => 'switcher',
+        'title'  => __('Show Comments Capsule', 'sakurairo_csf'),
+        'desc'   => __('Display comment count statistics in display area', 'sakurairo_csf'),
+        'default' => true,
+      ),
+
+      array(
+        'id'     => 'show_stat_visitors',
+        'type'   => 'switcher',
+        'title'  => __('Show Visitors Capsule', 'sakurairo_csf'),
+        'desc'   => __('Display visitor count statistics in display area', 'sakurairo_csf'),
+        'default' => true,
+      ),
+
+      array(
+        'id'     => 'show_stat_links',
+        'type'   => 'switcher',
+        'title'  => __('Show Links Capsule', 'sakurairo_csf'),
+        'desc'   => __('Display link count statistics in display area', 'sakurairo_csf'),
+        'default' => true,
+      ),
+
+      array(
+        'id'     => 'show_stat_authors',
+        'type'   => 'switcher',
+        'title'  => __('Show Authors Capsule', 'sakurairo_csf'),
+        'desc'   => __('Display author count statistics in display area', 'sakurairo_csf'),
+        'default' => true,
+      ),
+
+      array(
+        'id'     => 'show_stat_total_words',
+        'type'   => 'switcher',
+        'title'  => __('Show Total Words Capsule', 'sakurairo_csf'),
+        'desc'   => __('Display total words statistics in display area', 'sakurairo_csf'),
+        'default' => true,
+      ),
+
+      array(
+        'id'     => 'show_stat_blog_days',
+        'type'   => 'switcher',
+        'title'  => __('Show Blog Running Capsule', 'sakurairo_csf'),
+        'desc'   => __('Display blog running statistics in display area', 'sakurairo_csf'),
+        'default' => true,
+      ),
+
+      array(
+        'id'     => 'show_stat_admin_online',
+        'type'   => 'switcher',
+        'title'  => __('Show Last Online Capsule', 'sakurairo_csf'),
+        'desc'   => __('Display last online statistics in display area', 'sakurairo_csf'),
+        'default' => true,
+      ),
+
+      array(
+        'id'     => 'show_stat_random_link',
+        'type'   => 'switcher',
+        'title'  => __('Show Random Link Capsule', 'sakurairo_csf'),
+        'desc'   => __('Display a random friend link in display area', 'sakurairo_csf'),
+        'default' => true,
+      ),
+      
       array(
         'id'        => 'exhibition',
         'type'      => 'repeater',
@@ -2424,12 +2377,6 @@ $prefix = 'iro_options';
             ),
         ),
         'default'   => array(
-            array(
-                'img' => $vision_resource_basepath . 'series/exhibition1.webp',
-                'title' => 'アカネチル',
-                'description' => 'それでも怖いなら、せめて明日を想う心だけ持って僕の傍に居てくれればいい',
-                'link' => '',
-            ),
             array(
                 'img' => $vision_resource_basepath . 'series/exhibition2.webp',
                 'title' => '夏霞',

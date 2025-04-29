@@ -12,7 +12,7 @@ include_once('inc/classes/IpLocation.php');
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
 define('BUILD_VERSION', '3');
-define('INT_VERSION', '20.0.3');
+define('INT_VERSION', '20.0.4');
 define('SSU_URL', 'https://api.fuukei.org/update/ssu.json');
 
 function check_php_version($preset_version)
@@ -521,8 +521,7 @@ function sakura_scripts()
             echo '<link rel="preload" href="' .$iro_css. '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">';
             echo '<link rel="stylesheet" href="' . $iro_css . '">';
         }, 9);
-    } else {
-        wp_enqueue_style('iro-css', $core_lib_basepath . '/style.css', array(), IRO_VERSION);
+    } else {        wp_enqueue_style('iro-css', $core_lib_basepath . '/style.css', array(), IRO_VERSION);
         wp_enqueue_style('iro-dark', $core_lib_basepath . '/css/dark.css', array('iro-css'), IRO_VERSION);
         wp_enqueue_style('iro-responsive', $core_lib_basepath . '/css/responsive.css', array('iro-css'), IRO_VERSION);
         wp_enqueue_style('iro-animation', $core_lib_basepath . '/css/animation.css', array('iro-css'), IRO_VERSION);
@@ -1474,10 +1473,6 @@ update_custom_smilies_list();
 
 
 $custom_smiliestrans = array();
-/**
- * 输出表情列表
- *
- */
 function push_custom_smilies()
 {
 
@@ -1810,6 +1805,7 @@ function theme_admin_notice_callback()
             break;
 
         case 'ja':
+        case 'ja_JP':
             $thankyou = 'ご使用いただきありがとうございます！以下は、あなたの許可が必要なコンテンツです。';
             $dislike = 'いいえ、結構です';
             $allow_send = '統計目的のためにあなたのテーマバージョンを送信することを許可する';
@@ -3601,6 +3597,68 @@ function should_show_title(): bool
     return !iro_opt('patternimg')
         || !get_post_thumbnail_id($id)
         && $use_as_thumb != 'true' && !get_post_meta($id, 'video_cover', true);
+}
+
+// 添加钩子函数，记录管理员登录时间
+function sakurairo_record_admin_login($user_login, $user) {
+    // 检查用户是否为管理员
+    if (in_array('administrator', $user->roles)) {
+        // 更新用户最后登录时间
+        update_user_meta($user->ID, 'last_online', current_time('mysql'));
+        // 刷新缓存
+        delete_transient('sakurairo_site_stats');
+    }
+}
+add_action('wp_login', 'sakurairo_record_admin_login', 10, 2);
+
+// 添加钩子函数，记录管理员活动时间
+function sakurairo_record_admin_activity() {
+    if (is_user_logged_in() && current_user_can('administrator')) {
+        // 获取上次更新时间
+        $last_update = get_user_meta(get_current_user_id(), 'last_online', true);
+        $current_time = current_time('mysql');
+        
+        // 如果距离上次更新超过5分钟，则更新时间
+        if (empty($last_update) || strtotime($current_time) - strtotime($last_update) > 300) {
+            update_user_meta(get_current_user_id(), 'last_online', $current_time);
+            // 刷新缓存
+            delete_transient('sakurairo_site_stats');
+        }
+    }
+}
+// 在管理员区域和前台都执行此钩子
+add_action('admin_init', 'sakurairo_record_admin_activity');
+add_action('wp', 'sakurairo_record_admin_activity');
+
+// 添加钩子，在发布/更新文章或者评论时刷新缓存
+function sakurairo_refresh_stats_on_action() {
+    if (current_user_can('administrator')) {
+        delete_transient('sakurairo_site_stats');
+    }
+}
+add_action('wp_insert_post', 'sakurairo_refresh_stats_on_action');
+add_action('edit_post', 'sakurairo_refresh_stats_on_action');
+add_action('wp_insert_comment', 'sakurairo_refresh_stats_on_action');
+
+// 格式化时间差函数 - 将分钟转换为友好的文本格式
+function format_time_diff($minutes) {
+    if ($minutes < 1) {
+        return __('Just now', 'sakurairo');
+    } elseif ($minutes < 60) {
+        return sprintf(_n('%d minute ago', '%d minutes ago', $minutes, 'sakurairo'), $minutes);
+    } elseif ($minutes < 1440) { // 小于一天
+        $hours = floor($minutes / 60);
+        return sprintf(_n('%d hour ago', '%d hours ago', $hours, 'sakurairo'), $hours);
+    } elseif ($minutes < 10080) { // 小于一周
+        $days = floor($minutes / 1440);
+        return sprintf(_n('%d day ago', '%d days ago', $days, 'sakurairo'), $days);
+    } elseif ($minutes < 43200) { // 小于一个月
+        $weeks = floor($minutes / 10080);
+        return sprintf(_n('%d week ago', '%d weeks ago', $weeks, 'sakurairo'), $weeks);
+    } else {
+        $months = floor($minutes / 43200);
+        return sprintf(_n('%d month ago', '%d months ago', $months, 'sakurairo'), $months);
+    }
 }
 
 /**

@@ -7,25 +7,6 @@ $component_order = iro_opt('homepage_components',[]) ? iro_opt('homepage_compone
 // 按顺序动态渲染组件
 foreach ($component_order as $component) {
     switch ($component) {
-        // 公告栏模块
-        case 'bulletin':
-                $text = iro_opt('bulletin_text');
-                ?>
-                <div class="notice" style="margin-top:60px">
-                    <?php if (iro_opt('bulletin_board_icon', 'true')) : ?>
-                        <div class="notice-icon"><?php esc_html_e('Notice', 'sakurairo'); ?></div>
-                    <?php endif; ?>
-                    <div class="notice-content">
-                        <?php if (strlen($text) > 142) : ?>
-                            <div class="scrolling-text"><?php echo esc_html($text); ?></div>
-                        <?php else : ?>
-                            <?php echo esc_html($text); ?>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <?php
-            break;
-
         // 静态页面
         case 'static_page':
             $static_page_id = iro_opt("static_page_id");
@@ -46,10 +27,10 @@ foreach ($component_order as $component) {
             <?php
             endif;
             break;
-
+            
         // 特色区域
         case 'exhibition':
-                get_template_part('layouts/' . 'feature');
+                get_template_part('exhibition');
             break;
 
         // 文章列表

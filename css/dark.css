@@ -231,10 +231,6 @@ body.dark button {
   box-shadow: none;
 }
 
-body.dark .notice {
-  filter: brightness(90%);
-}
-
 body.dark .notification {
   background: var(--dark-bg-secondary);
   box-shadow: var(--dark-shadow-normal);
@@ -358,21 +354,18 @@ body.dark .comment-respond .logged-in-as a:hover {
   color: var(--article-theme-highlight,var(--theme-skin-dark)) !important;
 }
 
-body.dark .the-feature.from_left_and_right a:hover .info p,
-body.dark .the-feature.from_left_and_right .info {
-  color: var(--exhibition_area_matching_color) !important;
+body.dark .post-list-thumb {
+  box-shadow: 0 1px 35px -8px var(--dark-bg-secondary);
+  background: rgb(26 26 26 / 70%);
 }
 
 body.dark .post-list-thumb:hover {
   box-shadow: 0 1px 20px 0px var(--article-theme-highlight,var(--theme-skin-dark));
+  background: rgb(26 26 26 / 90%);
 }
 
 body.dark .post-list-thumb i{
   color: #b3b3b3;
-}
-
-body.dark .post-list-thumb {
-  box-shadow: 0 1px 35px -8px var(--dark-bg-secondary);;
 }
 
 body.dark .post-list-thumb .post-title h3{
@@ -414,14 +407,6 @@ body.dark .post-excerpt i{
   color: #888 !important;
 }
 
-body.dark .post-list-show {
-  background: rgb(26 26 26 / 70%) !important;
-}
-
-body.dark .post-list-show:hover{
-  background: rgb(26 26 26 / 90%) !important;
-}
-
 body.dark .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path {
   fill: var(--theme-skin-dark);
 }
@@ -452,11 +437,7 @@ body.dark .pattern-center h1.entry-title {
   color: #FFFFFF;
 }
 
-body.dark .the-feature.from_left_and_right .info,
-body.dark .the-feature.from_left_and_right .info h3 {
-  color: var(--dark-text-primary);
-  background: rgb(0 0 0 / 20%);
-}
+/* 旧的展示区样式已移除 */
 
 body.dark h3#comments-list-title{
   color: var(--dark-text-primary);
@@ -825,4 +806,74 @@ body.dark .steam-error {
 
 body.dark .iro-annotation-popup{
   background-color: var(--dark-bg-secondary);
+}
+
+body.dark .medal-capsule.bronze {
+    background: linear-gradient(135deg, #a05c25 0%, #cd7f32 50%, #7a4111 100%);
+}
+body.dark .medal-capsule.bronze:hover {
+    background: linear-gradient(135deg, #b16b2e 0%, #d38c44 50%, #8a4a19 100%);
+}
+body.dark .medal-capsule.silver {
+    background: linear-gradient(135deg, #a0a0a0 0%, #c0c0c0 50%, #808080 100%);
+}
+body.dark .medal-capsule.silver:hover {
+    background: linear-gradient(135deg, #b0b0b0 0%, #d0d0d0 50%, #909090 100%);
+}
+body.dark .medal-capsule.gold {
+    background: linear-gradient(135deg, #e6bc00 0%, #ffd700 50%, #c9a000 100%);
+}
+body.dark .medal-capsule.gold:hover {
+    background: linear-gradient(135deg, #f5ca00 0%, #ffdf1c 50%, #d8ae00 100%);
+}
+
+body.dark .stat-capsule {
+  background: rgba(50, 50, 50, 0.75);
+  border-color: rgba(70, 70, 70, 0.5);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .stat-capsule:hover {
+  background: rgba(60, 60, 60, 0.85);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .capsule-label,
+body.dark .announcement-line {
+  color: #bbb;
+}
+
+body.dark .capsule-value,
+body.dark .link-name {
+  color: #eee;
+}
+
+body.dark .stat-capsule i {
+  color: #aaa;
+}
+
+body.dark .stat-capsule:hover i {
+  color: var(--theme-skin-dark);
+}
+
+body.dark .link-description {
+  color: #999;
+}
+
+body.dark .link-avatar img {
+  border-color: rgba(70, 70, 70, 0.5);
+}
+
+body.dark .bento-item {
+  background-color: rgba(38, 38, 38, 0.8);
+  box-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.3),
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.03);
+}
+
+body.dark .bento-item:hover {
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5),
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.07);
 }

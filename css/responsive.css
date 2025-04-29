@@ -373,6 +373,11 @@
 
 /* 1080px 断点适配 */
 @media (max-width: 1080px) {
+  .bento-medium {
+    grid-column: span 6;
+    min-height: 14rem;
+    height: 14rem;
+  }
   .comments {
     padding: 4% 0 0;
     padding-bottom: 80px;
@@ -584,13 +589,6 @@
     padding: 0 4.5%;
   }
 
-  /* Notice */
-  .notice {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    width: 100%;
-  }
-
   /* Center Background */
   #centerbg {
     height: 300px;
@@ -619,6 +617,39 @@
 
 /* 较小屏幕适配 */
 @media (max-width: 768px) {
+  .bento-medium {
+    grid-column: span 12;
+    min-height: 12rem;
+    height: 12rem;
+  }
+  .stat-capsules-container {
+    gap: 0.4rem;
+    padding: 0.25rem;
+  }
+  
+  .stat-capsule {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 1.5rem;
+    min-width: 90px;
+  }
+  
+  .stat-capsule i {
+    font-size: 0.8rem;
+  }
+  
+  .capsule-content {
+    line-height: 1.25;
+  }
+  
+  .capsule-label {
+    font-size: 0.75rem;
+  }
+  
+  .capsule-value {
+    font-size: 0.75rem;
+  }
+
   .post-meta {
     inset: 10px 10px auto auto;
     height: fit-content;
@@ -775,11 +806,6 @@
 @media (max-width: 860px) {
   .comments {
     max-width: 100% !important;
-  }
-
-  .top-feature,
-  .top-feature-row {
-    display: none;
   }
 
   .site-content {
@@ -945,5 +971,25 @@
   .tieba-container span {
     transform: scale(0.6);
     margin-block-end: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .link-name,
+  .link-description {
+    max-width: 100px;
+  }
+  
+  .stat-capsule {
+    padding: 0.25rem 0.7rem;
+  }
+  
+  .stat-capsule.link-capsule {
+    padding: 0.25rem 0.5rem 0.25rem 0.3rem;
+    max-width: 180px;
+  }
+
+  .link-description {
+    font-size: 0.7rem;
   }
 }

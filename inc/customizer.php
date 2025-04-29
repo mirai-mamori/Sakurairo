@@ -971,7 +971,6 @@ $sections = [
 				'iro_key'  => 'homepage_components',
 				'label'    => esc_html__( 'Homepage Components', 'Sakurairo_C' ),
 				'choices'     => [
-					'bulletin' => __('Bulletin Board','Sakurairo_C'),
           			'exhibition' => __('Display Area','Sakurairo_C'),
 					'primary' => __('Article Area','Sakurairo_C'),
 					'static_page' => __('Static Page','Sakurairo_C'),
@@ -1077,160 +1076,99 @@ $sections = [
 			],
 		],
     ],
-	// ====================公告栏====================
-	[
-        'id'          => 'iro_bulletin_board',
-        'title'       => esc_html__( 'Bulletin Board', 'Sakurairo_C' ),
-        'description' => '',
-        'panel'       => 'iro_homepage',
-
-		'fields'      =>[
-			[
-				'type'     => 'radio',
-				'settings' => 'bulletin_board_style',
-				'iro_key'  => 'bulletin_board_style',
-				'label'    => esc_html__( 'Bulletin Board Style', 'Sakurairo_C' ),
-				'choices'     => [
-					'picture' => __('Picture Background','Sakurairo_C'),
-          			'pure' => __('Color Background','Sakurairo_C'),
-				],
-			],
-			[
-				'type'     => 'switch',
-				'settings' => 'bulletin_board_icon',
-				'iro_key'  => 'bulletin_board_icon',
-				'label'    => esc_html__( 'Bulletin Board "Notice" Icon', 'Sakurairo_C' ),
-			],
-			[
-				'type'     => 'image',
-				'settings' => 'bulletin_board_bg',
-				'iro_key'  => 'bulletin_board_bg',
-				'label'    => esc_html__( 'Bulletin Board Background', 'Sakurairo_C' ),
-				'active_callback' => [
-					[
-						'setting'  => 'bulletin_board_style',
-						'operator' => '==',
-						'value'    => 'picture',
-					]
-				],
-			],
-			[
-				'type'     => 'color',
-				'settings' => 'bulletin_board_border_color',
-				'iro_key'  => 'bulletin_board_border_color',
-				'label'    => esc_html__( 'Bulletin Board Border Color', 'Sakurairo_C' ),
-				'choices'     => [
-					'alpha' => true,
-				],
-				'active_callback' => [
-					[
-						'setting'  => 'bulletin_board_style',
-						'operator' => '==',
-						'value'    => 'pure',
-					]
-				],
-			],
-			[
-				'type'     => 'text',
-				'settings' => 'bulletin_text',
-				'iro_key'  => 'bulletin_text',
-				'label'    => esc_html__( 'Bulletin Board Content', 'Sakurairo_C' ),
-			],
-			[
-				'type'     => 'color',
-				'settings' => 'bulletin_text_color',
-				'iro_key'  => 'bulletin_text_color',
-				'label'    => esc_html__( 'Bulletin Board Text Color', 'Sakurairo_C' ),
-				'choices'     => [
-					'alpha' => true,
-				],
-				'transport'   => 'auto',
-				'output' => array(
-					array(
-						'element'  => array('.notice i , .notice'),
-						'property' => 'color',
-						'value_pattern' => '$ !important',
-					),
-				),
-			],
-		],
-    ],
 	// ====================展示区====================
 	[
         'id'          => 'iro_display_aera',
         'title'       => esc_html__( 'Display Aera', 'Sakurairo_C' ),
         'description' => '',
         'panel'       => 'iro_homepage',
-
 		'fields'      =>[
 			[
-				'type'     => 'color',
-				'settings' => 'exhibition_area_matching_color',
-				'iro_key'  => 'exhibition_area_matching_color',
-				'label'    => esc_html__( 'Display Area Matching Color', 'Sakurairo_C' ),
-				'choices'     => [
-					'alpha' => true,
-				],
-				'transport'   => 'auto',
-				'output' => array(
-					array(
-						'element'  => array('.notice i , .notice'),
-						'property' => 'color',
-						'value_pattern' => '$ !important',
-					),
-				),
-			],
-			[
-				'type'     => 'color',
-				'settings' => 'exhibition_background_color',
-				'iro_key'  => 'exhibition_background_color',
-				'label'    => esc_html__( 'Display Area Background Color', 'Sakurairo_C' ),
-				'choices'     => [
-					'alpha' => true,
-				],
-				'transport'   => 'auto',
-				'output' => array(
-					array(
-						'element'  => array('.notice i , .notice'),
-						'property' => 'color',
-						'value_pattern' => '$ !important',
-					),
-				),
-			],
-			[
-				'type'     => 'radio_image',
-				'settings' => 'exhibition_area_style',
-				'iro_key'  => 'exhibition_area_style',
-				'label'    => esc_html__( 'Display Area Style', 'Sakurairo_C' ),
-				'choices'     => [
-					'v1' => $vision_resource_basepath . 'options/exhibition_area_style_lr.webp',
-					'v2' => $vision_resource_basepath . 'options/exhibition_area_style_ud.webp',
-				],
+				'type'     => 'switch',
+				'settings' => 'show_medal_capsules',
+				'iro_key'  => 'show_medal_capsules',
+				'label'    => esc_html__( 'Show Medal Badges', 'Sakurairo_C' ),
+				'default'  => true,
+				'description' => esc_html__( 'Enable to show bronze/silver/gold medal badges for blog age and visitor count milestones', 'Sakurairo_C' ),
 			],
 			[
 				'type'     => 'switch',
-				'settings' => 'exhibition_area_compat',
-				'iro_key'  => 'exhibition_area_compat',
-				'label'    => esc_html__( 'Display Area Compatibility Mode', 'Sakurairo_C' ),
+				'settings' => 'show_stat_announcement',
+				'iro_key'  => 'show_stat_announcement',
+				'label'    => esc_html__( 'Show Announcement Capsule', 'Sakurairo_C' ),
+				'default'  => true,
 			],
 			[
-				'type'     => 'slider',
-				'settings' => 'exhibition_radius',
-				'iro_key'  => 'exhibition_radius',
-				'label'    => esc_html__( 'Display Area Rounded Corners', 'Sakurairo_C' ),
-				'choices'     => [
-					'min'  => 5,
-					'max'  => 20,
-					'step' => 1,
-				],
-				'transport'   => 'auto',
-				'output' => array(
-					array(
-						'element'  => '.header-info p',
-						'property' => 'font-size',
-						'value_pattern' => '$px !important',
-					),
-				),
+				'type'     => 'textarea',
+				'settings' => 'stat_announcement_text',
+				'iro_key'  => 'stat_announcement_text',
+				'label'    => esc_html__( 'Announcement Text', 'Sakurairo_C' ),
+				'description' => esc_html__( 'First line: main message. Second line: details. Both lines will be displayed.', 'Sakurairo_C' ),
+				'default'  => esc_html__( "Latest Announcement\nWelcome to my site!", 'Sakurairo_C' ),
+				'active_callback' => function() { return get_theme_mod('show_stat_announcement', true); },
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'show_stat_posts',
+				'iro_key'  => 'show_stat_posts',
+				'label'    => esc_html__( 'Show Posts Capsule', 'Sakurairo_C' ),
+				'default'  => true,
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'show_stat_comments',
+				'iro_key'  => 'show_stat_comments',
+				'label'    => esc_html__( 'Show Comments Capsule', 'Sakurairo_C' ),
+				'default'  => true,
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'show_stat_visitors',
+				'iro_key'  => 'show_stat_visitors',
+				'label'    => esc_html__( 'Show Visitors Capsule', 'Sakurairo_C' ),
+				'default'  => true,
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'show_stat_links',
+				'iro_key'  => 'show_stat_links',
+				'label'    => esc_html__( 'Show Links Capsule', 'Sakurairo_C' ),
+				'default'  => true,
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'show_stat_authors',
+				'iro_key'  => 'show_stat_authors',
+				'label'    => esc_html__( 'Show Authors Capsule', 'Sakurairo_C' ),
+				'default'  => true,
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'show_stat_total_words',
+				'iro_key'  => 'show_stat_total_words',
+				'label'    => esc_html__( 'Show Total Words Capsule', 'Sakurairo_C' ),
+				'default'  => true,
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'show_stat_blog_days',
+				'iro_key'  => 'show_stat_blog_days',
+				'label'    => esc_html__( 'Show Blog Running Capsule', 'Sakurairo_C' ),
+				'default'  => true,
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'show_stat_admin_online',
+				'iro_key'  => 'show_stat_admin_online',
+				'label'    => esc_html__( 'Show Last Online Capsule', 'Sakurairo_C' ),
+				'default'  => true,
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'show_stat_random_link',
+				'iro_key'  => 'show_stat_random_link',
+				'label'    => esc_html__( 'Show Random Link Capsule', 'Sakurairo_C' ),
+				'default'  => true,
 			],
 		],
     ],
@@ -2486,8 +2424,8 @@ foreach ( $sections as $section ) {
 				case 'textarea':
 					new \Kirki\Field\Textarea( $args );
 					break;
-				case 'toggle':
-					new \Kirki\Control\Checkbox_Toggle( $args );
+					case 'toggle':
+					new \Kirki\Field\Checkbox_Toggle( $args );
 					break;
 				case 'upload':
 					new \Kirki\Field\Upload( $args );
