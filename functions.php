@@ -3097,9 +3097,11 @@ function get_archive_info() {
         
         $year = date('Y', strtotime($post->post_date));
         $month = date('n', strtotime($post->post_date));
-          $post = [ //仅保存需要的数据
+          $post = [ //仅保存需要的数据（归档、展示区）
             'post_title'    => $post->post_title,
+            'post_author'     => $post->post_author,
             'post_date'     => $post->post_date,
+            'post_modified'     => $post->post_modified,
             'comment_count' => $comments,
             'guid'          => $post->guid,
             'meta' => [
@@ -3599,40 +3601,20 @@ function should_show_title(): bool
         && $use_as_thumb != 'true' && !get_post_meta($id, 'video_cover', true);
 }
 
-// 添加钩子函数，记录管理员登录时间
-function sakurairo_record_admin_login($user_login, $user) {
-    // 检查用户是否为管理员
-    if (in_array('administrator', $user->roles)) {
-        // 更新用户最后登录时间
-        update_user_meta($user->ID, 'last_online', current_time('mysql'));
-        // 刷新缓存
-        delete_transient('sakurairo_site_stats');
-    }
-}
-add_action('wp_login', 'sakurairo_record_admin_login', 10, 2);
-
-// 添加钩子函数，记录管理员活动时间
-function sakurairo_record_admin_activity() {
-    if (is_user_logged_in() && current_user_can('administrator')) {
-        // 获取上次更新时间
-        $last_update = get_user_meta(get_current_user_id(), 'last_online', true);
-        $current_time = current_time('mysql');
-        
-        // 如果距离上次更新超过5分钟，则更新时间
-        if (empty($last_update) || strtotime($current_time) - strtotime($last_update) > 300) {
-            update_user_meta(get_current_user_id(), 'last_online', $current_time);
-            // 刷新缓存
-            delete_transient('sakurairo_site_stats');
+// 管理员访问任何页面更新最后在线时间
+function sakurairo_record_admin_login() {
+    if (is_user_logged_in()) {
+        $user = wp_get_current_user();
+        if (in_array('administrator', (array) $user->roles)) {
+            update_user_meta($user->ID, 'last_online', current_time('mysql'));
         }
     }
 }
-// 在管理员区域和前台都执行此钩子
-add_action('admin_init', 'sakurairo_record_admin_activity');
-add_action('wp', 'sakurairo_record_admin_activity');
+add_action('wp_login', 'sakurairo_record_admin_login');
 
 // 添加钩子，在发布/更新文章或者评论时刷新缓存
 function sakurairo_refresh_stats_on_action() {
-    if (current_user_can('administrator')) {
+    if (current_user_can('edit_post')) {
         delete_transient('sakurairo_site_stats');
     }
 }

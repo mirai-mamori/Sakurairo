@@ -2258,14 +2258,6 @@ $prefix = 'iro_options';
         'desc'   => __('Display your medal in display area', 'sakurairo_csf'),
         'default' => true,
       ),
-
-      array(
-        'id'     => 'show_stat_announcement',
-        'type'   => 'switcher',
-        'title'  => __('Show Announcement Capsule', 'sakurairo_csf'),
-        'desc'   => __('Display announcement in display area', 'sakurairo_csf'),
-        'default' => true,
-      ),
       
       array(
         'id'     => 'stat_announcement_text',
@@ -2278,75 +2270,26 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'     => 'show_stat_posts',
-        'type'   => 'switcher',
-        'title'  => __('Show Posts Capsule', 'sakurairo_csf'),
-        'desc'   => __('Display post count statistics in display area', 'sakurairo_csf'),
-        'default' => true,
-      ),
-
-      array(
-        'id'     => 'show_stat_comments',
-        'type'   => 'switcher',
-        'title'  => __('Show Comments Capsule', 'sakurairo_csf'),
-        'desc'   => __('Display comment count statistics in display area', 'sakurairo_csf'),
-        'default' => true,
-      ),
-
-      array(
-        'id'     => 'show_stat_visitors',
-        'type'   => 'switcher',
-        'title'  => __('Show Visitors Capsule', 'sakurairo_csf'),
-        'desc'   => __('Display visitor count statistics in display area', 'sakurairo_csf'),
-        'default' => true,
-      ),
-
-      array(
-        'id'     => 'show_stat_links',
-        'type'   => 'switcher',
-        'title'  => __('Show Links Capsule', 'sakurairo_csf'),
-        'desc'   => __('Display link count statistics in display area', 'sakurairo_csf'),
-        'default' => true,
-      ),
-
-      array(
-        'id'     => 'show_stat_authors',
-        'type'   => 'switcher',
-        'title'  => __('Show Authors Capsule', 'sakurairo_csf'),
-        'desc'   => __('Display author count statistics in display area', 'sakurairo_csf'),
-        'default' => true,
-      ),
-
-      array(
-        'id'     => 'show_stat_total_words',
-        'type'   => 'switcher',
-        'title'  => __('Show Total Words Capsule', 'sakurairo_csf'),
-        'desc'   => __('Display total words statistics in display area', 'sakurairo_csf'),
-        'default' => true,
-      ),
-
-      array(
-        'id'     => 'show_stat_blog_days',
-        'type'   => 'switcher',
-        'title'  => __('Show Blog Running Capsule', 'sakurairo_csf'),
-        'desc'   => __('Display blog running statistics in display area', 'sakurairo_csf'),
-        'default' => true,
-      ),
-
-      array(
-        'id'     => 'show_stat_admin_online',
-        'type'   => 'switcher',
-        'title'  => __('Show Last Online Capsule', 'sakurairo_csf'),
-        'desc'   => __('Display last online statistics in display area', 'sakurairo_csf'),
-        'default' => true,
-      ),
-
-      array(
-        'id'     => 'show_stat_random_link',
-        'type'   => 'switcher',
-        'title'  => __('Show Random Link Capsule', 'sakurairo_csf'),
-        'desc'   => __('Display a random friend link in display area', 'sakurairo_csf'),
-        'default' => true,
+        'id' => 'display_components',
+        "type" => "select",
+        "title" => __("Display Components","sakurairo_csf"),
+        'desc' => __('Select the components you want to display.','sakurairo_csf'),
+        "chosen" => true,
+        "multiple" => true,
+        "sortable" => true,
+        "options"=> array(
+            'post_count'     => __('Posts Capsule','sakurairo_csf'),
+            'comment_count'  => __('Comments Capsule','sakurairo_csf'),
+            'view_count'  => __('Visitors Capsule','sakurairo_csf'),
+            'link_count'     => __('Links Capsule','sakurairo_csf'),
+            'author_count'     => __('Authors Capsule','sakurairo_csf'),
+            'total_words'     => __('Total Words Capsule','sakurairo_csf'),
+            'blog_days'     => __('Blog Running Capsule','sakurairo_csf'),
+            'admin_online'     => __('Last Online Capsule','sakurairo_csf'),
+            'random_link'     => __('Random Link Capsule','sakurairo_csf'),
+            'announcement'     => __('Announcement Capsule','sakurairo_csf'),
+        ),
+        "default" => array('primary'),
       ),
       
       array(
