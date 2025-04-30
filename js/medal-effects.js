@@ -317,13 +317,6 @@ function createModalParticles(container, medalType) {
     }
 }
 
-// 徽章入场动画
-function animateMedalEntry(medal) {
-    medal.style.opacity = '1';
-    medal.style.contentVisibility = 'visible';
-    medal.style.transform = 'translateY(0)';
-}
-
 // 初始化视差效果
 function initParallaxEffect() {
     const medals = document.querySelectorAll('.medal-capsule');
