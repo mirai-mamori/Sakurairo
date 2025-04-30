@@ -74,33 +74,193 @@ $show_medal_capsules = iro_opt('show_medal_capsules', true);
 
 // 判断博客运行天数徽章级别
 function get_blog_days_medal($days) {
-    if ($days >= 1000) return ['type'=>'gold',   'label'=>__('Gold Blogger','sakurairo')];
-    if ($days >= 500)  return ['type'=>'silver', 'label'=>__('Silver Blogger','sakurairo')];
-    if ($days >= 100)  return ['type'=>'bronze', 'label'=>__('Bronze Blogger','sakurairo')];
+    $thresholds = [
+        'gold' => 1000,
+        'silver' => 500,
+        'bronze' => 100
+    ];
+    
+    if ($days >= $thresholds['gold']) {
+        return [
+            'type' => 'gold',   
+            'label' => __('Gold Blogger','sakurairo'),
+            'current' => $days,
+            'next' => null,
+            'progress' => 100,
+            'threshold' => $thresholds['gold'],
+            'achievement' => __('您的博客已经成为网络中一道长久的风景线，感谢您持续的分享与陪伴。','sakurairo')
+        ];
+    }
+    if ($days >= $thresholds['silver']) {
+        $progress = min(100, ($days - $thresholds['silver']) / ($thresholds['gold'] - $thresholds['silver']) * 100);
+        return [
+            'type' => 'silver', 
+            'label' => __('Silver Blogger','sakurairo'),
+            'current' => $days,
+            'next' => $thresholds['gold'],
+            'progress' => $progress,
+            'threshold' => $thresholds['silver'],
+            'achievement' => __('您的博客已有相当的历史，持之以恒的更新让这里充满活力。','sakurairo'),
+            'next_level' => sprintf(__('%s more days to Gold','sakurairo'), number_format($thresholds['gold'] - $days))
+        ];
+    }
+    if ($days >= $thresholds['bronze']) {
+        $progress = min(100, ($days - $thresholds['bronze']) / ($thresholds['silver'] - $thresholds['bronze']) * 100);
+        return [
+            'type' => 'bronze', 
+            'label' => __('Bronze Blogger','sakurairo'),
+            'current' => $days,
+            'next' => $thresholds['silver'],
+            'progress' => $progress,
+            'threshold' => $thresholds['bronze'],
+            'achievement' => __('创作之路已经起航，每一天的坚持都在为您的博客增添深度与价值。','sakurairo'),
+            'next_level' => sprintf(__('%s more days to Silver','sakurairo'), number_format($thresholds['silver'] - $days))
+        ];
+    }
     return null;
 }
 
 // 判断访客数量徽章级别
 function get_visitor_count_medal($visits) {
-    if ($visits >= 30000) return ['type'=>'gold',   'label'=>__('Gold Popularity','sakurairo')];
-    if ($visits >= 10000) return ['type'=>'silver', 'label'=>__('Silver Popularity','sakurairo')];
-    if ($visits >= 2000)  return ['type'=>'bronze', 'label'=>__('Bronze Popularity','sakurairo')];
+    $thresholds = [
+        'gold' => 30000,
+        'silver' => 10000,
+        'bronze' => 2000
+    ];
+    
+    if ($visits >= $thresholds['gold']) {
+        return [
+            'type' => 'gold',   
+            'label' => __('Gold Popularity','sakurairo'),
+            'current' => $visits,
+            'next' => null,
+            'progress' => 100,
+            'threshold' => $thresholds['gold'],
+            'achievement' => __('您的内容吸引了众多读者，成为网络中备受关注的知识灯塔。','sakurairo')
+        ];
+    }
+    if ($visits >= $thresholds['silver']) {
+        $progress = min(100, ($visits - $thresholds['silver']) / ($thresholds['gold'] - $thresholds['silver']) * 100);
+        return [
+            'type' => 'silver', 
+            'label' => __('Silver Popularity','sakurairo'),
+            'current' => $visits,
+            'next' => $thresholds['gold'],
+            'progress' => $progress,
+            'threshold' => $thresholds['silver'],
+            'achievement' => __('日益壮大的读者群体证明了您内容的价值，继续创作，影响更多人！','sakurairo'),
+            'next_level' => sprintf(__('%s more visits to Gold','sakurairo'), number_format($thresholds['gold'] - $visits))
+        ];
+    }
+    if ($visits >= $thresholds['bronze']) {
+        $progress = min(100, ($visits - $thresholds['bronze']) / ($thresholds['silver'] - $thresholds['bronze']) * 100);
+        return [
+            'type' => 'bronze', 
+            'label' => __('Bronze Popularity','sakurairo'),
+            'current' => $visits,
+            'next' => $thresholds['silver'],
+            'progress' => $progress,
+            'threshold' => $thresholds['bronze'],
+            'achievement' => __('您的博客已经赢得了稳定的访问量，优质内容正在被越来越多的人发现。','sakurairo'),
+            'next_level' => sprintf(__('%s more visits to Silver','sakurairo'), number_format($thresholds['silver'] - $visits))
+        ];
+    }
     return null;
 }
 
 // 判断友情链接数量徽章级别
 function get_link_count_medal($links) {
-    if ($links >= 50) return ['type'=>'gold',   'label'=>__('Gold Friendship','sakurairo')];
-    if ($links >= 30) return ['type'=>'silver', 'label'=>__('Silver Friendship','sakurairo')];
-    if ($links >= 10) return ['type'=>'bronze', 'label'=>__('Bronze Friendship','sakurairo')];
+    $thresholds = [
+        'gold' => 50,
+        'silver' => 30,
+        'bronze' => 10
+    ];
+    
+    if ($links >= $thresholds['gold']) {
+        return [
+            'type' => 'gold',   
+            'label' => __('Gold Friendship','sakurairo'),
+            'current' => $links,
+            'next' => null,
+            'progress' => 100,
+            'threshold' => $thresholds['gold'],
+            'achievement' => __('您已成为网络社区的重要节点，与众多优质站点建立了深厚的连接。','sakurairo')
+        ];
+    }
+    if ($links >= $thresholds['silver']) {
+        $progress = min(100, ($links - $thresholds['silver']) / ($thresholds['gold'] - $thresholds['silver']) * 100);
+        return [
+            'type' => 'silver', 
+            'label' => __('Silver Friendship','sakurairo'),
+            'current' => $links,
+            'next' => $thresholds['gold'],
+            'progress' => $progress,
+            'threshold' => $thresholds['silver'],
+            'achievement' => __('您的人脉网络不断扩大，这些珍贵的连接为博客带来更多可能性。','sakurairo'),
+            'next_level' => sprintf(__('%s more links to Gold','sakurairo'), number_format($thresholds['gold'] - $links))
+        ];
+    }
+    if ($links >= $thresholds['bronze']) {
+        $progress = min(100, ($links - $thresholds['bronze']) / ($thresholds['silver'] - $thresholds['bronze']) * 100);
+        return [
+            'type' => 'bronze', 
+            'label' => __('Bronze Friendship','sakurairo'),
+            'current' => $links,
+            'next' => $thresholds['silver'],
+            'progress' => $progress,
+            'threshold' => $thresholds['bronze'],
+            'achievement' => __('结交网络伙伴的旅程才刚开始，每一个连接都是新的机遇。','sakurairo'),
+            'next_level' => sprintf(__('%s more links to Silver','sakurairo'), number_format($thresholds['silver'] - $links))
+        ];
+    }
     return null;
 }
 
 // 判断文章总字数徽章级别
 function get_words_count_medal($words) {
-    if ($words >= 10000) return ['type'=>'gold',   'label'=>__('Gold Author','sakurairo')];
-    if ($words >= 5000)  return ['type'=>'silver', 'label'=>__('Silver Author','sakurairo')];
-    if ($words >= 1000)  return ['type'=>'bronze', 'label'=>__('Bronze Author','sakurairo')];
+    $thresholds = [
+        'gold' => 10000,
+        'silver' => 5000,
+        'bronze' => 1000
+    ];
+    
+    if ($words >= $thresholds['gold']) {
+        return [
+            'type' => 'gold',   
+            'label' => __('Gold Author','sakurairo'),
+            'current' => $words,
+            'next' => null,
+            'progress' => 100,
+            'threshold' => $thresholds['gold'],
+            'achievement' => __('文字的力量在您手中绽放，丰富的创作已汇聚成知识的海洋。','sakurairo')
+        ];
+    }
+    if ($words >= $thresholds['silver']) {
+        $progress = min(100, ($words - $thresholds['silver']) / ($thresholds['gold'] - $thresholds['silver']) * 100);
+        return [
+             'type' => 'silver', 
+            'label' => __('Silver Author','sakurairo'),
+            'current' => $words,
+            'next' => $thresholds['gold'],
+            'progress' => $progress,
+            'threshold' => $thresholds['silver'],
+            'achievement' => __('持之以恒的创作精神，每一个字都承载着您的智慧与思考。','sakurairo'),
+            'next_level' => sprintf(__('%s more words to Gold','sakurairo'), number_format($thresholds['gold'] - $words))
+        ];
+    }
+    if ($words >= $thresholds['bronze']) {
+        $progress = min(100, ($words - $thresholds['bronze']) / ($thresholds['silver'] - $thresholds['bronze']) * 100);
+        return [
+            'type' => 'bronze', 
+            'label' => __('Bronze Author','sakurairo'),
+            'current' => $words,
+            'next' => $thresholds['silver'],
+            'progress' => $progress,
+            'threshold' => $thresholds['bronze'],
+            'achievement' => __('创作之旅的精彩正在展开，字字珠玑，句句深刻。','sakurairo'),
+            'next_level' => sprintf(__('%s more words to Silver','sakurairo'), number_format($thresholds['silver'] - $words))
+        ];
+    }
     return null;
 }
 
@@ -165,17 +325,41 @@ if ($show_medal_capsules) {
                         // 如果有对应徽章，就渲染徽章，否则渲染普通卡片
                         if (isset($medal_levels[$component])): 
                             $medal = $medal_levels[$component]; ?>
-                            <div class="stat-capsule medal-capsule <?php echo $medal['type']; ?>">
-                            <i class="fa-solid fa-medal"></i>
-                            <div class="capsule-content">
-                                <span class="capsule-label"><?php echo $medal['label']; ?></span>
-                                <span class="capsule-value">
-                                <?php 
-                                    // 徽章下依旧显示对应的数值
-                                    echo $square_cards[$component]['value']; 
-                                ?>
-                                </span>
-                            </div>
+                            <div class="stat-capsule medal-capsule <?php echo $medal['type']; ?>" 
+                                 data-medal-type="<?php echo $component; ?>"
+                                 data-medal-level="<?php echo $medal['type']; ?>"
+                                 <?php if (isset($medal['achievement'])) : ?>
+                                 data-achievement="<?php echo esc_attr($medal['achievement']); ?>"
+                                 <?php endif; ?>
+                                 <?php if (isset($medal['next_level'])) : ?>
+                                 data-next-level="<?php echo esc_attr($medal['next_level']); ?>"
+                                 <?php endif; ?>
+                                 <?php if (isset($medal['progress'])) : ?>
+                                 data-progress="<?php echo esc_attr($medal['progress']); ?>"
+                                 <?php endif; ?>>
+                                <div class="medal-particles-container">
+                                    <div class="medal-particles"></div>
+                                </div>
+                                <i class="fa-solid fa-medal"></i>
+                                <div class="capsule-content">
+                                    <span class="capsule-label"><?php echo $medal['label']; ?></span>
+                                    <span class="capsule-value">
+                                    <?php 
+                                        // 徽章下依旧显示对应的数值
+                                        echo $square_cards[$component]['value']; 
+                                    ?>
+                                    </span>
+                                </div>
+                                <div class="medal-info-tooltip">
+                                    <div class="medal-achievement">
+                                        <?php echo isset($medal['achievement']) ? $medal['achievement'] : ''; ?>
+                                    </div>
+                                    <?php if (isset($medal['next_level'])) : ?>
+                                    <div class="medal-next-level">
+                                        <?php echo $medal['next_level']; ?>
+                                    </div>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                         <?php else: 
                             if ($square_cards[$component]['enabled']): ?>
