@@ -171,9 +171,9 @@ function get_visitor_count_medal($visits) {
 // 判断友情链接数量徽章级别
 function get_link_count_medal($links) {
     $thresholds = [
-        'gold' => 70,
-        'silver' => 50,
-        'bronze' => 30
+        'gold' => 80,
+        'silver' => 40,
+        'bronze' => 20
     ];
     
     if ($links >= $thresholds['gold']) {
@@ -219,7 +219,7 @@ function get_link_count_medal($links) {
 // 判断文章总字数徽章级别
 function get_words_count_medal($words) {
     $thresholds = [
-        'gold' => 30000,
+        'gold' => 50000,
         'silver' => 10000,
         'bronze' => 2000
     ];
