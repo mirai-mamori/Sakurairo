@@ -844,7 +844,7 @@ body.dark .announcement-line {
 }
 
 body.dark .capsule-value,
-body.dark .link-name {
+body.dark .link-info a {
   color: #eee;
 }
 

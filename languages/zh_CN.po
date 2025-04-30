@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
 "POT-Creation-Date: 2025-04-30 10:56+0900\n"
-"PO-Revision-Date: 2025-04-30 11:05+0900\n"
+"PO-Revision-Date: 2025-04-30 12:56+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -238,7 +238,7 @@ msgstr "寸楮点墨"
 
 #: exhibition.php:204
 msgid "Meet my friend!"
-msgstr "认识我的朋友"
+msgstr "推荐给你"
 
 #: footer.php:32
 #, php-format
@@ -760,41 +760,37 @@ msgstr "你可能需要检查该链接，如果仍然不可用，请考虑将其
 
 #: functions.php:3646
 msgid "Just now"
-msgstr ""
+msgstr "刚刚"
 
 #: functions.php:3648
-#, fuzzy, php-format
-#| msgid " minutes ago"
+#, php-format
 msgid "%d minute ago"
 msgid_plural "%d minutes ago"
-msgstr[0] " 分钟前"
+msgstr[0] "%d 分钟前"
 
 #: functions.php:3651
-#, fuzzy, php-format
-#| msgid " hours ago"
+#, php-format
 msgid "%d hour ago"
 msgid_plural "%d hours ago"
-msgstr[0] " 小时前"
+msgstr[0] "%d 小时前"
 
 #: functions.php:3654
-#, fuzzy, php-format
-#| msgid " days ago"
+#, php-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] " 天前"
+msgstr[0] "%d 天前"
 
 #: functions.php:3657
 #, php-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
-msgstr[0] ""
+msgstr[0] "%d 周前"
 
 #: functions.php:3660
-#, fuzzy, php-format
-#| msgid " minutes ago"
+#, php-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
-msgstr[0] " 分钟前"
+msgstr[0] "%d  前"
 
 #: functions.php:3867
 msgid "Access denied."

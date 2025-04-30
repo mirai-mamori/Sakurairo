@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-04-30 10:50+0900\n"
-"PO-Revision-Date: 2025-04-30 10:56+0900\n"
+"POT-Creation-Date: 2025-04-30 12:57+0900\n"
+"PO-Revision-Date: 2025-04-30 13:00+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -790,46 +790,42 @@ msgstr ""
 
 #: functions.php:3646
 msgid "Just now"
-msgstr ""
+msgstr "Maintenant"
 
 #: functions.php:3648
-#, fuzzy, php-format
-#| msgid " minutes ago"
+#, php-format
 msgid "%d minute ago"
 msgid_plural "%d minutes ago"
-msgstr[0] " minutes auparavant"
-msgstr[1] " minutes auparavant"
+msgstr[0] "il y a %d minute"
+msgstr[1] "il y a %d minute"
 
 #: functions.php:3651
-#, fuzzy, php-format
-#| msgid " hours ago"
+#, php-format
 msgid "%d hour ago"
 msgid_plural "%d hours ago"
-msgstr[0] " heures auparavant"
-msgstr[1] " heures auparavant"
+msgstr[0] "il y a %d heure"
+msgstr[1] "il y a %d heure"
 
 #: functions.php:3654
-#, fuzzy, php-format
-#| msgid " days ago"
+#, php-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] " jours auparavant"
-msgstr[1] " jours auparavant"
+msgstr[0] "il y a %d jour"
+msgstr[1] "il y a %d jour"
 
 #: functions.php:3657
 #, php-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "il y a %d semaine"
+msgstr[1] "il y a %d semaine"
 
 #: functions.php:3660
-#, fuzzy, php-format
-#| msgid " minutes ago"
+#, php-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
-msgstr[0] " minutes auparavant"
-msgstr[1] " minutes auparavant"
+msgstr[0] "il y a %d mois"
+msgstr[1] "il y a %d mois"
 
 #: functions.php:3867
 msgid "Access denied."
