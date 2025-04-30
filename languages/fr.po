@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-04-30 12:57+0900\n"
-"PO-Revision-Date: 2025-04-30 13:00+0900\n"
+"POT-Creation-Date: 2025-04-30 21:41+0900\n"
+"PO-Revision-Date: 2025-04-30 21:45+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -191,55 +191,171 @@ msgstr "Dernier en ligne"
 msgid "Latest Announcement"
 msgstr "Dernière annonce"
 
-#: exhibition.php:77
+#: exhibition.php:86
 msgid "Gold Blogger"
 msgstr "Blogueur en or"
 
-#: exhibition.php:78
+#: exhibition.php:91
+msgid ""
+"The string of creation has vibrated the membrane, each resonance weaving the "
+"warp and weft of spacetime thoughts."
+msgstr ""
+"La corde de la création a fait vibrer la membrane, chaque résonance tissant "
+"la chaîne et la trame des pensées de l'espace-temps."
+
+#: exhibition.php:98
 msgid "Silver Blogger"
 msgstr "Blogueur d'argent"
 
-#: exhibition.php:79
+#: exhibition.php:103
+msgid ""
+"The wheel of creation has engaged the gears, each component calibrating the "
+"temporal precision of your blog."
+msgstr ""
+"La roue de la création s'est enclenchée, chaque élément calibrant la "
+"précision temporelle de votre blog."
+
+#: exhibition.php:104 exhibition.php:117
+#, php-format
+msgid "%s more days to next level"
+msgstr "%s jours supplémentaires pour le niveau suivant"
+
+#: exhibition.php:111
 msgid "Bronze Blogger"
 msgstr "Blogueur de bronze"
 
-#: exhibition.php:85
+#: exhibition.php:116
+msgid ""
+"The ship of creation has set sail, each wave carving the depth markers of "
+"your blog's journey."
+msgstr ""
+"Le navire de la création a pris le large, chaque vague creusant les "
+"marqueurs de profondeur du voyage de votre blog."
+
+#: exhibition.php:134
 msgid "Gold Popularity"
 msgstr "Popularité de l'or"
 
-#: exhibition.php:86
+#: exhibition.php:139
+msgid ""
+"You have planted a garden of wisdom, its fragrance now discovered by distant "
+"butterflies."
+msgstr ""
+"Vous avez planté un jardin de sagesse, dont les papillons lointains "
+"découvrent maintenant le parfum."
+
+#: exhibition.php:146
 msgid "Silver Popularity"
 msgstr "Popularité de l'argent"
 
-#: exhibition.php:87
+#: exhibition.php:151
+msgid ""
+"You have illuminated the star chart of reading, each piece of writing "
+"flowing through the galaxy."
+msgstr ""
+"Vous avez illuminé la carte stellaire de la lecture, chaque écrit circulant "
+"dans la galaxie."
+
+#: exhibition.php:152 exhibition.php:165
+#, php-format
+msgid "%s more visits to next level"
+msgstr "%s plus de visites au niveau suivant"
+
+#: exhibition.php:159
 msgid "Bronze Popularity"
 msgstr "Popularité du bronze"
 
-#: exhibition.php:93
+#: exhibition.php:164
+msgid ""
+"You have built a harbor of knowledge, the ripples of thought continuously "
+"spreading."
+msgstr ""
+"Vous avez construit un port de connaissances, dont les ondes de pensée se "
+"propagent continuellement."
+
+#: exhibition.php:182
 msgid "Gold Friendship"
 msgstr "Amitié en or"
 
-#: exhibition.php:94
+#: exhibition.php:187
+msgid ""
+"The world of friendship has no boundaries, the starry river will mark your "
+"position."
+msgstr ""
+"Le monde de l'amitié n'a pas de frontières, la rivière étoilée marquera "
+"votre position."
+
+#: exhibition.php:194
 msgid "Silver Friendship"
 msgstr "Amitié en argent"
 
-#: exhibition.php:95
+#: exhibition.php:199
+msgid ""
+"The network of friendship has been laid out, each resonance will eventually "
+"echo."
+msgstr ""
+"Le réseau d'amitié a été mis en place, chaque résonance finira par se "
+"répercuter."
+
+#: exhibition.php:200 exhibition.php:213
+#, php-format
+msgid "%s more links to next level"
+msgstr "%s plus de liens vers le niveau suivant"
+
+#: exhibition.php:207
 msgid "Bronze Friendship"
 msgstr "Amitié en bronze"
 
-#: exhibition.php:101
+#: exhibition.php:212
+msgid ""
+"The journey of making friends has just begun, each encounter marks a new "
+"chapter."
+msgstr ""
+"Le voyage pour se faire des amis ne fait que commencer, chaque rencontre "
+"marque un nouveau chapitre."
+
+#: exhibition.php:230
 msgid "Gold Author"
 msgstr "AuteurAuteur de l'or"
 
-#: exhibition.php:102
+#: exhibition.php:235
+msgid ""
+"The power of words has blossomed in your hands, rich creations have gathered "
+"into an ocean."
+msgstr ""
+"Le pouvoir des mots s'est épanoui entre vos mains, de riches créations se "
+"sont rassemblées en un océan."
+
+#: exhibition.php:242
 msgid "Silver Author"
 msgstr "AuteurAuteur de l'argent"
 
-#: exhibition.php:103
+#: exhibition.php:247
+msgid ""
+"You have woven an extensive web of thoughts, the streams of inspiration are "
+"rushing into rivers."
+msgstr ""
+"Vous avez tissé une vaste toile de pensées, les ruisseaux d'inspiration se "
+"transforment en rivières."
+
+#: exhibition.php:248 exhibition.php:261
+#, php-format
+msgid "%s more words to next level"
+msgstr "%s mots supplémentaires au niveau suivant"
+
+#: exhibition.php:255
 msgid "Bronze Author"
 msgstr "Auteur de bronze"
 
-#: exhibition.php:204
+#: exhibition.php:260
+msgid ""
+"Sparks of words dance at your fingertips, as the faint light of thoughts "
+"quietly illuminates."
+msgstr ""
+"Des étincelles de mots dansent au bout de vos doigts, tandis que la faible "
+"lumière des pensées s'illumine tranquillement."
+
+#: exhibition.php:388
 msgid "Meet my friend!"
 msgstr "Je vous présente mon ami !"
 
@@ -507,61 +623,65 @@ msgstr "Êtes-vous sûr de vouloir le définir comme privé ?"
 msgid "You had set private comment before"
 msgstr "Vous avez déjà défini un commentaire privé"
 
-#: functions.php:681 inc/theme-plus.php:211
+#: functions.php:612
+msgid "Maximum level reached"
+msgstr "Niveau maximum atteint"
+
+#: functions.php:695 inc/theme-plus.php:211
 msgid "Author"
 msgstr "Auteur"
 
-#: functions.php:681
+#: functions.php:695
 msgid "Blogger"
 msgstr "Blogueur"
 
-#: functions.php:690 functions.php:3826
+#: functions.php:704 functions.php:3840
 msgid "Location"
 msgstr "Emplacement"
 
-#: functions.php:696
+#: functions.php:710
 msgid "Private"
 msgstr "Privé"
 
-#: functions.php:698
+#: functions.php:712
 msgid "Yes"
 msgstr "Oui"
 
-#: functions.php:700
+#: functions.php:714
 msgid "No"
 msgstr "Non"
 
-#: functions.php:703 inc/link-status.php:168
+#: functions.php:717 inc/link-status.php:168
 msgid "Edit"
 msgstr "Modifier"
 
-#: functions.php:836
+#: functions.php:850
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "Cette personne est tellement paresseuse ╮(╯▽╰)╭"
 
-#: functions.php:866 functions.php:3204 functions.php:3397
+#: functions.php:880 functions.php:3218 functions.php:3411
 msgid "Pending Links"
 msgstr "Liens en attente"
 
-#: functions.php:1688 functions.php:1691 inc/theme-plus.php:366
+#: functions.php:1702 functions.php:1705 inc/theme-plus.php:366
 #: layouts/mo_toc_menu.php:29
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
-#: functions.php:2240
+#: functions.php:2254
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:2342
+#: functions.php:2356
 msgid "Sidebar"
 msgstr "Barre latérale"
 
-#: functions.php:2370
+#: functions.php:2384
 msgid "Please do not try to use Javascript in your comments!"
 msgstr ""
 "S'il vous plaît, n'essayez pas d'utiliser Javascript dans vos commentaires !"
 
-#: functions.php:2474
+#: functions.php:2488
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -573,32 +693,32 @@ msgstr ""
 "devrez peut-être configurer <a href=\"https://www.wpdaxue.com/wordpress-"
 "rewriterule.html\" target=\"_blank\"> le pseudo-statique </a>. </ b>"
 
-#: functions.php:2607
+#: functions.php:2621
 #, php-format
 msgid "%s says: "
 msgstr "%s dit : "
 
-#: functions.php:2628
+#: functions.php:2642
 msgid "Expand / Collapse"
 msgstr "Déplier/Replier"
 
-#: functions.php:3154
+#: functions.php:3168
 msgid "Invalid request method."
 msgstr "Méthode de requête non valide."
 
-#: functions.php:3165
+#: functions.php:3179
 msgid "You are submitting too frequently. Please try again later."
 msgstr "Vous soumettez trop fréquemment. Veuillez réessayer plus tard."
 
-#: functions.php:3171
+#: functions.php:3185
 msgid "Security verification failed."
 msgstr "La vérification de sécurité a échoué."
 
-#: functions.php:3179
+#: functions.php:3193
 msgid "Please fill in all required fields."
 msgstr "Veuillez remplir tous les champs obligatoires."
 
-#: functions.php:3224 user/page-links.php:498
+#: functions.php:3238 user/page-links.php:498
 msgid ""
 "Sorry, we are not accepting new link submissions at this time due to "
 "backlog. Please try again later."
@@ -606,40 +726,40 @@ msgstr ""
 "Désolé, nous n'acceptons pas de nouvelles soumissions de liens pour le "
 "moment en raison du retard accumulé. Veuillez réessayer plus tard."
 
-#: functions.php:3237
+#: functions.php:3251
 msgid "Site name is too long."
 msgstr "Le nom du site est trop long."
 
-#: functions.php:3242
+#: functions.php:3256
 msgid "Site description is too long."
 msgstr "La description du site est trop longue."
 
-#: functions.php:3248
+#: functions.php:3262
 msgid "Please enter a valid URL."
 msgstr "Veuillez saisir une URL valide."
 
-#: functions.php:3254
+#: functions.php:3268
 msgid "Please enter a valid image URL."
 msgstr "Veuillez saisir une URL d'image valide."
 
-#: functions.php:3260
+#: functions.php:3274
 msgid "Please enter a valid email address."
 msgstr "Veuillez saisir une adresse électronique valide."
 
-#: functions.php:3268
+#: functions.php:3282
 msgid "This website URL is already in our links list."
 msgstr "L'URL de ce site web figure déjà dans notre liste de liens."
 
-#: functions.php:3294 functions.php:3359
+#: functions.php:3308 functions.php:3373
 msgid "Failed to submit link. Please try again later."
 msgstr "Le lien n'a pas été soumis. Veuillez réessayer plus tard."
 
-#: functions.php:3306 functions.php:3366
+#: functions.php:3320 functions.php:3380
 #, php-format
 msgid "[%s] New Friend Link Submission"
 msgstr "[%s] Soumission d'un lien vers un nouvel ami"
 
-#: functions.php:3308 functions.php:3368
+#: functions.php:3322 functions.php:3382
 #, php-format
 msgid ""
 "A new friend link has been submitted on your website %s:\n"
@@ -648,32 +768,32 @@ msgstr ""
 "Un nouveau lien d'ami a été soumis sur votre site web %s :\n"
 "\n"
 
-#: functions.php:3309
+#: functions.php:3323
 #, php-format
 msgid "Site Name: %s\n"
 msgstr "Nom du site : %s\n"
 
-#: functions.php:3310
+#: functions.php:3324
 #, php-format
 msgid "Site URL: %s\n"
 msgstr "URL du site : %s\n"
 
-#: functions.php:3311
+#: functions.php:3325
 #, php-format
 msgid "Site Description: %s\n"
 msgstr "Description du site : %s\n"
 
-#: functions.php:3312
+#: functions.php:3326
 #, php-format
 msgid "Site Image: %s\n"
 msgstr "Image du site : %s\n"
 
-#: functions.php:3313
+#: functions.php:3327
 #, php-format
 msgid "Contact Email: %s\n"
 msgstr "Courriel du contact : %s\n"
 
-#: functions.php:3314
+#: functions.php:3328
 #, php-format
 msgid ""
 "IP Address: %s\n"
@@ -682,52 +802,52 @@ msgstr ""
 "Adresse IP : %s\n"
 "\n"
 
-#: functions.php:3315
+#: functions.php:3329
 msgid "Please review this submission in your WordPress admin panel.\n"
 msgstr ""
 "Veuillez vérifier cette soumission dans votre panneau d'administration "
 "WordPress.\n"
 
-#: functions.php:3325 functions.php:3376
+#: functions.php:3339 functions.php:3390
 msgid "Thank you! Your link has been submitted for review."
 msgstr ""
 "Nous vous remercions de votre attention. Votre lien a été soumis pour examen."
 
-#: functions.php:3330
+#: functions.php:3344
 #, php-format
 msgid "Site Name: %s"
 msgstr "Nom du site : %s"
 
-#: functions.php:3331
+#: functions.php:3345
 #, php-format
 msgid "Site URL: %s"
 msgstr "URL du site : %s"
 
-#: functions.php:3332
+#: functions.php:3346
 #, php-format
 msgid "Site Description: %s"
 msgstr "Description du site : %s"
 
-#: functions.php:3333
+#: functions.php:3347
 #, php-format
 msgid "Site Image: %s"
 msgstr "Image du site : %s"
 
-#: functions.php:3334
+#: functions.php:3348
 #, php-format
 msgid "Contact Email: %s"
 msgstr "Courriel du contact : %s"
 
-#: functions.php:3335
+#: functions.php:3349
 #, php-format
 msgid "IP Address: %s"
 msgstr "Adresse IP : %s"
 
-#: functions.php:3338
+#: functions.php:3352
 msgid "Friend Link Submission: "
 msgstr "Soumission d'un lien d'ami : "
 
-#: functions.php:3370
+#: functions.php:3384
 msgid ""
 "\n"
 "Please review this submission in your WordPress admin panel.\n"
@@ -736,16 +856,16 @@ msgstr ""
 "Veuillez vérifier cette soumission dans votre panneau d'administration "
 "WordPress.\n"
 
-#: functions.php:3383
+#: functions.php:3397
 msgid "An unexpected error occurred. Please try again later."
 msgstr "Une erreur inattendue s'est produite. Veuillez réessayer plus tard."
 
-#: functions.php:3559
+#: functions.php:3573
 #, php-format
 msgid "[%s] Friend Link Check Failure: %s"
 msgstr "[%s] Échec de la vérification du lien amical : %s"
 
-#: functions.php:3562
+#: functions.php:3576
 #, php-format
 msgid ""
 "The friend link '%s' has failed our status check %d times.\n"
@@ -754,22 +874,22 @@ msgstr ""
 "Le lien d'ami « %s » a échoué à notre vérification d'état %d fois.\n"
 "\n"
 
-#: functions.php:3563
+#: functions.php:3577
 #, php-format
 msgid "Link URL: %s\n"
 msgstr "Lien URL : %s\n"
 
-#: functions.php:3566
+#: functions.php:3580
 #, php-format
 msgid "HTTP Status Code: %s\n"
 msgstr "Code d'état HTTP : %s\n"
 
-#: functions.php:3570
+#: functions.php:3584
 #, php-format
 msgid "Error Message: %s\n"
 msgstr "Message d'erreur : %s\n"
 
-#: functions.php:3573
+#: functions.php:3587
 #, php-format
 msgid ""
 "\n"
@@ -780,7 +900,7 @@ msgstr ""
 "Dernière heure de vérification : %s\n"
 "\n"
 
-#: functions.php:3574
+#: functions.php:3588
 msgid ""
 "You may want to check this link and consider removing it if it remains "
 "unavailable.\n"
@@ -788,46 +908,46 @@ msgstr ""
 "Vous pouvez vérifier ce lien et envisager de le supprimer s'il reste "
 "indisponible.\n"
 
-#: functions.php:3646
+#: functions.php:3660
 msgid "Just now"
 msgstr "Maintenant"
 
-#: functions.php:3648
+#: functions.php:3662
 #, php-format
 msgid "%d minute ago"
 msgid_plural "%d minutes ago"
 msgstr[0] "il y a %d minute"
 msgstr[1] "il y a %d minute"
 
-#: functions.php:3651
+#: functions.php:3665
 #, php-format
 msgid "%d hour ago"
 msgid_plural "%d hours ago"
 msgstr[0] "il y a %d heure"
 msgstr[1] "il y a %d heure"
 
-#: functions.php:3654
+#: functions.php:3668
 #, php-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "il y a %d jour"
 msgstr[1] "il y a %d jour"
 
-#: functions.php:3657
+#: functions.php:3671
 #, php-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "il y a %d semaine"
 msgstr[1] "il y a %d semaine"
 
-#: functions.php:3660
+#: functions.php:3674
 #, php-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "il y a %d mois"
 msgstr[1] "il y a %d mois"
 
-#: functions.php:3867
+#: functions.php:3881
 msgid "Access denied."
 msgstr "Accès refusé."
 

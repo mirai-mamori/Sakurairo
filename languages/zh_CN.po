@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-04-30 10:56+0900\n"
-"PO-Revision-Date: 2025-04-30 12:56+0900\n"
+"POT-Creation-Date: 2025-04-30 21:45+0900\n"
+"PO-Revision-Date: 2025-04-30 21:48+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -188,55 +188,147 @@ msgstr "上次在线"
 msgid "Latest Announcement"
 msgstr "最新公告"
 
-#: exhibition.php:77
+#: exhibition.php:86
 msgid "Gold Blogger"
 msgstr "流光迁徙"
 
-#: exhibition.php:78
+#: exhibition.php:91
+msgid ""
+"The string of creation has vibrated the membrane, each resonance weaving the "
+"warp and weft of spacetime thoughts."
+msgstr "创作之弦已振动膜层，每个谐振都在编织时空的思维经纬。"
+
+#: exhibition.php:98
 msgid "Silver Blogger"
 msgstr "刻入年轮"
 
-#: exhibition.php:79
+#: exhibition.php:103
+msgid ""
+"The wheel of creation has engaged the gears, each component calibrating the "
+"temporal precision of your blog."
+msgstr "创作之轮已咬合齿轮，每个零件都在校准博客的时光精度。"
+
+#: exhibition.php:104 exhibition.php:117
+#, php-format
+msgid "%s more days to next level"
+msgstr "还需要 %s 天到下一等级"
+
+#: exhibition.php:111
 msgid "Bronze Blogger"
 msgstr "时光涟漪"
 
-#: exhibition.php:85
+#: exhibition.php:116
+msgid ""
+"The ship of creation has set sail, each wave carving the depth markers of "
+"your blog's journey."
+msgstr "创作之舟已扬帆远航，每道浪痕都在刻写博客的深度航标。"
+
+#: exhibition.php:134
 msgid "Gold Popularity"
 msgstr "如振落叶"
 
-#: exhibition.php:86
+#: exhibition.php:139
+msgid ""
+"You have planted a garden of wisdom, its fragrance now discovered by distant "
+"butterflies."
+msgstr "你已种满了智慧的花朵，芬芳正被远方的蝴蝶发现。"
+
+#: exhibition.php:146
 msgid "Silver Popularity"
 msgstr "声闻遐迩"
 
-#: exhibition.php:87
+#: exhibition.php:151
+msgid ""
+"You have illuminated the star chart of reading, each piece of writing "
+"flowing through the galaxy."
+msgstr "你已点亮阅读的星图，每篇文字都在银河中流转。"
+
+#: exhibition.php:152 exhibition.php:165
+#, php-format
+msgid "%s more visits to next level"
+msgstr "还需要 %s 次访问到下一等级"
+
+#: exhibition.php:159
 msgid "Bronze Popularity"
 msgstr "滥觞所始"
 
-#: exhibition.php:93
+#: exhibition.php:164
+msgid ""
+"You have built a harbor of knowledge, the ripples of thought continuously "
+"spreading."
+msgstr "你已筑起知识的港湾，思想的涟漪正不断扩散。"
+
+#: exhibition.php:182
 msgid "Gold Friendship"
 msgstr "挥袂成云"
 
-#: exhibition.php:94
+#: exhibition.php:187
+msgid ""
+"The world of friendship has no boundaries, the starry river will mark your "
+"position."
+msgstr "结交朋友的世界已无边界，星河将标记你的方位。"
+
+#: exhibition.php:194
 msgid "Silver Friendship"
 msgstr "呼朋引伴"
 
-#: exhibition.php:95
+#: exhibition.php:199
+msgid ""
+"The network of friendship has been laid out, each resonance will eventually "
+"echo."
+msgstr "结交朋友的网络已然铺开，每次共鸣终将回响。"
+
+#: exhibition.php:200 exhibition.php:213
+#, php-format
+msgid "%s more links to next level"
+msgstr "还需要 %s 条友情链接到下一等级"
+
+#: exhibition.php:207
 msgid "Bronze Friendship"
 msgstr "初遇同好"
 
-#: exhibition.php:101
+#: exhibition.php:212
+msgid ""
+"The journey of making friends has just begun, each encounter marks a new "
+"chapter."
+msgstr "结交朋友的旅程才刚刚开始，每次遇见皆为新章。"
+
+#: exhibition.php:230
 msgid "Gold Author"
 msgstr "映雪囊萤"
 
-#: exhibition.php:102
+#: exhibition.php:235
+msgid ""
+"The power of words has blossomed in your hands, rich creations have gathered "
+"into an ocean."
+msgstr "文字的力量已在你手中绽放，丰富的创作已汇聚成海。"
+
+#: exhibition.php:242
 msgid "Silver Author"
 msgstr "笔耕不輟"
 
-#: exhibition.php:103
+#: exhibition.php:247
+msgid ""
+"You have woven an extensive web of thoughts, the streams of inspiration are "
+"rushing into rivers."
+msgstr "你已织就绵延的思维之网，灵感的溪流正奔涌成河。"
+
+#: exhibition.php:248 exhibition.php:261
+#, php-format
+msgid "%s more words to next level"
+msgstr "还需要 %s 个字到下一等级"
+
+#: exhibition.php:255
 msgid "Bronze Author"
 msgstr "寸楮点墨"
 
-#: exhibition.php:204
+#: exhibition.php:260
+msgid ""
+"Sparks of words dance at your fingertips, as the faint light of thoughts "
+"quietly illuminates."
+msgstr "你指尖跃动着文字的火花，思想的微光正悄然点亮。"
+
+#: exhibition.php:388
 msgid "Meet my friend!"
 msgstr "推荐给你"
 
@@ -490,60 +582,64 @@ msgstr "是否要将其设置为私密？"
 msgid "You had set private comment before"
 msgstr "你之前设置了私人评论"
 
-#: functions.php:681 inc/theme-plus.php:211
+#: functions.php:612
+msgid "Maximum level reached"
+msgstr "已达到最高等级"
+
+#: functions.php:695 inc/theme-plus.php:211
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:681
+#: functions.php:695
 msgid "Blogger"
 msgstr "博主"
 
-#: functions.php:690 functions.php:3826
+#: functions.php:704 functions.php:3840
 msgid "Location"
 msgstr "来自"
 
-#: functions.php:696
+#: functions.php:710
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:698
+#: functions.php:712
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:700
+#: functions.php:714
 msgid "No"
 msgstr "否"
 
-#: functions.php:703 inc/link-status.php:168
+#: functions.php:717 inc/link-status.php:168
 msgid "Edit"
 msgstr "编辑"
 
-#: functions.php:836
+#: functions.php:850
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "这家伙好懒╮(╯▽╰)╭"
 
-#: functions.php:866 functions.php:3204 functions.php:3397
+#: functions.php:880 functions.php:3218 functions.php:3411
 msgid "Pending Links"
 msgstr "待审核链接"
 
-#: functions.php:1688 functions.php:1691 inc/theme-plus.php:366
+#: functions.php:1702 functions.php:1705 inc/theme-plus.php:366
 #: layouts/mo_toc_menu.php:29
 msgid "Dashboard"
 msgstr "管理后台"
 
-#: functions.php:2240
+#: functions.php:2254
 msgid "QQ"
 msgstr ""
 
-#: functions.php:2342
+#: functions.php:2356
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: functions.php:2370
+#: functions.php:2384
 msgid "Please do not try to use Javascript in your comments!"
 msgstr "请不要尝试在你的评论中添加JavaScript!"
 
-#: functions.php:2474
+#: functions.php:2488
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -554,72 +650,72 @@ msgstr ""
 "固定链接</a>设置为朴素。为此，你可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">伪静态</a></b>"
 
-#: functions.php:2607
+#: functions.php:2621
 #, php-format
 msgid "%s says: "
 msgstr "%s 说： "
 
-#: functions.php:2628
+#: functions.php:2642
 msgid "Expand / Collapse"
 msgstr "展开 / 收起"
 
-#: functions.php:3154
+#: functions.php:3168
 msgid "Invalid request method."
 msgstr "无效的请求方式。"
 
-#: functions.php:3165
+#: functions.php:3179
 msgid "You are submitting too frequently. Please try again later."
 msgstr "你提交的频率过高。请稍后再试。"
 
-#: functions.php:3171
+#: functions.php:3185
 msgid "Security verification failed."
 msgstr "安全验证失败。"
 
-#: functions.php:3179
+#: functions.php:3193
 msgid "Please fill in all required fields."
 msgstr "请填写所有必填字段。"
 
-#: functions.php:3224 user/page-links.php:498
+#: functions.php:3238 user/page-links.php:498
 msgid ""
 "Sorry, we are not accepting new link submissions at this time due to "
 "backlog. Please try again later."
 msgstr ""
 "很抱歉，由于待审核的链接积压中，我们暂时不接受新链接的提交。请稍后再试。"
 
-#: functions.php:3237
+#: functions.php:3251
 msgid "Site name is too long."
 msgstr "站点名称太长。"
 
-#: functions.php:3242
+#: functions.php:3256
 msgid "Site description is too long."
 msgstr "站点介绍太长。"
 
-#: functions.php:3248
+#: functions.php:3262
 msgid "Please enter a valid URL."
 msgstr "请输入有效网址。"
 
-#: functions.php:3254
+#: functions.php:3268
 msgid "Please enter a valid image URL."
 msgstr "请输入有效图片地址。"
 
-#: functions.php:3260
+#: functions.php:3274
 msgid "Please enter a valid email address."
 msgstr "请输入有效的电子邮件地址。"
 
-#: functions.php:3268
+#: functions.php:3282
 msgid "This website URL is already in our links list."
 msgstr "该站点地址已在我们的链接列表中。"
 
-#: functions.php:3294 functions.php:3359
+#: functions.php:3308 functions.php:3373
 msgid "Failed to submit link. Please try again later."
 msgstr "提交链接失败。请稍后再试。"
 
-#: functions.php:3306 functions.php:3366
+#: functions.php:3320 functions.php:3380
 #, php-format
 msgid "[%s] New Friend Link Submission"
 msgstr "[%s] 提交新的友情链接"
 
-#: functions.php:3308 functions.php:3368
+#: functions.php:3322 functions.php:3382
 #, php-format
 msgid ""
 "A new friend link has been submitted on your website %s:\n"
@@ -628,81 +724,81 @@ msgstr ""
 "你的站点 %s 上提交了一个新的友情链接：\n"
 "\n"
 
-#: functions.php:3309
+#: functions.php:3323
 #, php-format
 msgid "Site Name: %s\n"
 msgstr "站点名称：%s\n"
 
-#: functions.php:3310
+#: functions.php:3324
 #, php-format
 msgid "Site URL: %s\n"
 msgstr "站点地址：%s\n"
 
-#: functions.php:3311
+#: functions.php:3325
 #, php-format
 msgid "Site Description: %s\n"
 msgstr "站点描述：%s\n"
 
-#: functions.php:3312
+#: functions.php:3326
 #, php-format
 msgid "Site Image: %s\n"
 msgstr "站点图像：%s\n"
 
-#: functions.php:3313
+#: functions.php:3327
 #, php-format
 msgid "Contact Email: %s\n"
 msgstr "联系邮箱：%s\n"
 
-#: functions.php:3314
+#: functions.php:3328
 #, php-format
 msgid ""
 "IP Address: %s\n"
 "\n"
 msgstr "IP 地址：%s\n"
 
-#: functions.php:3315
+#: functions.php:3329
 msgid "Please review this submission in your WordPress admin panel.\n"
 msgstr "请在 WordPress 仪表盘中查看此次提交。\n"
 
-#: functions.php:3325 functions.php:3376
+#: functions.php:3339 functions.php:3390
 msgid "Thank you! Your link has been submitted for review."
 msgstr "谢谢！你的链接已提交审核。"
 
-#: functions.php:3330
+#: functions.php:3344
 #, php-format
 msgid "Site Name: %s"
 msgstr "站点名称：%s"
 
-#: functions.php:3331
+#: functions.php:3345
 #, php-format
 msgid "Site URL: %s"
 msgstr "站点地址：%s"
 
-#: functions.php:3332
+#: functions.php:3346
 #, php-format
 msgid "Site Description: %s"
 msgstr "站点描述：%s"
 
-#: functions.php:3333
+#: functions.php:3347
 #, php-format
 msgid "Site Image: %s"
 msgstr "站点图像：%s"
 
-#: functions.php:3334
+#: functions.php:3348
 #, php-format
 msgid "Contact Email: %s"
 msgstr "联系邮箱：%s"
 
-#: functions.php:3335
+#: functions.php:3349
 #, php-format
 msgid "IP Address: %s"
 msgstr "IP 地址：%s"
 
-#: functions.php:3338
+#: functions.php:3352
 msgid "Friend Link Submission: "
 msgstr "提交友情链接： "
 
-#: functions.php:3370
+#: functions.php:3384
 msgid ""
 "\n"
 "Please review this submission in your WordPress admin panel.\n"
@@ -710,38 +806,38 @@ msgstr ""
 "\n"
 "请在 WordPress 仪表盘中查看此次提交。\n"
 
-#: functions.php:3383
+#: functions.php:3397
 msgid "An unexpected error occurred. Please try again later."
 msgstr "出现意外错误。请稍后再试。"
 
-#: functions.php:3559
+#: functions.php:3573
 #, php-format
 msgid "[%s] Friend Link Check Failure: %s"
 msgstr "[%s] 友情链接检查失败：%s"
 
-#: functions.php:3562
+#: functions.php:3576
 #, php-format
 msgid ""
 "The friend link '%s' has failed our status check %d times.\n"
 "\n"
 msgstr "友情链接'%s'的状态检查已失败 %d 次。\n"
 
-#: functions.php:3563
+#: functions.php:3577
 #, php-format
 msgid "Link URL: %s\n"
 msgstr "链接 URL： %s\n"
 
-#: functions.php:3566
+#: functions.php:3580
 #, php-format
 msgid "HTTP Status Code: %s\n"
 msgstr "HTTP 状态代码： %s\n"
 
-#: functions.php:3570
+#: functions.php:3584
 #, php-format
 msgid "Error Message: %s\n"
 msgstr "错误信息： %s\n"
 
-#: functions.php:3573
+#: functions.php:3587
 #, php-format
 msgid ""
 "\n"
@@ -752,47 +848,47 @@ msgstr ""
 "上次检查时间：%s\n"
 "\n"
 
-#: functions.php:3574
+#: functions.php:3588
 msgid ""
 "You may want to check this link and consider removing it if it remains "
 "unavailable.\n"
 msgstr "你可能需要检查该链接，如果仍然不可用，请考虑将其删除。\n"
 
-#: functions.php:3646
+#: functions.php:3660
 msgid "Just now"
 msgstr "刚刚"
 
-#: functions.php:3648
+#: functions.php:3662
 #, php-format
 msgid "%d minute ago"
 msgid_plural "%d minutes ago"
 msgstr[0] "%d 分钟前"
 
-#: functions.php:3651
+#: functions.php:3665
 #, php-format
 msgid "%d hour ago"
 msgid_plural "%d hours ago"
 msgstr[0] "%d 小时前"
 
-#: functions.php:3654
+#: functions.php:3668
 #, php-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d 天前"
 
-#: functions.php:3657
+#: functions.php:3671
 #, php-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "%d 周前"
 
-#: functions.php:3660
+#: functions.php:3674
 #, php-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "%d  前"
 
-#: functions.php:3867
+#: functions.php:3881
 msgid "Access denied."
 msgstr "拒绝访问。"
 
