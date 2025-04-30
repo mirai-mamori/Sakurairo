@@ -521,64 +521,6 @@ blockquote:after {
   background: rgba(255, 255, 255, 0.85);
 }
 
-.pattern-center-sakura {
-  position: relative;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  margin: 0 auto;
-}
-
-.pattern-center-sakura::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, .3);
-}
-
-.pattern-center-sakura header.pattern-header {
-  position: absolute;
-  top: 45%;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: #FFF;
-  z-index: 1;
-}
-
-.pattern-center-sakura h1.cat-title {
-  color: #FFF;
-  font-size: 40px;
-  font-weight: var(--global-font-weight, 500);
-  width: 80%;
-  margin: auto;
-  padding: 0;
-  border: 0;
-}
-
-.pattern-center-sakura h1.entry-title {
-  color: #FFF;
-  font-size: 40px;
-  font-weight: var(--global-font-weight, 500);
-  width: 80%;
-  margin: auto;
-  padding: 0;
-  border: 0;
-}
-
-.pattern-center-sakura header.single-header {
-  max-width: 800px;
-  padding: 0 10px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  top: auto;
-  bottom: 20px;
-}
-
 /* 主容器样式 */
 .site-header {
   position: fixed;
@@ -4542,8 +4484,7 @@ textarea:focus {
   height: 400px;
 }
 
-.pattern-center .cat-des,
-.pattern-center-sakura .cat-des {
+.pattern-center .cat-des {
   font-size: 16px;
   display: block;
   font-weight: var(--global-font-weight);

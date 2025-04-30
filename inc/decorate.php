@@ -330,10 +330,6 @@ font-size: <?=iro_opt('post_title_font_size'); ?>px !important;
 .pattern-center h1.entry-title {
 font-size: <?=iro_opt('page_temp_title_font_size'); ?>px ;
 }
-.pattern-center-sakura h1.cat-title,
-.pattern-center-sakura h1.entry-title {
-font-size: <?=iro_opt('page_temp_title_font_size'); ?>px !important;
-}
 
 .single-center .single-header h1.entry-title {
 font-size: <?=iro_opt('article_title_font_size'); ?>px ;
