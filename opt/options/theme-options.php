@@ -2252,26 +2252,9 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id'     => 'show_medal_capsules',
-        'type'   => 'switcher',
-        'title'  => __('Show Medal', 'sakurairo_csf'),
-        'desc'   => __('Display your medal in display area', 'sakurairo_csf'),
-        'default' => true,
-      ),
-      
-      array(
-        'id'     => 'stat_announcement_text',
-        'type'   => 'textarea',
-        'title'  => __('Announcement Text', 'sakurairo_csf'),
-        'desc'   => __('Set the text for announcement capsule. Use the first line for the main announcement and the second line for details. Both lines will always be displayed.', 'sakurairo_csf'),
-        'default' => __("Latest Announcement\nWelcome to my site!", 'sakurairo_csf'),
-        'sanitize' => false,
-      ),
-
-      array(
-        'id' => 'display_components',
+        'id' => 'capsule_components',
         "type" => "select",
-        "title" => __("Display Components","sakurairo_csf"),
+        "title" => __("Capsule Components","sakurairo_csf"),
         'desc' => __('Select the components you want to display.','sakurairo_csf'),
         "chosen" => true,
         "multiple" => true,
@@ -2291,6 +2274,22 @@ $prefix = 'iro_options';
         "default" => array('primary'),
       ),
       
+      array(
+        'id'     => 'show_medal_capsules',
+        'type'   => 'switcher',
+        'title'  => __('Show Medal Badges Style Capsule', 'sakurairo_csf'),
+        'desc'   => __('Enable to show bronze/silver/gold medal badges for blog milestones, Requires you to unlock the relevant milestone to replace the relevant capsule', 'sakurairo_csf'),
+        'default' => true,
+      ),
+      
+      array(
+        'id'     => 'stat_announcement_text',
+        'type'   => 'textarea',
+        'title'  => __('Announcement Text', 'sakurairo_csf'),
+        'desc'   => __('Set the text for announcement capsule. The front-end will automatically split the text into two lines, you can also use line breaks for manual line breaks', 'sakurairo_csf'),
+        'sanitize' => false,
+      ),
+
       array(
         'id'        => 'exhibition',
         'type'      => 'repeater',

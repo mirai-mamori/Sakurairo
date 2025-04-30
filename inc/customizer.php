@@ -1084,33 +1084,10 @@ $sections = [
         'panel'       => 'iro_homepage',
 		'fields'      =>[
 			[
-				'type'     => 'switch',
-				'settings' => 'show_medal_capsules',
-				'iro_key'  => 'show_medal_capsules',
-				'label'    => esc_html__( 'Show Medal Badges', 'Sakurairo_C' ),
-				'default'  => true,
-				'description' => esc_html__( 'Enable to show bronze/silver/gold medal badges for blog age and visitor count milestones', 'Sakurairo_C' ),
-			],
-			[
-				'type'     => 'textarea',
-				'settings' => 'stat_announcement_text',
-				'iro_key'  => 'stat_announcement_text',
-				'label'    => esc_html__( 'Announcement Text', 'Sakurairo_C' ),
-				'description' => esc_html__( 'First line: main message. Second line: details. Both lines will be displayed.', 'Sakurairo_C' ),
-				'default'  => esc_html__( "Latest Announcement\nWelcome to my site!", 'Sakurairo_C' ),
-				'active_callback' => [
-					[
-						'setting'  => 'display_components',
-						'operator' => 'contains',
-						'value'    => 'announcement',
-					],
-				],
-			],
-			[
 				'type'     => 'sortable',
-				'settings' => 'display_components',
-				'iro_key'  => 'display_components',
-				'label'    => esc_html__( 'Display Components', 'Sakurairo_C' ),
+				'settings' => 'capsule_components',
+				'iro_key'  => 'capsule_components',
+				'label'    => esc_html__( 'Capsule Components', 'Sakurairo_C' ),
 				'choices'     => [
           			'post_count'     => __('Posts Capsule','Sakurairo_C'),
 					'comment_count'  => __('Comments Capsule','Sakurairo_C'),
@@ -1122,6 +1099,28 @@ $sections = [
 					'admin_online'     => __('Last Online Capsule','Sakurairo_C'),
 					'random_link'     => __('Random Link Capsule','Sakurairo_C'),
 					'announcement'     => __('Announcement Capsule','Sakurairo_C'),
+				],
+			],
+			[
+				'type'     => 'switch',
+				'settings' => 'show_medal_capsules',
+				'iro_key'  => 'show_medal_capsules',
+				'label'    => esc_html__( 'Show Medal Badges Style Capsule', 'Sakurairo_C' ),
+				'default'  => true,
+				'description' => esc_html__( 'Enable to show bronze/silver/gold medal badges for blog milestones, Requires you to unlock the relevant achievement to replace the relevant capsule', 'Sakurairo_C' ),
+			],
+			[
+				'type'     => 'textarea',
+				'settings' => 'stat_announcement_text',
+				'iro_key'  => 'stat_announcement_text',
+				'label'    => esc_html__( 'Announcement Text', 'Sakurairo_C' ),
+				'description' => esc_html__( 'Set the text for announcement capsule. The front-end will automatically split the text into two lines, you can also use line breaks for manual line breaks', 'Sakurairo_C' ),
+				'active_callback' => [
+					[
+						'setting'  => 'capsule_components',
+						'operator' => 'contains',
+						'value'    => 'announcement',
+					],
 				],
 			],
 		],

@@ -4,7 +4,7 @@ $exhibition = is_array($exhibition) ? $exhibition : [];
 
 // 获取站点统计信息
 $site_stats = get_site_stats();
-$components = iro_opt("display_components",[]);
+$components = iro_opt("capsule_components",[]);
 
 // 准备显示信息
 $square_cards = [
@@ -180,7 +180,7 @@ if ($show_medal_capsules) {
                         if ($square_cards[$component]['enabled'] && !empty($site_stats['random_link'])):
                             $rl = $site_stats['random_link'];
                             $img = $rl->link_image ?: 
-                                    iro_opt('vision_resource_basepath').'/basic/default_avatar.jpg'; ?>
+                                    'https://weavatar.com/avatar/?s=80&d=mm&r=g'; ?>
                             <div class="stat-capsule link-capsule">
                             <div class="link-avatar"><img src="<?php echo esc_url($img); ?>" /></div>
                             <div class="link-info">
@@ -235,7 +235,7 @@ if ($show_medal_capsules) {
                 
                 // 如果没有图片，使用默认图片
                 if (empty($img)) {
-                    $img = iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@3.0/') . 'basic/default_display_img.jpg';
+                    $img = iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@3.0/') . 'series/exhibition1.webp';
                 }
                 ?>
                 <div class="bento-item bento-medium">
