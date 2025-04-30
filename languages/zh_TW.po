@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-04-30 21:48+0900\n"
-"PO-Revision-Date: 2025-04-30 21:56+0900\n"
+"POT-Creation-Date: 2025-05-01 08:25+0900\n"
+"PO-Revision-Date: 2025-05-01 08:25+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -591,64 +591,60 @@ msgstr "是否確實要將其設置為專用？"
 msgid "You had set private comment before"
 msgstr "你之前設置了私人評論"
 
-#: functions.php:612
-msgid "Maximum level reached"
-msgstr "已達最高等級"
-
-#: functions.php:695 inc/theme-plus.php:211
+#: functions.php:681 inc/theme-plus.php:211
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:695
+#: functions.php:681
 msgid "Blogger"
 msgstr "部落客"
 
-#: functions.php:704 functions.php:3840
+#: functions.php:690 functions.php:3826
 msgid "Location"
 msgstr "來自"
 
-#: functions.php:710
+#: functions.php:696
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:712
+#: functions.php:698
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:714
+#: functions.php:700
 msgid "No"
 msgstr "否"
 
-#: functions.php:717 inc/link-status.php:168
+#: functions.php:703 inc/link-status.php:168
 msgid "Edit"
 msgstr "編輯"
 
-#: functions.php:850
+#: functions.php:836
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "這傢伙好懶 ╮(╯▽╰)╭"
 
-#: functions.php:880 functions.php:3218 functions.php:3411
+#: functions.php:866 functions.php:3204 functions.php:3397
 msgid "Pending Links"
 msgstr "待處理連結"
 
-#: functions.php:1702 functions.php:1705 inc/theme-plus.php:366
+#: functions.php:1688 functions.php:1691 inc/theme-plus.php:366
 #: layouts/mo_toc_menu.php:29
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:2254
+#: functions.php:2240
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:2356
+#: functions.php:2342
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:2384
+#: functions.php:2370
 msgid "Please do not try to use Javascript in your comments!"
 msgstr "請不要嘗試在你的評論中使用Javascript！"
 
-#: functions.php:2488
+#: functions.php:2474
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -659,71 +655,71 @@ msgstr ""
 "固定連結</a>設置為樸素。為此，你可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">偽靜態</a></b>"
 
-#: functions.php:2621
+#: functions.php:2607
 #, php-format
 msgid "%s says: "
 msgstr "%s 說： "
 
-#: functions.php:2642
+#: functions.php:2628
 msgid "Expand / Collapse"
 msgstr "展開 / 摺疊"
 
-#: functions.php:3168
+#: functions.php:3154
 msgid "Invalid request method."
 msgstr "請求方法無效。"
 
-#: functions.php:3179
+#: functions.php:3165
 msgid "You are submitting too frequently. Please try again later."
 msgstr "你提交的頻率太高。請稍後再試。"
 
-#: functions.php:3185
+#: functions.php:3171
 msgid "Security verification failed."
 msgstr "安全驗證失敗。"
 
-#: functions.php:3193
+#: functions.php:3179
 msgid "Please fill in all required fields."
 msgstr "請填寫所有必填字段。"
 
-#: functions.php:3238 user/page-links.php:498
+#: functions.php:3224 user/page-links.php:498
 msgid ""
 "Sorry, we are not accepting new link submissions at this time due to "
 "backlog. Please try again later."
 msgstr "很抱歉，由於待處理連結積壓，我們暫時不接受新的連結提交。請稍後再試。"
 
-#: functions.php:3251
+#: functions.php:3237
 msgid "Site name is too long."
 msgstr "網站名稱過長。"
 
-#: functions.php:3256
+#: functions.php:3242
 msgid "Site description is too long."
 msgstr "網站描述過長。"
 
-#: functions.php:3262
+#: functions.php:3248
 msgid "Please enter a valid URL."
 msgstr "請輸入有效的 URL。"
 
-#: functions.php:3268
+#: functions.php:3254
 msgid "Please enter a valid image URL."
 msgstr "請輸入有效的圖片 URL。"
 
-#: functions.php:3274
+#: functions.php:3260
 msgid "Please enter a valid email address."
 msgstr "請輸入有效的電子郵件地址。"
 
-#: functions.php:3282
+#: functions.php:3268
 msgid "This website URL is already in our links list."
 msgstr "此網站 URL 已在我們的連結清單中。"
 
-#: functions.php:3308 functions.php:3373
+#: functions.php:3294 functions.php:3359
 msgid "Failed to submit link. Please try again later."
 msgstr "提交連結失敗。請稍後再試。"
 
-#: functions.php:3320 functions.php:3380
+#: functions.php:3306 functions.php:3366
 #, php-format
 msgid "[%s] New Friend Link Submission"
 msgstr "[%s] 提交新的朋友連結"
 
-#: functions.php:3322 functions.php:3382
+#: functions.php:3308 functions.php:3368
 #, php-format
 msgid ""
 "A new friend link has been submitted on your website %s:\n"
@@ -732,32 +728,32 @@ msgstr ""
 "你的網站 %s 已提交新的友情連結：\n"
 "\n"
 
-#: functions.php:3323
+#: functions.php:3309
 #, php-format
 msgid "Site Name: %s\n"
 msgstr "網站名稱：%s\n"
 
-#: functions.php:3324
+#: functions.php:3310
 #, php-format
 msgid "Site URL: %s\n"
 msgstr "網站 URL：%s\n"
 
-#: functions.php:3325
+#: functions.php:3311
 #, php-format
 msgid "Site Description: %s\n"
 msgstr "網站描述：%s\n"
 
-#: functions.php:3326
+#: functions.php:3312
 #, php-format
 msgid "Site Image: %s\n"
 msgstr "網站圖片：%s\n"
 
-#: functions.php:3327
+#: functions.php:3313
 #, php-format
 msgid "Contact Email: %s\n"
 msgstr "聯絡人電子郵件： %s\n"
 
-#: functions.php:3328
+#: functions.php:3314
 #, php-format
 msgid ""
 "IP Address: %s\n"
@@ -766,49 +762,49 @@ msgstr ""
 "IP 位址： %s\n"
 "\n"
 
-#: functions.php:3329
+#: functions.php:3315
 msgid "Please review this submission in your WordPress admin panel.\n"
 msgstr "請在你的 WordPress 管理面板中檢查此提交。\n"
 
-#: functions.php:3339 functions.php:3390
+#: functions.php:3325 functions.php:3376
 msgid "Thank you! Your link has been submitted for review."
 msgstr "謝謝！你的連結已提交審核。"
 
-#: functions.php:3344
+#: functions.php:3330
 #, php-format
 msgid "Site Name: %s"
 msgstr "網站名稱︰ %s"
 
-#: functions.php:3345
+#: functions.php:3331
 #, php-format
 msgid "Site URL: %s"
 msgstr "網站 URL：%s"
 
-#: functions.php:3346
+#: functions.php:3332
 #, php-format
 msgid "Site Description: %s"
 msgstr "網站描述：%s"
 
-#: functions.php:3347
+#: functions.php:3333
 #, php-format
 msgid "Site Image: %s"
 msgstr "網站圖片：%s"
 
-#: functions.php:3348
+#: functions.php:3334
 #, php-format
 msgid "Contact Email: %s"
 msgstr "聯絡人電子郵件： %s"
 
-#: functions.php:3349
+#: functions.php:3335
 #, php-format
 msgid "IP Address: %s"
 msgstr "IP 位址： %s"
 
-#: functions.php:3352
+#: functions.php:3338
 msgid "Friend Link Submission: "
 msgstr "友情連結提交："
 
-#: functions.php:3384
+#: functions.php:3370
 msgid ""
 "\n"
 "Please review this submission in your WordPress admin panel.\n"
@@ -816,16 +812,16 @@ msgstr ""
 "\n"
 "請在你的 WordPress 管理面板中檢查此提交。\n"
 
-#: functions.php:3397
+#: functions.php:3383
 msgid "An unexpected error occurred. Please try again later."
 msgstr "發生意外錯誤。請稍後再試。"
 
-#: functions.php:3573
+#: functions.php:3559
 #, php-format
 msgid "[%s] Friend Link Check Failure: %s"
 msgstr "[%s] 友站連結檢查失敗：%s"
 
-#: functions.php:3576
+#: functions.php:3562
 #, php-format
 msgid ""
 "The friend link '%s' has failed our status check %d times.\n"
@@ -834,22 +830,22 @@ msgstr ""
 "好友連結 '%s' 的狀態檢查 %d 次失敗。\n"
 "\n"
 
-#: functions.php:3577
+#: functions.php:3563
 #, php-format
 msgid "Link URL: %s\n"
 msgstr "連結 URL：%s\n"
 
-#: functions.php:3580
+#: functions.php:3566
 #, php-format
 msgid "HTTP Status Code: %s\n"
 msgstr "HTTP 狀態碼： %s\n"
 
-#: functions.php:3584
+#: functions.php:3570
 #, php-format
 msgid "Error Message: %s\n"
 msgstr "錯誤訊息： %s\n"
 
-#: functions.php:3587
+#: functions.php:3573
 #, php-format
 msgid ""
 "\n"
@@ -860,47 +856,47 @@ msgstr ""
 "最後檢查時間：%s\n"
 "\n"
 
-#: functions.php:3588
+#: functions.php:3574
 msgid ""
 "You may want to check this link and consider removing it if it remains "
 "unavailable.\n"
 msgstr "你可能需要檢查此連結，如果仍然無法使用，請考慮將其移除。\n"
 
-#: functions.php:3660
+#: functions.php:3646
 msgid "Just now"
 msgstr "剛剛"
 
-#: functions.php:3662
+#: functions.php:3648
 #, php-format
 msgid "%d minute ago"
 msgid_plural "%d minutes ago"
 msgstr[0] "%d 分鐘前"
 
-#: functions.php:3665
+#: functions.php:3651
 #, php-format
 msgid "%d hour ago"
 msgid_plural "%d hours ago"
 msgstr[0] "%d 小時前"
 
-#: functions.php:3668
+#: functions.php:3654
 #, php-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d 日前"
 
-#: functions.php:3671
+#: functions.php:3657
 #, php-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "%d 週前"
 
-#: functions.php:3674
+#: functions.php:3660
 #, php-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "%d 個月前"
 
-#: functions.php:3881
+#: functions.php:3867
 msgid "Access denied."
 msgstr "拒絕訪問。"
 
