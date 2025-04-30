@@ -2271,7 +2271,7 @@ $prefix = 'iro_options';
             'random_link'     => __('Random Link Capsule','sakurairo_csf'),
             'announcement'     => __('Announcement Capsule','sakurairo_csf'),
         ),
-        "default" => array('primary'),
+        "default" => array(''),
       ),
       
       array(
