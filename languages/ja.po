@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-04-24 13:58+0800\n"
-"PO-Revision-Date: 2025-04-24 15:12+0900\n"
+"POT-Creation-Date: 2025-04-30 09:52+0900\n"
+"PO-Revision-Date: 2025-04-30 10:50+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja_JP\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Search..."
 msgstr "検索…"
 
-#: archive.php:42 author.php:55 index.php:81
+#: archive.php:42 author.php:55 index.php:61
 msgid " Previous"
 msgstr " 前へ"
 
@@ -58,7 +58,7 @@ msgstr "うわーうわーヾ(≧∇≦*)ゝ"
 msgid "view comments"
 msgstr "コメントを表示する"
 
-#: comments.php:84 inc/post_metas.php:79
+#: comments.php:84 inc/post_metas.php:82
 msgid "NOTHING"
 msgstr "何もない"
 
@@ -125,6 +125,122 @@ msgstr "AD は禁止されています"
 #: comments.php:255
 msgid "Save your private info"
 msgstr "個人情報を保存"
+
+#: exhibition.php:15
+msgid "Content Count"
+msgstr "コンテンツ数"
+
+#: exhibition.php:16
+msgid "posts"
+msgstr "ポスト"
+
+#: exhibition.php:21
+msgid "Comment Count"
+msgstr "コメント数"
+
+#: exhibition.php:22
+msgid "comments"
+msgstr "コメント"
+
+#: exhibition.php:27
+msgid "Visitor Count"
+msgstr "訪問者数"
+
+#: exhibition.php:28
+msgid "visits"
+msgstr "訪問"
+
+#: exhibition.php:33
+msgid "Link Count"
+msgstr "リンク数"
+
+#: exhibition.php:34
+msgid "links"
+msgstr "リンク"
+
+#: exhibition.php:39
+msgid "Author Count"
+msgstr "著者数"
+
+#: exhibition.php:40
+msgid "authors"
+msgstr "著者"
+
+#: exhibition.php:45
+msgid "Total Words"
+msgstr "総語数"
+
+#: exhibition.php:46
+msgid "words"
+msgstr "ワード"
+
+#: exhibition.php:51
+msgid "Blog Running"
+msgstr "ブログランニング"
+
+#: exhibition.php:52
+msgid "days"
+msgstr "日"
+
+#: exhibition.php:57
+msgid "Last Online"
+msgstr "最後オンライン"
+
+#: exhibition.php:63
+msgid "Latest Announcement"
+msgstr "最新のお知らせ"
+
+#: exhibition.php:77
+msgid "Gold Blogger"
+msgstr "流光遷徙"
+
+#: exhibition.php:78
+msgid "Silver Blogger"
+msgstr "刻入年輪"
+
+#: exhibition.php:79
+msgid "Bronze Blogger"
+msgstr "時光漣漪"
+
+#: exhibition.php:85
+msgid "Gold Popularity"
+msgstr "如振落葉"
+
+#: exhibition.php:86
+msgid "Silver Popularity"
+msgstr "声聞遐迩"
+
+#: exhibition.php:87
+msgid "Bronze Popularity"
+msgstr "濫觞所始"
+
+#: exhibition.php:93
+msgid "Gold Friendship"
+msgstr "揮袂成雲"
+
+#: exhibition.php:94
+msgid "Silver Friendship"
+msgstr "呼朋引伴"
+
+#: exhibition.php:95
+msgid "Bronze Friendship"
+msgstr "初遇同好"
+
+#: exhibition.php:101
+msgid "Gold Author"
+msgstr "映雪囊蛍"
+
+#: exhibition.php:102
+msgid "Silver Author"
+msgstr "筆耕不輟"
+
+#: exhibition.php:103
+msgid "Bronze Author"
+msgstr "寸楮点墨"
+
+#: exhibition.php:204
+msgid "Meet my friend!"
+msgstr "友達に会いに来て！"
 
 #: footer.php:32
 #, php-format
@@ -274,15 +390,15 @@ msgstr ""
 "は、!important effectiveを追加する必要があります。ライセンスについては、テー"
 "マオプションで設定方法をご確認ください。"
 
-#: functions.php:572
+#: functions.php:571
 msgid "Copied!"
 msgstr "コピーしました!"
 
-#: functions.php:573
+#: functions.php:572
 msgid "Copy Code"
 msgstr "コードをコピー"
 
-#: functions.php:574
+#: functions.php:573
 msgid ""
 "Your cover API seems to not support Cross Origin Access. In this case, Cover "
 "Cache won't take effect."
@@ -290,19 +406,19 @@ msgstr ""
 "あなたのカバー API はクロスオリジンアクセスをサポートしていないようです。この"
 "場合、Cover Cacheは有効になりません。"
 
-#: functions.php:575
+#: functions.php:574
 msgid "Commiting...."
 msgstr "提出中…."
 
-#: functions.php:576
+#: functions.php:575
 msgid "Succeed"
 msgstr "継ぐ"
 
-#: functions.php:577
+#: functions.php:576
 msgid "10 files max per request"
 msgstr "1 回のリクエストで送信できるファイル数の上限は 10 個です"
 
-#: functions.php:578
+#: functions.php:577
 msgid ""
 "5 MB max per file.\n"
 "\n"
@@ -316,15 +432,15 @@ msgstr ""
 "\n"
 "この画像が大きすぎる~再アップロードしてください!"
 
-#: functions.php:579
+#: functions.php:578
 msgid "Uploading..."
 msgstr "アップロード中..."
 
-#: functions.php:580
+#: functions.php:579
 msgid "Uploaded successfully~"
 msgstr "アップロードに成功しました~"
 
-#: functions.php:581
+#: functions.php:580
 msgid ""
 "Upload failed!\n"
 "File Name=> {0}\n"
@@ -336,112 +452,112 @@ msgstr ""
 "コード=> {1}\n"
 "{2}"
 
-#: functions.php:582
+#: functions.php:581
 msgid "Upload failed, please retry."
 msgstr "アップロードに失敗しました、もう一度やり直してください。"
 
-#: functions.php:583
+#: functions.php:582
 msgid "Page Load failed. HTTP {0}"
 msgstr "ページの読み込みに失敗しました。HTTP {0}"
 
-#: functions.php:584
+#: functions.php:583
 msgid "Glad you come, but we've got nothing left."
 msgstr "あなたが来てうれしいですが、私たちは何も残っていません。"
 
-#: functions.php:585 search.php:85
+#: functions.php:584 search.php:85
 msgid "Post"
 msgstr "投稿"
 
-#: functions.php:586
+#: functions.php:585
 msgid "Tag"
 msgstr "タグ"
 
-#: functions.php:587
+#: functions.php:586
 msgid "Category"
 msgstr "カテゴリー"
 
-#: functions.php:588 search.php:96
+#: functions.php:587 search.php:96
 msgid "Page"
 msgstr "ページ"
 
-#: functions.php:589
+#: functions.php:588
 msgid "Comment"
 msgstr "コメント"
 
-#: functions.php:590
+#: functions.php:589
 msgid "Paused..."
 msgstr "一時停止"
 
-#: functions.php:591
+#: functions.php:590
 msgid "Loading Video..."
 msgstr "ビデオを読み込んでいます..."
 
-#: functions.php:592
+#: functions.php:591
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "フォントをダウンロードするには、データ使用量に注意してください。"
 
-#: functions.php:593
+#: functions.php:592
 msgid "Are you sure you want set it private?"
 msgstr "プライベートに設定してもよろしいですか?"
 
-#: functions.php:594
+#: functions.php:593
 msgid "You had set private comment before"
 msgstr "以前にプライベートコメントを設定していた"
 
-#: functions.php:682 inc/theme-plus.php:211
+#: functions.php:681 inc/theme-plus.php:211
 msgid "Author"
 msgstr "投稿者"
 
-#: functions.php:682
+#: functions.php:681
 msgid "Blogger"
 msgstr "Blogger"
 
-#: functions.php:691 functions.php:3636
+#: functions.php:690 functions.php:3826
 msgid "Location"
 msgstr "場所"
 
-#: functions.php:697
+#: functions.php:696
 msgid "Private"
 msgstr "プライベート"
 
-#: functions.php:699
+#: functions.php:698
 msgid "Yes"
 msgstr "はい"
 
-#: functions.php:701
+#: functions.php:700
 msgid "No"
 msgstr "いいえ"
 
-#: functions.php:704 inc/link-status.php:168
+#: functions.php:703 inc/link-status.php:168
 msgid "Edit"
 msgstr "編集"
 
-#: functions.php:837
+#: functions.php:836
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "こやつはとても怠惰な╮(╯▽╰)╭"
 
-#: functions.php:867 functions.php:3187 functions.php:3380
+#: functions.php:866 functions.php:3204 functions.php:3397
 msgid "Pending Links"
 msgstr "未決リンク"
 
-#: functions.php:1693 functions.php:1696 inc/theme-plus.php:366
+#: functions.php:1688 functions.php:1691 inc/theme-plus.php:366
 #: layouts/mo_toc_menu.php:29
 msgid "Dashboard"
 msgstr "ダッシュボード"
 
-#: functions.php:2244
+#: functions.php:2240
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:2346
+#: functions.php:2342
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:2372
+#: functions.php:2370
 msgid "Please do not try to use Javascript in your comments!"
 msgstr "コメントでJavascriptを使用しないでください！"
 
-#: functions.php:2482
+#: functions.php:2474
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -453,32 +569,32 @@ msgstr ""
 "href=\"https://qiita.com/cyborg__ninja/items/8a191a00d402e78d8823\" "
 "target=\"_blank\"> 擬似静的化 </a>を構成する必要があります。 </b>"
 
-#: functions.php:2615
+#: functions.php:2607
 #, php-format
 msgid "%s says: "
 msgstr "%s は言う： "
 
-#: functions.php:2636
+#: functions.php:2628
 msgid "Expand / Collapse"
 msgstr "展開/折りたたみ"
 
-#: functions.php:3137
+#: functions.php:3154
 msgid "Invalid request method."
 msgstr "無効な要求メソッド。"
 
-#: functions.php:3148
+#: functions.php:3165
 msgid "You are submitting too frequently. Please try again later."
 msgstr "送信回数が多すぎます。後でもう一度お試しください。"
 
-#: functions.php:3154
+#: functions.php:3171
 msgid "Security verification failed."
 msgstr "セキュリティ検証に失敗しました。"
 
-#: functions.php:3162
+#: functions.php:3179
 msgid "Please fill in all required fields."
 msgstr "必須項目をすべてご記入ください。"
 
-#: functions.php:3207 user/page-links.php:498
+#: functions.php:3224 user/page-links.php:498
 msgid ""
 "Sorry, we are not accepting new link submissions at this time due to "
 "backlog. Please try again later."
@@ -486,40 +602,40 @@ msgstr ""
 "申し訳ございませんが、現在リンクの受付は行っておりません。後でもう一度お試し"
 "ください。"
 
-#: functions.php:3220
+#: functions.php:3237
 msgid "Site name is too long."
 msgstr "サイト名が長すぎる。"
 
-#: functions.php:3225
+#: functions.php:3242
 msgid "Site description is too long."
 msgstr "サイトの説明が長すぎる。"
 
-#: functions.php:3231
+#: functions.php:3248
 msgid "Please enter a valid URL."
 msgstr "有効なURLを入力してください。"
 
-#: functions.php:3237
+#: functions.php:3254
 msgid "Please enter a valid image URL."
 msgstr "有効な画像URLを入力してください。"
 
-#: functions.php:3243
+#: functions.php:3260
 msgid "Please enter a valid email address."
 msgstr "有効なEメールアドレスを入力してください。"
 
-#: functions.php:3251
+#: functions.php:3268
 msgid "This website URL is already in our links list."
 msgstr "このウェブサイトのURLはすでにリンク集に登録されています。"
 
-#: functions.php:3277 functions.php:3342
+#: functions.php:3294 functions.php:3359
 msgid "Failed to submit link. Please try again later."
 msgstr "リンクの送信に失敗しました。後でもう一度お試しください。"
 
-#: functions.php:3289 functions.php:3349
+#: functions.php:3306 functions.php:3366
 #, php-format
 msgid "[%s] New Friend Link Submission"
 msgstr "[%s] 新しい友達リンク投稿"
 
-#: functions.php:3291 functions.php:3351
+#: functions.php:3308 functions.php:3368
 #, php-format
 msgid ""
 "A new friend link has been submitted on your website %s:\n"
@@ -529,32 +645,32 @@ msgstr ""
 "\n"
 "\n"
 
-#: functions.php:3292
+#: functions.php:3309
 #, php-format
 msgid "Site Name: %s\n"
 msgstr "サイト名 %s\n"
 
-#: functions.php:3293
+#: functions.php:3310
 #, php-format
 msgid "Site URL: %s\n"
 msgstr "サイトURL：%s\n"
 
-#: functions.php:3294
+#: functions.php:3311
 #, php-format
 msgid "Site Description: %s\n"
 msgstr "サイトの説明：%s\n"
 
-#: functions.php:3295
+#: functions.php:3312
 #, php-format
 msgid "Site Image: %s\n"
 msgstr "サイトイメージ：%s \n"
 
-#: functions.php:3296
+#: functions.php:3313
 #, php-format
 msgid "Contact Email: %s\n"
 msgstr "連絡先メールアドレス：%s\n"
 
-#: functions.php:3297
+#: functions.php:3314
 #, php-format
 msgid ""
 "IP Address: %s\n"
@@ -563,49 +679,49 @@ msgstr ""
 "IPアドレス： %s\n"
 "\n"
 
-#: functions.php:3298
+#: functions.php:3315
 msgid "Please review this submission in your WordPress admin panel.\n"
 msgstr "WordPressの管理画面でこの投稿を確認してください。\n"
 
-#: functions.php:3308 functions.php:3359
+#: functions.php:3325 functions.php:3376
 msgid "Thank you! Your link has been submitted for review."
 msgstr "ありがとうございました！あなたのリンクは審査のために提出されました。"
 
-#: functions.php:3313
+#: functions.php:3330
 #, php-format
 msgid "Site Name: %s"
 msgstr "サイト名: %s"
 
-#: functions.php:3314
+#: functions.php:3331
 #, php-format
 msgid "Site URL: %s"
 msgstr "サイトURL: %s"
 
-#: functions.php:3315
+#: functions.php:3332
 #, php-format
 msgid "Site Description: %s"
 msgstr "サイトの説明：%s"
 
-#: functions.php:3316
+#: functions.php:3333
 #, php-format
 msgid "Site Image: %s"
 msgstr "サイトイメージ：%s"
 
-#: functions.php:3317
+#: functions.php:3334
 #, php-format
 msgid "Contact Email: %s"
 msgstr "連絡先メールアドレス：%s"
 
-#: functions.php:3318
+#: functions.php:3335
 #, php-format
 msgid "IP Address: %s"
 msgstr "IPアドレス： %s"
 
-#: functions.php:3321
+#: functions.php:3338
 msgid "Friend Link Submission: "
 msgstr "フレンドリンクの投稿 ："
 
-#: functions.php:3353
+#: functions.php:3370
 msgid ""
 "\n"
 "Please review this submission in your WordPress admin panel.\n"
@@ -613,16 +729,16 @@ msgstr ""
 "\n"
 "WordPressの管理画面でこの投稿を確認してください。\n"
 
-#: functions.php:3366
+#: functions.php:3383
 msgid "An unexpected error occurred. Please try again later."
 msgstr "予期せぬエラーが発生しました。後でもう一度お試しください。"
 
-#: functions.php:3542
+#: functions.php:3559
 #, php-format
 msgid "[%s] Friend Link Check Failure: %s"
 msgstr "[%s] フレンド・リンク・チェックの失敗: %s"
 
-#: functions.php:3545
+#: functions.php:3562
 #, php-format
 msgid ""
 "The friend link '%s' has failed our status check %d times.\n"
@@ -631,22 +747,22 @@ msgstr ""
 "フレンド・リンク '%s' は %d 回ステータス・チェックに失敗しました。\n"
 "\n"
 
-#: functions.php:3546
+#: functions.php:3563
 #, php-format
 msgid "Link URL: %s\n"
 msgstr "リンクURL： %s\n"
 
-#: functions.php:3549
+#: functions.php:3566
 #, php-format
 msgid "HTTP Status Code: %s\n"
 msgstr "HTTP ステータス・コード： %s\n"
 
-#: functions.php:3553
+#: functions.php:3570
 #, php-format
 msgid "Error Message: %s\n"
 msgstr "エラー・メッセージ： %s\n"
 
-#: functions.php:3556
+#: functions.php:3573
 #, php-format
 msgid ""
 "\n"
@@ -657,7 +773,7 @@ msgstr ""
 "最終チェック時間: %s\n"
 "\n"
 
-#: functions.php:3557
+#: functions.php:3574
 msgid ""
 "You may want to check this link and consider removing it if it remains "
 "unavailable.\n"
@@ -665,7 +781,45 @@ msgstr ""
 "このリンクをチェックし、利用できないままであれば削除を検討するとよいだろ"
 "う。\n"
 
-#: functions.php:3677
+#: functions.php:3646
+msgid "Just now"
+msgstr ""
+
+#: functions.php:3648
+#, fuzzy, php-format
+#| msgid " minutes ago"
+msgid "%d minute ago"
+msgid_plural "%d minutes ago"
+msgstr[0] " 分前"
+
+#: functions.php:3651
+#, fuzzy, php-format
+#| msgid " hours ago"
+msgid "%d hour ago"
+msgid_plural "%d hours ago"
+msgstr[0] " 時間前"
+
+#: functions.php:3654
+#, fuzzy, php-format
+#| msgid " days ago"
+msgid "%d day ago"
+msgid_plural "%d days ago"
+msgstr[0] " 日前"
+
+#: functions.php:3657
+#, php-format
+msgid "%d week ago"
+msgid_plural "%d weeks ago"
+msgstr[0] ""
+
+#: functions.php:3660
+#, fuzzy, php-format
+#| msgid " minutes ago"
+msgid "%d month ago"
+msgid_plural "%d months ago"
+msgstr[0] " 分前"
+
+#: functions.php:3867
 msgid "Access denied."
 msgstr "アクセス拒否"
 
@@ -1395,21 +1549,21 @@ msgid "%s Minute"
 msgid_plural "%s Minutes"
 msgstr[0] "%s 分"
 
-#: inc/post_metas.php:72
+#: inc/post_metas.php:75
 #, php-format
 msgid "%s Word"
 msgid_plural "%s Words"
 msgstr[0] "%s 文字数"
 
-#: inc/post_metas.php:79
+#: inc/post_metas.php:82
 msgid "1 Comment"
 msgstr "1件のコメント"
 
-#: inc/post_metas.php:79
+#: inc/post_metas.php:82
 msgid "Comments"
 msgstr "コメント"
 
-#: inc/post_metas.php:79
+#: inc/post_metas.php:82
 msgid "Comment Closed"
 msgstr "コメント募集は終了しました"
 
@@ -1523,10 +1677,6 @@ msgstr "ログアウト"
 #: inc/theme-plus.php:391 layouts/mo_toc_menu.php:66
 msgid "Log in"
 msgstr "ログイン"
-
-#: index.php:16
-msgid "Notice"
-msgstr "お知らせ"
 
 #: layouts/mo_toc_menu.php:71
 msgid "Register"
@@ -1685,7 +1835,7 @@ msgstr "メールアドレス"
 msgid "Verification Code"
 msgstr "認証コード"
 
-#: user/page-timearchive.php:609
+#: user/page-timearchive.php:620
 msgid "Posts"
 msgstr "投稿"
 
@@ -1713,6 +1863,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://docs.fuukei.org/"
 msgstr ""
+
+#~ msgid "Notice"
+#~ msgstr "お知らせ"
 
 #~ msgid "All expand/collapse"
 #~ msgstr "すべての展開/折りたたみ"
