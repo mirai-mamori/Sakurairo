@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-03-24 21:22+0800\n"
-"PO-Revision-Date: 2025-03-24 21:23+0800\n"
+"POT-Creation-Date: 2025-04-30 13:39+0800\n"
+"PO-Revision-Date: 2025-04-30 13:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: Sakurairo_C;__;esc_html__\n"
 "X-Poedit-SearchPath-0: customizer.php\n"
@@ -36,8 +36,8 @@ msgstr "導航欄"
 
 #: customizer.php:96
 msgid ""
-"<p>You can edit your nav menu options <a href=\"/wp-admin/nav-menus."
-"php\">here</a></p>"
+"<p>You can edit your nav menu options <a href=\"/wp-admin/nav-"
+"menus.php\">here</a></p>"
 msgstr ""
 "<p>您可以<a href=\"/wp-admin/nav-menus.php\">在此处</a>编辑导航菜单选项</p>"
 
@@ -295,7 +295,7 @@ msgstr "封面打字特效兩邊引號"
 msgid "Typed.js initial option"
 msgstr "Typed.js打字配置"
 
-#: customizer.php:858 customizer.php:1771
+#: customizer.php:858 customizer.php:1662
 msgid "Others"
 msgstr "雜項"
 
@@ -345,203 +345,216 @@ msgstr "封面下拉箭頭顏色（深色模式）"
 msgid "Overall layout"
 msgstr "整體佈局"
 
-#: customizer.php:974 customizer.php:1083
-msgid "Bulletin Board"
-msgstr "公告欄"
-
-#: customizer.php:975
+#: customizer.php:974
 msgid "Display Area"
 msgstr "展示區域"
 
-#: customizer.php:976
+#: customizer.php:975
 msgid "Article Area"
 msgstr "文章區域"
 
-#: customizer.php:977
+#: customizer.php:976
 msgid "Static Page"
 msgstr "靜態頁面"
 
-#: customizer.php:984
+#: customizer.php:983
 msgid "Select a page"
 msgstr "選擇一個頁面"
 
-#: customizer.php:997
+#: customizer.php:996
 msgid "Display Area Icon"
 msgstr "展示區域圖標"
 
-#: customizer.php:1010
+#: customizer.php:1009
 msgid "Display Area Title"
 msgstr "展示區域標題"
 
-#: customizer.php:1023
+#: customizer.php:1022
 msgid "Post Area Icon"
 msgstr "文章區域圖標"
 
-#: customizer.php:1036
+#: customizer.php:1035
 msgid "Post Area Title"
 msgstr "文章區域標題"
 
-#: customizer.php:1049
+#: customizer.php:1048
 msgid "Area Title Font"
 msgstr "區域標題字體"
 
-#: customizer.php:1063
+#: customizer.php:1062
 msgid "Area Title Alignment"
 msgstr "區域標題分佈方式"
 
-#: customizer.php:1092
-msgid "Bulletin Board Style"
-msgstr "公告欄樣式"
-
-#: customizer.php:1094
-msgid "Picture Background"
-msgstr "圖片背景"
-
-#: customizer.php:1095
-msgid "Color Background"
-msgstr "純色背景"
-
-#: customizer.php:1102
-msgid "Bulletin Board \"Notice\" Icon"
-msgstr "公告欄「公告」圖標"
-
-#: customizer.php:1108
-msgid "Bulletin Board Background"
-msgstr "公告欄背景"
-
-#: customizer.php:1121
-msgid "Bulletin Board Border Color"
-msgstr "公告欄背景色"
-
-#: customizer.php:1137
-msgid "Bulletin Board Content"
-msgstr "公告內容"
-
-#: customizer.php:1143
-msgid "Bulletin Board Text Color"
-msgstr "公告文字顏色"
-
-#: customizer.php:1161
+#: customizer.php:1082
 msgid "Display Aera"
 msgstr "展示區域"
 
-#: customizer.php:1170
-msgid "Display Area Matching Color"
-msgstr "展示區域配色"
+#: customizer.php:1090
+msgid "Capsule Components"
+msgstr "膠囊組件"
 
-#: customizer.php:1187
-msgid "Display Area Background Color"
-msgstr "展示區域背景色"
+#: customizer.php:1092
+msgid "Posts Capsule"
+msgstr "已發佈內容膠囊"
 
-#: customizer.php:1204
-msgid "Display Area Style"
-msgstr "展示區樣式"
+#: customizer.php:1093
+msgid "Comments Capsule"
+msgstr "評論膠囊"
 
-#: customizer.php:1214
-msgid "Display Area Compatibility Mode"
-msgstr "展示區相容模式"
+#: customizer.php:1094
+msgid "Visitors Capsule"
+msgstr "訪客數膠囊"
 
-#: customizer.php:1220
-msgid "Display Area Rounded Corners"
-msgstr "展示區內容圓角"
+#: customizer.php:1095
+msgid "Links Capsule"
+msgstr "友情連結膠囊"
 
-#: customizer.php:1240
+#: customizer.php:1096
+msgid "Authors Capsule"
+msgstr "作者膠囊"
+
+#: customizer.php:1097
+msgid "Total Words Capsule"
+msgstr "總字數膠囊"
+
+#: customizer.php:1098
+msgid "Blog Running Capsule"
+msgstr "部落格運行時間膠囊"
+
+#: customizer.php:1099
+msgid "Last Online Capsule"
+msgstr "上次線上膠囊"
+
+#: customizer.php:1100
+msgid "Random Link Capsule"
+msgstr "隨機友情連結膠囊"
+
+#: customizer.php:1101
+msgid "Announcement Capsule"
+msgstr "公告膠囊"
+
+#: customizer.php:1108
+msgid "Show Medal Badges Style Capsule"
+msgstr "展示徽章膠囊"
+
+#: customizer.php:1110
+msgid ""
+"Enable to show bronze/silver/gold medal badges for blog milestones, Requires "
+"you to unlock the relevant achievement to replace the relevant capsule"
+msgstr ""
+"開啟之後將為部落格里程碑顯示銅牌/銀牌/金牌徽章，需要解鎖相關里程碑才能替換相"
+"關膠囊"
+
+#: customizer.php:1116
+msgid "Announcement Text"
+msgstr "公告文本"
+
+#: customizer.php:1117
+msgid ""
+"Set the text for announcement capsule. The front-end will automatically "
+"split the text into two lines, you can also use line breaks for manual line "
+"breaks"
+msgstr ""
+"為公告膠囊設定文字。前端會自動將文字分成兩行，你也可以使用換行符號進行手動換"
+"行"
+
+#: customizer.php:1131
 msgid "Article Aera"
 msgstr "文章區域"
 
-#: customizer.php:1249 customizer.php:1942
+#: customizer.php:1140 customizer.php:1833
 msgid "Article Area Meta Displays"
 msgstr "文章區域元信息顯示"
 
-#: customizer.php:1252 customizer.php:1945
+#: customizer.php:1143 customizer.php:1836
 msgid "Author"
 msgstr "作者"
 
-#: customizer.php:1253 customizer.php:1946
+#: customizer.php:1144 customizer.php:1837
 msgid "Category"
 msgstr "分類"
 
-#: customizer.php:1254 customizer.php:1947
+#: customizer.php:1145 customizer.php:1838
 msgid "Number of Comments"
 msgstr "評論數量"
 
-#: customizer.php:1255 customizer.php:1948
+#: customizer.php:1146 customizer.php:1839
 msgid "Number of Views"
 msgstr "瀏覽量"
 
-#: customizer.php:1256 customizer.php:1949
+#: customizer.php:1147 customizer.php:1840
 msgid "Number of Words"
 msgstr "字數"
 
-#: customizer.php:1257 customizer.php:1950
+#: customizer.php:1148 customizer.php:1841
 msgid "Estimate Reading Time"
 msgstr "預估閱讀時間"
 
-#: customizer.php:1264 customizer.php:1274
+#: customizer.php:1155 customizer.php:1165
 msgid "Article Area Card Design"
 msgstr "文章卡片設計"
 
-#: customizer.php:1291
+#: customizer.php:1182
 msgid "Article Area Card Information Meta Background Compatible"
 msgstr "文章區域卡片資訊元素可讀性增強"
 
-#: customizer.php:1297
+#: customizer.php:1188
 msgid "Show shuoshuo on home page"
 msgstr "首頁顯示說說"
 
-#: customizer.php:1303
+#: customizer.php:1194
 msgid "Article Area Card Information Meta Rounded Corners"
 msgstr "文章卡片元信息圓角"
 
-#: customizer.php:1322
+#: customizer.php:1213
 msgid "Article Area Card Title Meta Rounded Corners"
 msgstr "文章卡片標題圓角"
 
-#: customizer.php:1341
+#: customizer.php:1232
 msgid "Article Area Card Rounded Corners"
 msgstr "文章卡片圓角"
 
-#: customizer.php:1360
+#: customizer.php:1251
 msgid "Article Area Title Font Size"
 msgstr "文章標題大小"
 
-#: customizer.php:1380
+#: customizer.php:1271
 msgid "Frontend Background"
 msgstr "前台背景"
 
-#: customizer.php:1390
+#: customizer.php:1281
 msgid "Default Frontend Background"
 msgstr "默認背景"
 
-#: customizer.php:1396
+#: customizer.php:1287
 msgid "Background Transparency in the Frontend"
 msgstr "背景透明度"
 
-#: customizer.php:1407
+#: customizer.php:1298
 msgid "Background Transparency Blur"
 msgstr "背景模糊"
 
-#: customizer.php:1413
+#: customizer.php:1304
 msgid "Frontend Background Scaling Method"
 msgstr "背景縮放方式"
 
-#: customizer.php:1415
+#: customizer.php:1306
 msgid "Cover"
 msgstr "覆蓋"
 
-#: customizer.php:1416
+#: customizer.php:1307
 msgid "Contain"
 msgstr "包含"
 
-#: customizer.php:1417
+#: customizer.php:1308
 msgid "Auto"
 msgstr "自動"
 
-#: customizer.php:1432
+#: customizer.php:1323
 msgid "Global Default Font"
 msgstr "全局默認字體"
 
-#: customizer.php:1433
+#: customizer.php:1324
 msgid ""
 "Fill in the font name,and you can add your customize font in Font Options of "
 "Global Options in iro-Options."
@@ -549,439 +562,433 @@ msgstr ""
 "填寫字體名稱即可，你可以在「iro主題設置」—「全局設置」—「字體設置」中添加自定"
 "義字體"
 
-#: customizer.php:1447
+#: customizer.php:1338
 msgid "Non-Emphasis Text Weight"
 msgstr "非強調文本字重"
 
-#: customizer.php:1466
+#: customizer.php:1357
 msgid "Global Font Size"
 msgstr "文本字體大小"
 
-#: customizer.php:1486
+#: customizer.php:1377
 msgid "Widgets Panel"
 msgstr "小組件面板"
 
-#: customizer.php:1495
+#: customizer.php:1386
 msgid "Widgets Panel Button Radius"
 msgstr "小組件面板按鈕圓角"
 
-#: customizer.php:1514
+#: customizer.php:1405
 msgid "Widgets Panel Widget Radius"
 msgstr "小組件面板圓角"
 
-#: customizer.php:1533
+#: customizer.php:1424
 msgid "Widgets Panel Font"
 msgstr "小組件字體"
 
-#: customizer.php:1539
+#: customizer.php:1430
 msgid "Widgets Panel WP Widget Area"
 msgstr "小組件WordPress部件區"
 
-#: customizer.php:1545
+#: customizer.php:1436
 msgid "Widgets Panel Day&Night Switching"
 msgstr "小組件深淺色切換"
 
-#: customizer.php:1551
+#: customizer.php:1442
 msgid "Widgets Panel Font Switching"
 msgstr "小組件字體切換"
 
-#: customizer.php:1557
+#: customizer.php:1448
 msgid "Global Default Font&Widgets Panel Font Switching A"
 msgstr "全局默認字體/小組件字體A"
 
-#: customizer.php:1571
+#: customizer.php:1462
 msgid "Widgets Panel Font Switching B"
 msgstr "小組件字體B"
 
-#: customizer.php:1579
+#: customizer.php:1470
 msgid "♡Option Switcher"
 msgstr "♡選項開關"
 
-#: customizer.php:1586
+#: customizer.php:1477
 msgid "♡Corresponding Background"
 msgstr "♡選項背景"
 
-#: customizer.php:1593
+#: customizer.php:1484
 msgid "☆Option Switcher"
 msgstr "☆選項開關"
 
-#: customizer.php:1600
+#: customizer.php:1491
 msgid "☆Corresponding Background"
 msgstr "☆選項背景"
 
-#: customizer.php:1607
+#: customizer.php:1498
 msgid "□Option Switcher"
 msgstr "□選項開關"
 
-#: customizer.php:1614
+#: customizer.php:1505
 msgid "□Corresponding Background"
 msgstr "□選項背景"
 
-#: customizer.php:1621
+#: customizer.php:1512
 msgid "🍋Option Switcher"
 msgstr "🍋選項開關"
 
-#: customizer.php:1628
+#: customizer.php:1519
 msgid "🍋Corresponding Background"
 msgstr "🍋選項背景"
 
-#: customizer.php:1635
+#: customizer.php:1526
 msgid "Particles"
 msgstr "視覺特效"
 
-#: customizer.php:1644
+#: customizer.php:1535
 msgid "Sakura Falling Effects"
 msgstr "櫻花飄落特效"
 
-#: customizer.php:1646
+#: customizer.php:1537
 msgid "Off"
 msgstr "關"
 
-#: customizer.php:1647
+#: customizer.php:1538
 msgid "Native Quantity"
 msgstr "全部"
 
-#: customizer.php:1648
+#: customizer.php:1539
 msgid "Quarter Quantity"
 msgstr "75%"
 
-#: customizer.php:1649
+#: customizer.php:1540
 msgid "Half Quantity"
 msgstr "50%"
 
-#: customizer.php:1650
+#: customizer.php:1541
 msgid "Less Quantity"
 msgstr "25%"
 
-#: customizer.php:1657
+#: customizer.php:1548
 msgid "Particles Effects"
 msgstr "粒子特效"
 
-#: customizer.php:1663
+#: customizer.php:1554
 msgid "Particles JSON"
 msgstr "粒子特效配置"
 
-#: customizer.php:1664
+#: customizer.php:1555
 msgid "Vist \"https://vincentgarreau.com/particles.js/\" for more help"
 msgstr "訪問「https://vincentgarreau.com/particles.js/」以獲取更多幫助"
 
-#: customizer.php:1681 customizer.php:1706
+#: customizer.php:1572 customizer.php:1597
 msgid "Footer Info"
 msgstr "頁尾信息"
 
-#: customizer.php:1690
+#: customizer.php:1581
 msgid "Footer Content Distribution"
 msgstr "頁尾信息排布"
 
-#: customizer.php:1692
+#: customizer.php:1583
 msgid "Center"
 msgstr "居中"
 
-#: customizer.php:1693
+#: customizer.php:1584
 msgid "Two Coloumns"
 msgstr "兩欄"
 
-#: customizer.php:1700
+#: customizer.php:1591
 msgid "Footer Sakura Icon"
 msgstr "頁尾櫻花圖標"
 
-#: customizer.php:1722
+#: customizer.php:1613
 msgid "Footer Text Font"
 msgstr "頁尾信息字體"
 
-#: customizer.php:1736
+#: customizer.php:1627
 msgid "Footer Load Occupancy Query"
 msgstr "頁尾負載佔用查詢"
 
-#: customizer.php:1742
+#: customizer.php:1633
 msgid "Footer Upyun League Logo"
 msgstr "頁尾又拍雲聯盟Logo"
 
-#: customizer.php:1748
+#: customizer.php:1639
 msgid "Footer Hitokoto"
 msgstr "頁尾一言"
 
-#: customizer.php:1754
+#: customizer.php:1645
 msgid "Hitokoto API address"
 msgstr "一言API地址"
 
-#: customizer.php:1780
+#: customizer.php:1671
 msgid "NProgress Loading Progress Bar"
 msgstr "NProgress 載入進度條"
 
-#: customizer.php:1781
+#: customizer.php:1672
 msgid ""
 "Enabled by default, when loading page there will be a progress bar alert"
 msgstr "預設啟用，當頁面載入時會顯示進度條提醒"
 
-#: customizer.php:1787
+#: customizer.php:1678
 msgid "Global Smooth Scroll"
 msgstr "全局平滑滾動"
 
-#: customizer.php:1788
+#: customizer.php:1679
 msgid "Enabled by default, page scrolling will be smoother"
 msgstr "預設啟用，頁面滾動將更加流暢"
 
-#: customizer.php:1794
+#: customizer.php:1685
 msgid "Pagination Mode"
 msgstr "分頁模式"
 
-#: customizer.php:1796
+#: customizer.php:1687
 msgid "Ajax Load"
 msgstr "Ajax 載入"
 
-#: customizer.php:1797
+#: customizer.php:1688
 msgid "Page Up/Down"
 msgstr "頁面向上/向下"
 
-#: customizer.php:1804
+#: customizer.php:1695
 msgid "Next Page Auto Load"
 msgstr "自動載入下一頁"
 
-#: customizer.php:1806
+#: customizer.php:1697
 msgid "0 Sec"
 msgstr "0 秒"
 
-#: customizer.php:1807
+#: customizer.php:1698
 msgid "1 Sec"
 msgstr "1 秒"
 
-#: customizer.php:1808
+#: customizer.php:1699
 msgid "2 Sec"
 msgstr "2 秒"
 
-#: customizer.php:1809
+#: customizer.php:1700
 msgid "3 Sec"
 msgstr "3 秒"
 
-#: customizer.php:1810
+#: customizer.php:1701
 msgid "4 Sec"
 msgstr "4 秒"
 
-#: customizer.php:1811
+#: customizer.php:1702
 msgid "5 Sec"
 msgstr "5 秒"
 
-#: customizer.php:1812
+#: customizer.php:1703
 msgid "6 Sec"
 msgstr "6 秒"
 
-#: customizer.php:1813
+#: customizer.php:1704
 msgid "7 Sec"
 msgstr "7 秒"
 
-#: customizer.php:1814
+#: customizer.php:1705
 msgid "8 Sec"
 msgstr "8 秒"
 
-#: customizer.php:1815
+#: customizer.php:1706
 msgid "9 Sec"
 msgstr "9 秒"
 
-#: customizer.php:1816
+#: customizer.php:1707
 msgid "10 Sec"
 msgstr "10 秒"
 
-#: customizer.php:1817
+#: customizer.php:1708
 msgid "Do not autoload"
 msgstr "不自動載入"
 
-#: customizer.php:1824
+#: customizer.php:1715
 msgid "Placeholder SVG when loading the next page"
 msgstr "載入下一頁時的佔位 SVG"
 
-#: customizer.php:1838
+#: customizer.php:1729
 msgid "Common Options"
 msgstr "通用選項"
 
-#: customizer.php:1847
+#: customizer.php:1738
 msgid "Page Layout Style"
 msgstr "頁面佈局樣式"
 
-#: customizer.php:1849
+#: customizer.php:1740
 msgid "Default Style"
 msgstr "預設風格"
 
-#: customizer.php:1850
+#: customizer.php:1741
 msgid "Github Style"
 msgstr "Github 風格"
 
-#: customizer.php:1857
+#: customizer.php:1748
 msgid "Page Decoration Image"
 msgstr "頁面裝飾圖"
 
-#: customizer.php:1863
+#: customizer.php:1754
 msgid "Page Title Animation"
 msgstr "頁面標題動畫"
 
-#: customizer.php:1869
+#: customizer.php:1760
 msgid "Page Title Animation Time"
 msgstr "頁面標題動畫時間"
 
-#: customizer.php:1900
+#: customizer.php:1791
 msgid "Page Image Placeholder SVG"
 msgstr "頁面圖片佔位 SVG"
 
-#: customizer.php:1907
+#: customizer.php:1798
 msgid "Posts Pages"
 msgstr "文章頁面"
 
-#: customizer.php:1916
+#: customizer.php:1807
 msgid "This option is only valid for articles with cover"
 msgstr "此選項僅對設定了封面的文章有效"
 
-#: customizer.php:1917
+#: customizer.php:1808
 msgid "Article Page Title Font Size"
 msgstr "文章標題字體大小"
 
-#: customizer.php:1936
+#: customizer.php:1827
 msgid "Article Page Title Underline Animation"
 msgstr "文章頁面標題下劃線動畫"
 
-#: customizer.php:1951
+#: customizer.php:1842
 msgid "Publish Time (Relatively)"
 msgstr "發佈時間（相對）"
 
-#: customizer.php:1952
+#: customizer.php:1843
 msgid "Last Edit Time (Relatively)"
 msgstr "最後編輯時間（相對）"
 
-#: customizer.php:1953
+#: customizer.php:1844
 msgid "Action Edit (only displays while user has sufficient permissions)"
 msgstr "操作編輯（僅在用戶具有足夠權限時顯示）"
 
-#: customizer.php:1960
+#: customizer.php:1851
 msgid "Article Page Auto Show Menu"
 msgstr "文章頁面自動顯示菜單"
 
-#: customizer.php:1966
+#: customizer.php:1857
 msgid "Inline Code Background Color"
 msgstr "行內代碼背景色"
 
-#: customizer.php:1983
+#: customizer.php:1874
 msgid "Inline Code Background Color In Dark Mode"
 msgstr "暗黑模式下行內代碼背景色"
 
-#: customizer.php:2001
+#: customizer.php:1892
 msgid "Pages Extend Options"
 msgstr "頁面擴展選項"
 
-#: customizer.php:2010
+#: customizer.php:1901
 msgid "Article Page Function Bar"
 msgstr "文章頁面功能欄"
 
-#: customizer.php:2016
+#: customizer.php:1907
 msgid "Article License"
 msgstr "文章協議"
 
-#: customizer.php:2018
+#: customizer.php:1909
 msgid "Not Display"
 msgstr "不顯示"
 
-#: customizer.php:2040
+#: customizer.php:1931
 msgid "Reward Button Link"
 msgstr "打賞按鈕連結"
 
-#: customizer.php:2041
+#: customizer.php:1932
 msgid "The link click the reward button will redirect to"
 msgstr "點擊打賞按鈕後將轉跳至的連結"
 
-#: customizer.php:2055 customizer.php:2084
+#: customizer.php:1946 customizer.php:1975
 msgid "Reward Image"
 msgstr "打賞圖片"
 
-#: customizer.php:2069 customizer.php:2098
+#: customizer.php:1960 customizer.php:1989
 msgid "Reward Image Link"
 msgstr "打賞圖片連結"
 
-#: customizer.php:2070 customizer.php:2099
+#: customizer.php:1961 customizer.php:1990
 msgid "The link click the image will redirect to"
 msgstr "點擊圖片後將轉跳至的連結"
 
-#: customizer.php:2112
+#: customizer.php:2003
 msgid "Article Page Author Avatar"
 msgstr "文章頁面作者頭像"
 
-#: customizer.php:2125
+#: customizer.php:2016
 msgid "Article Page Author Name"
 msgstr "文章頁面作者名稱"
 
-#: customizer.php:2138
+#: customizer.php:2029
 msgid "Article Page Author Signature"
 msgstr "文章頁面作者簽名"
 
-#: customizer.php:2151
+#: customizer.php:2042
 msgid "Article Last Update Time"
 msgstr "文章最後更新時間"
 
-#: customizer.php:2164
+#: customizer.php:2055
 msgid "Article Tag"
 msgstr "文章標籤"
 
-#: customizer.php:2177
+#: customizer.php:2068
 msgid "Article Page Prev/Next Article Switcher"
 msgstr "文章頁面上一頁/下一頁切換器"
 
-#: customizer.php:2184
+#: customizer.php:2075
 msgid "Comment Options"
 msgstr "評論選項"
 
-#: customizer.php:2193
+#: customizer.php:2084
 msgid "Page Comment Area Display"
 msgstr "頁面評論區顯示"
 
-#: customizer.php:2195
+#: customizer.php:2086
 msgid "Expand"
 msgstr "展開"
 
-#: customizer.php:2196
+#: customizer.php:2087
 msgid "Fold"
 msgstr "摺疊"
 
-#: customizer.php:2203
+#: customizer.php:2094
 msgid "Custom CommentBox Placeholder"
 msgstr "自訂評論框佔位文字"
 
-#: customizer.php:2209
+#: customizer.php:2100
 msgid "Custom Submit Button Content"
 msgstr "自訂提交按鈕內容"
 
-#: customizer.php:2215
+#: customizer.php:2106
 msgid "Page Comment Area Bottom Right Background Image"
 msgstr "頁面評論區右下角背景圖片"
 
-#: customizer.php:2229
+#: customizer.php:2120
 msgid "Comment Area Emoticon"
 msgstr "評論區表情符號"
 
-#: customizer.php:2230
+#: customizer.php:2121
 msgid "Please go to the backend to configure your custom emoticon pack"
 msgstr "請前往後台配置您的自訂表情包"
 
-#: customizer.php:2233
+#: customizer.php:2124
 msgid "BiliBili Emoticon Pack"
 msgstr "BiliBili 表情包"
 
-#: customizer.php:2234
+#: customizer.php:2125
 msgid "Baidu Tieba Emoticon Pack"
 msgstr "百度貼吧表情包"
 
-#: customizer.php:2235
+#: customizer.php:2126
 msgid "Emoji"
 msgstr "表情符號"
 
-#: customizer.php:2236
+#: customizer.php:2127
 msgid "Customized Emoticon Pack"
 msgstr "自訂表情包"
 
-#: customizer.php:2242
+#: customizer.php:2133
 msgid ""
 "For more detailed configuration of the comment area, please go to the "
 "backend configuration"
 msgstr "如需更詳細的評論區配置，請前往後台配置"
-
-#~ msgid "Article Page Appreciation Function (Alipay QR Code)"
-#~ msgstr "文章頁面打賞功能（支付寶二維碼）"
-
-#~ msgid "Article Page Appreciation Function (Wechat QR Code)"
-#~ msgstr "文章頁面打賞功能（微信二維碼）"
