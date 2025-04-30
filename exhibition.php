@@ -5,6 +5,8 @@ $exhibition = is_array($exhibition) ? $exhibition : [];
 // 获取站点统计信息
 $site_stats = get_site_stats();
 $components = iro_opt("capsule_components",[]);
+// 确保$components始终是数组
+$components = is_array($components) ? $components : [];
 
 // 准备显示信息
 $square_cards = [
@@ -125,7 +127,19 @@ if ($show_medal_capsules) {
        <div class="bento-grid">
         <!-- 胶囊 -->
          
-        <?php if($components): ?>
+        <?php 
+        // Check if there are any valid components to display
+        $has_valid_components = false;
+        if (!empty($components)) {
+            foreach($components as $component) {
+                if (isset($square_cards[$component])) {
+                    $has_valid_components = true;
+                    break;
+                }
+            }
+        }
+        if($has_valid_components): 
+        ?>
         <div class="stat-capsules-container">
             <?php foreach($components as $component) :
                 switch ($component):
