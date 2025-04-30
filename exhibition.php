@@ -75,7 +75,7 @@ $show_medal_capsules = iro_opt('show_medal_capsules', true);
 // 判断博客运行天数徽章级别
 function get_blog_days_medal($days) {
     $thresholds = [
-        'gold' => 1000,
+        'gold' => 1500,
         'silver' => 500,
         'bronze' => 100
     ];
@@ -88,7 +88,7 @@ function get_blog_days_medal($days) {
             'next' => null,
             'progress' => 100,
             'threshold' => $thresholds['gold'],
-            'achievement' => __('您的博客已经成为网络中一道长久的风景线，感谢您持续的分享与陪伴。','sakurairo')
+            'achievement' => __('The string of creation has vibrated the membrane, each resonance weaving the warp and weft of spacetime thoughts.','sakurairo')
         ];
     }
     if ($days >= $thresholds['silver']) {
@@ -100,8 +100,8 @@ function get_blog_days_medal($days) {
             'next' => $thresholds['gold'],
             'progress' => $progress,
             'threshold' => $thresholds['silver'],
-            'achievement' => __('您的博客已有相当的历史，持之以恒的更新让这里充满活力。','sakurairo'),
-            'next_level' => sprintf(__('%s more days to Gold','sakurairo'), number_format($thresholds['gold'] - $days))
+            'achievement' => __('The wheel of creation has engaged the gears, each component calibrating the temporal precision of your blog.','sakurairo'),
+            'next_level' => sprintf(__('%s more days to next level','sakurairo'), number_format($thresholds['gold'] - $days))
         ];
     }
     if ($days >= $thresholds['bronze']) {
@@ -113,8 +113,8 @@ function get_blog_days_medal($days) {
             'next' => $thresholds['silver'],
             'progress' => $progress,
             'threshold' => $thresholds['bronze'],
-            'achievement' => __('创作之路已经起航，每一天的坚持都在为您的博客增添深度与价值。','sakurairo'),
-            'next_level' => sprintf(__('%s more days to Silver','sakurairo'), number_format($thresholds['silver'] - $days))
+            'achievement' => __('The ship of creation has set sail, each wave carving the depth markers of your blog\'s journey.','sakurairo'),
+            'next_level' => sprintf(__('%s more days to next level','sakurairo'), number_format($thresholds['silver'] - $days))
         ];
     }
     return null;
@@ -123,9 +123,9 @@ function get_blog_days_medal($days) {
 // 判断访客数量徽章级别
 function get_visitor_count_medal($visits) {
     $thresholds = [
-        'gold' => 30000,
-        'silver' => 10000,
-        'bronze' => 2000
+        'gold' => 40000,
+        'silver' => 15000,
+        'bronze' => 5000
     ];
     
     if ($visits >= $thresholds['gold']) {
@@ -136,7 +136,7 @@ function get_visitor_count_medal($visits) {
             'next' => null,
             'progress' => 100,
             'threshold' => $thresholds['gold'],
-            'achievement' => __('您的内容吸引了众多读者，成为网络中备受关注的知识灯塔。','sakurairo')
+            'achievement' => __('You have planted a garden of wisdom, its fragrance now discovered by distant butterflies.','sakurairo')
         ];
     }
     if ($visits >= $thresholds['silver']) {
@@ -148,8 +148,8 @@ function get_visitor_count_medal($visits) {
             'next' => $thresholds['gold'],
             'progress' => $progress,
             'threshold' => $thresholds['silver'],
-            'achievement' => __('日益壮大的读者群体证明了您内容的价值，继续创作，影响更多人！','sakurairo'),
-            'next_level' => sprintf(__('%s more visits to Gold','sakurairo'), number_format($thresholds['gold'] - $visits))
+            'achievement' => __('You have illuminated the star chart of reading, each piece of writing flowing through the galaxy.','sakurairo'),
+            'next_level' => sprintf(__('%s more visits to next level','sakurairo'), number_format($thresholds['gold'] - $visits))
         ];
     }
     if ($visits >= $thresholds['bronze']) {
@@ -161,8 +161,8 @@ function get_visitor_count_medal($visits) {
             'next' => $thresholds['silver'],
             'progress' => $progress,
             'threshold' => $thresholds['bronze'],
-            'achievement' => __('您的博客已经赢得了稳定的访问量，优质内容正在被越来越多的人发现。','sakurairo'),
-            'next_level' => sprintf(__('%s more visits to Silver','sakurairo'), number_format($thresholds['silver'] - $visits))
+            'achievement' => __('You have built a harbor of knowledge, the ripples of thought continuously spreading.','sakurairo'),
+            'next_level' => sprintf(__('%s more visits to next level','sakurairo'), number_format($thresholds['silver'] - $visits))
         ];
     }
     return null;
@@ -171,9 +171,9 @@ function get_visitor_count_medal($visits) {
 // 判断友情链接数量徽章级别
 function get_link_count_medal($links) {
     $thresholds = [
-        'gold' => 50,
-        'silver' => 30,
-        'bronze' => 10
+        'gold' => 70,
+        'silver' => 50,
+        'bronze' => 30
     ];
     
     if ($links >= $thresholds['gold']) {
@@ -184,7 +184,7 @@ function get_link_count_medal($links) {
             'next' => null,
             'progress' => 100,
             'threshold' => $thresholds['gold'],
-            'achievement' => __('您已成为网络社区的重要节点，与众多优质站点建立了深厚的连接。','sakurairo')
+            'achievement' => __('The world of friendship has no boundaries, the starry river will mark your position.','sakurairo')
         ];
     }
     if ($links >= $thresholds['silver']) {
@@ -196,8 +196,8 @@ function get_link_count_medal($links) {
             'next' => $thresholds['gold'],
             'progress' => $progress,
             'threshold' => $thresholds['silver'],
-            'achievement' => __('您的人脉网络不断扩大，这些珍贵的连接为博客带来更多可能性。','sakurairo'),
-            'next_level' => sprintf(__('%s more links to Gold','sakurairo'), number_format($thresholds['gold'] - $links))
+            'achievement' => __('The network of friendship has been laid out, each resonance will eventually echo.','sakurairo'),
+            'next_level' => sprintf(__('%s more links to next level','sakurairo'), number_format($thresholds['gold'] - $links))
         ];
     }
     if ($links >= $thresholds['bronze']) {
@@ -209,8 +209,8 @@ function get_link_count_medal($links) {
             'next' => $thresholds['silver'],
             'progress' => $progress,
             'threshold' => $thresholds['bronze'],
-            'achievement' => __('结交网络伙伴的旅程才刚开始，每一个连接都是新的机遇。','sakurairo'),
-            'next_level' => sprintf(__('%s more links to Silver','sakurairo'), number_format($thresholds['silver'] - $links))
+            'achievement' => __('The journey of making friends has just begun, each encounter marks a new chapter.','sakurairo'),
+            'next_level' => sprintf(__('%s more links to next level','sakurairo'), number_format($thresholds['silver'] - $links))
         ];
     }
     return null;
@@ -219,9 +219,9 @@ function get_link_count_medal($links) {
 // 判断文章总字数徽章级别
 function get_words_count_medal($words) {
     $thresholds = [
-        'gold' => 10000,
-        'silver' => 5000,
-        'bronze' => 1000
+        'gold' => 30000,
+        'silver' => 10000,
+        'bronze' => 2000
     ];
     
     if ($words >= $thresholds['gold']) {
@@ -232,7 +232,7 @@ function get_words_count_medal($words) {
             'next' => null,
             'progress' => 100,
             'threshold' => $thresholds['gold'],
-            'achievement' => __('文字的力量在您手中绽放，丰富的创作已汇聚成知识的海洋。','sakurairo')
+            'achievement' => __('The power of words has blossomed in your hands, rich creations have gathered into an ocean.','sakurairo')
         ];
     }
     if ($words >= $thresholds['silver']) {
@@ -244,8 +244,8 @@ function get_words_count_medal($words) {
             'next' => $thresholds['gold'],
             'progress' => $progress,
             'threshold' => $thresholds['silver'],
-            'achievement' => __('持之以恒的创作精神，每一个字都承载着您的智慧与思考。','sakurairo'),
-            'next_level' => sprintf(__('%s more words to Gold','sakurairo'), number_format($thresholds['gold'] - $words))
+            'achievement' => __('You have woven an extensive web of thoughts, the streams of inspiration are rushing into rivers.','sakurairo'),
+            'next_level' => sprintf(__('%s more words to next level','sakurairo'), number_format($thresholds['gold'] - $words))
         ];
     }
     if ($words >= $thresholds['bronze']) {
@@ -257,8 +257,8 @@ function get_words_count_medal($words) {
             'next' => $thresholds['silver'],
             'progress' => $progress,
             'threshold' => $thresholds['bronze'],
-            'achievement' => __('创作之旅的精彩正在展开，字字珠玑，句句深刻。','sakurairo'),
-            'next_level' => sprintf(__('%s more words to Silver','sakurairo'), number_format($thresholds['silver'] - $words))
+            'achievement' => __('Sparks of words dance at your fingertips, as the faint light of thoughts quietly illuminates.','sakurairo'),
+            'next_level' => sprintf(__('%s more words to next level','sakurairo'), number_format($thresholds['silver'] - $words))
         ];
     }
     return null;

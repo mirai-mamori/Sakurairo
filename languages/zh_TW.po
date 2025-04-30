@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-04-30 13:00+0900\n"
-"PO-Revision-Date: 2025-04-30 13:01+0900\n"
+"POT-Creation-Date: 2025-04-30 21:48+0900\n"
+"PO-Revision-Date: 2025-04-30 21:56+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -188,55 +188,147 @@ msgstr "最後在線"
 msgid "Latest Announcement"
 msgstr "最新公告"
 
-#: exhibition.php:77
+#: exhibition.php:86
 msgid "Gold Blogger"
 msgstr "流光遷徙"
 
-#: exhibition.php:78
+#: exhibition.php:91
+msgid ""
+"The string of creation has vibrated the membrane, each resonance weaving the "
+"warp and weft of spacetime thoughts."
+msgstr "創作之弦已振動膜層，每個諧振都在編織時空的思維經緯。"
+
+#: exhibition.php:98
 msgid "Silver Blogger"
 msgstr "刻入年輪"
 
-#: exhibition.php:79
+#: exhibition.php:103
+msgid ""
+"The wheel of creation has engaged the gears, each component calibrating the "
+"temporal precision of your blog."
+msgstr "創作之輪已咬合齒輪，每個零件都在校準部落格的時光精準度。"
+
+#: exhibition.php:104 exhibition.php:117
+#, php-format
+msgid "%s more days to next level"
+msgstr "還需 %s 天達到下一級別"
+
+#: exhibition.php:111
 msgid "Bronze Blogger"
 msgstr "時光漣漪"
 
-#: exhibition.php:85
+#: exhibition.php:116
+msgid ""
+"The ship of creation has set sail, each wave carving the depth markers of "
+"your blog's journey."
+msgstr "創作之舟已揚帆遠航，每道浪痕都在刻寫部落格的深度航標。"
+
+#: exhibition.php:134
 msgid "Gold Popularity"
 msgstr "如振落葉"
 
-#: exhibition.php:86
+#: exhibition.php:139
+msgid ""
+"You have planted a garden of wisdom, its fragrance now discovered by distant "
+"butterflies."
+msgstr "你已種滿了智慧的花朵，芬芳正被遠方的蝴蝶發現。"
+
+#: exhibition.php:146
 msgid "Silver Popularity"
 msgstr "声聞遐迩"
 
-#: exhibition.php:87
+#: exhibition.php:151
+msgid ""
+"You have illuminated the star chart of reading, each piece of writing "
+"flowing through the galaxy."
+msgstr "你已點亮閱讀的星圖，每篇文字都在銀河中流轉。"
+
+#: exhibition.php:152 exhibition.php:165
+#, php-format
+msgid "%s more visits to next level"
+msgstr "還需 %s 次訪問達到下一級別"
+
+#: exhibition.php:159
 msgid "Bronze Popularity"
 msgstr "濫觞所始"
 
-#: exhibition.php:93
+#: exhibition.php:164
+msgid ""
+"You have built a harbor of knowledge, the ripples of thought continuously "
+"spreading."
+msgstr "你已築起知識的港灣，思想的漣漪正不斷擴散。"
+
+#: exhibition.php:182
 msgid "Gold Friendship"
 msgstr "揮袂成雲"
 
-#: exhibition.php:94
+#: exhibition.php:187
+msgid ""
+"The world of friendship has no boundaries, the starry river will mark your "
+"position."
+msgstr "結交朋友的世界已無邊界，星河將標記你的方位。"
+
+#: exhibition.php:194
 msgid "Silver Friendship"
 msgstr "呼朋引伴"
 
-#: exhibition.php:95
+#: exhibition.php:199
+msgid ""
+"The network of friendship has been laid out, each resonance will eventually "
+"echo."
+msgstr "結交朋友的網絡已然鋪開，每次共鳴終將迴響。"
+
+#: exhibition.php:200 exhibition.php:213
+#, php-format
+msgid "%s more links to next level"
+msgstr "還需 %s 條友情連結達到下一級別"
+
+#: exhibition.php:207
 msgid "Bronze Friendship"
 msgstr "初遇同好"
 
-#: exhibition.php:101
+#: exhibition.php:212
+msgid ""
+"The journey of making friends has just begun, each encounter marks a new "
+"chapter."
+msgstr "結交朋友的旅程才剛開始，每次遇見皆為新章。"
+
+#: exhibition.php:230
 msgid "Gold Author"
 msgstr "映雪囊螢"
 
-#: exhibition.php:102
+#: exhibition.php:235
+msgid ""
+"The power of words has blossomed in your hands, rich creations have gathered "
+"into an ocean."
+msgstr "文字的力量已在你手中綻放，豐富的創作匯聚成海。"
+
+#: exhibition.php:242
 msgid "Silver Author"
 msgstr "筆耕不輟"
 
-#: exhibition.php:103
+#: exhibition.php:247
+msgid ""
+"You have woven an extensive web of thoughts, the streams of inspiration are "
+"rushing into rivers."
+msgstr "你已織就綿延的思維之網，靈感的溪流正奔湧成河。"
+
+#: exhibition.php:248 exhibition.php:261
+#, php-format
+msgid "%s more words to next level"
+msgstr "還需 %s 個字達到下一級別"
+
+#: exhibition.php:255
 msgid "Bronze Author"
 msgstr "寸楮点墨"
 
-#: exhibition.php:204
+#: exhibition.php:260
+msgid ""
+"Sparks of words dance at your fingertips, as the faint light of thoughts "
+"quietly illuminates."
+msgstr "你指尖躍動著文字的火花，思想的微光正悄然點亮。"
+
+#: exhibition.php:388
 msgid "Meet my friend!"
 msgstr "介紹給你"
 
@@ -499,60 +591,64 @@ msgstr "是否確實要將其設置為專用？"
 msgid "You had set private comment before"
 msgstr "你之前設置了私人評論"
 
-#: functions.php:681 inc/theme-plus.php:211
+#: functions.php:612
+msgid "Maximum level reached"
+msgstr "已達最高等級"
+
+#: functions.php:695 inc/theme-plus.php:211
 msgid "Author"
 msgstr "作者"
 
-#: functions.php:681
+#: functions.php:695
 msgid "Blogger"
 msgstr "部落客"
 
-#: functions.php:690 functions.php:3826
+#: functions.php:704 functions.php:3840
 msgid "Location"
 msgstr "來自"
 
-#: functions.php:696
+#: functions.php:710
 msgid "Private"
 msgstr "私密"
 
-#: functions.php:698
+#: functions.php:712
 msgid "Yes"
 msgstr "是"
 
-#: functions.php:700
+#: functions.php:714
 msgid "No"
 msgstr "否"
 
-#: functions.php:703 inc/link-status.php:168
+#: functions.php:717 inc/link-status.php:168
 msgid "Edit"
 msgstr "編輯"
 
-#: functions.php:836
+#: functions.php:850
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr "這傢伙好懶 ╮(╯▽╰)╭"
 
-#: functions.php:866 functions.php:3204 functions.php:3397
+#: functions.php:880 functions.php:3218 functions.php:3411
 msgid "Pending Links"
 msgstr "待處理連結"
 
-#: functions.php:1688 functions.php:1691 inc/theme-plus.php:366
+#: functions.php:1702 functions.php:1705 inc/theme-plus.php:366
 #: layouts/mo_toc_menu.php:29
 msgid "Dashboard"
 msgstr "管理後台"
 
-#: functions.php:2240
+#: functions.php:2254
 msgid "QQ"
 msgstr "QQ"
 
-#: functions.php:2342
+#: functions.php:2356
 msgid "Sidebar"
 msgstr "側欄"
 
-#: functions.php:2370
+#: functions.php:2384
 msgid "Please do not try to use Javascript in your comments!"
 msgstr "請不要嘗試在你的評論中使用Javascript！"
 
-#: functions.php:2474
+#: functions.php:2488
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -563,71 +659,71 @@ msgstr ""
 "固定連結</a>設置為樸素。為此，你可能需要配置<a href=\"https://www.wpdaxue."
 "com/wordpress-rewriterule.html\" target=\"_blank\">偽靜態</a></b>"
 
-#: functions.php:2607
+#: functions.php:2621
 #, php-format
 msgid "%s says: "
 msgstr "%s 說： "
 
-#: functions.php:2628
+#: functions.php:2642
 msgid "Expand / Collapse"
 msgstr "展開 / 摺疊"
 
-#: functions.php:3154
+#: functions.php:3168
 msgid "Invalid request method."
 msgstr "請求方法無效。"
 
-#: functions.php:3165
+#: functions.php:3179
 msgid "You are submitting too frequently. Please try again later."
 msgstr "你提交的頻率太高。請稍後再試。"
 
-#: functions.php:3171
+#: functions.php:3185
 msgid "Security verification failed."
 msgstr "安全驗證失敗。"
 
-#: functions.php:3179
+#: functions.php:3193
 msgid "Please fill in all required fields."
 msgstr "請填寫所有必填字段。"
 
-#: functions.php:3224 user/page-links.php:498
+#: functions.php:3238 user/page-links.php:498
 msgid ""
 "Sorry, we are not accepting new link submissions at this time due to "
 "backlog. Please try again later."
 msgstr "很抱歉，由於待處理連結積壓，我們暫時不接受新的連結提交。請稍後再試。"
 
-#: functions.php:3237
+#: functions.php:3251
 msgid "Site name is too long."
 msgstr "網站名稱過長。"
 
-#: functions.php:3242
+#: functions.php:3256
 msgid "Site description is too long."
 msgstr "網站描述過長。"
 
-#: functions.php:3248
+#: functions.php:3262
 msgid "Please enter a valid URL."
 msgstr "請輸入有效的 URL。"
 
-#: functions.php:3254
+#: functions.php:3268
 msgid "Please enter a valid image URL."
 msgstr "請輸入有效的圖片 URL。"
 
-#: functions.php:3260
+#: functions.php:3274
 msgid "Please enter a valid email address."
 msgstr "請輸入有效的電子郵件地址。"
 
-#: functions.php:3268
+#: functions.php:3282
 msgid "This website URL is already in our links list."
 msgstr "此網站 URL 已在我們的連結清單中。"
 
-#: functions.php:3294 functions.php:3359
+#: functions.php:3308 functions.php:3373
 msgid "Failed to submit link. Please try again later."
 msgstr "提交連結失敗。請稍後再試。"
 
-#: functions.php:3306 functions.php:3366
+#: functions.php:3320 functions.php:3380
 #, php-format
 msgid "[%s] New Friend Link Submission"
 msgstr "[%s] 提交新的朋友連結"
 
-#: functions.php:3308 functions.php:3368
+#: functions.php:3322 functions.php:3382
 #, php-format
 msgid ""
 "A new friend link has been submitted on your website %s:\n"
@@ -636,32 +732,32 @@ msgstr ""
 "你的網站 %s 已提交新的友情連結：\n"
 "\n"
 
-#: functions.php:3309
+#: functions.php:3323
 #, php-format
 msgid "Site Name: %s\n"
 msgstr "網站名稱：%s\n"
 
-#: functions.php:3310
+#: functions.php:3324
 #, php-format
 msgid "Site URL: %s\n"
 msgstr "網站 URL：%s\n"
 
-#: functions.php:3311
+#: functions.php:3325
 #, php-format
 msgid "Site Description: %s\n"
 msgstr "網站描述：%s\n"
 
-#: functions.php:3312
+#: functions.php:3326
 #, php-format
 msgid "Site Image: %s\n"
 msgstr "網站圖片：%s\n"
 
-#: functions.php:3313
+#: functions.php:3327
 #, php-format
 msgid "Contact Email: %s\n"
 msgstr "聯絡人電子郵件： %s\n"
 
-#: functions.php:3314
+#: functions.php:3328
 #, php-format
 msgid ""
 "IP Address: %s\n"
@@ -670,49 +766,49 @@ msgstr ""
 "IP 位址： %s\n"
 "\n"
 
-#: functions.php:3315
+#: functions.php:3329
 msgid "Please review this submission in your WordPress admin panel.\n"
 msgstr "請在你的 WordPress 管理面板中檢查此提交。\n"
 
-#: functions.php:3325 functions.php:3376
+#: functions.php:3339 functions.php:3390
 msgid "Thank you! Your link has been submitted for review."
 msgstr "謝謝！你的連結已提交審核。"
 
-#: functions.php:3330
+#: functions.php:3344
 #, php-format
 msgid "Site Name: %s"
 msgstr "網站名稱︰ %s"
 
-#: functions.php:3331
+#: functions.php:3345
 #, php-format
 msgid "Site URL: %s"
 msgstr "網站 URL：%s"
 
-#: functions.php:3332
+#: functions.php:3346
 #, php-format
 msgid "Site Description: %s"
 msgstr "網站描述：%s"
 
-#: functions.php:3333
+#: functions.php:3347
 #, php-format
 msgid "Site Image: %s"
 msgstr "網站圖片：%s"
 
-#: functions.php:3334
+#: functions.php:3348
 #, php-format
 msgid "Contact Email: %s"
 msgstr "聯絡人電子郵件： %s"
 
-#: functions.php:3335
+#: functions.php:3349
 #, php-format
 msgid "IP Address: %s"
 msgstr "IP 位址： %s"
 
-#: functions.php:3338
+#: functions.php:3352
 msgid "Friend Link Submission: "
 msgstr "友情連結提交："
 
-#: functions.php:3370
+#: functions.php:3384
 msgid ""
 "\n"
 "Please review this submission in your WordPress admin panel.\n"
@@ -720,16 +816,16 @@ msgstr ""
 "\n"
 "請在你的 WordPress 管理面板中檢查此提交。\n"
 
-#: functions.php:3383
+#: functions.php:3397
 msgid "An unexpected error occurred. Please try again later."
 msgstr "發生意外錯誤。請稍後再試。"
 
-#: functions.php:3559
+#: functions.php:3573
 #, php-format
 msgid "[%s] Friend Link Check Failure: %s"
 msgstr "[%s] 友站連結檢查失敗：%s"
 
-#: functions.php:3562
+#: functions.php:3576
 #, php-format
 msgid ""
 "The friend link '%s' has failed our status check %d times.\n"
@@ -738,22 +834,22 @@ msgstr ""
 "好友連結 '%s' 的狀態檢查 %d 次失敗。\n"
 "\n"
 
-#: functions.php:3563
+#: functions.php:3577
 #, php-format
 msgid "Link URL: %s\n"
 msgstr "連結 URL：%s\n"
 
-#: functions.php:3566
+#: functions.php:3580
 #, php-format
 msgid "HTTP Status Code: %s\n"
 msgstr "HTTP 狀態碼： %s\n"
 
-#: functions.php:3570
+#: functions.php:3584
 #, php-format
 msgid "Error Message: %s\n"
 msgstr "錯誤訊息： %s\n"
 
-#: functions.php:3573
+#: functions.php:3587
 #, php-format
 msgid ""
 "\n"
@@ -764,47 +860,47 @@ msgstr ""
 "最後檢查時間：%s\n"
 "\n"
 
-#: functions.php:3574
+#: functions.php:3588
 msgid ""
 "You may want to check this link and consider removing it if it remains "
 "unavailable.\n"
 msgstr "你可能需要檢查此連結，如果仍然無法使用，請考慮將其移除。\n"
 
-#: functions.php:3646
+#: functions.php:3660
 msgid "Just now"
 msgstr "剛剛"
 
-#: functions.php:3648
+#: functions.php:3662
 #, php-format
 msgid "%d minute ago"
 msgid_plural "%d minutes ago"
 msgstr[0] "%d 分鐘前"
 
-#: functions.php:3651
+#: functions.php:3665
 #, php-format
 msgid "%d hour ago"
 msgid_plural "%d hours ago"
 msgstr[0] "%d 小時前"
 
-#: functions.php:3654
+#: functions.php:3668
 #, php-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d 日前"
 
-#: functions.php:3657
+#: functions.php:3671
 #, php-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "%d 週前"
 
-#: functions.php:3660
+#: functions.php:3674
 #, php-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "%d 個月前"
 
-#: functions.php:3867
+#: functions.php:3881
 msgid "Access denied."
 msgstr "拒絕訪問。"
 
