@@ -599,6 +599,20 @@ function sakura_scripts()
     if (iro_opt('smoothscroll_option')) {
         wp_enqueue_script('SmoothScroll', $shared_lib_basepath . '/js/smoothscroll.js', array(), IRO_VERSION . iro_opt('cookie_version', ''), true);
     }
+    
+    // 加载徽章特效脚本
+    if (iro_opt('show_medal_capsules', true)) {
+        wp_enqueue_script('medal-effects', $core_lib_basepath . '/js/medal-effects.js', array('app'), IRO_VERSION, true);
+        
+        // 为medal-effects.js提供多语言支持，从PHP端传递到JS
+        wp_localize_script(
+            'medal-effects',
+            'medalI18n',
+            array(
+                'maxLevelText' => __('Maximum level reached', 'sakurairo')
+            )
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'sakura_scripts');
 

@@ -6275,6 +6275,149 @@ a.toc-link {
 .medal-capsule {
     position: relative;
     overflow: hidden;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 5;
+}
+
+.medal-capsule::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 2.2rem;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.medal-capsule::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -2;
+    border-radius: 2.2rem;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.medal-capsule:hover::before {
+    opacity: 0.5;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+.medal-capsule:hover::after {
+    opacity: 0.2;
+    transform: scale(1.02);
+}
+
+.medal-particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.medal-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.medal-capsule:hover .medal-particles {
+    opacity: 1;
+}
+
+.medal-progress-bar {
+    height: 100%;
+    border-radius: 1.5px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: width 1s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.medal-progress-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.8) 50%, 
+        rgba(255, 255, 255, 0) 100%);
+    transform: translateX(-100%);
+    animation: shimmer 2s infinite;
+}
+
+.medal-info-tooltip {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: max-content;
+    max-width: 230px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-out;
+    z-index: 100;
+    pointer-events: none;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.medal-info-tooltip::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 6px 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent;
+}
+
+.medal-capsule:hover .medal-info-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.medal-achievement {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.medal-next-level {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 8px;
+    margin-top: 5px;
 }
 
 /* 铜牌样式 */
@@ -6284,16 +6427,27 @@ a.toc-link {
     box-shadow: 0 2px 10px rgba(205, 127, 50, 0.3);
     transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
+.medal-capsule.bronze::before {
+    background: radial-gradient(circle at center, rgba(205, 127, 50, 0.8) 0%, rgba(205, 127, 50, 0) 70%);
+}
+.medal-capsule.bronze::after {
+    box-shadow: 0 0 20px rgba(205, 127, 50, 0.5);
+    background: rgba(205, 127, 50, 0.1);
+}
 .medal-capsule.bronze:hover {
     transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     background: linear-gradient(135deg, #d38c44 0%, #e9b688 50%, #b16b2e 100%);
-    box-shadow: 0 4px 15px rgba(205, 127, 50, 0.4);
+    box-shadow: 0 8px 25px rgba(205, 127, 50, 0.5);
+    transform: translateY(-3px) scale(1.02);
 }
 .medal-capsule.bronze .capsule-label,
 .medal-capsule.bronze .capsule-value,
 .medal-capsule.bronze i {
     color: #fff !important;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+.medal-capsule.bronze .medal-progress-bar {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 210, 180, 0.9));
 }
 
 /* 银牌样式 */
@@ -6303,16 +6457,28 @@ a.toc-link {
     box-shadow: 0 2px 10px rgba(192, 192, 192, 0.3);
     transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
+.medal-capsule.silver::before {
+    background: radial-gradient(circle at center, rgba(192, 192, 192, 0.8) 0%, rgba(192, 192, 192, 0) 70%);
+}
+.medal-capsule.silver::after {
+    box-shadow: 0 0 20px rgba(192, 192, 192, 0.5);
+    background: rgba(192, 192, 192, 0.1);
+}
 .medal-capsule.silver:hover {
     transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     background: linear-gradient(135deg, #cccccc 0%, #f0f0f0 50%, #b8b8b8 100%);
-    box-shadow: 0 4px 15px rgba(192, 192, 192, 0.4);
+    box-shadow: 0 8px 25px rgba(192, 192, 192, 0.5);
+    transform: translateY(-3px) scale(1.02);
 }
 .medal-capsule.silver .capsule-label,
 .medal-capsule.silver .capsule-value,
 .medal-capsule.silver i {
     color: #333 !important;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4);
+}
+.medal-capsule.silver .medal-progress-bar {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(230, 230, 230, 1));
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 /* 金牌样式 */
@@ -6322,14 +6488,259 @@ a.toc-link {
     box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
     transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
+.medal-capsule.gold::before {
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.8) 0%, rgba(255, 215, 0, 0) 70%);
+}
+.medal-capsule.gold::after {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+    background: rgba(255, 215, 0, 0.1);
+}
 .medal-capsule.gold:hover {
     transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     background: linear-gradient(135deg, #ffdf1c 0%, #fff0a0 50%, #f5ca00 100%);
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+    transform: translateY(-3px) scale(1.02);
 }
 .medal-capsule.gold .capsule-label,
 .medal-capsule.gold .capsule-value,
 .medal-capsule.gold i {
     color: #5d4b00 !important;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4);
+}
+.medal-capsule.gold i {
+    animation: pulse-gold 2s infinite;
+}
+
+/* 徽章详情模态框样式 */
+.medal-detail-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    overflow: hidden;
+}
+
+.medal-detail-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.medal-detail-modal.closing {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.medal-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.4s ease;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.medal-detail-modal.active .medal-modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-medal-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    transition: transform 0.5s ease;
+    animation: float-icon 3s ease-in-out infinite;
+    position: relative;
+}
+
+.modal-medal-icon i {
+    transition: all 0.3s ease;
+}
+
+.modal-medal-title {
+    margin-bottom: 20px;
+}
+
+.modal-medal-title h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.modal-medal-value {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+.modal-medal-achievement {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 10px auto 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.035);
+    color: #444;
+    max-width: 95%;
+    text-align: left;
+}
+
+.modal-medal-progress-container {
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.modal-medal-progress {
+    height: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.modal-medal-progress-bar {
+    height: 100%;
+    border-radius: 4px;
+    width: 0;
+    transition: width 1s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+}
+
+.modal-medal-progress-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgb(255 255 255 / 60%) 0%, rgb(255 255 255 / 70%) 50%, rgb(255 255 255 / 80%) 100%);
+}
+
+.modal-medal-next-level {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.modal-medal-max-level {
+    font-size: 1rem;
+    color: #555;
+    margin: 20px 0 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    animation: pulse-text 2s infinite ease-in-out;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #888;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    padding: 0;
+    opacity: 0.6;
+}
+
+.modal-close-button:hover {
+    opacity: 1;
+    color: #333;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.modal-particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.modal-particle {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* 铜牌模态框样式 */
+.medal-detail-modal.bronze .medal-modal-content {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 240, 230, 0.95) 100%);
+    border: 1px solid rgba(205, 127, 50, 0.2);
+}
+
+.medal-detail-modal.bronze .modal-medal-icon i {
+    color: #cd7f32;
+    text-shadow: 0 2px 10px rgba(205, 127, 50, 0.4);
+}
+
+.medal-detail-modal.bronze .modal-medal-progress-bar {
+    background: linear-gradient(to right, #cd7f32, #e0aa76);
+}
+
+/* 银牌模态框样式 */
+.medal-detail-modal.silver .medal-modal-content {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 240, 240, 0.95) 100%);
+    border: 1px solid rgba(192, 192, 192, 0.2);
+}
+
+.medal-detail-modal.silver .modal-medal-icon i {
+    color: #c0c0c0;
+    text-shadow: 0 2px 10px rgba(192, 192, 192, 0.6);
+}
+
+.medal-detail-modal.silver .modal-medal-progress-bar {
+    background: linear-gradient(to right, #c0c0c0, #e6e6e6);
+}
+
+/* 金牌模态框样式 */
+.medal-detail-modal.gold .medal-modal-content {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 250, 230, 0.95) 100%);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.medal-detail-modal.gold .modal-medal-icon i {
+    color: #ffd700;
+    text-shadow: 0 2px 15px rgba(255, 215, 0, 0.6);
+    animation: pulse-gold 2s infinite;
+}
+
+.medal-detail-modal.gold .modal-medal-max-level {
+    color: #5d4b00;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
