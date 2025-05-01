@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Sakurairo\n"
-"POT-Creation-Date: 2025-04-30 21:34+0900\n"
+"POT-Creation-Date: 2025-05-01 08:25+0900\n"
 "PO-Revision-Date: 2021-06-26 15:15+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -578,64 +578,60 @@ msgstr ""
 msgid "You had set private comment before"
 msgstr ""
 
-#: functions.php:612
-msgid "Maximum level reached"
-msgstr ""
-
-#: functions.php:695 inc/theme-plus.php:211
+#: functions.php:681 inc/theme-plus.php:211
 msgid "Author"
 msgstr ""
 
-#: functions.php:695
+#: functions.php:681
 msgid "Blogger"
 msgstr ""
 
-#: functions.php:704 functions.php:3840
+#: functions.php:690 functions.php:3826
 msgid "Location"
 msgstr ""
 
-#: functions.php:710
+#: functions.php:696
 msgid "Private"
 msgstr ""
 
-#: functions.php:712
+#: functions.php:698
 msgid "Yes"
 msgstr ""
 
-#: functions.php:714
+#: functions.php:700
 msgid "No"
 msgstr ""
 
-#: functions.php:717 inc/link-status.php:168
+#: functions.php:703 inc/link-status.php:168
 msgid "Edit"
 msgstr ""
 
-#: functions.php:850
+#: functions.php:836
 msgid "This guy is so lazy ╮(╯▽╰)╭"
 msgstr ""
 
-#: functions.php:880 functions.php:3218 functions.php:3411
+#: functions.php:866 functions.php:3204 functions.php:3397
 msgid "Pending Links"
 msgstr ""
 
-#: functions.php:1702 functions.php:1705 inc/theme-plus.php:366
+#: functions.php:1688 functions.php:1691 inc/theme-plus.php:366
 #: layouts/mo_toc_menu.php:29
 msgid "Dashboard"
 msgstr ""
 
-#: functions.php:2254
+#: functions.php:2240
 msgid "QQ"
 msgstr ""
 
-#: functions.php:2356
+#: functions.php:2342
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:2384
+#: functions.php:2370
 msgid "Please do not try to use Javascript in your comments!"
 msgstr ""
 
-#: functions.php:2488
+#: functions.php:2474
 msgid ""
 "<b> For a better experience, please do not set <a href=\"/wp-admin/options-"
 "permalink.php\"> permalink </a> as plain. To do this, you may need to "
@@ -643,189 +639,189 @@ msgid ""
 "target=\"_blank\"> pseudo-static </a>. </ b>"
 msgstr ""
 
-#: functions.php:2621
+#: functions.php:2607
 #, php-format
 msgid "%s says: "
 msgstr ""
 
-#: functions.php:2642
+#: functions.php:2628
 msgid "Expand / Collapse"
 msgstr ""
 
-#: functions.php:3168
+#: functions.php:3154
 msgid "Invalid request method."
 msgstr ""
 
-#: functions.php:3179
+#: functions.php:3165
 msgid "You are submitting too frequently. Please try again later."
 msgstr ""
 
-#: functions.php:3185
+#: functions.php:3171
 msgid "Security verification failed."
 msgstr ""
 
-#: functions.php:3193
+#: functions.php:3179
 msgid "Please fill in all required fields."
 msgstr ""
 
-#: functions.php:3238 user/page-links.php:498
+#: functions.php:3224 user/page-links.php:498
 msgid ""
 "Sorry, we are not accepting new link submissions at this time due to "
 "backlog. Please try again later."
 msgstr ""
 
-#: functions.php:3251
+#: functions.php:3237
 msgid "Site name is too long."
 msgstr ""
 
-#: functions.php:3256
+#: functions.php:3242
 msgid "Site description is too long."
 msgstr ""
 
-#: functions.php:3262
+#: functions.php:3248
 msgid "Please enter a valid URL."
 msgstr ""
 
-#: functions.php:3268
+#: functions.php:3254
 msgid "Please enter a valid image URL."
 msgstr ""
 
-#: functions.php:3274
+#: functions.php:3260
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: functions.php:3282
+#: functions.php:3268
 msgid "This website URL is already in our links list."
 msgstr ""
 
-#: functions.php:3308 functions.php:3373
+#: functions.php:3294 functions.php:3359
 msgid "Failed to submit link. Please try again later."
 msgstr ""
 
-#: functions.php:3320 functions.php:3380
+#: functions.php:3306 functions.php:3366
 #, php-format
 msgid "[%s] New Friend Link Submission"
 msgstr ""
 
-#: functions.php:3322 functions.php:3382
+#: functions.php:3308 functions.php:3368
 #, php-format
 msgid ""
 "A new friend link has been submitted on your website %s:\n"
 "\n"
 msgstr ""
 
-#: functions.php:3323
+#: functions.php:3309
 #, php-format
 msgid "Site Name: %s\n"
 msgstr ""
 
-#: functions.php:3324
+#: functions.php:3310
 #, php-format
 msgid "Site URL: %s\n"
 msgstr ""
 
-#: functions.php:3325
+#: functions.php:3311
 #, php-format
 msgid "Site Description: %s\n"
 msgstr ""
 
-#: functions.php:3326
+#: functions.php:3312
 #, php-format
 msgid "Site Image: %s\n"
 msgstr ""
 
-#: functions.php:3327
+#: functions.php:3313
 #, php-format
 msgid "Contact Email: %s\n"
 msgstr ""
 
-#: functions.php:3328
+#: functions.php:3314
 #, php-format
 msgid ""
 "IP Address: %s\n"
 "\n"
 msgstr ""
 
-#: functions.php:3329
+#: functions.php:3315
 msgid "Please review this submission in your WordPress admin panel.\n"
 msgstr ""
 
-#: functions.php:3339 functions.php:3390
+#: functions.php:3325 functions.php:3376
 msgid "Thank you! Your link has been submitted for review."
 msgstr ""
 
-#: functions.php:3344
+#: functions.php:3330
 #, php-format
 msgid "Site Name: %s"
 msgstr ""
 
-#: functions.php:3345
+#: functions.php:3331
 #, php-format
 msgid "Site URL: %s"
 msgstr ""
 
-#: functions.php:3346
+#: functions.php:3332
 #, php-format
 msgid "Site Description: %s"
 msgstr ""
 
-#: functions.php:3347
+#: functions.php:3333
 #, php-format
 msgid "Site Image: %s"
 msgstr ""
 
-#: functions.php:3348
+#: functions.php:3334
 #, php-format
 msgid "Contact Email: %s"
 msgstr ""
 
-#: functions.php:3349
+#: functions.php:3335
 #, php-format
 msgid "IP Address: %s"
 msgstr ""
 
-#: functions.php:3352
+#: functions.php:3338
 msgid "Friend Link Submission: "
 msgstr ""
 
-#: functions.php:3384
+#: functions.php:3370
 msgid ""
 "\n"
 "Please review this submission in your WordPress admin panel.\n"
 msgstr ""
 
-#: functions.php:3397
+#: functions.php:3383
 msgid "An unexpected error occurred. Please try again later."
 msgstr ""
 
-#: functions.php:3573
+#: functions.php:3559
 #, php-format
 msgid "[%s] Friend Link Check Failure: %s"
 msgstr ""
 
-#: functions.php:3576
+#: functions.php:3562
 #, php-format
 msgid ""
 "The friend link '%s' has failed our status check %d times.\n"
 "\n"
 msgstr ""
 
-#: functions.php:3577
+#: functions.php:3563
 #, php-format
 msgid "Link URL: %s\n"
 msgstr ""
 
-#: functions.php:3580
+#: functions.php:3566
 #, php-format
 msgid "HTTP Status Code: %s\n"
 msgstr ""
 
-#: functions.php:3584
+#: functions.php:3570
 #, php-format
 msgid "Error Message: %s\n"
 msgstr ""
 
-#: functions.php:3587
+#: functions.php:3573
 #, php-format
 msgid ""
 "\n"
@@ -833,52 +829,52 @@ msgid ""
 "\n"
 msgstr ""
 
-#: functions.php:3588
+#: functions.php:3574
 msgid ""
 "You may want to check this link and consider removing it if it remains "
 "unavailable.\n"
 msgstr ""
 
-#: functions.php:3660
+#: functions.php:3646
 msgid "Just now"
 msgstr ""
 
-#: functions.php:3662
+#: functions.php:3648
 #, php-format
 msgid "%d minute ago"
 msgid_plural "%d minutes ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:3665
+#: functions.php:3651
 #, php-format
 msgid "%d hour ago"
 msgid_plural "%d hours ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:3668
+#: functions.php:3654
 #, php-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:3671
+#: functions.php:3657
 #, php-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:3674
+#: functions.php:3660
 #, php-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:3881
+#: functions.php:3867
 msgid "Access denied."
 msgstr ""
 
