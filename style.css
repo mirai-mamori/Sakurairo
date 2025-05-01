@@ -618,6 +618,10 @@ blockquote:after {
 }
 
 /* 导航和搜索区域 */
+.menu ul {
+  list-style: none;
+}
+
 .nav-search-wrapper {
   gap: 3px;
   width: auto;
