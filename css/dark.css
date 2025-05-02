@@ -54,7 +54,6 @@ body.dark .ins-section .ins-search-item.active .ins-search-preview{
   background: var(--dark-bg-primary);
 }
 
-body.dark .search-form--modal,
 body.dark .ins-section .ins-section-header {
   border-bottom: none;
   background: var(--dark-bg-primary) !important;

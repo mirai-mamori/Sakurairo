@@ -88,6 +88,16 @@ body {
   font-weight: var(--global-font-weight);
 }
 
+dialog {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  border: none;
+  max-width: none;
+  max-height: none;
+  background: transparent;
+}
+
 /* Typography */
 h1 {
   font-size: 2em;
@@ -2488,46 +2498,6 @@ h1.main-title {
   visibility: hidden;
 }
 
-.search-form--modal {
-  -webkit-transition: opacity .25s ease;
-  transition: opacity .25s ease;
-  overflow: hidden;
-  z-index: 999;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-backdrop-filter: saturate(180%) blur(10px);
-  backdrop-filter: saturate(180%) blur(10px);
-  will-change: backdrop-filter;
-}
-
-.search-form--modal .search-form__inner {
-  max-width: 640px;
-  padding: 0 20px;
-  margin: auto;
-  text-align: left;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  right: 0;
-  height: 285px;
-  top: 0;
-  bottom: 0;
-}
-
-.search-form.is-visible {
-  visibility: visible;
-  opacity: 1;
-  animation: elastic .5s;
-  background-color: rgba(255, 250, 255, 0.7);
-  background-repeat: no-repeat;
-  background-position: bottom right;
-}
-
 .search-form .search_close {
   position: absolute;
   width: 35px;
@@ -2560,17 +2530,6 @@ h1.main-title {
   left: 2px;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
-}
-
-.search-form input {
-  font-size: 1.5rem;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 12px 24px;
-  width: 100%;
-  outline: 0;
-  border-radius: 50px;
-  box-sizing: border-box;
-  font-weight: var(--global-font-weight);
 }
 
 /*search filter style*/
@@ -4997,8 +4956,7 @@ span.page-numbers.dots, a.page-numbers {
   margin-right: 0;
 }
 
-.comment-textarea,
-.micro {
+.comment-textarea {
   position: relative;
   width: 100%;
 }
@@ -5069,10 +5027,6 @@ span.page-numbers.dots, a.page-numbers {
   padding-top: 80px;
   background-color: rgba(0, 0, 0, 0);
   transition: background 0.8s;
-}
-
-.search-form--modal .search-form__inner p {
-  padding-left: 24px;
 }
 
 .search-form input::-webkit-input-placeholder,

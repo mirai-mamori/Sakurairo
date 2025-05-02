@@ -67,27 +67,24 @@ $reception_background = iro_opt('reception_background');
   
   <button id="moblieGoTop" title="<?php esc_attr_e('Go to top', 'sakurairo'); ?>"><i class="fa-solid fa-caret-up fa-lg"></i></button>
   <button id="changskin" title="<?php esc_attr_e('Control Panel', 'sakurairo'); ?>"><i class="fa-solid fa-compass-drafting fa-lg fa-flip"></i></button>
+
   <!-- search start -->
-  <form class="js-search search-form search-form--modal" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
-    <div class="search-form__inner">
+  <dialog class="dialog-search-form">
+    <form class="js-search search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
+      <div class="search-input">
+        <input id="search-input" class="text-input" type="search" name="s" placeholder="<?php esc_attr_e('Want to find something?', 'sakurairo'); ?>" required>
+      </div>
       <?php if (iro_opt('live_search')): ?>
-        <div class="micro">
-          <input id="search-input" class="text-input" type="search" name="s" placeholder="<?php esc_attr_e('Want to find something?', 'sakurairo'); ?>" required>
-        </div>
         <div class="ins-section-wrapper">
           <a id="Ty" href="#"></a>
           <div class="ins-section-container" id="PostlistBox"></div>
         </div>
-      <?php else: ?>
-        <div class="micro">
-          <p class="micro mb-"><?php esc_html_e('Want to find something?', 'sakurairo'); ?></p>
-          <input class="text-input" type="search" name="s" placeholder="<?php esc_attr_e('Search', 'sakurairo'); ?>" required>
-        </div>
       <?php endif; ?>
-    </div>
-    <div class="search_close"></div>
-  </form>
+      <div class="search_close"></div>
+    </form>
+  </dialog>
   <!-- search end -->
+
 <?php wp_footer(); ?>
 <div class="skin-menu no-select">
   <?php if (iro_opt('sakura_widget')): ?>
