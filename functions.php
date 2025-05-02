@@ -814,9 +814,9 @@ function is_webp(): bool
 add_action('link_category_add_form_fields', function($taxonomy) {
     ?>
     <div class="form-field">
-        <label for="term_priority">优先级</label>
+        <label for="term_priority"><?php __("优先级","sakurairo"); ?></label>
         <input type="number" name="term_priority" id="term_priority" value="0" min="0" />
-        <p>数值越大，优先级越高（默认0）</p>
+        <p><?php __("数值越大，优先级越高（默认0）","sakurairo"); ?></p>
     </div>
     <?php
 });
@@ -825,19 +825,19 @@ add_action('link_category_edit_form_fields', function($term, $taxonomy) {
     $priority = get_term_meta($term->term_id, 'term_priority', true);
     ?>
     <tr class="form-field">
-        <th scope="row"><label for="term_priority">优先级</label></th>
+        <th scope="row"><label for="term_priority"><?php __("优先级","sakurairo"); ?></label></th>
         <td>
             <input type="number" name="term_priority" id="term_priority" 
                    value="<?php echo esc_attr($priority ?: 0); ?>" 
                    min="0" />
-            <p class="description">数值越大，优先级越高（默认0）</p>
+            <p class="description"><?php __("数值越大，优先级越高（默认0）","sakurairo"); ?></p>
         </td>
     </tr>
     <?php
 }, 10, 2); 
 
 add_filter('manage_edit-link_category_columns', function($columns) {
-    $columns['priority'] = '优先级';
+    $columns['priority'] = __('优先级', 'sakurairo');
     return $columns;
 });
 
