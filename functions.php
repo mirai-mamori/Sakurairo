@@ -810,7 +810,7 @@ function is_webp(): bool
     return (isset($_COOKIE['su_webp']) || (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'image/webp')));
 }
 
-// 在添加分类表单中添加优先级字段
+// 添加链接优先级字段
 add_action('link_category_add_form_fields', function($taxonomy) {
     ?>
     <div class="form-field">
@@ -821,7 +821,6 @@ add_action('link_category_add_form_fields', function($taxonomy) {
     <?php
 });
 
-// 在编辑分类表单中添加优先级字段
 add_action('link_category_edit_form_fields', function($term, $taxonomy) {
     $priority = get_term_meta($term->term_id, 'term_priority', true);
     ?>
@@ -835,7 +834,37 @@ add_action('link_category_edit_form_fields', function($term, $taxonomy) {
         </td>
     </tr>
     <?php
-}, 10, 2); // 注意保持参数数量一致
+}, 10, 2); 
+
+add_filter('manage_edit-link_category_columns', function($columns) {
+    $columns['priority'] = '优先级';
+    return $columns;
+});
+
+add_filter('manage_link_category_custom_column', 'show_priority_column', function ($content, $column_name, $term_id) {
+    if ($column_name === 'priority') {
+        $priority = get_term_meta($term_id, 'term_priority', true);
+        return $priority ?: 0;
+    }
+    return $content;
+}, 10, 3);
+
+add_filter('manage_edit-link_category_sortable_columns', function ($columns) {
+    $columns['priority'] = 'term_priority';
+    return $columns;
+});
+
+add_action('created_link_category', function($term_id) {
+    if (isset($_POST['term_priority'])) {
+        update_term_meta($term_id, 'term_priority', intval($_POST['term_priority']));
+    }
+});
+
+add_action('edited_link_category', function($term_id) {
+    if (isset($_POST['term_priority'])) {
+        update_term_meta($term_id, 'term_priority', intval($_POST['term_priority']));
+    }
+});
 
 /**
  * 获取友情链接列表
