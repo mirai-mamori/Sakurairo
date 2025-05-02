@@ -810,6 +810,33 @@ function is_webp(): bool
     return (isset($_COOKIE['su_webp']) || (isset($_SERVER['HTTP_ACCEPT']) && strpos($_SERVER['HTTP_ACCEPT'], 'image/webp')));
 }
 
+// 在添加分类表单中添加优先级字段
+add_action('link_category_add_form_fields', function($taxonomy) {
+    ?>
+    <div class="form-field">
+        <label for="term_priority">优先级</label>
+        <input type="number" name="term_priority" id="term_priority" value="0" min="0" />
+        <p>数值越大，优先级越高（默认0）</p>
+    </div>
+    <?php
+});
+
+// 在编辑分类表单中添加优先级字段
+add_action('link_category_edit_form_fields', function($term, $taxonomy) {
+    $priority = get_term_meta($term->term_id, 'term_priority', true);
+    ?>
+    <tr class="form-field">
+        <th scope="row"><label for="term_priority">优先级</label></th>
+        <td>
+            <input type="number" name="term_priority" id="term_priority" 
+                   value="<?php echo esc_attr($priority ?: 0); ?>" 
+                   min="0" />
+            <p class="description">数值越大，优先级越高（默认0）</p>
+        </td>
+    </tr>
+    <?php
+}, 10, 2); // 注意保持参数数量一致
+
 /**
  * 获取友情链接列表
  * @Param: string $sorting_mode 友情链接列表排序模式，name、updated、rating、rand四种模式
