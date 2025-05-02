@@ -841,7 +841,7 @@ add_filter('manage_edit-link_category_columns', function($columns) {
     return $columns;
 });
 
-add_filter('manage_link_category_custom_column', 'show_priority_column', function ($content, $column_name, $term_id) {
+add_filter('manage_link_category_custom_column', function($content, $column_name, $term_id) {
     if ($column_name === 'priority') {
         $priority = get_term_meta($term_id, 'term_priority', true);
         return $priority ?: 0;
@@ -849,7 +849,7 @@ add_filter('manage_link_category_custom_column', 'show_priority_column', functio
     return $content;
 }, 10, 3);
 
-add_filter('manage_edit-link_category_sortable_columns', function ($columns) {
+add_filter('manage_edit-link_category_sortable_columns', function($columns) {
     $columns['priority'] = 'term_priority';
     return $columns;
 });
@@ -912,12 +912,20 @@ function get_the_link_items($id = null)
     return $output;
 }
 
-function get_link_items()
-{
-    $linkcats = get_terms('link_category');
+function get_link_items() {
+    // 获取链接分类并按优先级降序排列
+    $linkcats = get_terms(array(
+        'taxonomy'   => 'link_category',
+        'meta_key'   => 'term_priority', // 优先级字段
+        'orderby'    => 'meta_value_num', 
+        'order'      => 'DESC', 
+        'hide_empty' => false
+    ));
+
     $result = null;
-    if (empty($linkcats))
-        return get_the_link_items();  // 友链无分类，直接返回全部列表  
+    if (empty($linkcats)) {
+        return get_the_link_items(); // 友链无分类，直接返回全部列表  
+    }
     
     $pending_cat_name = __('Pending Links', 'sakurairo'); // 未审核链接分类名称
     
