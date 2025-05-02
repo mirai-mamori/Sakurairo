@@ -13,40 +13,27 @@ EOS;
         $more = 1;
         $output = array();
 
-        $posts = new \WP_Query('posts_per_page=-1&post_status=publish&post_type=post');
-        while ($posts->have_posts()): $posts->the_post();
+        $publish = ['post', 'shuoshuo', 'page'];
+        $posts = get_posts([
+            'posts_per_page' => -1,
+            'post_status' => 'publish',
+            'post_type' => $publish,
+        ]);
+        
+        foreach ($posts as $post) {
+            setup_postdata($post);
             $output[] = array(
-                "type" => "post",
-                "link" => get_permalink(),
-                "title" => get_the_title(),
-                "comments" => get_comments_number('0', '1', '%'),
-                "text" => str_replace($vowels, " ", preg_replace($regex, ' ', apply_filters('the_content', get_the_content())))
+                "type" => $post->post_type,
+                "link" => get_permalink($post),
+                "title" => get_the_title($post),
+                "comments" => get_comments_number($post->ID),
+                "text" => str_replace(
+                    $vowels,
+                    " ",
+                    preg_replace($regex, ' ', apply_filters('the_content', get_the_content(null, false, $post)))
+                )
             );
-        endwhile;
-        wp_reset_postdata();
-
-        $shuoshuo = new \WP_Query('posts_per_page=-1&post_status=publish&post_type=shuoshuo');
-        while ($posts->have_posts()): $posts->the_post();
-            $output[] = array(
-                "type" => "shuoshuo",
-                "link" => get_permalink(),
-                "title" => get_the_title(),
-                "comments" => get_comments_number('0', '1', '%'),
-                "text" => str_replace($vowels, " ", preg_replace($regex, ' ', apply_filters('the_content', get_the_content())))
-            );
-        endwhile;
-        wp_reset_postdata();
-
-        $pages = new \WP_Query('posts_per_page=-1&post_status=publish&post_type=page');
-        while ($pages->have_posts()): $pages->the_post();
-            $output[] = array(
-                "type" => "page",
-                "link" => get_permalink(),
-                "title" => get_the_title(),
-                "comments" => get_comments_number('0', '1', '%'),
-                "text" => str_replace($vowels, " ", preg_replace($regex, ' ', apply_filters('the_content', get_the_content())))
-            );
-        endwhile;
+        }
         wp_reset_postdata();
 
         $tags = get_tags();
