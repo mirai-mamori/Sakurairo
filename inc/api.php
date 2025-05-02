@@ -257,7 +257,11 @@ function cache_search_json()
         );
         $result = new WP_REST_Response($output, 403);
     } else {
-        $output = Cache::search_json();
+        $output = get_transient('cache_search');
+        if (!$output) {
+            $output = Cache::search_json();
+            set_transient('cache_search', $output, 3600);
+        }
         $result = new WP_REST_Response($output, 200);
     }
     $result->set_headers(

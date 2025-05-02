@@ -25,6 +25,18 @@ EOS;
         endwhile;
         wp_reset_postdata();
 
+        $shuoshuo = new \WP_Query('posts_per_page=-1&post_status=publish&post_type=shuoshuo');
+        while ($posts->have_posts()): $posts->the_post();
+            $output[] = array(
+                "type" => "shuoshuo",
+                "link" => get_permalink(),
+                "title" => get_the_title(),
+                "comments" => get_comments_number('0', '1', '%'),
+                "text" => str_replace($vowels, " ", preg_replace($regex, ' ', apply_filters('the_content', get_the_content())))
+            );
+        endwhile;
+        wp_reset_postdata();
+
         $pages = new \WP_Query('posts_per_page=-1&post_status=publish&post_type=page');
         while ($pages->have_posts()): $pages->the_post();
             $output[] = array(
