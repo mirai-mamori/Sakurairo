@@ -865,7 +865,6 @@ body.dark .medal-next-level {
     border-top: 1px solid rgba(100, 100, 100, 0.3);
 }
 
-/* 暗色模式下的徽章详情模态框 */
 body.dark .medal-detail-modal {
     background: rgba(0, 0, 0, 0.8);
 }
@@ -979,4 +978,27 @@ body.dark .bento-item:hover {
   box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5),
     0 1px 3px rgba(0, 0, 0, 0.3),
     inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+
+/* 搜索框表单 */
+body.dark .dialog-search-form .search-form,
+body.dark .dialog-search-form .ins-type-container {
+    background: rgba(25, 25, 25, 0.95);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #eee;
+}
+
+body.dark .dialog-search-form .search-form input {
+  border: 1.5px solid var(--dark-border-color);
+}
+
+body.dark .dialog-search-form .search-form input:focus-visible {
+  box-shadow: 0 1px 10px -2px var(--article-theme-highlight, var(--theme-skin-dark)) !important;
+}
+
+body.dark .ins-tab .ins-section.active {
+  color: #f0f0f0;
+  box-shadow: 0 1px -1px 2px var(--article-theme-highlight, var(--theme-skin-dark));
+  background: var(--article-theme-highlight, var(--theme-skin-dark));
+  border: 1px solid var(--article-theme-highlight, var(--theme-skin-dark));
 }
