@@ -76,7 +76,6 @@ $reception_background = iro_opt('reception_background');
       </div>
       <?php if (iro_opt('live_search')): ?>
         <div class="ins-section-wrapper">
-          <a id="Ty" href="#"></a>
           <div class="ins-section-container" id="PostlistBox"></div>
         </div>
       <?php endif; ?>
