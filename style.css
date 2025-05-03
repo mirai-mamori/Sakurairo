@@ -2503,7 +2503,7 @@ h1.main-title {
   justify-content: center;
 }
 
-.search-form {
+.dialog-search-form .search-form {
   position: fixed;
   background: rgba(255, 255, 255, 0.7);
   top: 5vh;
@@ -2516,13 +2516,13 @@ h1.main-title {
   transform: translateY(50px);
 }
 
-.search-form.is-active{
+.dialog-search-form .search-form.is-active{
   opacity: 1;
   transform: translateY(0);
 }
 
 
-.search-form .search_close {
+.dialog-search-form .search-form .search_close {
   position: absolute;
   width: 35px;
   height: 35px;
@@ -2592,10 +2592,11 @@ h1.main-title {
 }
 
 .ins-tab{
-  position:sticky;
+  position: sticky;
   top: 0;
   display: flex;
   width: 100%;
+  z-index: 99;
 }
 
 .ins-section {
@@ -2625,6 +2626,11 @@ h1.main-title {
   border-bottom: 1px solid #ccc;
 }
 
+.ins-section.active .ins-section-header{
+  background: var(--article-theme-highlight, var(--theme-skin-matching));
+  color: #fff;
+}
+
 .ins-section .ins-search-item header {
   overflow: hidden;
   white-space: nowrap;
@@ -2650,13 +2656,27 @@ h1.main-title {
 }
 
 .ins-type-container .ins-section {
+  height: 0;
   overflow: hidden;
-  height: 0px;
+  transition: height .6s ease,transform .6s ease;
 }
 
 .ins-type-container .ins-section.active {
   max-height: fit-content;
   height: calc(var(--items,5) * 10vh);
+  transform: translateX(0);
+  transition: transform .6s ease;
+}
+
+.ins-type-container .ins-section.prev {
+  transform: translateX(-100%);
+  position: absolute;
+}
+
+.ins-type-container .ins-section.next {
+  transform: translateX(100%);
+  position: absolute;
+  top: 0;
 }
 
 .ins-section .ins-search-item {
