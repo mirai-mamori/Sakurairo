@@ -856,24 +856,26 @@ function get_the_link_items($id = null)
     return $output;
 }
 
-function get_link_items()
-{
-    $linkcats = get_terms('link_category');
+function get_link_items() {
+    // 获取链接分类并按优先级降序排列
+    $linkcats = get_terms(array(
+        'taxonomy'   => 'link_category',
+        'meta_key'   => 'term_priority', // 优先级字段
+        'orderby'    => 'meta_value_num', 
+        'order'      => 'DESC', 
+        'hide_empty' => false
+    ));
+
     $result = null;
-    if (empty($linkcats))
-        return get_the_link_items();  // 友链无分类，直接返回全部列表  
+    if (empty($linkcats)) {
+        return get_the_link_items(); // 友链无分类，直接返回全部列表  
+    }
     
     $pending_cat_name = __('Pending Links', 'sakurairo'); // 未审核链接分类名称
-    $link_category_need_display = get_post_meta(get_queried_object_id(), 'link_category_need_display', false);
     
     foreach ($linkcats as $linkcat) {
         // 跳过未审核链接分类
         if ($linkcat->name === $pending_cat_name) {
-            continue;
-        }
-        
-        // 检查是否需要显示该分类
-        if (!empty($link_category_need_display) && !in_array($linkcat->name, $link_category_need_display, true)) {
             continue;
         }
         
