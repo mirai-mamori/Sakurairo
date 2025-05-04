@@ -27,11 +27,7 @@ EOS;
                 "link" => get_permalink($post),
                 "title" => get_the_title($post),
                 "comments" => get_comments_number($post->ID),
-                "text" => str_replace(
-                    $vowels,
-                    " ",
-                    preg_replace($regex, ' ', apply_filters('the_content', get_the_content(null, false, $post)))
-                )
+                "text" => ($post->post_type != "page") ? (str_replace($vowels," ",preg_replace($regex, ' ', apply_filters('the_content', get_the_content(null, false, $post))))) : "",
             );
         }
         wp_reset_postdata();
