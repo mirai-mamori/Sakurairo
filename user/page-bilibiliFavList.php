@@ -57,7 +57,7 @@ get_header();
     
     .fav-item:focus, 
     .fav-item:focus-within {
-        outline: 2px solid var(--theme-skin, #505050);
+        outline: 2px solid var(--theme-skin-matching, #505050);
         box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     }
     
@@ -183,14 +183,14 @@ get_header();
     }
     
     .page-btn:hover {
-        border-color: var(--theme-skin, #505050);
-        color: var(--theme-skin, #505050);
+        border-color: var(--theme-skin-matching, #505050);
+        color: var(--theme-skin-matching, #505050);
     }
     
     .page-btn.active {
-        background: var(--theme-skin, #505050);
+        background: var(--theme-skin-matching, #505050);
         color: #fff;
-        border-color: var(--theme-skin, #505050);
+        border-color: var(--theme-skin-matching, #505050);
     }
     
     .page-btn:disabled {
@@ -229,7 +229,7 @@ get_header();
         height: 40px;
         border: 3px solid rgba(0, 0, 0, 0.1);
         border-radius: 50%;
-        border-top-color: var(--theme-skin, #505050);
+        border-top-color: var(--theme-skin-matching, #505050);
         animation: spin 1s ease-in-out infinite;
     }
     
@@ -342,16 +342,12 @@ get_header();
         display: flex;
         align-items: center;
         gap: 8px;
-        color: #00a1d6;
+        color: var(--theme-skin-matching);
         text-decoration: none;
         font-size: 0.9rem;
         padding: 8px 12px;
         border-radius: 4px;
         transition: all 0.2s ease;
-    }
-    
-    .video-modal-open:hover {
-        background: rgba(0, 161, 214, 0.1);
     }
     
     /* 为视频卡片添加鼠标交互效果 */
@@ -518,7 +514,7 @@ get_header();
     }
     
     .fav-tab.active {
-        background-color: var(--theme-skin, #505050);
+        background-color: var(--theme-skin-matching, #505050);
         color: #fff;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     }
@@ -535,6 +531,14 @@ get_header();
         background: rgba(255, 255, 255, 0.25);
     }
     
+    body.dark .fav-tab.active {
+        background-color: var(--theme-skin-matching, #505050);
+    }
+
+    body.dark .fav-tab.active:hover {
+        background-color: var(--theme-skin-matching, #505050);
+    }
+
     body.dark .fav-tab {
         background-color: #2d2d2d;
         color: #e0e0e0;
@@ -562,7 +566,8 @@ get_header();
         opacity: 1;
     }
     
-    /* 加载器效果 */    .fav-item-thumb-placeholder {
+    /* 加载器效果 */
+    .fav-item-thumb-placeholder {
         position: absolute;
         top: 0;
         left: 0;
@@ -598,39 +603,6 @@ get_header();
     body.dark .fav-item-thumb-placeholder {
         background-color: #2a2a2a;
     }
-    
-    /* 滚动到顶部按钮 */
-    .back-to-top {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: var(--theme-skin, #505050);
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
-        box-shadow: 0 3px 15px rgba(0,0,0,0.2);
-        z-index: 100;
-    }
-    
-    .back-to-top.visible {
-        opacity: 0.8;
-        visibility: visible;
-        transform: translateY(0);
-    }
-    
-    .back-to-top:hover {
-        opacity: 1;
-        transform: translateY(-5px);
-    }
 </style>
 </head>
 
@@ -659,927 +631,927 @@ get_header();
     </article>
 <?php endwhile; ?>
 <script>
-/**
- * Bilibili 收藏夹现代化展示系统
- * 使用现代JS API实现高性能、平滑的收藏夹浏览体验
- */
-// 清理函数，用于清理页面中可能存在的旧资源
-function cleanupBilibiliFavList() {
-    // 清理可能存在的事件监听器
-    window.removeEventListener('scroll', window._bilifav_scroll_handler);
-    document.removeEventListener('keydown', window._bilifav_esc_handler);
+(function() {
+    // 更高效的清理函数，使用Map跟踪事件绑定
+    const eventTracking = new Map();
     
-    // 移除可能存在的旧的事件监听器
-    if (window._bilifav_click_handler) {
-        document.removeEventListener('click', window._bilifav_click_handler);
-        window._bilifav_click_handler = null;
-    }
-}
-
-// Bilibili收藏夹应用初始化函数
-function initBilibiliFavList() {
-    // 首先清理可能存在的旧资源
-    cleanupBilibiliFavList();
-    
-    // 应用主容器
-    const app = document.getElementById('bilibili-favlist-app');
-    if (!app) return;
-    
-    // 调试信息
-    console.log('Bilibili收藏夹应用初始化');
-    
-    // 定义REST API路径
-    const restApiUrl = '<?php echo esc_url_raw(rest_url('sakura/v1')); ?>';
-    const wpnonce = '<?php echo wp_create_nonce('wp_rest'); ?>';
-    
-    console.log('REST API URL:', restApiUrl);
-    
-    // 检查必要变量是否存在
-    if (!restApiUrl) {
-        showError('初始化失败：REST API路径不可用');
-        return;
-    }
-      // 状态管理
-    const state = {
-        folders: [],
-        currentFolder: null,
-        loading: true,
-        pageSize: 12,
-        currentItems: [],
-        currentPage: 1,
-        totalPages: 0,
-        error: null,
-        lastDataUpdate: 0,
-        cache: new Map() // 本地缓存对象
+    const cleanupBilibiliFavList = () => {
+        // 使用Map追踪和移除事件，避免重复绑定和遗漏清理
+        eventTracking.forEach((handler, key) => {
+            const [element, eventName] = key.split('::');
+            if (element === 'window') {
+                window.removeEventListener(eventName, handler);
+            } else if (element === 'document') {
+                document.removeEventListener(eventName, handler);
+            }
+        });
+        eventTracking.clear();
     };
     
-    // 缓存助手函数
-    const cache = {
-        getKey: (folderId, page) => `folder_${folderId}_page_${page}`,
-        set: (folderId, page, data) => {
-            const key = cache.getKey(folderId, page);
-            state.cache.set(key, {
-                timestamp: Date.now(),
-                data: data
-            });
-        },
-        get: (folderId, page) => {
-            const key = cache.getKey(folderId, page);
-            return state.cache.get(key);
-        },
-        isValid: (cachedItem) => {
-            if (!cachedItem) return false;
-            // 缓存5分钟有效
-            return (Date.now() - cachedItem.timestamp) < 5 * 60 * 1000;
+    // 安全地添加事件监听器，避免重复绑定
+    const addTrackedEvent = (element, eventName, handler) => {
+        const key = `${element === window ? 'window' : element === document ? 'document' : 'element'}::${eventName}`;
+        
+        // 如果已存在旧的处理函数，先移除
+        if (eventTracking.has(key)) {
+            const oldHandler = eventTracking.get(key);
+            if (element === window) {
+                window.removeEventListener(eventName, oldHandler);
+            } else if (element === document) {
+                document.removeEventListener(eventName, oldHandler);
+            }
         }
+        
+        // 添加新的事件处理并追踪
+        if (element === window) {
+            window.addEventListener(eventName, handler);
+        } else if (element === document) {
+            document.addEventListener(eventName, handler);
+        }
+        
+        eventTracking.set(key, handler);
     };
-      // 初始化应用
-    async function initApp() {
-        try {
-            console.log('初始化应用开始');
-            // 获取所有收藏夹信息
-            await fetchAllFolders();
-            
-            // 渲染界面
-            renderApp();
-            
-            // 绑定事件处理
-            bindEvents();
-            
-            console.log('初始化应用完成');
-        } catch (error) {
-            console.error('初始化失败:', error);
-            let errorMsg = error.message || '未知错误';
-            showError(`加载收藏夹失败: ${errorMsg}<br>请刷新页面重试`);
-        }
-    }      // 获取所有收藏夹数据
-    async function fetchAllFolders() {
-        // 尝试从本地存储恢复数据
-        try {
-            const savedData = localStorage.getItem('bilibili_favlist_folders');
-            if (savedData) {
-                const parsed = JSON.parse(savedData);
-                // 如果有缓存的数据且没过期（24小时内）
-                if (parsed && parsed.timestamp && (Date.now() - parsed.timestamp < 24 * 60 * 60 * 1000)) {
-                    console.log('从本地存储恢复收藏夹列表');
-                    state.folders = parsed.folders;
-                    if (state.folders?.length) {
-                        // 默认选中第一个收藏夹
-                        state.currentFolder = state.folders[0].id;
-                        // 加载第一个收藏夹的内容，但优先使用缓存
-                        await fetchFolderItems(state.currentFolder, 1);
-                        return; // 如果成功恢复数据，直接返回
-                    }
-                }
-            }
-        } catch (e) {
-            console.warn('恢复本地缓存失败', e);
-            // 继续执行网络请求
-        }
-        
-        // 使用 WordPress REST API 的完整路径
-        const restApiUrl = '<?php echo esc_url_raw(rest_url('sakura/v1')); ?>';
-        const endpoint = `${restApiUrl}/favlist/bilibili/folders`;
-        
-        try {
-            // 添加必要的 nonce 用于 WordPress REST API 安全验证
-            const response = await fetch(`${endpoint}?_wpnonce=<?php echo wp_create_nonce('wp_rest'); ?>`, {
-                headers: {
-                    'Cache-Control': 'max-age=86400' // 24小时缓存
-                }
-            });
-            
-            if (!response.ok) throw new Error('网络请求失败');
-            
-            const data = await response.json();
-            if (data.code !== 0) throw new Error(data.message || '获取收藏夹失败');
-            
-            state.folders = data.data.list;
-            if (state.folders?.length) {
-                // 保存到本地存储
-                try {
-                    localStorage.setItem('bilibili_favlist_folders', JSON.stringify({
-                        timestamp: Date.now(),
-                        folders: state.folders
-                    }));
-                } catch (e) {
-                    console.warn('保存到本地存储失败', e);
-                }
-                
-                // 默认选中第一个收藏夹
-                state.currentFolder = state.folders[0].id;
-                // 加载第一个收藏夹的内容
-                await fetchFolderItems(state.currentFolder, 1);
-            }
-        } catch (error) {
-            console.error('获取收藏夹失败:', error);
-            showError('加载收藏夹失败，请刷新页面重试');
-            // 标记需要在页面返回时重新加载
-            needReloadOnReturn = true;
-        } finally {
-            state.loading = false;
-        }
-    }    // 获取收藏夹内容
-    async function fetchFolderItems(folderId, page = 1) {
-        state.loading = true;
-        renderApp();
-        
-        // 检查是否有有效缓存
-        const cachedData = cache.get(folderId, page);
-        if (cache.isValid(cachedData)) {
-            console.log('使用缓存的收藏夹内容', { folderId, page });
-            const folderData = cachedData.data;
-            state.currentItems = folderData.medias || [];
-            state.totalPages = Math.ceil(folderData.info.media_count / state.pageSize);
-            state.currentPage = page;
-            state.currentFolder = folderId;
-            state.loading = false;
-            renderApp();
-            
-            // 在后台刷新缓存，但不阻塞UI
-            refreshCacheInBackground(folderId, page);
-            return;
-        }
-        
-        // 没有缓存或缓存已过期，执行网络请求
-        await fetchFolderItemsFromNetwork(folderId, page);
-    }
     
-    // 从网络获取收藏夹内容并更新缓存
-    async function fetchFolderItemsFromNetwork(folderId, page = 1) {
-        // 使用 WordPress REST API 的完整路径
-        const restApiUrl = '<?php echo esc_url_raw(rest_url('sakura/v1')); ?>';
-        const endpoint = `${restApiUrl}/favlist/bilibili`;
-        const wpnonce = '<?php echo wp_create_nonce('wp_rest'); ?>';
+    // Bilibili收藏夹应用初始化函数 - 使用箭头函数提高一致性
+    const initBilibiliFavList = async () => {
+        // 首先清理可能存在的旧资源
+        cleanupBilibiliFavList();
+        
+        // 应用主容器
+        const app = document.getElementById('bilibili-favlist-app');
+        if (!app) return; // 快速失败
         
         try {
-            console.log('从网络获取收藏夹内容', { folderId, page });
-            const response = await fetch(`${endpoint}?folder_id=${folderId}&page=${page}&_wpnonce=${wpnonce}`, {
-                // 添加缓存控制
-                headers: {
-                    'Cache-Control': 'max-age=300', // 5分钟缓存
-                    'Pragma': 'no-cache' // 覆盖任何现有缓存
-                }
-            });
-            
-            if (!response.ok) throw new Error('网络请求失败');
-            
-            const data = await response.json();
-            if (data.code !== 0) throw new Error(data.message || '获取收藏内容失败');
-            
-            const folderData = data.data;
-            
-            // 更新缓存
-            cache.set(folderId, page, folderData);
-            
-            // 更新状态
-            state.currentItems = folderData.medias || [];
-            state.totalPages = Math.ceil(folderData.info.media_count / state.pageSize);
-            state.currentPage = page;
-            state.currentFolder = folderId;
-            
-            // 成功获取数据，添加时间戳记录上次数据更新时间
-            state.lastDataUpdate = Date.now();
-            
-            // 尝试保存到本地存储，为下次访问准备
-            try {
-                const key = `bilibili_favlist_${folderId}_${page}`;
-                localStorage.setItem(key, JSON.stringify({
-                    timestamp: Date.now(),
-                    data: folderData
-                }));
-            } catch (e) {
-                console.warn('保存到本地存储失败', e);
-            }
-        } catch (error) {
-            console.error('获取收藏夹内容失败:', error);
-            showError('加载收藏内容失败，请重试');
-            // 请求失败时，标记需要在页面返回时重新加载
-            needReloadOnReturn = true;
-        } finally {
-            state.loading = false;
-            renderApp();
-        }
-    }
-    
-    // 在后台刷新缓存，不影响UI
-    async function refreshCacheInBackground(folderId, page) {
-        try {
+            // 定义REST API路径，使用const提高性能和可靠性
             const restApiUrl = '<?php echo esc_url_raw(rest_url('sakura/v1')); ?>';
-            const endpoint = `${restApiUrl}/favlist/bilibili`;
             const wpnonce = '<?php echo wp_create_nonce('wp_rest'); ?>';
             
-            const response = await fetch(`${endpoint}?folder_id=${folderId}&page=${page}&_wpnonce=${wpnonce}&t=${Date.now()}`, {
-                headers: { 
-                    'Pragma': 'no-cache',
-                    'Cache-Control': 'no-cache'
-                }
-            });
-            
-            if (!response.ok) return;
-            
-            const data = await response.json();
-            if (data.code !== 0) return;
-            
-            // 静默更新缓存
-            cache.set(folderId, page, data.data);
-            console.log('后台更新缓存完成', { folderId, page });
-            
-            // 更新本地存储
-            try {
-                const key = `bilibili_favlist_${folderId}_${page}`;
-                localStorage.setItem(key, JSON.stringify({
-                    timestamp: Date.now(),
-                    data: data.data
-                }));
-            } catch (e) {
-                console.warn('更新本地存储失败', e);
+            if (!restApiUrl) {
+                throw new Error('初始化失败：REST API路径不可用');
             }
-        } catch (error) {
-            console.warn('后台刷新缓存失败', error);
-        }
-    }
-    
-    // 显示错误信息
-    function showError(message) {
-        state.error = message;
-        state.loading = false;
-        renderApp();
-    }
-    
-    // 渲染整个应用
-    function renderApp() {
-        if (state.loading && !state.currentItems.length) {
-            app.innerHTML = `
-                <div class="fav-loading">
-                    <div class="spinner"></div>
-                </div>
-            `;
-            return;
-        }
-        
-        if (state.error) {
-            app.innerHTML = `
-                <div class="fav-empty">
-                    <p>${state.error}</p>
-                    <button class="page-btn retry-btn">重试</button>
-                </div>
-            `;
-            return;
-        }
-        
-        if (!state.folders.length) {
-            app.innerHTML = `
-                <div class="fav-empty">
-                    <p>没有找到收藏夹</p>
-                </div>
-            `;
-            return;
-        }
-        
-        // 渲染收藏夹选择器和内容
-        let html = renderFolderSelector();
-        html += renderCurrentFolder();
-        
-        app.innerHTML = html;
-    }
-      // 渲染收藏夹选择器(胶囊式)
-    function renderFolderSelector() {
-        return `
-            <div class="fav-tabs">
-                ${state.folders.map(folder => `
-                    <div class="fav-tab ${folder.id === state.currentFolder ? 'active' : ''}" 
-                         data-folder-id="${folder.id}">
-                        ${folder.title}
-                        <span class="fav-tab-count">${folder.media_count}</span>
-                    </div>
-                `).join('')}
-            </div>
-        `;
-    }
-      // 渲染当前收藏夹内容
-    function renderCurrentFolder() {
-        const currentFolder = state.folders.find(folder => folder.id === state.currentFolder);
-        if (!currentFolder) return '';
-        
-        let html = `
-            <div class="fav-section">                
-                <div class="fav-content">
-                    ${state.loading ? `
+            
+            // 调试信息 - 保持在开发环境，生产环境可移除
+            console.log('Bilibili收藏夹应用初始化，API: ', restApiUrl);
+            
+            // 状态管理
+            const state = {
+                folders: [],
+                currentFolder: null,
+                loading: true,
+                pageSize: 12,
+                currentItems: [],
+                currentPage: 1,
+                totalPages: 0,
+                error: null,
+                lastDataUpdate: 0,
+                cache: new Map() // 本地缓存对象
+            };
+            
+            // 缓存助手函数
+            const cache = {
+                getKey: (folderId, page) => `folder_${folderId}_page_${page}`,
+                set: (folderId, page, data) => {
+                    const key = cache.getKey(folderId, page);
+                    state.cache.set(key, {
+                        timestamp: Date.now(),
+                        data: data
+                    });
+                },
+                get: (folderId, page) => {
+                    const key = cache.getKey(folderId, page);
+                    return state.cache.get(key);
+                },
+                isValid: (cachedItem) => {
+                    if (!cachedItem) return false;
+                    // 缓存5分钟有效
+                    return (Date.now() - cachedItem.timestamp) < 5 * 60 * 1000;
+                }
+            };
+              // 初始化应用
+            async function initApp() {
+                try {
+                    console.log('初始化应用开始');
+                    // 获取所有收藏夹信息
+                    await fetchAllFolders();
+                    
+                    // 渲染界面
+                    renderApp();
+                    
+                    // 绑定事件处理
+                    bindEvents();
+                    
+                    console.log('初始化应用完成');
+                } catch (error) {
+                    console.error('初始化失败:', error);
+                    let errorMsg = error.message || '未知错误';
+                    showError(`加载收藏夹失败: ${errorMsg}<br>请刷新页面重试`);
+                }
+            }      // 获取所有收藏夹数据
+            async function fetchAllFolders() {
+                // 尝试从本地存储恢复数据
+                try {
+                    const savedData = localStorage.getItem('bilibili_favlist_folders');
+                    if (savedData) {
+                        const parsed = JSON.parse(savedData);
+                        // 如果有缓存的数据且没过期（24小时内）
+                        if (parsed && parsed.timestamp && (Date.now() - parsed.timestamp < 24 * 60 * 60 * 1000)) {
+                            console.log('从本地存储恢复收藏夹列表');
+                            state.folders = parsed.folders;
+                            if (state.folders?.length) {
+                                // 默认选中第一个收藏夹
+                                state.currentFolder = state.folders[0].id;
+                                // 加载第一个收藏夹的内容，但优先使用缓存
+                                await fetchFolderItems(state.currentFolder, 1);
+                                return; // 如果成功恢复数据，直接返回
+                            }
+                        }
+                    }
+                } catch (e) {
+                    console.warn('恢复本地缓存失败', e);
+                    // 继续执行网络请求
+                }
+                
+                // 使用 WordPress REST API 的完整路径
+                const restApiUrl = '<?php echo esc_url_raw(rest_url('sakura/v1')); ?>';
+                const endpoint = `${restApiUrl}/favlist/bilibili/folders`;
+                
+                try {
+                    // 添加必要的 nonce 用于 WordPress REST API 安全验证
+                    const response = await fetch(`${endpoint}?_wpnonce=<?php echo wp_create_nonce('wp_rest'); ?>`, {
+                        headers: {
+                            'Cache-Control': 'max-age=86400' // 24小时缓存
+                        }
+                    });
+                    
+                    if (!response.ok) throw new Error('网络请求失败');
+                    
+                    const data = await response.json();
+                    if (data.code !== 0) throw new Error(data.message || '获取收藏夹失败');
+                    
+                    state.folders = data.data.list;
+                    if (state.folders?.length) {
+                        // 保存到本地存储
+                        try {
+                            localStorage.setItem('bilibili_favlist_folders', JSON.stringify({
+                                timestamp: Date.now(),
+                                folders: state.folders
+                            }));
+                        } catch (e) {
+                            console.warn('保存到本地存储失败', e);
+                        }
+                        
+                        // 默认选中第一个收藏夹
+                        state.currentFolder = state.folders[0].id;
+                        // 加载第一个收藏夹的内容
+                        await fetchFolderItems(state.currentFolder, 1);
+                    }
+                } catch (error) {
+                    console.error('获取收藏夹失败:', error);
+                    showError('加载收藏夹失败，请刷新页面重试');
+                    // 标记需要在页面返回时重新加载
+                    needReloadOnReturn = true;
+                } finally {
+                    state.loading = false;
+                }
+            }    // 获取收藏夹内容
+            async function fetchFolderItems(folderId, page = 1) {
+                state.loading = true;
+                renderApp();
+                
+                // 检查是否有有效缓存
+                const cachedData = cache.get(folderId, page);
+                if (cache.isValid(cachedData)) {
+                    console.log('使用缓存的收藏夹内容', { folderId, page });
+                    const folderData = cachedData.data;
+                    state.currentItems = folderData.medias || [];
+                    state.totalPages = Math.ceil(folderData.info.media_count / state.pageSize);
+                    state.currentPage = page;
+                    state.currentFolder = folderId;
+                    state.loading = false;
+                    renderApp();
+                    
+                    // 在后台刷新缓存，但不阻塞UI
+                    refreshCacheInBackground(folderId, page);
+                    return;
+                }
+                
+                // 没有缓存或缓存已过期，执行网络请求
+                await fetchFolderItemsFromNetwork(folderId, page);
+            }
+            
+            // 从网络获取收藏夹内容并更新缓存
+            async function fetchFolderItemsFromNetwork(folderId, page = 1) {
+                // 使用 WordPress REST API 的完整路径
+                const restApiUrl = '<?php echo esc_url_raw(rest_url('sakura/v1')); ?>';
+                const endpoint = `${restApiUrl}/favlist/bilibili`;
+                const wpnonce = '<?php echo wp_create_nonce('wp_rest'); ?>';
+                
+                try {
+                    console.log('从网络获取收藏夹内容', { folderId, page });
+                    const response = await fetch(`${endpoint}?folder_id=${folderId}&page=${page}&_wpnonce=${wpnonce}`, {
+                        // 添加缓存控制
+                        headers: {
+                            'Cache-Control': 'max-age=300', // 5分钟缓存
+                            'Pragma': 'no-cache' // 覆盖任何现有缓存
+                        }
+                    });
+                    
+                    if (!response.ok) throw new Error('网络请求失败');
+                    
+                    const data = await response.json();
+                    if (data.code !== 0) throw new Error(data.message || '获取收藏内容失败');
+                    
+                    const folderData = data.data;
+                    
+                    // 更新缓存
+                    cache.set(folderId, page, folderData);
+                    
+                    // 更新状态
+                    state.currentItems = folderData.medias || [];
+                    state.totalPages = Math.ceil(folderData.info.media_count / state.pageSize);
+                    state.currentPage = page;
+                    state.currentFolder = folderId;
+                    
+                    // 成功获取数据，添加时间戳记录上次数据更新时间
+                    state.lastDataUpdate = Date.now();
+                    
+                    // 尝试保存到本地存储，为下次访问准备
+                    try {
+                        const key = `bilibili_favlist_${folderId}_${page}`;
+                        localStorage.setItem(key, JSON.stringify({
+                            timestamp: Date.now(),
+                            data: folderData
+                        }));
+                    } catch (e) {
+                        console.warn('保存到本地存储失败', e);
+                    }
+                } catch (error) {
+                    console.error('获取收藏夹内容失败:', error);
+                    showError('加载收藏内容失败，请重试');
+                    // 请求失败时，标记需要在页面返回时重新加载
+                    needReloadOnReturn = true;
+                } finally {
+                    state.loading = false;
+                    renderApp();
+                }
+            }
+            
+            // 在后台刷新缓存，不影响UI
+            async function refreshCacheInBackground(folderId, page) {
+                try {
+                    const restApiUrl = '<?php echo esc_url_raw(rest_url('sakura/v1')); ?>';
+                    const endpoint = `${restApiUrl}/favlist/bilibili`;
+                    const wpnonce = '<?php echo wp_create_nonce('wp_rest'); ?>';
+                    
+                    const response = await fetch(`${endpoint}?folder_id=${folderId}&page=${page}&_wpnonce=${wpnonce}&t=${Date.now()}`, {
+                        headers: { 
+                            'Pragma': 'no-cache',
+                            'Cache-Control': 'no-cache'
+                        }
+                    });
+                    
+                    if (!response.ok) return;
+                    
+                    const data = await response.json();
+                    if (data.code !== 0) return;
+                    
+                    // 静默更新缓存
+                    cache.set(folderId, page, data.data);
+                    console.log('后台更新缓存完成', { folderId, page });
+                    
+                    // 更新本地存储
+                    try {
+                        const key = `bilibili_favlist_${folderId}_${page}`;
+                        localStorage.setItem(key, JSON.stringify({
+                            timestamp: Date.now(),
+                            data: data.data
+                        }));
+                    } catch (e) {
+                        console.warn('更新本地存储失败', e);
+                    }
+                } catch (error) {
+                    console.warn('后台刷新缓存失败', error);
+                }
+            }
+            
+            // 显示错误信息
+            function showError(message) {
+                state.error = message;
+                state.loading = false;
+                renderApp();
+            }
+            
+            // 渲染整个应用
+            function renderApp() {
+                if (state.loading && !state.currentItems.length) {
+                    app.innerHTML = `
                         <div class="fav-loading">
                             <div class="spinner"></div>
                         </div>
-                    ` : renderFolderContent()}
-                </div>
-            </div>
-        `;
-        
-        return html;
-    }
-    
-    // 渲染收藏夹内容
-    function renderFolderContent() {
-        if (!state.currentItems.length) {
-            return `
-                <div class="fav-empty">
-                    <p>该收藏夹暂无内容</p>
-                </div>
-            `;
-        }
-        
-        let html = `
-            <div class="fav-grid">
-                ${state.currentItems.map(item => renderFavItem(item)).join('')}
-            </div>
-            ${renderPagination()}
-        `;
-        
-        return html;
-    }    // 渲染单个收藏项 - 改进的现代卡片设计，使用弹出式视频播放
-    function renderFavItem(item) {
-        // 使用数据属性存储视频信息，而不是直接跳转
-        let bvid = item.bvid || '';
-        let cover = item.cover.replace("http://", "https://");
-        let pubdate = item.pubdate ? formatDate(item.pubdate * 1000) : '';
-        
-    return `
-            <div class="fav-item" data-bvid="${bvid}" data-title="${item.title}" data-up="${item.upper?.name || '未知'}" tabindex="0" role="button" aria-label="播放视频: ${item.title}">
-                <div class="fav-item-content-wrapper">
-                    <div class="fav-item-thumb">
-                        <div class="fav-item-thumb-placeholder">
-                            <div class="spinner" style="width:24px;height:24px;"></div>
-                        </div>
-                        <img data-src="${cover}" class="fav-thumb-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" referrerpolicy="no-referrer" alt="${item.title}">
-                        <div class="fav-item-title-area">
-                            <h3 class="fav-item-title" title="${item.title}">${item.title}</h3>
-                        </div>
-                        <div class="fav-item-up">
-                            <span class="up-name">UP: ${item.upper?.name || '未知'}</span>
-                        </div>
-                        <div class="fav-item-play-btn">
-                            <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon></svg>
-                        </div>
-                    </div>
-                    <div class="fav-item-desc-wrapper">
-                        <div class="fav-item-desc" title="${item.intro || ''}">${item.intro || '暂无简介'}</div>
-                    </div>
-                </div>
-            </div>
-        `;
-    }
-    
-    // 格式化日期
-    function formatDate(timestamp) {
-        const date = new Date(timestamp);
-        const now = new Date();
-        const diffDays = Math.floor((now - date) / (1000 * 60 * 60 * 24));
-        
-        if (diffDays < 7) {
-            if (diffDays === 0) {
-                return '今天';
-            } else if (diffDays === 1) {
-                return '昨天';
-            } else {
-                return `${diffDays}天前`;
-            }
-        } else {
-            return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-        }
-    }
-    
-    // 渲染分页
-    function renderPagination() {
-        if (state.totalPages <= 1) return '';
-        
-        let paginationHtml = '<div class="fav-pagination">';
-        
-        // 上一页按钮
-        paginationHtml += `
-            <button class="page-btn prev-btn" ${state.currentPage <= 1 ? 'disabled' : ''}>
-                上一页
-            </button>
-        `;
-        
-        // 页码按钮
-        const maxPagesToShow = 5;
-        let startPage = Math.max(1, state.currentPage - Math.floor(maxPagesToShow / 2));
-        let endPage = Math.min(state.totalPages, startPage + maxPagesToShow - 1);
-        
-        // 调整startPage确保显示正确数量的页码
-        if (endPage - startPage + 1 < maxPagesToShow) {
-            startPage = Math.max(1, endPage - maxPagesToShow + 1);
-        }
-        
-        // 第一页
-        if (startPage > 1) {
-            paginationHtml += `<button class="page-btn page-num" data-page="1">1</button>`;
-            if (startPage > 2) {
-                paginationHtml += `<button class="page-btn page-ellipsis" disabled>...</button>`;
-            }
-        }
-        
-        // 页码
-        for (let i = startPage; i <= endPage; i++) {
-            paginationHtml += `
-                <button class="page-btn page-num ${i === state.currentPage ? 'active' : ''}" data-page="${i}">
-                    ${i}
-                </button>
-            `;
-        }
-        
-        // 最后页
-        if (endPage < state.totalPages) {
-            if (endPage < state.totalPages - 1) {
-                paginationHtml += `<button class="page-btn page-ellipsis" disabled>...</button>`;
-            }
-            paginationHtml += `<button class="page-btn page-num" data-page="${state.totalPages}">${state.totalPages}</button>`;
-        }
-        
-        // 下一页按钮
-        paginationHtml += `
-            <button class="page-btn next-btn" ${state.currentPage >= state.totalPages ? 'disabled' : ''}>
-                下一页
-            </button>
-        `;
-        
-        paginationHtml += '</div>';
-        return paginationHtml;
-    }    // 绑定事件
-    function bindEvents() {
-        // 添加键盘事件支持，使视频卡片可以通过Enter或Space键激活
-        app.addEventListener('keydown', function(e) {
-            if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('fav-item')) {
-                e.preventDefault(); // 阻止空格键滚动页面
-                e.target.click(); // 触发点击事件
-            }
-        });
-        
-        // 使用事件委托处理所有点击事件
-        app.addEventListener('click', async function(e) {
-            // 收藏夹胶囊切换
-            if (e.target.classList.contains('fav-tab') || e.target.parentElement.classList.contains('fav-tab')) {
-                const tabEl = e.target.classList.contains('fav-tab') ? e.target : e.target.parentElement;
-                const folderId = parseInt(tabEl.dataset.folderId, 10);
+                    `;
+                    return;
+                }
                 
-                if (folderId !== state.currentFolder) {
-                    console.log('切换收藏夹:', folderId);
-                    await fetchFolderItems(folderId, 1);
-                    
-                    // 平滑滚动到内容区域
-                    const contentTop = app.querySelector('.fav-section-header');
-                    if (contentTop) {
-                        window.scrollTo({
-                            top: contentTop.offsetTop - 20,
-                            behavior: 'smooth'
-                        });
-                    }
+                if (state.error) {
+                    app.innerHTML = `
+                        <div class="fav-empty">
+                            <p>${state.error}</p>
+                            <button class="page-btn retry-btn">重试</button>
+                        </div>
+                    `;
+                    return;
                 }
-                return;
+                
+                if (!state.folders.length) {
+                    app.innerHTML = `
+                        <div class="fav-empty">
+                            <p>没有找到收藏夹</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                // 渲染收藏夹选择器和内容
+                let html = renderFolderSelector();
+                html += renderCurrentFolder();
+                
+                app.innerHTML = html;
+            }
+              // 渲染收藏夹选择器(胶囊式)
+            function renderFolderSelector() {
+                return `
+                    <div class="fav-tabs">
+                        ${state.folders.map(folder => `
+                            <div class="fav-tab ${folder.id === state.currentFolder ? 'active' : ''}" 
+                                 data-folder-id="${folder.id}">
+                                ${folder.title}
+                                <span class="fav-tab-count">${folder.media_count}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+              // 渲染当前收藏夹内容
+            function renderCurrentFolder() {
+                const currentFolder = state.folders.find(folder => folder.id === state.currentFolder);
+                if (!currentFolder) return '';
+                
+                let html = `
+                    <div class="fav-section">                
+                        <div class="fav-content">
+                            ${state.loading ? `
+                                <div class="fav-loading">
+                                    <div class="spinner"></div>
+                                </div>
+                            ` : renderFolderContent()}
+                        </div>
+                    </div>
+                `;
+                
+                return html;
             }
             
-            // 页码按钮
-            if (e.target.classList.contains('page-num')) {
-                const page = parseInt(e.target.dataset.page, 10);
-                if (page !== state.currentPage) {
-                    await fetchFolderItems(state.currentFolder, page);
-                    
-                    // 平滑滚动到内容区域
-                    const contentTop = app.querySelector('.fav-section-header');
-                    if (contentTop) {
-                        window.scrollTo({
-                            top: contentTop.offsetTop - 20,
-                            behavior: 'smooth'
-                        });
+            // 渲染收藏夹内容
+            function renderFolderContent() {
+                if (!state.currentItems.length) {
+                    return `
+                        <div class="fav-empty">
+                            <p>该收藏夹暂无内容</p>
+                        </div>
+                    `;
+                }
+                
+                let html = `
+                    <div class="fav-grid">
+                        ${state.currentItems.map(item => renderFavItem(item)).join('')}
+                    </div>
+                    ${renderPagination()}
+                `;
+                
+                return html;
+            }    // 渲染单个收藏项 - 改进的现代卡片设计，使用弹出式视频播放
+            function renderFavItem(item) {
+                // 使用数据属性存储视频信息，而不是直接跳转
+                let bvid = item.bvid || '';
+                let cover = item.cover.replace("http://", "https://");
+                let pubdate = item.pubdate ? formatDate(item.pubdate * 1000) : '';
+                
+            return `
+                    <div class="fav-item" data-bvid="${bvid}" data-title="${item.title}" data-up="${item.upper?.name || '未知'}" tabindex="0" role="button" aria-label="播放视频: ${item.title}">
+                        <div class="fav-item-content-wrapper">
+                            <div class="fav-item-thumb">
+                                <div class="fav-item-thumb-placeholder">
+                                    <div class="spinner" style="width:24px;height:24px;"></div>
+                                </div>
+                                <img data-src="${cover}" class="fav-thumb-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" referrerpolicy="no-referrer" alt="${item.title}">
+                                <div class="fav-item-title-area">
+                                    <h3 class="fav-item-title" title="${item.title}">${item.title}</h3>
+                                </div>
+                                <div class="fav-item-up">
+                                    <span class="up-name">UP: ${item.upper?.name || '未知'}</span>
+                                </div>
+                                <div class="fav-item-play-btn">
+                                    <svg viewBox="0 0 24 24" width="36" height="36" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon></svg>
+                                </div>
+                            </div>
+                            <div class="fav-item-desc-wrapper">
+                                <div class="fav-item-desc" title="${item.intro || ''}">${item.intro || '暂无简介'}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // 格式化日期
+            function formatDate(timestamp) {
+                const date = new Date(timestamp);
+                const now = new Date();
+                const diffDays = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+                
+                if (diffDays < 7) {
+                    if (diffDays === 0) {
+                        return '今天';
+                    } else if (diffDays === 1) {
+                        return '昨天';
+                    } else {
+                        return `${diffDays}天前`;
                     }
+                } else {
+                    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
                 }
             }
             
-            // 上一页
-            if (e.target.classList.contains('prev-btn') && !e.target.disabled) {
-                if (state.currentPage > 1) {
-                    await fetchFolderItems(state.currentFolder, state.currentPage - 1);
-                    
-                    // 平滑滚动到内容区域
-                    const contentTop = app.querySelector('.fav-section-header');
-                    if (contentTop) {
-                        window.scrollTo({
-                            top: contentTop.offsetTop - 20,
-                            behavior: 'smooth'
-                        });
+            // 渲染分页
+            function renderPagination() {
+                if (state.totalPages <= 1) return '';
+                
+                let paginationHtml = '<div class="fav-pagination">';
+                
+                // 上一页按钮
+                paginationHtml += `
+                    <button class="page-btn prev-btn" ${state.currentPage <= 1 ? 'disabled' : ''}>
+                        上一页
+                    </button>
+                `;
+                
+                // 页码按钮
+                const maxPagesToShow = 5;
+                let startPage = Math.max(1, state.currentPage - Math.floor(maxPagesToShow / 2));
+                let endPage = Math.min(state.totalPages, startPage + maxPagesToShow - 1);
+                
+                // 调整startPage确保显示正确数量的页码
+                if (endPage - startPage + 1 < maxPagesToShow) {
+                    startPage = Math.max(1, endPage - maxPagesToShow + 1);
+                }
+                
+                // 第一页
+                if (startPage > 1) {
+                    paginationHtml += `<button class="page-btn page-num" data-page="1">1</button>`;
+                    if (startPage > 2) {
+                        paginationHtml += `<button class="page-btn page-ellipsis" disabled>...</button>`;
                     }
                 }
-            }
-            
-            // 下一页
-            if (e.target.classList.contains('next-btn') && !e.target.disabled) {
-                if (state.currentPage < state.totalPages) {
-                    await fetchFolderItems(state.currentFolder, state.currentPage + 1);
-                    
-                    // 平滑滚动到内容区域
-                    const contentTop = app.querySelector('.fav-section-header');
-                    if (contentTop) {
-                        window.scrollTo({
-                            top: contentTop.offsetTop - 20,
-                            behavior: 'smooth'
-                        });
+                
+                // 页码
+                for (let i = startPage; i <= endPage; i++) {
+                    paginationHtml += `
+                        <button class="page-btn page-num ${i === state.currentPage ? 'active' : ''}" data-page="${i}">
+                            ${i}
+                        </button>
+                    `;
+                }
+                
+                // 最后页
+                if (endPage < state.totalPages) {
+                    if (endPage < state.totalPages - 1) {
+                        paginationHtml += `<button class="page-btn page-ellipsis" disabled>...</button>`;
                     }
+                    paginationHtml += `<button class="page-btn page-num" data-page="${state.totalPages}">${state.totalPages}</button>`;
                 }
-            }
-            
-            // 重试按钮
-            if (e.target.classList.contains('retry-btn')) {
-                console.log('点击重试按钮');
-                state.error = null;
-                state.loading = true;
-                renderApp();
-                try {
-                    await initApp();
-                } catch (error) {
-                    console.error('重试失败:', error);
-                    showError(`重试失败: ${error.message}`);
-                }
-            }
-        });        // 不再需要全局事件监听，图片加载和错误处理已在懒加载中通过onload和onerror处理
+                
+                // 下一页按钮
+                paginationHtml += `
+                    <button class="page-btn next-btn" ${state.currentPage >= state.totalPages ? 'disabled' : ''}>
+                        下一页
+                    </button>
+                `;
+                
+                paginationHtml += '</div>';
+                return paginationHtml;
+            }    // 绑定事件
+            function bindEvents() {
+                // 添加键盘事件支持，使视频卡片可以通过Enter或Space键激活
+                app.addEventListener('keydown', function(e) {
+                    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('fav-item')) {
+                        e.preventDefault(); // 阻止空格键滚动页面
+                        e.target.click(); // 触发点击事件
+                    }
+                });
+                
+                // 使用事件委托处理所有点击事件
+                app.addEventListener('click', async function(e) {
+                    // 收藏夹胶囊切换
+                    if (e.target.classList.contains('fav-tab') || e.target.parentElement.classList.contains('fav-tab')) {
+                        const tabEl = e.target.classList.contains('fav-tab') ? e.target : e.target.parentElement;
+                        const folderId = parseInt(tabEl.dataset.folderId, 10);
+                        
+                        if (folderId !== state.currentFolder) {
+                            console.log('切换收藏夹:', folderId);
+                            await fetchFolderItems(folderId, 1);
+                            
+                            // 平滑滚动到内容区域
+                            const contentTop = app.querySelector('.fav-section-header');
+                            if (contentTop) {
+                                window.scrollTo({
+                                    top: contentTop.offsetTop - 20,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                        return;
+                    }
+                    
+                    // 页码按钮
+                    if (e.target.classList.contains('page-num')) {
+                        const page = parseInt(e.target.dataset.page, 10);
+                        if (page !== state.currentPage) {
+                            await fetchFolderItems(state.currentFolder, page);
+                            
+                            // 平滑滚动到内容区域
+                            const contentTop = app.querySelector('.fav-section-header');
+                            if (contentTop) {
+                                window.scrollTo({
+                                    top: contentTop.offsetTop - 20,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    }
+                    
+                    // 上一页
+                    if (e.target.classList.contains('prev-btn') && !e.target.disabled) {
+                        if (state.currentPage > 1) {
+                            await fetchFolderItems(state.currentFolder, state.currentPage - 1);
+                            
+                            // 平滑滚动到内容区域
+                            const contentTop = app.querySelector('.fav-section-header');
+                            if (contentTop) {
+                                window.scrollTo({
+                                    top: contentTop.offsetTop - 20,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    }
+                    
+                    // 下一页
+                    if (e.target.classList.contains('next-btn') && !e.target.disabled) {
+                        if (state.currentPage < state.totalPages) {
+                            await fetchFolderItems(state.currentFolder, state.currentPage + 1);
+                            
+                            // 平滑滚动到内容区域
+                            const contentTop = app.querySelector('.fav-section-header');
+                            if (contentTop) {
+                                window.scrollTo({
+                                    top: contentTop.offsetTop - 20,
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    }
+                    
+                    // 重试按钮
+                    if (e.target.classList.contains('retry-btn')) {
+                        console.log('点击重试按钮');
+                        state.error = null;
+                        state.loading = true;
+                        renderApp();
+                        try {
+                            await initApp();
+                        } catch (error) {
+                            console.error('重试失败:', error);
+                            showError(`重试失败: ${error.message}`);
+                        }
+                    }
+                });        // 不再需要全局事件监听，图片加载和错误处理已在懒加载中通过onload和onerror处理
         // 这样可以避免全局事件导致的潜在问题
-    }
+            }
+            
+            // 启动应用
+            initApp();
+            
+            // 监听页面可见性变化，在返回页面时刷新内容    // 页面可见性相关变量
+            let lastVisibilityChange = Date.now();
+            let needReloadOnReturn = false;
+            const RELOAD_THRESHOLD = 5 * 60 * 1000; // 5分钟阈值
+            
+            // 优化的页面可见性处理
+            document.addEventListener('visibilitychange', function() {
+                const now = Date.now();
+                
+                if (document.visibilityState === 'hidden') {
+                    // 页面离开时记录时间
+                    lastVisibilityChange = now;
+                } else if (document.visibilityState === 'visible') {
+                    // 页面返回时，只有满足以下条件才重新加载:
+                    // 1. 已经加载过内容 (state.folders.length > 0)
+                    // 2. 离开的时间超过阈值 (5分钟) 或已经标记需要重新加载
+                    const timeAway = now - lastVisibilityChange;
+                    if (state.folders.length > 0 && (timeAway > RELOAD_THRESHOLD || needReloadOnReturn)) {
+                        console.log('页面返回，重新加载内容', { timeAway: timeAway/1000 + '秒' });
+                        fetchFolderItems(state.currentFolder, state.currentPage);
+                        needReloadOnReturn = false;
+                    }
+                }
+            });
+            
+            // 添加滚动时的视差和动画效果
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            // 监听元素可见性变化，添加动画
+            function setupScrollEffects() {
+                if (!app) return;
+                
+                const items = app.querySelectorAll('.fav-item');
+                items.forEach((item, index) => {
+                    // 添加延迟动画类
+                    item.style.animationDelay = `${index * 0.05}s`;
+                    observer.observe(item);
+                });
+            }
+              // 当DOM更新时应用滚动效果及图片懒加载
+            const appObserver = new MutationObserver(() => {
+                setupScrollEffects();
+                // 懒加载新添加的图片
+                app.querySelectorAll('img.fav-thumb-img[data-src]').forEach(img => {
+                    imgObserver.observe(img);
+                });
+            });
+            
+            // 监听app容器的变化
+            appObserver.observe(app, { childList: true, subtree: true });
+              // 初始应用滚动效果
+            setupScrollEffects();
+            
+            // 设置图片懒加载
+            function setupImageLazyLoading() {
+                // 创建新的Observer实例
+                const imgObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            const src = img.getAttribute('data-src');
+                            if (src) {
+                                // 先监听加载事件
+                                img.onload = function() {
+                                    img.classList.add('loaded');
+                                    const placeholder = img.previousElementSibling;
+                                    if (placeholder && placeholder.classList.contains('fav-item-thumb-placeholder')) {
+                                        placeholder.innerHTML = '';
+                                    }
+                                };
+                                
+                                // 再监听错误事件
+                                img.onerror = function() {
+                                    console.log('图片加载失败，设置占位图：', src);
+                                    img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"%3E%3Cpath fill="%23ddd" d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/%3E%3C/svg%3E';
+                                    img.classList.add('loaded');
+                                    img.classList.add('error');
+                                    
+                                    const placeholder = img.previousElementSibling;
+                                    if (placeholder && placeholder.classList.contains('fav-item-thumb-placeholder')) {
+                                        placeholder.innerHTML = '<svg fill="#ccc" width="32" height="32" viewBox="0 0 24 24"><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0-2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/></svg>';
+                                    }
+                                };
+                                
+                                // 最后设置图片源
+                                img.src = src;
+                                img.removeAttribute('data-src');
+                            }
+                            imgObserver.unobserve(img);
+                        }
+                    });
+                }, {
+                    threshold: 0.05,
+                    rootMargin: '100px' // 增加预加载区域，提前更多像素开始加载图片
+                });
+                  // 获取所有带data-src属性的图片
+                const lazyImages = document.querySelectorAll('img[data-src]');
+                if (lazyImages.length > 0) {
+                    console.log('设置懒加载图片:', lazyImages.length);
+                    lazyImages.forEach(img => imgObserver.observe(img));
+                }
+                
+                return imgObserver;
+            }
+            
+            // 设置图片懒加载
+            const imgObserver = setupImageLazyLoading();
+              // 性能优化：防抖函数
+            function debounce(func, wait = 50) {
+                let timeout;
+                return function(...args) {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => func.apply(this, args), wait);
+                };
+            }
+              // 设置滚动动画效果
+            function setupScrollAnimations() {
+                // 优化滚动处理
+                window._bilifav_scroll_handler = debounce(() => {
+                    const items = document.querySelectorAll('.fav-item:not(.visible)');
+                    items.forEach(item => {
+                        const rect = item.getBoundingClientRect();
+                        if (rect.top <= window.innerHeight * 0.85) {
+                            item.classList.add('visible');
+                        }
+                    });
+                }, 20);
+                
+                // 清除可能存在的旧事件
+                window.removeEventListener('scroll', window._bilifav_scroll_handler);
+                
+                // 监听滚动事件以触发动画
+                window.addEventListener('scroll', window._bilifav_scroll_handler);
+                  // 初始触发一次
+                window._bilifav_scroll_handler();
+            }
+            
+            // 设置滚动动画
+            setupScrollAnimations();
+
+            // 创建和设置视频弹窗
+            function setupVideoModal() {
+                // 检查是否已存在模态框，避免多次创建
+                let existingModal = document.querySelector('.video-modal');
+                if (existingModal) {
+                    return existingModal; // 如果已存在则直接返回
+                }
+                
+                // 创建视频弹窗
+                const videoModal = document.createElement('div');
+                videoModal.className = 'video-modal';
+                videoModal.innerHTML = `
+                    <div class="video-modal-container">
+                        <div class="video-modal-header">
+                            <h3 class="video-modal-title"></h3>
+                            <div class="video-modal-close">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </div>
+                        </div>            
+                        <div class="video-modal-body">
+                            <iframe class="video-modal-iframe" src="" frameborder="0" scrolling="no" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-modal-info">
+                            <div class="video-modal-up">
+                                <span class="video-modal-up-name"></span>
+                            </div>
+                            <a class="video-modal-open" href="" target="_blank">
+                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                在B站打开
+                            </a>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(videoModal);
+                
+                // 关闭视频弹窗的函数
+                const closeVideoModal = () => {
+                    // 添加关闭动画
+                    const container = videoModal.querySelector('.video-modal-container');
+                    container.style.transform = 'translateY(20px)';
+                    container.style.opacity = '0';
+                    
+                    // 延迟移除活动类以允许动画播放
+                    setTimeout(() => {
+                        videoModal.classList.remove('active');
+                        // 恢复背景滚动
+                        document.body.style.overflow = '';
+                        // 暂停视频
+                        const iframe = videoModal.querySelector('.video-modal-iframe');
+                        iframe.src = "";
+                    }, 300); // 与CSS过渡时间匹配
+                };
+                
+                // 点击关闭按钮
+                videoModal.querySelector('.video-modal-close').addEventListener('click', closeVideoModal);
+                
+                // 点击弹窗外部关闭
+                videoModal.addEventListener('click', (e) => {
+                    if (e.target === videoModal) {
+                        closeVideoModal();
+                    }
+                });
+                  // 按ESC键关闭
+                window._bilifav_esc_handler = (e) => {
+                    if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                        closeVideoModal();
+                    }
+                };
+                
+                // 清除可能存在的旧事件监听器
+                document.removeEventListener('keydown', window._bilifav_esc_handler);
+                document.addEventListener('keydown', window._bilifav_esc_handler);
+                
+                return videoModal;
+            }
+            
+            // 设置视频模态框
+            const videoModal = setupVideoModal();
+              // 添加收藏项点击事件，打开视频弹窗
+            function setupVideoItemsClickEvent() {
+                // 使用事件委托处理视频项点击
+                // 保存处理函数引用，以便清理
+                window._bilifav_click_handler = (e) => {
+                    const favItem = e.target.closest('.fav-item');
+                    if (favItem) {
+                        const bvid = favItem.getAttribute('data-bvid');
+                        if (bvid) {
+                            e.preventDefault();
+                            
+                            // 获取视频模态框（如果不存在则会创建一个）
+                            const videoModal = setupVideoModal();
+                            
+                            // 设置弹窗内容
+                            const title = favItem.getAttribute('data-title');
+                            const upName = favItem.getAttribute('data-up');
+                            
+                            videoModal.querySelector('.video-modal-title').textContent = title;
+                            videoModal.querySelector('.video-modal-up-name').textContent = 'UP: ' + upName;
+                            videoModal.querySelector('.video-modal-open').href = `https://www.bilibili.com/video/${bvid}`;
+                            
+                            // 获取iframe
+                            const iframe = videoModal.querySelector('.video-modal-iframe');
+                            
+                            // 使用bilibili播放器设置iframe源
+                            iframe.src = `https://player.bilibili.com/player.html?bvid=${bvid}&page=1&autoplay=1&danmaku=1`;
+                            
+                            // 显示弹窗
+                            videoModal.classList.add('active');
+                            setTimeout(() => {
+                                videoModal.querySelector('.video-modal-container').style.transform = 'translateY(0)';
+                                videoModal.querySelector('.video-modal-container').style.opacity = '1';
+                            }, 10);
+                        }
+                    }
+                };
+                
+                // 清除可能存在的旧事件监听器
+                document.removeEventListener('click', window._bilifav_click_handler);
+                
+                // 添加点击事件到document，使用事件委托
+                document.addEventListener('click', window._bilifav_click_handler);
+            }
+            
+            // 设置视频项点击事件
+            setupVideoItemsClickEvent();
+        } catch (error) {
+            console.error('初始化过程中发生错误:', error);
+            // 显示用户友好的错误信息
+            const app = document.getElementById('bilibili-favlist-app');
+            if (app) {
+                app.innerHTML = `
+                    <div class="fav-empty">
+                        <p>加载收藏夹失败: ${error.message || '未知错误'}</p>
+                        <button class="page-btn retry-btn" onclick="window.location.reload()">重新加载</button>
+                    </div>
+                `;
+            }
+        }
+    };
+    
+    // 在页面加载完成时初始化，并处理PJAX
+    const init = () => {
+        // 优先使用更现代的事件监听器
+        document.addEventListener('DOMContentLoaded', initBilibiliFavList);
+        
+        // 支持PJAX切换
+        document.addEventListener('pjax:complete', () => {
+            // 延迟执行以确保DOM已更新
+            setTimeout(() => {
+                const app = document.getElementById('bilibili-favlist-app');
+                if (app) {
+                    initBilibiliFavList().catch(error => {
+                        console.error('PJAX后初始化失败:', error);
+                    });
+                }
+            }, 100);
+        });
+    };
     
     // 启动应用
-    initApp();
-    
-    // 监听页面可见性变化，在返回页面时刷新内容    // 页面可见性相关变量
-    let lastVisibilityChange = Date.now();
-    let needReloadOnReturn = false;
-    const RELOAD_THRESHOLD = 5 * 60 * 1000; // 5分钟阈值
-    
-    // 优化的页面可见性处理
-    document.addEventListener('visibilitychange', function() {
-        const now = Date.now();
-        
-        if (document.visibilityState === 'hidden') {
-            // 页面离开时记录时间
-            lastVisibilityChange = now;
-        } else if (document.visibilityState === 'visible') {
-            // 页面返回时，只有满足以下条件才重新加载:
-            // 1. 已经加载过内容 (state.folders.length > 0)
-            // 2. 离开的时间超过阈值 (5分钟) 或已经标记需要重新加载
-            const timeAway = now - lastVisibilityChange;
-            if (state.folders.length > 0 && (timeAway > RELOAD_THRESHOLD || needReloadOnReturn)) {
-                console.log('页面返回，重新加载内容', { timeAway: timeAway/1000 + '秒' });
-                fetchFolderItems(state.currentFolder, state.currentPage);
-                needReloadOnReturn = false;
-            }
-        }
-    });
-    
-    // 添加滚动时的视差和动画效果
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    // 监听元素可见性变化，添加动画
-    function setupScrollEffects() {
-        if (!app) return;
-        
-        const items = app.querySelectorAll('.fav-item');
-        items.forEach((item, index) => {
-            // 添加延迟动画类
-            item.style.animationDelay = `${index * 0.05}s`;
-            observer.observe(item);
-        });
-    }
-      // 当DOM更新时应用滚动效果及图片懒加载
-    const appObserver = new MutationObserver(() => {
-        setupScrollEffects();
-        // 懒加载新添加的图片
-        app.querySelectorAll('img.fav-thumb-img[data-src]').forEach(img => {
-            imgObserver.observe(img);
-        });
-    });
-    
-    // 监听app容器的变化
-    appObserver.observe(app, { childList: true, subtree: true });
-      // 初始应用滚动效果
-    setupScrollEffects();
-    
-    // 添加回到顶部按钮
-    const backToTopBtn = document.createElement('div');
-    backToTopBtn.className = 'back-to-top';
-    backToTopBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>';
-    document.body.appendChild(backToTopBtn);
-    
-    // 监听滚动事件
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
-    });
-    
-    // 回到顶部点击事件
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });    // 设置图片懒加载
-    function setupImageLazyLoading() {
-        // 创建新的Observer实例
-        const imgObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    const src = img.getAttribute('data-src');
-                    if (src) {
-                        // 先监听加载事件
-                        img.onload = function() {
-                            img.classList.add('loaded');
-                            const placeholder = img.previousElementSibling;
-                            if (placeholder && placeholder.classList.contains('fav-item-thumb-placeholder')) {
-                                placeholder.innerHTML = '';
-                            }
-                        };
-                        
-                        // 再监听错误事件
-                        img.onerror = function() {
-                            console.log('图片加载失败，设置占位图：', src);
-                            img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"%3E%3Cpath fill="%23ddd" d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/%3E%3C/svg%3E';
-                            img.classList.add('loaded');
-                            img.classList.add('error');
-                            
-                            const placeholder = img.previousElementSibling;
-                            if (placeholder && placeholder.classList.contains('fav-item-thumb-placeholder')) {
-                                placeholder.innerHTML = '<svg fill="#ccc" width="32" height="32" viewBox="0 0 24 24"><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0-2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/></svg>';
-                            }
-                        };
-                        
-                        // 最后设置图片源
-                        img.src = src;
-                        img.removeAttribute('data-src');
-                    }
-                    imgObserver.unobserve(img);
-                }
-            });
-        }, {
-            threshold: 0.05,
-            rootMargin: '100px' // 增加预加载区域，提前更多像素开始加载图片
-        });
-          // 获取所有带data-src属性的图片
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        if (lazyImages.length > 0) {
-            console.log('设置懒加载图片:', lazyImages.length);
-            lazyImages.forEach(img => imgObserver.observe(img));
-        }
-        
-        return imgObserver;
-    }
-    
-    // 设置图片懒加载
-    const imgObserver = setupImageLazyLoading();
-      // 性能优化：防抖函数
-    function debounce(func, wait = 50) {
-        let timeout;
-        return function(...args) {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => func.apply(this, args), wait);
-        };
-    }
-      // 设置滚动动画效果
-    function setupScrollAnimations() {
-        // 优化滚动处理
-        window._bilifav_scroll_handler = debounce(() => {
-            const items = document.querySelectorAll('.fav-item:not(.visible)');
-            items.forEach(item => {
-                const rect = item.getBoundingClientRect();
-                if (rect.top <= window.innerHeight * 0.85) {
-                    item.classList.add('visible');
-                }
-            });
-        }, 20);
-        
-        // 清除可能存在的旧事件
-        window.removeEventListener('scroll', window._bilifav_scroll_handler);
-        
-        // 监听滚动事件以触发动画
-        window.addEventListener('scroll', window._bilifav_scroll_handler);
-          // 初始触发一次
-        window._bilifav_scroll_handler();
-    }
-    
-    // 设置滚动动画
-    setupScrollAnimations();
-
-    // 创建和设置视频弹窗
-    function setupVideoModal() {
-        // 检查是否已存在模态框，避免多次创建
-        let existingModal = document.querySelector('.video-modal');
-        if (existingModal) {
-            return existingModal; // 如果已存在则直接返回
-        }
-        
-        // 创建视频弹窗
-        const videoModal = document.createElement('div');
-        videoModal.className = 'video-modal';
-        videoModal.innerHTML = `
-            <div class="video-modal-container">
-                <div class="video-modal-header">
-                    <h3 class="video-modal-title"></h3>
-                    <div class="video-modal-close">
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    </div>
-                </div>            
-                <div class="video-modal-body">
-                    <iframe class="video-modal-iframe" src="" frameborder="0" scrolling="no" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts" allowfullscreen></iframe>
-                </div>
-                <div class="video-modal-info">
-                    <div class="video-modal-up">
-                        <span class="video-modal-up-name"></span>
-                    </div>
-                    <a class="video-modal-open" href="" target="_blank">
-                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                        在B站打开
-                    </a>
-                </div>
-            </div>
-        `;
-        document.body.appendChild(videoModal);
-        
-        // 关闭视频弹窗的函数
-        const closeVideoModal = () => {
-            // 添加关闭动画
-            const container = videoModal.querySelector('.video-modal-container');
-            container.style.transform = 'translateY(20px)';
-            container.style.opacity = '0';
-            
-            // 延迟移除活动类以允许动画播放
-            setTimeout(() => {
-                videoModal.classList.remove('active');
-                // 恢复背景滚动
-                document.body.style.overflow = '';
-                // 暂停视频
-                const iframe = videoModal.querySelector('.video-modal-iframe');
-                iframe.src = "";
-            }, 300); // 与CSS过渡时间匹配
-        };
-        
-        // 点击关闭按钮
-        videoModal.querySelector('.video-modal-close').addEventListener('click', closeVideoModal);
-        
-        // 点击弹窗外部关闭
-        videoModal.addEventListener('click', (e) => {
-            if (e.target === videoModal) {
-                closeVideoModal();
-            }
-        });
-          // 按ESC键关闭
-        window._bilifav_esc_handler = (e) => {
-            if (e.key === 'Escape' && videoModal.classList.contains('active')) {
-                closeVideoModal();
-            }
-        };
-        
-        // 清除可能存在的旧事件监听器
-        document.removeEventListener('keydown', window._bilifav_esc_handler);
-        document.addEventListener('keydown', window._bilifav_esc_handler);
-        
-        return videoModal;
-    }
-    
-    // 设置视频模态框
-    const videoModal = setupVideoModal();
-      // 添加收藏项点击事件，打开视频弹窗
-    function setupVideoItemsClickEvent() {
-        // 使用事件委托处理视频项点击
-        // 保存处理函数引用，以便清理
-        window._bilifav_click_handler = (e) => {
-            const favItem = e.target.closest('.fav-item');
-            if (favItem) {
-                const bvid = favItem.getAttribute('data-bvid');
-                if (bvid) {
-                    e.preventDefault();
-                    
-                    // 获取视频模态框（如果不存在则会创建一个）
-                    const videoModal = setupVideoModal();
-                    
-                    // 设置弹窗内容
-                    const title = favItem.getAttribute('data-title');
-                    const upName = favItem.getAttribute('data-up');
-                    
-                    videoModal.querySelector('.video-modal-title').textContent = title;
-                    videoModal.querySelector('.video-modal-up-name').textContent = 'UP: ' + upName;
-                    videoModal.querySelector('.video-modal-open').href = `https://www.bilibili.com/video/${bvid}`;
-                    
-                    // 获取iframe
-                    const iframe = videoModal.querySelector('.video-modal-iframe');
-                    
-                    // 使用bilibili播放器设置iframe源
-                    iframe.src = `https://player.bilibili.com/player.html?bvid=${bvid}&page=1&autoplay=1&danmaku=1`;
-                    
-                    // 显示弹窗
-                    videoModal.classList.add('active');
-                    setTimeout(() => {
-                        videoModal.querySelector('.video-modal-container').style.transform = 'translateY(0)';
-                        videoModal.querySelector('.video-modal-container').style.opacity = '1';
-                    }, 10);
-                }
-            }
-        };
-        
-        // 清除可能存在的旧事件监听器
-        document.removeEventListener('click', window._bilifav_click_handler);
-        
-        // 添加点击事件到document，使用事件委托
-        document.addEventListener('click', window._bilifav_click_handler);
-    }
-    
-    // 设置视频项点击事件
-    setupVideoItemsClickEvent();
-}
-
-// 安全地添加事件监听器，防止重复
-function addEventOnce(element, eventName, handler) {
-    // 生成唯一ID用于标识事件处理函数
-    const handlerId = `${eventName}_handler_${Math.random().toString(36).substr(2, 9)}`;
-    
-    // 移除可能存在的相同事件处理函数
-    if (element[handlerId]) {
-        element.removeEventListener(eventName, element[handlerId]);
-    }
-    
-    // 保存处理函数引用
-    element[handlerId] = handler;
-    
-    // 添加新的事件监听器
-    element.addEventListener(eventName, handler);
-}
-
-// 在页面加载完成时初始化
-addEventOnce(document, 'DOMContentLoaded', initBilibiliFavList);
-
-// 支持PJAX切换页面时的初始化
-addEventOnce(document, 'pjax:complete', function() {
-    // 检查当前页是否为收藏夹页面
-    const app = document.getElementById('bilibili-favlist-app');
-    if (app) {
-        console.log('PJAX切换后重新初始化Bilibili收藏夹应用');
-        // 在PJAX导航完成后，适当延迟确保DOM已完全更新和PJAX处理完成
-        setTimeout(() => {
-            try {
-                initBilibiliFavList();
-            } catch (error) {
-                console.error('PJAX完成后初始化出错:', error);
-            }
-        }, 100); // 增加延迟时间以确保DOM稳定
-    }
-});
+    init();
+})();
 </script>
 
 <?php
