@@ -986,6 +986,10 @@ body.dark .ins-tab .ins-section.active {
   border: 1px solid var(--article-theme-highlight, var(--theme-skin-dark));
 }
 
+body.dark .ins-tab .ins-section:hover {
+  color: var(--article-theme-highlight, var(--theme-skin-dark));
+}
+
 body.dark .ins-section-wrapper {
   background: transparent;
 }
