@@ -3089,7 +3089,7 @@ function get_archive_info($get_page = false) {
             'comments' => 0
         ]
     ];
-    foreach ($posts as $post) {
+        foreach ($posts as $post) {
         $views = get_post_views($post->ID);
         $words = get_meta_words_count($post->ID);
         $comments = get_comments_number($post->ID);
@@ -3118,10 +3118,7 @@ function get_archive_info($get_page = false) {
         
         $year = date('Y', strtotime($post->post_date));
         $month = date('n', strtotime($post->post_date));
-        if ($post->post_password != ''){
-            $post->post_title = __("It's a secret",'sakurairo'); // 隐藏受密码保护文章的标题
-        }
-        $post = [ //仅保存需要的数据（归档、展示区）
+          $post = [ //仅保存需要的数据（归档、展示区）
             'post_title'    => $post->post_title,
             'post_author'     => $post->post_author,
             'post_date'     => $post->post_date,
