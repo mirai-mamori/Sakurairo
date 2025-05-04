@@ -117,9 +117,12 @@ class BilibiliFavList
 		} else {
 			$link = "https://www.bilibili.com/video/" . $item['bvid'];
 		}
+
+		$item['cover'] = str_replace("http://","https://",$item['cover']);
+		
 		// TODO: add lazyload to item-image with typescript
 		return '<div class="column"><a class="folder-item" href="' . $link . '" target="_blank" rel="nofollow">' .
-			'<img class="item-image" src="' . $item['cover'] . '">' .
+			'<img class="item-image" referrerpolicy="no-referrer" src="' . $item['cover'] . '">' .
 			'<div class="item-info"><h3 class="item-title" title="' . $item['title'] . '">' . $item['title'] . '</h3>' .
 			'<div class="item-intro" title="' . $item['intro'] . '">' . $item['intro'] . '</div>' .
 			'</div></a></div>';
