@@ -36,27 +36,27 @@ EOS;
         }
         wp_reset_postdata();
 
-        $tags = get_tags();
-        foreach ($tags as $tag) {
-            $output[] = array(
-                "type" => "tag",
-                "link" => get_term_link($tag),
-                "title" => $tag->name,
-                "comments" => "",
-                "text" => ""
-            );
-        }
+        // $tags = get_tags();
+        // foreach ($tags as $tag) {
+        //     $output[] = array(
+        //         "type" => "tag",
+        //         "link" => get_term_link($tag),
+        //         "title" => $tag->name,
+        //         "comments" => "",
+        //         "text" => ""
+        //     );
+        // }
 
-        $categories = get_categories();
-        foreach ($categories as $category) {
-            $output[] = array(
-                "type" => "category",
-                "link" => get_term_link($category),
-                "title" => $category->name,
-                "comments" => "",
-                "text" => ""
-            );
-        }
+        // $categories = get_categories();
+        // foreach ($categories as $category) {
+        //     $output[] = array(
+        //         "type" => "category",
+        //         "link" => get_term_link($category),
+        //         "title" => $category->name,
+        //         "comments" => "",
+        //         "text" => ""
+        //     );
+        // }
         if (iro_opt('live_search_comment')) {
             $comments = get_comments();
             foreach ($comments as $comment) {
