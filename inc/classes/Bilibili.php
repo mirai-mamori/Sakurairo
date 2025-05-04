@@ -61,7 +61,7 @@ class Bilibili
                         $percent = Bilibili::get_percent($item);
                             $html .= Bilibili::bangumi_item($item, $percent);
                     }
-                    $html .= '</div><br><div id="template-pagination">' . $next . '</div>';
+                    $html .= '<br><div id="template-pagination">' . $next . '</div>';
                     return $html;
                 }
             case 53013: //用户隐私设置未公开
@@ -89,7 +89,7 @@ class Bilibili
                         $percent = Bilibili::get_percent($item);
                         $html .= Bilibili::bangumi_item($item, $percent);
                     }
-                    $html .= '</div><br><div id="template-pagination">' . $next . '</div>';
+                    $html .= '<br><div id="template-pagination">' . $next . '</div>';
                     return $html;
                 }
         }
@@ -103,9 +103,9 @@ class Bilibili
         //in_array('index_show','new_ep')
         return '<div class="column">' .
             '<a class="bangumi-item" href="https://bangumi.bilibili.com/anime/' . $item['season_id'] . '/" target="_blank" rel="nofollow">'
-            .lazyload_img(str_replace('http://', 'https://', $item['cover']),'bangumi-image',array('alt'=>$item['title'])).
+            .lazyload_img(str_replace('http://', 'https://', $item['cover']),'bangumi-image',array('alt'=>$item['title'],'referrerpolicy'=>"no-referrer")).
             '<div class="bangumi-info">' .
-            '<h3 class="bangumi-title" title="' . $item['title'] . '">' . $item['title'] . '</h2>'
+            '<h3 class="bangumi-title" title="' . $item['title'] . '">' . $item['title'] . '</h3>'
             . '<div class="bangumi-summary"> ' . $item['evaluate'] . ' </div>' .
             '<div class="bangumi-status">'
             . '<div class="bangumi-status-bar" style="width: ' . $percent . '%"></div>'

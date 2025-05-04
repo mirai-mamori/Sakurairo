@@ -85,7 +85,7 @@ class BilibiliFavList
 		}
 		$folder_content_info = $folder_resp['data']['info'];
 		$html = '<div class="folder"><div class="folder-top">' .
-			lazyload_img(str_replace('http://', 'https://', $folder_content_info['cover']), 'folder-img', array('alt' => $folder_content_info['title'])) .
+			lazyload_img(str_replace('http://', 'https://', $folder_content_info['cover']), 'folder-img', array('alt' => $folder_content_info['title'],'referrerpolicy'=>"no-referrer")) .
 			'<div class="folder-detail"><h3>' . $folder_content_info['title'] . '</h3>' .
 			'<p>' . __('Item count: ', 'sakurairo') . $folder_content_info['media_count'] . '</p>' .
 			'<button class="expand-button">' . __('Expand', 'sakurairo') . '</button></div></div>' .
