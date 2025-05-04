@@ -323,29 +323,7 @@ get_header();
         width: 100%;
         height: 100%;
         border: none;
-    }
-    
-    .video-modal-body:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 48px;
-        height: 48px;
-        border: 3px solid rgba(255, 255, 255, 0.2);
-        border-top: 3px solid rgba(255, 255, 255, 0.8);
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        z-index: 1;
-    }
-      .video-modal-body.loaded:before {
-        display: none;
-    }
-    
-    .video-modal-iframe[src=""] + .video-modal-body:before {
-        display: none;
-    }
+    }    /* 移除视频加载图标 */
     
     .video-modal-info {
         display: flex;
@@ -685,7 +663,24 @@ get_header();
  * Bilibili 收藏夹现代化展示系统
  * 使用现代JS API实现高性能、平滑的收藏夹浏览体验
  */
-document.addEventListener('DOMContentLoaded', function() {
+// 清理函数，用于清理页面中可能存在的旧资源
+function cleanupBilibiliFavList() {
+    // 清理可能存在的事件监听器
+    window.removeEventListener('scroll', window._bilifav_scroll_handler);
+    document.removeEventListener('keydown', window._bilifav_esc_handler);
+    
+    // 移除可能存在的旧的事件监听器
+    if (window._bilifav_click_handler) {
+        document.removeEventListener('click', window._bilifav_click_handler);
+        window._bilifav_click_handler = null;
+    }
+}
+
+// Bilibili收藏夹应用初始化函数
+function initBilibiliFavList() {
+    // 首先清理可能存在的旧资源
+    cleanupBilibiliFavList();
+    
     // 应用主容器
     const app = document.getElementById('bilibili-favlist-app');
     if (!app) return;
@@ -1335,48 +1330,61 @@ document.addEventListener('DOMContentLoaded', function() {
             top: 0,
             behavior: 'smooth'
         });
-    });    // 图片懒加载优化
-    const imgObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                const src = img.getAttribute('data-src');
-                if (src) {
-                    // 先监听加载事件
-                    img.onload = function() {
-                        img.classList.add('loaded');
-                        const placeholder = img.previousElementSibling;
-                        if (placeholder && placeholder.classList.contains('fav-item-thumb-placeholder')) {
-                            placeholder.innerHTML = '';
-                        }
-                    };
-                    
-                    // 再监听错误事件
-                    img.onerror = function() {
-                        console.log('图片加载失败，设置占位图：', src);
-                        img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"%3E%3Cpath fill="%23ddd" d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/%3E%3C/svg%3E';
-                        img.classList.add('loaded');
-                        img.classList.add('error');
+    });    // 设置图片懒加载
+    function setupImageLazyLoading() {
+        // 创建新的Observer实例
+        const imgObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const src = img.getAttribute('data-src');
+                    if (src) {
+                        // 先监听加载事件
+                        img.onload = function() {
+                            img.classList.add('loaded');
+                            const placeholder = img.previousElementSibling;
+                            if (placeholder && placeholder.classList.contains('fav-item-thumb-placeholder')) {
+                                placeholder.innerHTML = '';
+                            }
+                        };
                         
-                        const placeholder = img.previousElementSibling;
-                        if (placeholder && placeholder.classList.contains('fav-item-thumb-placeholder')) {
-                            placeholder.innerHTML = '<svg fill="#ccc" width="32" height="32" viewBox="0 0 24 24"><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0-2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/></svg>';
-                        }
-                    };
-                    
-                    // 最后设置图片源
-                    img.src = src;
-                    img.removeAttribute('data-src');
+                        // 再监听错误事件
+                        img.onerror = function() {
+                            console.log('图片加载失败，设置占位图：', src);
+                            img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24"%3E%3Cpath fill="%23ddd" d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/%3E%3C/svg%3E';
+                            img.classList.add('loaded');
+                            img.classList.add('error');
+                            
+                            const placeholder = img.previousElementSibling;
+                            if (placeholder && placeholder.classList.contains('fav-item-thumb-placeholder')) {
+                                placeholder.innerHTML = '<svg fill="#ccc" width="32" height="32" viewBox="0 0 24 24"><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0-2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/></svg>';
+                            }
+                        };
+                        
+                        // 最后设置图片源
+                        img.src = src;
+                        img.removeAttribute('data-src');
+                    }
+                    imgObserver.unobserve(img);
                 }
-                imgObserver.unobserve(img);
-            }
+            });
+        }, {
+            threshold: 0.05,
+            rootMargin: '100px' // 增加预加载区域，提前更多像素开始加载图片
         });
-    }, {
-        threshold: 0.05,
-        rootMargin: '100px' // 增加预加载区域，提前更多像素开始加载图片
-    });
+          // 获取所有带data-src属性的图片
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        if (lazyImages.length > 0) {
+            console.log('设置懒加载图片:', lazyImages.length);
+            lazyImages.forEach(img => imgObserver.observe(img));
+        }
+        
+        return imgObserver;
+    }
     
-    // 性能优化：防抖函数
+    // 设置图片懒加载
+    const imgObserver = setupImageLazyLoading();
+      // 性能优化：防抖函数
     function debounce(func, wait = 50) {
         let timeout;
         return function(...args) {
@@ -1384,111 +1392,193 @@ document.addEventListener('DOMContentLoaded', function() {
             timeout = setTimeout(() => func.apply(this, args), wait);
         };
     }
+      // 设置滚动动画效果
+    function setupScrollAnimations() {
+        // 优化滚动处理
+        window._bilifav_scroll_handler = debounce(() => {
+            const items = document.querySelectorAll('.fav-item:not(.visible)');
+            items.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.85) {
+                    item.classList.add('visible');
+                }
+            });
+        }, 20);
+        
+        // 清除可能存在的旧事件
+        window.removeEventListener('scroll', window._bilifav_scroll_handler);
+        
+        // 监听滚动事件以触发动画
+        window.addEventListener('scroll', window._bilifav_scroll_handler);
+          // 初始触发一次
+        window._bilifav_scroll_handler();
+    }
     
-    // 优化滚动处理
-    const handleScroll = debounce(() => {
-        const items = document.querySelectorAll('.fav-item:not(.visible)');
-        items.forEach(item => {
-            const rect = item.getBoundingClientRect();
-            if (rect.top <= window.innerHeight * 0.85) {
-                item.classList.add('visible');
+    // 设置滚动动画
+    setupScrollAnimations();
+
+    // 创建和设置视频弹窗
+    function setupVideoModal() {
+        // 检查是否已存在模态框，避免多次创建
+        let existingModal = document.querySelector('.video-modal');
+        if (existingModal) {
+            return existingModal; // 如果已存在则直接返回
+        }
+        
+        // 创建视频弹窗
+        const videoModal = document.createElement('div');
+        videoModal.className = 'video-modal';
+        videoModal.innerHTML = `
+            <div class="video-modal-container">
+                <div class="video-modal-header">
+                    <h3 class="video-modal-title"></h3>
+                    <div class="video-modal-close">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </div>
+                </div>            
+                <div class="video-modal-body">
+                    <iframe class="video-modal-iframe" src="" frameborder="0" scrolling="no" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts" allowfullscreen></iframe>
+                </div>
+                <div class="video-modal-info">
+                    <div class="video-modal-up">
+                        <span class="video-modal-up-name"></span>
+                    </div>
+                    <a class="video-modal-open" href="" target="_blank">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        在B站打开
+                    </a>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(videoModal);
+        
+        // 关闭视频弹窗的函数
+        const closeVideoModal = () => {
+            // 添加关闭动画
+            const container = videoModal.querySelector('.video-modal-container');
+            container.style.transform = 'translateY(20px)';
+            container.style.opacity = '0';
+            
+            // 延迟移除活动类以允许动画播放
+            setTimeout(() => {
+                videoModal.classList.remove('active');
+                // 恢复背景滚动
+                document.body.style.overflow = '';
+                // 暂停视频
+                const iframe = videoModal.querySelector('.video-modal-iframe');
+                iframe.src = "";
+            }, 300); // 与CSS过渡时间匹配
+        };
+        
+        // 点击关闭按钮
+        videoModal.querySelector('.video-modal-close').addEventListener('click', closeVideoModal);
+        
+        // 点击弹窗外部关闭
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                closeVideoModal();
             }
         });
-    }, 20);
-    
-    // 监听滚动事件以触发动画
-    window.addEventListener('scroll', handleScroll);
-      // 初始触发一次
-    handleScroll();
-    
-    // 创建视频弹窗
-    const videoModal = document.createElement('div');
-    videoModal.className = 'video-modal';
-    videoModal.innerHTML = `
-        <div class="video-modal-container">
-            <div class="video-modal-header">
-                <h3 class="video-modal-title"></h3>
-                <div class="video-modal-close">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </div>
-            </div>
-            <div class="video-modal-body">
-                <iframe class="video-modal-iframe" src="" frameborder="0" scrolling="no" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts" allowfullscreen></iframe>
-            </div>
-            <div class="video-modal-info">
-                <div class="video-modal-up">
-                    <span class="video-modal-up-name"></span>
-                </div>
-                <a class="video-modal-open" href="" target="_blank">
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    在B站打开
-                </a>
-            </div>
-        </div>
-    `;
-    document.body.appendChild(videoModal);    // 关闭视频弹窗
-    const closeVideoModal = () => {
-        // 添加关闭动画
-        const container = videoModal.querySelector('.video-modal-container');
-        container.style.transform = 'translateY(20px)';
-        container.style.opacity = '0';
-        
-        // 延迟移除活动类以允许动画播放
-        setTimeout(() => {
-            videoModal.classList.remove('active');
-            // 恢复背景滚动
-            document.body.style.overflow = '';
-            // 暂停视频
-            const iframe = videoModal.querySelector('.video-modal-iframe');
-            iframe.src = "";
-        }, 300); // 与CSS过渡时间匹配
-    };
-    
-    // 点击关闭按钮
-    videoModal.querySelector('.video-modal-close').addEventListener('click', closeVideoModal);
-    
-    // 点击弹窗外部关闭
-    videoModal.addEventListener('click', (e) => {
-        if (e.target === videoModal) {
-            closeVideoModal();
-        }
-    });
-    
-    // 按ESC键关闭
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && videoModal.classList.contains('active')) {
-            closeVideoModal();
-        }
-    });
-    
-    // 添加收藏项点击事件，打开视频弹窗
-    document.addEventListener('click', (e) => {
-        const favItem = e.target.closest('.fav-item');
-        if (favItem) {
-            const bvid = favItem.getAttribute('data-bvid');
-            if (bvid) {
-                e.preventDefault();
-                
-                // 设置弹窗内容
-                const title = favItem.getAttribute('data-title');
-                const upName = favItem.getAttribute('data-up');
-                
-                videoModal.querySelector('.video-modal-title').textContent = title;
-                videoModal.querySelector('.video-modal-up-name').textContent = 'UP: ' + upName;
-                videoModal.querySelector('.video-modal-open').href = `https://www.bilibili.com/video/${bvid}`;
-                  // 使用vbilibili短代码格式设置iframe源
-                const iframe = videoModal.querySelector('.video-modal-iframe');
-                iframe.src = `https://player.bilibili.com/player.html?bvid=${bvid}&page=1&autoplay=1&danmaku=1`;
-                
-                // 显示弹窗
-                videoModal.classList.add('active');
-                setTimeout(() => {
-                    videoModal.querySelector('.video-modal-container').style.transform = 'translateY(0)';
-                    videoModal.querySelector('.video-modal-container').style.opacity = '1';
-                }, 10);
+          // 按ESC键关闭
+        window._bilifav_esc_handler = (e) => {
+            if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                closeVideoModal();
             }
-        }
-    });
+        };
+        
+        // 清除可能存在的旧事件监听器
+        document.removeEventListener('keydown', window._bilifav_esc_handler);
+        document.addEventListener('keydown', window._bilifav_esc_handler);
+        
+        return videoModal;
+    }
+    
+    // 设置视频模态框
+    const videoModal = setupVideoModal();
+      // 添加收藏项点击事件，打开视频弹窗
+    function setupVideoItemsClickEvent() {
+        // 使用事件委托处理视频项点击
+        // 保存处理函数引用，以便清理
+        window._bilifav_click_handler = (e) => {
+            const favItem = e.target.closest('.fav-item');
+            if (favItem) {
+                const bvid = favItem.getAttribute('data-bvid');
+                if (bvid) {
+                    e.preventDefault();
+                    
+                    // 获取视频模态框（如果不存在则会创建一个）
+                    const videoModal = setupVideoModal();
+                    
+                    // 设置弹窗内容
+                    const title = favItem.getAttribute('data-title');
+                    const upName = favItem.getAttribute('data-up');
+                    
+                    videoModal.querySelector('.video-modal-title').textContent = title;
+                    videoModal.querySelector('.video-modal-up-name').textContent = 'UP: ' + upName;
+                    videoModal.querySelector('.video-modal-open').href = `https://www.bilibili.com/video/${bvid}`;
+                    
+                    // 获取iframe
+                    const iframe = videoModal.querySelector('.video-modal-iframe');
+                    
+                    // 使用bilibili播放器设置iframe源
+                    iframe.src = `https://player.bilibili.com/player.html?bvid=${bvid}&page=1&autoplay=1&danmaku=1`;
+                    
+                    // 显示弹窗
+                    videoModal.classList.add('active');
+                    setTimeout(() => {
+                        videoModal.querySelector('.video-modal-container').style.transform = 'translateY(0)';
+                        videoModal.querySelector('.video-modal-container').style.opacity = '1';
+                    }, 10);
+                }
+            }
+        };
+        
+        // 清除可能存在的旧事件监听器
+        document.removeEventListener('click', window._bilifav_click_handler);
+        
+        // 添加点击事件到document，使用事件委托
+        document.addEventListener('click', window._bilifav_click_handler);
+    }
+    
+    // 设置视频项点击事件
+    setupVideoItemsClickEvent();
+}
+
+// 安全地添加事件监听器，防止重复
+function addEventOnce(element, eventName, handler) {
+    // 生成唯一ID用于标识事件处理函数
+    const handlerId = `${eventName}_handler_${Math.random().toString(36).substr(2, 9)}`;
+    
+    // 移除可能存在的相同事件处理函数
+    if (element[handlerId]) {
+        element.removeEventListener(eventName, element[handlerId]);
+    }
+    
+    // 保存处理函数引用
+    element[handlerId] = handler;
+    
+    // 添加新的事件监听器
+    element.addEventListener(eventName, handler);
+}
+
+// 在页面加载完成时初始化
+addEventOnce(document, 'DOMContentLoaded', initBilibiliFavList);
+
+// 支持PJAX切换页面时的初始化
+addEventOnce(document, 'pjax:complete', function() {
+    // 检查当前页是否为收藏夹页面
+    const app = document.getElementById('bilibili-favlist-app');
+    if (app) {
+        console.log('PJAX切换后重新初始化Bilibili收藏夹应用');
+        // 在PJAX导航完成后，适当延迟确保DOM已完全更新和PJAX处理完成
+        setTimeout(() => {
+            try {
+                initBilibiliFavList();
+            } catch (error) {
+                console.error('PJAX完成后初始化出错:', error);
+            }
+        }, 100); // 增加延迟时间以确保DOM稳定
+    }
 });
 </script>
 
