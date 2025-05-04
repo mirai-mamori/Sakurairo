@@ -210,8 +210,5 @@ get_header();
         <?php endif; ?>
     </article>
 <?php endwhile; ?>
-
-<script src="<?php global $shared_lib_basepath;
-                echo $shared_lib_basepath ?>/js/page-bilibilifav.js" type="text/javascript"></script>
 <?php
 get_footer();
