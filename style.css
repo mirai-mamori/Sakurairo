@@ -2556,17 +2556,18 @@ h1.main-title {
   -webkit-transform: rotate(-45deg);
 }
 
-.search-form .search-input {
+.dialog-search-form .search-form .search-input {
   display: flex;
   justify-content: center;
   position: sticky;
   margin: 2vh;
 }
 
-.search-form .search-input input {
+.dialog-search-form .search-form .search-input input {
   font-size: 3vh;
   border-radius: 50px;
   width: 80%;
+  padding-left: 3%;
 }
 
 .ins-section-wrapper {
