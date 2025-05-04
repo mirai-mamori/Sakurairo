@@ -47,23 +47,6 @@ body.dark input.m-search-input {
   background: var(--dark-bg-hover);
 }
 
-body.dark .ins-section .ins-search-item.active,
-body.dark .ins-section .ins-search-item.active .ins-slug,
-body.dark .ins-section .ins-search-item.active .ins-search-preview{
-  color: var(--dark-text-primary);
-  background: var(--dark-bg-primary);
-}
-
-body.dark .ins-section .ins-section-header {
-  border-bottom: none;
-  background: var(--dark-bg-primary) !important;
-}
-
-body.dark .search_close:after,
-body.dark .search_close:before {
-  background-color: var(--dark-text-primary);
-}
-
 body.dark .post-date, body.dark .post-meta {
   color: #b3b3b3 !important;
   background-color: #33333360;
@@ -1001,4 +984,25 @@ body.dark .ins-tab .ins-section.active {
   box-shadow: 0 1px -1px 2px var(--article-theme-highlight, var(--theme-skin-dark));
   background: var(--article-theme-highlight, var(--theme-skin-dark));
   border: 1px solid var(--article-theme-highlight, var(--theme-skin-dark));
+}
+
+body.dark .ins-section-wrapper {
+  background: transparent;
+}
+
+body.dark .ins-section .ins-search-item.active,
+body.dark .ins-section .ins-search-item.active .ins-slug,
+body.dark .ins-section .ins-search-item.active .ins-search-preview{
+  color: var(--dark-text-primary);
+  background: var(--dark-bg-primary);
+}
+
+body.dark .ins-section .ins-section-header {
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.08);
+  background: var(--dark-bg-primary) !important;
+}
+
+body.dark .search_close:after,
+body.dark .search_close:before {
+  background-color: var(--dark-text-primary);
 }
