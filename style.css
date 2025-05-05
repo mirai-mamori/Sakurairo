@@ -19,8 +19,8 @@ Tags: AI-assisted reading, Colorful, User-friendly, Well-rounded, Feature-rich
 /* Base HTML Element Styles */
 
 * {
-  transition: all 0.6s ease-in-out;
-  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.4s cubic-bezier(0.07, 0.53, 0.65, 0.95);;
+  -webkit-transition: all 0.4s cubic-bezier(0.07, 0.53, 0.65, 0.95);;
 }
 
 i,i:hover{
@@ -600,7 +600,7 @@ blockquote:after {
   display: flex;
   white-space: nowrap;
   width: auto;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-out;
   color: var(--theme-skin);
   font-weight: 400;
   white-space: nowrap;
@@ -613,7 +613,7 @@ blockquote:after {
 .site-title:hover {
   background-color: var(--theme-skin-matching);
   border-radius: 50px;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-out;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -674,13 +674,13 @@ blockquote:after {
 .nav-search-wrapper nav ul li a {
   border-radius: 50px;
   padding: 8px 12px;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in;
   font-size: 15px;
 }
 
 .nav-search-wrapper nav ul li a:hover {
   background-color: var(--theme-skin-matching);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-out;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -1185,7 +1185,7 @@ body.dark .site-footer {
 
 .site-footer.show {
   bottom: 0;
-  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out, background 0.6s ease-in-out, box-shadow 0.6s ease-in-out, bottom 1s cubic-bezier(0.25, 1.1, 0.5, 1); 
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out, background 0.6s ease-in-out, box-shadow 0.6s ease-in-out, bottom 0.9s cubic-bezier(0.22, 0.84, 0.46, 1.04);
 }
 
 .site-info {
@@ -2067,8 +2067,8 @@ nav#comments-navi {
   padding: 0 6px;
   transform-origin: 0 0;
   pointer-events: none;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.25s cubic-bezier(0.19, 0.54, 0.68, 1);
+  -webkit-transition: all 0.25s cubic-bezier(0.19, 0.54, 0.68, 1);
 }
 
 .commentbody:not(:placeholder-shown)~.input-label {
@@ -3708,7 +3708,7 @@ td.hljs-ln-numbers {
   flex-direction: column;
   z-index: 99;
   transform: translateY(100%);
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.35s ease-in-out;
   right: 50px;
   max-height: 85%;
   overflow-y: auto;
@@ -3716,7 +3716,7 @@ td.hljs-ln-numbers {
 
 .skin-menu.show {
   transform: translateY(0);
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.35s cubic-bezier(0.22, 0.84, 0.46, 1.04);
   right: 50px;
 }
 
@@ -4589,6 +4589,8 @@ object {
   display: inline-flex;
   flex-direction: column;
   z-index: 2;
+  transition: all 0.5s cubic-bezier(0.07,0.53,0.65,0.95);
+    -webkit-transition: all 0.5s cubic-bezier(0.07,0.53,0.65,0.95);
 }
 
 .post-thumb:hover{
