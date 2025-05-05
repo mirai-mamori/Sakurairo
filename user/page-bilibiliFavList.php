@@ -464,6 +464,18 @@ get_header();
         .page-btn.prev-btn, .page-btn.next-btn {
             padding: 0 12px;
         }
+
+        /* 防止关闭按钮在标题过长时变形 */
+        .video-modal-header {
+            padding: 12px 15px; /* 稍微减少内边距 */
+        }
+        .video-modal-title {
+            font-size: 1rem; /* 稍微减小标题字号 */
+            margin-right: 10px; /* 增加与关闭按钮的间距 */
+        }
+        .video-modal-close {
+            flex-shrink: 0; /* 防止按钮收缩 */
+        }
     }
       /* 暗色模式 */
     body.dark .fav-item {
