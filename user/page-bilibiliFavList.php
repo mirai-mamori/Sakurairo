@@ -224,14 +224,31 @@ get_header();
         align-items: center;
         min-height: 200px;
     }
-    
-    .spinner {
+      .spinner {
         width: 40px;
         height: 40px;
         border: 3px solid rgba(0, 0, 0, 0.1);
         border-radius: 50%;
         border-top-color: var(--theme-skin-matching, #505050);
         animation: spin 1s ease-in-out infinite;
+    }
+    
+    /* 预占位卡片样式增强 */
+    .fav-item-skeleton .fav-item-desc {
+        background: #f0f0f0;
+        height: 1rem;
+        width: 90%;
+        border-radius: 4px;
+        margin-bottom: 8px;
+    }
+    
+    .fav-item-skeleton .fav-item-desc:last-child {
+        width: 70%;
+    }
+    
+    /* 暗色模式下的预占位卡片 */
+    body.dark .fav-item-skeleton .fav-item-desc {
+        background: #3a3a3a;
     }
     
     .refresh-btn{
@@ -627,14 +644,27 @@ get_header();
     <article <?php post_class("post-item"); ?>>
         <?php the_content('', true); ?>
 
-        <?php if (!empty($bgm)) : ?>
-            <div id="bilibili-favlist-app">
-                <!-- 加载状态 -->
-                <div class="fav-loading">
-                    <div class="spinner"></div>
+        <?php if (!empty($bgm)) : ?>            <div id="bilibili-favlist-app">
+                <!-- 初始加载状态使用预占位卡片 -->
+                <div class="fav-section">
+                    <div class="fav-content">
+                        <div class="fav-grid">
+                            <!-- 生成9个预占位卡片作为加载状态 -->
+                            <?php for ($i = 0; $i < 9; $i++): ?>                            <div class="fav-item fav-item-skeleton">
+                                <div class="fav-item-content-wrapper">
+                                    <div class="fav-item-thumb">
+                                        <div class="fav-item-thumb-placeholder"></div>
+                                    </div>
+                                    <div class="fav-item-desc-wrapper">
+                                        <div class="fav-item-desc"></div>
+                                        <div class="fav-item-desc"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endfor; ?>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- 收藏夹内容将通过JS动态加载 -->
             </div>
         <?php else : ?>
             <div class="row">
@@ -837,12 +867,9 @@ get_header();
                 } finally {
                     state.loading = false;
                 }
-            }    // 获取收藏夹内容
+            }    // 获取收藏夹内容            
             async function fetchFolderItems(folderId, page = 1, forceRefresh = false) {
                 state.loading = true;
-                renderApp();
-                
-                // 如果不是强制刷新，检查是否有有效缓存
                 if (!forceRefresh) {
                     const cachedData = cache.get(folderId, page);
                     if (cache.isValid(cachedData)) {
@@ -939,18 +966,8 @@ get_header();
                 state.loading = false;
                 renderApp();
             }
-            
-            // 渲染整个应用
+              // 渲染整个应用
             function renderApp() {
-                if (state.loading && !state.currentItems.length) {
-                    app.innerHTML = `
-                        <div class="fav-loading">
-                            <div class="spinner"></div>
-                        </div>
-                    `;
-                    return;
-                }
-                
                 if (state.error) {
                     app.innerHTML = `
                         <div class="fav-empty">
