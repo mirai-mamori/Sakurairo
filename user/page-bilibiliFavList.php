@@ -1,12 +1,11 @@
 <?php
-
-/**
+/*
   Template Name: Bilibili FavList Template
- */
+*/
 get_header();
 ?>
+
 <style>
-    /* 保留标题样式 */
     span.linkss-title {
         font-size: 30px;
         text-align: center;
@@ -15,11 +14,11 @@ get_header();
         letter-spacing: 2px;
         font-weight: var(--global-font-weight);
     }
-      /* 现代化容器样式 */
     .site-content {
         max-width: 1280px;
     }
-      /* 收藏夹列表容器 - 强制3列网格布局 */
+
+    /* 收藏夹列表容器 - 强制3列网格布局 */
     .fav-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* 强制3列布局 */
@@ -36,7 +35,8 @@ get_header();
     .fav-content {
         position: relative;
         min-height: 200px;
-    }    /* 视频卡片样式 - 更现代大胆的设计 */
+    }
+    /* 视频卡片样式 */
     .fav-item {
         position: relative;
         border-radius: 16px;
@@ -46,13 +46,13 @@ get_header();
         display: flex;
         flex-direction: column;
         height: 100%;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         cursor: pointer;
     }
     
     .fav-item:hover {
         transform: translateY(-6px);
-        box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.2);
     }
     
     .fav-item:focus, 
@@ -66,12 +66,12 @@ get_header();
         flex-direction: column;
         height: 100%;
     }
-      .fav-item-thumb {
+    .fav-item-thumb {
         position: relative;
-        padding-top: 56.25%; /* 16:9比例，避免过长 */
+        padding-top: 56.25%;
         overflow: hidden;
         background: #f0f0f0;
-        border-radius: 8px 8px 0 0; /* 上圆角 */
+        border-radius: 8px 8px 0 0;
     }
     
     .fav-item-thumb img {
@@ -131,10 +131,11 @@ get_header();
         text-overflow: ellipsis;
         text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         display: block;
-    }    /* 添加父容器用于包装描述内容，确保line-clamp正常生效 */
+    }
+    /* 添加父容器用于包装描述内容，确保line-clamp正常生效 */
     .fav-item-desc-wrapper {
         padding: 14px 16px;
-        height: calc(3rem + 28px); /* 2行文本高度(1.5 * 0.9 * 2) + 上下padding */
+        height: calc(3rem + 28px);
         box-sizing: border-box;
         overflow: hidden;
         position: relative;
@@ -236,7 +237,7 @@ get_header();
     @keyframes spin {
         to { transform: rotate(360deg); }
     }
-      /* 为空状态 */
+    /* 为空状态 */
     .fav-empty {
         text-align: center;
         padding: 40px 0;
@@ -323,8 +324,8 @@ get_header();
         width: 100%;
         height: 100%;
         border: none;
-    }    /* 移除视频加载图标 */
-    
+    }
+
     .video-modal-info {
         display: flex;
         justify-content: space-between;
@@ -443,6 +444,10 @@ get_header();
             gap: 16px;
         }
         
+        .fav-item-title{
+            line-height: 1.5;
+        }
+
         .fav-item-thumb {
             padding-top: 56.25%; /* 保持16:9比例 */
         }
@@ -483,7 +488,8 @@ get_header();
         border-color: rgba(255, 255, 255, 0.1);
         border-top-color: var(--theme-skin-dark, #eee);
     }
-      /* 收藏夹胶囊选择器样式 */
+    
+    /* 收藏夹胶囊选择器样式 */
     .fav-tabs {
         margin: 30px 0;
         display: flex;
@@ -496,7 +502,8 @@ get_header();
     .fav-tab {
         padding: 10px 18px;
         border-radius: 30px;
-        background-color: #f5f5f5;
+        background-color: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         color: #555;
         font-size: 0.95rem;
         font-weight: 500;
@@ -509,7 +516,8 @@ get_header();
     }
     
     .fav-tab:hover {
-        background-color: #eee;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         transform: translateY(-2px);
     }
     
@@ -540,18 +548,18 @@ get_header();
     }
 
     body.dark .fav-tab {
-        background-color: #2d2d2d;
+        background-color: var(--dark-bg-secondary);
         color: #e0e0e0;
     }
     
     body.dark .fav-tab:hover {
-        background-color: #3a3a3a;
+        background-color: var(--dark-bg-hover);
     }
     
     body.dark .fav-tab-count {
         background: rgba(255, 255, 255, 0.1);
     }
-      /* 简化的动画效果 */
+    
     @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
@@ -1233,8 +1241,7 @@ get_header();
                             showError(`重试失败: ${error.message}`);
                         }
                     }
-                });        // 不再需要全局事件监听，图片加载和错误处理已在懒加载中通过onload和onerror处理
-        // 这样可以避免全局事件导致的潜在问题
+                });
             }
             
             // 启动应用

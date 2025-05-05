@@ -1,11 +1,10 @@
 <?php
-
-/**
- * Template Name: Steam Library Template
- */
+/*
+  Template Name: Steam Library Template
+*/
 get_header();
-
 ?>
+
 <style>
     .site-content {
         max-width: 1280px;
