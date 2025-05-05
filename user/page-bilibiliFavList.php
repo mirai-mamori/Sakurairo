@@ -664,6 +664,9 @@ get_header();
     </article>
 <?php endwhile; ?>
 <script>
+ // Pass admin status to JavaScript
+ const isAdmin = <?php echo json_encode(current_user_can('manage_options')); ?>;
+
  (function() {
     // --- Scope variables for handlers and observers ---
     let visibilityHandler = null;
@@ -1142,6 +1145,22 @@ get_header();
             }
 
             function renderFolderSelector() {
+                let refreshButtonHtml = '';
+                // Only add refresh button if the user is an admin
+                if (isAdmin) {
+                    refreshButtonHtml = `
+                        <div class="fav-tab refresh-btn" title="强制刷新数据 (仅管理员可见)">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 2v6h6"></path>
+                                <path d="M21 12A9 9 0 0 0 6 5.3L3 8"></path>
+                                <path d="M21 22v-6h-6"></path>
+                                <path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"></path>
+                            </svg>
+                            <span class="refresh-text">刷新</span>
+                        </div>
+                    `;
+                }
+
                 return `
                     <div class="fav-tabs">
                         ${state.folders.map(folder => `
@@ -1151,15 +1170,7 @@ get_header();
                                 <span class="fav-tab-count">${folder.media_count}</span>
                             </div>
                         `).join('')}
-                        <div class="fav-tab refresh-btn" title="强制刷新数据">
-                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 2v6h6"></path>
-                                <path d="M21 12A9 9 0 0 0 6 5.3L3 8"></path>
-                                <path d="M21 22v-6h-6"></path>
-                                <path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"></path>
-                            </svg>
-                            <span class="refresh-text">刷新</span>
-                        </div>
+                        ${refreshButtonHtml}
                     </div>
                 `;
             }
@@ -1321,13 +1332,39 @@ get_header();
                  // Main click handler using event delegation
                  appClickHandler = async function(e) {
                     const target = e.target;
+                    const REFRESH_COOLDOWN = 60 * 1000; // 60 seconds cooldown
 
-                    // Refresh button
+                    // Refresh button (Check isAdmin again for safety, though button shouldn't exist if not admin)
                     const refreshBtn = target.closest('.refresh-btn');
-                    if (refreshBtn && !refreshBtn.classList.contains('refreshing')) {
+                    if (isAdmin && refreshBtn && !refreshBtn.classList.contains('refreshing')) {
+                        const lastRefreshTs = parseInt(localStorage.getItem('bilibili_last_refresh_ts') || '0', 10);
+                        const now = Date.now();
+                        const remainingTime = REFRESH_COOLDOWN - (now - lastRefreshTs);
+                        const refreshTextSpan = refreshBtn.querySelector('.refresh-text');
+
+                        if (remainingTime > 0) {
+                            // console.log(`刷新冷却中，剩余 ${Math.ceil(remainingTime / 1000)} 秒`);
+                            if (refreshTextSpan) {
+                                const originalText = refreshTextSpan.textContent;
+                                refreshTextSpan.textContent = `请稍后 (${Math.ceil(remainingTime / 1000)}s)`;
+                                // Temporarily disable? Or just show text. Let's just show text.
+                                setTimeout(() => {
+                                    // Check if the button still exists and text hasn't changed
+                                    const currentBtn = app.querySelector('.refresh-btn');
+                                    const currentTextSpan = currentBtn?.querySelector('.refresh-text');
+                                    if (currentTextSpan && currentTextSpan.textContent.startsWith('请稍后')) {
+                                        currentTextSpan.textContent = '刷新';
+                                    }
+                                }, remainingTime);
+                            }
+                            return; // Exit if in cooldown
+                        }
+
                         // console.log('点击强制刷新按钮');
+                        localStorage.setItem('bilibili_last_refresh_ts', now.toString()); // Set cooldown timestamp
                         refreshBtn.classList.add('refreshing');
-                        refreshBtn.querySelector('.refresh-text').textContent = '刷新中...';
+                        if (refreshTextSpan) refreshTextSpan.textContent = '刷新中...';
+
                         try {
                             // Clear relevant localStorage and memory cache
                             localStorage.removeItem('bilibili_favlist_folders');
@@ -1354,7 +1391,8 @@ get_header();
                             const currentRefreshBtn = app.querySelector('.refresh-btn');
                             if (currentRefreshBtn) {
                                 currentRefreshBtn.classList.remove('refreshing');
-                                currentRefreshBtn.querySelector('.refresh-text').textContent = '刷新';
+                                const currentTextSpan = currentRefreshBtn.querySelector('.refresh-text');
+                                if (currentTextSpan) currentTextSpan.textContent = '刷新';
                             }
                         }
                         return;
