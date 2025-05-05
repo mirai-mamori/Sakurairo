@@ -634,7 +634,8 @@ get_header();
     <article <?php post_class("post-item"); ?>>
         <?php the_content('', true); ?>
 
-        <?php if (!empty($bgm)) : ?>            <div id="bilibili-favlist-app">
+        <?php if (!empty($bgm)) : ?>            
+            <div id="bilibili-favlist-app">
                 <!-- 初始加载状态使用预占位卡片 -->
                 <div class="fav-section">
                     <div class="fav-content">
@@ -656,6 +657,29 @@ get_header();
                     </div>
                 </div>
             </div>
+
+            <dialog class="video-modal">
+                <div class="video-modal-container">
+                    <div class="video-modal-header">
+                        <h3 class="video-modal-title"></h3>
+                        <div class="video-modal-close" role="button" aria-label="关闭视频播放器">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </div>
+                    </div>
+                    <div class="video-modal-body">
+                        <iframe class="video-modal-iframe" src="about:blank" frameborder="0" scrolling="no" sandbox="allow-scripts allow-same-origin allow-presentation allow-forms" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-modal-info">
+                        <div class="video-modal-up">
+                            <span class="video-modal-up-name"></span>
+                        </div>
+                        <a class="video-modal-open" href="" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            在B站打开
+                        </a>
+                    </div>
+                </div>
+            </dialog>
         <?php else : ?>
             <div class="row">
                 <p> <?php _e("Please fill in the Bilibili UID in Sakura Options.", "sakurairo"); ?></p>
