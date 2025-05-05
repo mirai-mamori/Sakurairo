@@ -42,14 +42,13 @@ get_header();
         border-radius: 16px;
         overflow: hidden;
         background: #fff;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
         display: flex;
         flex-direction: column;
         height: 100%;
         box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         cursor: pointer;
-        transition: opacity 0.4s ease, transform 0.4s ease; /* 添加 transition */
-        transform: translateY(0); /* 默认状态 */
+        transition: all 0.4s ease; 
+        transform: translateY(0);
         opacity: 1;
     }
     
@@ -564,17 +563,6 @@ get_header();
         background: rgba(255, 255, 255, 0.1);
     }
     
-    /* 移除旧的 keyframes 动画 */
-    /* @keyframes fadeIn { ... } */
-    
-    .fav-item {
-        /* opacity: 0; */ /* 移除初始 opacity: 0 */
-        /* animation: fadeIn 0.4s ease forwards; */ /* 移除 animation */
-        transition: opacity 0.4s ease, transform 0.4s ease; /* 添加 transition */
-        transform: translateY(0); /* 默认状态 */
-        opacity: 1;
-    }
-    
     /* 定义进入动画的初始状态 */
     .fav-item.fav-item-enter {
         opacity: 0;
@@ -679,7 +667,7 @@ get_header();
 
     // --- Cleanup Function ---
     const cleanup = () => {
-        console.log('Cleaning up Bilibili FavList...');
+        // console.log('Cleaning up Bilibili FavList...');
 
         // Remove event listeners
         if (visibilityHandler) {
@@ -738,14 +726,14 @@ get_header();
 
         // Reset initialization flag
         isInitialized = false;
-        console.log('Cleanup complete.');
+        // console.log('Cleanup complete.');
     };
 
     // Bilibili收藏夹应用初始化函数
     const initBilibiliFavList = async () => {
         // Prevent re-initialization if already initialized without cleanup
         if (isInitialized) {
-            console.log('Already initialized, skipping.');
+            // console.log('Already initialized, skipping.');
             return;
         }
 
@@ -754,11 +742,11 @@ get_header();
 
         const app = document.getElementById('bilibili-favlist-app');
         if (!app) {
-            console.log('Target element #bilibili-favlist-app not found. Aborting initialization.');
+            // console.log('Target element #bilibili-favlist-app not found. Aborting initialization.');
             return; // Target element not found, do nothing
         }
 
-        console.log('Initializing Bilibili FavList...');
+        // console.log('Initializing Bilibili FavList...');
         isInitialized = true; // Set flag
 
         try {
@@ -769,7 +757,7 @@ get_header();
                 throw new Error('初始化失败：REST API路径不可用');
             }
 
-            console.log('Bilibili收藏夹应用初始化，API: ', restApiUrl);
+            // console.log('Bilibili收藏夹应用初始化，API: ', restApiUrl);
             const state = {
                 folders: [],
                 currentFolder: null,
@@ -802,7 +790,7 @@ get_header();
                             data: data
                         }));
                     } catch (e) {
-                        console.warn('保存到本地存储失败', e);
+                        // console.warn('保存到本地存储失败', e);
                     }
                 },
                 get: (folderId, page) => {
@@ -817,7 +805,7 @@ get_header();
                                 const parsed = JSON.parse(savedData);
                                 // Check if localStorage data is valid (within 12 hours)
                                 if (parsed && parsed.timestamp && (Date.now() - parsed.timestamp < 12 * 60 * 60 * 1000)) {
-                                    console.log('Restored item from localStorage', { folderId, page });
+                                    // console.log('Restored item from localStorage', { folderId, page });
                                     // Load into memory cache
                                     state.cache.set(key, parsed);
                                     item = parsed;
@@ -827,7 +815,7 @@ get_header();
                                 }
                             }
                         } catch (e) {
-                            console.warn('从本地存储恢复失败', e);
+                            // console.warn('从本地存储恢复失败', e);
                         }
                     }
                     return item;
@@ -840,7 +828,7 @@ get_header();
 
             async function initApp() {
                 try {
-                    console.log('初始化应用开始');
+                    // console.log('初始化应用开始');
                     await fetchAllFolders();
                     renderApp();
                     bindEvents(); // Bind events after rendering
@@ -849,9 +837,9 @@ get_header();
                     setupVideoModal(); // Setup modal structure
                     setupVideoItemsClickEvent(); // Setup click listener for video items
                     setupScrollAnimations(); // Setup scroll animations
-                    console.log('初始化应用完成');
+                    // console.log('初始化应用完成');
                 } catch (error) {
-                    console.error('初始化失败:', error);
+                    // console.error('初始化失败:', error);
                     let errorMsg = error.message || '未知错误';
                     showError(`加载收藏夹失败: ${errorMsg}<br>请刷新页面重试`);
                 }
@@ -867,7 +855,7 @@ get_header();
                         if (savedData) {
                             const parsed = JSON.parse(savedData);
                             if (parsed && parsed.timestamp && (Date.now() - parsed.timestamp < 12 * 60 * 60 * 1000)) {
-                                console.log('从本地存储恢复收藏夹列表');
+                                // console.log('从本地存储恢复收藏夹列表');
                                 state.folders = parsed.folders;
                                 if (state.folders?.length) {
                                     state.currentFolder = state.currentFolder || state.folders[0].id;
@@ -880,7 +868,7 @@ get_header();
                             }
                         }
                     } catch (e) {
-                        console.warn('恢复本地缓存失败', e);
+                        // console.warn('恢复本地缓存失败', e);
                     }
                 }
 
@@ -911,7 +899,7 @@ get_header();
                                 folders: state.folders
                             }));
                         } catch (e) {
-                            console.warn('保存收藏夹列表到本地存储失败', e);
+                            // console.warn('保存收藏夹列表到本地存储失败', e);
                         }
                         state.currentFolder = state.folders[0].id;
                         await fetchFolderItems(state.currentFolder, 1, forceRefresh); // Fetch items for the first folder
@@ -923,7 +911,7 @@ get_header();
                         renderApp(); // Render empty state
                     }
                 } catch (error) {
-                    console.error('获取收藏夹列表失败:', error);
+                    // console.error('获取收藏夹列表失败:', error);
                     showError('加载收藏夹列表失败，请刷新页面重试');
                     state.loading = false; // Ensure loading is false on error
                     renderApp(); // Render error state
@@ -941,7 +929,7 @@ get_header();
                 if (!forceRefresh) {
                     const cachedData = cache.get(folderId, page);
                     if (cache.isValid(cachedData)) {
-                        console.log('使用缓存的收藏夹内容', { folderId, page });
+                        // console.log('使用缓存的收藏夹内容', { folderId, page });
                         const folderData = cachedData.data;
                         state.currentItems = folderData.medias || [];
                         state.totalPages = Math.ceil((folderData.info?.media_count || 0) / state.pageSize);
@@ -961,7 +949,7 @@ get_header();
             async function fetchFolderItemsFromNetwork(folderId, page = 1, forceRefresh = false) {
                 const endpoint = `${restApiUrl}/favlist/bilibili`;
                 try {
-                    console.log('从网络获取收藏夹内容', { folderId, page, forceRefresh });
+                    // console.log('从网络获取收藏夹内容', { folderId, page, forceRefresh });
                     let url = `${endpoint}?folder_id=${folderId}&page=${page}&_wpnonce=${wpnonce}`;
                     if (forceRefresh) {
                         url += `&_t=${Date.now()}`;
@@ -989,7 +977,7 @@ get_header();
                     state.lastDataUpdate = Date.now();
 
                 } catch (error) {
-                    console.error('获取收藏夹内容失败:', error);
+                    // console.error('获取收藏夹内容失败:', error);
                     showError(`加载收藏内容失败: ${error.message}. 请重试`);
                     state.currentItems = []; // Clear items on error
                     state.totalPages = 0;
@@ -1045,7 +1033,10 @@ get_header();
                  }
 
                  const existingContent = app.querySelector('.fav-section');
-                 const needsAnimation = isUpdate && existingContent && !state.loading && !state.error; // 仅在成功更新内容时应用动画
+                 // 检查之前的内容是否是骨架屏
+                 const wasSkeleton = existingContent && existingContent.querySelector('.fav-item-skeleton');
+                 // 仅在成功更新内容且之前不是骨架屏时应用动画
+                 const needsAnimation = isUpdate && existingContent && !wasSkeleton && !state.loading && !state.error;
 
                  const renderNewContent = () => {
                      app.innerHTML = folderSelectorHtml + contentHtml; // 渲染包括 tabs 和新内容
@@ -1059,16 +1050,10 @@ get_header();
                              // 添加入场交错
                              item.style.transitionDelay = `${index * ENTER_STAGGER_DELAY}ms`;
                              requestAnimationFrame(() => { // 触发 CSS transition
-                                 item.classList.remove('fav-item-enter');
-                                 // 在动画开始后移除延迟，以免影响 hover 等其他 transition
-                                 // 使用基础动画时间 + 交错延迟来确定何时移除 delay
-                                 const removeDelayTimeout = EXIT_ANIMATION_DURATION + index * ENTER_STAGGER_DELAY;
-                                 setTimeout(() => {
-                                     // 检查元素是否仍然存在且没有被移除/替换
-                                     if (item && item.parentNode) {
-                                         item.style.transitionDelay = '';
-                                     }
-                                 }, removeDelayTimeout);
+                                 // Ensure item still exists before removing class
+                                 if (item && item.parentNode) {
+                                     item.classList.remove('fav-item-enter');
+                                 }
                              });
                          });
                          // 重新设置懒加载和滚动动画
@@ -1119,7 +1104,7 @@ get_header();
                          renderNewContent();
                      }
                  } else {
-                     // 初始加载、加载骨架屏、显示错误或从错误重试时，直接渲染
+                     // 初始加载、加载骨架屏、显示错误、从错误重试或从骨架屏更新时，直接渲染
                      renderNewContent();
                  }
             }
@@ -1328,7 +1313,7 @@ get_header();
                     // Refresh button
                     const refreshBtn = target.closest('.refresh-btn');
                     if (refreshBtn && !refreshBtn.classList.contains('refreshing')) {
-                        console.log('点击强制刷新按钮');
+                        // console.log('点击强制刷新按钮');
                         refreshBtn.classList.add('refreshing');
                         refreshBtn.querySelector('.refresh-text').textContent = '刷新中...';
                         try {
@@ -1349,7 +1334,7 @@ get_header();
 
                             await fetchAllFolders(true); // Force refresh folders and first page
                         } catch (error) {
-                            console.error('强制刷新失败:', error);
+                            // console.error('强制刷新失败:', error);
                             showError('刷新失败，请稍后重试');
                             renderApp(); // Re-render to show error
                         } finally {
@@ -1368,7 +1353,7 @@ get_header();
                     if (tabEl) {
                         const folderId = parseInt(tabEl.dataset.folderId, 10);
                         if (folderId !== state.currentFolder && !state.loading) {
-                            console.log('切换收藏夹:', folderId);
+                            // console.log('切换收藏夹:', folderId);
                             await fetchFolderItems(folderId, 1);
                             return;
                         }
@@ -1389,7 +1374,7 @@ get_header();
                     // Retry button
                     const retryBtn = target.closest('.retry-btn');
                     if (retryBtn) {
-                        console.log('点击重试按钮');
+                        // console.log('点击重试按钮');
                         state.error = null;
                         state.loading = true;
                         renderApp(); // Show loading state
@@ -1398,7 +1383,7 @@ get_header();
                             // Let's try fetching folders again.
                             await fetchAllFolders(false); // Try fetching folders (will use cache if valid)
                         } catch (error) {
-                            console.error('重试失败:', error);
+                            // console.error('重试失败:', error);
                             showError(`重试失败: ${error.message}`);
                             renderApp(); // Show error again
                         }
@@ -1420,12 +1405,20 @@ get_header();
 
                  visibilityHandler = function() {
                      const now = Date.now();
+                     const app = document.getElementById('bilibili-favlist-app'); // Get app element reference inside handler
+
                      if (document.visibilityState === 'hidden') {
                          lastVisibilityChange = now;
                      } else if (document.visibilityState === 'visible') {
+                         // Ensure app exists in the current document before proceeding
+                         if (!app || !document.body.contains(app)) {
+                             return; // App element not found or detached, likely during PJAX transition
+                         }
+
                          const timeAway = now - lastVisibilityChange;
-                         if (isInitialized && state.folders.length > 0 && (timeAway > RELOAD_THRESHOLD || needReloadOnReturn)) {
-                             console.log('页面返回，重新加载当前收藏夹内容', { timeAway: timeAway / 1000 + '秒' });
+                         // Check initialization, app presence, loading state, and time threshold
+                         if (isInitialized && !state.loading && state.folders.length > 0 && (timeAway > RELOAD_THRESHOLD || needReloadOnReturn)) {
+                             // console.log('页面返回，重新加载当前收藏夹内容', { timeAway: timeAway / 1000 + '秒' });
                              // Fetch current folder/page, force refresh = false (use cache if valid)
                              fetchFolderItems(state.currentFolder, state.currentPage, false);
                              needReloadOnReturn = false;
@@ -1558,7 +1551,7 @@ get_header();
                                     }
                                 };
                                 img.onerror = () => {
-                                    console.warn('图片加载失败:', src);
+                                    // console.warn('图片加载失败:', src);
                                     img.classList.add('loaded', 'error'); // Mark as loaded but with error
                                      if (placeholder && placeholder.classList.contains('fav-item-thumb-placeholder')) {
                                          placeholder.innerHTML = '<svg fill="#ccc" width="32" height="32" viewBox="0 0 24 24"><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/></svg>'; // Show error icon
@@ -1718,7 +1711,7 @@ get_header();
 
 
         } catch (error) {
-            console.error('初始化过程中发生顶层错误:', error);
+            // console.error('初始化过程中发生顶层错误:', error);
             const app = document.getElementById('bilibili-favlist-app');
             if (app) {
                 app.innerHTML = `
@@ -1729,7 +1722,7 @@ get_header();
                 `;
                  // Bind retry button listener even in case of top-level error
                  app.querySelector('.retry-btn')?.addEventListener('click', () => {
-                     console.log('Retrying after top-level error...');
+                     // console.log('Retrying after top-level error...');
                      initBilibiliFavList(); // Attempt re-initialization
                  });
             }
@@ -1748,12 +1741,12 @@ get_header();
 
         // PJAX listeners
         document.addEventListener('pjax:send', () => {
-            console.log('PJAX send: Cleaning up...');
+            // console.log('PJAX send: Cleaning up...');
             cleanup(); // Clean up before navigating away
         });
 
         document.addEventListener('pjax:complete', () => {
-            console.log('PJAX complete: Initializing...');
+            // console.log('PJAX complete: Initializing...');
             // Use setTimeout to ensure the DOM is fully ready after PJAX replaces content
             setTimeout(() => {
                  initBilibiliFavList();
