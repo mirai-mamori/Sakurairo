@@ -19,11 +19,13 @@ include_once('classes/QQ.php');
 include_once('classes/Captcha.php');
 include_once('classes/MyAnimeList.php');
 include_once('classes/BilibiliFavList.php');
+include_once('classes/BilibiliFavListCron.php');
 include_once('classes/bangumi.php');
 include_once('classes/Steam.php');
 use Sakura\API\QQ;
 use Sakura\API\Cache;
 use Sakura\API\Captcha;
+use Sakura\API\BilibiliFavListCron;
 
 /**
  * Router
@@ -424,17 +426,36 @@ function favlist_bilibili(WP_REST_Request $request)
     }
     
     try {
-        $bgm = new \Sakura\API\BilibiliFavList();
-        $folder_resp = $bgm->fetch_folder_item_api($folder_id, $page);
+        // 缓存键名
+        $cache_key = 'bilibili_favlist_' . $folder_id . '_' . $page;
         
-        if (!$folder_resp) {
-            throw new Exception('Failed to fetch folder items');
+        // 从缓存获取数据
+        $folder_data = BilibiliFavListCron::get_cache($cache_key);
+        
+        // 如果缓存不存在，则从API获取
+        if ($folder_data === false) {
+            $bgm = new \Sakura\API\BilibiliFavList();
+            $folder_resp = $bgm->fetch_folder_item_api($folder_id, $page);
+            
+            if (!$folder_resp) {
+                throw new Exception('Failed to fetch folder items');
+            }
+            
+            $folder_data = $folder_resp['data'];
+            
+            // 存入缓存
+            set_transient($cache_key, $folder_data, BilibiliFavListCron::CACHE_EXPIRY);
+            set_transient($cache_key . '_expire', time() + BilibiliFavListCron::CACHE_EXPIRY, BilibiliFavListCron::CACHE_EXPIRY);
         }
         
         $output = array(
             'code' => 0,
             'message' => 'success',
-            'data' => $folder_resp['data']
+            'data' => $folder_data,
+            'cache_info' => array(
+                'from_cache' => ($folder_data !== false),
+                'expires_in' => BilibiliFavListCron::get_cache_expiry($cache_key)
+            )
         );
         return new WP_REST_Response($output, 200);
         
@@ -459,21 +480,37 @@ function favlist_bilibili_folders(WP_REST_Request $request)
     }
     
     try {
-        $bgm = new \Sakura\API\BilibiliFavList();
-        $folders_resp = $bgm->fetch_folder_api();
+        // 先尝试从缓存获取数据
+        $folders_data = BilibiliFavListCron::get_cache('bilibili_favlist_folders');
         
-        if (!$folders_resp) {
-            throw new Exception('Failed to fetch folders');
-        }
-        
-        if (!isset($folders_resp['data']) || $folders_resp['data'] === null) {
-            throw new Exception('No folder data returned from API');
+        // 如果没有缓存或缓存过期，则从API获取并更新缓存
+        if ($folders_data === false) {
+            $bgm = new \Sakura\API\BilibiliFavList();
+            $folders_resp = $bgm->fetch_folder_api();
+            
+            if (!$folders_resp) {
+                throw new Exception('Failed to fetch folders');
+            }
+            
+            if (!isset($folders_resp['data']) || $folders_resp['data'] === null) {
+                throw new Exception('No folder data returned from API');
+            }
+            
+            $folders_data = $folders_resp['data'];
+            
+            // 存入缓存
+            set_transient('bilibili_favlist_folders', $folders_data, BilibiliFavListCron::CACHE_EXPIRY);
+            set_transient('bilibili_favlist_folders_expire', time() + BilibiliFavListCron::CACHE_EXPIRY, BilibiliFavListCron::CACHE_EXPIRY);
         }
         
         $output = array(
             'code' => 0,
             'message' => 'success',
-            'data' => $folders_resp['data']
+            'data' => $folders_data,
+            'cache_info' => array(
+                'from_cache' => ($folders_data !== false),
+                'expires_in' => BilibiliFavListCron::get_cache_expiry('bilibili_favlist_folders')
+            )
         );
         return new WP_REST_Response($output, 200);
         

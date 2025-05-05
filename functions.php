@@ -614,6 +614,15 @@ require get_template_directory() . '/inc/api.php';
  */
 require get_template_directory() . '/inc/template-tags.php';
 
+/**
+ * 初始化Bilibili收藏夹缓存定时任务
+ */
+add_action('init', function() {
+    if (class_exists('Sakura\API\BilibiliFavListCron')) {
+        Sakura\API\BilibiliFavListCron::init();
+    }
+});
+
 // 加载缓存设置页
 
 require get_template_directory() . '/inc/cache_settings.php';

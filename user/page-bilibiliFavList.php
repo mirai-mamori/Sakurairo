@@ -234,6 +234,10 @@ get_header();
         animation: spin 1s ease-in-out infinite;
     }
     
+    .refresh-btn{
+        gap:10px;
+    }
+
     @keyframes spin {
         to { transform: rotate(360deg); }
     }
@@ -310,7 +314,8 @@ get_header();
         background: #e5e5e5;
         color: #333;
     }
-      .video-modal-body {
+    
+    .video-modal-body {
         position: relative;
         padding-top: 56.25%;
         width: 100%;
@@ -700,8 +705,7 @@ get_header();
             
             // 调试信息 - 保持在开发环境，生产环境可移除
             console.log('Bilibili收藏夹应用初始化，API: ', restApiUrl);
-            
-            // 状态管理
+              // 状态管理
             const state = {
                 folders: [],
                 currentFolder: null,
@@ -712,7 +716,10 @@ get_header();
                 totalPages: 0,
                 error: null,
                 lastDataUpdate: 0,
-                cache: new Map() // 本地缓存对象
+                fromCache: false,           // 数据是否来自缓存
+                cacheExpiresIn: 0,          // 缓存剩余有效期（秒）
+                cacheAge: 0,                // 缓存已存在时间（秒）
+                cache: new Map()            // 本地缓存对象
             };
             
             // 缓存助手函数
@@ -728,11 +735,10 @@ get_header();
                 get: (folderId, page) => {
                     const key = cache.getKey(folderId, page);
                     return state.cache.get(key);
-                },
-                isValid: (cachedItem) => {
+                },                isValid: (cachedItem) => {
                     if (!cachedItem) return false;
-                    // 缓存5分钟有效
-                    return (Date.now() - cachedItem.timestamp) < 5 * 60 * 1000;
+                    // 缓存12小时有效，与后端保持一致
+                    return (Date.now() - cachedItem.timestamp) < 12 * 60 * 60 * 1000;
                 }
             };
               // 初始化应用
@@ -755,39 +761,49 @@ get_header();
                     showError(`加载收藏夹失败: ${errorMsg}<br>请刷新页面重试`);
                 }
             }      // 获取所有收藏夹数据
-            async function fetchAllFolders() {
-                // 尝试从本地存储恢复数据
-                try {
-                    const savedData = localStorage.getItem('bilibili_favlist_folders');
-                    if (savedData) {
-                        const parsed = JSON.parse(savedData);
-                        // 如果有缓存的数据且没过期（24小时内）
-                        if (parsed && parsed.timestamp && (Date.now() - parsed.timestamp < 24 * 60 * 60 * 1000)) {
-                            console.log('从本地存储恢复收藏夹列表');
-                            state.folders = parsed.folders;
-                            if (state.folders?.length) {
-                                // 默认选中第一个收藏夹
-                                state.currentFolder = state.folders[0].id;
-                                // 加载第一个收藏夹的内容，但优先使用缓存
-                                await fetchFolderItems(state.currentFolder, 1);
-                                return; // 如果成功恢复数据，直接返回
+            async function fetchAllFolders(forceRefresh = false) {
+                // 如果不是强制刷新，尝试从本地存储恢复数据
+                if (!forceRefresh) {
+                    try {
+                        const savedData = localStorage.getItem('bilibili_favlist_folders');
+                        if (savedData) {
+                            const parsed = JSON.parse(savedData);
+                            // 如果有缓存的数据且没过期（12小时内，与后端同步）
+                            if (parsed && parsed.timestamp && (Date.now() - parsed.timestamp < 12 * 60 * 60 * 1000)) {
+                                console.log('从本地存储恢复收藏夹列表');
+                                state.folders = parsed.folders;
+                                if (state.folders?.length) {
+                                    // 默认选中第一个收藏夹
+                                    state.currentFolder = state.currentFolder || state.folders[0].id;
+                                    // 加载收藏夹的内容，但优先使用缓存
+                                    await fetchFolderItems(state.currentFolder, 1, forceRefresh);
+                                    return; // 如果成功恢复数据，直接返回
+                                }
                             }
                         }
+                    } catch (e) {
+                        console.warn('恢复本地缓存失败', e);
+                        // 继续执行网络请求
                     }
-                } catch (e) {
-                    console.warn('恢复本地缓存失败', e);
-                    // 继续执行网络请求
                 }
-                
-                // 使用 WordPress REST API 的完整路径
+                  // 使用 WordPress REST API 的完整路径
                 const restApiUrl = '<?php echo esc_url_raw(rest_url('sakura/v1')); ?>';
                 const endpoint = `${restApiUrl}/favlist/bilibili/folders`;
                 
                 try {
+                    // 构建URL
+                    let url = `${endpoint}?_wpnonce=<?php echo wp_create_nonce('wp_rest'); ?>`;
+                    
+                    // 强制刷新时添加时间戳避免缓存
+                    if (forceRefresh) {
+                        url += `&_t=${Date.now()}`; 
+                    }
+                    
                     // 添加必要的 nonce 用于 WordPress REST API 安全验证
-                    const response = await fetch(`${endpoint}?_wpnonce=<?php echo wp_create_nonce('wp_rest'); ?>`, {
+                    const response = await fetch(url, {
                         headers: {
-                            'Cache-Control': 'max-age=86400' // 24小时缓存
+                            'Cache-Control': forceRefresh ? 'no-cache, no-store, must-revalidate' : 'max-age=86400',
+                            'Pragma': forceRefresh ? 'no-cache' : 'cache'
                         }
                     });
                     
@@ -822,45 +838,54 @@ get_header();
                     state.loading = false;
                 }
             }    // 获取收藏夹内容
-            async function fetchFolderItems(folderId, page = 1) {
+            async function fetchFolderItems(folderId, page = 1, forceRefresh = false) {
                 state.loading = true;
                 renderApp();
                 
-                // 检查是否有有效缓存
-                const cachedData = cache.get(folderId, page);
-                if (cache.isValid(cachedData)) {
-                    console.log('使用缓存的收藏夹内容', { folderId, page });
-                    const folderData = cachedData.data;
-                    state.currentItems = folderData.medias || [];
-                    state.totalPages = Math.ceil(folderData.info.media_count / state.pageSize);
-                    state.currentPage = page;
-                    state.currentFolder = folderId;
-                    state.loading = false;
-                    renderApp();
-                    
-                    // 在后台刷新缓存，但不阻塞UI
-                    refreshCacheInBackground(folderId, page);
-                    return;
+                // 如果不是强制刷新，检查是否有有效缓存
+                if (!forceRefresh) {
+                    const cachedData = cache.get(folderId, page);
+                    if (cache.isValid(cachedData)) {
+                        console.log('使用缓存的收藏夹内容', { folderId, page });
+                        const folderData = cachedData.data;
+                        state.currentItems = folderData.medias || [];
+                        state.totalPages = Math.ceil(folderData.info.media_count / state.pageSize);
+                        state.currentPage = page;
+                        state.currentFolder = folderId;
+                        state.fromCache = true; // 来自前端缓存
+                        state.cacheAge = Math.floor((Date.now() - cachedData.timestamp)/1000); // 缓存年龄（秒）
+                        state.loading = false;
+                        renderApp();
+                        return;
+                    }
                 }
                 
-                // 没有缓存或缓存已过期，执行网络请求
-                await fetchFolderItemsFromNetwork(folderId, page);
+                // 没有缓存、缓存已过期或强制刷新，执行网络请求
+                await fetchFolderItemsFromNetwork(folderId, page, forceRefresh);
             }
-            
-            // 从网络获取收藏夹内容并更新缓存
-            async function fetchFolderItemsFromNetwork(folderId, page = 1) {
+              // 从网络获取收藏夹内容并更新缓存
+            async function fetchFolderItemsFromNetwork(folderId, page = 1, forceRefresh = false) {
                 // 使用 WordPress REST API 的完整路径
                 const restApiUrl = '<?php echo esc_url_raw(rest_url('sakura/v1')); ?>';
                 const endpoint = `${restApiUrl}/favlist/bilibili`;
                 const wpnonce = '<?php echo wp_create_nonce('wp_rest'); ?>';
                 
                 try {
-                    console.log('从网络获取收藏夹内容', { folderId, page });
-                    const response = await fetch(`${endpoint}?folder_id=${folderId}&page=${page}&_wpnonce=${wpnonce}`, {
+                    console.log('从网络获取收藏夹内容', { folderId, page, forceRefresh });
+                    
+                    // 构建URL
+                    let url = `${endpoint}?folder_id=${folderId}&page=${page}&_wpnonce=${wpnonce}`;
+                    
+                    // 强制刷新时添加时间戳参数
+                    if (forceRefresh) {
+                        url += `&_t=${Date.now()}`;
+                    }
+                    
+                    const response = await fetch(url, {
                         // 添加缓存控制
                         headers: {
-                            'Cache-Control': 'max-age=300', // 5分钟缓存
-                            'Pragma': 'no-cache' // 覆盖任何现有缓存
+                            'Cache-Control': forceRefresh ? 'no-cache, no-store, must-revalidate' : 'max-age=43200',
+                            'Pragma': forceRefresh ? 'no-cache' : 'cache'
                         }
                     });
                     
@@ -879,13 +904,15 @@ get_header();
                     state.totalPages = Math.ceil(folderData.info.media_count / state.pageSize);
                     state.currentPage = page;
                     state.currentFolder = folderId;
+                    state.fromCache = data.cache_info?.from_cache || false;
+                    state.cacheExpiresIn = data.cache_info?.expires_in || 0;
                     
                     // 成功获取数据，添加时间戳记录上次数据更新时间
                     state.lastDataUpdate = Date.now();
                     
                     // 尝试保存到本地存储，为下次访问准备
-                    try {
-                        const key = `bilibili_favlist_${folderId}_${page}`;
+                    try {                        const key = `bilibili_favlist_${folderId}_${page}`;
+                        // 保存到localStorage时记录当前时间戳，用于缓存有效期判断(12小时)
                         localStorage.setItem(key, JSON.stringify({
                             timestamp: Date.now(),
                             data: folderData
@@ -903,44 +930,8 @@ get_header();
                     renderApp();
                 }
             }
-            
-            // 在后台刷新缓存，不影响UI
-            async function refreshCacheInBackground(folderId, page) {
-                try {
-                    const restApiUrl = '<?php echo esc_url_raw(rest_url('sakura/v1')); ?>';
-                    const endpoint = `${restApiUrl}/favlist/bilibili`;
-                    const wpnonce = '<?php echo wp_create_nonce('wp_rest'); ?>';
-                    
-                    const response = await fetch(`${endpoint}?folder_id=${folderId}&page=${page}&_wpnonce=${wpnonce}&t=${Date.now()}`, {
-                        headers: { 
-                            'Pragma': 'no-cache',
-                            'Cache-Control': 'no-cache'
-                        }
-                    });
-                    
-                    if (!response.ok) return;
-                    
-                    const data = await response.json();
-                    if (data.code !== 0) return;
-                    
-                    // 静默更新缓存
-                    cache.set(folderId, page, data.data);
-                    console.log('后台更新缓存完成', { folderId, page });
-                    
-                    // 更新本地存储
-                    try {
-                        const key = `bilibili_favlist_${folderId}_${page}`;
-                        localStorage.setItem(key, JSON.stringify({
-                            timestamp: Date.now(),
-                            data: data.data
-                        }));
-                    } catch (e) {
-                        console.warn('更新本地存储失败', e);
-                    }
-                } catch (error) {
-                    console.warn('后台刷新缓存失败', error);
-                }
-            }
+              // 后台自动刷新缓存功能已移除，改为由服务器端定时更新
+            // 现在前端只负责读取缓存并展示数据
             
             // 显示错误信息
             function showError(message) {
@@ -984,8 +975,7 @@ get_header();
                 html += renderCurrentFolder();
                 
                 app.innerHTML = html;
-            }
-              // 渲染收藏夹选择器(胶囊式)
+            }              // 渲染收藏夹选择器(胶囊式)
             function renderFolderSelector() {
                 return `
                     <div class="fav-tabs">
@@ -996,6 +986,15 @@ get_header();
                                 <span class="fav-tab-count">${folder.media_count}</span>
                             </div>
                         `).join('')}
+                        <div class="fav-tab refresh-btn" title="强制刷新数据">
+                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 2v6h6"></path>
+                                <path d="M21 12A9 9 0 0 0 6 5.3L3 8"></path>
+                                <path d="M21 22v-6h-6"></path>
+                                <path d="M3 12a9 9 0 0 0 15 6.7l3-2.7"></path>
+                            </svg>
+                            <span class="refresh-text">刷新</span>
+                        </div>
                     </div>
                 `;
             }
@@ -1017,9 +1016,7 @@ get_header();
                 `;
                 
                 return html;
-            }
-            
-            // 渲染收藏夹内容
+            }              // 渲染收藏夹内容
             function renderFolderContent() {
                 if (!state.currentItems.length) {
                     return `
@@ -1068,9 +1065,7 @@ get_header();
                         </div>
                     </div>
                 `;
-            }
-            
-            // 格式化日期
+            }                // 格式化日期
             function formatDate(timestamp) {
                 const date = new Date(timestamp);
                 const now = new Date();
@@ -1086,6 +1081,19 @@ get_header();
                     }
                 } else {
                     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+                }
+            }
+            
+            // 格式化剩余时间
+            function formatTimeLeft(seconds) {
+                if (seconds < 60) {
+                    return `${seconds}秒`;
+                } else if (seconds < 3600) {
+                    return `${Math.floor(seconds / 60)}分钟`;
+                } else if (seconds < 86400) {
+                    return `${Math.floor(seconds / 3600)}小时${Math.floor((seconds % 3600) / 60)}分钟`;
+                } else {
+                    return `${Math.floor(seconds / 86400)}天${Math.floor((seconds % 86400) / 3600)}小时`;
                 }
             }
             
@@ -1158,9 +1166,50 @@ get_header();
                 
                 // 使用事件委托处理所有点击事件
                 app.addEventListener('click', async function(e) {
+                    // 强制刷新按钮
+                    if (e.target.closest('.refresh-btn')) {
+                        console.log('点击强制刷新按钮');
+                        const refreshBtn = e.target.closest('.refresh-btn');
+                        
+                        // 防止重复点击
+                        if (refreshBtn.classList.contains('refreshing')) return;
+                        
+                        // 添加刷新中状态
+                        refreshBtn.classList.add('refreshing');
+                        refreshBtn.querySelector('.refresh-text').textContent = '刷新中...';
+                          try {
+                            // 强制从网络重新获取数据
+                            // 先清除localStorage缓存
+                            if (state.currentFolder) {
+                                localStorage.removeItem(`bilibili_favlist_${state.currentFolder}_${state.currentPage}`);
+                            }
+                            localStorage.removeItem('bilibili_favlist_folders');
+                            
+                            // 清除内存缓存
+                            state.cache = new Map();
+                            
+                            // 重新获取数据，传入true表示强制刷新
+                            await fetchAllFolders(true);
+                            
+                            console.log('强制刷新完成');
+                        } catch (error) {
+                            console.error('强制刷新失败:', error);
+                            showError('刷新失败，请稍后重试');
+                        } finally {
+                            // 恢复按钮状态
+                            refreshBtn.classList.remove('refreshing');
+                            refreshBtn.querySelector('.refresh-text').textContent = '刷新';
+                        }
+                        return;
+                    }
+                    
                     // 收藏夹胶囊切换
                     if (e.target.classList.contains('fav-tab') || e.target.parentElement.classList.contains('fav-tab')) {
                         const tabEl = e.target.classList.contains('fav-tab') ? e.target : e.target.parentElement;
+                        
+                        // 忽略刷新按钮的点击（已在上面处理）
+                        if (tabEl.classList.contains('refresh-btn')) return;
+                        
                         const folderId = parseInt(tabEl.dataset.folderId, 10);
                         
                         if (folderId !== state.currentFolder) {
@@ -1246,11 +1295,10 @@ get_header();
             
             // 启动应用
             initApp();
-            
-            // 监听页面可见性变化，在返回页面时刷新内容    // 页面可见性相关变量
+              // 监听页面可见性变化，在返回页面时刷新内容    // 页面可见性相关变量
             let lastVisibilityChange = Date.now();
             let needReloadOnReturn = false;
-            const RELOAD_THRESHOLD = 5 * 60 * 1000; // 5分钟阈值
+            const RELOAD_THRESHOLD = 12 * 60 * 60 * 1000; // 12小时阈值，与缓存时间一致
             
             // 优化的页面可见性处理
             document.addEventListener('visibilitychange', function() {
