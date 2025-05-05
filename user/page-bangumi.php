@@ -1,11 +1,10 @@
 <?php
-
-/**
- * Template Name: Bangumi Template
- */
+/*
+  Template Name: Bangumi Template
+*/
 get_header();
-
 ?>
+
 <style>
 .site-content {
     max-width: 1280px;

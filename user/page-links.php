@@ -1,12 +1,10 @@
 <?php 
-
 /*
- Template Name: Friendly Links Template
- */
-
+  Template Name: Friendly Links Template
+*/
 get_header(); 
-
 ?>
+
 <div class="links-page">
 <style>
 /* 基础变量 - 使用类选择器作用域 */
