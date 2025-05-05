@@ -18,25 +18,20 @@ get_header();
         max-width: 1280px;
     }
 
-    /* 收藏夹列表容器 - 强制3列网格布局 */
     .fav-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 强制3列布局 */
-        gap: 24px; /* 调整间距 */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
         padding: 0 1rem;
         margin-bottom: 50px;
     }
-      /* 收藏夹内容区 */
     .fav-section {
         margin-bottom: 30px;
     }
-    
-    /* 收藏夹内容区域 */
     .fav-content {
         position: relative;
         min-height: 200px;
     }
-    /* 视频卡片样式 */
     .fav-item {
         position: relative;
         border-radius: 16px;
@@ -110,7 +105,6 @@ get_header();
         text-shadow: 0 1px 3px rgba(0,0,0,0.3);
     }
 
-    /* 封面图片右下方的UP主信息 */
     .fav-item-up {
         position: absolute;
         bottom: 0;
@@ -134,7 +128,6 @@ get_header();
         text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         display: block;
     }
-    /* 添加父容器用于包装描述内容，确保line-clamp正常生效 */
     .fav-item-desc-wrapper {
         padding: 14px 16px;
         height: calc(3rem + 28px);
@@ -152,11 +145,10 @@ get_header();
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         line-height: 1.5;
-        max-height: 3rem; /* 显式设置最大高度 */
+        max-height: 3rem;
         word-break: break-word;
         margin: 0;
     }
-    /* 分页区域 - 更现代的设计 */
     .fav-pagination {
         display: flex;
         justify-content: center;
@@ -218,19 +210,14 @@ get_header();
         background: var(--theme-skin-dark, #eee);
         color: #222;
     }
-    
-    /* 预占位卡片样式增强 */
     .fav-item-skeleton .fav-item-thumb-placeholder {
         background-color: #f0f0f0; 
         display: block; 
     }
     
-    /* 暗色模式下的预占位卡片 */
     body.dark .fav-item-skeleton .fav-item-desc {
         background: #3a3a3a;
     }
-    
-    /* 暗色模式下的骨架屏缩略图占位符 */
     body.dark .fav-item-skeleton .fav-item-thumb-placeholder {
         background-color: #2a2a2a;
     }
@@ -238,15 +225,11 @@ get_header();
     .refresh-btn{
         gap:10px;
     }
-
-    /* 为空状态 */
     .fav-empty {
         text-align: center;
         padding: 40px 0;
         color: #888;
     }
-    
-    /* 视频弹窗样式 */
     .video-modal {
         position: fixed;
         top: 0;
@@ -353,8 +336,6 @@ get_header();
         border-radius: 4px;
         transition: all 0.2s ease;
     }
-    
-    /* 为视频卡片添加鼠标交互效果 */
     .fav-item {
         cursor: pointer;
         position: relative;
@@ -382,8 +363,6 @@ get_header();
         opacity: 1;
         transform: translate(-50%, -50%) scale(1.1);
     }
-    
-    /* 暗色模式适配 */
     body.dark .video-modal-container {
         background: #2a2a2a;
     }
@@ -413,11 +392,9 @@ get_header();
     body.dark .video-modal-up-name {
         color: #ccc;
     }
-    
-    /* 增强的响应式样式 */
     @media (max-width: 1100px) {
         .fav-grid {
-            grid-template-columns: repeat(2, 1fr); /* 平板视图改为2列 */
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
         
@@ -443,7 +420,7 @@ get_header();
     
     @media (max-width: 560px) {
         .fav-grid {
-            grid-template-columns: 1fr; /* 手机视图改为1列 */
+            grid-template-columns: 1fr;
             gap: 16px;
         }
         
@@ -452,7 +429,7 @@ get_header();
         }
 
         .fav-item-thumb {
-            padding-top: 56.25%; /* 保持16:9比例 */
+            padding-top: 56.25%;
         }
         
         .page-btn {
@@ -465,19 +442,17 @@ get_header();
             padding: 0 12px;
         }
 
-        /* 防止关闭按钮在标题过长时变形 */
         .video-modal-header {
-            padding: 12px 15px; /* 稍微减少内边距 */
+            padding: 12px 15px;
         }
         .video-modal-title {
-            font-size: 1rem; /* 稍微减小标题字号 */
-            margin-right: 10px; /* 增加与关闭按钮的间距 */
+            font-size: 1rem;
+            margin-right: 10px;
         }
         .video-modal-close {
-            flex-shrink: 0; /* 防止按钮收缩 */
+            flex-shrink: 0;
         }
     }
-      /* 暗色模式 */
     body.dark .fav-item {
         background: #2d2d2d;
     }
@@ -503,8 +478,6 @@ get_header();
         border-color: rgba(255, 255, 255, 0.1);
         border-top-color: var(--theme-skin-dark, #eee);
     }
-    
-    /* 收藏夹胶囊选择器样式 */
     .fav-tabs {
         margin: 30px 0;
         display: flex;
@@ -574,21 +547,15 @@ get_header();
     body.dark .fav-tab-count {
         background: rgba(255, 255, 255, 0.1);
     }
-    
-    /* 定义进入动画的初始状态 */
     .fav-item.fav-item-enter {
         opacity: 0;
         transform: translateY(20px);
     }
-    
-    /* 定义退出动画的结束状态 */
     .fav-item.fav-item-exit {
         opacity: 0;
         transform: translateY(-20px);
-        pointer-events: none; /* 防止退出动画期间的交互 */
+        pointer-events: none;
     }
-    
-    /* 加载器效果 */
     .fav-item-thumb-placeholder {
         position: absolute;
         top: 0;
@@ -609,15 +576,15 @@ get_header();
         height: 100%;
         object-fit: cover;
         transition: opacity 0.3s ease;
-        opacity: 0; /* 初始不可见 */
+        opacity: 0;
     }
     
     .fav-item-thumb img.loaded {
-        opacity: 1; /* 加载后可见 */
+        opacity: 1;
     }
     
     .fav-item-thumb img.error {
-        opacity: 0.7; /* 错误状态显示但透明度较低 */
+        opacity: 0.7;
     }
     
     body.dark .fav-item-thumb-placeholder {
@@ -640,12 +607,12 @@ get_header();
                 <div class="fav-section">
                     <div class="fav-content">
                         <div class="fav-grid">
-                            <!-- 生成9个预占位卡片作为加载状态 -->
-                            <?php for ($i = 0; $i < 9; $i++): ?>                            <div class="fav-item fav-item-skeleton">
-                                <div class="fav-item-content-wrapper">
-                                    <div class="fav-item-thumb">
-                                        <div class="fav-item-thumb-placeholder"></div>
-                                    </div>
+                            <?php for ($i = 0; $i < 9; $i++): ?>                            
+                                <div class="fav-item fav-item-skeleton">
+                                    <div class="fav-item-content-wrapper">
+                                        <div class="fav-item-thumb">
+                                            <div class="fav-item-thumb-placeholder"></div>
+                                        </div>
                                     <div class="fav-item-desc-wrapper">
                                         <div class="fav-item-desc"></div>
                                         <div class="fav-item-desc"></div>
