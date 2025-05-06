@@ -96,7 +96,7 @@ function font_end_js_control()
         'missing_avatars' => iro_opt("missing_avatars_default",""),
         'missing_images' => iro_opt("missing_images_default",""),
         'dev_mode' => iro_opt('dev_mode',false) == true ? true : false ,
-        'is_admin' => json_encode(current_user_can('manage_options')),
+        'is_admin' => check(current_user_can('manage_options')),
     ];
     // 判空 empty 如果变量不存在也会返回true
     if (iro_opt('random_graphs_options') == 'external_api') {
