@@ -206,7 +206,7 @@ get_header();
     
     @media (max-width: 768px) {
         .steam-card {
-            width: 95%;
+            width: 96.5%;
         }
         .steam-title-overlay{
             padding: 25px 30px;
