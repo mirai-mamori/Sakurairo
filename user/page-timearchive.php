@@ -1,9 +1,10 @@
 <?php 
-/**
- * Template Name: Timearchive Template
- */
+/*
+  Template Name: Timearchive Template
+*/
 get_header();
 ?>
+
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap" rel="stylesheet">
 <style>
     /* 基础布局 */
@@ -605,6 +606,7 @@ get_header();
 $years = get_transient('time_archive');
 if (!$years) {
     $years = get_archive_info();
+    set_transient('time_archive',$years,86400);
 }
 foreach ($years as $year => $months) {
     $postCount = array_sum(array_map('count', $months));

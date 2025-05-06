@@ -373,6 +373,11 @@
 
 /* 1080px 断点适配 */
 @media (max-width: 1080px) {
+  .bento-medium {
+    grid-column: span 6;
+    min-height: 14rem;
+    height: 14rem;
+  }
   .comments {
     padding: 4% 0 0;
     padding-bottom: 80px;
@@ -518,14 +523,6 @@
     margin-top: 2.5%;
   }
 
-  .pattern-center-sakura {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-  }
-
   /* Post Squares */
   .post-squares .third {
     width: 100%;
@@ -584,13 +581,6 @@
     padding: 0 4.5%;
   }
 
-  /* Notice */
-  .notice {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    width: 100%;
-  }
-
   /* Center Background */
   #centerbg {
     height: 300px;
@@ -619,6 +609,12 @@
 
 /* 较小屏幕适配 */
 @media (max-width: 768px) {
+  .bento-medium {
+    grid-column: span 12;
+    min-height: 12rem;
+    height: 12rem;
+  }
+
   .post-meta {
     inset: 10px 10px auto auto;
     height: fit-content;
@@ -775,11 +771,6 @@
 @media (max-width: 860px) {
   .comments {
     max-width: 100% !important;
-  }
-
-  .top-feature,
-  .top-feature-row {
-    display: none;
   }
 
   .site-content {

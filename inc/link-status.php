@@ -275,3 +275,59 @@ function sakurairo_link_status_admin_styles() {
     }
 }
 add_action('admin_head', 'sakurairo_link_status_admin_styles');
+
+// 添加链接优先级字段
+add_action('link_category_add_form_fields', function($taxonomy) {
+    ?>
+    <div class="form-field">
+        <label for="term_priority"><?php __("priority","sakurairo"); ?></label>
+        <input type="number" name="term_priority" id="term_priority" value="0" min="0" />
+        <p><?php echo __("The higher the value, the higher the priority (default is 0).","sakurairo"); ?></p>
+    </div>
+    <?php
+});
+
+add_action('link_category_edit_form_fields', function($term, $taxonomy) {
+    $priority = get_term_meta($term->term_id, 'term_priority', true);
+    ?>
+    <tr class="form-field">
+        <th scope="row"><label for="term_priority"><?php __("priority","sakurairo"); ?></label></th>
+        <td>
+            <input type="number" name="term_priority" id="term_priority" 
+                   value="<?php echo esc_attr($priority ?: 0); ?>" 
+                   min="0" />
+            <p class="description"><?php echo __("The higher the value, the higher the priority (default is 0).","sakurairo"); ?></p>
+        </td>
+    </tr>
+    <?php
+}, 10, 2); 
+
+add_filter('manage_edit-link_category_columns', function($columns) {
+    $columns['priority'] = __('priority', 'sakurairo');
+    return $columns;
+});
+
+add_filter('manage_link_category_custom_column', function($content, $column_name, $term_id) {
+    if ($column_name === 'priority') {
+        $priority = get_term_meta($term_id, 'term_priority', true);
+        return $priority ?: 0;
+    }
+    return $content;
+}, 10, 3);
+
+add_filter('manage_edit-link_category_sortable_columns', function($columns) {
+    $columns['priority'] = 'term_priority';
+    return $columns;
+});
+
+add_action('created_link_category', function($term_id) {
+    if (isset($_POST['term_priority'])) {
+        update_term_meta($term_id, 'term_priority', intval($_POST['term_priority']));
+    }
+});
+
+add_action('edited_link_category', function($term_id) {
+    if (isset($_POST['term_priority'])) {
+        update_term_meta($term_id, 'term_priority', intval($_POST['term_priority']));
+    }
+});

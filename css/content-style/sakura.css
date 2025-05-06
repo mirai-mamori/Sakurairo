@@ -141,7 +141,7 @@ h1.entry-title {
     line-height: 30px
 }
 
-.entry-content hr {
+.entry-content hr:not(.wp-block-separator) {
     margin-top: 40px;
     margin-bottom: 40px;
     display: block;
@@ -150,7 +150,7 @@ h1.entry-title {
     background: 0 0
 }
 
-.entry-content hr:before {
+.entry-content hr:before:not(.wp-block-separator) {
     content: '...';
     display: inline-block;
     margin-left: .6em;

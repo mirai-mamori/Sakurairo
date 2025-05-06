@@ -313,7 +313,7 @@ $print_social_zone = function() use ($all_opt): void {
 
 <div id="banner_wave_1"></div>
 <div id="banner_wave_2"></div>
-<figure id="centerbg" class="centerbg">
+<figure id="centerbg" class="centerbg" style="<?php echo iro_opt('cover_full_screen',true) ? "height: 100vh;" : ''; ?>">
     <?php if (iro_opt('infor_bar')) { ?>
         <div class="focusinfo">
             <?php if (isset($text_logo['text']) && iro_opt('text_logo_options', 'true')) : ?>

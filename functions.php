@@ -12,7 +12,7 @@ include_once('inc/classes/IpLocation.php');
 
 define('IRO_VERSION', wp_get_theme()->get('Version'));
 define('BUILD_VERSION', '3');
-define('INT_VERSION', '20.0.2');
+define('INT_VERSION', '20.0.4');
 define('SSU_URL', 'https://api.fuukei.org/update/ssu.json');
 
 function check_php_version($preset_version)
@@ -521,8 +521,7 @@ function sakura_scripts()
             echo '<link rel="preload" href="' .$iro_css. '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">';
             echo '<link rel="stylesheet" href="' . $iro_css . '">';
         }, 9);
-    } else {
-        wp_enqueue_style('iro-css', $core_lib_basepath . '/style.css', array(), IRO_VERSION);
+    } else {        wp_enqueue_style('iro-css', $core_lib_basepath . '/style.css', array(), IRO_VERSION);
         wp_enqueue_style('iro-dark', $core_lib_basepath . '/css/dark.css', array('iro-css'), IRO_VERSION);
         wp_enqueue_style('iro-responsive', $core_lib_basepath . '/css/responsive.css', array('iro-css'), IRO_VERSION);
         wp_enqueue_style('iro-animation', $core_lib_basepath . '/css/animation.css', array('iro-css'), IRO_VERSION);
@@ -614,6 +613,15 @@ require get_template_directory() . '/inc/api.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * 初始化Bilibili收藏夹缓存定时任务
+ */
+add_action('init', function() {
+    if (class_exists('Sakura\API\BilibiliFavListCron')) {
+        Sakura\API\BilibiliFavListCron::init();
+    }
+});
 
 // 加载缓存设置页
 
@@ -857,24 +865,26 @@ function get_the_link_items($id = null)
     return $output;
 }
 
-function get_link_items()
-{
-    $linkcats = get_terms('link_category');
+function get_link_items() {
+    // 获取链接分类并按优先级降序排列
+    $linkcats = get_terms(array(
+        'taxonomy'   => 'link_category',
+        'meta_key'   => 'term_priority', // 优先级字段
+        'orderby'    => 'meta_value_num', 
+        'order'      => 'DESC', 
+        'hide_empty' => false
+    ));
+
     $result = null;
-    if (empty($linkcats))
-        return get_the_link_items();  // 友链无分类，直接返回全部列表  
+    if (empty($linkcats)) {
+        return get_the_link_items(); // 友链无分类，直接返回全部列表  
+    }
     
     $pending_cat_name = __('Pending Links', 'sakurairo'); // 未审核链接分类名称
-    $link_category_need_display = get_post_meta(get_queried_object_id(), 'link_category_need_display', false);
     
     foreach ($linkcats as $linkcat) {
         // 跳过未审核链接分类
         if ($linkcat->name === $pending_cat_name) {
-            continue;
-        }
-        
-        // 检查是否需要显示该分类
-        if (!empty($link_category_need_display) && !in_array($linkcat->name, $link_category_need_display, true)) {
             continue;
         }
         
@@ -1101,7 +1111,7 @@ if ($custom_login_switch) {
     // Add custom login styles
     function custom_login() {
         ?>
-        <style type="text/css">body.login{background-image:url('<?php echo DEFAULT_FEATURE_IMAGE(); ?>');background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;}.login h1 a{background-image:url('<?php echo iro_opt('login_logo_img') ?: get_site_icon_url(); ?>') !important;background-size:contain;width:100%;max-height:100px;}.login form{box-shadow:0 1px 30px -4px #e8e8e880;border:1px solid #FFFFFF;background:rgba(255,255,255,0.8);-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);border-radius:10px;}.login form input[type=checkbox],.login input[type=password],.login input[type=text],.login input[type=email]{background:rgba(255,255,255,0.7);box-shadow:0 1px 30px -4px #e8e8e880;border:1px solid #FFFFFF;-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);font-size:15px;padding:0.6rem;border-radius:8px;}.wp-core-ui .button-primary,#wp-webauthn{background:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;border-color:transparent;border-radius:6px;padding:1px 18px !important;transition:all 0.3s ease;}.wp-core-ui .button-primary:hover,#wp-webauthn:hover{background:<?php echo iro_opt('theme_skin_matching') ?: '#FF69B4'; ?>;border-color:transparent;transition:all 0.3s ease;}.vaptchaContainer{margin:5px 0 20px;}.login form .forgetmenot{margin-top: 6px;}.login .button.wp-hide-pw .dashicons{color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;}#language-switcher{color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;backdrop-filter:none;-webkit-backdrop-filter:none;}.login #nav{font-size:12px;padding:8px 12px;background:rgba(255,255,255,0.7);box-shadow:0 1px 30px -4px #e8e8e8;border:1px solid #FFFFFF;-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);width:fit-content;border-radius:8px;margin:auto;margin-top:-18px;}.login #backtoblog{display:none;}.captcha{display:flex !important;align-items:center;margin-bottom:20px !important;margin-top:10px;gap:10px;}.login form input[name=yzm]{margin:0;}.login label{margin-bottom:5px;}.wp-webauthn-notice{height: 40px !important;margin-bottom: 15px;}#wp-webauthn span{color:#fff;}.vp-dark-btn.vp-basic-btn{border-radius: 8px !important;}</style>
+        <style type="text/css">body.login{background-image:url('<?php echo DEFAULT_FEATURE_IMAGE(); ?>');background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;}.login h1 a{background-image:url('<?php echo iro_opt('login_logo_img') ?: get_site_icon_url(); ?>') !important;background-size:contain;width:100%;max-height:100px;}.login form{box-shadow:0 1px 30px -4px #e8e8e880;border:1px solid #FFFFFF;background:rgba(255,255,255,0.8);-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);border-radius:10px;}.login form input[type=checkbox],.login input[type=password],.login input[type=text],.login input[type=email]{background:rgba(255,255,255,0.7);box-shadow:0 1px 30px -4px #e8e8e880;border:1px solid #FFFFFF;-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);font-size:15px;padding:0.6rem;border-radius:8px;}.wp-core-ui .button-primary,#wp-webauthn{background:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;border-color:transparent;border-radius:6px;padding:1px 18px !important;transition:all 0.3s ease;}.wp-core-ui .button-primary:hover,#wp-webauthn:hover{background:<?php echo iro_opt('theme_skin_matching') ?: '#FF69B4'; ?>;border-color:transparent;transition:all 0.3s ease;}.vaptchaContainer{margin:5px 0 20px;}.login form .forgetmenot{margin-top: 6px;}.login .button.wp-hide-pw .dashicons{color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;}#language-switcher{color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;backdrop-filter:none;-webkit-backdrop-filter:none;}.login #nav{font-size:12px;padding:8px 12px;background:rgba(255,255,255,0.7);box-shadow:0 1px 30px -4px #e8e8e8;border:1px solid #FFFFFF;-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);width:fit-content;border-radius:8px;margin:auto;margin-top:-13%;}.login #backtoblog{display:none;}.captcha{display:flex !important;align-items:center;margin-bottom:20px !important;margin-top:10px;gap:10px;}.login form input[name=yzm]{margin:0;}.login label{margin-bottom:5px;}.wp-webauthn-notice{height: 40px !important;margin-bottom: 15px;}#wp-webauthn span{color:#fff;}.vp-dark-btn.vp-basic-btn{border-radius: 8px !important;}</style>
         <?php
     }
     add_action('login_head', 'custom_login');
@@ -1474,10 +1484,6 @@ update_custom_smilies_list();
 
 
 $custom_smiliestrans = array();
-/**
- * 输出表情列表
- *
- */
 function push_custom_smilies()
 {
 
@@ -1810,6 +1816,7 @@ function theme_admin_notice_callback()
             break;
 
         case 'ja':
+        case 'ja_JP':
             $thankyou = 'ご使用いただきありがとうございます！以下は、あなたの許可が必要なコンテンツです。';
             $dislike = 'いいえ、結構です';
             $allow_send = '統計目的のためにあなたのテーマバージョンを送信することを許可する';
@@ -2358,13 +2365,15 @@ if (iro_opt('sakura_widget')) {
 function markdown_parser($incoming_comment)
 {
     global $wpdb, $comment_markdown_content;
+    global $allowedtags;
 
     $enable_markdown = isset($_POST['enable_markdown']) ? (bool) $_POST['enable_markdown'] : false;
 
     if ($enable_markdown) {
         $may_script = array(
             '/<script.*?>.*?<\/script>/is', //<script>标签
-            '/onclick\s*=\s*["\'].*?["\']/is',//onlick属性
+            '/on\w+\s*=\s*(["\']).*?\1/is',
+            '/on\w+\s*=\s*[^\s>]+/is'//on属性
         );
     
         foreach ($may_script as $pattern) {
@@ -2373,49 +2382,23 @@ function markdown_parser($incoming_comment)
                 return ($incoming_comment);
             }
         }
-    
-        $re = '/<[^>]*>/';
-        $allowed_html_content = array(
-            'a' => array(
-                'href' => array(),
-                'title' => array(),
-                'target' => array('_blank'),
-            ),
-            'b' => array(),
-            'br' => array(),
-            'img' => array(
-                'src' => array(),
-                'alt' => array(),
-                'width' => array(),
-                'height' => array(),
-            ),
-            'code' => array(),
-            'blockquote' => array(),
-            'ul' => array(),
-            'ol' => array(),
-            'li' => array(),
-            'p' => array(),
-            'div' => array(),
-            'span' => array(),
-        );
-        if (preg_match($re, $incoming_comment['comment_content'])) {
-            $incoming_comment['comment_content'] = wp_kses($incoming_comment['comment_content'], $allowed_html_content);//移除所有不允许的标签
-        }
+        $incoming_comment['comment_content'] = wp_kses($incoming_comment['comment_content'], $allowedtags); // 自行调用kses
     } else {
         $incoming_comment['comment_content'] = htmlspecialchars($incoming_comment['comment_content'], ENT_QUOTES, 'UTF-8'); //未启用markdown直接转义
     }
 
-    $column_names = $wpdb->get_row("SELECT * FROM information_schema.columns where 
-    table_name='$wpdb->comments' and column_name = 'comment_markdown' LIMIT 1");
-    //Add column if not present.
-    if (!isset($column_names)) {
-        $wpdb->query("ALTER TABLE $wpdb->comments ADD comment_markdown text");
-    }
+    // $column_names = $wpdb->get_row("SELECT * FROM information_schema.columns where 
+    // table_name='$wpdb->comments' and column_name = 'comment_markdown' LIMIT 1");
+    // //Add column if not present.
+    // if (!isset($column_names)) {
+    //     $wpdb->query("ALTER TABLE $wpdb->comments ADD comment_markdown text");
+    // }
     $comment_markdown_content = $incoming_comment['comment_content'];
 
     if ($enable_markdown) { //未启用markdown不做解析
         include 'inc/Parsedown.php';
         $Parsedown = new Parsedown();
+        $Parsedown->setSafeMode(false);
         $incoming_comment['comment_content'] = $Parsedown->setUrlsLinked(false)->text($incoming_comment['comment_content']);
     }
     return $incoming_comment;
@@ -2423,21 +2406,38 @@ function markdown_parser($incoming_comment)
 add_filter('preprocess_comment', 'markdown_parser');
 remove_filter('comment_text', 'make_clickable', 9);
 
-//保存Markdown评论
-function save_markdown_comment($comment_ID, $comment_approved)
-{
-    global $wpdb, $comment_markdown_content;
-    $comment = get_comment($comment_ID);
-    $comment_content = $comment_markdown_content;
-    //store markdow content
-    $wpdb->query("UPDATE $wpdb->comments SET comment_markdown='" . $comment_content . "' WHERE comment_ID='" . $comment_ID . "';");
-}
-add_action('comment_post', 'save_markdown_comment', 10, 2);
+// //保存Markdown评论
+// function save_markdown_comment($comment_ID, $comment_approved)
+// {
+//     global $wpdb, $comment_markdown_content;
+//     $comment = get_comment($comment_ID);
+//     $comment_content = $comment_markdown_content;
+//     //store markdow content
+//     $wpdb->query("UPDATE $wpdb->comments SET comment_markdown='" . $comment_content . "' WHERE comment_ID='" . $comment_ID . "';");
+// }
+// add_action('comment_post', 'save_markdown_comment', 10, 2);
 
 //打开评论HTML标签限制
 function allow_more_tag_in_comment()
 {
     global $allowedtags;
+    $allowedtags['img'] = [
+        'src' => [],
+        'alt' => [],
+        'width' => [],
+        'height' => [],
+        'title' => [],
+    ];
+    $allowedtags['a'] = [
+        'href' => [],
+        'title' => [],
+        'target' => [],
+        'rel' => [],
+    ];
+    $allowedtags['b'] = array('class' => array());
+    $allowedtags['br'] = array('class' => array());
+    $allowedtags['blockquote'] = array('class' => array());
+    $allowedtags['p'] = array('class' => array());
     $allowedtags['pre'] = array('class' => array());
     $allowedtags['code'] = array('class' => array());
     $allowedtags['h1'] = array('class' => array());
@@ -2456,7 +2456,10 @@ function allow_more_tag_in_comment()
     $allowedtags['tbody'] = array('class' => array());
     $allowedtags['span'] = array('class' => array());
 }
-add_action('pre_comment_on_post', 'allow_more_tag_in_comment');
+add_action('init', 'allow_more_tag_in_comment');
+// 移除wp核心内置的两阶段评论过滤
+remove_filter('pre_comment_content', 'wp_filter_kses');
+remove_filter('comment_save_pre', 'wp_filter_kses');
 
 /**
  * 检查数据库是否支持MyISAM引擎
@@ -3053,16 +3056,21 @@ function get_the_user_ip()
 }
 
 //归档页信息缓存
-function get_archive_info() {
+function get_archive_info($get_page = false) {
     // 获取所有文章和说说
-    $posts = get_posts([
+    $args = [
         'posts_per_page' => -1,
         'orderby' => 'date',
         'order' => 'DESC',
         'post_type' => array('post', 'shuoshuo'),
         'post_status'    => 'publish',
         'suppress_filters' => false // 同时获取文章和说说
-    ]);
+    ];
+    if ($get_page){
+        $args['post_type'] = array('post', 'shuoshuo', 'page');
+    }
+    $posts = get_posts($args);
+    // 统计
     $years = [];
     $stats = [
         'total' => [
@@ -3082,15 +3090,29 @@ function get_archive_info() {
             'views' => 0,
             'words' => 0,
             'comments' => 0
+        ],
+        'page' => [
+            'posts' => 0,
+            'views' => 0,
+            'words' => 0,
+            'comments' => 0
         ]
     ];
-        foreach ($posts as $post) {
+    foreach ($posts as $post) {
         $views = get_post_views($post->ID);
         $words = get_meta_words_count($post->ID);
         $comments = get_comments_number($post->ID);
         
-        // 判断文章类型（使用post_type而不是post_format）
-        $post_type = $post->post_type === 'shuoshuo' ? 'shuoshuo' : 'article';
+        // 判断页面类型
+        if ($post->post_type == 'post') {
+            $post_type = 'article';
+        }
+        if ($post->post_type == 'shuoshuo') {
+            $post_type = 'shuoshuo';
+        }
+        if ($post->post_type == 'page') {
+            $post_type = 'page';
+        }
         
         // 更新统计数据
         $stats[$post_type]['posts']++;
@@ -3103,20 +3125,30 @@ function get_archive_info() {
         $stats['total']['words'] += intval($words);
         $stats['total']['comments'] += intval($comments);
         
-        $post->meta = [
-            'views' => $views,
-            'words' => $words,
-            'type' => $post_type
-        ];
-        
         $year = date('Y', strtotime($post->post_date));
         $month = date('n', strtotime($post->post_date));
+        if ($post->post_password != ''){
+            $post->post_title = __("It's a secret",'sakurairo'); // 隐藏受密码保护文章的标题
+        }
+        $post = [ //仅保存需要的数据（归档、展示区）
+            'post_title'    => $post->post_title,
+            'post_author'     => $post->post_author,
+            'post_date'     => $post->post_date,
+            'post_modified'     => $post->post_modified,
+            'comment_count' => $comments,
+            'guid'          => $post->guid,
+            'meta' => [
+                'views' => $views,
+                'words' => $words,
+                'type' => $post_type
+            ]
+        ];
+        
         if (!isset($years[$year])) $years[$year] = [];
         if (!isset($years[$year][$month])) $years[$year][$month] = [];
         $years[$year][$month][] = $post;
-
-        set_transient('time_archive',$years,2592000);
     }
+
     return $years;
 }
 
@@ -3599,6 +3631,179 @@ function should_show_title(): bool
     return !iro_opt('patternimg')
         || !get_post_thumbnail_id($id)
         && $use_as_thumb != 'true' && !get_post_meta($id, 'video_cover', true);
+}
+
+// 管理员访问任何页面更新最后在线时间
+function sakurairo_record_admin_login() {
+    if (is_user_logged_in()) {
+        $user = wp_get_current_user();
+        if (in_array('administrator', (array) $user->roles)) {
+            update_user_meta($user->ID, 'last_online', current_time('mysql'));
+        }
+    }
+}
+add_action('wp_loaded', 'sakurairo_record_admin_login');
+
+// 添加钩子，在发布/更新文章或者评论时刷新缓存
+function sakurairo_refresh_stats_on_action() {
+    if (current_user_can('edit_post')) {
+        delete_transient('sakurairo_site_stats');
+    }
+}
+add_action('wp_insert_post', 'sakurairo_refresh_stats_on_action');
+add_action('edit_post', 'sakurairo_refresh_stats_on_action');
+add_action('wp_insert_comment', 'sakurairo_refresh_stats_on_action');
+
+// 格式化时间差函数 - 将分钟转换为友好的文本格式
+function format_time_diff($minutes) {
+    if ($minutes < 1) {
+        return __('Just now', 'sakurairo');
+    } elseif ($minutes < 60) {
+        return sprintf(_n('%d minute ago', '%d minutes ago', $minutes, 'sakurairo'), $minutes);
+    } elseif ($minutes < 1440) { // 小于一天
+        $hours = floor($minutes / 60);
+        return sprintf(_n('%d hour ago', '%d hours ago', $hours, 'sakurairo'), $hours);
+    } elseif ($minutes < 10080) { // 小于一周
+        $days = floor($minutes / 1440);
+        return sprintf(_n('%d day ago', '%d days ago', $days, 'sakurairo'), $days);
+    } elseif ($minutes < 43200) { // 小于一个月
+        $weeks = floor($minutes / 10080);
+        return sprintf(_n('%d week ago', '%d weeks ago', $weeks, 'sakurairo'), $weeks);
+    } else {
+        $months = floor($minutes / 43200);
+        return sprintf(_n('%d month ago', '%d months ago', $months, 'sakurairo'), $months);
+    }
+}
+
+// 获取站点统计信息
+function get_site_stats() {
+    // 尝试从缓存获取数据
+    $cached_stats = get_transient('sakurairo_site_stats');
+    if ($cached_stats !== false) {
+        return $cached_stats;
+    }
+
+    $posts_stat = get_archive_info(true);
+    
+    $total_posts = 0;
+    $total_words = 0;
+    $total_authors = 0;
+    $total_comments =0;
+    $total_views = 0;
+    $first_post_date = null;
+
+    foreach ($posts_stat as $year => $months) {
+        foreach ($months as $month => $posts) {
+            foreach ($posts as $post) {
+                if ($post['meta']['type'] != "page"){
+                    $total_posts++;
+    
+                    // 字数
+                    if (isset($post['meta']['words'])) {
+                        preg_match('/\d+/', $post['meta']['words'], $matches);
+                        $total_words += isset($matches[0]) ? intval($matches[0]) : 0;
+                    }
+                }
+    
+                // 作者
+                $authors[$post['post_author']] = true;
+    
+                // 评论数
+                $total_comments += intval($post['comment_count']);
+    
+                // 浏览数
+                if (isset($post['meta']['views'])) {
+                    $total_views += intval($post['meta']['views']);
+                }
+    
+                // 最早发表时间
+                $post_time = strtotime($post['post_date']);
+                if ($first_post_date === null || $post_time < $first_post_date) {
+                    $first_post_date = $post_time;
+                }
+            }
+        }
+    }
+
+    $total_authors = count($authors);
+    // 第一篇文章的发布日期
+    $first_post_date = date('Y-m-d H:i:s', $first_post_date);
+    
+    // 友情链接数量
+    $link_count = count(get_bookmarks(['hide_invisible' => true]));
+    
+    // 随机友情链接
+    $random_link = get_bookmarks([
+        'hide_invisible' => true,
+        'orderby' => 'rand',
+        'limit' => 1
+    ]);
+    $random_link_data = !empty($random_link) ? $random_link[0] : null;
+    
+    // 计算从第一篇文章发布到现在的天数
+    $blog_days = 0;
+    if ($first_post_date) {
+        $first_post_datetime = new DateTime($first_post_date);
+        $now = new DateTime();
+        $interval = $now->diff($first_post_datetime);
+        $blog_days = $interval->days;
+    }
+
+    function get_latest_admin_online_time() {
+        $admins = get_users(['role' => 'administrator']);
+        $latest_time = 0;
+        $latest_admin = null;
+    
+        foreach ($admins as $admin) {
+            $last_online = get_user_meta($admin->ID, 'last_online', true);
+            if ($last_online) {
+                $timestamp = strtotime($last_online);
+                if ($timestamp > $latest_time) {
+                    $latest_time = $timestamp;
+                    $latest_admin = [
+                        'user' => $admin,
+                        'time' => $last_online
+                    ];
+                }
+            }
+        }
+    
+        return $latest_admin;
+    }
+    
+    $latest_admin_info = get_latest_admin_online_time();
+    
+    if (!empty($latest_admin_info)) {
+        $admin_last_online = $latest_admin_info['time'];
+        $last_online_timestamp = strtotime($admin_last_online);
+        $current_timestamp = current_time('timestamp');
+    
+        // 计算以分钟为单位的时间差
+        $admin_last_online_diff = max(0, floor(($current_timestamp - $last_online_timestamp) / 60));
+    } else {
+        // 没有记录，使用当前时间
+        $admin_last_online = current_time('mysql');
+        $admin_last_online_diff = 0;
+    }
+    
+    $stats = [
+        'post_count' => $total_posts,
+        'comment_count' => $total_comments,
+        'visitor_count' => $total_views,
+        'link_count' => $link_count,
+        'random_link' => $random_link_data,
+        'first_post_date' => $first_post_date,
+        'blog_days' => $blog_days,
+        'admin_last_online' => $admin_last_online,
+        'admin_last_online_diff' => $admin_last_online_diff,
+        'author_count' => $total_authors,
+        'total_words' => $total_words,
+    ];
+    
+    // 缓存数据1小时
+    set_transient('sakurairo_site_stats', $stats, 3600);
+    
+    return $stats;
 }
 
 /**

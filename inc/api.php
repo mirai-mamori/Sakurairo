@@ -19,11 +19,13 @@ include_once('classes/QQ.php');
 include_once('classes/Captcha.php');
 include_once('classes/MyAnimeList.php');
 include_once('classes/BilibiliFavList.php');
+include_once('classes/BilibiliFavListCron.php');
 include_once('classes/bangumi.php');
 include_once('classes/Steam.php');
 use Sakura\API\QQ;
 use Sakura\API\Cache;
 use Sakura\API\Captcha;
+use Sakura\API\BilibiliFavListCron;
 
 /**
  * Router
@@ -89,8 +91,14 @@ add_action('rest_api_init', function () {
     )
     );
     register_rest_route('sakura/v1', '/favlist/bilibili', array(
-        'methods' => 'POST',
+        'methods' => 'GET',
         'callback' => 'favlist_bilibili',
+        'permission_callback' => '__return_true'
+    )
+    );
+    register_rest_route('sakura/v1', '/favlist/bilibili/folders', array(
+        'methods' => 'GET',
+        'callback' => 'favlist_bilibili_folders',
         'permission_callback' => '__return_true'
     )
     );
@@ -131,8 +139,8 @@ add_action('rest_api_init', function () {
         'callback' => function (){
             $time_archive = get_transient('time_archive');
             if (!$time_archive) {
-                get_archive_info();
-                $time_archive = get_transient('time_archive');
+                $time_archive = get_archive_info();
+                set_transient('time_archive',$time_archive,86400);
             }
             return $time_archive;
         },
@@ -394,23 +402,126 @@ function steam_library ($request)
     return $SteamList->get_steam_items((int)$page);
 }
 
-function favlist_bilibili()
+function favlist_bilibili(WP_REST_Request $request)
+{
+    // 使用 WP_REST_Request 参数而不是直接访问 $_GET
+    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+        $output = array(
+            'code' => 401,
+            'message' => 'Unauthorized client.'
+        );
+        return new WP_REST_Response($output, 401);
+    }
+    
+    // 获取请求参数
+    $page = $request->get_param('page') ? intval($request->get_param('page')) : 1;
+    $folder_id = $request->get_param('folder_id') ? intval($request->get_param('folder_id')) : 0;
+    
+    if (!$folder_id) {
+        $output = array(
+            'code' => 400,
+            'message' => 'Missing folder_id parameter'
+        );
+        return new WP_REST_Response($output, 400);
+    }
+    
+    try {
+        // 缓存键名
+        $cache_key = 'bilibili_favlist_' . $folder_id . '_' . $page;
+        
+        // 从缓存获取数据
+        $folder_data = BilibiliFavListCron::get_cache($cache_key);
+        
+        // 如果缓存不存在，则从API获取
+        if ($folder_data === false) {
+            $bgm = new \Sakura\API\BilibiliFavList();
+            $folder_resp = $bgm->fetch_folder_item_api($folder_id, $page);
+            
+            if (!$folder_resp) {
+                throw new Exception('Failed to fetch folder items');
+            }
+            
+            $folder_data = $folder_resp['data'];
+            
+            // 存入缓存
+            set_transient($cache_key, $folder_data, BilibiliFavListCron::CACHE_EXPIRY);
+            set_transient($cache_key . '_expire', time() + BilibiliFavListCron::CACHE_EXPIRY, BilibiliFavListCron::CACHE_EXPIRY);
+        }
+        
+        $output = array(
+            'code' => 0,
+            'message' => 'success',
+            'data' => $folder_data,
+            'cache_info' => array(
+                'from_cache' => ($folder_data !== false),
+                'expires_in' => BilibiliFavListCron::get_cache_expiry($cache_key)
+            )
+        );
+        return new WP_REST_Response($output, 200);
+        
+    } catch (Exception $e) {
+        error_log('BilibiliFavList API error: ' . $e->getMessage());
+        $output = array(
+            'code' => 500,
+            'message' => 'Failed to fetch folder items: ' . $e->getMessage()
+        );
+        return new WP_REST_Response($output, 500);
+    }
+}
+
+function favlist_bilibili_folders(WP_REST_Request $request)
 {
     if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
         $output = array(
-            'status' => 403,
-            'success' => false,
+            'code' => 401,
             'message' => 'Unauthorized client.'
         );
-        $response = new WP_REST_Response($output, 403);
-    } else {
-        $page = $_GET["page"] ?: 2;
-        $folder_id = $_GET["folder_id"];
-        $bgm = new \Sakura\API\BilibiliFavList();
-        $html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->load_folder_items($folder_id, $page));
-        $response = new WP_REST_Response($html, 200);
+        return new WP_REST_Response($output, 401);
     }
-    return $response;
+    
+    try {
+        // 先尝试从缓存获取数据
+        $folders_data = BilibiliFavListCron::get_cache('bilibili_favlist_folders');
+        
+        // 如果没有缓存或缓存过期，则从API获取并更新缓存
+        if ($folders_data === false) {
+            $bgm = new \Sakura\API\BilibiliFavList();
+            $folders_resp = $bgm->fetch_folder_api();
+            
+            if (!$folders_resp) {
+                throw new Exception('Failed to fetch folders');
+            }
+            
+            if (!isset($folders_resp['data']) || $folders_resp['data'] === null) {
+                throw new Exception('No folder data returned from API');
+            }
+            
+            $folders_data = $folders_resp['data'];
+            
+            // 存入缓存
+            set_transient('bilibili_favlist_folders', $folders_data, BilibiliFavListCron::CACHE_EXPIRY);
+            set_transient('bilibili_favlist_folders_expire', time() + BilibiliFavListCron::CACHE_EXPIRY, BilibiliFavListCron::CACHE_EXPIRY);
+        }
+        
+        $output = array(
+            'code' => 0,
+            'message' => 'success',
+            'data' => $folders_data,
+            'cache_info' => array(
+                'from_cache' => ($folders_data !== false),
+                'expires_in' => BilibiliFavListCron::get_cache_expiry('bilibili_favlist_folders')
+            )
+        );
+        return new WP_REST_Response($output, 200);
+        
+    } catch (Exception $e) {
+        error_log('BilibiliFavList Folders API error: ' . $e->getMessage());
+        $output = array(
+            'code' => 500,
+            'message' => 'Failed to fetch folders: ' . $e->getMessage()
+        );
+        return new WP_REST_Response($output, 500);
+    }
 }
 
 function meting_aplayer()

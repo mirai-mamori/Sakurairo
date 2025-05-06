@@ -1,10 +1,10 @@
 <?php
-/**
- Template Name: Bilibili FollowVideos Template
- */
+/*
+  Template Name: Bilibili FollowVideos Template
+*/
 get_header();
-
 ?>
+
 <meta name="referrer" content="">
 <style>
 .site-content {

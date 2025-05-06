@@ -362,7 +362,7 @@ $prefix = 'iro_options';
         'unit'    => 'px',
         'min'   => '10',
         'max'   => '20',
-        'default' => '15'
+        'default' => '16'
       ),
 
       array(
@@ -2156,7 +2156,6 @@ $prefix = 'iro_options';
         "multiple" => true,
         "sortable" => true,
         "options"=> array(
-            'bulletin'    => __('Bulletin Board','sakurairo_csf'),
             'exhibition'  => __('Display Area','sakurairo_csf'),
             'primary'     => __('Article Area','sakurairo_csf'),
             'static_page' => __('Static Page','sakurairo_csf'),
@@ -2236,96 +2235,6 @@ $prefix = 'iro_options';
 
   Sakurairo_CSF::createSection( $prefix, array(
     'parent' => 'homepage', 
-    'title' => __('Bulletin Board','sakurairo_csf'),
-    'icon' => 'fa fa-bullhorn',
-    'fields' => array(
-
-      array(
-        'type' => 'submessage',
-        'style' => 'info',
-        'content' => __('You can click <a href="https://docs.fuukei.org/Sakurairo/Homepage/#%E5%85%AC%E5%91%8A%E6%A0%8F%E5%92%8C%E5%8C%BA%E5%9F%9F%E6%A0%87%E9%A2%98%E8%AE%BE%E7%BD%AE">here</a> to learn how to set the options on this page','sakurairo_csf'),
-      ),
-
-      array(
-        'type'    => 'submessage',
-        'style'   => 'normal',
-        'content' => __('It will only be displayed when "Bulletin Board" is selected in the homepage component settings','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'bulletin_board_style',
-        'type' => 'radio',
-        'title' => __('Bulletin Board Style','sakurairo_csf'),
-        'options' => array(
-          'picture' => __('Picture Background','sakurairo_csf'),
-          'pure' => __('Color Background','sakurairo_csf'),
-        ),
-        'default' => 'picture'
-      ),
-
-      array(
-        'id' => 'bulletin_board_icon',
-        'type' => 'switcher',
-        'title' => __('Bulletin Board "Notice" Icon','sakurairo_csf'),
-        'label' => __('The "Notice" icon will be displayed on the left side of the announcement bar','sakurairo_csf'),
-        'default' => true
-      ),
-
-      array(
-        'id' => 'bulletin_board_bg',
-        'type' => 'upload',
-        'title' => __('Bulletin Board Background','sakurairo_csf'),
-        'dependency' => array(
-          array( 'bulletin_board_style', '==', 'picture' ),
-        ),
-        'desc' => __('Best width 820px, best height 67px','sakurairo_csf'),
-        'library' => 'image',
-        'default' => $vision_resource_basepath . 'series/announcement_bg.webp'
-      ),
-
-      array(
-        'id' => 'bulletin_board_border_color',
-        'type' => 'color',
-        'title' => __('Bulletin Board Border Color','sakurairo_csf'),
-        'dependency' => array(
-          array( 'bulletin_board_style', '==', 'pure' ),
-        ),
-        'desc' => __('Customize the colors, it is recommended to use a light color that corresponds with the theme color','sakurairo_csf'),
-        'default' => '#E6E6E6'
-      ),
-
-      array(
-        'id' => 'bulletin_text',
-        'type' => 'text',
-        'title' => __('Bulletin Board Text','sakurairo_csf'),
-        'desc' => __('Fill in the announcement text, the text beyond 142 bytes will be hidden','sakurairo_csf'),
-      ),
-
-      array(
-        'id' => 'bulletin_board_text_align',
-        'type' => 'image_select',
-        'title' => __('Bulletin Board Alignment','sakurairo_csf'),
-        'options'     => array(
-          'left'  => $vision_resource_basepath . 'options/announce_text_left.webp',
-          'right'  => $vision_resource_basepath . 'options/announce_text_right.webp',
-          'center'  => $vision_resource_basepath . 'options/announce_text_center.webp',
-        ),
-        'default'     => 'left'
-      ),
-
-      array(
-        'id' => 'bulletin_text_color',
-        'type' => 'color',
-        'title' => __('Bulletin Board Text Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#999'
-      ),
-
-    )
-  ) );
-
-  Sakurairo_CSF::createSection( $prefix, array(
-    'parent' => 'homepage', 
     'title' => __('Display Area Options','sakurairo_csf'),
     'icon' => 'fa fa-bookmark',
     'fields' => array(
@@ -2343,57 +2252,42 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'exhibition_area_matching_color',
-        'type' => 'color',
-        'title' => __('Display Area Matching Color','sakurairo_csf'),
-        'desc' => __('Customize the colors, suggest using a corresponding color with the background color','sakurairo_csf'),
-        'default' => '#a0daa9'
-      ),  
-
-      array(
-        'id' => 'exhibition_area_style',
-        'type' => 'image_select',
-        'title' => __('Display Area Style','sakurairo_csf'),
-        'options' => array(
-          'left_and_right' => $vision_resource_basepath . 'options/exhibition_area_style_lr.webp',
-          'bottom_to_top' => $vision_resource_basepath . 'options/exhibition_area_style_ud.webp',
+        'id' => 'capsule_components',
+        "type" => "select",
+        "title" => __("Capsule Components","sakurairo_csf"),
+        'desc' => __('Select the components you want to display.','sakurairo_csf'),
+        "chosen" => true,
+        "multiple" => true,
+        "sortable" => true,
+        "options"=> array(
+            'post_count'     => __('Posts Capsule','sakurairo_csf'),
+            'comment_count'  => __('Comments Capsule','sakurairo_csf'),
+            'view_count'  => __('Visitors Capsule','sakurairo_csf'),
+            'link_count'     => __('Links Capsule','sakurairo_csf'),
+            'author_count'     => __('Authors Capsule','sakurairo_csf'),
+            'total_words'     => __('Total Words Capsule','sakurairo_csf'),
+            'blog_days'     => __('Blog Running Capsule','sakurairo_csf'),
+            'admin_online'     => __('Last Online Capsule','sakurairo_csf'),
+            'random_link'     => __('Random Link Capsule','sakurairo_csf'),
+            'announcement'     => __('Announcement Capsule','sakurairo_csf'),
         ),
-        'default' => 'left_and_right'
-      ),
-
-      array(
-        'id' => 'exhibition_area_compat',
-        'type' => 'switcher',
-        'title' => __('Display Area Compatibility Mode','sakurairo_csf'),
-        'dependency' => array(
-                              array( 'exhibition_area_style', '==', 'left_and_right', '', 'true' ),
-                        ),
-        'label' => __('Enabled by default, this option avoids the problem of misaligned display areas','sakurairo_csf'),
-        'default' => true,
-      ),
-
-      array(
-        'id' => 'exhibition_background_color',
-        'type' => 'color',
-        'title' => __('Display Area Background Color','sakurairo_csf'),
-        'dependency' => array(
-                              array( 'exhibition_area_style', '==', 'left_and_right', '', 'true' ),
-                        ),
-        'desc' => __('Customize the colors, light colors are recommended','sakurairo_csf'),
-        'default' => 'rgba(255,255,255,0.4)'
+        "default" => array(''),
       ),
       
       array(
-        'id' => 'exhibition_radius',
-        'type' => 'slider',
-        'title' => __('Display Area Rounded Corners','sakurairo_csf'),
-        'dependency' => array(
-          array( 'exhibition_area_style', '==', 'left_and_right', '', 'true' ),
-          array( 'exhibition_area_compat', '==', 'true' ),
-        ),
-        'desc' => __('Slide to adjust, the recommended value is 15','sakurairo_csf'),
-        'unit' => 'px',
-        'default' => '15'
+        'id'     => 'show_medal_capsules',
+        'type'   => 'switcher',
+        'title'  => __('Show Medal Badges Style Capsule', 'sakurairo_csf'),
+        'desc'   => __('Enable to show bronze/silver/gold medal badges for blog milestones, Requires you to unlock the relevant milestone to replace the relevant capsule', 'sakurairo_csf'),
+        'default' => true,
+      ),
+      
+      array(
+        'id'     => 'stat_announcement_text',
+        'type'   => 'textarea',
+        'title'  => __('Announcement Text', 'sakurairo_csf'),
+        'desc'   => __('Set the text for announcement capsule. The front-end will automatically split the text into two lines, you can also use line breaks for manual line breaks', 'sakurairo_csf'),
+        'sanitize' => false,
       ),
 
       array(
@@ -2424,12 +2318,6 @@ $prefix = 'iro_options';
             ),
         ),
         'default'   => array(
-            array(
-                'img' => $vision_resource_basepath . 'series/exhibition1.webp',
-                'title' => 'アカネチル',
-                'description' => 'それでも怖いなら、せめて明日を想う心だけ持って僕の傍に居てくれればいい',
-                'link' => '',
-            ),
             array(
                 'img' => $vision_resource_basepath . 'series/exhibition2.webp',
                 'title' => '夏霞',
@@ -3542,7 +3430,7 @@ $prefix = 'iro_options';
 
       array(
         'type'    => 'content',
-        'content' => __('<img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/options/leaflow.webp" width="25%" height="25%"/><img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/options/postchat.webp" width="25%" height="25%"/>','sakurairo_csf'),
+        'content' => __('<img src="https://s.nmxc.ltd/sakurairo_vision/@3.0/options/postchat.webp" width="25%" height="25%"/>','sakurairo_csf'),
       ),
 
       array(
@@ -3551,9 +3439,7 @@ $prefix = 'iro_options';
           ?>
           <div>
            <h5><?=__("Reset to API providers' default options","sakurairo_csf")?></h5>
-           <div class="chatgpt_config_defaults"><button data-name="leaflow">
-           <?=__("Leaflow","sakurairo_csf")?>
-           </button>
+           <div class="chatgpt_config_defaults">
            <button data-name="postchat">
            <?=__("PostChat","sakurairo_csf")?>
            </button>
@@ -3562,41 +3448,36 @@ $prefix = 'iro_options';
            </button>
           </div>
            <script>
- 
-            const defaults = {
-                  leaflow:{
-                    chatgpt_endpoint:"https://amber-api.leaflow.cn/api/openai-compatible/v1/chat/completions",
-                    chatgpt_model:"auto"
-                  },
-                  postchat:{
-                    chatgpt_endpoint:"https://ai.tianli0.top/v1/chat/completions",
-                    chatgpt_model:"tianli"
-                  },
-                  openai:{
-                    chatgpt_endpoint:"https://api.openai.com/v1/chat/completions",
-                    chatgpt_model:"gpt-4o-mini",
-                  }
-                }
-            document.querySelector(".chatgpt_config_defaults").addEventListener('click',(e)=>{
-              if(e.target.tagName === "BUTTON"){
-                const name = e.target.dataset.name
+        const defaults = {
+          postchat:{
+            chatgpt_endpoint:"https://ai.tianli0.top/v1/chat/completions",
+            chatgpt_model:"tianli"
+          },
+          openai:{
+            chatgpt_endpoint:"https://api.openai.com/v1/chat/completions",
+            chatgpt_model:"gpt-4o-mini",
+          }
+            }
+        document.querySelector(".chatgpt_config_defaults").addEventListener('click',(e)=>{
+          if(e.target.tagName === "BUTTON"){
+            const name = e.target.dataset.name
 
-                const def = defaults[name]
-                if(!def)return
-                e.preventDefault()
-                e.stopPropagation()
-                try {
-                for(const key in def){
-                    document.querySelector(`input[name="iro_options[${key}]"]`).value = def[key]
-                }
-                alert('<?=__("Reset successfully","sakurairo_csf")?>')
+            const def = defaults[name]
+            if(!def)return
+            e.preventDefault()
+            e.stopPropagation()
+            try {
+            for(const key in def){
+            document.querySelector(`input[name="iro_options[${key}]"]`).value = def[key]
+            }
+            alert('<?=__("Reset successfully","sakurairo_csf")?>')
 
-                } catch (error) {
-                  alert("<?=__("Failed to reset","sakurairo_csf")?>" )
-                  console.error(error)
-                }
-              }
-            })
+            } catch (error) {
+          alert("<?=__("Failed to reset","sakurairo_csf")?>" )
+          console.error(error)
+            }
+          }
+        })
            </script> 
          </div>
           <?php
