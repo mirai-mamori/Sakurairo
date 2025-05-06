@@ -62,9 +62,7 @@ class Steam
             });
         }
         return $data;
-    }
-
-    public function get_steam_items($page = 1)
+    }    public function get_steam_items($page = 1)
     {
         $resp = $this->fetch_api();
         // 添加检查，确保 $resp['response']['games'] 存在且为数组
@@ -78,11 +76,21 @@ class Steam
 
 
         $html = "";
-        foreach ($games as $game) {
+        foreach ($games as $index => $game) {
             $playtime = $this->format_playtime($game['playtime_forever']);
             // 如果未游玩则不加载游戏时间
             $last_played = ($game['playtime_forever'] > 0) ? $this->format_last_played($game['rtime_last_played'] ?? 0) : '';
-            $html .= $this->game_items($game, $playtime, $last_played);
+            
+            // 计算动画延迟，但每行卡片重新开始计时，以减少长延迟
+            // 假设每行有4个卡片（大屏幕上）
+            $row_index = floor($index / 4);
+            $col_index = $index % 4;
+            $delay_index = $row_index * 0.1 + $col_index * 0.08;
+            
+            // 为每个卡片添加索引，用于错开动画效果
+            $card_html = $this->game_items($game, $playtime, $last_played);
+            $card_html = str_replace('<a class="steam-card"', '<a class="steam-card" style="--card-index:' . $delay_index . '"', $card_html);
+            $html .= $card_html;
         }
 
         //分页
@@ -92,18 +100,20 @@ class Steam
         }
 
         return $html;
-    }
-    
-    private function game_items(array $game, $playtime, $last_played)
+    }    private function game_items(array $game, $playtime, $last_played)
     {
     return
         '<a class="steam-card" href="' . esc_url($this->get_steam_store($game['appid'])) . '" target="_blank" rel="nofollow">' .
+        '<div class="steam-card-image">' .
         '<img src="' . esc_url($this->get_steam_covercdn() . '/store_item_assets/steam/apps/' . $game['appid'] . '/header.jpg') . 
         '" alt="' . esc_attr($game['name']) . '" loading="lazy">' .
+        '<div class="steam-title-overlay">' .
+        '<h3 class="steam-title" title="' . esc_attr($game['name']) . '">' . esc_html($game['name']) . '</h3>' .
+        '</div>' .
+        '</div>' .
         '<div class="steam-info">' .
-        '<div class="steam-title" title="' . esc_attr($game['name']) . '">' . esc_html($game['name']) . '</div>' .
-        '<div class="steam-desc">' . esc_html__('Playtime', 'sakurairo') . ': ' . $playtime . '</div>' .
-        ($last_played ? '<div class="steam-desc">' . esc_html__('Last Played', 'sakurairo') . ': ' . $last_played . '</div>' : '') .
+        '<div class="steam-stat"><i class="fa-solid fa-gamepad"></i><span>' . $playtime . '</span></div>' .
+        ($last_played ? '<div class="steam-stat"><i class="fa-regular fa-clock"></i><span>' . $last_played . '</span></div>' : '') .
         '</div>' .
         '</a>';
     }
@@ -146,12 +156,11 @@ class Steam
         $play_hours = rtrim(rtrim(number_format($minutes / 60, 1), '0'), '.');
         return $play_hours . ' ' . __('hour', 'sakurairo');
     }
-
     private function format_last_played($timestamp)
     {
         if ($timestamp == 0) {
             return '';
         }
-        return wp_date('Y-m-d H:i:s', $timestamp);
+        return wp_date('Y-m-d H:i', $timestamp);
     }
 }
