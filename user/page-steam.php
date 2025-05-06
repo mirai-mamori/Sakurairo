@@ -73,7 +73,7 @@ get_header();
         top: 0;
         left: 0;
         right: 0;
-        padding: 15px;
+        padding: 12px 15px;
         background: linear-gradient(to bottom, 
                     rgba(0, 0, 0, 0.7) 0%, 
                     rgba(0, 0, 0, 0.4) 60%, 
@@ -207,6 +207,12 @@ get_header();
     @media (max-width: 768px) {
         .steam-card {
             width: 95%;
+        }
+        .steam-title-overlay{
+            padding: 25px 30px;
+        }
+        .steam-title{
+            font-size: 20px;
         }
     }
 </style>
