@@ -2552,6 +2552,7 @@ function register_shortcodes() {
         list($username, $repo) = explode('/', $path, 2);
     
         //构造卡片内容
+        /*
         $card_content = '';
     
         if (iro_opt('ghcard_proxy')) {
@@ -2584,6 +2585,61 @@ function register_shortcodes() {
         $ghcard .= '</div>';
     
         return $ghcard;
+        */
+        $api_url = sprintf('https://api.github.com/repos/%s/%s', $username, $repo);
+        $response = wp_remote_get($api_url, array(
+            'headers' => array(
+                'User-Agent' => 'WordPress-GitHubCard-Shortcode'
+            )
+        ));
+
+        if (is_wp_error($response)) {
+            return sprintf('<p>Failed to fetch GitHub repository data: %s</p>', esc_html($response->get_error_message()));
+        }
+
+        $body = wp_remote_retrieve_body($response);
+        $data = json_decode($body, true);
+
+        if (!is_array($data) || isset($data['message'])) {
+            return sprintf('<p>Unable to fetch GitHub data for: %s</p>', esc_html($path));
+        }
+
+        // 获取数据
+        $full_name = $data['full_name'];
+        $description = $data['description'];
+        $language = $data['language'];
+        $stars = $data['stargazers_count'];
+        $html_url = $data['html_url'];
+
+        // 仓库图标 + 默认颜色点
+        $lang_color = "green"; // 可拓展为语言颜色映射
+        $description = esc_html($description);
+        $language = esc_html($language);
+        return sprintf(
+            '<div class="ghcard" style="border:1px solid #ddd; border-radius:10px; padding:16px; max-width:300px; box-shadow:0 2px 6px rgba(0,0,0,0.1); background:#fff;">
+                <div style="display:flex; align-items:center; margin-bottom:10px;">
+                    <i class="fas fa-book" style="margin-right:8px; color:#555;"></i>
+                    <a href="%s" target="_blank" style="color:#1a73e8; font-weight:bold; text-decoration:none;">%s</a>
+                </div>
+                <div style="font-size:14px; color:#444; margin-bottom:12px;">%s</div>
+                <div style="display:flex; align-items:center; gap:16px; font-size:14px; color:#666;">
+                    <div style="display:flex; align-items:center;">
+                        <span style="width:10px; height:10px; background-color:%s; border-radius:50%%; display:inline-block; margin-right:6px;"></span>
+                        %s
+                    </div>
+                    <div style="display:flex; align-items:center;">
+                        <i class="far fa-star" style="margin-right:4px;"></i>
+                        %d
+                    </div>
+                </div>
+            </div>',
+            esc_url($html_url),
+            esc_html($full_name),
+            $description,
+            $lang_color,
+            $language,
+            intval($stars)
+        );
     });
 
     add_shortcode('showcard', function($attr, $content = '') {
@@ -2671,7 +2727,7 @@ function register_shortcodes() {
         return $iframes;
      });
 
-     add_shortcode('steamuser', function ($atts, $content = null) {
+    add_shortcode('steamuser', function ($atts, $content = null) {
         $key = iro_opt('steam_key');
         if (empty($key)) {
             // 多语言支持
@@ -2792,6 +2848,153 @@ function register_shortcodes() {
         $output .= '</div>'; // .steam-user-card
         return $output;
     });
+
+    add_shortcode('checkbox', function ($attr, $content = null) {
+        $attr = shortcode_atts(array("checked" => "", "inline" => ""), $attr);
+        return sprintf('
+        <div class="checkbox-code %s">
+            <input type="checkbox" %s>
+			<span> %s </span>
+        </div>
+        ',
+        $attr['inline'] == 'true' ? "inline" : "shortcodestyle",
+        $attr['checked'] == 'true' ? 'checked' : '',
+        $content
+        );
+    });
+    add_shortcode('label', function ($attr, $content = null) {
+        $attr = shortcode_atts(array("color" => "", "shape" => ""), $attr);
+        $color = $attr['color'];
+        switch($color){
+            case 'warning':
+                $color = 'badge-warning';
+                break;
+            case 'severe':
+                $color = 'badge-severe';
+                break;
+            default:
+                $color = 'badge-info';
+                break;
+        }
+        
+        return sprintf('
+        <span class="badge %s %s"> %s </span>
+        ',
+        $color,
+        $attr['shape'] == 'round' ? 'bagde-round' : '',
+        $content
+        );
+    });
+    add_shortcode('progressbar',function ($attr,$content=null){
+        $attr = shortcode_atts(array("color" => "", "progress" => ""), $attr);
+        $progress = $attr['progress'];
+        $color = $attr['color'];
+        if($progress==''){
+            $progress=100;
+        }
+        if($color==''){
+            $color='bg-default';
+        }
+        $color = isset($attr['color']) ? $attr['color'] : 'indigo';
+
+        switch ($color) {
+            case 'red':
+                $color = 'bg-danger';
+                break;
+            case 'orange':
+                $color = 'bg-warning';
+                break;
+            case 'green':
+                $color = 'bg-info';
+                break;
+            default:
+                $color = 'bg-default';
+            break;
+        }
+
+        return sprintf(
+            "<div class='progress-wrapper'>
+                <div class='progress-info'>%s
+                    <div class='progress-percentage'><span>%d%%</span></div>
+                </div>
+                <div class='progress'>
+                    <div class='progress-bar %s' style='width: %d%%;'></div>
+                </div>
+            </div>",
+            $content != "" ? sprintf("<div class='progress-label'><span>%s</span></div>", $content) : "",
+            $progress,
+            $color,
+            $progress
+        );
+    });
+    /*add_shortcode('timeline',function ($attr,$content=null){
+        $content = trim(strip_tags($content));
+        $entries = explode("\n", $content);
+
+        $out = "<div class='timeline-code'>";
+        foreach ($entries as $entry) {
+            $parts = explode("|", $entry);
+            $time = str_replace("/", "</br>", $parts[0]);
+            $title = isset($parts[1]) ? $parts[1] : '';
+            
+            $content_html = "";
+            for ($i = 2; $i < count($parts); $i++) {
+                $content_html .= ($i > 2 ? "</br>" : "") . $parts[$i];
+            }
+
+            $out .= sprintf(
+                "<div class='timeline-node'>
+                    <div class='timeline-time'>%s</div>
+                    <div class='timeline-card card bg-gradient-secondary shadow-sm'>
+                        %s
+                        <div class='timeline-content'>%s</div>
+                    </div>
+                </div>",
+                $time,
+                $title !== '' ? sprintf("<div class='timeline-title'>%s</div>", $title) : '',
+                $content_html
+            );
+        }
+        $out .= "</div>";
+        return $out;
+    });*/
+    add_shortcode('hidden',function ($attr, $content = null) {
+        $attr = shortcode_atts(array("tip" => "", "type" => ""), $attr);
+        $tip=''; $type='blur';
+        if($attr['tip']!=""){
+            $tip=$attr['tip'];
+        }
+        if($attr['type']!=""){
+            $type = $attr['type'];
+        }
+    
+        $class = ($type == 'background') ? 'hidden-text-background' : 'hidden-text-blur';
+    
+        return sprintf(
+            "<span class='hidden-text %s'%s>%s</span>",
+            $class,
+            $tip !== '' ? sprintf(" title='%s'", $tip) : '',
+            $content
+        );
+    });
+
+    add_shortcode('post_time',function ($attr,$content=null){
+        $attr = shortcode_atts(array("format" => ""), $attr);
+        $format = ( $attr['format'] !='') ? $attr['format'] : 'Y-n-d G:i:s';
+        return get_the_time($format);
+    });
+
+    add_shortcode('post_modified_time',function ($attr,$content=null){
+        $attr = shortcode_atts(array("format" => ""), $attr);
+        $format = ( $attr['format'] !='') ? $attr['format'] : 'Y-n-d G:i:s';
+        return get_the_modified_time($format);
+    });
+
+    add_shortcode('noshortcode',function ($attr,$content=null){
+        return $content;
+    });
+
+    
 }
 add_action('init', 'register_shortcodes');
 //code end
