@@ -104,6 +104,13 @@ $sections = [
 					'iro' => $vision_resource_basepath . 'options/nav_menu_style_Island.webp',
 					'sakura' => $vision_resource_basepath . 'options/nav_menu_style_bar.webp',
 				],
+				'partial_refresh'    => [
+					'nav_style' => [
+						'selector'        => 'header.site-header',
+						'render_callback' => function() {
+						},
+					],
+				],
 			],
 			[
 				'type'     => 'select',
@@ -255,6 +262,13 @@ $sections = [
 					[
 						'element'  => '.site-title',
 						'function' => 'html',
+					],
+				],
+				'partial_refresh'    => [
+					'header_site_title' => [
+						'selector'        => '.site-title',
+						'render_callback' => function() {
+						},
 					],
 				],
 			],
@@ -423,6 +437,13 @@ $sections = [
 				'label'    => esc_html__( 'Enable Mashiro Special Effects Text', 'Sakurairo_C' ),
 				'description' => __('After turning it on, it will replace your avatar on the homepage','Sakurairo_C'),
 				'iro_key'  => 'text_logo_options',
+				'partial_refresh'    => [
+					'cover_text' => [
+						'selector'        => '.focusinfo',
+						'render_callback' => function() {
+						},
+					],
+				],
 			],
 			[
 				'type'     => 'text',
@@ -750,6 +771,13 @@ $sections = [
 						'function' => 'html',
 					],
 				],
+				'partial_refresh'    => [
+					'cover_info' => [
+						'selector'        => '.header-info p',
+						'render_callback' => function() {
+						},
+					],
+				],
 			],
 			[
 				'type'     => 'text',
@@ -975,6 +1003,18 @@ $sections = [
 					'primary' => __('Article Area','Sakurairo_C'),
 					'static_page' => __('Static Page','Sakurairo_C'),
 				],
+				'partial_refresh'    => [
+					'homepage_compents_exhibition' => [
+						'selector'        => '#page .exhibition-area-container',
+						'render_callback' => function() {
+						},
+					],
+					'homepage_compents_article' => [
+						'selector'        => '#page #primary',
+						'render_callback' => function() {
+						},
+					],
+				],
 			],
 			[
 				'type'     => 'dropdown_pages',
@@ -1100,6 +1140,13 @@ $sections = [
 					'random_link'     => __('Random Link Capsule','Sakurairo_C'),
 					'announcement'     => __('Announcement Capsule','Sakurairo_C'),
 				],
+				'partial_refresh'    => [
+					'display_info' => [
+						'selector'        => '.exhibition-area-container',
+						'render_callback' => function() {
+						},
+					],
+				],
 			],
 			[
 				'type'     => 'switch',
@@ -1146,6 +1193,13 @@ $sections = [
 					"post_views" => __("Number of Views","Sakurairo_C"),
 					"post_words_count" => __("Number of Words","Sakurairo_C"),
 					"reading_time" => __("Estimate Reading Time","Sakurairo_C"),
+				],
+				'partial_refresh'    => [
+					'post_card_info' => [
+						'selector'        => '#primary .post-date',
+						'render_callback' => function() {
+						},
+					],
 				],
 			],
 			[
@@ -1397,6 +1451,13 @@ $sections = [
 						'value_pattern' => '$px !important',
 					),
 				),
+				'partial_refresh'    => [
+					'widgets_button' => [
+						'selector'        => '#changskin',
+						'render_callback' => function() {
+						},
+					],
+				],
 			],
 			[
 				'type'     => 'slider',
@@ -1603,6 +1664,13 @@ $sections = [
 					[
 						'element'  => '.footer_info',
 						'function' => 'html',
+					],
+				],
+				'partial_refresh'    => [
+					'footer_info' => [
+						'selector'        => 'footer .site-info',
+						'render_callback' => function() {
+						},
 					],
 				],
 			],
@@ -1819,6 +1887,13 @@ $sections = [
 						'value_pattern' => '$px !important',
 					),
 				),
+				'partial_refresh'    => [
+					'page_title' => [
+						'selector'        => '.entry-title',
+						'render_callback' => function() {
+						},
+					],
+				],
 			],
 			[
 				'type'     => 'switch',
@@ -1899,6 +1974,13 @@ $sections = [
 				'settings' => 'article_function',
 				'iro_key'  => 'article_function',
 				'label'    => esc_html__( 'Article Page Function Bar', 'Sakurairo_C' ),
+				'partial_refresh'    => [
+					'post_footer' => [
+						'selector'        => '.post-footer',
+						'render_callback' => function() {
+						},
+					],
+				],
 			],
 			[
 				'type'     => 'select',
@@ -2085,6 +2167,13 @@ $sections = [
 				'choices'     => [
 					'unfold' => __('Expand','Sakurairo_C'),
           			'fold' => __('Fold','Sakurairo_C'),
+				],
+				'partial_refresh'    => [
+					'comment_area' => [
+						'selector'        => '#comments form',
+						'render_callback' => function() {
+						},
+					],
 				],
 			],
 			[
