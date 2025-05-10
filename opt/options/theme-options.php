@@ -1652,7 +1652,7 @@ $prefix = 'iro_options';
         'desc' => __('Fill in an URL','sakurairo_csf'),
         'dependency' => array( 
                               array( 'cover_switch', '==', 'true', '', 'true' ),
-                              array( 'random_graphs_options', '!=', 'local', '', 'true' ),
+                              array( 'random_graphs_options', '!=', 'gallery', '', 'true' ),
                         ),
         'default' => 'https://api.fuukei.org/random-img/default/pc.php',
         'sanitize' => false,
@@ -1666,7 +1666,7 @@ $prefix = 'iro_options';
         'dependency' => array( 
                               array( 'random_graphs_mts', '==', 'true' ),
                               array( 'cover_switch', '==', 'true', '', 'true' ),
-                              array( 'random_graphs_options', '!=', 'local', '', 'true' ),
+                              array( 'random_graphs_options', '!=', 'gallery', '', 'true' ),
                         ),
         'desc' => __('Fill in an URL','sakurairo_csf'),
         'default' => 'https://api.fuukei.org/random-img/default/mobile.php',
