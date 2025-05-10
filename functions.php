@@ -61,11 +61,11 @@ $core_lib_basepath = iro_opt('core_library_basepath') ? get_template_directory_u
 if (iro_opt('php_notice_filter') != 'inner') {
 
     if (iro_opt('php_notice_filter','normal') == 'normal') { //仅显示严重错误
-        error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
+        error_reporting(E_ALL & ~E_DEPRECATED);
         ini_set('display_errors', '1');
     }
     if (iro_opt('php_notice_filter') == 'all') { //屏蔽大部分错误
-        error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE);
+        error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
         ini_set('display_errors', '0');
     }
 }
@@ -757,8 +757,21 @@ function get_author_class($comment_author_email, $user_id)
 /**
  * post views
  */
-function restyle_text($number)
+function restyle_text($input)
 {
+    // 类型修复
+    if (is_numeric($input)) {
+        $number = (float)$input;
+    } elseif (is_string($input)) {
+        if (preg_match('/[-+]?[0-9]*\.?[0-9]+/', $input, $matches)) {
+            $number = (float)$matches[0];
+        } else {
+            $number = 0;
+        }
+    } else {
+        $number = 0;
+    }
+
     switch (iro_opt('statistics_format')) {
         case "type_2": //23,333 次访问
             return number_format($number);
