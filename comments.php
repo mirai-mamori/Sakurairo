@@ -133,45 +133,11 @@ function get_smilies_panel() {
 			
 				$comment_captcha = '
 					<label for="captcha" class="comment-captcha">
-						<img id="captchaimg" alt="captcha" onclick="refreshCaptcha()" width="120" height="40" style="width: 0px;margin-right: 0px;" src="' . htmlspecialchars($test['data'], ENT_QUOTES, 'UTF-8') . '">
-						<input type="text" onfocus="showCaptcha();" onblur="hideCaptcha()" name="captcha" id="captcha" class="input" value="" size="20" tabindex="4" placeholder="' . $captcha_placeholder . '">
+						<img id="captchaimg" alt="captcha" width="120" height="40" style="width: 0px;margin-right: 0px;" src="' . htmlspecialchars($test['data'], ENT_QUOTES, 'UTF-8') . '">
+						<input type="text" name="captcha" id="captcha" class="input" value="" size="20" tabindex="4" placeholder="' . $captcha_placeholder . '" data-placeholder="'.$captcha_placeholder.'">
 						<input type="hidden" name="timestamp" value="' . htmlspecialchars($test['time'], ENT_QUOTES, 'UTF-8') . '">
 						<input type="hidden" name="id" value="' . htmlspecialchars($test['id'], ENT_QUOTES, 'UTF-8') . '">
-					</label>
-				<script>
-                    let captchaHideTimeout = null;
-                    let captchaField = document.getElementById("captcha");
-                    let captchaImg = document.getElementById("captchaimg");
-
-                    function showCaptcha() {
-                        captchaField.setAttribute("placeholder", "");
-                        if (captchaHideTimeout) {
-                            clearTimeout(captchaHideTimeout);
-                            captchaHideTimeout = null;
-                        }
-                        captchaImg.style.width = "120px";
-                        captchaImg.style.marginRight = "10px";
-                    }
-
-                    function hideCaptcha() {
-                        captchaHideTimeout = setTimeout(function() {
-                            captchaImg.style.width = "0";
-                            captchaImg.style.marginRight = "0";
-                            captchaField.setAttribute("placeholder", "'. $captcha_placeholder .'");
-                        }, 5000);
-                    }
-                        
-	                function refreshCaptcha() {
-                        fetch(_iro.captcha_endpoint)
-                            .then(resp => resp.json())
-                            .then(json => {
-                                captchaImg.src = json["data"];
-                                document.querySelector("input[name=\'timestamp\']").value = json["time"];
-                                document.querySelector("input[name=\'id\']").value = json["id"];
-                            })
-                            .catch(error => console.error("获取验证码失败:", error));
-                    };
-				</script>';
+					</label>';
 			} else {
 				$robot_comments = null;
 			}
