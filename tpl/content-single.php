@@ -23,7 +23,12 @@ if (iro_opt('article_auto_toc', 'true') && check_title_tags($post->post_content)
 	} ?>
 	<?php if ($ai_excerpt) { ?>
 	<div class="ai-excerpt">
-		<h4><i class="fa-solid fa-atom"></i><?php esc_html_e("AI Excerpt", "sakurairo"); ?></h4><?php echo esc_html($ai_excerpt); ?>
+		<h4><i class="fa-solid fa-atom"></i><?php esc_html_e("AI Excerpt", "sakurairo"); ?></h4>
+		<?php 
+			// 过滤掉<think></think>标签
+			$ai_excerpt_clean = preg_replace('/<think>[\s\S]*?<\/think>/i', '', $ai_excerpt);
+			echo esc_html($ai_excerpt_clean); 
+		?>
 	</div>
 	<?php } ?>
 	<div class="entry-content">
