@@ -1193,6 +1193,10 @@ body.dark .site-footer {
   box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
 }
 
+body.dark .site-footer a {
+    color: #7d7d7d;
+}
+
 .site-footer.show {
   bottom: 0;
   transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out, background 0.6s ease-in-out, box-shadow 0.6s ease-in-out, bottom 1s cubic-bezier(0.25, 1.1, 0.5, 1); 
