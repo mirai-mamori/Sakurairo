@@ -3209,9 +3209,30 @@ $prefix = 'iro_options';
       array(
         'id' => 'lsky_api_key',
         'type' => 'text',
-        'title' => __('Lsky Pro v1 Token','sakurairo_csf'),
+        'title' => __('Lsky Pro Token','sakurairo_csf'),
         'dependency' => array( 'img_upload_api', '==', 'lsky', '', 'true' ),
         'desc' => __('Fill in the Token here, Please note that there is no "Bearer " at first, to get please visit your Lsky Pro home page address/api','sakurairo_csf'),
+      ),
+
+      array(
+        'id' => 'lsky_api_version',
+        'type' => 'select',
+        'title' => __('Lsky Pro API Version','sakurairo_csf'),
+        'dependency' => array( 'img_upload_api', '==', 'lsky', '', 'true' ),
+        'desc' => __('Choose the API Version here','sakurairo_csf'),
+        'options' => array(
+          'V1' => __('V1','sakurairo_csf'),
+          'V2'  =>  __('V2','sakurairo_csf'),
+        ),
+        'default'     => 'V1'
+      ),
+
+      array(
+        'id' => 'lsky_storage_id',
+        'type' => 'text',
+        'title' => __('Lsky Pro Storage ID','sakurairo_csf'),
+        'dependency' => array( 'lsky_api_version', '==', 'V2', '', 'true' ),
+        'desc' => __('Fill in the Storage ID here','sakurairo_csf'),
       ),
 
       array(

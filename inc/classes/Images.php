@@ -9,9 +9,12 @@ class Images
     private $smms_client_id;
     private $lsky_api_key;
 
+    private $lsky_api_version;
+
     public function __construct() {
         $this->chevereto_api_key = iro_opt('chevereto_api_key');
         $this->lsky_api_key = iro_opt('lsky_api_key');
+        $this->lsky_api_version = iro_opt('lsky_api_version');
         $this->imgur_client_id = iro_opt('imgur_client_id');
         $this->smms_client_id = iro_opt('smms_client_id');
     }
@@ -29,6 +32,68 @@ class Images
      * LSky Pro upload interface
      */
     public function LSKY_API($image) {
+        if ($this->lsky_api_version == 'v1') {
+            return $this->LSKY_API_V1($image);
+        } else {
+            return $this->LSKY_API_V2($image);
+        }
+    }
+
+    public function LSKY_API_V2($image) {    
+        $upload_url = iro_opt('lsky_url') . '/api/v2/upload';
+        $storage_id = iro_opt('lsky_storage_id');
+        $filename = $image['cmt_img_file']['name'];
+        $filedata = $image['cmt_img_file']['tmp_name'];
+        $Boundary = wp_generate_password();
+        $bits = file_get_contents($filedata);
+
+        $body  = "--$Boundary\r\n";
+        $body .= "Content-Disposition: form-data; name=\"file\"; filename=\"$filename\"\r\n";
+        $body .= "Content-Type: " . mime_content_type($filedata) . "\r\n\r\n";
+        $body .= $bits . "\r\n";
+        $body .= "--$Boundary\r\n";
+        $body .= "Content-Disposition: form-data; name=\"storage_id\"\r\n\r\n";
+        $body .= $storage_id . "\r\n";
+        $body .= "--$Boundary--\r\n";
+
+        $args = array(
+            'headers' => array(
+                'Authorization' => 'Bearer ' . $this->lsky_api_key,
+                'Accept' => 'application/json',
+                'Content-Type' => 'multipart/form-data; boundary=' . $Boundary,
+                'Content-Length'=> strlen($body),
+            ),
+            'body' => $body
+        );
+        $response = wp_remote_post($upload_url, $args);
+        $reply = json_decode($response['body']);
+
+        if ($reply->status == "success") {
+            $status = 200;
+            $success = true;
+            $message = 'success';
+            $link = $reply->data->public_url;
+            $proxy = iro_opt('comment_image_proxy') . $link;
+        } else {
+            $status = 400;
+            $success = false;
+            $message = $reply->message;
+            $link = $this->getDefaultErrorImage();
+            $proxy = iro_opt('comment_image_proxy') . $link;
+        }
+        $output = array(
+            'status' => $status,
+            'success' => $success,
+            'message' => $message,
+            'link' => $link,
+            'proxy' => $proxy,
+        );
+        error_log("LSKY API Response:\n" . print_r($output, true));
+        return $output;
+
+
+    }
+    public function LSKY_API_V1($image) {    
         $upload_url = iro_opt('lsky_url') . '/api/v1/upload';
         $filename = $image['cmt_img_file']['name'];
         $filedata = $image['cmt_img_file']['tmp_name'];
