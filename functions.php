@@ -759,6 +759,11 @@ function get_author_class($comment_author_email, $user_id)
  */
 function restyle_text($number)
 {
+    // 确保是数字类型
+    if (!is_numeric($number)) {
+        $number = 0;
+    }
+
     switch (iro_opt('statistics_format')) {
         case "type_2": //23,333 次访问
             return number_format($number);
@@ -793,22 +798,27 @@ add_action('get_header', 'set_post_views');
 
 function get_post_views($post_id)
 {
-    // 检查传入的参数是否有效
+    // 合法性检查
     if (empty($post_id) || !is_numeric($post_id)) {
-        return 'Error: Invalid post ID.';
+        return 0;
     }
-    // 检查 WP-Statistics 插件是否安装
-    if ((function_exists('wp_statistics_pages')) && (iro_opt('statistics_api') == 'wp_statistics')) {
-        // 使用 WP-Statistics 插件获取浏览量
+
+    $post_id = (int) $post_id;
+
+    // 若启用 WP-Statistics 插件且后台选用该接口
+    if (function_exists('wp_statistics_pages') && iro_opt('statistics_api') === 'wp_statistics') {
         $views = wp_statistics_pages('total', 'uri', $post_id);
         return empty($views) ? 0 : $views;
-    } else {
-        // 使用文章自定义字段获取浏览量
-        $views = get_post_meta($post_id, 'views', true);
-        // 格式化浏览量
-        $views = restyle_text($views);
-        return empty($views) ? 0 : $views;
     }
+
+    // 使用自定义字段 views
+    $views = get_post_meta($post_id, 'views', true);
+    if (!is_numeric($views)) {          // 防止空字符串、null、脏数据
+        $views = 0;
+    }
+
+    // 格式化并返回
+    return restyle_text($views) ?: 0;
 }
 
 // 引入post_metas方法
