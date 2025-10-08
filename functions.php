@@ -3035,6 +3035,43 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
 
     }
     add_filter('authenticate', 'checkVaptchaAction', 20, 3);
+} elseif ((iro_opt('captcha_select') === 'turnstile') && (!empty(iro_opt("turnstile_site_key")) && !empty(iro_opt("turnstile_secret")))){
+    function turnstileInit()
+    {
+       include_once('inc/classes/Turnstile.php');
+       $turnstile = new Sakura\API\Turnstile;
+       echo $turnstile->html();
+       echo $turnstile->script();
+    }
+    add_action('login_form', 'turnstileInit');
+
+    function checkTurnstileAction($user)
+    {
+       if(empty($_POST))
+       {
+            return new WP_Error();
+       }
+       if(!isset($_POST['cf-turnstile-response']))
+       {
+            return new WP_Error('prooffail', '<strong>错误</strong>：请先进行人机验证');
+       }
+       include_once('inc/classes/Turnstile.php');
+       $url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+       $token = $_POST['cf-turnstile-response'] ?? '';
+       $ip = get_the_user_ip();
+       $turnstile = new Sakura\API\Turnstile;
+       $response = $turnstile->checkTurnstile($url,$token,$ip);
+       if (!is_string($response))
+       {
+            if ($response['success'])
+            {
+               return $user;
+            }
+            return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
+       }
+       return new WP_Error('prooffail','<strong>错误</strong>：' . $response);
+    }
+    add_filter('authenticate', 'checkTurnstileAction', 20, 3);
 }
 
 // 获取访客 IP
@@ -3052,7 +3089,8 @@ function get_the_user_ip()
     // 简略版
     // $ip = $_SERVER['HTTP_CLIENT_IP'] ?: ($_SERVER['HTTP_X_FORWARDED_FOR'] ?: $_SERVER['REMOTE_ADDR']);
     $ip = $_SERVER['HTTP_CLIENT_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
-    return apply_filters('wpb_get_ip', $ip);
+    $ip2 = explode('|', str_replace(',', '|', $ip));
+    return apply_filters('wpb_get_ip', $ip2); //解决HTTP_X_FORWARDED_FOR获取到代理地址而导致人机验证不通过
 }
 
 //归档页信息缓存

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codestar Framework Modified by Fuukei\n"
 "POT-Creation-Date: 2025-05-06 18:17+0900\n"
-"PO-Revision-Date: 2025-05-06 18:17+0900\n"
+"PO-Revision-Date: 2025-10-08 22:12+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -10,14 +10,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.7\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: option-framework.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
@@ -1520,17 +1519,18 @@ msgid ""
 "<h4>Hitokoto API Setup Instructions</h4> <p>Fill in as the example:<code> "
 "[\"https://v1.hitokoto.cn/\", \"https://v1.hitokoto.cn/\"]</code>, where the "
 "first API will be used first and the next ones will be the backup. </p> "
-"<p><strong>Official API:</strong> See the <a href=\"https://developer."
-"hitokoto.cn/sentence/\"> documentation</a> for how to use it, and the "
-"parameter \"return code\" should not be anything except JSON. <a "
+"<p><strong>Official API:</strong> See the <a href=\"https://"
+"developer.hitokoto.cn/sentence/\"> documentation</a> for how to use it, and "
+"the parameter \"return code\" should not be anything except JSON. <a "
 "href=\"https://v1.hitokoto.cn/\">https://v1.hitokoto.cn/</a></p>"
 msgstr ""
 "<h4>一言API設定說明</h4>\n"
 "<p>填寫示例:<code> [\"https://v1.hitokoto.cn/\",\"https://v1.hitokoto.cn/"
 "\"]</code>，此時會優先使用第一項API，以後一項為後備。</p>\n"
-"<p><strong>官方API:</strong>使用方法請查閱<a href=\"https://developer."
-"hitokoto.cn/sentence/\">文檔</a>，參數\"返回編碼\"不應設定為JSON以外的其他"
-"值。<a href=\"https://v1.hitokoto.cn/\">https://v1.hitokoto.cn/</a></p>"
+"<p><strong>官方API:</strong>使用方法請查閱<a href=\"https://"
+"developer.hitokoto.cn/sentence/\">文檔</a>，參數\"返回編碼\"不應設定為JSON以"
+"外的其他值。<a href=\"https://v1.hitokoto.cn/\">https://v1.hitokoto.cn/</a></"
+"p>"
 
 #: options/theme-options.php:992
 msgid "Hitokoto API address"
@@ -1602,9 +1602,9 @@ msgstr "在搜尋結果中排除某些內容"
 
 #: options/theme-options.php:1074
 msgid ""
-"Fill in the posts or pages IDs that need to be excluded, such as \"12,34\"."
-"Recommend to fill in the custom login page id,and you can get them from the "
-"edit page of those content."
+"Fill in the posts or pages IDs that need to be excluded, such as "
+"\"12,34\".Recommend to fill in the custom login page id,and you can get them "
+"from the edit page of those content."
 msgstr ""
 "填寫需要排除的文章或頁面ID，例如“12,34”。建議填寫自定義登錄頁面的ID，您可以在"
 "這些內容的編輯頁面中獲取。"
@@ -3191,11 +3191,11 @@ msgstr "Steam帳號64ID"
 
 #: options/theme-options.php:2945
 msgid ""
-"Fill in your account 64ID, e.g. https://steamcommunity.com/"
-"profiles/76561199029689067/, just the number part \"76561199029689067\""
+"Fill in your account 64ID, e.g. https://steamcommunity.com/profiles/"
+"76561199029689067/, just the number part \"76561199029689067\""
 msgstr ""
-"填寫你的帳號ID，例如：https://steamcommunity.com/"
-"profiles/76561199029689067/, 只需填寫數字 \"76561199029689067\" 部分"
+"填寫你的帳號ID，例如：https://steamcommunity.com/profiles/"
+"76561199029689067/, 只需填寫數字 \"76561199029689067\" 部分"
 
 #: options/theme-options.php:2951
 msgid "Steam API Key"
@@ -3477,8 +3477,8 @@ msgid ""
 "to the tutorial: https://2heng.xin/2018/06/06/javascript-upload-images-with-"
 "imgur-api/"
 msgstr ""
-"後端上傳圖像到 Imgur 的時候使用的代理。你可以參考教程：https://2heng."
-"xin/2018/06/06/javascript-upload-images-with-imgur-api/"
+"後端上傳圖像到 Imgur 的時候使用的代理。你可以參考教程：https://2heng.xin/"
+"2018/06/06/javascript-upload-images-with-imgur-api/"
 
 #: options/theme-options.php:3188
 msgid "SM.MS Secret Token"
@@ -3617,6 +3617,10 @@ msgstr "主題內建驗證碼"
 msgid "Vaptcha"
 msgstr ""
 
+#: options/theme-options.php:3307
+msgid "Turnstile"
+msgstr ""
+
 #: options/theme-options.php:3314
 msgid "Vaptcha VID"
 msgstr ""
@@ -3636,6 +3640,38 @@ msgstr "填寫你的Vaptcha KEY"
 #: options/theme-options.php:3330
 msgid "Vaptcha Scene"
 msgstr "Vaptcha場景"
+
+#: options/theme-options.php:3347
+msgid "Turnstile site key"
+msgstr "Turnstile網站金鑰"
+
+#: options/theme-options.php:3349
+msgid "Fill in your Turnstile site key"
+msgstr "填寫你的Turnstile網站金鑰"
+
+#: options/theme-options.php:3355
+msgid "Turnstile secret"
+msgstr "Turnstile祕密金鑰"
+
+#: options/theme-options.php:3357
+msgid "Fill in your Turnstile secret"
+msgstr "填寫你的Turnstile祕密金鑰"
+
+#: options/theme-options.php:3363
+msgid "Turnstile theme"
+msgstr "Turnstile主題"
+
+#: options/theme-options.php:3366
+msgid "auto"
+msgstr "自动"
+
+#: options/theme-options.php:3367
+msgid "dark"
+msgstr "夜间"
+
+#: options/theme-options.php:3368
+msgid "light"
+msgstr "白天"
 
 #: options/theme-options.php:3346
 msgid "Jump after login"
@@ -3740,8 +3776,9 @@ msgstr "ChatGPT API 密鑰"
 
 #: options/theme-options.php:3499
 msgid ""
-"Fill in Your ChatGPT API keys, please refer to <a href=\"https://platform."
-"openai.com/account/api-keys\">OpenAI Website</a> for further information."
+"Fill in Your ChatGPT API keys, please refer to <a href=\"https://"
+"platform.openai.com/account/api-keys\">OpenAI Website</a> for further "
+"information."
 msgstr ""
 "填寫您的 ChatGPT API Keys，您可以存取 <a href=\"https://platform.openai.com/"
 "account/api-keys\">OpenAI 網站</a> 取得您的 API Keys"
@@ -3973,8 +4010,8 @@ msgid ""
 "Enter your Gravatar proxy address without starting with \"http(s)://\" and "
 "ending with \"/\". Example: gravatar.com/avatar."
 msgstr ""
-"輸入您的頭像代理位址，请勿以“HTTP（s）：//”開頭，以“/”結尾。示例：gravatar."
-"com/avatar。"
+"輸入您的頭像代理位址，请勿以“HTTP（s）：//”開頭，以“/”結尾。示例："
+"gravatar.com/avatar。"
 
 #: options/theme-options.php:3727
 msgid "GitHub repository card proxy"
@@ -4067,10 +4104,10 @@ msgid ""
 "where another configuration is available. </p>"
 msgstr ""
 "<p><strong>Highlight.js：</strong>預設值。自動語言識別。 </p> "
-"<p><strong>Prism.js：</strong>需要指定語言，請參閱<a href=\"https://prismjs."
-"com/#basic-usage\">基本用法</a>和<a href=\"https://prismjs.com/plugins/file-"
-"highlight/\">如何編碼高亮動態載入的檔案</a>。 </p> <p><strong>自訂：</strong>"
-"適用於有其他設定的情況。 </p>"
+"<p><strong>Prism.js：</strong>需要指定語言，請參閱<a href=\"https://"
+"prismjs.com/#basic-usage\">基本用法</a>和<a href=\"https://prismjs.com/"
+"plugins/file-highlight/\">如何編碼高亮動態載入的檔案</a>。 </p> <p><strong>自"
+"訂：</strong>適用於有其他設定的情況。 </p>"
 
 #: options/theme-options.php:3796
 msgid "Code Highlight Method"
@@ -4127,9 +4164,9 @@ msgid ""
 "with original path http://your.domain/wp-content/uploads/2018/05/xx.png will "
 "be loaded from http://your CDN domain/2018/05/xx.png"
 msgstr ""
-"注意：填寫格式為 http(s)://你的CDN域名/。也就是說，原路徑為 http://your."
-"domain/wp-content/uploads/2018/05/xx.png 的圖像將從 http://你的CDN域"
-"名/2018/05/xx.png 載入"
+"注意：填寫格式為 http(s)://你的CDN域名/。也就是說，原路徑為 http://"
+"your.domain/wp-content/uploads/2018/05/xx.png 的圖像將從 http://你的CDN域名/"
+"2018/05/xx.png 載入"
 
 #: options/theme-options.php:3865
 msgid "Articles Categories (Do not display)"
@@ -4224,8 +4261,8 @@ msgstr ""
 #: options/theme-options.php:3953
 #, php-format
 msgid ""
-"Theme Sakurairo Version %s | Internal Version %s | <a href=\"https://github."
-"com/mirai-mamori/Sakurairo\">Project Address</a>"
+"Theme Sakurairo Version %s | Internal Version %s | <a href=\"https://"
+"github.com/mirai-mamori/Sakurairo\">Project Address</a>"
 msgstr ""
 "Sakurairo 主題版本 %s | 內部版本 %s | <a href=\"https://github.com/mirai-"
 "mamori/Sakurairo\">項目地址</a>"
@@ -4394,8 +4431,8 @@ msgstr "引用資訊"
 #: options/theme-options.php:4091
 msgid ""
 "<p>Fluent Design Icon Referenced by Paradox Fluent Icon Pack</p>\n"
-"        <p>MUH2 Design Icon Referenced by 缄默 <a href=\"https://www.coolapk."
-"com/apk/com.muh2.icon\">MUH2 Icon Pack</a></p>"
+"        <p>MUH2 Design Icon Referenced by 缄默 <a href=\"https://"
+"www.coolapk.com/apk/com.muh2.icon\">MUH2 Icon Pack</a></p>"
 msgstr ""
 
 #: options/theme-options.php:4097
@@ -4415,13 +4452,13 @@ msgstr ""
 
 #: options/theme-options.php:4109
 msgid ""
-"<img src=\"https://img.shields.io/github/v/release/mirai-mamori/Sakurairo."
-"svg?style=flat-square\"  alt=\"Theme latest version\" style=\"border-radius: "
-"3px;\" />  <img src=\"https://img.shields.io/github/release-date/mirai-"
-"mamori/Sakurairo?style=flat-square\"  alt=\"Theme latest version release "
-"date\" style=\"border-radius: 3px;\" />  <img src=\"https://data.jsdelivr."
-"com/v1/package/gh/mirai-mamori/Sakurairo/badge\"  alt=\"Theme CDN resource "
-"access\" style=\"border-radius: 3px;\" />"
+"<img src=\"https://img.shields.io/github/v/release/mirai-mamori/"
+"Sakurairo.svg?style=flat-square\"  alt=\"Theme latest version\" "
+"style=\"border-radius: 3px;\" />  <img src=\"https://img.shields.io/github/"
+"release-date/mirai-mamori/Sakurairo?style=flat-square\"  alt=\"Theme latest "
+"version release date\" style=\"border-radius: 3px;\" />  <img src=\"https://"
+"data.jsdelivr.com/v1/package/gh/mirai-mamori/Sakurairo/badge\"  alt=\"Theme "
+"CDN resource access\" style=\"border-radius: 3px;\" />"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
