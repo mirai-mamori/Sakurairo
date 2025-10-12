@@ -3443,7 +3443,7 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
     {
         if (empty($_POST)) 
         {
-            return false;
+            return new WP_Error();
         }
         if (!(isset($_POST['vaptcha_server']) && isset($_POST['vaptcha_token']))) 
         {
