@@ -3677,7 +3677,7 @@ function get_the_user_ip()
     // $ip = $_SERVER['HTTP_CLIENT_IP'] ?: ($_SERVER['HTTP_X_FORWARDED_FOR'] ?: $_SERVER['REMOTE_ADDR']);
     $ip = $_SERVER['HTTP_CLIENT_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
     $ip2 = explode('|', str_replace(',', '|', $ip));
-    return apply_filters('wpb_get_ip', $ip2); //解决HTTP_X_FORWARDED_FOR获取到代理地址而导致人机验证不通过
+    return apply_filters('wpb_get_ip', trim($ip2[0])); //解决HTTP_X_FORWARDED_FOR获取到代理地址而导致人机验证不通过
 }
 
 //归档页信息缓存
