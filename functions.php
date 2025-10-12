@@ -3362,6 +3362,8 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
         echo $vaptcha->script();
     }
     add_action('login_form', 'vaptchaInit');
+    add_action('register_form', 'vaptchaInit');
+    add_action('lostpassword_form', 'vaptchaInit');
 
     function checkVaptchaAction($user)
     {
@@ -3399,6 +3401,81 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
 
     }
     add_filter('authenticate', 'checkVaptchaAction', 20, 3);
+
+    function Vaptcha_lostpassword_CHECK($errors)
+    {
+        if (empty($_POST)) 
+        {
+            return false;
+        }
+        if (!(isset($_POST['vaptcha_server']) && isset($_POST['vaptcha_token']))) 
+        {
+            return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：请先进行人机验证');
+        }
+        if (!preg_match('/^https:\/\/([\w-]+\.)+[\w-]*([^<>=?\"\'])*$/', $_POST['vaptcha_server']) || !preg_match('/^[\w\-\$]+$/', $_POST['vaptcha_token'])) 
+        {
+            return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：非法数据');
+        }
+        include_once('inc/classes/Vaptcha.php');
+        $url = $_POST['vaptcha_server'];
+        $token = $_POST['vaptcha_token'];
+        $ip = get_the_user_ip();
+        $vaptcha = new Sakura\API\Vaptcha;
+        $response = $vaptcha->checkVaptcha($url, $token, $ip);
+        if ($response->msg && $response->success && $response->score) {
+            if ($response->success === 1 && $response->score >= 70) {
+                return $errors;
+            }
+            if ($response->success === 0) {
+                $errorcode = $response->msg;
+                return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：非法数据' . $errorcode);
+            }
+            return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：人机验证失败');
+
+        } else if (is_string($response)) {
+            return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：' . $response);
+        }
+        return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：未知错误');
+    }
+    add_action('lostpassword_post', 'Vaptcha_lostpassword_CHECK');
+
+    function Vaptcha_registration_CHECK($errors, $sanitized_user_login, $user_email)
+    {
+        if (empty($_POST)) 
+        {
+            return false;
+        }
+        if (!(isset($_POST['vaptcha_server']) && isset($_POST['vaptcha_token']))) 
+        {
+            return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：请先进行人机验证');
+        }
+        if (!preg_match('/^https:\/\/([\w-]+\.)+[\w-]*([^<>=?\"\'])*$/', $_POST['vaptcha_server']) || !preg_match('/^[\w\-\$]+$/', $_POST['vaptcha_token'])) 
+        {
+            return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：非法数据');
+        }
+        include_once('inc/classes/Vaptcha.php');
+        $url = $_POST['vaptcha_server'];
+        $token = $_POST['vaptcha_token'];
+        $ip = get_the_user_ip();
+        $vaptcha = new Sakura\API\Vaptcha;
+        $response = $vaptcha->checkVaptcha($url, $token, $ip);
+        if ($response->msg && $response->success && $response->score) {
+            if ($response->success === 1 && $response->score >= 70) {
+                return $errors;
+            }
+            if ($response->success === 0) {
+                $errorcode = $response->msg;
+                return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：非法数据' . $errorcode);
+            }
+            return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：人机验证失败');
+
+        } else if (is_string($response)) {
+            return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：' . $response);
+        }
+        return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：未知错误');
+    }
+    add_filter('registration_errors', 'Vaptcha_registration_CHECK', 2, 3);
+
 } else if ((iro_opt('captcha_select') === 'turnstile') && (!empty(iro_opt("turnstile_site_key")) && !empty(iro_opt("turnstile_secret_key")))) {
     function turnstile_init() {
         include_once('inc/classes/Turnstile.php');
@@ -3599,7 +3676,8 @@ function get_the_user_ip()
     // 简略版
     // $ip = $_SERVER['HTTP_CLIENT_IP'] ?: ($_SERVER['HTTP_X_FORWARDED_FOR'] ?: $_SERVER['REMOTE_ADDR']);
     $ip = $_SERVER['HTTP_CLIENT_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
-    return apply_filters('wpb_get_ip', $ip);
+    $ip2 = explode('|', str_replace(',', '|', $ip));
+    return apply_filters('wpb_get_ip', $ip2); //解决HTTP_X_FORWARDED_FOR获取到代理地址而导致人机验证不通过
 }
 
 //归档页信息缓存
