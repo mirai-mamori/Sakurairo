@@ -3447,11 +3447,11 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
         }
         if (!(isset($_POST['vaptcha_server']) && isset($_POST['vaptcha_token']))) 
         {
-            return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：请先进行人机验证');
+            return new WP_Error('prooffail', '<strong>错误</strong>：请先进行人机验证');
         }
         if (!preg_match('/^https:\/\/([\w-]+\.)+[\w-]*([^<>=?\"\'])*$/', $_POST['vaptcha_server']) || !preg_match('/^[\w\-\$]+$/', $_POST['vaptcha_token'])) 
         {
-            return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：非法数据');
+            return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
         }
         include_once('inc/classes/Vaptcha.php');
         $url = $_POST['vaptcha_server'];
@@ -3465,14 +3465,14 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
             }
             if ($response->success === 0) {
                 $errorcode = $response->msg;
-                return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：非法数据' . $errorcode);
+                return new WP_Error('prooffail', '<strong>错误</strong>：非法数据' . $errorcode);
             }
-            return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：人机验证失败');
+            return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
 
         } else if (is_string($response)) {
-            return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：' . $response);
+            return new WP_Error('prooffail', '<strong>错误</strong>：' . $response);
         }
-        return $errors->add('invalid_vaptcha ', '<strong>错误</strong>：未知错误');
+        return new WP_Error('prooffail', '<strong>错误</strong>：未知错误');
     }
     add_filter('registration_errors', 'Vaptcha_registration_CHECK', 2, 3);
 
