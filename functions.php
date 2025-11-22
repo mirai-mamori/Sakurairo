@@ -3013,148 +3013,255 @@ function register_shortcodes() {
     });
 
     add_shortcode('checkbox', function ($attr, $content = null) {
-        $attr = shortcode_atts(array("checked" => "", "inline" => ""), $attr);
-        return sprintf('
-        <div class="checkbox-code %s">
-            <input type="checkbox" %s>
-			<span> %s </span>
-        </div>
-        ',
-        $attr['inline'] == 'true' ? "inline" : "shortcodestyle",
-        $attr['checked'] == 'true' ? 'checked' : '',
-        $content
-        );
-    });
-    add_shortcode('label', function ($attr, $content = null) {
-        $attr = shortcode_atts(array("color" => "", "shape" => ""), $attr);
-        $color = $attr['color'];
-        switch($color){
-            case 'warning':
-                $color = 'badge-warning';
-                break;
-            case 'severe':
-                $color = 'badge-severe';
-                break;
-            default:
-                $color = 'badge-info';
-                break;
-        }
-        
-        return sprintf('
-        <span class="badge %s %s"> %s </span>
-        ',
-        $color,
-        $attr['shape'] == 'round' ? 'bagde-round' : '',
-        $content
-        );
-    });
-    add_shortcode('progressbar',function ($attr,$content=null){
-        $attr = shortcode_atts(array("color" => "", "progress" => ""), $attr);
-        $progress = $attr['progress'];
-        $color = $attr['color'];
-        if($progress==''){
-            $progress=100;
-        }
-        if($color==''){
-            $color='bg-default';
-        }
-        $color = isset($attr['color']) ? $attr['color'] : 'indigo';
+        $atts = shortcode_atts(array(
+            'checked' => 'false',
+            'inline' => 'false',
+            'name'   => '',
+            'value'  => '',
+            'id'     => '',
+        ), $attr);
 
-        switch ($color) {
-            case 'red':
-                $color = 'bg-danger';
-                break;
-            case 'orange':
-                $color = 'bg-warning';
-                break;
-            case 'green':
-                $color = 'bg-info';
-                break;
-            default:
-                $color = 'bg-default';
-            break;
+        $is_true = function ($value) {
+            return in_array(strtolower((string) $value), array('1', 'true', 'yes', 'on'), true);
+        };
+
+        $id = $atts['id'] !== '' ? sanitize_html_class($atts['id']) : wp_unique_id('iro-checkbox-');
+        $classes = array('checkbox-code', 'shortcodestyle');
+        if ($is_true($atts['inline'])) {
+            $classes[] = 'inline';
         }
+
+        $attributes = array(
+            'type' => 'checkbox',
+            'id'   => $id,
+        );
+
+        if ($atts['name'] !== '') {
+            $attributes['name'] = sanitize_text_field($atts['name']);
+        }
+        if ($atts['value'] !== '') {
+            $attributes['value'] = $atts['value'];
+        }
+        if ($is_true($atts['checked'])) {
+            $attributes['checked'] = 'checked';
+        }
+
+        $attribute_html = '';
+        foreach ($attributes as $key => $value) {
+            $attribute_html .= sprintf(' %s="%s"', esc_attr($key), esc_attr($value));
+        }
+
+        $label_content = trim(do_shortcode((string) $content));
+        if ($label_content === '') {
+            $label_content = __('Checkbox', 'sakurairo');
+        }
+
+        return sprintf(
+            '<div class="%1$s"><input%2$s><span>%3$s</span></div>',
+            esc_attr(implode(' ', array_filter($classes))),
+            $attribute_html,
+            wp_kses_post($label_content)
+        );
+    });
+
+    add_shortcode('label', function ($attr, $content = null) {
+        $atts = shortcode_atts(array("color" => "info", "shape" => ""), $attr);
+        $color_map = array(
+            'warning' => 'badge-warning',
+            'severe'  => 'badge-severe',
+            'info'    => 'badge-info',
+        );
+
+        $color = $color_map[strtolower($atts['color'])] ?? 'badge-info';
+        $shape = strtolower($atts['shape']) === 'round' ? 'bagde-rounded' : '';
+
+        $classes = array('badge', $color);
+        if ($shape !== '') {
+            $classes[] = $shape;
+        }
+
+        return sprintf(
+            '<span class="%1$s">%2$s</span>',
+            esc_attr(implode(' ', $classes)),
+            wp_kses_post(do_shortcode((string) $content))
+        );
+    });
+
+    add_shortcode('progressbar', function ($attr, $content = null) {
+        $atts = shortcode_atts(array("color" => "default", "progress" => "100", "label" => ""), $attr);
+
+        $progress = is_numeric($atts['progress']) ? floatval($atts['progress']) : 100;
+        $progress = max(0, min(100, $progress));
+        $progress_display = number_format_i18n($progress);
+
+        $color_key = strtolower(trim($atts['color']));
+        $color_map = array(
+            'default' => 'bg-default',
+            'primary' => 'bg-default',
+            'accent'  => 'bg-default',
+            'match'   => 'bg-match',
+            'info'    => 'bg-info',
+            'blue'    => 'bg-info',
+            'teal'    => 'bg-info',
+            'success' => 'bg-success',
+            'green'   => 'bg-success',
+            'warning' => 'bg-warning',
+            'orange'  => 'bg-warning',
+            'amber'   => 'bg-warning',
+            'danger'  => 'bg-danger',
+            'red'     => 'bg-danger',
+            'error'   => 'bg-danger',
+            'rose'    => 'bg-rose',
+            'pink'    => 'bg-rose',
+        );
+        $color_class = $color_map[$color_key] ?? 'bg-default';
+
+        $label = trim($atts['label']) !== '' ? $atts['label'] : trim(do_shortcode((string) $content));
+        $label_markup = $label !== '' ? sprintf("<div class='progress-label'><span>%s</span></div>", esc_html($label)) : '';
+
+        $width = round($progress, 2);
 
         return sprintf(
             "<div class='progress-wrapper'>
                 <div class='progress-info'>%s
-                    <div class='progress-percentage'><span>%d%%</span></div>
+                    <div class='progress-percentage'><span>%s%%</span></div>
                 </div>
                 <div class='progress'>
-                    <div class='progress-bar %s' style='width: %d%%;'></div>
+                    <div class='progress-bar %s' style='width: %s%%;' role='progressbar' aria-valuenow='%s' aria-valuemin='0' aria-valuemax='100'></div>
                 </div>
             </div>",
-            $content != "" ? sprintf("<div class='progress-label'><span>%s</span></div>", $content) : "",
-            $progress,
-            $color,
-            $progress
+            $label_markup,
+            $progress_display,
+            esc_attr($color_class),
+            esc_attr($width),
+            esc_attr($width)
         );
     });
-    /*add_shortcode('timeline',function ($attr,$content=null){
-        $content = trim(strip_tags($content));
-        $entries = explode("\n", $content);
+    add_shortcode('timeline', function ($attr, $content = null) {
+        $raw_content = trim((string) $content);
+        if ($raw_content === '') {
+            return '';
+        }
 
-        $out = "<div class='timeline-code'>";
-        foreach ($entries as $entry) {
-            $parts = explode("|", $entry);
-            $time = str_replace("/", "</br>", $parts[0]);
-            $title = isset($parts[1]) ? $parts[1] : '';
-            
-            $content_html = "";
-            for ($i = 2; $i < count($parts); $i++) {
-                $content_html .= ($i > 2 ? "</br>" : "") . $parts[$i];
+        $atts = shortcode_atts(array(
+            'layout' => 'vertical',
+            'icon' => '',
+            'accent' => 'default',
+        ), $attr);
+
+        $layout = strtolower($atts['layout']);
+        $layout = in_array($layout, array('vertical', 'horizontal'), true) ? $layout : 'vertical';
+
+        $accent_key = strtolower(trim($atts['accent']));
+        $accent_whitelist = array('default', 'match', 'info', 'success', 'warning', 'danger', 'rose');
+        if (!in_array($accent_key, $accent_whitelist, true)) {
+            $accent_key = 'default';
+        }
+
+        $icon_class = trim($atts['icon']);
+
+        $lines = preg_split('/\r\n|\r|\n/', $raw_content);
+        $entries = array();
+        foreach ($lines as $line) {
+            if (trim($line) === '') {
+                continue;
+            }
+            $parts = array_map('trim', explode('|', $line));
+            if (count($parts) === 0) {
+                continue;
             }
 
-            $out .= sprintf(
-                "<div class='timeline-node'>
-                    <div class='timeline-time'>%s</div>
-                    <div class='timeline-card card bg-gradient-secondary shadow-sm'>
-                        %s
-                        <div class='timeline-content'>%s</div>
-                    </div>
-                </div>",
-                $time,
-                $title !== '' ? sprintf("<div class='timeline-title'>%s</div>", $title) : '',
-                $content_html
+            $time = array_shift($parts);
+            $title = count($parts) ? array_shift($parts) : '';
+            $body_text = count($parts) ? implode("\n", $parts) : '';
+
+            if ($time === '' && $title === '' && trim($body_text) === '') {
+                continue;
+            }
+
+            $entries[] = array(
+                'time' => $time,
+                'title' => $title,
+                'body' => $body_text,
             );
         }
-        $out .= "</div>";
-        return $out;
-    });*/
-    add_shortcode('hidden',function ($attr, $content = null) {
-        $attr = shortcode_atts(array("tip" => "", "type" => ""), $attr);
-        $tip=''; $type='blur';
-        if($attr['tip']!=""){
-            $tip=$attr['tip'];
+
+        if (empty($entries)) {
+            return '';
         }
-        if($attr['type']!=""){
-            $type = $attr['type'];
+
+        $wrapper_classes = array(
+            'timeline-code',
+            'timeline-layout-' . $layout,
+            'timeline-accent-' . $accent_key,
+        );
+
+        $icon_markup = '';
+        if ($icon_class !== '') {
+            $icon_markup = sprintf('<i class="%s" aria-hidden="true"></i>', esc_attr($icon_class));
         }
-    
-        $class = ($type == 'background') ? 'hidden-text-background' : 'hidden-text-blur';
-    
+
+        ob_start();
+        ?>
+        <div class="<?= esc_attr(implode(' ', $wrapper_classes)); ?>" role="list">
+            <?php foreach ($entries as $entry): 
+                $time_html = $entry['time'] !== '' ? str_replace('/', '<br>', esc_html($entry['time'])) : '';
+                $title_html = $entry['title'] !== '' ? esc_html($entry['title']) : '';
+                $body_html = '';
+                if (trim($entry['body']) !== '') {
+                    $body_processed = wpautop(do_shortcode($entry['body']));
+                    $body_html = wp_kses_post($body_processed);
+                }
+            ?>
+                <div class="timeline-node" role="listitem">
+                    <div class="timeline-dot" aria-hidden="true">
+                        <?= $icon_markup !== '' ? $icon_markup : '<span class="timeline-dot-symbol"></span>'; ?>
+                    </div>
+                    <?php if ($time_html !== ''): ?>
+                        <div class="timeline-time"><?= $time_html; ?></div>
+                    <?php endif; ?>
+                    <div class="timeline-card">
+                        <?php if ($title_html !== ''): ?>
+                            <div class="timeline-title"><?= $title_html; ?></div>
+                        <?php endif; ?>
+                        <?php if ($body_html !== ''): ?>
+                            <div class="timeline-content"><?= $body_html; ?></div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <?php
+        return ob_get_clean();
+    });
+    add_shortcode('hidden', function ($attr, $content = null) {
+        $atts = shortcode_atts(array("tip" => "", "type" => "blur"), $attr);
+        $type = strtolower($atts['type']) === 'background' ? 'background' : 'blur';
+        $class = $type === 'background' ? 'hidden-text-background' : 'hidden-text-blur';
+        $tip_attr = $atts['tip'] !== '' ? sprintf(' title="%s"', esc_attr($atts['tip'])) : '';
+
         return sprintf(
-            "<span class='hidden-text %s'%s>%s</span>",
-            $class,
-            $tip !== '' ? sprintf(" title='%s'", $tip) : '',
-            $content
+            '<span class="hidden-text %1$s"%2$s>%3$s</span>',
+            esc_attr($class),
+            $tip_attr,
+            wp_kses_post(do_shortcode((string) $content))
         );
     });
 
-    add_shortcode('post_time',function ($attr,$content=null){
-        $attr = shortcode_atts(array("format" => ""), $attr);
-        $format = ( $attr['format'] !='') ? $attr['format'] : 'Y-n-d G:i:s';
-        return get_the_time($format);
+    add_shortcode('post_time', function ($attr) {
+        $atts = shortcode_atts(array("format" => 'Y-n-d G:i:s'), $attr);
+        $format = $atts['format'] !== '' ? wp_strip_all_tags($atts['format']) : 'Y-n-d G:i:s';
+        return esc_html(get_the_time($format));
     });
 
-    add_shortcode('post_modified_time',function ($attr,$content=null){
-        $attr = shortcode_atts(array("format" => ""), $attr);
-        $format = ( $attr['format'] !='') ? $attr['format'] : 'Y-n-d G:i:s';
-        return get_the_modified_time($format);
+    add_shortcode('post_modified_time', function ($attr) {
+        $atts = shortcode_atts(array("format" => 'Y-n-d G:i:s'), $attr);
+        $format = $atts['format'] !== '' ? wp_strip_all_tags($atts['format']) : 'Y-n-d G:i:s';
+        return esc_html(get_the_modified_time($format));
     });
 
-    add_shortcode('noshortcode',function ($attr,$content=null){
-        return $content;
+    add_shortcode('noshortcode', function ($attr, $content = null) {
+        return wp_kses_post((string) $content);
     });
 
     
