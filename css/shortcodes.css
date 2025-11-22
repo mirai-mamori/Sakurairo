@@ -267,7 +267,7 @@
   text-transform: uppercase;
 }
 
-.bagde-rounded {
+.badge-rounded {
   border-radius: .75rem;
 }
 
@@ -542,7 +542,7 @@
     padding-left: 24px;
   }
 
-  .timeline-dot {
+  .timeline-code .timeline-dot {
     left: -36px;
   }
 }

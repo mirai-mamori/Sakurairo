@@ -3040,7 +3040,7 @@ function register_shortcodes() {
             $attributes['name'] = sanitize_text_field($atts['name']);
         }
         if ($atts['value'] !== '') {
-            $attributes['value'] = $atts['value'];
+            $attributes['value'] = sanitize_text_field($atts['value']);
         }
         if ($is_true($atts['checked'])) {
             $attributes['checked'] = 'checked';
@@ -3073,7 +3073,7 @@ function register_shortcodes() {
         );
 
         $color = $color_map[strtolower($atts['color'])] ?? 'badge-info';
-        $shape = strtolower($atts['shape']) === 'round' ? 'bagde-rounded' : '';
+        $shape = strtolower($atts['shape']) === 'round' ? 'badge-rounded' : '';
 
         $classes = array('badge', $color);
         if ($shape !== '') {
@@ -3209,38 +3209,42 @@ function register_shortcodes() {
             $icon_markup = sprintf('<i class="%s" aria-hidden="true"></i>', esc_attr($icon_class));
         }
 
-        ob_start();
-        ?>
-        <div class="<?= esc_attr(implode(' ', $wrapper_classes)); ?>" role="list">
-            <?php foreach ($entries as $entry): 
-                $time_html = $entry['time'] !== '' ? str_replace('/', '<br>', esc_html($entry['time'])) : '';
-                $title_html = $entry['title'] !== '' ? esc_html($entry['title']) : '';
-                $body_html = '';
-                if (trim($entry['body']) !== '') {
-                    $body_processed = wpautop(do_shortcode($entry['body']));
-                    $body_html = wp_kses_post($body_processed);
-                }
-            ?>
-                <div class="timeline-node" role="listitem">
-                    <div class="timeline-dot" aria-hidden="true">
-                        <?= $icon_markup !== '' ? $icon_markup : '<span class="timeline-dot-symbol"></span>'; ?>
-                    </div>
-                    <?php if ($time_html !== ''): ?>
-                        <div class="timeline-time"><?= $time_html; ?></div>
-                    <?php endif; ?>
-                    <div class="timeline-card">
-                        <?php if ($title_html !== ''): ?>
-                            <div class="timeline-title"><?= $title_html; ?></div>
-                        <?php endif; ?>
-                        <?php if ($body_html !== ''): ?>
-                            <div class="timeline-content"><?= $body_html; ?></div>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </div>
-        <?php
-        return ob_get_clean();
+        $output = sprintf('<div class="%s" role="list">', esc_attr(implode(' ', $wrapper_classes)));
+
+        foreach ($entries as $entry) {
+            $time_html = $entry['time'] !== '' ? str_replace('/', '<br>', esc_html($entry['time'])) : '';
+            $title_html = $entry['title'] !== '' ? esc_html($entry['title']) : '';
+            $body_html = '';
+            if (trim($entry['body']) !== '') {
+                $body_processed = wpautop(do_shortcode($entry['body']));
+                $body_html = wp_kses_post($body_processed);
+            }
+
+            $node = '<div class="timeline-node" role="listitem">';
+            $node .= '<div class="timeline-dot" aria-hidden="true">';
+            $node .= ($icon_markup !== '') ? $icon_markup : '<span class="timeline-dot-symbol"></span>';
+            $node .= '</div>';
+
+            if ($time_html !== '') {
+                $node .= sprintf('<div class="timeline-time">%s</div>', $time_html);
+            }
+
+            $node .= '<div class="timeline-card">';
+            if ($title_html !== '') {
+                $node .= sprintf('<div class="timeline-title">%s</div>', $title_html);
+            }
+            if ($body_html !== '') {
+                $node .= sprintf('<div class="timeline-content">%s</div>', $body_html);
+            }
+            $node .= '</div>'; // .timeline-card
+            $node .= '</div>'; // .timeline-node
+
+            $output .= $node;
+        }
+
+        $output .= '</div>';
+
+        return $output;
     });
     add_shortcode('hidden', function ($attr, $content = null) {
         $atts = shortcode_atts(array("tip" => "", "type" => "blur"), $attr);
@@ -3269,7 +3273,7 @@ function register_shortcodes() {
     });
 
     add_shortcode('noshortcode', function ($attr, $content = null) {
-        return wp_kses_post((string) $content);
+        return (string) $content;
     });
 
     
