@@ -2699,109 +2699,183 @@ function register_shortcodes() {
     });
 
     add_shortcode('ghcard', function($attr, $content = '') {
-        //获取内容
-        $atts = shortcode_atts(array("path" => "mirai-mamori/Sakurairo"), $attr);
-
+        $atts = shortcode_atts(array(
+            "path" => "mirai-mamori/Sakurairo",
+            "cache" => 21600, // 6 hours
+        ), $attr);
         $path = trim($atts['path']);
+        $cache_ttl = max(300, intval($atts['cache']));
+
+        if ($path === '') {
+            return '';
+        }
 
         if (strpos($path, 'https://github.com/') === 0) {
             $path = str_replace('https://github.com/', '', $path);
         }
 
         if (!preg_match('/^[a-zA-Z0-9_-]+\/[a-zA-Z0-9_.-]+$/', $path)) {
-            return '<p>Invalid GitHub repository path: ' . esc_html($path) . '</p>';
+            return '<p>' . __('Invalid GitHub repository path:', 'sakurairo') . ' ' . esc_html($path) . '</p>';
         }
-    
+
         list($username, $repo) = explode('/', $path, 2);
-    
-        //构造卡片内容
-        /*
-        $card_content = '';
-    
-        if (iro_opt('ghcard_proxy')) {
-            
-            $svg_url = 'https://github-readme-stats.vercel.app/api/pin/?hide_border=true&username=' . esc_attr($username) . '&repo=' . esc_attr($repo);
-            $response = wp_remote_get($svg_url);
-    
-            if (!is_wp_error($response)) {
-                $svg_content = wp_remote_retrieve_body($response);
-                if (!empty($svg_content)) {
-                    $card_content = $svg_content;
-                } else {
-                    $card_content = '';
-                }
+
+        $cache_key = 'ghcard_repo_' . md5(strtolower($path));
+        $cache_store_key = 'ghcard_repo_store_' . md5(strtolower($path));
+        $repo_data = get_transient($cache_key);
+        $data_state = $repo_data === false ? 'missing' : 'fresh';
+
+        if ($repo_data === false) {
+            $api_url = sprintf('https://api.github.com/repos/%s/%s', rawurlencode($username), rawurlencode($repo));
+            $response = wp_remote_get($api_url, array(
+                'timeout' => 10,
+                'headers' => array(
+                    'User-Agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0',
+                    'Accept'     => 'application/vnd.github+json'
+                )
+            ));
+
+            if (is_wp_error($response)) {
+                error_log(sprintf('[ghcard] Request error for %s: %s', $path, $response->get_error_message()));
             } else {
-                $card_content = '';
+                error_log(sprintf('[ghcard] API status %s for %s', wp_remote_retrieve_response_code($response), $path));
+                $body = wp_remote_retrieve_body($response);
+                $data = json_decode($body, true);
+
+                if (is_array($data) && empty($data['message'])) {
+                    $repo_data = array(
+                        'full_name'   => $data['full_name'] ?? $path,
+                        'description' => $data['description'] ?? '',
+                        'language'    => $data['language'] ?? '',
+                        'stars'       => intval($data['stargazers_count'] ?? 0),
+                        'forks'       => intval($data['forks_count'] ?? 0),
+                        'issues'      => intval($data['open_issues_count'] ?? 0),
+                        'url'         => $data['html_url'] ?? 'https://github.com/' . $path,
+                        'updated_at'  => $data['pushed_at'] ?? '',
+                    );
+
+                    set_transient($cache_key, $repo_data, $cache_ttl);
+                    update_option($cache_store_key, array(
+                        'data' => $repo_data,
+                        'timestamp' => time(),
+                    ), false);
+                    $data_state = 'fresh';
+                    error_log(sprintf('[ghcard] Cached data for %s', $path));
+                } else {
+                    error_log(sprintf('[ghcard] Unexpected payload for %s: %s', $path, substr($body, 0, 200)));
+                }
+            }
+
+            if (!$repo_data) {
+                $stored = get_option($cache_store_key, false);
+                if ($stored && isset($stored['data'])) {
+                    $repo_data = $stored['data'];
+                    $data_state = 'stale';
+                    error_log(sprintf('[ghcard] Using stale cache for %s', $path));
+                }
             }
         }
-    
-        //获取失败或未启用代理
-        if (empty($card_content)) {
-            $card_content = '<img decoding="async" src="https://github-readme-stats.vercel.app/api/pin/?hide_border=true&username=' . esc_attr($username) . '&repo=' . esc_attr($repo) . '" alt="Github-Card">';
-        }
-    
-        //输出内容
-        $ghcard = '<div class="ghcard">';
-        $ghcard .= '<a href="https://github.com/' . esc_attr($path) . '" target="_blank" rel="noopener noreferrer">';
-        $ghcard .= $card_content;
-        $ghcard .= '</a>';
-        $ghcard .= '</div>';
-    
-        return $ghcard;
-        */
-        $api_url = sprintf('https://api.github.com/repos/%s/%s', $username, $repo);
-        $response = wp_remote_get($api_url, array(
-            'headers' => array(
-                'User-Agent' => 'WordPress-GitHubCard-Shortcode'
-            )
-        ));
 
-        if (is_wp_error($response)) {
-            return sprintf('<p>Failed to fetch GitHub repository data: %s</p>', esc_html($response->get_error_message()));
+        if (!$repo_data) {
+            return sprintf(
+                '<div class="ghcard shortcodestyle ghcard--error"><p>%s</p></div>',
+                sprintf(__('Unable to fetch GitHub data for %s at the moment.', 'sakurairo'), esc_html($path))
+            );
         }
 
-        $body = wp_remote_retrieve_body($response);
-        $data = json_decode($body, true);
+        $language_raw = $repo_data['language'];
+        $language = $language_raw !== '' ? esc_html($language_raw) : __('Unknown', 'sakurairo');
+        $description = $repo_data['description'] !== '' ? esc_html($repo_data['description']) : __('No description provided.', 'sakurairo');
 
-        if (!is_array($data) || isset($data['message'])) {
-            return sprintf('<p>Unable to fetch GitHub data for: %s</p>', esc_html($path));
+        $updated_markup = '';
+        if (!empty($repo_data['updated_at'])) {
+            $updated_timestamp = strtotime($repo_data['updated_at']);
+            if ($updated_timestamp) {
+                $updated_markup = sprintf(
+                    '<span class="ghcard-updated">%s</span>',
+                    sprintf(
+                        __('Updated %s ago', 'sakurairo'),
+                        human_time_diff($updated_timestamp, current_time('timestamp'))
+                    )
+                );
+            }
         }
 
-        // 获取数据
-        $full_name = $data['full_name'];
-        $description = $data['description'];
-        $language = $data['language'];
-        $stars = $data['stargazers_count'];
-        $html_url = $data['html_url'];
+        $language_colors = array(
+            'JavaScript' => '#f7df1e',
+            'TypeScript' => '#3178c6',
+            'PHP'        => '#8993be',
+            'Python'     => '#3776ab',
+            'Ruby'       => '#cc342d',
+            'Go'         => '#00ADD8',
+            'Java'       => '#f89820',
+            'C++'        => '#00599C',
+            'C#'         => '#178600',
+            'C'          => '#555555',
+            'Shell'      => '#89e051',
+            'Swift'      => '#f05138',
+            'Kotlin'     => '#A97BFF'
+        );
 
-        // 仓库图标 + 默认颜色点
-        $lang_color = "green"; // 可拓展为语言颜色映射
-        $description = esc_html($description);
-        $language = esc_html($language);
+        $lang_color = ($language_raw !== '' && isset($language_colors[$language_raw]))
+            ? $language_colors[$language_raw]
+            : 'var(--shortcode-color-accent)';
+
+        $language_markup = sprintf(
+            '<span class="ghcard-language"><span class="ghcard-language-dot" style="background:%s;"></span>%s</span>',
+            esc_attr($lang_color),
+            $language
+        );
+
+        $meta_markup = $updated_markup !== ''
+            ? '<div class="ghcard-meta">' . $updated_markup . '</div>'
+            : '';
+
+        $card_classes = 'ghcard shortcodestyle';
+        if ($data_state === 'stale') {
+            $card_classes .= ' ghcard--stale';
+        }
+
+        $stale_notice = '';
+        if ($data_state === 'stale') {
+            $stored = get_option($cache_store_key, false);
+            $age = '';
+            if ($stored && isset($stored['timestamp'])) {
+                $age = human_time_diff($stored['timestamp'], current_time('timestamp'));
+            }
+            $stale_notice = sprintf('<div class="ghcard-stale-tip">%s</div>',
+                $age ? sprintf(__('Showing cached data (%s old).', 'sakurairo'), esc_html($age)) : __('Showing cached data.', 'sakurairo')
+            );
+        }
+
         return sprintf(
-            '<div class="ghcard" style="border:1px solid #ddd; border-radius:10px; padding:16px; max-width:300px; box-shadow:0 2px 6px rgba(0,0,0,0.1); background:#fff;">
-                <div style="display:flex; align-items:center; margin-bottom:10px;">
-                    <i class="fas fa-book" style="margin-right:8px; color:#555;"></i>
-                    <a href="%s" target="_blank" style="color:#1a73e8; font-weight:bold; text-decoration:none;">%s</a>
-                </div>
-                <div style="font-size:14px; color:#444; margin-bottom:12px;">%s</div>
-                <div style="display:flex; align-items:center; gap:16px; font-size:14px; color:#666;">
-                    <div style="display:flex; align-items:center;">
-                        <span style="width:10px; height:10px; background-color:%s; border-radius:50%%; display:inline-block; margin-right:6px;"></span>
-                        %s
+            '<div class="%s">
+                <div class="ghcard-header">
+                    <div class="ghcard-title">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        <a href="%s" target="_blank" rel="noopener noreferrer">%s</a>
                     </div>
-                    <div style="display:flex; align-items:center;">
-                        <i class="far fa-star" style="margin-right:4px;"></i>
-                        %d
-                    </div>
+                    %s
                 </div>
+                <p class="ghcard-description">%s</p>
+                %s
+                <div class="ghcard-stats">
+                    <span><i class="fa-solid fa-star" aria-hidden="true"></i>%s</span>
+                    <span><i class="fa-solid fa-code-branch" aria-hidden="true"></i>%s</span>
+                    <span><i class="fa-regular fa-circle-dot" aria-hidden="true"></i>%s</span>
+                </div>
+                %s
             </div>',
-            esc_url($html_url),
-            esc_html($full_name),
+            esc_attr($card_classes),
+            esc_url($repo_data['url']),
+            esc_html($repo_data['full_name']),
+            $language_markup,
             $description,
-            $lang_color,
-            $language,
-            intval($stars)
+            $meta_markup,
+            number_format_i18n($repo_data['stars']),
+            number_format_i18n($repo_data['forks']),
+            number_format_i18n($repo_data['issues']),
+            $stale_notice
         );
     });
 
