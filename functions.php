@@ -3162,11 +3162,19 @@ function register_shortcodes() {
 
         $lines = preg_split('/\r\n|\r|\n/', $raw_content);
         $entries = array();
-        foreach ($lines as $line) {
-            if (trim($line) === '') {
+        foreach ($lines as $line_raw) {
+            $line = trim($line_raw);
+            if ($line === '') {
                 continue;
             }
-            $parts = array_map('trim', explode('|', $line));
+
+            $line_plain = trim(wp_strip_all_tags(preg_replace('/<br\s*\/?>(\s|&nbsp;)?/i', '', $line)));
+            if ($line_plain === '') {
+                continue;
+            }
+
+            $decoded_line = html_entity_decode($line, ENT_QUOTES, get_bloginfo('charset'));
+            $parts = array_map('trim', explode('|', $decoded_line));
             if (count($parts) === 0) {
                 continue;
             }
