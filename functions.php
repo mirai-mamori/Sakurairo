@@ -381,6 +381,32 @@ function save_emotion_meta_box($post_id) {
 }
 add_action('save_post', 'save_emotion_meta_box');
 
+// Set default category for new shuoshuo
+function set_default_shuoshuo_category($post_id) {
+    // Check if this is a shuoshuo post
+    if (get_post_type($post_id) !== 'shuoshuo') {
+        return;
+    }
+    
+    // Check if this is an autosave
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    
+    // Check if the post already has categories
+    $categories = wp_get_post_categories($post_id);
+    if (!empty($categories)) {
+        return;
+    }
+    
+    // Get the default shuoshuo category from theme options
+    $default_category = iro_opt('default_shuoshuo_category');
+    if (!empty($default_category)) {
+        wp_set_post_categories($post_id, array($default_category));
+    }
+}
+add_action('save_post', 'set_default_shuoshuo_category');
+
 function register_custom_meta_boxes() {
     register_meta('post', 'title_style', array(
         'show_in_rest' => true,
