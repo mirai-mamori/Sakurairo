@@ -4446,6 +4446,87 @@ function iterator_to_string(Iterator $iterator): string
     return $content;
 }
 
+/**
+ * PJAX scroll position restoration
+ * 
+ * Fixes the issue where page scroll position is not restored when navigating 
+ * back with browser back button while PJAX is enabled.
+ * 
+ * Implementation:
+ * - Uses sessionStorage to save scroll positions keyed by URL
+ * - Listens to 'pjax:send' to save position before navigation
+ * - Listens to 'popstate' to track back/forward navigation
+ * - Listens to 'pjax:complete' to restore position after PJAX finishes
+ * 
+ * Limitations:
+ * - May not work in private browsing mode if sessionStorage is unavailable
+ */
+if (iro_opt('poi_pjax')) {
+    add_action('wp_footer', function() {
+        ?>
+        <script>
+        (function() {
+            var scrollPositionKey = 'iro_pjax_scroll_positions';
+            var isPopstateNavigation = false;
+            
+            function getScrollPositions() {
+                try {
+                    var data = sessionStorage.getItem(scrollPositionKey);
+                    return data ? JSON.parse(data) : {};
+                } catch (e) {
+                    return {};
+                }
+            }
+            
+            function saveScrollPosition(url) {
+                try {
+                    var positions = getScrollPositions();
+                    positions[url] = {
+                        x: window.scrollX || 0,
+                        y: window.scrollY || 0
+                    };
+                    sessionStorage.setItem(scrollPositionKey, JSON.stringify(positions));
+                } catch (e) {
+                    // sessionStorage may be unavailable in private browsing mode
+                }
+            }
+            
+            function restoreScrollPosition(url) {
+                try {
+                    var positions = getScrollPositions();
+                    if (positions[url]) {
+                        window.scrollTo(positions[url].x, positions[url].y);
+                        return true;
+                    }
+                } catch (e) {
+                    // sessionStorage may be unavailable in private browsing mode
+                }
+                return false;
+            }
+            
+            // Save scroll position before PJAX navigation
+            document.addEventListener('pjax:send', function() {
+                saveScrollPosition(window.location.href);
+            });
+            
+            // Track popstate navigation
+            window.addEventListener('popstate', function() {
+                isPopstateNavigation = true;
+            });
+            
+            // Restore scroll position after PJAX completes for back/forward navigation
+            document.addEventListener('pjax:complete', function() {
+                if (isPopstateNavigation) {
+                    restoreScrollPosition(window.location.href);
+                    isPopstateNavigation = false;
+                }
+            });
+        })();
+        </script>
+        <?php
+    });
+}
+
 /*GET参数操作*/
 function iro_action_operator()
 {
