@@ -806,17 +806,58 @@ if (!function_exists('akina_comment_format')) {
 function add_bilibili_frontend_script() {
     // 只在评论页面加载
     if (is_single() && comments_open()) {
+        // 使用静态变量确保只执行一次
+        static $script_added = false;
+        if ($script_added) {
+            return;
+        }
+        $script_added = true;
+        
+        // 或者使用全局变量
+        // global $bilibili_script_added;
+        // if (isset($bilibili_script_added) && $bilibili_script_added) {
+        //     return;
+        // }
+        // $bilibili_script_added = true;
+        
         ?>
-            <script>
-            // 添加B站UID输入框和自动填充功能
-            document.addEventListener('DOMContentLoaded', function () {
-                // 检查是否在评论表单页面
-                const commentForm = document.getElementById('commentform');
-                if (!commentForm) return;
+        <script type="module">
+        // 添加B站UID输入框和自动填充功能
+        document.addEventListener('DOMContentLoaded', function () {
+            // 检查是否在评论表单页面
+            const commentForm = document.getElementById('commentform');
+            if (!commentForm) return;
 
-                // 创建B站UID输入框（插入到昵称和邮箱中间）
-                const authorField = document.querySelector('.cmt-info-container .cmt-author');
-                if (authorField) {
+            // 检查是否已经存在B站UID输入框
+            const existingBiliInput = document.getElementById('bilibili_uid');
+            if (existingBiliInput) {
+                console.log('B站UID输入框已存在，跳过添加');
+                return;
+            }
+
+            // 创建B站UID输入框（插入到昵称和邮箱中间）
+            const authorField = document.querySelector('.cmt-info-container .cmt-author');
+            if (authorField) {
+                // 查找邮箱输入框，在它前面插入
+                const emailField = document.querySelector('.cmt-info-container input[type="text"][name="email"]');
+                const targetField = emailField ? emailField.closest('.popup') : null;
+                
+                if (targetField) {
+                    const biliUIDHtml = `
+                        <div class="popup cmt-popup bilibili-popup" style="position:relative;">
+                            <input type="text" placeholder="B站UID" name="bilibili_uid" id="bilibili_uid" 
+                                size="22" autocomplete="off" tabindex="1">
+                            <span class="popuptext" style="margin-left: -85px;width: 170px;">
+                                输入B站UID自动拉取昵称和头像
+                            </span>
+                            <div id="bili_loading" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);display:none;">
+                                <i class="fa-solid fa-spinner fa-spin" style="font-size:12px;"></i>
+                            </div>
+                        </div>
+                    `;
+                    targetField.insertAdjacentHTML('beforebegin', biliUIDHtml);
+                } else {
+                    // 后备方案：在昵称字段后面插入
                     const biliUIDHtml = `
                         <div class="popup cmt-popup bilibili-popup" style="position:relative;">
                             <input type="text" placeholder="B站UID" name="bilibili_uid" id="bilibili_uid" 
@@ -830,501 +871,498 @@ function add_bilibili_frontend_script() {
                         </div>
                     `;
                     authorField.insertAdjacentHTML('afterend', biliUIDHtml);
+                }
 
-                    // 添加事件监听
-                    const uidInput = document.getElementById('bilibili_uid');
-                    let lastUid = '';
+                // 添加事件监听
+                const uidInput = document.getElementById('bilibili_uid');
+                let lastUid = '';
 
-                    uidInput.addEventListener('blur', function (e) {
+                uidInput.addEventListener('blur', function (e) {
+                    const currentUid = e.target.value.trim();
+                    // 只有UID变化时才请求
+                    if (currentUid && currentUid !== lastUid) {
+                        lastUid = currentUid;
+                        fetchBilibiliInfo(currentUid);
+                    }
+                });
+
+                // 也监听回车键
+                uidInput.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
                         const currentUid = e.target.value.trim();
-                        // 只有UID变化时才请求
                         if (currentUid && currentUid !== lastUid) {
                             lastUid = currentUid;
                             fetchBilibiliInfo(currentUid);
                         }
-                    });
+                    }
+                });
+            }
+        });
 
-                    // 也监听回车键
-                    uidInput.addEventListener('keypress', function (e) {
-                        if (e.key === 'Enter') {
-                            e.preventDefault();
-                            const currentUid = e.target.value.trim();
-                            if (currentUid && currentUid !== lastUid) {
-                                lastUid = currentUid;
-                                fetchBilibiliInfo(currentUid);
-                            }
-                        }
-                    });
-                }
-            });
-
-            // 获取B站用户信息
-            function fetchBilibiliInfo(uid) {
-                if (!uid || !/^\d+$/.test(uid)) {
-                    return;
-                }
-
-                const loadingEl = document.getElementById('bili_loading');
-                const uidInput = document.getElementById('bilibili_uid');
-
-                // 显示加载中
-                loadingEl.style.display = 'block';
-                uidInput.disabled = true;
-
-                // 调用API
-                fetch(`https://uapis.cn/api/v1/social/bilibili/userinfo?uid=${uid}`)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('API请求失败');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        if (data && data.name) {
-                            // 显示确认弹窗
-                            showBilibiliConfirmDialog(uid, data, () => {
-                                // 确认回调 - 填充数据
-                                fillUserInfo(uid, data);
-                                showBiliToast('B站信息获取成功！', 'success');
-                            }, () => {
-                                // 取消回调 - 清空数据
-                                clearBilibiliData();
-                                showBiliToast('已取消，请重新填写', 'info');
-                            });
-                        } else {
-                            showBiliToast('获取失败，请检查UID', 'error');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('获取B站信息失败:', error);
-                        showBiliToast('网络请求失败，请重试', 'error');
-                    })
-                    .finally(() => {
-                        // 隐藏加载动画
-                        loadingEl.style.display = 'none';
-                        uidInput.disabled = false;
-                    });
+        // 获取B站用户信息
+        function fetchBilibiliInfo(uid) {
+            if (!uid || !/^\d+$/.test(uid)) {
+                return;
             }
 
-            // 显示B站信息确认弹窗
-            function showBilibiliConfirmDialog(uid, userData, onConfirm, onCancel) {
-                // 移除已有的弹窗
-                const oldDialog = document.getElementById('bili-confirm-dialog');
-                if (oldDialog) oldDialog.remove();
+            const loadingEl = document.getElementById('bili_loading');
+            const uidInput = document.getElementById('bilibili_uid');
 
-                // 创建弹窗
-                const dialog = document.createElement('div');
-                dialog.id = 'bili-confirm-dialog';
-                dialog.innerHTML = `
-                    <div class="bili-dialog-overlay" style="
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        background: rgba(0, 0, 0, 0.5);
-                        z-index: 9999;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        animation: fadeIn 0.3s ease;
+            // 显示加载中
+            loadingEl.style.display = 'block';
+            uidInput.disabled = true;
+
+            // 调用API
+            fetch(`https://uapis.cn/api/v1/social/bilibili/userinfo?uid=${uid}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('API请求失败');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data && data.name) {
+                        // 显示确认弹窗
+                        showBilibiliConfirmDialog(uid, data, () => {
+                            // 确认回调 - 填充数据
+                            fillUserInfo(uid, data);
+                            showBiliToast('B站信息获取成功！', 'success');
+                        }, () => {
+                            // 取消回调 - 清空数据
+                            clearBilibiliData();
+                            showBiliToast('已取消，请重新填写', 'info');
+                        });
+                    } else {
+                        showBiliToast('获取失败，请检查UID', 'error');
+                    }
+                })
+                .catch(error => {
+                    console.error('获取B站信息失败:', error);
+                    showBiliToast('网络请求失败，请重试', 'error');
+                })
+                .finally(() => {
+                    // 隐藏加载动画
+                    loadingEl.style.display = 'none';
+                    uidInput.disabled = false;
+                });
+        }
+
+        // 显示B站信息确认弹窗
+        function showBilibiliConfirmDialog(uid, userData, onConfirm, onCancel) {
+            // 移除已有的弹窗
+            const oldDialog = document.getElementById('bili-confirm-dialog');
+            if (oldDialog) oldDialog.remove();
+
+            // 创建弹窗
+            const dialog = document.createElement('div');
+            dialog.id = 'bili-confirm-dialog';
+            dialog.innerHTML = `
+                <div class="bili-dialog-overlay" style="
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 9999;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    animation: fadeIn 0.3s ease;
+                ">
+                    <div class="bili-dialog-content" style="
+                        background: white;
+                        border-radius: 12px;
+                        padding: 24px;
+                        width: 90%;
+                        max-width: 400px;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+                        animation: scaleIn 0.3s ease;
                     ">
-                        <div class="bili-dialog-content" style="
-                            background: white;
-                            border-radius: 12px;
-                            padding: 24px;
-                            width: 90%;
-                            max-width: 400px;
-                            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-                            animation: scaleIn 0.3s ease;
+                        <h3 style="
+                            margin-top: 0;
+                            margin-bottom: 16px;
+                            color: #333;
+                            font-size: 18px;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
                         ">
-                            <h3 style="
-                                margin-top: 0;
-                                margin-bottom: 16px;
-                                color: #333;
-                                font-size: 18px;
-                                display: flex;
-                                align-items: center;
-                                gap: 8px;
-                            ">
-                                <i class="fa-solid fa-user-check" style="color: #00a1d6;"></i>
-                                确认B站UID信息
-                            </h3>
-                            
-                            <div class="bili-user-info" style="
-                                display: flex;
-                                align-items: center;
-                                gap: 16px;
-                                margin-bottom: 20px;
-                                padding: 16px;
-                                background: #f8f9fa;
-                                border-radius: 8px;
-                                border-left: 4px solid #00a1d6;
-                            ">
-                                <img src="${userData.face}" 
-                                     style="
-                                        width: 60px;
-                                        height: 60px;
-                                        border-radius: 50%;
-                                        border: 2px solid #00a1d6;
-                                        object-fit: cover;
-                                     "
-                                     alt="${userData.name}的头像"
-                                     referrerpolicy="no-referrer">
-                                <div>
-                                    <div style="
-                                        font-weight: bold;
-                                        font-size: 16px;
-                                        color: #333;
-                                        margin-bottom: 4px;
-                                    ">
-                                        ${userData.name}
-                                    </div>
-                                    <div style="
-                                        font-size: 14px;
-                                        color: #666;
-                                        margin-bottom: 4px;
-                                    ">
-                                        UID: ${uid}
-                                    </div>
-                                    <div style="
-                                        font-size: 13px;
-                                        color: #888;
-                                    ">
-                                        B站等级: ${userData.level || '未知'}
-                                    </div>
+                            <i class="fa-solid fa-user-check" style="color: #00a1d6;"></i>
+                            确认B站UID信息
+                        </h3>
+                        
+                        <div class="bili-user-info" style="
+                            display: flex;
+                            align-items: center;
+                            gap: 16px;
+                            margin-bottom: 20px;
+                            padding: 16px;
+                            background: #f8f9fa;
+                            border-radius: 8px;
+                            border-left: 4px solid #00a1d6;
+                        ">
+                            <img src="${userData.face}" 
+                                 style="
+                                    width: 60px;
+                                    height: 60px;
+                                    border-radius: 50%;
+                                    border: 2px solid #00a1d6;
+                                    object-fit: cover;
+                                 "
+                                 alt="${userData.name}的头像"
+                                 referrerpolicy="no-referrer">
+                            <div>
+                                <div style="
+                                    font-weight: bold;
+                                    font-size: 16px;
+                                    color: #333;
+                                    margin-bottom: 4px;
+                                ">
+                                    ${userData.name}
+                                </div>
+                                <div style="
+                                    font-size: 14px;
+                                    color: #666;
+                                    margin-bottom: 4px;
+                                ">
+                                    UID: ${uid}
+                                </div>
+                                <div style="
+                                    font-size: 13px;
+                                    color: #888;
+                                ">
+                                    B站等级: ${userData.level || '未知'}
                                 </div>
                             </div>
-                            
-                            <p style="
-                                color: #666;
-                                font-size: 14px;
-                                line-height: 1.5;
-                                margin-bottom: 24px;
-                                padding: 12px;
-                                background: #fff8e6;
+                        </div>
+                        
+                        <p style="
+                            color: #666;
+                            font-size: 14px;
+                            line-height: 1.5;
+                            margin-bottom: 24px;
+                            padding: 12px;
+                            background: #fff8e6;
+                            border-radius: 6px;
+                            border-left: 3px solid #ffb300;
+                        ">
+                            <i class="fa-solid fa-exclamation-triangle" style="color: #ffb300; margin-right: 6px;"></i>
+                            请确认这是您的B站账号，确保您不是冒充他人身份。
+                        </p>
+                        
+                        <div class="bili-dialog-actions" style="
+                            display: flex;
+                            gap: 12px;
+                            justify-content: flex-end;
+                        ">
+                            <button type="button" class="bili-btn-cancel" style="
+                                padding: 10px 20px;
+                                background: #f5f5f5;
+                                border: 1px solid #ddd;
                                 border-radius: 6px;
-                                border-left: 3px solid #ffb300;
-                            ">
-                                <i class="fa-solid fa-exclamation-triangle" style="color: #ffb300; margin-right: 6px;"></i>
-                                请确认这是您的B站账号，确保您不是冒充他人身份。
-                            </p>
-                            
-                            <div class="bili-dialog-actions" style="
+                                color: #666;
+                                cursor: pointer;
+                                font-size: 14px;
+                                transition: all 0.2s ease;
                                 display: flex;
-                                gap: 12px;
-                                justify-content: flex-end;
-                            ">
-                                <button type="button" class="bili-btn-cancel" style="
-                                    padding: 10px 20px;
-                                    background: #f5f5f5;
-                                    border: 1px solid #ddd;
-                                    border-radius: 6px;
-                                    color: #666;
-                                    cursor: pointer;
-                                    font-size: 14px;
-                                    transition: all 0.2s ease;
-                                    display: flex;
-                                    align-items: center;
-                                    gap: 6px;
-                                " onmouseover="this.style.background='#eee'" onmouseout="this.style.background='#f5f5f5'">
-                                    <i class="fa-solid fa-times"></i>
-                                    取消
-                                </button>
-                                <button type="button" class="bili-btn-confirm" style="
-                                    padding: 10px 20px;
-                                    background: #00a1d6;
-                                    border: none;
-                                    border-radius: 6px;
-                                    color: white;
-                                    cursor: pointer;
-                                    font-size: 14px;
-                                    transition: all 0.2s ease;
-                                    display: flex;
-                                    align-items: center;
-                                    gap: 6px;
-                                " onmouseover="this.style.background='#008db2'" onmouseout="this.style.background='#00a1d6'">
-                                    <i class="fa-solid fa-check"></i>
-                                    确认使用
-                                </button>
-                            </div>
+                                align-items: center;
+                                gap: 6px;
+                            " onmouseover="this.style.background='#eee'" onmouseout="this.style.background='#f5f5f5'">
+                                <i class="fa-solid fa-times"></i>
+                                取消
+                            </button>
+                            <button type="button" class="bili-btn-confirm" style="
+                                padding: 10px 20px;
+                                background: #00a1d6;
+                                border: none;
+                                border-radius: 6px;
+                                color: white;
+                                cursor: pointer;
+                                font-size: 14px;
+                                transition: all 0.2s ease;
+                                display: flex;
+                                align-items: center;
+                                gap: 6px;
+                            " onmouseover="this.style.background='#008db2'" onmouseout="this.style.background='#00a1d6'">
+                                <i class="fa-solid fa-check"></i>
+                                确认使用
+                            </button>
                         </div>
                     </div>
-                `;
+                </div>
+            `;
 
-                document.body.appendChild(dialog);
-                dialog.style.display = 'block';
+            document.body.appendChild(dialog);
+            dialog.style.display = 'block';
 
-                // 添加事件监听
-                dialog.querySelector('.bili-btn-confirm').addEventListener('click', function() {
-                    dialog.style.animation = 'fadeOut 0.3s ease';
-                    setTimeout(() => {
-                        if (dialog.parentNode) dialog.remove();
-                        if (onConfirm) onConfirm();
-                    }, 300);
-                });
+            // 添加事件监听
+            dialog.querySelector('.bili-btn-confirm').addEventListener('click', function() {
+                dialog.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => {
+                    if (dialog.parentNode) dialog.remove();
+                    if (onConfirm) onConfirm();
+                }, 300);
+            });
 
-                dialog.querySelector('.bili-btn-cancel').addEventListener('click', function() {
+            dialog.querySelector('.bili-btn-cancel').addEventListener('click', function() {
+                dialog.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => {
+                    if (dialog.parentNode) dialog.remove();
+                    if (onCancel) onCancel();
+                }, 300);
+            });
+
+            // 点击遮罩层也取消
+            dialog.querySelector('.bili-dialog-overlay').addEventListener('click', function(e) {
+                if (e.target === this) {
                     dialog.style.animation = 'fadeOut 0.3s ease';
                     setTimeout(() => {
                         if (dialog.parentNode) dialog.remove();
                         if (onCancel) onCancel();
                     }, 300);
-                });
+                }
+            });
+        }
 
-                // 点击遮罩层也取消
-                dialog.querySelector('.bili-dialog-overlay').addEventListener('click', function(e) {
-                    if (e.target === this) {
-                        dialog.style.animation = 'fadeOut 0.3s ease';
-                        setTimeout(() => {
-                            if (dialog.parentNode) dialog.remove();
-                            if (onCancel) onCancel();
-                        }, 300);
-                    }
-                });
+        // 填充用户信息到表单
+        function fillUserInfo(uid, data) {
+            // 填充昵称
+            const authorInput = document.getElementById('author');
+            if (authorInput) {
+                authorInput.value = data.name;
+                authorInput.setAttribute('data-from-bilibili', 'true');
             }
 
-            // 填充用户信息到表单
-            function fillUserInfo(uid, data) {
-                // 填充昵称
-                const authorInput = document.getElementById('author');
-                if (authorInput) {
-                    authorInput.value = data.name;
-                    authorInput.setAttribute('data-from-bilibili', 'true');
-                }
+            // 填充网站
+            const urlInput = document.getElementById('url');
+            if (urlInput) {
+                urlInput.value = `https://space.bilibili.com/${uid}`;
+                urlInput.setAttribute('data-from-bilibili', 'true');
+            }
 
-                // 填充网站
-                const urlInput = document.getElementById('url');
-                if (urlInput) {
-                    urlInput.value = `https://space.bilibili.com/${uid}`;
-                    urlInput.setAttribute('data-from-bilibili', 'true');
+            // 更新头像预览
+            const avatarImg = document.querySelector('.comment-user-avatar img');
+            if (avatarImg) {
+                // 保存原始头像，以便取消时恢复
+                if (!avatarImg.hasAttribute('data-original-src')) {
+                    avatarImg.setAttribute('data-original-src', avatarImg.src);
                 }
+                avatarImg.src = data.face;
+                avatarImg.setAttribute('referrerpolicy', 'no-referrer');
+                avatarImg.alt = data.name + '的B站头像';
+                avatarImg.setAttribute('data-from-bilibili', 'true');
+            }
 
-                // 更新头像预览
-                const avatarImg = document.querySelector('.comment-user-avatar img');
-                if (avatarImg) {
-                    avatarImg.src = data.face;
-                    avatarImg.setAttribute('referrerpolicy', 'no-referrer');
-                    avatarImg.alt = data.name + '的B站头像';
-                    avatarImg.setAttribute('data-from-bilibili', 'true');
-                }
+            // 添加头像隐藏字段
+            let avatarField = document.getElementById('bilibili_avatar_hidden');
+            if (!avatarField) {
+                avatarField = document.createElement('input');
+                avatarField.type = 'hidden';
+                avatarField.id = 'bilibili_avatar_hidden';
+                avatarField.name = 'bilibili_avatar';
+                avatarField.value = data.face;
+                document.getElementById('commentform').appendChild(avatarField);
+            } else {
+                avatarField.value = data.face;
+            }
 
-                // 添加头像隐藏字段
-                let avatarField = document.getElementById('bilibili_avatar_hidden');
-                if (!avatarField) {
-                    avatarField = document.createElement('input');
-                    avatarField.type = 'hidden';
-                    avatarField.id = 'bilibili_avatar_hidden';
-                    avatarField.name = 'bilibili_avatar';
-                    avatarField.value = data.face;
-                    document.getElementById('commentform').appendChild(avatarField);
+            // 添加UID隐藏字段
+            let uidField = document.getElementById('bilibili_uid_hidden');
+            if (!uidField) {
+                uidField = document.createElement('input');
+                uidField.type = 'hidden';
+                uidField.id = 'bilibili_uid_hidden';
+                uidField.name = 'bilibili_uid';
+                uidField.value = uid;
+                document.getElementById('commentform').appendChild(uidField);
+            } else {
+                uidField.value = uid;
+            }
+
+            // 添加等级隐藏字段
+            if (data.level !== undefined) {
+                let levelField = document.getElementById('bilibili_level_hidden');
+                if (!levelField) {
+                    levelField = document.createElement('input');
+                    levelField.type = 'hidden';
+                    levelField.id = 'bilibili_level_hidden';
+                    levelField.name = 'bilibili_level';
+                    levelField.value = data.level;
+                    document.getElementById('commentform').appendChild(levelField);
                 } else {
-                    avatarField.value = data.face;
-                }
-
-                // 添加UID隐藏字段
-                let uidField = document.getElementById('bilibili_uid_hidden');
-                if (!uidField) {
-                    uidField = document.createElement('input');
-                    uidField.type = 'hidden';
-                    uidField.id = 'bilibili_uid_hidden';
-                    uidField.name = 'bilibili_uid';
-                    uidField.value = uid;
-                    document.getElementById('commentform').appendChild(uidField);
-                } else {
-                    uidField.value = uid;
-                }
-
-                // 添加等级隐藏字段
-                if (data.level !== undefined) {
-                    let levelField = document.getElementById('bilibili_level_hidden');
-                    if (!levelField) {
-                        levelField = document.createElement('input');
-                        levelField.type = 'hidden';
-                        levelField.id = 'bilibili_level_hidden';
-                        levelField.name = 'bilibili_level';
-                        levelField.value = data.level;
-                        document.getElementById('commentform').appendChild(levelField);
-                    } else {
-                        levelField.value = data.level;
-                    }
+                    levelField.value = data.level;
                 }
             }
+        }
 
-            // 清空B站相关数据
-            function clearBilibiliData() {
-                // 清空UID输入框
-                const uidInput = document.getElementById('bilibili_uid');
-                if (uidInput) {
-                    uidInput.value = '';
-                    uidInput.focus();
-                }
-
-                // 清空昵称（如果是B站来源的）
-                const authorInput = document.getElementById('author');
-                if (authorInput && authorInput.getAttribute('data-from-bilibili') === 'true') {
-                    authorInput.value = '';
-                    authorInput.removeAttribute('data-from-bilibili');
-                }
-
-                // 清空网站（如果是B站来源的）
-                const urlInput = document.getElementById('url');
-                if (urlInput && urlInput.getAttribute('data-from-bilibili') === 'true') {
-                    urlInput.value = '';
-                    urlInput.removeAttribute('data-from-bilibili');
-                }
-
-                // 清空头像（如果是B站来源的）
-                const avatarImg = document.querySelector('.comment-user-avatar img[data-from-bilibili="true"]');
-                if (avatarImg) {
-                    // 重置为默认头像
-                    avatarImg.src = avatarImg.getAttribute('data-original-src') || avatarImg.src;
-                    avatarImg.removeAttribute('data-from-bilibili');
-                }
-
-                // 移除隐藏字段
-                const hiddenFields = [
-                    'bilibili_avatar_hidden',
-                    'bilibili_uid_hidden',
-                    'bilibili_level_hidden'
-                ];
-                
-                hiddenFields.forEach(id => {
-                    const field = document.getElementById(id);
-                    if (field && field.parentNode) {
-                        field.parentNode.removeChild(field);
-                    }
-                });
+        // 清空B站相关数据
+        function clearBilibiliData() {
+            // 清空UID输入框
+            const uidInput = document.getElementById('bilibili_uid');
+            if (uidInput) {
+                uidInput.value = '';
+                uidInput.focus();
             }
 
-            // 显示提示信息
-            function showBiliToast(message, type = 'info') {
-                // 移除已有的提示
-                const oldToast = document.getElementById('bili-toast');
-                if (oldToast) oldToast.remove();
-
-                // 创建提示元素
-                const toast = document.createElement('div');
-                toast.id = 'bili-toast';
-                toast.innerHTML = `
-                    <div style="
-                        position: fixed;
-                        top: 20px;
-                        right: 20px;
-                        background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
-                        color: white;
-                        padding: 12px 20px;
-                        border-radius: 4px;
-                        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-                        z-index: 10000;
-                        animation: slideIn 0.3s ease;
-                    ">
-                        <i class="fa-solid ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}" 
-                        style="margin-right:8px;"></i>
-                        ${message}
-                    </div>
-                `;
-
-                document.body.appendChild(toast);
-
-                // 3秒后自动移除
-                setTimeout(() => {
-                    if (toast.parentNode) {
-                        toast.style.animation = 'slideOut 0.3s ease';
-                        setTimeout(() => {
-                            if (toast.parentNode) toast.remove();
-                        }, 300);
-                    }
-                }, 3000);
+            // 清空昵称（如果是B站来源的）
+            const authorInput = document.getElementById('author');
+            if (authorInput && authorInput.getAttribute('data-from-bilibili') === 'true') {
+                authorInput.value = '';
+                authorInput.removeAttribute('data-from-bilibili');
             }
 
-            // 防止重复请求的防抖函数（可选）
-            function debounce(func, wait) {
-                let timeout;
-                return function executedFunction(...args) {
-                    const later = () => {
-                        clearTimeout(timeout);
-                        func(...args);
-                    };
-                    clearTimeout(timeout);
-                    timeout = setTimeout(later, wait);
-                };
+            // 清空网站（如果是B站来源的）
+            const urlInput = document.getElementById('url');
+            if (urlInput && urlInput.getAttribute('data-from-bilibili') === 'true') {
+                urlInput.value = '';
+                urlInput.removeAttribute('data-from-bilibili');
             }
 
-            // 添加CSS动画
-            if (!document.getElementById('bili-toast-style')) {
-                const style = document.createElement('style');
-                style.id = 'bili-toast-style';
-                style.textContent = `
-                    @keyframes slideIn {
-                        from {
-                            transform: translateX(100%);
-                            opacity: 0;
-                        }
-                        to {
-                            transform: translateX(0);
-                            opacity: 1;
-                        }
-                    }
-                    @keyframes slideOut {
-                        from {
-                            transform: translateX(0);
-                            opacity: 1;
-                        }
-                        to {
-                            transform: translateX(100%);
-                            opacity: 0;
-                        }
-                    }
-                    @keyframes fadeIn {
-                        from { opacity: 0; }
-                        to { opacity: 1; }
-                    }
-                    @keyframes fadeOut {
-                        from { opacity: 1; }
-                        to { opacity: 0; }
-                    }
-                    @keyframes scaleIn {
-                        from {
-                            transform: scale(0.9);
-                            opacity: 0;
-                        }
-                        to {
-                            transform: scale(1);
-                            opacity: 1;
-                        }
-                    }
-                    .bilibili-popup {
-                        position: relative !important;
-                    }
-                    #bilibili_uid {
-                        padding-right: 30px !important;
-                    }
-                    /* 为B站头像添加特殊标识 */
-                    img[data-from-bilibili="true"] {
-                        border: 2px solid #00a1d6 !important;
-                        position: relative;
-                    }
-                    img[data-from-bilibili="true"]::after {
-                        content: 'B';
-                        position: absolute;
-                        top: -8px;
-                        right: -8px;
-                        background: #00a1d6;
-                        color: white;
-                        width: 20px;
-                        height: 20px;
-                        border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: 12px;
-                        font-weight: bold;
-                    }
-                `;
-                document.head.appendChild(style);
+            // 清空头像（如果是B站来源的）
+            const avatarImg = document.querySelector('.comment-user-avatar img[data-from-bilibili="true"]');
+            if (avatarImg) {
+                // 重置为原始头像
+                const originalSrc = avatarImg.getAttribute('data-original-src');
+                if (originalSrc) {
+                    avatarImg.src = originalSrc;
+                }
+                avatarImg.removeAttribute('data-from-bilibili');
+                avatarImg.removeAttribute('referrerpolicy');
+                avatarImg.alt = 'comment_user_avatar';
             }
-            </script>
+
+            // 移除隐藏字段
+            const hiddenFields = [
+                'bilibili_avatar_hidden',
+                'bilibili_uid_hidden',
+                'bilibili_level_hidden'
+            ];
+            
+            hiddenFields.forEach(id => {
+                const field = document.getElementById(id);
+                if (field && field.parentNode) {
+                    field.parentNode.removeChild(field);
+                }
+            });
+        }
+
+        // 显示提示信息
+        function showBiliToast(message, type = 'info') {
+            // 移除已有的提示
+            const oldToast = document.getElementById('bili-toast');
+            if (oldToast) oldToast.remove();
+
+            // 创建提示元素
+            const toast = document.createElement('div');
+            toast.id = 'bili-toast';
+            toast.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+                    color: white;
+                    padding: 12px 20px;
+                    border-radius: 4px;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                    z-index: 10000;
+                    animation: slideIn 0.3s ease;
+                ">
+                    <i class="fa-solid ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}" 
+                    style="margin-right:8px;"></i>
+                    ${message}
+                </div>
+            `;
+
+            document.body.appendChild(toast);
+
+            // 3秒后自动移除
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => {
+                        if (toast.parentNode) toast.remove();
+                    }, 300);
+                }
+            }, 3000);
+        }
+
+        // 添加CSS动画
+        if (!document.getElementById('bili-toast-style')) {
+            const style = document.createElement('style');
+            style.id = 'bili-toast-style';
+            style.textContent = `
+                @keyframes slideIn {
+                    from {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+                @keyframes slideOut {
+                    from {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                    to {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                }
+                @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                }
+                @keyframes fadeOut {
+                    from { opacity: 1; }
+                    to { opacity: 0; }
+                }
+                @keyframes scaleIn {
+                    from {
+                        transform: scale(0.9);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                }
+                .bilibili-popup {
+                    position: relative !important;
+                }
+                #bilibili_uid {
+                    padding-right: 30px !important;
+                }
+                /* 为B站头像添加特殊标识 */
+                img[data-from-bilibili="true"] {
+                    border: 2px solid #00a1d6 !important;
+                    position: relative;
+                }
+                img[data-from-bilibili="true"]::after {
+                    content: 'B';
+                    position: absolute;
+                    top: -8px;
+                    right: -8px;
+                    background: #00a1d6;
+                    color: white;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        </script>
         <?php
     }
 }
