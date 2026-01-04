@@ -839,20 +839,20 @@ function add_bilibili_frontend_script() {
                         const currentUid = e.target.value.trim();
                         // 只有UID变化时才请求
                         if (currentUid && currentUid !== lastUid) {
-                        lastUid = currentUid;
-                        fetchBilibiliInfo(currentUid);
+                            lastUid = currentUid;
+                            fetchBilibiliInfo(currentUid);
                         }
                     });
 
                     // 也监听回车键
                     uidInput.addEventListener('keypress', function (e) {
                         if (e.key === 'Enter') {
-                        e.preventDefault();
-                        const currentUid = e.target.value.trim();
-                        if (currentUid && currentUid !== lastUid) {
-                            lastUid = currentUid;
-                            fetchBilibiliInfo(currentUid);
-                        }
+                            e.preventDefault();
+                            const currentUid = e.target.value.trim();
+                            if (currentUid && currentUid !== lastUid) {
+                                lastUid = currentUid;
+                                fetchBilibiliInfo(currentUid);
+                            }
                         }
                     });
                 }
@@ -875,97 +875,24 @@ function add_bilibili_frontend_script() {
                 fetch(`https://uapis.cn/api/v1/social/bilibili/userinfo?uid=${uid}`)
                     .then(response => {
                         if (!response.ok) {
-                        throw new Error('API请求失败');
+                            throw new Error('API请求失败');
                         }
                         return response.json();
                     })
                     .then(data => {
                         if (data && data.name) {
-                        // 自动填充昵称（只有当昵称为空或包含B站字符时才填充）
-                        const authorInput = document.getElementById('author');
-                        if (authorInput) {
-                            const currentAuthor = authorInput.value.trim();
-                            // 如果昵称为空，或者当前昵称是之前获取的B站名字，就更新
-                            if (!currentAuthor ||
-                                currentAuthor === data.name ||
-                                currentAuthor.includes('的B站') ||
-                                authorInput.getAttribute('data-from-bilibili') === 'true') {
-                                authorInput.value = data.name;
-                                authorInput.setAttribute('data-from-bilibili', 'true');
-                            }
-                        }
-
-                        // 自动填充网站（B站主页）- 只有当网站输入框为空时才填充
-                        const urlInput = document.getElementById('url');
-                        if (urlInput) {
-                            const currentUrl = urlInput.value.trim();
-                            if (!currentUrl ||
-                                currentUrl.includes('bilibili.com') ||
-                                currentUrl.includes('space.bilibili.com') ||
-                                urlInput.getAttribute('data-from-bilibili') === 'true') {
-                                // 只有为空或已经是B站链接时才更新
-                                if (!currentUrl || currentUrl.includes('bilibili.com')) {
-                                    urlInput.value = `https://space.bilibili.com/${uid}`;
-                                    urlInput.setAttribute('data-from-bilibili', 'true');
-                                }
-                            }
-                        }
-
-                        // 更新头像预览（表单顶部）
-                        const avatarImg = document.querySelector('.comment-user-avatar img');
-                        if (avatarImg) {
-                            avatarImg.src = data.face;
-                            avatarImg.setAttribute('referrerpolicy', 'no-referrer');
-                            avatarImg.alt = data.name + '的B站头像';
-                            // 添加B站标识
-                            avatarImg.setAttribute('data-from-bilibili', 'true');
-                        }
-
-                        // 添加头像隐藏字段给后端
-                        let avatarField = document.getElementById('bilibili_avatar_hidden');
-                        if (!avatarField) {
-                            avatarField = document.createElement('input');
-                            avatarField.type = 'hidden';
-                            avatarField.id = 'bilibili_avatar_hidden';
-                            avatarField.name = 'bilibili_avatar';
-                            avatarField.value = data.face;
-                            document.getElementById('commentform').appendChild(avatarField);
+                            // 显示确认弹窗
+                            showBilibiliConfirmDialog(uid, data, () => {
+                                // 确认回调 - 填充数据
+                                fillUserInfo(uid, data);
+                                showBiliToast('B站信息获取成功！', 'success');
+                            }, () => {
+                                // 取消回调 - 清空数据
+                                clearBilibiliData();
+                                showBiliToast('已取消，请重新填写', 'info');
+                            });
                         } else {
-                            avatarField.value = data.face;
-                        }
-
-                        // 添加UID隐藏字段
-                        let uidField = document.getElementById('bilibili_uid_hidden');
-                        if (!uidField) {
-                            uidField = document.createElement('input');
-                            uidField.type = 'hidden';
-                            uidField.id = 'bilibili_uid_hidden';
-                            uidField.name = 'bilibili_uid';
-                            uidField.value = uid;
-                            document.getElementById('commentform').appendChild(uidField);
-                        } else {
-                            uidField.value = uid;
-                        }
-
-                        // 添加等级隐藏字段
-                        if (data.level !== undefined) {
-                            let levelField = document.getElementById('bilibili_level_hidden');
-                            if (!levelField) {
-                                levelField = document.createElement('input');
-                                levelField.type = 'hidden';
-                                levelField.id = 'bilibili_level_hidden';
-                                levelField.name = 'bilibili_level';
-                                levelField.value = data.level;
-                                document.getElementById('commentform').appendChild(levelField);
-                            } else {
-                                levelField.value = data.level;
-                            }
-                        }
-
-                        // 显示成功提示
-                        showBiliToast('B站信息获取成功！', 'success');
-                        } else {
-                        showBiliToast('获取失败，请检查UID', 'error');
+                            showBiliToast('获取失败，请检查UID', 'error');
                         }
                     })
                     .catch(error => {
@@ -977,6 +904,297 @@ function add_bilibili_frontend_script() {
                         loadingEl.style.display = 'none';
                         uidInput.disabled = false;
                     });
+            }
+
+            // 显示B站信息确认弹窗
+            function showBilibiliConfirmDialog(uid, userData, onConfirm, onCancel) {
+                // 移除已有的弹窗
+                const oldDialog = document.getElementById('bili-confirm-dialog');
+                if (oldDialog) oldDialog.remove();
+
+                // 创建弹窗
+                const dialog = document.createElement('div');
+                dialog.id = 'bili-confirm-dialog';
+                dialog.innerHTML = `
+                    <div class="bili-dialog-overlay" style="
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: rgba(0, 0, 0, 0.5);
+                        z-index: 9999;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        animation: fadeIn 0.3s ease;
+                    ">
+                        <div class="bili-dialog-content" style="
+                            background: white;
+                            border-radius: 12px;
+                            padding: 24px;
+                            width: 90%;
+                            max-width: 400px;
+                            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+                            animation: scaleIn 0.3s ease;
+                        ">
+                            <h3 style="
+                                margin-top: 0;
+                                margin-bottom: 16px;
+                                color: #333;
+                                font-size: 18px;
+                                display: flex;
+                                align-items: center;
+                                gap: 8px;
+                            ">
+                                <i class="fa-solid fa-user-check" style="color: #00a1d6;"></i>
+                                确认B站UID信息
+                            </h3>
+                            
+                            <div class="bili-user-info" style="
+                                display: flex;
+                                align-items: center;
+                                gap: 16px;
+                                margin-bottom: 20px;
+                                padding: 16px;
+                                background: #f8f9fa;
+                                border-radius: 8px;
+                                border-left: 4px solid #00a1d6;
+                            ">
+                                <img src="${userData.face}" 
+                                     style="
+                                        width: 60px;
+                                        height: 60px;
+                                        border-radius: 50%;
+                                        border: 2px solid #00a1d6;
+                                        object-fit: cover;
+                                     "
+                                     alt="${userData.name}的头像"
+                                     referrerpolicy="no-referrer">
+                                <div>
+                                    <div style="
+                                        font-weight: bold;
+                                        font-size: 16px;
+                                        color: #333;
+                                        margin-bottom: 4px;
+                                    ">
+                                        ${userData.name}
+                                    </div>
+                                    <div style="
+                                        font-size: 14px;
+                                        color: #666;
+                                        margin-bottom: 4px;
+                                    ">
+                                        UID: ${uid}
+                                    </div>
+                                    <div style="
+                                        font-size: 13px;
+                                        color: #888;
+                                    ">
+                                        B站等级: ${userData.level || '未知'}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p style="
+                                color: #666;
+                                font-size: 14px;
+                                line-height: 1.5;
+                                margin-bottom: 24px;
+                                padding: 12px;
+                                background: #fff8e6;
+                                border-radius: 6px;
+                                border-left: 3px solid #ffb300;
+                            ">
+                                <i class="fa-solid fa-exclamation-triangle" style="color: #ffb300; margin-right: 6px;"></i>
+                                请确认这是您的B站账号，确保您不是冒充他人身份。
+                            </p>
+                            
+                            <div class="bili-dialog-actions" style="
+                                display: flex;
+                                gap: 12px;
+                                justify-content: flex-end;
+                            ">
+                                <button type="button" class="bili-btn-cancel" style="
+                                    padding: 10px 20px;
+                                    background: #f5f5f5;
+                                    border: 1px solid #ddd;
+                                    border-radius: 6px;
+                                    color: #666;
+                                    cursor: pointer;
+                                    font-size: 14px;
+                                    transition: all 0.2s ease;
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 6px;
+                                " onmouseover="this.style.background='#eee'" onmouseout="this.style.background='#f5f5f5'">
+                                    <i class="fa-solid fa-times"></i>
+                                    取消
+                                </button>
+                                <button type="button" class="bili-btn-confirm" style="
+                                    padding: 10px 20px;
+                                    background: #00a1d6;
+                                    border: none;
+                                    border-radius: 6px;
+                                    color: white;
+                                    cursor: pointer;
+                                    font-size: 14px;
+                                    transition: all 0.2s ease;
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 6px;
+                                " onmouseover="this.style.background='#008db2'" onmouseout="this.style.background='#00a1d6'">
+                                    <i class="fa-solid fa-check"></i>
+                                    确认使用
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                document.body.appendChild(dialog);
+                dialog.style.display = 'block';
+
+                // 添加事件监听
+                dialog.querySelector('.bili-btn-confirm').addEventListener('click', function() {
+                    dialog.style.animation = 'fadeOut 0.3s ease';
+                    setTimeout(() => {
+                        if (dialog.parentNode) dialog.remove();
+                        if (onConfirm) onConfirm();
+                    }, 300);
+                });
+
+                dialog.querySelector('.bili-btn-cancel').addEventListener('click', function() {
+                    dialog.style.animation = 'fadeOut 0.3s ease';
+                    setTimeout(() => {
+                        if (dialog.parentNode) dialog.remove();
+                        if (onCancel) onCancel();
+                    }, 300);
+                });
+
+                // 点击遮罩层也取消
+                dialog.querySelector('.bili-dialog-overlay').addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        dialog.style.animation = 'fadeOut 0.3s ease';
+                        setTimeout(() => {
+                            if (dialog.parentNode) dialog.remove();
+                            if (onCancel) onCancel();
+                        }, 300);
+                    }
+                });
+            }
+
+            // 填充用户信息到表单
+            function fillUserInfo(uid, data) {
+                // 填充昵称
+                const authorInput = document.getElementById('author');
+                if (authorInput) {
+                    authorInput.value = data.name;
+                    authorInput.setAttribute('data-from-bilibili', 'true');
+                }
+
+                // 填充网站
+                const urlInput = document.getElementById('url');
+                if (urlInput) {
+                    urlInput.value = `https://space.bilibili.com/${uid}`;
+                    urlInput.setAttribute('data-from-bilibili', 'true');
+                }
+
+                // 更新头像预览
+                const avatarImg = document.querySelector('.comment-user-avatar img');
+                if (avatarImg) {
+                    avatarImg.src = data.face;
+                    avatarImg.setAttribute('referrerpolicy', 'no-referrer');
+                    avatarImg.alt = data.name + '的B站头像';
+                    avatarImg.setAttribute('data-from-bilibili', 'true');
+                }
+
+                // 添加头像隐藏字段
+                let avatarField = document.getElementById('bilibili_avatar_hidden');
+                if (!avatarField) {
+                    avatarField = document.createElement('input');
+                    avatarField.type = 'hidden';
+                    avatarField.id = 'bilibili_avatar_hidden';
+                    avatarField.name = 'bilibili_avatar';
+                    avatarField.value = data.face;
+                    document.getElementById('commentform').appendChild(avatarField);
+                } else {
+                    avatarField.value = data.face;
+                }
+
+                // 添加UID隐藏字段
+                let uidField = document.getElementById('bilibili_uid_hidden');
+                if (!uidField) {
+                    uidField = document.createElement('input');
+                    uidField.type = 'hidden';
+                    uidField.id = 'bilibili_uid_hidden';
+                    uidField.name = 'bilibili_uid';
+                    uidField.value = uid;
+                    document.getElementById('commentform').appendChild(uidField);
+                } else {
+                    uidField.value = uid;
+                }
+
+                // 添加等级隐藏字段
+                if (data.level !== undefined) {
+                    let levelField = document.getElementById('bilibili_level_hidden');
+                    if (!levelField) {
+                        levelField = document.createElement('input');
+                        levelField.type = 'hidden';
+                        levelField.id = 'bilibili_level_hidden';
+                        levelField.name = 'bilibili_level';
+                        levelField.value = data.level;
+                        document.getElementById('commentform').appendChild(levelField);
+                    } else {
+                        levelField.value = data.level;
+                    }
+                }
+            }
+
+            // 清空B站相关数据
+            function clearBilibiliData() {
+                // 清空UID输入框
+                const uidInput = document.getElementById('bilibili_uid');
+                if (uidInput) {
+                    uidInput.value = '';
+                    uidInput.focus();
+                }
+
+                // 清空昵称（如果是B站来源的）
+                const authorInput = document.getElementById('author');
+                if (authorInput && authorInput.getAttribute('data-from-bilibili') === 'true') {
+                    authorInput.value = '';
+                    authorInput.removeAttribute('data-from-bilibili');
+                }
+
+                // 清空网站（如果是B站来源的）
+                const urlInput = document.getElementById('url');
+                if (urlInput && urlInput.getAttribute('data-from-bilibili') === 'true') {
+                    urlInput.value = '';
+                    urlInput.removeAttribute('data-from-bilibili');
+                }
+
+                // 清空头像（如果是B站来源的）
+                const avatarImg = document.querySelector('.comment-user-avatar img[data-from-bilibili="true"]');
+                if (avatarImg) {
+                    // 重置为默认头像
+                    avatarImg.src = avatarImg.getAttribute('data-original-src') || avatarImg.src;
+                    avatarImg.removeAttribute('data-from-bilibili');
+                }
+
+                // 移除隐藏字段
+                const hiddenFields = [
+                    'bilibili_avatar_hidden',
+                    'bilibili_uid_hidden',
+                    'bilibili_level_hidden'
+                ];
+                
+                hiddenFields.forEach(id => {
+                    const field = document.getElementById(id);
+                    if (field && field.parentNode) {
+                        field.parentNode.removeChild(field);
+                    }
+                });
             }
 
             // 显示提示信息
@@ -1014,7 +1232,7 @@ function add_bilibili_frontend_script() {
                     if (toast.parentNode) {
                         toast.style.animation = 'slideOut 0.3s ease';
                         setTimeout(() => {
-                        if (toast.parentNode) toast.remove();
+                            if (toast.parentNode) toast.remove();
                         }, 300);
                     }
                 }, 3000);
@@ -1058,6 +1276,24 @@ function add_bilibili_frontend_script() {
                             opacity: 0;
                         }
                     }
+                    @keyframes fadeIn {
+                        from { opacity: 0; }
+                        to { opacity: 1; }
+                    }
+                    @keyframes fadeOut {
+                        from { opacity: 1; }
+                        to { opacity: 0; }
+                    }
+                    @keyframes scaleIn {
+                        from {
+                            transform: scale(0.9);
+                            opacity: 0;
+                        }
+                        to {
+                            transform: scale(1);
+                            opacity: 1;
+                        }
+                    }
                     .bilibili-popup {
                         position: relative !important;
                     }
@@ -1067,6 +1303,23 @@ function add_bilibili_frontend_script() {
                     /* 为B站头像添加特殊标识 */
                     img[data-from-bilibili="true"] {
                         border: 2px solid #00a1d6 !important;
+                        position: relative;
+                    }
+                    img[data-from-bilibili="true"]::after {
+                        content: 'B';
+                        position: absolute;
+                        top: -8px;
+                        right: -8px;
+                        background: #00a1d6;
+                        color: white;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 12px;
+                        font-weight: bold;
                     }
                 `;
                 document.head.appendChild(style);
