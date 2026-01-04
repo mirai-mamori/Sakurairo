@@ -802,6 +802,282 @@ if (!function_exists('akina_comment_format')) {
     }
 }
 
+// 注入B站UID前端功能
+function add_bilibili_frontend_script() {
+    // 只在评论页面加载
+    if (is_single() && comments_open()) {
+        ?>
+            <script>
+            // 添加B站UID输入框和自动填充功能
+            document.addEventListener('DOMContentLoaded', function () {
+                // 检查是否在评论表单页面
+                const commentForm = document.getElementById('commentform');
+                if (!commentForm) return;
+
+                // 创建B站UID输入框（插入到昵称和邮箱中间）
+                const authorField = document.querySelector('.cmt-info-container .cmt-author');
+                if (authorField) {
+                    const biliUIDHtml = `
+                        <div class="popup cmt-popup bilibili-popup" style="position:relative;">
+                            <input type="text" placeholder="B站UID" name="bilibili_uid" id="bilibili_uid" 
+                                size="22" autocomplete="off" tabindex="1">
+                            <span class="popuptext" style="margin-left: -85px;width: 170px;">
+                                输入B站UID自动拉取昵称和头像
+                            </span>
+                            <div id="bili_loading" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);display:none;">
+                                <i class="fa-solid fa-spinner fa-spin" style="font-size:12px;"></i>
+                            </div>
+                        </div>
+                    `;
+                    authorField.insertAdjacentHTML('afterend', biliUIDHtml);
+
+                    // 添加事件监听
+                    const uidInput = document.getElementById('bilibili_uid');
+                    let lastUid = '';
+
+                    uidInput.addEventListener('blur', function (e) {
+                        const currentUid = e.target.value.trim();
+                        // 只有UID变化时才请求
+                        if (currentUid && currentUid !== lastUid) {
+                        lastUid = currentUid;
+                        fetchBilibiliInfo(currentUid);
+                        }
+                    });
+
+                    // 也监听回车键
+                    uidInput.addEventListener('keypress', function (e) {
+                        if (e.key === 'Enter') {
+                        e.preventDefault();
+                        const currentUid = e.target.value.trim();
+                        if (currentUid && currentUid !== lastUid) {
+                            lastUid = currentUid;
+                            fetchBilibiliInfo(currentUid);
+                        }
+                        }
+                    });
+                }
+            });
+
+            // 获取B站用户信息
+            function fetchBilibiliInfo(uid) {
+                if (!uid || !/^\d+$/.test(uid)) {
+                    return;
+                }
+
+                const loadingEl = document.getElementById('bili_loading');
+                const uidInput = document.getElementById('bilibili_uid');
+
+                // 显示加载中
+                loadingEl.style.display = 'block';
+                uidInput.disabled = true;
+
+                // 调用API
+                fetch(`https://uapis.cn/api/v1/social/bilibili/userinfo?uid=${uid}`)
+                    .then(response => {
+                        if (!response.ok) {
+                        throw new Error('API请求失败');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data && data.name) {
+                        // 自动填充昵称（只有当昵称为空或包含B站字符时才填充）
+                        const authorInput = document.getElementById('author');
+                        if (authorInput) {
+                            const currentAuthor = authorInput.value.trim();
+                            // 如果昵称为空，或者当前昵称是之前获取的B站名字，就更新
+                            if (!currentAuthor ||
+                                currentAuthor === data.name ||
+                                currentAuthor.includes('的B站') ||
+                                authorInput.getAttribute('data-from-bilibili') === 'true') {
+                                authorInput.value = data.name;
+                                authorInput.setAttribute('data-from-bilibili', 'true');
+                            }
+                        }
+
+                        // 自动填充网站（B站主页）- 只有当网站输入框为空时才填充
+                        const urlInput = document.getElementById('url');
+                        if (urlInput) {
+                            const currentUrl = urlInput.value.trim();
+                            if (!currentUrl ||
+                                currentUrl.includes('bilibili.com') ||
+                                currentUrl.includes('space.bilibili.com') ||
+                                urlInput.getAttribute('data-from-bilibili') === 'true') {
+                                // 只有为空或已经是B站链接时才更新
+                                if (!currentUrl || currentUrl.includes('bilibili.com')) {
+                                    urlInput.value = `https://space.bilibili.com/${uid}`;
+                                    urlInput.setAttribute('data-from-bilibili', 'true');
+                                }
+                            }
+                        }
+
+                        // 更新头像预览（表单顶部）
+                        const avatarImg = document.querySelector('.comment-user-avatar img');
+                        if (avatarImg) {
+                            avatarImg.src = data.face;
+                            avatarImg.setAttribute('referrerpolicy', 'no-referrer');
+                            avatarImg.alt = data.name + '的B站头像';
+                            // 添加B站标识
+                            avatarImg.setAttribute('data-from-bilibili', 'true');
+                        }
+
+                        // 添加头像隐藏字段给后端
+                        let avatarField = document.getElementById('bilibili_avatar_hidden');
+                        if (!avatarField) {
+                            avatarField = document.createElement('input');
+                            avatarField.type = 'hidden';
+                            avatarField.id = 'bilibili_avatar_hidden';
+                            avatarField.name = 'bilibili_avatar';
+                            avatarField.value = data.face;
+                            document.getElementById('commentform').appendChild(avatarField);
+                        } else {
+                            avatarField.value = data.face;
+                        }
+
+                        // 添加UID隐藏字段
+                        let uidField = document.getElementById('bilibili_uid_hidden');
+                        if (!uidField) {
+                            uidField = document.createElement('input');
+                            uidField.type = 'hidden';
+                            uidField.id = 'bilibili_uid_hidden';
+                            uidField.name = 'bilibili_uid';
+                            uidField.value = uid;
+                            document.getElementById('commentform').appendChild(uidField);
+                        } else {
+                            uidField.value = uid;
+                        }
+
+                        // 添加等级隐藏字段
+                        if (data.level !== undefined) {
+                            let levelField = document.getElementById('bilibili_level_hidden');
+                            if (!levelField) {
+                                levelField = document.createElement('input');
+                                levelField.type = 'hidden';
+                                levelField.id = 'bilibili_level_hidden';
+                                levelField.name = 'bilibili_level';
+                                levelField.value = data.level;
+                                document.getElementById('commentform').appendChild(levelField);
+                            } else {
+                                levelField.value = data.level;
+                            }
+                        }
+
+                        // 显示成功提示
+                        showBiliToast('B站信息获取成功！', 'success');
+                        } else {
+                        showBiliToast('获取失败，请检查UID', 'error');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('获取B站信息失败:', error);
+                        showBiliToast('网络请求失败，请重试', 'error');
+                    })
+                    .finally(() => {
+                        // 隐藏加载动画
+                        loadingEl.style.display = 'none';
+                        uidInput.disabled = false;
+                    });
+            }
+
+            // 显示提示信息
+            function showBiliToast(message, type = 'info') {
+                // 移除已有的提示
+                const oldToast = document.getElementById('bili-toast');
+                if (oldToast) oldToast.remove();
+
+                // 创建提示元素
+                const toast = document.createElement('div');
+                toast.id = 'bili-toast';
+                toast.innerHTML = `
+                    <div style="
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+                        color: white;
+                        padding: 12px 20px;
+                        border-radius: 4px;
+                        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                        z-index: 10000;
+                        animation: slideIn 0.3s ease;
+                    ">
+                        <i class="fa-solid ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}" 
+                        style="margin-right:8px;"></i>
+                        ${message}
+                    </div>
+                `;
+
+                document.body.appendChild(toast);
+
+                // 3秒后自动移除
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.style.animation = 'slideOut 0.3s ease';
+                        setTimeout(() => {
+                        if (toast.parentNode) toast.remove();
+                        }, 300);
+                    }
+                }, 3000);
+            }
+
+            // 防止重复请求的防抖函数（可选）
+            function debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+
+            // 添加CSS动画
+            if (!document.getElementById('bili-toast-style')) {
+                const style = document.createElement('style');
+                style.id = 'bili-toast-style';
+                style.textContent = `
+                    @keyframes slideIn {
+                        from {
+                            transform: translateX(100%);
+                            opacity: 0;
+                        }
+                        to {
+                            transform: translateX(0);
+                            opacity: 1;
+                        }
+                    }
+                    @keyframes slideOut {
+                        from {
+                            transform: translateX(0);
+                            opacity: 1;
+                        }
+                        to {
+                            transform: translateX(100%);
+                            opacity: 0;
+                        }
+                    }
+                    .bilibili-popup {
+                        position: relative !important;
+                    }
+                    #bilibili_uid {
+                        padding-right: 30px !important;
+                    }
+                    /* 为B站头像添加特殊标识 */
+                    img[data-from-bilibili="true"] {
+                        border: 2px solid #00a1d6 !important;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            </script>
+        <?php
+    }
+}
+add_action('wp_footer', 'add_bilibili_frontend_script');
+
+
 /**
  * 获取访客VIP样式
  */
