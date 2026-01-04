@@ -222,21 +222,83 @@ if(!function_exists('siren_ajax_comment_callback')) {
                  }
         }
       }
+      
+      // ========== 保存B站数据 ==========
+      $comment_id = $comment->comment_ID;
+
+      // 保存B站UID（确保去重）
+      if (isset($_POST['bilibili_uid']) && !empty($_POST['bilibili_uid'])) {
+          $bilibili_uid = sanitize_text_field($_POST['bilibili_uid']);
+          if (preg_match('/^\d+$/', $bilibili_uid)) {
+              // 使用update_comment_meta确保保存到数据库
+              update_comment_meta($comment_id, 'bilibili_uid', $bilibili_uid);
+          }
+      }
+
+      // 保存B站头像
+      if (isset($_POST['bilibili_avatar']) && !empty($_POST['bilibili_avatar'])) {
+          $bilibili_avatar = esc_url_raw($_POST['bilibili_avatar']);
+          if (filter_var($bilibili_avatar, FILTER_VALIDATE_URL)) {
+              update_comment_meta($comment_id, 'bilibili_avatar', $bilibili_avatar);
+          }
+      }
+
+      // 保存B站等级
+      if (isset($_POST['bilibili_level']) && !empty($_POST['bilibili_level'])) {
+          $bilibili_level = intval($_POST['bilibili_level']);
+          if ($bilibili_level >= 0 && $bilibili_level <= 6) {
+              update_comment_meta($comment_id, 'bilibili_level', $bilibili_level);
+          }
+      }
+      // ========== B站数据保存代码结束 ==========
+      
       $user = wp_get_current_user();
       do_action('set_comment_cookies', $comment, $user);
       $GLOBALS['comment'] = $comment; //根据你的评论结构自行修改，如使用默认主题则无需修改
+      
+      // 获取B站信息
+      $bilibili_uid = get_comment_meta($comment_id, 'bilibili_uid', true);
+      $bilibili_avatar = get_comment_meta($comment_id, 'bilibili_avatar', true);
+      $bilibili_level = get_comment_meta($comment_id, 'bilibili_level', true);
+      
+      // 使用B站头像
+      $avatar_url = !empty($bilibili_avatar) ? $bilibili_avatar : get_avatar_url($comment->comment_author_email);
+      // 使用B站主页链接
+      $author_url = !empty($bilibili_uid) ? 'https://space.bilibili.com/' . $bilibili_uid : comment_author_url();
       ?>
       <li <?php comment_class(); ?> id="comment-<?php echo esc_attr(comment_ID()); ?>">
         <div class="contents">
           <div class="comment-arrow">
             <div class="main shadow">
                 <div class="profile">
-                  <a href="<?php comment_author_url(); ?>"><?php echo get_avatar( $comment->comment_author_email, 80, '', get_comment_author() ); ?></a>
+                  <a href="<?php echo esc_url($author_url); ?>" target="_blank" rel="nofollow" data-umami-event="outbound-link-click" data-umami-event-url="<?php echo esc_url($author_url); ?>">
+                    <img onerror="this.onerror=null;this.src='https://www.yangdujun.top/wp-content/plugins/wpavatar/assets/images/cravatar-default.png';" 
+                         alt='<?php echo esc_attr(comment_author()); ?>的B站头像' 
+                         src='<?php echo esc_url($avatar_url); ?>' 
+                         class='avatar avatar-80 photo avatar-default' 
+                         height='80' width='80' loading='lazy' decoding='async' referrerpolicy='no-referrer'/>
+                  </a>
                 </div>
                 <div class="commentinfo">
                   <section class="commeta">
                     <div class="left">
-                      <h4 class="author"><a href="<?php comment_author_url(); ?>"><?php echo get_avatar( $comment->comment_author_email, 80, '', get_comment_author() ); ?><?php comment_author(); ?> <span class="isauthor" title="<?php esc_attr_e('Author', 'sakurairo'); ?>"></span></a></h4>
+                      <h4 class="author">
+                        <a href="<?php echo esc_url($author_url); ?>" target="_blank" rel="nofollow" data-umami-event="outbound-link-click" data-umami-event-url="<?php echo esc_url($author_url); ?>">
+                          <img onerror="this.onerror=null;this.src='https://www.yangdujun.top/wp-content/plugins/wpavatar/assets/images/cravatar-default.png';" 
+                               alt='<?php echo esc_attr(comment_author()); ?>的B站头像' 
+                               src='<?php echo esc_url($avatar_url); ?>' 
+                               class='avatar avatar-80 photo avatar-default' 
+                               height='80' width='80' loading='lazy' decoding='async' referrerpolicy='no-referrer'/>
+                          <?php comment_author(); ?>
+                          <?php if (!empty($bilibili_level)): ?>
+                            <span class="showGrade<?php echo esc_attr($bilibili_level); ?>" title="Lv<?php echo esc_attr($bilibili_level); ?>">
+                              <img alt="level_img" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/comment_level/level_<?php echo esc_attr($bilibili_level); ?>.svg" 
+                                   style="height: 1.5em; max-height: 1.5em; display: inline-block;" referrerpolicy="no-referrer">
+                            </span>
+                          <?php endif; ?>
+                          <span class="isauthor" title="<?php esc_attr_e('Author', 'sakurairo'); ?>"></span>
+                        </a>
+                      </h4>
                     </div>
                     <div class="right">
                       <div class="info"><time datetime="<?php comment_date('Y-m-d'); ?>"><?php echo poi_time_since(strtotime($comment->comment_date), true );//comment_date(get_option('date_format')); ?></time></div>

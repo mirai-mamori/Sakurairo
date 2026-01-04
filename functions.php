@@ -697,21 +697,73 @@ if (!function_exists('akina_comment_format')) {
     function akina_comment_format($comment, $args, $depth)
     {
         $GLOBALS['comment'] = $comment;
+        $comment_id = $comment->comment_ID;
+        
+        // 获取B站数据
+        $bilibili_uid = get_comment_meta($comment_id, 'bilibili_uid', true);
+        $bilibili_avatar = get_comment_meta($comment_id, 'bilibili_avatar', true);
+        $bilibili_level = get_comment_meta($comment_id, 'bilibili_level', true);
+        
+        // 使用B站头像或默认头像
+        $avatar_url = !empty($bilibili_avatar) ? $bilibili_avatar : get_avatar_url($comment->comment_author_email, array('size' => 80));
+        // 使用B站链接或默认链接
+        $author_url = !empty($bilibili_uid) ? 'https://space.bilibili.com/' . esc_attr($bilibili_uid) : get_comment_author_url();
+        
         ?>
-        <li <?php comment_class(); ?> id="comment-<?php echo esc_attr(comment_ID()); ?>">
+        <li <?php comment_class(); ?> id="comment-<?php echo esc_attr($comment_id); ?>">
             <div class="contents">
                 <div class="comment-arrow">
                     <div class="main shadow">
                         <div class="profile">
-                            <a href="<?php comment_author_url(); ?>" target="_blank" rel="nofollow"><?php echo str_replace('src=', 'src="' . iro_opt('load_in_svg') . '" onerror="imgError(this,1)" data-src=', get_avatar($comment->comment_author_email, 80, '', get_comment_author(), array('class' => array('lazyload')))); ?></a>
+                            <a href="<?php echo esc_url($author_url); ?>" target="_blank" rel="nofollow" 
+                               data-umami-event="outbound-link-click" 
+                               data-umami-event-url="<?php echo esc_url($author_url); ?>">
+                                <img onerror="this.onerror=null;this.src='<?php echo iro_opt('load_in_svg'); ?>';" 
+                                     alt="<?php echo esc_attr(get_comment_author()); ?>的头像" 
+                                     src="<?php echo esc_url($avatar_url); ?>" 
+                                     data-src="<?php echo esc_url($avatar_url); ?>" 
+                                     class="avatar avatar-80 photo lazyload" 
+                                     height="80" width="80" 
+                                     loading="lazy" decoding="async" 
+                                     referrerpolicy="no-referrer"/>
+                            </a>
                         </div>
                         <div class="commentinfo">
                             <section class="commeta">
                                 <div class="left">
                                     <h4 class="author">
-                                        <a href="<?php comment_author_url(); ?>" target="_blank" rel="nofollow"><?php echo get_avatar($comment->comment_author_email, 24, '', get_comment_author()); ?>
-                                            <span class="bb-comment isauthor" title="<?php _e('Author', 'sakurairo'); ?>"><?php _e('Blogger', 'sakurairo'); /*博主*/?></span>
-                                            <?php comment_author(); ?><?php echo get_author_class($comment->comment_author_email, $comment->user_id); ?>
+                                        <a href="<?php echo esc_url($author_url); ?>" target="_blank" rel="nofollow" 
+                                           data-umami-event="outbound-link-click" 
+                                           data-umami-event-url="<?php echo esc_url($author_url); ?>">
+                                            <img onerror="this.onerror=null;this.src='<?php echo iro_opt('load_in_svg'); ?>';" 
+                                                 alt="<?php echo esc_attr(get_comment_author()); ?>的头像" 
+                                                 src="<?php echo esc_url($avatar_url); ?>" 
+                                                 data-src="<?php echo esc_url($avatar_url); ?>" 
+                                                 class="avatar avatar-24 photo lazyload" 
+                                                 height="24" width="24" 
+                                                 loading="lazy" decoding="async" 
+                                                 referrerpolicy="no-referrer"/>
+                                            
+                                            <?php if ($comment->user_id == get_post()->post_author): ?>
+                                                <span class="bb-comment isauthor" title="<?php _e('Author', 'sakurairo'); ?>">
+                                                    <?php _e('Blogger', 'sakurairo'); /*博主*/?>
+                                                </span>
+                                            <?php endif; ?>
+                                            
+                                            <?php comment_author(); ?>
+                                            
+                                            <?php 
+                                            // 优先显示B站等级，如果没有则显示默认等级
+                                            if (!empty($bilibili_level) && $bilibili_level >= 0 && $bilibili_level <= 6) {
+                                                // 显示B站等级
+                                                echo '<span class="showGrade' . esc_attr($bilibili_level) . '" title="Lv' . esc_attr($bilibili_level) . '">
+                                                    <img alt="level_img" src="https://s.nmxc.ltd/sakurairo_vision/@3.0/comment_level/level_' . esc_attr($bilibili_level) . '.svg" style="height: 1.5em; max-height: 1.5em; display: inline-block;" referrerpolicy="no-referrer">
+                                                </span>';
+                                            } else {
+                                                // 显示默认等级（调用原有函数）
+                                                get_author_class($comment->comment_author_email, $comment->user_id);
+                                            }
+                                            ?>
                                         </a>
                                     </h4>
                                 </div>
@@ -756,9 +808,25 @@ if (!function_exists('akina_comment_format')) {
 function get_author_class($comment_author_email, $user_id)
 {
     global $wpdb;
+    global $comment;
+    
+    // 首先检查是否有B站等级
+    if (isset($comment->comment_ID)) {
+        $bilibili_level = get_comment_meta($comment->comment_ID, 'bilibili_level', true);
+        if (!empty($bilibili_level) && $bilibili_level >= 0 && $bilibili_level <= 6) {
+            // 返回B站等级
+            echo "<span class=\"showGrade{$bilibili_level}\" title=\"Lv{$bilibili_level}\"><img alt=\"level_img\" src=\"" . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@3.0/') . "comment_level/level_{$bilibili_level}.svg\" style=\"height: 1.5em; max-height: 1.5em; display: inline-block;\" referrerpolicy=\"no-referrer\"></span>";
+            return;
+        }
+    }
+    
+    // 如果没有B站等级，使用原有逻辑
     $author_count = count(
         $wpdb->get_results(
-            "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email = '$comment_author_email' "
+            $wpdb->prepare(
+                "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email = %s",
+                $comment_author_email
+            )
         )
     );
     # 等级梯度
