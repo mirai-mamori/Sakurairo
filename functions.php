@@ -821,7 +821,7 @@ function add_bilibili_frontend_script() {
         // $bilibili_script_added = true;
         
         ?>
-        <script type="module">
+        <script>
         // 添加B站UID输入框和自动填充功能
         document.addEventListener('DOMContentLoaded', function () {
             // 检查是否在评论表单页面
