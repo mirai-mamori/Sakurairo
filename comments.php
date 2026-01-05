@@ -215,17 +215,17 @@ function get_smilies_panel() {
                 )):[]) // 用户登录则不显示任何字段
             );
 
-			function comment_cookies_check_lable($field) {
+			function comment_cookies_check_label($field) {
 				$field = '
 							<label class="siren-checkbox-label">
-								<input class="siren-checkbox-radio id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes">
+								<input class="siren-checkbox-radio" id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes">
 								<span class="siren-mail-notify-checkbox siren-checkbox-radioInput"></span>
 								' . __('Save your private info', 'sakurairo') . '
 							</label></div>
 						 ';
 				return $field;
 			}
-			add_filter('comment_form_field_cookies', 'comment_cookies_check_lable');
+			add_filter('comment_form_field_cookies', 'comment_cookies_check_label');
 
             comment_form($args);
         }

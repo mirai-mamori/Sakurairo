@@ -6,7 +6,7 @@ Theme URI: https://github.com/mirai-mamori/Sakurairo
 Author: Created by Fuukei
 Author URI: https://docs.fuukei.org/
 Description: A WordPress theme that is built with AI-assisted reading features, colorful, user-friendly, well-rounded, and rich in functionalities. (Based on Theme Sakura)
-Version: 3.0.4
+Version: 3.0.5
 Tested up to: 6.8
 Requires at least: 6.0
 Requires PHP: 8.0
@@ -692,7 +692,7 @@ blockquote:after {
   border-radius: 50px;
   display: flex;
   height: 100%;
-  padding: 0px 12px;
+  padding: 8px 12px;
   transition: all 0.3s ease-in;
   font-size: 15px;
   box-sizing: border-box;
@@ -715,7 +715,7 @@ nav .menu > li {
 nav .menu > li .sub-menu {
   position: absolute;
   right: 0;
-  top: 195%;
+  top: 155%;
   min-width: 90px;
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
