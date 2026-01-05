@@ -678,7 +678,7 @@ blockquote:after {
   transition: all 0.4s ease-in-out;
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: fit-content;
   align-items: stretch;
 }
 
