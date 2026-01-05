@@ -812,13 +812,7 @@ function add_bilibili_frontend_script() {
         ?>
         <script type="module">
             import BilibiliUIDFiller from '<?php echo get_template_directory_uri(); ?>/js/bilibili-uid-filler.js';
-            
-            // DOM加载后初始化
-            document.addEventListener('DOMContentLoaded', () => {
-                if (document.getElementById('commentform')) {
-                    new BilibiliUIDFiller();
-                }
-            });
+            new BilibiliUIDFiller();
         </script>
         <?php
     }
