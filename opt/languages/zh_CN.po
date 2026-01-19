@@ -4501,3 +4501,11 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com/Fuukei"
 msgstr ""
+
+#: options/theme-options.php:2474
+msgid "Default shuoshuo category"
+msgstr "默认说说分类"
+
+#: options/theme-options.php:2475
+msgid "Select the default category for new shuoshuo"
+msgstr "与默认文章分类一样，为说说选择默认分类"

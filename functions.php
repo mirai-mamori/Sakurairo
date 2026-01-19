@@ -381,6 +381,32 @@ function save_emotion_meta_box($post_id) {
 }
 add_action('save_post', 'save_emotion_meta_box');
 
+// Set default category for new shuoshuo
+function set_default_shuoshuo_category($post_id) {
+    // Check if this is a shuoshuo post
+    if (get_post_type($post_id) !== 'shuoshuo') {
+        return;
+    }
+    
+    // Check if this is an autosave
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    
+    // Check if the post already has categories
+    $categories = wp_get_post_categories($post_id);
+    if (!empty($categories)) {
+        return;
+    }
+    
+    // Get the default shuoshuo category from theme options
+    $default_category = iro_opt('default_shuoshuo_category');
+    if (!empty($default_category)) {
+        wp_set_post_categories($post_id, array($default_category));
+    }
+}
+add_action('save_post', 'set_default_shuoshuo_category');
+
 function register_custom_meta_boxes() {
     register_meta('post', 'title_style', array(
         'show_in_rest' => true,
@@ -703,13 +729,13 @@ if (!function_exists('akina_comment_format')) {
                 <div class="comment-arrow">
                     <div class="main shadow">
                         <div class="profile">
-                            <a href="<?php comment_author_url(); ?>" target="_blank" rel="nofollow"><?php echo str_replace('src=', 'src="' . iro_opt('load_in_svg') . '" onerror="imgError(this,1)" data-src=', get_avatar($comment->comment_author_email, 80, '', get_comment_author(), array('class' => array('lazyload')))); ?></a>
+                            <a href="<?php echo $comment->user_id ? get_author_posts_url($comment->user_id) : comment_author_url(); ?>" target="_blank" rel="nofollow"><?php echo str_replace('src=', 'src="' . iro_opt('load_in_svg') . '" onerror="imgError(this,1)" data-src=', get_avatar($comment->comment_author_email, 80, '', get_comment_author(), array('class' => array('lazyload')))); ?></a>
                         </div>
                         <div class="commentinfo">
                             <section class="commeta">
                                 <div class="left">
                                     <h4 class="author">
-                                        <a href="<?php comment_author_url(); ?>" target="_blank" rel="nofollow"><?php echo get_avatar($comment->comment_author_email, 24, '', get_comment_author()); ?>
+                                        <a href="<?php echo $comment->user_id ? get_author_posts_url($comment->user_id) : comment_author_url(); ?>" target="_blank" rel="nofollow"><?php echo get_avatar($comment->comment_author_email, 24, '', get_comment_author()); ?>
                                             <span class="bb-comment isauthor" title="<?php _e('Author', 'sakurairo'); ?>"><?php _e('Blogger', 'sakurairo'); /*博主*/?></span>
                                             <?php comment_author(); ?><?php echo get_author_class($comment->comment_author_email, $comment->user_id); ?>
                                         </a>

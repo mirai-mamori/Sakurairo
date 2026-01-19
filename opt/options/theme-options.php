@@ -2492,6 +2492,15 @@ $prefix = 'iro_options';
         'default' => true
       ),
 
+      array(
+        'id' => 'default_shuoshuo_category',
+        'type' => 'select',
+        'title' => __('Default shuoshuo category','sakurairo_csf'),
+        'desc' => __('Select the default category for new shuoshuo','sakurairo_csf'),
+        'options' => 'categories',
+        'default' => ''
+      ),
+
     )
   ) );
 
