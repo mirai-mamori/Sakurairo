@@ -142,9 +142,6 @@ nav .menu>li .sub-menu li {
 
 .searchbox.js-toggle-search {
     height: 100%;
-    border: 0;
-    background: transparent;
-    padding: 0;
 }
 
 .searchbox.js-toggle-search i {

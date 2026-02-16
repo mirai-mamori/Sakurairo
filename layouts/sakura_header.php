@@ -118,9 +118,9 @@ $show_user_avatar = (bool)iro_opt('nav_user_menu',true);
     <?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => 'nav', 'container_class' => 'sakura_nav']); //菜单?>
 
     <?php if ($show_search) { //是否开启搜索框?>
-      <button class="searchbox js-toggle-search" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="search-input">
+      <div class="searchbox js-toggle-search">
         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-      </button>
+      </div>
     <?php } ?>
 
     <?php

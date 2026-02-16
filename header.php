@@ -237,12 +237,12 @@ header('X-Frame-Options: SAMEORIGIN');
             <?php endif; ?>
 
             <?php if ($show_search): ?>
-                <button class="searchbox js-toggle-search" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="search-input">
+                <div class="searchbox js-toggle-search">
                     <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                     <span class="screen-reader-text">
                         <?php esc_html_e('Search', 'sakurairo'); ?>
                     </span>
-                </button>
+                </div>
             <?php endif; ?>
 
             <?php if ($enable_random_graphs): ?>

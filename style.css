@@ -804,22 +804,6 @@ nav .menu > li .sub-menu a {
   height: 100%;
 }
 
-.searchbox.js-toggle-search {
-  border: 0;
-  background: transparent;
-  padding: 0;
-}
-
-.searchbox.js-toggle-search:hover,
-.searchbox.js-toggle-search:active,
-.searchbox.js-toggle-search:focus,
-.searchbox.js-toggle-search:focus-visible {
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  outline: none;
-}
-
 .searchbox.js-toggle-search i,.bg-switch i{
   color: var(--theme-skin, #505050);
   cursor: pointer;
