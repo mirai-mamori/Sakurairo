@@ -1,6 +1,27 @@
-/*! iro b095cb0 2026/2/16*/
+/*! iro cb712f9 2026/2/16*/
 
 /*! loadCSS. [c]2020 Filament Group, Inc. MIT License */
+
+/**
+ * Anime.js - animation - ESM
+ * @version v4.3.6
+ * @license MIT
+ * @copyright 2026 - Julian Garnier
+ */
+
+/**
+ * Anime.js - core - ESM
+ * @version v4.3.6
+ * @license MIT
+ * @copyright 2026 - Julian Garnier
+ */
+
+/**
+ * Anime.js - waapi - ESM
+ * @version v4.3.6
+ * @license MIT
+ * @copyright 2026 - Julian Garnier
+ */
 
 /**
  * Cookie
