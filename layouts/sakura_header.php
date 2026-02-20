@@ -118,7 +118,7 @@ $show_user_avatar = (bool)iro_opt('nav_user_menu',true);
     <?php } ?>
 
     <?php
-    if (iro_opt('cover_switch', true) == true && iro_opt('cover_random_graphs_switch', true) == true): ?>
+    if (iro_opt('cover_switch', true) == true && iro_opt('cover_random_graphs_switch', true) == true && !iro_opt('hide_splash_wallpaper_switch')): ?>
       <div class="bg-switch" id="bg-next">
         <i class="fa-solid fa-dice" aria-hidden="true"></i>
         <span class="screen-reader-text">

@@ -68,6 +68,9 @@ $bg_style = iro_opt('cover_full_screen') ?'': 'background-position: center cente
 echo $bg_style;
 echo iro_opt('site_bg_as_cover',false)? 'background:#0000;':'';
  ?>}
+<?php if (iro_opt('hide_splash_wallpaper_switch')): ?>
+#centerbg, #banner_wave_1, #banner_wave_2 { display: none !important; }
+<?php endif; ?>
 
 /*预加载部分*/
 

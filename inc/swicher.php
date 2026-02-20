@@ -24,7 +24,7 @@ function font_end_js_control()
     };
 
     $vision_resource_basepath = iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@3.0/');
-    $movies = iro_opt('cover_video') ?
+    $movies = (iro_opt('cover_video') && !iro_opt('hide_splash_wallpaper_switch')) ?
         array(
             'url' => iro_opt('cover_video_link'),
             'name' => iro_opt('cover_video_title'),
@@ -41,6 +41,7 @@ function font_end_js_control()
     $lightbox = iro_opt('lightbox');
     $annotations = get_post_meta(get_the_ID(), 'iro_chatgpt_annotations', true);
     $reception_background = iro_opt('reception_background');
+    $hide_splash = check(iro_opt('hide_splash_wallpaper_switch'));
     $iro_opt = [
         // Poi
         'pjax' => check(iro_opt('poi_pjax')),
@@ -59,12 +60,13 @@ function font_end_js_control()
         'gravatar_url' => $gravatar_url,
         // options
         'NProgressON' => check(iro_opt('nprogress_on')),
+        'hide_splash_wallpaper_switch' => $hide_splash,
         'baguetteBox' => check($lightbox === 'baguetteBox'),
         'fancybox' => check($lightbox === 'fancybox'),
         'darkmode' => check(iro_opt('theme_darkmode_auto')),
         'email_domain' => iro_opt('email_domain', ''),
         'email_name' => iro_opt('email_name', ''),
-        'extract_theme_skin' => iro_opt('extract_theme_skin_from_cover', false)?true:false,
+        'extract_theme_skin' => !$hide_splash && iro_opt('extract_theme_skin_from_cover', false) ? true : false,
         'ext_shared_lib' => iro_opt('external_vendor_lib'),
         'cookie_version_control' => iro_opt('cookie_version', ''),
         'qzone_autocomplete' => false,
@@ -87,8 +89,8 @@ function font_end_js_control()
         'theme_mathjax' => check(iro_opt('enable_theme_mathjax', true)),
         'comment_upload_img' => iro_opt('img_upload_api') == 'off' ? false : true,
         'img_upload_max_size' => iro_opt('img_upload_max_size',5),
-        'cache_cover' => check(iro_opt('cache_cover')),
-        'site_bg_as_cover' => check(iro_opt('site_bg_as_cover')),
+        'cache_cover' => !$hide_splash && check(iro_opt('cache_cover')),
+        'site_bg_as_cover' => !$hide_splash && check(iro_opt('site_bg_as_cover')),
         'yiyan_api' => empty(iro_opt('yiyan_api')) ? ["https://v1.hitokoto.cn/", "https://api.nmxc.ltd/yiyan/"] : json_decode(iro_opt('yiyan_api')),
         'skin_bg0' => $reception_background['img1'] ?? '',
         'skin_bg1' => $reception_background['img2'] ?? '',
@@ -101,19 +103,23 @@ function font_end_js_control()
         'is_admin' => check(current_user_can('manage_options')),
     ];
     // 判空 empty 如果变量不存在也会返回true
-    if (iro_opt('random_graphs_options') == 'external_api') {
-        //封面随机图api
-        if (wp_is_mobile()) {
-            $iro_opt['cover_api'] = iro_opt('random_graphs_mts') ? iro_opt('random_graphs_link_mobile') : iro_opt('random_graphs_link');
+    if (!iro_opt('hide_splash_wallpaper_switch')) {
+        if (iro_opt('random_graphs_options') == 'external_api') {
+            //封面随机图api
+            if (wp_is_mobile()) {
+                $iro_opt['cover_api'] = iro_opt('random_graphs_mts') ? iro_opt('random_graphs_link_mobile') : iro_opt('random_graphs_link');
+            } else {
+                $iro_opt['cover_api'] = iro_opt('random_graphs_link');
+            }
         } else {
-            $iro_opt['cover_api'] = iro_opt('random_graphs_link');
+            if (wp_is_mobile()) {
+                $iro_opt['cover_api'] = rest_url('sakura/v1/gallery') . '?img=l';
+            } else {
+                $iro_opt['cover_api'] = rest_url('sakura/v1/gallery') . '?img=w';
+            }
         }
     } else {
-        if (wp_is_mobile()) {
-            $iro_opt['cover_api'] = rest_url('sakura/v1/gallery') . '?img=l';
-        } else {
-            $iro_opt['cover_api'] = rest_url('sakura/v1/gallery') . '?img=w';
-        }
+        $iro_opt['cover_api'] = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
     }
     if ($lightbox === 'lightgallery') {
         # 请务必使用正确标准的json格式

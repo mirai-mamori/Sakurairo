@@ -211,7 +211,7 @@ header('X-Frame-Options: SAMEORIGIN');
 
         // Cache commonly used options
         $show_user_avatar = (bool)iro_opt('nav_user_menu',true);
-        $enable_random_graphs = (bool)iro_opt('cover_switch', true) && (bool)iro_opt('cover_random_graphs_switch', true);
+        $enable_random_graphs = (bool)iro_opt('cover_switch', true) && (bool)iro_opt('cover_random_graphs_switch', true) && !(bool)iro_opt('hide_splash_wallpaper_switch');
         ?>
 
         <!-- Navigation and Search Section -->
@@ -271,7 +271,7 @@ header('X-Frame-Options: SAMEORIGIN');
      
     <section id="main-container">
         <?php
-        if (iro_opt('cover_switch')) {
+        if (iro_opt('cover_switch') && (!is_home() || !iro_opt('hide_splash_wallpaper_switch'))) {
             $filter = iro_opt('random_graphs_filter');
             $cover_height = (iro_opt('cover_full_screen',true)&&is_home()) ? '' : 'headertop-bar';
         ?>

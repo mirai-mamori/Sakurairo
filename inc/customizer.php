@@ -620,6 +620,21 @@ $sections = [
 					]
 				],
 			],
+			[
+				'type'     => 'switch',
+				'settings' => 'hide_splash_wallpaper_switch',
+				'iro_key'  => 'hide_splash_wallpaper_switch',
+				'label'    => esc_html__( 'Hide Splash Wallpaper', 'Sakurairo_C' ),
+				'description' => esc_html__( 'If enabled, the splash wallpaper and related effects on the homepage will be hidden.', 'Sakurairo_C' ),
+				'default'  => false,
+				'active_callback' => [
+					[
+						'setting'  => 'cover_switch',
+						'operator' => '==',
+						'value'    => true,
+					]
+				],
+			],
 		],
     ],
 	// ====================封面信息栏====================
