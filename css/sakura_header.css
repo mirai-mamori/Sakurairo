@@ -94,6 +94,19 @@
     animation: fadeInLeft 1.5s;
 }
 
+/* keep nav items horizontally aligned */
+.menu-wrapper nav.sakura_nav .menu,
+.menu-wrapper nav.sakura_nav .menu ul:not(.sub-menu) {
+    display: flex;
+    align-items: center;
+}
+
+.menu-wrapper nav.sakura_nav .menu > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 nav ul,
 nav ul li {
     cursor: default;
