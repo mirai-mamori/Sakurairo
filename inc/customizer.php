@@ -1688,6 +1688,14 @@ $sections = [
 			],
 			[
 				'type'     => 'switch',
+				'settings' => 'hide_theme_info_switch',
+				'iro_key'  => 'hide_theme_info_switch',
+				'label'    => esc_html__( 'Hide Theme Info', 'Sakurairo_C' ),
+				'description' => esc_html__( 'Hide the footer theme information block.', 'Sakurairo_C' ),
+				'default'  => false,
+			],
+			[
+				'type'     => 'switch',
 				'settings' => 'smoothscroll_option',
 				'iro_key'  => 'smoothscroll_option',
 				'label'    => esc_html__( 'Global Smooth Scroll', 'Sakurairo_C' ),

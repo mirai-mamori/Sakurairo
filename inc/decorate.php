@@ -72,6 +72,10 @@ echo iro_opt('site_bg_as_cover',false)? 'background:#0000;':'';
 #centerbg, #banner_wave_1, #banner_wave_2 { display: none !important; }
 <?php endif; ?>
 
+<?php if (iro_opt('hide_theme_info_switch')): ?>
+.theme-info { display: none !important; }
+<?php endif; ?>
+
 /*预加载部分*/
 
 <?php if (iro_opt('preload_animation', 'true')): ?>
