@@ -97,7 +97,8 @@ class BangumiAPI
                 'offset' => $offset,
                 'limit' => $limit,
             ]);
-            $response = $this->http_get_contents($this->collectionApi . '?' . $query);
+            $separator = strpos($this->collectionApi, '?') === false ? '?' : '&';
+            $response = $this->http_get_contents($this->collectionApi . $separator . $query);
             $pageData = json_decode($response, true);
 
             if (!isset($pageData['data']) || !is_array($pageData['data'])) {
@@ -108,7 +109,7 @@ class BangumiAPI
             $pageCount = count($pageData['data']);
             $total = isset($pageData['total']) ? (int)$pageData['total'] : null;
             $offset += $pageCount;
-        } while ($pageCount === $limit && ($total === null || $offset < $total));
+        } while ($pageCount > 0 && ($total === null ? $pageCount === $limit : $offset < $total));
 
         return [
             'data' => $allCollections,

@@ -130,11 +130,6 @@ function rest_url($path = '')
     return 'https://example.com/wp-json/' . ltrim($path, '/');
 }
 
-function urlencode($value)
-{
-    return \urlencode($value);
-}
-
 function wp_json_encode($value)
 {
     return json_encode($value);
