@@ -2702,28 +2702,51 @@ if (iro_opt('send_theme_version') == '1') {
 
 //解析短代码  
 function register_shortcodes() {
-    add_shortcode('task', function($attr, $content = '') {
-        return '<div class="task shortcodestyle"><i class="fa-solid fa-clipboard-list"></i>' . $content . '</div>';
-    });
+    // 提示块
+    function iro_render_notice($type, $content = '') {
 
-    add_shortcode('warning', function($attr, $content = '') {
-        return '<div class="warning shortcodestyle"><i class="fa-solid fa-triangle-exclamation"></i>' . $content . '</div>';
-    });
+        $map = [
+            'task'    => ['fa-solid fa-clipboard-list', 'task'],
+            'warning' => ['fa-solid fa-triangle-exclamation', 'warning'],
+            'noway'   => ['fa-solid fa-square-xmark', 'noway'],
+            'buy'     => ['fa-solid fa-square-check', 'buy'],
+        ];
 
-    add_shortcode('noway', function($attr, $content = '') {
-        return '<div class="noway shortcodestyle"><i class="fa-solid fa-square-xmark"></i>' . $content . '</div>';
-    });
+        if (!isset($map[$type])) {
+            return '';
+        }
 
-    add_shortcode('buy', function($attr, $content = '') {
-        return '<div class="buy shortcodestyle"><i class="fa-solid fa-square-check"></i>' . $content . '</div>';
-    });
+        [$icon, $class] = $map[$type];
 
-    add_shortcode('ghcard', function($attr, $content = '') {
-        //获取内容
-        $atts = shortcode_atts(array("path" => "mirai-mamori/Sakurairo"), $attr);
+        return sprintf(
+            '<div class="shortcodestyle %s">
+                <i class="%s"></i>
+                <span>%s</span>
+            </div>',
+            esc_attr($class),
+            esc_attr($icon),
+            wp_kses_post($content)
+        );
+    }
 
-        $path = trim($atts['path']);
+    add_shortcode('task', fn($a,$c='') => iro_render_notice('task',$c));
+    add_shortcode('warning', fn($a,$c='') => iro_render_notice('warning',$c));
+    add_shortcode('noway', fn($a,$c='') => iro_render_notice('noway',$c));
+    add_shortcode('buy', fn($a,$c='') => iro_render_notice('buy',$c));
 
+    register_block_type('sakurairo/notice', [
+        'render_callback' => 'iro_render_notice_block',
+    ]);
+    function iro_render_notice_block($attributes, $content) {
+
+        $type = $attributes['type'] ?? 'task';
+        $text = $attributes['content'] ?? '';
+
+        return iro_render_notice($type, $text);
+    }
+
+    // gh卡片
+    function iro_render_ghcard($path){
         if (strpos($path, 'https://github.com/') === 0) {
             $path = str_replace('https://github.com/', '', $path);
         }
@@ -2823,50 +2846,135 @@ function register_shortcodes() {
             $language,
             intval($stars)
         );
+    }
+    
+    add_shortcode('ghcard', function($attr, $content = '') {
+        //获取内容
+        $atts = shortcode_atts(array("path" => "mirai-mamori/Sakurairo"), $attr);
+
+        $path = trim($atts['path']);
+
+        return iro_render_ghcard($path);
     });
 
-    add_shortcode('showcard', function($attr, $content = '') {
-        $atts = shortcode_atts(array("icon" => "", "title" => "", "img" => "", "color" => ""), $attr);
+    register_block_type('sakurairo/ghcard', [
+        'render_callback' => 'iro_render_ghcard_block',
+    ]);
+    function iro_render_ghcard_block($attributes, $content) {
+
+        $path = $attributes['path'] ?? '';
+
+        return iro_render_ghcard($path);
+    }
+
+    // 展示卡片
+    function iro_render_showcard($atts,$content) {
+
         return sprintf(
             '<div class="showcard">
-                <div class="img" alt="Show-Card" style="background:url(%s);background-size:cover;background-position: center;">
-                    <a href="%s"><button class="showcard-button" style="color:%s !important;"><i class="fa-solid fa-angle-right"></i></button></a>
+                <div class="img" style="background:url(%s);background-size:cover;background-position:center;">
+                    <a href="%s" target="_blank" rel="noopener noreferrer">
+                        <button class="showcard-button" style="color:%s;">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </button>
+                    </a>
                 </div>
                 <div class="icon-title">
-                    <i class="%s" style="color:%s !important;"></i>
+                    <i class="%s" style="color:%s;"></i>
                     <span class="title">%s</span>
                 </div>
             </div>',
-            $atts['img'],
-            $content,
-            esc_attr($atts['color']),
-            esc_attr($atts['icon']),
-            esc_attr($atts['color']),
-            $atts['title'],
+            esc_url($atts['img'] ?? ''),
+            esc_url($atts['link'] ?? $content ?? ''),
+            esc_attr($atts['color'] ?? ''),
+            esc_attr($atts['icon'] ?? ''),
+            esc_attr($atts['color'] ?? ''),
+            wp_kses_post($atts['title'] ?? '')
         );
+    }
+
+
+    add_shortcode('showcard', function($attr, $content = '') {
+        $atts = shortcode_atts(array("icon" => "", "title" => "", "img" => "", "color" => ""), $attr);
+        return iro_render_showcard($atts,$content);
     });
 
-    add_shortcode('conversations', function($attr, $content = '') {
-        $atts = shortcode_atts(array("avatar" => "", "direction" => "", "username" => ""), $attr);
-        if (empty($atts['avatar']) && !empty($atts['username'])) {
-            $user = get_user_by('login', $atts['username']);
+    register_block_type('sakurairo/showcard', [
+        'render_callback' => 'iro_render_showcard_block',
+    ]);
+    function iro_render_showcard_block($attributes, $content) {
+
+        $img = $attributes['img'] ?? '';
+        $link = $attributes['link'] ?? '';
+        $color = $attributes['color'] ?? '';
+        $icon = $attributes['icon'] ?? '';
+        $title = $attributes['title'] ?? '';
+
+        return iro_render_showcard([
+            'img' => $img,
+            'link' => $link,
+            'color' => $color,
+            'icon' => $icon,
+            'title' => $title,
+        ],'');
+    }
+
+    // 对话
+    function iro_render_conversations($atts, $content) {
+        // 基本信息
+        $username = isset($atts['username']) ? $atts['username'] : '';
+        $avatar = isset($atts['avatar']) ? $atts['avatar'] : '';
+        $direction = isset($atts['direction']) && in_array($atts['direction'], ['row', 'row-reverse']) 
+                    ? $atts['direction'] 
+                    : 'row';
+
+        if (empty($avatar) && !empty($username)) {
+            $user = get_user_by('login', $username);
             if ($user) {
-                $atts['avatar'] = get_avatar_url($user->ID, 40);
+                $avatar = get_avatar_url($user->ID, 40);
             }
         }
-        $speaker_alt = $atts['username'] ? '<span class="screen-reader-text">' . sprintf(__("%s says: ", "sakurairo"), esc_html($atts['username'])) . '</span>' : "";
+
+        $speaker_alt = '';
+        if (!empty($username)) {
+            $speaker_alt = '<span class="screen-reader-text">' . 
+                        sprintf(__("%s says: ", "sakurairo"), esc_html($username)) . 
+                        '</span>';
+        }
+
         return sprintf(
             '<div class="conversations-code" style="flex-direction: %s;">
                 <img src="%s">
                 <div class="conversations-code-text">%s%s</div>
             </div>',
-            esc_attr($atts['direction']),
-            $atts['avatar'],
+            $direction,
+            esc_url($avatar),
             $speaker_alt,
             $content
         );
+    }
+
+    add_shortcode('conversations', function($attr, $content = '') {
+        $atts = shortcode_atts(array("avatar" => "", "direction" => "", "username" => ""), $attr);
+        return iro_render_conversations($atts,$content);
     });
 
+    register_block_type('sakurairo/conversation', [
+        'render_callback' => 'iro_render_conversations_block',
+    ]);
+    function iro_render_conversations_block($attributes, $content) {
+
+        $avatar = $attributes['avatar'] ?? '';
+        $direction = $attributes['direction'] ?? '';
+        $content = $attributes['content'] ?? '';
+
+        return iro_render_conversations([
+            'avatar' => $avatar,
+            'direction' => $direction,
+        ],$content);
+    }
+
+    // 折叠
     add_shortcode('collapse', function($atts, $content = null) {
         $atts = shortcode_atts(array("title" => ""), $atts);
         ob_start();
@@ -2883,7 +2991,8 @@ function register_shortcodes() {
         return ob_get_clean();
     });
 
-    add_shortcode('vbilibili', function ($atts, $content = null) {
+    // bilibili
+    function iro_render_bilibili($content) {
         preg_match_all('/av([0-9]+)/', $content, $av_matches);
         preg_match_all('/BV([a-zA-Z0-9]+)/', $content, $bv_matches);
         $iframes = '';
@@ -2908,7 +3017,20 @@ function register_shortcodes() {
             }
         }
         return $iframes;
+    }
+
+    add_shortcode('vbilibili', function ($atts, $content = null) {
+        return iro_render_bilibili($content);
      });
+
+     register_block_type('sakurairo/vbilibili', [
+        'render_callback' => 'iro_render_bilibili_block',
+    ]);
+    function iro_render_bilibili_block($attributes, $content) {
+        $bid = $attributes['videoId'] ?? '';
+
+        return iro_render_bilibili($bid);
+    }
 
     add_shortcode('steamuser', function ($atts, $content = null) {
         $key = iro_opt('steam_key');

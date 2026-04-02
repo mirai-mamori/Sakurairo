@@ -28,26 +28,51 @@ function iro_editor_vars($hook)
     );
 }
 
+function iro_block_base_url()
+{
+    // 主题环境
+    if (defined('IRO_VERSION')) {
+        return get_theme_file_uri('/inc/blocks/');
+    }
+
+    // 插件环境
+    return plugin_dir_url(__FILE__);
+}
+
+function iro_block_base_path()
+{
+    if (defined('IRO_VERSION')) {
+        return get_theme_file_path('/inc/blocks/');
+    }
+
+    return plugin_dir_path(__FILE__);
+}
+
+
 add_action('enqueue_block_editor_assets', 'sakurairo_editor_styles');
 function sakurairo_editor_styles()
 {
-    global $core_lib_basepath;
-    wp_enqueue_style('fontawesome-icons', iro_opt('fontawesome_source', 'https://s4.zstatic.net/ajax/libs/font-awesome/6.7.2/css/all.min.css'), array(), null);
-    wp_enqueue_style('iro-codes', $core_lib_basepath . '/css/shortcodes.css', array(), IRO_VERSION);
+    if (defined('IRO_VERSION')) {
+        global $core_lib_basepath;
+        wp_enqueue_style('fontawesome-icons', iro_opt('fontawesome_source', 'https://s4.zstatic.net/ajax/libs/font-awesome/6.7.2/css/all.min.css'), array(), null);
+    } else {
+        wp_enqueue_style('fontawesome-icons', 'https://s4.zstatic.net/ajax/libs/font-awesome/6.7.2/css/all.min.css', array(), null);
+    }
+    wp_enqueue_style('iro-codes', iro_block_base_url() . 'build/style-index.css', array(), '3.0');
 }
 
+add_action('enqueue_block_editor_assets', 'iro_load_editor_block');
 function iro_load_editor_block()
 {
-    $asset_file = include(plugin_dir_path(__FILE__) . 'build/index.asset.php');
+    $asset_file = include(iro_block_base_path() . 'build/index.asset.php');
     // 加载编辑器脚本
     wp_enqueue_script(
         'iroBlockEditor',
-        get_theme_file_uri('/inc/blocks/build/index.js'),
+        iro_block_base_url() . 'build/index.js',
         $asset_file['dependencies'],
         $asset_file['version']
     );
 }
-add_action('enqueue_block_editor_assets', 'iro_load_editor_block');
 
 // 为代码块添加hljs语言标记language-支持
 add_filter('render_block', function ($block_content, $block) {
