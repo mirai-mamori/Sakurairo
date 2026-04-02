@@ -199,12 +199,12 @@ function get_smilies_panel() {
                                     <div class="socila-check gravatar-check"><i class="fa-solid fa-heart fa-xs"></i></div>
                                  </div>',
                     'author' => '<div class="popup cmt-popup cmt-author">
-                                    <input type="text" placeholder="' . __("Nickname or QQ number", "sakurairo") . ' ' . ($req ? '(' . __("Must* ", "sakurairo") . ')' : '') . '" name="author" id="author" value="' . esc_attr($comment_author) . '" size="22" autocomplete="off" tabindex="1" ' . ($req ? "aria-required='true'" : '') . ' />
-                                    <span class="popuptext" style="margin-left: -115px;width: 230px;">' . __("Auto pull nickname and avatar with a QQ num. entered", "sakurairo") . '</span>
+                                    <input type="text" placeholder="' . __("Nickname", "sakurairo") . ' ' . ($req ? '(' . __("Required* ", "sakurairo") . ')' : '') . '" name="author" id="author" value="' . esc_attr($comment_author) . '" size="22" autocomplete="off" tabindex="1" ' . ($req ? "aria-required='true'" : '') . ' />
+                                    <span class="popuptext" style="margin-left: -115px;width: 230px;">' . __("Enter your nickname", "sakurairo") . '</span>
                                  </div>',
                     'email'  => '<div class="popup cmt-popup">
-                                    <input type="text" placeholder="' . __("email", "sakurairo") . ' ' . ($req ? '(' . __("Must* ", "sakurairo") . ')' : '') . '" name="email" id="email" value="' . esc_attr($comment_author_email) . '" size="22" tabindex="1" autocomplete="off" ' . ($req ? "aria-required='true'" : '') . ' />
-                                    <span class="popuptext" style="margin-left: -65px;width: 130px;">' . __("You will receive notification by email", "sakurairo") . '</span>
+                                    <input type="text" placeholder="' . __("email", "sakurairo") . ' ' . ($req ? '(' . __("Required* ", "sakurairo") . ')' : '') . '" name="email" id="email" value="' . esc_attr($comment_author_email) . '" size="22" tabindex="1" autocomplete="off" ' . ($req ? "aria-required='true'" : '') . ' />
+                                    <span class="popuptext" style="margin-left: -65px;width: 130px;">' . __("For notification purposes", "sakurairo") . '</span>
                                  </div>',
                     'url'    => '<div class="popup cmt-popup">
                                     <input type="text" placeholder="' . __("Site", "sakurairo") . '" name="url" id="url" value="' . esc_attr($comment_author_url) . '" size="22" autocomplete="off" tabindex="1" />
