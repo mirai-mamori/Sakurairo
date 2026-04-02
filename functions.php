@@ -727,7 +727,7 @@ if (!function_exists('akina_comment_format')) {
                                         $comment_ID = $comment->comment_ID;
                                         $i_private = get_comment_meta($comment_ID, '_private', true);
                                         $flag = null;
-                                        $flag .= ' <i class="fa-regular fa-snowflake"></i> <a href="javascript:;" data-actionp="set_private" data-idp="' . get_comment_id() . '" id="sp" class="sm">' . __("Private", "sakurairo") . ': <span class="has_set_private">';
+                                        $flag .= ' <i class="fa-regular fa-snowflake"></i> <a href="javascript:;" data-actionp="' . esc_attr('set_private&nonce=' . wp_create_nonce('siren_private_comment')) . '" data-idp="' . absint(get_comment_id()) . '" id="sp" class="sm">' . __("Private", "sakurairo") . ': <span class="has_set_private">';
                                         if (!empty($i_private)) {
                                             $flag .= __("Yes", "sakurairo") . ' <i class="fa-solid fa-lock"></i>';
                                         } else {
@@ -1705,18 +1705,29 @@ function check_title_tags($content)
 }
 
 /*私密评论*/
-add_action('wp_ajax_nopriv_siren_private', 'siren_private');
 add_action('wp_ajax_siren_private', 'siren_private');
 function siren_private()
 {
-    $comment_id = $_POST["p_id"];
-    $action = $_POST["p_action"];
-    if ($action == 'set_private') {
-        update_comment_meta($comment_id, '_private', 'true');
-        $i_private = get_comment_meta($comment_id, '_private', true);
-        echo empty($i_private) ? '是' : '否';
+    check_ajax_referer('siren_private_comment', 'nonce');
+
+    $comment_id = isset($_POST['p_id']) ? absint(wp_unslash($_POST['p_id'])) : 0;
+    $action = isset($_POST['p_action']) ? sanitize_key(wp_unslash($_POST['p_action'])) : '';
+
+    if (!$comment_id || $action !== 'set_private') {
+        wp_die('', '', array('response' => 400));
     }
-    die;
+
+    if (!current_user_can('manage_options')) {
+        wp_die('', '', array('response' => 403));
+    }
+
+    if (!get_comment($comment_id)) {
+        wp_die('', '', array('response' => 404));
+    }
+
+    update_comment_meta($comment_id, '_private', 'true');
+    echo esc_html__('Yes', 'sakurairo') . ' <i class="fa-solid fa-lock"></i>';
+    wp_die();
 }
 
 require_once __DIR__ . '/inc/word-stat.php';
@@ -1882,6 +1893,7 @@ function theme_admin_notice_callback()
             $allow_send = 'Allow sending your theme version for statistical purposes';
             break;
     }
+    $theme_notice_nonce = wp_create_nonce('theme_admin_notice_action');
     ?>
                                 <div class="notice notice-success" id="send-ver-tip">
                                     <p><?php echo $thankyou; ?></p>
@@ -1898,6 +1910,7 @@ function theme_admin_notice_callback()
                                         data.append( 'user_id', '<?php echo get_current_user_id(); ?>' );
                                         data.append( 'meta_key', 'theme_admin_notice' );
                                         data.append( 'meta_value', '1' );
+                                        data.append( 'nonce', '<?php echo esc_js($theme_notice_nonce); ?>' );
                                         fetch( '<?php echo admin_url('admin-ajax.php'); ?>', {
                                             method: 'POST',
                                             body: data
@@ -1911,7 +1924,7 @@ function theme_admin_notice_callback()
                                         var xhr = new XMLHttpRequest();
                                         xhr.open( "POST", "<?php echo admin_url('admin-ajax.php'); ?>", true );
                                         xhr.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
-                                        xhr.send( "action=update_theme_option&option=send_theme_version&value=true" );
+                                        xhr.send( "action=update_theme_option&option=send_theme_version&value=1&nonce=<?php echo esc_js($theme_notice_nonce); ?>" );
 
                                         // 写入 1 到 meta
                                         var data = new FormData();
@@ -1919,6 +1932,7 @@ function theme_admin_notice_callback()
                                         data.append( 'user_id', '<?php echo get_current_user_id(); ?>' );
                                         data.append( 'meta_key', 'theme_admin_notice' );
                                         data.append( 'meta_value', '1' );
+                                        data.append( 'nonce', '<?php echo esc_js($theme_notice_nonce); ?>' );
                                         fetch( '<?php echo admin_url('admin-ajax.php'); ?>', {
                                             method: 'POST',
                                             body: data
@@ -2083,12 +2097,25 @@ add_action('admin_init', 'theme_folder_check_on_admin_init');
 add_action('wp_ajax_update_theme_option', 'update_theme_option');
 function update_theme_option()
 {
+    if (!current_user_can('manage_options')) {
+        wp_die('Forbidden', '', array('response' => 403));
+    }
+
+    check_ajax_referer('theme_admin_notice_action', 'nonce');
+
     if (!isset($_POST['option']) || !isset($_POST['value'])) {
         wp_die('Missing required parameters');
     }
 
-    $option = $_POST['option'];
-    $value = sanitize_text_field($_POST['value']);
+    $option = sanitize_key(wp_unslash($_POST['option']));
+    $value = sanitize_text_field(wp_unslash($_POST['value']));
+
+    if ($option !== 'send_theme_version') {
+        wp_die('Invalid option', '', array('response' => 400));
+    }
+
+    $value = in_array($value, array('1', 'true', 'on'), true) ? '1' : '0';
+
     iro_opt_update($option, $value);
     wp_die();
 }
@@ -2097,13 +2124,24 @@ function update_theme_option()
 add_action('wp_ajax_update_theme_admin_notice_meta', 'update_theme_admin_notice_meta');
 function update_theme_admin_notice_meta()
 {
+    if (!current_user_can('manage_options')) {
+        wp_die('Forbidden', '', array('response' => 403));
+    }
+
+    check_ajax_referer('theme_admin_notice_action', 'nonce');
+
     if (!isset($_POST['user_id']) || !isset($_POST['meta_key']) || !isset($_POST['meta_value'])) {
         wp_die('Missing required parameters');
     }
 
-    $user_id = $_POST['user_id'];
-    $meta_key = $_POST['meta_key'];
-    $meta_value = sanitize_text_field($_POST['meta_value']);
+    $user_id = absint(wp_unslash($_POST['user_id']));
+    $meta_key = sanitize_key(wp_unslash($_POST['meta_key']));
+    $meta_value = sanitize_text_field(wp_unslash($_POST['meta_value']));
+
+    if ($user_id !== get_current_user_id() || $meta_key !== 'theme_admin_notice') {
+        wp_die('Invalid target', '', array('response' => 400));
+    }
+
     update_user_meta($user_id, $meta_key, $meta_value);
     wp_die();
 }
@@ -2752,99 +2790,167 @@ function register_shortcodes() {
         }
 
         if (!preg_match('/^[a-zA-Z0-9_-]+\/[a-zA-Z0-9_.-]+$/', $path)) {
-            return '<p>Invalid GitHub repository path: ' . esc_html($path) . '</p>';
+            return '<p>' . __('Invalid GitHub repository path:', 'sakurairo') . ' ' . esc_html($path) . '</p>';
         }
-    
+
         list($username, $repo) = explode('/', $path, 2);
-    
-        //构造卡片内容
-        /*
-        $card_content = '';
-    
-        if (iro_opt('ghcard_proxy')) {
-            
-            $svg_url = 'https://github-readme-stats.vercel.app/api/pin/?hide_border=true&username=' . esc_attr($username) . '&repo=' . esc_attr($repo);
-            $response = wp_remote_get($svg_url);
-    
-            if (!is_wp_error($response)) {
-                $svg_content = wp_remote_retrieve_body($response);
-                if (!empty($svg_content)) {
-                    $card_content = $svg_content;
-                } else {
-                    $card_content = '';
-                }
+
+        $cache_key = 'ghcard_repo_' . md5(strtolower($path));
+        $cache_store_key = 'ghcard_repo_store_' . md5(strtolower($path));
+        $repo_data = get_transient($cache_key);
+        $data_state = $repo_data === false ? 'missing' : 'fresh';
+
+        if ($repo_data === false) {
+            $api_url = sprintf('https://api.github.com/repos/%s/%s', rawurlencode($username), rawurlencode($repo));
+            $response = wp_remote_get($api_url, array(
+                'timeout' => 10,
+                'headers' => array(
+                    'User-Agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36 Edg/142.0.0.0',
+                    'Accept'     => 'application/vnd.github+json'
+                )
+            ));
+
+            if (is_wp_error($response)) {
+                error_log(sprintf('[ghcard] Request error for %s: %s', $path, $response->get_error_message()));
             } else {
-                $card_content = '';
+                error_log(sprintf('[ghcard] API status %s for %s', wp_remote_retrieve_response_code($response), $path));
+                $body = wp_remote_retrieve_body($response);
+                $data = json_decode($body, true);
+
+                if (is_array($data) && empty($data['message'])) {
+                    $repo_data = array(
+                        'full_name'   => $data['full_name'] ?? $path,
+                        'description' => $data['description'] ?? '',
+                        'language'    => $data['language'] ?? '',
+                        'stars'       => intval($data['stargazers_count'] ?? 0),
+                        'forks'       => intval($data['forks_count'] ?? 0),
+                        'issues'      => intval($data['open_issues_count'] ?? 0),
+                        'url'         => $data['html_url'] ?? 'https://github.com/' . $path,
+                        'updated_at'  => $data['pushed_at'] ?? '',
+                    );
+
+                    set_transient($cache_key, $repo_data, $cache_ttl);
+                    update_option($cache_store_key, array(
+                        'data' => $repo_data,
+                        'timestamp' => time(),
+                    ), false);
+                    $data_state = 'fresh';
+                    error_log(sprintf('[ghcard] Cached data for %s', $path));
+                } else {
+                    error_log(sprintf('[ghcard] Unexpected payload for %s: %s', $path, substr($body, 0, 200)));
+                }
+            }
+
+            if (!$repo_data) {
+                $stored = get_option($cache_store_key, false);
+                if ($stored && isset($stored['data'])) {
+                    $repo_data = $stored['data'];
+                    $data_state = 'stale';
+                    error_log(sprintf('[ghcard] Using stale cache for %s', $path));
+                }
             }
         }
-    
-        //获取失败或未启用代理
-        if (empty($card_content)) {
-            $card_content = '<img decoding="async" src="https://github-readme-stats.vercel.app/api/pin/?hide_border=true&username=' . esc_attr($username) . '&repo=' . esc_attr($repo) . '" alt="Github-Card">';
-        }
-    
-        //输出内容
-        $ghcard = '<div class="ghcard">';
-        $ghcard .= '<a href="https://github.com/' . esc_attr($path) . '" target="_blank" rel="noopener noreferrer">';
-        $ghcard .= $card_content;
-        $ghcard .= '</a>';
-        $ghcard .= '</div>';
-    
-        return $ghcard;
-        */
-        $api_url = sprintf('https://api.github.com/repos/%s/%s', $username, $repo);
-        $response = wp_remote_get($api_url, array(
-            'headers' => array(
-                'User-Agent' => 'WordPress-GitHubCard-Shortcode'
-            )
-        ));
 
-        if (is_wp_error($response)) {
-            return sprintf('<p>Failed to fetch GitHub repository data: %s</p>', esc_html($response->get_error_message()));
+        if (!$repo_data) {
+            return sprintf(
+                '<div class="ghcard shortcodestyle ghcard--error"><p>%s</p></div>',
+                sprintf(__('Unable to fetch GitHub data for %s at the moment.', 'sakurairo'), esc_html($path))
+            );
         }
 
-        $body = wp_remote_retrieve_body($response);
-        $data = json_decode($body, true);
+        $language_raw = $repo_data['language'];
+        $language = $language_raw !== '' ? esc_html($language_raw) : __('Unknown', 'sakurairo');
+        $description = $repo_data['description'] !== '' ? esc_html($repo_data['description']) : __('No description provided.', 'sakurairo');
 
-        if (!is_array($data) || isset($data['message'])) {
-            return sprintf('<p>Unable to fetch GitHub data for: %s</p>', esc_html($path));
+        $updated_markup = '';
+        if (!empty($repo_data['updated_at'])) {
+            $updated_timestamp = strtotime($repo_data['updated_at']);
+            if ($updated_timestamp) {
+                $updated_markup = sprintf(
+                    '<span class="ghcard-updated">%s</span>',
+                    sprintf(
+                        __('Updated %s ago', 'sakurairo'),
+                        human_time_diff($updated_timestamp, current_time('timestamp'))
+                    )
+                );
+            }
         }
 
-        // 获取数据
-        $full_name = $data['full_name'];
-        $description = $data['description'];
-        $language = $data['language'];
-        $stars = $data['stargazers_count'];
-        $html_url = $data['html_url'];
+        $language_colors = array(
+            'JavaScript' => '#f7df1e',
+            'TypeScript' => '#3178c6',
+            'PHP'        => '#8993be',
+            'Python'     => '#3776ab',
+            'Ruby'       => '#cc342d',
+            'Go'         => '#00ADD8',
+            'Java'       => '#f89820',
+            'C++'        => '#00599C',
+            'C#'         => '#178600',
+            'C'          => '#555555',
+            'Shell'      => '#89e051',
+            'Swift'      => '#f05138',
+            'Kotlin'     => '#A97BFF'
+        );
 
-        // 仓库图标 + 默认颜色点
-        $lang_color = "green"; // 可拓展为语言颜色映射
-        $description = esc_html($description);
-        $language = esc_html($language);
+        $lang_color = ($language_raw !== '' && isset($language_colors[$language_raw]))
+            ? $language_colors[$language_raw]
+            : 'var(--shortcode-color-accent)';
+
+        $language_markup = sprintf(
+            '<span class="ghcard-language"><span class="ghcard-language-dot" style="background:%s;"></span>%s</span>',
+            esc_attr($lang_color),
+            $language
+        );
+
+        $meta_markup = $updated_markup !== ''
+            ? '<div class="ghcard-meta">' . $updated_markup . '</div>'
+            : '';
+
+        $card_classes = 'ghcard shortcodestyle';
+        if ($data_state === 'stale') {
+            $card_classes .= ' ghcard--stale';
+        }
+
+        $stale_notice = '';
+        if ($data_state === 'stale') {
+            $stored = get_option($cache_store_key, false);
+            $age = '';
+            if ($stored && isset($stored['timestamp'])) {
+                $age = human_time_diff($stored['timestamp'], current_time('timestamp'));
+            }
+            $stale_notice = sprintf('<div class="ghcard-stale-tip">%s</div>',
+                $age ? sprintf(__('Showing cached data (%s old).', 'sakurairo'), esc_html($age)) : __('Showing cached data.', 'sakurairo')
+            );
+        }
+
         return sprintf(
-            '<div class="ghcard" style="border:1px solid #ddd; border-radius:10px; padding:16px; max-width:300px; box-shadow:0 2px 6px rgba(0,0,0,0.1); background:#fff;">
-                <div style="display:flex; align-items:center; margin-bottom:10px;">
-                    <i class="fas fa-book" style="margin-right:8px; color:#555;"></i>
-                    <a href="%s" target="_blank" style="color:#1a73e8; font-weight:bold; text-decoration:none;">%s</a>
-                </div>
-                <div style="font-size:14px; color:#444; margin-bottom:12px;">%s</div>
-                <div style="display:flex; align-items:center; gap:16px; font-size:14px; color:#666;">
-                    <div style="display:flex; align-items:center;">
-                        <span style="width:10px; height:10px; background-color:%s; border-radius:50%%; display:inline-block; margin-right:6px;"></span>
-                        %s
+            '<div class="%s">
+                <div class="ghcard-header">
+                    <div class="ghcard-title">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        <a href="%s" target="_blank" rel="noopener noreferrer">%s</a>
                     </div>
-                    <div style="display:flex; align-items:center;">
-                        <i class="far fa-star" style="margin-right:4px;"></i>
-                        %d
-                    </div>
+                    %s
                 </div>
+                <p class="ghcard-description">%s</p>
+                %s
+                <div class="ghcard-stats">
+                    <span><i class="fa-solid fa-star" aria-hidden="true"></i>%s</span>
+                    <span><i class="fa-solid fa-code-branch" aria-hidden="true"></i>%s</span>
+                    <span><i class="fa-regular fa-circle-dot" aria-hidden="true"></i>%s</span>
+                </div>
+                %s
             </div>',
-            esc_url($html_url),
-            esc_html($full_name),
+            esc_attr($card_classes),
+            esc_url($repo_data['url']),
+            esc_html($repo_data['full_name']),
+            $language_markup,
             $description,
-            $lang_color,
-            $language,
-            intval($stars)
+            $meta_markup,
+            number_format_i18n($repo_data['stars']),
+            number_format_i18n($repo_data['forks']),
+            number_format_i18n($repo_data['issues']),
+            $stale_notice
         );
     }
     
@@ -2975,7 +3081,7 @@ function register_shortcodes() {
     }
 
     // 折叠
-    add_shortcode('collapse', function($atts, $content = null) {
+    function iro_render_collapse($atts, $content = null) {
         $atts = shortcode_atts(array("title" => ""), $atts);
         ob_start();
         ?>
@@ -2989,7 +3095,20 @@ function register_shortcodes() {
         <div class="xContent" style="display: none;"><?= do_shortcode($content) ?></div>
         <?php
         return ob_get_clean();
+    }
+
+    add_shortcode('collapse', function($atts, $content = null) {
+        return iro_render_collapse($atts, $content);
     });
+
+    register_block_type('sakurairo/collapse', [
+        'render_callback' => 'iro_render_collapse_block',
+    ]);
+    function iro_render_collapse_block($attributes, $content) {
+        return iro_render_collapse([
+            'title' => $attributes['title'] ?? '',
+        ], $attributes['content'] ?? $content);
+    }
 
     // bilibili
     function iro_render_bilibili($content) {
@@ -3032,7 +3151,7 @@ function register_shortcodes() {
         return iro_render_bilibili($bid);
     }
 
-    add_shortcode('steamuser', function ($atts, $content = null) {
+    function iro_render_steamuser($atts = array(), $content = null) {
         $key = iro_opt('steam_key');
         if (empty($key)) {
             // 多语言支持
@@ -3152,152 +3271,396 @@ function register_shortcodes() {
         }
         $output .= '</div>'; // .steam-user-card
         return $output;
+    }
+
+    add_shortcode('steamuser', function ($atts, $content = null) {
+        return iro_render_steamuser($atts, $content);
     });
+
+    register_block_type('sakurairo/steamuser', [
+        'render_callback' => 'iro_render_steamuser_block',
+    ]);
+    function iro_render_steamuser_block($attributes, $content) {
+        return iro_render_steamuser(array(), $attributes['content'] ?? $content);
+    }
+
+    function iro_render_checkbox($attr, $content = null) {
+        $atts = shortcode_atts(array(
+            'checked' => 'false',
+            'inline' => 'false',
+            'name'   => '',
+            'value'  => '',
+            'id'     => '',
+        ), $attr);
+
+        $is_true = function ($value) {
+            return in_array(strtolower((string) $value), array('1', 'true', 'yes', 'on'), true);
+        };
+
+        $id = $atts['id'] !== '' ? sanitize_html_class($atts['id']) : wp_unique_id('iro-checkbox-');
+        $classes = array('checkbox-code', 'shortcodestyle');
+        if ($is_true($atts['inline'])) {
+            $classes[] = 'inline';
+        }
+
+        $attributes = array(
+            'type' => 'checkbox',
+            'id'   => $id,
+        );
+
+        if ($atts['name'] !== '') {
+            $attributes['name'] = sanitize_text_field($atts['name']);
+        }
+        if ($atts['value'] !== '') {
+            $attributes['value'] = sanitize_text_field($atts['value']);
+        }
+        if ($is_true($atts['checked'])) {
+            $attributes['checked'] = 'checked';
+        }
+
+        $attribute_html = '';
+        foreach ($attributes as $key => $value) {
+            $attribute_html .= sprintf(' %s="%s"', esc_attr($key), esc_attr($value));
+        }
+
+        $label_content = trim(do_shortcode((string) $content));
+        if ($label_content === '') {
+            $label_content = __('Checkbox', 'sakurairo');
+        }
+
+        return sprintf(
+            '<div class="%1$s"><input%2$s><span>%3$s</span></div>',
+            esc_attr(implode(' ', array_filter($classes))),
+            $attribute_html,
+            wp_kses_post($label_content)
+        );
+    }
 
     add_shortcode('checkbox', function ($attr, $content = null) {
-        $attr = shortcode_atts(array("checked" => "", "inline" => ""), $attr);
-        return sprintf('
-        <div class="checkbox-code %s">
-            <input type="checkbox" %s>
-			<span> %s </span>
-        </div>
-        ',
-        $attr['inline'] == 'true' ? "inline" : "shortcodestyle",
-        $attr['checked'] == 'true' ? 'checked' : '',
-        $content
-        );
+        return iro_render_checkbox($attr, $content);
     });
-    add_shortcode('label', function ($attr, $content = null) {
-        $attr = shortcode_atts(array("color" => "", "shape" => ""), $attr);
-        $color = $attr['color'];
-        switch($color){
-            case 'warning':
-                $color = 'badge-warning';
-                break;
-            case 'severe':
-                $color = 'badge-severe';
-                break;
-            default:
-                $color = 'badge-info';
-                break;
-        }
-        
-        return sprintf('
-        <span class="badge %s %s"> %s </span>
-        ',
-        $color,
-        $attr['shape'] == 'round' ? 'bagde-round' : '',
-        $content
-        );
-    });
-    add_shortcode('progressbar',function ($attr,$content=null){
-        $attr = shortcode_atts(array("color" => "", "progress" => ""), $attr);
-        $progress = $attr['progress'];
-        $color = $attr['color'];
-        if($progress==''){
-            $progress=100;
-        }
-        if($color==''){
-            $color='bg-default';
-        }
-        $color = isset($attr['color']) ? $attr['color'] : 'indigo';
 
-        switch ($color) {
-            case 'red':
-                $color = 'bg-danger';
-                break;
-            case 'orange':
-                $color = 'bg-warning';
-                break;
-            case 'green':
-                $color = 'bg-info';
-                break;
-            default:
-                $color = 'bg-default';
-            break;
+    register_block_type('sakurairo/checkbox', [
+        'render_callback' => 'iro_render_checkbox_block',
+    ]);
+    function iro_render_checkbox_block($attributes, $content) {
+        return iro_render_checkbox([
+            'checked' => !empty($attributes['checked']) ? 'true' : 'false',
+            'inline' => !empty($attributes['inline']) ? 'true' : 'false',
+            'name' => $attributes['name'] ?? '',
+            'value' => $attributes['value'] ?? '',
+            'id' => $attributes['id'] ?? '',
+        ], $attributes['content'] ?? $content);
+    }
+
+    function iro_render_label($attr, $content = null) {
+        $atts = shortcode_atts(array("color" => "info", "shape" => ""), $attr);
+        $color_map = array(
+            'warning' => 'badge-warning',
+            'severe'  => 'badge-severe',
+            'info'    => 'badge-info',
+        );
+
+        $color = $color_map[strtolower($atts['color'])] ?? 'badge-info';
+        $shape = strtolower($atts['shape']) === 'round' ? 'badge-rounded' : '';
+
+        $classes = array('badge', $color);
+        if ($shape !== '') {
+            $classes[] = $shape;
         }
+
+        return sprintf(
+            '<span class="%1$s">%2$s</span>',
+            esc_attr(implode(' ', $classes)),
+            wp_kses_post(do_shortcode((string) $content))
+        );
+    }
+
+    add_shortcode('label', function ($attr, $content = null) {
+        return iro_render_label($attr, $content);
+    });
+
+    register_block_type('sakurairo/label', [
+        'render_callback' => 'iro_render_label_block',
+    ]);
+    function iro_render_label_block($attributes, $content) {
+        return iro_render_label([
+            'color' => $attributes['color'] ?? 'info',
+            'shape' => $attributes['shape'] ?? '',
+        ], $attributes['content'] ?? $content);
+    }
+
+    function iro_render_progressbar($attr, $content = null) {
+        $atts = shortcode_atts(array("color" => "default", "progress" => "100", "label" => ""), $attr);
+
+        $progress = is_numeric($atts['progress']) ? floatval($atts['progress']) : 100;
+        $progress = max(0, min(100, $progress));
+        $progress_display = number_format_i18n($progress);
+
+        $color_key = strtolower(trim($atts['color']));
+        $color_map = array(
+            'default' => 'bg-default',
+            'primary' => 'bg-default',
+            'accent'  => 'bg-default',
+            'match'   => 'bg-match',
+            'info'    => 'bg-info',
+            'blue'    => 'bg-info',
+            'teal'    => 'bg-info',
+            'success' => 'bg-success',
+            'green'   => 'bg-success',
+            'warning' => 'bg-warning',
+            'orange'  => 'bg-warning',
+            'amber'   => 'bg-warning',
+            'danger'  => 'bg-danger',
+            'red'     => 'bg-danger',
+            'error'   => 'bg-danger',
+            'rose'    => 'bg-rose',
+            'pink'    => 'bg-rose',
+        );
+        $color_class = $color_map[$color_key] ?? 'bg-default';
+
+        $label = trim($atts['label']) !== '' ? $atts['label'] : trim(do_shortcode((string) $content));
+        $label_markup = $label !== '' ? sprintf("<div class='progress-label'><span>%s</span></div>", esc_html($label)) : '';
+
+        $width = round($progress, 2);
 
         return sprintf(
             "<div class='progress-wrapper'>
                 <div class='progress-info'>%s
-                    <div class='progress-percentage'><span>%d%%</span></div>
+                    <div class='progress-percentage'><span>%s%%</span></div>
                 </div>
                 <div class='progress'>
-                    <div class='progress-bar %s' style='width: %d%%;'></div>
+                    <div class='progress-bar %s' style='width: %s%%;' role='progressbar' aria-valuenow='%s' aria-valuemin='0' aria-valuemax='100'></div>
                 </div>
             </div>",
-            $content != "" ? sprintf("<div class='progress-label'><span>%s</span></div>", $content) : "",
-            $progress,
-            $color,
-            $progress
+            $label_markup,
+            $progress_display,
+            esc_attr($color_class),
+            esc_attr($width),
+            esc_attr($width)
         );
-    });
-    /*add_shortcode('timeline',function ($attr,$content=null){
-        $content = trim(strip_tags($content));
-        $entries = explode("\n", $content);
+    }
 
-        $out = "<div class='timeline-code'>";
-        foreach ($entries as $entry) {
-            $parts = explode("|", $entry);
-            $time = str_replace("/", "</br>", $parts[0]);
-            $title = isset($parts[1]) ? $parts[1] : '';
-            
-            $content_html = "";
-            for ($i = 2; $i < count($parts); $i++) {
-                $content_html .= ($i > 2 ? "</br>" : "") . $parts[$i];
+    add_shortcode('progressbar', function ($attr, $content = null) {
+        return iro_render_progressbar($attr, $content);
+    });
+
+    register_block_type('sakurairo/progressbar', [
+        'render_callback' => 'iro_render_progressbar_block',
+    ]);
+    function iro_render_progressbar_block($attributes, $content) {
+        return iro_render_progressbar([
+            'color' => $attributes['color'] ?? 'default',
+            'progress' => $attributes['progress'] ?? '100',
+            'label' => $attributes['label'] ?? '',
+        ], $attributes['content'] ?? $content);
+    }
+
+    function iro_render_timeline($attr, $content = null) {
+        $raw_content = trim((string) $content);
+        if ($raw_content === '') {
+            return '';
+        }
+
+        $atts = shortcode_atts(array(
+            'layout' => 'vertical',
+            'icon' => '',
+            'accent' => 'default',
+        ), $attr);
+
+        $layout = strtolower($atts['layout']);
+        $layout = in_array($layout, array('vertical', 'horizontal'), true) ? $layout : 'vertical';
+
+        $accent_key = strtolower(trim($atts['accent']));
+        $accent_whitelist = array('default', 'match', 'info', 'success', 'warning', 'danger', 'rose');
+        if (!in_array($accent_key, $accent_whitelist, true)) {
+            $accent_key = 'default';
+        }
+
+        $icon_class = trim($atts['icon']);
+
+        $lines = preg_split('/\r\n|\r|\n/', $raw_content);
+        $entries = array();
+        foreach ($lines as $line_raw) {
+            $line = trim($line_raw);
+            if ($line === '') {
+                continue;
             }
 
-            $out .= sprintf(
-                "<div class='timeline-node'>
-                    <div class='timeline-time'>%s</div>
-                    <div class='timeline-card card bg-gradient-secondary shadow-sm'>
-                        %s
-                        <div class='timeline-content'>%s</div>
-                    </div>
-                </div>",
-                $time,
-                $title !== '' ? sprintf("<div class='timeline-title'>%s</div>", $title) : '',
-                $content_html
+            $line_plain = trim(wp_strip_all_tags(preg_replace('/<br\s*\/?>(\s|&nbsp;)?/i', '', $line)));
+            if ($line_plain === '') {
+                continue;
+            }
+
+            $decoded_line = html_entity_decode($line, ENT_QUOTES, get_bloginfo('charset'));
+            $parts = array_map('trim', explode('|', $decoded_line));
+            if (count($parts) === 0) {
+                continue;
+            }
+
+            $time = array_shift($parts);
+            $title = count($parts) ? array_shift($parts) : '';
+            $body_text = count($parts) ? implode("\n", $parts) : '';
+
+            if ($time === '' && $title === '' && trim($body_text) === '') {
+                continue;
+            }
+
+            $entries[] = array(
+                'time' => $time,
+                'title' => $title,
+                'body' => $body_text,
             );
         }
-        $out .= "</div>";
-        return $out;
-    });*/
-    add_shortcode('hidden',function ($attr, $content = null) {
-        $attr = shortcode_atts(array("tip" => "", "type" => ""), $attr);
-        $tip=''; $type='blur';
-        if($attr['tip']!=""){
-            $tip=$attr['tip'];
+
+        if (empty($entries)) {
+            return '';
         }
-        if($attr['type']!=""){
-            $type = $attr['type'];
-        }
-    
-        $class = ($type == 'background') ? 'hidden-text-background' : 'hidden-text-blur';
-    
-        return sprintf(
-            "<span class='hidden-text %s'%s>%s</span>",
-            $class,
-            $tip !== '' ? sprintf(" title='%s'", $tip) : '',
-            $content
+
+        $wrapper_classes = array(
+            'timeline-code',
+            'timeline-layout-' . $layout,
+            'timeline-accent-' . $accent_key,
         );
+
+        $icon_markup = '';
+        if ($icon_class !== '') {
+            $icon_markup = sprintf('<i class="%s" aria-hidden="true"></i>', esc_attr($icon_class));
+        }
+
+        $output = sprintf('<div class="%s" role="list">', esc_attr(implode(' ', $wrapper_classes)));
+
+        foreach ($entries as $entry) {
+            $time_html = $entry['time'] !== '' ? str_replace('/', '<br>', esc_html($entry['time'])) : '';
+            $title_html = $entry['title'] !== '' ? esc_html($entry['title']) : '';
+            $body_html = '';
+            if (trim($entry['body']) !== '') {
+                $body_processed = wpautop(do_shortcode($entry['body']));
+                $body_html = wp_kses_post($body_processed);
+            }
+
+            $node = '<div class="timeline-node" role="listitem">';
+            $node .= '<div class="timeline-dot" aria-hidden="true">';
+            $node .= ($icon_markup !== '') ? $icon_markup : '<span class="timeline-dot-symbol"></span>';
+            $node .= '</div>';
+
+            if ($time_html !== '') {
+                $node .= sprintf('<div class="timeline-time">%s</div>', $time_html);
+            }
+
+            $node .= '<div class="timeline-card">';
+            if ($title_html !== '') {
+                $node .= sprintf('<div class="timeline-title">%s</div>', $title_html);
+            }
+            if ($body_html !== '') {
+                $node .= sprintf('<div class="timeline-content">%s</div>', $body_html);
+            }
+            $node .= '</div>'; // .timeline-card
+            $node .= '</div>'; // .timeline-node
+
+            $output .= $node;
+        }
+
+        $output .= '</div>';
+
+        return $output;
+    }
+
+    add_shortcode('timeline', function ($attr, $content = null) {
+        return iro_render_timeline($attr, $content);
     });
 
-    add_shortcode('post_time',function ($attr,$content=null){
-        $attr = shortcode_atts(array("format" => ""), $attr);
-        $format = ( $attr['format'] !='') ? $attr['format'] : 'Y-n-d G:i:s';
-        return get_the_time($format);
+    register_block_type('sakurairo/timeline', [
+        'render_callback' => 'iro_render_timeline_block',
+    ]);
+    function iro_render_timeline_block($attributes, $content) {
+        return iro_render_timeline([
+            'layout' => $attributes['layout'] ?? 'vertical',
+            'icon' => $attributes['icon'] ?? '',
+            'accent' => $attributes['accent'] ?? 'default',
+        ], $attributes['content'] ?? $content);
+    }
+
+    function iro_render_hidden($attr, $content = null) {
+        $atts = shortcode_atts(array("tip" => "", "type" => "blur"), $attr);
+        $type = strtolower($atts['type']) === 'background' ? 'background' : 'blur';
+        $class = $type === 'background' ? 'hidden-text-background' : 'hidden-text-blur';
+        $tip_attr = $atts['tip'] !== '' ? sprintf(' title="%s"', esc_attr($atts['tip'])) : '';
+
+        return sprintf(
+            '<span class="hidden-text %1$s"%2$s>%3$s</span>',
+            esc_attr($class),
+            $tip_attr,
+            wp_kses_post(do_shortcode((string) $content))
+        );
+    }
+
+    add_shortcode('hidden', function ($attr, $content = null) {
+        return iro_render_hidden($attr, $content);
     });
 
-    add_shortcode('post_modified_time',function ($attr,$content=null){
-        $attr = shortcode_atts(array("format" => ""), $attr);
-        $format = ( $attr['format'] !='') ? $attr['format'] : 'Y-n-d G:i:s';
-        return get_the_modified_time($format);
+    register_block_type('sakurairo/hidden', [
+        'render_callback' => 'iro_render_hidden_block',
+    ]);
+    function iro_render_hidden_block($attributes, $content) {
+        return iro_render_hidden([
+            'tip' => $attributes['tip'] ?? '',
+            'type' => $attributes['type'] ?? 'blur',
+        ], $attributes['content'] ?? $content);
+    }
+
+    function iro_render_post_time($attr) {
+        $atts = shortcode_atts(array("format" => 'Y-n-d G:i:s'), $attr);
+        $format = $atts['format'] !== '' ? wp_strip_all_tags($atts['format']) : 'Y-n-d G:i:s';
+        return esc_html(get_the_time($format));
+    }
+
+    add_shortcode('post_time', function ($attr) {
+        return iro_render_post_time($attr);
     });
 
-    add_shortcode('noshortcode',function ($attr,$content=null){
-        return $content;
+    register_block_type('sakurairo/post-time', [
+        'render_callback' => 'iro_render_post_time_block',
+    ]);
+    function iro_render_post_time_block($attributes) {
+        return iro_render_post_time([
+            'format' => $attributes['format'] ?? 'Y-n-d G:i:s',
+        ]);
+    }
+
+    function iro_render_post_modified_time($attr) {
+        $atts = shortcode_atts(array("format" => 'Y-n-d G:i:s'), $attr);
+        $format = $atts['format'] !== '' ? wp_strip_all_tags($atts['format']) : 'Y-n-d G:i:s';
+        return esc_html(get_the_modified_time($format));
+    }
+
+    add_shortcode('post_modified_time', function ($attr) {
+        return iro_render_post_modified_time($attr);
     });
+
+    register_block_type('sakurairo/post-modified-time', [
+        'render_callback' => 'iro_render_post_modified_time_block',
+    ]);
+    function iro_render_post_modified_time_block($attributes) {
+        return iro_render_post_modified_time([
+            'format' => $attributes['format'] ?? 'Y-n-d G:i:s',
+        ]);
+    }
+
+    function iro_render_noshortcode($attr, $content = null) {
+        return (string) $content;
+    }
+
+    add_shortcode('noshortcode', function ($attr, $content = null) {
+        return iro_render_noshortcode($attr, $content);
+    });
+
+    register_block_type('sakurairo/noshortcode', [
+        'render_callback' => 'iro_render_noshortcode_block',
+    ]);
+    function iro_render_noshortcode_block($attributes, $content) {
+        return iro_render_noshortcode(array(), $attributes['content'] ?? $content);
+    }
 
     
 }

@@ -2,3 +2,5 @@ tempCodeRunnerFile.php
 .vscode
 inc/blocks/node_modules
 attached/
+.codex*
+*.patch
