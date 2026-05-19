@@ -76,15 +76,18 @@ class BangumiAPI
             $dataList = isset($collData['data']) && is_array($collData['data']) ? $collData['data'] : [];
             $total = isset($collData['total']) ? (int)$collData['total'] : count($dataList);
 
-            // 如果第一次获取没能获取全的话，再多次获取，还需要获取 $pages 次
+            // 如果第一次没能获取全，再多次获取。共 $pages 次，还需获取 $pages-1 次
             if ($total > count($dataList)) {
                 $pageLimit = 50;
                 $pages = (int)ceil($total / $pageLimit);
+                // 避免有人追番太多，导致太多调用卡死，设定调用总次数上线（10次）
+                $pages = min($pages, 10);
                 for ($i = 1; $i < $pages; $i++) {
                     $offset = $pageLimit * $i;
                     $url = $this->collectionApi . '?subject_type=2&limit=' . $pageLimit . '&offset=' . $offset;
                     $resp = $this->http_get_contents($url);
                     $respData = json_decode($resp, true);
+                    # 把新获取到的列表合并到 $dataList 中
                     if (isset($respData['data']) && is_array($respData['data'])) {
                         $dataList = array_merge($dataList, $respData['data']);
                     }
