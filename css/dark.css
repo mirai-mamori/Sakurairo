@@ -61,6 +61,32 @@ body.dark .site-footer p {
   color: #7d7d7d;
 }
 
+body.dark .presence-help {
+  border-color: #ffffff30;
+}
+
+body.dark .presence-help:hover,
+body.dark .presence-help[aria-expanded="true"] {
+  border-color: #ffffff50;
+  background: #ffffff10;
+}
+
+body.dark .presence-help-panel {
+  background: rgba(40, 40, 40, 0.98);
+  border-color: #ffffff15;
+  color: #ccc;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+body.dark .presence-help-panel p {
+  color: #aaa;
+}
+
+body.dark .presence-socket-status {
+  border-top-color: #ffffff12;
+  color: #888;
+}
+
 body.dark .theme-info a{
   color: #7d7d7de6;
 }

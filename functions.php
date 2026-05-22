@@ -570,6 +570,16 @@ function sakura_scripts()
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
+
+    if (iro_opt('footer_online_count') && !is_404()) {
+        wp_enqueue_script(
+            'sakurairo-presence',
+            $core_lib_basepath . '/js/presence.js',
+            array('app'),
+            IRO_VERSION,
+            true
+        );
+    }
     
     //前端脚本本地化
     if (get_user_locale() != 'zh_CN') {

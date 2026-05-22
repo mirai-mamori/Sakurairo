@@ -1251,6 +1251,126 @@ body.dark .site-footer a {
   color: #00000080;
 }
 
+.footer-online-count {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.presence-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: #9ca3af;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  transition: background 0.3s ease;
+}
+
+.presence-dot[data-status="connected"] {
+  background: #22c55e;
+  animation: presence-pulse 2s ease-in-out infinite;
+}
+
+.presence-dot[data-status="connecting"],
+.presence-dot[data-status="reconnecting"] {
+  background: #eab308;
+}
+
+.presence-dot[data-status="error"] {
+  background: #ef4444;
+  animation: none;
+}
+
+@keyframes presence-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0);
+  }
+}
+
+.presence-help {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1em;
+  height: 1.1em;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #00000030;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 0.75em;
+  line-height: 1;
+  cursor: help;
+  vertical-align: middle;
+}
+
+.presence-help:hover,
+.presence-help[aria-expanded="true"] {
+  border-color: #00000050;
+  background: #00000008;
+}
+
+.presence-help-panel {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 8px);
+  z-index: 120;
+  min-width: 240px;
+  max-width: min(320px, 90vw);
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid #00000015;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  font-size: 12px;
+  line-height: 1.5;
+  color: #333;
+  text-align: left;
+}
+
+.presence-help-panel[hidden] {
+  display: none !important;
+}
+
+.presence-help-panel strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.presence-help-panel p {
+  margin: 0 0 8px;
+  color: #444;
+}
+
+.presence-socket-status {
+  display: block;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #00000012;
+  font-size: 11px;
+  color: #666;
+}
+
+.presence-connection-label[data-status="connected"]::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 4px;
+  border-radius: 50%;
+  background: #22c55e;
+  vertical-align: middle;
+}
+
 .cdn-provider {
   display: flex;
   align-items: center;

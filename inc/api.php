@@ -22,10 +22,12 @@ include_once('classes/BilibiliFavList.php');
 include_once('classes/BilibiliFavListCron.php');
 include_once('classes/bangumi.php');
 include_once('classes/Steam.php');
+include_once('classes/Presence.php');
 use Sakura\API\QQ;
 use Sakura\API\Cache;
 use Sakura\API\Captcha;
 use Sakura\API\BilibiliFavListCron;
+use Sakura\API\Presence;
 
 /**
  * Router
@@ -146,7 +148,41 @@ add_action('rest_api_init', function () {
         },
         'permission_callback' => '__return_true'
     )
-    ); 
+    );
+    register_rest_route('sakura/v1', '/presence/ping', array(
+        'methods' => 'POST',
+        'callback' => [Presence::class, 'ping'],
+        'permission_callback' => '__return_true',
+        'args' => array(
+            'presence_id' => array(
+                'required' => false,
+                'type' => 'string',
+                'sanitize_callback' => 'sanitize_text_field',
+            ),
+        ),
+    ));
+    register_rest_route('sakura/v1', '/presence/count', array(
+        'methods' => 'GET',
+        'callback' => [Presence::class, 'count_endpoint'],
+        'permission_callback' => '__return_true',
+    ));
+    register_rest_route('sakura/v1', '/presence/leave', array(
+        'methods' => array('POST', 'GET'),
+        'callback' => [Presence::class, 'leave'],
+        'permission_callback' => '__return_true',
+        'args' => array(
+            'presence_id' => array(
+                'required' => false,
+                'type' => 'string',
+                'sanitize_callback' => 'sanitize_text_field',
+            ),
+        ),
+    ));
+    register_rest_route('sakura/v1', '/presence/stream', array(
+        'methods' => 'GET',
+        'callback' => [Presence::class, 'stream_sse'],
+        'permission_callback' => '__return_true',
+    ));
 });
 
 require_once ('chatgpt/hooks.php');

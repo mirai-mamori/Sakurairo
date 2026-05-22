@@ -337,6 +337,43 @@ msgstr ""
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr ""
 
+#: footer.php:45
+msgid ""
+"When you open a page, the site sends periodic heartbeats via REST API and "
+"returns the current number of visitors online across the site (logged-in "
+"users and guests). Updates use short polling or SSE—not a standalone "
+"WebSocket server."
+msgstr ""
+
+#: footer.php:58
+#, php-format
+msgid "Currently viewed by %s people"
+msgstr ""
+
+#: footer.php:62
+msgid "How does this work?"
+msgstr ""
+
+#: footer.php:64
+msgid "How is this implemented?"
+msgstr ""
+
+#: footer.php:67
+msgid "Connection status:"
+msgstr ""
+
+#: footer.php:68
+msgid "Connecting…"
+msgstr ""
+
+#: inc/swicher.php:106
+msgid "Connected"
+msgstr ""
+
+#: inc/swicher.php:107
+msgid "Disconnected"
+msgstr ""
+
 #: footer.php:68
 msgid "Go to top"
 msgstr ""

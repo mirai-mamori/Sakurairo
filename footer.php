@@ -34,6 +34,41 @@ $reception_background = iro_opt('reception_background');
                 ); ?>
               </p>
           <?php endif; ?>
+          <?php if (iro_opt('footer_online_count')): ?>
+            <?php
+            $presence_help = trim((string) iro_opt('footer_online_count_help', ''));
+            if ($presence_help === '') {
+              $presence_help = esc_html__(
+                'When you open a page, the site sends periodic heartbeats via REST API and returns the current number of visitors online across the site (logged-in users and guests). Updates use short polling or SSE—not a standalone WebSocket server.',
+                'sakurairo'
+              );
+            }
+            ?>
+            <p class="footer-online-count" id="footer-online-count">
+              <span class="presence-dot" data-status="connecting" aria-hidden="true"></span>
+              <span class="presence-text">
+                <?php
+                echo wp_kses(
+                  sprintf(
+                    /* translators: %s: number of online visitors */
+                    __('Currently viewed by %s people', 'sakurairo'),
+                    '<span class="count">—</span>'
+                  ),
+                  array('span' => array('class' => true))
+                );
+                ?>
+              </span>
+              <button type="button" class="presence-help" aria-expanded="false" aria-controls="footer-presence-help-panel" title="<?php esc_attr_e('How does this work?', 'sakurairo'); ?>">?</button>
+              <span id="footer-presence-help-panel" class="presence-help-panel" role="tooltip" hidden>
+                <strong><?php esc_html_e('How is this implemented?', 'sakurairo'); ?></strong>
+                <?php echo wp_kses_post(wpautop($presence_help)); ?>
+                <span class="presence-socket-status">
+                  <?php esc_html_e('Connection status:', 'sakurairo'); ?>
+                  <span class="presence-connection-label"><?php esc_html_e('Connecting…', 'sakurairo'); ?></span>
+                </span>
+              </span>
+            </p>
+          <?php endif; ?>
           
           <?php if (iro_opt('footer_upyun', 'true')): ?>
             <p class="cdn-provider">

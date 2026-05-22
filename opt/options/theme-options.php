@@ -862,6 +862,49 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'footer_online_count',
+        'type' => 'switcher',
+        'title' => __('Footer Live Online Count','sakurairo_csf'),
+        'label' => __('Show real-time site-wide online visitors (logged-in users and guests) in the footer via REST heartbeat.','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'footer_online_count_interval',
+        'type' => 'number',
+        'title' => __('Online Count Update Interval (seconds)','sakurairo_csf'),
+        'desc' => __('How often the browser pings the server. Minimum 3, maximum 60.','sakurairo_csf'),
+        'default' => 5,
+        'dependency' => array( 'footer_online_count', '==', 'true', '', 'true' ),
+      ),
+
+      array(
+        'id' => 'footer_online_count_ttl',
+        'type' => 'number',
+        'title' => __('Online Session TTL (seconds)','sakurairo_csf'),
+        'desc' => __('Visitors without a heartbeat within this window are no longer counted. Between 60 and 120.','sakurairo_csf'),
+        'default' => 90,
+        'dependency' => array( 'footer_online_count', '==', 'true', '', 'true' ),
+      ),
+
+      array(
+        'id' => 'footer_online_count_sse',
+        'type' => 'switcher',
+        'title' => __('Online Count SSE Push','sakurairo_csf'),
+        'label' => __('Use Server-Sent Events instead of polling only. Requires the host to allow longer PHP connections.','sakurairo_csf'),
+        'default' => false,
+        'dependency' => array( 'footer_online_count', '==', 'true', '', 'true' ),
+      ),
+
+      array(
+        'id' => 'footer_online_count_help',
+        'type' => 'textarea',
+        'title' => __('Online Count Help Text','sakurairo_csf'),
+        'desc' => __('Custom tooltip text for the ? button. Leave empty for default. HTML allowed.','sakurairo_csf'),
+        'dependency' => array( 'footer_online_count', '==', 'true', '', 'true' ),
+      ),
+
+      array(
         'id' => 'footer_upyun',
         'type' => 'switcher',
         'title' => __('Footer Upyun League Logo','sakurairo_csf'),
