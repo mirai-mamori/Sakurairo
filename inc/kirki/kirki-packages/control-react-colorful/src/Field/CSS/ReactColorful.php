@@ -13,7 +13,7 @@ namespace Kirki\Field\CSS;
 use Kirki\Module\CSS\Output;
 
 /**
- * Outpout overrides.
+ * Output overrides.
  */
 class ReactColorful extends Output {
 

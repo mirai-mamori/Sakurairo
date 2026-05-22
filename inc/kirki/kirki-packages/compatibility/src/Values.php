@@ -101,7 +101,7 @@ class Values {
 	 *
 	 * @static
 	 * @access public
-	 * @param array $field The field aruments.
+	 * @param array $field The field arguments.
 	 * @return string|array
 	 */
 	public static function get_sanitized_field_value( $field ) {

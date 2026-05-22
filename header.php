@@ -167,7 +167,11 @@ header('X-Frame-Options: SAMEORIGIN');
         <?php if($show_search) : ?>
         <div class="mo-menu-search">
             <form class="search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
-                <input class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
+                <label class="screen-reader-text" for="mobile-search-input"><?php esc_html_e('Search', 'sakurairo'); ?></label>
+                <input id="mobile-search-input" class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
+                <button class="search-submit" type="submit" aria-label="<?php esc_attr_e('Submit Search', 'sakurairo'); ?>">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                </button>
             </form>
         </div>
         <?php endif; ?>

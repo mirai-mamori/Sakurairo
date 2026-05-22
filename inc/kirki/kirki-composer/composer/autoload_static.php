@@ -7,10 +7,6 @@ namespace Composer\Autoload;
 class ComposerStaticInit734b74506bf23405b8270b65bdba2dd6
 {
     public static $prefixLengthsPsr4 = array (
-        'P' => 
-        array (
-            'PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 57,
-        ),
         'K' => 
         array (
             'Kirki\\Util\\' => 11,
@@ -22,17 +18,9 @@ class ComposerStaticInit734b74506bf23405b8270b65bdba2dd6
             'Kirki\\Compatibility\\' => 20,
             'Kirki\\' => 6,
         ),
-        'C' => 
-        array (
-            'Composer\\Installers\\' => 20,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src',
-        ),
         'Kirki\\Util\\' => 
         array (
             0 => __DIR__ . '/../..' . '/kirki-packages/util/src',
@@ -107,10 +95,6 @@ class ComposerStaticInit734b74506bf23405b8270b65bdba2dd6
             26 => __DIR__ . '/../..' . '/kirki-packages/module-panels/src',
             27 => __DIR__ . '/../..' . '/kirki-packages/module-sections/src',
             28 => __DIR__ . '/../..' . '/kirki-packages/url-getter/src',
-        ),
-        'Composer\\Installers\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
     );
 

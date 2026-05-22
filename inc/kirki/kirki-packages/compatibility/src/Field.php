@@ -31,6 +31,7 @@ class Field {
 	public $button_label;
 	public $description;
 	public $help;
+	public $compiler;
 
 	protected $args = array();
 
@@ -374,7 +375,7 @@ class Field {
 		// Take care of common typos.
 		if ( 'theme_mods' === $this->option_type ) {
 			/* translators: %1$s represents the field ID where the error occurs. */
-			_doing_it_wrong( __METHOD__, sprintf( esc_html( 'Typo found in field %s - "theme_mods" vs "theme_mod"', 'kirki' ), esc_html( $this->settings ) ), '3.0.10' );
+			_doing_it_wrong( __METHOD__, sprintf( esc_html__( 'Typo found in field %s - "theme_mods" vs "theme_mod"', 'kirki' ), esc_html( $this->settings ) ), '3.0.10' );
 			$this->option_type = 'theme_mod';
 		}
 	}
@@ -576,7 +577,7 @@ class Field {
 		}
 
 		// Set transport to refresh initially.
-		// Serves as a fallback in case we failt to auto-calculate js_vars.
+		// Serves as a fallback in case we failed to auto-calculate js_vars.
 		$this->transport = 'refresh';
 
 		$js_vars = array();

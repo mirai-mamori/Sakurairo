@@ -249,7 +249,7 @@ class Repeater extends Base {
 
 	/**
 	 * Render the control's content.
-	 * Allows the content to be overriden without having to rewrite the wrapper in $this->render().
+	 * Allows the content to be overridden without having to rewrite the wrapper in $this->render().
 	 *
 	 * @access protected
 	 * @since 1.0

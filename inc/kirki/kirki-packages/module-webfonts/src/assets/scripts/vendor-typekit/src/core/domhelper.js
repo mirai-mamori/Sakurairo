@@ -78,7 +78,7 @@ goog.scope(function () {
     }
 
     // This is safer than appendChild in IE. appendChild causes random
-    // JS errors in IE. Sometimes errors in other JS exectution, sometimes
+    // JS errors in IE. Sometimes errors in other JS execution, sometimes
     // complete 'This page cannot be displayed' errors. For our purposes,
     // it's equivalent because we don't need to insert at any specific
     // location.

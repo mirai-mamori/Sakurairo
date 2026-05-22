@@ -28,6 +28,16 @@ class Field_Dependencies {
 	private $dependencies = [];
 
 	/**
+	 * An array of all repeater controls available.
+	 * Regardless if it has [active_callback] or not.
+	 *
+	 * @access private
+	 * @since 4.1.1
+	 * @var array
+	 */
+	private $repeater_controls = [];
+
+	/**
 	 * Constructor.
 	 *
 	 * @access public
@@ -41,6 +51,28 @@ class Field_Dependencies {
 	}
 
 	/**
+	 * Collect all Repeater Controls in a new dependencies array
+	 * other than [kirkiControlDependencies]
+	 * to fix the issue that we can't find the repeater control
+	 * in the array [kirkiControlDependencies] because
+	 * it doesn't have [active_callback] array
+	 *
+	 * Now, We can use [active_callback] array in the repeater's childern
+	 *
+	 * @access private
+	 * @since 4.1.1
+	 * @param array $args The field arguments.
+	 * @return void
+	 */
+	private function field_add_repeater_controls( $args ) {
+		$type = isset( $args['type'] ) ? $args['type'] : '';
+		if ( in_array( $type, array( 'repeater', 'kirki-repeater' ), true ) ) {
+    		$this->repeater_controls[$args['settings']] = '__return_true';
+		}
+
+	}
+
+	/**
 	 * Filter control arguments.
 	 *
 	 * @access public
@@ -49,6 +81,9 @@ class Field_Dependencies {
 	 * @return array
 	 */
 	public function field_add_control_args( $args ) {
+
+		// Collect a list of all Repeater Controls available
+		$this->field_add_repeater_controls( $args );
 
 		if ( isset( $args['active_callback'] ) ) {
 			if ( is_array( $args['active_callback'] ) ) {
@@ -104,6 +139,7 @@ class Field_Dependencies {
 
 		wp_enqueue_script( 'kirki_field_dependencies', URL::get_from_path( dirname( __DIR__ ) . '/dist/control.js' ), [ 'jquery', 'customize-base', 'customize-controls' ], '4.0', true );
 		wp_localize_script( 'kirki_field_dependencies', 'kirkiControlDependencies', $this->dependencies );
+		wp_localize_script( 'kirki_field_dependencies', 'kirkiRepeaterControlsAvailable', $this->repeater_controls );
 
 	}
 }

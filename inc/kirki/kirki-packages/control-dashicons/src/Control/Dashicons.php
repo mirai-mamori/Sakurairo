@@ -113,7 +113,7 @@ class Dashicons extends Base {
 					'taxonomies': '<?php esc_html_e( 'Taxonomies', 'kirki' ); ?>',
 					'widgets': '<?php esc_html_e( 'Widgets', 'kirki' ); ?>',
 					'notifications': '<?php esc_html_e( 'Notifications', 'kirki' ); ?>',
-					'misc': '<?php esc_html_e( 'Miscelaneous', 'kirki' ); ?>'
+					'misc': '<?php esc_html_e( 'Miscellaneous', 'kirki' ); ?>'
 				};
 				#>
 				<# _.each( dashiconSections, function( sectionLabel, sectionKey ) { #>

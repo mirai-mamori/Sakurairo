@@ -112,7 +112,7 @@ abstract class Field {
 		// Add customizer control.
 		add_action( 'customize_register', [ $this, 'add_control' ] );
 
-		// Add default filters. Can be overriden in child classes.
+		// Add default filters. Can be overridden in child classes.
 		add_filter( 'kirki_field_add_setting_args', [ $this, 'filter_setting_args' ], 10, 2 );
 		add_filter( 'kirki_field_add_control_args', [ $this, 'filter_control_args' ], 10, 2 );
 

@@ -34,7 +34,7 @@ add_action('rest_api_init', function () {
     register_rest_route('sakura/v1', '/image/upload', array(
         'methods' => 'POST',
         'callback' => 'upload_image',
-        'permission_callback' => '__return_true'
+        'permission_callback' => 'sakura_image_upload_permission_check'
     )
     );
     register_rest_route('sakura/v1', '/cache_search/json', array(
@@ -152,6 +152,43 @@ add_action('rest_api_init', function () {
 require_once ('chatgpt/hooks.php');
 require_once ('chatgpt/chatgpt.php');
 
+function sakura_get_rest_request_nonce(WP_REST_Request $request)
+{
+    $nonce = $request->get_header('X-WP-Nonce');
+    if (!$nonce) {
+        $nonce = $request->get_param('_wpnonce');
+    }
+
+    return $nonce ? sanitize_text_field(wp_unslash($nonce)) : '';
+}
+
+function sakura_verify_rest_request_nonce(WP_REST_Request $request)
+{
+    $nonce = sakura_get_rest_request_nonce($request);
+    return $nonce && wp_verify_nonce($nonce, 'wp_rest');
+}
+
+function sakura_image_upload_permission_check(WP_REST_Request $request)
+{
+    if (!is_user_logged_in()) {
+        return new WP_Error(
+            'rest_forbidden',
+            __('Authentication required to upload images.', 'sakurairo'),
+            array('status' => rest_authorization_required_code())
+        );
+    }
+
+    if (!sakura_verify_rest_request_nonce($request)) {
+        return new WP_Error(
+            'rest_forbidden',
+            __('Unauthorized client.', 'sakurairo'),
+            array('status' => 403)
+        );
+    }
+
+    return true;
+}
+
 function chatgpt_summarize(WP_REST_Request $request)
 {
     $post_id = $request->get_param('post_id');
@@ -201,7 +238,7 @@ function upload_image(WP_REST_Request $request)
      *   https://dev.2heng.xin/wp-json/sakura/v1/image/upload
      */
     // $file = $request->get_file_params();
-    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+    if (!sakura_verify_rest_request_nonce($request)) {
         $output = array(
             'status' => 403,
             'success' => false,
@@ -265,7 +302,11 @@ function cache_search_json()
         );
         $result = new WP_REST_Response($output, 403);
     } else {
-        $output = Cache::search_json();
+        $output = get_transient('cache_search');
+        if (!$output) {
+            $output = Cache::search_json();
+            set_transient('cache_search', $output, 3600);
+        }
         $result = new WP_REST_Response($output, 200);
     }
     $result->set_headers(
@@ -526,13 +567,12 @@ function favlist_bilibili_folders(WP_REST_Request $request)
 
 function meting_aplayer()
 {
-    $type = $_GET['type'];
-    $id = $_GET['id'];
-    if (in_array('_wpnonce', $_GET))
-        $wpnonce = $_GET['_wpnonce'];
-    if (in_array('meting_nonce', $_GET))
-        $meting_nonce = $_GET['meting_nonce'];
-    if ((isset($wpnonce) && !check_ajax_referer('wp_rest', $wpnonce, false)) || (isset($meting_nonce) && !wp_verify_nonce($meting_nonce, $type . '#:' . $id))) {
+    $type = isset($_GET['type']) ? sanitize_text_field(wp_unslash($_GET['type'])) : '';
+    $id = isset($_GET['id']) ? sanitize_text_field(wp_unslash($_GET['id'])) : '';
+    $wpnonce = isset($_GET['_wpnonce']) ? sanitize_text_field(wp_unslash($_GET['_wpnonce'])) : null;
+    $meting_nonce = isset($_GET['meting_nonce']) ? sanitize_text_field(wp_unslash($_GET['meting_nonce'])) : null;
+
+    if (($wpnonce && !wp_verify_nonce($wpnonce, 'wp_rest')) || ($meting_nonce && !wp_verify_nonce($meting_nonce, $type . '#:' . $id))) {
         $output = array(
             'status' => 403,
             'success' => false,

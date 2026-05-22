@@ -10,7 +10,7 @@
 namespace Kirki\Pro\Field\CSS;
 
 /**
- * Outpout overrides.
+ * Output overrides.
  */
 class Padding extends Margin {
 

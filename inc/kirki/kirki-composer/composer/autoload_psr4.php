@@ -6,7 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'PHPCSStandards\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => array($vendorDir . '/dealerdirect/phpcodesniffer-composer-installer/src'),
     'Kirki\\Util\\' => array($baseDir . '/kirki-packages/util/src'),
     'Kirki\\Settings\\' => array($baseDir . '/kirki-packages/settings/src'),
     'Kirki\\Pro\\' => array($baseDir . '/pro-src'),
@@ -15,5 +14,4 @@ return array(
     'Kirki\\Data\\' => array($baseDir . '/kirki-packages/data-option/src'),
     'Kirki\\Compatibility\\' => array($baseDir . '/kirki-packages/compatibility/src'),
     'Kirki\\' => array($baseDir . '/kirki-packages/control-base/src', $baseDir . '/kirki-packages/control-checkbox/src', $baseDir . '/kirki-packages/control-code/src', $baseDir . '/kirki-packages/control-color/src', $baseDir . '/kirki-packages/control-color-palette/src', $baseDir . '/kirki-packages/control-cropped-image/src', $baseDir . '/kirki-packages/control-custom/src', $baseDir . '/kirki-packages/control-dashicons/src', $baseDir . '/kirki-packages/control-date/src', $baseDir . '/kirki-packages/control-dimension/src', $baseDir . '/kirki-packages/control-editor/src', $baseDir . '/kirki-packages/control-generic/src', $baseDir . '/kirki-packages/control-image/src', $baseDir . '/kirki-packages/control-multicheck/src', $baseDir . '/kirki-packages/control-palette/src', $baseDir . '/kirki-packages/control-radio/src', $baseDir . '/kirki-packages/control-react-colorful/src', $baseDir . '/kirki-packages/control-react-select/src', $baseDir . '/kirki-packages/control-repeater/src', $baseDir . '/kirki-packages/control-select/src', $baseDir . '/kirki-packages/control-slider/src', $baseDir . '/kirki-packages/control-sortable/src', $baseDir . '/kirki-packages/control-upload/src', $baseDir . '/kirki-packages/field/src', $baseDir . '/kirki-packages/googlefonts/src', $baseDir . '/kirki-packages/l10n/src', $baseDir . '/kirki-packages/module-panels/src', $baseDir . '/kirki-packages/module-sections/src', $baseDir . '/kirki-packages/url-getter/src'),
-    'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
 );

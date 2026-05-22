@@ -12,7 +12,7 @@ namespace Kirki\Pro\Field\CSS;
 use Kirki\Module\CSS\Output;
 
 /**
- * Outpout overrides.
+ * Output overrides.
  */
 class Margin extends Output {
 

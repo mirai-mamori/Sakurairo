@@ -29,6 +29,17 @@ if (iro_opt("article_function")) {
             // 根据WP设置的语言填充链接
             // 不存在该语言翻译时会默认显示英文
             $locale = get_user_locale();
+            switch ($locale) {
+                case 'zh_CN':
+                    $locale = 'zh-hans';
+                    break;
+                case 'zh_TW':
+                    $locale = 'zh-hant';
+                    break;
+                case 'zh_HK':
+                    $locale = 'zh-hant';
+                    break;
+            }
         ?>
             <a class="post-license" href="<?= $license_link . "deed." . $locale ?>" target="_blank" rel="nofollow" title="<?= $license_desc ?>">
                 <i class="fa-brands fa-creative-commons"></i>

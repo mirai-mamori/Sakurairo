@@ -376,7 +376,7 @@ class Background extends Field {
 		}
 
 		// Set transport to refresh initially.
-		// Serves as a fallback in case we failt to auto-calculate js_vars.
+		// Serves as a fallback in case we failed to auto-calculate js_vars.
 		$this->transport = 'refresh';
 
 		$js_vars = [];

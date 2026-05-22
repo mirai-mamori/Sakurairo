@@ -168,7 +168,7 @@ final class Generator {
 
 		self::$value = apply_filters( 'kirki_get_value', get_theme_mod( $field['settings'], $default ), $setting_name, $default, $option_type );
 
-		// Find the class that will handle the outpout for this field.
+		// Find the class that will handle the output for this field.
 		$classname            = '\Kirki\Module\CSS\Output';
 		$field_output_classes = apply_filters( 'kirki_output_control_classnames', [] );
 		$field_output_classes = apply_filters( "kirki_{$field['kirki_config']}_output_control_classnames", $field_output_classes );

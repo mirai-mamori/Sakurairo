@@ -5,10 +5,10 @@
  * Description: The Ultimate WordPress Customizer Framework
  * Author: Themeum
  * Author URI: https://themeum.com
- * Version: 5.1.0
+ * Version: 5.1.1
  * Text Domain: kirki
  * Requires at least: 5.2
- * Requires PHP: 7.1
+ * Requires PHP: 7.4
  *
  * @package Kirki
  * @category Core
@@ -44,7 +44,7 @@ require_once __DIR__ . '/kirki-composer/autoload.php'; // phpcs:ignore WPThemeRe
 require_once __DIR__ . '/inc/bootstrap.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude
 
 if ( ! defined( 'KIRKI_VERSION' ) ) {
-	define( 'KIRKI_VERSION', '5.0.0' );
+	define( 'KIRKI_VERSION', '5.1.1' );
 }
 
 if ( ! defined( 'KIRKI_PLUGIN_DIR' ) ) {
@@ -95,7 +95,7 @@ if ( file_exists( $custom_config_path ) ) {
 // require_once wp_normalize_path( dirname( __FILE__ ) . '/upgrade-notifications.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude
 
 /**
- * To enable tests, add this line to your wp-config.php file (or anywhere alse):
+ * To enable tests, add this line to your wp-config.php file (or anywhere else):
  * define( 'KIRKI_TEST', true );
  *
  * Please note that the example.php file is not included in the wordpress.org distribution

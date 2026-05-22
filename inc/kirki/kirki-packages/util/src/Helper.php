@@ -145,7 +145,7 @@ class Helper {
 	 * @access public
 	 * @see https://pippinsplugins.com/retrieve-attachment-id-from-image-url/
 	 * @param string $url URL to the image.
-	 * @return int|string Numeric ID of the attachement.
+	 * @return int|string Numeric ID of the attachment.
 	 */
 	public static function get_image_id( $url ) {
 		global $wpdb;
@@ -341,7 +341,7 @@ class Helper {
 	 * @param mixed  $value1   The 1st value in the comparison.
 	 * @param mixed  $value2   The 2nd value in the comparison.
 	 * @param string $operator The operator we'll use for the comparison.
-	 * @return boolean whether The comparison has succeded (true) or failed (false).
+	 * @return boolean whether The comparison has succeeded (true) or failed (false).
 	 */
 	public static function compare_values( $value1, $value2, $operator ) {
 		if ( '===' === $operator ) {

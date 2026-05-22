@@ -110,13 +110,13 @@ class Init {
 
 	/**
 	 * Parse the output argument.
-	 * This method will format the "output" argument to modify the "media_query" based on the targetted device.
+	 * This method will format the "output" argument to modify the "media_query" based on the targeted device.
 	 * This method will be called inside of "default" argument loop when the control is using responsive mode.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @param array  $args The field arguments.
-	 * @param string $device The targetted device.
+	 * @param string $device The targeted device.
 	 *
 	 * @return array $args The modified field arguments.
 	 */

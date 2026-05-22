@@ -59,7 +59,7 @@ class L10n {
 		$this->textdomain     = $textdomain;
 		$this->languages_path = $languages_path;
 		// This will only work if we're inside a plugin.
-		add_action( 'plugins_loaded', [ $this, 'load_textdomain' ] );
+		add_action( 'init', [ $this, 'load_textdomain' ] );
 
 		// If we got this far, then Kirki is embedded in a plugin.
 		// We want the theme's textdomain to handle translations.

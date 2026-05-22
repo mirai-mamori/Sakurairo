@@ -253,7 +253,7 @@ class Output {
 
 			/**
 			 * Inside gutenberg editing screen, prepend `.editor-styles-wrapper` to the element
-			 * so that it doesn't polute elements other than inside the editing content.
+			 * so that it doesn't pollute elements other than inside the editing content.
 			 */
 			if ( isset( $_GET['editor'] ) && 1 === (int) $_GET['editor'] ) {
 				if ( isset( $output['element'] ) && ! empty( $output['element'] ) ) {

@@ -244,7 +244,7 @@ class CSS {
 			 *
 			 * Why not simply excluding all admin area except gutenberg editing interface?
 			 * Because it would be nice to let the possibility open
-			 * if a 3rd party plugin will output gutenberg syles somewhere in admin area.
+			 * if a 3rd party plugin will output gutenberg styles somewhere in admin area.
 			 *
 			 * Example of possibility:
 			 * In the future, Ultimate Dashboard Pro's admin page feature might supports Gutenberg.

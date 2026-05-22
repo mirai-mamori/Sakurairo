@@ -172,8 +172,12 @@ get_header(); ?>
         ?>
         <div class="search-box" style="margin-top: 15px;">
             <!-- search start -->
-            <form class="s-search">
-                <input class="text-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
+            <form class="s-search" method="get" action="<?php echo esc_url(home_url('/')); ?>" role="search">
+                <label class="screen-reader-text" for="search-empty-input"><?php esc_html_e('Search', 'sakurairo'); ?></label>
+                <input id="search-empty-input" class="text-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
+                <button class="search-submit" type="submit" aria-label="<?php esc_attr_e('Submit Search', 'sakurairo'); ?>">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                </button>
             </form>
             <!-- search end -->
         </div>
