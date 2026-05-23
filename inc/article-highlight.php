@@ -201,26 +201,58 @@ class ColorAnalyzer {
     }
 }
 
-function get_image_theme_color($input) {
-    // 获取图片数据
+/**
+ * 从本地路径获取图片数据（优化版）
+ */
+function get_local_image_data($image_url) {
+    // 将 URL 转换为本地文件路径
+    $upload_dir = wp_upload_dir();
+    $base_url = $upload_dir['baseurl'];
+    $base_path = $upload_dir['basedir'];
+    
+    // 如果图片 URL 是上传目录的，转换为本地路径
+    if (strpos($image_url, $base_url) === 0) {
+        $relative_path = substr($image_url, strlen($base_url));
+        $local_path = $base_path . $relative_path;
+        
+        // 检查本地文件是否存在且可读
+        if (file_exists($local_path) && is_readable($local_path)) {
+            return file_get_contents($local_path);
+        }
+    }
+    
+    // 尝试使用 WordPress 的附件 ID 获取文件路径
+    $attachment_id = attachment_url_to_postid($image_url);
+    if ($attachment_id) {
+        $file_path = get_attached_file($attachment_id);
+        if ($file_path && file_exists($file_path) && is_readable($file_path)) {
+            return file_get_contents($file_path);
+        }
+    }
+    
+    return false;
+}
+
+/**
+ * 远程获取图片数据（保留原有逻辑作为备选）
+ */
+function get_remote_image_data($input) {
     $parsed_url = parse_url($input);
     if ($parsed_url && isset($parsed_url['scheme']) && isset($parsed_url['host'])) {
-
-        error_log('获取图片' . $input);
-
+        error_log('远程获取图片: ' . $input);
+        
+        // URL 编码处理
         $parsed_url = parse_url($input);
         if ($parsed_url && isset($parsed_url['path'])) {
-            // 将路径拆分成各个部分并编码
             $segments = explode('/', $parsed_url['path']);
             foreach ($segments as &$segment) {
-                // 仅对非空的部分编码
                 if ($segment !== '') {
                     $segment = rawurlencode($segment);
                 }
             }
             $parsed_url['path'] = implode('/', $segments);
         }
-        // 重新组装 URL
+        
         $input = (isset($parsed_url['scheme']) ? $parsed_url['scheme'] . '://' : '')
                  . (isset($parsed_url['user']) ? $parsed_url['user'] 
                  . (isset($parsed_url['pass']) ? ':' . $parsed_url['pass'] : '') . '@' : '')
@@ -229,25 +261,45 @@ function get_image_theme_color($input) {
                  . (isset($parsed_url['path']) ? $parsed_url['path'] : '')
                  . (isset($parsed_url['query']) ? '?' . $parsed_url['query'] : '')
                  . (isset($parsed_url['fragment']) ? '#' . $parsed_url['fragment'] : '');
-
-        error_log('编码结果为' . $input);
+        
+        error_log('编码后URL: ' . $input);
+        
         if (function_exists('wp_get_remote_content')) {
-            $image_data = wp_get_remote_content($input);
+            return wp_get_remote_content($input);
         } else {
-            $image_data = file_get_contents($input);
+            return file_get_contents($input);
         }
-    } else {
+    }
+    
+    return false;
+}
+
+function get_image_theme_color($input) {
+    $image_data = false;
+    
+    // 如果不是 URL（是本地文件路径），直接读取
+    if (!parse_url($input, PHP_URL_HOST)) {
         if (file_exists($input)) {
             $image_data = file_get_contents($input);
+            error_log('直接读取本地文件: ' . $input);
+        }
+    } else {
+        // 先尝试从本地获取
+        $image_data = get_local_image_data($input);
+        if ($image_data !== false) {
+            error_log('从本地路径获取成功: ' . $input);
         } else {
-            return false; // 文件不存在
+            // 本地获取失败，再尝试远程获取
+            error_log('本地获取失败，尝试远程获取: ' . $input);
+            $image_data = get_remote_image_data($input);
         }
     }
-
+    
     if (!$image_data) {
-        error_log('失败');
-        return false; // 读取图片数据失败
+        error_log('获取图片数据失败: ' . $input);
+        return false;
     }
+    
     return ColorAnalyzer::getThemeColor($image_data);
 }
 
@@ -256,15 +308,19 @@ add_action('save_post', function ($post_id) {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
         return;
     }
+    
     // 获取文章特色图片
     $thumbnail_id = get_post_thumbnail_id($post_id);
     $image_url = $thumbnail_id ? wp_get_attachment_url($thumbnail_id) : '';
 
     $theme_color = ($image_url) ? get_image_theme_color($image_url) : 'false';
 
-    error_log('计算结果为' . $theme_color);
+    error_log('计算结果为: ' . $theme_color);
+    
     update_post_meta($post_id, 'post_theme_color_meta', [
         'theme_color' => $theme_color,
+        'image_url' => $image_url,
+        'last_updated' => time()
     ]);
 });
 
@@ -273,8 +329,8 @@ function get_post_theme_color($post_id) {
     $meta = get_post_meta($post_id, 'post_theme_color_meta', true);
     $meta = is_array($meta) ? $meta : [];
 
-    // 已有
-    if (!empty($meta['theme_color'])) {
+    // 已有有效数据，直接返回
+    if (!empty($meta['theme_color']) && $meta['theme_color'] !== 'false') {
         return $meta['theme_color'];
     }
 
@@ -286,6 +342,7 @@ function get_post_theme_color($post_id) {
     if (!$image_url) {
         update_post_meta($post_id, 'post_theme_color_meta', [
             'theme_color' => 'false',
+            'last_updated' => time()
         ]);
         return 'false';
     }
@@ -299,6 +356,7 @@ function get_post_theme_color($post_id) {
     update_post_meta($post_id, 'post_theme_color_meta', [
         'image_url'   => $image_url,
         'theme_color' => $theme_color,
+        'last_updated' => time()
     ]);
 
     return $theme_color;
