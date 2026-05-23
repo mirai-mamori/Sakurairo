@@ -13,11 +13,7 @@
 
   var countEl = root.querySelector('.count');
   var dotEl = root.querySelector('.presence-dot');
-  var connLabel = root.querySelector('.presence-connection-label');
-  var helpBtn = root.querySelector('.presence-help');
-  var helpPanel = root.getElementById('footer-presence-help-panel');
-
-  var presenceId = getCookie(COOKIE_NAME);
+  var connLabel = document.querySelector('#footer-presence-help-panel .presence-connection-label');
   var pollTimer = null;
   var eventSource = null;
   var hiddenIntervalMultiplier = 3;
@@ -25,6 +21,8 @@
   var labels = _iro.presence_labels || {};
   var intervalMs = Math.max(3000, (_iro.presence_interval || 5) * 1000);
   var useSse = !!_iro.presence_use_sse;
+
+  var presenceId = getCookie(COOKIE_NAME);
 
   function getCookie(name) {
     var match = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '=([^;]*)'));
@@ -65,47 +63,74 @@
     }
   }
 
-  function apiUrl(path) {
+  function apiUrl(path, query) {
     var base = (_iro.iro_api || '').replace(/\/$/, '');
-    return base + path;
+    var url = base + path;
+    if (query) {
+      var parts = [];
+      Object.keys(query).forEach(function (key) {
+        if (query[key] !== undefined && query[key] !== null && query[key] !== '') {
+          parts.push(encodeURIComponent(key) + '=' + encodeURIComponent(query[key]));
+        }
+      });
+      if (parts.length) {
+        url += (url.indexOf('?') > -1 ? '&' : '?') + parts.join('&');
+      }
+    }
+    return url;
+  }
+
+  function applyPayload(data) {
+    if (data && data.presence_id) {
+      presenceId = data.presence_id;
+      setCookie(COOKIE_NAME, presenceId, (data.ttl || 90) + 60);
+    }
+    if (data && typeof data.count === 'number') {
+      updateCount(data.count);
+    }
+    setStatus('connected');
+    return data;
   }
 
   function restFetch(url, options) {
     options = options || {};
-    var headers = options.headers || {};
-    headers['Content-Type'] = 'application/json';
+    var method = (options.method || 'GET').toUpperCase();
+    var headers = options.headers ? Object.assign({}, options.headers) : {};
+
+    if (method !== 'GET' && method !== 'HEAD') {
+      headers['Content-Type'] = 'application/json';
+    }
     if (_iro.nonce) {
       headers['X-WP-Nonce'] = _iro.nonce;
     }
+
     return fetch(url, {
-      method: options.method || 'GET',
+      method: method,
       credentials: 'same-origin',
       headers: headers,
       body: options.body ? JSON.stringify(options.body) : undefined,
     }).then(function (res) {
       if (!res.ok) {
-        throw new Error('HTTP ' + res.status);
+        throw new Error('Request failed: HTTP ' + res.status);
       }
       return res.json();
     });
   }
 
   function ping() {
+    var payload = { presence_id: presenceId || undefined };
+
     return restFetch(apiUrl('/presence/ping'), {
       method: 'POST',
-      body: { presence_id: presenceId || undefined },
-    }).then(function (data) {
-      if (data.presence_id) {
-        presenceId = data.presence_id;
-        var ttl = data.ttl || 90;
-        setCookie(COOKIE_NAME, presenceId, ttl + 60);
-      }
-      if (typeof data.count === 'number') {
-        updateCount(data.count);
-      }
-      setStatus('connected');
-      return data;
-    });
+      body: payload,
+    })
+      .then(applyPayload)
+      .catch(function () {
+        return restFetch(
+          apiUrl('/presence/ping', { presence_id: presenceId || undefined }),
+          { method: 'GET' }
+        ).then(applyPayload);
+      });
   }
 
   function fetchCount() {
@@ -150,10 +175,9 @@
   function startPolling(multiplier) {
     stopPolling();
     multiplier = multiplier || 1;
-    var ms = intervalMs * multiplier;
     pollTimer = setInterval(function () {
       ping().catch(onError);
-    }, ms);
+    }, intervalMs * multiplier);
   }
 
   function onError() {
@@ -167,7 +191,6 @@
     stopSse();
     stopPolling();
     multiplier = multiplier || 1;
-    setStatus('connecting');
     pollTimer = setInterval(function () {
       ping().catch(onError);
     }, intervalMs * multiplier);
@@ -187,7 +210,6 @@
       eventSource.onerror = function () {
         stopSse();
         setStatus('reconnecting');
-        startPolling(1);
       };
       ping().catch(onError);
     } catch (e) {
@@ -196,37 +218,13 @@
     }
   }
 
-  function initHelp() {
-    if (!helpBtn || !helpPanel) {
-      return;
-    }
-    helpBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var open = helpPanel.hasAttribute('hidden');
-      if (open) {
-        helpPanel.removeAttribute('hidden');
-        helpBtn.setAttribute('aria-expanded', 'true');
-      } else {
-        helpPanel.setAttribute('hidden', '');
-        helpBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-    document.addEventListener('click', function (e) {
-      if (!root.contains(e.target)) {
-        helpPanel.setAttribute('hidden', '');
-        helpBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
   function init() {
     setStatus('connecting');
-    initHelp();
 
     ping()
       .then(function () {
         if (useSse && typeof EventSource !== 'undefined') {
-          startSse();
+          startSse(1);
         } else {
           startPolling(1);
         }

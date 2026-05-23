@@ -150,7 +150,7 @@ add_action('rest_api_init', function () {
     )
     );
     register_rest_route('sakura/v1', '/presence/ping', array(
-        'methods' => 'POST',
+        'methods' => array('POST', 'GET'),
         'callback' => [Presence::class, 'ping'],
         'permission_callback' => '__return_true',
         'args' => array(

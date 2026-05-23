@@ -1209,9 +1209,10 @@ nav .menu > li .sub-menu a {
   padding: 20px 0;
   -webkit-backdrop-filter: saturate(180%) blur(10px);
   backdrop-filter: saturate(180%) blur(10px);
-  will-change: backdrop-filter; 
+  will-change: backdrop-filter;
   box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
-  transition: all 1s ease-in-out; 
+  transition: all 1s ease-in-out;
+  overflow: visible;
 }
 
 body.dark .site-footer {
@@ -1240,6 +1241,7 @@ body.dark .site-footer a {
   justify-content: space-between;
   align-items: flex-start;
   gap: 15px;
+  overflow: visible;
 }
 
 .hitokoto {
@@ -1253,10 +1255,23 @@ body.dark .site-footer a {
 
 .footer-online-count {
   display: inline-flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 6px;
   position: relative;
+  margin: 0;
+  color: #00000080;
+}
+
+.site-footer .footer-online-count {
+  font-size: inherit;
+}
+
+.presence-help-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .presence-dot {
@@ -1313,27 +1328,53 @@ body.dark .site-footer a {
 }
 
 .presence-help:hover,
-.presence-help[aria-expanded="true"] {
+.presence-help:focus-visible {
   border-color: #00000050;
   background: #00000008;
 }
 
 .presence-help-panel {
   position: absolute;
-  left: 0;
-  bottom: calc(100% + 8px);
-  z-index: 120;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  z-index: 200;
   min-width: 240px;
   max-width: min(320px, 90vw);
   padding: 10px 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.98);
   border: 1px solid #00000015;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
   font-size: 12px;
   line-height: 1.5;
   color: #333;
   text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.presence-help-wrap:hover .presence-help-panel,
+.presence-help-wrap:focus-within .presence-help-panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.presence-help-panel::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.98);
+  border-right: 1px solid #00000015;
+  border-bottom: 1px solid #00000015;
+  transform: translateX(-50%) rotate(45deg);
 }
 
 .presence-help-panel[hidden] {
@@ -1346,7 +1387,8 @@ body.dark .site-footer a {
   font-size: 13px;
 }
 
-.presence-help-panel p {
+.presence-help-panel p,
+.presence-help-body p {
   margin: 0 0 8px;
   color: #444;
 }

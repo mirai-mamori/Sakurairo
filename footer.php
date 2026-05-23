@@ -44,7 +44,7 @@ $reception_background = iro_opt('reception_background');
               );
             }
             ?>
-            <p class="footer-online-count" id="footer-online-count">
+            <div class="footer-online-count" id="footer-online-count">
               <span class="presence-dot" data-status="connecting" aria-hidden="true"></span>
               <span class="presence-text">
                 <?php
@@ -58,16 +58,18 @@ $reception_background = iro_opt('reception_background');
                 );
                 ?>
               </span>
-              <button type="button" class="presence-help" aria-expanded="false" aria-controls="footer-presence-help-panel" title="<?php esc_attr_e('How does this work?', 'sakurairo'); ?>">?</button>
-              <span id="footer-presence-help-panel" class="presence-help-panel" role="tooltip" hidden>
-                <strong><?php esc_html_e('How is this implemented?', 'sakurairo'); ?></strong>
-                <?php echo wp_kses_post(wpautop($presence_help)); ?>
-                <span class="presence-socket-status">
-                  <?php esc_html_e('Connection status:', 'sakurairo'); ?>
-                  <span class="presence-connection-label"><?php esc_html_e('Connecting…', 'sakurairo'); ?></span>
-                </span>
+              <span class="presence-help-wrap">
+                <button type="button" class="presence-help" aria-describedby="footer-presence-help-panel" title="<?php esc_attr_e('How does this work?', 'sakurairo'); ?>">?</button>
+                <div id="footer-presence-help-panel" class="presence-help-panel" role="tooltip">
+                  <strong><?php esc_html_e('How is this implemented?', 'sakurairo'); ?></strong>
+                  <div class="presence-help-body"><?php echo wp_kses_post(wpautop($presence_help)); ?></div>
+                  <div class="presence-socket-status">
+                    <?php esc_html_e('Connection status:', 'sakurairo'); ?>
+                    <span class="presence-connection-label" data-status="connecting"><?php esc_html_e('Connecting…', 'sakurairo'); ?></span>
+                  </div>
+                </div>
               </span>
-            </p>
+            </div>
           <?php endif; ?>
           
           <?php if (iro_opt('footer_upyun', 'true')): ?>
