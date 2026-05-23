@@ -48,11 +48,11 @@
     if (connLabel) {
       connLabel.setAttribute('data-status', status);
       if (status === 'connected') {
-        connLabel.textContent = labels.connected || 'Connected';
+        connLabel.textContent = labels.connected || '已连接';
       } else if (status === 'reconnecting' || status === 'connecting') {
-        connLabel.textContent = labels.connecting || 'Connecting…';
+        connLabel.textContent = labels.connecting || '连接中…';
       } else if (status === 'error') {
-        connLabel.textContent = labels.error || 'Disconnected';
+        connLabel.textContent = labels.error || '已断开';
       }
     }
   }

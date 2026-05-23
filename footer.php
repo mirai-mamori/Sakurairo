@@ -38,10 +38,7 @@ $reception_background = iro_opt('reception_background');
             <?php
             $presence_help = trim((string) iro_opt('footer_online_count_help', ''));
             if ($presence_help === '') {
-              $presence_help = esc_html__(
-                'When you open a page, the site sends periodic heartbeats via REST API and returns the current number of visitors online across the site (logged-in users and guests). Updates use short polling or SSE—not a standalone WebSocket server.',
-                'sakurairo'
-              );
+              $presence_help = '打开页面后会自动建立连接，连接成功后服务器会推送当前全站正在浏览的人数（含登录用户与访客）。同时也可通过短轮询或 SSE 实时更新，无需独立 WebSocket 服务。';
             }
             ?>
             <div class="footer-online-count" id="footer-online-count">
@@ -49,23 +46,19 @@ $reception_background = iro_opt('reception_background');
               <span class="presence-text">
                 <?php
                 echo wp_kses(
-                  sprintf(
-                    /* translators: %s: number of online visitors */
-                    __('Currently viewed by %s people', 'sakurairo'),
-                    '<span class="count">—</span>'
-                  ),
+                  sprintf('正被 %s 人浏览', '<span class="count">—</span>'),
                   array('span' => array('class' => true))
                 );
                 ?>
               </span>
               <span class="presence-help-wrap">
-                <button type="button" class="presence-help" aria-describedby="footer-presence-help-panel" title="<?php esc_attr_e('How does this work?', 'sakurairo'); ?>">?</button>
+                <button type="button" class="presence-help" aria-describedby="footer-presence-help-panel" title="这是如何实现的？">?</button>
                 <div id="footer-presence-help-panel" class="presence-help-panel" role="tooltip">
-                  <strong><?php esc_html_e('How is this implemented?', 'sakurairo'); ?></strong>
+                  <strong>这是如何实现的？</strong>
                   <div class="presence-help-body"><?php echo wp_kses_post(wpautop($presence_help)); ?></div>
                   <div class="presence-socket-status">
-                    <?php esc_html_e('Connection status:', 'sakurairo'); ?>
-                    <span class="presence-connection-label" data-status="connecting"><?php esc_html_e('Connecting…', 'sakurairo'); ?></span>
+                    当前连接状态：
+                    <span class="presence-connection-label" data-status="connecting">连接中…</span>
                   </div>
                 </div>
               </span>
