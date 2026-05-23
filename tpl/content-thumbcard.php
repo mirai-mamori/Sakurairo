@@ -1,7 +1,8 @@
 <?php
 if (!function_exists('render_meta_views')) {
     function render_meta_views() {
-        ?><span><i class="fa-regular fa-eye"></i><?= esc_html(get_post_views(get_the_ID()) . ' ' . _n('Hit', 'Hits', get_post_views(get_the_ID()), 'sakurairo'))/*热度*/ ?></span><?php
+        $views = get_post_views(get_the_ID());
+        ?><span><i class="fa-regular fa-eye"></i><?= esc_html($views . ' ' . _n('Hit', 'Hits', (int) $views, 'sakurairo'))/*热度*/ ?></span><?php
     }
 }
 
@@ -155,7 +156,11 @@ if (!function_exists('get_post_cover_html')) {
             $ai_excerpt = get_post_meta($post->ID, "ai_summon_excerpt", true);
             $excerpt = has_excerpt();
             ?>
-            <article class="post post-list-thumb" style ="<?php echo var_post_theme_color(get_the_ID()) != 'false' ? "--article-theme-highlight: " . var_post_theme_color(get_the_ID()) : ""; ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
+            <?php
+            $article_theme_color = var_post_theme_color(get_the_ID());
+            $article_theme_style = ($article_theme_color !== 'false') ? '--article-theme-highlight: ' . esc_attr($article_theme_color) : '';
+            ?>
+            <article class="post post-list-thumb" style="<?php echo esc_attr($article_theme_style); ?>" itemscope="" itemtype="http://schema.org/BlogPosting">
                 <div class="post-thumb">
                     <a href="<?php the_permalink(); ?>">
                         <?php echo $cover_html; ?>
