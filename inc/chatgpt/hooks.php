@@ -24,6 +24,7 @@ namespace IROChatGPT {
             return false;
         }
     }
+    }
 
 
     if (!function_exists(__NAMESPACE__ . '\\apply_chatgpt_hook')) {
@@ -71,6 +72,7 @@ namespace IROChatGPT {
             }
         });
         
+    }
     }
 
     if (!function_exists(__NAMESPACE__ . '\\summon_article_excerpt')) {
@@ -179,6 +181,7 @@ namespace IROChatGPT {
             error_log('IRO ChatGPT: 未能为文章 ' . $post->ID . ' 生成注释');
             return false;
         }
+    }
     }
 
     /**
@@ -560,5 +563,6 @@ namespace IROChatGPT {
             error_log("IROChatGPT 错误: " . $e->getMessage() . " in file " . $e->getFile() . " on line " . $e->getLine());
             return $original_content; // Return original on error
         }
+    }
     }
 }
