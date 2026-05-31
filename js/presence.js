@@ -6,17 +6,24 @@
   }
 
   var COOKIE_NAME = 'sakurairo_presence_id';
-  var root = document.getElementById('footer-online-count');
-  if (!root) {
-    return;
-  }
-
-  var countEl = root.querySelector('.count');
-  var dotEl = root.querySelector('.presence-dot');
-  var connLabel = document.querySelector('#footer-presence-help-panel .presence-connection-label');
+  var root = null;
+  var countEl = null;
+  var dotEl = null;
+  var connLabel = null;
   var pollTimer = null;
   var eventSource = null;
   var hiddenIntervalMultiplier = 3;
+
+  function findElements() {
+    root = document.getElementById('footer-online-count');
+    if (!root) {
+      return false;
+    }
+    countEl = root.querySelector('.count');
+    dotEl = root.querySelector('.presence-dot');
+    connLabel = document.querySelector('#footer-presence-help-panel .presence-connection-label');
+    return true;
+  }
 
   var labels = _iro.presence_labels || {};
   var intervalMs = Math.max(3000, (_iro.presence_interval || 5) * 1000);
@@ -172,6 +179,18 @@
     }
   }
 
+  function stopAll() {
+    stopPolling();
+    stopSse();
+  }
+
+  function reinit() {
+    stopAll();
+    if (findElements()) {
+      init();
+    }
+  }
+
   function startPolling(multiplier) {
     stopPolling();
     multiplier = multiplier || 1;
@@ -219,6 +238,7 @@
   }
 
   function init() {
+    stopAll();
     setStatus('connecting');
 
     ping()
@@ -236,27 +256,33 @@
           setStatus('error');
         });
       });
+  }
 
-    document.addEventListener('visibilitychange', function () {
-      if (document.hidden) {
-        stopSse();
-        if (useSse && typeof EventSource !== 'undefined') {
-          startSse(hiddenIntervalMultiplier);
-        } else {
-          startPolling(hiddenIntervalMultiplier);
-        }
+  function handleVisibilityChange() {
+    if (document.hidden) {
+      stopSse();
+      if (useSse && typeof EventSource !== 'undefined') {
+        startSse(hiddenIntervalMultiplier);
       } else {
-        ping().catch(onError);
-        if (useSse && typeof EventSource !== 'undefined') {
-          startSse(1);
-        } else {
-          startPolling(1);
-        }
+        startPolling(hiddenIntervalMultiplier);
       }
-    });
+    } else {
+      ping().catch(onError);
+      if (useSse && typeof EventSource !== 'undefined') {
+        startSse(1);
+      } else {
+        startPolling(1);
+      }
+    }
+  }
 
-    window.addEventListener('beforeunload', leaveBeacon);
-    window.addEventListener('pagehide', leaveBeacon);
+  document.addEventListener('visibilitychange', handleVisibilityChange);
+  document.addEventListener('pjax:complete', reinit);
+  window.addEventListener('beforeunload', leaveBeacon);
+  window.addEventListener('pagehide', leaveBeacon);
+
+  if (!findElements()) {
+    return;
   }
 
   if (document.readyState === 'loading') {
