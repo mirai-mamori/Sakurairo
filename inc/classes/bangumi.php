@@ -80,7 +80,7 @@ class BangumiAPI
             if ($total > count($dataList)) {
                 $pageLimit = 50;
                 $pages = (int)ceil($total / $pageLimit);
-                // 避免有人追番太多，导致太多调用卡死，设定调用总次数上线（10次）
+                // 避免有人追番太多，导致太多调用卡死，设定调用总次数上限（10次）
                 $pages = min($pages, 10);
                 for ($i = 1; $i < $pages; $i++) {
                     $offset = $pageLimit * $i;
@@ -100,7 +100,7 @@ class BangumiAPI
             $collData['offset'] = 0;
             $collData['total'] = $total;
 
-            if ($bangumi_cache && isset($collData['data']) && is_array($collData['data'])) {
+            if ($bangumi_cache && !isset($collData['error']) && isset($collData['data']) && is_array($collData['data'])) {
                 auto_update_cache($cache_key, json_encode($collData));
             }
         }
