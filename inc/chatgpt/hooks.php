@@ -145,9 +145,10 @@ namespace IROChatGPT {
 
         return $decoded_chat->choices[0]->message->content;
     }
+    }
 
 
-    add_filter('the_content', __NAMESPACE__ . '\display_term_annotations', 9);
+    add_filter('the_content', __NAMESPACE__ . '\\display_term_annotations', 9);
 
     /**
      * 生成文章的复杂名词注释
@@ -311,6 +312,7 @@ namespace IROChatGPT {
         curl_multi_close($mh);
 
         return $annotations;
+    }
     }
 
     /**
