@@ -1261,6 +1261,8 @@ body.dark .site-footer a {
   position: relative;
   margin: 0;
   color: #00000080;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .site-footer .footer-online-count {
