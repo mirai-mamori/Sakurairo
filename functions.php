@@ -618,7 +618,11 @@ add_action("after_setup_theme",function(){
         add_filter( 'should_load_separate_core_block_assets', '__return_false', 1 );
         add_filter( 'should_load_block_assets_on_demand', '__return_false', 1 );
         add_filter( 'enqueue_empty_block_content_assets', '__return_true' );
+    }
+});
 
+add_action("wp_enqueue_scripts",function(){
+    if(iro_opt("poi_pjax",true)==true){
         // 全量加载wordpress区块和原生组件样式
         wp_enqueue_style( 'wp-block-library' );
         wp_enqueue_style( 'wp-block-library-theme' );
