@@ -1,2 +1,0 @@
-wp.customize.controlConstructor["kirki-generic"]=wp.customize.kirkiDynamicControl.extend({initKirkiControl:function(i){let e=i??this,c=e.params;e.container.find("input, textarea").on("change input",function(){let i=jQuery(this).val();"kirki-generic"===c.type&&c.choices&&"number"===c.choices.type&&(c.choices.min=parseFloat(c.choices.min),c.choices.max=parseFloat(c.choices.max),i<c.choices.min?i=c.choices.min:i>c.choices.max&&(i=c.choices.max)),e.setting.set(i)})}});
-//# sourceMappingURL=control.js.map
