@@ -2,7 +2,12 @@
 get_header();
 
 // 获取组件顺序数据
-$component_order = iro_opt('homepage_components',[]) ? iro_opt('homepage_components',[]) : array();
+$component_order = iro_opt('homepage_components', []);
+if (!is_array($component_order)) {
+    $component_order = [];
+}
+$paged = max(1, (int) get_query_var('paged'));
+$has_sticky_on_first_page = ($paged === 1 && !empty(array_filter((array) get_option('sticky_posts'))));
 
 // 按顺序动态渲染组件
 foreach ($component_order as $component) {
@@ -43,7 +48,7 @@ foreach ($component_order as $component) {
                         <?php echo esc_html(iro_opt('post_area_title', '文章列表')); ?>
                     </h1>
 
-                    <?php if (have_posts()) : ?>
+                    <?php if (have_posts() || $has_sticky_on_first_page) : ?>
                         <?php if (is_home() && !is_front_page()) : ?>
                             <header class="archive-header">
                                 <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>

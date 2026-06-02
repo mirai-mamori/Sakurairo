@@ -336,6 +336,45 @@ msgstr "推荐给你"
 msgid "Load Time %.3f seconds | %d Query | RAM Usage %.2f MB "
 msgstr "加载耗时 %.3f 秒 | 查询 %d 次 | 内存使用 %.2f MB "
 
+#: footer.php:45
+msgid ""
+"When you open a page, the site sends periodic heartbeats via REST API and "
+"returns the current number of visitors online across the site (logged-in "
+"users and guests). Updates use short polling or SSE—not a standalone "
+"WebSocket server."
+msgstr ""
+"打开页面后会通过 REST 接口定时发送心跳，服务器返回当前全站正在浏览的人数（含登录用户与访客）。"
+"数字通过短轮询或 SSE 更新，无需独立 WebSocket 服务。"
+
+#: footer.php:58
+#, php-format
+msgid "Currently viewed by %s people"
+msgstr "正被 %s 人浏览"
+
+#: footer.php:62
+msgid "How does this work?"
+msgstr "这是如何实现的？"
+
+#: footer.php:64
+msgid "How is this implemented?"
+msgstr "这是如何实现的？"
+
+#: footer.php:67
+msgid "Connection status:"
+msgstr "当前连接状态："
+
+#: footer.php:68
+msgid "Connecting…"
+msgstr "连接中…"
+
+#: inc/swicher.php:106
+msgid "Connected"
+msgstr "已连接"
+
+#: inc/swicher.php:107
+msgid "Disconnected"
+msgstr "已断开"
+
 #: footer.php:68
 msgid "Go to top"
 msgstr "回到顶部"

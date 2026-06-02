@@ -34,6 +34,36 @@ $reception_background = iro_opt('reception_background');
                 ); ?>
               </p>
           <?php endif; ?>
+          <?php if (iro_opt('footer_online_count')): ?>
+            <?php
+            $presence_help = trim((string) iro_opt('footer_online_count_help', ''));
+            if ($presence_help === '') {
+              $presence_help = '打开页面后会自动建立连接，连接成功后服务器会推送当前全站正在浏览的人数（含登录用户与访客）。同时也可通过短轮询或 SSE 实时更新，无需独立 WebSocket 服务。';
+            }
+            ?>
+            <div class="footer-online-count" id="footer-online-count">
+              <span class="presence-dot" data-status="connecting" aria-hidden="true"></span>
+              <span class="presence-text">
+                <?php
+                echo wp_kses(
+                  sprintf('正被 %s 人浏览', '<span class="count">—</span>'),
+                  array('span' => array('class' => true))
+                );
+                ?>
+              </span>
+              <span class="presence-help-wrap">
+                <button type="button" class="presence-help" aria-describedby="footer-presence-help-panel" title="这是如何实现的？">?</button>
+                <div id="footer-presence-help-panel" class="presence-help-panel" role="tooltip">
+                  <strong>这是如何实现的？</strong>
+                  <div class="presence-help-body"><?php echo wp_kses_post(wpautop($presence_help)); ?></div>
+                  <div class="presence-socket-status">
+                    当前连接状态：
+                    <span class="presence-connection-label" data-status="connecting">连接中…</span>
+                  </div>
+                </div>
+              </span>
+            </div>
+          <?php endif; ?>
           
           <?php if (iro_opt('footer_upyun', 'true')): ?>
             <p class="cdn-provider">

@@ -451,6 +451,26 @@ add_action('save_post', 'save_custom_meta_box');
 // 载入区块编辑器修改
 include_once('inc/blocks/iro_blocks.php');
 
+/**
+ * 批量预热文章 meta / 分类缓存，减少列表页 N+1 查询。
+ *
+ * @param WP_Post[] $posts
+ */
+function sakura_prime_post_caches($posts) {
+    if (empty($posts)) {
+        return;
+    }
+    $ids = wp_list_pluck($posts, 'ID');
+    update_postmeta_cache($ids);
+    $by_type = [];
+    foreach ($posts as $post) {
+        $by_type[$post->post_type][] = (int) $post->ID;
+    }
+    foreach ($by_type as $type => $type_ids) {
+        update_object_term_cache($type_ids, $type);
+    }
+}
+
 //主查询逻辑，类型只能多不能少，主查询通过后模版页查询才能干扰拓展
 function customize_query_functions($query) {
     //只影响前端
@@ -463,6 +483,15 @@ function customize_query_functions($query) {
         } elseif (is_archive() || is_category() || is_author()) {
             // 保持其他页面的原有逻辑
             $query->set('post_type', array('post', 'shuoshuo'));
+        }
+
+        // 首页/作者页列表由 content-thumb 先输出置顶，主查询只负责非置顶分页
+        if ($query->is_home() || $query->is_author()) {
+            $query->set('ignore_sticky_posts', 1);
+            $sticky_posts = array_filter(array_map('intval', (array) get_option('sticky_posts')));
+            if (!empty($sticky_posts)) {
+                $query->set('post__not_in', $sticky_posts);
+            }
         }
 
         // 在搜索页面中排除分类页和特定类别
@@ -561,14 +590,25 @@ function sakura_scripts()
     wp_enqueue_script('polyfills', $core_lib_basepath . '/js/polyfill.js', array(), IRO_VERSION, true);
     // defer加载
     add_filter('script_loader_tag', function($tag, $handle) {
-        if ('polyfills' === $handle) {
-            return str_replace('src', 'defer src', $tag);
+        $defer_handles = array('polyfills', 'app', 'sakurairo-presence');
+        if (in_array($handle, $defer_handles, true)) {
+            return str_replace(' src', ' defer src', $tag);
         }
         return $tag;
     }, 10, 2);
     
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
+    }
+
+    if (iro_opt('footer_online_count') && !is_404()) {
+        wp_enqueue_script(
+            'sakurairo-presence',
+            $core_lib_basepath . '/js/presence.js',
+            array('app'),
+            IRO_VERSION,
+            true
+        );
     }
     
     //前端脚本本地化

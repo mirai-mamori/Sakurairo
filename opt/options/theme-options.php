@@ -862,6 +862,49 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'footer_online_count',
+        'type' => 'switcher',
+        'title' => __('页尾实时在线人数','sakurairo_csf'),
+        'label' => __('在页尾显示全站实时在线访客数（含登录用户和访客），通过 REST 心跳机制实现。','sakurairo_csf'),
+        'default' => false
+      ),
+
+      array(
+        'id' => 'footer_online_count_interval',
+        'type' => 'number',
+        'title' => __('在线人数更新间隔（秒）','sakurairo_csf'),
+        'desc' => __('浏览器多久向服务器发起一次心跳检测。最小 3，最大 60。','sakurairo_csf'),
+        'default' => 5,
+        'dependency' => array( 'footer_online_count', '==', 'true', '', 'true' ),
+      ),
+
+      array(
+        'id' => 'footer_online_count_ttl',
+        'type' => 'number',
+        'title' => __('在线会话超时时间（秒）','sakurairo_csf'),
+        'desc' => __('在此时间内无心跳的访客将不再计入在线人数。范围 60 至 120。','sakurairo_csf'),
+        'default' => 90,
+        'dependency' => array( 'footer_online_count', '==', 'true', '', 'true' ),
+      ),
+
+      array(
+        'id' => 'footer_online_count_sse',
+        'type' => 'switcher',
+        'title' => __('使用 SSE 推送','sakurairo_csf'),
+        'label' => __('使用服务器发送事件（SSE）代替纯轮询。要求服务器允许较长的 PHP 连接时间。','sakurairo_csf'),
+        'default' => false,
+        'dependency' => array( 'footer_online_count', '==', 'true', '', 'true' ),
+      ),
+
+      array(
+        'id' => 'footer_online_count_help',
+        'type' => 'textarea',
+        'title' => __('在线人数帮助文本','sakurairo_csf'),
+        'desc' => __('自定义"？"按钮的提示文本。留空使用默认文本。允许使用 HTML。','sakurairo_csf'),
+        'dependency' => array( 'footer_online_count', '==', 'true', '', 'true' ),
+      ),
+
+      array(
         'id' => 'footer_upyun',
         'type' => 'switcher',
         'title' => __('Footer Upyun League Logo','sakurairo_csf'),

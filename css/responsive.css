@@ -623,6 +623,24 @@
     padding: 0 15px;
   }
 
+  .presence-help-panel {
+    left: auto;
+    right: 0;
+    transform: translateX(0) translateY(8px);
+    max-width: calc(100vw - 30px);
+  }
+
+  .presence-help-wrap:hover .presence-help-panel,
+  .presence-help-wrap:focus-within .presence-help-panel {
+    transform: translateX(0) translateY(0);
+  }
+
+  .presence-help-panel::after {
+    left: auto;
+    right: 12px;
+    transform: translateX(0) rotate(45deg);
+  }
+
   .comment-respond input[type=submit] {
     width: 40%;
     max-width: 140px;

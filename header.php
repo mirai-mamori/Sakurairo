@@ -62,7 +62,6 @@ header('X-Frame-Options: SAMEORIGIN');
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 
     <!-- 优化资源加载 -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
     <link rel="preconnect" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>">
     <link rel="preconnect" href="https://s4.zstatic.net" crossorigin>
 
@@ -118,25 +117,24 @@ header('X-Frame-Options: SAMEORIGIN');
     <?php endif;
     } ?>
 
+    <?php if (is_singular()) : ?>
     <!--WordPress 脚注仅在本页内跳转-->
-    <script  type="text/javascript" defer>
+    <script type="text/javascript" defer>
     document.addEventListener('DOMContentLoaded', function () {
-        // Ensure all footnote links jump within the same page
-        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        document.querySelectorAll('.entry-content a[href^="#"]').forEach(function (link) {
             link.addEventListener('click', function (event) {
-                // Prevent default behavior if unnecessary
-                event.preventDefault();
-                // Find the target element
                 const targetId = this.getAttribute('href').substring(1);
+                if (!targetId) return;
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
-                // Scroll to the target element
-                targetElement.scrollIntoView({ behavior: 'smooth' });
+                    event.preventDefault();
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
     });
-	</script>
+    </script>
+    <?php endif; ?>
     <script src="<?= $core_lib_basepath . '/js/nav.js' ?>" defer></script>
 </head>
 

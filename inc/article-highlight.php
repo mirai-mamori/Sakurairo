@@ -278,6 +278,11 @@ function get_post_theme_color($post_id) {
         return $meta['theme_color'];
     }
 
+    // 列表页不在服务端同步取色（避免首页批量下载/分析图片）；由前端 lazy 计算或 save_post 预热
+    if (!is_admin() && !wp_doing_ajax() && (is_home() || is_archive() || is_search())) {
+        return 'false';
+    }
+
     // 没有则获取
     $thumbnail_id = get_post_thumbnail_id($post_id);
     $image_url = $thumbnail_id ? wp_get_attachment_url($thumbnail_id) : '';

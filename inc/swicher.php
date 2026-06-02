@@ -100,6 +100,15 @@ function font_end_js_control()
         'missing_images' => iro_opt("missing_images_default",""),
         'dev_mode' => iro_opt('dev_mode',false) == true ? true : false ,
         'is_admin' => check(current_user_can('manage_options')),
+        'presence_enabled' => check(iro_opt('footer_online_count')),
+        'presence_interval' => max(3, min(60, (int) iro_opt('footer_online_count_interval', 5))),
+        'presence_use_sse' => check(iro_opt('footer_online_count_sse')),
+        'presence_ttl' => max(60, min(120, (int) iro_opt('footer_online_count_ttl', 90))),
+        'presence_labels' => array(
+            'connected' => '已连接',
+            'connecting' => '连接中…',
+            'error' => '已断开',
+        ),
     ];
     // 判空 empty 如果变量不存在也会返回true
     if (iro_opt('random_graphs_options') == 'external_api') {

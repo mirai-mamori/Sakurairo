@@ -43,7 +43,7 @@ get_header();
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
-        <?php if (have_posts()) : ?>
+        <?php if (have_posts() || (max(1, (int) get_query_var('paged')) === 1 && !empty(array_filter((array) get_option('sticky_posts'))))) : ?>
             <?php get_template_part('tpl/content', 'thumb'); ?>
             <div class="clearer"></div>
         <?php else : ?>

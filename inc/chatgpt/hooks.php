@@ -8,6 +8,7 @@ namespace IROChatGPT {
     define("DEFAULT_INIT_PROMPT", "请以作者的身份，以激发好奇吸引阅读为目的，结合文章核心观点来提取的文章中最吸引人的内容，为以下文章编写一个用词精炼简短、90字以内、与文章语言一致的引言。");
     define("DEFAULT_MODEL", "gpt-4o-mini");
 
+    if (!function_exists(__NAMESPACE__ . '\\generate_post_summary')) {
     function generate_post_summary(WP_Post $post)
     {
         $exclude_ids = iro_opt('chatgpt_exclude_ids', '');
@@ -23,8 +24,10 @@ namespace IROChatGPT {
             return false;
         }
     }
+    }
 
 
+    if (!function_exists(__NAMESPACE__ . '\\apply_chatgpt_hook')) {
     function apply_chatgpt_hook()
     {
         if (iro_opt('chatgpt_auto_article_summarize')) {
@@ -70,7 +73,9 @@ namespace IROChatGPT {
         });
         
     }
+    }
 
+    if (!function_exists(__NAMESPACE__ . '\\summon_article_excerpt')) {
     function summon_article_excerpt(WP_Post $post)
     {
         $chatgpt_endpoint = iro_opt('chatgpt_endpoint');
@@ -140,13 +145,15 @@ namespace IROChatGPT {
 
         return $decoded_chat->choices[0]->message->content;
     }
+    }
 
 
-    add_filter('the_content', __NAMESPACE__ . '\display_term_annotations', 9);
+    add_filter('the_content', __NAMESPACE__ . '\\display_term_annotations', 9);
 
     /**
      * 生成文章的复杂名词注释
      */
+    if (!function_exists(__NAMESPACE__ . '\\generate_post_annotations')) {
     function generate_post_annotations($post)
     {
         // 获取API密钥
@@ -176,10 +183,12 @@ namespace IROChatGPT {
             return false;
         }
     }
+    }
 
     /**
      * 调用ChatGPT API生成复杂名词注释
      */
+    if (!function_exists(__NAMESPACE__ . '\\call_chatgpt_for_annotations')) {
     function call_chatgpt_for_annotations($content)
     {
         // 使用正确的选项名获取API配置
@@ -304,10 +313,12 @@ namespace IROChatGPT {
 
         return $annotations;
     }
+    }
 
     /**
      * 在前端显示文章中的复杂名词注释
      */
+    if (!function_exists(__NAMESPACE__ . '\\display_term_annotations')) {
     function display_term_annotations($original_content)
     { // Rename param for clarity
         global $post;
@@ -554,5 +565,6 @@ namespace IROChatGPT {
             error_log("IROChatGPT 错误: " . $e->getMessage() . " in file " . $e->getFile() . " on line " . $e->getLine());
             return $original_content; // Return original on error
         }
+    }
     }
 }
