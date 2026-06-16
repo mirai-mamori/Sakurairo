@@ -209,6 +209,7 @@ add_action('pre_comment_on_post', 'comment_captcha');
 // 评论提交
 if(!function_exists('siren_ajax_comment_callback')) {
     function siren_ajax_comment_callback(){
+      check_ajax_referer('sakurairo_ajax_comment', 'sakurairo_comment_nonce');
       $comment = wp_handle_comment_submission( wp_unslash( $_POST ) );
       if( is_wp_error( $comment ) ) {
         $data = $comment->get_error_data();
@@ -291,7 +292,7 @@ function the_headPattern(){
   if(!is_home() && $full_image_url) : ?>
   <div class="pattern-center-blank"></div>
   <div class="pattern-center <?php if(is_single()){echo $center;} ?>">
-    <div class="pattern-attachment bg lazyload" style="background-image: url(<?php echo iro_opt('load_out_svg'); ?>)" data-src="<?php echo $full_image_url; ?>"> </div>
+    <div class="pattern-attachment bg lazyload" style="background-image: url(<?php echo esc_url(iro_opt('load_out_svg')); ?>)" data-src="<?php echo esc_url($full_image_url); ?>"> </div>
     <header class="pattern-header <?php if(is_single()){echo $header;} ?>"><?php echo $t; ?></header>
   </div>
   <?php else :

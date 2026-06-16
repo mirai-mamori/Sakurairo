@@ -32,7 +32,7 @@
 				$postid = $post->ID;
 				$title = $post->post_title;
 				?>
-				<li><a href="<?php echo get_permalink($postid); ?>" title="<?php echo $title ?>"><?php echo $title ?></a> </li>
+				<li><a href="<?php echo esc_url(get_permalink($postid)); ?>" title="<?php echo esc_attr($title); ?>"><?php echo esc_html($title); ?></a> </li>
 				<?php } ?>
 			</ul>
 			</div>

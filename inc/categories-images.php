@@ -145,8 +145,9 @@ function z_script() {
 add_action('edit_term','z_save_taxonomy_image');
 add_action('create_term','z_save_taxonomy_image');
 function z_save_taxonomy_image($term_id) {
-    if(isset($_POST['taxonomy_image']))
-        update_option('z_taxonomy_image'.$term_id, $_POST['taxonomy_image'], NULL);
+    if (isset($_POST['taxonomy_image']) && current_user_can('manage_categories')) {
+        update_option('z_taxonomy_image'.$term_id, sanitize_text_field(wp_unslash($_POST['taxonomy_image'])), NULL);
+    }
 }
 
 // 附件地址

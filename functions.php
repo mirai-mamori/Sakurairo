@@ -764,7 +764,10 @@ function get_author_class($comment_author_email, $user_id)
     global $wpdb;
     $author_count = count(
         $wpdb->get_results(
-            "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email = '$comment_author_email' "
+            $wpdb->prepare(
+                "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email = %s",
+                $comment_author_email
+            )
         )
     );
     # 等级梯度

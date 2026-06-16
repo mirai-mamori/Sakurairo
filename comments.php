@@ -70,7 +70,7 @@ function get_smilies_panel() {
 <?php if (comments_open()) : ?>
 <section id="comments" class="comments">
     <!-- 评论区域标题及折叠通知 -->
-    <div class="commentwrap comments-hidden<?php echo iro_opt('comment_area') == 'fold' ? ' comments-fold' : ''; ?>">
+    <div class="commentwrap comments-hidden<?php echo esc_attr(iro_opt('comment_area')) == 'fold' ? ' comments-fold' : ''; ?>">
             <div class="notification">
                 <i class="fa-regular fa-comment"></i><?php _e('view comments', 'sakurairo'); /*查看评论*/?> -
                 <span class="noticom">
@@ -189,6 +189,7 @@ function get_smilies_panel() {
                                                 <input type="checkbox" id="enable_markdown" name="enable_markdown">
                                                 <i class="fa-brands fa-markdown fa-sm"></i>
                                             </label>
+                                            ' . wp_nonce_field('sakurairo_ajax_comment', 'sakurairo_comment_nonce', true, false) . '
                                         </div>',
                 'comment_notes_after'  => '',
                 'comment_notes_before' => '',
