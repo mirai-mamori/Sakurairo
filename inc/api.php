@@ -352,10 +352,19 @@ function get_qq_info(WP_REST_Request $request)
  */
 function get_qq_avatar()
 {
-    $encrypted = $_GET["qq"];
+    $encrypted = isset($_GET["qq"]) ? sanitize_text_field(wp_unslash($_GET["qq"])) : '';
+    if (empty($encrypted)) {
+        return new WP_REST_Response(array('status' => 400, 'message' => 'Missing qq parameter'), 400);
+    }
     $imgurl = QQ::get_qq_avatar($encrypted);
+    if (!$imgurl) {
+        return new WP_REST_Response(array('status' => 404, 'message' => 'Avatar not found'), 404);
+    }
     if (iro_opt('qq_avatar_link') == 'type_2') {
-        $imgdata = file_get_contents($imgurl);
+        $imgdata = wp_remote_retrieve_body(wp_remote_get(esc_url_raw($imgurl)));
+        if (empty($imgdata)) {
+            return new WP_REST_Response(array('status' => 500, 'message' => 'Failed to fetch avatar'), 500);
+        }
         $response = new WP_REST_Response();
         $response->set_headers(
             array(
@@ -363,11 +372,11 @@ function get_qq_avatar()
                 'Cache-Control' => 'max-age=86400'
             )
         );
-        echo $imgdata;
+        $response->set_data($imgdata);
     } else {
         $response = new WP_REST_Response();
-        $response->set_status(301);
-        $response->header('Location', $imgurl);
+        $response->set_status(302);
+        $response->header('Location', esc_url_raw($imgurl));
     }
     return $response;
 }
@@ -400,7 +409,7 @@ function bgm_bilibili()
         );
         $response = new WP_REST_Response($output, 403);
     } else {
-        $page = $_GET["page"] ?: 2;
+        $page = isset($_GET["page"]) ? intval($_GET["page"]) : 2;
         $bgm = new \Sakura\API\Bilibili();
         $html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->get_bgm_items($page));
         $response = new WP_REST_Response($html, 200);
@@ -419,7 +428,7 @@ function bfv_bilibili()
         );
         $response = new WP_REST_Response($output, 403);
     } else {
-        $page = $_GET["page"] ?: 2;
+        $page = isset($_GET["page"]) ? intval($_GET["page"]) : 2;
         $bgm = new \Sakura\API\Bilibili();
         $html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->get_bfv_items($page));
         $response = new WP_REST_Response($html, 200);
@@ -572,7 +581,11 @@ function meting_aplayer()
     $wpnonce = isset($_GET['_wpnonce']) ? sanitize_text_field(wp_unslash($_GET['_wpnonce'])) : null;
     $meting_nonce = isset($_GET['meting_nonce']) ? sanitize_text_field(wp_unslash($_GET['meting_nonce'])) : null;
 
-    if (($wpnonce && !wp_verify_nonce($wpnonce, 'wp_rest')) || ($meting_nonce && !wp_verify_nonce($meting_nonce, $type . '#:' . $id))) {
+    // 必须提供至少一个有效 nonce，否则拒绝
+    $wpnonce_valid = $wpnonce && wp_verify_nonce($wpnonce, 'wp_rest');
+    $meting_nonce_valid = $meting_nonce && wp_verify_nonce($meting_nonce, $type . '#:' . $id);
+
+    if (!$wpnonce_valid && !$meting_nonce_valid) {
         $output = array(
             'status' => 403,
             'success' => false,
