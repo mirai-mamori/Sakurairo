@@ -4106,18 +4106,17 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
 // 获取访客 IP
 function get_the_user_ip()
 {
-    // if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-    //     //check ip from share internet
-    //     $ip = $_SERVER['HTTP_CLIENT_IP'];
-    // } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-    //     //to check ip is pass from proxy
-    //     $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    // } else {
-    //     $ip = $_SERVER['REMOTE_ADDR'];
-    // }
-    // 简略版
-    // $ip = $_SERVER['HTTP_CLIENT_IP'] ?: ($_SERVER['HTTP_X_FORWARDED_FOR'] ?: $_SERVER['REMOTE_ADDR']);
-    $ip = $_SERVER['HTTP_CLIENT_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
+    // CDN/反向代理场景：从 X-Forwarded-For 取最右侧（最接近源站）的 IP
+    // CDN 会将真实访客 IP 追加到链尾，取最右侧可抵抗在链首插入伪造 IP 的攻击
+    // 不信任 HTTP_CLIENT_IP（非标准头，纯伪造向量）
+    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $forwarded_chain = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+        $ip = trim(end($forwarded_chain));
+    } else {
+        // 直连场景：使用 REMOTE_ADDR（最可信）
+        $ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
+    }
+
     return apply_filters('wpb_get_ip', $ip);
 }
 
