@@ -249,21 +249,22 @@ function upload_image(WP_REST_Request $request)
         return $result;
     }
     $images = new \Sakura\API\Images();
+    $files = $request->get_file_params();
     switch (iro_opt("img_upload_api")) {
         case 'imgur':
-            $image = file_get_contents($_FILES["cmt_img_file"]["tmp_name"]);
+            $image = file_get_contents($files["cmt_img_file"]["tmp_name"]);
             $API_Request = $images->Imgur_API($image);
             break;
         case 'smms':
-            $image = $_FILES;
+            $image = $files;
             $API_Request = $images->SMMS_API($image);
             break;
         case 'chevereto':
-            $image = file_get_contents($_FILES["cmt_img_file"]["tmp_name"]);
+            $image = file_get_contents($files["cmt_img_file"]["tmp_name"]);
             $API_Request = $images->Chevereto_API($image);
             break;
         case 'lsky':
-            $image = $_FILES;
+            $image = $files;
             $API_Request = $images->LSKY_API($image);
             break;
     }
@@ -599,7 +600,7 @@ function meting_aplayer(WP_REST_Request $request)
         } else {
             $response = new WP_REST_Response();
             $response->set_status(301);
-            $response->header('Location', $data);
+            $response->header('Location', esc_url_raw($data));
         }
     }
     return $response;

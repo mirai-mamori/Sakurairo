@@ -189,8 +189,8 @@ class gallery
     }
 
     //获取图片
-    public function get_image() {
-        $imgParam = isset($_GET['img']) ? sanitize_text_field($_GET['img']) : '';
+    public function get_image(\WP_REST_Request $request) {
+        $imgParam = sanitize_text_field($request->get_param('img')) ?: '';
         $imageList = json_decode(file_get_contents($this->image_list), true);
 
         if (empty($imageList)) {

@@ -37,7 +37,7 @@ get_header(); ?>
     }
 
     // 获取当前查询参数中的content_type内容
-    $content_types = isset($_GET['content_type']) ? explode(',', $_GET['content_type']) : $default_checked;
+    $content_types = isset($_GET['content_type']) ? array_map('sanitize_key', explode(',', wp_unslash($_GET['content_type']))) : $default_checked;
 
     // 搜索页标题
     if (!iro_opt('patternimg') || !get_random_bg_url()) : ?>

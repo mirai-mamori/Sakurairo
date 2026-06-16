@@ -231,11 +231,12 @@ function get_image_theme_color($input) {
                  . (isset($parsed_url['fragment']) ? '#' . $parsed_url['fragment'] : '');
 
         error_log('编码结果为' . $input);
-        if (function_exists('wp_get_remote_content')) {
-            $image_data = wp_get_remote_content($input);
-        } else {
-            $image_data = file_get_contents($input);
+        $remote_response = wp_remote_get(esc_url_raw($input), array('timeout' => 10));
+        if (is_wp_error($remote_response) || wp_remote_retrieve_response_code($remote_response) !== 200) {
+            error_log('远程获取图片失败');
+            return false;
         }
+        $image_data = wp_remote_retrieve_body($remote_response);
     } else {
         if (file_exists($input)) {
             $image_data = file_get_contents($input);
