@@ -224,7 +224,7 @@ class gallery
 
             $random_image = wp_get_upload_dir()['baseurl'] . $random_image;
 
-            wp_redirect($random_image, 302);
+            wp_safe_redirect(esc_url_raw($random_image), 302);
             exit;
         } else {
             return $error;

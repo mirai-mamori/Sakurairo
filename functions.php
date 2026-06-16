@@ -1783,7 +1783,7 @@ function remove_dashboard()
             preg_match('#wp-admin/?(index.php)?$#', $_SERVER['REQUEST_URI']) &&
             ('index.php' != $menu[$page][2])
         ) {
-            wp_redirect(get_option('siteurl') . '/wp-admin/profile.php');
+            wp_safe_redirect(admin_url('profile.php'));
         }
     }
 }
@@ -5009,9 +5009,9 @@ function iro_action_operator()
                 WP_Filesystem();
                 global $wp_filesystem;
                 $wp_filesystem->delete(get_theme_root() . '/Sakurairo', true);
-                wp_redirect(admin_url(), 302); //重载theme_folder_check_on_admin_init流程
+                wp_safe_redirect(admin_url(), 302); //重载theme_folder_check_on_admin_init流程
             } else {
-                wp_redirect(admin_url(), 302);
+                wp_safe_redirect(admin_url(), 302);
                 return;
             }
     }

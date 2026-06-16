@@ -321,13 +321,13 @@ add_filter('manage_edit-link_category_sortable_columns', function($columns) {
 });
 
 add_action('created_link_category', function($term_id) {
-    if (isset($_POST['term_priority'])) {
+    if (isset($_POST['term_priority']) && current_user_can('manage_categories')) {
         update_term_meta($term_id, 'term_priority', intval($_POST['term_priority']));
     }
 });
 
 add_action('edited_link_category', function($term_id) {
-    if (isset($_POST['term_priority'])) {
+    if (isset($_POST['term_priority']) && current_user_can('manage_categories')) {
         update_term_meta($term_id, 'term_priority', intval($_POST['term_priority']));
     }
 });

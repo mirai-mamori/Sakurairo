@@ -330,8 +330,8 @@ function get_qq_info(WP_REST_Request $request)
             'success' => false,
             'message' => 'Unauthorized client.'
         );
-    } elseif ($_GET['qq']) {
-        $qq = $_GET['qq'];
+    } elseif (!empty($_GET['qq'])) {
+        $qq = sanitize_text_field(wp_unslash($_GET['qq']));
         $output = QQ::get_qq_info($qq);
     } else {
         $output = array(
