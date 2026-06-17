@@ -764,7 +764,10 @@ function get_author_class($comment_author_email, $user_id)
     global $wpdb;
     $author_count = count(
         $wpdb->get_results(
-            "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email = '$comment_author_email' "
+            $wpdb->prepare(
+                "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email = %s",
+                $comment_author_email
+            )
         )
     );
     # 等级梯度
@@ -1780,7 +1783,7 @@ function remove_dashboard()
             preg_match('#wp-admin/?(index.php)?$#', $_SERVER['REQUEST_URI']) &&
             ('index.php' != $menu[$page][2])
         ) {
-            wp_redirect(get_option('siteurl') . '/wp-admin/profile.php');
+            wp_safe_redirect(admin_url('profile.php'));
         }
     }
 }
@@ -2459,31 +2462,36 @@ function change_avatar($avatar)
     global $comment, $sakura_privkey;
     if ($comment && get_comment_meta($comment->comment_ID, 'new_field_qq', true)) {
         $qq_number = get_comment_meta($comment->comment_ID, 'new_field_qq', true);
+        $qq_number = sanitize_text_field($qq_number);
         if (iro_opt('qq_avatar_link') == 'off') {
-            return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+            return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . esc_attr($qq_number) . '&spec=100" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
         }
         if (iro_opt('qq_avatar_link') == 'type_3') {
-            $qqavatar = file_get_contents('http://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin=' . $qq_number);
+            $qqavatar = wp_remote_retrieve_body(wp_remote_get('https://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin=' . urlencode($qq_number)));
             preg_match('/:\"([^\"]*)\"/i', $qqavatar, $matches);
-            return '<img src="' . $matches[1] . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+            $avatar_url = isset($matches[1]) ? esc_url($matches[1]) : '';
+            if (empty($avatar_url)) {
+                return $avatar;
+            }
+            return '<img src="' . $avatar_url . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
         }
-        
+
         // Ensure $sakura_privkey is defined and not null
         if (isset($sakura_privkey) && !is_null($sakura_privkey)) {
             // 生成一个合适长度的初始化向量
             $iv_length = openssl_cipher_iv_length('aes-128-cbc');
             $iv = openssl_random_pseudo_bytes($iv_length);
-            
+
             // 加密数据
             $encrypted = openssl_encrypt($qq_number, 'aes-128-cbc', $sakura_privkey, 0, $iv);
-            
+
             // 将初始化向量和加密数据一起编码
             $encrypted = urlencode(base64_encode($iv . $encrypted));
-            
-            return '<img src="' . rest_url("sakura/v1/qqinfo/avatar") . '?qq=' . $encrypted . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+
+            return '<img src="' . esc_url(rest_url("sakura/v1/qqinfo/avatar") . '?qq=' . $encrypted) . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
         } else {
             // Handle the case where $sakura_privkey is not set or is null
-            return '<img src="default_avatar_url" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+            return $avatar;
         }
     }
     return $avatar;
@@ -4098,18 +4106,19 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
 // 获取访客 IP
 function get_the_user_ip()
 {
-    // if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-    //     //check ip from share internet
-    //     $ip = $_SERVER['HTTP_CLIENT_IP'];
-    // } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-    //     //to check ip is pass from proxy
-    //     $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    // } else {
-    //     $ip = $_SERVER['REMOTE_ADDR'];
-    // }
-    // 简略版
-    // $ip = $_SERVER['HTTP_CLIENT_IP'] ?: ($_SERVER['HTTP_X_FORWARDED_FOR'] ?: $_SERVER['REMOTE_ADDR']);
-    $ip = $_SERVER['HTTP_CLIENT_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
+    // CDN/反向代理场景：从 X-Forwarded-For 取最右侧（最接近源站）的 IP
+    // CDN 会将真实访客 IP 追加到链尾，取最右侧可抵抗在链首插入伪造 IP 的攻击
+    // 不信任 HTTP_CLIENT_IP（非标准头，纯伪造向量）
+    $ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
+    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $forwarded_chain = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+        $candidate = trim(end($forwarded_chain));
+        // 验证为合法 IPv4/IPv6，否则回退到 REMOTE_ADDR
+        if (filter_var($candidate, FILTER_VALIDATE_IP)) {
+            $ip = $candidate;
+        }
+    }
+
     return apply_filters('wpb_get_ip', $ip);
 }
 
@@ -5006,9 +5015,9 @@ function iro_action_operator()
                 WP_Filesystem();
                 global $wp_filesystem;
                 $wp_filesystem->delete(get_theme_root() . '/Sakurairo', true);
-                wp_redirect(admin_url(), 302); //重载theme_folder_check_on_admin_init流程
+                wp_safe_redirect(admin_url(), 302); //重载theme_folder_check_on_admin_init流程
             } else {
-                wp_redirect(admin_url(), 302);
+                wp_safe_redirect(admin_url(), 302);
                 return;
             }
     }

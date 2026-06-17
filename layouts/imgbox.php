@@ -60,15 +60,15 @@ $print_social_zone = function() use ($all_opt): void {
         foreach ($social_icons_with_inner as $icon_data):
             ob_start(); ?>
             <li class="socialIconWithInner">
-                <a href="javascript:void(0);" title="<?= strtolower($icon_data['icon']) ?>" onclick="<?= $icon_data['action'] ?>">
+                <a href="javascript:void(0);" title="<?= esc_attr(strtolower($icon_data['icon'])) ?>" onclick="<?= esc_attr($icon_data['action']) ?>">
                     <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont'): ?>
                         <i class="remix_social icon-<?= esc_attr($icon_data['icon']) ?>"></i>
                     <?php else: ?>
-                        <img loading="lazy" src="<?= iro_opt('vision_resource_basepath') . iro_opt('social_display_icon') . '/' . esc_attr($icon_data['icon']) . '.webp' ?>" />
+                        <img loading="lazy" src="<?= esc_url(iro_opt('vision_resource_basepath') . iro_opt('social_display_icon') . '/' . $icon_data['icon'] . '.webp') ?>" />
                     <?php endif; ?>
                 </a>
             <div class="inner">
-                <?= $icon_data['inner'] ?>
+                <?= wp_kses_post($icon_data['inner']) ?>
             </div>
             </li>
         <?php
@@ -82,11 +82,11 @@ $print_social_zone = function() use ($all_opt): void {
             $img_url = $value['img'] ?? (iro_opt('vision_resource_basepath').iro_opt('social_display_icon').'/' . ($value['icon'] ?? $key) . '.webp');
             $title = $value['title'] ?? $key;
             ob_start(); ?>
-            <li><a href="<?= $value['link']; ?>" target="_blank" class="social-<?= $value['class'] ?? $key ?>" title="<?= $title ?>">
+            <li><a href="<?= esc_url($value['link']); ?>" target="_blank" class="social-<?= esc_attr($value['class'] ?? $key) ?>" title="<?= esc_attr($title) ?>">
                 <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont'): ?>
                     <i class="remix_social icon-<?= $key ?>"></i>
                 <?php else: ?>
-                    <img alt="<?= $title ?>" loading="lazy" src="<?= $img_url ?>" />
+                    <img alt="<?= esc_attr($title) ?>" loading="lazy" src="<?= esc_url($img_url) ?>" />
                 <?php endif; ?>
             </a></li>
         <?php
@@ -101,7 +101,7 @@ $print_social_zone = function() use ($all_opt): void {
             <?php if (iro_opt('social_display_icon') === 'display_icon/remix_iconfont'): ?>
                 <i class="remix_social icon-mail"></i>
             <?php else: ?>
-                <img loading="lazy" alt="E-mail" src="<?php echo iro_opt('vision_resource_basepath').iro_opt('social_display_icon').'/' . 'mail.webp'; ?>" />
+                <img loading="lazy" alt="E-mail" src="<?php echo esc_url(iro_opt('vision_resource_basepath').iro_opt('social_display_icon').'/' . 'mail.webp'); ?>" />
             <?php endif; ?>
         </a></li>
     <?php
@@ -334,7 +334,7 @@ $print_social_zone = function() use ($all_opt): void {
                     <?= iro_opt('signature_typing_json', ''); ?>
                     </script>
                     <?php endif; ?>
-                    <p><?php echo iro_opt('signature_text', 'Hi, Mashiro?'); ?></p>
+                    <p><?php echo esc_html(iro_opt('signature_text', 'Hi, Mashiro?')); ?></p>
                     <?php if (iro_opt('infor_bar_style') === 'v2') : ?>
                         <div class="top-social_v2">
                             <?php $print_social_zone(); ?>

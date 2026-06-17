@@ -135,7 +135,7 @@ function sakurairo_cache_setting_update() {
         set_transient('steam_cache_duration', $steam_duration, DAY_IN_SECONDS * 30);
 
         // 重定向
-        wp_redirect(add_query_arg(['page' => 'sakurairo_cache_setting', 'updated' => 'true'], admin_url('admin.php')));
+        wp_safe_redirect(esc_url_raw(add_query_arg(['page' => 'sakurairo_cache_setting', 'updated' => 'true'], admin_url('admin.php'))));
         exit;
     }
 }

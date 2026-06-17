@@ -9,28 +9,28 @@
 header("Content-type: text/css; charset: UTF-8");
 #header('Access-Control-Allow-Origin: *');
 
+// 此文件作为独立 CSS 直接输出，未经 WP 引导，不可使用 WP 函数
 function _get($str){
-    $val = !empty($_GET[$str]) ? $_GET[$str] : null;
+    // 原生 PHP 净化：去除斜杠与 HTML 标签
+    $val = !empty($_GET[$str]) ? strip_tags(stripslashes($_GET[$str])) : null;
     return $val;
 }
 
-if(_get('color_1')==NULL) {
-	$color_1="#000";
-} else {
-	$color_1="#"._get('color_1');
+/**
+ * Validate and sanitize a hex color value.
+ */
+function _sanitize_hex_color($color, $default = '#000') {
+    if (empty($color)) return $default;
+    $color = ltrim($color, '#');
+    if (!preg_match('/^[a-fA-F0-9]{3}$|^[a-fA-F0-9]{6}$/', $color)) {
+        return $default;
+    }
+    return '#' . $color;
 }
 
-if(_get('color_2')==NULL) {
-	$color_2="#000";
-} else {
-	$color_2="#"._get('color_2');
-}
-
-if(_get('color_3')==NULL) {
-	$color_3="#ff6496";
-} else {
-	$color_3="#"._get('color_3');
-}
+$color_1 = _sanitize_hex_color(_get('color_1'), '#000');
+$color_2 = _sanitize_hex_color(_get('color_2'), '#000');
+$color_3 = _sanitize_hex_color(_get('color_3'), '#ff6496');
 
 // Convert hex to rgba with higher transparency values
 function hex2rgba($color, $opacity = 1) {
@@ -80,7 +80,15 @@ $color_3_40 = hex2rgba($color_3, 0.40);
 if(_get('rules')==NULL) {
 	$rules="";
 } else {
-	$rules=urldecode(_get('rules'));
+	// 使用原生 strip_tags（此文件无 WP 引导）
+	$rules = strip_tags(urldecode(_get('rules')));
+	// Remove dangerous CSS functions and imports
+	$rules = preg_replace('/@import\s+url\s*\(/i', '/* blocked */', $rules);
+	$rules = preg_replace('/expression\s*\(/i', '/* blocked */', $rules);
+	$rules = preg_replace('/javascript\s*:/i', '/* blocked */', $rules);
+	$rules = preg_replace('/-moz-binding\s*:/i', '/* blocked */', $rules);
+	$rules = preg_replace('/behavior\s*:/i', '/* blocked */', $rules);
+	$rules = preg_replace('/url\s*\(\s*[\'"]?\s*data\s*:/i', '/* blocked */', $rules);
 }
 
 ?>

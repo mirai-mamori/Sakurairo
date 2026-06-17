@@ -343,7 +343,7 @@ if ($need_medals) {
 
 <div class="exhibition-area-container">
     <h1 class="fes-title"> 
-        <i class="<?php echo iro_opt('exhibition_area_icon', 'fa-solid fa-laptop'); ?>" aria-hidden="true"></i> <?php echo iro_opt('exhibition_area_title', '展示'); ?> 
+        <i class="<?php echo esc_attr(iro_opt('exhibition_area_icon', 'fa-solid fa-laptop')); ?>" aria-hidden="true"></i> <?php echo esc_html(iro_opt('exhibition_area_title', '展示')); ?>
     </h1>
       <!-- Bento布局容器 -->
        <div class="bento-grid">
@@ -364,10 +364,10 @@ if ($need_medals) {
                     case 'admin_online':
                         ?>
                         <div class="stat-capsule">
-                          <i class="<?php echo $square_cards[$component]['icon']; ?>"></i>
+                          <i class="<?php echo esc_attr($square_cards[$component]['icon']); ?>"></i>
                           <div class="capsule-content">
-                            <span class="capsule-label"><?php echo $square_cards[$component]['label']; ?></span>
-                            <span class="capsule-value"><?php echo $square_cards[$component]['value']; ?></span>
+                            <span class="capsule-label"><?php echo esc_html($square_cards[$component]['label']); ?></span>
+                            <span class="capsule-value"><?php echo esc_html($square_cards[$component]['value']); ?></span>
                           </div>
                         </div>
                         <?php
@@ -380,9 +380,9 @@ if ($need_medals) {
                         // 如果有对应徽章，就渲染徽章，否则渲染普通卡片
                         if (isset($medal_levels[$component])): 
                             $medal = $medal_levels[$component]; ?>
-                            <div class="stat-capsule medal-capsule <?php echo $medal['type']; ?>" 
-                                 data-medal-type="<?php echo $component; ?>"
-                                 data-medal-level="<?php echo $medal['type']; ?>"
+                            <div class="stat-capsule medal-capsule <?php echo esc_attr($medal['type']); ?>" 
+                                 data-medal-type="<?php echo esc_attr($component); ?>"
+                                 data-medal-level="<?php echo esc_attr($medal['type']); ?>"
                                  <?php if (isset($medal['achievement'])) : ?>
                                  data-achievement="<?php echo esc_attr($medal['achievement']); ?>"
                                  <?php endif; ?>
@@ -397,28 +397,28 @@ if ($need_medals) {
                                 </div>
                                 <i class="fa-solid fa-medal"></i>
                                 <div class="capsule-content">
-                                    <span class="capsule-label"><?php echo $medal['label']; ?></span>
+                                    <span class="capsule-label"><?php echo esc_html($medal['label']); ?></span>
                                     <span class="capsule-value">
-                                    <?php echo $square_cards[$component]['value']; ?>
+                                    <?php echo esc_html($square_cards[$component]['value']); ?>
                                     </span>
                                 </div>
                                 <div class="medal-info-tooltip">
                                     <div class="medal-achievement">
-                                        <?php echo isset($medal['achievement']) ? $medal['achievement'] : ''; ?>
+                                        <?php echo isset($medal['achievement']) ? esc_html($medal['achievement']) : ''; ?>
                                     </div>
                                     <?php if (isset($medal['next_level'])) : ?>
                                     <div class="medal-next-level">
-                                        <?php echo $medal['next_level']; ?>
+                                        <?php echo esc_html($medal['next_level']); ?>
                                     </div>
                                     <?php endif; ?>
                                 </div>
                             </div>
                         <?php else: ?>
                             <div class="stat-capsule">
-                                <i class="<?php echo $square_cards[$component]['icon']; ?>"></i>
+                                <i class="<?php echo esc_attr($square_cards[$component]['icon']); ?>"></i>
                                 <div class="capsule-content">
-                                <span class="capsule-label"><?php echo $square_cards[$component]['label']; ?></span>
-                                <span class="capsule-value"><?php echo $square_cards[$component]['value']; ?></span>
+                                <span class="capsule-label"><?php echo esc_html($square_cards[$component]['label']); ?></span>
+                                <span class="capsule-value"><?php echo esc_html($square_cards[$component]['value']); ?></span>
                                 </div>
                             </div>
                         <?php endif;
@@ -456,10 +456,10 @@ if ($need_medals) {
                                 list($first,$second) = $lines;
                             } ?>
                             <div class="stat-capsule announcement-capsule">
-                            <i class="<?php echo $square_cards['announcement']['icon']; ?>"></i>
+                            <i class="<?php echo esc_attr($square_cards['announcement']['icon']); ?>"></i>
                             <div class="capsule-content">
-                                <span class="announcement-line first-line"><?php echo $first; ?></span>
-                                <span class="announcement-line second-line"><?php echo $second; ?></span>
+                                <span class="announcement-line first-line"><?php echo esc_html($first); ?></span>
+                                <span class="announcement-line second-line"><?php echo esc_html($second); ?></span>
                             </div>
                             </div>
                         <?php endif;
