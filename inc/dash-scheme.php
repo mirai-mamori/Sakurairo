@@ -9,8 +9,10 @@
 header("Content-type: text/css; charset: UTF-8");
 #header('Access-Control-Allow-Origin: *');
 
+// 此文件作为独立 CSS 直接输出，未经 WP 引导，不可使用 WP 函数
 function _get($str){
-    $val = !empty($_GET[$str]) ? sanitize_text_field(wp_unslash($_GET[$str])) : null;
+    // 原生 PHP 净化：去除斜杠与 HTML 标签
+    $val = !empty($_GET[$str]) ? strip_tags(stripslashes($_GET[$str])) : null;
     return $val;
 }
 
@@ -78,8 +80,8 @@ $color_3_40 = hex2rgba($color_3, 0.40);
 if(_get('rules')==NULL) {
 	$rules="";
 } else {
-	// Sanitize custom CSS to prevent XSS injection
-	$rules = wp_strip_all_tags(urldecode(_get('rules')));
+	// 使用原生 strip_tags（此文件无 WP 引导）
+	$rules = strip_tags(urldecode(_get('rules')));
 	// Remove dangerous CSS functions and imports
 	$rules = preg_replace('/@import\s+url\s*\(/i', '/* blocked */', $rules);
 	$rules = preg_replace('/expression\s*\(/i', '/* blocked */', $rules);

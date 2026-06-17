@@ -250,6 +250,14 @@ function upload_image(WP_REST_Request $request)
     }
     $images = new \Sakura\API\Images();
     $files = $request->get_file_params();
+    // 验证上传文件存在且可读
+    if (empty($files['cmt_img_file']['tmp_name']) || !is_readable($files['cmt_img_file']['tmp_name'])) {
+        return new WP_REST_Response(array(
+            'status' => 400,
+            'success' => false,
+            'message' => 'Missing or invalid upload file.'
+        ), 400);
+    }
     switch (iro_opt("img_upload_api")) {
         case 'imgur':
             $image = file_get_contents($files["cmt_img_file"]["tmp_name"]);
@@ -368,14 +376,11 @@ function get_qq_avatar(WP_REST_Request $request)
         if (empty($imgdata)) {
             return new WP_REST_Response(array('status' => 500, 'message' => 'Failed to fetch avatar'), 500);
         }
-        $response = new WP_REST_Response();
-        $response->set_headers(
-            array(
-                'Content-Type' => 'image/jpeg',
-                'Cache-Control' => 'max-age=86400'
-            )
-        );
-        $response->set_data($imgdata);
+        // 二进制数据需直接输出，避免 REST 框架 JSON 编码导致响应损坏
+        header('Content-Type: image/jpeg');
+        header('Cache-Control: max-age=86400');
+        echo $imgdata;
+        exit;
     } else {
         $response = new WP_REST_Response();
         $response->set_status(302);
