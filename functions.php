@@ -756,9 +756,12 @@ if (!function_exists('akina_comment_format')) {
 function get_author_class($comment_author_email, $user_id)
 {
     global $wpdb;
-    $author_count = count(
-        $wpdb->get_results(
-            "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email = '$comment_author_email' "
+    // 安全修复：用 prepare 参数化查询防止 SQL 注入
+    // 性能优化：用 COUNT(*) + get_var 替代 get_results + count（语义完全等价）
+    $author_count = (int) $wpdb->get_var(
+        $wpdb->prepare(
+            "SELECT COUNT(*) FROM $wpdb->comments WHERE comment_author_email = %s",
+            $comment_author_email
         )
     );
     # 等级梯度
