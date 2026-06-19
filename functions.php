@@ -983,6 +983,33 @@ function visual_resource_updates($specified_version, $option_name, $new_value)
 
 visual_resource_updates('2.5.6', 'vision_resource_basepath', '3.0/');
 
+/**
+ * Migrate qq_avatar_link option from old values to new values.
+ * Runs once on theme upgrade, then never again.
+ *
+ * Mapping:
+ *   off    → direct    (same behavior: direct qlogo URL)
+ *   type_1 → proxy     (was redirect via encrypted URL, now proxy via comment_id)
+ *   type_2 → proxy     (was backend fetch with encrypted URL, now proxy via comment_id)
+ *   type_3 → ptlogin2  (was ptlogin2 parse, same behavior, new name)
+ */
+function qq_avatar_link_migration() {
+    $triggered = get_transient('qq_avatar_link_migrated');
+    if ($triggered) {
+        return;
+    }
+
+    $old_value = iro_opt('qq_avatar_link');
+    $map = array('off' => 'direct', 'type_1' => 'proxy', 'type_2' => 'proxy', 'type_3' => 'ptlogin2');
+
+    if (isset($map[$old_value])) {
+        iro_opt_update('qq_avatar_link', $map[$old_value]);
+    }
+
+    set_transient('qq_avatar_link_migrated', true, 30 * DAY_IN_SECONDS);
+}
+add_action('after_setup_theme', 'qq_avatar_link_migration');
+
 function unlisted_avatar_updates() {
     $theme = wp_get_theme();
     $current_version = $theme->get('Version');
@@ -2412,35 +2439,26 @@ function output_comments_qq_columns($column_name, $comment_id)
 add_filter('get_avatar', 'change_avatar', 10, 3);
 function change_avatar($avatar)
 {
-    global $comment, $sakura_privkey;
+    global $comment;
     if ($comment && get_comment_meta($comment->comment_ID, 'new_field_qq', true)) {
-        $qq_number = get_comment_meta($comment->comment_ID, 'new_field_qq', true);
-        if (iro_opt('qq_avatar_link') == 'off') {
-            return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+        $qq_number = sanitize_text_field(get_comment_meta($comment->comment_ID, 'new_field_qq', true));
+        $mode = iro_opt('qq_avatar_link', 'direct');
+
+        if ($mode === 'direct') {
+            return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . esc_attr(urlencode($qq_number)) . '&spec=100" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
         }
-        if (iro_opt('qq_avatar_link') == 'type_3') {
-            $qqavatar = file_get_contents('http://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin=' . $qq_number);
-            preg_match('/:\"([^\"]*)\"/i', $qqavatar, $matches);
-            return '<img src="' . $matches[1] . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+
+        if ($mode === 'ptlogin2') {
+            $avatar_url = QQ::get_qq_avatar_url_ptlogin2($comment->comment_ID);
+            if (!$avatar_url) {
+                return $avatar;
+            }
+            return '<img src="' . esc_url($avatar_url) . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
         }
-        
-        // Ensure $sakura_privkey is defined and not null
-        if (isset($sakura_privkey) && !is_null($sakura_privkey)) {
-            // 生成一个合适长度的初始化向量
-            $iv_length = openssl_cipher_iv_length('aes-128-cbc');
-            $iv = openssl_random_pseudo_bytes($iv_length);
-            
-            // 加密数据
-            $encrypted = openssl_encrypt($qq_number, 'aes-128-cbc', $sakura_privkey, 0, $iv);
-            
-            // 将初始化向量和加密数据一起编码
-            $encrypted = urlencode(base64_encode($iv . $encrypted));
-            
-            return '<img src="' . rest_url("sakura/v1/qqinfo/avatar") . '?qq=' . $encrypted . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
-        } else {
-            // Handle the case where $sakura_privkey is not set or is null
-            return '<img src="default_avatar_url" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
-        }
+
+        // proxy: 通过 comment_id 代理头像，QQ 号不出现在 URL 中
+        // 后端失败时返回 HTTP 404，浏览器触发 onerror → imgError(this,1) → 缺失头像
+        return '<img src="' . esc_url(rest_url("sakura/v1/qqinfo/avatar") . '?comment_id=' . $comment->comment_ID) . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
     }
     return $avatar;
 }

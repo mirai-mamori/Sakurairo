@@ -57,13 +57,27 @@ add_action('rest_api_init', function () {
     register_rest_route('sakura/v1', '/qqinfo/json', array(
         'methods' => 'GET',
         'callback' => 'get_qq_info',
-        'permission_callback' => '__return_true'
+        'permission_callback' => '__return_true',
+        'args' => array(
+            'qq' => array(
+                'type' => 'string',
+                'required' => true,
+                'sanitize_callback' => 'sanitize_text_field',
+            ),
+        ),
     )
     );
     register_rest_route('sakura/v1', '/qqinfo/avatar', array(
         'methods' => 'GET',
         'callback' => 'get_qq_avatar',
-        'permission_callback' => '__return_true'
+        'permission_callback' => '__return_true',
+        'args' => array(
+            'comment_id' => array(
+                'type' => 'integer',
+                'required' => true,
+                'sanitize_callback' => 'absint',
+            ),
+        ),
     )
     );
     register_rest_route('sakura/v1', '/bangumi/bilibili', array(
@@ -289,15 +303,17 @@ function get_qq_info(WP_REST_Request $request)
             'success' => false,
             'message' => 'Unauthorized client.'
         );
-    } elseif ($_GET['qq']) {
-        $qq = $_GET['qq'];
-        $output = QQ::get_qq_info($qq);
     } else {
-        $output = array(
-            'status' => 400,
-            'success' => false,
-            'message' => 'Bad Request'
-        );
+        $qq = sanitize_text_field($request->get_param('qq'));
+        if (empty($qq)) {
+            $output = array(
+                'status' => 400,
+                'success' => false,
+                'message' => 'Bad Request'
+            );
+        } else {
+            $output = QQ::get_qq_info($qq);
+        }
     }
 
     $result = new WP_REST_Response($output, $output['status']);
@@ -306,29 +322,37 @@ function get_qq_info(WP_REST_Request $request)
 }
 
 /**
- * QQ头像链接解密
+ * QQ avatar proxy by comment ID
  * https://sakura.2heng.xin/wp-json/sakura/v1/qqinfo/avatar
+ *
+ * Returns JPEG binary on success (bypasses REST framework via header+echo+exit).
+ * Returns HTTP 404 on failure — browser triggers onerror → imgError() → missing avatar.
  */
-function get_qq_avatar()
+function get_qq_avatar(WP_REST_Request $request)
 {
-    $encrypted = $_GET["qq"];
-    $imgurl = QQ::get_qq_avatar($encrypted);
-    if (iro_opt('qq_avatar_link') == 'type_2') {
-        $imgdata = file_get_contents($imgurl);
-        $response = new WP_REST_Response();
-        $response->set_headers(
-            array(
-                'Content-Type' => 'image/jpeg',
-                'Cache-Control' => 'max-age=86400'
-            )
-        );
-        echo $imgdata;
-    } else {
-        $response = new WP_REST_Response();
-        $response->set_status(301);
-        $response->header('Location', $imgurl);
+    $comment_id = intval($request->get_param('comment_id'));
+    if ($comment_id <= 0) {
+        status_header(404);
+        header('Content-Type: image/jpeg');
+        header('Cache-Control: no-cache');
+        exit;
     }
-    return $response;
+
+    $imgdata = QQ::get_qq_avatar_data($comment_id);
+    if (!$imgdata) {
+        // 返回 404，浏览器触发 <img onerror="imgError(this,1)">
+        // imgError() 会替换为 _iro.missing_avatars 或 Gravatar 默认头像
+        status_header(404);
+        header('Content-Type: image/jpeg');
+        header('Cache-Control: no-cache');
+        exit;
+    }
+
+    // 二进制数据必须绕过 REST 框架直接输出
+    header('Content-Type: image/jpeg');
+    header('Cache-Control: max-age=86400');
+    echo $imgdata;
+    exit;
 }
 
 function bgm_bangumi($request)
