@@ -3170,14 +3170,13 @@ $prefix = 'iro_options';
       array(
         'id' => 'qq_avatar_link',
         'type' => 'select',
-        'title' => __('QQ Avatar Link Encryption','sakurairo_csf'),
+        'title' => __('QQ Avatar Link Mode','sakurairo_csf'),
         'options' => array(
-          'off' => __('Off','sakurairo_csf'),
-          'type_1' => __('Redirect (low security)','sakurairo_csf'),
-          'type_2' => __('Get avatar data in the backend (medium security)','sakurairo_csf'),
-          'type_3' => __('Parse avatar interface in the backend (high security, slow)','sakurairo_csf'),
+          'direct' => __('Direct (QQ number visible)','sakurairo_csf'),
+          'ptlogin2' => __('Direct via ptlogin2 (QQ number visible, better CDN compatibility)','sakurairo_csf'),
+          'proxy' => __('Proxy via comment ID (QQ number hidden)','sakurairo_csf'),
         ),
-        'default' => 'off'
+        'default' => 'direct'
       ),
 
       array(
