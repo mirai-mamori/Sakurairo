@@ -74,6 +74,7 @@ if (iro_opt('php_notice_filter') != 'inner') {
 
 require 'update-checker/update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+use Sakura\API\QQ;
 
 function UpdateCheck($url, $flag = 'Sakurairo')
 {
