@@ -67,27 +67,63 @@ class BangumiAPI
         }
     
         if ($collData === null) {
-            $response = $this->http_get_contents($this->collectionApi);
+            // 先调用1次获取第1页数据。只关注番剧，设置每页50个（api上限最多50），偏移0
+            $baseUrl = $this->collectionApi . '?subject_type=2&limit=50&offset=0';
+            $response = $this->http_get_contents($baseUrl);
             $collData = json_decode($response, true);
-    
-            if (isset($collData['data']) && is_array($collData['data']) && $bangumi_cache) {
-                auto_update_cache($cache_key, $response);
+
+            // 获取第1页的data列表，并且查询追番数量的总量total
+            $dataList = isset($collData['data']) && is_array($collData['data']) ? $collData['data'] : [];
+            $total = isset($collData['total']) ? (int)$collData['total'] : count($dataList);
+
+            // 如果第一次没能获取全，再多次获取。共 $pages 次，还需获取 $pages-1 次
+            if ($total > count($dataList)) {
+                $pageLimit = 50;
+                $pages = (int)ceil($total / $pageLimit);
+                // 避免有人追番太多，导致太多调用卡死，设定调用总次数上限（10次）
+                $pages = min($pages, 10);
+                for ($i = 1; $i < $pages; $i++) {
+                    $offset = $pageLimit * $i;
+                    $url = $this->collectionApi . '?subject_type=2&limit=' . $pageLimit . '&offset=' . $offset;
+                    $resp = $this->http_get_contents($url);
+                    $respData = json_decode($resp, true);
+                    # 把新获取到的列表合并到 $dataList 中
+                    if (isset($respData['data']) && is_array($respData['data'])) {
+                        $dataList = array_merge($dataList, $respData['data']);
+                    } else {
+                        error_log('BangumiAPI: fetchCollections failed at offset=' . $offset);
+                        break;
+                    }
+                }
+            }
+
+            // 整理数据，整合为 bangumi api的返回形式
+            $collData['data'] = $dataList;
+            $collData['limit'] = $total;
+            $collData['offset'] = 0;
+            $collData['total'] = $total;
+
+            if ($bangumi_cache && !isset($collData['error']) && isset($collData['data']) && is_array($collData['data'])) {
+                auto_update_cache($cache_key, json_encode($collData));
             }
         }
-    
-        // 过滤符合条件的数据
-        if (isset($collData['data']) && is_array($collData['data'])) {
+
+        // 过滤符合条件的数据, 只在未出错、有数据、数据合规时返回。
+        if (!isset($collData['error']) && isset($collData['data']) && is_array($collData['data'])) {
             $collDataArr = array_filter($collData['data'], function($item) {
-                return in_array($item['type'], [2, 3]) && $item['subject_type'] == 2;
+                return in_array($item['type'], [2, 3]);
             });
         }
-    
+
         return $collDataArr;
     }
 
     private function http_get_contents($url)
     {
-        $response = wp_remote_get($url, ['user-agent' => 'mirai-mamori/Sakurairo(https://github.com/mirai-mamori/Sakurairo):WordPressTheme']);
+        $response = wp_remote_get($url, [
+            'user-agent' => 'mirai-mamori/Sakurairo(https://github.com/mirai-mamori/Sakurairo):WordPressTheme',
+            'timeout' => 15     // 设置超时时间为15秒，默认值是5秒；和bilibili模板保持一致
+            ]);
         if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
             return wp_remote_retrieve_body($response);
         }
