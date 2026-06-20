@@ -90,6 +90,9 @@ class BangumiAPI
                     # 把新获取到的列表合并到 $dataList 中
                     if (isset($respData['data']) && is_array($respData['data'])) {
                         $dataList = array_merge($dataList, $respData['data']);
+                    } else {
+                        error_log('BangumiAPI: fetchCollections failed at offset=' . $offset);
+                        break;
                     }
                 }
             }
