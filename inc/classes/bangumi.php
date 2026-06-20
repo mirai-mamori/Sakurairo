@@ -105,10 +105,10 @@ class BangumiAPI
             }
         }
 
-        // 过滤符合条件的数据
-        if (isset($collData['data']) && is_array($collData['data'])) {
+        // 过滤符合条件的数据, 只在未出错、有数据、数据合规时返回。
+        if (!isset($collData['error']) && isset($collData['data']) && is_array($collData['data'])) {
             $collDataArr = array_filter($collData['data'], function($item) {
-                return in_array($item['type'], [2, 3]) && $item['subject_type'] == 2;
+                return in_array($item['type'], [2, 3]);
             });
         }
 
@@ -117,7 +117,10 @@ class BangumiAPI
 
     private function http_get_contents($url)
     {
-        $response = wp_remote_get($url, ['user-agent' => 'mirai-mamori/Sakurairo(https://github.com/mirai-mamori/Sakurairo):WordPressTheme']);
+        $response = wp_remote_get($url, [
+            'user-agent' => 'mirai-mamori/Sakurairo(https://github.com/mirai-mamori/Sakurairo):WordPressTheme',
+            'timeout' => 15     // 设置超时时间为15秒，默认值是5秒；和bilibili模板保持一致
+            ]);
         if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
             return wp_remote_retrieve_body($response);
         }
