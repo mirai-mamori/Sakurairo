@@ -1092,6 +1092,15 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'live_search_preview',
+        'type' => 'switcher',
+        'title' => __('Enable Search Content Preview','sakurairo_csf'),
+        'dependency' => array( 'live_search', '==', 'true', '', 'true' ),
+        'label' => __('Show preview text in live search results','sakurairo_csf'),
+        'default' => true
+      ),
+
+      array(
         'id' => 'live_search_comment',
         'type' => 'switcher',
         'title' => __('Live Search Comment Support','sakurairo_csf'),

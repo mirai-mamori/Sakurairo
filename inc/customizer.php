@@ -13,7 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 // 载入Kirki
 if ( ! class_exists( 'Kirki' ) ) {
 	require_once __DIR__ . '/kirki/kirki.php';
-	new \Kirki\Pro\Init();
 
 	define( 'KIRKI_NO_OUTPUT', true );
 	define( 'KIRKI_NO_GUTENBERG_OUTPUT', true );

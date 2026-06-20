@@ -716,9 +716,9 @@ add_filter( 'update_footer', 'change_footer_version', 9999);
 function disable_dashboard_widgets() {   
     //remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');//近期评论 
     //remove_meta_box('dashboard_recent_drafts', 'dashboard', 'normal');//近期草稿
-    remove_meta_box('dashboard_primary', 'dashboard', 'core');//wordpress博客  
-    remove_meta_box('dashboard_secondary', 'dashboard', 'core');//wordpress其它新闻  
-    remove_meta_box('dashboard_right_now', 'dashboard', 'core');//wordpress概况  
+    // remove_meta_box('dashboard_primary', 'dashboard', 'core');//wordpress博客  
+    // remove_meta_box('dashboard_secondary', 'dashboard', 'core');//wordpress其它新闻  
+    // remove_meta_box('dashboard_right_now', 'dashboard', 'core');//wordpress概况  
     //remove_meta_box('dashboard_incoming_links', 'dashboard', 'core');//wordresss链入链接  
     //remove_meta_box('dashboard_plugins', 'dashboard', 'core');//wordpress链入插件  
     //remove_meta_box('dashboard_quick_press', 'dashboard', 'core');//wordpress快速发布   
