@@ -7,6 +7,7 @@ class BangumiAPI
     private $apiUrl = 'https://api.bgm.tv';
     private $userID;
     private $collectionApi;
+    private $collectionPageSize = 30;
 
     public function __construct($userID)
     {
@@ -67,11 +68,10 @@ class BangumiAPI
         }
     
         if ($collData === null) {
-            $response = $this->http_get_contents($this->collectionApi);
-            $collData = json_decode($response, true);
+            $collData = $this->fetchAllCollectionPages();
     
             if (isset($collData['data']) && is_array($collData['data']) && $bangumi_cache) {
-                auto_update_cache($cache_key, $response);
+                auto_update_cache($cache_key, wp_json_encode($collData));
             }
         }
     
@@ -83,6 +83,38 @@ class BangumiAPI
         }
     
         return $collDataArr;
+    }
+
+    private function fetchAllCollectionPages()
+    {
+        $offset = 0;
+        $limit = (int)$this->collectionPageSize;
+        $allCollections = [];
+        $total = null;
+
+        do {
+            $query = http_build_query([
+                'offset' => $offset,
+                'limit' => $limit,
+            ]);
+            $separator = strpos($this->collectionApi, '?') === false ? '?' : '&';
+            $response = $this->http_get_contents($this->collectionApi . $separator . $query);
+            $pageData = json_decode($response, true);
+
+            if (!isset($pageData['data']) || !is_array($pageData['data'])) {
+                return $pageData;
+            }
+
+            $allCollections = array_merge($allCollections, $pageData['data']);
+            $pageCount = count($pageData['data']);
+            $total = isset($pageData['total']) ? (int)$pageData['total'] : null;
+            $offset += $pageCount;
+        } while ($pageCount > 0 && ($total === null ? $pageCount === $limit : $offset < $total));
+
+        return [
+            'data' => $allCollections,
+            'total' => $total ?? count($allCollections),
+        ];
     }
 
     private function http_get_contents($url)
