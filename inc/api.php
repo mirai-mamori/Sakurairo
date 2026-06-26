@@ -152,6 +152,22 @@ add_action('rest_api_init', function () {
 require_once ('chatgpt/hooks.php');
 require_once ('chatgpt/chatgpt.php');
 
+function sakura_get_rest_request_nonce(WP_REST_Request $request)
+{
+    $nonce = $request->get_header('X-WP-Nonce');
+    if (!$nonce) {
+        $nonce = $request->get_param('_wpnonce');
+    }
+
+    return $nonce ? sanitize_text_field(wp_unslash($nonce)) : '';
+}
+
+function sakura_verify_rest_request_nonce(WP_REST_Request $request)
+{
+    $nonce = sakura_get_rest_request_nonce($request);
+    return $nonce && wp_verify_nonce($nonce, 'wp_rest');
+}
+
 function chatgpt_summarize(WP_REST_Request $request)
 {
     $post_id = $request->get_param('post_id');
@@ -201,7 +217,7 @@ function upload_image(WP_REST_Request $request)
      *   https://dev.2heng.xin/wp-json/sakura/v1/image/upload
      */
     // $file = $request->get_file_params();
-    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+    if (!sakura_verify_rest_request_nonce($request)) {
         $output = array(
             'status' => 403,
             'success' => false,
@@ -212,21 +228,30 @@ function upload_image(WP_REST_Request $request)
         return $result;
     }
     $images = new \Sakura\API\Images();
+    $files = $request->get_file_params();
+    // 验证上传文件存在且可读
+    if (empty($files['cmt_img_file']['tmp_name']) || !is_readable($files['cmt_img_file']['tmp_name'])) {
+        return new WP_REST_Response(array(
+            'status' => 400,
+            'success' => false,
+            'message' => 'Missing or invalid upload file.'
+        ), 400);
+    }
     switch (iro_opt("img_upload_api")) {
         case 'imgur':
-            $image = file_get_contents($_FILES["cmt_img_file"]["tmp_name"]);
+            $image = file_get_contents($files["cmt_img_file"]["tmp_name"]);
             $API_Request = $images->Imgur_API($image);
             break;
         case 'smms':
-            $image = $_FILES;
+            $image = $files;
             $API_Request = $images->SMMS_API($image);
             break;
         case 'chevereto':
-            $image = file_get_contents($_FILES["cmt_img_file"]["tmp_name"]);
+            $image = file_get_contents($files["cmt_img_file"]["tmp_name"]);
             $API_Request = $images->Chevereto_API($image);
             break;
         case 'lsky':
-            $image = $_FILES;
+            $image = $files;
             $API_Request = $images->LSKY_API($image);
             break;
     }
@@ -255,9 +280,9 @@ function upload_image(WP_REST_Request $request)
  * @rest api接口路径：https://sakura.2heng.xin/wp-json/sakura/v1/cache_search/json
  * @可在cache_search_json()函数末尾通过设置 HTTP header 控制 json 缓存时间
  */
-function cache_search_json()
+function cache_search_json(WP_REST_Request $request)
 {
-    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+    if (!sakura_verify_rest_request_nonce($request)) {
         $output = array(
             'status' => 403,
             'success' => false,
@@ -283,21 +308,23 @@ function cache_search_json()
  */
 function get_qq_info(WP_REST_Request $request)
 {
-    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+    if (!sakura_verify_rest_request_nonce($request)) {
         $output = array(
             'status' => 403,
             'success' => false,
             'message' => 'Unauthorized client.'
         );
-    } elseif ($_GET['qq']) {
-        $qq = $_GET['qq'];
-        $output = QQ::get_qq_info($qq);
     } else {
-        $output = array(
-            'status' => 400,
-            'success' => false,
-            'message' => 'Bad Request'
-        );
+        $qq = sanitize_text_field($request->get_param('qq'));
+        if (empty($qq)) {
+            $output = array(
+                'status' => 400,
+                'success' => false,
+                'message' => 'Bad Request'
+            );
+        } else {
+            $output = QQ::get_qq_info($qq);
+        }
     }
 
     $result = new WP_REST_Response($output, $output['status']);
@@ -309,103 +336,100 @@ function get_qq_info(WP_REST_Request $request)
  * QQ头像链接解密
  * https://sakura.2heng.xin/wp-json/sakura/v1/qqinfo/avatar
  */
-function get_qq_avatar()
+function get_qq_avatar(WP_REST_Request $request)
 {
-    $encrypted = $_GET["qq"];
+    $encrypted = sanitize_text_field($request->get_param('qq'));
+    if (empty($encrypted)) {
+        return new WP_REST_Response(array('status' => 400, 'message' => 'Missing qq parameter'), 400);
+    }
     $imgurl = QQ::get_qq_avatar($encrypted);
+    if (!$imgurl) {
+        return new WP_REST_Response(array('status' => 404, 'message' => 'Avatar not found'), 404);
+    }
     if (iro_opt('qq_avatar_link') == 'type_2') {
-        $imgdata = file_get_contents($imgurl);
-        $response = new WP_REST_Response();
-        $response->set_headers(
-            array(
-                'Content-Type' => 'image/jpeg',
-                'Cache-Control' => 'max-age=86400'
-            )
-        );
+        $imgdata = wp_remote_retrieve_body(wp_remote_get(esc_url_raw($imgurl)));
+        if (empty($imgdata)) {
+            return new WP_REST_Response(array('status' => 500, 'message' => 'Failed to fetch avatar'), 500);
+        }
+        // 二进制数据需直接输出，避免 REST 框架 JSON 编码导致响应损坏
+        header('Content-Type: image/jpeg');
+        header('Cache-Control: max-age=86400');
         echo $imgdata;
+        exit;
     } else {
         $response = new WP_REST_Response();
-        $response->set_status(301);
-        $response->header('Location', $imgurl);
+        $response->set_status(302);
+        $response->header('Location', esc_url_raw($imgurl));
     }
     return $response;
 }
 
-function bgm_bangumi($request)
+function bgm_bangumi(WP_REST_Request $request)
 {
-    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+    if (!sakura_verify_rest_request_nonce($request)) {
         $response = array(
             'status' => 418,
             'success' => false,
             'message' => 'Unauthorized client.'
         );
         return new WP_REST_Response($response, 418);
-    } else {
-        $userID = $request->get_param('userID');
-        $page = $request->get_param('page') ?: 1;
-        $bgmList = new \Sakura\API\BangumiList();
     }
-    return $bgmList->get_bgm_items($userID, (int)$page);
+    $userID = sanitize_text_field($request->get_param('userID'));
+    $page = intval($request->get_param('page')) ?: 1;
+    $bgmList = new \Sakura\API\BangumiList();
+    return $bgmList->get_bgm_items($userID, $page);
 }
 
-function bgm_bilibili()
+function bgm_bilibili(WP_REST_Request $request)
 {
-    $response = null;
-    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+    if (!sakura_verify_rest_request_nonce($request)) {
         $output = array(
             'status' => 403,
             'success' => false,
             'message' => 'Unauthorized client.'
         );
-        $response = new WP_REST_Response($output, 403);
-    } else {
-        $page = $_GET["page"] ?: 2;
-        $bgm = new \Sakura\API\Bilibili();
-        $html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->get_bgm_items($page));
-        $response = new WP_REST_Response($html, 200);
+        return new WP_REST_Response($output, 403);
     }
-    return $response;
+    $page = intval($request->get_param('page')) ?: 2;
+    $bgm = new \Sakura\API\Bilibili();
+    $html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->get_bgm_items($page));
+    return new WP_REST_Response($html, 200);
 }
 
-function bfv_bilibili()
+function bfv_bilibili(WP_REST_Request $request)
 {
-    $response = null;
-    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+    if (!sakura_verify_rest_request_nonce($request)) {
         $output = array(
             'status' => 403,
             'success' => false,
             'message' => 'Unauthorized client.'
         );
-        $response = new WP_REST_Response($output, 403);
-    } else {
-        $page = $_GET["page"] ?: 2;
-        $bgm = new \Sakura\API\Bilibili();
-        $html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->get_bfv_items($page));
-        $response = new WP_REST_Response($html, 200);
+        return new WP_REST_Response($output, 403);
     }
-    return $response;
+    $page = intval($request->get_param('page')) ?: 2;
+    $bgm = new \Sakura\API\Bilibili();
+    $html = preg_replace("/\s+|\n+|\r/", ' ', $bgm->get_bfv_items($page));
+    return new WP_REST_Response($html, 200);
 }
 
-function steam_library ($request)
+function steam_library(WP_REST_Request $request)
 {
-    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+    if (!sakura_verify_rest_request_nonce($request)) {
         $response = array(
             'status' => 418,
             'success' => false,
             'message' => 'Unauthorized client.'
         );
         return new WP_REST_Response($response, 418);
-    } else {
-        $page = $request->get_param('page') ?: 1;
-        $SteamList = new \Sakura\API\Steam();
     }
-    return $SteamList->get_steam_items((int)$page);
+    $page = intval($request->get_param('page')) ?: 1;
+    $SteamList = new \Sakura\API\Steam();
+    return $SteamList->get_steam_items($page);
 }
 
 function favlist_bilibili(WP_REST_Request $request)
 {
-    // 使用 WP_REST_Request 参数而不是直接访问 $_GET
-    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+    if (!sakura_verify_rest_request_nonce($request)) {
         $output = array(
             'code' => 401,
             'message' => 'Unauthorized client.'
@@ -471,7 +495,7 @@ function favlist_bilibili(WP_REST_Request $request)
 
 function favlist_bilibili_folders(WP_REST_Request $request)
 {
-    if (!check_ajax_referer('wp_rest', '_wpnonce', false)) {
+    if (!sakura_verify_rest_request_nonce($request)) {
         $output = array(
             'code' => 401,
             'message' => 'Unauthorized client.'
@@ -524,15 +548,18 @@ function favlist_bilibili_folders(WP_REST_Request $request)
     }
 }
 
-function meting_aplayer()
+function meting_aplayer(WP_REST_Request $request)
 {
-    $type = $_GET['type'];
-    $id = $_GET['id'];
-    if (in_array('_wpnonce', $_GET))
-        $wpnonce = $_GET['_wpnonce'];
-    if (in_array('meting_nonce', $_GET))
-        $meting_nonce = $_GET['meting_nonce'];
-    if ((isset($wpnonce) && !check_ajax_referer('wp_rest', $wpnonce, false)) || (isset($meting_nonce) && !wp_verify_nonce($meting_nonce, $type . '#:' . $id))) {
+    $type = sanitize_text_field($request->get_param('type'));
+    $id = sanitize_text_field($request->get_param('id'));
+    $wpnonce = sanitize_text_field($request->get_param('_wpnonce')) ?: null;
+    $meting_nonce = sanitize_text_field($request->get_param('meting_nonce')) ?: null;
+
+    // 必须提供至少一个有效 nonce，否则拒绝
+    $wpnonce_valid = $wpnonce && wp_verify_nonce($wpnonce, 'wp_rest');
+    $meting_nonce_valid = $meting_nonce && wp_verify_nonce($meting_nonce, $type . '#:' . $id);
+
+    if (!$wpnonce_valid && !$meting_nonce_valid) {
         $output = array(
             'status' => 403,
             'success' => false,
@@ -553,7 +580,7 @@ function meting_aplayer()
         } else {
             $response = new WP_REST_Response();
             $response->set_status(301);
-            $response->header('Location', $data);
+            $response->header('Location', esc_url_raw($data));
         }
     }
     return $response;
