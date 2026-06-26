@@ -144,7 +144,6 @@ add_filter( 'comment_text' , 'comment_add_at', 20, 2);
 /*
  * Ajax评论
  */
-if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) { wp_die(__('Please upgrade wordpress to version 4.4+','sakurairo')); }/*请升级到4.4以上版本*/
 // 提示
 if(!function_exists('siren_ajax_comment_err')) {
     function siren_ajax_comment_err($t) {
@@ -166,15 +165,18 @@ function comment_captcha(){
     return true;
   }
   if (iro_opt('comment_captcha_select') == "iro_captcha") {
-      if (!(isset($_POST['captcha']) && !empty(trim($_POST['captcha'])))) {
+      $captcha = isset($_POST['captcha']) ? sanitize_text_field(wp_unslash($_POST['captcha'])) : '';
+      $timestamp = isset($_POST['timestamp']) ? sanitize_text_field(wp_unslash($_POST['timestamp'])) : '';
+      $captcha_id = isset($_POST['id']) ? sanitize_text_field(wp_unslash($_POST['id'])) : '';
+      if (empty(trim($captcha))) {
           return siren_ajax_comment_err(__('Please fill in the captcha answer','sakurairo'));
       }
-      if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])) {
+      if (empty($timestamp) || empty($captcha_id) || !preg_match('/^[\w$.\/]+$/', $captcha_id) || !ctype_digit($timestamp)) {
           return siren_ajax_comment_err(__('Have you modified the captcha code data? Or refresh the captcha and try again?','sakurairo'));
       }
       include_once( get_template_directory() . '/inc/classes/Captcha.php');
       $img = new Sakura\API\Captcha;
-      $check = $img->check_captcha($_POST['captcha'], $_POST['timestamp'], $_POST['id']);
+      $check = $img->check_captcha($captcha, $timestamp, $captcha_id);
       if ($check['code'] == 5) {
           return true;
       }
@@ -209,6 +211,7 @@ add_action('pre_comment_on_post', 'comment_captcha');
 // 评论提交
 if(!function_exists('siren_ajax_comment_callback')) {
     function siren_ajax_comment_callback(){
+      check_ajax_referer('sakurairo_ajax_comment', 'sakurairo_comment_nonce');
       $comment = wp_handle_comment_submission( wp_unslash( $_POST ) );
       if( is_wp_error( $comment ) ) {
         $data = $comment->get_error_data();
@@ -291,7 +294,7 @@ function the_headPattern(){
   if(!is_home() && $full_image_url) : ?>
   <div class="pattern-center-blank"></div>
   <div class="pattern-center <?php if(is_single()){echo $center;} ?>">
-    <div class="pattern-attachment bg lazyload" style="background-image: url(<?php echo iro_opt('load_out_svg'); ?>)" data-src="<?php echo $full_image_url; ?>"> </div>
+    <div class="pattern-attachment bg lazyload" style="background-image: url(<?php echo esc_url(iro_opt('load_out_svg')); ?>)" data-src="<?php echo esc_url($full_image_url); ?>"> </div>
     <header class="pattern-header <?php if(is_single()){echo $header;} ?>"><?php echo $t; ?></header>
   </div>
   <?php else :

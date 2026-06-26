@@ -189,6 +189,7 @@ function get_smilies_panel() {
                                                 <input type="checkbox" id="enable_markdown" name="enable_markdown">
                                                 <i class="fa-brands fa-markdown fa-sm"></i>
                                             </label>
+                                            ' . wp_nonce_field('sakurairo_ajax_comment', 'sakurairo_comment_nonce', true, false) . '
                                         </div>',
                 'comment_notes_after'  => '',
                 'comment_notes_before' => '',
