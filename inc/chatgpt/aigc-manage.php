@@ -12,9 +12,9 @@ function get_chatgpt_api_info(){?>
             <h2><?php _e('System Information', 'sakurairo'); ?></h2>
             <p><strong><?php _e('ChatGPT API Settings Status', 'sakurairo'); ?></strong></p>
             <pre style="background:#eee; padding:10px; overflow:auto;">
-<?php _e('API Endpoint: ', 'sakurairo'); ?><?php echo iro_opt('chatgpt_endpoint', __('Not set', 'sakurairo')); ?>
-<?php _e('API Key: ', 'sakurairo'); ?><?php echo empty(iro_opt('chatgpt_access_token')) ? __('Not set', 'sakurairo') : __('Set (Length: ', 'sakurairo') . strlen(iro_opt('chatgpt_access_token')) . ')'; ?>
-<?php _e('Model: ', 'sakurairo'); ?><?php echo iro_opt('chatgpt_model', __('Not set', 'sakurairo')); ?>
+<?php _e('API Endpoint: ', 'sakurairo'); ?><?php echo esc_html(iro_opt('chatgpt_endpoint', __('Not set', 'sakurairo'))); ?>
+<?php _e('API Key: ', 'sakurairo'); ?><?php echo empty(iro_opt('chatgpt_access_token')) ? esc_html__('Not set', 'sakurairo') : esc_html(__('Set (Length: ', 'sakurairo') . strlen(iro_opt('chatgpt_access_token')) . ')'); ?>
+<?php _e('Model: ', 'sakurairo'); ?><?php echo esc_html(iro_opt('chatgpt_model', __('Not set', 'sakurairo'))); ?>
             </pre>
         </div>
         <?php
@@ -43,7 +43,7 @@ function render_annotations_admin_page() {
     $message = '';
     $message_type = '';
     
-    if (isset($_POST['generate_annotations']) && isset($_POST['post_id']) && check_admin_referer('iro_generate_annotations')) {
+    if (isset($_POST['generate_annotations']) && isset($_POST['post_id']) && current_user_can('manage_options') && check_admin_referer('iro_generate_annotations')) {
         $post_id = intval($_POST['post_id']);
         $result = generate_annotations_for_post($post_id);
         
@@ -54,12 +54,12 @@ function render_annotations_admin_page() {
             $message = __('Failed to generate annotations. Please check API settings or view error logs.', 'sakurairo');
             $message_type = 'error';
         }
-    } elseif (isset($_POST['delete_annotations']) && isset($_POST['post_id']) && check_admin_referer('iro_generate_annotations')) {
+    } elseif (isset($_POST['delete_annotations']) && isset($_POST['post_id']) && current_user_can('manage_options') && check_admin_referer('iro_generate_annotations')) {
         $post_id = intval($_POST['post_id']);
         delete_post_meta($post_id, 'iro_chatgpt_annotations');
         $message = __('Annotations for the post have been deleted.', 'sakurairo');
         $message_type = 'warning';
-    } elseif (isset($_POST['test_save']) && isset($_POST['post_id']) && check_admin_referer('iro_generate_annotations')) {
+    } elseif (isset($_POST['test_save']) && isset($_POST['post_id']) && current_user_can('manage_options') && check_admin_referer('iro_generate_annotations')) {
         $post_id = intval($_POST['post_id']);
         $test_data = array(
             __('Example Term', 'sakurairo') => __('This is a example explanation', 'sakurairo')
@@ -107,8 +107,8 @@ function render_annotations_admin_page() {
         <h1><?php _e('Article Annotations Management', 'sakurairo'); ?></h1>
         
         <?php if (!empty($message)): ?>
-            <div class="notice notice-<?php echo $message_type; ?> is-dismissible">
-                <p><?php echo $message; ?></p>
+            <div class="notice notice-<?php echo esc_attr($message_type); ?> is-dismissible">
+                <p><?php echo wp_kses_post($message); ?></p>
             </div>
         <?php endif; 
         get_chatgpt_api_info();
@@ -141,7 +141,7 @@ function render_annotations_admin_page() {
                             <select name="post_id" id="post_id" required>
                                 <option value=""><?php _e('-- Select Post --', 'sakurairo'); ?></option>
                                 <?php foreach ($all_posts as $p): ?>
-                                    <option value="<?php echo $p->ID; ?>"><?php echo $p->post_title; ?> (ID: <?php echo $p->ID; ?>)</option>
+                                    <option value="<?php echo esc_attr($p->ID); ?>"><?php echo esc_html($p->post_title); ?> (ID: <?php echo esc_html($p->ID); ?>)</option>
                                 <?php endforeach; ?>
                             </select>
                         </td>
@@ -177,17 +177,17 @@ function render_annotations_admin_page() {
                             ?>
                             <tr>
                                 <td>
-                                    <a href="<?php echo get_permalink($post->ID); ?>" target="_blank">
-                                        <?php echo $post->post_title; ?>
+                                    <a href="<?php echo esc_url(get_permalink($post->ID)); ?>" target="_blank">
+                                        <?php echo esc_html($post->post_title); ?>
                                     </a>
                                 </td>
-                                <td><?php echo $annotation_count; ?></td>
+                                <td><?php echo esc_html($annotation_count); ?></td>
                                 <td>
-                                    <a href="#" class="view-annotations" data-post-id="<?php echo $post->ID; ?>"><?php _e('View Annotations', 'sakurairo'); ?></a> | 
-                                    <a href="<?php echo get_edit_post_link($post->ID); ?>" target="_blank"><?php _e('Edit Post', 'sakurairo'); ?></a> | 
+                                    <a href="#" class="view-annotations" data-post-id="<?php echo esc_attr($post->ID); ?>"><?php _e('View Annotations', 'sakurairo'); ?></a> | 
+                                    <a href="<?php echo esc_url(get_edit_post_link($post->ID)); ?>" target="_blank"><?php _e('Edit Post', 'sakurairo'); ?></a> | 
                                     <form method="post" style="display:inline;">
                                         <?php wp_nonce_field('iro_generate_annotations'); ?>
-                                        <input type="hidden" name="post_id" value="<?php echo $post->ID; ?>">
+                                        <input type="hidden" name="post_id" value="<?php echo esc_attr($post->ID); ?>">
                                         <input type="hidden" name="debug" value="1">
                                         <button type="submit" name="debug_annotations" class="button-link"><?php _e('Debug Information', 'sakurairo'); ?></button>
                                     </form>
@@ -201,7 +201,7 @@ function render_annotations_admin_page() {
         
         <?php
         // 处理调试请求
-        if (isset($_POST['debug_annotations']) && isset($_POST['post_id']) && check_admin_referer('iro_generate_annotations')) {
+        if (isset($_POST['debug_annotations']) && isset($_POST['post_id']) && current_user_can('manage_options') && check_admin_referer('iro_generate_annotations')) {
             $post_id = intval($_POST['post_id']);
             $post = get_post($post_id);
             
@@ -601,7 +601,7 @@ function render_summary_admin_page() {
     $message = '';
     $message_type = '';
     
-    if (isset($_POST['generate_summary']) && isset($_POST['post_id']) && check_admin_referer('iro_generate_summary')) {
+    if (isset($_POST['generate_summary']) && isset($_POST['post_id']) && current_user_can('manage_options') && check_admin_referer('iro_generate_summary')) {
         $post_id = intval($_POST['post_id']);
         $result = generate_post_summary(get_post($post_id));
         remove_action('save_post_post', 'generate_post_summary'); // 防止无限循环
@@ -614,12 +614,12 @@ function render_summary_admin_page() {
             $message = __('Failed to generate summary. Please check API settings or view error logs.', 'sakurairo') . $result;
             $message_type = 'error';
         }
-    } elseif (isset($_POST['delete_summary']) && isset($_POST['post_id']) && check_admin_referer('iro_generate_summary')) {
+    } elseif (isset($_POST['delete_summary']) && isset($_POST['post_id']) && current_user_can('manage_options') && check_admin_referer('iro_generate_summary')) {
         $post_id = intval($_POST['post_id']);
         delete_post_meta($post_id, 'ai_summon_excerpt');
         $message = __('Summary for the post has been deleted.', 'sakurairo');
         $message_type = 'warning';
-    } elseif (isset($_POST['test_save']) && isset($_POST['post_id']) && check_admin_referer('iro_generate_summary')) {
+    } elseif (isset($_POST['test_save']) && isset($_POST['post_id']) && current_user_can('manage_options') && check_admin_referer('iro_generate_summary')) {
         $post_id = intval($_POST['post_id']);
         $test_data = __('This is a test summary content.', 'sakurairo');
         
@@ -652,8 +652,8 @@ function render_summary_admin_page() {
         <h1><?php _e('Article Summary Management', 'sakurairo'); ?></h1>
         
         <?php if (!empty($message)): ?>
-            <div class="notice notice-<?php echo $message_type; ?> is-dismissible">
-                <p><?php echo $message; ?></p>
+            <div class="notice notice-<?php echo esc_attr($message_type); ?> is-dismissible">
+                <p><?php echo wp_kses_post($message); ?></p>
             </div>
         <?php endif; 
         get_chatgpt_api_info();
@@ -685,7 +685,7 @@ function render_summary_admin_page() {
                             <select name="post_id" id="post_id" required>
                                 <option value=""><?php _e('-- Select Post --', 'sakurairo'); ?></option>
                                 <?php foreach ($all_posts as $p): ?>
-                                    <option value="<?php echo $p->ID; ?>"><?php echo $p->post_title; ?> (ID: <?php echo $p->ID; ?>)</option>
+                                    <option value="<?php echo esc_attr($p->ID); ?>"><?php echo esc_html($p->post_title); ?> (ID: <?php echo esc_html($p->ID); ?>)</option>
                                 <?php endforeach; ?>
                             </select>
                         </td>
@@ -721,17 +721,17 @@ function render_summary_admin_page() {
                             ?>
                             <tr>
                                 <td>
-                                    <a href="<?php echo get_permalink($post->ID); ?>" target="_blank">
-                                        <?php echo $post->post_title; ?>
+                                    <a href="<?php echo esc_url(get_permalink($post->ID)); ?>" target="_blank">
+                                        <?php echo esc_html($post->post_title); ?>
                                     </a>
                                 </td>
                                 <td><?php echo esc_html($preview); ?></td>
                                 <td>
-                                    <a href="#" class="view-summary" data-post-id="<?php echo $post->ID; ?>"><?php _e('View/Edit Summary', 'sakurairo'); ?></a> | 
-                                    <a href="<?php echo get_edit_post_link($post->ID); ?>" target="_blank"><?php _e('Edit Post', 'sakurairo'); ?></a> | 
+                                    <a href="#" class="view-summary" data-post-id="<?php echo esc_attr($post->ID); ?>"><?php _e('View/Edit Summary', 'sakurairo'); ?></a> | 
+                                    <a href="<?php echo esc_url(get_edit_post_link($post->ID)); ?>" target="_blank"><?php _e('Edit Post', 'sakurairo'); ?></a> | 
                                     <form method="post" style="display:inline;">
                                         <?php wp_nonce_field('iro_generate_summary'); ?>
-                                        <input type="hidden" name="post_id" value="<?php echo $post->ID; ?>">
+                                        <input type="hidden" name="post_id" value="<?php echo esc_attr($post->ID); ?>">
                                         <button type="submit" name="delete_summary" class="button-link" onclick="return confirm('<?php _e('Are you sure you want to delete this summary?', 'sakurairo'); ?>');">
                                             <?php _e('Delete', 'sakurairo'); ?>
                                         </button>
