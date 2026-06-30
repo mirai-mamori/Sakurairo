@@ -907,20 +907,34 @@ function get_the_link_items($id = null)
 }
 
 function get_link_items() {
-    // 获取链接分类并按优先级降序排列
+    // 获取链接分类
     $linkcats = get_terms(array(
         'taxonomy'   => 'link_category',
-        'meta_key'   => 'term_priority', // 优先级字段
-        'orderby'    => 'meta_value_num', 
-        'order'      => 'DESC', 
-        'hide_empty' => false
+        'hide_empty' => false,  // 可按需改为 true，隐藏空分类
     ));
 
-    // 检查是否返回错误或空结果
+    // 先检查错误，再排序
     if (is_wp_error($linkcats) || empty($linkcats)) {
         return get_the_link_items(); // 友链无分类或出错，直接返回全部列表  
     }
-    
+
+    // 按 term_priority 排序，未设置的排最后
+    usort($linkcats, function($a, $b) {
+        $pa = get_term_meta($a->term_id, 'term_priority', true);
+        $pb = get_term_meta($b->term_id, 'term_priority', true);
+        
+        // 都没设置，按名称排序
+        if ($pa === '' && $pb === '') {
+            return strcmp($a->name, $b->name);
+        }
+        // 没设置的放最后
+        if ($pa === '') return 1;
+        if ($pb === '') return -1;
+        
+        // 降序：数字大的在前
+        return intval($pb) - intval($pa);
+    });
+
     $result = '';
     $pending_cat_name = __('Pending Links', 'sakurairo'); // 未审核链接分类名称
     
