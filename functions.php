@@ -4232,15 +4232,51 @@ function sakurairo_record_admin_login() {
 }
 add_action('wp_loaded', 'sakurairo_record_admin_login');
 
-// 添加钩子，在发布/更新文章或者评论时刷新缓存
-function sakurairo_refresh_stats_on_action() {
-    if (current_user_can('edit_post')) {
-        delete_transient('sakurairo_site_stats');
-    }
+function sakurairo_refresh_stats_on_action(...$args) {
+    delete_transient('sakurairo_site_stats');
 }
-add_action('wp_insert_post', 'sakurairo_refresh_stats_on_action');
-add_action('edit_post', 'sakurairo_refresh_stats_on_action');
+
+/**
+ * 文章保存时：清理胶囊统计缓存
+ * 仅供 save_post 使用，避免 autosave / revision / auto-draft 造成无意义刷新
+ */
+function sakurairo_refresh_stats_on_post_action($post_id, $post = null, $update = false) {
+    if (empty($post_id)) {
+        return;
+    }
+
+    // 自动保存不处理
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+
+    // autosave / revision 不处理
+    if (wp_is_post_autosave($post_id) || wp_is_post_revision($post_id)) {
+        return;
+    }
+
+    // 自动草稿不处理
+    if (get_post_status($post_id) === 'auto-draft') {
+        return;
+    }
+
+    delete_transient('sakurairo_site_stats');
+}
+
+/* 文章变更时刷新胶囊统计缓存 */
+add_action('save_post', 'sakurairo_refresh_stats_on_post_action', 10, 3);
+add_action('deleted_post', 'sakurairo_refresh_stats_on_action');
+add_action('trash_post', 'sakurairo_refresh_stats_on_action');
+
+/* 评论变更时刷新胶囊统计缓存 */
 add_action('wp_insert_comment', 'sakurairo_refresh_stats_on_action');
+add_action('edit_comment', 'sakurairo_refresh_stats_on_action');
+add_action('deleted_comment', 'sakurairo_refresh_stats_on_action');
+
+/* 友情链接变更时刷新胶囊统计缓存 */
+add_action('added_link', 'sakurairo_refresh_stats_on_action');
+add_action('edit_link', 'sakurairo_refresh_stats_on_action');
+add_action('delete_link', 'sakurairo_refresh_stats_on_action');
 
 // 格式化时间差函数 - 将分钟转换为友好的文本格式
 function format_time_diff($minutes) {
