@@ -928,7 +928,8 @@
   }
 
   .bili-container,
-  .tieba-container {
+  .tieba-container,
+  .custom-container {
     padding-inline-start: 0;
   }
 

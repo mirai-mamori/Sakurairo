@@ -1472,13 +1472,20 @@ function get_custom_smilies_list()
             $file_path = $file->getPathname();
             $file_little_path = str_replace(wp_get_upload_dir()['basedir'], '', $file_path);
             $file_url = wp_get_upload_dir()['baseurl'] . $file_little_path;
+
+            // 解析文件名，获取表情的基本名称和类型（自定义表情拓展为meme和emoji两类；可向下兼容，默认识别为emoji）
+            $file_base_name_part = explode('_', $file_base_name);
+            $name = $file_base_name_part[0];
+            $type = isset($file_base_name_part[1]) ? ($file_base_name_part[1] == '1' ? 'meme' : 'emoji') : 'emoji';
+
             if (in_array($file_extension, $custom_smilies_extension)) {
                 $custom_smilies_list[] = array(
                     'path' => $file_path,
                     'little_path' => $file_little_path,
                     'file_url' => $file_url,
                     'name' => $file_name,
-                    'base_name' => $file_base_name,
+                    'base_name' => $name,
+                    'type' => $type,
                     'extension' => $file_extension
                 );
             }
@@ -1543,7 +1550,10 @@ function push_custom_smilies()
 {
 
     global $custom_smiliestrans;
-    $custom_smilies_panel = '';
+
+    // 拓展自定义表情类型
+    $custom_smilies_emoji_panel = '';
+    $custom_smilies_meme_panel = '';
     $custom_smilies_list = get_custom_smilies_list();
 
     if (!$custom_smilies_list) {
@@ -1559,10 +1569,19 @@ function push_custom_smilies()
         } else {
             $smiley_url = $smiley['file_url'];
         }
-        $custom_smilies_panel = $custom_smilies_panel . '<span title="' . $smiley['base_name'].'" ' . make_onclick_grin($smiley['base_name'],'Math').'><img alt="custom_smilies" loading="lazy" style="height: 60px;" src="' . $smiley_url . '" /></span>';
-        $custom_smiliestrans['{{' . $smiley['base_name'] . '}}'] = '<span title="' . $smiley['base_name'] . '" ><img alt="custom_smilies" loading="lazy" style="height: 60px;" src="' . $smiley_url . '" /></span>';
+        
+        // 拓展自定义表情类型，按不同样式展示（emoji正常表情样式，meme按大图表情包展示，独占一行）
+        if($smiley['type'] === 'emoji') {
+            $custom_smilies_emoji_panel = $custom_smilies_emoji_panel . '<span title="' . $smiley['base_name'].'" ' . make_onclick_grin($smiley['base_name'],'Math').'><img alt="custom_smilies" class="custom-smilies-type-emoji" loading="lazy" src="' . $smiley_url . '" /></span>';
+            $custom_smiliestrans['{{' . $smiley['base_name'] . '}}'] = '<span title="' . $smiley['base_name'] . '" ><img alt="custom_smilies" class="smilie-emoji-in-content" loading="lazy" src="' . $smiley_url . '" /></span>';
+        } else if($smiley['type'] === 'meme') {
+            $custom_smilies_meme_panel = $custom_smilies_meme_panel . '<span title="' . $smiley['base_name'].'" ' . make_onclick_grin($smiley['base_name'],'Math').'><img alt="custom_smilies" class="custom-smilies-type-meme" loading="lazy" src="' . $smiley_url . '" /></span>';
+            $custom_smiliestrans['{{' . $smiley['base_name'] . '}}'] = '<span title="' . $smiley['base_name'] . '" ><img alt="custom_smilies" loading="lazy" style="height: 100px; display: block; margin: 5px; border-radius: 5px;" src="' . $smiley_url . '" /></span>';
+        }
     }
 
+    // 两种表情在面板上分开展示
+    $custom_smilies_panel = $custom_smilies_emoji_panel . ($custom_smilies_emoji_panel ? '<br>' : '') . $custom_smilies_meme_panel;
     return $custom_smilies_panel;
 }
 
@@ -1598,7 +1617,7 @@ function push_tieba_smilies()
         // 选择面版
         $return_smiles = $return_smiles . '<span title="' . $tieba_Name . '" '.$grin.'><img alt="tieba_smilie" loading="lazy" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@3.0/') . 'smilies/' . $tiebaimgdir . 'icon_' . $tieba_Name . $smiliesgs . '" /></span>';
         // 正文转换
-        $wpsmiliestrans['::' . $tieba_Name . '::'] = '<span title="' . $tieba_Name . '" '.$grin.'><img alt="tieba_smilie" loading="lazy" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@3.0/') . 'smilies/' . $tiebaimgdir . 'icon_' . $tieba_Name . $smiliesgs . '" /></span>';
+        $wpsmiliestrans['::' . $tieba_Name . '::'] = '<span title="' . $tieba_Name . '" '.$grin.'><img alt="tieba_smilie" class="smilie-emoji-in-content" loading="lazy" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@3.0/') . 'smilies/' . $tiebaimgdir . 'icon_' . $tieba_Name . $smiliesgs . '" /></span>';
     }
     return $return_smiles;
 }
@@ -1636,7 +1655,7 @@ function push_bili_smilies()
         // 选择面版
         $return_smiles = $return_smiles . '<span title="' . $smilies_Name . '" '.$grin.'><img alt="bili_smilies" loading="lazy" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@3.0/') . 'smilies/' . $biliimgdir . 'emoji_' . $smilies_Name . $smiliesgs . '" /></span>';
         // 正文转换
-        $bilismiliestrans['{{' . $smilies_Name . '}}'] = '<span title="' . $smilies_Name . '" '.$grin.'><img alt="bili_smilies" loading="lazy" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@3.0/') . 'smilies/' . $biliimgdir . 'emoji_' . $smilies_Name . $smiliesgs . '" /></span>';
+        $bilismiliestrans['{{' . $smilies_Name . '}}'] = '<span title="' . $smilies_Name . '" '.$grin.'><img alt="bili_smilies" class="smilie-emoji-in-content" loading="lazy" src="' . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@3.0/') . 'smilies/' . $biliimgdir . 'emoji_' . $smilies_Name . $smiliesgs . '" /></span>';
     }
     return $return_smiles;
 }
@@ -2418,18 +2437,13 @@ function change_avatar($avatar)
     global $comment, $sakura_privkey;
     if ($comment && get_comment_meta($comment->comment_ID, 'new_field_qq', true)) {
         $qq_number = get_comment_meta($comment->comment_ID, 'new_field_qq', true);
-        $qq_number = sanitize_text_field($qq_number);
         if (iro_opt('qq_avatar_link') == 'off') {
-            return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . esc_attr($qq_number) . '&spec=100" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+            return '<img src="https://q2.qlogo.cn/headimg_dl?dst_uin=' . $qq_number . '&spec=100" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
         }
         if (iro_opt('qq_avatar_link') == 'type_3') {
-            $qqavatar = wp_remote_retrieve_body(wp_remote_get('https://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin=' . urlencode($qq_number)));
+            $qqavatar = file_get_contents('http://ptlogin2.qq.com/getface?appid=1006102&imgtype=3&uin=' . $qq_number);
             preg_match('/:\"([^\"]*)\"/i', $qqavatar, $matches);
-            $avatar_url = isset($matches[1]) ? esc_url($matches[1]) : '';
-            if (empty($avatar_url)) {
-                return $avatar;
-            }
-            return '<img src="' . $avatar_url . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
+            return '<img src="' . $matches[1] . '" class="lazyload avatar avatar-24 photo" alt="😀" width="24" height="24" onerror="imgError(this,1)">';
         }
         
         // Ensure $sakura_privkey is defined and not null
