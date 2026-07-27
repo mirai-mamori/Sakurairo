@@ -3370,6 +3370,7 @@ iframe {
   background-color: transparent;
   height: 0px;
 }
+
 /* 表情面板结束 */
 /* 表情选区 */
 .motion-container span:hover img,
@@ -3379,7 +3380,8 @@ iframe {
 }
 
 .bili-container,
-.tieba-container {
+.tieba-container,
+.custom-container {
   padding-left: 16px;
 }
 
@@ -3389,15 +3391,36 @@ iframe {
 }
 
 .tieba-container img,
-.bili-container img {
+.bili-container img,
+.custom-smilies-type-emoji {
   width: 32px;
   height: 32px;
   margin: 7px;
 }
 
+.custom-smilies-type-meme {
+    max-width: 80px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
+    aspect-ratio: auto;
+    vertical-align: middle;
+    margin: 5px;
+}
+
+.custom-container img {
+  border-radius: 5px;
+}
+
 .tieba-container img:hover {
   background-color: rgba(245, 245, 245, .8);
   border-radius: 5px;
+}
+
+/* 优化表情垂直对齐位置 */
+.smilie-emoji-in-content {
+  height: 30px;
+  vertical-align: bottom;
 }
 
 .motion-switcher-table td,
@@ -4744,13 +4767,15 @@ span.page-numbers.dots, a.page-numbers {
 }
 
 .comment .body p a {
-  color: var(--article-theme-highlight,var(--theme-skin-matching), #505050);
+  color: var(--article-theme-highlight,var(--theme-skin-matching, #505050));
   padding: 0 5px;
   text-decoration: underline;
 }
 
-.comment .body .comment-at {
-  color: var(--theme-skin, #505050);
+/* 评论区@优化为高亮显示 */
+.comment .body .comment-at,
+body.dark .comment .body .comment-at {
+  color: var(--article-theme-highlight, var(--theme-skin-matching, #505050)) !important;
   text-decoration: none;
 }
 
