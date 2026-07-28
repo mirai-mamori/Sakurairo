@@ -474,7 +474,7 @@ body.dark #pagination a:hover {
 }
 
 body.dark #pagination a {
-  background: rgb(26 26 26 / 60%);
+  background-color: rgb(26 26 26 / 60%);
   box-shadow: var(--dark-shadow-normal);
   border: 1.5px solid var(--dark-border-color);
   color: var(--dark-text-primary);
