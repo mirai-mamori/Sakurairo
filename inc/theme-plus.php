@@ -132,7 +132,7 @@ function var_post_theme_color($id = null) {
 function comment_add_at( $comment_text, $comment = '') {
   if( isset($comment->comment_parent) && $comment->comment_parent > 0) {
       if(substr($comment_text, 0, 3) === "<p>") 
-        $comment_text = str_replace(substr($comment_text, 0, 3), '<p><a href="#comment-' . $comment->comment_parent . '" class="comment-at">@'.get_comment_author( $comment->comment_parent ) . '</a>&nbsp;', $comment_text);
+        $comment_text = preg_replace('/<p>/', '<p><a href="#comment-' . $comment->comment_parent . '" class="comment-at">@' . get_comment_author($comment->comment_parent) . '</a>&nbsp;', $comment_text, 1);
       else
         $comment_text = '<a href="#comment-' . $comment->comment_parent . '" class="comment-at">@'.get_comment_author( $comment->comment_parent ) . '</a>&nbsp;' . $comment_text;
   }
