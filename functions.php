@@ -596,8 +596,7 @@ function sakura_scripts()
                 "已暂停..." => __("Paused...", 'sakurairo'),
                 "正在载入视频 ..." => __("Loading Video...", 'sakurairo'),
                 "将从网络加载字体，流量请注意" => __("Downloading fonts, be aware of your data usage.", 'sakurairo'),
-                "您真的要设为私密吗？" => __("Are you sure you want set it private?", 'sakurairo'),
-                "您之前已设过私密评论" => __("You had set private comment before", 'sakurairo')
+                "您确定要切换私密状态吗？" => __("Are you sure you want to toggle private status?", 'sakurairo')
             )
         );
     }
@@ -725,7 +724,7 @@ if (!function_exists('akina_comment_format')) {
                                         $comment_ID = $comment->comment_ID;
                                         $i_private = get_comment_meta($comment_ID, '_private', true);
                                         $flag = null;
-                                        $flag .= ' <i class="fa-regular fa-snowflake"></i> <a href="javascript:;" data-actionp="set_private" data-idp="' . get_comment_id() . '" id="sp" class="sm">' . __("Private", "sakurairo") . ': <span class="has_set_private">';
+                                        $flag .= ' <i class="fa-regular fa-snowflake"></i> <a href="javascript:;" data-actionp="set_private" data-idp="' . get_comment_id() . '" data-noncep="' . wp_create_nonce('siren_private_' . $comment_ID) . '" id="sp" class="sm">' . __("Private", "sakurairo") . ': <span class="has_set_private">';
                                         if (!empty($i_private)) {
                                             $flag .= __("Yes", "sakurairo") . ' <i class="fa-solid fa-lock"></i>';
                                         } else {
@@ -1706,16 +1705,24 @@ function check_title_tags($content)
 }
 
 /*私密评论*/
-add_action('wp_ajax_nopriv_siren_private', 'siren_private');
 add_action('wp_ajax_siren_private', 'siren_private');
 function siren_private()
 {
-    $comment_id = $_POST["p_id"];
-    $action = $_POST["p_action"];
+    $comment_id = isset($_POST["p_id"]) ? absint($_POST["p_id"]) : 0;
+    $action = isset($_POST["p_action"]) ? sanitize_key($_POST["p_action"]) : '';
+    if (!current_user_can('manage_options') || empty($comment_id) || !get_comment($comment_id)) {
+        die;
+    }
+    check_ajax_referer('siren_private_' . $comment_id);
     if ($action == 'set_private') {
-        update_comment_meta($comment_id, '_private', 'true');
         $i_private = get_comment_meta($comment_id, '_private', true);
-        echo empty($i_private) ? '是' : '否';
+        if (!empty($i_private)) {
+            delete_comment_meta($comment_id, '_private');
+            echo __("No", "sakurairo") . ' <i class="fa-solid fa-lock-open"></i>';
+        } else {
+            update_comment_meta($comment_id, '_private', 'true');
+            echo __("Yes", "sakurairo") . ' <i class="fa-solid fa-lock"></i>';
+        }
     }
     die;
 }

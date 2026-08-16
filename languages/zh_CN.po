@@ -573,13 +573,9 @@ msgstr "正在加载视频..."
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "下载字体时，请注意你的数据使用情况。"
 
-#: functions.php:598
-msgid "Are you sure you want set it private?"
-msgstr "是否要将其设置为私密？"
-
 #: functions.php:599
-msgid "You had set private comment before"
-msgstr "你之前设置了私人评论"
+msgid "Are you sure you want to toggle private status?"
+msgstr "您确定要切换私密状态吗？"
 
 #: functions.php:696 inc/theme-plus.php:239
 msgid "Author"

@@ -595,13 +595,9 @@ msgstr "ビデオを読み込んでいます..."
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "フォントをダウンロードするには、データ使用量に注意してください。"
 
-#: functions.php:592
-msgid "Are you sure you want set it private?"
-msgstr "プライベートに設定してもよろしいですか?"
-
-#: functions.php:593
-msgid "You had set private comment before"
-msgstr "以前にプライベートコメントを設定していた"
+#: functions.php:599
+msgid "Are you sure you want to toggle private status?"
+msgstr "非公開状態を切り替えてもよろしいですか？"
 
 #: functions.php:690 inc/theme-plus.php:211
 msgid "Author"
