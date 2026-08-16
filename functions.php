@@ -3701,7 +3701,7 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
         include_once('inc/classes/Captcha.php');
         $img = new Sakura\API\Captcha;
         $test = $img->create_captcha_img();
-        echo '<p><label for="captcha" class="captcha"><img id="captchaimg" width="120" height="40" style="border-radius: 8px;" src="', $test['data'], '"><input type="text" name="yzm" id="yzm" class="input" value="" size="20" tabindex="4" placeholder="请输入验证码"><input type="hidden" name="timestamp" value="', $test['time'], '"><input type="hidden" name="id" value="', $test['id'], '">'
+        echo '<p><label for="captcha" class="captcha"><img id="captchaimg" width="120" height="40" style="border-radius: 8px;" src="', $test['data'], '"><input type="text" name="yzm" id="yzm" class="input" value="" size="20" tabindex="4" placeholder="请输入验证码" autocomplete="captcha"><input type="hidden" name="timestamp" value="', $test['time'], '"><input type="hidden" name="id" value="', $test['id'], '">'
             . "</label></p>";
     }
     add_action('login_form', 'login_CAPTCHA');

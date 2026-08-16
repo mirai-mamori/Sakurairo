@@ -132,7 +132,7 @@ function get_smilies_panel() {
 				$comment_captcha = '
 					<label for="captcha" class="comment-captcha">
 						<img id="captchaimg" alt="captcha" width="120" height="40" style="width: 0px;margin-right: 0px;" src="' . iro_opt('load_in_svg','') . '">
-						<input type="text" name="captcha" id="captcha" class="input" value="" size="20" tabindex="4" placeholder="' . $captcha_placeholder . '" data-placeholder="'.$captcha_placeholder.'">
+						<input type="text" name="captcha" id="captcha" class="input" value="" autocomplete="captcha" size="20" tabindex="4" placeholder="' . $captcha_placeholder . '" data-placeholder="'.$captcha_placeholder.'">
 						<input type="hidden" name="timestamp" value=" ">
 						<input type="hidden" name="id" value=" ">
 					</label>';
