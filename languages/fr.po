@@ -615,13 +615,9 @@ msgstr "Chargement de la vidéo..."
 msgid "Downloading fonts, be aware of your data usage."
 msgstr "Téléchargement des polices, attention à votre consommation de données."
 
-#: functions.php:592
-msgid "Are you sure you want set it private?"
-msgstr "Êtes-vous sûr de vouloir le définir comme privé ?"
-
-#: functions.php:593
-msgid "You had set private comment before"
-msgstr "Vous avez déjà défini un commentaire privé"
+#: functions.php:599
+msgid "Are you sure you want to toggle private status?"
+msgstr "Êtes-vous sûr de vouloir changer le statut de confidentialité ?"
 
 #: functions.php:690 inc/theme-plus.php:211
 msgid "Author"

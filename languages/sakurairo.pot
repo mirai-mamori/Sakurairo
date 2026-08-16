@@ -570,12 +570,8 @@ msgstr ""
 msgid "Downloading fonts, be aware of your data usage."
 msgstr ""
 
-#: functions.php:592
-msgid "Are you sure you want set it private?"
-msgstr ""
-
-#: functions.php:593
-msgid "You had set private comment before"
+#: functions.php:599
+msgid "Are you sure you want to toggle private status?"
 msgstr ""
 
 #: functions.php:690 inc/theme-plus.php:211
