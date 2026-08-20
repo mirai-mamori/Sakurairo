@@ -174,10 +174,16 @@ function comment_captcha(){
       if (empty($timestamp) || empty($captcha_id) || !preg_match('/^[\w$.\/]+$/', $captcha_id) || !ctype_digit($timestamp)) {
           return siren_ajax_comment_err(__('Have you modified the captcha code data? Or refresh the captcha and try again?','sakurairo'));
       }
+      // 验证码一次性使用，防止同一验证码被重复用于多条评论
+      $used_key = 'sakurairo_comment_captcha_used_' . md5($captcha_id);
+      if (get_transient($used_key)) {
+          return siren_ajax_comment_err(__('This captcha has already been used. Please refresh the captcha and try again.', 'sakurairo'));
+      }
       include_once( get_template_directory() . '/inc/classes/Captcha.php');
       $img = new Sakura\API\Captcha;
       $check = $img->check_captcha($captcha, $timestamp, $captcha_id);
       if ($check['code'] == 5) {
+          set_transient($used_key, 1, 120);
           return true;
       }
       return siren_ajax_comment_err(__('Please fill in the correct captcha answer','sakurairo'));
