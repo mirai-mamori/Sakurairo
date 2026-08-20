@@ -217,10 +217,10 @@ function render_annotations_admin_page() {
                 echo '<p><strong>' . __('Number of Annotations:', 'sakurairo') . '</strong> ' . count($annotations) . '</p>';
                 echo '<p><strong>' . __('Annotation Data:', 'sakurairo') . '</strong></p>';
                 echo '<pre style="background:#f5f5f5; padding:10px; max-height:300px; overflow:auto;">';
-                print_r($annotations);
+                echo esc_html(print_r($annotations, true));
                 echo '</pre>';
             } else {
-                echo '<p><strong>' . __('Annotation Data:', 'sakurairo') . '</strong> ' . var_export($annotations, true) . '</p>';
+                echo '<p><strong>' . __('Annotation Data:', 'sakurairo') . '</strong> ' . esc_html(var_export($annotations, true)) . '</p>';
             }
             
             // 检查数据库记录
@@ -274,20 +274,47 @@ function render_annotations_admin_page() {
         
         <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const deleteLabel = <?php echo wp_json_encode(__('Delete', 'sakurairo')); ?>;
+
+            function createAnnotationRow(term = '', explanation = '') {
+                const row = document.createElement('tr');
+                const termCell = document.createElement('td');
+                const explanationCell = document.createElement('td');
+                const actionCell = document.createElement('td');
+                const termInput = document.createElement('input');
+                const explanationInput = document.createElement('textarea');
+                const deleteButton = document.createElement('button');
+
+                termInput.type = 'text';
+                termInput.name = 'term[]';
+                termInput.value = term;
+                explanationInput.name = 'explanation[]';
+                explanationInput.value = explanation;
+                deleteButton.type = 'button';
+                deleteButton.className = 'delete-row';
+                deleteButton.textContent = deleteLabel;
+
+                termCell.appendChild(termInput);
+                explanationCell.appendChild(explanationInput);
+                actionCell.appendChild(deleteButton);
+                row.append(termCell, explanationCell, actionCell);
+
+                return row;
+            }
+
             // 用于展示编辑表单的函数
             function displayAnnotations(title, annotations, postId) {
-                document.getElementById('modal-title').textContent = <?php echo json_encode(__('Post Annotations: ', 'sakurairo')); ?> + title;
+                document.getElementById('modal-title').textContent = <?php echo wp_json_encode(__('Post Annotations: ', 'sakurairo')); ?> + title;
                 document.getElementById('current-post-id').value = postId;
-                let tbody = document.querySelector('#annotations-table tbody');
-                tbody.innerHTML = ''; // 清空原有内容
+                const tbody = document.querySelector('#annotations-table tbody');
+                tbody.replaceChildren();
                 
                 // 根据已有注释渲染行
-                for (const term in annotations) {
-                    let tr = document.createElement('tr');
-                    tr.innerHTML = `<td><input type="text" name="term[]" value="${term}" /></td>
-                                    <td><textarea name="explanation[]">${annotations[term]}</textarea></td>
-                                    <td><button type="button" class="delete-row"><?php echo __('Delete', 'sakurairo'); ?></button></td>`;
-                    tbody.appendChild(tr);
+                for (const [term, explanation] of Object.entries(annotations)) {
+                    if (typeof explanation !== 'string') {
+                        continue;
+                    }
+                    tbody.appendChild(createAnnotationRow(term, explanation));
                 }
                 document.getElementById('annotation-modal').style.display = 'block';
             }
@@ -317,12 +344,8 @@ function render_annotations_admin_page() {
 
             // 添加新行
             document.getElementById('add-annotation').addEventListener('click', function() {
-                let tbody = document.querySelector('#annotations-table tbody');
-                let tr = document.createElement('tr');
-                tr.innerHTML = `<td><input type="text" name="term[]" value="" /></td>
-                                <td><textarea name="explanation[]"></textarea></td>
-                                <td><button type="button" class="delete-row"><?php echo __('Delete', 'sakurairo'); ?></button></td>`;
-                tbody.appendChild(tr);
+                const tbody = document.querySelector('#annotations-table tbody');
+                tbody.appendChild(createAnnotationRow());
             });
 
             // 删除
@@ -340,7 +363,7 @@ function render_annotations_admin_page() {
                 const explanations = Array.from(document.querySelectorAll('textarea[name="explanation[]"]')).map(textarea => textarea.value.trim());
                 
                 // 组装数据
-                let annotations = {};
+                const annotations = Object.create(null);
                 for (let i = 0; i < terms.length; i++) {
                     if (terms[i] !== '') {  // 排除空内容
                         annotations[terms[i]] = explanations[i];
@@ -436,18 +459,12 @@ function generate_annotations_for_post($post_id) {
     error_log("IROChatGPT: 开始为文章 {$post_id} 生成注释");
     $annotations = call_chatgpt_for_annotations($content);
     
-    if (empty($annotations) || !is_array($annotations)) {
+    if (empty($annotations) || !is_string_annotation_map($annotations)) {
         error_log("IROChatGPT: API返回无效数据，未能生成注释");
         return false;
     }
     
     error_log("IROChatGPT: 成功获取注释数据，准备保存。注释数量: " . count($annotations));
-    
-    // 保存前先验证注释是否有效
-    if (!is_array($annotations)) {
-        error_log("IROChatGPT: 注释数据不是数组格式");
-        return false;
-    }
     
     // 直接测试保存结果
     $save_result = update_post_meta($post_id, 'iro_chatgpt_annotations', $annotations);
@@ -484,11 +501,14 @@ function ajax_get_post_annotations() {
     if (!$post) {
         wp_send_json_error(__('Post not found', 'sakurairo'));
     }
+
+    if (!current_user_can('edit_post', $post_id)) {
+        wp_send_json_error(__('Access denied', 'sakurairo'), 403);
+    }
     
     $annotations = get_post_meta($post_id, 'iro_chatgpt_annotations', true);
-    error_log("IROChatGPT: 从文章 {$post_id} 获取注释数据: " . print_r($annotations, true));
     
-    if (empty($annotations)) {
+    if (empty($annotations) || !is_string_annotation_map($annotations)) {
         wp_send_json_error(__('This post does not have any annotation data', 'sakurairo'));
     }
     
@@ -518,7 +538,7 @@ function ajax_update_post_annotations() {
     
     // 获取并解析注释数据
     $annotations = isset($_POST['annotations']) ? json_decode(stripslashes($_POST['annotations']), true) : null;
-    if (!is_array($annotations)) {
+    if (!is_string_annotation_map($annotations)) {
         wp_send_json_error(__('Invalid annotations data', 'sakurairo'));
     }
     

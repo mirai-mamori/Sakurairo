@@ -8,6 +8,8 @@ namespace IROChatGPT {
     define("DEFAULT_INIT_PROMPT", "请以作者的身份，以激发好奇吸引阅读为目的，结合文章核心观点来提取的文章中最吸引人的内容，为以下文章编写一个用词精炼简短、90字以内、与文章语言一致的引言。");
     define("DEFAULT_MODEL", "gpt-4o-mini");
 
+    require_once __DIR__ . '/annotation-response.php';
+
     function generate_post_summary(WP_Post $post)
     {
         $exclude_ids = iro_opt('chatgpt_exclude_ids', '');
@@ -125,9 +127,6 @@ namespace IROChatGPT {
         curl_close($ch);
         // === 替换结束 ===
 
-        // 输出 API 原始响应调试信息
-        error_log("GPT error: " . $chat);
-
         $decoded_chat = json_decode($chat);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
@@ -135,7 +134,7 @@ namespace IROChatGPT {
         }
 
         if (is_null($decoded_chat) || isset($decoded_chat->error)) {
-            throw new Exception("ChatGPT error: " . json_encode($decoded_chat));
+            throw new Exception("ChatGPT API returned an error.");
         }
 
         return $decoded_chat->choices[0]->message->content;
@@ -177,25 +176,129 @@ namespace IROChatGPT {
         }
     }
 
+    function request_annotation_segments($segments, $api_endpoint, $api_key, $model, $prompt, $timeout, $attempt)
+    {
+        $attempt = $attempt === 'retry' ? 'retry' : 'initial';
+        $parsed_responses = [];
+        $mh = curl_multi_init();
+        $curl_handles = [];
+
+        foreach ($segments as $index => $segment) {
+            $data = [
+                'model' => $model,
+                'messages' => [
+                    [
+                        'role' => 'system',
+                        'content' => '你是一个专业的文章分析助手，擅长识别文章中专业术语、复杂概念、事件、社会热点、网络黑话烂梗热词、晦涩难懂等内容并提供简明解释。'
+                    ],
+                    [
+                        'role' => 'user',
+                        'content' => $prompt . $segment
+                    ]
+                ],
+                'temperature' => 0.3,
+                'max_tokens' => ANNOTATION_OUTPUT_TOKEN_LIMIT
+            ];
+            $headers = [
+                'Content-Type: application/json',
+                'Authorization: Bearer ' . $api_key
+            ];
+            $request_body = json_encode($data, JSON_UNESCAPED_UNICODE);
+            if ($request_body === false) {
+                $parsed_responses[$index] = annotation_response_failure(
+                    'request_json_error',
+                    'Unable to encode annotation request'
+                );
+                continue;
+            }
+
+            $ch = curl_init($api_endpoint);
+            if ($ch === false) {
+                $parsed_responses[$index] = annotation_response_failure(
+                    'curl_init_error',
+                    'Unable to initialize cURL'
+                );
+                continue;
+            }
+
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $request_body);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+            curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+
+            if (curl_multi_add_handle($mh, $ch) !== CURLM_OK) {
+                $parsed_responses[$index] = annotation_response_failure(
+                    'curl_multi_error',
+                    'Unable to queue annotation request'
+                );
+                curl_close($ch);
+                continue;
+            }
+            $curl_handles[$index] = $ch;
+        }
+
+        if (!empty($curl_handles)) {
+            $running = null;
+            do {
+                $status = curl_multi_exec($mh, $running);
+                usleep(100000);
+            } while ($running > 0 && $status == CURLM_OK);
+        }
+
+        foreach ($curl_handles as $index => $ch) {
+            $response = curl_multi_getcontent($ch);
+            $curl_errno = curl_errno($ch);
+            $http_status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            $parsed_response = parse_annotation_response($response, $curl_errno, $http_status);
+            $parsed_responses[$index] = $parsed_response;
+
+            if ($parsed_response['error_code'] === null) {
+                error_log(sprintf(
+                    'IROChatGPT: 注释响应成功: attempt=%s, segment=%s, annotations=%d',
+                    $attempt,
+                    (string) $index,
+                    count($parsed_response['annotations'])
+                ));
+            } else {
+                error_log(sprintf(
+                    'IROChatGPT: 注释响应处理失败: attempt=%s, segment=%s, error=%s, HTTP=%d, cURL=%d, finish_reason=%s, response_length=%d, detail=%s',
+                    $attempt,
+                    (string) $index,
+                    $parsed_response['error_code'],
+                    $http_status,
+                    $curl_errno,
+                    $parsed_response['finish_reason'] ?? 'none',
+                    strlen((string) $response),
+                    $parsed_response['error_message']
+                ));
+            }
+
+            curl_multi_remove_handle($mh, $ch);
+            curl_close($ch);
+        }
+        curl_multi_close($mh);
+
+        return $parsed_responses;
+    }
+
     /**
      * 调用ChatGPT API生成复杂名词注释
      */
     function call_chatgpt_for_annotations($content)
     {
-        // 使用正确的选项名获取API配置
         $api_endpoint = iro_opt('chatgpt_endpoint', 'https://api.openai.com/v1/chat/completions');
         $api_key = iro_opt('chatgpt_access_token', '');
         $model = iro_opt('chatgpt_model', 'gpt-4o-mini');
 
-        // 如果找不到API密钥，返回空数组
         if (empty($api_key)) {
             error_log('IROChatGPT: No API key found');
             return [];
         }
 
         $max_length = iro_opt("chatgpt_max_tokens", 7000);
-
-        // 截取内容
         $paragraphs = preg_split('/\n\s*\n/', $content);
         $segments = [];
         $current_segment = '';
@@ -214,95 +317,92 @@ namespace IROChatGPT {
             $segments[] = $current_segment;
         }
 
-        $mh = curl_multi_init();
-        $curl_handles = [];
+        $prompt = iro_opt("chatgpt_annotations_prompt");
+        if (empty($prompt)) {
+            $prompt = "分析以下文章正文内容(排除标题及引语类文本)，用最认真的态度和较为严格的识别标准筛选出专业术语、复杂概念、事件、社会热点、网络黑话烂梗热词、晦涩难懂、与文章语言不同的名词，并根据文章主要语言提供对应语言的简短解释。若文章出现与“事件”，“热点”，“介绍”等具有提示上下文功能的含义的名词时，请务必用最高优先级在前后查找符合要求的名词。名词选取时需要排除日常常用的名词、非著名人物的人名。仅返回JSON格式，格式为：{\"术语1\":\"解释1\", \"术语2\":\"解释2\", ...}。注意不要出现在原文中并没有出现的名词，生成的名词越多越好：\n\n";
+        }
+        $timeout = max(5, min(360, (int) iro_opt('chatgpt_api_request_timeout', 30)));
 
-        // 为每个分段构建请求
-        foreach ($segments as $index => $segment) {
-            // 构建每个分段的提示词
-            $prompt = iro_opt("chatgpt_annotations_prompt");
-            if (empty($prompt)) {
-                $prompt = "分析以下文章正文内容(排除标题及引语类文本)，用最认真的态度和较为严格的识别标准筛选出专业术语、复杂概念、事件、社会热点、网络黑话烂梗热词、晦涩难懂、与文章语言不同的名词，并根据文章主要语言提供对应语言的简短解释。若文章出现与“事件”，“热点”，“介绍”等具有提示上下文功能的含义的名词时，请务必用最高优先级在前后查找符合要求的名词。名词选取时需要排除日常常用的名词、非著名人物的人名。仅返回JSON格式，格式为：{\"术语1\":\"解释1\", \"术语2\":\"解释2\", ...}。注意不要出现在原文中并没有出现的名词，生成的名词越多越好：\n\n";
-            }
-            // 拼接提示词和分段内容
-            $full_prompt = $prompt . $segment;
+        $parsed_responses = request_annotation_segments(
+            $segments,
+            $api_endpoint,
+            $api_key,
+            $model,
+            $prompt,
+            $timeout,
+            'initial'
+        );
 
-            // 构建请求数据
-            $data = [
-                'model' => $model,
-                'messages' => [
-                    [
-                        'role' => 'system',
-                        'content' => '你是一个专业的文章分析助手，擅长识别文章中专业术语、复杂概念、事件、社会热点、网络黑话烂梗热词、晦涩难懂等内容并提供简明解释。'
-                    ],
-                    [
-                        'role' => 'user',
-                        'content' => $full_prompt
-                    ]
-                ],
-                'temperature' => 0.3,
-                'max_tokens' => 800
-            ];
-
-            // 设置 HTTP 请求头
-            $headers = [
-                'Content-Type: application/json',
-                'Authorization: Bearer ' . $api_key
-            ];
-
-            // 初始化单个curl
-            $ch = curl_init($api_endpoint);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($ch, CURLOPT_TIMEOUT, iro_opt('chatgpt_api_request_timeout', 30));
-
-            // 添加到multi
-            curl_multi_add_handle($mh, $ch);
-            $curl_handles[$index] = $ch;
+        $retry_plan = build_annotation_retry_plan($segments, $parsed_responses);
+        if ($retry_plan['error_code'] !== null) {
+            error_log(sprintf(
+                'IROChatGPT: 注释生成失败且不可重试: error=%s, failed_segment=%s',
+                $retry_plan['error_code'],
+                (string) $retry_plan['failed_segment']
+            ));
+            return [];
         }
 
-        // 并发所有请求
-        $running = null;
-        do {
-            $status = curl_multi_exec($mh, $running);
-            usleep(100000);
-        } while ($running > 0 && $status == CURLM_OK);
+        if (!empty($retry_plan['retry_segments'])) {
+            $retry_segments = [];
+            $retry_segment_map = [];
+            $retry_index = 0;
 
-        // 整合所有响应
-        $annotations = [];
-        foreach ($curl_handles as $ch) {
-            $response = curl_multi_getcontent($ch);
-            // 记录部分日志
-            error_log('IROChatGPT: API返回响应: ' . substr($response, 0, 200) . '...');
-
-            $result = json_decode($response, true);
-            if (isset($result['choices'][0]['message']['content'])) {
-                $json_str = $result['choices'][0]['message']['content'];
-                error_log('IROChatGPT: 提取的JSON: ' . $json_str);
-                if (preg_match('/\{.*\}/s', $json_str, $matches)) {
-                    $segment_annotations = json_decode($matches[0], true);
+            foreach ($retry_plan['retry_segments'] as $segment_index => $parts) {
+                foreach ($parts as $part) {
+                    $retry_segments[$retry_index] = $part;
+                    $retry_segment_map[$segment_index][] = $retry_index;
+                    $retry_index++;
                 }
-                if (is_array($segment_annotations)) {
-                    // 合并注释结果
-                    error_log('IROChatGPT: 成功解析JSON，获取到 ' . count($segment_annotations) . ' 个注释');
-                    $annotations = array_merge($annotations, $segment_annotations);
-                } else {
-                    error_log('IROChatGPT: JSON解析失败: ' . json_last_error_msg());
-                }
-            } else {
-                error_log('IROChatGPT: 未能从响应中提取目标内容，响应内容: ' . $response);
             }
 
-            // 移除并关闭句柄
-            curl_multi_remove_handle($mh, $ch);
-            curl_close($ch);
-        }
-        curl_multi_close($mh);
+            error_log(sprintf(
+                'IROChatGPT: 重试被截断的注释响应: attempt=%d, segments=%d, requests=%d',
+                ANNOTATION_MAX_RETRY_ATTEMPTS,
+                count($retry_plan['retry_segments']),
+                count($retry_segments)
+            ));
 
-        return $annotations;
+            $flat_retry_results = request_annotation_segments(
+                $retry_segments,
+                $api_endpoint,
+                $api_key,
+                $model,
+                $prompt,
+                $timeout,
+                'retry'
+            );
+            $retry_results = [];
+
+            foreach ($retry_segment_map as $segment_index => $retry_indexes) {
+                foreach ($retry_indexes as $retry_result_index) {
+                    $retry_results[$segment_index][$retry_result_index] = $flat_retry_results[$retry_result_index]
+                        ?? annotation_response_failure('response_missing', 'Retry response is missing');
+                }
+            }
+
+            $applied_retry = apply_annotation_retry_results($parsed_responses, $retry_results);
+            if ($applied_retry['error_code'] !== null) {
+                error_log(sprintf(
+                    'IROChatGPT: 注释重试失败，未保存部分结果: failed_segment=%s',
+                    (string) $applied_retry['failed_segment']
+                ));
+                return [];
+            }
+
+            $parsed_responses = $applied_retry['response_results'];
+        }
+
+        $combined_response = combine_annotation_response_results($parsed_responses);
+        if ($combined_response['error_code'] !== null) {
+            error_log(sprintf(
+                'IROChatGPT: 注释生成整体失败，未保存部分结果: failed_segment=%s',
+                (string) $combined_response['failed_segment']
+            ));
+            return [];
+        }
+
+        return $combined_response['annotations'];
     }
 
     /**
@@ -317,7 +417,7 @@ namespace IROChatGPT {
         }
         $annotations = get_post_meta($post->ID, 'iro_chatgpt_annotations', true);
 
-        if (empty($annotations) || !is_array($annotations)) {
+        if (empty($annotations) || !is_string_annotation_map($annotations)) {
             return $original_content; // Return original if no data
         }
 
@@ -460,7 +560,11 @@ namespace IROChatGPT {
                             if (!$isOverlapped) {
                                 // Found the first non-overlapping occurrence in this node
                                 $annotationIndex = $annotationMap[$term];
-                                $termEscaped = htmlspecialchars($term, ENT_QUOTES);
+                                $termEscaped = htmlspecialchars(
+                                    $term,
+                                    ENT_QUOTES | ENT_XML1 | ENT_SUBSTITUTE,
+                                    'UTF-8'
+                                );
                                 // Use locale-specific brackets
                                 $supHtml = '<sup class="iro-term-annotation" data-term="' . $termEscaped . '" data-id="' . $annotationIndex . '">' . $opening_bracket . $annotationIndex . $closing_bracket . '</sup>';
 

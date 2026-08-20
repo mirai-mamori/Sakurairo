@@ -150,6 +150,18 @@ function font_end_js_control()
     $sakura_effect = iro_opt('sakura_falling_effects');
     if ($sakura_effect != 'off') $iro_opt['effect'] = array('amount' => $sakura_effect);
     if (iro_opt('theme_darkmode_auto')) $iro_opt['dm_strategy'] = iro_opt('theme_darkmode_strategy', 'time');
-    wp_add_inline_script('app', 'var _iro = ' . json_encode($iro_opt, JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE), 'before');
+    wp_add_inline_script(
+        'app',
+        'var _iro = ' . wp_json_encode(
+            $iro_opt,
+            JSON_NUMERIC_CHECK
+            | JSON_UNESCAPED_UNICODE
+            | JSON_HEX_TAG
+            | JSON_HEX_AMP
+            | JSON_HEX_APOS
+            | JSON_HEX_QUOT
+        ),
+        'before'
+    );
 }
 add_action('wp_head', 'font_end_js_control');
