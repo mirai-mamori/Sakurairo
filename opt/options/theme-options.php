@@ -3366,19 +3366,15 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'vaptcha_scene',
+        'id' => 'vaptcha_lang',
         'type' => 'select',
-        'title' => __('Vaptcha Scene','sakurairo_csf'),
+        'title' => __('Vaptcha Language','sakurairo_csf'),
         'dependency' => array( 'captcha_select', '==', 'vaptcha', '', 'true' ),
         'options' => array(
-          '1' => __(1,'sakurairo_csf'),
-          '2' => __(2,'sakurairo_csf'),
-          '3' => __(3,'sakurairo_csf'),
-          '4' => __(4,'sakurairo_csf'),
-          '5' => __(5,'sakurairo_csf'),
-          '6' => __(6,'sakurairo_csf'),
+          'zh-CN' => __('Simplified Chinese','sakurairo_csf'),
+          'en' => __('English','sakurairo_csf'),
         ),
-        'default' => 1,
+        'default' => 'zh-CN',
       ),
 
       array(
