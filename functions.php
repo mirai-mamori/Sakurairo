@@ -3397,41 +3397,46 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
         echo $vaptcha->script();
     }
     add_action('login_form', 'vaptchaInit');
-
-    function checkVaptchaAction($user)
+    
+    function checkVaptchaAction($user, $username = '', $password = '')
     {
-        if (empty($_POST)) {
-            return new WP_Error();
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            return $user;
         }
-        if (!(isset($_POST['vaptcha_server']) && isset($_POST['vaptcha_token']))) {
+    
+        if (!(isset($_POST['vaptcha_token'], $_POST['vaptcha_knock'], $_POST['vaptcha_dfu'], $_POST['vaptcha_ip']))) {
             return new WP_Error('prooffail', '<strong>错误</strong>：请先进行人机验证');
-
         }
-        if (!preg_match('/^https:\/\/([\w-]+\.)+[\w-]*([^<>=?\"\'])*$/', $_POST['vaptcha_server']) || !preg_match('/^[\w\-\$]+$/', $_POST['vaptcha_token'])) {
+    
+        $token = (string) $_POST['vaptcha_token'];
+        $knock = (string) $_POST['vaptcha_knock'];
+        $dfu   = (string) $_POST['vaptcha_dfu'];
+        $ip    = (string) $_POST['vaptcha_ip'];
+    
+        // 新版 token 格式：timestamp.token_id.signature（signature 为 64 位 hex）
+        if (!preg_match('/^\d+\.[A-Za-z0-9_-]+\.[a-f0-9]{64}$/i', $token)) {
             return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
         }
-        include_once('inc/classes/Vaptcha.php');
-        $url = $_POST['vaptcha_server'];
-        $token = $_POST['vaptcha_token'];
-        $ip = get_the_user_ip();
-        $vaptcha = new Sakura\API\Vaptcha;
-        $response = $vaptcha->checkVaptcha($url, $token, $ip);
-        if ($response->msg && $response->success && $response->score) {
-            if ($response->success === 1 && $response->score >= 70) {
-                return $user;
-            }
-            if ($response->success === 0) {
-                $errorcode = $response->msg;
-                return new WP_Error('prooffail', '<strong>错误</strong>：' . $errorcode);
-            }
-            return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
-
-        } else if (is_string($response)) {
-            return new WP_Error('prooffail', '<strong>错误</strong>：' . $response);
+    
+        // ip 为签名快照 IP，必须原样参与验签；仅当非空时做格式校验
+        if ($ip !== '' && !filter_var($ip, FILTER_VALIDATE_IP)) {
+            return new WP_Error('prooffail', '<strong>错误</strong>：非法 IP');
         }
-        return new WP_Error('prooffail', '<strong>错误</strong>：未知错误');
-
-
+    
+        // 防止异常超长字段
+        if (strlen($knock) > 2048 || strlen($dfu) > 2048) {
+            return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
+        }
+    
+        include_once('inc/classes/Vaptcha.php');
+        $vaptcha = new Sakura\API\Vaptcha;
+    
+        // 官方推荐：本地 HMAC-SHA256 验签
+        if (!$vaptcha->checkVaptcha($token, $knock, $dfu, $ip)) {
+            return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
+        }
+    
+        return $user;
     }
     add_filter('authenticate', 'checkVaptchaAction', 20, 3);
 } else if ((iro_opt('captcha_select') === 'turnstile') && (!empty(iro_opt("turnstile_site_key")) && !empty(iro_opt("turnstile_secret_key")))) {
