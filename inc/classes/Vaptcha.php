@@ -6,9 +6,9 @@ class Vaptcha
 {
     /**
      * 本地验签有效期（秒）。
-     * 官方校验窗口为 30 秒，本地验签官方建议 3 秒；如遇服务器时钟偏差可适当调大。
+     * 与官方校验窗口保持一致（30 秒），避免服务器时钟偏差导致误判。
      */
-    const TOKEN_TTL = 3;
+    const TOKEN_TTL = 30;
 
     /**
      * 输出前端初始化脚本（VAPTCHA V4 新版 SDK）
@@ -187,12 +187,12 @@ HTML;
             return false;
         }
 
-        // 防复用：同一个 token 只放行一次
+        // 防复用：同一个 token 只放行一次（缓存时长覆盖 token 有效期）
         $cacheKey = 'vaptcha_used_' . md5($token);
         if (get_transient($cacheKey)) {
             return false;
         }
-        set_transient($cacheKey, 1, 30);
+        set_transient($cacheKey, 1, 60);
 
         return true;
     }
