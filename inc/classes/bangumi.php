@@ -64,29 +64,44 @@ class BangumiAPI
         $cache_key = 'bangumi_cache';
         $collDataArr = [];
 
+        $legacyCache = null;
+
         if ($bangumi_cache) {
             $cachedData = get_transient($cache_key);
-            $collData = $cachedData ?json_decode($cachedData, true) : null;
-    
+            $collData = $cachedData ? json_decode($cachedData, true) : null;
+
             if (!isset($collData['data']) || !is_array($collData['data'])) {
+                $collData = null;
+            } elseif (!array_key_exists('complete', $collData)) {
+                // 分页修复前把接口第一页原样写入 30 天缓存，没有 complete 标记。
+                // 继续信任它的话，升级后追番页仍只会显示第一页过滤后的十几个条目。
+                $legacyCache = $collData;
                 $collData = null;
             }
         } else {
             $collData = null;
         }
-    
-        if ($collData === null) {
-            $collData = $this->fetchAllPages();
 
-            if ($bangumi_cache) {
-                if ($collData['complete']) {
-                    auto_update_cache($cache_key, json_encode($collData));
-                } elseif (!empty($collData['data'])) {
-                    // 拉取不完整（中途某页失败或超出时间预算），只短暂缓存。
-                    // 缓存默认有效期是 30 天，把残缺的列表写进去会一直错到下个月
-                    $this->update_cache($cache_key, json_encode($collData), self::PARTIAL_CACHE_TTL);
+        if ($collData === null) {
+            $fetched = $this->fetchAllPages();
+
+            // 拉到新数据，或本来就没有可回退的旧缓存：按原逻辑使用并写入
+            if (!empty($fetched['data']) || $legacyCache === null) {
+                $collData = $fetched;
+
+                if ($bangumi_cache) {
+                    if ($collData['complete']) {
+                        auto_update_cache($cache_key, json_encode($collData));
+                    } elseif (!empty($collData['data'])) {
+                        // 拉取不完整（中途某页失败或超出时间预算），只短暂缓存。
+                        // 缓存默认有效期是 30 天，把残缺的列表写进去会一直错到下个月
+                        $this->update_cache($cache_key, json_encode($collData), self::PARTIAL_CACHE_TTL);
+                    }
+                    // 一条都没拿到时不写缓存，留给下次请求重试
                 }
-                // 一条都没拿到时不写缓存，留给下次请求重试
+            } else {
+                // 服务器暂时访问不到 api.bgm.tv 时，不要把仅有的旧列表也丢掉
+                $collData = $legacyCache;
             }
         }
 
@@ -193,7 +208,7 @@ class BangumiList
 
         try {
             $bgmAPI = new BangumiAPI($userID);
-            $collections = $bgmAPI->getCollections(true, true);
+            $collections = $bgmAPI->getCollections();
 
             if (empty($collections)) {
                 return '<p>' . __('No data', 'sakurairo') . '</p>';

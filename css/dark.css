@@ -480,6 +480,19 @@ body.dark #pagination a {
   color: var(--dark-text-primary);
 }
 
+/* 加载态优先级高于上面的按钮规则，避免 background / border / box-shadow 盖掉占位 SVG。
+   浅色模式的 #pagination .loading 会把背景收成只剩 SVG；这里对齐。 */
+body.dark #pagination a.loading,
+body.dark #pagination a.loading:hover {
+  background-color: transparent;
+  background-image: var(--load_nextpage_svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  border: none;
+  box-shadow: none;
+}
+
 body.dark .navigator i {
   background: rgb(26 26 26 / 60%);
   box-shadow: var(--dark-shadow-normal);
