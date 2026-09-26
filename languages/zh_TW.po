@@ -92,15 +92,15 @@ msgid "Cancel Reply"
 msgstr "取消回復"
 
 #: comments.php:202
-msgid "Nickname or QQ number"
+msgid "Nickname"
 msgstr "暱稱 或 QQ號"
 
 #: comments.php:202 comments.php:206
-msgid "Must* "
-msgstr "必須* "
+msgid "Required* "
+msgstr "必填* "
 
 #: comments.php:203
-msgid "Auto pull nickname and avatar with a QQ num. entered"
+msgid "Enter your nickname"
 msgstr "輸入QQ號碼將自動拉取暱稱和頭像"
 
 #: comments.php:206
@@ -108,8 +108,8 @@ msgid "email"
 msgstr "電子郵箱"
 
 #: comments.php:207
-msgid "You will receive notification by email"
-msgstr "你將收到回復通知"
+msgid "For notification purposes"
+msgstr "用於通知"
 
 #: comments.php:210
 msgid "Site"

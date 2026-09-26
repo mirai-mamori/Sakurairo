@@ -74,8 +74,8 @@ header('X-Frame-Options: SAMEORIGIN');
     <?php wp_head(); ?>
     <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>｜<?php bloginfo('description'); ?>" href="<?php bloginfo('rss2_url'); ?>" />
     
-    <link rel="preload" as="style" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css?family=Noto+Serif+SC|Noto+Sans+SC|Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap">
-    <link rel="stylesheet" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css?family=Noto+Serif+SC|Noto+Sans+SC|Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap" media="all">
+    <link rel="preload" as="style" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css2?family=Noto+Serif+SC&Noto+Sans+SC&Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap">
+    <link rel="stylesheet" href="https://<?= esc_attr(iro_opt('gfonts_api', 'fonts.googleapis.com')); ?>/css2?family=Noto+Serif+SC&Noto+Sans+SC&Fira+Code<?= esc_attr(iro_opt('gfonts_add_name')); ?>&display=swap" media="all">
     <?php if (iro_opt('google_analytics_id')) : ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=<?= esc_attr(iro_opt('google_analytics_id')); ?>"></script>
@@ -167,7 +167,11 @@ header('X-Frame-Options: SAMEORIGIN');
         <?php if($show_search) : ?>
         <div class="mo-menu-search">
             <form class="search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
-                <input class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
+                <label class="screen-reader-text" for="mobile-search-input"><?php esc_html_e('Search', 'sakurairo'); ?></label>
+                <input id="mobile-search-input" class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
+                <button class="search-submit" type="submit" aria-label="<?php esc_attr_e('Submit Search', 'sakurairo'); ?>">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                </button>
             </form>
         </div>
         <?php endif; ?>

@@ -158,7 +158,7 @@ function get_smilies_panel() {
                             </div>';
             }
             $img_upload = '';
-            if (iro_opt('img_upload_api',false) == 'off' ? false : true) {
+            if (is_user_logged_in() && iro_opt('img_upload_api', false) !== 'off') {
                 $img_upload = '<label class="insert-image-tips popup">
                                     <i class="fa-regular fa-image"></i>
                                     <span class="insert-img-popuptext" id="uploadTipPopup">上传图片</span>
@@ -170,6 +170,18 @@ function get_smilies_panel() {
                 return $defaults;
             }
             add_filter('comment_form_defaults', 'custom_comment_logged_in_as');
+
+            // WP comment_form() 会对 submit_button 跑 sprintf（4 个占位符）。
+            // 自定义 HTML 里若含 %（URL 编码、CSS、按钮文案等）会被当成格式符，
+            // PHP 8+ 会 ArgumentCountError / ValueError，表现为评论区白屏、预加载卡住。
+            $submit_button_html = '<div class="form-submit">
+                                            <input name="submit" type="submit" id="submit" class="submit" value=" ' . esc_attr(iro_opt('comment_submit_button_text')) . ' ">' . $smilies_button . $img_upload .'
+                                            <label class="markdown-toggle">
+                                                <input type="checkbox" id="enable_markdown" name="enable_markdown">
+                                                <i class="fa-brands fa-markdown fa-sm"></i>
+                                            </label>
+                                            ' . wp_nonce_field('sakurairo_ajax_comment', 'sakurairo_comment_nonce', true, false) . '
+                                        </div>';
 
             $args = array(
                 'id_form'           => 'commentform',
@@ -183,14 +195,7 @@ function get_smilies_panel() {
                                             <label class="input-label">' . esc_html(iro_opt('comment_placeholder_text')) . '</label>
                                         </div>' . $smilies_box . 
                                         '<div id="upload-img-show"></div>',
-                'submit_button'     => '<div class="form-submit">
-                                            <input name="submit" type="submit" id="submit" class="submit" value=" ' . esc_attr(iro_opt('comment_submit_button_text')) . ' ">' . $smilies_button . $img_upload .'
-                                            <label class="markdown-toggle">
-                                                <input type="checkbox" id="enable_markdown" name="enable_markdown">
-                                                <i class="fa-brands fa-markdown fa-sm"></i>
-                                            </label>
-                                            ' . wp_nonce_field('sakurairo_ajax_comment', 'sakurairo_comment_nonce', true, false) . '
-                                        </div>',
+                'submit_button'     => str_replace('%', '%%', $submit_button_html),
                 'comment_notes_after'  => '',
                 'comment_notes_before' => '',
                 'fields'            => (!is_user_logged_in()?apply_filters('comment_form_default_fields', array(
@@ -200,12 +205,12 @@ function get_smilies_panel() {
                                     <div class="socila-check gravatar-check"><i class="fa-solid fa-heart fa-xs"></i></div>
                                  </div>',
                     'author' => '<div class="popup cmt-popup cmt-author">
-                                    <input type="text" placeholder="' . __("Nickname or QQ number", "sakurairo") . ' ' . ($req ? '(' . __("Must* ", "sakurairo") . ')' : '') . '" name="author" id="author" value="' . esc_attr($comment_author) . '" size="22" autocomplete="off" tabindex="1" ' . ($req ? "aria-required='true'" : '') . ' />
-                                    <span class="popuptext" style="margin-left: -115px;width: 230px;">' . __("Auto pull nickname and avatar with a QQ num. entered", "sakurairo") . '</span>
+                                    <input type="text" placeholder="' . __("Nickname", "sakurairo") . ' ' . ($req ? '(' . __("Required* ", "sakurairo") . ')' : '') . '" name="author" id="author" value="' . esc_attr($comment_author) . '" size="22" autocomplete="off" tabindex="1" ' . ($req ? "aria-required='true'" : '') . ' />
+                                    <span class="popuptext" style="margin-left: -115px;width: 230px;">' . __("Enter your nickname", "sakurairo") . '</span>
                                  </div>',
                     'email'  => '<div class="popup cmt-popup">
-                                    <input type="text" placeholder="' . __("email", "sakurairo") . ' ' . ($req ? '(' . __("Must* ", "sakurairo") . ')' : '') . '" name="email" id="email" value="' . esc_attr($comment_author_email) . '" size="22" tabindex="1" autocomplete="off" ' . ($req ? "aria-required='true'" : '') . ' />
-                                    <span class="popuptext" style="margin-left: -65px;width: 130px;">' . __("You will receive notification by email", "sakurairo") . '</span>
+                                    <input type="text" placeholder="' . __("email", "sakurairo") . ' ' . ($req ? '(' . __("Required* ", "sakurairo") . ')' : '') . '" name="email" id="email" value="' . esc_attr($comment_author_email) . '" size="22" tabindex="1" autocomplete="off" ' . ($req ? "aria-required='true'" : '') . ' />
+                                    <span class="popuptext" style="margin-left: -65px;width: 130px;">' . __("For notification purposes", "sakurairo") . '</span>
                                  </div>',
                     'url'    => '<div class="popup cmt-popup">
                                     <input type="text" placeholder="' . __("Site", "sakurairo") . '" name="url" id="url" value="' . esc_attr($comment_author_url) . '" size="22" autocomplete="off" tabindex="1" />

@@ -1,2 +1,0 @@
-!function(){var i={initKirkiControl:function(i){(i=i||this).container.on("change","input",(function(){i.setting.set(jQuery(this).is(":checked"))}))}};wp.customize.controlConstructor["kirki-checkbox"]=wp.customize.kirkiDynamicControl.extend(i),wp.customize.controlConstructor["kirki-switch"]=wp.customize.kirkiDynamicControl.extend(i),wp.customize.controlConstructor["kirki-toggle"]=wp.customize.kirkiDynamicControl.extend(i)}();
-//# sourceMappingURL=control.js.map

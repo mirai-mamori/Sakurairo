@@ -1,2 +1,0 @@
-jQuery(document).ready((function(){wp.hooks.addFilter("kirkiPostMessageStylesOutput","kirki",(function(e,t,i,o){var r;return"kirki-dimensions"===o&&(e+=i.element+"{",_.each(t,(function(t,o){i.choice&&o!==i.choice||!1!==(r=kirkiPostMessage.util.processValue(i,t))&&(i.property?(e+=i.property,""===i.property||"top"!==o&&"bottom"!==o&&"left"!==o&&"right"!==o||(e+="-"+o),e+=":"+r+";"):e+=o+":"+r+";")})),e+="}"),e}))}));
-//# sourceMappingURL=preview.js.map

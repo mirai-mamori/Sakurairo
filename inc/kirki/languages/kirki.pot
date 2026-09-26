@@ -1,0 +1,1460 @@
+# Copyright (C) 2026 Themeum
+# This file is distributed under the same license as the Kirki Customizer Framework plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Kirki Customizer Framework 5.2.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/kirki\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-04-10T09:47:49+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: kirki\n"
+
+#. Plugin Name of the plugin
+#: kirki.php
+msgid "Kirki Customizer Framework"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: kirki.php
+msgid "https://www.themeum.com"
+msgstr ""
+
+#. Description of the plugin
+#: kirki.php
+msgid "The Ultimate WordPress Customizer Framework"
+msgstr ""
+
+#. Author of the plugin
+#: kirki.php
+msgid "Themeum"
+msgstr ""
+
+#: customizer/example.php:42
+msgid "Kirki Demo Panel"
+msgstr ""
+
+#: customizer/example.php:43
+msgid "Contains sections for all kirki controls."
+msgstr ""
+
+#: customizer/example.php:56
+msgid "Background"
+msgstr ""
+
+#: customizer/example.php:57
+msgid "Code"
+msgstr ""
+
+#: customizer/example.php:58
+#: customizer/example.php:1069
+msgid "Checkbox"
+msgstr ""
+
+#: customizer/example.php:59
+msgid "Color"
+msgstr ""
+
+#: customizer/example.php:60
+msgid "Color — Advanced"
+msgstr ""
+
+#: customizer/example.php:61
+msgid "Color Palette"
+msgstr ""
+
+#: customizer/example.php:62
+msgid "Custom"
+msgstr ""
+
+#: customizer/example.php:63
+msgid "Dashicons"
+msgstr ""
+
+#: customizer/example.php:64
+msgid "Date"
+msgstr ""
+
+#: customizer/example.php:65
+msgid "Dimension"
+msgstr ""
+
+#: customizer/example.php:66
+msgid "Dimensions"
+msgstr ""
+
+#: customizer/example.php:67
+msgid "Dropdown Pages"
+msgstr ""
+
+#: customizer/example.php:68
+msgid "Editor"
+msgstr ""
+
+#: customizer/example.php:69
+msgid "Font-Awesome"
+msgstr ""
+
+#: customizer/example.php:70
+msgid "Generic"
+msgstr ""
+
+#: customizer/example.php:71
+msgid "Image"
+msgstr ""
+
+#: customizer/example.php:72
+msgid "Multicheck"
+msgstr ""
+
+#: customizer/example.php:73
+msgid "Multicolor"
+msgstr ""
+
+#: customizer/example.php:74
+msgid "Number"
+msgstr ""
+
+#: customizer/example.php:75
+msgid "Palette"
+msgstr ""
+
+#: customizer/example.php:76
+msgid "Preset"
+msgstr ""
+
+#: customizer/example.php:77
+msgid "Radio"
+msgstr ""
+
+#: customizer/example.php:77
+msgid "A plain Radio control."
+msgstr ""
+
+#: customizer/example.php:78
+msgid "Radio Buttonset"
+msgstr ""
+
+#: customizer/example.php:78
+msgid "Radio-Buttonset controls are essentially radio controls with some fancy styling to make them look cooler."
+msgstr ""
+
+#: customizer/example.php:79
+msgid "Radio Image"
+msgstr ""
+
+#: customizer/example.php:79
+msgid "Radio-Image controls are essentially radio controls with some fancy styles to use images"
+msgstr ""
+
+#: customizer/example.php:80
+msgid "Repeater"
+msgstr ""
+
+#: customizer/example.php:81
+msgid "Select"
+msgstr ""
+
+#: customizer/example.php:82
+msgid "Slider"
+msgstr ""
+
+#: customizer/example.php:83
+msgid "Sortable"
+msgstr ""
+
+#: customizer/example.php:84
+msgid "Switch"
+msgstr ""
+
+#: customizer/example.php:85
+msgid "Toggle"
+msgstr ""
+
+#: customizer/example.php:86
+msgid "Typography"
+msgstr ""
+
+#: customizer/example.php:87
+msgid "Upload"
+msgstr ""
+
+#: customizer/example.php:105
+msgid "Test Link Section"
+msgstr ""
+
+#: customizer/example.php:107
+msgid "Pro"
+msgstr ""
+
+#: customizer/example.php:120
+msgid "Background Control"
+msgstr ""
+
+#: customizer/example.php:121
+msgid "Background conrols are pretty complex! (but useful if properly used)"
+msgstr ""
+
+#: customizer/example.php:142
+msgid "Code Control — CSS"
+msgstr ""
+
+#: customizer/example.php:143
+msgid "Sample of code control in CSS format"
+msgstr ""
+
+#: customizer/example.php:160
+msgid "Checkbox Control"
+msgstr ""
+
+#: customizer/example.php:161
+msgid "Sample of checkbox control"
+msgstr ""
+
+#: customizer/example.php:178
+msgid "This is a color control registered using `Kirki::add_field` with \"alpha\" => true (the old Kirki API)."
+msgstr ""
+
+#: customizer/example.php:191
+msgid "Hex only"
+msgstr ""
+
+#: customizer/example.php:192
+msgid "This is a color control without alpha channel."
+msgstr ""
+
+#: customizer/example.php:202
+msgid "With alpha channel"
+msgstr ""
+
+#: customizer/example.php:203
+msgid "This is a color control with alpha channel."
+msgstr ""
+
+#: customizer/example.php:215
+msgid "Hue only."
+msgstr ""
+
+#: customizer/example.php:216
+msgid "This is a color control with \"mode\" => \"hue\" (hue mode)."
+msgstr ""
+
+#: customizer/example.php:237
+msgid "v4 — form_component — HexColorPicker"
+msgstr ""
+
+#: customizer/example.php:238
+msgid "This is a color control with form_component value is HexColorPicker."
+msgstr ""
+
+#: customizer/example.php:263
+msgid "v4 — form_component — RgbColorPicker"
+msgstr ""
+
+#: customizer/example.php:264
+msgid "This is a color control with form_component value is RgbColorPicker. The saved value will be an array."
+msgstr ""
+
+#: customizer/example.php:284
+msgid "v4 — form_component — RgbStringColorPicker"
+msgstr ""
+
+#: customizer/example.php:285
+msgid "This is a color control with form_component value is RgbStringColorPicker. The saved value will be a string."
+msgstr ""
+
+#: customizer/example.php:310
+msgid "v4 — form_component — RgbaColorPicker"
+msgstr ""
+
+#: customizer/example.php:311
+msgid "This is a color control with form_component value is RgbaColorPicker.  The saved value will be an array."
+msgstr ""
+
+#: customizer/example.php:331
+msgid "v4 — form_component — RgbaStringColorPicker"
+msgstr ""
+
+#: customizer/example.php:332
+msgid "This is a color control with form_component value is RgbaStringColorPicker. The saved value will be a string."
+msgstr ""
+
+#: customizer/example.php:356
+msgid "v4 — form_component — HslColorPicker"
+msgstr ""
+
+#: customizer/example.php:357
+msgid "This is a color control with form_component value is HslColorPicker. The saved value will be an array"
+msgstr ""
+
+#: customizer/example.php:377
+msgid "v4 — form_component — HslStringColorPicker"
+msgstr ""
+
+#: customizer/example.php:378
+msgid "This is a color control with form_component value is HslStringColorPicker. The saved value will be a string"
+msgstr ""
+
+#: customizer/example.php:403
+msgid "v4 — form_component — HslaColorPicker"
+msgstr ""
+
+#: customizer/example.php:404
+msgid "This is a color control with form_component value is HslaColorPicker. The saved value will be an array"
+msgstr ""
+
+#: customizer/example.php:424
+msgid "v4 — form_component — HslaStringColorPicker"
+msgstr ""
+
+#: customizer/example.php:425
+msgid "This is a color control with form_component value is HslaStringColorPicker. The saved value will be a string"
+msgstr ""
+
+#: customizer/example.php:441
+msgid "Date Control"
+msgstr ""
+
+#: customizer/example.php:442
+#: customizer/example.php:452
+msgid "This is a date control."
+msgstr ""
+
+#: customizer/example.php:451
+msgid "Date Control 2"
+msgstr ""
+
+#: customizer/example.php:464
+msgid "First Editor Control"
+msgstr ""
+
+#: customizer/example.php:465
+msgid "This is an editor control."
+msgstr ""
+
+#: customizer/example.php:474
+msgid "Second Editor Control"
+msgstr ""
+
+#: customizer/example.php:475
+msgid "This is a 2nd editor control just to check that we do not have issues with multiple instances."
+msgstr ""
+
+#: customizer/example.php:477
+msgid "Default Text"
+msgstr ""
+
+#: customizer/example.php:489
+msgid "Simple Colors Set"
+msgstr ""
+
+#: customizer/example.php:490
+msgid "With default size (28). The `size` here is inner size (without border)"
+msgstr ""
+
+#: customizer/example.php:504
+msgid "Material Design Colors — All"
+msgstr ""
+
+#: customizer/example.php:505
+msgid "Showing all material design colors using `round` shape and size is 17"
+msgstr ""
+
+#: customizer/example.php:520
+msgid "Material Design Colors — Primary"
+msgstr ""
+
+#: customizer/example.php:521
+msgid "Showing primary material design colors"
+msgstr ""
+
+#: customizer/example.php:533
+msgid "Material Design Colors — Red"
+msgstr ""
+
+#: customizer/example.php:534
+msgid "Showing red material design colors"
+msgstr ""
+
+#: customizer/example.php:546
+msgid "Material Design Colors — A100"
+msgstr ""
+
+#: customizer/example.php:547
+msgid "Showing \"A100\" variant of material design colors"
+msgstr ""
+
+#: customizer/example.php:617
+msgid "Custom Control"
+msgstr ""
+
+#: customizer/example.php:632
+msgid "Dashicons Control"
+msgstr ""
+
+#: customizer/example.php:633
+msgid "Using a custom array of dashicons"
+msgstr ""
+
+#: customizer/example.php:651
+msgid "All Dashicons"
+msgstr ""
+
+#: customizer/example.php:652
+msgid "Showing all dashicons"
+msgstr ""
+
+#: customizer/example.php:664
+#: customizer/example.php:693
+msgid "Dimension Control"
+msgstr ""
+
+#: customizer/example.php:665
+msgid "A simple dimension control."
+msgstr ""
+
+#: customizer/example.php:680
+msgid "Dimensions Control"
+msgstr ""
+
+#: customizer/example.php:681
+msgid "Sample of dimensions control with 2 fields."
+msgstr ""
+
+#: customizer/example.php:694
+msgid "Sample of dimensions control with 4 fields."
+msgstr ""
+
+#: customizer/example.php:708
+msgid "Padding Control"
+msgstr ""
+
+#: customizer/example.php:709
+msgid "Sample of padding controls with 3 fields."
+msgstr ""
+
+#: customizer/example.php:722
+msgid "Spacing Control"
+msgstr ""
+
+#: customizer/example.php:723
+msgid "Sample of spacing controls with 4 fields."
+msgstr ""
+
+#: customizer/example.php:740
+msgid "Dropdown Pages Control"
+msgstr ""
+
+#: customizer/example.php:741
+msgid "Sample of dropdown pages control."
+msgstr ""
+
+#: customizer/example.php:756
+msgid "Generic Control — Text Field"
+msgstr ""
+
+#: customizer/example.php:757
+msgid "The demo of this control has partial refresh with transport is postMessage"
+msgstr ""
+
+#: customizer/example.php:776
+msgid "Generic Control — URL Field"
+msgstr ""
+
+#: customizer/example.php:777
+msgid "The demo of this control has partial refresh without transport is defined"
+msgstr ""
+
+#: customizer/example.php:795
+msgid "Generic Control — Textarea Field"
+msgstr ""
+
+#: customizer/example.php:796
+msgid "Description"
+msgstr ""
+
+#: customizer/example.php:805
+msgid "Generic Control — Custom Input."
+msgstr ""
+
+#: customizer/example.php:806
+msgid "The \"generic\" control allows you to add any input type you want. In this case we use type=\"password\" and define custom styles."
+msgstr ""
+
+#: customizer/example.php:824
+msgid "Image Control (URL)"
+msgstr ""
+
+#: customizer/example.php:825
+msgid "The saved value will be the URL."
+msgstr ""
+
+#: customizer/example.php:834
+msgid "Image Control (ID)"
+msgstr ""
+
+#: customizer/example.php:835
+msgid "The saved value will an ID."
+msgstr ""
+
+#: customizer/example.php:847
+msgid "Image Control (array)"
+msgstr ""
+
+#: customizer/example.php:848
+msgid "The saved value will an array."
+msgstr ""
+
+#: customizer/example.php:863
+msgid "Upload Control (URL)"
+msgstr ""
+
+#: customizer/example.php:864
+msgid "The saved value will the URL."
+msgstr ""
+
+#: customizer/example.php:877
+msgid "Multickeck Control"
+msgstr ""
+
+#: customizer/example.php:882
+#: customizer/example.php:976
+#: customizer/example.php:996
+#: customizer/example.php:1088
+#: customizer/example.php:1106
+#: customizer/example.php:1162
+msgid "Option 1"
+msgstr ""
+
+#: customizer/example.php:883
+#: customizer/example.php:977
+#: customizer/example.php:997
+#: customizer/example.php:1089
+#: customizer/example.php:1107
+#: customizer/example.php:1163
+msgid "Option 2"
+msgstr ""
+
+#: customizer/example.php:884
+#: customizer/example.php:978
+#: customizer/example.php:998
+#: customizer/example.php:1090
+#: customizer/example.php:1108
+#: customizer/example.php:1164
+msgid "Option 3"
+msgstr ""
+
+#: customizer/example.php:885
+#: customizer/example.php:979
+#: customizer/example.php:1091
+#: customizer/example.php:1109
+#: customizer/example.php:1165
+msgid "Option 4"
+msgstr ""
+
+#: customizer/example.php:886
+#: customizer/example.php:980
+#: customizer/example.php:1092
+#: customizer/example.php:1110
+#: customizer/example.php:1166
+msgid "Option 5"
+msgstr ""
+
+#: customizer/example.php:897
+msgid "Multicolor Control"
+msgstr ""
+
+#: customizer/example.php:902
+msgid "Link Color"
+msgstr ""
+
+#: customizer/example.php:903
+msgid "And this is hover color with long label so you know how it is displayed."
+msgstr ""
+
+#: customizer/example.php:904
+msgid "Active Color"
+msgstr ""
+
+#: customizer/example.php:905
+msgid "Another color 1"
+msgstr ""
+
+#: customizer/example.php:906
+msgid "Another color 2"
+msgstr ""
+
+#: customizer/example.php:907
+msgid "Another color 3"
+msgstr ""
+
+#: customizer/example.php:908
+msgid "Another color 4"
+msgstr ""
+
+#: customizer/example.php:909
+msgid "Another color 5"
+msgstr ""
+
+#: customizer/example.php:910
+msgid "Another color 6"
+msgstr ""
+
+#: customizer/example.php:911
+msgid "Another color 7"
+msgstr ""
+
+#: customizer/example.php:912
+msgid "Another color 8"
+msgstr ""
+
+#: customizer/example.php:913
+msgid "Another color 9"
+msgstr ""
+
+#: customizer/example.php:914
+msgid "Another color 10"
+msgstr ""
+
+#: customizer/example.php:915
+msgid "Another color 11"
+msgstr ""
+
+#: customizer/example.php:916
+msgid "Another color 12"
+msgstr ""
+
+#: customizer/example.php:917
+msgid "Another color 13"
+msgstr ""
+
+#: customizer/example.php:918
+msgid "Another color 14"
+msgstr ""
+
+#: customizer/example.php:919
+msgid "Another color 15"
+msgstr ""
+
+#: customizer/example.php:936
+msgid "Number Control"
+msgstr ""
+
+#: customizer/example.php:953
+msgid "Control Palette"
+msgstr ""
+
+#: customizer/example.php:971
+msgid "Radio Control"
+msgstr ""
+
+#: customizer/example.php:972
+msgid "The description here."
+msgstr ""
+
+#: customizer/example.php:991
+msgid "Radio-Buttonset Control"
+msgstr ""
+
+#: customizer/example.php:992
+msgid "Sample of radio-buttonset control."
+msgstr ""
+
+#: customizer/example.php:1009
+msgid "Radio-Image Control"
+msgstr ""
+
+#: customizer/example.php:1010
+msgid "Sample of radio image control."
+msgstr ""
+
+#: customizer/example.php:1027
+msgid "Repeater Control"
+msgstr ""
+
+#: customizer/example.php:1028
+msgid "Sample of repeater control."
+msgstr ""
+
+#: customizer/example.php:1032
+msgid "Kirki Site"
+msgstr ""
+
+#: customizer/example.php:1038
+msgid "Kirki Repository"
+msgstr ""
+
+#: customizer/example.php:1047
+msgid "Link Text"
+msgstr ""
+
+#: customizer/example.php:1048
+msgid "This will be the label for your link"
+msgstr ""
+
+#: customizer/example.php:1053
+msgid "Link URL"
+msgstr ""
+
+#: customizer/example.php:1054
+msgid "This will be the link URL"
+msgstr ""
+
+#: customizer/example.php:1059
+msgid "Link Target"
+msgstr ""
+
+#: customizer/example.php:1060
+msgid "This will be the link target"
+msgstr ""
+
+#: customizer/example.php:1063
+msgid "New Window"
+msgstr ""
+
+#: customizer/example.php:1064
+msgid "Same Frame"
+msgstr ""
+
+#: customizer/example.php:1082
+#: customizer/example.php:1100
+msgid "Select Control"
+msgstr ""
+
+#: customizer/example.php:1083
+msgid "Sample of single mode select control."
+msgstr ""
+
+#: customizer/example.php:1086
+msgid "Select an option"
+msgstr ""
+
+#: customizer/example.php:1101
+msgid "Sample of multiple mode select control."
+msgstr ""
+
+#: customizer/example.php:1121
+msgid "Slider Control"
+msgstr ""
+
+#: customizer/example.php:1122
+msgid "Sample of slider control."
+msgstr ""
+
+#: customizer/example.php:1126
+msgid "This is the tooltip"
+msgstr ""
+
+#: customizer/example.php:1140
+msgid "Slider Control — Using Old Way"
+msgstr ""
+
+#: customizer/example.php:1158
+msgid "This is a sortable control."
+msgstr ""
+
+#: customizer/example.php:1167
+msgid "Option 6"
+msgstr ""
+
+#: customizer/example.php:1178
+msgid "Switch Field"
+msgstr ""
+
+#: customizer/example.php:1179
+msgid "Simple switch control"
+msgstr ""
+
+#: customizer/example.php:1189
+msgid "Switch Field — With custom labels"
+msgstr ""
+
+#: customizer/example.php:1190
+msgid "Switch control using custom labels"
+msgstr ""
+
+#: customizer/example.php:1194
+msgid "Enabled"
+msgstr ""
+
+#: customizer/example.php:1195
+msgid "Disabled"
+msgstr ""
+
+#: customizer/example.php:1215
+msgid "Toggle Field"
+msgstr ""
+
+#: customizer/example.php:1216
+msgid "Toggle is just utilizing switch control but aligned horizontally & without the text"
+msgstr ""
+
+#: customizer/example.php:1230
+#: customizer/example.php:1284
+msgid "Typography Control"
+msgstr ""
+
+#: customizer/example.php:1231
+msgid "The full set of options."
+msgstr ""
+
+#: customizer/example.php:1285
+msgid "Just the font-family and font-weight."
+msgstr ""
+
+#: customizer/example.php:1320
+msgid "Sidebars Select"
+msgstr ""
+
+#: customizer/example.php:1321
+msgid "An example of how to implement sidebars selection."
+msgstr ""
+
+#: customizer/lib/upgrade-notifications.php:30
+msgid "Important Upgrade Notice:"
+msgstr ""
+
+#: customizer/packages/compatibility/src/deprecated/functions.php:20
+#, php-format
+msgid "%1$s or %2$s"
+msgstr ""
+
+#. translators: %s represents the field ID where the error occurs.
+#: customizer/packages/compatibility/src/Field.php:268
+#, php-format
+msgid "Typo found in field %s - setting instead of settings."
+msgstr ""
+
+#. translators: %1$s represents the field ID where the error occurs. %2$s is the URL in the documentation site.
+#: customizer/packages/compatibility/src/Field.php:279
+#, php-format
+msgid "Config not defined for field %1$s - See %2$s for details on how to properly add fields."
+msgstr ""
+
+#. translators: %1$s represents the field ID where the error occurs.
+#: customizer/packages/compatibility/src/Field.php:378
+#, php-format
+msgid "Typo found in field %s - \"theme_mods\" vs \"theme_mod\""
+msgstr ""
+
+#. translators: %1$s represents the field ID where the error occurs.
+#: customizer/packages/compatibility/src/Field.php:395
+#, php-format
+msgid "\"partial_refresh\" invalid entry in field %s"
+msgstr ""
+
+#. translators: The field ID where the error occurs.
+#: customizer/packages/compatibility/src/Field.php:521
+#: customizer/packages/compatibility/src/Field.php:532
+#: customizer/packages/modules/css/src/CSS.php:136
+#: customizer/packages/modules/css/src/CSS.php:147
+#: customizer/packages/modules/postmessage/src/Postmessage.php:72
+#, php-format
+msgid "\"output\" invalid format in field %s. The \"output\" argument should be defined as an array of arrays."
+msgstr ""
+
+#: customizer/packages/compatibility/src/Init.php:206
+msgid "We detected you're using Kirki\\Compatibility\\Init::get_variables(). Please use \\Kirki\\Util\\Util::get_variables() instead."
+msgstr ""
+
+#: customizer/packages/compatibility/src/Init.php:257
+msgid "Your theme uses a Font Awesome field for icons. To avoid issues with missing icons on your frontend we recommend you install the official Font Awesome plugin."
+msgstr ""
+
+#: customizer/packages/compatibility/src/Init.php:260
+msgid "Install Plugin"
+msgstr ""
+
+#: customizer/packages/compatibility/src/Init.php:261
+msgid "Don't show this again"
+msgstr ""
+
+#: customizer/packages/compatibility/src/Kirki.php:191
+msgid "Kirki fields should not be added on customize_register. Please add them directly, or on init."
+msgstr ""
+
+#: customizer/packages/controls/checkbox/src/Control/Checkbox_Switch.php:69
+msgid "On"
+msgstr ""
+
+#: customizer/packages/controls/checkbox/src/Control/Checkbox_Switch.php:70
+msgid "Off"
+msgstr ""
+
+#: customizer/packages/controls/dashicons/src/Control/Dashicons.php:94
+msgid "Admin Menu"
+msgstr ""
+
+#: customizer/packages/controls/dashicons/src/Control/Dashicons.php:95
+msgid "Welcome Screen"
+msgstr ""
+
+#: customizer/packages/controls/dashicons/src/Control/Dashicons.php:96
+msgid "Post Formats"
+msgstr ""
+
+#: customizer/packages/controls/dashicons/src/Control/Dashicons.php:97
+msgid "Media"
+msgstr ""
+
+#: customizer/packages/controls/dashicons/src/Control/Dashicons.php:98
+msgid "Image Editing"
+msgstr ""
+
+#: customizer/packages/controls/dashicons/src/Control/Dashicons.php:100
+msgid "Posts"
+msgstr ""
+
+#: customizer/packages/controls/dashicons/src/Control/Dashicons.php:101
+msgid "Sorting"
+msgstr ""
+
+#: customizer/packages/controls/dashicons/src/Control/Dashicons.php:102
+msgid "Social"
+msgstr ""
+
+#: customizer/packages/controls/dashicons/src/Control/Dashicons.php:104
+msgid "Products"
+msgstr ""
+
+#: customizer/packages/controls/dashicons/src/Control/Dashicons.php:105
+msgid "Taxonomies"
+msgstr ""
+
+#: customizer/packages/controls/dashicons/src/Control/Dashicons.php:106
+msgid "Widgets"
+msgstr ""
+
+#: customizer/packages/controls/dashicons/src/Control/Dashicons.php:107
+msgid "Notifications"
+msgstr ""
+
+#: customizer/packages/controls/dashicons/src/Control/Dashicons.php:108
+msgid "Miscellaneous"
+msgstr ""
+
+#: customizer/packages/controls/image/src/Control/Image.php:76
+#: customizer/packages/controls/image/src/Field/Image.php:115
+#: customizer/packages/controls/image/src/control.js:141
+msgid "No image selected"
+msgstr ""
+
+#: customizer/packages/controls/image/src/Control/Image.php:79
+#: customizer/packages/controls/image/src/Field/Image.php:114
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:441
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:473
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:498
+msgid "Remove"
+msgstr ""
+
+#: customizer/packages/controls/image/src/Control/Image.php:81
+#: customizer/packages/controls/image/src/Field/Image.php:113
+#: customizer/packages/fields/typography/src/Field/Typography.php:846
+msgid "Default"
+msgstr ""
+
+#: customizer/packages/controls/image/src/Control/Image.php:83
+#: customizer/packages/controls/image/src/Field/Image.php:111
+#: customizer/packages/controls/image/src/Field/Image.php:116
+msgid "Select image"
+msgstr ""
+
+#: customizer/packages/controls/image/src/Field/Image.php:112
+msgid "Change image"
+msgstr ""
+
+#: customizer/packages/controls/image/src/Field/Image.php:117
+msgid "Choose image"
+msgstr ""
+
+#: customizer/packages/controls/react-select/src/Control/ReactSelect.php:137
+msgid "Select..."
+msgstr ""
+
+#. translators: %s is the limit of selection number.
+#: customizer/packages/controls/react-select/src/Control/ReactSelect.php:144
+#, php-format
+msgid "You can only select %s items"
+msgstr ""
+
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:95
+msgid "row"
+msgstr ""
+
+#. translators: %s represents the label of the row.
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:104
+#, php-format
+msgid "Add new %s"
+msgstr ""
+
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:139
+msgid "Select a Page"
+msgstr ""
+
+#. translators: %s represents the number of rows we're limiting the repeater to allow.
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:263
+#, php-format
+msgid "Limit: %s rows"
+msgstr ""
+
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:431
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:436
+msgid "No Image Selected"
+msgstr ""
+
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:442
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:446
+msgid "Add Image"
+msgstr ""
+
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:442
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:444
+msgid "Change Image"
+msgstr ""
+
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:463
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:468
+msgid "No File Selected"
+msgstr ""
+
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:474
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:478
+msgid "Add File"
+msgstr ""
+
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:474
+#: customizer/packages/controls/repeater/src/Control/Repeater.php:476
+msgid "Change File"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:84
+msgid "Background Color"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:103
+msgid "Background Image"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:119
+msgid "Background Repeat"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:123
+msgid "No Repeat"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:124
+msgid "Repeat All"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:125
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:126
+msgid "Repeat Vertically"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:152
+msgid "Background Position"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:156
+#: customizer/packages/fields/dimensions/src/Dimensions.php:50
+msgid "Left Top"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:157
+#: customizer/packages/fields/dimensions/src/Dimensions.php:51
+msgid "Left Center"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:158
+#: customizer/packages/fields/dimensions/src/Dimensions.php:52
+msgid "Left Bottom"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:159
+#: customizer/packages/fields/dimensions/src/Dimensions.php:56
+msgid "Center Top"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:160
+#: customizer/packages/fields/dimensions/src/Dimensions.php:57
+msgid "Center Center"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:161
+#: customizer/packages/fields/dimensions/src/Dimensions.php:58
+msgid "Center Bottom"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:162
+#: customizer/packages/fields/dimensions/src/Dimensions.php:53
+msgid "Right Top"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:163
+#: customizer/packages/fields/dimensions/src/Dimensions.php:54
+msgid "Right Center"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:164
+#: customizer/packages/fields/dimensions/src/Dimensions.php:55
+msgid "Right Bottom"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:190
+msgid "Background Size"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:194
+msgid "Cover"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:195
+msgid "Contain"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:196
+msgid "Auto"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:222
+msgid "Background Attachment"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:227
+msgid "Scroll"
+msgstr ""
+
+#: customizer/packages/fields/background/src/Background.php:228
+msgid "Fixed"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:59
+#: customizer/packages/fields/typography/src/Field/Typography.php:323
+msgid "Font Size"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:60
+msgid "Font Weight"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:61
+#: customizer/packages/fields/typography/src/Field/Typography.php:402
+msgid "Line Height"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:62
+msgid "Font Style"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:63
+#: customizer/packages/fields/typography/src/Field/Typography.php:407
+msgid "Letter Spacing"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:64
+msgid "Word Spacing"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:65
+msgid "Top"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:66
+msgid "Bottom"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:67
+#: customizer/packages/fields/typography/src/Field/Typography.php:351
+msgid "Left"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:68
+#: customizer/packages/fields/typography/src/Field/Typography.php:353
+msgid "Right"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:69
+#: customizer/packages/fields/typography/src/Field/Typography.php:352
+msgid "Center"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:70
+msgid "Size"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:71
+msgid "Spacing"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:72
+msgid "Width"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:73
+msgid "Height"
+msgstr ""
+
+#: customizer/packages/fields/dimensions/src/Dimensions.php:74
+msgid "Invalid Value"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:112
+#: customizer/packages/fields/typography/src/Field/Typography.php:131
+msgid "Regular"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:116
+#: customizer/packages/fields/typography/src/Field/Typography.php:135
+msgid "Italic"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:120
+#: customizer/packages/fields/typography/src/Field/Typography.php:179
+msgid "700"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:124
+#: customizer/packages/fields/typography/src/Field/Typography.php:183
+msgid "700 Italic"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:139
+msgid "100"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:143
+msgid "100 Italic"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:147
+msgid "200"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:151
+msgid "200 Italic"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:155
+msgid "300"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:159
+msgid "300 Italic"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:163
+msgid "500"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:167
+msgid "500 Italic"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:171
+msgid "600"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:175
+msgid "600 Italic"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:187
+msgid "800"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:191
+msgid "800 Italic"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:195
+msgid "900"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:199
+msgid "900 Italic"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:274
+msgid "Font Family"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:301
+msgid "Font Variant"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:328
+msgid "Font Color"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:347
+msgid "Text Align"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:350
+msgid "Initial"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:354
+msgid "Justify"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:359
+msgid "Text Transform"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:362
+#: customizer/packages/fields/typography/src/Field/Typography.php:382
+msgid "None"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:363
+msgid "Capitalize"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:364
+msgid "Uppercase"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:365
+msgid "Lowercase"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:379
+msgid "Text Decoration"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:383
+msgid "Underline"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:384
+msgid "Line Through"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:385
+msgid "Overline"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:386
+msgid "Solid"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:387
+msgid "Wavy"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:422
+msgid "Margin Top"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:427
+msgid "Margin Bottom"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:844
+msgid "Defaults"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:871
+msgid "Standard Fonts"
+msgstr ""
+
+#: customizer/packages/fields/typography/src/Field/Typography.php:876
+msgid "Google Fonts"
+msgstr ""
+
+#: customizer/packages/modules/sections/src/Section_Types/Nested.php:62
+msgid "Customizing"
+msgstr ""
+
+#. translators: The title.
+#: customizer/packages/modules/sections/src/Section_Types/Nested.php:65
+#, php-format
+msgid "Customizing &#9656; %s"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:162
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:163
+msgid "Ultra-Light 100"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:164
+msgid "Ultra-Light 100 Italic"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:165
+msgid "Light 200"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:166
+msgid "Light 200 Italic"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:167
+msgid "Book 300"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:168
+msgid "Book 300 Italic"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:169
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:170
+msgid "Normal 400"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:171
+msgid "Normal 400 Italic"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:172
+msgid "Medium 500"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:173
+msgid "Medium 500 Italic"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:174
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:175
+msgid "Semi-Bold 600"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:176
+msgid "Semi-Bold 600 Italic"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:177
+msgid "Bold 700"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:178
+msgid "Bold 700 Italic"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:179
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:180
+msgid "Extra-Bold 800"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:181
+msgid "Extra-Bold 800 Italic"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:182
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:183
+msgid "Ultra-Bold 900"
+msgstr ""
+
+#: customizer/packages/modules/webfonts/src/Webfonts/Fonts.php:184
+msgid "Ultra-Bold 900 Italic"
+msgstr ""

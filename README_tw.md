@@ -24,7 +24,7 @@
 
 - 如果在使用過程中遇到了任何問題，請**訪問**本主題的 [支持文檔](https://docs.fuukei.org) 
 
-- 在確認你遇到的現象確實是一個Bug後，請在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交問題，並為該問題可以的描述清楚，
+- 在確認你遇到的現象確實是一個 Bug 後，請在 [Issues](https://github.com/mirai-mamori/Sakurairo/issues/new/choose) 提交問題，並盡可能清楚地描述該問題，
 按照提供的問題模板進行填寫，謝謝配合。
 
 ## 感謝所有支持我們的你：
@@ -57,7 +57,7 @@
 
 - 本主題使用 YahnisElsts [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker) 以提供主題更新功能
 
-- 本主题使用 Themeum [Kirki](https://github.com/themeum/kirki) 以提供可視化編輯器相關功能
+- 本主題使用 Themeum [Kirki](https://github.com/themeum/kirki) 以提供可視化編輯器相關功能
 
 ## 希望你喜歡！
 

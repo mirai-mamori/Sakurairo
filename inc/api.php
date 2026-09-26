@@ -34,7 +34,7 @@ add_action('rest_api_init', function () {
     register_rest_route('sakura/v1', '/image/upload', array(
         'methods' => 'POST',
         'callback' => 'upload_image',
-        'permission_callback' => '__return_true'
+        'permission_callback' => 'sakura_image_upload_permission_check'
     )
     );
     register_rest_route('sakura/v1', '/cache_search/json', array(
@@ -168,6 +168,27 @@ function sakura_verify_rest_request_nonce(WP_REST_Request $request)
     return $nonce && wp_verify_nonce($nonce, 'wp_rest');
 }
 
+function sakura_image_upload_permission_check(WP_REST_Request $request)
+{
+    if (!is_user_logged_in()) {
+        return new WP_Error(
+            'rest_forbidden',
+            __('Authentication required to upload images.', 'sakurairo'),
+            array('status' => rest_authorization_required_code())
+        );
+    }
+
+    if (!sakura_verify_rest_request_nonce($request)) {
+        return new WP_Error(
+            'rest_forbidden',
+            __('Unauthorized client.', 'sakurairo'),
+            array('status' => 403)
+        );
+    }
+
+    return true;
+}
+
 function chatgpt_summarize(WP_REST_Request $request)
 {
     $post_id = $request->get_param('post_id');
@@ -290,7 +311,11 @@ function cache_search_json(WP_REST_Request $request)
         );
         $result = new WP_REST_Response($output, 403);
     } else {
-        $output = Cache::search_json();
+        $output = get_transient('cache_search');
+        if (!$output) {
+            $output = Cache::search_json();
+            set_transient('cache_search', $output, 3600);
+        }
         $result = new WP_REST_Response($output, 200);
     }
     $result->set_headers(
@@ -571,10 +596,11 @@ function meting_aplayer(WP_REST_Request $request)
         $data = $Meting_API->get_data($type, $id);
         if ($type === 'playlist') {
             $response = new WP_REST_Response($data, 200);
-            $response->set_headers(array('cache-control' => 'max-age=3600'));
+            // 不要缓存过久：链接里的 nonce 会过期，导致 LRC/音频 403
+            $response->set_headers(array('cache-control' => 'private, max-age=300'));
         } elseif ($type === 'lyric') {
             $response = new WP_REST_Response();
-            $response->set_headers(array('cache-control' => 'max-age=3600'));
+            $response->set_headers(array('cache-control' => 'max-age=600'));
             $response->set_headers(array('Content-Type' => 'text/plain; charset=utf-8'));
             $response->set_data($data);
         } else {

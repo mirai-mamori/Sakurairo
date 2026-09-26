@@ -4,6 +4,15 @@ namespace Sakura\API;
 
 class BangumiAPI
 {
+    // 每页条目数，50 是 bangumi api 的上限
+    const PAGE_LIMIT = 50;
+    // 安全锁：最多拉取的页数。避免有人追番太多，导致太多调用卡死
+    const MAX_PAGES = 10;
+    // 安全锁：串行拉取的时间预算（秒）。留出余量，避免撞上 php 的 max_execution_time
+    const TIME_BUDGET = 10.0;
+    // 未能完整拉取时的缓存时长。短暂缓存，既不让残缺数据占住 30 天，也不至于每次请求都重新拉取
+    const PARTIAL_CACHE_TTL = 900;
+
     private $apiUrl = 'https://api.bgm.tv';
     private $userID;
     private $collectionApi;
@@ -67,27 +76,105 @@ class BangumiAPI
         }
     
         if ($collData === null) {
-            $response = $this->http_get_contents($this->collectionApi);
-            $collData = json_decode($response, true);
-    
-            if (isset($collData['data']) && is_array($collData['data']) && $bangumi_cache) {
-                auto_update_cache($cache_key, $response);
+            $collData = $this->fetchAllPages();
+
+            if ($bangumi_cache) {
+                if ($collData['complete']) {
+                    auto_update_cache($cache_key, json_encode($collData));
+                } elseif (!empty($collData['data'])) {
+                    // 拉取不完整（中途某页失败或超出时间预算），只短暂缓存。
+                    // 缓存默认有效期是 30 天，把残缺的列表写进去会一直错到下个月
+                    $this->update_cache($cache_key, json_encode($collData), self::PARTIAL_CACHE_TTL);
+                }
+                // 一条都没拿到时不写缓存，留给下次请求重试
             }
         }
-    
-        // 过滤符合条件的数据
+
+        // 过滤符合条件的数据。
+        // subject_type 校验保留：升级前写入的旧缓存是不带 subject_type 参数拉取的，
+        // 只信任接口参数会让书籍/游戏/音乐出现在追番页，直到旧缓存过期
         if (isset($collData['data']) && is_array($collData['data'])) {
             $collDataArr = array_filter($collData['data'], function($item) {
-                return in_array($item['type'], [2, 3]) && $item['subject_type'] == 2;
+                return in_array($item['type'] ?? 0, [2, 3]) && ($item['subject_type'] ?? 2) == 2;
             });
         }
-    
+
         return $collDataArr;
+    }
+
+    /**
+     * 分页拉取全部追番收藏。
+     * 返回 bangumi api 的数据形式，另附 complete 标记本次是否拉全。
+     */
+    private function fetchAllPages()
+    {
+        $dataList = [];
+        $total = 0;
+        $complete = false;
+        $deadline = microtime(true) + self::TIME_BUDGET;
+
+        for ($i = 0; $i < self::MAX_PAGES; $i++) {
+            // 时间预算在发请求前检查，保证最坏耗时不超过 预算 + 单次超时
+            if ($i > 0 && microtime(true) > $deadline) {
+                error_log('BangumiAPI: time budget exceeded, fetched ' . count($dataList) . ' of ' . $total);
+                break;
+            }
+
+            $offset = self::PAGE_LIMIT * $i;
+            // 只关注番剧，交给接口过滤（subject_type=2）
+            $url = $this->collectionApi . '?subject_type=2&limit=' . self::PAGE_LIMIT . '&offset=' . $offset;
+            $pageData = json_decode($this->http_get_contents($url), true);
+
+            // 任意一页拿不到数据都算拉取失败，第 1 页也一样要记日志
+            if (!isset($pageData['data']) || !is_array($pageData['data'])) {
+                error_log('BangumiAPI: fetchCollections failed at offset=' . $offset);
+                break;
+            }
+
+            // 把新获取到的列表合并到 $dataList 中
+            $dataList = array_merge($dataList, $pageData['data']);
+            $total = isset($pageData['total']) ? (int)$pageData['total'] : count($dataList);
+
+            // 已经拉满，或者这页不足一页（说明是最后一页）
+            if (count($dataList) >= $total || count($pageData['data']) < self::PAGE_LIMIT) {
+                $complete = true;
+                break;
+            }
+
+            if ($i === self::MAX_PAGES - 1) {
+                // 触发安全锁。这是预期内的截断，按正常结果缓存，只记日志
+                $complete = true;
+                error_log('BangumiAPI: reached page limit, fetched ' . count($dataList) . ' of ' . $total);
+            }
+        }
+
+        // 整理数据，整合为 bangumi api 的返回形式。
+        // total 用实际条目数，保证和 data 自洽
+        return [
+            'data' => $dataList,
+            'limit' => self::PAGE_LIMIT,
+            'offset' => 0,
+            'total' => count($dataList),
+            'complete' => $complete,
+        ];
+    }
+
+    /**
+     * 与 auto_update_cache 写同样的三个 key，但允许指定有效期。
+     */
+    private function update_cache($key, $content, $duration)
+    {
+        set_transient($key, $content, $duration);
+        set_transient($key . '_expire', time() + $duration, $duration);
+        set_transient($key . '_duration', $duration, DAY_IN_SECONDS * 30);
     }
 
     private function http_get_contents($url)
     {
-        $response = wp_remote_get($url, ['user-agent' => 'mirai-mamori/Sakurairo(https://github.com/mirai-mamori/Sakurairo):WordPressTheme']);
+        $response = wp_remote_get($url, [
+            'user-agent' => 'mirai-mamori/Sakurairo(https://github.com/mirai-mamori/Sakurairo):WordPressTheme',
+            'timeout' => 15     // 设置超时时间为15秒，默认值是5秒；和bilibili模板保持一致
+            ]);
         if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
             return wp_remote_retrieve_body($response);
         }

@@ -92,24 +92,24 @@ msgstr ""
 msgid "Cancel Reply"
 msgstr ""
 
-#: comments.php:234
-msgid "Nickname or QQ number"
+#: comments.php:202
+msgid "Nickname"
 msgstr ""
 
-#: comments.php:234 comments.php:238
-msgid "Must* "
+#: comments.php:202 comments.php:206
+msgid "Required* "
 msgstr ""
 
-#: comments.php:235
-msgid "Auto pull nickname and avatar with a QQ num. entered"
+#: comments.php:203
+msgid "Enter your nickname"
 msgstr ""
 
 #: comments.php:238
 msgid "email"
 msgstr ""
 
-#: comments.php:239
-msgid "You will receive notification by email"
+#: comments.php:207
+msgid "For notification purposes"
 msgstr ""
 
 #: comments.php:242

@@ -79,13 +79,14 @@ function font_end_js_control()
         'post_feature_img' => ( is_singular() && get_post_thumbnail_id(get_the_ID()) ) ? get_the_post_thumbnail_url(get_the_ID(), 'full') : '',
         'page_annotation' => json_encode($annotations) ?? [],
         'live_search' => check(iro_opt('live_search')),
+        'live_search_preview' => check(iro_opt('live_search_preview', true)),
         'loading_ph' => iro_opt('load_in_svg'),
         'clipboardRef' => iro_opt('clipboard_ref') == '0' ? false : true,
         'entry_content_style' => iro_opt('entry_content_style'),
         'random_graphs_mts' => check(iro_opt('random_graphs_mts')),
         'code_highlight' => iro_opt('code_highlight_method', 'hljs'),
         'theme_mathjax' => check(iro_opt('enable_theme_mathjax', true)),
-        'comment_upload_img' => iro_opt('img_upload_api') == 'off' ? false : true,
+        'comment_upload_img' => is_user_logged_in() && iro_opt('img_upload_api') != 'off',
         'img_upload_max_size' => iro_opt('img_upload_max_size',5),
         'cache_cover' => check(iro_opt('cache_cover')),
         'site_bg_as_cover' => check(iro_opt('site_bg_as_cover')),
@@ -120,7 +121,11 @@ function font_end_js_control()
         $lightGallery = str_replace(PHP_EOL, '', iro_opt('lightgallery_option'));
         $iro_opt['lightGallery'] = json_decode($lightGallery, true);
     }
-    if (iro_opt('aplayer_server') != 'off') {
+    if (iro_opt('aplayer_use_local')) {
+        // 本地曲库（user/modules/local-music.php），优先于在线歌源
+        $iro_opt['float_player_on'] = true;
+        $iro_opt['meting_api_url'] = rest_url('sakura/v1/local-music');
+    } elseif (iro_opt('aplayer_server') != 'off') {
         $iro_opt['float_player_on'] = true;
         if (!empty(iro_opt('custom_music_api'))) {
             $iro_opt['meting_api_url'] = iro_opt('custom_music_api'); //使用外部api/歌单

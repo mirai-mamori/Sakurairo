@@ -132,7 +132,7 @@ function var_post_theme_color($id = null) {
 function comment_add_at( $comment_text, $comment = '') {
   if( isset($comment->comment_parent) && $comment->comment_parent > 0) {
       if(substr($comment_text, 0, 3) === "<p>") 
-        $comment_text = str_replace(substr($comment_text, 0, 3), '<p><a href="#comment-' . $comment->comment_parent . '" class="comment-at">@'.get_comment_author( $comment->comment_parent ) . '</a>&nbsp;', $comment_text);
+        $comment_text = '<p><a href="#comment-' . $comment->comment_parent . '" class="comment-at">@'.get_comment_author( $comment->comment_parent ) . '</a>&nbsp;' . substr($comment_text, 3);
       else
         $comment_text = '<a href="#comment-' . $comment->comment_parent . '" class="comment-at">@'.get_comment_author( $comment->comment_parent ) . '</a>&nbsp;' . $comment_text;
   }
@@ -174,10 +174,16 @@ function comment_captcha(){
       if (empty($timestamp) || empty($captcha_id) || !preg_match('/^[\w$.\/]+$/', $captcha_id) || !ctype_digit($timestamp)) {
           return siren_ajax_comment_err(__('Have you modified the captcha code data? Or refresh the captcha and try again?','sakurairo'));
       }
+      // 验证码一次性使用，防止同一验证码被重复用于多条评论
+      $used_key = 'sakurairo_comment_captcha_used_' . md5(wp_unslash($_POST['id']));
+      if (get_transient($used_key)) {
+          return siren_ajax_comment_err(__('This captcha has already been used. Please refresh the captcha and try again.', 'sakurairo'));
+      }
       include_once( get_template_directory() . '/inc/classes/Captcha.php');
       $img = new Sakura\API\Captcha;
       $check = $img->check_captcha($captcha, $timestamp, $captcha_id);
       if ($check['code'] == 5) {
+          set_transient($used_key, 1, 120);
           return true;
       }
       return siren_ajax_comment_err(__('Please fill in the correct captcha answer','sakurairo'));
@@ -719,9 +725,9 @@ add_filter( 'update_footer', 'change_footer_version', 9999);
 function disable_dashboard_widgets() {   
     //remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');//近期评论 
     //remove_meta_box('dashboard_recent_drafts', 'dashboard', 'normal');//近期草稿
-    remove_meta_box('dashboard_primary', 'dashboard', 'core');//wordpress博客  
-    remove_meta_box('dashboard_secondary', 'dashboard', 'core');//wordpress其它新闻  
-    remove_meta_box('dashboard_right_now', 'dashboard', 'core');//wordpress概况  
+    // remove_meta_box('dashboard_primary', 'dashboard', 'core');//wordpress博客  
+    // remove_meta_box('dashboard_secondary', 'dashboard', 'core');//wordpress其它新闻  
+    // remove_meta_box('dashboard_right_now', 'dashboard', 'core');//wordpress概况  
     //remove_meta_box('dashboard_incoming_links', 'dashboard', 'core');//wordresss链入链接  
     //remove_meta_box('dashboard_plugins', 'dashboard', 'core');//wordpress链入插件  
     //remove_meta_box('dashboard_quick_press', 'dashboard', 'core');//wordpress快速发布   

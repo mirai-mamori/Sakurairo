@@ -94,25 +94,25 @@ msgstr "返信を残す"
 msgid "Cancel Reply"
 msgstr "返信をキャンセル"
 
-#: comments.php:234
-msgid "Nickname or QQ number"
+#: comments.php:202
+msgid "Nickname"
 msgstr "ニックネーム または QQ 番号"
 
-#: comments.php:234 comments.php:238
-msgid "Must* "
+#: comments.php:202 comments.php:206
+msgid "Required* "
 msgstr "必須* "
 
-#: comments.php:235
-msgid "Auto pull nickname and avatar with a QQ num. entered"
+#: comments.php:203
+msgid "Enter your nickname"
 msgstr "QQ 番号が入力された自動プルニックネームとアバター"
 
 #: comments.php:238
 msgid "email"
 msgstr "メールアドレス"
 
-#: comments.php:239
-msgid "You will receive notification by email"
-msgstr "メールで通知を受け取ります"
+#: comments.php:207
+msgid "For notification purposes"
+msgstr "通知用"
 
 #: comments.php:242
 msgid "Site"

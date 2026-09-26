@@ -94,26 +94,25 @@ msgstr "Répondre à"
 msgid "Cancel Reply"
 msgstr "Annuler la réponse"
 
-#: comments.php:234
-msgid "Nickname or QQ number"
-msgstr "Pseudo ou numéro QQ"
+#: comments.php:202
+msgid "Nickname"
+msgstr "Pseudonyme"
 
-#: comments.php:234 comments.php:238
-msgid "Must* "
+#: comments.php:202 comments.php:206
+msgid "Required* "
 msgstr "Obligatoire* "
 
-#: comments.php:235
-msgid "Auto pull nickname and avatar with a QQ num. entered"
-msgstr ""
-"Récupération automatique du pseudo et de l'avatar avec un numéro QQ saisi"
+#: comments.php:203
+msgid "Enter your nickname"
+msgstr "Saisissez votre pseudonyme"
 
 #: comments.php:238
 msgid "email"
 msgstr "email"
 
-#: comments.php:239
-msgid "You will receive notification by email"
-msgstr "Vous recevrez une notification par email"
+#: comments.php:207
+msgid "For notification purposes"
+msgstr "Pour les notifications"
 
 #: comments.php:242
 msgid "Site"

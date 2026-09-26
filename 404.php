@@ -136,6 +136,9 @@ $random_bg_url = DEFAULT_FEATURE_IMAGE();
         .page-404-search-form {
             position: relative;
             display: flex;
+            align-items: center;
+            gap: 10px;
+            width: min(100%, 340px);
         }
         
         .page-404-search-input {
@@ -149,6 +152,14 @@ $random_bg_url = DEFAULT_FEATURE_IMAGE();
             border-radius: 10px !important;
             border: 1px solid #FFFFFF !important;
             height: 42px;
+        }
+
+        .page-404-search-form .page-404-button {
+            max-width: none;
+            width: 42px;
+            min-width: 42px;
+            padding: 0;
+            justify-content: center;
         }
         
         .page-404-search-input:focus {
@@ -199,7 +210,11 @@ $random_bg_url = DEFAULT_FEATURE_IMAGE();
                 <i class="fa-solid fa-house"></i>
             </a>
             <form class="page-404-search-form" method="get" action="<?php echo esc_url(home_url('/')); ?>" role="search">
-                <input class="page-404-search-input" type="search" name="s" placeholder="<?php _e('Search...', 'sakurairo'); ?>" required>
+                <label class="screen-reader-text" for="page-404-search-input"><?php esc_html_e('Search', 'sakurairo'); ?></label>
+                <input id="page-404-search-input" class="page-404-search-input" type="search" name="s" placeholder="<?php _e('Search...', 'sakurairo'); ?>" required>
+                <button class="page-404-button" type="submit" aria-label="<?php esc_attr_e('Submit Search', 'sakurairo'); ?>">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                </button>
             </form>
         </div>
         

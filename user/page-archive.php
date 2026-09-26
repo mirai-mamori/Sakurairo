@@ -840,5 +840,6 @@ foreach ($categories as $category) {
 ?>
 </div>
 
+<?php do_action('personal_archive_page_footer'); ?>
 
 <?php get_footer(); ?>

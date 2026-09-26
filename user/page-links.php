@@ -309,6 +309,11 @@ body.dark .link-form-submit:hover {
 }
 
 /* 模态框样式 */
+.links-page {
+    --modal-max-height: 80dvh;
+    --modal-safe-height: 90dvh;
+}
+
 .link-modal {
     display: none;
     position: fixed;
@@ -331,10 +336,12 @@ body.dark .link-form-submit:hover {
     border-radius: 10px;
     max-width: 500px;
     width: 80%;
-    height: 80%;
+    max-height: var(--modal-max-height);
+    height: auto;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     position: relative;
     animation: modalFadeIn 0.3s ease;
+    overflow-y: auto;
 }
 
 @keyframes modalFadeIn {
@@ -445,6 +452,22 @@ body.dark .captcha-container input {
 
 .captcha-container input {
     flex: 1;
+}
+
+@media (max-height: 800px) {
+    .links-page {
+        --modal-max-height: var(--modal-safe-height);
+    }
+
+    .link-modal-content {
+        margin: 2vh auto;
+        padding: 18px;
+    }
+
+    .link-form-submit {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
 }
 
 <?php

@@ -46,13 +46,6 @@ font-family: <?= isset($text_logo['font']) ? $text_logo['font'] : 'Noto Serif SC
 }
 <?php } ?>
 
-<?php if(iro_opt('live_search')){ ?>
-.search-form--modal .search-form__inner {
-    bottom: unset !important;
-    top: 10% !important;
-}
-<?php } ?>
-
 <?php } // theme-skin ?>
 <?php // Custom style
 if ( iro_opt('site_custom_style') ) {
@@ -341,10 +334,6 @@ background-image: url(<?=iro_opt('comment_area_image'); ?>);
 background-size: contain;
 background-repeat: no-repeat;
 background-position: right;
-}
-
-.search-form.is-visible{
-background-image: url(<?=iro_opt('search_area_background'); ?>);
 }
 
 .site-footer {

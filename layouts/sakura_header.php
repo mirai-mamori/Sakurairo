@@ -72,7 +72,11 @@ $show_user_avatar = (bool)iro_opt('nav_user_menu',true);
     <?php if($show_search): // 移动端搜索?>
     <div class="mo-menu-search">
       <form class="search-form" method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
-          <input class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
+          <label class="screen-reader-text" for="mobile-search-input"><?php esc_html_e('Search', 'sakurairo'); ?></label>
+          <input id="mobile-search-input" class="search-input" type="search" name="s" placeholder="<?php esc_attr_e('Search...', 'sakurairo'); ?>" required>
+          <button class="search-submit" type="submit" aria-label="<?php esc_attr_e('Submit Search', 'sakurairo'); ?>">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          </button>
       </form>
     </div>
     <?php endif; ?>
@@ -114,7 +118,9 @@ $show_user_avatar = (bool)iro_opt('nav_user_menu',true);
     <?php wp_nav_menu(['depth' => 2, 'theme_location' => 'primary', 'container' => 'nav', 'container_class' => 'sakura_nav']); //菜单?>
 
     <?php if ($show_search) { //是否开启搜索框?>
-      <div class="searchbox js-toggle-search"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <div class="searchbox js-toggle-search">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      </div>
     <?php } ?>
 
     <?php

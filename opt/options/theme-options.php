@@ -897,15 +897,33 @@ $prefix = 'iro_options';
       ),
 
       array(
+        'id' => 'aplayer_use_local',
+        'type' => 'switcher',
+        'title' => '使用本地曲库',
+        'label' => '开启后播放本地音频，忽略上方在线歌源',
+        'default' => false,
+      ),
+
+      array(
+        'id' => 'local_music_dir',
+        'type' => 'text',
+        'title' => '本地音乐库路径',
+        'desc' => '服务器绝对路径，例如 /var/www/html/wp-content/bgm。支持 mp3/flac/m4a/ogg/wav；同名 .lrc 为歌词，其次读内嵌标签；封面优先内嵌标签，再同名图（jpg/png/webp）；可选 <a href="' . esc_url(get_template_directory_uri() . '/user/modules/PLAYLIST.html') . '" target="_blank" rel="noopener">playlist.json 自定义列表</a>。',
+        'default' => '/var/www/html/wp-content/bgm',
+        'dependency' => array( 'aplayer_use_local', '==', 'true', '', 'true' ),
+      ),
+
+      array(
         'id' => 'custom_music_api',
         'type' => 'text',
         'title' => __('Use custom Meting API or playlist','sakurairo_csf'),
-        'dependency' => array( 'aplayer_server', '!=', 'off', '', 'true' ),
+        'dependency' => array( 'aplayer_use_local', '!=', 'true', '', 'true' ),
         'desc' => __('Enter a custom Meting-api, which can also point to a playlist file. However, the ID will only be effective if the playlist is specified','sakurairo_csf'),
       ),
 
       array(
         'type'    => 'content',
+        'dependency' => array( 'aplayer_use_local', '!=', 'true', '', 'true' ),
         'content' => __('Click <a href="./admin.php?iro_act=playlist" target="_blank">here</a> to use the built-in meting-API to get the playlist info file template.Its content will be refreshed after the relevant settings are saved.',
         'sakurairo_csf'),
     ),
@@ -914,7 +932,7 @@ $prefix = 'iro_options';
         'id' => 'aplayer_server_proxy',
         'type' => 'text',
         'title' => __('Footer Online Music Player Proxy','sakurairo_csf'),
-        'dependency' => array( 'aplayer_server', '!=', 'off', '', 'true' ),
+        'dependency' => array( 'aplayer_use_local', '!=', 'true', '', 'true' ),
         'desc' => __('Ex. http://127.0.0.1:8080. Reference: https://curl.se/libcurl/c/CURLOPT_PROXY.html','sakurairo_csf'),
         'default' => ''
       ),
@@ -923,7 +941,7 @@ $prefix = 'iro_options';
         'id' => 'aplayer_playlistid',
         'type' => 'text',
         'title' => __('Footer Online Music Player Songlist ID','sakurairo_csf'),
-        'dependency' => array( 'aplayer_server', '!=', 'off', '', 'true' ),
+        'dependency' => array( 'aplayer_use_local', '!=', 'true', '', 'true' ),
         'desc' => __('Fill in the song ID, e.g. https://music.163.com/#/playlist?id=5380675133 SongID:5380675133','sakurairo_csf'),
         'default' => '5380675133'
       ),
@@ -932,7 +950,6 @@ $prefix = 'iro_options';
         'id' => 'aplayer_order',
         'type' => 'select',
         'title' => __('Footer Online Music Player Mode','sakurairo_csf'),
-        'dependency' => array( 'aplayer_server', '!=', 'off', '', 'true' ),
         'desc' => __('Select music player mode','sakurairo_csf'),
         'options' => array(
           'list' => __('List','sakurairo_csf'),
@@ -945,7 +962,6 @@ $prefix = 'iro_options';
         'id' => 'aplayer_preload',
         'type' => 'select',
         'title' => __('Footer Online Music Player Preload','sakurairo_csf'),
-        'dependency' => array( 'aplayer_server', '!=', 'off', '', 'true' ),
         'desc' => __('Whether to preload songs','sakurairo_csf'),
         'options' => array(
           'none' => __('Off','sakurairo_csf'),
@@ -959,7 +975,6 @@ $prefix = 'iro_options';
         'id' => 'aplayer_volume',
         'type' => 'slider',
         'title' => __('Default Volume of Footer Online Music Player','sakurairo_csf'),
-        'dependency' => array( 'aplayer_server', '!=', 'off', '', 'true' ),
         'desc' => __('Slide to adjust, the recommended sliding value range is 0.4-0.6','sakurairo_csf'),
         'step' => '0.01',
         'max' => '1',
@@ -1089,6 +1104,15 @@ $prefix = 'iro_options';
         'title' => __('Live Search','sakurairo_csf'),
         'label' => __('After turning on the live search in the frontend, call Rest API to update the cache once an hour. You can set the cache time manually in api.php','sakurairo_csf'),
         'default' => false
+      ),
+
+      array(
+        'id' => 'live_search_preview',
+        'type' => 'switcher',
+        'title' => __('Enable Search Content Preview','sakurairo_csf'),
+        'dependency' => array( 'live_search', '==', 'true', '', 'true' ),
+        'label' => __('Show preview text in live search results','sakurairo_csf'),
+        'default' => true
       ),
 
       array(
@@ -3366,19 +3390,15 @@ $prefix = 'iro_options';
       ),
 
       array(
-        'id' => 'vaptcha_scene',
+        'id' => 'vaptcha_lang',
         'type' => 'select',
-        'title' => __('Vaptcha Scene','sakurairo_csf'),
+        'title' => __('Vaptcha Language','sakurairo_csf'),
         'dependency' => array( 'captcha_select', '==', 'vaptcha', '', 'true' ),
         'options' => array(
-          '1' => __(1,'sakurairo_csf'),
-          '2' => __(2,'sakurairo_csf'),
-          '3' => __(3,'sakurairo_csf'),
-          '4' => __(4,'sakurairo_csf'),
-          '5' => __(5,'sakurairo_csf'),
-          '6' => __(6,'sakurairo_csf'),
+          'zh-CN' => __('Simplified Chinese','sakurairo_csf'),
+          'en' => __('English','sakurairo_csf'),
         ),
-        'default' => 1,
+        'default' => 'zh-CN',
       ),
 
       array(
