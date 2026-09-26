@@ -54,6 +54,12 @@ if (!function_exists('iro_opt_update')) {
     }
 }
 
+// Local music library for APlayer (optional; see user/modules/PLAYLIST.html)
+require get_template_directory() . '/user/modules/local-music.php';
+// Shuoshuo timeline + admin, and archive cache flush button
+require get_template_directory() . '/user/modules/shuoshuo.php';
+require get_template_directory() . '/user/modules/archive-cache.php';
+
 $shared_lib_basepath = iro_opt('shared_library_basepath') ? get_template_directory_uri() : (iro_opt('lib_cdn_path', 'https://fastly.jsdelivr.net/gh/mirai-mamori/Sakurairo@') . IRO_VERSION);
 $core_lib_basepath = iro_opt('dev_mode',false) ? get_template_directory_uri() : 
                     (iro_opt('core_library_basepath',true) ? get_template_directory_uri() : 
@@ -1156,7 +1162,7 @@ if ($custom_login_switch) {
     // Add custom login styles
     function custom_login() {
         ?>
-        <style type="text/css">body.login{background-image:url('<?php echo DEFAULT_FEATURE_IMAGE(); ?>');background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;}.login h1 a{background-image:url('<?php echo iro_opt('login_logo_img') ?: get_site_icon_url(); ?>') !important;background-size:contain;width:100%;max-height:100px;}.login form{box-shadow:0 1px 30px -4px #e8e8e880;border:1px solid #FFFFFF;background:rgba(255,255,255,0.8);-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);border-radius:10px;}.login form input[type=checkbox],.login input[type=password],.login input[type=text],.login input[type=email]{background:rgba(255,255,255,0.7);box-shadow:0 1px 30px -4px #e8e8e880;border:1px solid #FFFFFF;-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);font-size:15px;padding:0.6rem;border-radius:8px;}.wp-core-ui .button-primary,#wp-webauthn{background:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;border-color:transparent;border-radius:6px;padding:1px 18px !important;transition:all 0.3s ease;}.wp-core-ui .button-primary:hover,#wp-webauthn:hover{background:<?php echo iro_opt('theme_skin_matching') ?: '#FF69B4'; ?>;border-color:transparent;transition:all 0.3s ease;}.vaptchaContainer{margin:5px 0 20px;}.login form .forgetmenot{margin-top: 6px;}.login .button.wp-hide-pw .dashicons{color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;}#language-switcher{color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;backdrop-filter:none;-webkit-backdrop-filter:none;}.login #nav{font-size:12px;padding:8px 12px;background:rgba(255,255,255,0.7);box-shadow:0 1px 30px -4px #e8e8e8;border:1px solid #FFFFFF;-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);width:fit-content;border-radius:8px;margin:auto;margin-top:-13%;}.login #backtoblog{display:none;}.captcha{display:flex !important;align-items:center;margin-bottom:20px !important;margin-top:10px;gap:10px;}.login form input[name=yzm]{margin:0;}.login label{margin-bottom:5px;}.wp-webauthn-notice{height: 40px !important;margin-bottom: 15px;}#wp-webauthn span{color:#fff;}.vp-dark-btn.vp-basic-btn{border-radius: 8px !important;}</style>
+        <style type="text/css">body.login{background-image:url('<?php echo DEFAULT_FEATURE_IMAGE(); ?>');background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed;}.login h1 a{background-image:url('<?php echo iro_opt('login_logo_img') ?: get_site_icon_url(); ?>') !important;background-size:contain;width:100%;max-height:100px;}.login form{box-shadow:0 1px 30px -4px #e8e8e880;border:1px solid #FFFFFF;background:rgba(255,255,255,0.8);-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);border-radius:10px;}.login input[type=password],.login input[type=text],.login input[type=email]{background:rgba(255,255,255,0.7);box-shadow:0 1px 30px -4px #e8e8e880;border:1px solid #FFFFFF;-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);font-size:15px;padding:0.6rem;border-radius:8px;}.login form input[type=checkbox]{width:1rem;height:1rem;min-width:1rem;margin:0 0.25rem 0 0;padding:0;vertical-align:middle;cursor:pointer;background:#fff;border:1px solid #8c8f94;border-radius:4px;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;}.login form input[type=checkbox]:hover{border-color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;}.login form input[type=checkbox]:focus{outline:2px solid <?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;outline-offset:1px;}.login form input[type=checkbox]:checked{background:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;border-color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;}.wp-core-ui .button-primary,#wp-webauthn{background:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;border-color:transparent;border-radius:6px;padding:1px 18px !important;transition:all 0.3s ease;}.wp-core-ui .button-primary:hover,#wp-webauthn:hover{background:<?php echo iro_opt('theme_skin_matching') ?: '#FF69B4'; ?>;border-color:transparent;transition:all 0.3s ease;}.vaptchaContainer{margin:5px 0 20px;}.login form .forgetmenot{margin-top: 6px;}.login .button.wp-hide-pw .dashicons{color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;}#language-switcher{color:<?php echo iro_opt('theme_skin') ?: '#FF69B4'; ?>;backdrop-filter:none;-webkit-backdrop-filter:none;}.login #nav{font-size:12px;padding:8px 12px;background:rgba(255,255,255,0.7);box-shadow:0 1px 30px -4px #e8e8e8;border:1px solid #FFFFFF;-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);width:fit-content;border-radius:8px;margin:auto;margin-top:-13%;}.login #backtoblog{display:none;}.captcha{display:flex !important;align-items:center;margin-bottom:20px !important;margin-top:10px;gap:10px;}.login form input[name=yzm]{margin:0;}.login label{margin-bottom:5px;}.wp-webauthn-notice{height: 40px !important;margin-bottom: 15px;}#wp-webauthn span{color:#fff;}.vp-dark-btn.vp-basic-btn{border-radius: 8px !important;}</style>
         <?php
     }
     add_action('login_head', 'custom_login');
@@ -3874,40 +3880,44 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
     }
     add_action('login_form', 'vaptchaInit');
 
-    function checkVaptchaAction($user)
+    function checkVaptchaAction($user, $username = '', $password = '')
     {
-        if (empty($_POST)) {
-            return new WP_Error();
+        if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
+            return $user;
         }
-        if (!(isset($_POST['vaptcha_server']) && isset($_POST['vaptcha_token']))) {
-            return new WP_Error('prooffail', '<strong>错误</strong>：请先进行人机验证');
 
+        if (!(isset($_POST['vaptcha_token'], $_POST['vaptcha_knock'], $_POST['vaptcha_dfu'], $_POST['vaptcha_ip']))) {
+            return new WP_Error('prooffail', '<strong>错误</strong>：请先进行人机验证');
         }
-        if (!preg_match('/^https:\/\/([\w-]+\.)+[\w-]*([^<>=?\"\'])*$/', $_POST['vaptcha_server']) || !preg_match('/^[\w\-\$]+$/', $_POST['vaptcha_token'])) {
+
+        $token = (string) $_POST['vaptcha_token'];
+        $knock = (string) $_POST['vaptcha_knock'];
+        $dfu   = (string) $_POST['vaptcha_dfu'];
+        $ip    = (string) $_POST['vaptcha_ip'];
+
+        // 新版 token 格式：timestamp.token_id.signature（signature 为 64 位 hex）
+        if (!preg_match('/^\d+\.[A-Za-z0-9_-]+\.[a-f0-9]{64}$/i', $token)) {
             return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
         }
-        include_once('inc/classes/Vaptcha.php');
-        $url = $_POST['vaptcha_server'];
-        $token = $_POST['vaptcha_token'];
-        $ip = get_the_user_ip();
-        $vaptcha = new Sakura\API\Vaptcha;
-        $response = $vaptcha->checkVaptcha($url, $token, $ip);
-        if ($response->msg && $response->success && $response->score) {
-            if ($response->success === 1 && $response->score >= 70) {
-                return $user;
-            }
-            if ($response->success === 0) {
-                $errorcode = $response->msg;
-                return new WP_Error('prooffail', '<strong>错误</strong>：' . $errorcode);
-            }
-            return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
 
-        } else if (is_string($response)) {
-            return new WP_Error('prooffail', '<strong>错误</strong>：' . $response);
+        // ip 为签名快照 IP，必须原样参与验签；仅当非空时做格式校验
+        if ($ip !== '' && !filter_var($ip, FILTER_VALIDATE_IP)) {
+            return new WP_Error('prooffail', '<strong>错误</strong>：非法 IP');
         }
-        return new WP_Error('prooffail', '<strong>错误</strong>：未知错误');
 
+        if (strlen($knock) > 2048 || strlen($dfu) > 2048) {
+            return new WP_Error('prooffail', '<strong>错误</strong>：非法数据');
+        }
 
+        include_once('inc/classes/Vaptcha.php');
+        $vaptcha = new Sakura\API\Vaptcha;
+
+        // 官方推荐：本地 HMAC-SHA256 验签
+        if (!$vaptcha->checkVaptcha($token, $knock, $dfu, $ip)) {
+            return new WP_Error('prooffail', '<strong>错误</strong>：人机验证失败');
+        }
+
+        return $user;
     }
     add_filter('authenticate', 'checkVaptchaAction', 20, 3);
 } else if ((iro_opt('captcha_select') === 'turnstile') && (!empty(iro_opt("turnstile_site_key")) && !empty(iro_opt("turnstile_secret_key")))) {
@@ -4115,16 +4125,17 @@ function get_the_user_ip()
 
 //归档页信息缓存
 function get_archive_info($get_page = false) {
-    // 获取所有文章和说说
+    // 归档日历/月份弹层只收录文章；说说走独立时间轴（archive-shuoshuo）
     $args = [
         'posts_per_page' => -1,
         'orderby' => 'date',
         'order' => 'DESC',
-        'post_type' => array('post', 'shuoshuo'),
+        'post_type' => array('post'),
         'post_status'    => 'publish',
-        'suppress_filters' => false // 同时获取文章和说说
+        'suppress_filters' => false
     ];
     if ($get_page){
+        // 站点统计等场景仍汇总文章 + 说说 + 页面
         $args['post_type'] = array('post', 'shuoshuo', 'page');
     }
     $posts = get_posts($args);

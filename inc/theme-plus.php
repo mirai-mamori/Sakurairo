@@ -132,7 +132,7 @@ function var_post_theme_color($id = null) {
 function comment_add_at( $comment_text, $comment = '') {
   if( isset($comment->comment_parent) && $comment->comment_parent > 0) {
       if(substr($comment_text, 0, 3) === "<p>") 
-        $comment_text = str_replace(substr($comment_text, 0, 3), '<p><a href="#comment-' . $comment->comment_parent . '" class="comment-at">@'.get_comment_author( $comment->comment_parent ) . '</a>&nbsp;', $comment_text);
+        $comment_text = '<p><a href="#comment-' . $comment->comment_parent . '" class="comment-at">@'.get_comment_author( $comment->comment_parent ) . '</a>&nbsp;' . substr($comment_text, 3);
       else
         $comment_text = '<a href="#comment-' . $comment->comment_parent . '" class="comment-at">@'.get_comment_author( $comment->comment_parent ) . '</a>&nbsp;' . $comment_text;
   }
@@ -172,10 +172,16 @@ function comment_captcha(){
       if (!isset($_POST['timestamp']) || !isset($_POST['id']) || !preg_match('/^[\w$.\/]+$/', $_POST['id']) || !ctype_digit($_POST['timestamp'])) {
           return siren_ajax_comment_err(__('Have you modified the captcha code data? Or refresh the captcha and try again?','sakurairo'));
       }
+      // 验证码一次性使用，防止同一验证码被重复用于多条评论
+      $used_key = 'sakurairo_comment_captcha_used_' . md5(wp_unslash($_POST['id']));
+      if (get_transient($used_key)) {
+          return siren_ajax_comment_err(__('This captcha has already been used. Please refresh the captcha and try again.', 'sakurairo'));
+      }
       include_once( get_template_directory() . '/inc/classes/Captcha.php');
       $img = new Sakura\API\Captcha;
       $check = $img->check_captcha($_POST['captcha'], $_POST['timestamp'], $_POST['id']);
       if ($check['code'] == 5) {
+          set_transient($used_key, 1, 120);
           return true;
       }
       return siren_ajax_comment_err(__('Please fill in the correct captcha answer','sakurairo'));

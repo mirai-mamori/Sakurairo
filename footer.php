@@ -151,10 +151,10 @@ $reception_background = iro_opt('reception_background');
     <?php endif; ?>
   </div>
 </div>
-<?php if (iro_opt('aplayer_server') != 'off'): ?>
+<?php if (iro_opt('aplayer_server') != 'off' || iro_opt('aplayer_use_local')): ?>
   <div id="aplayer-float" style="z-index: 100;" class="aplayer"
-    data-id="<?php echo esc_attr(iro_opt('aplayer_playlistid', '')); ?>"
-    data-server="<?php echo esc_attr(iro_opt('aplayer_server')); ?>"
+    data-id="<?php echo esc_attr(iro_opt('aplayer_use_local') ? (iro_opt('aplayer_playlistid') ?: 'local') : iro_opt('aplayer_playlistid', '')); ?>"
+    data-server="<?php echo esc_attr(iro_opt('aplayer_use_local') ? 'local' : iro_opt('aplayer_server')); ?>"
     data-preload="<?php echo esc_attr(iro_opt('aplayer_preload')); ?>"
     data-type="playlist"
     data-fixed="true"

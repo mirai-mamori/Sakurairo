@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>本地曲库 playlist.json 说明</title>
+<style>
+  body { font: 15px/1.7 system-ui, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; margin: 2rem auto; max-width: 42rem; padding: 0 1rem; color: #222; }
+  h1 { font-size: 1.35rem; }
+  code, pre { font-family: ui-monospace, Consolas, monospace; font-size: 0.9em; background: #f4f4f5; border-radius: 4px; }
+  code { padding: 0.1em 0.35em; }
+  pre { padding: 0.75rem 1rem; overflow: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 0.75rem 0; }
+  th, td { border: 1px solid #e4e4e7; padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #fafafa; }
+</style>
+</head>
+<body>
+<h1>本地曲库 playlist.json 说明</h1>
+<p>可选。放在<strong>音乐库根目录</strong>，例如：</p>
+<pre>/var/www/html/wp-content/bgm/playlist.json</pre>
+
+<h2>作用</h2>
+<table>
+  <tr><th>有无 playlist.json</th><th>行为</th></tr>
+  <tr><td><strong>没有</strong></td><td>自动扫描曲库（含子目录）里的音频，按路径排序</td></tr>
+  <tr><td><strong>有</strong></td><td><strong>只</strong>播列表里的曲目，按文件里的顺序</td></tr>
+</table>
+
+<h2>格式</h2>
+<p>JSON <strong>数组</strong>，每个元素二选一：</p>
+<ol>
+  <li><strong>字符串</strong>：音频相对路径</li>
+  <li><strong>对象</strong>：可指定显示名、歌手</li>
+</ol>
+<pre>[
+  "Aimer - my sweetest one.flac",
+  "sub/余静 - 正青春.mp3",
+  {
+    "file": "live/encore.mp3",
+    "name": "安可",
+    "artist": "某歌手"
+  }
+]</pre>
+<table>
+  <tr><th>字段</th><th>说明</th></tr>
+  <tr><td><code>file</code></td><td>必填（对象写法）。相对曲库根目录，<strong>不要</strong> <code>../</code></td></tr>
+  <tr><td><code>name</code></td><td>可选。播放器显示的曲名；不填则用标签/文件名</td></tr>
+  <tr><td><code>artist</code></td><td>可选。不填则用标签/文件名解析</td></tr>
+</table>
+<p>路径请用 <code>/</code> 分隔；文件必须在曲库目录内且真实存在，否则会跳过。</p>
+
+<h2>和歌词、封面的关系</h2>
+<ul>
+  <li>歌词：同名 <code>.lrc</code> → 内嵌标签 → 无</li>
+  <li>封面：内嵌标签 → 同名图（jpg/jpeg/png/webp/gif）</li>
+</ul>
+<p>改完 <code>playlist.json</code> 后刷新页面即可，无需改主题设置。</p>
+</body>
+</html>

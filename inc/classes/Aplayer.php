@@ -73,12 +73,20 @@ class Aplayer
         $api_url = $_api_url . (preg_match('/index.php\?/i', $_api_url) ? '&' : '?');
         $data = json_decode($data);
         $playlist = array();
+        // 登录态下 REST 会校验 X-WP-Nonce / _wpnonce(wp_rest)，否则直接 403
+        $wp_rest_nonce = wp_create_nonce('wp_rest');
         foreach ((array) $data as $value) {
             $name = $value->name;
             $artists = implode(" / ", (array) $value->artist);
-            $mp3_url = $api_url . "server=$server&type=url&id=" . $value->url_id . '&meting_nonce=' . wp_create_nonce('url#:' . $value->url_id);
-            $cover = $api_url . "server=$server&type=pic&id=" . $value->pic_id . '&meting_nonce=' . wp_create_nonce('pic#:' . $value->url_id);
-            $lyric = $api_url . "server=$server&type=lyric&id=" . $value->lyric_id . '&meting_nonce=' . wp_create_nonce('lyric#:' . $value->url_id);
+            $mp3_url = $api_url . "server=$server&type=url&id=" . $value->url_id
+                . '&meting_nonce=' . wp_create_nonce('url#:' . $value->url_id)
+                . '&_wpnonce=' . $wp_rest_nonce;
+            $cover = $api_url . "server=$server&type=pic&id=" . $value->pic_id
+                . '&meting_nonce=' . wp_create_nonce('pic#:' . $value->pic_id)
+                . '&_wpnonce=' . $wp_rest_nonce;
+            $lyric = $api_url . "server=$server&type=lyric&id=" . $value->lyric_id
+                . '&meting_nonce=' . wp_create_nonce('lyric#:' . $value->lyric_id)
+                . '&_wpnonce=' . $wp_rest_nonce;
             $playlist[] = array(
                 "name" => $name,
                 "artist" => $artists,
@@ -99,6 +107,8 @@ class Aplayer
             $url = str_replace('http://m8.', 'https://m9.', $url);
             $url = str_replace('http://m7.', 'https://m9.', $url);
             $url = str_replace('http://m10.', 'https://m10.', $url);
+            // 新 CDN（m70x.music.126.net 等）可能仍返回 http，HTTPS 站会当混合内容拦截
+            $url = preg_replace('#^http://#i', 'https://', $url);
         } elseif ($server == 'xiami') {
             $url = str_replace('http://', 'https://', $url);
         } elseif ($server == 'baidu') {

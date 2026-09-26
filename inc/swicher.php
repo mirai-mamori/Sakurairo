@@ -121,7 +121,11 @@ function font_end_js_control()
         $lightGallery = str_replace(PHP_EOL, '', iro_opt('lightgallery_option'));
         $iro_opt['lightGallery'] = json_decode($lightGallery, true);
     }
-    if (iro_opt('aplayer_server') != 'off') {
+    if (iro_opt('aplayer_use_local')) {
+        // 本地曲库（user/modules/local-music.php），优先于在线歌源
+        $iro_opt['float_player_on'] = true;
+        $iro_opt['meting_api_url'] = rest_url('sakura/v1/local-music');
+    } elseif (iro_opt('aplayer_server') != 'off') {
         $iro_opt['float_player_on'] = true;
         if (!empty(iro_opt('custom_music_api'))) {
             $iro_opt['meting_api_url'] = iro_opt('custom_music_api'); //使用外部api/歌单

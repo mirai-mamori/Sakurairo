@@ -469,7 +469,7 @@ body.dark .comment-respond #cancel-comment-reply-link:hover {
 }
 
 body.dark #pagination a:hover {
-  background: var(--dark-bg-hover);
+  background-color: var(--dark-bg-hover);
   box-shadow: 0 1px 10px -2px var(--theme-skin-dark);
 }
 
