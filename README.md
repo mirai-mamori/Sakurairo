@@ -1,3 +1,7 @@
+[![迁移到 Myriad](assets/myriad-migration.png)](https://github.com/Myriad-You/Myriad)
+
+> **我们的主要精力已经转向 [Myriad](https://github.com/Myriad-You/Myriad)。** Sakurairo 仍会保留，但新功能与日常开发会优先放在 Myriad。欢迎前往新仓库，把散落各处的热爱搬进自己的数字小屋。
+
 **简体中文** | [繁體中文](README_tw.md) | [English](README_en.md) | [日本語](README_ja.md)
 
 [![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/banner-cn.webp)](https://github.com/mirai-mamori/Sakurairo)
