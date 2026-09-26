@@ -1,3 +1,7 @@
+[![Myriad へ移行](assets/myriad-migration.png)](https://github.com/Myriad-You/Myriad)
+
+> **主な開発は [Myriad](https://github.com/Myriad-You/Myriad) に移っています。** Sakurairo は残しますが、新機能と日常の開発は Myriad を優先します。
+
 [简体中文](README.md) | [繁體中文](README_tw.md) | [English](README_en.md) | **日本語**
 
 [![image](https://s.nmxc.ltd/sakurairo_vision/@3.0/readme/banner-en-jp.webp)](https://github.com/mirai-mamori/Sakurairo)
