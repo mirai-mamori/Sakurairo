@@ -766,28 +766,29 @@ if (!function_exists('akina_comment_format')) {
  */
 function get_author_class($comment_author_email, $user_id)
 {
-    global $wpdb;
-    // 安全修复：用 prepare 参数化查询防止 SQL 注入
-    // 性能优化：用 COUNT(*) + get_var 替代 get_results + count（语义完全等价）
-    $author_count = (int) $wpdb->get_var(
-        $wpdb->prepare(
-            "SELECT COUNT(*) FROM $wpdb->comments WHERE comment_author_email = %s",
-            $comment_author_email
-        )
-    );
-    # 等级梯度
-    $lv_array = [0, 5, 10, 20, 40, 80, 160];
-    $Lv = 0;
-    foreach ($lv_array as $key => $value) {
-        if ($value >= $author_count)
-            break;
-        $Lv = $key;
-        if (user_can($user_id, 'administrator')) {
-            $Lv = 6;
+    if (!empty($user_id) && user_can($user_id, 'administrator')) {
+        $Lv = 6;
+    } else {
+        if (empty($comment_author_email)) {
+            $Lv = 0;
+        } else {
+            global $wpdb;
+            $author_count = (int) $wpdb->get_var(
+                $wpdb->prepare(
+                    "SELECT COUNT(*) FROM $wpdb->comments WHERE comment_author_email = %s AND comment_approved = '1'",
+                    $comment_author_email
+                )
+            );
+
+            $lv_array = [0, 5, 10, 20, 40, 80, 160];
+            $Lv = 0;
+            foreach ($lv_array as $key => $value) {
+                if ($value > $author_count)
+                    break;
+                $Lv = $key;
+            }
         }
     }
-
-    // $Lv = $author_count < 5 ? 0 : ($author_count < 10 ? 1 : ($author_count < 20 ? 2 : ($author_count < 40 ? 3 : ($author_count < 80 ? 4 : ($author_count < 160 ? 5 : 6)))));
     echo "<span class=\"showGrade{$Lv}\" title=\"Lv{$Lv}\"><img alt=\"level_img\" src=\"" . iro_opt('vision_resource_basepath', 'https://s.nmxc.ltd/sakurairo_vision/@3.0/') . "comment_level/level_{$Lv}.svg\" style=\"height: 1.5em; max-height: 1.5em; display: inline-block;\"></span>";
 }
 
