@@ -134,7 +134,7 @@ $print_social_zone = function() use ($all_opt): void {
         }
     } else { ?>
         <!-- 社交图标栏 -->
-        <div class="slider-container">
+        <div class="slider-container enough-space">
             <div class="prev">
                 <i class="fa-solid fa-chevron-left"></i>
             </div>
@@ -146,36 +146,65 @@ $print_social_zone = function() use ($all_opt): void {
             </div>
         </div>
         <script>
-            document.addEventListener("DOMContentLoaded", () => {
+            function initTopSocialSlider() {
                 const slider = document.querySelector(".slider");
                 const sliderWrapper = document.querySelector(".slider-wrapper");
                 const sliderContainer = document.querySelector(".slider-container");
                 const prevBtn = document.querySelector(".prev");
                 const nextBtn = document.querySelector(".next");
+
+                if (!slider || !sliderWrapper || !sliderContainer || !prevBtn || !nextBtn) {
+                    return;
+                }
+
+                if (sliderContainer.dataset.initialized === 'true') {
+                    return;
+                }
+                sliderContainer.dataset.initialized = 'true';
+
                 let items = <?= $social_icons_json ?>.map(html => {
                     let temp = document.createElement("div");
                     temp.innerHTML = html.trim();
                     return temp.firstChild;
-                }); // 取得所有社交图标
-                let sliderWidth, a, currentIndex = 0;
-                const itemWidth = 35; // 单个图标宽度
-                const gap = 10; // 图标间距
-                const itemTotalWidth = itemWidth + gap; // 图标与间距的总宽度
+                });
+                let currentIndex = 0;
+                const itemWidth = 35;
+                const gap = 10;
+                const itemTotalWidth = itemWidth + gap;
                 let direction = "right";
+                let cachedVisibleCount = null;
+                let cachedButtonState = null;
 
-                // 更新视图，显示 items[currentIndex] 到 items[currentIndex + a]
-                function updateSlider() {
-                    slider.innerHTML = ""; // 清空现有 li
-                    sliderWidth = sliderWrapper.clientWidth;
-                    a = Math.floor((sliderWidth - 35) / itemTotalWidth); // 计算 a
-                    a = Math.max(1, Math.min(a, items.length)); // a 至少为 1 且不超过总图标数
+                function calculateVisibleCount() {
+                    const availableWidth = sliderContainer.clientWidth - prevBtn.offsetWidth - nextBtn.offsetWidth;
+                    let count = Math.floor((availableWidth - 2.5 * gap) / itemTotalWidth);
+                    return Math.max(1, Math.min(count, items.length));
+                }
 
-                    // 只添加 currentIndex 开始的 a 个元素
-                    for (let i = currentIndex; i < currentIndex + a && i < items.length; i++) {
-                        let li = items[i]; // 获取现有的图标
-                        li.classList.remove("fade-in-left", "fade-in-right"); // 先移除可能存在的动画类
-            
-                        // 根据方向应用动画
+                function updateButtonVisibility(visibleCount) {
+                    const shouldShowButtons = visibleCount < items.length;
+
+                    if (shouldShowButtons) {
+                        sliderContainer.classList.remove('enough-space');
+                        sliderContainer.classList.add('not-enough-space');
+                    } else {
+                        sliderContainer.classList.add('enough-space');
+                        sliderContainer.classList.remove('not-enough-space');
+                    }
+
+                    cachedButtonState = shouldShowButtons;
+                }
+
+                function renderSlider(visibleCount) {
+                    slider.innerHTML = "";
+
+                    const wrapperWidth = visibleCount * itemWidth + (visibleCount + 1) * gap;
+                    sliderWrapper.style.width = wrapperWidth + 'px';
+
+                    for (let i = currentIndex; i < currentIndex + visibleCount && i < items.length; i++) {
+                        let li = items[i];
+                        li.classList.remove("fade-in-left", "fade-in-right");
+
                         if (direction === "left") {
                             li.classList.add("fade-in-left");
                         } else {
@@ -186,61 +215,65 @@ $print_social_zone = function() use ($all_opt): void {
                     }
                 }
 
-                function checkSliderButtonsVisibility() {
-                    if (a >= items.length) {
-                        // 如果一次能显示的图标数量大于等于总数量，隐藏按钮
-                        sliderContainer.classList.add('enough-space'); 
-                        sliderContainer.classList.remove('not-enough-space');
-                    } else {
-                        // 需要滚动时显示按钮
-                        sliderContainer.classList.remove('enough-space'); 
-                        sliderContainer.classList.add('not-enough-space');
-                    }
+                function updateSlider() {
+                    const visibleCount = calculateVisibleCount();
+                    renderSlider(visibleCount);
+                    updateButtonVisibility(visibleCount);
+                    cachedVisibleCount = visibleCount;
                 }
 
-                // 绑定 next 按钮
-                nextBtn.addEventListener("click", () => {
-                    if (currentIndex + a < items.length) {
-                        currentIndex += a;
-                    } else {
-                        currentIndex = 0; // 如果已经在最后，则跳转到首个元素
-                    }
-                    direction = "right";
-                    updateSlider();
-                });
+                function handleResize() {
+                    const newVisibleCount = calculateVisibleCount();
 
-                // 绑定 prev 按钮
+                    if (newVisibleCount !== cachedVisibleCount) {
+                        currentIndex = 0;
+                        renderSlider(newVisibleCount);
+                        cachedVisibleCount = newVisibleCount;
+                    }
+
+                    updateButtonVisibility(newVisibleCount);
+                }
+
                 prevBtn.addEventListener("click", () => {
-                    if (currentIndex - a >= 0) {
-                        currentIndex -= a;
+                    if (currentIndex - cachedVisibleCount >= 0) {
+                        currentIndex -= cachedVisibleCount;
                     } else {
-                        /**
-                         * 求最后一组首个元素的索引，计算方式为 起始索引=⌊(元素总量−1)/组容量⌋×组容量
-                         * 使用位运算取整更快，有下面三种方法：
-                         * 1、按位或，即 (((items.length - 1) / a) | 0) * a
-                         * 2、双按位非，即 (~~((items.length - 1) / a)) * a
-                         * 3、无符号右移，即 (((items.length - 1) / a) >> 0) * a
-                         * 但以上方法仅适用于非负数，虽然在此处需取整的数值符合条件，但 Math.floor 方法最安全，特此说明，请勿修改
-                         */
-                        currentIndex = Math.floor((items.length - 1) / a) * a; // 如果已经在首个，则跳转到最后一组的首个元素
+                        currentIndex = Math.floor((items.length - 1) / cachedVisibleCount) * cachedVisibleCount;
                     }
                     direction = "left";
-                    updateSlider();
+                    renderSlider(cachedVisibleCount);
                 });
 
-                // 窗口大小变化时，重新计算 a 并更新
-                window.addEventListener("resize", () => {
-                    // 重新检查按钮的可见性
-                    checkSliderButtonsVisibility(); 
-                    // 直接滑动到最前面
-                    currentIndex = 0;
-                    updateSlider();
+                nextBtn.addEventListener("click", () => {
+                    if (currentIndex + cachedVisibleCount < items.length) {
+                        currentIndex += cachedVisibleCount;
+                    } else {
+                        currentIndex = 0;
+                    }
+                    direction = "right";
+                    renderSlider(cachedVisibleCount);
                 });
 
-                // 延迟执行，确保 CSS 计算完成
+                window.addEventListener("resize", handleResize);
+
                 requestAnimationFrame(() => {
-                    updateSlider();
-                    checkSliderButtonsVisibility();
+                    requestAnimationFrame(() => {
+                        updateSlider();
+                    });
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", initTopSocialSlider);
+            document.addEventListener("pjax:complete", () => {
+                const sliderContainer = document.querySelector(".slider-container");
+                if (sliderContainer) {
+                    delete sliderContainer.dataset.initialized;
+                }
+
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        initTopSocialSlider();
+                    });
                 });
             });
         </script>

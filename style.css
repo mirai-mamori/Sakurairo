@@ -2425,13 +2425,14 @@ h1.main-title {
   width: 100%;
 }
 
-.prev,
-.next {
+.slider-container .prev,
+.slider-container .next {
   width: 35px;
   height: 35px;
   cursor: pointer;
   user-select: none;
   text-align: center;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .slider-wrapper {
@@ -2525,7 +2526,14 @@ h1.main-title {
 
 .slider-container.enough-space .prev,
 .slider-container.enough-space .next {
+  opacity: 0;
   visibility: hidden;
+}
+
+.slider-container.not-enough-space .prev,
+.slider-container.not-enough-space .next {
+  opacity: 1;
+  visibility: visible;
 }
 
 .dialog-search-form[open] {
