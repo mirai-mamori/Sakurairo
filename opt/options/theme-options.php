@@ -567,6 +567,15 @@ $prefix = 'iro_options';
         'label'   => __('It is on by default. The user avatar and menu will be displayed.','sakurairo_csf'),
         'default' => true
       ),
+
+      array(
+        'id'    => 'nav_user_menu_shuoshuo',
+        'type'  => 'switcher',
+        'title' => __('显示“撰写说说”', 'sakurairo_csf'),
+        'label' => __('默认关闭；开启后，在已登录管理员的头像菜单中显示“撰写说说”入口。', 'sakurairo_csf'),
+        'dependency' => array( 'nav_user_menu', '==', 'true', '', 'true' ),
+        'default' => false
+      ),
   
       array(
         'id'     => 'unlisted_avatar',

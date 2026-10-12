@@ -402,6 +402,9 @@ function header_user_menu()
           <?php if (current_user_can('manage_options')) { ?>
             <a href="<?php bloginfo('url'); ?>/wp-admin/" target="_blank"><?php _e('Dashboard', 'sakurairo')/*管理中心*/ ?></a>
             <a href="<?php bloginfo('url'); ?>/wp-admin/post-new.php" target="_blank"><?php _e('New post', 'sakurairo')/*撰写文章*/ ?></a>
+            <?php if (iro_opt('nav_user_menu_shuoshuo', false)) { ?>
+              <a href="<?php echo esc_url(admin_url('post-new.php?post_type=shuoshuo')); ?>" target="_blank"><?php esc_html_e('撰写说说', 'sakurairo'); ?></a>
+            <?php } ?>
           <?php } ?>
           <a href="<?php bloginfo('url'); ?>/wp-admin/profile.php" target="_blank"><?php _e('Profile', 'sakurairo')/*个人资料*/ ?></a>
           <a href="<?php echo wp_logout_url(get_bloginfo('url')); ?>" target="_top" data-no-pjax><?php _e('Sign out', 'sakurairo')/*退出登录*/ ?></a>
