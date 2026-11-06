@@ -158,7 +158,7 @@ function get_smilies_panel() {
                             </div>';
             }
             $img_upload = '';
-            if (is_user_logged_in() && iro_opt('img_upload_api', false) !== 'off') {
+            if (is_user_logged_in() && current_user_can('upload_files') && iro_opt('img_upload_api', false) !== 'off') {
                 $img_upload = '<label class="insert-image-tips popup">
                                     <i class="fa-regular fa-image"></i>
                                     <span class="insert-img-popuptext" id="uploadTipPopup">上传图片</span>

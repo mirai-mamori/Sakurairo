@@ -25,45 +25,9 @@ class Captcha
      */
     private function create_captcha(): void
     {
-        $n1 = mt_rand(10, 99);
-        $n2 = mt_rand(10, 99);
-        if (mt_rand(0, 1)) {
-            //加法
-            $this->captchaText = "{$n1}+{$n2}=?";
-            $this->captchaResult = $n1 + $n2;
-        } else {
-            //减法(避免负数)
-            $min = min($n1, $n2);
-            $max = max($n1, $n2);
-            $this->captchaText = "{$max}-{$min}=?";
-            $this->captchaResult = $max - $min;
-        }
-    }
-
-    /**
-     * crypt_captcha
-     *
-     * @return string
-     */
-    private function crypt_captcha(): string
-    {
-        //return md5($this->captchCode);
-        return password_hash($this->captchaResult, PASSWORD_DEFAULT);
-        // return wp_hash_password($this->captchCode);
-    }
-
-    /**
-     * verify_captcha
-     *
-     * @param  string $captcha
-     * @param  string $hash
-     * @return bool
-     */
-    public function verify_captcha(string $captcha, string $hash): bool
-    {
-        //return md5($captcha) == $hash ? true : false;
-        return password_verify($captcha, $hash);
-        // return wp_check_password($captcha, $hash);
+        // 4 位随机数字：答案空间 9000，避免旧实现 0-198 的答案被低成本枚举。
+        $this->captchaText = (string) random_int(1000, 9999);
+        $this->captchaResult = $this->captchaText;
     }
 
     /**
@@ -83,6 +47,7 @@ class Captcha
         
         //创建验证码
         $this->create_captcha();
+        $captcha_answer = (string) $this->captchaResult;
         // 自 wordpress 6.4.0 起，弃用了STYLESHEETPATH定义. 为确保子主题能正常使用，应当使用get_template_directory()接口
         $font = get_template_directory() . '/inc/KumoFont.ttf';
         
@@ -136,7 +101,16 @@ class Captcha
         imagefilter($image, IMG_FILTER_GAUSSIAN_BLUR);
         
         $timestamp = time();
-        $this->captchaResult .= $timestamp;
+        $token = wp_generate_password(32, false, false);
+        // 答案只保存在服务端；客户端只拿到一次性 token，无法自行伪造验证结果。
+        set_transient(
+            'sakurairo_captcha_' . $token,
+            array(
+                'answer' => $captcha_answer,
+                'time'   => $timestamp,
+            ),
+            120
+        );
         //打开缓存区
         ob_start();
         //降低图片质量
@@ -153,7 +127,7 @@ class Captcha
             'code' => 0,
             'data' => $captchaimg,
             'msg' => '',
-            'id' => $this->crypt_captcha(),
+            'id' => $token,
             'time' => $timestamp,
         ];
     }
@@ -162,39 +136,77 @@ class Captcha
     /**
      * check_captcha
      *
-     * @param  string $captcha
+     * 验证码答案保存在服务端 transient 中，客户端提交的 id 只是一次性 token；
+     * 因此无法像旧实现那样在客户端自行计算 password_hash 后通过校验。
+     *
+     * @param  string $captcha   用户输入的答案
+     * @param  int    $timestamp 验证码生成时间
+     * @param  string $id        服务端签发的一次性 token
      * @return array
      */
     public function check_captcha(string $captcha, int $timestamp, string $id): array
     {
-        $currentTime = time();
-        $timeThreshold = $currentTime - 60;
-        if (!isset($timestamp) || !isset($id) || !preg_match('/^[\w$.\/]+$/', $id) || !ctype_digit((string)$timestamp)) {
-            $code = 3;
-            $msg = __('Bad Request.',"sakurairo");//非法请求
-        } elseif (!preg_match('/^(?:(?!199)(?:[1-9]\d?|1\d{2}|0))$/', $captcha)) {
-            //匹配非0 ~ 198
-            $code = 3;
-            $msg = __("Look like you forgot to enter the captcha.","sakurairo");//请输入正确的验证码!
-        } elseif ($timestamp < $timeThreshold) {
-            $code = 2;
-            $msg =  __("Captcha timeout.","sakurairo");//超时!
-        } elseif ($timestamp >= $timeThreshold && $timestamp <= $currentTime) {
-            if ($this->verify_captcha($captcha . $timestamp, $id)) {
-                $code = 5;
-                $msg = __("Captcha check passed.","sakurairo");//'验证码正确!'
-            } else {
-                $code = 1;
-                $msg = __("Captcha incorrect.","sakurairo");//'验证码错误!'
-            }
-        } else {
-            $code = 1;
-            $msg = __("An error has occurred.","sakurairo");//'错误!'
+        if (!preg_match('/^[A-Za-z0-9]{20,64}$/', $id) || !ctype_digit((string) $timestamp)) {
+            return [
+                'code' => 3,
+                'data' => '',
+                'msg'  => __('Bad Request.', 'sakurairo'),
+            ];
         }
+
+        if (!preg_match('/^[0-9]{4}$/', $captcha)) {
+            return [
+                'code' => 3,
+                'data' => '',
+                'msg'  => __('Look like you forgot to enter the captcha.', 'sakurairo'),
+            ];
+        }
+
+        $stored = get_transient('sakurairo_captcha_' . $id);
+
+        if (!is_array($stored) || !isset($stored['answer'], $stored['time'])) {
+            return [
+                'code' => 3,
+                'data' => '',
+                'msg'  => __('Bad Request.', 'sakurairo'),
+            ];
+        }
+
+        $current_time = time();
+
+        if ((int) $stored['time'] !== $timestamp) {
+            return [
+                'code' => 3,
+                'data' => '',
+                'msg'  => __('Have you modified the captcha code data? Or refresh the captcha and try again?', 'sakurairo'),
+            ];
+        }
+
+        if ($timestamp < $current_time - 60 || $timestamp > $current_time) {
+            return [
+                'code' => 2,
+                'data' => '',
+                'msg'  => __('Captcha timeout.', 'sakurairo'),
+            ];
+        }
+
+        if (hash_equals((string) $stored['answer'], (string) $captcha)) {
+            delete_transient('sakurairo_captcha_' . $id);
+
+            return [
+                'code' => 5,
+                'data' => '',
+                'msg'  => __('Captcha check passed.', 'sakurairo'),
+            ];
+        }
+
+        // token 一次性使用：答错立即失效，避免在答案空间内反复猜测。
+        delete_transient('sakurairo_captcha_' . $id);
+
         return [
-            'code' => $code,
+            'code' => 1,
             'data' => '',
-            'msg' => $msg
+            'msg'  => __('Captcha incorrect.', 'sakurairo'),
         ];
     }
 }

@@ -70,7 +70,9 @@ if (iro_opt('php_notice_filter') != 'inner') {
 
     if (iro_opt('php_notice_filter','normal') == 'normal') { //仅显示严重错误
         error_reporting(E_ALL & ~E_DEPRECATED);
-        ini_set('display_errors', '1');
+        // 生产环境不要把 PHP 错误输出到页面，避免泄露路径和调用栈；
+        // WP_DEBUG_DISPLAY=false 表示只记录日志、不输出，也应视为关闭。
+        ini_set('display_errors', (defined('WP_DEBUG') && WP_DEBUG && (!defined('WP_DEBUG_DISPLAY') || WP_DEBUG_DISPLAY)) ? '1' : '0');
     }
     if (iro_opt('php_notice_filter') == 'all') { //屏蔽大部分错误
         error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
@@ -3723,13 +3725,26 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
      */
     function CAPTCHA_CHECK($user, $username, $password)
     {
-        // Skip captcha check if it's a passwordless login
-        if (isset($_POST['skip_captcha_check']) && $_POST['skip_captcha_check'] == '1') {
-            return $user;
-        }
-        
         if (empty($_POST)) {
             return new WP_Error();
+        }
+
+        // 密码登录必须完成验证码；无密码（WebAuthn）等集成只能通过服务端过滤器放行，
+        // 不能信任客户端 POST 的 skip_captcha_check 参数（否则任何人都可跳过验证码）。
+        /**
+         * Filters whether the login captcha may be skipped.
+         *
+         * Integrations (e.g. a verified WebAuthn/passwordless flow) must only
+         * return true after server-side verification; never from a request
+         * parameter. Defaults to false so password logins keep the captcha.
+         *
+         * @param bool    $skip     Whether to skip the captcha. Default false.
+         * @param WP_User $user     The authenticated user, if any.
+         * @param string  $username Submitted username.
+         * @param string  $password Submitted password.
+         */
+        if (apply_filters('sakurairo_skip_login_captcha', false, $user, $username, $password)) {
+            return $user;
         }
         if (!(isset($_POST['yzm']) && !empty(trim($_POST['yzm'])))) {
             return new WP_Error('prooffail', '<strong>错误</strong>：验证码为空！');
@@ -3747,85 +3762,6 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
     }
     add_filter('authenticate', 'CAPTCHA_CHECK', 20, 3);
     
-    // Add JavaScript to check for password field and toggle captcha visibility
-    function add_captcha_check_script() {
-        ?>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var loginForm = document.getElementById('loginform');
-            if (!loginForm) return;
-            
-            // Add hidden field for skipping captcha check
-            var hiddenField = document.createElement('input');
-            hiddenField.type = 'hidden';
-            hiddenField.name = 'skip_captcha_check';
-            hiddenField.id = 'skip_captcha_check';
-            hiddenField.value = '0';
-            loginForm.appendChild(hiddenField);
-            
-            // Get elements once at initialization
-            var passwordField = document.getElementById('user_pass');
-            var captchaImg = document.getElementById('captchaimg');
-            var yzmField = document.getElementById('yzm');
-            
-            // Find the captcha container (the parent element that contains the captcha)
-            var captchaContainer = null;
-            if (yzmField) {
-                // Try to find the parent paragraph or label
-                captchaContainer = yzmField.closest('p') || yzmField.closest('label');
-                if (!captchaContainer && yzmField.parentNode) {
-                    captchaContainer = yzmField.parentNode;
-                }
-            }
-            
-            function checkPasswordField() {
-                // Check if password field is hidden or not present
-                var isPasswordVisible = passwordField && 
-                                        passwordField.style.display !== 'none' && 
-                                        passwordField.offsetParent !== null;
-                
-                if (!isPasswordVisible) {
-                    // Hide captcha elements
-                    if (captchaContainer) {
-                        captchaContainer.style.display = 'none';
-                    }
-                    
-                    hiddenField.value = '1';
-                } else {
-                    // Show captcha elements
-                    if (captchaContainer) {
-                        captchaContainer.style.display = '';
-                    }
-                    
-                    hiddenField.value = '0';
-                }
-            }
-            
-            // Initial check
-            checkPasswordField();
-            
-            // Set up a less frequent interval to reduce performance impact
-            var checkInterval = setInterval(checkPasswordField, 500);
-            
-            // Use MutationObserver for efficiency
-            if (typeof MutationObserver !== 'undefined') {
-                var observer = new MutationObserver(checkPasswordField);
-                
-                observer.observe(loginForm, {
-                    childList: true,
-                    subtree: true,
-                    attributes: true,
-                    attributeFilter: ['style', 'class', 'display']
-                });
-            }
-            
-            // Add event listener for form submission
-            loginForm.addEventListener('submit', checkPasswordField);
-        });
-        </script>
-        <?php
-    }
-    add_action('login_footer', 'add_captcha_check_script');
     /**
      * 忘记密码界面验证码验证
      */
@@ -3936,14 +3872,16 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
     add_action('lostpassword_form', 'turnstile_init');
 
     function verify_turnstile($user, $username = '', $password = '') {
-        // Skip captcha check if it's a passwordless login
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             return $user;
         }
-        if (isset($_POST['skip_captcha_check']) && $_POST['skip_captcha_check'] == '1') {
+
+        // 同 password 登录：仅服务端过滤器可放行，客户端参数不可信。
+        /** This filter is documented above in CAPTCHA_CHECK(). */
+        if (apply_filters('sakurairo_skip_login_captcha', false, $user, $username, $password)) {
             return $user;
         }
-        
+
         if (empty($_POST['cf-turnstile-response'])) {
             return new WP_Error('invalid_turnstile', '<strong>错误</strong>: 请完成人机验证', 'sakurairo');
         }
@@ -4027,86 +3965,6 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
     }
     add_filter('registration_errors', 'turnstile_registration_check', 10, 3);
 
-    function add_captcha_check_script() {
-    ?>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var loginForm = document.getElementById('loginform');
-        if (!loginForm) return;
-        
-        // Add hidden field for skipping captcha check
-        var hiddenField = document.createElement('input');
-        hiddenField.type = 'hidden';
-        hiddenField.name = 'skip_captcha_check';
-        hiddenField.id = 'skip_captcha_check';
-        hiddenField.value = '0';
-        loginForm.appendChild(hiddenField);
-        
-        // Get elements once at initialization
-        var passwordField = document.getElementById('user_pass');
-        var captchaImg = document.getElementById('captchaimg');
-        var yzmField = document.getElementById('yzm');
-        var turnstileWidget = document.querySelector('.cf-turnstile');
-        
-        // Find the captcha container (the parent element that contains the captcha)
-        var captchaContainer = null;
-        if (yzmField) {
-            // Try to find the parent paragraph or label
-            captchaContainer = yzmField.closest('p') || yzmField.closest('label');
-            if (!captchaContainer && yzmField.parentNode) {
-                captchaContainer = yzmField.parentNode;
-            }
-        } else if (turnstileWidget) {
-            captchaContainer = turnstileWidget.parentNode;
-        }
-        
-        function checkPasswordField() {
-            // Check if password field is hidden or not present
-            var isPasswordVisible = passwordField && 
-                                    passwordField.style.display !== 'none' && 
-                                    passwordField.offsetParent !== null;
-            
-            if (!isPasswordVisible) {
-                // Hide captcha elements
-                if (captchaContainer) {
-                    captchaContainer.style.display = 'none';
-                }
-                
-                hiddenField.value = '1';
-            } else {
-                // Show captcha elements
-                if (captchaContainer) {
-                    captchaContainer.style.display = '';
-                }
-                
-                hiddenField.value = '0';
-            }
-        }
-        
-        // Initial check
-        checkPasswordField();
-        
-        // Set up a less frequent interval to reduce performance impact
-        var checkInterval = setInterval(checkPasswordField, 500);
-        
-        // Use MutationObserver for efficiency
-        if (typeof MutationObserver !== 'undefined') {
-            var observer = new MutationObserver(checkPasswordField);
-            
-            observer.observe(loginForm, {
-                childList: true,
-                subtree: true,
-                attributes: true,
-                attributeFilter: ['style', 'class', 'display']
-            });
-        }
-        
-        // Add event listener for form submission
-        loginForm.addEventListener('submit', checkPasswordField);
-    });
-    </script>
-    <?php
-}
 }
 
 // 获取访客 IP

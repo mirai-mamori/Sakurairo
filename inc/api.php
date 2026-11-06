@@ -186,6 +186,15 @@ function sakura_image_upload_permission_check(WP_REST_Request $request)
         );
     }
 
+    // 上传接口只应对具备 upload_files 能力的账户开放；订阅者等低权限账户即使能登录并取得 nonce，也不应能调用图床。
+    if (!current_user_can('upload_files')) {
+        return new WP_Error(
+            'rest_forbidden',
+            __('You are not allowed to upload files.', 'sakurairo'),
+            array('status' => rest_authorization_required_code())
+        );
+    }
+
     return true;
 }
 
@@ -614,9 +623,34 @@ function meting_aplayer(WP_REST_Request $request)
 
 function create_CAPTCHA()
 {
+    // 匿名端点：按来源 IP 限制 token 铸造，避免无限写 transient 和批量猜测。
+    $ip = isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])) : '';
+    if ($ip !== '') {
+        $limit = (int) apply_filters('sakurairo_captcha_mint_limit', 30);
+        $limit = max(1, $limit);
+        $key = 'sakurairo_captcha_mint_' . md5($ip);
+        $count = (int) get_transient($key);
+
+        if ($count >= $limit) {
+            return new WP_REST_Response(array(
+                'code' => 1,
+                'data' => '',
+                'msg'  => __('Too many captcha requests. Please try again later.', 'sakurairo'),
+                'id'   => '',
+                'time' => 0,
+            ), 429);
+        }
+
+        set_transient($key, $count + 1, 600);
+    }
+
     $CAPTCHA = new Captcha();
     $response = new WP_REST_Response($CAPTCHA->create_captcha_img());
     $response->set_status(200);
-    $response->set_headers(array('Content-Type' => 'application/json'));
+    $response->set_headers(array(
+        'Content-Type'  => 'application/json',
+        'Cache-Control' => 'no-store, no-cache, must-revalidate, max-age=0',
+        'Pragma'        => 'no-cache',
+    ));
     return $response;
 }
