@@ -432,6 +432,7 @@ function shuoshuo_load_more() {
 
     $query = new WP_Query(array(
         'post_type'      => 'shuoshuo',
+        'post_status'    => 'publish',
         'posts_per_page' => 20,
         'paged'          => $paged,
         'orderby'        => 'date',

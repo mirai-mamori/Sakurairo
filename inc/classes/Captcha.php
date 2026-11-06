@@ -25,45 +25,88 @@ class Captcha
      */
     private function create_captcha(): void
     {
-        $n1 = mt_rand(10, 99);
-        $n2 = mt_rand(10, 99);
-        if (mt_rand(0, 1)) {
-            //加法
-            $this->captchaText = "{$n1}+{$n2}=?";
-            $this->captchaResult = $n1 + $n2;
-        } else {
-            //减法(避免负数)
-            $min = min($n1, $n2);
-            $max = max($n1, $n2);
-            $this->captchaText = "{$max}-{$min}=?";
-            $this->captchaResult = $max - $min;
-        }
+        // 4 位随机数字：答案空间 9000，避免旧实现 0-198 的答案被低成本枚举。
+        $this->captchaText = (string) random_int(1000, 9999);
+        $this->captchaResult = $this->captchaText;
     }
 
     /**
-     * crypt_captcha
+     * 解析代理感知的客户端 IP。
+     *
+     * 优先调用主题的 get_the_user_ip()（它遵循 sakura_trust_x_forwarded_for），
+     * 主题函数缺失或返回非法值时回退到 REMOTE_ADDR；结果可经
+     * `sakurairo_captcha_client_ip` 过滤器覆盖。返回值始终是合法 IP 或空串。
+     *
+     * 注意：get_the_user_ip() 默认信任 X-Forwarded-For，只有站点位于可信的
+     * 反向代理/CDN（如 Cloudflare）之后才安全。直接暴露的站点应显式关闭：
+     * add_filter('sakura_trust_x_forwarded_for', '__return_false');
+     * 否则攻击者可伪造该请求头绕过本限流（每个伪造 IP 都是独立桶）。
      *
      * @return string
      */
-    private function crypt_captcha(): string
+    private function client_ip(): string
     {
-        //return md5($this->captchCode);
-        return password_hash($this->captchaResult, PASSWORD_DEFAULT);
-        // return wp_hash_password($this->captchCode);
+        $ip = '';
+        if (function_exists('get_the_user_ip')) {
+            try {
+                $ip = (string) get_the_user_ip();
+            } catch (\Throwable $e) {
+                $ip = '';
+            }
+        }
+        if (!filter_var($ip, FILTER_VALIDATE_IP)) {
+            $ip = isset($_SERVER['REMOTE_ADDR'])
+                ? sanitize_text_field(wp_unslash((string) $_SERVER['REMOTE_ADDR']))
+                : '';
+        }
+
+        /**
+         * Filters the client IP used for captcha mint throttling.
+         *
+         * Return a stable identifier (normally an IP) when the default detection
+         * is wrong, or an empty string to disable per-IP throttling entirely.
+         * The returned value must be a valid IP address to be used.
+         *
+         * @param string $ip Detected client IP, or '' when unknown.
+         */
+        $ip = (string) apply_filters('sakurairo_captcha_client_ip', $ip);
+
+        return filter_var($ip, FILTER_VALIDATE_IP) ? $ip : '';
     }
 
     /**
-     * verify_captcha
+     * 按客户端 IP 的固定窗口铸造限流（10 分钟）。
      *
-     * @param  string $captcha
-     * @param  string $hash
-     * @return bool
+     * REST 端点与 wp-login.php / 注册 / 找回密码页面共用同一个桶：
+     * 避免绕过 REST 直接反复刷新登录页无限铸造 120s transient。
+     *
+     * @return bool true 允许铸造；false 已超限。
      */
-    public function verify_captcha(string $captcha, string $hash): bool
+    private function can_mint(): bool
     {
-        //return md5($captcha) == $hash ? true : false;
-        return password_verify($captcha, $hash);
-        // return wp_check_password($captcha, $hash);
+        $ip = $this->client_ip();
+        if ($ip === '') {
+            // 无法确定客户端 IP 时不限流，避免误伤所有访客（与旧实现一致）。
+            return true;
+        }
+
+        /**
+         * Filters the maximum number of captcha mints per client IP per 10 minutes.
+         *
+         * @param int $limit Maximum mints. Default 30.
+         */
+        $limit = (int) apply_filters('sakurairo_captcha_mint_limit', 30);
+        $limit = max(1, $limit);
+        $key = 'sakurairo_captcha_mint_' . md5($ip);
+        $count = (int) get_transient($key);
+
+        if ($count >= $limit) {
+            return false;
+        }
+
+        set_transient($key, $count + 1, 600);
+
+        return true;
     }
 
     /**
@@ -73,6 +116,18 @@ class Captcha
      */
     public function create_captcha_img(): array
     {
+        // 铸造限流内聚在本方法：REST 端点和登录/注册/找回密码页面共用同一 IP 桶。
+        // 被限流时不生成答案、不写 transient，直接返回结构化错误（code !== 0）。
+        if (!$this->can_mint()) {
+            return [
+                'code' => 1,
+                'data' => '',
+                'msg'  => __('Too many captcha requests. Please try again later.', 'sakurairo'),
+                'id'   => '',
+                'time' => 0,
+            ];
+        }
+
         //动态计算验证码难度
         $level = iro_opt('iro_captcha_level') / 100;
         $conf = array(
@@ -83,6 +138,7 @@ class Captcha
         
         //创建验证码
         $this->create_captcha();
+        $captcha_answer = (string) $this->captchaResult;
         // 自 wordpress 6.4.0 起，弃用了STYLESHEETPATH定义. 为确保子主题能正常使用，应当使用get_template_directory()接口
         $font = get_template_directory() . '/inc/KumoFont.ttf';
         
@@ -136,7 +192,16 @@ class Captcha
         imagefilter($image, IMG_FILTER_GAUSSIAN_BLUR);
         
         $timestamp = time();
-        $this->captchaResult .= $timestamp;
+        $token = wp_generate_password(32, false, false);
+        // 答案只保存在服务端；客户端只拿到一次性 token，无法自行伪造验证结果。
+        set_transient(
+            'sakurairo_captcha_' . $token,
+            array(
+                'answer' => $captcha_answer,
+                'time'   => $timestamp,
+            ),
+            120
+        );
         //打开缓存区
         ob_start();
         //降低图片质量
@@ -153,7 +218,7 @@ class Captcha
             'code' => 0,
             'data' => $captchaimg,
             'msg' => '',
-            'id' => $this->crypt_captcha(),
+            'id' => $token,
             'time' => $timestamp,
         ];
     }
@@ -162,39 +227,77 @@ class Captcha
     /**
      * check_captcha
      *
-     * @param  string $captcha
+     * 验证码答案保存在服务端 transient 中，客户端提交的 id 只是一次性 token；
+     * 因此无法像旧实现那样在客户端自行计算 password_hash 后通过校验。
+     *
+     * @param  string $captcha   用户输入的答案
+     * @param  int    $timestamp 验证码生成时间
+     * @param  string $id        服务端签发的一次性 token
      * @return array
      */
     public function check_captcha(string $captcha, int $timestamp, string $id): array
     {
-        $currentTime = time();
-        $timeThreshold = $currentTime - 60;
-        if (!isset($timestamp) || !isset($id) || !preg_match('/^[\w$.\/]+$/', $id) || !ctype_digit((string)$timestamp)) {
-            $code = 3;
-            $msg = __('Bad Request.',"sakurairo");//非法请求
-        } elseif (!preg_match('/^(?:(?!199)(?:[1-9]\d?|1\d{2}|0))$/', $captcha)) {
-            //匹配非0 ~ 198
-            $code = 3;
-            $msg = __("Look like you forgot to enter the captcha.","sakurairo");//请输入正确的验证码!
-        } elseif ($timestamp < $timeThreshold) {
-            $code = 2;
-            $msg =  __("Captcha timeout.","sakurairo");//超时!
-        } elseif ($timestamp >= $timeThreshold && $timestamp <= $currentTime) {
-            if ($this->verify_captcha($captcha . $timestamp, $id)) {
-                $code = 5;
-                $msg = __("Captcha check passed.","sakurairo");//'验证码正确!'
-            } else {
-                $code = 1;
-                $msg = __("Captcha incorrect.","sakurairo");//'验证码错误!'
-            }
-        } else {
-            $code = 1;
-            $msg = __("An error has occurred.","sakurairo");//'错误!'
+        if (!preg_match('/^[A-Za-z0-9]{20,64}$/', $id) || !ctype_digit((string) $timestamp)) {
+            return [
+                'code' => 3,
+                'data' => '',
+                'msg'  => __('Bad Request.', 'sakurairo'),
+            ];
         }
+
+        if (!preg_match('/^[0-9]{4}$/', $captcha)) {
+            return [
+                'code' => 3,
+                'data' => '',
+                'msg'  => __('Look like you forgot to enter the captcha.', 'sakurairo'),
+            ];
+        }
+
+        $stored = get_transient('sakurairo_captcha_' . $id);
+
+        if (!is_array($stored) || !isset($stored['answer'], $stored['time'])) {
+            return [
+                'code' => 3,
+                'data' => '',
+                'msg'  => __('Bad Request.', 'sakurairo'),
+            ];
+        }
+
+        $current_time = time();
+
+        if ((int) $stored['time'] !== $timestamp) {
+            return [
+                'code' => 3,
+                'data' => '',
+                'msg'  => __('Have you modified the captcha code data? Or refresh the captcha and try again?', 'sakurairo'),
+            ];
+        }
+
+        if ($timestamp < $current_time - 60 || $timestamp > $current_time) {
+            return [
+                'code' => 2,
+                'data' => '',
+                'msg'  => __('Captcha timeout.', 'sakurairo'),
+            ];
+        }
+
+        if (hash_equals((string) $stored['answer'], (string) $captcha)) {
+            delete_transient('sakurairo_captcha_' . $id);
+
+            return [
+                'code' => 5,
+                'data' => '',
+                'msg'  => __('Captcha check passed.', 'sakurairo'),
+            ];
+        }
+
+        // token 一次性使用：答错立即失效，避免在答案空间内反复猜测。
+        delete_transient('sakurairo_captcha_' . $id);
+
         return [
-            'code' => $code,
+            'code' => 1,
             'data' => '',
-            'msg' => $msg
+            'msg'  => __('Captcha incorrect.', 'sakurairo'),
         ];
     }
 }

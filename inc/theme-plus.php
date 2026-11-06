@@ -220,15 +220,11 @@ if(!function_exists('siren_ajax_comment_callback')) {
       check_ajax_referer('sakurairo_ajax_comment', 'sakurairo_comment_nonce');
       $comment = wp_handle_comment_submission( wp_unslash( $_POST ) );
       if( is_wp_error( $comment ) ) {
-        $data = $comment->get_error_data();
-        if ( !empty( $data ) ) {
-          siren_ajax_comment_err($comment->get_error_message());
-        } else {
-          if(count($_POST)<=1){
-                  siren_ajax_comment_err("你好像提交了一个空表单。");
-          }else{
-            siren_ajax_comment_err(join(',',array_keys($comment->errors)));
-                 }
+        if(count($_POST)<=1){
+          siren_ajax_comment_err("你好像提交了一个空表单。");
+        }else{
+          // 不返回内部错误码或 core 的定向错误信息，避免匿名调用者据此判断文章/评论状态。
+          siren_ajax_comment_err(__('Comment submission failed. Please try again.', 'sakurairo'));
         }
       }
       $user = wp_get_current_user();

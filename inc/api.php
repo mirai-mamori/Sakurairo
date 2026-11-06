@@ -186,6 +186,15 @@ function sakura_image_upload_permission_check(WP_REST_Request $request)
         );
     }
 
+    // 上传接口只应对具备 upload_files 能力的账户开放；订阅者等低权限账户即使能登录并取得 nonce，也不应能调用图床。
+    if (!current_user_can('upload_files')) {
+        return new WP_Error(
+            'rest_forbidden',
+            __('You are not allowed to upload files.', 'sakurairo'),
+            array('status' => rest_authorization_required_code())
+        );
+    }
+
     return true;
 }
 
@@ -614,9 +623,19 @@ function meting_aplayer(WP_REST_Request $request)
 
 function create_CAPTCHA()
 {
+    // 匿名端点：token 铸造限流已内聚到 Captcha::create_captcha_img()，
+    // 与 wp-login.php / 注册 / 找回密码页面共用同一个按客户端 IP 的桶。
     $CAPTCHA = new Captcha();
-    $response = new WP_REST_Response($CAPTCHA->create_captcha_img());
-    $response->set_status(200);
-    $response->set_headers(array('Content-Type' => 'application/json'));
+    $result = $CAPTCHA->create_captcha_img();
+    // code !== 0 表示铸造被限流（结构化错误，不带 token），返回 429。
+    $throttled = isset($result['code']) && (int) $result['code'] !== 0;
+
+    $response = new WP_REST_Response($result);
+    $response->set_status($throttled ? 429 : 200);
+    $response->set_headers(array(
+        'Content-Type'  => 'application/json',
+        'Cache-Control' => 'no-store, no-cache, must-revalidate, max-age=0',
+        'Pragma'        => 'no-cache',
+    ));
     return $response;
 }
