@@ -31,12 +31,103 @@ class Captcha
     }
 
     /**
+     * 解析代理感知的客户端 IP。
+     *
+     * 优先调用主题的 get_the_user_ip()（它遵循 sakura_trust_x_forwarded_for），
+     * 主题函数缺失或返回非法值时回退到 REMOTE_ADDR；结果可经
+     * `sakurairo_captcha_client_ip` 过滤器覆盖。返回值始终是合法 IP 或空串。
+     *
+     * 注意：get_the_user_ip() 默认信任 X-Forwarded-For，只有站点位于可信的
+     * 反向代理/CDN（如 Cloudflare）之后才安全。直接暴露的站点应显式关闭：
+     * add_filter('sakura_trust_x_forwarded_for', '__return_false');
+     * 否则攻击者可伪造该请求头绕过本限流（每个伪造 IP 都是独立桶）。
+     *
+     * @return string
+     */
+    private function client_ip(): string
+    {
+        $ip = '';
+        if (function_exists('get_the_user_ip')) {
+            try {
+                $ip = (string) get_the_user_ip();
+            } catch (\Throwable $e) {
+                $ip = '';
+            }
+        }
+        if (!filter_var($ip, FILTER_VALIDATE_IP)) {
+            $ip = isset($_SERVER['REMOTE_ADDR'])
+                ? sanitize_text_field(wp_unslash((string) $_SERVER['REMOTE_ADDR']))
+                : '';
+        }
+
+        /**
+         * Filters the client IP used for captcha mint throttling.
+         *
+         * Return a stable identifier (normally an IP) when the default detection
+         * is wrong, or an empty string to disable per-IP throttling entirely.
+         * The returned value must be a valid IP address to be used.
+         *
+         * @param string $ip Detected client IP, or '' when unknown.
+         */
+        $ip = (string) apply_filters('sakurairo_captcha_client_ip', $ip);
+
+        return filter_var($ip, FILTER_VALIDATE_IP) ? $ip : '';
+    }
+
+    /**
+     * 按客户端 IP 的固定窗口铸造限流（10 分钟）。
+     *
+     * REST 端点与 wp-login.php / 注册 / 找回密码页面共用同一个桶：
+     * 避免绕过 REST 直接反复刷新登录页无限铸造 120s transient。
+     *
+     * @return bool true 允许铸造；false 已超限。
+     */
+    private function can_mint(): bool
+    {
+        $ip = $this->client_ip();
+        if ($ip === '') {
+            // 无法确定客户端 IP 时不限流，避免误伤所有访客（与旧实现一致）。
+            return true;
+        }
+
+        /**
+         * Filters the maximum number of captcha mints per client IP per 10 minutes.
+         *
+         * @param int $limit Maximum mints. Default 30.
+         */
+        $limit = (int) apply_filters('sakurairo_captcha_mint_limit', 30);
+        $limit = max(1, $limit);
+        $key = 'sakurairo_captcha_mint_' . md5($ip);
+        $count = (int) get_transient($key);
+
+        if ($count >= $limit) {
+            return false;
+        }
+
+        set_transient($key, $count + 1, 600);
+
+        return true;
+    }
+
+    /**
      * create_captcha_img
      *
      * @return array
      */
     public function create_captcha_img(): array
     {
+        // 铸造限流内聚在本方法：REST 端点和登录/注册/找回密码页面共用同一 IP 桶。
+        // 被限流时不生成答案、不写 transient，直接返回结构化错误（code !== 0）。
+        if (!$this->can_mint()) {
+            return [
+                'code' => 1,
+                'data' => '',
+                'msg'  => __('Too many captcha requests. Please try again later.', 'sakurairo'),
+                'id'   => '',
+                'time' => 0,
+            ];
+        }
+
         //动态计算验证码难度
         $level = iro_opt('iro_captcha_level') / 100;
         $conf = array(

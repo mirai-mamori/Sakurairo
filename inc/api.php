@@ -623,30 +623,15 @@ function meting_aplayer(WP_REST_Request $request)
 
 function create_CAPTCHA()
 {
-    // 匿名端点：按来源 IP 限制 token 铸造，避免无限写 transient 和批量猜测。
-    $ip = isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR'])) : '';
-    if ($ip !== '') {
-        $limit = (int) apply_filters('sakurairo_captcha_mint_limit', 30);
-        $limit = max(1, $limit);
-        $key = 'sakurairo_captcha_mint_' . md5($ip);
-        $count = (int) get_transient($key);
-
-        if ($count >= $limit) {
-            return new WP_REST_Response(array(
-                'code' => 1,
-                'data' => '',
-                'msg'  => __('Too many captcha requests. Please try again later.', 'sakurairo'),
-                'id'   => '',
-                'time' => 0,
-            ), 429);
-        }
-
-        set_transient($key, $count + 1, 600);
-    }
-
+    // 匿名端点：token 铸造限流已内聚到 Captcha::create_captcha_img()，
+    // 与 wp-login.php / 注册 / 找回密码页面共用同一个按客户端 IP 的桶。
     $CAPTCHA = new Captcha();
-    $response = new WP_REST_Response($CAPTCHA->create_captcha_img());
-    $response->set_status(200);
+    $result = $CAPTCHA->create_captcha_img();
+    // code !== 0 表示铸造被限流（结构化错误，不带 token），返回 429。
+    $throttled = isset($result['code']) && (int) $result['code'] !== 0;
+
+    $response = new WP_REST_Response($result);
+    $response->set_status($throttled ? 429 : 200);
     $response->set_headers(array(
         'Content-Type'  => 'application/json',
         'Cache-Control' => 'no-store, no-cache, must-revalidate, max-age=0',

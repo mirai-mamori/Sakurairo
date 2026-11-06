@@ -3713,6 +3713,12 @@ if (iro_opt('captcha_select') === 'iro_captcha') {
         include_once('inc/classes/Captcha.php');
         $img = new Sakura\API\Captcha;
         $test = $img->create_captcha_img();
+        // 铸造被限流时返回 code !== 0 且不含 token：只显示可见提示，
+        // 不输出图片与隐藏字段，避免 broken image 和无效验证码。
+        if (!empty($test['code'])) {
+            echo '<p class="captcha-error"><strong>' . esc_html($test['msg']) . '</strong></p>';
+            return;
+        }
         echo '<p><label for="captcha" class="captcha"><img id="captchaimg" width="120" height="40" style="border-radius: 8px;" src="', $test['data'], '"><input type="text" name="yzm" id="yzm" class="input" value="" size="20" tabindex="4" placeholder="请输入验证码"><input type="hidden" name="timestamp" value="', $test['time'], '"><input type="hidden" name="id" value="', $test['id'], '">'
             . "</label></p>";
     }
